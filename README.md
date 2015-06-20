@@ -20,6 +20,15 @@ This repo's issues section will also become the primary home for the Website WG'
 
 The intent is that once `new.nodejs.org` is production-ready, it will take the place of `nodejs/nodejs.org` and the older repo will be archived under a new name. ([source](https://github.com/nodejs/iojs.org/issues/382#issuecomment-113237898))
 
-## Working Group and Current Project Team Members
+## Governance and Current Members
 
-Coming soon.
+All of the Node.js Foundation websites, including this repo, are jointly governed by the **Website Working Group**. See [GOVERNANCE.md](./GOVERNANCE.md) to learn more about the group's structure and [CONTRIBUTING.md](./CONTRIBUTING.md) for guidance about the expectations for all contributors to this project.
+
+### Website Working Group Members
+
+- Sean Ouimet: @snostorm, [@skepticsean](http://twitter.com/skepticsean), `sean``@``seanouimet.com`
+- Trent Oswald: @therebelrobot, [@therebelrobot](http://twitter.com/therebelrobot), `trentoswald``@``therebelrobot.com`
+
+### Website Project Contributors
+
+`...`
