@@ -27,8 +27,8 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 ### Website Working Group Members
 
 - Sean Ouimet: @snostorm, [@skepticsean](http://twitter.com/skepticsean), `sean``@``seanouimet.com`
-- Trent Oswald: @therebelrobot, [@therebelrobot](http://twitter.com/therebelrobot), `trentoswald``@``therebelrobot.com`
 - Tierney Coren: @bnb, [@bitandbang](http://twitter.com/bitandbang), `bitnb``@``subvertising.org`
+- Trent Oswald: @therebelrobot, [@therebelrobot](http://twitter.com/therebelrobot), `trentoswald``@``therebelrobot.com`
 
 ### Website Project Contributors
 
