@@ -44,10 +44,10 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 ### Website Working Group Members
 
 - Frederic Hemberger: @fhemberger, [@fhemberger](https://twitter.com/fhemberger), `mail``@``frederic-hemberger.de`
-- Robert Kowalski: @robertkowalski, [@robinson_k](http://twitter.com/robinson_k), `rok``@``kowalski.gd`
-- Sean Ouimet: @snostorm, [@skepticsean](http://twitter.com/skepticsean), `sean``@``seanouimet.com`
-- Tierney Coren: @bnb, [@bitandbang](http://twitter.com/bitandbang), `bitnb``@``subvertising.org`
-- Trent Oswald: @therebelrobot, [@therebelrobot](http://twitter.com/therebelrobot), `trentoswald``@``therebelrobot.com`
+- Robert Kowalski: @robertkowalski, [@robinson_k](https://twitter.com/robinson_k), `rok``@``kowalski.gd`
+- Sean Ouimet: @snostorm, [@skepticsean](https://twitter.com/skepticsean), `sean``@``seanouimet.com`
+- Tierney Coren: @bnb, [@bitandbang](https://twitter.com/bitandbang), `bitnb``@``subvertising.org`
+- Trent Oswald: @therebelrobot, [@therebelrobot](https://twitter.com/therebelrobot), `trentoswald``@``therebelrobot.com`
 - Jeremiah Senkpiel: @fishrock123, [@fishrock123](https://twitter.com/fishrock123), `fishrock123``@``rocketmail.com`
 
 ### Website Project Contributors
