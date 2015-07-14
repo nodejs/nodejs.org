@@ -48,6 +48,7 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 - Sean Ouimet: @snostorm, [@skepticsean](http://twitter.com/skepticsean), `sean``@``seanouimet.com`
 - Tierney Coren: @bnb, [@bitandbang](http://twitter.com/bitandbang), `bitnb``@``subvertising.org`
 - Trent Oswald: @therebelrobot, [@therebelrobot](http://twitter.com/therebelrobot), `trentoswald``@``therebelrobot.com`
+- Jeremiah Senkpiel: @fishrock123, [@fishrock123](https://twitter.com/fishrock123), `fishrock123``@``rocketmail.com`
 
 ### Website Project Contributors
 
