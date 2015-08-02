@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> html-head }}
+
+<body>
+    {{> header active="about" }}
+
+    <main>
+        <div class="container has-side-nav">
+
+            <aside>
+                <ul>
+                    <li class="active"><a href="/about/">About Node.js</a></li>
+                    <li><a href="/about/organization/">Organization</a></li>
+                    <li><a href="/about/releases/">Releases</a></li>
+                    <li><a href="/about/resources/">Resources</a></li>
+                    <li><a href="/about/advisory-board/">Advisory Board</a></li>
+                    <li><a href="/about/advisory-board/members/">Advisory Board Members</a></li>
+                    <li><a href="/about/security/">Security</a></li>
+                    <li><a href="/about/trademark/">Trademark</a></li>
+                </ul>
+            </aside>
+
+            <article>
+                {{{ contents }}}
+            </article>
+
+        </div>
+    </main>
+
+    {{> footer }}
+</body>
+</html>

@@ -1,0 +1,20 @@
+<head>
+    <meta charset="utf-8">
+    <title>{{#if title}}{{ title }} | {{/if}}{{ site.title }}</title>
+
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+
+    <meta name="author" content="{{ site.author }}">
+    <meta name="robots" content="{{#if robots}}{{ robots }}{{else}}index, follow{{/if}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{!-- <link rel="apple-touch-icon" href="/static/apple-touch-icon.png"> --}}
+    {{!-- <link rel="icon" href="/static/apple-touch-icon.png"> --}}
+
+    <link rel="canonical" href="{{ canonical }}">
+    <link rel="alternate" href="/blog.xml" title="Node.js Blog" type="application/rss+xml">
+    <link rel="stylesheet" href="/static/css/styles.css" media="all">
+    <link rel="stylesheet" href="/static/css/prism-tomorrow.css" media="all">
+</head>

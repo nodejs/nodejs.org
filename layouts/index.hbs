@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> html-head }}
+
+<body>
+    {{> header active="home" }}
+
+    <main>
+        <div class="container">
+
+            <h1>{{ title }}</h1>
+            <p>Bringing the converged nodejs.org/iojs.org to the Node Community!</p>
+
+            <div class="home-download">
+                <img src="/static/images/logo-hexagon.svg" alt="node.js" class="home-logo">
+                <div class="home-download-details">
+                    <p class="home-download-version"><a href="https://iojs.org/dist/v{{ version }}/">Version {{ version }}</a></p>
+                    <p class="home-download-list">
+                        Download for <a href="https://iojs.org/dist/v{{ version }}/iojs-v{{ version }}-linux-x64.tar.xz">Linux</a>,
+                        <a href="https://iojs.org/dist/v{{ version }}/iojs-v{{ version }}-x86.msi">Win32</a>,
+                        <a href="https://iojs.org/dist/v{{ version }}/iojs-v{{ version }}-x64.msi">Win64</a>,
+                        <a href="https://iojs.org/dist/v{{ version }}/iojs-v{{ version }}.pkg">Mac</a> &amp;
+                        <a href="https://iojs.org/dist/v{{ version }}/">Others</a>
+                    </p>
+                    <p><a href="https://github.com/nodejs/io.js/blob/master/CHANGELOG.md">Changelog</a></p>
+                </div>
+            </div>
+
+            <div class="home-secondary-links">
+                <p>
+                    <a href="{{ weekly.url }}">Weekly Update – {{ weekly.title }}</a><br>
+                    <small>featuring core and community updates (<a href="https://medium.com/@iojs/latest">News Archive on Medium</a>)</small>
+                </p>
+            </div>
+
+            <div class="home-secondary-links">
+                <p>
+                    <a href="https://iojs.org/download/nightly/">Nightly releases</a> are available for testing,<br>
+                    also <a href="https://iojs.org/download/next-nightly/">nightlies for the next major version</a> of io.js.
+                </p>
+                <p><a href="./faq.html">Frequently Asked Questions</a></p>
+            </div>
+
+            {{{ contents }}}
+        </div>
+    </main>
+
+    {{> footer }}
+</body>
+</html>
+

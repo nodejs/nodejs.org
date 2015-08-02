@@ -1,0 +1,98 @@
+@import 'layout/_variables'
+@import 'layout/_grid'
+// @import 'layout/_sticky-footer'
+@import 'layout/_lists'
+@import 'page-modules/_linuxfoundation'
+@import 'page-modules/_header'
+@import 'page-modules/_footer'
+@import 'page-modules/_home'
+
+
+// header,
+// main,
+// footer
+//     display flex
+
+
+body
+    box-sizing border-box
+    font 300 20px/1.5 'Source Sans Pro', Arial, sans-serif
+    color #000
+
+    margin 0
+
+h1,
+h2,
+h3,
+h4,
+h5
+    font-weight normal
+
+
+a,
+a:link,
+a:visited,
+a:active
+    color $node-green
+    text-decoration none
+
+a:hover
+    color #fff
+    background-color $node-green
+
+
+img
+    max-width 100%
+
+
+code
+    color $darkgray
+
+
+pre
+    background-color #333
+    border-radius 3px
+    padding 0.75em 1.2em
+    font-size 0.8em
+
+    code
+        color #f0f0f0
+
+.intro
+    margin-top 140px
+    font-size 38px
+    line-height 1.2
+
+    h1
+        font-size inherit
+        margin-bottom 15px
+
+        & + p
+            margin-top 0
+
+    span
+        color $lightgray
+        display block
+
+
+.has-side-nav
+    aside
+        width 180px
+        float left
+        margin-top 1.5em
+
+        ul
+            list-style-type none
+            margin 0
+            padding 0
+
+        li
+            padding 0.1em 0.5em
+
+        .active
+            background-color #D9EBB3
+
+    article
+        margin-left 200px
+
+

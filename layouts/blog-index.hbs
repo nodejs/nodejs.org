@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> html-head }}
+
+<body>
+    {{> header active="blog" }}
+
+    <main>
+        <div class="container">
+
+            <ul>
+                {{#each collections.blog}}
+                    {{#if title}}
+                        <li>
+                            <a href="/{{ path }}">{{ title }}</a>
+                        </li>
+                    {{/if}}
+                {{/each}}
+            </ul>
+
+        </div>
+    </main>
+
+    {{> footer }}
+</body>
+</html>
