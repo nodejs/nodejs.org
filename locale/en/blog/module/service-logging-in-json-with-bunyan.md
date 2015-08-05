@@ -5,7 +5,7 @@ date: 2012-03-28T19:25:26.000Z
 status: publish
 category: module
 slug: service-logging-in-json-with-bunyan
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 <div style="float:right;margin:0 0 15px 15px;">

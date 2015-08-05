@@ -5,7 +5,7 @@ date: 2011-07-11T19:02:45.000Z
 status: publish
 category: Uncategorized
 slug: evolving-the-node-js-brand
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 To echo <a href="http://nodejs.org/">Node</a>’s evolutionary nature, we have refreshed the identity to help mark an exciting time for developers, businesses and users who benefit from the pioneering technology.

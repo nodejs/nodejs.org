@@ -5,7 +5,7 @@ date: 2011-09-23T19:45:50.000Z
 status: publish
 category: Uncategorized
 slug: libuv-status-report
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 We <a href="http://blog.nodejs.org/2011/06/23/porting-node-to-windows-with-microsoft%E2%80%99s-help/">announced</a> back in July that with Microsoft's support Joyent would be porting Node to Windows. This effort is ongoing but I thought it would be nice to make a status report post about the new platform library <code><a href="https://github.com/libuv/libuv">libuv</a></code> which has resulted from porting Node to Windows.

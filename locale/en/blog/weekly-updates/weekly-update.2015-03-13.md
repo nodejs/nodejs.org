@@ -5,7 +5,7 @@ date: 2015-03-13T12:00:00.000Z
 status: publish
 category: weekly
 slug: weekly-update-2015-03-13
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 # io.js 1.5.1 Release

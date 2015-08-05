@@ -5,7 +5,7 @@ date: 2015-05-15T22:50:46.000Z
 status: publish
 category: Community
 slug: the-nodejs-foundation-benefits-all
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 When I joined Joyent last summer I quickly realized that, despite the huge

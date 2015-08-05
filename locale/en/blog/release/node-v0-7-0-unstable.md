@@ -6,7 +6,7 @@ date: 2012-01-17T03:58:28.000Z
 status: publish
 category: release
 slug: node-v0-7-0-unstable
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 <strong>This is the first release in the unstable v0.7 series. Almost all users will want to remain using the stable v0.6 releases.</strong>

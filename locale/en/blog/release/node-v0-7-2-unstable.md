@@ -6,7 +6,7 @@ date: 2012-02-01T21:13:04.000Z
 status: publish
 category: release
 slug: node-v0-7-2-unstable
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 <p>2012.02.01, Version 0.7.2 (unstable)</p>

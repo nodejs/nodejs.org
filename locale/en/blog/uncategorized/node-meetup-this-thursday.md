@@ -5,7 +5,7 @@ date: 2011-08-03T04:37:02.000Z
 status: publish
 category: Uncategorized
 slug: node-meetup-this-thursday
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 <a href="http://nodejs.org/meetup/" title="http://nodejs.org/meetup/ ">http://nodejs.org/meetup/</a>

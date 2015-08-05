@@ -5,7 +5,7 @@ date: 2011-10-25T22:26:23.000Z
 status: publish
 category: Uncategorized
 slug: version-0-6
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 Version 0.6.0 will be released next week. Please spend some time this

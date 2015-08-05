@@ -5,7 +5,7 @@ date: 2011-08-29T15:30:41.000Z
 status: publish
 category: Uncategorized
 slug: some-new-node-projects
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 <ul>

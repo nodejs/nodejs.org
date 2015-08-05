@@ -3,7 +3,7 @@ title: Bert Belder - libuv at LXJS 2012
 slug: bert-belder-libuv-lxjs-2012
 category: video
 date: 2012-09-30T17:28:45.000Z
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 Node core committer Bert Belder gave a talk at

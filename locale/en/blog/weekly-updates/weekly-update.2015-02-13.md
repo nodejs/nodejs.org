@@ -5,7 +5,7 @@ date: 2015-02-13T12:00:00.000Z
 status: publish
 category: weekly
 slug: weekly-update-2015-02-13
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 ## io.js support added by...

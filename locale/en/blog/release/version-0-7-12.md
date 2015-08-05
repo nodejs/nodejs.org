@@ -6,7 +6,7 @@ date: 2012-06-19T23:31:09.000Z
 status: publish
 category: release
 slug: version-0-7-12
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 <p>2012.06.19, Version 0.7.12 (unstable)  </p>

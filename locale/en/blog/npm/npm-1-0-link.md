@@ -5,7 +5,7 @@ date: 2011-04-07T00:40:33.000Z
 status: publish
 category: npm
 slug: npm-1-0-link
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 <p><i>npm 1.0 is in release candidate mode. <a href="http://groups.google.com/group/npm-/browse_thread/thread/43d3e76d71d1f141">Go get it!</a></i></p>

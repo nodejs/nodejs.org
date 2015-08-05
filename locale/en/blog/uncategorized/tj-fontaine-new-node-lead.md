@@ -3,7 +3,7 @@ title: The Next Phase of Node.js
 date: 2014-01-15T17:00:00.000Z
 author: Isaac Z. Schlueter
 slug: the-next-phase-of-node-js
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 Node's growth has continued and accelerated immensely over the last

@@ -5,7 +5,7 @@ date: 2015-05-08T18:00:00.000Z
 status: publish
 category: Community
 slug: transitions
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 In February, we announced the [Node.js

@@ -5,7 +5,7 @@ date: 2014-07-29T21:00:00.000Z
 status: publish
 category: Community
 slug: building-nodejs-together
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 Node.js is reaching more people than ever, it's attracting new and interesting

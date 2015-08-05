@@ -4,7 +4,7 @@ author: Isaac Z. Schlueter
 date: 2012-12-21T00:45:13.000Z
 slug: streams2
 category: feature
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 **tl;dr**

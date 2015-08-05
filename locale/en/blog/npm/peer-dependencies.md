@@ -4,7 +4,7 @@ title: Peer Dependencies
 date: 2013-02-08T00:00:00.000Z
 author: Domenic Denicola
 slug: peer-dependencies
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 <i>Reposted from [Domenic's

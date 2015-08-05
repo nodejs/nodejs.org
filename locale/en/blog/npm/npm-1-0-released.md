@@ -5,7 +5,7 @@ date: 2011-05-01T15:09:45.000Z
 status: publish
 category: npm
 slug: npm-1-0-released
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 <p>npm 1.0 has been released. Here are the highlights:</p>

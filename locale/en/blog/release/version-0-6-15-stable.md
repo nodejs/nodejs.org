@@ -6,7 +6,7 @@ date: 2012-04-09T17:39:18.000Z
 status: publish
 category: release
 slug: version-0-6-15-stable
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 <p>2012.04.09 Version 0.6.15 (stable)

@@ -5,7 +5,7 @@ date: 2014-06-11T16:00:00.000Z
 status: publish
 category: Uncategorized
 slug: notes-from-the-road
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 ## Notes from the Road

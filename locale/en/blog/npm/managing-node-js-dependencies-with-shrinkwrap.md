@@ -5,7 +5,7 @@ date: 2012-02-27T18:51:59.000Z
 status: publish
 category: npm
 slug: managing-node-js-dependencies-with-shrinkwrap
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 <p style="float:right;text-align:center;margin:5px;"><a href="http://www.flickr.com/photos/luc_viatour/4247957432/"><img class="size-medium wp-image-652" style="border:1px #000000 solid;" title="Web" src="http://dtrace.org/blogs/dap/files/2012/02/web-300x300.jpg" alt="" width="250" height="250" /></a><br>

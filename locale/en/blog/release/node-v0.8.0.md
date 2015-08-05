@@ -6,7 +6,7 @@ category: release
 author: Isaac Z. Schlueter
 slug: node-v0-8-0
 status: publish
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 I am thrilled to announce the arrival of a new stable version of

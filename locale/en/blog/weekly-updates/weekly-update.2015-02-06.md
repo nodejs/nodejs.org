@@ -5,7 +5,7 @@ date: 2015-02-06T12:00:00.000Z
 status: publish
 category: weekly
 slug: weekly-update-2015-02-06
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 Every Friday we're going to start posting weekly updates of the activity in and around the project. I'll kick off a new issue each week and we can comment and collaboratively edit it before publication.

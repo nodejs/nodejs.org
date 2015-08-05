@@ -5,7 +5,7 @@ date: 2015-05-15T23:50:46.000Z
 status: publish
 category: Community
 slug: node-leaders-are-building-an-open-foundation
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 Just a couple months ago a variety of members of the Node.js and io.js

@@ -6,7 +6,7 @@ date: 2011-12-04T08:59:57.000Z
 status: publish
 category: release
 slug: node-v0-6-5
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 2011.12.04, Version 0.6.5 (stable)

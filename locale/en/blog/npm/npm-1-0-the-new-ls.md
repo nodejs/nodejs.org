@@ -5,7 +5,7 @@ date: 2011-03-18T06:22:17.000Z
 status: publish
 category: npm
 slug: npm-1-0-the-new-ls
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 <p><em>This is the first in a series of hopefully more than 1 posts, each detailing some aspect of npm 1.0.</em></p>

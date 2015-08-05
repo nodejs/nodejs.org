@@ -5,7 +5,7 @@ date: 2011-03-24T04:42:47.000Z
 status: publish
 category: Uncategorized
 slug: office-hours
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 Starting next Thursday Isaac, Tom, and I will be holding weekly office hours at <a href="http://maps.google.com/maps?q=345+California+St,+San+Francisco,+CA+94104&amp;layer=c&amp;sll=37.793040,-122.400491&amp;cbp=13,178.31,,0,-60.77&amp;cbll=37.793131,-122.400484&amp;hl=en&amp;sspn=0.006295,0.006295&amp;ie=UTF8&amp;hq=&amp;hnear=345+California+St,+San+Francisco,+California+94104&amp;ll=37.793131,-122.400484&amp;spn=0.001295,0.003428&amp;z=19&amp;panoid=h0dlz3VG-hMKlzOu0LxMIg">Joyent HQ</a> in San Francisco. Office hours are meant to be subdued working time - there are no talks and no alcohol. Bring your bugs or just come and hack with us.

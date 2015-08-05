@@ -5,7 +5,7 @@ date: 2015-05-08T18:00:00.000Z
 status: publish
 category: Community
 slug: next-chapter
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 Open source projects are about the software, the users, and the community. Since

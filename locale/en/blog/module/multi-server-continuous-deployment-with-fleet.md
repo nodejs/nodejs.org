@@ -5,7 +5,7 @@ date: 2012-05-02T18:00:00.000Z
 status: publish
 category: module
 slug: multi-server-continuous-deployment-with-fleet
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 <p><img style="float:right;margin-left:1.2em;" alt="substack" src="http://substack.net/images/substackistan.png"><i>This is a guest post by James "SubStack" Halliday, originally posted <a href="http://substack.net/posts/16a9d8/multi-server-continuous-deployment-with-fleet">on his blog</a>, and reposted here with permission.</i></p>

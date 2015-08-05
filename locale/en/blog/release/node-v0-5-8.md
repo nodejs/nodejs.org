@@ -6,7 +6,7 @@ date: 2011-09-30T23:47:11.000Z
 status: publish
 category: release
 slug: node-v0-5-8
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 2011.09.30, Version 0.5.8 (unstable)<ul><li>zlib bindings (isaacs)

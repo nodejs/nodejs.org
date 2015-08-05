@@ -5,7 +5,7 @@ date: 2011-03-24T06:07:13.000Z
 status: publish
 category: npm
 slug: npm-1-0-global-vs-local-installation
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 <p><i>npm 1.0 is in release candidate mode.  <a href="http://groups.google.com/group/npm-/browse_thread/thread/43d3e76d71d1f141">Go get it!</a></i></p>

@@ -6,7 +6,7 @@ date: 2012-06-15T19:45:20.000Z
 status: publish
 category: release
 slug: version-0-7-11-unstable
-layout: blog.hbs
+layout: blog-post.hbs
 ---
 
 <p>This is the most stable 0.7 release yet.  Please try it out.
