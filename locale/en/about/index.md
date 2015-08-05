@@ -1,6 +1,7 @@
 ---
 layout: about.hbs
 title: About
+trademark: Trademark
 ---
 # About Node.js&reg;
 

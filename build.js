@@ -24,46 +24,51 @@ const mapHandlebarsPartials = require('./plugins/map-handlebars-partials.js');
 
 function buildlocale (locale) {
   console.time('[metalsmith] build/'+locale+' finished');
-  let metalsmith = Metalsmith(__dirname);
-  metalsmith
-  .metadata({site:require(path.join(__dirname, 'locale', locale, 'site.json'))})
-  .source(path.join(__dirname, 'locale', locale))
-  .use(collections({
-    blog : {
-      pattern: 'blog/**/*.md',
-      sortBy: 'date',
-      reverse: true,
-      refer: false
-    }
-  }))
-  .use(markdown({ langPrefix: 'language-' }))
-  .use(prism())
-  .use(filterStylusPartials())
-  .use(stylus({
-    compress: true,
-    paths:[path.join(__dirname, 'layouts', 'css')],
-    use: [autoprefixer()]
-  }))
-  .use(permalinks())
-  .use(layouts({
-    engine: 'handlebars',
-    partials: mapHandlebarsPartials(metalsmith, 'layouts', 'partials'),
-    helpers: {
-      equals: function (v1, v2, options) {
-        return (v1 === v2) ? options.fn(this) : options.inverse(this);
-      }
-    }
-  }))
-  .use(feed({
-    collection: 'blog',
-    destionation: 'blog.xml'
-  }))
-  .destination(path.join(__dirname, 'build', locale));
+  fs.readFile(path.join(__dirname, 'locale', locale, 'site.json'), function (e, buff) {
+    if (e) throw e
+    let site = JSON.parse(buff.toString())
 
-  metalsmith.build(function (err) {
-    if (err) { throw err; }
-    console.timeEnd('[metalsmith] build/'+locale+' finished');
-  });
+    let metalsmith = Metalsmith(__dirname);
+    metalsmith
+    .metadata({site:site})
+    .source(path.join(__dirname, 'locale', locale))
+    .use(collections({
+      blog : {
+        pattern: 'blog/**/*.md',
+        sortBy: 'date',
+        reverse: true,
+        refer: false
+      }
+    }))
+    .use(markdown({ langPrefix: 'language-' }))
+    .use(prism())
+    .use(filterStylusPartials())
+    .use(stylus({
+      compress: true,
+      paths:[path.join(__dirname, 'layouts', 'css')],
+      use: [autoprefixer()]
+    }))
+    .use(permalinks())
+    .use(layouts({
+      engine: 'handlebars',
+      partials: mapHandlebarsPartials(metalsmith, 'layouts', 'partials'),
+      helpers: {
+        equals: function (v1, v2, options) {
+          return (v1 === v2) ? options.fn(this) : options.inverse(this);
+        }
+      }
+    }))
+    .use(feed({
+      collection: 'blog',
+      destionation: 'blog.xml'
+    }))
+    .destination(path.join(__dirname, 'build', locale));
+
+    metalsmith.build(function (err) {
+      if (err) { throw err; }
+      console.timeEnd('[metalsmith] build/'+locale+' finished');
+    });
+  })
 }
 
 function copystatic () {
@@ -96,7 +101,8 @@ function server () {
   let http = require('http');
   var mount = st({
     path: path.join(__dirname, 'build'),
-    cache: false
+    cache: false,
+    index: 'index.html'
   });
   http.createServer(
     function (req, res) {mount(req, res)}

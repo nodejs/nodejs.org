@@ -5,18 +5,19 @@
         <nav>
             <ul class="list-divider-pipe">
                 <li{{#equals active "home"}} class="active"{{/equals}}>
-                    <a href="{{site.home.link}}">{{site.home.text}}</a>
+                    <a href="/{{site.locale}}/{{site.home.link}}">{{site.home.text}}</a>
                 </li>
-                <li><a href="{{site.download.link}}">{{site.download.text}}</a></li>
-                <li><a href="{{site.resources.link}}">{{site.resources.text}}</a></li>
-                <li><a href="{{site.foundation.link}}">{{site.foundation.text}}</a></li>
-                <li><a href="{{site.community.link}}">{{site.community.text}}</a></li>
+                <li><a href="/{{site.locale}}/{{site.download.link}}">{{site.download.text}}</a></li>
+                <li><a href="/{{site.locale}}/{{site.resources.link}}">{{site.resources.text}}</a></li>
+                <li><a href="/{{site.locale}}/{{site.foundation.link}}">{{site.foundation.text}}</a></li>
+                <li><a href="/{{site.locale}}/{{site.community.link}}">{{site.community.text}}</a></li>
+                <li><a href="/{{site.locale}}/{{site.security.link}}">{{site.security.text}}</a></li>
 
                 <li{{#equals active "about"}} class="active"{{/equals}}>
-                  <a href="{{site.about.link}}">{{site.about.text}}</a>
+                  <a href="/{{site.locale}}/{{site.about.link}}">{{site.about.text}}</a>
                 </li>
                 <li{{#equals active "blog"}} class="active"{{/equals}}>
-                  <a href="{{site.blog.link}}">{{site.blog.text}}</a>
+                  <a href="/{{site.locale}}/{{site.blog.link}}">{{site.blog.text}}</a>
                 </li>
             </ul>
         </nav>
