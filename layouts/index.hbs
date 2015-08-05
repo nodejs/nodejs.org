@@ -9,14 +9,14 @@
         <div class="container">
 
             <h1>{{ title }}</h1>
-            <p>Bringing the converged nodejs.org/iojs.org to the Node Community!</p>
+            <p>{{ description }}</p>
 
             <div class="home-download">
                 <img src="/static/images/logo-hexagon.svg" alt="node.js" class="home-logo">
                 <div class="home-download-details">
                     <p class="home-download-version"><a href="https://iojs.org/dist/v{{ version }}/">Version {{ version }}</a></p>
                     <p class="home-download-list">
-                        Download for <a href="https://iojs.org/dist/v{{ version }}/iojs-v{{ version }}-linux-x64.tar.xz">Linux</a>,
+                        {{download-text}} <a href="https://iojs.org/dist/v{{ version }}/iojs-v{{ version }}-linux-x64.tar.xz">Linux</a>,
                         <a href="https://iojs.org/dist/v{{ version }}/iojs-v{{ version }}-x86.msi">Win32</a>,
                         <a href="https://iojs.org/dist/v{{ version }}/iojs-v{{ version }}-x64.msi">Win64</a>,
                         <a href="https://iojs.org/dist/v{{ version }}/iojs-v{{ version }}.pkg">Mac</a> &amp;
@@ -28,8 +28,8 @@
 
             <div class="home-secondary-links">
                 <p>
-                    <a href="{{ weekly.url }}">Weekly Update – {{ weekly.title }}</a><br>
-                    <small>featuring core and community updates (<a href="https://medium.com/@iojs/latest">News Archive on Medium</a>)</small>
+                    <a href="{{ weekly.url }}">{{ weekly.pre }}{{ weekly.title }}</a><br>
+                    <small>{{ updates.lead }} (<a href="{{ updates.link }}">{{ updates.text }}</a>)</small>
                 </p>
             </div>
 
@@ -48,4 +48,3 @@
     {{> footer }}
 </body>
 </html>
-
