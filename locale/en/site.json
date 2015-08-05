@@ -1,4 +1,11 @@
 { "title"  : "Node.js",
   "author" : "Node.js Foundation",
-  "url"    : "https://new.nodejs.org"
+  "url"    : "https://new.nodejs.org",
+  "home"       : {"link":"/", "text": "Home"},
+  "download"   : {"link":"download/", "text": "Downloads"},
+  "resources"  : {"link":"resources/", "text": "Resources"},
+  "foundation" : {"link":"foundation/", "text": "Foundation"},
+  "community"  : {"link":"community/", "text": "Community"},
+  "about"      : {"link":"about/", "text": "About"},
+  "blog"       : {"link":"blog/", "text": "Blog"}
 }

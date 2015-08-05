@@ -123,7 +123,7 @@ function server () {
 
   function getlocale (p) {
     let pre = path.join(__dirname, 'locale');
-    let locale = p.slice(pre.length+1, p.indexOf('/', pre.length+1));
+    return p.slice(pre.length+1, p.indexOf('/', pre.length+1));
   }
   locales.on('change', function (p) {
     buildlocale(getlocale(p))

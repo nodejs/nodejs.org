@@ -1,23 +1,23 @@
 <header>
-    <div class="linuxfoundation-header">
-        <div class="container">
-            <a class="linuxfoundation-logo" href="http://collabprojects.linuxfoundation.org">Linux Foundation Collaborative Projects</a>
-        </div>
-    </div>
     <div class="container">
 
         <img id="logo" src="/static/images/logo.svg" alt="node.js">
         <nav>
             <ul class="list-divider-pipe">
-                <li{{#equals active "home"}} class="active"{{/equals}}><a href="/">Home</a></li>
-                <li><a href="download/">Downloads</a></li>
-                <li><a href="documentation/">Docs</a></li>
-                <li><a href="contribute/">Contribute</a></li>
-                <li><a href="foundation/">Foundation</a></li>
-                <li><a href="community/">Community</a></li>
-                <li{{#equals active "about"}} class="active"{{/equals}}><a href="about/">About</a></li>
-                <li><a href="http://jobs.nodejs.org">Jobs</a></li>
-                <li{{#equals active "blog"}} class="active"{{/equals}}><a href="blog/">Blog</a></li>
+                <li{{#equals active "home"}} class="active"{{/equals}}>
+                    <a href="{{site.home.link}}">{{site.home.text}}</a>
+                </li>
+                <li><a href="{{site.download.link}}">{{site.download.text}}</a></li>
+                <li><a href="{{site.resources.link}}">{{site.resources.text}}</a></li>
+                <li><a href="{{site.foundation.link}}">{{site.foundation.text}}</a></li>
+                <li><a href="{{site.community.link}}">{{site.community.text}}</a></li>
+
+                <li{{#equals active "about"}} class="active"{{/equals}}>
+                  <a href="{{site.about.link}}">{{site.about.text}}</a>
+                </li>
+                <li{{#equals active "blog"}} class="active"{{/equals}}>
+                  <a href="{{site.blog.link}}">{{site.blog.text}}</a>
+                </li>
             </ul>
         </nav>
 
