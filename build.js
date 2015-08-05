@@ -41,6 +41,7 @@ function buildlocale (locale) {
   .use(filterStylusPartials())
   .use(stylus({
     compress: true,
+    paths:[path.join(__dirname, 'layouts', 'css')],
     use: [autoprefixer()]
   }))
   .use(permalinks())
@@ -67,15 +68,12 @@ function buildlocale (locale) {
 
 function copystatic () {
   console.time('[metalsmith] build/static finished');
-  function transform (read, write) {
-    console.log(read)
-    read.pipe(write)
-  }
-  let opts =  {transform:transform};
-  ncp(path.join(__dirname, 'static'), path.join(__dirname, 'build', 'static'), opts, function (err) {
-    if (err) return console.error(err);
-    console.timeEnd('[metalsmith] build/static finished');
-  });
+  fs.mkdir(path.join(__dirname, 'build', 'static'), function () {
+    ncp(path.join(__dirname, 'static'), path.join(__dirname, 'build', 'static'), function (err) {
+      if (err) return console.error(err);
+      console.timeEnd('[metalsmith] build/static finished');
+    });
+  })
 }
 
 function fullbuild () {
