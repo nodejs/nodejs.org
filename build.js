@@ -60,7 +60,7 @@ function buildlocale (locale) {
     }))
     .use(feed({
       collection: 'blog',
-      destionation: 'blog.xml'
+      destination: 'blog.xml'
     }))
     .destination(path.join(__dirname, 'build', locale));
 
