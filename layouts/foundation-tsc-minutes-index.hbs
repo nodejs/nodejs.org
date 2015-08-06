@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{site.locale}}">
+{{> html-head }}
+
+<body>
+    {{> header active="foundation" }}
+
+    <main>
+        <div class="container">
+
+            <h1>{{ title }}</h1>
+            <ul>
+                {{#each collections.tscMinutes}}
+                    <li>
+                        <a href="/{{../site.locale}}/{{ path }}">{{ title }}</a>
+                    </li>
+                {{/each}}
+            </ul>
+
+        </div>
+    </main>
+
+    {{> footer }}
+</body>
+</html>

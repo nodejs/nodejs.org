@@ -38,6 +38,12 @@ function buildlocale (locale) {
         sortBy: 'date',
         reverse: true,
         refer: false
+      },
+      tscMinutes: {
+        pattern: 'foundation/tsc/minutes/*.md',
+        sortBy: 'date',
+        reverse: true,
+        refer: false
       }
     }))
     .use(markdown({ langPrefix: 'language-' }))
@@ -49,6 +55,16 @@ function buildlocale (locale) {
       use: [autoprefixer()]
     }))
     .use(permalinks())
+    .use(feed({
+      collection: 'blog',
+      destination: 'blog.xml',
+      title: 'Node.js Blog'
+    }))
+    .use(feed({
+      collection: 'tscMinutes',
+      destination: 'tsc-minutes.xml',
+      title: 'Node.js Technical Steering Committee meetings'
+    }))
     .use(layouts({
       engine: 'handlebars',
       partials: mapHandlebarsPartials(metalsmith, 'layouts', 'partials'),
@@ -57,10 +73,6 @@ function buildlocale (locale) {
           return (v1 === v2) ? options.fn(this) : options.inverse(this);
         }
       }
-    }))
-    .use(feed({
-      collection: 'blog',
-      destination: 'blog.xml'
     }))
     .destination(path.join(__dirname, 'build', locale));
 

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{site.locale}}">
+{{> html-head }}
+
+<body>
+    {{> header active="foundation" }}
+
+    <main>
+        <div class="container has-side-nav">
+
+            <aside>
+                <ul>
+                    <li class="active">
+                        <a href="/{{site.locale}}/{{site.foundation.link}}">{{site.foundation.text}}</a>
+                    </li>
+                    <li>
+                        <a href="/{{site.locale}}/{{site.tsc.link}}">{{site.tsc.text}}</a>
+                    </li>
+                </ul>
+            </aside>
+
+            <article>
+                {{{ contents }}}
+            </article>
+
+        </div>
+    </main>
+
+    {{> footer }}
+</body>
+</html>

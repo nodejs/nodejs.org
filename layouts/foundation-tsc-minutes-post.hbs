@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{site.locale}}">
+{{> html-head }}
+
+<body>
+    {{> header active="foundation" }}
+
+    <main>
+        <div class="container">
+
+            <article>
+                <h1>{{title}}</h1>
+
+                {{{ contents }}}
+            </article>
+
+        </div>
+    </main>
+
+    {{> footer }}
+</body>
+</html>
