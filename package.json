@@ -5,6 +5,7 @@
   "homepage": "https://new.nodejs.org",
   "scripts": {
     "build": "./build.js",
+    "gulp": "./node_modules/gulp/bin/gulp.js",
     "serve": "./build.js serve"
   },
   "repository": {
@@ -19,6 +20,7 @@
   "dependencies": {
     "autoprefixer-stylus": "^0.7.1",
     "chokidar": "^1.0.5",
+    "gulp": "^3.9.0",
     "handlebars": "^2.0.0-alpha.2",
     "metalsmith": "^1.0.0",
     "metalsmith-collections": "^0.7.0",
@@ -31,6 +33,7 @@
     "metalsmith-serve": "0.0.3",
     "metalsmith-stylus": "fhemberger/metalsmith-stylus",
     "ncp": "^2.0.0",
+    "require-dir": "^0.3.0",
     "st": "^0.5.5"
   }
 }
