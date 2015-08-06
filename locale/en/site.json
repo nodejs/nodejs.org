@@ -1,15 +1,26 @@
-{ "title"  : "Node.js",
-  "author" : "Node.js Foundation",
-  "url"    : "https://new.nodejs.org/en/",
-  "locale" : "en",
-  "home"       : { "text": "Home" },
-  "about"      : { "link": "about/",           "text": "About" },
-  "download"   : { "link": "download/",        "text": "Downloads" },
-  "resources"  : { "link": "resources/",       "text": "Resources" },
-  "foundation" : { "link": "foundation/",      "text": "Foundation" },
-  "tsc"        : { "link": "foundation/tsc/",  "text": "Technical Steering Committee" },
-  "community"  : { "link": "community/",       "text": "Community" },
-  "trademark"  : { "link": "about/trademark/", "text": "Trademark" },
-  "security"   : { "link": "security/",        "text": "Security" },
-  "blog"       : { "link": "blog/",            "text": "Blog" }
+{
+    "title"  : "Node.js",
+    "author" : "Node.js Foundation",
+    "url"    : "https://new.nodejs.org/en/",
+    "locale" : "en",
+    "home"       : { "text": "Home" },
+    "about"      : { "link": "about/",           "text": "About" },
+    "download"   : { "link": "download/",        "text": "Downloads" },
+    "resources"  : { "link": "resources/",       "text": "Resources" },
+    "foundation" : {
+        "link": "foundation/",
+        "text": "Foundation",
+        "members": {
+            "link": "foundation/members/",
+            "text": "Members"
+        },
+        "tsc": {
+            "link": "foundation/tsc/",
+            "text": "Technical Steering Committee"
+        }
+    },
+    "community"  : { "link": "community/",       "text": "Community" },
+    "trademark"  : { "link": "about/trademark/", "text": "Trademark" },
+    "security"   : { "link": "security/",        "text": "Security" },
+    "blog"       : { "link": "blog/",            "text": "Blog" }
 }
