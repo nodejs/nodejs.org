@@ -7,11 +7,11 @@ header
         overflow visible
 
     li
+        $border-width = 14px
         position relative
         padding-bottom 12px;
 
         &.active:after
-            $border-width = 14px
             top 100%
             left 50%
             border solid rgba(0, 0, 0, 0)
@@ -24,6 +24,9 @@ header
             border-top-color $node-gray
             border-width $border-width
             margin-left -($border-width/2)px
+
+        &.active:first-child:after
+            margin-left -($border-width)px
 
     a,
     a:link,
