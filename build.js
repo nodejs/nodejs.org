@@ -73,11 +73,13 @@ function buildlocale (locale) {
 
 function copystatic () {
   console.time('[metalsmith] build/static finished');
-  fs.mkdir(path.join(__dirname, 'build', 'static'), function () {
-    ncp(path.join(__dirname, 'static'), path.join(__dirname, 'build', 'static'), function (err) {
-      if (err) return console.error(err);
-      console.timeEnd('[metalsmith] build/static finished');
-    });
+  fs.mkdir(path.join(__dirname, 'build'), function() {
+    fs.mkdir(path.join(__dirname, 'build', 'static'), function () {
+      ncp(path.join(__dirname, 'static'), path.join(__dirname, 'build', 'static'), function (err) {
+        if (err) return console.error(err);
+        console.timeEnd('[metalsmith] build/static finished');
+      });
+    })
   })
 }
 
