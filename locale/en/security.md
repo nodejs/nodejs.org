@@ -1,5 +1,5 @@
 ---
-layout: about.hbs
+layout: security.hbs
 title: Security
 ---
 # Security

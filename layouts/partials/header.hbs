@@ -11,8 +11,9 @@
                 <li><a href="/{{site.locale}}/{{site.resources.link}}">{{site.resources.text}}</a></li>
                 <li><a href="/{{site.locale}}/{{site.foundation.link}}">{{site.foundation.text}}</a></li>
                 <li><a href="/{{site.locale}}/{{site.community.link}}">{{site.community.text}}</a></li>
-                <li><a href="/{{site.locale}}/{{site.security.link}}">{{site.security.text}}</a></li>
-
+                <li{{#equals active "security"}} class="active"{{/equals}}>
+                    <a href="/{{site.locale}}/{{site.security.link}}">{{site.security.text}}</a>
+                </li>
                 <li{{#equals active "about"}} class="active"{{/equals}}>
                   <a href="/{{site.locale}}/{{site.about.link}}">{{site.about.text}}</a>
                 </li>
