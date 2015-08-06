@@ -2,13 +2,13 @@
   "author" : "Node.js Foundation",
   "url"    : "https://new.nodejs.org",
   "locale" : "en",
-  "home"       : {"text": "Home"},
-  "download"   : {"link":"download/", "text": "Downloads"},
-  "resources"  : {"link":"resources/", "text": "Resources"},
-  "foundation" : {"link":"foundation/", "text": "Foundation"},
-  "community"  : {"link":"community/", "text": "Community"},
-  "about"      : {"link":"about/", "text": "About"},
-  "security"   : {"link":"security/", "text": "Security"},
-  "blog"       : {"link":"blog/", "text": "Blog"},
-  "trademark"  : {"link":"about/trademark/", "text": "Trademark"}
+  "home"       : { "text": "Home" },
+  "about"      : { "link": "about/",           "text": "About" },
+  "download"   : { "link": "download/",        "text": "Downloads" },
+  "resources"  : { "link": "resources/",       "text": "Resources" },
+  "foundation" : { "link": "foundation/",      "text": "Foundation" },
+  "community"  : { "link": "community/",       "text": "Community" },
+  "trademark"  : { "link": "about/trademark/", "text": "Trademark" },
+  "security"   : { "link": "security/",        "text": "Security" },
+  "blog"       : { "link": "blog/",            "text": "Blog" }
 }
