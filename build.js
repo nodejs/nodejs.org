@@ -24,13 +24,10 @@ const mapHandlebarsPartials = require('./plugins/map-handlebars-partials.js');
 
 function buildlocale (locale) {
   console.time('[metalsmith] build/'+locale+' finished');
-  fs.readFile(path.join(__dirname, 'locale', locale, 'site.json'), function (e, buff) {
-    if (e) throw e
-    let site = JSON.parse(buff.toString())
-
-    let metalsmith = Metalsmith(__dirname);
+    const siteJSON = path.join(__dirname, 'locale', locale, 'site.json');
+    const metalsmith = Metalsmith(__dirname);
     metalsmith
-    .metadata({site:site})
+    .metadata({ site: require(siteJSON) })
     .source(path.join(__dirname, 'locale', locale))
     .use(collections({
       blog : {
@@ -67,6 +64,7 @@ function buildlocale (locale) {
     }))
     .use(layouts({
       engine: 'handlebars',
+      pattern: '**/*.html',
       partials: mapHandlebarsPartials(metalsmith, 'layouts', 'partials'),
       helpers: {
         equals: function (v1, v2, options) {
@@ -80,7 +78,6 @@ function buildlocale (locale) {
       if (err) { throw err; }
       console.timeEnd('[metalsmith] build/'+locale+' finished');
     });
-  })
 }
 
 function copystatic () {
