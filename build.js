@@ -116,7 +116,7 @@ function server () {
   http.createServer(
     function (req, res) { mount(req, res); }
   ).listen(8080,
-    function () { console.log('http://localhost:8080/'); }
+    function () { console.log('http://localhost:8080/en/'); }
   );
 
   /** File Watches for Re-Builds **/
