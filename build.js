@@ -108,9 +108,9 @@ if (process.argv[2] === 'serve') {
 
 function server () {
   /** Static file server **/
-  let st = require('st');
-  let http = require('http');
-  var mount = st({
+  const st = require('st');
+  const http = require('http');
+  const mount = st({
     path: path.join(__dirname, 'build'),
     cache: false,
     index: 'index.html'
@@ -122,8 +122,8 @@ function server () {
   );
 
   /** File Watches for Re-Builds **/
-  let chokidar = require('chokidar');
-  let opts = {
+  const chokidar = require('chokidar');
+  const opts = {
     persistent: true,
     ignoreInitial: true,
     followSymlinks: true,
@@ -134,12 +134,12 @@ function server () {
     ignorePermissionErrors: false,
     atomic: true
   }
-  let locales = chokidar.watch(path.join(__dirname, 'locale'), opts);
-  let layouts = chokidar.watch(path.join(__dirname, 'layouts'), opts);
-  let staticf = chokidar.watch(path.join(__dirname, 'static'), opts);
+  const locales = chokidar.watch(path.join(__dirname, 'locale'), opts);
+  const layouts = chokidar.watch(path.join(__dirname, 'layouts'), opts);
+  const staticf = chokidar.watch(path.join(__dirname, 'static'), opts);
 
   function getlocale (p) {
-    let pre = path.join(__dirname, 'locale');
+    const pre = path.join(__dirname, 'locale');
     return p.slice(pre.length+1, p.indexOf('/', pre.length+1));
   }
   locales.on('change', function (p) {
