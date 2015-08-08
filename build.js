@@ -9,21 +9,19 @@ const feed = require('metalsmith-feed');
 const layouts = require('metalsmith-layouts');
 const markdown = require('metalsmith-markdown');
 const prism = require('metalsmith-prism');
-const serve = require('metalsmith-serve');
 const stylus = require('metalsmith-stylus');
 const permalinks = require('metalsmith-permalinks');
 const path = require('path');
 const fs = require('fs');
 const ncp = require('ncp');
 
-const debug = require('./plugins/debug.js');
 const filterStylusPartials = require('./plugins/filter-stylus-partials.js');
 const mapHandlebarsPartials = require('./plugins/map-handlebars-partials.js');
 
 /** Build **/
 
 function buildlocale (locale) {
-  console.time('[metalsmith] build/'+locale+' finished');
+  console.time('[metalsmith] build/' + locale + ' finished');
     const siteJSON = path.join(__dirname, 'locale', locale, 'site.json');
     const metalsmith = Metalsmith(__dirname);
     metalsmith
@@ -76,34 +74,34 @@ function buildlocale (locale) {
 
     metalsmith.build(function (err) {
       if (err) { throw err; }
-      console.timeEnd('[metalsmith] build/'+locale+' finished');
+      console.timeEnd('[metalsmith] build/' + locale + ' finished');
     });
 }
 
 function copystatic () {
   console.time('[metalsmith] build/static finished');
-  fs.mkdir(path.join(__dirname, 'build'), function() {
+  fs.mkdir(path.join(__dirname, 'build'), function () {
     fs.mkdir(path.join(__dirname, 'build', 'static'), function () {
       ncp(path.join(__dirname, 'static'), path.join(__dirname, 'build', 'static'), function (err) {
-        if (err) return console.error(err);
+        if (err) { return console.error(err); }
         console.timeEnd('[metalsmith] build/static finished');
       });
-    })
-  })
+    });
+  });
 }
 
 function fullbuild () {
-  copystatic()
+  copystatic();
   fs.readdir(path.join(__dirname, 'locale'), function (e, locales) {
     locales.forEach(function (locale) {
-      buildlocale(locale)
-    })
-  })
+      buildlocale(locale);
+    });
+  });
 }
-fullbuild()
+fullbuild();
 
 if (process.argv[2] === 'serve') {
-  server()
+  server();
 }
 
 function server () {
@@ -116,9 +114,9 @@ function server () {
     index: 'index.html'
   });
   http.createServer(
-    function (req, res) {mount(req, res)}
+    function (req, res) { mount(req, res); }
   ).listen(8080,
-    function () {console.log('http://localhost:8080/')}
+    function () { console.log('http://localhost:8080/'); }
   );
 
   /** File Watches for Re-Builds **/
@@ -133,26 +131,26 @@ function server () {
     interval: 100,
     ignorePermissionErrors: false,
     atomic: true
-  }
+  };
   const locales = chokidar.watch(path.join(__dirname, 'locale'), opts);
   const layouts = chokidar.watch(path.join(__dirname, 'layouts'), opts);
   const staticf = chokidar.watch(path.join(__dirname, 'static'), opts);
 
   function getlocale (p) {
     const pre = path.join(__dirname, 'locale');
-    return p.slice(pre.length+1, p.indexOf('/', pre.length+1));
+    return p.slice(pre.length + 1, p.indexOf('/', pre.length + 1));
   }
   locales.on('change', function (p) {
-    buildlocale(getlocale(p))
-  })
+    buildlocale(getlocale(p));
+  });
   locales.on('add', function (p) {
-    buildlocale(getlocale(p))
-    locales.add(p)
-  })
+    buildlocale(getlocale(p));
+    locales.add(p);
+  });
 
-  layouts.on('change', fullbuild)
-  layouts.on('add', function (p) {layouts.add(p); fullbuild()} )
+  layouts.on('change', fullbuild);
+  layouts.on('add', function (p) { layouts.add(p); fullbuild(); });
 
-  staticf.on('change', copystatic)
-  staticf.on('add', function (p) {staticf.add(p); copystatic()})
+  staticf.on('change', copystatic);
+  staticf.on('add', function (p) { staticf.add(p); copystatic(); });
 }

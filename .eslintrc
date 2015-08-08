@@ -11,7 +11,7 @@
     "max-depth": [1, 2],
     "max-nested-callbacks": [2, 3],
     "max-params": [1, 4],
-    "new-cap": false,
+    "new-cap": 0,
     "no-multi-spaces": 0,
     "no-shadow": 0,
     "no-trailing-spaces": 1,
