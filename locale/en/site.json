@@ -7,6 +7,7 @@
     "about"      : { "link": "about/",           "text": "About" },
     "download"   : { "link": "download/",        "text": "Downloads" },
     "resources"  : { "link": "resources/",       "text": "Resources" },
+    "apidocs"    : { "text": "API Docs" },
     "foundation" : {
         "link": "foundation/",
         "text": "Foundation",
