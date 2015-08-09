@@ -22,6 +22,39 @@ const mapHandlebarsPartials = require('./plugins/map-handlebars-partials.js');
 
 /** Build **/
 
+// load template.json for given language, but use default language as fallback
+// for properties which are not present in the given language
+var Handlebars = require('handlebars');
+
+const DEFAULT_LANG = 'en';
+function i18nJSON(lang) {
+  var defaultJSON = require(`./locale/${DEFAULT_LANG}/site.json`);
+  var templateJSON = require(`./locale/${lang}/site.json`);
+  var finalJSON = JSON.parse(JSON.stringify(defaultJSON));
+  var merge = function(targetJSON, customJSON) {
+    Object.keys(customJSON).forEach(function(key) {
+      let value = customJSON[key];
+      if (typeof value === "object") {
+        merge(targetJSON[key], value);
+      } else {
+        targetJSON[key] = value;
+      }
+    });
+  };
+  merge(finalJSON, templateJSON)
+  return finalJSON;
+};
+
+function traverse(obj, str) {
+  return str.split(".").reduce(function(o, x) { return o[x] }, obj);
+}
+
+const source = {
+  project: {
+    versions: require('./source/versions.json')
+  }
+};
+
 function buildlocale (locale) {
   console.time('[metalsmith] build/'+locale+' finished');
   fs.readFile(path.join(__dirname, 'locale', locale, 'site.json'), function (e, buff) {
@@ -30,7 +63,7 @@ function buildlocale (locale) {
 
     let metalsmith = Metalsmith(__dirname);
     metalsmith
-    .metadata({site:site})
+    .metadata({site: site, project: source.project, i18n: i18nJSON(locale)})
     .source(path.join(__dirname, 'locale', locale))
     .use(collections({
       blog : {
@@ -71,6 +104,25 @@ function buildlocale (locale) {
       helpers: {
         equals: function (v1, v2, options) {
           return (v1 === v2) ? options.fn(this) : options.inverse(this);
+        },
+        i18n: function() {
+          var env, key;
+
+          // function(key, env)
+          if (arguments.length === 2) {
+            key = arguments[0];
+            env = arguments[1];
+          }
+          // function(scope, key, env)
+          if (arguments.length === 3) {
+            key = arguments[0] + '.' + arguments[1];
+            env = arguments[2];
+          }
+
+          var data = env.data.root;
+          var result = traverse(data.i18n, key);
+
+          return new Handlebars.SafeString(result);
         }
       }
     }))

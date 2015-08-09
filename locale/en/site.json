@@ -22,5 +22,15 @@
     "community"  : { "link": "community/",       "text": "Community" },
     "trademark"  : { "link": "about/trademark/", "text": "Trademark" },
     "security"   : { "link": "security/",        "text": "Security" },
-    "blog"       : { "link": "blog/",            "text": "Blog" }
+    "blog"       : { "link": "blog/",            "text": "Blog" },
+
+    "releases": {
+      "title": "io.js Release History",
+      "downloads": "Downloads"
+    },
+    "links": {
+      "pages": {
+        "changelog": "Changelog"
+      }
+    }
 }

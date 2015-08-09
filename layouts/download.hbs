@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{site.locale}}">
+{{> html-head }}
+
+<body>
+    {{> header active="download" }}
+
+    <main>
+        <div class="container">
+
+          <h2>io.js</h2>
+          <div class="releaseTable">
+            {{#project.versions}}
+            <div class="releaseTable-release">
+              <div class="releaseTable-versionRow">
+                <h2 class="releaseTable-version">
+                  {{version}}
+                </h2>
+                <time>{{date}}</time>
+              </div>
+              <div class="releaseTable-details">
+                <span>v8 <strong>{{v8}}</strong></span>
+                <span>npm <strong>{{npm}}</strong></span>
+                <span class="releaseTable-spacer"></span>
+                <div class="releaseTable-links">
+                  <a href="http://iojs.org/dist/{{version}}">
+                    {{i18n 'releases.downloads'}}
+                  </a>
+                  <a href="https://github.com/nodejs/io.js/blob/{{version}}/CHANGELOG.md">
+                    {{i18n 'links.pages.changelog'}}
+                  </a>
+                </div>
+              </div>
+            </div>
+            {{/project.versions}}
+          </div>
+
+        </div>
+    </main>
+
+    {{> footer }}
+</body>
+</html>
