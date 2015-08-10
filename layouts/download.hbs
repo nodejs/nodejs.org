@@ -2,39 +2,64 @@
 <html lang="{{site.locale}}">
 {{> html-head }}
 
+<!-- WORK IN PROGRESS!!! -->
+<style>
+section h2 {
+  font-size: 24px;
+  color: #000000;
+  text-transform: none;
+  font-family: Georgia, FreeSerif, Times, serif;
+  background: url(https://nodejs.org/images/community-icons.png) no-repeat;
+  padding-left: 45px;
+  padding-top: 6px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+</style>
+
 <body>
     {{> header active="download" }}
 
     <main>
         <div class="container">
+          <article>
+            <h1>Downloads</h1>
+            <p>{{introduction}}</p>
 
-          <h2>io.js</h2>
-          <div class="releaseTable">
-            {{#project.versions}}
-            <div class="releaseTable-release">
-              <div class="releaseTable-versionRow">
-                <h2 class="releaseTable-version">
-                  {{version}}
-                </h2>
-                <time>{{date}}</time>
-              </div>
-              <div class="releaseTable-details">
-                <span>v8 <strong>{{v8}}</strong></span>
-                <span>npm <strong>{{npm}}</strong></span>
-                <span class="releaseTable-spacer"></span>
-                <div class="releaseTable-links">
-                  <a href="http://iojs.org/dist/{{version}}">
-                    {{i18n 'releases.downloads'}}
-                  </a>
-                  <a href="https://github.com/nodejs/io.js/blob/{{version}}/CHANGELOG.md">
-                    {{i18n 'links.pages.changelog'}}
-                  </a>
+            <section>
+              <h2>io.js</h2>
+              <strong>Current version: {{project.versions.0.version}}</strong>
+              <p>
+                {{iojs.intro}}
+              </p>
+            </section>
+
+            <div class="releaseTable">
+              {{#project.versions}}
+              <div class="releaseTable-release">
+                <div class="releaseTable-versionRow">
+                  <h2 class="releaseTable-version">
+                    {{version}}
+                  </h2>
+                  <time>{{date}}</time>
+                </div>
+                <div class="releaseTable-details">
+                  <span>v8 <strong>{{v8}}</strong></span>
+                  <span>npm <strong>{{npm}}</strong></span>
+                  <span class="releaseTable-spacer"></span>
+                  <div class="releaseTable-links">
+                    <a href="http://iojs.org/dist/{{version}}">
+                      {{i18n 'releases.downloads'}}
+                    </a>
+                    <a href="https://github.com/nodejs/io.js/blob/{{version}}/CHANGELOG.md">
+                      {{i18n 'links.pages.changelog'}}
+                    </a>
+                  </div>
                 </div>
               </div>
+              {{/project.versions}}
             </div>
-            {{/project.versions}}
-          </div>
-
+          </article>
         </div>
     </main>
 
