@@ -48,12 +48,12 @@
     "blog"       : { "link": "blog/",            "text": "Blog" },
 
     "releases": {
-      "title": "io.js Release History",
-      "downloads": "Downloads"
+        "title": "Release History",
+        "downloads": "Downloads"
     },
     "links": {
-      "pages": {
-        "changelog": "Changelog"
-      }
+        "pages": {
+            "changelog": "Changelog"
+        }
     }
 }
