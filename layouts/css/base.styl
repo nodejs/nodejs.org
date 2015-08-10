@@ -1,21 +1,11 @@
-@import 'layout/_variables'
-@import 'layout/_grid'
-// @import 'layout/_sticky-footer'
-@import 'layout/_lists'
-@import 'page-modules/_linuxfoundation'
-@import 'page-modules/_header'
-@import 'page-modules/_footer'
-@import 'page-modules/_home'
-@import 'page-modules/_foundation-members'
-@import 'page-modules/_releases'
-
+@import '_variables'
 
 // header,
 // main,
 // footer
 //     display flex
 
-
+// Base styles
 body
     box-sizing border-box
     font 300 20px/1.5 'Source Sans Pro', Arial, sans-serif
@@ -33,7 +23,6 @@ h5
 
 a,
 a:link,
-a:visited,
 a:active
     color $node-green
     text-decoration none
@@ -62,6 +51,18 @@ pre
 
     code
         color #f0f0f0
+
+// Import specific page sections and layout parts
+// @import 'layout/_sticky-footer'
+@import 'layout/_grid'
+@import 'layout/_lists'
+@import 'page-modules/_linuxfoundation'
+@import 'page-modules/_header'
+@import 'page-modules/_footer'
+@import 'page-modules/_home'
+@import 'page-modules/_foundation-members'
+@import 'page-modules/_releases'
+
 
 .intro
     margin-top 140px
