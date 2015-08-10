@@ -17,7 +17,18 @@
         }
     },
     "download"   : { "link": "download/",        "text": "Downloads" },
-    "resources"  : { "link": "resources/",       "text": "Resources" },
+    "resources"  : {
+        "link": "resources/",
+        "text": "Resources",
+        "es6": {
+            "link": "resources/es6/",
+            "text": "ES6 in Node.js"
+        },
+        "faq": {
+            "link": "resources/faq/",
+            "text": "FAQ"
+        }
+    },
     "apidocs"    : { "text": "API Docs" },
     "foundation" : {
         "link": "foundation/",

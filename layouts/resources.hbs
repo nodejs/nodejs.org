@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{site.locale}}">
+{{> html-head }}
+
+<body>
+    {{> header active="resources" }}
+
+    <main>
+        <div class="container has-side-nav">
+
+            <aside>
+                <ul>
+                    <li class="active">
+                        <a href="/{{site.locale}}/{{site.resources.link}}">{{site.resources.text}}</a>
+                    </li>
+                    <li>
+                        <a href="/{{site.locale}}/{{site.resources.es6.link}}">{{site.resources.es6.text}}</a>
+                    </li>
+                    <li>
+                        <a href="/{{site.locale}}/{{site.resources.faq.link}}">{{site.resources.faq.text}}</a>
+                    </li>
+                </ul>
+            </aside>
+
+            <article>
+                {{{ contents }}}
+            </article>
+
+        </div>
+    </main>
+
+    {{> footer }}
+</body>
+</html>
