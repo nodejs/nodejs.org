@@ -17,19 +17,18 @@
         }
     },
     "download"   : { "link": "download/",        "text": "Downloads" },
-    "resources"  : {
-        "link": "resources/",
-        "text": "Resources",
+    "docs"  : {
+        "link": "docs/",
+        "text": "Docs",
         "es6": {
-            "link": "resources/es6/",
+            "link": "docs/es6/",
             "text": "ES6 in Node.js"
         },
         "faq": {
-            "link": "resources/faq/",
+            "link": "docs/faq/",
             "text": "FAQ"
         }
     },
-    "apidocs"    : { "text": "API Docs" },
     "foundation" : {
         "link": "foundation/",
         "text": "Foundation",
@@ -42,7 +41,7 @@
             "text": "Technical Steering Committee"
         }
     },
-    "community"  : { "link": "community/",       "text": "Community" },
+    "contribute" : { "link": "contribute/",       "text": "Get Involved" },
     "trademark"  : { "link": "about/trademark/", "text": "Trademark" },
     "security"   : { "link": "security/",        "text": "Security" },
     "blog"       : { "link": "blog/",            "text": "Blog" },

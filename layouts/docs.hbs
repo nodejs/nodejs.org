@@ -3,7 +3,7 @@
 {{> html-head }}
 
 <body>
-    {{> header active="resources" }}
+    {{> header active="docs" }}
 
     <main>
         <div class="container has-side-nav">
@@ -11,13 +11,16 @@
             <aside>
                 <ul>
                     <li class="active">
-                        <a href="/{{site.locale}}/{{site.resources.link}}">{{site.resources.text}}</a>
+                        <a href="/{{site.locale}}/{{site.docs.link}}">{{site.docs.text}}</a>
                     </li>
                     <li>
-                        <a href="/{{site.locale}}/{{site.resources.es6.link}}">{{site.resources.es6.text}}</a>
+                        <a href="/{{site.locale}}/{{site.docs.es6.link}}">{{site.docs.es6.text}}</a>
                     </li>
                     <li>
-                        <a href="/{{site.locale}}/{{site.resources.faq.link}}">{{site.resources.faq.text}}</a>
+                        <a href="/{{site.locale}}/{{site.docs.faq.link}}">{{site.docs.faq.text}}</a>
+                    </li>
+                    <li>
+                      <a href="https://iojs.org/api/">API</a>
                     </li>
                 </ul>
             </aside>

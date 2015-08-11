@@ -1,6 +1,6 @@
 ---
 title: ES6
-layout: resources.hbs
+layout: docs.hbs
 ---
 # ES6 on Node.js
 

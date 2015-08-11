@@ -1,6 +1,6 @@
 ---
 title: FAQ
-layout: resources.hbs
+layout: docs.hbs
 ---
 # FAQ
 
