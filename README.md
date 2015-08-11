@@ -1,7 +1,6 @@
 # [new.nodejs.org](https://new.nodejs.org/)
 [![Dependency Status](https://david-dm.org/nodejs/new.nodejs.org.svg)](https://david-dm.org/nodejs/new.nodejs.org)
-
-##### [MIT Licensed](LICENSE)
+[![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ## What is this repo?
 
