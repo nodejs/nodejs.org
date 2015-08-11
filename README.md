@@ -1,4 +1,5 @@
 # [new.nodejs.org](https://new.nodejs.org/)
+[![Dependency Status](https://david-dm.org/nodejs/new.nodejs.org.svg)](https://david-dm.org/nodejs/new.nodejs.org)
 
 ##### [MIT Licensed](LICENSE)
 
