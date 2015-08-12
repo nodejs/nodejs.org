@@ -71,6 +71,13 @@ function buildlocale (locale) {
         reverse: true,
         refer: false
       },
+      lastWeekly: {
+        pattern: 'blog/weekly-updates/*.md',
+        sortBy: 'date',
+        reverse: true,
+        refer: false,
+        limit: 1
+      },
       tscMinutes: {
         pattern: 'foundation/tsc/minutes/*.md',
         sortBy: 'date',
