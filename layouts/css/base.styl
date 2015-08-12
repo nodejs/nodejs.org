@@ -1,17 +1,16 @@
 @import '_variables'
 
-// header,
-// main,
-// footer
-//     display flex
-
 // Base styles
 body
     box-sizing border-box
     font 300 20px/1.5 'Source Sans Pro', Arial, sans-serif
     color #000
-
     margin 0
+
+header,
+main,
+footer
+    display flex
 
 h1,
 h2,
@@ -32,15 +31,15 @@ a:hover
     color #fff
     background-color $node-green
 
+a.imagelink:hover
+    background-color transparent
+
 p
     a
         padding-left 2px
         padding-right 2px
         margin-left -2px
         margin-right -2px
-
-a.imagelink:hover
-    background-color transparent
 
 
 img
@@ -61,7 +60,7 @@ pre
         color #f0f0f0
 
 // Import specific page sections and layout parts
-// @import 'layout/_sticky-footer'
+@import 'layout/_sticky-footer'
 @import 'layout/_grid'
 @import 'layout/_lists'
 @import 'page-modules/_linuxfoundation'
