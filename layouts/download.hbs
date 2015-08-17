@@ -34,31 +34,38 @@ section h2 {
               </p>
             </section>
 
-            <div class="releaseTable">
-              {{#project.versions}}
-              <div class="releaseTable-release">
-                <div class="releaseTable-versionRow">
-                  <h2 class="releaseTable-version">
-                    {{version}}
-                  </h2>
-                  <time>{{date}}</time>
-                </div>
-                <div class="releaseTable-details">
-                  <span>v8 <strong>{{v8}}</strong></span>
-                  <span>npm <strong>{{npm}}</strong></span>
-                  <span class="releaseTable-spacer"></span>
-                  <div class="releaseTable-links">
-                    <a href="http://iojs.org/dist/{{version}}">
-                      {{i18n 'releases.downloads'}}
-                    </a>
-                    <a href="https://github.com/nodejs/io.js/blob/{{version}}/CHANGELOG.md">
-                      {{i18n 'links.pages.changelog'}}
-                    </a>
-                  </div>
-                </div>
-              </div>
-              {{/project.versions}}
-            </div>
+            <section>
+              <h5 class="download-table-previous-releases-header">Previous Releases</h5>
+              <table class="download-table" cellspacing="0" border="0" cellpadding="0">
+                <thead>
+                  <tr>
+                    <td>Version</td>
+                    <td>Date</td>
+                    <td>V8</td>
+                    <td>NPM</td>
+                    <td></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#project.versions}}
+                    <tr>
+                      <td data-label="Version">{{version}}</td>
+                      <td data-label="Date"><time>{{date}}</time></td>
+                      <td data-label="V8">{{v8}}</td>
+                      <td data-label="NPM">{{npm}}</td>
+                      <td class="download-table-last">
+                        <a href="http://iojs.org/dist/{{version}}">
+                          {{i18n 'releases.downloads'}}
+                        </a>
+                        <a href="https://github.com/nodejs/io.js/blob/{{version}}/CHANGELOG.md">
+                          {{i18n 'links.pages.changelog'}}
+                        </a>
+                      </td>
+                    </tr>
+                  {{/project.versions}}
+                </tbody>
+              </table>
+            </section>
           </article>
         </div>
     </main>
