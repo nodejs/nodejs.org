@@ -4,9 +4,9 @@
   "description": "New Nodejs.org website",
   "homepage": "https://new.nodejs.org",
   "scripts": {
-    "build": "./build.js",
-    "gulp": "./node_modules/gulp/bin/gulp.js",
-    "serve": "./build.js serve"
+    "build": "iojs build.js",
+    "gulp": "iojs node_modules/gulp/bin/gulp.js",
+    "serve": "iojs build.js serve"
   },
   "repository": {
     "type": "git",
