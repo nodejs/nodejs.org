@@ -41,7 +41,14 @@
             "text": "Technical Steering Committee"
         }
     },
-    "contribute" : { "link": "contribute/",       "text": "Get Involved" },
+    "contribute"  : {
+        "link": "contribute/",
+        "text": "Get Involved",
+        "development": {
+            "link": "contribute/development/",
+            "text": "Development"
+        }
+    },
     "trademark"  : { "link": "about/trademark/", "text": "Trademark" },
     "security"   : { "link": "security/",        "text": "Security" },
     "blog"       : { "link": "blog/",            "text": "Blog" },
