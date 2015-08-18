@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var github = require('octonode');
 var client = github.client();
@@ -18,7 +18,7 @@ var crypto = require('crypto');
  * - [ ] prepend predictable markdown metadata on download
  */
 
-function checkOrFetchFile(file) {
+function checkOrFetchFile (file) {
   let name = file.name;
   let downloadUrl = file.download_url;
   let sha = file.sha;
@@ -32,11 +32,11 @@ function checkOrFetchFile(file) {
   console.log(`Weekly Update ${name} does not exist. Downloading.`);
 
   var file = fs.createWriteStream(localPath);
-  var request = https.get(downloadUrl, function(response) {
+  var request = https.get(downloadUrl, function (response) {
     response.pipe(file);
   });
 }
 
-evRepo.contents('weekly-updates', function(err, files) {
+evRepo.contents('weekly-updates', function (err, files) {
   files.forEach(checkOrFetchFile);
 })
