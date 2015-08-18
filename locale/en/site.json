@@ -1,23 +1,23 @@
 {
-    "title"  : "Node.js",
-    "author" : "Node.js Foundation",
-    "url"    : "https://new.nodejs.org/en/",
-    "locale" : "en",
-    "home"       : { "text": "Home" },
-    "about"      : {
+    "title": "Node.js",
+    "author": "Node.js Foundation",
+    "url": "https://new.nodejs.org/en/",
+    "locale": "en",
+    "home": { "text": "Home" },
+    "about": {
         "link": "about/",
         "text": "About",
-        "governance" : {
+        "governance": {
             "link": "about/governance/",
             "text": "Governance"
         },
-        "workinggroups" : {
+        "workinggroups": {
             "link": "about/working-groups/",
             "text": "Working Groups"
         }
     },
-    "download"   : { "link": "download/",        "text": "Downloads" },
-    "docs"  : {
+    "download": { "link": "download/", "text": "Downloads" },
+    "docs": {
         "link": "docs/",
         "text": "Docs",
         "es6": {
@@ -27,9 +27,13 @@
         "faq": {
             "link": "docs/faq/",
             "text": "FAQ"
+        },
+        "api": {
+            "link": "https://iojs.org/api/",
+            "text": "API"
         }
     },
-    "foundation" : {
+    "foundation": {
         "link": "foundation/",
         "text": "Foundation",
         "members": {
@@ -41,7 +45,7 @@
             "text": "Technical Steering Committee"
         }
     },
-    "contribute"  : {
+    "contribute": {
         "link": "contribute/",
         "text": "Get Involved",
         "development": {
