@@ -6,7 +6,8 @@
   "scripts": {
     "build": "iojs build.js",
     "gulp": "iojs node_modules/gulp/bin/gulp.js",
-    "serve": "iojs build.js serve"
+    "serve": "iojs build.js serve",
+    "lint": "eslint scripts build.js plugins"
   },
   "repository": {
     "type": "git",
@@ -36,5 +37,9 @@
     "octonode": "^0.7.1",
     "require-dir": "^0.3.0",
     "st": "^0.5.5"
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.0.10",
+    "eslint": "^1.1.0"
   }
 }
