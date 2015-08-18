@@ -25,26 +25,26 @@ const mapHandlebarsPartials = require('./plugins/map-handlebars-partials.js');
 var Handlebars = require('handlebars');
 
 const DEFAULT_LANG = 'en';
-function i18nJSON(lang) {
+function i18nJSON (lang) {
   var defaultJSON = require(`./locale/${DEFAULT_LANG}/site.json`);
   var templateJSON = require(`./locale/${lang}/site.json`);
   var finalJSON = JSON.parse(JSON.stringify(defaultJSON));
-  var merge = function(targetJSON, customJSON) {
-    Object.keys(customJSON).forEach(function(key) {
+  var merge = function (targetJSON, customJSON) {
+    Object.keys(customJSON).forEach(function (key) {
       let value = customJSON[key];
-      if (typeof value === "object") {
+      if (typeof value === 'object') {
         merge(targetJSON[key], value);
       } else {
         targetJSON[key] = value;
       }
     });
   };
-  merge(finalJSON, templateJSON)
+  merge(finalJSON, templateJSON);
   return finalJSON;
-};
+}
 
-function traverse(obj, str) {
-  return str.split(".").reduce(function(o, x) { return o[x] }, obj);
+function traverse (obj, str) {
+  return str.split('.').reduce(function (o, x) { return o[x]; }, obj);
 }
 
 const source = {
@@ -112,7 +112,7 @@ function buildlocale (locale) {
         equals: function (v1, v2, options) {
           return (v1 === v2) ? options.fn(this) : options.inverse(this);
         },
-        i18n: function() {
+        i18n: function () {
           var env, key;
 
           // function(key, env)
