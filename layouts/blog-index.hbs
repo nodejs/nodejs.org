@@ -7,16 +7,30 @@
 
     <main>
         <div class="container">
-
-            <ul>
-                {{#each collections.blog}}
-                    {{#if title}}
-                        <li>
-                            <a href="/{{../../site.locale}}/{{ path }}">{{ title }}</a>
-                        </li>
-                    {{/if}}
-                {{/each}}
-            </ul>
+            
+            <article>
+                {{#with collections.blog.[0]}}
+                    <h3 class="blog-title"><a href="/{{../site.locale}}/{{path}}">{{title}}</a></h3>
+                    <div class="blog-blurb">
+                        {{{ contents }}}
+                    </div>
+                    <p class="blog-ellipses">...</p>
+                    <a href="/{{../site.locale}}/{{path}}">Read the full post</a>
+                {{/with}}                        
+            </article>
+                
+            <article>
+                <h5 class="header-label">Previous Posts</h5>
+                <ul class="blog-list">
+                    {{#each collections.blog}}
+                        {{#if title}}
+                            <li class="blog-list-item">
+                                <a href="/{{../../site.locale}}/{{path}}">{{title}}</a><br />
+                            </li>
+                        {{/if}}
+                    {{/each}}
+                </ul>           
+            </article>
 
         </div>
     </main>
