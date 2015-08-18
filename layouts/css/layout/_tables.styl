@@ -1,10 +1,11 @@
-h5.download-table-previous-releases-header
+h5.table-header
     margin-bottom 5px
 
-.download-table
+.table
     width 100%
     font-size small
-    border 1px solid #C0C0C0
+    border 1px solid $border
+    border-spacing 0
     
     td
         padding 5px
@@ -14,29 +15,27 @@ h5.download-table-previous-releases-header
         
     > tbody
         td
-            border-top 1px solid #C0C0C0
+            border-top 1px solid $border
         
         tr:nth-child(odd)
-            background-color #eee
+            background-color $odd
         
         tr:nth-child(even)
-            background-color #fff
+            background-color $even
 
-td.download-table-last
+td.table-last
     text-align right
     
     > a
         padding 0 10px
     
-@media (max-width: 700px)
-    .download-table
-        border 0
-        
+@media (max-width: 768px)
+    .table        
         > thead
             display none
         
         tr
-            margin-bottom 10px
+            margin-bottom 0
             display block
         
         td
@@ -51,17 +50,8 @@ td.download-table-last
             float left 
             font-weight bold
             
-        > thead > tr > th, 
-        > tbody > tr > th, 
-        > tfoot > tr > th, 
-        > thead > tr > td, 
-        > tbody > tr > td, 
-        > tfoot > tr > td, 
-        > tbody td
-            border none
-            
-    .download-table > tbody td
+    .table > tbody td
         border none
-        
-    td.download-table-last
+
+    td.table-last
         text-align center
