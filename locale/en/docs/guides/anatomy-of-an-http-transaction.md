@@ -397,7 +397,7 @@ http.createServer(function(request, response) {
 }).listen(8080);
 ```
 
-We've covered most of the basics of handling HTTP requests. At
+We've now covered most of the basics of handling HTTP requests. At
 this point, you should be able to:
 
 * Instantiate an HTTP server with a request handler function, and have it listen
