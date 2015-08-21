@@ -15,8 +15,9 @@ const path = require('path');
 const fs = require('fs');
 const ncp = require('ncp');
 
-const filterStylusPartials = require('./plugins/filter-stylus-partials.js');
-const mapHandlebarsPartials = require('./plugins/map-handlebars-partials.js');
+const filterStylusPartials = require('./plugins/filter-stylus-partials');
+const mapHandlebarsPartials = require('./plugins/map-handlebars-partials');
+const versions = require('./source/versions');
 
 /** Build **/
 
@@ -49,7 +50,8 @@ function traverse (obj, str) {
 
 const source = {
   project: {
-    versions: require('./source/versions.json')
+    versions,
+    currentVersion: versions[0].version
   }
 };
 
