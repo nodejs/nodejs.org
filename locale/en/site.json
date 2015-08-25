@@ -5,27 +5,27 @@
     "locale": "en",
     "home": { "text": "Home" },
     "about": {
-        "link": "about/",
+        "link": "about",
         "text": "About",
         "governance": {
-            "link": "about/governance/",
+            "link": "about/governance",
             "text": "Governance"
         },
         "workinggroups": {
-            "link": "about/working-groups/",
+            "link": "about/working-groups",
             "text": "Working Groups"
         }
     },
-    "download": { "link": "download/", "text": "Downloads" },
+    "download": { "link": "download", "text": "Downloads" },
     "docs": {
-        "link": "docs/",
+        "link": "docs",
         "text": "Docs",
         "es6": {
-            "link": "docs/es6/",
+            "link": "docs/es6",
             "text": "ES6 in Node.js"
         },
         "faq": {
-            "link": "docs/faq/",
+            "link": "docs/faq",
             "text": "FAQ"
         },
         "api": {
@@ -34,28 +34,28 @@
         }
     },
     "foundation": {
-        "link": "foundation/",
+        "link": "foundation",
         "text": "Foundation",
         "members": {
-            "link": "foundation/members/",
+            "link": "foundation/members",
             "text": "Members"
         },
         "tsc": {
-            "link": "foundation/tsc/",
+            "link": "foundation/tsc",
             "text": "Technical Steering Committee"
         }
     },
     "contribute": {
-        "link": "contribute/",
+        "link": "contribute",
         "text": "Get Involved",
         "development": {
-            "link": "contribute/development/",
+            "link": "contribute/development",
             "text": "Development"
         }
     },
-    "trademark"  : { "link": "about/trademark/", "text": "Trademark" },
-    "security"   : { "link": "security/",        "text": "Security" },
-    "blog"       : { "link": "blog/",            "text": "Blog" },
+    "trademark"  : { "link": "about/trademark", "text": "Trademark" },
+    "security"   : { "link": "security",        "text": "Security" },
+    "blog"       : { "link": "blog",            "text": "Blog" },
 
     "releases": {
         "title": "Release History",
