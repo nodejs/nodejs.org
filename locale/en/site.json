@@ -55,7 +55,7 @@
     },
     "trademark"  : { "link": "about/trademark", "text": "Trademark" },
     "security"   : { "link": "security",        "text": "Security" },
-    "blog"       : { "link": "blog",            "text": "Blog" },
+    "blog"       : { "link": "blog",            "text": "News" },
 
     "releases": {
         "title": "Release History",
