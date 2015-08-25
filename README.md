@@ -10,6 +10,8 @@ On a technical level inspiration will be taken from the `iojs.org` repo while de
 
 This repo's issues section will also become the primary home for the Website WG's coordination efforts (meeting planning, minute approval, etc.)
 
+Targeted launch is late August / early September. [Tracked here](https://github.com/nodejs/build/issues/163).
+
 ## Contributing
 
 Please contribute! There's [plenty to do](https://github.com/nodejs/new.nodejs.org/issues/20).
