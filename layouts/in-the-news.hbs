@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="{{site.locale}}">
+{{> html-head }}
+
+<body>
+    {{> header active="foundation" }}
+
+    <main>
+        <div class="container has-side-nav">
+
+            <aside>
+                <ul>
+                    <li{{#equals path site.foundation.link}} class="active"{{/equals}}>
+                        <a href="/{{site.locale}}/{{site.foundation.link}}">{{site.foundation.text}}</a>
+                    </li>
+                    <li{{#equals path site.foundation.members.link}} class="active"{{/equals}}>
+                        <a href="/{{site.locale}}/{{site.foundation.members.link}}">{{site.foundation.members.text}}</a>
+                    </li>
+                    <li{{#equals path site.foundation.tsc.link}} class="active"{{/equals}}>
+                        <a href="/{{site.locale}}/{{site.foundation.tsc.link}}">{{site.foundation.tsc.text}}</a>
+                    </li>
+                    <li{{#equals path site.foundation.itn.link}} class="active"{{/equals}}>
+                        <a href="/{{site.locale}}/{{site.foundation.itn.link}}">{{site.foundation.itn.text}}</a>
+                    </li>
+                </ul>
+            </aside>
+
+            {{{ contents }}}
+
+            <style>
+            div#news-container {
+              margin-top:50px;
+            }
+            div.news-row: {
+              padding: 5px 5px 5px 5px;
+            }
+            </style>
+            <div id="news-container">
+            </div>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.2/tabletop.min.js"></script>
+            <script type="text/javascript">
+              var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1jSxgB5MYd1xCOmhb5QZ90PbDiY57n4z4A0lcdQD-UG8/pubhtml';
+              window.onload = function () {
+                Tabletop.init( { key: public_spreadsheet_url,
+                                 callback: showInfo,
+                                 simpleSheet: true } )
+
+                function showInfo(data, tabletop) {
+                  console.log(data);
+                  var html = '<div id="news-list">'
+                  data.forEach(function (row) {
+                    html += '<div class="news-row"><a href="'+row.Link+'">'+row.Title+'</a></div>'
+                  })
+                  html += '</div>'
+                  document.getElementById('news-container').innerHTML = html
+                }
+              }
+            </script>
+
+        </div>
+    </main>
+
+    {{> footer }}
+</body>
+</html>

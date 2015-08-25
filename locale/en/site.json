@@ -43,6 +43,10 @@
         "tsc": {
             "link": "foundation/tsc",
             "text": "Technical Steering Committee"
+        },
+        "itn": {
+             "link": "foundation/in-the-news",
+             "text": "In the News"
         }
     },
     "contribute": {
