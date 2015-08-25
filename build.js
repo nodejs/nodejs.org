@@ -95,7 +95,9 @@ function buildlocale (locale) {
       paths:[path.join(__dirname, 'layouts', 'css')],
       use: [autoprefixer()]
     }))
-    .use(permalinks())
+    .use(permalinks({
+      relative: false
+    }))
     .use(feed({
       collection: 'blog',
       destination: 'blog.xml',
