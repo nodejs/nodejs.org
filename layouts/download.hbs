@@ -24,11 +24,83 @@ section h2 {
         <div class="container">
           <article>
             <h1>Downloads</h1>
-            <p>{{introduction}}</p>
+
+            <section>
+              <p>{{introduction}}</p>
+
+              <div class="download-hero full-width">
+                <ul>
+                  <li>
+                    <a href="https://iojs.org/dist/{{project.currentVersion}}/iojs-{{project.currentVersion}}-x86.msi">
+                      <img src="/static/images/platform-icon-win.png" height="50" width="45" alt="">
+                      Windows Installer
+                      <small>iojs-{{project.currentVersion}}-x86.msi</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://iojs.org/dist/{{project.currentVersion}}/iojs-{{project.currentVersion}}.pkg">
+                      <img src="/static/images/platform-icon-osx.png" height="50" width="45" alt="">
+                      Macintosh Installer
+                      <small>iojs-{{project.currentVersion}}.pkg</small>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://iojs.org/dist/{{project.currentVersion}}/iojs-{{project.currentVersion}}.tar.gz">
+                      <img src="/static/images/platform-icon-generic.png" height="50" width="45" alt="">
+                      Source Code
+                      <small>iojs-{{project.currentVersion}}.tar.gz</small>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <table class="download-matrix full-width">
+                <tbody>
+                  <tr>
+                    <th>Windows Installer (.msi)</th>
+                    <td><a href="https://iojs.org/dist/{{project.currentVersion}}/iojs-{{project.currentVersion}}-x86.msi">32-bit</a></td>
+                    <td><a href="https://iojs.org/dist/{{project.currentVersion}}/x64/iojs-{{project.currentVersion}}-x64.msi">64-bit</a></td>
+                  </tr>
+
+                  <tr>
+                    <th>Windows Binary (.exe)</th>
+                    <td><a href="https://iojs.org/dist/{{project.currentVersion}}/win-x86/iojs.exe">32-bit</a></td>
+                    <td><a href="https://iojs.org/dist/{{project.currentVersion}}/win-x64/iojs.exe">64-bit</a></td>
+                  </tr>
+
+                  <tr>
+                    <th>Mac OS X Installer (.pkg)</th>
+                    <td colspan="2"><a href="https://iojs.org/dist/{{project.currentVersion}}/iojs-{{project.currentVersion}}.pkg">Universal</a></td>
+                  </tr>
+
+                  <tr>
+                    <th>Mac OS X Binaries (.tar.gz)</th>
+                    <td colspan="2"><a href="https://iojs.org/dist/{{project.currentVersion}}/iojs-{{project.currentVersion}}-darwin-x64.tar.gz">64-bit</a></td>
+                  </tr>
+
+                  <tr>
+                    <th>Linux Binaries (.tar.gz)</th>
+                    <td><a href="https://iojs.org/dist/{{project.currentVersion}}/iojs-{{project.currentVersion}}-linux-x86.tar.gz">32-bit</a></td>
+                    <td><a href="https://iojs.org/dist/{{project.currentVersion}}/iojs-{{project.currentVersion}}-linux-x64.tar.gz">64-bit</a></td>
+                  </tr>
+
+                  <tr>
+                    <th>Source Code</th>
+                    <td colspan="2">
+                      <a href="https://iojs.org/dist/{{project.currentVersion}}/iojs-{{project.currentVersion}}.tar.gz">iojs-{{project.currentVersion}}.tar.gz</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p>
+                {{current-version}}: <strong>{{project.currentVersion}}</strong>
+              </p>
+              <p>{{build-disclaimer}}</p>
+            </section>
 
             <section>
               <h2>io.js</h2>
-              <strong>{{current-version}}: {{project.currentVersion}}</strong>
               <p>
                 {{iojs.intro}}
               </p>
@@ -36,7 +108,7 @@ section h2 {
 
             <section>
               <h5 class="download-table-previous-releases-header">Previous Releases</h5>
-              <table class="download-table" cellspacing="0" border="0" cellpadding="0">
+              <table class="download-table full-width" cellspacing="0" border="0" cellpadding="0">
                 <thead>
                   <tr>
                     <td>Version</td>
