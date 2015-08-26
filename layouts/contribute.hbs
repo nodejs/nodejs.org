@@ -10,10 +10,10 @@
 
             <aside>
                 <ul>
-                    <li class="active">
+                    <li{{#equals path site.contribute.link}} class="active"{{/equals}}>
                         <a href="/{{site.locale}}/{{site.contribute.link}}">{{site.contribute.text}}</a>
                     </li>
-                    <li>
+                    <li{{#equals path site.contribute.development.link}} class="active"{{/equals}}>
                         <a href="/{{site.locale}}/{{site.contribute.development.link}}">{{site.contribute.development.text}}</a>
                     </li>
                 </ul>

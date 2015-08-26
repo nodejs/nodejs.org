@@ -10,6 +10,8 @@ On a technical level inspiration will be taken from the `iojs.org` repo while de
 
 This repo's issues section will also become the primary home for the Website WG's coordination efforts (meeting planning, minute approval, etc.)
 
+Targeted launch is late August / early September. [Tracked here](https://github.com/nodejs/build/issues/163).
+
 ## Contributing
 
 Please contribute! There's [plenty to do](https://github.com/nodejs/new.nodejs.org/issues/20).
@@ -49,6 +51,7 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 - Tierney Coren: @bnb, [@bitandbang](https://twitter.com/bitandbang), `bitnb``@``subvertising.org`
 - Trent Oswald: @therebelrobot, [@therebelrobot](https://twitter.com/therebelrobot), `trentoswald``@``therebelrobot.com`
 - Jeremiah Senkpiel: @fishrock123, [@fishrock123](https://twitter.com/fishrock123), `fishrock123``@``rocketmail.com`
+- Mikeal Rogers: @mikeal, [@mikeal](https://twitter.com/mikeal), `mikeal.rogers``@``gmail.com`
 
 ### Website Project Contributors
 

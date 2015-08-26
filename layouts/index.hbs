@@ -14,13 +14,13 @@
             <div class="home-download">
                 <img src="/static/images/logo-hexagon.svg" alt="node.js" class="home-logo">
                 <div class="home-download-details">
-                    <p class="home-download-version"><a href="https://iojs.org/dist/v{{ version }}/">Version {{ version }}</a></p>
+                    <p class="home-download-version"><a href="https://iojs.org/dist/{{ project.currentVersion }}/">Version {{ project.currentVersion }}</a></p>
                     <p class="home-download-list">
-                        {{download-text}} <a href="https://iojs.org/dist/v{{ version }}/iojs-v{{ version }}-linux-x64.tar.xz">Linux</a>,
-                        <a href="https://iojs.org/dist/v{{ version }}/iojs-v{{ version }}-x86.msi">Win32</a>,
-                        <a href="https://iojs.org/dist/v{{ version }}/iojs-v{{ version }}-x64.msi">Win64</a>,
-                        <a href="https://iojs.org/dist/v{{ version }}/iojs-v{{ version }}.pkg">Mac</a> &amp;
-                        <a href="https://iojs.org/dist/v{{ version }}/">Others</a>
+                        {{download-text}} <a href="https://iojs.org/dist/{{ project.currentVersion }}/iojs-{{ project.currentVersion }}-linux-x64.tar.xz">Linux</a>,
+                        <a href="https://iojs.org/dist/{{ project.currentVersion }}/iojs-{{ project.currentVersion }}-x86.msi">Win32</a>,
+                        <a href="https://iojs.org/dist/{{ project.currentVersion }}/iojs-{{ project.currentVersion }}-x64.msi">Win64</a>,
+                        <a href="https://iojs.org/dist/{{ project.currentVersion }}/iojs-{{ project.currentVersion }}.pkg">Mac</a> &amp;
+                        <a href="https://iojs.org/dist/{{ project.currentVersion }}/">Others</a>
                     </p>
                     <p><a href="https://github.com/nodejs/io.js/blob/master/CHANGELOG.md">Changelog</a></p>
                 </div>
