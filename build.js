@@ -17,7 +17,7 @@ const ncp = require('ncp');
 
 const filterStylusPartials = require('./plugins/filter-stylus-partials');
 const mapHandlebarsPartials = require('./plugins/map-handlebars-partials');
-const versions = require('./source/versions');
+const versions = require('./source/unified-versions');
 
 /** Build **/
 
@@ -49,12 +49,17 @@ function traverse (obj, str) {
 }
 
 const source = {
-    project: {
-        versions,
-        currentVersion: versions[0].version
+    projects: {
+        iojs: {
+            versions: versions.iojs,
+            currentVersion: versions.iojs[0].version
+        },
+        nodejs: {
+            versions: versions.nodejs,
+            currentVersion: versions.nodejs[0].version
+        }
     }
 };
-
 
 function buildlocale (locale) {
     console.time('[metalsmith] build/' + locale + ' finished');
@@ -63,7 +68,7 @@ function buildlocale (locale) {
     metalsmith
     .metadata({
         site: require(siteJSON),
-        project: source.project,
+        projects: source.projects,
         i18n: i18nJSON(locale)
     })
     .source(path.join(__dirname, 'locale', locale))

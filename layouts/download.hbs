@@ -31,24 +31,24 @@ section h2 {
               <div class="download-hero full-width">
                 <ul class="no-padding">
                   <li>
-                    <a href="https://iojs.org/dist/{{project.currentVersion}}/iojs-{{project.currentVersion}}-x86.msi">
+                    <a href="https://iojs.org/dist/{{projects.iojs.currentVersion}}/iojs-{{projects.iojs.currentVersion}}-x86.msi">
                       <img src="/static/images/platform-icon-win.png" height="50" width="45" alt="">
                       Windows Installer
-                      <p class="small color-lightgray pad-bottom-small">iojs-{{project.currentVersion}}-x86.msi</p>
+                      <p class="small color-lightgray pad-bottom-small">iojs-{{projects.iojs.currentVersion}}-x86.msi</p>
                     </a>
                   </li>
                   <li>
-                    <a href="https://iojs.org/dist/{{project.currentVersion}}/iojs-{{project.currentVersion}}.pkg">
+                    <a href="https://iojs.org/dist/{{projects.iojs.currentVersion}}/iojs-{{projects.iojs.currentVersion}}.pkg">
                       <img src="/static/images/platform-icon-osx.png" height="50" width="45" alt="">
                       Macintosh Installer
-                      <p class="small color-lightgray pad-bottom-small">iojs-{{project.currentVersion}}.pkg</p>
+                      <p class="small color-lightgray pad-bottom-small">iojs-{{projects.iojs.currentVersion}}.pkg</p>
                     </a>
                   </li>
                   <li>
-                    <a href="https://iojs.org/dist/{{project.currentVersion}}/iojs-{{project.currentVersion}}.tar.gz">
+                    <a href="https://iojs.org/dist/{{projects.iojs.currentVersion}}/iojs-{{projects.iojs.currentVersion}}.tar.gz">
                       <img src="/static/images/platform-icon-generic.png" height="50" width="45" alt="">
                       Source Code
-                      <p class="small color-lightgray pad-bottom-small">iojs-{{project.currentVersion}}.tar.gz</p>
+                      <p class="small color-lightgray pad-bottom-small">iojs-{{projects.iojs.currentVersion}}.tar.gz</p>
                     </a>
                   </li>
                 </ul>
@@ -58,43 +58,43 @@ section h2 {
                 <tbody>
                   <tr>
                     <th>Windows Installer (.msi)</th>
-                    <td><a href="https://iojs.org/dist/{{project.currentVersion}}/iojs-{{project.currentVersion}}-x86.msi">32-bit</a></td>
-                    <td><a href="https://iojs.org/dist/{{project.currentVersion}}/x64/iojs-{{project.currentVersion}}-x64.msi">64-bit</a></td>
+                    <td><a href="https://iojs.org/dist/{{projects.iojs.currentVersion}}/iojs-{{projects.iojs.currentVersion}}-x86.msi">32-bit</a></td>
+                    <td><a href="https://iojs.org/dist/{{projects.iojs.currentVersion}}/x64/iojs-{{projects.iojs.currentVersion}}-x64.msi">64-bit</a></td>
                   </tr>
 
                   <tr>
                     <th>Windows Binary (.exe)</th>
-                    <td><a href="https://iojs.org/dist/{{project.currentVersion}}/win-x86/iojs.exe">32-bit</a></td>
-                    <td><a href="https://iojs.org/dist/{{project.currentVersion}}/win-x64/iojs.exe">64-bit</a></td>
+                    <td><a href="https://iojs.org/dist/{{projects.iojs.currentVersion}}/win-x86/iojs.exe">32-bit</a></td>
+                    <td><a href="https://iojs.org/dist/{{projects.iojs.currentVersion}}/win-x64/iojs.exe">64-bit</a></td>
                   </tr>
 
                   <tr>
                     <th>Mac OS X Installer (.pkg)</th>
-                    <td colspan="2"><a href="https://iojs.org/dist/{{project.currentVersion}}/iojs-{{project.currentVersion}}.pkg">Universal</a></td>
+                    <td colspan="2"><a href="https://iojs.org/dist/{{projects.iojs.currentVersion}}/iojs-{{projects.iojs.currentVersion}}.pkg">Universal</a></td>
                   </tr>
 
                   <tr>
                     <th>Mac OS X Binaries (.tar.gz)</th>
-                    <td colspan="2"><a href="https://iojs.org/dist/{{project.currentVersion}}/iojs-{{project.currentVersion}}-darwin-x64.tar.gz">64-bit</a></td>
+                    <td colspan="2"><a href="https://iojs.org/dist/{{projects.iojs.currentVersion}}/iojs-{{projects.iojs.currentVersion}}-darwin-x64.tar.gz">64-bit</a></td>
                   </tr>
 
                   <tr>
                     <th>Linux Binaries (.tar.gz)</th>
-                    <td><a href="https://iojs.org/dist/{{project.currentVersion}}/iojs-{{project.currentVersion}}-linux-x86.tar.gz">32-bit</a></td>
-                    <td><a href="https://iojs.org/dist/{{project.currentVersion}}/iojs-{{project.currentVersion}}-linux-x64.tar.gz">64-bit</a></td>
+                    <td><a href="https://iojs.org/dist/{{projects.iojs.currentVersion}}/iojs-{{projects.iojs.currentVersion}}-linux-x86.tar.gz">32-bit</a></td>
+                    <td><a href="https://iojs.org/dist/{{projects.iojs.currentVersion}}/iojs-{{projects.iojs.currentVersion}}-linux-x64.tar.gz">64-bit</a></td>
                   </tr>
 
                   <tr>
                     <th>Source Code</th>
                     <td colspan="2">
-                      <a href="https://iojs.org/dist/{{project.currentVersion}}/iojs-{{project.currentVersion}}.tar.gz">iojs-{{project.currentVersion}}.tar.gz</a>
+                      <a href="https://iojs.org/dist/{{projects.iojs.currentVersion}}/iojs-{{projects.iojs.currentVersion}}.tar.gz">iojs-{{projects.iojs.currentVersion}}.tar.gz</a>
                     </td>
                   </tr>
                 </tbody>
               </table>
 
               <p>
-                {{current-version}}: <strong>{{project.currentVersion}}</strong>
+                {{current-version}}: <strong>{{projects.iojs.currentVersion}}</strong>
               </p>
               <p>{{build-disclaimer}}</p>
             </section>
@@ -119,7 +119,7 @@ section h2 {
                   </tr>
                 </thead>
                 <tbody>
-                  {{#project.versions}}
+                  {{#projects.iojs.versions}}
                     <tr>
                       <td data-label="Version">{{version}}</td>
                       <td data-label="Date"><time>{{date}}</time></td>
@@ -134,7 +134,7 @@ section h2 {
                         </a>
                       </td>
                     </tr>
-                  {{/project.versions}}
+                  {{/projects.iojs.versions}}
                 </tbody>
               </table>
             </section>
