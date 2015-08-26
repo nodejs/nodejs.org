@@ -19,6 +19,8 @@ h4,
 h5
     font-weight normal
 
+ul
+    padding 0
 
 a,
 a:link,
@@ -36,10 +38,7 @@ a.imagelink:hover
 
 p
     a
-        padding-left 2px
-        padding-right 2px
-        margin-left -2px
-        margin-right -2px
+        padded-link(2px)
 
 
 img
@@ -58,6 +57,9 @@ pre
 
     code
         color #f0f0f0
+
+small
+    font-size 10px
 
 // Import specific page sections and layout parts
 @import 'layout/_grid'
@@ -104,8 +106,18 @@ pre
         li
             padding 0.1em 0.5em
 
+        a
+            display block
+            padded-link(10px)
+
         .active
-            background-color #D9EBB3
+            a,
+            a:hover
+                color $node-gray
+                background-color #D9EBB3
 
     article
         margin-left 200px
+
+.full-width
+    width 100%
