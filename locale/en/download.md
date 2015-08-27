@@ -5,6 +5,5 @@ introduction: Download the Node.js source code or a pre-built installer for your
 current-version: Current version
 build-disclaimer: "Note: Python 2.6 or 2.7 is required to build from source tarballs."
 iojs:
-  intro: "In May 2015, the io.js project TSC voted to join the Node.js Foundation and merge back with Node.js.
-          While the project streams are being converged, io.js releases will continue in parallel."
+  intro: "Releases 1.x through 3.x were called \"io.js\" as they were part of the io.js fork. As of node.js 4.0.0 the former release lines of io.js converged with node.js 0.12.x into unified node.js releases."
 ---
