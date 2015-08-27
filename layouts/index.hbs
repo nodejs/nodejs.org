@@ -8,40 +8,115 @@
     <main>
         <div class="container">
 
-            <h1>{{ title }}</h1>
-            <p>{{ description }}</p>
+            <style>
+            #intro {
+              padding-top: 30px;
+              width: 100%;
+              margin: 0 auto;
+              text-align: center;
+              color: #5E5E5E;
+              font-weight: 350;
+            }
+            #intro p a, #intro p a:visited {
+              font-weight:400;
+            }
 
-            <div class="home-download">
-                <img src="/static/images/logo-hexagon.svg" alt="node.js" class="home-logo">
-                <div class="home-download-details">
-                    <p class="home-download-version"><a href="https://iojs.org/dist/{{ project.currentVersion }}/">Version {{ project.currentVersion }}</a></p>
-                    <p class="home-download-list">
-                        {{download-text}} <a href="https://iojs.org/dist/{{ project.currentVersion }}/iojs-{{ project.currentVersion }}-linux-x64.tar.xz">Linux</a>,
-                        <a href="https://iojs.org/dist/{{ project.currentVersion }}/iojs-{{ project.currentVersion }}-x86.msi">Win32</a>,
-                        <a href="https://iojs.org/dist/{{ project.currentVersion }}/iojs-{{ project.currentVersion }}-x64.msi">Win64</a>,
-                        <a href="https://iojs.org/dist/{{ project.currentVersion }}/iojs-{{ project.currentVersion }}.pkg">Mac</a> &amp;
-                        <a href="https://iojs.org/dist/{{ project.currentVersion }}/">Others</a>
-                    </p>
-                    <p><a href="https://github.com/nodejs/io.js/blob/master/CHANGELOG.md">Changelog</a></p>
-                </div>
-            </div>
+            #intro p {
+              color: #5E5E5E;
+              width: 755px;
+              padding-top: 30px;
+              margin: 0 auto;
+            }
 
-            <div class="home-secondary-links">
-                <p>
-                    <a href="{{ collections.lastWeekly.0.path }}">{{ collections.lastWeekly.0.title }}</a><br>
-                    <small>{{ updates.lead }} (<a href="{{ updates.link }}">{{ updates.text }}</a>)</small>
-                </p>
-            </div>
+            #intro p.version {
+              padding-top: 10px;
+              font-size: 16px;
+              color: #666666;
+            }
 
-            <div class="home-secondary-links">
-                <p>
-                    <a href="https://iojs.org/download/nightly/">Nightly releases</a> are available for testing,<br>
-                    also <a href="https://iojs.org/download/next-nightly/">nightlies for the next major version</a> of io.js.
-                </p>
-                <p><a href="./faq.html">Frequently Asked Questions</a></p>
-            </div>
+            #intro p.version-banner {
+              color: #fff;
+              font-size: 130%;
+              background-color: rgba(153, 153, 153, 0.7);
+              padding: 5px 15px;
+              border-radius: 2px;
+              margin-top: 1em;
+            }
 
-            {{{ contents }}}
+            #intro .buttons {
+              height: auto;
+              overflow: hidden;
+              _zoom: 1;
+              width: 300px;
+              margin: 0 auto;
+            }
+
+            #intro .button {
+              font-family: "din-condensed-web","Arial Narrow",Arial,sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              text-transform: uppercase;
+              font-size: 16px;
+              line-height: 18px;
+              -webkit-border-radius: 2px;
+              -moz-border-radius: 2px;
+              border-radius: 2px;
+
+              -webkit-transition: .2s all ease-in-out;
+              -moz-transition: .2s all ease-in-out;
+              transition: .2s all ease-in-out;
+
+              margin: 10px 4px;
+              display: inline-block;
+              color: white;
+              background-color: rgba(153,153,153,.7);
+              width: 106px;
+              padding-top: 5px;
+              padding-bottom: 3px;
+            }
+
+            #intro .button:hover {
+              text-decoration: none;
+              background-color: rgba(153,153,153,1);
+            }
+
+            #intro #docsbutton {
+              clear: left;
+            }
+
+            #intro .downloadbutton {
+              background-color: #80bd01;
+              width: 220px;
+              font-size: 30px;
+              display: block;
+              margin: 30px auto 0px auto;
+              font-family: "din-condensed-web","Arial Narrow",Arial,sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              text-transform: uppercase;
+              padding-top: 12px;
+              padding-bottom: 10px;
+            }
+
+            #intro .downloadbutton:hover {
+              background-color: #73a53e;
+            }
+            </style>
+
+            <div id="intro">
+
+              {{{ contents }}}
+
+              <p class="version">Current Version: {{ project.currentVersion }}</p>
+
+              <div class="buttons">
+              <a href="https://nodejs.org/dist/{{ project.currentVersion }}/node-{{ project.currentVersion }}.pkg" class="button downloadbutton" id="downloadbutton">INSTALL</a>
+
+              <a href="download/" class="button" id="all-dl-options">Downloads</a><a href="api/" class="button" id="docsbutton">API Docs</a>
+              </div>
+
+          </div>
+
         </div>
     </main>
 
