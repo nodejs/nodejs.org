@@ -13,3 +13,15 @@
         </div>
     </div>
 </footer>
+
+<a href="#" id="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+  $scrollToTop = document.getElementById('scrollToTop');
+  window.onscroll = function(e) {
+    $scrollToTop.style.display = (e.pageY > window.innerHeight) ? 'block' : 'none';
+  };
+  $scrollToTop.onclick = function(e) {
+    window.scrollTo(0, 0);
+    return false;
+  };
+</script>
