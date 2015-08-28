@@ -1,16 +1,3 @@
-<button id="scrollToTop">&uarr;</button>
-
-<script type="text/javascript">
-    var $scrollToTop = document.getElementById('scrollToTop');
-    $scrollToTop.innerHTML = window.innerWidth > 400 ? 'Scroll To Top' : '&uarr;';
-    window.onscroll = function() {
-        $scrollToTop.style.display = (window.pageYOffset > window.innerHeight) ? 'block' : 'none';
-    };
-    $scrollToTop.onclick = function() {
-        window.scrollTo(0, 0);
-    };
-</script>
-
 <footer role="contentinfo">
 
     <div class="linuxfoundation-footer">
@@ -26,3 +13,15 @@
         </div>
     </div>
 </footer>
+
+<a href="#" id="scrollToTop">Scroll To Top</a>
+<script type="text/javascript">
+  $scrollToTop = document.getElementById('scrollToTop');
+  window.onscroll = function(e) {
+    $scrollToTop.style.display = (e.pageY > window.innerHeight) ? 'block' : 'none';
+  };
+  $scrollToTop.onclick = function(e) {
+    window.scrollTo(0, 0);
+    return false;
+  };
+</script>
