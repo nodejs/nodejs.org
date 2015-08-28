@@ -51,10 +51,13 @@ function traverse (obj, str) {
 const source = {
     project: {
         versions,
-        currentVersion: versions[0].version
+        currentVersion: versions[0].version,
+        banner: {
+            visible: false,
+            content: 'Important <a href="#">security release</a>, please update now!'
+        }
     }
 };
-
 
 function buildlocale (locale) {
     console.time('[metalsmith] build/' + locale + ' finished');
