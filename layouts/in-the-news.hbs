@@ -46,7 +46,7 @@
                                  simpleSheet: true } )
 
                 function showInfo(data, tabletop) {
-                  console.log(data);
+                  data.reverse()
                   var html = '<div id="news-list">'
                   data.forEach(function (row) {
                     html += '<div class="news-row"><a href="'+row.Link+'">'+row.Title+'</a></div>'

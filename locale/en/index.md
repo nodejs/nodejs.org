@@ -1,10 +1,8 @@
 ---
-title: new.nodejs.org
 layout: index.hbs
-download-text: 'Download for'
-description: Bringing the converged nodejs.org/iojs.org to the Node Community!
-updates:
-    lead: featuring core and community updates
-    link: https://medium.com/@iojs/latest
-    text: News Archive on Medium
 ---
+
+Node.js® is a JavaScript built on [Chrome's V8 runtime](http://code.google.com/p/v8/). Node.js
+uses an event-driven, non-blocking I/O model that makes it
+lightweight and efficient. Node.js' package ecosystem, [npm](https://www.npmjs.com/), is the largest ecosystem of open
+source libraries in the world.
