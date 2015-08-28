@@ -3,10 +3,19 @@ html
     scroll-behavior smooth
 
 #scrollToTop
-    display none
+    font inherit
+    font-size 1rem
+    color $node-gray
+    background-color #eee
+    border 1px solid #ddd
+    border-radius 2px
+    cursor pointer
     position fixed
     bottom 10%
-    right 5%
-    color $node-gray
-    background-color #D9EBB3
-
+    right 0
+    min-width 20px
+    text-align center
+    padding 0 5px
+    @media (max-width: 600px)
+        span
+            display none
