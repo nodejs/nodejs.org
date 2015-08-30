@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="{{site.locale}}">
+{{> html-head }}
+
+<body>
+    {{> header }}
+
+    <main>
+        <div class="container">
+            <article>
+                <h1>Previous Releases</h1>
+
+                <section>
+                    <h2 class="download-headline-icon">io.js & node.js</h2>
+                    <p>
+                        {{iojs.intro}}
+                    </p>
+                </section>
+
+                <section>
+                    <table class="download-table full-width" cellspacing="0" border="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <td>Version</td>
+                                <td>Date</td>
+                                <td>V8</td>
+                                <td>NPM</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#project.versions}}
+                                <tr>
+                                    <td data-label="Version">{{version}}</td>
+                                    <td data-label="Date"><time>{{date}}</time></td>
+                                    <td data-label="V8">{{v8}}</td>
+                                    <td data-label="NPM">{{npm}}</td>
+                                    <td class="download-table-last">
+                                        <a href="/dist/{{version}}">
+                                            {{i18n 'releases.downloads'}}
+                                        </a>
+                                        <a href="{{changeloglink version}}">
+                                            {{i18n 'links.pages.changelog'}}
+                                        </a>
+                                    </td>
+                                </tr>
+                            {{/project.versions}}
+                        </tbody>
+                    </table>
+                </section>
+            </article>
+
+        </div>
+    </main>
+
+    {{> footer }}
+</body>
+</html>

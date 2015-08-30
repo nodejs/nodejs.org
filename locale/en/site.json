@@ -16,7 +16,14 @@
             "text": "Working Groups"
         }
     },
-    "download": { "link": "download", "text": "Downloads" },
+    "download": {
+        "link": "download",
+        "text": "Downloads",
+        "releases": {
+            "link": "download/releases",
+            "text": "Previous Releases"
+        }
+    },
     "docs": {
         "link": "docs",
         "text": "Docs",

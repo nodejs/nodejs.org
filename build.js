@@ -14,6 +14,7 @@ const permalinks = require('metalsmith-permalinks');
 const path = require('path');
 const fs = require('fs');
 const ncp = require('ncp');
+const semver = require('semver');
 
 const filterStylusPartials = require('./plugins/filter-stylus-partials');
 const mapHandlebarsPartials = require('./plugins/map-handlebars-partials');
@@ -138,6 +139,14 @@ function buildlocale (locale) {
                 var result = traverse(data.i18n, key);
 
                 return new Handlebars.SafeString(result);
+            },
+            changeloglink: function (version) {
+
+                if (!version) { return ''; }
+
+                return semver.gte(version, '1.0.0') ?
+                    `https://github.com/nodejs/io.js/blob/${version}/CHANGELOG.md` :
+                    `https://github.com/joyent/node/blob/${version}/ChangeLog`;
             }
         }
     }))
