@@ -40,6 +40,7 @@
     "ncp": "^2.0.0",
     "octonode": "^0.7.1",
     "require-dir": "^0.3.0",
+    "semver": "^5.0.1",
     "st": "^0.5.5"
   },
   "devDependencies": {
