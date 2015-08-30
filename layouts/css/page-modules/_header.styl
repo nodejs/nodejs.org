@@ -28,23 +28,28 @@ header
         &.active:first-child:after
             margin-left -($border-width)px
 
-    a,
-    a:link,
-    a:active
-        padding 0 8px
-        text-transform uppercase
-        font-size 14px
-        // the header css apparently disobeys cascading rules, so, !important.
-        color #ccc !important
+    nav
+        a,
+        a:link,
+        a:active
+            padding 0 8px
+            text-transform uppercase
+            font-size 14px
+            color #ccc
 
-    a:hover
+        a:hover
+            background-color transparent
+            text-decoration underline
+
+#logo
+    display block
+    width 9em
+    margin .5em auto 1em auto
+    border none
+
+    &:hover
         background-color transparent
         text-decoration underline
 
-#logo
-    width 182px
-    margin 30px auto
-    border none
-
-#logo img
-    width 182px
+    img
+        display block
