@@ -107,12 +107,19 @@
 
               {{{ contents }}}
 
-              <p class="version">Current Version: {{ project.currentVersion }}</p>
+              {{#if project.banner.visible}}
+                  <p class="version version-banner">
+                      Current Version: {{ project.currentVersion }}<br>
+                      {{{project.banner.content}}}
+                  </p>
+              {{else}}
+                  <p class="version">Current Version: {{ project.currentVersion }}</p>
+              {{/if}}
 
               <div class="buttons">
               <a href="https://nodejs.org/dist/{{ project.currentVersion }}/node-{{ project.currentVersion }}.pkg" class="button downloadbutton" id="downloadbutton">INSTALL</a>
 
-              <a href="download/" class="button" id="all-dl-options">Downloads</a><a href="api/" class="button" id="docsbutton">API Docs</a>
+              <a href="/{{site.locale}}/download/" class="button" id="all-dl-options">Downloads</a><a href="https://iojs.org/api/" class="button" id="docsbutton">API Docs</a>
               </div>
 
           </div>
