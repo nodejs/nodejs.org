@@ -18,15 +18,15 @@ layout: blog-post.hbs
 
 <p>To get the new version, run this command:</p>
 
-<pre style="background:#333;color:#ccc;overflow:auto;padding:2px;"><code>curl http://npmjs.org/install.sh | sh </code></pre>
+<pre style="background:#333;color:#ccc;overflow:auto;padding:2px;"><code>curl https://npmjs.com/install.sh | sh </code></pre>
 
 <p>This will prompt to ask you if it&#8217;s ok to remove all the old 0.x cruft. If you want to not be asked, then do this:</p>
 
-<pre style="background:#333;color:#ccc;overflow:auto;padding:2px;"><code>curl http://npmjs.org/install.sh | clean=yes sh </code></pre>
+<pre style="background:#333;color:#ccc;overflow:auto;padding:2px;"><code>curl https://npmjs.com/install.sh | clean=yes sh </code></pre>
 
 <p>Or, if you want to not do the cleanup, and leave the old stuff behind, then do this:</p>
 
-<pre style="background:#333;color:#ccc;overflow:auto;padding:2px;"><code>curl http://npmjs.org/install.sh | clean=no sh </code></pre>
+<pre style="background:#333;color:#ccc;overflow:auto;padding:2px;"><code>curl https://npmjs.com/install.sh | clean=no sh </code></pre>
 
 <p>A lot of people in the node community were brave testers and helped make this release a lot better (and swifter) than it would have otherwise been. Thanks :)</p>
 

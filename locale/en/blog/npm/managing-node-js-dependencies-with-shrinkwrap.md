@@ -11,7 +11,7 @@ layout: blog-post.hbs
 <p style="float:right;text-align:center;margin:5px;"><a href="http://www.flickr.com/photos/luc_viatour/4247957432/"><img class="size-medium wp-image-652" style="border:1px #000000 solid;" title="Web" src="http://dtrace.org/blogs/dap/files/2012/02/web-300x300.jpg" alt="" width="250" height="250" /></a><br>
 Photo by Luc Viatour (flickr)</p>
 
-<p>Managing dependencies is a fundamental problem in building complex software. The terrific success of github and <a href="http://npmjs.org/">npm</a> have made code reuse especially easy in the Node world, where packages don&#039;t exist in isolation but rather as nodes in a large graph. The software is constantly changing (releasing new versions), and each package has its own constraints about what other packages it requires to run (dependencies). npm keeps track of these constraints, and authors express what kind of changes are compatible using <a href="http://npmjs.org/doc/semver.html">semantic versioning</a>, allowing authors to specify that their package will work with even future versions of its dependencies as long as the semantic versions are assigned properly.
+<p>Managing dependencies is a fundamental problem in building complex software. The terrific success of github and <a href="https://npmjs.com/">npm</a> have made code reuse especially easy in the Node world, where packages don&#039;t exist in isolation but rather as nodes in a large graph. The software is constantly changing (releasing new versions), and each package has its own constraints about what other packages it requires to run (dependencies). npm keeps track of these constraints, and authors express what kind of changes are compatible using <a href="https://npmjs.com/doc/semver.html">semantic versioning</a>, allowing authors to specify that their package will work with even future versions of its dependencies as long as the semantic versions are assigned properly.
 
 </p>
 <p>This does mean that when you &quot;npm install&quot; a package with dependencies, there&#039;s no guarantee that you&#039;ll get the same set of code now that you would have gotten an hour ago, or that you would get if you were to run it again an hour later. You may get a bunch of bug fixes now that weren&#039;t available an hour ago. This is great during development, where you want to keep up with changes upstream. It&#039;s not necessarily what you want for deployment, though, where you want to validate whatever bits you&#039;re actually shipping.
@@ -24,7 +24,7 @@ Photo by Luc Viatour (flickr)</p>
 
 </p>
 <h2>Shrinkwrapping packages</h2>
-<p>That brings us to <a href="http://npmjs.org/doc/shrinkwrap.html">npm shrinkwrap</a><a href="#note1-note" name="note1-top">[1]</a>:
+<p>That brings us to <a href="https://npmjs.com/doc/shrinkwrap.html">npm shrinkwrap</a><a href="#note1-note" name="note1-top">[1]</a>:
 
 </p>
 <pre><code>NAME
@@ -122,10 +122,10 @@ DESCRIPTION
 <li>Validate that the package works as expected with the new dependencies.</li>
 <li>Run &quot;npm shrinkwrap&quot;, commit the new npm-shrinkwrap.json, and publish your package.</li>
 </ol>
-<p>You can still use <a href="http://npmjs.org/doc/outdated.html">npm outdated(1)</a> to view which dependencies have newer versions available.
+<p>You can still use <a href="https://npmjs.com/doc/outdated.html">npm outdated(1)</a> to view which dependencies have newer versions available.
 
 </p>
-<p>For more details, check out the full docs on <a href="http://npmjs.org/doc/shrinkwrap.html">npm shrinkwrap</a>, from which much of the above is taken.
+<p>For more details, check out the full docs on <a href="https://npmjs.com/doc/shrinkwrap.html">npm shrinkwrap</a>, from which much of the above is taken.
 
 </p>
 <h2>Why not just check <code>node_modules</code> into git?</h2>

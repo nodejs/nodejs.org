@@ -8,8 +8,8 @@ layout: contribute.hbs
 The Node.js community is large, inclusive, and excited to enable as many users
 to contribute in whatever what they can. If you want to [report an
 issue](https://github.com/nodejs/node/issues), [help with
-documentation](/en/contribute/) or [contribute to the code
-base](/en/contribute/development/) of the project, you’ve come to the
+documentation](/en/get-involved/contribute/) or [contribute to the code
+base](/en/get-involved/development/) of the project, you’ve come to the
 right place. Explore our community resources to find out how you can help:
 
 <hr>

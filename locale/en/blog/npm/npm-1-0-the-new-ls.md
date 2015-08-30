@@ -69,7 +69,7 @@ npm@1.0.0
 │ /Users/isaacs/dev-src/js/npm
 │ A package manager for node
 │ git://github.com/isaacs/npm.git
-│ http://npmjs.org/
+│ https://npmjs.com/
 ├── semver@1.0.1 
 │   ./node_modules/semver
 │   The semantic version parser used by npm.

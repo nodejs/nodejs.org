@@ -14,7 +14,7 @@ critical to the ongoing maintenance and evolution of the project and a long
 term commitment to driving the project and community forward.
 
 You can read more about how to become a collaborator and a TSC member in [the
-contributing section](/contribute/).
+contributing section](/en/get-involved/contribute/).
 
 ### Current collaborators
 

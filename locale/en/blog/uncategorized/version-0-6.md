@@ -22,5 +22,5 @@ minutes. Don't fear.
 Once you've ported your code to v0.5.10 please help out by testing
 third party modules. Make bug reports. Encourage authors to publish
 new versions of their modules. Go through the list of modules at <a
-href="http://npmjs.org/">http://npmjs.org/</a> and try out random
+href="https://npmjs.com/">npmjs.com</a> and try out random
 ones. This is especially encouraged of Windows users!

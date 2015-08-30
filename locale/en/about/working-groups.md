@@ -163,12 +163,12 @@ content.
 The roadmap working group is responsible for user community outreach
 and the translation of their concerns into a plan of action.
 
-The final [ROADMAP](./ROADMAP.md) document is still owned by the TC and requires the same approval for changes as any other project asset.
+The final [ROADMAP](https://github.com/nodejs/node/blob/master/ROADMAP.md) document is still owned by the TC and requires the same approval for changes as any other project asset.
 
 Their responsibilities are:
 * Attract and summarize user community needs and feedback.
 * Find or potentially create tools that allow for broader participation.
-* Create Pull Requests for relevant changes to [Roadmap.md](./ROADMAP.md)
+* Create Pull Requests for relevant changes to [Roadmap.md](https://github.com/nodejs/node/blob/master/ROADMAP.md)
 
 
 ### [Docker](https://github.com/nodejs/docker-iojs)
@@ -252,7 +252,7 @@ The WG has final authority over this project including:
 * Maintaining the list of additional Collaborators
 
 For the current list of WG members, see the project
-[README.md](./README.md#current-project-team-members).
+[README.md](https://github.com/nodejs/node/blob/master/README.md#current-project-team-members).
 
 ### Collaborators
 
@@ -282,7 +282,7 @@ request or issue. The WG should serve as the final arbiter where
 required.
 
 For the current list of Collaborators, see the project
-[README.md](./README.md#current-project-team-members).
+[README.md](https://github.com/nodejs/node/blob/master/README.md#current-project-team-members).
 
 ### WG Membership
 

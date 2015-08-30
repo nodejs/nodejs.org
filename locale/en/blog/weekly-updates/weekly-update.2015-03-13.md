@@ -28,7 +28,7 @@ On Monday, March 9th, [@rvagg](https://github.com/rvagg) released io.js [v1.5.1]
 
 # Community Updates
 
-* [Tony Pujals] (https://twitter.com/subfuzion) gave [the io.js roadmap presentation](http://roadmap.iojs.org/) to [BayNode](http://www.meetup.com/BayNode/events/220246228/). The video was posted to [vimeo](https://vimeo.com/121707989) on March 9. Slides are available for anyone to give at their [local meetup](ron.buell@rd.io).
+* [Tony Pujals](https://twitter.com/subfuzion) gave [the io.js roadmap presentation](http://roadmap.iojs.org/) to [BayNode](http://www.meetup.com/BayNode/events/220246228/). The video was posted to [vimeo](https://vimeo.com/121707989) on March 9. Slides are available for anyone to give at their [local meetup](mailto:ron.buell@rd.io).
 * [Johan Bergström](https://github.com/jbergstroem) is working on getting a patch into [V8](https://codereview.chromium.org/990063002) on behalf of io.js to bring Solaris support back into the latest version
 * [NodeUp Episode 84](http://nodeup.com/eightyfour) it's io.js update #1 with [Mikeal Rogers](https://github.com/mikeal), [Trevor Norris](https://github.com/trevnorris) and [Bradley Meck](https://github.com/bmeck)
 * [Mikeal Rogers](https://github.com/mikeal) was interviewed for [Descriptive](http://descriptive.audio) podcast on an episoded called [We've Never Had This Many Active Contributors to Core Before](http://descriptive.audio/episodes/12)

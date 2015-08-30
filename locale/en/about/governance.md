@@ -24,7 +24,7 @@ experience with the management of the project. Membership is
 expected to evolve over time according to the needs of the project.
 
 For the current list of TC members, see the project
-[README.md](./README.md#current-project-team-members).
+[README.md](https://github.com/nodejs/node/blob/master/README.md#current-project-team-members).
 
 ## Collaborators
 
@@ -60,10 +60,10 @@ request or issue. The TC should serve as the final arbiter where
 required.
 
 For the current list of Collaborators, see the project
-[README.md](./README.md#current-project-team-members).
+[README.md](https://github.com/nodejs/node/blob/master/README.md#current-project-team-members).
 
 A guide for Collaborators is maintained in
-[COLLABORATOR_GUIDE.md](./COLLABORATOR_GUIDE.md).
+[COLLABORATOR_GUIDE.md](https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md).
 
 ## TC Membership
 
