@@ -49,11 +49,15 @@
              "text": "In the News"
         }
     },
-    "contribute": {
-        "link": "contribute",
+    "getinvolved": {
+        "link": "get-involved",
         "text": "Get Involved",
+        "contribute": {
+            "link": "get-involved/contribute",
+            "text": "Contribute"
+        },
         "development": {
-            "link": "contribute/development",
+            "link": "get-involved/development",
             "text": "Development"
         }
     },
