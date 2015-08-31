@@ -2,10 +2,6 @@
     <meta charset="utf-8">
     <title>{{#if title}}{{ title }} | {{/if}}{{ site.title }}</title>
 
-    <link rel="dns-prefetch" href="http://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="http://fonts.gstatic.com">
-    <link rel="dns-prefetch" href="http://www.google-analytics.com">
-
     <meta name="author" content="{{ site.author }}">
     <meta name="robots" content="{{#if robots}}{{ robots }}{{else}}index, follow{{/if}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,4 +25,24 @@
         ga('create', 'UA-67020396-1', 'auto');
         ga('send', 'pageview');
     </script>
+    <script type="text/javascript">
+      var addStyle = (function(d) {
+        return function(style) {
+          if(!d.querySelector('#fontcache')) {
+            var c = d.createElement('style'), sc = d.getElementsByTagName("script")[0];
+            c.innerHTML = style;
+            c.id = 'fontcache';
+            sc.parentNode.insertBefore(c,sc);
+          }
+        }
+      })(document);
+      (function(d,w,s) {
+        if('querySelector' in d && 'localStorage' in w && s.getItem('fonts_css_cache') !== null) {
+          addStyle(s.fonts_css_cache);
+        }
+      })(document, window, window.localStorage);
+    </script>
+    <noscript>
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600,600italic,700,700italic">
+    </noscript>
 </head>
