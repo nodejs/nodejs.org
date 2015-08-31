@@ -6,7 +6,7 @@ layout: docs.hbs
 
 Node.js is built against modern versions of [V8](https://code.google.com/p/v8/). By keeping up-to-date with the latest releases of this engine we ensure new features from the [JavaScript ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm) are brought to Node.js developers in a timely manner, as well as continued performance and stability improvements.
 
-The curent version of Node.js ships with a build of V8, which includes ES6 features well beyond version 3.28.73 that ship with Node.js™ 0.12.x.
+The current version of Node.js ships with a build of V8, which includes ES6 features well beyond version 3.28.73 that ship with Node.js™ 0.12.x.
 
 ## No more `--harmony flag
 
