@@ -8,7 +8,7 @@ Node.js is built against modern versions of [V8](https://code.google.com/p/v8/).
 
 The current version of Node.js ships with a build of V8, which includes ES6 features well beyond version 3.28.73 that ship with Node.js™ 0.12.x.
 
-## No more `--harmony flag
+## No more `--harmony` flag
 
 On Node.js™@0.12.x (V8 3.28+), the `--harmony` runtime flag enables all **completed**, **staged** and **in progress** ES6 features together, in bulk (with the exception of `proxies` which are hidden under `--harmony-proxies`). This means that some really buggy or even broken features like [Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) are just as readily available for developers as [generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*), which have very little or even no known-issues. As such, most developers tend to enable only certain features by using specific runtime harmony feature flags (e.g. `--harmony-generators`), or simply enable all of them and then use a restricted subset.
 
