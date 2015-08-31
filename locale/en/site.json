@@ -7,6 +7,7 @@
     "about": {
         "link": "about",
         "text": "About",
+        "sections": ["governance", "workinggroups"],
         "governance": {
             "link": "about/governance",
             "text": "Governance"
@@ -27,6 +28,7 @@
     "docs": {
         "link": "docs",
         "text": "Docs",
+        "sections": ["es6", "faq", "api"],
         "es6": {
             "link": "docs/es6",
             "text": "ES6 in Node.js"
@@ -43,6 +45,7 @@
     "foundation": {
         "link": "foundation",
         "text": "Foundation",
+        "sections": ["members", "tsc", "itn"],
         "members": {
             "link": "foundation/members",
             "text": "Members"
@@ -59,6 +62,7 @@
     "getinvolved": {
         "link": "get-involved",
         "text": "Get Involved",
+        "sections": ["contribute", "development"],
         "contribute": {
             "link": "get-involved/contribute",
             "text": "Contribute"

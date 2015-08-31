@@ -24,9 +24,28 @@ header
             border-top-color $node-gray
             border-width $border-width
             margin-left -($border-width/2)px
+            z-index -3
 
         &.active:first-child:after
             margin-left -($border-width)px
+
+        > .dropdown
+            display inline-block
+            position absolute
+            z-index -2
+            left 0
+            top -200%
+            background-color $node-gray
+            transition top 0.2s ease-out
+
+            > a
+                display block
+                padding 5px 10px
+                white-space nowrap
+
+        &:hover > .dropdown
+            top 100%
+
 
     a,
     a:link,
@@ -48,3 +67,7 @@ header
 
 #logo img
     width 182px
+
+.header-raise
+    z-index 50
+    position relative

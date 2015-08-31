@@ -1,3 +1,4 @@
+<div class="header-raise">
 <header>
     <div class="container">
 
@@ -11,18 +12,38 @@
                 </li>
                 <li{{#startswith path site.about.link}} class="active"{{/startswith}}>
                     <a href="/{{site.locale}}/{{site.about.link}}/">{{site.about.text}}</a>
+                    <div class="dropdown">
+                      {{~#each site.about.sections~}}
+                        <a href="/{{../site.locale}}/{{getProps ../site.about this 'link'}}/">{{getProps ../site.about this 'text'}}</a>
+                      {{/each}}
+                    </div>
                 </li>
                 <li{{#startswith path site.download.link}} class="active"{{/startswith}}>
                     <a href="/{{site.locale}}/{{site.download.link}}/">{{site.download.text}}</a>
                 </li>
                 <li{{#startswith path site.docs.link}} class="active"{{/startswith}}>
                     <a href="/{{site.locale}}/{{site.docs.link}}/">{{site.docs.text}}</a>
+                    <div class="dropdown">
+                      {{~#each site.docs.sections~}}
+                        <a href="/{{../site.locale}}/{{getProps ../site.docs this 'link'}}/">{{getProps ../site.docs this 'text'}}</a>
+                      {{/each}}
+                    </div>
                 </li>
                 <li{{#startswith path site.foundation.link}} class="active"{{/startswith}}>
                     <a href="/{{site.locale}}/{{site.foundation.link}}/">{{site.foundation.text}}</a>
+                    <div class="dropdown">
+                      {{~#each site.foundation.sections~}}
+                        <a href="/{{../site.locale}}/{{getProps ../site.foundation this 'link'}}/">{{getProps ../site.foundation this 'text'}}</a>
+                      {{/each}}
+                    </div>
                 </li>
                 <li{{#startswith path site.getinvolved.link}} class="active"{{/startswith}}>
                     <a href="/{{site.locale}}/{{site.getinvolved.link}}/">{{site.getinvolved.text}}</a>
+                    <div class="dropdown">
+                      {{~#each site.getinvolved.sections~}}
+                        <a href="/{{../site.locale}}/{{getProps ../site.getinvolved this 'link'}}/">{{getProps ../site.getinvolved this 'text'}}</a>
+                      {{/each}}
+                    </div>
                 </li>
                 <li{{#startswith path site.security.link}} class="active"{{/startswith}}>
                     <a href="/{{site.locale}}/{{site.security.link}}/">{{site.security.text}}</a>
@@ -35,3 +56,4 @@
 
     </div>
 </header>
+</div>

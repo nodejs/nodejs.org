@@ -26,6 +26,10 @@ const versions = require('./source/versions');
 // for properties which are not present in the given language
 var Handlebars = require('handlebars');
 
+Handlebars.registerHelper('getProps', function(obj, a, b) {
+  return obj && obj[a][b]
+})
+
 const DEFAULT_LANG = 'en';
 function i18nJSON (lang) {
     var defaultJSON = require(`./locale/${DEFAULT_LANG}/site.json`);
