@@ -14,19 +14,19 @@
 
                 {{#if project.banner.visible}}
                     <p class="home-version home-version-banner">
-                        Current Version: {{ project.currentVersion }}<br>
-                        {{{project.banner.content}}}
+                        {{ labels.current-version }}: {{ project.currentVersion }}<br>
+                        {{{ project.banner.content }}}
                     </p>
                 {{else}}
-                      <p class="home-version">Current Version: {{ project.currentVersion }}</p>
+                      <p class="home-version">{{ labels.current-version }}: {{ project.currentVersion }}</p>
                 {{/if}}
 
-                <a href="https://nodejs.org/dist/latest/" id="home-downloadbutton" data-version="{{ project.currentVersion }}" data-dl-local="Download for">Download</a>
+                <a href="https://nodejs.org/dist/latest/" id="home-downloadbutton" data-version="{{ project.currentVersion }}" data-dl-local="{{ labels.download-for }}">{{ labels.download }}</a>
 
                 <ul class="list-divider-pipe home-secondary-links">
-                    <li><a href="https://nodejs.org/dist/latest/">Other Downloads</a></li>
-                    <li><a href="https://github.com/nodejs/node/blob/master/CHANGELOG.md">Changelog</a></li>
-                    <li><a href="https://iojs.org/api/">API Docs</a></li>
+                    <li><a href="https://nodejs.org/dist/latest/">{{ labels.other-downloads }}</a></li>
+                    <li><a href="https://github.com/nodejs/node/blob/master/CHANGELOG.md">{{ labels.changelog }}</a></li>
+                    <li><a href="{{ site.docs.api.link }}">{{ labels.api }}</a></li>
                 </ul>
 
             </div>

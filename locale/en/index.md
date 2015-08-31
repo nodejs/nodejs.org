@@ -1,5 +1,12 @@
 ---
 layout: index.hbs
+labels:
+  current-version: Current Version
+  download: Download
+  download-for: Download for
+  other-downloads: Other Downloads
+  changelog: Changelog
+  api: API Docs
 ---
 
 Node.js® is a JavaScript runtime built on [Chrome's V8 JavaScript engine](http://code.google.com/p/v8/).

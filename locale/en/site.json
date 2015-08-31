@@ -36,7 +36,7 @@
             "text": "FAQ"
         },
         "api": {
-            "link": "https://iojs.org/api/",
+            "link": "/api/",
             "text": "API"
         }
     },
