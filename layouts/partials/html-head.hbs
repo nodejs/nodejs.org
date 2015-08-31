@@ -2,14 +2,32 @@
     <meta charset="utf-8">
     <title>{{#if title}}{{ title }} | {{/if}}{{ site.title }}</title>
 
-    <link rel="dns-prefetch" href="http://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="http://fonts.gstatic.com">
     <link rel="dns-prefetch" href="http://www.google-analytics.com">
-    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 
     <meta name="author" content="{{ site.author }}">
     <meta name="robots" content="{{#if robots}}{{ robots }}{{else}}index, follow{{/if}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript">
+      var addStyle = (function(d) {
+        return function(style) {
+          if(!d.querySelector('#fontcache')) {
+            var c = d.createElement('style'), sc = d.getElementsByTagName("script")[0];
+            c.innerHTML = style;
+            c.id = 'fontcache';
+            sc.parentNode.insertBefore(c,sc);
+          }
+        }
+      })(document);
+      (function(d,w,s) {
+        if('querySelector' in d && 'localStorage' in w && s.getItem('fonts_css_cache') !== null) {
+          addStyle(s.fonts_css_cache);
+        }
+      })(document, window, window.localStorage);
+    </script>
+    <noscript>
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600,600italic,700,700italic">
+    </noscript>
 
     {{!-- <link rel="apple-touch-icon" href="/static/apple-touch-icon.png"> --}}
     {{!-- <link rel="icon" href="/static/apple-touch-icon.png"> --}}
@@ -18,5 +36,4 @@
     <link rel="alternate" href="/{{site.locale}}/blog.xml" title="Node.js Blog" type="application/rss+xml">
     <link rel="alternate" href="/{{site.locale}}/tsc-minutes.xml" title="Node.js TSC meeting minutes" type="application/rss+xml">
     <link rel="stylesheet" href="/{{site.locale}}/styles.css" media="all">
-    <link rel="stylesheet" href="/static/css/prism-tomorrow.css" media="all">
 </head>
