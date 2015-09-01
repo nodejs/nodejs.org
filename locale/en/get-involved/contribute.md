@@ -19,17 +19,15 @@ When reporting an issue we also need as much information about your environment 
 
 The Node.js project is currently managed across a number of separate Github repositories, each with their own separate issues database. If possible, please direct any issues you are reporting to the appropriate repository but don't worry if things happen to get put in the wrong place, the community of contributors will be more than happy to help get you pointed in the right direction.
 
-* To report issues specific to Node.js v0.10.x or v0.12.x, please use <a href="https://github.com/joyent/node/issues">joyent/node</a>
-* To report issues specific to io.js (any version), please use <a href="https://github.com/nodejs/node/issues">nodejs/io.js</a>
-* To report issues specific to future Node.js releases, please use <a href="https://github.com/nodejs/node">nodejs/node</a>
-* To report issues specific to this website, please use <a href="https://github.com/nodejs/nodejs.org/issues">joyent/node-website</a>
+* To report issues specific to Node.js, please use [nodejs/node](https://github.com/nodejs/node)
+* To report issues specific to this website, please use [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
 
 ## Code contributions
 
-If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the <a href="https://github.com/nodejs/dev-policy">Node.js Development Policy</a>.
+If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the [Node.js Development Policy](https://github.com/nodejs/dev-policy).
 
-Before any contribution can be accepted and be part of the project, it needs to be reviewed by existing collaborators in accordance to the guidelines established by the <a href="https://github.com/nodejs/dev-policy">Node.js Development Policy</a>.
+Before any contribution can be accepted and be part of the project, it needs to be reviewed by existing collaborators in accordance to the guidelines established by the [Node.js Development Policy](https://github.com/nodejs/dev-policy).
 
 ## Becoming a collaborator
 
-By becoming a collaborator, contributors can have even more impact on the project. They can help other contributors by reviewing their contributions, triage issues and take an even bigger part in shaping the project's future. The Node.js project is always looking for people who are interested in becoming collaborators. If you're interested, make sure you familiarize yourself with the <a href="https://github.com/nodejs/dev-policy">Node.js Development Policy</a>.
+By becoming a collaborator, contributors can have even more impact on the project. They can help other contributors by reviewing their contributions, triage issues and take an even bigger part in shaping the project's future. The Node.js project is always looking for people who are interested in becoming collaborators. If you're interested, make sure you familiarize yourself with the [Node.js Development Policy](https://github.com/nodejs/dev-policy).
