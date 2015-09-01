@@ -14,6 +14,14 @@
         "workinggroups": {
             "link": "about/working-groups",
             "text": "Working Groups"
+        },
+        "releases": {
+            "link": "about/releases",
+            "text": "Releases"
+        },
+        "resources": {
+            "link": "about/resources",
+            "text": "Resources"
         }
     },
     "download": {
