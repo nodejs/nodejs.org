@@ -3,7 +3,6 @@
 'use strict';
 
 const fs = require('fs');
-const semver = require('semver')
 const https = require('https');
 
 function download (url, cb) {
@@ -35,10 +34,6 @@ download('https://new.nodejs.org/dist/index.json', function (nodeErr, nodeVersio
             console.error('Error parsing json', e);
             return process.exit(1);
         }
-
-        allVersions.sort(function (a, b) {
-            return semver.compare(b.version, a.version);
-        });
 
         fs.writeFileSync('source/versions.json', JSON.stringify(allVersions, null, ' '));
     })
