@@ -16,7 +16,7 @@
 
     <link rel="canonical" href="{{ site.url }}{{#if path}}{{ path }}/{{/if}}">
     {{#each site.feeds}}
-        <link rel="alternate" href="/{{ site.locale }}/{{ link }}" title="{{ text }}" type="application/rss+xml">
+        <link rel="alternate" href="/{{ ../site.locale }}/{{ link }}" title="{{ text }}" type="application/rss+xml">
     {{/each}}
     <link rel="stylesheet" href="/{{ site.locale }}/styles.css" media="all">
     <link rel="stylesheet" href="/static/css/prism-tomorrow.css" media="all">
