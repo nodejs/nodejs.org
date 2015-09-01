@@ -78,6 +78,18 @@ function buildlocale (locale) {
             reverse: true,
             refer: false
         },
+        blogReleases : {
+            pattern: 'blog/release/*.md',
+            sortBy: 'date',
+            reverse: true,
+            refer: false
+        },
+        blogVulnerability : {
+            pattern: 'blog/vulnerability/*.md',
+            sortBy: 'date',
+            reverse: true,
+            refer: false
+        },
         lastWeekly: {
             pattern: 'blog/weekly-updates/*.md',
             sortBy: 'date',
@@ -105,12 +117,22 @@ function buildlocale (locale) {
     }))
     .use(feed({
         collection: 'blog',
-        destination: 'blog.xml',
+        destination: 'feed/blog.xml',
         title: 'Node.js Blog'
     }))
     .use(feed({
+        collection: 'blogReleases',
+        destination: 'feed/releases.xml',
+        title: 'Node.js Blog: Releases'
+    }))
+    .use(feed({
+        collection: 'blogVulnerability',
+        destination: 'feed/vulnerability.xml',
+        title: 'Node.js Blog: Vulnerability Reports'
+    }))
+    .use(feed({
         collection: 'tscMinutes',
-        destination: 'tsc-minutes.xml',
+        destination: 'feed/tsc-minutes.xml',
         title: 'Node.js Technical Steering Committee meetings'
     }))
     .use(layouts({
