@@ -14,7 +14,7 @@
       db.innerText = dlLocal + ' OS X (x64)';
       break;
     case 'Win':
-      db.href += 'node-' + version + '-' + x + '.msi';
+      db.href += (version[0] == '0' && x == 'x64' ? x + '/' : '') + 'node-' + version + '-' + x + '.msi';
       db.innerText = dlLocal + ' Windows (' + x +')';
       break;
     case 'Linux':
