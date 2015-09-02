@@ -14,7 +14,8 @@
       db.innerText = dlLocal + ' OS X (x64)';
       break;
     case 'Win':
-      db.href += (version[0] == '0' && x == 'x64' ? x + '/' : '') + 'node-' + version + '-' + x + '.msi';
+      // Windows 64-bit files for 0.x.x need to be prefixed with 'x64/'
+      db.href += (version[1] == '0' && x == 'x64' ? x + '/' : '') + 'node-' + version + '-' + x + '.msi';
       db.innerText = dlLocal + ' Windows (' + x +')';
       break;
     case 'Linux':
