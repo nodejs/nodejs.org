@@ -6,7 +6,7 @@ layout: contribute.hbs
 # We encourage all kinds of contribution from the community.
 
 The Node.js community is large, inclusive, and excited to enable as many users
-to contribute in whatever what they can. If you want to [report an
+to contribute in whatever way they can. If you want to [report an
 issue](https://github.com/nodejs/node/issues), [help with
 documentation](/en/get-involved/contribute/) or [contribute to the code
 base](/en/get-involved/development/) of the project, you’ve come to the
