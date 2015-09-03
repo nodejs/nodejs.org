@@ -15,6 +15,7 @@ const path = require('path');
 const fs = require('fs');
 const ncp = require('ncp');
 const semver = require('semver');
+const strftime = require('strftime');
 
 const filterStylusPartials = require('./plugins/filter-stylus-partials');
 const mapHandlebarsPartials = require('./plugins/map-handlebars-partials');
@@ -172,6 +173,20 @@ function buildlocale (locale) {
                 return semver.gte(version, '1.0.0') ?
                     `https://github.com/nodejs/io.js/blob/${version}/CHANGELOG.md` :
                     `https://github.com/joyent/node/blob/${version}/ChangeLog`;
+            },
+            strftime: function (date, format) {
+
+                let parsedDate = new Date(date);
+
+                if (!(parsedDate instanceof Date && isFinite(parsedDate))) {
+                    // If date is invalid (but not undefined) log error for debugging
+                    if (date && process.env.NODE_ENV !== 'test') {
+                        console.error('[handlebars] strftime - Invalid date:', date);
+                    }
+                    return date;
+                }
+
+                return strftime(typeof format === 'string' && format ? format : '%F', parsedDate);
             }
         }
     }))

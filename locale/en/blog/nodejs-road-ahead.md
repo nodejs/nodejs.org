@@ -1,6 +1,6 @@
 ---
 title: Node.js and the Road Ahead
-date: Thu Jan 16 15:00:00 PST 2014
+date: 2014-01-16T23:00:00.000Z
 author: Timothy J Fontaine
 slug: nodejs-road-ahead
 layout: blog-post.hbs
