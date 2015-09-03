@@ -8,10 +8,11 @@
     <main>
         <div class="container">
 
-            <ul>
+            <ul class="blog-index">
                 {{#each collections.blog}}
                     {{#if title}}
                         <li>
+                            <time datetime="{{ date }}">{{ strftime date }}</time>
                             <a href="/{{../../site.locale}}/{{ path }}/">{{ title }}</a>
                         </li>
                     {{/if}}

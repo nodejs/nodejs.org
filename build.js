@@ -14,19 +14,17 @@ const permalinks = require('metalsmith-permalinks');
 const path = require('path');
 const fs = require('fs');
 const ncp = require('ncp');
-const semver = require('semver');
 
-const filterStylusPartials = require('./plugins/filter-stylus-partials');
-const mapHandlebarsPartials = require('./plugins/map-handlebars-partials');
+const filterStylusPartials = require('./scripts/plugins/filter-stylus-partials');
+const mapHandlebarsPartials = require('./scripts/plugins/map-handlebars-partials');
 const versions = require('./source/versions');
 
 /** Build **/
 
 // load template.json for given language, but use default language as fallback
 // for properties which are not present in the given language
-var Handlebars = require('handlebars');
-
 const DEFAULT_LANG = 'en';
+
 function i18nJSON (lang) {
     var defaultJSON = require(`./locale/${DEFAULT_LANG}/site.json`);
     var templateJSON = require(`./locale/${lang}/site.json`);
@@ -43,10 +41,6 @@ function i18nJSON (lang) {
     };
     merge(finalJSON, templateJSON);
     return finalJSON;
-}
-
-function traverse (obj, str) {
-    return str.split('.').reduce(function (o, x) { return o[x]; }, obj);
 }
 
 const source = {
@@ -140,39 +134,11 @@ function buildlocale (locale) {
         pattern: '**/*.html',
         partials: mapHandlebarsPartials(metalsmith, 'layouts', 'partials'),
         helpers: {
-            equals: function (v1, v2, options) {
-                return (v1 === v2) ? options.fn(this) : options.inverse(this);
-            },
-            startswith: function (v1, v2, options) {
-                return (v1 && v1.indexOf(v2) === 0) ? options.fn(this) : options.inverse(this);
-            },
-            i18n: function () {
-                var env, key;
-
-                // function(key, env)
-                if (arguments.length === 2) {
-                    key = arguments[0];
-                    env = arguments[1];
-                }
-                // function(scope, key, env)
-                if (arguments.length === 3) {
-                    key = arguments[0] + '.' + arguments[1];
-                    env = arguments[2];
-                }
-
-                var data = env.data.root;
-                var result = traverse(data.i18n, key);
-
-                return new Handlebars.SafeString(result);
-            },
-            changeloglink: function (version) {
-
-                if (!version) { return ''; }
-
-                return semver.gte(version, '1.0.0') ?
-                    `https://github.com/nodejs/io.js/blob/${version}/CHANGELOG.md` :
-                    `https://github.com/joyent/node/blob/${version}/ChangeLog`;
-            }
+            equals: require('./scripts/helpers/equals.js'),
+            startswith: require('./scripts/helpers/startswith.js'),
+            i18n: require('./scripts/helpers/i18n.js'),
+            changeloglink: require('./scripts/helpers/changeloglink.js'),
+            strftime: require('./scripts/helpers/strftime.js')
         }
     }))
     .destination(path.join(__dirname, 'build', locale));

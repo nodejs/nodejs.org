@@ -40,7 +40,7 @@ download('https://new.nodejs.org/dist/index.json', function (nodeErr, nodeVersio
             return semver.compare(b.version, a.version);
         });
 
-        fs.writeFileSync('source/versions.json', JSON.stringify(allVersions, null, ' '));
+        fs.writeFileSync('../source/versions.json', JSON.stringify(allVersions, null, ' '));
     })
 })
 
