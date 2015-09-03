@@ -72,6 +72,12 @@ function buildlocale (locale) {
             reverse: true,
             refer: false
         },
+        blogAnnounce : {
+            pattern: 'blog/announcements/*.md',
+            sortBy: 'date',
+            reverse: true,
+            refer: false
+        },
         blogReleases : {
             pattern: 'blog/release/*.md',
             sortBy: 'date',
@@ -113,6 +119,11 @@ function buildlocale (locale) {
         collection: 'blog',
         destination: 'feed/blog.xml',
         title: 'Node.js Blog'
+    }))
+    .use(feed({
+      collection: 'blogAnnounce',
+      destination: 'feed/announce.xml',
+      title: 'Node.js Announcements'
     }))
     .use(feed({
         collection: 'blogReleases',

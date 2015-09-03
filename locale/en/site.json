@@ -80,6 +80,10 @@
         "itn": {
              "link": "foundation/in-the-news",
              "text": "In the News"
+        },
+        "announce": {
+            "link": "foundation/announcements",
+            "text": "Announcements"
         }
     },
     "getinvolved": {
