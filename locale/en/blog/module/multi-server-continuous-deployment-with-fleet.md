@@ -16,7 +16,7 @@ layout: blog-post.hbs
 
 <p><a href="http://github.com/substack/fleet">fleet</a> aims to make it really easy for anyone on your team to push new code from git to an armada of servers and manage all the processes in your stack. </p>
 
-<p>To start using fleet, just install the fleet command with <a href="http://npmjs.org">npm</a>: </p>
+<p>To start using fleet, just install the fleet command with <a href="https://npmjs.com">npm</a>: </p>
 
 <pre style="">npm install -g fleet </pre>
 

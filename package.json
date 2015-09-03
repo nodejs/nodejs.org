@@ -4,10 +4,11 @@
   "description": "New Nodejs.org website",
   "homepage": "https://new.nodejs.org",
   "scripts": {
-    "build": "node build.js",
     "gulp": "gulp",
+    "build": "node build.js",
     "serve": "node build.js serve",
-    "lint": "eslint scripts build.js plugins"
+    "lint": "eslint scripts build.js plugins",
+    "load-versions": "node scripts/load-versions.js"
   },
   "repository": {
     "type": "git",
@@ -40,7 +41,9 @@
     "ncp": "^2.0.0",
     "octonode": "^0.7.1",
     "require-dir": "^0.3.0",
-    "st": "^0.5.5"
+    "semver": "^5.0.1",
+    "st": "^0.5.5",
+    "strftime": "^0.9.2"
   },
   "devDependencies": {
     "babel-eslint": "^4.0.10",

@@ -7,29 +7,29 @@ layout: contribute.hbs
 
 ## Table of Contents
 
-- [__Guiding Principles__](#guiding-principles)
-- [__About this document__](#about-this-document)
-- [__Repository Reconciliation Plan__](#repository-reconciliation-plan)
-- [__Contributing__](#contributing)
+- [Guiding Principles](#guiding-principles)
+- [About this document](#about-this-document)
+- [Repository Reconciliation Plan](#repository-reconciliation-plan)
+- [Contributing](#contributing)
   - [Collaborators](#collaborators)
   - [Accepting Modifications](#accepting-modifications-through-a-consensus-seeking-process)
   - [Release-related Commits](#release-related-commits-and-error-corrections)
   - [Landing Pull Requests](#landing-pull-requests)
   - [Issue Tagging](#issue-and-pull-request-tagging)
-- [__Release Process and Branching Model__](#release-process-and-branching-model)
+- [Release Process and Branching Model](#release-process-and-branching-model)
   - [Release Versioning](#release-versioning)
   - [Release Process for Master](#release-process-for-master)
-- [__Long Term Support Working Group__](#long-term-support-working-group-roadmap)
-- [__Issues Workflow__](#issues-workflow)
-- [__Stability Policy__](#stability-policy)
+- [Long Term Support Working Group](#long-term-support-working-group-roadmap)
+- [Issues Workflow](#issues-workflow)
+- [Stability Policy](#stability-policy)
   - [Implicit vs. Explicit API Stability](#implicit-vs-explicit-api-stability)
   - [Platform Stability](#platform-stability)
   - [Dependency Stability](#dependency-stability)
-- [__Working Groups__](#working-groups)
+- [Working Groups](#working-groups)
   - [Transition of io.js Working Groups](#transition-of-iojs-working-groups)
-- [__Developer's Certificate of Origin 1.0__](#developers-certificate-of-origin-10)
-- [__A Few Open Questions__](#a-few-open-questions)
-- [__Notes__](#notes)
+- [Developer's Certificate of Origin 1.0](#developers-certificate-of-origin-10)
+- [A Few Open Questions](#a-few-open-questions)
+- [Notes](#notes)
 
 ---
 
@@ -358,7 +358,7 @@ Proposals to create a new Working Group should be made either by opening an issu
 
 ### Transition of io.js Working Groups
 
-The io.js project currently has a number of Working Groups already chartered as detailed here: https://github.com/iojs/io.js/blob/v1.x/WORKING_GROUPS.md. Upon the launch of the Foundation and approval of the Foundation TSC charter, these existing Working Groups (and their existing membership) would be absorbed into the project (see https://github.com/joyent/nodejs-advisory-board/blob/master/governance-proposal/WG-Merger.md). The TSC should perform a one-time review the existing WG charters and determine if any modification of their existing charters are required. It is expected that most (if not all) of the existing Working Groups will be transitioned without requiring recharter.
+The io.js project currently has a number of Working Groups already chartered as detailed here: https://github.com/nodejs/node/blob/v1.x/WORKING_GROUPS.md. Upon the launch of the Foundation and approval of the Foundation TSC charter, these existing Working Groups (and their existing membership) would be absorbed into the project (see https://github.com/joyent/nodejs-advisory-board/blob/master/governance-proposal/WG-Merger.md). The TSC should perform a one-time review the existing WG charters and determine if any modification of their existing charters are required. It is expected that most (if not all) of the existing Working Groups will be transitioned without requiring recharter.
 
 ## Developer's Certificate of Origin 1.0
 

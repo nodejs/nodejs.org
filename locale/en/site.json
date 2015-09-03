@@ -3,6 +3,24 @@
     "author": "Node.js Foundation",
     "url": "https://new.nodejs.org/en/",
     "locale": "en",
+    "feeds": [
+        {
+            "link": "feed/blog.xml",
+            "text": "Node.js Blog"
+        },
+        {
+            "link": "feed/releases.xml",
+            "text": "Node.js Blog: Releases"
+        },
+        {
+            "link": "feed/vulnerability.xml",
+            "text": "Node.js Blog: Vulnerability Reports"
+        },
+        {
+            "link": "feed/tsc-minutes.xml",
+            "text": "Node.js TSC meeting minutes"
+        }
+    ],
     "home": { "text": "Home" },
     "about": {
         "link": "about",
@@ -14,9 +32,24 @@
         "workinggroups": {
             "link": "about/working-groups",
             "text": "Working Groups"
+        },
+        "releases": {
+            "link": "about/releases",
+            "text": "Releases"
+        },
+        "resources": {
+            "link": "about/resources",
+            "text": "Resources"
         }
     },
-    "download": { "link": "download", "text": "Downloads" },
+    "download": {
+        "link": "download",
+        "text": "Downloads",
+        "releases": {
+            "link": "download/releases",
+            "text": "Previous Releases"
+        }
+    },
     "docs": {
         "link": "docs",
         "text": "Docs",
@@ -29,7 +62,7 @@
             "text": "FAQ"
         },
         "api": {
-            "link": "https://iojs.org/api/",
+            "link": "/api/",
             "text": "API"
         }
     },
@@ -42,18 +75,22 @@
         },
         "tsc": {
             "link": "foundation/tsc",
-            "text": "Technical Steering Committee"
+            "text": "Technical Governance"
         },
         "itn": {
              "link": "foundation/in-the-news",
              "text": "In the News"
         }
     },
-    "contribute": {
-        "link": "contribute",
+    "getinvolved": {
+        "link": "get-involved",
         "text": "Get Involved",
+        "contribute": {
+            "link": "get-involved/contribute",
+            "text": "Contribute"
+        },
         "development": {
-            "link": "contribute/development",
+            "link": "get-involved/development",
             "text": "Development"
         }
     },

@@ -7,44 +7,70 @@ header
         overflow visible
 
     li
-        $border-width = 14px
         position relative
-        padding-bottom 12px;
 
-        &.active:after
-            top 100%
-            left 50%
-            border solid rgba(0, 0, 0, 0)
-            content " "
-            height 0
-            width 0
-            position absolute
-            pointer-events none
-            border-color rgba(3, 3, 0, 0)
-            border-top-color $node-gray
-            border-width $border-width
-            margin-left -($border-width/2)px
+    nav
+        a,
+        a:link,
+        a:active
+            padding 0 8px
+            text-transform uppercase
+            font-size 14px
+            color #ccc !important
 
-        &.active:first-child:after
-            margin-left -($border-width)px
+        a:hover
+            background-color transparent
+            text-decoration underline
 
-    a,
-    a:link,
-    a:active
-        padding 0 8px
-        text-transform uppercase
-        font-size 14px
-        // the header css apparently disobeys cascading rules, so, !important.
-        color #ccc !important
+@media screen and (min-width: 481px)
+    header
+        li
+            $border-width = 14px
+            padding-bottom 12px;
 
-    a:hover
+            &.active:after
+                top 100%
+                left 50%
+                border solid rgba(0, 0, 0, 0)
+                content " "
+                height 0
+                width 0
+                position absolute
+                pointer-events none
+                border-color rgba(3, 3, 0, 0)
+                border-top-color $node-gray
+                border-width $border-width
+                margin-left -($border-width/2)px
+
+            &.active:first-child:after
+                margin-left -($border-width)px
+
+        a,
+        a:link,
+        a:active
+            padding 0 8px
+
+@media screen and (max-width: 480px)
+    header
+        li
+            width 50%
+            float left
+            padding 0
+            margin 0
+        a,
+        a:link,
+        a:active
+            padding 0
+
+#logo
+    display block
+    width 9em
+    margin .5em auto 1em auto
+    border none
+
+    &:hover
         background-color transparent
         text-decoration underline
 
-#logo
-    width 182px
-    margin 30px auto
-    border none
-
-#logo img
-    width 182px
+    img
+        display block

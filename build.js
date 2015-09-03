@@ -15,17 +15,16 @@ const path = require('path');
 const fs = require('fs');
 const ncp = require('ncp');
 
-const filterStylusPartials = require('./plugins/filter-stylus-partials');
-const mapHandlebarsPartials = require('./plugins/map-handlebars-partials');
+const filterStylusPartials = require('./scripts/plugins/filter-stylus-partials');
+const mapHandlebarsPartials = require('./scripts/plugins/map-handlebars-partials');
 const versions = require('./source/versions');
 
 /** Build **/
 
 // load template.json for given language, but use default language as fallback
 // for properties which are not present in the given language
-var Handlebars = require('handlebars');
-
 const DEFAULT_LANG = 'en';
+
 function i18nJSON (lang) {
     var defaultJSON = require(`./locale/${DEFAULT_LANG}/site.json`);
     var templateJSON = require(`./locale/${lang}/site.json`);
@@ -44,17 +43,16 @@ function i18nJSON (lang) {
     return finalJSON;
 }
 
-function traverse (obj, str) {
-    return str.split('.').reduce(function (o, x) { return o[x]; }, obj);
-}
-
 const source = {
     project: {
         versions,
-        currentVersion: versions[0].version
+        currentVersion: versions[0].version,
+        banner: {
+            visible: false,
+            content: 'Important <a href="#">security release</a>, please update now!'
+        }
     }
 };
-
 
 function buildlocale (locale) {
     console.time('[metalsmith] build/' + locale + ' finished');
@@ -70,6 +68,18 @@ function buildlocale (locale) {
     .use(collections({
         blog : {
             pattern: 'blog/**/*.md',
+            sortBy: 'date',
+            reverse: true,
+            refer: false
+        },
+        blogReleases : {
+            pattern: 'blog/release/*.md',
+            sortBy: 'date',
+            reverse: true,
+            refer: false
+        },
+        blogVulnerability : {
+            pattern: 'blog/vulnerability/*.md',
             sortBy: 'date',
             reverse: true,
             refer: false
@@ -101,12 +111,22 @@ function buildlocale (locale) {
     }))
     .use(feed({
         collection: 'blog',
-        destination: 'blog.xml',
+        destination: 'feed/blog.xml',
         title: 'Node.js Blog'
     }))
     .use(feed({
+        collection: 'blogReleases',
+        destination: 'feed/releases.xml',
+        title: 'Node.js Blog: Releases'
+    }))
+    .use(feed({
+        collection: 'blogVulnerability',
+        destination: 'feed/vulnerability.xml',
+        title: 'Node.js Blog: Vulnerability Reports'
+    }))
+    .use(feed({
         collection: 'tscMinutes',
-        destination: 'tsc-minutes.xml',
+        destination: 'feed/tsc-minutes.xml',
         title: 'Node.js Technical Steering Committee meetings'
     }))
     .use(layouts({
@@ -114,28 +134,11 @@ function buildlocale (locale) {
         pattern: '**/*.html',
         partials: mapHandlebarsPartials(metalsmith, 'layouts', 'partials'),
         helpers: {
-            equals: function (v1, v2, options) {
-                return (v1 === v2) ? options.fn(this) : options.inverse(this);
-            },
-            i18n: function () {
-                var env, key;
-
-                // function(key, env)
-                if (arguments.length === 2) {
-                    key = arguments[0];
-                    env = arguments[1];
-                }
-                // function(scope, key, env)
-                if (arguments.length === 3) {
-                    key = arguments[0] + '.' + arguments[1];
-                    env = arguments[2];
-                }
-
-                var data = env.data.root;
-                var result = traverse(data.i18n, key);
-
-                return new Handlebars.SafeString(result);
-            }
+            equals: require('./scripts/helpers/equals.js'),
+            startswith: require('./scripts/helpers/startswith.js'),
+            i18n: require('./scripts/helpers/i18n.js'),
+            changeloglink: require('./scripts/helpers/changeloglink.js'),
+            strftime: require('./scripts/helpers/strftime.js')
         }
     }))
     .destination(path.join(__dirname, 'build', locale));

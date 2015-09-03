@@ -4,8 +4,9 @@
 body
     box-sizing border-box
     font 300 20px/1.5 'Source Sans Pro', Arial, sans-serif
-    color #000
+    color #333
     margin 0
+    background-color #fff
 
 header,
 main,
@@ -33,12 +34,19 @@ a:hover
 a.imagelink:hover
     background-color transparent
 
+
+strong,
+b
+    font-weight 600
+
+
 p
     a
         padded-link(2px)
 
 
 img
+    display block
     max-width 100%
 
 
@@ -64,6 +72,7 @@ pre
 @import 'page-modules/_header'
 @import 'page-modules/_footer'
 @import 'page-modules/_home'
+@import 'page-modules/_blog-index'
 @import 'page-modules/_foundation-members'
 @import 'page-modules/_download'
 @import 'page-modules/_scrollToTop'
@@ -87,7 +96,7 @@ pre
 
 .has-side-nav
     aside
-        width 180px
+        width 200px
         float left
         margin-top 1.5em
 
@@ -104,13 +113,24 @@ pre
             padded-link(10px)
 
         .active
-            a,
-            a:hover
+            > a,
+            > a:hover
                 color $node-gray
                 background-color #D9EBB3
 
     article
-        margin-left 200px
+        margin-left 220px
+
+@media screen and (max-width: 480px)
+    .has-side-nav
+        aside
+            width 100%
+            float none
+        article
+            margin-left 0px
+
+            pre
+              overflow-x scroll
 
 .full-width
     width 100%

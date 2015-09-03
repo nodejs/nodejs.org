@@ -3,16 +3,17 @@
 {{> html-head }}
 
 <body>
-    {{> header active="blog" }}
+    {{> header }}
 
     <main>
         <div class="container">
 
-            <ul>
+            <ul class="blog-index">
                 {{#each collections.blog}}
                     {{#if title}}
                         <li>
-                            <a href="/{{../../site.locale}}/{{ path }}">{{ title }}</a>
+                            <time datetime="{{ date }}">{{ strftime date }}</time>
+                            <a href="/{{../../site.locale}}/{{ path }}/">{{ title }}</a>
                         </li>
                     {{/if}}
                 {{/each}}

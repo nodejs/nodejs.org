@@ -3,7 +3,7 @@
 {{> html-head }}
 
 <body>
-    {{> header active="foundation" }}
+    {{> header }}
 
     <main>
         <div class="container has-side-nav">
@@ -11,16 +11,16 @@
             <aside>
                 <ul>
                     <li{{#equals path site.foundation.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.foundation.link}}">{{site.foundation.text}}</a>
+                        <a href="/{{site.locale}}/{{site.foundation.link}}/">{{site.foundation.text}}</a>
                     </li>
                     <li{{#equals path site.foundation.members.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.foundation.members.link}}">{{site.foundation.members.text}}</a>
+                        <a href="/{{site.locale}}/{{site.foundation.members.link}}/">{{site.foundation.members.text}}</a>
                     </li>
                     <li{{#equals path site.foundation.tsc.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.foundation.tsc.link}}">{{site.foundation.tsc.text}}</a>
+                        <a href="/{{site.locale}}/{{site.foundation.tsc.link}}/">{{site.foundation.tsc.text}}</a>
                     </li>
                     <li{{#equals path site.foundation.itn.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.foundation.itn.link}}">{{site.foundation.itn.text}}</a>
+                        <a href="/{{site.locale}}/{{site.foundation.itn.link}}/">{{site.foundation.itn.text}}</a>
                     </li>
                 </ul>
             </aside>
@@ -35,8 +35,11 @@
               padding: 5px 5px 5px 5px;
             }
             </style>
-            <div id="news-container">
-            </div>
+            <article>
+              <div id="news-container">
+              </div>
+            </article>
+
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.2/tabletop.min.js"></script>
             <script type="text/javascript">
               var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1jSxgB5MYd1xCOmhb5QZ90PbDiY57n4z4A0lcdQD-UG8/pubhtml';
