@@ -31,8 +31,41 @@
 
             </div>
 
+            <style>
+              div.interactive-banner {
+                background-color: #333;
+                background-image: url("http://events.linuxfoundation.org/sites/events/files/styles/1920px_maxwidth/public/banner-images/portland.png?itok=7IFt590v");
+                background-position: 50% 0px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height:300px;
+                text-align:center;
+                width:100%;
+                line-height:300px;
+                margin-top:20px;
+              }
+              div.interactive-banner img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                vertical-align: center;
+                padding-top:80px;
+                width:317;
+                height:140px;
+              }
+              footer {
+                margin-top:0px;
+              }
+            </style>
+
+
         </div>
     </main>
+    <a href="">
+    <div class="interactive-banner">
+        <img typeof="foaf:Image" src="http://events.linuxfoundation.org/sites/events/files/nodejs_inter_white.png" alt="Node Interactive" title="Node Interactive">
+    </div>
+    </a>
 
     {{> footer }}
     <script src="/static/js/download.js" async defer></script>
