@@ -16,21 +16,21 @@
                     <div class="download-hero full-width">
                         <ul class="no-padding">
                             <li>
-                                <a href="/dist/{{project.currentVersion}}/node-{{project.currentVersion}}-x86.msi">
+                                <a href="https://nodejs.org/dist/{{project.currentVersion}}/node-{{project.currentVersion}}-x86.msi">
                                     <img src="/static/images/platform-icon-win.png" height="50" width="45" alt="">
                                     Windows Installer
                                     <p class="small color-lightgray pad-bottom-small">node-{{project.currentVersion}}-x86.msi</p>
                                 </a>
                             </li>
                             <li>
-                                <a href="/dist/{{project.currentVersion}}/node-{{project.currentVersion}}.pkg">
+                                <a href="https://nodejs.org/dist/{{project.currentVersion}}/node-{{project.currentVersion}}.pkg">
                                     <img src="/static/images/platform-icon-osx.png" height="50" width="45" alt="">
                                     Macintosh Installer
                                     <p class="small color-lightgray pad-bottom-small">node-{{project.currentVersion}}.pkg</p>
                                 </a>
                             </li>
                             <li>
-                                <a href="/dist/{{project.currentVersion}}/node-{{project.currentVersion}}.tar.gz">
+                                <a href="https://nodejs.org/dist/{{project.currentVersion}}/node-{{project.currentVersion}}.tar.gz">
                                     <img src="/static/images/platform-icon-generic.png" height="50" width="45" alt="">
                                     Source Code
                                     <p class="small color-lightgray pad-bottom-small">node-{{project.currentVersion}}.tar.gz</p>
@@ -43,41 +43,57 @@
                         <tbody>
                             <tr>
                                 <th>Windows Installer (.msi)</th>
-                                <td><a href="/dist/{{project.currentVersion}}/node-{{project.currentVersion}}-x86.msi">32-bit</a></td>
-                                <td><a href="/dist/{{project.currentVersion}}/x64/node-{{project.currentVersion}}-x64.msi">64-bit</a></td>
+                                <td colspan="3"><a href="https://nodejs.org/dist/{{project.currentVersion}}/node-{{project.currentVersion}}-x86.msi">32-bit</a></td>
+                                <td colspan="3"><a href="https://nodejs.org/dist/{{project.currentVersion}}/node-{{project.currentVersion}}-x64.msi">64-bit</a></td>
                             </tr>
 
                             <tr>
                                 <th>Windows Binary (.exe)</th>
-                                <td><a href="/dist/{{project.currentVersion}}/node.exe">32-bit</a></td>
-                                <td><a href="/dist/{{project.currentVersion}}/x64/node.exe">64-bit</a></td>
+                                <td colspan="3"><a href="https://nodejs.org/dist/{{project.currentVersion}}/win-x86/node.exe">32-bit</a></td>
+                                <td colspan="3"><a href="https://nodejs.org/dist/{{project.currentVersion}}/win-x64/node.exe">64-bit</a></td>
                             </tr>
 
                             <tr>
                                 <th>Mac OS X Installer (.pkg)</th>
-                                <td colspan="2"><a href="/dist/{{project.currentVersion}}/node-{{project.currentVersion}}.pkg">Universal</a></td>
+                                <td colspan="6"><a href="https://nodejs.org/dist/{{project.currentVersion}}/node-{{project.currentVersion}}.pkg">64-bit</a></td>
                             </tr>
 
                             <tr>
                                 <th>Mac OS X Binaries (.tar.gz)</th>
-                                <td colspan="2"><a href="/dist/{{project.currentVersion}}/node-{{project.currentVersion}}-darwin-x64.tar.gz">64-bit</a></td>
+                                <td colspan="6"><a href="https://nodejs.org/dist/{{project.currentVersion}}/node-{{project.currentVersion}}-darwin-x64.tar.gz">64-bit</a></td>
                             </tr>
 
                             <tr>
                                 <th>Linux Binaries (.tar.gz)</th>
-                                <td><a href="/dist/{{project.currentVersion}}/node-{{project.currentVersion}}-linux-x86.tar.gz">32-bit</a></td>
-                                <td><a href="/dist/{{project.currentVersion}}/node-{{project.currentVersion}}-linux-x64.tar.gz">64-bit</a></td>
+                                <td colspan="3"><a href="https://nodejs.org/dist/{{project.currentVersion}}/node-{{project.currentVersion}}-linux-x86.tar.gz">32-bit</a></td>
+                                <td colspan="3"><a href="https://nodejs.org/dist/{{project.currentVersion}}/node-{{project.currentVersion}}-linux-x64.tar.gz">64-bit</a></td>
+                            </tr>
+
+                            <tr>
+                                <th>SunOS Binaries (.tar.gz)</th>
+                                <td colspan="3"><a href="https://nodejs.org/dist/{{project.currentVersion}}/node-{{project.currentVersion}}-sunos-x86.tar.gz">32-bit</a></td>
+                                <td colspan="3"><a href="https://nodejs.org/dist/{{project.currentVersion}}/node-{{project.currentVersion}}-sunos-x64.tar.gz">64-bit</a></td>
+                            </tr>
+
+                            <tr>
+                                <th>ARM Binaries (.tar.gz)</th>
+                                <td colspan="2"><a href="https://nodejs.org/dist/{{project.currentVersion}}/node-{{project.currentVersion}}-linux-armv6l.tar.gz">ARMv6</a></td>
+                                <td colspan="2"><a href="https://nodejs.org/dist/{{project.currentVersion}}/node-{{project.currentVersion}}-linux-armv7l.tar.gz">ARMv7</a></td>
+                                <td colspan="2"><a href="https://nodejs.org/dist/{{project.currentVersion}}/node-{{project.currentVersion}}-linux-arm64.tar.gz">ARMv8</a></td>
                             </tr>
 
                             <tr>
                                 <th>Source Code</th>
-                                <td colspan="2">
-                                    <a href="/dist/{{project.currentVersion}}/node-{{project.currentVersion}}.tar.gz">node-{{project.currentVersion}}.tar.gz</a>
+                                <td colspan="6">
+                                    <a href="https://nodejs.org/dist/{{project.currentVersion}}/node-{{project.currentVersion}}.tar.gz">node-{{project.currentVersion}}.tar.gz</a>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
 
+                    <p>
+                        <a href="https://nodejs.org/dist/{{project.currentVersion}}">All download options</a>
+                    </p>
                     <p>
                         {{downloads.currentVersion}}: <strong>{{project.currentVersion}}</strong>, <a href="/{{site.locale}}/{{site.download.releases.link}}/">{{site.download.releases.text}}</a>
                     </p>
