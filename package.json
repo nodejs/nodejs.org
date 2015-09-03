@@ -4,10 +4,11 @@
   "description": "New Nodejs.org website",
   "homepage": "https://new.nodejs.org",
   "scripts": {
-    "build": "node build.js",
     "gulp": "gulp",
+    "build": "node build.js",
     "serve": "node build.js serve",
-    "lint": "eslint scripts build.js plugins"
+    "lint": "eslint scripts build.js plugins",
+    "load-versions": "node scripts/load-versions.js"
   },
   "repository": {
     "type": "git",
