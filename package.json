@@ -7,7 +7,7 @@
     "gulp": "gulp",
     "build": "node build.js",
     "serve": "node build.js serve",
-    "lint": "eslint scripts build.js plugins",
+    "lint": "eslint scripts build.js",
     "load-versions": "node scripts/load-versions.js"
   },
   "repository": {
