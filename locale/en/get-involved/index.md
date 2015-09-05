@@ -1,5 +1,5 @@
 ---
-title: Get invloved
+title: Get involved
 layout: contribute.hbs
 ---
 
