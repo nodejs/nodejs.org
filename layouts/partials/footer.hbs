@@ -1,3 +1,15 @@
+<a href="#" id="scrollToTop">&uarr; <span>Scroll To Top</span></a>
+
+<script type="text/javascript">
+    var $scrollToTop = document.getElementById('scrollToTop');
+    (window.onscroll = function() {
+        $scrollToTop.style.display = (window.pageYOffset > window.innerHeight) ? 'block' : 'none';
+    })();
+    $scrollToTop.onclick = function() {
+        window.scrollTo(0, 0);
+        return false;
+    };
+</script>
 <footer role="contentinfo">
 
     <div class="linuxfoundation-footer">
