@@ -8,19 +8,20 @@
   if (!db) { return; }
   var version = db.dataset.version;
   var dlLocal = db.dataset.dlLocal;
+  var text = 'textContent' in db ? 'textContent' : 'innerText';
   switch (os && os[1]) {
     case 'Mac':
       db.href += 'node-' + version + '.pkg';
-      db.innerText = dlLocal + ' OS X (x64)';
+      db[text] = dlLocal + ' OS X (x64)';
       break;
     case 'Win':
       // Windows 64-bit files for 0.x.x need to be prefixed with 'x64/'
       db.href += (version[1] == '0' && x == 'x64' ? x + '/' : '') + 'node-' + version + '-' + x + '.msi';
-      db.innerText = dlLocal + ' Windows (' + x +')';
+      db[text] = dlLocal + ' Windows (' + x +')';
       break;
     case 'Linux':
       db.href += 'node-' + version + '-linux-' + x + '.tar.gz';
-      db.innerText = dlLocal + ' Linux (' + x + ')';
+      db[text] = dlLocal + ' Linux (' + x + ')';
       break;
   }
 })(document, navigator);

@@ -3,6 +3,7 @@
     "author": "Node.js Foundation",
     "url": "https://new.nodejs.org/en/",
     "locale": "en",
+    "scrollToTop": "Scroll to top",
     "feeds": [
         {
             "link": "feed/blog.xml",
@@ -80,6 +81,10 @@
         "itn": {
              "link": "foundation/in-the-news",
              "text": "In the News"
+        },
+        "announce": {
+            "link": "foundation/announcements",
+            "text": "Announcements"
         }
     },
     "getinvolved": {
