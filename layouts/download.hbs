@@ -8,10 +8,10 @@
     <div id="main">
         <div class="container">
             <article>
-                <h1>Downloads</h1>
+                <h1>{{downloads.headline}}</h1>
 
                 <section>
-                    <p>{{introduction}}</p>
+                    <p>{{downloads.intro}}</p>
 
                     <div class="download-hero full-width">
                         <ul class="no-padding">
@@ -79,9 +79,40 @@
                     </table>
 
                     <p>
-                        {{current-version}}: <strong>{{project.currentVersion}}</strong>, <a href="/{{site.locale}}/{{site.download.releases.link}}/">{{site.download.releases.text}}</a>
+                        {{downloads.currentVersion}}: <strong>{{project.currentVersion}}</strong>, <a href="/{{site.locale}}/{{site.download.releases.link}}/">{{site.download.releases.text}}</a>
                     </p>
-                    <p>{{build-disclaimer}}</p>
+                    <p>{{downloads.buildDisclaimer}}</p>
+                </section>
+
+                <section>
+                    <h2>{{additional.headline}}</h2>
+                    <p>{{additional.intro}}</p>
+
+                    <table class="download-matrix full-width">
+                        <tbody>
+                            <tr>
+                                <th>{{additional.platform}}</th>
+                                <th>{{additional.provider}}</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th>AIX on Power Systems</th>
+                                <td><span>IBM</span></td>
+                                <td><a href="http://www.ibm.com/developerworks/web/nodesdk/">{{download}}</a></td>
+                            </tr>
+                            <tr>
+                                <th>Linux on Power Systems</th>
+                                <td><span>IBM</span></td>
+                                <td><a href="http://www.ibm.com/developerworks/web/nodesdk/">{{download}}</a></td>
+                            </tr>
+                            <tr>
+                                <th>Linux on System z</th>
+                                <td><span>IBM</span></td>
+                                <td><a href="http://www.ibm.com/developerworks/web/nodesdk/">{{download}}</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                 </section>
 
             </article>
