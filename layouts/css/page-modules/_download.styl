@@ -44,7 +44,7 @@
         width 33%
 
     td
-        border 1px solid #ccc
+        border 1px solid $border-color
 
         a,
         span
@@ -63,17 +63,17 @@ h5.download-table-previous-releases-header
 
 .download-table
     font-size small
-    border 1px solid #C0C0C0
+    border 1px solid $border-color
 
     td
         padding 5px
 
     > thead
-        font-weight bold
+        font-weight 600
 
     > tbody
         td
-            border-top 1px solid #C0C0C0
+            border-top 1px solid $border-color
 
         tr:nth-child(odd)
             background-color #eee
@@ -136,7 +136,7 @@ td.download-table-last
         td:before
             content attr(data-label)
             float left
-            font-weight bold
+            font-weight 600
 
         > thead > tr > th,
         > tbody > tr > th,
