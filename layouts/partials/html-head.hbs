@@ -5,7 +5,6 @@
     <link rel="dns-prefetch" href="http://fonts.googleapis.com">
     <link rel="dns-prefetch" href="http://fonts.gstatic.com">
     <link rel="dns-prefetch" href="http://www.google-analytics.com">
-    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 
     <meta name="author" content="{{ site.author }}">
     <meta name="robots" content="{{#if robots}}{{ robots }}{{else}}index, follow{{/if}}">
@@ -21,6 +20,7 @@
     <link rel="stylesheet" href="/{{ site.locale }}/styles.css" media="all">
 
     <script>
+        var WebFontConfig = { google: { families: ['Source Sans Pro:300,400,600'] } };
         !function(n,o,d,e,j,s){n.GoogleAnalyticsObject=d;n[d]||(n[d]=function(){
         (n[d].q=n[d].q||[]).push(arguments)});n[d].l=+new Date;j=o.createElement(e);
         s=o.getElementsByTagName(e)[0];j.async=1;j.src='//www.google-analytics.com/analytics.js';
