@@ -1,15 +1,5 @@
 <a href="#" id="scrollToTop">&uarr; <span>{{i18n.scrollToTop}}</span></a>
 
-<script type="text/javascript">
-    var $scrollToTop = document.getElementById('scrollToTop');
-    (window.onscroll = function() {
-        $scrollToTop.style.display = (window.pageYOffset > window.innerHeight) ? 'block' : 'none';
-    })();
-    $scrollToTop.onclick = function() {
-        window.scrollTo(0, 0);
-        return false;
-    };
-</script>
 <footer role="contentinfo">
 
     <div class="linuxfoundation-footer">
@@ -26,3 +16,16 @@
     </div>
 
 </footer>
+
+<link rel="stylesheet" href="/static/css/prism-tomorrow.css" media="all">
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js" async defer></script>
+<script type="text/javascript">
+    var $scrollToTop = document.getElementById('scrollToTop');
+    (window.onscroll = function() {
+        $scrollToTop.style.display = (window.pageYOffset > window.innerHeight) ? 'block' : 'none';
+    })();
+    $scrollToTop.onclick = function() {
+        window.scrollTo(0, 0);
+        return false;
+    };
+</script>
