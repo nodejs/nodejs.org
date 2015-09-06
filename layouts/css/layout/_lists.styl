@@ -5,12 +5,17 @@
     li
         display inline-block
 
-@media screen and (min-width: 481px)
-  .list-divider-pipe
+        + li:before
+            content '|'
+            padding 0 .3em 0 .1em
+            color $lightgray
 
-      li
 
-          + li:before
-              content '|'
-              padding 0 .3em 0 .1em
-              color $lightgray
+@media screen and (max-width: 480px)
+    nav
+        .list-divider-pipe
+            margin-bottom 1rem
+            overflow hidden
+
+            li + li:before
+                display none
