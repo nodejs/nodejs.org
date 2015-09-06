@@ -3,6 +3,7 @@
     "author": "Node.js Foundation",
     "url": "https://new.nodejs.org/en/",
     "locale": "en",
+    "scrollToTop": "Scroll to top",
     "feeds": [
         {
             "link": "feed/blog.xml",
