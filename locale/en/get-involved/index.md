@@ -68,6 +68,7 @@ right place. Explore our community resources to find out how you can help:
 - [Australian Node.js blog &amp; developers listing](http://nodejs.org.au/)
 - [Brazilian community of Node.js](http://www.nodebr.com/)
 - [Chinese community](http://cnodejs.org)
+- [German Node.js community](http://nodecode.de)
 - [Google+ Community of Node.js French users](https://plus.google.com/communities/113346206415381691435)
 - [Hong Kong community](http://nodejs.hk)
 - [Hungarian (Magyar) community](http://nodehun.blogspot.com/)
