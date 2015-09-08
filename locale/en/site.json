@@ -4,6 +4,7 @@
     "url": "https://new.nodejs.org/en/",
     "locale": "en",
     "scrollToTop": "Scroll to top",
+    "by": "by",
     "feeds": [
         {
             "link": "feed/blog.xml",
