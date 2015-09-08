@@ -11,7 +11,7 @@
                 <h1>Previous Releases</h1>
 
                 <section>
-                    <h2>io.js & node.js</h2>
+                    <h2>io.js &amp; Node.js</h2>
                     <p>
                         {{iojs.intro}}
                     </p>
@@ -24,19 +24,19 @@
                                 <td>Version</td>
                                 <td>Date</td>
                                 <td>V8</td>
-                                <td>NPM</td>
+                                <td>npm</td>
                                 <td></td>
                             </tr>
                         </thead>
                         <tbody>
                             {{#project.versions}}
                                 <tr>
-                                    <td data-label="Version">{{version}}</td>
+                                    <td data-label="Version">{{name}} {{version}}</td>
                                     <td data-label="Date"><time>{{date}}</time></td>
                                     <td data-label="V8">{{v8}}</td>
-                                    <td data-label="NPM">{{npm}}</td>
+                                    <td data-label="npm">{{npm}}</td>
                                     <td class="download-table-last">
-                                        <a href="/dist/{{version}}">
+                                        <a href="{{url}}">
                                             {{i18n 'releases.downloads'}}
                                         </a>
                                         <a href="{{changeloglink version}}">
