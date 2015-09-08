@@ -4,7 +4,7 @@ layout: docs.hbs
 ---
 # ES6 on Node.js
 
-Node.js is built against modern versions of [V8](https://code.google.com/p/v8/). By keeping up-to-date with the latest releases of this engine we ensure new features from the [JavaScript ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm) are brought to Node.js developers in a timely manner, as well as continued performance and stability improvements.
+Node.js is built against modern versions of [V8](https://developers.google.com/v8/). By keeping up-to-date with the latest releases of this engine we ensure new features from the [JavaScript ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm) are brought to Node.js developers in a timely manner, as well as continued performance and stability improvements.
 
 All ES6 features are split into three groups for **shipping**, **staged** and **in progress** features:
 
