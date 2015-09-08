@@ -9,7 +9,10 @@
         <div class="container">
 
             <article>
-                <h1>{{title}}</h1>
+                <div class="blogpost-header">
+                    <h1>{{title}}</h1>
+                    <span class="blogpost-meta">{{#if author}}{{i18n site.by}} {{author}}, {{/if}}<time datetime="{{ date }}">{{ strftime date }}</time></span>
+                </div>
 
                 {{{ contents }}}
             </article>
