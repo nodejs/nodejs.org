@@ -28,6 +28,7 @@
     "chokidar": "^1.0.5",
     "gulp": "^3.9.0",
     "handlebars": "^3.0.0",
+    "map-async": "~0.1.1",
     "metalsmith": "^2.0.0",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-feed": "0.0.6",
