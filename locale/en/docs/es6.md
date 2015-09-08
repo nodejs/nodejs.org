@@ -4,9 +4,9 @@ layout: docs.hbs
 ---
 # ES6 on Node.js
 
-Node.js is built against modern versions of [V8](https://code.google.com/p/v8/). By keeping up-to-date with the latest releases of this engine we ensure new features from the [JavaScript ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm) are brought to Node.js developers in a timely manner, as well as continued performance and stability improvements.
+Node.js is built against modern versions of [V8](https://code.google.com/p/v8/). By keeping up-to-date with the latest releases of this engine, we ensure new features from the [JavaScript ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm) are brought to Node.js developers in a timely manner, as well as continued performance and stability improvements.
 
-The current version of Node.js ships with a build of V8, which includes ES6 features well beyond version 3.28.73 that ship with Node.js™ 0.12.x.
+The current version of Node.js ships with a build of V8 which includes ES6 features well beyond version 3.28.73 that ship with Node.js™ 0.12.x.
 
 ## No more `--harmony` flag
 
@@ -14,9 +14,9 @@ On Node.js™@0.12.x (V8 3.28+), the `--harmony` runtime flag enables all **comp
 
 With Node.js (V8 4.1+), all that complexity goes away. All harmony features are now logically split into three groups for **shipping**, **staged** and **in progress** features:
 
-* All **shipping** features, the ones that V8 has considered stable, like [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes),  [generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*), [templates](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings), [new string methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla#Additions_to_the_String_object) and many others are turned **on by default on Node.js** and do **NOT** require any kind of runtime flag.
-* Then there are **staged** features which are almost-completed features that haven't been completely tested or updated to the latest spec yet and therefore are not considered stable by the V8 team (e.g. there might be some edge cases left to discover). This is probably the equivalent of the state of [generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*) on 3.26. These are the "use at your own risk" type of features that now require a runtime flag: `--es_staging` (or its synonym, `--harmony`).
-* Finally, all **in progress** features can be activated individually by their respective harmony flag (e.g. `--harmony_arrow_functions`), although this is highly discouraged unless for testing purposes.
+* All **shipping** features, which are the ones that V8 has considered stable, like [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes),  [generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*), [templates](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings), [new string methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla#Additions_to_the_String_object) and many others, are turned **on by default on Node.js** and do **NOT** require any kind of runtime flag.
+* Then there are **staged** features which are almost-completed features that haven't been completely tested or updated to the latest spec yet and therefore are not considered stable by the V8 team. This is probably the equivalent of the state of [generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*) on 3.26. These are the "use at your own risk" type of features that now require a runtime flag: `--es_staging` (or its synonym, `--harmony`).
+* Finally, all **in progress** features can be activated individually by their respective harmony flag, although this is highly discouraged unless for testing purposes.
 
 ## Which ES6 features ship with Node.js by default (no runtime flag required)?
 
@@ -58,6 +58,8 @@ With Node.js (V8 4.1+), all that complexity goes away. All harmony features are 
 * [Symbols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
 
 * [Template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings)
+
+* [Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 You can view a more detailed list, including a comparison with other engines, on the [compat-table](https://kangax.github.io/compat-table/es6/) project page.
 
