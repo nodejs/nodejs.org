@@ -8,7 +8,7 @@ slug: evolving-the-node-js-brand
 layout: blog-post.hbs
 ---
 
-To echo <a href="http://nodejs.org/">Node</a>’s evolutionary nature, we have refreshed the identity to help mark an exciting time for developers, businesses and users who benefit from the pioneering technology.
+To echo <a href="https://nodejs.org/">Node</a>’s evolutionary nature, we have refreshed the identity to help mark an exciting time for developers, businesses and users who benefit from the pioneering technology.
 
 <strong>Building a brand</strong>
 
@@ -32,6 +32,6 @@ We look forward to exploring<ins cite="mailto:EMILY%20TANAKA-DELGADO" datetime="
 
 We hope you'll have fun using it.
 
-To download the new logo, visit <a href="http://nodejs.org/logos/">nodejs.org/logos</a>.
+To download the new logo, visit <a href="https://nodejs.org/logos/">nodejs.org/logos</a>.
 
 <ins cite="mailto:EMILY%20TANAKA-DELGADO" datetime="2011-07-09T18:32"><img title="Tri-color Node" src="http://joyeur.files.wordpress.com/2011/07/tri-color-node.png" alt="" width="560" height="180" /></ins>
