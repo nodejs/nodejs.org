@@ -157,3 +157,24 @@ pre
 
     & *:first-child
         margin-top 0.5rem
+
+.issue-link-container
+    clear both
+    overflow hidden
+
+    @media screen and (max-width: 640px)
+        a.linuxfoundation-logo,
+        a.issue-link
+            float none
+            width: 100%
+
+    .linuxfoundation-logo
+        float left
+        width 75%
+
+    .issue-link
+        display block
+        margin-top 0.5rem
+        float right
+        width 25%
+
