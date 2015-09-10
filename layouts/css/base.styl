@@ -162,19 +162,20 @@ pre
     clear both
     overflow hidden
 
-    @media screen and (max-width: 640px)
-        a.linuxfoundation-logo,
-        a.issue-link
-            float none
-            width: 100%
 
     .linuxfoundation-logo
+        width 60%
         float left
-        width 75%
 
     .issue-link
-        display block
-        margin-top 0.5rem
+        width 40%
         float right
-        width 25%
+        text-align right
+        margin-top 0.5rem
 
+    @media screen and (max-width: 700px)
+        .linuxfoundation-logo,
+        .issue-link
+            float none
+            width: 100%
+            text-align left
