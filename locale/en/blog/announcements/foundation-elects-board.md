@@ -1,9 +1,8 @@
 ---
 title: Node.js Foundation Elects Board of Directors
-author: mikeal
 date: 2015-09-04T21:00:00.000Z
 status: publish
-category: Annnoucements
+category: Annoucements
 slug: foundation-elects-board
 layout: blog-post.hbs
 ---
