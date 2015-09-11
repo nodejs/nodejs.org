@@ -59,8 +59,8 @@ project, and how does that team makes decisions.
 One thing that we all agree on, is that we're not going to be using the
 Benevolent Dictator model. In fact, recently the project hasn't been operating
 that way. We can be more clear about that in our
-[documentation](https://nodejs.org/about/organization). We all agree we want a
-healthy and vibrant team, a team focused on making progress for Node.js, not
+[documentation](https://nodejs.org/en/about/organization). We all agree we want
+a healthy and vibrant team, a team focused on making progress for Node.js, not
 for progress's sake, but for the betterment of the software project and the
 community we serve. We also agree that this means that there should be
 consensus among the team. The conversation has been fruitful, and is on going,
