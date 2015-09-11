@@ -32,6 +32,6 @@ We look forward to exploring<ins cite="mailto:EMILY%20TANAKA-DELGADO" datetime="
 
 We hope you'll have fun using it.
 
-To download the new logo, visit <a href="https://nodejs.org/logos/">nodejs.org/logos</a>.
+To download the new logo, visit <a href="https://nodejs.org/en/about/resources/">nodejs.org/en/about/resources/</a>.
 
 <ins cite="mailto:EMILY%20TANAKA-DELGADO" datetime="2011-07-09T18:32"><img title="Tri-color Node" src="http://joyeur.files.wordpress.com/2011/07/tri-color-node.png" alt="" width="560" height="180" /></ins>
