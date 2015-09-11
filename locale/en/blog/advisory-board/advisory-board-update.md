@@ -13,7 +13,7 @@ release of v0.12.
 The interim [advisory
 board](https://www.joyent.com/blog/node-js-advisory-board) has met three times
 since its creation. You can find the minutes from the advisory board meetings
-here: [https://nodejs.org/advisory-board](https://nodejs.org/advisory-board). As
+here: [https://nodejs.org/en/about/advisory-board/](https://nodejs.org/en/about/advisory-board/). As
 we have more meetings and minutes, we will announce the dates and times for
 those meeting and their minutes here on the blog. The next meeting is this
 Thursday December 4th, at 1:30PM PST. We're looking to collect as much feedback
@@ -42,7 +42,7 @@ in the minutes. Those minutes are then published a few days after the meeting
 in the GitHub repository
 [https://github.com/joyent/nodejs-advisory-board](https://github.com/joyent/nodejs-advisory-board),
 as well as on the website
-[https://nodejs.org/advisory-board](https://nodejs.org/advisory-board).
+[https://nodejs.org/en/about/advisory-board/](https://nodejs.org/en/about/advisory-board/).
 
 There are a few working groups so far, for instance one is focused on making
 sure the membership of the board is representative of the community Node.js
