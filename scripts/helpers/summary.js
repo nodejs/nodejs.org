@@ -2,15 +2,26 @@
 
 const cheerio = require('cheerio');
 
-module.exports = function (contents) {
-    var $ = cheerio.load('<div>'+contents+'</div>');
+const SUMMARY_LENGHT = 400;
 
-    var summary = $(':nth-child(1)').html();
-    console.log(contents);
+module.exports = function (contents, locale, path) {
+    let $ = cheerio.load(contents);
 
-    console.log("hello");
+    let summary = '';
+    let child = 1;
 
-    return summary;
+    $('*').each((i, elem) => {
+        if (summary.length > SUMMARY_LENGHT) {
+            summary += `<p><a href='/${locale}/${path}/'>Read more...</a></p>`;
+            return false;
+        }
+
+        if (elem.parent) {
+            return;
+        }
+
+        summary += $.html(elem);
+    })
+
+    return `${summary}`;
 };
-
-// module.exports('<h2 class="title">Hello world</h2><h2>asdfasd</h2>');
