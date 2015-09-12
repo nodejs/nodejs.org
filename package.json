@@ -4,7 +4,6 @@
   "description": "New Nodejs.org website",
   "homepage": "https://new.nodejs.org",
   "scripts": {
-    "gulp": "gulp",
     "build": "node build.js",
     "serve": "node build.js serve",
     "lint": "eslint scripts build.js",
@@ -27,7 +26,6 @@
   "dependencies": {
     "autoprefixer-stylus": "^0.7.1",
     "chokidar": "^1.0.5",
-    "gulp": "^3.9.0",
     "handlebars": "^3.0.0",
     "map-async": "~0.1.1",
     "metalsmith": "^2.0.0",
