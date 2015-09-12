@@ -8,7 +8,8 @@
     "build": "node build.js",
     "serve": "node build.js serve",
     "lint": "eslint scripts build.js",
-    "load-versions": "node scripts/load-versions.js"
+    "load-versions": "node scripts/load-versions.js",
+    "start": "npm run serve"
   },
   "repository": {
     "type": "git",
