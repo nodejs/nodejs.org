@@ -15,7 +15,9 @@
                             <time datetime="{{ date }}">{{ strftime date "%d %b %y" }}</time>
                             <a href="/{{../../site.locale}}/{{ path }}/">{{ title }}</a>
 
-                            {{{ summary contents }}}
+                            <div class="summary">
+                              {{{ summary contents ../../site.locale path }}}
+                            <div>
                         </li>
                     {{/if}}
                 {{/each}}
