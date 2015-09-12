@@ -19,7 +19,7 @@ Our [API reference documentation](/api/) is meant to provide detailed version in
     </ul>
 </div>
 
-The [ES6 section](/en/docs/es6/) describes the three different features groups and which one are enabled by default in Node.js. It lists out all the different features enabled by default alongside explanatory links. Also shows how to find the exact version of V8 a Node.js release has.
+The [ES6 section](/en/docs/es6/) describes the three different features groups and which ones are enabled by default in Node.js. It lists out all the different features enabled by default alongside explanatory links. Also, it shows how to find the exact version of V8 a Node.js release has.
 
 Our [FAQ](/en/docs/faq/) shows how everyone can contribute to Node.js, our code of conduct and governance model. How to get in touch on github and IRC and helping out triaging issues.
 
