@@ -14,7 +14,6 @@ By making a contribution to this project, I certify that:
 * (c) The contribution was provided directly to me by some other
   person who certified (a), (b) or (c) and I have not modified it.
 
-
 ## Code of Conduct
 
 This Code of Conduct is adapted from [Rust's wonderful
@@ -52,7 +51,7 @@ CoC](https://github.com/rust-lang/rust/wiki/Note-development-policy#conduct).
   documentation. There is no need to address persons when explaining
   code (e.g. "When the developer")
 
-  ## Code editing
+## Code editing
 
 ### Adding new pages
 1. Create new page content including the layout, title and copy.
