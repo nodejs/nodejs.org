@@ -37,7 +37,7 @@ Note: You'll need io.js 2.x or newer as the build system uses some native ES2015
   * The top of each Markdown file is a block of YAML for page specific localization information that is passed to various templates.
   * The bulk of the Markdown content for each page is referenced as `{{{content}}}` in the corresponding template.
 
-[Adding new pages](https://github.com/nodejs/new.nodejs.org/blob/master/CONTRIBUTING.md#code-editing)
+[Adding new pages](./CONTRIBUTING.md#code-editing)
 
 ## Governance and Current Members
 

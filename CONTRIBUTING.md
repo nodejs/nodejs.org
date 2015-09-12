@@ -60,7 +60,7 @@ CoC](https://github.com/rust-lang/rust/wiki/Note-development-policy#conduct).
   3. Update the relevant ```/layout``` to add a link to the new page.
 
   #### Create the page content
-  Create a new markdown file in ```/local/en```.  As specified in the [README.md](https://github.com/nodejs/new.nodejs.org/blob/master/README.md#layout), initial development happens in English.
+  Create a new markdown file in ```/local/en```.  As specified in the [README.md](./README.md#layout), initial development happens in English.
 
   At the top of the markdown file, set a page the title and layout.
 
