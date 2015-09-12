@@ -100,6 +100,10 @@
         "development": {
             "link": "get-involved/development",
             "text": "Development"
+        },
+        "code-and-learn": {
+            "link": "get-involved/code-and-learn",
+            "text": "Code + Learn"
         }
     },
     "trademark"  : { "link": "about/trademark", "text": "Trademark" },
