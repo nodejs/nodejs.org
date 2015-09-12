@@ -109,6 +109,10 @@
         "code-and-learn": {
             "link": "get-involved/code-and-learn",
             "text": "Code + Learn"
+        },
+        "events": {
+          "link": "get-involved/events",
+          "text": "Events"
         }
     },
     "trademark"  : { "link": "about/trademark", "text": "Trademark" },
