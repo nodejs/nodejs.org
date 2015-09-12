@@ -83,5 +83,4 @@ right place. Explore our community resources to find out how you can help:
 - [Taiwan community](http://nodejs.tw)
 - [Node.js in Vietnamese](http://nodejs.vn/)
 - [Nicaragua Node.js community](http://nodenica.com/)
-
-
+- [Korean Node.js community](http://nodejs.github.io/iojs-ko/)
