@@ -100,6 +100,10 @@
         "development": {
             "link": "get-involved/development",
             "text": "Development"
+        },
+        "events": {
+          "link": "get-involved/events",
+          "text": "Events"
         }
     },
     "trademark"  : { "link": "about/trademark", "text": "Trademark" },

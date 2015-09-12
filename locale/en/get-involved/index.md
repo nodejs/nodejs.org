@@ -14,23 +14,6 @@ right place. Explore our community resources to find out how you can help:
 
 <hr>
 
-## Events
-
-- [NodeConf](http://www.nodeconf.com/) conferences are the main event in the United States.
-
-- [NodeConf EU](http://nodeconfeu.com/) is a Node conference in Europe, organized by Cian Ó Maidín.
-
-- [NodeFest (東京Node学園祭)](http://nodefest.jp/) is organized by the [Node.js Japan user group](http://nodejs.jp).
-
-- An [Italian Node.js Conference](http://nodejsconf.it/) is held in Brescia.
-
-- [Node Summit](http://nodesummit.com/) is a conference in San Francisco focusing on the adoption of Node in larger companies.
-
-- [JSConf](http://jsconf.com/) organizes the main JavaScript conferences.
-
-- [NodeConf ONE-SHOT](http://oneshot.nodeconf.com/) are forkable conferences for a local communities
-
-
 ## Discussion
 
 - The [github issues list](https://github.com/nodejs/node/issues) the place for discussion of Node.js core features
