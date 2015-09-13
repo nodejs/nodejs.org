@@ -50,7 +50,7 @@ See https://github.com/nodejs/io.js/labels/confirmed-bug for complete and curren
 ### Community Updates
 
 * Yosuke Furukawa will give a talk about the past, present, and future of Node.js in [YAPC Asia 2015](http://yapcasia.org/2015/), the largest conference in Japan's programming community. It will be hosted at Tokyo on August 20th - 22nd and his talk will specifically be on the 22nd. Details of the talk can be found [here](http://yapcasia.org/2015/talk/show/82e93a96-f60e-11e4-907e-8ab37d574c3a).
-* A security issue is found in v8 that can be used for DoS attacks against Node.js applications and servers running 0.12 and all versions of io.js. Critical security upgrades ([Node.js v0.12.6](http://nodejs.org/dist/v0.12.6/), [io.js 2.3.3](https://iojs.org/dist/v2.3.3/) and [io.js 1.8.3](https://iojs.org/dist/v1.8.3/)) have been released. Also, details about the issue can be found [on one of our Medium post](https://medium.com/@iojs/important-security-upgrades-for-node-js-and-io-js-8ac14ece5852). If you're running v1.8.2 or below, or v2.3.2 or below, please update them to io.js versions 1.8.3 and 2.3.3.
+* A security issue is found in v8 that can be used for DoS attacks against Node.js applications and servers running 0.12 and all versions of io.js. Critical security upgrades ([Node.js v0.12.6](https://nodejs.org/dist/v0.12.6/), [io.js 2.3.3](https://iojs.org/dist/v2.3.3/) and [io.js 1.8.3](https://iojs.org/dist/v1.8.3/)) have been released. Also, details about the issue can be found [on one of our Medium post](https://medium.com/@iojs/important-security-upgrades-for-node-js-and-io-js-8ac14ece5852). If you're running v1.8.2 or below, or v2.3.2 or below, please update them to io.js versions 1.8.3 and 2.3.3.
 
 ### Upcoming Events
 
