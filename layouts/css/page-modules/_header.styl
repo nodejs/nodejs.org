@@ -24,43 +24,45 @@ header
 @media screen and (min-width: 481px)
     header
         li
-        $border-width = 14px
-        padding-bottom 12px;
+            $border-width = 14px
+            padding-bottom 12px;
 
-        &.active:after
-            top 100%
-            left 50%
-            border solid rgba(0, 0, 0, 0)
-            content " "
-            height 0
-            width 0
-            position absolute
-            pointer-events none
-            border-color rgba(3, 3, 0, 0)
-            border-top-color $node-gray
-            border-width $border-width
-            margin-left -($border-width/2)px
-            z-index -3
+            &.active:after
+                top 100%
+                left 50%
+                border solid rgba(0, 0, 0, 0)
+                content " "
+                height 0
+                width 0
+                position absolute
+                pointer-events none
+                border-color rgba(3, 3, 0, 0)
+                border-top-color $node-gray
+                border-width $border-width
+                margin-left -($border-width/2)px
+                z-index -3
 
-        &.active:first-child:after
-            margin-left -($border-width)px
+            &.active:first-child:after
+                margin-left -($border-width)px
 
-        > .dropdown
-            display inline-block
-            position absolute
-            z-index -2
-            left 0
-            top -200%
-            background-color $node-gray
-            transition top 0.2s ease-out
+            > .dropdown
+                display inline-block
+                position absolute
+                z-index -2
+                left 0
+                top -200%
+                background-color $node-gray
+                transition top 0.2s ease-out
+                margin 0
+                padding 0 0 0.25rem
 
-            > a
-                display block
-                padding 5px 10px
-                white-space nowrap
+                > li
+                    display block
+                    padding 5px 10px
+                    white-space nowrap
 
-        &:hover > .dropdown
-            top 100%
+            &:hover > .dropdown
+                top 100%
 
 
     a,
@@ -92,7 +94,7 @@ header
         display block
         margin .5em auto 1em auto
         border none
-        
+
 .header-raise
     z-index 50
     position relative
