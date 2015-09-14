@@ -70,7 +70,7 @@ aspects of the protocol itself too, but that's a lot harder).
 
 Well, in the last year, I went to work for <a title="Joyent" href="http://www.joyent.com/">Joyent</a>, and like everyone else, we have several use problems that are classic directory service problems. If you break down the list I outlined above:
 <ul>
-	<li><strong>Connection-oriented and asynchronous:</strong> Holy smokes batman, <a title="node.js" href="http://nodejs.org/">node.js</a> is a completely kick-ass event-driven asynchronous server platform that manages connections like a boss. Check!</li>
+	<li><strong>Connection-oriented and asynchronous:</strong> Holy smokes batman, <a title="node.js" href="https://nodejs.org/">node.js</a> is a completely kick-ass event-driven asynchronous server platform that manages connections like a boss. Check!</li>
 	<li><strong>Lots of use cases:</strong> Yeah, we've got some. Man, the <a title="sinatra" href="http://www.sinatrarb.com/">sinatra</a>/<a title="express" href="http://expressjs.com/">express</a> paradigm is so easy to slap over anything. How about we just do that and leave as many use cases open as we can. Check!</li>
 	<li><strong>Replication is hard. CAP is right:</strong> There are a lot of distributed databases out vying to solve exactly this problem. At Joyent we went with <a title="Riak" href="http://www.basho.com/">Riak</a>. Check!</li>
 	<li><strong>Don't need all of the protocol:</strong> I'm lazy. Let's just skip the stupid things most people don't need. Check!</li>

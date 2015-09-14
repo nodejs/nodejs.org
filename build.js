@@ -14,23 +14,17 @@ const permalinks = require('metalsmith-permalinks');
 const path = require('path');
 const fs = require('fs');
 const ncp = require('ncp');
-const semver = require('semver');
 
-const filterStylusPartials = require('./plugins/filter-stylus-partials');
-const mapHandlebarsPartials = require('./plugins/map-handlebars-partials');
+const filterStylusPartials = require('./scripts/plugins/filter-stylus-partials');
+const mapHandlebarsPartials = require('./scripts/plugins/map-handlebars-partials');
 const versions = require('./source/versions');
 
 /** Build **/
 
 // load template.json for given language, but use default language as fallback
 // for properties which are not present in the given language
-var Handlebars = require('handlebars');
-
-Handlebars.registerHelper('getProps', function(obj, a, b) {
-  return obj && obj[a][b]
-})
-
 const DEFAULT_LANG = 'en';
+
 function i18nJSON (lang) {
     var defaultJSON = require(`./locale/${DEFAULT_LANG}/site.json`);
     var templateJSON = require(`./locale/${lang}/site.json`);
@@ -47,10 +41,6 @@ function i18nJSON (lang) {
     };
     merge(finalJSON, templateJSON);
     return finalJSON;
-}
-
-function traverse (obj, str) {
-    return str.split('.').reduce(function (o, x) { return o[x]; }, obj);
 }
 
 const source = {
@@ -82,6 +72,24 @@ function buildlocale (locale) {
             reverse: true,
             refer: false
         },
+        blogAnnounce : {
+            pattern: 'blog/announcements/*.md',
+            sortBy: 'date',
+            reverse: true,
+            refer: false
+        },
+        blogReleases : {
+            pattern: 'blog/release/*.md',
+            sortBy: 'date',
+            reverse: true,
+            refer: false
+        },
+        blogVulnerability : {
+            pattern: 'blog/vulnerability/*.md',
+            sortBy: 'date',
+            reverse: true,
+            refer: false
+        },
         lastWeekly: {
             pattern: 'blog/weekly-updates/*.md',
             sortBy: 'date',
@@ -109,12 +117,27 @@ function buildlocale (locale) {
     }))
     .use(feed({
         collection: 'blog',
-        destination: 'blog.xml',
+        destination: 'feed/blog.xml',
         title: 'Node.js Blog'
     }))
     .use(feed({
+      collection: 'blogAnnounce',
+      destination: 'feed/announce.xml',
+      title: 'Node.js Announcements'
+    }))
+    .use(feed({
+        collection: 'blogReleases',
+        destination: 'feed/releases.xml',
+        title: 'Node.js Blog: Releases'
+    }))
+    .use(feed({
+        collection: 'blogVulnerability',
+        destination: 'feed/vulnerability.xml',
+        title: 'Node.js Blog: Vulnerability Reports'
+    }))
+    .use(feed({
         collection: 'tscMinutes',
-        destination: 'tsc-minutes.xml',
+        destination: 'feed/tsc-minutes.xml',
         title: 'Node.js Technical Steering Committee meetings'
     }))
     .use(layouts({
@@ -122,39 +145,12 @@ function buildlocale (locale) {
         pattern: '**/*.html',
         partials: mapHandlebarsPartials(metalsmith, 'layouts', 'partials'),
         helpers: {
-            equals: function (v1, v2, options) {
-                return (v1 === v2) ? options.fn(this) : options.inverse(this);
-            },
-            startswith: function (v1, v2, options) {
-                return (v1 && v1.indexOf(v2) === 0) ? options.fn(this) : options.inverse(this);
-            },
-            i18n: function () {
-                var env, key;
-
-                // function(key, env)
-                if (arguments.length === 2) {
-                    key = arguments[0];
-                    env = arguments[1];
-                }
-                // function(scope, key, env)
-                if (arguments.length === 3) {
-                    key = arguments[0] + '.' + arguments[1];
-                    env = arguments[2];
-                }
-
-                var data = env.data.root;
-                var result = traverse(data.i18n, key);
-
-                return new Handlebars.SafeString(result);
-            },
-            changeloglink: function (version) {
-
-                if (!version) { return ''; }
-
-                return semver.gte(version, '1.0.0') ?
-                    `https://github.com/nodejs/io.js/blob/${version}/CHANGELOG.md` :
-                    `https://github.com/joyent/node/blob/${version}/ChangeLog`;
-            }
+            equals: require('./scripts/helpers/equals.js'),
+            startswith: require('./scripts/helpers/startswith.js'),
+            i18n: require('./scripts/helpers/i18n.js'),
+            changeloglink: require('./scripts/helpers/changeloglink.js'),
+            strftime: require('./scripts/helpers/strftime.js'),
+            getProps: require('./scripts/helpers/getprops.js')
         }
     }))
     .destination(path.join(__dirname, 'build', locale));

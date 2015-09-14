@@ -5,9 +5,10 @@
   "homepage": "https://new.nodejs.org",
   "scripts": {
     "build": "node build.js",
-    "gulp": "gulp",
     "serve": "node build.js serve",
-    "lint": "eslint scripts build.js plugins"
+    "lint": "eslint scripts build.js",
+    "load-versions": "node scripts/load-versions.js",
+    "start": "npm run serve"
   },
   "repository": {
     "type": "git",
@@ -25,8 +26,8 @@
   "dependencies": {
     "autoprefixer-stylus": "^0.7.1",
     "chokidar": "^1.0.5",
-    "gulp": "^3.9.0",
     "handlebars": "^3.0.0",
+    "map-async": "~0.1.1",
     "metalsmith": "^2.0.0",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-feed": "0.0.6",
@@ -41,7 +42,8 @@
     "octonode": "^0.7.1",
     "require-dir": "^0.3.0",
     "semver": "^5.0.1",
-    "st": "^0.5.5"
+    "st": "^0.5.5",
+    "strftime": "^0.9.2"
   },
   "devDependencies": {
     "babel-eslint": "^4.0.10",

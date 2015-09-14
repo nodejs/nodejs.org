@@ -1,12 +1,12 @@
 ---
-title: Get invloved
+title: Get involved
 layout: contribute.hbs
 ---
 
 # We encourage all kinds of contribution from the community.
 
 The Node.js community is large, inclusive, and excited to enable as many users
-to contribute in whatever what they can. If you want to [report an
+to contribute in whatever way they can. If you want to [report an
 issue](https://github.com/nodejs/node/issues), [help with
 documentation](/en/get-involved/contribute/) or [contribute to the code
 base](/en/get-involved/development/) of the project, you’ve come to the
@@ -32,8 +32,6 @@ right place. Explore our community resources to find out how you can help:
 
 
 ## Discussion
-
-- The [mailing list](http://groups.google.com/group/nodejs) is used for announcements and discussion about Node.
 
 - The [github issues list](https://github.com/nodejs/node/issues) the place for discussion of Node.js core features
 
@@ -68,6 +66,7 @@ right place. Explore our community resources to find out how you can help:
 - [Australian Node.js blog &amp; developers listing](http://nodejs.org.au/)
 - [Brazilian community of Node.js](http://www.nodebr.com/)
 - [Chinese community](http://cnodejs.org)
+- [German Node.js community](http://nodecode.de)
 - [Google+ Community of Node.js French users](https://plus.google.com/communities/113346206415381691435)
 - [Hong Kong community](http://nodejs.hk)
 - [Hungarian (Magyar) community](http://nodehun.blogspot.com/)
@@ -82,5 +81,4 @@ right place. Explore our community resources to find out how you can help:
 - [Taiwan community](http://nodejs.tw)
 - [Node.js in Vietnamese](http://nodejs.vn/)
 - [Nicaragua Node.js community](http://nodenica.com/)
-
-
+- [Korean Node.js community](http://nodejs.github.io/iojs-ko/)

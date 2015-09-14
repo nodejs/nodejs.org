@@ -5,7 +5,7 @@ title: Working Groups
 # Working Groups
 
  Working Groups are autonomous projects created by the
-[Technical Committee (TC)](https://github.com/nodejs//blob/master/GOVERNANCE.md#technical-committee).
+[Technical Committee (TC)](https://github.com/nodejs/node/blob/master/GOVERNANCE.md#technical-committee).
 
 Working Groups can be formed at any time but must be ratified by the TC.
 Once formed the work defined in the Working Group charter is the

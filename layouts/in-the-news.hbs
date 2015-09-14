@@ -5,7 +5,7 @@
 <body>
     {{> header }}
 
-    <main>
+    <div id="main">
         <div class="container has-side-nav">
 
             <aside>
@@ -22,21 +22,19 @@
                     <li{{#equals path site.foundation.itn.link}} class="active"{{/equals}}>
                         <a href="/{{site.locale}}/{{site.foundation.itn.link}}/">{{site.foundation.itn.text}}</a>
                     </li>
+                    <li{{#equals path site.foundation.announce.link}} class="active"{{/equals}}>
+                        <a href="/{{site.locale}}/{{site.foundation.announce.link}}/">{{site.foundation.announce.text}}</a>
+                    </li>
                 </ul>
             </aside>
 
             {{{ contents }}}
 
-            <style>
-            div#news-container {
-              margin-top:50px;
-            }
-            div.news-row: {
-              padding: 5px 5px 5px 5px;
-            }
-            </style>
-            <div id="news-container">
-            </div>
+            <article>
+              <div id="news-container">
+              </div>
+            </article>
+
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.2/tabletop.min.js"></script>
             <script type="text/javascript">
               var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1jSxgB5MYd1xCOmhb5QZ90PbDiY57n4z4A0lcdQD-UG8/pubhtml';
@@ -58,7 +56,7 @@
             </script>
 
         </div>
-    </main>
+    </div>
 
     {{> footer }}
 </body>

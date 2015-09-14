@@ -3,8 +3,6 @@ title: Technical Steering Commitee
 layout: foundation.hbs
 ---
 
-# Organization
-
 ## Collaborators and the Technical Steering Committee
 
 The Node.js project is sponsored by the Node.js Foundation and maintained by

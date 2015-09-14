@@ -1,8 +1,30 @@
 {
     "title": "Node.js",
     "author": "Node.js Foundation",
-    "url": "https://new.nodejs.org/en/",
+    "url": "https://nodejs.org/en/",
     "locale": "en",
+    "scrollToTop": "Scroll to top",
+    "reportNodeIssue": "Report Node.js issue",
+    "reportWebsiteIssue": "Report website issue",
+    "by": "by",
+    "feeds": [
+        {
+            "link": "feed/blog.xml",
+            "text": "Node.js Blog"
+        },
+        {
+            "link": "feed/releases.xml",
+            "text": "Node.js Blog: Releases"
+        },
+        {
+            "link": "feed/vulnerability.xml",
+            "text": "Node.js Blog: Vulnerability Reports"
+        },
+        {
+            "link": "feed/tsc-minutes.xml",
+            "text": "Node.js TSC meeting minutes"
+        }
+    ],
     "home": { "text": "Home" },
     "about": {
         "link": "about",
@@ -15,6 +37,14 @@
         "workinggroups": {
             "link": "about/working-groups",
             "text": "Working Groups"
+        },
+        "releases": {
+            "link": "about/releases",
+            "text": "Releases"
+        },
+        "resources": {
+            "link": "about/resources",
+            "text": "Resources"
         }
     },
     "download": {
@@ -38,7 +68,7 @@
             "text": "FAQ"
         },
         "api": {
-            "link": "https://iojs.org/api/",
+            "link": "/api/",
             "text": "API"
         }
     },
@@ -52,11 +82,15 @@
         },
         "tsc": {
             "link": "foundation/tsc",
-            "text": "Technical Steering Committee"
+            "text": "Technical Governance"
         },
         "itn": {
              "link": "foundation/in-the-news",
              "text": "In the News"
+        },
+        "announce": {
+            "link": "foundation/announcements",
+            "text": "Announcements"
         }
     },
     "getinvolved": {
@@ -70,6 +104,10 @@
         "development": {
             "link": "get-involved/development",
             "text": "Development"
+        },
+        "code-and-learn": {
+            "link": "get-involved/code-and-learn",
+            "text": "Code + Learn"
         }
     },
     "trademark"  : { "link": "about/trademark", "text": "Trademark" },

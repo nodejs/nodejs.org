@@ -9,3 +9,13 @@
             content '|'
             padding 0 .3em 0 .1em
             color $lightgray
+
+
+@media screen and (max-width: 480px)
+    nav
+        .list-divider-pipe
+            margin-bottom 1rem
+            overflow hidden
+
+            li + li:before
+                display none
