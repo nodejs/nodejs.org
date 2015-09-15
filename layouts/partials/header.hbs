@@ -1,37 +1,59 @@
-<header>
-    <div class="container">
+<div class="header-raise">
+    <header>
+        <div class="container">
 
-        <a href="/{{site.locale}}" id="logo">
-          <img src="/static/images/logo.svg" height="75" width="180" alt="node.js">
-        </a>
-        <nav>
-            <ul class="list-divider-pipe">
-                <li{{#equals path ''}} class="active"{{/equals}}>
-                    <a href="/{{site.locale}}/">{{site.home.text}}</a>
-                </li>
-                <li{{#startswith path site.about.link}} class="active"{{/startswith}}>
-                    <a href="/{{site.locale}}/{{site.about.link}}/">{{site.about.text}}</a>
-                </li>
-                <li{{#startswith path site.download.link}} class="active"{{/startswith}}>
-                    <a href="/{{site.locale}}/{{site.download.link}}/">{{site.download.text}}</a>
-                </li>
-                <li{{#startswith path site.docs.link}} class="active"{{/startswith}}>
-                    <a href="/{{site.locale}}/{{site.docs.link}}/">{{site.docs.text}}</a>
-                </li>
-                <li{{#startswith path site.foundation.link}} class="active"{{/startswith}}>
-                    <a href="/{{site.locale}}/{{site.foundation.link}}/">{{site.foundation.text}}</a>
-                </li>
-                <li{{#startswith path site.getinvolved.link}} class="active"{{/startswith}}>
-                    <a href="/{{site.locale}}/{{site.getinvolved.link}}/">{{site.getinvolved.text}}</a>
-                </li>
-                <li{{#startswith path site.security.link}} class="active"{{/startswith}}>
-                    <a href="/{{site.locale}}/{{site.security.link}}/">{{site.security.text}}</a>
-                </li>
-                <li{{#startswith path site.blog.link}} class="active"{{/startswith}}>
-                    <a href="/{{site.locale}}/{{site.blog.link}}/">{{site.blog.text}}</a>
-                </li>
-            </ul>
-        </nav>
+            <a href="/{{site.locale}}" id="logo">
+              <img src="/static/images/logo.svg" height="75" width="180" alt="node.js">
+            </a>
+            <nav>
+                <ul class="list-divider-pipe">
+                    <li{{#equals path ''}} class="active"{{/equals}}>
+                        <a href="/{{site.locale}}/">{{site.home.text}}</a>
+                    </li>
+                    <li{{#startswith path site.about.link}} class="active"{{/startswith}}>
+                        <a href="/{{site.locale}}/{{site.about.link}}/">{{site.about.text}}</a>
+                        <ul class="dropdown">
+                            {{~#each site.about.sections~}}
+                                <li><a href="/{{../site.locale}}/{{getProps ../site.about this 'link'}}/">{{getProps ../site.about this 'text'}}</a></li>
+                            {{/each}}
+                        </ul>
+                    </li>
+                    <li{{#startswith path site.download.link}} class="active"{{/startswith}}>
+                        <a href="/{{site.locale}}/{{site.download.link}}/">{{site.download.text}}</a>
+                    </li>
+                    <li{{#startswith path site.docs.link}} class="active"{{/startswith}}>
+                        <a href="/{{site.locale}}/{{site.docs.link}}/">{{site.docs.text}}</a>
+                        <ul class="dropdown">
+                            {{~#each site.docs.sections~}}
+                                <li><a href="/{{../site.locale}}/{{getProps ../site.docs this 'link'}}/">{{getProps ../site.docs this 'text'}}</a></li>
+                            {{/each}}
+                        </ul>
+                    </li>
+                    <li{{#startswith path site.foundation.link}} class="active"{{/startswith}}>
+                        <a href="/{{site.locale}}/{{site.foundation.link}}/">{{site.foundation.text}}</a>
+                        <ul class="dropdown">
+                            {{~#each site.foundation.sections~}}
+                                <li><a href="/{{../site.locale}}/{{getProps ../site.foundation this 'link'}}/">{{getProps ../site.foundation this 'text'}}</a></li>
+                            {{/each}}
+                        </ul>
+                    </li>
+                    <li{{#startswith path site.getinvolved.link}} class="active"{{/startswith}}>
+                        <a href="/{{site.locale}}/{{site.getinvolved.link}}/">{{site.getinvolved.text}}</a>
+                        <ul class="dropdown">
+                            {{~#each site.getinvolved.sections~}}
+                                <li><a href="/{{../site.locale}}/{{getProps ../site.getinvolved this 'link'}}/">{{getProps ../site.getinvolved this 'text'}}</a></li>
+                            {{/each}}
+                        </ul>
+                    </li>
+                    <li{{#startswith path site.security.link}} class="active"{{/startswith}}>
+                        <a href="/{{site.locale}}/{{site.security.link}}/">{{site.security.text}}</a>
+                    </li>
+                    <li{{#startswith path site.blog.link}} class="active"{{/startswith}}>
+                        <a href="/{{site.locale}}/{{site.blog.link}}/">{{site.blog.text}}</a>
+                    </li>
+                </ul>
+            </nav>
 
-    </div>
-</header>
+        </div>
+    </header>
+</div>
