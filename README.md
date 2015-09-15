@@ -1,4 +1,5 @@
 # [nodejs.org](https://nodejs.org/)
+[![Build Status](https://api.travis-ci.org/nodejs/new.nodejs.org.svg?branch=master)](http://travis-ci.org/nodejs/new.nodejs.org)
 [![Dependency Status](https://david-dm.org/nodejs/new.nodejs.org.svg)](https://david-dm.org/nodejs/new.nodejs.org)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
