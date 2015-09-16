@@ -7,6 +7,7 @@
     "reportNodeIssue": "Report Node.js issue",
     "reportWebsiteIssue": "Report website issue",
     "by": "by",
+    "all-downloads": "All download options",
     "feeds": [
         {
             "link": "feed/blog.xml",
@@ -52,6 +53,10 @@
         "releases": {
             "link": "download/releases",
             "text": "Previous Releases"
+        },
+        "package-manager": {
+            "link": "download/package-manager",
+            "text": "Installing Node.js via package manager"
         }
     },
     "docs": {
