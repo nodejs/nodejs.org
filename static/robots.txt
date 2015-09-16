@@ -1,6 +1,9 @@
 User-Agent: *
 Disallow: /dist/
 Disallow: /docs/
+Disallow: /download/
+Allow: /download/release/latest/
+Allow: /download/release/latest/docs/api/
 Allow: /dist/latest/
 Allow: /dist/latest/docs/api/
 Allow: /api/
