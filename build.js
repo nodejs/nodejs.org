@@ -149,7 +149,8 @@ function buildlocale (locale) {
             startswith: require('./scripts/helpers/startswith.js'),
             i18n: require('./scripts/helpers/i18n.js'),
             changeloglink: require('./scripts/helpers/changeloglink.js'),
-            strftime: require('./scripts/helpers/strftime.js')
+            strftime: require('./scripts/helpers/strftime.js'),
+            apidocslink: require('./scripts/helpers/apidocslink.js')
         }
     }))
     .destination(path.join(__dirname, 'build', locale));
