@@ -17,7 +17,7 @@ const ncp = require('ncp');
 
 const filterStylusPartials = require('./scripts/plugins/filter-stylus-partials');
 const mapHandlebarsPartials = require('./scripts/plugins/map-handlebars-partials');
-const versions = require('./source/versions');
+const loadVersions = require('./scripts/load-versions')
 
 /** Build **/
 
@@ -43,18 +43,7 @@ function i18nJSON (lang) {
     return finalJSON;
 }
 
-const source = {
-    project: {
-        versions,
-        currentVersion: versions[0].version,
-        banner: {
-            visible: false,
-            content: 'Important <a href="#">security release</a>, please update now!'
-        }
-    }
-};
-
-function buildlocale (locale) {
+function buildlocale (source, locale) {
     console.time('[metalsmith] build/' + locale + ' finished');
     const siteJSON = path.join(__dirname, 'locale', locale, 'site.json');
     const metalsmith = Metalsmith(__dirname);
@@ -177,9 +166,23 @@ function copystatic () {
 
 function fullbuild () {
     copystatic();
-    fs.readdir(path.join(__dirname, 'locale'), function (e, locales) {
-        locales.forEach(function (locale) {
-            buildlocale(locale);
+    loadVersions(function (err, versions) {
+        if (err) { throw err; }
+        const source = {
+            project: {
+                versions,
+                currentVersion: versions[0].version,
+                banner: {
+                    visible: false,
+                    content: 'Important <a href="#">security release</a>, please update now!'
+                }
+            }
+        };
+
+        fs.readdir(path.join(__dirname, 'locale'), function (e, locales) {
+            locales.forEach(function (locale) {
+                buildlocale(source, locale);
+            });
         });
     });
 }

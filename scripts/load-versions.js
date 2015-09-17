@@ -7,7 +7,18 @@ const semver = require('semver');
 const map = require('map-async');
 const https = require('https');
 
-map([ 'https://nodejs.org/dist/index.json', 'https://iojs.org/dist/index.json' ], download, munge);
+function loadVersions (callback) {
+    map(
+      [ 'https://nodejs.org/dist/index.json', 'https://iojs.org/dist/index.json' ],
+      download,
+      function (err, versions) {
+        if (err)
+            return callback(err);
+        versions = munge(versions);
+        callback(null, versions);
+      }
+    );
+}
 
 function download (url, cb) {
     let data = '';
@@ -26,13 +37,7 @@ function download (url, cb) {
     });
 }
 
-function munge (err, versions) {
-    if (err) {
-        console.error('Aborting due to download error from node or iojs');
-        console.error(err.stack)
-        return process.exit(1);
-    }
-
+function munge (versions) {
     versions[0].forEach(function (v) {
         v.url = 'https://nodejs.org/dist/' + v.version + '/'
         v.name = 'Node.js'
@@ -48,5 +53,19 @@ function munge (err, versions) {
         return semver.compare(b.version, a.version);
     });
 
-    fs.writeFileSync(__dirname + '/../source/versions.json', JSON.stringify(allVersions, null, 2));
+    return allVersions;
+}
+
+module.exports = loadVersions;
+
+if (require.main === module) {
+    loadVersions(function (err, versions) {
+        if (err) {
+            console.error('Aborting due to download error from node or iojs');
+            console.error(err.stack);
+            return process.exit(1);
+        }
+
+        fs.writeFileSync(__dirname + '/../source/versions.json', JSON.stringify(versions, null, 2));
+    })
 }
