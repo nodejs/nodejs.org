@@ -1,9 +1,12 @@
 {
     "title": "Node.js",
     "author": "Node.js Foundation",
-    "url": "https://new.nodejs.org/en/",
+    "url": "https://nodejs.org/en/",
     "locale": "en",
     "scrollToTop": "Scroll to top",
+    "reportNodeIssue": "Report Node.js issue",
+    "reportWebsiteIssue": "Report website issue",
+    "by": "by",
     "feeds": [
         {
             "link": "feed/blog.xml",
@@ -97,6 +100,10 @@
         "development": {
             "link": "get-involved/development",
             "text": "Development"
+        },
+        "code-and-learn": {
+            "link": "get-involved/code-and-learn",
+            "text": "Code + Learn"
         }
     },
     "trademark"  : { "link": "about/trademark", "text": "Trademark" },

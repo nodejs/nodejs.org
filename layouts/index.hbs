@@ -25,7 +25,7 @@
 
                 <ul class="list-divider-pipe home-secondary-links">
                     <li><a href="https://nodejs.org/dist/latest/">{{ labels.other-downloads }}</a></li>
-                    <li><a href="https://github.com/nodejs/node-v0.x-archive/blob/master/ChangeLog">{{ labels.changelog }}</a></li>
+                    <li><a href="https://github.com/nodejs/node/blob/{{ project.currentVersion }}/CHANGELOG.md">{{ labels.changelog }}</a></li>
                     <li><a href="{{ site.docs.api.link }}">{{ labels.api }}</a></li>
                 </ul>
 
@@ -40,15 +40,22 @@
                     width:100%;
                     line-height:300px;
                     margin-top:20px;
-                  }
+                }
                 div.interactive-banner img {
                     display: block;
                     margin-left: auto;
                     margin-right: auto;
-                    vertical-align: center;
                     padding-top:80px;
-                    width:317px;
                     height:140px;
+                    -webkit-filter: drop-shadow(5px 5px 5px #222);
+                    filter: drop-shadow(5px 5px 5px #222);
+                }
+                @media screen and (max-width: 550px) {
+                    div.interactive-banner img {
+                        padding-top:100px;
+                        height: auto;
+                        width: 300px;
+                    }
                 }
                 footer {
                     margin-top:0px;
@@ -60,7 +67,7 @@
 
     <a href="http://events.linuxfoundation.org/events/node-interactive">
         <div class="interactive-banner">
-            <img src="/static/images/nodejs-interactive-logo2015.png" alt="Node Interactive" title="Node Interactive">
+            <img src="/static/images/NodeInteractive_Date_white.png" alt="Node Interactive" title="Node Interactive">
         </div>
     </a>
 

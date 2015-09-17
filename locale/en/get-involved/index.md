@@ -33,8 +33,6 @@ right place. Explore our community resources to find out how you can help:
 
 ## Discussion
 
-- The [mailing list](http://groups.google.com/group/nodejs) is used for announcements and discussion about Node.
-
 - The [github issues list](https://github.com/nodejs/node/issues) the place for discussion of Node.js core features
 
 - For real-time chat about Node development go to `irc.freenode.net` in the `#node.js` channel with an [IRC client](http://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [freenode's WebChat](http://webchat.freenode.net/?channels=node.js).
@@ -68,19 +66,15 @@ right place. Explore our community resources to find out how you can help:
 - [Australian Node.js blog &amp; developers listing](http://nodejs.org.au/)
 - [Brazilian community of Node.js](http://www.nodebr.com/)
 - [Chinese community](http://cnodejs.org)
+- [German Node.js community](http://nodecode.de)
 - [Google+ Community of Node.js French users](https://plus.google.com/communities/113346206415381691435)
-- [Hong Kong community](http://nodejs.hk)
 - [Hungarian (Magyar) community](http://nodehun.blogspot.com/)
 - [Iran group in Persian](http://nodejs.ir)
-- [Israeli wiki](http://nodejs.co.il)
 - [Japan user group](http://nodejs.jp/)
 - [Node.js site for Kiwis](http://nodejs.geek.nz/)
 - [Russian website](http://node-center.ru/)
 - [Serbian Node.js community website](http://nodejs.rs/)
 - [Spanish language community](http://nodehispano.com)
-- [Node.js in Spanish](http://www.nodejs.es)
 - [Taiwan community](http://nodejs.tw)
-- [Node.js in Vietnamese](http://nodejs.vn/)
 - [Nicaragua Node.js community](http://nodenica.com/)
-
-
+- [Korean Node.js community](http://nodejs.github.io/iojs-ko/)
