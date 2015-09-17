@@ -2,6 +2,24 @@
 
 'use strict';
 
+/**
+ * What's this?? It will help you create release blog
+ * posts so you wont have to do the tedious work
+ * of stitching together data from changelog, shasums etc,
+ * but get a more or less complete release blog ready to go.
+ *
+ * Usage: $ node release-post.js [version]
+ *
+ * If the version argument is omitted, the latest version number
+ * will be picked from https://nodejs.org/dist/index.json.
+ *
+ * It'll create a file with the blog post content
+ * into ../locale/en/blog/release/vX.md ready for you to commit
+ * or possibly edit by hand before commiting.
+ *
+ * Happy releasing!
+ */
+
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
@@ -29,6 +47,11 @@ function download (url, cb) {
 // ## 2015-08-04, Version 3.0.0, @rvagg
 const rxReleaseSection = /## \d{4}-\d{2}-\d{2}, Version ([^,( ]+)[\s\S]*?(?=## \d{4})/g;
 
+function explicitVersion() {
+    const versionArg = process.argv[2];
+    return versionArg ? Promise.resolve(versionArg) : Promise.reject();
+}
+
 function findLatestVersion (cb) {
     return download('https://nodejs.org/dist/index.json')
             .then(JSON.parse)
@@ -51,7 +74,7 @@ function fetchDocs (version) {
 }
 
 function fetchChangelog (version) {
-    return download('https://raw.githubusercontent.com/nodejs/node/master/CHANGELOG.md')
+    return download(`https://raw.githubusercontent.com/nodejs/node/v${version}/CHANGELOG.md`)
             .then(function (data) {
                 let matches;
 
@@ -67,7 +90,8 @@ function fetchChangelog (version) {
 }
 
 function fetchShasums (version) {
-    return download(`https://nodejs.org/dist/v${version}/SHASUMS256.txt.asc`);
+    return download(`https://nodejs.org/dist/v${version}/SHASUMS256.txt.asc`)
+            .then(null, () => '[INSERT SHASUMS HERE]');
 }
 
 function renderPost (results) {
@@ -98,7 +122,8 @@ function slugify (str) {
     return str.replace(/\./g, '-');
 }
 
-findLatestVersion()
+explicitVersion()
+    .then(null, findLatestVersion)
     .then(fetchDocs)
     .then(renderPost)
     .then(writeToFile)
