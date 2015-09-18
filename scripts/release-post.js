@@ -25,11 +25,16 @@ const fs = require('fs')
 const path = require('path')
 const extend = require('util')._extend
 const Handlebars = require('handlebars')
+const url = require('url')
 
-function download (url, cb) {
+const downloads = require('./helpers/downloads')
+
+function request (uri, method, cb) {
   return new Promise(function (resolve, reject) {
+    const opts = extend({ method }, url.parse(uri))
     let data = ''
-    https.get(url, function (res) {
+
+    https.request(opts, function (res) {
       if (res.statusCode !== 200) {
         return reject(new Error('Invalid status code (!= 200) while retrieving ' + url + ': ' + res.statusCode))
       }
@@ -37,9 +42,13 @@ function download (url, cb) {
       res.on('data', function (chunk) { data += chunk })
       res.on('end', function () { resolve(data) })
     }).on('error', function (err) {
-      reject(new Error('Error downloading file from %s: %s', url, err.message))
-    })
+      reject(new Error('Error requesting URL %s: %s', url, err.message))
+    }).end()
   })
+}
+
+function download (url) {
+  return request(url, 'GET')
 }
 
 // matches a complete release section, support both old node and iojs releases:
@@ -61,14 +70,20 @@ function findLatestVersion (cb) {
 }
 
 function fetchDocs (version) {
-  return Promise.all([ fetchChangelog(version), fetchShasums(version) ]).then(function (results) {
+  return Promise.all([
+    fetchChangelog(version),
+    fetchShasums(version),
+    verifyDownloads(version)
+  ]).then(function (results) {
     const changelog = results[0]
     const shasums = results[1]
+    const files = results[2]
 
     return {
       version,
       changelog,
-      shasums
+      shasums,
+      files
     }
   })
 }
@@ -94,6 +109,18 @@ function fetchChangelog (version) {
 function fetchShasums (version) {
   return download(`https://nodejs.org/dist/v${version}/SHASUMS256.txt.asc`)
     .then(null, () => '[INSERT SHASUMS HERE]')
+}
+
+function verifyDownloads (version) {
+  const allDownloads = downloads(version)
+  const reqs = allDownloads.map(urlOrComingSoon)
+  return Promise.all(reqs)
+}
+
+function urlOrComingSoon (binary) {
+  return request(binary.url, 'HEAD').then(
+    () => `${binary.title}: ${binary.url}`,
+    () => `${binary.title}: *Coming soon*`)
 }
 
 function renderPost (results) {

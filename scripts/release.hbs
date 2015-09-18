@@ -9,20 +9,9 @@ layout: blog-post.hbs
 
 {{changelog}}
 
-Windows 32-bit Installer: https://nodejs.org/dist/v{{version}}/node-v{{version}}-x86.msi<br>
-Windows 64-bit Installer: https://nodejs.org/dist/v{{version}}/node-v{{version}}-x64.msi<br>
-Windows 32-bit Binary: https://nodejs.org/dist/v{{version}}/win-x86/node.exe<br>
-Windows 64-bit Binary: https://nodejs.org/dist/v{{version}}/win-x64/node.exe<br>
-Mac OS X 64-bit Installer: https://nodejs.org/dist/v{{version}}/node-v{{version}}.pkg<br>
-Mac OS X 64-bit Binary: https://nodejs.org/dist/v{{version}}/node-v{{version}}-darwin-x64.tar.gz<br>
-Linux 32-bit Binary: https://nodejs.org/dist/v{{version}}/node-v{{version}}-linux-x86.tar.gz<br>
-Linux 64-bit Binary: https://nodejs.org/dist/v{{version}}/node-v{{version}}-linux-x64.tar.gz<br>
-SunOS 32-bit Binary: https://nodejs.org/dist/v{{version}}/node-v{{version}}-sunos-x86.tar.gz<br>
-SunOS 64-bit Binary: https://nodejs.org/dist/v{{version}}/node-v{{version}}-sunos-x64.tar.gz<br>
-ARMv6 32-bit Binary: https://nodejs.org/dist/v{{version}}/node-v{{version}}-linux-armv6l.tar.gz<br>
-ARMv7 32-bit Binary: https://nodejs.org/dist/v{{version}}/node-v{{version}}-linux-armv7l.tar.gz<br>
-ARMv8 64-bit Binary: https://nodejs.org/dist/v{{version}}/node-v{{version}}-linux-arm64.tar.gz<br>
-Source Code: https://nodejs.org/dist/v{{version}}/node-v{{version}}.tar.gz<br>
+{{#files}}
+{{.}}<br>
+{{/files}}
 Other release files: https://nodejs.org/dist/v{{version}}/<br>
 Documentation: https://nodejs.org/docs/v{{version}}/api/
 
