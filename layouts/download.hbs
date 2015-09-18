@@ -91,12 +91,12 @@
                         </tbody>
                     </table>
 
-                    <p>
-                        <a href="https://nodejs.org/dist/{{project.currentVersion}}">All download options</a>
-                    </p>
-                    <p>
-                        {{downloads.currentVersion}}: <strong>{{project.currentVersion}}</strong>, <a href="/{{site.locale}}/{{site.download.releases.link}}/">{{site.download.releases.text}}</a>
-                    </p>
+                    {{downloads.currentVersion}}: <strong>{{project.currentVersion}}</strong>
+                    <ul>
+                        <li><a href="https://nodejs.org/dist/{{project.currentVersion}}">{{site.all-downloads}}</a></li>
+                        <li><a href="/{{site.locale}}/{{site.download.package-manager.link}}">{{site.download.package-manager.text}}</a></li>
+                        <li><a href="/{{site.locale}}/{{site.download.releases.link}}/">{{site.download.releases.text}}</a></li>
+                    </ul>
                     <p>{{downloads.buildDisclaimer}}</p>
                 </section>
 
