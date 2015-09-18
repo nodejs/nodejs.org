@@ -6,9 +6,9 @@
   "scripts": {
     "build": "node build.js",
     "serve": "node build.js serve",
-    "lint": "eslint scripts build.js",
     "load-versions": "node scripts/load-versions.js",
-    "start": "npm run serve"
+    "start": "npm run serve",
+    "test": "standard build.js scripts/**/*.js --format"
   },
   "repository": {
     "type": "git",
@@ -46,7 +46,7 @@
     "strftime": "^0.9.2"
   },
   "devDependencies": {
-    "babel-eslint": "^4.0.10",
-    "eslint": "^1.1.0"
+    "pre-commit": "^1.1.1",
+    "standard": "^5.3.0"
   }
 }
