@@ -23,10 +23,6 @@ title: Installing Node.js via package manager
 
 ## Debian and Ubuntu based Linux distributions
 
-_**NOTE: Temporary info before full update of this wiki page**_
-Below is not an up-to-date info. Check the [nodesource's blog post](https://nodesource.com/blog/nodejs-v012-iojs-and-the-nodesource-linux-repositories) to install node 0.12 on Debian and Ubuntu. 
-_**NOTE END**_
-
 Also including: **Linux Mint**, **Linux Mint Debian Edition (LMDE)**, **elementaryOS** and others.
 
 Node.js is available from the [NodeSource](https://nodesource.com) Debian and Ubuntu binary distributions repository (formerly [Chris Lea's](https://github.com/chrislea) Launchpad PPA). Support for this repository, along with its scripts, can be found on GitHub at [nodesource/distributions](https://github.com/nodesource/distributions).
@@ -34,7 +30,7 @@ Node.js is available from the [NodeSource](https://nodesource.com) Debian and Ub
 Setup with Ubuntu:
 
 ```
-curl --silent --location https://deb.nodesource.com/setup_0.12 | sudo bash -
+curl --silent --location https://deb.nodesource.com/setup_4.x | sudo bash -
 ```
 
 Then install with Ubuntu:
@@ -47,7 +43,7 @@ Setup with Debian (as root):
 
 ```
 apt-get install curl
-curl --silent --location https://deb.nodesource.com/setup_0.12 | bash -
+curl --silent --location https://deb.nodesource.com/setup_4.x | bash -
 ```
 
 Then install with Debian (as root):
