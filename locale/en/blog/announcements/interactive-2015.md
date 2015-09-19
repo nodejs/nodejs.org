@@ -12,7 +12,7 @@ The Node.js Foundation is pleased to announce [Node.js Interactive](http://inter
 
 The event will be the first of its kind under the Node.js Foundation led in cooperation with The Linux Foundation. Vendor-neutral by design, it will focus on the continued ideals of open governance collaboration between the now joined node.js and io.js community. The conference welcomes experienced developers as well as those interested in how node.js might be of use to their business with tracks that focus on IoT, front-end and back-end technologies. To curate these tracks and create the best experience for attendees, track chairs include seasoned veterans:
 
-* [Kassandra Perch](https://github.com/nodebotanist) for IoT, a software developer / evangelist / advocate / educator / roboticist living in Austin, TX, who you can follow at: [https://twitter.com/nodebotanist]().
+* [Kassandra Perch](https://github.com/nodebotanist) for IoT, a software developer / evangelist / advocate / educator / roboticist living in Austin, TX, who you can follow at: [@nodebotanist](https://twitter.com/nodebotanist).
 * [Jessica Lord](https://github.com/jlord/) for Front-End, a GitHub developer and designer who loves open source, JavaScript & node.js, and stories of Tudor England and is a Portland transplant.
 * [C J Silvero](https://github.com/ceejbot) for Back-End, who is all node, all the time and works as director of engineering at npm, Inc. in the Bay area.
 
