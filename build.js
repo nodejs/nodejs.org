@@ -11,6 +11,7 @@ const markdown = require('metalsmith-markdown');
 const prism = require('metalsmith-prism');
 const stylus = require('metalsmith-stylus');
 const permalinks = require('metalsmith-permalinks');
+const marked = require('marked');
 const path = require('path');
 const fs = require('fs');
 const ncp = require('ncp');
@@ -24,6 +25,20 @@ const loadVersions = require('./scripts/load-versions')
 // load template.json for given language, but use default language as fallback
 // for properties which are not present in the given language
 const DEFAULT_LANG = 'en';
+
+
+// Add an anchor link. Taken directly from the marked docs
+const renderer = new marked.Renderer();
+renderer.heading = function (text, level) {
+    var escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
+
+    return '<h' + level + '>' + text + '<a name="' +
+        escapedText + '" class="anchor" href="#' +
+        escapedText +
+        '"><span class="header-link"></span></a>' +
+        '</h' + level + '>';
+};
+const markedOptions = { langPrefix: 'language-', renderer: renderer };
 
 function i18nJSON (lang) {
     var defaultJSON = require(`./locale/${DEFAULT_LANG}/site.json`);
@@ -93,7 +108,7 @@ function buildlocale (source, locale) {
             refer: false
         }
     }))
-    .use(markdown({ langPrefix: 'language-' }))
+    .use(markdown(markedOptions))
     .use(prism())
     .use(filterStylusPartials())
     .use(stylus({
