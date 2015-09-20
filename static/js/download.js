@@ -8,8 +8,8 @@
   var db = d.getElementById('home-downloadbutton');
   var version;
   if (db) {
-    version = db.dataset.version;
-    var dlLocal = db.dataset.dlLocal;
+    version = db.getAttribute('data-version');
+    var dlLocal = db.getAttribute('data-dl-local');
     switch (os && os[1]) {
       case 'Mac':
         db.href += 'node-' + version + '.pkg';
@@ -31,7 +31,7 @@
   var winButton = d.getElementById('windows-downloadbutton');
   if (winButton && os && os[1] === 'Win') {
     var winText = winButton.getElementsByTagName('p')[0];
-    version = winButton.dataset.version;
+    version = winButton.getAttribute('data-version');
     winButton.href = winButton.href.replace(/x(86|64)/, x);
     winText[text] = winText[text].replace(/x(86|64)/, x);
   }
