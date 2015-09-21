@@ -24,4 +24,4 @@ The [ES6 section](/en/docs/es6/) describes the three different features groups a
 Our [FAQ](/en/docs/faq/) shows how everyone can contribute to Node.js, our code of conduct,
 governance model, how to get in touch on github and IRC, and helping out triaging issues.
 
-All of this documentation is meant to only highlight the builtin core modules provided by Node.js, and not to highlight any particular module or collection of modules found in the community. Node.js doesn't want to be in the business of picking winners or losers. So, to avoid the appearance of favoritism, we only discuss our APIs.
+This documentation is meant only to describe the builtin core modules provided by Node.js, not to highlight any particular module or collection of modules found in the community.
