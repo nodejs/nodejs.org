@@ -63,7 +63,7 @@ If you have spotted or written something about Node.js and io.js, do come over t
 
 * [Node.js Italian Conference](http://nodejsconf.it/) tickets are on sale, October 10th at Desenzano - Brescia, Italy
 * [EmpireNode](http://2015.empirenode.org/), October 23rd at New York, US.
-* [JSConf CO](http://www.jsconf.co/), October 16th - 17th at Ruta N, Medellin, Columbia
+* [JSConf CO](http://www.jsconf.co/), October 16th - 17th at Ruta N, Medellin, Colombia
 * [NodeFest](http://nodefest.jp/2015/), November 7th at Tokyo, Japan
 * [Nodevember](http://nodevember.org/?utm_source=io.js+and+Node.js+News&utm_medium=article), November 14th - 15th at Nashville, Tennessee, US.
 * [NodeConf Barcelona](https://ti.to/barcelonajs/nodeconf-barcelona-2015), November 21st at Barcelona, Spain
