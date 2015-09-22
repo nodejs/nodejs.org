@@ -217,4 +217,4 @@ Please help us improve this draft by sending your comments and feedback to
 [governance@nodejs.org](mailto:governance@nodejs.org).
 
 The source for this document can be found [in this
-repository](https://github.com/joyent/node-website/tree/master/doc/about/advisory-board).
+repository](https://github.com/nodejs/nodejs.org/blob/master/locale/en/about/advisory-board/index.md).
