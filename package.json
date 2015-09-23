@@ -8,7 +8,7 @@
     "serve": "node build.js serve",
     "load-versions": "node scripts/load-versions.js",
     "start": "npm run serve",
-    "test": "standard build.js scripts/*.js scripts/**/*.js"
+    "test": "standard build.js scripts/*.js scripts/**/*.js tests/**/*.js && tape tests/**/*.test.js | faucet"
   },
   "repository": {
     "type": "git",
@@ -46,7 +46,12 @@
     "strftime": "^0.9.2"
   },
   "devDependencies": {
+    "faucet": "0.0.1",
+    "nock": "^2.12.0",
     "pre-commit": "^1.1.1",
-    "standard": "^5.3.0"
+    "proxyquire": "^1.7.2",
+    "sinon": "^1.17.0",
+    "standard": "^5.3.0",
+    "tape": "^4.2.0"
   }
 }
