@@ -8,7 +8,7 @@
     "serve": "node build.js serve",
     "load-versions": "node scripts/load-versions.js",
     "start": "npm run serve",
-    "test": "standard build.js scripts/**/*.js --format"
+    "test": "standard build.js scripts/*.js scripts/**/*.js"
   },
   "repository": {
     "type": "git",
