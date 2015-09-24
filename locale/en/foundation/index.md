@@ -18,7 +18,7 @@ The Node.js Foundation's mission is to enable widespread adoption and help accel
 
 <div style="text-align:center; margin-bottom:5px">
     <strong>
-        <a  href="//www.slideshare.net/NodejsFoundation/node-foundation-membership-overview-20150505"
+        <a href="//www.slideshare.net/NodejsFoundation/node-foundation-membership-overview-20150505"
             title="Node.js Foundation Membership Overview 20150505"
             target="_blank">
             Node.js Foundation Membership Overview 2015-05-05
@@ -58,4 +58,4 @@ email to <a href="mailto:trademark@nodejs.org?subject=Trademark">trademark@nodej
 
 To subscribe to news about the Node.js Foundation please signup below.
 
-<iframe src="http://go.pardot.com/l/6342/2015-09-15/2sgqpp" width="100%" height="500" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe>
+<iframe src="https://go.pardot.com/l/6342/2015-09-15/2sgqpp" width="100%" height="500" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe>

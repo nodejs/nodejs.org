@@ -16,7 +16,9 @@ right place. Explore our community resources to find out how you can help:
 
 ## Events
 
-- [NodeConf](http://www.nodeconf.com/) conferences are the main event in the United States.
+- [Node.js Interactive](http://interactive.nodejs.org/) is a conference run by the Node.js Foundation.
+
+- [NodeConf](http://www.nodeconf.com/) conferences are a collection of world wide community run events.
 
 - [NodeConf EU](http://nodeconfeu.com/) is a Node conference in Europe, organized by Cian Ó Maidín.
 
@@ -27,9 +29,6 @@ right place. Explore our community resources to find out how you can help:
 - [Node Summit](http://nodesummit.com/) is a conference in San Francisco focusing on the adoption of Node in larger companies.
 
 - [JSConf](http://jsconf.com/) organizes the main JavaScript conferences.
-
-- [NodeConf ONE-SHOT](http://oneshot.nodeconf.com/) are forkable conferences for a local communities
-
 
 ## Discussion
 
