@@ -222,10 +222,10 @@ function server () {
     return p.slice(pre.length + 1, p.indexOf('/', pre.length + 1))
   }
   locales.on('change', function (p) {
-    buildlocale(getlocale(p))
+    buildlocale(p, getlocale(p))
   })
   locales.on('add', function (p) {
-    buildlocale(getlocale(p))
+    buildlocale(p, getlocale(p))
     locales.add(p)
   })
 
