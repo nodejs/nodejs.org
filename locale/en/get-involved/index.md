@@ -26,6 +26,8 @@ right place. Explore our community resources to find out how you can help:
 
 - An [Italian Node.js Conference](http://nodejsconf.it/) is held in Brescia.
 
+- [NodeConf Barcelona](http://barcelona.nodeconfeu.com/) is a Node conference in Spain, organized by BarcelonaJS.
+
 - [Node Summit](http://nodesummit.com/) is a conference in San Francisco focusing on the adoption of Node in larger companies.
 
 - [JSConf](http://jsconf.com/) organizes the main JavaScript conferences.
