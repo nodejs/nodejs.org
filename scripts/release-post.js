@@ -56,9 +56,8 @@ function download (url) {
 // ## 2015-08-04, Version 3.0.0, @rvagg
 const rxReleaseSection = /## \d{4}-\d{2}-\d{2}, Version ([^,( ]+)[\s\S]*?(?=## \d{4})/g
 
-function explicitVersion () {
-  const versionArg = process.argv[2]
-  return versionArg ? Promise.resolve(versionArg) : Promise.reject()
+function explicitVersion (version) {
+  return version ? Promise.resolve(version) : Promise.reject()
 }
 
 function findLatestVersion (cb) {
@@ -151,14 +150,24 @@ function slugify (str) {
   return str.replace(/\./g, '-')
 }
 
-explicitVersion()
-  .then(null, findLatestVersion)
-  .then(fetchDocs)
-  .then(renderPost)
-  .then(writeToFile)
-  .then(function (filepath) {
-    console.log('Release post created:', filepath)
-  }, function (err) {
-    console.error('Some error occured here!', err.stack)
-    process.exit(1)
-  })
+exports.explicitVersion = explicitVersion
+exports.fetchShasums = fetchShasums
+exports.writeToFile = writeToFile
+exports.findLatestVersion = findLatestVersion
+exports.verifyDownloads = verifyDownloads
+exports.fetchChangelog = fetchChangelog
+
+if (require.main === module) {
+  explicitVersion(process.argv[2])
+    .then(null, findLatestVersion)
+    .then(fetchDocs)
+    .then(renderPost)
+    .then(writeToFile)
+    .then(function (filepath) {
+      console.log('Release post created:', filepath)
+    }, function (err) {
+      console.error('Some error occured here!', err.stack)
+      process.exit(1)
+    })
+}
+
