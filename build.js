@@ -11,12 +11,14 @@ const markdown = require('metalsmith-markdown')
 const prism = require('metalsmith-prism')
 const stylus = require('metalsmith-stylus')
 const permalinks = require('metalsmith-permalinks')
+const marked = require('marked')
 const path = require('path')
 const fs = require('fs')
 const ncp = require('ncp')
 
 const filterStylusPartials = require('./scripts/plugins/filter-stylus-partials')
 const mapHandlebarsPartials = require('./scripts/plugins/map-handlebars-partials')
+const anchorMarkdownHeadings = require('./scripts/plugins/anchor-markdown-headings')
 const loadVersions = require('./scripts/load-versions')
 
 /** Build **/
@@ -24,6 +26,14 @@ const loadVersions = require('./scripts/load-versions')
 // load template.json for given language, but use default language as fallback
 // for properties which are not present in the given language
 const DEFAULT_LANG = 'en'
+
+const renderer = new marked.Renderer()
+renderer.heading = anchorMarkdownHeadings
+
+const markedOptions = {
+  langPrefix: 'language-',
+  renderer: renderer
+}
 
 function i18nJSON (lang) {
   var defaultJSON = require(`./locale/${DEFAULT_LANG}/site.json`)
@@ -93,7 +103,7 @@ function buildlocale (source, locale) {
         refer: false
       }
     }))
-    .use(markdown({ langPrefix: 'language-' }))
+    .use(markdown(markedOptions))
     .use(prism())
     .use(filterStylusPartials())
     .use(stylus({
