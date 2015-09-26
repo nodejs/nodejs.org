@@ -1,0 +1,19 @@
+// Anchor links for page headings
+.anchor
+    color #ccc
+    background none
+    padding 0 .25em
+
+    &:link
+    &:active
+    &:hover
+        color #ccc
+        background inherit
+
+
+h1, h2, h3, h4, h5, h6
+    &:hover > .anchor:before
+        content '#'
+
+.anchor:focus:before
+    content '#'
