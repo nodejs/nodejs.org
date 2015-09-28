@@ -41,7 +41,7 @@ event loop when there are no more callbacks to perform. This behavior is like
 browser JavaScript -— the event loop is hidden from the user.
 
 HTTP is a first class citizen in Node, designed with streaming and low latency
-in mind. This makes Node well suited for the foundation of web library or
+in mind. This makes Node well suited for the foundation of a web library or
 framework.
 
 Just because Node is designed without threads, doesn't mean you cannot take
