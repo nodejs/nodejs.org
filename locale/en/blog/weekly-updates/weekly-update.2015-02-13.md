@@ -18,9 +18,9 @@ On Feb. 13, io.js reached the goal of 10,000 stars on GitHub. We couldn't have d
 
 ## io.js 1.2.0 released
 * **stream**: Simpler stream construction ([readable-stream/issues#102[(https://github.com/iojs/readable-stream/issues/102))
-* **dns**: `lookup()` now supports an `'all'` boolean option, default to `false` but when turned on will cause the method to return an array of all resolved names for an address, see, ([iojs/pull#744](https://github.com/iojs/io.js/pull/744))
-* **assert**: Remove `prototype` property comparison in `deepEqual()` ([iojs/issues#636](https://github.com/iojs/io.js/pull/636)); introduce a `deepStrictEqual()` method to mirror `deepEqual()` but performs strict equality checks on primitives ([iojs/issues#639](https://github.com/iojs/io.js/pull/639)).
-* **tracing**: Add [LTTng](http://lttng.org/) (Linux Trace Toolkit Next Generation) when compiled with the `--with-lttng option`. Trace points match those available for DTrace and ETW. ([iojs/issues#702](https://github.com/iojs/io.js/pull/702))
+* **dns**: `lookup()` now supports an `'all'` boolean option, default to `false` but when turned on will cause the method to return an array of all resolved names for an address, see, ([iojs/pull#744](https://github.com/nodejs/node/pull/744))
+* **assert**: Remove `prototype` property comparison in `deepEqual()` ([iojs/issues#636](https://github.com/nodejs/node/pull/636)); introduce a `deepStrictEqual()` method to mirror `deepEqual()` but performs strict equality checks on primitives ([iojs/issues#639](https://github.com/nodejs/node/pull/639)).
+* **tracing**: Add [LTTng](http://lttng.org/) (Linux Trace Toolkit Next Generation) when compiled with the `--with-lttng option`. Trace points match those available for DTrace and ETW. ([iojs/issues#702](https://github.com/nodejs/node/pull/702))
 * **docs**: Lots of doc updates, see individual commits; new Errors page discussing JavaScript errors, V8 specifics, and io.js specific error details.
 * **npm** upgrade to 2.5.1
 * **libuv** upgrade to 1.4.0, see libuv [ChangeLog](https://github.com/libuv/libuv/blob/v1.x/ChangeLog)

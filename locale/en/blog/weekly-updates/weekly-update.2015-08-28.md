@@ -13,7 +13,7 @@ io.js v3.2.0/v3.3.0 and Node v4 evangelism, new.nodejs.org, nodefest/empirenode 
 
 ### io.js 3.2 and 3.3 Releases
 
-This week we have two io.js releases: [v3.2.0](https://iojs.org/dist/v3.2.0/) and [v3.3.0](https://iojs.org/dist/v3.3.0/), complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/io.js/blob/master/CHANGELOG.md).
+This week we have two io.js releases: [v3.2.0](https://iojs.org/dist/v3.2.0/) and [v3.3.0](https://iojs.org/dist/v3.3.0/), complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
 
 
 ### io.js v3.3.0 Notable changes
@@ -35,14 +35,14 @@ This week we have two io.js releases: [v3.2.0](https://iojs.org/dist/v3.2.0/) an
 
 ### Known issues
 
-See https://github.com/nodejs/io.js/labels/confirmed-bug for complete and current list of known issues.
+See https://github.com/nodejs/node/labels/confirmed-bug for complete and current list of known issues.
 
 * Some uses of computed object shorthand properties are not handled correctly by the current version of V8. e.g. `[{ [prop]: val }]` evaluates to `[{}]`. [#2507](https://github.com/nodejs/node/issues/2507)
-* Some problems with unreferenced timers running during `beforeExit` are still to be resolved. See [#1264](https://github.com/nodejs/io.js/issues/1264).
-* Surrogate pair in REPL can freeze terminal. [#690](https://github.com/nodejs/io.js/issues/690)
-* `process.send()` is not synchronous as the docs suggest, a regression introduced in 1.0.2, see [#760](https://github.com/nodejs/io.js/issues/760).
-* Calling `dns.setServers()` while a DNS query is in progress can cause the process to crash on a failed assertion. [#894](https://github.com/nodejs/io.js/issues/894)
-* `url.resolve` may transfer the auth portion of the url when resolving between two full hosts, see [#1435](https://github.com/nodejs/io.js/issues/1435).
+* Some problems with unreferenced timers running during `beforeExit` are still to be resolved. See [#1264](https://github.com/nodejs/node/issues/1264).
+* Surrogate pair in REPL can freeze terminal. [#690](https://github.com/nodejs/node/issues/690)
+* `process.send()` is not synchronous as the docs suggest, a regression introduced in 1.0.2, see [#760](https://github.com/nodejs/node/issues/760).
+* Calling `dns.setServers()` while a DNS query is in progress can cause the process to crash on a failed assertion. [#894](https://github.com/nodejs/node/issues/894)
+* `url.resolve` may transfer the auth portion of the url when resolving between two full hosts, see [#1435](https://github.com/nodejs/node/issues/1435).
 
 
 ### We need Node.js v4 evangelists

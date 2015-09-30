@@ -14,10 +14,10 @@ _Note: version **1.4.0** was tagged and built but not released. A libuv bug was 
 
 ## Notable changes
 
-* **process** / **promises**: An`'unhandledRejection'` event is now emitted on `process` whenever a `Promise` is rejected and no error handler is attached to the `Promise` within a turn of the event loop. A `'rejectionHandled'` event is now emitted whenever a `Promise` was rejected and an error handler was attached to it later than after an event loop turn.  [#758](https://github.com/iojs/io.js/pull/758) (Petka Antonov)
-* **streams**: you can now use regular streams as an underlying socket for `tls.connect()` [#926](https://github.com/iojs/io.js/pull/926) (Fedor Indutny)
-* **http**: A new `'abort'` event emitted when a `http.ClientRequest` is aborted by the client. [#945](https://github.com/iojs/io.js/pull/945) (Evan Lucas)
-* **V8**: Upgrade V8 to 4.1.0.21. Includes an embargoed fix, details should be available when embargo is lifted. A breaking ABI change has been held back from this upgrade, possibly to be included when io.js merges V8 4.2. See [#952](https://github.com/iojs/io.js/pull/952) for discussion.
+* **process** / **promises**: An`'unhandledRejection'` event is now emitted on `process` whenever a `Promise` is rejected and no error handler is attached to the `Promise` within a turn of the event loop. A `'rejectionHandled'` event is now emitted whenever a `Promise` was rejected and an error handler was attached to it later than after an event loop turn.  [#758](https://github.com/nodejs/node/pull/758) (Petka Antonov)
+* **streams**: you can now use regular streams as an underlying socket for `tls.connect()` [#926](https://github.com/nodejs/node/pull/926) (Fedor Indutny)
+* **http**: A new `'abort'` event emitted when a `http.ClientRequest` is aborted by the client. [#945](https://github.com/nodejs/node/pull/945) (Evan Lucas)
+* **V8**: Upgrade V8 to 4.1.0.21. Includes an embargoed fix, details should be available when embargo is lifted. A breaking ABI change has been held back from this upgrade, possibly to be included when io.js merges V8 4.2. See [#952](https://github.com/nodejs/node/pull/952) for discussion.
 * **npm**: Upgrade npm to 2.6.0. Includes features to support the new registry and to prepare for `npm@3`. See [npm CHANGELOG.md](https://github.com/npm/npm/blob/master/CHANGELOG.md#v260-2015-02-12) for details. Summary:
   * [#5068](https://github.com/npm/npm/issues/5068) Add new logout command, and make it do something useful on both bearer-based and basic-based authed clients.
   * [#6565](https://github.com/npm/npm/issues/6565) Warn that `peerDependency` behavior is changing and add a note to the docs.
@@ -36,9 +36,9 @@ The build team is in the process of being given access to the Linaro ARMv8 Serve
 
 # Community Updates
 
-* [**Reconciliation Proposal**](https://github.com/iojs/io.js/issues/978): The io.js project is preparing a plan for reconciliation that can be brought to The Node.js Foundation. Input from the community is very important at this early stage so please leave a comment.
-* **New internal C++ Streams API**: A [fresh C++ Streams API](https://github.com/iojs/io.js/commit/b9686233fc0be679d7ba1262b611711629ee334e) landed in io.js this week, allowing you to wrap a TLS stream into another TLS stream.
-* **io.js Roadmap**: [The Roadmap](https://github.com/iojs/io.js/blob/v1.x/ROADMAP.md) is the plan for the future of io.js. It presents the plans for the stability policy, and lists what the immediate priorities for io.js as a whole are.
+* [**Reconciliation Proposal**](https://github.com/nodejs/node/issues/978): The io.js project is preparing a plan for reconciliation that can be brought to The Node.js Foundation. Input from the community is very important at this early stage so please leave a comment.
+* **New internal C++ Streams API**: A [fresh C++ Streams API](https://github.com/nodejs/node/commit/b9686233fc0be679d7ba1262b611711629ee334e) landed in io.js this week, allowing you to wrap a TLS stream into another TLS stream.
+* **io.js Roadmap**: [The Roadmap](https://github.com/nodejs/node/blob/v1.x/ROADMAP.md) is the plan for the future of io.js. It presents the plans for the stability policy, and lists what the immediate priorities for io.js as a whole are.
 * **Roadmap Slides Finished and Ready for Translation**: The set of introductory slides for the Roadmap of io.js [have been finished, and are ready for translation](https://github.com/iojs/roadmap/issues/18). Do you think you could present them to a group near you? Comment and we'll work with you to prepare you to present!
 * **Microsoft io.js How-To for Azure Websites**: Microsoft [published a how-to](http://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-iojs/) tutorial for their Azure platform that describes how to use io.js with Azure Websites.
 * **Floobits moves to io.js**: The code pairing software Floobits [converted their platform to io.js](https://news.floobits.com/2015/02/23/on-moving-to-io.js/), in part because of frustration with Node's slower release cycle, because the inclusion of more ES6 features without the need for the `--harmony` flag, and because they felt changes from 0.10.0 to 0.12.0 weren't very big.
