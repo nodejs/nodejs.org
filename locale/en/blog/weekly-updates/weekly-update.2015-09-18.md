@@ -1,5 +1,6 @@
 ---
 title: Weekly Update - Sep 18th, 2015
+author: Yosuke Furukawa (@yosuke-furukawa)
 date: 2015-09-18T12:00:00.000Z
 status: publish
 category: weekly

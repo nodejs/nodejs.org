@@ -1,5 +1,6 @@
 ---
 title: Weekly Update - Oct 2nd, 2015
+author: Minwoo Jung (@jmwsoft)
 date: 2015-10-02T12:00:00.000Z
 status: publish
 category: weekly
