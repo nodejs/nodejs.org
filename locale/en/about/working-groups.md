@@ -147,7 +147,7 @@ Each language community maintains its own membership.
 ### [Evangelism](https://github.com/nodejs/evangelism)
 
 The evangelism working group promotes the accomplishments
-of and lets the community know how they can get involved.
+of Node.js and lets the community know how they can get involved.
 
 Their responsibilities are:
 * Project messaging.
