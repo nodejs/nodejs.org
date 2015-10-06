@@ -15,7 +15,7 @@ All ES6 features are split into three groups for **shipping**, **staged**, and *
 ## Which ES6 features ship with Node.js by default (no runtime flag required)?
 
 
-* Block scoping
+* Block scoping (strict mode only)
 
     * [let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
 
