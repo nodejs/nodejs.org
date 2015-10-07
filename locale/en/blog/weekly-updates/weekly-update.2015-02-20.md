@@ -10,8 +10,8 @@ layout: blog-post.hbs
 
 ## io.js Releases 1.3.0
 Notable changes include:
-* **url**: `url.resolve('/path/to/file', '.')` now returns `/path/to/` with the trailing slash, `url.resolve('/', '.')` returns `/` [#278](https://github.com/iojs/io.js/pull/278) (Amir Saboury)
-* **tls**: The default cipher suite used by `tls` and `https` has been changed to one that achieves Perfect Forward Secrecy with all modern browsers. Additionally, insecure RC4 ciphers have been excluded. If you absolutely require RC4, please specify your own cipher suites. [#826](https://github.com/iojs/io.js/pull/826) (Roman Reiss)
+* **url**: `url.resolve('/path/to/file', '.')` now returns `/path/to/` with the trailing slash, `url.resolve('/', '.')` returns `/` [#278](https://github.com/nodejs/node/pull/278) (Amir Saboury)
+* **tls**: The default cipher suite used by `tls` and `https` has been changed to one that achieves Perfect Forward Secrecy with all modern browsers. Additionally, insecure RC4 ciphers have been excluded. If you absolutely require RC4, please specify your own cipher suites. [#826](https://github.com/nodejs/node/pull/826) (Roman Reiss)
 
 ## Notable Events in the Community
 * **Node Governance** - [William Bert](https://twitter.com/williamjohnbert) created http://nodegovernance.io/ to alert Scott Hammond, CEO of Joyent, of the desire of the community for the io.js open-governance model to be the base upon which the Node Foundation's Technical Committee. The response from the community was _fantastic_!

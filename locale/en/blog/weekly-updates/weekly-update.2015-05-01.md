@@ -9,16 +9,16 @@ layout: blog-post.hbs
 ---
 
 # io.js 2.0 release candidate
-This week we had one io.js nightly release [v2.0](https://iojs.org/download/nightly/v2.0.0-nightly20150501b4ad5d7050/), complete changelog will be found soon [on GitHub](https://github.com/iojs/io.js/blob/v1.x/CHANGELOG.md).
+This week we had one io.js nightly release [v2.0](https://iojs.org/download/nightly/v2.0.0-nightly20150501b4ad5d7050/), complete changelog will be found soon [on GitHub](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
 
 ### Community Updates
 
 * New [johnny-five](http://johnny-five.io/) site launched.
-* iojs.io domain was donated to the project and it will redirect to iojs.org [iojs/io.js#1534](https://github.com/iojs/io.js/issues/1534)
+* iojs.io domain was donated to the project and it will redirect to iojs.org [iojs/io.js#1534](https://github.com/nodejs/node/issues/1534)
 * david-dm.org is [now running](https://twitter.com/_alanshaw/status/592855646124531713) on iojs
 * io.js v2.0 release candidate is [out](https://iojs.org/download/nightly/v2.0.0-nightly20150501b4ad5d7050/).
 * io.js [ARM cluster](https://twitter.com/rvagg/status/593226114992087041) is growing.
-* Onboarding another batch of committers [iojs/io.js#1552](https://github.com/iojs/io.js/issues/1552)
+* Onboarding another batch of committers [iojs/io.js#1552](https://github.com/nodejs/node/issues/1552)
 * io.js TC meeting 4/29 on [YouTube](https://www.youtube.com/watch?v=-e675TT4WEA) and [SoundCloud](https://twitter.com/dotproto/status/594145574204510208).
 * io.js/node.js code [convergence plan draft](https://github.com/jasnell/dev-policy/blob/master/convergence.md).
 * initial [repo](https://github.com/jasnell/node.js-convergence) for code convergence work for io.js/node.js.

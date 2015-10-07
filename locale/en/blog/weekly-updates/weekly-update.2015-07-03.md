@@ -13,7 +13,7 @@ Important patches for io.js 1.8 and 2.3 and upcoming events.
 
 ### io.js 1.8 and 2.3 Releases
 
-This week we have three io.js releases: [v2.3.2](https://iojs.org/dist/v2.3.2/) and two following important security patches [v1.8.3](https://iojs.org/dist/v1.8.3/) and [v2.3.3](https://iojs.org/dist/v2.3.3/), complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/io.js/blob/master/CHANGELOG.md) with the [v1.x changelog here](https://github.com/nodejs/io.js/blob/v1.x/CHANGELOG.md).
+This week we have three io.js releases: [v2.3.2](https://iojs.org/dist/v2.3.2/) and two following important security patches [v1.8.3](https://iojs.org/dist/v1.8.3/) and [v2.3.3](https://iojs.org/dist/v2.3.3/), complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md) with the [v1.x changelog here](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
 
 ### Notable Changes
 
@@ -22,7 +22,7 @@ This week we have three io.js releases: [v2.3.2](https://iojs.org/dist/v2.3.2/) 
 **Maintenance release**
 
 * **v8**: Fixed an out-of-band write in utf8 decoder. **This is an important security update** as it can be used to cause a denial of service attack.
-* **openssl**: Upgrade to 1.0.2b and 1.0.2c, introduces DHE man-in-the-middle protection (Logjam) and fixes malformed ECParameters causing infinite loop (CVE-2015-1788). See the [security advisory](https://www.openssl.org/news/secadv_20150611.txt) for full details. (Shigeki Ohtsu) [#1950](https://github.com/nodejs/io.js/pull/1950) [#1958](https://github.com/nodejs/io.js/pull/1958)
+* **openssl**: Upgrade to 1.0.2b and 1.0.2c, introduces DHE man-in-the-middle protection (Logjam) and fixes malformed ECParameters causing infinite loop (CVE-2015-1788). See the [security advisory](https://www.openssl.org/news/secadv_20150611.txt) for full details. (Shigeki Ohtsu) [#1950](https://github.com/nodejs/node/pull/1950) [#1958](https://github.com/nodejs/node/pull/1958)
 * **build**:
   * Added support for compiling with Microsoft Visual C++ 2015
   * Started building and distributing headers*only tarballs along with binaries
@@ -39,13 +39,13 @@ This week we have three io.js releases: [v2.3.2](https://iojs.org/dist/v2.3.2/) 
 
 ### Known Issues
 
-See https://github.com/nodejs/io.js/labels/confirmed-bug for complete and current list of known issues.
+See https://github.com/nodejs/node/labels/confirmed-bug for complete and current list of known issues.
 
-* Some problems with unreferenced timers running during `beforeExit` are still to be resolved. See [#1264](https://github.com/nodejs/io.js/issues/1264).
-* Surrogate pair in REPL can freeze terminal. [#690](https://github.com/nodejs/io.js/issues/690)
-* `process.send()` is not synchronous as the docs suggest, a regression introduced in 1.0.2, see [#760](https://github.com/nodejs/io.js/issues/760).
-* Calling `dns.setServers()` while a DNS query is in progress can cause the process to crash on a failed assertion. [#894](https://github.com/nodejs/io.js/issues/894)
-* `url.resolve` may transfer the auth portion of the url when resolving between two full hosts, see [#1435](https://github.com/nodejs/io.js/issues/1435).
+* Some problems with unreferenced timers running during `beforeExit` are still to be resolved. See [#1264](https://github.com/nodejs/node/issues/1264).
+* Surrogate pair in REPL can freeze terminal. [#690](https://github.com/nodejs/node/issues/690)
+* `process.send()` is not synchronous as the docs suggest, a regression introduced in 1.0.2, see [#760](https://github.com/nodejs/node/issues/760).
+* Calling `dns.setServers()` while a DNS query is in progress can cause the process to crash on a failed assertion. [#894](https://github.com/nodejs/node/issues/894)
+* `url.resolve` may transfer the auth portion of the url when resolving between two full hosts, see [#1435](https://github.com/nodejs/node/issues/1435).
 
 ### Community Updates
 
