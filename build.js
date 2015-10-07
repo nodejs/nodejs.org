@@ -101,9 +101,12 @@ function buildlocale (source, locale) {
         sortBy: 'date',
         reverse: true,
         refer: false
+      },
+      knowledgeBase: {
+        pattern: 'knowledge/**/*.md',
+        refer: false
       }
     }))
-    .use(knowledgeBase(locale))
     .use(markdown(markedOptions))
     .use(prism())
     .use(filterStylusPartials())
@@ -159,29 +162,6 @@ function buildlocale (source, locale) {
     if (err) { throw err }
     console.timeEnd('[metalsmith] build/' + locale + ' finished')
   })
-}
-
-function knowledgeBase (locale) {
-  return function (files, metalsmith, done) {
-    var path = 'knowledge/index.md'
-    var index = files[path]
-    if (index) {
-      var lines = index.contents.toString().split('\n')
-
-      Object.keys(files).forEach(function (file) {
-        if (file === path) return
-        if (/^knowledge\//.test(file)) {
-          var data = files[file]
-          var link = file.replace(/^knowledge\/(.*)\.md$/, '$1')
-          lines.push(`- [${data.title}](${link})`)
-        }
-      })
-
-      index.contents = new Buffer(lines.join('\n'))
-    }
-
-    done()
-  }
 }
 
 function copystatic () {
