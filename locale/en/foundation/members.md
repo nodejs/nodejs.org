@@ -28,6 +28,9 @@ To request information on joining the Node.js Foundation, please email
 <a target="_new" class="imagelink" href="//paypal.com">
   <img alt="PayPal" class="memberlogo" src="/static/images/foundation/paypalLogo.png" />
 </a>
+<a target="_new" class="imagelink" href="//redhat.com">
+  <img alt="Red Hat" class="memberlogo" src="/static/images/foundation/redhatLogo.png" />
+</a>
 </div>
 
 ## Gold
