@@ -8,25 +8,7 @@
     <div id="main">
         <div class="container has-side-nav">
 
-            <aside>
-                <ul>
-                    <li{{#equals path site.docs.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.docs.link}}/">{{site.docs.text}}</a>
-                    </li>
-                    <li{{#equals path site.docs.knowledge.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.docs.knowledge.link}}/">{{site.docs.knowledge.text}}</a>
-                    </li>
-                    <li{{#equals path site.docs.es6.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.docs.es6.link}}/">{{site.docs.es6.text}}</a>
-                    </li>
-                    <li{{#equals path site.docs.faq.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.docs.faq.link}}/">{{site.docs.faq.text}}</a>
-                    </li>
-                    <li{{#equals path site.docs.api.link}} class="active"{{/equals}}>
-                        <a href="{{site.docs.api.link}}">{{site.docs.api.text}}</a>
-                    </li>
-                </ul>
-            </aside>
+            {{> docs-menu }}
 
             <article>
                 {{{ contents }}}
