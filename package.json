@@ -40,7 +40,7 @@
     "metalsmith-serve": "0.0.3",
     "metalsmith-stylus": "1.0.0",
     "ncp": "2.0.0",
-    "octonode": "0.7.2",
+    "octonode": "0.7.3",
     "require-dir": "0.3.0",
     "semver": "5.0.3",
     "st": "0.5.5",
