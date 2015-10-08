@@ -17,7 +17,7 @@ understand the project governance model as outlined in
 ## Issues and Pull Requests
 
 Courtesy should always be shown to individuals submitting issues and
-pull requests to the Node.js project.
+pull requests to the Node.js website project.
 
 Collaborators should feel free to take full responsibility for
 managing issues and pull requests they feel qualified to handle, as
