@@ -15,6 +15,7 @@ const marked = require('marked')
 const path = require('path')
 const fs = require('fs')
 const ncp = require('ncp')
+const junk = require('junk')
 
 const filterStylusPartials = require('./scripts/plugins/filter-stylus-partials')
 const mapHandlebarsPartials = require('./scripts/plugins/map-handlebars-partials')
@@ -188,7 +189,7 @@ function fullbuild () {
     }
 
     fs.readdir(path.join(__dirname, 'locale'), function (e, locales) {
-      locales.forEach(function (locale) {
+      locales.filter(junk.not).forEach(function (locale) {
         buildlocale(source, locale)
       })
     })
