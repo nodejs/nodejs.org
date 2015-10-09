@@ -13,7 +13,7 @@ Node.js v4.1.2 is released
 
 ### Node.js v4.1.2 Releases
 
-This week we have one release: [Node.js v4.1.2](https://nodejs.org/en/blog/release/v4.1.2/), complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+This week we have one release: [Node.js v4.1.2](https://nodejs.org/en/blog/release/v4.1.2/). complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
 
 ### Notable changes
 
@@ -23,10 +23,6 @@ This week we have one release: [Node.js v4.1.2](https://nodejs.org/en/blog/relea
 * **libuv**: Upgraded from v1.7.4 to v1.7.5, see [release notes](https://github.com/libuv/libuv/releases/tag/v1.7.5) for details (Saúl Ibarra Corretgé) [#3010](https://github.com/nodejs/node/pull/3010)
   - A better rwlock implementation for all Windows versions
   - Improved AIX support
-* **v8**:
-  - Upgraded from v4.5.103.33 to v4.5.103.35 (Ali Ijaz Sheikh) [#3117](https://github.com/nodejs/node/pull/3117)
-  - Backported [f782159](https://codereview.chromium.org/1367123003) from v8's upstream to help speed up Promise introspection (Ben Noordhuis) [#3130](https://github.com/nodejs/node/pull/3130)
-  - Backported [c281c15](https://codereview.chromium.org/1363683002) from v8's upstream to add JSTypedArray length in post-mortem metadata (Julien Gilli) [#3031](https://github.com/nodejs/node/pull/3031)
 
 ### Known issues
 
@@ -42,9 +38,11 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 * The Node.js Foundation, a community-led and industry-backed consortium to advance the development of the Node.js platform, announced Red Hat, Inc. has joined the Foundation as a Platinum member. 
 * Red Hat joins platinum members, including Famous, IBM, Intel, Joyent, Microsoft and PayPal, to provide support in the adoption, development and long-term success of the Node.js project.
 
+See https://www.redhat.com/en/about/press-releases/red-hat-joins-nodejs-foundation to read in detail.
+
 ### Community Updates
 
-* [StrongLoop introduces Arrow functions](https://strongloop.com/strongblog/an-introduction-to-javascript-es6-arrow-functions/), "Arrow functions serve two main purposes: more concise syntax and sharing lexical this with the parent scope."
+* [StrongLoop provides "An Introduction to JavaScript ES6 Arrow Functions"](https://strongloop.com/strongblog/an-introduction-to-javascript-es6-arrow-functions/), "Arrow functions serve two main purposes: more concise syntax and sharing lexical this with the parent scope."
 
 If you have spotted or written something about Node.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.
 
