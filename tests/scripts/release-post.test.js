@@ -137,17 +137,67 @@ test('fetchChangelog(<version>)', (t) => {
     })
   })
 
+  t.end()
+})
+
+test('fetchChangelogBody(<version>)', (t) => {
+  const releasePost = require('../../scripts/release-post')
+
+  const changelogFixture = path.resolve(__dirname, 'CHANGELOG.fixture.md')
+
   t.test('does not include `## header` in matched version section', (t) => {
     const github = nock('https://raw.githubusercontent.com')
       .get('/nodejs/node/v4.1.0/CHANGELOG.md')
       .replyWithFile(200, changelogFixture)
 
-    releasePost.fetchChangelog('4.1.0').then((changelog) => {
-      t.true(changelog.startsWith('### Notable changes'))
+    releasePost.fetchChangelogBody('4.1.0').then((body) => {
+      t.true(body.startsWith('### Notable changes'))
       t.true(github.isDone(), 'githubusercontent.com was requested')
 
       t.end()
     }, t.fail)
+  })
+
+  t.end()
+})
+
+test('fetchAuthor(<version>)', (t) => {
+  const releasePost = require('../../scripts/release-post')
+
+  const changelogFixture = path.resolve(__dirname, 'CHANGELOG.fixture.md')
+
+  t.test('resolves with full name of release author via github.com', (t) => {
+    const github = nock('https://raw.githubusercontent.com')
+      .get('/nodejs/node/v4.1.1/CHANGELOG.md')
+      .replyWithFile(200, changelogFixture)
+
+    const api = nock('https://api.github.com')
+      .get('/users/rvagg')
+      .reply(200, {
+        login: 'rvagg',
+        name: 'Rod Vagg'
+      })
+
+    releasePost.fetchAuthor('4.1.1').then((author) => {
+      t.equal(author, 'Rod Vagg')
+      t.true(github.isDone(), 'githubusercontent.com was requested')
+      t.true(api.isDone(), 'api.github.com was requested')
+
+      t.end()
+    }, t.fail)
+  })
+
+  t.test('rejects when a matching version section could not be found in changelog', (t) => {
+    const github = nock('https://raw.githubusercontent.com')
+      .get('/nodejs/node/v4.1.1/CHANGELOG.md')
+      .reply(200, 'A changelog without version sections...')
+
+    releasePost.fetchAuthor('4.1.1').then(null, (err) => {
+      t.equal(err.message, 'Couldnt find matching changelog for 4.1.1')
+      t.true(github.isDone(), 'githubusercontent.com was requested')
+
+      t.end()
+    })
   })
 
   t.end()

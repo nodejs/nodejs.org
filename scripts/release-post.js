@@ -31,18 +31,25 @@ const downloads = require('./helpers/downloads')
 
 function request (uri, method, cb) {
   return new Promise(function (resolve, reject) {
-    const opts = extend({ method }, url.parse(uri))
+    // user-agent is required when by api.github.com
+    const opts = extend({
+      method,
+      headers: {
+        'user-agent': 'nodejs.org release blog post script'
+      }
+    }, url.parse(uri))
+
     let data = ''
 
     https.request(opts, function (res) {
       if (res.statusCode !== 200) {
-        return reject(new Error('Invalid status code (!= 200) while retrieving ' + url + ': ' + res.statusCode))
+        return reject(new Error(`Invalid status code (!= 200) while retrieving ${uri}: ${res.statusCode}`))
       }
 
       res.on('data', function (chunk) { data += chunk })
       res.on('end', function () { resolve(data) })
     }).on('error', function (err) {
-      reject(new Error('Error requesting URL %s: %s', url, err.message))
+      reject(new Error(`Error requesting URL ${uri}: ${err.message}`))
     }).end()
   })
 }
@@ -50,12 +57,6 @@ function request (uri, method, cb) {
 function download (url) {
   return request(url, 'GET')
 }
-
-// matches a complete release section, support both old node and iojs releases:
-// ## 2015-07-09, Version 0.12.7 (Stable)
-// ## 2015-08-04, Version 3.0.0, @rvagg
-const rxReleaseSection = /## \d{4}-\d{2}-\d{2}, Version ([^,( ]+)[\s\S]*?(?=## \d{4})/g
-const rxSectionBody = /### Notable changes[\s\S]*/g
 
 function explicitVersion (version) {
   return version ? Promise.resolve(version) : Promise.reject()
@@ -71,41 +72,56 @@ function findLatestVersion (cb) {
 
 function fetchDocs (version) {
   return Promise.all([
-    fetchChangelog(version),
+    fetchChangelogBody(version),
+    fetchAuthor(version),
     fetchShasums(version),
     verifyDownloads(version)
   ]).then(function (results) {
     const changelog = results[0]
-    const shasums = results[1]
-    const files = results[2]
+    const author = results[1]
+    const shasums = results[2]
+    const files = results[3]
 
     return {
       version,
       changelog,
+      author,
       shasums,
       files
     }
   })
 }
 
+function fetchAuthor (version) {
+  return fetchChangelog(version)
+    .then((section) => findAuthorLogin(version, section))
+    .then((author) => download(`https://api.github.com/users/${author}`))
+    .then(JSON.parse)
+    .then((githubRes) => githubRes.name)
+}
+
 function fetchChangelog (version) {
+  // matches a complete release section,
+  // support release sections with headers like:
+  // ## 2015-09-22, Version 4.1.1 (Stable), @rvagg
+  const rxSection = new RegExp(`## \\d{4}-\\d{2}-\\d{2}, Version ${version} \\([^\\)]+\\)[\\s\\S]*?(?=## \\d{4})`)
+
   return download(`https://raw.githubusercontent.com/nodejs/node/v${version}/CHANGELOG.md`)
-    .then(function (data) {
-      let matches
+    .then((data) => {
+      const matches = rxSection.exec(data)
+      return matches ? matches[0] : Promise.reject(new Error(`Couldnt find matching changelog for ${version}`))
+    })
+}
 
-      /* eslint-disable no-cond-assign */
-      while (matches = rxReleaseSection.exec(data)) {
-        const section = matches[0]
-        const releaseVersion = matches[1]
-        const bodyMatch = rxSectionBody.exec(section)
+function fetchChangelogBody (version) {
+  const rxSectionBody = /### Notable changes[\s\S]*/g
 
-        if (releaseVersion === version && bodyMatch) {
-          return bodyMatch[0]
-        }
-      }
-      /* eslint-enable no-cond-assign */
-
-      return Promise.reject(new Error('Couldnt find matching changelog for ' + version))
+  return fetchChangelog(version)
+    .then(function (section) {
+      const bodyMatch = rxSectionBody.exec(section)
+      return bodyMatch
+        ? bodyMatch[0]
+        : Promise.reject(new Error(`Could not find changelog body of ${version} release`))
     })
 }
 
@@ -118,6 +134,12 @@ function verifyDownloads (version) {
   const allDownloads = downloads(version)
   const reqs = allDownloads.map(urlOrComingSoon)
   return Promise.all(reqs)
+}
+
+function findAuthorLogin (version, section) {
+  const rxReleaseAuthor = /^## .*? \([^\)]+\), @(\S+)/g
+  const matches = rxReleaseAuthor.exec(section)
+  return matches ? matches[1] : Promise.reject(new Error(`Couldnt find @author of ${version} release :(`))
 }
 
 function urlOrComingSoon (binary) {
@@ -160,7 +182,12 @@ exports.writeToFile = writeToFile
 exports.findLatestVersion = findLatestVersion
 exports.verifyDownloads = verifyDownloads
 exports.fetchChangelog = fetchChangelog
+exports.fetchChangelogBody = fetchChangelogBody
+exports.fetchAuthor = fetchAuthor
 
+// when script is executed directly,
+// not required by another module, e.g:
+// $ node scripts/release-post.js
 if (require.main === module) {
   explicitVersion(process.argv[2])
     .then(null, findLatestVersion)
