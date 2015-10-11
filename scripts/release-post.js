@@ -55,6 +55,7 @@ function download (url) {
 // ## 2015-07-09, Version 0.12.7 (Stable)
 // ## 2015-08-04, Version 3.0.0, @rvagg
 const rxReleaseSection = /## \d{4}-\d{2}-\d{2}, Version ([^,( ]+)[\s\S]*?(?=## \d{4})/g
+const rxSectionBody = /### Notable changes[\s\S]*/g
 
 function explicitVersion (version) {
   return version ? Promise.resolve(version) : Promise.reject()
@@ -94,9 +95,12 @@ function fetchChangelog (version) {
 
       /* eslint-disable no-cond-assign */
       while (matches = rxReleaseSection.exec(data)) {
+        const section = matches[0]
         const releaseVersion = matches[1]
-        if (releaseVersion === version) {
-          return matches[0]
+        const bodyMatch = rxSectionBody.exec(section)
+
+        if (releaseVersion === version && bodyMatch) {
+          return bodyMatch[0]
         }
       }
       /* eslint-enable no-cond-assign */
