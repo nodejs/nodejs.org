@@ -1,27 +1,26 @@
 'use strict'
 
-const cheerio = require('cheerio');
+const cheerio = require('cheerio')
 
-const SUMMARY_LENGHT = 400;
+const SUMMARY_LENGHT = 400
 
 module.exports = function (contents, locale, path) {
-    let $ = cheerio.load(contents);
+  let $ = cheerio.load(contents)
 
-    let summary = '';
-    let child = 1;
+  let summary = ''
 
-    $('*').each((i, elem) => {
-        if (summary.length > SUMMARY_LENGHT) {
-            summary += `<p><a href='/${locale}/${path}/'>Read more...</a></p>`;
-            return false;
-        }
+  $('*').each((i, elem) => {
+    if (summary.length > SUMMARY_LENGHT) {
+      summary += `<p><a href='/${locale}/${path}/'>Read more...</a></p>`
+      return false
+    }
 
-        if (elem.parent) {
-            return;
-        }
+    if (elem.parent) {
+      return
+    }
 
-        summary += $.html(elem);
-    })
+    summary += $.html(elem)
+  })
 
-    return `${summary}`;
-};
+  return summary
+}
