@@ -32,10 +32,8 @@ can be found on the project's [Github profile](https://github.com/orgs/nodejs/pe
 * James M Snell ([jasnell](https://github.com/jasnell))
 * Jeremiah Senkpiel ([Fishrock123](https://github.com/Fishrock123))
 * Julien Gilli ([misterdjules](https://github.com/misterdjules))
-* Michael Dawson ([mhdawson](https://github.com/mhdawson))
 * Rod Vagg ([rvagg](https://github.com/rvagg))
 * Shigeki Ohtsu ([shigeki](https://github.com/shigeki))
-* Steven R Loomis ([srl295](https://github.com/srl295))
 * Trevor Norris ([trevnorris](https://github.com/trevnorris))
 
 ### Technical Steering Commitee Meetings
