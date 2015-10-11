@@ -15,13 +15,13 @@ All ES6 features are split into three groups for **shipping**, **staged**, and *
 ## Which ES6 features ship with Node.js by default (no runtime flag required)?
 
 
-* Block scoping (strict mode only)
+* Block scoping
 
-    * [let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+    * [let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let) (strict mode only)
 
     * [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
 
-    * `function`-in-blocks
+    * `function`-in-blocks (strict mode only)
 
     >As of v8 3.31.74.1, block-scoped declarations are [intentionally implemented with a non-compliant limitation to strict mode code](https://groups.google.com/forum/#!topic/v8-users/3UXNCkAU8Es). Developers should be aware that this will change as v8 continues towards ES6 specification compliance.
 
