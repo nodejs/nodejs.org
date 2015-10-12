@@ -183,7 +183,7 @@ function fullbuild () {
         currentVersion: versions[0].version,
         banner: {
           visible: true,
-          content: 'Important <a href="https://nodejs.org/en/blog/release/v4.1.2/">security release</a>, please update now!'
+          content: '<a href="https://nodejs.org/en/blog/release/v4.2.0/">Long Term Support Release</a>'
         }
       }
     }
