@@ -40,7 +40,7 @@ would like to contribute to the translation of nodejs.org, please refer to the f
 * Ensure that any site translations are done as pull requests into this repo. This will ensure the build process, layout, and styling, remain consistent across the different translations of the site.
 * You can find the appropriate language folder within `locale/`
 * There needs to be the following files in your language folder:
-    * `site.json` (this fills in the buttons and title bar with the appropriate translation)
+    * `site.json` (this contains the basic settings for the website version and the button and title bar translations)
     * `index.md` (this contains the markdown translation for the home page. The paragraph order is important here, so please maintain it)
     * `styles.styl` (this imports the necessary Stylus files)
     * All files and files in subfolders that end in `.md` are content pages and should be translated.
