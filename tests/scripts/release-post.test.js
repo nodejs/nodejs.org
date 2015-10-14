@@ -161,6 +161,40 @@ test('fetchChangelogBody(<version>)', (t) => {
   t.end()
 })
 
+test('fetchVersionPolicy(<version>)', (t) => {
+  const releasePost = require('../../scripts/release-post')
+
+  const changelogFixture = path.resolve(__dirname, 'CHANGELOG.fixture.md')
+
+  t.test('finds "Stable" version policy', (t) => {
+    const github = nock('https://raw.githubusercontent.com')
+      .get('/nodejs/node/v4.1.0/CHANGELOG.md')
+      .replyWithFile(200, changelogFixture)
+
+    releasePost.fetchVersionPolicy('4.1.0').then((policy) => {
+      t.equal(policy, 'Stable')
+      t.true(github.isDone(), 'githubusercontent.com was requested')
+
+      t.end()
+    }, t.fail)
+  })
+
+  t.test('finds "LTS" version policy', (t) => {
+    const github = nock('https://raw.githubusercontent.com')
+      .get('/nodejs/node/v4.2.0/CHANGELOG.md')
+      .replyWithFile(200, changelogFixture)
+
+    releasePost.fetchVersionPolicy('4.2.0').then((policy) => {
+      t.equal(policy, 'LTS')
+      t.true(github.isDone(), 'githubusercontent.com was requested')
+
+      t.end()
+    }, t.fail)
+  })
+
+  t.end()
+})
+
 test('fetchAuthor(<version>)', (t) => {
   const releasePost = require('../../scripts/release-post')
 

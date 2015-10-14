@@ -74,18 +74,21 @@ function fetchDocs (version) {
   return Promise.all([
     fetchChangelogBody(version),
     fetchAuthor(version),
+    fetchVersionPolicy(version),
     fetchShasums(version),
     verifyDownloads(version)
   ]).then(function (results) {
     const changelog = results[0]
     const author = results[1]
-    const shasums = results[2]
-    const files = results[3]
+    const versionPolicy = results[2]
+    const shasums = results[3]
+    const files = results[4]
 
     return {
       version,
       changelog,
       author,
+      versionPolicy,
       shasums,
       files
     }
@@ -104,7 +107,8 @@ function fetchChangelog (version) {
   // matches a complete release section,
   // support release sections with headers like:
   // ## 2015-09-22, Version 4.1.1 (Stable), @rvagg
-  const rxSection = new RegExp(`## \\d{4}-\\d{2}-\\d{2}, Version ${version} \\([^\\)]+\\)[\\s\\S]*?(?=## \\d{4})`)
+  // ## 2015-10-07, Version 4.2.0 'Argon' (LTS), @jasnell
+  const rxSection = new RegExp(`## \\d{4}-\\d{2}-\\d{2}, Version ${version} ('\\w+' )?\\([^\\)]+\\)[\\s\\S]*?(?=## \\d{4})`)
 
   return download(`https://raw.githubusercontent.com/nodejs/node/v${version}/CHANGELOG.md`)
     .then((data) => {
@@ -122,6 +126,19 @@ function fetchChangelogBody (version) {
       return bodyMatch
         ? bodyMatch[0]
         : Promise.reject(new Error(`Could not find changelog body of ${version} release`))
+    })
+}
+
+function fetchVersionPolicy (version) {
+  // matches the policy for a given version (Stable, LTS etc) in the changelog
+  const rxPolicy = new RegExp(`^## \\d{4}-\\d{2}-\\d{2}, Version [^(].*\\(([^\\)]+)\\)`)
+
+  return fetchChangelog(version)
+    .then(function (section) {
+      const matches = rxPolicy.exec(section)
+      return matches
+        ? matches[1]
+        : Promise.reject(new Error(`Could not find version policy of ${version} in its changelog`))
     })
 }
 
@@ -184,6 +201,7 @@ exports.verifyDownloads = verifyDownloads
 exports.fetchChangelog = fetchChangelog
 exports.fetchChangelogBody = fetchChangelogBody
 exports.fetchAuthor = fetchAuthor
+exports.fetchVersionPolicy = fetchVersionPolicy
 
 // when script is executed directly,
 // not required by another module, e.g:
