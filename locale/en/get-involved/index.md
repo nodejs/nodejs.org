@@ -78,4 +78,4 @@ right place. Explore our community resources to find out how you can help:
 - [Spanish language community](http://nodehispano.com)
 - [Taiwan community](http://nodejs.tw)
 - [Nicaragua Node.js community](http://nodenica.com/)
-- [Korean Node.js community](http://nodejs.github.io/iojs-ko/)
+- [Korean Node.js community](http://nodejs.github.io/nodejs-ko/)
