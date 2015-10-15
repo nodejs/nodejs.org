@@ -1,6 +1,6 @@
-# node.js Website Translation Policy
+# Node.js Website Translation Policy
 
-node.js is a global platform and so this site has many translations. The translation of the site into
+Node.js is a global platform and so this site has many translations. The translation of the site into
 separate languages is handled by the localization working group of the language in question. If you
 would like to contribute to the translation of nodejs.org, please refer to the following process:
 
