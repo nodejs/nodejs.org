@@ -13,6 +13,8 @@ The Node.js community is committed to bringing you events from around the world,
 
 ### United States
 
+- [Node.js Interactive](http://interactive.nodejs.org/) is a conference run by the Node.js Foundation.
+
 - [NodeConf](http://www.nodeconf.com/) conferences are the main event in the United States.
 
 - [Node Summit](http://nodesummit.com/) is a conference in San Francisco focusing on the adoption of Node in larger companies.
@@ -22,6 +24,8 @@ The Node.js community is committed to bringing you events from around the world,
 - [NodeConf EU](http://nodeconfeu.com/) is a Node conference in Europe, organized by Cian Ó Maidín.
 
 - An [Italian Node.js Conference](http://nodejsconf.it/) is held in Brescia.
+
+- [NodeConf Barcelona](http://barcelona.nodeconfeu.com/) is a Node conference in Spain, organized by BarcelonaJS.
 
 ### Japan
 
