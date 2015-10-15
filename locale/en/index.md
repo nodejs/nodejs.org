@@ -5,6 +5,12 @@ labels:
   download: Download
   download-for: Download for
   other-downloads: Other Downloads
+  other-lts-downloads: Other LTS Downloads
+  other-stable-downloads: Other Stable Downloads
+  stable: Stable
+  lts: LTS
+  tagline-stable: Latest Features
+  tagline-lts: Mature and Dependable
   changelog: Changelog
   api: API Docs
 ---
