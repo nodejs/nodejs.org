@@ -1,0 +1,89 @@
+<section>
+    <p>{{downloads.intro}}</p>
+
+    <div class="download-hero full-width">
+        <ul class="no-padding">
+            <li>
+                <a href="https://nodejs.org/dist/{{version}}/node-{{version}}-x86.msi" id="windows-downloadbutton" data-version="{{version}}">
+                    <img src="/static/images/platform-icon-win.png" height="50" width="45" alt="">
+                    Windows Installer
+                    <p class="small color-lightgray pad-bottom-small">node-{{version}}-x86.msi</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://nodejs.org/dist/{{version}}/node-{{version}}.pkg">
+                    <img src="/static/images/platform-icon-osx.png" height="50" width="45" alt="">
+                    Macintosh Installer
+                    <p class="small color-lightgray pad-bottom-small">node-{{version}}.pkg</p>
+                </a>
+            </li>
+            <li>
+                <a href="https://nodejs.org/dist/{{version}}/node-{{version}}.tar.gz">
+                    <img src="/static/images/platform-icon-generic.png" height="50" width="45" alt="">
+                    Source Code
+                    <p class="small color-lightgray pad-bottom-small">node-{{version}}.tar.gz</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <table class="download-matrix full-width">
+        <tbody>
+            <tr>
+                <th>Windows Installer (.msi)</th>
+                <td colspan="3"><a href="https://nodejs.org/dist/{{version}}/node-{{version}}-x86.msi">32-bit</a></td>
+                <td colspan="3"><a href="https://nodejs.org/dist/{{version}}/node-{{version}}-x64.msi">64-bit</a></td>
+            </tr>
+
+            <tr>
+                <th>Windows Binary (.exe)</th>
+                <td colspan="3"><a href="https://nodejs.org/dist/{{version}}/win-x86/node.exe">32-bit</a></td>
+                <td colspan="3"><a href="https://nodejs.org/dist/{{version}}/win-x64/node.exe">64-bit</a></td>
+            </tr>
+
+            <tr>
+                <th>Mac OS X Installer (.pkg)</th>
+                <td colspan="6"><a href="https://nodejs.org/dist/{{version}}/node-{{version}}.pkg">64-bit</a></td>
+            </tr>
+
+            <tr>
+                <th>Mac OS X Binaries (.tar.gz)</th>
+                <td colspan="6"><a href="https://nodejs.org/dist/{{version}}/node-{{version}}-darwin-x64.tar.gz">64-bit</a></td>
+            </tr>
+
+            <tr>
+                <th>Linux Binaries (.tar.gz)</th>
+                <td colspan="3"><a href="https://nodejs.org/dist/{{version}}/node-{{version}}-linux-x86.tar.gz">32-bit</a></td>
+                <td colspan="3"><a href="https://nodejs.org/dist/{{version}}/node-{{version}}-linux-x64.tar.gz">64-bit</a></td>
+            </tr>
+
+            <tr>
+                <th>SunOS Binaries (.tar.gz)</th>
+                <td colspan="3"><a href="https://nodejs.org/dist/{{version}}/node-{{version}}-sunos-x86.tar.gz">32-bit</a></td>
+                <td colspan="3"><a href="https://nodejs.org/dist/{{version}}/node-{{version}}-sunos-x64.tar.gz">64-bit</a></td>
+            </tr>
+
+            <tr>
+                <th>ARM Binaries (.tar.gz)</th>
+                <td colspan="2"><a href="https://nodejs.org/dist/{{version}}/node-{{version}}-linux-armv6l.tar.gz">ARMv6</a></td>
+                <td colspan="2"><a href="https://nodejs.org/dist/{{version}}/node-{{version}}-linux-armv7l.tar.gz">ARMv7</a></td>
+                <td colspan="2"><a href="https://nodejs.org/dist/{{version}}/node-{{version}}-linux-arm64.tar.gz">ARMv8</a></td>
+            </tr>
+
+            <tr>
+                <th>Source Code</th>
+                <td colspan="6">
+                    <a href="https://nodejs.org/dist/{{version}}/node-{{version}}.tar.gz">node-{{version}}.tar.gz</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    {{downloads.currentVersion}}: <strong>{{version}}</strong>
+    <ul>
+        <li><a href="https://nodejs.org/dist/{{version}}">{{site.all-downloads}}</a></li>
+        <li><a href="/{{site.locale}}/{{site.download.package-manager.link}}">{{site.download.package-manager.text}}</a></li>
+        <li><a href="/{{site.locale}}/{{site.download.releases.link}}/">{{site.download.releases.text}}</a></li>
+    </ul>
+    <p>{{downloads.buildDisclaimer}}</p>
+</section>
