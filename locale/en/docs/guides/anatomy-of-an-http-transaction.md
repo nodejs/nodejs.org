@@ -414,28 +414,28 @@ read through the API docs for [`EventEmitters`][], [`Streams`][], and [`HTTP`][]
 
 
 
-[`EventEmitters`]: https://iojs.org/api/events.html
-[`Streams`]: https://iojs.org/api/stream.html
-[`createServer`]: https://iojs.org/api/http.html#http_http_createserver_requestlistener
-[`Server`]: https://iojs.org/api/http.html#http_class_http_server
-[`listen`]: https://iojs.org/api/http.html#http_server_listen_port_hostname_backlog_callback
-[API reference]: https://iojs.org/api/http.html
-[`IncomingMessage`]: https://iojs.org/api/http.html#http_http_incomingmessage
-[`ReadableStream`]: https://iojs.org/api/stream.html#stream_class_stream_readable
-[`rawHeaders`]: https://iojs.org/api/http.html#http_message_rawheaders
-[`Buffer`]: https://iojs.org/api/buffer.html
+[`EventEmitters`]: https://nodejs.org/api/events.html
+[`Streams`]: https://nodejs.org/api/stream.html
+[`createServer`]: https://nodejs.org/api/http.html#http_http_createserver_requestlistener
+[`Server`]: https://nodejs.org/api/http.html#http_class_http_server
+[`listen`]: https://nodejs.org/api/http.html#http_server_listen_port_hostname_backlog_callback
+[API reference]: https://nodejs.org/api/http.html
+[`IncomingMessage`]: https://nodejs.org/api/http.html#http_http_incomingmessage
+[`ReadableStream`]: https://nodejs.org/api/stream.html#stream_class_stream_readable
+[`rawHeaders`]: https://nodejs.org/api/http.html#http_message_rawheaders
+[`Buffer`]: https://nodejs.org/api/buffer.html
 [`concat-stream`]: https://www.npmjs.com/package/concat-stream
 [`body`]: https://www.npmjs.com/package/body
 [`npm`]: https://www.npmjs.com
-[`EventEmitter`]: https://iojs.org/api/events.html#events_class_events_eventemitter
-[handling these errors]: https://iojs.org/api/errors.html
-[`domains`]: https://iojs.org/api/domain.html
-[`ServerResponse`]: https://iojs.org/api/http.html#http_class_http_serverresponse
-[`setHeader`]: https://iojs.org/api/http.html#http_response_setheader_name_value<F37>
-[`WritableStream`]: https://iojs.org/api/stream.html#stream_class_stream_writable
-[`writeHead`]: https://iojs.org/api/http.html#http_response_writehead_statuscode_statusmessage_headers
+[`EventEmitter`]: https://nodejs.org/api/events.html#events_class_events_eventemitter
+[handling these errors]: https://nodejs.org/api/errors.html
+[`domains`]: https://nodejs.org/api/domain.html
+[`ServerResponse`]: https://nodejs.org/api/http.html#http_class_http_serverresponse
+[`setHeader`]: https://nodejs.org/api/http.html#http_response_setheader_name_value<F37>
+[`WritableStream`]: https://nodejs.org/api/stream.html#stream_class_stream_writable
+[`writeHead`]: https://nodejs.org/api/http.html#http_response_writehead_statuscode_statusmessage_headers
 [`express`]: https://www.npmjs.com/package/express
 [`router`]: https://www.npmjs.com/package/router
-[`pipe`]: https://iojs.org/api/stream.html#stream_readable_pipe_destination_options
-[`Error` documentation]: https://iojs.org/api/errors.html
-[`HTTP`]: https://iojs.org/api/http.html
+[`pipe`]: https://nodejs.org/api/stream.html#stream_readable_pipe_destination_options
+[`Error` documentation]: https://nodejs.org/api/errors.html
+[`HTTP`]: https://nodejs.org/api/http.html
