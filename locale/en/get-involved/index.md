@@ -14,24 +14,6 @@ right place. Explore our community resources to find out how you can help:
 
 <hr>
 
-## Events
-
-- [Node.js Interactive](http://interactive.nodejs.org/) is a conference run by the Node.js Foundation.
-
-- [NodeConf](http://www.nodeconf.com/) conferences are a collection of world wide community run events.
-
-- [NodeConf EU](http://nodeconfeu.com/) is a Node conference in Europe, organized by Cian Ó Maidín.
-
-- [NodeFest (東京Node学園祭)](http://nodefest.jp/) is organized by the [Node.js Japan user group](http://nodejs.jp).
-
-- An [Italian Node.js Conference](http://nodejsconf.it/) is held in Brescia.
-
-- [NodeConf Barcelona](http://barcelona.nodeconfeu.com/) is a Node conference in Spain, organized by BarcelonaJS.
-
-- [Node Summit](http://nodesummit.com/) is a conference in San Francisco focusing on the adoption of Node in larger companies.
-
-- [JSConf](http://jsconf.com/) organizes the main JavaScript conferences.
-
 ## Discussion
 
 - The [github issues list](https://github.com/nodejs/node/issues) the place for discussion of Node.js core features
