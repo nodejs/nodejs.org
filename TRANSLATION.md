@@ -6,6 +6,8 @@ would like to contribute to the translation of nodejs.org, please refer to the f
 
 ## For Individuals wanting to contribute
 * Contact your appropriate localization group, and discuss with them the best possible way to contribute. A list of the localization groups can be found here (please keep in mind that some groups have not yet taken action upon the project name changes, hence the outdated repository names):
+    * [`iojs-ar`](https://github.com/nodejs/iojs-ar) Arabic Community
+    * [`iojs-bg`](https://github.com/nodejs/iojs-bg) Bulgarian Community
     * [`iojs-bn`](https://github.com/nodejs/iojs-bn) Bengali Community
     * [`iojs-cn`](https://github.com/nodejs/iojs-cn) Chinese Community
     * [`iojs-cs`](https://github.com/nodejs/iojs-cs) Czech Community
@@ -23,7 +25,9 @@ would like to contribute to the translation of nodejs.org, please refer to the f
     * [`iojs-it`](https://github.com/nodejs/iojs-it) Italian Community
     * [`nodejs-ja`](https://github.com/nodejs/nodejs-ja) Japanese Community
     * [`nodejs-ka`](https://github.com/nodejs/nodejs-ka) Georgian Community
+    * [`nodejs-ko`](https://github.com/nodejs/nodejs-ko) Korean Community
     * [`nodejs-mk`](https://github.com/nodejs/nodejs-mk) Macedonian Community
+    * [`iojs-ms`](https://github.com/nodejs/iojs-ms) Malaysian Community
     * [`nodejs-nl`](https://github.com/nodejs/nodejs-nl) Dutch Community
     * [`nodejs-no`](https://github.com/nodejs/nodejs-no) Norwegian Community
     * [`iojs-pl`](https://github.com/nodejs/iojs-pl) Polish Community
@@ -31,6 +35,7 @@ would like to contribute to the translation of nodejs.org, please refer to the f
     * [`nodejs-ro`](https://github.com/nodejs/nodejs-ro) Romanian Community
     * [`iojs-ru`](https://github.com/nodejs/iojs-ru) Russian Community
     * [`iojs-sv`](https://github.com/nodejs/iojs-sv) Swedish Community
+    * [`nodejs-ta`](https://github.com/nodejs/nodejs-ta) Tamil Community
     * [`nodejs-tr`](https://github.com/nodejs/nodejs-tr) Turkish Community
     * [`iojs-tw`](https://github.com/nodejs/iojs-tw) Taiwan Community
     * [`nodejs-uk`](https://github.com/nodejs/nodejs-uk) Ukrainian Community
