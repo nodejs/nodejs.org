@@ -3,7 +3,7 @@
 // Base styles
 body
     box-sizing border-box
-    font 300 20px/1.5 'Source Sans Pro', Open Sans, Roboto, Helvetica, Arial, sans-serif
+    font 400 20px/1.5 'Source Sans Pro', Open Sans, Roboto, 'San Francisco', Helvetica, Arial, sans-serif
     color $node-gray
     margin 0
     background-color #fff
@@ -30,6 +30,10 @@ a:active
 a:hover
     color #fff
     background-color $node-green
+
+a:hover
+    code
+        color #CC2828
 
 a.imagelink:hover
     background-color transparent
@@ -60,9 +64,11 @@ pre
     border-radius 3px
     padding 0.75em 1.2em
     font-size 0.8em
+    white-space pre-wrap
 
     code
         color #f0f0f0
+        background-color inherit
 
 // Import specific page sections and layout parts
 @import 'layout/_sticky-footer'
@@ -79,6 +85,7 @@ pre
 @import 'page-modules/_in-the-news'
 @import 'page-modules/_download'
 @import 'page-modules/_scrollToTop'
+@import 'page-modules/_anchorLinks'
 
 .intro
     margin-top 140px

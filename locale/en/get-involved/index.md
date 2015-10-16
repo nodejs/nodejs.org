@@ -14,23 +14,6 @@ right place. Explore our community resources to find out how you can help:
 
 <hr>
 
-## Events
-
-- [NodeConf](http://www.nodeconf.com/) conferences are the main event in the United States.
-
-- [NodeConf EU](http://nodeconfeu.com/) is a Node conference in Europe, organized by Cian Ó Maidín.
-
-- [NodeFest (東京Node学園祭)](http://nodefest.jp/) is organized by the [Node.js Japan user group](http://nodejs.jp).
-
-- An [Italian Node.js Conference](http://nodejsconf.it/) is held in Brescia.
-
-- [Node Summit](http://nodesummit.com/) is a conference in San Francisco focusing on the adoption of Node in larger companies.
-
-- [JSConf](http://jsconf.com/) organizes the main JavaScript conferences.
-
-- [NodeConf ONE-SHOT](http://oneshot.nodeconf.com/) are forkable conferences for a local communities
-
-
 ## Discussion
 
 - The [github issues list](https://github.com/nodejs/node/issues) the place for discussion of Node.js core features
@@ -68,17 +51,13 @@ right place. Explore our community resources to find out how you can help:
 - [Chinese community](http://cnodejs.org)
 - [German Node.js community](http://nodecode.de)
 - [Google+ Community of Node.js French users](https://plus.google.com/communities/113346206415381691435)
-- [Hong Kong community](http://nodejs.hk)
 - [Hungarian (Magyar) community](http://nodehun.blogspot.com/)
 - [Iran group in Persian](http://nodejs.ir)
-- [Israeli wiki](http://nodejs.co.il)
 - [Japan user group](http://nodejs.jp/)
 - [Node.js site for Kiwis](http://nodejs.geek.nz/)
 - [Russian website](http://node-center.ru/)
 - [Serbian Node.js community website](http://nodejs.rs/)
 - [Spanish language community](http://nodehispano.com)
-- [Node.js in Spanish](http://www.nodejs.es)
 - [Taiwan community](http://nodejs.tw)
-- [Node.js in Vietnamese](http://nodejs.vn/)
 - [Nicaragua Node.js community](http://nodenica.com/)
-- [Korean Node.js community](http://nodejs.github.io/iojs-ko/)
+- [Korean Node.js community](http://nodejs.github.io/nodejs-ko/)

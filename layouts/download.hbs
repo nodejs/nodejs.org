@@ -16,7 +16,7 @@
                     <div class="download-hero full-width">
                         <ul class="no-padding">
                             <li>
-                                <a href="https://nodejs.org/dist/{{project.currentVersion}}/node-{{project.currentVersion}}-x86.msi">
+                                <a href="https://nodejs.org/dist/{{project.currentVersion}}/node-{{project.currentVersion}}-x86.msi" id="windows-downloadbutton" data-version="{{ project.currentVersion }}">
                                     <img src="/static/images/platform-icon-win.png" height="50" width="45" alt="">
                                     Windows Installer
                                     <p class="small color-lightgray pad-bottom-small">node-{{project.currentVersion}}-x86.msi</p>
@@ -91,12 +91,12 @@
                         </tbody>
                     </table>
 
-                    <p>
-                        <a href="https://nodejs.org/dist/{{project.currentVersion}}">All download options</a>
-                    </p>
-                    <p>
-                        {{downloads.currentVersion}}: <strong>{{project.currentVersion}}</strong>, <a href="/{{site.locale}}/{{site.download.releases.link}}/">{{site.download.releases.text}}</a>
-                    </p>
+                    {{downloads.currentVersion}}: <strong>{{project.currentVersion}}</strong>
+                    <ul>
+                        <li><a href="https://nodejs.org/dist/{{project.currentVersion}}">{{site.all-downloads}}</a></li>
+                        <li><a href="/{{site.locale}}/{{site.download.package-manager.link}}">{{site.download.package-manager.text}}</a></li>
+                        <li><a href="/{{site.locale}}/{{site.download.releases.link}}/">{{site.download.releases.text}}</a></li>
+                    </ul>
                     <p>{{downloads.buildDisclaimer}}</p>
                 </section>
 
@@ -137,5 +137,6 @@
     </div>
 
     {{> footer }}
+    <script src="/static/js/download.js" async defer></script>
 </body>
 </html>

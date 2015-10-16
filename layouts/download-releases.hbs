@@ -25,6 +25,7 @@
                                 <td>Date</td>
                                 <td>V8</td>
                                 <td>npm</td>
+                                <td>Modules</td>
                                 <td></td>
                             </tr>
                         </thead>
@@ -35,6 +36,7 @@
                                     <td data-label="Date"><time>{{date}}</time></td>
                                     <td data-label="V8">{{v8}}</td>
                                     <td data-label="npm">{{npm}}</td>
+                                    <td data-label="Modules">{{modules}}</td>
                                     <td class="download-table-last">
                                         <a href="{{url}}">
                                             {{i18n 'releases.downloads'}}
@@ -42,11 +44,15 @@
                                         <a href="{{changeloglink version}}">
                                             {{i18n 'links.pages.changelog'}}
                                         </a>
+                                        <a href="{{apidocslink version}}">
+                                            {{i18n 'docs.text'}}
+                                        </a>
                                     </td>
                                 </tr>
                             {{/project.versions}}
                         </tbody>
                     </table>
+                    <p id="modules-description">{{{modules}}}</p>
                 </section>
             </article>
 

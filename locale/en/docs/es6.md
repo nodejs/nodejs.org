@@ -2,13 +2,13 @@
 title: ES6
 layout: docs.hbs
 ---
-# ES6 on Node.js
+# ES6 in Node.js
 
-Node.js is built against modern versions of [V8](https://developers.google.com/v8/). By keeping up-to-date with the latest releases of this engine we ensure new features from the [JavaScript ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm) are brought to Node.js developers in a timely manner, as well as continued performance and stability improvements.
+Node.js is built against modern versions of [V8](https://developers.google.com/v8/). By keeping up-to-date with the latest releases of this engine, we ensure new features from the [JavaScript ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm) are brought to Node.js developers in a timely manner, as well as continued performance and stability improvements.
 
-All ES6 features are split into three groups for **shipping**, **staged** and **in progress** features:
+All ES6 features are split into three groups for **shipping**, **staged**, and **in progress** features:
 
-* All **shipping** features, which V8 considers stable are turned **on by default on Node.js** and do **NOT** require any kind of runtime flag.
+* All **shipping** features, which V8 considers stable, are turned **on by default on Node.js** and do **NOT** require any kind of runtime flag.
 * **Staged** features, which are almost-completed features that are not considered stable by the V8 team, require a runtime flag: `--es_staging` (or its synonym, `--harmony`).
 * **In progress** features can be activated individually by their respective harmony flag (e.g. `--harmony_destructuring`), although this is highly discouraged unless for testing purposes.
 
@@ -17,11 +17,11 @@ All ES6 features are split into three groups for **shipping**, **staged** and **
 
 * Block scoping
 
-    * [let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+    * [let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let) (strict mode only)
 
     * [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
 
-    * `function`-in-blocks
+    * `function`-in-blocks (strict mode only)
 
     >As of v8 3.31.74.1, block-scoped declarations are [intentionally implemented with a non-compliant limitation to strict mode code](https://groups.google.com/forum/#!topic/v8-users/3UXNCkAU8Es). Developers should be aware that this will change as v8 continues towards ES6 specification compliance.
 

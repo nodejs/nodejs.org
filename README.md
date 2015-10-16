@@ -1,4 +1,5 @@
 # [nodejs.org](https://nodejs.org/)
+[![Build Status](https://api.travis-ci.org/nodejs/new.nodejs.org.svg?branch=master)](http://travis-ci.org/nodejs/new.nodejs.org)
 [![Dependency Status](https://david-dm.org/nodejs/new.nodejs.org.svg)](https://david-dm.org/nodejs/new.nodejs.org)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -36,6 +37,10 @@ Note: You'll need io.js 2.x or newer as the build system uses some native ES2015
  * All content is in Markdown and is per locale.
   * The top of each Markdown file is a block of YAML for page specific localization information that is passed to various templates.
   * The bulk of the Markdown content for each page is referenced as `{{{content}}}` in the corresponding template.
+
+### Deployment
+
+Full set up is in https://github.com/nodejs/build/tree/master/setup/www minus secrets and certificates. The webhook is setup on GitHub for this project and talks to a small Node server on the host which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
 
 ## Governance and Current Members
 
