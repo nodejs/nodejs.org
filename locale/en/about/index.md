@@ -41,13 +41,13 @@ event loop when there are no more callbacks to perform. This behavior is like
 browser JavaScript -— the event loop is hidden from the user.
 
 HTTP is a first class citizen in Node, designed with streaming and low latency
-in mind. This makes Node well suited for the foundation of web library or
+in mind. This makes Node well suited for the foundation of a web library or
 framework.
 
 Just because Node is designed without threads, doesn't mean you cannot take
 advantage of multiple cores in your environment. You can spawn child processes
 that are easy to communicate with by using our
-[child_process.fork()](http://nodejs.org/api/child_process.html#child_process.fork)
+[child_process.fork()](https://nodejs.org/api/child_process.html#child_process.fork)
 API. Built upon that same interface is the
-[cluster](http://nodejs.org/api/cluster.html) module, which allows you to share
+[cluster](https://nodejs.org/api/cluster.html) module, which allows you to share
 sockets between processes to enable load balancing over your cores.

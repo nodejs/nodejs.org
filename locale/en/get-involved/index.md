@@ -1,12 +1,12 @@
 ---
-title: Get invloved
+title: Get involved
 layout: contribute.hbs
 ---
 
 # We encourage all kinds of contribution from the community.
 
 The Node.js community is large, inclusive, and excited to enable as many users
-to contribute in whatever what they can. If you want to [report an
+to contribute in whatever way they can. If you want to [report an
 issue](https://github.com/nodejs/node/issues), [help with
 documentation](/en/get-involved/contribute/) or [contribute to the code
 base](/en/get-involved/development/) of the project, you’ve come to the
@@ -14,26 +14,7 @@ right place. Explore our community resources to find out how you can help:
 
 <hr>
 
-## Events
-
-- [NodeConf](http://www.nodeconf.com/) conferences are the main event in the United States.
-
-- [NodeConf EU](http://nodeconfeu.com/) is a Node conference in Europe, organized by Cian Ó Maidín.
-
-- [NodeFest (東京Node学園祭)](http://nodefest.jp/) is organized by the [Node.js Japan user group](http://nodejs.jp).
-
-- An [Italian Node.js Conference](http://nodejsconf.it/) is held in Brescia.
-
-- [Node Summit](http://nodesummit.com/) is a conference in San Francisco focusing on the adoption of Node in larger companies.
-
-- [JSConf](http://jsconf.com/) organizes the main JavaScript conferences.
-
-- [NodeConf ONE-SHOT](http://oneshot.nodeconf.com/) are forkable conferences for a local communities
-
-
 ## Discussion
-
-- The [mailing list](http://groups.google.com/group/nodejs) is used for announcements and discussion about Node.
 
 - The [github issues list](https://github.com/nodejs/node/issues) the place for discussion of Node.js core features
 
@@ -68,19 +49,15 @@ right place. Explore our community resources to find out how you can help:
 - [Australian Node.js blog &amp; developers listing](http://nodejs.org.au/)
 - [Brazilian community of Node.js](http://www.nodebr.com/)
 - [Chinese community](http://cnodejs.org)
+- [German Node.js community](http://nodecode.de)
 - [Google+ Community of Node.js French users](https://plus.google.com/communities/113346206415381691435)
-- [Hong Kong community](http://nodejs.hk)
 - [Hungarian (Magyar) community](http://nodehun.blogspot.com/)
 - [Iran group in Persian](http://nodejs.ir)
-- [Israeli wiki](http://nodejs.co.il)
 - [Japan user group](http://nodejs.jp/)
 - [Node.js site for Kiwis](http://nodejs.geek.nz/)
 - [Russian website](http://node-center.ru/)
 - [Serbian Node.js community website](http://nodejs.rs/)
 - [Spanish language community](http://nodehispano.com)
-- [Node.js in Spanish](http://www.nodejs.es)
 - [Taiwan community](http://nodejs.tw)
-- [Node.js in Vietnamese](http://nodejs.vn/)
 - [Nicaragua Node.js community](http://nodenica.com/)
-
-
+- [Korean Node.js community](http://nodejs.github.io/nodejs-ko/)

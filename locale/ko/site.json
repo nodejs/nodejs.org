@@ -1,0 +1,127 @@
+{
+    "title": "Node.js",
+    "author": "Node.js 재단",
+    "url": "https://nodejs.org/ko/",
+    "locale": "ko",
+    "scrollToTop": "맨 위로",
+    "reportNodeIssue": "Node.js 이슈 보고",
+    "reportWebsiteIssue": "웹사이트 이슈 보고",
+    "by": "by",
+    "all-downloads": "모든 다운로드 보기",
+    "feeds": [
+        {
+            "link": "feed/blog.xml",
+            "text": "Node.js 블로그"
+        },
+        {
+            "link": "feed/releases.xml",
+            "text": "Node.js 블로그: 릴리스"
+        },
+        {
+            "link": "feed/vulnerability.xml",
+            "text": "Node.js 블로그: 취약점 보고"
+        },
+        {
+            "link": "feed/tsc-minutes.xml",
+            "text": "Node.js TSC 회의록"
+        }
+    ],
+    "home": { "text": "홈" },
+    "about": {
+        "link": "about",
+        "text": "About",
+        "governance": {
+            "link": "about/governance",
+            "text": "거버넌스"
+        },
+        "workinggroups": {
+            "link": "about/working-groups",
+            "text": "워킹 그룹"
+        },
+        "releases": {
+            "link": "about/releases",
+            "text": "릴리스"
+        },
+        "resources": {
+            "link": "about/resources",
+            "text": "관련 자료"
+        }
+    },
+    "download": {
+        "link": "download",
+        "text": "다운로드",
+        "releases": {
+            "link": "download/releases",
+            "text": "이전 릴리스"
+        },
+        "package-manager": {
+            "link": "download/package-manager",
+            "text": "패키지 관리자를 통한 Node.js 설치"
+        }
+    },
+    "docs": {
+        "link": "docs",
+        "text": "문서",
+        "es6": {
+            "link": "docs/es6",
+            "text": "Node.js의 ES6"
+        },
+        "faq": {
+            "link": "docs/faq",
+            "text": "FAQ"
+        },
+        "api": {
+            "link": "/api/",
+            "text": "API"
+        }
+    },
+    "foundation": {
+        "link": "foundation",
+        "text": "재단",
+        "members": {
+            "link": "foundation/members",
+            "text": "멤버"
+        },
+        "tsc": {
+            "link": "foundation/tsc",
+            "text": "기술 거버넌스"
+        },
+        "itn": {
+             "link": "foundation/in-the-news",
+             "text": "언론 보도"
+        },
+        "announce": {
+            "link": "foundation/announcements",
+            "text": "공지사항"
+        }
+    },
+    "getinvolved": {
+        "link": "get-involved",
+        "text": "참여하기",
+        "contribute": {
+            "link": "get-involved/contribute",
+            "text": "기여하기"
+        },
+        "development": {
+            "link": "get-involved/development",
+            "text": "개발하기"
+        },
+        "code-and-learn": {
+            "link": "get-involved/code-and-learn",
+            "text": "코딩 + 배우기"
+        }
+    },
+    "trademark"  : { "link": "about/trademark", "text": "트레이드마크" },
+    "security"   : { "link": "security",        "text": "보안" },
+    "blog"       : { "link": "blog",            "text": "뉴스" },
+
+    "releases": {
+        "title": "릴리스 이력",
+        "downloads": "다운로드"
+    },
+    "links": {
+        "pages": {
+            "changelog": "변경사항"
+        }
+    }
+}

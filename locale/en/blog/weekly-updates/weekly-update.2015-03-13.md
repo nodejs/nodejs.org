@@ -10,21 +10,21 @@ layout: blog-post.hbs
 
 # io.js 1.5.1 Release
 
-On Monday, March 9th, [@rvagg](https://github.com/rvagg) released io.js [v1.5.1](https://iojs.org/dist/v1.5.1/). The complete change log can be found [on GitHub](https://github.com/iojs/io.js/blob/v1.x/CHANGELOG.md).
+On Monday, March 9th, [@rvagg](https://github.com/rvagg) released io.js [v1.5.1](https://iojs.org/dist/v1.5.1/). The complete change log can be found [on GitHub](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
 
 ### Notable changes
 
-* **tls**: The reported TLS memory leak has been resolved via various commits in this release. Current testing indicated that there _may_ still be some leak problems. Track complete progress at [#1075](https://github.com/iojs/io.js/issues/1075).
-* **http**: Fixed an error reported at [joyent/node#9348](https://github.com/joyent/node/issues/9348) and [npm/npm#7349](https://github.com/npm/npm/issues/7349). Pending data was not being fully read upon an `'error'` event leading to an assertion failure on `socket.destroy()`. (Fedor Indutny) [#1103](https://github.com/iojs/io.js/pull/1103)
+* **tls**: The reported TLS memory leak has been resolved via various commits in this release. Current testing indicated that there _may_ still be some leak problems. Track complete progress at [#1075](https://github.com/nodejs/node/issues/1075).
+* **http**: Fixed an error reported at [joyent/node#9348](https://github.com/joyent/node/issues/9348) and [npm/npm#7349](https://github.com/npm/npm/issues/7349). Pending data was not being fully read upon an `'error'` event leading to an assertion failure on `socket.destroy()`. (Fedor Indutny) [#1103](https://github.com/nodejs/node/pull/1103)
 
 ### Known issues
 
-* Possible remaining TLS-related memory leak(s), details at [#1075](https://github.com/iojs/io.js/issues/1075).
-* Windows still reports some minor test failures and we are continuing to address all of these as a priority. See [#1005](https://github.com/iojs/io.js/issues/1005).
-* Surrogate pair in REPL can freeze terminal [#690](https://github.com/iojs/io.js/issues/690)
-* Not possible to build io.js as a static library [#686](https://github.com/iojs/io.js/issues/686)
-* `process.send()` is not synchronous as the docs suggest, a regression introduced in 1.0.2, see [#760](https://github.com/iojs/io.js/issues/760) and fix in [#774](https://github.com/iojs/io.js/issues/774)
-* Calling `dns.setServers()` while a DNS query is in progress can cause the process to crash on a failed assertion [#894](https://github.com/iojs/io.js/issues/894)
+* Possible remaining TLS-related memory leak(s), details at [#1075](https://github.com/nodejs/node/issues/1075).
+* Windows still reports some minor test failures and we are continuing to address all of these as a priority. See [#1005](https://github.com/nodejs/node/issues/1005).
+* Surrogate pair in REPL can freeze terminal [#690](https://github.com/nodejs/node/issues/690)
+* Not possible to build io.js as a static library [#686](https://github.com/nodejs/node/issues/686)
+* `process.send()` is not synchronous as the docs suggest, a regression introduced in 1.0.2, see [#760](https://github.com/nodejs/node/issues/760) and fix in [#774](https://github.com/nodejs/node/issues/774)
+* Calling `dns.setServers()` while a DNS query is in progress can cause the process to crash on a failed assertion [#894](https://github.com/nodejs/node/issues/894)
 
 # Community Updates
 
@@ -34,7 +34,7 @@ On Monday, March 9th, [@rvagg](https://github.com/rvagg) released io.js [v1.5.1]
 * [Mikeal Rogers](https://github.com/mikeal) was interviewed for [Descriptive](http://descriptive.audio) podcast on an episoded called [We've Never Had This Many Active Contributors to Core Before](http://descriptive.audio/episodes/12)
 * [Mark Wolfe](https://twitter.com/wolfeidau) gave a [talk about io.js](https://twitter.com/wolfeidau/status/575785856545378304) at [@melbjs](https://twitter.com/melbjs) meetup, slides are published [here](https://speakerdeck.com/wolfeidau/iojs-bringing-es6-to-the-node)
 * [dockeri.co](http://dockeri.co/) now runs on io.js, you can see the announcement [here](https://twitter.com/wjblankenship/status/575867637680369665)
-* [Node.js Advisory Board](https://nodejs.org/about/advisory-board/) are talking about the [io.js/Node.js reconciliation proposal](https://github.com/iojs/io.js/issues/978), you can check the meeting minutes [here](https://github.com/joyent/nodejs-advisory-board/blob/master/meetings/2015-03-09/minutes.md#nodejsiojs-reconciliation-bb)
+* [Node.js Advisory Board](https://nodejs.org/about/advisory-board/) are talking about the [io.js/Node.js reconciliation proposal](https://github.com/nodejs/node/issues/978), you can check the meeting minutes [here](https://github.com/joyent/nodejs-advisory-board/blob/master/meetings/2015-03-09/minutes.md#nodejsiojs-reconciliation-bb)
 
 # Upcoming Events
 

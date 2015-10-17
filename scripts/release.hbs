@@ -1,0 +1,21 @@
+---
+date: {{date}}
+version: {{version}}
+category: release
+title: Node v{{version}} (Stable)
+slug: node-v{{versionSlug}}-stable
+layout: blog-post.hbs
+---
+
+{{changelog}}
+
+{{#files}}
+{{.}}<br>
+{{/files}}
+Other release files: https://nodejs.org/dist/v{{version}}/<br>
+Documentation: https://nodejs.org/docs/v{{version}}/api/
+
+Shasums (GPG signing hash: SHA512, file hash: SHA256):
+```
+{{shasums}}
+```

@@ -20,7 +20,7 @@ technologies.
 A lot of progress has been made in just a few short months, and we're
 entering the final stages of discussions and decisions that will guide the
 projects forward. Most recently [the io.js TC voted to join in the
-Foundation](https://github.com/iojs/io.js/issues/1705) effort and planning is
+Foundation](https://github.com/nodejs/node/issues/1705) effort and planning is
 already underway to begin the process of converging the codebases. The neutral
 organization, or foundation, will be a key element of that work and has been
 discussed at length by those involved. When a technology and community reach a

@@ -55,7 +55,7 @@ Nothing within this document should currently be considered final.
 
 ## Repository Reconciliation Plan
 
-There are currently release lines in both node.js and io.js. Starting at the point from which io.js was created, the two repositories have diverged significantly. Bringing the two repositories back together under the Foundation TSC will not happen immediately.
+There are currently release lines in both Node.js and io.js. Starting at the point from which io.js was created, the two repositories have diverged significantly. Bringing the two repositories back together under the Foundation TSC will not happen immediately.
 
 ```
                         now
@@ -66,16 +66,16 @@ ____|____/               :                  \______|_____
          \               :                  /
           \--------------:-----------------/
           |         |    :     |       |
-       (node.js) v0.12.x :  v0.13.x  v0.14.x
+       (Node.js) v0.12.x :  v0.13.x  v0.14.x
 ```
 
 At the time of this writing, the current Node.js release is v0.12.2. The current io.js release is 1.7.1.
 
 Upon Foundation launch, both projects will come together under a single TSC, but the two distinct release lines will continue independently for the near term. Each subsequent release ("interim releases") for each project should incrementally bring the two code bases closer together, allowing them to eventually merge back into a single Node.js 2.0 release line.
 
-To avoid introducing unnecessary problems for users, the interim releases should not overlap versions. All prior versions of both io.js and node.js should be preserved. The interim Node.js releases will remain the v0.x version stream. Interim io.js releases will continue to follow their existing semver strategy. If interim changes in io.js require a major version bump to 2.x, the first release of the Converged Project would be the next major version number (3.0). The Converged Project will use semver for release versioning.
+To avoid introducing unnecessary problems for users, the interim releases should not overlap versions. All prior versions of both io.js and Node.js should be preserved. The interim Node.js releases will remain the v0.x version stream. Interim io.js releases will continue to follow their existing semver strategy. If interim changes in io.js require a major version bump to 2.x, the first release of the Converged Project would be the next major version number (3.0). The Converged Project will use semver for release versioning.
 
-For purposes of managing each separate release line, if the TSC determines it to be necessary, the TSC can charter an io.js Working Group and a node.js Working Group, each responsible for their own respective release lines.
+For purposes of managing each separate release line, if the TSC determines it to be necessary, the TSC can charter an io.js Working Group and a Node.js Working Group, each responsible for their own respective release lines.
 
 To facilitate and oversee the convergence of the release lines, the TSC will charter a Convergence Working Group. This WG would ensure that appropriate steps are being made in each of the two release lines to bring the projects back together. The Convergence WG would work directly with both release line WGs. As soon as the release lines converge, the charters for the separate release line WGs and the convergence WG would expire, and responsibility for the continued evolution of the converged release line would be with the project TSC itself. The initial membership of the Convergence WG will be a subset of members from each of the two release line WGs.
 

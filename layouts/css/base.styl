@@ -3,12 +3,13 @@
 // Base styles
 body
     box-sizing border-box
-    font 300 20px/1.5 'Source Sans Pro', Arial, sans-serif
-    color #333
+    font 400 20px/1.5 'Source Sans Pro', Open Sans, Roboto, 'San Francisco', Helvetica, Arial, sans-serif
+    color $node-gray
     margin 0
+    background-color #fff
 
 header,
-main,
+#main,
 footer
     display flex
 
@@ -17,7 +18,7 @@ h2,
 h3,
 h4,
 h5
-    font-weight normal
+    font-weight 400
 
 a,
 a:link,
@@ -29,6 +30,10 @@ a:active
 a:hover
     color #fff
     background-color $node-green
+
+a:hover
+    code
+        color #CC2828
 
 a.imagelink:hover
     background-color transparent
@@ -50,17 +55,20 @@ img
 
 
 code
-    color $darkgray
-
+    background-color #f2f2f2
+    font-size 85%
+    padding 0.2em
 
 pre
-    background-color #333
+    background-color $node-gray
     border-radius 3px
     padding 0.75em 1.2em
     font-size 0.8em
+    white-space pre-wrap
 
     code
         color #f0f0f0
+        background-color inherit
 
 // Import specific page sections and layout parts
 @import 'layout/_sticky-footer'
@@ -71,8 +79,13 @@ pre
 @import 'page-modules/_header'
 @import 'page-modules/_footer'
 @import 'page-modules/_home'
+@import 'page-modules/_blog-index'
+@import 'page-modules/_blog-post'
 @import 'page-modules/_foundation-members'
+@import 'page-modules/_in-the-news'
 @import 'page-modules/_download'
+@import 'page-modules/_scrollToTop'
+@import 'page-modules/_anchorLinks'
 
 .intro
     margin-top 140px
@@ -143,3 +156,34 @@ pre
 
 .pad-bottom-small
     padding-bottom 1em
+
+.highlight-box
+    background-color #f0f0f0
+    padding 5px 15px
+    border-radius 2px
+    margin-top 1em
+
+    & *:first-child
+        margin-top 0.5rem
+
+.issue-link-container
+    clear both
+    overflow hidden
+
+
+    .linuxfoundation-logo
+        width 60%
+        float left
+
+    .issue-link
+        width 40%
+        float right
+        text-align right
+        margin-top 0.5rem
+
+    @media screen and (max-width: 700px)
+        .linuxfoundation-logo,
+        .issue-link
+            float none
+            width: 100%
+            text-align left
