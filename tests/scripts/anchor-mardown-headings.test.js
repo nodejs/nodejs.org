@@ -5,6 +5,8 @@ const test = require('tape')
 test('anchorMarkdownHeadings', (t) => {
   const anchorMarkdownHeadings = require('../../scripts/plugins/anchor-markdown-headings')
 
+  t.timeoutAfter(500)
+  t.plan(4)
   t.test('correctly pharses markdown heading without links', (t) => {
     const text = 'Simple title'
     const level = 1
@@ -13,8 +15,8 @@ test('anchorMarkdownHeadings', (t) => {
     const expected = '<h1>Simple title<a name="simple-title" class="anchor" ' +
       'href="#simple-title"></a></h1>'
 
+    t.plan(1)
     t.equal(output, expected)
-    t.end()
   })
 
   t.test('correctly pharses markdown heading with a single link', (t) => {
@@ -25,8 +27,8 @@ test('anchorMarkdownHeadings', (t) => {
     const expected = '<h3>Title with <a href="#">link</a>' +
       '<a name="title-with-link" class="anchor" href="#title-with-link"></a></h3>'
 
+    t.plan(1)
     t.equal(output, expected)
-    t.end()
   })
 
   t.test('correctly pharses markdown heading with multiple links', (t) => {
@@ -37,8 +39,8 @@ test('anchorMarkdownHeadings', (t) => {
     const expected = '<h2>a <a href="b">b</a> c<a href="d">d</a>e' +
       '<a name="a-b-cde" class="anchor" href="#a-b-cde"></a></h2>'
 
+    t.plan(1)
     t.equal(output, expected)
-    t.end()
   })
 
   t.test('makes pretty slugs', (t) => {
@@ -49,9 +51,7 @@ test('anchorMarkdownHeadings', (t) => {
     const expected = '<h4>$$$ WIN BIG! $$$' +
       '<a name="win-big" class="anchor" href="#win-big"></a></h4>'
 
+    t.plan(1)
     t.equal(output, expected)
-    t.end()
   })
-
-  t.end()
 })
