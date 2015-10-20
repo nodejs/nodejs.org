@@ -12,6 +12,10 @@
 
             <article>
                 {{{ contents }}}
+
+                {{#each collections.knowledgeBase}}
+                <li><a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a></li>
+                {{/each}}
             </article>
 
         </div>

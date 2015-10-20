@@ -101,6 +101,10 @@ function buildlocale (source, locale) {
         sortBy: 'date',
         reverse: true,
         refer: false
+      },
+      knowledgeBase: {
+        pattern: 'knowledge/**/*.md',
+        refer: false
       }
     }))
     .use(markdown(markedOptions))
