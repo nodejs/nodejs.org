@@ -50,7 +50,7 @@
   "devDependencies": {
     "faucet": "0.0.1",
     "nock": "2.15.0",
-    "pre-commit": "1.1.1",
+    "pre-commit": "1.1.2",
     "proxyquire": "1.7.3",
     "sinon": "1.17.1",
     "standard": "5.3.1",
