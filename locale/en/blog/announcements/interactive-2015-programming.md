@@ -32,7 +32,7 @@ Backend Session Highlights:
 * Resource Management in Node.js *with* Bradley Meck, Software Engineer at NodeSource
 
 IoT Session Highlights:
-* Contributing to Node Core *with* Jeremiah Senkpiel, Node.js Web Developer at Zambah Inc
+* Contributing to Node Core *with* Jeremiah Senkpiel, Developer at NodeSource
 * Hands on Hardware Workshop *with* Tessel with Kelsey Breseman, Engineering Project Manager at 3D Robotics and Steering Committee Member and Board Co-Creator of Tessel Project
 * Internet of Cats *with* Rachel White, Front-End Engineer for IBM Watson
 * IoT && Node.js && You *with* Emily Rose, Senior Software Engineer at Particle IO
