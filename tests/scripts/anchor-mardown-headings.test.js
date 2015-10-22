@@ -5,7 +5,6 @@ const test = require('tape')
 test('anchorMarkdownHeadings', (t) => {
   const anchorMarkdownHeadings = require('../../scripts/plugins/anchor-markdown-headings')
 
-  t.timeoutAfter(500)
   t.plan(4)
   t.test('correctly pharses markdown heading without links', (t) => {
     const text = 'Simple title'
