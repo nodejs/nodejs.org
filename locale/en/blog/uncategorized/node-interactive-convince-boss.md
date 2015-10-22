@@ -11,9 +11,9 @@ Want to attend Node.js Interactive happening in Portland from December 8-9, 2015
 
 #### “Convince Your Boss” Letter 
 
-Dear {Boss Name},
+Dear `Boss Name`,
 
-I’d like to attend **[Node.js Interactive 2015] (http://events.linuxfoundation.org/events/node-interactive)** taking place December 8-9, 2015, in Portland, OR. There are a lot of Node.js conferences during the year, but this is the premier conference put on by the Node.js Foundation. Vendor-neutral by design, it is focused on everything from fine-tuning my skills in Node.js to the future of the platform. Node.js is penetrating almost every single aspect of technology from powering robots to enterprise, and is downloaded 2 million times per month. It’s a pretty big deal.
+I’d like to attend **[Node.js Interactive 2015](http://events.linuxfoundation.org/events/node-interactive)** taking place December 8-9, 2015, in Portland, OR. There are a lot of Node.js conferences during the year, but this is the premier conference put on by the Node.js Foundation. Vendor-neutral by design, it is focused on everything from fine-tuning my skills in Node.js to the future of the platform. Node.js is penetrating almost every single aspect of technology from powering robots to enterprise, and is downloaded 2 million times per month. It’s a pretty big deal.
 
 They are anticipating more than 700 individuals will attend the event. The conference welcomes experienced developers as well as those interested in learning how to implement Node.js into their business, and everyone inbetween. The tracks focus on IoT, frontend and backend technologies. Here are just a few advantages of me going to the conference. 
 * One of the great features about the technology is how diverse it is. It can be used to build mobile apps or enterprise apps, and almost every single big named company is using it from LinkedIn to IBM to Netflix. If we decide to build out our product strategy or offering, it is likely that Node.js will be the technology that I use across the board. 
@@ -22,7 +22,7 @@ They are anticipating more than 700 individuals will attend the event. The confe
 
 * The session will not only craft my skills with Node.js, but also help me learn how best to adopt the technology to our business for smoother transitions and a more united IT team.
 
-* Key session include: how to build and engage high performance teams in the Node.js ecosystem, home automation with Node.js, how to develop Node.js in the next-generation of IoT, Node International: Where We Are and What's Next, and many more. The full list of program can be found [here] (http://nodejspdx2015.sched.org/). 
+* Key session include: how to build and engage high performance teams in the Node.js ecosystem, home automation with Node.js, how to develop Node.js in the next-generation of IoT, Node International: Where We Are and What's Next, and many more. The full list of program can be found [here](http://nodejspdx2015.sched.org/). 
 
 * There are some awesome companies presenting including Uber, IBM, Intel, New Relic, Eventbrite, Bloomberg L.P, Microsoft, Getty Images and more.
 
@@ -32,4 +32,4 @@ I would be happy to write a post-conference report and share with other members 
 
 Thanks,
 
-{Your Name}
+`Your Name`
