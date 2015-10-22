@@ -293,4 +293,3 @@ test('writeToFile<object>', (t) => {
 
   t.end()
 })
-
