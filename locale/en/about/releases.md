@@ -39,7 +39,7 @@ Features and APIs can be added into Node.js when their need is clear, there are
 clean, useful, agreeable APIs, and there are known consumers. For instance, it
 may be the case that when implementing core functionality for Node.js another
 lower level API may be identified that could have utility beyond Node.js
-itself. When those APIs are identified, we can chose to expose them.
+itself. When those APIs are identified, we can choose to expose them.
 
 Take for instance the `EventEmitter`, the need to have an event subscription
 model for core modules to consume was clear, and that abstraction clearly had
