@@ -13,22 +13,21 @@ It's incredibly easy to visualize where your Node program spends its time using 
 <ol>
     <li>Run your Node.js program as usual.</li>
     <li>In another terminal, run:
-        <pre>
-$ dtrace -n 'profile-97/execname == "node" &amp;&amp; arg1/{
-    @[jstack(150, 8000)] = count(); } tick-60s { exit(0); }' &gt; stacks.out</pre>
+        <pre><code>$ dtrace -n 'profile-97/execname == "node" &amp;&amp; arg1/{
+    @[jstack(150, 8000)] = count(); } tick-60s { exit(0); }' &gt; stacks.out</code></pre>
         This will sample about 100 times per second for 60 seconds and emit results to stacks.out. <strong>Note that this will sample all running programs called "node".  If you want a specific process, replace <code>execname == "node"</code> with <code>pid == 12345</code> (the process id).</strong>
     </li>
     <li>Use the "stackvis" tool to transform this directly into a flame graph. First, install it:
-        <pre>$ npm install -g stackvis</pre>
+        <pre><code>$ npm install -g stackvis</code></pre>
         then use <code>stackvis</code> to convert the DTrace output to a flamegraph:
-        <pre>$ stackvis dtrace flamegraph-svg &lt; stacks.out &gt; stacks.svg</pre>
+        <pre><code>$ stackvis dtrace flamegraph-svg &lt; stacks.out &gt; stacks.svg</code></pre>
     </li>
     <li>Open stacks.svg in your favorite browser.</li>
 </ol>
 
 You'll be looking at something like this:
 
-<a href="https://www.cs.brown.edu/~dap/helloworld.svg"><img src="https://dtrace.org/blogs/dap/files/2012/04/helloworld-flamegraph-550x366.png" alt="" title="helloworld-flamegraph" width="550" height="366" class="aligncenter size-large wp-image-1047" /></a>
+<a href="https://www.cs.brown.edu/~dap/helloworld.svg" class="imagelink"><img src="https://www.cs.brown.edu/~dap/helloworld.svg" alt="'Hello World' HTTP server flame graph" /></a>
 
 This is a visualization of all of the profiled call stacks. This example is from the "hello world" HTTP server on the <a href="https://nodejs.org">Node.js</a> home page under load. Start at the bottom, where you have "main", which is present in most Node stacks because Node spends most on-CPU time in the main thread. Above each row, you have the functions called by the frame beneath it. As you move up, you'll see actual JavaScript function names. The boxes in each row are not in chronological order, but their width indicates how much time was spent there. When you hover over each box, you can see exactly what percentage of time is spent in each function. This lets you see at a glance where your program spends its time.
 
