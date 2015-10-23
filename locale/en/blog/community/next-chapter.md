@@ -1,7 +1,7 @@
 ---
 title: Next Chapter
 author: tjfontaine
-date: 2015-05-08T18:00:00.000Z
+date: 2015-05-08T19:00:00.000Z
 status: publish
 category: Community
 slug: next-chapter
