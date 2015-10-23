@@ -28,7 +28,7 @@ This week we have one release proposal: [Node.js v5.0.0](https://github.com/node
 * The Marketing Committee will look over ideas at some point in the future and potentially select one or take some of the ideas/direction and handoff to a designer.
 * Final logo will have to be approved by the Board of Directors.
 
-### Node.js Foundation Announces Programming For Node.js Interactive
+### Node.js foundation announces programming for Node.js interactive
 
 * The Node.js Foundation, a community-led and industry-backed consortium to advance the development of the Node.js platform, announced initial programming for Node.js Interactive. 
 * This inaugural event, which is being led by the newly formed Node.js Foundation in cooperation with the Linux Foundation, will be held December 8-9, 2015, in Portland, Ore.
