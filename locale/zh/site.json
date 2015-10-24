@@ -1,0 +1,131 @@
+{
+    "title": "Node.js",
+    "author": "Node.js 基金会",
+    "url": "https://nodejs.org/zh/",
+    "locale": "zh",
+    "scrollToTop": "返回顶部",
+    "reportNodeIssue": "报告 Node.js 问题",
+    "reportWebsiteIssue": "报告网站问题",
+    "by": "by",
+    "all-downloads": "所有下载选项",
+    "feeds": [
+        {
+            "link": "feed/blog.xml",
+            "text": "Node.js 博客"
+        },
+        {
+            "link": "feed/releases.xml",
+            "text": "Node.js 博客：发布"
+        },
+        {
+            "link": "feed/vulnerability.xml",
+            "text": "Node.js 博客：安全性报告"
+        },
+        {
+            "link": "feed/tsc-minutes.xml",
+            "text": "Node.js TSC 会议时间"
+        }
+    ],
+    "home": { "text": "首页" },
+    "about": {
+        "link": "about",
+        "text": "关于",
+        "governance": {
+            "link": "about/governance",
+            "text": "管理架构"
+        },
+        "workinggroups": {
+            "link": "about/working-groups",
+            "text": "工作组"
+        },
+        "releases": {
+            "link": "about/releases",
+            "text": "版本发布"
+        },
+        "resources": {
+            "link": "about/resources",
+            "text": "资源"
+        }
+    },
+    "download": {
+        "link": "download",
+        "text": "下载",
+        "releases": {
+            "link": "download/releases",
+            "text": "较旧的版本"
+        },
+        "package-manager": {
+            "link": "download/package-manager",
+            "text": "通过包管理器安装 Node.js"
+        }
+    },
+    "docs": {
+        "link": "docs",
+        "text": "文档",
+        "es6": {
+            "link": "docs/es6",
+            "text": "ES6 在 Node.js"
+        },
+        "faq": {
+            "link": "docs/faq",
+            "text": "常见问题"
+        },
+        "api": {
+            "link": "/api/",
+            "text": "API"
+        }
+    },
+    "foundation": {
+        "link": "foundation",
+        "text": "基金会",
+        "members": {
+            "link": "foundation/members",
+            "text": "成员"
+        },
+        "tsc": {
+            "link": "foundation/tsc",
+            "text": "技术管理"
+        },
+        "itn": {
+             "link": "foundation/in-the-news",
+             "text": "新闻中的 Node.js"
+        },
+        "announce": {
+            "link": "foundation/announcements",
+            "text": "公告"
+        }
+    },
+    "getinvolved": {
+        "link": "get-involved",
+        "text": "参与",
+        "contribute": {
+            "link": "get-involved/contribute",
+            "text": "贡献"
+        },
+        "development": {
+            "link": "get-involved/development",
+            "text": "开发"
+        },
+        "code-and-learn": {
+            "link": "get-involved/code-and-learn",
+            "text": "Code + Learn"
+        },
+        "events": {
+          "link": "get-involved/events",
+          "text": "事件"
+        }
+    },
+    "trademark"  : { "link": "about/trademark", "text": "商标" },
+    "security"   : { "link": "security",        "text": "安全" },
+    "blog"       : { "link": "blog",            "text": "新闻" },
+
+    "releases": {
+        "title": "版本历史",
+        "downloads": "下载"
+    },
+    "links": {
+        "pages": {
+            "changelog": "版本日志"
+        }
+    }
+}
