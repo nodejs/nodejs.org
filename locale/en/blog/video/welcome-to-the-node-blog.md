@@ -11,5 +11,5 @@ Since Livejournal is disintegrating into Russian spam, I'm moving my technical b
 
 To avoid making this post completely devoid of content, here is a new video from a talk I gave at the SF PHP group tastefully produced by <A href="http://marakana.com/forums/java/general/278.html">Marakana</a>:
 <iframe width="640" height="360"
-src="http://www.youtube.com/embed/jo_B4LTHi3I" frameborder="0"
+src="https://www.youtube.com/embed/jo_B4LTHi3I" frameborder="0"
 allowfullscreen></iframe>

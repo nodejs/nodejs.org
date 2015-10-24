@@ -9,7 +9,7 @@ Thank you for your interest in contributing to Node.js, there are multiple ways 
 
 ## Reporting an Issue
 
-If you have found what you believe to be an issue with Node.js please do not hesistate to file an issue on the GitHub project. When filing your issue please make sure you can express the issue with a reproducible test case, and that test case should not include any external dependencies. That is to say, the test case can be executed without anything more than Node.js itself.
+If you have found what you believe to be an issue with Node.js please do not hesitate to file an issue on the GitHub project. When filing your issue please make sure you can express the issue with a reproducible test case, and that test case should not include any external dependencies. That is to say, the test case can be executed without anything more than Node.js itself.
 
 When reporting an issue we also need as much information about your environment that you can include. We never know what information will be pertinent when trying narrow down the issue. Please include at least the following information:
 
@@ -20,7 +20,7 @@ When reporting an issue we also need as much information about your environment 
 The Node.js project is currently managed across a number of separate Github repositories, each with their own separate issues database. If possible, please direct any issues you are reporting to the appropriate repository but don't worry if things happen to get put in the wrong place, the community of contributors will be more than happy to help get you pointed in the right direction.
 
 * To report issues specific to Node.js, please use [nodejs/node](https://github.com/nodejs/node)
-* To report issues specific to this website, please use [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
+* To report issues specific to this website, please use [nodejs/new.nodejs.org](https://github.com/nodejs/new.nodejs.org/issues)
 
 ## Code contributions
 

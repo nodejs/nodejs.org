@@ -9,13 +9,13 @@ layout: blog-post.hbs
 ---
 
 <div style="float:right;margin:0 0 15px 15px;">
-<img class="alignnone size-full wp-image-469" title="Bunyan" src="http://nodeblog.files.wordpress.com/2012/03/bunyan.png" alt="Paul Bunyan and Babe the Blue Ox" width="240" height="320" /><br />
+<img class="alignnone size-full wp-image-469" title="Bunyan" src="https://nodeblog.files.wordpress.com/2012/03/bunyan.png" alt="Paul Bunyan and Babe the Blue Ox" width="240" height="320" /><br />
 <a href="http://www.flickr.com/photos/stublag/2876034487">Photo by Paul Carroll</a>
 </div>
 
 <p>Service logs are gold, if you can mine them. We scan them for occasional debugging. Perhaps we grep them looking for errors or warnings, or setup an occasional nagios log regex monitor. If that. This is a waste of the best channel for data about a service.</p>
 
-<p><a href="http://www.youtube.com/watch?v=01-2pNCZiNk">"Log. (Huh) What is it good for. Absolutely ..."</a></p>
+<p><a href="https://www.youtube.com/watch?v=01-2pNCZiNk">"Log. (Huh) What is it good for. Absolutely ..."</a></p>
 
 <ul>
 <li>debugging</li>

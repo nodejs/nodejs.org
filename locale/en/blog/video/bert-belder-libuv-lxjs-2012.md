@@ -12,5 +12,5 @@ asynchronous I/O across platforms, then you should definitely watch
 this video.
 
 <iframe width="640" height="360"
-src="http://www.youtube.com/embed/nGn60vDSxQ4" frameborder="0"
+src="https://www.youtube.com/embed/nGn60vDSxQ4" frameborder="0"
 allowfullscreen></iframe>
