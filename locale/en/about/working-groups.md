@@ -34,7 +34,7 @@ back in to the TC.
 * [Starting a Working Group](#starting-a-wg)
 * [Bootstrap Governance](#bootstrap-governance)
 
-### [Website](https://github.com/nodejs/website)
+### [Website](https://github.com/nodejs/new.nodejs.org)
 
 The website working group's purpose is to build and maintain the public
 website.
