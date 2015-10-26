@@ -57,7 +57,7 @@ apt-get install --yes nodejs
 To compile and install native addons from npm you may also need to install build tools:
 
 ```
-apt-get install --yes build-essential
+sudo apt-get install --yes build-essential
 ```
 
 *(Note: The optional "nodejs-legacy" package from Debian helps prevent a conflict with the Amateur Packet Radio "Node" Program)*
