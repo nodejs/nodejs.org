@@ -18,7 +18,6 @@ const ncp = require('ncp')
 const junk = require('junk')
 
 const filterStylusPartials = require('./scripts/plugins/filter-stylus-partials')
-const mapHandlebarsPartials = require('./scripts/plugins/map-handlebars-partials')
 const anchorMarkdownHeadings = require('./scripts/plugins/anchor-markdown-headings')
 const loadVersions = require('./scripts/load-versions')
 
@@ -143,7 +142,7 @@ function buildlocale (source, locale) {
     .use(layouts({
       engine: 'handlebars',
       pattern: '**/*.html',
-      partials: mapHandlebarsPartials(metalsmith, 'layouts', 'partials'),
+      partials: 'layouts/partials',
       helpers: {
         equals: require('./scripts/helpers/equals.js'),
         startswith: require('./scripts/helpers/startswith.js'),
