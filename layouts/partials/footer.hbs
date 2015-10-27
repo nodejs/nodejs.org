@@ -1,6 +1,10 @@
 <a href="#" id="scrollToTop">&uarr; <span>{{i18n.scrollToTop}}</span></a>
 
-<footer role="contentinfo">
+{{#if className}}
+    <footer class="{{className}}" role="contentinfo">
+{{else}}
+    <footer role="contentinfo">
+{{/if}}
 
     <div class="linuxfoundation-footer">
         <div class="container">

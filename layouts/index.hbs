@@ -31,37 +31,6 @@
 
             </div>
 
-            <style>
-                div.interactive-banner {
-                    background: #333 url("/static/images/nodejs-interactive-portland2015.jpg") 50% 0px no-repeat;
-                    background-size: cover;
-                    height:300px;
-                    text-align:center;
-                    width:100%;
-                    line-height:300px;
-                    margin-top:20px;
-                }
-                div.interactive-banner img {
-                    display: block;
-                    margin-left: auto;
-                    margin-right: auto;
-                    padding-top:80px;
-                    height:140px;
-                    -webkit-filter: drop-shadow(5px 5px 5px #222);
-                    filter: drop-shadow(5px 5px 5px #222);
-                }
-                @media screen and (max-width: 550px) {
-                    div.interactive-banner img {
-                        padding-top:100px;
-                        height: auto;
-                        width: 300px;
-                    }
-                }
-                footer {
-                    margin-top:0px;
-                }
-            </style>
-
         </div>
     </div>
 
@@ -71,7 +40,7 @@
         </div>
     </a>
 
-    {{> footer }}
+    {{> footer className="no-margin-top" }}
     <script src="/static/js/download.js" async defer></script>
 </body>
 </html>
