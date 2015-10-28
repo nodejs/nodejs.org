@@ -24,7 +24,7 @@
     "node": ">=4.0.0"
   },
   "dependencies": {
-    "autoprefixer-stylus": "0.7.1",
+    "autoprefixer-stylus": "0.8.1",
     "chokidar": "1.2.0",
     "handlebars": "4.0.3",
     "junk": "1.0.2",
