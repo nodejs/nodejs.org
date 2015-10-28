@@ -27,36 +27,24 @@ Also including: **Linux Mint**, **Linux Mint Debian Edition (LMDE)**, **elementa
 
 Node.js is available from the [NodeSource](https://nodesource.com) Debian and Ubuntu binary distributions repository (formerly [Chris Lea's](https://github.com/chrislea) Launchpad PPA). Support for this repository, along with its scripts, can be found on GitHub at [nodesource/distributions](https://github.com/nodesource/distributions).
 
-Setup with Ubuntu:
+**NOTE:** If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
-```
-curl --silent --location https://deb.nodesource.com/setup_4.x | sudo bash -
-```
+```bash
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
 
-Then install with Ubuntu:
-
-```
-sudo apt-get install --yes nodejs
-```
-
-Setup with Debian (as root):
-
-```
-apt-get install curl
-curl --silent --location https://deb.nodesource.com/setup_4.x | bash -
-```
-
-Then install with Debian (as root):
-
-```
-apt-get install --yes nodejs
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_4.x | bash -
+apt-get install -y nodejs
 ```
 
 ***Optional***: install build tools
 
 To compile and install native addons from npm you may also need to install build tools:
 
-```
+```bash
+# use `sudo` on Ubuntu or run this as root on debian
 apt-get install --yes build-essential
 ```
 
@@ -115,13 +103,13 @@ Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the **[EP
 
 Run as root on RHEL, CentOS or Fedora:
 
-```
+```bash
 curl --silent --location https://rpm.nodesource.com/setup | bash -
 ```
 
 Then install, as root:
 
-```
+```bash
 yum -y install nodejs 
 ```
 
@@ -129,7 +117,7 @@ yum -y install nodejs
 
 To compile and install native addons from npm you may also need to install build tools:
 
-```
+```bash
 yum install gcc-c++ make
 # or: yum groupinstall 'Development Tools'
 ```
@@ -169,7 +157,7 @@ yum install gcc-c++ make
 
 Official **Fedora** [Node.js](https://apps.fedoraproject.org/packages/nodejs) and [npm](https://apps.fedoraproject.org/packages/npm) packages are available in Fedora 18 and later.  Install with:
 
-```
+```bash
 sudo yum install nodejs npm
 ```
 
@@ -179,7 +167,7 @@ In a hurry for the latest updates?  [Grab them from updates-testing.](https://fe
 
 Install the appropriate *epel-release* RPM for your version (found on the [EPEL](https://fedoraproject.org/wiki/EPEL) repository homepage), then run:
 
-```
+```bash
 sudo yum install nodejs npm --enablerepo=epel
 ```
 
@@ -210,7 +198,7 @@ Additionally, versions of **CentOS** and **Scientific Linux** corresponding to t
 
 Node.js is available in the portage tree.
 
-```
+```bash
 emerge nodejs
 ```
 
@@ -222,7 +210,7 @@ Available RPM packages for: openSUSE 11.4, 12.1, 12.2, 12.3, 13.1, Factory and T
 
 Example install on openSUSE 13.1:
 
-```
+```bash
 sudo zypper ar \
   http://download.opensuse.org/repositories/devel:/languages:/nodejs/openSUSE_13.1/ \
   Node.js
@@ -233,7 +221,7 @@ sudo zypper in nodejs nodejs-devel
 
 Node.js and npm packages are available in the Community Repository.
 
-```
+```bash
 pacman -S nodejs npm
 ```
 
@@ -241,7 +229,7 @@ pacman -S nodejs npm
 
 Void Linux ships node.js stable in the main repository.
 
-```
+```bash
 xbps-install -Sy node.js
 ```
 
@@ -249,31 +237,31 @@ xbps-install -Sy node.js
 
 Node.js is available through the ports system.
 
-```
+```bash
 /usr/ports/www/node
 ```
 
 Development versions are also available using ports
 
-```
+```bash
 cd /usr/ports/www/node-devel/ && make install clean
 ```
 
 Or packages on FreeBSD:
 
-```
+```bash
 pkg_add -r node-devel
 ```
 
 Using [pkg-ng](https://wiki.freebsd.org/pkgng) on FreeBSD
 
-```
+```bash
 pkg install node
 ```
 
 Or the development versions:
 
-```
+```bash
 pkg install node-devel
 ```
 
@@ -283,7 +271,7 @@ Simply download the [Macintosh Installer](http://nodejs.org/#download) direct fr
 
 _If you want to download the package with bash:_
 
-```
+```bash
 curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
 ```
 
@@ -291,13 +279,13 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 
 Using **[Homebrew](http://brew.sh/)**:
 
-```
+```bash
 brew install node
 ```
 
 Using **[MacPorts](http://www.macports.org/)**:
 
-```
+```bash
 port install nodejs
 ```
 
@@ -309,7 +297,7 @@ Simply download the [Windows Installer](http://nodejs.org/#download) directly fr
 
 Using **[Chocolatey](http://chocolatey.org)**:
 
-```
+```bash
 cinst nodejs
 # or for full install with npm
 cinst nodejs.install
@@ -317,6 +305,6 @@ cinst nodejs.install
 
 Using **[Scoop](http://scoop.sh/)**:
 
-```
+```bash
 scoop install nodejs
 ```
