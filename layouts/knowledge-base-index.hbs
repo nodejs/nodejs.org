@@ -8,13 +8,15 @@
     <div id="main">
         <div class="container has-side-nav">
 
-            {{> docs-menu }}
+            {{!-- > docs-menu --}}
 
             <article>
                 {{{ contents }}}
 
                 {{#each collections.knowledgeBase}}
-                <li><a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a></li>
+                    {{#startswith path 'knowledge/'}}
+                        <li><a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a></li>
+                    {{/startswith}}
                 {{/each}}
             </article>
 
