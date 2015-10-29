@@ -1,0 +1,135 @@
+{
+    "title": "Node.js",
+    "author": "Node.js Foundation",
+    "url": "https://nodejs.org/en/",
+    "locale": "it",
+    "scrollToTop": "Portami all\'inizio",
+    "reportNodeIssue": "Segnala un problema Node.js",
+    "reportWebsiteIssue": "Segnala un problema del sito",
+    "by": "da",
+    "all-downloads": "Tutti i download",
+    "feeds": [
+        {
+            "link": "feed/blog.xml",
+            "text": "Blog Node.js"
+        },
+        {
+            "link": "feed/releases.xml",
+            "text": "Blog Node.js: Releases"
+        },
+        {
+            "link": "feed/vulnerability.xml",
+            "text": "Blog Node.js: Rapporti di Vulnerabilità"
+        },
+        {
+            "link": "feed/tsc-minutes.xml",
+            "text": "Minuti Incontro TSC Node.js"
+        }
+    ],
+    "home": { "text": "Home" },
+    "about": {
+        "link": "about",
+        "text": "About",
+        "governance": {
+            "link": "about/governance",
+            "text": "Governanza"
+        },
+        "workinggroups": {
+            "link": "about/working-groups",
+            "text": "Gruppi di lavoro"
+        },
+        "releases": {
+            "link": "about/releases",
+            "text": "Releases"
+        },
+        "resources": {
+            "link": "about/resources",
+            "text": "Risorse"
+        }
+    },
+    "download": {
+        "link": "download",
+        "text": "Scarica",
+        "releases": {
+            "link": "download/releases",
+            "text": "Release Precedenti"
+        },
+        "package-manager": {
+            "link": "download/package-manager",
+            "text": "Installa Node.js via package-manager"
+        }
+    },
+    "docs": {
+        "link": "docs",
+        "text": "Documentazione",
+        "es6": {
+            "link": "docs/es6",
+            "text": "ES6 in Node.js"
+        },
+        "faq": {
+            "link": "docs/faq",
+            "text": "FAQ"
+        },
+        "api": {
+            "link": "/api/",
+            "text": "API"
+        },
+        "knowledge": {
+            "link": "knowledge",
+            "text": "Base di conoscenza"
+        }
+    },
+    "foundation": {
+        "link": "foundation",
+        "text": "Fondazione",
+        "members": {
+            "link": "foundation/members",
+            "text": "Membri"
+        },
+        "tsc": {
+            "link": "foundation/tsc",
+            "text": "Governanza Tecnica"
+        },
+        "itn": {
+             "link": "foundation/in-the-news",
+             "text": "Nelle Notizie"
+        },
+        "announce": {
+            "link": "foundation/announcements",
+            "text": "Annunci"
+        }
+    },
+    "getinvolved": {
+        "link": "get-involved",
+        "text": "Coinvolgiti",
+        "contribute": {
+            "link": "get-involved/contribute",
+            "text": "Contribuire"
+        },
+        "development": {
+            "link": "get-involved/development",
+            "text": "Sviluppo"
+        },
+        "code-and-learn": {
+            "link": "get-involved/code-and-learn",
+            "text": "Codifica + Impara"
+        },
+        "events": {
+          "link": "get-involved/events",
+          "text": "Eventi"
+        }
+    },
+    "trademark"  : { "link": "about/trademark", "text": "Marchio" },
+    "security"   : { "link": "security",        "text": "Sicurezza" },
+    "blog"       : { "link": "blog",            "text": "Notizie" },
+
+    "releases": {
+        "title": "Cronologia delle Release",
+        "downloads": "Download"
+    },
+    "links": {
+        "pages": {
+            "changelog": "Registro modifiche"
+        }
+    }
+}
