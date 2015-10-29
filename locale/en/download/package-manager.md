@@ -69,7 +69,7 @@ apt-get install --yes build-essential
 * **Debian testing** (stretch, aliased to jessie)
 * **Debian unstable** (sid)
 
-A Node.js package is also available in the [official repo](http://packages.debian.org/search?searchon=names&keywords=nodejs) for Debian Sid (unstable), Jessie (testing) and Wheezy (wheezy-backports) as "nodejs".
+A Node.js package is also available in the [official repo](http://packages.debian.org/search?searchon=names&keywords=nodejs) for Debian Sid (unstable), Jessie (testing) and Wheezy (wheezy-backports) as "nodejs". It only installs a `nodejs` binary, so you might want to `ln -s /usr/bin/nodejs /usr/bin/node` for many things to work.
 
 **Supported Linux Mint versions:**
 
