@@ -10,7 +10,7 @@ labels:
   stable: 안정 버전
   lts: LTS
   tagline-stable: 최신 기능
-  tagline-lts: 안정화, 신뢰됨
+  tagline-lts: 안정적, 신뢰도 높음
   changelog: 변경사항
   api: API 문서
 ---
