@@ -35,12 +35,14 @@
 
                 <ul class="list-divider-pipe home-secondary-links">
                     <li>
-                        <a href="https://nodejs.org/dist/{{ project.currentVersions.lts }}/">{{ labels.other-lts-downloads }}</a>
 
                         {{#if project.currentVersions.stable}}
+                            {{ labels.other-downloads}}: <a href="https://nodejs.org/dist/{{ project.currentVersions.lts }}/" title="{{ labels.other-lts-downloads }}">{{ labels.lts }}</a>
                             &#47; <a href="https://nodejs.org/dist/{{ project.currentVersions.stable }}/" title="{{ labels.other-stable-downloads }}">
                                 {{ labels.stable }}
                             </a>
+                        {{else}}
+                            <a href="https://nodejs.org/dist/{{ project.currentVersions.lts }}/">{{ labels.other-lts-downloads }}</a>
                         {{/if}}
                     </li>
                     <li><a href="https://github.com/nodejs/node/blob/{{ project.currentVersion }}/CHANGELOG.md">{{ labels.changelog }}</a></li>
