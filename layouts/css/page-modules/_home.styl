@@ -12,8 +12,11 @@
     margin-top 1em
 
 .home-secondary-links
+    $home-secondary-links-color = saturation($node-green, 20%)
+
+    color $home-secondary-links-color
+
     a
-        $home-secondary-links-color = saturation($node-green, 20%)
         font-size 1rem
         color $home-secondary-links-color
 
@@ -27,13 +30,16 @@
     padding-top 30px
     text-align center
 
-#home-downloadbutton
+    h2
+        margin-bottom 0
+
+.home-downloadbutton
     display inline-block
     margin 10px 4px
     padding 0.2em 0.6em
 
     background-color $node-green
-    color #fff
+    color #fff !important
     border-radius 2px
     font-size 30px
     font-weight 400
@@ -43,4 +49,6 @@
     &:hover
         background-color saturation($node-green, 80%)
 
-
+    small
+        display block
+        font-size 1rem

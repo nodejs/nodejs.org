@@ -20,6 +20,7 @@ const junk = require('junk')
 const filterStylusPartials = require('./scripts/plugins/filter-stylus-partials')
 const anchorMarkdownHeadings = require('./scripts/plugins/anchor-markdown-headings')
 const loadVersions = require('./scripts/load-versions')
+const latestVersion = require('./scripts/helpers/latestversion')
 
 /** Build **/
 
@@ -184,8 +185,12 @@ function fullbuild () {
       project: {
         versions,
         currentVersion: versions[0].version,
+        currentVersions: {
+          stable: latestVersion.stable(versions),
+          lts: latestVersion.lts(versions)
+        },
         banner: {
-          visible: true,
+          visible: false,
           content: '<a href="https://nodejs.org/en/blog/release/v4.2.1/">Long Term Support Release</a>'
         }
       }
