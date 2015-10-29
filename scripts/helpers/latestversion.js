@@ -2,9 +2,9 @@
 
 const semver = require('semver')
 
-exports.stable = (versions) => {
-  const matched = versions.find((version) => typeof version.lts === 'undefined').version
-  return semver.gte(matched, '5.0.0') ? matched : undefined
+exports.stable = (releases) => {
+  const match = releases.find((release) => !release.lts && semver.gte(release.version, '5.0.0'))
+  return match && match.version
 }
 
-exports.lts = (versions) => versions.find((version) => typeof version.lts !== 'undefined').version
+exports.lts = (releases) => releases.find((release) => release.lts).version
