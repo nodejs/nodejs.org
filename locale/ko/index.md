@@ -5,6 +5,12 @@ labels:
   download: 다운로드
   download-for: Download for
   other-downloads: 다른 운영 체제
+  other-lts-downloads: Other LTS Downloads
+  other-stable-downloads: Other Stable Downloads
+  stable: Stable
+  lts: LTS
+  tagline-stable: Latest Features
+  tagline-lts: Mature and Dependable
   changelog: 변경사항
   api: API 문서
 ---
