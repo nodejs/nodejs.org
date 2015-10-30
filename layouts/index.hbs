@@ -45,7 +45,11 @@
                             <a href="https://nodejs.org/dist/{{ project.currentVersions.lts }}/">{{ labels.other-lts-downloads }}</a>
                         {{/if}}
                     </li>
-                    <li><a href="https://github.com/nodejs/node/blob/{{ project.currentVersion }}/CHANGELOG.md">{{ labels.changelog }}</a></li>
+                    <li>
+                        {{ labels.changelog }}:
+                        <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.lts }}/CHANGELOG.md">{{ labels.lts }}</a>
+                        &#47; <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.stable }}/CHANGELOG.md">{{ labels.stable }}</a>
+                    </li>
                     <li><a href="{{ site.docs.api.link }}">{{ labels.api }}</a></li>
                 </ul>
 
