@@ -50,7 +50,14 @@
                         <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.lts }}/CHANGELOG.md">{{ labels.lts }}</a>
                         &#47; <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.stable }}/CHANGELOG.md">{{ labels.stable }}</a>
                     </li>
-                    <li><a href="{{ site.docs.api.link }}">{{ labels.api }}</a></li>
+                    <li>
+                      {{#if project.currentVersions.stable}}
+                          {{ labels.api }}: <a href="https://nodejs.org/dist/{{ project.currentVersions.lts }}/docs/api/">{{ labels.lts }}</a>
+                          &#47; <a href="{{ site.docs.api.link }}">{{ labels.stable }}</a>
+                      {{else}}
+                          <a href="{{ site.docs.api.link }}">{{ labels.api }}</a>
+                      {{/if}}
+                    </li>
                 </ul>
 
             </div>
