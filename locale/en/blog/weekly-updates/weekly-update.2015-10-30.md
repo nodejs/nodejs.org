@@ -22,10 +22,8 @@ This week we have two release proposals: [Node.js v4.2.2 "Argon" (LTS)](https://
 
 ### Notable changes : v5.0.0
 
-* console: console.time has been changed to log with sub-millisecond accuracy (Michaël Zasso) [#3166](https://github.com/nodejs/node/pull/3166).
-  - Values reported by console.time will now have 3 decimals of accuracy added.
-* fs: Added file descriptor support to *File functions (Johannes Wüller) [#3163](https://github.com/nodejs/node/pull/3163)
-  - fs.readFile, fs.writeFile, and fs.appendFile now also accept a file descriptor as their first argument.
+* **buffer**: _(Breaking)_ Removed both `'raw'` and `'raws'` encoding types from `Buffer`, these have been deprecated for a long time (Sakthipriyan Vairamani) [#2859](https://github.com/nodejs/node/pull/2859).
+* **console**: _(Breaking)_ Values reported by `console.time()` now have 3 decimals of accuracy added (Michaël Zasso) [#3166](https://github.com/nodejs/node/pull/3166).
 
 ### Node.js foundation is considering an iteration on the official logo
 
