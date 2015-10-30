@@ -9,9 +9,9 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News — October 30th
-Node.js Release Proposal: v4.2.2 "Argon" (LTS), v5.0.0
+Node.js Release Proposal: v4.2.2 "Argon" (LTS), v5.0.0 (Stable)
 
-### Node.js Release Proposal: v4.2.2 "Argon" (LTS), v5.0.0
+### Node.js Release Proposal: v4.2.2 "Argon" (LTS), v5.0.0 (Stable)
 
 This week we have two release proposals: [Node.js v4.2.2 "Argon" (LTS)](https://github.com/nodejs/node/pull/3588) and [Node.js v5.0.0](https://github.com/nodejs/node/pull/3466). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
 
@@ -20,7 +20,7 @@ This week we have two release proposals: [Node.js v4.2.2 "Argon" (LTS)](https://
 * buffer: fix value check for writeUInt{B,L}E (Trevor Norris) [#3500](https://github.com/nodejs/node/pull/3500)
 * buffer: don't CHECK on zero-sized realloc (Ben Noordhuis) [#3499](https://github.com/nodejs/node/pull/3499)
 
-### Notable changes : v5.0.0
+### Notable changes : v5.0.0 (Stable)
 
 * **buffer**: _(Breaking)_ Removed both `'raw'` and `'raws'` encoding types from `Buffer`, these have been deprecated for a long time (Sakthipriyan Vairamani) [#2859](https://github.com/nodejs/node/pull/2859).
 * **console**: _(Breaking)_ Values reported by `console.time()` now have 3 decimals of accuracy added (Michaël Zasso) [#3166](https://github.com/nodejs/node/pull/3166).
