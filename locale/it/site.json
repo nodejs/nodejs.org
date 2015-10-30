@@ -4,7 +4,7 @@
     "url": "https://nodejs.org/en/",
     "locale": "it",
     "scrollToTop": "Portami all\'inizio",
-    "reportNodeIssue": "Segnala un problema Node.js",
+    "reportNodeIssue": "Segnala un problema di Node.js",
     "reportWebsiteIssue": "Segnala un problema del sito",
     "by": "da",
     "all-downloads": "Tutti i download",
@@ -23,7 +23,7 @@
         },
         {
             "link": "feed/tsc-minutes.xml",
-            "text": "Minuti Incontro TSC Node.js"
+            "text": "Minute Incontri TSC Node.js"
         }
     ],
     "home": { "text": "Home" },
@@ -32,7 +32,7 @@
         "text": "About",
         "governance": {
             "link": "about/governance",
-            "text": "Governanza"
+            "text": "Governance"
         },
         "workinggroups": {
             "link": "about/working-groups",
@@ -56,7 +56,7 @@
         },
         "package-manager": {
             "link": "download/package-manager",
-            "text": "Installa Node.js via package-manager"
+            "text": "Installa Node.js con un package-manager"
         }
     },
     "docs": {
@@ -76,7 +76,7 @@
         },
         "knowledge": {
             "link": "knowledge",
-            "text": "Base di conoscenza"
+            "text": "Knowledge"
         }
     },
     "foundation": {
@@ -88,11 +88,11 @@
         },
         "tsc": {
             "link": "foundation/tsc",
-            "text": "Governanza Tecnica"
+            "text": "Comitato tecnico"
         },
         "itn": {
              "link": "foundation/in-the-news",
-             "text": "Nelle Notizie"
+             "text": "Notizie"
         },
         "announce": {
             "link": "foundation/announcements",
@@ -101,7 +101,7 @@
     },
     "getinvolved": {
         "link": "get-involved",
-        "text": "Coinvolgiti",
+        "text": "Come partecipare",
         "contribute": {
             "link": "get-involved/contribute",
             "text": "Contribuire"
@@ -112,16 +112,16 @@
         },
         "code-and-learn": {
             "link": "get-involved/code-and-learn",
-            "text": "Codifica + Impara"
+            "text": "Programma + Impara"
         },
         "events": {
           "link": "get-involved/events",
           "text": "Eventi"
         }
     },
-    "trademark"  : { "link": "about/trademark", "text": "Marchio" },
+    "trademark"  : { "link": "about/trademark", "text": "Marchio Registrato" },
     "security"   : { "link": "security",        "text": "Sicurezza" },
-    "blog"       : { "link": "blog",            "text": "Notizie" },
+    "blog"       : { "link": "blog",            "text": "Blog" },
 
     "releases": {
         "title": "Cronologia delle Release",
