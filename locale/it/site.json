@@ -40,7 +40,7 @@
         },
         "releases": {
             "link": "about/releases",
-            "text": "Releases"
+            "text": "Release"
         },
         "resources": {
             "link": "about/resources",
@@ -49,14 +49,14 @@
     },
     "download": {
         "link": "download",
-        "text": "Scarica",
+        "text": "Download",
         "releases": {
             "link": "download/releases",
             "text": "Release Precedenti"
         },
         "package-manager": {
             "link": "download/package-manager",
-            "text": "Installa Node.js con un package-manager"
+            "text": "Installa Node.js con un gestore di pacchetti"
         }
     },
     "docs": {
