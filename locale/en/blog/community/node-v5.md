@@ -19,7 +19,7 @@ We want to make sure that you are adopting the release that best meets your Node
 
 Stay on or upgrade to Node.js v4.2.x if you need stability and have a complex production environment, e.g. you are a medium or large enterprise.
 
-Upgrade to Node.js v5.x if you have the ability to upgrade versions quickly and easily without distributing your environment.
+Upgrade to Node.js v5.x if you have the ability to upgrade versions quickly and easily without disturbing your environment.
 
 Now that you have the very basics, let’s take a deeper look at the new features and characteristics of v5, and the benefits and details of our LTS plan.
 
