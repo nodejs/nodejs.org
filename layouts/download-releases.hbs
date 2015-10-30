@@ -22,6 +22,7 @@
                         <thead>
                             <tr>
                                 <td>Version</td>
+                                <td>LTS</td>
                                 <td>Date</td>
                                 <td>V8</td>
                                 <td>npm</td>
@@ -33,6 +34,7 @@
                             {{#project.versions}}
                                 <tr>
                                     <td data-label="Version">{{name}} {{version}}</td>
+                                    <td data-label="LTS">{{#if lts}}{{lts}}{{/if}}</td>
                                     <td data-label="Date"><time>{{date}}</time></td>
                                     <td data-label="V8">{{v8}}</td>
                                     <td data-label="npm">{{npm}}</td>
