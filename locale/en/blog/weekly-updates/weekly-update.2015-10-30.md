@@ -9,11 +9,11 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News — October 30th
-Node.js Release Proposal: v4.2.2 "Argon" (LTS)
+Node.js Release Proposal: v4.2.2 "Argon" (LTS), v5.0.0
 
-### Node.js Release Proposal: v4.2.2 "Argon" (LTS)
+### Node.js Release Proposal: v4.2.2 "Argon" (LTS), v5.0.0
 
-This week we have one release proposal: [Node.js v4.2.2 "Argon" (LTS)](https://github.com/nodejs/node/pull/3588). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+This week we have two release proposals: [Node.js v4.2.2 "Argon" (LTS)](https://github.com/nodejs/node/pull/3588) and [Node.js v5.0.0](https://github.com/nodejs/node/pull/3466). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
 
 ### Notable changes
 
