@@ -17,7 +17,8 @@ This week we have one release: [Node.js v5.0.0 (Stable)](https://nodejs.org/en/b
 
 ### Notable changes : v5.0.0 (Stable)
 
-
+* **v8**: _(Breaking)_ Upgraded to 4.6.85.25 from 4.5.103.35  (Ali Ijaz Sheikh) [#3351](https://github.com/nodejs/node/pull/3351).
+  - Implements the spread operator, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator for further information.
 
 ### Node.js foundation is considering an iteration on the official logo
 
