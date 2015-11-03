@@ -30,19 +30,6 @@ The Node.js Foundation's mission is to enable widespread adoption and help accel
     </strong>
 </div>
 
-## Timeline
-
-* Feb 10: Public announcement at Node.js Summit
-* Feb-May: Create By-laws and legal documents
-* Feb-June: Add additional Foundation members
-* May: Merge Node.js and io.js
-* May-June: Transition Node.js core team (TSC) processes
-* June: Launch Foundation with initial members
-* June-July: Transition github, social media & website to Foundation
-* July-Aug: Establish initial foundation board
-* July-Aug: Transition Node.js AB to Foundation Board and Community WG
-* Aug-Sept: Hire Director and other contractors/staff
-
 ## Core documents
 
 - [Technical steering committee (TSC) charter](https://github.com/joyent/nodejs-advisory-board/blob/master/governance-proposal/TSC-Charter-Draft.md)
