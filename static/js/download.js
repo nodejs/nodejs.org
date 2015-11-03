@@ -1,38 +1,80 @@
 ;
 (function (d, n) {
   'use strict';
-  var os = n.platform.match(/(Win|Mac|Linux)/);
-  var x = n.userAgent.match(/x86_64|Win64|WOW64/) ||
+
+  // document.querySelectorAll polyfill for ancient IEs
+  // https://gist.github.com/chrisjlee/8960575
+  if (!document.querySelectorAll) {
+    document.querySelectorAll = function (selectors) {
+      var style = document.createElement('style'), elements = [], element;
+      document.documentElement.firstChild.appendChild(style);
+      document._qsa = [];
+
+      style.styleSheet.cssText = selectors + '{x-qsa:expression(document._qsa && document._qsa.push(this))}';
+      window.scrollBy(0, 0);
+      style.parentNode.removeChild(style);
+
+      while (document._qsa.length) {
+        element = document._qsa.shift();
+        element.style.removeAttribute('x-qsa');
+        elements.push(element);
+      }
+      document._qsa = null;
+      return elements;
+    };
+  }
+
+  var osMatch = n.platform.match(/(Win|Mac|Linux)/);
+  var os = (osMatch && osMatch[1]) || '';
+  var arch = n.userAgent.match(/x86_64|Win64|WOW64/) ||
     n.cpuClass === 'x64' ? 'x64' : 'x86';
   var text = 'textContent' in d ? 'textContent' : 'innerText';
-  var db = d.getElementById('home-downloadbutton');
-  var version;
-  if (db) {
-    version = db.getAttribute('data-version');
-    var dlLocal = db.getAttribute('data-dl-local');
-    switch (os && os[1]) {
+  var buttons = d.querySelectorAll('.home-downloadbutton');
+  var downloadHead = d.getElementById('home-downloadhead');
+  var dlLocal;
+
+  function versionIntoHref(nodeList, filename) {
+    var linkEls = Array.prototype.slice.call(nodeList);
+    var version;
+    var el;
+
+    for (var i = 0; i < linkEls.length; i++) {
+      version = linkEls[i].getAttribute('data-version');
+      el = linkEls[i]
+
+      // Windows 64-bit files for 0.x.x need to be prefixed with 'x64/'
+      if (os === 'Win' && (version[1] === '0' && arch === 'x64')) {
+        el.href += arch + '/';
+      }
+
+      el.href += filename.replace('%version%', version);
+    }
+  }
+
+  if (downloadHead && buttons) {
+    dlLocal = downloadHead.getAttribute('data-dl-local');
+    switch (os) {
       case 'Mac':
-        db.href += 'node-' + version + '.pkg';
-        db[text] = dlLocal + ' OS X (x64)';
+        versionIntoHref(buttons, 'node-%version%.pkg');
+        downloadHead[text] = dlLocal + ' OS X (x64)';
         break;
       case 'Win':
-        // Windows 64-bit files for 0.x.x need to be prefixed with 'x64/'
-        db.href += (version[1] == '0' && x == 'x64' ? x + '/' : '') + 'node-' + version + '-' + x + '.msi';
-        db[text] = dlLocal + ' Windows (' + x +')';
+        versionIntoHref(buttons, 'node-%version%-' + arch + '.msi');
+        downloadHead[text] = dlLocal + ' Windows (' + arch +')';
         break;
       case 'Linux':
-        db.href += 'node-' + version + '-linux-' + x + '.tar.gz';
-        db[text] = dlLocal + ' Linux (' + x + ')';
+        versionIntoHref(buttons, 'node-%version%-linux-' + arch + '.tar.gz');
+        downloadHead[text] = dlLocal + ' Linux (' + arch + ')';
         break;
     }
   }
 
   // Windows button on download page
   var winButton = d.getElementById('windows-downloadbutton');
-  if (winButton && os && os[1] === 'Win') {
+  if (winButton && os === 'Win') {
     var winText = winButton.getElementsByTagName('p')[0];
     version = winButton.getAttribute('data-version');
-    winButton.href = winButton.href.replace(/x(86|64)/, x);
-    winText[text] = winText[text].replace(/x(86|64)/, x);
+    winButton.href = winButton.href.replace(/x(86|64)/, arch);
+    winText[text] = winText[text].replace(/x(86|64)/, arch);
   }
 })(document, navigator);

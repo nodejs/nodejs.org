@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{site.locale}}">
+{{> html-head }}
+
+<body>
+    {{> header }}
+
+    <div id="main">
+        <div class="container has-side-nav">
+
+            {{!-- > docs-menu --}}
+
+            <article>
+                {{{ contents }}}
+
+                {{#each collections.knowledgeBase}}
+                    {{#startswith path 'knowledge/'}}
+                        <li><a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a></li>
+                    {{/startswith}}
+                {{/each}}
+            </article>
+
+        </div>
+    </div>
+
+    {{> footer }}
+</body>
+</html>

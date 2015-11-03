@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="{{site.locale}}">
+{{> html-head }}
+
+<body>
+    {{> header }}
+
+    <div id="main">
+        <div class="container">
+            <article>
+                <div class="download-header">
+                    <h1>{{downloads.headline}}</h1>
+                    <ul class="list-divider-pipe">
+                        <li>
+                            <a href="/{{site.locale}}/{{site.download.link}}" title="{{downloads.display-hint}} {{downloads.lts}}">{{downloads.lts}}</a>
+                        </li>
+                        <li>
+                            <a href="/{{site.locale}}/{{site.download.link}}/stable" title="{{downloads.display-hint}} {{downloads.stable}}"><strong>{{downloads.stable}}</strong></a>
+                        </li>
+                    </ul>
+                </div>
+
+                {{> download-matrix version=project.currentVersions.stable}}
+
+                <section>
+                    <h2>{{additional.headline}}</h2>
+                    <p>{{additional.intro}}</p>
+
+                    <table class="download-matrix full-width">
+                        <tbody>
+                            <tr>
+                                <th>{{additional.platform}}</th>
+                                <th>{{additional.provider}}</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th>AIX on Power Systems</th>
+                                <td><span>IBM</span></td>
+                                <td><a href="http://www.ibm.com/developerworks/web/nodesdk/">{{download}}</a></td>
+                            </tr>
+                            <tr>
+                                <th>Linux on Power Systems</th>
+                                <td><span>IBM</span></td>
+                                <td><a href="http://www.ibm.com/developerworks/web/nodesdk/">{{download}}</a></td>
+                            </tr>
+                            <tr>
+                                <th>Linux on System z</th>
+                                <td><span>IBM</span></td>
+                                <td><a href="http://www.ibm.com/developerworks/web/nodesdk/">{{download}}</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </section>
+
+            </article>
+
+        </div>
+    </div>
+
+    {{> footer }}
+    <script src="/static/js/download.js" async defer></script>
+</body>
+</html>

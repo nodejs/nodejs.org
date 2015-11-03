@@ -73,6 +73,10 @@
         "api": {
             "link": "/api/",
             "text": "API"
+        },
+        "knowledge": {
+            "link": "knowledge",
+            "text": "Knowledge Base"
         }
     },
     "foundation": {
