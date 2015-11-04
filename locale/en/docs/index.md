@@ -1,6 +1,8 @@
 ---
 title: Docs
 layout: docs.hbs
+labels:
+  lts: LTS
 ---
 
 # About Docs

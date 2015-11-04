@@ -36,7 +36,7 @@
                           <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.lts }}/CHANGELOG.md">{{ labels.changelog }}</a>
                       </li>
                       <li>
-                        <a href="https://nodejs.org/dist/{{ project.currentVersions.lts }}/docs/api/">{{ labels.api }}</a>
+                        <a href="{{majorapidocslink project.currentVersions.lts}}">{{ labels.api }}</a>
                       </li>
                   </ul>
 
@@ -58,7 +58,7 @@
                             <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.stable }}/CHANGELOG.md">{{ labels.changelog }}</a>
                         </li>
                         <li>
-                          <a href="{{ site.docs.api.link }}">{{ labels.api }}</a>
+                          <a href="{{majorapidocslink project.currentVersions.stable}}">{{ labels.api }}</a>
                         </li>
                     </ul>
 
