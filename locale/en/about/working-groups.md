@@ -171,7 +171,7 @@ Their responsibilities are:
 * Create Pull Requests for relevant changes to [Roadmap.md](https://github.com/nodejs/node/blob/master/ROADMAP.md)
 
 
-### [Docker](https://github.com/nodejs/docker-iojs)
+### [Docker](https://github.com/nodejs/docker-node)
 
 The Docker working group's purpose is to build, maintain, and improve official
 Docker images.
