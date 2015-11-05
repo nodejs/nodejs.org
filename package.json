@@ -35,7 +35,7 @@
     "metalsmith-feed": "0.0.6",
     "metalsmith-layouts": "1.4.2",
     "metalsmith-markdown": "0.2.1",
-    "metalsmith-metadata": "0.0.1",
+    "metalsmith-metadata": "0.0.2",
     "metalsmith-permalinks": "0.4.0",
     "metalsmith-prism": "2.1.1",
     "metalsmith-serve": "0.0.3",
