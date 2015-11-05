@@ -7,12 +7,9 @@ title: Working Groups
  工作组是由 [技术委员会（ TC ）](https://github.com/nodejs/node/blob/master/GOVERNANCE.md#technical-committee) 建立的自主项目。
 
 工作组可以随时建立，但必须经过 TC 的批准。
-一旦建立起来，工作组的工作就成为工作组的责任，而不是技术委员会的。
+一旦建立起来，工作组章程中定义的工作就成为工作组的权责，而不是技术委员会的。
 
-It is important that Working Groups are not formed pre-maturely. Working
-Groups are not formed to *begin* a set of tasks but instead are formed
-once that work is already underway and the contributors
-think it would benefit from being done as an autonomous project.
+不事先成立工作组是很重要的。工作组的成立不是为了开始一些任务，而是解决那些已经开始，且贡献者认为作为自主项目来做更合适的任务。
 
 If the work defined in a Working Group charter is completed the Working
 Group should be dissolved and the responsibility for governance absorbed
