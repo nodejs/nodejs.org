@@ -2,14 +2,12 @@
 layout: about.hbs
 title: Working Groups
 ---
-# Working Groups
+# 工作组
 
- Working Groups are autonomous projects created by the
-[Technical Committee (TC)](https://github.com/nodejs/node/blob/master/GOVERNANCE.md#technical-committee).
+ 工作组是由 [技术委员会（ TC ）](https://github.com/nodejs/node/blob/master/GOVERNANCE.md#technical-committee) 建立的自主项目。
 
-Working Groups can be formed at any time but must be ratified by the TC.
-Once formed the work defined in the Working Group charter is the
-responsibility of the WG rather than the TC.
+工作组可以随时建立，但必须经过 TC 的批准。
+一旦建立起来，工作组的工作就成为工作组的责任，而不是技术委员会的。
 
 It is important that Working Groups are not formed pre-maturely. Working
 Groups are not formed to *begin* a set of tasks but instead are formed
