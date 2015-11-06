@@ -86,6 +86,10 @@
             "link": "foundation/members",
             "text": "Members"
         },
+        "board": {
+            "link": "foundation/board",
+            "text": "Board"
+        },
         "tsc": {
             "link": "foundation/tsc",
             "text": "Technical Governance"
