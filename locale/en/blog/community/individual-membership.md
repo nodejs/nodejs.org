@@ -28,7 +28,7 @@ Keep in mind that every meeting of the Board must reach quorum in order to pass 
 
 ## What does the Board of Directors do?
 
-The Board meets every month to approve resolutions and discuss Node.js Foundation administrative matters. This includes legal considerations, budgetting and approving Foundation-lead conferences and other initiatives. Technical governance is overseen by the TSC, not the Board of Directors.
+The Board meets every month to approve resolutions and discuss Node.js Foundation administrative matters. This includes legal considerations, budgetting and approving Foundation-led conferences and other initiatives. Technical governance is overseen by the TSC, not the Board of Directors.
 
 The current board members are listed [here](../../../foundation/board).
 
