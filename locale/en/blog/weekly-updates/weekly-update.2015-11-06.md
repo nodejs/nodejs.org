@@ -37,7 +37,7 @@ This is an LTS maintenance release that addresses a number of issues:
 ### Community Updates
 
 * [Understanding Garbage Collection and hunting Memory Leaks in Node.js](http://apmblog.dynatrace.com/2015/11/04/understanding-garbage-collection-and-hunting-memory-leaks-in-node-js/), "Covers how Node.js manages memory and how to trace down memory-related problems"
-* [Node.js v4 gets an A+ for SSL Labs with no configuration](https://certsimple.com/blog/node-js-ssl-labs), "Node has an excellent inbuilt SSL/TLS stack, as well as fast event-based IO for static files."
+* [Node.js v4 gets an A+ for SSL Labs with no configuration](https://certsimple.com/blog/node-js-ssl-labs), "Node has one of the best out-of-the-box SSL setups of any web server."
 
 If you have spotted or written something about Node.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.
 
