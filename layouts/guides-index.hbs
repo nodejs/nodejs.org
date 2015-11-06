@@ -8,10 +8,16 @@
     <div id="main">
         <div class="container has-side-nav">
 
-            {{> docs-menu }}
+            {{> docs-menu}}
 
             <article>
                 {{{ contents }}}
+
+                <ul class="guides-index">
+                    {{#each collections.guides}}
+                        <li><a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a></li>
+                    {{/each}}
+                </ul>
             </article>
 
         </div>

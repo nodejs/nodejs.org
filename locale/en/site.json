@@ -74,6 +74,10 @@
             "link": "/api/",
             "text": "API"
         },
+        "guides": {
+            "link": "docs/guides",
+            "text": "Guides"
+        },
         "knowledge": {
             "link": "knowledge",
             "text": "Knowledge Base"

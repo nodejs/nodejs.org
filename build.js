@@ -106,6 +106,10 @@ function buildlocale (source, locale) {
       knowledgeBase: {
         pattern: 'knowledge/**/*.md',
         refer: false
+      },
+      guides: {
+        pattern: 'docs/guides/!(index).md',
+        refer: false
       }
     }))
     .use(markdown(markedOptions))
