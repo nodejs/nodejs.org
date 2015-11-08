@@ -25,8 +25,6 @@ This is an LTS maintenance release that addresses a number of issues:
 ### Node.js foundation is considering an iteration on the official logo
 
 * [Submit your images and ideas on GitHub!](https://github.com/nodejs/evangelism/issues/179)
-* The Marketing Committee will look over ideas at some point in the future and potentially select one or take some of the ideas/direction and handoff to a designer.
-* Final logo will have to be approved by the Board of Directors.
 
 ### NodeUp Podcast
 
