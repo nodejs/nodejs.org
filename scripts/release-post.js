@@ -113,7 +113,7 @@ function fetchChangelog (version) {
   return download(`https://raw.githubusercontent.com/nodejs/node/v${version}/CHANGELOG.md`)
     .then((data) => {
       const matches = rxSection.exec(data)
-      return matches ? matches[0] : Promise.reject(new Error(`Couldnt find matching changelog for ${version}`))
+      return matches ? matches[0] : Promise.reject(new Error(`Couldn't find matching changelog for ${version}`))
     })
 }
 
@@ -156,7 +156,7 @@ function verifyDownloads (version) {
 function findAuthorLogin (version, section) {
   const rxReleaseAuthor = /^## .*? \([^\)]+\), @(\S+)/g
   const matches = rxReleaseAuthor.exec(section)
-  return matches ? matches[1] : Promise.reject(new Error(`Couldnt find @author of ${version} release :(`))
+  return matches ? matches[1] : Promise.reject(new Error(`Couldn't find @author of ${version} release :(`))
 }
 
 function urlOrComingSoon (binary) {
