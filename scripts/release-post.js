@@ -181,12 +181,21 @@ function renderPost (results) {
 function writeToFile (results) {
   const filepath = path.resolve(__dirname, '..', 'locale', 'en', 'blog', 'release', `v${results.version}.md`)
 
-  if (fs.existsSync(filepath)) {
-    return Promise.reject(new Error(`Release post for ${results.version} already exists!`))
-  }
+  return new Promise(function (resolve, reject) {
+    fs.access(filepath, fs.F_OK, function (err) {
+      if (!err) {
+        return reject(new Error(`Release post for ${results.version} already exists!`))
+      }
 
-  fs.writeFileSync(filepath, results.content)
-  return Promise.resolve(filepath)
+      fs.writeFile(filepath, results.content, function (err1) {
+        if (err1) {
+          return reject(new Error(`Failed to write Release post: Reason: ${err1.message}`))
+        }
+
+        resolve(filepath)
+      })
+    })
+  })
 }
 
 function slugify (str) {
