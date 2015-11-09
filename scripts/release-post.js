@@ -29,7 +29,7 @@ const url = require('url')
 
 const downloads = require('./helpers/downloads')
 
-function request (uri, method, cb) {
+function request (uri, method) {
   return new Promise(function (resolve, reject) {
     // user-agent is required when by api.github.com
     const opts = extend({
@@ -62,7 +62,7 @@ function explicitVersion (version) {
   return version ? Promise.resolve(version) : Promise.reject()
 }
 
-function findLatestVersion (cb) {
+function findLatestVersion () {
   return download('https://nodejs.org/dist/index.json')
     .then(JSON.parse)
     .then(function (versions) {
