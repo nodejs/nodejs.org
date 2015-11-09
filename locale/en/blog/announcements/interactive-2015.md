@@ -14,7 +14,7 @@ The event will be the first of its kind under the Node.js Foundation led in coop
 
 * [Kassandra Perch](https://github.com/nodebotanist) for IoT, a software developer / evangelist / advocate / educator / roboticist living in Austin, TX, who you can follow at: [@nodebotanist](https://twitter.com/nodebotanist).
 * [Jessica Lord](https://github.com/jlord/) for Front-End, a GitHub developer and designer who loves open source, JavaScript & node.js, and stories of Tudor England and is a Portland transplant.
-* [C J Silvero](https://github.com/ceejbot) for Back-End, who is all node, all the time and works as director of engineering at npm, Inc. in the Bay area.
+* [C J Silverio](https://github.com/ceejbot) for Back-End, who is all node, all the time and works as VP of engineering at npm, Inc. in the Bay area.
 
 As the Node.js community continues to grow, the Node.js Foundation believes this event is the perfect place to continue to develop collaboration and better understand what’s next for this extremely popular technology. Interested in joining us? Register [here](http://events.linuxfoundation.org/events/node-interactive/attend/register). Timeline for discount rates are as follows:
 
