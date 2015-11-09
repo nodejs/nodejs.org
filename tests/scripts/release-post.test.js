@@ -3,7 +3,6 @@
 const test = require('tape')
 const nock = require('nock')
 const proxyquire = require('proxyquire').noCallThru()
-const sinon = require('sinon')
 const path = require('path')
 
 test('explicitVersion(<version>)', (t) => {
@@ -259,9 +258,10 @@ test('findLatestVersion<version>', (t) => {
 
 test('writeToFile<object>', (t) => {
   let fileExists
+
   const fs = {
-    existsSync: () => fileExists,
-    writeFileSync: sinon.spy()
+    access: (filename, flags, cb) => cb(!fileExists && new Error('ENOENT')),
+    writeFile: (filename, contents, cb) => cb()
   }
 
   const releasePost = proxyquire('../../scripts/release-post', { fs })
@@ -274,7 +274,7 @@ test('writeToFile<object>', (t) => {
   t.test('rejects when blog post already exists', (t) => {
     fileExists = true
 
-    releasePost.writeToFile(results).then(null, (err) => {
+    releasePost.writeToFile(results).then(t.fail, (err) => {
       t.equal(err.message, 'Release post for 4.1.1 already exists!')
       t.end()
     })
@@ -283,10 +283,9 @@ test('writeToFile<object>', (t) => {
   t.test('writes content to locale/en/blog/release/v<VERSION>.md', (t) => {
     fileExists = false
 
-    releasePost.writeToFile(results).then(() => {
+    releasePost.writeToFile(results).then((filepath) => {
       const expectedPath = path.resolve(__dirname, '..', '..', 'locale', 'en', 'blog', 'release', `v${results.version}.md`)
-
-      t.true(fs.writeFileSync.calledWith(expectedPath, 'Lets pretend this is a changelog'))
+      t.equal(filepath, expectedPath)
       t.end()
     }, t.fail)
   })
