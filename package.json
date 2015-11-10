@@ -38,7 +38,6 @@
     "metalsmith-metadata": "0.0.2",
     "metalsmith-permalinks": "0.4.0",
     "metalsmith-prism": "2.1.1",
-    "metalsmith-serve": "0.0.3",
     "metalsmith-stylus": "1.0.0",
     "ncp": "2.0.0",
     "node-version-data": "1.0.0",
