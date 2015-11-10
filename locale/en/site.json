@@ -121,6 +121,9 @@
         "events": {
           "link": "get-involved/events",
           "text": "Events"
+        },
+        "conduct": {
+            "text": "Conduct"
         }
     },
     "trademark"  : { "link": "about/trademark", "text": "Trademark" },
