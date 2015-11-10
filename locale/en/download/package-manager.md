@@ -30,13 +30,8 @@ Node.js is available from the [NodeSource](https://nodesource.com) Debian and Ub
 **NOTE:** If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```bash
-# Using Ubuntu
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get install -y nodejs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_4.x | bash -
-apt-get install -y nodejs
 ```
 
 ***Optional***: install build tools
@@ -44,8 +39,7 @@ apt-get install -y nodejs
 To compile and install native addons from npm you may also need to install build tools:
 
 ```bash
-# use `sudo` on Ubuntu or run this as root on debian
-apt-get install --yes build-essential
+sudo apt-get install -y build-essential
 ```
 
 *(Note: The optional "nodejs-legacy" package from Debian helps prevent a conflict with the Amateur Packet Radio "Node" Program)*
