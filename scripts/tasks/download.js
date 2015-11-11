@@ -30,7 +30,14 @@ function checkOrFetchFile (file) {
 
     https.get(file.download_url, function (response) {
       console.log(`Weekly Update ${filePath} downloaded.`)
-      response.pipe(fs.createWriteStream(filePath))
+
+      const ws = fs.createWriteStream(filePath)
+      ws.on('error', function (err) {
+        console.error(err.stack)
+      })
+      response.pipe(ws)
+    }).on('error', function (err) {
+      console.error(err.stack)
     })
   })
 }
