@@ -1,12 +1,12 @@
 'use strict'
 
-var github = require('octonode')
-var client = github.client()
-var evRepo = client.repo('nodejs/evangelism')
+const github = require('octonode')
+const https = require('https')
+const path = require('path')
+const fs = require('fs')
 
-var https = require('https')
-var path = require('path')
-var fs = require('fs')
+const basePath = path.join(__dirname, '..', '..', 'locale', 'en', 'blog', 'weekly-updates')
+const repo = github.client().repo('nodejs/evangelism')
 
 /* Currently proof-of-concept work. Outstanding:
  * ================
@@ -18,24 +18,27 @@ var fs = require('fs')
  */
 
 function checkOrFetchFile (file) {
-  let name = file.name
-  let downloadUrl = file.download_url
+  const filePath = path.join(basePath, file.name)
 
-  let localPath = path.join(__dirname, '..', '..', 'locale', 'en', 'blog', 'weekly-updates', name)
-  if (fs.existsSync(localPath)) {
-    console.log(`Weekly Update ${name} exists. (No SHA check, yet.)`)
-    return
-  }
+  fs.access(filePath, (err) => {
+    if (!err) {
+      console.log(`Weekly Update ${filePath} exists. (No SHA check, yet.)`)
+      return
+    }
 
-  console.log(`Weekly Update ${name} does not exist. Downloading.`)
+    console.log(`Weekly Update ${filePath} does not exist. Downloading.`)
 
-  var outputFile = fs.createWriteStream(localPath)
-  https.get(downloadUrl, function (response) {
-    response.pipe(outputFile)
+    https.get(file.download_url, (response) => {
+      const ws = fs.createWriteStream(filePath)
+      ws.on('error', (err) => console.error(err.stack))
+
+      response.on('end', () => console.log(`Weekly Update ${filePath} downloaded.`))
+      response.pipe(ws)
+    }).on('error', (err) => console.error(err.stack))
   })
 }
 
-evRepo.contents('weekly-updates', function (err, files) {
+repo.contents('weekly-updates', (err, files) => {
   if (err) { throw err }
   files.forEach(checkOrFetchFile)
 })
