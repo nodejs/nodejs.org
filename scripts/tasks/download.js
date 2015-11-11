@@ -20,7 +20,7 @@ const repo = github.client().repo('nodejs/evangelism')
 function checkOrFetchFile (file) {
   const filePath = path.join(basePath, file.name)
 
-  fs.access(filePath, function (err) {
+  fs.access(filePath, (err) => {
     if (!err) {
       console.log(`Weekly Update ${filePath} exists. (No SHA check, yet.)`)
       return
@@ -28,21 +28,17 @@ function checkOrFetchFile (file) {
 
     console.log(`Weekly Update ${filePath} does not exist. Downloading.`)
 
-    https.get(file.download_url, function (response) {
-      console.log(`Weekly Update ${filePath} downloaded.`)
-
+    https.get(file.download_url, (response) => {
       const ws = fs.createWriteStream(filePath)
-      ws.on('error', function (err) {
-        console.error(err.stack)
-      })
+      ws.on('error', (err) => console.error(err.stack))
+
+      response.on('end', () => console.log(`Weekly Update ${filePath} downloaded.`))
       response.pipe(ws)
-    }).on('error', function (err) {
-      console.error(err.stack)
-    })
+    }).on('error', (err) => console.error(err.stack))
   })
 }
 
-repo.contents('weekly-updates', function (err, files) {
+repo.contents('weekly-updates', (err, files) => {
   if (err) { throw err }
   files.forEach(checkOrFetchFile)
 })
