@@ -11,7 +11,7 @@ The Node.js community is committed to bringing you events from around the world.
 
 ## Online
 
-- [Node Knockout](http://www.nodeknockout.com/) Node Knockout is a 48 hour online hackathon. Compete from anywhere in the world, create a Node app and win prizes! There are a few more team spots available, so sign up before it's too late.
+- [Node Knockout](http://www.nodeknockout.com/) Node Knockout is a 48 hour online hackathon. Compete from anywhere in the world, create a Node app and win prizes!
 
 <hr>
 
