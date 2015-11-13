@@ -32,7 +32,7 @@
     "marked": "0.3.5",
     "metalsmith": "2.1.0",
     "metalsmith-collections": "0.7.0",
-    "metalsmith-feed": "0.0.6",
+    "metalsmith-feed": "0.2.0",
     "metalsmith-layouts": "1.4.2",
     "metalsmith-markdown": "0.2.1",
     "metalsmith-metadata": "0.0.2",
