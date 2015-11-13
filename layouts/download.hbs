@@ -10,17 +10,6 @@
             <article>
                 <div class="download-header">
                     <h1>{{downloads.headline}}</h1>
-
-                    {{#if project.currentVersions.stable}}
-                    <ul class="list-divider-pipe">
-                        <li>
-                            <a href="/{{site.locale}}/{{site.download.link}}" title="{{downloads.display-hint}} {{downloads.lts}}"><strong>{{downloads.lts}}</strong></a>
-                        </li>
-                        <li>
-                            <a href="/{{site.locale}}/{{site.download.link}}/stable" title="{{downloads.display-hint}} {{downloads.stable}}">{{downloads.stable}}</a>
-                        </li>
-                    </ul>
-                    {{/if}}
                 </div>
 
                 {{> download-matrix version=project.currentVersions.lts versionTypeLts="true"}}
