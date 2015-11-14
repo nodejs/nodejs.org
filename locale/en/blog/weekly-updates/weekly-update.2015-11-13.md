@@ -21,7 +21,7 @@ See https://nodejs.org/en/blog/community/individual-membership/ for more informa
 
 * ["The Journey To Node 4" by Joe McCann](https://www.youtube.com/watch?v=jZpnF0zOSvY): Node.js, io.js, the Node Foundation, Node v4, etc.
 * ["Our Journey With Node.js" by Mick Ryan](https://www.youtube.com/watch?v=uFY_p1YZ2cE): How Node.js was introduced at BigCommerce, pitfalls, benefits, etc.
-* ["YOU Are Invited" by me](https://www.youtube.com/watch?v=1F8F-EbdX40): Rich Trott encouraged people to contribute to Node and tried to point out some non-obvious on-ramps.
+* ["YOU Are Invited"](https://www.youtube.com/watch?v=1F8F-EbdX40): Rich Trott encouraged people to contribute to Node and tried to point out some non-obvious on-ramps.
 
 ### Community Updates
 
