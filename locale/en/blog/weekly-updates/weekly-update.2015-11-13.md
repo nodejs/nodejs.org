@@ -33,7 +33,6 @@ If you have spotted or written something about Node.js, do come over to our [Eva
 
 ### Upcoming Events
 
-* [Nodevember](http://nodevember.org/?utm_source=io.js+and+Node.js+News&utm_medium=article), November 14th - 15th at Nashville, Tennessee, US.
 * [JSConf.Asia](http://2015.jsconf.asia/), November 19th - 20th in Singapore.
 * [NodeConf Barcelona](https://ti.to/barcelonajs/nodeconf-barcelona-2015), November 21st at Barcelona, Spain
 * [CampJS VI](http://vi.campjs.com), November 20th – 23th at Queensland, Australia
