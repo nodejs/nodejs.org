@@ -1,0 +1,19 @@
+<aside>
+    <ul>
+        <li{{#equals path site.docs.link}} class="active"{{/equals}}>
+            <a href="/{{site.locale}}/{{site.docs.link}}/">{{site.docs.text}}</a>
+        </li>
+        <li{{#equals path site.docs.es6.link}} class="active"{{/equals}}>
+            <a href="/{{site.locale}}/{{site.docs.es6.link}}/">{{site.docs.es6.text}}</a>
+        </li>
+        <li{{#equals path site.docs.faq.link}} class="active"{{/equals}}>
+            <a href="/{{site.locale}}/{{site.docs.faq.link}}/">{{site.docs.faq.text}}</a>
+        </li>
+        <li{{#equals path site.docs.api.link}} class="active"{{/equals}}>
+            <a href="{{site.docs.api.link}}">{{site.docs.api.text}}</a>
+        </li>
+        <li{{#startswith path site.docs.guides.link}} class="active"{{/startswith}}>
+            <a href="/{{site.locale}}/{{site.docs.guides.link}}">{{site.docs.guides.text}}</a>
+        </li>
+    </ul>
+</aside>
