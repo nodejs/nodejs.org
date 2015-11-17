@@ -16,31 +16,66 @@
     content ""
 
 .download-hero
-    display table
     margin-bottom 1em
 
     ul
+        width 100%
+        display flex
+        list-style none
         text-align center
+
+    li
+        display flex
+        flex-grow 2
+
+    li:first-child
+        flex-basis 130px
+        flex-grow 1
+
+    a
+        display block
+        width 100%
+        padding-top 1em
+        background $lightgreen
+
+    img
+        display block
         margin 0 auto
-        display table-row
 
-        li
-            width 33%
-            display table-cell
+    p
+        padding-bottom 1em
+        margin 1em 0 0
 
-            a
-                display block
-                width 100%
-                padding-top 1em
-                background $lightgreen
 
-                img
-                    display block
-                    margin 0 auto
+    a:hover, a:active
+        background $darkgray
+        color $node-green
 
-            a:hover, a:active
-                background $darkgray
-                color $node-green
+.download-version-toggle
+    display flex
+    flex-wrap wrap
+    width calc(100% - 4px)
+    border 2px solid $node-green
+    background $lightgreen
+
+    a
+        margin 2px
+        padding 5px 2px
+
+    a:hover, a:active, a.is-version
+        color $node-green
+        background $darkgray
+
+    a.is-version
+        color $lightgreen
+        background $node-green
+
+    .title
+        font-size 1.5em
+        line-height 1
+
+    .tag
+        font-size 0.8em
 
 .download-matrix
     margin-bottom 1.5rem
@@ -100,11 +135,11 @@ td.download-table-last
     .download-hero ul
         width auto
         display block
+        margin-bottom 1em
 
         li
             display block
             width 100%
-            margin-bottom 1em
 
     .download-matrix
         display block

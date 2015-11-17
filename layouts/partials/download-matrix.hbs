@@ -4,24 +4,36 @@
     <div class="download-hero full-width">
         <ul class="no-padding">
             <li>
+              <div class="download-version-toggle">
+                <a {{#if versionTypeLts}}class="is-version"{{/if}} href="/{{site.locale}}/{{site.download.link}}" title="{{downloads.display-hint}} {{downloads.lts}}">
+                    <div class="title">{{downloads.lts}}</div>
+                    <div class="tag">{{downloads.tagline-lts}}</div>
+                </a>
+                <a {{#if versionTypeStable}}class="is-version"{{/if}} href="/{{site.locale}}/{{site.download.link}}/stable" title="{{downloads.display-hint}} {{downloads.stable}}">
+                    <div class="title">{{downloads.stable}}</div>
+                    <div class="tag">{{downloads.tagline-stable}}</div>
+                </a>
+              </div>
+            </li>
+            <li>
                 <a href="https://nodejs.org/dist/{{version}}/node-{{version}}-x86.msi" id="windows-downloadbutton" data-version="{{version}}">
                     <img src="/static/images/platform-icon-win.png" height="50" width="45" alt="">
                     Windows Installer
-                    <p class="small color-lightgray pad-bottom-small">node-{{version}}-x86.msi</p>
+                    <p class="small color-lightgray">node-{{version}}-x86.msi</p>
                 </a>
             </li>
             <li>
                 <a href="https://nodejs.org/dist/{{version}}/node-{{version}}.pkg">
                     <img src="/static/images/platform-icon-osx.png" height="50" width="45" alt="">
                     Macintosh Installer
-                    <p class="small color-lightgray pad-bottom-small">node-{{version}}.pkg</p>
+                    <p class="small color-lightgray">node-{{version}}.pkg</p>
                 </a>
             </li>
             <li>
                 <a href="https://nodejs.org/dist/{{version}}/node-{{version}}.tar.gz">
                     <img src="/static/images/platform-icon-generic.png" height="50" width="45" alt="">
                     Source Code
-                    <p class="small color-lightgray pad-bottom-small">node-{{version}}.tar.gz</p>
+                    <p class="small color-lightgray">node-{{version}}.tar.gz</p>
                 </a>
             </li>
         </ul>
