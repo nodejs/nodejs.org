@@ -14,6 +14,7 @@ const markdown = require('metalsmith-markdown')
 const prism = require('metalsmith-prism')
 const stylus = require('metalsmith-stylus')
 const permalinks = require('metalsmith-permalinks')
+const pagination = require('metalsmith-yearly-pagination')
 const marked = require('marked')
 const path = require('path')
 const fs = require('fs')
@@ -125,6 +126,13 @@ function buildlocale (source, locale) {
         pattern: 'docs/guides/!(index).md',
         refer: false
       }
+    }))
+    .use(pagination({
+      path: 'blog/year',
+      iteratee: (post, idx) => ({
+        post,
+        displaySummary: idx < 10
+      })
     }))
     .use(markdown(markedOptions))
     .use(githubLinks({ locale: locale }))

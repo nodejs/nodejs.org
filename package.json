@@ -43,6 +43,7 @@
     "metalsmith-permalinks": "0.4.0",
     "metalsmith-prism": "2.1.1",
     "metalsmith-stylus": "1.0.0",
+    "metalsmith-yearly-pagination": "2.0.0",
     "ncp": "2.0.0",
     "node-geocoder": "^3.4.1",
     "node-version-data": "1.0.0",

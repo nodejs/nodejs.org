@@ -2,25 +2,46 @@
 
 const cheerio = require('cheerio')
 
-const SUMMARY_LENGHT = 400
+const SUMMARY_MAX_LENGTH = 300
+const IGNORE_SELECTORS = ['.blogpost-header', '.anchor', 'h1', 'h2', 'h3', 'blockquote']
+
+/**
+ * Due to the nature of metalsmith and
+ * how the metalsmith-paginate plugin operates,
+ * this helper has to handle two different types of
+ * HTML contents:
+ *  - clean blog posts converted from markdown to HTML,
+ *    seen on the first page of blog posts
+ *  - the remaining paginated pages has gone
+ *    through the handlebars process and therefore has the
+ *    entire page layout (w/<html>, <head> and <body> etc)
+ *    wrapped around the actual blog contents :(
+ */
 
 module.exports = function (contents, locale, path) {
-  let $ = cheerio.load(contents)
+  const $ = cheerio.load(contents)
+  const $body = $('body')
+  const hasBody = $body.length > 0
+  const $elements = hasBody ? $body.find('article > *') : $('*')
 
   let summary = ''
 
-  $('*').each((i, elem) => {
-    if (summary.length > SUMMARY_LENGHT) {
-      summary += `<p><a href='/${locale}/${path}/'>Read more...</a></p>`
-      return false
-    }
+  $elements
+    .not((i, elem) => IGNORE_SELECTORS.some((selector) => $(elem).is(selector)))
+    .each((i, elem) => {
+      if (summary.length > SUMMARY_MAX_LENGTH) {
+        summary += `<p><a href='/${locale}/${path}/'>Read more...</a></p>`
+        return false
+      }
 
-    if (elem.parent) {
-      return
-    }
+      // dont re-add nested elements when extracting summary
+      // from blog posts not contained in a complete HTML document
+      if (!hasBody && elem.parent) {
+        return
+      }
 
-    summary += $.html(elem)
-  })
+      summary += $.html(elem)
+    })
 
   return summary
 }
