@@ -9,40 +9,40 @@ would like to contribute to the translation of nodejs.org, please refer to the f
 
 * Contact your appropriate localization group, and discuss with them the best possible way to contribute. A list of the localization groups can be found here (please keep in mind that some groups have not yet taken action upon the project name changes, hence the outdated repository names):
 
-    * [`iojs-ar`](https://github.com/nodejs/iojs-ar) Arabic Community
-    * [`iojs-bg`](https://github.com/nodejs/iojs-bg) Bulgarian Community
-    * [`iojs-bn`](https://github.com/nodejs/iojs-bn) Bengali Community
-    * [`iojs-cn`](https://github.com/nodejs/iojs-cn) Chinese Community
-    * [`iojs-cs`](https://github.com/nodejs/iojs-cs) Czech Community
-    * [`iojs-da`](https://github.com/nodejs/iojs-da) Danish Community
+    * [`nodejs-ar`](https://github.com/nodejs/nodejs-ar) Arabic Community
+    * [`nodejs-bg`](https://github.com/nodejs/nodejs-bg) Bulgarian Community
+    * [`nodejs-bn`](https://github.com/nodejs/nodejs-bn) Bengali Community
+    * [`nodejs-zh-CN`](https://github.com/nodejs/nodejs-zh-CN) Chinese Community
+    * [`nodejs-cs`](https://github.com/nodejs/nodejs-cs) Czech Community
+    * [`nodejs-da`](https://github.com/nodejs/nodejs-da) Danish Community
     * [`nodejs-de`](https://github.com/nodejs/nodejs-de) German Community
-    * [`iojs-el`](https://github.com/nodejs/iojs-el) Greek Community
-    * [`iojs-es`](https://github.com/nodejs/iojs-es) Spanish Community
+    * [`nodejs-el`](https://github.com/nodejs/nodejs-el) Greek Community
+    * [`nodejs-es`](https://github.com/nodejs/nodejs-es) Spanish Community
     * [`nodejs-fa`](https://github.com/nodejs/nodejs-fa) Persian Community
     * [`nodejs-fi`](https://github.com/nodejs/nodejs-fi) Finnish Community
     * [`nodejs-fr`](https://github.com/nodejs/nodejs-fr) French Community
-    * [`iojs-he`](https://github.com/nodejs/iojs-he) Hebrew Community
-    * [`iojs-hi`](https://github.com/nodejs/iojs-hi) Hindi Community
-    * [`iojs-hu`](https://github.com/nodejs/iojs-hu) Hungarian Community
+    * [`nodejs-he`](https://github.com/nodejs/nodejs-he) Hebrew Community
+    * [`nodejs-hi`](https://github.com/nodejs/nodejs-hi) Hindi Community
+    * [`nodejs-hu`](https://github.com/nodejs/nodejs-hu) Hungarian Community
     * [`nodejs-id`](https://github.com/nodejs/nodejs-id) Indonesian Community
-    * [`iojs-it`](https://github.com/nodejs/iojs-it) Italian Community
+    * [`nodejs-it`](https://github.com/nodejs/nodejs-it) Italian Community
     * [`nodejs-ja`](https://github.com/nodejs/nodejs-ja) Japanese Community
     * [`nodejs-ka`](https://github.com/nodejs/nodejs-ka) Georgian Community
     * [`nodejs-ko`](https://github.com/nodejs/nodejs-ko) Korean Community
     * [`nodejs-mk`](https://github.com/nodejs/nodejs-mk) Macedonian Community
-    * [`iojs-ms`](https://github.com/nodejs/iojs-ms) Malaysian Community
+    * [`nodejs-ms`](https://github.com/nodejs/nodejs-ms) Malaysian Community
     * [`nodejs-nl`](https://github.com/nodejs/nodejs-nl) Dutch Community
     * [`nodejs-no`](https://github.com/nodejs/nodejs-no) Norwegian Community
-    * [`iojs-pl`](https://github.com/nodejs/iojs-pl) Polish Community
+    * [`nodejs-pl`](https://github.com/nodejs/nodejs-pl) Polish Community
     * [`iojs-pt`](https://github.com/nodejs/iojs-pt) Portuguese Community
     * [`nodejs-ro`](https://github.com/nodejs/nodejs-ro) Romanian Community
-    * [`iojs-ru`](https://github.com/nodejs/iojs-ru) Russian Community
-    * [`iojs-sv`](https://github.com/nodejs/iojs-sv) Swedish Community
+    * [`nodejs-ru`](https://github.com/nodejs/nodejs-ru) Russian Community
+    * [`nodejs-sv`](https://github.com/nodejs/nodejs-sv) Swedish Community
     * [`nodejs-ta`](https://github.com/nodejs/nodejs-ta) Tamil Community
     * [`nodejs-tr`](https://github.com/nodejs/nodejs-tr) Turkish Community
-    * [`iojs-tw`](https://github.com/nodejs/iojs-tw) Taiwan Community
+    * [`nodejs-zh-TW`](https://github.com/nodejs/nodejs-zh-TW) Taiwan Community
     * [`nodejs-uk`](https://github.com/nodejs/nodejs-uk) Ukrainian Community
-    * [`iojs-vi`](https://github.com/nodejs/iojs-vi) Vietnamese Community
+    * [`nodejs-vi`](https://github.com/nodejs/nodejs-vi) Vietnamese Community
 
 
 ## For Localization Groups
