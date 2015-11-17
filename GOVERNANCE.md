@@ -7,7 +7,7 @@ by a Working Group (WG). The WG is responsible for high-level guidance of this a
 related projects which include:
 
 - [nodejs/iojs.org](https://github.com/nodejs/iojs.org) published to https://iojs.org
-- [nodejs/new.nodejs.org](https://github.com/nodejs/iojs.org) published to https://new.nodejs.org
+- [nodejs/nodejs.org](https://github.com/nodejs/iojs.org) published to https://nodejs.org
 - [joyent/node-website](https://github.com/joyent/node-website) published to https://nodejs.org
 
 The Website WG has final authority over this project including:
@@ -24,7 +24,7 @@ For the current list of WG members, see the project
 
 ## Collaborators
 
-The [nodejs/new.nodejs.org](https://github.com/nodejs/new.nodejs.org)
+The [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org)
 GitHub repository is maintained by the WG and additional Collaborators who are
 added by the WG on an ongoing basis.
 
@@ -37,7 +37,7 @@ _Note:_ If you make a significant contribution and are not considered
 for commit-access log an issue or contact a WG member directly and it
 will be brought up in the next WG meeting.
 
-Modifications of the contents of the `nodejs/new.nodejs.org` repository are made on
+Modifications of the contents of the `nodejs/nodejs.org` repository are made on
 a collaborative basis. Anybody with a GitHub account may propose a
 modification via pull request and it will be considered by the project
 Collaborators. All pull requests must be reviewed and accepted by a

@@ -1,6 +1,6 @@
 # [nodejs.org](https://nodejs.org/)
-[![Build Status](https://api.travis-ci.org/nodejs/new.nodejs.org.svg?branch=master)](http://travis-ci.org/nodejs/new.nodejs.org)
-[![Dependency Status](https://david-dm.org/nodejs/new.nodejs.org.svg)](https://david-dm.org/nodejs/new.nodejs.org)
+[![Build Status](https://api.travis-ci.org/nodejs/nodejs.org.svg?branch=master)](http://travis-ci.org/nodejs/nodejs.org)
+[![Dependency Status](https://david-dm.org/nodejs/nodejs.org.svg)](https://david-dm.org/nodejs/nodejs.org)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ## What is this repo?
@@ -13,11 +13,11 @@ This repo's issues section will also become the primary home for the Website WG'
 
 ## Contributing
 
-Please contribute! There's plenty of [good first contributions](https://github.com/nodejs/new.nodejs.org/labels/good%20first%20contribution) to do.
+Please contribute! There's plenty of [good first contributions](https://github.com/nodejs/nodejs.org/labels/good%20first%20contribution) to do.
 
 ```bash
-$ git clone git@github.com:nodejs/new.nodejs.org.git
-$ cd new.nodejs.org
+$ git clone git@github.com:nodejs/nodejs.org.git
+$ cd nodejs.org
 $ npm install
 $ npm run serve
 ```

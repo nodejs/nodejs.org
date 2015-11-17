@@ -9,7 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### io.js and Node.js News — August 28th
-io.js v3.2.0/v3.3.0 and Node v4 evangelism, new.nodejs.org, nodefest/empirenode event.
+io.js v3.2.0/v3.3.0 and Node v4 evangelism, nodejs.org, nodefest/empirenode event.
 
 ### io.js 3.2 and 3.3 Releases
 
@@ -70,7 +70,7 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 
 ### New nodejs.org went live today
 
-* New nodejs.org went live today, served from DigitalOcean and CloudFlare, contributors should go to [https://github.com/nodejs/new.nodejs.org](https://github.com/nodejs/new.nodejs.org).
+* New nodejs.org went live today, served from DigitalOcean and CloudFlare, contributors should go to [https://github.com/nodejs/nodejs.org](https://github.com/nodejs/nodejs.org).
 
 ### Community Updates
 

@@ -1,8 +1,8 @@
 {
-  "name": "new.nodejs.org",
+  "name": "nodejs.org",
   "version": "1.0.0",
   "description": "New Nodejs.org website",
-  "homepage": "https://new.nodejs.org",
+  "homepage": "https://nodejs.org",
   "scripts": {
     "build": "node build.js",
     "serve": "node build.js serve",
@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nodejs/new.nodejs.org.git"
+    "url": "git+https://github.com/nodejs/nodejs.org.git"
   },
   "author": "Node.js Website Working Group",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nodejs/new.nodejs.org/issues"
+    "url": "https://github.com/nodejs/nodejs.org/issues"
   },
   "engines": {
     "iojs": ">=2.5.0",
