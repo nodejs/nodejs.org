@@ -6,7 +6,7 @@ body
     font 400 20px/1.5 'Source Sans Pro', Open Sans, Roboto, 'San Francisco', Helvetica, Arial, sans-serif
     color $node-gray
     margin 0
-    background-color #fff
+    background-color $white
 
 header,
 #main,
@@ -28,12 +28,12 @@ a:active
     border-radius 2px
 
 a:hover
-    color #fff
+    color $white
     background-color $node-green
 
 a:hover
     code
-        color #CC2828
+        color $hover-red
 
 a.imagelink:hover
     background-color transparent
@@ -55,7 +55,7 @@ img
 
 
 code
-    background-color #f2f2f2
+    background-color $gray5
     font-size 85%
     padding 0.2em
 
@@ -65,10 +65,10 @@ pre
     padding 0.75em 1.2em
     font-size 0.8em
     white-space pre-wrap
-    color #f0f0f0
+    color $gray5
 
     code
-        color #f0f0f0
+        color $gray5
         background-color inherit
 
 // Import specific page sections and layout parts
@@ -102,7 +102,7 @@ pre
             margin-top 0
 
     span
-        color $lightgray
+        color $light-gray
         display block
 
 
@@ -128,7 +128,7 @@ pre
             > a,
             > a:hover
                 color $node-gray
-                background-color #D9EBB3
+                background-color $hover-green
 
     article
         margin-left 220px
@@ -151,13 +151,13 @@ pre
     font-size 10px
 
 .color-lightgray
-    color $lightgray
+    color $light-gray
 
 .no-padding
     padding 0
 
 .highlight-box
-    background-color #f0f0f0
+    background-color $gray5
     padding 5px 15px
     border-radius 2px
     margin-top 1em
