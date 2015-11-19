@@ -16,7 +16,9 @@ title: Installing Node.js via package manager
 * [Arch Linux](#arch-linux)
 * [Void Linux](#void-linux)
 * [FreeBSD and OpenBSD](#freebsd-and-openbsd)
+* [NetBSD](#netbsd)
 * [OSX](#osx)
+* [SmartOS and illumos](#smartos-and-illumos)
 * [Windows](#windows)
 
 ----------------------------
@@ -259,6 +261,20 @@ Or the development versions:
 pkg install node-devel
 ```
 
+## NetBSD
+
+Node.js is available in the pkgsrc tree:
+
+```bash
+cd /usr/pkgsrc/lang/nodejs && make install
+```
+
+Or install a binary package (if available for your platform) using pkgin:
+
+```bash
+pkgin -y install nodejs
+```
+
 ## OSX
 
 Simply download the [Macintosh Installer](http://nodejs.org/#download) direct from the [nodejs.org](http://nodejs.org) web site.
@@ -281,6 +297,34 @@ Using **[MacPorts](http://www.macports.org/)**:
 
 ```bash
 port install nodejs
+```
+
+Using **[pkgsrc](https://pkgsrc.joyent.com/install-on-osx/)**:
+
+Install the binary package:
+
+```bash
+pkgin -y install nodejs
+```
+
+Or build manually from pkgsrc:
+
+```bash
+cd pkgsrc/lang/nodejs && bmake install
+```
+
+## SmartOS and illumos
+
+SmartOS images come with pkgsrc pre-installed.  On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal:
+
+```bash
+pkgin -y install nodejs
+```
+
+Or build manually from pkgsrc:
+
+```bash
+cd pkgsrc/lang/nodejs && bmake install
 ```
 
 ## Windows
