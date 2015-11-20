@@ -20,8 +20,8 @@ Node.js Interactive brings together a broad range of speakers to help experience
 ### Day 1, December 8, 2015
 
 * Jason Gartner, Vice President, WebSphere Foundation and PureApplication Dev at IBM
-* James Snell, Open Technologies at IBM, “Enterprise Adoptions Rates and How They Benefit the Community”
-* Joe McCann, Co-Founder and CEO at NodeSource, “Convergence: Evolving Node.js with Open Governance and an Open Community”
+* James Snell, Open Technologies at IBM, “Convergence: Evolving Node.js with Open Governance and an Open Community”
+* Joe McCann, Co-Founder and CEO at NodeSource, “Enterprise Adoptions Rates and How They Benefit the Community”
 * Ashley Williams, Developer Community and Content Manager at npm
 * Tom Croucher, Engineer Manager at Uber, “Node.js at Uber”
 
