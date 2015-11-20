@@ -35,6 +35,7 @@ See http://blog.npmjs.org/post/133542170540/private-packages-for-organizations f
 ### Open-sourced Visual Studio Code is based on Node
 
 * Microsoft has open-sourced Visual Studio Code and it's a lot of TypeScript and Node.
+* Visual Studio Code is based on Electron, a framework which is used to deploy Node.js applications for the desktop running on Blink layout engine.
 
 See https://github.com/Microsoft/vscode for more information.
 
