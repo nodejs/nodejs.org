@@ -21,44 +21,49 @@
 
                 <h2 id="home-downloadhead" data-dl-local="{{ labels.download-for }}">{{ labels.download }}</h2>
 
-                <a href="https://nodejs.org/dist/{{ project.currentVersions.lts }}/" class="home-downloadbutton" title="{{ labels.download }} {{ project.currentVersions.lts }} {{ labels.lts }}" data-version="{{ project.currentVersions.lts }}">
-                    {{ project.currentVersions.lts }} {{ labels.lts }}
-                    <small>{{ labels.tagline-lts }}</small>
-                </a>
+                <div class="home-downloadblock">
+
+                  <a href="https://nodejs.org/dist/{{ project.currentVersions.lts }}/" class="home-downloadbutton" title="{{ labels.download }} {{ project.currentVersions.lts }} {{ labels.lts }}" data-version="{{ project.currentVersions.lts }}">
+                      {{ project.currentVersions.lts }} {{ labels.lts }}
+                      <small>{{ labels.tagline-lts }}</small>
+                  </a>
+
+                  <ul class="list-divider-pipe home-secondary-links">
+                      <li>
+                        <a href="https://nodejs.org/dist/{{ project.currentVersions.lts }}/">{{ labels.other-downloads }}</a>
+                      </li>
+                      <li>
+                          <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.lts }}/CHANGELOG.md">{{ labels.changelog }}</a>
+                      </li>
+                      <li>
+                        <a href="https://nodejs.org/dist/{{ project.currentVersions.lts }}/docs/api/">{{ labels.api }}</a>
+                      </li>
+                  </ul>
+
+                </div>
 
                 {{#if project.currentVersions.stable}}
+                  <div class="home-downloadblock">
+
                     <a href="https://nodejs.org/dist/{{ project.currentVersions.stable }}/" class="home-downloadbutton"  title="{{ labels.download }} {{ project.currentVersions.stable }} {{ labels.stable }}"  data-version="{{ project.currentVersions.stable }}">
                         {{ project.currentVersions.stable }} {{ labels.stable }}
                         <small>{{ labels.tagline-stable }}</small>
                     </a>
-                {{/if}}
 
-                <ul class="list-divider-pipe home-secondary-links">
-                    <li>
-
-                        {{#if project.currentVersions.stable}}
-                            {{ labels.other-downloads}}: <a href="https://nodejs.org/dist/{{ project.currentVersions.lts }}/" title="{{ labels.other-lts-downloads }}">{{ labels.lts }}</a>
-                            &#47; <a href="https://nodejs.org/dist/{{ project.currentVersions.stable }}/" title="{{ labels.other-stable-downloads }}">
-                                {{ labels.stable }}
-                            </a>
-                        {{else}}
-                            <a href="https://nodejs.org/dist/{{ project.currentVersions.lts }}/">{{ labels.other-lts-downloads }}</a>
-                        {{/if}}
-                    </li>
-                    <li>
-                        {{ labels.changelog }}:
-                        <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.lts }}/CHANGELOG.md">{{ labels.lts }}</a>
-                        &#47; <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.stable }}/CHANGELOG.md">{{ labels.stable }}</a>
-                    </li>
-                    <li>
-                      {{#if project.currentVersions.stable}}
-                          {{ labels.api }}: <a href="https://nodejs.org/dist/{{ project.currentVersions.lts }}/docs/api/">{{ labels.lts }}</a>
-                          &#47; <a href="{{ site.docs.api.link }}">{{ labels.stable }}</a>
-                      {{else}}
+                    <ul class="list-divider-pipe home-secondary-links">
+                        <li>
+                          <a href="https://nodejs.org/dist/{{ project.currentVersions.stable }}/">{{ labels.other-downloads }}</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.stable }}/CHANGELOG.md">{{ labels.changelog }}</a>
+                        </li>
+                        <li>
                           <a href="{{ site.docs.api.link }}">{{ labels.api }}</a>
-                      {{/if}}
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+
+                  </div>
+                {{/if}}
 
             </div>
 
