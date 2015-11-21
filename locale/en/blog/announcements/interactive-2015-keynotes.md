@@ -35,7 +35,7 @@ In addition to keynotes, Node.js Foundation will have breakout sessions and pane
 
 **These include:**
 
-* Robert Shultz, Director of Engineering at Ancestry
+* Robert Schultz, Applications Architect at Ancestry
 * Azat Mardan, Technology Fellow at Capital One
 * Charlie Robbins, Director of Engineering UX Platform at GoDaddy
 * Chris Saint-Amant, Director of UI Engineering at Netflix
