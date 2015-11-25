@@ -40,7 +40,7 @@
                   <div class="conference">
                     <h3><a href="{{link}}">{{name}}</a>
                       {{#if location}}
-                        <span class="map-link"><a href="https://www.google.com/maps/place/{{location}}">map</a></i>
+                        - <small class="map-link"><a href="https://www.google.com/maps/place/{{location}}">map</a></small>
                       {{/if}}
                     </h3>
                     {{#if desc}}
@@ -50,26 +50,28 @@
                   {{/each}}
 
                   <h2>NodeSchools</h2>
+                  <ul class="events-list">
                   {{#each nodeschools}}
-                  <div class="nodeschool">
+                  <li>
                     {{#if website}}
-                    <h3><a href="{{website}}">{{name}}</a></h3>
+                    <a href="{{website}}">{{name}}</a>
                     {{else}}
                       {{#if repo}}
-                      <h3><a href="{{repo}}">{{name}}</a></h3>
+                      <a href="{{repo}}">{{name}}</a>
                       {{else}}
-                      <h3>{{name}}</h3>
+                        {{name}}
                       {{/if}}
                     {{/if}}
-                  </div>
+                  </li>
                   {{/each}}
+                  </ul>
 
                   <h2>Meetups</h2>
+                  <ul class="events-list">
                   {{#each meetups}}
-                  <div class="meetups">
-                    <h3><a href="{{link}}">{{name}}</a></h3>
-                  </div>
+                    <li><a href="{{link}}">{{name}}</a></li>
                   {{/each}}
+                  </ul>
 
                 </div>
                 {{/each}}
