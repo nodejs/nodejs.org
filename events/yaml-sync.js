@@ -38,3 +38,16 @@ exports.save = function () {
   var str = ['---', yaml.dump(store), '---'].join('\n')
   fs.writeFileSync(p, str)
 }
+
+function rebalance () {
+  store.regions = store.regions.slice(0,6)
+  exports.save()
+}
+
+function clearMeetups () {
+  store.regions.forEach(function (reg) {
+    delete reg.meetups
+  })
+  exports.save()
+}
+// clearMeetups()
