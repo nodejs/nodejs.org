@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="{{site.locale}}">
+{{> html-head }}
+
+<body>
+    {{> header }}
+
+    <div id="main">
+        <div class="container has-side-nav">
+
+            <aside>
+                <ul>
+                    <li{{#equals path site.getinvolved.link}} class="active"{{/equals}}>
+                        <a href="/{{site.locale}}/{{site.getinvolved.link}}/">{{site.getinvolved.text}}</a>
+                    </li>
+                    <li{{#equals path site.getinvolved.code-and-learn.link}} class="active"{{/equals}}>
+                        <a href="/{{site.locale}}/{{site.getinvolved.code-and-learn.link}}/">{{site.getinvolved.code-and-learn.text}}</a>
+                    </li>
+                    <li{{#equals path site.getinvolved.contribute.link}} class="active"{{/equals}}>
+                        <a href="/{{site.locale}}/{{site.getinvolved.contribute.link}}/">{{site.getinvolved.contribute.text}}</a>
+                    </li>
+                    <li{{#equals path site.getinvolved.development.link}} class="active"{{/equals}}>
+                        <a href="/{{site.locale}}/{{site.getinvolved.development.link}}/">{{site.getinvolved.development.text}}</a>
+                    </li>
+                    <li{{#equals path site.getinvolved.events.link}} class="active"{{/equals}}>
+                        <a href="/{{site.locale}}/{{site.getinvolved.events.link}}/">{{site.getinvolved.events.text}}</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct">{{site.getinvolved.conduct.text}}</a>
+                    </li>
+                </ul>
+            </aside>
+
+            <article>
+                {{#each regions}}
+                <div class="region">
+                  <h1>{{region}}</h1>
+                  {{#if conferences}}<h2>Conferences</h2>{{/if}}
+                  {{#each conferences}}
+                  <div class="conference">
+                    <h3><a href="{{link}}">{{name}}</a>
+                      {{#if location}}
+                        <span class="map-link"><a href="https://www.google.com/maps/place/{{location}}">map</a></i>
+                      {{/if}}
+                    </h3>
+                    {{#if desc}}
+                    <div class="conference-description">{{desc}}</div>
+                    {{/if}}
+                  </div>
+                  {{/each}}
+
+                  <h2>NodeSchools</h2>
+                  {{#each nodeschools}}
+                  <div class="nodeschool">
+                    {{#if website}}
+                    <h3><a href="{{website}}">{{name}}</a></h3>
+                    {{else}}
+                      {{#if repo}}
+                      <h3><a href="{{repo}}">{{name}}</a></h3>
+                      {{else}}
+                      <h3>{{name}}</h3>
+                      {{/if}}
+                    {{/if}}
+                  </div>
+                  {{/each}}
+
+                  <h2>Meetups</h2>
+                  {{#each meetups}}
+                  <div class="meetups">
+                    <h3><a href="{{link}}">{{name}}</a></h3>
+                  </div>
+                  {{/each}}
+
+                </div>
+                {{/each}}
+            </article>
+
+        </div>
+    </div>
+
+    {{> footer }}
+</body>
+</html>
