@@ -129,7 +129,7 @@ test('fetchChangelog(<version>)', (t) => {
       .reply(200, 'A changelog without version sections...')
 
     releasePost.fetchChangelog('0.14.0').then(t.fail, (err) => {
-      t.equal(err.message, 'Couldn\'t find matching changelog for 0.14.0')
+      t.equal(err.message, "Couldn't find matching changelog for 0.14.0")
       t.true(github.isDone(), 'githubusercontent.com was requested')
 
       t.end()
@@ -226,7 +226,7 @@ test('fetchAuthor(<version>)', (t) => {
       .reply(200, 'A changelog without version sections...')
 
     releasePost.fetchAuthor('4.1.1').then(null, (err) => {
-      t.equal(err.message, 'Couldn\'t find matching changelog for 4.1.1')
+      t.equal(err.message, "Couldn't find matching changelog for 4.1.1")
       t.true(github.isDone(), 'githubusercontent.com was requested')
 
       t.end()

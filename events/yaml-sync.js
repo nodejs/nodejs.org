@@ -1,18 +1,17 @@
-var yaml = require('js-yaml')
-  , fs = require('fs')
-  , path = require('path')
-  , p = path.join(__dirname, '..', 'locale', 'en', 'get-involved', 'events.md')
-  , buf = fs.readFileSync(p)
-  , lines = buf.toString().split('\n')
-  , str = lines.slice(lines.indexOf('---')+1, lines.indexOf('---', lines.indexOf('---')+1)).join('\n')
-  , store = yaml.safeLoad(str)
-  ;
+var yaml = require('js-yaml'),
+  fs = require('fs'),
+  path = require('path'),
+  p = path.join(__dirname, '..', 'locale', 'en', 'get-involved', 'events.md'),
+  buf = fs.readFileSync(p),
+  lines = buf.toString().split('\n'),
+  str = lines.slice(lines.indexOf('---') + 1, lines.indexOf('---', lines.indexOf('---') + 1)).join('\n'),
+  store = yaml.safeLoad(str)
 
 exports.getRegion = function (region) {
   for (var reg in store.regions) {
     if (store.regions[reg].region === region) return store.regions[reg]
   }
-  var reg = {region:region}
+  var reg = {region: region}
   store.regions.push(reg)
   return reg
 }
@@ -25,7 +24,7 @@ exports.removeEmpty = function (dict) {
 
 exports.replace = function (list, key, keyValue, value) {
   exports.removeEmpty(value)
-  for (var i=0;i<list.length;i++) {
+  for (var i = 0;i < list.length;i++) {
     if (list[i][key] === keyValue) {
       list[i] = value
       return
@@ -40,7 +39,7 @@ exports.save = function () {
 }
 
 function rebalance () {
-  store.regions = store.regions.slice(0,6)
+  store.regions = store.regions.slice(0, 6)
   exports.save()
 }
 

@@ -32,6 +32,40 @@
             </aside>
 
             <article>
+              <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
+              <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
+              <style>
+              div.map {height: 400px; width:100%; margin-top:10px}
+              </style>
+                <div id="map" class="map"></div>
+              <script>
+              var map
+              function _map () {
+                L.mapbox.accessToken = 'pk.eyJ1IjoibWlrZWFsIiwiYSI6ImNpaGY5ajk5ZTA0ZTN0cmo3MzZ5NnV5eHIifQ.YBfpOTUwcbaZrNvAfDaDcQ';
+
+                function onMap (map) {
+                  var featureLayer = L.mapbox.featureLayer()
+                      .loadURL('/static/event-geo.json')
+                      .addTo(map)
+                }
+
+                if ("geolocation" in navigator) {
+                  /* geolocation is available */
+                  navigator.geolocation.getCurrentPosition(function(position) {
+                    var lat = position.coords.latitude
+                      , lon = position.coords.longitude
+                      ;
+                    map = L.mapbox.map('map', 'mapbox.streets').setView([lat, lon], 11)
+                    onMap(map)
+                  })
+                } else {
+                  map = L.mapbox.map('map', 'mapbox.streets')
+                  onMap(map)
+                }
+              }
+              _map()
+              </script>
+
                 {{#each regions}}
                 <div class="region">
                   <h1>{{region}}</h1>

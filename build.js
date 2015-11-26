@@ -21,6 +21,7 @@ const filterStylusPartials = require('./scripts/plugins/filter-stylus-partials')
 const anchorMarkdownHeadings = require('./scripts/plugins/anchor-markdown-headings')
 const loadVersions = require('./scripts/load-versions')
 const latestVersion = require('./scripts/helpers/latestversion')
+const eventGeo = require('./scripts/event-geo.js')
 
 /** Build **/
 
@@ -179,6 +180,7 @@ function copystatic () {
       })
     })
   })
+  fs.writeFileSync(path.join(__dirname, 'build', 'static', 'event-geo.json'), JSON.stringify(eventGeo()))
 }
 
 function fullbuild () {
