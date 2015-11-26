@@ -56,13 +56,30 @@ function _meetup (ev) {
     properties:
     { title: ev.name,
       description: desc,
-      'marker-size': 'medium',
+      'marker-size': 'small',
+      'marker-symbol': 'star',
       'marker-color': '#80bd01'
     }
   }
   return ret
 }
 function _conference (ev) {
+  if (!ev.lat) return
+  var ret =
+  { type: 'Feature',
+    geometry:
+    { type: 'Point',
+      coordinates: [ev.lon, ev.lat]
+    },
+    properties:
+    { title: ev.name,
+      description: ev.desc,
+      'marker-size': 'small',
+      'marker-symbol': 'triangle',
+      'marker-color': '#3887be'
+    }
+  }
+  return ret
 }
 function _nodeschool (ev) {
   if (!ev.lat) return
@@ -75,8 +92,9 @@ function _nodeschool (ev) {
      properties:
      { title: ev.name,
        description: `${ev.name} ${ev.repo || ''} ${ev.website || ''}`,
-       'marker-size': 'medium',
-       'marker-color': '#80bd01'
+       'marker-size': 'small',
+       'marker-symbol': 'star-stroked',
+       'marker-color': '#f7da03'
     }
   }
   return ret

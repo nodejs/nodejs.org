@@ -17338,10 +17338,24 @@ regions:
         link: 'http://events.linuxfoundation.org/events/node-interactive'
         desc: Node.js Foundation lead conference.
         location: 'Hilton Portland & Executive Tower, Portland, OR'
+        lat: 45.5167983
+        lon: -122.6815443
       - name: NodeConf Adventure
         link: 'http://adventure.nodeconf.com'
         desc: Unconference for Node.js developers.
-        location: 'Marin County, CA, USA'
+        location: 'Walker Creek Ranch, Marin County, CA, USA'
+        lat: 38.1665953
+        lon: -122.8083025
+      - name: Node Community Convention
+        dates:
+          - 2016-01-26T00:00:00.000Z
+          - 2016-01-27T00:00:00.000Z
+          - 2016-01-28T00:00:00.000Z
+        link: 'http://nodecommunityconvention.com/?gclid=CK6y2d_-rMkCFQ8yaQod_mkBMQ'
+        desc: Real Time Innovation for the Node.js Community
+        lat: 37.788678
+        lon: -122.4126467
+        location: Marine's Memorial Theatre, 609 Sutter Street, San Francisco, CA 94102
     nodeschools:
       - name: Anchorage NodeSchool
         location: 'Anchorage, AK, US'

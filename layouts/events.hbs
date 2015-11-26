@@ -35,32 +35,69 @@
               <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
               <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
               <style>
-              div.map {height: 400px; width:100%; margin-top:10px}
+              div.map {
+                height: 400px; 
+                width:100%; 
+                margin-top:10px;
+              }
+              .key {
+                padding: 8px 0;
+                text-align: center;
+              }
+              .key span {padding-right: 12px;}
+              .key-meetup::before {
+                content: ""; 
+                width: 12px; 
+                height: 12px; 
+                background: #80bd01; 
+                display: inline-block; 
+                border-radius: 3px; 
+                margin-right: 8px;
+              }
+              .key-nodeschool::before {
+                content: ""; 
+                width: 12px; 
+                height: 12px; 
+                background: #f7da03; 
+                display: inline-block; 
+                border-radius: 3px; 
+                margin-right: 8px;
+              }
+              .key-conference::before {
+                content: ""; 
+                width: 12px; 
+                height: 12px; 
+                background: #3887be; 
+                display: inline-block; 
+                border-radius: 3px; 
+                margin-right: 8px;
+              }
+              .events #map {
+                margin: 0; 
+                padding: 0;
+              }
               </style>
-                <div id="map" class="map"></div>
+              <div id="map" class="map"></div>
+              <div class="key">
+                <span class="key-meetup" data-i18n="events-meetu">Meetup</span>
+                <span class="key-nodeschool" data-i18n="events-nodeschool">NodeSchool</span>
+                <span class="key-conference" data-i18n="events-conference">Conference</span>
+              </div>  
               <script>
-              var map
+              L.mapbox.accessToken = 'pk.eyJ1IjoibWlrZWFsIiwiYSI6ImNpaGY5ajk5ZTA0ZTN0cmo3MzZ5NnV5eHIifQ.YBfpOTUwcbaZrNvAfDaDcQ';
+              var map = L.mapbox.map('map', 'mapbox.streets-basic')
+              var featureLayer = L.mapbox.featureLayer()
+                  .loadURL('/static/event-geo.json')
+                  .addTo(map)
               function _map () {
-                L.mapbox.accessToken = 'pk.eyJ1IjoibWlrZWFsIiwiYSI6ImNpaGY5ajk5ZTA0ZTN0cmo3MzZ5NnV5eHIifQ.YBfpOTUwcbaZrNvAfDaDcQ';
-
-                function onMap (map) {
-                  var featureLayer = L.mapbox.featureLayer()
-                      .loadURL('/static/event-geo.json')
-                      .addTo(map)
-                }
-
                 if ("geolocation" in navigator) {
                   /* geolocation is available */
                   navigator.geolocation.getCurrentPosition(function(position) {
                     var lat = position.coords.latitude
                       , lon = position.coords.longitude
                       ;
-                    map = L.mapbox.map('map', 'mapbox.streets-basic').setView([lat, lon], 11)
-                    onMap(map)
+                    map.setView([lat, lon], 11)
                   })
-                } else {
-                  map = L.mapbox.map('map', 'mapbox.streets-basic')
-                  onMap(map)
                 }
               }
               _map()
