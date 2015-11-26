@@ -56,7 +56,7 @@ function _meetup (ev) {
     properties:
     { title: ev.name,
       description: desc,
-      'marker-size': 'small',
+      'marker-size': 'medium',
       'marker-symbol': 'star',
       'marker-color': '#80bd01'
     }
@@ -74,7 +74,7 @@ function _conference (ev) {
     properties:
     { title: ev.name,
       description: ev.desc,
-      'marker-size': 'small',
+      'marker-size': 'medium',
       'marker-symbol': 'triangle',
       'marker-color': '#3887be'
     }
@@ -92,7 +92,7 @@ function _nodeschool (ev) {
      properties:
      { title: ev.name,
        description: `${ev.name} ${ev.repo || ''} ${ev.website || ''}`,
-       'marker-size': 'small',
+       'marker-size': 'medium',
        'marker-symbol': 'star-stroked',
        'marker-color': '#f7da03'
     }
