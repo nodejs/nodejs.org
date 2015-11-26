@@ -84,55 +84,46 @@
                 <span class="key-conference" data-i18n="events-conference">Conference</span>
               </div>  
               <script>
-              function haversine() {
-                var radians = Array.prototype.map.call(arguments, function(deg) { return deg/180.0 * Math.PI; });
-                var lat1 = radians[0], lon1 = radians[1], lat2 = radians[2], lon2 = radians[3];
-                var R = 6372.8; // km
-                var dLat = lat2 - lat1;
-                var dLon = lon2 - lon1;
-                var a = Math.sin(dLat / 2) * Math.sin(dLat /2) + Math.sin(dLon / 2) * Math.sin(dLon /2) * Math.cos(lat1) * Math.cos(lat2);
-                var c = 2 * Math.asin(Math.sqrt(a));
-                return R * c;
-              }    
-                  
-              L.mapbox.accessToken = 'pk.eyJ1IjoibWlrZWFsIiwiYSI6ImNpaGY5ajk5ZTA0ZTN0cmo3MzZ5NnV5eHIifQ.YBfpOTUwcbaZrNvAfDaDcQ';
-              var map = L.mapbox.map('map', 'mapbox.streets-basic')
-              var featureLayer = L.mapbox.featureLayer()
-              
-              featureLayer.on('ready', function () {
-                if ("geolocation" in navigator) {
-                  /* geolocation is available */
-                  navigator.geolocation.getCurrentPosition(function(position) {
-                    var lat = position.coords.latitude
-                      , lon = position.coords.longitude
-                      ;
+                (function() {
 
-                    var points = featureLayer.getGeoJSON().features.map(function (feature) {
-                      var _lat = feature.geometry.coordinates[1]
-                        , _lon = feature.geometry.coordinates[0]
-                        ;
-                      return [feature.geometry.coordinates[0], feature.geometry.coordinates[1], haversine(lat, lon, _lat, _lon)]
-                    })
-                    .sort(function (a, b) {              
-                      return a[2] > b[2]
-                    })
-                    
-                    function _bounds () {
-                      for (var i=0;i<points.length;i++) {
-                        var hav = points[i][2]
-                        if (i > 10 && hav > .1) {
-                          return [points[i][1], points[i][0]]
-                        }
-                      }
+                  function haversine() {
+                    var radians = Array.prototype.map.call(arguments, function(deg) { return deg/180.0 * Math.PI; });
+                    var lat1 = radians[0], lon1 = radians[1], lat2 = radians[2], lon2 = radians[3];
+                    var R = 6372.8; // km
+                    var dLat = lat2 - lat1;
+                    var dLon = lon2 - lon1;
+                    var a = Math.sin(dLat / 2) * Math.sin(dLat /2) + Math.sin(dLon / 2) * Math.sin(dLon /2) * Math.cos(lat1) * Math.cos(lat2);
+                    var c = 2 * Math.asin(Math.sqrt(a));
+                    return R * c;
+                  }
+
+                  L.mapbox.accessToken = 'pk.eyJ1IjoibWlrZWFsIiwiYSI6ImNpaGY5ajk5ZTA0ZTN0cmo3MzZ5NnV5eHIifQ.YBfpOTUwcbaZrNvAfDaDcQ';
+                  var map = L.mapbox.map('map', 'mapbox.streets-basic')
+                  var featureLayer = L.mapbox.featureLayer()
+
+                  featureLayer.on('ready', function () {
+                    if ("geolocation" in navigator) {
+                      /* geolocation is available */
+                      navigator.geolocation.getCurrentPosition(function(position) {
+                        var lat        = position.coords.latitude
+                          , lon        = position.coords.longitude
+                          , sideEffect = {dist: 100000, point: null}
+
+                        var points = featureLayer.getGeoJSON().features.map(function (feature) {
+                          var _lat = feature.geometry.coordinates[1]
+                            , _lon = feature.geometry.coordinates[0]
+                            , dist = haversine(lat, lon, _lat, _lon)
+                          if (dist < sideEffect.dist) { sideEffect.point = [_lat, _lon]; sideEffect.dist = dist; }
+                          return [_lon, _lat, dist]
+                        })
+                        // .sort(function (a, b) { return a[2] > b[2] }) WTF??? Using sideEffect's instead... :shame:
+                        map.fitBounds([[lat, lon], sideEffect.point])
+                      })
                     }
-                    
-                    map.fitBounds([[lat, lon], _bounds()])
-                    map.setView([lat, lon], map.getZoom()-1)
                   })
-                }
-              })
-              
-              featureLayer.loadURL('/static/event-geo.json').addTo(map)
+
+                  featureLayer.loadURL('/static/event-geo.json').addTo(map)
+                })();
               </script>
 
                 {{#each regions}}
