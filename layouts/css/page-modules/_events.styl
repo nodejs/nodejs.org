@@ -1,12 +1,13 @@
 #events-map
     height: 400px
     width 100%
-    margin-top 10px
+    margin-top 20px
 
 .events-map-key
     padding 8px 0
     text-align center
     @media screen and (max-width: 600px)
+        margin-bottom 1em
         padding 2px 0
         text-align left
 
@@ -34,19 +35,58 @@
     .key-conference::before
         background $blue
 
+.region
+    margin-bottom 2em
 
-.events-list
-    display flex
-    flex-wrap wrap
-    list-style none
-    padding 0
-    margin 0
+    h1
+        margin 0 0 0.5em
 
-    li
-        width 31%
+    h2
+        margin 0 0 0.5em
+        line-height 1
+        &.is-displayed
+            .arrow
+                transform rotate(90deg)
+
+        .arrow
+            display inline-block
+
+    h3
+        margin 0 0 0.5em
+
+    .conference
+        h3
+            margin 0 0 0.2em
+        p
+            margin-top 0
+
+    .events-number
+        position relative
+        top -3px
+        display inline-block
+        background $gray
+        border-radius 3px
+        padding 3px 4px
+        font-size 0.6em
+        color: $white
+
+    .events-list
+        display flex
+        flex-wrap wrap
+        list-style none
         padding 0
-        margin 0 2% 1rem 0
+        margin 0 0 10px
 
-    @media screen and (max-width: 600px)
+        html.has-js &
+            display none
+            &.is-displayed
+                display flex
+
         li
-            width 100%
+            width 31%
+            padding 0
+            margin 0 2% 1rem 0
+
+        @media screen and (max-width: 600px)
+            li
+                width 100%

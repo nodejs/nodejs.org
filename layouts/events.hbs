@@ -31,7 +31,7 @@
                 </ul>
             </aside>
 
-            <article>
+            <article class="js-regional-events">
 
               <div id="events-map"></div>
               <div class="events-map-key">
@@ -52,12 +52,15 @@
                       {{/if}}
                     </h3>
                     {{#if desc}}
-                    <div class="conference-description">{{desc}}</div>
+                    <p class="conference-description">{{desc}}</p>
                     {{/if}}
                   </div>
                   {{/each}}
 
-                  <h2>NodeSchools</h2>
+                  <h2>
+                    <span class="arrow">&#62;</span>
+                    <a class="js-list-toggle-link" href="#">NodeSchools <span class="events-number">10</span></a>
+                  </h2>
                   <ul class="events-list">
                   {{#each nodeschools}}
                   <li>
@@ -74,7 +77,10 @@
                   {{/each}}
                   </ul>
 
-                  <h2>Meetups</h2>
+                  <h2>
+                    <span class="arrow">&#62;</span>
+                    <a class="js-list-toggle-link" href="#">Meetups <span class="events-number">10</span></a>
+                    </h2>
                   <ul class="events-list">
                   {{#each meetups}}
                     <li><a href="{{link}}">{{name}}</a></li>
@@ -143,6 +149,21 @@
       })
 
       featureLayer.loadURL('/static/event-geo.json').addTo(map)
+
+
+      document.querySelector(".js-regional-events").addEventListener("click", function(evt) {
+        if (evt.target.classList.contains("js-list-toggle-link") ) {
+          toggleEventsDisplay(evt);
+        }
+      });
+
+      function toggleEventsDisplay(evt) {
+        evt.preventDefault();
+        var regionSubHeading = evt.target.parentNode;
+        var regionEventsList = regionSubHeading.nextElementSibling;
+        regionSubHeading.classList.toggle('is-displayed');
+        regionEventsList.classList.toggle('is-displayed');
+      }
     </script>
 </body>
 </html>
