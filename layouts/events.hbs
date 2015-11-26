@@ -55,11 +55,11 @@
                     var lat = position.coords.latitude
                       , lon = position.coords.longitude
                       ;
-                    map = L.mapbox.map('map', 'mapbox.streets').setView([lat, lon], 11)
+                    map = L.mapbox.map('map', 'mapbox.streets-basic').setView([lat, lon], 11)
                     onMap(map)
                   })
                 } else {
-                  map = L.mapbox.map('map', 'mapbox.streets')
+                  map = L.mapbox.map('map', 'mapbox.streets-basic')
                   onMap(map)
                 }
               }

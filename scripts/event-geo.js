@@ -1,15 +1,15 @@
-var fs = require('fs'),
-  yaml = require('js-yaml'),
-  fs = require('fs'),
-  path = require('path'),
-  p = path.join(__dirname, '..', 'locale', 'en', 'get-involved', 'events.md'),
-  htmlToText = require('html-to-text')
+'use strict'
+const yaml = require('js-yaml')
+const fs = require('fs')
+const path = require('path')
+let p = path.join(__dirname, '..', 'locale', 'en', 'get-involved', 'events.md')
+let htmlToText = require('html-to-text')
 
 function load () {
-  var buf = fs.readFileSync(p),
-    lines = buf.toString().split('\n'),
-    str = lines.slice(lines.indexOf('---') + 1, lines.indexOf('---', lines.indexOf('---') + 1)).join('\n'),
-    store = yaml.safeLoad(str)
+  let buf = fs.readFileSync(p)
+  let lines = buf.toString().split('\n')
+  let str = lines.slice(lines.indexOf('---') + 1, lines.indexOf('---', lines.indexOf('---') + 1)).join('\n')
+  let store = yaml.safeLoad(str)
 
   return store
 }
@@ -49,11 +49,11 @@ function _meetup (ev) {
 
   var ret =
   { type: 'Feature',
-    geometry: 
+    geometry:
     { type: 'Point',
       coordinates: [ev.lon, ev.lat]
-    },     
-    properties: 
+    },
+    properties:
     { title: ev.name,
       description: desc,
       'marker-size': 'medium',
@@ -68,11 +68,11 @@ function _nodeschool (ev) {
   if (!ev.lat) return
   var ret =
   { type: 'Feature',
-    geometry: 
+    geometry:
     { type: 'Point',
       coordinates: [ev.lon, ev.lat]
-    },    
-     properties: 
+    },
+     properties:
      { title: ev.name,
        description: `${ev.name} ${ev.repo || ''} ${ev.website || ''}`,
        'marker-size': 'medium',
@@ -86,14 +86,14 @@ module.exports = function () {
   var markers = []
   load().regions.forEach(function (reg) {
     if (reg.meetups) {
-      reg.meetups.forEach(function (ev) {markers.push(_meetup(ev))})
+      reg.meetups.forEach(function (ev) { markers.push(_meetup(ev)) })
     }
     if (reg.conferences) {
-      reg.conferences.forEach(function (ev) {markers.push(_conference(ev))})
+      reg.conferences.forEach(function (ev) { markers.push(_conference(ev)) })
     }
     if (reg.nodeschools) {
-      reg.nodeschools.forEach(function (ev) {markers.push(_nodeschool(ev))})
+      reg.nodeschools.forEach(function (ev) { markers.push(_nodeschool(ev)) })
     }
   })
-  return {type: 'FeatureCollection', features: markers.filter(function (x) {return x}) }
+  return { type: 'FeatureCollection', features: markers.filter(function (x) { return x }) }
 }
