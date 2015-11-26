@@ -1,3 +1,40 @@
+#events-map
+    height: 400px
+    width 100%
+    margin-top 10px
+
+.events-map-key
+    padding 8px 0
+    text-align center
+    @media screen and (max-width: 600px)
+        padding 2px 0
+        text-align left
+
+    span
+        padding-right 12px
+        @media screen and (max-width: 600px)
+            display block
+            width 100%
+            padding-right 0
+
+    span::before
+             content ""
+             width 12px
+             height 12px
+             display inline-block
+             border-radius 3px
+             margin-right 8px
+
+    .key-meetup::before
+        background $node-green
+
+    .key-nodeschool::before
+        background $yellow
+
+    .key-conference::before
+        background $blue
+
+
 .events-list
     display flex
     flex-wrap wrap
