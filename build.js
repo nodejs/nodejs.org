@@ -176,11 +176,11 @@ function copystatic () {
     fs.mkdir(path.join(__dirname, 'build', 'static'), function () {
       ncp(path.join(__dirname, 'static'), path.join(__dirname, 'build', 'static'), function (err) {
         if (err) { return console.error(err) }
+        fs.writeFileSync(path.join(__dirname, 'build', 'static', 'event-geo.json'), JSON.stringify(eventGeo()))
         console.timeEnd('[metalsmith] build/static finished')
       })
     })
   })
-  fs.writeFileSync(path.join(__dirname, 'build', 'static', 'event-geo.json'), JSON.stringify(eventGeo()))
 }
 
 function fullbuild () {
