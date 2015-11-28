@@ -23,7 +23,7 @@ This week we have one release: [Node v0.12.8 (LTS)](https://nodejs.org/en/blog/r
 
 ### CVE-2015-8027 Denial of Service Vulnerability / CVE-2015-6764 V8 Out-of-bounds Access Vulnerability
 
-* Security release coming on December 1 or December 2 (depending on your timezone) will resolve a denail-of-service vulnerability. Be prepared to update!
+* Security release coming on December 1 or December 2 (depending on your timezone) will resolve a denial-of-service vulnerability. Be prepared to update!
 * UTC will be made available with appropriate fixes for CVE-2015-8027 and CVE-2015-6764 (for v4.x and v5.x only)
 * Please contact security@nodejs.org if you wish to report a vulnerability in Node.js.
 
