@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="{{site.locale}}">
+{{> html-head }}
+
+<body>
+    {{> header }}
+
+    <div id="main">
+        <div class="container has-side-nav">
+
+            <aside>
+                <ul>
+                    <li{{#equals path site.getinvolved.link}} class="active"{{/equals}}>
+                        <a href="/{{site.locale}}/{{site.getinvolved.link}}/">{{site.getinvolved.text}}</a>
+                    </li>
+                    <li{{#equals path site.getinvolved.code-and-learn.link}} class="active"{{/equals}}>
+                        <a href="/{{site.locale}}/{{site.getinvolved.code-and-learn.link}}/">{{site.getinvolved.code-and-learn.text}}</a>
+                    </li>
+                    <li{{#equals path site.getinvolved.contribute.link}} class="active"{{/equals}}>
+                        <a href="/{{site.locale}}/{{site.getinvolved.contribute.link}}/">{{site.getinvolved.contribute.text}}</a>
+                    </li>
+                    <li{{#equals path site.getinvolved.development.link}} class="active"{{/equals}}>
+                        <a href="/{{site.locale}}/{{site.getinvolved.development.link}}/">{{site.getinvolved.development.text}}</a>
+                    </li>
+                    <li{{#equals path site.getinvolved.events.link}} class="active"{{/equals}}>
+                        <a href="/{{site.locale}}/{{site.getinvolved.events.link}}/">{{site.getinvolved.events.text}}</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct">{{site.getinvolved.conduct.text}}</a>
+                    </li>
+                </ul>
+            </aside>
+
+            <article class="js-regional-events">
+
+              <div id="events-map"></div>
+              <div class="events-map-key">
+                <span class="key-meetup" data-i18n="events-meetup">Meetup</span>
+                <span class="key-nodeschool" data-i18n="events-nodeschool">NodeSchool</span>
+                <span class="key-conference" data-i18n="events-conference">Conference</span>
+              </div>
+              
+              <div class="main-content">{{{contents}}}</div>
+
+                {{#each regions}}
+                <div class="region">
+                  <h1>{{region}}</h1>
+                  {{#if conferences}}<h2>Conferences <span class="events-number"></span></h2>{{/if}}
+                  <div class ="conference-list">
+                  {{#each conferences}}
+                    <div class="conference">
+                        <h3><a href="{{link}}">{{name}}</a>
+                        {{#if location}}
+                            - <small class="map-link"><a href="https://www.google.com/maps/place/{{location}}">map</a></small>
+                        {{/if}}
+                        </h3>
+                        {{#if desc}}
+                        <p class="conference-description">{{desc}}</p>
+                        {{/if}}
+                    </div>
+                  {{/each}}
+                  </div>
+                  <h2>
+                    <span class="arrow">&#62;</span>
+                    <a class="js-list-toggle-link" href="#">NodeSchools <span class="events-number"></span></a>
+                  </h2>
+                  <ul class="events-list">
+                  {{#each nodeschools}}
+                  <li>
+                    {{#if website}}
+                    <a href="{{website}}">{{name}}</a>
+                    {{else}}
+                      {{#if repo}}
+                      <a href="{{repo}}">{{name}}</a>
+                      {{else}}
+                        {{name}}
+                      {{/if}}
+                    {{/if}}
+                  </li>
+                  {{/each}}
+                  </ul>
+
+                  <h2>
+                    <span class="arrow">&#62;</span>
+                    <a class="js-list-toggle-link" href="#">Meetups <span class="events-number"></span></a>
+                    </h2>
+                  <ul class="events-list">
+                  {{#each meetups}}
+                    <li><a href="{{link}}">{{name}}</a></li>
+                  {{/each}}
+                  </ul>
+
+                </div>
+                {{/each}}
+            </article>
+
+        </div>
+    </div>
+
+    {{> footer }}
+
+    <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
+    <script>
+      function haversine() {
+        var radians = Array.prototype.map.call(arguments, function(deg) { return deg/180.0 * Math.PI; });
+        var lat1 = radians[0], lon1 = radians[1], lat2 = radians[2], lon2 = radians[3];
+        var R = 6372.8; // km
+        var dLat = lat2 - lat1;
+        var dLon = lon2 - lon1;
+        var a = Math.sin(dLat / 2) * Math.sin(dLat /2) + Math.sin(dLon / 2) * Math.sin(dLon /2) * Math.cos(lat1) * Math.cos(lat2);
+        var c = 2 * Math.asin(Math.sqrt(a));
+        return R * c;
+      }
+
+      L.mapbox.accessToken = 'pk.eyJ1IjoibWlrZWFsIiwiYSI6ImNpaGY5ajk5ZTA0ZTN0cmo3MzZ5NnV5eHIifQ.YBfpOTUwcbaZrNvAfDaDcQ';
+      var map = L.mapbox.map('events-map', 'mapbox.streets-basic')
+      var featureLayer = L.mapbox.featureLayer()
+
+      featureLayer.on('layeradd', function(e) {
+        var marker = e.layer
+        var feature = marker.feature
+        var props = feature.properties
+        var html = ''
+
+        if (props.link) {
+          html += '<div class="marker-title"><a href="' + props.link + '">' + props.title + '</a></div>'
+        } else {
+          html += '<div class="marker-title">' + props.title + '</div>'
+        }
+        if (props.description && props.description.length > 400) {
+          html += '<div class="marker-description">' + props.description.slice(0, 400) + '...</div>'
+        } else if (props.description) {
+          html += '<div class="marker-description">' + props.description + '</div>'
+        }
+        if (props.image) {
+          html += '<div class="marker-image"><img src="' + props.image + '" /></div>'
+        }
+
+        marker.bindPopup(html, { minWidth: 320 })
+      })
+
+      featureLayer.on('ready', function () {
+        if ("geolocation" in navigator) {
+          /* geolocation is available */
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var lat = position.coords.latitude
+              , lon = position.coords.longitude
+              ;
+
+            var points = featureLayer.getGeoJSON().features.map(function (feature) {
+                var _lat = feature.geometry.coordinates[1]
+                  , _lon = feature.geometry.coordinates[0]
+                  ;
+                return [feature.geometry.coordinates[0], feature.geometry.coordinates[1], haversine(lat, lon, _lat, _lon)]
+              })
+              .sort(function (a, b) {
+                return a[2] > b[2]
+              })
+
+            function _bounds () {
+              for (var i=0;i<points.length;i++) {
+                var hav = points[i][2]
+                if (i > 10 && hav > .1) {
+                  return [points[i][1], points[i][0]]
+                }
+              }
+            }
+
+            map.fitBounds([[lat, lon], _bounds()])
+            map.setView([lat, lon], map.getZoom()-1)
+          })
+        }
+      })
+
+      featureLayer.loadURL('/static/event-geo.json').addTo(map)
+
+
+      document.querySelector(".js-regional-events").addEventListener("click", function(evt) {
+        if (evt.target.classList.contains("js-list-toggle-link") ) {
+          toggleEventsDisplay(evt);
+        }
+      });
+      var selector = document.querySelectorAll("div.region h2")
+      var totals = {}
+      for (var i=0;i<selector.length;i++) {
+        var ch = selector[i]
+        var regionSubHeading = ch
+        var regionEventsList = regionSubHeading.nextElementSibling
+        var evKey = ch.textContent.replace(/[^a-zA-Z]/g, '')
+        if (!totals[evKey]) totals[evKey] = 0
+        totals[evKey] += regionEventsList.children.length
+        ch.querySelector('span.events-number').textContent = regionEventsList.children.length
+      }
+      document.querySelector('span.key-meetup').textContent += (' ('+totals['Meetups']+')')
+      document.querySelector('span.key-nodeschool').textContent += (' ('+totals['NodeSchools']+')')
+      document.querySelector('span.key-conference').textContent += (' ('+totals['Conferences']+')')
+
+      function toggleEventsDisplay(evt) {
+        evt.preventDefault()
+        var regionSubHeading = evt.target.parentNode
+        var regionEventsList = regionSubHeading.nextElementSibling
+        regionSubHeading.classList.toggle('is-displayed')
+        regionEventsList.classList.toggle('is-displayed')
+      }
+    </script>
+</body>
+</html>

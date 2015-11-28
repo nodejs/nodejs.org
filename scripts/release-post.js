@@ -90,8 +90,7 @@ function fetchDocs (version) {
       author,
       versionPolicy,
       shasums,
-      files
-    }
+      files}
   })
 }
 
