@@ -17391,7 +17391,7 @@ regions:
         lat: 45.5167983
         lon: -122.6815443
       - name: NodeConf Adventure
-        link: 'http://adventure.nodeconf.com'
+        link: 'http://nodeconf.com'
         desc: Unconference for Node.js developers.
         location: 'Walker Creek Ranch, Marin County, CA, USA'
         lat: 38.1665953
