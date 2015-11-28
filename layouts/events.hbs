@@ -102,6 +102,64 @@
     <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
     <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
     <script>
+        /*
+---
+script: array-sortby.js
+version: 1.2.2
+description: Array.sortBy is a prototype function to sort arrays of objects by a given key.
+license: MIT-style
+source: http://github.com/eneko/Array.sortBy
+authors:
+- Eneko Alonso: (http://github.com/eneko)
+- Fabio M. Costa: (http://github.com/fabiomcosta)
+credits:
+- Olmo Maldonado (key path as string idea)
+provides:
+- Array.sortBy
+...
+*/
+
+(function(){
+
+	var keyPaths = [];
+
+	var saveKeyPath = function(path) {
+		keyPaths.push({
+			sign: (path[0] === '+' || path[0] === '-')? parseInt(path.shift()+1) : 1,
+			path: path
+		});
+	};
+
+	var valueOf = function(object, path) {
+		var ptr = object;
+		for (var i=0,l=path.length; i<l; i++) ptr = ptr[path[i]];
+		return ptr;
+	};
+
+	var comparer = function(a, b) {
+		for (var i = 0, l = keyPaths.length; i < l; i++) {
+			aVal = valueOf(a, keyPaths[i].path);
+			bVal = valueOf(b, keyPaths[i].path);
+			if (aVal > bVal) return keyPaths[i].sign;
+			if (aVal < bVal) return -keyPaths[i].sign;
+		}
+		return 0;
+	};
+
+	Array.prototype.sortBy = function() {
+		keyPaths = [];
+		for (var i=0,l=arguments.length; i<l; i++) {
+			switch (typeof(arguments[i])) {
+				case "object": saveKeyPath(arguments[i]); break;
+				case "string": saveKeyPath(arguments[i].match(/[+-]|[^.]+/g)); break;
+			}
+		}
+		return this.sort(comparer);
+	};
+
+})();
+    </script>
+    <script>
       function haversine() {
         var radians = Array.prototype.map.call(arguments, function(deg) { return deg/180.0 * Math.PI; });
         var lat1 = radians[0], lon1 = radians[1], lat2 = radians[2], lon2 = radians[3];
@@ -144,31 +202,18 @@
         if ("geolocation" in navigator) {
           /* geolocation is available */
           navigator.geolocation.getCurrentPosition(function(position) {
-            var lat = position.coords.latitude
-              , lon = position.coords.longitude
-              ;
-
-            var points = featureLayer.getGeoJSON().features.map(function (feature) {
-                var _lat = feature.geometry.coordinates[1]
-                  , _lon = feature.geometry.coordinates[0]
-                  ;
-                return [feature.geometry.coordinates[0], feature.geometry.coordinates[1], haversine(lat, lon, _lat, _lon)]
-              })
-              .sort(function (a, b) {
-                return a[2] > b[2]
-              })
-
-            function _bounds () {
-              for (var i=0;i<points.length;i++) {
-                var hav = points[i][2]
-                if (i > 10 && hav > .1) {
-                  return [points[i][1], points[i][0]]
-                }
-              }
-            }
-
-            map.fitBounds([[lat, lon], _bounds()])
-            map.setView([lat, lon], map.getZoom()-1)
+            var lat        = position.coords.latitude
+            var lon        = position.coords.longitude
+            var sideEffect = {dist: 100000, point: null}
+    
+            var points = featureLayer.getGeoJSON().features.sortBy(function (feature) {
+              var _lat = feature.geometry.coordinates[1]
+              var _lon = feature.geometry.coordinates[0]
+              var dist = haversine(lat, lon, _lat, _lon)
+              return dist
+            })
+            var p = points[0]
+            map.fitBounds([[lat, lon], p.geometry.coordinates])
           })
         }
       })
