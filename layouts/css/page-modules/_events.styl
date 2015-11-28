@@ -1,7 +1,11 @@
 #events-map
-    height: 400px
+    height 400px
     width 100%
     margin-top 20px
+
+    .marker-image img
+        max-width 320px
+        max-height 100px
 
 .events-map-key
     padding 8px 0
@@ -60,7 +64,7 @@
         p
             margin-top 0
 
-    .events-number
+    .events-number:not(:empty)
         position relative
         top -3px
         display inline-block

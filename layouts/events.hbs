@@ -44,8 +44,8 @@
                 <div class="region">
                   <h1>{{region}}</h1>
                   {{#if conferences}}<h2>Conferences <span class="events-number"></span></h2>{{/if}}
-                  <div class ="conference-list">     
-                  {{#each conferences}}                                   
+                  <div class ="conference-list">
+                  {{#each conferences}}
                     <div class="conference">
                         <h3><a href="{{link}}">{{name}}</a>
                         {{#if location}}
@@ -99,12 +99,6 @@
 
     <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
     <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
-    <style>
-      div.marker-image img {
-        max-width:320px;
-        max-height:100px;
-      }
-    </style>
     <script>
       function haversine() {
         var radians = Array.prototype.map.call(arguments, function(deg) { return deg/180.0 * Math.PI; });
@@ -120,13 +114,13 @@
       L.mapbox.accessToken = 'pk.eyJ1IjoibWlrZWFsIiwiYSI6ImNpaGY5ajk5ZTA0ZTN0cmo3MzZ5NnV5eHIifQ.YBfpOTUwcbaZrNvAfDaDcQ';
       var map = L.mapbox.map('events-map', 'mapbox.streets-basic')
       var featureLayer = L.mapbox.featureLayer()
-      
+
       featureLayer.on('layeradd', function(e) {
         var marker = e.layer
         var feature = marker.feature
         var props = feature.properties
         var html = ''
-        
+
         if (props.link) {
           html += '<div class="marker-title"><a href="' + props.link + '">' + props.title + '</a></div>'
         } else {
@@ -138,9 +132,9 @@
           html += '<div class="marker-description">' + props.description + '</div>'
         }
         if (props.image) {
-          html += '<div class="marker-image"><img src="' + props.image + '"></img></div>'
+          html += '<div class="marker-image"><img src="' + props.image + '" /></div>'
         }
-        
+
         marker.bindPopup(html, { minWidth: 320 })
       })
 
@@ -199,13 +193,13 @@
       document.querySelector('span.key-meetup').textContent += (' ('+totals['Meetups']+')')
       document.querySelector('span.key-nodeschool').textContent += (' ('+totals['NodeSchools']+')')
       document.querySelector('span.key-conference').textContent += (' ('+totals['Conferences']+')')
-      
+
       function toggleEventsDisplay(evt) {
-        evt.preventDefault();
-        var regionSubHeading = evt.target.parentNode;
-        var regionEventsList = regionSubHeading.nextElementSibling;
-        regionSubHeading.classList.toggle('is-displayed');
-        regionEventsList.classList.toggle('is-displayed');
+        evt.preventDefault()
+        var regionSubHeading = evt.target.parentNode
+        var regionEventsList = regionSubHeading.nextElementSibling
+        regionSubHeading.classList.toggle('is-displayed')
+        regionEventsList.classList.toggle('is-displayed')
       }
     </script>
 </body>
