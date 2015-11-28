@@ -17385,6 +17385,7 @@ regions:
           - 2015-12-08T00:00:00.000Z
           - 2015-12-09T00:00:00.000Z
         link: 'http://events.linuxfoundation.org/events/node-interactive'
+        image: 'http://events.linuxfoundation.org/sites/events/files/nodeint15_400x400.png'
         desc: Node.js Foundation lead conference.
         location: 'Hilton Portland & Executive Tower, Portland, OR'
         lat: 45.5167983
