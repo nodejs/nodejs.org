@@ -76,8 +76,8 @@ regardless of how the client actually sent them. This simplifies the task of
 parsing headers for whatever purpose.
 
 If some headers are repeated, then their values are overwritten or joined
-together as comma-separated strings, depending on the header. In some cases, this
-can be problematic, so [`rawHeaders`][] is also available.
+together as comma-separated strings, depending on the header. In some cases,
+this can be problematic, so [`rawHeaders`][] is also available.
 
 ## Request Body
 
