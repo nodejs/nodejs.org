@@ -202,6 +202,10 @@ function fullbuild () {
       }
     }
 
+    fs.writeFileSync(path.join(__dirname, 'build', 'latest.json'),
+      JSON.stringify(source.project.currentVersions, null, '\t')
+    )
+
     fs.readdir(path.join(__dirname, 'locale'), function (e, locales) {
       locales.filter(junk.not).forEach(function (locale) {
         buildlocale(source, locale)
