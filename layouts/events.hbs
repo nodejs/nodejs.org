@@ -41,7 +41,6 @@
               </div>
               
               <div class="main-content">{{{contents}}}</div>
-
                 {{#each regions}}
                 <div class="region">
                   <h1>{{region}}</h1>
@@ -102,6 +101,7 @@
     <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
     <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
     <script>
+    (function() {
       function haversine() {
         var radians = Array.prototype.map.call(arguments, function(deg) { return deg/180.0 * Math.PI; });
         var lat1 = radians[0], lon1 = radians[1], lat2 = radians[2], lon2 = radians[3];
@@ -149,26 +149,19 @@
               ;
 
             var points = featureLayer.getGeoJSON().features.map(function (feature) {
-                var _lat = feature.geometry.coordinates[1]
-                  , _lon = feature.geometry.coordinates[0]
-                  ;
-                return [feature.geometry.coordinates[0], feature.geometry.coordinates[1], haversine(lat, lon, _lat, _lon)]
-              })
-              .sort(function (a, b) {
-                return a[2] > b[2]
-              })
-
-            function _bounds () {
-              for (var i=0;i<points.length;i++) {
-                var hav = points[i][2]
-                if (i > 10 && hav > .1) {
-                  return [points[i][1], points[i][0]]
-                }
-              }
-            }
-
-            map.fitBounds([[lat, lon], _bounds()])
-            map.setView([lat, lon], map.getZoom()-1)
+              var _lat = feature.geometry.coordinates[1]
+                , _lon = feature.geometry.coordinates[0]
+                , dist = haversine(lat, lon, _lat, _lon)
+                ;
+              return {lon: _lon, lat: _lat, dist: dist}
+            })
+            .sort(function (a, b) {
+              return a.dist > b.dist ? 1 : 
+                     a.dist < b.dist ? -1 : 0;
+            })
+            var nearest = (points.length > 10 ? points.slice(0, 9) : points.slice(0, points.length-1));
+            nearest.push({lat: lat, lon: lon});
+            map.fitBounds(nearest)
           })
         }
       })
@@ -203,6 +196,7 @@
         regionSubHeading.classList.toggle('is-displayed')
         regionEventsList.classList.toggle('is-displayed')
       }
+    })();
     </script>
 </body>
 </html>
