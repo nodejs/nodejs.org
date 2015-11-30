@@ -1,6 +1,9 @@
-#!/usr/bin/env node
+#! /usr/bin/env node
 
 'use strict'
+
+// BUILD.JS: This file is responsible for building the HTML site and serving it
+// as a static server.
 
 const Metalsmith = require('metalsmith')
 const autoprefixer = require('autoprefixer-stylus')
@@ -17,26 +20,30 @@ const fs = require('fs')
 const ncp = require('ncp')
 const junk = require('junk')
 
+// Require custom scripts that we'll need for the build process.
 const filterStylusPartials = require('./scripts/plugins/filter-stylus-partials')
 const anchorMarkdownHeadings = require('./scripts/plugins/anchor-markdown-headings')
 const loadVersions = require('./scripts/load-versions')
 const latestVersion = require('./scripts/helpers/latestversion')
 const eventGeo = require('./scripts/event-geo.js')
 
-/** Build **/
-
-// load template.json for given language, but use default language as fallback
-// for properties which are not present in the given language
+// Set the default language, also functions as a fallback for properties which
+// are not defined in the given language.
 const DEFAULT_LANG = 'en'
 
+// Set up the Markdown renderer that we'll use for our Metalsmith build process,
+// with the necessary adjustments that we need to make in order to have Prism
+// work.
 const renderer = new marked.Renderer()
 renderer.heading = anchorMarkdownHeadings
-
 const markedOptions = {
   langPrefix: 'language-',
   renderer: renderer
 }
 
+// This function imports a given language file and uses the default language set
+// in DEFAULT_LANG as a fallback to prevent any strings that aren't filled out
+// from appearing as blank.
 function i18nJSON (lang) {
   var defaultJSON = require(`./locale/${DEFAULT_LANG}/site.json`)
   var templateJSON = require(`./locale/${lang}/site.json`)
@@ -55,17 +62,24 @@ function i18nJSON (lang) {
   return finalJSON
 }
 
+// This is the function where the actual magic happens. This contains the main
+// Metalsmith build cycle used for building a locale subsite, such as the
+// english one.
 function buildlocale (source, locale) {
   console.time('[metalsmith] build/' + locale + ' finished')
   const siteJSON = path.join(__dirname, 'locale', locale, 'site.json')
   const metalsmith = Metalsmith(__dirname)
   metalsmith
+    // Sets global metadata imported from the locale's respective site.json.
     .metadata({
       site: require(siteJSON),
       project: source.project,
       i18n: i18nJSON(locale)
     })
+    // Sets the build source as the locale folder.
     .source(path.join(__dirname, 'locale', locale))
+    // Defines the blog post/guide collections used to internally group them for
+    // easier future handling and feed generation.
     .use(collections({
       blog: {
         pattern: 'blog/**/*.md',
@@ -115,15 +129,20 @@ function buildlocale (source, locale) {
     }))
     .use(markdown(markedOptions))
     .use(prism())
+    // Deletes Stylus partials since they'll be included in the main CSS file
+    // anyways.
     .use(filterStylusPartials())
     .use(stylus({
       compress: true,
       paths: [path.join(__dirname, 'layouts', 'css')],
       use: [autoprefixer()]
     }))
+    // Set pretty permalinks, we don't want .html suffixes everywhere.
     .use(permalinks({
       relative: false
     }))
+    // Generates the feed XML files from their respective collections which were
+    // defined earlier on.
     .use(feed({
       collection: 'blog',
       destination: 'feed/blog.xml',
@@ -149,6 +168,9 @@ function buildlocale (source, locale) {
       destination: 'feed/tsc-minutes.xml',
       title: 'Node.js Technical Steering Committee meetings'
     }))
+    // Finally, this compiles the rest of the layouts present in ./layouts.
+    // They're language-agnostic, but have to be regenerated for every locale
+    // anyways.
     .use(layouts({
       engine: 'handlebars',
       pattern: '**/*.html',
@@ -162,14 +184,20 @@ function buildlocale (source, locale) {
         apidocslink: require('./scripts/helpers/apidocslink.js')
       }
     }))
+    // Pipes the generated files into their respective subdirectory in the build
+    // directory.
     .destination(path.join(__dirname, 'build', locale))
 
+  // This actually executes the build and stops the internal timer after
+  // completition.
   metalsmith.build(function (err) {
     if (err) { throw err }
     console.timeEnd('[metalsmith] build/' + locale + ' finished')
   })
 }
 
+// This function copies the rest of the static assets to their subfolder in the
+// build directory.
 function copystatic () {
   console.time('[metalsmith] build/static finished')
   fs.mkdir(path.join(__dirname, 'build'), function () {
@@ -183,8 +211,12 @@ function copystatic () {
   })
 }
 
+// This is where the build is orchestrated from, as indicated by the function
+// name. It brings together all build steps and dependencies and executes them.
 function fullbuild () {
+  // Copies static files.
   copystatic()
+  // Loads all node/io.js versions.
   loadVersions(function (err, versions) {
     if (err) { throw err }
     const source = {
@@ -202,6 +234,7 @@ function fullbuild () {
       }
     }
 
+    // Executes the build cycle for every locale.
     fs.readdir(path.join(__dirname, 'locale'), function (e, locales) {
       locales.filter(junk.not).forEach(function (locale) {
         buildlocale(source, locale)
@@ -210,8 +243,9 @@ function fullbuild () {
   })
 }
 
+// The server function, where the site is exposed through a static file server.
 function server () {
-  /** Static file server **/
+  // Initializes the server and mounts it in the generated build directory.
   const st = require('st')
   const http = require('http')
   const mount = st({
@@ -225,7 +259,8 @@ function server () {
     function () { console.log('http://localhost:8080/en/') }
   )
 
-  /** File Watches for Re-Builds **/
+  // Watches for file changes in the locale, layout and static directories, and
+  // rebuilds the modified one.
   const chokidar = require('chokidar')
   const opts = {
     persistent: true,
@@ -242,6 +277,7 @@ function server () {
   const layouts = chokidar.watch(path.join(__dirname, 'layouts'), opts)
   const staticf = chokidar.watch(path.join(__dirname, 'static'), opts)
 
+  // Gets the locale name by path.
   function getlocale (p) {
     const pre = path.join(__dirname, 'locale')
     return p.slice(pre.length + 1, p.indexOf('/', pre.length + 1))
@@ -261,8 +297,10 @@ function server () {
   staticf.on('add', function (p) { staticf.add(p); copystatic() })
 }
 
+// Starts the build.
 fullbuild()
 
+// If the command-line option was provided, starts the static server.
 if (process.argv[2] === 'serve') {
   server()
 }
