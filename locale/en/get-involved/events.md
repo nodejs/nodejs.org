@@ -32472,7 +32472,7 @@ regions:
 
 ## Not seeing your event listed?
 
-We periodically pull data from [meetup.com](meetup.com) and [nodeschool.io](nodeschool.io), so if 
+We periodically pull data from [meetup.com](http://meetup.com) and [nodeschool.io](http://nodeschool.io), so if 
 your meetup or workshop is listed there it will show up. If you aren't listed on those sites, or
 you are the organizer of a conference that is not listed, you can add it manually by editing 
 [events.md](https://github.com/nodejs/nodejs.org/blob/master/locale/en/get-involved/events.md) 
