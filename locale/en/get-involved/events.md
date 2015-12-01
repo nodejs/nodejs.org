@@ -15806,20 +15806,20 @@ regions:
         visibility: public
         city: Pereira
         timezone: America/Bogota
-        created: 1416577047000
-        link: 'http://www.meetup.com/PereiraJS/'
-        description: Este es un grupo para todos los interesado en los mejores en JavaScript
+        created: 1393477200000
+        link: 'http://pereirajs.org/'
+        description: Comunidad de aprendizaje del lenguaje Javascript
         lon: -75.68000030517578
         join_mode: open
         organizer:
-          member_id: 182653347
-          name: Mauricio Alexander Pulgarin Meji
+          member_id: ''
+          name: ''
           photo:
-            highres_link: 'http://photos1.meetupstatic.com/photos/member/3/5/6/4/highres_241693668.jpeg'
-            photo_id: 241693668
-            photo_link: 'http://photos1.meetupstatic.com/photos/member/3/5/6/4/member_241693668.jpeg'
-            thumb_link: 'http://photos1.meetupstatic.com/photos/member/3/5/6/4/thumb_241693668.jpeg'
-        members: 59
+            highres_link: ''
+            photo_id: ''
+            photo_link: ''
+            thumb_link: ''
+        members: 30
         name: PereiraJS
         lat: 4.809999942779541
         who: javascripters
@@ -32472,8 +32472,8 @@ regions:
 
 ## Not seeing your event listed?
 
-We periodically pull data from [meetup.com](http://meetup.com) and [nodeschool.io](http://nodeschool.io), so if 
+We periodically pull data from [meetup.com](http://meetup.com) and [nodeschool.io](http://nodeschool.io), so if
 your meetup or workshop is listed there it will show up. If you aren't listed on those sites, or
-you are the organizer of a conference that is not listed, you can add it manually by editing 
-[events.md](https://github.com/nodejs/nodejs.org/blob/master/locale/en/get-involved/events.md) 
+you are the organizer of a conference that is not listed, you can add it manually by editing
+[events.md](https://github.com/nodejs/nodejs.org/blob/master/locale/en/get-involved/events.md)
 and sending a pull request to the [website repo](https://github.com/nodejs/nodejs.org).
