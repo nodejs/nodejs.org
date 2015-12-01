@@ -2,8 +2,8 @@
 
 'use strict'
 
-// BUILD.JS: This file is responsible for building the HTML site and serving it
-// as a static server.
+// BUILD.JS: This file is responsible for building static HTML pages and a
+// server for local development.
 
 const Metalsmith = require('metalsmith')
 const autoprefixer = require('autoprefixer-stylus')
@@ -20,7 +20,6 @@ const fs = require('fs')
 const ncp = require('ncp')
 const junk = require('junk')
 
-// Require custom scripts that we'll need for the build process.
 const filterStylusPartials = require('./scripts/plugins/filter-stylus-partials')
 const anchorMarkdownHeadings = require('./scripts/plugins/anchor-markdown-headings')
 const loadVersions = require('./scripts/load-versions')
@@ -189,7 +188,7 @@ function buildlocale (source, locale) {
     .destination(path.join(__dirname, 'build', locale))
 
   // This actually executes the build and stops the internal timer after
-  // completition.
+  // completion.
   metalsmith.build(function (err) {
     if (err) { throw err }
     console.timeEnd('[metalsmith] build/' + locale + ' finished')
@@ -243,7 +242,8 @@ function fullbuild () {
   })
 }
 
-// The server function, where the site is exposed through a static file server.
+// The server function, where the site is exposed through a static file server
+// locally.
 function server () {
   // Initializes the server and mounts it in the generated build directory.
   const st = require('st')
