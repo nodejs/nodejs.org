@@ -159,7 +159,14 @@
               return a.dist > b.dist ? 1 : 
                      a.dist < b.dist ? -1 : 0;
             })
-            var nearest = (points.length > 10 ? points.slice(0, 9) : points.slice(0, points.length-1));
+            var nearest = []
+            var _dist = 0
+            var i = 1
+            while (nearest < 10 || _dist < 5) {
+              nearest.push(points[i-1])
+              _dist = points[i].dist
+              i++
+            }
             nearest.push({lat: lat, lon: lon});
             map.fitBounds(nearest)
           })
