@@ -127,6 +127,7 @@ function buildlocale (source, locale) {
       }
     }))
     .use(markdown(markedOptions))
+    .use(githubLinks({ locale: locale }))
     .use(prism())
     // Deletes Stylus partials since they'll be included in the main CSS file
     // anyways.
@@ -193,6 +194,32 @@ function buildlocale (source, locale) {
     if (err) { throw err }
     console.timeEnd('[metalsmith] build/' + locale + ' finished')
   })
+}
+
+// This middleware adds "Edit on GitHub" links to every editable page
+function githubLinks (options) {
+  return function (files, m, next) {
+    // add suffix (".html" or "/") to each part of regex
+    // to ignore possible occurrences in titles (e.g. blog posts)
+    var isEditable = /security\.html|about\/|docs\/|foundation\/|get\-involved\/|knowledge\//
+
+    Object.keys(files).forEach(function (path) {
+      if (!isEditable.test(path)) {
+        return
+      }
+
+      var file = files[path]
+      var url = 'https://github.com/nodejs/nodejs.org/edit/master/locale/' + options.locale + '/' + path.replace('.html', '.md')
+
+      var contents = file.contents.toString().replace(/\<h1\>(.+)\<\/h1\>/, function ($1, $2) {
+        return '<h1>' + $2 + ' <a class="edit-link" href="' + url + '">Edit on GitHub</a></h1>'
+      })
+
+      file.contents = new Buffer(contents)
+    })
+
+    next()
+  }
 }
 
 // This function copies the rest of the static assets to their subfolder in the
