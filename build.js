@@ -254,8 +254,8 @@ function fullbuild () {
           lts: latestVersion.lts(versions)
         },
         banner: {
-          visible: false,
-          content: '<a href="https://nodejs.org/en/blog/release/v4.2.1/">Long Term Support Release</a>'
+          visible: true,
+          content: 'Important <a href="https://nodejs.org/en/blog/vulnerability/december-2015-security-releases/">security releases</a>, please update now!'
         }
       }
     }
