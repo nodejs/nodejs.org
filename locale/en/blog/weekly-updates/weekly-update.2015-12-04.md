@@ -9,7 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News — December 4th
-Node v5.1.1 (Stable), v4.2.3 "Argon" (LTS), v0.12.9 (LTS), v0.10.41 (Maintenance) are released
+Node v5.1.1 (Stable), v4.2.3 "Argon" (LTS), v0.12.9 (LTS) and v0.10.41 (Maintenance) are released
 
 ### December Security Release Summary
 * This is an important security release. 
