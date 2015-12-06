@@ -16,11 +16,11 @@ right place. Explore our community resources to find out how you can help:
 
 ## Discussion
 
-- The [github issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features
+- The [Github issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
 
 - For real-time chat about Node development go to `irc.freenode.net` in the `#node.js` channel with an [IRC client](http://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [freenode's WebChat](http://webchat.freenode.net/?channels=node.js).
 
-- The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs)
+- The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
 
 - [Node Weekly](http://nodeweekly.com) is an email list that gathers up the latest events and news from around the Node.js community.
 
