@@ -17,7 +17,7 @@ When reporting an issue we also need as much information about your environment 
 * Platform you're running on (OS X, SunOS, Linux, Windows)
 * Architecture you're running on (32bit or 64bit and x86 or ARM)
 
-The Node.js project is currently managed across a number of separate Github repositories, each with their own separate issues database. If possible, please direct any issues you are reporting to the appropriate repository but don't worry if things happen to get put in the wrong place, the community of contributors will be more than happy to help get you pointed in the right direction.
+The Node.js project is currently managed across a number of separate GitHub repositories, each with their own separate issues database. If possible, please direct any issues you are reporting to the appropriate repository but don't worry if things happen to get put in the wrong place, the community of contributors will be more than happy to help get you pointed in the right direction.
 
 * To report issues specific to Node.js, please use [nodejs/node](https://github.com/nodejs/node)
 * To report issues specific to this website, please use [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
