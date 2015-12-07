@@ -19,7 +19,7 @@ contributing section](/contribute/).
 
 The Node.js Project currently has well over 300 contributors actively
 working on different areas of the project. The current list of contributors
-can be found on the project's [Github profile](https://github.com/orgs/nodejs/people).
+can be found on the project's [GitHub profile](https://github.com/orgs/nodejs/people).
 
 ### Current members of the Technical steering committee
 
