@@ -181,7 +181,8 @@ function buildlocale (source, locale) {
         i18n: require('./scripts/helpers/i18n.js'),
         changeloglink: require('./scripts/helpers/changeloglink.js'),
         strftime: require('./scripts/helpers/strftime.js'),
-        apidocslink: require('./scripts/helpers/apidocslink.js')
+        apidocslink: require('./scripts/helpers/apidocslink.js'),
+        majorapidocslink: require('./scripts/helpers/majorapidocslink.js')
       }
     }))
     // Pipes the generated files into their respective subdirectory in the build
@@ -248,7 +249,6 @@ function fullbuild () {
     const source = {
       project: {
         versions,
-        currentVersion: versions[0].version,
         currentVersions: {
           stable: latestVersion.stable(versions),
           lts: latestVersion.lts(versions)
