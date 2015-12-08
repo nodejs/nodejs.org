@@ -109,6 +109,7 @@ test('fetchChangelog(<version>)', (t) => {
   const releasePost = require('../../scripts/release-post')
 
   const changelogFixture = path.resolve(__dirname, 'CHANGELOG.fixture.md')
+  const changelogLegacyFixture = path.resolve(__dirname, 'CHANGELOG.fixture.legacy.md')
 
   t.test('resolves with section of changelog related to specified version', (t) => {
     const github = nock('https://raw.githubusercontent.com')
@@ -123,13 +124,26 @@ test('fetchChangelog(<version>)', (t) => {
     }, t.fail)
   })
 
+  t.test('can fetch changelog of legacy versions of Node.js', (t) => {
+    const github = nock('https://raw.githubusercontent.com')
+      .get('/nodejs/node/v0.12.9/ChangeLog')
+      .replyWithFile(200, changelogLegacyFixture)
+
+    releasePost.fetchChangelog('0.12.9').then((changelog) => {
+      t.true(changelog.includes('Security Update'))
+      t.true(github.isDone(), 'githubusercontent.com was requested')
+
+      t.end()
+    }, t.fail)
+  })
+
   t.test('rejects when a matching version section could not be found in changelog', (t) => {
     const github = nock('https://raw.githubusercontent.com')
-      .get('/nodejs/node/v0.14.0/CHANGELOG.md')
+      .get('/nodejs/node/v0.9999999.0/ChangeLog')
       .reply(200, 'A changelog without version sections...')
 
-    releasePost.fetchChangelog('0.14.0').then(t.fail, (err) => {
-      t.equal(err.message, "Couldn't find matching changelog for 0.14.0")
+    releasePost.fetchChangelog('0.9999999.0').then(t.fail, (err) => {
+      t.equal(err.message, "Couldn't find matching changelog for 0.9999999.0")
       t.true(github.isDone(), 'githubusercontent.com was requested')
 
       t.end()
@@ -164,6 +178,7 @@ test('fetchVersionPolicy(<version>)', (t) => {
   const releasePost = require('../../scripts/release-post')
 
   const changelogFixture = path.resolve(__dirname, 'CHANGELOG.fixture.md')
+  const changelogLegacyFixture = path.resolve(__dirname, 'CHANGELOG.fixture.legacy.md')
 
   t.test('finds "Stable" version policy', (t) => {
     const github = nock('https://raw.githubusercontent.com')
@@ -184,6 +199,19 @@ test('fetchVersionPolicy(<version>)', (t) => {
       .replyWithFile(200, changelogFixture)
 
     releasePost.fetchVersionPolicy('4.2.0').then((policy) => {
+      t.equal(policy, 'LTS')
+      t.true(github.isDone(), 'githubusercontent.com was requested')
+
+      t.end()
+    }, t.fail)
+  })
+
+  t.test('finds "LTS" version policy in legacy changelogs', (t) => {
+    const github = nock('https://raw.githubusercontent.com')
+      .get('/nodejs/node/v0.12.9/ChangeLog')
+      .replyWithFile(200, changelogLegacyFixture)
+
+    releasePost.fetchVersionPolicy('0.12.9').then((policy) => {
       t.equal(policy, 'LTS')
       t.true(github.isDone(), 'githubusercontent.com was requested')
 

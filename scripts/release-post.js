@@ -25,6 +25,8 @@ const path = require('path')
 const extend = require('util')._extend
 const Handlebars = require('handlebars')
 const request = require('request')
+const changelogUrl = require('changelog-url')
+const semver = require('semver')
 
 const downloads = require('./helpers/downloads')
 
@@ -53,6 +55,10 @@ function download (url) {
 
 function explicitVersion (version) {
   return version ? Promise.resolve(version) : Promise.reject()
+}
+
+function isLegacyVersion (version) {
+  return semver.satisfies(version, '< 1.0.0')
 }
 
 function findLatestVersion () {
@@ -100,9 +106,12 @@ function fetchChangelog (version) {
   // support release sections with headers like:
   // ## 2015-09-22, Version 4.1.1 (Stable), @rvagg
   // ## 2015-10-07, Version 4.2.0 'Argon' (LTS), @jasnell
-  const rxSection = new RegExp(`## \\d{4}-\\d{2}-\\d{2}, Version ${version} ('\\w+' )?\\([^\\)]+\\)[\\s\\S]*?(?=## \\d{4})`)
+  // 2015-12-04, Version 0.12.9 (LTS), @rvagg
+  const rxSection = isLegacyVersion(version)
+    ? new RegExp(`\\d{4}-\\d{2}-\\d{2}, Version ${version} \\([^\\)]+\\)[\\s\\S]*?(?=\\d{4}.\\d{2}.\\d{2})`)
+    : new RegExp(`## \\d{4}-\\d{2}-\\d{2}, Version ${version} ('\\w+' )?\\([^\\)]+\\)[\\s\\S]*?(?=## \\d{4})`)
 
-  return download(`https://raw.githubusercontent.com/nodejs/node/v${version}/CHANGELOG.md`)
+  return download(changelogUrl.rawUrl(version))
     .then((data) => {
       const matches = rxSection.exec(data)
       return matches ? matches[0] : Promise.reject(new Error(`Couldn't find matching changelog for ${version}`))
@@ -110,7 +119,7 @@ function fetchChangelog (version) {
 }
 
 function fetchChangelogBody (version) {
-  const rxSectionBody = /### Notable changes[\s\S]*/g
+  const rxSectionBody = /(### )?Notable [\s\S]*/g
 
   return fetchChangelog(version)
     .then(function (section) {
@@ -123,13 +132,15 @@ function fetchChangelogBody (version) {
 
 function fetchVersionPolicy (version) {
   // matches the policy for a given version (Stable, LTS etc) in the changelog
-  const rxPolicy = new RegExp(`^## \\d{4}-\\d{2}-\\d{2}, Version [^(].*\\(([^\\)]+)\\)`)
+  // ## 2015-10-07, Version 4.2.0 'Argon' (LTS), @jasnell
+  // 2015-12-04, Version 0.12.9 (LTS), @rvagg
+  const rxPolicy = new RegExp(`^(## )?\\d{4}-\\d{2}-\\d{2}, Version [^(].*\\(([^\\)]+)\\)`)
 
   return fetchChangelog(version)
     .then(function (section) {
       const matches = rxPolicy.exec(section)
       return matches
-        ? matches[1]
+        ? matches[2]
         : Promise.reject(new Error(`Could not find version policy of ${version} in its changelog`))
     })
 }
@@ -146,9 +157,9 @@ function verifyDownloads (version) {
 }
 
 function findAuthorLogin (version, section) {
-  const rxReleaseAuthor = /^## .*? \([^\)]+\), @(\S+)/g
+  const rxReleaseAuthor = /^(## )?.*? \([^\)]+\), @(\S+)/g
   const matches = rxReleaseAuthor.exec(section)
-  return matches ? matches[1] : Promise.reject(new Error(`Couldn't find @author of ${version} release :(`))
+  return matches ? matches[2] : Promise.reject(new Error(`Couldn't find @author of ${version} release :(`))
 }
 
 function urlOrComingSoon (binary) {
