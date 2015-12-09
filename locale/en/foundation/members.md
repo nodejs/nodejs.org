@@ -71,6 +71,9 @@ To request information on joining the Node.js Foundation, please email
 <a target="_new" class="imagelink" href="//npmjs.org">
   <img alt="npm" class="memberlogo" src="/static/images/foundation/npmLogo.png" />
 </a>
+<a target="_new" class="imagelink" href="//risingstack.com">
+  <img alt="RisingStack" class="memberlogo" src="/static/images/foundation/risingstack_logo.png" />
+</a>
 <a target="_new" class="imagelink" href="http://sap.com">
   <img alt="SAP" class="memberlogo" src="/static/images/foundation/sapLogo.png" />
 </a>
