@@ -83,6 +83,9 @@ To request information on joining the Node.js Foundation, please email
 <a target="_new" class="imagelink" href="//strongloop.com">
   <img alt="StrongLoop" class="memberlogo" src="/static/images/foundation/strongloopLogo.png" />
 </a>
+<a target="_new" class="imagelink" href="//yahoo.com">
+  <img alt="Yahoo!" class="memberlogo" src="/static/images/foundation/yahoo.png" />
+</a>
 <a target="_new" class="imagelink" href="//yld.io">
   <img alt="yld!" class="memberlogo" src="/static/images/foundation/yldLogo2.png" />
 </a>
