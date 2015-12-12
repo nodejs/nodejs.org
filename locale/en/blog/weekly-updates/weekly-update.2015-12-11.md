@@ -11,6 +11,10 @@ layout: blog-post.hbs
 ### Node.js News — December 11st
 Node v5.2.0 (Stable) is released
 
+### Node.js v5.2.0 (Stable) Releases
+
+This week we have one release: [Node.js v5.2.0 (Stable)](https://nodejs.org/en/blog/release/v5.2.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+
 ### Notable changes
 
 * **build**:
