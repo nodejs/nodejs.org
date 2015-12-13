@@ -41,7 +41,7 @@ See https://nodejs.org/en/blog/announcements/apigee-rising-stack-yahoo/ for more
 * Since the independent Node.js Foundation launched earlier this year, development progress continues to accelerate with dramatic increases in contributions to the project.
 * The first Node.js Interactive event unites more than 700 developers, engineers, system architects, DevOps professionals and users representing a wide range of projects, products and companies in Portland, Ore. 
 * Node.js Interactive brings together a broad range of speakers to help experienced and novice Node.js users alike learn tips, best practices, new skills, as well as gain insight into future developments for the technology.
-* The Node.js Foundation announced its first incubation project libuv
+* The Node.js Foundation announced its first incubation project libuv.
 * The project is both critical to Node.js and already widely used, making it a natural fit for the Foundation.
 * Under the Foundation's umbrella, it will receive additional support and mentorship.
 
@@ -50,8 +50,8 @@ See https://nodejs.org/en/blog/announcements/foundation-advances-growth/ for mor
 ### Community Updates
 
 * [Finding a Memory Leak in Node.js](https://blog.risingstack.com/finding-a-memory-leak-in-node-js/), "We compiled a bunch of methods and tools that could help"
-* [Node.js running in the new Airbus A350 inflight servers](http://reaktor.com/blog/aircraft-customer-experience-on-a-new-level/), "We were allowed to run our own node.js-server on the inflight servers of the aircraft."
-* [Automatic cat feeder powered by Node.js](https://github.com/rachelnicole/robokitty), "Is a DIY cat (or dog, or human) feeder controlled over the web."
+* [Node.js running in the new Airbus A350 inflight servers](http://reaktor.com/blog/aircraft-customer-experience-on-a-new-level/), "We were allowed to run our own Node.js-server on the inflight servers of the aircraft."
+* [Automatic cat feeder powered by Node.js](https://github.com/rachelnicole/robokitty), "A DIY cat (or dog, or human) feeder controlled over the web."
 * [Netflix' Node powered interfaces](http://thenewstack.io/netflix-uses-node-js-power-user-interface/), "Shifting its user interfaces to Node.js, Netflix has been able to streamline the development."
 
 If you have spotted or written something about Node.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues/), specifically the Weekly Updates issue.
