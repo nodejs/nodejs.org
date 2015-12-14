@@ -20,42 +20,35 @@
 
 'use strict'
 
-const https = require('https')
 const fs = require('fs')
 const path = require('path')
 const extend = require('util')._extend
 const Handlebars = require('handlebars')
-const url = require('url')
+const request = require('request')
 
 const downloads = require('./helpers/downloads')
 
-function request (uri, method) {
+function sendRequest (uri, method) {
   return new Promise(function (resolve, reject) {
-    // user-agent is required when by api.github.com
-    const opts = extend({
-      method,
-      headers: {
-        'user-agent': 'nodejs.org release blog post script'
+    request({
+      headers: { 'User-Agent': 'nodejs.org release blog post script' },
+      method: method,
+      uri: uri
+    }, function (err, res, body) {
+      if (err) {
+        return reject(new Error(`Error requesting URL ${uri}: ${err.message}`))
       }
-    }, url.parse(uri))
-
-    let data = ''
-
-    https.request(opts, function (res) {
       if (res.statusCode !== 200) {
         return reject(new Error(`Invalid status code (!= 200) while retrieving ${uri}: ${res.statusCode}`))
       }
 
-      res.on('data', function (chunk) { data += chunk })
-      res.on('end', function () { resolve(data) })
-    }).on('error', function (err) {
-      reject(new Error(`Error requesting URL ${uri}: ${err.message}`))
-    }).end()
+      resolve(body)
+    })
   })
 }
 
 function download (url) {
-  return request(url, 'GET')
+  return sendRequest(url, 'GET')
 }
 
 function explicitVersion (version) {
@@ -159,7 +152,7 @@ function findAuthorLogin (version, section) {
 }
 
 function urlOrComingSoon (binary) {
-  return request(binary.url, 'HEAD').then(
+  return sendRequest(binary.url, 'HEAD').then(
     () => `${binary.title}: ${binary.url}`,
     () => `${binary.title}: *Coming soon*`)
 }
