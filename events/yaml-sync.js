@@ -7,6 +7,7 @@ var yaml = require('js-yaml'),
   str = lines.slice(lines.indexOf('---') + 1, lines.indexOf('---', lines.indexOf('---') + 1)).join('\n'),
   store = yaml.safeLoad(str)
 
+
 exports.getRegion = function (region) {
   for (var reg in store.regions) {
     if (store.regions[reg].region === region) return store.regions[reg]
@@ -14,6 +15,22 @@ exports.getRegion = function (region) {
   var reg = {region: region}
   store.regions.push(reg)
   return reg
+}
+
+exports.isSoT = function(region, city) {
+  for (var reg in store.regions) {
+    if (store.regions[reg].region == region) {
+      var meetups = store.regions[reg].meetups
+      for (var i in meetups) {
+        if (meetups[i].city == city) {
+          if (meetups[i].source_of_truth)
+            return true
+          return false
+        }
+      }
+    }
+  }
+  return false
 }
 
 exports.removeEmpty = function (dict) {

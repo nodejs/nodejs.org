@@ -81,7 +81,7 @@ regions:
             photo_id: 93444992
             photo_link: 'http://photos4.meetupstatic.com/photos/member/6/1/a/0/member_93444992.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/1/a/0/thumb_93444992.jpeg'
-        members: 1674
+        members: 1695
         name: AngularJS Madrid
         lat: 40.41999816894531
         who: Desarrolladores
@@ -104,7 +104,7 @@ regions:
             photo_id: 116997332
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/f/f/4/member_116997332.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/d/f/f/4/thumb_116997332.jpeg'
-        members: 306
+        members: 305
         name: Code Craftsmanship
         lat: -33.93000030517578
         who: Craftsmen
@@ -148,7 +148,7 @@ regions:
             photo_id: 92232502
             photo_link: 'http://photos2.meetupstatic.com/photos/member/3/0/d/6/member_92232502.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/3/0/d/6/thumb_92232502.jpeg'
-        members: 1593
+        members: 1626
         name: Node.js Madrid
         lat: 40.41999816894531
         who: asíncronos
@@ -176,7 +176,7 @@ regions:
             photo_id: 139258162
             photo_link: 'http://photos2.meetupstatic.com/photos/member/e/3/3/2/member_139258162.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/e/3/3/2/thumb_139258162.jpeg'
-        members: 261
+        members: 264
         name: Jozi.Node.JS
         lat: -26.190000534057617
         who: Coders
@@ -187,7 +187,7 @@ regions:
         timezone: Europe/Madrid
         created: 1378288829000
         link: 'http://www.meetup.com/AngularJS-Barcelona/'
-        rating: 4.46
+        rating: 4.53
         description: '<p>We love AngularJS, we love the way it helps us build better web applications with less effort and we would love to meet other AngularJS developers in the Barcelona area so that we can discuss our approaches, ways, etc. with them.</p>'
         lon: 2.1700000762939453
         group_photo:
@@ -197,14 +197,14 @@ regions:
           thumb_link: 'http://photos1.meetupstatic.com/photos/event/c/f/a/a/thumb_335273162.jpeg'
         join_mode: open
         organizer:
-          member_id: 14241225
-          name: Jose Raya
+          member_id: 194993837
+          name: BarcelonaJS
           photo:
-            highres_link: 'http://photos2.meetupstatic.com/photos/member/d/6/6/5/highres_12294885.jpeg'
-            photo_id: 12294885
-            photo_link: 'http://photos2.meetupstatic.com/photos/member/d/6/6/5/member_12294885.jpeg'
-            thumb_link: 'http://photos2.meetupstatic.com/photos/member/d/6/6/5/thumb_12294885.jpeg'
-        members: 717
+            highres_link: 'http://photos4.meetupstatic.com/photos/member/3/6/c/1/highres_251054017.jpeg'
+            photo_id: 251054017
+            photo_link: 'http://photos2.meetupstatic.com/photos/member/3/6/c/1/member_251054017.jpeg'
+            thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/6/c/1/thumb_251054017.jpeg'
+        members: 735
         name: AngularJS Barcelona
         lat: 41.400001525878906
         who: angularistas
@@ -226,7 +226,7 @@ regions:
             photo_id: 60306722
             photo_link: 'http://photos4.meetupstatic.com/photos/member/1/a/4/2/member_60306722.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/1/a/4/2/thumb_60306722.jpeg'
-        members: 153
+        members: 173
         name: Web Sol
         lat: 36.720001220703125
         who: Coders
@@ -313,15 +313,7 @@ regions:
           photo_link: 'http://photos4.meetupstatic.com/photos/event/b/8/a/8/600_369167272.jpeg'
           thumb_link: 'http://photos4.meetupstatic.com/photos/event/b/8/a/8/thumb_369167272.jpeg'
         join_mode: open
-        organizer:
-          member_id: 148934722
-          name: Francisco J. Ramos
-          photo:
-            highres_link: 'http://photos3.meetupstatic.com/photos/member/7/8/0/2/highres_200850722.jpeg'
-            photo_id: 200850722
-            photo_link: 'http://photos1.meetupstatic.com/photos/member/7/8/0/2/member_200850722.jpeg'
-            thumb_link: 'http://photos3.meetupstatic.com/photos/member/7/8/0/2/thumb_200850722.jpeg'
-        members: 98
+        members: 101
         name: Bluemix Barcelona
         lat: 41.400001525878906
         who: Bluemixers locos
@@ -344,7 +336,7 @@ regions:
             photo_id: 207174692
             photo_link: 'http://photos4.meetupstatic.com/photos/member/d/5/a/4/member_207174692.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/d/5/a/4/thumb_207174692.jpeg'
-        members: 187
+        members: 189
         name: Cape Town Nodebots
         lat: -33.93000030517578
         who: Nodebots
@@ -372,7 +364,7 @@ regions:
             photo_id: 111769652
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/1/f/4/member_111769652.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/c/1/f/4/thumb_111769652.jpeg'
-        members: 291
+        members: 323
         name: MallorcaJS
         lat: 39.56999969482422
         who: JavaScripters
@@ -399,7 +391,7 @@ regions:
             photo_id: 248916525
             photo_link: 'http://photos2.meetupstatic.com/photos/member/8/e/a/d/member_248916525.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/8/e/a/d/thumb_248916525.jpeg'
-        members: 70
+        members: 75
         name: Nairobi node.js Meetup
         lat: -1.2899999618530273
         who: Node Programmers
@@ -421,7 +413,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 432
+        members: 461
         name: Meteor Egypt
         lat: 30.059999465942383
         who: Meteorites
@@ -444,7 +436,7 @@ regions:
             photo_id: 241429789
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/2/7/d/member_241429789.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/c/2/7/d/thumb_241429789.jpeg'
-        members: 295
+        members: 296
         name: Redradix Weekends
         lat: 40.41999816894531
         who: Members
@@ -500,12 +492,6 @@ regions:
 
 
 
-
-
-
-
-
-
           </p>
         lon: 2.1700000762939453
         group_photo:
@@ -522,7 +508,7 @@ regions:
             photo_id: 246493081
             photo_link: 'http://photos3.meetupstatic.com/photos/member/3/3/1/9/member_246493081.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/3/1/9/thumb_246493081.jpeg'
-        members: 211
+        members: 212
         name: Meteor Barcelona
         lat: 41.400001525878906
         who: Meteorites
@@ -549,7 +535,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 593
+        members: 615
         name: Meteor Casablanca
         lat: 33.529998779296875
         who: Meteorites
@@ -635,7 +621,7 @@ regions:
             photo_id: 251032861
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/e/7/d/member_251032861.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/c/e/7/d/thumb_251032861.jpeg'
-        members: 339
+        members: 348
         name: Nairobi JavaScript Community
         lat: -1.2899999618530273
         who: Community Members
@@ -663,7 +649,7 @@ regions:
             photo_id: 208895942
             photo_link: 'http://photos4.meetupstatic.com/photos/member/8/c/6/6/member_208895942.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/8/c/6/6/thumb_208895942.jpeg'
-        members: 317
+        members: 330
         name: ValenciaJS
         lat: 39.47999954223633
         who: Javascripters
@@ -685,7 +671,7 @@ regions:
             photo_id: 244943174
             photo_link: 'http://photos2.meetupstatic.com/photos/member/5/a/8/6/member_244943174.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/5/a/8/6/thumb_244943174.jpeg'
-        members: 39
+        members: 42
         name: Johannesburg ReactJS Meetup
         lat: -26.190000534057617
         who: Engineers
@@ -696,18 +682,22 @@ regions:
         timezone: Europe/Madrid
         created: 1428321061000
         link: 'http://www.meetup.com/AngularJS-Beers/'
-        rating: 4.7
+        rating: 4.66
         description: >-
           <p><img
           src="http://photos2.meetupstatic.com/photos/event/7/8/e/8/600_444510952.jpeg"></p>
 
-          <p>AngularJS &amp; Beers. Non-profit event to socialise with AngularJS
-          people.&nbsp; <br>Express your motivations, share your ideas and play
-          together creating awesome things in team.</p>
+          <p><a
+          href="http://lameva.barcelona.cat/barcelonacultura/en/descobreix/bcn-innovacio-angular-beers-eng#.Vl4b4N-rRE4">AngularJS
+          &amp; Beers. Non-profit event to socialise with AngularJS
+          people.</a>&nbsp; <br>Express your motivations, share your ideas and
+          play together creating awesome things in team.</p>
 
           <p>We like to hack, learn, share and&nbsp;having fun in group while we
           are using AngularJS.&nbsp;<span>All experience levels and backgrounds
           are welcome. We love get action doing things. Join us!</span></p>
+
+          <p><span><br></span></p>
         lon: 2.1700000762939453
         group_photo:
           highres_link: 'http://photos3.meetupstatic.com/photos/event/5/f/5/4/highres_441444404.jpeg'
@@ -723,7 +713,7 @@ regions:
             photo_id: 187889662
             photo_link: 'http://photos2.meetupstatic.com/photos/member/7/3/d/e/member_187889662.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/7/3/d/e/thumb_187889662.jpeg'
-        members: 660
+        members: 754
         name: 'AngularJS & Beers'
         lat: 41.400001525878906
         who: Members
@@ -747,11 +737,11 @@ regions:
           member_id: 151620792
           name: Beltran
           photo:
-            highres_link: 'http://photos1.meetupstatic.com/photos/member/1/7/c/2/highres_236766082.jpeg'
-            photo_id: 236766082
-            photo_link: 'http://photos3.meetupstatic.com/photos/member/1/7/c/2/member_236766082.jpeg'
-            thumb_link: 'http://photos1.meetupstatic.com/photos/member/1/7/c/2/thumb_236766082.jpeg'
-        members: 341
+            highres_link: 'http://photos3.meetupstatic.com/photos/member/b/6/7/5/highres_251986709.jpeg'
+            photo_id: 251986709
+            photo_link: 'http://photos3.meetupstatic.com/photos/member/b/6/7/5/member_251986709.jpeg'
+            thumb_link: 'http://photos3.meetupstatic.com/photos/member/b/6/7/5/thumb_251986709.jpeg'
+        members: 357
         name: Bitnami Sevilla
         lat: 37.400001525878906
         who: bitcoders
@@ -779,7 +769,7 @@ regions:
             photo_id: 246289149
             photo_link: 'http://photos1.meetupstatic.com/photos/member/b/f/f/d/member_246289149.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/b/f/f/d/thumb_246289149.jpeg'
-        members: 209
+        members: 223
         name: ReactJS Barcelona
         lat: 41.400001525878906
         who: Reactors
@@ -828,7 +818,7 @@ regions:
             photo_id: 46492072
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/b/6/8/member_46492072.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/b/6/8/thumb_46492072.jpeg'
-        members: 30
+        members: 31
         name: Front-end Mauritius
         lat: -20.170000076293945
         who: front-end
@@ -882,7 +872,7 @@ regions:
             photo_id: 245475464
             photo_link: 'http://photos3.meetupstatic.com/photos/member/3/c/6/8/member_245475464.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/c/6/8/thumb_245475464.jpeg'
-        members: 84
+        members: 94
         name: Canarias JavaScript Community
         lat: 28.100000381469727
         who: Hackers
@@ -959,7 +949,7 @@ regions:
             photo_id: 245425200
             photo_link: 'http://photos3.meetupstatic.com/photos/member/6/2/7/0/member_245425200.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/6/2/7/0/thumb_245425200.jpeg'
-        members: 34
+        members: 43
         name: 'LPA MEAN (MongoDB, Express, AngularJS, Node.js) & Phonegap'
         lat: 28.100000381469727
         who: Mongo Angular Node Developers
@@ -986,7 +976,7 @@ regions:
             photo_id: 247455480
             photo_link: 'http://photos4.meetupstatic.com/photos/member/3/c/7/8/member_247455480.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/c/7/8/thumb_247455480.jpeg'
-        members: 5
+        members: 8
         name: Angular Hispano
         lat: 42.470001220703125
         who: angularistas
@@ -1008,7 +998,7 @@ regions:
             photo_id: 250090629
             photo_link: 'http://photos3.meetupstatic.com/photos/member/2/9/8/5/member_250090629.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/2/9/8/5/thumb_250090629.jpeg'
-        members: 2
+        members: 52
         name: Tecnologías para la Transformación Digital
         lat: 40.41999816894531
         who: Miembros
@@ -1030,29 +1020,57 @@ regions:
             photo_id: 251081970
             photo_link: 'http://photos3.meetupstatic.com/photos/member/a/3/f/2/member_251081970.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/a/3/f/2/thumb_251081970.jpeg'
-        members: 3
+        members: 141
         name: React Barcelona
         lat: 41.400001525878906
         who: React Fans
+      - utc_offset: 3600000
+        country: ES
+        visibility: public
+        city: Barcelona
+        timezone: Europe/Madrid
+        created: 1417712144000
+        link: 'http://www.meetup.com/BarcelonaJS/'
+        rating: 4.33
+        description: '<p>Barcelona.JS is a usergroup focused on JavaScript and related topics. We meet regularly at the Mobile World Centre, C/ de Fontanella, 2 in Barcelona.</p>'
+        lon: 2.1700000762939453
+        group_photo:
+          highres_link: 'http://photos1.meetupstatic.com/photos/event/7/c/b/1/highres_432151921.jpeg'
+          photo_id: 432151921
+          photo_link: 'http://photos1.meetupstatic.com/photos/event/7/c/b/1/600_432151921.jpeg'
+          thumb_link: 'http://photos1.meetupstatic.com/photos/event/7/c/b/1/thumb_432151921.jpeg'
+        join_mode: open
+        organizer:
+          member_id: 194993837
+          name: BarcelonaJS
+          photo:
+            highres_link: 'http://photos4.meetupstatic.com/photos/member/3/6/c/1/highres_251054017.jpeg'
+            photo_id: 251054017
+            photo_link: 'http://photos2.meetupstatic.com/photos/member/3/6/c/1/member_251054017.jpeg'
+            thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/6/c/1/thumb_251054017.jpeg'
+        members: 1095
+        name: BarcelonaJS
+        lat: 41.400001525878906
+        who: JavaScripters
   - region: Asia
     conferences:
-      - name: 'NodeFest (東京Node学園祭)'
+      - name: NodeFest (東京Node学園祭)
         desc: NodeFest is a yearly conference in Tokyo organized by the Node.js Japan user group.
-        link: http://nodefest.jp/2015/
+        link: 'http://nodefest.jp/2015/'
         twitter: nodefest
         lat: 35.6580415
         lon: 139.6960736
-        location: '〒150-0043 東京都渋谷区道玄坂1丁目12番1号 渋谷マークシティ ウエスト13階'
+        location: 〒150-0043 東京都渋谷区道玄坂1丁目12番1号 渋谷マークシティ ウエスト13階
       - name: JSConf.asia
         location: 'reddot design museum, Singapore, Singapore'
-        link: http://jsconf.asia
-        desc: JSConf.Asia brings Southeast Asia's open web developer community together to exchange, to learn and entertain.
+        link: 'http://jsconf.asia'
+        desc: "JSConf.Asia brings Southeast Asia's open web developer community together to exchange, to learn and entertain."
         lat: 1.2782037
         lon: 103.843435
         twitter: jsconfasia
       - name: JSConf.cn
         location: China
-        link: http://jsconf.cn/
+        link: 'http://jsconf.cn/'
         desc: Yearly JavaScript community conference.
         lat: 22.5341176
         lon: 113.9064642
@@ -1367,10 +1385,10 @@ regions:
           member_id: 169455062
           name: Eureka
           photo:
-            highres_link: 'http://photos1.meetupstatic.com/photos/member/a/1/b/a/highres_237161402.jpeg'
-            photo_id: 237161402
-            photo_link: 'http://photos3.meetupstatic.com/photos/member/a/1/b/a/member_237161402.jpeg'
-            thumb_link: 'http://photos1.meetupstatic.com/photos/member/a/1/b/a/thumb_237161402.jpeg'
+            highres_link: 'http://photos3.meetupstatic.com/photos/member/3/e/f/1/highres_251056113.jpeg'
+            photo_id: 251056113
+            photo_link: 'http://photos1.meetupstatic.com/photos/member/3/e/f/1/member_251056113.jpeg'
+            thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/e/f/1/thumb_251056113.jpeg'
         members: 477
         name: Mobile Application Innovation
         lat: 22.270000457763672
@@ -1391,10 +1409,7 @@ regions:
           photo_link: 'http://photos4.meetupstatic.com/photos/event/c/c/5/8/600_374632312.jpeg'
           thumb_link: 'http://photos2.meetupstatic.com/photos/event/c/c/5/8/thumb_374632312.jpeg'
         join_mode: open
-        organizer:
-          member_id: 27593642
-          name: Ruben
-        members: 1018
+        members: 1023
         name: PuneJS
         lat: 18.530000686645508
         who: Javascripters
@@ -1433,14 +1448,14 @@ regions:
           thumb_link: 'http://photos3.meetupstatic.com/photos/event/a/e/f/7/thumb_441824791.jpeg'
         join_mode: open
         organizer:
-          member_id: 34039462
-          name: Mayank Srivastava
+          member_id: 14196782
+          name: Ashish
           photo:
-            highres_link: 'http://photos4.meetupstatic.com/photos/member/7/6/0/4/highres_51570212.jpeg'
-            photo_id: 51570212
-            photo_link: 'http://photos4.meetupstatic.com/photos/member/7/6/0/4/member_51570212.jpeg'
-            thumb_link: 'http://photos4.meetupstatic.com/photos/member/7/6/0/4/thumb_51570212.jpeg'
-        members: 2225
+            highres_link: 'http://photos2.meetupstatic.com/photos/member/c/d/1/f/highres_252112511.jpeg'
+            photo_id: 252112511
+            photo_link: 'http://photos4.meetupstatic.com/photos/member/c/d/1/f/member_252112511.jpeg'
+            thumb_link: 'http://photos2.meetupstatic.com/photos/member/c/d/1/f/thumb_252112511.jpeg'
+        members: 2287
         name: EXPERTALKS
         lat: 18.530000686645508
         who: Tech Enthusiasts
@@ -1467,7 +1482,7 @@ regions:
             photo_id: 164628662
             photo_link: 'http://photos3.meetupstatic.com/photos/member/b/e/1/6/member_164628662.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/b/e/1/6/thumb_164628662.jpeg'
-        members: 1477
+        members: 1525
         name: Node.js Dilli
         lat: 28.670000076293945
         who: Members
@@ -1494,7 +1509,7 @@ regions:
             photo_id: 229872672
             photo_link: 'http://photos3.meetupstatic.com/photos/member/3/1/8/0/member_229872672.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/1/8/0/thumb_229872672.jpeg'
-        members: 172
+        members: 175
         name: 'Web Design & Development'
         lat: 39.93000030517578
         who: Developers
@@ -1529,7 +1544,7 @@ regions:
             photo_id: 242296444
             photo_link: 'http://photos3.meetupstatic.com/photos/member/4/0/3/c/member_242296444.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/4/0/3/c/thumb_242296444.jpeg'
-        members: 537
+        members: 615
         name: Hyderabad Javascript Group
         lat: 17.399999618530273
         who: _javascripters
@@ -1556,7 +1571,7 @@ regions:
             photo_id: 80469032
             photo_link: 'http://photos3.meetupstatic.com/photos/member/2/3/4/8/member_80469032.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/2/3/4/8/thumb_80469032.jpeg'
-        members: 1062
+        members: 1075
         name: NodeJS Israel
         lat: 32.16999816894531
         who: Noders
@@ -1567,7 +1582,7 @@ regions:
         timezone: Asia/Saigon
         created: 1358317842000
         link: 'http://www.meetup.com/JavaScript-Ho-Chi-Minh-City/'
-        rating: 4.33
+        rating: 4.35
         description: >-
           <p><span style="color : #0000ff">You like Javascript, Ember.js,
           Angular.js, Node.js, Vert.x, etc.?</span></p>
@@ -1612,7 +1627,7 @@ regions:
             photo_id: 70064102
             photo_link: 'http://photos4.meetupstatic.com/photos/member/a/c/4/6/member_70064102.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/a/c/4/6/thumb_70064102.jpeg'
-        members: 623
+        members: 651
         name: JavaScript Ho Chi Minh City
         lat: 10.779999732971191
         who: Javascript Lovers
@@ -1639,7 +1654,7 @@ regions:
             photo_id: 93399112
             photo_link: 'http://photos3.meetupstatic.com/photos/member/9/8/c/8/member_93399112.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/9/8/c/8/thumb_93399112.jpeg'
-        members: 92
+        members: 98
         name: HTML5Rocks@Beijing
         lat: 39.93000030517578
         who: HTML5Rockers@Beijing
@@ -1667,7 +1682,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 206
+        members: 207
         name: Meteor Moscow
         lat: 55.75
         who: Meteorites
@@ -1695,7 +1710,7 @@ regions:
             photo_id: 106429922
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/3/0/2/member_106429922.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/c/3/0/2/thumb_106429922.jpeg'
-        members: 726
+        members: 724
         name: JavaScript Ninjas @ Bangalore
         lat: 12.970000267028809
         who: JS Ninjas
@@ -1723,7 +1738,7 @@ regions:
             photo_id: 106442202
             photo_link: 'http://photos2.meetupstatic.com/photos/member/8/9/a/member_106442202.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/8/9/a/thumb_106442202.jpeg'
-        members: 754
+        members: 759
         name: Node.js Explorers
         lat: 12.970000267028809
         who: Members
@@ -1734,7 +1749,7 @@ regions:
         timezone: Asia/Calcutta
         created: 1364470071000
         link: 'http://www.meetup.com/JSChannel-NCR/'
-        rating: 4.76
+        rating: 4.71
         description: '<p>This is a group for those who like to explore the javascript world, brainstorm different ideas with other js enthusiasts. We will sit together after office hours at coffee shop, in someones office or even it could be on a park bench :) and discuss trends, brainstorm ideas or collectively solve problems.</p>'
         lon: 77.20999908447266
         group_photo:
@@ -1751,7 +1766,7 @@ regions:
             photo_id: 44634112
             photo_link: 'http://photos2.meetupstatic.com/photos/member/d/3/6/0/member_44634112.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/d/3/6/0/thumb_44634112.jpeg'
-        members: 697
+        members: 717
         name: JSChannel NCR
         lat: 28.670000076293945
         who: jslovers
@@ -1778,7 +1793,7 @@ regions:
             photo_id: 105523222
             photo_link: 'http://photos3.meetupstatic.com/photos/member/a/8/d/6/member_105523222.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/a/8/d/6/thumb_105523222.jpeg'
-        members: 694
+        members: 718
         name: 'HTML 5 & JavaScript Development'
         lat: 32.09000015258789
         who: JS Developers
@@ -1814,7 +1829,7 @@ regions:
             photo_id: 90472502
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/d/1/6/member_90472502.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/d/1/6/thumb_90472502.jpeg'
-        members: 618
+        members: 623
         name: Taipei Javascript Enthusiasts
         lat: 25.020000457763672
         who: Hackers
@@ -1842,7 +1857,7 @@ regions:
             photo_id: 249521046
             photo_link: 'http://photos1.meetupstatic.com/photos/member/a/0/5/6/member_249521046.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/a/0/5/6/thumb_249521046.jpeg'
-        members: 707
+        members: 709
         name: JavaScript Explorers
         lat: 12.970000267028809
         who: Explorers
@@ -1853,7 +1868,7 @@ regions:
         timezone: Asia/Bangkok
         created: 1371374497000
         link: 'http://www.meetup.com/BKK-Developers-and-Tech-lovers/'
-        rating: 4.58
+        rating: 4.52
         description: >-
           <p>A group for anyone interested in Development. It can be System
           Development, Web Development, Mobile Development or System
@@ -1913,7 +1928,7 @@ regions:
             photo_id: 80042732
             photo_link: 'http://photos2.meetupstatic.com/photos/member/a/a/c/member_80042732.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/a/c/thumb_80042732.jpeg'
-        members: 802
+        members: 831
         name: Dev Meetups hosted by HotelQuickly Engineers
         lat: 13.729999542236328
         who: Developers
@@ -1948,7 +1963,7 @@ regions:
             photo_id: 85437522
             photo_link: 'http://photos1.meetupstatic.com/photos/member/e/0/b/2/member_85437522.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/e/0/b/2/thumb_85437522.jpeg'
-        members: 479
+        members: 482
         name: Bangkok Node.js
         lat: 13.729999542236328
         who: Members
@@ -2037,7 +2052,7 @@ regions:
             photo_id: 172594242
             photo_link: 'http://photos4.meetupstatic.com/photos/member/8/5/c/2/member_172594242.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/8/5/c/2/thumb_172594242.jpeg'
-        members: 540
+        members: 557
         name: Women Who Code Bangalore
         lat: 12.970000267028809
         who: Coders
@@ -2048,7 +2063,7 @@ regions:
         timezone: Asia/Colombo
         created: 1373701222000
         link: 'http://www.meetup.com/Colombo-JS-Meetup/'
-        rating: 4.58
+        rating: 4.63
         description: '<p>This group consist of enthusiastic JavaScript developers , we would talk about front end developments , tools, libraries , frameworks, front end testing , node js , meteor and many more. As we know JS is the future so why not learn about it. We hope to have interactive, fun and educational meetups.</p>'
         lon: 79.8499984741211
         group_photo:
@@ -2064,7 +2079,7 @@ regions:
             photo_id: 92403922
             photo_link: 'http://photos1.meetupstatic.com/photos/member/f/5/2/member_92403922.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/f/5/2/thumb_92403922.jpeg'
-        members: 929
+        members: 980
         name: Colombo JS Meetup
         lat: 6.929999828338623
         who: developers
@@ -2108,7 +2123,7 @@ regions:
             photo_id: 123031192
             photo_link: 'http://photos2.meetupstatic.com/photos/member/7/9/d/8/member_123031192.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/7/9/d/8/thumb_123031192.jpeg'
-        members: 1797
+        members: 1822
         name: JSChannel Bengaluru
         lat: 12.970000267028809
         who: Javascripters
@@ -2136,7 +2151,7 @@ regions:
             photo_id: 195500892
             photo_link: 'http://photos3.meetupstatic.com/photos/member/5/1/9/c/member_195500892.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/5/1/9/c/thumb_195500892.jpeg'
-        members: 615
+        members: 623
         name: 'Jnaapti- MEAN Stack (MongoDB, ExpressJS, AngularJS, NodeJS)'
         lat: 12.970000267028809
         who: MEAN Geeks
@@ -2166,7 +2181,7 @@ regions:
             photo_id: 120512372
             photo_link: 'http://photos2.meetupstatic.com/photos/member/7/e/7/4/member_120512372.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/7/e/7/4/thumb_120512372.jpeg'
-        members: 381
+        members: 386
         name: MoscowJS Meetup
         lat: 55.75
         who: Javascript Ninjas
@@ -2187,7 +2202,7 @@ regions:
             photo_id: 111558152
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/6/e/8/member_111558152.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/4/6/e/8/thumb_111558152.jpeg'
-        members: 51
+        members: 50
         name: Bangkok Javascript
         lat: 13.729999542236328
         who: Hackers
@@ -2215,7 +2230,7 @@ regions:
             photo_id: 44634112
             photo_link: 'http://photos2.meetupstatic.com/photos/member/d/3/6/0/member_44634112.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/d/3/6/0/thumb_44634112.jpeg'
-        members: 231
+        members: 236
         name: JSChannel Mumbai
         lat: 18.959999084472656
         who: jslovers
@@ -2242,7 +2257,7 @@ regions:
             photo_id: 69098182
             photo_link: 'http://photos3.meetupstatic.com/photos/member/9/5/2/6/member_69098182.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/9/5/2/6/thumb_69098182.jpeg'
-        members: 396
+        members: 412
         name: Manila AngularJS Developers (ngManila)
         lat: 14.619999885559082
         who: Members
@@ -2254,13 +2269,18 @@ regions:
         created: 1384157718000
         link: 'http://www.meetup.com/JakartaJS/'
         rating: 4.89
-        description: "<p>Come and meet other developers interested in the JavaScript and it's library in the Greater Jakarta area.</p>\n<p>Talks are normally held on the 2nd or 3rd Tuesday of the months.</p>\n<p><span>twitter:\_@JakartaJS and we use the hashtag\_#jakartajs</span></p>"
+        description: >-
+          <p>Come and meet other developers interested in the JavaScript and it's
+          library in the Greater Jakarta area.</p>
+
+          <p><span>Twitter:&nbsp;@JakartaJS and we use the
+          hashtag&nbsp;#jakartajs</span></p>
         lon: 106.83000183105469
         group_photo:
-          highres_link: 'http://photos1.meetupstatic.com/photos/event/d/9/4/6/highres_311335622.jpeg'
-          photo_id: 311335622
-          photo_link: 'http://photos1.meetupstatic.com/photos/event/d/9/4/6/600_311335622.jpeg'
-          thumb_link: 'http://photos1.meetupstatic.com/photos/event/d/9/4/6/thumb_311335622.jpeg'
+          highres_link: 'http://photos2.meetupstatic.com/photos/event/3/0/4/f/highres_444672367.jpeg'
+          photo_id: 444672367
+          photo_link: 'http://photos4.meetupstatic.com/photos/event/3/0/4/f/600_444672367.jpeg'
+          thumb_link: 'http://photos4.meetupstatic.com/photos/event/3/0/4/f/thumb_444672367.jpeg'
         join_mode: open
         organizer:
           member_id: 91748212
@@ -2270,7 +2290,7 @@ regions:
             photo_id: 251410945
             photo_link: 'http://photos4.meetupstatic.com/photos/member/2/a/c/1/member_251410945.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/2/a/c/1/thumb_251410945.jpeg'
-        members: 701
+        members: 743
         name: Jakarta Javascript User Group
         lat: -6.179999828338623
         who: JavaScript Ninja
@@ -2319,7 +2339,7 @@ regions:
             photo_id: 164337512
             photo_link: 'http://photos4.meetupstatic.com/photos/member/e/0/a/8/member_164337512.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/e/0/a/8/thumb_164337512.jpeg'
-        members: 684
+        members: 681
         name: Hackademy
         lat: 32.06999969482422
         who: Students
@@ -2346,7 +2366,7 @@ regions:
             photo_id: 166794372
             photo_link: 'http://photos3.meetupstatic.com/photos/member/d/4/6/4/member_166794372.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/d/4/6/4/thumb_166794372.jpeg'
-        members: 85
+        members: 91
         name: MEAN Group Gurgaon
         lat: 28.469999313354492
         who: MEAN Stackers
@@ -2384,7 +2404,7 @@ regions:
             photo_id: 164628662
             photo_link: 'http://photos3.meetupstatic.com/photos/member/b/e/1/6/member_164628662.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/b/e/1/6/thumb_164628662.jpeg'
-        members: 116
+        members: 118
         name: Framework Architects
         lat: 28.670000076293945
         who: Framework Architects
@@ -2417,7 +2437,7 @@ regions:
             photo_id: 172415742
             photo_link: 'http://photos1.meetupstatic.com/photos/member/8/b/9/e/member_172415742.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/8/b/9/e/thumb_172415742.jpeg'
-        members: 1549
+        members: 1561
         name: AngularJS Bangalore
         lat: 12.970000267028809
         who: Anglars
@@ -2444,7 +2464,7 @@ regions:
             photo_id: 177079192
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/a/f/8/member_177079192.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/4/a/f/8/thumb_177079192.jpeg'
-        members: 111
+        members: 110
         name: Web Developers India
         lat: 12.970000267028809
         who: Web Hackers
@@ -2455,7 +2475,7 @@ regions:
         timezone: Asia/Tokyo
         created: 1392716245000
         link: 'http://www.meetup.com/i-teach-you-programming-so-you-teach-me-english/'
-        rating: 4.69
+        rating: 4.7
         description: "<p>〜 In return for learning programming, please teach me English 〜\_</p>\n<p><br>\n\n</p>\n<p><b>I think it would be good if we could form a group of these people\_</b></p>\n<p>• People interested in learning programming or design that can also speak English.\_</p>\n<p>•\_<span>Designers or Programmers that want to learn English\_</span><br>\n\n</p>\n<p><br>\n\n<br>\n\n <b>Things that I can teach</b></p>\n<p><span>my specialty is web based programming:\_</span></p>\n<p><span>Front-end(HTML/CSS,JavaScript,Flash)\_</span></p>\n<p><span>Back-end(Node.js,PHP,[Ruby, Python])\_</span></p>\n<p><span>I also have some skills in animation and 3D\_</span></p>\n<p><span>Also I'm writing a book on jQuery,\_</span></p>\n<p>and think I would be able to do a reasonable job teaching that.\_</p>\n<p>If our programmer and designer members increase\_</p>\n<p>we can also increase what we are able to teach\_<br>\n\n<br>\n\n</p>\n<p>translate by\_Lochran Huck</p>\n<p><br>\n\n</p>\n<p>〜 プログラミング教えるので、英語教えてください 〜</p>\n<p><br>\n\n</p>\n<p><b>こんな人たちがあつまるといいなぁ</b></p>\n<p>•\_プログラムやデザインを勉強したい英語ができる人</p>\n<p><span>•\_英語を勉強したいプログラマや</span><span>デザイナ</span></p>\n<p><br>\n\n</p>\n<p><b>教えられる事</b></p>\n<p>自分が得意としているのはｗeb系のプログラムで、</p>\n<p>Front-end(HTML/CSS,JavaScript,Flash)も、</p>\n<p>Back-end(Node.js,PHP,[Ruby, Python])もできます。</p>\n<p>アニメーションや3Dなんかもできます。</p>\n<p><span>なにげにjQueryの本とか執筆しているので、</span></p>\n<p><span>そこそこ教えることができると思います。</span></p>\n<p><span>プログラマやデザイナのメンバーが増えたら、</span></p>\n<p><span>教えられる事の項目は増やしていきます。</span></p>\n<p><span><br>\n\n</span></p>\n<p>Lochran Huckさんが翻訳してくれました。<br>\n\n</p>\n<p>ありがとうございます。</p>"
         lon: 139.77000427246094
         join_mode: open
@@ -2467,7 +2487,7 @@ regions:
             photo_id: 178353552
             photo_link: 'http://photos3.meetupstatic.com/photos/member/8/3/1/0/member_178353552.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/8/3/1/0/thumb_178353552.jpeg'
-        members: 530
+        members: 545
         name: 'I Teach You Programming, So You Teach Me English!'
         lat: 35.66999816894531
         who: Members
@@ -2478,7 +2498,7 @@ regions:
         timezone: Asia/Shanghai
         created: 1393432102000
         link: 'http://www.meetup.com/hongkongjs/'
-        rating: 4.72
+        rating: 4.74
         description: "<p>Welcome to Hong Kong JavaScript and Node.js! Join us to share ideas, discuss trends, and assess the future of the ever ubiquitous language. Upcoming topics include Introduction to Node.js, Meteor, Client-Side Frameworks, and\_ECMAScript 6.</p>"
         lon: 114.13999938964844
         group_photo:
@@ -2495,7 +2515,7 @@ regions:
             photo_id: 2650242
             photo_link: 'http://photos1.meetupstatic.com/photos/member/2/8/0/2/member_2650242.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/2/8/0/2/thumb_2650242.jpeg'
-        members: 820
+        members: 847
         name: Hong Kong JavaScript and Node.js
         lat: 22.270000457763672
         who: Developers
@@ -2518,7 +2538,7 @@ regions:
             photo_id: 181301562
             photo_link: 'http://photos4.meetupstatic.com/photos/member/a/2/5/a/member_181301562.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/a/2/5/a/thumb_181301562.jpeg'
-        members: 735
+        members: 747
         name: Mumbai Technology Meetup
         lat: 18.959999084472656
         who: Mumbai Tech Enthusiasts
@@ -2545,7 +2565,7 @@ regions:
             photo_id: 184511172
             photo_link: 'http://photos3.meetupstatic.com/photos/member/2/b/a/4/member_184511172.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/2/b/a/4/thumb_184511172.jpeg'
-        members: 35
+        members: 37
         name: Hyderabad Couchbase Community
         lat: 17.399999618530273
         who: Seekers
@@ -2556,8 +2576,8 @@ regions:
         timezone: Asia/Shanghai
         created: 1396077506000
         link: 'http://www.meetup.com/Shanghai-JavaScript-Meetup/'
-        rating: 4.83
-        description: '<p>The purpose of these meetup group is to share knowledge in the area of javascript development. Topics will be recently launched libraries and the presentation of personal projects. There is also plenty room for discussion and questions regarding best practices, design pattern and more...</p>'
+        rating: 4.5
+        description: '<p>The Shanghai JavaScript Meetup provides a space for JavaScript enthusiasts to share and develop their skills within the JavaScript community. We welcome contributors of all levels to share their recent work with the community through presentations or shorter lightning talks at each talk/networking event. This community is open to everyone interested in developing the JavaScript community in Shanghai.&nbsp;</p>'
         lon: 121.47000122070312
         group_photo:
           highres_link: 'http://photos4.meetupstatic.com/photos/event/a/8/9/a/highres_420763162.jpeg'
@@ -2573,10 +2593,10 @@ regions:
             photo_id: 197030842
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/6/9/a/member_197030842.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/6/9/a/thumb_197030842.jpeg'
-        members: 558
+        members: 593
         name: Shanghai JavaScript Meetup
         lat: 31.229999542236328
-        who: JS-Ninjas
+        who: JS Ninjas
       - utc_offset: 19800000
         country: IN
         visibility: public
@@ -2601,7 +2621,7 @@ regions:
             photo_id: 188508062
             photo_link: 'http://photos1.meetupstatic.com/photos/member/b/b/b/e/member_188508062.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/b/b/b/e/thumb_188508062.jpeg'
-        members: 221
+        members: 231
         name: Chandigarh Nodejs Javascripters
         lat: 30.75
         who: Scripters
@@ -2620,11 +2640,11 @@ regions:
           member_id: 113338572
           name: sudheer keesara
           photo:
-            highres_link: 'http://photos1.meetupstatic.com/photos/member/5/8/9/a/highres_168382682.jpeg'
-            photo_id: 168382682
-            photo_link: 'http://photos3.meetupstatic.com/photos/member/5/8/9/a/member_168382682.jpeg'
-            thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/8/9/a/thumb_168382682.jpeg'
-        members: 411
+            highres_link: 'http://photos3.meetupstatic.com/photos/member/8/d/b/6/highres_252036278.jpeg'
+            photo_id: 252036278
+            photo_link: 'http://photos3.meetupstatic.com/photos/member/8/d/b/6/member_252036278.jpeg'
+            thumb_link: 'http://photos3.meetupstatic.com/photos/member/8/d/b/6/thumb_252036278.jpeg'
+        members: 410
         name: Hyderabad JavaScript Meetup
         lat: 17.399999618530273
         who: JavaScripters
@@ -2672,7 +2692,7 @@ regions:
             photo_id: 199322032
             photo_link: 'http://photos1.meetupstatic.com/photos/member/7/f/0/member_199322032.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/7/f/0/thumb_199322032.jpeg'
-        members: 108
+        members: 109
         name: Free Software Promoters Network - Jnaapti
         lat: 12.970000267028809
         who: 'Virtual Learners!'
@@ -2694,7 +2714,7 @@ regions:
             photo_id: 134414382
             photo_link: 'http://photos4.meetupstatic.com/photos/member/3/8/2/e/member_134414382.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/3/8/2/e/thumb_134414382.jpeg'
-        members: 122
+        members: 126
         name: Mumbai Node.js Meetup
         lat: 18.959999084472656
         who: Nodesters
@@ -2710,7 +2730,7 @@ regions:
         organizer:
           member_id: 148948872
           name: Akanksha
-        members: 73
+        members: 75
         name: Bangalore AngularJS Meetup
         lat: 12.970000267028809
         who: Members
@@ -2780,7 +2800,7 @@ regions:
             photo_id: 170275882
             photo_link: 'http://photos2.meetupstatic.com/photos/member/d/a/4/a/member_170275882.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/d/a/4/a/thumb_170275882.jpeg'
-        members: 162
+        members: 161
         name: Supersonic developers
         lat: 32.06999969482422
         who: Developer
@@ -2791,7 +2811,7 @@ regions:
         timezone: Asia/Calcutta
         created: 1402900235000
         link: 'http://www.meetup.com/Ahmedabad-AngularJS/'
-        rating: 4.69
+        rating: 4.75
         description: 'This group is created to spread awareness about AnuglarJS, educating UI/UX developers, Web Developers to leverage the power of AngularJS in building marvellous web applications. Any one interested in this platform can join the group.'
         lon: 72.58000183105469
         join_mode: open
@@ -2802,7 +2822,7 @@ regions:
             photo_id: 204767762
             photo_link: 'http://photos3.meetupstatic.com/photos/member/b/a/9/2/member_204767762.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/b/a/9/2/thumb_204767762.jpeg'
-        members: 603
+        members: 665
         name: Ahmedabad AngularJS
         lat: 23.030000686645508
         who: Members
@@ -2815,24 +2835,50 @@ regions:
         link: 'http://www.meetup.com/startupcodecamp/'
         rating: 4.88
         description: >-
-          <p>Startup Code Camp is free for everyone every Thursday, no prior
-          coding experience required. Learn 6 projects to be fullstack developer
-          and startup concept with investor networks</p>
+          <p>Startup Code Camp
+          是免費的新創與程式教育，無需任何程式背景，透過<b>8</b>周學習<b>4</b>個全端網站專案。</p>
 
-          <p>每週四 Startup Code Camp
-          是免費的新創與程式教育，無需任何程式背景，透過6﹣8個專案學習全端網站工程。并學習實作新創商業計劃，實作自己的想法，並與國際新創投資人連接。</p>
+          <p>學習實作新創商業計劃，最後實作自己的想法，與國際新創投資人或工作機會連接。新成員或還不懂javascript的初學者也請直接從Projec
+           1 開始看，第一次請不需要跟著練習，第二次在開始實作練習coding。</p>
 
-          <p> <br></p>
+          <p>Meeting Room 310, or Lounge Bar&nbsp;</p>
 
-          <p><b>Startup Code Camp Fullstack Course :&nbsp;</b></p>
+          <p>Startup Code Camp is free for everyone, no prior coding experience
+          required. Learn <b>4 projects in&nbsp;8 Weeks</b>&nbsp;to
+          be&nbsp;a&nbsp;fullstack developer and&nbsp; entrepreneur with investor
+          networks or job opportunity.&nbsp;</p>
 
-          <p><a
-          href="https://hackpad.com/Startup-Code-Camp-fullstack-entrepreneur-51fDlZLdbyo">https://hackpad.com/Startup-Code-Camp-fullstack-entrepreneur-51fDlZLdbyo</a>
-          <br></p>
+          <p>for all beginners and new members, even if you don't know any
+          javascript. You can still start by just watching the first project
+          &nbsp;(Contact App) &nbsp;for the first time without working on the
+          code, just to get the feeling of what it is to build a web application.
+          &nbsp;see open course links below.&nbsp;</p>
 
-          <p> <br></p>
+          <p><b><br></b></p>
 
-          <p><b>Topics of the week / 每週活動：&nbsp;</b></p>
+          <p><b>學習方法 Learning Method:&nbsp;&nbsp;</b></p>
+
+          <p>•&nbsp;build web project the first day</p>
+
+          <p>•&nbsp;Learn in projects&nbsp;</p>
+
+          <p>•&nbsp;Do not code at first time, only watch and start to code the
+          second time.</p>
+
+          <p>•&nbsp;Follow and finish all&nbsp; projects and come back to
+          practice all project by yourself</p>
+
+          <p>•&nbsp;Start your own idea, write business plan and build what
+          people need</p>
+
+          <p><b><br></b></p>
+
+          <p><b>Fullstack Course :&nbsp;<br></b><a
+          href="https://hackpad.com/Startup-Code-Camp-fullstack-entrepreneur-51fDlZLdbyo">https://hackpad.com/Startup-Code-Camp-fullstack-entrepreneur-51fDlZLdbyo</a>&nbsp;<br></p>
+
+          <br>
+
+          <p><b>Topics of the weekly Events / 每週活動：&nbsp;</b><br></p>
 
           <p><span> <br></span></p>
 
@@ -2882,10 +2928,10 @@ regions:
             photo_id: 248170859
             photo_link: 'http://photos1.meetupstatic.com/photos/member/2/a/6/b/member_248170859.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/2/a/6/b/thumb_248170859.jpeg'
-        members: 1048
+        members: 1101
         name: 'Startup Code Camp: fullstack entrepreneur'
         lat: 25.020000457763672
-        who: Innovatist
+        who: fullstack entrepreneur
       - utc_offset: 19800000
         country: IN
         visibility: public
@@ -2905,7 +2951,7 @@ regions:
             photo_id: 239054012
             photo_link: 'http://photos4.meetupstatic.com/photos/member/3/6/b/c/member_239054012.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/6/b/c/thumb_239054012.jpeg'
-        members: 219
+        members: 220
         name: NodeJS Hyderabad
         lat: 17.399999618530273
         who: Nodejs enthusiasts
@@ -3008,7 +3054,7 @@ regions:
             photo_id: 208019122
             photo_link: 'http://photos2.meetupstatic.com/photos/member/e/6/f/2/member_208019122.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/e/6/f/2/thumb_208019122.jpeg'
-        members: 51
+        members: 55
         name: Kochi Javascript Ninjas
         lat: 10.020000457763672
         who: Ninjas
@@ -3019,6 +3065,7 @@ regions:
         timezone: Asia/Calcutta
         created: 1404393106000
         link: 'http://www.meetup.com/Kochi-Noders/'
+        rating: 5
         description: '<p>People who interested in Node.JS development.</p>'
         lon: 76.22000122070312
         group_photo:
@@ -3035,7 +3082,7 @@ regions:
             photo_id: 208019122
             photo_link: 'http://photos2.meetupstatic.com/photos/member/e/6/f/2/member_208019122.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/e/6/f/2/thumb_208019122.jpeg'
-        members: 101
+        members: 120
         name: Kochi Noders
         lat: 10.020000457763672
         who: Noders
@@ -3053,34 +3100,13 @@ regions:
 
 
 
-
-
-
-
-
-
           </p>
 
           <p><b>What is IBM Bluemix?</b><br>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
            Bluemix is an open-standard, cloud-based platform for building,
-
-
-
           managing and running applications of all types (web, mobile, Big Data
           Analytics, new smart devices, and so on). Capabilities include Java,
           mobile back end development, application monitoring, as well as
@@ -3114,7 +3140,7 @@ regions:
             photo_id: 210825722
             photo_link: 'http://photos3.meetupstatic.com/photos/member/b/2/9/a/member_210825722.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/b/2/9/a/thumb_210825722.jpeg'
-        members: 994
+        members: 997
         name: Node.js and Bluemix Meetup
         lat: 12.970000267028809
         who: Members
@@ -3137,7 +3163,7 @@ regions:
             photo_id: 210316382
             photo_link: 'http://photos2.meetupstatic.com/photos/member/3/f/f/e/member_210316382.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/3/f/f/e/thumb_210316382.jpeg'
-        members: 192
+        members: 198
         name: AngularJS Mumbai
         lat: 18.959999084472656
         who: ng-models
@@ -3159,7 +3185,7 @@ regions:
             photo_id: 211095032
             photo_link: 'http://photos3.meetupstatic.com/photos/member/3/a/b/8/member_211095032.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/a/b/8/thumb_211095032.jpeg'
-        members: 168
+        members: 173
         name: Kolkata AngularJS Meetup
         lat: 22.56999969482422
         who: Anglers
@@ -3176,7 +3202,7 @@ regions:
         organizer:
           member_id: 156455862
           name: Tushar Saran
-        members: 65
+        members: 69
         name: Java Meetup
         lat: 17.399999618530273
         who: Software Experts
@@ -3198,7 +3224,7 @@ regions:
             photo_id: 221947992
             photo_link: 'http://photos1.meetupstatic.com/photos/member/1/f/3/8/member_221947992.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/1/f/3/8/thumb_221947992.jpeg'
-        members: 128
+        members: 132
         name: Bangalore Node+MongoDB Meetup
         lat: 12.970000267028809
         who: Nodango
@@ -3224,7 +3250,7 @@ regions:
             photo_id: 211438992
             photo_link: 'http://photos1.meetupstatic.com/photos/member/e/6/7/0/member_211438992.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/e/6/7/0/thumb_211438992.jpeg'
-        members: 108
+        members: 112
         name: Meteor Chennai
         lat: 13.09000015258789
         who: Meteorites
@@ -3251,7 +3277,7 @@ regions:
             photo_id: 194879252
             photo_link: 'http://photos2.meetupstatic.com/photos/member/e/7/7/4/member_194879252.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/e/7/7/4/thumb_194879252.jpeg'
-        members: 89
+        members: 91
         name: Mumbai JS Meetup
         lat: 18.959999084472656
         who: JS Coders
@@ -3273,7 +3299,7 @@ regions:
             photo_id: 92742522
             photo_link: 'http://photos4.meetupstatic.com/photos/member/a/6/1/a/member_92742522.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/a/6/1/a/thumb_92742522.jpeg'
-        members: 161
+        members: 165
         name: Pune Node.js User Group
         lat: 18.530000686645508
         who: JS Hackers
@@ -3295,7 +3321,7 @@ regions:
             photo_id: 212718222
             photo_link: 'http://photos1.meetupstatic.com/photos/member/4/7/2/e/member_212718222.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/4/7/2/e/thumb_212718222.jpeg'
-        members: 196
+        members: 209
         name: Ahmedabad NodeJS
         lat: 23.030000686645508
         who: Node.js developers
@@ -3323,7 +3349,7 @@ regions:
             photo_id: 245959565
             photo_link: 'http://photos1.meetupstatic.com/photos/member/4/c/6/d/member_245959565.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/4/c/6/d/thumb_245959565.jpeg'
-        members: 409
+        members: 423
         name: Meteor Taipei
         lat: 25.020000457763672
         who: Meteorites
@@ -3345,7 +3371,7 @@ regions:
             photo_id: 215585992
             photo_link: 'http://photos2.meetupstatic.com/photos/member/1/7/6/8/member_215585992.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/1/7/6/8/thumb_215585992.jpeg'
-        members: 56
+        members: 58
         name: Bhubaneswar nodeJS and javascript developers
         lat: 20.270000457763672
         who: coders
@@ -3371,12 +3397,6 @@ regions:
 
 
 
-
-
-
-
-
-
           </p>
 
           <p>Also join our <a
@@ -3397,7 +3417,7 @@ regions:
             photo_id: 40013142
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/f/9/6/member_40013142.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/f/9/6/thumb_40013142.jpeg'
-        members: 596
+        members: 598
         name: GDG Rashlatz
         lat: 31.959999084472656
         who: GDGers
@@ -3419,7 +3439,7 @@ regions:
         organizer:
           member_id: 162336822
           name: Chris
-        members: 71
+        members: 73
         name: JS Dubai
         lat: 25.270000457763672
         who: Members
@@ -3436,7 +3456,7 @@ regions:
         organizer:
           member_id: 137630562
           name: frozendry
-        members: 126
+        members: 131
         name: Cebu JavaScript Meetup
         lat: 10.319999694824219
         who: JavaScript Ninjas
@@ -3467,7 +3487,7 @@ regions:
             photo_id: 221923102
             photo_link: 'http://photos3.meetupstatic.com/photos/member/a/8/5/e/member_221923102.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/a/8/5/e/thumb_221923102.jpeg'
-        members: 97
+        members: 103
         name: Jakarta node.js Meetup
         lat: -6.179999828338623
         who: noders
@@ -3495,7 +3515,7 @@ regions:
             photo_id: 241622387
             photo_link: 'http://photos3.meetupstatic.com/photos/member/9/5/3/member_241622387.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/9/5/3/thumb_241622387.jpeg'
-        members: 322
+        members: 330
         name: Node.js Jakarta
         lat: -6.179999828338623
         who: nodejs farmers
@@ -3517,7 +3537,7 @@ regions:
             photo_id: 223458052
             photo_link: 'http://photos3.meetupstatic.com/photos/member/4/6/8/4/member_223458052.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/4/6/8/4/thumb_223458052.jpeg'
-        members: 96
+        members: 99
         name: Ni Dilli AngularJS Meetup
         lat: 28.600000381469727
         who: angoors
@@ -3545,7 +3565,7 @@ regions:
             photo_id: 225094142
             photo_link: 'http://photos4.meetupstatic.com/photos/member/8/5/5/e/member_225094142.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/8/5/5/e/thumb_225094142.jpeg'
-        members: 263
+        members: 266
         name: Javascript Cebu
         lat: 10.319999694824219
         who: nin.js
@@ -3567,7 +3587,7 @@ regions:
             photo_id: 125274042
             photo_link: 'http://photos2.meetupstatic.com/photos/member/d/3/1/a/member_125274042.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/d/3/1/a/thumb_125274042.jpeg'
-        members: 245
+        members: 255
         name: Web/Mobile - Full Stack (AngularJS + NodeJS + NoSQL) Meetup
         lat: 17.399999618530273
         who: Techies
@@ -3595,7 +3615,7 @@ regions:
             photo_id: 242563086
             photo_link: 'http://photos2.meetupstatic.com/photos/member/a/8/4/e/member_242563086.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/a/8/4/e/thumb_242563086.jpeg'
-        members: 738
+        members: 751
         name: Taipei D3.js
         lat: 25.020000457763672
         who: Designer
@@ -3617,7 +3637,7 @@ regions:
             photo_id: 227162852
             photo_link: 'http://photos2.meetupstatic.com/photos/member/b/2/4/member_227162852.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/b/2/4/thumb_227162852.jpeg'
-        members: 63
+        members: 64
         name: AngularJS presentation
         lat: 30.75
         who: Members
@@ -3638,7 +3658,7 @@ regions:
             photo_id: 213230402
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/4/e/2/member_213230402.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/c/4/e/2/thumb_213230402.jpeg'
-        members: 167
+        members: 183
         name: Ahmedabad JavaScript Enthusiasts
         lat: 23.030000686645508
         who: JStors
@@ -3649,7 +3669,7 @@ regions:
         timezone: Asia/Tokyo
         created: 1412475046000
         link: 'http://www.meetup.com/tokyojs/'
-        rating: 4.45
+        rating: 4.38
         description: >-
           <p>This is a group for anyone interested in JavaScript, its good and
           bad parts. Let's awe together in the beauty and quirkiness of this
@@ -3666,10 +3686,10 @@ regions:
           <p> <br></p>
         lon: 139.77000427246094
         group_photo:
-          highres_link: 'http://photos4.meetupstatic.com/photos/event/a/9/5/9/highres_443563353.jpeg'
-          photo_id: 443563353
-          photo_link: 'http://photos2.meetupstatic.com/photos/event/a/9/5/9/600_443563353.jpeg'
-          thumb_link: 'http://photos4.meetupstatic.com/photos/event/a/9/5/9/thumb_443563353.jpeg'
+          highres_link: 'http://photos4.meetupstatic.com/photos/event/6/6/2/b/highres_444746155.jpeg'
+          photo_id: 444746155
+          photo_link: 'http://photos2.meetupstatic.com/photos/event/6/6/2/b/600_444746155.jpeg'
+          thumb_link: 'http://photos2.meetupstatic.com/photos/event/6/6/2/b/thumb_444746155.jpeg'
         join_mode: open
         organizer:
           member_id: 4169679
@@ -3679,7 +3699,7 @@ regions:
             photo_id: 251545414
             photo_link: 'http://photos2.meetupstatic.com/photos/member/6/3/4/6/member_251545414.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/6/3/4/6/thumb_251545414.jpeg'
-        members: 439
+        members: 468
         name: TokyoJS
         lat: 35.66999816894531
         who: JSers
@@ -3760,7 +3780,7 @@ regions:
             photo_id: 230690962
             photo_link: 'http://photos2.meetupstatic.com/photos/member/c/7/1/2/member_230690962.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/c/7/1/2/thumb_230690962.jpeg'
-        members: 119
+        members: 121
         name: Hong Kong MEAN Javascript Full Stack Development
         lat: 22.270000457763672
         who: Meantor
@@ -3788,7 +3808,7 @@ regions:
             photo_id: 235211812
             photo_link: 'http://photos4.meetupstatic.com/photos/member/2/e/2/4/member_235211812.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/2/e/2/4/thumb_235211812.jpeg'
-        members: 609
+        members: 625
         name: Shanghai Web Dev and Design Club
         lat: 31.229999542236328
         who: Hackers
@@ -3855,7 +3875,7 @@ regions:
         organizer:
           member_id: 148556312
           name: Shiva
-        members: 406
+        members: 411
         name: Chennai Angular JS / Front End Meetup by Sciflare
         lat: 13.09000015258789
         who: ng Geeks
@@ -3877,7 +3897,7 @@ regions:
             photo_id: 241648862
             photo_link: 'http://photos3.meetupstatic.com/photos/member/7/0/b/e/member_241648862.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/7/0/b/e/thumb_241648862.jpeg'
-        members: 74
+        members: 79
         name: MEAN stack Developers
         lat: 12.970000267028809
         who: MeanDevs
@@ -3899,7 +3919,7 @@ regions:
             photo_id: 241758282
             photo_link: 'http://photos3.meetupstatic.com/photos/member/4/7/6/a/member_241758282.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/4/7/6/a/thumb_241758282.jpeg'
-        members: 61
+        members: 62
         name: Javascript-G
         lat: 13.09000015258789
         who: Javascript Freaks
@@ -3938,7 +3958,7 @@ regions:
             photo_id: 241969564
             photo_link: 'http://photos2.meetupstatic.com/photos/member/c/1/9/c/member_241969564.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/c/1/9/c/thumb_241969564.jpeg'
-        members: 89
+        members: 94
         name: node.js Semarang
         lat: -6.96999979019165
         who: node.js farmers
@@ -3975,7 +3995,7 @@ regions:
             photo_id: 242354000
             photo_link: 'http://photos3.meetupstatic.com/photos/member/3/6/b/0/member_242354000.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/3/6/b/0/thumb_242354000.jpeg'
-        members: 851
+        members: 908
         name: DhakaJS
         lat: 23.700000762939453
         who: Members
@@ -3998,7 +4018,7 @@ regions:
             photo_id: 173593152
             photo_link: 'http://photos4.meetupstatic.com/photos/member/3/3/6/0/member_173593152.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/3/6/0/thumb_173593152.jpeg'
-        members: 783
+        members: 802
         name: Web Developers Community
         lat: 32.189998626708984
         who: Members
@@ -4116,7 +4136,7 @@ regions:
         organizer:
           member_id: 183497909
           name: Jaswant Singh Sandhu
-        members: 502
+        members: 524
         name: Lets decode the Javascript
         lat: 28.670000076293945
         who: JSLovers
@@ -4161,7 +4181,7 @@ regions:
             photo_id: 242999607
             photo_link: 'http://photos2.meetupstatic.com/photos/member/e/8/d/7/member_242999607.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/e/8/d/7/thumb_242999607.jpeg'
-        members: 100
+        members: 99
         name: Bangalore WebRTC Meetup
         lat: 12.970000267028809
         who: RTCers
@@ -4183,7 +4203,7 @@ regions:
             photo_id: 243271947
             photo_link: 'http://photos4.meetupstatic.com/photos/member/7/c/c/b/member_243271947.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/7/c/c/b/thumb_243271947.jpeg'
-        members: 362
+        members: 371
         name: Ha Noi JavaScript Meetup
         lat: 21.030000686645508
         who: Javascript users
@@ -4206,7 +4226,7 @@ regions:
             photo_id: 235557172
             photo_link: 'http://photos2.meetupstatic.com/photos/member/d/f/5/4/member_235557172.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/d/f/5/4/thumb_235557172.jpeg'
-        members: 322
+        members: 345
         name: Mumbai JavaScript Meetup
         lat: 18.959999084472656
         who: Members
@@ -4229,7 +4249,7 @@ regions:
             photo_id: 244686213
             photo_link: 'http://photos4.meetupstatic.com/photos/member/1/8/4/5/member_244686213.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/1/8/4/5/thumb_244686213.jpeg'
-        members: 352
+        members: 358
         name: KTMJS
         lat: 27.709999084472656
         who: JS lovers
@@ -4251,7 +4271,7 @@ regions:
             photo_id: 245096034
             photo_link: 'http://photos3.meetupstatic.com/photos/member/d/a/e/2/member_245096034.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/d/a/e/2/thumb_245096034.jpeg'
-        members: 237
+        members: 240
         name: Code. Coffee. Conquer.
         lat: 25.020000457763672
         who: 'Caffeinated Coders!'
@@ -4308,7 +4328,7 @@ regions:
             photo_id: 245426195
             photo_link: 'http://photos4.meetupstatic.com/photos/member/6/6/5/3/member_245426195.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/6/6/5/3/thumb_245426195.jpeg'
-        members: 221
+        members: 225
         name: Israeli Azure Developer Community
         lat: 32.189998626708984
         who: Azure Developers
@@ -4336,7 +4356,7 @@ regions:
             photo_id: 251004429
             photo_link: 'http://photos2.meetupstatic.com/photos/member/5/f/6/d/member_251004429.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/5/f/6/d/thumb_251004429.jpeg'
-        members: 181
+        members: 195
         name: JavaScripters
         lat: 18.530000686645508
         who: JavaScripters
@@ -4397,7 +4417,7 @@ regions:
             photo_id: 7599772
             photo_link: 'http://photos1.meetupstatic.com/photos/member/9/b/5/c/member_7599772.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/9/b/5/c/thumb_7599772.jpeg'
-        members: 299
+        members: 309
         name: Modiin Tech Talks
         lat: 31.899999618530273
         who: Members
@@ -4447,7 +4467,7 @@ regions:
             photo_id: 247261690
             photo_link: 'http://photos4.meetupstatic.com/photos/member/6/9/a/member_247261690.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/6/9/a/thumb_247261690.jpeg'
-        members: 34
+        members: 35
         name: METEOR St. Petersburg
         lat: 59.93000030517578
         who: Meteorix
@@ -4497,7 +4517,7 @@ regions:
             photo_id: 247151087
             photo_link: 'http://photos1.meetupstatic.com/photos/member/2/b/4/f/member_247151087.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/2/b/4/f/thumb_247151087.jpeg'
-        members: 60
+        members: 65
         name: Tomsk Front-end Development Meetup
         lat: 56.47999954223633
         who: Members
@@ -4518,7 +4538,7 @@ regions:
             photo_id: 111630972
             photo_link: 'http://photos4.meetupstatic.com/photos/member/7/8/f/c/member_111630972.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/7/8/f/c/thumb_111630972.jpeg'
-        members: 160
+        members: 172
         name: React.js Colombo
         lat: 6.929999828338623
         who: Members
@@ -4541,7 +4561,7 @@ regions:
             photo_id: 244876763
             photo_link: 'http://photos1.meetupstatic.com/photos/member/4/1/7/b/member_244876763.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/4/1/7/b/thumb_244876763.jpeg'
-        members: 294
+        members: 314
         name: Chennai JavaScript Meetup
         lat: 13.09000015258789
         who: Members
@@ -4563,7 +4583,7 @@ regions:
             photo_id: 248542084
             photo_link: 'http://photos4.meetupstatic.com/photos/member/5/6/4/4/member_248542084.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/5/6/4/4/thumb_248542084.jpeg'
-        members: 145
+        members: 152
         name: Hyderabad Open Source Meetup
         lat: 17.399999618530273
         who: Members
@@ -4586,7 +4606,7 @@ regions:
             photo_id: 248606063
             photo_link: 'http://photos3.meetupstatic.com/photos/member/6/5/c/f/member_248606063.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/6/5/c/f/thumb_248606063.jpeg'
-        members: 78
+        members: 82
         name: BeerJS Moscow
         lat: 55.75
         who: Members
@@ -4655,7 +4675,7 @@ regions:
             photo_id: 151936822
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/1/b/6/member_151936822.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/4/1/b/6/thumb_151936822.jpeg'
-        members: 96
+        members: 110
         name: Frontend Meetup Beijing
         lat: 39.93000030517578
         who: Members
@@ -4678,7 +4698,7 @@ regions:
             photo_id: 249381976
             photo_link: 'http://photos1.meetupstatic.com/photos/member/5/5/d/8/member_249381976.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/5/d/8/thumb_249381976.jpeg'
-        members: 336
+        members: 393
         name: Bangalore Full Stack Programmers
         lat: 12.970000267028809
         who: FullStackers
@@ -4705,7 +4725,7 @@ regions:
             photo_id: 249747190
             photo_link: 'http://photos1.meetupstatic.com/photos/member/6/a/3/6/member_249747190.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/6/a/3/6/thumb_249747190.jpeg'
-        members: 37
+        members: 50
         name: Beijing ReactJS Meetup
         lat: 39.93000030517578
         who: Reactor
@@ -4749,7 +4769,7 @@ regions:
             photo_id: 249748298
             photo_link: 'http://photos1.meetupstatic.com/photos/member/6/e/8/a/member_249748298.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/6/e/8/a/thumb_249748298.jpeg'
-        members: 32
+        members: 36
         name: "IBM Bluemix Girls' Night Meetups"
         lat: 31.229999542236328
         who: Bluemix Lovers
@@ -4760,14 +4780,13 @@ regions:
         timezone: Asia/Manila
         created: 1444320094000
         link: 'http://www.meetup.com/ManilaJavaScript/'
-        rating: 5
+        rating: 4.66
         description: >-
-          <p>Welcome to Manila JavaScript! We're a real community that will hold
-          regular events. Join us to share ideas, discuss trends, and assess the
-          future of the most exciting programming language. Upcoming topics
-          include introductory seminars, workshops, and demo days for Node.js,
-          Meteor.js, React.js/React Native, Angular.js, D3.js, Client-Side
-          Frameworks, ES6, etc.</p>
+          <p>Welcome to Manila JavaScript! Join us to share ideas, discuss
+          trends, and assess the future of the most exciting programming
+          language. Upcoming topics include introductory seminars, workshops, and
+          demo days for Node.js, Meteor.js, React.js/React Native, Angular.js,
+          D3.js, Client-Side Frameworks, ES6, etc.</p>
 
           <p>Join our Facebook group at:&nbsp;<a
           href="https://www.facebook.com/groups/manilajs/"
@@ -4782,7 +4801,7 @@ regions:
             photo_id: 189696562
             photo_link: 'http://photos1.meetupstatic.com/photos/member/8/e/d/2/member_189696562.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/8/e/d/2/thumb_189696562.jpeg'
-        members: 198
+        members: 260
         name: Manila JavaScript
         lat: 14.619999885559082
         who: JS Developers
@@ -4805,7 +4824,7 @@ regions:
             photo_id: 250541015
             photo_link: 'http://photos4.meetupstatic.com/photos/member/a/0/3/7/member_250541015.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/a/0/3/7/thumb_250541015.jpeg'
-        members: 72
+        members: 79
         name: Moscow NodeJS Meetup
         lat: 55.75
         who: NodeJS Lovers
@@ -4840,7 +4859,7 @@ regions:
             photo_id: 245873595
             photo_link: 'http://photos2.meetupstatic.com/photos/member/d/1/5/b/member_245873595.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/d/1/5/b/thumb_245873595.jpeg'
-        members: 32
+        members: 35
         name: Electron Korea
         lat: 37.560001373291016
         who: Members
@@ -4862,7 +4881,7 @@ regions:
             photo_id: 242213519
             photo_link: 'http://photos4.meetupstatic.com/photos/member/d/1/0/f/member_242213519.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/d/1/0/f/thumb_242213519.jpeg'
-        members: 7
+        members: 15
         name: Mean Stack Bali Meetup
         lat: -8.649999618530273
         who: Webninjas
@@ -4883,7 +4902,7 @@ regions:
             photo_id: 188105352
             photo_link: 'http://photos1.meetupstatic.com/photos/member/1/4/e/8/member_188105352.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/1/4/e/8/thumb_188105352.jpeg'
-        members: 20
+        members: 26
         name: Hong Kong ReactJS Meetup
         lat: 22.270000457763672
         who: Reactors
@@ -4905,37 +4924,148 @@ regions:
             photo_id: 250837122
             photo_link: 'http://photos4.meetupstatic.com/photos/member/9/1/0/2/member_250837122.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/9/1/0/2/thumb_250837122.jpeg'
-        members: 1
+        members: 54
         name: Jerusalem Node.js Meetup
         lat: 31.780000686645508
         who: programmers
+      - utc_offset: 28800000
+        country: CN
+        visibility: public
+        city: Shanghai
+        timezone: Asia/Shanghai
+        created: 1414466688000
+        link: 'http://www.meetup.com/Shanghai-JSer-Reunion/'
+        rating: 3
+        description: '<p>Either you have any interesting JS trick to share, or you want to have your tech stack updated, SIGN UP NOW! We are going to provide foods and drinks for free from 6:00pm. The Session would be officially launched from 6:30pm. After session, we will also enjoy music/game together.</p>'
+        lon: 121.47000122070312
+        group_photo:
+          highres_link: 'http://photos4.meetupstatic.com/photos/event/c/8/3/4/highres_427011252.jpeg'
+          photo_id: 427011252
+          photo_link: 'http://photos2.meetupstatic.com/photos/event/c/8/3/4/600_427011252.jpeg'
+          thumb_link: 'http://photos4.meetupstatic.com/photos/event/c/8/3/4/thumb_427011252.jpeg'
+        join_mode: open
+        organizer:
+          member_id: 65401862
+          name: Jay Wang
+          photo:
+            photo_id: 76436412
+            photo_link: 'http://photos2.meetupstatic.com/photos/member/d/c/5/c/member_76436412.jpeg'
+            thumb_link: 'http://photos2.meetupstatic.com/photos/member/d/c/5/c/thumb_76436412.jpeg'
+        members: 71
+        name: Shanghai JSer Reunion
+        lat: 31.229999542236328
+        who: JSer
+      - utc_offset: 7200000
+        country: IL
+        visibility: public
+        city: Tel Aviv-Yafo
+        timezone: Asia/Jerusalem
+        created: 1429148198000
+        link: 'http://www.meetup.com/ReactJS-Israel/'
+        rating: 4.67
+        description: '<p>Come and learn about the new disruptive technology from&nbsp;Facebook. Create Components and make your&nbsp;frontend&nbsp;blazing fast. We will focus on&nbsp;ReactJS&nbsp;and the supplemental infrastructure like Flux.</p>'
+        lon: 34.77000045776367
+        group_photo:
+          highres_link: 'http://photos2.meetupstatic.com/photos/event/7/d/4/2/highres_440492066.jpeg'
+          photo_id: 440492066
+          photo_link: 'http://photos2.meetupstatic.com/photos/event/7/d/4/2/600_440492066.jpeg'
+          thumb_link: 'http://photos4.meetupstatic.com/photos/event/7/d/4/2/thumb_440492066.jpeg'
+        join_mode: open
+        organizer:
+          member_id: 123919242
+          name: 500Tech
+          photo:
+            highres_link: 'http://photos2.meetupstatic.com/photos/member/e/0/a/8/highres_164337512.jpeg'
+            photo_id: 164337512
+            photo_link: 'http://photos4.meetupstatic.com/photos/member/e/0/a/8/member_164337512.jpeg'
+            thumb_link: 'http://photos2.meetupstatic.com/photos/member/e/0/a/8/thumb_164337512.jpeg'
+        members: 585
+        name: 'React & Redux Israel'
+        lat: 32.06999969482422
+        who: Developers
+      - utc_offset: 28800000
+        country: CN
+        visibility: public
+        city: Shanghai
+        timezone: Asia/Shanghai
+        created: 1449138766000
+        link: 'http://www.meetup.com/Shanghai-Digital-Hub/'
+        description: >-
+          <p>Shanghai Digital Hub is a Shanghai extension of Hong Kong's super
+          popular digital meetup - <a
+          href="http://www.meetup.com/HK-Web-Developers/"
+          class="linkified">http://www.meetup.com/HK-Web-Developers/</a></p>
+
+          <p>If your passion is to learn, live, breathe experience modern web and
+          non-web technology - let's shape of it in Shanghai and take on the rest
+          of the world!</p>
+
+          <p>Each month, we get together over some small bites and drinks and
+          talk about up-and coming trends and technologies. Some topics of
+          interest are:</p>
+
+          <p>Scripting Trends:<br>- Angular.js<br>- React.js<br>-
+          Coffeescript</p>
+
+          <p>CSS3 Animations and Filters / Shaders<br>- SASS<br>- WebGL including
+          Three.js<br>- Tools and Approaches</p>
+
+          <p>Working with Yeoman (Yo, Grunt and Bower)<br>- BDD with Jasmine<br>-
+          TDD with Mocha<br>- Getting the most of Require.js<br>- NOSQL
+          Technologies including:</p>
+
+          <p>- Mongo<br>- Redis<br>- CouchDB<br>- The Freshest HTML5</p>
+
+          <p>- Playing with Polymer<br>- Web Sockets<br>- Web Workers<br>-
+          Pushing boundaries of the web:</p>
+
+          <p>- Chrome NACL<br>- Chrome Packaged Apps<br>- Chromium and Native Web
+          Extensions</p>
+
+          <p>We're always on the lookout for fellow geeks who are passionate
+          about new tech and who'd love to share their knowledge with fellow
+          developers.</p>
+        lon: 121.47000122070312
+        join_mode: open
+        organizer:
+          member_id: 13501553
+          name: Neil Nand
+          photo:
+            highres_link: 'http://photos3.meetupstatic.com/photos/member/6/a/2/a/highres_251847178.jpeg'
+            photo_id: 251847178
+            photo_link: 'http://photos3.meetupstatic.com/photos/member/6/a/2/a/member_251847178.jpeg'
+            thumb_link: 'http://photos3.meetupstatic.com/photos/member/6/a/2/a/thumb_251847178.jpeg'
+        members: 23
+        name: Shanghai Digital Hub
+        lat: 31.229999542236328
+        who: Geeks
   - region: Europe
     conferences:
       - name: NodeConf.eu
-        desc: Yearly NodeConf in Waterford, Ireland.
-        link: http://nodeconf.eu
+        desc: 'Yearly NodeConf in Waterford, Ireland.'
+        link: 'http://nodeconf.eu'
         lat: 52.2533703
         lon: -7.0593531
       - name: NodeConf Barcelona
-        desc: Yearly NodeConf in Bercelona, Spain.
-        link: http://barcelona.nodeconf.com/
+        desc: 'Yearly NodeConf in Bercelona, Spain.'
+        link: 'http://barcelona.nodeconf.com/'
         lat: 41.3870295
         lon: 2.1693952
-        location: Mobile World Centre, Barcelona, Spain
+        location: 'Mobile World Centre, Barcelona, Spain'
       - name: NodeConf Oslo
-        link: http://oslo.nodeconf.com/
+        link: 'http://oslo.nodeconf.com/'
         desc: Yearly Norwegian NodeConf.
         lat: 59.8937806
         lon: 10.6450355
       - name: nodejsconf.it
-        link: http://nodejsconf.it/
+        link: 'http://nodejsconf.it/'
         desc: Yearly Italian conference.
         lat: 45.4639833
         lon: 10.534382
       - name: JSConf.eu
-        link: http://jsconf.eu
-        desc: Yearly JavaScript conference in Berlin, Germany.
-        location: Radial System V, Berlin, Germany.
+        link: 'http://jsconf.eu'
+        desc: 'Yearly JavaScript conference in Berlin, Germany.'
+        location: 'Radial System V, Berlin, Germany.'
         lat: 52.5102922
         lon: 13.4286193
     nodeschools:
@@ -5357,7 +5487,7 @@ regions:
             photo_id: 244135945
             photo_link: 'http://photos3.meetupstatic.com/photos/member/d/a/8/9/member_244135945.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/d/a/8/9/thumb_244135945.jpeg'
-        members: 663
+        members: 674
         name: Codeinvaders
         state: RM
         lat: 41.900001525878906
@@ -5368,7 +5498,7 @@ regions:
         timezone: Europe/London
         created: 1184592255000
         link: 'http://www.meetup.com/londondigital/'
-        rating: 4.3
+        rating: 4.32
         description: "<p>The London Design and technology user group is here to offer varied content for both designer and developers who live breath and work in the digital development space.</p>\n<p>This group is for the people who 'make' web experiences apps and games. Mainly it will be\_focussed\_on design and technology but we will also host any talks that are presented from a perspective that will be interesting to the members, so whether it be business related or strategic it will always be relevent.</p>\n<p>\_</p>"
         lon: -0.10000000149011612
         join_mode: open
@@ -5380,7 +5510,7 @@ regions:
             photo_id: 17140941
             photo_link: 'http://photos1.meetupstatic.com/photos/member/9/f/e/d/member_17140941.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/9/f/e/d/thumb_17140941.jpeg'
-        members: 1366
+        members: 1381
         name: London Digital Design and Technology User Group
         state: '17'
         lat: 51.52000045776367
@@ -5457,7 +5587,7 @@ regions:
             photo_id: 87597342
             photo_link: 'http://photos2.meetupstatic.com/photos/member/d/f/f/e/member_87597342.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/d/f/f/e/thumb_87597342.jpeg'
-        members: 1389
+        members: 1382
         name: BudapestJS
         lat: 47.5099983215332
         who: JavaScript Ninjas
@@ -5481,10 +5611,11 @@ regions:
           member_id: 15805011
           name: Franz Enzenhofer
           photo:
-            photo_id: 13989241
-            photo_link: 'http://photos1.meetupstatic.com/photos/member/2/4/1/9/member_13989241.jpeg'
-            thumb_link: 'http://photos1.meetupstatic.com/photos/member/2/4/1/9/thumb_13989241.jpeg'
-        members: 1140
+            highres_link: 'http://photos1.meetupstatic.com/photos/member/2/0/2/d/highres_251708237.jpeg'
+            photo_id: 251708237
+            photo_link: 'http://photos1.meetupstatic.com/photos/member/2/0/2/d/member_251708237.jpeg'
+            thumb_link: 'http://photos1.meetupstatic.com/photos/member/2/0/2/d/thumb_251708237.jpeg'
+        members: 1160
         name: vienna.js Vienna JavaScript User Group
         lat: 48.220001220703125
         who: JavaScripters
@@ -5512,7 +5643,7 @@ regions:
             photo_id: 242646425
             photo_link: 'http://photos3.meetupstatic.com/photos/member/1/9/1/9/member_242646425.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/1/9/1/9/thumb_242646425.jpeg'
-        members: 577
+        members: 583
         name: Node.js Oslo
         lat: 59.90999984741211
         who: Noders
@@ -5523,7 +5654,7 @@ regions:
         timezone: Europe/Berlin
         created: 1288631618000
         link: 'http://www.meetup.com/hamburg-js/'
-        rating: 4.52
+        rating: 4.53
         description: >-
           <p>Welcome to Hamburg.js – the JavaScript Meetup in Hamburg.</p>
 
@@ -5551,7 +5682,7 @@ regions:
             photo_id: 50191302
             photo_link: 'http://photos3.meetupstatic.com/photos/member/7/a/4/6/member_50191302.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/7/a/4/6/thumb_50191302.jpeg'
-        members: 1196
+        members: 1206
         name: HH.js
         lat: 53.54999923706055
         who: JavaScripters
@@ -5578,7 +5709,7 @@ regions:
             photo_id: 174203622
             photo_link: 'http://photos1.meetupstatic.com/photos/member/5/c/4/6/member_174203622.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/c/4/6/thumb_174203622.jpeg'
-        members: 2148
+        members: 2167
         name: The Digital Pond
         state: '17'
         lat: 51.52000045776367
@@ -5626,7 +5757,7 @@ regions:
             photo_id: 108210682
             photo_link: 'http://photos1.meetupstatic.com/photos/member/7/7/d/a/member_108210682.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/7/7/d/a/thumb_108210682.jpeg'
-        members: 2296
+        members: 2311
         name: sthlm.js
         lat: 59.33000183105469
         who: JavaScripters
@@ -5654,7 +5785,7 @@ regions:
             photo_id: 248979770
             photo_link: 'http://photos2.meetupstatic.com/photos/member/9/b/5/a/member_248979770.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/9/b/5/a/thumb_248979770.jpeg'
-        members: 432
+        members: 436
         name: Javascript Romandie
         lat: 46.52000045776367
         who: Javascripteurs
@@ -5681,7 +5812,7 @@ regions:
             photo_id: 112729382
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/0/e/6/member_112729382.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/0/e/6/thumb_112729382.jpeg'
-        members: 90
+        members: 88
         name: "London CoffeeScript Users' Group"
         state: '17'
         lat: 51.52000045776367
@@ -5710,7 +5841,7 @@ regions:
             photo_id: 7738739
             photo_link: 'http://photos2.meetupstatic.com/photos/member/e/5/7/3/member_7738739.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/e/5/7/3/thumb_7738739.jpeg'
-        members: 683
+        members: 686
         name: The Amsterdam Node Meetup Group
         lat: 52.369998931884766
         who: Noders
@@ -5720,7 +5851,7 @@ regions:
         timezone: Europe/London
         created: 1334580348000
         link: 'http://www.meetup.com/BristolJS/'
-        rating: 4.85
+        rating: 4.86
         description: |-
           <p>document.write("Hello World".blink())</p>
           <p> <br></p>
@@ -5740,7 +5871,7 @@ regions:
             photo_id: 9441017
             photo_link: 'http://photos1.meetupstatic.com/photos/member/5/2/1/9/member_9441017.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/5/2/1/9/thumb_9441017.jpeg'
-        members: 758
+        members: 773
         name: Bristol JS
         state: M3
         lat: 51.439998626708984
@@ -5780,7 +5911,7 @@ regions:
         timezone: Europe/Berlin
         created: 1344842081000
         link: 'http://www.meetup.com/Monster-on-Rails-Web-Development-Meetup-Muenster/'
-        rating: 4.87
+        rating: 4.88
         description: '<p>Monster on Rails was originally founded as Ruby on Rails Usergroup Münster. Since there are many corresponding technologies around in Ruby sphere we are dealing many topics like Ruby, Ruby on Rails, Sinatra, Software Architecture, Frontend Performance, Javascript in general, backbone.js, node.js, NoSQL, so on. Usually we meet monthly.</p>'
         lon: 7.619999885559082
         group_photo:
@@ -5796,7 +5927,7 @@ regions:
             photo_id: 168323642
             photo_link: 'http://photos1.meetupstatic.com/photos/member/5/c/5/a/member_168323642.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/c/5/a/thumb_168323642.jpeg'
-        members: 165
+        members: 169
         name: Monster on Rails - Web Development Meetup Münster
         lat: 51.959999084472656
         who: Devs
@@ -5824,7 +5955,7 @@ regions:
             photo_id: 15689881
             photo_link: 'http://photos2.meetupstatic.com/photos/member/7/4/b/9/member_15689881.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/7/4/b/9/thumb_15689881.jpeg'
-        members: 276
+        members: 283
         name: node.js Mannheim
         lat: 49.5
         who: js-poets
@@ -5852,7 +5983,7 @@ regions:
             photo_id: 8480994
             photo_link: 'http://photos3.meetupstatic.com/photos/member/5/2/0/2/member_8480994.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/2/0/2/thumb_8480994.jpeg'
-        members: 1090
+        members: 1140
         name: AmsterdamJS
         lat: 52.369998931884766
         who: JavaScripters
@@ -5874,7 +6005,7 @@ regions:
             photo_id: 36501432
             photo_link: 'http://photos4.meetupstatic.com/photos/member/5/3/b/8/member_36501432.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/5/3/b/8/thumb_36501432.jpeg'
-        members: 603
+        members: 625
         name: Belgian node.js User Group
         lat: 50.83000183105469
         who: belgian node.js developers
@@ -5902,7 +6033,7 @@ regions:
             photo_id: 79918552
             photo_link: 'http://photos1.meetupstatic.com/photos/member/e/4/b/8/member_79918552.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/e/4/b/8/thumb_79918552.jpeg'
-        members: 318
+        members: 320
         name: BordeauxJS
         lat: 44.84000015258789
         who: Membres
@@ -5937,7 +6068,7 @@ regions:
             photo_id: 38811852
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/a/8/c/member_38811852.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/c/a/8/c/thumb_38811852.jpeg'
-        members: 387
+        members: 399
         name: 'JavaScript & NodeJS Cambridge'
         state: C3
         lat: 52.20000076293945
@@ -5966,7 +6097,7 @@ regions:
             photo_id: 241767016
             photo_link: 'http://photos1.meetupstatic.com/photos/member/6/9/8/8/member_241767016.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/6/9/8/8/thumb_241767016.jpeg'
-        members: 283
+        members: 282
         name: Couchbase France
         lat: 48.86000061035156
         who: Membres
@@ -5993,7 +6124,7 @@ regions:
             photo_id: 84704112
             photo_link: 'http://photos2.meetupstatic.com/photos/member/a/c/5/0/member_84704112.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/a/c/5/0/thumb_84704112.jpeg'
-        members: 262
+        members: 263
         name: 'Instrumenthack!'
         lat: 59.33000183105469
         who: AudioHackers
@@ -6021,7 +6152,7 @@ regions:
             photo_id: 243697501
             photo_link: 'http://photos1.meetupstatic.com/photos/member/9/2/7/d/member_243697501.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/9/2/7/d/thumb_243697501.jpeg'
-        members: 658
+        members: 675
         name: Backend Web Berlin
         lat: 52.52000045776367
         who: Backend Developers
@@ -6048,7 +6179,7 @@ regions:
             photo_id: 92138782
             photo_link: 'http://photos4.meetupstatic.com/photos/member/9/7/7/e/member_92138782.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/9/7/7/e/thumb_92138782.jpeg'
-        members: 190
+        members: 192
         name: Node.js Tallinn
         lat: 59.439998626708984
         who: Nodes
@@ -6075,7 +6206,7 @@ regions:
             photo_id: 92540082
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/e/7/2/member_92540082.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/4/e/7/2/thumb_92540082.jpeg'
-        members: 1201
+        members: 1232
         name: Istanbul Coders
         lat: 41.0099983215332
         who: Hacker
@@ -6103,7 +6234,7 @@ regions:
             photo_id: 181417562
             photo_link: 'http://photos3.meetupstatic.com/photos/member/9/2/b/a/member_181417562.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/9/2/b/a/thumb_181417562.jpeg'
-        members: 260
+        members: 262
         name: Ember.js Munich
         lat: 48.13999938964844
         who: mEmbers
@@ -6114,7 +6245,7 @@ regions:
         timezone: Europe/Berlin
         created: 1359352805000
         link: 'http://www.meetup.com/Munich-Node-js-User-Group/'
-        rating: 4.69
+        rating: 4.7
         description: >-
           <p>MNUG is a user group of server-side JavaScript users (amateurs,
           journeymen and hackers). We meet every 2nd month to discuss topics on
@@ -6140,7 +6271,7 @@ regions:
             photo_id: 46041172
             photo_link: 'http://photos4.meetupstatic.com/photos/member/5/2/b/4/member_46041172.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/5/2/b/4/thumb_46041172.jpeg'
-        members: 715
+        members: 731
         name: Munich Node.js User Group
         lat: 48.13999938964844
         who: Nodehackers
@@ -6168,7 +6299,7 @@ regions:
             photo_id: 245073891
             photo_link: 'http://photos4.meetupstatic.com/photos/member/8/4/6/3/member_245073891.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/8/4/6/3/thumb_245073891.jpeg'
-        members: 727
+        members: 733
         name: Stockholm Node.js
         lat: 59.33000183105469
         who: Callbacks
@@ -6224,7 +6355,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 685
+        members: 692
         name: Meteor Berlin
         lat: 52.52000045776367
         who: Meteorites
@@ -6255,7 +6386,7 @@ regions:
             photo_id: 246794926
             photo_link: 'http://photos2.meetupstatic.com/photos/member/3/a/4/e/member_246794926.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/a/4/e/thumb_246794926.jpeg'
-        members: 267
+        members: 265
         name: Meteor Munich
         lat: 48.13999938964844
         who: Meteroiten
@@ -6312,7 +6443,7 @@ regions:
             photo_id: 100913422
             photo_link: 'http://photos2.meetupstatic.com/photos/member/d/0/a/e/member_100913422.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/d/0/a/e/thumb_100913422.jpeg'
-        members: 81
+        members: 83
         name: Torino JS
         state: TO
         lat: 45.04999923706055
@@ -6367,7 +6498,7 @@ regions:
             photo_id: 33610402
             photo_link: 'http://photos4.meetupstatic.com/photos/member/2/8/a/2/member_33610402.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/2/8/a/2/thumb_33610402.jpeg'
-        members: 439
+        members: 445
         name: Ljubljana JavaScript User Group
         lat: 46.060001373291016
         who: Coders
@@ -6393,7 +6524,7 @@ regions:
             photo_id: 107984392
             photo_link: 'http://photos2.meetupstatic.com/photos/member/a/d/6/8/member_107984392.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/d/6/8/thumb_107984392.jpeg'
-        members: 87
+        members: 89
         name: GDG Campania
         state: NA
         lat: 40.84000015258789
@@ -6404,7 +6535,7 @@ regions:
         timezone: Europe/London
         created: 1365016618000
         link: 'http://www.meetup.com/LeedsJS/'
-        rating: 4.57
+        rating: 4.54
         description: "<p>Leeds JS is a user group in that meets in Leeds on the last Wednesday of every month. Join us for free food, a beer, prizes and to meet a great bunch of people.</p> \n<p>The goal of this user group is to form a community for Javascript in Leeds. Most technical companies now have to use javascript in some way and the demand is growing with every new framework and NodeJS release. We want to be a place were any developer can come for advice, to show off what they're working on or to just talk about the news (and drama) in the wider Javascript community.</p> \n<p>This user group is for the community! If you ever want to pitch in or have an idea just get in touch via twitter https://twitter.com/leedsjs</p> \n<p>Things to expect from this meet up:</p> \n<ul> \n <li>Interactive demos for attendees - make sure to charge your smartphone!</li> \n <li>Noobs, Intermediates, Experts, Gurus...everyone is welcome.</li> \n <li><span>Splendid prizes up for grabs each meet.</span></li> \n <li>A say in the direction of the group and what talks we put on.</li> \n <li>Conference discounts available.</li> \n</ul> \n<p><span>Good stuff, we hope to see you at the next meet =)</span></p> \n<p><span><span>We also now have a website and blog running on the NodeJS blogging engine Ghost. Check it out at leedsjs.com</span><br> </span></p> \n<p><strong>Please note the group is intended for developers looking to expand their knowledge in a recruiter free zone only so whilst interest from recruitment consultants is nice we have a no recruiters policy.</strong></p>"
         lon: -1.5399999618530273
         group_photo:
@@ -6421,7 +6552,7 @@ regions:
             photo_id: 108447872
             photo_link: 'http://photos3.meetupstatic.com/photos/member/6/c/e/0/member_108447872.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/6/c/e/0/thumb_108447872.jpeg'
-        members: 461
+        members: 473
         name: Leeds JS
         state: '45'
         lat: 53.790000915527344
@@ -6450,7 +6581,7 @@ regions:
             photo_id: 197293032
             photo_link: 'http://photos2.meetupstatic.com/photos/member/3/2/e/8/member_197293032.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/2/e/8/thumb_197293032.jpeg'
-        members: 144
+        members: 147
         name: BergenJS
         lat: 60.380001068115234
         who: Developers
@@ -6499,7 +6630,7 @@ regions:
             photo_id: 243676674
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/1/2/2/member_243676674.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/4/1/2/2/thumb_243676674.jpeg'
-        members: 788
+        members: 801
         name: JavaScript MVC Meetup Amsterdam
         lat: 52.369998931884766
         who: JavaScript enthusiasts
@@ -6531,7 +6662,7 @@ regions:
             photo_id: 83041732
             photo_link: 'http://photos4.meetupstatic.com/photos/member/6/c/4/member_83041732.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/6/c/4/thumb_83041732.jpeg'
-        members: 67
+        members: 69
         name: Functional Groningen
         lat: 53.22999954223633
         who: Hackers
@@ -6568,7 +6699,7 @@ regions:
             photo_id: 39963742
             photo_link: 'http://photos1.meetupstatic.com/photos/member/e/9/e/member_39963742.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/e/9/e/thumb_39963742.jpeg'
-        members: 335
+        members: 340
         name: 'Göteborg, Node.js'
         lat: 57.720001220703125
         who: Noders
@@ -6596,7 +6727,7 @@ regions:
             photo_id: 54490042
             photo_link: 'http://photos1.meetupstatic.com/photos/member/2/7/3/a/member_54490042.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/2/7/3/a/thumb_54490042.jpeg'
-        members: 213
+        members: 215
         name: Viaplay Tech Group
         lat: 59.33000183105469
         who: Viaplayers
@@ -6624,7 +6755,7 @@ regions:
             photo_id: 99035972
             photo_link: 'http://photos3.meetupstatic.com/photos/member/8/c/8/4/member_99035972.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/8/c/8/4/thumb_99035972.jpeg'
-        members: 2693
+        members: 2715
         name: AngularJS Paris
         lat: 48.86000061035156
         who: Angularians
@@ -6646,7 +6777,7 @@ regions:
             photo_id: 125666802
             photo_link: 'http://photos4.meetupstatic.com/photos/member/6/8/b/2/member_125666802.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/8/b/2/thumb_125666802.jpeg'
-        members: 460
+        members: 462
         name: Copenhagen Node.js Hackathon
         lat: 55.68000030517578
         who: Hackers
@@ -6657,7 +6788,7 @@ regions:
         timezone: Europe/Paris
         created: 1372328455000
         link: 'http://www.meetup.com/Nodejs-Paris/'
-        rating: 4.55
+        rating: 4.56
         description: >-
           <p>Node.js + Javascript + Paris = ♥</p>
 
@@ -6693,7 +6824,7 @@ regions:
             photo_id: 223997972
             photo_link: 'http://photos3.meetupstatic.com/photos/member/4/6/3/4/member_223997972.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/4/6/3/4/thumb_223997972.jpeg'
-        members: 2574
+        members: 2645
         name: Node.js Paris
         lat: 48.86000061035156
         who: Nodeurs
@@ -6767,7 +6898,7 @@ regions:
             photo_id: 129751142
             photo_link: 'http://photos1.meetupstatic.com/photos/member/7/9/a/6/member_129751142.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/7/9/a/6/thumb_129751142.jpeg'
-        members: 114
+        members: 117
         name: 'Disruptive technologies in Planet Marseille !'
         lat: 43.310001373291016
         who: les marsnoveurs
@@ -6788,7 +6919,7 @@ regions:
             photo_id: 130706722
             photo_link: 'http://photos4.meetupstatic.com/photos/member/6/8/6/2/member_130706722.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/8/6/2/thumb_130706722.jpeg'
-        members: 159
+        members: 163
         name: AngularJS - Edinburgh
         state: U8
         lat: 55.959999084472656
@@ -6814,49 +6945,16 @@ regions:
 
 
 
-
-
-
-
-
-
           <br>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
            Join us to be one step ahead and think outside the box. We're looking
-
-
-
           forward to meet you!<br>
 
 
 
-
-
-
-
-
-
           <br>
-
-
-
-
-
-
 
 
 
@@ -6876,7 +6974,7 @@ regions:
             photo_id: 114520882
             photo_link: 'http://photos4.meetupstatic.com/photos/member/9/f/b/2/member_114520882.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/9/f/b/2/thumb_114520882.jpeg'
-        members: 578
+        members: 589
         name: Geek2Geek - Berlin Tech Talk
         lat: 52.52000045776367
         who: Geeks
@@ -6886,7 +6984,7 @@ regions:
         timezone: Europe/Lisbon
         created: 1374056408000
         link: 'http://www.meetup.com/require-lx/'
-        rating: 4.75
+        rating: 4.78
         description: '<p>A meetup group for JavaScript developers, lovers, enthusiasts and explorers in Lisbon. Server-side and client-side. Talks and code shows, some day even hackathons.</p>'
         lon: -9.140000343322754
         group_photo:
@@ -6902,7 +7000,7 @@ regions:
             photo_id: 132986942
             photo_link: 'http://photos1.meetupstatic.com/photos/member/6/9/3/e/member_132986942.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/6/9/3/e/thumb_132986942.jpeg'
-        members: 537
+        members: 545
         name: "require('lx')"
         lat: 38.720001220703125
         who: protectors of the hexagon
@@ -6930,7 +7028,7 @@ regions:
             photo_id: 136574882
             photo_link: 'http://photos4.meetupstatic.com/photos/member/3/a/2/2/member_136574882.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/a/2/2/thumb_136574882.jpeg'
-        members: 1171
+        members: 1183
         name: AngularJS Belgium
         lat: 50.83000183105469
         who: AngularJS Belgium members
@@ -6958,7 +7056,7 @@ regions:
             photo_id: 139011002
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/7/3/a/member_139011002.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/7/3/a/thumb_139011002.jpeg'
-        members: 36
+        members: 42
         name: Rzeszów JavaScript Developers
         lat: 50.04999923706055
         who: Javascripters
@@ -6985,7 +7083,7 @@ regions:
             photo_id: 143105932
             photo_link: 'http://photos1.meetupstatic.com/photos/member/1/7/2/c/member_143105932.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/1/7/2/c/thumb_143105932.jpeg'
-        members: 497
+        members: 498
         name: TechShock
         lat: 59.90999984741211
         who: Developers
@@ -7022,7 +7120,7 @@ regions:
             photo_id: 143687132
             photo_link: 'http://photos1.meetupstatic.com/photos/member/b/8/1/c/member_143687132.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/b/8/1/c/thumb_143687132.jpeg'
-        members: 608
+        members: 631
         name: NodeBots of London
         state: '17'
         lat: 51.470001220703125
@@ -7056,7 +7154,7 @@ regions:
         timezone: Europe/Vienna
         created: 1378250626000
         link: 'http://www.meetup.com/stahlstadt-js/'
-        rating: 4.97
+        rating: 4.76
         description: "<p>Let's talk JS. In se Stahlstadt.</p>"
         lon: 14.289999961853027
         group_photo:
@@ -7072,7 +7170,7 @@ regions:
             photo_id: 151826822
             photo_link: 'http://photos4.meetupstatic.com/photos/member/6/8/c/6/member_151826822.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/8/c/6/thumb_151826822.jpeg'
-        members: 160
+        members: 172
         name: stahlstadt.js
         lat: 48.310001373291016
         who: Stahlstadtkinder
@@ -7100,7 +7198,7 @@ regions:
             photo_id: 146604622
             photo_link: 'http://photos2.meetupstatic.com/photos/member/6/0/2/e/member_146604622.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/6/0/2/e/thumb_146604622.jpeg'
-        members: 481
+        members: 505
         name: JavaScript Zagreb
         lat: 45.79999923706055
         who: JavaScript developers
@@ -7142,7 +7240,7 @@ regions:
             photo_id: 148981062
             photo_link: 'http://photos4.meetupstatic.com/photos/member/4/2/6/member_148981062.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/4/2/6/thumb_148981062.jpeg'
-        members: 829
+        members: 839
         name: Node.js Budapest
         lat: 47.5099983215332
         who: Members
@@ -7212,7 +7310,7 @@ regions:
             photo_id: 150338232
             photo_link: 'http://photos2.meetupstatic.com/photos/member/9/5/5/8/member_150338232.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/9/5/5/8/thumb_150338232.jpeg'
-        members: 852
+        members: 856
         name: Front Endgineers London
         state: '17'
         lat: 51.5099983215332
@@ -7224,7 +7322,7 @@ regions:
         timezone: Europe/Brussels
         created: 1381155118000
         link: 'http://www.meetup.com/Ember-js-Belgium/'
-        rating: 4.88
+        rating: 4.9
         description: "<p>This is a group for anyone interested in developing web applications in Ember.js. I created this group because it's nice to have a local community for sharing knowledge, ideas and inspiration about this awesome web framework. The learning curve for Ember.js is not the lightest so it will also be a place to share your frustrations! Beginner or expert, everyone is welcome.</p>"
         lon: 4.329999923706055
         group_photo:
@@ -7240,7 +7338,7 @@ regions:
             photo_id: 142947552
             photo_link: 'http://photos2.meetupstatic.com/photos/member/6/b/a/0/member_142947552.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/b/a/0/thumb_142947552.jpeg'
-        members: 109
+        members: 110
         name: Ember.js Belgium
         lat: 50.83000183105469
         who: Emberists
@@ -7282,7 +7380,7 @@ regions:
             photo_id: 62390122
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/3/c/a/member_62390122.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/3/c/a/thumb_62390122.jpeg'
-        members: 214
+        members: 216
         name: Liverpool JavaScript User Group
         state: '28'
         lat: 53.400001525878906
@@ -7302,8 +7400,15 @@ regions:
           photo_id: 294369532
           photo_link: 'http://photos4.meetupstatic.com/photos/event/2/5/3/c/600_294369532.jpeg'
           thumb_link: 'http://photos4.meetupstatic.com/photos/event/2/5/3/c/thumb_294369532.jpeg'
-        join_mode: closed
-        members: 267
+        join_mode: approval
+        organizer:
+          member_id: 31834032
+          name: Jérôme Loï
+          photo:
+            photo_id: 32343092
+            photo_link: 'http://photos3.meetupstatic.com/photos/member/c/1/4/member_32343092.jpeg'
+            thumb_link: 'http://photos1.meetupstatic.com/photos/member/c/1/4/thumb_32343092.jpeg'
+        members: 268
         name: Les NodeBots de Paris
         lat: 48.86000061035156
         who: Friends of the Nodebots
@@ -7337,7 +7442,7 @@ regions:
             photo_id: 153187322
             photo_link: 'http://photos2.meetupstatic.com/photos/member/1/c/9/a/member_153187322.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/1/c/9/a/thumb_153187322.jpeg'
-        members: 41
+        members: 42
         name: International PHP Conference
         lat: 52.52000045776367
         who: Members
@@ -7378,8 +7483,16 @@ regions:
           photo_id: 422024472
           photo_link: 'http://photos2.meetupstatic.com/photos/event/a/d/b/8/600_422024472.jpeg'
           thumb_link: 'http://photos4.meetupstatic.com/photos/event/a/d/b/8/thumb_422024472.jpeg'
-        join_mode: closed
-        members: 82
+        join_mode: approval
+        organizer:
+          member_id: 154540292
+          name: Milan Zigmond
+          photo:
+            highres_link: 'http://photos1.meetupstatic.com/photos/member/c/e/2/e/highres_208672782.jpeg'
+            photo_id: 208672782
+            photo_link: 'http://photos3.meetupstatic.com/photos/member/c/e/2/e/member_208672782.jpeg'
+            thumb_link: 'http://photos1.meetupstatic.com/photos/member/c/e/2/e/thumb_208672782.jpeg'
+        members: 84
         name: Prague Meteor Meetup Group
         lat: 50.08000183105469
         who: Meteor enthusiasts
@@ -7457,7 +7570,7 @@ regions:
             photo_id: 157450802
             photo_link: 'http://photos2.meetupstatic.com/photos/member/2/a/3/2/member_157450802.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/2/a/3/2/thumb_157450802.jpeg'
-        members: 74
+        members: 75
         name: Kristiansand.js
         lat: 58.150001525878906
         who: udviglere
@@ -7468,7 +7581,7 @@ regions:
         timezone: Europe/Berlin
         created: 1384283774000
         link: 'http://www.meetup.com/Node-js-Meetup-Berlin/'
-        rating: 4.53
+        rating: 4.52
         description: >-
           <p>NOTICE: If you're looking for a new job or you're a company looking
           to hire from among our members, please use <a
@@ -7506,7 +7619,7 @@ regions:
             photo_id: 245971143
             photo_link: 'http://photos4.meetupstatic.com/photos/member/7/9/a/7/member_245971143.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/7/9/a/7/thumb_245971143.jpeg'
-        members: 1221
+        members: 1250
         name: Node.js Meetup Berlin
         lat: 52.52000045776367
         who: JavaScripters
@@ -7556,7 +7669,7 @@ regions:
             photo_id: 94722742
             photo_link: 'http://photos4.meetupstatic.com/photos/member/a/6/f/6/member_94722742.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/a/6/f/6/thumb_94722742.jpeg'
-        members: 390
+        members: 394
         name: 'JS on Devices: Web Programming for the Internet of Things'
         state: '17'
         lat: 51.5099983215332
@@ -7599,7 +7712,7 @@ regions:
             photo_id: 169840252
             photo_link: 'http://photos4.meetupstatic.com/photos/member/9/d/3/c/member_169840252.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/9/d/3/c/thumb_169840252.jpeg'
-        members: 258
+        members: 264
         name: BrnoJS
         lat: 49.20000076293945
         who: JavaScripters
@@ -7610,7 +7723,7 @@ regions:
         timezone: Europe/Oslo
         created: 1386697184000
         link: 'http://www.meetup.com/BartJS/'
-        rating: 4.36
+        rating: 4.41
         description: "<p>En ny-oppstartet Meetup i Trondheim som konsentrerer seg om all-things Javascript. Fra programmering på serveren til koding i klienten, informasjon om det nyeste MV*-rammeverk til programmering av hardware. I denne meetupen kan vi kjøre introduksjoner til nye paradigmer og teknikker, diskusjoner om \"compile-to-javascript\"-språk eller innføring i UI-bibliotek.</p>\n<p>Se Github-repo på\_<a href=\"https://github.com/bartjs\">https://github.com/bartjs</a> og gruppens nettside på <a href=\"http://bartjs.github.io\">http://bartjs.github.io</a>.</p>"
         lon: 10.399999618530273
         group_photo:
@@ -7627,7 +7740,7 @@ regions:
             photo_id: 163399272
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/b/4/8/member_163399272.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/4/b/4/8/thumb_163399272.jpeg'
-        members: 233
+        members: 250
         name: BartJS
         lat: 63.439998626708984
         who: Utviklere
@@ -7655,7 +7768,7 @@ regions:
             photo_id: 245882165
             photo_link: 'http://photos4.meetupstatic.com/photos/member/8/7/5/member_245882165.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/8/7/5/thumb_245882165.jpeg'
-        members: 213
+        members: 216
         name: WebWorker Cologne
         lat: 50.95000076293945
         who: WebWorker
@@ -7692,7 +7805,7 @@ regions:
             photo_id: 248312018
             photo_link: 'http://photos3.meetupstatic.com/photos/member/7/d/1/2/member_248312018.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/7/d/1/2/thumb_248312018.jpeg'
-        members: 169
+        members: 174
         name: Prague developers
         lat: 50.08000183105469
         who: Developers
@@ -7720,7 +7833,7 @@ regions:
             photo_id: 225409192
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/0/2/8/member_225409192.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/0/2/8/thumb_225409192.jpeg'
-        members: 182
+        members: 186
         name: Meteor Oslo
         lat: 59.90999984741211
         who: Meteorites
@@ -7731,7 +7844,7 @@ regions:
         timezone: Europe/Paris
         created: 1388657291000
         link: 'http://www.meetup.com/FranceJS/'
-        rating: 4.75
+        rating: 4.77
         description: >-
           <p>FranceJS, c'est l'ensemble des communautés francophones autour de
           <b>JavaScript</b>.</p>
@@ -7749,21 +7862,9 @@ regions:
 
 
 
-
-
-
-
-
-
           </p>
 
           <p><br>
-
-
-
-
-
-
 
 
 
@@ -7783,7 +7884,7 @@ regions:
             photo_id: 154475982
             photo_link: 'http://photos1.meetupstatic.com/photos/member/8/c/8/e/member_154475982.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/8/c/8/e/thumb_154475982.jpeg'
-        members: 1393
+        members: 1424
         name: FranceJS
         lat: 48.86000061035156
         who: javascripters
@@ -7794,7 +7895,7 @@ regions:
         timezone: Europe/Amsterdam
         created: 1388733380000
         link: 'http://www.meetup.com/NijmegenJS/'
-        rating: 4.36
+        rating: 4.39
         description: "<p>Developers interested in sharing knowledge and growing their skills around JavaScript and modern web technology: e.g. ES6, NodeJS, Angular, Ember, Web Components, HTML5 APIs, etc.</p>\n<p>Goals:</p>\n<p>•\_A monthly meetup with one or more (short) talks</p>\n<p>• A\_post meal/drinks for socialising.</p>\n<p>•\_Focus on cutting-edge technologies and development techniques.<span>\_</span></p>\n<p>If you want to help out, have any suggestions or feedback, just get in touch!</p>"
         lon: 5.849999904632568
         group_photo:
@@ -7811,7 +7912,7 @@ regions:
             photo_id: 167286852
             photo_link: 'http://photos2.meetupstatic.com/photos/member/1/a/c/4/member_167286852.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/1/a/c/4/thumb_167286852.jpeg'
-        members: 117
+        members: 120
         name: NijmegenJS
         lat: 51.84000015258789
         who: Developers
@@ -7832,7 +7933,7 @@ regions:
             photo_id: 160159122
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/a/b/2/member_160159122.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/4/a/b/2/thumb_160159122.jpeg'
-        members: 115
+        members: 116
         name: Javascript - Iceland
         lat: 64.13999938964844
         who: Javascript fanatics
@@ -7860,7 +7961,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 145
+        members: 157
         name: Meteor Romania
         lat: 44.439998626708984
         who: Meteorites
@@ -7888,7 +7989,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 191
+        members: 207
         name: Meteor Brussels
         lat: 50.83000183105469
         who: Meteorites
@@ -7916,7 +8017,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 239
+        members: 243
         name: Meteor Göteborg
         lat: 57.720001220703125
         who: Göteborgare
@@ -7943,7 +8044,7 @@ regions:
             photo_id: 169782252
             photo_link: 'http://photos1.meetupstatic.com/photos/member/a/5/0/c/member_169782252.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/a/5/0/c/thumb_169782252.jpeg'
-        members: 126
+        members: 138
         name: JS.everywhere() Conferences
         lat: 48.86000061035156
         who: JS Globetrotters
@@ -8019,7 +8120,7 @@ regions:
             photo_id: 47559842
             photo_link: 'http://photos4.meetupstatic.com/photos/member/9/b/a/2/member_47559842.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/9/b/a/2/thumb_47559842.jpeg'
-        members: 351
+        members: 366
         name: Node.js Vienna
         lat: 48.220001220703125
         who: noders
@@ -8030,7 +8131,7 @@ regions:
         timezone: Europe/Warsaw
         created: 1391726967000
         link: 'http://www.meetup.com/KrakowJS/'
-        rating: 4.52
+        rating: 4.61
         description: 'We want to bring all JS pros from Krakow together - learning, networking, chilling out.'
         lon: 19.959999084472656
         join_mode: open
@@ -8042,7 +8143,7 @@ regions:
             photo_id: 239882002
             photo_link: 'http://photos4.meetupstatic.com/photos/member/7/d/2/member_239882002.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/7/d/2/thumb_239882002.jpeg'
-        members: 1119
+        members: 1158
         name: KrakowJS
         lat: 50.060001373291016
         who: JS pros
@@ -8076,7 +8177,7 @@ regions:
             photo_id: 244092639
             photo_link: 'http://photos2.meetupstatic.com/photos/member/3/1/5/f/member_244092639.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/3/1/5/f/thumb_244092639.jpeg'
-        members: 649
+        members: 654
         name: MEAN Stack
         state: '17'
         lat: 51.52000045776367
@@ -8104,7 +8205,7 @@ regions:
             photo_id: 177079192
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/a/f/8/member_177079192.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/4/a/f/8/thumb_177079192.jpeg'
-        members: 33
+        members: 34
         name: Balkan Web Developers
         lat: 44.83000183105469
         who: Web Devs
@@ -8132,7 +8233,7 @@ regions:
             photo_id: 177079192
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/a/f/8/member_177079192.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/4/a/f/8/thumb_177079192.jpeg'
-        members: 76
+        members: 75
         name: Web Hackers Poland
         lat: 52.2599983215332
         who: Web Hackers
@@ -8175,14 +8276,14 @@ regions:
           thumb_link: 'http://photos1.meetupstatic.com/photos/event/3/c/4/8/thumb_352695432.jpeg'
         join_mode: open
         organizer:
-          member_id: 12591788
-          name: Markus Tiefenbacher
+          member_id: 137152542
+          name: mario zupan
           photo:
-            highres_link: 'http://photos3.meetupstatic.com/photos/member/6/2/e/a/highres_190765322.jpeg'
-            photo_id: 190765322
-            photo_link: 'http://photos3.meetupstatic.com/photos/member/6/2/e/a/member_190765322.jpeg'
-            thumb_link: 'http://photos3.meetupstatic.com/photos/member/6/2/e/a/thumb_190765322.jpeg'
-        members: 216
+            highres_link: 'http://photos4.meetupstatic.com/photos/member/9/e/a/e/highres_225760622.jpeg'
+            photo_id: 225760622
+            photo_link: 'http://photos2.meetupstatic.com/photos/member/9/e/a/e/member_225760622.jpeg'
+            thumb_link: 'http://photos2.meetupstatic.com/photos/member/9/e/a/e/thumb_225760622.jpeg'
+        members: 217
         name: grazjs - Graz JavaScript Meetup
         lat: 47.08000183105469
         who: JavaScripters
@@ -8210,7 +8311,7 @@ regions:
             photo_id: 31694932
             photo_link: 'http://photos2.meetupstatic.com/photos/member/3/a/5/4/member_31694932.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/3/a/5/4/thumb_31694932.jpeg'
-        members: 2225
+        members: 2275
         name: Paris.js
         lat: 48.86000061035156
         who: JavaScripteurs
@@ -8221,7 +8322,7 @@ regions:
         timezone: Europe/Paris
         created: 1393626117000
         link: 'http://www.meetup.com/RennesJS/'
-        rating: 4.69
+        rating: 4.71
         description: '<p>Communauté des développeurs #JavaScript passionnés à #Rennes</p>'
         lon: -1.6799999475479126
         group_photo:
@@ -8238,7 +8339,7 @@ regions:
             photo_id: 178884382
             photo_link: 'http://photos2.meetupstatic.com/photos/member/5/f/3/e/member_178884382.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/5/f/3/e/thumb_178884382.jpeg'
-        members: 249
+        members: 260
         name: RennesJS
         lat: 48.11000061035156
         who: Javascripters
@@ -8266,7 +8367,7 @@ regions:
             photo_id: 145727012
             photo_link: 'http://photos1.meetupstatic.com/photos/member/b/7/a/4/member_145727012.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/b/7/a/4/thumb_145727012.jpeg'
-        members: 478
+        members: 489
         name: Utrecht JavaScript Meetup
         lat: 52.099998474121094
         who: monkeys
@@ -8321,7 +8422,7 @@ regions:
             photo_id: 188834722
             photo_link: 'http://photos1.meetupstatic.com/photos/member/3/9/8/2/member_188834722.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/3/9/8/2/thumb_188834722.jpeg'
-        members: 46
+        members: 48
         name: Øresund Functional Programmers
         lat: 55.61000061035156
         who: Functional Programmers
@@ -8344,12 +8445,7 @@ regions:
         organizer:
           member_id: 141578132
           name: Timur Shemsedinov
-          photo:
-            highres_link: 'http://photos2.meetupstatic.com/photos/member/7/1/2/3/highres_245488963.jpeg'
-            photo_id: 245488963
-            photo_link: 'http://photos4.meetupstatic.com/photos/member/7/1/2/3/member_245488963.jpeg'
-            thumb_link: 'http://photos2.meetupstatic.com/photos/member/7/1/2/3/thumb_245488963.jpeg'
-        members: 536
+        members: 546
         name: Kiev node.js Group
         lat: 50.439998626708984
         who: software engineers
@@ -8377,7 +8473,7 @@ regions:
             photo_id: 246188024
             photo_link: 'http://photos1.meetupstatic.com/photos/member/1/f/5/8/member_246188024.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/1/f/5/8/thumb_246188024.jpeg'
-        members: 838
+        members: 857
         name: MunichJS – JavaScript User Group
         lat: 48.13999938964844
         who: Members
@@ -8409,7 +8505,7 @@ regions:
             photo_id: 188834722
             photo_link: 'http://photos1.meetupstatic.com/photos/member/3/9/8/2/member_188834722.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/3/9/8/2/thumb_188834722.jpeg'
-        members: 30
+        members: 31
         name: Node.js Skåne
         lat: 55.709999084472656
         who: Node Hackers
@@ -8447,7 +8543,7 @@ regions:
             photo_id: 28465872
             photo_link: 'http://photos2.meetupstatic.com/photos/member/6/5/1/0/member_28465872.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/5/1/0/thumb_28465872.jpeg'
-        members: 232
+        members: 240
         name: meet.js Łódź
         lat: 51.77000045776367
         who: JS Ninjas
@@ -8487,7 +8583,7 @@ regions:
             photo_id: 15141561
             photo_link: 'http://photos1.meetupstatic.com/photos/member/5/4/3/9/member_15141561.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/5/4/3/9/thumb_15141561.jpeg'
-        members: 607
+        members: 629
         name: Helsinki Node.js
         lat: 60.16999816894531
         who: Nodes
@@ -8497,7 +8593,7 @@ regions:
         timezone: Europe/Dublin
         created: 1398765225000
         link: 'http://www.meetup.com/Dublin-Microservices-User-Group/'
-        rating: 4.61
+        rating: 4.66
         description: >-
           <p>The Architectural Monolith’s days are numbered. As companies are
           becoming more and more agile, and see how they can now adapt in order
@@ -8525,7 +8621,7 @@ regions:
             photo_id: 242264490
             photo_link: 'http://photos4.meetupstatic.com/photos/member/a/d/c/a/member_242264490.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/d/c/a/thumb_242264490.jpeg'
-        members: 497
+        members: 512
         name: Dublin μServices (Microservices) User Group
         lat: 53.33000183105469
         who: μServicers
@@ -8536,7 +8632,7 @@ regions:
         timezone: Europe/Athens
         created: 1398907906000
         link: 'http://www.meetup.com/Thessaloniki-Node-js-Meetup/'
-        rating: 4.94
+        rating: 4.95
         description: >-
           <p>Do you love Node? We love it TOO!</p>
 
@@ -8579,7 +8675,7 @@ regions:
             photo_id: 250619293
             photo_link: 'http://photos2.meetupstatic.com/photos/member/e/7/9/d/member_250619293.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/e/7/9/d/thumb_250619293.jpeg'
-        members: 264
+        members: 281
         name: Thessaloníki Node.js Meetup
         lat: 40.63999938964844
         who: Noders
@@ -8608,35 +8704,8 @@ regions:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
            2) Agile Software Development, Agile &amp; Lean Software
-
-
-
           Management<br>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -8644,31 +8713,7 @@ regions:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
            4) Mobile: Android, iOS<br>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -8676,25 +8721,7 @@ regions:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
            6) NOSQL: Neo4J Graph Database and other non-relational databases</p>
-
-
-
-
-
-
 
           <p>You can find out more informations about LARUS on our web site: <a
           href="http://www.larus-ba.it" target="_blank"
@@ -8704,18 +8731,6 @@ regions:
           group: we love to learn from you too!</p>
 
           <p>Cheers,<br>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -8742,7 +8757,7 @@ regions:
         timezone: Europe/Stockholm
         created: 1400240084000
         link: 'http://www.meetup.com/Uppsalajs/'
-        rating: 4.5
+        rating: 4.53
         description: '<p>Welcome to the JavaScript user group in Uppsala! Whether you are an experienced programmer or a just starting to learn – this group is for you. Meet other JavaScript developers and share thoughts and ideas.</p>'
         lon: 17.639999389648438
         join_mode: open
@@ -8754,7 +8769,7 @@ regions:
             photo_id: 201949642
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/1/e/a/member_201949642.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/1/e/a/thumb_201949642.jpeg'
-        members: 255
+        members: 258
         name: Uppsala.js
         lat: 59.86000061035156
         who: js-hackers
@@ -8781,7 +8796,7 @@ regions:
             photo_id: 176935182
             photo_link: 'http://photos2.meetupstatic.com/photos/member/d/7/8/e/member_176935182.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/d/7/8/e/thumb_176935182.jpeg'
-        members: 619
+        members: 673
         name: 'Jstanbul: Istanbul JavaScript User Group'
         lat: 41.0099983215332
         who: Ninjas
@@ -8801,12 +8816,6 @@ regions:
 
 
 
-
-
-
-
-
-
           </p>
         lon: 4.329999923706055
         group_photo:
@@ -8823,7 +8832,7 @@ regions:
             photo_id: 243933211
             photo_link: 'http://photos1.meetupstatic.com/photos/member/8/1/b/b/member_243933211.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/8/1/b/b/thumb_243933211.jpeg'
-        members: 201
+        members: 202
         name: Front-end in Brussels
         lat: 50.83000183105469
         who: Frontenders
@@ -8877,7 +8886,7 @@ regions:
             photo_id: 131514572
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/5/2/c/member_131514572.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/d/5/2/c/thumb_131514572.jpeg'
-        members: 43
+        members: 47
         name: Dutch OpenShift User Group
         lat: 52.369998931884766
         who: Developers
@@ -8898,14 +8907,14 @@ regions:
           thumb_link: 'http://photos1.meetupstatic.com/photos/event/7/3/f/c/thumb_400649692.jpeg'
         join_mode: open
         organizer:
-          member_id: 82943852
-          name: Marcin Cimaszewski
+          member_id: 127970372
+          name: Piotr Zientara
           photo:
-            highres_link: 'http://photos2.meetupstatic.com/photos/member/4/6/d/4/highres_234018132.jpeg'
-            photo_id: 234018132
-            photo_link: 'http://photos4.meetupstatic.com/photos/member/4/6/d/4/member_234018132.jpeg'
-            thumb_link: 'http://photos2.meetupstatic.com/photos/member/4/6/d/4/thumb_234018132.jpeg'
-        members: 968
+            highres_link: 'http://photos1.meetupstatic.com/photos/member/b/f/3/7/highres_245988951.jpeg'
+            photo_id: 245988951
+            photo_link: 'http://photos1.meetupstatic.com/photos/member/b/f/3/7/member_245988951.jpeg'
+            thumb_link: 'http://photos1.meetupstatic.com/photos/member/b/f/3/7/thumb_245988951.jpeg'
+        members: 1013
         name: WarsawJS
         lat: 52.2599983215332
         who: Members
@@ -8967,7 +8976,7 @@ regions:
             photo_id: 205737252
             photo_link: 'http://photos4.meetupstatic.com/photos/member/d/f/a/4/member_205737252.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/d/f/a/4/thumb_205737252.jpeg'
-        members: 146
+        members: 149
         name: Nijmegen Developers Meetup
         lat: 51.84000015258789
         who: Developers
@@ -8990,7 +8999,7 @@ regions:
             photo_id: 206391352
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/9/8/member_206391352.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/c/8/9/8/thumb_206391352.jpeg'
-        members: 66
+        members: 65
         name: Berlin Grill.JS Meetup
         lat: 52.52000045776367
         who: JS Grillers
@@ -9000,7 +9009,7 @@ regions:
         timezone: Europe/London
         created: 1403597682000
         link: 'http://www.meetup.com/Leeds-Code-Dojo/'
-        rating: 4.93
+        rating: 4.88
         description: "<p>Leeds Code Dojo is a group dedicated to programming. \_We focus on practical coding sessions , where you can learn by doing.</p>\n<p><span>Want to have some fun coding in a relaxed and friendly environment? Interested in self-improvement through deliberate practice? Want to see what you can learn from fellow programmers, and teach them what you know? Then Leeds Code Dojo is for you!</span></p>\n<p><span>All languages and levels of experience welcome.</span><br>\n\n</p>"
         lon: -1.559999942779541
         group_photo:
@@ -9017,7 +9026,7 @@ regions:
             photo_id: 206616282
             photo_link: 'http://photos4.meetupstatic.com/photos/member/8/d/b/a/member_206616282.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/8/d/b/a/thumb_206616282.jpeg'
-        members: 409
+        members: 438
         name: Leeds Code Dojo
         state: '45'
         lat: 53.79999923706055
@@ -9039,7 +9048,7 @@ regions:
             photo_id: 154824872
             photo_link: 'http://photos4.meetupstatic.com/photos/member/6/1/2/8/member_154824872.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/1/2/8/thumb_154824872.jpeg'
-        members: 679
+        members: 687
         name: Fullstack.js London
         state: '17'
         lat: 51.4900016784668
@@ -9051,7 +9060,7 @@ regions:
         timezone: Europe/Berlin
         created: 1403785279000
         link: 'http://www.meetup.com/node-HH/'
-        rating: 4.8
+        rating: 4.52
         description: >-
           <p>This is a group for <b>anyone</b> interested in <b>Node.js</b>. We
           will meet to <b>talk</b>, <b>hack</b> and <b>learn</b> with and from
@@ -9122,7 +9131,7 @@ regions:
             photo_id: 206651722
             photo_link: 'http://photos3.meetupstatic.com/photos/member/2/d/c/a/member_206651722.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/2/d/c/a/thumb_206651722.jpeg'
-        members: 417
+        members: 428
         name: node.HH - Node.js User Group
         lat: 53.54999923706055
         who: Noder
@@ -9145,7 +9154,7 @@ regions:
             photo_id: 207307482
             photo_link: 'http://photos4.meetupstatic.com/photos/member/1/d/3/a/member_207307482.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/1/d/3/a/thumb_207307482.jpeg'
-        members: 142
+        members: 141
         name: MontpellierJS
         lat: 43.61000061035156
         who: Participants
@@ -9173,7 +9182,7 @@ regions:
             photo_id: 241592858
             photo_link: 'http://photos2.meetupstatic.com/photos/member/8/0/5/a/member_241592858.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/8/0/5/a/thumb_241592858.jpeg'
-        members: 96
+        members: 102
         name: 'Angular & more'
         lat: 45.189998626708984
         who: Members
@@ -9199,7 +9208,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 62
+        members: 64
         name: Meteor Reykjavík
         lat: 64.13999938964844
         who: Meteorites
@@ -9262,13 +9271,13 @@ regions:
         created: 1405288573000
         link: 'http://www.meetup.com/nodeba/'
         rating: 4.8
-        description: "<p>We are about Node.js for beginners, experts and everyone who loves javascript. It's about using Node.js as frontend dev, backend dev or even devops. And last but not least node.js for fun like nodebots or building quadrocopters.</p>\n<p>JIFASNIF - JavaScript is fun, and so Node is fun. (c) isaacs</p>\n<p>Meet us online\_<a href=\"https://gitter.im/nodeba/nodeba\">https://gitter.im/nodeba/nodeba</a><br>\n\n</p>\n<p>Here are talks\_<a href=\"https://github.com/nodeba/\">https://github.com/nodeba</a></p>"
+        description: "<p>We are about Node.js for beginners, experts and everyone who loves javascript. It's about using Node.js as frontend dev, backend dev or even devops. And last but not least node.js for fun like nodebots or building quadrocopters.</p> \n<p>JIFASNIF - JavaScript is fun, and so Node is fun. (c) isaacs</p> \n<p>Meet us online&nbsp;<a href=\"https://gitter.im/nodeba/nodeba\">https://gitter.im/nodeba/nodeba</a> <br> </p> \n<p>Here are talks&nbsp;<a href=\"https://github.com/nodeba/\">https://github.com/nodeba</a></p>"
         lon: 17.1299991607666
         group_photo:
-          highres_link: 'http://photos2.meetupstatic.com/photos/event/4/e/4/0/highres_389840032.jpeg'
-          photo_id: 389840032
-          photo_link: 'http://photos2.meetupstatic.com/photos/event/4/e/4/0/600_389840032.jpeg'
-          thumb_link: 'http://photos4.meetupstatic.com/photos/event/4/e/4/0/thumb_389840032.jpeg'
+          highres_link: 'http://photos2.meetupstatic.com/photos/event/a/e/c/8/highres_444644744.jpeg'
+          photo_id: 444644744
+          photo_link: 'http://photos2.meetupstatic.com/photos/event/a/e/c/8/600_444644744.jpeg'
+          thumb_link: 'http://photos2.meetupstatic.com/photos/event/a/e/c/8/thumb_444644744.jpeg'
         join_mode: open
         organizer:
           member_id: 117445052
@@ -9278,7 +9287,7 @@ regions:
             photo_id: 155198372
             photo_link: 'http://photos2.meetupstatic.com/photos/member/9/5/e/4/member_155198372.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/9/5/e/4/thumb_155198372.jpeg'
-        members: 66
+        members: 88
         name: Node.js Bratislava
         lat: 48.15999984741211
         who: Members
@@ -9301,7 +9310,7 @@ regions:
             photo_id: 242120685
             photo_link: 'http://photos2.meetupstatic.com/photos/member/5/0/c/d/member_242120685.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/5/0/c/d/thumb_242120685.jpeg'
-        members: 33
+        members: 34
         name: Meteor Sainté
         lat: 45.43000030517578
         who: meteorites
@@ -9329,7 +9338,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 93
+        members: 92
         name: Meteor Uppsala
         lat: 59.86000061035156
         who: Meteorites
@@ -9357,7 +9366,7 @@ regions:
             photo_id: 216499302
             photo_link: 'http://photos4.meetupstatic.com/photos/member/4/b/6/6/member_216499302.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/4/b/6/6/thumb_216499302.jpeg'
-        members: 118
+        members: 124
         name: Web Montag Ulm
         lat: 48.400001525878906
         who: Teilnehmer
@@ -9367,8 +9376,13 @@ regions:
         timezone: Europe/London
         created: 1407314293000
         link: 'http://www.meetup.com/London-js/'
-        description: 'London.js Meetup is aimed at professionals within the web industry who have an interest in JavaScript, emerging technologies and related frameworks.'
+        description: '<p>London.js Meetup is aimed at professionals within the web industry who have an interest in software developement and computer science.</p>'
         lon: -0.09000000357627869
+        group_photo:
+          highres_link: 'http://photos3.meetupstatic.com/photos/event/1/2/6/e/highres_444964718.jpeg'
+          photo_id: 444964718
+          photo_link: 'http://photos3.meetupstatic.com/photos/event/1/2/6/e/600_444964718.jpeg'
+          thumb_link: 'http://photos3.meetupstatic.com/photos/event/1/2/6/e/thumb_444964718.jpeg'
         join_mode: open
         organizer:
           member_id: 13804899
@@ -9378,7 +9392,7 @@ regions:
             photo_id: 123559392
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/b/c/0/member_123559392.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/4/b/c/0/thumb_123559392.jpeg'
-        members: 397
+        members: 403
         name: London.js
         state: '17'
         lat: 51.52000045776367
@@ -9402,7 +9416,7 @@ regions:
             photo_id: 202486722
             photo_link: 'http://photos3.meetupstatic.com/photos/member/b/6/8/2/member_202486722.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/b/6/8/2/thumb_202486722.jpeg'
-        members: 129
+        members: 132
         name: StrasbourgJS
         lat: 48.58000183105469
         who: Javascripters
@@ -9430,7 +9444,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 219
+        members: 218
         name: Meteor Düsseldorf
         lat: 51.2400016784668
         who: Meteorites
@@ -9458,7 +9472,7 @@ regions:
             photo_id: 221108742
             photo_link: 'http://photos1.meetupstatic.com/photos/member/2/2/2/6/member_221108742.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/2/2/2/6/thumb_221108742.jpeg'
-        members: 200
+        members: 211
         name: FrankenJS
         lat: 49.45000076293945
         who: "JavaScript'ler"
@@ -9478,7 +9492,7 @@ regions:
             photo_id: 210675682
             photo_link: 'http://photos4.meetupstatic.com/photos/member/3/d/4/2/member_210675682.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/3/d/4/2/thumb_210675682.jpeg'
-        members: 35
+        members: 36
         name: London KeystoneJS Meetup
         state: '17'
         lat: 51.52000045776367
@@ -9490,7 +9504,7 @@ regions:
         timezone: Europe/Brussels
         created: 1409411509000
         link: 'http://www.meetup.com/javascriptlab/'
-        rating: 4.84
+        rating: 4.92
         description: "<p>We love JS and we thought It might be a great idea to put together a place where people can learn new tools, new techniques, and above of all where they can learn how to build applications using JavaScript with the right workflow! So join us and let's get better at doing this.</p>"
         lon: 4.329999923706055
         group_photo:
@@ -9507,7 +9521,7 @@ regions:
             photo_id: 219502662
             photo_link: 'http://photos4.meetupstatic.com/photos/member/5/8/8/6/member_219502662.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/5/8/8/6/thumb_219502662.jpeg'
-        members: 141
+        members: 156
         name: JavaScript Lab
         lat: 50.83000183105469
         who: javascripter
@@ -9539,7 +9553,7 @@ regions:
             photo_id: 92838752
             photo_link: 'http://photos3.meetupstatic.com/photos/member/4/9/4/0/member_92838752.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/4/9/4/0/thumb_92838752.jpeg'
-        members: 491
+        members: 489
         name: Web Platform London
         state: '17'
         lat: 51.47999954223633
@@ -9551,7 +9565,7 @@ regions:
         timezone: Europe/Vilnius
         created: 1410548264000
         link: 'http://www.meetup.com/Vilnius-js/'
-        rating: 4.61
+        rating: 4.69
         description: >-
           <p><b>A group for JavaScript developers, lovers, enthusiasts and
           explorers in Vilnius.</b> <br></p>
@@ -9591,7 +9605,7 @@ regions:
             photo_id: 197115592
             photo_link: 'http://photos1.meetupstatic.com/photos/member/3/c/e/8/member_197115592.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/c/e/8/thumb_197115592.jpeg'
-        members: 463
+        members: 484
         name: Vilnius.js
         lat: 54.70000076293945
         who: js devs
@@ -9624,7 +9638,7 @@ regions:
         timezone: Europe/Berlin
         created: 1410768429000
         link: 'http://www.meetup.com/PottJS/'
-        rating: 4.75
+        rating: 4.69
         description: "The \"Ruhrpott\" is not only Germany's biggest metropolitan area, it has also become an important part of Germany's role in information technology. What's missing is a central user group for JavaScript developers. Here it is. Let's talk, let's get to know each other. Let's get together and create cool stuff, maybe. Let's do PottJS. Glück auf."
         lon: 7
         join_mode: open
@@ -9635,7 +9649,7 @@ regions:
             photo_id: 192983082
             photo_link: 'http://photos3.meetupstatic.com/photos/member/5/a/2/a/member_192983082.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/a/2/a/thumb_192983082.jpeg'
-        members: 277
+        members: 290
         name: PottJS
         lat: 51.470001220703125
         who: Pottkinder
@@ -9658,7 +9672,7 @@ regions:
             photo_id: 227683082
             photo_link: 'http://photos4.meetupstatic.com/photos/member/a/8/4/a/member_227683082.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/8/4/a/thumb_227683082.jpeg'
-        members: 401
+        members: 423
         name: Meet.js Warsaw
         lat: 52.2599983215332
         who: JavaScript lovers
@@ -9686,7 +9700,7 @@ regions:
             photo_id: 191681862
             photo_link: 'http://photos2.meetupstatic.com/photos/member/a/3/8/6/member_191681862.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/3/8/6/thumb_191681862.jpeg'
-        members: 62
+        members: 70
         name: JavaScript User Group OWL
         lat: 51.849998474121094
         who: Members
@@ -9704,22 +9718,7 @@ regions:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-           You should join us if you want to learn about, share experiences
-
-          with,
-
+           You should join us if you want to learn about, share experiences with,
           or work with Node.js and it's modules.</p>
 
           <p><span>Regardless of whether you work in web development or on some
@@ -9734,29 +9733,8 @@ regions:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
            I assume in the beginning I'll give a short intro to Node.js for
-
-
-
           people that don't know the ecosystem yet.<br>
-
-
-
-
-
-
 
 
 
@@ -9764,36 +9742,12 @@ regions:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
            I'm looking forward to learning and hacking with you.</p>
-
-
-
-
-
-
 
           <p>Marc Bachmann</p>
 
           <p><a href="http://twitter.com/mrbrookman"
           class="linkified">http://twitter.com/mrbrookman</a><br>
-
-
-
-
-
-
 
 
 
@@ -9813,7 +9767,7 @@ regions:
             photo_id: 227805852
             photo_link: 'http://photos2.meetupstatic.com/photos/member/b/3/1/c/member_227805852.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/b/3/1/c/thumb_227805852.jpeg'
-        members: 182
+        members: 186
         name: Zurich Node.js
         lat: 47.380001068115234
         who: Members
@@ -9835,7 +9789,7 @@ regions:
             photo_id: 230734382
             photo_link: 'http://photos1.meetupstatic.com/photos/member/8/6/4/e/member_230734382.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/8/6/4/e/thumb_230734382.jpeg'
-        members: 35
+        members: 36
         name: DevMeetings Frontend Development Katowice
         lat: 50.060001373291016
         who: Frontend Developers
@@ -9880,12 +9834,6 @@ regions:
 
 
 
-
-
-
-
-
-
           </p>
         lon: 17.030000686645508
         group_photo:
@@ -9902,7 +9850,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 189
+        members: 195
         name: Meteor Wroclaw
         lat: 51.11000061035156
         who: Meteorites
@@ -9942,7 +9890,7 @@ regions:
             photo_id: 232010852
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/6/a/4/member_232010852.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/c/6/a/4/thumb_232010852.jpeg'
-        members: 1104
+        members: 1135
         name: Frontend Developer Meetup Amsterdam
         lat: 52.369998931884766
         who: Frontend Developers
@@ -9970,7 +9918,7 @@ regions:
             photo_id: 232009922
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/3/0/2/member_232009922.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/c/3/0/2/thumb_232009922.jpeg'
-        members: 66
+        members: 67
         name: Meet.js Szczecin
         lat: 53.43000030517578
         who: JavaScripters
@@ -9997,7 +9945,7 @@ regions:
             photo_id: 173368362
             photo_link: 'http://photos4.meetupstatic.com/photos/member/6/e/c/a/member_173368362.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/e/c/a/thumb_173368362.jpeg'
-        members: 196
+        members: 199
         name: Fullstack.js
         lat: 52.52000045776367
         who: Fullstackers
@@ -10031,7 +9979,7 @@ regions:
             photo_id: 245852470
             photo_link: 'http://photos1.meetupstatic.com/photos/member/7/e/d/6/member_245852470.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/7/e/d/6/thumb_245852470.jpeg'
-        members: 614
+        members: 616
         name: 'AngularJS London : Bring Your Own Project'
         state: '17'
         lat: 51.52000045776367
@@ -10069,7 +10017,7 @@ regions:
             photo_id: 135878822
             photo_link: 'http://photos3.meetupstatic.com/photos/member/9/7/a/6/member_135878822.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/9/7/a/6/thumb_135878822.jpeg'
-        members: 293
+        members: 298
         name: meet.js Katowice
         lat: 50.2599983215332
         who: Members
@@ -10125,7 +10073,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 179
+        members: 187
         name: Meteor Lyon
         lat: 45.7599983215332
         who: Meteorite
@@ -10135,7 +10083,7 @@ regions:
         timezone: Europe/London
         created: 1413273217000
         link: 'http://www.meetup.com/ShoreditchJS/'
-        rating: 4.84
+        rating: 4.86
         description: '<p>Because other tech meet-ups are too mainstream.</p>'
         lon: -0.09000000357627869
         group_photo:
@@ -10152,7 +10100,7 @@ regions:
             photo_id: 250595721
             photo_link: 'http://photos3.meetupstatic.com/photos/member/8/b/8/9/member_250595721.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/8/b/8/9/thumb_250595721.jpeg'
-        members: 974
+        members: 1046
         name: ShoreditchJS
         state: '17'
         lat: 51.529998779296875
@@ -10180,7 +10128,7 @@ regions:
             photo_id: 157450802
             photo_link: 'http://photos2.meetupstatic.com/photos/member/2/a/3/2/member_157450802.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/2/a/3/2/thumb_157450802.jpeg'
-        members: 75
+        members: 76
         name: Stavanger.js
         lat: 58.970001220703125
         who: JavaScriptarar
@@ -10214,7 +10162,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 116
+        members: 118
         name: Meteor Iasi
         lat: 47.16999816894531
         who: Meteoriţi
@@ -10242,7 +10190,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 40
+        members: 41
         name: Meteor Luxembourg
         lat: 49.619998931884766
         who: Meteorites
@@ -10252,7 +10200,7 @@ regions:
         timezone: Europe/London
         created: 1413932212000
         link: 'http://www.meetup.com/JSOxford/'
-        rating: 4.9
+        rating: 4.89
         description: "We're mostly a meet up, sometimes a hack day, sometimes a party with the python and ruby people. If you do anything with JavaScript, or are interested in learning about it - come along to hang out with friendly/nice/welcoming/like-minded group of people. JSOxford has been going quite a while, though have just switched to meetup. Find out more about our past events at http://jsoxford.com."
         lon: -1.2400000095367432
         group_photo:
@@ -10269,7 +10217,7 @@ regions:
             photo_id: 236537682
             photo_link: 'http://photos4.meetupstatic.com/photos/member/4/5/1/2/member_236537682.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/4/5/1/2/thumb_236537682.jpeg'
-        members: 414
+        members: 420
         name: JSOxford
         state: K2
         lat: 51.75
@@ -10297,7 +10245,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 83
+        members: 84
         name: Meteor Rome
         state: RM
         lat: 41.900001525878906
@@ -10331,7 +10279,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 69
+        members: 73
         name: '[MOVED] Meteor Rotterdam'
         lat: 51.93000030517578
         who: Meteorites
@@ -10342,7 +10290,7 @@ regions:
         timezone: Europe/Berlin
         created: 1414410013000
         link: 'http://www.meetup.com/FrankfurtJS/'
-        rating: 4.78
+        rating: 4.83
         description: '<p>FrankfurtJS is a JavaScript, HTML5 and NodeJS user group in Frankfurt currently organized by Kahlil Lechelt, Jo Meenen and Eugene Terehov.</p>'
         lon: 8.680000305175781
         group_photo:
@@ -10355,10 +10303,11 @@ regions:
           member_id: 57736682
           name: Eugene Terehov
           photo:
-            photo_id: 66601812
-            photo_link: 'http://photos3.meetupstatic.com/photos/member/7/1/4/member_66601812.jpeg'
-            thumb_link: 'http://photos1.meetupstatic.com/photos/member/7/1/4/thumb_66601812.jpeg'
-        members: 505
+            highres_link: 'http://photos3.meetupstatic.com/photos/member/2/6/4/highres_247260612.jpeg'
+            photo_id: 247260612
+            photo_link: 'http://photos1.meetupstatic.com/photos/member/2/6/4/member_247260612.jpeg'
+            thumb_link: 'http://photos3.meetupstatic.com/photos/member/2/6/4/thumb_247260612.jpeg'
+        members: 533
         name: 'FrankfurtJS – JavaScript, HTML5 and NodeJS Meetup'
         lat: 50.119998931884766
         who: JS-Developer
@@ -10380,7 +10329,7 @@ regions:
             photo_id: 239908242
             photo_link: 'http://photos1.meetupstatic.com/photos/member/6/e/5/2/member_239908242.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/6/e/5/2/thumb_239908242.jpeg'
-        members: 35
+        members: 36
         name: Dutch Hacker Dojo
         lat: 52.52000045776367
         who: Hackers
@@ -10403,7 +10352,7 @@ regions:
             photo_id: 238489402
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/0/f/a/member_238489402.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/c/0/f/a/thumb_238489402.jpeg'
-        members: 123
+        members: 126
         name: "Script'n'Code"
         lat: 48.45000076293945
         who: Software engineers
@@ -10429,7 +10378,7 @@ regions:
             photo_id: 238832732
             photo_link: 'http://photos2.meetupstatic.com/photos/member/7/f/d/c/member_238832732.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/7/f/d/c/thumb_238832732.jpeg'
-        members: 151
+        members: 152
         name: Braga.JS
         lat: 41.54999923706055
         who: Members
@@ -10457,7 +10406,7 @@ regions:
             photo_id: 244432762
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/e/1/a/member_244432762.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/c/e/1/a/thumb_244432762.jpeg'
-        members: 382
+        members: 399
         name: 'M&M-Mean Milan'
         state: MI
         lat: 45.459999084472656
@@ -10477,32 +10426,14 @@ regions:
 
 
 
-
-
-
-
-
-
           Oz Inc. would like to invite you to a amazing event that involves
           hacking on drones and has already been held in different cities around
           the world.
 
 
 
-
-
-
-
-
-
           January 10th 2015 we will gather in Reykjavík University to do the
           following:
-
-
-
-
-
-
 
 
 
@@ -10519,19 +10450,7 @@ regions:
 
 
 
-
-
-
-
-
-
           Things you need:
-
-
-
-
-
-
 
 
 
@@ -10542,12 +10461,6 @@ regions:
           Some programming experience.
 
           We'll provide:
-
-
-
-
-
-
 
 
 
@@ -10571,7 +10484,7 @@ regions:
             photo_id: 231367612
             photo_link: 'http://photos1.meetupstatic.com/photos/member/1/d/b/c/member_231367612.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/1/d/b/c/thumb_231367612.jpeg'
-        members: 69
+        members: 70
         name: Reykjavík Nodecopter
         lat: 64.13999938964844
         who: Hackers
@@ -10649,16 +10562,7 @@ regions:
 
           <blockquote>
 
-
-
-
-
-
-
-           <p><span>A mobile frontend developer with more than 9 years working
-
-          as
-
+           <p><span>A mobile frontend developer with more than 9 years working as
           a employee/freelance all around Europe and currently as Lead Game
           Developer in Greentube. I had worked with many clients in London,
           Vienna, Berlin and Barcelona. I had published more than 20 mobile
@@ -10673,16 +10577,7 @@ regions:
 
           <blockquote>
 
-
-
-
-
-
-
-           <p><span>A Digital Marketing Specialist with more than 8 years
-
-          working
-
+           <p><span>A Digital Marketing Specialist with more than 8 years working
           in sales and Marketing, currently working as a freelance for small
           companies, startups and new projects. A jack of all trades but with the
           tech skills that anyone needs to become an entrepreneur.</span></p>
@@ -10700,7 +10595,7 @@ regions:
             photo_id: 241829021
             photo_link: 'http://photos2.meetupstatic.com/photos/member/7/1/5/d/member_241829021.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/7/1/5/d/thumb_241829021.jpeg'
-        members: 235
+        members: 241
         name: Vienna AngularJS Master Class Meetup
         lat: 48.220001220703125
         who: Alejandro Rangel
@@ -10721,7 +10616,7 @@ regions:
             photo_id: 106598242
             photo_link: 'http://photos1.meetupstatic.com/photos/member/9/5/6/2/member_106598242.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/9/5/6/2/thumb_106598242.jpeg'
-        members: 275
+        members: 278
         name: Whats Your Stack Lisbon
         lat: 38.720001220703125
         who: Stackers
@@ -10744,7 +10639,7 @@ regions:
             photo_id: 241979536
             photo_link: 'http://photos4.meetupstatic.com/photos/member/e/8/9/0/member_241979536.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/e/8/9/0/thumb_241979536.jpeg'
-        members: 104
+        members: 106
         name: Opbeat
         lat: 55.68000030517578
         who: Members
@@ -10754,7 +10649,7 @@ regions:
         timezone: Europe/London
         created: 1418249826000
         link: 'http://www.meetup.com/founderscoders/'
-        rating: 4.85
+        rating: 4.79
         description: '<p>Founders &amp; Coders runs a full-time no-fee coding bootcamp. We also run a number of meetups for people who are interested in our course, who want to learn more about programming, or who want help with their startup projects.&nbsp;</p>'
         lon: -0.03999999910593033
         group_photo:
@@ -10770,7 +10665,7 @@ regions:
             photo_id: 85468522
             photo_link: 'http://photos1.meetupstatic.com/photos/member/6/f/6/a/member_85468522.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/6/f/6/a/thumb_85468522.jpeg'
-        members: 1775
+        members: 1843
         name: 'Founders & Coders'
         state: '17'
         lat: 51.529998779296875
@@ -10832,7 +10727,7 @@ regions:
             photo_id: 242137755
             photo_link: 'http://photos1.meetupstatic.com/photos/member/9/3/7/b/member_242137755.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/9/3/7/b/thumb_242137755.jpeg'
-        members: 223
+        members: 226
         name: ecomhack Berlin
         lat: 52.52000045776367
         who: ecomhackers
@@ -10843,7 +10738,7 @@ regions:
         timezone: Europe/Bucharest
         created: 1418738513000
         link: 'http://www.meetup.com/Iasi-JS/'
-        rating: 4.58
+        rating: 4.45
         description: >-
           <p>Iasi JS is the JavaScript User Group in Iasi. We're looking forward
           to locally build the community of JS enthusiasts.</p>
@@ -10880,7 +10775,7 @@ regions:
             photo_id: 241980547
             photo_link: 'http://photos2.meetupstatic.com/photos/member/2/2/3/member_241980547.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/2/2/3/thumb_241980547.jpeg'
-        members: 217
+        members: 249
         name: Iasi JS
         lat: 47.16999816894531
         who: Javascript enthusiasts
@@ -10891,7 +10786,7 @@ regions:
         timezone: Europe/Belgrade
         created: 1419332041000
         link: 'http://www.meetup.com/JS-Belgrade-Meetup/'
-        rating: 4.94
+        rating: 4.95
         description: >-
           <p>JS Belgrade is JavaScript User Group from Belgrade. Our goal is to
           connect Belgrade's JavaScript community through monthly meetups.</p>
@@ -10915,7 +10810,7 @@ regions:
             photo_id: 242366918
             photo_link: 'http://photos4.meetupstatic.com/photos/member/6/9/2/6/member_242366918.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/9/2/6/thumb_242366918.jpeg'
-        members: 660
+        members: 690
         name: JS Belgrade Meetup
         lat: 44.83000183105469
         who: Members
@@ -10926,7 +10821,7 @@ regions:
         timezone: Europe/Paris
         created: 1420543367000
         link: 'http://www.meetup.com/LyonJS/'
-        rating: 4.52
+        rating: 4.62
         description: >-
           <p>Le meetup LyonJS a pour but de rassembler les utilisateurs
           JavaScript de la ville de Lyon et de ses alentours. Ainsi nous
@@ -10938,12 +10833,6 @@ regions:
 
           <p><span>Nous nous retrouvons ensuite autour d'un buffet en vue
           d'échanger nos impressions et de poursuivre la discussion.</span><br>
-
-
-
-
-
-
 
 
 
@@ -10963,7 +10852,7 @@ regions:
             photo_id: 242677672
             photo_link: 'http://photos1.meetupstatic.com/photos/member/9/3/2/8/member_242677672.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/9/3/2/8/thumb_242677672.jpeg'
-        members: 595
+        members: 617
         name: LyonJS
         lat: 45.7599983215332
         who: Members
@@ -11002,7 +10891,7 @@ regions:
             photo_id: 244648230
             photo_link: 'http://photos2.meetupstatic.com/photos/member/6/e/4/6/member_244648230.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/6/e/4/6/thumb_244648230.jpeg'
-        members: 367
+        members: 370
         name: JavaScript Cluj
         lat: 46.779998779296875
         who: JS Enthusiasts
@@ -11030,7 +10919,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 205
+        members: 204
         name: Meteor Milano
         state: MI
         lat: 45.459999084472656
@@ -11059,7 +10948,7 @@ regions:
             photo_id: 242940238
             photo_link: 'http://photos4.meetupstatic.com/photos/member/e/e/member_242940238.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/e/e/thumb_242940238.jpeg'
-        members: 253
+        members: 259
         name: JSLuxembourg Meetup
         lat: 49.619998931884766
         who: JavaScripters
@@ -11107,7 +10996,7 @@ regions:
         timezone: Europe/London
         created: 1421965380000
         link: 'http://www.meetup.com/The-THINQTANQ-Events-Meetups-and-More-in-Plymouth/'
-        rating: 4.64
+        rating: 4.67
         description: '<p>This is a group for a diverse range of people! We have business centred networking and events for small businesses, coworkers, entrepreneurs, remote and home workers. We also host maker meetups with 3D printing, courses, lectures, hack days and more. If you are building a business and want to attend great events in a funky freelance environment or you want to embrace your inner geek. We have something for you!</p>'
         lon: -4.139999866485596
         join_mode: open
@@ -11119,7 +11008,7 @@ regions:
             photo_id: 243167618
             photo_link: 'http://photos3.meetupstatic.com/photos/member/b/a/0/2/member_243167618.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/b/a/0/2/thumb_243167618.jpeg'
-        members: 263
+        members: 274
         name: 'The THINQTANQ -  Events, Meetups and More in Plymouth'
         state: D4
         lat: 50.369998931884766
@@ -11130,7 +11019,7 @@ regions:
         timezone: Europe/Dublin
         created: 1422019970000
         link: 'http://www.meetup.com/AzureDublin/'
-        rating: 4.75
+        rating: 4.7
         description: "<p>This is Dublin's Azure Meetup. Here we will discuss anything Azure related. For developers, architects, DevOps, data scientists&nbsp;and IT professionals of all types. And yes it is open to Linux lovers and PhP, Java, Node.JS etc developers</p>"
         lon: -6.25
         group_photo:
@@ -11147,7 +11036,7 @@ regions:
             photo_id: 194158552
             photo_link: 'http://photos3.meetupstatic.com/photos/member/e/4/b/8/member_194158552.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/e/4/b/8/thumb_194158552.jpeg'
-        members: 512
+        members: 534
         name: Azure Dublin Meetup
         lat: 53.33000183105469
         who: Azurees
@@ -11162,10 +11051,10 @@ regions:
         description: "<p>Son yılların en yaygın dili JavaScript'in istemci ve sunucu tarafında kullanımlarını konuşacağımız, Ankara'daki JavaScript programcılarını kaynaştırmayı amaçlayan kullanıcı grubu</p>"
         lon: 32.849998474121094
         group_photo:
-          highres_link: 'http://photos4.meetupstatic.com/photos/event/8/e/7/highres_444122279.jpeg'
-          photo_id: 444122279
-          photo_link: 'http://photos4.meetupstatic.com/photos/event/8/e/7/600_444122279.jpeg'
-          thumb_link: 'http://photos2.meetupstatic.com/photos/event/8/e/7/thumb_444122279.jpeg'
+          highres_link: 'http://photos2.meetupstatic.com/photos/event/7/2/c/2/highres_444569378.jpeg'
+          photo_id: 444569378
+          photo_link: 'http://photos4.meetupstatic.com/photos/event/7/2/c/2/600_444569378.jpeg'
+          thumb_link: 'http://photos4.meetupstatic.com/photos/event/7/2/c/2/thumb_444569378.jpeg'
         join_mode: open
         organizer:
           member_id: 58658782
@@ -11175,7 +11064,7 @@ regions:
             photo_id: 243337349
             photo_link: 'http://photos2.meetupstatic.com/photos/member/9/1/e/5/member_243337349.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/9/1/e/5/thumb_243337349.jpeg'
-        members: 511
+        members: 538
         name: Javascript Ankara
         lat: 39.93000030517578
         who: Ankara JavaScript tutkunları
@@ -11187,7 +11076,13 @@ regions:
         created: 1422886754000
         link: 'http://www.meetup.com/Bucharest-Angular-JS-Meetup/'
         rating: 4.65
-        description: '<p>This meet-up group has the purpose of creating a community around the AngularJS framework and related technologies.</p>'
+        description: >-
+          <p><span>This meet-up group has the purpose of creating a community
+          around the AngularJS framework and related
+          technologies.</span><br></p>
+
+          <p>Join us on
+          Facebook:&nbsp;<span>https://www.facebook.com/groups/angularjs.bucharest/</span></p>
         lon: 26.100000381469727
         group_photo:
           highres_link: 'http://photos3.meetupstatic.com/photos/event/4/d/f/e/highres_436879966.jpeg'
@@ -11203,7 +11098,7 @@ regions:
             photo_id: 243463683
             photo_link: 'http://photos3.meetupstatic.com/photos/member/a/a/a/3/member_243463683.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/a/a/a/3/thumb_243463683.jpeg'
-        members: 393
+        members: 438
         name: Bucharest Angular JS Meetup
         lat: 44.439998626708984
         who: angulars
@@ -11230,7 +11125,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 53
+        members: 54
         name: Meteor Minsk
         lat: 53.90999984741211
         who: Meteorites
@@ -11266,7 +11161,7 @@ regions:
             photo_id: 243694274
             photo_link: 'http://photos3.meetupstatic.com/photos/member/8/5/e/2/member_243694274.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/8/5/e/2/thumb_243694274.jpeg'
-        members: 128
+        members: 129
         name: Twente.js
         lat: 52.220001220703125
         who: Javascript developers
@@ -11277,7 +11172,7 @@ regions:
         timezone: Europe/Bucharest
         created: 1423649646000
         link: 'http://www.meetup.com/BucharestJS/'
-        rating: 4.61
+        rating: 4.64
         description: >-
           <p>BucharestJS is a developer group for anyone interested in
           Javascript. All skill levels are welcome. Stay tuned for details of
@@ -11306,7 +11201,7 @@ regions:
             photo_id: 177286642
             photo_link: 'http://photos4.meetupstatic.com/photos/member/b/6/3/2/member_177286642.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/b/6/3/2/thumb_177286642.jpeg'
-        members: 556
+        members: 583
         name: BucharestJS
         lat: 44.439998626708984
         who: JS Hackers
@@ -11334,7 +11229,7 @@ regions:
             photo_id: 243771845
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/a/8/5/member_243771845.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/c/a/8/5/thumb_243771845.jpeg'
-        members: 232
+        members: 240
         name: Frontend Meetup - Romandie
         lat: 46.52000045776367
         who: Frontenders
@@ -11354,15 +11249,7 @@ regions:
           photo_link: 'http://photos2.meetupstatic.com/photos/event/4/5/6/d/600_434717773.jpeg'
           thumb_link: 'http://photos4.meetupstatic.com/photos/event/4/5/6/d/thumb_434717773.jpeg'
         join_mode: open
-        organizer:
-          member_id: 177865892
-          name: Sébastien Berten
-          photo:
-            highres_link: 'http://photos2.meetupstatic.com/photos/member/a/f/f/2/highres_234765042.jpeg'
-            photo_id: 234765042
-            photo_link: 'http://photos4.meetupstatic.com/photos/member/a/f/f/2/member_234765042.jpeg'
-            thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/f/f/2/thumb_234765042.jpeg'
-        members: 394
+        members: 412
         name: Js-Star .Paris
         lat: 48.86000061035156
         who: JSaddict
@@ -11384,7 +11271,7 @@ regions:
             photo_id: 244047555
             photo_link: 'http://photos2.meetupstatic.com/photos/member/6/b/a/3/member_244047555.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/b/a/3/thumb_244047555.jpeg'
-        members: 189
+        members: 197
         name: DevHouseFriday Chillout
         lat: 50.95000076293945
         who: 'Jan Kus, Lars Wolff'
@@ -11412,7 +11299,7 @@ regions:
             photo_id: 244140967
             photo_link: 'http://photos3.meetupstatic.com/photos/member/3/c/7/member_244140967.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/c/7/thumb_244140967.jpeg'
-        members: 46
+        members: 45
         name: MarkLogic User Group Germany
         lat: 48.13999938964844
         who: Members
@@ -11435,7 +11322,7 @@ regions:
             photo_id: 244142550
             photo_link: 'http://photos3.meetupstatic.com/photos/member/9/f/6/member_244142550.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/9/f/6/thumb_244142550.jpeg'
-        members: 52
+        members: 61
         name: Osijek Front-End Meetup
         lat: 45.54999923706055
         who: Frontenders
@@ -11457,7 +11344,7 @@ regions:
             photo_id: 207278272
             photo_link: 'http://photos1.meetupstatic.com/photos/member/9/5/8/0/member_207278272.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/9/5/8/0/thumb_207278272.jpeg'
-        members: 4
+        members: 5
         name: Webentwicklung in Siegen und Umgebung
         lat: 50.869998931884766
         who: Webentwickler
@@ -11523,7 +11410,7 @@ regions:
             photo_id: 59825272
             photo_link: 'http://photos4.meetupstatic.com/photos/member/1/4/9/8/member_59825272.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/1/4/9/8/thumb_59825272.jpeg'
-        members: 50
+        members: 49
         name: Southend on Sea Web Meetup
         state: E4
         lat: 51.54999923706055
@@ -11547,7 +11434,7 @@ regions:
             photo_id: 244834950
             photo_link: 'http://photos3.meetupstatic.com/photos/member/8/8/8/6/member_244834950.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/8/8/8/6/thumb_244834950.jpeg'
-        members: 96
+        members: 99
         name: Meteor Karlsruhe
         lat: 49
         who: Meteoriten
@@ -11578,7 +11465,7 @@ regions:
             photo_id: 244849357
             photo_link: 'http://photos2.meetupstatic.com/photos/member/c/0/c/d/member_244849357.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/c/0/c/d/thumb_244849357.jpeg'
-        members: 31
+        members: 38
         name: Boxmeer Tech Meetup
         lat: 51.65999984741211
         who: developers
@@ -11641,7 +11528,7 @@ regions:
         organizer:
           member_id: 130772632
           name: Victor Ekelund
-        members: 149
+        members: 158
         name: ReactJS Stockholm
         lat: 59.33000183105469
         who: Members
@@ -11684,7 +11571,7 @@ regions:
             photo_id: 244257936
             photo_link: 'http://photos2.meetupstatic.com/photos/member/e/2/5/0/member_244257936.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/e/2/5/0/thumb_244257936.jpeg'
-        members: 128
+        members: 135
         name: Belgian Open Badges Meetup
         lat: 50.83000183105469
         who: BelgianBadgers (not the mammals)
@@ -11711,7 +11598,7 @@ regions:
             photo_id: 244975993
             photo_link: 'http://photos2.meetupstatic.com/photos/member/d/a/b/9/member_244975993.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/d/a/b/9/thumb_244975993.jpeg'
-        members: 80
+        members: 88
         name: Tilburg Dev
         lat: 51.56999969482422
         who: Devs
@@ -11764,7 +11651,7 @@ regions:
             photo_id: 244979874
             photo_link: 'http://photos3.meetupstatic.com/photos/member/e/9/e/2/member_244979874.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/e/9/e/2/thumb_244979874.jpeg'
-        members: 102
+        members: 107
         name: 'Lisboa TADSummit & WebRTC & TADHack Meetup'
         lat: 38.720001220703125
         who: WebRTC TADers
@@ -11796,7 +11683,7 @@ regions:
         timezone: Europe/London
         created: 1428097043000
         link: 'http://www.meetup.com/London-JavaScript-Community/'
-        rating: 4.74
+        rating: 4.65
         description: >-
           <p><img
           src="https://lucamezzalira.files.wordpress.com/2015/04/bannermeetuppage-e1428103811502.png"></p>
@@ -11837,7 +11724,7 @@ regions:
             photo_id: 248700316
             photo_link: 'http://photos1.meetupstatic.com/photos/member/1/3/c/member_248700316.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/1/3/c/thumb_248700316.jpeg'
-        members: 1379
+        members: 1464
         name: London JavaScript Community
         state: '17'
         lat: 51.52000045776367
@@ -11866,7 +11753,7 @@ regions:
             photo_id: 244415392
             photo_link: 'http://photos1.meetupstatic.com/photos/member/8/a/4/0/member_244415392.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/8/a/4/0/thumb_244415392.jpeg'
-        members: 358
+        members: 384
         name: Athens AngularJS Meetup
         lat: 37.97999954223633
         who: JS Enthusiasts
@@ -11901,7 +11788,7 @@ regions:
             photo_id: 247125997
             photo_link: 'http://photos2.meetupstatic.com/photos/member/b/3/a/d/member_247125997.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/b/3/a/d/thumb_247125997.jpeg'
-        members: 592
+        members: 619
         name: Dublin Node.js Meetup
         lat: 53.33000183105469
         who: Noders
@@ -11959,7 +11846,7 @@ regions:
             photo_id: 245596399
             photo_link: 'http://photos4.meetupstatic.com/photos/member/4/0/0/f/member_245596399.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/4/0/0/f/thumb_245596399.jpeg'
-        members: 84
+        members: 87
         name: Mean - Mongo Express Angular Node
         state: '17'
         lat: 51.52000045776367
@@ -12069,7 +11956,7 @@ regions:
             photo_id: 172594242
             photo_link: 'http://photos4.meetupstatic.com/photos/member/8/5/c/2/member_172594242.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/8/5/c/2/thumb_172594242.jpeg'
-        members: 613
+        members: 639
         name: Women Who Code Berlin
         lat: 52.52000045776367
         who: Members
@@ -12096,7 +11983,7 @@ regions:
             photo_id: 245936668
             photo_link: 'http://photos3.meetupstatic.com/photos/member/d/d/5/c/member_245936668.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/d/d/5/c/thumb_245936668.jpeg'
-        members: 118
+        members: 124
         name: hello.js
         lat: 46.779998779296875
         who: Members
@@ -12118,7 +12005,7 @@ regions:
             photo_id: 244610955
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/7/0/b/member_244610955.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/c/7/0/b/thumb_244610955.jpeg'
-        members: 322
+        members: 327
         name: Full Stack Development London
         state: '17'
         lat: 51.52000045776367
@@ -12141,7 +12028,7 @@ regions:
             photo_id: 246399308
             photo_link: 'http://photos3.meetupstatic.com/photos/member/9/9/8/c/member_246399308.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/9/9/8/c/thumb_246399308.jpeg'
-        members: 56
+        members: 57
         name: Formation baliz.org
         lat: 48.86000061035156
         who: Participants
@@ -12153,7 +12040,19 @@ regions:
         created: 1432070292000
         link: 'http://www.meetup.com/Strasbourg-Nodejs/'
         rating: 5
-        description: '<p>Intéressé par le monde du Node.js ? Rejoignez-nous vite !</p>'
+        description: >-
+          <p>En permettant de créer des applications performantes qui encouragent
+          la productivité,l’usage de Node.js, le Javascript côté serveur,
+          a littéralement explosé en quelques années : de nombreuses sociétés
+          font confiance à ce langage de programmation et la communauté grossit
+          de jour en jour.</p>
+
+          <p><br>Le rôle de la communauté Node.js Strasbourg est de regrouper les
+          développeurs de tous&nbsp;<span>niveaux s’intéressant à cette
+          technologie au travers de soirées techniques de différents types
+          : conférence, live coding et coding dojos.&nbsp;</span></p>
+
+          <p>Rejoignez-nous vite !</p>
         lon: 7.75
         join_mode: open
         organizer:
@@ -12164,7 +12063,7 @@ regions:
             photo_id: 244980723
             photo_link: 'http://photos1.meetupstatic.com/photos/member/2/d/3/member_244980723.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/2/d/3/thumb_244980723.jpeg'
-        members: 110
+        members: 111
         name: Strasbourg Node.js
         lat: 48.58000183105469
         who: Node.js lovers
@@ -12186,7 +12085,7 @@ regions:
             photo_id: 246348160
             photo_link: 'http://photos1.meetupstatic.com/photos/member/b/c/2/0/member_246348160.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/b/c/2/0/thumb_246348160.jpeg'
-        members: 40
+        members: 43
         name: Monte Dev Meetup
         lat: 42.290000915527344
         who: Developers
@@ -12197,7 +12096,7 @@ regions:
         timezone: Europe/Athens
         created: 1432795708000
         link: 'http://www.meetup.com/GreeceJS/'
-        rating: 4.88
+        rating: 4.75
         description: >-
           <p>Welcome to GreeceJS!&nbsp;</p>
 
@@ -12217,7 +12116,7 @@ regions:
         organizer:
           member_id: 127065852
           name: Elias Niaos
-        members: 325
+        members: 422
         name: GreeceJS
         lat: 37.97999954223633
         who: JavaScripters
@@ -12265,7 +12164,7 @@ regions:
             photo_id: 246923891
             photo_link: 'http://photos1.meetupstatic.com/photos/member/5/d/5/3/member_246923891.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/5/d/5/3/thumb_246923891.jpeg'
-        members: 158
+        members: 162
         name: Dublin TypeScript Meetup
         lat: 53.33000183105469
         who: Typescripters
@@ -12308,7 +12207,7 @@ regions:
             photo_id: 90297202
             photo_link: 'http://photos4.meetupstatic.com/photos/member/d/f/7/2/member_90297202.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/d/f/7/2/thumb_90297202.jpeg'
-        members: 33
+        members: 34
         name: '{codeSmithies}'
         lat: 52.38999938964844
         who: Code Smithies
@@ -12319,7 +12218,7 @@ regions:
         timezone: Europe/Berlin
         created: 1434715852000
         link: 'http://www.meetup.com/KarlsruheJS/'
-        rating: 4.8
+        rating: 4.78
         description: '<p>KarlsruheJS ist ein regelmäßiges Treffen von JavaScript-Entwicklern in Karlsruhe. <br>Organisiert wird die Gruppe von Evgenij Terehov und Kahlil Lechelt.</p>'
         lon: 8.399999618530273
         group_photo:
@@ -12336,7 +12235,7 @@ regions:
             photo_id: 247260612
             photo_link: 'http://photos1.meetupstatic.com/photos/member/2/6/4/member_247260612.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/2/6/4/thumb_247260612.jpeg'
-        members: 236
+        members: 275
         name: 'KarlsruheJS – JavaScript, HTML5 and NodeJS Meetup'
         lat: 49
         who: JS-Developer
@@ -12377,7 +12276,7 @@ regions:
             photo_id: 223997972
             photo_link: 'http://photos3.meetupstatic.com/photos/member/4/6/3/4/member_223997972.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/4/6/3/4/thumb_223997972.jpeg'
-        members: 178
+        members: 186
         name: Aurelia Paris
         lat: 48.86000061035156
         who: Aurelians
@@ -12405,7 +12304,7 @@ regions:
             photo_id: 247267874
             photo_link: 'http://photos2.meetupstatic.com/photos/member/1/e/c/2/member_247267874.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/1/e/c/2/thumb_247267874.jpeg'
-        members: 230
+        members: 234
         name: Meetup des utilisateurs de Cozy Cloud en France
         lat: 48.86000061035156
         who: Cozynautes
@@ -12416,6 +12315,7 @@ regions:
         timezone: Europe/Berlin
         created: 1435145001000
         link: 'http://www.meetup.com/Frankfurt-Google-Polymer-Webcomponents-Meetup/'
+        rating: 5
         description: "This is a group for those interested in the web components philosophy for the development of modern web and mobile applications. With web components you can basically create custom reusable HTML tags including styling und functionality. Discuss concepts like shadow DOM, the new declarative vs. imperative coding approach. Let's share our experience with the Google Polymer Framework."
         lon: 8.680000305175781
         join_mode: open
@@ -12427,7 +12327,7 @@ regions:
             photo_id: 211367392
             photo_link: 'http://photos1.meetupstatic.com/photos/member/b/9/2/0/member_211367392.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/b/9/2/0/thumb_211367392.jpeg'
-        members: 26
+        members: 43
         name: 'Frankfurt Google Polymer & Webcomponents Meetup'
         lat: 50.119998931884766
         who: Polymer Users
@@ -12491,7 +12391,7 @@ regions:
             photo_id: 247161094
             photo_link: 'http://photos1.meetupstatic.com/photos/member/5/2/6/6/member_247161094.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/5/2/6/6/thumb_247161094.jpeg'
-        members: 50
+        members: 51
         name: "Let's connect (entrepreneurs, designers and developers)"
         lat: 51.93000030517578
         who: Members
@@ -12522,7 +12422,7 @@ regions:
             photo_id: 157809842
             photo_link: 'http://photos3.meetupstatic.com/photos/member/2/6/7/2/member_157809842.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/2/6/7/2/thumb_157809842.jpeg'
-        members: 89
+        members: 94
         name: North Kent Web Development Meetup
         state: G5
         lat: 51.40999984741211
@@ -12534,7 +12434,7 @@ regions:
         timezone: Europe/Berlin
         created: 1436911523000
         link: 'http://www.meetup.com/JS-Coding-Nights-Munich/'
-        rating: 4.72
+        rating: 4.79
         description: >-
           <p>**&nbsp;<b>This is a brand new group</b>, so please spread the word
           if you're interested in getting it off the ground! **</p>
@@ -12588,7 +12488,7 @@ regions:
             photo_id: 247899591
             photo_link: 'http://photos4.meetupstatic.com/photos/member/9/a/a/7/member_247899591.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/9/a/a/7/thumb_247899591.jpeg'
-        members: 205
+        members: 224
         name: JavaScript Coding Nights Munich
         lat: 48.13999938964844
         who: Members
@@ -12641,7 +12541,7 @@ regions:
             photo_id: 248139094
             photo_link: 'http://photos1.meetupstatic.com/photos/member/9/8/b/6/member_248139094.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/9/8/b/6/thumb_248139094.jpeg'
-        members: 129
+        members: 143
         name: Hackschool
         lat: 49.5
         who: Hackers
@@ -12652,6 +12552,7 @@ regions:
         timezone: Europe/Warsaw
         created: 1437130817000
         link: 'http://www.meetup.com/React-js-Warsaw/'
+        rating: 4.67
         description: "<p>React.js group in Warsaw. React is UI framework build at Facebook:</p> \n<p><a href=\"http://facebook.github.io/react/\" class=\"linkified\">http://facebook.github.io/react/</a></p>"
         lon: 21.020000457763672
         join_mode: open
@@ -12662,7 +12563,7 @@ regions:
             photo_id: 49693552
             photo_link: 'http://photos2.meetupstatic.com/photos/member/3/4/f/0/member_49693552.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/4/f/0/thumb_49693552.jpeg'
-        members: 71
+        members: 124
         name: React.js Warsaw
         lat: 52.2599983215332
         who: Members
@@ -12680,16 +12581,8 @@ regions:
           photo_id: 439876356
           photo_link: 'http://photos3.meetupstatic.com/photos/event/3/f/e/4/600_439876356.jpeg'
           thumb_link: 'http://photos3.meetupstatic.com/photos/event/3/f/e/4/thumb_439876356.jpeg'
-        join_mode: approval
-        organizer:
-          member_id: 123520102
-          name: Daniel Cook
-          photo:
-            highres_link: 'http://photos1.meetupstatic.com/photos/member/3/e/b/e/highres_163756062.jpeg'
-            photo_id: 163756062
-            photo_link: 'http://photos3.meetupstatic.com/photos/member/3/e/b/e/member_163756062.jpeg'
-            thumb_link: 'http://photos1.meetupstatic.com/photos/member/3/e/b/e/thumb_163756062.jpeg'
-        members: 109
+        join_mode: closed
+        members: 108
         name: Bristol MEAN School
         state: B7
         lat: 51.45000076293945
@@ -12718,7 +12611,7 @@ regions:
             photo_id: 248048707
             photo_link: 'http://photos1.meetupstatic.com/photos/member/2/2/0/3/member_248048707.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/2/2/0/3/thumb_248048707.jpeg'
-        members: 133
+        members: 147
         name: 'DarmstadtJS - JavaScript, AngularJS, React, Node.js  Meetup'
         lat: 49.869998931884766
         who: Members
@@ -12746,7 +12639,7 @@ regions:
             photo_id: 248079937
             photo_link: 'http://photos2.meetupstatic.com/photos/member/9/c/0/1/member_248079937.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/9/c/0/1/thumb_248079937.jpeg'
-        members: 66
+        members: 72
         name: ngParty
         lat: 50.08000183105469
         who: Members
@@ -12774,7 +12667,7 @@ regions:
             photo_id: 248141795
             photo_link: 'http://photos2.meetupstatic.com/photos/member/a/3/4/3/member_248141795.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/3/4/3/thumb_248141795.jpeg'
-        members: 263
+        members: 294
         name: Paris Full Stack JavaScript Meetup
         lat: 48.86000061035156
         who: Membres
@@ -12797,7 +12690,7 @@ regions:
             photo_id: 197984562
             photo_link: 'http://photos2.meetupstatic.com/photos/member/a/e/1/2/member_197984562.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/e/1/2/thumb_197984562.jpeg'
-        members: 72
+        members: 73
         name: Munich Full-Stack Dojo (AngularJS + Node.js)
         lat: 48.13999938964844
         who: Mitglieder
@@ -12825,7 +12718,7 @@ regions:
             photo_id: 245049466
             photo_link: 'http://photos1.meetupstatic.com/photos/member/2/4/f/a/member_245049466.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/2/4/f/a/thumb_245049466.jpeg'
-        members: 288
+        members: 313
         name: JavaScript Lab Amsterdam
         lat: 52.369998931884766
         who: javascripter
@@ -12846,7 +12739,7 @@ regions:
             photo_id: 249244817
             photo_link: 'http://photos3.meetupstatic.com/photos/member/1/2/d/1/member_249244817.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/1/2/d/1/thumb_249244817.jpeg'
-        members: 93
+        members: 98
         name: HackTrain - Innovating at 200km/h
         state: '17'
         lat: 51.540000915527344
@@ -12858,7 +12751,7 @@ regions:
         timezone: Europe/Berlin
         created: 1439803798000
         link: 'http://www.meetup.com/ReactJS-Meetup-Munich/'
-        rating: 4.43
+        rating: 4.55
         description: 'Are you new to ReactJS and want to learn more? Or feeling ready to share your experience and show us what you built? Join us for The ReactJS Meetup in Munich!'
         lon: 11.579999923706055
         join_mode: open
@@ -12870,7 +12763,7 @@ regions:
             photo_id: 248887247
             photo_link: 'http://photos4.meetupstatic.com/photos/member/1/c/4/f/member_248887247.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/1/c/4/f/thumb_248887247.jpeg'
-        members: 217
+        members: 266
         name: ReactJS Meetup Munich
         lat: 48.13999938964844
         who: Reactors
@@ -12887,7 +12780,7 @@ regions:
         organizer:
           member_id: 154547652
           name: Christian Ulbrich
-        members: 36
+        members: 41
         name: DresdenJS.io JavaScript User Group
         lat: 51.04999923706055
         who: Entwickler
@@ -12908,7 +12801,7 @@ regions:
             photo_id: 36763922
             photo_link: 'http://photos4.meetupstatic.com/photos/member/a/b/9/2/member_36763922.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/b/9/2/thumb_36763922.jpeg'
-        members: 82
+        members: 93
         name: West London JavaScript Meetup
         state: '17'
         lat: 51.459999084472656
@@ -12945,7 +12838,7 @@ regions:
             photo_id: 244405607
             photo_link: 'http://photos1.meetupstatic.com/photos/member/6/4/0/7/member_244405607.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/6/4/0/7/thumb_244405607.jpeg'
-        members: 195
+        members: 207
         name: Cluj JavaScripters
         lat: 46.779998779296875
         who: 'clu[js]ers'
@@ -12967,7 +12860,7 @@ regions:
             photo_id: 249186683
             photo_link: 'http://photos4.meetupstatic.com/photos/member/1/a/1/b/member_249186683.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/1/a/1/b/thumb_249186683.jpeg'
-        members: 111
+        members: 121
         name: Javascript Utrecht / Amsterdam / Rotterdam / Den Haag
         lat: 52.369998931884766
         who: Nederlandse Javascripters
@@ -12989,7 +12882,7 @@ regions:
             photo_id: 251163637
             photo_link: 'http://photos2.meetupstatic.com/photos/member/e/3/5/member_251163637.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/e/3/5/thumb_251163637.jpeg'
-        members: 22
+        members: 26
         name: Sophia Antipolis - Early morning software discussions
         lat: 43.599998474121094
         who: Membres
@@ -13000,8 +12893,17 @@ regions:
         timezone: Europe/Stockholm
         created: 1441281750000
         link: 'http://www.meetup.com/ReactJS-Goteborg/'
-        rating: 4.31
-        description: 'The groups focus is ReactJS, Flux, best practices and why ReactJS brings sanity to the chaos of frontend architecture!'
+        rating: 4.32
+        description: >-
+          <p>The groups focus is ReactJS, Flux, best practices and why ReactJS
+          brings sanity to the chaos of frontend architecture!</p>
+
+          <p>You can join our slack group here :</p>
+
+          <p><a
+          href="https://reactjsgoteborg.herokuapp.com/">https://reactjsgoteborg.herokuapp.com/</a><br></p>
+
+          <p>/Stephen</p>
         lon: 12.010000228881836
         join_mode: open
         organizer:
@@ -13012,7 +12914,7 @@ regions:
             photo_id: 246859977
             photo_link: 'http://photos3.meetupstatic.com/photos/member/4/e/0/9/member_246859977.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/4/e/0/9/thumb_246859977.jpeg'
-        members: 161
+        members: 177
         name: ReactJS Göteborg
         lat: 57.720001220703125
         who: neutrino
@@ -13062,7 +12964,7 @@ regions:
             photo_id: 250001089
             photo_link: 'http://photos3.meetupstatic.com/photos/member/a/0/8/1/member_250001089.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/a/0/8/1/thumb_250001089.jpeg'
-        members: 33
+        members: 40
         name: Ticino Javascript Meetup
         lat: 46.0099983215332
         who: javascripters
@@ -13094,7 +12996,7 @@ regions:
             photo_id: 250080544
             photo_link: 'http://photos3.meetupstatic.com/photos/member/2/2/0/member_250080544.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/2/2/0/thumb_250080544.jpeg'
-        members: 138
+        members: 179
         name: Milano Front-end Web Development Meetup
         state: MI
         lat: 45.459999084472656
@@ -13139,7 +13041,7 @@ regions:
             photo_id: 241956179
             photo_link: 'http://photos2.meetupstatic.com/photos/member/8/d/5/3/member_241956179.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/8/d/5/3/thumb_241956179.jpeg'
-        members: 56
+        members: 61
         name: HannoverJS
         lat: 52.400001525878906
         who: Members
@@ -13176,7 +13078,7 @@ regions:
             photo_id: 250192429
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/c/c/d/member_250192429.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/c/c/d/thumb_250192429.jpeg'
-        members: 77
+        members: 89
         name: Web Monday Budapest
         lat: 47.5099983215332
         who: Web Aficionados/as
@@ -13204,7 +13106,7 @@ regions:
             photo_id: 250447938
             photo_link: 'http://photos3.meetupstatic.com/photos/member/1/f/0/2/member_250447938.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/1/f/0/2/thumb_250447938.jpeg'
-        members: 242
+        members: 279
         name: The Berlin Web App Builders Meetup
         lat: 52.52000045776367
         who: Web App Builders
@@ -13225,7 +13127,7 @@ regions:
             photo_id: 250669494
             photo_link: 'http://photos2.meetupstatic.com/photos/member/c/1/5/6/member_250669494.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/c/1/5/6/thumb_250669494.jpeg'
-        members: 43
+        members: 50
         name: Egham JavaScript Meetup
         state: N7
         lat: 51.43000030517578
@@ -13237,6 +13139,7 @@ regions:
         timezone: Europe/Paris
         created: 1444995846000
         link: 'http://www.meetup.com/Paris-vert-x-Meetup/'
+        rating: 4.75
         description: '<p>Vert.x user community in Paris, sharing Vert.x best practices, discuss architecture problems, contribute to vert.x, launch regular meetup and spread Vert.x.</p>'
         lon: 2.3399999141693115
         group_photo:
@@ -13253,7 +13156,7 @@ regions:
             photo_id: 250587912
             photo_link: 'http://photos1.meetupstatic.com/photos/member/6/d/0/8/member_250587912.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/6/d/0/8/thumb_250587912.jpeg'
-        members: 41
+        members: 63
         name: Paris Vert.x Meetup
         lat: 48.86000061035156
         who: Vertexers
@@ -13264,6 +13167,7 @@ regions:
         timezone: Europe/Berlin
         created: 1445003373000
         link: 'http://www.meetup.com/Berlin-Realtime-Web-Meetup/'
+        rating: 5
         description: '<p>A group for everyone that feels the web should do more than just request-response. Let’s meet for talks and workshops to share experiences working with data-sync, websockets and pub-sub messaging, but also focus on realtime servers, databases, message buses and all the other bits and pieces necessary for building awesome realtime web applications.</p>'
         lon: 13.380000114440918
         group_photo:
@@ -13280,7 +13184,7 @@ regions:
             photo_id: 250146100
             photo_link: 'http://photos3.meetupstatic.com/photos/member/1/7/d/4/member_250146100.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/1/7/d/4/thumb_250146100.jpeg'
-        members: 90
+        members: 99
         name: Berlin Realtime Web Meetup
         lat: 52.52000045776367
         who: realtime enthusiasts
@@ -13313,7 +13217,7 @@ regions:
             photo_id: 248838871
             photo_link: 'http://photos1.meetupstatic.com/photos/member/4/9/b/7/member_248838871.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/4/9/b/7/thumb_248838871.jpeg'
-        members: 80
+        members: 85
         name: Node and the Internet of Things
         state: '17'
         lat: 51.52000045776367
@@ -13344,7 +13248,7 @@ regions:
             photo_id: 250759412
             photo_link: 'http://photos1.meetupstatic.com/photos/member/4/b/d/4/member_250759412.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/4/b/d/4/thumb_250759412.jpeg'
-        members: 16
+        members: 20
         name: NodeJS Malta
         lat: 35.959999084472656
         who: Noders
@@ -13382,6 +13286,7 @@ regions:
         timezone: Europe/Bucharest
         created: 1445947452000
         link: 'http://www.meetup.com/Node-js-Timisoara/'
+        rating: 5
         description: "<p>An open community for Node.js passionates. Let's share our experience.</p>"
         lon: 21.229999542236328
         group_photo:
@@ -13394,11 +13299,11 @@ regions:
           member_id: 10801251
           name: Mihai Dima
           photo:
-            highres_link: 'http://photos4.meetupstatic.com/photos/member/7/7/9/highres_250921913.jpeg'
-            photo_id: 250921913
-            photo_link: 'http://photos4.meetupstatic.com/photos/member/7/7/9/member_250921913.jpeg'
-            thumb_link: 'http://photos2.meetupstatic.com/photos/member/7/7/9/thumb_250921913.jpeg'
-        members: 44
+            highres_link: 'http://photos1.meetupstatic.com/photos/member/a/f/b/a/highres_251864986.jpeg'
+            photo_id: 251864986
+            photo_link: 'http://photos1.meetupstatic.com/photos/member/a/f/b/a/member_251864986.jpeg'
+            thumb_link: 'http://photos1.meetupstatic.com/photos/member/a/f/b/a/thumb_251864986.jpeg'
+        members: 59
         name: Node.js Timisoara
         lat: 45.7599983215332
         who: noders
@@ -13447,11 +13352,11 @@ regions:
           member_id: 33114722
           name: Zubair Quraishi
           photo:
-            highres_link: 'http://photos3.meetupstatic.com/photos/member/3/d/1/a/highres_249375642.jpeg'
-            photo_id: 249375642
-            photo_link: 'http://photos1.meetupstatic.com/photos/member/3/d/1/a/member_249375642.jpeg'
-            thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/d/1/a/thumb_249375642.jpeg'
-        members: 94
+            highres_link: 'http://photos1.meetupstatic.com/photos/member/1/8/8/3/highres_251706275.jpeg'
+            photo_id: 251706275
+            photo_link: 'http://photos1.meetupstatic.com/photos/member/1/8/8/3/member_251706275.jpeg'
+            thumb_link: 'http://photos1.meetupstatic.com/photos/member/1/8/8/3/thumb_251706275.jpeg'
+        members: 124
         name: How to Make a Website
         lat: 55.68000030517578
         who: Website Builders
@@ -13478,7 +13383,7 @@ regions:
             photo_id: 246040856
             photo_link: 'http://photos1.meetupstatic.com/photos/member/9/f/9/8/member_246040856.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/9/f/9/8/thumb_246040856.jpeg'
-        members: 31
+        members: 34
         name: ReactJS Katowice
         lat: 50.2599983215332
         who: Reactors
@@ -13488,6 +13393,7 @@ regions:
         timezone: Europe/London
         created: 1446117576000
         link: 'http://www.meetup.com/mkjscript/'
+        rating: 5
         description: >-
           <p>Oxford has a JavaScript meetup, London does, I thought MK needed
           one. I don't have any firm plans as to what the meetup should be.
@@ -13510,6 +13416,9 @@ regions:
           3 slots at an event. We're also going to have some time for shorter
           "Lightning Talks" of about 5 minutes each, so feel free to submit
           a shorter talk if you'd like.</p>
+
+          <p>For anyone who uses slack, we now have our very own channel, sign up
+          here:&nbsp;https://mkjs.herokuapp.com/</p>
         lon: -0.75
         group_photo:
           highres_link: 'http://photos3.meetupstatic.com/photos/event/6/f/8/6/highres_444508550.jpeg'
@@ -13525,7 +13434,7 @@ regions:
             photo_id: 241115522
             photo_link: 'http://photos1.meetupstatic.com/photos/member/8/a/c/2/member_241115522.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/8/a/c/2/thumb_241115522.jpeg'
-        members: 51
+        members: 62
         name: MK.js.
         state: B9
         lat: 52.02000045776367
@@ -13572,7 +13481,7 @@ regions:
         organizer:
           member_id: 194855696
           name: Dennis Jaamann
-        members: 75
+        members: 93
         name: jsbe.io
         lat: 50.83000183105469
         who: Jedis
@@ -13599,7 +13508,7 @@ regions:
             photo_id: 251081685
             photo_link: 'http://photos4.meetupstatic.com/photos/member/a/2/d/5/member_251081685.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/2/d/5/thumb_251081685.jpeg'
-        members: 45
+        members: 53
         name: RomaJS
         state: RM
         lat: 41.900001525878906
@@ -13611,6 +13520,7 @@ regions:
         timezone: Europe/Helsinki
         created: 1447058437000
         link: 'http://www.meetup.com/Futurice-WWWeeklies/'
+        rating: 5
         description: '<p>Every week on Friday, Futurice frontend and backend developers meet to share latest web development news, show some new tools, interesting workflows, or show their code to their peers. This has been traditional an internal meetup only for Futurice, but we are now gladly welcoming some guests. Come and be one of our guests. ;) <br> <br>If you work at Futurice, <b>please do not RSVP</b> to this event. <br></p>'
         lon: 24.940000534057617
         group_photo:
@@ -13627,7 +13537,7 @@ regions:
             photo_id: 251243770
             photo_link: 'http://photos4.meetupstatic.com/photos/member/5/c/d/a/member_251243770.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/5/c/d/a/thumb_251243770.jpeg'
-        members: 101
+        members: 118
         name: Futurice WWWeeklies
         lat: 60.16999816894531
         who: Developers
@@ -13657,7 +13567,7 @@ regions:
             photo_id: 249024328
             photo_link: 'http://photos3.meetupstatic.com/photos/member/5/f/0/8/member_249024328.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/f/0/8/thumb_249024328.jpeg'
-        members: 21
+        members: 29
         name: Ludwigsburg Node.js Meetup
         lat: 48.900001525878906
         who: nodes
@@ -13668,6 +13578,7 @@ regions:
         timezone: Europe/Zagreb
         created: 1447766836000
         link: 'http://www.meetup.com/Level-Up-Development/'
+        rating: 5
         description: '<p>Interested in discovering the newest technology trends? Excited about meeting people that share your passion? Join a group of prospective international developers at the monthly Level Up Development meetup. Learn more about the latest web technologies and how your community is using them. This meetup is open to anyone that has a curiosity and drive to explore what is offered, from experienced developers to students. Everybody knows that nothing works well on an empty stomach so, beside expanding your cognitions about technology and meeting new people, join us for free beer and pizza!</p>'
         lon: 16.450000762939453
         group_photo:
@@ -13684,7 +13595,7 @@ regions:
             photo_id: 197035142
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/7/6/6/member_197035142.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/d/7/6/6/thumb_197035142.jpeg'
-        members: 61
+        members: 93
         name: Level Up Development
         lat: 43.5099983215332
         who: LUDs
@@ -13695,6 +13606,7 @@ regions:
         timezone: Europe/Berlin
         created: 1447769192000
         link: 'http://www.meetup.com/fullstack-berlin/'
+        rating: 5
         description: >-
           <p>This group aims to explore the wonderful world of fullstack
           javascript. There are no limits on what libraries or technologies apart
@@ -13721,7 +13633,7 @@ regions:
             photo_id: 244433480
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/0/e/8/member_244433480.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/d/0/e/8/thumb_244433480.jpeg'
-        members: 141
+        members: 185
         name: Fullstack.JS Berlin
         lat: 52.52000045776367
         who: Fullstackers
@@ -13764,7 +13676,7 @@ regions:
             photo_id: 251554949
             photo_link: 'http://photos3.meetupstatic.com/photos/member/8/8/8/5/member_251554949.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/8/8/8/5/thumb_251554949.jpeg'
-        members: 7
+        members: 16
         name: Berlin Cloud Computing
         lat: 52.52000045776367
         who: Cloudies
@@ -13791,7 +13703,7 @@ regions:
             photo_id: 251499975
             photo_link: 'http://photos4.meetupstatic.com/photos/member/9/c/2/7/member_251499975.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/9/c/2/7/thumb_251499975.jpeg'
-        members: 103
+        members: 208
         name: NodeJS Athens Meetup
         lat: 37.97999954223633
         who: JS Hackers
@@ -13836,7 +13748,7 @@ regions:
         organizer:
           member_id: 182603216
           name: Geir Wiksén
-        members: 13
+        members: 198
         name: ReactJS Oslo Meetup
         lat: 59.90999984741211
         who: Reactors
@@ -13858,8 +13770,24 @@ regions:
 
 
 
+
+
+
+
+
+
+
+
           Queres aprender novas tecnologias e ao mesmo tempo contribuir para
           melhorar a comunidade?
+
+
+
+
+
+
+
+
 
 
 
@@ -13885,6 +13813,149 @@ regions:
         name: '<por uma causa />'
         lat: 38.720001220703125
         who: comunitários
+      - utc_offset: 3600000
+        country: DE
+        visibility: public
+        city: Köln
+        timezone: Europe/Berlin
+        created: 1447159875000
+        link: 'http://www.meetup.com/Cologne-js/'
+        description: 'Cologne’s JavaScript user group. We meet bi-monthly on the second Tuesday. Our goal is to have an awesome, inclusive and safe community meetup where people meet, hang out together, chat, listen to talks, exchange ideas and make new friends. Any harmful or discriminating behaviour will not be tolerated and results in the offending person being expelled from the meetup.'
+        lon: 6.96999979019165
+        group_photo:
+          highres_link: 'http://photos1.meetupstatic.com/photos/event/8/4/1/6/highres_444513814.jpeg'
+          photo_id: 444513814
+          photo_link: 'http://photos1.meetupstatic.com/photos/event/8/4/1/6/600_444513814.jpeg'
+          thumb_link: 'http://photos1.meetupstatic.com/photos/event/8/4/1/6/thumb_444513814.jpeg'
+        join_mode: open
+        organizer:
+          member_id: 177419652
+          name: Sebastian Tilch
+          photo:
+            highres_link: 'http://photos2.meetupstatic.com/photos/member/6/9/2/a/highres_234266922.jpeg'
+            photo_id: 234266922
+            photo_link: 'http://photos2.meetupstatic.com/photos/member/6/9/2/a/member_234266922.jpeg'
+            thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/9/2/a/thumb_234266922.jpeg'
+        members: 95
+        name: Cologne.js
+        lat: 50.95000076293945
+        who: JavaScripters
+      - country: PT
+        visibility: public
+        city: Lisbon
+        timezone: Europe/Lisbon
+        created: 1448481409000
+        link: 'http://www.meetup.com/por-uma-causa/'
+        description: >-
+          <p>Tens ideias para projetos sem fins lucrativos que gostarias de ver
+          concretizados?</p>
+
+          <p>Queres aprender novas tecnologias e ao mesmo tempo contribuir para
+          melhorar a comunidade?</p>
+
+          <p>Estas meetups têm como objectivo melhorar a qualidade de vida de uma
+          comunidade fazendo uso de meios tecnológicos, nomeadamente através da
+          programação de aplicações informáticas.</p>
+        lon: -9.140000343322754
+        join_mode: open
+        organizer:
+          member_id: 28030202
+          name: Vitor fernandes
+          photo:
+            photo_id: 46808262
+            photo_link: 'http://photos2.meetupstatic.com/photos/member/2/0/4/6/member_46808262.jpeg'
+            thumb_link: 'http://photos4.meetupstatic.com/photos/member/2/0/4/6/thumb_46808262.jpeg'
+        members: 48
+        name: '<porumacausa/>'
+        lat: 38.720001220703125
+        who: programadores
+      - country: GB
+        visibility: public
+        city: London
+        timezone: Europe/London
+        created: 1449324310000
+        link: 'http://www.meetup.com/iDEAHack-Duke-of-York/'
+        description: >-
+          <p>iDEAHack - Duke of York</p>
+
+          <p><br>iDEA Hack is the digital equivalent of the DoE award, the
+          Hackthon aims to reach out to the community to create the first
+          5 badges for the bronze award. During the event we will be designing
+          online quizzes in your chosen digital area and successful candidates
+          will present their work at St James Palace and meet the Duke Of
+          York.&nbsp;</p>
+
+          <p>We are looking for&nbsp;50 great adult digital creatives&nbsp;- we
+          need:</p>
+
+          <p>•&nbsp;Digital Makers</p>
+
+          <p>•&nbsp;CreativesHackers</p>
+
+          <p>•&nbsp;Digital Engineers</p>
+
+          <p>•&nbsp;Business Development Specialists</p>
+
+          <p>•&nbsp;Developers</p>
+
+          <p>•&nbsp;Full Stack Developers</p>
+
+          <p>•&nbsp;UI/UX Developers</p>
+
+          <p>•&nbsp;Graphic Designers&nbsp;</p>
+
+          <p>•&nbsp;Teachers!</p>
+
+          <p>Find out more and register here:&nbsp;</p>
+
+          <p><a
+          href="http://www.badgeyourbrilliance.com/">http://www.badgeyourbrilliance.com</a></p>
+
+          <p>Participants must be over 18.</p>
+
+          <p><br></p>
+        lon: -0.10000000149011612
+        group_photo:
+          highres_link: 'http://photos3.meetupstatic.com/photos/event/7/e/3/7/highres_444752311.jpeg'
+          photo_id: 444752311
+          photo_link: 'http://photos3.meetupstatic.com/photos/event/7/e/3/7/600_444752311.jpeg'
+          thumb_link: 'http://photos3.meetupstatic.com/photos/event/7/e/3/7/thumb_444752311.jpeg'
+        join_mode: open
+        organizer:
+          member_id: 58572472
+          name: Gary Fletcher
+          photo:
+            highres_link: 'http://photos1.meetupstatic.com/photos/member/3/9/1/7/highres_251894615.jpeg'
+            photo_id: 251894615
+            photo_link: 'http://photos1.meetupstatic.com/photos/member/3/9/1/7/member_251894615.jpeg'
+            thumb_link: 'http://photos1.meetupstatic.com/photos/member/3/9/1/7/thumb_251894615.jpeg'
+        members: 3
+        name: iDEAHack - Duke of York
+        state: '17'
+        lat: 51.52000045776367
+        who: hackers
+      - utc_offset: 3600000
+        country: FR
+        visibility: public
+        city: Pamier
+        timezone: Europe/Paris
+        created: 1450177474000
+        link: 'http://www.meetup.com/Meetup-JavaScript-NodeJS-Pamiers/'
+        description: 'Parlons de développement, nouvelles techno, javascript, nos projets open-source ;)'
+        lon: 1.6200000047683716
+        join_mode: open
+        organizer:
+          member_id: 156522002
+          name: Xonlly
+          photo:
+            highres_link: 'http://photos3.meetupstatic.com/photos/member/3/0/4/8/highres_252132360.jpeg'
+            photo_id: 252132360
+            photo_link: 'http://photos1.meetupstatic.com/photos/member/3/0/4/8/member_252132360.jpeg'
+            thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/0/4/8/thumb_252132360.jpeg'
+        members: 1
+        name: Meetup JavaScript/NodeJS Pamiers
+        lat: 43.119998931884766
+        who: développeurs
   - region: Latin America
     nodeschools:
       - name: Belo Horizonte NodeSchool
@@ -14117,7 +14188,7 @@ regions:
             photo_id: 12440455
             photo_link: 'http://photos1.meetupstatic.com/photos/member/4/f/e/7/member_12440455.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/4/f/e/7/thumb_12440455.jpeg'
-        members: 274
+        members: 275
         name: Betazeta Tech Talks
         lat: -33.459999084472656
         who: geeks
@@ -14140,7 +14211,7 @@ regions:
             photo_id: 205804042
             photo_link: 'http://photos4.meetupstatic.com/photos/member/f/c/a/member_205804042.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/f/c/a/thumb_205804042.jpeg'
-        members: 534
+        members: 530
         name: Node.JS Argentina
         lat: -34.61000061035156
         who: Miembros
@@ -14177,7 +14248,7 @@ regions:
             photo_id: 244433678
             photo_link: 'http://photos2.meetupstatic.com/photos/member/d/1/a/e/member_244433678.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/d/1/a/e/thumb_244433678.jpeg'
-        members: 1813
+        members: 1834
         name: MedellínJS
         lat: 6.25
         who: JavaScripters
@@ -14206,13 +14277,6 @@ regions:
           photo_link: 'http://photos4.meetupstatic.com/photos/event/a/3/a/e/600_373781902.jpeg'
           thumb_link: 'http://photos4.meetupstatic.com/photos/event/a/3/a/e/thumb_373781902.jpeg'
         join_mode: open
-        organizer:
-          member_id: 11926853
-          name: Daniel Ramos
-          photo:
-            photo_id: 32547362
-            photo_link: 'http://photos4.meetupstatic.com/photos/member/6/a/e/2/member_32547362.jpeg'
-            thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/a/e/2/thumb_32547362.jpeg'
         members: 51
         name: 'Mexico City Web & Mobile'
         lat: 19.43000030517578
@@ -14224,7 +14288,7 @@ regions:
         timezone: America/Montevideo
         created: 1352908556000
         link: 'http://www.meetup.com/mvd-js/'
-        rating: 4.5
+        rating: 4.53
         description: "<p>This is a group for anyone interested in js, html, css and nodejs. Our\_<a href=\"https://github.com/mvdjs\">GitHub</a>.</p>"
         lon: -56.16999816894531
         group_photo:
@@ -14241,7 +14305,7 @@ regions:
             photo_id: 94534712
             photo_link: 'http://photos3.meetupstatic.com/photos/member/8/7/9/8/member_94534712.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/8/7/9/8/thumb_94534712.jpeg'
-        members: 569
+        members: 591
         name: The Montevideo Javascript Meetup Group
         lat: -34.869998931884766
         who: Javascripters
@@ -14268,7 +14332,7 @@ regions:
             photo_id: 119464452
             photo_link: 'http://photos4.meetupstatic.com/photos/member/1/1/6/4/member_119464452.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/1/1/6/4/thumb_119464452.jpeg'
-        members: 72
+        members: 73
         name: Ember.js Meetup - Belo Horizonte
         lat: -19.920000076293945
         who: Developers
@@ -14363,7 +14427,7 @@ regions:
             photo_id: 243041135
             photo_link: 'http://photos3.meetupstatic.com/photos/member/a/0/a/f/member_243041135.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/a/0/a/f/thumb_243041135.jpeg'
-        members: 267
+        members: 271
         name: Meteor São Paulo
         lat: -23.530000686645508
         who: Meteoritos
@@ -14385,7 +14449,7 @@ regions:
             photo_id: 123118732
             photo_link: 'http://photos1.meetupstatic.com/photos/member/e/5/6/c/member_123118732.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/e/5/6/c/thumb_123118732.jpeg'
-        members: 746
+        members: 754
         name: Meetup.js
         lat: -34.61000061035156
         who: Javascripters
@@ -14396,7 +14460,7 @@ regions:
         timezone: America/Sao_Paulo
         created: 1385225063000
         link: 'http://www.meetup.com/NodeBR-Sao-Paulo/'
-        rating: 4.76
+        rating: 4.74
         description: "<p>A NodeBR é uma comunidade fundada por pessoas com interesse em aprender mais sobre Node.js assim como ajudar outras pessoas que possuem dúvidas nessa plataforma. No momento a comunidade é constituída por estes pontos de acesso principal</p>\n<p>*\_<a href=\"https://groups.google.com/forum/?hl=pt#!forum/nodebr\">A lista de e-mails</a>\_é um grupo no Google onde você pode cadastrar o seu endereço de e-mail para enviar e receber e-mails das outras pessoas cadastradas. Esta lista mostrou-se extremamente eficaz na resolução de dúvidas de pessoas iniciantes no Node.js, assim como também é o ponto de encontro de discussões proveitosas e notícias sobre a plataforma.</p>\n<p>*\_<a href=\"https://webchat.freenode.net/?channels=#nodebr\">Nosso canal #nodebr no IRC</a>\_é uma ferramenta de bate papo em tempo real, onde programadores trocam ideias e tiram dúvidas com outros membros que estão online, a ferramenta é nova e cresce junto com a comunidade. Para quem já possui instalado algum client IRC, nos achará facilmente no canal #nodebr na rede freenode.net, para aqueles que ainda não possuem um, podem acessar o link anterior para abrir o web chat e entrar diretamente no canal.</p>\n<p>*\_<a href=\"http://www.meetup.com/Node-js-Sao-Paulo/\">O grupo de Meetup de São Paulo</a>\_é onde organizamos nossos encontros e marcamos os eventos mensais que trazem informação e novidades sobre o mundo do Node.js.</p>\n<p>*\_<a href=\"http://nodebr.org/\">O site oficial da comunidade</a>\_está em fase de planejamento mas já é uma ferramenta extramente importante na nossa comunidade, visto que ela abrigará as principais ferramentas que a comunidade julga importante, como você pode ver no brainstorming.</p>\n<p>*\_<a href=\"https://twitter.com/nodebr\">@nodebr</a>\_no Twitter.</p>\n<a href=\"https://github.com/nodebr/nodebr#contribua-para-o-projeto\"></a>\n<p><b>Contribua para o projeto</b></p>\n<p>Para começar a contribuir você deve procurar por\_<a href=\"https://github.com/nodebr/nodebr/labels/help%20wanted\">alguma issue em aberto</a>, veja aquela que você consiga resolver com facilidade. O próximo passo é fazer o fork do projeto e mandar uma pull request.</p>\n<a href=\"https://github.com/nodebr/nodebr#links-importantes\"></a>\n<p><b>Links importantes</b></p>\n<p>Lista de e-mail:\_<a href=\"https://groups.google.com/forum/?hl=pt#!forum/nodebr\">https://groups.google.com/forum/?hl=pt#!forum/nodebr</a><br>\n\n NodeBR no IRC:\_<a href=\"https://webchat.freenode.net/?channels=#nodebr\">https://webchat.freenode.net/?channels=#nodebr</a><br>\n\n Site da comunidade:\_<a href=\"http://nodebr.org/\">http://nodebr.org</a><br>\n\n Site do Meetup de São Paulo:\_<a href=\"http://www.meetup.com/Node-js-Sao-Paulo\">http://www.meetup.com/Node-js-Sao-Paulo</a></p>"
         lon: -46.630001068115234
         group_photo:
@@ -14413,7 +14477,7 @@ regions:
             photo_id: 242118023
             photo_link: 'http://photos4.meetupstatic.com/photos/member/4/6/6/7/member_242118023.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/4/6/6/7/thumb_242118023.jpeg'
-        members: 948
+        members: 976
         name: NodeBR - São Paulo
         lat: -23.530000686645508
         who: noders
@@ -14446,7 +14510,7 @@ regions:
         timezone: America/Sao_Paulo
         created: 1391817419000
         link: 'http://www.meetup.com/OpenShift-Sao-Paulo/'
-        rating: 3.5
+        rating: 4.75
         description: '<p>Grupo de interesse sobre OpenShift, uma plataforma como serviço open-source. O objetivo do grupo é discutir a adoção de PaaS, trocar experiências de desenvolvimento dentro de plataformas. Gostaríamos de ver no grupo desenvolvedores, empresas, blogueiros, lojas de e-commerce e até mesmo pessoas que queiram implantar sua própria nuvem privada.</p>'
         lon: -46.630001068115234
         group_photo:
@@ -14462,7 +14526,7 @@ regions:
             photo_id: 52533922
             photo_link: 'http://photos1.meetupstatic.com/photos/member/8/4/8/2/member_52533922.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/8/4/8/2/thumb_52533922.jpeg'
-        members: 143
+        members: 149
         name: OpenShift São Paulo
         lat: -23.530000686645508
         who: OpenShifters
@@ -14485,7 +14549,7 @@ regions:
             photo_id: 246589416
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/1/0/8/member_246589416.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/1/0/8/thumb_246589416.jpeg'
-        members: 351
+        members: 357
         name: São Paulo AngularJS Real apps Meetup
         lat: -23.530000686645508
         who: Programmers
@@ -14578,7 +14642,7 @@ regions:
             photo_id: 199196932
             photo_link: 'http://photos2.meetupstatic.com/photos/member/d/e/6/4/member_199196932.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/d/e/6/4/thumb_199196932.jpeg'
-        members: 110
+        members: 134
         name: NodeJS User Group Ceará
         lat: -3.7799999713897705
         who: Noders
@@ -14618,7 +14682,7 @@ regions:
             photo_id: 205988232
             photo_link: 'http://photos3.meetupstatic.com/photos/member/2/0/2/8/member_205988232.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/2/0/2/8/thumb_205988232.jpeg'
-        members: 316
+        members: 323
         name: Aplicativos Híbridos Meetup
         lat: -23.530000686645508
         who: Web Engineers
@@ -14645,7 +14709,7 @@ regions:
             photo_id: 164141742
             photo_link: 'http://photos1.meetupstatic.com/photos/member/a/3/0/e/member_164141742.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/a/3/0/e/thumb_164141742.jpeg'
-        members: 61
+        members: 63
         name: paraiba.js
         lat: -7.119999885559082
         who: Membros
@@ -14668,7 +14732,7 @@ regions:
             photo_id: 149735582
             photo_link: 'http://photos2.meetupstatic.com/photos/member/8/a/f/e/member_149735582.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/8/a/f/e/thumb_149735582.jpeg'
-        members: 497
+        members: 521
         name: AngularJS Porto Alegre
         lat: -30.040000915527344
         who: Desenvolvedores
@@ -14702,7 +14766,7 @@ regions:
         organizer:
           member_id: 103509152
           name: Antonio Quirarte
-        members: 492
+        members: 496
         name: NodeBots México
         lat: 19.43000030517578
         who: Desarrolladores
@@ -14723,12 +14787,6 @@ regions:
 
 
 
-
-
-
-
-
-
           </p>
         lon: -76.61000061035156
         group_photo:
@@ -14745,7 +14803,7 @@ regions:
             photo_id: 210971042
             photo_link: 'http://photos2.meetupstatic.com/photos/member/2/b/2/2/member_210971042.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/2/b/2/2/thumb_210971042.jpeg'
-        members: 134
+        members: 135
         name: PopayánJS
         lat: 2.4200000762939453
         who: jsers
@@ -14773,7 +14831,7 @@ regions:
             photo_id: 227484722
             photo_link: 'http://photos1.meetupstatic.com/photos/member/6/0/9/2/member_227484722.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/6/0/9/2/thumb_227484722.jpeg'
-        members: 432
+        members: 446
         name: Commerce Factory de São Paulo
         lat: -23.530000686645508
         who: Members
@@ -14821,7 +14879,7 @@ regions:
             photo_id: 126437862
             photo_link: 'http://photos3.meetupstatic.com/photos/member/4/5/c/6/member_126437862.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/4/5/c/6/thumb_126437862.jpeg'
-        members: 211
+        members: 215
         name: Javascript y NodeJs Viña del Mar
         lat: -33.0099983215332
         who: Javascripters
@@ -14848,7 +14906,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 166
+        members: 171
         name: Meteor Colombia
         lat: 4.630000114440918
         who: Meteoritos
@@ -14893,7 +14951,7 @@ regions:
         organizer:
           member_id: 164987592
           name: Ezequiel
-        members: 23
+        members: 22
         name: RGV bots
         lat: 25.8799991607666
         who: RGVBots
@@ -14915,33 +14973,15 @@ regions:
 
 
 
-
-
-
-
-
-
           </p>
 
           <p><br>
 
 
 
-
-
-
-
-
-
           </p>
 
           <p><br>
-
-
-
-
-
-
 
 
 
@@ -14961,7 +15001,7 @@ regions:
             photo_id: 223001332
             photo_link: 'http://photos3.meetupstatic.com/photos/member/a/1/7/4/member_223001332.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/a/1/7/4/thumb_223001332.jpeg'
-        members: 347
+        members: 356
         name: Buenos Aires Node.js Meetup
         lat: -34.61000061035156
         who: developers
@@ -14987,7 +15027,7 @@ regions:
             photo_id: 118747682
             photo_link: 'http://photos2.meetupstatic.com/photos/member/1/e/0/2/member_118747682.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/1/e/0/2/thumb_118747682.jpeg'
-        members: 143
+        members: 147
         name: Node.js Comunidad Mexico
         lat: 25.670000076293945
         who: Noders
@@ -15045,32 +15085,14 @@ regions:
 
 
 
-
-
-
-
-
-
           NodeBR no IRC: <a href="https://webchat.freenode.net/?channels=#nodebr"
           target="_blank"
           class="linkified">https://webchat.freenode.net/?channels=#nodebr</a><br>
 
 
 
-
-
-
-
-
-
           Site da comunidade: <a href="http://nodebr.org" target="_blank"
           class="linkified">http://nodebr.org</a><br>
-
-
-
-
-
-
 
 
 
@@ -15091,7 +15113,7 @@ regions:
             photo_id: 152813812
             photo_link: 'http://photos2.meetupstatic.com/photos/member/d/2/3/4/member_152813812.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/d/2/3/4/thumb_152813812.jpeg'
-        members: 109
+        members: 118
         name: NodeBR - Rio de Janeiro
         lat: -22.90999984741211
         who: Noders
@@ -15102,7 +15124,7 @@ regions:
         timezone: America/Sao_Paulo
         created: 1410206602000
         link: 'http://www.meetup.com/NodeBR-Minas-Gerais/'
-        rating: 4.93
+        rating: 4.96
         description: >-
           <p>A NodeBR é uma comunidade fundada por pessoas com interesse em
           aprender mais sobre Node.js assim como ajudar outras pessoas que
@@ -15150,84 +15172,24 @@ regions:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
            NodeBR no IRC: <a
-
-
-
           href="https://webchat.freenode.net/?channels=#nodebr" target="_blank"
           class="linkified">https://webchat.freenode.net/?channels=#nodebr</a><br>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
            Site da comunidade: <a href="http://nodebr.org" target="_blank"
-
-
-
           class="linkified">http://nodebr.org</a><br>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
            Site do Meetup de São Paulo: <a
-
-
-
           href="http://www.meetup.com/Node-js-Sao-Paulo" target="_blank"
           class="linkified">http://www.meetup.com/Node-js-Sao-Paulo</a><br>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
            Site do Meetup do Rio de Janeiro: <a
-
-
-
           href="http://www.meetup.com/Node-js-Rio-de-Janeiro" target="_blank"
           class="linkified">http://www.meetup.com/Node-js-Rio-de-Janeiro</a></p>
         lon: -43.939998626708984
@@ -15244,7 +15206,7 @@ regions:
             photo_id: 152813812
             photo_link: 'http://photos2.meetupstatic.com/photos/member/d/2/3/4/member_152813812.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/d/2/3/4/thumb_152813812.jpeg'
-        members: 387
+        members: 419
         name: NodeBR - Minas Gerais
         lat: -19.920000076293945
         who: Noders
@@ -15267,7 +15229,7 @@ regions:
             photo_id: 225914462
             photo_link: 'http://photos2.meetupstatic.com/photos/member/3/8/7/e/member_225914462.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/8/7/e/thumb_225914462.jpeg'
-        members: 217
+        members: 230
         name: HackLab Sorocaba
         lat: -23.489999771118164
         who: Hackers
@@ -15290,7 +15252,7 @@ regions:
             photo_id: 225949432
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/1/1/8/member_225949432.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/1/1/8/thumb_225949432.jpeg'
-        members: 422
+        members: 441
         name: Javascript Monterrey
         lat: 25.670000076293945
         who: Miembros
@@ -15317,7 +15279,7 @@ regions:
             photo_id: 94453072
             photo_link: 'http://photos1.meetupstatic.com/photos/member/3/3/1/0/member_94453072.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/3/1/0/thumb_94453072.jpeg'
-        members: 122
+        members: 124
         name: AngularJS Cali
         lat: 3.4200000762939453
         who: Curly Braces
@@ -15370,12 +15332,6 @@ regions:
 
 
 
-
-
-
-
-
-
           </p>
         lon: -98.76000213623047
         group_photo:
@@ -15392,7 +15348,7 @@ regions:
             photo_id: 227610532
             photo_link: 'http://photos4.meetupstatic.com/photos/member/7/7/4/4/member_227610532.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/7/7/4/4/thumb_227610532.jpeg'
-        members: 58
+        members: 61
         name: Pachupar Develop
         lat: 20.1200008392334
         who: Members
@@ -15427,7 +15383,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 81
+        members: 91
         name: Meteor Rio de Janeiro
         lat: -22.90999984741211
         who: Meteorites
@@ -15449,7 +15405,7 @@ regions:
             photo_id: 231433732
             photo_link: 'http://photos1.meetupstatic.com/photos/member/3/5/a/4/member_231433732.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/5/a/4/thumb_231433732.jpeg'
-        members: 72
+        members: 79
         name: Frontend Bahia
         lat: -12.970000267028809
         who: frontenders
@@ -15477,7 +15433,7 @@ regions:
             photo_id: 229113212
             photo_link: 'http://photos3.meetupstatic.com/photos/member/8/1/b/c/member_229113212.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/8/1/b/c/thumb_229113212.jpeg'
-        members: 582
+        members: 588
         name: NodersMX
         lat: 19.43000030517578
         who: Noders
@@ -15500,7 +15456,7 @@ regions:
             photo_id: 233287012
             photo_link: 'http://photos1.meetupstatic.com/photos/member/1/b/6/4/member_233287012.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/1/b/6/4/thumb_233287012.jpeg'
-        members: 127
+        members: 134
         name: BucaraDev Web Developers
         lat: 7.130000114440918
         who: Nexters
@@ -15541,7 +15497,7 @@ regions:
             photo_id: 10662063
             photo_link: 'http://photos3.meetupstatic.com/photos/member/a/4/4/f/member_10662063.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/a/4/4/f/thumb_10662063.jpeg'
-        members: 141
+        members: 154
         name: Meteor Porto Alegre
         lat: -30.040000915527344
         who: Meteoritos
@@ -15568,7 +15524,7 @@ regions:
             photo_id: 146920822
             photo_link: 'http://photos4.meetupstatic.com/photos/member/9/f/7/6/member_146920822.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/9/f/7/6/thumb_146920822.jpeg'
-        members: 153
+        members: 155
         name: Meteor México
         lat: 19.43000030517578
         who: Meteoritas
@@ -15596,7 +15552,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 182
+        members: 195
         name: Meteor Dominican Republic
         lat: 18.479999542236328
         who: Meteorites
@@ -15624,7 +15580,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 128
+        members: 129
         name: Meteor GuadalajaraMX
         lat: 20.670000076293945
         who: Meteorites
@@ -15646,7 +15602,7 @@ regions:
             photo_id: 249372719
             photo_link: 'http://photos1.meetupstatic.com/photos/member/3/1/a/f/member_249372719.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/1/a/f/thumb_249372719.jpeg'
-        members: 43
+        members: 45
         name: Culiacán AngularJS Meetup
         lat: 24.799999237060547
         who: developers
@@ -15690,7 +15646,7 @@ regions:
             photo_id: 234637732
             photo_link: 'http://photos1.meetupstatic.com/photos/member/9/3/6/4/member_234637732.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/9/3/6/4/thumb_234637732.jpeg'
-        members: 130
+        members: 133
         name: Bogotá - Startup desde 0
         lat: 4.630000114440918
         who: LOS 4400
@@ -15720,7 +15676,7 @@ regions:
             photo_id: 155206732
             photo_link: 'http://photos2.meetupstatic.com/photos/member/b/6/8/c/member_155206732.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/b/6/8/c/thumb_155206732.jpeg'
-        members: 266
+        members: 280
         name: devbeers Rio de Janeiro
         lat: -22.90999984741211
         who: awesome
@@ -15797,7 +15753,7 @@ regions:
             photo_id: 229139602
             photo_link: 'http://photos3.meetupstatic.com/photos/member/e/8/d/2/member_229139602.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/e/8/d/2/thumb_229139602.jpeg'
-        members: 21
+        members: 22
         name: NodeBots Misantla
         lat: 19.93000030517578
         who: NodeBots Developer
@@ -15805,6 +15761,7 @@ regions:
         country: CO
         visibility: public
         city: Pereira
+        source_of_truth: true
         timezone: America/Bogota
         created: 1393477200000
         link: 'http://pereirajs.org/'
@@ -15841,7 +15798,7 @@ regions:
             photo_id: 238277022
             photo_link: 'http://photos3.meetupstatic.com/photos/member/4/2/7/e/member_238277022.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/4/2/7/e/thumb_238277022.jpeg'
-        members: 164
+        members: 168
         name: TequilaJS Zapopan
         lat: 20.719999313354492
         who: JS Drunken Ninjas
@@ -15863,7 +15820,7 @@ regions:
             photo_id: 81203622
             photo_link: 'http://photos4.meetupstatic.com/photos/member/5/c/4/6/member_81203622.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/5/c/4/6/thumb_81203622.jpeg'
-        members: 448
+        members: 465
         name: Beer.js Buenos Aires
         lat: -34.61000061035156
         who: JavaScripters
@@ -15885,7 +15842,7 @@ regions:
             photo_id: 246768574
             photo_link: 'http://photos4.meetupstatic.com/photos/member/b/d/b/e/member_246768574.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/b/d/b/e/thumb_246768574.jpeg'
-        members: 3
+        members: 4
         name: ClickIT Bitbucket Meetup
         lat: -22.90999984741211
         who: ClickIts
@@ -15940,7 +15897,7 @@ regions:
             photo_id: 146911782
             photo_link: 'http://photos1.meetupstatic.com/photos/member/7/c/2/6/member_146911782.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/7/c/2/6/thumb_146911782.jpeg'
-        members: 857
+        members: 887
         name: HackSantiago
         lat: -33.459999084472656
         who: Hackers
@@ -15990,7 +15947,7 @@ regions:
             photo_id: 246717089
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/f/0/1/member_246717089.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/d/f/0/1/thumb_246717089.jpeg'
-        members: 95
+        members: 97
         name: PanamáJS
         lat: 8.970000267028809
         who: Javascripters
@@ -16018,7 +15975,7 @@ regions:
             photo_id: 241662490
             photo_link: 'http://photos3.meetupstatic.com/photos/member/a/5/f/a/member_241662490.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/a/5/f/a/thumb_241662490.jpeg'
-        members: 363
+        members: 389
         name: Robotica Medellín
         lat: 6.25
         who: Robotistas
@@ -16046,7 +16003,7 @@ regions:
             photo_id: 243361870
             photo_link: 'http://photos1.meetupstatic.com/photos/member/7/4/e/member_243361870.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/7/4/e/thumb_243361870.jpeg'
-        members: 248
+        members: 255
         name: ManizalesJS
         lat: 5.059999942779541
         who: Javascripters
@@ -16073,7 +16030,7 @@ regions:
             photo_id: 239046562
             photo_link: 'http://photos2.meetupstatic.com/photos/member/1/9/a/2/member_239046562.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/1/9/a/2/thumb_239046562.jpeg'
-        members: 342
+        members: 371
         name: ReactJS Lima
         lat: -12.069999694824219
         who: developers
@@ -16101,7 +16058,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 76
+        members: 88
         name: Meteor Guanajuato
         lat: 21.020000457763672
         who: Meteorites
@@ -16129,7 +16086,7 @@ regions:
             photo_id: 243463480
             photo_link: 'http://photos2.meetupstatic.com/photos/member/a/9/d/8/member_243463480.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/9/d/8/thumb_243463480.jpeg'
-        members: 677
+        members: 697
         name: BA Node.js Meetup
         lat: -34.61000061035156
         who: Noders
@@ -16174,7 +16131,7 @@ regions:
             photo_id: 243591234
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/8/2/2/member_243591234.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/c/8/2/2/thumb_243591234.jpeg'
-        members: 59
+        members: 65
         name: 'Natal.js -> FEMUG-RN'
         lat: -5.800000190734863
         who: FEMUGUIANO
@@ -16196,7 +16153,7 @@ regions:
             photo_id: 245761827
             photo_link: 'http://photos3.meetupstatic.com/photos/member/7/2/3/member_245761827.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/7/2/3/thumb_245761827.jpeg'
-        members: 46
+        members: 47
         name: Resistencia - Corrientes TechUpdate Meetup
         lat: -27.459999084472656
         who: 'desarrolladores, diseñadores'
@@ -16218,7 +16175,7 @@ regions:
             photo_id: 247920649
             photo_link: 'http://photos3.meetupstatic.com/photos/member/2/8/9/member_247920649.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/2/8/9/thumb_247920649.jpeg'
-        members: 70
+        members: 82
         name: VillavicencioJS
         lat: 4.150000095367432
         who: Javascripters
@@ -16253,7 +16210,7 @@ regions:
             photo_id: 244079389
             photo_link: 'http://photos2.meetupstatic.com/photos/member/e/7/f/d/member_244079389.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/e/7/f/d/thumb_244079389.jpeg'
-        members: 453
+        members: 510
         name: 'Tecnologia & Café'
         lat: -22.90999984741211
         who: coffeeholics
@@ -16264,7 +16221,7 @@ regions:
         timezone: America/Lima
         created: 1424882471000
         link: 'http://www.meetup.com/Lima-NodeJS-Meetup/'
-        rating: 4.33
+        rating: 4.5
         description: '<p>Llamando a todos los desarrolladores de software de Javascript. Reúnase con sus contemporáneos, aprender acerca de nuevas tecnologías y divertirse en nuestros eventos dedicados a NodeJS</p>'
         lon: -77.05000305175781
         group_photo:
@@ -16281,7 +16238,7 @@ regions:
             photo_id: 236758852
             photo_link: 'http://photos1.meetupstatic.com/photos/member/e/5/e/4/member_236758852.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/e/5/e/4/thumb_236758852.jpeg'
-        members: 619
+        members: 669
         name: Lima NodeJS Meetup
         lat: -12.069999694824219
         who: Nodistas
@@ -16308,7 +16265,7 @@ regions:
             photo_id: 244238609
             photo_link: 'http://photos2.meetupstatic.com/photos/member/9/6/d/1/member_244238609.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/9/6/d/1/thumb_244238609.jpeg'
-        members: 121
+        members: 132
         name: Monterrey AngularJS Meetup
         lat: 25.670000076293945
         who: Developers
@@ -16339,7 +16296,7 @@ regions:
             photo_id: 244274351
             photo_link: 'http://photos1.meetupstatic.com/photos/member/3/8/0/f/member_244274351.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/8/0/f/thumb_244274351.jpeg'
-        members: 142
+        members: 149
         name: BarranquillaJS
         lat: 11
         who: Javascripters
@@ -16350,7 +16307,7 @@ regions:
         timezone: America/Cordoba
         created: 1426767842000
         link: 'http://www.meetup.com/Meteor-Cordoba/'
-        rating: 3.5
+        rating: 4.25
         description: '<p>Reunir otros desarrolladores que usen o quieran usar Meteor. Comparte tu conocimiento, aplicaciones y obtene recomendaciones de otros desarrolladores/programadores. Meteor es una plataforma de codigo abierto para construir rapidamente aplicaciones web y moviles de alta calidad para expertos o programadores novatos.</p>'
         lon: -64.19000244140625
         group_photo:
@@ -16367,7 +16324,7 @@ regions:
             photo_id: 244664873
             photo_link: 'http://photos2.meetupstatic.com/photos/member/a/f/4/9/member_244664873.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/f/4/9/thumb_244664873.jpeg'
-        members: 89
+        members: 97
         name: Meteor Cordoba
         lat: -31.399999618530273
         who: Meteoritos
@@ -16418,7 +16375,7 @@ regions:
             photo_id: 243539966
             photo_link: 'http://photos1.meetupstatic.com/photos/member/e/a/3/e/member_243539966.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/e/a/3/e/thumb_243539966.jpeg'
-        members: 165
+        members: 175
         name: MEAN BH
         lat: -19.920000076293945
         who: Full-Stack JavaScript Developers
@@ -16455,7 +16412,7 @@ regions:
             photo_id: 244985991
             photo_link: 'http://photos4.meetupstatic.com/photos/member/1/7/6/7/member_244985991.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/1/7/6/7/thumb_244985991.jpeg'
-        members: 45
+        members: 50
         name: PG.js
         lat: -25.09000015258789
         who: DevNerds
@@ -16476,7 +16433,7 @@ regions:
             photo_id: 183745022
             photo_link: 'http://photos4.meetupstatic.com/photos/member/6/1/b/e/member_183745022.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/6/1/b/e/thumb_183745022.jpeg'
-        members: 41
+        members: 58
         name: Ionic Fortaleza Meetup
         lat: -3.7799999713897705
         who: Ionites
@@ -16512,7 +16469,7 @@ regions:
             photo_id: 236725992
             photo_link: 'http://photos2.meetupstatic.com/photos/member/6/5/8/8/member_236725992.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/6/5/8/8/thumb_236725992.jpeg'
-        members: 375
+        members: 405
         name: Guadalajara JS
         lat: 20.670000076293945
         who: Javascripters
@@ -16540,7 +16497,7 @@ regions:
             photo_id: 145470992
             photo_link: 'http://photos4.meetupstatic.com/photos/member/7/9/1/0/member_145470992.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/7/9/1/0/thumb_145470992.jpeg'
-        members: 156
+        members: 155
         name: Ember Medellin
         lat: 6.25
         who: Embereños
@@ -16562,7 +16519,7 @@ regions:
             photo_id: 245700752
             photo_link: 'http://photos1.meetupstatic.com/photos/member/2/f/0/member_245700752.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/2/f/0/thumb_245700752.jpeg'
-        members: 43
+        members: 44
         name: Ember.js Cba
         lat: -31.399999618530273
         who: embereños
@@ -16590,7 +16547,7 @@ regions:
             photo_id: 247951651
             photo_link: 'http://photos1.meetupstatic.com/photos/member/7/b/a/3/member_247951651.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/7/b/a/3/thumb_247951651.jpeg'
-        members: 104
+        members: 117
         name: JavaScript Everywhere in Rosario
         lat: -32.95000076293945
         who: Javascripters
@@ -16612,7 +16569,7 @@ regions:
             photo_id: 246482943
             photo_link: 'http://photos2.meetupstatic.com/photos/member/b/7/f/member_246482943.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/b/7/f/thumb_246482943.jpeg'
-        members: 21
+        members: 25
         name: Salvador MeteorJS Meetup
         lat: -12.970000267028809
         who: Meteorus
@@ -16634,7 +16591,7 @@ regions:
             photo_id: 246928548
             photo_link: 'http://photos2.meetupstatic.com/photos/member/6/f/8/4/member_246928548.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/6/f/8/4/thumb_246928548.jpeg'
-        members: 181
+        members: 182
         name: Buenos Aires. DEVS have the power. Choose your next work.
         lat: -34.61000061035156
         who: Dev Rock Star
@@ -16645,7 +16602,7 @@ regions:
         timezone: America/Sao_Paulo
         created: 1434023763000
         link: 'http://www.meetup.com/opensanca/'
-        rating: 4.79
+        rating: 4.72
         description: >-
           <p>Olá, se você veio até aqui, ficamos felizes! <br> <br></p>
 
@@ -16676,16 +16633,7 @@ regions:
           <b>OPEN</b>:</span></p>
 
           <p><span>----------------------------------------------------------------------------------------------------------------------
-
-
-
            <br></span></p>
-
-
-
-
-
-
 
           <p>Tópicos:</p>
 
@@ -16697,16 +16645,7 @@ regions:
           desenvolvedores, investidores e afins....</p>
 
           <p>----------------------------------------------------------------------------------------------------------------------
-
-
-
            <br></p>
-
-
-
-
-
-
 
           <p>Esperamos vocês! &nbsp;;)</p>
         lon: -47.88999938964844
@@ -16724,7 +16663,7 @@ regions:
             photo_id: 246952908
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/e/a/c/member_246952908.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/e/a/c/thumb_246952908.jpeg'
-        members: 186
+        members: 213
         name: opensanca
         lat: -22.020000457763672
         who: Membros
@@ -16764,7 +16703,7 @@ regions:
             photo_id: 246501205
             photo_link: 'http://photos1.meetupstatic.com/photos/member/5/2/d/5/member_246501205.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/2/d/5/thumb_246501205.jpeg'
-        members: 118
+        members: 122
         name: CuernavacaJS
         lat: 18.920000076293945
         who: Miembros
@@ -16791,7 +16730,7 @@ regions:
             photo_id: 247282287
             photo_link: 'http://photos2.meetupstatic.com/photos/member/5/7/0/f/member_247282287.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/5/7/0/f/thumb_247282287.jpeg'
-        members: 102
+        members: 108
         name: Guatemala AngularJS Meetup
         lat: 14.630000114440918
         who: Anguleros
@@ -16837,7 +16776,7 @@ regions:
             photo_id: 250216647
             photo_link: 'http://photos3.meetupstatic.com/photos/member/4/1/0/7/member_250216647.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/4/1/0/7/thumb_250216647.jpeg'
-        members: 85
+        members: 107
         name: NodeBotsRec
         lat: -8.079999923706055
         who: NodeBots
@@ -16860,7 +16799,7 @@ regions:
             photo_id: 248084495
             photo_link: 'http://photos4.meetupstatic.com/photos/member/a/d/c/f/member_248084495.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/d/c/f/thumb_248084495.jpeg'
-        members: 178
+        members: 192
         name: Emergent Software Technologies by VP
         lat: 6.25
         who: Members
@@ -16935,7 +16874,7 @@ regions:
             photo_id: 243383109
             photo_link: 'http://photos2.meetupstatic.com/photos/member/5/a/4/5/member_243383109.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/5/a/4/5/thumb_243383109.jpeg'
-        members: 58
+        members: 72
         name: Meteor Floripa
         lat: -27.600000381469727
         who: Meteors
@@ -17001,7 +16940,7 @@ regions:
             photo_id: 248851991
             photo_link: 'http://photos4.meetupstatic.com/photos/member/7/c/f/7/member_248851991.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/7/c/f/7/thumb_248851991.jpeg'
-        members: 50
+        members: 59
         name: 'Hackers & Makers Michoacán'
         lat: 19.520000457763672
         who: 'Hackers & Makers'
@@ -17023,7 +16962,7 @@ regions:
             photo_id: 114534062
             photo_link: 'http://photos4.meetupstatic.com/photos/member/d/3/2/e/member_114534062.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/d/3/2/e/thumb_114534062.jpeg'
-        members: 38
+        members: 39
         name: DronCba
         lat: -31.399999618530273
         who: Droneros
@@ -17046,7 +16985,7 @@ regions:
             photo_id: 245539125
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/a/b/5/member_245539125.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/4/a/b/5/thumb_245539125.jpeg'
-        members: 181
+        members: 204
         name: NodeJS Recife Meetup
         lat: -8.079999923706055
         who: Membros
@@ -17090,7 +17029,7 @@ regions:
             photo_id: 154812832
             photo_link: 'http://photos3.meetupstatic.com/photos/member/3/2/2/0/member_154812832.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/3/2/2/0/thumb_154812832.jpeg'
-        members: 35
+        members: 37
         name: MinasJS
         lat: -19.920000076293945
         who: javascripters
@@ -17112,7 +17051,7 @@ regions:
             photo_id: 249903385
             photo_link: 'http://photos4.meetupstatic.com/photos/member/d/3/9/member_249903385.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/d/3/9/thumb_249903385.jpeg'
-        members: 33
+        members: 38
         name: Quito.js
         lat: -0.1899999976158142
         who: jotaeses
@@ -17133,7 +17072,7 @@ regions:
             photo_id: 16083911
             photo_link: 'http://photos1.meetupstatic.com/photos/member/f/4/7/member_16083911.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/f/4/7/thumb_16083911.jpeg'
-        members: 3
+        members: 9
         name: JS4Girls Joinville
         lat: -26.31999969482422
         who: Members
@@ -17160,7 +17099,7 @@ regions:
             photo_id: 250014277
             photo_link: 'http://photos3.meetupstatic.com/photos/member/d/4/0/5/member_250014277.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/d/4/0/5/thumb_250014277.jpeg'
-        members: 106
+        members: 125
         name: Abakio Javascript Group
         lat: -12.069999694824219
         who: Developers
@@ -17187,7 +17126,7 @@ regions:
             photo_id: 250497233
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/f/9/1/member_250497233.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/d/f/9/1/thumb_250497233.jpeg'
-        members: 26
+        members: 30
         name: Meteor Cali
         lat: 3.4200000762939453
         who: Meteorites
@@ -17209,7 +17148,7 @@ regions:
             photo_id: 243957741
             photo_link: 'http://photos2.meetupstatic.com/photos/member/e/1/8/d/member_243957741.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/e/1/8/d/thumb_243957741.jpeg'
-        members: 77
+        members: 85
         name: Free Code Camp São Paulo
         lat: -23.530000686645508
         who: Campers
@@ -17231,7 +17170,7 @@ regions:
             photo_id: 249372719
             photo_link: 'http://photos1.meetupstatic.com/photos/member/3/1/a/f/member_249372719.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/1/a/f/thumb_249372719.jpeg'
-        members: 5
+        members: 6
         name: Culiacán front-end
         lat: 24.799999237060547
         who: frontends
@@ -17259,7 +17198,7 @@ regions:
             photo_id: 245117337
             photo_link: 'http://photos1.meetupstatic.com/photos/member/4/3/b/9/member_245117337.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/4/3/b/9/thumb_245117337.jpeg'
-        members: 127
+        members: 151
         name: Meteor Bogotá
         lat: 4.630000114440918
         who: meteoritos
@@ -17270,6 +17209,7 @@ regions:
         timezone: America/Santiago
         created: 1446477831000
         link: 'http://www.meetup.com/Javascript-Chile/'
+        rating: 5
         description: >-
           <p>¡Llamando a todos los <b>JS Fans</b>! (Y los <b>JS Curious</b>
           también)&nbsp;</p>
@@ -17303,7 +17243,7 @@ regions:
             photo_id: 251055332
             photo_link: 'http://photos4.meetupstatic.com/photos/member/3/b/e/4/member_251055332.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/b/e/4/thumb_251055332.jpeg'
-        members: 101
+        members: 166
         name: Javascript Chile
         lat: -33.459999084472656
         who: Javascriptos
@@ -17314,7 +17254,16 @@ regions:
         timezone: America/Fortaleza
         created: 1447807512000
         link: 'http://www.meetup.com/Meetup-Microcontroladores-IoT-Natal/'
-        description: '<p>Pessoal entusiasta em microcontroladores (arduino, launchpad, pic ...) e que gosta de realizar projetos DIY aliando internet das coisas. Queremos conhecer pessoas que gostem de aprender e partilhar conhecimentos acerca desta temática. Revolucionadores, empreendedores, malucos por fazer acontecer e sonhadores são todos bem vindos!</p>'
+        description: >-
+          <p>Pessoal entusiasta em microcontroladores (arduino, launchpad, pic
+          ...) e que gosta de realizar projetos DIY aliando internet das coisas.
+          Queremos conhecer pessoas que gostem de aprender e partilhar
+          conhecimentos acerca desta temática. Revolucionadores, empreendedores,
+          malucos por fazer acontecer e sonhadores são todos bem vindos!</p>
+
+          <p>Também temos um grupo no Facebook, <a
+          href="https://www.facebook.com/groups/1523749987943402/?fref=nf">entre
+          aqui</a>!</p>
         lon: -35.220001220703125
         group_photo:
           highres_link: 'http://photos3.meetupstatic.com/photos/event/4/9/f/f/highres_444378943.jpeg'
@@ -17330,7 +17279,7 @@ regions:
             photo_id: 251484655
             photo_link: 'http://photos2.meetupstatic.com/photos/member/6/0/4/f/member_251484655.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/6/0/4/f/thumb_251484655.jpeg'
-        members: 10
+        members: 29
         name: Microcontroladores IoT Natal
         lat: -5.800000190734863
         who: fazedores
@@ -17341,8 +17290,13 @@ regions:
         timezone: America/Sao_Paulo
         created: 1448241839000
         link: 'http://www.meetup.com/Node-js-Porto-Alegre-Meetup/'
-        description: "Meet other Node.js developers. Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient."
+        description: "<p>Meet other Node.js developers. Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.</p>"
         lon: -51.220001220703125
+        group_photo:
+          highres_link: 'http://photos3.meetupstatic.com/photos/event/4/0/0/9/highres_444676393.jpeg'
+          photo_id: 444676393
+          photo_link: 'http://photos3.meetupstatic.com/photos/event/4/0/0/9/600_444676393.jpeg'
+          thumb_link: 'http://photos3.meetupstatic.com/photos/event/4/0/0/9/thumb_444676393.jpeg'
         join_mode: open
         organizer:
           member_id: 195939272
@@ -17352,7 +17306,7 @@ regions:
             photo_id: 251610992
             photo_link: 'http://photos4.meetupstatic.com/photos/member/7/9/1/0/member_251610992.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/7/9/1/0/thumb_251610992.jpeg'
-        members: 2
+        members: 121
         name: Node.js Porto Alegre Meetup
         lat: -30.040000915527344
         who: Members
@@ -17374,10 +17328,202 @@ regions:
             photo_id: 249133105
             photo_link: 'http://photos4.meetupstatic.com/photos/member/3/3/3/1/member_249133105.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/3/3/1/thumb_249133105.jpeg'
-        members: 2
+        members: 95
         name: Tecnología Digital
         lat: 25.670000076293945
         who: profesionistas
+      - utc_offset: -7200000
+        country: BR
+        visibility: public
+        city: São Paulo
+        timezone: America/Sao_Paulo
+        created: 1371662142000
+        link: 'http://www.meetup.com/AngularJS-Sao-Paulo/'
+        rating: 4.83
+        description: |-
+          <p>Grupo de meetups Angular em São Paulo, SP.</p>
+          <p><a href="https://groups.google.com/forum/#!forum/angularjs-sp">Lista de e-mails</a></p>
+        lon: -46.630001068115234
+        group_photo:
+          highres_link: 'http://photos3.meetupstatic.com/photos/event/9/b/8/4/highres_252879812.jpeg'
+          photo_id: 252879812
+          photo_link: 'http://photos3.meetupstatic.com/photos/event/9/b/8/4/600_252879812.jpeg'
+          thumb_link: 'http://photos3.meetupstatic.com/photos/event/9/b/8/4/thumb_252879812.jpeg'
+        join_mode: open
+        organizer:
+          member_id: 44294952
+          name: Ciro Nunes
+          photo:
+            photo_id: 127765482
+            photo_link: 'http://photos2.meetupstatic.com/photos/member/6/3/8/a/member_127765482.jpeg'
+            thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/3/8/a/thumb_127765482.jpeg'
+        members: 1073
+        name: AngularSP
+        lat: -23.530000686645508
+        who: superheroes
+      - utc_offset: -7200000
+        country: BR
+        visibility: public
+        city: Belo Horizonte
+        timezone: America/Sao_Paulo
+        created: 1387581798000
+        link: 'http://www.meetup.com/AngularJS-BH/'
+        rating: 4.92
+        description: '<p>Grupo de meetups sobre o Angular de Belo Horizonte, MG.</p>'
+        lon: -43.939998626708984
+        join_mode: open
+        organizer:
+          member_id: 44294952
+          name: Ciro Nunes
+          photo:
+            photo_id: 164994692
+            photo_link: 'http://photos2.meetupstatic.com/photos/member/d/5/a/4/member_164994692.jpeg'
+            thumb_link: 'http://photos4.meetupstatic.com/photos/member/d/5/a/4/thumb_164994692.jpeg'
+        members: 484
+        name: AngularBH
+        lat: -19.920000076293945
+        who: Membros
+      - utc_offset: -21600000
+        country: MX
+        visibility: public
+        city: México City
+        timezone: America/Mexico_City
+        created: 1409341277000
+        link: 'http://www.meetup.com/javascriptmx/'
+        rating: 4.79
+        description: '<p>La comunidad de JavaScript de la Ciudad de México</p>'
+        lon: -99.13999938964844
+        group_photo:
+          highres_link: 'http://photos2.meetupstatic.com/photos/event/9/6/c/highres_445142412.jpeg'
+          photo_id: 445142412
+          photo_link: 'http://photos4.meetupstatic.com/photos/event/9/6/c/600_445142412.jpeg'
+          thumb_link: 'http://photos2.meetupstatic.com/photos/event/9/6/c/thumb_445142412.jpeg'
+        join_mode: open
+        organizer:
+          member_id: 41815302
+          name: Jeduan Cornejo
+          photo:
+            highres_link: 'http://photos3.meetupstatic.com/photos/member/2/4/6/a/highres_106569322.jpeg'
+            photo_id: 106569322
+            photo_link: 'http://photos1.meetupstatic.com/photos/member/2/4/6/a/member_106569322.jpeg'
+            thumb_link: 'http://photos3.meetupstatic.com/photos/member/2/4/6/a/thumb_106569322.jpeg'
+        members: 1612
+        name: JavascriptMX
+        lat: 19.43000030517578
+        who: Desarrolladores
+      - utc_offset: -10800000
+        country: AR
+        visibility: public
+        city: Santa Fé
+        timezone: America/Cordoba
+        created: 1442165825000
+        link: 'http://www.meetup.com/js-Litoral/'
+        rating: 5
+        description: '<p>Este es un grupo para los interesados en tecnologías JavaScript. También para juntarnos a tomar cerveza y hacer amigos. Sumate.</p>'
+        lon: -60.689998626708984
+        join_mode: open
+        organizer:
+          member_id: 191847889
+          name: Alexis Charytonow
+          photo:
+            highres_link: 'http://photos1.meetupstatic.com/photos/member/1/b/f/5/highres_249667157.jpeg'
+            photo_id: 249667157
+            photo_link: 'http://photos1.meetupstatic.com/photos/member/1/b/f/5/member_249667157.jpeg'
+            thumb_link: 'http://photos1.meetupstatic.com/photos/member/1/b/f/5/thumb_249667157.jpeg'
+        members: 50
+        name: JavaScript Litoral
+        lat: -31.600000381469727
+        who: Members
+      - utc_offset: -7200000
+        country: BR
+        visibility: public
+        city: Moji das Cruzes
+        timezone: America/Sao_Paulo
+        created: 1449831116000
+        link: 'http://www.meetup.com/Front-Back-Mogi/'
+        description: >-
+          <p>O<b> Front&amp;Back</b> é um grupo de estudos gratuito para a região
+          de Mogi das Cruzes e Alto Tietê.&nbsp;</p>
+
+          <p>O objetivo principal do grupo é promover o networking e disseminar
+          o conhecimento FrontEnd e BackEnd. Abordamos diversos assuntos como
+          HTML, CSS, JavaScript, MEAN(MongoDb, Express, AngularJS e NodeJS),
+          JQuery, Arquitetura.&nbsp;</p>
+
+          <p><b>Sobre os Eventos</b></p>
+
+          <p>Os eventos (Mini Cursos e Palestras) são para qualquer pessoa que
+          esteja interessada em participar(independente do nível de
+          conhecimento).&nbsp;</p>
+
+          <p>A entrada para os eventos é 1 kg de alimento não perecível que será
+          doado para alguma instituição de caridade (Você aprende e ainda ajuda
+          quem precisa).&nbsp;</p>
+
+          <p>Sempre teremos eventos.</p>
+        lon: -46.209999084472656
+        group_photo:
+          highres_link: 'http://photos1.meetupstatic.com/photos/event/1/2/a/e/highres_444964782.jpeg'
+          photo_id: 444964782
+          photo_link: 'http://photos1.meetupstatic.com/photos/event/1/2/a/e/600_444964782.jpeg'
+          thumb_link: 'http://photos1.meetupstatic.com/photos/event/1/2/a/e/thumb_444964782.jpeg'
+        join_mode: open
+        organizer:
+          member_id: 162889882
+          name: Janaína Pereira dos Santos
+          photo:
+            highres_link: 'http://photos4.meetupstatic.com/photos/member/5/f/4/8/highres_221424392.jpeg'
+            photo_id: 221424392
+            photo_link: 'http://photos4.meetupstatic.com/photos/member/5/f/4/8/member_221424392.jpeg'
+            thumb_link: 'http://photos2.meetupstatic.com/photos/member/5/f/4/8/thumb_221424392.jpeg'
+        members: 17
+        name: 'Front&Back Mogi'
+        lat: -23.520000457763672
+        who: Geeks
+      - utc_offset: -7200000
+        country: BR
+        visibility: public
+        city: Joinville
+        timezone: America/Sao_Paulo
+        created: 1449860893000
+        link: 'http://www.meetup.com/joinvillejs-org/'
+        description: 'Comunidade de frontend e programadores javascript de Jonville. Formado para compartilhar experiências, conteúdo, network, etc sobre Front End, Desenvolvimento Web, Javascript. Da uma olhada na nossa organização no Github: https://github.com/joinvillejs-org Uma comunidade forte para organizar eventos e metups de forma constante na cidade de Joinville, inventir o coworking e troca de experiências. Além disso, a comunidade é um espaço para mostrar seu trabalho, aprender e crescer.'
+        lon: -48.84000015258789
+        join_mode: open
+        organizer:
+          member_id: 195462162
+          name: Matheus Poleza
+          photo:
+            highres_link: 'http://photos4.meetupstatic.com/photos/member/4/3/e/a/highres_252137386.jpeg'
+            photo_id: 252137386
+            photo_link: 'http://photos2.meetupstatic.com/photos/member/4/3/e/a/member_252137386.jpeg'
+            thumb_link: 'http://photos4.meetupstatic.com/photos/member/4/3/e/a/thumb_252137386.jpeg'
+        members: 16
+        name: JoinvilleJS
+        lat: -26.31999969482422
+        who: joinvillers
+      - utc_offset: -16200000
+        country: VE
+        visibility: public
+        city: Caracas
+        timezone: America/Caracas
+        created: 1449866547000
+        link: 'http://www.meetup.com/Meetup-de-JavaScript-en-Caracas/'
+        description: 'Somos un sitio de encuentro para todas las personas relacionadas con javascript desde los que quieren estar informados en este nuevo paradigma de desarrollo, hasta por los clientes que estan buscando soluciones javascript para sus necesidades informáticas. Ven a compartir, ven a conocer, ver a instruir, ven a aprender, ven a construir una comunidad.'
+        lon: -66.93000030517578
+        join_mode: open
+        organizer:
+          member_id: 27479392
+          name: Robinson Ochoa
+          photo:
+            highres_link: 'http://photos1.meetupstatic.com/photos/member/c/6/9/4/highres_252050836.jpeg'
+            photo_id: 252050836
+            photo_link: 'http://photos1.meetupstatic.com/photos/member/c/6/9/4/member_252050836.jpeg'
+            thumb_link: 'http://photos1.meetupstatic.com/photos/member/c/6/9/4/thumb_252050836.jpeg'
+        members: 16
+        name: Meetup de JavaScript en Caracas
+        lat: 10.539999961853027
+        who: Miembros
   - region: North America
     conferences:
       - name: Node.js Interactive
@@ -17397,16 +17543,16 @@ regions:
         lat: 38.1665953
         lon: -122.8083025
       - name: Empire Node
-        link: http://2015.empirenode.org/
+        link: 'http://2015.empirenode.org/'
         desc: Yearly Node.js conference in New York City.
         lat: 40.704031
         lon: -74.013747
-        location: National Museum of the American Indian, NYC, NY
+        location: 'National Museum of the American Indian, NYC, NY'
       - name: EmpireJS
         desc: Yearly JS Conference in New York City.
         lat: 40.704031
         lon: -74.013747
-        location: National Museum of the American Indian, NYC, NY
+        location: 'National Museum of the American Indian, NYC, NY'
       - name: Node Community Convention
         dates:
           - 2016-01-26T00:00:00.000Z
@@ -17416,7 +17562,7 @@ regions:
         desc: Real Time Innovation for the Node.js Community
         lat: 37.788678
         lon: -122.4126467
-        location: Marine's Memorial Theatre, 609 Sutter Street, San Francisco, CA 94102
+        location: "Marine's Memorial Theatre, 609 Sutter Street, San Francisco, CA 94102"
     nodeschools:
       - name: Anchorage NodeSchool
         location: 'Anchorage, AK, US'
@@ -17862,7 +18008,7 @@ regions:
             photo_id: 21205961
             photo_link: 'http://photos4.meetupstatic.com/photos/member/6/5/6/9/member_21205961.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/5/6/9/thumb_21205961.jpeg'
-        members: 72
+        members: 73
         name: Web Frameworks Meetup
         state: FL
         lat: 26.18000030517578
@@ -17891,7 +18037,7 @@ regions:
             photo_id: 21205961
             photo_link: 'http://photos4.meetupstatic.com/photos/member/6/5/6/9/member_21205961.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/5/6/9/thumb_21205961.jpeg'
-        members: 204
+        members: 206
         name: The Broward County Web Design Meetup Group
         state: FL
         lat: 26.18000030517578
@@ -17920,7 +18066,7 @@ regions:
             photo_id: 250473213
             photo_link: 'http://photos2.meetupstatic.com/photos/member/8/1/b/d/member_250473213.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/8/1/b/d/thumb_250473213.jpeg'
-        members: 418
+        members: 423
         name: Lansing Web Meetup Group
         state: MI
         lat: 42.72999954223633
@@ -17960,7 +18106,7 @@ regions:
             photo_id: 244981421
             photo_link: 'http://photos3.meetupstatic.com/photos/member/5/8/d/member_244981421.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/5/8/d/thumb_244981421.jpeg'
-        members: 9979
+        members: 10130
         name: The SF JavaScript Meetup
         state: CA
         lat: 37.790000915527344
@@ -18004,7 +18150,7 @@ regions:
             photo_id: 183073802
             photo_link: 'http://photos2.meetupstatic.com/photos/member/3/5/e/a/member_183073802.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/5/e/a/thumb_183073802.jpeg'
-        members: 12938
+        members: 12978
         name: Hackers and Founders
         state: CA
         lat: 37.40999984741211
@@ -18043,7 +18189,7 @@ regions:
             photo_id: 24146402
             photo_link: 'http://photos4.meetupstatic.com/photos/member/6/7/2/2/member_24146402.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/7/2/2/thumb_24146402.jpeg'
-        members: 3040
+        members: 3110
         name: NY JavaScript
         state: NY
         lat: 40.720001220703125
@@ -18072,7 +18218,7 @@ regions:
             photo_id: 178704072
             photo_link: 'http://photos4.meetupstatic.com/photos/member/5/e/0/8/member_178704072.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/5/e/0/8/thumb_178704072.jpeg'
-        members: 695
+        members: 707
         name: 'Austin Coders & Hackers by The Tech^map'
         state: TX
         lat: 30.290000915527344
@@ -18108,7 +18254,7 @@ regions:
             photo_id: 185237692
             photo_link: 'http://photos4.meetupstatic.com/photos/member/4/5/1/c/member_185237692.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/4/5/1/c/thumb_185237692.jpeg'
-        members: 920
+        members: 922
         name: BmoreJS – The Baltimore JavaScript Users Group
         state: MD
         lat: 39.290000915527344
@@ -18146,7 +18292,7 @@ regions:
             photo_id: 230597122
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/2/e/2/member_230597122.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/4/2/e/2/thumb_230597122.jpeg'
-        members: 684
+        members: 680
         name: Central Florida Web Developers
         state: FL
         lat: 27.940000534057617
@@ -18175,7 +18321,7 @@ regions:
             photo_id: 11391963
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/a/f/b/member_11391963.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/c/a/f/b/thumb_11391963.jpeg'
-        members: 1053
+        members: 1049
         name: SF Node.js
         state: CA
         lat: 37.77000045776367
@@ -18216,12 +18362,6 @@ regions:
 
 
 
-
-
-
-
-
-
           </span></li>
 
           <li><span style="color : #000000"><span><span>Sharing workflow and
@@ -18231,24 +18371,12 @@ regions:
 
 
 
-
-
-
-
-
-
           </span></span></li>
 
           <li><span style="color : #000000"><span><span><span>All presentations
           are recorded and published online, in the hopes that it will improve
           the quality of presentations and offer nice exposure and incentive to
           present.</span><br>
-
-
-
-
-
-
 
 
 
@@ -18275,7 +18403,7 @@ regions:
             photo_id: 242859798
             photo_link: 'http://photos4.meetupstatic.com/photos/member/9/b/7/6/member_242859798.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/9/b/7/6/thumb_242859798.jpeg'
-        members: 894
+        members: 912
         name: NebraskaJS
         state: NE
         lat: 41.2599983215332
@@ -18287,7 +18415,7 @@ regions:
         timezone: US/Eastern
         created: 1256446688000
         link: 'http://www.meetup.com/Triangle-JavaScript/'
-        rating: 4.62
+        rating: 4.63
         description: 'Welcome to Triangle JavaScript, a group for people in the Raleigh-Durham area interested in discussing all things JavaScript.'
         lon: -78.91999816894531
         group_photo:
@@ -18304,7 +18432,7 @@ regions:
             photo_id: 38811562
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/9/6/a/member_38811562.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/c/9/6/a/thumb_38811562.jpeg'
-        members: 1666
+        members: 1686
         name: Triangle JavaScript
         state: NC
         lat: 35.91999816894531
@@ -18316,7 +18444,7 @@ regions:
         timezone: US/Pacific
         created: 1268351321000
         link: 'http://www.meetup.com/VegasJS/'
-        rating: 4.59
+        rating: 4.57
         description: '<p>To discuss, learn, teach, and play JavaScript!</p>'
         lon: -115.12000274658203
         group_photo:
@@ -18332,7 +18460,7 @@ regions:
             photo_id: 71873552
             photo_link: 'http://photos4.meetupstatic.com/photos/member/d/1/3/0/member_71873552.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/d/1/3/0/thumb_71873552.jpeg'
-        members: 553
+        members: 564
         name: VegasJS
         state: NV
         lat: 36.16999816894531
@@ -18344,7 +18472,7 @@ regions:
         timezone: Canada/Eastern
         created: 1278469076000
         link: 'http://www.meetup.com/torontojs/'
-        rating: 4.72
+        rating: 4.71
         description: '<p>Toronto JavaScript is a meet up for those interested in all things JavaScript. Client side, server side, we love it all!</p>'
         lon: -79.4000015258789
         group_photo:
@@ -18361,7 +18489,7 @@ regions:
             photo_id: 41009182
             photo_link: 'http://photos2.meetupstatic.com/photos/member/7/1/f/e/member_41009182.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/7/1/f/e/thumb_41009182.jpeg'
-        members: 2211
+        members: 2273
         name: Toronto JavaScript
         state: 'ON'
         lat: 43.65999984741211
@@ -18390,7 +18518,7 @@ regions:
             photo_id: 5474637
             photo_link: 'http://photos2.meetupstatic.com/photos/member/3/9/2/d/member_5474637.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/3/9/2/d/thumb_5474637.jpeg'
-        members: 3259
+        members: 3286
         name: nodejs
         state: NY
         lat: 40.7599983215332
@@ -18425,7 +18553,7 @@ regions:
             photo_id: 7665457
             photo_link: 'http://photos3.meetupstatic.com/photos/member/b/1/9/1/member_7665457.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/b/1/9/1/thumb_7665457.jpeg'
-        members: 646
+        members: 655
         name: Dallas.node
         state: TX
         lat: 32.93000030517578
@@ -18467,7 +18595,7 @@ regions:
             photo_id: 243799725
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/d/0/d/member_243799725.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/4/d/0/d/thumb_243799725.jpeg'
-        members: 3576
+        members: 3588
         name: Node.js Club SF
         state: CA
         lat: 37.779998779296875
@@ -18496,7 +18624,7 @@ regions:
             photo_id: 9230083
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/3/a/3/member_9230083.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/3/a/3/thumb_9230083.jpeg'
-        members: 720
+        members: 731
         name: JavaScript in the SF East Bay
         state: CA
         lat: 37.810001373291016
@@ -18525,7 +18653,7 @@ regions:
             photo_id: 11355983
             photo_link: 'http://photos3.meetupstatic.com/photos/member/3/e/6/f/member_11355983.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/e/6/f/thumb_11355983.jpeg'
-        members: 1853
+        members: 1881
         name: Chicago  Node.js
         state: IL
         lat: 41.880001068115234
@@ -18554,7 +18682,7 @@ regions:
             photo_id: 243136221
             photo_link: 'http://photos2.meetupstatic.com/photos/member/3/f/5/d/member_243136221.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/f/5/d/thumb_243136221.jpeg'
-        members: 701
+        members: 705
         name: 'Indy.js : Indy JavaScript Society'
         state: IN
         lat: 39.790000915527344
@@ -18598,7 +18726,7 @@ regions:
             photo_id: 1228009
             photo_link: 'http://photos1.meetupstatic.com/photos/member/6/d/6/9/member_1228009.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/6/d/6/9/thumb_1228009.jpeg'
-        members: 880
+        members: 899
         name: Boulder JS
         state: CO
         lat: 40.04999923706055
@@ -18627,7 +18755,7 @@ regions:
             photo_id: 244701042
             photo_link: 'http://photos4.meetupstatic.com/photos/member/5/2/3/2/member_244701042.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/5/2/3/2/thumb_244701042.jpeg'
-        members: 1384
+        members: 1407
         name: 'Node.JS User Group - Austin, TX'
         state: TX
         lat: 30.290000915527344
@@ -18656,7 +18784,7 @@ regions:
             photo_id: 119396772
             photo_link: 'http://photos4.meetupstatic.com/photos/member/d/d/c/4/member_119396772.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/d/d/c/4/thumb_119396772.jpeg'
-        members: 1134
+        members: 1159
         name: Node.JS Boston
         state: MA
         lat: 42.349998474121094
@@ -18684,7 +18812,7 @@ regions:
             photo_id: 124160632
             photo_link: 'http://photos3.meetupstatic.com/photos/member/5/0/9/8/member_124160632.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/5/0/9/8/thumb_124160632.jpeg'
-        members: 1634
+        members: 1656
         name: SoCal Node.js
         state: CA
         lat: 34.060001373291016
@@ -18713,7 +18841,7 @@ regions:
             photo_id: 15098611
             photo_link: 'http://photos3.meetupstatic.com/photos/member/9/6/d/3/member_15098611.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/9/6/d/3/thumb_15098611.jpeg'
-        members: 437
+        members: 442
         name: NodeJS Enthusiasts SE Florida
         state: FL
         lat: 26.1200008392334
@@ -18742,7 +18870,7 @@ regions:
             photo_id: 14928501
             photo_link: 'http://photos2.meetupstatic.com/photos/member/b/d/7/5/member_14928501.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/b/d/7/5/thumb_14928501.jpeg'
-        members: 690
+        members: 694
         name: STLJS
         state: MO
         lat: 38.630001068115234
@@ -18754,7 +18882,7 @@ regions:
         timezone: US/Pacific
         created: 1308551556000
         link: 'http://www.meetup.com/BayNode/'
-        rating: 4.59
+        rating: 4.6
         description: "<p>BayNode was started because we were sick of waiting for someone else to start start a node.js group! Come out if you want to sharpen your Javascript skills and find out why node.js rocks! The great thing about node.js is it's so new none of us are experts... yet... So all are welcome!</p>"
         lon: -122.08000183105469
         group_photo:
@@ -18771,7 +18899,7 @@ regions:
             photo_id: 244257821
             photo_link: 'http://photos3.meetupstatic.com/photos/member/e/1/d/d/member_244257821.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/e/1/d/d/thumb_244257821.jpeg'
-        members: 2040
+        members: 2053
         name: BayNode - The Bay Area Node.js Meetup
         state: CA
         lat: 37.380001068115234
@@ -18783,7 +18911,7 @@ regions:
         timezone: US/Eastern
         created: 1309639370000
         link: 'http://www.meetup.com/NodejsCleveland/'
-        rating: 4.49
+        rating: 4.52
         description: '<p>Node.js is hot and heavy. Come meet with other Node.js enthusiasts and see how server-side JavaScript is not only new but a very powerful way to develop. We will also aim to cover topics regarding jQuery, JavaScript performance and other popular front-end development. We hope to share and develop with all who are welcome to join us here in Northeast Ohio.</p>'
         lon: -81.68000030517578
         group_photo:
@@ -18800,7 +18928,7 @@ regions:
             photo_id: 11120486
             photo_link: 'http://photos2.meetupstatic.com/photos/member/5/0/0/6/member_11120486.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/5/0/0/6/thumb_11120486.jpeg'
-        members: 238
+        members: 236
         name: Cleveland Node.js User Group
         state: OH
         lat: 41.5099983215332
@@ -18829,7 +18957,7 @@ regions:
             photo_id: 11123518
             photo_link: 'http://photos2.meetupstatic.com/photos/member/5/b/d/e/member_11123518.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/5/b/d/e/thumb_11123518.jpeg'
-        members: 1992
+        members: 2013
         name: sandiego.js (Javascript User Group)
         state: CA
         lat: 32.88999938964844
@@ -18858,7 +18986,7 @@ regions:
             photo_id: 7561716
             photo_link: 'http://photos4.meetupstatic.com/photos/member/6/b/4/member_7561716.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/6/b/4/thumb_7561716.jpeg'
-        members: 2086
+        members: 2103
         name: T.O.J. - Tales Of JavaScript
         state: CA
         lat: 37.790000915527344
@@ -18895,7 +19023,7 @@ regions:
         organizer:
           member_id: 2133277
           name: Adria Richards
-        members: 208
+        members: 207
         name: SF Developer Advocates
         state: CA
         lat: 37.77000045776367
@@ -18924,7 +19052,7 @@ regions:
             photo_id: 20690681
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/5/f/9/member_20690681.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/5/f/9/thumb_20690681.jpeg'
-        members: 311
+        members: 313
         name: OC/LA JavaScript -- Downey
         state: CA
         lat: 33.939998626708984
@@ -18948,7 +19076,7 @@ regions:
             photo_id: 120895972
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/a/a/4/member_120895972.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/d/a/a/4/thumb_120895972.jpeg'
-        members: 247
+        members: 248
         name: Big Data Salt Lake
         state: UT
         lat: 40.56999969482422
@@ -18960,7 +19088,7 @@ regions:
         timezone: US/Central
         created: 1314586509000
         link: 'http://www.meetup.com/MadisonJS/'
-        rating: 4.58
+        rating: 4.59
         description: >-
           <p>Madison professionals, enthusiasts, and hobbyists who share
           a passion for great JavaScript, and making JavaScript work for them and
@@ -18985,7 +19113,7 @@ regions:
             photo_id: 238583792
             photo_link: 'http://photos1.meetupstatic.com/photos/member/5/c/f/0/member_238583792.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/c/f/0/thumb_238583792.jpeg'
-        members: 859
+        members: 878
         name: MadJS
         state: WI
         lat: 43.08000183105469
@@ -19014,7 +19142,7 @@ regions:
             photo_id: 14810381
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/4/c/d/member_14810381.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/c/4/c/d/thumb_14810381.jpeg'
-        members: 1762
+        members: 1787
         name: The JavaScript Austin Meetup Group
         state: TX
         lat: 30.5
@@ -19026,7 +19154,7 @@ regions:
         timezone: Canada/Eastern
         created: 1316631402000
         link: 'http://www.meetup.com/toronto-node-js/'
-        rating: 4.77
+        rating: 4.8
         description: "<p>If you're interested in developing apps in Node.js, keeping up to date on the latest Node frameworks and packages, then join us for our monthly gathering in Toronto. Each meetup will feature at least one presentation, and the opportunity to meet other Toronto Node enthusiasts.</p>"
         lon: -79.41000366210938
         group_photo:
@@ -19043,7 +19171,7 @@ regions:
             photo_id: 24782812
             photo_link: 'http://photos1.meetupstatic.com/photos/member/a/f/c/member_24782812.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/a/f/c/thumb_24782812.jpeg'
-        members: 865
+        members: 893
         name: Toronto Node.js
         state: 'ON'
         lat: 43.66999816894531
@@ -19079,7 +19207,7 @@ regions:
             photo_id: 26871412
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/8/d/4/member_26871412.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/c/8/d/4/thumb_26871412.jpeg'
-        members: 164
+        members: 163
         name: Code Strong Island
         state: NY
         lat: 40.869998931884766
@@ -19108,7 +19236,7 @@ regions:
             photo_id: 244468057
             photo_link: 'http://photos4.meetupstatic.com/photos/member/6/d/9/9/member_244468057.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/d/9/9/thumb_244468057.jpeg'
-        members: 1712
+        members: 1728
         name: JavaScriptMN
         state: MN
         lat: 44.97999954223633
@@ -19137,7 +19265,7 @@ regions:
             photo_id: 246868318
             photo_link: 'http://photos3.meetupstatic.com/photos/member/6/e/9/e/member_246868318.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/6/e/9/e/thumb_246868318.jpeg'
-        members: 1004
+        members: 1014
         name: The Stripe Meetup Group
         state: CA
         lat: 37.75
@@ -19156,7 +19284,7 @@ regions:
         organizer:
           member_id: 192546120
           name: Adrian Kaehler
-        members: 789
+        members: 791
         name: Silicon Valley Hackathons
         state: CA
         lat: 37.439998626708984
@@ -19184,7 +19312,7 @@ regions:
             photo_id: 204204612
             photo_link: 'http://photos3.meetupstatic.com/photos/member/6/0/2/4/member_204204612.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/6/0/2/4/thumb_204204612.jpeg'
-        members: 1209
+        members: 1232
         name: Atlanta Nodejs Developers
         state: GA
         lat: 33.77000045776367
@@ -19212,7 +19340,7 @@ regions:
             photo_id: 139360062
             photo_link: 'http://photos2.meetupstatic.com/photos/member/9/c/7/e/member_139360062.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/9/c/7/e/thumb_139360062.jpeg'
-        members: 367
+        members: 370
         name: 'DetNode: The Detroit Node.js User Group'
         state: MI
         lat: 42.33000183105469
@@ -19240,7 +19368,7 @@ regions:
             photo_id: 31674252
             photo_link: 'http://photos3.meetupstatic.com/photos/member/d/3/e/c/member_31674252.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/d/3/e/c/thumb_31674252.jpeg'
-        members: 594
+        members: 609
         name: YYCjs
         state: AB
         lat: 51.04999923706055
@@ -19281,7 +19409,7 @@ regions:
         timezone: US/Eastern
         created: 1323109597000
         link: 'http://www.meetup.com/node-dc/'
-        rating: 4.74
+        rating: 4.75
         description: '<p><span>NodeDC brings</span> <a href="http://nodejs.org/">node.js</a> <span>developers together to share ideas and solutions in Washington, DC</span><span>.</span> For updates, join the group at <a href="http://www.meetup.com/node-dc">http://www.meetup.com/node-dc</a> and/or follow us at <a href="https://twitter.com/#!/nodedc">@NodeDC</a>.</p>'
         lon: -77.04000091552734
         join_mode: open
@@ -19293,7 +19421,7 @@ regions:
             photo_id: 224042632
             photo_link: 'http://photos3.meetupstatic.com/photos/member/a/4/8/member_224042632.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/a/4/8/thumb_224042632.jpeg'
-        members: 1363
+        members: 1402
         name: node.dc
         state: DC
         lat: 38.91999816894531
@@ -19322,7 +19450,7 @@ regions:
             photo_id: 147134372
             photo_link: 'http://photos3.meetupstatic.com/photos/member/3/8/2/4/member_147134372.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/3/8/2/4/thumb_147134372.jpeg'
-        members: 284
+        members: 285
         name: Joyent
         state: CA
         lat: 37.79999923706055
@@ -19357,7 +19485,7 @@ regions:
             photo_id: 89609002
             photo_link: 'http://photos3.meetupstatic.com/photos/member/7/1/4/a/member_89609002.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/7/1/4/a/thumb_89609002.jpeg'
-        members: 2065
+        members: 2105
         name: Seattle Node.js
         state: WA
         lat: 47.630001068115234
@@ -19414,7 +19542,7 @@ regions:
             photo_id: 122764252
             photo_link: 'http://photos4.meetupstatic.com/photos/member/1/0/9/c/member_122764252.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/1/0/9/c/thumb_122764252.jpeg'
-        members: 1515
+        members: 1540
         name: Seattle Software Craftsmanship Community
         state: WA
         lat: 47.599998474121094
@@ -19442,7 +19570,7 @@ regions:
             photo_id: 39050202
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/4/1/a/member_39050202.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/c/4/1/a/thumb_39050202.jpeg'
-        members: 333
+        members: 336
         name: node.pgh
         state: PA
         lat: 40.400001525878906
@@ -19471,7 +19599,7 @@ regions:
             photo_id: 14746271
             photo_link: 'http://photos4.meetupstatic.com/photos/member/b/4/b/f/member_14746271.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/b/4/b/f/thumb_14746271.jpeg'
-        members: 732
+        members: 743
         name: Nova Node
         state: VA
         lat: 38.88999938964844
@@ -19499,7 +19627,7 @@ regions:
             photo_id: 148540392
             photo_link: 'http://photos4.meetupstatic.com/photos/member/9/d/c/8/member_148540392.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/9/d/c/8/thumb_148540392.jpeg'
-        members: 188
+        members: 190
         name: Hacker Club
         state: ME
         lat: 44.810001373291016
@@ -19528,7 +19656,7 @@ regions:
             photo_id: 42949412
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/1/0/4/member_42949412.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/1/0/4/thumb_42949412.jpeg'
-        members: 1127
+        members: 1124
         name: Los Angeles Hack Night
         state: CA
         lat: 34.06999969482422
@@ -19566,7 +19694,7 @@ regions:
             photo_id: 44621502
             photo_link: 'http://photos1.meetupstatic.com/photos/member/a/2/1/e/member_44621502.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/a/2/1/e/thumb_44621502.jpeg'
-        members: 116
+        members: 118
         name: 'Compassion Technology: Mindful QS'
         state: CA
         lat: 37.45000076293945
@@ -19713,7 +19841,7 @@ regions:
             photo_id: 100346952
             photo_link: 'http://photos3.meetupstatic.com/photos/member/6/9/4/8/member_100346952.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/6/9/4/8/thumb_100346952.jpeg'
-        members: 1235
+        members: 1258
         name: 'DC Web Design, Development, Tech, and Media Authority'
         state: DC
         lat: 38.90999984741211
@@ -19742,7 +19870,7 @@ regions:
             photo_id: 244278703
             photo_link: 'http://photos4.meetupstatic.com/photos/member/4/9/0/f/member_244278703.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/4/9/0/f/thumb_244278703.jpeg'
-        members: 1925
+        members: 1953
         name: East Bay JavaScript Meetup Group
         state: CA
         lat: 37.83000183105469
@@ -19771,7 +19899,7 @@ regions:
             photo_id: 251451324
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/8/7/c/member_251451324.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/c/8/7/c/thumb_251451324.jpeg'
-        members: 1013
+        members: 1039
         name: JavaScriptKC
         state: MO
         lat: 39.099998474121094
@@ -19795,7 +19923,7 @@ regions:
             photo_id: 6623812
             photo_link: 'http://photos3.meetupstatic.com/photos/member/5/d/0/4/member_6623812.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/d/0/4/thumb_6623812.jpeg'
-        members: 814
+        members: 838
         name: Node.js Philly
         state: PA
         lat: 39.95000076293945
@@ -19824,7 +19952,7 @@ regions:
             photo_id: 204676202
             photo_link: 'http://photos3.meetupstatic.com/photos/member/3/f/4/a/member_204676202.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/f/4/a/thumb_204676202.jpeg'
-        members: 547
+        members: 551
         name: Node Brigade Vancouver
         state: BC
         lat: 49.279998779296875
@@ -19853,7 +19981,7 @@ regions:
             photo_id: 48549262
             photo_link: 'http://photos3.meetupstatic.com/photos/member/2/4/2/e/member_48549262.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/2/4/2/e/thumb_48549262.jpeg'
-        members: 48
+        members: 47
         name: Enterprise Developer Group
         state: CA
         lat: 34.099998474121094
@@ -19882,7 +20010,7 @@ regions:
             photo_id: 58281552
             photo_link: 'http://photos4.meetupstatic.com/photos/member/5/4/3/0/member_58281552.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/5/4/3/0/thumb_58281552.jpeg'
-        members: 1189
+        members: 1209
         name: Ottawa JavaScript
         state: 'ON'
         lat: 45.400001525878906
@@ -19911,7 +20039,7 @@ regions:
             photo_id: 11120486
             photo_link: 'http://photos2.meetupstatic.com/photos/member/5/0/0/6/member_11120486.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/5/0/0/6/thumb_11120486.jpeg'
-        members: 336
+        members: 332
         name: Cleveland JavaScript Meetup
         state: OH
         lat: 41.45000076293945
@@ -19968,7 +20096,7 @@ regions:
             photo_id: 18617371
             photo_link: 'http://photos3.meetupstatic.com/photos/member/4/3/d/b/member_18617371.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/4/3/d/b/thumb_18617371.jpeg'
-        members: 225
+        members: 224
         name: Jax.js
         state: FL
         lat: 30.280000686645508
@@ -19997,7 +20125,7 @@ regions:
             photo_id: 63354482
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/4/d/2/member_63354482.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/d/4/d/2/thumb_63354482.jpeg'
-        members: 1324
+        members: 1332
         name: Node.js in the wild
         state: MA
         lat: 42.349998474121094
@@ -20026,7 +20154,7 @@ regions:
             photo_id: 245087495
             photo_link: 'http://photos4.meetupstatic.com/photos/member/b/9/8/7/member_245087495.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/b/9/8/7/thumb_245087495.jpeg'
-        members: 485
+        members: 494
         name: 'Node.cincy : Cincinnati Node.js Meetup'
         state: OH
         lat: 39.11000061035156
@@ -20083,7 +20211,7 @@ regions:
             photo_id: 192885592
             photo_link: 'http://photos2.meetupstatic.com/photos/member/b/2/1/8/member_192885592.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/b/2/1/8/thumb_192885592.jpeg'
-        members: 676
+        members: 684
         name: Chicago Ember.js
         state: IL
         lat: 41.91999816894531
@@ -20112,7 +20240,7 @@ regions:
             photo_id: 58499472
             photo_link: 'http://photos2.meetupstatic.com/photos/member/e/8/5/0/member_58499472.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/e/8/5/0/thumb_58499472.jpeg'
-        members: 91
+        members: 90
         name: Node Summit Minnesota
         state: MN
         lat: 44.97999954223633
@@ -20141,7 +20269,7 @@ regions:
             photo_id: 201844982
             photo_link: 'http://photos1.meetupstatic.com/photos/member/1/3/7/6/member_201844982.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/1/3/7/6/thumb_201844982.jpeg'
-        members: 1212
+        members: 1225
         name: Phoenix JavaScript
         state: AZ
         lat: 33.380001068115234
@@ -20165,7 +20293,7 @@ regions:
         organizer:
           member_id: 183838139
           name: John Hurst
-        members: 589
+        members: 599
         name: 'Node.indy : Indianapolis Node.js Meetup'
         state: IN
         lat: 39.869998931884766
@@ -20193,7 +20321,7 @@ regions:
             photo_id: 36630812
             photo_link: 'http://photos2.meetupstatic.com/photos/member/7/8/5/c/member_36630812.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/7/8/5/c/thumb_36630812.jpeg'
-        members: 200
+        members: 206
         name: Brooklyn Node JS Meetup
         state: NY
         lat: 40.70000076293945
@@ -20241,7 +20369,7 @@ regions:
             photo_id: 80268852
             photo_link: 'http://photos2.meetupstatic.com/photos/member/b/e/d/4/member_80268852.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/b/e/d/4/thumb_80268852.jpeg'
-        members: 143
+        members: 144
         name: Personal Capital Engineering
         state: CA
         lat: 37.4900016784668
@@ -20265,7 +20393,7 @@ regions:
             photo_id: 80727922
             photo_link: 'http://photos2.meetupstatic.com/photos/member/6/d/1/2/member_80727922.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/d/1/2/thumb_80727922.jpeg'
-        members: 705
+        members: 712
         name: NodeAZ
         state: AZ
         lat: 33.369998931884766
@@ -20295,7 +20423,7 @@ regions:
             photo_id: 83735532
             photo_link: 'http://photos3.meetupstatic.com/photos/member/8/a/c/c/member_83735532.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/8/a/c/c/thumb_83735532.jpeg'
-        members: 436
+        members: 442
         name: Suncoast.js
         state: FL
         lat: 27.790000915527344
@@ -20314,7 +20442,7 @@ regions:
         organizer:
           member_id: 4900815
           name: Ken Turner
-        members: 123
+        members: 124
         name: SF Peninsula Web Technology
         state: CA
         lat: 37.630001068115234
@@ -20352,7 +20480,7 @@ regions:
             photo_id: 84270042
             photo_link: 'http://photos3.meetupstatic.com/photos/member/7/5/5/a/member_84270042.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/7/5/5/a/thumb_84270042.jpeg'
-        members: 203
+        members: 201
         name: Philly Startup Hackers
         state: PA
         lat: 39.95000076293945
@@ -20381,7 +20509,7 @@ regions:
             photo_id: 84348802
             photo_link: 'http://photos3.meetupstatic.com/photos/member/b/e/a/2/member_84348802.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/b/e/a/2/thumb_84348802.jpeg'
-        members: 198
+        members: 200
         name: Kentucky JavaScript Users Group
         state: KY
         lat: 38
@@ -20393,7 +20521,7 @@ regions:
         timezone: US/Eastern
         created: 1354482333000
         link: 'http://www.meetup.com/Central-Virginia-Javascript-Enthusiasts-CVJSE/'
-        rating: 4.59
+        rating: 4.62
         description: "<p>Javascript has good parts, bad parts, and parts you're most likely to only discover from the JS genius next door. Join the Central Virginia Javascript Enthusiasts if you want to tap the rich brain trust of web, node, and mobile developers using \"the worlds most popular language\" in Charlottesville, VA and surrounding areas. We meet every 4th Wednesday of the month in Charlottesville (exact location TBD) to share presos, code, tools, techniques and tall tales of Javascript (and Coffeescript) wonders. See also:\_<a href=\"http://cvjs.net\">http://cvjs.net</a></p>"
         lon: -78.5199966430664
         group_photo:
@@ -20409,7 +20537,7 @@ regions:
             photo_id: 9931885
             photo_link: 'http://photos1.meetupstatic.com/photos/member/7/c/8/d/member_9931885.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/7/c/8/d/thumb_9931885.jpeg'
-        members: 276
+        members: 279
         name: Central Virginia Javascript Enthusiasts (CVJS)
         state: VA
         lat: 38.040000915527344
@@ -20446,7 +20574,7 @@ regions:
             photo_id: 50016832
             photo_link: 'http://photos2.meetupstatic.com/photos/member/8/f/e/0/member_50016832.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/8/f/e/0/thumb_50016832.jpeg'
-        members: 337
+        members: 338
         name: BuffaloJS
         state: NY
         lat: 42.970001220703125
@@ -20483,7 +20611,7 @@ regions:
             photo_id: 167391222
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/8/1/6/member_167391222.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/1/6/thumb_167391222.jpeg'
-        members: 308
+        members: 307
         name: Ember.js Philly
         state: PA
         lat: 39.939998626708984
@@ -20511,7 +20639,7 @@ regions:
             photo_id: 157968912
             photo_link: 'http://photos1.meetupstatic.com/photos/member/b/f/1/0/member_157968912.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/b/f/1/0/thumb_157968912.jpeg'
-        members: 159
+        members: 161
         name: Austin Backbone.js Ninjas
         state: TX
         lat: 30.270000457763672
@@ -20539,7 +20667,7 @@ regions:
             photo_id: 10394459
             photo_link: 'http://photos3.meetupstatic.com/photos/member/3/8/7/b/member_10394459.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/8/7/b/thumb_10394459.jpeg'
-        members: 185
+        members: 184
         name: NYC Titanium Users Group
         state: NY
         lat: 40.72999954223633
@@ -20589,7 +20717,7 @@ regions:
             photo_id: 27507022
             photo_link: 'http://photos3.meetupstatic.com/photos/member/6/9/8/e/member_27507022.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/6/9/8/e/thumb_27507022.jpeg'
-        members: 529
+        members: 536
         name: Triangle Node.js
         state: NC
         lat: 35.77000045776367
@@ -20617,7 +20745,7 @@ regions:
             photo_id: 136781422
             photo_link: 'http://photos4.meetupstatic.com/photos/member/a/1/c/e/member_136781422.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/a/1/c/e/thumb_136781422.jpeg'
-        members: 1115
+        members: 1140
         name: PDXnode
         state: OR
         lat: 45.529998779296875
@@ -20656,7 +20784,7 @@ regions:
             photo_id: 10290080
             photo_link: 'http://photos4.meetupstatic.com/photos/member/7/5/8/0/member_10290080.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/7/5/8/0/thumb_10290080.jpeg'
-        members: 1191
+        members: 1220
         name: Philadelphia JavaScript Developers
         state: PA
         lat: 39.95000076293945
@@ -20722,7 +20850,7 @@ regions:
             photo_id: 20243881
             photo_link: 'http://photos2.meetupstatic.com/photos/member/5/d/4/9/member_20243881.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/5/d/4/9/thumb_20243881.jpeg'
-        members: 188
+        members: 189
         name: node.sc
         state: CA
         lat: 36.9900016784668
@@ -20777,7 +20905,7 @@ regions:
             photo_id: 124607652
             photo_link: 'http://photos2.meetupstatic.com/photos/member/b/a/2/4/member_124607652.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/b/a/2/4/thumb_124607652.jpeg'
-        members: 563
+        members: 579
         name: '#FrontEndParty'
         state: LA
         lat: 29.959999084472656
@@ -20806,7 +20934,7 @@ regions:
             photo_id: 241680891
             photo_link: 'http://photos2.meetupstatic.com/photos/member/3/7/b/member_241680891.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/7/b/thumb_241680891.jpeg'
-        members: 316
+        members: 319
         name: Twilio San Francisco Meetup Group
         state: CA
         lat: 37.790000915527344
@@ -20835,7 +20963,7 @@ regions:
             photo_id: 209458672
             photo_link: 'http://photos4.meetupstatic.com/photos/member/e/5/3/0/member_209458672.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/e/5/3/0/thumb_209458672.jpeg'
-        members: 463
+        members: 482
         name: API Discovery
         state: CA
         lat: 37.790000915527344
@@ -20872,7 +21000,7 @@ regions:
             photo_id: 247082093
             photo_link: 'http://photos4.meetupstatic.com/photos/member/8/2/d/member_247082093.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/8/2/d/thumb_247082093.jpeg'
-        members: 3741
+        members: 3833
         name: 'Hack Reactor: Learn to Code'
         state: CA
         lat: 37.779998779296875
@@ -20884,7 +21012,7 @@ regions:
         timezone: US/Eastern
         created: 1361902062000
         link: 'http://www.meetup.com/DC-Hack-and-Tell/'
-        rating: 4.92
+        rating: 4.94
         description: "<p>It's Hack and Tell, in DC! There's a web site with descriptions of past events! <a href=\"http://dc.hackandtell.org/\" class=\"linkified\">http://dc.hackandtell.org/</a> See the meetup event descriptions for more!</p>"
         lon: -77.0199966430664
         group_photo:
@@ -20900,7 +21028,7 @@ regions:
             photo_id: 158919292
             photo_link: 'http://photos2.meetupstatic.com/photos/member/9/9/7/c/member_158919292.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/9/9/7/c/thumb_158919292.jpeg'
-        members: 863
+        members: 894
         name: DC Hack and Tell
         state: DC
         lat: 38.90999984741211
@@ -20928,7 +21056,7 @@ regions:
             photo_id: 121432012
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/b/2/c/member_121432012.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/c/b/2/c/thumb_121432012.jpeg'
-        members: 245
+        members: 248
         name: Birmingham Javascript Meetup
         state: AL
         lat: 33.459999084472656
@@ -20986,7 +21114,7 @@ regions:
             photo_id: 23481712
             photo_link: 'http://photos3.meetupstatic.com/photos/member/5/4/d/0/member_23481712.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/4/d/0/thumb_23481712.jpeg'
-        members: 383
+        members: 387
         name: JavaScript Reading Group
         state: CA
         lat: 37.77000045776367
@@ -21015,7 +21143,7 @@ regions:
             photo_id: 42949412
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/1/0/4/member_42949412.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/1/0/4/thumb_42949412.jpeg'
-        members: 209
+        members: 208
         name: Los Angeles CoffeeScript
         state: CA
         lat: 34.02000045776367
@@ -21073,7 +21201,7 @@ regions:
             photo_id: 248349259
             photo_link: 'http://photos4.meetupstatic.com/photos/member/2/4/2/b/member_248349259.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/2/4/2/b/thumb_248349259.jpeg'
-        members: 1032
+        members: 1054
         name: New York Front End Coders
         state: NY
         lat: 40.70000076293945
@@ -21101,7 +21229,7 @@ regions:
             photo_id: 32642392
             photo_link: 'http://photos4.meetupstatic.com/photos/member/9/5/8/member_32642392.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/9/5/8/thumb_32642392.jpeg'
-        members: 160
+        members: 161
         name: Norcal Javascript Hackers
         state: CA
         lat: 38.459999084472656
@@ -21167,7 +21295,7 @@ regions:
             photo_id: 111606302
             photo_link: 'http://photos3.meetupstatic.com/photos/member/1/8/9/e/member_111606302.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/1/8/9/e/thumb_111606302.jpeg'
-        members: 1054
+        members: 1072
         name: UtahJS
         state: UT
         lat: 40.709999084472656
@@ -21196,7 +21324,7 @@ regions:
             photo_id: 111606302
             photo_link: 'http://photos3.meetupstatic.com/photos/member/1/8/9/e/member_111606302.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/1/8/9/e/thumb_111606302.jpeg'
-        members: 421
+        members: 419
         name: UtahJS Orem Meetup
         state: UT
         lat: 40.34000015258789
@@ -21220,7 +21348,7 @@ regions:
             photo_id: 9632362
             photo_link: 'http://photos4.meetupstatic.com/photos/member/7/e/6/a/member_9632362.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/7/e/6/a/thumb_9632362.jpeg'
-        members: 194
+        members: 197
         name: york.js
         state: PA
         lat: 39.970001220703125
@@ -21244,7 +21372,7 @@ regions:
             photo_id: 111832772
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/e/2/4/member_111832772.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/c/e/2/4/thumb_111832772.jpeg'
-        members: 453
+        members: 454
         name: Ember ATX
         state: TX
         lat: 30.290000915527344
@@ -21275,7 +21403,7 @@ regions:
             photo_id: 250425968
             photo_link: 'http://photos3.meetupstatic.com/photos/member/b/3/9/0/member_250425968.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/b/3/9/0/thumb_250425968.jpeg'
-        members: 1122
+        members: 1133
         name: SoCal AngularJS
         state: CA
         lat: 34.02000045776367
@@ -21295,19 +21423,7 @@ regions:
 
 
 
-
-
-
-
-
-
           <br>
-
-
-
-
-
-
 
 
 
@@ -21317,19 +21433,7 @@ regions:
 
 
 
-
-
-
-
-
-
           <br>
-
-
-
-
-
-
 
 
 
@@ -21340,19 +21444,7 @@ regions:
 
 
 
-
-
-
-
-
-
           <br>
-
-
-
-
-
-
 
 
 
@@ -21374,7 +21466,7 @@ regions:
             photo_id: 113026832
             photo_link: 'http://photos4.meetupstatic.com/photos/member/b/6/f/0/member_113026832.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/b/6/f/0/thumb_113026832.jpeg'
-        members: 983
+        members: 997
         name: Portland JavaScript Admirers
         state: OR
         lat: 45.52000045776367
@@ -21386,7 +21478,7 @@ regions:
         timezone: US/Central
         created: 1367361055000
         link: 'http://www.meetup.com/Club-AJAX/'
-        rating: 4.73
+        rating: 4.74
         description: '<p>Club AJAX is a site devoted to JavaScript and related technologies, such as CSS3 and HTML5, and strives to be the portal for the latest information, news and discussions surrounding front end development. The DFW Club AJAX User Group was founded by Bob Byron and Mike Wilcox in January 2009. The goal for the group is to gather a community of professionals with like-minded interests and everything involved in making great apps and websites.</p>'
         lon: -96.80000305175781
         group_photo:
@@ -21403,7 +21495,7 @@ regions:
             photo_id: 180490122
             photo_link: 'http://photos1.meetupstatic.com/photos/member/2/7/8/a/member_180490122.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/2/7/8/a/thumb_180490122.jpeg'
-        members: 424
+        members: 425
         name: Club AJAX
         state: TX
         lat: 32.970001220703125
@@ -21448,7 +21540,7 @@ regions:
         timezone: US/Pacific
         created: 1368054188000
         link: 'http://www.meetup.com/ngpdxers/'
-        rating: 4.54
+        rating: 4.56
         description: >-
           <p>We are a community of javascript enthusiasts that share a love for
           Angular.&nbsp; Some of us have been using it for years and others are
@@ -21472,7 +21564,7 @@ regions:
             photo_id: 142539702
             photo_link: 'http://photos3.meetupstatic.com/photos/member/9/b/1/6/member_142539702.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/9/b/1/6/thumb_142539702.jpeg'
-        members: 936
+        members: 941
         name: Angular Portland Meetup
         state: OR
         lat: 45.5
@@ -21501,7 +21593,7 @@ regions:
             photo_id: 243729900
             photo_link: 'http://photos2.meetupstatic.com/photos/member/2/6/a/c/member_243729900.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/2/6/a/c/thumb_243729900.jpeg'
-        members: 961
+        members: 965
         name: CSS Brigade Vancouver
         state: BC
         lat: 49.279998779296875
@@ -21513,7 +21605,7 @@ regions:
         timezone: US/Central
         created: 1368498326000
         link: 'http://www.meetup.com/Central-WI-Developers-Group/'
-        rating: 4.36
+        rating: 4.34
         description: '<p>This is a group for anyone who is interested in software development and/or related topics. All skill levels are welcome.</p>'
         lon: -89.55999755859375
         join_mode: open
@@ -21524,7 +21616,7 @@ regions:
             photo_id: 195880372
             photo_link: 'http://photos4.meetupstatic.com/photos/member/9/d/b/4/member_195880372.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/9/d/b/4/thumb_195880372.jpeg'
-        members: 333
+        members: 339
         name: Central WI Developers Group
         state: WI
         lat: 44.540000915527344
@@ -21536,7 +21628,7 @@ regions:
         timezone: US/Eastern
         created: 1368805950000
         link: 'http://www.meetup.com/rva-js/'
-        rating: 4.64
+        rating: 4.58
         description: "<p>Let's get together to talk about how to use JavaScript to build applications. Visit our site here: http://rvajs.com/</p>"
         lon: -77.48999786376953
         group_photo:
@@ -21553,7 +21645,7 @@ regions:
             photo_id: 148869072
             photo_link: 'http://photos1.meetupstatic.com/photos/member/2/3/7/0/member_148869072.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/2/3/7/0/thumb_148869072.jpeg'
-        members: 403
+        members: 411
         name: RVA.js
         state: VA
         lat: 37.560001373291016
@@ -21582,7 +21674,7 @@ regions:
             photo_id: 118267402
             photo_link: 'http://photos1.meetupstatic.com/photos/member/1/c/e/a/member_118267402.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/1/c/e/a/thumb_118267402.jpeg'
-        members: 1842
+        members: 1860
         name: 'AngularJS Toronto (#AngularJSTO)'
         state: 'ON'
         lat: 43.650001525878906
@@ -21608,7 +21700,7 @@ regions:
             photo_id: 248056615
             photo_link: 'http://photos3.meetupstatic.com/photos/member/4/0/e/7/member_248056615.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/4/0/e/7/thumb_248056615.jpeg'
-        members: 447
+        members: 448
         name: East Bay AngularJS Meetup
         state: CA
         lat: 37.869998931884766
@@ -21655,7 +21747,7 @@ regions:
             photo_id: 151311872
             photo_link: 'http://photos2.meetupstatic.com/photos/member/c/a/a/0/member_151311872.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/c/a/a/0/thumb_151311872.jpeg'
-        members: 1011
+        members: 1022
         name: Javascript from Zero to Hero
         state: CA
         lat: 37.880001068115234
@@ -21687,7 +21779,7 @@ regions:
             photo_id: 122518992
             photo_link: 'http://photos1.meetupstatic.com/photos/member/e/6/7/0/member_122518992.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/e/6/7/0/thumb_122518992.jpeg'
-        members: 95
+        members: 98
         name: San Diego JavaScript Study Group
         state: CA
         lat: 32.88999938964844
@@ -21716,7 +21808,7 @@ regions:
             photo_id: 60313862
             photo_link: 'http://photos2.meetupstatic.com/photos/member/3/6/2/6/member_60313862.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/3/6/2/6/thumb_60313862.jpeg'
-        members: 276
+        members: 281
         name: Ruby LoCo
         state: VA
         lat: 39.08000183105469
@@ -21745,7 +21837,7 @@ regions:
             photo_id: 233547782
             photo_link: 'http://photos2.meetupstatic.com/photos/member/6/c/8/6/member_233547782.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/c/8/6/thumb_233547782.jpeg'
-        members: 535
+        members: 539
         name: Node.js OC
         state: CA
         lat: 33.68000030517578
@@ -21769,7 +21861,7 @@ regions:
             photo_id: 125888012
             photo_link: 'http://photos3.meetupstatic.com/photos/member/1/f/4/c/member_125888012.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/1/f/4/c/thumb_125888012.jpeg'
-        members: 221
+        members: 219
         name: Programming Prep for Startup Engineering - SF Bay Area
         state: CA
         lat: 37.779998779296875
@@ -21786,14 +21878,14 @@ regions:
         lon: -119.70999908447266
         join_mode: open
         organizer:
-          member_id: 9538294
-          name: Lucas Myers
+          member_id: 4088323
+          name: Tim Doherty
           photo:
-            highres_link: 'http://photos2.meetupstatic.com/photos/member/6/5/6/9/highres_18025961.jpeg'
-            photo_id: 18025961
-            photo_link: 'http://photos4.meetupstatic.com/photos/member/6/5/6/9/member_18025961.jpeg'
-            thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/5/6/9/thumb_18025961.jpeg'
-        members: 271
+            highres_link: 'http://photos2.meetupstatic.com/photos/member/5/1/7/e/highres_249560862.jpeg'
+            photo_id: 249560862
+            photo_link: 'http://photos4.meetupstatic.com/photos/member/5/1/7/e/member_249560862.jpeg'
+            thumb_link: 'http://photos2.meetupstatic.com/photos/member/5/1/7/e/thumb_249560862.jpeg'
+        members: 275
         name: Santa Barbara JavaScript
         state: CA
         lat: 34.41999816894531
@@ -21845,7 +21937,7 @@ regions:
             photo_id: 247392022
             photo_link: 'http://photos2.meetupstatic.com/photos/member/2/e/f/6/member_247392022.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/2/e/f/6/thumb_247392022.jpeg'
-        members: 1284
+        members: 1306
         name: OpenHack Austin
         state: TX
         lat: 30.270000457763672
@@ -21874,7 +21966,7 @@ regions:
             photo_id: 6241592
             photo_link: 'http://photos1.meetupstatic.com/photos/member/6/3/8/member_6241592.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/6/3/8/thumb_6241592.jpeg'
-        members: 188
+        members: 186
         name: Phoenix Angular.js
         state: AZ
         lat: 33.310001373291016
@@ -21886,7 +21978,7 @@ regions:
         timezone: US/Central
         created: 1372800496000
         link: 'http://www.meetup.com/NodeMN/'
-        rating: 4.81
+        rating: 4.79
         description: '<p>A group for anyone interested in Node.js regardless of skill level or experience. Join us in discussing the latest frameworks, projects, conferences and hacks using anything node.</p>'
         lon: -93.25
         group_photo:
@@ -21903,7 +21995,7 @@ regions:
             photo_id: 139168712
             photo_link: 'http://photos3.meetupstatic.com/photos/member/7/0/2/8/member_139168712.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/7/0/2/8/thumb_139168712.jpeg'
-        members: 580
+        members: 596
         name: NodeMN
         state: MN
         lat: 45
@@ -21933,9 +22025,14 @@ regions:
           thumb_link: 'http://photos2.meetupstatic.com/photos/event/8/7/2/3/thumb_439294595.jpeg'
         join_mode: open
         organizer:
-          member_id: 187487531
-          name: Gregory Born
-        members: 329
+          member_id: 185970783
+          name: Tho Nguyen
+          photo:
+            highres_link: 'http://photos3.meetupstatic.com/photos/member/7/0/4/a/highres_245188746.jpeg'
+            photo_id: 245188746
+            photo_link: 'http://photos3.meetupstatic.com/photos/member/7/0/4/a/member_245188746.jpeg'
+            thumb_link: 'http://photos3.meetupstatic.com/photos/member/7/0/4/a/thumb_245188746.jpeg'
+        members: 330
         name: Samsung Developer Connection
         state: CA
         lat: 37.33000183105469
@@ -21983,7 +22080,7 @@ regions:
             photo_id: 246673851
             photo_link: 'http://photos2.meetupstatic.com/photos/member/3/6/1/b/member_246673851.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/3/6/1/b/thumb_246673851.jpeg'
-        members: 559
+        members: 561
         name: Meteor South Bay
         state: CA
         lat: 37.40999984741211
@@ -22036,7 +22133,7 @@ regions:
             photo_id: 122518992
             photo_link: 'http://photos1.meetupstatic.com/photos/member/e/6/7/0/member_122518992.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/e/6/7/0/thumb_122518992.jpeg'
-        members: 98
+        members: 99
         name: "The Starter's Academy"
         state: CA
         lat: 32.88999938964844
@@ -22078,7 +22175,7 @@ regions:
             photo_id: 138088872
             photo_link: 'http://photos3.meetupstatic.com/photos/member/7/0/c/8/member_138088872.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/7/0/c/8/thumb_138088872.jpeg'
-        members: 271
+        members: 276
         name: Hill Country JavaScript
         state: TX
         lat: 29.420000076293945
@@ -22107,7 +22204,7 @@ regions:
             photo_id: 138602642
             photo_link: 'http://photos3.meetupstatic.com/photos/member/a/5/2/member_138602642.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/a/5/2/thumb_138602642.jpeg'
-        members: 238
+        members: 239
         name: The Future of Software Design - San Francisco Meetup
         state: CA
         lat: 37.779998779296875
@@ -22135,7 +22232,7 @@ regions:
             photo_id: 40368662
             photo_link: 'http://photos1.meetupstatic.com/photos/member/b/e/1/6/member_40368662.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/b/e/1/6/thumb_40368662.jpeg'
-        members: 521
+        members: 522
         name: Chicago Backbone JS
         state: IL
         lat: 41.880001068115234
@@ -22164,7 +22261,7 @@ regions:
             photo_id: 12265300
             photo_link: 'http://photos1.meetupstatic.com/photos/member/6/2/d/4/member_12265300.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/6/2/d/4/thumb_12265300.jpeg'
-        members: 1007
+        members: 1029
         name: NashJS
         state: TN
         lat: 36.16999816894531
@@ -22207,28 +22304,21 @@ regions:
         link: 'http://www.meetup.com/nodebots/'
         rating: 4.85
         description: >-
-          <p><strong>Nodebots NYC</strong> is a meetup for hardware/javascript
-          enthusiasts and hackers. Following Nodebots Day and NodeConf, a few of
-          the NYC Nodebots reps would like to continue the momentum with a local
-          emphasis.</p>
+          <p><strong>Nodebots NYC</strong> is a meetup for hardware and
+          javascript enthusiasts and hackers of all skill levels.&nbsp;</p>
 
-          <p>Join us! Gather a group of people near you and hack together
-          something rad. We'll be meeting quarterly to reboot our robotic
-          experiments and to host quick talks/demos from node nerds around
-          town.</p>
+          <p>We run monthly workshops where you can get advice, show off what
+          you're working on, help others, and play with the latest and greatest
+          hardware. Nodebots are by name robots powered by NodeJS and Javascript
+          but often includes software in all languages. They're a great way to
+          learn JavaScript and Hardware concepts.</p>
 
-          <p>Suggestions encouraged, participants welcome.</p>
+          <p><a href="http://johnny-five.io">http://johnny-five.io</a> is a great
+          place to get started if you want to get familiar before an
+          event.&nbsp;</p>
 
-          <p><span>Check out these links for more info on our international
-          community:</span></p>
-
-          <ul>
-
-          <li><span>https://github.com/nodebots/nodebotsday</span></li>
-
-          <li><span>http://nodebots.io/</span></li>
-
-          </ul>
+          <p><span>So come join us and s</span><span>olve a problem, play with
+          hardware or learn something new!</span></p>
         lon: -74
         group_photo:
           highres_link: 'http://photos3.meetupstatic.com/photos/event/2/c/4/4/highres_278771332.jpeg'
@@ -22237,17 +22327,18 @@ regions:
           thumb_link: 'http://photos3.meetupstatic.com/photos/event/2/c/4/4/thumb_278771332.jpeg'
         join_mode: open
         organizer:
-          member_id: 22281251
-          name: Aurelia Moser
+          member_id: 27859152
+          name: Francis Gulotta
           photo:
-            photo_id: 85724332
-            photo_link: 'http://photos2.meetupstatic.com/photos/member/a/d/2/c/member_85724332.jpeg'
-            thumb_link: 'http://photos2.meetupstatic.com/photos/member/a/d/2/c/thumb_85724332.jpeg'
-        members: 563
+            highres_link: 'http://photos1.meetupstatic.com/photos/member/a/b/6/6/highres_251683878.jpeg'
+            photo_id: 251683878
+            photo_link: 'http://photos3.meetupstatic.com/photos/member/a/b/6/6/member_251683878.jpeg'
+            thumb_link: 'http://photos1.meetupstatic.com/photos/member/a/b/6/6/thumb_251683878.jpeg'
+        members: 562
         name: Nodebots NYC
         state: NY
         lat: 40.720001220703125
-        who: Tinkerers
+        who: robot-hackers
       - utc_offset: -21600000
         country: US
         visibility: public
@@ -22272,7 +22363,7 @@ regions:
             photo_id: 148990822
             photo_link: 'http://photos4.meetupstatic.com/photos/member/2/a/4/6/member_148990822.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/2/a/4/6/thumb_148990822.jpeg'
-        members: 184
+        members: 190
         name: East Troy Computer Club
         state: WI
         lat: 42.79999923706055
@@ -22305,7 +22396,7 @@ regions:
             photo_id: 100504832
             photo_link: 'http://photos3.meetupstatic.com/photos/member/1/2/e/0/member_100504832.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/1/2/e/0/thumb_100504832.jpeg'
-        members: 244
+        members: 250
         name: Jax Node.js UG
         state: FL
         lat: 30.309999465942383
@@ -22318,17 +22409,23 @@ regions:
         created: 1379557107000
         link: 'http://www.meetup.com/Meteor-Denver/'
         rating: 4.8
-        description: "Meet other developers using Meteor. Share your knowledge, apps, and get feedback from others. Meteor is an open-source platform for building top-quality web apps in a fraction of the time, whether you're an expert developer or just getting started."
+        description: "<p>Meet other developers using Meteor. Share your knowledge, apps, and get feedback from others. Meteor is an open-source platform for building top-quality web apps in a fraction of the time, whether you're an expert developer or just getting started.</p>"
         lon: -104.98999786376953
+        group_photo:
+          highres_link: 'http://photos4.meetupstatic.com/photos/event/8/c/3/1/highres_445115889.jpeg'
+          photo_id: 445115889
+          photo_link: 'http://photos2.meetupstatic.com/photos/event/8/c/3/1/600_445115889.jpeg'
+          thumb_link: 'http://photos2.meetupstatic.com/photos/event/8/c/3/1/thumb_445115889.jpeg'
         join_mode: open
         organizer:
-          member_id: 9191051
-          name: Josh Robinson
+          member_id: 81670332
+          name: Nick Coe
           photo:
-            photo_id: 147421712
-            photo_link: 'http://photos4.meetupstatic.com/photos/member/6/b/0/member_147421712.jpeg'
-            thumb_link: 'http://photos2.meetupstatic.com/photos/member/6/b/0/thumb_147421712.jpeg'
-        members: 204
+            highres_link: 'http://photos4.meetupstatic.com/photos/member/c/d/4/8/highres_247192552.jpeg'
+            photo_id: 247192552
+            photo_link: 'http://photos4.meetupstatic.com/photos/member/c/d/4/8/member_247192552.jpeg'
+            thumb_link: 'http://photos4.meetupstatic.com/photos/member/c/d/4/8/thumb_247192552.jpeg'
+        members: 207
         name: Meteor Denver
         state: CO
         lat: 39.75
@@ -22386,7 +22483,7 @@ regions:
             photo_id: 151128072
             photo_link: 'http://photos4.meetupstatic.com/photos/member/b/b/c/8/member_151128072.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/b/b/c/8/thumb_151128072.jpeg'
-        members: 175
+        members: 176
         name: devcomo
         state: MO
         lat: 39
@@ -22408,7 +22505,7 @@ regions:
             photo_id: 153252502
             photo_link: 'http://photos2.meetupstatic.com/photos/member/3/0/d/6/member_153252502.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/0/d/6/thumb_153252502.jpeg'
-        members: 80
+        members: 83
         name: Real Estate Developer Meetup Group
         state: CA
         lat: 37.77000045776367
@@ -22432,7 +22529,7 @@ regions:
             photo_id: 8957930
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/6/0/a/member_8957930.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/4/6/0/a/thumb_8957930.jpeg'
-        members: 332
+        members: 337
         name: Coffee and Code East Valley
         state: AZ
         lat: 33.43000030517578
@@ -22479,7 +22576,7 @@ regions:
             photo_id: 156208182
             photo_link: 'http://photos1.meetupstatic.com/photos/member/6/e/1/6/member_156208182.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/6/e/1/6/thumb_156208182.jpeg'
-        members: 285
+        members: 287
         name: Cultivate
         state: CA
         lat: 37.790000915527344
@@ -22536,7 +22633,7 @@ regions:
             photo_id: 247192552
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/d/4/8/member_247192552.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/c/d/4/8/thumb_247192552.jpeg'
-        members: 197
+        members: 203
         name: Meteor Charlotte
         state: NC
         lat: 35.16999816894531
@@ -22565,7 +22662,7 @@ regions:
             photo_id: 157462572
             photo_link: 'http://photos1.meetupstatic.com/photos/member/5/8/2/c/member_157462572.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/8/2/c/thumb_157462572.jpeg'
-        members: 355
+        members: 358
         name: Norfolk.js
         state: VA
         lat: 36.86000061035156
@@ -22589,42 +22686,12 @@ regions:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
            <a href="http://www.angularjs.org/" target="_blank"
-
-
-
           class="linkified">http://www.angularjs.org/</a><br>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
            <a href="http://www.youtube.com/angularjs" target="_blank"
-
-
-
           class="linkified">http://www.youtube.com/angularjs</a></p>
         lon: -82.51000213623047
         group_photo:
@@ -22641,7 +22708,7 @@ regions:
             photo_id: 63562422
             photo_link: 'http://photos1.meetupstatic.com/photos/member/5/7/9/6/member_63562422.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/5/7/9/6/thumb_63562422.jpeg'
-        members: 367
+        members: 376
         name: AngularJS-Tampa
         state: FL
         lat: 27.940000534057617
@@ -22690,7 +22757,7 @@ regions:
             photo_id: 178930962
             photo_link: 'http://photos2.meetupstatic.com/photos/member/2/a/d/2/member_178930962.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/2/a/d/2/thumb_178930962.jpeg'
-        members: 285
+        members: 287
         name: Code Crew San Francisco
         state: CA
         lat: 37.77000045776367
@@ -22735,7 +22802,7 @@ regions:
             photo_id: 6277381
             photo_link: 'http://photos4.meetupstatic.com/photos/member/9/2/0/5/member_6277381.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/9/2/0/5/thumb_6277381.jpeg'
-        members: 91
+        members: 88
         name: CouchDB™ Boston
         state: MA
         lat: 42.369998931884766
@@ -22747,7 +22814,7 @@ regions:
         timezone: Canada/Eastern
         created: 1385692543000
         link: 'http://www.meetup.com/js-montreal/'
-        rating: 4.61
+        rating: 4.63
         description: "<p><b>New: Help us make the group better by filling up our <a href=\"https://docs.google.com/forms/d/183axsUpTwtD2sMSSM-QJqN27dmORezX27_Y6Gr36Kbw/viewform\">Yearly Survey</a></b></p>\n<p>Want to learn more about JavaScript? Meet other people who are passionate about writing software? Show off your latest project?<br>\n\n</p>\n<p>We meet on every second tuesday of the month. The details are always available on <a href=\"http://js-montreal.org\">js-montreal.org</a></p>\n<p>Front-end, backend with Node and other tools, other interesting uses for JavaScript: We got you covered.</p>\n<p>If you wish to sponsor one of our events, get in touch. We often do beer + pizza before the meetup and give you a chance to talk about your company and what you're looking for in terms of developers.</p>\n<p>Our goal is to bring the MTL JS development community together and promote the use and understanding of the language, inside and outside the browser. We've been doing this since 2010.\_</p>"
         lon: -73.58000183105469
         group_photo:
@@ -22763,7 +22830,7 @@ regions:
             photo_id: 161592832
             photo_link: 'http://photos4.meetupstatic.com/photos/member/3/2/2/0/member_161592832.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/2/2/0/thumb_161592832.jpeg'
-        members: 1430
+        members: 1469
         name: "js-montreal - montreal's javascript user group"
         state: QC
         lat: 45.47999954223633
@@ -22814,7 +22881,7 @@ regions:
             photo_id: 162460272
             photo_link: 'http://photos2.meetupstatic.com/photos/member/9/d/5/0/member_162460272.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/9/d/5/0/thumb_162460272.jpeg'
-        members: 567
+        members: 578
         name: NOVA MEAN
         state: VA
         lat: 38.93000030517578
@@ -22931,7 +22998,7 @@ regions:
             photo_id: 172594242
             photo_link: 'http://photos4.meetupstatic.com/photos/member/8/5/c/2/member_172594242.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/8/5/c/2/thumb_172594242.jpeg'
-        members: 577
+        members: 594
         name: Women Who Code Dallas/Ft. Worth
         state: TX
         lat: 32.790000915527344
@@ -22955,7 +23022,7 @@ regions:
             photo_id: 245569529
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/1/7/9/member_245569529.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/1/7/9/thumb_245569529.jpeg'
-        members: 340
+        members: 349
         name: OKC.js
         state: OK
         lat: 35.470001220703125
@@ -22979,7 +23046,7 @@ regions:
             photo_id: 169234762
             photo_link: 'http://photos1.meetupstatic.com/photos/member/8/7/c/a/member_169234762.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/8/7/c/a/thumb_169234762.jpeg'
-        members: 633
+        members: 626
         name: Node Hackers at Hacker Dojo
         state: CA
         lat: 37.38999938964844
@@ -23007,7 +23074,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 15
+        members: 16
         name: Meteor Bend
         state: OR
         lat: 44.099998474121094
@@ -23035,7 +23102,7 @@ regions:
             photo_id: 169870012
             photo_link: 'http://photos3.meetupstatic.com/photos/member/2/7/1/c/member_169870012.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/2/7/1/c/thumb_169870012.jpeg'
-        members: 33
+        members: 32
         name: Escape from /dev/null Washington
         state: WA
         lat: 47.61000061035156
@@ -23064,7 +23131,7 @@ regions:
             photo_id: 53451592
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/9/8/8/member_53451592.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/c/9/8/8/thumb_53451592.jpeg'
-        members: 61
+        members: 62
         name: Victoria NodeJS Meetup
         state: BC
         lat: 48.439998626708984
@@ -23088,7 +23155,7 @@ regions:
             photo_id: 5640122
             photo_link: 'http://photos2.meetupstatic.com/photos/member/7/a/member_5640122.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/7/a/thumb_5640122.jpeg'
-        members: 106
+        members: 104
         name: Saint Louis Node.js Meetup
         state: MO
         lat: 38.630001068115234
@@ -23112,7 +23179,7 @@ regions:
             photo_id: 23310382
             photo_link: 'http://photos1.meetupstatic.com/photos/member/7/6/a/e/member_23310382.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/7/6/a/e/thumb_23310382.jpeg'
-        members: 1102
+        members: 1113
         name: Node.js Denver/Boulder/Ft. Collins
         state: CO
         lat: 39.75
@@ -23124,7 +23191,7 @@ regions:
         timezone: US/Pacific
         created: 1391060376000
         link: 'http://www.meetup.com/Bothell-Web-Developers-Meetup/'
-        rating: 4.81
+        rating: 4.82
         description: "<p>Apply your programming skills to personal projects you want to tackle, share ideas with fellow developers, and deepen your knowledge of web development programming. Whether you are new to the field or have years of experience, we welcome anyone who has a passion to become a better developer and tackle challenging problems. Use this time to focus on your own projects or talk with other developers.\_<span>Please do not use this group to self promote or recruit people for other projects.</span></p>"
         lon: -122.22000122070312
         join_mode: open
@@ -23136,7 +23203,7 @@ regions:
             photo_id: 173918352
             photo_link: 'http://photos3.meetupstatic.com/photos/member/9/5/d/0/member_173918352.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/9/5/d/0/thumb_173918352.jpeg'
-        members: 216
+        members: 222
         name: Bothell Web Developers Meetup
         state: WA
         lat: 47.790000915527344
@@ -23160,7 +23227,7 @@ regions:
             photo_id: 121409742
             photo_link: 'http://photos2.meetupstatic.com/photos/member/7/4/2/e/member_121409742.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/7/4/2/e/thumb_121409742.jpeg'
-        members: 79
+        members: 81
         name: 'Node.js Meetup: 12180'
         state: NY
         lat: 42.7400016784668
@@ -23184,7 +23251,7 @@ regions:
             photo_id: 189740892
             photo_link: 'http://photos4.meetupstatic.com/photos/member/5/1/9/c/member_189740892.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/5/1/9/c/thumb_189740892.jpeg'
-        members: 107
+        members: 106
         name: Jackson Hole Tech Meetup
         state: WY
         lat: 43.470001220703125
@@ -23213,7 +23280,7 @@ regions:
             photo_id: 248318252
             photo_link: 'http://photos2.meetupstatic.com/photos/member/9/5/6/c/member_248318252.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/9/5/6/c/thumb_248318252.jpeg'
-        members: 747
+        members: 761
         name: Code Fellows Seattle Meetup
         state: WA
         lat: 47.630001068115234
@@ -23237,7 +23304,7 @@ regions:
             photo_id: 11077842
             photo_link: 'http://photos4.meetupstatic.com/photos/member/9/3/d/2/member_11077842.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/9/3/d/2/thumb_11077842.jpeg'
-        members: 161
+        members: 160
         name: San Francisco JS Breakfast
         state: CA
         lat: 37.79999923706055
@@ -23260,7 +23327,7 @@ regions:
             photo_id: 176555072
             photo_link: 'http://photos1.meetupstatic.com/photos/member/8/9/0/0/member_176555072.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/8/9/0/0/thumb_176555072.jpeg'
-        members: 163
+        members: 162
         name: Kingston Developers
         state: 'ON'
         lat: 44.22999954223633
@@ -23337,7 +23404,7 @@ regions:
             photo_id: 242159062
             photo_link: 'http://photos4.meetupstatic.com/photos/member/e/6/b/6/member_242159062.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/e/6/b/6/thumb_242159062.jpeg'
-        members: 623
+        members: 622
         name: 'Stacked! Building Better Developers'
         state: NC
         lat: 36
@@ -23366,7 +23433,7 @@ regions:
             photo_id: 11084462
             photo_link: 'http://photos1.meetupstatic.com/photos/member/a/d/a/e/member_11084462.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/a/d/a/e/thumb_11084462.jpeg'
-        members: 377
+        members: 390
         name: Toronto Ember.js Meetup
         state: 'ON'
         lat: 43.65999984741211
@@ -23390,7 +23457,7 @@ regions:
             photo_id: 177774902
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/6/7/6/member_177774902.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/d/6/7/6/thumb_177774902.jpeg'
-        members: 149
+        members: 151
         name: South Bay Hackathons
         state: CA
         lat: 37.41999816894531
@@ -23414,7 +23481,7 @@ regions:
             photo_id: 243561051
             photo_link: 'http://photos1.meetupstatic.com/photos/member/5/2/3/b/member_243561051.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/2/3/b/thumb_243561051.jpeg'
-        members: 222
+        members: 223
         name: TallyJS
         state: FL
         lat: 30.479999542236328
@@ -23438,7 +23505,7 @@ regions:
             photo_id: 73441102
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/4/e/member_73441102.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/4/4/e/thumb_73441102.jpeg'
-        members: 110
+        members: 111
         name: javaScript.io
         state: NJ
         lat: 40.369998931884766
@@ -23450,14 +23517,14 @@ regions:
         timezone: US/Eastern
         created: 1392958107000
         link: 'http://www.meetup.com/MEAN-Stack-NYC/'
-        rating: 4.84
+        rating: 4.89
         description: "<p><span>This group is for anyone interested in learning more about building web applications with the MEAN (MongoDB, Express, AngularJS, Node.js) Stack. Experts and the curious are welcome to join!</span><br>\n\n</p>\n<p><b>Resources:</b><br>\n\n <a href=\"http://www.mean.io/#!/\">mean.io</a><br>\n\n <a href=\"http://www.mongodb.org/\">MongoDB</a>\_| <a href=\"http://mongoosejs.com/\">Mongoose</a><br>\n\n <a href=\"http://expressjs.com/\">Express</a><br>\n\n <a href=\"http://angularjs.org/\">AngularJS</a><br>\n\n <a href=\"http://nodejs.org/\">Node.js</a></p>\n<p><a href=\"http://www.ibm.com/developerworks/library/wa-nodejs-polling-app/\">Build a Real-time Polls Application with Node.js, Express, AngularJS and MongoDB</a> (IBM Tutorial)</p>\n<p><br>\n\n</p>"
         lon: -73.94000244140625
         group_photo:
-          highres_link: 'http://photos4.meetupstatic.com/photos/event/3/4/f/a/highres_335413562.jpeg'
-          photo_id: 335413562
-          photo_link: 'http://photos4.meetupstatic.com/photos/event/3/4/f/a/600_335413562.jpeg'
-          thumb_link: 'http://photos2.meetupstatic.com/photos/event/3/4/f/a/thumb_335413562.jpeg'
+          highres_link: 'http://photos2.meetupstatic.com/photos/event/8/7/b/4/highres_444754740.jpeg'
+          photo_id: 444754740
+          photo_link: 'http://photos2.meetupstatic.com/photos/event/8/7/b/4/600_444754740.jpeg'
+          thumb_link: 'http://photos4.meetupstatic.com/photos/event/8/7/b/4/thumb_444754740.jpeg'
         join_mode: open
         organizer:
           member_id: 48157942
@@ -23467,7 +23534,7 @@ regions:
             photo_id: 186697642
             photo_link: 'http://photos4.meetupstatic.com/photos/member/9/3/0/a/member_186697642.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/9/3/0/a/thumb_186697642.jpeg'
-        members: 938
+        members: 970
         name: 'MEAN (MongoDB, Express, AngularJS, Node.js) Stack NYC'
         state: NY
         lat: 40.810001373291016
@@ -23495,7 +23562,7 @@ regions:
             photo_id: 131453962
             photo_link: 'http://photos4.meetupstatic.com/photos/member/d/2/c/a/member_131453962.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/d/2/c/a/thumb_131453962.jpeg'
-        members: 568
+        members: 579
         name: ngPittsburgh
         state: PA
         lat: 40.45000076293945
@@ -23564,7 +23631,7 @@ regions:
             photo_id: 182705332
             photo_link: 'http://photos2.meetupstatic.com/photos/member/1/4/d/4/member_182705332.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/1/4/d/4/thumb_182705332.jpeg'
-        members: 166
+        members: 170
         name: coloradoSprings.js (JavaScript User Group)
         state: CO
         lat: 38.83000183105469
@@ -23593,7 +23660,7 @@ regions:
             photo_id: 214679142
             photo_link: 'http://photos4.meetupstatic.com/photos/member/e/7/0/6/member_214679142.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/e/7/0/6/thumb_214679142.jpeg'
-        members: 375
+        members: 376
         name: Full Stack Boulder
         state: CO
         lat: 40.040000915527344
@@ -23621,7 +23688,7 @@ regions:
             photo_id: 154015552
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/9/0/0/member_154015552.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/d/9/0/0/thumb_154015552.jpeg'
-        members: 239
+        members: 249
         name: CodeSLO
         state: CA
         lat: 35.2599983215332
@@ -23709,7 +23776,7 @@ regions:
             photo_id: 172594242
             photo_link: 'http://photos4.meetupstatic.com/photos/member/8/5/c/2/member_172594242.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/8/5/c/2/thumb_172594242.jpeg'
-        members: 4648
+        members: 4755
         name: Women Who Code NYC
         state: NY
         lat: 40.7400016784668
@@ -23732,7 +23799,7 @@ regions:
             photo_id: 65848632
             photo_link: 'http://photos4.meetupstatic.com/photos/member/6/f/d/8/member_65848632.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/6/f/d/8/thumb_65848632.jpeg'
-        members: 31
+        members: 32
         name: DakotaJS
         state: ND
         lat: 46.81999969482422
@@ -23756,7 +23823,7 @@ regions:
             photo_id: 186565062
             photo_link: 'http://photos1.meetupstatic.com/photos/member/6/1/e/6/member_186565062.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/6/1/e/6/thumb_186565062.jpeg'
-        members: 120
+        members: 130
         name: Front End Rally
         state: NH
         lat: 43
@@ -23785,7 +23852,7 @@ regions:
             photo_id: 213354662
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/5/8/6/member_213354662.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/d/5/8/6/thumb_213354662.jpeg'
-        members: 386
+        members: 393
         name: Tampa NodeJS
         state: FL
         lat: 27.959999084472656
@@ -23809,7 +23876,7 @@ regions:
             photo_id: 193284302
             photo_link: 'http://photos4.meetupstatic.com/photos/member/5/e/e/e/member_193284302.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/5/e/e/e/thumb_193284302.jpeg'
-        members: 430
+        members: 428
         name: Famo.us Hacking Meetup in San Francisco
         state: CA
         lat: 37.7599983215332
@@ -23831,7 +23898,7 @@ regions:
             photo_id: 81824222
             photo_link: 'http://photos2.meetupstatic.com/photos/member/a/c/b/e/member_81824222.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/c/b/e/thumb_81824222.jpeg'
-        members: 574
+        members: 581
         name: Silicon Valley Ember.js Meetup
         state: CA
         lat: 37.40999984741211
@@ -23898,7 +23965,7 @@ regions:
             photo_id: 246141095
             photo_link: 'http://photos4.meetupstatic.com/photos/member/5/2/6/7/member_246141095.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/5/2/6/7/thumb_246141095.jpeg'
-        members: 394
+        members: 422
         name: SeattleJS Hackers
         state: WA
         lat: 47.61000061035156
@@ -23929,7 +23996,7 @@ regions:
             photo_id: 250937658
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/4/f/a/member_250937658.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/4/4/f/a/thumb_250937658.jpeg'
-        members: 250
+        members: 253
         name: Frontend Development
         state: ID
         lat: 43.630001068115234
@@ -23953,7 +24020,7 @@ regions:
             photo_id: 69855542
             photo_link: 'http://photos4.meetupstatic.com/photos/member/3/c/b/6/member_69855542.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/c/b/6/thumb_69855542.jpeg'
-        members: 288
+        members: 291
         name: MEAN SF Developers
         state: CA
         lat: 37.75
@@ -23977,7 +24044,7 @@ regions:
             photo_id: 242288525
             photo_link: 'http://photos3.meetupstatic.com/photos/member/2/1/4/d/member_242288525.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/2/1/4/d/thumb_242288525.jpeg'
-        members: 451
+        members: 455
         name: RethinkDB Bay Area Group
         state: CA
         lat: 37.38999938964844
@@ -24033,7 +24100,7 @@ regions:
             photo_id: 159765502
             photo_link: 'http://photos2.meetupstatic.com/photos/member/b/1/b/e/member_159765502.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/b/1/b/e/thumb_159765502.jpeg'
-        members: 148
+        members: 152
         name: GrNodeDev
         state: MI
         lat: 42.93000030517578
@@ -24093,7 +24160,7 @@ regions:
             photo_id: 196025352
             photo_link: 'http://photos1.meetupstatic.com/photos/member/1/4/e/8/member_196025352.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/1/4/e/8/thumb_196025352.jpeg'
-        members: 673
+        members: 677
         name: Yahoo Tech Talks - NYC
         state: NY
         lat: 40.7599983215332
@@ -24127,13 +24194,13 @@ regions:
         join_mode: open
         organizer:
           member_id: 9014437
-          name: devonbl
+          name: devon lindsey
           photo:
-            highres_link: 'http://photos1.meetupstatic.com/photos/member/1/5/6/6/highres_243065478.jpeg'
-            photo_id: 243065478
-            photo_link: 'http://photos1.meetupstatic.com/photos/member/1/5/6/6/member_243065478.jpeg'
-            thumb_link: 'http://photos1.meetupstatic.com/photos/member/1/5/6/6/thumb_243065478.jpeg'
-        members: 2175
+            highres_link: 'http://photos3.meetupstatic.com/photos/member/7/4/a/c/highres_251789868.jpeg'
+            photo_id: 251789868
+            photo_link: 'http://photos1.meetupstatic.com/photos/member/7/4/a/c/member_251789868.jpeg'
+            thumb_link: 'http://photos3.meetupstatic.com/photos/member/7/4/a/c/thumb_251789868.jpeg'
+        members: 2368
         name: ReactJS San Francisco Bay Area meetup
         state: CA
         lat: 37.79999923706055
@@ -24145,7 +24212,7 @@ regions:
         timezone: US/Pacific
         created: 1399992406000
         link: 'http://www.meetup.com/Women-Who-Code-Silicon-Valley/'
-        rating: 4.88
+        rating: 4.89
         description: >-
           <p>Mission:</p>
 
@@ -24223,7 +24290,7 @@ regions:
             photo_id: 172594242
             photo_link: 'http://photos4.meetupstatic.com/photos/member/8/5/c/2/member_172594242.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/8/5/c/2/thumb_172594242.jpeg'
-        members: 1342
+        members: 1362
         name: Women Who Code Silicon Valley
         state: CA
         lat: 37.400001525878906
@@ -24284,7 +24351,7 @@ regions:
             photo_id: 209513882
             photo_link: 'http://photos2.meetupstatic.com/photos/member/d/2/7/a/member_209513882.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/d/2/7/a/thumb_209513882.jpeg'
-        members: 517
+        members: 554
         name: JS Code Club
         state: 'ON'
         lat: 43.650001525878906
@@ -24354,7 +24421,7 @@ regions:
             photo_id: 94280462
             photo_link: 'http://photos3.meetupstatic.com/photos/member/4/f/e/e/member_94280462.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/4/f/e/e/thumb_94280462.jpeg'
-        members: 331
+        members: 349
         name: OrlandoJS
         state: FL
         lat: 28.540000915527344
@@ -24377,7 +24444,7 @@ regions:
             photo_id: 199342552
             photo_link: 'http://photos4.meetupstatic.com/photos/member/5/8/1/8/member_199342552.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/5/8/1/8/thumb_199342552.jpeg'
-        members: 91
+        members: 97
         name: Nashville MEAN Stack Development Meetup
         state: TN
         lat: 36.060001373291016
@@ -24406,7 +24473,7 @@ regions:
             photo_id: 163220082
             photo_link: 'http://photos4.meetupstatic.com/photos/member/4/e/7/2/member_163220082.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/4/e/7/2/thumb_163220082.jpeg'
-        members: 198
+        members: 207
         name: Lansing Javascript Meetup
         state: MI
         lat: 42.75
@@ -24454,7 +24521,7 @@ regions:
             photo_id: 201619512
             photo_link: 'http://photos1.meetupstatic.com/photos/member/4/c/3/8/member_201619512.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/4/c/3/8/thumb_201619512.jpeg'
-        members: 142
+        members: 146
         name: Virtual Reality Las Vegas Meetup
         state: NV
         lat: 36.08000183105469
@@ -24483,7 +24550,7 @@ regions:
             photo_id: 241782959
             photo_link: 'http://photos2.meetupstatic.com/photos/member/a/7/c/f/member_241782959.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/a/7/c/f/thumb_241782959.jpeg'
-        members: 761
+        members: 763
         name: Node.DTLA
         state: CA
         lat: 34.04999923706055
@@ -24506,7 +24573,7 @@ regions:
             photo_id: 202185332
             photo_link: 'http://photos4.meetupstatic.com/photos/member/b/1/1/4/member_202185332.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/b/1/1/4/thumb_202185332.jpeg'
-        members: 1252
+        members: 1265
         name: South Bay JavaScript Meetup
         state: CA
         lat: 37.38999938964844
@@ -24530,7 +24597,7 @@ regions:
         organizer:
           member_id: 151083772
           name: Brynn Kampinen
-        members: 866
+        members: 903
         name: Skyway Software Symposium
         state: MN
         lat: 44.970001220703125
@@ -24554,7 +24621,7 @@ regions:
             photo_id: 1595103
             photo_link: 'http://photos4.meetupstatic.com/photos/member/8/9/1/f/member_1595103.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/8/9/1/f/thumb_1595103.jpeg'
-        members: 198
+        members: 219
         name: Miami node.js Meetup
         state: FL
         lat: 25.770000457763672
@@ -24611,7 +24678,7 @@ regions:
             photo_id: 203107972
             photo_link: 'http://photos2.meetupstatic.com/photos/member/1/f/2/4/member_203107972.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/1/f/2/4/thumb_203107972.jpeg'
-        members: 571
+        members: 573
         name: Maryland Javascript Meetup
         state: MD
         lat: 39.20000076293945
@@ -24623,7 +24690,7 @@ regions:
         timezone: US/Pacific
         created: 1402441024000
         link: 'http://www.meetup.com/Women-Who-Code-Portland/'
-        rating: 4.64
+        rating: 4.6
         description: >-
           <p><b>Mission:</b></p>
 
@@ -24700,7 +24767,7 @@ regions:
             photo_id: 172594242
             photo_link: 'http://photos4.meetupstatic.com/photos/member/8/5/c/2/member_172594242.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/8/5/c/2/thumb_172594242.jpeg'
-        members: 994
+        members: 1024
         name: Women Who Code Portland
         state: OR
         lat: 45.52000045776367
@@ -24724,7 +24791,7 @@ regions:
             photo_id: 203887512
             photo_link: 'http://photos4.meetupstatic.com/photos/member/1/d/5/8/member_203887512.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/1/d/5/8/thumb_203887512.jpeg'
-        members: 90
+        members: 92
         name: LearnerJs
         state: TX
         lat: 29.75
@@ -24752,7 +24819,7 @@ regions:
             photo_id: 30022742
             photo_link: 'http://photos3.meetupstatic.com/photos/member/5/8/d/6/member_30022742.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/8/d/6/thumb_30022742.jpeg'
-        members: 731
+        members: 732
         name: 'LA Front-End Developers: Client-Side Sorcery'
         state: CA
         lat: 33.9900016784668
@@ -24792,7 +24859,7 @@ regions:
         timezone: US/Eastern
         created: 1403279442000
         link: 'http://www.meetup.com/QueensJS/'
-        rating: 4.84
+        rating: 4.78
         description: >-
           <p>Do you have a love for JavaScript? Do you want to hear people talk
           about JavaScript? Do you want to converse with others who know or are
@@ -24828,7 +24895,7 @@ regions:
             photo_id: 207053452
             photo_link: 'http://photos2.meetupstatic.com/photos/member/d/0/c/c/member_207053452.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/d/0/c/c/thumb_207053452.jpeg'
-        members: 612
+        members: 633
         name: QueensJS
         state: NY
         lat: 40.7599983215332
@@ -24840,44 +24907,17 @@ regions:
         timezone: US/Pacific
         created: 1403395598000
         link: 'http://www.meetup.com/santacruzjs/'
-        rating: 4.77
+        rating: 4.79
         description: >-
           <blockquote>
 
-
-
-
-
-
-
            <p>We are an open group with meetups that can be presentations on
-
-
-
           a topic or informal hack/code/chat sessions.</p>
 
-
-
-
-
-
-
            <p>We accommodate all experience levels through a variety of
-
-
-
           events.</p>
 
-
-
-
-
-
-
            <p>For our hack/code/chat sessions: just show up, find an allocated
-
-
-
           table, sit with unfamiliar or familiar faces, introduce yourself, and
           do whatever you feel like in the JS-inspired environment. You most
           likely will learn something new with JS (framework, library, debugging
@@ -24900,7 +24940,7 @@ regions:
             photo_id: 79849982
             photo_link: 'http://photos2.meetupstatic.com/photos/member/c/3/3/e/member_79849982.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/c/3/3/e/thumb_79849982.jpeg'
-        members: 232
+        members: 239
         name: Santa Cruz JavaScript
         state: CA
         lat: 36.9900016784668
@@ -24960,7 +25000,7 @@ regions:
             photo_id: 197338002
             photo_link: 'http://photos3.meetupstatic.com/photos/member/e/2/9/2/member_197338002.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/e/2/9/2/thumb_197338002.jpeg'
-        members: 709
+        members: 724
         name: NYC Golang
         state: NY
         lat: 40.7400016784668
@@ -25028,7 +25068,7 @@ regions:
             photo_id: 124160632
             photo_link: 'http://photos3.meetupstatic.com/photos/member/5/0/9/8/member_124160632.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/5/0/9/8/thumb_124160632.jpeg'
-        members: 463
+        members: 470
         name: Los Angeles MEAN Stack Developers
         state: CA
         lat: 33.9900016784668
@@ -25080,7 +25120,7 @@ regions:
             photo_id: 245524920
             photo_link: 'http://photos4.meetupstatic.com/photos/member/1/3/3/8/member_245524920.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/1/3/3/8/thumb_245524920.jpeg'
-        members: 427
+        members: 428
         name: San Diego Code Camp
         state: CA
         lat: 32.88999938964844
@@ -25109,7 +25149,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 109
+        members: 111
         name: Meteor Memphis
         state: TN
         lat: 35.119998931884766
@@ -25133,7 +25173,7 @@ regions:
             photo_id: 210475192
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/7/9/8/member_210475192.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/d/7/9/8/thumb_210475192.jpeg'
-        members: 129
+        members: 132
         name: porchJS
         state: 'ON'
         lat: 43.45000076293945
@@ -25224,7 +25264,7 @@ regions:
             photo_id: 249283420
             photo_link: 'http://photos2.meetupstatic.com/photos/member/a/9/9/c/member_249283420.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/9/9/c/thumb_249283420.jpeg'
-        members: 290
+        members: 302
         name: Ionic Toronto
         state: 'ON'
         lat: 43.65999984741211
@@ -25251,7 +25291,7 @@ regions:
             photo_id: 212859352
             photo_link: 'http://photos3.meetupstatic.com/photos/member/9/9/b/8/member_212859352.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/9/9/b/8/thumb_212859352.jpeg'
-        members: 97
+        members: 100
         name: Open Source Toronto
         state: 'ON'
         lat: 43.63999938964844
@@ -25306,7 +25346,7 @@ regions:
             photo_id: 243769307
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/0/9/b/member_243769307.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/0/9/b/thumb_243769307.jpeg'
-        members: 162
+        members: 161
         name: Utah Node.js Ninjas - Provo
         state: UT
         lat: 40.2599983215332
@@ -25341,7 +25381,7 @@ regions:
             photo_id: 91797552
             photo_link: 'http://photos4.meetupstatic.com/photos/member/e/0/d/0/member_91797552.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/e/0/d/0/thumb_91797552.jpeg'
-        members: 234
+        members: 238
         name: TucsonJS
         state: AZ
         lat: 32.33000183105469
@@ -25370,7 +25410,7 @@ regions:
             photo_id: 214718702
             photo_link: 'http://photos1.meetupstatic.com/photos/member/9/7/2/e/member_214718702.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/9/7/2/e/thumb_214718702.jpeg'
-        members: 214
+        members: 221
         name: HTTP // Hacker Table Tennis Players
         state: MA
         lat: 42.36000061035156
@@ -25382,7 +25422,7 @@ regions:
         timezone: US/Pacific
         created: 1407167712000
         link: 'http://www.meetup.com/Spokane-Frontend-Meetup/'
-        rating: 4.6
+        rating: 4.64
         description: >-
           <p>The Spokane Frontend Meetup connects front-end developers to learn
           and discuss topics related to frontend web development. We meet the 1st
@@ -25402,7 +25442,7 @@ regions:
             photo_id: 220959522
             photo_link: 'http://photos2.meetupstatic.com/photos/member/9/a/6/2/member_220959522.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/9/a/6/2/thumb_220959522.jpeg'
-        members: 185
+        members: 191
         name: Spokane Frontend Developers Meetup
         state: WA
         lat: 47.66999816894531
@@ -25429,7 +25469,7 @@ regions:
             photo_id: 96744552
             photo_link: 'http://photos4.meetupstatic.com/photos/member/5/f/e/8/member_96744552.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/5/f/e/8/thumb_96744552.jpeg'
-        members: 30
+        members: 28
         name: The Percival
         state: WA
         lat: 46.9900016784668
@@ -25441,7 +25481,7 @@ regions:
         timezone: US/Eastern
         created: 1407466855000
         link: 'http://www.meetup.com/JSLouKY/'
-        rating: 4.77
+        rating: 4.73
         description: "<p>Louisville's JavaScript Group. Meets twice every month.</p>\n<p><b>1st Wed - Hack night</b></p>\n<p>Work on projects alone or in a group. Get help, pair up or ask questions of other JavaScript developers.</p>\n<p><b>3rd Wed - Learn Night</b></p>\n<p>Come listen to a great local JavaScript developer about web technology - talks are usually 20-30 min with questions to follow. Time to chat and network after.</p>\n<p><b>Come talk at\_JSLou's Learn Night - What to expect of you are speaking:</b></p>\n<p>Here are some ideas if you think you might want to speak.Share your experience with the group - it's a great way to help build the thriving JavaScript community here in Louisville!<br>\n\n<br>\n\n Tips:</p>\n<p>Talk about what you know - it's safe to assume others can learn from it.<br>\n\n Don't worry about your skill level, the group has a wide range of experience, and beginners can gain a lot from what you know even if you are a beginner working through the basics yourself.Ideas:Talk about a tool or framework you use.<br>\n\n Provide a real-world scenario, discuss a project, or how you solved a problem in a project.<br>\n\n Show &amp; Tell - Show off a project you are working on or have completed.<br>\n\n Code Review/Ask for help - Talk about a project you are working on and get the group's feedback or help, we would love to do code review/ solve problems on the spot. The group has lots of really bright developers who would love to help.<br>\n\n<br>\n\n The format:<br>\n\nJSLou\_talks are around 20min, with a short Q&amp;A period to follow.JSLou's attendance is usually around 10-15 people on learn nights, and the style is very relaxed so\_expect\_comments/questions to pop up during your talk as well.Talks are recorded video/audio unless you specify otherwise.Speaking at the group looks great on your linkedin profile or resume.</p>\n<p><br>\n\n Thanks again and\_\_​remember to either signup and reply to this list: <a href=\"http://kyoss.org/mailman/listinfo/jslou\" class=\"linkified\">http://kyoss.org/mailman/listinfo/jslou</a>, or email\_<a href=\"mailto:jslouky@gmail.com\">jslouky@gmail.com</a>\_and let me know you would like to speak.<br>\n\n</p>"
         lon: -85.76000213623047
         group_photo:
@@ -25458,7 +25498,7 @@ regions:
             photo_id: 82303412
             photo_link: 'http://photos2.meetupstatic.com/photos/member/a/9/9/4/member_82303412.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/a/9/9/4/thumb_82303412.jpeg'
-        members: 343
+        members: 356
         name: "JSLou - Louisville's JavaScript Group"
         state: KY
         lat: 38.25
@@ -25487,7 +25527,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 117
+        members: 119
         name: Meteor Nashville
         state: TN
         lat: 36.15999984741211
@@ -25555,7 +25595,7 @@ regions:
             photo_id: 218911632
             photo_link: 'http://photos3.meetupstatic.com/photos/member/7/b/9/0/member_218911632.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/7/b/9/0/thumb_218911632.jpeg'
-        members: 586
+        members: 593
         name: APIs to Electrons
         state: CA
         lat: 37.869998931884766
@@ -25579,7 +25619,7 @@ regions:
             photo_id: 163789212
             photo_link: 'http://photos2.meetupstatic.com/photos/member/c/0/3/c/member_163789212.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/c/0/3/c/thumb_163789212.jpeg'
-        members: 1441
+        members: 1473
         name: Los Angeles JavaScript and Node.js
         state: CA
         lat: 34.040000915527344
@@ -25634,12 +25674,6 @@ regions:
 
 
 
-
-
-
-
-
-
           </p>
         lon: -122.44000244140625
         group_photo:
@@ -25656,7 +25690,7 @@ regions:
             photo_id: 222116232
             photo_link: 'http://photos4.meetupstatic.com/photos/member/d/b/a/8/member_222116232.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/d/b/a/8/thumb_222116232.jpeg'
-        members: 135
+        members: 140
         name: The Blockchain Garage
         state: CA
         lat: 37.79999923706055
@@ -25706,7 +25740,7 @@ regions:
             photo_id: 222680452
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/f/e/4/member_222680452.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/4/f/e/4/thumb_222680452.jpeg'
-        members: 146
+        members: 150
         name: Gainesville JS
         state: FL
         lat: 29.600000381469727
@@ -25744,7 +25778,7 @@ regions:
             photo_id: 73388942
             photo_link: 'http://photos4.meetupstatic.com/photos/member/2/2/e/e/member_73388942.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/2/2/e/e/thumb_73388942.jpeg'
-        members: 857
+        members: 924
         name: Seattle React.js
         state: WA
         lat: 47.630001068115234
@@ -25773,7 +25807,7 @@ regions:
             photo_id: 242062698
             photo_link: 'http://photos2.meetupstatic.com/photos/member/5/8/a/a/member_242062698.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/5/8/a/a/thumb_242062698.jpeg'
-        members: 104
+        members: 106
         name: "US.CA.OrangeCounty's JavaScript Community Group"
         state: CA
         lat: 33.599998474121094
@@ -25794,9 +25828,9 @@ regions:
           typically provides food and drink, but if you're not able to we can
           usually find a sponsor for that.</p>
 
-          <p>Each month we feature 2-3 talks about Node (Node.js/io.js),
-          server-side JavaScript, npm and the surrounding ecosystem. We try to
-          find a good balance between beginner and advanced topics.</p>
+          <p>Each month we feature 2-3 talks about Node.js, server-side
+          JavaScript, npm and the surrounding ecosystem. We try to find a good
+          balance between beginner and advanced topics.</p>
 
           <p>If you want to help, <a
           href="https://github.com/sfnode/contribute">we are always looking for
@@ -25812,7 +25846,7 @@ regions:
             photo_id: 76757912
             photo_link: 'http://photos1.meetupstatic.com/photos/member/4/5/f/8/member_76757912.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/4/5/f/8/thumb_76757912.jpeg'
-        members: 1137
+        members: 1187
         name: SFNode
         state: CA
         lat: 37.77000045776367
@@ -25836,21 +25870,9 @@ regions:
 
 
 
-
-
-
-
-
-
           </p>
 
           <p><br>
-
-
-
-
-
-
 
 
 
@@ -25870,7 +25892,7 @@ regions:
             photo_id: 232301612
             photo_link: 'http://photos2.meetupstatic.com/photos/member/a/2/8/c/member_232301612.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/a/2/8/c/thumb_232301612.jpeg'
-        members: 331
+        members: 332
         name: Tampa Bay JS Meetup
         state: FL
         lat: 27.969999313354492
@@ -25893,7 +25915,7 @@ regions:
             photo_id: 76757912
             photo_link: 'http://photos1.meetupstatic.com/photos/member/4/5/f/8/member_76757912.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/4/5/f/8/thumb_76757912.jpeg'
-        members: 460
+        members: 465
         name: NodeBotsSF
         state: CA
         lat: 37.77000045776367
@@ -25922,7 +25944,7 @@ regions:
             photo_id: 47479712
             photo_link: 'http://photos3.meetupstatic.com/photos/member/4/d/0/0/member_47479712.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/4/d/0/0/thumb_47479712.jpeg'
-        members: 683
+        members: 691
         name: University Tech
         state: FL
         lat: 28.579999923706055
@@ -25934,8 +25956,23 @@ regions:
         timezone: US/Eastern
         created: 1410894600000
         link: 'http://www.meetup.com/Boca-JS/'
-        rating: 4.58
-        description: "<p>The Boca Raton JavaScript group (Boca-JS) is here to demonstrate the power of this wonderful language to South Florida.</p>\n<p>In addition to vanilla java script, we'll be looking at frameworks such as\_<span>Node,\_</span><span>AngularJS,\_</span><span>Ember.js,\_</span><span>jQuery</span><span>\_and\_</span><span>Ionic.</span></p>\n<p><span>IMPORTANT: This group has been created as a resource for developers. We do welcome meeting sponsors for an opportunity to reach out to members, please contact us for the details.</span><br>\n\n</p>\n<p><br>\n\n</p>"
+        rating: 4.57
+        description: >-
+          <p>The Boca Raton JavaScript group (Boca-JS) is here to demonstrate the
+          power of this wonderful language to South Florida.</p>
+
+          <p>In addition to vanilla java script, we'll be looking at frameworks
+          such
+          as&nbsp;<span>Node,&nbsp;</span><span>AngularJS,&nbsp;</span><span>Ember.js,&nbsp;</span><span>jQuery</span><span>&nbsp;and&nbsp;</span><span>Ionic.</span></p>
+
+          <p><span>Founded in September 2014 by Adam and Hector, this group
+          continues to grow and thrive.<br></span></p>
+
+          <p><span>IMPORTANT: This group has been created as a resource for
+          developers. We do welcome meeting sponsors for an opportunity to reach
+          out to members, please contact us for the details.</span> <br> </p>
+
+          <p><br> </p>
         lon: -80.08999633789062
         group_photo:
           highres_link: 'http://photos3.meetupstatic.com/photos/event/4/a/9/e/highres_412879102.jpeg'
@@ -25944,14 +25981,14 @@ regions:
           thumb_link: 'http://photos3.meetupstatic.com/photos/event/4/a/9/e/thumb_412879102.jpeg'
         join_mode: open
         organizer:
-          member_id: 3645654
-          name: Adam
+          member_id: 7759029
+          name: Hector
           photo:
-            highres_link: 'http://photos1.meetupstatic.com/photos/member/1/2/4/0/highres_181984672.jpeg'
-            photo_id: 181984672
-            photo_link: 'http://photos3.meetupstatic.com/photos/member/1/2/4/0/member_181984672.jpeg'
-            thumb_link: 'http://photos1.meetupstatic.com/photos/member/1/2/4/0/thumb_181984672.jpeg'
-        members: 431
+            highres_link: 'http://photos4.meetupstatic.com/photos/member/5/0/9/9/highres_8900633.jpeg'
+            photo_id: 8900633
+            photo_link: 'http://photos4.meetupstatic.com/photos/member/5/0/9/9/member_8900633.jpeg'
+            thumb_link: 'http://photos4.meetupstatic.com/photos/member/5/0/9/9/thumb_8900633.jpeg'
+        members: 451
         name: Boca JS
         state: FL
         lat: 26.350000381469727
@@ -25975,7 +26012,7 @@ regions:
             photo_id: 227799712
             photo_link: 'http://photos3.meetupstatic.com/photos/member/9/b/2/0/member_227799712.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/9/b/2/0/thumb_227799712.jpeg'
-        members: 65
+        members: 66
         name: Milan Web Development
         state: MI
         lat: 42.11000061035156
@@ -26004,7 +26041,7 @@ regions:
             photo_id: 217432102
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/b/8/6/member_217432102.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/b/8/6/thumb_217432102.jpeg'
-        members: 72
+        members: 76
         name: Dev Coop
         state: WA
         lat: 47.650001525878906
@@ -26028,7 +26065,7 @@ regions:
             photo_id: 53726162
             photo_link: 'http://photos3.meetupstatic.com/photos/member/6/6/3/2/member_53726162.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/6/6/3/2/thumb_53726162.jpeg'
-        members: 193
+        members: 195
         name: MetroWest JS
         state: MA
         lat: 42.31999969482422
@@ -26052,7 +26089,7 @@ regions:
             photo_id: 176610932
             photo_link: 'http://photos2.meetupstatic.com/photos/member/7/8/d/4/member_176610932.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/7/8/d/4/thumb_176610932.jpeg'
-        members: 545
+        members: 551
         name: 'Code & Cans Developer Meetup'
         state: IL
         lat: 41.939998626708984
@@ -26068,12 +26105,6 @@ regions:
         description: >-
           <p>Meet other developers using Meteor. Share your knowledge, apps, and
           get feedback from others.<br>
-
-
-
-
-
-
 
 
 
@@ -26119,7 +26150,7 @@ regions:
             photo_id: 233568762
             photo_link: 'http://photos3.meetupstatic.com/photos/member/b/e/7/a/member_233568762.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/b/e/7/a/thumb_233568762.jpeg'
-        members: 373
+        members: 379
         name: Monthly Challenge
         state: DC
         lat: 38.90999984741211
@@ -26148,7 +26179,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 159
+        members: 162
         name: Meteor Norfolk/Virginia Beach
         state: VA
         lat: 36.849998474121094
@@ -26205,7 +26236,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 211
+        members: 219
         name: Meteor Phoenix
         state: AZ
         lat: 33.45000076293945
@@ -26217,7 +26248,7 @@ regions:
         timezone: US/Pacific
         created: 1413440062000
         link: 'http://www.meetup.com/The-Sacramento-Javascript-Meetup/'
-        rating: 4.89
+        rating: 4.9
         description: >-
           <p>SacJS isn't just about teaching Javascript, jQuery, new APIs,
           NodeJS, or micro-controllers. Its about people. We want you to come
@@ -26254,7 +26285,7 @@ regions:
             photo_id: 11017905
             photo_link: 'http://photos1.meetupstatic.com/photos/member/9/4/1/1/member_11017905.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/9/4/1/1/thumb_11017905.jpeg'
-        members: 583
+        members: 607
         name: The Sacramento JavaScript Meetup
         state: CA
         lat: 38.58000183105469
@@ -26266,7 +26297,7 @@ regions:
         timezone: US/Eastern
         created: 1413557129000
         link: 'http://www.meetup.com/Meteor-Stamford/'
-        rating: 4.41
+        rating: 4.48
         description: "<p>Meteor is an open-source platform for building top-quality web apps in a fraction of the time, whether you're an expert developer or just getting started. Come\_Meet other developers using Meteor. Share your knowledge, apps, and get feedback from others.</p>"
         lon: -73.54000091552734
         join_mode: open
@@ -26278,7 +26309,7 @@ regions:
             photo_id: 235330082
             photo_link: 'http://photos1.meetupstatic.com/photos/member/2/7/6/2/member_235330082.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/2/7/6/2/thumb_235330082.jpeg'
-        members: 93
+        members: 94
         name: Meteor Stamford
         state: CT
         lat: 41.04999923706055
@@ -26302,7 +26333,7 @@ regions:
             photo_id: 235436142
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/b/4/e/member_235436142.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/d/b/4/e/thumb_235436142.jpeg'
-        members: 318
+        members: 333
         name: Chicago Suburban Mobile and Web Technology Meetup
         state: IL
         lat: 42.040000915527344
@@ -26326,7 +26357,7 @@ regions:
             photo_id: 244514991
             photo_link: 'http://photos1.meetupstatic.com/photos/member/3/a/8/f/member_244514991.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/3/a/8/f/thumb_244514991.jpeg'
-        members: 98
+        members: 97
         name: Santa Barbara AngularJS Meetup
         state: CA
         lat: 34.45000076293945
@@ -26355,7 +26386,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 231
+        members: 234
         name: Meteor Ottawa
         state: 'ON'
         lat: 45.41999816894531
@@ -26379,7 +26410,7 @@ regions:
             photo_id: 134442962
             photo_link: 'http://photos3.meetupstatic.com/photos/member/a/7/d/2/member_134442962.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/a/7/d/2/thumb_134442962.jpeg'
-        members: 547
+        members: 562
         name: WebApp Builders - WEEKLY - Fullstack Projects (LA Eastside)
         state: CA
         lat: 34.150001525878906
@@ -26425,12 +26456,6 @@ regions:
 
 
 
-
-
-
-
-
-
           </p>
 
           <p>Topics on our mind but not limited to!</p>
@@ -26448,12 +26473,6 @@ regions:
           <p>- Drones using NodeJS</p>
 
           <p><br>
-
-
-
-
-
-
 
 
 
@@ -26510,7 +26529,7 @@ regions:
             photo_id: 239077962
             photo_link: 'http://photos3.meetupstatic.com/photos/member/9/4/4/a/member_239077962.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/9/4/4/a/thumb_239077962.jpeg'
-        members: 549
+        members: 578
         name: Portland ReactJS
         state: OR
         lat: 45.52000045776367
@@ -26596,7 +26615,7 @@ regions:
             photo_id: 240990922
             photo_link: 'http://photos4.meetupstatic.com/photos/member/7/8/c/a/member_240990922.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/7/8/c/a/thumb_240990922.jpeg'
-        members: 205
+        members: 209
         name: SoCal Application Developers
         state: CA
         lat: 33.529998779296875
@@ -26628,7 +26647,7 @@ regions:
             photo_id: 241424226
             photo_link: 'http://photos2.meetupstatic.com/photos/member/a/c/c/2/member_241424226.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/a/c/c/2/thumb_241424226.jpeg'
-        members: 179
+        members: 199
         name: DevMountain Alumni Association
         state: UT
         lat: 40.220001220703125
@@ -26652,7 +26671,7 @@ regions:
             photo_id: 240969932
             photo_link: 'http://photos4.meetupstatic.com/photos/member/2/6/c/c/member_240969932.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/2/6/c/c/thumb_240969932.jpeg'
-        members: 167
+        members: 169
         name: Mandeville - Web Development Meetup
         state: LA
         lat: 30.420000076293945
@@ -26710,7 +26729,7 @@ regions:
             photo_id: 7061921
             photo_link: 'http://photos2.meetupstatic.com/photos/member/a/3/c/1/member_7061921.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/3/c/1/thumb_7061921.jpeg'
-        members: 105
+        members: 107
         name: Pensacola.js The Premier Pensacola JavaScript Users Group
         state: FL
         lat: 30.420000076293945
@@ -26748,7 +26767,7 @@ regions:
             photo_id: 22833902
             photo_link: 'http://photos4.meetupstatic.com/photos/member/8/4/6/e/member_22833902.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/8/4/6/e/thumb_22833902.jpeg'
-        members: 672
+        members: 684
         name: React Chicago
         state: IL
         lat: 41.880001068115234
@@ -26777,7 +26796,7 @@ regions:
             photo_id: 244452434
             photo_link: 'http://photos4.meetupstatic.com/photos/member/3/0/9/2/member_244452434.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/0/9/2/thumb_244452434.jpeg'
-        members: 766
+        members: 788
         name: techDT.LA
         state: CA
         lat: 34.04999923706055
@@ -26809,12 +26828,6 @@ regions:
 
 
 
-
-
-
-
-
-
           </p>
 
           <p>I have already moved on to another project, but since I could not
@@ -26823,12 +26836,6 @@ regions:
           settings and bringing an elasticsearch cluster to production, and then
           let the community take it forward. You all use elasticsearch, don't
           you?<br>
-
-
-
-
-
-
 
 
 
@@ -26848,7 +26855,7 @@ regions:
             photo_id: 241471563
             photo_link: 'http://photos2.meetupstatic.com/photos/member/7/b/4/b/member_241471563.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/7/b/4/b/thumb_241471563.jpeg'
-        members: 274
+        members: 280
         name: Elasticsearch Toronto
         state: 'ON'
         lat: 43.63999938964844
@@ -26876,7 +26883,7 @@ regions:
             photo_id: 30022742
             photo_link: 'http://photos3.meetupstatic.com/photos/member/5/8/d/6/member_30022742.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/8/d/6/thumb_30022742.jpeg'
-        members: 1600
+        members: 1607
         name: 'SF Front-End Developers: Client-Side Sorcery'
         state: CA
         lat: 37.77000045776367
@@ -26922,7 +26929,7 @@ regions:
             photo_id: 242230926
             photo_link: 'http://photos1.meetupstatic.com/photos/member/2/a/a/e/member_242230926.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/2/a/a/e/thumb_242230926.jpeg'
-        members: 265
+        members: 272
         name: Javascript Study Group
         state: CA
         lat: 37.40999984741211
@@ -26950,7 +26957,7 @@ regions:
             photo_id: 87393092
             photo_link: 'http://photos2.meetupstatic.com/photos/member/8/1/4/4/member_87393092.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/8/1/4/4/thumb_87393092.jpeg'
-        members: 46
+        members: 50
         name: Dev Games 2015
         state: CA
         lat: 34.099998474121094
@@ -26981,7 +26988,7 @@ regions:
             photo_id: 242371350
             photo_link: 'http://photos2.meetupstatic.com/photos/member/7/a/7/6/member_242371350.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/7/a/7/6/thumb_242371350.jpeg'
-        members: 187
+        members: 192
         name: Kenzan Providence Hack Nights
         state: RI
         lat: 41.869998931884766
@@ -27010,7 +27017,7 @@ regions:
             photo_id: 235166242
             photo_link: 'http://photos1.meetupstatic.com/photos/member/6/6/8/2/member_235166242.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/6/6/8/2/thumb_235166242.jpeg'
-        members: 257
+        members: 264
         name: "Let's Learn Programming in Worcester, MA!"
         state: MA
         lat: 42.290000915527344
@@ -27066,7 +27073,7 @@ regions:
             photo_id: 246227187
             photo_link: 'http://photos3.meetupstatic.com/photos/member/b/8/5/3/member_246227187.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/b/8/5/3/thumb_246227187.jpeg'
-        members: 49
+        members: 50
         name: South County Web Developers
         state: CA
         lat: 37.119998931884766
@@ -27095,7 +27102,7 @@ regions:
             photo_id: 175011572
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/9/7/4/member_175011572.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/c/9/7/4/thumb_175011572.jpeg'
-        members: 465
+        members: 490
         name: Code Fellows Portland Meetup
         state: OR
         lat: 45.5
@@ -27124,7 +27131,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 38
+        members: 37
         name: Meteor Tri-City Code Club
         state: 'ON'
         lat: 43.349998474121094
@@ -27147,7 +27154,7 @@ regions:
             photo_id: 242780296
             photo_link: 'http://photos4.meetupstatic.com/photos/member/4/f/4/8/member_242780296.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/4/f/4/8/thumb_242780296.jpeg'
-        members: 65
+        members: 68
         name: Saint George JavaScript
         state: UT
         lat: 37.08000183105469
@@ -27170,7 +27177,7 @@ regions:
             photo_id: 242784194
             photo_link: 'http://photos1.meetupstatic.com/photos/member/5/e/8/2/member_242784194.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/e/8/2/thumb_242784194.jpeg'
-        members: 78
+        members: 80
         name: BayArea OpenROV Users Group
         state: CA
         lat: 37.869998931884766
@@ -27199,7 +27206,7 @@ regions:
             photo_id: 242802587
             photo_link: 'http://photos4.meetupstatic.com/photos/member/a/6/5/b/member_242802587.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/6/5/b/thumb_242802587.jpeg'
-        members: 594
+        members: 599
         name: JavaScript DC
         state: DC
         lat: 38.90999984741211
@@ -27257,7 +27264,7 @@ regions:
             photo_id: 246077571
             photo_link: 'http://photos3.meetupstatic.com/photos/member/4/4/a/3/member_246077571.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/4/4/a/3/thumb_246077571.jpeg'
-        members: 399
+        members: 424
         name: Makerspace Charlotte
         state: NC
         lat: 35.189998626708984
@@ -27312,7 +27319,7 @@ regions:
             photo_id: 243095151
             photo_link: 'http://photos3.meetupstatic.com/photos/member/8/9/4/f/member_243095151.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/8/9/4/f/thumb_243095151.jpeg'
-        members: 283
+        members: 290
         name: Saint Louis AngularJS Meetup
         state: MO
         lat: 38.63999938964844
@@ -27336,7 +27343,7 @@ regions:
             photo_id: 6225726
             photo_link: 'http://photos4.meetupstatic.com/photos/member/b/2/9/e/member_6225726.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/b/2/9/e/thumb_6225726.jpeg'
-        members: 375
+        members: 388
         name: Dallas AngularJS SuperHeros
         state: TX
         lat: 32.959999084472656
@@ -27378,7 +27385,7 @@ regions:
             photo_id: 42524052
             photo_link: 'http://photos3.meetupstatic.com/photos/member/a/c/1/4/member_42524052.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/a/c/1/4/thumb_42524052.jpeg'
-        members: 325
+        members: 332
         name: Node.js Houston
         state: TX
         lat: 29.799999237060547
@@ -27410,7 +27417,7 @@ regions:
             photo_id: 251481887
             photo_link: 'http://photos1.meetupstatic.com/photos/member/5/5/7/f/member_251481887.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/5/5/7/f/thumb_251481887.jpeg'
-        members: 262
+        members: 270
         name: Hudson County JavaScript Meetup
         state: NJ
         lat: 40.72999954223633
@@ -27434,7 +27441,7 @@ regions:
             photo_id: 245984332
             photo_link: 'http://photos4.meetupstatic.com/photos/member/a/d/2/c/member_245984332.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/d/2/c/thumb_245984332.jpeg'
-        members: 231
+        members: 239
         name: Bucks County JS
         state: PA
         lat: 40.279998779296875
@@ -27465,7 +27472,7 @@ regions:
             photo_id: 10322159
             photo_link: 'http://photos4.meetupstatic.com/photos/member/8/6/f/member_10322159.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/8/6/f/thumb_10322159.jpeg'
-        members: 45
+        members: 59
         name: Reno.js
         state: NV
         lat: 39.529998779296875
@@ -27485,11 +27492,11 @@ regions:
           member_id: 3701816
           name: Peter Armstrong
           photo:
-            highres_link: 'http://photos4.meetupstatic.com/photos/member/d/4/0/a/highres_191154282.jpeg'
-            photo_id: 191154282
-            photo_link: 'http://photos2.meetupstatic.com/photos/member/d/4/0/a/member_191154282.jpeg'
-            thumb_link: 'http://photos4.meetupstatic.com/photos/member/d/4/0/a/thumb_191154282.jpeg'
-        members: 125
+            highres_link: 'http://photos4.meetupstatic.com/photos/member/2/8/c/6/highres_251530438.jpeg'
+            photo_id: 251530438
+            photo_link: 'http://photos2.meetupstatic.com/photos/member/2/8/c/6/member_251530438.jpeg'
+            thumb_link: 'http://photos2.meetupstatic.com/photos/member/2/8/c/6/thumb_251530438.jpeg'
+        members: 133
         name: 'VicJS: Victoria JavaScript Developers'
         state: BC
         lat: 48.43000030517578
@@ -27512,7 +27519,7 @@ regions:
             photo_id: 24874882
             photo_link: 'http://photos3.meetupstatic.com/photos/member/8/8/4/2/member_24874882.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/8/8/4/2/thumb_24874882.jpeg'
-        members: 95
+        members: 97
         name: Beer.js South New Jersey - Talk JavaScript at Local Pubs
         state: NJ
         lat: 39.90999984741211
@@ -27547,7 +27554,7 @@ regions:
         timezone: US/Mountain
         created: 1422906650000
         link: 'http://www.meetup.com/DenverScript/'
-        rating: 4.96
+        rating: 4.94
         description: >-
           <p>DenverScript is a community of developers focused on JavaScript in
           downtown Denver. We will be discussing best practices, features coming
@@ -27579,7 +27586,7 @@ regions:
             photo_id: 12624904
             photo_link: 'http://photos3.meetupstatic.com/photos/member/6/1/4/8/member_12624904.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/6/1/4/8/thumb_12624904.jpeg'
-        members: 697
+        members: 721
         name: DenverScript
         state: CO
         lat: 39.75
@@ -27608,7 +27615,7 @@ regions:
             photo_id: 245331334
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/8/8/6/member_245331334.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/8/6/thumb_245331334.jpeg'
-        members: 173
+        members: 181
         name: Meteor Irvine
         state: CA
         lat: 33.689998626708984
@@ -27632,7 +27639,7 @@ regions:
             photo_id: 9364836
             photo_link: 'http://photos3.meetupstatic.com/photos/member/1/2/e/4/member_9364836.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/1/2/e/4/thumb_9364836.jpeg'
-        members: 201
+        members: 205
         name: North Atlanta AngularJS User Group
         state: GA
         lat: 33.939998626708984
@@ -27669,7 +27676,7 @@ regions:
             photo_id: 219780192
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/0/member_219780192.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/c/0/thumb_219780192.jpeg'
-        members: 1334
+        members: 1428
         name: Modern Web UI
         state: CA
         lat: 37.45000076293945
@@ -27723,7 +27730,7 @@ regions:
             photo_id: 249544954
             photo_link: 'http://photos2.meetupstatic.com/photos/member/1/3/5/a/member_249544954.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/1/3/5/a/thumb_249544954.jpeg'
-        members: 425
+        members: 432
         name: 'LA Web Dev & UX Design community'
         state: CA
         lat: 34.04999923706055
@@ -27752,7 +27759,7 @@ regions:
             photo_id: 244490063
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/3/8/f/member_244490063.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/c/3/8/f/thumb_244490063.jpeg'
-        members: 130
+        members: 132
         name: San Diego Ember
         state: CA
         lat: 32.790000915527344
@@ -27802,7 +27809,7 @@ regions:
             photo_id: 243779273
             photo_link: 'http://photos1.meetupstatic.com/photos/member/e/7/8/9/member_243779273.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/e/7/8/9/thumb_243779273.jpeg'
-        members: 174
+        members: 176
         name: NodeBots - DFW
         state: TX
         lat: 33
@@ -27839,7 +27846,7 @@ regions:
             photo_id: 249487896
             photo_link: 'http://photos3.meetupstatic.com/photos/member/1/e/d/8/member_249487896.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/1/e/d/8/thumb_249487896.jpeg'
-        members: 132
+        members: 141
         name: Meteor Indy
         state: IN
         lat: 39.869998931884766
@@ -27903,7 +27910,7 @@ regions:
             photo_id: 244012640
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/d/a/0/member_244012640.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/d/a/0/thumb_244012640.jpeg'
-        members: 95
+        members: 97
         name: West Valley OSS Web Development Meetup
         state: AZ
         lat: 33.529998779296875
@@ -27932,7 +27939,7 @@ regions:
             photo_id: 9111375
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/8/a/f/member_9111375.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/8/a/f/thumb_9111375.jpeg'
-        members: 129
+        members: 131
         name: Bakersfield JavaScript
         state: CA
         lat: 35.38999938964844
@@ -27973,7 +27980,7 @@ regions:
             photo_id: 248814019
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/3/0/3/member_248814019.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/d/3/0/3/thumb_248814019.jpeg'
-        members: 243
+        members: 250
         name: San Diego Technology Immersion Group (SDTIG)
         state: CA
         lat: 33.150001525878906
@@ -27997,7 +28004,7 @@ regions:
             photo_id: 250008106
             photo_link: 'http://photos4.meetupstatic.com/photos/member/b/b/e/a/member_250008106.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/b/b/e/a/thumb_250008106.jpeg'
-        members: 122
+        members: 131
         name: PBG Javascript Group
         state: FL
         lat: 26.709999084472656
@@ -28021,7 +28028,7 @@ regions:
             photo_id: 244282674
             photo_link: 'http://photos1.meetupstatic.com/photos/member/5/8/9/2/member_244282674.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/8/9/2/thumb_244282674.jpeg'
-        members: 164
+        members: 165
         name: Long Island Programming Meetup
         state: NY
         lat: 40.79999923706055
@@ -28055,7 +28062,7 @@ regions:
             photo_id: 249352926
             photo_link: 'http://photos1.meetupstatic.com/photos/member/c/e/b/e/member_249352926.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/e/b/e/thumb_249352926.jpeg'
-        members: 193
+        members: 203
         name: 'Angular & Bootstrap & MVC of West Palm Beach Meetup'
         state: FL
         lat: 26.709999084472656
@@ -28078,7 +28085,7 @@ regions:
             photo_id: 175011572
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/9/7/4/member_175011572.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/c/9/7/4/thumb_175011572.jpeg'
-        members: 165
+        members: 166
         name: Code Fellows Chicago Meetup
         state: IL
         lat: 41.88999938964844
@@ -28102,7 +28109,7 @@ regions:
             photo_id: 244498641
             photo_link: 'http://photos4.meetupstatic.com/photos/member/e/5/1/1/member_244498641.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/e/5/1/1/thumb_244498641.jpeg'
-        members: 365
+        members: 366
         name: Rockstar Developers/Designers Meetup
         state: TX
         lat: 30.299999237060547
@@ -28131,7 +28138,7 @@ regions:
             photo_id: 243769307
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/0/9/b/member_243769307.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/0/9/b/thumb_243769307.jpeg'
-        members: 420
+        members: 427
         name: Utah Node.js - Salt Lake City
         state: UT
         lat: 40.619998931884766
@@ -28160,7 +28167,7 @@ regions:
             photo_id: 244701870
             photo_link: 'http://photos4.meetupstatic.com/photos/member/5/5/6/e/member_244701870.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/5/5/6/e/thumb_244701870.jpeg'
-        members: 178
+        members: 181
         name: ng-detroit
         state: MI
         lat: 42.33000183105469
@@ -28174,22 +28181,13 @@ regions:
         link: 'http://www.meetup.com/Wilmington-Learn-To-Code/'
         rating: 5
         description: >-
-          <p>This group is open to anyone interested in learning to write
-          computer code for the web. All you need is the ability to read, write,
-          &nbsp;and know basic math (add, subtract, multiply, and divide). It is
-          never too late to start your coding journey. Some of the benefits of
-          learning how to code include: thinking more logically, improving your
-          memory and your attention to details.&nbsp;Bring your PC, Mac or Linux
-          laptop and come have fun!</p>
+          <p>This group is for anyone interested in computer coding. This group
+          will help you to become a better coder by providing quality
+          presentations for different levels of experience including beginner,
+          intermediate and advanced levels. There will also be some networking
+          events with other like-minded technology groups in the area.&nbsp;</p>
 
-          <p>P.S: If fewer than 3 coders RSVP for a meetup 24h prior to the
-          meetup, it will be either postponed or cancelled. If you would like to
-          explore any particular topic in greater depth, please let me know.
-          Parents are welcome to bring their children,and they must remain with
-          them at all times. Inactive members will be removed after extended
-          periods of inactivity. Have fun coding :)</p>
-
-          <p><br></p>
+          <p> <br></p>
         lon: -77.87000274658203
         join_mode: approval
         organizer:
@@ -28200,7 +28198,7 @@ regions:
             photo_id: 244826920
             photo_link: 'http://photos2.meetupstatic.com/photos/member/6/9/2/8/member_244826920.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/6/9/2/8/thumb_244826920.jpeg'
-        members: 30
+        members: 34
         name: Wilmington Learn To Code Meetup
         state: NC
         lat: 34.15999984741211
@@ -28280,7 +28278,7 @@ regions:
         timezone: US/Pacific
         created: 1428303010000
         link: 'http://www.meetup.com/MakerSquare-Los-Angeles/'
-        rating: 4.86
+        rating: 4.89
         description: 'MakerSquare is a 3 month full-time career accelerator for software engineering through JavaScript. By teaching computer science fundamentals and modern web technologies, MakerSquare prepares students to join the most desirable of engineering teams.'
         lon: -118.23999786376953
         join_mode: open
@@ -28292,7 +28290,7 @@ regions:
             photo_id: 240225232
             photo_link: 'http://photos2.meetupstatic.com/photos/member/b/0/b/0/member_240225232.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/b/0/b/0/thumb_240225232.jpeg'
-        members: 367
+        members: 385
         name: MakerSquare Los Angeles
         state: CA
         lat: 33.970001220703125
@@ -28321,7 +28319,7 @@ regions:
             photo_id: 241985479
             photo_link: 'http://photos4.meetupstatic.com/photos/member/1/5/6/7/member_241985479.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/1/5/6/7/thumb_241985479.jpeg'
-        members: 481
+        members: 499
         name: charmCityJs
         state: MD
         lat: 39.290000915527344
@@ -28345,7 +28343,7 @@ regions:
             photo_id: 245306257
             photo_link: 'http://photos2.meetupstatic.com/photos/member/6/6/9/1/member_245306257.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/6/6/9/1/thumb_245306257.jpeg'
-        members: 225
+        members: 263
         name: Seattle Devmeetings
         state: WA
         lat: 47.66999816894531
@@ -28518,7 +28516,15 @@ regions:
           photo_link: 'http://photos2.meetupstatic.com/photos/event/7/8/f/4/600_440970964.jpeg'
           thumb_link: 'http://photos4.meetupstatic.com/photos/event/7/8/f/4/thumb_440970964.jpeg'
         join_mode: open
-        members: 499
+        organizer:
+          member_id: 160458022
+          name: Mishra
+          photo:
+            highres_link: 'http://photos3.meetupstatic.com/photos/member/9/1/7/7/highres_248737239.jpeg'
+            photo_id: 248737239
+            photo_link: 'http://photos3.meetupstatic.com/photos/member/9/1/7/7/member_248737239.jpeg'
+            thumb_link: 'http://photos3.meetupstatic.com/photos/member/9/1/7/7/thumb_248737239.jpeg'
+        members: 540
         name: 'GoLiveLabs.io - UI, UX & MEAN Stack Experts'
         state: CA
         lat: 37.380001068115234
@@ -28547,7 +28553,7 @@ regions:
             photo_id: 23814502
             photo_link: 'http://photos2.meetupstatic.com/photos/member/d/4/e/6/member_23814502.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/d/4/e/6/thumb_23814502.jpeg'
-        members: 103
+        members: 102
         name: Firebase Toronto
         state: 'ON'
         lat: 43.650001525878906
@@ -28576,7 +28582,7 @@ regions:
             photo_id: 130271092
             photo_link: 'http://photos4.meetupstatic.com/photos/member/2/b/5/4/member_130271092.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/2/b/5/4/thumb_130271092.jpeg'
-        members: 187
+        members: 189
         name: ReactJS OC
         state: CA
         lat: 33.7400016784668
@@ -28628,7 +28634,7 @@ regions:
             photo_id: 108084312
             photo_link: 'http://photos1.meetupstatic.com/photos/member/5/e/f/8/member_108084312.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/e/f/8/thumb_108084312.jpeg'
-        members: 352
+        members: 360
         name: ContainerNode
         state: CA
         lat: 37.38999938964844
@@ -28652,12 +28658,7 @@ regions:
         organizer:
           member_id: 186672448
           name: Christopher Dro
-          photo:
-            highres_link: 'http://photos3.meetupstatic.com/photos/member/7/e/a/c/highres_251492428.jpeg'
-            photo_id: 251492428
-            photo_link: 'http://photos3.meetupstatic.com/photos/member/7/e/a/c/member_251492428.jpeg'
-            thumb_link: 'http://photos3.meetupstatic.com/photos/member/7/e/a/c/thumb_251492428.jpeg'
-        members: 220
+        members: 246
         name: React Native Los Angeles
         state: CA
         lat: 34.029998779296875
@@ -28681,7 +28682,7 @@ regions:
             photo_id: 101343962
             photo_link: 'http://photos2.meetupstatic.com/photos/member/f/7/a/member_101343962.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/f/7/a/thumb_101343962.jpeg'
-        members: 121
+        members: 133
         name: 'RefactorU Education & Technology'
         state: CO
         lat: 40.040000915527344
@@ -28710,7 +28711,7 @@ regions:
             photo_id: 196530192
             photo_link: 'http://photos4.meetupstatic.com/photos/member/7/5/f/0/member_196530192.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/7/5/f/0/thumb_196530192.jpeg'
-        members: 160
+        members: 166
         name: 'Reacto: The Sacramento ReactJS Meetup'
         state: CA
         lat: 38.58000183105469
@@ -28788,7 +28789,7 @@ regions:
             photo_id: 245770115
             photo_link: 'http://photos2.meetupstatic.com/photos/member/2/7/8/3/member_245770115.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/2/7/8/3/thumb_245770115.jpeg'
-        members: 30
+        members: 31
         name: Redding Google Developers Group Meetup
         state: CA
         lat: 40.560001373291016
@@ -28811,7 +28812,7 @@ regions:
             photo_id: 244967194
             photo_link: 'http://photos4.meetupstatic.com/photos/member/b/8/5/a/member_244967194.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/b/8/5/a/thumb_244967194.jpeg'
-        members: 118
+        members: 127
         name: Connected Car Houston
         state: TX
         lat: 29.719999313354492
@@ -28840,7 +28841,7 @@ regions:
             photo_id: 246106724
             photo_link: 'http://photos2.meetupstatic.com/photos/member/b/6/8/4/member_246106724.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/b/6/8/4/thumb_246106724.jpeg'
-        members: 82
+        members: 88
         name: '{ fayetteville.js };'
         state: AR
         lat: 36.099998474121094
@@ -28868,7 +28869,7 @@ regions:
             photo_id: 246170953
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/7/0/9/member_246170953.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/c/7/0/9/thumb_246170953.jpeg'
-        members: 93
+        members: 105
         name: Project Night Québec
         state: QC
         lat: 46.810001373291016
@@ -28897,7 +28898,7 @@ regions:
             photo_id: 245628554
             photo_link: 'http://photos3.meetupstatic.com/photos/member/b/d/a/a/member_245628554.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/b/d/a/a/thumb_245628554.jpeg'
-        members: 124
+        members: 133
         name: Fresno Node.js Developer Community
         state: CA
         lat: 36.84000015258789
@@ -28926,7 +28927,7 @@ regions:
             photo_id: 246341016
             photo_link: 'http://photos1.meetupstatic.com/photos/member/a/0/3/8/member_246341016.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/a/0/3/8/thumb_246341016.jpeg'
-        members: 333
+        members: 353
         name: 'HelloMaker: Coding & Design Workshops'
         state: CA
         lat: 37.720001220703125
@@ -28950,7 +28951,7 @@ regions:
             photo_id: 246355762
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/9/d/2/member_246355762.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/d/9/d/2/thumb_246355762.jpeg'
-        members: 36
+        members: 39
         name: Fort Wayne Ember JS Meetup
         state: IN
         lat: 41.15999984741211
@@ -28974,7 +28975,7 @@ regions:
             photo_id: 101519332
             photo_link: 'http://photos4.meetupstatic.com/photos/member/e/7/c/4/member_101519332.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/e/7/c/4/thumb_101519332.jpeg'
-        members: 184
+        members: 195
         name: 'Franklin Developer Lunch & Learn'
         state: TN
         lat: 35.91999816894531
@@ -29003,7 +29004,7 @@ regions:
             photo_id: 246617326
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/3/a/e/member_246617326.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/4/3/a/e/thumb_246617326.jpeg'
-        members: 196
+        members: 208
         name: Modern JavaScript
         state: MA
         lat: 42.650001525878906
@@ -29071,7 +29072,7 @@ regions:
             photo_id: 246530452
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/5/1/4/member_246530452.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/c/5/1/4/thumb_246530452.jpeg'
-        members: 758
+        members: 803
         name: Code Oregon
         state: OR
         lat: 45.5
@@ -29083,7 +29084,7 @@ regions:
         timezone: US/Central
         created: 1432911425000
         link: 'http://www.meetup.com/All-Things-Web-Tech/'
-        rating: 4.75
+        rating: 4.86
         description: >-
           <p>Our Goals are:</p>
 
@@ -29106,7 +29107,7 @@ regions:
             photo_id: 246582721
             photo_link: 'http://photos2.meetupstatic.com/photos/member/a/6/e/1/member_246582721.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/6/e/1/thumb_246582721.jpeg'
-        members: 386
+        members: 410
         name: All Things Web Tech
         state: IL
         lat: 41.849998474121094
@@ -29142,7 +29143,7 @@ regions:
             photo_id: 246233192
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/f/c/8/member_246233192.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/c/f/c/8/thumb_246233192.jpeg'
-        members: 70
+        members: 71
         name: Long Island JavaScript Group
         state: NY
         lat: 40.869998931884766
@@ -29171,7 +29172,7 @@ regions:
             photo_id: 246705507
             photo_link: 'http://photos3.meetupstatic.com/photos/member/b/1/c/3/member_246705507.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/b/1/c/3/thumb_246705507.jpeg'
-        members: 95
+        members: 98
         name: InRhythm U
         state: NY
         lat: 40.75
@@ -29221,7 +29222,7 @@ regions:
             photo_id: 246713872
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/2/7/0/member_246713872.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/d/2/7/0/thumb_246713872.jpeg'
-        members: 113
+        members: 115
         name: 'Enterprise 3.0 (cloud, SaaS, open-source takeover of IT)'
         state: OR
         lat: 45.5
@@ -29269,14 +29270,14 @@ regions:
             photo_id: 245034668
             photo_link: 'http://photos4.meetupstatic.com/photos/member/d/5/8/c/member_245034668.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/d/5/8/c/thumb_245034668.jpeg'
-        members: 265
+        members: 276
         name: Boston Code Dojo - Competitive Programming
         state: MA
         lat: 42.38999938964844
         who: Aspiring Software Masters
       - utc_offset: -18000000
         country: US
-        visibility: public
+        visibility: public_limited
         city: Atlanta
         timezone: US/Eastern
         created: 1433457262000
@@ -29301,23 +29302,26 @@ regions:
           <p><b><a href="http://www.digitalcrafts.com/immersive-web.html">16 Week
           Immersive Coding Bootcamp</a> (Buckhead - DigitalCrafts HQ)</b></p>
 
-          <p>• Learn 2 Full Stacks: Javascript &amp; the MEAN Stack, and PHP
+          <p>• Learn Front-end Web Development including HTML, CSS, JavaScript,
+          and much more.&nbsp;</p>
+
+          <p>•&nbsp;Learn 2 Full Stacks: Javascript &amp; the MEAN Stack, and PHP
           &amp; the LAMP Stack.</p>
 
-          <p>• Option to also enroll in the iOS Mobile Engineering Elective at no
-          additional cost (see below).<br> <br></p>
+          <p>• Option to also enroll in the iOS App Development Elective at
+          a reduced rate (see below). <br> <br></p>
 
-          <p><b>iOS Mobile Engineering Elective</b></p>
+          <p><b><a href="http://www.digitalcrafts.com/mobile.html">iOS App
+          Development Evening Course</a></b></p>
 
-          <p>• &nbsp;For the first 12 weeks of the Immersive Bootcamp, on Mondays
-          &amp; Wednesdays from 6:30-9:30pm.</p>
+          <p>• &nbsp;Classes on Mondays &amp; Wednesdays from 6:30-9:30pm at
+          DigitalCrafts HQ (Buckhead)</p>
 
-          <p>• &nbsp;Students have the opportunity to learn Swift and XCode from
-          an industry expert and build native iOS apps.</p>
+          <p>• &nbsp;Students have the opportunity to learn mobile apps using
+          Swift, Xcode, and the iOS Software Development kit from an industry
+          expert.</p>
 
-          <p>• An additional 72 hours of instruction.<br></p>
-
-          <p><br></p>
+          <p> <br></p>
 
           <p>Thanks again for your interest, we look forward to chatting!
           <br></p>
@@ -29336,7 +29340,7 @@ regions:
             photo_id: 246792665
             photo_link: 'http://photos1.meetupstatic.com/photos/member/3/1/7/9/member_246792665.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/3/1/7/9/thumb_246792665.jpeg'
-        members: 586
+        members: 630
         name: 'DigitalCrafts | Learn to Code in Atlanta'
         state: GA
         lat: 33.83000183105469
@@ -29350,22 +29354,29 @@ regions:
         link: 'http://www.meetup.com/build-with-code/'
         rating: 4.98
         description: >-
-          <p>Build a new incredible product every Thursday 6:30pm-8:00pm while
-          learning programming fundamentals</p>
+          <p><b>Build with Code hosts free weekly JavaScript and Software
+          Engineering workshops, lectures and pair-programming sessions.
+          Welcome!</b></p>
+
+          <p>Learn and build with the hard parts of JavaScript every Thursday
+          6:30pm-8:00pm through intuitive lectures and pair-programming</p>
 
           <p>The reason people who only watch programming videos don't become
           programmers is because they're not programming. Come join other
           aspiring engineers and start building!</p>
 
-          <p><span>Hosted at Codesmith e</span><span>very week on Thursdays
-          6:30pm-8:00pm</span></p>
+          <p>In JavaScript the Hard Parts, we cover callbacks,&nbsp;higher-order
+          functions (functional programming with JavaScript), object-oriented
+          programming with JavaScript, closure, scope and execution context</p>
+
+          <p>Hosted at&nbsp;<a
+          href="https://www.codesmith.io/">Codesmith</a>&nbsp;every week on
+          Thursdays 6:30pm-8:00pm and taught by Codesmith CTO Will Sentance</p>
 
           <p>Price: Always free</p>
 
-          <p><b> <br></b></p>
-
-          <p><b>Codesmith </b><span>(</span><a
-          href="http://codesmith.io">codesmith.io</a><span>)</span> <br></p>
+          <p>Codesmith&nbsp;(<a
+          href="https://www.codesmith.io/">Codesmith</a>)&nbsp;</p>
 
           <p>Codesmith teaches full stack software engineering in JavaScript
           through a 12 week immersive program.&nbsp;</p>
@@ -29375,25 +29386,15 @@ regions:
           can secure mid-to-senior level software engineering positions or launch
           their own ventures</p>
 
-          <p>The next cohort begins August 17. Apply at&nbsp;<a
-          href="http://codesmith.io/apply">codesmith.io/apply</a>.&nbsp;</p>
+          <p>Apply to the program at&nbsp;<a
+          href="http://codesmith.io/apply">codesmith.io/apply</a>. For further
+          questions email&nbsp;<a
+          href="mailto:admissions@codesmith.io">admissions@codesmith.io</a></p>
 
-          <p><span>To apply for the scholarship, apply to the program
-          at&nbsp;</span><a
-          href="http://codesmith.io/apply">codesmith.io/apply</a><span>. If
-          you're admitted to the program, you'll then be able to apply for the
-          scholarship. For further questions email&nbsp;</span><a
-          href="mailto:admissions@codesmith.io">admissions@codesmith.io</a>
-          <br></p>
+          <p><img
+          src="http://photos1.meetupstatic.com/photos/event/c/e/b/8/600_441832920.jpeg"></p>
 
-          <p> <br><i>Scholarship specifics</i></p>
-
-          <p>Women, minorities and veterans are severely underrepresented in the
-          technology workforce. We aim to ensure that tuition cost does not
-          prohibit talented people applying to Codesmith. To apply for
-          a scholarship you must be one of the following: a military veteran,
-          a woman (of any race), URM (defined as African-American,
-          Hispanic/Latino(a), or Native American). <br></p>
+          <p><br></p>
         lon: -118.43000030517578
         group_photo:
           highres_link: 'http://photos4.meetupstatic.com/photos/event/1/4/d/7/highres_440045335.jpeg'
@@ -29409,7 +29410,7 @@ regions:
             photo_id: 209689762
             photo_link: 'http://photos2.meetupstatic.com/photos/member/c/2/6/2/member_209689762.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/c/2/6/2/thumb_209689762.jpeg'
-        members: 892
+        members: 974
         name: Build With Code - Los Angeles
         state: CA
         lat: 33.9900016784668
@@ -29445,7 +29446,7 @@ regions:
             photo_id: 52719802
             photo_link: 'http://photos1.meetupstatic.com/photos/member/9/b/7/a/member_52719802.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/9/b/7/a/thumb_52719802.jpeg'
-        members: 212
+        members: 222
         name: Ybor Tech
         state: FL
         lat: 27.979999542236328
@@ -29544,7 +29545,7 @@ regions:
             photo_id: 251167058
             photo_link: 'http://photos1.meetupstatic.com/photos/member/1/b/9/2/member_251167058.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/1/b/9/2/thumb_251167058.jpeg'
-        members: 35
+        members: 38
         name: Atlanta IBM Bluemix™ Meetup
         state: GA
         lat: 33.83000183105469
@@ -29556,7 +29557,7 @@ regions:
         timezone: US/Eastern
         created: 1436292655000
         link: 'http://www.meetup.com/New-York-JavaScript-Study-Group/'
-        rating: 4.72
+        rating: 4.79
         description: 'The NY Javascript Study Group, in close co-operation with the Python Study Group, is a peer-driven forum for Javascript users to learn, study, and interact as a community to solve their individual programming tasks. Users of all skill levels are welcome and encouraged to attend.'
         lon: -74
         join_mode: open
@@ -29568,7 +29569,7 @@ regions:
             photo_id: 245637141
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/f/3/5/member_245637141.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/d/f/3/5/thumb_245637141.jpeg'
-        members: 341
+        members: 383
         name: New York JavaScript Study Group
         state: NY
         lat: 40.720001220703125
@@ -29592,7 +29593,7 @@ regions:
             photo_id: 6920878
             photo_link: 'http://photos1.meetupstatic.com/photos/member/5/1/8/e/member_6920878.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/5/1/8/e/thumb_6920878.jpeg'
-        members: 402
+        members: 432
         name: JavaScript Workshops LA
         state: CA
         lat: 34.040000915527344
@@ -29621,7 +29622,7 @@ regions:
             photo_id: 248278088
             photo_link: 'http://photos3.meetupstatic.com/photos/member/e/2/e/8/member_248278088.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/e/2/e/8/thumb_248278088.jpeg'
-        members: 197
+        members: 216
         name: Free Code Camp Seattle
         state: WA
         lat: 47.66999816894531
@@ -29633,6 +29634,7 @@ regions:
         timezone: Canada/Eastern
         created: 1438207654000
         link: 'http://www.meetup.com/haltonjs/'
+        rating: 5
         description: '<p>HaltonJS is a monthly event that will occur on the last Thursday @ 7:30pm - 9:30PM of every month starting in September. Location TBD. This is a meetup group for anybody that wants to enhance their knowledge in JavaScript and web technologies.</p>'
         lon: -79.7699966430664
         group_photo:
@@ -29649,7 +29651,7 @@ regions:
             photo_id: 248888966
             photo_link: 'http://photos2.meetupstatic.com/photos/member/2/3/0/6/member_248888966.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/2/3/0/6/thumb_248888966.jpeg'
-        members: 40
+        members: 43
         name: HaltonJS
         state: 'ON'
         lat: 43.369998931884766
@@ -29677,7 +29679,7 @@ regions:
             photo_id: 28173032
             photo_link: 'http://photos3.meetupstatic.com/photos/member/8/1/0/8/member_28173032.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/8/1/0/8/thumb_28173032.jpeg'
-        members: 256
+        members: 290
         name: Cambridge Developer Entrepreneur Networking Full Stack
         state: MA
         lat: 42.38999938964844
@@ -29729,7 +29731,7 @@ regions:
             photo_id: 249709466
             photo_link: 'http://photos3.meetupstatic.com/photos/member/c/1/3/a/member_249709466.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/c/1/3/a/thumb_249709466.jpeg'
-        members: 141
+        members: 148
         name: "IPA's and API's"
         state: CA
         lat: 33.630001068115234
@@ -29753,7 +29755,7 @@ regions:
             photo_id: 248566801
             photo_link: 'http://photos1.meetupstatic.com/photos/member/b/6/d/1/member_248566801.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/b/6/d/1/thumb_248566801.jpeg'
-        members: 190
+        members: 194
         name: Bay Area Electron User Group
         state: CA
         lat: 37.779998779296875
@@ -29776,7 +29778,7 @@ regions:
             photo_id: 207774372
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/4/6/4/member_207774372.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/d/4/6/4/thumb_207774372.jpeg'
-        members: 82
+        members: 84
         name: Denver Cordova/Ionic Meetup
         state: CO
         lat: 39.70000076293945
@@ -29805,7 +29807,7 @@ regions:
             photo_id: 248727509
             photo_link: 'http://photos2.meetupstatic.com/photos/member/6/b/7/5/member_248727509.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/b/7/5/thumb_248727509.jpeg'
-        members: 205
+        members: 213
         name: Los Angeles ReactJS User Group
         state: CA
         lat: 34.02000045776367
@@ -29839,7 +29841,7 @@ regions:
             photo_id: 242317146
             photo_link: 'http://photos4.meetupstatic.com/photos/member/9/1/1/a/member_242317146.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/9/1/1/a/thumb_242317146.jpeg'
-        members: 96
+        members: 101
         name: NYC Women Who Go
         state: NY
         lat: 40.75
@@ -29933,7 +29935,7 @@ regions:
             photo_id: 175173282
             photo_link: 'http://photos4.meetupstatic.com/photos/member/8/2/0/2/member_175173282.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/8/2/0/2/thumb_175173282.jpeg'
-        members: 90
+        members: 100
         name: Open Source NH
         state: NH
         lat: 42.9900016784668
@@ -29965,7 +29967,7 @@ regions:
             photo_id: 105255202
             photo_link: 'http://photos3.meetupstatic.com/photos/member/3/b/6/2/member_105255202.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/3/b/6/2/thumb_105255202.jpeg'
-        members: 50
+        members: 57
         name: NodeGreenville
         state: SC
         lat: 34.900001525878906
@@ -29993,7 +29995,7 @@ regions:
             photo_id: 249175501
             photo_link: 'http://photos3.meetupstatic.com/photos/member/d/8/c/d/member_249175501.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/d/8/c/d/thumb_249175501.jpeg'
-        members: 44
+        members: 45
         name: Universal JavaScript
         state: UT
         lat: 40.41999816894531
@@ -30005,7 +30007,7 @@ regions:
         timezone: US/Central
         created: 1440704513000
         link: 'http://www.meetup.com/DFW-Front-end-development/'
-        rating: 3
+        rating: 3.88
         description: '<p>Meet other front end developers to share your knowledge and discuss frameworks, such as AngularJS and front end ecosystems toolsets like Bower, npm, gulp and more. All skill-levels, platform backgrounds and languages welcome.</p>'
         lon: -96.80000305175781
         group_photo:
@@ -30022,7 +30024,7 @@ regions:
             photo_id: 249694489
             photo_link: 'http://photos2.meetupstatic.com/photos/member/8/6/b/9/member_249694489.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/8/6/b/9/thumb_249694489.jpeg'
-        members: 177
+        members: 208
         name: DFW Front end development
         state: TX
         lat: 32.790000915527344
@@ -30063,7 +30065,7 @@ regions:
             photo_id: 204871162
             photo_link: 'http://photos2.meetupstatic.com/photos/member/7/9/b/a/member_204871162.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/7/9/b/a/thumb_204871162.jpeg'
-        members: 25
+        members: 26
         name: Austin ElectronJs Meetup
         state: TX
         lat: 30.270000457763672
@@ -30092,7 +30094,7 @@ regions:
             photo_id: 249219222
             photo_link: 'http://photos2.meetupstatic.com/photos/member/9/9/3/6/member_249219222.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/9/9/3/6/thumb_249219222.jpeg'
-        members: 66
+        members: 70
         name: 'Free Code Camp - Orlando, FL'
         state: FL
         lat: 28.399999618530273
@@ -30139,7 +30141,7 @@ regions:
             photo_id: 249414777
             photo_link: 'http://photos3.meetupstatic.com/photos/member/d/5/f/9/member_249414777.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/d/5/f/9/thumb_249414777.jpeg'
-        members: 42
+        members: 65
         name: 'CodeCraft School & Web Development Community'
         state: CO
         lat: 40.04999923706055
@@ -30162,7 +30164,7 @@ regions:
             photo_id: 247700410
             photo_link: 'http://photos2.meetupstatic.com/photos/member/4/f/b/a/member_247700410.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/4/f/b/a/thumb_247700410.jpeg'
-        members: 89
+        members: 98
         name: Utah JavaScript Game Night
         state: UT
         lat: 40.540000915527344
@@ -30182,12 +30184,6 @@ regions:
 
 
 
-
-
-
-
-
-
           How often would you like to meet? What would you like to learn? Would
           you like to sponsor a meetup in Bellevue? Join us and discuss!
         lon: -122.20999908447266
@@ -30200,7 +30196,7 @@ regions:
             photo_id: 245562320
             photo_link: 'http://photos4.meetupstatic.com/photos/member/a/5/5/0/member_245562320.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/a/5/5/0/thumb_245562320.jpeg'
-        members: 179
+        members: 202
         name: BellevueJS
         state: WA
         lat: 47.619998931884766
@@ -30228,7 +30224,7 @@ regions:
             photo_id: 245709593
             photo_link: 'http://photos3.meetupstatic.com/photos/member/2/5/7/9/member_245709593.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/2/5/7/9/thumb_245709593.jpeg'
-        members: 82
+        members: 151
         name: Cloud Native New York
         state: NY
         lat: 40.7400016784668
@@ -30251,7 +30247,7 @@ regions:
             photo_id: 249360628
             photo_link: 'http://photos2.meetupstatic.com/photos/member/2/7/4/member_249360628.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/2/7/4/thumb_249360628.jpeg'
-        members: 63
+        members: 71
         name: San Marcos Tech Meetup
         state: TX
         lat: 29.8799991607666
@@ -30291,7 +30287,7 @@ regions:
             photo_id: 189147322
             photo_link: 'http://photos3.meetupstatic.com/photos/member/6/a/b/a/member_189147322.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/6/a/b/a/thumb_189147322.jpeg'
-        members: 85
+        members: 96
         name: LA Software Craftsmanship
         state: CA
         lat: 34.02000045776367
@@ -30315,7 +30311,7 @@ regions:
             photo_id: 156467512
             photo_link: 'http://photos3.meetupstatic.com/photos/member/b/9/9/8/member_156467512.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/b/9/9/8/thumb_156467512.jpeg'
-        members: 102
+        members: 126
         name: "Dan's Linux JavaScript Class"
         state: CA
         lat: 37.439998626708984
@@ -30372,14 +30368,11 @@ regions:
           at&nbsp;<a
           href="http://www.freecodecamp.com">freecodecamp.com</a>.</p>
 
-          <p><span>This meetup will provide opportunities to meet and connect
-          with others in the Ann Arbor area, get help, and maybe find someone
-          local to pair program with.</span></p>
+          <p><span>This meetup will provide opportunities to meet other campers
+          in the Ann Arbor area, get help, and find people to pair program
+          with.</span></p>
 
-          <p>Check out our local Gitter chatroom at: &nbsp;<a
-          href="https://gitter.im/freecodecamp/AnnArbor">https://gitter.im/freecodecamp/AnnArbor</a></p>
-
-          <p>and our local Facebook page at: &nbsp;<a
+          <p>Check out our <span>local Facebook page at: &nbsp;</span><a
           href="https://www.facebook.com/groups/free.code.camp.ann.arbor/">https://www.facebook.com/groups/free.code.camp.ann.arbor/</a></p>
         lon: -83.80999755859375
         group_photo:
@@ -30396,7 +30389,7 @@ regions:
             photo_id: 249614616
             photo_link: 'http://photos4.meetupstatic.com/photos/member/3/9/1/8/member_249614616.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/9/1/8/thumb_249614616.jpeg'
-        members: 121
+        members: 141
         name: Free Code Camp Ann Arbor
         state: MI
         lat: 42.27000045776367
@@ -30409,24 +30402,7 @@ regions:
         created: 1442096498000
         link: 'http://www.meetup.com/ReactJS-Vancouver-Meetup/'
         rating: 5
-        description: >-
-          <p><span>With an increasing number of Vancouver developers who work
-          with React (</span><a href="http://facebook.github.io/react/"
-          class="linkified">http://facebook.github.io/react/</a><span>), it's
-          time to get together and share our experiences, projects, issues, tips,
-          etc.</span> <br></p>
-
-          <p>If you work with React, React Native, React Hot Loader, React
-          Router, Flux, you name it or simply want to get an idea of what others
-          do with these technologies, please join us at one of our next
-          events.</p>
-
-          <p>For speaker or hosting suggestions, please contact us so we can
-          plan.</p>
-
-          <p>We're also available in the <i>#z_vancouver</i> Slack channel
-          at&nbsp;<a href="https://reactiflux.slack.com"
-          class="linkified">https://reactiflux.slack.com</a>.</p>
+        description: "<p>With an increasing number of Vancouver developers who work with React (<a href=\"http://facebook.github.io/react/\" class=\"linkified\">http://facebook.github.io/react/</a>), it's time to get together and share our experiences, projects, issues, tips, etc. &lt;br&gt;</p> \n<p>If you work with React, React Native, React Hot Loader, React Router, Flux, you name it or simply want to get an idea of what others do with these technologies, please join us at one of our next events.</p> \n<p>For speaker or hosting suggestions, please contact us so we can plan.</p>"
         lon: -123.12000274658203
         group_photo:
           highres_link: 'http://photos3.meetupstatic.com/photos/event/b/b/8/2/highres_441888002.jpeg'
@@ -30442,7 +30418,7 @@ regions:
             photo_id: 249646993
             photo_link: 'http://photos3.meetupstatic.com/photos/member/b/7/9/1/member_249646993.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/b/7/9/1/thumb_249646993.jpeg'
-        members: 289
+        members: 310
         name: ReactJS Vancouver Meetup
         state: BC
         lat: 49.279998779296875
@@ -30471,7 +30447,7 @@ regions:
             photo_id: 242732087
             photo_link: 'http://photos2.meetupstatic.com/photos/member/7/d/5/7/member_242732087.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/7/d/5/7/thumb_242732087.jpeg'
-        members: 148
+        members: 159
         name: NYC Future Full Stack Developers
         state: NY
         lat: 40.75
@@ -30495,7 +30471,7 @@ regions:
             photo_id: 245381682
             photo_link: 'http://photos2.meetupstatic.com/photos/member/a/2/d/2/member_245381682.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/a/2/d/2/thumb_245381682.jpeg'
-        members: 95
+        members: 101
         name: Greater Boston Enterprise UI
         state: MA
         lat: 42.5099983215332
@@ -30518,7 +30494,7 @@ regions:
             photo_id: 249957133
             photo_link: 'http://photos1.meetupstatic.com/photos/member/d/f/2/d/member_249957133.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/d/f/2/d/thumb_249957133.jpeg'
-        members: 72
+        members: 77
         name: (ave) B Social Javascript
         state: NY
         lat: 40.720001220703125
@@ -30541,7 +30517,7 @@ regions:
             photo_id: 246705449
             photo_link: 'http://photos1.meetupstatic.com/photos/member/b/1/8/9/member_246705449.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/b/1/8/9/thumb_246705449.jpeg'
-        members: 102
+        members: 110
         name: Seattle MEAN Stack Developers
         state: WA
         lat: 47.630001068115234
@@ -30569,7 +30545,7 @@ regions:
             photo_id: 250105691
             photo_link: 'http://photos2.meetupstatic.com/photos/member/6/4/5/b/member_250105691.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/6/4/5/b/thumb_250105691.jpeg'
-        members: 10
+        members: 12
         name: Friday Night Hacks at the Biz Foundry
         state: TN
         lat: 36.20000076293945
@@ -30604,7 +30580,7 @@ regions:
             photo_id: 250117220
             photo_link: 'http://photos4.meetupstatic.com/photos/member/9/1/6/4/member_250117220.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/9/1/6/4/thumb_250117220.jpeg'
-        members: 102
+        members: 109
         name: 'Austin ReactJS & Native Meetup'
         state: TX
         lat: 30.270000457763672
@@ -30622,7 +30598,7 @@ regions:
         organizer:
           member_id: 193425328
           name: BayOne Labs
-        members: 71
+        members: 76
         name: BayOne Labs
         state: CA
         lat: 37.709999084472656
@@ -30650,7 +30626,7 @@ regions:
             photo_id: 243490037
             photo_link: 'http://photos1.meetupstatic.com/photos/member/2/7/3/5/member_243490037.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/2/7/3/5/thumb_243490037.jpeg'
-        members: 32
+        members: 35
         name: Code for Odin
         state: UT
         lat: 40.31999969482422
@@ -30679,7 +30655,7 @@ regions:
             photo_id: 10432826
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/e/5/a/member_10432826.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/c/e/5/a/thumb_10432826.jpeg'
-        members: 82
+        members: 86
         name: Queens Software Development and Design
         state: NY
         lat: 40.790000915527344
@@ -30809,7 +30785,7 @@ regions:
             photo_id: 10787314
             photo_link: 'http://photos1.meetupstatic.com/photos/member/b/8/d/2/member_10787314.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/b/8/d/2/thumb_10787314.jpeg'
-        members: 26
+        members: 32
         name: GUN Utah Meetup
         state: UT
         lat: 40.220001220703125
@@ -30833,7 +30809,7 @@ regions:
             photo_id: 41345002
             photo_link: 'http://photos2.meetupstatic.com/photos/member/1/3/8/a/member_41345002.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/1/3/8/a/thumb_41345002.jpeg'
-        members: 87
+        members: 110
         name: NodeBots Colorado
         state: CO
         lat: 39.70000076293945
@@ -30856,7 +30832,7 @@ regions:
             photo_id: 198160052
             photo_link: 'http://photos3.meetupstatic.com/photos/member/9/c/7/4/member_198160052.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/9/c/7/4/thumb_198160052.jpeg'
-        members: 25
+        members: 27
         name: Los Angeles Amazon Echo Developer Meetup
         state: CA
         lat: 33.970001220703125
@@ -30879,7 +30855,7 @@ regions:
             photo_id: 141871142
             photo_link: 'http://photos2.meetupstatic.com/photos/member/7/9/a/6/member_141871142.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/7/9/a/6/thumb_141871142.jpeg'
-        members: 31
+        members: 32
         name: Electron/Atom
         state: MA
         lat: 42.369998931884766
@@ -30902,7 +30878,7 @@ regions:
             photo_id: 251099430
             photo_link: 'http://photos2.meetupstatic.com/photos/member/e/8/2/6/member_251099430.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/e/8/2/6/thumb_251099430.jpeg'
-        members: 18
+        members: 24
         name: San Antonio Meteor Meetup
         state: TX
         lat: 29.459999084472656
@@ -30931,7 +30907,7 @@ regions:
             photo_id: 246151999
             photo_link: 'http://photos4.meetupstatic.com/photos/member/7/c/f/f/member_246151999.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/7/c/f/f/thumb_246151999.jpeg'
-        members: 79
+        members: 101
         name: Free Code Camp Austin
         state: TX
         lat: 30.170000076293945
@@ -30943,6 +30919,7 @@ regions:
         timezone: US/Eastern
         created: 1446750295000
         link: 'http://www.meetup.com/Fretless-Happy-Hour-Sponsored-by-DoubleMap/'
+        rating: 5
         description: "<p>Join us for the inaugural High Fives Happy Hour at the DoubleMap offices for free food, drinks, and awesome people. This is a new, casual event that will occur quarterly. We want it to be a fun get-together with Indy's tech community to foster new relationships or catch up with old friends. People are free to come and go as they please. The event will start at 4:30 and run to 7:30.</p>"
         lon: -86.18000030517578
         join_mode: open
@@ -30954,7 +30931,7 @@ regions:
             photo_id: 251148524
             photo_link: 'http://photos3.meetupstatic.com/photos/member/b/d/8/c/member_251148524.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/b/d/8/c/thumb_251148524.jpeg'
-        members: 48
+        members: 84
         name: High Fives Happy Hour
         state: IN
         lat: 39.88999938964844
@@ -30982,7 +30959,7 @@ regions:
             photo_id: 251243098
             photo_link: 'http://photos2.meetupstatic.com/photos/member/5/a/3/a/member_251243098.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/5/a/3/a/thumb_251243098.jpeg'
-        members: 10
+        members: 19
         name: Homebrew Computer Club
         state: FL
         lat: 30.3799991607666
@@ -31032,7 +31009,7 @@ regions:
             photo_id: 251378509
             photo_link: 'http://photos3.meetupstatic.com/photos/member/9/6/6/d/member_251378509.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/9/6/6/d/thumb_251378509.jpeg'
-        members: 42
+        members: 48
         name: Ionic Vancouver
         state: BC
         lat: 49.279998779296875
@@ -31056,7 +31033,7 @@ regions:
             photo_id: 251445314
             photo_link: 'http://photos2.meetupstatic.com/photos/member/b/1/0/2/member_251445314.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/b/1/0/2/thumb_251445314.jpeg'
-        members: 14
+        members: 20
         name: 'DFW Improving Web & Mobile App Performance w/New Relic APM'
         state: TX
         lat: 32.790000915527344
@@ -31073,8 +31050,8 @@ regions:
         join_mode: open
         organizer:
           member_id: 195696131
-          name: Russell
-        members: 27
+          name: Graham McBain
+        members: 58
         name: Learn To Code Phoenix
         state: AZ
         lat: 33.45000076293945
@@ -31086,6 +31063,7 @@ regions:
         timezone: Canada/Eastern
         created: 1447787206000
         link: 'http://www.meetup.com/decodemtl/'
+        rating: 5
         description: >-
           <p><a href="http://www.decodemtl.com">DecodeMTL</a> is the hub for
           digital education in Montreal. Join us for networking events,
@@ -31113,7 +31091,7 @@ regions:
             photo_id: 251476585
             photo_link: 'http://photos1.meetupstatic.com/photos/member/4/0/c/9/member_251476585.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/4/0/c/9/thumb_251476585.jpeg'
-        members: 75
+        members: 122
         name: 'DecodeMTL: Learn to Code'
         state: QC
         lat: 45.5099983215332
@@ -31141,7 +31119,7 @@ regions:
             photo_id: 251539022
             photo_link: 'http://photos1.meetupstatic.com/photos/member/4/a/4/e/member_251539022.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/4/a/4/e/thumb_251539022.jpeg'
-        members: 28
+        members: 41
         name: Worldwide Cappuccino Meetup
         state: CA
         lat: 37.40999984741211
@@ -31177,7 +31155,7 @@ regions:
             photo_id: 251499634
             photo_link: 'http://photos1.meetupstatic.com/photos/member/9/a/d/2/member_251499634.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/9/a/d/2/thumb_251499634.jpeg'
-        members: 18
+        members: 28
         name: Beer.js Tallahassee
         state: FL
         lat: 30.600000381469727
@@ -31189,13 +31167,14 @@ regions:
         timezone: US/Eastern
         created: 1447882608000
         link: 'http://www.meetup.com/Pragmatic-Innovators/'
+        rating: 4.5
         description: "This is a group for anyone interested in leading software development languages, technologies, and practices. All skill levels are welcome. Topics discussed will include ReactJS, ReactJS Native, Scala, Single-Page Application Technologies, Mobile Application Development, Web Design, and Data Analytics. In-Person meetups will be held at our sponsor's (Pragmatics) corporate office in Reston."
         lon: -77.33999633789062
         join_mode: open
         organizer:
           member_id: 195756382
           name: Jared Spigner
-        members: 70
+        members: 121
         name: Pragmatic Innovators
         state: VA
         lat: 38.959999084472656
@@ -31223,7 +31202,7 @@ regions:
             photo_id: 236464412
             photo_link: 'http://photos4.meetupstatic.com/photos/member/1/1/3/c/member_236464412.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/1/1/3/c/thumb_236464412.jpeg'
-        members: 21
+        members: 32
         name: Mueller Technology Collablorative
         state: TX
         lat: 30.219999313354492
@@ -31235,6 +31214,7 @@ regions:
         timezone: US/Pacific
         created: 1448147020000
         link: 'http://www.meetup.com/Free-Code-Camp-Fresno/'
+        rating: 5
         description: 'This is the Fresno chapter of Free Code Camp. Share your knowledge, learn new stuff, support one another through tough times. We also offer opportunities to give/hear a talk, pair up on a project, hangout and talk about code, and so much more. '
         lon: -119.80000305175781
         join_mode: open
@@ -31246,7 +31226,7 @@ regions:
             photo_id: 244857347
             photo_link: 'http://photos2.meetupstatic.com/photos/member/e/0/0/3/member_244857347.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/e/0/0/3/thumb_244857347.jpeg'
-        members: 18
+        members: 42
         name: Free Code Camp Fresno
         state: CA
         lat: 36.84000015258789
@@ -31269,11 +31249,150 @@ regions:
             photo_id: 243706841
             photo_link: 'http://photos4.meetupstatic.com/photos/member/b/6/f/9/member_243706841.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/b/6/f/9/thumb_243706841.jpeg'
-        members: 1
+        members: 34
         name: Portland New Relic User Group
         state: OR
         lat: 45.5
         who: Members
+      - utc_offset: -18000000
+        country: US
+        visibility: public
+        city: Mc Lean
+        timezone: US/Eastern
+        created: 1441226087000
+        link: 'http://www.meetup.com/tysons-js/'
+        rating: 5
+        description: '<p>"This group is for anyone who is interested in JavaScript and is in the Tysons, VA area. All skill levels are welcome. We get together, have hack nights, product demos, discuss new frameworks / libraries, eat, drink, and be merry."</p>'
+        lon: -77.18000030517578
+        group_photo:
+          highres_link: 'http://photos3.meetupstatic.com/photos/event/1/6/9/8/highres_444905784.jpeg'
+          photo_id: 444905784
+          photo_link: 'http://photos3.meetupstatic.com/photos/event/1/6/9/8/600_444905784.jpeg'
+          thumb_link: 'http://photos3.meetupstatic.com/photos/event/1/6/9/8/thumb_444905784.jpeg'
+        join_mode: open
+        organizer:
+          member_id: 13253647
+          name: Jesse Palmer
+          photo:
+            highres_link: 'http://photos1.meetupstatic.com/photos/member/3/c/c/9/highres_250035561.jpeg'
+            photo_id: 250035561
+            photo_link: 'http://photos1.meetupstatic.com/photos/member/3/c/c/9/member_250035561.jpeg'
+            thumb_link: 'http://photos1.meetupstatic.com/photos/member/3/c/c/9/thumb_250035561.jpeg'
+        members: 106
+        name: tysons.js
+        state: VA
+        lat: 38.93000030517578
+        who: JavaScripters
+      - utc_offset: -28800000
+        country: US
+        visibility: public
+        city: San Francisco
+        timezone: US/Pacific
+        created: 1449781540000
+        link: 'http://www.meetup.com/Hire-Front-End-Developers/'
+        description: >-
+          <p>It's never been a better time to be a front end developer, or a more
+          challenging time for companies to find an appropriate fit in the Bay
+          Area. If you'd like to meet enthusiasts of technologies like
+          angular.js, ember.js, meeteor, react, html5, css, UX, and other front
+          end tools, join us!</p>
+
+          <p>We're excited to provide free opportunities for talent and companies
+          to meet in the real world,&nbsp;and pair awesome front end devs with
+          competitive and interesting companies. Typical evenings include
+          interviews of top companies and pitches by startups that are looking
+          for talent, followed by a mixer.</p>
+
+          <p><span>Some presenting companies from past events include:
+          HumbleBundle, Enjoytech, Adobe, Tapjoy, MatterMark, Razer, and many
+          more.</span> <br></p>
+        lon: -122.41999816894531
+        join_mode: open
+        organizer:
+          member_id: 196702953
+          name: Eric Siegfried
+          photo:
+            highres_link: 'http://photos3.meetupstatic.com/photos/member/6/e/0/2/highres_252028162.jpeg'
+            photo_id: 252028162
+            photo_link: 'http://photos1.meetupstatic.com/photos/member/6/e/0/2/member_252028162.jpeg'
+            thumb_link: 'http://photos3.meetupstatic.com/photos/member/6/e/0/2/thumb_252028162.jpeg'
+        members: 3
+        name: Hire Front End Developers
+        state: CA
+        lat: 37.779998779296875
+        who: technologists
+      - utc_offset: -28800000
+        country: US
+        visibility: public
+        city: San Francisco
+        timezone: US/Pacific
+        created: 1449782792000
+        link: 'http://www.meetup.com/Hire-node-JS-developers/'
+        description: >-
+          <p>It's never been a better time to be node developer, or a more
+          challenging time for companies to find an appropriate fit in the Bay
+          Area. We're excited to provide free opportunities for talent and
+          companies to meet in the real world, and pair awesome server side devs
+          with competitive and interesting companies.&nbsp;</p>
+
+          <p><span>Some presenting companies from past events include:
+          HumbleBundle, Enjoytech, Adobe, Tapjoy, MatterMark, Razer, and many
+          more.</span> <br></p>
+        lon: -122.41999816894531
+        join_mode: open
+        organizer:
+          member_id: 196702953
+          name: Eric Siegfried
+          photo:
+            highres_link: 'http://photos3.meetupstatic.com/photos/member/6/e/0/2/highres_252028162.jpeg'
+            photo_id: 252028162
+            photo_link: 'http://photos1.meetupstatic.com/photos/member/6/e/0/2/member_252028162.jpeg'
+            thumb_link: 'http://photos3.meetupstatic.com/photos/member/6/e/0/2/thumb_252028162.jpeg'
+        members: 1
+        name: Hire Node Developers
+        state: CA
+        lat: 37.779998779296875
+        who: Noders
+      - utc_offset: -21600000
+        country: US
+        visibility: public
+        city: Milwaukee
+        timezone: US/Central
+        created: 1449871656000
+        link: 'http://www.meetup.com/ReactJS-Milwaukee/'
+        description: >-
+          <p><span>ReactJS is an incredible JavaScript library started by
+          Facebook. &nbsp;Join us if you'd like to learn more or if you have your
+          own ReactJs experience to share that others can benefit from.</span>
+          <br></p>
+
+          <p>We're focused on all things ReactJS - on client or server, for html,
+          canvas or other.</p>
+
+          <p><a href="http://facebook.github.io/react/"
+          class="linkified">http://facebook.github.io/react/</a></p>
+
+          <p> <br></p>
+        lon: -87.9000015258789
+        group_photo:
+          highres_link: 'http://photos2.meetupstatic.com/photos/event/e/0/d/6/highres_445077558.jpeg'
+          photo_id: 445077558
+          photo_link: 'http://photos4.meetupstatic.com/photos/event/e/0/d/6/600_445077558.jpeg'
+          thumb_link: 'http://photos4.meetupstatic.com/photos/event/e/0/d/6/thumb_445077558.jpeg'
+        join_mode: open
+        organizer:
+          member_id: 183393735
+          name: Ezekiel Chentnik
+          photo:
+            highres_link: 'http://photos1.meetupstatic.com/photos/member/9/b/b/a/highres_252099866.jpeg'
+            photo_id: 252099866
+            photo_link: 'http://photos1.meetupstatic.com/photos/member/9/b/b/a/member_252099866.jpeg'
+            thumb_link: 'http://photos1.meetupstatic.com/photos/member/9/b/b/a/thumb_252099866.jpeg'
+        members: 2
+        name: ReactJS Meetup
+        state: WI
+        lat: 43.04999923706055
+        who: Nerds
   - region: South Pacific
     nodeschools:
       - name: Auckland NodeSchool
@@ -31368,7 +31487,7 @@ regions:
             photo_id: 11807210
             photo_link: 'http://photos1.meetupstatic.com/photos/member/b/8/6/a/member_11807210.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/b/8/6/a/thumb_11807210.jpeg'
-        members: 744
+        members: 756
         name: AkJS
         lat: -36.849998474121094
         who: Members
@@ -31405,7 +31524,7 @@ regions:
             photo_id: 25364682
             photo_link: 'http://photos3.meetupstatic.com/photos/member/a/e/8/a/member_25364682.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/a/e/8/a/thumb_25364682.jpeg'
-        members: 1116
+        members: 1138
         name: The Melbourne Node.JS Meetup Group
         lat: -37.810001373291016
         who: Noders
@@ -31433,7 +31552,7 @@ regions:
             photo_id: 54096702
             photo_link: 'http://photos1.meetupstatic.com/photos/member/8/f/5/e/member_54096702.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/8/f/5/e/thumb_54096702.jpeg'
-        members: 258
+        members: 260
         name: perth.js
         lat: -31.959999084472656
         who: anonymous functions
@@ -31461,7 +31580,7 @@ regions:
             photo_id: 78699042
             photo_link: 'http://photos4.meetupstatic.com/photos/member/9/8/8/2/member_78699042.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/9/8/8/2/thumb_78699042.jpeg'
-        members: 1266
+        members: 1309
         name: Sydney Node.ninjas
         lat: -33.869998931884766
         who: ninjas
@@ -31488,7 +31607,7 @@ regions:
             photo_id: 87707062
             photo_link: 'http://photos4.meetupstatic.com/photos/member/b/7/d/6/member_87707062.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/b/7/d/6/thumb_87707062.jpeg'
-        members: 2040
+        members: 2099
         name: SingaporeJS
         lat: 1.2999999523162842
         who: Developers
@@ -31499,7 +31618,7 @@ regions:
         timezone: Australia/Melbourne
         created: 1367889472000
         link: 'http://www.meetup.com/EmberJS-Melbourne/'
-        rating: 4.78
+        rating: 4.66
         description: "<p>The Ember.js Melbourne Meetup is for anyone who wants to learn Ember.js, is already using it heavily, or wants to stay up to date with the fast changing developments of Ember.js. Let's get together periodically to talk about code, eat, drink, and generally geek out. See you there!</p>"
         lon: 144.9600067138672
         group_photo:
@@ -31516,7 +31635,7 @@ regions:
             photo_id: 115833042
             photo_link: 'http://photos3.meetupstatic.com/photos/member/8/1/1/2/member_115833042.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/8/1/1/2/thumb_115833042.jpeg'
-        members: 241
+        members: 244
         name: Melbourne Ember.js Meetup
         lat: -37.810001373291016
         who: Embereños
@@ -31539,7 +31658,7 @@ regions:
             photo_id: 242835851
             photo_link: 'http://photos2.meetupstatic.com/photos/member/3/d/e/b/member_242835851.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/3/d/e/b/thumb_242835851.jpeg'
-        members: 478
+        members: 489
         name: Auckland Node.js Meetup
         lat: -36.849998474121094
         who: Happy Noders
@@ -31562,7 +31681,7 @@ regions:
             photo_id: 129286262
             photo_link: 'http://photos4.meetupstatic.com/photos/member/b/4/b/6/member_129286262.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/b/4/b/6/thumb_129286262.jpeg'
-        members: 246
+        members: 249
         name: Node.js Wellington
         lat: -41.279998779296875
         who: Wellington Noders
@@ -31653,7 +31772,7 @@ regions:
             photo_id: 242277771
             photo_link: 'http://photos4.meetupstatic.com/photos/member/e/1/a/b/member_242277771.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/e/1/a/b/thumb_242277771.jpeg'
-        members: 431
+        members: 438
         name: Meteor Singapore
         lat: 1.2999999523162842
         who: Meteorities
@@ -31671,19 +31790,13 @@ regions:
 
 
 
-
-
-
-
-
-
           </p>
         lon: 174.75999450683594
         join_mode: open
         organizer:
           member_id: 72385432
           name: Anita Kean
-        members: 74
+        members: 76
         name: Auckland d3-js
         lat: -36.849998474121094
         who: members
@@ -31706,7 +31819,7 @@ regions:
         organizer:
           member_id: 122432862
           name: Hack Club
-        members: 263
+        members: 261
         name: Hack Pack
         lat: -41.279998779296875
         who: Hackers
@@ -31734,7 +31847,7 @@ regions:
             photo_id: 72118562
             photo_link: 'http://photos4.meetupstatic.com/photos/member/e/4/c/2/member_72118562.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/e/4/c/2/thumb_72118562.jpeg'
-        members: 177
+        members: 183
         name: NodeBots Singapore
         lat: 1.2999999523162842
         who: Makers
@@ -31757,7 +31870,7 @@ regions:
             photo_id: 12495708
             photo_link: 'http://photos1.meetupstatic.com/photos/member/3/d/5/c/member_12495708.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/d/5/c/thumb_12495708.jpeg'
-        members: 137
+        members: 140
         name: Adelaide front-end JS frameworks
         lat: -34.93000030517578
         who: javascripters
@@ -31768,7 +31881,7 @@ regions:
         timezone: Australia/Sydney
         created: 1389209880000
         link: 'http://www.meetup.com/Meteor-Sydney/'
-        rating: 4.68
+        rating: 4.63
         description: >-
           <p>Meet other developers using <a
           href="http://www.meteor.com">Meteor</a>. Share your knowledge, apps,
@@ -31793,7 +31906,7 @@ regions:
             photo_id: 245950810
             photo_link: 'http://photos3.meetupstatic.com/photos/member/2/a/3/a/member_245950810.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/2/a/3/a/thumb_245950810.jpeg'
-        members: 565
+        members: 575
         name: Meteor Sydney
         lat: -33.869998931884766
         who: Meteorites
@@ -31812,12 +31925,6 @@ regions:
           you're an expert developer or just getting started. Join in on live
           Devshop viewings, hackathons, inspirational classes and casual poolside
           catchups!</span><br>
-
-
-
-
-
-
 
 
 
@@ -31905,7 +32012,7 @@ regions:
             photo_id: 185177182
             photo_link: 'http://photos3.meetupstatic.com/photos/member/4/3/1/e/member_185177182.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/4/3/1/e/thumb_185177182.jpeg'
-        members: 350
+        members: 348
         name: Creative Coders
         lat: 1.2999999523162842
         who: Creative Coders
@@ -31932,7 +32039,7 @@ regions:
             photo_id: 52462482
             photo_link: 'http://photos3.meetupstatic.com/photos/member/5/7/d/2/member_52462482.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/5/7/d/2/thumb_52462482.jpeg'
-        members: 1760
+        members: 1794
         name: AngularJS Melbourne
         lat: -37.810001373291016
         who: Members
@@ -32028,7 +32135,7 @@ regions:
             photo_id: 90235652
             photo_link: 'http://photos3.meetupstatic.com/photos/member/d/9/6/4/member_90235652.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/d/9/6/4/thumb_90235652.jpeg'
-        members: 164
+        members: 168
         name: Singapore Node.JS
         lat: 1.2999999523162842
         who: Developers
@@ -32050,7 +32157,7 @@ regions:
             photo_id: 144323312
             photo_link: 'http://photos1.meetupstatic.com/photos/member/5/b/1/0/member_144323312.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/5/b/1/0/thumb_144323312.jpeg'
-        members: 77
+        members: 80
         name: Brisbane AppDynamics User Group
         lat: -27.459999084472656
         who: AppDynamos
@@ -32100,7 +32207,7 @@ regions:
             photo_id: 251444030
             photo_link: 'http://photos1.meetupstatic.com/photos/member/a/b/f/e/member_251444030.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/a/b/f/e/thumb_251444030.jpeg'
-        members: 169
+        members: 171
         name: Melbourne AppDynamics User Group
         lat: -37.810001373291016
         who: AppDynamos
@@ -32123,7 +32230,7 @@ regions:
             photo_id: 251444030
             photo_link: 'http://photos1.meetupstatic.com/photos/member/a/b/f/e/member_251444030.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/a/b/f/e/thumb_251444030.jpeg'
-        members: 149
+        members: 161
         name: Sydney AppDynamics User Group
         lat: -33.869998931884766
         who: AppDynamos
@@ -32151,7 +32258,7 @@ regions:
             photo_id: 147452072
             photo_link: 'http://photos3.meetupstatic.com/photos/member/7/d/4/8/member_147452072.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/7/d/4/8/thumb_147452072.jpeg'
-        members: 112
+        members: 113
         name: NodeBots Brisbane
         lat: -27.459999084472656
         who: Nodeboteers
@@ -32173,7 +32280,7 @@ regions:
             photo_id: 251444030
             photo_link: 'http://photos1.meetupstatic.com/photos/member/a/b/f/e/member_251444030.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/a/b/f/e/thumb_251444030.jpeg'
-        members: 89
+        members: 93
         name: New Zealand AppDynamics User Group
         lat: -41.279998779296875
         who: AppDynamos
@@ -32214,7 +32321,7 @@ regions:
             photo_id: 241379707
             photo_link: 'http://photos1.meetupstatic.com/photos/member/e/9/3/b/member_241379707.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/e/9/3/b/thumb_241379707.jpeg'
-        members: 957
+        members: 993
         name: ng-sydney
         lat: -33.869998931884766
         who: AngularJS fans
@@ -32236,7 +32343,7 @@ regions:
             photo_id: 150962872
             photo_link: 'http://photos2.meetupstatic.com/photos/member/b/3/8/member_150962872.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/b/3/8/thumb_150962872.jpeg'
-        members: 290
+        members: 292
         name: Auckland ReactJS Meetup
         lat: -36.849998474121094
         who: Reactors
@@ -32247,7 +32354,7 @@ regions:
         timezone: Australia/Sydney
         created: 1427667851000
         link: 'http://www.meetup.com/Sydney-Cloud-Foundry-Meetup/'
-        rating: 5
+        rating: 4.5
         description: >-
           <p>We will talk about all things Cloud Foundry. Whether thats about
           buildpacks, service brokers, microservices, BOSH, high availability,
@@ -32276,7 +32383,7 @@ regions:
             photo_id: 245685278
             photo_link: 'http://photos2.meetupstatic.com/photos/member/b/0/d/e/member_245685278.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/b/0/d/e/thumb_245685278.jpeg'
-        members: 298
+        members: 311
         name: Sydney Cloud Foundry Meetup
         lat: -33.869998931884766
         who: CF Ninjas
@@ -32298,7 +32405,7 @@ regions:
             photo_id: 241924602
             photo_link: 'http://photos3.meetupstatic.com/photos/member/1/1/f/a/member_241924602.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/1/1/f/a/thumb_241924602.jpeg'
-        members: 103
+        members: 108
         name: CanberraJS
         lat: -35.310001373291016
         who: Javascriptionados
@@ -32345,7 +32452,7 @@ regions:
             photo_id: 245774059
             photo_link: 'http://photos3.meetupstatic.com/photos/member/3/6/e/b/member_245774059.jpeg'
             thumb_link: 'http://photos3.meetupstatic.com/photos/member/3/6/e/b/thumb_245774059.jpeg'
-        members: 209
+        members: 218
         name: Sydney Full Stack Development Meetup
         lat: -33.869998931884766
         who: Sydney Full Stackers
@@ -32390,7 +32497,7 @@ regions:
             photo_id: 248976747
             photo_link: 'http://photos4.meetupstatic.com/photos/member/8/f/8/b/member_248976747.jpeg'
             thumb_link: 'http://photos2.meetupstatic.com/photos/member/8/f/8/b/thumb_248976747.jpeg'
-        members: 287
+        members: 323
         name: Front End Development - Building Knowledge and Skills in JS
         lat: -37.810001373291016
         who: F-Enders
@@ -32412,7 +32519,7 @@ regions:
             photo_id: 249349259
             photo_link: 'http://photos4.meetupstatic.com/photos/member/c/0/6/b/member_249349259.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/c/0/6/b/thumb_249349259.jpeg'
-        members: 25
+        members: 29
         name: Melbourne Microservices Meetup
         lat: -37.810001373291016
         who: Microservices Lovers
@@ -32427,12 +32534,17 @@ regions:
           <p>This is a group for anyone interested in flow-based programming
           and/or Noflo. All skill levels are welcome. I started this group to
           meet tech enthusiasts who are interested in this promising development
-          methodology.</p>
+          paradism.</p>
 
           <p><a
           href="https://www.google.com.au/search?client=safari&amp;rls=en&amp;q=flow+based+programming&amp;ie=UTF-8&amp;oe=UTF-8&amp;gfe_rd=cr&amp;ei=sb5PVqj4OczN8Aem8aiQDg#q=flow+based+programming&amp;tbm=vid">More
-          information about FBP</a><br></p>
+          information about FBP</a> <br></p>
         lon: 144.9600067138672
+        group_photo:
+          highres_link: 'http://photos1.meetupstatic.com/photos/event/9/e/5/0/highres_444520528.jpeg'
+          photo_id: 444520528
+          photo_link: 'http://photos1.meetupstatic.com/photos/event/9/e/5/0/600_444520528.jpeg'
+          thumb_link: 'http://photos1.meetupstatic.com/photos/event/9/e/5/0/thumb_444520528.jpeg'
         join_mode: open
         organizer:
           member_id: 65594882
@@ -32441,7 +32553,7 @@ regions:
             photo_id: 190513812
             photo_link: 'http://photos2.meetupstatic.com/photos/member/3/5/f/4/member_190513812.jpeg'
             thumb_link: 'http://photos4.meetupstatic.com/photos/member/3/5/f/4/thumb_190513812.jpeg'
-        members: 35
+        members: 45
         name: Flow-based Programming Melbourne
         lat: -37.810001373291016
         who: Flow Developers
@@ -32463,17 +32575,9 @@ regions:
             photo_id: 251557231
             photo_link: 'http://photos1.meetupstatic.com/photos/member/9/1/6/f/member_251557231.jpeg'
             thumb_link: 'http://photos1.meetupstatic.com/photos/member/9/1/6/f/thumb_251557231.jpeg'
-        members: 91
+        members: 122
         name: JS Workshops
         lat: -37.810001373291016
         who: Members
 
 ---
-
-## Not seeing your event listed?
-
-We periodically pull data from [meetup.com](http://meetup.com) and [nodeschool.io](http://nodeschool.io), so if
-your meetup or workshop is listed there it will show up. If you aren't listed on those sites, or
-you are the organizer of a conference that is not listed, you can add it manually by editing
-[events.md](https://github.com/nodejs/nodejs.org/blob/master/locale/en/get-involved/events.md)
-and sending a pull request to the [website repo](https://github.com/nodejs/nodejs.org).
