@@ -246,7 +246,7 @@ errors still applies here.
 
 Now that we've learned about making HTTP responses, let's put it all together.
 Building on the earlier example, we're going to make a server that sends back
-all of the data that was send to us by the user. We'll format that data as JSON
+all of the data that was sent to us by the user. We'll format that data as JSON
 using `JSON.stringify`.
 
 ```javascript
