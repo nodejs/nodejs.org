@@ -30,14 +30,14 @@ create a `package.json` file that describes your app and its dependencies:
   "version": "1.0.0",
   "description": "Node.js on Docker",
   "author": "First Last <first.last@example.com>",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "express": "^4.13.3"
   }
 }
 ```
 
-Then, create an `index.js` file that defines a web app using the
+Then, create an `server.js` file that defines a web app using the
 [Express.js](http://expressjs.com/) framework:
 
 ```javascript
@@ -114,8 +114,8 @@ EXPOSE 8080
 ```
 
 Last but not least, define the command to run your app using `CMD` which defines
-your runtime. Here we will use the basic `npm start` which will start the `main`
-file defined in your `package.json`:
+your runtime. Here we will use the basic `npm start` which will run 
+`node server.js` to start your server:
 
 ```docker
 CMD [ "npm", "start" ]
