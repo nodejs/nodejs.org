@@ -7,6 +7,15 @@ layout: foundation.hbs
 To request information on joining the Node.js Foundation, please email
 [membership@nodejs.org](mailto:membership@nodejs.org).
 
+Node.js Foundation Membership is open to businesses and individuals. Individual members will be electing two representatives to the Board of Directors in January who will be responsible for representing the diverse needs of the Node.js community in the administration of the Node.js Foundation.
+
+## Becoming an Individual Member
+
+Individual membership costs [$100 a year, or $25 for students](https://identity.linuxfoundation.org/user?destination=pid/99). Contributors to the Node.js project, including all Working Groups and sub-projects, are eligible for free membership.
+
+You are required to have a GitHub account to register.
+
+# Corporate Members
 ## Platinum
 
 <div style="text-align:center;">
