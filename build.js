@@ -254,8 +254,8 @@ function fullbuild () {
           lts: latestVersion.lts(versions)
         },
         banner: {
-          visible: true,
-          content: 'Important <a href="https://nodejs.org/en/blog/vulnerability/december-2015-security-releases/">security releases</a>, please update now!'
+          visible: false,
+          content: ''
         }
       }
     }
