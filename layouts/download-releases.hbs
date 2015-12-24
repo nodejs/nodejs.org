@@ -26,7 +26,7 @@
                                 <td>Date</td>
                                 <td>V8</td>
                                 <td>npm</td>
-                                <td>Modules</td>
+                                <td>NODE_MODULE_VERSION<a href="#ref-1">[1]</a><span id="backref-1"></span></td>
                                 <td></td>
                             </tr>
                         </thead>
@@ -38,7 +38,7 @@
                                     <td data-label="Date"><time>{{date}}</time></td>
                                     <td data-label="V8">{{v8}}</td>
                                     <td data-label="npm">{{npm}}</td>
-                                    <td data-label="Modules">{{modules}}</td>
+                                    <td data-label="NODE_MODULE_VERSION">{{modules}}</td>
                                     <td class="download-table-last">
                                         <a href="{{url}}">
                                             {{i18n 'releases.downloads'}}
@@ -54,7 +54,7 @@
                             {{/project.versions}}
                         </tbody>
                     </table>
-                    <p id="modules-description">{{{modules}}}</p>
+                    <p><small id="ref-1">[<a href="#backref-1">1</a>]: {{{modules}}}</small></p>
                 </section>
             </article>
 
