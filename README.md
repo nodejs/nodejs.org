@@ -6,7 +6,7 @@
 
 ## What is this repo?
 
-[nodejs.org](https://nodejs.org) is an effort by the newly formed [Node.js Foundation](https://nodejs.org/foundation/) to build on the merged community's past website projects to form a self-publishing, community-managed version of the previous site.
+[nodejs.org](https://nodejs.org) by the [Node.js Foundation](https://nodejs.org/foundation/) builds on the merged community's past website projects to form a self-publishing, community-managed version of the previous site.
 
 On a technical level inspiration has been taken from the `iojs.org` repo while design and content has been migrated from the old `nodejs.org` repo. These technical changes have helped to facilitate community involvement and empower the foundation's internationalization communities to provide alternative website content in other languages.
 
