@@ -64,7 +64,7 @@ would like to contribute to the translation of nodejs.org, please refer to the f
     nodejs-de: Add files - index.md, faq.md
     nodejs-ro: Add files - 15 files
 
-    nodejs-fr: Update files - es6.md
+    nodejs-fr: Update files - es2015.md
     nodejs-ja: Update files - all files
 ```
 

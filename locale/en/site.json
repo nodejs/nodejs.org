@@ -63,9 +63,9 @@
     "docs": {
         "link": "docs",
         "text": "Docs",
-        "es6": {
-            "link": "docs/es6",
-            "text": "ES6 in Node.js"
+        "es2015": {
+            "link": "docs/es2015",
+            "text": "ES2015 in Node.js"
         },
         "faq": {
             "link": "docs/faq",

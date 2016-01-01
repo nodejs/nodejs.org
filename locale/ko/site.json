@@ -62,9 +62,9 @@
     "docs": {
         "link": "docs",
         "text": "문서",
-        "es6": {
-            "link": "docs/es6",
-            "text": "Node.js의 ES6"
+        "es2015": {
+            "link": "docs/es2015",
+            "text": "Node.js의 ES2015"
         },
         "faq": {
             "link": "docs/faq",
