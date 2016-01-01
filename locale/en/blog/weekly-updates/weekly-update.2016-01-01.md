@@ -30,7 +30,7 @@ of fixes and documentation updates.
 
 ### Community Updates
 
-* [History of Node.js on a Timeline]](https://blog.risingstack.com/history-of-node-js/), "This is the history of Node.js on a timeline, from 2009 until now (December 2015)"
+* [History of Node.js on a Timeline](https://blog.risingstack.com/history-of-node-js/), "This is the history of Node.js on a timeline, from 2009 until now (December 2015)"
 
 If you have spotted or written something about Node.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues/), specifically the Weekly Updates issue.
 
