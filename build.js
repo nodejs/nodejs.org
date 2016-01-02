@@ -14,6 +14,7 @@ const markdown = require('metalsmith-markdown')
 const prism = require('metalsmith-prism')
 const stylus = require('metalsmith-stylus')
 const permalinks = require('metalsmith-permalinks')
+const pagination = require('metalsmith-yearly-pagination')
 const marked = require('marked')
 const path = require('path')
 const fs = require('fs')
@@ -126,6 +127,13 @@ function buildlocale (source, locale) {
         refer: false
       }
     }))
+    .use(pagination({
+      path: 'blog/year',
+      iteratee: (post, idx) => ({
+        post,
+        displaySummary: idx < 10
+      })
+    }))
     .use(markdown(markedOptions))
     .use(githubLinks({ locale: locale }))
     .use(prism())
@@ -182,7 +190,8 @@ function buildlocale (source, locale) {
         changeloglink: require('./scripts/helpers/changeloglink.js'),
         strftime: require('./scripts/helpers/strftime.js'),
         apidocslink: require('./scripts/helpers/apidocslink.js'),
-        majorapidocslink: require('./scripts/helpers/majorapidocslink.js')
+        majorapidocslink: require('./scripts/helpers/majorapidocslink.js'),
+        summary: require('./scripts/helpers/summary.js')
       }
     }))
     // Pipes the generated files into their respective subdirectory in the build
