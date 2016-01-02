@@ -5,10 +5,10 @@
   "homepage": "https://nodejs.org",
   "scripts": {
     "build": "node build.js",
-    "serve": "node build.js serve",
+    "serve": "node server.js",
     "load-versions": "node scripts/load-versions.js",
     "start": "npm run serve",
-    "test": "standard build.js scripts/*.js scripts/**/*.js tests/**/*.js && tape tests/**/*.test.js | faucet"
+    "test": "standard *.js scripts/*.js scripts/**/*.js tests/**/*.js && tape tests/**/*.test.js | faucet"
   },
   "repository": {
     "type": "git",

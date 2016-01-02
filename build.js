@@ -2,8 +2,7 @@
 
 'use strict'
 
-// BUILD.JS: This file is responsible for building static HTML pages and a
-// server for local development.
+// BUILD.JS: This file is responsible for building static HTML pages
 
 const Metalsmith = require('metalsmith')
 const autoprefixer = require('autoprefixer-stylus')
@@ -65,7 +64,7 @@ function i18nJSON (lang) {
 // This is the function where the actual magic happens. This contains the main
 // Metalsmith build cycle used for building a locale subsite, such as the
 // english one.
-function buildlocale (source, locale) {
+function buildLocale (source, locale) {
   console.time('[metalsmith] build/' + locale + ' finished')
   const siteJSON = path.join(__dirname, 'locale', locale, 'site.json')
   const metalsmith = Metalsmith(__dirname)
@@ -234,7 +233,7 @@ function githubLinks (options) {
 
 // This function copies the rest of the static assets to their subfolder in the
 // build directory.
-function copystatic () {
+function copyStatic () {
   console.time('[metalsmith] build/static finished')
   fs.mkdir(path.join(__dirname, 'build'), function () {
     fs.mkdir(path.join(__dirname, 'build', 'static'), function () {
@@ -249,9 +248,9 @@ function copystatic () {
 
 // This is where the build is orchestrated from, as indicated by the function
 // name. It brings together all build steps and dependencies and executes them.
-function fullbuild () {
+function fullBuild () {
   // Copies static files.
-  copystatic()
+  copyStatic()
   // Loads all node/io.js versions.
   loadVersions(function (err, versions) {
     if (err) { throw err }
@@ -272,71 +271,17 @@ function fullbuild () {
     // Executes the build cycle for every locale.
     fs.readdir(path.join(__dirname, 'locale'), function (e, locales) {
       locales.filter(junk.not).forEach(function (locale) {
-        buildlocale(source, locale)
+        buildLocale(source, locale)
       })
     })
   })
 }
 
-// The server function, where the site is exposed through a static file server
-// locally.
-function server () {
-  // Initializes the server and mounts it in the generated build directory.
-  const st = require('st')
-  const http = require('http')
-  const mount = st({
-    path: path.join(__dirname, 'build'),
-    cache: false,
-    index: 'index.html'
-  })
-  http.createServer(
-    function (req, res) { mount(req, res) }
-  ).listen(8080,
-    function () { console.log('http://localhost:8080/en/') }
-  )
-
-  // Watches for file changes in the locale, layout and static directories, and
-  // rebuilds the modified one.
-  const chokidar = require('chokidar')
-  const opts = {
-    persistent: true,
-    ignoreInitial: true,
-    followSymlinks: true,
-    usePolling: true,
-    alwaysStat: false,
-    depth: undefined,
-    interval: 100,
-    ignorePermissionErrors: false,
-    atomic: true
-  }
-  const locales = chokidar.watch(path.join(__dirname, 'locale'), opts)
-  const layouts = chokidar.watch(path.join(__dirname, 'layouts'), opts)
-  const staticf = chokidar.watch(path.join(__dirname, 'static'), opts)
-
-  // Gets the locale name by path.
-  function getlocale (p) {
-    const pre = path.join(__dirname, 'locale')
-    return p.slice(pre.length + 1, p.indexOf('/', pre.length + 1))
-  }
-  locales.on('change', function (p) {
-    buildlocale(p, getlocale(p))
-  })
-  locales.on('add', function (p) {
-    buildlocale(p, getlocale(p))
-    locales.add(p)
-  })
-
-  layouts.on('change', fullbuild)
-  layouts.on('add', function (p) { layouts.add(p); fullbuild() })
-
-  staticf.on('change', copystatic)
-  staticf.on('add', function (p) { staticf.add(p); copystatic() })
+// Starts the build if the file was executed from the command line
+if (require.main === module) {
+  fullBuild()
 }
 
-// Starts the build.
-fullbuild()
-
-// If the command-line option was provided, starts the static server.
-if (process.argv[2] === 'serve') {
-  server()
-}
+exports.fullBuild = fullBuild
+exports.buildLocale = buildLocale
+exports.copyStatic = copyStatic
