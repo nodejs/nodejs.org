@@ -110,13 +110,13 @@ Run as root on RHEL, CentOS or Fedora, for Node.js v4 LTS Argon:
 curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -
 ```
 
-Alternatevely for Node.js v5:
+Alternatively for Node.js v5:
 
 ```bash
 curl --silent --location https://rpm.nodesource.com/setup_5.x | bash -
 ```
 
-Alternatevely for Node.js 0.10:
+Alternatively for Node.js 0.10:
 
 ```bash
 curl --silent --location https://rpm.nodesource.com/setup | bash -
