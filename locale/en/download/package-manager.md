@@ -36,6 +36,13 @@ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
+Alternatively, for Node.js v5:
+
+```bash
+curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+
 ***Optional***: install build tools
 
 To compile and install native addons from npm you may also need to install build tools:
