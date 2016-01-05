@@ -133,13 +133,13 @@ passwords, or inside the Express framework itself.
 
 Since we ran our application using the --prof option, a tick file was generated
 in the same directory as your local run of the application. It should have the
-form isolate-0x124353456789-v8.log. In order to make sense of this file, we need
-to use the tick processor included in the Node.js source at
-<nodejs_dir>/tools/v8-prof/tick-processor.js. It is important that the version
-of the tick-processor that you run comes from the same version of node source as
-version of node used to generate the isolate file. This will no longer be a
-concern when the tick processor is [installed by default][]. The raw tick output
-can be processed using this tool by running:
+form `isolate-0xnnnnnnnnnnnn-v8.log` (where `n` is a digit). In order to make
+sense of this file, we need to use the tick processor included in the Node.js
+source at `<nodejs_dir>/tools/v8-prof/tick-processor.js`. It is important that
+the version of the tick-processor comes from the source for the version of node
+used to generate the isolate file. (This will no longer be a concern when the
+tick processor is [installed by default][].) The raw tick output can be
+processed using this tool by running:
 
 ```
 node <path_to_nodejs_src>/tools/v8-prof/tick-processor.js isolate-0x101804c00-v8.log >processed.txt
