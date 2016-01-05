@@ -222,7 +222,7 @@ function githubLinks (options) {
       var url = 'https://github.com/nodejs/nodejs.org/edit/master/locale/' + options.locale + '/' + path.replace('.html', '.md')
 
       var contents = file.contents.toString().replace(/\<h1\>(.+)\<\/h1\>/, function ($1, $2) {
-        return `<h1><a class="edit-link" href="${url}">Edit on GitHub</a> ${$2}</h1>`
+        return `<a class="edit-link" href="${url}">Edit on GitHub</a> <h1>${$2}</h1>`
       })
 
       file.contents = new Buffer(contents)
