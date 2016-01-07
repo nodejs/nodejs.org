@@ -21,7 +21,7 @@ code-creation,Stub,2,0x2d5000a33e00,507,"NumberToStringStub"
 ```
 
 In the past you need the V8 source code to be able to interpret the ticks.
-Luckily, tools have recently been introduced into Node.js 4.1.1 that facilitate
+Luckily, tools have recently been introduced into Node.js 5.2.0 that facilitate
 the consumption of this information without separately building V8 from source.
 Let's see how the built-in profiler can help provide insight into application
 performance.
@@ -134,15 +134,11 @@ passwords, or inside the Express framework itself.
 Since we ran our application using the --prof option, a tick file was generated
 in the same directory as your local run of the application. It should have the
 form isolate-0x124353456789-v8.log. In order to make sense of this file, we need
-to use the tick processor included in the Node.js source at
-<nodejs_dir>/tools/v8-prof/tick-processor.js. It is important that the version
-of the tick-processor that you run comes from the same version of node source as
-version of node used to generate the isolate file. This will no longer be a
-concern when the tick processor is [installed by default][]. The raw tick output
-can be processed using this tool by running:
+to use the tick processor which is bundled inside the Node.js binary. The raw tick
+output can be processed using this tool by running:
 
 ```
-node <path_to_nodejs_src>/tools/v8-prof/tick-processor.js isolate-0x101804c00-v8.log >processed.txt
+node --prof-process isolate-0x101804c00-v8.log >processed.txt
 ```
 
 Opening processed.txt in your favorite text editor will give you a few different
@@ -174,7 +170,7 @@ taking the most CPU time and see:
 ```
 
 We see that the top 3 entries account for 72.1% of CPU time taken by the
-program.From this output, we immediately see that at least 51.8% of CPU time is
+program. From this output, we immediately see that at least 51.8% of CPU time is
 taken up by a function called PBKDF2 which corresponds to our hash generation
 from a user's password. However, it may not be immediately obvious how the lower
 two entries factor into our application (or if it is we will pretend otherwise
@@ -282,5 +278,4 @@ example, you've seen how the V8 tick processor can help you gain a better
 understanding of the performance of your Node.js applications.
 
 [profiler inside V8]: https://developers.google.com/v8/profiler_example
-[installed by default]: https://github.com/nodejs/node/pull/3032
 [benefits of asynchronous programming]: https://nodesource.com/blog/why-asynchronous
