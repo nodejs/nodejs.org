@@ -8,12 +8,12 @@ slug: weekly-update-2016-01-11
 layout: blog-post.hbs
 ---
 
-### Node.js News — January 11th
+### Node.js News
 Node v5.4.0 (Stable) is released
 
 ### Node v5.4.0 (Stable) Releases
 
-This week we have one release: [Node v5.4.0 (Stable)](https://nodejs.org/en/blog/release/v5.4.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+Last week we have one release: [Node v5.4.0 (Stable)](https://nodejs.org/en/blog/release/v5.4.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
 
 ### Notable changes
 
