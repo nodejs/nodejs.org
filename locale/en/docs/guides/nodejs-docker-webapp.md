@@ -38,7 +38,7 @@ create a `package.json` file that describes your app and its dependencies:
 }
 ```
 
-Then, create an `server.js` file that defines a web app using the
+Then, create a `server.js` file that defines a web app using the
 [Express.js](http://expressjs.com/) framework:
 
 ```javascript
