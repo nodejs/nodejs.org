@@ -6,7 +6,8 @@ layout: docs.hbs
 # Dockerizing a Node.js web app
 
 The goal of this example is to show you how to get a Node.js application into a
-Docker container. It assumes you have a working [Docker
+Docker container. The guide is intended for development, and *not* for a
+production deployment. The guide also assumes you have a working [Docker
 installation](https://docs.docker.com/engine/installation/) and a basic
 understanding of how a Node.js application is structured.
 
