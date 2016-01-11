@@ -8,7 +8,10 @@
     "serve": "node server.js",
     "load-versions": "node scripts/load-versions.js",
     "start": "npm run serve",
-    "test": "standard *.js scripts/*.js scripts/**/*.js tests/**/*.js && tape tests/**/*.test.js | faucet"
+    "test": "npm run test:lint && npm run test:unit && npm run test:smoke",
+    "test:lint": "standard *.js scripts/*.js scripts/**/*.js tests/*.js tests/**/*.js",
+    "test:unit": "tape tests/**/*.test.js | faucet",
+    "test:smoke": "tape tests/*.smoketest.js | faucet"
   },
   "repository": {
     "type": "git",
