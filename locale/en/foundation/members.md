@@ -11,7 +11,7 @@ Node.js Foundation Membership is open to businesses and individuals. Individual 
 
 ## Becoming an Individual Member
 
-Individual membership costs [$100 a year, or $25 for students](https://identity.linuxfoundation.org/user?destination=pid/99). Contributors to the Node.js project, including all Working Groups and sub-projects, are eligible for free membership.
+Individual membership costs [$100 a year, or $25 for students](https://identity.linuxfoundation.org/user?destination=pid/99) (student discount code: **NodeStudentN10HM**). Contributors to the Node.js project, including all Working Groups and sub-projects, are eligible for free membership.
 
 You are required to have a GitHub account to register.
 
