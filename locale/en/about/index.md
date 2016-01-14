@@ -10,7 +10,9 @@ scalable network applications. In the following "hello world" example, many
 connections can be handled concurrently. Upon each connection the callback is
 fired, but if there is no work to be done Node is sleeping.
 
-```javascript
+Modern JavaScript:
+
+```js
 const http = require('http');
 
 const hostname = '127.0.0.1';
@@ -21,6 +23,22 @@ http.createServer((req, res) => {
   res.end('Hello World\n');
 }).listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+ES5:
+
+```js
+var http = require('http');
+
+var hostname = '127.0.0.1';
+var port = 1337;
+
+http.createServer(function(req, res) {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello World\n');
+}).listen(port, hostname, function() {
+  console.log('Server running at http://%s:%d/', hostname, port);
 });
 ```
 
