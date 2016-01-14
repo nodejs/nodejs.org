@@ -183,6 +183,7 @@ function buildLocale (source, locale) {
       pattern: '**/*.html',
       partials: 'layouts/partials',
       helpers: {
+        copyright: require('./scripts/helpers/copyright-year.js'),
         equals: require('./scripts/helpers/equals.js'),
         startswith: require('./scripts/helpers/startswith.js'),
         i18n: require('./scripts/helpers/i18n.js'),
