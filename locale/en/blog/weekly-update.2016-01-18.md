@@ -29,6 +29,26 @@ Last week we had one release: [Node v5.4.1 (Stable)](https://nodejs.org/en/blog/
 * [The (Enterprise) Node Community](https://nodesource.com/blog/the-enterprise-node-community/), "At NodeSource, we believe that by embracing the greater Node.js community of developers, operations folks and even executives in the enterprise can radically expand our community."
 * [N|Solid v1.2 - monitoring Node.js at scale](https://nodesource.com/blog/n-solid-v1-2-monitoring-node-js-at-scale/), "N|Solid v1.2 adds new functionality that greatly simplifies monitoring Node at scale across your environment."
 
+### Nominations for the 2016 election
+
+[Nominations](https://github.com/nodejs/membership/issues/12) closed last Friday for the individual member representative to the Node.js Foundation Board. 12 members put their hands up with nominations:
+  - **[@guyellis](https://github.com/guyellis)**: http://www.guyellisrocks.com/2015/11/node-foundation-membership-election.html
+  - **[@sup](https://github.com/sup)**: http://jona.io/blog/board-application/
+  - **[@ashleygwilliams](https://github.com/ashleygwilliams)**: https://medium.com/@ag_dubs/hi-i-m-running-for-the-node-foundation-board-of-directors-c87d762cb78b
+  - **[@contra](https://github.com/contra)**: http://contra.io/node_board.txt
+  - **[@geek](https://github.com/geek)**: http://jsgeek.com/posts/node-foundation-board-nomination.html
+  - **[@jaredhanson](https://github.com/jaredhanson)**: http://jaredhanson.net/blog/2016/01/13/im-running-for-the-node-js-foundation-bod/
+  - **[@tejasmanohar](https://github.com/tejasmanohar)**: https://medium.com/@tejasmanohar/node-js-foundation-board-of-directors-5514e8faa660
+  - **[@bnb](https://github.com/bnb)**: http://bnb.im/blog/Individual-Membership-on-the-Board-of-Directors-for-Node-js.html
+  - **[@watson](https://github.com/watson)**: https://medium.com/@wa7son/why-i-m-running-for-the-node-js-foundation-board-of-directors-253bc2e3a834
+  - **[@feross](https://github.com/feross)**: http://feross.org/node-board/
+  - **[@pgte](https://github.com/pgte)**: https://gist.github.com/pgte/cfbf468202b35be78c66
+  - **[@ecowden](https://github.com/ecowden)**: https://medium.com/@evan.cowden/the-world-s-worst-resume-e0adf234baa0
+
+A ballot will be distributed to individual members on January 20th, with the election completed by January 30th.
+
+To be eligible to vote, you must be signed up as an individual member of the Node.js Foundation, more information can be found here: https://nodejs.org/en/blog/community/individual-membership/
+
 ### Nodeup Updates
 
 * [ninetyseven](http://nodeup.com/ninetyseven), "A Front-end npm Show"
