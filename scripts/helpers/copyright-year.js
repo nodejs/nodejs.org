@@ -1,6 +1,5 @@
-'use strict';
+'use strict'
 
 module.exports = function () {
-
-    return (new Date()).getUTCFullYear();
-};
+  return (new Date()).getUTCFullYear()
+}
