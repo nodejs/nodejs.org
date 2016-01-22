@@ -32,6 +32,9 @@ create a `package.json` file that describes your app and its dependencies:
   "description": "Node.js on Docker",
   "author": "First Last <first.last@example.com>",
   "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
   "dependencies": {
     "express": "^4.13.3"
   }
