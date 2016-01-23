@@ -34,7 +34,7 @@ create a `package.json` file that describes your app and its dependencies:
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
-  }
+  },
   "dependencies": {
     "express": "^4.13.3"
   }
