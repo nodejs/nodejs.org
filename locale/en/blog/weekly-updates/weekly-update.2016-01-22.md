@@ -31,13 +31,7 @@ A ballot will be distributed to individual members on January 20th, with the ele
 
 To be eligible to vote, you must be signed up as an individual member of the Node.js Foundation, more information can be found here: https://nodejs.org/en/blog/community/individual-membership/
 
-### Nodesource Updates
-
-* [Node by Numbers 2015](https://nodesource.com/blog/node-by-numbers-2015/), "By analyzing the logs for binary and source downloads, we get to discover some interesting patterns."
-* [The (Enterprise) Node Community](https://nodesource.com/blog/the-enterprise-node-community/), "At NodeSource, we believe that by embracing the greater Node.js community of developers, operations folks and even executives in the enterprise can radically expand our community."
-* [N|Solid v1.2 - monitoring Node.js at scale](https://nodesource.com/blog/n-solid-v1-2-monitoring-node-js-at-scale/), "N|Solid v1.2 adds new functionality that greatly simplifies monitoring Node at scale across your environment."
-
-### Nodeup Updates
+### NodeUp Updates
 
 * [ninetyseven](http://nodeup.com/ninetyseven), "A Front-end npm Show"
 
