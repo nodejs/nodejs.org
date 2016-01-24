@@ -31,13 +31,9 @@ A ballot will be distributed to individual members on January 20th, with the ele
 
 To be eligible to vote, you must be signed up as an individual member of the Node.js Foundation, more information can be found here: https://nodejs.org/en/blog/community/individual-membership/
 
-### NodeUp Updates
-
-* [ninetyseven](http://nodeup.com/ninetyseven), "A Front-end npm Show"
-
 ### Community Updates
 
-* [How to track down CPU issues in Node.js](http://apmblog.dynatrace.com/2016/01/14/how-to-track-down-cpu-issues-in-node-js/), "CPU aspects of Node.js including the event loop and how to track down tasks that consume too much CPU time and slow down the whole process."
+* [ninetyseven](http://nodeup.com/ninetyseven), "A Front-end npm Show"
 
 If you have spotted or written something about Node.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues/), specifically the Weekly Updates issue.
 
