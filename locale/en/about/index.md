@@ -50,7 +50,7 @@ framework.
 Just because Node is designed without threads, doesn't mean you cannot take
 advantage of multiple cores in your environment. You can spawn child processes
 that are easy to communicate with by using our
-[child_process.fork()](https://nodejs.org/api/child_process.html#child_process.fork)
+[child_process.fork()](https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options)
 API. Built upon that same interface is the
 [cluster](https://nodejs.org/api/cluster.html) module, which allows you to share
 sockets between processes to enable load balancing over your cores.
