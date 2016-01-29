@@ -18,7 +18,7 @@ See https://nodejs.org/en/blog/vulnerability/openssl-and-low-severity-fixes-jan-
 
 OpenSSL versions 1.0.1r and 1.0.21 have been released, the announcement can be found here: https://mta.openssl.org/pipermail/openssl-announce/2016-January/000061.html
 
-Our team has made an assessment of the impact of the disclosed defects and concluded that there is no urgency in releasing patched versions of Node.js in response to this release. Therefore, we will be proceeding as planned and attempt to release new versions of each of our active release lines on or before
+Our team has made an assessment of the impact of the disclosed defects and concluded that there is no urgency in releasing patched versions of Node.js in response to this release. Therefore, we will be proceeding as planned and attempt to release new versions of each of our active release lines on or after
 **Monday the 1st of February, 11pm UTC** _(Monday the 1st of February, 3pm Pacific Time)_. Please note that this is simply an approximation of release timing. Please tune in to **nodejs-sec** (https://groups.google.com/forum/#!topic/nodejs-sec) where we will announce the availability of releases.
 
 ### Nominations for the 2016 election
