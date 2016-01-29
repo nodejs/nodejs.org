@@ -37,7 +37,7 @@ Our team has made an assessment of the impact of the disclosed defects and concl
   - **[@pgte](https://github.com/pgte)**: [nomination post](https://gist.github.com/pgte/cfbf468202b35be78c66), [Q/A thread](https://github.com/nodejs/membership/issues/29)
   - **[@ecowden](https://github.com/ecowden)**: [nomination post](https://medium.com/@evan.cowden/the-world-s-worst-resume-e0adf234baa0), [Q/A thread](https://github.com/nodejs/membership/issues/30)
 
-A ballot will be distributed to individual members on January 20th, with the election completed by January 30th.
+A ballot was distributed to individual members on January 20th, with the election completed by January 30th.
 
 To be eligible to vote, you must be signed up as an individual member of the Node.js Foundation, more information can be found here: https://nodejs.org/en/blog/community/individual-membership/
 
