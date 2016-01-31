@@ -851,4 +851,4 @@ for examples and testing, but there are occasionally use cases where
 it can come in handy.
 
 
-[EventEmitter]: https://nodejs.org/api/events.html#events_class_events_eventemitter
+[EventEmitter]: https://nodejs.org/api/events.html#events_class_eventemitter

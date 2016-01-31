@@ -427,7 +427,7 @@ read through the API docs for [`EventEmitters`][], [`Streams`][], and [`HTTP`][]
 [`concat-stream`]: https://www.npmjs.com/package/concat-stream
 [`body`]: https://www.npmjs.com/package/body
 [`npm`]: https://www.npmjs.com
-[`EventEmitter`]: https://nodejs.org/api/events.html#events_class_events_eventemitter
+[`EventEmitter`]: https://nodejs.org/api/events.html#events_class_eventemitter
 [handling these errors]: https://nodejs.org/api/errors.html
 [`domains`]: https://nodejs.org/api/domain.html
 [`ServerResponse`]: https://nodejs.org/api/http.html#http_class_http_serverresponse
