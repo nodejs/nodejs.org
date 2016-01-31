@@ -126,10 +126,6 @@ request.on('error', function(err) {
 });
 ```
 
-There are other ways of [handling these errors][] such as
-other abstractions and tools, but always be aware that errors can and do happen,
-and you're going to have to deal with them.
-
 ## What We've Got so Far
 
 At this point, we've covered creating a server, and grabbing the method, URL,
