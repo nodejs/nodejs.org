@@ -420,14 +420,14 @@ read through the API docs for [`EventEmitters`][], [`Streams`][], and [`HTTP`][]
 [`Server`]: https://nodejs.org/api/http.html#http_class_http_server
 [`listen`]: https://nodejs.org/api/http.html#http_server_listen_port_hostname_backlog_callback
 [API reference]: https://nodejs.org/api/http.html
-[`IncomingMessage`]: https://nodejs.org/api/http.html#http_http_incomingmessage
+[`IncomingMessage`]: https://nodejs.org/api/http.html#http_class_http_incomingmessage
 [`ReadableStream`]: https://nodejs.org/api/stream.html#stream_class_stream_readable
 [`rawHeaders`]: https://nodejs.org/api/http.html#http_message_rawheaders
 [`Buffer`]: https://nodejs.org/api/buffer.html
 [`concat-stream`]: https://www.npmjs.com/package/concat-stream
 [`body`]: https://www.npmjs.com/package/body
 [`npm`]: https://www.npmjs.com
-[`EventEmitter`]: https://nodejs.org/api/events.html#events_class_events_eventemitter
+[`EventEmitter`]: https://nodejs.org/api/events.html#events_class_eventemitter
 [handling these errors]: https://nodejs.org/api/errors.html
 [`domains`]: https://nodejs.org/api/domain.html
 [`ServerResponse`]: https://nodejs.org/api/http.html#http_class_http_serverresponse
