@@ -126,7 +126,7 @@ request.on('error', function(err) {
 });
 ```
 
-There are other ways of [handling these errors][] such as using [`domains`][] or
+There are other ways of [handling these errors][] such as
 other abstractions and tools, but always be aware that errors can and do happen,
 and you're going to have to deal with them.
 
