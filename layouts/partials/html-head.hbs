@@ -18,11 +18,10 @@
         <link rel="alternate" href="/{{ ../site.locale }}/{{ link }}" title="{{ text }}" type="application/rss+xml">
     {{/each}}
     <link rel="stylesheet" href="/{{ site.locale }}/styles.css" media="all">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600">
     <script>
         document.querySelector('html').className += " has-js";
 
-        var WebFontConfig = { google: { families: ['Source Sans Pro:400,600'] } };
         !function(n,o,d,e,j,s){n.GoogleAnalyticsObject=d;n[d]||(n[d]=function(){
         (n[d].q=n[d].q||[]).push(arguments)});n[d].l=+new Date;j=o.createElement(e);
         s=o.getElementsByTagName(e)[0];j.async=1;j.src='//www.google-analytics.com/analytics.js';
