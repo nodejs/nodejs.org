@@ -13,6 +13,8 @@ labels:
   tagline-lts: Mature and Dependable
   changelog: Changelog
   api: API Docs
+  version-schedule-prompt: Or have a look at the
+  version-schedule-prompt-link-text: LTS schedule
 ---
 
 Node.js® is a JavaScript runtime built on [Chrome's V8 JavaScript engine](https://developers.google.com/v8/).
