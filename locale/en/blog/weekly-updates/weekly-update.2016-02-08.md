@@ -1,10 +1,10 @@
 ---
 title: Weekly Update - Feb 8th, 2016
 author: Minwoo Jung (@jmwsoft)
-date: 2016-01-08T12:00:00.000Z
+date: 2016-02-08T12:00:00.000Z
 status: publish
 category: weekly
-slug: weekly-update-2016-01-08
+slug: weekly-update-2016-02-08
 layout: blog-post.hbs
 ---
 
