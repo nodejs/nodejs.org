@@ -22,9 +22,6 @@ Future elections will happen each year for a new two year term.
 
 ### Community Updates
 
-* [Node by Numbers 2015](https://nodesource.com/blog/node-by-numbers-2015/), "By analyzing the logs for binary and source downloads, we get to discover some interesting patterns."
-* [ninetyseven](http://nodeup.com/ninetyseven), "A Front-end npm Show"
-
 If you have spotted or written something about Node.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues/), specifically the Weekly Updates issue.
 
 ### Upcoming Events
