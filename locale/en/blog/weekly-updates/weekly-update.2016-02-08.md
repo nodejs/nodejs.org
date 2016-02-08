@@ -20,10 +20,6 @@ Future elections will happen each year for a new two year term.
   - Ashley Williams [@ashleygwilliams](https://github.com/ashleygwilliams) for a 2 year term.
   - Feross Aboukhadijeh [@feross](https://github.com/feross) for a 1 year term.
 
-### Community Updates
-
-If you have spotted or written something about Node.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues/), specifically the Weekly Updates issue.
-
 ### Upcoming Events
 
 * [NodeConf Adventure 2016](https://ti.to/nodeconf/adventure-2016), "First batch of NodeConf Adventure tickets are up!", June 9th–12th, 2016 - Walker Creek Ranch, Marin, CA, USA
