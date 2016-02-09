@@ -263,8 +263,8 @@ function fullBuild () {
           lts: latestVersion.lts(versions)
         },
         banner: {
-          visible: false,
-          content: ''
+          visible: true,
+          content: 'Important <a href="https://nodejs.org/en/blog/vulnerability/february-2016-security-releases/">security releases</a>, please update now!'
         }
       }
     }
