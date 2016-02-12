@@ -63,7 +63,7 @@
         downloadHead[text] = dlLocal + ' Windows (' + arch +')';
         break;
       case 'Linux':
-        versionIntoHref(buttons, 'node-%version%-linux-' + arch + '.tar.gz');
+        versionIntoHref(buttons, 'node-%version%-linux-' + arch + '.tar.xz');
         downloadHead[text] = dlLocal + ' Linux (' + arch + ')';
         break;
     }
