@@ -22,9 +22,9 @@ See https://nodejs.org/en/blog/vulnerability/february-2016-security-releases/ fo
 
 ### OpenSSL upgrade summary
 
-Node.js v0.10.42 and v0.12.10 upgrades the bundled version of OpenSSL from 1.0.1q to 1.0.1r. Full details can be found in the [OpenSSL 1.0.1 changelog](https://www.openssl.org/news/cl101.txt).
+Node.js v0.10.42 and v0.12.10 upgrade the bundled version of OpenSSL from 1.0.1q to 1.0.1r. Full details can be found in the [OpenSSL 1.0.1 changelog](https://www.openssl.org/news/cl101.txt).
 
-Node.js v4.3.0 and v5.6.0 upgrades the bundled version of OpenSSL from 1.0.2e to 1.0.2f. Full details can be found in the [OpenSSL 1.0.2 changelog](https://www.openssl.org/news/cl102.txt).
+Node.js v4.3.0 and v5.6.0 upgrade the bundled version of OpenSSL from 1.0.2e to 1.0.2f. Full details can be found in the [OpenSSL 1.0.2 changelog](https://www.openssl.org/news/cl102.txt).
 
 ### Upcoming Events
 
