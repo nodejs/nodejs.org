@@ -16,7 +16,9 @@ We had released Node.js [v0.10.42 (Maintenance)](/en/blog/release/v0.10.42/), [v
 
 **Please note that our LTS "Argon" release line has moved from v4.2.x to v4.3.x due to the security fixes enclosed. There will be no further updates to v4.2.x.** Users are advised to upgrade to v4.3.0 as soon as possible.
 
-For the purpose of understanding the impact that the fixed vulnerabilities have on your Node.js deployment and the urgency of the upgrades for your circumstances we are providing details below.
+For the purpose of understanding the impact that the fixed vulnerabilities 
+have on your Node.js deployment and the urgency of the upgrades for your 
+circumstances we are providing details below.
 
 See https://nodejs.org/en/blog/vulnerability/february-2016-security-releases/ for more information.
 
