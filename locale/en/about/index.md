@@ -41,7 +41,7 @@ and at the end starts a server through a blocking call like
 `EventMachine::run()`. In Node there is no such start-the-event-loop call. Node
 simply enters the event loop after executing the input script. Node exits the
 event loop when there are no more callbacks to perform. This behavior is like
-browser JavaScript -— the event loop is hidden from the user.
+browser JavaScript — the event loop is hidden from the user.
 
 HTTP is a first class citizen in Node, designed with streaming and low latency
 in mind. This makes Node well suited for the foundation of a web library or
