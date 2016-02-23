@@ -23,7 +23,10 @@ Node v4.3.1 (LTS) is released.
   * do not incept debug context (Myles Borins)
     - [#4819](https://github.com/nodejs/node/pull/4819)
     - fixes crash in debugger when using util methods
-    
+   
+### New official Node.js logo
+We are proud to introduce and unveil out new logo
+
 ### Upcoming Events
 
 * [NodeConf Adventure 2016](https://ti.to/nodeconf/adventure-2016), "First batch of NodeConf Adventure tickets are up!", June 9th–12th, 2016 - Walker Creek Ranch, Marin, CA, USA
