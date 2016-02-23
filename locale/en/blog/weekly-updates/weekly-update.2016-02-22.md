@@ -13,6 +13,7 @@ Node v4.3.1 (LTS) and Node v5.7.0 (Stable) are released.
 
 ### New official Node.js logo
 As a result of an iteration on the official logo, we are proud to introduce and unveil our new logo
+
 <img src="https://cloud.githubusercontent.com/assets/43438/13207731/d7c62f3e-d94c-11e5-8ff8-f32c74b13cc3.png" width="200">
 ### Upcoming Events
 
