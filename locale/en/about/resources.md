@@ -13,28 +13,20 @@ title: Logos and Graphics
 
 <table border="0" cellspacing="0" cellpadding="10" class="logos">
   <tr>
-    <td bgcolor="#FFFFFF">[![Node.js dark](/static/images/logos/nodejs.png)](/static/images/logos/nodejs-light.eps)</td>
-    <td bgcolor="#333333">[![Node.js dark](/static/images/logos/nodejs-dark.png)](/static/images/logos/nodejs-dark.eps)</td>
+    <td bgcolor="#FFFFFF">[![Node.js on light background](/static/images/logos/nodejs-new-pantone-black.png)](/static/images/logos/nodejs-new-pantone-black.ai)</td>
+    <td bgcolor="#333333">[![Node.js on dark background](/static/images/logos/nodejs-new-pantone-white.png)](/static/images/logos/nodejs-new-pantone-white.ai)</td>
   </tr>
   <tr>
-    <td>[Node.js standard EPS](/static/images/logos/nodejs-light.eps)</td>
-    <td>[Node.js reversed EPS](/static/images/logos/nodejs-dark.eps)</td>
+    <td>[Node.js standard AI](/static/images/logos/nodejs-new-pantone-black.ai)</td>
+    <td>[Node.js reversed AI](/static/images/logos/nodejs-new-pantone-white.ai)</td>
   </tr>
   <tr>
-    <td bgcolor="#7fbd42">[![Node.js dark](/static/images/logos/nodejs-green.png)](/static/images/logos/nodejs-green.eps)[](/static/images/logos/nodejs-dark.eps)</td>
-    <td bgcolor="#ffffff">[![Node.js dark](/static/images/logos/nodejs-black.png)](/static/images/logos/nodejs-black.eps)</td>
+    <td bgcolor="#FFFFFF">[![Node.js on light background](/static/images/logos/nodejs-new-black.png)](/static/images/logos/nodejs-new-black.ai)</td>
+    <td bgcolor="#333333">[![Node.js on dark background](/static/images/logos/nodejs-new-white.png)](/static/images/logos/nodejs-new-white.ai)</td>
   </tr>
   <tr>
-    <td>[Node.js bright EPS](/static/images/logos/nodejs-green.eps)</td>
-    <td>[Node.js 1 color EPS](/static/images/logos/nodejs-black.eps)</td>
-  </tr>
-  <tr>
-    <td bgcolor="#ffffff" class="jstm">[![JSTM dark](/static/images/logos/js-black.svg)](/static/images/logos/js-black.eps)</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>[JS dark EPS](/static/images/logos/js-black.eps)</td>
-    <td></td>
+    <td>[Node.js standard with less color AI](/static/images/logos/nodejs-new-black.ai)</td>
+    <td>[Node.js reversed with less color AI](/static/images/logos/nodejs-new-white.ai)</td>
   </tr>
 </table>
 
