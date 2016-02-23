@@ -26,7 +26,7 @@ Node v4.3.1 (LTS) is released.
    
 ### New official Node.js logo
 We are proud to introduce and unveil out new logo
-
+![Node.js logo](https://cloud.githubusercontent.com/assets/43438/13207731/d7c62f3e-d94c-11e5-8ff8-f32c74b13cc3.png)
 ### Upcoming Events
 
 * [NodeConf Adventure 2016](https://ti.to/nodeconf/adventure-2016), "First batch of NodeConf Adventure tickets are up!", June 9th–12th, 2016 - Walker Creek Ranch, Marin, CA, USA
