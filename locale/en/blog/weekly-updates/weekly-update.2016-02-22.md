@@ -9,7 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News
-Node v4.3.1 (LTS) and Node v5.7.0 (Stable) are released.
+Node v4.3.1 (LTS), Node v4.4.0 (rc) and Node v5.7.0 (Stable) are released.
 
 ### New official Node.js logo
 As a result of an iteration on the official logo, we are proud to introduce and unveil our new logo
