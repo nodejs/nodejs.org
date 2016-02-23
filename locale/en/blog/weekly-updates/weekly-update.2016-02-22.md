@@ -9,20 +9,8 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News
-Node v4.3.1 (LTS) is released.
+Node v4.3.1 (LTS) and Node v5.7.0 (Stable) are released.
 
-### Notable changes
-
-* **buffer**
-  * make byteLength work with Buffer correctly (Jackson Tian)
-    - [#4738](https://github.com/nodejs/node/pull/4738)
-* **debugger** 
-  * fixes segfaults in debugger and guard against call from non-node context (Ben Noordhuis)
-    - [#4328](https://github.com/nodejs/node/pull/4328)
-  * do not incept debug context (Myles Borins)
-    - [#4819](https://github.com/nodejs/node/pull/4819)
-    - fixes crash in debugger when using util methods
-   
 ### New official Node.js logo
 As a result of an iteration on the official logo, we are proud to introduce and unveil our new logo<br>
 <img src="https://cloud.githubusercontent.com/assets/43438/13207731/d7c62f3e-d94c-11e5-8ff8-f32c74b13cc3.png" width="200">
