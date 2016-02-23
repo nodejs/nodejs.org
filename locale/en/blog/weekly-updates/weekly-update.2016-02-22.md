@@ -17,9 +17,8 @@ Node v4.3.1 (LTS) is released.
   * make byteLength work with Buffer correctly (Jackson Tian)
     - [#4738](https://github.com/nodejs/node/pull/4738)
 * **debugger** 
-  * guard against call from non-node context (Ben Noordhuis)
+  * fixes segfaults in debugger and guard against call from non-node context (Ben Noordhuis)
     - [#4328](https://github.com/nodejs/node/pull/4328)
-    - fixes segfaults in debugger
   * do not incept debug context (Myles Borins)
     - [#4819](https://github.com/nodejs/node/pull/4819)
     - fixes crash in debugger when using util methods
