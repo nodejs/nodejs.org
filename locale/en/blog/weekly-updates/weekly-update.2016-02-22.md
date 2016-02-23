@@ -1,5 +1,5 @@
 ---
-title: Weekly Update - Feb 23nd, 2016
+title: Weekly Update - Feb 23rd, 2016
 author: Minwoo Jung (@jmwsoft)
 date: 2016-02-23T12:00:00.000Z
 status: publish
