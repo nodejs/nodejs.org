@@ -1,6 +1,6 @@
 ---
 title: Node.js Foundation to Add Express to its Incubator Program
-date: 2016-10-02T
+date: 2016-10-02T21:00:00.000Z
 category: Annoucements
 slug: Express as Incubator Project
 layout: blog-post.hbs
@@ -10,7 +10,7 @@ layout: blog-post.hbs
 
 SAN FRANCISCO, Feb. 10, 2016 — The [Node.js Foundation](https://nodejs.org/en/foundation/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced Express, the most popular Node.js web server framework, and some of its constituent modules are on track to become a new incubation project of the Foundation. 
 
-With [53+ million downloads in the last two years] (http://npm-stat.com/charts.html?package=express&author=&from=&to=), Express has become one of the key toolkits for building web applications and its stability is essential for many Node.js users, especially those that are just getting started with the platform. Express also underpins some of the most significant projects that support Node.js, including [kraken.js] (http://krakenjs.com/), a secure and scalable layer that extends Express and is heavily used by enterprises. Kraken.js was open sourced [by PayPal in 2014] (https://www.paypal-engineering.com/2014/03/03/open-sourcing-kraken-js/). It also underpins [Sails.js] (http://sailsjs.org/), a web framework that makes it easy to build custom, enterprise-grade Node.js apps, and [Loopback] (http://loopback.io/), a Node.js API framework.
+With [53+ million downloads in the last two years](http://npm-stat.com/charts.html?package=express&author=&from=&to=), Express has become one of the key toolkits for building web applications and its stability is essential for many Node.js users, especially those that are just getting started with the platform. Express also underpins some of the most significant projects that support Node.js, including [kraken.js](http://krakenjs.com/), a secure and scalable layer that extends Express and is heavily used by enterprises. Kraken.js was open sourced [by PayPal in 2014](https://www.paypal-engineering.com/2014/03/03/open-sourcing-kraken-js/). It also underpins [Sails.js](http://sailsjs.org/), a web framework that makes it easy to build custom, enterprise-grade Node.js apps, and [Loopback](http://loopback.io/), a Node.js API framework.
 
 “This framework is critical to a significant portion of many Node.js users,” said Mikeal Rogers, Community Manager of the Node.js Foundation. “Bringing this project into the Node.js Foundation, under open governance, will allow it to continue to be a dependable choice for many enterprises and users, while ensuring that we retain a healthy ecosystem of competing approaches to solving problems that Express addresses.”
 
