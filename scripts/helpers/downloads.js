@@ -30,31 +30,35 @@ const postMergeDownloads = [
   },
   {
     'title': 'Linux 32-bit Binary',
-    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-x86.tar.gz'
+    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-x86.tar.xz'
   },
   {
     'title': 'Linux 64-bit Binary',
-    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-x64.tar.gz'
+    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-x64.tar.xz'
+  },
+  {
+    'title': 'Linux PPC LE 64-bit Binary',
+    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-ppc64le.tar.xz'
   },
   {
     'title': 'SunOS 32-bit Binary',
-    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-sunos-x86.tar.gz'
+    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-sunos-x86.tar.xz'
   },
   {
     'title': 'SunOS 64-bit Binary',
-    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-sunos-x64.tar.gz'
+    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-sunos-x64.tar.xz'
   },
   {
     'title': 'ARMv6 32-bit Binary',
-    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-armv6l.tar.gz'
+    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-armv6l.tar.xz'
   },
   {
     'title': 'ARMv7 32-bit Binary',
-    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-armv7l.tar.gz'
+    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-armv7l.tar.xz'
   },
   {
     'title': 'ARMv8 64-bit Binary',
-    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-arm64.tar.gz'
+    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-arm64.tar.xz'
   },
   {
     'title': 'Source Code',
