@@ -25,7 +25,7 @@ $ npm run serve
 
 This will start the development server on http://localhost:8080/en/ and should reload automatically when you make changes but it's all just code and no code is perfect so sometimes you may need to restart it :)
 
-Note: You'll need io.js 2.x or newer as the build system uses some native ES2015 features.
+Note: You'll need Node.js v4 or newer as the build system uses some native ES2015 features.
 
 ### Layout
 
