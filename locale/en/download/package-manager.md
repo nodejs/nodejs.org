@@ -60,8 +60,6 @@ To compile and install native addons from npm you may also need to install build
 sudo apt-get install -y build-essential
 ```
 
-*(Note: The optional "nodejs-legacy" package from Debian helps prevent a conflict with the Amateur Packet Radio "Node" Program)*
-
 **Available architectures:**
 
 * **i386** (32-bit)
@@ -81,7 +79,10 @@ sudo apt-get install -y build-essential
 * **Debian testing** (stretch, aliased to jessie)
 * **Debian unstable** (sid)
 
-A Node.js package is also available in the [official repo](http://packages.debian.org/search?searchon=names&keywords=nodejs) for Debian Sid (unstable), Jessie (testing) and Wheezy (wheezy-backports) as "nodejs". It only installs a `nodejs` binary, so you might want to `ln -s /usr/bin/nodejs /usr/bin/node` for many things to work.
+A Node.js package is also available in the [official repo](http://packages.debian.org/search?searchon=names&keywords=nodejs) for Debian Sid (unstable), Jessie (testing) and Wheezy (wheezy-backports) as "nodejs". It only installs a `nodejs` binary.
+
+The [nodejs-legacy package](http://packages.debian.org/search?searchon=names&keywords=nodejs-legacy) installs a `node` symlink that is needed by many modules to build and run correctly.
+The Node.js modules available in the distribution official repositories do not need it.
 
 **Supported Linux Mint versions:**
 
