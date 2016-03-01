@@ -12,7 +12,7 @@ layout: blog-post.hbs
 
 ### OpenSSL updates, 1.0.2g and 1.0.1s
 
-Our crypto team will make an impact assessment for Node.js users of the OpenSSL releases. This information may vary depending for the different active release lines and will be posted here.
+Our crypto team will make an impact assessment for Node.js users of the OpenSSL releases. This information may vary depending on the different active release lines and will be posted here.
 
 As part of that impact assessment we will announce our release plans for each of the active release lines to take into account any impact. Please be prepared for the possibility of important updates to Node.js v0.10, v0.12, v4 and v5 soon after Tuesday, the 1st of March.
 
