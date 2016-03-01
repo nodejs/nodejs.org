@@ -36,6 +36,7 @@
         display block
         width 100%
         padding-top 1em
+        color $active-green
         background $light-green
 
     img
@@ -46,10 +47,13 @@
         padding-bottom 1em
         margin 1em 0 0
 
+    a:hover
+        background: $node-green
+        color $white
 
-    a:hover, a:active
-        background $gray
-        color $light-green
+    a:active
+        background $active-green
+        color $white
 
 .download-version-toggle
     display flex
@@ -63,12 +67,12 @@
         padding 5px 2px
 
     a:hover, a:active, a.is-version
-        color $light-green
-        background $gray
+        color $white
+        background $node-green
 
     a.is-version
         color $light-green
-        background $node-green
+        background $active-green
 
     .title
         font-size 1.5em
@@ -96,8 +100,8 @@
             text-align center
 
         a:hover, a:active
-            background $gray
-            color $light-green
+            background $node-green
+            color $white
 
 h5.download-table-previous-releases-header
     margin-bottom 5px
