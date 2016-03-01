@@ -26,7 +26,7 @@ Please monitor the **nodejs-sec** Google Group for updates, including an impact 
 
 ### Linux PPC LE 64-bit Binaries
 
-Linux PPC LE 64-bit Binaries included in the stable release for the first time as part of v5.7.0
+Linux PPC LE 64-bit Binaries are included in the stable release for the first time as part of v5.7.0
 
 Get them here: https://nodejs.org/dist/v5.7.0/
 
