@@ -27,7 +27,7 @@ This week we have one release: [Node.js v5.1.0 (Stable)](https://nodejs.org/en/b
 ### npm announces Private Packages for Organizations
 
 * npm released a set of features: Private Packages for Organizations.
-* This release allows teams to use private npm packages more effectively. 
+* This release allows teams to use private npm packages more effectively.
 * It’s intended for businesses that manage developer teams, with varying permissions and multiple projects.
 
 See http://blog.npmjs.org/post/133542170540/private-packages-for-organizations for more information.

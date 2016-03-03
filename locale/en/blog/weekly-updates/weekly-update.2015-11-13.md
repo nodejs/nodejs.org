@@ -12,7 +12,7 @@ layout: blog-post.hbs
 
 ### Node.js Foundation Individual Membership Now Open
 
-* With the support of the Linux Foundation we are now able to launch an Individual Membership program. 
+* With the support of the Linux Foundation we are now able to launch an Individual Membership program.
 * These members will be electing two representatives to the Board of Directors this January who will be responsible for representing the diverse needs of the Node.js community in the administration of the Node.js Foundation.
 
 See https://nodejs.org/en/blog/community/individual-membership/ for more information.
