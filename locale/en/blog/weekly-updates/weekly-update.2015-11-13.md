@@ -12,7 +12,7 @@ layout: blog-post.hbs
 
 ### Node.js Foundation Individual Membership Now Open
 
-* With the support of the Linux Foundation we are now able to launch an Individual Membership program. 
+* With the support of the Linux Foundation we are now able to launch an Individual Membership program.
 * These members will be electing two representatives to the Board of Directors this January who will be responsible for representing the diverse needs of the Node.js community in the administration of the Node.js Foundation.
 
 See https://nodejs.org/en/blog/community/individual-membership/ for more information.
@@ -29,7 +29,7 @@ See https://nodejs.org/en/blog/community/individual-membership/ for more informa
 * [Understanding Garbage Collection and hunting Memory Leaks in Node.js](http://apmblog.dynatrace.com/2015/11/04/understanding-garbage-collection-and-hunting-memory-leaks-in-node-js/), "Covers how Node.js manages memory and how to trace down memory-related problems"
 * [Node.js v4 gets an A+ for SSL Labs with no configuration](https://certsimple.com/blog/node-js-ssl-labs), "Node has one of the best out-of-the-box SSL setups of any web server."
 
-If you have spotted or written something about Node.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues/191), specifically the Weekly Updates issue.
+If you have spotted or written something about Node.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.
 
 ### Upcoming Events
 
@@ -38,4 +38,4 @@ If you have spotted or written something about Node.js, do come over to our [Eva
 * [CampJS VI](http://vi.campjs.com), November 20th – 23th at Queensland, Australia
 * [Node.js Interactive](http://events.linuxfoundation.org/events/node-interactive), December 8th - 9th at Portland, US.
 
-Have an event about Node.js coming up? You can put your events here through the [Evangelism team repo](https://github.com/nodejs/evangelism) and announce it in the [Issues page](https://github.com/nodejs/evangelism/issues/191), specifically the Weekly Updates issue.
+Have an event about Node.js coming up? You can put your events here through the [Evangelism team repo](https://github.com/nodejs/evangelism) and announce it in the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.

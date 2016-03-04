@@ -27,7 +27,7 @@ This week we have one release: [Node.js v5.1.0 (Stable)](https://nodejs.org/en/b
 ### npm announces Private Packages for Organizations
 
 * npm released a set of features: Private Packages for Organizations.
-* This release allows teams to use private npm packages more effectively. 
+* This release allows teams to use private npm packages more effectively.
 * It’s intended for businesses that manage developer teams, with varying permissions and multiple projects.
 
 See http://blog.npmjs.org/post/133542170540/private-packages-for-organizations for more information.
@@ -48,7 +48,7 @@ See https://github.com/Microsoft/vscode for more information.
 * [Node Knockout](http://www.nodeknockout.com/), "Node Knockout winners have been announced."
 * [Introduction to Testing Node.js](https://www.youtube.com/watch?v=u2XCdkL4bWI), "A video of Jordan Kasper how to test Node.js apps with Mocha."
 
-If you have spotted or written something about Node.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues/), specifically the Weekly Updates issue.
+If you have spotted or written something about Node.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.
 
 ### Upcoming Events
 
@@ -56,4 +56,4 @@ If you have spotted or written something about Node.js, do come over to our [Eva
 * [CampJS VI](http://vi.campjs.com), November 20th – 23th at Queensland, Australia
 * [Node.js Interactive](http://events.linuxfoundation.org/events/node-interactive), December 8th - 9th at Portland, US.
 
-Have an event about Node.js coming up? You can put your events here through the [Evangelism team repo](https://github.com/nodejs/evangelism) and announce it in the [Issues page](https://github.com/nodejs/evangelism/issues/191), specifically the Weekly Updates issue.
+Have an event about Node.js coming up? You can put your events here through the [Evangelism team repo](https://github.com/nodejs/evangelism) and announce it in the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.
