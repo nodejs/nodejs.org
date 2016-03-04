@@ -351,7 +351,7 @@ cd pkgsrc/lang/nodejs && bmake install
 Void Linux ships node.js stable in the main repository.
 
 ```bash
-xbps-install -Sy node.js
+xbps-install -Sy nodejs
 ```
 
 
