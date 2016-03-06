@@ -24,7 +24,7 @@ layout: contribute.hbs
   - [Platform Stability](#platform-stability)
   - [Dependency Stability](#dependency-stability)
 - [Working Groups](#working-groups)
-- [Developer's Certificate of Origin 1.0](#developers-certificate-of-origin-10)
+- [Developer's Certificate of Origin 1.0](#developer-s-certificate-of-origin-1-0)
 - [A Few Open Questions](#a-few-open-questions)
 - [Notes](#notes)
 
