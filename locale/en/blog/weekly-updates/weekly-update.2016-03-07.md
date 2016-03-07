@@ -21,8 +21,6 @@ Initial benchmark data is now available here: https://benchmarking.nodejs.org/.
 
 For more information on the process of how these are generated check out: https://github.com/nodejs/benchmarking/blob/master/benchmarks/README.md
 
-Get them here: https://nodejs.org/dist/v5.7.0/
-
 ### New Core Technical Committee (CTC) members
 
 The Core Technical Committee (CTC) added four new members to help guide Node.js core development: Evan Lucas, Rich Trott, Ali Ijaz Sheikh and Сковорода Никита Андреевич (Nikita Skovoroda).
