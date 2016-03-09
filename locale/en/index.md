@@ -10,7 +10,7 @@ labels:
   stable: Stable
   lts: LTS
   tagline-stable: Latest Features
-  tagline-lts: Recommended for most users
+  tagline-lts: Recommended for Most Users
   changelog: Changelog
   api: API Docs
   version-schedule-prompt: Or have a look at the
