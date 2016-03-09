@@ -62,11 +62,9 @@ You are required to have a GitHub account to register.
 <a target="_new" class="imagelink" href="http://apigee.com">
   <img alt="Apigee" class="memberlogo" src="/static/images/foundation/apigee_logo_md.png" />
 </a>
-<!--
 <a target="_new" class="imagelink" href="http://appdynamics.com">
   <img alt="AppDynamics" class="memberlogo" src="/static/images/foundation/appdynamics.png" />
 </a>
--->
 <a target="_new" class="imagelink" href="http://codefresh.io">
   <img alt="CodeFresh" class="memberlogo" src="/static/images/foundation/codefreshLogo2.png" />
 </a>
