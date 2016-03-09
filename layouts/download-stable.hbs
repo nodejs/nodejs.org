@@ -12,38 +12,8 @@
                     <h1>{{downloads.headline}}</h1>
                 </div>
 
-                {{> download-matrix version=project.currentVersions.stable versionTypeStable="true"}}
-
-                <section>
-                    <h2>{{additional.headline}}</h2>
-                    <p>{{additional.intro}}</p>
-
-                    <table class="download-matrix full-width">
-                        <tbody>
-                            <tr>
-                                <th>{{additional.platform}}</th>
-                                <th>{{additional.provider}}</th>
-                                <th></th>
-                            </tr>
-                            <tr>
-                                <th>AIX on Power Systems</th>
-                                <td><span>IBM</span></td>
-                                <td><a href="http://www.ibm.com/developerworks/web/nodesdk/">{{download}}</a></td>
-                            </tr>
-                            <tr>
-                                <th>Linux on Power Systems</th>
-                                <td><span>IBM</span></td>
-                                <td><a href="http://www.ibm.com/developerworks/web/nodesdk/">{{download}}</a></td>
-                            </tr>
-                            <tr>
-                                <th>Linux on System z</th>
-                                <td><span>IBM</span></td>
-                                <td><a href="http://www.ibm.com/developerworks/web/nodesdk/">{{download}}</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                </section>
+                {{> primary-download-matrix version=project.currentVersions.stable versionTypeStable="true"}}
+                {{> secondary-download-matrix version=project.currentVersions.stable versionTypeStable="true"}}
 
             </article>
 
