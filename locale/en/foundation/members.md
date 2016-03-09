@@ -100,7 +100,7 @@ You are required to have a GitHub account to register.
 <a target="_new" class="imagelink" href="//saucelabs.com">
   <img alt="Saucelabs" class="memberlogo" src="/static/images/foundation/saucelabsLogo2.png" />
 </a>
-<a target="_new" class="imagelink" href="http://vnvalley.com/">
+<a target="_new" class="imagelink" href="http://sphinx.sg/">
   <img alt="Sphinx" class="memberlogo" src="/static/images/foundation/sphinx.png" />
 </a>
 <a target="_new" class="imagelink" href="//strongloop.com">
