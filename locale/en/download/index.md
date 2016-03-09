@@ -7,7 +7,7 @@ downloads:
     lts: LTS
     stable: Stable
     tagline-stable: Latest Features
-    tagline-lts: Mature and Dependable
+    tagline-lts: Recommended for most users
     display-hint: Display downloads for
     intro: >
         Download the Node.js source code or a pre-built installer for your platform, and start developing today.
