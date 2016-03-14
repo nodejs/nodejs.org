@@ -21,7 +21,7 @@ code-creation,Stub,2,0x2d5000a33e00,507,"NumberToStringStub"
 ```
 
 In the past you need the V8 source code to be able to interpret the ticks.
-Luckily, tools have recently been introduced into Node.js 4.1.1 that facilitate
+Luckily, tools have recently been introduced into Node.js 4.4.0 that facilitate
 the consumption of this information without separately building V8 from source.
 Let's see how the built-in profiler can help provide insight into application
 performance.
@@ -135,18 +135,8 @@ Since we ran our application using the `--prof` option, a tick file was generate
 in the same directory as your local run of the application. It should have the
 form `isolate-0xnnnnnnnnnnnn-v8.log` (where `n` is a digit).
 
-In order to make sense of this file, we need to use the tick processor included
-in the Node.js
-source at `<nodejs_dir>/tools/v8-prof/tick-processor.js`. It is important that
-the version of the tick-processor comes from the source for the version of node
-used to generate the isolate file. The raw tick output can be
-processed using this tool by running:
-
-```
-node <path_to_nodejs_src>/tools/v8-prof/tick-processor.js isolate-0xnnnnnnnnnnnn-v8.log > processed.txt
-```
-
-Starting in Node.js 5.2.2, the tick processor is bundled with the Node.js binary and can be run using the `--prof-process` flag:
+In order to make sense of this file, we need to use the tick processor bundled
+with the Node.js binary. To run the processor, use the `--prof-process` flag:
 
 ```
 node --prof-process isolate-0xnnnnnnnnnnnn-v8.log > processed.txt
