@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "autoprefixer-stylus": "0.8.1",
-    "changelog-url": "1.0.0",
+    "changelog-url": "1.0.2",
     "cheerio": "0.19.0",
     "chokidar": "1.2.0",
     "handlebars": "4.0.4",
