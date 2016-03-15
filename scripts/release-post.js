@@ -119,13 +119,17 @@ function fetchChangelog (version) {
 }
 
 function fetchChangelogBody (version) {
-  const rxSectionBody = /(### )?Notable [\s\S]*/g
+  const rxSectionBody = /(### )?(Notable [\s\S]*)/g
 
   return fetchChangelog(version)
     .then(function (section) {
       const bodyMatch = rxSectionBody.exec(section)
+      // ensure ### prefixed "Notable changes" header
+      // https://github.com/nodejs/nodejs.org/pull/551#issue-138257829
+      const body = bodyMatch ? '### ' + bodyMatch[2] : ''
+
       return bodyMatch
-        ? bodyMatch[0]
+        ? body
         : Promise.reject(new Error(`Could not find changelog body of ${version} release`))
     })
 }
@@ -157,7 +161,11 @@ function verifyDownloads (version) {
 }
 
 function findAuthorLogin (version, section) {
-  const rxReleaseAuthor = /^(## )?.*? \([^\)]+\), @(\S+)/g
+  // looking for the @author part of the release header, eg:
+  // ## 2016-03-08, Version 5.8.0 (Stable). @Fishrock123
+  // ## 2015-10-13, Version 4.2.1 'Argon' (LTS), @jasnell
+  // ## 2015-09-08, Version 4.0.0 (Stable), @rvagg
+  const rxReleaseAuthor = /^(## )?.*? \([^\)]+\)[,.] @(\S+)/g
   const matches = rxReleaseAuthor.exec(section)
   return matches ? matches[2] : Promise.reject(new Error(`Couldn't find @author of ${version} release :(`))
 }
