@@ -7,7 +7,7 @@ labels:
 
 # About Docs
 
-It's important for Node.js to provide documentation to its users, but documentation means different things to different people. Here, on nodejs.org, you will find three types of documentation, reference documentation, ES6 features, and frequently asked questions.
+It's important for Node.js to provide documentation to its users, but documentation means different things to different people. Here, on nodejs.org, you will find three types of documentation, reference documentation, ES2015 features, and frequently asked questions.
 
 Our [API reference documentation](/api/) is meant to provide detailed version information about a given method or pattern in Node.js. From this documentation you should be able to identify what input a method has, the return value of that method, and what, if any, errors may be related to that method. You should also be able to identify which methods are available for different versions of Node.js.
 
@@ -21,7 +21,7 @@ Our [API reference documentation](/api/) is meant to provide detailed version in
     </ul>
 </div>
 
-The [ES6 section](/en/docs/es6/) describes the three different features groups and which ones are enabled by default in Node.js. It lists out all the different features enabled by default, alongside explanatory links. Also, it shows how to find the exact version of V8 a Node.js release has.
+The [ES2015 section](/en/docs/es2015/) describes the three different features groups and which ones are enabled by default in Node.js. It lists out all the different features enabled by default, alongside explanatory links. Also, it shows how to find the exact version of V8 a Node.js release has.
 
 Our [FAQ](/en/docs/faq/) shows how everyone can contribute to Node.js, our code of conduct,
 governance model, how to get in touch on github and IRC, and helping out triaging issues.
