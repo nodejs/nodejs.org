@@ -24,7 +24,7 @@ layout: contribute.hbs
   - [Platform Stability](#platform-stability)
   - [Dependency Stability](#dependency-stability)
 - [Working Groups](#working-groups)
-- [Developer's Certificate of Origin 1.0](#developers-certificate-of-origin-10)
+- [Developer's Certificate of Origin 1.0](#developer-s-certificate-of-origin-1-0)
 - [A Few Open Questions](#a-few-open-questions)
 - [Notes](#notes)
 
@@ -307,7 +307,7 @@ While the `npm` utility is shipped as part of Node.js, it is not a functional de
 
 Working Groups are autonomous groups of Collaborators chartered by the TSC to oversee specific aspects of the Project. Working groups can be formed at any time but must be ratified by the TSC.
 
-Every Working Group has a charter that details it's area of responsibility. Once approved by the TSC, the Working Group becomes solely responsible for items detailed in that charter.
+Every Working Group has a charter that details its area of responsibility. Once approved by the TSC, the Working Group becomes solely responsible for items detailed in that charter.
 
 When applicable, the charter should indicate the conditions under which the Working Group's activity can be considered to be complete and the WG can be dissolved. A Working Group can, at any time, request that the TSC dissolve the Working Group by opening an issue requesting dissolution with the *tsc-agenda* tag.
 

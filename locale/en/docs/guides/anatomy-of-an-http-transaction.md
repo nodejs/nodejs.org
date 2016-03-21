@@ -126,6 +126,10 @@ request.on('error', function(err) {
 });
 ```
 
+There are other ways of [handling these errors][] such as
+other abstractions and tools, but always be aware that errors can and do happen,
+and you're going to have to deal with them.
+
 ## What We've Got so Far
 
 At this point, we've covered creating a server, and grabbing the method, URL,
@@ -427,7 +431,7 @@ read through the API docs for [`EventEmitters`][], [`Streams`][], and [`HTTP`][]
 [handling these errors]: https://nodejs.org/api/errors.html
 [`domains`]: https://nodejs.org/api/domain.html
 [`ServerResponse`]: https://nodejs.org/api/http.html#http_class_http_serverresponse
-[`setHeader`]: https://nodejs.org/api/http.html#http_response_setheader_name_value<F37>
+[`setHeader`]: https://nodejs.org/api/http.html#http_response_setheader_name_value
 [`WritableStream`]: https://nodejs.org/api/stream.html#stream_class_stream_writable
 [`writeHead`]: https://nodejs.org/api/http.html#http_response_writehead_statuscode_statusmessage_headers
 [`express`]: https://www.npmjs.com/package/express

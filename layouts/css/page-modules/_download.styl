@@ -1,8 +1,8 @@
 .download-header
-
     h1
         width 40%
         float left
+        margin-bottom: -1rem
 
     ul
         margin-top 2rem
@@ -29,27 +29,35 @@
         flex-grow 2
 
     li:first-child
-        flex-basis 130px
+        flex-basis 200px
         flex-grow 1
 
     a
         display block
         width 100%
         padding-top 1em
+        color $active-green
         background $light-green
 
-    img
+    .download-logo
         display block
         margin 0 auto
+        fill: $node-green
 
     p
         padding-bottom 1em
         margin 1em 0 0
 
+    a:hover
+        background: $node-green
+        color $white
 
-    a:hover, a:active
-        background $gray
-        color $node-green
+        .download-logo
+            fill: $white
+
+    a:active
+        background $active-green
+        color $white
 
 .download-version-toggle
     display flex
@@ -63,12 +71,12 @@
         padding 5px 2px
 
     a:hover, a:active, a.is-version
-        color $node-green
-        background $gray
+        color $white
+        background $node-green
 
     a.is-version
         color $light-green
-        background $node-green
+        background $active-green
 
     .title
         font-size 1.5em
@@ -94,10 +102,11 @@
             height 100%
             width 100%
             text-align center
+            font-size: 0.8em;
 
         a:hover, a:active
-            background $gray
-            color $node-green
+            background $node-green
+            color $white
 
 h5.download-table-previous-releases-header
     margin-bottom 5px

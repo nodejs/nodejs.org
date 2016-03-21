@@ -8,7 +8,7 @@ layout: blog-post.hbs
 
 > Node.js Foundation to Add Express to its Incubator Program
 
-SAN FRANCISCO, Feb. 10, 2016 — The [Node.js Foundation](https://nodejs.org/en/foundation/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced Express, the most popular Node.js web server framework, and some of its constituent modules are on track to become a new incubation project of the Foundation. 
+SAN FRANCISCO, Feb. 10, 2016 — The [Node.js Foundation](https://nodejs.org/en/foundation/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced Express, the most popular Node.js web server framework, and some of its constituent modules are on track to become a new incubation project of the Foundation.
 
 With [53+ million downloads in the last two years](http://npm-stat.com/charts.html?package=express&author=&from=&to=), Express has become one of the key toolkits for building web applications and its stability is essential for many Node.js users, especially those that are just getting started with the platform. Express also underpins some of the most significant projects that support Node.js, including [kraken.js](http://krakenjs.com/), a secure and scalable layer that extends Express and is heavily used by enterprises. Kraken.js was open sourced [by PayPal in 2014](https://www.paypal-engineering.com/2014/03/03/open-sourcing-kraken-js/). It also underpins [Sails.js](http://sailsjs.org/), a web framework that makes it easy to build custom, enterprise-grade Node.js apps, and [Loopback](http://loopback.io/), a Node.js API framework.
 
@@ -24,7 +24,7 @@ The Node.js Foundation Incubator Program was launched last year. Projects under 
 
 ### About Node.js Foundation
 
-Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 3 million active users per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites. 
+Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 3 million active users per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites.
 
 The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft, PayPal and Red Hat. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, npm, RisingStack, Sauce Labs, SAP, StrongLoop (an IBM company), YLD!, and Yahoo!. Get involved here: http://nodejs.org.
 

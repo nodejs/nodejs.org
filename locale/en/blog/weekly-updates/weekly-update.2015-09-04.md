@@ -41,7 +41,7 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 * Some problems with unreferenced timers running during `beforeExit` are still to be resolved. See [#1264](https://github.com/nodejs/node/issues/1264).
 * Surrogate pair in REPL can freeze terminal. [#690](https://github.com/nodejs/node/issues/690)
 * Calling `dns.setServers()` while a DNS query is in progress can cause the process to crash on a failed assertion. [#894](https://github.com/nodejs/node/issues/894)
-* `url.resolve` may transfer the auth portion of the url when resolving between two full hosts, see [#1435](https://github.com/nodejs/node/issues/1435). 
+* `url.resolve` may transfer the auth portion of the url when resolving between two full hosts, see [#1435](https://github.com/nodejs/node/issues/1435).
 
 ### Node.js v4.0.0(stable) entry is posted
 
@@ -49,7 +49,7 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 
 ### We are creating the list of modules that currently do not work with Node.js v4.0.0
 
-* We are listing modules that do not work with Node.js v4.0.0, If you have some troubles in your modules with Node.js v4.0.0, please provide information in this [issue](https://github.com/nodejs/node/issues/2798). 
+* We are listing modules that do not work with Node.js v4.0.0, If you have some troubles in your modules with Node.js v4.0.0, please provide information in this [issue](https://github.com/nodejs/node/issues/2798).
 
 ### Community Updates
 

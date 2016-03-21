@@ -139,7 +139,7 @@ test('fetchChangelog(<version>)', (t) => {
 
   t.test('rejects when a matching version section could not be found in changelog', (t) => {
     const github = nock('https://raw.githubusercontent.com')
-      .get('/nodejs/node/v0.9999999.0/ChangeLog')
+      .get('/nodejs/node-v0.x-archive/v0.9999999.0/ChangeLog')
       .reply(200, 'A changelog without version sections...')
 
     releasePost.fetchChangelog('0.9999999.0').then(t.fail, (err) => {
@@ -157,6 +157,7 @@ test('fetchChangelogBody(<version>)', (t) => {
   const releasePost = require('../../scripts/release-post')
 
   const changelogFixture = path.resolve(__dirname, 'CHANGELOG.fixture.md')
+  const changelogLegacyFixture = path.resolve(__dirname, 'CHANGELOG.fixture.legacy.md')
 
   t.test('does not include `## header` in matched version section', (t) => {
     const github = nock('https://raw.githubusercontent.com')
@@ -164,6 +165,19 @@ test('fetchChangelogBody(<version>)', (t) => {
       .replyWithFile(200, changelogFixture)
 
     releasePost.fetchChangelogBody('4.1.0').then((body) => {
+      t.true(body.startsWith('### Notable changes'))
+      t.true(github.isDone(), 'githubusercontent.com was requested')
+
+      t.end()
+    }, t.fail)
+  })
+
+  t.test('ensures notable changes header are prefix with `###`', (t) => {
+    const github = nock('https://raw.githubusercontent.com')
+      .get('/nodejs/node/v0.10.43/ChangeLog')
+      .replyWithFile(200, changelogLegacyFixture)
+
+    releasePost.fetchChangelogBody('0.10.43').then((body) => {
       t.true(body.startsWith('### Notable changes'))
       t.true(github.isDone(), 'githubusercontent.com was requested')
 

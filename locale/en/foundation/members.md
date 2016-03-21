@@ -62,6 +62,9 @@ You are required to have a GitHub account to register.
 <a target="_new" class="imagelink" href="http://apigee.com">
   <img alt="Apigee" class="memberlogo" src="/static/images/foundation/apigee_logo_md.png" />
 </a>
+<a target="_new" class="imagelink" href="http://appdynamics.com">
+  <img alt="AppDynamics" class="memberlogo" src="/static/images/foundation/appdynamics.png" />
+</a>
 <a target="_new" class="imagelink" href="http://codefresh.io">
   <img alt="CodeFresh" class="memberlogo" src="/static/images/foundation/codefreshLogo2.png" />
 </a>
@@ -77,8 +80,14 @@ You are required to have a GitHub account to register.
 <a target="_new" class="imagelink" href="http://nearform.com">
   <img alt="nearForm" class="memberlogo" src="/static/images/foundation/nearformLogo2.png" />
 </a>
+<a target="_new" class="imagelink" href="http://newrelic.com">
+  <img alt="New Relic" class="memberlogo" src="/static/images/foundation/NewRelic.png" />
+</a>
 <a target="_new" class="imagelink" href="//npmjs.org">
   <img alt="npm" class="memberlogo" src="/static/images/foundation/npmLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="http://opbeat.com">
+  <img alt="opbeat" class="memberlogo" src="/static/images/foundation/opbeat.png" />
 </a>
 <a target="_new" class="imagelink" href="//risingstack.com">
   <img alt="RisingStack" class="memberlogo" src="/static/images/foundation/risingstack_logo.png" />
@@ -88,6 +97,9 @@ You are required to have a GitHub account to register.
 </a>
 <a target="_new" class="imagelink" href="//saucelabs.com">
   <img alt="Saucelabs" class="memberlogo" src="/static/images/foundation/saucelabsLogo2.png" />
+</a>
+<a target="_new" class="imagelink" href="http://sphinx.sg/">
+  <img alt="Sphinx" class="memberlogo" src="/static/images/foundation/sphinx.png" />
 </a>
 <a target="_new" class="imagelink" href="//strongloop.com">
   <img alt="StrongLoop" class="memberlogo" src="/static/images/foundation/strongloopLogo.png" />

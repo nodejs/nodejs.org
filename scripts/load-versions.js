@@ -4,6 +4,7 @@
 
 const fs = require('fs')
 const nodeVersionData = require('node-version-data')
+const path = require('path')
 
 module.exports = nodeVersionData
 
@@ -16,7 +17,7 @@ if (require.main === module) {
     }
 
     fs.writeFileSync(
-      __dirname + '/../source/versions.json'
+      path.join(__dirname, '..', 'source', 'versions.json')
       , JSON.stringify(versions, null, 2)
     )
   })

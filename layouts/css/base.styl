@@ -53,6 +53,11 @@ img
     display block
     max-width 100%
 
+    .logos &
+        // Fixes logo size on Firefox, see:
+        // https://github.com/nodejs/nodejs.org/issues/558
+        width: 100%
+
 
 code
     background-color $light-gray3
@@ -123,12 +128,15 @@ pre
         a
             display block
             padded-link(10px)
+            padding-top 5px
+            padding-bottom 5px
+            line-height 1
 
         .active
             > a,
             > a:hover
-                color $node-gray
-                background-color $hover-green
+                color $white
+                background-color $active-green
 
     article
         margin-left 220px
