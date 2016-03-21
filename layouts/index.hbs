@@ -70,6 +70,92 @@
 
         </div>
     </div>
+    
+    <style>
+      div.interactive {
+        width: 100%;
+        height: 220px;
+        background-image: url("/static/images/interactive/background.png");
+        background-repeat: repeat-y;
+        text-align: center;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-around;
+      }
+      div.interactive a, div.interactive span {
+         border: 20px solid transparent;
+      }
+      
+      @media (max-width: 480px) {
+        #interactive-center {
+          display:none;
+        }
+        div.interactive {
+          flex-wrap: wrap;
+          height: 556px;
+        }
+        div.interactive a, div.interactive span {
+          max-height:150px;
+        }
+      }
+      @media (min-width: 480px) {
+        #interactive-first {
+          display:none;
+        }
+      }
+      @media (min-width: 480px) and (max-width: 580px) {
+        div.interactive {
+          background-repeat: no-repeat;
+          height: 100px;
+        }
+      }
+      @media (min-width: 580px) and (max-width: 680px) {
+        div.interactive {
+          background-repeat: no-repeat;
+          height: 120px;
+        }
+      }
+      @media (min-width: 680px) and (max-width: 780px) {
+        div.interactive {
+          background-repeat: no-repeat;
+          height: 140px;
+        }
+      }
+      @media (min-width: 780px) and (max-width: 880px) {
+        div.interactive {
+          background-repeat: no-repeat;
+          height: 160px;
+        }
+      }
+      @media (min-width: 880px) and (max-width: 980px) {
+        div.interactive {
+          background-repeat: no-repeat;
+          height: 180px;
+        }
+      }
+      @media (min-width: 980px) and (max-width: 1180px) {
+        div.interactive {
+          background-repeat: no-repeat;
+          height: 200px;
+        }
+      }
+    </style>
+    
+    <div class="interactive">
+      <span id="interactive-first">
+        <img src="/static/images/interactive/nodejs-interactive-logo-center.png" />
+      </span>
+      <a href="http://events.linuxfoundation.org/events/node-interactive-europe">
+        <img id="interactive-link" src="/static/images/interactive/nodejs-interactive-hero-banner-left-eu.png" />
+      </a>
+      <span id="interactive-center">
+        <img src="/static/images/interactive/nodejs-interactive-logo-center.png" />
+      </span>
+      <a href="http://events.linuxfoundation.org/events/node-interactive">
+        <img id="interactive-link" src="/static/images/interactive/nodejs-interactive-hero-banner-right-na.png" />
+      </a>
+    </div>
 
     {{> footer className="no-margin-top" }}
     <script src="/static/js/download.js" async defer></script>
