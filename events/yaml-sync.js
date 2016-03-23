@@ -7,24 +7,24 @@ var yaml = require('js-yaml'),
   str = lines.slice(lines.indexOf('---') + 1, lines.indexOf('---', lines.indexOf('---') + 1)).join('\n'),
   store = yaml.safeLoad(str)
 
-exports.getRegion = function (region) {
-  for (var reg in store.regions) {
+exports.getRegion = (region) => {
+  for (const reg in store.regions) {
     if (store.regions[reg].region === region) return store.regions[reg]
   }
-  var reg = {region: region}
+  const reg = { region: region }
   store.regions.push(reg)
   return reg
 }
 
-exports.removeEmpty = function (dict) {
-  for (var i in dict) {
+exports.removeEmpty = (dict) => {
+  for (const i in dict) {
     if (!dict[i]) delete dict[i]
   }
 }
 
-exports.replace = function (list, key, keyValue, value) {
+exports.replace = (list, key, keyValue, value) => {
   exports.removeEmpty(value)
-  for (var i = 0;i < list.length;i++) {
+  for (const i = 0;i < list.length;i++) {
     if (list[i][key] === keyValue) {
       list[i] = value
       return
@@ -33,8 +33,8 @@ exports.replace = function (list, key, keyValue, value) {
   list.push(value)
 }
 
-exports.save = function () {
-  var str = ['---', yaml.dump(store), '---'].join('\n')
+exports.save = () => {
+  const str = ['---', yaml.dump(store), '---'].join('\n')
   fs.writeFileSync(p, str)
 }
 
@@ -44,7 +44,7 @@ function rebalance () {
 }
 
 function clearMeetups () {
-  store.regions.forEach(function (reg) {
+  store.regions.forEach((reg) => {
     delete reg.meetups
   })
   exports.save()

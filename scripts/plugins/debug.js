@@ -3,7 +3,7 @@
 const Util = require('util')
 
 module.exports = function debug () {
-  return function (files, metalsmith, done) {
+  return (files, metalsmith, done) => {
     console.log('\n\n')
     console.log(Util.inspect(metalsmith.metadata(), { showHidden: false, depth: null }))
     console.log(Util.inspect(files, { showHidden: false, depth: null }))

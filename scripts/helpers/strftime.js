@@ -2,7 +2,7 @@
 
 const strftime = require('strftime')
 
-module.exports = function (date, format) {
+module.exports = (date, format) => {
   let parsedDate = new Date(date)
 
   if (!(parsedDate instanceof Date && isFinite(parsedDate))) {
