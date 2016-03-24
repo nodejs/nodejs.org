@@ -4,7 +4,7 @@ layout: foundation.hbs
 ---
 
 The Board of Directors is composed of representatives from corporate members, a representative of the
-Technical Steering Committee, and soon representatives elected by the individual membership class.
+Technical Steering Committee, and representatives elected by the individual membership class.
 
 * Chairperson: **Danese Cooper**, distinguished member of technical staff - open source at PayPal.
 * Vice-Chairperson: **Scott Hammond**, chief executive officer at Joyent.
