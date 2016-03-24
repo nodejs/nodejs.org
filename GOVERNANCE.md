@@ -91,36 +91,6 @@ the WG membership shares an employer, then the situation must be
 immediately remedied by the resignation or removal of one or more WG
 members affiliated with the over-represented employer(s).
 
-## WG Meetings
-
-The WG meets weekly on a Google Hangout On Air. The meeting is run by
-a designated moderator approved by the WG. Each meeting should be
-published to YouTube.
-
-Items are added to the WG agenda which are considered contentious or
-are modifications of governance, contribution policy, WG membership,
-or release process.
-
-The intention of the agenda is not to approve or review all patches,
-that should happen continuously on GitHub and be handled by the larger
-group of Collaborators.
-
-Any community member or contributor can ask that something be added to
-the next meeting's agenda by logging a GitHub Issue. Any Collaborator,
-WG member or the moderator can add the item to the agenda by adding
-the ***WG-agenda*** tag to the issue.
-
-Prior to each WG meeting the moderator will share the Agenda with
-members of the WG. WG members can add any items they like to the
-agenda at the beginning of each meeting. The moderator and the WG
-cannot veto or remove items.
-
-The WG may invite persons or representatives from certain projects to
-participate in a non-voting capacity.
-
-The moderator is responsible for summarizing the discussion of each
-agenda item and send it as a pull request after the meeting.
-
 ## Consensus Seeking Process
 
 The WG follows a
