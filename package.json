@@ -9,7 +9,7 @@
     "load-versions": "node scripts/load-versions.js",
     "start": "npm run serve",
     "test": "npm run test:lint && npm run test:unit && npm run test:smoke",
-    "test:lint": "standard *.js scripts/*.js scripts/**/*.js tests/*.js tests/**/*.js",
+    "test:lint": "standard",
     "test:unit": "tape tests/**/*.test.js | faucet",
     "test:smoke": "tape tests/*.smoketest.js | faucet"
   },
@@ -25,6 +25,11 @@
   "engines": {
     "iojs": ">=2.5.0",
     "node": ">=4.0.0"
+  },
+  "standard": {
+    "ignore": [
+      "static/"
+    ]
   },
   "dependencies": {
     "autoprefixer-stylus": "0.8.1",
