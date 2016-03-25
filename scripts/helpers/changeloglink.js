@@ -2,7 +2,7 @@
 
 const semver = require('semver')
 
-module.exports = function (version) {
+module.exports = (version) => {
   if (!version) { return '' }
 
   if (semver.satisfies(version, '>= 1.0.0')) {

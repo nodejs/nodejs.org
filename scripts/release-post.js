@@ -31,12 +31,12 @@ const semver = require('semver')
 const downloads = require('./helpers/downloads')
 
 function sendRequest (uri, method) {
-  return new Promise(function (resolve, reject) {
+  return new Promise((resolve, reject) => {
     request({
       headers: { 'User-Agent': 'nodejs.org release blog post script' },
       method: method,
       uri: uri
-    }, function (err, res, body) {
+    }, (err, res, body) => {
       if (err) {
         return reject(new Error(`Error requesting URL ${uri}: ${err.message}`))
       }
@@ -64,7 +64,7 @@ function isLegacyVersion (version) {
 function findLatestVersion () {
   return download('https://nodejs.org/dist/index.json')
     .then(JSON.parse)
-    .then(function (versions) {
+    .then((versions) => {
       return versions[0].version.substr(1)
     })
 }
@@ -76,7 +76,7 @@ function fetchDocs (version) {
     fetchVersionPolicy(version),
     fetchShasums(version),
     verifyDownloads(version)
-  ]).then(function (results) {
+  ]).then((results) => {
     const changelog = results[0]
     const author = results[1]
     const versionPolicy = results[2]
@@ -122,11 +122,11 @@ function fetchChangelogBody (version) {
   const rxSectionBody = /(### )?(Notable [\s\S]*)/g
 
   return fetchChangelog(version)
-    .then(function (section) {
+    .then((section) => {
       const bodyMatch = rxSectionBody.exec(section)
       // ensure ### prefixed "Notable changes" header
       // https://github.com/nodejs/nodejs.org/pull/551#issue-138257829
-      const body = bodyMatch ? '### ' + bodyMatch[2] : ''
+      const body = bodyMatch ? `### ${bodyMatch[2]}` : ''
 
       return bodyMatch
         ? body
@@ -141,7 +141,7 @@ function fetchVersionPolicy (version) {
   const rxPolicy = new RegExp(`^(## )?\\d{4}-\\d{2}-\\d{2}, Version [^(].*\\(([^\\)]+)\\)`)
 
   return fetchChangelog(version)
-    .then(function (section) {
+    .then((section) => {
       const matches = rxPolicy.exec(section)
       return matches
         ? matches[2]
@@ -192,13 +192,13 @@ function renderPost (results) {
 function writeToFile (results) {
   const filepath = path.resolve(__dirname, '..', 'locale', 'en', 'blog', 'release', `v${results.version}.md`)
 
-  return new Promise(function (resolve, reject) {
-    fs.access(filepath, fs.F_OK, function (err) {
+  return new Promise((resolve, reject) => {
+    fs.access(filepath, fs.F_OK, (err) => {
       if (!err) {
         return reject(new Error(`Release post for ${results.version} already exists!`))
       }
 
-      fs.writeFile(filepath, results.content, function (err1) {
+      fs.writeFile(filepath, results.content, (err1) => {
         if (err1) {
           return reject(new Error(`Failed to write Release post: Reason: ${err1.message}`))
         }
@@ -232,9 +232,9 @@ if (require.main === module) {
     .then(fetchDocs)
     .then(renderPost)
     .then(writeToFile)
-    .then(function (filepath) {
+    .then((filepath) => {
       console.log('Release post created:', filepath)
-    }, function (err) {
+    }, (err) => {
       console.error('Some error occured here!', err.stack)
       process.exit(1)
     })

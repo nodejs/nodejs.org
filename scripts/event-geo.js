@@ -38,16 +38,16 @@ function load () {
 
 function _meetup (ev) {
   if (!ev.lat) return
-  var desc
+  let desc
   if (ev.description) {
     if (ev.description[0] !== '<') {
       ev.description = `<p>${ev.description}</p>`
     }
-    var regex = /<br\s*[\/]?>/gi
+    const regex = /<br\s*[\/]?>/gi
     desc = htmlToText.fromString(ev.description).replace(regex, '\n')
   }
 
-  var ret =
+  const ret =
   { type: 'Feature',
     geometry:
     { type: 'Point',
@@ -67,7 +67,7 @@ function _meetup (ev) {
 }
 function _conference (ev) {
   if (!ev.lat) return
-  var ret =
+  const ret =
   { type: 'Feature',
     geometry:
     { type: 'Point',
@@ -87,7 +87,7 @@ function _conference (ev) {
 }
 function _nodeschool (ev) {
   if (!ev.lat) return
-  var ret =
+  const ret =
   { type: 'Feature',
     geometry:
     { type: 'Point',
@@ -106,18 +106,18 @@ function _nodeschool (ev) {
   return ret
 }
 
-module.exports = function () {
-  var markers = []
-  load().regions.forEach(function (reg) {
+module.exports = () => {
+  const markers = []
+  load().regions.forEach((reg) => {
     if (reg.meetups) {
-      reg.meetups.forEach(function (ev) { markers.push(_meetup(ev)) })
+      reg.meetups.forEach((ev) => markers.push(_meetup(ev)))
     }
     if (reg.conferences) {
-      reg.conferences.forEach(function (ev) { markers.push(_conference(ev)) })
+      reg.conferences.forEach((ev) => markers.push(_conference(ev)))
     }
     if (reg.nodeschools) {
-      reg.nodeschools.forEach(function (ev) { markers.push(_nodeschool(ev)) })
+      reg.nodeschools.forEach((ev) => markers.push(_nodeschool(ev)))
     }
   })
-  return { type: 'FeatureCollection', features: markers.filter(function (x) { return x }) }
+  return { type: 'FeatureCollection', features: markers.filter((x) => x) }
 }

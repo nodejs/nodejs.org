@@ -18,7 +18,7 @@ const IGNORE_SELECTORS = ['.blogpost-header', '.anchor', 'h1', 'h2', 'h3', 'bloc
  *    wrapped around the actual blog contents :(
  */
 
-module.exports = function (contents, locale, path) {
+module.exports = (contents, locale, path) => {
   const $ = cheerio.load(contents)
   const $body = $('body')
   const hasBody = $body.length > 0

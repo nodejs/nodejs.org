@@ -44,28 +44,17 @@ const markedOptions = {
 // in DEFAULT_LANG as a fallback to prevent any strings that aren't filled out
 // from appearing as blank.
 function i18nJSON (lang) {
-  var defaultJSON = require(`./locale/${DEFAULT_LANG}/site.json`)
-  var templateJSON = require(`./locale/${lang}/site.json`)
-  var finalJSON = JSON.parse(JSON.stringify(defaultJSON))
-  var merge = function (targetJSON, customJSON) {
-    Object.keys(customJSON).forEach(function (key) {
-      let value = customJSON[key]
-      if (typeof value === 'object') {
-        merge(targetJSON[key], value)
-      } else {
-        targetJSON[key] = value
-      }
-    })
-  }
-  merge(finalJSON, templateJSON)
-  return finalJSON
+  const defaultJSON = require(`./locale/${DEFAULT_LANG}/site.json`)
+  const templateJSON = require(`./locale/${lang}/site.json`)
+
+  return Object.assign({}, defaultJSON, templateJSON)
 }
 
 // This is the function where the actual magic happens. This contains the main
 // Metalsmith build cycle used for building a locale subsite, such as the
 // english one.
 function buildLocale (source, locale) {
-  console.time('[metalsmith] build/' + locale + ' finished')
+  console.time(`[metalsmith] build/${locale} finished`)
   const siteJSON = path.join(__dirname, 'locale', locale, 'site.json')
   const metalsmith = Metalsmith(__dirname)
   metalsmith
@@ -200,28 +189,28 @@ function buildLocale (source, locale) {
 
   // This actually executes the build and stops the internal timer after
   // completion.
-  metalsmith.build(function (err) {
+  metalsmith.build((err) => {
     if (err) { throw err }
-    console.timeEnd('[metalsmith] build/' + locale + ' finished')
+    console.timeEnd(`[metalsmith] build/${locale} finished`)
   })
 }
 
 // This middleware adds "Edit on GitHub" links to every editable page
 function githubLinks (options) {
-  return function (files, m, next) {
+  return (files, m, next) => {
     // add suffix (".html" or "/") to each part of regex
     // to ignore possible occurrences in titles (e.g. blog posts)
-    var isEditable = /security\.html|about\/|docs\/|foundation\/|get\-involved\/|knowledge\//
+    const isEditable = /security\.html|about\/|docs\/|foundation\/|get\-involved\/|knowledge\//
 
-    Object.keys(files).forEach(function (path) {
+    Object.keys(files).forEach((path) => {
       if (!isEditable.test(path)) {
         return
       }
 
-      var file = files[path]
-      var url = 'https://github.com/nodejs/nodejs.org/edit/master/locale/' + options.locale + '/' + path.replace('.html', '.md')
+      const file = files[path]
+      const url = `https://github.com/nodejs/nodejs.org/edit/master/locale/${options.locale}/${path.replace('.html', '.md')}`
 
-      var contents = file.contents.toString().replace(/\<h1\>(.+)\<\/h1\>/, function ($1, $2) {
+      const contents = file.contents.toString().replace(/\<h1\>(.+)\<\/h1\>/, ($1, $2) => {
         return `<a class="edit-link" href="${url}">Edit on GitHub</a> <h1>${$2}</h1>`
       })
 
@@ -236,9 +225,9 @@ function githubLinks (options) {
 // build directory.
 function copyStatic () {
   console.time('[metalsmith] build/static finished')
-  fs.mkdir(path.join(__dirname, 'build'), function () {
-    fs.mkdir(path.join(__dirname, 'build', 'static'), function () {
-      ncp(path.join(__dirname, 'static'), path.join(__dirname, 'build', 'static'), function (err) {
+  fs.mkdir(path.join(__dirname, 'build'), () => {
+    fs.mkdir(path.join(__dirname, 'build', 'static'), () => {
+      ncp(path.join(__dirname, 'static'), path.join(__dirname, 'build', 'static'), (err) => {
         if (err) { return console.error(err) }
         fs.writeFileSync(path.join(__dirname, 'build', 'static', 'event-geo.json'), JSON.stringify(eventGeo()))
         console.timeEnd('[metalsmith] build/static finished')
@@ -253,7 +242,7 @@ function fullBuild () {
   // Copies static files.
   copyStatic()
   // Loads all node/io.js versions.
-  loadVersions(function (err, versions) {
+  loadVersions((err, versions) => {
     if (err) { throw err }
     const source = {
       project: {
@@ -270,8 +259,8 @@ function fullBuild () {
     }
 
     // Executes the build cycle for every locale.
-    fs.readdir(path.join(__dirname, 'locale'), function (e, locales) {
-      locales.filter(junk.not).forEach(function (locale) {
+    fs.readdir(path.join(__dirname, 'locale'), (e, locales) => {
+      locales.filter(junk.not).forEach((locale) => {
         buildLocale(source, locale)
       })
     })
