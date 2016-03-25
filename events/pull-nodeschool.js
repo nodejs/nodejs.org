@@ -1,16 +1,25 @@
 'use strict'
 
-const request = require('request'),
-  yml = require('./yaml-sync'),
-  nodeGeocoder = require('node-geocoder'),
-  geoOpts = {
-    apiKey: process.env.MAPS_TOKEN,
-    formatter: null
-  },
-  geocoder = nodeGeocoder('google', 'https', geoOpts)
+const nodeGeocoder = require('node-geocoder')
+const request = require('request')
 
-request('http://nodeschool.io/chapters/list.json', {json: true}, (e, resp, list) => {
-  if (e || resp.statusCode !== 200) throw (e || new Error('response not 200' + resp.statusCode))
+const yml = require('./yaml-sync')
+const pkg = require('../package')
+
+const geocoder = nodeGeocoder('google', 'https', {
+  apiKey: process.env.MAPS_TOKEN,
+  formatter: null
+})
+
+request({
+  headers: { 'user-agent': `${pkg.name}/${pkg.version}` },
+  url: 'http://nodeschool.io/chapters/list.json',
+  json: true
+}, (err, resp, list) => {
+  if (err || resp.statusCode !== 200) {
+    throw (err || new Error(`Invalid status code (${resp.statusCode})`))
+  }
+
   let count = 0
   const chapters = []
 

@@ -138,7 +138,7 @@ function fetchVersionPolicy (version) {
   // matches the policy for a given version (Stable, LTS etc) in the changelog
   // ## 2015-10-07, Version 4.2.0 'Argon' (LTS), @jasnell
   // 2015-12-04, Version 0.12.9 (LTS), @rvagg
-  const rxPolicy = new RegExp(`^(## )?\\d{4}-\\d{2}-\\d{2}, Version [^(].*\\(([^\\)]+)\\)`)
+  const rxPolicy = new RegExp('^(## )?\\d{4}-\\d{2}-\\d{2}, Version [^(].*\\(([^\\)]+)\\)')
 
   return fetchChangelog(version)
     .then((section) => {
