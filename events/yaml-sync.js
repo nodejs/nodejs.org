@@ -8,10 +8,11 @@ var yaml = require('js-yaml'),
   store = yaml.safeLoad(str)
 
 exports.getRegion = (region) => {
-  for (const reg in store.regions) {
+  let reg;
+  for (reg in store.regions) {
     if (store.regions[reg].region === region) return store.regions[reg]
   }
-  const reg = { region: region }
+  reg = { region: region }
   store.regions.push(reg)
   return reg
 }
@@ -24,7 +25,7 @@ exports.removeEmpty = (dict) => {
 
 exports.replace = (list, key, keyValue, value) => {
   exports.removeEmpty(value)
-  for (const i = 0;i < list.length;i++) {
+  for (let i = 0;i < list.length;i++) {
     if (list[i][key] === keyValue) {
       list[i] = value
       return
