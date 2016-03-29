@@ -47,7 +47,7 @@ Full set up is in https://github.com/nodejs/build/tree/master/setup/www minus se
 
 All of the Node.js Foundation websites, including this repo, are jointly governed by the **Website Working Group**. See [GOVERNANCE.md](./GOVERNANCE.md) to learn more about the group's structure and [CONTRIBUTING.md](./CONTRIBUTING.md) for guidance about the expectations for all contributors to this project.
 
-### Website Working Group Admins
+### Website Working Group Members
 
 - Frederic Hemberger ([fhemberger](https://github.com/fhemberger)): [@fhemberger](https://twitter.com/fhemberger), `mail``@``frederic-hemberger.de`
 - Mikeal Rogers ([mikeal](https://github.com/mikeal)): [@mikeal](https://twitter.com/mikeal), `mikeal.rogers``@``gmail.com`
@@ -55,7 +55,7 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 - Rod Vagg ([rvagg](https://github.com/rvagg)): [@rvagg](https://twitter.com/rvagg), `rod``@``vagg.org`
 - Trent Oswald ([therebelrobot](https://github.com/therebelrobot)): [@therebelrobot](https://twitter.com/therebelrobot), `trentoswald``@``therebelrobot.com`
 
-### Website Working Group Members
+### Website Working Group Collaborators
 
 - Andy Gout ([andygout](https://github.com/andygout))
 - Austin Winstanley ([AustinWinstanley](https://github.com/AustinWinstanley))
