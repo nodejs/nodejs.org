@@ -1,14 +1,17 @@
-var yaml = require('js-yaml'),
-  fs = require('fs'),
-  path = require('path'),
-  p = path.join(__dirname, '..', 'locale', 'en', 'get-involved', 'events.md'),
-  buf = fs.readFileSync(p),
-  lines = buf.toString().split('\n'),
-  str = lines.slice(lines.indexOf('---') + 1, lines.indexOf('---', lines.indexOf('---') + 1)).join('\n'),
-  store = yaml.safeLoad(str)
+'use strict'
 
-exports.getRegion = (region) => {
-  let reg;
+const yaml = require('js-yaml')
+const fs = require('fs')
+const path = require('path')
+
+const p = path.join(__dirname, '..', 'locale', 'en', 'get-involved', 'events.md')
+const lines = fs.readFileSync(p).toString().split('\n')
+const begin = lines.indexOf('---') + 1
+const end = lines.indexOf('---', begin)
+const store = yaml.safeLoad(lines.slice(begin, end).join('\n'))
+
+function getRegion (region) {
+  let reg
   for (reg in store.regions) {
     if (store.regions[reg].region === region) return store.regions[reg]
   }
@@ -17,15 +20,15 @@ exports.getRegion = (region) => {
   return reg
 }
 
-exports.removeEmpty = (dict) => {
+function removeEmpty (dict) {
   for (const i in dict) {
     if (!dict[i]) delete dict[i]
   }
 }
 
-exports.replace = (list, key, keyValue, value) => {
-  exports.removeEmpty(value)
-  for (let i = 0;i < list.length;i++) {
+function replace (list, key, keyValue, value) {
+  removeEmpty(value)
+  for (let i = 0; i < list.length; i++) {
     if (list[i][key] === keyValue) {
       list[i] = value
       return
@@ -34,20 +37,12 @@ exports.replace = (list, key, keyValue, value) => {
   list.push(value)
 }
 
-exports.save = () => {
+function save () {
   const str = ['---', yaml.dump(store), '---'].join('\n')
   fs.writeFileSync(p, str)
 }
 
-function rebalance () {
-  store.regions = store.regions.slice(0, 6)
-  exports.save()
-}
-
-function clearMeetups () {
-  store.regions.forEach((reg) => {
-    delete reg.meetups
-  })
-  exports.save()
-}
-// clearMeetups()
+exports.removeEmpty = removeEmpty
+exports.getRegion = getRegion
+exports.replace = replace
+exports.save = save

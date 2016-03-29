@@ -1,17 +1,16 @@
-const request = require('request').defaults({json: true, headers: {'user-agent': 'pull-meeting-0.1'}}),
-  url = 'https://api.meetup.com/2/groups',
-  auth = process.env.MEETUP_TOKEN,
-  qs = require('querystring'),
-  yml = require('./yaml-sync'),
-  opts =
-  { topic: 'nodejs',     category: 34,     upcoming_events: true,     key: auth
-  },
-  allresults = [],
-  u = url + '?' + qs.stringify(opts)
+'use strict'
 
-const countryMap =
-{ ES: 'Africa',  MU: 'Africa',  NG: 'Africa',  KE: 'Africa',  ZA: 'Africa',  MA: 'Africa',  EG: 'Africa',  IL: 'Asia',  TH: 'Asia',  KR: 'Asia',  RU: 'Asia',  ID: 'Asia',  PH: 'Asia',  IN: 'Asia',  HK: 'Asia',  CN: 'Asia',  VN: 'Asia',  TW: 'Asia',  LK: 'Asia',  NP: 'Asia',  JP: 'Asia',  AE: 'Asia',  BD: 'Asia',  LT: 'Europe',  RS: 'Europe',  HR: 'Europe',  CZ: 'Europe',  PT: 'Europe',  TR: 'Europe',  GR: 'Europe',  DE: 'Europe',  RO: 'Europe',  MT: 'Europe',  GH: 'Europe',  IE: 'Europe',  FI: 'Europe',  SE: 'Europe',  UA: 'Europe',  AT: 'Europe',  HU: 'Europe',  CH: 'Europe',  IS: 'Europe',  GB: 'Europe',  DK: 'Europe',  EE: 'Europe',  BE: 'Europe',  NO: 'Europe',  NL: 'Europe',  FR: 'Europe',  PL: 'Europe',  SK: 'Europe',  IT: 'Europe',  SI: 'Europe',  LU: 'Europe',  BY: 'Europe',  ME: 'Europe',  CA: 'North America',  US: 'North America',  DO: 'Latin America',  AR: 'Latin America',  PE: 'Latin America',  MX: 'Latin America',  BR: 'Latin America',  VE: 'Latin America',  CL: 'Latin America',  CO: 'Latin America',  UY: 'Latin America',  PA: 'Latin America',  GT: 'Latin America',  EC: 'Latin America',  AU: 'South Pacific',  SG: 'South Pacific',  NZ: 'South Pacific'
+const request = require('request')
+
+const countryMap = require('./country-map')
+const yml = require('./yaml-sync')
+const pkg = require('../package')
+
+const defaults = {
+  headers: { 'user-agent': `${pkg.name}/${pkg.version}` },
+  json: true
 }
+const results = []
 
 function clean (event) {
   delete event.topics
@@ -37,22 +36,36 @@ function finish (events) {
 // This is nice when testing if you cache the response
 // finish(JSON.parse(require('fs').readFileSync('./meetup.json').toString()))
 
-function _go (u) {
-  request(u, (e, resp, body) => {
-    const results = body.results
-    results.forEach((result) => {
+function pull (opts) {
+  request(opts, (err, resp, body) => {
+    if (err || resp.statusCode !== 200) {
+      throw (err || new Error(`Invalid status code (${resp.statusCode})`))
+    }
+
+    body.results.forEach((result) => {
       const title = result.name.toLowerCase()
-      if (title.indexOf('nodeschool') !== -1) return
-      if (title.indexOf('mongodb') !== -1 && title.indexOf('node') === -1) return
-      if (title.indexOf('find a tech job') !== -1 && title.indexOf('node') === -1) return
-      // if (title.indexOf('node') !== -1) return allresults.push(result)
-      allresults.push(result)
+
+      if (title.includes('nodeschool')) return
+      if (title.includes('mongodb') && title.includes('node')) return
+      if (title.includes('find a tech job') && title.includes('node')) return
+
+      results.push(result)
     })
+
     if (body.meta.next) {
-      _go(body.meta.next)
+      pull(Object.assign({ url: body.meta.next }, defaults))
     } else {
-      finish(allresults)
+      finish(results)
     }
   })
 }
-_go(u)
+
+pull(Object.assign({
+  url: 'https://api.meetup.com/2/groups',
+  qs: {
+    key: process.env.MEETUP_TOKEN,
+    upcoming_events: true,
+    topic: 'nodejs',
+    category: 34
+  }
+}, defaults))
