@@ -20,52 +20,51 @@
 
 'use strict'
 
-const https = require('https')
 const fs = require('fs')
 const path = require('path')
 const extend = require('util')._extend
 const Handlebars = require('handlebars')
-const url = require('url')
+const request = require('request')
+const changelogUrl = require('changelog-url')
+const semver = require('semver')
 
 const downloads = require('./helpers/downloads')
 
-function request (uri, method) {
-  return new Promise(function (resolve, reject) {
-    // user-agent is required when by api.github.com
-    const opts = extend({
-      method,
-      headers: {
-        'user-agent': 'nodejs.org release blog post script'
+function sendRequest (uri, method) {
+  return new Promise((resolve, reject) => {
+    request({
+      headers: { 'User-Agent': 'nodejs.org release blog post script' },
+      method: method,
+      uri: uri
+    }, (err, res, body) => {
+      if (err) {
+        return reject(new Error(`Error requesting URL ${uri}: ${err.message}`))
       }
-    }, url.parse(uri))
-
-    let data = ''
-
-    https.request(opts, function (res) {
       if (res.statusCode !== 200) {
         return reject(new Error(`Invalid status code (!= 200) while retrieving ${uri}: ${res.statusCode}`))
       }
 
-      res.on('data', function (chunk) { data += chunk })
-      res.on('end', function () { resolve(data) })
-    }).on('error', function (err) {
-      reject(new Error(`Error requesting URL ${uri}: ${err.message}`))
-    }).end()
+      resolve(body)
+    })
   })
 }
 
 function download (url) {
-  return request(url, 'GET')
+  return sendRequest(url, 'GET')
 }
 
 function explicitVersion (version) {
   return version ? Promise.resolve(version) : Promise.reject()
 }
 
+function isLegacyVersion (version) {
+  return semver.satisfies(version, '< 1.0.0')
+}
+
 function findLatestVersion () {
   return download('https://nodejs.org/dist/index.json')
     .then(JSON.parse)
-    .then(function (versions) {
+    .then((versions) => {
       return versions[0].version.substr(1)
     })
 }
@@ -77,7 +76,7 @@ function fetchDocs (version) {
     fetchVersionPolicy(version),
     fetchShasums(version),
     verifyDownloads(version)
-  ]).then(function (results) {
+  ]).then((results) => {
     const changelog = results[0]
     const author = results[1]
     const versionPolicy = results[2]
@@ -107,9 +106,12 @@ function fetchChangelog (version) {
   // support release sections with headers like:
   // ## 2015-09-22, Version 4.1.1 (Stable), @rvagg
   // ## 2015-10-07, Version 4.2.0 'Argon' (LTS), @jasnell
-  const rxSection = new RegExp(`## \\d{4}-\\d{2}-\\d{2}, Version ${version} ('\\w+' )?\\([^\\)]+\\)[\\s\\S]*?(?=## \\d{4})`)
+  // 2015-12-04, Version 0.12.9 (LTS), @rvagg
+  const rxSection = isLegacyVersion(version)
+    ? new RegExp(`\\d{4}-\\d{2}-\\d{2}, Version ${version} \\([^\\)]+\\)[\\s\\S]*?(?=\\d{4}.\\d{2}.\\d{2})`)
+    : new RegExp(`## \\d{4}-\\d{2}-\\d{2}, Version ${version} ('\\w+' )?\\([^\\)]+\\)[\\s\\S]*?(?=## \\d{4})`)
 
-  return download(`https://raw.githubusercontent.com/nodejs/node/v${version}/CHANGELOG.md`)
+  return download(changelogUrl.rawUrl(version))
     .then((data) => {
       const matches = rxSection.exec(data)
       return matches ? matches[0] : Promise.reject(new Error(`Couldn't find matching changelog for ${version}`))
@@ -117,26 +119,32 @@ function fetchChangelog (version) {
 }
 
 function fetchChangelogBody (version) {
-  const rxSectionBody = /### Notable changes[\s\S]*/g
+  const rxSectionBody = /(### )?(Notable [\s\S]*)/g
 
   return fetchChangelog(version)
-    .then(function (section) {
+    .then((section) => {
       const bodyMatch = rxSectionBody.exec(section)
+      // ensure ### prefixed "Notable changes" header
+      // https://github.com/nodejs/nodejs.org/pull/551#issue-138257829
+      const body = bodyMatch ? `### ${bodyMatch[2]}` : ''
+
       return bodyMatch
-        ? bodyMatch[0]
+        ? body
         : Promise.reject(new Error(`Could not find changelog body of ${version} release`))
     })
 }
 
 function fetchVersionPolicy (version) {
   // matches the policy for a given version (Stable, LTS etc) in the changelog
-  const rxPolicy = new RegExp(`^## \\d{4}-\\d{2}-\\d{2}, Version [^(].*\\(([^\\)]+)\\)`)
+  // ## 2015-10-07, Version 4.2.0 'Argon' (LTS), @jasnell
+  // 2015-12-04, Version 0.12.9 (LTS), @rvagg
+  const rxPolicy = new RegExp('^(## )?\\d{4}-\\d{2}-\\d{2}, Version [^(].*\\(([^\\)]+)\\)')
 
   return fetchChangelog(version)
-    .then(function (section) {
+    .then((section) => {
       const matches = rxPolicy.exec(section)
       return matches
-        ? matches[1]
+        ? matches[2]
         : Promise.reject(new Error(`Could not find version policy of ${version} in its changelog`))
     })
 }
@@ -153,13 +161,17 @@ function verifyDownloads (version) {
 }
 
 function findAuthorLogin (version, section) {
-  const rxReleaseAuthor = /^## .*? \([^\)]+\), @(\S+)/g
+  // looking for the @author part of the release header, eg:
+  // ## 2016-03-08, Version 5.8.0 (Stable). @Fishrock123
+  // ## 2015-10-13, Version 4.2.1 'Argon' (LTS), @jasnell
+  // ## 2015-09-08, Version 4.0.0 (Stable), @rvagg
+  const rxReleaseAuthor = /^(## )?.*? \([^\)]+\)[,.] @(\S+)/g
   const matches = rxReleaseAuthor.exec(section)
-  return matches ? matches[1] : Promise.reject(new Error(`Couldn't find @author of ${version} release :(`))
+  return matches ? matches[2] : Promise.reject(new Error(`Couldn't find @author of ${version} release :(`))
 }
 
 function urlOrComingSoon (binary) {
-  return request(binary.url, 'HEAD').then(
+  return sendRequest(binary.url, 'HEAD').then(
     () => `${binary.title}: ${binary.url}`,
     () => `${binary.title}: *Coming soon*`)
 }
@@ -180,13 +192,13 @@ function renderPost (results) {
 function writeToFile (results) {
   const filepath = path.resolve(__dirname, '..', 'locale', 'en', 'blog', 'release', `v${results.version}.md`)
 
-  return new Promise(function (resolve, reject) {
-    fs.access(filepath, fs.F_OK, function (err) {
+  return new Promise((resolve, reject) => {
+    fs.access(filepath, fs.F_OK, (err) => {
       if (!err) {
         return reject(new Error(`Release post for ${results.version} already exists!`))
       }
 
-      fs.writeFile(filepath, results.content, function (err1) {
+      fs.writeFile(filepath, results.content, (err1) => {
         if (err1) {
           return reject(new Error(`Failed to write Release post: Reason: ${err1.message}`))
         }
@@ -220,9 +232,9 @@ if (require.main === module) {
     .then(fetchDocs)
     .then(renderPost)
     .then(writeToFile)
-    .then(function (filepath) {
+    .then((filepath) => {
       console.log('Release post created:', filepath)
-    }, function (err) {
+    }, (err) => {
       console.error('Some error occured here!', err.stack)
       process.exit(1)
     })

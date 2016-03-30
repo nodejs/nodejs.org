@@ -9,8 +9,15 @@
         <li{{#equals path site.docs.faq.link}} class="active"{{/equals}}>
             <a href="/{{site.locale}}/{{site.docs.faq.link}}/">{{site.docs.faq.text}}</a>
         </li>
-        <li{{#equals path site.docs.api.link}} class="active"{{/equals}}>
-            <a href="{{site.docs.api.link}}">{{site.docs.api.text}}</a>
+        <li>
+            <a href="{{majorapidocslink project.currentVersions.lts}}">
+                {{project.currentVersions.lts}} {{site.docs.api.text}} <span class="small color-lightgray">{{labels.lts}}</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{majorapidocslink project.currentVersions.stable}}">
+                {{project.currentVersions.stable}} {{site.docs.api.text}}
+            </a>
         </li>
         <li{{#startswith path site.docs.guides.link}} class="active"{{/startswith}}>
             <a href="/{{site.locale}}/{{site.docs.guides.link}}">{{site.docs.guides.text}}</a>

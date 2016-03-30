@@ -5,10 +5,13 @@
   "homepage": "https://nodejs.org",
   "scripts": {
     "build": "node build.js",
-    "serve": "node build.js serve",
+    "serve": "node server.js",
     "load-versions": "node scripts/load-versions.js",
     "start": "npm run serve",
-    "test": "standard build.js scripts/*.js scripts/**/*.js tests/**/*.js && tape tests/**/*.test.js | faucet"
+    "test": "npm run test:lint && npm run test:unit && npm run test:smoke",
+    "test:lint": "standard",
+    "test:unit": "tape tests/**/*.test.js | faucet",
+    "test:smoke": "tape tests/*.smoketest.js | faucet"
   },
   "repository": {
     "type": "git",
@@ -23,8 +26,15 @@
     "iojs": ">=2.5.0",
     "node": ">=4.0.0"
   },
+  "standard": {
+    "ignore": [
+      "static/"
+    ]
+  },
   "dependencies": {
     "autoprefixer-stylus": "0.8.1",
+    "changelog-url": "1.0.2",
+    "cheerio": "0.19.0",
     "chokidar": "1.2.0",
     "handlebars": "4.0.4",
     "html-to-text": "^1.5.0",
@@ -41,6 +51,7 @@
     "metalsmith-permalinks": "0.4.0",
     "metalsmith-prism": "2.1.1",
     "metalsmith-stylus": "1.0.0",
+    "metalsmith-yearly-pagination": "2.0.0",
     "ncp": "2.0.0",
     "node-geocoder": "^3.4.1",
     "node-version-data": "1.0.0",
@@ -56,7 +67,7 @@
     "nock": "^2.17.0",
     "pre-commit": "^1.1.2",
     "proxyquire": "^1.7.3",
-    "standard": "^5.3.1",
+    "standard": "^6.0.8",
     "tape": "^4.2.2"
   }
 }

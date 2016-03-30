@@ -24,13 +24,13 @@ This week we have one release proposal: [Node.js v5.0.0](https://github.com/node
 
 ### Node.js foundation is considering an iteration on the official logo
 
-* [Please click here](https://github.com/nodejs/evangelism/issues/179) to post images and ideas. 
+* [Please click here](https://github.com/nodejs/evangelism/issues/179) to post images and ideas.
 * The Marketing Committee will look over ideas at some point in the future and potentially select one or take some of the ideas/direction and handoff to a designer.
 * Final logo will have to be approved by the Board of Directors.
 
 ### Node.js foundation announces programming for Node.js interactive
 
-* The Node.js Foundation, a community-led and industry-backed consortium to advance the development of the Node.js platform, announced initial programming for Node.js Interactive. 
+* The Node.js Foundation, a community-led and industry-backed consortium to advance the development of the Node.js platform, announced initial programming for Node.js Interactive.
 * This inaugural event, which is being led by the newly formed Node.js Foundation in cooperation with the Linux Foundation, will be held December 8-9, 2015, in Portland, Ore.
 * Node.js Interactive will also focus on three tracks: Frontend, Backend and the Internet of Things (IoT).
 
@@ -38,12 +38,12 @@ See https://nodejs.org/en/blog/announcements/interactive-2015-programming for mo
 
 ### NodeUp Podcast
 
-* NodeUp podcast episode 92 was published this week: [http://nodeup.com/ninetytwo](http://nodeup.com/ninetytwo). 
+* NodeUp podcast episode 92 was published this week: <http://nodeup.com/ninetytwo>.
 * The subject of the podcast is Node 4.0 and the participants are Rod Vagg, Evan Lucas, and Rich Trott.
 
 ### Good First Contribution
 
-* Start getting involved in Node.js with [`good-first-contribution` issues](https://github.com/nodejs/node/labels/good%20first%20contribution). 
+* Start getting involved in Node.js with [`good-first-contribution` issues](https://github.com/nodejs/node/labels/good%20first%20contribution).
 * Want to help others with issues? You can start simply, by answering [open questions](https://github.com/nodejs/node/labels/good%20first%20contribution) with `good-first-contribution` tag.
 
 See https://github.com/nodejs/node/labels/good%20first%20contribution for more information.

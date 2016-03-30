@@ -53,6 +53,11 @@ img
     display block
     max-width 100%
 
+    .logos &
+        // Fixes logo size on Firefox, see:
+        // https://github.com/nodejs/nodejs.org/issues/558
+        width: 100%
+
 
 code
     background-color $light-gray3
@@ -66,6 +71,7 @@ pre
     font-size 0.8em
     white-space pre-wrap
     color $light-gray3
+    overflow-x scroll
 
     code
         color $light-gray3
@@ -86,7 +92,6 @@ pre
 @import 'page-modules/_in-the-news'
 @import 'page-modules/_download'
 @import 'page-modules/_events'
-@import 'page-modules/_interactiveBanner'
 @import 'page-modules/_scrollToTop'
 @import 'page-modules/_anchorLinks'
 
@@ -124,15 +129,23 @@ pre
         a
             display block
             padded-link(10px)
+            padding-top 5px
+            padding-bottom 5px
+            line-height 1
 
         .active
             > a,
             > a:hover
-                color $node-gray
-                background-color $hover-green
+                color $white
+                background-color $active-green
 
     article
         margin-left 220px
+
+.edit-link
+    float right
+    font-size 0.9em
+    margin 0.5em 0
 
 @media screen and (max-width: 480px)
     .has-side-nav
@@ -142,9 +155,6 @@ pre
         article
             margin-left 0px
 
-            pre
-              overflow-x scroll
-
 .full-width
     width 100%
 
@@ -153,6 +163,9 @@ pre
 
 .color-lightgray
     color $light-gray
+
+a:hover .color-lightgray
+    color $white
 
 .no-padding
     padding 0

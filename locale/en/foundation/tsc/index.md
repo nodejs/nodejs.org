@@ -1,9 +1,9 @@
 ---
-title: Technical Steering Commitee
+title: Technical Steering Committee
 layout: foundation.hbs
 ---
 
-## Collaborators and the Technical Steering Committee
+# Collaborators and the Technical Steering Committee
 
 The Node.js project is sponsored by the Node.js Foundation and maintained by
 individual Collaborators. The Technical Steering Committee (TSC) membership
@@ -14,13 +14,13 @@ term commitment to driving the project and community forward.
 You can read more about how to become a collaborator and a TSC member in [the
 contributing section](/en/get-involved/contribute/).
 
-### Current collaborators
+## Current collaborators
 
 The Node.js Project currently has well over 300 contributors actively
 working on different areas of the project. The current list of contributors
-can be found on the project's [Github profile](https://github.com/orgs/nodejs/people).
+can be found on the project's [GitHub profile](https://github.com/orgs/nodejs/people).
 
-### Current members of the Technical Steering Committee
+## Current members of the Technical Steering Committee
 
 * Alexis Campailla ([orangemocha](https://github.com/orangemocha))
 * Ben Noordhuis ([bnoordhuis](https://github.com/bnoordhuis))
@@ -36,6 +36,6 @@ can be found on the project's [Github profile](https://github.com/orgs/nodejs/pe
 * Shigeki Ohtsu ([shigeki](https://github.com/shigeki))
 * Trevor Norris ([trevnorris](https://github.com/trevnorris))
 
-### Technical Steering Commitee Meetings
+## Technical Steering Committee Meetings
 
 [Meeting minutes](minutes/)

@@ -4,74 +4,83 @@ title: Releases
 ---
 # Releases
 
-The roadmap is scoped by the core team, as informed by you, our users. Releases
-happen as often as is necessary and practical, but never before work is
-complete. The team has a strong desire to release high quality code for every
-release. We know that bugs are unavoidable, but the pressure to release a new
-version is always outweighed by releasing software that is as correct as we can
-make it. That commitment to quality software is one of our core tenets of the
-project.
+The core team defines the roadmap's scope, as informed by Node.js' community.
+Releases happen as often as necessary and practical, but never before work is
+complete. Bugs are unavoidable, but pressure to ship a release will never
+prevail over ensuring the software is correct. The commitment to quality
+software is a core tenet of the Node.js project.
 
 ## Patches
 
-Patch releases are defined as bug, performance, and security fixes. They do not
-change or add any public interfaces. They do not change the expected behavior
-of a given interface. They are meant to correct behavior when it doesn't match
-the documentation, without also introducing a change that makes seamless
-upgrades impossible.
+Patch releases:
+
+- Include bug, performance, and security fixes.
+- Do not add nor change public interfaces.
+- Do not alter the expected behavior of a given interface.
+- Can correct behavior if it is out-of-sync with the documentation.
+- Do not introduce changes which make seamless upgrades impossible .
 
 ## Minors
 
-Minors are the addition and refinements of APIs or subsystems. They do not
-generally change APIs or introduce backwards compatible breaking changes,
-except where unavoidable. These are mostly completely additive releases.
+Minor releases:
+
+- Include additions and/or refinements of APIs and subsystems.
+- Do not generally change APIs nor introduce backwards-incompatible breaking
+changes, except where unavoidable.
+- Are mostly additive releases.
 
 ## Majors
 
-Majors are where we can introduce breaking changes. They are also where we
-identify what the API is we will be supporting for the foreseeable future.
-Making a move to a new major is a difficult conversation, and requires care
-and appropriate scoping.
+Major releases:
+
+- Usually introduce backwards-incompatible, breaking changes.
+- Identify the API Node.js intends to support for the foreseeable future.
+- Require conversation, care, collaboration and appropriate scoping by the team
+and its users.
 
 ## Scoping Features
 
-Features and APIs can be added into Node.js when their need is clear, there are
-clean, useful, agreeable APIs, and there are known consumers. For instance, it
-may be the case that when implementing core functionality for Node.js another
-lower level API may be identified that could have utility beyond Node.js
-itself. When those APIs are identified, we can choose to expose them.
+The team can add features and APIs into Node.js when:
 
-Take for instance the `EventEmitter`, the need to have an event subscription
-model for core modules to consume was clear, and that abstraction clearly had
-utility beyond core itself. Not that this interface couldn't be implemented as
-external to Node.js, it's just that Node needed the abstraction for itself and
-in turn exposed it for others.
+- The need is clear.
+- The API or feature has known consumers.
+- The API is clean, useful, and easy-to use.
 
-Alternatively it may be that many people in the community are all adopting a
-pattern to handle common needs that are not currently satisfied by Node, or
-they are implementing a feature that should clearly be delivered by default for
-all Node.js consumers. It's also possible that many in the community are
-adopting a change that requires a compiled asset that can be difficult to
-deliver in all environments. At that point, Node.js may decide to incorporate
-those changes directly.
+If when implementing core functionality for Node.js, the team or community may
+identify another lower-level API which could have utility beyond Node.js. When
+identified, Node.js can expose it for consumers.
 
-Adopting a new API however, is not taken lightly. Node.js has a strong
-commitment to backwards compatibility. As such it is necessary to have lots of
-input and conversation around the addition of a new API before it's added into
-Node. Even when we've identified a suitable API it's also important to have
-clearly identified the consumers of the API.
+For example, consider the [`EventEmitter`] interface.  The need to have an event
+subscription model for core modules to consume was clear, and that abstraction
+had utility beyond the Node.js core.  It was not the case that its interface
+couldn't be implemented externally to Node.js; instead, Node.js needed the
+abstraction for itself, and also exposed it for use by Node.js consumers.
+
+Alternatively, it may be that many in the community adopt a pattern to handle
+common needs which Node.js does not satisfy.  It may be clear that Node.js
+should deliver, by default, an API or feature for all Node.js consumers.
+Another possibility is a commonly-used compiled asset which is difficult to
+deliver across environments.  Given this, Node.js may incorporate those changes
+directly.
+
+The core team does not take the decision lightly to add a new API to Node.js.
+Node.js has a strong commitment to backwards compatibility. As such, community
+input and conversation must occur before the team takes action. Even if an API
+is otherwise suitable for addition, the team must identify potential consumers.
 
 ## Deprecation
 
-It may be that we need to deprecate a feature or API of Node. Doing so takes a
-lot of time and consideration before marking something as deprecated. We need
-to make sure we understand to the best of our ability who is using an API, and
-how that API is being used. In the case where an API is overwhelmingly in use
-by the community, what is the need for marking the API deprecated? Do we have a
-replacement API, is there a transitionary path that we can socialize? How many
-iterations of versions do there need to before the API can be completely
-removed? Is there a polyfill module that can be consumed from the community in
-order to avoid as much pain as possible?
+On occasion, the team must deprecate a feature or API of Node.js. Before coming
+to any final conclusion, the team must identify the consumers of the API and how
+they use it.  Some questions to ask are:
 
-In short its not impossible for APIs to be deprecated, but just like the adding
-of APIs, deprecating of an API is not something to be taken lightly.
+- If this API is widely used by the community, what is the need for flagging it
+as deprecated?
+- Do we have a replacement API, or is there a transitionary path?
+- How long does the API remain deprecated before removal?
+- Does an external module exist which its consumers can easily substitute?
+
+The team takes the same careful consideration when deprecating a Node.js API as
+they do when adding another.
+
+[`EventEmitter`]: https://nodejs.org/api/events.html#events_class_eventemitter

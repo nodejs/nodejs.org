@@ -41,7 +41,7 @@ and at the end starts a server through a blocking call like
 `EventMachine::run()`. In Node there is no such start-the-event-loop call. Node
 simply enters the event loop after executing the input script. Node exits the
 event loop when there are no more callbacks to perform. This behavior is like
-browser JavaScript -— the event loop is hidden from the user.
+browser JavaScript — the event loop is hidden from the user.
 
 HTTP is a first class citizen in Node, designed with streaming and low latency
 in mind. This makes Node well suited for the foundation of a web library or
@@ -50,7 +50,7 @@ framework.
 Just because Node is designed without threads, doesn't mean you cannot take
 advantage of multiple cores in your environment. You can spawn child processes
 that are easy to communicate with by using our
-[child_process.fork()](https://nodejs.org/api/child_process.html#child_process.fork)
+[child_process.fork()](https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options)
 API. Built upon that same interface is the
 [cluster](https://nodejs.org/api/cluster.html) module, which allows you to share
 sockets between processes to enable load balancing over your cores.

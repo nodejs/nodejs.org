@@ -1,47 +1,47 @@
-var yaml = require('js-yaml'),
-  fs = require('fs'),
-  path = require('path'),
-  p = path.join(__dirname, '..', 'locale', 'en', 'get-involved', 'events.md'),
-  buf = fs.readFileSync(p),
-  lines = buf.toString().split('\n'),
-  str = lines.slice(lines.indexOf('---') + 1, lines.indexOf('---', lines.indexOf('---') + 1)).join('\n'),
-  store = yaml.safeLoad(str)
+'use strict'
 
+const yaml = require('js-yaml')
+const fs = require('fs')
+const path = require('path')
 
-exports.getRegion = function (region) {
-  for (var reg in store.regions) {
+const p = path.join(__dirname, '..', 'locale', 'en', 'get-involved', 'events.md')
+const lines = fs.readFileSync(p).toString().split('\n')
+const begin = lines.indexOf('---') + 1
+const end = lines.indexOf('---', begin)
+const store = yaml.safeLoad(lines.slice(begin, end).join('\n'))
+
+function getRegion (region) {
+  let reg
+  for (reg in store.regions) {
     if (store.regions[reg].region === region) return store.regions[reg]
   }
-  var reg = {region: region}
+  reg = { region: region }
   store.regions.push(reg)
   return reg
 }
 
-exports.isSoT = function(region, city) {
-  for (var reg in store.regions) {
-    if (store.regions[reg].region == region) {
-      var meetups = store.regions[reg].meetups
-      for (var i in meetups) {
-        if (meetups[i].city == city) {
-          if (meetups[i].source_of_truth)
-            return true
-          return false
-        }
+function isSoT (region, city, name) {
+  let meetups = region.meetups
+  for (const i in meetups) {
+    if (meetups[i].city === city && meetups[i].name === name) {
+      if (meetups[i].source_of_truth) {
+        return true
       }
+      return false
     }
   }
   return false
 }
 
-exports.removeEmpty = function (dict) {
-  for (var i in dict) {
+function removeEmpty (dict) {
+  for (const i in dict) {
     if (!dict[i]) delete dict[i]
   }
 }
 
-exports.replace = function (list, key, keyValue, value) {
-  exports.removeEmpty(value)
-  for (var i = 0;i < list.length;i++) {
+function replace (list, key, keyValue, value) {
+  removeEmpty(value)
+  for (let i = 0; i < list.length; i++) {
     if (list[i][key] === keyValue) {
       list[i] = value
       return
@@ -50,20 +50,13 @@ exports.replace = function (list, key, keyValue, value) {
   list.push(value)
 }
 
-exports.save = function () {
-  var str = ['---', yaml.dump(store), '---'].join('\n')
+function save () {
+  const str = ['---', yaml.dump(store), '---'].join('\n')
   fs.writeFileSync(p, str)
 }
 
-function rebalance () {
-  store.regions = store.regions.slice(0, 6)
-  exports.save()
-}
-
-function clearMeetups () {
-  store.regions.forEach(function (reg) {
-    delete reg.meetups
-  })
-  exports.save()
-}
-// clearMeetups()
+exports.removeEmpty = removeEmpty
+exports.getRegion = getRegion
+exports.replace = replace
+exports.save = save
+exports.isSoT = isSoT

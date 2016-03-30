@@ -40,10 +40,10 @@ See https://nodejs.org/en/blog/vulnerability/cve-2015-8027_cve-2015-6764/ for mo
 * [Clearing the air: Is WordPress being rewritten in Node.js and React?](http://wesbos.com/wordpress-calypso-react/), "Almost all front-end tooling is built in Node.js."
 * [Massive Memory Gains in Node.js 4.2](http://goldfirestudios.com/blog/140/Massive-Memory-Gains-in-Node.js-4.2), "Not only did we see our memory graphs smooth out significantly, but the total memory usage dropped."
 
-If you have spotted or written something about Node.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues/), specifically the Weekly Updates issue.
+If you have spotted or written something about Node.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.
 
 ### Upcoming Events
 
 * [Node.js Interactive](http://events.linuxfoundation.org/events/node-interactive), December 8th - 9th at Portland, US.
 
-Have an event about Node.js coming up? You can put your events here through the [Evangelism team repo](https://github.com/nodejs/evangelism) and announce it in the [Issues page](https://github.com/nodejs/evangelism/issues/191), specifically the Weekly Updates issue.
+Have an event about Node.js coming up? You can put your events here through the [Evangelism team repo](https://github.com/nodejs/evangelism) and announce it in the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.

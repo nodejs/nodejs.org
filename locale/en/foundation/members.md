@@ -7,6 +7,15 @@ layout: foundation.hbs
 To request information on joining the Node.js Foundation, please email
 [membership@nodejs.org](mailto:membership@nodejs.org).
 
+Node.js Foundation Membership is open to businesses and individuals. Individual members will be electing two representatives to the Board of Directors in January who will be responsible for representing the diverse needs of the Node.js community in the administration of the Node.js Foundation.
+
+## Becoming an Individual Member
+
+Individual membership costs [$100 a year, or $25 for students](https://identity.linuxfoundation.org/user?destination=pid/99) (student discount code: **NodeStudentN10HM**). Contributors to the Node.js project, including all Working Groups and sub-projects, are eligible for free membership.
+
+You are required to have a GitHub account to register.
+
+# Corporate Members
 ## Platinum
 
 <div style="text-align:center;">
@@ -53,6 +62,9 @@ To request information on joining the Node.js Foundation, please email
 <a target="_new" class="imagelink" href="http://apigee.com">
   <img alt="Apigee" class="memberlogo" src="/static/images/foundation/apigee_logo_md.png" />
 </a>
+<a target="_new" class="imagelink" href="http://appdynamics.com">
+  <img alt="AppDynamics" class="memberlogo" src="/static/images/foundation/appdynamics.png" />
+</a>
 <a target="_new" class="imagelink" href="http://codefresh.io">
   <img alt="CodeFresh" class="memberlogo" src="/static/images/foundation/codefreshLogo2.png" />
 </a>
@@ -68,8 +80,17 @@ To request information on joining the Node.js Foundation, please email
 <a target="_new" class="imagelink" href="http://nearform.com">
   <img alt="nearForm" class="memberlogo" src="/static/images/foundation/nearformLogo2.png" />
 </a>
+<a target="_new" class="imagelink" href="http://newrelic.com">
+  <img alt="New Relic" class="memberlogo" src="/static/images/foundation/NewRelic.png" />
+</a>
 <a target="_new" class="imagelink" href="//npmjs.org">
   <img alt="npm" class="memberlogo" src="/static/images/foundation/npmLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="http://opbeat.com">
+  <img alt="opbeat" class="memberlogo" src="/static/images/foundation/opbeat.png" />
+</a>
+<a target="_new" class="imagelink" href="//risingstack.com">
+  <img alt="RisingStack" class="memberlogo" src="/static/images/foundation/risingstack_logo.png" />
 </a>
 <a target="_new" class="imagelink" href="http://sap.com">
   <img alt="SAP" class="memberlogo" src="/static/images/foundation/sapLogo.png" />
@@ -77,8 +98,14 @@ To request information on joining the Node.js Foundation, please email
 <a target="_new" class="imagelink" href="//saucelabs.com">
   <img alt="Saucelabs" class="memberlogo" src="/static/images/foundation/saucelabsLogo2.png" />
 </a>
+<a target="_new" class="imagelink" href="http://sphinx.sg/">
+  <img alt="Sphinx" class="memberlogo" src="/static/images/foundation/sphinx.png" />
+</a>
 <a target="_new" class="imagelink" href="//strongloop.com">
   <img alt="StrongLoop" class="memberlogo" src="/static/images/foundation/strongloopLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="//yahoo.com">
+  <img alt="Yahoo!" class="memberlogo" src="/static/images/foundation/yahoo.png" />
 </a>
 <a target="_new" class="imagelink" href="//yld.io">
   <img alt="yld!" class="memberlogo" src="/static/images/foundation/yldLogo2.png" />

@@ -1,16 +1,20 @@
 ---
 title: Docs
 layout: docs.hbs
+labels:
+  lts: LTS
 ---
 
 # About Docs
 
-It's important for Node.js to provide documentation to its users, but documentation means different things to different people. Here, on nodejs.org, you will find three types of documentation, reference documentation, ES6 features, and frequently asked questions.
+It's important for Node.js to provide documentation to its users, but documentation means different things to different people. Here on nodejs.org, you will find three types of documentation: API reference documentation, ES6 features, and frequently asked questions.
+
+### API Reference Documentation
 
 Our [API reference documentation](/api/) is meant to provide detailed version information about a given method or pattern in Node.js. From this documentation you should be able to identify what input a method has, the return value of that method, and what, if any, errors may be related to that method. You should also be able to identify which methods are available for different versions of Node.js.
 
 <div class="highlight-box">
-    <h3>Looking for API docs of previous releases?</h3>
+    <h4>Looking for API docs of previous releases?</h4>
 
     <ul>
         <li><a href="https://nodejs.org/docs/latest-v0.12.x/api/">Node.js 0.12.x</a></li>
@@ -19,9 +23,12 @@ Our [API reference documentation](/api/) is meant to provide detailed version in
     </ul>
 </div>
 
-The [ES6 section](/en/docs/es6/) describes the three different features groups and which ones are enabled by default in Node.js. It lists out all the different features enabled by default, alongside explanatory links. Also, it shows how to find the exact version of V8 a Node.js release has.
+### ES6 Features
 
-Our [FAQ](/en/docs/faq/) shows how everyone can contribute to Node.js, our code of conduct,
-governance model, how to get in touch on github and IRC, and helping out triaging issues.
+The [ES6 section](/en/docs/es6/) describes the three ES6 feature groups, and details which features are enabled by default in Node.js, alongside explanatory links. It also shows how to find which version of V8 shipped with a particular Node.js release.
 
-This documentation is meant only to describe the builtin core modules provided by Node.js, not to highlight any particular module or collection of modules found in the community.
+### Frequently Asked Questions
+
+Our [FAQ](/en/docs/faq/) covers how everyone can contribute to Node.js, our code of conduct and governance model, how to get in touch on github and IRC, and how to help out with triaging issues.
+
+This documentation is meant only to describe the builtin core modules provided by Node.js, and does not cover any particular module or collection of modules found in the community.

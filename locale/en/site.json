@@ -9,6 +9,7 @@
     "getHelpIssue": "Get Help",
     "by": "by",
     "all-downloads": "All download options",
+    "nightly": "Nightly builds",
     "feeds": [
         {
             "link": "feed/blog.xml",
@@ -72,7 +73,6 @@
             "text": "FAQ"
         },
         "api": {
-            "link": "/api/",
             "text": "API"
         },
         "guides": {
@@ -87,6 +87,10 @@
     "foundation": {
         "link": "foundation",
         "text": "Foundation",
+        "casestudies": {
+            "link": "foundation/case-studies",
+            "text": "Case Studies"
+        },
         "members": {
             "link": "foundation/members",
             "text": "Members"

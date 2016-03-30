@@ -126,7 +126,7 @@ request.on('error', function(err) {
 });
 ```
 
-There are other ways of [handling these errors][] such as using [`domains`][] or
+There are other ways of [handling these errors][] such as
 other abstractions and tools, but always be aware that errors can and do happen,
 and you're going to have to deal with them.
 
@@ -246,7 +246,7 @@ errors still applies here.
 
 Now that we've learned about making HTTP responses, let's put it all together.
 Building on the earlier example, we're going to make a server that sends back
-all of the data that was send to us by the user. We'll format that data as JSON
+all of the data that was sent to us by the user. We'll format that data as JSON
 using `JSON.stringify`.
 
 ```javascript
@@ -420,18 +420,18 @@ read through the API docs for [`EventEmitters`][], [`Streams`][], and [`HTTP`][]
 [`Server`]: https://nodejs.org/api/http.html#http_class_http_server
 [`listen`]: https://nodejs.org/api/http.html#http_server_listen_port_hostname_backlog_callback
 [API reference]: https://nodejs.org/api/http.html
-[`IncomingMessage`]: https://nodejs.org/api/http.html#http_http_incomingmessage
+[`IncomingMessage`]: https://nodejs.org/api/http.html#http_class_http_incomingmessage
 [`ReadableStream`]: https://nodejs.org/api/stream.html#stream_class_stream_readable
 [`rawHeaders`]: https://nodejs.org/api/http.html#http_message_rawheaders
 [`Buffer`]: https://nodejs.org/api/buffer.html
 [`concat-stream`]: https://www.npmjs.com/package/concat-stream
 [`body`]: https://www.npmjs.com/package/body
 [`npm`]: https://www.npmjs.com
-[`EventEmitter`]: https://nodejs.org/api/events.html#events_class_events_eventemitter
+[`EventEmitter`]: https://nodejs.org/api/events.html#events_class_eventemitter
 [handling these errors]: https://nodejs.org/api/errors.html
 [`domains`]: https://nodejs.org/api/domain.html
 [`ServerResponse`]: https://nodejs.org/api/http.html#http_class_http_serverresponse
-[`setHeader`]: https://nodejs.org/api/http.html#http_response_setheader_name_value<F37>
+[`setHeader`]: https://nodejs.org/api/http.html#http_response_setheader_name_value
 [`WritableStream`]: https://nodejs.org/api/stream.html#stream_class_stream_writable
 [`writeHead`]: https://nodejs.org/api/http.html#http_response_writehead_statuscode_statusmessage_headers
 [`express`]: https://www.npmjs.com/package/express

@@ -6,7 +6,8 @@ layout: docs.hbs
 # Dockerizing a Node.js web app
 
 The goal of this example is to show you how to get a Node.js application into a
-Docker container. It assumes you have a working [Docker
+Docker container. The guide is intended for development, and *not* for a
+production deployment. The guide also assumes you have a working [Docker
 installation](https://docs.docker.com/engine/installation/) and a basic
 understanding of how a Node.js application is structured.
 
@@ -30,14 +31,17 @@ create a `package.json` file that describes your app and its dependencies:
   "version": "1.0.0",
   "description": "Node.js on Docker",
   "author": "First Last <first.last@example.com>",
-  "main": "index.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "express": "^4.13.3"
   }
 }
 ```
 
-Then, create an `index.js` file that defines a web app using the
+Then, create a `server.js` file that defines a web app using the
 [Express.js](http://expressjs.com/) framework:
 
 ```javascript
@@ -114,8 +118,8 @@ EXPOSE 8080
 ```
 
 Last but not least, define the command to run your app using `CMD` which defines
-your runtime. Here we will use the basic `npm start` which will start the `main`
-file defined in your `package.json`:
+your runtime. Here we will use the basic `npm start` which will run 
+`node server.js` to start your server:
 
 ```docker
 CMD [ "npm", "start" ]
