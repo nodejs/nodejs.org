@@ -20,9 +20,8 @@ function getRegion (region) {
   return reg
 }
 
-function isSoT (region, city, name) {
-  let meetups = region.meetups
-  for (const i in meetups) {
+function isSoT (meetups, city, name) {
+  for (let i = 0; i < meetups.length; i++) {
     if (meetups[i].city === city && meetups[i].name === name) {
       if (meetups[i].source_of_truth) {
         return true
