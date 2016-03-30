@@ -20,6 +20,18 @@ function getRegion (region) {
   return reg
 }
 
+function isSoT (meetups, city, name) {
+  for (let i = 0; i < meetups.length; i++) {
+    if (meetups[i].city === city && meetups[i].name === name) {
+      if (meetups[i].source_of_truth) {
+        return true
+      }
+      return false
+    }
+  }
+  return false
+}
+
 function removeEmpty (dict) {
   for (const i in dict) {
     if (!dict[i]) delete dict[i]
@@ -46,3 +58,4 @@ exports.removeEmpty = removeEmpty
 exports.getRegion = getRegion
 exports.replace = replace
 exports.save = save
+exports.isSoT = isSoT

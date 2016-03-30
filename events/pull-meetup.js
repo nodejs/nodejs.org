@@ -29,7 +29,9 @@ function finish (events) {
     const region = yml.getRegion(countryMap[event.country])
     if (!region.meetups) region.meetups = []
     clean(event)
-    yml.replace(region.meetups, 'name', event.name, event)
+    if (!yml.isSoT(region.meetups, event.city, event.name)) {
+      yml.replace(region.meetups, 'name', event.name, event)
+    }
   })
   yml.save()
 }
