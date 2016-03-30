@@ -2,7 +2,6 @@
 
 module.exports = {
   EG: 'Africa',
-  ES: 'Africa',
   KE: 'Africa',
   MA: 'Africa',
   MU: 'Africa',
@@ -34,6 +33,7 @@ module.exports = {
   DE: 'Europe',
   DK: 'Europe',
   EE: 'Europe',
+  ES: 'Europe',
   FI: 'Europe',
   FR: 'Europe',
   GB: 'Europe',
