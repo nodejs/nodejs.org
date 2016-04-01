@@ -63,10 +63,6 @@ Core Working Groups are created by the
 * [Documentation](#documentation)
 * [Testing](#testing)
 
-#### Process:
-
-* [Starting a Working Group](#starting-a-wg)
-* [Bootstrap Governance](#bootstrap-governance)
 
 ### [Website](https://github.com/nodejs/nodejs.org)
 
