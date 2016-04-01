@@ -5,11 +5,11 @@ title: Working Groups
 # Working Groups
 
  Working Groups are autonomous projects created by the
-[Technical Committee (TC)](https://github.com/nodejs/node/blob/master/GOVERNANCE.md#technical-committee).
+[Core Technical Committee (CTC)](https://github.com/nodejs/node/blob/master/GOVERNANCE.md#core-technical-committee).
 
-Working Groups can be formed at any time but must be ratified by the TC.
+Working Groups can be formed at any time but must be ratified by the CTC.
 Once formed the work defined in the Working Group charter is the
-responsibility of the WG rather than the TC.
+responsibility of the WG rather than the CTC.
 
 It is important that Working Groups are not formed pre-maturely. Working
 Groups are not formed to *begin* a set of tasks but instead are formed
@@ -18,7 +18,7 @@ think it would benefit from being done as an autonomous project.
 
 If the work defined in a Working Group charter is completed the Working
 Group should be dissolved and the responsibility for governance absorbed
-back in to the TC.
+back in to the CTC.
 
 ## Current Working Groups
 
@@ -163,7 +163,7 @@ content.
 The roadmap working group is responsible for user community outreach
 and the translation of their concerns into a plan of action.
 
-The final [ROADMAP](https://github.com/nodejs/node/blob/master/ROADMAP.md) document is still owned by the TC and requires the same approval for changes as any other project asset.
+The final [ROADMAP](https://github.com/nodejs/node/blob/master/ROADMAP.md) document is still owned by the CTC and requires the same approval for changes as any other project asset.
 
 Their responsibilities are:
 * Attract and summarize user community needs and feedback.
@@ -195,9 +195,9 @@ Their responsibilities are:
 * Maintaining the [addon-examples](https://github.com/nodejs/node-addon-examples)
  GitHub repository, including code, issues and documentation.
 * Maintaining the C++ addon API within the project, in subordination to
- the TC.
+ the CTC.
 * Maintaining the addon documentation within the project, in
- subordination to the TC.
+ subordination to the CTC.
 * Maintaining the _nan_ package in npm, releasing new versions as appropriate.
 * Messaging about the future of the and NAN interface to give the
  community advance notice of changes.
@@ -208,15 +208,15 @@ The current members can be found in their
 ## Starting a WG
 
 A Working Group is established by first defining a charter that can be
-ratified by the TC. A charter is a *statement of purpose*, a
+ratified by the CTC. A charter is a *statement of purpose*, a
 *list of responsibilities* and a *list of initial membership*.
 
 A working group needs 3 initial members. These should be individuals
 already undertaking the work described in the charter.
 
 The list of responsibilities should be specific. Once established, these
-responsibilities are no longer governed by the TC and therefore should
-not be broad or subjective. The only recourse the TC has over the working
+responsibilities are no longer governed by the CTC and therefore should
+not be broad or subjective. The only recourse the CTC has over the working
 group is to revoke the entire charter and take on the work previously
 done by the working group themselves.
 
@@ -232,7 +232,7 @@ README.
 
 ## Bootstrap Governance
 
-Once the TC ratifies a charter the WG inherits the following
+Once the CTC ratifies a charter the WG inherits the following
 documentation for governance, contribution, conduct and an MIT
 LICENSE. The WG is free to change these documents through their own
 governance process, hence the term "bootstrap."
@@ -407,7 +407,7 @@ CoC](https://github.com/rust-lang/rust/wiki/Note-development-policy#conduct).
 * Private harassment is also unacceptable. No matter who you are, if
  you feel you have been or are being harassed or made uncomfortable
  by a community member, please contact one of the channel ops or any
- of the TC members immediately with a capture (log, photo, email) of
+ of the CTC members immediately with a capture (log, photo, email) of
  the harassment if possible. Whether you're a regular contributor or
  a newcomer, we care about making this community a safe place for you
  and we've got your back.
