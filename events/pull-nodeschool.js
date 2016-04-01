@@ -20,7 +20,6 @@ request({
     throw (err || new Error(`Invalid status code (${resp.statusCode})`))
   }
 
-  let count = 0
   const chapters = []
 
   list.regions.forEach((reg) => {
@@ -34,7 +33,6 @@ request({
       chapter.location = `${chapter.location}, ${chapter.country}`
       delete chapter.country
       yml.replace(store.nodeschools, 'name', chapter.name, chapter)
-      count += 1
       chapters.push(chapter)
     })
   })
