@@ -253,7 +253,7 @@ function fullBuild () {
         },
         banner: {
           visible: true,
-          content: 'Important <a href="https://nodejs.org/en/blog/vulnerability/february-2016-security-releases/">security releases</a>, please update now!'
+          content: 'Important <a href="https://nodejs.org/en/blog/vulnerability/npm-tokens-leak-march-2016/">security notification</a> regarding npm'
         }
       }
     }
