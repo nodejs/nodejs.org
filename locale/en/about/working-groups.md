@@ -8,12 +8,10 @@ There are 2 types of Working Groups:
 * [Core Working Groups](#core-working-groups)
 
 ## Top-Level Working Groups
+<!-- Information here should mostly mirror: https://github.com/nodejs/TSC/blob/master/WORKING_GROUPS.md -->
+
 Top-Level Working Groups are created by the 
 [Technical Steering Committee (TSC)](https://github.com/nodejs/TSC#top-level-wgs-and-tlps).
-
-Core Working Groups can be formed at any time but must be ratified by the TSC. 
-Once formed the work defined in the Working Group charter is the responsibility 
-of the WG rather than the TSC.
 
 ### Current Top-Level Working Groups
 * [Inclusivity](#inclusivity)
@@ -41,22 +39,11 @@ while seeking to build upon them.
 them at regular intervals.
 
 # Core Working Groups
+<!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 
-Core Working Groups are autonomous projects created by the
+Core Working Groups are created by the 
 [Core Technical Committee (CTC)](https://github.com/nodejs/node/blob/master/GOVERNANCE.md#core-technical-committee).
 
-Working Groups can be formed at any time but must be ratified by the CTC.
-Once formed the work defined in the Working Group charter is the
-responsibility of the WG rather than the CTC.
-
-It is important that Working Groups are not formed pre-maturely. Working
-Groups are not formed to *begin* a set of tasks but instead are formed
-once that work is already underway and the contributors
-think it would benefit from being done as an autonomous project.
-
-If the work defined in a Working Group charter is completed the Working
-Group should be dissolved and the responsibility for governance absorbed
-back in to the CTC.
 
 ## Current Working Groups
 
