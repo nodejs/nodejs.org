@@ -74,6 +74,9 @@ You are required to have a GitHub account to register.
 <a target="_new" class="imagelink" href="//fidelity.com">
   <img alt="Fidelity" class="memberlogo" src="/static/images/foundation/fidelityLogo.png" />
 </a>
+<a target="_new" class="imagelink" href="https://google.com">
+  <img alt="Google" class="memberlogo" src="/static/images/foundation/googleLogo.png" />
+</a>
 <a target="_new" class="imagelink" href="//groupon.com">
   <img alt="Groupon" class="memberlogo" src="/static/images/foundation/grouponLogo.png" />
 </a>
