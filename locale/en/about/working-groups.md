@@ -27,8 +27,8 @@ to the Node.js project and maintaining their participation.
 
 Its responsibilites are:
 * Foster a welcoming environment that ensures participants are valued and can 
-feel confident contributing or joining discussions, regardless of any aspect of 
-their identity.
+feel confident contributing or joining discussions, regardless of any [aspect of
+their identity](https://github.com/nodejs/inclusivity/#list-of-responsibilities).
 * Proactively seek and propose concrete steps the project can take to increase 
 inclusivity.
 * Serve as a resource for the development and enforcement of workflows that 
