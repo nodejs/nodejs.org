@@ -6,8 +6,10 @@
     "scrollToTop": "맨 위로",
     "reportNodeIssue": "Node.js 이슈 보고",
     "reportWebsiteIssue": "웹사이트 이슈 보고",
+    "getHelpIssue": "도움 얻기",
     "by": "by",
     "all-downloads": "모든 다운로드 보기",
+    "nightly": "나이틀리 빌드",
     "feeds": [
         {
             "link": "feed/blog.xml",
@@ -73,14 +75,30 @@
         "api": {
             "link": "/api/",
             "text": "API"
+        },
+        "guides": {
+            "link": "docs/guides",
+            "text": "안내"
+        },
+        "knowledge": {
+            "link": "knowledge",
+            "text": "지식 베이스"
         }
     },
     "foundation": {
         "link": "foundation",
         "text": "재단",
+        "casestudies": {
+            "link": "foundation/case-studies",
+            "text": "사례"
+        },
         "members": {
             "link": "foundation/members",
             "text": "멤버"
+        },
+        "board": {
+            "link": "foundation/board",
+            "text": "보드"
         },
         "tsc": {
             "link": "foundation/tsc",
@@ -109,6 +127,13 @@
         "code-and-learn": {
             "link": "get-involved/code-and-learn",
             "text": "코딩 + 배우기"
+        },
+        "events": {
+          "link": "get-involved/events",
+          "text": "이벤트"
+        },
+        "conduct": {
+            "text": "Conduct"
         }
     },
     "trademark"  : { "link": "about/trademark", "text": "트레이드마크" },
