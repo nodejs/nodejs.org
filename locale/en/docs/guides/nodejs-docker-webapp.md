@@ -234,6 +234,7 @@ You can find more information about Docker and Node.js on Docker in the
 following places:
 
 * [Official Node.js Docker Image](https://registry.hub.docker.com/_/node/)
+* [Node.js Docker Best Practices Guide](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 * [Official Docker documentation](https://docs.docker.com/)
 * [Docker Tag on StackOverflow](http://stackoverflow.com/questions/tagged/docker)
 * [Docker Subreddit](https://reddit.com/r/docker)
