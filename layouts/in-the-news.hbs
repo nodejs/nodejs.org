@@ -45,13 +45,29 @@
                                  callback: showInfo,
                                  simpleSheet: true } )
 
+                function pad(str) { return ("0"+str).substr(-2) }
+
+                function parseDate(date) {
+                  try {
+                    var parsedDate = date.split('.')
+                    return new Date('20' + parsedDate[2], parsedDate[0] - 1, parsedDate[1])
+                  } catch(_){
+                    return date
+                  }
+                }
+
+                function formatDate(date) {
+                  return date == "Invalid Date" ? '' : date.getFullYear()+'-'+pad(date.getMonth()+1)+'-'+pad(date.getDate())
+                }
+
                 function showInfo(data, tabletop) {
                   data.reverse()
                   var html = ''
                   var list = document.getElementsByClassName('news-list')
 
                   data.forEach(function (row) {
-                    html += '<li><a href="'+row.Link+'">'+row.Title+'</a></li>'
+                    var date = parseDate(row.Date)
+                    html += '<li><time datetime="'+date+'">'+formatDate(date)+'</time><a href="'+row.Link+'">'+row.Title+'</a></li>'
                   })
                   if (list && list[0]) list[0].innerHTML = html
                 }
