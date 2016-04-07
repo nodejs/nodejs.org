@@ -31,8 +31,10 @@
             {{{ contents }}}
 
             <article>
-              <div id="news-container">
-              </div>
+                <div class="container no-headline">
+                    <ul class="news-list">
+                    </ul>
+                </div>
             </article>
 
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.2/tabletop.min.js"></script>
@@ -43,14 +45,31 @@
                                  callback: showInfo,
                                  simpleSheet: true } )
 
+                function pad(str) { return ("0"+str).substr(-2) }
+
+                function parseDate(date) {
+                  try {
+                    var parsedDate = date.split('.')
+                    return new Date('20' + parsedDate[2], parsedDate[0] - 1, parsedDate[1])
+                  } catch(_){
+                    return date
+                  }
+                }
+
+                function formatDate(date) {
+                  return date == "Invalid Date" ? '' : date.getFullYear()+'-'+pad(date.getMonth()+1)+'-'+pad(date.getDate())
+                }
+
                 function showInfo(data, tabletop) {
                   data.reverse()
-                  var html = '<div id="news-list">'
+                  var html = ''
+                  var list = document.getElementsByClassName('news-list')
+
                   data.forEach(function (row) {
-                    html += '<div class="news-row"><a href="'+row.Link+'">'+row.Title+'</a></div>'
+                    var date = parseDate(row.Date)
+                    html += '<li><time datetime="'+date+'">'+formatDate(date)+'</time><a href="'+row.Link+'">'+row.Title+'</a></li>'
                   })
-                  html += '</div>'
-                  document.getElementById('news-container').innerHTML = html
+                  if (list && list[0]) list[0].innerHTML = html
                 }
               }
             </script>
