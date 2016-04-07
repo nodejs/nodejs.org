@@ -239,7 +239,7 @@ the body in HTTP responses.
 ## Another Quick Thing About Errors
 
 The `response` stream can also emit `'error'` events, and at some point you're
-going to have to deal with that as well. All of the advice or `request` stream
+going to have to deal with that as well. All of the advice for `request` stream
 errors still applies here.
 
 ## Put It All Together
@@ -370,7 +370,7 @@ errors can and do happen, and we need to deal with them.
 
 To handle errors on the request stream, we'll log the error to `stderr` and send
 a 400 status code to indicate a `Bad Request`. In a real-world application,
-though, we'd want inspect the error to figure out what the correct status code
+though, we'd want to inspect the error to figure out what the correct status code
 and message would be. As usual with errors, you should consult the
 [`Error` documentation][].
 
