@@ -70,7 +70,7 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 - Fábio Santos ([fabiosantoscode](https://github.com/fabiosantoscode))
 - Jeremiah Senkpiel ([Fishrock123](https://github.com/Fishrock123))
 - Wyatt Preul ([geek](https://github.com/geek))
-- jona ([hg](https://github.com/hg))
+- Jona ([59](https://github.com/59))
 - Charlie Robbins ([indexzero](https://github.com/indexzero))
 - Minwoo Jung ([JungMinu](https://github.com/JungMinu))
 - Daniel Levy ([justsml](https://github.com/justsml))
