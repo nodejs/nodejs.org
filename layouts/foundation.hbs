@@ -8,31 +8,7 @@
     <div id="main">
         <div class="container has-side-nav">
 
-            <aside>
-                <ul>
-                    <li{{#equals path site.foundation.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.foundation.link}}/">{{site.foundation.text}}</a>
-                    </li>
-                    <li{{#equals path site.foundation.casestudies.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.foundation.casestudies.link}}/">{{site.foundation.casestudies.text}}</a>
-                    </li>
-                    <li{{#equals path site.foundation.members.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.foundation.members.link}}/">{{site.foundation.members.text}}</a>
-                    </li>
-                    <li{{#equals path site.foundation.board.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.foundation.board.link}}/">{{site.foundation.board.text}}</a>
-                    </li>
-                    <li{{#equals path site.foundation.tsc.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.foundation.tsc.link}}/">{{site.foundation.tsc.text}}</a>
-                    </li>
-                    <li{{#equals path site.foundation.itn.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.foundation.itn.link}}/">{{site.foundation.itn.text}}</a>
-                    </li>
-                    <li{{#equals path site.foundation.announce.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.foundation.announce.link}}/">{{site.foundation.announce.text}}</a>
-                    </li>
-                </ul>
-            </aside>
+            {{> navigation key='foundation'}}
 
             <article>
                 {{{ contents }}}

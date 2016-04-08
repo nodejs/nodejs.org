@@ -8,28 +8,7 @@
     <div id="main">
         <div class="container has-side-nav">
 
-            <aside>
-                <ul>
-                    <li{{#equals path site.getinvolved.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.getinvolved.link}}/">{{site.getinvolved.text}}</a>
-                    </li>
-                    <li{{#equals path site.getinvolved.code-and-learn.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.getinvolved.code-and-learn.link}}/">{{site.getinvolved.code-and-learn.text}}</a>
-                    </li>
-                    <li{{#equals path site.getinvolved.contribute.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.getinvolved.contribute.link}}/">{{site.getinvolved.contribute.text}}</a>
-                    </li>
-                    <li{{#equals path site.getinvolved.development.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.getinvolved.development.link}}/">{{site.getinvolved.development.text}}</a>
-                    </li>
-                    <li{{#equals path site.getinvolved.events.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.getinvolved.events.link}}/">{{site.getinvolved.events.text}}</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct">{{site.getinvolved.conduct.text}}</a>
-                    </li>
-                </ul>
-            </aside>
+            {{> navigation key='getinvolved'}}
 
             <article class="js-regional-events">
 

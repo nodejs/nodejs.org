@@ -1,0 +1,21 @@
+<aside>
+    <ul>
+        {{#each nav}}
+            {{#equals @key ../key}}
+                {{#each this}}
+                    <li{{#equals ../../path link}} class="active"{{/equals}}>
+                        {{#startswith link '/'}}
+                            <a href="{{link}}">{{text}}
+                        {{else}}
+                            {{#startswith link 'http'}}
+                                <a href="{{link}}">{{text}}
+                            {{else}}
+                                <a href="/{{../../site.locale}}/{{link}}/">{{text}}{{#if subtext}} <span class="small color-lightgray">{{subtext}}</span>{{/if}}</a>
+                            {{/startswith}}
+                        {{/startswith}}
+                    </li>
+                {{/each}}
+            {{/equals}}
+        {{/each}}
+    </ul>
+</aside>

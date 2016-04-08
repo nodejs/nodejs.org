@@ -4,32 +4,17 @@
         <a href="/{{site.locale}}" id="logo">
           <img src="/static/images/logos/nodejs-new-white-pantone.png" alt="node.js">
         </a>
+
         <nav>
             <ul class="list-divider-pipe">
                 <li{{#equals path ''}} class="active"{{/equals}}>
                     <a href="/{{site.locale}}/">{{site.home.text}}</a>
                 </li>
-                <li{{#startswith path site.about.link}} class="active"{{/startswith}}>
-                    <a href="/{{site.locale}}/{{site.about.link}}/">{{site.about.text}}</a>
-                </li>
-                <li{{#startswith path site.download.link}} class="active"{{/startswith}}>
-                    <a href="/{{site.locale}}/{{site.download.link}}/">{{site.download.text}}</a>
-                </li>
-                <li{{#startswith path site.docs.link}} class="active"{{/startswith}}>
-                    <a href="/{{site.locale}}/{{site.docs.link}}/">{{site.docs.text}}</a>
-                </li>
-                <li{{#startswith path site.foundation.link}} class="active"{{/startswith}}>
-                    <a href="/{{site.locale}}/{{site.foundation.link}}/">{{site.foundation.text}}</a>
-                </li>
-                <li{{#startswith path site.getinvolved.link}} class="active"{{/startswith}}>
-                    <a href="/{{site.locale}}/{{site.getinvolved.link}}/">{{site.getinvolved.text}}</a>
-                </li>
-                <li{{#startswith path site.security.link}} class="active"{{/startswith}}>
-                    <a href="/{{site.locale}}/{{site.security.link}}/">{{site.security.text}}</a>
-                </li>
-                <li{{#startswith path site.blog.link}} class="active"{{/startswith}}>
-                    <a href="/{{site.locale}}/{{site.blog.link}}/">{{site.blog.text}}</a>
-                </li>
+                {{#each nav.main}}
+                    <li{{#startswith ../path link}} class="active"{{/startswith}}>
+                        <a href="/{{../site.locale}}/{{link}}/">{{text}}</a>
+                    </li>
+                {{/each}}
             </ul>
         </nav>
 
