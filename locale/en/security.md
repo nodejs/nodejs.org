@@ -51,8 +51,8 @@ release process above to ensure that the disclosure is handled in a consistent m
 
 Security notifications will be distributed via the following methods.
 
-- [http://groups.google.com/group/nodejs-sec](http://groups.google.com/group/nodejs-sec)
-- [http://blog.nodejs.org](http://blog.nodejs.org)
+- [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
+- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
 
 
 ## Comments on this Policy
