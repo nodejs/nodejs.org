@@ -5,31 +5,35 @@ const fs = require('fs')
 const path = require('path')
 
 const p = path.join(__dirname, '..', 'locale', 'en', 'get-involved', 'events.md')
-const lines = fs.readFileSync(p).toString().split('\n')
-const begin = lines.indexOf('---') + 1
-const end = lines.indexOf('---', begin)
-const store = yaml.safeLoad(lines.slice(begin, end).join('\n'))
 
-function getRegion (region) {
-  let reg
-  for (reg in store.regions) {
-    if (store.regions[reg].region === region) return store.regions[reg]
+//
+// Slice the file contents to get the YAML source code.
+//
+const contents = fs.readFileSync(p, { encoding: 'utf8' }).trim().slice(4, -4)
+const store = yaml.safeLoad(contents)
+
+store.regions || (store.regions = [])
+
+function getRegion (name) {
+  let region = store.regions.find((reg) => reg.region === name)
+
+  if (!region) {
+    region = { region: name }
+    store.regions.push(region)
   }
-  reg = { region: region }
-  store.regions.push(reg)
-  return reg
+
+  return region
 }
 
+/**
+ * This function checks if an event has been manually edited to prevent it
+ * from being overwritten the next time event scripts are run.
+ *
+ * See https://github.com/nodejs/nodejs.org/pull/398.
+ */
 function isSoT (meetups, city, name) {
-  for (let i = 0; i < meetups.length; i++) {
-    if (meetups[i].city === city && meetups[i].name === name) {
-      if (meetups[i].source_of_truth) {
-        return true
-      }
-      return false
-    }
-  }
-  return false
+  const meetup = meetups.find((evt) => evt.city === city && evt.name === name)
+  return meetup && meetup.source_of_truth
 }
 
 function removeEmpty (dict) {
@@ -39,14 +43,15 @@ function removeEmpty (dict) {
 }
 
 function replace (list, key, keyValue, value) {
+  const index = list.findIndex((elem) => elem[key] === keyValue)
+
   removeEmpty(value)
-  for (let i = 0; i < list.length; i++) {
-    if (list[i][key] === keyValue) {
-      list[i] = value
-      return
-    }
+
+  if (index !== -1) {
+    list[index] = value
+  } else {
+    list.push(value)
   }
-  list.push(value)
 }
 
 function save () {
