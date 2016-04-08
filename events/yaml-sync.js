@@ -55,8 +55,11 @@ function replace (list, key, keyValue, value) {
 }
 
 function save () {
-  const str = ['---', yaml.dump(store), '---'].join('\n')
-  fs.writeFileSync(p, str)
+  fs.writeFileSync(p, [
+    '---',
+    yaml.safeDump(store, { lineWidth: Infinity }),
+    '---'
+  ].join('\n'))
 }
 
 exports.removeEmpty = removeEmpty
