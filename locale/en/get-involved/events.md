@@ -135,6 +135,59 @@ regions:
         group_photo:
           photo_link: 'http://photos2.meetupstatic.com/photos/event/2/8/8/5/600_447250373.jpeg'
         lat: 34.02000045776367
+    nodeschools:
+      - name: NodeSchool Algiers
+        location: 'Algiers, DZ'
+        organizers:
+          - ismnoiet
+        website: 'http://nodeschool.io/algiers'
+        repo: 'http://github.com/nodeschool/algiers'
+        lat: 36.7537703
+        lon: 3.0587927
+      - name: NodeSchool Cairo
+        location: 'Cairo, EG'
+        organizers:
+          - ahmdrefat
+          - Azzurrio
+        website: 'http://nodeschool.io/cairo'
+        repo: 'http://github.com/nodeschool/cairo'
+        lat: 30.0444196
+        lon: 31.2357116
+      - name: NodeSchool Hermanus
+        location: 'Hermanus, ZA'
+        organizers:
+          - andrenventer
+          - elsjelemmer
+        website: 'http://nodeschool.io/hermanus'
+        twitter: '@nodehermanus'
+        repo: 'http://github.com/nodeschool/hermanus'
+        lat: -34.4092004
+        lon: 19.2504436
+      - name: Johannesburg NodeSchool
+        location: 'Johannesburg, ZA'
+        organizers:
+          - StevenMcD
+          - johannds
+        website: 'http://nodeschool.io/johannesburg'
+        repo: 'http://github.com/nodeschool/johannesburg'
+        lat: -26.2041028
+        lon: 28.0473051
+      - name: Lagos NodeSchool
+        location: 'Lagos, NG'
+        organizers:
+          - dipolediamond
+          - 0101coding
+        website: 'http://nodeschool.io/lagos'
+        repo: 'http://github.com/nodeschool/lagos'
+        lat: 6.5243793
+        lon: 3.3792057
+      - name: Mombasa NodeSchool
+        location: 'Mombasa, KE'
+        organizers:
+          - huzeifa
+        repo: 'http://github.com/nodeschool/mombasa'
+        lat: -4.0434771
+        lon: 39.6682065
   - region: Asia
     conferences:
       - name: NodeFest (東京Node学園祭)
@@ -1582,6 +1635,342 @@ regions:
         description: 'This is a team for anyone interesting in Meteor, Nodejs, IoT, Device Communction and UI , etc. All skills levels are welcome, I started this team becaues I like Javascript and any nice module，Handsome UI，and want to meet other same lovers .'
         lon: 121.47000122070312
         lat: 31.229999542236328
+    nodeschools:
+      - name: Amman NodeSchool
+        location: 'Amman, JO'
+        organizers:
+          - samuraik
+          - rashad612
+        repo: 'http://github.com/nodeschool/amman'
+        lat: 31.9565783
+        lon: 35.9456951
+      - name: NodeSchool Bali
+        location: 'Bali, ID'
+        organizers:
+          - LaughingSun
+        website: 'http://nodeschool.io/bali'
+        repo: 'http://github.com/nodeschool/bali'
+        lat: -8.4095178
+        lon: 115.188916
+      - name: Bangalore NodeSchool
+        location: 'Bangalore, IN'
+        organizers:
+          - abyv
+          - somesh123
+          - somsharan
+        repo: 'http://github.com/nodeschool/bangalore'
+        lat: 12.9715987
+        lon: 77.5945627
+      - name: NodeSchool Bangkok
+        location: 'Bangkok, TH'
+        organizers:
+          - jjmax75
+        website: 'http://nodeschool.io/bangkok'
+        repo: 'http://github.com/nodeschool/bangkok'
+        gitter: 'https://gitter.im/nodeschool/bangkok'
+        facebook: 'https://www.facebook.com/groups/NodeSchoolBangkok/'
+        lat: 13.7563309
+        lon: 100.5017651
+      - name: NodeSchool Cebu
+        location: 'Cebu City, PH'
+        organizers:
+          - levint
+          - keithics
+          - rollyn
+        website: 'http://nodeschool.io/cebu'
+        repo: 'http://github.com/nodeschool/cebu'
+        lat: 10.3156992
+        lon: 123.8854366
+      - name: NodeSchool Chandigarh
+        location: 'Chandigarh, IN'
+        organizers:
+          - nsena
+        website: 'http://nodeschool.io/chandigarh'
+        twitter: nodeschoolchd
+        repo: 'http://github.com/nodeschool/chandigarh'
+        lat: 30.7333148
+        lon: 76.7794179
+      - name: Chennai NodeSchool
+        location: 'Chennai, IN'
+        organizers:
+          - vikene
+        website: 'http://nodeschool.io/chennai'
+        twitter: chn_nodeschool
+        repo: 'http://github.com/nodeschool/chennai'
+        lat: 13.0826802
+        lon: 80.2707184
+      - name: NodeSchool Chiang Mai
+        location: 'Chiang Mai, Thailand'
+        organizers:
+          - RichardLitt
+        website: 'http://nodeschool.io/chiang-mai'
+        repo: 'http://github.com/nodeschool/chiang-mai'
+        lat: 18.787747
+        lon: 98.99312839999999
+      - name: 'NodeSchool Delhi-NCR '
+        location: 'Delhi-NCR, IN'
+        organizers:
+          - avin45h
+          - VibhorKukreja
+          - manoj-nama
+          - kashishgupta1990
+          - kushal-likhi
+        website: 'http://nodeschool.io/Delhi-NCR'
+        repo: 'http://github.com/nodeschool/delhi-ncr'
+        lat: 28.4179583
+        lon: 76.9104653
+      - name: Dhaka NodeSchool
+        location: 'Dhaka, BD'
+        organizers:
+          - az7arul
+          - zhdzmn
+          - riyadhalnur
+          - ishtiaque23
+        website: 'http://nodeschool.io/dhaka'
+        repo: 'http://github.com/nodeschool/dhaka'
+        lat: 23.810332
+        lon: 90.4125181
+      - name: Fukui NodeSchool
+        location: 'Fukui, JP'
+        organizers:
+          - fossamagna
+        website: 'http://nodeschool.io/fukui'
+        repo: 'http://github.com/nodeschool/fukui'
+        lat: 36.0640669
+        lon: 136.2194938
+      - name: NodeSchool Hanoi
+        location: 'Hanoi, VN'
+        organizers:
+          - hainh
+          - dominhhai
+        website: 'http://nodeschool.io/hanoi'
+        repo: 'https://github.com/nodeschool/hanoi'
+        lat: 21.0277644
+        lon: 105.8341598
+      - name: NodeSchool Ho Chi Minh - Vietnam
+        location: 'Ho Chi Minh, VN'
+        organizers:
+          - okaiji
+          - fw1065
+        website: 'http://nodeschool.io/hcmc-vietnam'
+        twitter:
+          - '@InnovQ'
+          - '@invisible_info'
+        repo: 'https://github.com/nodeschool/hcmc-saigon'
+        lat: 10.8230989
+        lon: 106.6296638
+      - name: NodeSchool Hong Kong
+        location: 'Hong Kong, HK'
+        organizers:
+          - neilnand
+          - rowlandwatkins
+          - hitchcott
+        website: 'http://www.meetup.com/HK-Web-Developers/'
+        repo: 'https://github.com/nodeschool/hong-kong'
+        lat: 22.2783151
+        lon: 114.174695
+      - name: NodeSchool Hyderabad
+        location: 'Hyderabad, IN'
+        organizers:
+          - gmkr
+        website: 'http://nodeschool.io/hyderabad/'
+        repo: 'http://github.com/nodeschool/hyderabad'
+        lat: 17.385044
+        lon: 78.486671
+      - name: IEM Kolkata NodeSchool
+        location: 'IEM, Kolkata, IN'
+        organizers:
+          - koustuvsinha
+        repo: 'http://github.com/nodeschool/iem-kolkata'
+        lat: 22.5698662
+        lon: 88.4295595
+      - name: IRN NodeSchool
+        location: 'Babol / Mazandaran, IR'
+        organizers:
+          - NIT
+        repo: 'http://github.com/nodeschool/iran'
+        lat: 36.5386629
+        lon: 52.6764543
+      - name: Isfahan NodeSchool
+        location: 'Isfahan,Isfahan, Iran'
+        organizers:
+          - ArianSotoudehMehr
+        website: 'http://nodeschools.ir'
+        repo: 'http://github.com/nodeschool/isfahan'
+        lat: 32.6546275
+        lon: 51.66798259999999
+      - name: Jakarta NodeSchool
+        location: 'Jakarta, ID'
+        organizers:
+          - aredo
+          - giosakti
+          - hafizbadrie
+          - rbudiharso
+        website: 'http://nodeschool.io/jakarta'
+        twitter: 'https://twitter.com/jakartajs'
+        repo: 'http://github.com/nodeschool/jakarta'
+        lat: -6.2087634
+        lon: 106.845599
+      - name: NodeSchool Kanpur
+        location: 'Kanpur, IN'
+        organizers:
+          - abdulqabiz
+        website: 'http://nodeschool.io/kanpur'
+        repo: 'http://github.com/nodeschool/kanpur'
+        lat: 26.449923
+        lon: 80.3318736
+      - name: Karaj NodeSchool
+        location: 'Karaj,Alborz, Iran'
+        organizers:
+          - ArianSotoudehMehr
+        website: 'http://nodeschools.ir'
+        repo: 'http://github.com/nodeschool/karaj'
+        lat: 35.8400188
+        lon: 50.9390906
+      - name: NodeSchool Lahore
+        location: 'Lahore, PK'
+        organizers:
+          - usmantahirr
+          - sheharyarn
+        website: 'http://nodeschool.io/Lahore'
+        repo: 'http://github.com/nodeschool/lahore'
+        lat: 31.55460609999999
+        lon: 74.3571581
+      - name: Malang NodeSchool
+        location: 'Malang, ID'
+        organizers:
+          - krahman
+        website: 'http://nodeschool.io/malang'
+        twitter: mlgnodeschool
+        repo: 'http://github.com/nodeschool/malang'
+        lat: -7.9666204
+        lon: 112.6326321
+      - name: Osaka NodeSchool
+        location: 'Osaka, JP'
+        organizers:
+          - martinheidegger
+          - vanx2
+          - kumatch
+          - kamiyam
+          - atuyl
+        website: 'http://nodeschool.io/osaka'
+        repo: 'http://github.com/nodeschool/osaka'
+        lat: 34.6937378
+        lon: 135.5021651
+      - name: Pune Nodeschool
+        location: 'Pune, IN'
+        organizers:
+          - adroittech
+        website: 'http://github.com/nodeschool/pune'
+        twitter: niravfaldu
+        repo: 'http://github.com/nodeschool/pune'
+        lat: 18.5204303
+        lon: 73.8567437
+      - name: NodeSchool Seoul
+        location: 'Seoul, KR'
+        organizers:
+          - xarus01
+        website: 'http://nodeschool.io/seoul/'
+        repo: 'https://github.com/nodeschool/seoul'
+        gitter: 'https://gitter.im/nodeschool/nodeschool/seoul'
+        lat: 37.566535
+        lon: 126.9779692
+      - name: Shiraz NodeSchool
+        location: 'Shiraz,Fars, Iran'
+        organizers:
+          - ArianSotoudehMehr
+        website: 'http://nodeschools.ir'
+        repo: 'http://github.com/nodeschool/shiraz'
+        lat: 29.5917677
+        lon: 52.5836982
+      - name: Singapore NodeSchool
+        location: 'Singapore, SG'
+        organizers:
+          - timoxley
+          - weilu
+          - renettarenula
+          - hongkheng
+          - soareschen
+          - vissree
+          - apraditya
+          - shioju
+          - danielmahadi
+          - eihan
+          - yzdong
+          - andrewabogado
+          - sayanee
+        website: 'http://nodeschool.io/singapore'
+        repo: 'http://github.com/nodeschool/singapore'
+        lat: 1.3553794
+        lon: 103.8677444
+      - name: Surat NodeSchool
+        location: 'Surat, GJ, IN'
+        organizers:
+          - harshjv
+          - Akshay-Jain01
+        repo: 'https://github.com/nodeschool/surat'
+        lat: 21.1702401
+        lon: 72.83106070000001
+      - name: Tabriz NodeSchool
+        location: 'Tabriz,Azarbaijan, Iran'
+        organizers:
+          - ArianSotoudehMehr
+        website: 'http://nodeschools.ir'
+        repo: 'http://github.com/nodeschool/tabriz'
+        lat: 38.094313
+        lon: 46.2614617
+      - name: Taiwan Nodeschool
+        location: Taiwan
+        organizers:
+          - leonlin14
+          - cfsghost
+          - poying
+        website: 'http://nodeschool.io/taiwan'
+        repo: 'https://github.com/nodeschool/taiwan'
+        lat: 23.69781
+        lon: 120.960515
+      - name: Tehran NodeSchool
+        location: 'Tehran,Tehran, Iran'
+        organizers:
+          - ArianSotoudehMehr
+        website: 'http://nodeschools.ir'
+        repo: 'http://github.com/nodeschool/tehran'
+        lat: 35.6891975
+        lon: 51.3889736
+      - name: NodeSchool Tokyo
+        location: 'Tokyo, JP'
+        organizers:
+          - sota0805
+          - tgfjt
+          - martinheidegger
+        website: 'http://nodeschool.io/tokyo/'
+        repo: 'https://github.com/nodeschool/tokyo'
+        gitter: 'https://gitter.im/nodeschool/nodeschool-japan'
+        lat: 35.6894875
+        lon: 139.6917064
+      - name: Vellore NodeSchool
+        location: 'Vellore, IN'
+        organizers:
+          - nikhil-kasukurthi
+        repo: 'http://github.com/nodeschool/vellore'
+        lat: 12.9165167
+        lon: 79.13249859999999
+      - name: "Xi'an NodeSchool"
+        location: "Xi'an, Shaanxi, CN"
+        organizers:
+          - howiehu
+        website: 'http://nodeschool.io/xian'
+        repo: 'https://github.com/nodeschool/xian'
+        lat: 34.341575
+        lon: 108.93977
+      - name: Yazd NodeSchool
+        location: 'Yazd,Yazd, Iran'
+        organizers:
+          - ArianSotoudehMehr
+        website: 'http://nodeschools.ir'
+        repo: 'http://github.com/nodeschool/yazd'
+        lat: 31.8974232
+        lon: 54.3568562
   - region: Europe
     conferences:
       - name: NodeConf.eu
@@ -4929,6 +5318,429 @@ regions:
         group_photo:
           photo_link: 'http://photos1.meetupstatic.com/photos/event/b/b/1/9/600_448607897.jpeg'
         lat: 49
+    nodeschools:
+      - name: NodeSchool Amsterdam
+        location: 'Amsterdam, NL'
+        organizers:
+          - jpwesselink
+          - rickheere
+          - stefanmirck
+          - codeflyer
+        website: 'http://github.com/nodeschool/amsterdam'
+        twitter: NodeSchoolAMS
+        repo: 'http://github.com/nodeschool/amsterdam'
+        lat: 52.3702157
+        lon: 4.895167900000001
+      - name: NodeSchool Ankara / Turkey
+        location: 'Ankara, TR'
+        organizers:
+          - trkozd
+          - skaan07
+        website: 'http://nodeschool.io/ankara'
+        repo: 'http://github.com/nodeschool/ankara'
+        lat: 39.9333635
+        lon: 32.8597419
+      - name: Augsburg NodeSchool
+        location: 'Augsburg, DE'
+        organizers:
+          - meaku
+          - jhnns
+          - sbat
+          - flootr
+          - matthaias
+          - topa
+        website: 'http://nodeschool.io/augsburg'
+        twitter: NodeschoolAugs
+        repo: 'http://github.com/nodeschool/augsburg'
+        lat: 48.3705449
+        lon: 10.89779
+      - name: Barcelona NodeSchool
+        location: 'Barcelona, ES'
+        organizers:
+          - patrickheneise
+        website: 'http://nodeschool.io/barcelona/'
+        repo: 'http://github.com/nodeschool/barcelona'
+        lat: 41.3850639
+        lon: 2.1734035
+      - name: Belfast NodeSchool
+        location: 'Belfast, UK'
+        organizers:
+          - gangleri
+          - lanazwart
+          - ablair08
+          - chrisfowler
+        website: 'http://nodeschool.io/belfast'
+        twitter: '@nodeschoolbel'
+        repo: 'http://github.com/nodeschool/belfast'
+        lat: 54.59728500000001
+        lon: -5.93012
+      - name: NodeSchool Belgrade
+        location: 'Belgrade, RS'
+        organizers:
+          - stojanovic
+          - aysbg
+          - simalexan
+        website: 'http://nodeschool.io/belgrade'
+        repo: 'http://github.com/nodeschool/belgrade'
+        lat: 44.786568
+        lon: 20.4489216
+      - name: NodeSchool Berlin
+        location: 'Berlin, DE'
+        organizers:
+          - finnp
+          - stryju
+          - johannhof
+        website: 'http://nodeschool.io/berlin'
+        repo: 'http://github.com/nodeschool/berlin'
+        lat: 52.52000659999999
+        lon: 13.404954
+      - name: NodeSchool Bratislava
+        location: 'Bratislava, SK'
+        organizers:
+          - yangwao
+        website: 'http://nodeschool.io/bratislava'
+        repo: 'http://github.com/nodeschool/bratislava'
+        lat: 48.1485965
+        lon: 17.1077477
+      - name: Bristol NodeSchool
+        location: 'Bristol, UK'
+        organizers:
+          - permadesign
+          - fiznool
+          - katjad
+        website: 'http://nodeschool.io/bristol'
+        gitter: 'https://gitter.im/nodeschool/bristol'
+        repo: 'http://github.com/nodeschool/bristol'
+        lat: 51.454513
+        lon: -2.58791
+      - name: Chernivtsi NodeSchool
+        location: 'Chernivtsi, UA'
+        organizers:
+          - denysdovhan
+        twitter: denysdovhan
+        repo: 'http://github.com/nodeschool/chernivtsi'
+        lat: 48.2920787
+        lon: 25.9358367
+      - name: Dublin NodeSchool
+        location: 'Dublin, IE'
+        organizers:
+          - no9
+          - johnbrett
+          - jasonmarah
+          - johnbrett
+          - akohli
+          - davecocoa
+          - lorcanmcdonald
+          - gangleri
+        website: 'http://nodeschool.io/dublin'
+        twitter: '@nodeschooldub'
+        repo: 'http://github.com/nodeschool/dublin'
+        lat: 53.3498053
+        lon: -6.2603097
+      - name: Faro NodeSchool
+        location: 'Faro, PT'
+        organizers:
+          - mcoquet
+          - nneves
+          - rsoares
+        repo: 'http://github.com/nodeschool/faro'
+        lat: 37.0193548
+        lon: -7.9304397
+      - name: Foyle NodeSchool
+        location: 'Derry/Londonderry, UK'
+        organizers:
+          - sjmerrigan
+          - kieranheg
+          - vquigley
+          - CahalKearney
+          - gangleri
+          - diarmaidm
+        website: 'http://nodeschool.io/foyle-valley'
+        repo: 'http://github.com/nodeschool/foyle-valley'
+        lat: 54.9966124
+        lon: -7.3085748
+      - name: NodeSchool Haarlem
+        location: 'Haarlem, NL'
+        organizers:
+          - rickheere
+          - jpwesselink
+          - codeflyer
+          - stefanmirck
+        website: 'http://nodeschool.io/haarlem'
+        repo: 'https://github.com/nodeschool/haarlem'
+        lat: 52.3873878
+        lon: 4.6462194
+      - name: NodeSchool Hamburg
+        location: 'Hamburg, DE'
+        organizers:
+          - greelgorke
+        website: 'http://nodeschool.io/hamburg'
+        repo: 'http://github.com/nodeschool/hamburg'
+        lat: 53.5510846
+        lon: 9.9936818
+      - name: NodeSchool Heidelberg
+        location: 'Heidelberg, DE'
+        organizers:
+          - martensms
+          - iUsemws
+        website: 'http://nodeschool.io/heidelberg'
+        twitter: 'https://twitter.com/nodeschoolhd'
+        repo: 'http://github.com/nodeschool/heidelberg'
+        lat: 49.3987524
+        lon: 8.6724335
+      - name: Helsinki NodeSchool
+        location: 'Helsinki, FI'
+        organizers:
+          - laurisvan
+          - jubilem
+        website: 'http://nodeschool.io/helsinki/'
+        twitter: helnode
+        repo: 'https://github.com/nodeschool/helsinki'
+        lat: 60.16985569999999
+        lon: 24.938379
+      - name: NodeSchool Hradec Králové
+        location: 'Hradec Králové, CZ'
+        organizers:
+          - bajtos
+        repo: 'http://github.com/nodeschool/hradec-kralove'
+        lat: 50.2103605
+        lon: 15.825211
+      - name: NodeSchool Istanbul
+        location: 'Istanbul, TR'
+        organizers:
+          - arifcakiroglu
+          - yasinaydin
+          - huseyinbabal
+        website: 'http://nodeschool.io/istanbul'
+        twitter: 'https://twitter.com/NodeSchool_Ist'
+        repo: 'http://github.com/nodeschool/istanbul'
+        lat: 41.0082376
+        lon: 28.9783589
+      - name: NodeSchool Italy
+        location: Italy
+        organizers:
+          - matteocollina
+          - MarcoPiraccini
+        website: 'http://nodeschool.io/italy'
+        repo: 'http://github.com/nodeschool/italy'
+        lat: 41.87194
+        lon: 12.56738
+      - name: NodeSchool Kyiv
+        location: 'Kyiv, UA'
+        organizers:
+          - sudodoki
+        repo: 'http://github.com/nodeschool/kyiv'
+        lat: 50.4501
+        lon: 30.5234
+      - name: Kirovohrad NodeSchool
+        location: 'Kirovohrad, UA'
+        organizers:
+          - ghaiklor
+        website: 'http://nodeschool.io/kirovohrad'
+        twitter: ghaiklor
+        repo: 'http://github.com/nodeschool/kirovohrad'
+        lat: 48.50793300000001
+        lon: 32.262317
+      - name: Lisbon NodeSchool
+        location: 'Lisbon, PT'
+        organizers:
+          - diasdavid
+        repo: 'http://github.com/nodeschool/lisbon'
+        lat: 38.7222524
+        lon: -9.1393366
+      - name: NodeSchool Lodz
+        location: 'Lodz, PL'
+        organizers:
+          - adamniedzielski
+          - lipkap
+        website: 'http://nodeschool.io/lodz'
+        twitter: nodeschool_lodz
+        gitter: 'https://gitter.im/nodeschool/lodz'
+        repo: 'https://github.com/nodeschool/lodz'
+        lat: 51.7592485
+        lon: 19.4559833
+      - name: London NodeSchool
+        location: 'London, UK'
+        organizers:
+          - iancrowther
+          - olizilla
+          - alanshaw
+          - orliesaurus
+          - ezodude
+        website: 'http://nodeschool.io/london'
+        repo: 'http://github.com/nodeschool/london'
+        lat: 51.5073509
+        lon: -0.1277583
+      - name: Lyon NodeSchool
+        location: 'Lyon, FR'
+        organizers:
+          - maxlath
+        website: 'http://nodeschool.io/lyon'
+        repo: 'http://github.com/nodeschool/lyon'
+        lat: 45.764043
+        lon: 4.835659
+      - name: NodeSchool Madrid
+        location: 'Madrid, ES'
+        organizers:
+          - alexfernandez
+          - gootyfer
+          - javiervelezreyes
+        website: 'http://nodeschool.io/madrid'
+        twitter: '@NodeJsMadrid'
+        repo: 'http://github.com/nodeschool/madrid'
+        lat: 40.4167754
+        lon: -3.7037902
+      - name: NodeSchool Moscow
+        location: 'Moscow, RU'
+        organizers:
+          - AVVS
+          - freele
+        repo: 'http://github.com/nodeschool/moscow'
+        lat: 55.755826
+        lon: 37.6173
+      - name: Munich NodeSchool
+        location: 'Munich, DE'
+        organizers:
+          - meaku
+          - jhnns
+          - sbat
+          - flootr
+          - matthaias
+          - topa
+        website: 'http://nodeschool.io/munich'
+        twitter: nodeschoolmuc
+        repo: 'http://github.com/nodeschool/munich'
+        lat: 48.1351253
+        lon: 11.5819806
+      - name: Oslo NodeSchool
+        location: 'Oslo, NO'
+        organizers:
+          - Andersos
+        website: 'http://nodeschool.io/oslo'
+        gitter: 'https://gitter.im/nodeschool/oslo'
+        repo: 'http://github.com/nodeschool/oslo'
+        lat: 59.9138688
+        lon: 10.7522454
+      - name: NodeSchool Oxford
+        location: 'Oxford, UK'
+        organizers:
+          - roylines
+          - benfoxall
+          - ivanbokii
+          - nileshkale
+          - peterjwest
+          - lazywithclass
+        website: 'http://jsoxford.com/'
+        twitter: 'https://twitter.com/JSOxford'
+        repo: 'http://github.com/nodeschool/oxford'
+        lat: 51.7520209
+        lon: -1.2577263
+      - name: NodeSchool Paris
+        location: 'Paris, FR'
+        organizers:
+          - tdd
+        website: 'http://nodeschool.io/paris/'
+        twitter: NodeSchoolParis
+        repo: 'http://github.com/nodeschool/paris'
+        lat: 48.856614
+        lon: 2.3522219
+      - name: NodeSchool Sevilla
+        location: 'Seville, ES'
+        organizers:
+          - beltran-rubo
+        repo: 'http://github.com/nodeschool/seville'
+        lat: 37.3890924
+        lon: -5.9844589
+      - name: NodeSchool Silesia
+        location: 'Silesia, PL'
+        organizers:
+          - afronski
+          - rspective
+        website: 'http://nodeschool.io/silesia'
+        twitter: nodeschoolpl
+        gitter: 'https://gitter.im/nodeschool/silesia'
+        repo: 'https://github.com/nodeschool/silesia'
+        lat: 50.5716595
+        lon: 19.3219768
+      - name: Saint Petersburg NodeSchool
+        location: 'Saint Petersburg, RU'
+        organizers:
+          - marinintim
+        website: 'http://nodeschool.io/spb'
+        repo: 'https://github.com/nodeschool/spb'
+        lat: 59.9342802
+        lon: 30.3350986
+      - name: Nodeschool Stavanger
+        location: 'Stavanger, NO'
+        organizers:
+          - asbjornenge
+          - megatrond
+          - olavgg
+          - olekjormo
+          - persille
+          - joargp
+          - resurge
+          - jmyrland
+          - frodeanonsen
+          - VirtueMe
+        website: 'http://nodeschool.io/stavanger'
+        repo: 'https://github.com/nodeschool/stavanger'
+        lat: 58.9699756
+        lon: 5.7331073
+      - name: NodeSchool Strasbourg
+        location: 'Strasbourg, FR'
+        organizers:
+          - jsebfranck
+        website: 'http://nodeschool.io/strasbourg/'
+        repo: 'http://github.com/nodeschool/strasbourg'
+        lat: 48.5734053
+        lon: 7.752111299999999
+      - name: NodeSchool Stuttgart
+        location: 'Stuttgart, DE'
+        organizers:
+          - kwakayama
+        website: 'http://nodeschool.io/stuttgart'
+        repo: 'http://github.com/nodeschool/stuttgart'
+        lat: 48.7758459
+        lon: 9.1829321
+      - name: Utrecht NodeSchool
+        location: 'Utrecht, NL'
+        organizers:
+          - fritzvd
+        website: 'http://nodeschool.io/utrecht/'
+        repo: 'http://github.com/nodeschool/utrecht'
+        lat: 52.09073739999999
+        lon: 5.1214201
+      - name: Vienna NodeSchool
+        location: 'Vienna, AT'
+        organizers:
+          - thomaspeklak
+          - shm
+          - saintedlama
+        website: 'http://nodeschool.io/vienna'
+        repo: 'http://github.com/nodeschool/vienna'
+        lat: 48.2081743
+        lon: 16.3738189
+      - name: Wroclaw NodeSchool
+        location: 'Wroclaw, Dolnoslaskie, PL'
+        organizers:
+          - grabbou
+          - explosivetitles
+        website: 'http://nodeschool.io/wroclaw'
+        twitter: nodeschool_wro
+        gitter: 'https://gitter.im/nodeschool/wroclaw'
+        repo: 'http://github.com/nodeschool/wroclaw'
+        lat: 51.1078852
+        lon: 17.0385376
+      - name: NodeSchool Zagreb
+        location: 'Zagreb, HR'
+        organizers:
+          - shime
+          - dinodsaurus
+        website: 'http://nodeschool.io/zagreb'
+        repo: 'http://github.com/nodeschool/zagreb'
+        lat: 45.8150108
+        lon: 15.981919
   - region: Latin America
     meetups:
       - country: CL
@@ -6040,6 +6852,243 @@ regions:
         description: 'Este es un grupo donde todos los amantes de: PHP, HTML5, IONIC, Phonegap y MySql se juntan de forma ONLINE y presencia charlas creadas por un grupo de desarrolladores que intenta crecer día a día profesionalmente.'
         lon: -58.369998931884766
         lat: -34.61000061035156
+    nodeschools:
+      - name: Belo Horizonte NodeSchool
+        location: 'Belo Horizonte, BR'
+        organizers:
+          - paulohp
+          - obetomuniz
+          - victorferraz
+          - erickbelfy
+        website: 'http://nodeschool.io/belo-horizonte'
+        repo: 'http://github.com/nodeschool/belo-horizonte'
+        lat: -19.9166813
+        lon: -43.9344931
+      - name: NodeSchool Bogotá
+        location: 'Bogotá, CO'
+        organizers:
+          - davsket
+          - agar3s
+          - kuryaki
+          - zaccaro
+          - buritica
+        repo: 'http://github.com/nodeschool/bogota'
+        lat: 4.710988599999999
+        lon: -74.072092
+      - name: Buenos Aires NodeSchool
+        location: 'Buenos Aires, AR'
+        organizers:
+          - a0viedo
+        website: 'http://nodeschool.io/buenosaires'
+        twitter: nodeschoolba
+        repo: 'http://github.com/nodeschool/buenosaires'
+        lat: -34.6036844
+        lon: -58.3815591
+      - name: Campinas NodeSchool
+        location: 'Campinas, SP, BR'
+        organizers:
+          - fmoliveira
+          - MiattoRocha
+          - edersonnascimento
+        website: 'http://nodeschool.io/campinas'
+        twitter: nodeschoolcps
+        repo: 'http://github.com/nodeschool/campinas'
+        lat: -22.9099384
+        lon: -47.0626332
+      - name: NodeSchool Cochabamba
+        location: 'Cochabamba, BO, BO'
+        organizers:
+          - chitopolo
+          - aquilardo
+        website: 'http://www.boliviajs.com'
+        twitter: 'https://www.twitter.com/BoliviaJS'
+        repo: 'http://github.com/nodeschool/Cochabamba'
+        lat: -17.4139766
+        lon: -66.1653224
+      - name: Córdoba NodeSchool
+        location: 'Córdoba, AR'
+        organizers:
+          - avilaton
+        website: 'http://nodeschool.io/cordoba'
+        repo: 'http://github.com/nodeschool/cordoba'
+        lat: -31.42008329999999
+        lon: -64.1887761
+      - name: 'NodeSchool Costa Rica '
+        location: 'San José, CRI'
+        organizers:
+          - gaboesquivel
+          - yeco
+          - laubits
+          - brolag
+          - stevenperez
+          - kevinblanco
+          - laurensortiz
+          - jarias
+          - rubenabix
+          - cayasso
+          - avenidanet
+        website: 'http://nodeschool.io/costarica/'
+        twitter: costaricajs
+        repo: 'http://github.com/nodeschool/costarica'
+        lat: 9.6257333
+        lon: -84.010995
+      - name: Florianópolis NodeSchool
+        location: 'Florianópolis, SC, BR'
+        organizers:
+          - conrado
+        website: 'http://nodeschool.io/florianopolis'
+        twitter: nodeschoolFLN
+        repo: 'http://github.com/nodeschool/florianopolis'
+        lat: -27.5953778
+        lon: -48.5480499
+      - name: Havana NodeSchool
+        location: 'Havana, CU'
+        organizers:
+          - phinfonet
+          - elMor3no
+          - olemis
+          - robertkowalski
+          - aurium
+        website: 'http://nodeschool.io/havana'
+        repo: 'http://github.com/nodeschool/havana'
+        lat: 23.1135925
+        lon: -82.3665956
+      - name: NodeSchool Hermosillo
+        location: 'Hermosillo, Son, MX'
+        organizers:
+          - dayrachiu
+          - jrsalgado
+          - keogh
+          - abrahamhinojo
+        website: 'http://nodeschool.io/hermosillo'
+        repo: 'http://github.com/nodeschool/hermosillo'
+        lat: 29.0729673
+        lon: -110.9559192
+      - name: NodeSchool Ibagué
+        location: 'Ibagué, CO'
+        organizers:
+          - gioyik
+          - yeisontapia
+          - pandres95
+          - zheref
+        repo: 'http://github.com/nodeschool/ibague'
+        lat: 4.444675999999999
+        lon: -75.24243799999999
+      - name: Manizales NodeSchool
+        location: 'Manizales, CO'
+        organizers:
+          - gmauricio
+        repo: 'http://github.com/nodeschool/manizales'
+        lat: 5.070275
+        lon: -75.5138166
+      - name: NodeSchool Medellín
+        location: 'Medellín, CO'
+        organizers:
+          - julianduque
+          - edsadr
+          - academo
+        repo: 'http://github.com/nodeschool/medellin'
+        lat: 6.253040800000001
+        lon: -75.5645737
+      - name: Mexico City NodeSchool
+        location: 'Mexico City, MX'
+        organizers:
+          - jeduan
+          - rogr
+          - siedrix
+        website: 'http://nodeschool.io/mexicocity'
+        repo: 'http://github.com/nodeschool/mexicocity'
+        lat: 19.4326077
+        lon: -99.133208
+      - name: Montevideo NodeSchool
+        location: 'Montevideo, UY'
+        organizers:
+          - pdjota
+          - pricco
+          - mprunell
+        repo: 'http://github.com/nodeschool/montevideo'
+        lat: -34.9011127
+        lon: -56.16453139999999
+      - name: NodeSchool Pereira
+        location: 'Pereira, CO'
+        organizers:
+          - cronopio
+          - pin3da
+          - jhonber
+        repo: 'http://github.com/nodeschool/pereira'
+        website: 'http://nodeschool.io/pereira'
+        twitter: PereiraJS_
+        lat: 4.8087174
+        lon: -75.690601
+      - name: Puerto Rico NodeSchool
+        location: 'Puerto Rico, PR'
+        organizers:
+          - gcollazo
+          - jpadilla
+          - elving
+          - jomajoma
+          - froi
+        website: 'http://nodeschool.io/puertorico/'
+        repo: 'http://github.com/nodeschool/puertorico'
+        lat: 18.220833
+        lon: -66.590149
+      - name: Rio de Janeiro NodeSchool
+        location: 'Rio de Janeiro, RJ, BR'
+        organizers:
+          - milesibastos
+        website: 'http://nodeschool.io/rio'
+        gitter: 'https://gitter.im/nodeschool/rio'
+        repo: 'http://github.com/nodeschool/rio'
+        lat: -22.9068467
+        lon: -43.1728965
+      - name: San Ignacio NodeSchool
+        location: 'San Ignacio, PY'
+        organizers:
+          - matiasinsaurralde
+          - luchobenitez
+          - carloscarvallo
+        website: 'http://nodeschool.io/sanignacio'
+        repo: 'http://github.com/nodeschool/sanignacio'
+        lat: -26.8433512
+        lon: -57.10131879999999
+      - name: NodeSchool Santa Marta
+        location: 'Santa Marta, CO'
+        organizers:
+          - pedroromn
+          - gengue
+        website: 'http://nodeschool.io/santamarta/'
+        repo: 'http://github.com/nodeschool/santamarta'
+        lat: 11.2403547
+        lon: -74.2110227
+      - name: Santiago NodeSchool
+        location: 'Santiago, CL'
+        organizers:
+          - forres
+          - xabadu
+        website: 'http://www.noders.cl'
+        twitter: nodeschoolstgo
+        repo: 'http://github.com/nodeschool/Santiago'
+        lat: -33.4488897
+        lon: -70.6692655
+      - name: USAC NodeSchool
+        location: 'USAC, Guatemala City, GT'
+        organizers:
+          - edwinallenz
+          - bladimir47
+          - ottogiron
+          - osukaa
+          - gepser
+          - jossemarGT
+          - viktorcoradov
+          - braestuart
+          - cruzperez
+          - hhgn32
+          - bvalenzuela
+          - louicruz
+          - Lucosenza2015
+        repo: 'https://github.com/nodeschool/usac.gt'
+        lat: 14.5881064
+        lon: -90.5477204
   - region: North America
     conferences:
       - name: Node.js Interactive
@@ -10688,6 +11737,463 @@ regions:
           You can be someone who is experienced in the industry or simply someone who is interested in learning more about real-estate. You may be an innovator who is looking to do something amazing in the space. The sky's the limit.
         lon: -123.04000091552734
         lat: 49.279998779296875
+    nodeschools:
+      - name: Anchorage NodeSchool
+        location: 'Anchorage, AK, US'
+        organizers:
+          - thejones
+        website: 'http://nodeschool.io/anchorage'
+        repo: 'http://github.com/nodeschool/anchorage'
+        lat: 61.2180556
+        lon: -149.9002778
+      - name: NodeSchool ATL
+        location: 'Atlanta, GA, US'
+        organizers:
+          - airportyh
+        repo: 'http://github.com/nodeschool/atlanta'
+        lat: 33.7489954
+        lon: -84.3879824
+      - name: Austin NodeSchool
+        location: 'Austin, TX, US'
+        organizers:
+          - stefanmve
+        repo: 'http://github.com/nodeschool/austin'
+        lat: 30.267153
+        lon: -97.7430608
+      - name: Bainbridge Island NodeSchool
+        location: 'Bainbridge Island, WA, US'
+        organizers:
+          - awaterma
+          - crtr0
+          - twleung
+        repo: 'http://github.com/nodeschool/bainbridge'
+        lat: 47.6262081
+        lon: -122.5212448
+      - name: Baltimore NodeSchool
+        location: 'Baltimore, MD, US'
+        organizers:
+          - jasonrhodes
+        website: 'http://nodeschool.io/baltimore'
+        twitter: bmorenodeschool
+        repo: 'http://github.com/nodeschool/baltimore'
+        lat: 39.2903848
+        lon: -76.6121893
+      - name: BayNode
+        location: 'Mountain View, CA, US'
+        organizers:
+          - tonypujals
+          - rosskukulinski
+          - CrabDude
+        repo: 'http://github.com/nodeschool/baynode'
+        lat: 37.3860517
+        lon: -122.0838511
+      - name: Boston NodeSchool
+        location: 'Boston, MA, US'
+        organizers:
+          - jstreb
+          - twalling
+        website: 'https://github.com/nodeschool/boston'
+        repo: 'http://github.com/nodeschool/boston'
+        lat: 42.3600825
+        lon: -71.0588801
+      - name: Chicago NodeSchool
+        location: 'Chicago, IL, US'
+        organizers:
+          - azizali
+        website: 'http://nodeschool.io/chicago'
+        twitter: '@heyaziz'
+        repo: 'http://github.com/nodeschool/chicago'
+        lat: 41.8781136
+        lon: -87.6297982
+      - name: Cincinnati NodeSchool
+        location: 'Cincinnati, OH, US'
+        organizers:
+          - fiveisprime
+          - jackboberg
+          - Tzmanics
+        website: 'https://github.com/nodeschool/cincinnati'
+        twitter: CincyNodeSchool
+        repo: 'http://github.com/nodeschool/cincinnati'
+        lat: 39.1031182
+        lon: -84.5120196
+      - name: Cleveland NodeSchool
+        location: 'Cleveland, OH, US'
+        organizers:
+          - kmckee
+          - kwpeters
+        website: 'http://nodeschool.io/cleveland'
+        twitter: nodeSchoolCLE
+        repo: 'http://github.com/nodeschool/cleveland'
+        lat: 41.49932
+        lon: -81.6943605
+      - name: PairColumbus NodeSchool
+        location: 'Columbus, OH, US'
+        organizers:
+          - jbobo
+        website: 'http://nodeschool.io/columbus'
+        repo: 'http://github.com/nodeschool/columbus'
+        lat: 39.9611755
+        lon: -82.99879419999999
+      - name: NodeSchool Dallas
+        location: 'Dallas, TX, US'
+        organizers:
+          - prochafilho
+          - gangstead
+          - leongaban
+        website: 'http://nodeschool.io/dallas'
+        repo: 'http://github.com/nodeschool/dallas'
+        lat: 32.7766642
+        lon: -96.79698789999999
+      - name: Denver-Boulder-Ft. Collins NodeSchool
+        location: 'Denver, CO, US'
+        organizers:
+          - ralucas
+          - patrick-steele-idem
+          - legittalon
+          - mjhea0
+        twitter: '@nodejscolorado'
+        repo: 'http://github.com/nodeschool/denver-boulder'
+        lat: 39.7392358
+        lon: -104.990251
+      - name: Edmonton NodeSchool
+        location: 'Edmonton, AB, CA'
+        organizers:
+          - ryanramage
+        website: 'https://github.com/nodeschool/edmonton'
+        twitter: '@ryan_ramage_'
+        repo: 'http://github.com/nodeschool/edmonton'
+        lat: 53.544389
+        lon: -113.4909267
+      - name: NodeSchool Fort Lauderdale
+        location: 'Fort Lauderdale, FL, US'
+        organizers:
+          - khalifenizar
+          - dambalah
+          - onel0p3z
+        repo: 'http://github.com/nodeschool/fort-lauderdale'
+        lat: 26.1224386
+        lon: -80.13731740000001
+      - name: 'Gainesville, FL NodeSchool'
+        location: 'Gainesville, FL, US'
+        organizers:
+          - aaronbdixon
+        website: 'http://gnvjs.com'
+        twitter: gnvjs
+        repo: 'http://github.com/nodeschool/gainesville'
+        lat: 29.6516344
+        lon: -82.32482619999999
+      - name: NodeSchool - Glendora Javascript
+        location: 'Glendora, CA, US'
+        organizers:
+          - uptownhr
+        website: 'http://nodeschool.io/glendora'
+        repo: 'http://github.com/nodeschool/glendora'
+        lat: 34.1361187
+        lon: -117.865339
+      - name: NodeSchool Wisconsin
+        location: 'Green Bay, WI, US'
+        organizers:
+          - blakehall
+          - zo0o0ot
+        website: 'http://nodeschool.io/wisconsin'
+        twitter: '@greenbayjs'
+        repo: 'http://github.com/nodeschool/wisconsin'
+        lat: 44.51915899999999
+        lon: -88.019826
+      - name: Honolulu NodeSchool
+        location: 'Honolulu, HI, US'
+        organizers:
+          - keokilee
+          - taesup
+          - mrbarbasa
+          - jaywon
+          - thgaskell
+        website: 'http://nodeschool.io/honolulu'
+        repo: 'http://github.com/nodeschool/honolulu'
+        lat: 21.3069444
+        lon: -157.8583333
+      - name: NodeSchool Kamloops
+        location: 'Kamloops, BC, CA'
+        organizers:
+          - jonotron
+          - chadfawcett
+          - chrisfosterelli
+        repo: 'http://github.com/nodeschool/kamloops'
+        lat: 50.674522
+        lon: -120.3272674
+      - name: 'NodeSchool: LA Edition'
+        location: 'Los Angeles, CA, US'
+        organizers:
+          - jxson
+          - emkay
+        website: 'http://nodeschool.io/los-angeles'
+        repo: 'http://github.com/nodeschool/los-angeles'
+        lat: 34.0522342
+        lon: -118.2436849
+      - name: NodeSchool Madison
+        location: 'Madison, WI, US'
+        organizers:
+          - jthoms1
+        website: 'http://nodeschool.io/madison/'
+        twitter: nodeschoolmsn
+        repo: 'http://github.com/nodeschool/madison'
+        lat: 43.0730517
+        lon: -89.4012302
+      - name: NodeSchool Manchester
+        location: 'Manchester, NH, US'
+        organizers:
+          - AlabamaMike
+          - antishow
+          - swinter2
+        website: 'http://nodeschool.io/manchester'
+        twitter: nodemanchvegas
+        repo: 'http://github.com/nodeschool/manchester'
+        lat: 42.9956397
+        lon: -71.4547891
+      - name: NodeSchool Miami
+        location: 'Miami, FL, US'
+        organizers:
+          - khalifenizar
+          - dambalah
+          - onel0p3z
+        repo: 'http://github.com/nodeschool/miami'
+        lat: 25.7616798
+        lon: -80.1917902
+      - name: NodeSchool Minneapolis
+        location: 'Minneapolis, MN, US'
+        organizers:
+          - mikefrey
+        repo: 'http://github.com/nodeschool/minneapolis'
+        lat: 44.977753
+        lon: -93.2650108
+      - name: Modesto NodeSchool
+        location: 'Modesto, CA, US'
+        organizers:
+          - joshterrill
+          - nbunney
+        website: 'http://nodeschool.io/modesto'
+        repo: 'http://github.com/nodeschool/modesto'
+        lat: 37.63909719999999
+        lon: -120.9968782
+      - name: NodeSchool Normal
+        location: 'Normal, IL, US'
+        organizers:
+          - BrainBacon
+          - codysherman
+          - shwnstrmn
+        website: 'http://nodeschool.io/normal'
+        twitter: NodeNormal
+        repo: 'http://github.com/nodeschool/normal'
+        lat: 40.5142026
+        lon: -88.9906312
+      - name: NodeSchool NYC
+        location: 'New York, NY, US'
+        organizers:
+          - hackygolucky
+          - brianloveswords
+          - toolness
+          - hsin421
+          - acingraham
+          - gautamarora
+        website: 'http://nodeschool.io/nyc'
+        repo: 'http://github.com/nodeschool/nyc'
+        lat: 40.7127837
+        lon: -74.0059413
+      - name: Oakland NodeSchool
+        location: 'Oakland, CA, US'
+        organizers:
+          - fauntleroy
+        website: 'http://nodeschool.io/oakland/'
+        twitter: nodeschooloak
+        repo: 'http://github.com/nodeschool/oakland'
+        lat: 37.8043637
+        lon: -122.2711137
+      - name: NodeSchool OC
+        location: 'Orange County, CA, US'
+        organizers:
+          - markhuge
+        repo: 'http://github.com/nodeschool/oc'
+        lat: 33.7174708
+        lon: -117.8311428
+      - name: Orlando NodeSchool
+        location: 'Orlando, FL, US'
+        organizers:
+          - lancehudson
+          - bradplank
+          - calebrosario
+        repo: 'http://github.com/nodeschool/orlando'
+        lat: 28.5383355
+        lon: -81.3792365
+      - name: NodeSchool PDX
+        location: 'Portland, OR, US'
+        organizers:
+          - nrn
+          - dlmanning
+          - wraithan
+          - meandavejustice
+          - justinabrahms
+          - nvcexploder
+          - ngoldman
+        website: 'http://nodeschool.io/pdx/'
+        repo: 'http://github.com/nodeschool/pdx'
+        lat: 45.5230622
+        lon: -122.6764816
+      - name: NodeSchool Philadelphia
+        location: 'Philadelphia, PA, US'
+        organizers:
+          - adobley
+        website: 'http://nodeschool.io/philadelphia'
+        twitter: nodeschoolphl
+        repo: 'http://github.com/nodeschool/philadelphia'
+        lat: 39.9525839
+        lon: -75.1652215
+      - name: 'Nodeschool Portland, ME'
+        location: 'Portland, ME, US'
+        organizers:
+          - carlodicelico
+          - jaegerpicker
+        website: 'http://nodeschool.io/portland-me'
+        repo: 'http://github.com/nodeschool/portland-me'
+        other: 'http://www.meetup.com/Portland-Maine-Nodeschool'
+        lat: 43.66147100000001
+        lon: -70.2553259
+      - name: Raleigh-Durham NodeSchool
+        location: 'Raleigh-Durham, NC, US'
+        organizers:
+          - brianpmarks
+          - jbelmont
+        website: 'http://nodeschool.io/raleigh-durham'
+        twitter: rdunodeschool
+        repo: 'http://github.com/nodeschool/raleigh-durham'
+        lat: 35.8991678
+        lon: -78.86364019999999
+      - name: NodeSchool Reno
+        location: 'Reno, NV, US'
+        organizers:
+          - colinloretz
+          - hmudesign
+          - w1zeman1p
+        website: 'http://nodeschool.io/reno/'
+        repo: 'http://github.com/nodeschool/reno'
+        lat: 39.5296329
+        lon: -119.8138027
+      - name: NodeSchool SLO
+        location: 'San Luis Obispo, CA, US'
+        organizers:
+          - ecwyne
+        website: 'http://nodeschool.io/san-luis-obispo/'
+        repo: 'http://github.com/nodeschool/san-luis-obispo'
+        lat: 35.2827524
+        lon: -120.6596156
+      - name: NodeSchool SF
+        location: 'San Francisco, CA, US'
+        organizers:
+          - duquet
+          - llkats
+          - jedireza
+        website: 'http://nodeschool.io/sanfrancisco/'
+        twitter: nodeschoolsf
+        repo: 'http://github.com/nodeschool/sanfrancisco'
+        lat: 37.7749295
+        lon: -122.4194155
+      - name: Seattle NodeSchool
+        location: 'Seattle, WA, US'
+        organizers:
+          - sethvincent
+          - YonasBerhe
+          - blakmatrix
+        website: 'http://nodeschool.io/seattle'
+        repo: 'http://github.com/nodeschool/seattle'
+        lat: 47.6062095
+        lon: -122.3320708
+      - name: Stanford University NodeSchool
+        location: 'Stanford, CA, US'
+        organizers:
+          - feross
+          - jhiesey
+          - abi
+        repo: 'https://github.com/nodeschool/stanford'
+        lat: 37.42410599999999
+        lon: -122.1660756
+      - name: NodeSchool STL
+        location: 'St. Louis, MO, US'
+        organizers:
+          - robbennet
+        website: 'http://nodeschool.io/stlouis'
+        repo: 'http://github.com/nodeschool/stlouis'
+        lat: 38.6270025
+        lon: -90.19940419999999
+      - name: Tacoma NodeSchool
+        location: 'Tacoma, WA, US'
+        organizers:
+          - NorthDecoder
+        website: 'http://nodeschool.io/tacoma'
+        repo: 'http://github.com/nodeschool/tacoma'
+        lat: 47.2528768
+        lon: -122.4442906
+      - name: Tampa Nodeschool
+        location: 'Tampa, FL, US'
+        organizers:
+          - eliwheaton
+        repo: 'https://github.com/nodeschool/tampa'
+        lat: 27.950575
+        lon: -82.4571776
+      - name: NodeSchool Toronto
+        location: 'Toronto, CA'
+        organizers:
+          - rmillr
+          - darcyclarke
+          - richgilbank
+          - jeffjewiss
+          - brenna
+          - andrewdamelio
+          - tessalt
+        website: 'http://nodeschool.io/toronto'
+        twitter: 'https://twitter.com/nodeschoolto'
+        repo: 'http://github.com/nodeschool/toronto'
+        lat: 43.653226
+        lon: -79.3831843
+      - name: Utah Node Ninjas
+        location: 'Provo, UT, US'
+        organizers:
+          - therebelrobot
+        website: 'http://www.meetup.com/Node-Ninjas/'
+        repo: 'https://github.com/Utah-Node-Ninjas'
+        lat: 40.2338438
+        lon: -111.6585337
+      - name: NodeSchool Vancouver
+        location: 'Vancouver, BC, CA'
+        organizers:
+          - sintaxi
+          - notmatt
+          - afabbro
+          - lvivier
+          - gyaresu
+        website: 'http://nodeschool.io/vancouver/'
+        repo: 'http://github.com/nodeschool/vancouver'
+        lat: 49.2827291
+        lon: -123.1207375
+      - name: Western Massachusetts NodeSchool
+        location: 'Western Massachusetts, US'
+        organizers:
+          - Sequoia
+          - a-pasquale
+        website: 'http://nodeschool.io/western-mass/'
+        repo: 'https://github.com/nodeschool/western-mass'
+        lat: 42.5944125
+        lon: -70.68915439999999
+      - name: NodeSchoolDC
+        location: 'Washington, DC, US'
+        organizers:
+          - robbiethegeek
+          - joshfinnie
+          - JuanCaicedo
+          - danpaz
+        website: 'http://nodeschool.io/washingtondc/'
+        twitter: NodeSchoolDC
+        repo: 'http://github.com/nodeschool/washingtondc'
+        lat: 38.9071923
+        lon: -77.0368707
   - region: South Pacific
     meetups:
       - country: NZ
@@ -11076,5 +12582,73 @@ regions:
           This is a free event, with food and drink provided, but we need you to register as numbers are limited by the venue size.
         lon: 151.2100067138672
         lat: -33.869998931884766
+    nodeschools:
+      - name: Auckland NodeSchool
+        location: 'Auckland, NZ'
+        organizers:
+          - jladuval
+          - kevnz
+          - ram-manthry
+        website: 'http://nodeschool.io/auckland/'
+        repo: 'http://github.com/nodeschool/auckland'
+        lat: -36.8484597
+        lon: 174.7633315
+      - name: Brisbane NodeSchool
+        location: 'Brisbane, AU'
+        organizers:
+          - rvagg
+          - garrows
+        repo: 'http://github.com/nodeschool/brisbane'
+        lat: -27.4710107
+        lon: 153.0234489
+      - name: NodeSchool Christchurch
+        location: 'Christchurch, NZ'
+        organizers:
+          - digitalsadhu
+          - coder_stu
+          - gmwills
+          - gingermusketeer
+        website: 'http://nodeschool.io/christchurch/'
+        repo: 'http://github.com/nodeschool/christchurch'
+        lat: -43.5320544
+        lon: 172.6362254
+      - name: NodeSchool Hobart
+        location: 'Hobart, AU'
+        organizers:
+          - joshgillies
+          - jonnyscholes
+          - timheap
+          - MalucoMarinero
+        website: 'http://nodeschool.io/hobart'
+        repo: 'http://github.com/nodeschool/hobart'
+        lat: -42.8819032
+        lon: 147.3238148
+      - name: NodeSchool Perth
+        location: 'Perth, AU'
+        organizers:
+          - nii236
+          - miqid
+        website: 'http://nodeschool.io/perth'
+        repo: 'https://github.com/nodeschool/perth'
+        gitter: 'https://gitter.im/nodeschool/perth'
+        lat: -31.9535132
+        lon: 115.8570471
+      - name: Sydney NodeSchool
+        location: 'Sydney, AU'
+        organizers:
+          - rvagg
+          - DamonOehlman
+        website: 'http://nodeschool.io/sydney'
+        repo: 'https://github.com/nodeschool/sydney'
+        lat: -33.8674869
+        lon: 151.2069902
+      - name: NodeSchool Wellington
+        location: 'Wellington, NZ'
+        organizers:
+          - vimto
+          - chilts
+        repo: 'http://github.com/nodeschool/wellington'
+        lat: -41.2864603
+        lon: 174.776236
 
 ---
