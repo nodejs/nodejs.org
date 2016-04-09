@@ -5419,11 +5419,12 @@ regions:
         lat: 19.93000030517578
       - country: CO
         city: Pereira
-        link: 'http://www.meetup.com/PereiraJS/'
+        link: 'http://pereirajs.org/'
         name: PereiraJS
-        description: Este es un grupo para todos los interesado en los mejores en JavaScript
+        description: Comunidad de aprendizaje del lenguaje Javascript
         lon: -75.68000030517578
         lat: 4.809999942779541
+        source_of_truth: true
       - country: MX
         city: Zapopan
         link: 'http://www.meetup.com/TequilaJS-Zapopan/'
