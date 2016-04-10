@@ -23,7 +23,6 @@
     "url": "https://github.com/nodejs/nodejs.org/issues"
   },
   "engines": {
-    "iojs": ">=2.5.0",
     "node": ">=4.0.0"
   },
   "standard": {
