@@ -29,20 +29,30 @@ request({
     }
 
     reg.chapters.forEach((chapter) => {
-      delete chapter.region
-      chapter.location = `${chapter.location}, ${chapter.country}`
+      if (chapter.country) {
+        chapter.location += `, ${chapter.country}`
+      }
       delete chapter.country
+      delete chapter.region
       yml.replace(store.nodeschools, 'name', chapter.name, chapter)
       chapters.push(chapter)
     })
   })
 
   function _geo () {
-    if (chapters.length === 0) { return yml.save() }
+    if (chapters.length === 0) {
+      return yml.save()
+    }
+
     const chapter = chapters.shift()
     geocoder.geocode(chapter.location, (err, res) => {
-      console.log(err, res)
-      if (err || !res.length) { return _geo() }
+      if (err || !res.length) {
+        console.error(
+          err && err.message || `Could not geocode location: ${chapter.location}`
+        )
+        return _geo()
+      }
+
       chapter.lat = res[0].latitude
       chapter.lon = res[0].longitude
       _geo()

@@ -12,15 +12,7 @@ const defaults = {
 }
 const results = []
 
-function clean (event) {
-  delete event.topics
-  delete event.urlname
-  delete event.category
-  delete event.id
-}
-
 function finish (events) {
-  // return console.log(JSON.stringify(events))
   events.forEach((event) => {
     if (!countryMap[event.country]) {
       console.log(event)
@@ -28,15 +20,12 @@ function finish (events) {
     }
     const region = yml.getRegion(countryMap[event.country])
     if (!region.meetups) region.meetups = []
-    clean(event)
     if (!yml.isSoT(region.meetups, event.city, event.name)) {
       yml.replace(region.meetups, 'name', event.name, event)
     }
   })
   yml.save()
 }
-// This is nice when testing if you cache the response
-// finish(JSON.parse(require('fs').readFileSync('./meetup.json').toString()))
 
 function pull (opts) {
   request(opts, (err, resp, body) => {
@@ -47,9 +36,12 @@ function pull (opts) {
     body.results.forEach((result) => {
       const title = result.name.toLowerCase()
 
-      if (title.includes('nodeschool')) return
-      if (title.includes('mongodb') && title.includes('node')) return
-      if (title.includes('find a tech job') && title.includes('node')) return
+      if (
+        title.includes('find a tech job') ||
+        title.includes('nodeschool') ||
+        / mongodb (?:user group|meet ?up)$/.test(title) ||
+        title.startsWith('mongodb ')
+      ) return
 
       results.push(result)
     })
@@ -65,9 +57,9 @@ function pull (opts) {
 pull(Object.assign({
   url: 'https://api.meetup.com/2/groups',
   qs: {
+    only: 'city,country,description,group_photo.photo_link,lat,link,lon,name',
     key: process.env.MEETUP_TOKEN,
-    upcoming_events: true,
-    topic: 'nodejs',
-    category: 34
+    topic: 'nodeJS',
+    category_id: 34 // tech
   }
 }, defaults))
