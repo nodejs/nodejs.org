@@ -76,12 +76,12 @@
             "text": "FAQ"
         },
         "api-lts": {
-            "link": "dist/latest-v4.x/docs/api",
+            "link": "/dist/latest-v4.x/docs/api",
             "subtext": "LTS",
             "text": "v4.4.2 API"
         },
         "api-stable": {
-            "link": "dist/latest-v5.x/docs/api",
+            "link": "/dist/latest-v5.x/docs/api",
             "text": "v5.10.1 API"
         },
         "guides": {
