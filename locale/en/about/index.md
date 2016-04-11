@@ -5,7 +5,7 @@ trademark: Trademark
 ---
 # About Node.js&reg;
 
-As an asynchronous event driven framework, Node.js is designed to build
+As an asynchronous event driven JavaScript runtime, Node is designed to build
 scalable network applications. In the following "hello world" example, many
 connections can be handled concurrently. Upon each connection the callback is
 fired, but if there is no work to be done Node is sleeping.
@@ -30,16 +30,20 @@ server.listen(port, hostname, () => {
 This is in contrast to today's more common concurrency model where OS threads
 are employed. Thread-based networking is relatively inefficient and very
 difficult to use. Furthermore, users of Node are free from worries of
-dead-locking the process—there are no locks. Almost no function in Node
+dead-locking the process, since there are no locks. Almost no function in Node
 directly performs I/O, so the process never blocks. Because nothing blocks,
-less-than-expert programmers are able to develop scalable systems.
+scalable systems are very reasonable to develop in Node.
 
-Node is similar in design to and influenced by systems like Ruby's [Event
-Machine](http://rubyeventmachine.com/) or Python's
-[Twisted](http://twistedmatrix.com/). Node takes the event model a bit further,
-it presents the event loop as a language construct instead of as a library. In
-other systems there is always a blocking call to start the event-loop.
-Typically one defines behavior through callbacks at the beginning of a script
+If some of this language is unfamiliar, there is a full article on
+[Blocking vs Non-Blocking][].
+
+---
+
+Node is similar in design to, and influenced by, systems like Ruby's
+[Event Machine][] or Python's [Twisted][]. Node takes the event model a bit
+further, it presents an [event loop][] as a runtime construct instead of as a library. In other systems there is always a blocking call to start the
+event-loop.
+Typically behavior is defined through callbacks at the beginning of a script
 and at the end starts a server through a blocking call like
 `EventMachine::run()`. In Node there is no such start-the-event-loop call. Node
 simply enters the event loop after executing the input script. Node exits the
@@ -51,9 +55,15 @@ in mind. This makes Node well suited for the foundation of a web library or
 framework.
 
 Just because Node is designed without threads, doesn't mean you cannot take
-advantage of multiple cores in your environment. You can spawn child processes
-that are easy to communicate with by using our
-[child_process.fork()](https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options)
-API. Built upon that same interface is the
-[cluster](https://nodejs.org/api/cluster.html) module, which allows you to share
-sockets between processes to enable load balancing over your cores.
+advantage of multiple cores in your environment. Child processes can be spawned
+by using our [`child_process.fork()`][] API, and are designed to be easy to
+communicate with. Built upon that same interface is the [`cluster`][] module,
+which allows you to share sockets between processes to enable load balancing
+over your cores.
+
+[Blocking vs Non-Blocking]: https://github.com/nodejs/node/blob/master/doc/topics/blocking-vs-non-blocking.md
+[`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
+[`cluster`]: https://nodejs.org/api/cluster.html
+[event loop]: https://github.com/nodejs/node/blob/master/doc/topics/the-event-loop-timers-and-nexttick.md
+[Event Machine]: http://rubyeventmachine.com/
+[Twisted]: http://twistedmatrix.com/
