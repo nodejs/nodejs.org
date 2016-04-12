@@ -47,6 +47,18 @@
         "resources": {
             "link": "about/resources",
             "text": "Resources"
+        },
+        "foundation": {
+            "link": "foundation",
+            "text": "Foundation"
+        },
+        "security": {
+            "link": "security",
+            "text": "Security"
+        },
+        "trademark": {
+            "link": "about/trademark",
+            "text": "Trademark"
         }
     },
     "download": {
@@ -72,16 +84,18 @@
             "link": "docs/faq",
             "text": "FAQ"
         },
-        "api": {
-            "text": "API"
+        "api-lts": {
+            "link": "/dist/latest-v4.x/docs/api",
+            "subtext": "LTS",
+            "text": "v4.4.2 API"
+        },
+        "api-stable": {
+            "link": "/dist/latest-v5.x/docs/api",
+            "text": "v5.10.1 API"
         },
         "guides": {
             "link": "docs/guides",
             "text": "Guides"
-        },
-        "knowledge": {
-            "link": "knowledge",
-            "text": "Knowledge Base"
         }
     },
     "foundation": {
@@ -115,6 +129,10 @@
     "getinvolved": {
         "link": "get-involved",
         "text": "Get Involved",
+        "code-and-learn": {
+            "link": "get-involved/code-and-learn",
+            "text": "Code + Learn"
+        },
         "contribute": {
             "link": "get-involved/contribute",
             "text": "Contribute"
@@ -123,19 +141,15 @@
             "link": "get-involved/development",
             "text": "Development"
         },
-        "code-and-learn": {
-            "link": "get-involved/code-and-learn",
-            "text": "Code + Learn"
-        },
         "events": {
           "link": "get-involved/events",
           "text": "Events"
         },
         "conduct": {
+            "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
             "text": "Conduct"
         }
     },
-    "trademark"  : { "link": "about/trademark", "text": "Trademark" },
     "security"   : { "link": "security",        "text": "Security" },
     "blog"       : { "link": "blog",            "text": "News" },
 

@@ -8,34 +8,7 @@
     <div id="main">
         <div class="container has-side-nav">
 
-            <aside>
-                <ul>
-                    <li{{#equals path site.about.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.about.link}}/">{{site.about.text}}</a>
-                    </li>
-                    <li{{#equals path site.about.governance.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.about.governance.link}}/">{{site.about.governance.text}}</a>
-                    </li>
-                    <li{{#equals path site.about.workinggroups.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.about.workinggroups.link}}/">{{site.about.workinggroups.text}}</a>
-                    </li>
-                    <li{{#equals path site.about.releases.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.about.releases.link}}/">{{site.about.releases.text}}</a>
-                    </li>
-                    <li{{#equals path site.about.resources.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.about.resources.link}}/">{{site.about.resources.text}}</a>
-                    </li>
-                    <li{{#equals path site.foundation.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.foundation.link}}/">{{site.foundation.text}}</a>
-                    </li>
-                    <li{{#equals path site.security.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.security.link}}/">{{site.security.text}}</a>
-                    </li>
-                    <li{{#equals path site.trademark.link}} class="active"{{/equals}}>
-                        <a href="/{{site.locale}}/{{site.trademark.link}}/">{{site.trademark.text}}</a>
-                    </li>
-                </ul>
-            </aside>
+            {{> navigation key='about'}}
 
             <article>
                 {{{ contents }}}

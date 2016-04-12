@@ -46,6 +46,10 @@
         "resources": {
             "link": "about/resources",
             "text": "Risorse"
+        },
+        "trademark": {
+            "link": "about/trademark",
+            "text": "Marchio Registrato"
         }
     },
     "download": {
@@ -71,9 +75,14 @@
             "link": "docs/faq",
             "text": "FAQ"
         },
-        "api": {
-            "link": "/api/",
-            "text": "API"
+        "api-lts": {
+            "link": "/dist/latest-v4.x/docs/api",
+            "subtext": "LTS",
+            "text": "v4.4.2 API"
+        },
+        "api-stable": {
+            "link": "/dist/latest-v5.x/docs/api",
+            "text": "v5.10.1 API"
         },
         "guides": {
             "link": "docs/guides",
@@ -131,7 +140,6 @@
             "text": "Condotta"
         }
     },
-    "trademark"  : { "link": "about/trademark", "text": "Marchio Registrato" },
     "security"   : { "link": "security",        "text": "Sicurezza" },
     "blog"       : { "link": "blog",            "text": "Blog" },
     "releases": {

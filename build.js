@@ -20,6 +20,7 @@ const fs = require('fs')
 const ncp = require('ncp')
 const junk = require('junk')
 
+const navigation = require('./scripts/plugins/navigation')
 const filterStylusPartials = require('./scripts/plugins/filter-stylus-partials')
 const anchorMarkdownHeadings = require('./scripts/plugins/anchor-markdown-headings')
 const loadVersions = require('./scripts/load-versions')
@@ -66,6 +67,9 @@ function buildLocale (source, locale) {
     })
     // Sets the build source as the locale folder.
     .source(path.join(__dirname, 'locale', locale))
+    // Extracts the main menu and sub-menu links form locale's site.json and
+    // adds them to the metadata. This data is used in the navigation template
+    .use(navigation())
     // Defines the blog post/guide collections used to internally group them for
     // easier future handling and feed generation.
     .use(collections({

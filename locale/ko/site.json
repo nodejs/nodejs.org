@@ -47,6 +47,10 @@
         "resources": {
             "link": "about/resources",
             "text": "관련 자료"
+        },
+        "trademark": {
+            "link": "about/trademark",
+            "text": "트레이드마크"
         }
     },
     "download": {
@@ -72,9 +76,14 @@
             "link": "docs/faq",
             "text": "FAQ"
         },
-        "api": {
-            "link": "/api/",
-            "text": "API"
+        "api-lts": {
+            "link": "/dist/latest-v4.x/docs/api",
+            "subtext": "LTS",
+            "text": "v4.4.2 API"
+        },
+        "api-stable": {
+            "link": "/dist/latest-v5.x/docs/api",
+            "text": "v5.10.1 API"
         },
         "guides": {
             "link": "docs/guides",
@@ -136,7 +145,6 @@
             "text": "Conduct"
         }
     },
-    "trademark"  : { "link": "about/trademark", "text": "트레이드마크" },
     "security"   : { "link": "security",        "text": "보안" },
     "blog"       : { "link": "blog",            "text": "뉴스" },
 
