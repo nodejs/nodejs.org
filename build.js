@@ -184,7 +184,8 @@ function buildLocale (source, locale) {
         strftime: require('./scripts/helpers/strftime.js'),
         apidocslink: require('./scripts/helpers/apidocslink.js'),
         majorapidocslink: require('./scripts/helpers/majorapidocslink.js'),
-        summary: require('./scripts/helpers/summary.js')
+        summary: require('./scripts/helpers/summary.js'),
+        and: require('./scripts/helpers/and.js')
       }
     }))
     // Pipes the generated files into their respective subdirectory in the build

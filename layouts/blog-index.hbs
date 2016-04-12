@@ -27,11 +27,13 @@
             {{#if pagination}}
                 <nav class="pagination">
                     {{#if pagination.prev.path}}
-                        <a href="/{{ site.locale }}/{{ pagination.prev.path }}">&lt; Newer</a>
+                        <a href="/{{ site.locale }}/{{ pagination.prev.path }}">&nbsp;&lt; Newer&nbsp;</a>
                     {{/if}}
-
+                    {{#if (and pagination.next.path pagination.prev.path)}}
+                        |
+                    {{/if}}
                     {{#if pagination.next.path}}
-                        <a href="/{{ site.locale }}/{{ pagination.next.path }}">Older &gt;</a>
+                        <a href="/{{ site.locale }}/{{ pagination.next.path }}">&nbsp;Older &gt;&nbsp;</a>
                     {{/if}}
                 </nav>
             {{/if}}
