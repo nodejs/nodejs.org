@@ -13,7 +13,7 @@ understanding of how a Node.js application is structured.
 
 In the first part of this guide we will create a simple web application in
 Node.js, then we will build a Docker image for that application, and lastly we
-will run the image as container.
+will run the image as a container.
 
 Docker allows you to package an application with all of its dependencies into a
 standardized unit, called a container, for software development. A container is
