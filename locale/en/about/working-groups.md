@@ -227,7 +227,7 @@ Their responsibilities are:
 * Attract and summarize user community needs and feedback.
 * Find or potentially create tools that allow for broader participation.
 * Create Pull Requests for relevant changes to 
-[Roadmap.md](https://github.com/nodejs/node/blob/master/ROADMAP.md)
+[ROADMAP.md](https://github.com/nodejs/node/blob/master/ROADMAP.md)
 
 
 ### [Docker](https://github.com/nodejs/docker-node)
