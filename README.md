@@ -57,6 +57,7 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 
 ### Website Working Group Collaborators
 
+- Yuta Hiroto ([abouthiroppy](https://github.com/abouthiroppy))
 - Andy Gout ([andygout](https://github.com/andygout))
 - Austin Winstanley ([AustinWinstanley](https://github.com/AustinWinstanley))
 - Benget Nata ([bentinata](https://github.com/bentinata))
@@ -92,6 +93,7 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 - Steven R. Loomis ([srl295](https://github.com/srl295))
 - Steve Mao ([stevemao](https://github.com/stevemao))
 - Michaël Zasso ([targos](https://github.com/targos))
+- Myles Borins ([TheAlphaNerd](https://github.com/TheAlphaNerd))
 - Sakthipriyan Vairamani ([thefourtheye](https://github.com/thefourtheye))
 - Anton Wilhelm ([timaschew](https://github.com/timaschew))
 - Thomas Jensen ([tjconcept](https://github.com/tjconcept))
