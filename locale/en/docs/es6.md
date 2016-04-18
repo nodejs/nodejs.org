@@ -35,12 +35,13 @@ All ECMAScript 2015 (ES6) features are split into three groups for **shipping**,
 * [Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 * [new.target](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new.target) [[2]](#ref-2)<span id="backref-2"></span>
 * [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
-* [Spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator) [[2]](#ref-2)<span id="backref-2"></span>
+* [Spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator) [[2]](#ref-2)<span id="backref-2"></span>[[3]](#ref-3)<span id="backref-3"></span>
 
 You can view a more detailed list, including a comparison with other engines, on the [compat-table](https://kangax.github.io/compat-table/es6/) project page.
 
 <small id="ref-1">[[1](#backref-1)]: As of v8 3.31.74.1, block-scoped declarations are [intentionally implemented with a non-compliant limitation to strict mode code](https://groups.google.com/forum/#!topic/v8-users/3UXNCkAU8Es). Developers should be aware that this will change as v8 continues towards ES6 specification compliance.</small><br>
-<small id="ref-2">[[2](#backref-2)]: Only available in Node.js >= 5.x.x
+<small id="ref-2">[[2](#backref-2)]: Only available in Node.js >= 5.x.x</small><br>
+<small id="ref-3">[[3](#backref-3)]: Not supported in objects.</small>
 
 ## Which features are behind the --es_staging flag?
 
