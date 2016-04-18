@@ -23,7 +23,7 @@ See https://nodejs.org/en/blog/announcements/nodejs-foundation-survey/ for more 
 
 ### Community Updates
 
-* [NodeUp podcast episode 100]http://nodeup.com/onehundred): A Creative Coding Show with Mariko Kosaka, Kassandra Perch, Myles Borins, and Rich Trott.(
+* [NodeUp podcast episode 100]http://nodeup.com/onehundred): A Creative Coding Show with Mariko Kosaka, Kassandra Perch, Myles Borins, and Rich Trott.
 * [A Quick Guide To Reading Node.js Core Source](https://medium.com/@Trott/a-quick-guide-to-reading-node-js-core-source-c968d83e4194#.mmontrmvg): One person's approach to understanding the source code that makes up Node.js core. "Your mileage may vary. Warranty void if seal is broken."
 
 If you have spotted or written something about Node.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.
