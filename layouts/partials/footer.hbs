@@ -2,15 +2,17 @@
 
 <footer {{#if className}}class="{{className}}"{{/if}} role="contentinfo">
 
-    <div class="linuxfoundation-footer">
-        <div class="container">
+    <div class="container">
+        <div class="linuxfoundation-footer">
             <div class="issue-link-container">
+                <a class="linuxfoundation-logo" href="http://collabprojects.linuxfoundation.org">
+                    <img alt="Linux Foundation Collaborative Projects" src="/static/images/lfcp.png">
+                </a>
                 <ul class="list-divider-pipe issue-link">
                     <li><a href="https://github.com/nodejs/node/issues">{{i18n.reportNodeIssue}}</a></li>
                     <li><a href="https://github.com/nodejs/nodejs.org/issues">{{i18n.reportWebsiteIssue}}</a></li>
                     <li><a href="https://github.com/nodejs/help/issues">{{i18n.getHelpIssue}}</a></li>
                 </ul>
-                <a class="linuxfoundation-logo" href="http://collabprojects.linuxfoundation.org">Linux Foundation Collaborative Projects</a>
             </div>
 
             <p>© {{copyright}} Node.js Foundation. All Rights Reserved. Portions of this site originally © {{copyright}} Joyent. </p>
