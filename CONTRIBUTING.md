@@ -1,186 +1,81 @@
-# Node.js Collaborator Guide
-
-**Contents**
-
-* [Issues and Pull Requests](#issues-and-pull-requests)
-* [Accepting Modifications](#accepting-modifications)
- - [Involving the Website Admin Group](#involving-the-website-admin-group)
-
-This document contains information for Collaborators of the Node.js
-website project regarding maintaining the code, documentation and issues.
-
-Collaborators should be familiar with the guidelines for new
-contributors in [CONTRIBUTING.md](./CONTRIBUTING.md) and also
-understand the project governance model as outlined in
-[GOVERNANCE.md](./GOVERNANCE.md).
-
-## Issues and Pull Requests
-
-Courtesy should always be shown to individuals submitting issues and
-pull requests to the Node.js website project.
-
-Collaborators should feel free to take full responsibility for
-managing issues and pull requests they feel qualified to handle, as
-long as this is done while being mindful of these guidelines, the
-opinions of other Collaborators and guidance of the Website Admin Group.
-
-Collaborators may **close** any issue or pull request they believe is
-not relevant for the future of the Node.js project. Where this is
-unclear, the issue should be left open for several days to allow for
-additional discussion. Where this does not yield input from Node.js
-Collaborators or additional evidence that the issue has relevance, the
-issue may be closed. Remember that issues can always be re-opened if
-necessary.
-
-## Accepting Modifications
-
-All modifications to the Node.js code and documentation should be
-performed via GitHub pull requests. Only the `Website Admin` group
-can merge their own work and should do so with great care.
-
-All pull requests must be reviewed and accepted by a Collaborator with
-sufficient expertise who is able to take full responsibility for the
-change. In the case of pull requests proposed by an existing
-Collaborator, an additional Collaborator is required for sign-off.
-
-In some cases, it may be necessary to summon a qualified Collaborator
-to a pull request for review by @-mention.
-
-If you are unsure about the modification and are not prepared to take
-full responsibility for the change, defer to another Collaborator.
-
-Before landing pull requests, sufficient time should be left for input
-from other Collaborators. Leave at least 48 hours during the week and
-72 hours over weekends to account for international time differences
-and work schedules. Trivial changes (e.g. those which fix minor bugs
-or improve performance without affecting API or causing other
-wide-reaching impact) may be landed after a shorter delay.
-
-Where there is no disagreement amongst Collaborators, a pull request
-may be landed given appropriate review. Where there is discussion
-amongst Collaborators, consensus should be sought if possible. The
-lack of consensus may indicate the need to elevate discussion to the
-Website Admin Group for resolution (see below).
-
-All bugfixes require a test case which demonstrates the defect. The
-test should *fail* before the change, and *pass* after the change.
-
-All pull requests that modify executable code should be subjected to
-continuous integration tests on the
-[project CI server](https://ci.nodejs.org/).
-
-### Involving the Website Admin Group
-
-Collaborators may opt to elevate pull requests or issues to the admin group for
-discussion by mentioning `@nodejs/website-admin`. This should be done
-where a pull request:
-
-- has a significant impact on the codebase,
-- is inherently controversial; or
-- has failed to reach consensus amongst the Collaborators who are
-  actively participating in the discussion.
-
-The Website Admin group should serve as the final arbiter where required.
-
-## Developer's Certificate of Origin 1.0
-
-By making a contribution to this project, I certify that:
-
-* (a) The contribution was created in whole or in part by me and I
-  have the right to submit it under the open source license indicated
-  in the file; or
-* (b) The contribution is based upon previous work that, to the best
-  of my knowledge, is covered under an appropriate open source license
-  and I have the right under that license to submit that work with
-  modifications, whether created in whole or in part by me, under the
-  same open source license (unless I am permitted to submit under a
-  different license), as indicated in the file; or
-* (c) The contribution was provided directly to me by some other
-  person who certified (a), (b) or (c) and I have not modified it.
+# Node.js Community Contributing Guide 1.0
 
 ## Code of Conduct
 
-This Code of Conduct is adapted from [Rust's wonderful
-CoC](https://github.com/rust-lang/rust/wiki/Note-development-policy#conduct).
+The Code of Conduct explains the *bare minimum* behavior
+expectations the Node Foundation requires of its contributors.
+[Please read it before participating.](https://github.com/nodejs/node/blob/master/CODE_OF_CONDUCT.md)
 
-* We are committed to providing a friendly, safe and welcoming
-  environment for all, regardless of gender, sexual orientation,
-  disability, ethnicity, religion, or similar personal characteristic.
-* Please avoid using overtly sexual nicknames or other nicknames that
-  might detract from a friendly, safe and welcoming environment for
-  all.
-* Please be kind and courteous. There's no need to be mean or rude.
-* Respect that people have differences of opinion and that every
-  design or implementation choice carries a trade-off and numerous
-  costs. There is seldom a right answer.
-* Please keep unstructured critique to a minimum. If you have solid
-  ideas you want to experiment with, make a fork and see how it works.
-* We will exclude you from interaction if you insult, demean or harass
-  anyone.  That is not welcome behaviour. We interpret the term
-  "harassment" as including the definition in the [Citizen Code of
-  Conduct](http://citizencodeofconduct.org/); if you have any lack of
-  clarity about what might be included in that concept, please read
-  their definition. In particular, we don't tolerate behavior that
-  excludes people in socially marginalized groups.
-* Private harassment is also unacceptable. No matter who you are, if
-  you feel you have been or are being harassed or made uncomfortable
-  by a community member, please contact one of the channel ops or any
-  of the TC members immediately with a capture (log, photo, email) of
-  the harassment if possible.  Whether you're a regular contributor or
-  a newcomer, we care about making this community a safe place for you
-  and we've got your back.
-* Likewise any spamming, trolling, flaming, baiting or other
-  attention-stealing behaviour is not welcome.
-* Avoid the use of personal pronouns in code comments or
-  documentation. There is no need to address persons when explaining
-  code (e.g. "When the developer")
+## Vocabulary
 
-## Code editing
+* A **Contributor** is any individual creating or commenting on an issue or pull request.
+* A **Collaborator** is a subset of contributors who have been given write access to the repository.
+* A **WG (Working Group)** is a group of collaborators representing the required technical
+expertise to resolve rare disputes.
 
-### Adding new pages
+# Logging Issues
 
-1. Create new page content including the layout, title and copy.
-2. Update ```/locale/en/site.json``` to provide page link attributes.
-3. Update the relevant ```/layout``` to add a link to the new page.
+Log an issue for any question or problem you might have. When in doubt, log an issue,
+any additional policies about what to include will be provided in the responses. The only
+exception is security dislosures which should be sent privately.
 
-#### Create the page content
+Collaborators may direct you to another repository, ask for additional clarifications, and
+add appropriate metadata before the issue is addressed.
 
-Create a new markdown file in ```/local/en```.  As specified in the
-[README.md](./README.md#layout), initial development happens in English.
+Please be courteous, respectful, and every participant is expected to follow the
+project's Code of Conduct.
 
-At the top of the markdown file, set a page the title and layout.
+# Contributions
 
-```
----
-title: Events
-layout: contribute.hbs
----
+Any change to resources in this repository must be through pull requests. This applies to all changes
+to documentation, code, binary files, etc. Even long term collaborators and WG members must use
+pull requests.
 
-[Event copy goes here]
-```
+No pull request can be merged without being reviewed.
 
-#### Update locale site.json to add link attributes
+For non-trivial contributions, pull requests should sit for at least 36 hours to ensure that
+contributors in other timezones have time to review. Consideration should also be given to
+weekends and other holiday periods to ensure active collaborators all have reasonable time to
+become involved in the discussion and review process if they wish.
 
-Open ```local/en/site.json``` and find the appropriate page structure.
-Add a new object defining the link attributes.
+The default for each contribution is that it is accepted once no collaborator has an objection.
+During review collaborators may also request that a specific contributor who is most versed in a
+particular area gives a "LGTM" before the PR can be merged. There is no additional "sign off"
+process for contributions to land. Once all issues brought by collaborators are addressed it can
+be landed by any collaborator.
 
-```
-"event": {
-  "link": "get-involved/events",
-  "text": "Events"
-}
-```
+In the case of an objection being raised in a pull request by another collaborator, all involved
+collaborators should seek to arrive at a consensus by way of addressing concerns being expressed
+by discussion, compromise on the proposed change, or withdrawal of the proposed change.
 
-#### Update the layout to add a link
+If a contribution is controversial and collaborators cannot agree about how to get it to land
+or if it should land then it should be escalated to the WG. WG members should regularly
+discuss pending contributions in order to find a resolution. It is expected that only a
+small minority of issues be brought to the WG for resolution and that discussion and
+compromise among collaborators be the default resolution mechanism.
 
-Using the example layout, open ```/layouts/contribute.hbs``` and add your new
-link to the markup.  It's essential to update the handlebars paths to site.json.
+# Becoming a Collaborator
 
-```
-{{site.locale}}/{{site.getinvolved.events.link}}
-```
+All contributors who land a non-trivial contribution should be on-boarded in a timely manner,
+and added as a collaborator, and be given write access to the repository.
 
+Collaborators are expected to follow this policy and continue to send pull requests, go through
+proper review, and have other collaborators merge their pull requests.
 
-### Translating pages
+# WG Process
 
-See [TRANSLATION.md](./TRANSLATION.md) for the website translation policy.
+The WG uses a "consensus seeking" process for issues that are escalated to the WG.
+The group tries to find a resolution that has no open objections among WG members.
+If a consensus cannot be reached that has no objections then a majority wins vote
+is called. It is also expected that the majority of decisions made by the WG are via
+a consensus seeking process and that voting is only used as a last-resort.
+
+Resolution may involve returning the issue to collaborators with suggestions on how to
+move forward towards a consensus. It is not expected that a meeting of the WG
+will resolve all issues on its agenda during that meeting and may prefer to continue
+the discussion happening among the collaborators.
+
+Members can be added to the WG at any time. Any collaborator can nominate another collaborator
+to the WG and the WG uses its standard consensus seeking process to evaluate whether or
+not to add this new member. Members who do not participate consistently at the level of
+a majority of the other members are expected to resign.
