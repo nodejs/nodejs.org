@@ -11,9 +11,9 @@ layout: blog-post.hbs
 ### Node.js News
 Node v4.4.3 (LTS) is released.
 
-### Node v4.4.3 (LTS) Releases
+### Node v4.4.3 (LTS) Release
 
-We have one releases: [Node v4.4.3 (LTS)](https://nodejs.org/en/blog/release/v4.4.3/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+We have one release: [Node v4.4.3 (LTS)](https://nodejs.org/en/blog/release/v4.4.3/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
 
 ### New Node.js Foundation Survey Reports New “Full Stack” In Demand Among Enterprise Developers
 
