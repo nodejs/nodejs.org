@@ -31,10 +31,7 @@ create a `package.json` file that describes your app and its dependencies:
   "version": "1.0.0",
   "description": "Node.js on Docker",
   "author": "First Last <first.last@example.com>",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
+  "main": "server.js"
   "dependencies": {
     "express": "^4.13.3"
   }
@@ -118,11 +115,10 @@ EXPOSE 8080
 ```
 
 Last but not least, define the command to run your app using `CMD` which defines
-your runtime. Here we will use the basic `npm start` which will run 
-`node server.js` to start your server:
+your runtime. Here we will use the basic `node server.js` to start your server:
 
 ```docker
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
 Your `Dockerfile` should now look like this:
@@ -142,7 +138,7 @@ RUN npm install
 COPY . /usr/src/app
 
 EXPOSE 8080
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
 ## Building your image
