@@ -73,7 +73,6 @@
   var winButton = d.getElementById('windows-downloadbutton');
   if (winButton && os === 'Win') {
     var winText = winButton.getElementsByTagName('p')[0];
-    version = winButton.getAttribute('data-version');
     winButton.href = winButton.href.replace(/x(86|64)/, arch);
     winText[text] = winText[text].replace(/x(86|64)/, arch);
   }
