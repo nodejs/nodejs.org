@@ -70,7 +70,7 @@
         "text": "문서",
         "es6": {
             "link": "docs/es6",
-            "text": "Node.js의 ES6"
+            "text": "ES6 and beyond"
         },
         "faq": {
             "link": "docs/faq",

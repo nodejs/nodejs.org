@@ -69,7 +69,7 @@
         "text": "Documentazione",
         "es6": {
             "link": "docs/es6",
-            "text": "ES6 in Node.js"
+            "text": "ES6 e oltre"
         },
         "faq": {
             "link": "docs/faq",
