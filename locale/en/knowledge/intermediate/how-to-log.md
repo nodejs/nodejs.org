@@ -57,6 +57,8 @@ Here is an example of setting up a `winston` logger.  This example includes most
 
       require('winston-riak').Riak;
       require('winston-mongo').Mongo;
+      require('winston-couchdb').Couchdb;
+      
       var logger = new (winston.Logger)({
         transports: [
           new winston.transports.Console(),
