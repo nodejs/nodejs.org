@@ -80,7 +80,7 @@
             "subtext": "LTS",
             "text": "v4.4.2 API"
         },
-        "api-stable": {
+        "api-current": {
             "link": "/dist/latest-v5.x/docs/api",
             "text": "v5.10.1 API"
         },

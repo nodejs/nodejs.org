@@ -5,8 +5,8 @@ download: Download
 downloads:
     headline: Downloads
     lts: LTS
-    stable: Stable
-    tagline-stable: Latest Features
+    current: Current
+    tagline-current: Latest Features
     tagline-lts: Recommended For Most Users
     display-hint: Display downloads for
     intro: >

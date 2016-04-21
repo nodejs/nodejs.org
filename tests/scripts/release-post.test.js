@@ -194,13 +194,13 @@ test('fetchVersionPolicy(<version>)', (t) => {
   const changelogFixture = path.resolve(__dirname, 'CHANGELOG.fixture.md')
   const changelogLegacyFixture = path.resolve(__dirname, 'CHANGELOG.fixture.legacy.md')
 
-  t.test('finds "Stable" version policy', (t) => {
+  t.test('finds "Current" version policy', (t) => {
     const github = nock('https://raw.githubusercontent.com')
       .get('/nodejs/node/v4.1.0/CHANGELOG.md')
       .replyWithFile(200, changelogFixture)
 
     releasePost.fetchVersionPolicy('4.1.0').then((policy) => {
-      t.equal(policy, 'Stable')
+      t.equal(policy, 'Current')
       t.true(github.isDone(), 'githubusercontent.com was requested')
 
       t.end()

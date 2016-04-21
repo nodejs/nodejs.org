@@ -9,9 +9,9 @@
                     <div class="title">{{downloads.lts}}</div>
                     <div class="tag">{{downloads.tagline-lts}}</div>
                 </a>
-                <a {{#if versionTypeStable}}class="is-version"{{/if}} href="/{{site.locale}}/{{site.download.link}}/stable" title="{{downloads.display-hint}} {{downloads.stable}}">
-                    <div class="title">{{downloads.stable}}</div>
-                    <div class="tag">{{downloads.tagline-stable}}</div>
+                <a {{#if versionTypeCurrent}}class="is-version"{{/if}} href="/{{site.locale}}/{{site.download.link}}/current" title="{{downloads.display-hint}} {{downloads.current}}">
+                    <div class="title">{{downloads.current}}</div>
+                    <div class="tag">{{downloads.tagline-current}}</div>
                 </a>
               </div>
             </li>

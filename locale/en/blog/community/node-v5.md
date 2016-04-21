@@ -13,7 +13,7 @@ We just released [Node.js v5.0.0](https://nodejs.org/en/blog/release/v5.0.0/). Y
 
 Node.js is growing, and growing fast. As we continue to innovate quickly, we will focus on two different release lines. One release line will fall under our **LTS** plan. All release lines that have LTS support will be even numbers, and (most importantly) focus on stability and security. These release lines are for organizations with complex environments that find it cumbersome to continually upgrade. We recently released the first in this line: [Node.js v4.2.1](https://nodejs.org/en/blog/release/v4.2.1/) “Argon.”
 
-The other release line is called **Stable**. All release lines will be odd numbers, and have a shorter lifespan and more frequent updates to the code. The Stable release line will focus on active development of necessary features and refinement of existing APIs. Node.js version 5 is this type of release.
+The other release line is called **Current**. All release lines will be odd numbers, and have a shorter lifespan and more frequent updates to the code. The Current release line will focus on active development of necessary features and refinement of existing APIs. Node.js version 5 is this type of release.
 
 We want to make sure that you are adopting the release that best meets your Node.js needs, so to break it down:
 
@@ -47,7 +47,7 @@ First and foremost, if you haven’t read the [Essential Steps: Long Term Suppor
 
 * There will be no more than two active LTS release lines at any given time. Overlap is intended to help ease migration planning.
 
-* Once a Stable release line becomes LTS, no new features or breaking changes will be added to that release. Changes are limited to bug fixes for stability, security updates, possible npm updates, documentation updates and certain performance improvements that can be demonstrated to not break existing applications.
+* Once a Current release line becomes LTS, no new features or breaking changes will be added to that release. Changes are limited to bug fixes for stability, security updates, possible npm updates, documentation updates and certain performance improvements that can be demonstrated to not break existing applications.
 
 ## Questions?
 
