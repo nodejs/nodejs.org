@@ -59,15 +59,15 @@ Here is an example of setting up a `winston` logger.  This example includes most
       require('winston-mongo').Mongo;
       var logger = new (winston.Logger)({
         transports: [
-          new winston.transports.Console()
-          new winston.transports.File({ filename: 'path/to/all-logs.log' })
-          new winston.transports.Couchdb({ 'host': 'localhost', 'db': 'logs' })
-          new winston.transports.Riak({ bucket: 'logs' })
-          new winston.transports.MongoDB({ db: 'db', level: 'info'})
-        ]
+          new winston.transports.Console(),
+          new winston.transports.File({ filename: 'path/to/all-logs.log' }),
+          new winston.transports.Couchdb({ 'host': 'localhost', 'db': 'logs' }),
+          new winston.transports.Riak({ bucket: 'logs' }),
+          new winston.transports.MongoDB({ db: 'db', level: 'info'}),
+        ],
         exceptionHandlers: [
-          new winston.transports.File({ filename: 'path/to/exceptions.log' })
-        ]
+          new winston.transports.File({ filename: 'path/to/exceptions.log' }),
+        ],
       });
 
 Here, we have instantiated a new `winston` logger, and provided a number of logging transports.  Winston has built-in support for configurable logging levels, and provides alias methods for each configured logging level.  For example, `winston.warn(x)` is an alias for `winston.log('warn', x)`.  Thus, the following:
