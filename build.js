@@ -240,14 +240,9 @@ function copyStatic () {
   })
 }
 
-// This is where the build is orchestrated from, as indicated by the function
-// name. It brings together all build steps and dependencies and executes them.
-function fullBuild () {
-  // Copies static files.
-  copyStatic()
+function getSource (callback) {
   // Loads all node/io.js versions.
   loadVersions((err, versions) => {
-    if (err) { throw err }
     const source = {
       project: {
         versions,
@@ -261,6 +256,18 @@ function fullBuild () {
         }
       }
     }
+
+    callback(err, source)
+  })
+}
+
+// This is where the build is orchestrated from, as indicated by the function
+// name. It brings together all build steps and dependencies and executes them.
+function fullBuild () {
+  // Copies static files.
+  copyStatic()
+  getSource((err, source) => {
+    if (err) { throw err }
 
     // Executes the build cycle for every locale.
     fs.readdir(path.join(__dirname, 'locale'), (e, locales) => {
@@ -276,6 +283,7 @@ if (require.main === module) {
   fullBuild()
 }
 
+exports.getSource = getSource
 exports.fullBuild = fullBuild
 exports.buildLocale = buildLocale
 exports.copyStatic = copyStatic

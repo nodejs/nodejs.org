@@ -40,12 +40,16 @@ function getLocale (filePath) {
   return filePath.slice(pre.length + 1, filePath.indexOf('/', pre.length + 1))
 }
 
-locales.on('change', (filePath) => {
-  build.buildLocale(filePath, getLocale(filePath))
-})
-locales.on('add', (filePath) => {
-  build.buildLocale(filePath, getLocale(filePath))
-  locales.add(filePath)
+build.getSource((err, source) => {
+  if (err) { throw err }
+
+  locales.on('change', (filePath) => {
+    build.buildLocale(source, getLocale(filePath))
+  })
+  locales.on('add', (filePath) => {
+    build.buildLocale(source, getLocale(filePath))
+    locales.add(filePath)
+  })
 })
 
 layouts.on('change', build.fullBuild)
