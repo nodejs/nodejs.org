@@ -12,8 +12,8 @@ Node provides a utility function, for debugging purposes, that returns a string 
 
 Let's provide a basic example. `util.inspect()` can be used on any object - a good demonstration will be one of Node's built-in objects.  Try this in the REPL (type `node` at your command line with no arguments):
 
-     var util = require('util')
-     util.inspect(console)
+     var util = require('util');
+     util.inspect(console);
      
 The output will be:
 
