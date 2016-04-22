@@ -1,6 +1,6 @@
 # Node.js ChangeLog
 
-## 2015-10-13, Version 4.2.1 'Argon' (Stable), @jasnell
+## 2015-10-13, Version 4.2.1 'Argon' (Current), @jasnell
 
 ### Notable changes
 
@@ -107,7 +107,7 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 * [[`8dfdee3733`](https://github.com/nodejs/node/commit/8dfdee3733)] - **util**: correctly inspect Map/Set Iterators (Evan Lucas) [#3119](https://github.com/nodejs/node/pull/3119)
 * [[`b5c51fdba0`](https://github.com/nodejs/node/commit/b5c51fdba0)] - **util**: fix check for Array constructor (Evan Lucas) [#3119](https://github.com/nodejs/node/pull/3119)
 
-## 2015-09-22, Version 4.1.1 (Stable), @rvagg
+## 2015-09-22, Version 4.1.1 (Current), @rvagg
 
 ### Notable changes
 
@@ -159,7 +159,7 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 * [[`3e09dcfc32`](https://github.com/nodejs/node/commit/3e09dcfc32)] - **test**: update cwd-enoent tests for AIX (Imran Iqbal) [#2909](https://github.com/nodejs/node/pull/2909)
 * [[`6ea8ec1c59`](https://github.com/nodejs/node/commit/6ea8ec1c59)] - **tools**: single, cross-platform tick processor (Matt Loring) [#2868](https://github.com/nodejs/node/pull/2868)
 
-## 2015-09-17, Version 4.1.0 (Stable), @Fishrock123
+## 2015-09-17, Version 4.1.0 (Current), @Fishrock123
 
 ### Notable changes
 
@@ -188,7 +188,7 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 ### Commits
 
 * [[`b1abe812cd`](https://github.com/nodejs/node/commit/b1abe812cd)] - Working on 4.0.1 (Rod Vagg)
-* [[`f9f8378853`](https://github.com/nodejs/node/commit/f9f8378853)] - 2015-09-08, Version 4.0.0 (Stable) Release (Rod Vagg)
+* [[`f9f8378853`](https://github.com/nodejs/node/commit/f9f8378853)] - 2015-09-08, Version 4.0.0 (Current) Release (Rod Vagg)
 * [[`9683e5df51`](https://github.com/nodejs/node/commit/9683e5df51)] - **bindings**: close after reading module struct (Fedor Indutny) [#2792](https://github.com/nodejs/node/pull/2792)
 * [[`4b4cfa2d44`](https://github.com/nodejs/node/commit/4b4cfa2d44)] - **buffer**: always allocate typed arrays outside heap (Trevor Norris) [#2893](https://github.com/nodejs/node/pull/2893)
 * [[`7df018a29b`](https://github.com/nodejs/node/commit/7df018a29b)] - **buffer**: construct Uint8Array in JS (Trevor Norris) [#2866](https://github.com/nodejs/node/pull/2866)
@@ -243,7 +243,7 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 * [[`ba47511976`](https://github.com/nodejs/node/commit/ba47511976)] - **tsc**: adjust TSC membership for IBM+StrongLoop (James M Snell) [#2858](https://github.com/nodejs/node/pull/2858)
 * [[`e035266805`](https://github.com/nodejs/node/commit/e035266805)] - **win,msi**: fix documentation shortcut url (Brian White) [#2781](https://github.com/nodejs/node/pull/2781)
 
-## 2015-09-08, Version 4.0.0 (Stable), @rvagg
+## 2015-09-08, Version 4.0.0 (Current), @rvagg
 
 ### Notable changes
 
