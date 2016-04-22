@@ -87,6 +87,6 @@ Because of the file transport we set up, winston also logged the warning to 'som
 
 Note that winston's file logger formats the logs differently for file logging (JSON in this case) than it does for the console transport.
 
-Winston also supports logging to Riak, CouchDB, MongoDB (need install winston-riak、winston-mongo and winston-couchdb to support Riak、CouchDB、MongoDB) and even [Loggly](http://loggly.com).  The `logger.warn` call we used before also put the same message into each database, according to the options we gave to each transport.
+Winston also supports logging to Riak, CouchDB, MongoDB and [many other transports](https://github.com/winstonjs/winston/blob/master/docs/transports.md).  The `logger.warn` call we used before also put the same message into each database, according to the options we gave to each transport.
 
 For further information, please see the [thorough documentation for Winston.](https://github.com/indexzero/winston).
