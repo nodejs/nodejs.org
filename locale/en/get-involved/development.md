@@ -24,7 +24,7 @@ layout: contribute.hbs
   - [Platform Stability](#platform-stability)
   - [Dependency Stability](#dependency-stability)
 - [Working Groups](#working-groups)
-- [Developer's Certificate of Origin 1.0](#developer-s-certificate-of-origin-1-0)
+- [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin)
 - [A Few Open Questions](#a-few-open-questions)
 - [Notes](#notes)
 
@@ -315,15 +315,32 @@ The TSC may revoke the Working Groups charter at any time following the decision
 
 Proposals to create a new Working Group should be made either by opening an issue or submitting a PR with the draft charter for the new Working Group, then putting that on the TSC agenda using the *tsc-agenda* tag.
 
-## Developer's Certificate of Origin 1.0
+<a id="developers-certificate-of-origin"></a>
+## Developer's Certificate of Origin 1.1
 
 By making a contribution to this project, I certify that:
 
-(a) The contribution was created in whole or in part by me and I have the right to submit it under the open source license indicated in the file; or
+* (a) The contribution was created in whole or in part by me and I
+  have the right to submit it under the open source license
+  indicated in the file; or
 
-(b) The contribution is based upon previous work that, to the best of my knowledge, is covered under an appropriate open source license and I have the right under that license to submit that work with modifications, whether created in whole or in part by me, under the same open source license (unless I am permitted to submit under a different license), as indicated in the file; or
+* (b) The contribution is based upon previous work that, to the best
+  of my knowledge, is covered under an appropriate open source
+  license and I have the right under that license to submit that
+  work with modifications, whether created in whole or in part
+  by me, under the same open source license (unless I am
+  permitted to submit under a different license), as indicated
+  in the file; or
 
-(c) The contribution was provided directly to me by some other person who certified (a), (b) or (c) and I have not modified it.
+* (c) The contribution was provided directly to me by some other
+  person who certified (a), (b) or (c) and I have not modified
+  it.
+
+* (d) I understand and agree that this project and the contribution
+  are public and that a record of the contribution (including all
+  personal information I submit with it, including my sign-off) is
+  maintained indefinitely and may be redistributed consistent with
+  this project or the open source license(s) involved.
 
 ## A Few Open Questions
 
