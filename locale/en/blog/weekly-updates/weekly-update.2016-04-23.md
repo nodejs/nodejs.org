@@ -12,12 +12,6 @@ layout: blog-post.hbs
 
 [Node v5.11.0 (Stable)](https://nodejs.org/en/blog/release/v5.11.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
 
-### New Node.js Foundation Survey Reports New “Full Stack” In Demand Among Enterprise Developers
-
-The Node.js User Survey report features insights on emerging trends happening in this massive community that serves as a leading indicator on trends like microservices architectures, real-time web applications, Internet of Things (IoT). The report paints a detailed picture of the technologies that are being used, in particular, with Node.js in production and language preferences (current and future) for front end, back end and IoT developers.
-
-See https://nodejs.org/en/blog/announcements/nodejs-foundation-survey/ for more information.
-
 ### Community Updates
 
 * [NodeUp podcast episode 100](http://nodeup.com/onehundred): A Creative Coding Show with Mariko Kosaka, Kassandra Perch, Myles Borins, and Rich Trott.
