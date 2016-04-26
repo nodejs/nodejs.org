@@ -6,8 +6,8 @@ labels:
   download-for: Download for
   other-downloads: 다른 운영 체제
   other-lts-downloads: 다른 LTS 다운로드
-  other-current-downloads: 다른 안정 버전 다운로드
-  current: 안정 버전
+  other-current-downloads: 다른 현재 버전 다운로드
+  current: 현재 버전
   lts: LTS
   tagline-current: 최신 기능
   tagline-lts: 안정적, 신뢰도 높음
