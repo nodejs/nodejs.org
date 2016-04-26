@@ -9,11 +9,11 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News
-Node v5.4.1 (Stable) is released
+Node v5.4.1 (Current) is released
 
-### Node v5.4.1 (Stable) Releases
+### Node v5.4.1 (Current) Releases
 
-Last week we had one release: [Node v5.4.1 (Stable)](https://nodejs.org/en/blog/release/v5.4.1/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+Last week we had one release: [Node v5.4.1 (Current)](https://nodejs.org/en/blog/release/v5.4.1/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
 
 ### Notable Changes
 

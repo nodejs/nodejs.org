@@ -9,11 +9,11 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News
-Node v4.3.1 (LTS), Node v4.4.0 (RC) and Node v5.7.0 (Stable) are released.
+Node v4.3.1 (LTS), Node v4.4.0 (RC) and Node v5.7.0 (Current) are released.
 
-### Node v4.3.1 (LTS), Node v4.4.0 (RC) and Node v5.7.0 (Stable) Releases
+### Node v4.3.1 (LTS), Node v4.4.0 (RC) and Node v5.7.0 (Current) Releases
 
-We have three releases: [Node v4.3.1 (LTS)](https://nodejs.org/en/blog/release/v4.3.1/), [Node v4.4.0 (RC)](https://github.com/nodejs/node/pull/5301) and [Node v5.7.0 (Stable)](https://nodejs.org/en/blog/release/v5.7.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+We have three releases: [Node v4.3.1 (LTS)](https://nodejs.org/en/blog/release/v4.3.1/), [Node v4.4.0 (RC)](https://github.com/nodejs/node/pull/5301) and [Node v5.7.0 (Current)](https://nodejs.org/en/blog/release/v5.7.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
 
 ### New official Node.js logo
 As a result of an iteration on the official logo, we are proud to introduce and unveil our new logo
