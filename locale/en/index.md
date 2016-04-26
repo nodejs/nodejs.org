@@ -6,10 +6,10 @@ labels:
   download-for: Download for
   other-downloads: Other Downloads
   other-lts-downloads: Other LTS Downloads
-  other-stable-downloads: Other Stable Downloads
-  stable: Stable
+  other-current-downloads: Other Current Downloads
+  current: Current
   lts: LTS
-  tagline-stable: Latest Features
+  tagline-current: Latest Features
   tagline-lts: Recommended For Most Users
   changelog: Changelog
   api: API Docs

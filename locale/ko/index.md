@@ -6,10 +6,10 @@ labels:
   download-for: Download for
   other-downloads: 다른 운영 체제
   other-lts-downloads: 다른 LTS 다운로드
-  other-stable-downloads: 다른 안정 버전 다운로드
-  stable: 안정 버전
+  other-current-downloads: 다른 현재 버전 다운로드
+  current: 현재 버전
   lts: LTS
-  tagline-stable: 최신 기능
+  tagline-current: 최신 기능
   tagline-lts: 안정적, 신뢰도 높음
   changelog: 변경사항
   api: API 문서

@@ -247,7 +247,7 @@ function getSource (callback) {
       project: {
         versions,
         currentVersions: {
-          stable: latestVersion.stable(versions),
+          current: latestVersion.current(versions),
           lts: latestVersion.lts(versions)
         },
         banner: {

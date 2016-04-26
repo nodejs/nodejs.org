@@ -9,11 +9,11 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News
-Node v0.10.43 (Maintenance), Node v0.12.11 (LTS), Node v5.7.1 (Stable) and Node v4.3.2 (LTS) are released.
+Node v0.10.43 (Maintenance), Node v0.12.11 (LTS), Node v5.7.1 (Current) and Node v4.3.2 (LTS) are released.
 
-### Node v0.10.43 (Maintenance), Node v0.12.11 (LTS), Node v5.7.1 (Stable) and Node v4.3.2 (LTS) Releases
+### Node v0.10.43 (Maintenance), Node v0.12.11 (LTS), Node v5.7.1 (Current) and Node v4.3.2 (LTS) Releases
 
-We have four releases: [Node v0.10.43 (Maintenance)](https://nodejs.org/en/blog/release/v0.10.43/), [Node v0.12.11 (LTS)](https://nodejs.org/en/blog/release/v0.12.11/), [Node v5.7.1 (Stable)](https://nodejs.org/en/blog/release/v5.7.1/) and [Node v4.3.2 (LTS)](https://nodejs.org/en/blog/release/v4.3.2/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+We have four releases: [Node v0.10.43 (Maintenance)](https://nodejs.org/en/blog/release/v0.10.43/), [Node v0.12.11 (LTS)](https://nodejs.org/en/blog/release/v0.12.11/), [Node v5.7.1 (Current)](https://nodejs.org/en/blog/release/v5.7.1/) and [Node v4.3.2 (LTS)](https://nodejs.org/en/blog/release/v4.3.2/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
 
 ### Initial benchmark data
 

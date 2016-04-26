@@ -2,7 +2,7 @@
 
 const semver = require('semver')
 
-exports.stable = (releases) => {
+exports.current = (releases) => {
   const match = releases.find((release) => !release.lts && semver.gte(release.version, '5.0.0'))
   return match && match.version
 }

@@ -41,23 +41,23 @@
 
                 </div>
 
-                {{#if project.currentVersions.stable}}
+                {{#if project.currentVersions.current}}
                   <div class="home-downloadblock">
 
-                    <a href="https://nodejs.org/dist/{{ project.currentVersions.stable }}/" class="home-downloadbutton"  title="{{ labels.download }} {{ project.currentVersions.stable }} {{ labels.stable }}"  data-version="{{ project.currentVersions.stable }}">
-                        {{ project.currentVersions.stable }} {{ labels.stable }}
-                        <small>{{ labels.tagline-stable }}</small>
+                    <a href="https://nodejs.org/dist/{{ project.currentVersions.current }}/" class="home-downloadbutton"  title="{{ labels.download }} {{ project.currentVersions.current }} {{ labels.current }}"  data-version="{{ project.currentVersions.current }}">
+                        {{ project.currentVersions.current }} {{ labels.current }}
+                        <small>{{ labels.tagline-current }}</small>
                     </a>
 
                     <ul class="list-divider-pipe home-secondary-links">
                         <li>
-                          <a href="https://nodejs.org/{{site.locale}}/download/stable/">{{ labels.other-downloads }}</a>
+                          <a href="https://nodejs.org/{{site.locale}}/download/current/">{{ labels.other-downloads }}</a>
                         </li>
                         <li>
-                            <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.stable }}/CHANGELOG.md">{{ labels.changelog }}</a>
+                            <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.current }}/CHANGELOG.md">{{ labels.changelog }}</a>
                         </li>
                         <li>
-                          <a href="{{majorapidocslink project.currentVersions.stable}}">{{ labels.api }}</a>
+                          <a href="{{majorapidocslink project.currentVersions.current}}">{{ labels.api }}</a>
                         </li>
                     </ul>
 
