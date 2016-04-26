@@ -79,11 +79,11 @@
         "api-lts": {
             "link": "/dist/latest-v4.x/docs/api",
             "subtext": "LTS",
-            "text": "v4.4.2 API"
+            "text": "v4.4.3 API"
         },
         "api-stable": {
             "link": "/dist/latest-v5.x/docs/api",
-            "text": "v5.10.1 API"
+            "text": "v5.11.0 API"
         },
         "guides": {
             "link": "docs/guides",
