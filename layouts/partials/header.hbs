@@ -1,22 +1,16 @@
-<header>
-  <div class="container">
+<ul id="header">
+  <li><a href="/{{site.locale}}" id="logo">
+    <img src="/static/images/logo-hexagon.svg" alt="node.js">
+  </a></li>
 
-    <a href="/{{site.locale}}" id="logo">
-      <img src="/static/images/logos/nodejs-new-white-pantone.png" alt="node.js">
-    </a>
-
-    <nav>
-      <ul class="list-divider-pipe">
-        <li{{#equals path ''}} class="active"{{/equals}}>
-        <a href="/{{site.locale}}/">{{site.home.text}}</a>
-      </li>
-      {{#each nav.main}}
-      <li{{#startswith ../path link}} class="active"{{/startswith}}>
-      <a href="/{{../site.locale}}/{{link}}/">{{text}}</a>
-    </li>
+  <li id="nav">
+    <div {{#equals path ''}} class="active"{{/equals}}>
+      <a href="/{{site.locale}}/">{{site.home.text}}</a>
+    </div>
+    {{#each nav.main}}
+      <div {{#startswith ../path link}} class="active"{{/startswith}}>
+        <a href="/{{../site.locale}}/{{link}}/">{{text}}</a>
+      </div>
     {{/each}}
-  </ul>
-</nav>
-
-</div>
-</header>
+  </li>
+</ul>

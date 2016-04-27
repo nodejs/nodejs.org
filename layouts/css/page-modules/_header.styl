@@ -1,26 +1,46 @@
-header
-  background-color $node-gray
-  text-align center
-
-  > .container
-    overflow visible
+ul#header
+  background-color $darkbg
+  list-style none
+  margin 20px 0 0 0
+  padding 0
+  border 0
+  display flex
+  flex-flow row wrap
+  justify-content space-between
+  align-items center
 
   li
-    position relative
+    display inline-block
+    padding 10px
 
-  nav
-    a,
-    a:link,
-    a:active
-      padding 0 8px
-      text-transform uppercase
-      font-size 14px
-      color $light-gray2 !important
+    &#nav
+      margin-right 30px
 
-    a:hover
-      background-color transparent
-      text-decoration underline
+      > div
+        display inline-block
+        margin-left 10px
 
+        > a
+          color $light-gray3
+          transition .5s color, .5s background-color
+          padding 7px
+
+          &:hover
+            color $darkbg
+            background-color $light-gray3
+
+        &.active > a
+          color $darkbg
+          background-color $light-gray3
+
+    &#logo
+      margin-right auto
+
+      > a
+        width 100px
+        height 100px
+
+/*
 @media screen and (min-width: 481px)
   header
     li
