@@ -1,8 +1,8 @@
 ---
-title: ECMAScript 2015 (ES6)
+title: ECMAScript 2015 (ES6) and beyond
 layout: docs.hbs
 ---
-# ECMAScript 2015 (ES6) in Node.js
+# ECMAScript 2015 (ES6) and beyond
 
 Node.js is built against modern versions of [V8](https://developers.google.com/v8/). By keeping up-to-date with the latest releases of this engine, we ensure new features from the [JavaScript ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm) are brought to Node.js developers in a timely manner, as well as continued performance and stability improvements.
 
@@ -10,45 +10,11 @@ All ECMAScript 2015 (ES6) features are split into three groups for **shipping**,
 
 * All **shipping** features, which V8 considers stable, are turned **on by default on Node.js** and do **NOT** require any kind of runtime flag.
 * **Staged** features, which are almost-completed features that are not considered stable by the V8 team, require a runtime flag: `--es_staging` (or its synonym, `--harmony`).
-* **In progress** features can be activated individually by their respective harmony flag (e.g. `--harmony_destructuring`), although this is highly discouraged unless for testing purposes.
+* **In progress** features can be activated individually by their respective harmony flag, although this is highly discouraged unless for testing purposes.
 
-## Which features ship with Node.js by default (no runtime flag required)?
+## Which features ship with which Node.js version by default?
 
-* Block scoping
-    * [let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let) (strict mode only)
-    * [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
-    * `function`-in-blocks (strict mode only [[1]](#ref-1)<span id="backref-1"></span>)
-* [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) (strict mode only)
-* Collections
-    * [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
-    * [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
-    * [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
-    * [WeakSet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
-* [Typed arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays)
-* [Generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*)
-* [Binary and Octal literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Numeric_literals)
-* [Object literal extensions](https://github.com/lukehoban/es6features#enhanced-object-literals) (shorthand properties and methods)
-* [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-* [New String methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla#Additions_to_the_String_object)
-* [Symbols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
-* [Template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings)
-* [Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-* [new.target](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new.target) [[2]](#ref-2)<span id="backref-2"></span>
-* [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
-* [Spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator) [[2]](#ref-2)<span id="backref-2"></span>
-
-You can view a more detailed list, including a comparison with other engines, on the [compat-table](https://kangax.github.io/compat-table/es6/) project page.
-
-<small id="ref-1">[[1](#backref-1)]: As of v8 3.31.74.1, block-scoped declarations are [intentionally implemented with a non-compliant limitation to strict mode code](https://groups.google.com/forum/#!topic/v8-users/3UXNCkAU8Es). Developers should be aware that this will change as v8 continues towards ES6 specification compliance.</small><br>
-<small id="ref-2">[[2](#backref-2)]: Only available in Node.js >= 5.x.x
-
-## Which features are behind the --es_staging flag?
-
-* [`Symbol.toStringTag`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) (user-definable results for `Object.prototype.toString`, behind flag `--harmony_tostring`)
-* [`Array.prototype.includes`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes) (determine whether
-an array includes a certain element, behind flag `--harmony_array_includes`) [[2]](#ref-2)<span id="backref-2"></span>
-* [Rest Parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters) (represent an indefinite number
-of arguments as an array, behind flag `--harmony_rest_parameters`) [[2]](#ref-2)<span id="backref-2"></span>
+The website [node.green](http://node.green) provides an excellent overview over supported ECMAScript features in various versions of Node.js, based on kangax's compat-table.
 
 ## Which features are in progress?
 
