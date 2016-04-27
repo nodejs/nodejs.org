@@ -3,24 +3,24 @@
 {{> html-head }}
 
 <body>
-    {{> header }}
+  {{> header }}
 
-    <div id="main">
-        <div class="container">
-            <article>
-                <div class="download-header">
-                    <h1>{{downloads.headline}}</h1>
-                </div>
-
-                {{> primary-download-matrix version=project.currentVersions.current versionTypeCurrent="true"}}
-                {{> secondary-download-matrix version=project.currentVersions.current versionTypeCurrent="true"}}
-
-            </article>
-
+  <div id="main">
+    <div class="container">
+      <article>
+        <div class="download-header">
+          <h1>{{downloads.headline}}</h1>
         </div>
-    </div>
 
-    {{> footer }}
-    <script src="/static/js/download.js" async defer></script>
+        {{> primary-download-matrix version=project.currentVersions.current versionTypeCurrent="true"}}
+        {{> secondary-download-matrix version=project.currentVersions.current versionTypeCurrent="true"}}
+
+      </article>
+
+    </div>
+  </div>
+
+  {{> footer }}
+  <script src="/static/js/download.js" async defer></script>
 </body>
 </html>

@@ -3,33 +3,33 @@
 {{> html-head }}
 
 <body>
-    {{> header }}
+  {{> header }}
 
-    <div id="main">
-        <div class="container has-side-nav">
+  <div id="main">
+    <div class="container has-side-nav">
 
-            {{> navigation key='foundation'}}
+      {{> navigation key='foundation'}}
 
-            <article>
-                <div class="container no-headline">
+      <article>
+        <div class="container no-headline">
 
-                    <ul class="news-list">
-                        {{#each collections.blogAnnounce}}
-                            {{#if title}}
-                                <li>
-                                    <time datetime="{{ date }}">{{ strftime date }}</time>
-                                    <a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a>
-                                </li>
-                            {{/if}}
-                        {{/each}}
-                    </ul>
-
-                </div>
-            </article>
+          <ul class="news-list">
+            {{#each collections.blogAnnounce}}
+            {{#if title}}
+            <li>
+              <time datetime="{{ date }}">{{ strftime date }}</time>
+              <a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a>
+            </li>
+            {{/if}}
+            {{/each}}
+          </ul>
 
         </div>
-    </div>
+      </article>
 
-    {{> footer }}
+    </div>
+  </div>
+
+  {{> footer }}
 </body>
 </html>
