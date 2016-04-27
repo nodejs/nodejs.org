@@ -69,7 +69,7 @@ function buildLocale (source, locale) {
     .source(path.join(__dirname, 'locale', locale))
     // Extracts the main menu and sub-menu links form locale's site.json and
     // adds them to the metadata. This data is used in the navigation template
-    .use(navigation())
+    .use(navigation(source.project.currentVersions))
     // Defines the blog post/guide collections used to internally group them for
     // easier future handling and feed generation.
     .use(collections({
