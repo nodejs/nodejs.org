@@ -3,45 +3,45 @@
 {{> html-head }}
 
 <body>
-    {{> header }}
+  {{> header }}
 
-    <div id="main">
-        <div class="container">
-            <h2>News from {{ pagination.year }}</h2>
+  <div id="main">
+    <div class="container">
+      <h2>News from {{ pagination.year }}</h2>
 
-            <ul class="blog-index">
-                {{#each pagination.posts}}
-                    <li>
-                        <time datetime="{{ post.date }}">{{ strftime post.date "%d %b" }}</time>
-                        <a href="/{{ ../site.locale }}/{{ post.path }}/">{{ post.title }}</a>
+      <ul class="blog-index">
+        {{#each pagination.posts}}
+        <li>
+          <time datetime="{{ post.date }}">{{ strftime post.date "%d %b" }}</time>
+          <a href="/{{ ../site.locale }}/{{ post.path }}/">{{ post.title }}</a>
 
-                        {{#if displaySummary}}
-                            <div class="summary">
-                              {{{ summary post.contents ../site.locale post.path }}}
-                            <div>
-                        {{/if}}
-                    </li>
-                {{/each}}
-            </ul>
+          {{#if displaySummary}}
+          <div class="summary">
+            {{{ summary post.contents ../site.locale post.path }}}
+            <div>
+              {{/if}}
+            </li>
+            {{/each}}
+          </ul>
 
-            {{#if pagination}}
-                <nav class="pagination">
-                    {{#if pagination.prev.path}}
-                        <a href="/{{ site.locale }}/{{ pagination.prev.path }}">&lt; Newer</a>
-                    {{/if}}
-
-                    {{#if pagination.prev.path}}{{#if pagination.next.path}}
-                    |
-                    {{/if}}{{/if}}
-
-                    {{#if pagination.next.path}}
-                        <a href="/{{ site.locale }}/{{ pagination.next.path }}">Older &gt;</a>
-                    {{/if}}
-                </nav>
+          {{#if pagination}}
+          <nav class="pagination">
+            {{#if pagination.prev.path}}
+            <a href="/{{ site.locale }}/{{ pagination.prev.path }}">&lt; Newer</a>
             {{/if}}
-        </div>
-    </div>
 
-    {{> footer }}
-</body>
-</html>
+            {{#if pagination.prev.path}}{{#if pagination.next.path}}
+            |
+            {{/if}}{{/if}}
+
+            {{#if pagination.next.path}}
+            <a href="/{{ site.locale }}/{{ pagination.next.path }}">Older &gt;</a>
+            {{/if}}
+          </nav>
+          {{/if}}
+        </div>
+      </div>
+
+      {{> footer }}
+    </body>
+    </html>

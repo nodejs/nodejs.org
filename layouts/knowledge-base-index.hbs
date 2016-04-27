@@ -3,26 +3,26 @@
 {{> html-head }}
 
 <body>
-    {{> header }}
+  {{> header }}
 
-    <div id="main">
-        <div class="container has-side-nav">
+  <div id="main">
+    <div class="container has-side-nav">
 
-            {{!-- {{> navigation key='docs'}} --}}
+      {{!-- {{> navigation key='docs'}} --}}
 
-            <article>
-                {{{ contents }}}
+      <article>
+        {{{ contents }}}
 
-                {{#each collections.knowledgeBase}}
-                    {{#startswith path 'knowledge/'}}
-                        <li><a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a></li>
-                    {{/startswith}}
-                {{/each}}
-            </article>
+        {{#each collections.knowledgeBase}}
+        {{#startswith path 'knowledge/'}}
+        <li><a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a></li>
+        {{/startswith}}
+        {{/each}}
+      </article>
 
-        </div>
     </div>
+  </div>
 
-    {{> footer }}
+  {{> footer }}
 </body>
 </html>
