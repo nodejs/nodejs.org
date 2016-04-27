@@ -8,21 +8,21 @@
   <div id="main">
     <div class="container">
       {{#if title}}
-      <h2>{{ title }}</h2>
+        <h2>{{ title }}</h2>
       {{/if}}
 
       <ul class="blog-index">
         {{#each collections.blog}}
-        {{#unless listing}}
-        {{#startswith path ../path}}
-        {{#if title}}
-        <li>
-          <time datetime="{{ date }}">{{ strftime date "%d %b %y" }}</time>
-          <a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a>
-        </li>
-        {{/if}}
-        {{/startswith}}
-        {{/unless}}
+          {{#unless listing}}
+            {{#startswith path ../path}}
+              {{#if title}}
+                <li>
+                  <time datetime="{{ date }}">{{ strftime date "%d %b %y" }}</time>
+                  <a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a>
+                </li>
+              {{/if}}
+            {{/startswith}}
+          {{/unless}}
         {{/each}}
       </ul>
 

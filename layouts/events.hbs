@@ -24,37 +24,37 @@
         <div class="region">
           <h1>{{region}}</h1>
           {{#if conferences}}<h2>Conferences <span class="events-number"></span></h2>{{/if}}
-          <div class ="conference-list">
-            {{#each conferences}}
-            <div class="conference">
-              <h3><a href="{{link}}">{{name}}</a>
-                {{#if location}}
-                - <small class="map-link"><a href="https://www.google.com/maps/place/{{location}}">map</a></small>
-                {{/if}}
-              </h3>
-              {{#if desc}}
-              <p class="conference-description">{{desc}}</p>
-              {{/if}}
+            <div class ="conference-list">
+              {{#each conferences}}
+                <div class="conference">
+                  <h3><a href="{{link}}">{{name}}</a>
+                    {{#if location}}
+                      - <small class="map-link"><a href="https://www.google.com/maps/place/{{location}}">map</a></small>
+                    {{/if}}
+                  </h3>
+                  {{#if desc}}
+                  <p class="conference-description">{{desc}}</p>
+                  {{/if}}
+                </div>
+              {{/each}}
             </div>
-            {{/each}}
-          </div>
           <h2>
             <span class="arrow">&#x25ba;</span>
             <a class="js-list-toggle-link" href="#">NodeSchools <span class="events-number"></span></a>
           </h2>
           <ul class="events-list">
             {{#each nodeschools}}
-            <li>
-              {{#if website}}
-              <a href="{{website}}">{{name}}</a>
-              {{else}}
-              {{#if repo}}
-              <a href="{{repo}}">{{name}}</a>
-              {{else}}
-              {{name}}
-              {{/if}}
-              {{/if}}
-            </li>
+              <li>
+                {{#if website}}
+                  <a href="{{website}}">{{name}}</a>
+                {{else}}
+                  {{#if repo}}
+                    <a href="{{repo}}">{{name}}</a>
+                  {{else}}
+                    {{name}}
+                  {{/if}}
+                {{/if}}
+              </li>
             {{/each}}
           </ul>
 
@@ -64,7 +64,7 @@
           </h2>
           <ul class="events-list">
             {{#each meetups}}
-            <li><a href="{{link}}">{{name}}</a></li>
+              <li><a href="{{link}}">{{name}}</a></li>
             {{/each}}
           </ul>
 

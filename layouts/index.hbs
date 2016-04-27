@@ -13,9 +13,9 @@
         {{{ contents }}}
 
         {{#if project.banner.visible}}
-        <p class="home-version home-version-banner">
-          {{{ project.banner.content }}}
-        </p>
+          <p class="home-version home-version-banner">
+            {{{ project.banner.content }}}
+          </p>
         {{/if}}
 
         <h2 id="home-downloadhead" data-dl-local="{{ labels.download-for }}">{{ labels.download }}</h2>
@@ -42,28 +42,28 @@
         </div>
 
         {{#if project.currentVersions.current}}
-        <div class="home-downloadblock">
+          <div class="home-downloadblock">
 
-          <a href="https://nodejs.org/dist/{{ project.currentVersions.current }}/" class="home-downloadbutton"  title="{{ labels.download }} {{ project.currentVersions.current }} {{ labels.current }}"  data-version="{{ project.currentVersions.current }}">
-            {{ project.currentVersions.current }} {{ labels.current }}
-            <small>{{ labels.tagline-current }}</small>
-          </a>
+            <a href="https://nodejs.org/dist/{{ project.currentVersions.current }}/" class="home-downloadbutton"  title="{{ labels.download }} {{ project.currentVersions.current }} {{ labels.current }}"  data-version="{{ project.currentVersions.current }}">
+              {{ project.currentVersions.current }} {{ labels.current }}
+              <small>{{ labels.tagline-current }}</small>
+            </a>
 
-          <ul class="list-divider-pipe home-secondary-links">
-            <li>
-              <a href="https://nodejs.org/{{site.locale}}/download/current/">{{ labels.other-downloads }}</a>
-            </li>
-            <li>
-              <a href="https://github.com/nodejs/node/blob/master/CHANGELOG.md#2016-04-26-version-600-current-jasnell">{{ labels.changelog }}</a>
-              {{!--TODO revert when v6.0.1 releases --}}
-              {{!-- <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.current }}/CHANGELOG.md">{{ labels.changelog }}</a> --}}
-            </li>
-            <li>
-              <a href="{{majorapidocslink project.currentVersions.current}}">{{ labels.api }}</a>
-            </li>
-          </ul>
+            <ul class="list-divider-pipe home-secondary-links">
+              <li>
+                <a href="https://nodejs.org/{{site.locale}}/download/current/">{{ labels.other-downloads }}</a>
+              </li>
+              <li>
+                <a href="https://github.com/nodejs/node/blob/master/CHANGELOG.md#2016-04-26-version-600-current-jasnell">{{ labels.changelog }}</a>
+                {{!--TODO revert when v6.0.1 releases --}}
+                {{!-- <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.current }}/CHANGELOG.md">{{ labels.changelog }}</a> --}}
+              </li>
+              <li>
+                <a href="{{majorapidocslink project.currentVersions.current}}">{{ labels.api }}</a>
+              </li>
+            </ul>
 
-        </div>
+          </div>
         {{/if}}
         <p>
           {{{ labels.version-schedule-prompt }}} <a href="https://github.com/nodejs/LTS#lts_schedule">{{ labels.version-schedule-prompt-link-text }}.</a>

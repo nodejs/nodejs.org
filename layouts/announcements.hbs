@@ -15,12 +15,12 @@
 
           <ul class="news-list">
             {{#each collections.blogAnnounce}}
-            {{#if title}}
-            <li>
-              <time datetime="{{ date }}">{{ strftime date }}</time>
-              <a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a>
-            </li>
-            {{/if}}
+              {{#if title}}
+                <li>
+                  <time datetime="{{ date }}">{{ strftime date }}</time>
+                  <a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a>
+                </li>
+              {{/if}}
             {{/each}}
           </ul>
 

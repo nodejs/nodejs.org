@@ -14,9 +14,9 @@
         {{{ contents }}}
 
         {{#each collections.knowledgeBase}}
-        {{#startswith path 'knowledge/'}}
-        <li><a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a></li>
-        {{/startswith}}
+          {{#startswith path 'knowledge/'}}
+            <li><a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a></li>
+          {{/startswith}}
         {{/each}}
       </article>
 

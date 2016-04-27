@@ -8,15 +8,16 @@
     <nav>
       <ul class="list-divider-pipe">
         <li{{#equals path ''}} class="active"{{/equals}}>
-        <a href="/{{site.locale}}/">{{site.home.text}}</a>
-      </li>
-      {{#each nav.main}}
-      <li{{#startswith ../path link}} class="active"{{/startswith}}>
-      <a href="/{{../site.locale}}/{{link}}/">{{text}}</a>
-    </li>
-    {{/each}}
-  </ul>
-</nav>
+          <a href="/{{site.locale}}/">{{site.home.text}}</a>
+        </li>
 
-</div>
+        {{#each nav.main}}
+          <li{{#startswith ../path link}} class="active"{{/startswith}}>
+            <a href="/{{../site.locale}}/{{link}}/">{{text}}</a>
+          </li>
+        {{/each}}
+      </ul>
+    </nav>
+
+  </div>
 </header>
