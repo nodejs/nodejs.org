@@ -2,81 +2,77 @@
 
 // Base styles
 body
-    box-sizing border-box
-    font 400 20px/1.5 'Source Sans Pro', Open Sans, Roboto, 'San Francisco', Helvetica, Arial, sans-serif
-    color $node-gray
-    margin 0
-    background-color $white
+  box-sizing border-box
+  font 400 20px/1.5 'Source Sans Pro', Open Sans, Roboto, 'San Francisco', Helvetica, Arial, sans-serif
+  color $node-gray
+  margin 0
+  background-color $white
 
 header,
 #main,
 footer
-    display flex
+  display flex
 
 h1,
 h2,
 h3,
 h4,
 h5
-    font-weight 400
+  font-weight 400
 
 a,
 a:link,
 a:active
-    color $node-green
-    text-decoration none
-    border-radius 2px
+  color $node-green
+  text-decoration none
+  border-radius 2px
 
 a:hover
-    color $white
-    background-color $node-green
+  color $white
+  background-color $node-green
 
 a:hover
-    code
-        background-color transparent
-        color #fff
+  code
+    background-color transparent
+    color #fff
 
 a.imagelink:hover
-    background-color transparent
-
+  background-color transparent
 
 strong,
 b
-    font-weight 600
-
+  font-weight 600
 
 p
-    a
-        padded-link(2px)
-
+  a
+    padded-link(2px)
 
 img
-    display block
-    max-width 100%
+  display block
+  max-width 100%
 
-    .logos &
-        // Fixes logo size on Firefox, see:
-        // https://github.com/nodejs/nodejs.org/issues/558
-        width: 100%
-
+  .logos &
+    // Fixes logo size on Firefox, see:
+    // https://github.com/nodejs/nodejs.org/issues/558
+    width: 100%
 
 code
-    background-color $light-gray3
-    font-size 85%
-    padding 0.2em
+  background-color $light-gray3
+  font-size 85%
+  padding 0.2em
 
 pre
-    background-color $node-gray
-    border-radius 3px
-    padding 0.75em 1.2em
-    font-size 0.8em
-    white-space pre-wrap
-    color $light-gray3
-    overflow-x auto
+  background-color $node-gray
+  border-radius 3px
+  padding 0.75em 1.2em
+  font-size 0.8em
+  white-space pre-wrap
+  color $light-gray3
+  overflow-x auto
 
-    code
-        color $light-gray3
-        background-color inherit
+  code
+    color $light-gray3
+    background-color inherit
 
 // Import specific page sections and layout parts
 @import 'layout/_sticky-footer'
@@ -97,85 +93,84 @@ pre
 @import 'page-modules/_anchorLinks'
 
 .intro
-    margin-top 140px
-    font-size 38px
-    line-height 1.2
+  margin-top 140px
+  font-size 38px
+  line-height 1.2
 
-    h1
-        font-size inherit
-        margin-bottom 15px
+  h1
+    font-size inherit
+    margin-bottom 15px
 
-        & + p
-            margin-top 0
+    & + p
+      margin-top 0
 
-    span
-        color $light-gray
-        display block
-
+  span
+    color $light-gray
+    display block
 
 .has-side-nav
-    aside
-        width 200px
-        float left
-        margin-top 1.5em
+  aside
+    width 200px
+    float left
+    margin-top 1.5em
 
-        ul
-            list-style-type none
-            margin 0
-            padding 0
+    ul
+      list-style-type none
+      margin 0
+      padding 0
 
-        li
-            padding 0.1em 0.5em
+    li
+      padding 0.1em 0.5em
 
-        a
-            display block
-            padded-link(10px)
-            padding-top 5px
-            padding-bottom 5px
-            line-height 1
+    a
+      display block
+      padded-link(10px)
+      padding-top 5px
+      padding-bottom 5px
+      line-height 1
 
-        .active
-            > a,
-            > a:hover
-                color $white
-                background-color $active-green
+    .active
+      > a,
+      > a:hover
+        color $white
+        background-color $active-green
 
-    article
-        margin-left 220px
+  article
+    margin-left 220px
 
 .edit-link
-    float right
-    font-size 0.9em
-    margin 0.5em 0
+  float right
+  font-size 0.9em
+  margin 0.5em 0
 
 @media screen and (max-width: 480px)
-    .has-side-nav
-        aside
-            width 100%
-            float none
-        article
-            margin-left 0px
+  .has-side-nav
+    aside
+      width 100%
+      float none
+    article
+      margin-left 0px
 
 .full-width
-    width 100%
+  width 100%
 
 .small
-    font-size 10px
+  font-size 10px
 
 .color-lightgray
-    color $light-gray
+  color $light-gray
 
 a:hover .color-lightgray
-    color $white
+  color $white
 
 .no-padding
-    padding 0
+  padding 0
 
 .highlight-box
-    background-color $light-gray3
-    padding 5px 15px
-    border-radius 2px
-    margin-top 1em
+  background-color $light-gray3
+  padding 5px 15px
+  border-radius 2px
+  margin-top 1em
 
-    & *:first-child
-        margin-top 0.5rem
+  & *:first-child
+    margin-top 0.5rem

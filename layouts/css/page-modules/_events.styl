@@ -1,114 +1,114 @@
 #events-map
-    height 400px
+  height 400px
+  width 100%
+  margin-top 20px
+
+  .marker-image img
     width 100%
-    margin-top 20px
+    max-width 320px
+    max-height 100px
 
-    .marker-image img
-        width 100%
-        max-width 320px
-        max-height 100px
-
-    .marker-title a
-        color $node-green
-        text-decoration none
-        &:hover
-            color $white
-            background $node-green
+  .marker-title a
+    color $node-green
+    text-decoration none
+    &:hover
+      color $white
+      background $node-green
 
 
 .events-map-key
-    padding 8px 0
-    text-align center
+  padding 8px 0
+  text-align center
+  @media screen and (max-width: 600px)
+    margin-bottom 1em
+    padding 2px 0
+    text-align left
+
+  span
+    padding-right 12px
     @media screen and (max-width: 600px)
-        margin-bottom 1em
-        padding 2px 0
-        text-align left
+      display block
+      width 100%
+      padding-right 0
 
-    span
-        padding-right 12px
-        @media screen and (max-width: 600px)
-            display block
-            width 100%
-            padding-right 0
+  span::before
+    content ""
+    width 12px
+    height 12px
+    display inline-block
+    border-radius 3px
+    margin-right 8px
 
-    span::before
-             content ""
-             width 12px
-             height 12px
-             display inline-block
-             border-radius 3px
-             margin-right 8px
+  .key-meetup::before
+    background $node-green
 
-    .key-meetup::before
-        background $node-green
+  .key-nodeschool::before
+    background $yellow
 
-    .key-nodeschool::before
-        background $yellow
-
-    .key-conference::before
-        background $blue
+  .key-conference::before
+    background $blue
 
 .region
-    border 1px solid $light-gray2
-    background $light-gray3
-    padding 0.75em 1em
-    margin-bottom 2em
+  border 1px solid $light-gray2
+  background $light-gray3
+  padding 0.75em 1em
+  margin-bottom 2em
 
-    h1
-        border-bottom 1px solid
-        text-transform uppercase
-        font-size 22px
-        margin 0 0 1em
+  h1
+    border-bottom 1px solid
+    text-transform uppercase
+    font-size 22px
+    margin 0 0 1em
 
-    h2
-        margin 0 0 0.5em
-        line-height 1
-        &.is-displayed
-            .arrow
-                transform rotate(90deg)
+  h2
+    margin 0 0 0.5em
+    line-height 1
+    &.is-displayed
+      .arrow
+        transform rotate(90deg)
 
-        .arrow
-            display inline-block
-            font-size 0.5em
-            vertical-align middle
-            padding-bottom 0.25em
+    .arrow
+      display inline-block
+      font-size 0.5em
+      vertical-align middle
+      padding-bottom 0.25em
 
+  h3
+    margin 0 0 0.5em
+
+  .conference
     h3
-        margin 0 0 0.5em
+      margin 0 0 0.2em
+    p
+      margin-top 0
 
-    .conference
-        h3
-            margin 0 0 0.2em
-        p
-            margin-top 0
+  .events-number:not(:empty)
+    position relative
+    top -3px
+    display inline-block
+    background $gray
+    border-radius 3px
+    padding 3px 4px
+    font-size 0.6em
+    color: $white
 
-    .events-number:not(:empty)
-        position relative
-        top -3px
-        display inline-block
-        background $gray
-        border-radius 3px
-        padding 3px 4px
-        font-size 0.6em
-        color: $white
+  .events-list
+    display flex
+    flex-wrap wrap
+    list-style none
+    padding 0
+    margin 0 0 10px
 
-    .events-list
+    html.has-js &
+      display none
+      &.is-displayed
         display flex
-        flex-wrap wrap
-        list-style none
-        padding 0
-        margin 0 0 10px
 
-        html.has-js &
-            display none
-            &.is-displayed
-                display flex
+    li
+      width 31%
+      padding 0
+      margin 0 2% 1rem 0
 
-        li
-            width 31%
-            padding 0
-            margin 0 2% 1rem 0
-
-        @media screen and (max-width: 600px)
-            li
-                width 100%
+    @media screen and (max-width: 600px)
+      li
+        width 100%
