@@ -1,0 +1,10 @@
+{
+  "colons": {
+    "expect": "never",
+    "error": true
+  },
+  "indentPref": {
+    "expect": 2,
+    "error": true
+  }
+}
