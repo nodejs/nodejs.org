@@ -3,64 +3,64 @@
 {{> html-head }}
 
 <body>
-    {{> header }}
+  {{> header }}
 
-    <div id="main">
-        <div class="container">
-            <article>
-                <h1>Previous Releases</h1>
+  <div id="main">
+    <div class="container">
+      <article>
+        <h1>Previous Releases</h1>
 
-                <section>
-                    <h2>io.js &amp; Node.js</h2>
-                    <p>
-                        {{iojs.intro}}
-                    </p>
-                </section>
+        <section>
+          <h2>io.js &amp; Node.js</h2>
+          <p>
+            {{iojs.intro}}
+          </p>
+        </section>
 
-                <section>
-                    <table class="download-table full-width" cellspacing="0" border="0" cellpadding="0">
-                        <thead>
-                            <tr>
-                                <td>Version</td>
-                                <td>LTS</td>
-                                <td>Date</td>
-                                <td>V8</td>
-                                <td>npm</td>
-                                <td>NODE_MODULE_VERSION<a href="#ref-1">[1]</a><span id="backref-1"></span></td>
-                                <td></td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {{#project.versions}}
-                                <tr>
-                                    <td data-label="Version">{{name}} {{version}}</td>
-                                    <td data-label="LTS">{{#if lts}}{{lts}}{{/if}}</td>
-                                    <td data-label="Date"><time>{{date}}</time></td>
-                                    <td data-label="V8">{{v8}}</td>
-                                    <td data-label="npm">{{npm}}</td>
-                                    <td data-label="NODE_MODULE_VERSION">{{modules}}</td>
-                                    <td class="download-table-last">
-                                        <a href="{{url}}">
-                                            {{i18n 'releases.downloads'}}
-                                        </a>
-                                        <a href="{{changeloglink version}}">
-                                            {{i18n 'links.pages.changelog'}}
-                                        </a>
-                                        <a href="{{apidocslink version}}">
-                                            {{i18n 'docs.text'}}
-                                        </a>
-                                    </td>
-                                </tr>
-                            {{/project.versions}}
-                        </tbody>
-                    </table>
-                    <p><small id="ref-1">[<a href="#backref-1">1</a>]: {{{modules}}}</small></p>
-                </section>
-            </article>
+        <section>
+          <table class="download-table full-width" cellspacing="0" border="0" cellpadding="0">
+            <thead>
+              <tr>
+                <td>Version</td>
+                <td>LTS</td>
+                <td>Date</td>
+                <td>V8</td>
+                <td>npm</td>
+                <td>NODE_MODULE_VERSION<a href="#ref-1">[1]</a><span id="backref-1"></span></td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              {{#project.versions}}
+              <tr>
+                <td data-label="Version">{{name}} {{version}}</td>
+                <td data-label="LTS">{{#if lts}}{{lts}}{{/if}}</td>
+                <td data-label="Date"><time>{{date}}</time></td>
+                <td data-label="V8">{{v8}}</td>
+                <td data-label="npm">{{npm}}</td>
+                <td data-label="NODE_MODULE_VERSION">{{modules}}</td>
+                <td class="download-table-last">
+                  <a href="{{url}}">
+                    {{i18n 'releases.downloads'}}
+                  </a>
+                  <a href="{{changeloglink version}}">
+                    {{i18n 'links.pages.changelog'}}
+                  </a>
+                  <a href="{{apidocslink version}}">
+                    {{i18n 'docs.text'}}
+                  </a>
+                </td>
+              </tr>
+              {{/project.versions}}
+            </tbody>
+          </table>
+          <p><small id="ref-1">[<a href="#backref-1">1</a>]: {{{modules}}}</small></p>
+        </section>
+      </article>
 
-        </div>
     </div>
+  </div>
 
-    {{> footer }}
+  {{> footer }}
 </body>
 </html>

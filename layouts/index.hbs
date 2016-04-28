@@ -3,128 +3,128 @@
 {{> html-head }}
 
 <body>
-    {{> header }}
+  {{> header }}
 
-    <div id="main">
-        <div class="container">
+  <div id="main">
+    <div class="container">
 
-            <div id="home-intro">
+      <div id="home-intro">
 
-                {{{ contents }}}
+        {{{ contents }}}
 
-                {{#if project.banner.visible}}
-                    <p class="home-version home-version-banner">
-                        {{{ project.banner.content }}}
-                    </p>
-                {{/if}}
+        {{#if project.banner.visible}}
+          <p class="home-version home-version-banner">
+            {{{ project.banner.content }}}
+          </p>
+        {{/if}}
 
-                <h2 id="home-downloadhead" data-dl-local="{{ labels.download-for }}">{{ labels.download }}</h2>
+        <h2 id="home-downloadhead" data-dl-local="{{ labels.download-for }}">{{ labels.download }}</h2>
 
-                <div class="home-downloadblock">
+        <div class="home-downloadblock">
 
-                  <a href="https://nodejs.org/dist/{{ project.currentVersions.lts }}/" class="home-downloadbutton" title="{{ labels.download }} {{ project.currentVersions.lts }} {{ labels.lts }}" data-version="{{ project.currentVersions.lts }}">
-                      {{ project.currentVersions.lts }} {{ labels.lts }}
-                      <small>{{ labels.tagline-lts }}</small>
-                  </a>
+          <a href="https://nodejs.org/dist/{{ project.currentVersions.lts }}/" class="home-downloadbutton" title="{{ labels.download }} {{ project.currentVersions.lts }} {{ labels.lts }}" data-version="{{ project.currentVersions.lts }}">
+            {{ project.currentVersions.lts }} {{ labels.lts }}
+            <small>{{ labels.tagline-lts }}</small>
+          </a>
 
-                  <ul class="list-divider-pipe home-secondary-links">
-                      <li>
-                        <a href="https://nodejs.org/{{site.locale}}/download/">{{ labels.other-downloads }}</a>
-                      </li>
-                      <li>
-                          <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.lts }}/CHANGELOG.md">{{ labels.changelog }}</a>
-                      </li>
-                      <li>
-                        <a href="{{majorapidocslink project.currentVersions.lts}}">{{ labels.api }}</a>
-                      </li>
-                  </ul>
-
-                </div>
-
-                {{#if project.currentVersions.current}}
-                  <div class="home-downloadblock">
-
-                    <a href="https://nodejs.org/dist/{{ project.currentVersions.current }}/" class="home-downloadbutton"  title="{{ labels.download }} {{ project.currentVersions.current }} {{ labels.current }}"  data-version="{{ project.currentVersions.current }}">
-                        {{ project.currentVersions.current }} {{ labels.current }}
-                        <small>{{ labels.tagline-current }}</small>
-                    </a>
-
-                    <ul class="list-divider-pipe home-secondary-links">
-                        <li>
-                          <a href="https://nodejs.org/{{site.locale}}/download/current/">{{ labels.other-downloads }}</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/nodejs/node/blob/master/CHANGELOG.md#2016-04-26-version-600-current-jasnell">{{ labels.changelog }}</a>
-                            {{!--TODO revert when v6.0.1 releases --}}
-                            {{!-- <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.current }}/CHANGELOG.md">{{ labels.changelog }}</a> --}}
-                        </li>
-                        <li>
-                          <a href="{{majorapidocslink project.currentVersions.current}}">{{ labels.api }}</a>
-                        </li>
-                    </ul>
-
-                  </div>
-                {{/if}}
-                <p>
-                  {{{ labels.version-schedule-prompt }}} <a href="https://github.com/nodejs/LTS#lts_schedule">{{ labels.version-schedule-prompt-link-text }}.</a>
-                </p>
-            </div>
+          <ul class="list-divider-pipe home-secondary-links">
+            <li>
+              <a href="https://nodejs.org/{{site.locale}}/download/">{{ labels.other-downloads }}</a>
+            </li>
+            <li>
+              <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.lts }}/CHANGELOG.md">{{ labels.changelog }}</a>
+            </li>
+            <li>
+              <a href="{{majorapidocslink project.currentVersions.lts}}">{{ labels.api }}</a>
+            </li>
+          </ul>
 
         </div>
-    </div>
 
-    <style>
-      #interactive-wrapper {
-        flex: none;
-      }
+        {{#if project.currentVersions.current}}
+          <div class="home-downloadblock">
 
-      #interactive {
-        background-image: url("/static/images/interactive/background.png");
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-      }
+            <a href="https://nodejs.org/dist/{{ project.currentVersions.current }}/" class="home-downloadbutton"  title="{{ labels.download }} {{ project.currentVersions.current }} {{ labels.current }}"  data-version="{{ project.currentVersions.current }}">
+              {{ project.currentVersions.current }} {{ labels.current }}
+              <small>{{ labels.tagline-current }}</small>
+            </a>
 
-      .interactive-item {
-        border: 20px solid transparent;
-        min-width: 1px;
-      }
+            <ul class="list-divider-pipe home-secondary-links">
+              <li>
+                <a href="https://nodejs.org/{{site.locale}}/download/current/">{{ labels.other-downloads }}</a>
+              </li>
+              <li>
+                <a href="https://github.com/nodejs/node/blob/master/CHANGELOG.md#2016-04-26-version-600-current-jasnell">{{ labels.changelog }}</a>
+                {{!--TODO revert when v6.0.1 releases --}}
+                {{!-- <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.current }}/CHANGELOG.md">{{ labels.changelog }}</a> --}}
+              </li>
+              <li>
+                <a href="{{majorapidocslink project.currentVersions.current}}">{{ labels.api }}</a>
+              </li>
+            </ul>
 
-      @media (max-width: 480px) {
-        #logo-center {
-          display:none;
-        }
-        #interactive {
-          flex-wrap: wrap;
-        }
-      }
-
-      @media (min-width: 481px) {
-        #logo-first {
-          display:none;
-        }
-      }
-    </style>
-
-    <div id="interactive-wrapper">
-      <div id="interactive">
-        <span id="logo-first" class="interactive-item">
-          <img src="/static/images/interactive/nodejs-interactive-logo-center.png" />
-        </span>
-        <a class="interactive-item" href="http://events.linuxfoundation.org/events/node-interactive-europe">
-          <img src="/static/images/interactive/nodejs-interactive-hero-banner-left-eu.png" />
-        </a>
-        <span id="logo-center" class="interactive-item">
-          <img src="/static/images/interactive/nodejs-interactive-logo-center.png" />
-        </span>
-        <a class="interactive-item" href="http://events.linuxfoundation.org/events/node-interactive">
-          <img src="/static/images/interactive/nodejs-interactive-hero-banner-right-na.png" />
-        </a>
+          </div>
+        {{/if}}
+        <p>
+          {{{ labels.version-schedule-prompt }}} <a href="https://github.com/nodejs/LTS#lts_schedule">{{ labels.version-schedule-prompt-link-text }}.</a>
+        </p>
       </div>
-    </div>
 
-    {{> footer className="no-margin-top" }}
-    <script src="/static/js/download.js" async defer></script>
+    </div>
+  </div>
+
+  <style>
+  #interactive-wrapper {
+    flex: none;
+  }
+
+  #interactive {
+    background-image: url("/static/images/interactive/background.png");
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .interactive-item {
+    border: 20px solid transparent;
+    min-width: 1px;
+  }
+
+  @media (max-width: 480px) {
+    #logo-center {
+      display:none;
+    }
+    #interactive {
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (min-width: 481px) {
+    #logo-first {
+      display:none;
+    }
+  }
+  </style>
+
+  <div id="interactive-wrapper">
+    <div id="interactive">
+      <span id="logo-first" class="interactive-item">
+        <img src="/static/images/interactive/nodejs-interactive-logo-center.png" />
+      </span>
+      <a class="interactive-item" href="http://events.linuxfoundation.org/events/node-interactive-europe">
+        <img src="/static/images/interactive/nodejs-interactive-hero-banner-left-eu.png" />
+      </a>
+      <span id="logo-center" class="interactive-item">
+        <img src="/static/images/interactive/nodejs-interactive-logo-center.png" />
+      </span>
+      <a class="interactive-item" href="http://events.linuxfoundation.org/events/node-interactive">
+        <img src="/static/images/interactive/nodejs-interactive-hero-banner-right-na.png" />
+      </a>
+    </div>
+  </div>
+
+  {{> footer className="no-margin-top" }}
+  <script src="/static/js/download.js" async defer></script>
 
 </body>
 </html>
