@@ -14,7 +14,7 @@ layout: blog-post.hbs
 
 ### World’s Fastest Growing Open Source Platform Pushes Out New Release
 
-Node.js is emerging as a universal platform used for web applications, IoT, mobile, enterprise application development, and microservice architectures. The technology is ubiquitous across numerous industries, from startups to Fortune 500 companies, and is the only unified platform that full stack JavaScript developers can use for front end, back end, mobile and IoT projects.
+Performance improvements are key in this latest release with one of the most significant improvements coming from module loading, which is currently four times faster than Node.js version 4 (Node.js v4). This will help developers dramatically decrease the startup time of large applications for the best productivity in development cycles and more seamless experience with end users. In addition, Node.js v6 comes equipped with v8 JavaScript engine 5.0, which has improved ECMAScript 2015 (ES6) support. Ninety-three percent of ES6 features are also now supported in the Node.js v6 release, up from 56 percent for Node.js v5 and 50 percent for Node.js v4. Key features from ES6 include: default and rest parameters, destructuring, class and super keywords.
 
 See https://nodejs.org/en/blog/announcements/v6-release/ for more information.
 
