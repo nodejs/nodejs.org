@@ -12,6 +12,8 @@ layout: blog-post.hbs
 
 [Node v6.0.0 (Current)](https://nodejs.org/en/blog/release/v6.0.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
 
+See [Breaking changes between v5 and v6]https://github.com/nodejs/node/wiki/Breaking-changes-between-v5-and-v6 for more information.
+
 You may have noticed that the v6 release uses the label `Current` instead of `Stable`. This name change has been made in order to better differentiate the Long Term Support releases from the current active development branches. We
 will be using the `Current` label from here-on instead of `Stable`.
 
