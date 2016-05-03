@@ -6,6 +6,7 @@
   "scripts": {
     "build": "node build.js",
     "serve": "node server.js",
+    "gzip": "find -E build -type f -regex '.*(html|css|js|xml|json)$' -exec gzip -kf9 {} \\;",
     "load-versions": "node scripts/load-versions.js",
     "start": "npm run serve",
     "test": "npm run test:lint && npm run test:unit && npm run test:smoke",
