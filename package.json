@@ -32,7 +32,7 @@
     ]
   },
   "dependencies": {
-    "autoprefixer-stylus": "0.9.2",
+    "autoprefixer-stylus": "0.9.3",
     "changelog-url": "1.0.2",
     "cheerio": "0.20.0",
     "chokidar": "1.4.3",
