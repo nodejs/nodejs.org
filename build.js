@@ -252,7 +252,7 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          content: 'Important <a href="https://nodejs.org/en/blog/vulnerability/npm-tokens-leak-march-2016/">security notification</a> regarding npm'
+          content: 'Important <a href="/en/blog/vulnerability/openssl-may-2016/">security upgrades</a> for recent OpenSSL vulnerabilities'
         }
       }
     }
