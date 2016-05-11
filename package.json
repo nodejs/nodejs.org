@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node build.js",
     "serve": "node server.js",
-    "gzip": "find -E build -type f -regex '.*(html|css|js|xml|json)$' -exec gzip -kf9 {} \\;",
+    "gzip": "find build -type f -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.xml' -o -name '*.json' -exec gzip -kf9 {} \\;",
     "deploy": "npm run build && npm run gzip",
     "load-versions": "node scripts/load-versions.js",
     "start": "npm run serve",
