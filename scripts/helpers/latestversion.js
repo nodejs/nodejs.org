@@ -2,9 +2,16 @@
 
 const semver = require('semver')
 
-exports.current = (releases) => {
-  const match = releases.find((release) => !release.lts && semver.gte(release.version, '5.0.0'))
-  return match && match.version
+const map = (release) => release && {
+  node: release.version,
+  npm: release.npm,
+  v8: release.v8,
+  openssl: release.openssl
 }
 
-exports.lts = (releases) => releases.find((release) => release.lts).version
+exports.current = (releases) => {
+  const match = releases.find((release) => !release.lts && semver.gte(release.version, '5.0.0'))
+  return map(match)
+}
+
+exports.lts = (releases) => map(releases.find((release) => release.lts))

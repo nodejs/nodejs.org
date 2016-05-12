@@ -22,7 +22,7 @@ test('latestversion.current()', (t) => {
       { version: 'v0.12.7', lts: false }
     ])
 
-    t.equal(currentVersion, 'v5.0.0')
+    t.equal(currentVersion.node, 'v5.0.0')
     t.end()
   })
 
@@ -36,7 +36,7 @@ test('latestversion.lts()', (t) => {
       { version: 'v0.12.7', lts: false }
     ])
 
-    t.equal(ltsVersion, 'v4.2.1')
+    t.equal(ltsVersion.node, 'v4.2.1')
     t.end()
   })
 
@@ -48,7 +48,7 @@ test('latestversion.lts()', (t) => {
       { version: 'v0.12.7', lts: false }
     ])
 
-    t.equal(ltsVersion, 'v4.2.1')
+    t.equal(ltsVersion.node, 'v4.2.1')
     t.end()
   })
 
