@@ -1,6 +1,5 @@
 'use strict'
 
-const extend = require('util')._extend
 const semver = require('semver')
 
 const postMergeDownloads = [
@@ -120,7 +119,7 @@ const legacyDownloads = [
 
 function resolveUrl (item, version) {
   const url = item.templateUrl.replace(/%version%/g, version)
-  return extend({ url }, item)
+  return Object.assign({ url }, item)
 }
 
 module.exports = (version) => {

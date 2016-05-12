@@ -22,7 +22,6 @@
 
 const fs = require('fs')
 const path = require('path')
-const extend = require('util')._extend
 const Handlebars = require('handlebars')
 const request = require('request')
 const changelogUrl = require('changelog-url')
@@ -179,12 +178,12 @@ function urlOrComingSoon (binary) {
 function renderPost (results) {
   const templateStr = fs.readFileSync(path.resolve(__dirname, 'release.hbs')).toString('utf8')
   const template = Handlebars.compile(templateStr, { noEscape: true })
-  const view = extend({
+  const view = Object.assign({
     date: new Date().toISOString(),
     versionSlug: slugify(results.version)
   }, results)
 
-  return extend({
+  return Object.assign({
     content: template(view)
   }, results)
 }
