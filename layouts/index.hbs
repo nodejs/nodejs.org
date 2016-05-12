@@ -22,8 +22,8 @@
 
         <div class="home-downloadblock">
 
-          <a href="https://nodejs.org/dist/{{ project.currentVersions.lts }}/" class="home-downloadbutton" title="{{ labels.download }} {{ project.currentVersions.lts }} {{ labels.lts }}" data-version="{{ project.currentVersions.lts }}">
-            {{ project.currentVersions.lts }} {{ labels.lts }}
+          <a href="https://nodejs.org/dist/{{ project.latestVersions.lts.node }}/" class="home-downloadbutton" title="{{ labels.download }} {{ project.latestVersions.lts.node }} {{ labels.lts }}" data-version="{{ project.latestVersions.lts.node }}">
+            {{ project.latestVersions.lts.node }} {{ labels.lts }}
             <small>{{ labels.tagline-lts }}</small>
           </a>
 
@@ -32,20 +32,20 @@
               <a href="https://nodejs.org/{{site.locale}}/download/">{{ labels.other-downloads }}</a>
             </li>
             <li>
-              <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.lts }}/CHANGELOG.md">{{ labels.changelog }}</a>
+              <a href="https://github.com/nodejs/node/blob/{{ project.latestVersions.lts.node }}/CHANGELOG.md">{{ labels.changelog }}</a>
             </li>
             <li>
-              <a href="{{majorapidocslink project.currentVersions.lts}}">{{ labels.api }}</a>
+              <a href="{{majorapidocslink project.latestVersions.lts.node}}">{{ labels.api }}</a>
             </li>
           </ul>
 
         </div>
 
-        {{#if project.currentVersions.current}}
+        {{#if project.latestVersions.current.node}}
           <div class="home-downloadblock">
 
-            <a href="https://nodejs.org/dist/{{ project.currentVersions.current }}/" class="home-downloadbutton"  title="{{ labels.download }} {{ project.currentVersions.current }} {{ labels.current }}"  data-version="{{ project.currentVersions.current }}">
-              {{ project.currentVersions.current }} {{ labels.current }}
+            <a href="https://nodejs.org/dist/{{ project.latestVersions.current.node }}/" class="home-downloadbutton"  title="{{ labels.download }} {{ project.latestVersions.current.node }} {{ labels.current }}"  data-version="{{ project.latestVersions.current.node }}">
+              {{ project.latestVersions.current.node }} {{ labels.current }}
               <small>{{ labels.tagline-current }}</small>
             </a>
 
@@ -54,10 +54,10 @@
                 <a href="https://nodejs.org/{{site.locale}}/download/current/">{{ labels.other-downloads }}</a>
               </li>
               <li>
-                <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.current }}/CHANGELOG.md">{{ labels.changelog }}</a>
+                <a href="https://github.com/nodejs/node/blob/{{ project.latestVersions.current.node }}/CHANGELOG.md">{{ labels.changelog }}</a>
               </li>
               <li>
-                <a href="{{majorapidocslink project.currentVersions.current}}">{{ labels.api }}</a>
+                <a href="{{majorapidocslink project.latestVersions.current.node}}">{{ labels.api }}</a>
               </li>
             </ul>
 
