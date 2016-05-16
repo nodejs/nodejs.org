@@ -7,7 +7,8 @@ module.exports = function anchorMarkdownHeadings (text, level, raw) {
     .replace(/-{2,}/g, '-')
     .replace(/(^-|-$)/g, '')
     .toLowerCase()
-  return '<h' + level + '>' + text + '<a name="' +
+  return '<h' + level + ' id="header-' + escapedText + '">' + text + '<a name="' +
     escapedText + '" class="anchor" href="#' +
+    escapedText + '" aria-labelledby="header-' +
     escapedText + '"></a></h' + level + '>'
 }
