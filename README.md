@@ -20,7 +20,7 @@ Please contribute! There's plenty of [good first contributions](https://github.c
 $ git clone https://github.com/nodejs/nodejs.org.git
 $ cd nodejs.org
 $ npm install
-$ npm run serve
+$ npm start
 ```
 
 This will start the development server on http://localhost:8080/en/ and should reload automatically when you make changes but it's all just code and no code is perfect so sometimes you may need to restart it :)
