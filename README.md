@@ -20,7 +20,7 @@ Please contribute! There's plenty of [good first contributions](https://github.c
 $ git clone https://github.com/nodejs/nodejs.org.git
 $ cd nodejs.org
 $ npm install
-$ npm run serve
+$ npm start
 ```
 
 This will start the development server on http://localhost:8080/en/ and should reload automatically when you make changes but it's all just code and no code is perfect so sometimes you may need to restart it :)
@@ -71,7 +71,7 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 - Fábio Santos ([fabiosantoscode](https://github.com/fabiosantoscode))
 - Jeremiah Senkpiel ([Fishrock123](https://github.com/Fishrock123))
 - Wyatt Preul ([geek](https://github.com/geek))
-- Jona ([59](https://github.com/59))
+- Jona ([tentakel](https://github.com/tentakel))
 - Charlie Robbins ([indexzero](https://github.com/indexzero))
 - Minwoo Jung ([JungMinu](https://github.com/JungMinu))
 - Daniel Levy ([justsml](https://github.com/justsml))
