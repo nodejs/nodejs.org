@@ -99,7 +99,7 @@ You are required to have a GitHub account to register.
   <img alt="SAP" class="memberlogo" src="/static/images/foundation/sapLogo.png" />
 </a>
 <a target="_new" class="imagelink" href="//saucelabs.com">
-  <img alt="Saucelabs" class="memberlogo" src="/static/images/foundation/saucelabsLogo2.png" />
+  <img alt="Saucelabs" class="memberlogo" src="/static/images/foundation/saucelabsLogo3.png" />
 </a>
 <a target="_new" class="imagelink" href="http://sphinx.sg/">
   <img alt="Sphinx" class="memberlogo" src="/static/images/foundation/sphinx.png" />
