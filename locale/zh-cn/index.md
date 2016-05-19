@@ -17,5 +17,5 @@ labels:
   version-schedule-prompt-link-text: LTS 日程
 ---
 
-Node.js®是一个基于[Chrome V8引擎](https://developers.google.com/v8/)的 JavaScript 运行时。
-Node.js使用高效、轻量级的事件驱动、非阻塞 I/O 模型。Node.js 之生态系统是目前最大的开源包管理系统。
+Node.js®是一个基于[Chrome V8 引擎](https://developers.google.com/v8/)的 JavaScript 运行时。
+Node.js 使用高效、轻量级的事件驱动、非阻塞 I/O 模型。Node.js 之生态系统是目前最大的开源包管理系统。

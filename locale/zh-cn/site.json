@@ -3,7 +3,7 @@
     "author": "Node.js 基金会",
     "url": "https://nodejs.org/zh-cn/",
     "locale": "zh-cn",
-    "scrollToTop": "置顶",
+    "scrollToTop": "回到页顶",
     "reportNodeIssue": "报告 Node.js 问题 ",
     "reportWebsiteIssue": "报告 Node.js 网站问题",
     "getHelpIssue": "获取帮助",
@@ -78,7 +78,7 @@
         "text": "文档",
         "es6": {
             "link": "docs/es6",
-            "text": "ES6相关"
+            "text": "ES6 相关"
         },
         "faq": {
             "link": "docs/faq",
@@ -123,7 +123,7 @@
         },
         "announce": {
             "link": "foundation/announcements",
-            "text": "声明"
+            "text": "公告"
         }
     },
     "getinvolved": {
