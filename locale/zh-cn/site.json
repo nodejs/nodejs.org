@@ -1,0 +1,169 @@
+{
+    "title": "Node.js",
+    "author": "Node.js 基金会",
+    "url": "https://nodejs.org/zh-cn/",
+    "locale": "zh-cn",
+    "scrollToTop": "回到页顶",
+    "reportNodeIssue": "报告 Node.js 问题 ",
+    "reportWebsiteIssue": "报告 Node.js 网站问题",
+    "getHelpIssue": "获取帮助",
+    "by": "于",
+    "all-downloads": "所有",
+    "nightly": "每日构建",
+    "feeds": [
+        {
+            "link": "feed/blog.xml",
+            "text": "Node.js 博客"
+        },
+        {
+            "link": "feed/releases.xml",
+            "text": "Node.js 博客: 发布"
+        },
+        {
+            "link": "feed/vulnerability.xml",
+            "text": "Node.js 博客: 安全报告"
+        },
+        {
+            "link": "feed/tsc-minutes.xml",
+            "text": "TSC 会议记录"
+        }
+    ],
+    "home": { "text": "首页" },
+    "about": {
+        "link": "about",
+        "text": "关于我们",
+        "governance": {
+            "link": "about/governance",
+            "text": "管理规则"
+        },
+        "workinggroups": {
+            "link": "about/working-groups",
+            "text": "工作组"
+        },
+        "releases": {
+            "link": "about/releases",
+            "text": "发布"
+        },
+        "foundation": {
+            "link": "foundation",
+            "text": "基金会"
+        },
+        "security": {
+            "link": "security",
+            "text": "安全"
+        },
+        "resources": {
+            "link": "about/resources",
+            "text": "资源"
+        },
+        "trademark": {
+            "link": "about/trademark",
+            "text": "商标"
+        }
+    },
+    "download": {
+        "link": "download",
+        "text": "下载",
+        "releases": {
+            "link": "download/releases",
+            "text": "下载／发布"
+        },
+        "package-manager": {
+            "link": "download/package-manager",
+            "text": "下载／包管理器"
+        }
+    },
+    "docs": {
+        "link": "docs",
+        "text": "文档",
+        "es6": {
+            "link": "docs/es6",
+            "text": "ES6 相关"
+        },
+        "faq": {
+            "link": "docs/faq",
+            "text": "FAQ"
+        },
+        "api-lts": {
+            "link": "/dist/latest-v4.x/docs/api",
+            "subtext": "LTS",
+            "text": "%ver% API"
+        },
+        "api-current": {
+            "link": "/dist/latest-v6.x/docs/api",
+            "text": "%ver% API"
+        },
+        "guides": {
+            "link": "docs/guides",
+            "text": "教程"
+        }
+    },
+    "foundation": {
+        "link": "foundation",
+        "text": "基金会",
+        "casestudies": {
+            "link": "foundation/case-studies",
+            "text": "资源"
+        },
+        "members": {
+            "link": "foundation/members",
+            "text": "会员"
+        },
+        "board": {
+            "link": "foundation/board",
+            "text": "董事会"
+        },
+        "tsc": {
+            "link": "foundation/tsc",
+            "text": "技术指导委员会"
+        },
+        "itn": {
+             "link": "foundation/in-the-news",
+             "text": "新闻"
+        },
+        "announce": {
+            "link": "foundation/announcements",
+            "text": "公告"
+        }
+    },
+    "getinvolved": {
+        "link": "get-involved",
+        "text": "加入我们",
+        "contribute": {
+            "link": "get-involved/contribute",
+            "text": "贡献"
+        },
+        "development": {
+            "link": "get-involved/development",
+            "text": "开发"
+        },
+        "code-and-learn": {
+            "link": "get-involved/code-and-learn",
+            "text": "代码与学习"
+        },
+        "events": {
+          "link": "get-involved/events",
+          "text": "日程"
+        },
+        "conduct": {
+            "text": "管理"
+        }
+    },
+    "security": { 
+        "link": "security",        
+        "text": "安全" 
+    },
+    "blog": { 
+        "link": "blog",
+        "text": "博客" 
+    },
+    "releases": {
+        "title": "发布历史",
+        "downloads": "下载"
+    },
+    "links": {
+        "pages": {
+            "changelog": "更新日志"
+        }
+    }
+}
