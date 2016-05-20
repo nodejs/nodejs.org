@@ -71,6 +71,10 @@
         "package-manager": {
             "link": "download/package-manager",
             "text": "Installing Node.js via package manager"
+        },
+        "shasums":{
+          "link": "SHASUMS256.txt.asc",
+          "text": "Signed SHASUMS for release files"
         }
     },
     "docs": {
