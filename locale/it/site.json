@@ -9,6 +9,7 @@
     "getHelpIssue": "Chiedi aiuto",
     "by": "da",
     "all-downloads": "Tutti i download",
+    "nightly": "Build notturne",
     "feeds": [
         {
             "link": "feed/blog.xml",
@@ -27,7 +28,9 @@
             "text": "Minute Incontri TSC Node.js"
         }
     ],
-    "home": { "text": "Home" },
+    "home": {
+        "text": "Home"
+    },
     "about": {
         "link": "about",
         "text": "About",
@@ -46,6 +49,14 @@
         "resources": {
             "link": "about/resources",
             "text": "Risorse"
+        },
+        "foundation": {
+            "link": "foundation",
+            "text": "Fondazione"
+        },
+        "security": {
+            "link": "security",
+            "text": "Sicurezza"
         },
         "trademark": {
             "link": "about/trademark",
@@ -87,15 +98,15 @@
         "guides": {
             "link": "docs/guides",
             "text": "Guide"
-        },
-        "knowledge": {
-            "link": "knowledge",
-            "text": "Knowledge"
         }
     },
     "foundation": {
         "link": "foundation",
         "text": "Fondazione",
+        "casestudies": {
+            "link": "foundation/case-studies",
+            "text": "Risorse"
+        },
         "members": {
             "link": "foundation/members",
             "text": "Membri"
@@ -109,8 +120,8 @@
             "text": "Comitato tecnico"
         },
         "itn": {
-             "link": "foundation/in-the-news",
-             "text": "Notizie"
+            "link": "foundation/in-the-news",
+            "text": "Notizie"
         },
         "announce": {
             "link": "foundation/announcements",
@@ -120,6 +131,10 @@
     "getinvolved": {
         "link": "get-involved",
         "text": "Come partecipare",
+        "code-and-learn": {
+            "link": "get-involved/code-and-learn",
+            "text": "Programma + Impara"
+        },
         "contribute": {
             "link": "get-involved/contribute",
             "text": "Contribuire"
@@ -128,20 +143,23 @@
             "link": "get-involved/development",
             "text": "Sviluppo"
         },
-        "code-and-learn": {
-            "link": "get-involved/code-and-learn",
-            "text": "Programma + Impara"
-        },
         "events": {
-          "link": "get-involved/events",
-          "text": "Eventi"
+            "link": "get-involved/events",
+            "text": "Eventi"
         },
         "conduct": {
+            "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
             "text": "Condotta"
         }
     },
-    "security"   : { "link": "security",        "text": "Sicurezza" },
-    "blog"       : { "link": "blog",            "text": "Blog" },
+    "security": {
+        "link": "security",
+        "text": "Sicurezza"
+    },
+    "blog": {
+        "link": "blog",
+        "text": "Blog"
+    },
     "releases": {
         "title": "Cronologia delle Release",
         "downloads": "Download"
