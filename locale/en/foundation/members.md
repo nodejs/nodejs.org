@@ -111,7 +111,7 @@ You are required to have a GitHub account to register.
   <img alt="Yahoo!" class="memberlogo" src="/static/images/foundation/yahoo.png" />
 </a>
 <a target="_new" class="imagelink" href="//yld.io">
-  <img alt="yld!" class="memberlogo" src="/static/images/foundation/yldLogo2.png" />
+  <img alt="yld!" class="memberlogo" src="/static/images/foundation/yldLogo3.png" />
 </a>
 </div>
 
