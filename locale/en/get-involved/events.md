@@ -7130,6 +7130,14 @@ regions:
         location: "Marine's Memorial Theatre, 609 Sutter Street, San Francisco, CA 94102"
     meetups:
       - country: US
+        city: Austin
+        link: 'http://www.meetup.com/Austin-MEAN-Stack-Development/'
+        name: Austin MEAN Stack Dev Meetup
+        lon: -97.740280
+        group_photo:
+          photo_link: 'http://photos3.meetupstatic.com/photos/event/4/a/4/3/highres_449419011.jpeg'
+        lat: 30.275401
+      - country: US
         city: Fort Lauderdale
         link: 'http://www.meetup.com/web-development-frameworks/'
         name: Web Frameworks Meetup
