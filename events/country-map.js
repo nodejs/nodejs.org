@@ -75,5 +75,6 @@ module.exports = {
   VE: 'Latin America',
   AU: 'South Pacific',
   NZ: 'South Pacific',
-  SG: 'South Pacific'
+  SG: 'South Pacific',
+  MK: 'Republic of Macedonia'
 }
