@@ -47,6 +47,7 @@ module.exports = {
   LT: 'Europe',
   LU: 'Europe',
   ME: 'Europe',
+  MK: 'Europe',
   MT: 'Europe',
   NL: 'Europe',
   NO: 'Europe',
@@ -75,6 +76,5 @@ module.exports = {
   VE: 'Latin America',
   AU: 'South Pacific',
   NZ: 'South Pacific',
-  SG: 'South Pacific',
-  MK: 'Republic of Macedonia'
+  SG: 'South Pacific'
 }
