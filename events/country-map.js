@@ -47,6 +47,7 @@ module.exports = {
   LT: 'Europe',
   LU: 'Europe',
   ME: 'Europe',
+  MK: 'Europe',
   MT: 'Europe',
   NL: 'Europe',
   NO: 'Europe',
