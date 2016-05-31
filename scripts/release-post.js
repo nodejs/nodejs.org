@@ -24,23 +24,21 @@ const fs = require('fs')
 const path = require('path')
 const Handlebars = require('handlebars')
 const request = require('request')
-const changelogUrl = require('changelog-url')
-const semver = require('semver')
 
 const downloads = require('./helpers/downloads')
 
-function sendRequest (uri, method) {
+function sendRequest (opts) {
   return new Promise((resolve, reject) => {
-    request({
-      headers: { 'User-Agent': 'nodejs.org release blog post script' },
-      method: method,
-      uri: uri
-    }, (err, res, body) => {
+    const options = Object.assign({
+      headers: { 'User-Agent': 'nodejs.org release blog post script' }
+    }, opts)
+
+    request(options, (err, res, body) => {
       if (err) {
-        return reject(new Error(`Error requesting URL ${uri}: ${err.message}`))
+        return reject(new Error(`Error requesting URL ${options.url}: ${err.message}`))
       }
       if (res.statusCode !== 200) {
-        return reject(new Error(`Invalid status code (!= 200) while retrieving ${uri}: ${res.statusCode}`))
+        return reject(new Error(`Invalid status code (!= 200) while retrieving ${options.url}: ${res.statusCode}`))
       }
 
       resolve(body)
@@ -48,24 +46,13 @@ function sendRequest (uri, method) {
   })
 }
 
-function download (url) {
-  return sendRequest(url, 'GET')
-}
-
 function explicitVersion (version) {
   return version ? Promise.resolve(version) : Promise.reject()
 }
 
-function isLegacyVersion (version) {
-  return semver.satisfies(version, '< 1.0.0')
-}
-
 function findLatestVersion () {
-  return download('https://nodejs.org/dist/index.json')
-    .then(JSON.parse)
-    .then((versions) => {
-      return versions[0].version.substr(1)
-    })
+  return sendRequest({ url: 'https://nodejs.org/dist/index.json', json: true })
+    .then((versions) => versions[0].version.substr(1))
 }
 
 function fetchDocs (version) {
@@ -88,68 +75,64 @@ function fetchDocs (version) {
       author,
       versionPolicy,
       shasums,
-      files}
+      files
+    }
   })
 }
 
 function fetchAuthor (version) {
   return fetchChangelog(version)
     .then((section) => findAuthorLogin(version, section))
-    .then((author) => download(`https://api.github.com/users/${author}`))
-    .then(JSON.parse)
+    .then((author) => sendRequest({
+      url: `https://api.github.com/users/${author}`,
+      json: true
+    }))
     .then((githubRes) => githubRes.name)
 }
 
 function fetchChangelog (version) {
-  // matches a complete release section,
-  // support release sections with headers like:
-  // ## 2015-09-22, Version 4.1.1 (Stable), @rvagg
-  // ## 2015-10-07, Version 4.2.0 'Argon' (LTS), @jasnell
-  // 2015-12-04, Version 0.12.9 (LTS), @rvagg
-  const rxSection = isLegacyVersion(version)
-    ? new RegExp(`\\d{4}-\\d{2}-\\d{2}, Version ${version} \\([^\\)]+\\)[\\s\\S]*?(?=\\d{4}.\\d{2}.\\d{2})`)
-    : new RegExp(`## \\d{4}-\\d{2}-\\d{2}, Version ${version} ('\\w+' )?\\([^\\)]+\\)[\\s\\S]*?(?=## \\d{4})`)
+  const parts = version.split('.')
+  const releaseLine = parts[0] === '0'
+    ? parts.slice(0, 2).join('')
+    : parts[0]
 
-  return download(changelogUrl.rawUrl(version))
-    .then((data) => {
-      const matches = rxSection.exec(data)
-      return matches ? matches[0] : Promise.reject(new Error(`Couldn't find matching changelog for ${version}`))
-    })
+  return sendRequest({
+    url: `https://raw.githubusercontent.com/nodejs/node/master/doc/changelogs/CHANGELOG_V${releaseLine}.md`
+  }).then((data) => {
+    // matches a complete release section
+    const rxSection = new RegExp(`<a id="${version}"></a>\\n([\\s\\S]+?)(?:\\n<a id="|$)`)
+    const matches = rxSection.exec(data)
+    return matches
+      ? matches[1]
+      : Promise.reject(new Error(`Couldn't find matching changelog for ${version}`))
+  })
 }
 
 function fetchChangelogBody (version) {
-  const rxSectionBody = /(### )?(Notable [\s\S]*)/g
-
-  return fetchChangelog(version)
-    .then((section) => {
-      const bodyMatch = rxSectionBody.exec(section)
-      // ensure ### prefixed "Notable changes" header
-      // https://github.com/nodejs/nodejs.org/pull/551#issue-138257829
-      const body = bodyMatch ? `### ${bodyMatch[2]}` : ''
-
-      return bodyMatch
-        ? body
-        : Promise.reject(new Error(`Could not find changelog body of ${version} release`))
-    })
+  return fetchChangelog(version).then((section) => {
+    const rxSectionBody = /(### Notable [\s\S]*)/
+    const matches = rxSectionBody.exec(section)
+    return matches
+      ? matches[1]
+      : Promise.reject(new Error(`Could not find changelog body of ${version} release`))
+  })
 }
 
 function fetchVersionPolicy (version) {
-  // matches the policy for a given version (Stable, LTS etc) in the changelog
-  // ## 2015-10-07, Version 4.2.0 'Argon' (LTS), @jasnell
-  // 2015-12-04, Version 0.12.9 (LTS), @rvagg
-  const rxPolicy = new RegExp('^(## )?\\d{4}-\\d{2}-\\d{2}, Version [^(].*\\(([^\\)]+)\\)')
-
-  return fetchChangelog(version)
-    .then((section) => {
-      const matches = rxPolicy.exec(section)
-      return matches
-        ? matches[2]
-        : Promise.reject(new Error(`Could not find version policy of ${version} in its changelog`))
-    })
+  return fetchChangelog(version).then((section) => {
+    // matches the policy for a given version (Stable, LTS etc) in the changelog
+    // ## 2015-10-07, Version 4.2.0 'Argon' (LTS), @jasnell
+    // ## 2015-12-04, Version 0.12.9 (LTS), @rvagg
+    const rxPolicy = /^## ?\d{4}-\d{2}-\d{2}, Version [^(].*\(([^\)]+)\)/
+    const matches = rxPolicy.exec(section)
+    return matches
+      ? matches[1]
+      : Promise.reject(new Error(`Could not find version policy of ${version} in its changelog`))
+  })
 }
 
 function fetchShasums (version) {
-  return download(`https://nodejs.org/dist/v${version}/SHASUMS256.txt.asc`)
+  return sendRequest({ url: `https://nodejs.org/dist/v${version}/SHASUMS256.txt.asc` })
     .then(null, () => '[INSERT SHASUMS HERE]')
 }
 
@@ -164,15 +147,18 @@ function findAuthorLogin (version, section) {
   // ## 2016-03-08, Version 5.8.0 (Stable). @Fishrock123
   // ## 2015-10-13, Version 4.2.1 'Argon' (LTS), @jasnell
   // ## 2015-09-08, Version 4.0.0 (Stable), @rvagg
-  const rxReleaseAuthor = /^(## )?.*? \([^\)]+\)[,.] @(\S+)/g
+  const rxReleaseAuthor = /^## .*? \([^)]+\)[,.] @(\S+)/
   const matches = rxReleaseAuthor.exec(section)
-  return matches ? matches[2] : Promise.reject(new Error(`Couldn't find @author of ${version} release :(`))
+  return matches
+    ? matches[1]
+    : Promise.reject(new Error(`Couldn't find @author of ${version} release :(`))
 }
 
 function urlOrComingSoon (binary) {
-  return sendRequest(binary.url, 'HEAD').then(
+  return sendRequest({ url: binary.url, method: 'HEAD' }).then(
     () => `${binary.title}: ${binary.url}`,
-    () => `${binary.title}: *Coming soon*`)
+    () => `${binary.title}: *Coming soon*`
+  )
 }
 
 function renderPost (results) {
