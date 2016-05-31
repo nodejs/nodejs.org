@@ -46,6 +46,7 @@ right place. Explore our community resources to find out how you can help:
 
 ## International community sites and projects
 
+- [Cộng đồng Node.js Việt Nam](http://nodejs.vn)
 - [Australian Node.js blog &amp; developers listing](http://nodejs.org.au/)
 - [Brazilian community of Node.js](http://www.nodebr.com/)
 - [Chinese community](http://cnodejs.org)
