@@ -5744,13 +5744,21 @@ regions:
   - region: Latin America
     conferences:
       - name: NodeConf Argentina
-        desc: 'The first international Node.js conference in Latin American territory.'
+        desc: 'NodeConf Argentina is among the first international Node.js conferences taking place in Latin American territory.'
         dates:
           - 2016-11-18T11:00:00.000Z
           - 2016-11-19T11:00:00.000Z
         link: 'https://2016.nodeconf.com.ar/'
         lat: -34.6066339
         lon: -58.4110953
+      - name: NodeConf Brazil
+        desc: 'This is the first edition of NodeConf in Latin America and is also the first major event focused exclusively on Node.js of Brazil.'
+        dates:
+          - 2016-07-04T11:00:00.000Z
+          - 2016-07-05T11:00:00.000Z
+        link: 'http://brazil.nodeconf.com/'
+        lat: -23.5539247
+        lon: -46.6550992
     meetups:
       - country: CL
         city: Santiago
