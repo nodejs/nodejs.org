@@ -46,10 +46,10 @@ right place. Explore our community resources to find out how you can help:
 
 ## International community sites and projects
 
-- [Cộng đồng Node.js Việt Nam](http://nodejs.vn)
 - [Australian Node.js blog &amp; developers listing](http://nodejs.org.au/)
 - [Brazilian community of Node.js](http://www.nodebr.com/)
 - [Chinese community](http://cnodejs.org)
+- [Cộng đồng Node.js Việt Nam](http://nodejs.vn)
 - [German Node.js community](http://nodecode.de)
 - [Google+ Community of Node.js French users](https://plus.google.com/communities/113346206415381691435)
 - [Hungarian (Magyar) community](http://nodehun.blogspot.com/)
