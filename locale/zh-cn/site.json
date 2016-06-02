@@ -8,7 +8,7 @@
     "reportWebsiteIssue": "报告 Node.js 网站问题",
     "getHelpIssue": "获取帮助",
     "by": "于",
-    "all-downloads": "所有",
+    "all-downloads": "所有下载选项",
     "nightly": "每日构建",
     "feeds": [
         {
@@ -66,11 +66,11 @@
         "text": "下载",
         "releases": {
             "link": "download/releases",
-            "text": "下载／发布"
+            "text": "以往的版本"
         },
         "package-manager": {
             "link": "download/package-manager",
-            "text": "下载／包管理器"
+            "text": "使用包管理器安装 Node.js"
         }
     },
     "docs": {
@@ -149,13 +149,13 @@
             "text": "管理"
         }
     },
-    "security": { 
-        "link": "security",        
-        "text": "安全" 
+    "security": {
+        "link": "security",
+        "text": "安全"
     },
-    "blog": { 
+    "blog": {
         "link": "blog",
-        "text": "博客" 
+        "text": "博客"
     },
     "releases": {
         "title": "发布历史",
