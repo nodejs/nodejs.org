@@ -5,10 +5,10 @@ modules: "<code>NODE_MODULE_VERSION</code> 指的是 Node.js 的 ABI (applicatio
 ---
 
 ### io.js 与 Node.js
-从 1.x 到 3.x 版本被命名为 “io.js” 因为这依然属于 io.js 的分支的。从 Node.js 4.0.0 开始，之前版本的 io.js 与 Node.js 0.12.x 聚合到统一的 Node.js 版本发布中。
+1.x 到 3.x 版本被叫做 “io.js”，因为它们属于 io.js 的分支。从 Node.js 4.0.0 开始，之前版本的 io.js 与 Node.js 0.12.x 合并到统一的 Node.js 发行版中。
 
 <div class="highlight-box">
-    正在寻找某个大版本分支的最后发布版？
+    正在寻找某个大版本的最新版？
 
     <ul class="list-divider-pipe">
         <li><a href="https://nodejs.org/dist/latest-v6.x/">Node.js 6.x</a></li>
