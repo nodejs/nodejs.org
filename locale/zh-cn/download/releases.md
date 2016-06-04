@@ -1,14 +1,14 @@
 ---
 layout: download-releases.hbs
-title: Previous Releases
-modules: "<code>NODE_MODULE_VERSION</code> refers to the ABI (application binary interface) version number of Node.js, used to determine which versions of Node.js compiled C++ add-on binaries can be loaded in to without needing to be re-compiled. It used to be stored as hex value in earlier versions, but is now represented as an integer."
+title: 以往的版本
+modules: "<code>NODE_MODULE_VERSION</code> 指的是 Node.js 的 ABI (application binary interface) 版本号，用来确定编译 Node.js 的 C++ 库版本，以确定是否可以直接加载而不需重新编译。在早期版本中其作为一位十六进制值来储存，而现在表示为一个整数。"
 ---
 
-### io.js &amp; Node.js
-Releases 1.x through 3.x were called "io.js" as they were part of the io.js fork. As of Node.js 4.0.0 the former release lines of io.js converged with Node.js 0.12.x into unified Node.js releases.
+### io.js 与 Node.js
+1.x 到 3.x 版本被叫做 “io.js”，因为它们属于 io.js 的分支。从 Node.js 4.0.0 开始，之前版本的 io.js 与 Node.js 0.12.x 合并到统一的 Node.js 发行版中。
 
 <div class="highlight-box">
-    Looking for latest release of a version branch?
+    正在寻找某个大版本的最新版？
 
     <ul class="list-divider-pipe">
         <li><a href="https://nodejs.org/dist/latest-v6.x/">Node.js 6.x</a></li>
