@@ -19,9 +19,6 @@ You are required to have a GitHub account to register.
 ## Platinum
 
 <div style="text-align:center;">
-<a target="_new" class="imagelink" href="//famous.org/">
-  <img alt="Famous Industries" class="memberlogo" src="/static/images/foundation/famousLogo.jpg" />
-</a>
 <a target="_new" class="imagelink" href="http://ibm.com">
   <img alt="IBM" class="memberlogo" src="/static/images/foundation/ibmLogo.png" />
 </a>
