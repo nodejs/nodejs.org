@@ -14,7 +14,6 @@ Technical Steering Committee, and representatives elected by the individual memb
 * Silver-level Director: **Brian McCallister**, chief technology officer of platforms at Groupon.
 * Director: **Todd Moore**, vice president of open technology at IBM.
 * Director: **Rich Sharples**, senior director of product management at Red Hat.
-* Director: **Steve Newcomb**, founder and chief executive officer at Famous Industries.
 * Director: **Imad Sousou**, vice president and general manager at Intel.
 * Director: **Ashley Williams**, individual membership director.
 * Director: **Feross Aboukhadijeh**, individual membership director.
