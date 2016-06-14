@@ -45,9 +45,6 @@ You are required to have a GitHub account to register.
 <a target="_new" class="imagelink" href="//godaddy.com">
   <img alt="GoDaddy" class="memberlogo" src="/static/images/foundation/godaddyLogo.png" />
 </a>
-<a target="_new" class="imagelink" href="//modulus.io/">
-  <img alt="Modulus" class="memberlogo" src="/static/images/foundation/modulusLogo.png" />
-</a>
 <a target="_new" class="imagelink" href="//nodesource.com">
   <img alt="NodeSource" class="memberlogo" src="/static/images/foundation/nodesourceLogo.png" />
 </a>
