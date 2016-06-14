@@ -11,7 +11,7 @@ There are three types of documentation available on this website:
 
 * API reference documentation
 * ES6 features
-* frequently asked questions
+* Frequently asked questions
 
 ### API Reference Documentation
 
