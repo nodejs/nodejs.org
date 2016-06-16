@@ -29,7 +29,7 @@ You are required to have a GitHub account to register.
   <img alt="Joyent" class="memberlogo" src="/static/images/foundation/joyentLogo.svg" />
 </a>
 <a target="_new" class="imagelink" href="//microsoft.com">
-  <img alt="Microsoft" class="memberlogo" src="/static/images/foundation/microsoftLogo2.png" />
+  <img alt="Microsoft" class="memberlogo" src="/static/images/foundation/microsoftLogo.png" />
 </a>
 <a target="_new" class="imagelink" href="//paypal.com">
   <img alt="PayPal" class="memberlogo" src="/static/images/foundation/paypalLogo.png" />
@@ -60,7 +60,7 @@ You are required to have a GitHub account to register.
   <img alt="AppDynamics" class="memberlogo" src="/static/images/foundation/appdynamics.png" />
 </a>
 <a target="_new" class="imagelink" href="http://codefresh.io">
-  <img alt="CodeFresh" class="memberlogo" src="/static/images/foundation/codefreshLogo2.png" />
+  <img alt="CodeFresh" class="memberlogo" src="/static/images/foundation/codefreshLogo.png" />
 </a>
 <a target="_new" class="imagelink" href="//digitalocean.com">
   <img alt="DigitalOcean" class="memberlogo" src="/static/images/foundation/digitaloceanLogo.png" />
@@ -75,7 +75,7 @@ You are required to have a GitHub account to register.
   <img alt="Groupon" class="memberlogo" src="/static/images/foundation/grouponLogo.png" />
 </a>
 <a target="_new" class="imagelink" href="http://nearform.com">
-  <img alt="nearForm" class="memberlogo" src="/static/images/foundation/nearformLogo2.png" />
+  <img alt="nearForm" class="memberlogo" src="/static/images/foundation/nearformLogo.png" />
 </a>
 <a target="_new" class="imagelink" href="http://newrelic.com">
   <img alt="New Relic" class="memberlogo" src="/static/images/foundation/NewRelic.png" />
@@ -93,7 +93,7 @@ You are required to have a GitHub account to register.
   <img alt="SAP" class="memberlogo" src="/static/images/foundation/sapLogo.png" />
 </a>
 <a target="_new" class="imagelink" href="//saucelabs.com">
-  <img alt="Saucelabs" class="memberlogo" src="/static/images/foundation/saucelabsLogo3.png" />
+  <img alt="Saucelabs" class="memberlogo" src="/static/images/foundation/saucelabsLogo.png" />
 </a>
 <a target="_new" class="imagelink" href="http://sphinx.sg/">
   <img alt="Sphinx" class="memberlogo" src="/static/images/foundation/sphinx.png" />
@@ -105,7 +105,7 @@ You are required to have a GitHub account to register.
   <img alt="Yahoo!" class="memberlogo" src="/static/images/foundation/yahoo.png" />
 </a>
 <a target="_new" class="imagelink" href="//yld.io">
-  <img alt="yld!" class="memberlogo" src="/static/images/foundation/yldLogo3.png" />
+  <img alt="yld!" class="memberlogo" src="/static/images/foundation/yldLogo.png" />
 </a>
 </div>
 
