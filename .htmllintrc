@@ -8,5 +8,6 @@
   "img-req-alt": false,
   "indent-style": "spaces",
   "indent-width": 2,
+  "lang-style": false,
   "tag-bans": []
 }
