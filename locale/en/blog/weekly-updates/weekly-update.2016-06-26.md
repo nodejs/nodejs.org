@@ -31,6 +31,6 @@ If you have spotted or written something about Node.js, do come over to our [Eva
 
 ### Upcoming Events
 
-* [NodeConf Argentina](https://2016.nodeconf.com.ar) - 18 - 19 November, 2016
+* [NodeConf Argentina](https://2016.nodeconf.com.ar): 18 - 19 November, 2016
 
 Have an event about Node.js coming up? You can put your events here through the [Evangelism team repo](https://github.com/nodejs/evangelism) and announce it in the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.
