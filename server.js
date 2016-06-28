@@ -10,7 +10,8 @@ const chokidar = require('chokidar')
 const mount = st({
   path: path.join(__dirname, 'build'),
   cache: false,
-  index: 'index.html'
+  index: 'index.html',
+  passthrough: true
 })
 
 const build = require('./build')
@@ -33,6 +34,28 @@ const opts = {
 const locales = chokidar.watch(path.join(__dirname, 'locale'), opts)
 const layouts = chokidar.watch(path.join(__dirname, 'layouts'), opts)
 const statics = chokidar.watch(path.join(__dirname, 'static'), opts)
+
+// Redirect mechanism meant as a fix for languages where some pages
+// has not translated yet, therefore redirect to the english equivalent,
+// which ofc isn't the correct language, but better than a 404-page
+function redirectToEnglishUrl (req, res) {
+  return () => {
+    const isAlreadyEnglish = req.url.startsWith('/en')
+    const urlContainsLanguage = req.url.split('/').length > 2
+
+    if (isAlreadyEnglish || !urlContainsLanguage) {
+      res.writeHead(404, 'Not found')
+      return res.end()
+    }
+
+    let englishUrl = req.url.replace(/^\/\w+\//, '/en/')
+
+    res.writeHead(302, {
+      location: englishUrl
+    })
+    res.end()
+  }
+}
 
 // Gets the locale name by path.
 function getLocale (filePath) {
@@ -65,7 +88,9 @@ statics.on('add', (filePath) => {
 })
 
 // Initializes the server and mounts it in the generated build directory.
-http.createServer(mount).listen(port, () => console.log(`http://localhost:${port}/en/`))
+http.createServer((req, res) => {
+  mount(req, res, redirectToEnglishUrl(req, res))
+}).listen(port, () => console.log(`http://localhost:${port}/en/`))
 
 // Start the initial build of static HTML pages
 build.fullBuild()
