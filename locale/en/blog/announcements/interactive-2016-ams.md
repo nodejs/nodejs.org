@@ -66,6 +66,7 @@ Experts from the world’s leading companies and most important open source proj
 
 ## Workshops
 
+* Deploying Node.js applications using plain old Linux from **Luke Bond of YLD**
 * Build a real-time multiplayer chess game with Socket.io from **David Washington of Microsoft**
 * Isomorphic JavaScript with React + Express from **Azat Mardan of Capital One**
 
