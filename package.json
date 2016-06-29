@@ -1,6 +1,6 @@
 {
   "name": "nodejs.org",
-  "version": "1.0.0",
+  "private": true,
   "description": "Nodejs.org website",
   "homepage": "https://nodejs.org",
   "scripts": {
