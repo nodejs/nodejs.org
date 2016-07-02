@@ -210,6 +210,22 @@ regions:
         desc: Yearly JavaScript community conference.
         lat: 22.5341176
         lon: 113.9064642
+      - name: Node.js Live Bangalore
+        dates:
+          - 2016-03-19T00:00:00.000Z
+        link: 'http://live.nodejs.org/events/bangalore.html'
+        desc: Global event bringing together local Node.js developers around the world.
+        lat: 12.9149717
+        lon: 77.6831641
+        location: 'Wipro, Tower S4, 5th floor SJP 2, Auditorium'
+      - name: Node.js Live Beijing
+        dates:
+          - 2016-05-21T00:00:00.000Z
+        link: 'http://live.nodejs.org/events/beijing.html'
+        desc: Global event bringing together local Node.js developers around the world.
+        lat: 39.9795461
+        lon: 116.308087
+        location: 'Microsoft Beijing West Campus Tower 1, Multi-Purpose Room'
     meetups:
       - country: HK
         city: Hong Kong
@@ -2000,6 +2016,22 @@ regions:
         location: 'Radial System V, Berlin, Germany.'
         lat: 52.5102922
         lon: 13.4286193
+      - name: Node.js Live Paris
+        dates:
+          - 2016-04-14T00:00:00.000Z
+        link: 'http://live.nodejs.org/events/paris.html'
+        desc: Global event bringing together local Node.js developers around the world.
+        lat: 48.9066024
+        lon: 2.261704
+        location: 'IBM Client Center Paris'
+      - name: Node.js Live London
+        dates:
+          - 2016-07-21T00:00:00.000Z
+        link: 'http://live.nodejs.org/events/london.html'
+        desc: Global event bringing together local Node.js developers around the world.
+        lat: 51.5185092
+        lon: -0.0883093
+        location: 'CodeNode'
     meetups:
       - country: IT
         city: Roma
@@ -7145,6 +7177,30 @@ regions:
         lat: 37.788678
         lon: -122.4126467
         location: "Marine's Memorial Theatre, 609 Sutter Street, San Francisco, CA 94102"
+      - name: Node.js Live Los Angeles
+        dates:
+          - 2016-02-25T00:00:00.000Z
+        link: 'http://live.nodejs.org/events/los-angeles.html'
+        desc: Global event bringing together local Node.js developers around the world.
+        lat: 34.0975926
+        lon: -118.3302419
+        location: 'ArcLight Cinemas'
+      - name: Node.js Live Chicago
+        dates:
+          - 2016-06-22T00:00:00.000Z
+        link: 'http://live.nodejs.org/events/chicago.html'
+        desc: Global event bringing together local Node.js developers around the world.
+        lat: 41.8888539
+        lon: -87.6337049
+        location: 'Old Crow Smokehouse'
+      - name: Node.js Live Boston
+        dates:
+          - 2016-08-24T00:00:00.000Z
+        link: 'http://live.nodejs.org/events/boston.html'
+        desc: Global event bringing together local Node.js developers around the world.
+        lat: 42.3522754
+        lon: -71.0475042
+        location: 'District Hall'
     meetups:
       - country: US
         city: Austin
