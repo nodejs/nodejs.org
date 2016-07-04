@@ -3,15 +3,17 @@
 const semver = require('semver')
 
 module.exports = (version) => {
-  if (!version) { return '' }
+  if (!semver.valid(version)) return ''
 
-  if (semver.satisfies(version, '>= 1.0.0')) {
-    return `https://github.com/nodejs/node/blob/${version}/CHANGELOG.md`
-  }
+  const changelogs = 'https://github.com/nodejs/node/blob/master/doc/changelogs'
+  const clean = semver.clean(version)
+  const major = semver.major(clean)
+  const minor = semver.minor(clean)
 
-  // 0.12.8+ and 0.10.41+ releases come from the new repo
-  if (semver.satisfies(version, '~0.12.8 || ~0.10.41')) {
-    return `https://github.com/nodejs/node/blob/${version}/ChangeLog`
+  if (major >= 4) return `${changelogs}/CHANGELOG_V${major}.md#${clean}`
+  if (major >= 1) return `${changelogs}/CHANGELOG_IOJS.md#${clean}`
+  if (minor === 12 || minor === 10) {
+    return `${changelogs}/CHANGELOG_V${major}${minor}.md#${clean}`
   }
 
   return `https://github.com/nodejs/node-v0.x-archive/blob/${version}/ChangeLog`

@@ -32,7 +32,7 @@
               <a href="https://nodejs.org/{{site.locale}}/download/">{{ labels.other-downloads }}</a>
             </li>
             <li>
-              <a href="https://github.com/nodejs/node/blob/{{ project.latestVersions.lts.node }}/CHANGELOG.md">{{ labels.changelog }}</a>
+              <a href="{{changeloglink project.latestVersions.lts.node}}">{{ labels.changelog }}</a>
             </li>
             <li>
               <a href="{{majorapidocslink project.latestVersions.lts.node}}">{{ labels.api }}</a>
@@ -54,7 +54,7 @@
                 <a href="https://nodejs.org/{{site.locale}}/download/current/">{{ labels.other-downloads }}</a>
               </li>
               <li>
-                <a href="https://github.com/nodejs/node/blob/{{ project.latestVersions.current.node }}/CHANGELOG.md">{{ labels.changelog }}</a>
+                <a href="{{changeloglink project.latestVersions.current.node}}">{{ labels.changelog }}</a>
               </li>
               <li>
                 <a href="{{majorapidocslink project.latestVersions.current.node}}">{{ labels.api }}</a>
