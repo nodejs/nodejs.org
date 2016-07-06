@@ -26,6 +26,7 @@ can be found on the project's [GitHub profile](https://github.com/orgs/nodejs/pe
 * Ben Noordhuis ([bnoordhuis](https://github.com/bnoordhuis))
 * Bert Belder ([piscisaureus](https://github.com/piscisaureus))
 * Brian White ([mscdex](https://github.com/mscdex))
+* Bryan Hughes ([nebrius](https://github.com/nebrius))
 * Chris Dickinson ([chrisdickinson](https://github.com/chrisdickinson))
 * Colin Ihrig ([cjihrig](https://github.com/cjihrig))
 * Fedor Indutny ([indutny](https://github.com/indutny))
