@@ -9,6 +9,7 @@
     "getHelpIssue": "Get Help",
     "by": "by",
     "all-downloads": "All download options",
+    "shasums": "Signed SHASUMS for release files",
     "nightly": "Nightly builds",
     "feeds": [
         {
