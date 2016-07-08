@@ -1,0 +1,17 @@
+version: v1.5.0
+ignore: {}
+patch:
+  'npm:marked:20150520':
+    - marked:
+        patched: '2016-07-08T18:27:48.890Z'
+    - metalsmith-markdown > marked:
+        patched: '2016-07-08T18:27:48.890Z'
+  'npm:minimatch:20160620':
+    - metalsmith-collections > minimatch:
+        patched: '2016-07-08T18:27:48.890Z'
+    - metalsmith-stylus > minimatch:
+        patched: '2016-07-08T18:27:48.890Z'
+    - metalsmith > recursive-readdir > minimatch:
+        patched: '2016-07-08T18:27:48.890Z'
+    - metalsmith-stylus > stylus > glob > minimatch:
+        patched: '2016-07-08T18:27:48.890Z'
