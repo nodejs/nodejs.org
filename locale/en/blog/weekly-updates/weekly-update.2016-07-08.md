@@ -12,6 +12,12 @@ layout: blog-post.hbs
 
 * [Node v6.3.0 (Current)](https://nodejs.org/en/blog/release/v5.12.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
 
+### Node.js Foundation Announces Keynotes and Programming for Node.js Interactive Europe
+
+Event will showcase workshops, community and technical talks, and use cases that will inform the future development of Node.js and JavaScript.
+
+See https://nodejs.org/en/blog/announcements/interactive-2016-ams/ for more information.
+
 ### Binaries for Linux on Power Systems
 
 Community downloads now include binaries for Linux on Power Systems with big endian in addition to the existing little endian binaries.
