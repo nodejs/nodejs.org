@@ -27,7 +27,6 @@ See https://nodejs.org/en/download/.
 ### Community Updates
 
 * [Node Hero - Debugging Node.js Applications](https://blog.risingstack.com/node-hero-node-js-debugging-tutorial/): you can learn how to get started with Node.js and deliver software products using it.
-* [Node Hero - Node.js Unit Testing Tutorial](https://blog.risingstack.com/node-hero-node-js-unit-testing-tutorial/): you can learn how to get started with Node.js and deliver software products using it.
 If you have spotted or written something about Node.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.
 
 ### Upcoming Events
