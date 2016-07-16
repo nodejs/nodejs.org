@@ -24,9 +24,13 @@ The ride-sharing platform Uber has an ambitious goal: to make transportation
 as reliable as running water, everywhere and for everyone. Learn why Uber
 chose Node.js to power its platform and massive-matching system.
 
-Read the [full case study](/static/documents/casestudies/Nodejs-at-Uber.pdf).
+[Read the full case study.](/static/documents/casestudies/Nodejs-at-Uber.pdf).
 
 ## Node.js Helps Fusion Marketing Build Memorable Digital Experiences
 
-Fusion Marketing is a St. Louis, MO-based event marketing firm that specializes in creating custom interactive experiences. Node.js Everywhere has powered Fusion's digital expansion from developing app APIs to a 360 degree physical interactive group.
-Read the [full case study](/static/documents/casestudies/Node_CaseStudy_Fusion_Final.pdf)
+Fusion Marketing is a St. Louis, MO-based event marketing firm that specializes
+in creating custom interactive experiences. Node.js Everywhere has powered
+Fusion's digital expansion from developing app APIs to a 360 degree physical
+interactive group.
+
+[Read the full case study.](/static/documents/casestudies/Node_CaseStudy_Fusion_Final.pdf)
