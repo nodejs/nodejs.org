@@ -245,9 +245,9 @@ Their responsibilities are:
 
 The Addon API Working Group is responsible for maintaining the NAN project and
 corresponding _nan_ package in npm. The NAN project makes available an
-abstraction layer for native add-on authors for both Node.js and Node.js,
+abstraction layer for native add-on authors for Node.js,
 assisting in the writing of code that is compatible with many actively used
-versions of Node.js, Node.js, V8 and libuv.
+versions of Node.js, V8 and libuv.
 
 Their responsibilities are:
 
