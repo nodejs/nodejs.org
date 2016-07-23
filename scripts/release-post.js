@@ -103,7 +103,7 @@ function fetchChangelog (version) {
     const rxSection = new RegExp(`<a id="${version}"></a>\\n([\\s\\S]+?)(?:\\n<a id="|$)`)
     const matches = rxSection.exec(data)
     return matches
-      ? matches[1]
+      ? matches[1].trim()
       : Promise.reject(new Error(`Couldn't find matching changelog for ${version}`))
   })
 }

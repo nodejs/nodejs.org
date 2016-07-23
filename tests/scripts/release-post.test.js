@@ -117,6 +117,8 @@ test('fetchChangelog(<version>)', (t) => {
       .replyWithFile(200, changelogFixture)
 
     releasePost.fetchChangelog('4.1.1').then((changelog) => {
+      t.true(changelog.charAt(changelog.length - 1) !== '\n')
+      t.true(changelog.charAt(0) !== '\n')
       t.true(changelog.includes('Fixed a bug introduced in v4.1.0'))
       t.true(github.isDone(), 'githubusercontent.com was requested')
 
