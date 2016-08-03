@@ -14,6 +14,7 @@ const prism = require('metalsmith-prism')
 const stylus = require('metalsmith-stylus')
 const permalinks = require('metalsmith-permalinks')
 const pagination = require('metalsmith-yearly-pagination')
+const defaultsDeep = require('lodash.defaultsdeep')
 const marked = require('marked')
 const path = require('path')
 const fs = require('fs')
@@ -48,7 +49,7 @@ function i18nJSON (lang) {
   const defaultJSON = require(`./locale/${DEFAULT_LANG}/site.json`)
   const templateJSON = require(`./locale/${lang}/site.json`)
 
-  return Object.assign({}, defaultJSON, templateJSON)
+  return defaultsDeep({}, templateJSON, defaultJSON)
 }
 
 // This is the function where the actual magic happens. This contains the main
