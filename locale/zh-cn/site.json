@@ -71,6 +71,10 @@
         "package-manager": {
             "link": "download/package-manager",
             "text": "使用包管理器安装 Node.js"
+        },
+        "shasums": {
+          "link": "SHASUMS256.txt.asc",
+          "text": "查看已签名的 SHASUM"
         }
     },
     "docs": {
