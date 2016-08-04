@@ -57,15 +57,10 @@ function i18nJSON (lang) {
 // english one.
 function buildLocale (source, locale) {
   console.time(`[metalsmith] build/${locale} finished`)
-  const siteJSON = path.join(__dirname, 'locale', locale, 'site.json')
   const metalsmith = Metalsmith(__dirname)
   metalsmith
     // Sets global metadata imported from the locale's respective site.json.
-    .metadata({
-      site: require(siteJSON),
-      project: source.project,
-      i18n: i18nJSON(locale)
-    })
+    .metadata({ site: i18nJSON(locale), project: source.project })
     // Sets the build source as the locale folder.
     .source(path.join(__dirname, 'locale', locale))
     // Extracts the main menu and sub-menu links form locale's site.json and
@@ -180,7 +175,6 @@ function buildLocale (source, locale) {
         copyright: require('./scripts/helpers/copyright-year.js'),
         equals: require('./scripts/helpers/equals.js'),
         startswith: require('./scripts/helpers/startswith.js'),
-        i18n: require('./scripts/helpers/i18n.js'),
         changeloglink: require('./scripts/helpers/changeloglink.js'),
         strftime: require('./scripts/helpers/strftime.js'),
         apidocslink: require('./scripts/helpers/apidocslink.js'),

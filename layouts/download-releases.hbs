@@ -30,7 +30,7 @@
               </tr>
             </thead>
             <tbody>
-              {{#project.versions}}
+              {{#each project.versions}}
               <tr>
                 <td data-label="Version">{{name}} {{version}}</td>
                 <td data-label="LTS">{{#if lts}}{{lts}}{{/if}}</td>
@@ -40,17 +40,17 @@
                 <td data-label="NODE_MODULE_VERSION">{{modules}}</td>
                 <td class="download-table-last">
                   <a href="{{url}}">
-                    {{i18n 'releases.downloads'}}
+                    {{../site.releases.downloads}}
                   </a>
                   <a href="{{changeloglink version}}">
-                    {{i18n 'links.pages.changelog'}}
+                    {{../site.links.pages.changelog}}
                   </a>
                   <a href="{{apidocslink version}}">
-                    {{i18n 'docs.text'}}
+                    {{../site.docs.text}}
                   </a>
                 </td>
               </tr>
-              {{/project.versions}}
+              {{/each}}
             </tbody>
           </table>
           <p><small id="ref-1">[<a href="#backref-1">1</a>]: {{{modules}}}</small></p>
