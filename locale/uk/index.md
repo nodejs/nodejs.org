@@ -10,12 +10,12 @@ labels:
   current: Поточна
   lts: LTS
   tagline-current: Найновіші можливості
-  tagline-lts: Рекомандовано для більшості
+  tagline-lts: Рекомендовано для більшості
   changelog: Список змін
-  api: Документація API
+  api: Документація
   version-schedule-prompt: Або подивіться на
   version-schedule-prompt-link-text: графік LTS
 ---
 
-Node.js® — це JavaScript–оточення побудоване на JavaScript–рушієві [Chrome's V8](https://developers.google.com/v8/).
+Node.js® — це JavaScript–оточення побудоване на JavaScript–рушієві [Chrome V8](https://developers.google.com/v8/).
 Node.js використовує подієву, неблокуючу I/O модель, що робить його легким та ефективним. Пакетна екосистема Node.js, [npm](https://www.npmjs.com/), є найбільшою у світі екосистемою бібліотек з відкритим кодом.
