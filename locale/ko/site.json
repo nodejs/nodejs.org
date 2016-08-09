@@ -48,6 +48,14 @@
             "link": "about/resources",
             "text": "관련 자료"
         },
+        "foundation": {
+            "link": "foundation",
+            "text": "재단"
+        },
+        "security": {
+            "link": "security",
+            "text": "보안"
+        },
         "trademark": {
             "link": "about/trademark",
             "text": "트레이드마크"
@@ -63,6 +71,10 @@
         "package-manager": {
             "link": "download/package-manager",
             "text": "패키지 관리자를 통한 Node.js 설치"
+        },
+        "shasums":{
+          "link": "SHASUMS256.txt.asc",
+          "text": "릴리스 파일에 서명된 SHASUMS"
         }
     },
     "docs": {
@@ -88,10 +100,6 @@
         "guides": {
             "link": "docs/guides",
             "text": "안내"
-        },
-        "knowledge": {
-            "link": "knowledge",
-            "text": "지식 베이스"
         }
     },
     "foundation": {
@@ -125,6 +133,10 @@
     "getinvolved": {
         "link": "get-involved",
         "text": "참여하기",
+        "code-and-learn": {
+            "link": "get-involved/code-and-learn",
+            "text": "코딩 + 배우기"
+        },
         "contribute": {
             "link": "get-involved/contribute",
             "text": "기여하기"
@@ -133,16 +145,13 @@
             "link": "get-involved/development",
             "text": "개발하기"
         },
-        "code-and-learn": {
-            "link": "get-involved/code-and-learn",
-            "text": "코딩 + 배우기"
-        },
         "events": {
           "link": "get-involved/events",
           "text": "이벤트"
         },
         "conduct": {
-            "text": "Conduct"
+            "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+            "text": "행동강령"
         }
     },
     "security"   : { "link": "security",        "text": "보안" },
