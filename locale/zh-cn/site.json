@@ -74,7 +74,7 @@
         },
         "shasums": {
           "link": "SHASUMS256.txt.asc",
-          "text": "查看已签名的 SHASUM"
+          "text": "查看发布文件的 SHASUM 签名"
         }
     },
     "docs": {
