@@ -18,6 +18,12 @@ preferences (current and future) for front end, back end and IoT developers.
 * [See the infographic.](/static/documents/2016-survey-infographic.png)
 * [Read the full report.](/static/documents/2016-survey-report.pdf)
 
+## Node.js Helps NASA Keep Astronauts Safe and Data Accessible
+
+Collin Estes is the Director of Software Engineering and Chief Architect at Mathematical Research Institute Technologies (MRI Technologies), who partners with United Technologies Corporation Aerospace Systems, the company that creates and maintains the spacesuits for extra vehicular activity (EVA) missions at NASA. He and his team took on the challenge of creating an end-to-end system for data on the full lifecycle of spacesuits. He chose Node.js to make it work.
+
+[Read the full case study.](/static/documents/casestudies/Node_CaseStudy_Nasa_FNL.pdf).
+
 ## Node.js Drives Major Scale and Reliability at Uber
 
 The ride-sharing platform Uber has an ambitious goal: to make transportation
