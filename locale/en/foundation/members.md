@@ -59,11 +59,17 @@ You are required to have a GitHub account to register.
 <a target="_new" class="imagelink" href="http://appdynamics.com">
   <img alt="AppDynamics" class="memberlogo" src="/static/images/foundation/appdynamics.png" />
 </a>
+<a target="_new" class="imagelink" href="http://cars.com">
+  <img alt="Cars.com" class="memberlogo" src="/static/images/foundation/cars.png" />
+</a>
 <a target="_new" class="imagelink" href="http://codefresh.io">
   <img alt="CodeFresh" class="memberlogo" src="/static/images/foundation/codefreshLogo.png" />
 </a>
 <a target="_new" class="imagelink" href="//digitalocean.com">
   <img alt="DigitalOcean" class="memberlogo" src="/static/images/foundation/digitaloceanLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="https://www.dynatrace.com">
+  <img alt="Dynatrace" class="memberlogo" src="/static/images/foundation/dynatrace.png" />
 </a>
 <a target="_new" class="imagelink" href="//fidelity.com">
   <img alt="Fidelity" class="memberlogo" src="/static/images/foundation/fidelityLogo.png" />
