@@ -32,17 +32,17 @@ layout: contribute.hbs
 
 ## Guiding Principles
 
-The Fundamental goal of the Node.js Project is to provide a JavaScript-based application development platform that is *current*, *reliable* and *stable*.
+The fundamental goal of the Node.js project is to provide a JavaScript-based application development platform that is current, reliable, and stable.
 
-Contributors to Node.js work in concert with one another *on behalf of* the Community of users who build their applications and businesses on top of the Node.js platform. Accordingly, contributors must demonstrate an ongoing commitment, not only to the Project, but to the stability and vitality of the Community as a whole.
+Contributors to Node.js work on behalf of the community of users who build their applications and businesses with the Node.js platform. Accordingly, contributors must demonstrate an ongoing commitment, not only to the Project, but to the stability and vitality of the community as a whole.
 
-It is vital that users trust the Contributors to have their best interests in mind while making decisions affecting the overall direction of the platform. This means having defined guidelines, stable APIs, a clear roadmap, and a predictable release schedule. The user community and developer ecosystem must be included in the decision making process.
+It is vital that users trust the contributors to have their best interests in mind while making decisions affecting the overall direction of the platform. This means having defined guidelines, stable APIs, a clear roadmap, and a predictable release schedule. The user community and developer ecosystem must be included in the decision-making process.
 
-Adoption of new capabilities and features within Node.js must be carefully balanced by the expressed needs of the users and the community. Change just for the sake of change must be avoided and a guaranteed long term support policy must be established.
+Adoption of new capabilities and features within Node.js must be carefully balanced by the expressed needs of the community. Change just for the sake of change must be avoided and a guaranteed long term support policy must be established.
 
 Node.js owes much of its success to the existing ecosystem of module and add-on developers. The Node.js project should do everything it can to support the continued growth and stability of that ecosystem. This includes, but is not limited to, keeping Node.js focused on providing a minimal kernel of core functionality while deferring, as much as possible, additional capabilities and features to add-on modules or applications.
 
-In order to best serve the Node.js Community as a whole, the development, release and issue management processes adopted by the Node.js Foundation TSC must reflect these guiding principles.
+In order to best serve the Node.js community as a whole, the development, release, and issue management processes adopted by the Node.js Foundation TSC must reflect these guiding principles.
 
 
 ## Contributing
