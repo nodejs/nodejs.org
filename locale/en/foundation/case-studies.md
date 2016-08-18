@@ -22,7 +22,7 @@ preferences (current and future) for front end, back end and IoT developers.
 
 Collin Estes is the Director of Software Engineering and Chief Architect at Mathematical Research Institute Technologies (MRI Technologies), who partners with United Technologies Corporation Aerospace Systems, the company that creates and maintains the spacesuits for extra vehicular activity (EVA) missions at NASA. He and his team took on the challenge of creating an end-to-end system for data on the full lifecycle of spacesuits. He chose Node.js to make it work.
 
-[Read the full case study.](/static/documents/casestudies/Node_CaseStudy_Nasa_FNL.pdf).
+[Read the full case study.](/static/documents/casestudies/Node_CaseStudy_Nasa_FNL.pdf)
 
 ## Node.js Drives Major Scale and Reliability at Uber
 
@@ -30,7 +30,7 @@ The ride-sharing platform Uber has an ambitious goal: to make transportation
 as reliable as running water, everywhere and for everyone. Learn why Uber
 chose Node.js to power its platform and massive-matching system.
 
-[Read the full case study.](/static/documents/casestudies/Nodejs-at-Uber.pdf).
+[Read the full case study.](/static/documents/casestudies/Nodejs-at-Uber.pdf)
 
 ## Node.js Helps Fusion Marketing Build Memorable Digital Experiences
 
@@ -48,13 +48,13 @@ companies sharing their experiences with Node.js.
 
 ## Lowe's Digital (Episode 6)
 
-Enterprise Conversation with Rick Adams from Lowe's Digital. Rick and Mikeal will talk about how Lowe's got their start with Node.js and how they leverage it to create a new experience for their customers
+Enterprise Conversation with Rick Adams from Lowe's Digital. Rick and Mikeal will talk about how Lowe's got their start with Node.js and how they leverage it to create a new experience for their customers.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vBtEb_wn2r0" frameborder="0" allowfullscreen></iframe>
 
 ## Groupon (Episode 5)
 
-Mikeal talks to Adam Geitgey (www.groupon.com)   about Node.js infrastructure and its key role in helping the company expand globally and into areas like mobile over the last few years.
+Mikeal talks to Adam Geitgey (www.groupon.com) about Node.js infrastructure and its key role in helping the company expand globally and into areas like mobile over the last few years.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_QlfdYAShXo" frameborder="0" allowfullscreen></iframe>
 
@@ -66,7 +66,7 @@ Mikeal catches up with Skycatch (www.skycatch.com) to learn how Node.js helps th
 
 ## Netflix (Episode 3)
 
-In this episode, Kim and Yunong will talk about progress on their containerization of the edge services layer, and other things Netflix is doing with Node.js
+In this episode, Kim and Yunong will talk about progress on their containerization of the edge services layer, and other things Netflix is doing with Node.js.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oP7R20IYcs8" frameborder="0" allowfullscreen></iframe>
 
