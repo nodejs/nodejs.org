@@ -38,7 +38,7 @@ title: 패키지 매니저로 Node.js 설치하기
 * [FreeBSD와 OpenBSD](#freebsd-openbsd)
 * [Gentoo](#gentoo)
 * [NetBSD](#netbsd)
-* [openSUSE와 SLE](#opensuse-and-sle)
+* [openSUSE와 SLE](#opensuse-sle)
 * [OSX](#osx)
 * [SmartOS와 illumos](#smartos-illumos)
 * [Void Linux](#void-linux)
@@ -602,7 +602,7 @@ sudo zypper ar \
 sudo zypper in nodejs nodejs-devel
 ```
 -->
-## openSUSE and SLE
+## openSUSE와 SLE
 
 [openSUSE 원클릭으로 Node.js를 다운로드 받으세요](http://software.opensuse.org/download.html?project=devel%3Alanguages%3Anodejs&package=nodejs).
 
