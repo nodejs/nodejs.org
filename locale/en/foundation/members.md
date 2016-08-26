@@ -71,9 +71,6 @@ You are required to have a GitHub account to register.
 <a target="_new" class="imagelink" href="https://www.dynatrace.com">
   <img alt="Dynatrace" class="memberlogo" src="/static/images/foundation/dynatrace.png" />
 </a>
-<a target="_new" class="imagelink" href="//fidelity.com">
-  <img alt="Fidelity" class="memberlogo" src="/static/images/foundation/fidelityLogo.png" />
-</a>
 <a target="_new" class="imagelink" href="https://google.com">
   <img alt="Google" class="memberlogo" src="/static/images/foundation/googleLogo.png" />
 </a>
