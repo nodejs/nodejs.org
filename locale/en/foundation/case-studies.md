@@ -21,7 +21,7 @@ preferences (current and future) for front end, back end and IoT developers.
 ## Presentation - The Enterprise Case for Node.js
 The Node.js Foundation has consolidated all the best thinking around why enterprises should consider Node.js for their systems of engagement in this short presentation.
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/cdqy9ghQ1Bl48A" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/NodejsFoundation/the-enterprise-case-for-nodejs-65523959" title="The Enterprise Case for Node.js" target="_blank">The Enterprise Case for Node.js</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/NodejsFoundation">NodejsFoundation</a></strong> </div>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/cdqy9ghQ1Bl48A" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> 
 
 ## Node.js Helps NASA Keep Astronauts Safe and Data Accessible
 
