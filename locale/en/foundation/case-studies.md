@@ -18,6 +18,11 @@ preferences (current and future) for front end, back end and IoT developers.
 * [See the infographic.](/static/documents/2016-survey-infographic.png)
 * [Read the full report.](/static/documents/2016-survey-report.pdf)
 
+## Presentation - The Enterprise Case for Node.js
+The Node.js Foundation has consolidated all the best thinking around why enterprises should consider Node.js for their systems of engagement in this short presentation.
+
+<iframe width="560" height="400" src="//www.slideshare.net/slideshow/embed_code/key/cdqy9ghQ1Bl48A" frameborder="0" allowfullscreen></iframe>
+
 ## Node.js Helps NASA Keep Astronauts Safe and Data Accessible
 
 Collin Estes is the Director of Software Engineering and Chief Architect at Mathematical Research Institute Technologies (MRI Technologies), who partners with United Technologies Corporation Aerospace Systems, the company that creates and maintains the spacesuits for extra vehicular activity (EVA) missions at NASA. He and his team took on the challenge of creating an end-to-end system for data on the full lifecycle of spacesuits. He chose Node.js to make it work.
