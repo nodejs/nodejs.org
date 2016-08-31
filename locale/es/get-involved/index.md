@@ -59,3 +59,4 @@ a contribuir de cualquier forma posible. Si usted quiere [reportar un error](htt
 - [Comunidad de Taiwán](http://nodejs.tw)
 - [Comunidad de Nicaragua de Node.js](http://nodenica.com/)
 - [Comunidad Coreana de Node.js](http://nodejs.github.io/nodejs-ko/)
+- [Grupo de Turquía en turco (Türkçe)](http://node.ist/)
