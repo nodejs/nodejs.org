@@ -19,7 +19,7 @@ Last year, the core team devised a Long-term Support (LTS) and release plan to b
 1. Stability
 2. Progress
 
-The io.js diversion was useful for many reasons, including the opportunity we had to lean into this "progress" thing. We learned that there is a necessary trade-off between "stability" and the rapid iteration of the platform. Some of it was manageable but much was unavoidable. Breaking the entire C++ add-on ecosystem each time we upgraded V8 turned out to be quite painful for the Node.js package ecosystem. This is due to the heavy reliance on compiled native components in Node.js userland and the difficulty Node.js has had in maintaining [API](wikipedia API) and [ABI](wikipedia ABI) stability while upgrading V8.
+The io.js diversion was useful for many reasons, including the opportunity we had to lean into this "progress" thing. We learned that there is a necessary trade-off between "stability" and the rapid iteration of the platform. Some of it was manageable but much was unavoidable. Breaking the entire C++ add-on ecosystem each time we upgraded V8 turned out to be quite painful for the Node.js package ecosystem. This is due to the heavy reliance on compiled native components in Node.js userland and the difficulty Node.js has had in maintaining [API](https://en.wikipedia.org/wiki/Application_programming_interface) and [ABI](https://en.wikipedia.org/wiki/Application_binary_interface) stability while upgrading V8.
 
 On the flip side, it was clear that v0.10 went on far too long and the slow downward trend in release frequency was hurting the platform's reputation for being innovative and _modern_ and was preventing iteration on the features and fixes that Node.js actually needed. This was one of the key reasons io.js even existed.
 
