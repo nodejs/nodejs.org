@@ -60,3 +60,4 @@ a contribuir de cualquier forma posible. Si usted quiere [reportar un error](htt
 - [Comunidad de Nicaragua de Node.js](http://nodenica.com/)
 - [Comunidad Coreana de Node.js](http://nodejs.github.io/nodejs-ko/)
 - [Grupo de Turquía en turco (Türkçe)](http://node.ist/)
+- [Comunidad en Facebook de usuarios Israelí de Node.js](https://www.facebook.com/groups/node.il/)

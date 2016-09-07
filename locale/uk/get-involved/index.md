@@ -58,3 +58,4 @@ layout: contribute.hbs
 - [Nicaragua Node.js community](http://nodenica.com/)
 - [Korean Node.js community](http://nodejs.github.io/nodejs-ko/)
 - [Turkey group in Turkish (Türkçe)](http://node.ist/)
+- [Facebook Community of Node.js Israeli users](https://www.facebook.com/groups/node.il/)
