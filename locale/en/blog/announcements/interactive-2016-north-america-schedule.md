@@ -1,6 +1,6 @@
 ---
 title: Node.js Foundation Announces Schedule for Second Annual Node.js Interactive North America
-date: 2016-09-27T16:00:00.000Z
+date: 2016-09-12T16:00:00.000Z
 status: publish
 category: Annoucements
 slug: interactive-2016-north-america-schedule
