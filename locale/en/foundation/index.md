@@ -45,10 +45,10 @@ The Node.js Foundation's mission is to enable widespread adoption and help accel
 - [2015-09-28](/static/documents/minutes/nodejs-foundation-board-meeting-2015-09-28.pdf)
 - [2015-11-02](/static/documents/minutes/nodejs-foundation-board-meeting-2015-11-02.pdf)
 - [2016-02-29](/static/documents/minutes/nodejs-foundation-board-meeting-2016-02-29.pdf)
-- [2016-04-25](/static/documents/minutes/nodejs-foundation-board-meeting-2016-04-25.pdf)
-- [2016-05-31](/static/documents/minutes/nodejs-foundation-board-meeting-2016-05-31.pdf)
-- [2016-06-27](/static/documents/minutes/nodejs-foundation-board-meeting-2016-06-27.pdf)
-- [2016-08-29](/static/documents/minutes/nodejs-foundation-board-meeting-2016-08-29.pdf)
+- [2016-04-25](/static/documents/minutes/nodejs-foundation-board-meeting-2016-04-25.rf)
+- [2016-05-31](/static/documents/minutes/nodejs-foundation-board-meeting-2016-05-31.rf)
+- [2016-06-27](/static/documents/minutes/nodejs-foundation-board-meeting-2016-06-27.rf)
+- [2016-08-29](/static/documents/minutes/nodejs-foundation-board-meeting-2016-08-29.rf)
 
 
 ## Contact
