@@ -32,6 +32,7 @@
   "standard": {
     "ignore": [
       "static/js/modernizr.custom.js",
+      "static/js/dnt_helper.js",
       "static/legacy/*"
     ]
   },
