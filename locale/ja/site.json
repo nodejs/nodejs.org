@@ -1,0 +1,169 @@
+{
+    "title": "Node.js",
+    "author": "Node.js 財団",
+    "url": "https://nodejs.org/ja/",
+    "locale": "ja",
+    "scrollToTop": "上部へスクロールする",
+    "reportNodeIssue": "Node.js の不具合を報告",
+    "reportWebsiteIssue": "サイトの不具合を報告",
+    "getHelpIssue": "サポート",
+    "by": "by",
+    "all-downloads": "All download options",
+    "nightly": "Nightly builds",
+    "feeds": [
+        {
+            "link": "feed/blog.xml",
+            "text": "Node.js ブログ"
+        },
+        {
+            "link": "feed/releases.xml",
+            "text": "Node.js ブログ: リリース"
+        },
+        {
+            "link": "feed/vulnerability.xml",
+            "text": "Node.js ブログ: 脆弱性のレポート"
+        },
+        {
+            "link": "feed/tsc-minutes.xml",
+            "text": "Node.js 技術委員会資料"
+        }
+    ],
+    "home": { "text": "ホーム" },
+    "about": {
+        "link": "about",
+        "text": "アバウト",
+        "governance": {
+            "link": "about/governance",
+            "text": "委員会"
+        },
+        "workinggroups": {
+            "link": "about/working-groups",
+            "text": "ワーキンググループ"
+        },
+        "releases": {
+            "link": "about/releases",
+            "text": "リリース"
+        },
+        "resources": {
+            "link": "about/resources",
+            "text": "リソース"
+        },
+        "foundation": {
+            "link": "foundation",
+            "text": "財団"
+        },
+        "security": {
+            "link": "security",
+            "text": "セキュリティ"
+        },
+        "trademark": {
+            "link": "about/trademark",
+            "text": "トレードマーク"
+        }
+    },
+    "download": {
+        "link": "download",
+        "text": "ダウンロード",
+        "releases": {
+            "link": "download/releases",
+            "text": "バージョンの一覧"
+        },
+        "package-manager": {
+            "link": "download/package-manager",
+            "text": "パッケージマネージャを使用したダウンロード"
+        },
+        "shasums":{
+          "link": "SHASUMS256.txt.asc",
+          "text": "リリースファイルのための SHASUM 署名"
+        }
+    },
+    "docs": {
+        "link": "docs",
+        "text": "ドキュメント",
+        "es6": {
+            "link": "docs/es6",
+            "text": "ES6 について"
+        },
+        "faq": {
+            "link": "docs/faq",
+            "text": "よくある質問"
+        },
+        "api-lts": {
+            "link": "/dist/latest-v4.x/docs/api",
+            "subtext": "LTS",
+            "text": "%ver% API"
+        },
+        "api-current": {
+            "link": "/dist/latest-v6.x/docs/api",
+            "text": "%ver% API"
+        },
+        "guides": {
+            "link": "docs/guides",
+            "text": "ガイド"
+        }
+    },
+    "foundation": {
+        "link": "foundation",
+        "text": "財団",
+        "casestudies": {
+            "link": "foundation/case-studies",
+            "text": "リソース"
+        },
+        "members": {
+            "link": "foundation/members",
+            "text": "メンバー"
+        },
+        "board": {
+            "link": "foundation/board",
+            "text": "運営委員会"
+        },
+        "tsc": {
+            "link": "foundation/tsc",
+            "text": "技術委員会"
+        },
+        "itn": {
+             "link": "foundation/in-the-news",
+             "text": "ニュース"
+        },
+        "announce": {
+            "link": "foundation/announcements",
+            "text": "お知らせ"
+        }
+    },
+    "getinvolved": {
+        "link": "get-involved",
+        "text": "参加する",
+        "code-and-learn": {
+            "link": "get-involved/code-and-learn",
+            "text": "Code + Learn"
+        },
+        "contribute": {
+            "link": "get-involved/contribute",
+            "text": "貢献する"
+        },
+        "development": {
+            "link": "get-involved/development",
+            "text": "開発体制"
+        },
+        "events": {
+          "link": "get-involved/events",
+          "text": "イベント"
+        },
+        "conduct": {
+            "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+            "text": "行動規範"
+        }
+    },
+    "security"   : { "link": "security",        "text": "セキュリティ" },
+    "blog"       : { "link": "blog",            "text": "ニュース" },
+
+    "releases": {
+        "title": "過去のリリース",
+        "downloads": "ダウンロード"
+    },
+    "links": {
+        "pages": {
+            "changelog": "変更履歴"
+        }
+    }
+}
