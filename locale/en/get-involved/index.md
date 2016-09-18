@@ -47,7 +47,6 @@ right place. Explore our community resources to find out how you can help:
 ## International community sites and projects
 
 - [Australian Node.js blog &amp; developers listing](http://nodejs.org.au/)
-- [Brazilian community of Node.js](http://www.nodebr.com/)
 - [Chinese community](http://cnodejs.org)
 - [French Google+ Community of Node.js users](https://plus.google.com/communities/113346206415381691435)
 - [German Node.js community](http://nodecode.de)
@@ -56,11 +55,8 @@ right place. Explore our community resources to find out how you can help:
 - [Israeli Facebook group for Node.js](https://www.facebook.com/groups/node.il/)
 - [Japanese user group](http://nodejs.jp/)
 - [Korean Node.js community](http://nodejs.github.io/nodejs-ko/)
-- [New Zealand: Node.js for Kiwis](http://nodejs.geek.nz/)
 - [Nicaragua Node.js community](http://nodenica.com/)
 - [Russian website](http://node-center.ru/)
-- [Serbian Node.js community website](http://nodejs.rs/)
 - [Spanish language community](http://nodehispano.com)
-- [Taiwan community](http://nodejs.tw)
 - [Turkey group in Turkish (Türkçe)](http://node.ist/)
 - [Việt Nam Node.js community](http://nodejs.vn)
