@@ -246,7 +246,7 @@ function getSource (callback) {
           lts: latestVersion.lts(versions)
         },
         banner: {
-          visible: true,
+          visible: false,
           content: 'Important <a href="/en/blog/vulnerability/june-2016-security-releases/">security upgrades</a> for recent V8 vulnerability'
         }
       }
