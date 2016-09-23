@@ -224,11 +224,19 @@ Additionally, versions of **CentOS** and **Scientific Linux** corresponding to t
 
 Node.js is available through the ports system.
 
+**FreeBSD**:
+
 ```bash
 /usr/ports/www/node
 ```
 
-Development versions are also available using ports
+**OpenBSD**:
+
+```bash
+/usr/ports/lang/node
+```
+
+Development versions are also available using ports on FreeBSD
 
 ```bash
 cd /usr/ports/www/node-devel/ && make install clean
@@ -252,6 +260,11 @@ Or the development versions:
 pkg install node-devel
 ```
 
+Using [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD
+
+```bash
+pkg_add node
+```
 
 ## Gentoo
 
