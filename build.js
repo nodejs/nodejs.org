@@ -247,7 +247,7 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          content: 'Important <a href="/en/blog/vulnerability/june-2016-security-releases/">security upgrades</a> for recent V8 vulnerability'
+          content: 'Important <a href="/en/blog/vulnerability/september-2016-security-releases/">security upgrades</a> for recent OpenSSL and Node.js vulnerabilities'
         }
       }
     }
