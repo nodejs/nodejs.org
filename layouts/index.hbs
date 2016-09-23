@@ -83,41 +83,24 @@
     justify-content: space-around;
   }
 
-  .interactive-item {
+  #interactive > * {
     border: 20px solid transparent;
     min-width: 1px;
   }
 
   @media (max-width: 480px) {
-    #logo-center {
-      display:none;
-    }
     #interactive {
       flex-wrap: wrap;
-    }
-  }
-
-  @media (min-width: 481px) {
-    #logo-first {
-      display:none;
     }
   }
   </style>
 
   <div id="interactive-wrapper">
     <div id="interactive">
-      <span id="logo-first" class="interactive-item">
+      <span>
         <img src="/static/images/interactive/nodejs-interactive-logo-center.png" />
       </span>
-      <a class="interactive-item" href="http://events.linuxfoundation.org/events/node-interactive-europe">
-        <img src="/static/images/interactive/nodejs-interactive-hero-banner-left-eu.png"
-          alt="Node.js Interactive Europe, Amsterdam, Netherlands, September 15-18, 2016"/>
-      </a>
-      <span id="logo-center" class="interactive-item">
-        <img src="/static/images/interactive/nodejs-interactive-logo-center.png"
-          alt="Node.js Interactive" />
-      </span>
-      <a class="interactive-item" href="http://events.linuxfoundation.org/events/node-interactive">
+      <a href="http://events.linuxfoundation.org/events/node-interactive">
         <img src="/static/images/interactive/nodejs-interactive-hero-banner-right-na.png"
           alt="Node.js Interactive North America, Austin, Texas, November 29 - Dec 2, 2016" />
       </a>
