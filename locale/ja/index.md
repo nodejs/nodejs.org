@@ -15,5 +15,5 @@ labels:
   api: API ドキュメント
 ---
 
-Node.js® は、[Chrome の V8 JavaScript エンジン](https://developers.google.com/v8/) で動作するJavaScript環境です。
+Node.js® は、[Chrome の V8 JavaScript エンジン](https://developers.google.com/v8/) で動作する JavaScript 環境です。
 Node.js は、軽量で効率的に動作する非同期型のイベント駆動モデルを採用しています。 Node.js のパッケージ管理マネージャである [npm](https://www.npmjs.com/) は、世界で最も大きなオープンソースのライブラリエコシステムです。
