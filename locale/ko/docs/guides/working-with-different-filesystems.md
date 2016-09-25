@@ -1,5 +1,5 @@
 ---
-title: 여러 파일시스템에서 작업하기
+title: 여러 파일 시스템에서 작업하기
 layout: docs.hbs
 ---
 
@@ -10,10 +10,12 @@ Node exposes many features of the filesystem. But not all filesystems are alike.
 The following are suggested best practices to keep your code simple and safe
 when working with different filesystems.
 -->
-# 여러 파일시스템에서 작업하기
 
-Node는 파일시스템에서 다양한 기능을 제공합니다. 하지만 모든 파일시스템이 같은 것은 아닙니다.
-여러 파일시스템에서 동작할 때 코드를 간단하고 안전하게 유지하기 위한 베스트 프렉티스를 아래에서 제시합니다.
+# 여러 파일 시스템에서 작업하기
+
+Node는 파일 시스템에서 다양한 기능을 제공합니다. 하지만 모든 파일 시스템이 같은 것은 아닙니다.
+여러 파일 시스템에서 동작할 때 코드를 간단하고 안전하게 유지하기 위한 모범 예제를
+아래에서 제시합니다.
 
 <!--
 ## Filesystem Behavior
@@ -42,25 +44,26 @@ are more difficult to probe.
 Remember that some users may have different filesystems mounted at various paths
 in the working tree.
 -->
-## 파일시스템의 동작
 
-파일시스템을 사용하기 전에 파일시스템이 어떻게 동작하는지 알아야 합니다. 다른 파일시스템은
-다르게 동작하고 파일시스템마다 기능이 더 많거나 적거나 합니다. 예를 들어 대소문자 구분/비구분,
+## 파일 시스템의 동작
+
+파일 시스템을 사용하기 전에 파일 시스템이 어떻게 동작하는지 알아야 합니다. 다른 파일 시스템은
+다르게 동작하고 파일 시스템마다 기능이 더 많거나 적거나 합니다. 예를 들어 대소문자 구분/비구분,
 대소문자 유지, 유니코드 형식 보존, 타임스탬프 처리방법, 속성 확장, 아이노드, 유닉스 권한,
 데이터 스트림 대안 등이 있습니다.
 
 `process.platform`에서 파일 시스템의 동작을 추측하는 것을 주의해야 합니다. 예를 들어 사용자가
 대소문자를 구별하는 파일 시스템(HFSX)를 사용할 수도 있으므로 프로그램이 Darwin에서 동작하고 있다고
-대소문자를 구별하지 않는 파일시스템(HFS+)을 사용한다고 가정해서는 안 됩니다. 유사하게 유닉스 권한이나
+대소문자를 구별하지 않는 파일 시스템(HFS+)을 사용한다고 가정해서는 안 됩니다. 유사하게 유닉스 권한이나
 아이노드를 지원하지 않는 외장 드라이브나 USB, 네트워크 드라이브를 사용할 수도 있으므로 Linux에서
-돌아가고 있다고 파일시스템이 유닉스 권한이나 아이노드를 지원한다고 가정해서는 안 됩니다.
+돌아가고 있다고 파일 시스템이 유닉스 권한이나 아이노드를 지원한다고 가정해서는 안 됩니다.
 
-운영체제로 파일시스템의 동작을 쉽게 예상할 수 없지만 모두 필요 없는 것은 아닙니다. 알려진 모든
-파일시스템과 동작의 목록을 관리하는 대신(절대 완료된 목록을 갖지 못할 것입니다.) 파일시스템이
+운영체제로 파일 시스템의 동작을 쉽게 예상할 수 없지만 모두 필요 없는 것은 아닙니다. 알려진 모든
+파일 시스템과 동작의 목록을 관리하는 대신(절대 완료된 목록을 갖지 못할 것입니다.) 파일 시스템이
 실제로 어떻게 동작하는지 확인할 수 있습니다. 쉽게 확인할 수 있는 특정 기능의 존재 여부 만으로도
 확인하기 더 어려운 다른 기능의 동작을 예측하기에 대부분 충분합니다.
 
-일부 사용자는 워킹 트리의 다양한 경로에 여러 가지 파일시스템을 마운트해서
+일부 사용자는 워킹 트리의 다양한 경로에 여러 가지 파일 시스템을 마운트해서
 사용할 수도 있다는 것을 명심하세요.
 
 <!--
@@ -88,18 +91,19 @@ A lowest common denominator approach would tend to try to create a portable
 program by using only "portable" system calls. This leads to programs that are
 leaky and not in fact portable.
 -->
+
 ## 최소 공통분모 접근 피하기
 
 모든 파일명을 대문자로 정규화하고 모든 파일명을 NFC 유니코드 형식으로 정규화하고 파일의 타임스탬프를
-1초 해상도로 정규화함으로써 파일시스템의 최소 공통분모로 프로그램이 동작하게 하고 싶을 수도 있습니다.
+1초 해상도로 정규화함으로써 파일 시스템의 최소 공통분모로 프로그램이 동작하게 하고 싶을 수도 있습니다.
 이를 최소 공통분모 접근이라고 합니다.
 
-이렇게 하면 안 됩니다. 모든 부분에서 최소 공통분모의 특성과 정확히 같은 파일시스템에서만 안전하게
-사용할 수 있을 것입니다. 더 향상된 파일시스템에서는 사용자가 기대하는 방법으로 동작하지 않을 것이고
-파일시스템이나 타임스탭프 충돌이 발생할 것입니다. 복잡하게 의존하는 이벤트 사이에서 사용자 데이터를
+이렇게 하면 안 됩니다. 모든 부분에서 최소 공통분모의 특성과 정확히 같은 파일 시스템에서만 안전하게
+사용할 수 있을 것입니다. 더 향상된 파일 시스템에서는 사용자가 기대하는 방법으로 동작하지 않을 것이고
+파일 시스템이나 타임스탭프 충돌이 발생할 것입니다. 복잡하게 의존하는 이벤트 사이에서 사용자 데이터를
 잃어버리거나 훼손할 가능성이 아주 크고 해결할 수 없거나 어려운 버그를 만들 것입니다.
 
-2초나 24시간 타임스탬프 해상도만 가진 파일시스템을 나중에 지원해야 한다면 어떻게 할 것입니까?
+2초나 24시간 타임스탬프 해상도만 가진 파일 시스템을 나중에 지원해야 한다면 어떻게 할 것입니까?
 유니코드 표준이 정규화 알고리즘과 약간 다른 내용을 포함하게 된다면(이런 일은 과거에도 일어났습니다.)
 어떻게 할 것입니까?
 
@@ -145,6 +149,7 @@ But if you know that the filesystem does preserve case, then you should consider
 `ABC` to be a different filename to `abc`, when detecting file renames or if the
 filesystem is case-sensitive.
 -->
+
 ## 슈퍼셋 접근 도입
 
 슈퍼셋 접근으로 지원하는 각 플랫폼을 최상으로 사용하게 하세요. 예를 들어, 이식성 있는 백업 프로그램은
@@ -153,25 +158,25 @@ filesystem is case-sensitive.
 리눅스 시스템에서 유닉스 권한을 제대로 동기화해야 하고 윈도우 시스템이 유닉스 권한을 지원하지 않더라도
 유닉스 권한을 없애거나 바꾸면 안 됩니다.
 
-더 진보된 파일시스템처럼 동작하게 프로그램을 만들어서 여러 파일 시스템을 처리하세요. 대소문자 구별,
+더 진보된 파일 시스템처럼 동작하게 프로그램을 만들어서 여러 파일 시스템을 처리하세요. 대소문자 구별,
 대소문자 유지, 유니코드 형식 구별, 유니코드 형식 보존, 유닉스 권한, 고행상도 나노초 타임스탬프,
 확장 속성 등 가능한 모든 기능의 슈퍼셋을 지원하세요.
 
-프로그램이 대소문자를 보존하고 있다면 대소문자를 구별하지 않는 파일시스템을 사용해야 할 때 항상
+프로그램이 대소문자를 보존하고 있다면 대소문자를 구별하지 않는 파일 시스템을 사용해야 할 때 항상
 대소문자를 구별하지 않도록 구현할 수 있습니다. 하지만 프로그램이 대소문자를 유지하지 않는다면 대소문자를
-유지하는 파일시스템에서 안전하게 사용할 수 없을 것입니다. 유니코드 형식 보존과 타임스탬프 해상도
+유지하는 파일 시스템에서 안전하게 사용할 수 없을 것입니다. 유니코드 형식 보존과 타임스탬프 해상도
 보존에서도 마찬가지입니다.
 
-파일시스템에 대소문자가 섞인 파일명을 준다면 받은 그대로의 파일명을 유지하세요. 파일시스템이
+파일 시스템에 대소문자가 섞인 파일명을 준다면 받은 그대로의 파일명을 유지하세요. 파일 시스템이
 유니코드 형식이나 NFC, NFD(혹은 NFKC나 NFKD)가 섞인 파일명을 준다면 주어진 바이트 순서
-그대로의 파일명을 유지하세요. 파일시스템이 밀리 초 단위의 타임스탬프를 준다면 밀리 초단위의 해상도로
+그대로의 파일명을 유지하세요. 파일 시스템이 밀리 초 단위의 타임스탬프를 준다면 밀리 초단위의 해상도로
 타임스탬프를 유지하세요.
 
-프로그램이 돌아가는 파일시스템의 동작에서 필요로 하는 기능과 비교해서 기능이 더 부족한 파일시스템에서
-동작할 때 언제나 적절하게 기능을 줄일 수 있습니다. 파일시스템 유닉스 권한을 지원하지 않는 것을 알고
-있다면 작성한 유닉스 권한과 같은 권한을 읽으려고 하면 안 됩니다. 파일시스템이 대소문자를 보존하지
+프로그램이 돌아가는 파일 시스템의 동작에서 필요로 하는 기능과 비교해서 기능이 더 부족한 파일 시스템에서
+동작할 때 언제나 적절하게 기능을 줄일 수 있습니다. 파일 시스템 유닉스 권한을 지원하지 않는 것을 알고
+있다면 작성한 유닉스 권한과 같은 권한을 읽으려고 하면 안 됩니다. 파일 시스템이 대소문자를 보존하지
 않는 것을 알고 있지만, 프로그램이 `ab`를 생성할 때 디렉터리 목록에서 `ABC`를 볼 대비를 해야 합니다.
-하지만 파일시스템이 대소문자를 유지하는 것을 알고 있다면 파일명 변경을 감지하거나 파일시스템에
+하지만 파일 시스템이 대소문자를 유지하는 것을 알고 있다면 파일명 변경을 감지하거나 파일 시스템에
 대소문자를 구별 하는 경우 `ABC`와 `abc`를 다른 파일명으로 간주해야 합니다.
 
 <!--
@@ -183,11 +188,13 @@ returns the filename as the filesystem stores it, and not all filesystems
 support case-preservation. Some filesystems convert all filenames to uppercase
 (or lowercase).
 -->
+
 ## 대소문자 보존
 
 `test/abc`라는 디렉터리를 생성한 뒤 `fs.readdir('test')`가 `['ABC']`를 반환할 때 놀랄 수도
-있습니다. 이는 Node의 버그가 아닙니다. Node는 파일시스템이 저장한 파일명을 반환하고 모든 파일 시스템이
-대소문자를 보존하는 것은 아닙니다. 어떤 파일시스템은 모든 파일명을 대문자(혹은 소문자)로 바꿉니다.
+있습니다. 이는 Node의 버그가 아닙니다. Node는 파일 시스템이 저장한 파일명을 반환하고 모든
+파일 시스템이 대소문자를 보존하는 것은 아닙니다. 어떤 파일 시스템은 모든 파일명을
+대문자(혹은 소문자)로 바꿉니다.
 
 <!--
 ## Unicode Form Preservation
@@ -219,6 +226,7 @@ leaky abstraction to paper over Unicode differences between filesystems. This
 would create problems without solving any. Rather, preserve Unicode form and use
 normalization as a comparison function only.
 -->
+
 ## 유니코드 형식 보존
 
 *대소문자 보존과 유니코드 형식 보존은 비슷한 개념입니다. 유니코드 형식을 보존해야 하는 이유를
@@ -234,11 +242,11 @@ normalization as a comparison function only.
 `test/café`라는 디렉터리(`<63 61 66 c3 a9>`의 바이트 순서와 `string.length === 5`를 가진
 NFC 유니코드 형식)를 만들고 `fs.readdir('test')`가 `['café']`(`<63 61 66 65 cc 81>`의
 바이트 순서와 `string.length === 6`를 가진 NFD 유니코드 형식)을 반환하면 놀랄 수도 있습니다.
-이는 Node의 버그가 아닙니다. Node는 파일시스템이 저장한 파일명을 반환하는데 모든 파일시스템이
+이는 Node의 버그가 아닙니다. Node는 파일 시스템이 저장한 파일명을 반환하는데 모든 파일 시스템이
 유니코드 형식을 보존하는 것은 아닙니다.
 
 예를 들어 HFS+는 거의 항상 모든 파일명을 NFD 형식으로 정규화할 것입니다. HFS+가 NTFS나 EXT4처럼
-동작하기를 기대해도 안 되고 그 반대를 기대해도 안 됩니다. 파일시스템마다 다른 유니코드를 감추려고 취약한
+동작하기를 기대해도 안 되고 그 반대를 기대해도 안 됩니다. 파일 시스템마다 다른 유니코드를 감추려고 취약한
 추상화로 정규화함으로써 데이터를 항상 바꾸려고 하지 마세요. 이는 아무런 문제도 해결하지 못하고 문제를
 만들어 낼 것입니다. 대신 유니코드 형식을 보존하고 비교함수처럼 정규화만 사용하세요.
 
@@ -255,9 +263,10 @@ storing and transmitting filenames. It is possible and much better to implement
 Unicode form insensitivity without sacrificing Unicode form preservation, by
 using Unicode normalization for comparison only.
 -->
+
 ## 유니코드 형식 비구별
 
-유니코드 형식을 비구별과 유니코드 형식 보존은 종종 헷갈리는 파일시스템의 다른 두 가지 동작입니다.
+유니코드 형식을 비구별과 유니코드 형식 보존은 종종 헷갈리는 파일 시스템의 다른 두 가지 동작입니다.
 때로 대소문자 비구별을 파일명을 저장하고 전송할 때 항상 대문자로 정규화하게 잘못 구현하듯이 유니코드
 형식 비구별도 종종 파일명을 저장하고 전송할 때 파일명을 특정 유니코드 형식(HFS+의 경우 NFD)으로
 항상 정규화하도록 잘못 구현하곤 합니다. 비교할 때만 유니코드를 정규화함으로써 유니코드 형식은
@@ -284,6 +293,7 @@ Note that using `normalize()` requires that your version of Node include ICU
 (otherwise `normalize()` will just return the original string). If you download
 the latest version of Node from the website then it will include ICU.
 -->
+
 ## 다른 유니코드 형식의 비교
 
 Node는 UTF-8 문자열을 NFC나 NFD로 정규화하는 데 사용할 수 있는
@@ -314,13 +324,14 @@ nanosecond, millisecond or 1-second timestamp resolution. Some filesystems even
 have very coarse resolution for the atime timestamp in particular, e.g. 24 hours
 for some FAT filesystems.
 -->
+
 ## 타임스탬프 해상도
 
 파일의 `mtime`(수정시간)을 `1444291759414`(밀리 초 해상도)로 설정했는데 `fs.stat`가 mtime을
 `1444291759000`(1초 해상도)나 `1444291758000`(2초 해상도)로 반환하는 것에 당황할 수도
-있습니다. 이는 Node의 버그가 아닙니다. Node는 파일시스템이 저장한 타임스탬프를 반환하고 모든
-파일시스템이 나노초, 밀리 초, 1초 타임스탬프 해상도를 지원하는 것은 아닙니다. 일부 파일시스템은
-atime 타임스탬프에 아주 거친 해상도를 쓰기도 합니다.(예를 들어 일부 FAT 파일시스템은 24시간입니다.)
+있습니다. 이는 Node의 버그가 아닙니다. Node는 파일 시스템이 저장한 타임스탬프를 반환하고 모든
+파일 시스템이 나노초, 밀리 초, 1초 타임스탬프 해상도를 지원하는 것은 아닙니다. 일부 파일 시스템은
+atime 타임스탬프에 아주 거친 해상도를 쓰기도 합니다.(예를 들어 일부 FAT 파일 시스템은 24시간입니다.)
 
 <!--
 ## Do Not Corrupt Filenames and Timestamps Through Normalization
@@ -344,6 +355,7 @@ approach and preserve case, Unicode form and timestamp resolution in your
 program. That way, you will be able to interact safely with filesystems which do
 the same.
 -->
+
 ## 정규화로 파일명과 타임스탬프를 훼손시키지 마세요.
 
 파일명과 타임스탬프는 사용자 데이터입니다. 데이터를 대문자로 바꾸거나 `CRLF`나 `LF`같은 줄 끝 문자를
@@ -359,7 +371,7 @@ the same.
 혹은 2초 해상도 타임스탬프로 새로운 데이터를 만들 수 있지만, 대소문자 / 유니코드 형식 / 타임스탬프
 정규화를 적용해서 기존의 사용자 데이터를 훼손시키면 안됩니다. 대신 슈퍼셋 접근을 적용하고 프로그램에서
 대소문자, 유니코드 형식, 타임스탬프 해상도를 보존하세요. 이 방법을 적용하면 같은 동작을 하는
-파일시스템을 안정하게 사용할 수 있습니다.
+파일 시스템을 안정하게 사용할 수 있습니다.
 
 <!--
 ## Use Normalization Comparison Functions Appropriately
@@ -372,13 +384,14 @@ filesystem (e.g. NTFS and most Linux filesystems which preserve both NFC and NFD
 or mixed Unicode forms). Do not compare timestamps at 2-second resolution if you
 are working on a nanosecond timestamp resolution filesystem.
 -->
+
 ## 정규화 비교 함수를 적절하게 사용하세요.
 
 대소문자 / 유니코드 형식 / 타임스탬프 비교 함수를 적절하게 사용하세요. 대소문자를 구별하는
-파일시스템에서 동작한다면 대소문자를 구별하지 않는 파일명 비교 함수를 사용하지 말아야 합니다. 유니코드
-형식을 구별하는 파일시스템에서 동작한다면(예를 들어 NFC와 NFD를 둘 다 보존하거나 혼합된 유니코드
-형식을 사용하는 NTFS와 대부분의 리눅스 파일시스템) 유니코드 형식을 구별하지 않는 비교 함수를
-사용하지 마세요. 나노초 타임스탬프 해상도를 가진 파일시스템에서 동작한다면 2초 해상도로 타임스탬프를
+파일 시스템에서 동작한다면 대소문자를 구별하지 않는 파일명 비교 함수를 사용하지 말아야 합니다. 유니코드
+형식을 구별하는 파일 시스템에서 동작한다면(예를 들어 NFC와 NFD를 둘 다 보존하거나 혼합된 유니코드
+형식을 사용하는 NTFS와 대부분의 리눅스 파일 시스템) 유니코드 형식을 구별하지 않는 비교 함수를
+사용하지 마세요. 나노초 타임스탬프 해상도를 가진 파일 시스템에서 동작한다면 2초 해상도로 타임스탬프를
 비교하지 마세요.
 
 <!--
@@ -397,11 +410,11 @@ is actually an older version of the current NFD form and may sometimes be
 slightly different from the latest Unicode standard's NFD form. Do not expect
 HFS+ NFD to be exactly the same as Unicode NFD all the time.
 -->
+
 ## 비교함수에 있는 약간의 차이점에 대비하세요.
 
-비교함수로 파일시스템에서 일치 여부를 판단할 때는 주의해야 합니다.(또는 실제로 파일시스템이 어떻게
-비교하는지 볼 수 있다면 파일시스템을 탐구해야 합니다.) 예를 들어 대소문자 비구별은 단순한
+비교함수로 파일 시스템에서 일치 여부를 판단할 때는 주의해야 합니다.(또는 실제로 파일 시스템이 어떻게
+비교하는지 볼 수 있다면 파일 시스템을 탐구해야 합니다.) 예를 들어 대소문자 구분없이 비교하는 것은 단순한
 `toLowerCase()` 비교보다 훨씬 복잡합니다. 사실 `toUpperCase()`가 `toLowerCase()`보다
 보통 더 좋습니다.(`toLowerCase()`가 특정 외국어 문자를 다르게 다루기 때문입니다.) 하지만 모든
-파일시스템은 자신만의 대소문자 비교 테이블을 가지고 있으므로 더 좋은 방법을 쓰더라도 파일시스템을
-탐구해야 합니다.
+파일 시스템은 자신만의 대소문자 비교 테이블을 가지고 있으므로 파일시스템을 탐구하는 것이 좋습니다.

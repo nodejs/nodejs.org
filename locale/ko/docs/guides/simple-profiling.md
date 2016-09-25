@@ -2,6 +2,7 @@
 title: Node.js 애플리케이션의 간단한 프로파일링
 layout: docs.hbs
 ---
+
 <!--
 # Easy profiling for Node.js Applications
 
@@ -20,6 +21,7 @@ code-creation,Stub,2,0x2d5000a33d40,182,"DoubleToIStub"
 code-creation,Stub,2,0x2d5000a33e00,507,"NumberToStringStub"
 ```
 -->
+
 # Node.js 애플리케이션의 간단한 프로파일링
 
 Node.js 애플리케이션을 프로파일링하는 서드파티 도구들이 많이 있지만, 대부분은 Node.js에 내장된
@@ -46,6 +48,7 @@ To illustrate the use of the tick profiler, we will work with a simple Express
 application. Our application will have two handlers, one for adding new users to
 our system:
 -->
+
 이전에는 tick을 해석하려면 V8 소스 코드가 필요했습니다. 다행히, 소스에서 V8 빌드를 따로 하지 않고
 이 정보를 사용할 수 있는 도구가 최근  Node.js 4.4.0에 도입되었습니다. 애플리케이션의 성능을
 볼 수 있는 내장된 프로파일러를 어떻게 사용하는지 살펴보겠습니다.
@@ -79,6 +82,7 @@ app.get('/newUser', function (req, res) {
 
 and another for validating user authentication attempts:
 -->
+
 ```javascript
 app.get('/newUser', function (req, res) {
   var username = req.query.username || '';
@@ -126,6 +130,7 @@ app.get('/auth', function (req, res) {
 });
 ```
 -->
+
 ```javascript
 app.get('/auth', function (req, res) {
   var username = req.query.username || '';
@@ -169,6 +174,7 @@ ab -k -c 20 -n 250 "http://localhost:8080/auth?username=matt&password=password"
 
 and get an ab output of:
 -->
+
 *Node.js 애플리케이션에서 사용자 인증을 처리하는 핸들러는 추천하지 않는 방법이고 여기서는 예시를
 보여주기 위해서 사용한 것뿐입니다. 보통은 직접 만든 인증 메커니즘을 설계하지 말아야 합니다.
 기존에 존재하는 입증된 인증솔루션을 사용하는 것이 훨씬 낫습니다.*
@@ -217,6 +223,7 @@ Percentage of the requests served within a certain time (ms)
  100%   4225 (longest request)
 ```
 -->
+
 ```
 Concurrency Level:      20
 Time taken for tests:   46.932 seconds
@@ -263,6 +270,7 @@ with the Node.js binary. To run the processor, use the `--prof-process` flag:
 node --prof-process isolate-0xnnnnnnnnnnnn-v8.log > processed.txt
 ```
 -->
+
 이 결과를 보면 초당 5건의 요청만 처리할 수 있고 한 요청당 4초 미만의 시간이 걸리는 것을 알 수 있습니다.
 실제 애플리케이션에서는 요청을 처리할 때 많은 함수에서 다량의 작업이 일어날 수 있지만, 이 간단한
 예시에서도 정규표현식을 해석하고 임의의 솔트를 만들고 사용자 비밀번호에서 유일한 해시값을 만들고
@@ -293,6 +301,7 @@ up by language. First, we look at the summary section and see:
     215    0.6%          Unaccounted
 ```
 -->
+
 사용하는 텍스트 에디터에서 processed.txt를 열면 몇 가지 정보를 볼 수 있습니다.
 파일은 언어로 구분된 단위로 나누어져 있습니다. 우선 요약 부분을 보겠습니다.
 
@@ -321,6 +330,7 @@ taking the most CPU time and see:
    3165    8.4%    8.6%  _malloc_zone_malloc
 ```
 -->
+
 이 부분을 보면 C++ 코드에서 수집된 샘플이 97%를 차지하는 것을 볼 수 있으므로 처리된 결과에서
 다른 부분을 볼 때 C++에서 이뤄진 작업에 대부분의 관심을 기울여야 합니다.(Javascript 대비)
 그래서 C++ 함수가 대부분의 CPU 시간을 차지한 정보를 담고 있는 [C++] 부분을 찾아볼 것입니다.
@@ -359,9 +369,10 @@ section, we find:
    3161  100.0%      LazyCompile: *exports.pbkdf2Sync crypto.js:552:30
 ```
 -->
+
 프로그램에서 72.1%의 CPU 시간을 차지한 3개의 작업을 보겠습니다. 이 결과를 보면 사용자 비밀번호에서
 해시를 생성하는 PBKDF2 함수 호출이 최소 51.8%의 CPU 시간을 차지한 것을 바로 눈치챌 수 있습니다.
-하지만 더 낮은 퍼센티지를 가진 두 부분은 애플리케이션의 어떤 부분인지 바로 알 수 없습니다.(아니면
+하지만 더 낮은 비율을 가진 두 부분은 애플리케이션의 어떤 부분인지 바로 알 수 없습니다.(아니면
 예제를 위해서 그런 척 할 것입니다.) 이러한 함수 간의 관계를 더 이해하려면 각 함수의 주요 호출자 정보를
 제공하는 [Bottom up (heavy) profile] 부분을 봐야 합니다.
 이 부분을 찾아보면 다음과 같이 나와 있습니다.
@@ -403,6 +414,7 @@ generate a hash from the user's password is being done in a synchronous way and
 thus tying down the event loop. This prevents us from working on other incoming
 requests while computing a hash.
 -->
+
 이 섹션을 분석하려면 위에 나온 tick 횟수보다는 약간 더 작업이 필요합니다. 위에 나온 각
 "호출 스택(call stacks)"에서 parent에 나온 퍼센티지는 현재 줄에 있는 함수가 호출한
 바로 윗 줄의 함수가 차지하는 비율을 알려줍니다. 예를 들어 중간에 있는 _sha1_block_data_order의
@@ -444,6 +456,7 @@ app.get('/auth', function (req, res) {
 });
 ```
 -->
+
 이 이슈를 처리하려면 pdkdf2 함수의 비동기 버전을 사용하도록 핸들러를 수정하면 됩니다.
 
 ```javascript
@@ -498,6 +511,7 @@ Percentage of the requests served within a certain time (ms)
  100%   1079 (longest request)
 ```
 -->
+
 애플리케이션의 비동기 버전으로 앞에서 진행한 ab 벤치마크를 실행하면 다음과 같은 결과를 볼 수 있습니다.
 
 ```
@@ -539,11 +553,12 @@ understanding of the performance of your Node.js applications.
 [profiler inside V8]: https://developers.google.com/v8/profiler_example
 [benefits of asynchronous programming]: https://nodesource.com/blog/why-asynchronous
 -->
-애플리케이션이 이제 초당 20 요청을 처리할 수 있게 되었습니다. 이는 동기 해시 생성을 사용한 것보다
+
+애플리케이션이 이제 초당 20개의 요청을 처리할 수 있게 되었습니다. 이는 동기 해시 생성을 사용한 것보다
 대략 4배가 빨리진 것입니다. 게다가 평균 지연시간이 이전의 4초에서 1초 정도로 줄어들었습니다.
 
-이 예시의 성능 분석을 통해 V8 tick 프로세서로 어떻게 Node.js 애플리케이션의 성능을
-더 잘 이해할 수 있게 되는지 알기 바랍니다.
+이 예시의 성능 분석을 통해 V8 tick 프로세서가 Node.js 애플리케이션 성능을 이해하는데
+어떻게 도움이 되는지 알기 바랍니다.
 
 [V8 내의 프로파일러]: https://developers.google.com/v8/profiler_example
 [비동기 프로그래밍의 장점]: https://nodesource.com/blog/why-asynchronous

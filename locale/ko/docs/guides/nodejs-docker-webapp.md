@@ -2,6 +2,7 @@
 title: Node.js 웹 앱의 도커라이징
 layout: docs.hbs
 ---
+
 <!--
 # Dockerizing a Node.js web app
 
@@ -19,6 +20,7 @@ Docker allows you to package an application with all of its dependencies into a
 standardized unit, called a container, for software development. A container is
 a stripped-to-basics version of a Linux operating system. An image is software
 -->
+
 # Node.js 웹 앱의 도커라이징
 
 이 예제에서는 Node.js 애플리케이션을 Docker 컨테이너에 넣는 방법을 보여줍니다. 이 가이드는
@@ -54,6 +56,7 @@ create a `package.json` file that describes your app and its dependencies:
 }
 ```
 -->
+
 ## Node.js 앱 생성
 
 우선, 모든 파일을 넣은 새로운 디렉터리를 만들겠습니다. 이 디렉터리 안에 애플리케이션과 의존성을
@@ -101,6 +104,7 @@ In the next steps, we'll look at how you can run this app inside a Docker
 container using the official Docker image. First, you'll need to build a Docker
 image of your app.
 -->
+
 이제 [Express.js](http://expressjs.com/) 프레임워크로 웹앱을 정의하는 `server.js`를 만들겠습니다.
 
 ```javascript
@@ -143,6 +147,7 @@ available from the [Docker Hub](https://hub.docker.com/):
 FROM node:argon
 ```
 -->
+
 ## Dockerfile 생성
 
 `Dockerfile`이라는 빈 파일을 생성합니다.
@@ -155,7 +160,7 @@ touch Dockerfile
 
 가장 먼저 해야 할 것은 어떤 이미지를 사용해서 빌드할 것인지를 정의하는 것입니다. 여기서는
 [Docker Hub](https://hub.docker.com/)에 있는
-`node`의 최신 LTS (장기지원) 버전인 `argon`을 사용할 것입니다.
+`node`의 최신 LTS(장기 지원) 버전인 `argon`을 사용할 것입니다.
 
 ```docker
 FROM node:argon
@@ -180,6 +185,7 @@ COPY package.json /usr/src/app/
 RUN npm install
 ```
 -->
+
 다음으로 이미지 안에 애플리케이션 코드를 넣기 위해 디렉터리를 생성할 것입니다.
 이 디렉터리가 애플리케이션의 워킹 디렉터리가 됩니다.
 
@@ -214,6 +220,7 @@ mapped by the `docker` daemon:
 EXPOSE 8080
 ```
 -->
+
 Docker 이미지 안에 앱의 소스코드를 넣기 위해 `COPY` 지시어를 사용합니다.
 
 ```docker
@@ -256,6 +263,7 @@ EXPOSE 8080
 CMD [ "npm", "start" ]
 ```
 -->
+
 마지막으로 런타임을 정의하는 `CMD`로 앱을 실행하는 중요 명령어를 정의해야 합니다.
 여기서는 서버를 구동하도록 `node server.js`을 실행하는 기본 `npm start`을 사용할 것입니다.
 
@@ -263,7 +271,7 @@ CMD [ "npm", "start" ]
 CMD [ "npm", "start" ]
 ```
 
-`Dockerfile`을 다음과 같아야 합니다.
+`Dockerfile`은 다음과 같아야 합니다.
 
 ```docker
 FROM node:argon
@@ -305,6 +313,7 @@ node                            argon      539c0211cd76    3 weeks ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 -->
+
 ## 이미지 빌드
 
 작성한 `Dockerfile`이 있는 디렉토리로 가서 Docker 이미지를 빌드하는 다음 명령어를 실행하세요.
@@ -357,6 +366,7 @@ If you need to go inside the container you can use the `exec` command:
 $ docker exec -it <container id> /bin/bash
 ```
 -->
+
 ## 이미지 실행
 
 `-d`로 이미지를 실행하면 분리 모드로 컨테이너를 실행해서 백그라운드에서 컨테이너가 돌아가도록 합니다.
@@ -366,7 +376,6 @@ $ docker exec -it <container id> /bin/bash
 $ docker run -p 49160:8080 -d <your username>/node-web-app
 ```
 
-Print the output of your app:
 앱의 로그를 출력하세요.
 
 ```bash
@@ -419,6 +428,7 @@ Connection: keep-alive
 Hello world
 ```
 -->
+
 ## 테스트
 
 앱을 테스트하려면 Docker 매핑된 앱 포트를 확인합니다.
@@ -431,7 +441,7 @@ ID            IMAGE                                COMMAND    ...   PORTS
 ecce33b30ebf  <your username>/node-web-app:latest  npm start  ...   49160->8080
 ```
 
-위 예시에서 Docker가 컨테이너 내의 `8080`포트를 머신의 `49160` 포트로 매핑했습니다.
+위 예시에서 Docker가 컨테이너 내의 `8080` 포트를 머신의 `49160` 포트로 매핑했습니다.
 
 이제 `curl`로 앱을 호출할 수 있습니다.(필요하다면 `sudo apt-get install curl`로 설치하세요.)
 
@@ -461,6 +471,7 @@ following places:
 * [Docker Tag on StackOverflow](http://stackoverflow.com/questions/tagged/docker)
 * [Docker Subreddit](https://reddit.com/r/docker)
 -->
+
 간단한 Node.js 애플리케이션을 Docker로 실행하는데 이 튜토리얼이 도움되었길 바랍니다.
 
 다음 링크에서 Docker와 Docker에서의 Node.js에 대한 정보를 더 자세히 볼 수 있습니다.
