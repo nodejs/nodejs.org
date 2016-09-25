@@ -22,7 +22,6 @@ can be found on the project's [GitHub profile](https://github.com/orgs/nodejs/pe
 
 ## Current members of the Technical Steering Committee
 
-* Alexis Campailla ([orangemocha](https://github.com/orangemocha))
 * Ben Noordhuis ([bnoordhuis](https://github.com/bnoordhuis))
 * Bert Belder ([piscisaureus](https://github.com/piscisaureus))
 * Brian White ([mscdex](https://github.com/mscdex))
@@ -32,7 +31,6 @@ can be found on the project's [GitHub profile](https://github.com/orgs/nodejs/pe
 * Fedor Indutny ([indutny](https://github.com/indutny))
 * James M Snell ([jasnell](https://github.com/jasnell))
 * Jeremiah Senkpiel ([Fishrock123](https://github.com/Fishrock123))
-* Julien Gilli ([misterdjules](https://github.com/misterdjules))
 * Rod Vagg ([rvagg](https://github.com/rvagg))
 * Shigeki Ohtsu ([shigeki](https://github.com/shigeki))
 * Trevor Norris ([trevnorris](https://github.com/trevnorris))
