@@ -19,6 +19,9 @@ You are required to have a GitHub account to register.
 ## Platinum
 
 <div style="text-align:center;">
+<a target="_new" class="imagelink" href="//godaddy.com">
+  <img alt="GoDaddy" class="memberlogo" src="/static/images/foundation/godaddyLogo.png" />
+</a>
 <a target="_new" class="imagelink" href="http://ibm.com">
   <img alt="IBM" class="memberlogo" src="/static/images/foundation/ibmLogo.png" />
 </a>
@@ -31,22 +34,14 @@ You are required to have a GitHub account to register.
 <a target="_new" class="imagelink" href="//microsoft.com">
   <img alt="Microsoft" class="memberlogo" src="/static/images/foundation/microsoftLogo.png" />
 </a>
+<a target="_new" class="imagelink" href="//nodesource.com">
+  <img alt="NodeSource" class="memberlogo" src="/static/images/foundation/nodesourceLogo.png" />
+</a>
 <a target="_new" class="imagelink" href="//paypal.com">
   <img alt="PayPal" class="memberlogo" src="/static/images/foundation/paypalLogo.png" />
 </a>
 <a target="_new" class="imagelink" href="//redhat.com">
   <img alt="Red Hat" class="memberlogo" src="/static/images/foundation/redhatLogo.png" />
-</a>
-</div>
-
-## Gold
-
-<div style="text-align:center;">
-<a target="_new" class="imagelink" href="//godaddy.com">
-  <img alt="GoDaddy" class="memberlogo" src="/static/images/foundation/godaddyLogo.png" />
-</a>
-<a target="_new" class="imagelink" href="//nodesource.com">
-  <img alt="NodeSource" class="memberlogo" src="/static/images/foundation/nodesourceLogo.png" />
 </a>
 </div>
 
