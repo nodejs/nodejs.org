@@ -1,6 +1,9 @@
 ---
 title: Education Initiatives
 layout: foundation.hbs
+newsletter:
+  title: Subscribe to get updates and give input for education initiatives
+  id: f5f8d4eddb
 ---
 
 ## Education in Node.js
@@ -22,7 +25,7 @@ Please participate. [File issues, PRs, and create the community you'd like to be
 
 This roadmap is a living document, and it is likely that priorities will change, but the items below should give some indication of education initiatives for this calendar year.
 
-**Certification**  
+**Certification**
 
 The Node.js Foundation (in partnership with The Linux Foundation) will be performing the following tasks to build and ship the Node.js certification:
 
@@ -36,7 +39,7 @@ The Node.js Foundation (in partnership with The Linux Foundation) will be perfor
     - Exam items must be written and formatted to comply with an auto-grade script that is run on answers provided (i.e. machine-gradeable)
     - Consideration of non-English speaking users including items written in a way that they are translatable
 
-- Provide subject matter expert (SME) support and review to  
+- Provide subject matter expert (SME) support and review to
     - Script and program the exam items
     - Set-up Certification registration portal
     - Deploy the exam
@@ -61,51 +64,14 @@ Work may be organized into committees or subcommittees representing, but not lim
 
 Work will be divided into collaborative group sessions and individual self-paced assignments in accordance with project schedule. Time commitments will vary.
 
-**Docs**  
+**Docs**
 - Stay tuned and help your friends at the [Docs WG](https://github.com/nodejs/docs)
 
-**Resources for learning Node.js**  
+**Resources for learning Node.js**
 - Stay tuned and participate [in our convos](https://github.com/nodejs/education/issues/4)
 
 
 ## Contact
 
 For questions about education initiatives or a little inspiration, please send an
-email to <a href="mailto:tracyhinds@linuxfoundation.org?subject=Education-questions">tracyhinds@linuxfoundation.org</a>.
-
-<!-- Begin MailChimp Signup Form -->
-<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-</style>
-<div id="mc_embed_signup">
-<form action="//nodejs.us14.list-manage.com/subscribe/post?u=c7c2e114a827812354112c23b&amp;id=f5f8d4eddb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    <div id="mc_embed_signup_scroll">
-	<h2>Subscribe to get updates and give input for education initiatives</h2>
-<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-<div class="mc-field-group">
-	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-</label>
-	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-</div>
-<div class="mc-field-group">
-	<label for="mce-FNAME">First Name </label>
-	<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
-</div>
-<div class="mc-field-group">
-	<label for="mce-LNAME">Last Name </label>
-	<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
-</div>
-	<div id="mce-responses" class="clear">
-		<div class="response" id="mce-error-response" style="display:none"></div>
-		<div class="response" id="mce-success-response" style="display:none"></div>
-	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c7c2e114a827812354112c23b_f5f8d4eddb" tabindex="-1" value=""></div>
-    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-    </div>
-</form>
-</div>
-<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-<!--End mc_embed_signup-->
+email to [tracyhinds@linuxfoundation.org](mailto:tracyhinds@linuxfoundation.org?subject=Education-questions).

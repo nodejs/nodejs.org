@@ -12,6 +12,9 @@
 
       <article>
         {{{ contents }}}
+        {{#if newsletter}}
+          {{> mc-signup-form newsletter }}
+        {{/if}}
       </article>
 
     </div>
