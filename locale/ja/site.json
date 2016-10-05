@@ -31,7 +31,7 @@
     "home": { "text": "ホーム" },
     "about": {
         "link": "about",
-        "text": "アバウト",
+        "text": "Node.js とは",
         "governance": {
             "link": "about/governance",
             "text": "委員会"
