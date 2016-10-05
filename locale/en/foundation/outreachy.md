@@ -67,10 +67,10 @@ For information about expectations for mentors and to volunteer to be a mentor, 
 The volunteer mentors are:
 
 - [Franziska Hinkelmann](https://plus.google.com/u/1/116713283748910059509?prsrc=4)
-- [Rich Trott](rtrott@gmail.com), IRC: Trott
-- [Dan Shaw](dshaw@nodesource.com), IRC: dshaw
-- [Myles Borins](mborins@us.ibm.com ), IRC: thealphanerd
-- [Priyanka Sulugodua Prakash Murthy](priyanka.sulugodu.prakash.murthy@intel.com)
+- [Rich Trott](mailto:rtrott@gmail.com), IRC: Trott
+- [Dan Shaw](mailto:dshaw@nodesource.com), IRC: dshaw
+- [Myles Borins](mailto:mborins@us.ibm.com ), IRC: thealphanerd
+- [Priyanka Sulugodua Prakash Murthy](mailto:priyanka.sulugodu.prakash.murthy@intel.com)
 
 **Project administrator**
 
@@ -88,13 +88,13 @@ https://github.com/nodejs/node/issues/6283
 
 
 **Project TBD**    
-[Rich Trott](rtrott@gmail.com)
+[Rich Trott](mailto:rtrott@gmail.com)
 
 **Project TBD**  
-[Dan Shaw](dshaw@nodesource.com)
+[Dan Shaw](mailto:dshaw@nodesource.com)
 
 **Project TBD**    
-[Myles Borins](mborins@us.ibm.com )
+[Myles Borins](mailto:mborins@us.ibm.com )
 
 **Project TBD**  
-[Priyanka Sulugodua Prakash Murthy](priyanka.sulugodu.prakash.murthy@intel.com)
+[Priyanka Sulugodua Prakash Murthy](mailto:priyanka.sulugodu.prakash.murthy@intel.com)
