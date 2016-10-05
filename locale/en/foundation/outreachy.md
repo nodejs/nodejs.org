@@ -15,6 +15,7 @@ Participation is open internationally to all women (cis and trans), trans men, a
 **Quick links**
 
 - [The Node.js project on GitHub](https://github.com/nodejs/node)
+- [Good first contributions in the Node.js issue tracker](https://github.com/nodejs/node/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+contribution%22)
 - [Getting started for applicants](https://wiki.gnome.org/Outreachy#Introduction)
 - [Mentor prep](https://wiki.gnome.org/Outreachy/Admin/InfoForMentors)
 
