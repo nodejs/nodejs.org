@@ -70,7 +70,7 @@ The volunteer mentors are:
 - [Franziska Hinkelmann](https://plus.google.com/u/1/116713283748910059509?prsrc=4)
 - [Rich Trott](mailto:rtrott@gmail.com), IRC: Trott
 - [Dan Shaw](mailto:dshaw@nodesource.com), IRC: dshaw
-- [Myles Borins](mailto:mborins@us.ibm.com ), IRC: thealphanerd
+- [Myles Borins](mailto:myles.borins@gmail.com), IRC: thealphanerd
 - [Priyanka Sulugodua Prakash Murthy](mailto:priyanka.sulugodu.prakash.murthy@intel.com)
 
 **Project administrator**
@@ -78,8 +78,11 @@ The volunteer mentors are:
 - Tracy Hinds, Education Community Manager at the Node.js Foundation Reach her at [tracyhinds@linuxfoundation.org](tracyhinds@linuxfoundation.org) or on IRC: hackygolucky
 
 **PROJECTS**
-**Improve the vm module in Node.js core**  
-*Mentor:* [Franziska Hinkelmann](https://plus.google.com/u/1/116713283748910059509?prsrc=4)    
+
+**Improve the vm module in Node.js core**
+
+*Mentor:* [Franziska Hinkelmann](https://plus.google.com/u/1/116713283748910059509?prsrc=4)
+
 The vm module is used in the Node.js command line and in DOM implementations, such as jsdom. Sadly, there are many open issues related to the module and it needs some love. Recent changes in V8, Node's JS engine, now make it possible to fix several of the issues and improve the vm code base significantly.    
 
 This project includes learning how to build and debug Node.js core, how the vm module is implemented, some Node internals about the global proxy, and how to use the V8 API. You will be coding in C++ and write tests in JavaScript. No worries if you're not too familiar with these languages, a desire to learn and curiosity are much more important than a fixed skill set.
@@ -94,8 +97,27 @@ https://github.com/nodejs/node/issues/6283
 **Project TBD**  
 [Dan Shaw](mailto:dshaw@nodesource.com)
 
-**Project TBD**    
-[Myles Borins](mailto:mborins@us.ibm.com )
+**Improving Serial Communication in Node.js by diving into libuv**
+
+*Mentor:* [Myles Borins](mailto:mborins@myles.borins@gmail.com )
+
+One of the strengths of Node.js is the ability to run on various different operating systems. One of the ways in which this is accomplished is via [libuv](https://github.com/libuv/libuv), a library for cross platform asynchronous I/O. Currently, doing serial communication in Node.js requires installing a module such as [node-serialport](https://github.com/EmergingTechnologyAdvisors/node-serialport) which relies on natively compiled components. Having natively compiled components in a node module make it more difficult for individuals to install, and has been a blocker for new developers interested in getting involved with node-bots.
+
+In this project you will collaborate with members of the Node.js project, and members of the libuv project, to define and implement the necessary apis to remove the need for natively compiled components to support serial communication in Node.js. This will involve planning, implementation across code bases, and a certain level of open source politics to ensure that the work being done will fit the needs of the consumers in the Node.js ecosystem.
+
+The project will be broken down into a number of stages including:
+
+ * Getting familliar with the Node.js code base
+ * Getting your first commits into Node.js core
+   - A list of good first contributions can be found [here](https://github.com/nodejs/node/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+contribution%22)
+ * Getting familliar with the libuv code base
+ * Getting your first commits into libuv
+   - A list of future milstones can be found [here](https://github.com/libuv/libuv/milestone/5)
+ * Defining and implementing the interfaces needed in libuv for implementing Serial communication
+ * Defining and implementing the interfaces needed in Node.js to expose the libuv api's needed for implementing Serial communication
+ * Collaborating with community projects to define and support an upgrade path.
+ 
+ Mentor in United States (NYC)
 
 **Project TBD**  
 [Priyanka Sulugodua Prakash Murthy](mailto:priyanka.sulugodu.prakash.murthy@intel.com)
