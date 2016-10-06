@@ -100,7 +100,7 @@ https://github.com/nodejs/node/issues/6283
 
 *Mentor:* [Rich Trott](mailto:rtrott@gmail.com)  
 
-The Node.js debugger built-in debugger is minimal. Test coverage is spotty and there may be opportunities for expanded functionality.
+The Node.js built-in debugger is minimal. Test coverage is spotty and there may be opportunities for expanded functionality.
 
 This project includes learning how to build Node.js core, how the debugger is implemented, and how testing is done in Node.js core. You will be coding in JavaScript and possibly a little C++.
 
