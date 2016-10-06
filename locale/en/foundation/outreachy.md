@@ -12,6 +12,9 @@ The Node.js project is excited to partner with Outreachy to invite newcomers wit
 
 Participation is open internationally to all women (cis and trans), trans men, and genderqueer people. Additionally, it's open to residents and nationals of the United States of any gender who are Black/African American, Hispanic/Latin@, American Indian, Alaska Native, Native Hawaiian, or Pacific Islander. We are planning to expand the program to more participants from underrepresented backgrounds in the future.  
 
+**THANKS**  
+Our sincerest gratitude goes out to the sponsoring organizations supporting Node.js in this awesome effort: Google, Intel, IBM, and Node.js Foundation.
+
 **Quick links**
 
 - [The Node.js project on GitHub](https://github.com/nodejs/node)
@@ -75,13 +78,14 @@ The volunteer mentors are:
 
 **Project administrator**
 
-- Tracy Hinds, Education Community Manager at the Node.js Foundation Reach her at [tracyhinds@linuxfoundation.org](tracyhinds@linuxfoundation.org) or on IRC: hackygolucky
+- Tracy Hinds, Education Community Manager at the Node.js Foundation   
+Reach her at [tracyhinds@linuxfoundation.org](tracyhinds@linuxfoundation.org) or on IRC: hackygolucky
 
 **PROJECTS**
 
 **Improve the vm module in Node.js core**
 
-*Mentor:* [Franziska Hinkelmann](https://plus.google.com/u/1/116713283748910059509?prsrc=4)
+*Mentor:* [Franziska Hinkelmann](mailto:franzih@google.com)
 
 The vm module is used in the Node.js command line and in DOM implementations, such as jsdom. Sadly, there are many open issues related to the module and it needs some love. Recent changes in V8, Node's JS engine, now make it possible to fix several of the issues and improve the vm code base significantly.    
 
@@ -90,12 +94,24 @@ This project includes learning how to build and debug Node.js core, how the vm m
 Mentor based in Europe.  
 https://github.com/nodejs/node/issues/6283
 
+-------------------------
 
-**Project TBD**    
-[Rich Trott](mailto:rtrott@gmail.com)
+**Improve test coverage and expand feature set for the Node.js debugger**  
+
+*Mentor:* [Rich Trott](mailto:rtrott@gmail.com)  
+
+The Node.js debugger built-in debugger is minimal. Test coverage is spotty and there may be opportunities for expanded functionality.
+
+This project includes learning how to build Node.js core, how the debugger is implemented, and how testing is done in Node.js core. You will be coding in JavaScript and possibly a little C++.
+
+Mentor based in North America (San Francisco).
+
+-------------------------
 
 **Project TBD**  
-[Dan Shaw](mailto:dshaw@nodesource.com)
+*Mentor:* [Dan Shaw](mailto:dshaw@nodesource.com)  
+
+-------------------------
 
 **Improving Serial Communication in Node.js by diving into libuv**
 
@@ -103,21 +119,29 @@ https://github.com/nodejs/node/issues/6283
 
 One of the strengths of Node.js is the ability to run on various different operating systems. One of the ways in which this is accomplished is via [libuv](https://github.com/libuv/libuv), a library for cross platform asynchronous I/O. Currently, doing serial communication in Node.js requires installing a module such as [node-serialport](https://github.com/EmergingTechnologyAdvisors/node-serialport) which relies on natively compiled components. Having natively compiled components in a node module make it more difficult for individuals to install, and has been a blocker for new developers interested in getting involved with node-bots.
 
-In this project you will collaborate with members of the Node.js project, and members of the libuv project, to define and implement the necessary apis to remove the need for natively compiled components to support serial communication in Node.js. This will involve planning, implementation across code bases, and a certain level of open source politics to ensure that the work being done will fit the needs of the consumers in the Node.js ecosystem.
+In this project, you will collaborate with members of the Node.js project, and members of the libuv project, to define and implement the necessary apis to remove the need for natively compiled components to support serial communication in Node.js. This will involve planning, implementation across code bases, and a certain level of open source politics to ensure that the work being done will fit the needs of the consumers in the Node.js ecosystem.
 
 The project will be broken down into a number of stages including:
 
  * Getting familliar with the Node.js code base
  * Getting your first commits into Node.js core
    - A list of good first contributions can be found [here](https://github.com/nodejs/node/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+contribution%22)
- * Getting familliar with the libuv code base
+ * Getting familiar with the libuv code base
  * Getting your first commits into libuv
-   - A list of future milstones can be found [here](https://github.com/libuv/libuv/milestone/5)
+   - A list of future milestones can be found [here](https://github.com/libuv/libuv/milestone/5)
  * Defining and implementing the interfaces needed in libuv for implementing Serial communication
  * Defining and implementing the interfaces needed in Node.js to expose the libuv api's needed for implementing Serial communication
  * Collaborating with community projects to define and support an upgrade path.
- 
- Mentor in United States (NYC)
 
-**Project TBD**  
-[Priyanka Sulugodua Prakash Murthy](mailto:priyanka.sulugodu.prakash.murthy@intel.com)
+ Mentor in United States (NYC)  
+
+ -------------------------
+
+**Node.js in Machine Learning**
+
+*Mentor:* [Priyanka Sulugodua Prakash Murthy](mailto:priyanka.sulugodu.prakash.murthy@intel.com)
+
+There is a package called TensorFlow https://www.tensorflow.org/ and a Node.js package for it
+https://github.com/nikhilk/node-tensorflow
+
+The mentee should review and learn the node-tensorflow module to find what we can get from this. The goal of the project for the mentee would be to get familiar with the module and teach the mentoring team.
