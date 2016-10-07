@@ -46,6 +46,7 @@ How can I familiarize myself with the community and project?
 - Read more about our   [contributing](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md) and [collaborator](https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md) guidelines  
 - Check out some of our [international communities](https://nodejs.org/en/get-involved/)  
 - Introduce yourself to the project's mentors and discuss what your tasks during the internship program would be.
+- Quick [getting started guide](https://gist.github.com/Trott/4f527b7fc73d669aafa9858d865bc563) for contributing to Node.js thanks to our mentor, Rich Trott.
 
 **How to apply and application tips**
 
@@ -70,9 +71,9 @@ For information about expectations for mentors and to volunteer to be a mentor, 
 
 The volunteer mentors are:
 
-- [Franziska Hinkelmann](https://plus.google.com/u/1/116713283748910059509?prsrc=4)
+- [Franziska Hinkelmann](mailto:franzih@google.com)
 - [Rich Trott](mailto:rtrott@gmail.com), IRC: Trott
-- [Dan Shaw](mailto:dshaw@nodesource.com), IRC: dshaw
+- [Trevor Norris](mailto:trevnorris@nodesource.com), IRC: trevnorris
 - [Myles Borins](mailto:myles.borins@gmail.com), IRC: thealphanerd
 - [Priyanka Sulugodua Prakash Murthy](mailto:priyanka.sulugodu.prakash.murthy@intel.com)
 
@@ -108,8 +109,16 @@ Mentor based in North America (San Francisco).
 
 -------------------------
 
-**Project TBD**  
-*Mentor:* [Dan Shaw](mailto:dshaw@nodesource.com)  
+**Improve AsyncHooks in Node.js core**  
+*Mentor:* [Trevor Norris](mailto:trevnorris@nodesource.com)  
+
+AsyncHooks, formerly known as AsyncWrap, is a low level tracing module which gives visibility into the asynchronous transactions of Node.js' event loop via a JavaScript API. AsyncHooks' goal is to provide insight while also having the explicit requirement of having zero overhead when not being used, and minimal overhead when it is used.
+
+This project will involve learning the mechanics of and writing both tests and documentation for the AsyncHooks module. Writing the tests requires learning how AsyncHooks will be used by users and third-party integrators. Initially all tests will be written in JavaScript, but eventually they will be duplicated to test AsyncHooks' C++ API.
+
+Experience with JavaScript is necessary, and knowing some C++ is a bonus. Most importantly is the desire to learn, and not ask questions you've haven't already Googled for yourself first (i'm only part tongue in cheek about that).
+
+Mentor based in the North America (Utah).
 
 -------------------------
 
