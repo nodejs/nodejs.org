@@ -1,0 +1,54 @@
+---
+title: ドキュメント
+layout: docs.hbs
+labels:
+  lts: LTS
+---
+
+<!-- # About Docs -->
+# ドキュメント
+
+<!-- There are three types of documentation available on this website: -->
+ここには 3 種類のドキュメントがあります：
+
+<!-- * API reference documentation -->
+<!-- * ES6 features -->
+<!-- * Frequently asked questions -->
+* API リファレンス
+* ES6 の機能
+* よくある質問
+
+<!-- ### API Reference Documentation -->
+### API リファレンス
+
+<!-- The [API reference documentation](/api/) provides detailed information about a function or object in Node.js. This documentation indicates what arguments a method accepts, the return value of that method, and what errors may be related to that method. It also indicates which methods are available for different versions of Node.js. -->
+[API リファレンス](/api/) では Node.js の関数やオブジェクトの詳細情報を提供しています。このドキュメントでは、メソッドで何の引数を取るのか、そのメソッドの返り値とそのメソッドに関連するエラーについても説明されています。また、異なる Node.js のバージョンでどのメソッドが使えるかについても説明されています。
+
+<!-- This documentation describes the built-in modules provided by Node.js. It does not document modules provided by the community. -->
+このドキュメントでは Node.js によって提供された組み込みのモジュールについて説明しています。コアに組み込まれていないモジュールは含みません。
+
+<div class="highlight-box">
+    <!-- <h4>Looking for API docs of previous releases?</h4> -->
+    <h4>以前のバージョンの API リファレンスをお探しですか？</h4>
+
+    <ul>
+        <li><a href="https://nodejs.org/docs/latest-v5.x/api/">Node.js 5.x</a></li>
+        <li><a href="https://nodejs.org/docs/latest-v0.12.x/api/">Node.js 0.12.x</a></li>
+        <li><a href="https://nodejs.org/docs/latest-v0.10.x/api/">Node.js 0.10.x</a></li>
+        <!-- <li><a href="https://nodejs.org/docs/">all versions</a></li> -->
+        <li><a href="https://nodejs.org/docs/">すべてのバージョン</a></li>
+    </ul>
+</div>
+
+<!-- ### ES6 Features -->
+### ES6 の機能
+
+<!-- The [ES6 section](/en/docs/es6/) describes the three ES6 feature groups, and details which features are enabled by default in Node.js, alongside explanatory links. It also shows how to find version of V8 shipped with a particular Node.js release. -->
+[ES6 のセクション](/en/docs/es6/) では、ES6 の3つの機能について説明しており、それぞれの機能ごとのリンクと一緒に Node.js の標準で有効化されているかについて書いてあります。また、リリースされた Node.js のバージョンごとに組み込まれている V8 のバージョンを知るのにも利用することができます。
+
+<!-- ### Frequently Asked Questions -->
+### よくある質問
+
+<!-- The [FAQ](/en/docs/faq/) covers how everyone can contribute to Node.js, our code of conduct and governance model, how to get in touch on GitHub and IRC, and how to help out with triaging issues. -->
+[よくある質問](/en/docs/faq)　では、どなたでも参加ができる Node.js への貢献の仕方、行動規範、ガバナンス体制、GitHub や IRC でのやり取りの方法、不具合の修正の仕方などについて網羅しています。
+ 
