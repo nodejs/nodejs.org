@@ -25,7 +25,7 @@ labels:
 [API リファレンス](/api/) では Node.js の関数やオブジェクトの詳細情報を提供しています。このドキュメントでは、メソッドで何の引数を取るのか、そのメソッドの返り値とそのメソッドに関連するエラーについても説明されています。また、異なる Node.js のバージョンでどのメソッドが使えるかについても説明されています。
 
 <!-- This documentation describes the built-in modules provided by Node.js. It does not document modules provided by the community. -->
-ドキュメントでは Node.js によって開発された組み込みのモジュールについて説明しています。コミュニティによってつくられたものについては説明されていません。
+このドキュメントでは Node.js によって提供された組み込みのモジュールについて説明しています。コアに組み込まれていないモジュールは含みません。
 
 <div class="highlight-box">
     <!-- <h4>Looking for API docs of previous releases?</h4> -->
@@ -44,11 +44,11 @@ labels:
 ### ES6 の機能
 
 <!-- The [ES6 section](/en/docs/es6/) describes the three ES6 feature groups, and details which features are enabled by default in Node.js, alongside explanatory links. It also shows how to find version of V8 shipped with a particular Node.js release. -->
-追加のリンクで Node.js でどの機能が標準で使えるの詳細が書かれた 3 つの ES6 の機能グループについて説明されています。また、どのように特定の Node.js のリリースに負づいするリリースされた V8 のバージョンについても説明されています。
-
+[ES6 のセクション](/en/docs/es6/) では、ES6 の3つの機能について説明しており、それぞれの機能ごとのリンクと一緒に Node.js の標準で有効化されているかについて書いてあります。また、リリースされた Node.js のバージョンごとにバンドルされた V8 のバージョンを知るのにも利用することができます。
 
 <!-- ### Frequently Asked Questions -->
 ### よくある質問
 
 <!-- The [FAQ](/en/docs/faq/) covers how everyone can contribute to Node.js, our code of conduct and governance model, how to get in touch on GitHub and IRC, and how to help out with triaging issues. -->
-[よくある質問](/en/docs/faq)　では誰でもどのように Node.js に貢献できるのか、行動規範とガバナンス体制、GitHub と IRC でのやり取りの方法、どのように不具合を修正するのかなどの方法について網羅しています。
+[よくある質問](/en/docs/faq)　では、どなたでも参加ができる Node.js への貢献の仕方、行動規範、ガバナンス体制、GitHub や IRC でのやり取りの方法、不具合の修正の仕方などについて網羅しています。
+ 
