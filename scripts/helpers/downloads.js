@@ -20,11 +20,11 @@ const postMergeDownloads = [
     'templateUrl': 'https://nodejs.org/dist/v%version%/win-x64/node.exe'
   },
   {
-    'title': 'Mac OS X 64-bit Installer',
+    'title': 'macOS 64-bit Installer',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%.pkg'
   },
   {
-    'title': 'Mac OS X 64-bit Binary',
+    'title': 'macOS 64-bit Binary',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-darwin-x64.tar.gz'
   },
   {
@@ -84,15 +84,15 @@ const legacyDownloads = [
     'templateUrl': 'https://nodejs.org/dist/v%version%/x64/node.exe'
   },
   {
-    'title': 'Mac OS X Universal Installer',
+    'title': 'macOS Universal Installer',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%.pkg'
   },
   {
-    'title': 'Mac OS X 64-bit Binary',
+    'title': 'macOS 64-bit Binary',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-darwin-x64.tar.gz'
   },
   {
-    'title': 'Mac OS X 32-bit Binary',
+    'title': 'macOS 32-bit Binary',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-darwin-x86.tar.gz'
   },
   {
