@@ -9,16 +9,16 @@ layout: docs.hbs
 ## 貢献する方法
 
 <!-- Everyone can help. Node.js adheres to a [code of conduct](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct), and contributions, releases, and contributorship are under an [open governance](https://github.com/nodejs/node/blob/master/GOVERNANCE.md#readme) model. -->
-どなたでも参加することができます。Node.js は [オープンガバナンス](https://github.com/nodejs/node/blob/master/GOVERNANCE.md#readme) モデルに基づいて[行動規範](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct)、貢献、リリース、著作権などを忠実に守っています。
+どなたでも参加することができます。Node.js は [オープンガバナンス](https://github.com/nodejs/node/blob/master/GOVERNANCE.md#readme) モデルに基づいて[行動規範](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct)、貢献、リリース、貢献者表記などを忠実に守っています。
 
 <!-- To get started, there are open [discussions on GitHub](https://github.com/nodejs/node/issues), and we'd love to hear your feedback. Becoming involved in discussions is a good way to get a feel of where you can help out further. If there is something there you feel you can tackle, please [make a pull request](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-contributions). -->
-はじめに、[GitHub 上でオープンなやりとり](https://github.com/nodejs/node/issues)をしています。意見はいつでも歓迎です。会話に参加していくことは今度 Node.js に貢献していく際の雰囲気をつかむのによい方法です。何か取り込めることがありましたら、よろしければ[プルリクエストの作成](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-contributions)をお願いします。
+はじめるにあたり、私たちは[GitHub上でオープンに議論](https://github.com/nodejs/node/issues)を行っていて、みなさんからの意見をぜひ聞きたいと思っています。会話に参加していくことは今度 Node.js に貢献していく際の雰囲気をつかむのによい方法です。何か取り込めることがありましたら、よろしければ[プルリクエストの作成](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-contributions)をお願いします。
 
 <!-- ## Where do discussions take place? -->
 ## どこで Node.js についてやりとりされていますか？
 
 <!-- There is an #node.js channel on Freenode IRC. We keep logs of the channel [here](http://logs.libuv.org/node.js/latest). -->
-Freenode IRC 上に #node.js チャネルがあります。このチャネルのログは[ここ](http://logs.libuv.org/node.js/latest)にあります。
+Freenode IRC 上に #node.js チャンネルがあります。このチャネルのログは[ここ](http://logs.libuv.org/node.js/latest)にあります。
 
 <!-- ## What is open source governance? -->
 ## オープンソースガバナンスとはなんですか？
