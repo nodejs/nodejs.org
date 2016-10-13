@@ -124,7 +124,7 @@ Mentor based in the North America (Utah).
 
 **Improving Serial Communication in Node.js by diving into libuv**
 
-*Mentor:* [Myles Borins](mailto:mborins@myles.borins@gmail.com )
+*Mentor:* [Myles Borins](mailto:myles.borins@gmail.com )
 
 One of the strengths of Node.js is the ability to run on various different operating systems. One of the ways in which this is accomplished is via [libuv](https://github.com/libuv/libuv), a library for cross platform asynchronous I/O. Currently, doing serial communication in Node.js requires installing a module such as [node-serialport](https://github.com/EmergingTechnologyAdvisors/node-serialport) which relies on natively compiled components. Having natively compiled components in a node module make it more difficult for individuals to install, and has been a blocker for new developers interested in getting involved with node-bots.
 
