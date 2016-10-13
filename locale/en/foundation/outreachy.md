@@ -142,7 +142,31 @@ The project will be broken down into a number of stages including:
  * Defining and implementing the interfaces needed in Node.js to expose the libuv api's needed for implementing Serial communication
  * Collaborating with community projects to define and support an upgrade path.
 
- Mentor in United States (NYC)  
+ Mentor in United States (NYC)
+ 
+ -------------------------
+
+**The Canary in the Gold Mine**
+
+*Mentor:* [Myles Borins](mailto:myles.borins@gmail.com )
+
+[The Canary in the Gold Mine](http://github.com/nodejs/citgm) *(citgm)* is the Node.js projects smoke testing utility. It runs the test suite of top modules in the Node.js ecosystem to ensure that changes to Node.js do not break other people's code. It is used to test releases and controversial changes before they land. The Jenkins job that utilizes citgm can be [found on our CI](https://ci.nodejs.org/view/Node.js-citgm/job/citgm-smoker/). citgm is able to grab the source code of any module from the npm registry, install it's dependencies, and run it's test suite. citgm is shipped with a lookup table including over 70 of the top modules, it can automate the process of running all their test suites and report results in multiple formats.
+
+There are a number of ways in which citgm can be improved including:
+
+* optimizing performance
+  - parallelization
+  - introducing a cache
+* improved ci environment
+  - testing by subsystem
+  - multi-jobs to test all release lines
+* refactoring the logger
+* adding new modules to be tested
+* creating a website to display results
+
+This project has the ability to take a variety of paths depending on what you are interested in.
+
+Mentor in United States (NYC)
 
  -------------------------
 
