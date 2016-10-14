@@ -7,11 +7,12 @@ labels:
 
 # About Docs
 
-There are three types of documentation available on this website:
+There are several types of documentation available on this website:
 
 * API reference documentation
 * ES6 features
 * Frequently asked questions
+* Guides
 
 ### API Reference Documentation
 
@@ -37,3 +38,7 @@ The [ES6 section](/en/docs/es6/) describes the three ES6 feature groups, and det
 ### Frequently Asked Questions
 
 The [FAQ](/en/docs/faq/) covers how everyone can contribute to Node.js, our code of conduct and governance model, how to get in touch on GitHub and IRC, and how to help out with triaging issues.
+
+### Guides
+
+Long-form, in-depth articles about Node.js technical features and capabilities.
