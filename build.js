@@ -246,8 +246,8 @@ function getSource (callback) {
           lts: latestVersion.lts(versions)
         },
         banner: {
-          visible: true,
-          content: 'Important <a href="/en/blog/vulnerability/september-2016-security-releases/">security upgrades</a> for recent OpenSSL and Node.js vulnerabilities'
+          visible: false,
+          content: ''
         }
       }
     }
