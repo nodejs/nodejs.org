@@ -69,7 +69,6 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 - Steven Sinatra ([diagramatics](https://github.com/diagramatics))
 - Evan Lucas ([evanlucas](https://github.com/evanlucas))
 - Fábio Santos ([fabiosantoscode](https://github.com/fabiosantoscode))
-- Fen ([fene](https://github.com/fene))
 - Jeremiah Senkpiel ([Fishrock123](https://github.com/Fishrock123))
 - Wyatt Preul ([geek](https://github.com/geek))
 - Charlie Robbins ([indexzero](https://github.com/indexzero))
