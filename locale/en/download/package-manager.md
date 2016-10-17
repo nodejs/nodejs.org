@@ -214,9 +214,9 @@ Additionally, versions of **CentOS** and **Scientific Linux** corresponding to t
 
 **Supported Fedora versions:**
 
-* **Fedora Rawhide** (i686/x86_64/armv7hl)
+* **Fedora Rawhide** (i686/x86_64/armv7hl/aarch64)
 * **Fedora 25** (i686/x86_64/armv7hl)
-* **Fedora 24** (i686/x86_64/armv6hl/armv7hl)
+* **Fedora 24** (i686/x86_64/armv7hl)
 * **Fedora 23** (i686/x86_64/armv7hl)
 
 
