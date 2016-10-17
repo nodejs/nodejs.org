@@ -1,13 +1,13 @@
 ---
 layout: index.hbs
 labels:
-  current-version: Current Version
+  current-version: LTS
   download: Download
   download-for: Download for
   other-downloads: Other Downloads
   other-lts-downloads: Other LTS Downloads
   other-current-downloads: Other Current Downloads
-  current: Current
+  current: LTS
   lts: LTS
   tagline-current: Latest Features
   tagline-lts: Recommended For Most Users
