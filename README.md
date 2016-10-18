@@ -53,7 +53,6 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 - Mikeal Rogers ([mikeal](https://github.com/mikeal)): [@mikeal](https://twitter.com/mikeal), `mikeal.rogers``@``gmail.com`
 - Phillip Johnsen ([phillipj](https://github.com/phillipj)), `johphi``@``gmail.com`
 - Rod Vagg ([rvagg](https://github.com/rvagg)): [@rvagg](https://twitter.com/rvagg), `rod``@``vagg.org`
-- Trent Oswald ([therebelrobot](https://github.com/therebelrobot)): [@therebelrobot](https://twitter.com/therebelrobot), `trentoswald``@``therebelrobot.com`
 
 ### Website Working Group Collaborators
 
@@ -94,6 +93,7 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 - Michaël Zasso ([targos](https://github.com/targos))
 - Myles Borins ([TheAlphaNerd](https://github.com/TheAlphaNerd))
 - Sakthipriyan Vairamani ([thefourtheye](https://github.com/thefourtheye))
+- Trent Oswald ([therebelrobot](https://github.com/therebelrobot))
 - Anton Wilhelm ([timaschew](https://github.com/timaschew))
 - Thomas Jensen ([tjconcept](https://github.com/tjconcept))
 - Rich Trott ([Trott](https://github.com/Trott))
