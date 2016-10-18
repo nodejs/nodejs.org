@@ -48,14 +48,6 @@
             "link": "about/resources",
             "text": "Resources"
         },
-        "foundation": {
-            "link": "foundation",
-            "text": "Foundation"
-        },
-        "security": {
-            "link": "security",
-            "text": "Security"
-        },
         "trademark": {
             "link": "about/trademark",
             "text": "Trademark"

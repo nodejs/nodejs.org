@@ -48,14 +48,6 @@
             "link": "about/resources",
             "text": "관련 자료"
         },
-        "foundation": {
-            "link": "foundation",
-            "text": "재단"
-        },
-        "security": {
-            "link": "security",
-            "text": "보안"
-        },
         "trademark": {
             "link": "about/trademark",
             "text": "트레이드마크"
