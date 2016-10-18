@@ -9,9 +9,9 @@ const map = (release) => release && {
   openssl: release.openssl
 }
 
-exports.current = (releases) => {
-  const match = releases.find((release) => !release.lts && semver.gte(release.version, '5.0.0'))
+exports.lts = (releases) => {
+  const match = releases.find((release) => release.lts && semver.lte(release.version, '5.0.0'))
   return map(match)
 }
 
-exports.lts = (releases) => map(releases.find((release) => release.lts))
+exports.current = (releases) => map(releases.find((release) => release.lts))
