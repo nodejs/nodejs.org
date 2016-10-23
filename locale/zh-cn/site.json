@@ -44,14 +44,6 @@
             "link": "about/releases",
             "text": "发布"
         },
-        "foundation": {
-            "link": "foundation",
-            "text": "基金会"
-        },
-        "security": {
-            "link": "security",
-            "text": "安全"
-        },
         "resources": {
             "link": "about/resources",
             "text": "资源"
