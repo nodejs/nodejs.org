@@ -17,7 +17,7 @@ module.exports = function buildNavigation (latestVersions) {
       Object.keys(obj).forEach(function (key) {
         if (obj[key].link && obj[key].text) {
           // Insert latest versions for API docs
-          if (key === 'api-current') {
+          if (key === 'api-current' && latestVersions.current) {
             obj[key].text = obj[key].text.replace(/%ver%/, latestVersions.current.node)
           }
           if (key === 'api-lts') {

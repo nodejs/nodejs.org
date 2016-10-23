@@ -242,7 +242,8 @@ function getSource (callback) {
       project: {
         versions,
         latestVersions: {
-          current: latestVersion.current(versions),
+          current: latestVersion.current(versions), // might be undefined!
+          upcomingCurrent: latestVersion.upcomingCurrent(versions), // might be undefined!
           lts: latestVersion.lts(versions)
         },
         banner: {

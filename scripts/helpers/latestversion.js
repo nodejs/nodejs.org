@@ -9,9 +9,21 @@ const map = (release) => release && {
   openssl: release.openssl
 }
 
+// might we undefined if the current release line has not been cut yet
 exports.current = (releases) => {
-  const match = releases.find((release) => !release.lts && semver.gte(release.version, '5.0.0'))
+  const ltsVersion = exports.lts(releases).node
+  const match = releases.find((release) => !release.lts && semver.gte(release.version, ltsVersion))
   return map(match)
+}
+
+// calculates the next upcoming major release version when the current release line
+// has not yet been cut
+exports.upcomingCurrent = (releases) => {
+  const isCurrentReleased = exports.current(releases) !== undefined
+  const ltsMajor = semver.major(exports.lts(releases).node)
+  const nextCurrentVersion = `v${ltsMajor + 1}.0.0`
+
+  return !isCurrentReleased ? { node: nextCurrentVersion } : undefined
 }
 
 exports.lts = (releases) => map(releases.find((release) => release.lts))
