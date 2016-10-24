@@ -8,6 +8,7 @@ downloads:
     current: Current
     tagline-current: Latest Features
     tagline-lts: Recommended For Most Users
+    tagline-upcoming-current: Coming soon
     display-hint: Display downloads for
     intro: >
         Download the Node.js source code or a pre-built installer for your platform, and start developing today.

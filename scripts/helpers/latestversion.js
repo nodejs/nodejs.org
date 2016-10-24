@@ -4,6 +4,7 @@ const semver = require('semver')
 
 const map = (release) => release && {
   node: release.version,
+  nodeMajor: `v${semver.major(release.version)}.x`,
   npm: release.npm,
   v8: release.v8,
   openssl: release.openssl
@@ -25,9 +26,13 @@ exports.upcomingCurrent = (releases) => {
   }
 
   const ltsMajor = semver.major(exports.lts(releases).node)
-  const nextCurrentVersion = `v${ltsMajor + 1}.0.0`
+  const upcomingMajor = ltsMajor + 1
+  const nextCurrentVersion = `v${upcomingMajor}.0.0`
 
-  return { node: nextCurrentVersion }
+  return {
+    node: nextCurrentVersion,
+    nodeMajor: `v${upcomingMajor}.x`
+  }
 }
 
 exports.lts = (releases) => map(releases.find((release) => release.lts))

@@ -6,13 +6,23 @@
       <li>
         <div class="download-version-toggle">
           <a {{#if versionTypeLts}}class="is-version"{{/if}} href="/{{site.locale}}/{{site.download.link}}" title="{{downloads.display-hint}} {{downloads.lts}}">
-            <div class="title">{{downloads.lts}}</div>
+            <div class="title">{{downloads.lts}} {{project.latestVersions.lts.nodeMajor}}</div>
             <div class="tag">{{downloads.tagline-lts}}</div>
           </a>
-          <a {{#if versionTypeCurrent}}class="is-version"{{/if}} href="/{{site.locale}}/{{site.download.link}}/current" title="{{downloads.display-hint}} {{downloads.current}}">
-            <div class="title">{{downloads.current}}</div>
-            <div class="tag">{{downloads.tagline-current}}</div>
-          </a>
+
+          {{#if project.latestVersions.current}}
+            <a {{#if versionTypeCurrent}}class="is-version"{{/if}} href="/{{site.locale}}/{{site.download.link}}/current" title="{{downloads.display-hint}} {{downloads.current}}">
+              <div class="title">{{downloads.current}} {{project.latestVersions.current.nodeMajor}}</div>
+              <div class="tag">{{downloads.tagline-current}}</div>
+            </a>
+          {{/if}}
+
+          {{#if project.latestVersions.upcomingCurrent}}
+            <div class="upcoming-release">
+              <div class="title">{{downloads.current}} {{project.latestVersions.upcomingCurrent.nodeMajor}}</div>
+              <div class="tag">{{downloads.tagline-upcoming-current}}</div>
+            </div>
+          {{/if}}
         </div>
       </li>
       <li>

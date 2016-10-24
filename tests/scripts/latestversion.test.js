@@ -46,7 +46,10 @@ test('latestversion.upcomingCurrent()', (t) => {
       { version: 'v5.7.1', lts: false }
     ])
 
-    t.same(upcoming, { node: 'v7.0.0' })
+    t.same(upcoming, {
+      node: 'v7.0.0',
+      nodeMajor: 'v7.x'
+    })
     t.end()
   })
 
