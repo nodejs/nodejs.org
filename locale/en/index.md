@@ -10,6 +10,7 @@ labels:
   current: Current
   lts: LTS
   tagline-current: Latest Features
+  tagline-upcoming-current: Coming soon
   tagline-lts: Recommended For Most Users
   changelog: Changelog
   api: API Docs
