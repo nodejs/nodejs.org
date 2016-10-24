@@ -18,10 +18,18 @@ module.exports = function buildNavigation (latestVersions) {
         if (obj[key].link && obj[key].text) {
           // Insert latest versions for API docs
           if (key === 'api-current') {
+            // dont add a navigation item when link is supposed to be for
+            // the current release line, but that release line isn't present
+            if (!latestVersions.current) {
+              return
+            }
+
             obj[key].text = obj[key].text.replace(/%ver%/, latestVersions.current.node)
+            obj[key].link = obj[key].link.replace(/%ver-major%/, latestVersions.current.nodeMajor)
           }
           if (key === 'api-lts') {
             obj[key].text = obj[key].text.replace(/%ver%/, latestVersions.lts.node)
+            obj[key].link = obj[key].link.replace(/%ver-major%/, latestVersions.lts.nodeMajor)
           }
 
           meta.nav[level] = meta.nav[level] || parent

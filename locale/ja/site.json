@@ -81,12 +81,12 @@
             "text": "よくある質問"
         },
         "api-lts": {
-            "link": "/dist/latest-v4.x/docs/api",
+            "link": "/dist/latest-%ver-major%/docs/api",
             "subtext": "LTS",
             "text": "%ver% API"
         },
         "api-current": {
-            "link": "/dist/latest-v6.x/docs/api",
+            "link": "/dist/latest-%ver-major%/docs/api",
             "text": "%ver% API"
         },
         "guides": {
