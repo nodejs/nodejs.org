@@ -4,14 +4,14 @@ title: Download
 download: Download
 downloads:
     headline: Downloads
-    lts: LTS v4.x
-    current: LTS v6.x
+    lts: LTS
+    current: Current
     tagline-current: Latest Features
     tagline-lts: Recommended For Most Users
     display-hint: Display downloads for
     intro: >
         Download the Node.js source code or a pre-built installer for your platform, and start developing today.
-    currentVersion: LTS Version
+    currentVersion: Latest LTS Version
     buildDisclaimer: "Note: Python 2.6 or 2.7 is required to build from source tarballs."
 additional:
     headline: Additional Platforms
