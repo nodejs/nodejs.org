@@ -57,6 +57,7 @@ right place. Explore our community resources to find out how you can help:
 - [Korean Node.js community](http://nodejs.github.io/nodejs-ko/)
 - [Nicaragua Node.js community](http://nodenica.com/)
 - [Russian website](http://node-center.ru/)
+- [Spanish language Facebook group for Node.js](https://www.facebook.com/groups/node.es/)
 - [Spanish language community](http://nodehispano.com)
 - [Turkey group in Turkish (Türkçe)](http://node.ist/)
 - [Việt Nam Node.js community](http://nodejs.vn)

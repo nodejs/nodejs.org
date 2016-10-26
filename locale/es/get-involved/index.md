@@ -47,6 +47,7 @@ a contribuir de cualquier forma posible. Si usted quiere [reportar un error](htt
 - [Blog Australiano de Node.js blog &amp; lista de desarrolladores](http://nodejs.org.au/)
 - [Comunidad China](http://cnodejs.org)
 - [Comunidad Coreana de Node.js](http://nodejs.github.io/nodejs-ko/)
+- [Comunidad en Facebook de Español/Castellano](https://www.facebook.com/groups/node.es/)
 - [Comunidad en Google+ de usuarios Franceses de Node.js](https://plus.google.com/communities/113346206415381691435)
 - [Comunidad de lenguaje hispano](http://nodehispano.com)
 - [Comunidad de Hungría (Magyar)](http://nodehun.blogspot.com/)
