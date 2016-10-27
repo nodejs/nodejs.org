@@ -6110,6 +6110,13 @@ regions:
         description: "<p>O\_<b>HackLab</b>\_é um hackerspace de Sorocaba, SP.<br>\n\n<br>\n\n Somos um grupo de (e para)\_entusiastas em tecnologia e nosso objetivo é projetar, testar, estudar e compartilhar conhecimentos sobre diversas tecnologias como programação, eletrônica, hardware, arduino, artes, música, RPG, jogos de tabuleiro e outros.</p>"
         lon: -47.470001220703125
         lat: -23.489999771118164
+      - country: BR
+        city: Sorocaba
+        link: 'http://www.meetup.com/pt-BR/Sorocaba-Node-User-Group-SNUG/'
+        name: Sorocaba Node.js User Group
+        description: "<p>SNUG é um grupo de usuários Node.js de Sorocaba voltado para a comunidade local de desenvolvedores. Nós nos reunimos mensalmente para conversar sobre Node.js, compartilhar conhecimento e desenvolver nossa rede de contatos.</p>"
+        lon: -47.4826058
+        lat: -23.5074992
       - country: MX
         city: Monterrey
         link: 'http://www.meetup.com/Javascript-Monterrey/'
