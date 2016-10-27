@@ -40,6 +40,18 @@ const postMergeDownloads = [
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-ppc64le.tar.xz'
   },
   {
+    'title': 'Linux PPC BE 64-bit Binary',
+    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-ppc64.tar.xz'
+  },
+  {
+    'title': 'Linux s390x 64-bit Binary',
+    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-s390x.tar.xz'
+  },
+  {
+    'title': 'AIX 64-bit Binary',
+    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-aix-ppc64.tar.gz'
+  },
+  {
     'title': 'SunOS 32-bit Binary',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-sunos-x86.tar.xz'
   },
