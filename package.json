@@ -17,15 +17,9 @@
     "test:snyk": "snyk test",
     "postinstall": "snyk protect"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nodejs/nodejs.org.git"
-  },
+  "repository": "nodejs/nodejs.org",
   "author": "Node.js Website Working Group",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/nodejs/nodejs.org/issues"
-  },
   "engines": {
     "node": ">=4.0.0"
   },
