@@ -23,5 +23,6 @@ If you have spotted or written something about Node.js, do come over to our [Eva
 
 * [NodeConf Barcelona 2016](http://barcelona.nodeconf.com/): 18th November 2016 · Barcelona Mobile World Centre
 * [NodeConf Argentina](https://2016.nodeconf.com.ar): 18 - 19 November, 2016
+* [Node.js Interactive North America](http://events.linuxfoundation.org/events/node-interactive): November 29th - December 2nd · AUSTIN, TEXAS, US
 
 Have an event about Node.js coming up? You can put your events here through the [Evangelism team repo](https://github.com/nodejs/evangelism) and announce it in the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.
