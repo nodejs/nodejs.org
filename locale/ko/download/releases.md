@@ -19,7 +19,7 @@ Node.js 4.0.0에서 io.js의 이전 릴리스 라인과 Node.js 0.12.x가 합쳐
 
     <ul class="list-divider-pipe">
         <li><a href="https://nodejs.org/dist/latest-v6.x/">Node.js 6.x</a></li>
-        <li><a href="https://nodejs.org/dist/latest-v5.x/">Node.js 5.x</a></li>
+        <li><a href="https://nodejs.org/dist/latest-v4.x/">Node.js 4.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v0.12.x/">Node.js 0.12.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v0.10.x/">Node.js 0.10.x</a></li>
         <li><a href="https://nodejs.org/dist/">all versions</a></li>
@@ -31,7 +31,7 @@ Node.js 4.0.0에서 io.js의 이전 릴리스 라인과 Node.js 0.12.x가 합쳐
 
     <ul class="list-divider-pipe">
         <li><a href="https://nodejs.org/dist/latest-v6.x/">Node.js 6.x</a></li>
-        <li><a href="https://nodejs.org/dist/latest-v5.x/">Node.js 5.x</a></li>
+        <li><a href="https://nodejs.org/dist/latest-v4.x/">Node.js 4.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v0.12.x/">Node.js 0.12.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v0.10.x/">Node.js 0.10.x</a></li>
         <li><a href="https://nodejs.org/dist/">모든 버전</a></li>
