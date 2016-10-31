@@ -8,20 +8,22 @@ labels:
 <!--
 # About Docs
 
-There are three types of documentation available on this website:
+There are several types of documentation available on this website:
 
 * API reference documentation
 * ES6 features
 * Frequently asked questions
+* Guides
 -->
 
 # 문서에 관해서
 
-이 웹사이트에는 세 가지 종류의 문서가 있습니다.
+이 웹사이트에는 여러 종류의 문서가 있습니다.
 
 * API 레퍼런스 문서
 * ES6 기능
 * 자주 묻는 질문
+* 안내
 
 <!--
 ### API Reference Documentation
@@ -83,3 +85,13 @@ The [FAQ](/en/docs/faq/) covers how everyone can contribute to Node.js, our code
 
 [FAQ](/ko/docs/faq/)에서는 Node.js에 기여하는 방법, 행동강령과 거버넌스 모델,
 GitHub과 IRC에서 연락을 취하는 방법, 선별된 이슈로 돕는 방법 등을 다룹니다.
+
+<!--
+### Guides
+
+Long-form, in-depth articles about Node.js technical features and capabilities.
+-->
+
+### 안내
+
+Node.js의 기술적인 기능에 대한 길고 상세한 글

@@ -102,7 +102,7 @@ Node는 스레드를 사용하지 않도록 설계되지만 멀티 코어 환경
 [Blocking vs Non-Blocking]: https://github.com/nodejs/node/blob/master/doc/topics/blocking-vs-non-blocking.md
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[event loop]: https://github.com/nodejs/node/blob/master/doc/topics/the-event-loop-timers-and-nexttick.md
+[event loop]: https://github.com/nodejs/node/blob/master/doc/topics/event-loop-timers-and-nexttick.md
 [Event Machine]: http://rubyeventmachine.com/
 [Twisted]: http://twistedmatrix.com/
 -->
@@ -110,6 +110,6 @@ Node는 스레드를 사용하지 않도록 설계되지만 멀티 코어 환경
 [Blocking vs Non-Blocking]: https://github.com/nodejs/node/blob/master/doc/topics/blocking-vs-non-blocking.md
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[event loop]: https://github.com/nodejs/node/blob/master/doc/topics/the-event-loop-timers-and-nexttick.md
+[event loop]: https://github.com/nodejs/node/blob/master/doc/topics/event-loop-timers-and-nexttick.md
 [Event Machine]: http://rubyeventmachine.com/
 [Twisted]: http://twistedmatrix.com/
