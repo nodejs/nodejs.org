@@ -5,6 +5,18 @@
 <body>
   {{> header }}
 
+  <div id="interactive-wrapper">
+    <div id="interactive">
+      <span>
+        <img src="/static/images/interactive/nodejs-interactive-logo-center.png" />
+      </span>
+      <a href="http://events.linuxfoundation.org/events/node-interactive">
+        <img src="/static/images/interactive/nodejs-interactive-hero-banner-right-na.png"
+          alt="Node.js Interactive North America, Austin, Texas, November 29 - Dec 2, 2016" />
+      </a>
+    </div>
+  </div>
+
   <div id="main">
     <div class="container">
 
@@ -68,42 +80,6 @@
         </p>
       </div>
 
-    </div>
-  </div>
-
-  <style>
-  #interactive-wrapper {
-    flex: none;
-  }
-
-  #interactive {
-    background-image: url("/static/images/interactive/background.jpg");
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-
-  #interactive > * {
-    border: 20px solid transparent;
-    min-width: 1px;
-  }
-
-  @media (max-width: 480px) {
-    #interactive {
-      flex-wrap: wrap;
-    }
-  }
-  </style>
-
-  <div id="interactive-wrapper">
-    <div id="interactive">
-      <span>
-        <img src="/static/images/interactive/nodejs-interactive-logo-center.png" />
-      </span>
-      <a href="http://events.linuxfoundation.org/events/node-interactive">
-        <img src="/static/images/interactive/nodejs-interactive-hero-banner-right-na.png"
-          alt="Node.js Interactive North America, Austin, Texas, November 29 - Dec 2, 2016" />
-      </a>
     </div>
   </div>
 
