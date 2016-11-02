@@ -103,6 +103,7 @@ Additionally, Collaborators should:
 
 * Double check Pull Requests to make sure the author's full name and email address are correct before merging.
 * Verify that every commit passes all tests.
+* The [core-validate-commit](https://github.com/evanlucas/core-validate-commit) command validates the commit message for a particular commit in node core.
 
 ### Issue and Pull Request Tagging
 
