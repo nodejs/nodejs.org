@@ -176,7 +176,7 @@ yum install gcc-c++ make
 **Other distributions known to be supported:**
 
 * **Oracle Linux** (mirrors RHEL very closely)
-* **Amazon Linux** (tested on 2014.03)
+* **Amazon Linux** (tested on 2016.03)
 
 ### Alternatives
 
