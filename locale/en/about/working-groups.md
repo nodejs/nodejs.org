@@ -160,7 +160,7 @@ Each language community maintains its own membership.
 * [nodejs-it - Italian (Italiano)](https://github.com/nodejs/nodejs-it)
 * [nodejs-ja - Japanese (日本語)](https://github.com/nodejs/nodejs-ja)
 * [nodejs-ka - Georgian (ქართული)](https://github.com/nodejs/nodejs-ka)
-* [nodejs-ko - Korean (조선말)](https://github.com/nodejs/nodejs-ko)
+* [nodejs-ko - Korean (한국어)](https://github.com/nodejs/nodejs-ko)
 * [nodejs-mk - Macedonian (Mакедонски)](https://github.com/nodejs/nodejs-mk)
 * [nodejs-ms - Malay (بهاس ملايو)](https://github.com/nodejs/nodejs-ms)
 * [nodejs-nl - Dutch (Nederlands)](https://github.com/nodejs/nodejs-nl)
@@ -245,9 +245,9 @@ Their responsibilities are:
 
 The Addon API Working Group is responsible for maintaining the NAN project and
 corresponding _nan_ package in npm. The NAN project makes available an
-abstraction layer for native add-on authors for both Node.js and Node.js,
+abstraction layer for native add-on authors for Node.js,
 assisting in the writing of code that is compatible with many actively used
-versions of Node.js, Node.js, V8 and libuv.
+versions of Node.js, V8 and libuv.
 
 Their responsibilities are:
 

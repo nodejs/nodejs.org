@@ -1,17 +1,16 @@
 'use strict'
+
+const htmlToText = require('html-to-text')
 const yaml = require('js-yaml')
 const fs = require('fs')
 const path = require('path')
-let p = path.join(__dirname, '..', 'locale', 'en', 'get-involved', 'events.md')
-let htmlToText = require('html-to-text')
+
+const p = path.join(__dirname, '..', 'locale', 'en', 'get-involved', 'events.md')
 
 function load () {
-  let buf = fs.readFileSync(p)
-  let lines = buf.toString().split('\n')
-  let str = lines.slice(lines.indexOf('---') + 1, lines.indexOf('---', lines.indexOf('---') + 1)).join('\n')
-  let store = yaml.safeLoad(str)
-
-  return store
+  // Slice the file contents to get the YAML source code.
+  const contents = fs.readFileSync(p, { encoding: 'utf8' }).trim().slice(3, -3)
+  return yaml.safeLoad(contents)
 }
 
 // { type: 'Feature',

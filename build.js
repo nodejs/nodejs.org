@@ -14,6 +14,7 @@ const prism = require('metalsmith-prism')
 const stylus = require('metalsmith-stylus')
 const permalinks = require('metalsmith-permalinks')
 const pagination = require('metalsmith-yearly-pagination')
+const defaultsDeep = require('lodash.defaultsdeep')
 const marked = require('marked')
 const path = require('path')
 const fs = require('fs')
@@ -48,7 +49,7 @@ function i18nJSON (lang) {
   const defaultJSON = require(`./locale/${DEFAULT_LANG}/site.json`)
   const templateJSON = require(`./locale/${lang}/site.json`)
 
-  return Object.assign({}, defaultJSON, templateJSON)
+  return defaultsDeep({}, templateJSON, defaultJSON)
 }
 
 // This is the function where the actual magic happens. This contains the main
@@ -56,20 +57,15 @@ function i18nJSON (lang) {
 // english one.
 function buildLocale (source, locale) {
   console.time(`[metalsmith] build/${locale} finished`)
-  const siteJSON = path.join(__dirname, 'locale', locale, 'site.json')
   const metalsmith = Metalsmith(__dirname)
   metalsmith
     // Sets global metadata imported from the locale's respective site.json.
-    .metadata({
-      site: require(siteJSON),
-      project: source.project,
-      i18n: i18nJSON(locale)
-    })
+    .metadata({ site: i18nJSON(locale), project: source.project })
     // Sets the build source as the locale folder.
     .source(path.join(__dirname, 'locale', locale))
     // Extracts the main menu and sub-menu links form locale's site.json and
     // adds them to the metadata. This data is used in the navigation template
-    .use(navigation())
+    .use(navigation(source.project.latestVersions))
     // Defines the blog post/guide collections used to internally group them for
     // easier future handling and feed generation.
     .use(collections({
@@ -179,7 +175,6 @@ function buildLocale (source, locale) {
         copyright: require('./scripts/helpers/copyright-year.js'),
         equals: require('./scripts/helpers/equals.js'),
         startswith: require('./scripts/helpers/startswith.js'),
-        i18n: require('./scripts/helpers/i18n.js'),
         changeloglink: require('./scripts/helpers/changeloglink.js'),
         strftime: require('./scripts/helpers/strftime.js'),
         apidocslink: require('./scripts/helpers/apidocslink.js'),
@@ -214,7 +209,7 @@ function githubLinks (options) {
       const file = files[path]
       const url = `https://github.com/nodejs/nodejs.org/edit/master/locale/${options.locale}/${path.replace('.html', '.md')}`
 
-      const contents = file.contents.toString().replace(/\<h1\>(.+)\<\/h1\>/, ($1, $2) => {
+      const contents = file.contents.toString().replace(/<h1>(.+)<\/h1>/, ($1, $2) => {
         return `<a class="edit-link" href="${url}">Edit on GitHub</a> <h1>${$2}</h1>`
       })
 
@@ -246,13 +241,13 @@ function getSource (callback) {
     const source = {
       project: {
         versions,
-        currentVersions: {
-          stable: latestVersion.stable(versions),
+        latestVersions: {
+          current: latestVersion.current(versions),
           lts: latestVersion.lts(versions)
         },
         banner: {
-          visible: true,
-          content: 'Important <a href="https://nodejs.org/en/blog/vulnerability/npm-tokens-leak-march-2016/">security notification</a> regarding npm'
+          visible: false,
+          content: ''
         }
       }
     }

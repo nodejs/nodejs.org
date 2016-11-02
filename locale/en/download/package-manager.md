@@ -38,17 +38,17 @@ Also including: **Linux Mint**, **Linux Mint Debian Edition (LMDE)**, **elementa
 
 Node.js is available from the [NodeSource](https://nodesource.com) Debian and Ubuntu binary distributions repository (formerly [Chris Lea's](https://github.com/chrislea) Launchpad PPA). Support for this repository, along with its scripts, can be found on GitHub at [nodesource/distributions](https://github.com/nodesource/distributions).
 
-**NOTE:** If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+**NOTE:** If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 6.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-Alternatively, for Node.js v5:
+Alternatively, for Node.js v7:
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
@@ -70,7 +70,7 @@ sudo apt-get install -y build-essential
 
 * **Ubuntu 12.04 LTS** (Precise Pangolin)
 * **Ubuntu 14.04 LTS** (Trusty Tahr)
-* **Ubuntu 15.04** (Vivid Vervet)
+* **Ubuntu 16.04 LTS** (Xenial Xerus)
 
 **Supported Debian versions:**
 
@@ -114,16 +114,16 @@ Node.js is available from the [NodeSource](https://nodesource.com) Enterprise Li
 
 Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the **[EPEL](https://fedoraproject.org/wiki/EPEL)** repository being available. The setup script will check and provide instructions if it is not installed.
 
-Run as root on RHEL, CentOS or Fedora, for Node.js v4 LTS Argon:
+Run as root on RHEL, CentOS or Fedora, for Node.js v6 LTS:
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -
+curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
 ```
 
-Alternatively for Node.js v5:
+Alternatively for Node.js v7:
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_5.x | bash -
+curl --silent --location https://rpm.nodesource.com/setup_7.x | bash -
 ```
 
 Alternatively for Node.js 0.10:
@@ -224,11 +224,19 @@ Additionally, versions of **CentOS** and **Scientific Linux** corresponding to t
 
 Node.js is available through the ports system.
 
+**FreeBSD**:
+
 ```bash
 /usr/ports/www/node
 ```
 
-Development versions are also available using ports
+**OpenBSD**:
+
+```bash
+/usr/ports/lang/node
+```
+
+Development versions are also available using ports on FreeBSD
 
 ```bash
 cd /usr/ports/www/node-devel/ && make install clean
@@ -252,6 +260,11 @@ Or the development versions:
 pkg install node-devel
 ```
 
+Using [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD
+
+```bash
+pkg_add node
+```
 
 ## Gentoo
 

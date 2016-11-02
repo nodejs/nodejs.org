@@ -1,6 +1,5 @@
 'use strict'
 
-const extend = require('util')._extend
 const semver = require('semver')
 
 const postMergeDownloads = [
@@ -21,11 +20,11 @@ const postMergeDownloads = [
     'templateUrl': 'https://nodejs.org/dist/v%version%/win-x64/node.exe'
   },
   {
-    'title': 'Mac OS X 64-bit Installer',
+    'title': 'macOS 64-bit Installer',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%.pkg'
   },
   {
-    'title': 'Mac OS X 64-bit Binary',
+    'title': 'macOS 64-bit Binary',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-darwin-x64.tar.gz'
   },
   {
@@ -39,6 +38,18 @@ const postMergeDownloads = [
   {
     'title': 'Linux PPC LE 64-bit Binary',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-ppc64le.tar.xz'
+  },
+  {
+    'title': 'Linux PPC BE 64-bit Binary',
+    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-ppc64.tar.xz'
+  },
+  {
+    'title': 'Linux s390x 64-bit Binary',
+    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-s390x.tar.xz'
+  },
+  {
+    'title': 'AIX 64-bit Binary',
+    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-aix-ppc64.tar.gz'
   },
   {
     'title': 'SunOS 32-bit Binary',
@@ -85,15 +96,15 @@ const legacyDownloads = [
     'templateUrl': 'https://nodejs.org/dist/v%version%/x64/node.exe'
   },
   {
-    'title': 'Mac OS X Universal Installer',
+    'title': 'macOS Universal Installer',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%.pkg'
   },
   {
-    'title': 'Mac OS X 64-bit Binary',
+    'title': 'macOS 64-bit Binary',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-darwin-x64.tar.gz'
   },
   {
-    'title': 'Mac OS X 32-bit Binary',
+    'title': 'macOS 32-bit Binary',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-darwin-x86.tar.gz'
   },
   {
@@ -120,7 +131,7 @@ const legacyDownloads = [
 
 function resolveUrl (item, version) {
   const url = item.templateUrl.replace(/%version%/g, version)
-  return extend({ url }, item)
+  return Object.assign({ url }, item)
 }
 
 module.exports = (version) => {

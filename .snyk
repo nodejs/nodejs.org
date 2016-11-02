@@ -1,0 +1,36 @@
+version: v1.5.2
+ignore: {}
+patch:
+  'npm:marked:20150520':
+    - marked:
+        patched: '2016-07-09T09:33:23.222Z'
+    - metalsmith-markdown > marked:
+        patched: '2016-07-09T09:33:23.222Z'
+  'npm:minimatch:20160620':
+    - metalsmith-stylus > minimatch:
+        patched: '2016-07-09T09:33:23.222Z'
+    - metalsmith > recursive-readdir > minimatch:
+        patched: '2016-07-09T09:33:23.222Z'
+    - metalsmith-prism > metalsmith > recursive-readdir > minimatch:
+        patched: '2016-07-09T09:33:23.222Z'
+    - metalsmith-stylus > stylus > glob > minimatch:
+        patched: '2016-07-09T09:33:23.222Z'
+    - chokidar > fsevents > node-pre-gyp > tar > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-09T09:33:23.222Z'
+    - chokidar > fsevents > node-pre-gyp > tar-pack > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-09T09:33:23.222Z'
+    - chokidar > fsevents > node-pre-gyp > tar-pack > fstream-ignore > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-09T09:33:23.222Z'
+    - chokidar > fsevents > node-pre-gyp > tar-pack > rimraf > glob > minimatch:
+        patched: '2016-07-09T09:33:23.222Z'
+    - chokidar > fsevents > node-pre-gyp > rimraf > glob > minimatch:
+        patched: '2016-07-09T09:33:23.222Z'
+    - chokidar > fsevents > node-pre-gyp > tar-pack > tar > fstream > rimraf > glob > minimatch:
+        patched: '2016-07-09T09:33:23.222Z'
+    - chokidar > fsevents > node-pre-gyp > tar-pack > fstream-ignore > minimatch:
+        patched: '2016-07-09T09:33:23.222Z'
+    - metalsmith-collections > minimatch:
+        patched: '2016-07-09T09:33:23.222Z'
+  'npm:tough-cookie:20160722':
+    - chokidar > fsevents > node-pre-gyp > request > tough-cookie:
+        patched: '2016-07-26T18:26:02.202Z'

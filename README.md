@@ -8,22 +8,22 @@
 
 [nodejs.org](https://nodejs.org) by the [Node.js Foundation](https://nodejs.org/foundation/) builds on the merged community's past website projects to form a self-publishing, community-managed version of the previous site.
 
-On a technical level inspiration has been taken from the `iojs.org` repo while design and content has been migrated from the old [nodejs.org repo](https://github.com/nodejs/nodejs.org-archive). These technical changes have helped to facilitate community involvement and empower the foundation's internationalization communities to provide alternative website content in other languages.
+On a technical level, inspiration has been taken from the `iojs.org` repo while design and content has been migrated from the old [nodejs.org repo](https://github.com/nodejs/nodejs.org-archive). These technical changes have helped to facilitate community involvement and empower the foundation's internationalization communities to provide alternative website content in other languages.
 
-This repo's issues section has become the primary home for the Website WG's coordination efforts (meeting planning, minute approval, etc.)
+This repo's issues section has become the primary home for the Website WG's coordination efforts (meeting planning, minute approval, etc.).
 
 ## Contributing
 
-Please contribute! There's plenty of [good first contributions](https://github.com/nodejs/nodejs.org/labels/good%20first%20contribution) to do.
+Please contribute! There are plenty of [good first contributions](https://github.com/nodejs/nodejs.org/labels/good%20first%20contribution) to do.
 
 ```bash
 $ git clone https://github.com/nodejs/nodejs.org.git
 $ cd nodejs.org
 $ npm install
-$ npm run serve
+$ npm start
 ```
 
-This will start the development server on http://localhost:8080/en/ and should reload automatically when you make changes but it's all just code and no code is perfect so sometimes you may need to restart it :)
+This will start the development server on http://localhost:8080/en/ and should reload automatically when you make changes but it's all just code and no code is perfect so sometimes you may need to restart it. :)
 
 Note: You'll need Node.js v4 or newer as the build system uses some native ES2015 features.
 
@@ -53,7 +53,6 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 - Mikeal Rogers ([mikeal](https://github.com/mikeal)): [@mikeal](https://twitter.com/mikeal), `mikeal.rogers``@``gmail.com`
 - Phillip Johnsen ([phillipj](https://github.com/phillipj)), `johphi``@``gmail.com`
 - Rod Vagg ([rvagg](https://github.com/rvagg)): [@rvagg](https://twitter.com/rvagg), `rod``@``vagg.org`
-- Trent Oswald ([therebelrobot](https://github.com/therebelrobot)): [@therebelrobot](https://twitter.com/therebelrobot), `trentoswald``@``therebelrobot.com`
 
 ### Website Working Group Collaborators
 
@@ -71,7 +70,6 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 - Fábio Santos ([fabiosantoscode](https://github.com/fabiosantoscode))
 - Jeremiah Senkpiel ([Fishrock123](https://github.com/Fishrock123))
 - Wyatt Preul ([geek](https://github.com/geek))
-- Jona ([59](https://github.com/59))
 - Charlie Robbins ([indexzero](https://github.com/indexzero))
 - Minwoo Jung ([JungMinu](https://github.com/JungMinu))
 - Daniel Levy ([justsml](https://github.com/justsml))
@@ -95,6 +93,7 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 - Michaël Zasso ([targos](https://github.com/targos))
 - Myles Borins ([TheAlphaNerd](https://github.com/TheAlphaNerd))
 - Sakthipriyan Vairamani ([thefourtheye](https://github.com/thefourtheye))
+- Trent Oswald ([therebelrobot](https://github.com/therebelrobot))
 - Anton Wilhelm ([timaschew](https://github.com/timaschew))
 - Thomas Jensen ([tjconcept](https://github.com/tjconcept))
 - Rich Trott ([Trott](https://github.com/Trott))

@@ -3,126 +3,124 @@
 {{> html-head }}
 
 <body>
-    {{> header }}
+  {{> header }}
 
-    <div id="main">
-        <div class="container">
+  <div id="main">
+    <div class="container">
 
-            <div id="home-intro">
+      <div id="home-intro">
 
-                {{{ contents }}}
+        {{{ contents }}}
 
-                {{#if project.banner.visible}}
-                    <p class="home-version home-version-banner">
-                        {{{ project.banner.content }}}
-                    </p>
-                {{/if}}
+        {{#if project.banner.visible}}
+          <p class="home-version home-version-banner">
+            {{{ project.banner.content }}}
+          </p>
+        {{/if}}
 
-                <h2 id="home-downloadhead" data-dl-local="{{ labels.download-for }}">{{ labels.download }}</h2>
+        <h2 id="home-downloadhead" data-dl-local="{{ labels.download-for }}">{{ labels.download }}</h2>
 
-                <div class="home-downloadblock">
+        <div class="home-downloadblock">
 
-                  <a href="https://nodejs.org/dist/{{ project.currentVersions.lts }}/" class="home-downloadbutton" title="{{ labels.download }} {{ project.currentVersions.lts }} {{ labels.lts }}" data-version="{{ project.currentVersions.lts }}">
-                      {{ project.currentVersions.lts }} {{ labels.lts }}
-                      <small>{{ labels.tagline-lts }}</small>
-                  </a>
+          <a href="https://nodejs.org/dist/{{ project.latestVersions.lts.node }}/" class="home-downloadbutton" title="{{ labels.download }} {{ project.latestVersions.lts.node }} {{ labels.lts }}" data-version="{{ project.latestVersions.lts.node }}">
+            {{ project.latestVersions.lts.node }} {{ labels.lts }}
+            <small>{{ labels.tagline-lts }}</small>
+          </a>
 
-                  <ul class="list-divider-pipe home-secondary-links">
-                      <li>
-                        <a href="https://nodejs.org/{{site.locale}}/download/">{{ labels.other-downloads }}</a>
-                      </li>
-                      <li>
-                          <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.lts }}/CHANGELOG.md">{{ labels.changelog }}</a>
-                      </li>
-                      <li>
-                        <a href="{{majorapidocslink project.currentVersions.lts}}">{{ labels.api }}</a>
-                      </li>
-                  </ul>
-
-                </div>
-
-                {{#if project.currentVersions.stable}}
-                  <div class="home-downloadblock">
-
-                    <a href="https://nodejs.org/dist/{{ project.currentVersions.stable }}/" class="home-downloadbutton"  title="{{ labels.download }} {{ project.currentVersions.stable }} {{ labels.stable }}"  data-version="{{ project.currentVersions.stable }}">
-                        {{ project.currentVersions.stable }} {{ labels.stable }}
-                        <small>{{ labels.tagline-stable }}</small>
-                    </a>
-
-                    <ul class="list-divider-pipe home-secondary-links">
-                        <li>
-                          <a href="https://nodejs.org/{{site.locale}}/download/stable/">{{ labels.other-downloads }}</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/nodejs/node/blob/{{ project.currentVersions.stable }}/CHANGELOG.md">{{ labels.changelog }}</a>
-                        </li>
-                        <li>
-                          <a href="{{majorapidocslink project.currentVersions.stable}}">{{ labels.api }}</a>
-                        </li>
-                    </ul>
-
-                  </div>
-                {{/if}}
-                <p>
-                  {{{ labels.version-schedule-prompt }}} <a href="https://github.com/nodejs/LTS#lts_schedule">{{ labels.version-schedule-prompt-link-text }}.</a>
-                </p>
-            </div>
+          <ul class="list-divider-pipe home-secondary-links">
+            <li>
+              <a href="https://nodejs.org/{{site.locale}}/download/">{{ labels.other-downloads }}</a>
+            </li>
+            <li>
+              <a href="{{changeloglink project.latestVersions.lts.node}}">{{ labels.changelog }}</a>
+            </li>
+            <li>
+              <a href="{{majorapidocslink project.latestVersions.lts.node}}">{{ labels.api }}</a>
+            </li>
+          </ul>
 
         </div>
-    </div>
 
-    <style>
-      #interactive-wrapper {
-        flex: none;
-      }
+        {{#if project.latestVersions.current.node}}
+          <div class="home-downloadblock">
 
-      #interactive {
-        background-image: url("/static/images/interactive/background.png");
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-      }
+            <a href="https://nodejs.org/dist/{{ project.latestVersions.current.node }}/" class="home-downloadbutton"  title="{{ labels.download }} {{ project.latestVersions.current.node }} {{ labels.current }}"  data-version="{{ project.latestVersions.current.node }}">
+              {{ project.latestVersions.current.node }} {{ labels.current }}
+              <small>{{ labels.tagline-current }}</small>
+            </a>
 
-      .interactive-item {
-        border: 20px solid transparent;
-        min-width: 1px;
-      }
+            <ul class="list-divider-pipe home-secondary-links">
+              <li>
+                <a href="https://nodejs.org/{{site.locale}}/download/current/">{{ labels.other-downloads }}</a>
+              </li>
+              <li>
+                <a href="{{changeloglink project.latestVersions.current.node}}">{{ labels.changelog }}</a>
+              </li>
+              <li>
+                <a href="{{majorapidocslink project.latestVersions.current.node}}">{{ labels.api }}</a>
+              </li>
+            </ul>
 
-      @media (max-width: 480px) {
-        #logo-center {
-          display:none;
-        }
-        #interactive {
-          flex-wrap: wrap;
-        }
-      }
-
-      @media (min-width: 481px) {
-        #logo-first {
-          display:none;
-        }
-      }
-    </style>
-
-    <div id="interactive-wrapper">
-      <div id="interactive">
-        <span id="logo-first" class="interactive-item">
-          <img src="/static/images/interactive/nodejs-interactive-logo-center.png" />
-        </span>
-        <a class="interactive-item" href="http://events.linuxfoundation.org/events/node-interactive-europe">
-          <img src="/static/images/interactive/nodejs-interactive-hero-banner-left-eu.png" />
-        </a>
-        <span id="logo-center" class="interactive-item">
-          <img src="/static/images/interactive/nodejs-interactive-logo-center.png" />
-        </span>
-        <a class="interactive-item" href="http://events.linuxfoundation.org/events/node-interactive">
-          <img src="/static/images/interactive/nodejs-interactive-hero-banner-right-na.png" />
-        </a>
+          </div>
+        {{/if}}
+        <p>
+          {{{ labels.version-schedule-prompt }}} <a href="https://github.com/nodejs/LTS#lts-schedule">{{ labels.version-schedule-prompt-link-text }}.</a>
+        </p>
       </div>
-    </div>
 
-    {{> footer className="no-margin-top" }}
-    <script src="/static/js/download.js" async defer></script>
+    </div>
+  </div>
+
+  <style>
+  #interactive-wrapper {
+    flex: none;
+  }
+
+  #interactive {
+    background-image: url("/static/images/interactive/background.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  #interactive > * {
+    border: 20px solid transparent;
+    min-width: 1px;
+  }
+
+  @media (max-width: 480px) {
+    #interactive {
+      flex-wrap: wrap;
+    }
+  }
+  </style>
+
+  <div id="interactive-wrapper">
+    <div id="interactive">
+      <span>
+        <img src="/static/images/interactive/nodejs-interactive-logo-center.png" />
+      </span>
+      <a href="http://events.linuxfoundation.org/events/node-interactive">
+        <img src="/static/images/interactive/nodejs-interactive-hero-banner-right-na.png"
+          alt="Node.js Interactive North America, Austin, Texas, November 29 - Dec 2, 2016" />
+      </a>
+    </div>
+  </div>
+
+  {{> footer className="no-margin-top" }}
+  <script src="/static/js/download.js" async defer></script>
+  <script src="/static/js/dnt_helper.js"></script>
+  <script>
+    if (!_dntEnabled()) {
+      !function(n,o,d,e,j,s){n.GoogleAnalyticsObject=d;n[d]||(n[d]=function(){
+      (n[d].q=n[d].q||[]).push(arguments)});n[d].l=+new Date;j=o.createElement(e);
+      s=o.getElementsByTagName(e)[0];j.async=1;j.src='//www.google-analytics.com/analytics.js';
+      s.parentNode.insertBefore(j,s)}(window,document,'ga','script');
+
+      ga('create', 'UA-67020396-1', 'auto');
+      ga('send', 'pageview');
+    }
+    </script>
 
 </body>
 </html>

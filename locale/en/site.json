@@ -48,14 +48,6 @@
             "link": "about/resources",
             "text": "Resources"
         },
-        "foundation": {
-            "link": "foundation",
-            "text": "Foundation"
-        },
-        "security": {
-            "link": "security",
-            "text": "Security"
-        },
         "trademark": {
             "link": "about/trademark",
             "text": "Trademark"
@@ -71,6 +63,10 @@
         "package-manager": {
             "link": "download/package-manager",
             "text": "Installing Node.js via package manager"
+        },
+        "shasums":{
+          "link": "SHASUMS256.txt.asc",
+          "text": "Signed SHASUMS for release files"
         }
     },
     "docs": {
@@ -78,20 +74,20 @@
         "text": "Docs",
         "es6": {
             "link": "docs/es6",
-            "text": "ES6 in Node.js"
+            "text": "ES6 and beyond"
         },
         "faq": {
             "link": "docs/faq",
             "text": "FAQ"
         },
         "api-lts": {
-            "link": "/dist/latest-v4.x/docs/api",
+            "link": "/dist/latest-%ver-major%/docs/api",
             "subtext": "LTS",
-            "text": "v4.4.2 API"
+            "text": "%ver% API"
         },
-        "api-stable": {
-            "link": "/dist/latest-v5.x/docs/api",
-            "text": "v5.10.1 API"
+        "api-current": {
+            "link": "/dist/latest-%ver-major%/docs/api",
+            "text": "%ver% API"
         },
         "guides": {
             "link": "docs/guides",
@@ -124,6 +120,14 @@
         "announce": {
             "link": "foundation/announcements",
             "text": "Announcements"
+        },
+        "education": {
+            "link": "foundation/education",
+            "text": "Education Initiatives"
+        },
+        "outreachy": {
+            "link": "foundation/outreachy",
+            "text": "Outreachy + Node.js"
         }
     },
     "getinvolved": {

@@ -34,7 +34,7 @@ would like to contribute to the translation of nodejs.org, please refer to the f
     * [`nodejs-nl`](https://github.com/nodejs/nodejs-nl) Dutch Community
     * [`nodejs-no`](https://github.com/nodejs/nodejs-no) Norwegian Community
     * [`nodejs-pl`](https://github.com/nodejs/nodejs-pl) Polish Community
-    * [`iojs-pt`](https://github.com/nodejs/iojs-pt) Portuguese Community
+    * [`nodejs-pt`](https://github.com/nodejs/nodejs-pt) Portuguese Community
     * [`nodejs-ro`](https://github.com/nodejs/nodejs-ro) Romanian Community
     * [`nodejs-ru`](https://github.com/nodejs/nodejs-ru) Russian Community
     * [`nodejs-sv`](https://github.com/nodejs/nodejs-sv) Swedish Community
