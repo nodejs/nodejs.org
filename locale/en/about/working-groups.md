@@ -10,38 +10,38 @@ There are 2 types of Working Groups:
 ## Top-Level Working Groups
 <!-- Information here should mostly mirror: https://github.com/nodejs/TSC/blob/master/WORKING_GROUPS.md -->
 
-Top-Level Working Groups are created by the
+Top-Level Working Groups are created by the 
 [Technical Steering Committee (TSC)](https://github.com/nodejs/TSC#top-level-wgs-and-tlps).
 
 ### Current Top-Level Working Groups
 * [Inclusivity](#inclusivity)
 
 #### [Inclusivity](https://github.com/nodejs/inclusivity)
-The Inclusivity Working Group seeks to increase inclusivity and diversity for
+The Inclusivity Working Group seeks to increase inclusivity and diversity for 
 the Node.js project:
 
-* Increasing inclusivity means making the Node.js project a safe and friendly
+* Increasing inclusivity means making the Node.js project a safe and friendly 
 place for people from diverse backgrounds.
-* Increasing diversity means actively onboarding people from diverse backgrounds
+* Increasing diversity means actively onboarding people from diverse backgrounds 
 to the Node.js project and maintaining their participation.
 
 Its responsibilites are:
-* Foster a welcoming environment that ensures participants are valued and can
+* Foster a welcoming environment that ensures participants are valued and can 
 feel confident contributing or joining discussions, regardless of any [aspect of
 their identity](https://github.com/nodejs/inclusivity/#list-of-responsibilities).
-* Proactively seek and propose concrete steps the project can take to increase
+* Proactively seek and propose concrete steps the project can take to increase 
 inclusivity.
-* Serve as a resource for the development and enforcement of workflows that
+* Serve as a resource for the development and enforcement of workflows that 
 protect community members and projects from harassment and abuse.
-* Acknowledge and celebrate existing diversity accomplishments within the project
+* Acknowledge and celebrate existing diversity accomplishments within the project 
 while seeking to build upon them.
-* Identify ways to measure diversity and inclusivity within the project and report
+* Identify ways to measure diversity and inclusivity within the project and report 
 them at regular intervals.
 
 # Core Working Groups
 <!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 
-Core Working Groups are created by the
+Core Working Groups are created by the 
 [Core Technical Committee (CTC)](https://github.com/nodejs/node/blob/master/GOVERNANCE.md#core-technical-committee).
 
 
@@ -229,13 +229,13 @@ HTTP implementation in Node. It's responsibilities are:
 The roadmap working group is responsible for user community outreach
 and the translation of their concerns into a plan of action for Node.js.
 
-The final [ROADMAP](https://github.com/nodejs/node/blob/master/ROADMAP.md) document is still
+The final [ROADMAP](https://github.com/nodejs/node/blob/master/ROADMAP.md) document is still 
 owned by the TC and requires the same approval for changes as any other project asset.
 
 Their responsibilities are:
 * Attract and summarize user community needs and feedback.
 * Find or potentially create tools that allow for broader participation.
-* Create Pull Requests for relevant changes to
+* Create Pull Requests for relevant changes to 
 [ROADMAP.md](https://github.com/nodejs/node/blob/master/ROADMAP.md)
 
 
