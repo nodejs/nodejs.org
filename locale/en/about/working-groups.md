@@ -50,7 +50,7 @@ Core Working Groups are created by the
 * [Website](#website)
 * [Streams](#streams)
 * [Build](#build)
-* [Tracing](#tracing)
+* [Diagnostics](#diagnostics)
 * [i18n](#i18n)
 * [Evangelism](#evangelism)
 * [Roadmap](#roadmap)
@@ -106,17 +106,26 @@ Its responsibilities are:
 * Creates and manages build-containers.
 
 
-### [Tracing](https://github.com/nodejs/tracing-wg)
+### [Diagnostics](https://github.com/nodejs/diagnostics)
 
-The tracing working group's purpose is to increase the
-transparency of software written in Node.js.
+The diagnostics working group's purpose is to ensure Node provides a set of
+comprehensive, documented, extensible diagnostic protocols, formats, and
+APIs to enable tool vendors to provide reliable diagnostic tools for Node.
 
 Its responsibilities are:
-* Collaboration with V8 to integrate with `trace_event`.
-* Maintenance and iteration on AsyncWrap.
-* Maintenance and improvements to system tracing support (DTrace, LTTng, etc.)
-* Documentation of tracing and debugging techniques.
-* Fostering a tracing and debugging ecosystem.
+* Collect, understand, and document existing diagnostic capabilities and
+  entry-points throughout Node, V8, and other components.
+* Collect and document projects and products providing diagnostics for
+  Node with brief description of their technical architecture and sponsoring
+  organizations.
+* Identify opportunities and gaps, then propose and implement solutions.
+
+Work is divided into several domains:
+
+* [Tracing](https://github.com/nodejs/diagnostics/blob/master/tracing)
+* [Profiling](https://github.com/nodejs/diagnostics/blob/master/profiling)
+* [Heap and Memory Analysis](https://github.com/nodejs/diagnostics/blob/master/heap-memory)
+* [Step Debugging](https://github.com/nodejs/diagnostics/blob/master/debugging)
 
 ### i18n
 
