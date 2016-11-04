@@ -10,38 +10,38 @@ There are 2 types of Working Groups:
 ## Top-Level Working Groups
 <!-- Information here should mostly mirror: https://github.com/nodejs/TSC/blob/master/WORKING_GROUPS.md -->
 
-Top-Level Working Groups are created by the 
+Top-Level Working Groups are created by the
 [Technical Steering Committee (TSC)](https://github.com/nodejs/TSC#top-level-wgs-and-tlps).
 
 ### Current Top-Level Working Groups
 * [Inclusivity](#inclusivity)
 
 #### [Inclusivity](https://github.com/nodejs/inclusivity)
-The Inclusivity Working Group seeks to increase inclusivity and diversity for 
+The Inclusivity Working Group seeks to increase inclusivity and diversity for
 the Node.js project:
 
-* Increasing inclusivity means making the Node.js project a safe and friendly 
+* Increasing inclusivity means making the Node.js project a safe and friendly
 place for people from diverse backgrounds.
-* Increasing diversity means actively onboarding people from diverse backgrounds 
+* Increasing diversity means actively onboarding people from diverse backgrounds
 to the Node.js project and maintaining their participation.
 
 Its responsibilites are:
-* Foster a welcoming environment that ensures participants are valued and can 
+* Foster a welcoming environment that ensures participants are valued and can
 feel confident contributing or joining discussions, regardless of any [aspect of
 their identity](https://github.com/nodejs/inclusivity/#list-of-responsibilities).
-* Proactively seek and propose concrete steps the project can take to increase 
+* Proactively seek and propose concrete steps the project can take to increase
 inclusivity.
-* Serve as a resource for the development and enforcement of workflows that 
+* Serve as a resource for the development and enforcement of workflows that
 protect community members and projects from harassment and abuse.
-* Acknowledge and celebrate existing diversity accomplishments within the project 
+* Acknowledge and celebrate existing diversity accomplishments within the project
 while seeking to build upon them.
-* Identify ways to measure diversity and inclusivity within the project and report 
+* Identify ways to measure diversity and inclusivity within the project and report
 them at regular intervals.
 
 # Core Working Groups
 <!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 
-Core Working Groups are created by the 
+Core Working Groups are created by the
 [Core Technical Committee (CTC)](https://github.com/nodejs/node/blob/master/GOVERNANCE.md#core-technical-committee).
 
 
@@ -50,7 +50,7 @@ Core Working Groups are created by the
 * [Website](#website)
 * [Streams](#streams)
 * [Build](#build)
-* [Tracing](#tracing)
+* [Diagnostics](#diagnostics)
 * [i18n](#i18n)
 * [Evangelism](#evangelism)
 * [Roadmap](#roadmap)
@@ -106,17 +106,26 @@ Its responsibilities are:
 * Creates and manages build-containers.
 
 
-### [Tracing](https://github.com/nodejs/tracing-wg)
+### [Diagnostics](https://github.com/nodejs/diagnostics)
 
-The tracing working group's purpose is to increase the
-transparency of software written in Node.js.
+The diagnostics working group's purpose is to ensure Node provides a set of
+comprehensive, documented, extensible diagnostic protocols, formats, and
+APIs to enable tool vendors to provide reliable diagnostic tools for Node.
 
 Its responsibilities are:
-* Collaboration with V8 to integrate with `trace_event`.
-* Maintenance and iteration on AsyncWrap.
-* Maintenance and improvements to system tracing support (DTrace, LTTng, etc.)
-* Documentation of tracing and debugging techniques.
-* Fostering a tracing and debugging ecosystem.
+* Collect, understand, and document existing diagnostic capabilities and
+  entry-points throughout Node, V8, and other components.
+* Collect and document projects and products providing diagnostics for
+  Node with brief description of their technical architecture and sponsoring
+  organizations.
+* Identify opportunities and gaps, then propose and implement solutions.
+
+Work is divided into several domains:
+
+* [Tracing](https://github.com/nodejs/diagnostics/blob/master/tracing)
+* [Profiling](https://github.com/nodejs/diagnostics/blob/master/profiling)
+* [Heap and Memory Analysis](https://github.com/nodejs/diagnostics/blob/master/heap-memory)
+* [Step Debugging](https://github.com/nodejs/diagnostics/blob/master/debugging)
 
 ### i18n
 
@@ -130,12 +139,11 @@ various project resources.
 
 Their responsibilities are:
 * Translations of any Node.js materials they believe are relevant to their
-community.
-* Review processes for keeping translations up
-to date and of high quality.
+  community.
+* Review processes for keeping translations up to date and of high quality.
 * Social media channels in their language.
 * Promotion of Node.js speakers for meetups and conferences in their
-language.
+  language.
 
 Note that the i18n working groups are distinct from the [Intl](#Intl) working group.
 
@@ -181,10 +189,10 @@ Each language community maintains its own membership.
 The Intl Working Group is dedicated to support and improvement of
 Internationalization (i18n) and Localization (l10n) in Node. Its responsibilities are:
 
-1. Functionality & compliance (standards: ECMA, Unicode…)
-2. Support for Globalization and Internationalization issues that come up in the tracker
-3. Guidance and Best Practices
-4. Refinement of existing `Intl` implementation
+* Functionality & compliance (standards: ECMA, Unicode…)
+* Support for Globalization and Internationalization issues that come up in the tracker
+* Guidance and Best Practices
+* Refinement of existing `Intl` implementation
 
 The Intl WG is not responsible for translation of content. That is the responsibility of the specific [i18n](#i18n) group for each language.
 
@@ -220,13 +228,13 @@ HTTP implementation in Node. It's responsibilities are:
 The roadmap working group is responsible for user community outreach
 and the translation of their concerns into a plan of action for Node.js.
 
-The final [ROADMAP](https://github.com/nodejs/node/blob/master/ROADMAP.md) document is still 
+The final [ROADMAP](https://github.com/nodejs/node/blob/master/ROADMAP.md) document is still
 owned by the TC and requires the same approval for changes as any other project asset.
 
 Their responsibilities are:
 * Attract and summarize user community needs and feedback.
 * Find or potentially create tools that allow for broader participation.
-* Create Pull Requests for relevant changes to 
+* Create Pull Requests for relevant changes to
 [ROADMAP.md](https://github.com/nodejs/node/blob/master/ROADMAP.md)
 
 
@@ -271,17 +279,17 @@ The current members can be found in their
 The purpose of the Benchmark working group is to gain consensus
 for an agreed set of benchmarks that can be used to:
 
-+ track and evangelize performance gains made between Node releases
-+ avoid performance regressions between releases
+* track and evangelize performance gains made between Node releases
+* avoid performance regressions between releases
 
 Its responsibilities are:
 
-+ Identify 1 or more benchmarks that reflect customer usage.
+* Identify 1 or more benchmarks that reflect customer usage.
    Likely need more than one to cover typical Node use cases
    including low-latency and high concurrency
-+ Work to get community consensus on the list chosen
-+ Add regular execution of chosen benchmarks to Node builds
-+ Track/publicize performance between builds/releases
+* Work to get community consensus on the list chosen
+* Add regular execution of chosen benchmarks to Node builds
+* Track/publicize performance between builds/releases
 
 ### [Post-mortem](https://github.com/nodejs/post-mortem)
 
@@ -293,9 +301,9 @@ known and available to Node.js users.
 
 Its responsibilities are:
 
-+ Defining and adding interfaces/APIs in order to allow dumps
+* Defining and adding interfaces/APIs in order to allow dumps
   to be generated when needed
-+ Defining and adding common structures to the dumps generated
+* Defining and adding common structures to the dumps generated
   in order to support tools that want to introspect those dumps
 
 ### [Documentation](https://github.com/nodejs/docs)
