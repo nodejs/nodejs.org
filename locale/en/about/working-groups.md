@@ -139,11 +139,12 @@ various project resources.
 
 Their responsibilities are:
 * Translations of any Node.js materials they believe are relevant to their
-  community.
-* Review processes for keeping translations up to date and of high quality.
+community.
+* Review processes for keeping translations up
+to date and of high quality.
 * Social media channels in their language.
 * Promotion of Node.js speakers for meetups and conferences in their
-  language.
+language.
 
 Note that the i18n working groups are distinct from the [Intl](#Intl) working group.
 
@@ -189,10 +190,10 @@ Each language community maintains its own membership.
 The Intl Working Group is dedicated to support and improvement of
 Internationalization (i18n) and Localization (l10n) in Node. Its responsibilities are:
 
-* Functionality & compliance (standards: ECMA, Unicode…)
-* Support for Globalization and Internationalization issues that come up in the tracker
-* Guidance and Best Practices
-* Refinement of existing `Intl` implementation
+1. Functionality & compliance (standards: ECMA, Unicode…)
+2. Support for Globalization and Internationalization issues that come up in the tracker
+3. Guidance and Best Practices
+4. Refinement of existing `Intl` implementation
 
 The Intl WG is not responsible for translation of content. That is the responsibility of the specific [i18n](#i18n) group for each language.
 
@@ -279,17 +280,17 @@ The current members can be found in their
 The purpose of the Benchmark working group is to gain consensus
 for an agreed set of benchmarks that can be used to:
 
-* track and evangelize performance gains made between Node releases
-* avoid performance regressions between releases
++ track and evangelize performance gains made between Node releases
++ avoid performance regressions between releases
 
 Its responsibilities are:
 
-* Identify 1 or more benchmarks that reflect customer usage.
++ Identify 1 or more benchmarks that reflect customer usage.
    Likely need more than one to cover typical Node use cases
    including low-latency and high concurrency
-* Work to get community consensus on the list chosen
-* Add regular execution of chosen benchmarks to Node builds
-* Track/publicize performance between builds/releases
++ Work to get community consensus on the list chosen
++ Add regular execution of chosen benchmarks to Node builds
++ Track/publicize performance between builds/releases
 
 ### [Post-mortem](https://github.com/nodejs/post-mortem)
 
@@ -301,9 +302,9 @@ known and available to Node.js users.
 
 Its responsibilities are:
 
-* Defining and adding interfaces/APIs in order to allow dumps
++ Defining and adding interfaces/APIs in order to allow dumps
   to be generated when needed
-* Defining and adding common structures to the dumps generated
++ Defining and adding common structures to the dumps generated
   in order to support tools that want to introspect those dumps
 
 ### [Documentation](https://github.com/nodejs/docs)
