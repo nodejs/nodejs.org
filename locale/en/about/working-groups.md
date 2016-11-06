@@ -109,24 +109,19 @@ Responsibilities include:
 
 ### [Diagnostics](https://github.com/nodejs/diagnostics)
 
-The Diagnostics Working Group's purpose is to ensure Node.js provides a set of
-comprehensive, documented, extensible diagnostic protocols, formats, and
-APIs to enable tool vendors to provide reliable diagnostic tools for Node.
+The Diagnostics Working Group's purpose is to surface a set of comprehensive,
+documented, and extensible diagnostic interfaces for use by Node.js tools and
+JavaScript VMs.
 
 Responsibilities include:
-* Collecting, understanding, and documenting existing diagnostic capabilities and
-  entry-points throughout Node, V8, and other components.
-* Collecting and documenting projects and products providing diagnostics for
-  Node.js with brief description of their technical architecture and sponsoring
-  organizations.
-* Identifying opportunities and gaps, then proposing and implementing solutions.
-
-Work is divided into several domains:
-
-* [Tracing](https://github.com/nodejs/diagnostics/blob/master/tracing)
-* [Profiling](https://github.com/nodejs/diagnostics/blob/master/profiling)
-* [Heap and Memory Analysis](https://github.com/nodejs/diagnostics/blob/master/heap-memory)
-* [Step Debugging](https://github.com/nodejs/diagnostics/blob/master/debugging)
+* Collaborating with V8 to integrate `v8_inspector` into Node.js.
+* Collaborating with V8 to integrate `trace_event` into Node.js.
+* Collaborating with Core to refine `async_wrap` and `async_hooks`.
+* Maintaining and improving OS trace system integration (e.g. ETW, LTTNG, dtrace).
+* Documenting diagnostic capabilities and APIs in Node.js and its components.
+* Exploring opportunities and gaps, discussing feature requests, and addressing
+  conflicts in Node.js diagnostics.
+* Fostering an ecosystem of diagnostics tools for Node.js.
 
 ### i18n
 
