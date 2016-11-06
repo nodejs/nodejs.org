@@ -44,7 +44,6 @@ them at regular intervals.
 Core Working Groups are created by the
 [Core Technical Committee (CTC)](https://github.com/nodejs/node/blob/master/GOVERNANCE.md#core-technical-committee).
 
-
 ## Current Working Groups
 
 * [Website](#website)
@@ -62,7 +61,6 @@ Core Working Groups are created by the
 * [HTTP](#http)
 * [Documentation](#documentation)
 * [Testing](#testing)
-
 
 ### [Website](https://github.com/nodejs/nodejs.org)
 
@@ -94,7 +92,6 @@ Responsibilities include:
 * Recommending versions of `readable-stream` to be included in Node.js.
 * Messaging about the future of streams to give the community advance notice of changes.
 
-
 ### [Build](https://github.com/nodejs/build)
 
 The Build Working Group's purpose is to create and maintain a distributed
@@ -105,7 +102,6 @@ Responsibilities include:
 * Running tests.
 * Running performance testing and comparisons.
 * Creating and managing build-containers.
-
 
 ### [Diagnostics](https://github.com/nodejs/diagnostics)
 
@@ -236,7 +232,6 @@ Responsibilities include:
 * Creating Pull Requests for relevant changes to
 [ROADMAP.md](https://github.com/nodejs/node/blob/master/ROADMAP.md)
 
-
 ### [Docker](https://github.com/nodejs/docker-node)
 
 The Docker Working Group's purpose is to build, maintain, and improve official
@@ -246,7 +241,6 @@ Responsibilities include:
 * Keeping the official Docker images updated in line with new Node.js releases.
 * Decide and implement image improvements and/or fixes.
 * Maintain and improve the images' documentation.
-
 
 ### [Addon API](https://github.com/nodejs/nan)
 
