@@ -7140,6 +7140,15 @@ regions:
         lon: -90.5477204
   - region: North America
     conferences:
+      - name: Node Knockout
+        dates:
+          - 2015-11-12T00:00:00.000Z
+          - 2015-11-1300:00:00.000Z
+        link: 'http://www.nodeknockout.com'
+        desc: "Register now for the biggest 48-hour online Node.js hackathon - November 12-13th, 2016"
+        location: 'Anywhere, online.'
+        lat: 37.774929
+        lon: -122.419416
       - name: Node.js Interactive
         dates:
           - 2015-12-08T00:00:00.000Z
