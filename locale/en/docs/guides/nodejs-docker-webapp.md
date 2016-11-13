@@ -147,12 +147,16 @@ CMD [ "npm", "start" ]
 
 ## .dockerignore file
 
-Prevent your local modules and debug log from being copied into your Docker image:
+Create a `.dockerignore` file in the same directory as your `Dockerfile`
+with following content:
 
 ```
 node_modules
 npm-debug.log
 ```
+
+This will prevent your local modules and debug logs from being copied onto your
+Docker image and possibly overwriting modules installed within your image.
 
 ## Building your image
 
