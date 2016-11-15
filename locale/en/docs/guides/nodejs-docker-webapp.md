@@ -145,6 +145,19 @@ EXPOSE 8080
 CMD [ "npm", "start" ]
 ```
 
+## .dockerignore file
+
+Create a `.dockerignore` file in the same directory as your `Dockerfile`
+with following content:
+
+```
+node_modules
+npm-debug.log
+```
+
+This will prevent your local modules and debug logs from being copied onto your
+Docker image and possibly overwriting modules installed within your image.
+
 ## Building your image
 
 Go to the directory that has your `Dockerfile` and run the following command to
