@@ -42,66 +42,66 @@ function _meetup (ev) {
     if (ev.description[0] !== '<') {
       ev.description = `<p>${ev.description}</p>`
     }
-    const regex = /<br\s*[\/]?>/gi
+    const regex = /<br\s*[/]?>/gi
     desc = htmlToText.fromString(ev.description).replace(regex, '\n')
   }
 
   const ret =
-  { type: 'Feature',
-    geometry:
-    { type: 'Point',
-      coordinates: [ev.lon, ev.lat]
-    },
-    properties:
-    { title: ev.name,
-      description: desc,
-      link: ev.link,
-      image: ev.group_photo ? ev.group_photo.photo_link : '',
-      'marker-size': 'medium',
-      'marker-symbol': 'star',
-      'marker-color': '#80bd01'
+    { type: 'Feature',
+      geometry:
+      { type: 'Point',
+        coordinates: [ev.lon, ev.lat]
+      },
+      properties:
+      { title: ev.name,
+        description: desc,
+        link: ev.link,
+        image: ev.group_photo ? ev.group_photo.photo_link : '',
+        'marker-size': 'medium',
+        'marker-symbol': 'star',
+        'marker-color': '#80bd01'
+      }
     }
-  }
   return ret
 }
 function _conference (ev) {
   if (!ev.lat) return
   const ret =
-  { type: 'Feature',
-    geometry:
-    { type: 'Point',
-      coordinates: [ev.lon, ev.lat]
-    },
-    properties:
-    { title: ev.name,
-      description: ev.desc,
-      link: ev.link,
-      image: ev.image,
-      'marker-size': 'medium',
-      'marker-symbol': 'triangle',
-      'marker-color': '#3887be'
+    { type: 'Feature',
+      geometry:
+      { type: 'Point',
+        coordinates: [ev.lon, ev.lat]
+      },
+      properties:
+      { title: ev.name,
+        description: ev.desc,
+        link: ev.link,
+        image: ev.image,
+        'marker-size': 'medium',
+        'marker-symbol': 'triangle',
+        'marker-color': '#3887be'
+      }
     }
-  }
   return ret
 }
 function _nodeschool (ev) {
   if (!ev.lat) return
   const ret =
-  { type: 'Feature',
-    geometry:
-    { type: 'Point',
-      coordinates: [ev.lon, ev.lat]
-    },
-     properties:
-     { title: ev.name,
-       link: ev.website || ev.repo,
-       image: ev.image,
-       description: `${ev.name} ${ev.repo || ''} ${ev.website || ''}`,
-       'marker-size': 'medium',
-       'marker-symbol': 'star-stroked',
-       'marker-color': '#f7da03'
+    { type: 'Feature',
+      geometry:
+      { type: 'Point',
+        coordinates: [ev.lon, ev.lat]
+      },
+      properties:
+      { title: ev.name,
+        link: ev.website || ev.repo,
+        image: ev.image,
+        description: `${ev.name} ${ev.repo || ''} ${ev.website || ''}`,
+        'marker-size': 'medium',
+        'marker-symbol': 'star-stroked',
+        'marker-color': '#f7da03'
+      }
     }
-  }
   return ret
 }
 

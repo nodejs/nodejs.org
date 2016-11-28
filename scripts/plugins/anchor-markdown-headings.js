@@ -2,7 +2,7 @@
 
 module.exports = function anchorMarkdownHeadings (text, level, raw) {
   const escapedText = raw
-    .replace(/(\[([^\]]+)\]\([^)]+\))/g, '$2')
+    .replace(/(\[([^\]]+)]\([^)]+\))/g, '$2')
     .replace(/[^\w]+/g, '-')
     .replace(/-{2,}/g, '-')
     .replace(/(^-|-$)/g, '')
