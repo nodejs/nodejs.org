@@ -23,6 +23,12 @@ The Node.js Foundation has consolidated all the best thinking around why enterpr
 
 <iframe width="560" height="400" src="//www.slideshare.net/slideshow/embed_code/key/cdqy9ghQ1Bl48A" frameborder="0" allowfullscreen></iframe>
 
+## Walmart Strives to Be an Online Retail Leader with Node.js
+
+Walmart sees nearly 20,000 hits per-second on its website and mobile app during the holiday season, so it needs a fast, reliable and bulletproof ecommerce system to reach its goal of becoming the number one online retailer. That’s why it’s rebuilding Walmart.com with Node.js.
+
+[Read the full case study.](/static/documents/casestudies/Node_CaseStudy_Walmart_final.pdf)
+
 ## Node.js Helps NASA Keep Astronauts Safe and Data Accessible
 
 Collin Estes is the Director of Software Engineering and Chief Architect at Mathematical Research Institute Technologies (MRI Technologies), who partners with United Technologies Corporation Aerospace Systems, the company that creates and maintains the spacesuits for extra vehicular activity (EVA) missions at NASA. He and his team took on the challenge of creating an end-to-end system for data on the full lifecycle of spacesuits. He chose Node.js to make it work.
