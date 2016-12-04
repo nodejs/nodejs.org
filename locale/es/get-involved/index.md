@@ -21,8 +21,6 @@ a contribuir de cualquier forma posible. Si usted quiere [reportar un error](htt
 
 - [Node Weekly](http://nodeweekly.com) es una lista de correo que recopila los últimos eventos y noticias alrededor de la comunidad de Node.js.
 
-- [Planet Node](http://planetnodejs.com) es un agregador de blogs de desarrolladores de Node.
-
 - [NodeUp](http://nodeup.com) es un podcast cubriendo las últimas noticias en la comunidad de Node.
 
 - [NodeJS Reactions](http://nodejsreactions.tumblr.com) captura la experiencia de Node.js en forma de GIFs animados.
