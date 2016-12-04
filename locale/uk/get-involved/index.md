@@ -19,8 +19,6 @@ layout: contribute.hbs
 
 - [Node Weekly](http://nodeweekly.com) це поштове розсилання, що збирає найсвіжіші події та новини довкола спільноти Node.js.
 
-- [Planet Node](http://planetnodejs.com) це агрегатор блогів розробників на Node.
-
 - [NodeUp](http://nodeup.com) подкаст в якому обговорюють найсвіжіші новини з Nod–спільноти.
 
 - [NodeJS Reactions](http://nodejsreactions.tumblr.com) відображає досвід роботи з Node.js через анімовані GIF.
