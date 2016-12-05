@@ -57,6 +57,24 @@ interactive group.
 Enterprise conversations are short videos, recorded live, with large scale
 companies sharing their experiences with Node.js.
 
+## Wildworks (Episode 9)
+
+Paul Milham, Lead Software developer at Wildworks chats with Mikeal and Tracy about how using Node.js provides ease in helping to make the Wildworks gaming experience safe for kids. Paul discusses how the team has fully migrated from PHP to Node.js resulting in more productive and reliable builds, in addition to increased team efficiency and faster debugging times.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Vkli1jsCxCo" frameborder="0" allowfullscreen></iframe>
+
+## Despegar (Episode 8)
+
+Enterprise Conversation with Diego Paez of Despegar, Latin America's World Travel Agency. Diego discusses how the Despegar team helped to solve user experience issues by implementing cross-functional teams with a clear code base from Node.js.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/h15H9jPXz1Q" frameborder="0" allowfullscreen></iframe>
+
+## Bustle (Episode 7)
+
+Enterprise Conversation with Steve Faulkner, Director of Platform Engineering at Bustle. Mikeal and Steve discuss how Bustle has been transitioning from a rails app to using Node.js for both Front and Back end assets. From a development perspective, Steve discusses how using Node.js allows for great flexibility amongst their team.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9JOfetqIXd0" frameborder="0" allowfullscreen></iframe>
+
 ## Lowe's Digital (Episode 6)
 
 Enterprise Conversation with Rick Adams from Lowe's Digital. Rick and Mikeal will talk about how Lowe's got their start with Node.js and how they leverage it to create a new experience for their customers.
