@@ -77,11 +77,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `argon` of `node`
+Here we will use the latest LTS (long term support) version `boron` of `node`
 available from the [Docker Hub](https://hub.docker.com/):
 
 ```docker
-FROM node:argon
+FROM node:boron
 ```
 
 Next we create a directory to hold the application code inside the image, this
@@ -128,7 +128,7 @@ CMD [ "npm", "start" ]
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:argon
+FROM node:boron
 
 # Create app directory
 RUN mkdir -p /usr/src/app
@@ -175,7 +175,7 @@ $ docker images
 
 # Example
 REPOSITORY                      TAG        ID              CREATED
-node                            argon      539c0211cd76    3 weeks ago
+node                            boron      539c0211cd76    3 weeks ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
