@@ -12,7 +12,6 @@ Technical Steering Committee, and representatives elected by the individual memb
 * TSC Director: **Rod Vagg**, chief node officer at NodeSource.
 * Silver-level Director: **Brian McCallister**, chief technology officer of platforms at Groupon.
 * Silver-level Director: **Justin Beckwith**, product manager at Google.
-* Director: **Charlie Robbins**, director of engineering at GoDaddy.com.
 * Director: **Todd Moore**, vice president of open technology at IBM.
 * Director: **Colleen Evans**, principal program manager at Microsoft.
 * Director: **Rich Sharples**, senior director of product management at Red Hat.
