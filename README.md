@@ -91,7 +91,7 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 - Steven R. Loomis ([srl295](https://github.com/srl295))
 - Steve Mao ([stevemao](https://github.com/stevemao))
 - Michaël Zasso ([targos](https://github.com/targos))
-- Myles Borins ([TheAlphaNerd](https://github.com/TheAlphaNerd))
+- Myles Borins ([MylesBorins](https://github.com/MylesBorins))
 - Sakthipriyan Vairamani ([thefourtheye](https://github.com/thefourtheye))
 - Trent Oswald ([therebelrobot](https://github.com/therebelrobot))
 - Anton Wilhelm ([timaschew](https://github.com/timaschew))
