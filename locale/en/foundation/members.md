@@ -19,9 +19,6 @@ You are required to have a GitHub account to register.
 ## Platinum
 
 <div style="text-align:center;">
-<a target="_new" class="imagelink" href="//godaddy.com">
-  <img alt="GoDaddy" class="memberlogo" src="/static/images/foundation/godaddyLogo.png" />
-</a>
 <a target="_new" class="imagelink" href="http://ibm.com">
   <img alt="IBM" class="memberlogo" src="/static/images/foundation/ibmLogo.png" />
 </a>
@@ -34,9 +31,7 @@ You are required to have a GitHub account to register.
 <a target="_new" class="imagelink" href="//microsoft.com">
   <img alt="Microsoft" class="memberlogo" src="/static/images/foundation/microsoftLogo.png" />
 </a>
-<a target="_new" class="imagelink" href="//nodesource.com">
-  <img alt="NodeSource" class="memberlogo" src="/static/images/foundation/nodesourceLogo.png" />
-</a>
+
 <a target="_new" class="imagelink" href="//paypal.com">
   <img alt="PayPal" class="memberlogo" src="/static/images/foundation/paypalLogo.png" />
 </a>
@@ -45,23 +40,25 @@ You are required to have a GitHub account to register.
 </a>
 </div>
 
+## Gold
+
+<div style="text-align:center;">
+<a target="_new" class="imagelink" href="//godaddy.com">
+  <img alt="GoDaddy" class="memberlogo" src="/static/images/foundation/godaddyLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="//nodesource.com">
+  <img alt="NodeSource" class="memberlogo" src="/static/images/foundation/nodesourceLogo.png" />
+</a>
+</div>
+
 ## Silver
 
 <div style="text-align:center;">
-<a target="_new" class="imagelink" href="http://apigee.com">
-  <img alt="Apigee" class="memberlogo" src="/static/images/foundation/apigee_logo_md.png" />
-</a>
-<a target="_new" class="imagelink" href="http://appdynamics.com">
-  <img alt="AppDynamics" class="memberlogo" src="/static/images/foundation/appdynamics.png" />
-</a>
 <a target="_new" class="imagelink" href="http://cars.com">
   <img alt="Cars.com" class="memberlogo" src="/static/images/foundation/cars.png" />
 </a>
 <a target="_new" class="imagelink" href="http://codefresh.io">
   <img alt="CodeFresh" class="memberlogo" src="/static/images/foundation/codefreshLogo.png" />
-</a>
-<a target="_new" class="imagelink" href="//digitalocean.com">
-  <img alt="DigitalOcean" class="memberlogo" src="/static/images/foundation/digitaloceanLogo.png" />
 </a>
 <a target="_new" class="imagelink" href="https://www.dynatrace.com">
   <img alt="Dynatrace" class="memberlogo" src="/static/images/foundation/dynatrace.png" />
