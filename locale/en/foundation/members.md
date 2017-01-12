@@ -93,6 +93,9 @@ You are required to have a GitHub account to register.
 <a target="_new" class="imagelink" href="//saucelabs.com">
   <img alt="Saucelabs" class="memberlogo" src="/static/images/foundation/saucelabsLogo.png" />
 </a>
+<a target="_new" class="imagelink" href="//snyk.com">
+  <img alt="Snyk" class="memberlogo" src="/static/images/foundation/snyk.png" />
+</a>
 <a target="_new" class="imagelink" href="http://sphinx.sg/">
   <img alt="Sphinx" class="memberlogo" src="/static/images/foundation/sphinx.png" />
 </a>
