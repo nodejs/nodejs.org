@@ -1,7 +1,16 @@
+---
+title: Node.js - Quality with Speed
+date: 2017-01-12T14:41:04.442Z
+status: publish
+category: Community
+layout: blog-post.hbs
+author: Michael Dawson and Myles Borins
+---
+
 # Node.js - Quality with Speed
 
 One of the key tenants of the Node.js community is to allow change
-at a rapid pace in order to foster innovation, and to allow Node.js
+at a rapid pace in order to foster innovation and to allow Node.js
 to be used in a growing number of use cases.
 
 At the same time the community values quality.  Newer versions of
@@ -13,7 +22,7 @@ that allows us to maintain our rate of change while ensuring the
 required level of quality.
 
 Many of the activities undertaken by the community over the last year
-have are in support of this goal.
+are in support of this goal.
 
 This is our take on how these activities fit together.
 
@@ -30,7 +39,7 @@ quality.  These include:
   * Functional Tests
   * Module Testing
   * Stress Testing
-  * Platform/os coverage
+  * Platform/OS coverage
   * Development Workflows
 * Performance Benchmarks
 * Tools
@@ -43,7 +52,8 @@ The Node.js project maintains 3 key types of releases
 * LTS
 
 Having different release types allows innovation/change
-to flow rapidly into Nightly releases where they can bake.
+to flow rapidly into Nightly releases where we can get
+early feedback on upcoming changes.
 When ready, these changes then transition
 to Current and LTS releases in a more controlled manner,
 such that the level of quality/stability increases at
@@ -64,16 +74,16 @@ on a regular basis. In general all changes that land in master
 will be backported to Current, however there may be a lag if
 there are specific concerns or for larger changes where the community
 believes more soak time is required.  One key exception is
-that sermver breaking changes will not be backported until the
+that semver breaking changes will not be backported until the
 next major version (ex 5 -> 6).  This includes v8 and other
 components such that the expectation is that an application/module
 written to run on a major level will continue to do so.
 
 These releases are documented in the changelog so
-there is more visibility with respect to the changes in the release.
+there is more visibility with respect to the changes in each release.
 Current releases are created roughly every 1-2 weeks.
 
-In addition to the the regular Node.js unit tests, CITGM(see
+In addition to the the regular Node.js unit tests, CITGM (see
 later sections) is run on Current releases.
 
 If you want to try out the latest with a reasonable expectation
@@ -83,7 +93,8 @@ to use.
 ## LTS
 
 Once changes have been proven in the Current stream, they are candidates
-for the LTS stream.  Changes are limited to:
+for the LTS streams.  In the first stage of LTS (Active)
+changes are limited to:
 
 * Bug fixes
 * Security updates
@@ -96,13 +107,13 @@ for the LTS stream.  Changes are limited to:
   where the change in question may significantly ease the
   ability to backport future changes due to the reduction in diff noise.
 
-Further, in the later half of an LTS release (Maintenance), only
+Further, in the second stage of an LTS release (Maintenance), only
 **critical** bugs and **critical** security fixes will be included.
 
-Like Current releases, CITGM(see
-later sections) is run on Current releases.  In addition we also
+Like Current releases, CITGM (see
+later sections) is run on LTS releases.  In addition we also
 track performance through nightly benchmarks reported on
-[benchmarking.nodejs.org](benchmarking.nodejs.org) (See later sections).
+[benchmarking.nodejs.org](https://benchmarking.nodejs.org) (See later sections).
 
 You can read more about the LTS releases [here](https://github.com/nodejs/lts).
 
@@ -114,47 +125,48 @@ applications these are the releases to use.
 We've already touched on this in the discussion on the different release
 types but we'll expand on this strategy here.
 
-The main idea is that as changes flow from Nightlies, to Stable, to LTS we
-increase the following:
+The main idea is that as changes flow from Nightlies, to Stable, to LTS
+Active, to LTS Maintenance we increase the following:
 
 * scrutiny
 * time
 
 Changes going into master are well reviewed and time is allowed
-(minimum 48 to 72 hours) for as many community members to comment and review.
-However, as we all know some problems will still get through.
+(minimum 48 to 72 hours) for as many community members as possible
+to comment and review. However, as we all know, some problems
+will still get through.
 
-Before changes are pulled into Current from the Nightly, they will have
+Before changes are pulled into Current from the Nightly builds, they will have
 spent more time in master where intermittent issues may surface in the
-ongoing regressions runs and providing time where users may more fully
-exercise the release and report issues.  Further, there is additional
+ongoing regressions runs and this provides time where users may more fully
+exercise the release and report issues.  Further, there is an additional
 review/sanity check that they are not breaking as they are pulled over to
 Current.
 
 Similarly, before changes are pulled into an LTS update release,
 they must have been in a
-Current release version for at least a week, most often longer.  This provides
-additional time where users may more fully
+Current release version for at least a week, and are often left longer.
+This provides additional time where users may more fully
 exercise the changes and report issues.  In addition, changes are more
 carefully reviewed as they are pulled into LTS, again reducing the
-chance that un-intentional breaking changes make it through.  As an LTS
+chance that unintentional breaking changes make it through.  As an LTS
 release ages, particularly once it reaches maintenance, the scope of
 changes that will be pulled in narrows, further reducing the risk.
 
 When it comes to new LTS versions, changes will have soaked in the latest
 release for up to 6 months.  In particular, larger changes like an upgrade
-to v8 are done early in the lifespan of the stream such that the will have
+to v8 are done early in the lifespan of the stream such that they will have
 significant soaking and usage in the Current stream before they make it
 into an LTS release.
 
-This strategy allows for rapid innovation/change, with releases bein available
+This strategy allows for rapid innovation/change, with releases being available
 where those changes can be used/validated and a funnel through which
 these can flow in an appropriate manner into releases used by more
-risk adverse community members.
+risk-adverse community members.
 
 # Enhancement Proposal Process
 
-Some changes are of such scope that they cannot simply be reviewed  in a
+Some changes are of such scope that they cannot simply be reviewed in a
 pull request.  There are often larger questions that will factor into the
 decision as to whether the change proposed is desirable or appropriate
 for the Node.js runtime.
@@ -181,12 +193,12 @@ the likelihood of errors is orders of magnitude smaller than doing those
 tasks by hand, particularly when those tasks are done by different
 individuals.
 
-One of our key tenants to to automate as much as we can.  This ranges all
+One of our key tenets is to automate as much as we can.  This ranges all
 the way from the configuration of the machines in our build infrastructure
-using Ansible, to automated jobs to build/sign/and release our binaries.
+using Ansible, to automated jobs that build/sign/and release our binaries.
 
 Automated Testing allows tests to be run often enough to catch regressions
-quickly and reliably. Given a good set of tests we can make changes
+quickly and reliably. Given a good set of tests, we can make changes
 confident that we'll catch changes which introduce regressions.
 
 There are many levels of testing and the strategy is to build our way
@@ -195,18 +207,18 @@ up the levels until we have as complete coverage as is reasonable.
 These levels include:
 
 * Functional Tests
-* Platform/os coverage
+* Platform/OS Coverage
 * Dependency Testing
 * Module Testing
 * Stress Testing
 * Development Workflows
-* Use case testing
+* Use Case Testing
 
 
 ## Functional Tests
 
 Functional tests are the first level of defense.  Our collaborator guidelines
-require test cases for all new features added and our collaborators set a
+require test cases for all new features added, and our collaborators set a
 high standard in respect to requiring tests.
 
 It is not enough to simply have tests, those tests must be effective at
@@ -215,10 +227,10 @@ the results at [coverage.nodejs.org](https://coverage.nodejs.org/).
 This allows us to ensure our tests remain effective and provides the data
 necessary to further improve our tests.
 
-You'll also notice that there as been a lot of effort put into making sure
-the tests pass reliably and consistently.  If you watch the ci runs
-you will see that they are mostly green and intermittent failures are
-are rare.
+You'll also notice that there has been a lot of effort put into making sure
+the tests pass reliably and consistently.  If you watch the continuous
+integration (ci) runs you will see that they are mostly green
+and intermittent failures are rare.
 
 ## Platform/OS coverage
 
@@ -237,7 +249,7 @@ uncover as many problems as early as possible.
 
 ## Dependency Testing
 
-Node.js has a number of key dependencies.  Its important that we ensure
+Node.js has a number of key dependencies.  It's important that we ensure
 that any changes we apply to those dependencies don't have a negative effect.
 
 To this end we have a job which runs the v8 tests on the v8 tree within
@@ -250,9 +262,9 @@ the Node.js tree for the dependencies other than v8 is more limited.
 ## Module Tests
 
 Module tests are the next level of defense.  They help to validate that
-changes are not going to break end users.  Most applications use
+changes are not going to break for end users.  Most applications use
 a number of modules, and many of the most popular modules are extensively
-used.  Any changes that impact those those modules would have a
+used.  Any changes that impact those modules would have a
 significant community impact.
 
 Our strategy is to run the module's own unit tests on a set of key modules
@@ -268,37 +280,38 @@ Some problems only surface after running for a long time.  Stress tests help
 to flush those out by running certain scearios over a prolonged period
 of time.
 
-We don't have any stress tests running at this point but will be our next
+We don't have any stress tests running at this point but it will be our next
 priority after we have module testing running at an appropriate frequency.
 
 ## Development Workflows
 
-Development workflows is another level up from Module testing.  It aims
-to test common develoment workflows to ensure changes will not introduce
-and regressions to those flows.
+Development Workflows is another level up from Module Testing.  It aims
+to test common development workflows to ensure changes will not introduce
+any regressions to those flows.
 
 These are more work to put in place and run but they will be next on our
 list after getting stress tests in place.
 
-## Use case testing
+## Use Case Testing
 
-This would be the next logical step after Development Workflows.  Testing
+This would be the next logical step after Development Workflows, testing
 for the common use cases for Node.js.
 
 Our current strategy is to get some of this coverage through the
-benchmarking that we put in place, but is another area we can work
+benchmarking that we put in place, but it is another area we can work
 on once we have the other levels of testing in place.
 
 
 
-# Performance benchmarks
+# Performance Benchmarks
 
-While ensuring functional stability is good, its not enoough.  We also need
+While ensuring functional stability is good, its not enough.  We also need
 to make sure that performance is not degraded as changes flow in.
 
-Our strategey is to define the common use cases for Node.js and then
+Our strategy is to define the common use cases for Node.js and then
 build up a set of benchmarks that we run and publish results for on a
-regular basis.  This work is ongoing in the Benchmarking workgroup,
+regular basis.  This work is ongoing in the
+[Benchmarking Working Group](https://github.com/nodejs/benchmarking),
 but we already have a number of key benchmarks being run nightly
 across the major Node.js versions.  You can view this data at:
 
@@ -311,6 +324,6 @@ changes flow in.
 
 This may have been a bit of a long read but I hope it has put a number
 of the activities you may have seen in the Node.js community over the last
-year into context.  If you ever wondered "why are they doing that" the answer is:
+year into context.  If you ever wondered "Why are they doing that?", the answer is:
 
   **Node.js - Quality with Speed**
