@@ -162,7 +162,7 @@ into an LTS release.
 This strategy allows for rapid innovation/change, with releases being available
 where those changes can be used/validated and a funnel through which
 these can flow in an appropriate manner into releases used by more
-risk-adverse community members.
+risk-averse community members.
 
 # Enhancement Proposal Process
 
@@ -232,7 +232,7 @@ the tests pass reliably and consistently.  If you watch the continuous
 integration (ci) runs you will see that they are mostly green
 and intermittent failures are rare.
 
-## Platform/OS coverage
+## Platform/OS Coverage
 
 This is not a type of test by itself.  But by applying the strategy of
 running tests across a broad range of platforms and OS types and levels it
