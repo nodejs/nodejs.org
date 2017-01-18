@@ -651,7 +651,10 @@ brew install node
 Using **[MacPorts](http://www.macports.org/)**:
 
 ```bash
-port install nodejs
+port install nodejs<major version>
+
+# Example
+port install nodejs7
 ```
 
 Using **[pkgsrc](https://pkgsrc.joyent.com/install-on-osx/)**:
@@ -679,7 +682,10 @@ brew install node
 **[MacPorts](http://www.macports.org/)**를 사용할 수 있습니다.
 
 ```bash
-port install nodejs
+port install nodejs<major version>
+
+# Example
+port install nodejs7
 ```
 
 **[pkgsrc](https://pkgsrc.joyent.com/install-on-osx/)**를 사용해서
