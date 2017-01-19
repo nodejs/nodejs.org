@@ -65,7 +65,7 @@ Read more about why our candidates are running below.
 
 ### How do I vote?
 You must be an Individual Member of the Node.js Foundation to cast a vote. If
-you are a member, you can vote [NOW](vote.linuxfoundation.org)!
+you are a member, you can vote [NOW](https://vote.linuxfoundation.org)!
 
 ### How do I become a member?
 Individual membership costs [$100 a year, or $25 for students](https://identity.linuxfoundation.org/pid/99).
