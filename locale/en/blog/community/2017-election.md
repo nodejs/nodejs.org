@@ -55,7 +55,7 @@ Read more about why our candidates are running below.
   - [Director nomination for Kat Marchán](https://gist.github.com/zkat/345d1485fc4cd1f45155678a3729cd21)
 - Charlie Robbins [@indexzero](https://github.com/indexzero)
  - [I'm running to increase transparency to the community from the Node.js Board
-  of Directors](https://gist.github.com/indexzero/5b17885d8f8044b674a1fa411e1f7e3b)
+  of Directors](https://medium.com/@indexzero/vote-to-increase-transparency-in-the-node-js-foundation-4a2b22ffaada)
 - William P. Riley-Land [@wprl](https://github.com/wprl)
  - [I Would Like to Represent Individual Members of the Node.js Foundation](https://medium.com/@wprl/i-would-like-to-represent-individual-members-of-the-node-js-foundation-977157d90aa0#.hq3vo8d8m)
 
