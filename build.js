@@ -125,14 +125,6 @@ function buildLocale (source, locale) {
     .use(markdown(markedOptions))
     .use(githubLinks({ locale: locale }))
     .use(prism())
-    // Deletes Stylus partials since they'll be included in the main CSS file
-    // anyways.
-    .use(filterStylusPartials())
-    .use(stylus({
-      compress: true,
-      paths: [path.join(__dirname, 'layouts', 'css')],
-      use: [autoprefixer()]
-    }))
     // Set pretty permalinks, we don't want .html suffixes everywhere.
     .use(permalinks({
       relative: false
@@ -220,6 +212,37 @@ function githubLinks (options) {
   }
 }
 
+// This function builds the layouts folder for all the Stylus files.
+function buildLayouts () {
+  console.time('[metalsmith] build/layouts finished')
+
+  fs.mkdir(path.join(__dirname, 'build'), () => {
+    fs.mkdir(path.join(__dirname, 'build', 'layouts'), () => {
+      const metalsmith = Metalsmith(__dirname)
+      metalsmith
+          // Sets the build source as /layouts/css.
+          .source(path.join(__dirname, 'layouts', 'css'))
+          // Deletes Stylus partials since they'll be included in the main CSS
+          // file anyways.
+          .use(filterStylusPartials())
+          .use(stylus({
+            compress: true,
+            paths: [path.join(__dirname, 'layouts', 'css')],
+            use: [autoprefixer()]
+          }))
+          // Pipes the generated files into /build/layouts/css.
+          .destination(path.join(__dirname, 'build', 'layouts', 'css'))
+
+      // This actually executes the build and stops the internal timer after
+      // completion.
+      metalsmith.build((err) => {
+        if (err) { throw err }
+        console.timeEnd('[metalsmith] build/layouts finished')
+      })
+    })
+  })
+}
+
 // This function copies the rest of the static assets to their subfolder in the
 // build directory.
 function copyStatic () {
@@ -259,8 +282,10 @@ function getSource (callback) {
 // This is where the build is orchestrated from, as indicated by the function
 // name. It brings together all build steps and dependencies and executes them.
 function fullBuild () {
-  // Copies static files.
+  // Build static files.
   copyStatic()
+  // Build layouts
+  buildLayouts()
   getSource((err, source) => {
     if (err) { throw err }
 
