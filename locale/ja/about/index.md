@@ -103,9 +103,9 @@ Node はスレッドがない設計をしているという理由だけで、複
 通信しやすく設計された子プロセスは [`child_process.fork()`][] API を使って生成できます。
 コア上でロードバランシングを有効にするためにプロセス間でソケットを共有することを可能にする [`cluster`][] モジュールが同じインターフェース上に内蔵されています。
 
-[Blocking vs Non-Blocking]: https://github.com/nodejs/node/blob/master/doc/topics/blocking-vs-non-blocking.md
+[Blocking vs Non-Blocking]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[イベントループ]: https://github.com/nodejs/node/blob/master/doc/topics/the-event-loop-timers-and-nexttick.md
+[イベントループ]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: http://rubyeventmachine.com/
 [Twisted]: http://twistedmatrix.com/
