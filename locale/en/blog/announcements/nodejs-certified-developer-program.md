@@ -2,7 +2,7 @@
  +title: The Node.js Foundation Partners with The Linux Foundation on New Node.js Certification Program
  +date: 2017-1-26T12:00:00.000Z
  +category: Annoucements
- +slug: node.js-certified-developer-program
+ +slug: nodejs-certified-developer-program.md
  +layout: blog-post.hbs
  +---
  +
