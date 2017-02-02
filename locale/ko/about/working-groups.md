@@ -110,7 +110,6 @@ Core Working Groups are created by the
 * [Benchmarking](#benchmarking)
 * [Post-mortem](#post-mortem)
 * [Intl](#intl)
-* [HTTP](#http)
 * [Documentation](#documentation)
 * [Testing](#testing)
 -->
@@ -129,7 +128,6 @@ Core Working Groups are created by the
 * [Benchmarking](#benchmarking)
 * [Post-mortem](#post-mortem)
 * [Intl](#intl)
-* [HTTP](#http)
 * [Documentation](#documentation)
 * [Testing](#testing)
 
@@ -409,34 +407,6 @@ content.
 * 밋업과 콘퍼런스의 발표자 추천
 * 커뮤니티 이벤트의 홍보
 * 정기적인 수정사항 요약과 다른 홍보 내용의 발행
-
-<!--
-### [HTTP](https://github.com/nodejs/http)
-
-The HTTP working group is chartered for the support and improvement of the
-HTTP implementation in Node. It's responsibilities are:
-
-* Addressing HTTP issues on the Node.js issue tracker.
-* Authoring and editing HTTP documentation within the Node.js project.
-* Reviewing changes to HTTP functionality within the Node.js project.
-* Working with the ecosystem of HTTP related module developers to evolve the
-  HTTP implementation and APIs in core.
-* Advising the CTC on all HTTP related issues and discussions.
-* Messaging about the future of HTTP to give the community advance notice of
-  changes.
--->
-
-### [HTTP](https://github.com/nodejs/http)
-
-HTTP 워킹 그룹은 Node의 HTTP 구현체를 지원하고 개선하는 권한을 가집니다.
-이 워킹 그룹은 다음에 대한 책임이 있습니다.
-
-* Node.js 이슈 트래커에 올라온 HTTP 이슈를 처리합니다.
-* Node.js 프로젝트의 HTTP 문서를 작성하고 수정합니다.
-* Node.js 프로젝트의 HTTP 기능 변경을 검토합니다.
-* 코어의 HTTP 구현체와 API가 발전하도록 HTTP 생태계와 관련된 모듈 개발자들과 협업합니다.
-* HTTP와 관련된 모든 이슈와 토론을 핵심 기술 위원회(CTC)에 알립니다.
-* 차후 HTTP의 변경사항을 커뮤니티에 알립니다.
 
 <!--
 ### [Roadmap](https://github.com/nodejs/roadmap)
