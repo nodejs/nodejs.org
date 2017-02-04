@@ -29,8 +29,7 @@ developer, possessing skills that are in high demand,” said Tracy Hinds,
 education community manager for the Node.js Foundation.
 
 The Node.js Certified Developer program, which is being developed with input from
-leading Node.js experts and contributors, is expected to be available in Q2 of
-2017. The program will provide a framework for general Node.js competency,
+leading Node.js experts and contributors, is expected to be available in Q2 of 2017. The program will provide a framework for general Node.js competency,
 helping enterprises quickly identify qualified Node.js engineers, while
 providing developers, contractors and consultants with a way to differentiate
 themselves in the market.
