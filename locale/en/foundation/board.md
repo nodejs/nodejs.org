@@ -6,17 +6,17 @@ layout: foundation.hbs
 The Board of Directors is composed of representatives from corporate members, a representative of the
 Technical Steering Committee, and representatives elected by the individual membership class.
 
-* Chairperson: **Danese Cooper**, distinguished member of technical staff - open source at PayPal.
-* Vice-Chairperson: **Scott Hammond**, chief executive officer at Joyent.
-* Secretary: **Dan Shaw**, chief technology officer at NodeSource.
-* TSC Director: **Rod Vagg**, chief node officer at NodeSource.
-* Director: **Todd Moore**, vice president of open technology at IBM.
-* Director: **Gaurav Seth**, principal program manager at Microsoft.
-* Director: **Rich Sharples**, senior director of product management at Red Hat.
-* Director: **Imad Sousou**, vice president and general manager at Intel.
-* Gold-level Director: **Dan Shaw**, chief technology officer at NodeSource.
-* Silver-level Director: **Brian McCallister**, chief technology officer of platforms at Groupon.
-* Silver-level Director: **Justin Beckwith**, product manager at Google.
+* Chairperson: **Danese Cooper**, Distinguished Member of Technical Staff - open source at PayPal.
+* Vice-Chairperson: **Scott Hammond**, Chief Executive Officer at Joyent.
+* Secretary: **Dan Shaw**, Chief Technology Officer at NodeSource.
+* TSC Director: **Rod Vagg**, Chief Node Officer at NodeSource.
+* Director: **Todd Moore**, Vice President of Open Technology at IBM.
+* Director: **Gaurav Seth**, Principal Program Manager at Microsoft.
+* Director: **Rich Sharples**, Senior Director of Product Management at Red Hat.
+* Director: **Mark Skarpness**, Vice President, Software and Services Group at Intel.
+* Gold-Level Director: **Dan Shaw**, Chief Technology Officer at NodeSource.
+* Silver-Level Director: **Brian McCallister**, Chief Technology Officer of Platforms at Groupon.
+* Silver-Level Director: **Justin Beckwith**, Product Manager at Google.
 * Individual Director: **Ashley Williams**
 * Individual Director: **William Kapke**
 
