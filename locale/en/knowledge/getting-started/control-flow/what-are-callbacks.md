@@ -26,7 +26,7 @@ The node.js way to deal with the above would look a bit more like this:
     function processData (callback) {
       fetchData(function (err, data) {
         if (err) {
-          console.log("An error has occured. Abort everything!");
+          console.log("An error has occurred. Abort everything!");
           return callback(err);
         }
         data += 1;
@@ -41,7 +41,7 @@ The typical convention with asynchronous functions (which almost all of your fun
     function asyncOperation ( a, b, c, callback ) {
       // ... lots of hard work ...
       if ( /* an error occurs */ ) {
-        return callback(new Error("An error has occured"));
+        return callback(new Error("An error has occurred"));
       }
       // ... more work ...
       callback(null, d, e, f);

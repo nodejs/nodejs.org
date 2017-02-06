@@ -60,7 +60,7 @@ regions:
         city: Casablanca
         link: 'http://www.meetup.com/Meteor-Casablanca/'
         name: Meteor Casablanca
-        description: "<p>a community gathering Meteor enthusiasts and passionate developpers to share knowledge in an inspiring way.</p>\n<p>Meteor is an open-source platform for building top-quality web apps in a fraction of the time, whether you're an expert developer or just getting started.</p>\n<br>\n\nBuilding web application is hard and time consuming and often an intimidating process , it was the right time to invent a new way to aproach building application by hiding irrelevant complexity and focus more on the core of the product. we believe this new aproach is championned by Meteor , and this deserves \_regular celebration \_meetings during which people can share their passion , in a human friendly way .<br>\n\nand also build things that can grow to be exciting !!\n<p><br>\n\n</p>"
+        description: "<p>a community gathering Meteor enthusiasts and passionate developers to share knowledge in an inspiring way.</p>\n<p>Meteor is an open-source platform for building top-quality web apps in a fraction of the time, whether you're an expert developer or just getting started.</p>\n<br>\n\nBuilding web application is hard and time consuming and often an intimidating process , it was the right time to invent a new way to aproach building application by hiding irrelevant complexity and focus more on the core of the product. we believe this new aproach is championned by Meteor , and this deserves \_regular celebration \_meetings during which people can share their passion , in a human friendly way .<br>\n\nand also build things that can grow to be exciting !!\n<p><br>\n\n</p>"
         lon: -7.579999923706055
         group_photo:
           photo_link: 'http://photos2.meetupstatic.com/photos/event/d/3/b/0/600_432774192.jpeg'
@@ -915,7 +915,7 @@ regions:
         city: Jakarta
         link: 'http://www.meetup.com/Node-js-Workshop/'
         name: Node.js Jakarta
-        description: '<p>Apa itu node js?, Platform yang mengunakan Chrome engine v8 , dalam perkembanganya node.js tidak hanya server side namun client side dan dapan berjalan di semua OS dan platform , distribusi nya dapat di deploy ke semua device (IOS, Android, Windows phone, Windows, Mac OS, Linux, etc), menggunakan bahasa javascript yang sama seperti implementasi dalam development web. Di Workshop ini kita akan belajar bagaimana mengembangkan applikasi menggunakan node.js dari awal sampe mahir. dengan konsep belajar berbagi ide dan sharing knowledge</p>'
+        description: '<p>Apa itu node js?, Platform yang mengunakan Chrome engine v8 , dalam perkembanganya node.js tidak hanya server side namun client side dan dapan berjalan di semua OS dan platform , distribusi nya dapat di deploy ke semua device (IOS, Android, Windows phone, Windows, Mac OS, Linux, etc), menggunakan bahasa javascript yang sama seperti implements dalam development web. Di Workshop ini kita akan belajar bagaimana mengembangkan applikasi menggunakan node.js dari awal sampe mahir. dengan konsep belajar berbagi ide dan sharing knowledge</p>'
         lon: 106.83000183105469
         group_photo:
           photo_link: 'http://photos1.meetupstatic.com/photos/event/9/7/7/3/600_432098771.jpeg'
@@ -2048,7 +2048,7 @@ regions:
         city: London
         link: 'http://www.meetup.com/londondigital/'
         name: London Digital Design and Technology User Group
-        description: "<p>The London Design and technology user group is here to offer varied content for both designer and developers who live breath and work in the digital development space.</p>\n<p>This group is for the people who 'make' web experiences apps and games. Mainly it will be\_focussed\_on design and technology but we will also host any talks that are presented from a perspective that will be interesting to the members, so whether it be business related or strategic it will always be relevent.</p>\n<p>\_</p>"
+        description: "<p>The London Design and technology user group is here to offer varied content for both designer and developers who live breath and work in the digital development space.</p>\n<p>This group is for the people who 'make' web experiences apps and games. Mainly it will be\_focussed\_on design and technology but we will also host any talks that are presented from a perspective that will be interesting to the members, so whether it be business related or strategic it will always be relevant.</p>\n<p>\_</p>"
         lon: -0.10000000149011612
         lat: 51.52000045776367
       - country: GB
@@ -2622,7 +2622,7 @@ regions:
         city: Málaga
         link: 'http://www.meetup.com/techmalaga/'
         name: TechMalaga
-        description: "<p>Node Sol nacio con la mision de conectar apasionados del Node en Málaga. Hemos hecho varias charlas y workshops y constantemente planificamos nuevos eventos alrededor de las tendencias más innovadoras en la web: Node.js, Angular, Python, API's, Ruby on Rails, JavaScript, Erlang, Swift, socket.io, MongoDb, Redis, Cassandra, AWS y herramientas para desarrolladores.</p>"
+        description: "<p>Node Sol nacio con la mision de conectar apasionados del Node en Málaga. Hemos hecho varias charlas y workshops y constantemente planificamos nuevos eventos alrededor de las tendencies más innovadoras en la web: Node.js, Angular, Python, API's, Ruby on Rails, JavaScript, Erlang, Swift, socket.io, MongoDb, Redis, Cassandra, AWS y herramientas para desarrolladores.</p>"
         lon: -4.420000076293945
         lat: 36.720001220703125
       - country: HR
@@ -3151,8 +3151,8 @@ regions:
           <p><span>Vamos a darle a la tecla... pero con estilo</span></p>
           <p><img src="http://photos1.meetupstatic.com/photos/event/b/a/0/6/600_369167622.jpeg"></p>
           <p><span> <br> </span></p>
-          <p><span>¿Quieres saber qué es Bluemix ya? Aquí tenemos una comunidad de IBM DeveloperWorks con información y tutoriales en castellano:</span></p>
-          <p><a href="https://www.ibm.com/developerworks/community/groups/service/html/communityview?communityUuid=e4b149c1-b695-4de1-9671-538da8d1fb5f">Comunidad DeveloperWorks de Bluemix España (dentro está la Wiki, y materiales del workshop que damos)</a></p>
+          <p><span>¿Quieres saber qué es Bluemix ya? Aquí tenemos una comunidad de IBM DeveloperWorks con información y tutorials en castellano:</span></p>
+          <p><a href="https://www.ibm.com/developerworks/community/groups/service/html/communityview?communityUuid=e4b149c1-b695-4de1-9671-538da8d1fb5f">Comunidad DeveloperWorks de Bluemix España (dentro está la Wiki, y materials del workshop que damos)</a></p>
           <p><a href="http://www.ibm.biz/BluemixES">Página de acceso a Bluemix</a> <br></p>
         lon: 2.1700000762939453
         group_photo:
@@ -3207,7 +3207,7 @@ regions:
         city: Berlin
         link: 'http://www.meetup.com/Berlin-Grill-JS-Meetup/'
         name: Berlin Grill.JS Meetup
-        description: "<p>Summer is here, so let's get together around the grill, have a few beers and wursts, and enjoy a lush evening on the summer terrace. The Grill.JS Meetup is strictly informal. There won't be official tech presentations, it's all about friendly discussions over a beer and a grillwurst. We do welcome lightning talks, and we're sure attendees would love to listen to \"my dumbest JS idea this year \". Just keep it short and entertaining. We'll provide for drinks (beer, mate, non-alcoholic) and grillwurst and some vegetarion options, and some salad. If you have special requirements, please bring your own food or drinks.</p>"
+        description: "<p>Summer is here, so let's get together around the grill, have a few beers and wursts, and enjoy a lush evening on the summer terrace. The Grill.JS Meetup is strictly informal. There won't be official tech presentations, it's all about friendly discussions over a beer and a grillwurst. We do welcome lightning talks, and we're sure attendees would love to listen to \"my dumbest JS idea this year \". Just keep it short and entertaining. We'll provide for drinks (beer, mate, non-alcoholic) and grillwurst and some vegetarian options, and some salad. If you have special requirements, please bring your own food or drinks.</p>"
         lon: 13.380000114440918
         lat: 52.52000045776367
       - country: GB
@@ -3523,7 +3523,7 @@ regions:
         city: Berlin
         link: 'http://www.meetup.com/fullstack-js-berlin/'
         name: Fullstack.js
-        description: "<p>This user group is about anything related to JavaScript and web development with a focus to modularity and scalability. We're also open for topics on infrasturcture.</p>"
+        description: "<p>This user group is about anything related to JavaScript and web development with a focus to modularity and scalability. We're also open for topics on infrastructure.</p>"
         lon: 13.380000114440918
         group_photo:
           photo_link: 'http://photos2.meetupstatic.com/photos/event/1/a/0/6/600_421566662.jpeg'
@@ -3563,7 +3563,7 @@ regions:
         city: Lyon
         link: 'http://www.meetup.com/Meteor-Lyon/'
         name: Meteor Lyon
-        description: "Meteor est une nouvelle plateforme web. Son intérêt se trouve dans ses différents concepts : partage de code frontEnd/backEnd, compensation de latence, temps réel... Venez découvrir cette plateforme, venez partager votre expérience sur Meteor. Ce meetup n'est pas réservé aux seuls techniciens car Meteor se veut facile d'accès. Si vous avez une îdée, venez nous rencontrer pour que l'on puisse concrétiser celle-ci ensemble."
+        description: "Meteor est une nouvelle plateforme web. Son intérêt se trouve dans ses différents concepts : partage de code frontEnd/backEnd, compensation de latence, temps réel... Venez découvrir cette plateforme, venez partager votre expérience sur Meteor. Ce meetup n'est pas réservé aux seuls technicians car Meteor se veut facile d'accès. Si vous avez une îdée, venez nous rencontrer pour que l'on puisse concrétiser celle-ci ensemble."
         lon: 4.829999923706055
         group_photo:
           photo_link: 'http://photos2.meetupstatic.com/photos/event/8/5/e/600_424442142.jpeg'
@@ -3787,7 +3787,7 @@ regions:
         link: 'http://www.meetup.com/Meteor-Barcelona/'
         name: Meteor Barcelona
         description: |-
-          <p>Conoce a otros desarrolladores que utilizan <a href="http://meteor.com">Meteor</a>. Comparte tus conocimientos, aplicaciones, y aprende de ellos. Meteor es una plataforma de código abierto para la creación de aplicaciones web de alta calidad en una fracción del tiempo, tanto si eres un desarrollador experto o acabas de empezar.</p>
+          <p>Conoce a otros desarrolladores que utilizan <a href="http://meteor.com">Meteor</a>. Compare tus conocimientos, aplicaciones, y aprende de ellos. Meteor es una plataforma de código abierto para la creación de aplicaciones web de alta calidad en una fracción del tiempo, tanto si eres un desarrollador experto o acabas de empezar.</p>
           <p>Meet other developers using <a href="http://meteor.com">Meteor</a>. Share your knowledge, apps, and get feedback from others. Meteor is an open-source platform for building top-quality web apps in a fraction of the time, whether you're an expert developer or just getting started.<br>
 
           </p>
@@ -4109,7 +4109,7 @@ regions:
           <p><b>WebRTC</b> and <b>API</b>'s are disrupting (tele)communications and software ! We're building an <b>European community</b> of those who believe that this technology is more than some nice features to build alternative solutions to Skype. If you believe like us that WebRTC is a movement for the next years, then please join us to build this community, share ideas, projects and some nice food and drinks. <br></p>
           <p>This Meetup is associated with:&nbsp;</p>
           <p><b>TADSummit</b> (<a href="http://tadsummit.com/">http://tadsummit.com/</a>).&nbsp;<span>The Telecom Application Developer Summit (TADS) is a grass roots initiative to build an open ecosystem focused on helping businesses use telecom capabilities in their applications, services and business processes.&nbsp;</span><span>We bring together the leaders in the industry – across service providers, technology providers, developers, and enterprises – to work on getting new services to market and making business success in new services an everyday reality. On 17th and 18th November TADSummit will be held at&nbsp;CORINTHIA HOTEL LISBON,&nbsp;</span><span>Av. Columbano Bordalo&nbsp;</span><span>Pinheiro&nbsp;105, Lisbon</span></p>
-          <p><b>TADHack</b> (<a href="http://tadhack.com/2015/tadhack-global/" class="linkified">http://tadhack.com/2015/tadhack-global/</a>). TADHack is the international community of telecom app developers! This is the <b>ONLY GLOBAL MEETING</b> place for developers who want to learn, share, code and create using the tools and technologies available in telecommunications. On <b>13 &amp; 14th</b> June, the <b>worldwide TADHack hub was in @Instituto Superior Técnico</b>/Campus Taguspark.</p>
+          <p><b>TADHack</b> (<a href="http://tadhack.com/2015/tadhack-global/" class="linkified">http://tadhack.com/2015/tadhack-global/</a>). TADHack is the international community of telecom app developers! This is the <b>ONLY GLOBAL MEETING</b> place for developers who want to learn, share, code and create using the tools and technologies available in telecommunications. On <b>13 &amp; 14th</b> June, the <b>worldwide TADHack hub was in @Institution Superior Técnico</b>/Campus Taguspark.</p>
         lon: -9.140000343322754
         lat: 38.720001220703125
       - country: NL
@@ -4259,7 +4259,7 @@ regions:
         link: 'http://www.meetup.com/Strasbourg-Nodejs/'
         name: Strasbourg Node.js
         description: |-
-          <p>En permettant de créer des applications performantes qui encouragent la productivité,l’usage de Node.js, le Javascript côté serveur, a littéralement explosé en quelques années : de nombreuses sociétés font confiance à ce langage de programmation et la communauté grossit de jour en jour.</p>
+          <p>En permettant de créer des applications performances qui encouragent la productivité,l’usage de Node.js, le Javascript côté serveur, a littéralement explosé en quelques années : de nombreuses sociétés font confiance à ce langage de programmation et la communauté grossit de jour en jour.</p>
           <p><br>Le rôle de la communauté Node.js Strasbourg est de regrouper les développeurs de tous&nbsp;<span>niveaux s’intéressant à cette technologie au travers de soirées techniques de différents types : conférence, live coding et coding dojos.&nbsp;</span></p>
           <p>Rejoignez-nous vite !</p>
         lon: 7.75
@@ -4813,7 +4813,7 @@ regions:
         link: 'http://www.meetup.com/lubunode/'
         name: Ludwigsburg Node.js Meetup
         description: |-
-          <p>Let's discuss all things node! Whether it be ES6 features for JavaScript, npm packages, continous integration or anything else. The complete node ecosystem is ready to be explored :)</p>
+          <p>Let's discuss all things node! Whether it be ES6 features for JavaScript, npm packages, continuous integration or anything else. The complete node ecosystem is ready to be explored :)</p>
           <p><span>We'll start off with monthly meetups at selected pubs in Ludwigsburg until we get a decent group of regulars to organize bigger events with dedicated locations and speakers. Everyone interested in programming is welcome to join us!</span></p>
         lon: 9.1899995803833
         lat: 48.900001525878906
@@ -4870,12 +4870,12 @@ regions:
           <p>Javascript en el lado del servidor. Aprende a crear aplicaciones en tiempo real con Socket.io. Crea juegos multijuador y chats. Backends Flexibles en 5 minutos. Descubre la tecnología mejor pagada de Silicon Valley. <b>=== AngularJS ===</b></p>
           <p><span>El mejor Framework JavaScript para desarrollar aplicaciones Móviles y Web. Desarrollado por Google.&nbsp;</span></p>
           <p><span><b>=== MongoDB ===</b></span></p>
-          <p><span>La mejor Base de Datos NoSQL por excelencia. Con Mongo veremos como construir aplicaciones y backends flexibles, para pivotar las funcionalidades de nuestra aplicación adaptándolas a nuestros clientes. Además veremos cómo utilizar Mongo para analizar BIGDATA.</span></p>
+          <p><span>La mejor Base de Datos NoSQL por excelencia. Con Mongo veremos como construir aplicaciones y backends flexibles, para pivotar las funcionalidades de nuestra aplicación adaptándolas a nuestros clients. Además veremos cómo utilizar Mongo para analizar BIGDATA.</span></p>
           <p><span><b>=== PhoneGap ===&nbsp;</b></span></p>
           <p><span>PhoneGap o mejor dicho Cordova nos permite empaquetar código Web en aplicaciones nativas para iOS, Android, WindowsPhone, FirefoxOS, etc. Discutiremos qué frameworks y cómo desarrollar aplicaciones móviles híbridas de aspecto y performance nativo.</span></p>
           <p><span><b>=== En general ===&nbsp;</b></span></p>
           <p><span>Las últimas tecnologías para el desarrollo Web y Móvil, siguiendo las filosofías Lean Startup, Mobile First, NoSQL, NoBackend, Agile Development, Gamification.</span></p>
-          <p><span>Si eres Entrepreneur / Emprendeodor, entonces necesitas conocer los mejores entornos de desarrollo, y estar al día. Aprende, Crece, Comparte</span></p>
+          <p><span>Si eres Entrepreneur / Emprendeodor, entonces necesitas conocer los mejores entornos de desarrollo, y estar al día. Aprende, Crece, Compare</span></p>
           <p>Recursos:&nbsp; <br><a href="http://www.mongodb.org/">MongoDB</a>&nbsp;(<a href="http://mongoosejs.com/">Mongoose</a>) <br><a href="http://expressjs.com/"></a><a href="http://www.mean.io/#!/">mean.io</a>&nbsp; <br><a href="http://angularjs.org/">AngularJS</a>&nbsp; <br><a href="http://nodejs.org/">Node.js</a>&nbsp;(<a href="http://expressjs.com/">Express</a>&nbsp;)</p>
           <p><a href="http://www.ibm.com/developerworks/library/wa-nodejs-polling-app/">Build a Real-time Polls Application with Node.js, Express, AngularJS and MongoDB</a>&nbsp;(IBM Tutorial)</p>
         lon: -15.430000305175781
@@ -4913,7 +4913,7 @@ regions:
         city: Madrid
         link: 'http://www.meetup.com/Tecnologias-para-la-Transformacion-Digital/'
         name: Tecnologías para la Transformación Digital
-        description: 'El grupo de usuarios de Tecnologías para la Transformación Digital pretende ser un punto de encuentro e intercambio de ideas acerca de tecnologías y metodologías que ayudan a los equipos IT a enfrentarse a los retos de la transformación digital, es decir, a desarrollar productos digitales con más foco en el usuario, más flexibilidad, mejor time to market, más escalabilidad, más disponibilidad y menos coste. Hablaremos por tanto de arquitecturas avanzadas con bajo acoplamiento, infraestructuras elásticas con escalado horizontal, tolerancia a fallos a nivel software, modelos de almacenamiento NoSQL, y de mejoras en el ciclo de vida del desarrollo software vía automatización de pruebas y continuous delivery.'
+        description: 'El grupo de usuarios de Tecnologías para la Transformación Digital pretende ser un punto de encuentro e intercambio de ideas acerca de tecnologías y metodologías que ayudan a los equipos IT a enfrentarse a los retos de la transformación digital, es decir, a desarrollar products digitales con más foco en el usuario, más flexibilidad, mejor time to market, más escalabilidad, más disponibilidad y menos coste. Hablaremos por tanto de arquitecturas avanzadas con bajo acoplamiento, infraestructuras elásticas con escalado horizontal, tolerancia a fallos a nivel software, modelos de almacenamiento NoSQL, y de mejoras en el ciclo de vida del desarrollo software vía automatización de pruebas y continuous delivery.'
         lon: -3.7100000381469727
         group_photo:
           photo_link: 'http://photos1.meetupstatic.com/photos/event/a/0/f/b/600_447641211.jpeg'
@@ -4949,8 +4949,8 @@ regions:
         link: 'http://www.meetup.com/AulaW3/'
         name: AulaW3
         description: |-
-          <p>Un grupo para ponernos al día con talleres, seminarios y charlas gratuitas en Barcelona para descubrir las últimas tendencias en desarrollo web y mobile. <br></p>
-          <p>Únete a nosotros, comparte tus conocimientos y encuentra otros en nuestra comunidad!</p>
+          <p>Un grupo para ponernos al día con talleres, seminarios y charlas gratuitas en Barcelona para descubrir las últimas tendencies en desarrollo web y mobile. <br></p>
+          <p>Únete a nosotros, compare tus conocimientos y encuentra otros en nuestra comunidad!</p>
         lon: 2.1700000762939453
         group_photo:
           photo_link: 'http://photos3.meetupstatic.com/photos/event/4/a/b/5/600_445639125.jpeg'
@@ -5140,7 +5140,7 @@ regions:
         city: Salerno
         link: 'http://www.meetup.com/JS-Salerno/'
         name: 'JavaScript & NodeJS community Salerno'
-        description: "<p>JavaScript è qui da trent'anni ma è più vivo che mai! JS è passato da essere un semplice script di controllo dell'input nei browser a un linguaggio vero e proprio, con un ecosistema di framework e librerie da far impallidire linguaggi più blasonati. E' l'unico vero linguaggio universale, gira ovunque vi sia un browser (anche nel vostro telefonino) e anche su server! E' la porta d'accesso alle WebApp moderne. In questo gruppi saranno accettati i neofiti ed esperti. Organizzeremo incontri mensili (o bi-mensili) come conferenze, inviteremo esperti che soddisferanno le nostre curiosità e faremo rete.</p>"
+        description: "<p>JavaScript è qui da trent'anni ma è più vivo che mai! JS è passato da essere un semplice script di controllo dell'input nei browser a un linguaggio vero e proprio, con un ecosistema di framework e librerie da far impallidire linguaggi più blasonati. E' l'unico vero linguaggio universe, gira ovunque vi sia un browser (anche nel vostro telefonino) e anche su server! E' la porta d'accesso alle WebApp moderne. In questo gruppi saranno accettati i neofiti ed esperti. Organizzeremo incontri mensili (o bi-mensili) come conference, inviteremo esperti che soddisferanno le nostre curiosità e faremo rete.</p>"
         lon: 14.779999732971191
         group_photo:
           photo_link: 'http://photos1.meetupstatic.com/photos/event/9/d/4/3/600_447640259.jpeg'
@@ -5149,7 +5149,7 @@ regions:
         city: Paris
         link: 'http://www.meetup.com/Web-Up-Tech/'
         name: Web Up Tech
-        description: "Ce Meetup est destiné à toute la communauté de développement Open Source Web/Cloud/DevOps. Les Thèmes abordés couvrent tous les aspects développement Web (Spring Boot, Angulars JS, Node JS, Mean Stack, HTML5,...) ainsi que les nouvelles architectures Cloud (Micro services, Containers, Ansible, Docker,...) dans un contexte DevOps/Agile. Les sessions organisées se déroulent généralement en soirée et sont animées par des experts dans leur domaine ou des développeurs de tout horizon. Normasys SA (SSII en pleine expansion) sponsorise et gère l'organisation de ces événements avec des partenaires de la place. Votre contribution est la bienvenue pour partager avec les acteurs et développeurs parisiens, votre savoir faire et vos retours sur expériences très précieux. Big Up, Come Up, Web Up ;)"
+        description: "Ce Meetup est destiné à toute la communauté de développement Open Source Web/Cloud/DevOps. Les Thèmes abordés couvrent tous les aspects développement Web (Spring Boot, Angulars JS, Node JS, Mean Stack, HTML5,...) ainsi que les nouvelles architectures Cloud (Micro services, Containers, Ansible, Docker,...) dans un contexte DevOps/Agile. Les sessions organisées se déroulent généralement en soirée et sont animées par des experts dans leur domaine ou des développeurs de tout horizon. Normasys SA (SSII en pleine expansion) sponsors et gère l'organisation de ces événements avec des partenaires de la place. Votre contribution est la bienvenue pour partager avec les acteurs et développeurs parisiens, votre savoir faire et vos retours sur expériences très précieux. Big Up, Come Up, Web Up ;)"
         lon: 2.3399999141693115
         lat: 48.86000061035156
       - country: GB
@@ -5251,7 +5251,7 @@ regions:
         name: JavaScript Lab Paris
         description: |-
           <p>Coder. Echanger. S'améliorer.</p>
-          <p>Nous sommes fans de JavaScript et nous nous sommes dit que ça serait vraiment bien d'avoir une communauté de passionnés où les gens peuvent échanger, se rencontrer et apprendre les uns des autres. <br> <br>Rejoignez-nous et devenons de meilleurs programmeurs, ensemble.</p>
+          <p>Nous sommes fans de JavaScript et nous nous sommes dit que ça serait vraiment bien d'avoir une communauté de passionnés où les gens peuvent échanger, se rencontrer et apprendre les uns des autres. <br> <br>Rejoignez-nous et devenons de meilleurs programmer, ensemble.</p>
         lon: 2.3399999141693115
         group_photo:
           photo_link: 'http://photos3.meetupstatic.com/photos/event/7/2/3/2/600_447689234.jpeg'
@@ -5267,14 +5267,14 @@ regions:
         city: Paris
         link: 'http://www.meetup.com/ParseServerParisianLovers/'
         name: Parse Server Parisian Lovers
-        description: "Suite à leur récente annonce de la fin de Parse.com, Facebook a pris la décision de livrer en Open Source leur solution révolutionnaire de Back End As A Service : Parse Server. La quasi totalité de la suite et des SDKs est désormais open source. Pour que cette belle initiative perdure, il faut fédérer la communauté des développeurs Parse (600 000 à travers le monde) et quoi de mieux qu'un meet up ? Ce groupe s'adresse donc à tous ceux qui : - souhaitent contribuer au projet open source Parse Server - aiment/adorent la solution de Parse et l'utilisent dans leur développement - sont curieux de découvrir cette nouvelle opportunité"
+        description: "Suite à leur récente annonce de la fin de Parse.com, Facebook a pris la décision de livrer en Open Source leur solution révolutionnaire de Back End As A Service : Parse Server. La quasi totalité de la suite et des SDKs est désormais open source. Pour que cette belle initiative perdure, il faut fédérer la communauté des développeurs Parse (600 000 à travers le monde) et quoi de mieux qu'un meet up ? Ce groupe s'adresse donc à tous ceux qui : - souhaitent contribute au projet open source Parse Server - aiment/adorent la solution de Parse et l'utilisent dans leur développement - sont curieux de découvrir cette nouvelle opportunité"
         lon: 2.3399999141693115
         lat: 48.86000061035156
       - country: IT
         city: Ferrara
         link: 'http://www.meetup.com/ferrarajs/'
         name: Ferrara JavaScript Group - Mobile and cloud app developers
-        description: "<p>L'UserGroup di Ferrara e dintorni dedicato al JavaScript e al WebDevelopment! Lo scopo è quello di creare un gruppo di developer appassionati e ritrovi per discutere sulle nuove tecnologie e riscoperte nell'ambito dei nuovi frameworks e librerie, soprattutto nell'ambito dello sviluppo di app mobile, cloud, desktop e multipiattaforma!</p>"
+        description: "<p>L'UserGroup di Ferrara e dintorni dedication al JavaScript e al WebDevelopment! Lo scopo è quello di creare un gruppo di developer appassionati e ritrovi per discutere sulle nuove tecnologie e riscoperte nell'ambito dei nuovi frameworks e librerie, soprattutto nell'ambito dello sviluppo di app mobile, cloud, desktop e multipiattaforma!</p>"
         lon: 11.619999885559082
         group_photo:
           photo_link: 'http://photos3.meetupstatic.com/photos/event/9/0/3/c/600_447936924.jpeg'
@@ -5283,7 +5283,7 @@ regions:
         city: Neuilly-sur-Seine
         link: 'http://www.meetup.com/Meetup-AngularJS-Neuilly-sur-Seine/'
         name: 'Meetup AngularJS & JavaScript'
-        description: "<p>Rejoignons-nous pour apprendre le code dans la bonne humeur ! Si vous avez envie d'apprendre AngularJS et le live coding, ainsi que l'évolution du JavaScript, mais pensez que cette activité est réservée aux scientifiques en herbe, révisez votre jugement et venez nous retrouver dans notre espace de co-working. Nous vous montrerons que coder n'est pas sorcier !</p>"
+        description: "<p>Rejoignons-nous pour apprendre le code dans la bonne humeur ! Si vous avez envie d'apprendre AngularJS et le live coding, ainsi que l'évolution du JavaScript, mais pensez que cette activisté est réservée aux scientifiques en herbe, révisez votre jugement et venez nous retrouver dans notre espace de co-working. Nous vous montrerons que coder n'est pas sorcier !</p>"
         lon: 2.2699999809265137
         group_photo:
           photo_link: 'http://photos3.meetupstatic.com/photos/event/2/a/3/9/600_447970809.jpeg'
@@ -5884,7 +5884,7 @@ regions:
         link: 'http://www.meetup.com/nodebr/'
         name: NodeBR - São Paulo
         description: |-
-          <p>A NodeBR é uma comunidade fundada por pessoas com interesse em aprender mais sobre Node.js assim como ajudar outras pessoas que possuem dúvidas nessa plataforma. No momento a comunidade é constituída por estes pontos de acesso principal</p>
+          <p>A NodeBR é uma comunidade fundada por pessoas com interesse em aprender mais sobre Node.js assim como ajudar outras pessoas que possuem dúvidas nessa plataforma. No memento a comunidade é constituída por estes pontos de acesso principal</p>
           <p>* <a href="https://groups.google.com/forum/?hl=pt#!forum/nodebr">A lista de e-mails</a> é um grupo no Google onde você pode cadastrar o seu endereço de e-mail para enviar e receber e-mails das outras pessoas cadastradas. Esta lista mostrou-se extremamente eficaz na resolução de dúvidas de pessoas iniciantes no Node.js, assim como também é o ponto de encontro de discussões proveitosas e notícias sobre a plataforma.</p>
           <p>* <a href="https://webchat.freenode.net/?channels=#nodebr">Nosso canal #nodebr no IRC</a> é uma ferramenta de bate papo em tempo real, onde programadores trocam ideias e tiram dúvidas com outros membros que estão online, a ferramenta é nova e cresce junto com a comunidade. Para quem já possui instalado algum client IRC, nos achará facilmente no canal #nodebr na rede freenode.net, para aqueles que ainda não possuem um, podem acessar o link anterior para abrir o web chat e entrar diretamente no canal.</p>
           <p>* <a href="http://www.meetup.com/Node-js-Sao-Paulo/">O grupo de Meetup de São Paulo</a> é onde organizamos nossos encontros e marcamos os eventos mensais que trazem informação e novidades sobre o mundo do Node.js.</p>
@@ -6045,7 +6045,7 @@ regions:
         city: Matamoros
         link: 'http://www.meetup.com/RGV-bots/'
         name: RGV bots
-        description: 'This is a group for anyone interested in Hardware-Software Technologies Integration, mainly focused in OpenSource movment. All skills levels are welcome.'
+        description: 'This is a group for anyone interested in Hardware-Software Technologies Integration, mainly focused in OpenSource movement. All skills levels are welcome.'
         lon: -97.5
         lat: 25.8799991607666
       - country: AR
@@ -6053,7 +6053,7 @@ regions:
         link: 'http://www.meetup.com/Buenos-Aires-Node-js-Meetup/'
         name: Buenos Aires Node.js Meetup
         description: |-
-          <p>Curso de Node.js iniciando desde los conceptos básico de JavaScript hasta las técnicas de programación avanzada en Node.js y todo su ecosistema.</p>
+          <p>Curso de Node.js iniciando desde los concepts básico de JavaScript hasta las técnicas de programación avanzada en Node.js y todo su ecosistema.</p>
           <p><a href="http://www.educacionit.com/curso-de-nodejs-y-mongodb">Curso de Node.js en Buenos Aires</a><br>
 
           </p>
@@ -6081,7 +6081,7 @@ regions:
         link: 'http://www.meetup.com/NodeBR-Minas-Gerais/'
         name: NodeBR - Minas Gerais
         description: |-
-          <p>A NodeBR é uma comunidade fundada por pessoas com interesse em aprender mais sobre Node.js assim como ajudar outras pessoas que possuem dúvidas nessa plataforma. No momento a comunidade é constituída por estes pontos de acesso principal</p>
+          <p>A NodeBR é uma comunidade fundada por pessoas com interesse em aprender mais sobre Node.js assim como ajudar outras pessoas que possuem dúvidas nessa plataforma. No memento a comunidade é constituída por estes pontos de acesso principal</p>
           <p>* A lista de e-mails é um grupo no Google onde você pode cadastrar o seu endereço de e-mail para enviar e receber e-mails das outras pessoas cadastradas. Esta lista mostrou-se extremamente eficaz na resolução de dúvidas de pessoas iniciantes no Node.js, assim como também é o ponto de encontro de discussões proveitosas e notícias sobre a plataforma.</p>
           <p>* Nosso canal #nodebr no IRC é uma ferramenta de bate papo em tempo real, onde programadores trocam ideias e tiram dúvidas com outros membros que estão online, a ferramenta é nova e cresce junto com a comunidade. Para quem já possui instalado algum client IRC, nos achará facilmente no canal #nodebr na rede freenode.net, para aqueles que ainda não possuem um, podem acessar o link anterior para abrir o web chat e entrar diretamente no canal.</p>
           <p>* O grupo de Meetup de São Paulo é onde organizamos nossos encontros e marcamos os eventos mensais que trazem informação e novidades sobre o mundo do Node.js.</p>
@@ -6187,7 +6187,7 @@ regions:
         link: 'http://www.meetup.com/Meteor-Porto-Alegre/'
         name: Meteor Porto Alegre
         description: |-
-          <p>Participe do nosso chat:&nbsp;<a href="https://demo.rocket.chat/channel/meetup-poa" class="linkified">https://demo.rocket.chat/channel/meetup-poa</a></p>
+          <p>Participate do nosso chat:&nbsp;<a href="https://demo.rocket.chat/channel/meetup-poa" class="linkified">https://demo.rocket.chat/channel/meetup-poa</a></p>
           <p>Grupo criado para reunir pessoas interessadas em conhecer / aprender / ensinar / testar / desenvolver aplicações utilizando o framework Meteor.js. Meteor é uma plataforma open-source para desenvolvimento rápido de aplicações web de alta qualidade, indicada para quem está apenas começando ou para quem já é expert. Uma aplicação Meteor é um mix de Javascript que roda dentro de um web browser, Javascript que roda no no lado servidor Meteor dentro de um container Node.js, fragmentos HTML, regras CSS e conteúdos estáticos (imagens, vídeos, etc.).</p>
         lon: -51.220001220703125
         group_photo:
@@ -6247,7 +6247,7 @@ regions:
         name: devbeers Rio de Janeiro
         description: |-
           <p><span>devbeers é um evento focado em unir a comunidade de desenvolvedores! Levante da sua mesa e junte-se a nós para conversar sobre desenvolvimento e beber uma cerveja de graça. :)</span><br></p>
-          <p>O evento segue um código de conduta que vale para todas as partes (organizadores, participantes e patrocinadores), e queremos com a ajuda de vocês criar uma comunidade segura e receptiva para todos. Você pode encontrâ-lo nesse link:&nbsp;<a href="http://www.devbeers.io/codeofconduct/coc-portuguese.htm">http://www.devbeers.io/codeofconduct/coc-portuguese.htm</a></p>
+          <p>O evento segue um código de conduta que vale para todas as partes (organizadores, participants e patrocinadores), e queremos com a ajuda de vocês criar uma comunidade segura e receptiva para todos. Você pode encontrâ-lo nesse link:&nbsp;<a href="http://www.devbeers.io/codeofconduct/coc-portuguese.htm">http://www.devbeers.io/codeofconduct/coc-portuguese.htm</a></p>
         lon: -43.20000076293945
         lat: -22.90999984741211
       - country: MX
@@ -6315,7 +6315,7 @@ regions:
           <p>Welcome to HackSantiago! Join local like-minded developers, entrepreneurs and tech-enthusiasts for a night of pizza, beer, giveaways and learning a new thing or two. We will have thought leaders in the field speaking about hot topics in the startup and tech world. We'll be discussing software development, project management, programming languages and other tangential topics. Thanks for joining our community! I look forward to meeting you.&nbsp;</p>
           <p>See you soon!&nbsp;</p>
           <p>Daniela</p>
-          <p>¡Bienvenidos a HackSantiago! Únete desarrolladores, empresarios y entusiastas locales de la tecnología para una noche de pizza, cervezas, sorteos y aprender una o dos cosas nuevas. Tendremos expertos hablando de las temas de actualidad en el mundo de los startups y la tecnología. Discutiremos el desarrollo de software, project management, nuevas lenguajes de programación y otros temas afínes. ¡Gracias por unirte a nuestra comunidad!&nbsp;</p>
+          <p>¡Bienvenidos a HackSantiago! Únete desarrolladores, empresarios y entusiastas locales de la tecnología para una noche de pizza, cervezas, sorteos y aprender una o dos cosas nuevas. Tendremos experts hablando de las temas de actualidad en el mundo de los startups y la tecnología. Discutiremos el desarrollo de software, project management, nuevas lenguajes de programación y otros temas afínes. ¡Gracias por unirte a nuestra comunidad!&nbsp;</p>
           <p>¡Hasta pronto!&nbsp;</p>
           <p>Daniela</p>
           <p> <br></p>
@@ -6392,7 +6392,7 @@ regions:
           <p>Qualquer pessoa que goste de compartilhar conhecimentos, trabalhe com a linguagem profissionalmente ou que seja apenas um "hobbista", é bem-vinda.&nbsp;</p>
           <p><b>O que é o FEMUG:</b></p>
           <p>O "Front-End Meet-Up Group" é um projeto que nasceu da necessidade de unir os desenvolvedores Front-End de São Paulo, e então tornou-se uma idéia coletiva, para que o acesso à informação seja feito em qualquer lugar que haja interesse do aprendizado.</p>
-          <p>O evento&nbsp;NÃO&nbsp;pode visar o lucro de um ou mais organizadores. É igualmente restritivo a prática de qualquer preconceito em relação a qualquer pessoa que tenha interesse de aprender ou qualquer tecnologia.</p>
+          <p>O evento&nbsp;NÃO&nbsp;pode visar o lucro de um ou mais organizadores. É igualmente restritivo a prática de qualquer preconceito em realção a qualquer pessoa que tenha interesse de aprender ou qualquer tecnologia.</p>
           <p>Trata-se de um evento para pessoas interessadas em aprender, evoluir e dividir conhecimentos relacionados ao front-end e tecnologias periféricas relacionadas.</p>https://github.com/braziljs/femug/
           <br>
         lon: -35.220001220703125
@@ -6455,7 +6455,7 @@ regions:
         city: Córdoba
         link: 'http://www.meetup.com/Meteor-Cordoba/'
         name: Meteor Cordoba
-        description: '<p>Reunir otros desarrolladores que usen o quieran usar Meteor. Comparte tu conocimiento, aplicaciones y obtene recomendaciones de otros desarrolladores/programadores. Meteor es una plataforma de codigo abierto para construir rapidamente aplicaciones web y moviles de alta calidad para expertos o programadores novatos.</p>'
+        description: '<p>Reunir otros desarrolladores que usen o quieran usar Meteor. Compare tu conocimiento, aplicaciones y obtene recomendaciones de otros desarrolladores/programadores. Meteor es una plataforma de codigo abierto para construir rapidamente aplicaciones web y moviles de alta calidad para experts o programadores novatos.</p>'
         lon: -64.19000244140625
         group_photo:
           photo_link: 'http://photos4.meetupstatic.com/photos/event/7/e/8/6/600_435392390.jpeg'
@@ -6500,7 +6500,7 @@ regions:
         link: 'http://www.meetup.com/Guadalajara-JS/'
         name: Guadalajara JS
         description: |-
-          <p>Este es un grupo para todos los interesado en el lenguaje JavaScript. Tanto en el Front-end como en el Back-end. La meta es tener reuniones mensuales, donde se hable sobre las capacidades del lenguaje y como lo usamos para resolver problemas, para invitar a más gente a usarlo y mejorar nuestras habilidades.</p>
+          <p>Este es un grupo para todos los interesado en el lenguaje JavaScript. Tanto en el Front-end como en el Back-end. La meta es tener reuniones mensuales, donde se hable sobre las capacidades del lenguaje y como lo usamos para resolver problems, para invitar a más gente a usarlo y mejorar nuestras habilidades.</p>
           <p>El segundo objetivo es hacer que el último martes de cada mes sea el mejor martes de cada mes :)</p>
         lon: -103.3499984741211
         group_photo:
@@ -6554,7 +6554,7 @@ regions:
           <p>Esse é um dos canais para discutirmos sobre desenvolvimento Open Source, q<span>ueremos que esses encontros sejam além de tecnologias; esperamos que ele forneça apoio à todos em diversos segmentos e vertentes; s</span><span>eja parte disso e ajude a comunidade Open-Sanca para que este Meetup ganhe força, não importa se você é iniciante, ninja-samurai ou Goku das profundezas do Egeu.</span></p>
           <p><span>Afinal, o que a comunidade espera de você desenvolvedor? Quando você ouve a palavra </span><b>contribua</b><span>, espera-se que possamos ir além de githubs, palestras, workshops e afins, por isto você é uma peça importante nessa engrenagem, </span><b>contribua</b><span>!</span></p>
           <p><span>Queremos proporcionar um bate-papo(OpenTalks) no qual todos possam colaborar e &nbsp;fomentar um networking com empresas, desenvolvedores, comunidades acadêmicas, afinal hoje praticamente o que todos falam, respiram e exalam é sobre </span><b>tec</b><span><b>nologia .</b></span></p>
-          <p><span>Faça parte do OpenSanca, traga seus amigos, independente da carreira que segue, todos podem colaborar, abaixo enumeramos alguns assuntos que abordamos durante nossos encontros, mas fique a vontade para apontar tópicos que você julgar válido também, afinal estamos falando sobre ser <b>OPEN.</b></span></p>
+          <p><span>Faça parte do OpenSanca, traga seus amigos, independence da carreira que segue, todos podem colaborar, abaixo enumeramos alguns assuntos que abordamos durante nossos encontros, mas fique a vontade para apontar tópicos que você julgar válido também, afinal estamos falando sobre ser <b>OPEN.</b></span></p>
           <p>Tópicos:</p>
           <p>- Oferecer Palestras (OpenTalks) &nbsp;<br>- Oferecer Workshops&nbsp;<br>- Oferecer Hangouts (Spin-Off)&nbsp;<br><br></p>
           <p>E o que você vai ver nesse tópicos? Oras, será sobre desenvolvimento de software adotando as principais linguagens e tecnologias do mercado Open Source como Java, Python, Groovy, Ruby, Embarcados, JavaScript, Android, Swift, entre outras! ;)</p>
@@ -6592,10 +6592,10 @@ regions:
         link: 'http://www.meetup.com/NodeBotsRec/'
         name: NodeBotsRec
         description: |-
-          <p>Este é o primeiro ano do evento&nbsp;<a href="http://nodebots.io/">NodeBots Day</a>&nbsp;aqui Recife (<a href="http://nodebotsrec.github.io/">NodebotsRec</a>) e nós estamos extremamente agradecidos e honrados por puder contar com o apoio da&nbsp;<a href="http://www.robothink.org/#!arena/c3c5">Arena ROBOthink</a>&nbsp;do&nbsp;<a href="http://www.cesar.org.br/">CESAR</a>,&nbsp;<a href="http://robolivre.org/">Robô livre</a>&nbsp;e do&nbsp;<a href="http://csbc2015.cin.ufpe.br/">CSBC</a>, com o patrocínio deles o evento deste ano será totalmente grátis, não vamos precisar pagar nada para participar deste evento. Eles gentilmente cederam o espaço, kits de robótica e computadores, muito obrigado a todos vocês que estão apoioando e viabilizando este evento.</p>
+          <p>Este é o primeiro ano do evento&nbsp;<a href="http://nodebots.io/">NodeBots Day</a>&nbsp;aqui Recife (<a href="http://nodebotsrec.github.io/">NodebotsRec</a>) e nós estamos extremamente agradecidos e honrados por puder contar com o apoio da&nbsp;<a href="http://www.robothink.org/#!arena/c3c5">Arena ROBOthink</a>&nbsp;do&nbsp;<a href="http://www.cesar.org.br/">CESAR</a>,&nbsp;<a href="http://robolivre.org/">Robô livre</a>&nbsp;e do&nbsp;<a href="http://csbc2015.cin.ufpe.br/">CSBC</a>, com o patrocínio deles o evento deste ano será totalmente grátis, não vamos precisar pagar nada para participar deste evento. Eels gentilmente cederam o espaço, kits de robótica e computadores, muito obrigado a todos vocês que estão apoioando e viabilizando este evento.</p>
           <p>O foco do NodeBots day Recife é compartilhar e desfrutar do conhecimento e da companhia um do outro, vamos nos encontrar e construir robôs juntos.&nbsp;</p>
           <p>Não haverá negociações e nem vendas de nada.&nbsp;Não haverá prêmios, para nós o maior prêmio é a satisfação de fazer algo incrível juntos.</p>
-          <p>Concordamos e seguimos o código de conduta do Nodebots Day Internacional.</p>
+          <p>Concordamos e seguimos o código de conduta do Nodebots Day International.</p>
         lon: -34.91999816894531
         lat: -8.079999923706055
       - country: CO
@@ -6614,7 +6614,7 @@ regions:
         description: |-
           <p>Grupo pra reunir a galera que já programa ou está aprendendo a mexer com o Meteor, uma plataforma para NodeJS (server side em JavaScript).</p>
           <p>Também são bem vindos empreendedores que pensam ou estão pensando em abrir uma startup ou um novo negócio nesta plataforma.</p>
-          <p>A ideia é programarmos alguns encontros informais para trocarmos conhecimentos, ideias, processos, oportunidades... Colaboração!</p>
+          <p>A ideia é programarmos alguns encontros informais para trocarmos conhecimentos, ideias, processors, oportunidades... Colaboração!</p>
           <p>Sugestões são bem vindas! =)</p>
         lon: -48.540000915527344
         group_photo:
@@ -6624,7 +6624,7 @@ regions:
         city: Buenos Aires
         link: 'http://www.meetup.com/Sencha-Buenos-Aires/'
         name: Sencha Buenos Aires
-        description: '<p>Si desarrollas con algún producto Sencha, como Extjs, Touch, Architect, etc o planeas interiorizarte en este framework unite, estamos proponiendo juntarnos ni bien tengamos varios miembros inscriptos.</p>'
+        description: '<p>Si desarrollas con algún production Sencha, como Extjs, Touch, Architect, etc o planeas interiorizarte en este framework unite, estamos proponiendo juntarnos ni bien tengamos varios miembros inscriptos.</p>'
         lon: -58.369998931884766
         lat: -34.61000061035156
       - country: MX
@@ -6701,7 +6701,7 @@ regions:
         city: Cali
         link: 'http://www.meetup.com/Meteor-Cali/'
         name: Meteor Cali
-        description: '<p>Conoce a otros desarrolladores usando Meteor. Comparte tu conocimiento, aplicaciones y obtén retroalimentación de otros. Meteor es una plataforma open-source que permite desarrollar aplicaciones de alta calidad en una fracción de tiempo, no importa si eres un desarrollador experimentado o tan solo estás empezando! Para más información puedes visitar la página oficial de Meteor <a href="http://meteor.com" class="linkified">http://meteor.com</a> y su repositorio oficial en Github <a href="https://github.com/meteor/meteor" class="linkified">https://github.com/meteor/meteor</a></p>'
+        description: '<p>Conoce a otros desarrolladores usando Meteor. Compare tu conocimiento, aplicaciones y obtén retroalimentación de otros. Meteor es una plataforma open-source que permite desarrollar aplicaciones de alta calidad en una fracción de tiempo, no importa si eres un desarrollador experimentado o tan solo estás empezando! Para más información puedes visitar la página oficial de Meteor <a href="http://meteor.com" class="linkified">http://meteor.com</a> y su repositorio oficial en Github <a href="https://github.com/meteor/meteor" class="linkified">https://github.com/meteor/meteor</a></p>'
         lon: -76.51000213623047
         group_photo:
           photo_link: 'http://photos2.meetupstatic.com/photos/event/6/9/5/4/600_443006964.jpeg'
@@ -6724,7 +6724,7 @@ regions:
         city: Bogotá
         link: 'http://www.meetup.com/Meteor-Bogota/'
         name: Meteor Bogotá
-        description: '<p>Este es un grupo para todos los interesados en aprender sobre METEOR. Son bienvenidos desde expertos desarrolladores, hasta principiantes que están creando su primera aplicación.</p>'
+        description: '<p>Este es un grupo para todos los interesados en aprender sobre METEOR. Son bienvenidos desde experts desarrolladores, hasta principiantes que están creando su primera aplicación.</p>'
         lon: -74.08999633789062
         group_photo:
           photo_link: 'http://photos2.meetupstatic.com/photos/event/2/4/7/1/600_443289329.jpeg'
@@ -6768,7 +6768,7 @@ regions:
         city: Monterrey
         link: 'http://www.meetup.com/Tecnologia-Digital/'
         name: Tecnología Digital
-        description: 'Grupo para interesados en IT, en programación, testing y metodología Ágil. Buscamos difundir diferentes pláticas técnicas donde los participantes puedan aprender las tecnologías digitales modernas como Angular, IOS, Devops, etc. Contaremos con al menos un evento por mes.'
+        description: 'Grupo para interesados en IT, en programación, testing y metodología Ágil. Buscamos difundir diferentes pláticas técnicas donde los participants puedan aprender las tecnologías digitales modernas como Angular, IOS, Devops, etc. Contaremos con al menos un evento por mes.'
         lon: -100.31999969482422
         lat: 25.670000076293945
       - country: BR
@@ -6779,7 +6779,7 @@ regions:
           <p>O<b> Front&amp;Back</b> é um grupo de estudos gratuito para a região de Mogi das Cruzes e Alto Tietê.&nbsp;</p>
           <p>O objetivo principal do grupo é promover o networking e disseminar o conhecimento FrontEnd e BackEnd. Abordamos diversos assuntos como HTML, CSS, JavaScript, MEAN(MongoDb, Express, AngularJS e NodeJS), JQuery, Arquitetura.&nbsp;</p>
           <p><b>Sobre os Eventos</b></p>
-          <p>Os eventos (Mini Cursos e Palestras) são para qualquer pessoa que esteja interessada em participar(independente do nível de conhecimento).&nbsp;</p>
+          <p>Os eventos (Mini Cursos e Palestras) são para qualquer pessoa que esteja interessada em participar(independence do nível de conhecimento).&nbsp;</p>
           <p>A entrada para os eventos é 1 kg de alimento não perecível que será doado para alguma instituição de caridade (Você aprende e ainda ajuda quem precisa).&nbsp;</p>
           <p>Sempre teremos eventos.</p>
         lon: -46.209999084472656
@@ -6800,8 +6800,8 @@ regions:
         link: 'http://www.meetup.com/Meetup-de-JavaScript-en-Caracas/'
         name: 'JavaScript en Caracas, FaceBook: "JavaScript Venezuela"'
         description: |-
-          <p>Somos un sitio de encuentro para todas las personas relacionadas con javascript desde los que quieren estar informados en este nuevo paradigma de desarrollo, hasta por los clientes que estan buscando soluciones javascript para sus necesidades informáticas. Ven a compartir, ven a conocer, ver a instruir, ven a aprender, ven a construir una comunidad.</p>
-          <p>Estamos tambien en FaceBook, con el grupo "JavaScript Venezuela", agregate, aporta y construye. Para una mejor Venezuela.</p>
+          <p>Somos un sitio de encuentro para todas las personas relacionadas con javascript desde los que quieren estar informados en este nuevo paradigma de desarrollo, hasta por los clients que estan buscando soluciones javascript para sus necesidades informáticas. Ven a compartir, ven a conocer, ver a instruir, ven a aprender, ven a construir una comunidad.</p>
+          <p>Estamos tambien en FaceBook, con el grupo "JavaScript Venezuela", aggregate, aporta y construye. Para una mejor Venezuela.</p>
         lon: -66.93000030517578
         lat: 10.539999961853027
       - country: DO
@@ -10467,7 +10467,7 @@ regions:
         city: Québec
         link: 'http://www.meetup.com/ProjectNight/'
         name: Project Night Québec
-        description: "<p>Ce groupe s'adresse à tous ceux qui sont intéressés par le développement que ce soit pour le Web, mobile, ou logiciel. Que vous soyez débutants ou professionnel, ce groupe est pour tout le monde qui a envie de travailler sur un projet informatique seul ou avec d'autres personnes du groupe, pour but de s'améliorer en tant que programmeurs, ou même se lancer en affaire avec d'autres programmeurs passionnés. Je suis certain qu'il y à beaucoup de potentiel à Québec pour ce groupe. Oh, pour cette soirée, bières et pizza sont au rendez-vous :-)</p>"
+        description: "<p>Ce groupe s'adresse à tous ceux qui sont intéressés par le développement que ce soit pour le Web, mobile, ou logiciel. Que vous soyez débutants ou professionnel, ce groupe est pour tout le monde qui a envie de travailler sur un projet informatique seul ou avec d'autres personnes du groupe, pour but de s'améliorer en tant que programmer, ou même se lancer en affaire avec d'autres programmer passionnés. Je suis certain qu'il y à beaucoup de potentiel à Québec pour ce groupe. Oh, pour cette soirée, bières et pizza sont au rendez-vous :-)</p>"
         lon: -71.20999908447266
         group_photo:
           photo_link: 'http://photos2.meetupstatic.com/photos/event/c/f/9/2/600_437453138.jpeg'
@@ -11675,7 +11675,7 @@ regions:
         city: Boulder
         link: 'http://www.meetup.com/bouldernode/'
         name: Boulder Node.js
-        description: "<p>Attn Node.js afficionados: This is one technology group that will get you publishing NPM's, collaborate on open-source projects together, and discuss hosting needs among more novel uses of the technology. When solutions don't exist, we'll build them. Come to share your ideas and learn in interactive workshops. Mentor others and find mentees. If you don't know how to code, come with an attitude to learn.</p>"
+        description: "<p>Attn Node.js aficionados: This is one technology group that will get you publishing NPM's, collaborate on open-source projects together, and discuss hosting needs among more novel uses of the technology. When solutions don't exist, we'll build them. Come to share your ideas and learn in interactive workshops. Mentor others and find mentees. If you don't know how to code, come with an attitude to learn.</p>"
         lon: -105.27999877929688
         lat: 40.040000915527344
       - country: US
@@ -12509,7 +12509,7 @@ regions:
         city: Brisbane
         link: 'http://www.meetup.com/Brisbane-AppDynamics/'
         name: Brisbane AppDynamics User Group
-        description: "<p>AppDynamics! Where Application Perfomance meets DevOps. The hottest APM company on the planet. Find out what's new from the local AppDynamics team, discuss trends in APM technology, and share stories with other like-minded AppDynamos.</p>"
+        description: "<p>AppDynamics! Where Application Performance meets DevOps. The hottest APM company on the planet. Find out what's new from the local AppDynamics team, discuss trends in APM technology, and share stories with other like-minded AppDynamos.</p>"
         lon: 153.02000427246094
         lat: -27.459999084472656
       - country: AU
@@ -12619,7 +12619,7 @@ regions:
         link: 'http://www.meetup.com/Melbourne-Microservices-Meetup/'
         name: Melbourne Microservices Meetup
         description: |-
-          <p>This is a group interested in microservices, nodejs, react, flux, javascript where the members could help redifine a new architecure of javascript related solutions with microservices. Developers, business minded people, and solution architects all welcome. &nbsp;For anyone interested in learning more about me, I can be contacted at the following:</p>
+          <p>This is a group interested in microservices, nodejs, react, flux, javascript where the members could help redifine a new architecture of javascript related solutions with microservices. Developers, business minded people, and solution architects all welcome. &nbsp;For anyone interested in learning more about me, I can be contacted at the following:</p>
           <p><br></p>
           <p><a href="https://au.linkedin.com/in/matthewlowery">LinkedIn Profile</a></p>
           <p><a href="http://www.lowery.com/">My Blog</a></p>

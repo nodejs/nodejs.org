@@ -13,7 +13,7 @@
  *
  * It'll create a file with the blog post content
  * into ../locale/en/blog/release/vX.md ready for you to commit
- * or possibly edit by hand before commiting.
+ * or possibly edit by hand before committing.
  *
  * Happy releasing!
  */
@@ -220,7 +220,7 @@ if (require.main === module) {
     .then((filepath) => {
       console.log('Release post created:', filepath)
     }, (err) => {
-      console.error('Some error occured here!', err.stack)
+      console.error('Some error occurred here!', err.stack)
       process.exit(1)
     })
 }

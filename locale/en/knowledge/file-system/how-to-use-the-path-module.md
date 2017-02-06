@@ -53,7 +53,7 @@ Note that `basename` has an optional second parameter that will strip out the ex
 
 Lastly, the `path` module provides methods to check whether or not a given path exists: `exists` and `existsSync` They both take the path of a file for the first parameter. 
 
-`exists` takes a callback as its second parameter, to which is returned a boolean representing the existance of the file. 
+`exists` takes a callback as its second parameter, to which is returned a boolean representing the existence of the file. 
 
 `existsSync`, on the other hand, checks the given path synchronously, returning the boolean directly.  In Node.js, you will typically want to use the asynchronous functions for most file system I/O - the synchronous versions will block your entire process until they finish. 
 
