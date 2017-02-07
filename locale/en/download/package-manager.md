@@ -295,11 +295,8 @@ On Unix / OS X systems Node.js built from source can be installed using
 [nvm](https://github.com/creationix/nvm) by installing into the location that nvm expects:
 
 ```bash
-$ make install DESTDIR=~/.nvm/versions/node/ PREFIX='$(FULLVERSION)-pre'
+$ env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
-Please note that this is the default location that nvm will be installed into, if you have
-changed this to be something different make sure that you also change the `DESTDIR` variable
-above.
 
 After this you can use `nvm` to switch between released versions and versions
 built from source.
