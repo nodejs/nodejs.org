@@ -49,7 +49,7 @@ would like to contribute to the translation of nodejs.org, please refer to the f
 
 * Ensure that any site translations are done as pull requests into the appropriate language folder in this repo. This will ensure the build process, layout, and styling, remain consistent across the different translations of the site.
 
-* You can find the appropriate language folder within `locale/`. If not, create one matching the two-letter [ISO code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) of your language. To specify a dialect for your language, [separate it with a dash](https://en.wikipedia.org/wiki/IETF_language_tag) (e.g. `pt-br` for Brazilian Portugese, `zh-tw` for Taiwanese Mandarin).
+* You can find the appropriate language folder within `locale/`. If not, create one matching the two-letter [ISO code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) of your language. To specify a dialect for your language, [separate it with a dash](https://en.wikipedia.org/wiki/IETF_language_tag) (e.g. `pt-br` for Brazilian Portuguese, `zh-tw` for Taiwanese Mandarin).
 
 * The following files need to be in your language folder:
 

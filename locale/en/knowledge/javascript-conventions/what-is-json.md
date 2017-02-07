@@ -108,14 +108,14 @@ try/catch block.
 Notice that the only complex values allowed in JSON are objects and
 arrays. Functions, dates and other types are excluded. This may not
 seem to make sense at first. But remember that JSON is a data format,
-not a format for transfering complex javascript objects along with
+not a format for transferring complex javascript objects along with
 their functionality.
 
 ## JSON in other languages
 
 Although JSON was inspired by the simplicity of javascript data
 structures, it's use is not limited to the javascript language. Many
-other languages have methods of transfering native hashes and lists
+other languages have methods of transferring native hashes and lists
 into stringified JSON objects. Here's a quick example in ruby.
 
     require 'json'

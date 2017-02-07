@@ -1206,7 +1206,7 @@ regions:
         lat: 28.670000076293945
       - country: HK
         city: Hong Kong
-        link: 'https://www.meetup.com/Hong-Kong-JavaScripter-Meetup/'
+        link: 'http://www.meetup.com/Hong-Kong-JavaScripter-Meetup/'
         name: Hong Kong JavaScripter Meetup
         description: Javascripters in HK assemble! We love to rant about how hideous JQuery is and our glorious self-made homebrew framework is superior to React.js. We had heated discussion of FP vs OOP in Javascript and how AngularJS is destroying the only place where Java is not ruining a generation of programmers. All those are tea and coffee fueled. Hope everyone can achieve the "Tao" of Javascript!
         lon: 114.13999938964844
@@ -1282,7 +1282,6 @@ regions:
           <p>We have created multiple channels for JavaScripters to subscribe with us, we are everywhere on the web and mobile.</p>
           <p>If you want to be a part of our&nbsp;JavaScripters community please visit below details</p>
           <p>Our website @&nbsp;<a>http://www.javascripters.org</a></p>
-          <p><a>Follow</a> us &nbsp; &nbsp; &nbsp; @ <a href="http://javascripters.org/contactJoin">http://javascripters.org/contactJoin</a>&nbsp;</p>
           <p>Our Team &nbsp; &nbsp; &nbsp; @ <a href="http://javascripters.org/join-our-teamSubscribe">http://javascripters.org/join-our-teamSubscribe</a>&nbsp;</p>
           <p><span>Our YouTube channel @ </span><a href="https://www.youtube.com/c/javascriptersTV">https://www.youtube.com/c/javascriptersTV</a> <br></p>
           <p> <br><b>Announcement :</b></p>
@@ -1837,10 +1836,13 @@ regions:
         link: 'https://www.meetup.com/TaipeiBeginnerProgrammers/'
         name: Taipei Beginner Programmers
         description: |-
-          <p><span>This group is for people either who want to BEGIN programming/coding from the ground up, or who already know a bit about it and just want to keep going with people that are in similar situation. We will have regular study and sharing meetings.&nbsp;</span><b>Programming is hard, especially when you learn to do it without good mentorship and companionship.</b><span> We want to back each others up in that learning process. Feel free to join us. Let's get started and write some code!</span> <br></p>
+          <p><span>This group is for people either who want to BEGIN programming/coding from the ground up, or who already know a bit about it and just want to keep going with people that are in similar situation. We will have regular study and sharing meetings.&nbsp;</span><b>Programming is hard, especially when you learn to do it without good mentorship and companionship.</b><span> We want to back each others up in that learning process. Feel free to join us. Let's get started and write some code!</span><br></p>
           <p><span>We launched "12-in-12" programming challenge on July 6th and are inviting all who want to build things from scratch and share the process of building with other people. Join us and let's get it done!&nbsp;</span></p>
+          <p><b>Anyone can become a Jedi of programming.&nbsp;</b></p>
+          <p><br></p>
           <p><span>這個meetup是讓想從頭開始學習程式語言的人，或是已經會寫一點程式但想要持續學習的人，找到具有相同目標的夥伴。我們會定期舉辦聚會，這裏會有靠寫程式吃飯的程式設計師及軟體工程師分享他們的學習經驗，或者替新手解決他們在寫程式時遭遇的問題和各種疑難雜症。</span><b>學習寫程式是困難的，尤其是在沒有良師益友的情況下</b><span>。這個meetup希望可以作為新手的後盾！降低大家的學習障礙、保持學習動機喔！一起來寫程式吧！</span> <br></p>
           <p>我們在 7/6 發起了『12-in-12』挑戰計畫，熱情地邀請所有想自己打造東西並熱於和他人分享自己實作過程的人一起來參加。</p>
+          <p><b>任何人都可以成為程式語言的絕地武士。</b><br></p>
           <p> <br></p>
         lon: 121.44999694824219
         group_photo:
@@ -1853,6 +1855,21 @@ regions:
         description: '<p>Meetup for the new-age developer community, clean coders, technology enthusiasts, to share latest topics in open source, rapid application development tech stacks and developer practices...</p>'
         lon: 77.55999755859375
         lat: 12.970000267028809
+      - country: ID
+        city: Jakarta
+        link: 'https://www.meetup.com/Jakarta-Learns-Programming/'
+        name: Jakarta Learns Programming
+        description: |-
+          <p><img src="https://a248.e.akamai.net/secure.meetupstatic.com/photos/event/5/2/4/c/600_457641068.jpeg"></p>
+          <p><b>Jakarta Learns Programming (JLP)</b><span> is about&nbsp;people who want to keep learning anything new about programming. For the ones that are eager to share something and influence other people, please join us!&nbsp;</span><br></p>
+          <p>Our vision is to make programming a common thing for people. <br></p>
+          <p>It's the best meetup to talk about general programming. We'll talk about a lot of things, OOP, Android, iOS, JavaScript, AngularJS, Node.js, and others. Let's learn and share to make a better ecosystem of programming in Indonesia. And improve the number of quantity and quality of our 60.000 local software engineers!</p>
+          <p>While in other side, JLP also initiates to gather other related meetups and communities to join together. We intend to connect and consolidate various technical meetups and communities so that we can learn together. We are a platform for supporting others. We are keen to furthermore helping to create a startup ecosystem, beyond just community.</p>
+          <p>For more information&nbsp;and galleries, please visit then follow <a href="https://twitter.com/JLPcommunity">JLP on Twitter</a> or like <a href="https://www.facebook.com/JLP.community">JLP on Facebook</a>.</p>
+        lon: 106.83000183105469
+        group_photo:
+          photo_link: 'http://photos1.meetupstatic.com/photos/event/e/3/9/8/600_443038264.jpeg'
+        lat: -6.179999828338623
       - country: IN
         city: Delhi
         link: 'https://www.meetup.com/jslovers/'
@@ -1903,6 +1920,13 @@ regions:
         group_photo:
           photo_link: 'http://photos4.meetupstatic.com/photos/event/8/0/4/8/600_433592840.jpeg'
         lat: 28.670000076293945
+      - country: HK
+        city: Hong Kong
+        link: 'https://www.meetup.com/JavaScriptHK/'
+        name: JavaScript Hong Kong
+        description: <p>Javascripters in HK assemble! We love to rant about how hideous JQuery is and our glorious self-made homebrew framework is superior to React.js. We had heated discussion of FP vs OOP in Javascript and how AngularJS is destroying the only place where Java is not ruining a generation of programmers. All those are tea and coffee fueled. Hope everyone can achieve the "Tao" of Javascript!</p>
+        lon: 114.13999938964844
+        lat: 22.270000457763672
       - country: IL
         city: Tel Aviv-Yafo
         link: 'https://www.meetup.com/AzureIsrael/'
@@ -2357,6 +2381,17 @@ regions:
         group_photo:
           photo_link: 'http://photos4.meetupstatic.com/photos/event/4/9/d/f/600_457938911.jpeg'
         lat: 32.06999969482422
+      - country: JP
+        city: Tokyo
+        link: 'https://www.meetup.com/React-Native-Tokyo/'
+        name: React Native Tokyo
+        description: |-
+          <p>Start building truly native mobile applications using the most popular programming language: JavaScript! Join us in the heart of Tokyo where we'll be having talks, discussions, and hack sessions about React Native!</p>
+          <p>Programmers and enthusiasts of all levels welcome!</p>
+        lon: 139.77000427246094
+        group_photo:
+          photo_link: 'http://photos1.meetupstatic.com/photos/event/1/6/9/7/600_458225783.jpeg'
+        lat: 35.66999816894531
     nodeschools:
       - name: Amman NodeSchool
         location: 'Amman, JO'
@@ -3838,7 +3873,7 @@ regions:
           <p>Thessaloniki Node.js Meetup is an initiative to connect "Noders" across Thessaloniki in order to exchange ideas, knowledge and experience. We are a rapidly growing community that is welcoming individuals from diverse backgrounds and we are happy to assist fellow developers, designers, managers to understand Node.js, learn how to use it and build great things with it!</p>
           <p>Come and meet us if you want to hear how others are using Node.js to solve real life problems.</p>
           <p>P.S Because we are aware of the power of video, take a look of what being a Noder means! (in-house produced)</p>
-          <p><a href="https://vimeo.com/112690053">Node.js December 2014</a>,&nbsp;<a href="https://vimeo.com/117608325">Node.js Jan. 2015</a>,&nbsp;<a href="https://vimeo.com/126114980">Node.js April 2015</a>,&nbsp;<a href="https://vimeo.com/128472240">Node.js May 2015</a>,&nbsp;<a href="https://vimeo.com/138629583">Node.js Sept. 2015</a>,&nbsp;<a href="https://vimeo.com/146544394">Node.js November 2015</a>,&nbsp;<a href="https://vimeo.com/151296842">Node.js January 2016</a>,&nbsp;<a href="https://vimeo.com/156186908">Node.js February 2016</a>,&nbsp;<a href="https://www.youtube.com/watch?v=AidGrBYs9_E&amp;index=9&amp;list=PLwmyUtJR7zksFIO02WYGsIMNndwddbNPX">Node.js June 2016 Promo</a>,&nbsp;<a href="https://www.youtube.com/watch?v=ogpOWkFLtqI">SKGNodejs 2016-17 Νιου Σεζον</a></p>
+          <p><a href="https://vimeo.com/112690053">Node.js December 2014</a>,&nbsp;<a href="https://vimeo.com/117608325">Node.js Jan. 2015</a>,&nbsp;<a href="https://vimeo.com/126114980">Node.js April 2015</a>,&nbsp;<a href="https://vimeo.com/128472240">Node.js May 2015</a>,&nbsp;<a href="https://vimeo.com/138629583">Node.js Sept. 2015</a>,&nbsp;<a href="https://vimeo.com/146544394">Node.js November 2015</a>,&nbsp;<a href="https://vimeo.com/151296842">Node.js January 2016</a>,&nbsp;<a href="https://vimeo.com/156186908">Node.js February 2016</a>,&nbsp;<a href="https://www.youtube.com/watch?v=AidGrBYs9_E&amp;index=9&amp;list=PLwmyUtJR7zksFIO02WYGsIMNndwddbNPX">Node.js June 2016 Promo</a>,&nbsp;<a href="https://www.youtube.com/watch?v=ogpOWkFLtqI">SKGNodejs 2016-17 Νιου Σεζον</a>,&nbsp;<a href="https://www.youtube.com/watch?v=Rm5rM-AlhJI">SKG &amp; GreeceJS Synergy - SKGNode.js February</a></p>
           <p> <br></p>
           <br>
         lon: 22.940000534057617
@@ -3959,16 +3994,14 @@ regions:
         name: Nijmegen Developers Meetup
         description: |-
           <p>Kom naar deze meetup om mede-developers uit Nijmegen en omgeving te ontmoeten en kennis en ervaringen uit te wisselen. Er is elke keer een presentatie of een workshop over een aan development gerelateerd onderwerp.&nbsp;</p>
-          <p>Ook bieden we elke keer de gelegenheid aan drie leden om een 10 minuten pitch te houden over een development gerelateerd onderwerp dat je tof vindt. Een project, een bepaalde techniek, nieuwe hardware/software, zoiets.</p>
-          <p>Na afloop is er altijd tijd voor een biertje of drankje. Relaxt, interessant en gezellig! Om de maand op de vierde donderdag van de maand.</p>
-          <p>Ben je op zoek naar developers maar ben je zelf geen developer, dan kan je best contact met ons opnemen, maar de meetups zijn echt alleen voor developers.</p>
+          <p>Vanaf voorjaar 2017 zijn we "on tour". We maken een ronde langs Nijmeegse bedrijven/werkplekken met een link met development. Voor de bewoners van mogelijke locaties, meestal komen er tussen de 15 en 25 mensen op onze meetups af. We zouden het leuk vinden als jullie naast de locatie ook een talk of workshop kunnen geven of organiseren. Maar we hebben zelf ook een lijstje met mogelijke sprekers. En als jullie de hapjes en drankjes willen sponsoren dan is dat natuurlijk welkom, maar geen vereiste.</p>
         lon: 5.849999904632568
         lat: 51.84000015258789
       - country: DE
         city: Berlin
         link: 'http://www.meetup.com/Berlin-Grill-JS-Meetup/'
         name: Berlin Grill.JS Meetup
-        description: '<p>Summer is here, so let''s get together around the grill, have a few beers and wursts, and enjoy a lush evening on the summer terrace. The Grill.JS Meetup is strictly informal. There won''t be official tech presentations, it''s all about friendly discussions over a beer and a grillwurst. We do welcome lightning talks, and we''re sure attendees would love to listen to "my dumbest JS idea this year ". Just keep it short and entertaining. We''ll provide for drinks (beer, mate, non-alcoholic) and grillwurst and some vegetarion options, and some salad. If you have special requirements, please bring your own food or drinks.</p>'
+        description: '<p>Summer is here, so let''s get together around the grill, have a few beers and wursts, and enjoy a lush evening on the summer terrace. The Grill.JS Meetup is strictly informal. There won''t be official tech presentations, it''s all about friendly discussions over a beer and a grillwurst. We do welcome lightning talks, and we''re sure attendees would love to listen to "my dumbest JS idea this year ". Just keep it short and entertaining. We''ll provide for drinks (beer, mate, non-alcoholic) and grillwurst and some vegetarian options, and some salad. If you have special requirements, please bring your own food or drinks.</p>'
         lon: 13.380000114440918
         lat: 52.52000045776367
       - country: GB
@@ -4182,7 +4215,8 @@ regions:
           <p>•&nbsp;<a href="https://twitter.com/vilniusjs">twitter.com/vilniusjs</a></p>
           <p>• <a href="https://www.facebook.com/VilniusJS/">facebook.com/vilniusjs</a></p>
           <p>• <a href="http://lanyrd.com/profile/vilniusjs/">lanyrd.com/profile/vilniusjs</a></p>
-          <p>• <a href="https://www.linkedin.com/groups/4742372">group on linkedin.com</a><br></p>
+          <p>• <a href="https://www.linkedin.com/groups/4742372">group on linkedin.com</a></p>
+          <p>• <a href="https://www.youtube.com/channel/UC5gOrwy912DMPoV24hvlDag">VilniusJS Youtube channel</a> <br></p>
           <br>
         lon: 25.270000457763672
         group_photo:
@@ -5626,7 +5660,7 @@ regions:
         link: 'http://www.meetup.com/lubunode/'
         name: Ludwigsburg Node.js Meetup
         description: |-
-          <p>Let's discuss all things node! Whether it be ES6 features for JavaScript, npm packages, continous integration or anything else. The complete node ecosystem is ready to be explored :)</p>
+          <p>Let's discuss all things node! Whether it be ES6 features for JavaScript, npm packages, continuous integration or anything else. The complete node ecosystem is ready to be explored :)</p>
           <p><span>We'll start off with monthly meetups at selected pubs in Ludwigsburg until we get a decent group of regulars to organize bigger events with dedicated locations and speakers. Everyone interested in programming is welcome to join us!</span></p>
         lon: 9.1899995803833
         lat: 48.900001525878906
@@ -5709,17 +5743,17 @@ regions:
         link: 'https://www.meetup.com/ReactJS-Oslo-Meetup/'
         name: ReactJS Oslo Meetup
         description: |-
-          <p><span>ReactJs is crazy easy to get started and fun once you get going. It is a library developed by Facebook!</span><br></p>
+          <p><span>ReactJs is crazy easy to get started and fun once you get going. It is a library developed by Facebook!</span> <br></p>
           <p><span>Join us if you'd like to learn more or if you have your own ReactJs experience to share that others can benefit from.</span></p>
           <p><span>We care about functional programming, bleeding-edge UIs, new ways of thinking about modular UI implementations on web and mobile!</span></p>
           <br>
           <p><b>Follow us and join our Slack community:</b></p>
-          <p>-&nbsp;ReactJS Norway's site:&nbsp;<a href="https://www.google.com/url?q=http://bit.ly/2ka4hC8&amp;sa=D&amp;ust=1486150174787000&amp;usg=AFQjCNGEaQD7pe5xS--5vGPkqpwYYDvHhg">http://bit.ly/2ka4hC8</a></p>
-          <p>-&nbsp;Facebook:&nbsp;<a href="https://www.google.com/url?q=http://bit.ly/2kxmHxW&amp;sa=D&amp;ust=1486150174787000&amp;usg=AFQjCNEUh6azhArqQ73tm5wNcz28MDBrLQ">http://bit.ly/2kxmHxW</a></p>
-          <p>-&nbsp;Instagram:&nbsp;<a href="https://www.google.com/url?q=http://bit.ly/2kpysnJ&amp;sa=D&amp;ust=1486150174787000&amp;usg=AFQjCNHqwyuotUMS2T8VKJppq2uBD29LYQ">http://bit.ly/2kpysnJ</a></p>
-          <p>-&nbsp;Twitter:&nbsp;<a href="https://www.google.com/url?q=http://bit.ly/2kaehvl&amp;sa=D&amp;ust=1486150174787000&amp;usg=AFQjCNG6WzNTmLFVdDtneCD0W8BO_ZDiiA">http://bit.ly/2kaehvl</a></p>
-          <p>-&nbsp;Youtube:&nbsp;<a href="https://www.google.com/url?q=http://bit.ly/2kANuJl&amp;sa=D&amp;ust=1486150174787000&amp;usg=AFQjCNH63ypHTJ7iUzMRRexiPR3CMNtHqQ">http://bit.ly/2kANuJl</a></p>
-          <p>-&nbsp;Slack&nbsp;Community:&nbsp;<a href="https://www.google.com/url?q=https://goo.gl/SP1JI0&amp;sa=D&amp;ust=1486150174787000&amp;usg=AFQjCNHIndBpn-AetluOxUc9JB3ATc-cVA">https://goo.gl/SP1JI0</a></p>
+          <p>-&nbsp;<a href="http://bit.ly/2ka4hC8">ReactJS Norway's site</a></p>
+          <p>-&nbsp;<a href="http://bit.ly/2kxmHxW">Facebook</a></p>
+          <p>-&nbsp;<a href="http://bit.ly/2kpysnJ">Instagram</a></p>
+          <p>-&nbsp;<a href="http://bit.ly/2kaehvl">Twitter</a></p>
+          <p>-&nbsp;<a href="http://bit.ly/2kANuJl">Youtube</a></p>
+          <p>-&nbsp;<a href="https://goo.gl/SP1JI0">Slack&nbsp;Community</a></p>
           <br>
           <p>Read more about React and React Native:</p>
           <p><a href="http://facebook.github.io/react/">More info on ReactJS</a> <br></p>
@@ -5963,12 +5997,12 @@ regions:
         lat: 65.5999984741211
       - country: IT
         city: Salerno
-        link: 'https://www.meetup.com/JS-Salerno/'
+        link: 'http://www.meetup.com/JS-Salerno/'
         name: JavaScript & NodeJS community Salerno
         description: '<p>JavaScript è qui da trent''anni ma è più vivo che mai! JS è passato da essere un semplice script di controllo dell''input nei browser a un linguaggio vero e proprio, con un ecosistema di framework e librerie da far impallidire linguaggi più blasonati. E'' l''unico vero linguaggio universale, gira ovunque vi sia un browser (anche nel vostro telefonino) e anche su server! E'' la porta d''accesso alle WebApp moderne. In questo gruppi saranno accettati i neofiti ed esperti. Organizzeremo incontri mensili (o bi-mensili) come conferenze, inviteremo esperti che soddisferanno le nostre curiosità e faremo rete.</p>'
         lon: 14.779999732971191
         group_photo:
-          photo_link: 'http://photos3.meetupstatic.com/photos/event/7/0/6/a/600_449608778.jpeg'
+          photo_link: 'http://photos1.meetupstatic.com/photos/event/9/d/4/3/600_447640259.jpeg'
         lat: 40.68000030517578
       - country: FR
         city: Paris
@@ -6412,16 +6446,16 @@ regions:
           photo_link: 'http://photos4.meetupstatic.com/photos/event/c/b/0/9/600_456471977.jpeg'
         lat: 45.7599983215332
       - country: DE
-        city: Ludwigsburg
-        link: 'https://www.meetup.com/lubunode/'
-        name: nodeJS Ludwigsburg
+        city: Stuttgart
+        link: 'https://www.meetup.com/nodemeetup/'
+        name: nodeJS Stuttgart
         description: |-
           <p>Let's discuss all things node! Whether it be ES6 features for JavaScript, npm packages, continuous integration or anything else. The complete node ecosystem is ready to be explored :)</p>
           <p><span>Events will be hosted near / in Ludwigsburg. Always open for locations and talks!</span></p>
         lon: 9.1899995803833
         group_photo:
-          photo_link: 'http://photos1.meetupstatic.com/photos/event/d/d/7/7/600_457616695.jpeg'
-        lat: 48.900001525878906
+          photo_link: 'http://photos3.meetupstatic.com/photos/event/8/d/f/a/600_458196346.jpeg'
+        lat: 48.790000915527344
       - country: AT
         city: Vienna
         link: 'https://www.meetup.com/Free-Code-Camp-Vienna/'
@@ -6461,7 +6495,22 @@ regions:
         name: SevillaJS
         description: '<p>Grupo de apasionados, profesionales de JavaScript en la ciudad de Sevilla.</p>'
         lon: -5.980000019073486
+        group_photo:
+          photo_link: 'http://photos2.meetupstatic.com/photos/event/9/1/e/0/600_458137344.jpeg'
         lat: 37.400001525878906
+      - country: IT
+        city: Salerno
+        link: 'https://www.meetup.com/devday-salerno/'
+        name: JavaScript & NodeJS - DevDay Salerno
+        description: |-
+          <p>Questo gruppo nasce come <b>Javascript &amp; NodeJS community Salerno</b>.</p>
+          <p>Siamo una community di programmatori appassionati, salernitani e non, che discutono più o meno con cadenza mensile di informatica e di argomenti relativi alla programmazione. Siamo prevalentemente "local", nel senso che diffondiamo annunci di lavoro delle aziende salernitane e campane, così come tutti gli eventi regionali di maggior interesse, e tutte le occasioni di confronto da cui poi nascono belle idee e anche amicizie.&nbsp;</p>
+          <p>Da febbraio 2016 abbiamo deciso di federarci col DevDay e di diventare <b>DevDay Salerno</b>, ossia una branca di un'organizzazione informale più ampia che è nata più o meno nello stesso periodo di questo Meetup, all'inizio del 2016.&nbsp;</p>
+          <p>Siamo diventati DevDay perché pensiamo che ci siano tanti altri argomenti interessanti non-solo-javascript, come il mobile, big data, intelligenza artificiale, e gli altri linguaggi (java, python, etc.) che meritano attenzione.</p>
+        lon: 14.779999732971191
+        group_photo:
+          photo_link: 'http://photos1.meetupstatic.com/photos/event/6/3/0/c/600_458125356.jpeg'
+        lat: 40.68000030517578
       - country: FR
         city: Toulouse
         link: 'https://www.meetup.com/angulartoulouse/'
@@ -6907,7 +6956,7 @@ regions:
         description: '<p>Xlab to bezpłatne warsztaty organizowane przez programistów dla programistów. Xlab to forma edukacji, podnoszenia wiedzy i umiejętności poprzez naukę i praktyczne ćwiczenia pod okiem doświadczonych developerów XSolve.</p>'
         lon: 18.670000076293945
         group_photo:
-          photo_link: 'http://photos2.meetupstatic.com/photos/event/9/2/a/1/600_455017537.jpeg'
+          photo_link: 'http://photos1.meetupstatic.com/photos/event/3/e/c/9/600_458176073.jpeg'
         lat: 50.310001373291016
       - country: DE
         city: München
@@ -7192,17 +7241,9 @@ regions:
         lat: 48.13999938964844
       - country: DE
         city: Hamburg
-        link: 'https://www.meetup.com/Hamburg-Frontend-Developer-Meetup/'
-        name: Hamburg Frontend Developer Meetup
-        description: |-
-          <p><b>Are you ready for the revolution?</b> We are behind the most successful Frontend Developer Meetups in the Netherlands. <a href="https://www.meetup.com/AngularJS-Amsterdam-Meetup/" class="linkified">https://www.meetup.com/AngularJS-Amsterdam-Meetup/</a> AND <a href="https://www.meetup.com/Frontend-Developer-Meetup-Amsterdam/" class="linkified">https://www.meetup.com/Frontend-Developer-Meetup-Amsterdam/</a>. The two largest Frontend Developer Meetups in the Netherlands. We will be bringing this concept to the wonderful city of Hamburg.</p>
-          <p>We are very excited to kick off with a new meetup group in Hamburg that focusses on highly technical javascript subjects. We will organise a meetup on a regular basis with interesting subjects.&nbsp; <br></p>
-          <p>Give presentations on the latest tools, techniques, frameworks and libraries that companies are looking for.&nbsp;Information on companies that are hiring in Hamburg (and Germany) and what they can offer you. You will be supplied with beer and pizza as you mingle with other Frontend Developers in Hamburg.&nbsp;</p>
-          <p>We will be welcoming ideas on what you would like to hear from future Meetups.&nbsp;</p>
-          <p>Watch our latest meetup with&nbsp;Google Developer Expert Gerard Sans&nbsp;on&nbsp;RxJS 5 in-depth:</p>
-          <p><a class="embedded" href="https://www.youtube.com/watch?v=vMD5lFt6P80">https://www.youtube.com/watch?v=vMD5lFt6P80</a></p>
-          <br>
-          <br>
+        link: 'https://www.meetup.com/CTO-NETHERLANDS/'
+        name: CTO Netherlands Meetup
+        description: '<p>Welcome to the CTO Netherlands Meetup Group :)&nbsp;</p>'
         lon: 10
         group_photo:
           photo_link: 'http://photos3.meetupstatic.com/photos/event/c/f/4/5/600_455033061.jpeg'
@@ -7534,9 +7575,9 @@ regions:
         link: 'https://www.meetup.com/Groningen-Java-User-Group/'
         name: Groningen Java User Group
         description: |-
-          <p>Java, open source and beyond.... that is the focus for this Meetup!</p> 
-          <p>The list with topics is endless, to give you an idea:</p> 
-          <p>Spring, Spring boot, Spring data, DevOps, maven, Java 8, Java EE 7, Polymer, React.js, docker, eclipse, Microservice, IntelliJ, Oracle, Play framework, AngularJS, <br>Node.js, Kubernetes, KumulusEE, Wicket, GWT, Material design, Mesos, Apache Spark, Bootstrap, Blender, Git, Vagrant, Dart, RxJS, Yeoman, Sonar, Nexus, Jenkins, CLM, Fortify, TDD, Scrum, Agile, Gradle, Groovy, Kotlin, Python, Arquillian, JUnit, Hibernate, Java FX, Cloud, Mockito, JSon, IoT, Basel, TypeScript, Ecma Script 6, MongoDB, Rest, Selenium, Fitnesse, AI (Artificial Intelligence), Big Data, SPA (Single Page Applications), NoSQL, Relational Databases, Business Intelligence, Architecture, Scala</p> 
+          <p>Java, open source and beyond.... that is the focus for this Meetup!</p>
+          <p>The list with topics is endless, to give you an idea:</p>
+          <p>Spring, Spring Boot, Spring Data, DevOps, Maven, Java 8, Java EE 7, Polymer, React.js, Docker, Eclipse, Microservices, IntelliJ, Oracle, Play framework, AngularJS, Angular2, Node.js, Kubernetes, KumuluzEE, Wicket, GWT, Material Design, Mesos, Apache Spark, Apache Camel, Bootstrap, Blender, Git, Vagrant, Dart, RxJS, Yeoman, Sonar, Nexus, Jenkins, CLM, Fortify, TDD, Scrum, Agile, Gradle, Groovy, Kotlin, Python, Swift, Arquillian, JUnit, Hibernate, Java FX, Cloud, Mockito, JSON, IoT, TypeScript, ECMAScript 6, MongoDB, Rest, Selenium, Selenide, Fitnesse, AI (Artificial Intelligence), Big Data, SPA (Single Page Applications), NoSQL, Relational Databases, Business Intelligence, Architecture, Scala</p>
           <p>Come join us!</p>
         lon: 6.570000171661377
         lat: 53.22999954223633
@@ -7640,7 +7681,7 @@ regions:
       - country: GB
         city: London
         link: 'https://www.meetup.com/LNM-London-Node-JS-Meetup/'
-        name: '#LNM London Node.JS Meetup'
+        name: '#LNM - London Node.JS Meetup'
         description: |-
           <p>The #LNM Meetup is designed for the Node.js enthusiasts to share the expertise and explore best use cases.</p>
           <p> <br>Values</p>
@@ -7676,6 +7717,22 @@ regions:
         description: '<p>Meetup for Vue.js users, fans and all who are interested in learning more about this exciting new framework.</p>'
         lon: 13.380000114440918
         lat: 52.52000045776367
+      - country: NL
+        city: Rotterdam
+        link: 'https://www.meetup.com/meetup-group-nohDJMHu/'
+        name: node-bots
+        description: '<p>NodeSchool is an open source project run by volunteers with two goals: to create high quality programming curriculum and to host community learning events.&nbsp;The learning events are in-person hosted workshops in which "workshoppers" are used as curriculum and mentors help attendees work through the challenges.&nbsp;Workshopper is the name used for the open source lesson modules associated with NodeSchool. All are self guided (you don''t need to attend a workshop to do one) and most work offline.</p>'
+        lon: 4.480000019073486
+        lat: 51.93000030517578
+      - country: ES
+        city: Castelló
+        link: 'https://www.meetup.com/Eat-Sleep-Code-Repeat/'
+        name: Eat - Sleep - Code - Repeat (ESCR)
+        description: "<p>Nos gusta codear, nos gusta crear, nos gusta aprender, pero sobre todo nos gusta la cerveza.</p>\n<p>Aquí nos reunimos para hablar de código, da igual el nivel, da igual el lenguaje, aquí todos aprendemos de todos.</p>\n<p>PHP, Swift, Java, HMTL, NodeJS, Wordpress, Prestashop, Angular, Python, Ruby on Rails, REST, GIT, Scrum, Diseño ... Como ves cabemos todos, únicamente propón.</p>\n<p>Y al acabar nos hacemos unas \uD83C\uDF7B</p>"
+        lon: -0.05000000074505806
+        group_photo:
+          photo_link: 'http://photos1.meetupstatic.com/photos/event/f/5/d/600_458223933.jpeg'
+        lat: 39.970001220703125
     nodeschools:
       - name: NodeSchool Amsterdam
         location: 'Amsterdam, NL'
@@ -8961,7 +9018,7 @@ regions:
         lat: 14.630000114440918
       - country: BR
         city: Recife
-        link: 'https://www.meetup.com/NodeBotsRec/'
+        link: 'http://www.meetup.com/NodeBotsRec/'
         name: NodeBotsRec
         description: |-
           <p>Este é o primeiro ano do evento&nbsp;<a href="http://nodebots.io/">NodeBots Day</a>&nbsp;aqui Recife (<a href="http://nodebotsrec.github.io/">NodebotsRec</a>) e nós estamos extremamente agradecidos e honrados por puder contar com o apoio da&nbsp;<a href="http://www.robothink.org/#!arena/c3c5">Arena ROBOthink</a>&nbsp;do&nbsp;<a href="http://www.cesar.org.br/">CESAR</a>,&nbsp;<a href="http://robolivre.org/">Robô livre</a>&nbsp;e do&nbsp;<a href="http://csbc2015.cin.ufpe.br/">CSBC</a>, com o patrocínio deles o evento deste ano será totalmente grátis, não vamos precisar pagar nada para participar deste evento. Eles gentilmente cederam o espaço, kits de robótica e computadores, muito obrigado a todos vocês que estão apoioando e viabilizando este evento.</p>
@@ -9283,6 +9340,15 @@ regions:
         description: 'Este es un grupo donde todos los amantes de: PHP, HTML5, IONIC, Phonegap y MySql se juntan de forma ONLINE y presencia charlas creadas por un grupo de desarrolladores que intenta crecer día a día profesionalmente.'
         lon: -58.369998931884766
         lat: -34.61000061035156
+      - country: MX
+        city: México City
+        link: 'https://www.meetup.com/HTML5-Ciudad-de-Mexico/'
+        name: HTML5 + JS  Ciudad de México
+        description: '<p>Creemos que HTML5 es el futuro. Nuestro propósito es difundir su uso, sus beneficios y las tecnologías emergentes alrededor de él: CSS3, Javascript, WebSockets, NodeJS, Comet....</p>'
+        lon: -99.13999938964844
+        group_photo:
+          photo_link: 'http://photos2.meetupstatic.com/photos/event/7/8/e/8/600_20910952.jpeg'
+        lat: 19.43000030517578
       - country: MX
         city: México City
         link: 'https://www.meetup.com/eventloop/'
@@ -9693,11 +9759,11 @@ regions:
           <p>Todos os níveis e competência são bem-vindos.</p>
           <p>Comecei esse grupo no intuito de fomentar a disseminação de novas tecnologias na Região de Barueri.</p>
           <p> <br></p>
-          <p>Submeter palestras e conteúdos: juscilan [at] gmail.com&nbsp;</p>
+          <p>Submeter palestras e conteúdos: ronaldo.paggi [at] gmail.com&nbsp;</p>
           <p> <br></p>
         lon: -46.86000061035156
         group_photo:
-          photo_link: 'http://photos4.meetupstatic.com/photos/event/c/5/c/5/600_454310629.jpeg'
+          photo_link: 'http://photos2.meetupstatic.com/photos/event/d/6/d/a/600_458215002.jpeg'
         lat: -23.489999771118164
       - country: BR
         city: Barueri
@@ -10431,8 +10497,6 @@ regions:
         name: Node.JS Boston
         description: '<p>A group dedicated to Node.JS, the server side framework for Google''s V8 JavaScript engine.</p>'
         lon: -71.04000091552734
-        group_photo:
-          photo_link: 'http://photos4.meetupstatic.com/photos/event/9/c/0/5/600_448119941.jpeg'
         lat: 42.349998474121094
       - country: US
         city: Los Angeles
@@ -10825,7 +10889,7 @@ regions:
         lat: 30.280000686645508
       - country: US
         city: Boston
-        link: 'https://www.meetup.com/Node-js-in-the-wild/'
+        link: 'http://www.meetup.com/Node-js-in-the-wild/'
         name: Node.js in the wild
         description: <p>Node.js in the wild was started to discuss Node.js and its application in real live application...both large and small. Come out if you want to hear how others are using Node.js to solve real problems.</p>
         lon: -71.04000091552734
@@ -11378,7 +11442,17 @@ regions:
         city: Toronto
         link: 'https://www.meetup.com/AngularJS-Toronto/'
         name: 'AngularJS Toronto (#AngularJSTO)'
-        description: "<p>Welcome to the <strong>Toronto AngularJS</strong> meetup. We generally try to meet the 3rd Wednesday of every month. Join our group and follow us\_<span>on twitter for updates,</span> <a href=\"https://twitter.com/NGToronto\">@NGToronto</a>.</p>\n<p><span>AngularJS is the future of web development. It's so much better than everything else you'll shed tears of joy as you finally shed the trauma of out-of-control unobtrusive JavaScript (how on earth do you figure out what a page does?), jQuery (amazing but it doesn't scale), overloaded CSS (update at your own risk!) and the resulting expensive and unmaintainable web applications. AngularJS is to jQuery what jQuery is to non-library JavaScript. It's that good.</span></p>\n<p><strong>The 5 D's of AngularJS:</strong></p>\n<p>1. <strong>DRY</strong>. Don't repeat yourself, which means no boilerplate.</p>\n<p>2. <strong>Declarative</strong>. HTML is the template and markup with AngularJS directives is the templating language. This works perfectly thanks to the next two D's.</p>\n<p>3. <strong>Dependency injection</strong>. Now I'm crying. You can actually test AngularJS apps, but more importantly you have scoping kung-fu where everything is modular, decoupled, and has a clearly logical place to go. It's pretty, implicit, magical, and it fixes 90% of what's wrong with every other JavaScript framework.</p>\n<p>4. <strong>Data-binding</strong>. Now I'm openly weeping with joy. Data-binding in a dependency managed, magically scoped, declarative, and DRY language is beautiful, amazingly succinct and powerful. Data-binding isn't the start with Angular- it's result. And this is the essence of Angular- the magic is in how everything works together. Dry + Declarative + Dependency Injection + Data-binding ALL work together. Remove one of them and AngularJS isn't AngularJS.</p>\n<p>5. <strong>Designer-Friendly</strong>. Your CSS will no longer look like you wrote it while on crack, and you can see within the HTML the general outline of what those developers are doing. And with that, you are free to go to town on the markup so long as you don't delete the ng- magic tags. Yes, dear designer, you can change the markup and style the application without destroying the business logic. How cool is that.</p>\n<p>So there you have it.</p>\n<p>Tweet insights to <a href=\"https://twitter.com/NGToronto\">@NGToronto</a> using the <strong>#AngularJSTO</strong> hashtag.</p>\n<p><strong>PRESENTING:</strong></p>\n<p>We are always looking for speakers &amp; presenters for future meetups, so if you are using or teaching AngularJS, please submit to speak:</p>\n<p><span><a href=\"http://tinyurl.com/AJSTO-Speaker\">http://tinyurl.com/AJSTO-Speaker</a></span></p>\n<p>If you wish to recommend someone to speak or a topic you want covered, please submit to:</p>\n<p><a href=\"http://tinyurl.com/AJSTO-Recommend\">http://tinyurl.com/AJSTO-Recommend</a></p>\n<p>if you have an interest in sharing your work with the group.</p>\n<p><em>Watch these and other AngularJS-Toronto meetup talks at\_<a href=\"https://www.youtube.com/rangleio/\">youtube.com/rangleio</a></em></p>"
+        description: |-
+          <p><span>Welcome to the&nbsp;Toronto Angular Meetup. Join our group and follow us&nbsp;on twitter&nbsp;</span><a href="https://twitter.com/NGToronto">@NGToronto</a>&nbsp;and t<span>weet insights </span><span>using the&nbsp;<b>#AngularJSTO</b>&nbsp;hashtag!</span><br></p>
+          <p>Angular is well-known Javascript framework developed and maintained by Google and released to the community as an open source project. One of the key features of Angular is that it's built to scale. Its modular architecture and the use of Typescript as the base language makes it ideal for enterprise software with large teams.</p>
+          <p>Being an opinionated framework, Angular is a good choice to develop applications in a consistent way. The core team has put a lot of effort on creating an official style guide and baking those recommendations inside of the Angular CLI. For the most part, when working with Angular, it feels like there's only one way to develop an app.</p>
+          <p>Some claim that Angular is not just a framework but a platform. We can use Angular to create a web application compiled in the browser, or compile the application on the server to provide the browser with plain HTML; we can create a "native" mobile application with the help of Nativescript or create a desktop application with Electron. Angular brings us closer to the holy grail of one code base, multiple platforms.</p>
+          <p>Angular has seen a tremendous transformation from version 1 to version 2. With a new release schedule in place that will give us a new major version of the framework every 6 months and a new minor version every month, keeping up with all the changes is going to be a challenge. The AngularJSTO meetup is here to help you keep you up to date with latest and greatest of the Angular ecosystem.</p>
+          <p><strong>PRESENTING:</strong></p>
+          <p>We are always looking for speakers &amp; presenters for future meetups, so if you are using or teaching AngularJS, please submit to speak:&nbsp;</p>
+          <p><span><a href="http://tinyurl.com/AJSTO-Speaker">http://tinyurl.com/AJSTO-Speaker</a></span></p>
+          <p>if you have an interest in sharing your work with the group.</p>
+          <p><em>Watch these and other AngularJS-Toronto meetup talks at <a href="https://www.youtube.com/rangleio/">youtube.com/rangleio</a></em></p>
         lon: -79.37999725341797
         group_photo:
           photo_link: 'http://photos3.meetupstatic.com/photos/event/1/0/3/600_436380259.jpeg'
@@ -11428,7 +11502,7 @@ regions:
         description: '<p>Lets Learn, Hack, Build with Javascript and Node JS. All skills welcome.</p>'
         lon: -117.83000183105469
         group_photo:
-          photo_link: 'http://photos2.meetupstatic.com/photos/event/8/3/e/c/600_419193772.jpeg'
+          photo_link: 'http://photos2.meetupstatic.com/photos/event/8/5/b/2/600_458194226.jpeg'
         lat: 33.68000030517578
       - country: US
         city: Santa Barbara
@@ -12639,7 +12713,7 @@ regions:
           <p> <br> </p>
         lon: -80.08999633789062
         group_photo:
-          photo_link: 'http://photos3.meetupstatic.com/photos/event/4/a/9/e/600_412879102.jpeg'
+          photo_link: 'http://photos1.meetupstatic.com/photos/event/b/3/f/8/600_458086072.jpeg'
         lat: 26.350000381469727
       - country: US
         city: Milan
@@ -14542,7 +14616,7 @@ regions:
         city: Houston
         link: 'https://www.meetup.com/freecodecampHouston-Midtown/'
         name: FreeCodeCamp - Houston
-        description: 'This group is for anyone who is interested in programming and is involved in FreeCodeCamp, the free online code academy. Check out www.freecodecamp.com. We are the Houston group. All levels are welcome. We meet to share ideas, network, and learn! We will meet twice a month in the midtown area. Bring your laptop. WiFi is available at our different venues.'
+        description: '<p>This group is for anyone who is interested in programming and is involved in FreeCodeCamp, the free online code academy. Check out www.freecodecamp.com. We are the Houston group. All levels are welcome. We meet to share ideas, network, and learn! Bring your laptop. WiFi is available at our different venues.</p>'
         lon: -95.47000122070312
         group_photo:
           photo_link: 'http://photos1.meetupstatic.com/photos/event/3/7/e/e/600_448094318.jpeg'
@@ -14774,7 +14848,7 @@ regions:
         city: Boulder
         link: 'http://www.meetup.com/bouldernode/'
         name: Boulder Node.js
-        description: '<p>Attn Node.js afficionados: This is one technology group that will get you publishing NPM''s, collaborate on open-source projects together, and discuss hosting needs among more novel uses of the technology. When solutions don''t exist, we''ll build them. Come to share your ideas and learn in interactive workshops. Mentor others and find mentees. If you don''t know how to code, come with an attitude to learn.</p>'
+        description: '<p>Attn Node.js aficionados: This is one technology group that will get you publishing NPM''s, collaborate on open-source projects together, and discuss hosting needs among more novel uses of the technology. When solutions don''t exist, we''ll build them. Come to share your ideas and learn in interactive workshops. Mentor others and find mentees. If you don''t know how to code, come with an attitude to learn.</p>'
         lon: -105.27999877929688
         lat: 40.040000915527344
       - country: US
@@ -15067,6 +15141,15 @@ regions:
         group_photo:
           photo_link: 'http://photos2.meetupstatic.com/photos/event/a/b/a/6/600_138463942.jpeg'
         lat: 41.45000076293945
+      - country: US
+        city: Boston
+        link: 'https://www.meetup.com/boston-node/'
+        name: Boston Node
+        description: <p>Boston Node was started to discuss Node.js and its application in real live application...both large and small. Come out if you want to hear how others are using Node.js to solve real problems.</p>
+        lon: -71.04000091552734
+        group_photo:
+          photo_link: 'http://photos1.meetupstatic.com/photos/event/7/4/2/a/600_458189738.jpeg'
+        lat: 42.349998474121094
       - country: CA
         city: Vancouver
         link: 'https://www.meetup.com/GitHelpAnd0Tech/'
@@ -15430,7 +15513,7 @@ regions:
           <p><span>Velocity 360 conducts development bootcamps and short term workshops. If you want to start a career in programming or launch your startup, Velocity 360 can take you there. Visit <a href="http://www.velocity360.io">Velocity 360</a>&nbsp;for more information.</span>&nbsp;</p>
         lon: -73.9800033569336
         group_photo:
-          photo_link: 'http://photos3.meetupstatic.com/photos/event/5/5/f/a/600_450082010.jpeg'
+          photo_link: 'http://photos4.meetupstatic.com/photos/event/d/c/0/2/600_458216322.jpeg'
         lat: 40.75
       - country: US
         city: Los Angeles
@@ -16447,21 +16530,50 @@ regions:
           photo_link: 'http://photos4.meetupstatic.com/photos/event/9/d/e/4/600_457840420.jpeg'
         lat: 40.220001220703125
       - country: US
-        city: Oklahoma City
-        link: 'https://www.meetup.com/FCC-OKC/'
-        name: Free Code Camp OKC
-        description: '<p>Free Code Camp Oklahoma City is the Oklahoma City branch of <a href="https://freecodecamp.com">freecodecamp</a>. <br> <br>Free Code Camp is a completely no-cost way to learn how to program utilizing: <br>HTML&nbsp; <br>CSS <br>JavaScript <br>NodeJS <br>Angular <br> <br>We meet up every Sunday between 2pm and 4pm in person and on <a href="https://twitch.tv/fccokc">stream</a> <br>in order to supplement the online learning with in-person guidance and instruction. <br>We do our best to keep you up to date and moving forward in your career as <br>web/software developers! <br></p>'
-        lon: -97.52999877929688
-        group_photo:
-          photo_link: 'http://photos1.meetupstatic.com/photos/event/8/d/f/b/600_457896347.jpeg'
-        lat: 35.47999954223633
-      - country: US
         city: Grand Rapids
         link: 'https://www.meetup.com/Grand-Rapids-JavaScript-Meetup/'
         name: Grand Rapids JavaScript Meetup
         description: '<p>Learn about JavaScript, Angular, React, Node, Jasmine and more.</p>'
         lon: -85.66000366210938
         lat: 42.959999084472656
+      - country: US
+        city: Naperville
+        link: 'https://www.meetup.com/WxSW-Chi-burbs-React/'
+        name: WxSW Chi burbs React
+        description: |-
+          <p>Let's get together to strengthen our developer community and create a dynamic, proactive, and positive environment focused on supporting and helping all React Devs to grow their knowledge and skill set.</p> 
+          <p>This meetup is for anyone using or interested in using ReactJS who lives in or is willing to travel to the Naperville/Wheaton/Bollingbrook area to meet with, learn from, teach, and/or get to know other React Devs.</p> 
+          <p>While this group will focus heavily on React, we will also delve into many other Front End Dev focused topics such as: Redux, SPA (Single Page Application architecture), ES6, JavaScript, Webpack (and other build tools), Other frameworks ( VueJS, AngularJS - mainly for comparison sake)</p>
+        lon: -88.1500015258789
+        lat: 41.77000045776367
+      - country: US
+        city: Saint Louis
+        link: 'https://www.meetup.com/STL-Web-Design-and-Development-Meetup/'
+        name: STL Web Design and Development Meetup
+        description: |-
+          <p>This group is for anyone in digital product development space for the web, from the design side (UI/UX/interaction design) to full stack development focused on Node/Javascript both server-side and client-side.&nbsp; Regardless of your level of expertise, we invite you to come join us for interesting talks and presentations on both design and development at each meetup on the 3rd Thursday of each month.&nbsp; Share your knowledge and expertise, learn from others, and help create a shared understanding of building amazing web products from both a design and development perspective.</p>
+          <p>Each meetup will host two, 30-minute presentations; one focused on an aspect of design and the other focused on development.&nbsp; We'll have food &amp; drink, socializing and networking with others in the community, as well as great presentations and discussions.</p>
+        lon: -90.45999908447266
+        lat: 38.65999984741211
+      - country: US
+        city: New York
+        link: 'https://www.meetup.com/meetup-group-oQKJXvXk/'
+        name: WebRTC
+        description: '<p>Welcome to the WebRTC Meetup. We have free monthly events in New York City &amp; online with presentations by the industry''s leading experts in WebRTC, and cutting-edge technologies based on WebRTC.</p>'
+        lon: -73.98999786376953
+        lat: 40.75
+      - country: US
+        city: Jacksonville
+        link: 'https://www.meetup.com/React-JAX/'
+        name: React JAX
+        description: |-
+          <p>A monthly meetup to dive into all things React! This meetup is open to all, from beginners to experts.</p>
+          <p>Brooksource and Florida Blue have partnered on this meetup to help build local Information Technology relationships. React JAX meets on the 1st Thursday of every month.</p>
+          <p>Want to get involved? We are always looking for speakers to share knowledge and local companies to sponsor Raffles, Give-a-ways, and more!</p>
+          <p>Stay Connected:</p>
+          <p>Twitter: https://twitter.com/React_JAX </p>
+        lon: -81.7699966430664
+        lat: 30.329999923706055
     nodeschools:
       - name: Anchorage NodeSchool
         location: 'Anchorage, AK, US'
@@ -17156,7 +17268,7 @@ regions:
         city: Brisbane
         link: 'http://www.meetup.com/Brisbane-AppDynamics/'
         name: Brisbane AppDynamics User Group
-        description: '<p>AppDynamics! Where Application Perfomance meets DevOps. The hottest APM company on the planet. Find out what''s new from the local AppDynamics team, discuss trends in APM technology, and share stories with other like-minded AppDynamos.</p>'
+        description: '<p>AppDynamics! Where Application Performance meets DevOps. The hottest APM company on the planet. Find out what''s new from the local AppDynamics team, discuss trends in APM technology, and share stories with other like-minded AppDynamos.</p>'
         lon: 153.02000427246094
         lat: -27.459999084472656
       - country: AU
@@ -17366,8 +17478,10 @@ regions:
         city: Newcastle
         link: 'https://www.meetup.com/NewcastleJS-JavaScript-Meetup/'
         name: NewcastleJS - JavaScript Meetup
-        description: '<p>--Software-- Javascript is eating the world! There are a bunch of Newcastle based meetups (Devops, Rails etc..) but no Javascript specific ones. Let''s get something happening and share our experiences, tips, tricks with wrangling this confusing but powerful language and all the awesome frameworks and futures that are incoming.</p>'
+        description: '<p>NewcastleJS is a local Javascript meetup for sharing our experiences, tips and tricks. Come along and enjoy some pizza, drinks and talks covering covering a wide range of technical web development topics.</p>'
         lon: 151.75
+        group_photo:
+          photo_link: 'http://photos3.meetupstatic.com/photos/event/a/b/8/3/600_458143907.jpeg'
         lat: -32.91999816894531
       - country: SG
         city: Singapore

@@ -132,7 +132,7 @@ In this project, you will collaborate with members of the Node.js project, and m
 
 The project will be broken down into a number of stages including:
 
- * Getting familliar with the Node.js code base
+ * Getting familiar with the Node.js code base
  * Getting your first commits into Node.js core
    - A list of good first contributions can be found [here](https://github.com/nodejs/node/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+contribution%22)
  * Getting familiar with the libuv code base

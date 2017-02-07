@@ -106,7 +106,7 @@ his long history of success with Node.js and his current work at GoDaddy.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/dvMq4gqBleo" frameborder="0" allowfullscreen></iframe>
 
-## Captial One (Episode 1)
+## Capital One (Episode 1)
 
 Azat Mardan shares his experience transforming CaptialOne with Node.js.
 

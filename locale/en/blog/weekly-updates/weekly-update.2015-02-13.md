@@ -69,7 +69,7 @@ View the [original article](https://medium.com/@mikeal/how-io-js-built-a-146-per
 * [`iojs-sv`](https://github.com/iojs/iojs-sv) Swedish Community
 * [`iojs-tr`](https://github.com/iojs/iojs-tr) Turkish Community
 * [`iojs-tw`](https://github.com/iojs/iojs-tw) Taiwan Community
-* [`iojs-uk`](https://github.com/iojs/iojs-uk) Ukranian Community
+* [`iojs-uk`](https://github.com/iojs/iojs-uk) Ukrainian Community
 
 ## io.js and Node.js
 View the [original article](https://medium.com/@iojs/io-js-and-a-node-js-foundation-4e14699fb7be) on Medium.
