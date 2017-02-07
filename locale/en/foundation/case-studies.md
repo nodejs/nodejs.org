@@ -27,7 +27,7 @@ The Node.js Foundation has consolidated all the best thinking around why enterpr
 
 Walmart sees nearly 20,000 hits per-second on its website and mobile app during the holiday season, so it needs a fast, reliable and bulletproof ecommerce system to reach its goal of becoming the number one online retailer. That’s why it’s rebuilding Walmart.com with Node.js.
 
-[Read the full case study.](/static/documents/casestudies/Node_CaseStudy_Walmart_final.pdf)
+<a href="/static/documents/casestudies/Node_CaseStudy_Walmart_final.pdf" onClick="ga('send', 'event', { eventCategory: 'casestudy', eventAction: 'click', eventLabel: 'Walmart Case Study', eventValue: 0});" target="blank">Read the full case study.</a>
 
 ## Node.js Helps NASA Keep Astronauts Safe and Data Accessible
 
