@@ -75,14 +75,8 @@ You are required to have a GitHub account to register.
 <a target="_new" class="imagelink" href="http://nearform.com">
   <img alt="nearForm" class="memberlogo" src="/static/images/foundation/nearformLogo.png" />
 </a>
-<a target="_new" class="imagelink" href="http://newrelic.com">
-  <img alt="New Relic" class="memberlogo" src="/static/images/foundation/NewRelic.png" />
-</a>
 <a target="_new" class="imagelink" href="//npmjs.org">
   <img alt="npm" class="memberlogo" src="/static/images/foundation/npmLogo.png" />
-</a>
-<a target="_new" class="imagelink" href="http://opbeat.com">
-  <img alt="opbeat" class="memberlogo" src="/static/images/foundation/opbeat.png" />
 </a>
 <a target="_new" class="imagelink" href="//risingstack.com">
   <img alt="RisingStack" class="memberlogo" src="/static/images/foundation/risingstack_logo.png" />
