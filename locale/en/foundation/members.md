@@ -7,13 +7,23 @@ layout: foundation.hbs
 To request information on joining the Node.js Foundation, please email
 [membership@nodejs.org](mailto:membership@nodejs.org).
 
-Node.js Foundation Membership is open to businesses and individuals. Individual members will be electing two representatives to the Board of Directors in January who will be responsible for representing the diverse needs of the Node.js community in the administration of the Node.js Foundation.
+Node.js Foundation Membership is open to businesses and individuals as a
+member-supported organization. The Node.js Foundation Individual Director is the
+Node.js project’s community voice on the board. There are two individual
+directors that sit on the Node.js Foundation board and each serves a two-year,
+staggered term. Individual members elect a representative to the Board of
+Directors in January of each year who are responsible for representing the
+diverse needs of the Node.js community in the administration of the Node.js
+Foundation.
 
 ## Becoming an Individual Member
 
-Individual membership costs [$100 a year, or $25 for students](https://identity.linuxfoundation.org/user?destination=pid/99) (student discount code: **NodeStudentN10HM**). Contributors to the Node.js project, including all Working Groups and sub-projects, are eligible for free membership.
+Individual membership costs [$100 a year, or $25 for students](https://identity.linuxfoundation.org/user?destination=pid/99). Contributors to the Node.js project, including all Working Groups and sub-projects, are eligible for free membership. Please [contact us](mailto:membership@nodejs.org) for discount codes. You are required to have a GitHub account to register.
 
-You are required to have a GitHub account to register.
+### What’s the benefit of being an Individual Member?
+ - You have a vote and voice on the Node.js Foundation Board of Directors
+ through the two above-mentioned elected Individual Membership Directors.
+ - 20% off regular price registration to Node Interactive 2017
 
 # Corporate Members
 ## Platinum
@@ -75,14 +85,8 @@ You are required to have a GitHub account to register.
 <a target="_new" class="imagelink" href="http://nearform.com">
   <img alt="nearForm" class="memberlogo" src="/static/images/foundation/nearformLogo.png" />
 </a>
-<a target="_new" class="imagelink" href="http://newrelic.com">
-  <img alt="New Relic" class="memberlogo" src="/static/images/foundation/NewRelic.png" />
-</a>
 <a target="_new" class="imagelink" href="//npmjs.org">
   <img alt="npm" class="memberlogo" src="/static/images/foundation/npmLogo.png" />
-</a>
-<a target="_new" class="imagelink" href="http://opbeat.com">
-  <img alt="opbeat" class="memberlogo" src="/static/images/foundation/opbeat.png" />
 </a>
 <a target="_new" class="imagelink" href="//risingstack.com">
   <img alt="RisingStack" class="memberlogo" src="/static/images/foundation/risingstack_logo.png" />
