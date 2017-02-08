@@ -71,7 +71,7 @@ you are a member, you can vote [NOW](https://vote.linuxfoundation.org)!
 Individual membership costs [$100 a year, or $25 for students](https://identity.linuxfoundation.org/pid/99).
 Contributors to the Node.js project, including all Working Groups and
 sub-projects, are eligible for free membership. Please
-[contact us](mailto:membership@linuxfoundation.org) for discount codes. You are
+[contact us](mailto:membership@nodejs.org) for discount codes. You are
 required to have a GitHub account to register.
 
 ### What’s the benefit of being an individual member?
