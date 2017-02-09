@@ -71,10 +71,10 @@ Also including: **Linux Mint**, **Linux Mint Debian Edition (LMDE)**, **elementa
 
 Node.js is available from the [NodeSource](https://nodesource.com) Debian and Ubuntu binary distributions repository (formerly [Chris Lea's](https://github.com/chrislea) Launchpad PPA). Support for this repository, along with its scripts, can be found on GitHub at [nodesource/distributions](https://github.com/nodesource/distributions).
 
-**NOTE:** If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+**NOTE:** If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 6.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 -->
@@ -90,20 +90,20 @@ Node.js를 이용할 수 있습니다. 이 저장소의 지원내용과 스크�
 볼 수 있습니다.
 
 **NOTE:** Ubuntu Precise나 Debian Wheezy를 사용한다면
-[오래된 배포판에서 Node.js >= 4.x 실행하기](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md)를
+[오래된 배포판에서 Node.js >= 6.x 실행하기](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md)를
 읽어볼 필요가 있습니다.
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
 
 <!--
-Alternatively, for Node.js v6:
+Alternatively, for Node.js v7:
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
@@ -134,10 +134,10 @@ sudo apt-get install -y build-essential
 * **Debian testing** (stretch, aliased to jessie)
 * **Debian unstable** (sid)
 -->
-Node.js v6를 사용하고 싶다면 다음을 실행합니다.
+Node.js v7을 사용하고 싶다면 다음을 실행합니다.
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
@@ -236,7 +236,7 @@ Node.js is available from the [NodeSource](https://nodesource.com) Enterprise Li
 
 Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the **[EPEL](https://fedoraproject.org/wiki/EPEL)** repository being available. The setup script will check and provide instructions if it is not installed.
 
-Run as root on RHEL, CentOS or Fedora, for Node.js v4 LTS Argon:
+Run as root on RHEL, CentOS or Fedora, for Node.js v6 LTS:
 -->
 ## Enterprise Linux와 Fedora
 
@@ -251,15 +251,17 @@ Run as root on RHEL, CentOS or Fedora, for Node.js v4 LTS Argon:
 CentOS 5)의 Node.js 패키지도 사용할 수 있습니다. 설치되어 있지 않다면 설정 스크립트가 확인하고
 안내할 것입니다.
 
+Node.js v6 LTS를 설치하려면 RHEL, CentOS, Fedora에서 root로 실행하세요.
+
 <!--
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -
+curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
 ```
 
-Alternatively for Node.js v6:
+Alternatively for Node.js v7:
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+curl --silent --location https://rpm.nodesource.com/setup_7.x | bash -
 ```
 
 Alternatively for Node.js 0.10:
@@ -275,13 +277,13 @@ yum -y install nodejs
 ```
 -->
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -
+curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
 ```
 
-Node.js v6를 사용한다면 다음을 실행하세요.
+Node.js v7를 사용한다면 다음을 실행하세요.
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+curl --silent --location https://rpm.nodesource.com/setup_7.x | bash -
 ```
 
 Node.js 0.10을 사용한다면 다음을 실행하세요.
