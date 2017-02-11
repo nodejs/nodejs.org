@@ -18,7 +18,7 @@ layout: blog-post.hbs
 
 ### Node v6.9.5 (LTS)
 
-* [Node v6.9.5 (LTS)](https://nodejs.org/en/blog/release/v6.9.5/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+* [Node v6.9.5 (LTS)](https://nodejs.org/en/blog/release/v6.9.5/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V6.md#6.9.5).
 
 ### Notable Updates
 
