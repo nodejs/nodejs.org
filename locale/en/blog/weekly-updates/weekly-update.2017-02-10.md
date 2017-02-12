@@ -10,11 +10,11 @@ layout: blog-post.hbs
 
 ### Node v7.5.0 (Current)
 
-* [Node v7.5.0 (Current)](https://nodejs.org/en/blog/release/v7.5.0/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+* [Node v7.5.0 (Current)](https://nodejs.org/en/blog/release/v7.5.0/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V7.md#7.5.0).
 
 ### Node v4.7.3 (LTS)
 
-* [Node v4.7.3 (LTS)](https://nodejs.org/en/blog/release/v4.7.3/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+* [Node v4.7.3 (LTS)](https://nodejs.org/en/blog/release/v4.7.3/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V4.md#4.7.3).
 
 ### Node v6.9.5 (LTS)
 
