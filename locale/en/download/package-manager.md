@@ -15,6 +15,7 @@ title: Installing Node.js via package manager
 * [FreeBSD and OpenBSD](#freebsd-and-openbsd)
 * [Gentoo](#gentoo)
 * [NetBSD](#netbsd)
+* [nvm](#nvm)
 * [openSUSE and SLE](#opensuse-and-sle)
 * [OSX](#osx)
 * [SmartOS and illumos](#smartos-and-illumos)
@@ -289,6 +290,32 @@ Or install a binary package (if available for your platform) using pkgin:
 pkgin -y install nodejs
 ```
 
+## nvm
+Node Version Manager is a bash script used to manage multiple released Node.js versions. It allows
+you to perform operations like install, uninstall, switch version, etc.
+To install nvm, use this [install script](https://github.com/creationix/nvm#install-script).
+
+On Unix / OS X systems Node.js built from source can be installed using
+[nvm](https://github.com/creationix/nvm) by installing into the location that nvm expects:
+
+```bash
+$ env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
+```
+
+After this you can use `nvm` to switch between released versions and versions
+built from source.
+For example, if the version of Node.js is v8.0.0-pre:
+
+```bash
+$ nvm use 8
+```
+
+Once the official release is out you will want to uninstall the version built
+from source:
+
+```bash
+$ nvm uninstall 8
+```
 
 ## openSUSE and SLE
 
