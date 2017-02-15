@@ -52,7 +52,7 @@ The Node.js project maintains 3 key types of releases
 * LTS
 
 Having different release types allows innovation/change
-to flow rapidly into Nightly releases where we can get
+to flow rapidly into Nightly builds where we can get
 early feedback on upcoming changes.
 When ready, these changes then transition
 to Current and LTS releases in a more controlled manner,
