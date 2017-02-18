@@ -165,7 +165,7 @@ high latency on requests. We can easily run the app with the built in profiler:
 NODE_ENV=production node --prof app.js
 ```
 
-and put some load on the server using ab:
+and put some load on the server using ab (ApacheBench):
 
 ```
 curl -X GET "http://localhost:8080/newUser?username=matt&password=password"
@@ -186,7 +186,7 @@ and get an ab output of:
 NODE_ENV=production node --prof app.js
 ```
 
-ab로 서버에 부하를 줄 수 있습니다.
+ab(ApacheBench)로 서버에 부하를 줄 수 있습니다.
 
 ```
 curl -X GET "http://localhost:8080/newUser?username=matt&password=password"

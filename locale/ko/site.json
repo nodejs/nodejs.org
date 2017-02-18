@@ -52,6 +52,10 @@
         "trademark": {
             "link": "about/trademark",
             "text": "트레이드마크"
+        },
+        "privacy": {
+            "link": "about/privacy",
+            "text": "개인정보 보호정책"
         }
     },
     "download": {
