@@ -179,7 +179,7 @@ function writeToFile (results) {
 
   return new Promise((resolve, reject) => {
     fs.access(filepath, fs.F_OK, (err) => {
-      if (!err) {
+      if (!err && process.argv[3] !== '--force') {
         return reject(new Error(`Release post for ${results.version} already exists!`))
       }
 
