@@ -16,7 +16,7 @@ preferences (current and future) for front end, back end and IoT developers.
 
 * [Read the full announcement.](/en/blog/announcements/nodejs-foundation-survey/)
 * [See the infographic.](/static/documents/2016-survey-infographic.png)
-* [Read the full report.](/static/documents/2016-survey-report.pdf)
+* <a href="/static/documents/2016-survey-report.pdf" data-casestudy="Node.js 2016 Report">Read the full report.</a>
 
 ## Presentation - The Enterprise Case for Node.js
 The Node.js Foundation has consolidated all the best thinking around why enterprises should consider Node.js for their systems of engagement in this short presentation.
@@ -27,13 +27,13 @@ The Node.js Foundation has consolidated all the best thinking around why enterpr
 
 Walmart sees nearly 20,000 hits per-second on its website and mobile app during the holiday season, so it needs a fast, reliable and bulletproof ecommerce system to reach its goal of becoming the number one online retailer. That’s why it’s rebuilding Walmart.com with Node.js.
 
-<a href="/static/documents/casestudies/Node_CaseStudy_Walmart_final.pdf" onClick="ga('send', 'event', { eventCategory: 'casestudy', eventAction: 'click', eventLabel: 'Walmart Case Study', eventValue: 0});" target="blank">Read the full case study.</a>
+<a href="/static/documents/casestudies/Node_CaseStudy_Walmart_final.pdf" data-casestudy="Walmart Case Study">Read the full case study.</a>
 
 ## Node.js Helps NASA Keep Astronauts Safe and Data Accessible
 
 Collin Estes is the Director of Software Engineering and Chief Architect at Mathematical Research Institute Technologies (MRI Technologies), who partners with United Technologies Corporation Aerospace Systems, the company that creates and maintains the spacesuits for extra vehicular activity (EVA) missions at NASA. He and his team took on the challenge of creating an end-to-end system for data on the full lifecycle of spacesuits. He chose Node.js to make it work.
 
-[Read the full case study.](/static/documents/casestudies/Node_CaseStudy_Nasa_FNL.pdf)
+<a href="/static/documents/casestudies/Node_CaseStudy_Nasa_FNL.pdf" data-casestudy="NASA case study">Read the full case study.</a>
 
 ## Node.js Drives Major Scale and Reliability at Uber
 
@@ -41,7 +41,7 @@ The ride-sharing platform Uber has an ambitious goal: to make transportation
 as reliable as running water, everywhere and for everyone. Learn why Uber
 chose Node.js to power its platform and massive-matching system.
 
-[Read the full case study.](/static/documents/casestudies/Nodejs-at-Uber.pdf)
+<a href="/static/documents/casestudies/Nodejs-at-Uber.pdf" data-casestudy="Uber">Read the full case study.</a>
 
 ## Node.js Helps Fusion Marketing Build Memorable Digital Experiences
 
@@ -50,7 +50,7 @@ in creating custom interactive experiences. Node.js Everywhere has powered
 Fusion's digital expansion from developing app APIs to a 360 degree physical
 interactive group.
 
-[Read the full case study.](/static/documents/casestudies/Node_CaseStudy_Fusion_Final.pdf)
+<a href="/static/documents/casestudies/Node_CaseStudy_Fusion_Final.pdf" data-casestudy="Fusion Marketing">Read the full case study.</a>
 
 # Enterprise Conversations
 
