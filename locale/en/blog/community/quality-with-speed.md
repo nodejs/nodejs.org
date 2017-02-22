@@ -10,7 +10,7 @@ author: Michael Dawson and Myles Borins
 
 # Node.js - Quality with Speed
 
-One of the key tenants of the Node.js community is to allow change
+One of the key tenets of the Node.js community is to allow change
 at a rapid pace in order to foster innovation and to allow Node.js
 to be used in a growing number of use cases.
 
