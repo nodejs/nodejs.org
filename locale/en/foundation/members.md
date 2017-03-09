@@ -114,9 +114,6 @@ Individual membership costs [$100 a year, or $25 for students](https://identity.
 </a>
 </div>
 
-To request information on joining the Node.js Foundation, please email
-[membership@nodejs.org](mailto:membership@nodejs.org).
-
 <iframe class="center"
  src="https://go.pardot.com/l/6342/2015-05-15/2cnz97"
  frameborder="0" marginwidth="0" marginheight="0"
