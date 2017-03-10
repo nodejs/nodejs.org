@@ -57,6 +57,12 @@ interactive group.
 Enterprise conversations are short videos, recorded live, with large scale
 companies sharing their experiences with Node.js.
 
+## Emerging Technology Advisors (Episode 10)
+
+Tracy and Mikeal chat with Chris Williams, founder of Emerging Technology Advisors, about a variety projects in which companies have adopted Node.js during different stages of transition and growth.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w9gbcZJOgPY" frameborder="0" allowfullscreen></iframe>
+
 ## Wildworks (Episode 9)
 
 Paul Milham, Lead Software developer at Wildworks chats with Mikeal and Tracy about how using Node.js provides ease in helping to make the Wildworks gaming experience safe for kids. Paul discusses how the team has fully migrated from PHP to Node.js resulting in more productive and reliable builds, in addition to increased team efficiency and faster debugging times.
