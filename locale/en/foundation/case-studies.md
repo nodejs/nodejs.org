@@ -23,6 +23,12 @@ The Node.js Foundation has consolidated all the best thinking around why enterpr
 
 <iframe width="560" height="400" src="//www.slideshare.net/slideshow/embed_code/key/cdqy9ghQ1Bl48A" frameborder="0" allowfullscreen></iframe>
 
+##  After Call For Innovation from C-Suite, Node.js Pops Up All Over Capital One
+
+Capital One CIO Robert Alexander has encouraged the company’s IT department to operate like a startup and embrace open source software development. The result has been several different project teams using Node.js to rapidly prototype and build new applications inside the business, cutting the time of the development cycle significantly and fostering a climate of innovation. 
+
+<a href="/static/documents/casestudies/Node.js_CapitalOne_FINAL_casestudy.pdf" data-casestudy="Capital One Case Study">Read the full case study.</a>
+
 ## Walmart Strives to Be an Online Retail Leader with Node.js
 
 Walmart sees nearly 20,000 hits per-second on its website and mobile app during the holiday season, so it needs a fast, reliable and bulletproof ecommerce system to reach its goal of becoming the number one online retailer. That’s why it’s rebuilding Walmart.com with Node.js.
