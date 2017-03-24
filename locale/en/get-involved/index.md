@@ -22,7 +22,7 @@ right place. Explore our community resources to find out how you can help:
 
 - The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
 
-- [Node Weekly](http://nodeweekly.com) is an email list that gathers up the latest events and news from around the Node.js community.
+- [Node.js Everywhere](https://newsletter.nodejs.org) is the official Node.js Weekly Newsletter.
 
 - [NodeUp](http://nodeup.com) is a podcast covering the latest Node news in the community.
 
