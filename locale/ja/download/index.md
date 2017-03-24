@@ -12,7 +12,7 @@ downloads:
     intro: >
         Node.js のソースコードをダウンロードするか、事前にビルドされたインストーラーを利用して、今日から開発を始めましょう。
     currentVersion: 最新のバージョン
-    buildDisclaimer: "注意: tarball からのビルドには Python 2.6 か 2.7 が必要です。"
+    buildInstructions: Building Node.js from source on supported platforms
 additional:
     headline: その他のプラットフォーム
     intro: >

@@ -12,7 +12,7 @@ downloads:
     intro: >
         Download the Node.js source code or a pre-built installer for your platform, and start developing today.
     currentVersion: Latest Current Version
-    buildDisclaimer: "Note: Python 2.6 or 2.7 is required to build from source tarballs."
+    buildInstructions: Building Node.js from source on supported platforms
 additional:
     headline: Additional Platforms
     intro: >
