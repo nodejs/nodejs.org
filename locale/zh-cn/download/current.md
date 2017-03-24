@@ -12,7 +12,7 @@ downloads:
     intro: >
         在你的平台上下载 Node.js 源码或预编译安装包，然后即可马上进行开发。
     currentVersion: 当前版本
-    buildDisclaimer: "注意：从源码编译需要 Python 2.6 或 2.7"
+    buildInstructions: Building Node.js from source on supported platforms
 additional:
     headline: 其他平台
     intro: >

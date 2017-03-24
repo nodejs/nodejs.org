@@ -12,7 +12,7 @@ downloads:
     intro: >
         플랫폼에 맞게 미리 빌드된 Node.js 인스톨러나 소스코드를 다운받아서 바로 개발을 시작하세요.
     currentVersion: 최신 현재 버전
-    buildDisclaimer: "Note: 소스 tarball을 빌드하려면 Python 2.6이나 2.7이 필요합니다."
+    buildInstructions: Building Node.js from source on supported platforms
 additional:
     headline: 그 밖의 플랫폼
     intro: >

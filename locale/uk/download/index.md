@@ -12,7 +12,7 @@ downloads:
     intro: >
         Завантажте початковий код Node.js або інсталятор для вашої платформи та почніть розробку сьогодні.
     currentVersion: Поточна версія
-    buildDisclaimer: "Зауважте: Для побудови з початкового коду необхідний Python 2.6 або 2.7."
+    buildInstructions: Building Node.js from source on supported platforms
 additional:
     headline: Додаткові платформи
     intro: >

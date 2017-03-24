@@ -12,7 +12,7 @@ downloads:
     intro: >
         Descargue el código fuente de Node.js o un instalador pre-compilado para su plataforma, y comience a desarrollar hoy.
     currentVersion: Versión actual
-    buildDisclaimer: "Nota: Python 2.6 ó 2.7 es requerido para compilar el código fuente."
+    buildInstructions: Building Node.js from source on supported platforms
 additional:
     headline: Plataformas adicionales
     intro: >
