@@ -184,7 +184,7 @@ yum install gcc-c++ make
 Official **Fedora** [Node.js](https://apps.fedoraproject.org/packages/nodejs) and [npm](https://apps.fedoraproject.org/packages/npm) packages are available in Fedora 18 and later.  Install with:
 
 ```bash
-sudo yum install nodejs npm
+sudo dnf install nodejs
 ```
 
 In a hurry for the latest updates?  [Grab them from updates-testing.](https://fedoraproject.org/wiki/QA:Updates_Testing)
@@ -215,10 +215,10 @@ Additionally, versions of **CentOS** and **Scientific Linux** corresponding to t
 
 **Supported Fedora versions:**
 
-* **Fedora Rawhide** (i686/x86_64/armv7hl)
-* **Fedora 21** (i686/x86_64/armv7hl)
-* **Fedora 20 (Heisenbug)** (i686/x86_64/armv6hl/armv7hl)
-* **Fedora 19 (Schrödinger's Cat)** (i686/x86_64/armv7hl)
+* **Fedora Rawhide** (i686/x86_64/armv7hl/aarch64)
+* **Fedora 25** (i686/x86_64/armv7hl)
+* **Fedora 24** (i686/x86_64/armv7hl)
+* **Fedora 23** (i686/x86_64/armv7hl)
 
 
 ## FreeBSD and OpenBSD
