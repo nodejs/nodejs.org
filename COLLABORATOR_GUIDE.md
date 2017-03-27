@@ -54,7 +54,10 @@ from other Collaborators. Leave at least 48 hours during the week and
 72 hours over weekends to account for international time differences
 and work schedules. Trivial changes (e.g. those which fix minor bugs
 or improve performance without affecting API or causing other
-wide-reaching impact) may be landed after a shorter delay.
+wide-reaching impact) may be landed after a shorter delay. Any press
+release can land with no time contstraints as long as the copy is
+properly formatted, it is not the responsibility of the website group
+to review the copy itself.
 
 Where there is no disagreement amongst Collaborators, a pull request
 may be landed given appropriate review. Where there is discussion
