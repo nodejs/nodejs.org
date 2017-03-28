@@ -13,6 +13,10 @@ downloads:
         Download the Node.js source code or a pre-built installer for your platform, and start developing today.
     currentVersion: Latest Current Version
     buildDisclaimer: "Note: Python 2.6 or 2.7 is required to build from source tarballs."
+    noCurrentLine: >
+        Node.js does not have a current release line at the moment. This is temporary
+        for a week or two. In the meantime we encourage you to use the latest LTS release
+        or wait until the new current release line is available.
 additional:
     headline: Additional Platforms
     intro: >

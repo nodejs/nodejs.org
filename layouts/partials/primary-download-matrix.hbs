@@ -1,3 +1,4 @@
+{{#if version.node}}
 <section>
   <p class="color-lightgray">{{downloads.currentVersion}}: <strong>{{version.node}}</strong> (includes npm {{version.npm}})</p>
   <p>{{downloads.intro}}</p>
@@ -95,3 +96,13 @@
     </tbody>
   </table>
 </section>
+{{else}}
+<section>
+  <p class="color-lightgray">
+    {{downloads.currentVersion}}: -
+  </p>
+  <p>
+    {{downloads.noCurrentLine}}
+  </p>
+</section>
+{{/if}}
