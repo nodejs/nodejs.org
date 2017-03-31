@@ -16,6 +16,7 @@ title: 패키지 매니저로 Node.js 설치하기
 * [FreeBSD and OpenBSD](#freebsd-and-openbsd)
 * [Gentoo](#gentoo)
 * [NetBSD](#netbsd)
+* [nvm](#nvm)
 * [openSUSE and SLE](#opensuse-and-sle)
 * [OSX](#osx)
 * [SmartOS and illumos](#smartos-and-illumos)
@@ -38,6 +39,7 @@ title: 패키지 매니저로 Node.js 설치하기
 * [FreeBSD와 OpenBSD](#freebsd-openbsd)
 * [Gentoo](#gentoo)
 * [NetBSD](#netbsd)
+* [nvm](#nvm)
 * [openSUSE와 SLE](#opensuse-sle)
 * [OSX](#osx)
 * [SmartOS와 illumos](#smartos-illumos)
@@ -587,37 +589,95 @@ pkgin로 바이너리 패키지를 설치하는 방법도 있습니다.(사용�
 pkgin -y install nodejs
 ```
 
+<!--
+## nvm
+Node Version Manager is a bash script used to manage multiple released Node.js versions. It allows
+you to perform operations like install, uninstall, switch version, etc.
+To install nvm, use this [install script](https://github.com/creationix/nvm#install-script).
+
+On Unix / OS X systems Node.js built from source can be installed using
+[nvm](https://github.com/creationix/nvm) by installing into the location that nvm expects:
+
+```bash
+$ env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
+```
+
+After this you can use `nvm` to switch between released versions and versions
+built from source.
+For example, if the version of Node.js is v8.0.0-pre:
+
+```bash
+$ nvm use 8
+```
+
+Once the official release is out you will want to uninstall the version built
+from source:
+
+```bash
+$ nvm uninstall 8
+```
+-->
+
+## nvm
+Node Version Manager는 Node.js의 다양한 릴리스 버전을 관리하는 bash 스크립트입니다. nvm으로
+설치, 제거, 버전 변경 같은 작업을 할 수 있습니다. nvm을 설치하려면
+[설치 스크립트](https://github.com/creationix/nvm#install-script)를 사용하세요.
+
+Unix / OS X 시스템에서는 소스로 빌드된 Node.js를
+[nvm](https://github.com/creationix/nvm)으로 설치할 수 있습니다.
+이는 nvm에 설정된 위치에 설치됩니다.
+
+```bash
+$ env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
+```
+
+설치 후 `nvm`으로 릴리스 된 버전이나 소스에서 빌드한 버전 간에 변경할 수 있습니다.
+예를 들어 Node.js 버전이 v8.0.0-pre라면 다음과 같이 실행합니다.
+
+```bash
+$ nvm use 8
+```
+
+공식적으로 릴리스 된 후 소스에서 빌드된 버전을 다음과 같이 제거할 수 있습니다.
+
+```bash
+$ nvm uninstall 8
+```
 
 <!--
 ## openSUSE and SLE
 
-[Download Node.js via openSUSE one-click](http://software.opensuse.org/download.html?project=devel%3Alanguages%3Anodejs&package=nodejs).
+Node.js is available in the main repositories under the following packages:
 
-Available RPM packages for: openSUSE 11.4, 12.1, 12.2, 12.3, 13.1, Factory and Tumbleweed; SLE 11 (with SP1/SP2/SP3 variations).
+ - **openSUSE 13.2 and Leap 42.1**: `nodejs` (4.x)
+ - **openSUSE Leap 42.2**: `nodejs4`
+ - **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`
+ - **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`<sup>1</sup>
 
-Example install on openSUSE 13.1:
+<sup>1:</sup> The "Web and Scripting Module" must be [added before installing](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).
+
+For example, to install Node.js 4.x on openSUSE Leap 42.2, run the following as root:
 
 ```bash
-sudo zypper ar \
-  http://download.opensuse.org/repositories/devel:/languages:/nodejs/openSUSE_13.1/ \
-  Node.js
-sudo zypper in nodejs nodejs-devel
+zypper install nodejs4
 ```
 -->
+
 ## openSUSE와 SLE
 
-[openSUSE 원클릭으로 Node.js를 다운로드 받으세요](http://software.opensuse.org/download.html?project=devel%3Alanguages%3Anodejs&package=nodejs).
+다음 패키지 아래 주 저장소에서 Node.js를 사용할 수 있습니다.
 
-openSUSE 11.4, 12.1, 12.2, 12.3, 13.1, Factory, Tumbleweed;
-SLE 11(SP1/SP2/SP3 계열 포함)에서 RPM 패키지를 사용할 수 있습니다.
+ - **openSUSE 13.2와 Leap 42.1**: `nodejs` (4.x)
+ - **openSUSE Leap 42.2**: `nodejs4`
+ - **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`
+ - **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`<sup>1</sup>
 
-다음은 openSUSE 13.1에서 설치하는 예시입니다.
+<sup>1:</sup> "웹과 스크립트 모듈"은 반드시 [설치 전에 추가](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html)해야 합니다.
+
+예시로 openSUSE Leap 42.2에서 Node.js 4.x를 설치하려면 root 계정으로 다음 명령어를 실행해야 합니다.
 
 ```bash
-sudo zypper ar \
-  http://download.opensuse.org/repositories/devel:/languages:/nodejs/openSUSE_13.1/ \
-  Node.js
-sudo zypper in nodejs nodejs-devel
+zypper install nodejs4
 ```
 
 <!--

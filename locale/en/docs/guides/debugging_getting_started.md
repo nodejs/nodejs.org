@@ -56,9 +56,9 @@ info on these follows:
 
 * CLI Debugger supported by the Node.js Foundation which uses the [Inspector Protocol][].
 * A version is bundled with Node and can be used with `node inspect myscript.js`.
-* The latest version can also be installed independently (e.g. `npm install -g node-inspect`) 
+* The latest version can also be installed independently (e.g. `npm install -g node-inspect`)
   and used with `node-inspect myscript.js`.
-    
+
 #### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
 
 * **Option 1**: Open `chrome://inspect` in a Chromium-based

@@ -140,11 +140,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `argon` of `node`
+Here we will use the latest LTS (long term support) version `boron` of `node`
 available from the [Docker Hub](https://hub.docker.com/):
 
 ```docker
-FROM node:argon
+FROM node:boron
 ```
 -->
 
@@ -160,10 +160,10 @@ touch Dockerfile
 
 가장 먼저 해야 할 것은 어떤 이미지를 사용해서 빌드할 것인지를 정의하는 것입니다. 여기서는
 [Docker Hub](https://hub.docker.com/)에 있는
-`node`의 최신 LTS(장기 지원) 버전인 `argon`을 사용할 것입니다.
+`node`의 최신 LTS(장기 지원) 버전인 `boron`을 사용할 것입니다.
 
 ```docker
-FROM node:argon
+FROM node:boron
 ```
 
 <!--
@@ -246,7 +246,7 @@ CMD [ "npm", "start" ]
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:argon
+FROM node:boron
 
 # Create app directory
 RUN mkdir -p /usr/src/app
@@ -274,7 +274,7 @@ CMD [ "npm", "start" ]
 `Dockerfile`은 다음과 같아야 합니다.
 
 ```docker
-FROM node:argon
+FROM node:boron
 
 # 앱 디렉토리 생성
 RUN mkdir -p /usr/src/app
@@ -336,7 +336,7 @@ $ docker images
 
 # Example
 REPOSITORY                      TAG        ID              CREATED
-node                            argon      539c0211cd76    3 weeks ago
+node                            boron      539c0211cd76    3 weeks ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 -->
@@ -358,7 +358,7 @@ $ docker images
 
 # 예시
 REPOSITORY                      TAG        ID              CREATED
-node                            argon      539c0211cd76    3 weeks ago
+node                            boron      539c0211cd76    3 weeks ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
