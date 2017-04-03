@@ -8,13 +8,12 @@ Technical Steering Committee, and representatives elected by the individual memb
 
 * Chairperson: **Danese Cooper**, Distinguished Member of Technical Staff - open source at PayPal.
 * Vice-Chairperson: **Scott Hammond**, Chief Executive Officer at Joyent.
-* Secretary: **Dan Shaw**, Chief Technology Officer at NodeSource.
+* Secretary, Gold-Level Director: **Dan Shaw**, Chief Technology Officer at NodeSource.
 * TSC Director: **Rod Vagg**, Chief Node Officer at NodeSource.
 * Director: **Todd Moore**, Vice President of Open Technology at IBM.
 * Director: **Gaurav Seth**, Principal Program Manager at Microsoft.
 * Director: **Rich Sharples**, Senior Director of Product Management at Red Hat.
 * Director: **Mark Skarpness**, Vice President, Software and Services Group at Intel.
-* Gold-Level Director: **Dan Shaw**, Chief Technology Officer at NodeSource.
 * Silver-Level Director: **Brian McCallister**, Chief Technology Officer of Platforms at Groupon.
 * Silver-Level Director: **Justin Beckwith**, Product Manager at Google.
 * Individual Director: **Ashley Williams**
