@@ -5,11 +5,11 @@ layout: docs.hbs
 
 # Backpressuring in Streams
 
-There is a general problem that arises during data handling called
-[`backpressure`][]. The term is used to describe a build up of data behind a 
-buffer during data transfer. When the recieving end of the transfer has complex
-operations, or is slower for whatever reason, there is a tendency for data from 
-the incoming source to begin to accumulate.
+There is a general problem that occurs during data handling called
+[`backpressure`][] and describes a buildup of data behind a buffer during data 
+transfer. When the recieving end of the transfer has complex operations, or is 
+slower for whatever reason, there is a tendency for data from the incoming 
+source to accumulate, like a clog.
 
 To solve this problem, there must be a delegation system in place to ensure a
 smooth flow of data from one source to another. Different communities have
@@ -26,8 +26,7 @@ We assume a little familiarity with the general definition of
 [`backpressure`][], [`Buffer`][], and [`EventEmitters`][] in Node.js, as well as
 some experience with [`Stream`][]. If you haven't read through those docs,
 it's not a bad idea to take a look at the API documentation first, as it will
-help expand your understanding while reading this guide and for following along
-with examples.
+help expand your understanding while reading this guide.
 
 ## The Problem With Data Handling
 
@@ -83,7 +82,7 @@ To test the results, try opening each compressed file. The file compressed by
 the [`zip(1)`][] tool will notify you the file is corrupt, whereas the 
 compression finished by [`Stream`][] will decompress without error.
 
-_Note:_ In this example, we use `.pipe()` to get the data source from one end
+Note: In this example, we use `.pipe()` to get the data source from one end
 to the other. However, notice there is no proper error handlers attached. If
 a chunk of data were to fail be properly recieved, the `Readable` source or 
 `gzip` stream will not be destroyed. [`pump`][] is a utility tool that would 
@@ -93,7 +92,7 @@ and is a must have in this case!
 ## Too Much Data, Too Quickly
 
 There are instance where a [`Readable`][] stream might give data to the
-[`Writable`][] much too quickly --- much more than the consumer can handle!
+[`Writable`][] much too quickly — much more than the consumer can handle!
 
 When that occurs, the consumer will begin to queue all the chunks of data for
 later consumption. The write queue will get longer and longer, and because of
@@ -101,7 +100,7 @@ this more data must be kept in memory until the entire process has completed.
 
 Writing to a disk is a lot slower than reading from a disk, thus, when we are
 trying to compress a file and write it to our hard disk, backpressure will
-arise because the write disk will not be able to keep up with the speed from
+occur because the write disk will not be able to keep up with the speed from
 the read.
 
 ```javascript
@@ -222,7 +221,7 @@ sys          8.79
 The maximum byte size occupied by virtual memory turns out to be approximately
 87.81 mb.
 
-And now changing the [return value][] of the `.write()` function, we get:
+And now changing the [return value][] of the [`.write()`][] function, we get:
 
 ```javascript
 Without respecting the return value of .write():
@@ -248,8 +247,8 @@ user        53.15sys          7.43
 The maximum byte size occupied by virtual memory turns out to be approximately
 1.52 gb.
 
-Without streams in place to delegate the backpressure, there an order of 
-magnitude greater of memory space being allocated --- a huge margin of 
+Without streams in place to delegate the backpressure, there is an order of 
+magnitude greater of memory space being allocated - a huge margin of 
 difference between the same process!
 
 This experiment shows how optimized and cost-effective Node's backpressure
@@ -288,7 +287,7 @@ Once the the queue is finished, backpressure will allow data to be sent again.
 The space in memory that was being used will free itself up and prepare for the
 next batch of data.
 
-This effectively allows an fixed amount of memory to be used at any given
+This effectively allows a fixed amount of memory to be used at any given
 time for a [`.pipe()`][] function. There will be no memory leakage, no
 infinite buffering, and the garbage collector will only have to deal with
 one area in memory!
@@ -349,26 +348,22 @@ stream:
                                        +============+
 ```
 
-_Note:_ The `.pipe()` function is typically where backpressure is invoked. In
-an isolate application, both [`Readable`][] and [`Writable`][] streams
-should be present. If you are writing an application meant to accept a
-[`Readable`][] stream, or pipes to a [`Writable`][] stream from another
-component, you may omit this detail.
+Note: If you are setting up a pipeline to chain together a few streams to 
+manipulate your data, you will most likely be implementing [`Transform`][] 
+stream. 
 
-In the good likelihood you are setting up a pipeline to chain together a few 
-streams to manipulate your data, you will be implementing [`Transform`][] 
-stream. In this case, your output from your [`Readable`][] stream will enter
-in the [`Transform`][] and pipe into the [`Writable`][].
+In this case, your output from your [`Readable`][] stream will enter in the 
+[`Transform`][] and will pipe into the [`Writable`][].
 
-```
+```javascript
 Readable.pipe(Transformable).pipe(Writable);
 ```
 
 Backpressure will be automatically applied, but note the both the incoming and
 outgoing `highWaterMark` of the [`Transform`][] stream may be manipulated and 
-will effect the backpressure system in place.
+will effect the backpressure system.
 
-## Example App
+## Backpressure Guidelines
 
 Since [Node.js v0.10][], the [`Stream`][] class has offered the ability to
 modify the behaviour of the [`.read()`][] or [`.write()`][] by using the
@@ -376,10 +371,8 @@ underscore version of these respective functions ([`._read()`][] and
 [`._write()`][]).
 
 There are guidelines documented for [implementing Readable streams][] and
-[implementing Writable streams][]. We will assume you've read these over.
-
-This application will do something very simple: take the data source and
-perform something fun to the data, and then write it to another file.
+[implementing Writable streams][]. We will assume you've read these over, and
+the next section will go a little bit more in-depth.
 
 ## Rules to Abide By When Implementing Custom Streams
 
@@ -390,31 +383,37 @@ you can be sure you're following good practice.
 
 In general,
 
-1. Never push() if you are not asked.
-2. Never call write() after it returns false but wait for 'drain' instead.
+1. Never `.push()` if you are not asked.
+2. Never call `.write()` after it returns false but wait for 'drain' instead.
 3. Streams changes between different node versions, and the library you use. 
 Be careful and test things.
 
+Note: In regards to point 3, an incredibly useful package for building 
+browser streams is [`readable-stream`][]. Rodd Vagg has written a 
+[great blog post][] describing the utility of this library. In short, it 
+provides a type of automated graceful degradation for [`Readable`][] streams, 
+and supports older versions of browsers and Node.js.
+
 ## Rules specific to Readable Streams
 
-So far, we have taken a look at how `.write()` affects backpressure and have 
-focused much on the `Writable` stream. Because of Node's functionality, data is
-technically flowing downstream from `Readable` to `Writable`. However, as we 
-can observe in any transmission of data, matter, or energy, the source is just 
-as important as the destination and the `Readable` stream is vital to how
-backpressure is handled.
+So far, we have taken a look at how [`.write()`][] affects backpressure and have 
+focused much on the [`Writable`][] stream. Because of Node's functionality, 
+data is technically flowing downstream from [`Readable`][] to [`Writable`][]. 
+However, as we can observe in any transmission of data, matter, or energy, the 
+source is just as important as the destination and the [`Readable`][] stream 
+is vital to how backpressure is handled.
 
 Both these processes rely on one another to communicate effectively, if 
-the `Readable` ignores when the `Writable` stream asks for it to stop 
-sending in data, it can be just as problematic to when the `write`'s return 
+the [`Readable`][] ignores when the [`Writable`][] stream asks for it to stop 
+sending in data, it can be just as problematic to when the [`.write()`][]'s return 
 value is incorrect.
 
-So, as well with respecting the `.write()` return, we must also respect the 
-return value of `.push()` from the used in the `._read()` method. If `.push()` 
-returns a `false` value, the stream will stop reading from the source, 
-otherwise, it will continue without pause.
+So, as well with respecting the [`.write()`][] return, we must also respect the 
+return value of [`.push()`][] used in the [`._read()`][] method. If 
+[`.push()`][] returns a `false` value, the stream will stop reading from the 
+source. Otherwise, it will continue without pause.
 
-Here is an example of bad practice using `.push()`:
+Here is an example of bad practice using [`.push()`][]:
 ```javascript
 // This is problematic as it completely ignores return value from push
 // which may be a signal for backpressure from the destination stream!
@@ -449,79 +448,41 @@ the [`stream state machine`][] will handle our callbacks and determine when to
 handle backpressure and optimize the flow of data for us.
 
 However, when we want to use a [`Writable`][] directly, we must respect the
-`.write()` return value and pay close attention these conditions:
+[`.write()`][] return value and pay close attention these conditions:
 
 * If the write queue is busy, [`.write()`][] will return false.
 * If the data chunk is too large, [`.write()`][] will return false (the limit
 is indicated by the variable, [`highWaterMark`][]).
 
-// Counter-examples
 ```javascript
-.
-.
-.
+// This writable is invalid because of the async nature of javascript callbacks.
+// Without a return statement for each callback prior to the last,
+// there is a great chance multiple callbacks will be called.
+class MyWritable extends Writable {
+  _write(chunk, encoding, callback) {
+    if (chunk.toString().indexOf('a') >= 0)
+      callback();
+    else if (chunk.toString().indexOf('b') >= 0)
+      callback();
+    callback();
+  }
+}
+
+// The proper way to write this would be:
+    if (chunk.contains('a'))
+      return callback();
+    else if (chunk.contains('b'))
+      return callback();
+    callback();
 ```
 
-_Note_: In most machines, there is a byte size that is determines when a buffer
+
+Note: In most machines, there is a byte size that is determines when a buffer
 is full (which will vary across different machines). Node.js allows you to set
 your own custom [`highWaterMark`][], but commonly, the default is the optimal
 value for what system is running the application. In instances where you might
 want to raise that value, go for it, but do so with caution!
 
-## Build a Readable Stream
-
-```javascript
-const Readable = require('stream').Readable;
-const util = require('util');
-
-class MyReadable extends Readable {
-  constructor(options) {
-    super(options);
-  }
-
-  _read(chunk, encoding, callback) {
-
-    // does something?
-
-  }
-}
-
-util.inherits(MyReadable, Readable);
-```
-
-## Build a Writable Stream
-
-When we code a custom [`._write()`][], the code gets used internally by the
-prototypical [`.write()`][]. This does not override the backpressure mechanism,
-but we must respect the return value whenever we are building custom streams.
-
-```javascript
-const Writable = require('stream').Writable;
-
-class MyWritable extends Writable {
-  constructor(options) {
-    super(options);
-  }
-
-  _write(chunk, encoding, callback) {
-
-    // does something?
-
-  }
-}
-```
-
-## Putting it all together
-
-```javascript
-const MyRead = require('./custom-readable')
-const MyWrite = require('./custom-writable')
-
-MyRead.pipe(MyWrite);
-
-// output: 
-
-```
 
 ## Conclusion
 
@@ -535,7 +496,7 @@ your knowledge with colleagues and friends.
 
 Be sure to read up more on [`Stream`][] for other API functions to help
 improve unleash your streaming capabilities when building an applcation with 
-Node.js
+Node.js.
 
 
 [`Stream`]: https://nodejs.org/api/stream.html
@@ -547,7 +508,7 @@ Node.js
 [`Transform`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [`zlib`]: https://nodejs.org/api/zlib.html
 [`.drain()`]: https://nodejs.org/api/stream.html#stream_event_drain
-[`'data'` event]: https://nodejs.org/api/stream.html#event-data
+[`.data` event]: https://nodejs.org/api/stream.html#event-data
 [`.read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size
 [`.write()`]: https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback
 [`._read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size_1
@@ -562,6 +523,9 @@ Node.js
 [Node.js v0.10]: https://nodejs.org/docs/v0.10.0/
 [`highWaterMark`]: https://nodejs.org/api/stream.html#stream_buffering
 [return value]: https://github.com/nodejs/node/blob/55c42bc6e5602e5a47fb774009cfe9289cb88e71/lib/_stream_writable.js#L239
+
+[`readable-stream`]: https://github.com/nodejs/readable-stream
+[great blog post]:https://r.va.gg/2014/06/why-i-dont-use-nodes-core-stream-module.html
 
 [`dtrace`]: http://dtrace.org/blogs/about/
 [`zip(1)`]: https://linux.die.net/man/1/zip
