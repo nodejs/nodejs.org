@@ -298,6 +298,12 @@ Well the answer is simple: Node.js does all of this automatically for you.
 That's so great! But also not so great when we are trying to understand how to
 implement our own custom streams.
 
+Note: In most machines, there is a byte size that is determines when a buffer
+is full (which will vary across different machines). Node.js allows you to set
+your own custom [`highWaterMark`][], but commonly, the default is the optimal
+value for what system is running the application. In instances where you might
+want to raise that value, go for it, but do so with caution!
+
 ## Lifecycle of `.pipe()`
 
 To achieve a better understanding of backpressure, here is a flow-chart on the
@@ -476,13 +482,42 @@ class MyWritable extends Writable {
     callback();
 ```
 
+There are also some things to look out for when implementing [`._writev()`][].
+The function is coupled with [`.cork()`][], but there is a common mistake when
+writing:
+```javascript
+  // Using .uncork() twice here makes two calls on the C++ layer, rendering the 
+  // cork/uncork technique useless.
+  ws.cork()
+  ws.write('hello ')
+  ws.write('world ')
+  ws.uncork()
 
-Note: In most machines, there is a byte size that is determines when a buffer
-is full (which will vary across different machines). Node.js allows you to set
-your own custom [`highWaterMark`][], but commonly, the default is the optimal
-value for what system is running the application. In instances where you might
-want to raise that value, go for it, but do so with caution!
+  ws.cork()
+  ws.write('from ')
+  ws.write('Matteo')
+  ws.uncork()
 
+  // The correct way to write this is to utilize process.nextTick(), which fires
+  // on the next event loop.
+  ws.cork()
+  ws.write('hello ')
+  ws.write('world ')
+  process.nextTick(doUncork, ws)
+
+  ws.cork()
+  ws.write('from ')
+  ws.write('Matteo')
+  process.nextTick(doUncork, ws)
+
+  // as a global function
+  function doUncork (stream) {
+    stream.uncork()
+  }
+```
+
+[`.cork()`][] can be called as many times we want, we just need to be careful to 
+call [`.uncork()`][] the same amount of times to make it flow again.
 
 ## Conclusion
 
@@ -513,6 +548,10 @@ Node.js.
 [`.write()`]: https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback
 [`._read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size_1
 [`._write()`]: https://nodejs.org/docs/latest/api/stream.html#stream_writable_write_chunk_encoding_callback_1
+[`._writev()`]: https://nodejs.org/api/stream.html#stream_writable_writev_chunks_callback
+[`.cork()`]: https://nodejs.org/api/stream.html#stream_writable_cork
+[`.uncork()`]: https://nodejs.org/api/stream.html#stream_writable_uncork
+
 [push method]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_push_chunk_encoding
 
 [implementing Writable streams]: https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_writable_stream
