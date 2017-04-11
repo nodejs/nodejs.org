@@ -28,7 +28,7 @@ node --v8-options | grep "in progress"
 
 ## What about the performance of a particular feature?
 
-The V8 team is constantly working to improve the performance of new language features to eventually reach parity with their transpiled or naive counterparts in EcmaScript 5 and earlier. The current progress there is tracked on the website [six-speed](https://fhinkel.github.io/six-speed), which shows the performance of ES2015 and ESNext features compared to their naive ES5 counterparts.
+The V8 team is constantly working to improve the performance of new language features to eventually reach parity with their transpiled or native counterparts in EcmaScript 5 and earlier. The current progress there is tracked on the website [six-speed](https://fhinkel.github.io/six-speed), which shows the performance of ES2015 and ESNext features compared to their native ES5 counterparts.
 
 The work on optimizing features introduced with ES2015 and beyond is coordinated via a [performance plan](https://docs.google.com/document/d/1EA9EbfnydAmmU_lM8R_uEMQ-U_v4l9zulePSBkeYWmY), where the V8 team gathers and coordinates areas that need improvement, and design documents to tackle those problems.
 
