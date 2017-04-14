@@ -300,8 +300,8 @@ implement our own custom streams.
 
 Note: In most machines, there is a byte size that is determines when a buffer
 is full (which will vary across different machines). Node.js allows you to set
-your own custom [`highWaterMark`][], but commonly, the default is the optimal
-value for what system is running the application. In instances where you might
+your own custom [`highWaterMark`][], but commonly, the default is set to 16kb
+(16384, or 16 for objectMode streams). In instances where you might
 want to raise that value, go for it, but do so with caution!
 
 ## Lifecycle of `.pipe()`
