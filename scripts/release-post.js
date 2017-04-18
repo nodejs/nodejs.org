@@ -47,7 +47,9 @@ function sendRequest (opts) {
 }
 
 function explicitVersion (version) {
-  return version ? Promise.resolve(version) : Promise.reject()
+  return version
+    ? Promise.resolve(version)
+    : Promise.reject(new Error('Invalid "version" argument'))
 }
 
 function findLatestVersion () {

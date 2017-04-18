@@ -48,7 +48,7 @@ request({
     geocoder.geocode(chapter.location, (err, res) => {
       if (err || !res.length) {
         console.error(
-          err && err.message || `Could not geocode location: ${chapter.location}`
+          (err && err.message) || `Could not geocode location: ${chapter.location}`
         )
         return _geo()
       }
