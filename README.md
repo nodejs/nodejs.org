@@ -14,10 +14,10 @@ This repo's issues section has become the primary home for the Website WG's coor
 
 ## Contributing
 
-Please contribute! There are plenty of [good first contributions](https://github.com/nodejs/nodejs.org/labels/good%20first%20contribution) to do.
+Please contribute! There are plenty of [good first contributions](https://github.com/nodejs/nodejs.org/labels/good%20first%20contribution) to do. To get started, you have to [fork](https://github.com/nodejs/nodejs.org/fork) this repo to your own GitHub account first. Then open up a terminal on your machine and enter the following commands:
 
 ```bash
-$ git clone https://github.com/nodejs/nodejs.org.git
+$ git clone https://github.com/<your user name>/nodejs.org.git
 $ cd nodejs.org
 $ npm install
 $ npm start
@@ -26,6 +26,8 @@ $ npm start
 This will start the development server on http://localhost:8080/en/ and should reload automatically when you make changes but it's all just code and no code is perfect so sometimes you may need to restart it. :)
 
 Note: You'll need Node.js v4 or newer as the build system uses some native ES2015 features.
+
+If you want to submit a new feature or a bugfix, the best way is to create the changes in a separate branch, e.g.: `git checkout -b feature/mycoolfeature`. This will make it easier for you to submit a pull request and get your feature merged.
 
 ### Layout
 
