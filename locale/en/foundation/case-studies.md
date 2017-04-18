@@ -63,6 +63,12 @@ interactive group.
 Enterprise conversations are short videos, recorded live, with large scale
 companies sharing their experiences with Node.js.
 
+## Node.js and Twitter (Epidose 11)
+
+Tracy Hinds and Mikeal Rogers chat with James Bellenger, Nicolas Gallagher, and Ethan Schlienker from the Twitter Lite team about their use of Node.js. Twitter lite utilizes Node.js for the entire build, test and delivery pipeline, and all Twitter Lite services also run on Node.js, using Express as a baseline.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iWXC5VCfQHI" frameborder="0" allowfullscreen></iframe>
+
 ## Emerging Technology Advisors (Episode 10)
 
 Tracy and Mikeal chat with Chris Williams, founder of Emerging Technology Advisors, about a variety projects in which companies have adopted Node.js during different stages of transition and growth.
