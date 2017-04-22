@@ -21,7 +21,7 @@ to the WebSocket interface. The full URL is
 `ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`, of course dependent
 on actual host and port and with the correct UUID for the instance.
 
-Inspector also includes an HTTP endpoint to serve metadata about the debuggee,
+Inspector also includes an HTTP endpoint to serve metadata about the debugger,
 including its WebSocket URL, UUID, and Chrome DevTools URL. Get this metadata
 by sending an HTTP request to `http://[host:port]/json/list`.  This returns a
 JSON object like the following; use the `webSocketDebuggerUrl` property as the
