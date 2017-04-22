@@ -28,6 +28,8 @@ If you'd like to fix bugs or add a new feature to Node.js, please make sure you 
 
 Before any contribution can be accepted and be part of the project, it needs to be reviewed by existing collaborators in accordance to the guidelines established by the [Node.js Development Policy](/en/get-involved/development/).
 
+If you are wondering how to start, you can check [Node Todo](http://nodetodo.org/) which may guide you towards your first contribution.
+
 ## Becoming a collaborator
 
 By becoming a collaborator, contributors can have even more impact on the project. They can help other contributors by reviewing their contributions, triage issues and take an even bigger part in shaping the project's future. The Node.js project is always looking for people who are interested in becoming collaborators. If you're interested, make sure you familiarize yourself with the [Node.js Development Policy](/en/get-involved/development/).
