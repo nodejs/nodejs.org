@@ -205,7 +205,7 @@ function githubLinks (options) {
         return `<a class="edit-link" href="${url}">Edit on GitHub</a> <h1>${$2}</h1>`
       })
 
-      file.contents = new Buffer(contents)
+      file.contents = Buffer.from(contents)
     })
 
     next()

@@ -16,7 +16,11 @@ test('explicitVersion(<version>)', (t) => {
   })
 
   t.test('rejects when given an falsy argument', (t) => {
-    releasePost.explicitVersion().then(null, t.end)
+    releasePost.explicitVersion().then(null, (err) => {
+      t.equal(err.constructor, Error)
+      t.equal(err.message, 'Invalid "version" argument')
+      t.end()
+    })
   })
 
   t.end()

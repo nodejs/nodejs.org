@@ -9,5 +9,6 @@
   "indent-style": "spaces",
   "indent-width": 2,
   "lang-style": false,
+  "spec-char-escape": false,
   "tag-bans": []
 }
