@@ -17,7 +17,7 @@ labels:
   version-schedule-prompt-link-text: Axenda de LTS
 ---
 
-Node.js® é un entorno de exución para JavaScript construído co [motor de Javascript V8 de Chrome](https://developers.google.com/v8/).
+Node.js® é un entorno de execución para JavaScript construído co [motor de Javascript V8 de Chrome](https://developers.google.com/v8/).
 Node.js usa un modelo de operacións E/S sen bloqueo e orientado a eventos, o que o fai lixeiro e eficiente.
 O ecosistema de paquetes de Node.js, [npm](https://www.npmjs.com/), e o maior ecosistema do mundo de librerías
 de código aberto.
