@@ -1,11 +1,10 @@
 <header>
   <div class="container">
 
-    <a href="/{{site.locale}}" id="logo">
-      <img src="/static/images/logo.svg" alt="node.js">
-    </a>
-
-    <nav>
+    <nav id="NoMobile">
+      <a href="/{{site.locale}}" id="logo">
+        <img src="/static/images/logo.svg" alt="node.js">
+      </a>
       <ul class="list-divider-pipe">
         <li{{#equals path ''}} class="active"{{/equals}}>
           <a href="/{{site.locale}}/">{{site.home.text}}</a>
@@ -19,5 +18,27 @@
       </ul>
     </nav>
 
+    <nav id="Mobile">
+      <a href="/{{site.locale}}" id="logo">
+        <img src="/static/images/logo.svg" alt="node.js">
+      </a>
+      <input type="checkbox" id="hamburger"/>
+      <label class="menuicon" for="hamburger">
+        <span></span>
+      </label>
+      <div class="menu">
+        <ul>
+        <li{{#equals path ''}} class="active"{{/equals}}>
+          <a href="/{{site.locale}}/">{{site.home.text}}</a>
+        </li>
+        {{#each nav.main}}
+          <li{{#startswith ../path link}} class="active"{{/startswith}}>
+            <a href="/{{../site.locale}}/{{link}}/">{{text}}</a>
+          </li>
+        {{/each}}
+      </ul>
+      </div>
+      
+    </nav>
   </div>
 </header>
