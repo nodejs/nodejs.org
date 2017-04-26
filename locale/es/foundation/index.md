@@ -36,7 +36,7 @@ y que proveé un marco para la administración a largo plazo de un ecosistema qu
 
 - [Organigrama del comité de dirección técnica (TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md)
 - [Gobierno](https://github.com/nodejs/TSC)
-- [Estatutos](/static/documents/node-foundation-by-laws.pdf)
+- [Estatutos](https://github.com/nodejs/board/blob/master/by-laws.md)
 - [Acuerdo de membresía](http://f.cl.ly/items/0N1m3x0I3S2L203M1h1r/nodejs-foundation-membership-agreement-2015-march-04.pdf)
 - [Certificado de incorporación](http://f.cl.ly/items/2b1b1o0v1e1u2i1L2w1a/nodejs-foundation-certificate-of-incorporation-2014-august-01.pdf)
 - [Directrices de Marcas](https://nodejs.org/static/documents/trademark-policy.pdf)
