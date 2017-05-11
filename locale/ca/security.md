@@ -26,7 +26,7 @@ i han de ser reconeguts.
 
 Aquesta és la política de divulgació de Node.js
 
-- El informe de seguretat és rebut i assignat a un responsable inicial. Aquesta persona coordinarà la solució i el procés
+- L'informe de seguretat és rebut i assignat a un responsable inicial. Aquesta persona coordinarà la solució i el procés
 de publicació. Un cop el problema és confirmat es determina una llista de totes les versions afectades. El codi és auditat
 per trobar potencials problemes similars. Es preparen les solucions per a totes les versions que estan en manteniment.
 Aquestes solucions no són enviades al repositori públic, en canvi són retingudes localment fins a l'anunci públic.
@@ -40,7 +40,7 @@ Aquestes solucions no són enviades al repositori públic, en canvi són retingu
 la severitat de l'error o la dificultat a aplicar la solució.
 
 - Aquest procés pot trigar algun temps, especialment quan es requereix coordinació amb els encarregats del manteniment d'altres projectes. 
-Es farà tot el possible per manejar l'error en la forma més oportuna possible, però, és important que seguim el procés descrit a dalt per assegurar que la divulgació es maneja d'una manera consistent.
+Es farà tot el possible per gestionar l'error en la forma més oportuna possible, però, és important que seguim el procés descrit a dalt per assegurar que la divulgació es gestiona d'una manera consistent.
 
 ## Rebi actualitzacions de seguretat
 

@@ -10,7 +10,7 @@ labels:
   current: Actual
   lts: LTS
   tagline-current: Últimes característiques
-  tagline-lts: Recomenat per a la majoria
+  tagline-lts: Recomanat per a la majoria
   changelog: Canvis
   api: Documentació del API
   version-schedule-prompt: O revisi la
@@ -19,5 +19,5 @@ labels:
 
 Node.js® és un entorn d'execució per a JavaScript constrüit amb el [motor de JavaScript V8 de Chrome](https://developers.google.com/v8/).
 Node.js fa servir un model d'operacions E/S sense bloqueig i orientat a esdeveniments, que el fa lleuger i eficient.
-L'ecosistema de paquets de Node.js, [npm](https://www.npmjs.com/), és l'ecosistema més grand de
+L'ecosistema de paquets de Node.js, [npm](https://www.npmjs.com/), és l'ecosistema més gran de
 llibreries de codi obert al món.
