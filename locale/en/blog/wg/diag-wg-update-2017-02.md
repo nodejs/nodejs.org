@@ -82,7 +82,7 @@ your experiences getting that info with tools and APIs old and new. [Open an
 issue][] in the Diagnostics WG for discussions or a PR in [nodejs/node][] to
 contribute code.
 
-[Debugging - Getting Started]: http://nodejs.org/en/docs/guides/debugging_getting_started
+[Debugging - Getting Started]: https://nodejs.org/en/docs/guides/debugging-getting-started/
 [Open an issue]: https://github.com/nodejs/diagnostics/issues/new
 [nodejs/node]: https://github.com/nodejs/node
 
