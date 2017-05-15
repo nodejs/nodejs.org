@@ -63,6 +63,12 @@ interactive group.
 Enterprise conversations are short videos, recorded live, with large scale
 companies sharing their experiences with Node.js.
 
+## Node.js and Google (Episode 12)
+
+Tracy Hinds and Mikeal Rogers chat with Myles Borins, Developer Advocate for Node.js about his role and team at Google. They discuss research on how people are using Node.js and the discovery process around what might be blocking some companies from adopting Node.js. They also discuss Google Cloud and the ways in which one can start using Node.js to build applications.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NWltiYwAjvo" frameborder="0" allowfullscreen></iframe>
+
 ## Node.js and Twitter (Episode 11)
 
 Tracy Hinds and Mikeal Rogers chat with James Bellenger, Nicolas Gallagher, and Ethan Schlienker from the Twitter Lite team about their use of Node.js. Twitter lite utilizes Node.js for the entire build, test and delivery pipeline, and all Twitter Lite services also run on Node.js, using Express as a baseline.
