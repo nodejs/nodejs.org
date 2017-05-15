@@ -25,7 +25,7 @@ The Node.js Foundation has consolidated all the best thinking around why enterpr
 
 ##  After Call For Innovation from C-Suite, Node.js Pops Up All Over Capital One
 
-Capital One CIO Robert Alexander has encouraged the company’s IT department to operate like a startup and embrace open source software development. The result has been several different project teams using Node.js to rapidly prototype and build new applications inside the business, cutting the time of the development cycle significantly and fostering a climate of innovation. 
+Capital One CIO Robert Alexander has encouraged the company’s IT department to operate like a startup and embrace open source software development. The result has been several different project teams using Node.js to rapidly prototype and build new applications inside the business, cutting the time of the development cycle significantly and fostering a climate of innovation.
 
 <a href="/static/documents/casestudies/Node.js_CapitalOne_FINAL_casestudy.pdf" data-casestudy="Capital One Case Study">Read the full case study.</a>
 
@@ -63,7 +63,7 @@ interactive group.
 Enterprise conversations are short videos, recorded live, with large scale
 companies sharing their experiences with Node.js.
 
-## Node.js and Twitter (Epidose 11)
+## Node.js and Twitter (Episode 11)
 
 Tracy Hinds and Mikeal Rogers chat with James Bellenger, Nicolas Gallagher, and Ethan Schlienker from the Twitter Lite team about their use of Node.js. Twitter lite utilizes Node.js for the entire build, test and delivery pipeline, and all Twitter Lite services also run on Node.js, using Express as a baseline.
 
