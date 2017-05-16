@@ -156,7 +156,7 @@ couple popular ones are listed below.
 
 The V8 Debugging Protocol is no longer maintained or documented.
 
-#### [Built-in Debugger](https://github.com/nodejs/node/blob/master/lib/_debugger.js)
+#### [Built-in Debugger](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
 
 Start `node debug script_name.js` to start your script under Node's builtin
 command-line debugger. Your script starts in another Node process started with

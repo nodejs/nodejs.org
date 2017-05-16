@@ -85,6 +85,10 @@
             "link": "docs/faq",
             "text": "FAQ"
         },
+        "inspector": {
+            "link": "docs/inspector",
+            "text": "Inspector"
+        },
         "api-lts": {
             "link": "/dist/latest-%ver-major%/docs/api",
             "subtext": "LTS",
