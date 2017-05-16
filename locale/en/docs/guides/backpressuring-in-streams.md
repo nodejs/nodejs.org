@@ -522,7 +522,7 @@ call [`.uncork()`][] the same amount of times to make it flow again.
 ## Conclusion
 
 Streams are a often used module in Node.js. They are important to the internal
-structure, and for develoeprs, to expand and connect across the Node.js modules
+structure, and for developers, to expand and connect across the Node.js modules
 ecosystem.
 
 Hopefully, you will now be able to troubleshoot, safely code your own
