@@ -16,7 +16,7 @@ indicando os seguinte pasos do proceso do seu informe.
 Tras a resposa inicial ao seu informe, o equipo de seguridade fará o posible para mantelo informado sobre o progreso
 realizado na dirección á solución e o anuncio completo, e pode solicitar información adicional ou orientación sobre o
 problema informado.
-Estas actualizacións serán enviadas polo menos cada cinco días, na práctica vais ser probable que sexa cada 24-48
+Estas actualizacións serán enviadas polo menos cada cinco días, na práctica vai ser probable que sexa cada 24-48
 horas.
 
 Erros de seguridade en módulos de terceiros deben ser informados aos seus respectivos encargados e tamén poden ser

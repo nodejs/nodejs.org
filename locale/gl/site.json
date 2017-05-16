@@ -1,11 +1,11 @@
 {
     "title": "Node.js",
     "author": "Fundación de Node.js",
-    "url": "https://nodejs.org/ga/",
-    "locale": "ga",
-    "scrollToTop": "Volta o principio",
+    "url": "https://nodejs.org/gl/",
+    "locale": "gl",
+    "scrollToTop": "Volta ao principio",
     "reportNodeIssue": "Informar dun problema con Node.js",
-    "reportWebsiteIssue": "Informar du problema co sitio",
+    "reportWebsiteIssue": "Informar dun problema co sitio",
     "getHelpIssue": "Obter axuda",
     "by": "por",
     "all-downloads": "Todas as opcións de descarga",
@@ -159,8 +159,8 @@
             "text": "Comportamento"
         }
     },
-    "security"   : { "link": "security",        "text": "Security" },
-    "blog"       : { "link": "blog",            "text": "News" },
+    "security"   : { "link": "security",        "text": "Seguridade" },
+    "blog"       : { "link": "blog",            "text": "Noticias" },
 
     "releases": {
         "title": "Histórico de versións",
