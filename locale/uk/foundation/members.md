@@ -54,17 +54,14 @@ Node.js Foundation відкритий для бізнесу та окремих 
 ## Срібні
 
 <div style="text-align:center;">
-<a target="_new" class="imagelink" href="http://apigee.com">
-  <img alt="Apigee" class="memberlogo" src="/static/images/foundation/apigee_logo_md.png" />
-</a>
-<a target="_new" class="imagelink" href="http://appdynamics.com">
-  <img alt="AppDynamics" class="memberlogo" src="/static/images/foundation/appdynamics.png" />
+<a target="_new" class="imagelink" href="http://cars.com">
+  <img alt="Cars.com" class="memberlogo" src="/static/images/foundation/cars.png" />
 </a>
 <a target="_new" class="imagelink" href="http://codefresh.io">
   <img alt="CodeFresh" class="memberlogo" src="/static/images/foundation/codefreshLogo.png" />
 </a>
-<a target="_new" class="imagelink" href="//digitalocean.com">
-  <img alt="DigitalOcean" class="memberlogo" src="/static/images/foundation/digitaloceanLogo.png" />
+<a target="_new" class="imagelink" href="https://www.dynatrace.com">
+  <img alt="Dynatrace" class="memberlogo" src="/static/images/foundation/dynatrace.png" />
 </a>
 <a target="_new" class="imagelink" href="//fidelity.com">
   <img alt="Fidelity" class="memberlogo" src="/static/images/foundation/fidelityLogo.png" />
@@ -78,14 +75,8 @@ Node.js Foundation відкритий для бізнесу та окремих 
 <a target="_new" class="imagelink" href="http://nearform.com">
   <img alt="nearForm" class="memberlogo" src="/static/images/foundation/nearformLogo.png" />
 </a>
-<a target="_new" class="imagelink" href="http://newrelic.com">
-  <img alt="New Relic" class="memberlogo" src="/static/images/foundation/NewRelic.png" />
-</a>
 <a target="_new" class="imagelink" href="//npmjs.org">
   <img alt="npm" class="memberlogo" src="/static/images/foundation/npmLogo.png" />
-</a>
-<a target="_new" class="imagelink" href="http://opbeat.com">
-  <img alt="opbeat" class="memberlogo" src="/static/images/foundation/opbeat.png" />
 </a>
 <a target="_new" class="imagelink" href="//risingstack.com">
   <img alt="RisingStack" class="memberlogo" src="/static/images/foundation/risingstack_logo.png" />
@@ -96,11 +87,11 @@ Node.js Foundation відкритий для бізнесу та окремих 
 <a target="_new" class="imagelink" href="//saucelabs.com">
   <img alt="Saucelabs" class="memberlogo" src="/static/images/foundation/saucelabsLogo.png" />
 </a>
+<a target="_new" class="imagelink" href="//snyk.com">
+  <img alt="Snyk" class="memberlogo" src="/static/images/foundation/snyk.png" />
+</a>
 <a target="_new" class="imagelink" href="http://sphinx.sg/">
   <img alt="Sphinx" class="memberlogo" src="/static/images/foundation/sphinx.png" />
-</a>
-<a target="_new" class="imagelink" href="//strongloop.com">
-  <img alt="StrongLoop" class="memberlogo" src="/static/images/foundation/strongloopLogo.png" />
 </a>
 <a target="_new" class="imagelink" href="//yahoo.com">
   <img alt="Yahoo!" class="memberlogo" src="/static/images/foundation/yahoo.png" />
