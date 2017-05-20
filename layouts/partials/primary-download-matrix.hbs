@@ -2,19 +2,21 @@
   <p class="color-lightgray">{{downloads.currentVersion}}: <strong>{{version.node}}</strong> (includes npm {{version.npm}})</p>
   <p>{{downloads.intro}}</p>
   <div class="download-hero full-width">
-    <ul class="no-padding">
+    <ul class="no-padding download-version-toggle">
       <li>
-        <div class="download-version-toggle">
-          <a {{#if versionTypeLts}}class="is-version"{{/if}} href="/{{site.locale}}/{{site.download.link}}" title="{{downloads.display-hint}} {{downloads.lts}}">
-            <div class="title">{{downloads.lts}}</div>
-            <div class="tag">{{downloads.tagline-lts}}</div>
-          </a>
-          <a {{#if versionTypeCurrent}}class="is-version"{{/if}} href="/{{site.locale}}/{{site.download.link}}/current" title="{{downloads.display-hint}} {{downloads.current}}">
-            <div class="title">{{downloads.current}}</div>
-            <div class="tag">{{downloads.tagline-current}}</div>
-          </a>
-        </div>
+        <a {{#if versionTypeLts}}class="is-version"{{/if}} href="/{{site.locale}}/{{site.download.link}}" title="{{downloads.display-hint}} {{downloads.lts}}">
+          <div class="title">{{downloads.lts}}</div>
+          <div class="tag">{{downloads.tagline-lts}}</div>
+        </a>
       </li>
+      <li>
+        <a {{#if versionTypeCurrent}}class="is-version"{{/if}} href="/{{site.locale}}/{{site.download.link}}/current" title="{{downloads.display-hint}} {{downloads.current}}">
+          <div class="title">{{downloads.current}}</div>
+          <div class="tag">{{downloads.tagline-current}}</div>
+        </a>
+      </li>
+    </ul>
+    <ul class="no-padding download-platform">
       <li>
         <a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-x86.msi" id="windows-downloadbutton" data-version="{{version.node}}">
           <svg class="download-logo" width="50" height="50" viewBox="0 0 50 50"><path d="M1.589 23.55l-0.017-15.31 18.839-2.558v17.868zM23.55 5.225l25.112-3.654v21.979h-25.112zM48.669 26.69l-0.006 21.979-25.112-3.533v-18.446zM20.41 44.736l-18.824-2.58-0.001-15.466h18.825z"></path></svg>
