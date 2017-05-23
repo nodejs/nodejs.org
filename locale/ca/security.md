@@ -36,7 +36,7 @@ Aquestes solucions no són enviades al repositori públic, en canvi són retingu
 
 - A la data d'embargament, se li envia una còpia de l'anunci a la llista de correu de seguretat de Node.js. Els canvis són pujats al repositori públic i noves versions són desplegades en nodejs.org. En les següents 6 hores de la notificació a la llista de correu, una còpia de l'anunci es publicarà al blog de Node.js.
 
-- Normalment la data d'embargament s'establirà 72 hores des de la creació del CVE. Però, això pot variar depenent de
+- Normalment la data d'embargament s'establirà 72 hores des de la creació del CVE. Però això pot variar depenent de
 la severitat de l'error o la dificultat a aplicar la solució.
 
 - Aquest procés pot trigar algun temps, especialment quan es requereix coordinació amb els encarregats del manteniment d'altres projectes. 
