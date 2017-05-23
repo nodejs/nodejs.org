@@ -18,7 +18,8 @@ version 1.2.0-3 is later than the non-N-API published version (1.2.0-2), it
 will not be installed if someone chooses to install `iotivity-node` by simply 
 running `npm install iotivity-node`. This will install the non-N-API version 
 by default. The user will have to run `npm install iotivity-node@n-api` to 
-receive the N-API version.
+receive the N-API version. For more information on usig tags with npm check 
+out https://docs.npmjs.com/getting-started/using-tags
 
 ## To introduce a dependency on an N-API version of a package
 
