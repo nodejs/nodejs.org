@@ -1,0 +1,174 @@
+{
+    "title": "Node.js",
+    "author": "Fundación de Node.js",
+    "url": "https://nodejs.org/gl/",
+    "locale": "gl",
+    "scrollToTop": "Volta ao principio",
+    "reportNodeIssue": "Informar dun problema con Node.js",
+    "reportWebsiteIssue": "Informar dun problema co sitio",
+    "getHelpIssue": "Obter axuda",
+    "by": "por",
+    "all-downloads": "Todas as opcións de descarga",
+    "nightly": "Versións Nightly",
+    "chakracore-nightly": "Versións Node-ChakraCore Nightly",
+    "feeds": [
+        {
+            "link": "feed/blog.xml",
+            "text": "Node.js Blog"
+        },
+        {
+            "link": "feed/releases.xml",
+            "text": "Node.js Blog: Versións"
+        },
+        {
+            "link": "feed/vulnerability.xml",
+            "text": "Node.js Blog: Informes de vulnerabilidade"
+        },
+        {
+            "link": "feed/tsc-minutes.xml",
+            "text": "Actas de reunións do TSC de Node.js"
+        }
+    ],
+    "home": { "text": "Inicio" },
+    "about": {
+        "link": "about",
+        "text": "Acerca de",
+        "governance": {
+            "link": "about/governance",
+            "text": "Goberno"
+        },
+        "workinggroups": {
+            "link": "about/working-groups",
+            "text": "Grupos de traballo"
+        },
+        "releases": {
+            "link": "about/releases",
+            "text": "Versións"
+        },
+        "resources": {
+            "link": "about/resources",
+            "text": "Recursos"
+        },
+        "trademark": {
+            "link": "about/trademark",
+            "text": "Marca"
+        },
+        "privacy": {
+            "link": "about/privacy",
+            "text": "Política de Privacidade"
+        }
+    },
+    "download": {
+        "link": "download",
+        "text": "Descargas",
+        "releases": {
+            "link": "download/releases",
+            "text": "Versións anteriores"
+        },
+        "package-manager": {
+            "link": "download/package-manager",
+            "text": "Instalar Node.js usando un xestor de paquetes"
+        },
+        "shasums":{
+          "link": "SHASUMS256.txt.asc",
+          "text": "Firmas SHASUMS para os arquivos de versións"
+        }
+    },
+    "docs": {
+        "link": "docs",
+        "text": "Documentación",
+        "es6": {
+            "link": "docs/es6",
+            "text": "ES6 e máis aló"
+        },
+        "faq": {
+            "link": "docs/faq",
+            "text": "FAQ"
+        },
+        "api-lts": {
+            "link": "/dist/latest-%ver-major%/docs/api",
+            "subtext": "LTS",
+            "text": "%ver% API"
+        },
+        "api-current": {
+            "link": "/dist/latest-%ver-major%/docs/api",
+            "text": "%ver% API"
+        },
+        "guides": {
+            "link": "docs/guides",
+            "text": "Guías"
+        }
+    },
+    "foundation": {
+        "link": "foundation",
+        "text": "Fundación",
+        "casestudies": {
+            "link": "foundation/case-studies",
+            "text": "Recursos"
+        },
+        "members": {
+            "link": "foundation/members",
+            "text": "Membros"
+        },
+        "board": {
+            "link": "foundation/board",
+            "text": "Xunta"
+        },
+        "tsc": {
+            "link": "foundation/tsc",
+            "text": "Goberno Técnico"
+        },
+        "itn": {
+             "link": "foundation/in-the-news",
+             "text": "Nas noticias"
+        },
+        "announce": {
+            "link": "foundation/announcements",
+            "text": "Anuncios"
+        },
+        "education": {
+            "link": "foundation/education",
+            "text": "Iniciativas de Educación"
+        },
+        "outreachy": {
+            "link": "foundation/outreachy",
+            "text": "Outreachy + Node.js"
+        }
+    },
+    "getinvolved": {
+        "link": "get-involved",
+        "text": "Participa",
+        "code-and-learn": {
+            "link": "get-involved/code-and-learn",
+            "text": "Programa e Aprende"
+        },
+        "contribute": {
+            "link": "get-involved/contribute",
+            "text": "Contribúe"
+        },
+        "development": {
+            "link": "get-involved/development",
+            "text": "Desenvolvemento"
+        },
+        "events": {
+          "link": "get-involved/events",
+          "text": "Eventos"
+        },
+        "conduct": {
+            "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+            "text": "Comportamento"
+        }
+    },
+    "security"   : { "link": "security",        "text": "Seguridade" },
+    "blog"       : { "link": "blog",            "text": "Noticias" },
+
+    "releases": {
+        "title": "Histórico de versións",
+        "downloads": "Descargas"
+    },
+    "links": {
+        "pages": {
+            "changelog": "Cambios"
+        }
+    }
+}
