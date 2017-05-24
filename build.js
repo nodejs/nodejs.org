@@ -56,6 +56,7 @@ function i18nJSON (lang) {
 // Metalsmith build cycle used for building a locale subsite, such as the
 // english one.
 function buildLocale (source, locale) {
+  console.log(`[metalsmith] build/${locale} started`)
   console.time(`[metalsmith] build/${locale} finished`)
   const metalsmith = Metalsmith(__dirname)
   metalsmith
@@ -214,6 +215,7 @@ function githubLinks (options) {
 
 // This function builds the layouts folder for all the Stylus files.
 function buildLayouts () {
+  console.log('[metalsmith] build/layouts started')
   console.time('[metalsmith] build/layouts finished')
 
   fs.mkdir(path.join(__dirname, 'build'), () => {
@@ -246,6 +248,7 @@ function buildLayouts () {
 // This function copies the rest of the static assets to their subfolder in the
 // build directory.
 function copyStatic () {
+  console.log('[metalsmith] build/static started')
   console.time('[metalsmith] build/static finished')
   fs.mkdir(path.join(__dirname, 'build'), () => {
     fs.mkdir(path.join(__dirname, 'build', 'static'), () => {
