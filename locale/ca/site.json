@@ -1,0 +1,177 @@
+{
+  "title": "Node.js",
+  "author": "Fundació Node.js",
+  "url": "https://nodejs.org/ca/",
+  "locale": "ca",
+  "scrollToTop": "Torna al començament",
+  "reportNodeIssue": "Informe d'un problema de Node.js",
+  "reportWebsiteIssue": "Informe d'un problema al lloc web",
+  "getHelpIssue": "Aconseguir ajuda",
+  "by": "per",
+  "all-downloads": "Totes les opcions de descàrrega",
+  "nightly": "Versions Nightly",
+  "chakracore-nightly": "Versions Node-ChakraCore Nightly",
+  "feeds": [{
+      "link": "feed/blog.xml",
+      "text": "Node.js Blog"
+    },
+    {
+      "link": "feed/releases.xml",
+      "text": "Node.js Blog: Versions"
+    },
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "Node.js Blog: Informes de vulnerabilitat"
+    },
+    {
+      "link": "feed/tsc-minutes.xml",
+      "text": "Minutes de les reunions del TSC de Node.js"
+    }
+  ],
+  "home": { "text": "Inici" },
+  "about": {
+    "link": "about",
+    "text": "Quant a",
+    "governance": {
+      "link": "about/governance",
+      "text": "Govern"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "Grups de treball"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "Versions"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "Recursos"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "Marca"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "Política de privacitat"
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "Descàrregues",
+    "releases": {
+      "link": "download/releases",
+      "text": "Versions anteriors"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "instal·lar Node.js amb gestor de paquets"
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "Signatures SHASUMS per arxius de versions"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "Documentació",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 i més enllà"
+    },
+    "faq": {
+      "link": "docs/faq",
+      "text": "FAQ"
+    },
+    "inspector": {
+      "link": "docs/inspector",
+      "text": "Inspector"
+    },
+    "api-lts": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "Guies"
+    }
+  },
+  "foundation": {
+    "link": "foundation",
+    "text": "Fundació",
+    "casestudies": {
+      "link": "foundation/case-studies",
+      "text": "Recursos"
+    },
+    "members": {
+      "link": "foundation/members",
+      "text": "Membres"
+    },
+    "board": {
+      "link": "foundation/board",
+      "text": "Consell directiu"
+    },
+    "tsc": {
+      "link": "foundation/tsc",
+      "text": "Govern tècnic"
+    },
+    "itn": {
+      "link": "foundation/in-the-news",
+      "text": "En les notícies"
+    },
+    "announce": {
+      "link": "foundation/announcements",
+      "text": "Anuncis"
+    },
+    "education": {
+      "link": "foundation/education",
+      "text": "iniciatives d'Educació"
+    },
+    "outreachy": {
+      "link": "foundation/outreachy",
+      "text": "Outreachy + Node.js"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "Implica't",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "Programa i Aprèn"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "Contribueix"
+    },
+    "development": {
+      "link": "get-involved/development",
+      "text": "Desenvolupament"
+    },
+    "events": {
+      "link": "get-involved/events",
+      "text": "Esdeveniments"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+      "text": "Conducta"
+    }
+  },
+  "security": { "link": "security", "text": "Seguretat" },
+  "blog": { "link": "blog", "text": "Notícies" },
+
+  "releases": {
+    "title": "Històric de Versions",
+    "downloads": "Descarrègues"
+  },
+  "links": {
+    "pages": {
+      "changelog": "Canvis"
+    }
+  }
+}
