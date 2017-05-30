@@ -109,7 +109,6 @@ Core Working Groups are created by the
 * [Benchmarking](#benchmarking)
 * [Post-mortem](#post-mortem)
 * [Intl](#intl)
-* [Testing](#testing)
 -->
 
 ## 현재의 워킹 그룹
@@ -125,7 +124,6 @@ Core Working Groups are created by the
 * [Benchmarking](#benchmarking)
 * [Post-mortem](#post-mortem)
 * [Intl](#intl)
-* [Testing](#testing)
 
 <!--
 ### [Website](https://github.com/nodejs/nodejs.org)
@@ -533,26 +531,3 @@ Responsibilities include:
 이 워킹 그룹은 다음에 대한 책임이 있습니다.
 * 필요할 때 덤프를 생성할 수 있도록 인터페이스/API를 정의하고 추가합니다.
 * 이러한 덤프를 분석하는 도구를 지원하기 위해 생성된 덤프의 공통 구조를 정의하고 추가합니다.
-
-<!--
-### [Testing](https://github.com/nodejs/testing)
-
-The Node.js Testing Working Group's purpose is to extend and improve testing of
-the Node.js source code.
-
-Responsibilities include:
-* Coordinating an overall strategy for improving testing.
-* Documenting guidelines around tests.
-* Working with the Build Working Group to improve continuous integration.
-* Improving tooling for testing.
--->
-
-### [Testing](https://github.com/nodejs/testing)
-
-Node.js 테스팅 워킹 그룹은 Node.js 소스 코드의 테스트를 확장하고 개선합니다.
-
-이 워킹 그룹은 다음에 대한 책임이 있습니다.
-* 테스트를 개선하는 전반적인 전략을 조정합니다.
-* 테스트와 관련된 가이드라인을 문서로 만듭니다.
-* 지속적인 통합을 개선하기 위해 Build 워킹 그룹과 협업합니다.
-* 테스트 도구를 개선합니다.
