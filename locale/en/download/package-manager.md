@@ -46,10 +46,10 @@ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-Alternatively, for Node.js v7:
+Alternatively, for Node.js 8:
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
@@ -121,10 +121,10 @@ Run as root on RHEL, CentOS or Fedora, for Node.js v6 LTS:
 curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
 ```
 
-Alternatively for Node.js v7:
+Alternatively for Node.js 8:
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_7.x | bash -
+curl --silent --location https://rpm.nodesource.com/setup_8.x | bash -
 ```
 
 Alternatively for Node.js 0.10:
