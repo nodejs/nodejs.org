@@ -36,10 +36,6 @@ This documentation describes the built-in modules provided by Node.js. It does n
 
 The [ES6 section](/en/docs/es6/) describes the three ES6 feature groups, and details which features are enabled by default in Node.js, alongside explanatory links. It also shows how to find which version of V8 shipped with a particular Node.js release.
 
-### Frequently Asked Questions
-
-The [FAQ](/en/docs/faq/) covers how everyone can contribute to Node.js, our code of conduct and governance model, how to get in touch on GitHub and IRC, and how to help out with triaging issues.
-
 ### Guides
 
 Long-form, in-depth articles about Node.js technical features and capabilities.
