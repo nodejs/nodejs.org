@@ -109,8 +109,6 @@ Core Working Groups are created by the
 * [Benchmarking](#benchmarking)
 * [Post-mortem](#post-mortem)
 * [Intl](#intl)
-* [Documentation](#documentation)
-* [Testing](#testing)
 -->
 
 ## 현재의 워킹 그룹
@@ -126,8 +124,6 @@ Core Working Groups are created by the
 * [Benchmarking](#benchmarking)
 * [Post-mortem](#post-mortem)
 * [Intl](#intl)
-* [Documentation](#documentation)
-* [Testing](#testing)
 
 <!--
 ### [Website](https://github.com/nodejs/nodejs.org)
@@ -535,54 +531,3 @@ Responsibilities include:
 이 워킹 그룹은 다음에 대한 책임이 있습니다.
 * 필요할 때 덤프를 생성할 수 있도록 인터페이스/API를 정의하고 추가합니다.
 * 이러한 덤프를 분석하는 도구를 지원하기 위해 생성된 덤프의 공통 구조를 정의하고 추가합니다.
-
-<!--
-### [Documentation](https://github.com/nodejs/docs)
-
-The Documentation Working Group exists to support the improvement of Node.js
-documentation, both in the core API documentation, and elsewhere, such as the
-Node.js website. Its intent is to work closely with the Evangelism, Website, and
-Intl Working Groups to make excellent documentation available and accessible
-to all.
-
-Responsibilities include:
-* Defining and maintaining documentation style and content standards.
-* Producing documentation in a format acceptable for the Website Working Group
-  to consume.
-* Ensuring that Node's documentation addresses a wide variety of audiences.
-* Creating and operating a process for documentation review that produces
-  quality documentation and avoids impeding the progress of Core work.
--->
-
-### [Documentation](https://github.com/nodejs/docs)
-
-문서화 워킹 그룹은 코어 API 문서와 Node.js 웹사이트 같은 문서를 포함한 모든 Node.js 문서를 개선합니다. 모두가 뛰어난 문서를 사용할 수 있도록 Evangelism, Website, Intl 워킹 그룹과 밀접하게 작업합니다.
-
-이 워킹 그룹은 다음에 대한 책임이 있습니다.
-* 문서 형식과 콘텐츠 표준을 정의하고 관리합니다.
-* Website 워킹그룹이 받아들일 수 있는 형식으로 문서를 작성합니다.
-* Node의 문서가 다양한 사용자를 지원할 수 있도록 합니다.
-* 핵심 작업 절차를 방해하지 않고 질 좋은 문서를 만들기 위해 문서 리뷰과정을 만들고 운영합니다.
-
-<!--
-### [Testing](https://github.com/nodejs/testing)
-
-The Node.js Testing Working Group's purpose is to extend and improve testing of
-the Node.js source code.
-
-Responsibilities include:
-* Coordinating an overall strategy for improving testing.
-* Documenting guidelines around tests.
-* Working with the Build Working Group to improve continuous integration.
-* Improving tooling for testing.
--->
-
-### [Testing](https://github.com/nodejs/testing)
-
-Node.js 테스팅 워킹 그룹은 Node.js 소스 코드의 테스트를 확장하고 개선합니다.
-
-이 워킹 그룹은 다음에 대한 책임이 있습니다.
-* 테스트를 개선하는 전반적인 전략을 조정합니다.
-* 테스트와 관련된 가이드라인을 문서로 만듭니다.
-* 지속적인 통합을 개선하기 위해 Build 워킹 그룹과 협업합니다.
-* 테스트 도구를 개선합니다.

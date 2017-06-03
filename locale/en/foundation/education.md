@@ -64,9 +64,6 @@ Work may be organized into committees or subcommittees representing, but not lim
 
 Work will be divided into collaborative group sessions and individual self-paced assignments in accordance with project schedule. Time commitments will vary.
 
-**Docs**
-- Stay tuned and help your friends at the [Docs WG](https://github.com/nodejs/docs)
-
 **Resources for learning Node.js**
 - Stay tuned and participate [in our convos](https://github.com/nodejs/education/issues/4)
 
