@@ -74,10 +74,6 @@
             "link": "docs/es6",
             "text": "ES6 e oltre"
         },
-        "faq": {
-            "link": "docs/faq",
-            "text": "FAQ"
-        },
         "api-lts": {
             "link": "/dist/latest-%ver-major%/docs/api",
             "subtext": "LTS",

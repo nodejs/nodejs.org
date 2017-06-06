@@ -22,7 +22,6 @@ There are several types of documentation available on this website:
 
 * API 레퍼런스 문서
 * ES6 기능
-* 자주 묻는 질문
 * 안내
 
 <!--
@@ -76,17 +75,6 @@ The [ES6 section](/en/docs/es6/) describes the three ES6 feature groups, and det
 [ES6 부분](/ko/docs/es6/)에서는 세 가지 ES6 기능 그룹을 설명하고 Node.js에서 어떤 기능이
 기본적으로 활성화되어있는지 설명하면서 추가 링크를 제공합니다. 특정 Node.js 릴리스 버전에
 어떤 V8 버전이 포함되었는지 찾는 방법도 알려줍니다.
-
-<!--
-### Frequently Asked Questions
-
-The [FAQ](/en/docs/faq/) covers how everyone can contribute to Node.js, our code of conduct and governance model, how to get in touch on GitHub and IRC, and how to help out with triaging issues.
--->
-
-### 자주 묻는 질문
-
-[FAQ](/ko/docs/faq/)에서는 Node.js에 기여하는 방법, 행동강령과 거버넌스 모델,
-GitHub과 IRC에서 연락을 취하는 방법, 선별된 이슈로 돕는 방법 등을 다룹니다.
 
 <!--
 ### Guides

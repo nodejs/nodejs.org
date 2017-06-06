@@ -11,7 +11,6 @@ Auf dieser Webseite gibt es verschiedene Arten von Dokumentationen:
 
 * API-Referenz
 * ES6 Funktionalitäten
-* FAQ - Häufig gefragt
 * Anleitungen
 
 ### API-Referenz
@@ -43,12 +42,6 @@ Der [ES6-Bereich](/en/docs/es6/) beschreibt die drei Gruppen von ES6-Funktionali
 standardmäßig in Node.js eingeschaltet sind. Zudem gibt es Links zu weiteren
 Erklärungen. Dort finden sich auch Informationen, welche Version von V8 in
 welcher Node.js-Version enthalten ist.
-
-### FAQ - Häufig gefragt
-
-Der [FAQ-Bereich](/en/docs/faq/) beschreibt, wie man an Node.js mitwirken kann,
-den Verhaltenskodex und das Governance-Modell, wie man über GitHub und IRC Kontakt
-aufnehmen kann und wie man helfen kann Fehler ausfindig zu machen.
 
 ### Anleitungen
 
