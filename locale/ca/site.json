@@ -80,10 +80,6 @@
       "link": "docs/es6",
       "text": "ES6 i més enllà"
     },
-    "faq": {
-      "link": "docs/faq",
-      "text": "FAQ"
-    },
     "inspector": {
       "link": "docs/inspector",
       "text": "Inspector"

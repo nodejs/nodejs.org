@@ -11,7 +11,6 @@ Existen tres tipos de documentación disponible en este sitio:
 
 * Referencia de la API
 * Características de ES6
-* Preguntas frecuentes
 
 ### Referencia de la API
 
@@ -38,8 +37,3 @@ También describe los módulos incluidos que proporciona Node.js, mas no documen
 La [sección de ES6](/en/docs/es6/) describe el árbol de los grupos de las características de ES6, y detalla qué
 características están activadas por defecto en Node.js, junto con enlaces explicativos. También muestra cómo encontrar
 qué versión de V8 usa una versión particular de Node.js.
-
-### Preguntas frecuentes
-
-Las [Preguntas frecuentes](/en/docs/faq/) cubren cómo todos pueden contribuir a Node.js, nuestro código de conducta y el
-modelo de gobierno, cómo contactarse en GitHub y IRC y cómo ayudar con el triaje de errores.

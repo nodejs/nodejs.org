@@ -16,7 +16,6 @@ labels:
 <!-- * Frequently asked questions -->
 * API リファレンス
 * ES6 の機能
-* よくある質問
 
 <!-- ### API Reference Documentation -->
 ### API リファレンス
@@ -46,10 +45,3 @@ labels:
 
 <!-- The [ES6 section](/en/docs/es6/) describes the three ES6 feature groups, and details which features are enabled by default in Node.js, alongside explanatory links. It also shows how to find version of V8 shipped with a particular Node.js release. -->
 [ES6 のセクション](/en/docs/es6/) では、ES6 の3つの機能について説明しており、それぞれの機能ごとのリンクと一緒に Node.js の標準で有効化されているかについて書いてあります。また、リリースされた Node.js のバージョンごとに組み込まれている V8 のバージョンを知るのにも利用することができます。
-
-<!-- ### Frequently Asked Questions -->
-### よくある質問
-
-<!-- The [FAQ](/en/docs/faq/) covers how everyone can contribute to Node.js, our code of conduct and governance model, how to get in touch on GitHub and IRC, and how to help out with triaging issues. -->
-[よくある質問](/en/docs/faq)　では、どなたでも参加ができる Node.js への貢献の仕方、行動規範、ガバナンス体制、GitHub や IRC でのやり取りの方法、不具合の修正の仕方などについて網羅しています。
- 

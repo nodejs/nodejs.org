@@ -76,10 +76,6 @@
             "link": "docs/es6",
             "text": "ES6 について"
         },
-        "faq": {
-            "link": "docs/faq",
-            "text": "よくある質問"
-        },
         "api-lts": {
             "link": "/dist/latest-%ver-major%/docs/api",
             "subtext": "LTS",
