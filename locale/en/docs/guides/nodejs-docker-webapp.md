@@ -223,6 +223,13 @@ ecce33b30ebf  <your username>/node-web-app:latest  npm start  ...   49160->8080
 
 In the example above, Docker mapped the `8080` port inside of the container to
 the port `49160` on your machine.
+To get the default ip-address for your machine use 
+```bash
+# Get the name of your default machine:
+$ docker-machine active
+# Then use use returned name to fetch the ip-address:
+$ docker-machine ip <machine name>
+```
 
 Now you can call your app using `curl` (install if needed via: `sudo apt-get
 install curl`):
