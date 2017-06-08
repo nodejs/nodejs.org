@@ -5,7 +5,7 @@
   <link rel="dns-prefetch" href="http://fonts.googleapis.com">
   <link rel="dns-prefetch" href="http://fonts.gstatic.com">
   <link rel="dns-prefetch" href="http://www.google-analytics.com">
-
+  
   <meta name="author" content="{{ site.author }}">
   <meta name="robots" content="{{#if robots}}{{ robots }}{{else}}index, follow{{/if}}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,4 +22,18 @@
   <script>
   document.querySelector('html').className += " has-js";
     </script>
+	
+  <link rel="manifest" href="scripts/manifest.json">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+  <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(["init", {
+      appId: "APP_ID",
+      autoRegister: false,
+      notifyButton: {
+        enable: true /* Set to false to hide */
+      }
+    }]);
+  </script>
+  
   </head>
