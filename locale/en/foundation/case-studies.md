@@ -3,6 +3,12 @@ title: Node.js Foundation Resources
 layout: foundation.hbs
 ---
 
+## Join Node.js Foundation Executive Director and Director of Engineering at Lowe's Digital for a Forrester Research Webinar
+
+Join Mark Hinkle and guest Rick Adams from Lowe's Digital on July 12 for a live Forrester Research webinar on how Node.js helps drive digital transformation and improves business processes 
+
+* [Register here](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&partnerref=nodejs&eventid=1440549&sessionid=1&key=7DE2249594D6A35008CAAA23B68BC7D3&regTag=&sourcepage=register)
+
 ## Node.js Foundation Survey Results
 
 With over 3.5 million users and an annual growth rate of 100 percent, Node.js
