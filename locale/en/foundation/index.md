@@ -10,6 +10,8 @@ newsletter:
 
 The Node.js Foundation's mission is to enable widespread adoption and help accelerate development of Node.js and other related modules through an open governance model that encourages participation, technical contribution, and a framework for long term stewardship by an ecosystem invested in Node.js' success.
 
+## Join our webinar July 12
+
 Join Node.js Foundation Executive Director Mark Hinkle and Node.js user Rick Adams, Director of Engineering at Lowe's Digital for a Forrester Research Webinar on July 12. They will talk about how Node.js enables digital transformation and business process improvement. [Register here](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&partnerref=nodejs&eventid=1440549&sessionid=1&key=7DE2249594D6A35008CAAA23B68BC7D3&regTag=&sourcepage=register) 
 
 ## Overview
