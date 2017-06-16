@@ -3,7 +3,7 @@ title: Node.js Foundation Resources
 layout: foundation.hbs
 ---
 
-## Join Node.js Foundation Executive Director and Director of Engineering at Lowe's Digital for a Forrester Research Webinar
+## Join Node.js Foundation Executive Director and Lowe's Digital for a Forrester Research Webinar
 
 Join Mark Hinkle and guest Rick Adams from Lowe's Digital on July 12 for a live Forrester Research webinar on how Node.js helps drive digital transformation and improves business processes 
 
