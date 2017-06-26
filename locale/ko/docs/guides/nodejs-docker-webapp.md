@@ -89,6 +89,7 @@ const express = require('express');
 
 // Constants
 const PORT = 8080;
+const HOST = '0.0.0.0';
 
 // App
 const app = express();
@@ -96,8 +97,8 @@ app.get('/', function (req, res) {
   res.send('Hello world\n');
 });
 
-app.listen(PORT);
-console.log('Running on http://localhost:' + PORT);
+app.listen(PORT, HOST);
+console.log('Running on http://' + HOST + ':' + PORT);
 ```
 
 In the next steps, we'll look at how you can run this app inside a Docker
@@ -114,6 +115,7 @@ const express = require('express');
 
 // 상수
 const PORT = 8080;
+const HOST = '0.0.0.0';
 
 // 앱
 const app = express();
@@ -121,8 +123,8 @@ app.get('/', function (req, res) {
   res.send('Hello world\n');
 });
 
-app.listen(PORT);
-console.log('Running on http://localhost:' + PORT);
+app.listen(PORT, HOST);
+console.log('Running on http://' + HOST + ':' + PORT);
 ```
 
 다음 단계에서 공식 Docker 이미지를 사용해서 Docker 컨테이너 안에서 이 앱을 실행하는 방법을
