@@ -87,11 +87,8 @@ Node.js Foundation відкритий для бізнесу та окремих 
 <a target="_new" class="imagelink" href="//saucelabs.com">
   <img alt="Saucelabs" class="memberlogo" src="/static/images/foundation/saucelabsLogo.png" />
 </a>
-<a target="_new" class="imagelink" href="//snyk.com">
+<a target="_new" class="imagelink" href="//snyk.io">
   <img alt="Snyk" class="memberlogo" src="/static/images/foundation/snyk.png" />
-</a>
-<a target="_new" class="imagelink" href="http://sphinx.sg/">
-  <img alt="Sphinx" class="memberlogo" src="/static/images/foundation/sphinx.png" />
 </a>
 <a target="_new" class="imagelink" href="//yahoo.com">
   <img alt="Yahoo!" class="memberlogo" src="/static/images/foundation/yahoo.png" />

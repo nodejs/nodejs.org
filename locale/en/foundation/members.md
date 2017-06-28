@@ -96,7 +96,7 @@ Individual membership costs [$100 a year, or $25 for students](https://identity.
 <a target="_new" class="imagelink" href="//saucelabs.com">
   <img alt="Saucelabs" class="memberlogo" src="/static/images/foundation/saucelabsLogo.png" />
 </a>
-<a target="_new" class="imagelink" href="//snyk.com">
+<a target="_new" class="imagelink" href="//snyk.io">
   <img alt="Snyk" class="memberlogo" src="/static/images/foundation/snyk.png" />
 </a>
 <a target="_new" class="imagelink" href="http://sphinx.sg/">
