@@ -12,6 +12,19 @@
 
   <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
   <link rel="icon" sizes="32x32" type="image/png" href="/static/favicon.png">
+  
+  <meta property="og:site_name" content="Node.js">
+  <meta property="og:title" content="{{#if title}}{{ title }} | {{/if}}{{ site.title }}">
+  <meta name="og:image" content="/static/images/logo-hexagon.png">
+  <meta name="og:image:type" content="image/png">
+  <meta name="og:image:width" content="224">
+  <meta name="og:image:height" content="256">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@nodejs">
+  <meta name="twitter:title" content="{{#if title}}{{ title }} | {{/if}}{{ site.title }}">
+  <meta name="twitter:image" content="/static/images/logo-hexagon.png">
+  <meta name="twitter:image:alt" content="The Node.js Hexagon Logo">
 
   <link rel="canonical" href="{{ site.url }}{{#if path}}{{ path }}/{{/if}}">
   {{#each site.feeds}}
