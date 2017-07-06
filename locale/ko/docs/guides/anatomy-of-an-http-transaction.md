@@ -28,9 +28,9 @@ Any node web server application will at some point have to create a web server
 object. This is done by using [`createServer`][].
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-var server = http.createServer(function(request, response) {
+const server = http.createServer((request, response) => {
   // magic happens here!
 });
 ```
@@ -42,9 +42,9 @@ var server = http.createServer(function(request, response) {
 이 때 [`createServer`][]를 이용합니다.
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-var server = http.createServer(function(request, response) {
+const server = http.createServer((request, response) => {
   // 여기서 작업이 진행됩니다!
 });
 ```
@@ -57,8 +57,8 @@ handler. In fact, the [`Server`][] object returned by [`createServer`][] is an
 `server` object and then adding the listener later.
 
 ```javascript
-var server = http.createServer();
-server.on('request', function(request, response) {
+const server = http.createServer();
+server.on('request', (request, response) => {
   // the same kind of magic happens here!
 });
 ```
@@ -69,8 +69,8 @@ server.on('request', function(request, response) {
 `server` 객체를 생성하고 리스너를 추가하는 축약 문법을 사용한 것입니다.
 
 ```javascript
-var server = http.createServer();
-server.on('request', function(request, response) {
+const server = http.createServer();
+server.on('request', (request, response) => {
   // 여기서 작업이 진행됩니다!
 });
 ```
@@ -101,8 +101,7 @@ the method and URL, so that appropriate actions can be taken. Node makes this
 relatively painless by putting handy properties onto the `request` object.
 
 ```javascript
-var method = request.method;
-var url = request.url;
+const { method, url } = request;
 ```
 > **Note:** The `request` object is an instance of [`IncomingMessage`][].
 -->
@@ -113,8 +112,7 @@ var url = request.url;
 Node가 `request` 객체에 유용한 프로퍼티를 넣어두었으므로 이 작업은 비교적 쉽게 할 수 있습니다.
 
 ```javascript
-var method = request.method;
-var url = request.url;
+const { method, url } = request;
 ```
 > **주의:** `request` 객체는 [`IncomingMessage`][]의 인스턴스입니다.
 
@@ -127,8 +125,8 @@ Headers are also not far away. They're in their own object on `request` called
 `headers`.
 
 ```javascript
-var headers = request.headers;
-var userAgent = headers['user-agent'];
+const { headers } = request;
+const userAgent = headers['user-agent'];
 ```
 -->
 
@@ -138,8 +136,8 @@ var userAgent = headers['user-agent'];
 헤더도 많이 다르지 않습니다. `request`에 `headers`라는 전용 객체가 있습니다.
 
 ```javascript
-var headers = request.headers;
-var userAgent = headers['user-agent'];
+const { headers } = request;
+const userAgent = headers['user-agent'];
 ```
 
 <!--
@@ -187,10 +185,10 @@ then at the `'end'`, concatenate and stringify it.
 
 <!--
 ```javascript
-var body = [];
-request.on('data', function(chunk) {
+let body = [];
+request.on('data', (chunk) => {
   body.push(chunk);
-}).on('end', function() {
+}).on('end', () => {
   body = Buffer.concat(body).toString();
   // at this point, `body` has the entire request body stored in it as a string
 });
@@ -203,10 +201,10 @@ of what's going on before going down that road, and that's why you're here!
 -->
 
 ```javascript
-var body = [];
-request.on('data', function(chunk) {
+let body = [];
+request.on('data', (chunk) => {
   body.push(chunk);
-}).on('end', function() {
+}).on('end', () => {
   body = Buffer.concat(body).toString();
   // 여기서 `body`에 전체 요청 바디가 문자열로 담겨있습니다.
 });
@@ -242,7 +240,7 @@ HTTP 오류 응답을 보내는 것이 좋을 겁니다. 이에 대해는 뒤에
 
 <!--
 ```javascript
-request.on('error', function(err) {
+request.on('error', (err) => {
   // This prints the error message and stack trace to `stderr`.
   console.error(err.stack);
 });
@@ -254,7 +252,7 @@ and you're going to have to deal with them.
 -->
 
 ```javascript
-request.on('error', function(err) {
+request.on('error', (err) => {
   // 여기서 `stderr`에 오류 메시지와 스택 트레이스를 출력합니다.
   console.error(err.stack);
 });
@@ -271,18 +269,16 @@ headers and body out of requests. When we put that all together, it might look
 something like this:
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(request, response) {
-  var headers = request.headers;
-  var method = request.method;
-  var url = request.url;
-  var body = [];
-  request.on('error', function(err) {
+http.createServer((request, response) => {
+  const { headers, method, url } = request;
+  let body = [];
+  request.on('error', (err) => {
     console.error(err);
-  }).on('data', function(chunk) {
+  }).on('data', (chunk) => {
     body.push(chunk);
-  }).on('end', function() {
+  }).on('end', () => {
     body = Buffer.concat(body).toString();
     // At this point, we have the headers, method, url and body, and can now
     // do whatever we need to in order to respond to this request.
@@ -297,18 +293,16 @@ http.createServer(function(request, response) {
 이를 모두 사용하면 다음과 같이 될 것입니다.
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(request, response) {
-  var headers = request.headers;
-  var method = request.method;
-  var url = request.url;
-  var body = [];
-  request.on('error', function(err) {
+http.createServer((request, response) => {
+  const { headers, method, url } = request;
+  let body = [];
+  request.on('error', (err) => {
     console.error(err);
-  }).on('data', function(chunk) {
+  }).on('data', (chunk) => {
     body.push(chunk);
-  }).on('end', function() {
+  }).on('end', () => {
     body = Buffer.concat(body).toString();
     // 여기서 헤더, 메소드, url, 바디를 가지게 되었고
     // 이 요청에 응답하는 데 필요한 어떤 일이라도 할 수 있게 되었습니다.
@@ -500,22 +494,20 @@ using `JSON.stringify`.
 
 ```javascript
 
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(request, response) {
-  var headers = request.headers;
-  var method = request.method;
-  var url = request.url;
-  var body = [];
-  request.on('error', function(err) {
+http.createServer((request, response) => {
+  const { headers, method, url } = request;
+  let body = [];
+  request.on('error', (err) => {
     console.error(err);
-  }).on('data', function(chunk) {
+  }).on('data', (chunk) => {
     body.push(chunk);
-  }).on('end', function() {
+  }).on('end', () => {
     body = Buffer.concat(body).toString();
     // BEGINNING OF NEW STUFF
 
-    response.on('error', function(err) {
+    response.on('error', (err) => {
       console.error(err);
     });
 
@@ -524,12 +516,7 @@ http.createServer(function(request, response) {
     // Note: the 2 lines above could be replaced with this next one:
     // response.writeHead(200, {'Content-Type': 'application/json'})
 
-    var responseBody = {
-      headers: headers,
-      method: method,
-      url: url,
-      body: body
-    };
+    const responseBody = { headers, method, url, body };
 
     response.write(JSON.stringify(responseBody));
     response.end();
@@ -549,23 +536,20 @@ HTTP 응답 만드는 방법을 배웠으니 이제 모든 것을 함께 사용�
 JSON으로 포매팅할 것입니다.
 
 ```javascript
+const http = require('http');
 
-var http = require('http');
-
-http.createServer(function(request, response) {
-  var headers = request.headers;
-  var method = request.method;
-  var url = request.url;
-  var body = [];
-  request.on('error', function(err) {
+http.createServer((request, response) => {
+  const { headers, method, url } = request;
+  let body = [];
+  request.on('error', (err) => {
     console.error(err);
-  }).on('data', function(chunk) {
+  }).on('data', (chunk) => {
     body.push(chunk);
-  }).on('end', function() {
+  }).on('end', () => {
     body = Buffer.concat(body).toString();
     // 여기서부터 새로운 부분입니다.
 
-    response.on('error', function(err) {
+    response.on('error', (err) => {
       console.error(err);
     });
 
@@ -574,12 +558,7 @@ http.createServer(function(request, response) {
     // 주의: 위 두 줄은 다음 한 줄로 대체할 수도 있습니다.
     // response.writeHead(200, {'Content-Type': 'application/json'})
 
-    var responseBody = {
-      headers: headers,
-      method: method,
-      url: url,
-      body: body
-    };
+    const responseBody = { headers, method, url, body };
 
     response.write(JSON.stringify(responseBody));
     response.end();
@@ -600,13 +579,13 @@ we need to do is grab the data from the request stream and write that data to
 the response stream, similar to what we did previously.
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(request, response) {
-  var body = [];
-  request.on('data', function(chunk) {
+http.createServer((request, response) => {
+  let body = [];
+  request.on('data', (chunk) => {
     body.push(chunk);
-  }).on('end', function() {
+  }).on('end', () => {
     body = Buffer.concat(body).toString();
     response.end(body);
   });
@@ -621,13 +600,13 @@ http.createServer(function(request, response) {
 응답 스트림에 쓰기만 하면 됩니다.
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(request, response) {
-  var body = [];
-  request.on('data', function(chunk) {
+http.createServer((request, response) => {
+  let body = [];
+  request.on('data', (chunk) => {
     body.push(chunk);
-  }).on('end', function() {
+  }).on('end', () => {
     body = Buffer.concat(body).toString();
     response.end(body);
   });
@@ -644,17 +623,17 @@ conditions:
 In any other case, we want to simply respond with a 404.
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(request, response) {
+http.createServer((request, response) => {
   if (request.method === 'GET' && request.url === '/echo') {
-    var body = [];
-    request.on('data', function(chunk) {
+    let body = [];
+    request.on('data', (chunk) => {
       body.push(chunk);
-    }).on('end', function() {
+    }).on('end', () => {
       body = Buffer.concat(body).toString();
       response.end(body);
-    })
+    });
   } else {
     response.statusCode = 404;
     response.end();
@@ -671,17 +650,17 @@ http.createServer(function(request, response) {
 위 조건이 아닌 경우에는 404를 응답합니다.
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(request, response) {
+http.createServer((request, response) => {
   if (request.method === 'GET' && request.url === '/echo') {
-    var body = [];
-    request.on('data', function(chunk) {
+    let body = [];
+    request.on('data', (chunk) => {
       body.push(chunk);
-    }).on('end', function() {
+    }).on('end', () => {
       body = Buffer.concat(body).toString();
       response.end(body);
-    })
+    });
   } else {
     response.statusCode = 404;
     response.end();
@@ -701,9 +680,9 @@ That means we can use [`pipe`][] to direct data from one to the other. That's
 exactly what we want for an echo server!
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(request, response) {
+http.createServer((request, response) => {
   if (request.method === 'GET' && request.url === '/echo') {
     request.pipe(response);
   } else {
@@ -724,9 +703,9 @@ http.createServer(function(request, response) {
 에코 서버에서 하려는 것이 바로 이것입니다.
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(request, response) {
+http.createServer((request, response) => {
   if (request.method === 'GET' && request.url === '/echo') {
     request.pipe(response);
   } else {
@@ -751,15 +730,15 @@ and message would be. As usual with errors, you should consult the
 On the response, we'll just log the error to `stdout`.
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(request, response) {
-  request.on('error', function(err) {
+http.createServer((request, response) => {
+  request.on('error', (err) => {
     console.error(err);
     response.statusCode = 400;
     response.end();
   });
-  response.on('error', function(err) {
+  response.on('error', (err) => {
     console.error(err);
   });
   if (request.method === 'GET' && request.url === '/echo') {
@@ -784,15 +763,15 @@ http.createServer(function(request, response) {
 응답에서는 `stdout`에 오류를 로깅 할 것입니다.
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(request, response) {
-  request.on('error', function(err) {
+http.createServer((request, response) => {
+  request.on('error', (err) => {
     console.error(err);
     response.statusCode = 400;
     response.end();
   });
-  response.on('error', function(err) {
+  response.on('error', (err) => {
     console.error(err);
   });
   if (request.method === 'GET' && request.url === '/echo') {
