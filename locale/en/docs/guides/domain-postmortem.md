@@ -133,7 +133,7 @@ d1.run(() => setTimeout(() => {
       setTimeout(() => {
         throw new Error('outer');
       });
-      throw new Error('inner')
+      throw new Error('inner');
     });
   });
 }));
@@ -177,11 +177,11 @@ const pipeList = [];
 const FILENAME = '/tmp/tmp.tmp';
 const PIPENAME = '/tmp/node-domain-example-';
 const FILESIZE = 1024;
-var uid = 0;
+let uid = 0;
 
 // Setting up temporary resources
-const buf = Buffer(FILESIZE);
-for (var i = 0; i < buf.length; i++)
+const buf = Buffer.alloc(FILESIZE);
+for (let i = 0; i < buf.length; i++)
   buf[i] = ((Math.random() * 1e3) % 78) + 48;  // Basic ASCII
 fs.writeFileSync(FILENAME, buf);
 
@@ -234,12 +234,12 @@ net.createServer((c) => {
 
 function streamInParts(fd, cr, pos) {
   const d2 = domain.create();
-  var alive = true;
+  const alive = true;
   d2.on('error', (er) => {
-    print('d2 error:', er.message)
+    print('d2 error:', er.message);
     cr.end();
   });
-  fs.read(fd, new Buffer(10), 0, 10, pos, d2.intercept((bRead, buf) => {
+  fs.read(fd, Buffer.alloc(10), 0, 10, pos, d2.intercept((bRead, buf) => {
     if (!cr.isAlive()) {
       return fs.close(fd);
     }
@@ -277,12 +277,12 @@ function pipeData(cr) {
     });
   });
   cr.on('data', (chunk) => {
-    for (var i = 0; i < connectionList.length; i++) {
+    for (let i = 0; i < connectionList.length; i++) {
       connectionList[i].write(chunk);
     }
   });
   cr.on('end', () => {
-    for (var i = 0; i < connectionList.length; i++) {
+    for (let i = 0; i < connectionList.length; i++) {
       connectionList[i].end();
     }
     ps.close();
@@ -294,7 +294,7 @@ function pipeData(cr) {
 process.on('SIGINT', () => process.exit());
 process.on('exit', () => {
   try {
-    for (var i = 0; i < pipeList.length; i++) {
+    for (let i = 0; i < pipeList.length; i++) {
       fs.unlinkSync(pipeList[i]);
     }
     fs.unlinkSync(FILENAME);
@@ -361,7 +361,7 @@ const server = net.createServer((c) => {
   // for demonstration purposes.
   const ds = new DataStream(dataTransformed);
   c.on('data', (chunk) => ds.data(chunk));
-}).listen(8080, () => console.log(`listening on 8080`));
+}).listen(8080, () => console.log('listening on 8080'));
 
 function dataTransformed(chunk) {
   // FAIL! Because the DataStream instance also created a
@@ -383,15 +383,15 @@ DataStream.prototype.data = function data(chunk) {
   // This code is self contained, but pretend it's a complex
   // operation that crosses at least one other module. So
   // passing along "this", etc., is not easy.
-  this.domain.run(function() {
+  this.domain.run(() => {
     // Simulate an async operation that does the data transform.
     setImmediate(() => {
-      for (var i = 0; i < chunk.length; i++)
+      for (let i = 0; i < chunk.length; i++)
         chunk[i] = ((chunk[i] + Math.random() * 100) % 96) + 33;
       // Grab the instance from the active domain and use that
       // to call the user's callback.
       const self = domain.active.data.inst;
-      self.cb.call(self, chunk);
+      self.cb(chunk);
     });
   });
 };

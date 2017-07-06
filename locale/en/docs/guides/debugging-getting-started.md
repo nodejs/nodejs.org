@@ -27,6 +27,7 @@ by sending an HTTP request to `http://[host:port]/json/list`.  This returns a
 JSON object like the following; use the `webSocketDebuggerUrl` property as the
 URL to connect directly to Inspector.
 
+<!-- eslint-skip -->
 ```javascript
 {
   "description": "node.js instance",

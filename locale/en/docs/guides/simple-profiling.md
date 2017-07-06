@@ -31,9 +31,9 @@ application. Our application will have two handlers, one for adding new users to
 our system:
 
 ```javascript
-app.get('/newUser', function (req, res) {
-  var username = req.query.username || '';
-  var password = req.query.password || '';
+app.get('/newUser', (req, res) => {
+  let username = req.query.username || '';
+  const password = req.query.password || '';
 
   username = username.replace(/[!@#$%^&*]/g, '');
 
@@ -41,13 +41,10 @@ app.get('/newUser', function (req, res) {
     return res.sendStatus(400);
   }
 
-  var salt = crypto.randomBytes(128).toString('base64');
-  var hash = crypto.pbkdf2Sync(password, salt, 10000, 512);
+  const salt = crypto.randomBytes(128).toString('base64');
+  const hash = crypto.pbkdf2Sync(password, salt, 10000, 512);
 
-  users[username] = {
-    salt: salt,
-    hash: hash
-  };
+  users[username] = { salt, hash };
 
   res.sendStatus(200);
 });
@@ -56,9 +53,9 @@ app.get('/newUser', function (req, res) {
 and another for validating user authentication attempts:
 
 ```javascript
-app.get('/auth', function (req, res) {
-  var username = req.query.username || '';
-  var password = req.query.password || '';
+app.get('/auth', (req, res) => {
+  let username = req.query.username || '';
+  const password = req.query.password || '';
 
   username = username.replace(/[!@#$%^&*]/g, '');
 
@@ -66,7 +63,7 @@ app.get('/auth', function (req, res) {
     return res.sendStatus(400);
   }
 
-  var hash = crypto.pbkdf2Sync(password, users[username].salt, 10000, 512);
+  const hash = crypto.pbkdf2Sync(password, users[username].salt, 10000, 512);
 
   if (users[username].hash.toString() === hash.toString()) {
     res.sendStatus(200);
@@ -220,9 +217,9 @@ To remedy this issue, you make a small modification to the above handlers to use
 the asynchronous version of the pbkdf2 function:
 
 ```javascript
-app.get('/auth', function (req, res) {
-  var username = req.query.username || '';
-  var password = req.query.password || '';
+app.get('/auth', (req, res) => {
+  let username = req.query.username || '';
+  const password = req.query.password || '';
 
   username = username.replace(/[!@#$%^&*]/g, '');
 
@@ -230,7 +227,7 @@ app.get('/auth', function (req, res) {
     return res.sendStatus(400);
   }
 
-  crypto.pbkdf2(password, users[username].salt, 10000, 512, function(err, hash) {
+  crypto.pbkdf2(password, users[username].salt, 10000, 512, (err, hash) => {
     if (users[username].hash.toString() === hash.toString()) {
       res.sendStatus(200);
     } else {

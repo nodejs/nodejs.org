@@ -6,9 +6,9 @@ layout: docs.hbs
 # Backpressuring in Streams
 
 There is a general problem that occurs during data handling called
-[`backpressure`][] and describes a buildup of data behind a buffer during data 
-transfer. When the recieving end of the transfer has complex operations, or is 
-slower for whatever reason, there is a tendency for data from the incoming 
+[`backpressure`][] and describes a buildup of data behind a buffer during data
+transfer. When the recieving end of the transfer has complex operations, or is
+slower for whatever reason, there is a tendency for data from the incoming
 source to accumulate, like a clog.
 
 To solve this problem, there must be a delegation system in place to ensure a
@@ -46,7 +46,6 @@ const rl = readline.createInterface({
 });
 
 rl.question('Why should you use streams? ', (answer) => {
-
   console.log(`Maybe it's ${answer}, maybe it's because they are awesome! :)`);
 
   rl.close();
@@ -65,7 +64,7 @@ $ zip The.Matrix.1080p.mkv
 ```
 
 While that will take a few minutes to complete, in another shell we may run
-a script that takes Node.js' module [`zlib`][], that wraps around another 
+a script that takes Node.js' module [`zlib`][], that wraps around another
 compression tool, [`gzip(1)`][].
 
 ```javascript
@@ -79,14 +78,14 @@ inp.pipe(gzip).pipe(out);
 ```
 
 To test the results, try opening each compressed file. The file compressed by
-the [`zip(1)`][] tool will notify you the file is corrupt, whereas the 
+the [`zip(1)`][] tool will notify you the file is corrupt, whereas the
 compression finished by [`Stream`][] will decompress without error.
 
 Note: In this example, we use `.pipe()` to get the data source from one end
 to the other. However, notice there is no proper error handlers attached. If
-a chunk of data were to fail be properly recieved, the `Readable` source or 
-`gzip` stream will not be destroyed. [`pump`][] is a utility tool that would 
-properly destroy all the streams in a pipeline if one of them fails or closes, 
+a chunk of data were to fail be properly recieved, the `Readable` source or
+`gzip` stream will not be destroyed. [`pump`][] is a utility tool that would
+properly destroy all the streams in a pipeline if one of them fails or closes,
 and is a must have in this case!
 
 ## Too Much Data, Too Quickly
@@ -104,12 +103,12 @@ occur because the write disk will not be able to keep up with the speed from
 the read.
 
 ```javascript
-  // Secretly the stream is saying: "whoa, whoa! hang on, this is way too much!"
-  // Data will begin to build up on the read-side of the data buffer as
-  // `write` tries to keep up with the incoming data flow.
-  inp.pipe(gzip).pipe(outputFile);
+// Secretly the stream is saying: "whoa, whoa! hang on, this is way too much!"
+// Data will begin to build up on the read-side of the data buffer as
+// `write` tries to keep up with the incoming data flow.
+inp.pipe(gzip).pipe(outputFile);
 ```
-This is why a backpressure mechanism is important. If a backpressure system was 
+This is why a backpressure mechanism is important. If a backpressure system was
 not present, the process would use up your system's memory, effectively slowing
 down other processes, and monopolizing a large part of your system until
 completion.
@@ -123,7 +122,7 @@ This results in a few things:
 In the following examples we will take out the [return value][] of the
 `.write()` function and change it to `true`, which effectively disables
 backpressure support in Node.js core. In any reference to 'modified' binary,
-we are talking about running the `node` binary without the `return ret;` line, 
+we are talking about running the `node` binary without the `return ret;` line,
 and instead with the replaced `return true;`.
 
 ## Excess Drag on Garbage Collection
@@ -131,6 +130,7 @@ and instead with the replaced `return true;`.
 Let's take a look at a quick benchmark. Using the same example from above, we
 ran a few time trials to get a median time for both binaries.
 
+<!-- eslint-skip -->
 ```javascript
    trial (#)  | `node` binary (ms) | modified `node` binary (ms)
 =================================================================
@@ -148,9 +148,10 @@ but let's take a closer look to confirm whether our suspicions are correct. We
 use the linux tool [`dtrace`][] to evaluate what's happening with the V8 garbage
 collector.
 
-The GC (garbage collector) measured time indicates the intervals of a full cycle 
+The GC (garbage collector) measured time indicates the intervals of a full cycle
 of a single sweep done by the garbage collector:
 
+<!-- eslint-skip -->
 ```javascript
 approx. time (ms) | GC (ms) | modified GC (ms)
 =================================================
@@ -185,7 +186,7 @@ being used for each chunk transfer.
 
 The more memory that is being allocated, the more the GC has to take care of in
 one sweep. The bigger the sweep, the more the GC needs to decide what can be
-freed up, and scanning for detached pointers in a larger memory space will 
+freed up, and scanning for detached pointers in a larger memory space will
 consume more computing power.
 
 ## Memory Exhaustion
@@ -196,6 +197,7 @@ individually.
 
 This is the output on the normal binary:
 
+<!-- eslint-skip -->
 ```javascript
 Respecting the return value of .write()
 =============================================
@@ -223,6 +225,7 @@ The maximum byte size occupied by virtual memory turns out to be approximately
 
 And now changing the [return value][] of the [`.write()`][] function, we get:
 
+<!-- eslint-skip -->
 ```javascript
 Without respecting the return value of .write():
 ==================================================
@@ -247,12 +250,12 @@ user        53.15sys          7.43
 The maximum byte size occupied by virtual memory turns out to be approximately
 1.52 gb.
 
-Without streams in place to delegate the backpressure, there is an order of 
-magnitude greater of memory space being allocated - a huge margin of 
+Without streams in place to delegate the backpressure, there is an order of
+magnitude greater of memory space being allocated - a huge margin of
 difference between the same process!
 
 This experiment shows how optimized and cost-effective Node's backpressure
-mechanism is for your computing system. Now, let's do a break down on how it 
+mechanism is for your computing system. Now, let's do a break down on how it
 works!
 
 ## How Does Backpressure Resolve These Issues?
@@ -280,7 +283,7 @@ the write queue is currently busy, [`.write()`][] will return `false`.
 
 When a `false` value is returned, the backpressure system kicks in. It will
 pause the incoming [`Readable`][] stream from sending any data and wait until
-the consumer is ready again. Once the data buffer is emptied, a [`.drain()`][] 
+the consumer is ready again. Once the data buffer is emptied, a [`.drain()`][]
 event will be emitted and resume the incoming data flow.
 
 Once the the queue is finished, backpressure will allow data to be sent again.
@@ -310,6 +313,7 @@ To achieve a better understanding of backpressure, here is a flow-chart on the
 lifecycle of a [`Readable`][] stream being [piped][] into a [`Writable`][]
 stream:
 
+<!-- eslint-skip -->
 ```javascript
                                                      +===================+
                          x-->  Piping functions   +-->   src.pipe(dest)  |
@@ -324,8 +328,8 @@ stream:
 |  Readable Stream  +----+                           | .on('finish', cb) |
 +-^-------^-------^-+    |                           | .on('end', cb)    |
   ^       |       ^      |                           +-------------------+
-  |       |       |      |                           
-  |       ^       |      |                                              
+  |       |       |      |
+  |       ^       |      |
   ^       ^       ^      |    +-------------------+         +=================+
   ^       |       ^      +---->  Writable Stream  +--------->  .write(chunk)  |
   |       |       |           +-------------------+         +=======+=========+
@@ -354,11 +358,11 @@ stream:
                                        +============+
 ```
 
-Note: If you are setting up a pipeline to chain together a few streams to 
-manipulate your data, you will most likely be implementing [`Transform`][] 
-stream. 
+Note: If you are setting up a pipeline to chain together a few streams to
+manipulate your data, you will most likely be implementing [`Transform`][]
+stream.
 
-In this case, your output from your [`Readable`][] stream will enter in the 
+In this case, your output from your [`Readable`][] stream will enter in the
 [`Transform`][] and will pipe into the [`Writable`][].
 
 ```javascript
@@ -366,7 +370,7 @@ Readable.pipe(Transformable).pipe(Writable);
 ```
 
 Backpressure will be automatically applied, but note the both the incoming and
-outgoing `highWaterMark` of the [`Transform`][] stream may be manipulated and 
+outgoing `highWaterMark` of the [`Transform`][] stream may be manipulated and
 will effect the backpressure system.
 
 ## Backpressure Guidelines
@@ -382,41 +386,41 @@ the next section will go a little bit more in-depth.
 
 ## Rules to Abide By When Implementing Custom Streams
 
-The golden rule of streams is __to always respect backpressure__. What 
+The golden rule of streams is __to always respect backpressure__. What
 constitutes as best practice is non-contradictory practice. So long as you are
-careful to avoid behaviours that conflict with internal backpressure support, 
+careful to avoid behaviours that conflict with internal backpressure support,
 you can be sure you're following good practice.
 
 In general,
 
 1. Never `.push()` if you are not asked.
 2. Never call `.write()` after it returns false but wait for 'drain' instead.
-3. Streams changes between different node versions, and the library you use. 
+3. Streams changes between different node versions, and the library you use.
 Be careful and test things.
 
-Note: In regards to point 3, an incredibly useful package for building 
-browser streams is [`readable-stream`][]. Rodd Vagg has written a 
-[great blog post][] describing the utility of this library. In short, it 
-provides a type of automated graceful degradation for [`Readable`][] streams, 
+Note: In regards to point 3, an incredibly useful package for building
+browser streams is [`readable-stream`][]. Rodd Vagg has written a
+[great blog post][] describing the utility of this library. In short, it
+provides a type of automated graceful degradation for [`Readable`][] streams,
 and supports older versions of browsers and Node.js.
 
 ## Rules specific to Readable Streams
 
-So far, we have taken a look at how [`.write()`][] affects backpressure and have 
-focused much on the [`Writable`][] stream. Because of Node's functionality, 
-data is technically flowing downstream from [`Readable`][] to [`Writable`][]. 
-However, as we can observe in any transmission of data, matter, or energy, the 
-source is just as important as the destination and the [`Readable`][] stream 
+So far, we have taken a look at how [`.write()`][] affects backpressure and have
+focused much on the [`Writable`][] stream. Because of Node's functionality,
+data is technically flowing downstream from [`Readable`][] to [`Writable`][].
+However, as we can observe in any transmission of data, matter, or energy, the
+source is just as important as the destination and the [`Readable`][] stream
 is vital to how backpressure is handled.
 
-Both these processes rely on one another to communicate effectively, if 
-the [`Readable`][] ignores when the [`Writable`][] stream asks for it to stop 
-sending in data, it can be just as problematic to when the [`.write()`][]'s return 
+Both these processes rely on one another to communicate effectively, if
+the [`Readable`][] ignores when the [`Writable`][] stream asks for it to stop
+sending in data, it can be just as problematic to when the [`.write()`][]'s return
 value is incorrect.
 
-So, as well with respecting the [`.write()`][] return, we must also respect the 
-return value of [`.push()`][] used in the [`._read()`][] method. If 
-[`.push()`][] returns a `false` value, the stream will stop reading from the 
+So, as well with respecting the [`.write()`][] return, we must also respect the
+return value of [`.push()`][] used in the [`._read()`][] method. If
+[`.push()`][] returns a `false` value, the stream will stop reading from the
 source. Otherwise, it will continue without pause.
 
 Here is an example of bad practice using [`.push()`][]:
@@ -433,17 +437,17 @@ class MyReadable extends Readable {
 }
 ```
 
-Additionally, from outside the custom stream, there are pratfalls for ignoring 
+Additionally, from outside the custom stream, there are pratfalls for ignoring
 backpressure. In this counter-example of good practice, the application's code
-forces data through whenever it is available (signaled by the 
+forces data through whenever it is available (signaled by the
 [`.data` event][]):
 ```javascript
 // This ignores the backpressure mechanisms node has set in place,
-// and unconditionally pushes through data, regardless if the 
+// and unconditionally pushes through data, regardless if the
 // destination stream is ready for it or not.
-readable.on('data', data =>
-  writable.write(data)
-)
+readable.on('data', (data) =>
+  writable.write(data);
+);
 ```
 
 ## Rules specific to Writable Streams
@@ -460,6 +464,7 @@ However, when we want to use a [`Writable`][] directly, we must respect the
 * If the data chunk is too large, [`.write()`][] will return false (the limit
 is indicated by the variable, [`highWaterMark`][]).
 
+<!-- eslint-disable indent -->
 ```javascript
 // This writable is invalid because of the async nature of javascript callbacks.
 // Without a return statement for each callback prior to the last,
@@ -486,37 +491,37 @@ There are also some things to look out for when implementing [`._writev()`][].
 The function is coupled with [`.cork()`][], but there is a common mistake when
 writing:
 ```javascript
-  // Using .uncork() twice here makes two calls on the C++ layer, rendering the 
-  // cork/uncork technique useless.
-  ws.cork()
-  ws.write('hello ')
-  ws.write('world ')
-  ws.uncork()
+// Using .uncork() twice here makes two calls on the C++ layer, rendering the
+// cork/uncork technique useless.
+ws.cork();
+ws.write('hello ');
+ws.write('world ');
+ws.uncork();
 
-  ws.cork()
-  ws.write('from ')
-  ws.write('Matteo')
-  ws.uncork()
+ws.cork();
+ws.write('from ');
+ws.write('Matteo');
+ws.uncork();
 
-  // The correct way to write this is to utilize process.nextTick(), which fires
-  // on the next event loop.
-  ws.cork()
-  ws.write('hello ')
-  ws.write('world ')
-  process.nextTick(doUncork, ws)
+// The correct way to write this is to utilize process.nextTick(), which fires
+// on the next event loop.
+ws.cork();
+ws.write('hello ');
+ws.write('world ');
+process.nextTick(doUncork, ws);
 
-  ws.cork()
-  ws.write('from ')
-  ws.write('Matteo')
-  process.nextTick(doUncork, ws)
+ws.cork();
+ws.write('from ');
+ws.write('Matteo');
+process.nextTick(doUncork, ws);
 
-  // as a global function
-  function doUncork (stream) {
-    stream.uncork()
-  }
+// as a global function
+function doUncork(stream) {
+  stream.uncork();
+}
 ```
 
-[`.cork()`][] can be called as many times we want, we just need to be careful to 
+[`.cork()`][] can be called as many times we want, we just need to be careful to
 call [`.uncork()`][] the same amount of times to make it flow again.
 
 ## Conclusion
@@ -526,11 +531,11 @@ structure, and for developers, to expand and connect across the Node.js modules
 ecosystem.
 
 Hopefully, you will now be able to troubleshoot, safely code your own
-[`Writable`][] and [`Readable`][] streams with backpressure in mind, and share 
+[`Writable`][] and [`Readable`][] streams with backpressure in mind, and share
 your knowledge with colleagues and friends.
 
 Be sure to read up more on [`Stream`][] for other API functions to help
-improve unleash your streaming capabilities when building an applcation with 
+improve unleash your streaming capabilities when building an applcation with
 Node.js.
 
 
