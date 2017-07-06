@@ -132,11 +132,11 @@ d1.run(() => setTimeout(() => {
     setTimeout(() => {
       setTimeout(() => {
         throw new Error('outer');
-      }, 1);
+      });
       throw new Error('inner');
-    }, 1);
+    });
   });
-}, 1));
+}));
 ```
 
 Even in the case that the domain instances are being used for local storage so

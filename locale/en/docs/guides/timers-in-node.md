@@ -170,7 +170,7 @@ below for examples of both:
 ```js
 const timerObj = setTimeout(() => {
   console.log('will i run?');
-}, 1);
+});
 
 // if left alone, this statement will keep the above
 // timeout from running, since the timeout will be the only
