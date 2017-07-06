@@ -106,34 +106,30 @@ threshold, then your script starts asynchronously reading a file which
 takes 95 ms:
 
 ```js
+const fs = require('fs');
 
-var fs = require('fs');
-
-function someAsyncOperation (callback) {
+function someAsyncOperation(callback) {
   // Assume this takes 95ms to complete
   fs.readFile('/path/to/file', callback);
 }
 
-var timeoutScheduled = Date.now();
+const timeoutScheduled = Date.now();
 
-setTimeout(function () {
+setTimeout(() => {
+  const delay = Date.now() - timeoutScheduled;
 
-  var delay = Date.now() - timeoutScheduled;
-
-  console.log(delay + "ms have passed since I was scheduled");
+  console.log(`${delay}ms have passed since I was scheduled`);
 }, 100);
 
 
 // do someAsyncOperation which takes 95 ms to complete
-someAsyncOperation(function () {
-
-  var startCallback = Date.now();
+someAsyncOperation(() => {
+  const startCallback = Date.now();
 
   // do something that will take 10ms...
   while (Date.now() - startCallback < 10) {
-    ; // do nothing
+    // do nothing
   }
-
 });
 ```
 
@@ -238,11 +234,11 @@ process:
 
 ```js
 // timeout_vs_immediate.js
-setTimeout(function timeout () {
+setTimeout(() => {
   console.log('timeout');
-},0);
+}, 0);
 
-setImmediate(function immediate () {
+setImmediate(() => {
   console.log('immediate');
 });
 ```
@@ -262,16 +258,16 @@ callback is always executed first:
 
 ```js
 // timeout_vs_immediate.js
-var fs = require('fs')
+const fs = require('fs');
 
 fs.readFile(__filename, () => {
   setTimeout(() => {
-    console.log('timeout')
-  }, 0)
+    console.log('timeout');
+  }, 0);
   setImmediate(() => {
-    console.log('immediate')
-  })
-})
+    console.log('immediate');
+  });
+});
 ```
 
 ```
@@ -312,10 +308,10 @@ design philosophy where an API should always be asynchronous even where
 it doesn't have to be. Take this code snippet for example:
 
 ```js
-function apiCall (arg, callback) {
+function apiCall(arg, callback) {
   if (typeof arg !== 'string')
     return process.nextTick(callback,
-      new TypeError('argument should be string'));
+                            new TypeError('argument should be string'));
 }
 ```
 
@@ -338,18 +334,18 @@ This philosophy can lead to some potentially problematic situations.
 Take this snippet for example:
 
 ```js
+let bar;
+
 // this has an asynchronous signature, but calls callback synchronously
-function someAsyncApiCall (callback) { callback(); };
+function someAsyncApiCall(callback) { callback(); }
 
 // the callback is called before `someAsyncApiCall` completes.
 someAsyncApiCall(() => {
-
   // since someAsyncApiCall has completed, bar hasn't been assigned any value
   console.log('bar', bar); // undefined
-
 });
 
-var bar = 1;
+bar = 1;
 ```
 
 The user defines `someAsyncApiCall()` to have an asynchronous signature,
@@ -368,15 +364,17 @@ useful for the user to be alerted to an error before the event loop is
 allowed to continue. Here is the previous example using `process.nextTick()`:
 
 ```js
-function someAsyncApiCall (callback) {
+let bar;
+
+function someAsyncApiCall(callback) {
   process.nextTick(callback);
-};
+}
 
 someAsyncApiCall(() => {
   console.log('bar', bar); // 1
 });
 
-var bar = 1;
+bar = 1;
 ```
 
 Here's another real world example:
@@ -428,11 +426,11 @@ stack has unwound but before the event loop continues.
 One example is to match the user's expectations. Simple example:
 
 ```js
-var server = net.createServer();
-server.on('connection', function(conn) { });
+const server = net.createServer();
+server.on('connection', (conn) => { });
 
 server.listen(8080);
-server.on('listening', function() { });
+server.on('listening', () => { });
 ```
 
 Say that `listen()` is run at the beginning of the event loop, but the
@@ -457,7 +455,7 @@ function MyEmitter() {
 util.inherits(MyEmitter, EventEmitter);
 
 const myEmitter = new MyEmitter();
-myEmitter.on('event', function() {
+myEmitter.on('event', () => {
   console.log('an event occurred!');
 });
 ```
@@ -476,14 +474,14 @@ function MyEmitter() {
   EventEmitter.call(this);
 
   // use nextTick to emit the event once a handler is assigned
-  process.nextTick(function () {
+  process.nextTick(() => {
     this.emit('event');
-  }.bind(this));
+  });
 }
 util.inherits(MyEmitter, EventEmitter);
 
 const myEmitter = new MyEmitter();
-myEmitter.on('event', function() {
+myEmitter.on('event', () => {
   console.log('an event occurred!');
 });
 ```
