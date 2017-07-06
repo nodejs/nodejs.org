@@ -201,7 +201,7 @@ code and the headers to the stream.
 ```javascript
 response.writeHead(200, {
   'Content-Type': 'application/json',
-  'X-Powered-By': 'bacon',
+  'X-Powered-By': 'bacon'
 });
 ```
 
