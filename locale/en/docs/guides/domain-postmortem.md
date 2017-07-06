@@ -57,7 +57,7 @@ the active domain to hijack the error:
 const domain = require('domain');
 const net = require('net');
 const d = domain.create();
-d.on('error', (err) => { console.error(err.message); });
+d.on('error', (err) => console.error(err.message));
 
 d.run(() => net.createServer((c) => {
   c.end();
@@ -127,7 +127,7 @@ d1.on('error', (er) => { /* handle error */ });
 d1.run(() => setTimeout(() => {
   const d2 = domain.create();
   d2.bar = 43;
-  d2.on('error', (er) => { console.error(er.message, domain._stack); });
+  d2.on('error', (er) => console.error(er.message, domain._stack));
   d2.run(() => {
     setTimeout(() => {
       setTimeout(() => {
@@ -360,7 +360,7 @@ const server = net.createServer((c) => {
   // Mock class that does some useless async data transformation
   // for demonstration purposes.
   const ds = new DataStream(dataTransformed);
-  c.on('data', (chunk) => { ds.data(chunk); });
+  c.on('data', (chunk) => ds.data(chunk));
 }).listen(8080, () => console.log('listening on 8080'));
 
 function dataTransformed(chunk) {

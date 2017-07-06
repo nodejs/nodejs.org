@@ -445,9 +445,9 @@ forces data through whenever it is available (signaled by the
 // This ignores the backpressure mechanisms node has set in place,
 // and unconditionally pushes through data, regardless if the
 // destination stream is ready for it or not.
-readable.on('data', (data) => {
+readable.on('data', (data) =>
   writable.write(data);
-});
+);
 ```
 
 ## Rules specific to Writable Streams
