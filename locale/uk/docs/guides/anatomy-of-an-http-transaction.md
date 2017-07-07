@@ -18,9 +18,9 @@ Any node web server application will at some point have to create a web server
 object. This is done by using [`createServer`][].
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-var server = http.createServer(function(request, response) {
+const server = http.createServer((request, response) => {
   // magic happens here!
 });
 ```
@@ -32,8 +32,8 @@ handler. In fact, the [`Server`][] object returned by [`createServer`][] is an
 `server` object and then adding the listener later.
 
 ```javascript
-var server = http.createServer();
-server.on('request', function(request, response) {
+const server = http.createServer();
+server.on('request', (request, response) => {
   // the same kind of magic happens here!
 });
 ```
@@ -54,8 +54,7 @@ the method and URL, so that appropriate actions can be taken. Node makes this
 relatively painless by putting handy properties onto the `request` object.
 
 ```javascript
-var method = request.method;
-var url = request.url;
+const { method, url } = request;
 ```
 > **Note:** The `request` object is an instance of [`IncomingMessage`][].
 
@@ -67,8 +66,8 @@ Headers are also not far away. They're in their own object on `request` called
 `headers`.
 
 ```javascript
-var headers = request.headers;
-var userAgent = headers['user-agent'];
+const { headers } = request;
+const userAgent = headers['user-agent'];
 ```
 
 It's important to note here that all headers are represented in lower-case only,
@@ -93,10 +92,10 @@ going to be string data, the best thing to do is collect the data in an array,
 then at the `'end'`, concatenate and stringify it.
 
 ```javascript
-var body = [];
-request.on('data', function(chunk) {
+let body = [];
+request.on('data', (chunk) => {
   body.push(chunk);
-}).on('end', function() {
+}).on('end', () => {
   body = Buffer.concat(body).toString();
   // at this point, `body` has the entire request body stored in it as a string
 });
@@ -120,7 +119,7 @@ continue on your way. (Though it's probably best to send some kind of HTTP error
 response. More on that later.)
 
 ```javascript
-request.on('error', function(err) {
+request.on('error', (err) => {
   // This prints the error message and stack trace to `stderr`.
   console.error(err.stack);
 });
@@ -137,18 +136,16 @@ headers and body out of requests. When we put that all together, it might look
 something like this:
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(request, response) {
-  var headers = request.headers;
-  var method = request.method;
-  var url = request.url;
-  var body = [];
-  request.on('error', function(err) {
+http.createServer((request, response) => {
+  const { headers, method, url } = request;
+  let body = [];
+  request.on('error', (err) => {
     console.error(err);
-  }).on('data', function(chunk) {
+  }).on('data', (chunk) => {
     body.push(chunk);
-  }).on('end', function() {
+  }).on('end', () => {
     body = Buffer.concat(body).toString();
     // At this point, we have the headers, method, url and body, and can now
     // do whatever we need to in order to respond to this request.
@@ -251,22 +248,20 @@ using `JSON.stringify`.
 
 ```javascript
 
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(request, response) {
-  var headers = request.headers;
-  var method = request.method;
-  var url = request.url;
-  var body = [];
-  request.on('error', function(err) {
+http.createServer((request, response) => {
+  const { headers, method, url } = request;
+  let body = [];
+  request.on('error', (err) => {
     console.error(err);
-  }).on('data', function(chunk) {
+  }).on('data', (chunk) => {
     body.push(chunk);
-  }).on('end', function() {
+  }).on('end', () => {
     body = Buffer.concat(body).toString();
     // BEGINNING OF NEW STUFF
 
-    response.on('error', function(err) {
+    response.on('error', (err) => {
       console.error(err);
     });
 
@@ -275,12 +270,7 @@ http.createServer(function(request, response) {
     // Note: the 2 lines above could be replaced with this next one:
     // response.writeHead(200, {'Content-Type': 'application/json'})
 
-    var responseBody = {
-      headers: headers,
-      method: method,
-      url: url,
-      body: body
-    };
+    const responseBody = { headers, method, url, body };
 
     response.write(JSON.stringify(responseBody));
     response.end();
@@ -300,13 +290,13 @@ we need to do is grab the data from the request stream and write that data to
 the response stream, similar to what we did previously.
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(request, response) {
-  var body = [];
-  request.on('data', function(chunk) {
+http.createServer((request, response) => {
+  let body = [];
+  request.on('data', (chunk) => {
     body.push(chunk);
-  }).on('end', function() {
+  }).on('end', () => {
     body = Buffer.concat(body).toString();
     response.end(body);
   });
@@ -322,17 +312,17 @@ conditions:
 In any other case, we want to simply respond with a 404.
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(request, response) {
+http.createServer((request, response) => {
   if (request.method === 'GET' && request.url === '/echo') {
-    var body = [];
-    request.on('data', function(chunk) {
+    let body = [];
+    request.on('data', (chunk) => {
       body.push(chunk);
-    }).on('end', function() {
+    }).on('end', () => {
       body = Buffer.concat(body).toString();
       response.end(body);
-    })
+    });
   } else {
     response.statusCode = 404;
     response.end();
@@ -351,9 +341,9 @@ That means we can use [`pipe`][] to direct data from one to the other. That's
 exactly what we want for an echo server!
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(request, response) {
+http.createServer((request, response) => {
   if (request.method === 'GET' && request.url === '/echo') {
     request.pipe(response);
   } else {
@@ -377,15 +367,15 @@ and message would be. As usual with errors, you should consult the
 On the response, we'll just log the error to `stdout`.
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(request, response) {
-  request.on('error', function(err) {
+http.createServer((request, response) => {
+  request.on('error', (err) => {
     console.error(err);
     response.statusCode = 400;
     response.end();
   });
-  response.on('error', function(err) {
+  response.on('error', (err) => {
     console.error(err);
   });
   if (request.method === 'GET' && request.url === '/echo') {
