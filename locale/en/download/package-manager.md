@@ -211,14 +211,16 @@ In a hurry for the latest updates?  [Grab them from epel-testing.](https://fedor
 * **RHEL 6** (i686/x86_64)
 * **RHEL 7** (x86_64)
 
+RHEL 6 is no longer supported through EPEL, you can however use [Red Hat Software Collections](https://www.softwarecollections.org/en/scls/?search=nodejs).
+
 Additionally, versions of **CentOS** and **Scientific Linux** corresponding to the above RHEL versions are also officially supported by all EPEL packages, including nodejs.  Amazon Linux is not officially supported by EPEL due to significant incompatibilities previously reported to the epel-devel mailing list, however you might find that nodejs at least still works.
 
 **Supported Fedora versions:**
 
-* **Fedora Rawhide** (i686/x86_64/armv7hl/aarch64)
+* **Fedora Rawhide** (i686/x86_64/armv7hl/aarch64/ppc64/ppc64le/s390x)
+* **Fedora 26** (i686/x86_64/armv7hl/aarch64/ppc64/ppc64le)
 * **Fedora 25** (i686/x86_64/armv7hl)
 * **Fedora 24** (i686/x86_64/armv7hl)
-* **Fedora 23** (i686/x86_64/armv7hl)
 
 
 ## FreeBSD and OpenBSD
