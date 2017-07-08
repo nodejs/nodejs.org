@@ -24,6 +24,8 @@ right place. Explore our community resources to find out how you can help:
 
 - [Node.js Everywhere](https://newsletter.nodejs.org) is the official Node.js Weekly Newsletter.
 
+- [Node.js Collection](https://medium.com/the-node-js-collection) is a collection of community-curated content on Medium.
+
 - [NodeUp](http://nodeup.com) is a podcast covering the latest Node news in the community.
 
 - [NodeJS Reactions](http://nodejsreactions.tumblr.com) captures the Node.js experience in the form of animated GIFs.
