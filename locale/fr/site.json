@@ -79,7 +79,7 @@
         "text": "Docs",
         "es6": {
             "link": "docs/es6",
-            "text": "ES6 et au delà"
+            "text": "ES6 et au-delà"
         },
         "inspector": {
             "link": "docs/inspector",
@@ -156,7 +156,7 @@
         },
         "conduct": {
             "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
-            "text": "Code de Conduite"
+            "text": "Code de conduite"
         }
     },
     "security"   : { "link": "security",        "text": "Securité" },
