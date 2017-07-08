@@ -1,15 +1,15 @@
 ---
 layout: index.hbs
 labels:
-  current-version: Version Actuelle
+  current-version: Version actuelle
   download: Téléchargements
   download-for: Téléchargements pour
-  other-downloads: Autres Téléchargements
-  other-lts-downloads: Autres Téléchargements LTS
-  other-current-downloads: Autres Téléchargements Actuels
+  other-downloads: Autres téléchargements
+  other-lts-downloads: Autres téléchargements LTS
+  other-current-downloads: Autres téléchargements actuels
   current: Actuelle
   lts: LTS
-  tagline-current: Dernières Fonctionnalités
+  tagline-current: Dernières fonctionnalités
   tagline-lts: Recommandé pour la plupart des utilisateurs
   changelog: Journal des modifications
   api: API Docs
