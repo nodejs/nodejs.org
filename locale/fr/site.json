@@ -63,7 +63,7 @@
         "text": "Téléchargements",
         "releases": {
             "link": "download/releases",
-            "text": "Précédentes Versions"
+            "text": "Précédentes versions"
         },
         "package-manager": {
             "link": "download/package-manager",
@@ -116,7 +116,7 @@
         },
         "tsc": {
             "link": "foundation/tsc",
-            "text": "Gouvernance Technique"
+            "text": "Gouvernance technique"
         },
         "itn": {
              "link": "foundation/in-the-news",
@@ -152,7 +152,7 @@
         },
         "events": {
           "link": "get-involved/events",
-          "text": "Evènements"
+          "text": "Évènements"
         },
         "conduct": {
             "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
