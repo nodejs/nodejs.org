@@ -26,13 +26,13 @@
         },
         {
             "link": "feed/tsc-minutes.xml",
-            "text": "Compte rendus des réunions TSC Node.js"
+            "text": "Comptes rendus des réunions TSC Node.js"
         }
     ],
     "home": { "text": "Accueil" },
     "about": {
         "link": "about",
-        "text": "A propos",
+        "text": "À propos",
         "governance": {
             "link": "about/governance",
             "text": "Gouvernance"
@@ -120,7 +120,7 @@
         },
         "itn": {
              "link": "foundation/in-the-news",
-             "text": "A la une"
+             "text": "À la une"
         },
         "announce": {
             "link": "foundation/announcements",
@@ -128,7 +128,7 @@
         },
         "education": {
             "link": "foundation/education",
-            "text": "Initiatives Educatives"
+            "text": "Initiatives éducatives"
         },
         "outreachy": {
             "link": "foundation/outreachy",
@@ -160,7 +160,7 @@
         }
     },
     "security"   : { "link": "security",        "text": "Securité" },
-    "blog"       : { "link": "blog",            "text": "Nouvelles" },
+    "blog"       : { "link": "blog",            "text": "Actualités" },
 
     "releases": {
         "title": "Historique des versions",
