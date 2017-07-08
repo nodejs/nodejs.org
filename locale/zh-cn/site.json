@@ -10,6 +10,8 @@
     "by": "于",
     "all-downloads": "所有下载选项",
     "nightly": "每日构建",
+    "previous": "以前",
+    "next": "下一個",
     "feeds": [
         {
             "link": "feed/blog.xml",

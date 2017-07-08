@@ -112,8 +112,7 @@ function buildLocale (source, locale) {
         refer: false
       },
       guides: {
-        pattern: 'docs/guides/!(index).md',
-        refer: false
+        pattern: 'docs/guides/!(index).md'
       }
     }))
     .use(pagination({

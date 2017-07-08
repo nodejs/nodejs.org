@@ -11,6 +11,8 @@
     "all-downloads": "모든 다운로드 보기",
     "nightly": "나이틀리 빌드",
     "chakracore-nightly": "Node-ChakraCore 나이틀리 빌드",
+    "previous": "너무 이른",
+    "next": "다음 것",
     "feeds": [
         {
             "link": "feed/blog.xml",

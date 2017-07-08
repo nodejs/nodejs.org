@@ -11,6 +11,8 @@
     "all-downloads": "All download options",
     "nightly": "Nightly builds",
     "chakracore-nightly": "Node-ChakraCore Nightly builds",
+    "previous": "Previous",
+    "next": "Next",
     "feeds": [
         {
             "link": "feed/blog.xml",
