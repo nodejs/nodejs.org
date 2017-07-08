@@ -75,6 +75,11 @@
         <p>
           {{{ labels.version-schedule-prompt }}} <a href="https://github.com/nodejs/LTS#lts-schedule1">{{ labels.version-schedule-prompt-link-text }}.</a>
         </p>
+        {{#if labels.newsletter }}
+        <p>
+          {{{ labels.newsletter-prefix }}} <a href="https://newsletter.nodejs.org/">Node.js Everywhere</a>{{{ labels.newsletter-postfix }}}
+        </p>
+        {{/if}}
       </div>
 
     </div>
