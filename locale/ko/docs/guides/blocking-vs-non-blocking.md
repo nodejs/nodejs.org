@@ -240,11 +240,11 @@ execute in the correct order is:
 
 ```js
 const fs = require('fs');
-fs.readFile('/file.md', (err, data) => {
-  if (err) throw err;
+fs.readFile('/file.md', (readFileErr, data) => {
+  if (readFileErr) throw readFileErr;
   console.log(data);
-  fs.unlink('/file.md', (err) => {
-    if (err) throw err;
+  fs.unlink('/file.md', (unlinkErr) => {
+    if (unlinkErr) throw unlinkErr;
   });
 });
 ```
@@ -256,11 +256,11 @@ fs.readFile('/file.md', (err, data) => {
 
 ```js
 const fs = require('fs');
-fs.readFile('/file.md', (err, data) => {
-  if (err) throw err;
+fs.readFile('/file.md', (readFileErr, data) => {
+  if (readFileErr) throw readFileErr;
   console.log(data);
-  fs.unlink('/file.md', (err) => {
-    if (err) throw err;
+  fs.unlink('/file.md', (unlinkErr) => {
+    if (unlinkErr) throw unlinkErr;
   });
 });
 ```

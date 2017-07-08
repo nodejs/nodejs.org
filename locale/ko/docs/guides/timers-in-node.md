@@ -54,8 +54,8 @@ arguments may also be included and these will be passed on to the function. Here
 is an example of that:
 
 ```js
-function myFunc (arg) {
-  console.log('arg was => ' + arg);
+function myFunc(arg) {
+  console.log(`arg was => ${arg}`);
 }
 
 setTimeout(myFunc, 1500, 'funky');
@@ -73,8 +73,8 @@ setTimeout(myFunc, 1500, 'funky');
 부가적인 인자를 더 전달할 수도 있는데 이는 함수로 전달될 것입니다. 다음은 그 예제입니다.
 
 ```js
-function myFunc (arg) {
-  console.log('arg was => ' + arg);
+function myFunc(arg) {
+  console.log(`arg was => ${arg}`);
 }
 
 setTimeout(myFunc, 1500, 'funky');
@@ -207,7 +207,7 @@ that may hold on to the event loop, and therefore should be treated as an
 approximate delay. See the below example:
 
 ```js
-function intervalFunc () {
+function intervalFunc() {
   console.log('Cant stop me now!');
 }
 
@@ -229,7 +229,7 @@ can be used to reference and modify the interval that was set.
 보장되지 않습니다. 그러므로 대략적인 지연시간으로 생각해야 합니다. 아래 예시를 보겠습니다.
 
 ```js
-function intervalFunc () {
+function intervalFunc() {
   console.log('Cant stop me now!');
 }
 
@@ -252,15 +252,15 @@ that object will be halted completely. The respective functions are
 below for an example of each:
 
 ```js
-let timeoutObj = setTimeout(() => {
+const timeoutObj = setTimeout(() => {
   console.log('timeout beyond time');
 }, 1500);
 
-let immediateObj = setImmediate(() => {
+const immediateObj = setImmediate(() => {
   console.log('immediately executing immediate');
 });
 
-let intervalObj = setInterval(() => {
+const intervalObj = setInterval(() => {
   console.log('interviewing the interval');
 }, 500);
 
@@ -279,15 +279,15 @@ clearInterval(intervalObj);
 `clearInterval()`입니다. 각 예제는 아래에 나와 있습니다.
 
 ```js
-let timeoutObj = setTimeout(() => {
+const timeoutObj = setTimeout(() => {
   console.log('timeout beyond time');
 }, 1500);
 
-let immediateObj = setImmediate(() => {
+const immediateObj = setImmediate(() => {
   console.log('immediately executing immediate');
 });
 
-let intervalObj = setInterval(() => {
+const intervalObj = setInterval(() => {
   console.log('interviewing the interval');
 }, 500);
 
@@ -314,7 +314,7 @@ not *exactly* restore the initial behavior for performance reasons. See
 below for examples of both:
 
 ```js
-let timerObj = setTimeout(() => {
+const timerObj = setTimeout(() => {
   console.log('will i run?');
 });
 
@@ -344,7 +344,7 @@ setImmediate(() => {
 아래의 예제를 보겠습니다.
 
 ```js
-let timerObj = setTimeout(() => {
+const timerObj = setTimeout(() => {
   console.log('will i run?');
 });
 

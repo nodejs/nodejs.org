@@ -58,9 +58,9 @@ tick 프로파일러의 사용방법을 설명하기 위해 간단한 Express �
 
 <!--
 ```javascript
-app.get('/newUser', function (req, res) {
-  var username = req.query.username || '';
-  var password = req.query.password || '';
+app.get('/newUser', (req, res) => {
+  let username = req.query.username || '';
+  const password = req.query.password || '';
 
   username = username.replace(/[!@#$%^&*]/g, '');
 
@@ -68,13 +68,10 @@ app.get('/newUser', function (req, res) {
     return res.sendStatus(400);
   }
 
-  var salt = crypto.randomBytes(128).toString('base64');
-  var hash = crypto.pbkdf2Sync(password, salt, 10000, 512);
+  const salt = crypto.randomBytes(128).toString('base64');
+  const hash = crypto.pbkdf2Sync(password, salt, 10000, 512);
 
-  users[username] = {
-    salt: salt,
-    hash: hash
-  };
+  users[username] = { salt, hash };
 
   res.sendStatus(200);
 });
@@ -84,9 +81,9 @@ and another for validating user authentication attempts:
 -->
 
 ```javascript
-app.get('/newUser', function (req, res) {
-  var username = req.query.username || '';
-  var password = req.query.password || '';
+app.get('/newUser', (req, res) => {
+  let username = req.query.username || '';
+  const password = req.query.password || '';
 
   username = username.replace(/[!@#$%^&*]/g, '');
 
@@ -94,13 +91,10 @@ app.get('/newUser', function (req, res) {
     return res.sendStatus(400);
   }
 
-  var salt = crypto.randomBytes(128).toString('base64');
-  var hash = crypto.pbkdf2Sync(password, salt, 10000, 512);
+  const salt = crypto.randomBytes(128).toString('base64');
+  const hash = crypto.pbkdf2Sync(password, salt, 10000, 512);
 
-  users[username] = {
-    salt: salt,
-    hash: hash
-  };
+  users[username] = { salt, hash };
 
   res.sendStatus(200);
 });
@@ -110,9 +104,9 @@ app.get('/newUser', function (req, res) {
 
 <!--
 ```javascript
-app.get('/auth', function (req, res) {
-  var username = req.query.username || '';
-  var password = req.query.password || '';
+app.get('/auth', (req, res) => {
+  let username = req.query.username || '';
+  const password = req.query.password || '';
 
   username = username.replace(/[!@#$%^&*]/g, '');
 
@@ -120,7 +114,7 @@ app.get('/auth', function (req, res) {
     return res.sendStatus(400);
   }
 
-  var hash = crypto.pbkdf2Sync(password, users[username].salt, 10000, 512);
+  const hash = crypto.pbkdf2Sync(password, users[username].salt, 10000, 512);
 
   if (users[username].hash.toString() === hash.toString()) {
     res.sendStatus(200);
@@ -132,9 +126,9 @@ app.get('/auth', function (req, res) {
 -->
 
 ```javascript
-app.get('/auth', function (req, res) {
-  var username = req.query.username || '';
-  var password = req.query.password || '';
+app.get('/auth', (req, res) => {
+  let username = req.query.username || '';
+  const password = req.query.password || '';
 
   username = username.replace(/[!@#$%^&*]/g, '');
 
@@ -142,7 +136,7 @@ app.get('/auth', function (req, res) {
     return res.sendStatus(400);
   }
 
-  var hash = crypto.pbkdf2Sync(password, users[username].salt, 10000, 512);
+  const hash = crypto.pbkdf2Sync(password, users[username].salt, 10000, 512);
 
   if (users[username].hash.toString() === hash.toString()) {
     res.sendStatus(200);
@@ -436,9 +430,9 @@ To remedy this issue, you make a small modification to the above handlers to use
 the asynchronous version of the pbkdf2 function:
 
 ```javascript
-app.get('/auth', function (req, res) {
-  var username = req.query.username || '';
-  var password = req.query.password || '';
+app.get('/auth', (req, res) => {
+  let username = req.query.username || '';
+  const password = req.query.password || '';
 
   username = username.replace(/[!@#$%^&*]/g, '');
 
@@ -446,7 +440,7 @@ app.get('/auth', function (req, res) {
     return res.sendStatus(400);
   }
 
-  crypto.pbkdf2(password, users[username].salt, 10000, 512, function(err, hash) {
+  crypto.pbkdf2(password, users[username].salt, 10000, 512, (err, hash) => {
     if (users[username].hash.toString() === hash.toString()) {
       res.sendStatus(200);
     } else {
@@ -460,9 +454,9 @@ app.get('/auth', function (req, res) {
 이 이슈를 처리하려면 pdkdf2 함수의 비동기 버전을 사용하도록 핸들러를 수정하면 됩니다.
 
 ```javascript
-app.get('/auth', function (req, res) {
-  var username = req.query.username || '';
-  var password = req.query.password || '';
+app.get('/auth', (req, res) => {
+  let username = req.query.username || '';
+  const password = req.query.password || '';
 
   username = username.replace(/[!@#$%^&*]/g, '');
 
@@ -470,7 +464,7 @@ app.get('/auth', function (req, res) {
     return res.sendStatus(400);
   }
 
-  crypto.pbkdf2(password, users[username].salt, 10000, 512, function(err, hash) {
+  crypto.pbkdf2(password, users[username].salt, 10000, 512, (err, hash) => {
     if (users[username].hash.toString() === hash.toString()) {
       res.sendStatus(200);
     } else {

@@ -40,7 +40,7 @@ Docker를 사용하면 애플리케이션과 모든 의존성을 소프트웨어
 First, create a new directory where all the files would live. In this directory
 create a `package.json` file that describes your app and its dependencies:
 
-```javascript
+```json
 {
   "name": "docker_web_app",
   "version": "1.0.0",
@@ -62,7 +62,7 @@ create a `package.json` file that describes your app and its dependencies:
 우선, 모든 파일을 넣은 새로운 디렉터리를 만들겠습니다. 이 디렉터리 안에 애플리케이션과 의존성을
 알려주는 `package.json` 파일을 생성하겠습니다.
 
-```javascript
+```json
 {
   "name": "docker_web_app",
   "version": "1.0.0",
@@ -93,12 +93,12 @@ const HOST = '0.0.0.0';
 
 // App
 const app = express();
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.send('Hello world\n');
 });
 
 app.listen(PORT, HOST);
-console.log('Running on http://' + HOST + ':' + PORT);
+console.log(`Running on http://${HOST}:${PORT}`);
 ```
 
 In the next steps, we'll look at how you can run this app inside a Docker
@@ -119,12 +119,12 @@ const HOST = '0.0.0.0';
 
 // 앱
 const app = express();
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.send('Hello world\n');
 });
 
 app.listen(PORT, HOST);
-console.log('Running on http://' + HOST + ':' + PORT);
+console.log(`Running on http://${HOST}:${PORT}`);
 ```
 
 다음 단계에서 공식 Docker 이미지를 사용해서 Docker 컨테이너 안에서 이 앱을 실행하는 방법을

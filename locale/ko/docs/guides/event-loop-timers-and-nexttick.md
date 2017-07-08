@@ -204,34 +204,30 @@ _**Note**: 기술적으로는 [**poll** 단계](#poll)에서 타이머를 언제
 
 <!--
 ```js
+const fs = require('fs');
 
-var fs = require('fs');
-
-function someAsyncOperation (callback) {
+function someAsyncOperation(callback) {
   // Assume this takes 95ms to complete
   fs.readFile('/path/to/file', callback);
 }
 
-var timeoutScheduled = Date.now();
+const timeoutScheduled = Date.now();
 
-setTimeout(function () {
+setTimeout(() => {
+  const delay = Date.now() - timeoutScheduled;
 
-  var delay = Date.now() - timeoutScheduled;
-
-  console.log(delay + "ms have passed since I was scheduled");
+  console.log(`${delay}ms have passed since I was scheduled`);
 }, 100);
 
 
 // do someAsyncOperation which takes 95 ms to complete
-someAsyncOperation(function () {
-
-  var startCallback = Date.now();
+someAsyncOperation(() => {
+  const startCallback = Date.now();
 
   // do something that will take 10ms...
   while (Date.now() - startCallback < 10) {
-    ; // do nothing
+    // do nothing
   }
-
 });
 ```
 
@@ -255,34 +251,30 @@ more events.
 -->
 
 ```js
+const fs = require('fs');
 
-var fs = require('fs');
-
-function someAsyncOperation (callback) {
+function someAsyncOperation(callback) {
   // 이 작업이 완료되는데 95ms가 걸린다고 가정합니다.
   fs.readFile('/path/to/file', callback);
 }
 
-var timeoutScheduled = Date.now();
+const timeoutScheduled = Date.now();
 
-setTimeout(function () {
+setTimeout(() => {
+  const delay = Date.now() - timeoutScheduled;
 
-  var delay = Date.now() - timeoutScheduled;
-
-  console.log(delay + "ms have passed since I was scheduled");
+  console.log(`${delay}ms have passed since I was scheduled`);
 }, 100);
 
 
 // 완료하는데 95ms가 걸리는 someAsyncOperation를 실행합니다.
-someAsyncOperation(function () {
-
-  var startCallback = Date.now();
+someAsyncOperation(() => {
+  const startCallback = Date.now();
 
   // 10ms가 걸릴 어떤 작업을 합니다.
   while (Date.now() - startCallback < 10) {
-    ; // 아무것도 하지 않습니다.
+    // 아무것도 하지 않습니다.
   }
-
 });
 ```
 
@@ -459,11 +451,11 @@ process:
 <!--
 ```js
 // timeout_vs_immediate.js
-setTimeout(function timeout () {
+setTimeout(() => {
   console.log('timeout');
-},0);
+}, 0);
 
-setImmediate(function immediate () {
+setImmediate(() => {
   console.log('immediate');
 });
 ```
@@ -483,16 +475,16 @@ callback is always executed first:
 
 ```js
 // timeout_vs_immediate.js
-var fs = require('fs')
+const fs = require('fs');
 
 fs.readFile(__filename, () => {
   setTimeout(() => {
-    console.log('timeout')
-  }, 0)
+    console.log('timeout');
+  }, 0);
   setImmediate(() => {
-    console.log('immediate')
-  })
-})
+    console.log('immediate');
+  });
+});
 ```
 
 ```
@@ -512,11 +504,11 @@ within an I/O cycle, independently of how many timers are present.
 
 ```js
 // timeout_vs_immediate.js
-setTimeout(function timeout () {
+setTimeout(() => {
   console.log('timeout');
-},0);
+}, 0);
 
-setImmediate(function immediate () {
+setImmediate(() => {
   console.log('immediate');
 });
 ```
@@ -535,16 +527,16 @@ timeout
 
 ```js
 // timeout_vs_immediate.js
-var fs = require('fs')
+const fs = require('fs');
 
 fs.readFile(__filename, () => {
   setTimeout(() => {
-    console.log('timeout')
-  }, 0)
+    console.log('timeout');
+  }, 0);
   setImmediate(() => {
-    console.log('immediate')
-  })
-})
+    console.log('immediate');
+  });
+});
 ```
 
 ```
@@ -603,10 +595,10 @@ design philosophy where an API should always be asynchronous even where
 it doesn't have to be. Take this code snippet for example:
 
 ```js
-function apiCall (arg, callback) {
+function apiCall(arg, callback) {
   if (typeof arg !== 'string')
     return process.nextTick(callback,
-      new TypeError('argument should be string'));
+                            new TypeError('argument should be string'));
 }
 ```
 -->
@@ -617,10 +609,10 @@ function apiCall (arg, callback) {
 설계 철학 때문입니다. 예제로 다음 코드를 보겠습니다.
 
 ```js
-function apiCall (arg, callback) {
+function apiCall(arg, callback) {
   if (typeof arg !== 'string')
     return process.nextTick(callback,
-      new TypeError('argument should be string'));
+                            new TypeError('argument should be string'));
 }
 ```
 
@@ -658,18 +650,18 @@ This philosophy can lead to some potentially problematic situations.
 Take this snippet for example:
 
 ```js
+let bar;
+
 // this has an asynchronous signature, but calls callback synchronously
-function someAsyncApiCall (callback) { callback(); };
+function someAsyncApiCall(callback) { callback(); }
 
 // the callback is called before `someAsyncApiCall` completes.
 someAsyncApiCall(() => {
-
   // since someAsyncApiCall has completed, bar hasn't been assigned any value
   console.log('bar', bar); // undefined
-
 });
 
-var bar = 1;
+bar = 1;
 ```
 
 The user defines `someAsyncApiCall()` to have an asynchronous signature,
@@ -691,18 +683,18 @@ allowed to continue. Here is the previous example using `process.nextTick()`:
 이 철학은 잠재적인 문제 상황을 만들 수 있습니다. 다음 예제를 보겠습니다.
 
 ```js
+let bar;
+
 // 비동기 시그니처를 갖지만, 동기로 콜백을 호출합니다.
-function someAsyncApiCall (callback) { callback(); };
+function someAsyncApiCall(callback) { callback(); }
 
 // `someAsyncApiCall`이 완료되면 콜백을 호출한다.
 someAsyncApiCall(() => {
-
   // someAsyncApiCall는 완료되었지만, bar에는 어떤 값도 할당되지 않았다.
   console.log('bar', bar); // undefined
-
 });
 
-var bar = 1;
+bar = 1;
 ```
 
 개발자가 `someAsyncApiCall()`을 비동기 시그니처로 정의했지만 실제로는 동기로 동작합니다.
@@ -718,15 +710,17 @@ var bar = 1;
 
 <!--
 ```js
-function someAsyncApiCall (callback) {
+let bar;
+
+function someAsyncApiCall(callback) {
   process.nextTick(callback);
-};
+}
 
 someAsyncApiCall(() => {
   console.log('bar', bar); // 1
 });
 
-var bar = 1;
+bar = 1;
 ```
 
 Here's another real world example:
@@ -747,15 +741,17 @@ any event handlers they want.
 -->
 
 ```js
-function someAsyncApiCall (callback) {
+let bar;
+
+function someAsyncApiCall(callback) {
   process.nextTick(callback);
-};
+}
 
 someAsyncApiCall(() => {
   console.log('bar', bar); // 1
 });
 
-var bar = 1;
+bar = 1;
 ```
 
 다음은 또 다른 예제입니다.
@@ -823,11 +819,11 @@ stack has unwound but before the event loop continues.
 One example is to match the user's expectations. Simple example:
 
 ```js
-var server = net.createServer();
-server.on('connection', function(conn) { });
+const server = net.createServer();
+server.on('connection', (conn) => { });
 
 server.listen(8080);
-server.on('listening', function() { });
+server.on('listening', () => { });
 ```
 -->
 
@@ -843,11 +839,11 @@ server.on('listening', function() { });
 한 가지 예는 사용자의 기대를 맞추는 것입니다. 다음은 간단한 예제입니다.
 
 ```js
-var server = net.createServer();
-server.on('connection', function(conn) { });
+const server = net.createServer();
+server.on('connection', (conn) => { });
 
 server.listen(8080);
-server.on('listening', function() { });
+server.on('listening', () => { });
 ```
 
 <!--
@@ -873,7 +869,7 @@ function MyEmitter() {
 util.inherits(MyEmitter, EventEmitter);
 
 const myEmitter = new MyEmitter();
-myEmitter.on('event', function() {
+myEmitter.on('event', () => {
   console.log('an event occurred!');
 });
 ```
@@ -898,7 +894,7 @@ function MyEmitter() {
 util.inherits(MyEmitter, EventEmitter);
 
 const myEmitter = new MyEmitter();
-myEmitter.on('event', function() {
+myEmitter.on('event', () => {
   console.log('an event occurred!');
 });
 ```
@@ -918,14 +914,14 @@ function MyEmitter() {
   EventEmitter.call(this);
 
   // use nextTick to emit the event once a handler is assigned
-  process.nextTick(function () {
+  process.nextTick(() => {
     this.emit('event');
-  }.bind(this));
+  });
 }
 util.inherits(MyEmitter, EventEmitter);
 
 const myEmitter = new MyEmitter();
-myEmitter.on('event', function() {
+myEmitter.on('event', () => {
   console.log('an event occurred!');
 });
 ```
@@ -946,14 +942,14 @@ function MyEmitter() {
   EventEmitter.call(this);
 
   // 핸들러가 할당되면 이벤트를 발생시키려고 nextTick을 사용합니다.
-  process.nextTick(function () {
+  process.nextTick(() => {
     this.emit('event');
-  }.bind(this));
+  });
 }
 util.inherits(MyEmitter, EventEmitter);
 
 const myEmitter = new MyEmitter();
-myEmitter.on('event', function() {
+myEmitter.on('event', () => {
   console.log('an event occurred!');
 });
 ```

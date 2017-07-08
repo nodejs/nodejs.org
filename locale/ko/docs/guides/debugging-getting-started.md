@@ -71,6 +71,7 @@ it will activate the Inspector API.
 HTTP 요청을 보내서 이 메타데이터를 받을 수 있습니다. 이는 다음과 같은 JSON 객체를 반환합니다.
 인스펙터에 직접 접속하려면 URL로 `webSocketDebuggerUrl` 프로퍼티를 사용하세요.
 
+<!-- eslint-skip -->
 ```javascript
 {
   "description": "node.js instance",
