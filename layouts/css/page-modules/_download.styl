@@ -19,16 +19,13 @@
   margin-bottom 1em
 
   ul
-    width 100%
     display flex
     list-style none
     text-align center
+    margin 0
 
   li
     display flex
-    flex-grow 2
-
-  li:first-child
     flex-basis 200px
     flex-grow 1
 
@@ -59,31 +56,31 @@
     background $active-green
     color $white
 
-.download-version-toggle
-  display flex
-  flex-wrap wrap
-  width calc(100% - 4px)
-  border 2px solid $node-green
-  background $light-green
+  .download-version-toggle
+    display flex
+    flex-wrap nowrap
 
-  a
-    margin 2px
-    padding 5px 2px
+    a
+      border-radius 0
+      padding 5px 2px
 
-  a:hover, a:active, a.is-version
-    color $white
-    background $node-green
+    a:hover, a:active, a.is-version
+      color $white
+      background $node-green
 
-  a.is-version
-    color $light-green
-    background $active-green
+    a.is-version
+      color $light-green
+      background $active-green
 
-  .title
-    font-size 1.5em
-    line-height 1
+    .title
+      font-size 1.5em
+      line-height 1
 
-  .tag
-    font-size 0.8em
+    .tag
+      font-size 0.8em
+
+  .download-platform
+    border-top 2px solid $node-green
 
 .download-matrix
   margin-bottom 1.5rem
@@ -138,14 +135,25 @@ td.download-table-last
     padding 0 10px
 
 @media (max-width: 700px)
-  .download-hero ul
-    width auto
-    display block
-    margin-bottom 1em
+  .download-hero
+    ul
+      display block
+      text-align left
 
     li
+      text-align center
       display block
-      width 100%
+
+    .download-version-toggle
+      padding-right 4px
+      display flex
+
+      li
+        display inline-block
+        flex-basis 160px
+
+      .tag
+        font-size .6em
 
   .download-matrix
     display block
@@ -201,3 +209,12 @@ td.download-table-last
 
   td.download-table-last
     text-align center
+
+
+@media (max-width: 320px)
+  .download-hero
+    .download-version-toggle
+      li
+        font-size 1em
+      .tag
+        font-size .4em
