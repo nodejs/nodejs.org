@@ -272,8 +272,8 @@ function getSource (callback) {
           lts: latestVersion.lts(versions)
         },
         banner: {
-          visible: false,
-          content: ''
+          visible: true,
+          content: 'Important <a href="https://nodejs.org/en/blog/vulnerability/july-2017-security-releases/">security releases</a>, please update now!'
         }
       }
     }
