@@ -125,7 +125,6 @@ sudo apt-get install -y build-essential
 
 **Supported Ubuntu versions:**
 
-* **Ubuntu 12.04 LTS** (Precise Pangolin)
 * **Ubuntu 14.04 LTS** (Trusty Tahr)
 * **Ubuntu 16.04 LTS** (Xenial Xerus)
 
@@ -159,7 +158,6 @@ sudo apt-get install -y build-essential
 
 **지원하는 Ubuntu 버전:**
 
-* **Ubuntu 12.04 LTS** (Precise Pangolin)
 * **Ubuntu 14.04 LTS** (Trusty Tahr)
 * **Ubuntu 16.04 LTS** (Xenial Xerus)
 
@@ -187,7 +185,6 @@ Debian Sid(unstable), Jessie(testing), Wheezy(wheezy-backports)의
 <!--
 **Supported Linux Mint versions:**
 
-* **Linux Mint 13 "Maya"** (via Ubuntu 12.04 LTS)
 * **Linux Mint 17 "Qiana"** (via Ubuntu 14.04 LTS)
 * **Linux Mint 17.1 "Rebecca"** (via Ubuntu 14.04 LTS)
 * **Linux Mint 17.2 "Rafaela"** (via Ubuntu 14.04 LTS)
@@ -195,12 +192,10 @@ Debian Sid(unstable), Jessie(testing), Wheezy(wheezy-backports)의
 
 **Supported elementary OS versions:**
 
-* **elementary OS Luna** (via Ubuntu 12.04 LTS)
 * **elementary OS Freya** (via Ubuntu 14.04 LTS)
 
 **Supported Trisquel versions:**
 
-* **Trisquel 6 "Toutatis"** (via Ubuntu 12.04 LTS)
 * **Trisquel 7 "Belenos"** (via Ubuntu 14.04 LTS)
 
 **Supported BOSS versions:**
@@ -209,7 +204,6 @@ Debian Sid(unstable), Jessie(testing), Wheezy(wheezy-backports)의
 -->
 **지원하는 Linux Mint 버전:**
 
-* **Linux Mint 13 "Maya"** (Ubuntu 12.04 LTS에서)
 * **Linux Mint 17 "Qiana"** (Ubuntu 14.04 LTS에서)
 * **Linux Mint 17.1 "Rebecca"** (Ubuntu 14.04 LTS에서)
 * **Linux Mint 17.2 "Rafaela"** (Ubuntu 14.04 LTS에서)
@@ -217,12 +211,10 @@ Debian Sid(unstable), Jessie(testing), Wheezy(wheezy-backports)의
 
 **지원하는 elementary OS 버전:**
 
-* **elementary OS Luna** (Ubuntu 12.04 LTS에서)
 * **elementary OS Freya** (Ubuntu 14.04 LTS에서)
 
 **지원하는 Trisquel 버전:**
 
-* **Trisquel 6 "Toutatis"** (Ubuntu 12.04 LTS에서)
 * **Trisquel 7 "Belenos"** (Ubuntu 14.04 LTS에서)
 
 **지원하는 BOSS 버전:**

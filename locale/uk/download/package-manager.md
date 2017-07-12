@@ -68,7 +68,6 @@ sudo apt-get install -y build-essential
 
 **Supported Ubuntu versions:**
 
-* **Ubuntu 12.04 LTS** (Precise Pangolin)
 * **Ubuntu 14.04 LTS** (Trusty Tahr)
 * **Ubuntu 16.04 LTS** (Xenial Xerus)
 
@@ -86,7 +85,6 @@ The Node.js modules available in the distribution official repositories do not n
 
 **Supported Linux Mint versions:**
 
-* **Linux Mint 13 "Maya"** (via Ubuntu 12.04 LTS)
 * **Linux Mint 17 "Qiana"** (via Ubuntu 14.04 LTS)
 * **Linux Mint 17.1 "Rebecca"** (via Ubuntu 14.04 LTS)
 * **Linux Mint 17.2 "Rafaela"** (via Ubuntu 14.04 LTS)
@@ -94,12 +92,10 @@ The Node.js modules available in the distribution official repositories do not n
 
 **Supported elementary OS versions:**
 
-* **elementary OS Luna** (via Ubuntu 12.04 LTS)
 * **elementary OS Freya** (via Ubuntu 14.04 LTS)
 
 **Supported Trisquel versions:**
 
-* **Trisquel 6 "Toutatis"** (via Ubuntu 12.04 LTS)
 * **Trisquel 7 "Belenos"** (via Ubuntu 14.04 LTS)
 
 **Supported BOSS versions:**
