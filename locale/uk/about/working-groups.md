@@ -168,7 +168,7 @@ Each language community maintains its own membership.
 * [nodejs-ja - Japanese (日本語)](https://github.com/nodejs/nodejs-ja)
 * [nodejs-ka - Georgian (ქართული)](https://github.com/nodejs/nodejs-ka)
 * [nodejs-ko - Korean (한국어)](https://github.com/nodejs/nodejs-ko)
-* [nodejs-mk - Macedonian (Mакедонски)](https://github.com/nodejs/nodejs-mk)
+* [nodejs-mk - Macedonian (Македонски)](https://github.com/nodejs/nodejs-mk)
 * [nodejs-ms - Malay (بهاس ملايو)](https://github.com/nodejs/nodejs-ms)
 * [nodejs-nl - Dutch (Nederlands)](https://github.com/nodejs/nodejs-nl)
 * [nodejs-no - Norwegian (Norsk)](https://github.com/nodejs/nodejs-no)
