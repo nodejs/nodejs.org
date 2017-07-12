@@ -68,7 +68,6 @@ sudo apt-get install -y build-essential
 
 **Versiones de Ubuntu soportadas:**
 
-* **Ubuntu 12.04 LTS** (Precise Pangolin)
 * **Ubuntu 14.04 LTS** (Trusty Tahr)
 * **Ubuntu 16.04 LTS** (Xenial Xerus)
 
@@ -86,7 +85,6 @@ Los módulos de Node.js disponibles en el repositorio de la distribución oficia
 
 **Versiones de Linux Mint soportadas:**
 
-* **Linux Mint 13 "Maya"** (mediante Ubuntu 12.04 LTS)
 * **Linux Mint 17 "Qiana"** (mediante Ubuntu 14.04 LTS)
 * **Linux Mint 17.1 "Rebecca"** (mediante Ubuntu 14.04 LTS)
 * **Linux Mint 17.2 "Rafaela"** (mediante Ubuntu 14.04 LTS)
@@ -94,12 +92,10 @@ Los módulos de Node.js disponibles en el repositorio de la distribución oficia
 
 **Versiones de elementary OS soportadas:**
 
-* **elementary OS Luna** (mediante Ubuntu 12.04 LTS)
 * **elementary OS Freya** (mediante Ubuntu 14.04 LTS)
 
 **Versiones de Trisquel soportadas:**
 
-* **Trisquel 6 "Toutatis"** (mediante Ubuntu 12.04 LTS)
 * **Trisquel 7 "Belenos"** (mediante Ubuntu 14.04 LTS)
 
 **Versiones de BOSS soportadas:**
