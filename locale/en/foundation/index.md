@@ -10,6 +10,10 @@ newsletter:
 
 The Node.js Foundation's mission is to enable widespread adoption and help accelerate development of Node.js and other related modules through an open governance model that encourages participation, technical contribution, and a framework for long term stewardship by an ecosystem invested in Node.js' success.
 
+## Forrester Report: Digital Transformation Using Node.js
+
+Forrester's November 2016 report details five common use cases around Node.js and how it can underpin digital transformation.. [Read the full report here](https://reprints.forrester.com/#/assets/2/796/RES135952/reports) 
+
 ## Join our webinar July 12
 
 Join Node.js Foundation Executive Director Mark Hinkle and Node.js user Rick Adams, Senior IT Manager at Lowe's Digital for a Forrester Research Webinar on July 12. They will talk about how Node.js enables digital transformation and business process improvement. [Register here](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&partnerref=nodejs&eventid=1440549&sessionid=1&key=7DE2249594D6A35008CAAA23B68BC7D3&regTag=&sourcepage=register) 
