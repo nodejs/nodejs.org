@@ -10,6 +10,8 @@
     "by": "від",
     "all-downloads": "Всі варіанти завантажень",
     "nightly": "Нічні збірки",
+    "previous": "Попередній",
+    "next": "Далі",
     "feeds": [
         {
             "link": "feed/blog.xml",

@@ -10,6 +10,8 @@
     "by": "by",
     "all-downloads": "All download options",
     "nightly": "Nightly builds",
+    "previous": "前",
+    "next": "次",
     "feeds": [
         {
             "link": "feed/blog.xml",
