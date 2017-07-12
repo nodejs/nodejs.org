@@ -535,7 +535,7 @@ Hopefully, you will now be able to troubleshoot, safely code your own
 your knowledge with colleagues and friends.
 
 Be sure to read up more on [`Stream`][] for other API functions to help
-improve unleash your streaming capabilities when building an applcation with
+improve and unleash your streaming capabilities when building an application with
 Node.js.
 
 
