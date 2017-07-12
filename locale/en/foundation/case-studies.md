@@ -4,7 +4,7 @@ layout: foundation.hbs
 ---
 ## Forrester Report: Digital Transformation Using Node.js
 
-Forrester's November 2016 report details five common use cases around Node.js and how it can underpin digital transformation.
+Forrester's November 2016 report details five common use cases around Node.js and how it can underpin digital transformation
 
 * [Read the full report here](https://reprints.forrester.com/#/assets/2/796/RES135952/reports)
 
