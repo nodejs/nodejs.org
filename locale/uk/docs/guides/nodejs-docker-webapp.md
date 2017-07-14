@@ -103,6 +103,11 @@ COPY package.json /usr/src/app/
 RUN npm install
 ```
 
+Note that, rather than copying the entire working directory, we are only copying
+the `package.json` file. This allows us to take advantage of cached Docker
+layers. bitJudo has a good explanation of this
+[here](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/).
+
 To bundle your app's source code inside the Docker image, use the `COPY`
 instruction:
 
