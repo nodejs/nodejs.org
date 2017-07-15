@@ -114,19 +114,19 @@ Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the **[EP
 Run as root on RHEL, CentOS or Fedora, for Node.js v6 LTS:
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+curl --silent --location https://rpm.nodesource.com/setup_6.x | sudo bash -
 ```
 
 Alternatively for Node.js 8:
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_8.x | bash -
+curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
 ```
 
 Alternatively for Node.js 0.10:
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup | bash -
+curl --silent --location https://rpm.nodesource.com/setup | sudo bash -
 ```
 
 Then install, as root:
