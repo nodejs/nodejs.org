@@ -126,7 +126,7 @@ curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
 Then install, as root:
 
 ```bash
-yum -y install nodejs
+sudo yum -y install nodejs
 ```
 
 ***Optional***: install build tools
@@ -134,8 +134,8 @@ yum -y install nodejs
 To compile and install native addons from npm you may also need to install build tools:
 
 ```bash
-yum install gcc-c++ make
-# or: yum groupinstall 'Development Tools'
+sudo yum install gcc-c++ make
+# or: sudo yum groupinstall 'Development Tools'
 ```
 
 **Available architectures:**
@@ -326,7 +326,7 @@ For example, to install Node.js 4.x on openSUSE Leap 42.2, run the following as 
 zypper install nodejs4
 ```
 
-## OSX
+## macOS
 
 Simply download the [Macintosh Installer](http://nodejs.org/#download) direct from the [nodejs.org](http://nodejs.org) web site.
 
