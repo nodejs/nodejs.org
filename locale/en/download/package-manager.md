@@ -111,7 +111,7 @@ Node.js is available from the [NodeSource](https://nodesource.com) Enterprise Li
 
 Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the **[EPEL](https://fedoraproject.org/wiki/EPEL)** repository being available. The setup script will check and provide instructions if it is not installed.
 
-Run as root on RHEL, CentOS or Fedora, for Node.js v6 LTS:
+**Run as root** on RHEL, CentOS or Fedora, for Node.js v6 LTS:
 
 ```bash
 curl --silent --location https://rpm.nodesource.com/setup_6.x | sudo bash -
