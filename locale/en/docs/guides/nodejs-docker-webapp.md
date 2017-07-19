@@ -90,7 +90,6 @@ will be the working directory for your application:
 
 ```docker
 # Create app directory
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 ```
 
@@ -99,7 +98,7 @@ need to do is to install your app dependencies using the `npm` binary:
 
 ```docker
 # Install app dependencies
-COPY package.json /usr/src/app/
+COPY package.json ./
 RUN npm install
 ```
 
@@ -108,7 +107,7 @@ instruction:
 
 ```docker
 # Bundle app source
-COPY . /usr/src/app
+COPY . .
 ```
 
 Your app binds to port `8080` so you'll use the `EXPOSE` instruction to have it
@@ -132,15 +131,14 @@ Your `Dockerfile` should now look like this:
 FROM node:boron
 
 # Create app directory
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Install app dependencies
-COPY package.json /usr/src/app/
+COPY package.json ./
 RUN npm install
 
 # Bundle app source
-COPY . /usr/src/app
+COPY . .
 
 EXPOSE 8080
 CMD [ "npm", "start" ]
