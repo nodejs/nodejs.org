@@ -6,7 +6,7 @@
     "scrollToTop": "Faire défiler en haut",
     "reportNodeIssue": "Rapporter un problème Node.js",
     "reportWebsiteIssue": "Rapporter un problème sur le site web",
-    "getHelpIssue": "Obtenir de l'aide",
+    "getHelpIssue": "Obtenir de l’aide",
     "by": "par",
     "all-downloads": "Toutes les options de téléchargement",
     "nightly": "Versions quotidiennes",
@@ -137,7 +137,7 @@
     },
     "getinvolved": {
         "link": "get-involved",
-        "text": "S'impliquer",
+        "text": "S’impliquer",
         "code-and-learn": {
             "link": "get-involved/code-and-learn",
             "text": "Coder + Apprendre"
@@ -152,7 +152,7 @@
         },
         "events": {
           "link": "get-involved/events",
-          "text": "Évènements"
+          "text": "Événements"
         },
         "conduct": {
             "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
