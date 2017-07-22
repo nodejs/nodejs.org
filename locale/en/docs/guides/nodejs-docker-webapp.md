@@ -101,8 +101,7 @@ note that if you are using `npm` version 5 or later you will also want to copy
 
 ```docker
 # Install app dependencies
-COPY package.json /usr/src/app/
-COPY package-lock.json /usr/src/app/
+COPY package.json package-lock.json /usr/src/app/
 RUN npm install
 ```
 
