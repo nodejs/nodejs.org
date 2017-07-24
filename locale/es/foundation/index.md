@@ -41,12 +41,21 @@ y que proveé un marco para la administración a largo plazo de un ecosistema qu
 - [Certificado de incorporación](http://f.cl.ly/items/2b1b1o0v1e1u2i1L2w1a/nodejs-foundation-certificate-of-incorporation-2014-august-01.pdf)
 - [Directrices de Marcas](https://nodejs.org/static/documents/trademark-policy.pdf)
 
-## Minutas de las reuniones de la junta
+## Director Resumen Ejecutivo de la Reunión de la Junta
+- [2017-06-27](https://github.com/nodejs/board/blob/master/exec-summary/nodejs-foundation-exec-summary-2017-06-27.md)
+
+## Minutas de las Reuniones de la Junta
 - [2015-07-27](/static/documents/minutes/nodejs-foundation-board-meeting-2015-07-27.pdf)
 - [2015-08-31](/static/documents/minutes/nodejs-foundation-board-meeting-2015-08-31.pdf)
 - [2015-09-28](/static/documents/minutes/nodejs-foundation-board-meeting-2015-09-28.pdf)
 - [2015-11-02](/static/documents/minutes/nodejs-foundation-board-meeting-2015-11-02.pdf)
 - [2016-02-29](/static/documents/minutes/nodejs-foundation-board-meeting-2016-02-29.pdf)
+- [2016-04-25](/static/documents/minutes/nodejs-foundation-board-meeting-2016-04-25.pdf)
+- [2016-05-31](/static/documents/minutes/nodejs-foundation-board-meeting-2016-05-31.pdf)
+- [2016-06-27](/static/documents/minutes/nodejs-foundation-board-meeting-2016-06-27.pdf)
+- [2016-08-29](/static/documents/minutes/nodejs-foundation-board-meeting-2016-08-29.pdf)
+- [2016-09-15](/static/documents/minutes/nodejs-foundation-board-meeting-2016-09-15.pdf)
+- [2016-10-31](/static/documents/minutes/nodejs-foundation-board-meeting-2016-10-31.pdf)
 
 ## Contacto
 

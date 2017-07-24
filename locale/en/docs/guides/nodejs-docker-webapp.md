@@ -94,13 +94,20 @@ WORKDIR /usr/src/app
 ```
 
 This image comes with Node.js and NPM already installed so the next thing we
-need to do is to install your app dependencies using the `npm` binary:
+need to do is to install your app dependencies using the `npm` binary. Please
+note that if you are using `npm` version 5 or later you will also want to copy
+`package-lock.json`:
 
 ```docker
 # Install app dependencies
-COPY package.json ./
+COPY package.json package-lock.json .
 RUN npm install
 ```
+
+Note that, rather than copying the entire working directory, we are only copying
+the `package.json` file. This allows us to take advantage of cached Docker
+layers. bitJudo has a good explanation of this
+[here](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/).
 
 To bundle your app's source code inside the Docker image, use the `COPY`
 instruction:
@@ -134,7 +141,7 @@ FROM node:boron
 WORKDIR /usr/src/app
 
 # Install app dependencies
-COPY package.json ./
+COPY package.json package-lock.json .
 RUN npm install
 
 # Bundle app source
