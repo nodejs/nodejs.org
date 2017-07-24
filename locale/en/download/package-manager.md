@@ -123,7 +123,7 @@ Alternatively for Node.js 8:
 curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
 ```
 
-Then install, as root:
+Then install:
 
 ```bash
 sudo yum -y install nodejs
