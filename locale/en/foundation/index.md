@@ -12,11 +12,11 @@ The Node.js Foundation's mission is to enable widespread adoption and help accel
 
 ## Forrester Report: Digital Transformation Using Node.js
 
-Forrester's November 2016 report details five common use cases around Node.js and how it can underpin digital transformation. [Read the full report here](https://reprints.forrester.com/#/assets/2/796/RES135952/reports) 
+Forrester's November 2016 report details five common use cases around Node.js and how it can underpin digital transformation. [Read the full report here](https://reprints.forrester.com/#/assets/2/796/RES135952/reports)
 
 ## Join our webinar July 12
 
-Join Node.js Foundation Executive Director Mark Hinkle and Node.js user Rick Adams, Senior IT Manager at Lowe's Digital for a Forrester Research Webinar on July 12. They will talk about how Node.js enables digital transformation and business process improvement. [Register here](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&partnerref=nodejs&eventid=1440549&sessionid=1&key=7DE2249594D6A35008CAAA23B68BC7D3&regTag=&sourcepage=register) 
+Join Node.js Foundation Executive Director Mark Hinkle and Node.js user Rick Adams, Senior IT Manager at Lowe's Digital for a Forrester Research Webinar on July 12. They will talk about how Node.js enables digital transformation and business process improvement. [Register here](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&partnerref=nodejs&eventid=1440549&sessionid=1&key=7DE2249594D6A35008CAAA23B68BC7D3&regTag=&sourcepage=register)
 
 ## Overview
 
@@ -49,6 +49,9 @@ Join Node.js Foundation Executive Director Mark Hinkle and Node.js user Rick Ada
 - [Membership Agreement](http://f.cl.ly/items/0N1m3x0I3S2L203M1h1r/nodejs-foundation-membership-agreement-2015-march-04.pdf)
 - [Certificate of Incorporation](http://f.cl.ly/items/2b1b1o0v1e1u2i1L2w1a/nodejs-foundation-certificate-of-incorporation-2014-august-01.pdf)
 - [Trademark Guidelines](https://nodejs.org/static/documents/trademark-policy.pdf)
+
+## Executive Director Summary of Board Meeting
+- [2017-06-27](https://github.com/nodejs/board/blob/master/exec-summary/nodejs-foundation-exec-summary-2017-06-27.md)
 
 ## Board Meeting Minutes
 - [2015-07-27](/static/documents/minutes/nodejs-foundation-board-meeting-2015-07-27.pdf)
