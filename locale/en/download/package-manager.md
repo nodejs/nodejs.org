@@ -111,28 +111,22 @@ Node.js is available from the [NodeSource](https://nodesource.com) Enterprise Li
 
 Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the **[EPEL](https://fedoraproject.org/wiki/EPEL)** repository being available. The setup script will check and provide instructions if it is not installed.
 
-Run as root on RHEL, CentOS or Fedora, for Node.js v6 LTS:
+On RHEL, CentOS or Fedora, for Node.js v6 LTS:
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+curl --silent --location https://rpm.nodesource.com/setup_6.x | sudo bash -
 ```
 
 Alternatively for Node.js 8:
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_8.x | bash -
+curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
 ```
 
-Alternatively for Node.js 0.10:
+Then install:
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup | bash -
-```
-
-Then install, as root:
-
-```bash
-yum -y install nodejs
+sudo yum -y install nodejs
 ```
 
 ***Optional***: install build tools
@@ -140,8 +134,8 @@ yum -y install nodejs
 To compile and install native addons from npm you may also need to install build tools:
 
 ```bash
-yum install gcc-c++ make
-# or: yum groupinstall 'Development Tools'
+sudo yum install gcc-c++ make
+# or: sudo yum groupinstall 'Development Tools'
 ```
 
 **Available architectures:**
@@ -332,7 +326,7 @@ For example, to install Node.js 4.x on openSUSE Leap 42.2, run the following as 
 zypper install nodejs4
 ```
 
-## OSX
+## macOS
 
 Simply download the [Macintosh Installer](http://nodejs.org/#download) direct from the [nodejs.org](http://nodejs.org) web site.
 
