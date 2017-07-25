@@ -14,9 +14,9 @@ The Node.js Foundation's mission is to enable widespread adoption and help accel
 
 Forrester's November 2016 report details five common use cases around Node.js and how it can underpin digital transformation. [Read the full report here](https://reprints.forrester.com/#/assets/2/796/RES135952/reports)
 
-## Join our webinar July 12
+## On-demand Forrester Research Webinar on Digital Transformation
 
-Join Node.js Foundation Executive Director Mark Hinkle and Node.js user Rick Adams, Senior IT Manager at Lowe's Digital for a Forrester Research Webinar on July 12. They will talk about how Node.js enables digital transformation and business process improvement. [Register here](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&partnerref=nodejs&eventid=1440549&sessionid=1&key=7DE2249594D6A35008CAAA23B68BC7D3&regTag=&sourcepage=register)
+Check out to our recent webinar on Digital Transformation with Node.js featuring Mark Hinkle, Executive Director for the Node.js Foundation, and Rick Adams, Senior Manager -IT Solutions at Lowe's. [Watch Now](http://go.linuxfoundation.org/e/6342/tal-transformation-with-nodejs/3vwsts/807272559) or [Download the Slides](http://go.linuxfoundation.org/e/6342/ion-nodejs-slides-20170712-pdf/3vwstv/807272559)
 
 ## Overview
 
