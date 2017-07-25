@@ -96,6 +96,9 @@ Node.js Foundation відкритий для бізнесу та окремих 
 <a target="_new" class="imagelink" href="//yld.io">
   <img alt="yld!" class="memberlogo" src="/static/images/foundation/yldLogo.png" />
 </a>
+<a target="_new" class="imagelink" href="https://safetyculture.com/">
+  <img alt="SafetyCulture" class="memberlogo" src="/static/images/foundation/safetycultureLogo.png" />
+</a>
 </div>
 
 Для запиту інформації стосовно приєднання до Node.js Foundation, пишіть за адресою:

@@ -106,7 +106,10 @@ Individual membership costs [$100 a year, or $25 for students](https://identity.
   <img alt="Yahoo!" class="memberlogo" src="/static/images/foundation/yahoo.png" />
 </a>
 <a target="_new" class="imagelink" href="//yld.io">
-  <img alt="yld!" class="memberlogo" src="/static/images/foundation/yldLogo.png" />
+  <img alt="yld" class="memberlogo" src="/static/images/foundation/yldLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="https://safetyculture.com/">
+  <img alt="SafetyCulture" class="memberlogo" src="/static/images/foundation/safetycultureLogo.png" />
 </a>
 </div>
 
