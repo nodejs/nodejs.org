@@ -14,20 +14,11 @@ Join Mark Hinkle and guest Rick Adams from Lowe's Digital on July 12 for a live 
 
 * [Register here](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&partnerref=nodejs&eventid=1440549&sessionid=1&key=7DE2249594D6A35008CAAA23B68BC7D3&regTag=&sourcepage=register)
 
-## Node.js Foundation Survey Results
+## Node.js Foundation 2017 Survey Results
 
-With over 3.5 million users and an annual growth rate of 100 percent, Node.js
-is emerging as a universal platform used for web applications, IoT, and
-enterprise. The Node.js User Survey report features insights on emerging trends
-happening in this massive community that serves as a leading indicator on
-trends like microservices architectures, real-time web applications, Internet
-of Things (IoT). The report paints a detailed picture of the technologies that
-are being used, in particular, with Node.js in production and language
-preferences (current and future) for front end, back end and IoT developers.
+The primary objective of the research was to profile Node.js users, understand usage patterns and trends and identify potential areas of improvement. With over 8 million Node.js instances online, three in four users are planning to increase their use of Node.js in the next 12 months. Many are learning Node.js in a foreign language with China being the second largest population outside of the U.S. using Node. Want to get a better understanding on how people are using and learning Node.js?
 
-* [Read the full announcement.](/en/blog/announcements/nodejs-foundation-survey/)
-* [See the infographic.](/static/documents/2016-survey-infographic.png)
-* <a href="/static/documents/2016-survey-report.pdf" data-casestudy="Node.js 2016 Report">Read the full report.</a>
+* <a href="/static/documents/casestudies/Nodejs_2017_User_Survey_Exec_Summary.pdf">Read the full report.</a>
 
 ## Presentation - The Enterprise Case for Node.js
 The Node.js Foundation has consolidated all the best thinking around why enterprises should consider Node.js for their systems of engagement in this short presentation.
