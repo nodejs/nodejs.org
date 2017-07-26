@@ -8,11 +8,9 @@ Forrester's November 2016 report details five common use cases around Node.js an
 
 * [Read the full report here](https://reprints.forrester.com/#/assets/2/796/RES135952/reports)
 
-## Join Node.js Foundation Executive Director and Lowe's Digital for a Forrester Research Webinar
+## On-demand Forrester Research Webinar on Digital Transformation
 
-Join Mark Hinkle and guest Rick Adams from Lowe's Digital on July 12 for a live Forrester Research webinar on how Node.js helps drive digital transformation and improves business processes 
-
-* [Register here](https://event.on24.com/eventRegistration/EventLobbyServlet?target=reg20.jsp&partnerref=nodejs&eventid=1440549&sessionid=1&key=7DE2249594D6A35008CAAA23B68BC7D3&regTag=&sourcepage=register)
+Check out our recent webinar on Digital Transformation with Node.js featuring Mark Hinkle, Executive Director for the Node.js Foundation, and Rick Adams, Senior Manager -IT Solutions at Lowe's. [Watch Now](http://go.linuxfoundation.org/e/6342/tal-transformation-with-nodejs/3vwsts/807272559) or [Download the Slides](http://go.linuxfoundation.org/e/6342/ion-nodejs-slides-20170712-pdf/3vwstv/807272559)
 
 ## Node.js Foundation Survey Results
 
