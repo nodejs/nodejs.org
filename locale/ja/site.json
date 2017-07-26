@@ -135,10 +135,6 @@
             "link": "get-involved/development",
             "text": "開発体制"
         },
-        "events": {
-          "link": "get-involved/events",
-          "text": "イベント"
-        },
         "conduct": {
             "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
             "text": "行動規範"
