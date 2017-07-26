@@ -18,7 +18,7 @@ Join Mark Hinkle and guest Rick Adams from Lowe's Digital on July 12 for a live 
 
 The primary objective of the research was to profile Node.js users, understand usage patterns and trends and identify potential areas of improvement. With over 8 million Node.js instances online, three in four users are planning to increase their use of Node.js in the next 12 months. Many are learning Node.js in a foreign language with China being the second largest population outside of the U.S. using Node. Want to get a better understanding on how people are using and learning Node.js?
 
-* <a href="/static/documents/casestudies/Nodejs_2017_User_Survey_Exec_Summary.pdf">Read the full report.</a>
+* <a href="/static/documents/casestudies/Nodejs_2017_User_Survey_Exec_Summary.pdf" data-casestudy="Node.js Foundation 2017 Survey Results">Read the full report.</a>
 
 ## Presentation - The Enterprise Case for Node.js
 The Node.js Foundation has consolidated all the best thinking around why enterprises should consider Node.js for their systems of engagement in this short presentation.
