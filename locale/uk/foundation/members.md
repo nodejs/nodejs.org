@@ -27,7 +27,7 @@ Node.js Foundation відкритий для бізнесу та окремих 
   <img alt="Intel" class="memberlogo" src="/static/images/foundation/intelLogo.png" />
 </a>
 <a target="_new" class="imagelink" href="//joyent.com">
-  <img alt="Joyent" class="memberlogo" src="/static/images/foundation/joyentLogo.svg" />
+  <img alt="Joyent" class="memberlogo" src="/static/images/foundation/joyentLogo.png" />
 </a>
 <a target="_new" class="imagelink" href="//microsoft.com">
   <img alt="Microsoft" class="memberlogo" src="/static/images/foundation/microsoftLogo.png" />
