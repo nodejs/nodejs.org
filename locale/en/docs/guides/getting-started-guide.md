@@ -9,14 +9,20 @@ Once you have installed Node, let's try building our first web server\
 Create a file named "app.js", and paste the following code:
 
 ```javascript
-var http = require('http');
+const http = require('http');
 
-http.createServer((req, res) => {
+const hostname = '127.0.0.1';
+const port = 3000;
 
-	res.writeHead(200, {'Content-Type': 'text/html'});
-	res.end('Hello World!');
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World\n');
+});
 
-}).listen(8080);
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
 ```
 
 After that, run your web server using ``` node app.js ```, visit http://localhost:8080, and you will see a message 'Hello World!'
