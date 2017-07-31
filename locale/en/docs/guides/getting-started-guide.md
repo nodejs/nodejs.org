@@ -5,7 +5,7 @@ layout: docs.hbs
 
 # How do I start with Node.js after I installed it?
 
-Once you have installed Node, let's try building our first web server\
+Once you have installed Node, let's try building our first web server.
 Create a file named "app.js", and paste the following code:
 
 ```javascript
