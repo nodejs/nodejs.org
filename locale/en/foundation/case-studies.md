@@ -2,6 +2,12 @@
 title: Node.js Foundation Resources
 layout: foundation.hbs
 ---
+## Node.js Foundation 2017 Survey Results
+
+The primary objective of the research was to profile Node.js users, understand usage patterns and trends and identify potential areas of improvement. With over 8 million Node.js instances online, three in four users are planning to increase their use of Node.js in the next 12 months. Many are learning Node.js in a foreign language with China being the second largest population outside of the U.S. using Node. Want to get a better understanding on how people are using and learning Node.js?
+
+* <a href="/static/documents/casestudies/Nodejs_2017_User_Survey_Exec_Summary.pdf" data-casestudy="Node.js Foundation 2017 Survey Results">Read the full report.</a>
+
 ## Forrester Report: Digital Transformation Using Node.js
 
 Forrester's November 2016 report details five common use cases around Node.js and how it can underpin digital transformation
@@ -11,12 +17,6 @@ Forrester's November 2016 report details five common use cases around Node.js an
 ## On-demand Forrester Research Webinar on Digital Transformation
 
 Check out our recent webinar on Digital Transformation with Node.js featuring Mark Hinkle, Executive Director for the Node.js Foundation, and Rick Adams, Senior Manager -IT Solutions at Lowe's. [Watch Now](http://go.linuxfoundation.org/e/6342/tal-transformation-with-nodejs/3vwsts/807272559) or [Download the Slides](http://go.linuxfoundation.org/e/6342/ion-nodejs-slides-20170712-pdf/3vwstv/807272559)
-
-## Node.js Foundation 2017 Survey Results
-
-The primary objective of the research was to profile Node.js users, understand usage patterns and trends and identify potential areas of improvement. With over 8 million Node.js instances online, three in four users are planning to increase their use of Node.js in the next 12 months. Many are learning Node.js in a foreign language with China being the second largest population outside of the U.S. using Node. Want to get a better understanding on how people are using and learning Node.js?
-
-* <a href="/static/documents/casestudies/Nodejs_2017_User_Survey_Exec_Summary.pdf" data-casestudy="Node.js Foundation 2017 Survey Results">Read the full report.</a>
 
 ## Presentation - The Enterprise Case for Node.js
 The Node.js Foundation has consolidated all the best thinking around why enterprises should consider Node.js for their systems of engagement in this short presentation.
