@@ -99,9 +99,6 @@ Individual membership costs [$100 a year, or $25 for students](https://identity.
 <a target="_new" class="imagelink" href="//snyk.io">
   <img alt="Snyk" class="memberlogo" src="/static/images/foundation/snyk.png" />
 </a>
-<a target="_new" class="imagelink" href="http://sphinx.sg/">
-  <img alt="Sphinx" class="memberlogo" src="/static/images/foundation/sphinx.png" />
-</a>
 <a target="_new" class="imagelink" href="//yahoo.com">
   <img alt="Yahoo!" class="memberlogo" src="/static/images/foundation/yahoo.png" />
 </a>
