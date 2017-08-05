@@ -18,7 +18,7 @@ title: パッケージマネージャを利用した Node.js のインストー�
 * [Gentoo](#gentoo)
 * [NetBSD](#netbsd)
 * [openSUSE と SLE](#opensuse-sle)
-* [OSX](#osx)
+* [macOS](#macos)
 * [SmartOS と illumos](#smartos-illumos)
 * [Void Linux](#void-linux)
 * [Windows](#windows)
@@ -348,7 +348,7 @@ sudo zypper in nodejs nodejs-devel
 ```
 
 
-## OSX
+## macOS
 
 <!-- Simply download the [Macintosh Installer](http://nodejs.org/#download) direct from the [nodejs.org](http://nodejs.org) web site. -->
 直接 [nodejs.org](http://nodejs.org) のサイトから [Macintosh Installer](http://nodejs.org/#download) をダウンロードしてください。
