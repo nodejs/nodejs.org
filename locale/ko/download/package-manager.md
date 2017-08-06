@@ -18,7 +18,7 @@ title: 패키지 매니저로 Node.js 설치하기
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
 * [openSUSE and SLE](#opensuse-and-sle)
-* [OSX](#osx)
+* [macOS](#macos)
 * [SmartOS and illumos](#smartos-and-illumos)
 * [Void Linux](#void-linux)
 * [Windows](#windows)
@@ -41,7 +41,7 @@ title: 패키지 매니저로 Node.js 설치하기
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
 * [openSUSE와 SLE](#opensuse-sle)
-* [OSX](#osx)
+* [macOS](#macos)
 * [SmartOS와 illumos](#smartos-illumos)
 * [Void Linux](#void-linux)
 * [Windows](#windows)
@@ -673,7 +673,7 @@ zypper install nodejs4
 ```
 
 <!--
-## OSX
+## macOS
 
 Simply download the [Macintosh Installer](http://nodejs.org/#download) direct from the [nodejs.org](http://nodejs.org) web site.
 
@@ -683,7 +683,7 @@ _If you want to download the package with bash:_
 curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
 ```
 -->
-## OSX
+## macOS
 
 [nodejs.org](http://nodejs.org) 웹사이트에서 [매킨토시 인스톨러](http://nodejs.org/#download)를 다운로드 받으세요.
 

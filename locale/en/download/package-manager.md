@@ -17,7 +17,7 @@ title: Installing Node.js via package manager
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
 * [openSUSE and SLE](#opensuse-and-sle)
-* [OSX](#osx)
+* [macOS](#macos)
 * [SmartOS and illumos](#smartos-and-illumos)
 * [Void Linux](#void-linux)
 * [Windows](#windows)

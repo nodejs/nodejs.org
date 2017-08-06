@@ -16,7 +16,7 @@ title: Instalando Node.js usando un gestor de paquetes
 * [Gentoo](#gentoo)
 * [NetBSD](#netbsd)
 * [openSUSE y SLE](#opensuse-and-sle)
-* [OSX](#osx)
+* [macOS](#macos)
 * [SmartOS y illumos](#smartos-and-illumos)
 * [Void Linux](#void-linux)
 * [Windows](#windows)
@@ -289,7 +289,7 @@ sudo zypper in nodejs nodejs-devel
 ```
 
 
-## OSX
+## macOS
 
 Simplemente descargue el [Instalador para Macintosh](http://nodejs.org/#download) directamente desde el sitio web de [nodejs.org](http://nodejs.org).
 
