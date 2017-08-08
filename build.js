@@ -26,7 +26,6 @@ const filterStylusPartials = require('./scripts/plugins/filter-stylus-partials')
 const anchorMarkdownHeadings = require('./scripts/plugins/anchor-markdown-headings')
 const loadVersions = require('./scripts/load-versions')
 const latestVersion = require('./scripts/helpers/latestversion')
-const eventGeo = require('./scripts/event-geo.js')
 
 // Set the default language, also functions as a fallback for properties which
 // are not defined in the given language.
@@ -253,7 +252,6 @@ function copyStatic () {
     fs.mkdir(path.join(__dirname, 'build', 'static'), () => {
       ncp(path.join(__dirname, 'static'), path.join(__dirname, 'build', 'static'), (err) => {
         if (err) { return console.error(err) }
-        fs.writeFileSync(path.join(__dirname, 'build', 'static', 'event-geo.json'), JSON.stringify(eventGeo()))
         console.timeEnd('[metalsmith] build/static finished')
       })
     })
