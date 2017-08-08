@@ -34,6 +34,8 @@ These commercial and open source tools make debugging Node.js apps easier.
   are listed. Then select your Node.js app from the list.
 * **Option 2**: Install the Chrome Extension NIM (Node Inspector Manager):
   https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
+* **Option 3**: Install the NPM package rawkit:
+  https://github.com/darcyclarke/rawkit
 
 ### [VS Code](https://github.com/microsoft/vscode) 1.10+
 
