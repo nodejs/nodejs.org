@@ -15,6 +15,7 @@
       <article>
         <div class="container no-headline">
           <ul class="news-list">
+            <li>Loading data...</li>
           </ul>
         </div>
       </article>
@@ -25,16 +26,16 @@
       window.onload = function () {
         Tabletop.init( { key: public_spreadsheet_url,
           callback: showInfo,
-          simpleSheet: true } )
+          simpleSheet: true } );
 
-          function pad(str) { return ("0"+str).substr(-2) }
+          function pad(str) { return ("0"+str).substr(-2); }
 
           function parseDate(date) {
             try {
-              var parsedDate = date.split('.')
-              return new Date('20' + parsedDate[2], parsedDate[0] - 1, parsedDate[1])
+              var parsedDate = date.split('.');
+              return new Date('20' + parsedDate[2], parsedDate[0] - 1, parsedDate[1]);
             } catch(_){
-              return date
+              return date;
             }
           }
 
@@ -43,15 +44,15 @@
           }
 
           function showInfo(data, tabletop) {
-            data.reverse()
-            var html = ''
-            var list = document.getElementsByClassName('news-list')
+            data.reverse();
+            var html = '';
+            var list = document.getElementsByClassName('news-list');
 
             data.forEach(function (row) {
-              var date = parseDate(row.Date)
-              html += '<li><time datetime="'+date+'">'+formatDate(date)+'</time><a href="'+row.Link+'">'+row.Title+'</a></li>'
+              var date = parseDate(row.Date);
+              html += '<li><time datetime="'+date+'">'+formatDate(date)+'</time><a href="'+row.Link+'">'+row.Title+'</a></li>';
             })
-            if (list && list[0]) list[0].innerHTML = html
+            if (list && list[0]) list[0].innerHTML = html;
           }
         }
         </script>
