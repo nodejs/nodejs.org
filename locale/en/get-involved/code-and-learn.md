@@ -10,9 +10,9 @@ Code & Learn events allow you to get started (or go further) with Node.js core c
 ## Upcoming Code + Learn Events
 
 - [Oakland on April 22, 2017](https://medium.com/the-node-js-collection/code-learn-learn-how-to-contribute-to-node-js-core-8a2dbdf9be45)
-- Shanghai in July 2017 (details TBA)
-- Vancouver in October 2017 (details TBA)
-- Kilkenny in November 2017 (details TBA)
+- Shanghai at JSConf.CN: July 2017
+- Vancouver, BC at [Node Interactive](http://events.linuxfoundation.org/events/node-interactive): October 6, 2017
+- Kilkenny, Ireland at [NodeConfEU](http://www.nodeconf.eu/): November 5, 2017
 
 ## Past Code + Learn Events
 
