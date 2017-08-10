@@ -67,7 +67,7 @@ companies sharing their experiences with Node.js.
 
 Tracy Hinds and Mikeal Rogers chat with Monica Ene-Pietrosanu of Intel about how they use Node.js, and the company's efforts in contributing to open source technologies and diversity.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SBR6WcSIqBE?list=PLfMzBWSH11xYNeUJXap4NTMX3TFtH-_0z" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SBR6WcSIqBE" frameborder="0" allowfullscreen></iframe>
 
 ## Node.js and Google (Episode 12)
 
