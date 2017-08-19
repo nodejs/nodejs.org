@@ -14,7 +14,6 @@ Technical Steering Committee, and representatives elected by the individual memb
 * Platinum Director: **Mark Skarpness**, Vice President, Software and Services Group at Intel.
 * Gold Director, Secretary: **Dan Shaw**, Chief Technology Officer at NodeSource.
 * Silver-Level Director: **Brian McCallister**, Chief Technology Officer of Platforms at Groupon.
-* Silver-Level Director: **Justin Beckwith**, Product Manager at Google.
 * TSC Director: **James Snell**
 * Individual Director (2016-2018): **Ashley Williams**
 * Individual Director (2017-2019): **William Kapke**
