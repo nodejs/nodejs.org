@@ -157,9 +157,14 @@
             "text": "Conduct"
         }
     },
-    "security"   : { "link": "security",        "text": "Security" },
-    "blog"       : { "link": "blog",            "text": "News" },
-
+    "security": { 
+        "link": "security",
+        "text": "Security"
+    },
+    "blog": { 
+        "link": "blog",
+        "text": "News"
+    },
     "releases": {
         "title": "Release History",
         "downloads": "Downloads"
