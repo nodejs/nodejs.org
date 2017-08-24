@@ -102,7 +102,7 @@ note that if you are using `npm` version 5 or later you will also want to copy
 # Install app dependencies
 COPY package.json .
 # For npm@5 or later, copy package-lock.json as well
-# COPY package.json package-lock.json .
+# COPY package.json package-lock.json ./
 
 RUN npm install
 ```
@@ -146,7 +146,7 @@ WORKDIR /usr/src/app
 # Install app dependencies
 COPY package.json .
 # For npm@5 or later, copy package-lock.json as well
-# COPY package.json package-lock.json .
+# COPY package.json package-lock.json ./
 
 RUN npm install
 
