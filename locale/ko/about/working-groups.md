@@ -348,7 +348,7 @@ i18n 워킹 그룹은 [Intl](#Intl) 워킹 그룹과는 다릅니다.
 * [nodejs-ro - Romanian (Română)](https://github.com/nodejs/nodejs-ro)
 * [nodejs-ru - Russian (Русский)](https://github.com/nodejs/nodejs-ru)
 * [nodejs-sv - Swedish (Svenska)](https://github.com/nodejs/nodejs-sv)
-* [nodejs-ta - Tamil (தமிழர்)](https://github.com/nodejs/nodejs-ta)
+* [nodejs-ta - Tamil (தமிழ்)](https://github.com/nodejs/nodejs-ta)
 * [nodejs-tr - Turkish (Türkçe)](https://github.com/nodejs/nodejs-tr)
 * [nodejs-zh-TW - Taiwanese (國語)](https://github.com/nodejs/nodejs-zh-TW)
 * [nodejs-uk - Ukrainian (Українська)](https://github.com/nodejs/nodejs-uk)
