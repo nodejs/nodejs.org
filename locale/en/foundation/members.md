@@ -41,9 +41,6 @@ Individual membership costs [$100 a year, or $25 for students](https://identity.
 <a target="_new" class="imagelink" href="//microsoft.com">
   <img alt="Microsoft" class="memberlogo" src="/static/images/foundation/microsoftLogo.png" />
 </a>
-<a target="_new" class="imagelink" href="//paypal.com">
-  <img alt="PayPal" class="memberlogo" src="/static/images/foundation/paypalLogo.png" />
-</a>
 <a target="_new" class="imagelink" href="//redhat.com">
   <img alt="Red Hat" class="memberlogo" src="/static/images/foundation/redhatLogo.png" />
 </a>
@@ -59,6 +56,9 @@ Individual membership costs [$100 a year, or $25 for students](https://identity.
   <img alt="NodeSource" class="memberlogo" src="/static/images/foundation/nodesourceLogo.png" />
 </a>
 </div>
+<a target="_new" class="imagelink" href="//paypal.com">
+  <img alt="PayPal" class="memberlogo" src="/static/images/foundation/paypalLogo.png" />
+</a>
 
 ## Silver
 
