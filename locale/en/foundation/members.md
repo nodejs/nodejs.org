@@ -55,10 +55,10 @@ Individual membership costs [$100 a year, or $25 for students](https://identity.
 <a target="_new" class="imagelink" href="//nodesource.com">
   <img alt="NodeSource" class="memberlogo" src="/static/images/foundation/nodesourceLogo.png" />
 </a>
-</div>
 <a target="_new" class="imagelink" href="//paypal.com">
   <img alt="PayPal" class="memberlogo" src="/static/images/foundation/paypalLogo.png" />
 </a>
+</div>
 
 ## Silver
 
