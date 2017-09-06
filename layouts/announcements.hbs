@@ -21,35 +21,39 @@
   </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.2/tabletop.min.js"></script>
   <script type="text/javascript">
-  var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1xwQ6ciZLADL43My_XBIWLVRuDMl8cx_omYd1FRkBZ58/pubhtml';
-  var mdList = {{{getListJson collections.blogAnnounce}}};
-  var siteLocal = "/{{site.locale}}/";
+  var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1xwQ6ciZLADL43My_XBIWLVRuDMl8cx_omYd1FRkBZ58/pubhtml'
+  var mdList = {{{getListJson collections.blogAnnounce}}}
+  var siteLocal = "/{{site.locale}}/"
 
   window.onload = function () {
-  Tabletop.init( { key: public_spreadsheet_url,
-    callback: showInfo,
-    simpleSheet: true } )
+    Tabletop.init(
+      {
+        key: public_spreadsheet_url,
+        callback: showInfo,
+        simpleSheet: true
+      }
+    )
 
-    function pad(str) { return ("0"+str).substr(-2) };
+    function pad (str) { return ('0' + str).substr(-2) }
 
-    function parseDate(date) {
+    function parseDate (date) {
       try {
         var parsedDate = date.split('.')
-        return new Date('20' + parsedDate[2], parsedDate[0] - 1, parsedDate[1]);
-      } catch(_){
-        return date;
+        return new Date('20' + parsedDate[2], parsedDate[0] - 1, parsedDate[1])
+      } catch (_) {
+        return date
       }
     }
 
-    function formatDate(date) {
-      return date == "Invalid Date" ? '' : date.getFullYear()+'-'+pad(date.getMonth()+1)+'-'+pad(date.getDate());
+    function formatDate (date) {
+      return date === 'Invalid Date' ? '' : date.getFullYear() + '-' + pad(date.getMonth() + 1) + '-' + pad(date.getDate())
     }
 
-    function showInfo(data, tabletop) {
-      data.reverse();
-      var html = '';
-      var list = document.getElementsByClassName('news-list');
-      var docList = [];
+    function showInfo (data, tabletop) {
+      data.reverse()
+      var html = ''
+      var list = document.getElementsByClassName('news-list')
+      var docList = []
 
       data.forEach(function (row) {
         docList.push({
@@ -57,23 +61,23 @@
           title: row.Title,
           local: false,
           date: parseDate(row.Date)
-        });
-      });
+        })
+      })
 
-      allList = mdList.concat(docList);
-      allList.sort(function(a, b) {
-        return new Date(b.date).getTime() - new Date(a.date).getTime();
-      });
+      var allList = mdList.concat(docList)
+      allList.sort(function (a, b) {
+        return new Date(b.date).getTime() - new Date(a.date).getTime()
+      })
 
       allList.forEach(function (row) {
         if (row && row.date) {
-          html += '<li><time datetime="'+row.date+'">'+formatDate(new Date(row.date))+'</time>';
-          html += '<a href="';
-          html += (row.local) ? siteLocal + row.path : row.path;
-          html += '">'+row.title+'</a></li>';
+          html += '<li><time datetime="' + row.date + '">' + formatDate(new Date(row.date)) + '</time>'
+          html += '<a href="'
+          html += (row.local) ? siteLocal + row.path : row.path
+          html += '">' + row.title + '</a></li>'
         }
-      });
-      if (list && list[0]) list[0].innerHTML = html;
+      })
+      if (list && list[0]) list[0].innerHTML = html
     }
   }
   </script>
