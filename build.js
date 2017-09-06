@@ -170,7 +170,21 @@ function buildLocale (source, locale) {
         strftime: require('./scripts/helpers/strftime.js'),
         apidocslink: require('./scripts/helpers/apidocslink.js'),
         majorapidocslink: require('./scripts/helpers/majorapidocslink.js'),
-        summary: require('./scripts/helpers/summary.js')
+        summary: require('./scripts/helpers/summary.js'),
+        json: function (context) {
+          return JSON.stringify(context)
+        },
+        getListJson: function (context) {
+          var result = context.map(function (item) {
+            return {
+              title: item.title,
+              date: item.date,
+              local: true,
+              path: item.path.replace(/\\/, '/')
+            }
+          })
+          return JSON.stringify(result)
+        }
       }
     }))
     // Pipes the generated files into their respective subdirectory in the build
