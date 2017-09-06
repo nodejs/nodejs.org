@@ -50,7 +50,7 @@
               var date = parseDate(row.Date)
               html += '<li><time datetime="' + date + '">' + formatDate(date) + '</time><a href="' + row.Link + '">' + row.Title + '</a></li>'
             })
-            if (list && list[0]) list[0].innerHTML = html;
+            if (list && list[0]) list[0].innerHTML = html
           }
         }
       </script>
