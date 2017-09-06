@@ -152,18 +152,19 @@
             "link": "get-involved/development",
             "text": "Development"
         },
-        "events": {
-          "link": "get-involved/events",
-          "text": "Events"
-        },
         "conduct": {
             "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
             "text": "Conduct"
         }
     },
-    "security"   : { "link": "security",        "text": "Security" },
-    "blog"       : { "link": "blog",            "text": "News" },
-
+    "security": { 
+        "link": "security",
+        "text": "Security"
+    },
+    "blog": { 
+        "link": "blog",
+        "text": "News"
+    },
     "releases": {
         "title": "Release History",
         "downloads": "Downloads"

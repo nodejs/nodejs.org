@@ -148,11 +148,11 @@ Note that the i18n working groups are distinct from the [Intl](#Intl) working gr
 
 Each language community maintains its own membership.
 
-* [nodejs-ar - Arabic (اللغة العربية)](https://github.com/nodejs/nodejs-ar)
-* [nodejs-bg - Bulgarian (български език)](https://github.com/nodejs/nodejs-bg)
+* [nodejs-ar - Arabic (العَرَبِيَّة)](https://github.com/nodejs/nodejs-ar)
+* [nodejs-bg - Bulgarian (български)](https://github.com/nodejs/nodejs-bg)
 * [nodejs-bn - Bengali (বাংলা)](https://github.com/nodejs/nodejs-bn)
 * [nodejs-zh-CN - Chinese (中文)](https://github.com/nodejs/nodejs-zh-CN)
-* [nodejs-cs - Czech (Český Jazyk)](https://github.com/nodejs/nodejs-cs)
+* [nodejs-cs - Czech (Čeština)](https://github.com/nodejs/nodejs-cs)
 * [nodejs-da - Danish (Dansk)](https://github.com/nodejs/nodejs-da)
 * [nodejs-de - German (Deutsch)](https://github.com/nodejs/nodejs-de)
 * [nodejs-el - Greek (Ελληνικά)](https://github.com/nodejs/nodejs-el)
@@ -161,7 +161,7 @@ Each language community maintains its own membership.
 * [nodejs-fi - Finnish (Suomi)](https://github.com/nodejs/nodejs-fi)
 * [nodejs-fr - French (Français)](https://github.com/nodejs/nodejs-fr)
 * [nodejs-he - Hebrew (עברית)](https://github.com/nodejs/nodejs-he)
-* [nodejs-hi - Hindi (फिजी बात)](https://github.com/nodejs/nodejs-hi)
+* [nodejs-hi - Hindi (हिन्दी)](https://github.com/nodejs/nodejs-hi)
 * [nodejs-hu - Hungarian (Magyar)](https://github.com/nodejs/nodejs-hu)
 * [nodejs-id - Indonesian (Bahasa Indonesia)](https://github.com/nodejs/nodejs-id)
 * [nodejs-it - Italian (Italiano)](https://github.com/nodejs/nodejs-it)
@@ -169,7 +169,7 @@ Each language community maintains its own membership.
 * [nodejs-ka - Georgian (ქართული)](https://github.com/nodejs/nodejs-ka)
 * [nodejs-ko - Korean (한국어)](https://github.com/nodejs/nodejs-ko)
 * [nodejs-mk - Macedonian (Македонски)](https://github.com/nodejs/nodejs-mk)
-* [nodejs-ms - Malay (بهاس ملايو)](https://github.com/nodejs/nodejs-ms)
+* [nodejs-ms - Malay (بهاس ملايو‎)](https://github.com/nodejs/nodejs-ms)
 * [nodejs-nl - Dutch (Nederlands)](https://github.com/nodejs/nodejs-nl)
 * [nodejs-no - Norwegian (Norsk)](https://github.com/nodejs/nodejs-no)
 * [nodejs-pl - Polish (Język Polski)](https://github.com/nodejs/nodejs-pl)
@@ -179,9 +179,9 @@ Each language community maintains its own membership.
 * [nodejs-sv - Swedish (Svenska)](https://github.com/nodejs/nodejs-sv)
 * [nodejs-ta - Tamil (தமிழ்)](https://github.com/nodejs/nodejs-ta)
 * [nodejs-tr - Turkish (Türkçe)](https://github.com/nodejs/nodejs-tr)
-* [nodejs-zh-TW - Taiwanese (Hō-ló)](https://github.com/nodejs/nodejs-zh-TW)
+* [nodejs-zh-TW - Taiwanese (國語)](https://github.com/nodejs/nodejs-zh-TW)
 * [nodejs-uk - Ukrainian (Українська)](https://github.com/nodejs/nodejs-uk)
-* [nodejs-vi - Vietnamese (Tiếng Việtnam)](https://github.com/nodejs/nodejs-vi)
+* [nodejs-vi - Vietnamese (Tiếng Việt)](https://github.com/nodejs/nodejs-vi)
 
 ### [Intl](https://github.com/nodejs/Intl)
 

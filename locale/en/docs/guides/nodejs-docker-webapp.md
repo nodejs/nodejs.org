@@ -96,13 +96,13 @@ WORKDIR /usr/src/app
 This image comes with Node.js and NPM already installed so the next thing we
 need to do is to install your app dependencies using the `npm` binary. Please
 note that if you are using `npm` version 5 or later you will also want to copy
-`package-lock.json`, which is gernerated once you run `npm install`:
+`package-lock.json`, which is generated once you run `npm install`:
 
 ```docker
 # Install app dependencies
 COPY package.json .
 # For npm@5 or later, copy package-lock.json as well
-# COPY package.json package-lock.json .
+# COPY package.json package-lock.json ./
 
 RUN npm install
 ```
@@ -146,7 +146,7 @@ WORKDIR /usr/src/app
 # Install app dependencies
 COPY package.json .
 # For npm@5 or later, copy package-lock.json as well
-# COPY package.json package-lock.json .
+# COPY package.json package-lock.json ./
 
 RUN npm install
 

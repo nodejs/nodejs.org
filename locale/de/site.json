@@ -143,10 +143,6 @@
             "link": "get-involved/development",
             "text": "Entwicklung"
         },
-        "events": {
-          "link": "get-involved/events",
-          "text": "Veranstaltungen"
-        },
         "conduct": {
             "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
             "text": "Verhaltenskodex"
