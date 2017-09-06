@@ -21,14 +21,15 @@
   </div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.2/tabletop.min.js"></script>
   <script type="text/javascript">
-  var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1xwQ6ciZLADL43My_XBIWLVRuDMl8cx_omYd1FRkBZ58/pubhtml'
+  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1xwQ6ciZLADL43My_XBIWLVRuDMl8cx_omYd1FRkBZ58/pubhtml'
   var mdList = {{{getListJson collections.blogAnnounce}}}
-  var siteLocal = "/{{site.locale}}/"
+  var siteLocal = '/{{site.locale}}/'
 
   window.onload = function () {
+    /* global Tabletop */
     Tabletop.init(
       {
-        key: public_spreadsheet_url,
+        key: publicSpreadsheetUrl,
         callback: showInfo,
         simpleSheet: true
       }
