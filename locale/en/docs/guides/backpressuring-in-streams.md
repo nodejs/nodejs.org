@@ -548,7 +548,7 @@ Node.js.
 [`Transform`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [`zlib`]: https://nodejs.org/api/zlib.html
 [`.drain()`]: https://nodejs.org/api/stream.html#stream_event_drain
-[`.data` event]: https://nodejs.org/api/stream.html#event-data
+[`.data` event]: https://nodejs.org/api/stream.html#stream_event_data
 [`.read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size
 [`.write()`]: https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback
 [`._read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size_1

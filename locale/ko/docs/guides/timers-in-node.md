@@ -171,7 +171,7 @@ some major ways they differ. The first is that `process.nextTick()` will run
 *before* any `Immediate`s that are set as well as before any scheduled I/O.
 The second is that `process.nextTick()` is non-clearable, meaning once
 code has been scheduled to execute with `process.nextTick()`, the execution
-cannot be stopped, just like with a normal function. Refer to [this guide](/en/docs/guides/event-loop-timers-and-nexttick/#processnexttick)
+cannot be stopped, just like with a normal function. Refer to [this guide](/en/docs/guides/event-loop-timers-and-nexttick/#process-nexttick)
 to better understand the operation of `process.nextTick()`.
 -->
 
@@ -191,7 +191,7 @@ Note: `setImmediate()`를 `process.nextTick()`와 혼동하지 마세요. 서로
 `Immediate` *이전에* 실행될 것입니다. 두 번째로 `process.nextTick()`은 취소할 수 없으므로
 일단 `process.nextTick()`으로 코드를 실행하도록 스케줄링하면 일반 함수처럼 실행을 멈출 수 없습니다.
 `process.nextTick()`의 동작을 더 이해하려면
-[이 가이드 문서](/en/docs/guides/event-loop-timers-and-nexttick/#processnexttick)를
+[이 가이드 문서](/en/docs/guides/event-loop-timers-and-nexttick/#process-nexttick)를
 참고하세요.
 
 <!--
