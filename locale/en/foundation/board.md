@@ -17,5 +17,5 @@ Technical Steering Committee, and representatives elected by the individual memb
 
 
 Independent of the Board, the Technical Steering Committee sets the technical direction of the project,
-including releases, quality standards, project governance and process, GitHub repo hosting, etc. James Snell is
+including releases, quality standards, project governance and process, GitHub repo hosting, etc. Myles Borins is
 the technical steering committee's board representative for the Board of Directors.
