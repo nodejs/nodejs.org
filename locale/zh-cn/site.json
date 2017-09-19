@@ -10,6 +10,7 @@
     "by": "于",
     "all-downloads": "所有下载选项",
     "nightly": "每日构建",
+    "chakracore-nightly": "Node-ChakraCore 每日构建",
     "previous": "以前",
     "next": "下一個",
     "feeds": [
@@ -53,6 +54,10 @@
         "trademark": {
             "link": "about/trademark",
             "text": "商标"
+        },
+        "privacy": {
+            "link": "about/privacy",
+            "text": "隐私政策"
         }
     },
     "download": {
@@ -77,6 +82,10 @@
         "es6": {
             "link": "docs/es6",
             "text": "ES6 相关"
+        },
+        "inspector": {
+            "link": "docs/inspector",
+            "text": "调试"
         },
         "api-lts": {
             "link": "/dist/latest-%ver-major%/docs/api",
@@ -118,11 +127,23 @@
         "announce": {
             "link": "foundation/announcements",
             "text": "公告"
+        },
+        "education": {
+            "link": "foundation/education",
+            "text": "教学行动"
+        },
+        "outreachy": {
+            "link": "foundation/outreachy",
+            "text": "Outreachy + Node.js"
         }
     },
     "getinvolved": {
         "link": "get-involved",
         "text": "加入我们",
+        "code-and-learn": {
+            "link": "get-involved/code-and-learn",
+            "text": "代码与学习"
+        },
         "contribute": {
             "link": "get-involved/contribute",
             "text": "贡献"
@@ -131,11 +152,8 @@
             "link": "get-involved/development",
             "text": "开发"
         },
-        "code-and-learn": {
-            "link": "get-involved/code-and-learn",
-            "text": "代码与学习"
-        },
         "conduct": {
+            "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
             "text": "管理"
         }
     },

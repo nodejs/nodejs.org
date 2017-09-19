@@ -17,29 +17,33 @@ contributing section](/en/get-involved/contribute/).
 Ви можете дізнатись більше про те, як стати учасником та членом TSC у
 [розділі для учасників](/contribute/).
 
-### Поточні учасники
+## Поточні учасники
 
 На разі, проект Node.js має понад 300 учасників, що активно працюють над різними
 частинами проекту. Поточний список учасників можна знайти у
 [профілі проекту на GitHub](https://github.com/orgs/nodejs/people).
 
-### Поточні члени Технічного керівного комітету
+## Поточні члени Технічного керівного комітету
 
-* Alexis Campailla ([orangemocha](https://github.com/orangemocha))
-* Ben Noordhuis ([bnoordhuis](https://github.com/bnoordhuis))
-* Bert Belder ([piscisaureus](https://github.com/piscisaureus))
 * Brian White ([mscdex](https://github.com/mscdex))
-* Chris Dickinson ([chrisdickinson](https://github.com/chrisdickinson))
 * Colin Ihrig ([cjihrig](https://github.com/cjihrig))
 * Fedor Indutny ([indutny](https://github.com/indutny))
 * James M Snell ([jasnell](https://github.com/jasnell))
-* Jeremiah Senkpiel ([Fishrock123](https://github.com/Fishrock123))
-* Julien Gilli ([misterdjules](https://github.com/misterdjules))
+* Josh Gavant ([joshgav](https://github.com/joshgav))
 * Michael Dawson ([mhdawson](https://github.com/mhdawson))
 * Rod Vagg ([rvagg](https://github.com/rvagg))
 * Shigeki Ohtsu ([shigeki](https://github.com/shigeki))
-* Steven R Loomis ([srl295](https://github.com/srl295))
 * Trevor Norris ([trevnorris](https://github.com/trevnorris))
+
+## Заслужені члени
+
+* Anna Henningsen ([addaleax](https://github.com/addaleax))
+* Ben Noordhuis ([bnoordhuis](https://github.com/bnoordhuis))
+* Bert Belder ([piscisaureus](https://github.com/piscisaureus))
+* Bryan Hughes ([nebrius](https://github.com/nebrius))
+* Chris Dickinson ([chrisdickinson](https://github.com/chrisdickinson))
+* Jeremiah Senkpiel ([Fishrock123](https://github.com/Fishrock123))
+* Myles Borins ([MylesBorins](https://github.com/MylesBorins))
 
 ## Зустрічі Технічного виконавчого комітету
 

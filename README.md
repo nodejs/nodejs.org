@@ -61,13 +61,6 @@ content area.
 
 ### Website Working Group Members
 
-- Frederic Hemberger ([fhemberger](https://github.com/fhemberger)): [@fhemberger](https://twitter.com/fhemberger), `mail``@``frederic-hemberger.de`
-- Mikeal Rogers ([mikeal](https://github.com/mikeal)): [@mikeal](https://twitter.com/mikeal), `mikeal.rogers``@``gmail.com`
-- Phillip Johnsen ([phillipj](https://github.com/phillipj)), `johphi``@``gmail.com`
-- Rod Vagg ([rvagg](https://github.com/rvagg)): [@rvagg](https://twitter.com/rvagg), `rod``@``vagg.org`
-
-### Website Working Group Collaborators
-
 - Yuta Hiroto ([abouthiroppy](https://github.com/abouthiroppy))
 - Andy Gout ([andygout](https://github.com/andygout))
 - Austin Winstanley ([AustinWinstanley](https://github.com/AustinWinstanley))
@@ -81,6 +74,7 @@ content area.
 - Evan Lucas ([evanlucas](https://github.com/evanlucas))
 - Fábio Santos ([fabiosantoscode](https://github.com/fabiosantoscode))
 - Jeremiah Senkpiel ([Fishrock123](https://github.com/Fishrock123))
+- Frederic Hemberger ([fhemberger](https://github.com/fhemberger))
 - Wyatt Preul ([geek](https://github.com/geek))
 - Charlie Robbins ([indexzero](https://github.com/indexzero))
 - Minwoo Jung ([JungMinu](https://github.com/JungMinu))
@@ -90,13 +84,16 @@ content area.
 - marocchino ([marocchino](https://github.com/marocchino))
 - Massimiliano Mura ([MassimilianoMura](https://github.com/MassimilianoMura))
 - Matthew Loring ([matthewloring](https://github.com/matthewloring))
+- Mikeal Rogers ([mikeal](https://github.com/mikeal))
 - Mike Dolan ([mkdolan](https://github.com/mkdolan))
 - Kiffie Liversage ([mrkiffie](https://github.com/mrkiffie))
 - Vladimir Varankin ([narqo](https://github.com/narqo))
 - Patrick Heneise ([PatrickHeneise](https://github.com/PatrickHeneise))
 - Paul Grock ([paulgrock](https://github.com/paulgrock))
+- Phillip Johnsen ([phillipj](https://github.com/phillipj))
 - rnsloan ([rnsloan](https://github.com/rnsloan))
 - Robert Kowalski ([robertkowalski](https://github.com/robertkowalski))
+- Rod Vagg ([rvagg](https://github.com/rvagg))
 - Seth Thompson ([s3ththompson](https://github.com/s3ththompson))
 - silverwind ([silverwind](https://github.com/silverwind))
 - Sean Ouimet ([snostorm](https://github.com/snostorm))
