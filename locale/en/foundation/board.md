@@ -14,6 +14,7 @@ Technical Steering Committee, and representatives elected by the individual memb
 * Silver-Level Director, Secretary: **Brian McCallister**, Chief Technology Officer of Platforms at Groupon.
 * Individual Director (2016-2018): **Ashley Williams**
 * Individual Director (2017-2019): **William Kapke**
+* TSC Director: **Myles Borins**
 
 
 Independent of the Board, the Technical Steering Committee sets the technical direction of the project,
