@@ -17,7 +17,7 @@ layout: contribute.hbs
 - [Release Process and Branching Model](#release-process-and-branching-model)
   - [Release Versioning](#release-versioning)
   - [Release Process for Master](#release-process-for-master)
-- [Long Term Support Working Group](#long-term-support-working-group-roadmap)
+- [Release Working Group](#release-working-group-roadmap)
 - [Issues Workflow](#issues-workflow)
 - [Stability Policy](#stability-policy)
   - [Implicit vs. Explicit API Stability](#implicit-vs-explicit-api-stability)
@@ -147,9 +147,9 @@ Before a new *semver-major*, `master` is branched for maintenance of the prior m
 
 ```
 
-Modifications to maintenance branches are limited to bug fixes, with priority given to changes that address specific security vulnerabilities. Oversight of the maintenance branches belongs to the Long Term Support (LTS) Working Group. The LTS Working Group will establish policies for landing Pull Requests into maintenance branches.
+Modifications to maintenance branches are limited to bug fixes, with priority given to changes that address specific security vulnerabilities. Oversight of the maintenance branches belongs to the Release Working Group. The Release will establish policies for landing Pull Requests into maintenance branches.
 
-The LTS Working Group may choose to use its own tags to identify LTS Release Candidates and LTS Releases and can choose to create additional maintenance branches if need arises. The LTS Working Group may also choose to use extended version metadata for tracking changes that land within maintenance branches.
+The Release may choose to use its own tags to identify Long Term Support (LTS) Release Candidates and LTS Releases and can choose to create additional maintenance branches if need arises. The Release Working Group may also choose to use extended version metadata for tracking changes that land within maintenance branches.
 
 Additionally there are branches for stable release lines prior to 1.0 of minor versions. Example: `v0.8.x`, `v0.10.x`, `v0.12.x`.
 
@@ -176,9 +176,9 @@ Master must pass a full CI test run prior to release.
 
 If master contains changes which are tagged *semver-minor* then the release should bump the minor version otherwise it is a patch release.
 
-## Long Term Support Working Group Roadmap
+## Release Working Group Roadmap
 
-The LTS WG is expected to establish a regular and predictable cadence of LTS Releases. To this end, the LTS WG must maintain and regularly publish a clear Roadmap that outlines the priorities and milestones for upcoming LTS Releases. The goal of the Roadmap is to help guide the project's evolution as opposed to constraining it.
+The Release WG is expected to establish a regular and predictable cadence of LTS Releases. To this end, the Release WG must maintain and regularly publish a clear Roadmap that outlines the priorities and milestones for upcoming LTS Releases. The goal of the Roadmap is to help guide the project's evolution as opposed to constraining it.
 
 ## Issues Workflow
 

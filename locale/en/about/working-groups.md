@@ -21,6 +21,7 @@ Core Working Groups are created by the
 * [Benchmarking](#benchmarking)
 * [Post-mortem](#post-mortem)
 * [Intl](#intl)
+* [Release](#release)
 
 ### [Website](https://github.com/nodejs/nodejs.org)
 
@@ -226,3 +227,15 @@ Responsibilities include:
   to be generated when needed.
 * Defining and adding common structures to the dumps generated
   in order to support tools that want to introspect those dumps.
+
+### [Release](https://github.com/nodejs/LTS)
+The Release Working Group manages the release process for Node.js.
+
+Responsibilities include:
+* Define the release process.
+* Define the content of releases.
+* Generate and create releases.
+* Test Releases.
+* Manage the Long Term Support and Current branches including
+  backporting changes to these branches.
+* Define the policy for what gets backported to release streams
