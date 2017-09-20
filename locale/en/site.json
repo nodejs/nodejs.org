@@ -144,6 +144,10 @@
             "link": "get-involved/code-and-learn",
             "text": "Code + Learn"
         },
+        "collab-summit": {
+            "link": "get-involved/collab-summit",
+            "text": "Collab Summit"
+        },
         "contribute": {
             "link": "get-involved/contribute",
             "text": "Contribute"
@@ -157,11 +161,11 @@
             "text": "Conduct"
         }
     },
-    "security": { 
+    "security": {
         "link": "security",
         "text": "Security"
     },
-    "blog": { 
+    "blog": {
         "link": "blog",
         "text": "News"
     },
