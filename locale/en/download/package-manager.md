@@ -7,6 +7,8 @@ title: Installing Node.js via package manager
 
 ***Note:*** The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
 
+When running ```curl``` behind a proxy, invoke it as ```curl --proxy http://proxy.racp.edu.au:3128```.
+
 ----------------------------
 
 * [Arch Linux](#arch-linux)
