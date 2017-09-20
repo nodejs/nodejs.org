@@ -1,9 +1,9 @@
 ---
-title: Development
+title: Розробка
 layout: contribute.hbs
 ---
 
-# Development
+# Розробка
 
 ## Table of Contents
 
