@@ -7,7 +7,7 @@ layout: docs.hbs
 
 There is a general problem that occurs during data handling called
 [`backpressure`][] and describes a buildup of data behind a buffer during data
-transfer. When the recieving end of the transfer has complex operations, or is
+transfer. When the receiving end of the transfer has complex operations, or is
 slower for whatever reason, there is a tendency for data from the incoming
 source to accumulate, like a clog.
 
@@ -28,7 +28,7 @@ some experience with [`Stream`][]. If you haven't read through those docs,
 it's not a bad idea to take a look at the API documentation first, as it will
 help expand your understanding while reading this guide.
 
-## The Problem With Data Handling
+## The Problem with Data Handling
 
 In a computer system, data is transferred from one process to another through
 pipes, sockets, and signals. In Node.js, we find a similar mechanism called
@@ -52,7 +52,7 @@ rl.question('Why should you use streams? ', (answer) => {
 });
 ```
 
-A good example of why the backpressure mechanism implemented through streams are
+A good example of why the backpressure mechanism implemented through streams is
 a great optimization can be demonstrated by comparing the internal system tools
 from Node.js' [`Stream`][] implementation.
 
@@ -82,15 +82,15 @@ the [`zip(1)`][] tool will notify you the file is corrupt, whereas the
 compression finished by [`Stream`][] will decompress without error.
 
 Note: In this example, we use `.pipe()` to get the data source from one end
-to the other. However, notice there is no proper error handlers attached. If
-a chunk of data were to fail be properly recieved, the `Readable` source or
+to the other. However, notice there are no proper error handlers attached. If
+a chunk of data were to fail to be properly received, the `Readable` source or
 `gzip` stream will not be destroyed. [`pump`][] is a utility tool that would
 properly destroy all the streams in a pipeline if one of them fails or closes,
 and is a must have in this case!
 
 ## Too Much Data, Too Quickly
 
-There are instance where a [`Readable`][] stream might give data to the
+There are instances where a [`Readable`][] stream might give data to the
 [`Writable`][] much too quickly — much more than the consumer can handle!
 
 When that occurs, the consumer will begin to queue all the chunks of data for
@@ -145,7 +145,7 @@ average time: |      55299         |           55975
 
 Both take around a minute to run, so there's not much of a difference at all,
 but let's take a closer look to confirm whether our suspicions are correct. We
-use the linux tool [`dtrace`][] to evaluate what's happening with the V8 garbage
+use the Linux tool [`dtrace`][] to evaluate what's happening with the V8 garbage
 collector.
 
 The GC (garbage collector) measured time indicates the intervals of a full cycle
@@ -230,7 +230,8 @@ And now changing the [return value][] of the [`.write()`][] function, we get:
 Without respecting the return value of .write():
 ==================================================
 real        54.48
-user        53.15sys          7.43
+user        53.15
+sys          7.43
 1524965376  maximum resident set size
          0  average shared memory size
          0  average unshared data size
@@ -254,7 +255,7 @@ Without streams in place to delegate the backpressure, there is an order of
 magnitude greater of memory space being allocated - a huge margin of
 difference between the same process!
 
-This experiment shows how optimized and cost-effective Node's backpressure
+This experiment shows how optimized and cost-effective Node.js' backpressure
 mechanism is for your computing system. Now, let's do a break down on how it
 works!
 
@@ -286,7 +287,7 @@ pause the incoming [`Readable`][] stream from sending any data and wait until
 the consumer is ready again. Once the data buffer is emptied, a [`.drain()`][]
 event will be emitted and resume the incoming data flow.
 
-Once the the queue is finished, backpressure will allow data to be sent again.
+Once the queue is finished, backpressure will allow data to be sent again.
 The space in memory that was being used will free itself up and prepare for the
 next batch of data.
 
@@ -301,7 +302,7 @@ Well the answer is simple: Node.js does all of this automatically for you.
 That's so great! But also not so great when we are trying to understand how to
 implement our own custom streams.
 
-Note: In most machines, there is a byte size that is determines when a buffer
+Note: In most machines, there is a byte size that determines when a buffer
 is full (which will vary across different machines). Node.js allows you to set
 your own custom [`highWaterMark`][], but commonly, the default is set to 16kb
 (16384, or 16 for objectMode streams). In instances where you might
@@ -322,9 +323,9 @@ stream:
   +===============+      x                           |-------------------|
   |   Your Data   |      x     They exist outside    | .on('close', cb)  |
   +=======+=======+      x     the data flow, but    | .on('data', cb)   |
-         |               x     importantly attach    | .on('drain', cb)  |
-         |               x     events, and their     | .on('unpipe', cb) |
-+--------v----------+    x     respective callbacks. | .on('error', cb)  |
+          |              x     importantly attach    | .on('drain', cb)  |
+          |              x     events, and their     | .on('unpipe', cb) |
++---------v---------+    x     respective callbacks. | .on('error', cb)  |
 |  Readable Stream  +----+                           | .on('finish', cb) |
 +-^-------^-------^-+    |                           | .on('end', cb)    |
   ^       |       ^      |                           +-------------------+
@@ -395,7 +396,7 @@ In general,
 
 1. Never `.push()` if you are not asked.
 2. Never call `.write()` after it returns false but wait for 'drain' instead.
-3. Streams changes between different node versions, and the library you use.
+3. Streams changes between different Node.js versions, and the library you use.
 Be careful and test things.
 
 Note: In regards to point 3, an incredibly useful package for building
@@ -407,7 +408,7 @@ and supports older versions of browsers and Node.js.
 ## Rules specific to Readable Streams
 
 So far, we have taken a look at how [`.write()`][] affects backpressure and have
-focused much on the [`Writable`][] stream. Because of Node's functionality,
+focused much on the [`Writable`][] stream. Because of Node.js' functionality,
 data is technically flowing downstream from [`Readable`][] to [`Writable`][].
 However, as we can observe in any transmission of data, matter, or energy, the
 source is just as important as the destination and the [`Readable`][] stream
@@ -442,11 +443,11 @@ backpressure. In this counter-example of good practice, the application's code
 forces data through whenever it is available (signaled by the
 [`.data` event][]):
 ```javascript
-// This ignores the backpressure mechanisms node has set in place,
+// This ignores the backpressure mechanisms Node.js has set in place,
 // and unconditionally pushes through data, regardless if the
 // destination stream is ready for it or not.
 readable.on('data', (data) =>
-  writable.write(data);
+  writable.write(data)
 );
 ```
 
@@ -458,7 +459,7 @@ the [`stream state machine`][] will handle our callbacks and determine when to
 handle backpressure and optimize the flow of data for us.
 
 However, when we want to use a [`Writable`][] directly, we must respect the
-[`.write()`][] return value and pay close attention these conditions:
+[`.write()`][] return value and pay close attention to these conditions:
 
 * If the write queue is busy, [`.write()`][] will return false.
 * If the data chunk is too large, [`.write()`][] will return false (the limit
@@ -466,7 +467,7 @@ is indicated by the variable, [`highWaterMark`][]).
 
 <!-- eslint-disable indent -->
 ```javascript
-// This writable is invalid because of the async nature of javascript callbacks.
+// This writable is invalid because of the async nature of JavaScript callbacks.
 // Without a return statement for each callback prior to the last,
 // there is a great chance multiple callbacks will be called.
 class MyWritable extends Writable {
@@ -526,7 +527,7 @@ call [`.uncork()`][] the same amount of times to make it flow again.
 
 ## Conclusion
 
-Streams are a often used module in Node.js. They are important to the internal
+Streams are an often used module in Node.js. They are important to the internal
 structure, and for developers, to expand and connect across the Node.js modules
 ecosystem.
 
@@ -557,7 +558,7 @@ Node.js.
 [`.cork()`]: https://nodejs.org/api/stream.html#stream_writable_cork
 [`.uncork()`]: https://nodejs.org/api/stream.html#stream_writable_uncork
 
-[push method]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_push_chunk_encoding
+[`.push()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_push_chunk_encoding
 
 [implementing Writable streams]: https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_writable_stream
 [implementing Readable streams]: https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_readable_stream
