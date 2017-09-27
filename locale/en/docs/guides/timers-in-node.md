@@ -88,7 +88,7 @@ after immediate
 executing immediate: so immediate
 ```
 
-`setImmediate()` returns and `Immediate` object, which can be used to cancel
+`setImmediate()` returns an `Immediate` object, which can be used to cancel
 the scheduled immediate (see `clearImmediate()` below).
 
 Note: Don't get `setImmediate()` confused with `process.nextTick()`. There are
