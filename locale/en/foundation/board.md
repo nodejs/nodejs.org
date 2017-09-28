@@ -11,6 +11,7 @@ Technical Steering Committee, and representatives elected by the individual memb
 * Platinum Director: **Gaurav Seth**, Principal Program Manager at Microsoft.
 * Platinum Director: **Rich Sharples**, Senior Director of Product Management at Red Hat.
 * Platinum Director: **Mark Skarpness**, Vice President, Software and Services Group at Intel.
+* Gold Director: **Danese Cooper**, Distinguished Member of Technical Staff - open source at PayPal.
 * Silver-Level Director, Secretary: **Brian McCallister**, Chief Technology Officer of Platforms at Groupon.
 * Individual Director (2016-2018): **Ashley Williams**
 * Individual Director (2017-2019): **William Kapke**
