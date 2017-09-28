@@ -10,14 +10,14 @@ title: Instalando Node.js usando un gestor de paquetes
 ----------------------------
 
 * [Arch Linux](#arch-linux)
-* [Distribuciones de Linux basadas en Debian y Ubuntu](#debian-and-ubuntu-based-linux-distributions)
-* [Enterprise Linux y Fedora](#enterprise-linux-and-fedora)
-* [FreeBSD y OpenBSD](#freebsd-and-openbsd)
+* [Distribuciones de Linux basadas en Debian y Ubuntu](#distribuciones-de-linux-basadas-en-debian-y-ubuntu)
+* [Enterprise Linux y Fedora](#enterprise-linux-y-fedora)
+* [FreeBSD y OpenBSD](#freebsd-y-openbsd)
 * [Gentoo](#gentoo)
 * [NetBSD](#netbsd)
-* [openSUSE y SLE](#opensuse-and-sle)
+* [openSUSE y SLE](#opensuse-y-sle)
 * [macOS](#macos)
-* [SmartOS y illumos](#smartos-and-illumos)
+* [SmartOS y illumos](#smartos-y-illumos)
 * [Void Linux](#void-linux)
 * [Windows](#windows)
 
