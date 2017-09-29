@@ -6,7 +6,7 @@ title: Working Groups
 <!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 
 Core Working Groups are created by the
-[Core Technical Committee (CTC)](https://github.com/nodejs/node/blob/master/GOVERNANCE.md#core-technical-committee).
+[Technical Steering Committee (TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).
 
 ## Current Working Groups
 
@@ -188,9 +188,9 @@ Responsibilities include:
 * Maintaining the [addon-examples](https://github.com/nodejs/node-addon-examples)
   GitHub repository, including code, issues and documentation.
 * Maintaining the C++ Addon API within the Node.js project, in subordination to
-  the Node.js CTC.
+  the Node.js TSC.
 * Maintaining the Addon documentation within the Node.js project, in
-  subordination to the Node.js CTC.
+  subordination to the Node.js TSC.
 * Maintaining the _nan_ package in npm, releasing new versions as appropriate.
 * Messaging about the future of the Node.js and NAN interface to give the
   community advance notice of changes.

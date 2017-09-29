@@ -2,83 +2,6 @@
 layout: about.hbs
 title: 워킹 그룹
 ---
-<!--
-# Working Groups
-There are 2 types of Working Groups:
-* [Top-Level Working Groups](#top-level-working-groups)
-* [Core Working Groups](#core-working-groups)
--->
-
-# 워킹 그룹
-2가지 종류의 워킹 그룹이 있습니다.
-* [최상위 워킹 그룹](#top-level-working-groups)
-* [핵심 워킹 그룹](#core-working-groups)
-
-<!--
-# Top-Level Working Groups
--->
-<!-- Information here should mostly mirror: https://github.com/nodejs/TSC/blob/master/WORKING_GROUPS.md -->
-
-# 최상위 워킹 그룹
-
-<!--
-Top-Level Working Groups are created by the
-[Technical Steering Committee (TSC)](https://github.com/nodejs/TSC#top-level-wgs-and-tlps).
--->
-최상위 워킹 그룹은 [기술 결정 위원회(TSC)](https://github.com/nodejs/TSC#top-level-wgs-and-tlps)에서 만듭니다.
-
-<!--
-## Current Top-Level Working Groups
-* [Inclusivity](#inclusivity)
--->
-
-## 현재의 최상위 워킹 그룹
-* [Inclusivity](#inclusivity)
-
-<!--
-#### [Inclusivity](https://github.com/nodejs/inclusivity)
-The Inclusivity Working Group seeks to increase inclusivity and diversity for
-the Node.js project:
--->
-
-#### [Inclusivity](https://github.com/nodejs/inclusivity)
-Inclusivity 워킹 그룹은 Node.js 프로젝트의 포괄성과 다양성을 높이는 작업을 합니다.
-
-<!--
-* Increasing inclusivity means making the Node.js project a safe and friendly
-place for people from diverse backgrounds.
-* Increasing diversity means actively onboarding people from diverse backgrounds
-to the Node.js project and maintaining their participation.
--->
-
-* 포괄성을 높인다는 것은 다양한 배경을 가진 사람들한테 Node.js 프로젝트를 안전하고 친숙한 곳으로
-  만든다는 것을 의미합니다.
-* 다양성을 높인다는 것은 다양한 배경을 가진 사람들이 활발하게 Node.js 프로젝트에 합류하고
-  이들의 참여를 관리하는 것을 의미합니다.
-
-<!--
-Responsibilities include:
-* Fostering a welcoming environment that ensures participants are valued and can
-feel confident contributing or joining discussions, regardless of any [aspect of
-their identity](https://github.com/nodejs/inclusivity/#list-of-responsibilities).
-* Proactively seeking and proposing concrete steps the project can take to increase
-inclusivity.
-* Serving as a resource for the development and enforcement of workflows that
-protect community members and projects from harassment and abuse.
-* Acknowledging and celebrating existing diversity accomplishments within the project
-while seeking to build upon them.
-* Identifying ways to measure diversity and inclusivity within the project and report
-them at regular intervals.
--->
-
-이 워킹 그룹은 다음에 대한 책임이 있습니다.
-* [신분에 따른 관점](https://github.com/nodejs/inclusivity/#list-of-responsibilities)에
-  상관없이 참여의 가치를 인정하고 자신 있게 기여하고 논의에 참여할 수 있도록 환영하는 환경을 추구합니다.
-* 프로젝트 포괄성을 키울 수 있는 확실한 방법을 적극적으로 찾고 제안합니다.
-* 희롱이나 욕설에서 커뮤니티 멤버와 프로젝트를 보호하는 작업 흐름의 개발과 시행에 대한 리소스로서
-  제공합니다.
-* 프로젝트 내에 다양성을 이룬 것을 인정하고 축하하면서 이 다양성 위에서 방법을 모색합니다.
-* 프로젝트 내의 다양성과 포괄성을 평가하고 이를 정기적으로 보고하는 방법을 결정합니다.
 
 <!--
 # Core Working Groups
@@ -89,10 +12,10 @@ them at regular intervals.
 
 <!--
 Core Working Groups are created by the
-[Core Technical Committee (CTC)](https://github.com/nodejs/node/blob/master/GOVERNANCE.md#core-technical-committee).
+[Technical Steering Committee (TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).
 -->
 핵심 워킹 그룹은
-[핵심 기술 위원회 (CTC, Core Technical Committee)](https://github.com/nodejs/node/blob/master/GOVERNANCE.md#core-technical-committee)에서
+[핵심 기술 위원회 (TSC, Technical Steering Committee)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md)에서
 만듭니다.
 
 <!--
@@ -446,9 +369,9 @@ Responsibilities include
 * Maintaining the [addon-examples](https://github.com/nodejs/node-addon-examples)
   GitHub repository, including code, issues and documentation.
 * Maintaining the C++ Addon API within the Node.js project, in subordination to
-  the Node.js CTC.
+  the Node.js TSC.
 * Maintaining the Addon documentation within the Node.js project, in
-  subordination to the Node.js CTC.
+  subordination to the Node.js TSC.
 * Maintaining the _nan_ package in npm, releasing new versions as appropriate.
 * Messaging about the future of the Node.js and NAN interface to give the
   community advance notice of changes.
@@ -467,8 +390,8 @@ NAN 프로젝트는 네이티브 애드온 작성자가 다수가 사용하는 N
 * [NAN](https://github.com/nodejs/nan) GitHub 저장소에서 코드, 이슈, 문서를 관리합니다.
 * [addon-examples](https://github.com/nodejs/node-addon-examples)
   GitHub 저장에서 코드, 이슈, 문서를 관리합니다.
-* Node.js CTC 하에 Node.js 프로젝트의 C++ Addon API를 관리합니다.
-* Node.js CTC 하에 Node.js 프로젝트의 Addon 문서를 관리합니다.
+* Node.js TSC 하에 Node.js 프로젝트의 C++ Addon API를 관리합니다.
+* Node.js TSC 하에 Node.js 프로젝트의 Addon 문서를 관리합니다.
 * npm의 _nan_ 패키지를 관리하고 절절하게 새로운 버전을 릴리스합니다.
 * 차후 Node.js와 NAN 인터페이스의 변경사항을 커뮤니티에 알립니다.
 
