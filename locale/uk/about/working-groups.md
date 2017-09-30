@@ -2,54 +2,12 @@
 layout: about.hbs
 title: Робочі групи
 ---
-# Working Groups
-
-There are 2 types of Working Groups:
-
-* [Top-Level Working Groups](#top-level-working-groups)
-* [Core Working Groups](#core-working-groups)
-
-## Top-Level Working Groups
-
-<!-- Information here should mostly mirror: https://github.com/nodejs/TSC/blob/master/WORKING_GROUPS.md -->
-
-Top-Level Working Groups are created by the
-[Technical Steering Committee (TSC)](https://github.com/nodejs/TSC#top-level-wgs-and-tlps).
-
-### Current Top-Level Working Groups
-
-* [Inclusivity](#inclusivity)
-
-#### [Inclusivity](https://github.com/nodejs/inclusivity)
-
-The Inclusivity Working Group seeks to increase inclusivity and diversity for
-the Node.js project:
-
-* Increasing inclusivity means making the Node.js project a safe and friendly
-place for people from diverse backgrounds.
-* Increasing diversity means actively onboarding people from diverse backgrounds
-to the Node.js project and maintaining their participation.
-
-Its responsibilites are:
-
-* Foster a welcoming environment that ensures participants are valued and can
-feel confident contributing or joining discussions, regardless of any [aspect of
-their identity](https://github.com/nodejs/inclusivity/#list-of-responsibilities).
-* Proactively seek and propose concrete steps the project can take to increase
-inclusivity.
-* Serve as a resource for the development and enforcement of workflows that
-protect community members and projects from harassment and abuse.
-* Acknowledge and celebrate existing diversity accomplishments within the project
-while seeking to build upon them.
-* Identify ways to measure diversity and inclusivity within the project and report
-them at regular intervals.
-
 # Core Working Groups
 
 <!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 
 Core Working Groups are created by the
-[Core Technical Committee (CTC)](https://github.com/nodejs/node/blob/master/GOVERNANCE.md#core-technical-committee).
+[Technical Steering Committee (TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).
 
 
 ## Current Working Groups
@@ -252,9 +210,9 @@ Their responsibilities are:
 * Maintaining the [addon-examples](https://github.com/nodejs/node-addon-examples)
   GitHub repository, including code, issues and documentation.
 * Maintaining the C++ Addon API within the Node.js project, in subordination to
-  the Node.js CTC.
+  the Node.js TSC.
 * Maintaining the Addon documentation within the Node.js project, in
-  subordination to the Node.js CTC.
+  subordination to the Node.js TSC.
 * Maintaining the _nan_ package in npm, releasing new versions as appropriate.
 * Messaging about the future of the Node.js and NAN interface to give the
   community advance notice of changes.
