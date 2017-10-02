@@ -261,5 +261,5 @@ following places:
 * [Official Node.js Docker Image](https://registry.hub.docker.com/_/node/)
 * [Node.js Docker Best Practices Guide](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 * [Official Docker documentation](https://docs.docker.com/)
-* [Docker Tag on StackOverflow](http://stackoverflow.com/questions/tagged/docker)
+* [Docker Tag on StackOverflow](https://stackoverflow.com/questions/tagged/docker)
 * [Docker Subreddit](https://reddit.com/r/docker)
