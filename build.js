@@ -170,6 +170,7 @@ function buildLocale (source, locale) {
         strftime: require('./scripts/helpers/strftime.js'),
         apidocslink: require('./scripts/helpers/apidocslink.js'),
         majorapidocslink: require('./scripts/helpers/majorapidocslink.js'),
+        stripv: require('./scripts/helpers/stripv.js'),
         summary: require('./scripts/helpers/summary.js'),
         json: function (context) {
           return JSON.stringify(context)

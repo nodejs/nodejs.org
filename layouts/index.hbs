@@ -31,8 +31,8 @@
 
         <div class="home-downloadblock">
 
-          <a href="https://nodejs.org/dist/{{ project.latestVersions.lts.node }}/" class="home-downloadbutton" title="{{ labels.download }} {{ project.latestVersions.lts.node }} {{ labels.lts }}" data-version="{{ project.latestVersions.lts.node }}">
-            {{ project.latestVersions.lts.node }} {{ labels.lts }}
+          <a href="https://nodejs.org/dist/{{ project.latestVersions.lts.node }}/" class="home-downloadbutton" title="{{ labels.download }} {{stripv project.latestVersions.lts.node }} {{ labels.lts }}" data-version="{{ project.latestVersions.lts.node }}">
+            {{stripv project.latestVersions.lts.node }} {{ labels.lts }}
             <small>{{ labels.tagline-lts }}</small>
           </a>
 
@@ -53,8 +53,8 @@
         {{#if project.latestVersions.current.node}}
           <div class="home-downloadblock">
 
-            <a href="https://nodejs.org/dist/{{ project.latestVersions.current.node }}/" class="home-downloadbutton"  title="{{ labels.download }} {{ project.latestVersions.current.node }} {{ labels.current }}"  data-version="{{ project.latestVersions.current.node }}">
-              {{ project.latestVersions.current.node }} {{ labels.current }}
+            <a href="https://nodejs.org/dist/{{ project.latestVersions.current.node }}/" class="home-downloadbutton"  title="{{ labels.download }} {{stripv project.latestVersions.current.node }} {{ labels.current }}"  data-version="{{ project.latestVersions.current.node }}">
+              {{stripv project.latestVersions.current.node }} {{ labels.current }}
               <small>{{ labels.tagline-current }}</small>
             </a>
 
