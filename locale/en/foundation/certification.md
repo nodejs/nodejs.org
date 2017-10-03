@@ -4,15 +4,16 @@ layout: foundation.hbs
 ---
 
 # Node.js Certified Developer(NCD) Program
-> The Node.js Certified Developer program was created by the Node.js Foundation, in collaboration with The Linux Foundation and Node.js contributors, to help develop the Node.js ecosystem.
 
-<img src="/static/images/foundation/node-cert-logo.png" alt="Node.js certification logo" title="Node.js cert logo" align="right" width="40%" height="40%">
+The Node.js Certified Developer program was created by the Node.js Foundation, in collaboration with The Linux Foundation and Node.js contributors, to help develop the Node.js ecosystem.
 
+<img src="/static/images/foundation/node-cert-logo.png" alt="Node.js certification logo" title="Node.js cert logo" align="left" width="40%" height="40%" style="padding: 10px 50px 30px 0" />
 
 The Node.js Foundation is committed to growing the community of Node.js developers, thereby allowing continued growth across the broad set of companies and organizations that are using Node.js. Certification is a key step in that process, allowing certified developers to quickly establish their credibility and value in the job market, and also allowing companies to more quickly hire high-quality teams to support their growth.
 
-Cost $300 | Online Exam  
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSfCGtf0dDqYSFOzTZQANzjKOqvZn0g2-s7nVvQzmwRfIiotxA/viewform?usp=sf_link">REGISTER FOR EARLY ACCESS</a>
+<p align="left" style="padding: 30px 0 10px 30px">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSfCGtf0dDqYSFOzTZQANzjKOqvZn0g2-s7nVvQzmwRfIiotxA/viewform?usp=sf_link">REGISTER FOR EARLY ACCESS</a>    
+Cost $300 | Online Exam</p>
 
 ---------------
 
