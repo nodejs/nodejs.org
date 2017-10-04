@@ -3,7 +3,7 @@ title: Node.js Certified Developer program
 layout: foundation.hbs
 ---
 
-# Node.js Certified Developer(NCD) Program
+# Node.js Certified Developer (NCD) Program
 
 The Node.js Certified Developer program was created by the Node.js Foundation, in collaboration with The Linux Foundation and Node.js contributors, to help develop the Node.js ecosystem.
 
@@ -34,7 +34,7 @@ The Certification focuses on the skills required to be a successful Node.js deve
 
 - Unit Testing 5%
 - Diagnostics (Basics, Debugging, Performance) 5%
-- http(s) TCP 11%
+- HTTP(S)/TCP 11%
 - Events 9%
 - Child Processes (Basics, no IPC/fork) 7%
 - Buffer and Streams 9%
@@ -48,14 +48,13 @@ The Certification focuses on the skills required to be a successful Node.js deve
 - Module system (Scope) 6%
 - Process/Operating System (no IPC) 5%
 
-The cost is $300 and includes one free retake.
+The cost is $300 and includes one free retake if unsuccessful.
 
 ----------------
 
 ## Exam Resources
 - Candidate Handbook
-- Curriculum Overview
 - Exam Tips
 - Frequently Asked Questions
 - Certification and Confidentiality Agreement
-- Verify Certification
+- [Verify Certification](https://training.linuxfoundation.org/certification/verify-certifications)
