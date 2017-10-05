@@ -120,6 +120,10 @@
             "link": "foundation/tsc",
             "text": "Technical Governance"
         },
+        "certification": {
+            "link": "foundation/certification",
+            "text": "Certification"
+        },
         "itn": {
              "link": "foundation/in-the-news",
              "text": "In the News"
