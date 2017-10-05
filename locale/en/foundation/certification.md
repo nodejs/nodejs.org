@@ -7,7 +7,7 @@ layout: foundation.hbs
 
 The Node.js Certified Developer program was created by the Node.js Foundation, in collaboration with The Linux Foundation and Node.js contributors, to help develop the Node.js ecosystem.
 
-<img src="/static/images/foundation/node-cert-logo.png" alt="Node.js certification logo" title="Node.js cert logo" align="left" width="40%" height="40%" style="padding: 10px 50px 30px 0" />
+<img src="/static/images/node-cert-logo.png" alt="Node.js certification logo" title="Node.js cert logo" align="left" width="40%" height="40%" style="padding: 10px 50px 30px 0" />
 
 The Node.js Foundation is committed to growing the community of Node.js developers, thereby allowing continued growth across the broad set of companies and organizations that are using Node.js. Certification is a key step in that process, allowing certified developers to quickly establish their credibility and value in the job market, and also allowing companies to more quickly hire high-quality teams to support their growth.
 
