@@ -163,26 +163,23 @@ function buildLocale (source, locale) {
       pattern: '**/*.html',
       partials: 'layouts/partials',
       helpers: {
+        apidocslink: require('./scripts/helpers/apidocslink.js'),
+        changeloglink: require('./scripts/helpers/changeloglink.js'),
         copyright: require('./scripts/helpers/copyright-year.js'),
         equals: require('./scripts/helpers/equals.js'),
-        startswith: require('./scripts/helpers/startswith.js'),
-        changeloglink: require('./scripts/helpers/changeloglink.js'),
-        strftime: require('./scripts/helpers/strftime.js'),
-        apidocslink: require('./scripts/helpers/apidocslink.js'),
         majorapidocslink: require('./scripts/helpers/majorapidocslink.js'),
+        startswith: require('./scripts/helpers/startswith.js'),
+        strftime: require('./scripts/helpers/strftime.js'),
+        stripv: require('./scripts/helpers/stripv.js'),
         summary: require('./scripts/helpers/summary.js'),
-        json: function (context) {
-          return JSON.stringify(context)
-        },
-        getListJson: function (context) {
-          var result = context.map(function (item) {
-            return {
-              title: item.title,
-              date: item.date,
-              local: true,
-              path: item.path.replace(/\\/, '/')
-            }
-          })
+        json: (context) => JSON.stringify(context),
+        getListJson: (context) => {
+          const result = context.map(item => ({
+            title: item.title,
+            date: item.date,
+            local: true,
+            path: item.path.replace(/\\/, '/')
+          }))
           return JSON.stringify(result)
         }
       }
