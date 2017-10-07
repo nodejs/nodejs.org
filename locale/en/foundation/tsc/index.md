@@ -22,26 +22,9 @@ can be found on the project's [GitHub profile](https://github.com/orgs/nodejs/pe
 
 ## Current members of the Technical Steering Committee
 
-* Brian White ([mscdex](https://github.com/mscdex))
-* Colin Ihrig ([cjihrig](https://github.com/cjihrig))
-* Fedor Indutny ([indutny](https://github.com/indutny))
-* James M Snell ([jasnell](https://github.com/jasnell))
-* Josh Gavant ([joshgav](https://github.com/joshgav))
-* Michael Dawson ([mhdawson](https://github.com/mhdawson))
-* Rod Vagg ([rvagg](https://github.com/rvagg))
-* Shigeki Ohtsu ([shigeki](https://github.com/shigeki))
-* Trevor Norris ([trevnorris](https://github.com/trevnorris))
-
-## Emeritus Members
-
-* Anna Henningsen ([addaleax](https://github.com/addaleax))
-* Ben Noordhuis ([bnoordhuis](https://github.com/bnoordhuis))
-* Bert Belder ([piscisaureus](https://github.com/piscisaureus))
-* Bryan Hughes ([nebrius](https://github.com/nebrius))
-* Chris Dickinson ([chrisdickinson](https://github.com/chrisdickinson))
-* Jeremiah Senkpiel ([Fishrock123](https://github.com/Fishrock123))
-* Myles Borins ([MylesBorins](https://github.com/MylesBorins))
+For the current list of TSC members, see the project
+[README.md](https://github.com/nodejs/node/blob/master/README.md#tsc-technical-steering-committee).
 
 ## Technical Steering Committee Meetings
 
-[Meeting minutes](minutes/)
+[Meeting minutes](https://github.com/nodejs/TSC/tree/master/meetings)
