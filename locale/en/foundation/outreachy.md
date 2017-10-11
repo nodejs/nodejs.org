@@ -18,7 +18,7 @@ Our sincerest gratitude goes out to the sponsoring organizations supporting Node
 **Quick links**
 
 - [The Node.js project on GitHub](https://github.com/nodejs/node)
-- [Good first contributions in the Node.js issue tracker](https://github.com/nodejs/node/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+contribution%22)
+- [Good first issues in the Node.js issue tracker](https://github.com/nodejs/node/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 - [Getting started for applicants](https://wiki.gnome.org/Outreachy#Introduction)
 - [Mentor prep](https://wiki.gnome.org/Outreachy/Admin/InfoForMentors)
 
@@ -134,7 +134,7 @@ The project will be broken down into a number of stages including:
 
  * Getting familiar with the Node.js code base
  * Getting your first commits into Node.js core
-   - A list of good first contributions can be found [here](https://github.com/nodejs/node/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+contribution%22)
+   - A list of good first issues can be found [here](https://github.com/nodejs/node/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
  * Getting familiar with the libuv code base
  * Getting your first commits into libuv
    - A list of future milestones can be found [here](https://github.com/libuv/libuv/milestone/5)
@@ -143,7 +143,7 @@ The project will be broken down into a number of stages including:
  * Collaborating with community projects to define and support an upgrade path.
 
  Mentor in United States (NYC)
- 
+
  -------------------------
 
 **The Canary in the Gold Mine**
