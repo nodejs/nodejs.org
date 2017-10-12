@@ -275,19 +275,20 @@ pkgin -y install nodejs
 
 ## openSUSE and SLE
 
-[Download Node.js via openSUSE one-click](http://software.opensuse.org/download.html?project=devel%3Alanguages%3Anodejs&package=nodejs).
+Node.js is available in the main repositories under the following packages:
 
-Available RPM packages for: openSUSE 11.4, 12.1, 12.2, 12.3, 13.1, Factory and Tumbleweed; SLE 11 (with SP1/SP2/SP3 variations).
+ - **openSUSE Leap 42.2**: `nodejs4`
+ - **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
+ - **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
+ - **SUSE Linux Enterprise Server (SLES) 12**<sup>1</sup>: `nodejs4`, `nodejs6`
 
-Example install on openSUSE 13.1:
+<sup>1:</sup> The "Web and Scripting Module" must be [added before installing](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).
+
+For example, to install Node.js 4.x on openSUSE Leap 42.2, run the following as root:
 
 ```bash
-sudo zypper ar \
-  http://download.opensuse.org/repositories/devel:/languages:/nodejs/openSUSE_13.1/ \
-  Node.js
-sudo zypper in nodejs nodejs-devel
+zypper install nodejs4
 ```
-
 
 ## macOS
 

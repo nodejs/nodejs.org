@@ -313,10 +313,10 @@ $ nvm uninstall 8
 
 Node.js is available in the main repositories under the following packages:
 
- - **openSUSE 13.2 and Leap 42.1**: `nodejs` (4.x)
  - **openSUSE Leap 42.2**: `nodejs4`
- - **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`
- - **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`<sup>1</sup>
+ - **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
+ - **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
+ - **SUSE Linux Enterprise Server (SLES) 12**<sup>1</sup>: `nodejs4`, `nodejs6`
 
 <sup>1:</sup> The "Web and Scripting Module" must be [added before installing](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).
 
