@@ -13,9 +13,7 @@
     "test": "npm run test:lint && npm run test:unit && npm run test:smoke",
     "test:lint": "standard && htmllint **/*.hbs && stylint layouts/css",
     "test:unit": "tape tests/**/*.test.js | faucet",
-    "test:smoke": "tape tests/*.smoketest.js | faucet",
-    "test:snyk": "snyk test",
-    "postinstall": "snyk protect"
+    "test:smoke": "tape tests/*.smoketest.js | faucet"
   },
   "repository": "nodejs/nodejs.org",
   "author": "Node.js Website Working Group",
@@ -54,7 +52,6 @@
     "request": "2.83.0",
     "require-dir": "0.3.2",
     "semver": "5.4.1",
-    "snyk": "1.42.7",
     "st": "1.2.2",
     "strftime": "0.10.0"
   },
@@ -67,6 +64,5 @@
     "standard": "^10.0.0",
     "stylint": "^1.3.8",
     "tape": "^4.5.1"
-  },
-  "snyk": true
+  }
 }
