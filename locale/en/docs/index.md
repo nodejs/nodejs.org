@@ -24,6 +24,7 @@ This documentation describes the built-in modules provided by Node.js. It does n
     <h4>Looking for API docs of previous releases?</h4>
 
     <ul>
+        <li><a href="https://nodejs.org/docs/latest-v7.x/api/">Node.js 7.x</a></li>
         <li><a href="https://nodejs.org/docs/latest-v5.x/api/">Node.js 5.x</a></li>
         <li><a href="https://nodejs.org/docs/latest-v4.x/api/">Node.js 4.x</a></li>
         <li><a href="https://nodejs.org/docs/latest-v0.12.x/api/">Node.js 0.12.x</a></li>
