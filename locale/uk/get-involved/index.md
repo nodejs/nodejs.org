@@ -49,7 +49,6 @@ layout: contribute.hbs
 - [Japanese user group](http://nodejs.jp/)
 - [Korean Node.js community](http://nodejs.github.io/nodejs-ko/)
 - [Nicaragua Node.js community](http://nodenica.com/)
-- [Russian website](http://node-center.ru/)
 - [Spanish language community](http://nodehispano.com)
 - [Turkey group in Turkish (Türkçe)](http://node.ist/)
 - [Việt Nam Node.js community](http://nodejs.vn)
