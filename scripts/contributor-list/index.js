@@ -32,6 +32,7 @@ const authors = github.query(`
                   oid
                   author {
                     name
+                    email
                     user {
                       login
                     }
@@ -54,7 +55,7 @@ const authors = github.query(`
     const parsed = new Map()
     commits.forEach(commit => {
       const name = commit.node.author.name
-      const username = commit.node.author.user.login
+      const username = commit.node.author.user ? commit.node.author.user.login : commit.node.author.email
       const committer = parsed.get(username)
       const commitCount = committer ? committer.commits : 0
 
