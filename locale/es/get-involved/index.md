@@ -53,6 +53,5 @@ a contribuir de cualquier forma posible. Si usted quiere [reportar un error](htt
 - [Comunidad en Facebook de usuarios Israelí de Node.js](https://www.facebook.com/groups/node.il/)
 - [Grupo de usuarios de Japón](http://nodejs.jp/)
 - [Comunidad de Nicaragua de Node.js](http://nodenica.com/)
-- [Sitio Ruso](http://node-center.ru/)
 - [Grupo de Turquía en turco (Türkçe)](http://node.ist/)
 - [Comunidad Việt Nam](http://nodejs.vn)
