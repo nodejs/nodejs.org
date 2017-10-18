@@ -46,7 +46,7 @@ const authors = github.query(`
   }`, {
     'org': 'nodejs',
     'repo': 'nodejs.org',
-    'since': since
+    'since': new Date(since)
   })
   .then(res => {
     const commits = res.data.repository.ref.target.history.edges
