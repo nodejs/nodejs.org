@@ -17,14 +17,15 @@ if (!/\d{4}-\d{2}-\d{2}/.test(since)) {
   process.exit(1)
 }
 
-const authors = github.query(`
-  query ($org: String!, $repo: String!, $since: GitTimestamp!) {
+const query = variables => github.query(`
+  query ($org: String!, $repo: String!, $since: GitTimestamp!, $after: String) {
     repository(name: $repo, owner: $org) {
       ref(qualifiedName: "master") {
         target {
           ... on Commit {
-            history(first: 100, since: $since) {
+            history(first: 100, since: $since, after: $after) {
               pageInfo {
+                endCursor
                 hasNextPage
               }
               edges {
@@ -32,6 +33,7 @@ const authors = github.query(`
                   oid
                   author {
                     name
+                    email
                     user {
                       login
                     }
@@ -43,18 +45,29 @@ const authors = github.query(`
         }
       }
     }
-  }`, {
-    'org': 'nodejs',
-    'repo': 'nodejs.org',
-    'since': since
-  })
+  }`, variables)
   .then(res => {
     const commits = res.data.repository.ref.target.history.edges
+    const page = res.data.repository.ref.target.history.pageInfo
+    if (page.hasNextPage === false) {
+      return commits
+    }
 
+    const after = page.endCursor
+    return query(Object.assign({}, variables, {after}))
+        .then(others => commits.concat(others))
+  })
+
+const authors = query({
+  'org': 'nodejs',
+  'repo': 'nodejs.org',
+  'since': new Date(since)
+})
+  .then(commits => {
     const parsed = new Map()
     commits.forEach(commit => {
       const name = commit.node.author.name
-      const username = commit.node.author.user.login
+      const username = commit.node.author.user ? commit.node.author.user.login : commit.node.author.email
       const committer = parsed.get(username)
       const commitCount = committer ? committer.commits : 0
 
