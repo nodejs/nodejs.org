@@ -6,7 +6,7 @@ trademark: Trademark
 # A propos de Node.js&reg;
 
 En tant qu'environnement d'exécution JavaScript asynchrone et orienté événnement, Node est conçu
-pour générer des applications évolutives. Dans le "hello world" d'exemple
+pour générer des applications scalables. Dans le "hello world" d'exemple
 suivant, plusieurs connexions peuvent être gérées de manière concurrente.
 A chaque connexion, la fonction de rappel est déclenchée, mais si il n'y a rien à faire, Node restera en sommeil.                                                                   
 
@@ -29,7 +29,7 @@ server.listen(port, hostname, () => {
 
 Ceci contraste avec le modèle de concurrence plus commun dans lequel les processus sytème
 sont utilisés. La gestion réseau basée sur les processus est relativement
-inéfficace est diffidile à utiliser. De plus, les utilisateurs de Node n'ont pas à se soucier des problèmes d'interblocage des processus
+inefficace est difficile à utiliser. De plus, les utilisateurs de Node n'ont pas à se soucier des problèmes d'interblocage des processus
 puis qu'il n'y a pas de verrouillage. Aucune fonction de Node ou presque
 n'effectue d'entrée/sortie, donc le processus ne bloque pas. Et comme rien
 n'est bloquant, développer un système scalable est relativement aisé avec Node.
@@ -40,9 +40,9 @@ un article complet (en anglais) [Bloquant vs Non-Bloquant][].
 ---
 
 Node est conçu de manière similaire à, et influencé par, des 
-librairies comme [Event Machine][] pour Ruby et [Twisted][] pour Python.
+librairies comme [Event Machine][] (en) pour Ruby et [Twisted][] (en) pour Python.
 Node pousse le modèle événnementiel encore plus loin. Il instaure la
-[boucle événnementielle][] en tant que construct de l'environnement d'exécution
+[boucle événnementielle][] (en) en tant que composant élémentaire de l'environnement d'exécution
 et non comme une librairie. Dans les autres systèmes, il y a toujours
 un appel bloquant pour démarrer la boucle événnementielle.
 Le comportement est défini habituellement par des fonctions de rappel au
@@ -58,10 +58,10 @@ et une faible latence. Ceci fait de Node une base toute désignée pour une libr
 
 Et si Node a été conçu sans processus multiples, vous pouvez tout de même
 profiter d'un environnement multi-coeur. Vous pouvez générer des processus 
-enfant par le biais de l'API [`child_process.fork()`][], avec lesquels 
+enfant par le biais de l'API [`child_process.fork()`][] (en), avec lesquels 
 vous pourrez communiquer facilement. Basé sur la même interface, le 
  module
- [`cluster`][] vous permettra de partager les sockets entre vos processus
+ [`cluster`][] (en) vous permettra de partager les sockets entre vos processus
  pour faire de la répartition de charge entre vos coeurs.
 
 [Bloquant vs Non-Bloquant]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
