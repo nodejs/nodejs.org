@@ -29,8 +29,8 @@ server.listen(port, hostname, () => {
 
 Ceci contraste avec le modèle de concurrence plus commun dans lequel les processus sytème
 sont utilisés. La gestion réseau basée sur les processus est relativement
-inefficace est difficile à utiliser. De plus, les utilisateurs de Node n'ont pas à se soucier des problèmes d'interblocage des processus
-puis qu'il n'y a pas de verrouillage. Aucune fonction de Node ou presque
+inefficace et difficile à utiliser. De plus, les utilisateurs de Node n'ont pas à se soucier des problèmes d'interblocage des processus
+puisqu'il n'y a pas de verrouillage. Aucune fonction de Node ou presque
 n'effectue d'entrée/sortie, donc le processus ne bloque pas. Et comme rien
 n'est bloquant, développer un système scalable est relativement aisé avec Node.
 
@@ -39,19 +39,19 @@ un article complet (en anglais) [Bloquant vs Non-Bloquant][].
 
 ---
 
-Node est conçu de manière similaire à, et influencé par, des 
+Node est conçu de manière similaire et influencé par des
 librairies comme [Event Machine][] (en) pour Ruby et [Twisted][] (en) pour Python.
-Node pousse le modèle événnementiel encore plus loin. Il instaure la
-[boucle événnementielle][] (en) en tant que composant élémentaire de l'environnement d'exécution
+Node pousse le modèle événementiel encore plus loin. Il instaure la
+[boucle événementielle][] (en) en tant que composant élémentaire de l'environnement d'exécution
 et non comme une librairie. Dans les autres systèmes, il y a toujours
-un appel bloquant pour démarrer la boucle événnementielle.
+un appel bloquant pour démarrer la boucle événementielle.
 Le comportement est défini habituellement par des fonctions de rappel au
 début du script, et à la fin un serveur est démarré avec un appel bloquant 
-comme `EventMachine::run()`. Dans Node, il n'y a pas d'appel pour-démarrer-la-boucle.
+comme `EventMachine::run()`. Dans Node, il n'y a pas d'appel pour démarrer la boucle.
 Node entre simplement dans la boucle après avoir exécuté le script d'entrée.
-Node sort de la boucle événnementielle lorsqu'il n'y a plus de fonction
+Node sort de la boucle événementielle lorsqu'il n'y a plus de fonction
 de rappel à exécuter. Ce comportement est similaire à celui de JavaScript
-dans un navigateur - la boucle événnementielle est cachée à l'utilisateur.
+dans un navigateur - la boucle événementielle est cachée à l'utilisateur.
 
 HTTP a une place prépondérante dans Node, qui a été conçu pour le streaming
 et une faible latence. Ceci fait de Node une base toute désignée pour une librairie web ou un framework.
