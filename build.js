@@ -281,7 +281,7 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          content: 'Important <a href="https://nodejs.org/en/blog/vulnerability/oct-2017-dos/">DOS security vulnerability</a>, Release coming Tuesday October 24th'
+          content: 'Important <a href="https://nodejs.org/en/blog/vulnerability/oct-2017-dos/">security releases</a>, please update now!'
         }
       }
     }
