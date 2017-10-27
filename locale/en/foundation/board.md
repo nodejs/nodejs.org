@@ -14,6 +14,7 @@ Technical Steering Committee, and representatives elected by the individual memb
 * Platinum Director: **Sarah Novotny**, Open Source Strategy at Google.
 * Gold Director: **Danese Cooper**, Distinguished Member of Technical Staff - open source at PayPal.
 * Silver-Level Director, Secretary: **Brian McCallister**, Chief Technology Officer of Platforms at Groupon.
+* Silver-Level Director: **Mårten Mickos**, Chief Executive Officer at HackerOne.
 * Individual Director (2016-2018): **Ashley Williams**
 * Individual Director (2017-2019): **William Kapke**
 * TSC Director: **Myles Borins**
