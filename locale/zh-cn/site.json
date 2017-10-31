@@ -131,10 +131,6 @@
         "education": {
             "link": "foundation/education",
             "text": "教学行动"
-        },
-        "outreachy": {
-            "link": "foundation/outreachy",
-            "text": "Outreachy + Node.js"
         }
     },
     "getinvolved": {
