@@ -47,4 +47,4 @@ contributing section](/en/get-involved/contribute/).
 
 ## Зустрічі Технічного виконавчого комітету
 
-[Meeting minutes](minutes/)
+[Meeting minutes](https://github.com/nodejs/TSC/tree/master/meetings)
