@@ -100,12 +100,6 @@ function buildLocale (source, locale) {
         refer: false,
         limit: 1
       },
-      tscMinutes: {
-        pattern: 'foundation/tsc/minutes/*.md',
-        sortBy: 'date',
-        reverse: true,
-        refer: false
-      },
       knowledgeBase: {
         pattern: 'knowledge/**/*.md',
         refer: false
@@ -149,11 +143,6 @@ function buildLocale (source, locale) {
       collection: 'blogVulnerability',
       destination: 'feed/vulnerability.xml',
       title: 'Node.js Blog: Vulnerability Reports'
-    }))
-    .use(feed({
-      collection: 'tscMinutes',
-      destination: 'feed/tsc-minutes.xml',
-      title: 'Node.js Technical Steering Committee meetings'
     }))
     // Finally, this compiles the rest of the layouts present in ./layouts.
     // They're language-agnostic, but have to be regenerated for every locale
