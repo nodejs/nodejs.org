@@ -8,12 +8,6 @@ The primary objective of the research was to profile Node.js users, understand u
 
 * <a href="/static/documents/casestudies/Nodejs_2017_User_Survey_Exec_Summary.pdf" data-casestudy="Node.js Foundation 2017 Survey Results">Read the full report.</a>
 
-## Forrester Report: Digital Transformation Using Node.js
-
-Forrester's November 2016 report details five common use cases around Node.js and how it can underpin digital transformation
-
-* [Read the full report here](https://reprints.forrester.com/#/assets/2/796/RES135952/reports)
-
 ## On-demand Forrester Research Webinar on Digital Transformation
 
 Check out our recent webinar on Digital Transformation with Node.js featuring Mark Hinkle, Executive Director for the Node.js Foundation, and Rick Adams, Senior Manager -IT Solutions at Lowe's. [Watch Now](http://go.linuxfoundation.org/e/6342/tal-transformation-with-nodejs/3vwsts/807272559) or [Download the Slides](http://go.linuxfoundation.org/e/6342/ion-nodejs-slides-20170712-pdf/3vwstv/807272559)
