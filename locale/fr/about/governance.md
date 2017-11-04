@@ -15,9 +15,9 @@ Le TSC a toute autorité sur ce projet, y compris:
 * la Direction Technique
 * La gouvernance et la gestion du projet (y compris cette politique)
 * La politique de contribution
-* la gestion des dépôts GitHub
+* La gestion des dépôts GitHub
 * Les guides de Conduite
-* La maintenance de la liste des collaborateurs
+* La maintenance de la liste des Collaborateurs
 
 Les invitations originelles à siéger au TSC ont été proposées
 à des contributeurs actifs qui avaient une experience significative
@@ -31,10 +31,10 @@ Vous pouvez trouver la liste des membres actuels du TSC sur le projet
 
 Le dépôt GitHub [nodejs/node](https://github.com/nodejs/node) est 
 maintenu par le TSC et un groupe de Collaborateurs additionnels
-Qui sont ajoutés par le TSC de manière continue.
+qui sont ajoutés par le TSC de manière continue.
 
 Les personnes proposant des contributions significatives sont faits
-Collaborateurs et se voient accordé les droits d'écriture sur le projet.
+Collaborateurs et se voient accorder les droits d'écriture sur le projet.
 Ces personnes sont identifiées par le TSC et leur ajout aux Collaborateurs
 est discuté lors des réunions hebdomadaires du TSC
 
@@ -48,7 +48,7 @@ proposer une modification par pull request et elle sera examinée par les
 Collaborateurs du projet. Toutes les pull request doivent être relues et acceptées
 par un Collaborateur ayant une expertise suffisante et qui soit capable
 d'assumer la résponsabilité du changement effectué. Dans le cas d'une pull
-request proposée par un Collaborateur, un autre Collaborator est requis
+request proposée par un Collaborateur, un autre Collaborateur est requis
 pour valider la modification. Un consensus doit être recherché si
 d'autres Collaborateurs participent et qu'un désaccord survient sur
 une modification. Voyez _Processus de Recherche de Consensus_ plus
@@ -63,7 +63,7 @@ TSC servira alors d'arbitre final lorsque requis.
 Pour la liste des Collaborateurs actuels, voir le projet 
 [README.md](https://github.com/nodejs/node/blob/master/README.md#current-project-team-members).
 
-Un guide des Collaborateurs et proposé sur 
+Un guide des Collaborateurs est proposé sur 
 [COLLABORATOR_GUIDE.md](https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md).
 
 ## Siéger au TSC
@@ -80,7 +80,7 @@ ces règles pour siéger au TSC.
 Le TSC peut ajouter des membres additionnels au TSC par une motion
 standard du TSC.
 
-Un membre du TSC peut être retiré du TSC par démission volontaire, ou pas
+Un membre du TSC peut être retiré du TSC par démission volontaire, ou
 par une motion standard du TSC.
 
 Les changements de modalités de participation au TSC devront être mises
@@ -91,14 +91,14 @@ Pas plus d'1/3 des membres du TSC ne pourront être affiliés au même
 employeur. Si le retrait ou la démission d'un membre du TSC, ou le 
 chamngement d'employeur d'un membre du TSC, créé une situation dans
 laquelle plus d'1/3 des membres du TSC partagent le même employeur,
-La situation devra immédiatement être corrigée par la démission ou le
+la situation devra immédiatement être corrigée par la démission ou le
 retrait d'un ou plusieurs membres du TSC affiliés avec le ou les 
 employeur-s sur-représenté-s.
 
 ## Réunions du TSC
 
 Le TSC se réunit de manière hebdomadaire sur Google Hangout On Air.
-La réunion est animée par un modérateur désigné et approuvé apr le TSC.
+La réunion est animée par un modérateur désigné et approuvé par le TSC.
 Chaque réunion est publiée sur Youtube.
 
 Sont ajoutés au programme les objets qui sont considérés contentieux
@@ -111,8 +111,8 @@ et géré par le groupe des Collaborateurs.
 
 N'importe quel membre de la communauté ou contributeur peut demander
 à ajouter un objet au programme de la prochaine réunion en ouvrant un
-ticket sur GitHub. N'importe quel Collaborator, membre du TSC ou le
-modérateur peut ajouter des objets au programme en ajoute l'étiquette
+ticket sur GitHub. N'importe quel Collaborateur, membre du TSC ou le
+modérateur peut ajouter des objets au programme en ajoutant l'étiquette
 ***tsc-agenda*** au ticket.
 
 Avant chaque réunion du TSC, le modérateur partagera le Programme
@@ -136,7 +136,7 @@ Le TSC suit un modèle décisionaire de
 [Recherche de Consensus](http://en.wikipedia.org/wiki/Consensus-seeking_decision-making)
 (en anglais).
 
-Quand on objet du programme a atteint un consensus, le modérateur
+Quand un objet du programme a atteint un consensus, le modérateur
 demande une dernière fois "Quelqu'un a-t'il une objection?" pour valider
 le consensus.
 
