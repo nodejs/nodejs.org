@@ -20,7 +20,7 @@ Le TSC a toute autorité sur ce projet, y compris:
 * La maintenance de la liste des Collaborateurs
 
 Les invitations originelles à siéger au TSC ont été proposées
-à des contributeurs actifs qui avaient une experience significative
+à des contributeurs actifs qui avaient une expérience significative
 en gestion de projet. La participation à ce comité est susceptible
 d'évoluer dans le temps en rapport avec les besoins du projet.
 
@@ -47,7 +47,7 @@ manière collaborative. N'importe qui possédant un compte GitHub peut
 proposer une modification par pull request et elle sera examinée par les
 Collaborateurs du projet. Toutes les pull request doivent être relues et acceptées
 par un Collaborateur ayant une expertise suffisante et qui soit capable
-d'assumer la résponsabilité du changement effectué. Dans le cas d'une pull
+d'assumer la responsabilité du changement effectué. Dans le cas d'une pull
 request proposée par un Collaborateur, un autre Collaborateur est requis
 pour valider la modification. Un consensus doit être recherché si
 d'autres Collaborateurs participent et qu'un désaccord survient sur
@@ -74,7 +74,7 @@ d'assurer une couverture suffisante des différents domaines d'expertise,
 en conservant la possibilité de prendre des décisions de manière
 efficace.
 
-Il n'y a aucun prérequis ou qualifications nécessaires au delà de
+Il n'y a aucun prérequis ou qualifications nécessaires au-delà de
 ces règles pour siéger au TSC.
 
 Le TSC peut ajouter des membres additionnels au TSC par une motion
@@ -89,7 +89,7 @@ objet de programme (voir "Réunions du TSC" plus bas).
 
 Pas plus d'1/3 des membres du TSC ne pourront être affiliés au même
 employeur. Si le retrait ou la démission d'un membre du TSC, ou le 
-chamngement d'employeur d'un membre du TSC, créé une situation dans
+changement d'employeur d'un membre du TSC, créé une situation dans
 laquelle plus d'1/3 des membres du TSC partagent le même employeur,
 la situation devra immédiatement être corrigée par la démission ou le
 retrait d'un ou plusieurs membres du TSC affiliés avec le ou les 
@@ -126,13 +126,13 @@ Le TSC peut inviter des personnes ou des représentants de certains projets
 * Un représentant du projet [build](https://github.com/node-forward/build)
   choisi par ce projet.
 
-Le moderateur est chargé de résumer la discussion concernant chaque
+Le modérateur est chargé de résumer la discussion concernant chaque
 objet du programme et de les envoyer sous forme de pull request après
 chaque réunion.
 
 ## Processus de Recherche de Consensus
 
-Le TSC suit un modèle décisionaire de
+Le TSC suit un modèle décisionnaire de
 [Recherche de Consensus](http://en.wikipedia.org/wiki/Consensus-seeking_decision-making)
 (en anglais).
 
@@ -141,7 +141,7 @@ demande une dernière fois "Quelqu'un a-t'il une objection?" pour valider
 le consensus.
 
 Si un objet du programme n'atteint pas de consensus, un membre du TSC
-peut soit appeler à un vote de cloture, ou à un vote pour reporter 
+peut soit appeler à un vote de clôture, ou à un vote pour reporter 
 l'objet à la prochaine réunion. L'appel au vote doit être approuvé par
 la majorité du TSC ou la discussion continue. Seule la majorité simple
 est requise.
