@@ -12,7 +12,7 @@ la gouvernance de haut-niveau du projet.
 
 Le TSC a toute autorité sur ce projet, y compris:
 
-* la direction technique
+* La direction technique
 * La gouvernance et la gestion du projet (y compris cette politique)
 * La politique de contribution
 * La gestion des dépôts GitHub
@@ -25,7 +25,7 @@ avec la gestion du projet. La participation à ce comité est susceptible
 d'évoluer dans le temps en rapport avec les besoins du projet.
 
 Pour trouver la liste des membres actuels du TSC, voir le [README.md]
-(https://github.com/nodejs/node/blob/master/README.md#tsc-technical-steering-committee) du projet).
+(https://github.com/nodejs/node/blob/master/README.md#tsc-technical-steering-committee) du projet.
 
 ## Collaborateurs
 
@@ -106,7 +106,7 @@ participation au TSC, ou concernant le processus de release.
 
 L'intention du programme n'est pas d'approuver ou relire tous les 
 correctifs. Ceci devra être fait de manière continue sur GitHub
-géré par le groupe des Collaborateurs.
+et géré par l'ensemble des Collaborateurs.
 
 N'importe quel membre de la communauté ou contributeur peut demander
 à ajouter un objet au programme de la prochaine réunion en ouvrant un
