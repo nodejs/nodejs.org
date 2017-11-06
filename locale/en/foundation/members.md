@@ -45,6 +45,9 @@ Individual membership costs [$100 a year, or $25 for students](https://identity.
   <img alt="Red Hat" class="memberlogo" src="/static/images/foundation/redhatLogo.png" />
 </a>
 </div>
+<a target="_new" class="imagelink" href="https://google.com">
+  <img alt="Google" class="memberlogo" src="/static/images/foundation/googleLogo.png" />
+</a>
 
 ## Gold
 
@@ -75,9 +78,6 @@ Individual membership costs [$100 a year, or $25 for students](https://identity.
 <a target="_new" class="imagelink" href="//fidelity.com">
   <img alt="Fidelity" class="memberlogo" src="/static/images/foundation/fidelityLogo.png" />
 </a>
-<a target="_new" class="imagelink" href="https://google.com">
-  <img alt="Google" class="memberlogo" src="/static/images/foundation/googleLogo.png" />
-</a>
 <a target="_new" class="imagelink" href="//groupon.com">
   <img alt="Groupon" class="memberlogo" src="/static/images/foundation/grouponLogo.png" />
 </a>
@@ -107,6 +107,24 @@ Individual membership costs [$100 a year, or $25 for students](https://identity.
 </a>
 <a target="_new" class="imagelink" href="https://safetyculture.com/">
   <img alt="SafetyCulture" class="memberlogo" src="/static/images/foundation/safetycultureLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="https://liftsecurity.io/">
+  <img alt="^Lift" class="memberlogo" src="/static/images/foundation/liftLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="https://bitnami.com/">
+  <img alt="Bitnami" class="memberlogo" src="/static/images/foundation/bitnamiLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="https://www.habitat.sh/">
+  <img alt="Chef" class="memberlogo" src="/static/images/foundation/chefLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="https://keymetrics.io/">
+  <img alt="Keymetrics" class="memberlogo" src="/static/images/foundation/keymetricsLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="https://www.hackerone.com/">
+  <img alt="HackerOne" class="memberlogo" src="/static/images/foundation/hackerOneLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="www.profoundlogic.com/">
+  <img alt="Profound Logic" class="memberlogo" src="/static/images/foundation/profoundLogicLogo.png" />
 </a>
 </div>
 
