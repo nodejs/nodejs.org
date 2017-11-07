@@ -98,6 +98,11 @@ const queryCollaborators = variables => github.query(`
 const repositoryOwner = 'nodejs'
 const repositoryName = 'nodejs.org'
 
+const formatOutput = (users) => {
+  console.log(`${repositoryOwner}/${repositoryName} committers since ${args[0]}, which aren't contributors yet:\n`)
+  console.log(users.map(user => `* ${user.login} (${user.name})`).join('\n'))
+}
+
 Promise
   .all([
     queryCollaborators({repositoryOwner, repositoryName}),
@@ -114,5 +119,5 @@ Promise
       .filter(user => _.isEmpty(collaborators[user.login]))
       .value()
   })
-  .then(res => console.log(res))
+  .then(res => formatOutput(res))
   .catch(err => console.log(err))
