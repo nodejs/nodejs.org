@@ -32,11 +32,11 @@ Node.js Foundation відкритий для бізнесу та окремих 
 <a target="_new" class="imagelink" href="//microsoft.com">
   <img alt="Microsoft" class="memberlogo" src="/static/images/foundation/microsoftLogo.png" />
 </a>
-<a target="_new" class="imagelink" href="//paypal.com">
-  <img alt="PayPal" class="memberlogo" src="/static/images/foundation/paypalLogo.png" />
-</a>
 <a target="_new" class="imagelink" href="//redhat.com">
   <img alt="Red Hat" class="memberlogo" src="/static/images/foundation/redhatLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="https://google.com">
+  <img alt="Google" class="memberlogo" src="/static/images/foundation/googleLogo.png" />
 </a>
 </div>
 
@@ -48,6 +48,9 @@ Node.js Foundation відкритий для бізнесу та окремих 
 </a>
 <a target="_new" class="imagelink" href="//nodesource.com">
   <img alt="NodeSource" class="memberlogo" src="/static/images/foundation/nodesourceLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="//paypal.com">
+  <img alt="PayPal" class="memberlogo" src="/static/images/foundation/paypalLogo.png" />
 </a>
 </div>
 
@@ -65,9 +68,6 @@ Node.js Foundation відкритий для бізнесу та окремих 
 </a>
 <a target="_new" class="imagelink" href="//fidelity.com">
   <img alt="Fidelity" class="memberlogo" src="/static/images/foundation/fidelityLogo.png" />
-</a>
-<a target="_new" class="imagelink" href="https://google.com">
-  <img alt="Google" class="memberlogo" src="/static/images/foundation/googleLogo.png" />
 </a>
 <a target="_new" class="imagelink" href="//groupon.com">
   <img alt="Groupon" class="memberlogo" src="/static/images/foundation/grouponLogo.png" />
@@ -98,6 +98,24 @@ Node.js Foundation відкритий для бізнесу та окремих 
 </a>
 <a target="_new" class="imagelink" href="https://safetyculture.com/">
   <img alt="SafetyCulture" class="memberlogo" src="/static/images/foundation/safetycultureLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="https://liftsecurity.io/">
+  <img alt="^Lift" class="memberlogo" src="/static/images/foundation/liftLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="https://bitnami.com/">
+  <img alt="Bitnami" class="memberlogo" src="/static/images/foundation/bitnamiLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="https://www.habitat.sh/">
+  <img alt="Chef" class="memberlogo" src="/static/images/foundation/chefLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="https://keymetrics.io/">
+  <img alt="Keymetrics" class="memberlogo" src="/static/images/foundation/keymetricsLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="https://www.hackerone.com/">
+  <img alt="HackerOne" class="memberlogo" src="/static/images/foundation/hackerOneLogo.png" />
+</a>
+<a target="_new" class="imagelink" href="www.profoundlogic.com/">
+  <img alt="Profound Logic" class="memberlogo" src="/static/images/foundation/profoundLogicLogo.png" />
 </a>
 </div>
 
