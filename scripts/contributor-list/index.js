@@ -2,39 +2,39 @@
 
 const path = require('path')
 
+const _ = require('lodash')
 const GithubGraphQLApi = require('node-github-graphql')
+
+const args = process.argv.splice(2)
+const since = new Date(args[0])
+
+if (_.isNaN(since.getTime())) {
+  console.error(`usage: ${path.basename(process.argv[1])} YYYY-MM-DD`)
+  process.exit(1)
+}
+
 const github = new GithubGraphQLApi({
   Promise,
   token: process.env.GITHUB_API_TOKEN,
   userAgent: 'nodejs.org-contributor'
 })
 
-const args = process.argv.splice(2)
-const since = args[0]
-
-if (!/\d{4}-\d{2}-\d{2}/.test(since)) {
-  console.error(`usage: ${path.basename(process.argv[1])} YYYY-MM-DD`)
-  process.exit(1)
-}
-
-const authors = github.query(`
-  query ($org: String!, $repo: String!, $since: GitTimestamp!) {
-    repository(name: $repo, owner: $org) {
+const queryCommits = variables => github.query(`
+  query ($repositoryOwner: String!, $repositoryName: String!, $since: GitTimestamp, $historyAfter: String) {
+    repository(owner: $repositoryOwner, name: $repositoryName) {
       ref(qualifiedName: "master") {
         target {
           ... on Commit {
-            history(first: 100, since: $since) {
+            history(first: 100, since: $since, after: $historyAfter) {
               pageInfo {
+                endCursor
                 hasNextPage
               }
-              edges {
-                node {
-                  oid
-                  author {
+              nodes {
+                author {
+                  user {
                     name
-                    user {
-                      login
-                    }
+                    login
                   }
                 }
               }
@@ -43,28 +43,76 @@ const authors = github.query(`
         }
       }
     }
-  }`, {
-    'org': 'nodejs',
-    'repo': 'nodejs.org',
-    'since': since
-  })
+  }`, variables)
   .then(res => {
-    const commits = res.data.repository.ref.target.history.edges
+    const data = _.get(res, ['data', 'repository', 'ref', 'target', 'history'])
+    if (_.isEmpty(data)) {
+      return []
+    }
 
-    const parsed = new Map()
-    commits.forEach(commit => {
-      const name = commit.node.author.name
-      const username = commit.node.author.user.login
-      const committer = parsed.get(username)
-      const commitCount = committer ? committer.commits : 0
+    const commits = data.nodes
 
-      parsed.set(username, {
-        name,
-        commits: commitCount + 1
-      })
-    })
+    const page = data.pageInfo
+    if (page.hasNextPage === false) {
+      return commits
+    }
 
-    return parsed.entries()
+    const historyAfter = page.endCursor
+    return queryCommits(_.defaults({historyAfter}, variables))
+        .then(others => _.concat(commits, others))
+  })
+
+const queryCollaborators = variables => github.query(`
+  query ($repositoryOwner: String!, $repositoryName: String!, $collaboratorsAfter: String) {
+    repository(owner: $repositoryOwner, name: $repositoryName) {
+      collaborators(first: 100, after: $collaboratorsAfter) {
+        pageInfo {
+          endCursor
+          hasNextPage
+        }
+        nodes {
+          name
+          login
+        }
+      }
+    }
+  }`, variables)
+  .then(res => {
+    const data = _.get(res, ['data', 'repository', 'collaborators'])
+    if (_.isEmpty(data)) {
+      return []
+    }
+
+    const collaborators = data.nodes
+
+    const page = data.pageInfo
+    if (page.hasNextPage === false) {
+      return collaborators
+    }
+
+    const collaboratorsAfter = page.endCursor
+    return queryCollaborators(_.defaults({collaboratorsAfter}, variables))
+        .then(others => _.concat(collaborators, others))
+  })
+
+const repositoryOwner = 'nodejs'
+const repositoryName = 'nodejs.org'
+
+Promise
+  .all([
+    queryCollaborators({repositoryOwner, repositoryName}),
+    queryCommits({repositoryOwner, repositoryName, since})
+  ])
+  .then(results => {
+    const collaborators = _.keyBy(results[0], 'login')
+
+    return _.chain(results[1])
+      .map('author.user')
+      .reject(_.isEmpty)
+      .groupBy('login')
+      .map(group => _.defaults({commits: _.size(group)}, _.head(group)))
+      .filter(user => _.isEmpty(collaborators[user.login]))
+      .value()
   })
   .then(res => console.log(res))
   .catch(err => console.log(err))
