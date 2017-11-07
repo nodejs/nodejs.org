@@ -26,12 +26,13 @@ Core Working Groups are created by the
 * [Build](#build)
 * [Diagnostics](#diagnostics)
 * [i18n](#i18n)
+* [Intl](#intl)
 * [Evangelism](#evangelism)
 * [Docker](#docker)
 * [Addon API](#addon-api)
 * [Benchmarking](#benchmarking)
 * [Post-mortem](#post-mortem)
-* [Intl](#intl)
+* [Release](#release)
 -->
 
 ## 현재의 워킹 그룹
@@ -41,12 +42,13 @@ Core Working Groups are created by the
 * [Build](#build)
 * [Diagnostics](#diagnostics)
 * [i18n](#i18n)
+* [Intl](#intl)
 * [Evangelism](#evangelism)
 * [Docker](#docker)
 * [Addon API](#addon-api)
 * [Benchmarking](#benchmarking)
 * [Post-mortem](#post-mortem)
-* [Intl](#intl)
+* [Release](#release)
 
 <!--
 ### [Website](https://github.com/nodejs/nodejs.org)
@@ -363,7 +365,7 @@ abstraction layer for native add-on authors for Node.js,
 assisting in the writing of code that is compatible with many actively used
 versions of Node.js, V8 and libuv.
 
-Responsibilities include
+Responsibilities include:
 * Maintaining the [NAN](https://github.com/nodejs/nan) GitHub repository,
   including code, issues and documentation.
 * Maintaining the [addon-examples](https://github.com/nodejs/node-addon-examples)
@@ -454,3 +456,15 @@ Responsibilities include:
 이 워킹 그룹은 다음에 대한 책임이 있습니다.
 * 필요할 때 덤프를 생성할 수 있도록 인터페이스/API를 정의하고 추가합니다.
 * 이러한 덤프를 분석하는 도구를 지원하기 위해 생성된 덤프의 공통 구조를 정의하고 추가합니다.
+
+### [Release](https://github.com/nodejs/LTS)
+The Release Working Group manages the release process for Node.js.
+
+Responsibilities include:
+* Define the release process.
+* Define the content of releases.
+* Generate and create releases.
+* Test Releases.
+* Manage the Long Term Support and Current branches including
+  backporting changes to these branches.
+* Define the policy for what gets backported to release streams

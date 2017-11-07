@@ -15,12 +15,12 @@ Core Working Groups are created by the
 * [Build](#build)
 * [Diagnostics](#diagnostics)
 * [i18n](#i18n)
+* [Intl](#intl)
 * [Evangelism](#evangelism)
 * [Docker](#docker)
 * [Addon API](#addon-api)
 * [Benchmarking](#benchmarking)
 * [Post-mortem](#post-mortem)
-* [Intl](#intl)
 * [Release](#release)
 
 ### [Website](https://github.com/nodejs/nodejs.org)
