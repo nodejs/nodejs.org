@@ -44,10 +44,10 @@ Individual membership costs [$100 a year, or $25 for students](https://identity.
 <a target="_new" class="imagelink" href="//redhat.com">
   <img alt="Red Hat" class="memberlogo" src="/static/images/foundation/redhatLogo.png" />
 </a>
-</div>
 <a target="_new" class="imagelink" href="https://google.com">
   <img alt="Google" class="memberlogo" src="/static/images/foundation/googleLogo.png" />
 </a>
+</div>
 
 ## Gold
 
