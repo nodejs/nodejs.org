@@ -2,44 +2,44 @@
 layout: about.hbs
 title: Groupes de Travail
 ---
-# Groupes de Travail Core
+# Groupes de Travail du Core
 <!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 
-Les Groupes de Travail Core sont créés par le
+Les Groupes de Travail du Core sont créés par le
 [Comité de Pilotage Technique (TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).
 
-## Current Working Groups
+## Groupes de Travail actuels
 
 * [Site Web](#site-web)
-* [Flux](#flux)
+* [Streams](#streams)
 * [Build](#build)
 * [Diagnostics](#diagnostics)
-* [Internationalisation](#internationalisation)
-* [Evangelisme](#evangelism)
+* [i18n](#i18n)
+* [Intl](#intl)
+* [Evangélisme](#evangélisme)
 * [Docker](#docker)
 * [Addon API](#addon-api)
 * [Benchmarking](#benchmarking)
 * [Post-mortem](#post-mortem)
-* [Intl](#intl)
 * [Release](#release)
 
 ### [Site Web](https://github.com/nodejs/nodejs.org)
 
-L'objectif du Groupe de Travail Site Web et des construire et maintenir
+L'objectif du Groupe de Travail du Site Web est des construire et maintenir
 un site web public pour le projet Node.js.
 
 Ses responsabilités incluent:
-* Déceloper et maintenir un système de build et d'automation pour nodejs.org
-* S'assure que le site est maintenu à jour avec les changements effectués sur Node.js,
+* Déveloper et maintenir un système de build et d'automation pour nodejs.org
+* S'assurer de la mise à jour régulière du site avec les changements apportés à Node.js,
   comme les releases et les fonctionnalités.
-* Permettre et abriter le développement d'une communauté de traducteurs.
+* Permettre et encourager le développement d'une communauté de traducteurs.
 
-### [Flux](https://github.com/nodejs/readable-stream)
+### [Streams](https://github.com/nodejs/readable-stream)
 
-Le Groupe de Travail Flux est dédié au support et à l'amélioration de l'API 
-Flux telle qu'utilisée dans Node.js et dans l'écosystème npm. Nous chercherons à
+Le Groupe de Travail des Streams est dédié au support et à l'amélioration de l'API 
+Streams telle qu'utilisée dans Node.js et dans l'écosystème npm. Nous cherchons à
 créer une API composable qui résoud le problème de la représentation de multiples
-occurrences d'un évènnement dans le temps de façon simple et accessible. Les
+occurrences d'un évènement dans le temps de façon simple et accessible. Les
 améliorations sur cette API seront faites selon les besoin de l'écosystème; 
 l'intéropérabilité et la rétrocompatibilité avec d'autres solutions et les anciennes
 versions sont une priorité absolue.
@@ -56,18 +56,18 @@ Ses responsabilités incluent:
 
 ### [Build](https://github.com/nodejs/build)
 
-L'objectif du Groupe de Travail Build est de créer et maintenir une infrastructure
+L'objectif du Groupe de Travail du Build est de créer et maintenir une infrastructure
 d'automation distribuée.
 
 Ses responsabilités incluent:
 * Produire des packages pour toutes les plateformes cibles.
 * Effectuer des tests.
 * Effectuer des tests de performances et des comparaisons.
-* Créer et manager les conteneurs de build.
+* Créer et gérer les conteneurs de build.
 
 ### [Diagnostics](https://github.com/nodejs/diagnostics)
 
-L'objectif du Groupe de Travail Diagnostics est de présenter un ensemble complet,
+L'objectif du Groupe de Travail des Diagnostics est de présenter un ensemble complet,
 documenté, et extensible d'interfaces de diagnostic utilisables avec les outils Node.js
 et les machines virtuelles JavaScript.
 
@@ -75,31 +75,31 @@ Ses responsabilités incluent:
 * Collaborer avec V8 pour intégrer `v8_inspector` dans Node.js.
 * Collaborer avec V8 pour intégrer `trace_event` dans Node.js.
 * Collaborer avec Core pour affiner `async_wrap` et `async_hooks`.
-* Maintenir et améliorer l'intégration des système de trace des systèmes d'eploitation
+* Maintenir et améliorer l'intégration des système de trace des systèmes d'exploitation
   (ex. ETW, LTTNG, dtrace).
 * Explorer les opportunités et failles, discuter des demandes d'amélioration, et
   résoudre les conflits dans les diagnotics de Node.js.
-* Développer un écosystème d'outils de diagnostic pour Node.js.
+* Favoriser le développement d'un écosystème d'outils de diagnostic pour Node.js.
 
-### Internationalisation
+### i18n
 
-Les Groupes de Travail Internationalisation (`i18n`) gère plus que les traductions.
+Les Groupes de Travail d'Internationalisation (`i18n`) gère plus que les traductions.
 Ils sont les points d'accès qui permettent aux membres de la communauté de 
 collaborer dans la langue de leur choix.
 
-Chaque équipe est organisée autour d'un langage parlé commun. Chaque
-communauté de langage peut produire des localisations pour de 
-nombreuses ressources de projet.
+Chaque équipe est organisée autour d'une langue commune. Chaque
+communauté de langue peut ensuite produire des traductions pour diverses
+ressources du projet.
 
 Leurs responsabilités incluent:
-* Traduire tout le matériel Node.js qui leur parait pertinent pour leur
+* Traduire tout matériel Node.js qui leur parait pertinent pour leur
   communauté.
-* Réviser les processus à même de maintenir les traductions à jour et fidèles.
-* Gérer et monitorer les canaux et réseaux sociaux dans leur langue.
+* Contrôler les processus de maintient des traductions fidèles et à jour.
+* Gérer et surveiller les réseaux sociaux dans leur langue.
 * Faire la promotion d'intervenants Node.js pour les meetups et conférences
   dans leur langue.
 
-Veuillez noter que les Groupes de Travail Internationalisation sont séparés
+Veuillez noter que les Groupes de Travail d'Internationalisation sont séparés
 du Groupe de Travail [Intl](#Intl).
 
 Chaque communauté de langue gère sa propre liste de membres.
@@ -141,54 +141,53 @@ Chaque communauté de langue gère sa propre liste de membres.
 
 ### [Intl](https://github.com/nodejs/Intl)
 
-Le Groupe de Travail Intl est dédié au support et à l'amélioration de
+Le Groupe de Travail d'Intl est dédié au support et à l'amélioration de
 l'Internationalisation (i18n) et de la Localisation (l10n) dans Node.
 
 Ses responsabilités incluent:
 * Assurer le fonctionnement et la conformité (standards: ECMA, Unicode…)
-* Assurer le support sur les tickets de Globalisation et d'Internationalisation
+* Assurer le support des tickets de Globalisation et d'Internationalisation
   ouverts dans le tracker
-* Fournir une orientation et communiquer sur les bonnes practiques
+* Conseiller et promouvoir les bonnes pratiques
 * Affiner l'implémentation actuelle d'`Intl`
 
-Le Groupe de Travail Intl n'est pas responsable de la traduction du contenu. Ceci
+Le Groupe de Travail d'Intl n'est pas responsable de la traduction du contenu. Ceci
 relève de la responsabilité des groupes [i18n](#i18n) de chaque langue.
 
-### [Evangelisme](https://github.com/nodejs/evangelism)
+### [Evangélisme](https://github.com/nodejs/evangelism)
 
-Le Groupe de Travail Evangélisme fait la promotion des accomplissements
+Le Groupe de Travail d'Evangélisme fait la promotion des accomplissements
 de Node.js et communique sur les façons de s'impliquer.
 
 Ses responsabilités incluent:
-* La facilitation de la communication du projet.
-* La gestion des comptes officiels du projet sur les réseaux sociaux.
-* La gestion de la promotion des intérevenants en conférence et meetups.
-* La gestion de la promotion des événements communautaires.
-* La publication régulière de résumés de mises à jour et tout autre contenu
-  promotionnel.
+* Faciliter la communication au sein du projet.
+* Gérer les comptes officiels du projet sur les réseaux sociaux.
+* Gérer la promotion d'intervenants pour les conférences et les meetups.
+* Gérer la promotion des événements communautaires.
+* Publier des résumés de mises à jour réguliers et tout autre contenu promotionnel.
 
 ### [Docker](https://github.com/nodejs/docker-node)
 
-L'objectif du Groupe de Travail Docker est de construire, maintenir et améliorer
+L'objectif du Groupe de Travail de Docker est de construire, maintenir et améliorer
 les images Docker officielles du projet Node.js.
 
 Ses responsabilités incluent:
-* Maintenir à jour les images officielles Docker en lien avec les sorties Node.js.
+* Maintenir à jour les images officielles Docker en lien avec les releases de Node.js.
 * Choisir et implémenter des améliorations et/ou des corrections sur les images.
 * Maintenir et améliorer la documentation des images.
 
 ### [Addon API](https://github.com/nodejs/nan)
 
-Le Groupe de Travaill Addon API est responsable de la maintenance du projet NAN
-et du package _nan_ correspondant sur npm. Le projet NAN met à disposition
+Le Groupe de Travaill d'Addon API est responsable de maintenir le projet NAN
+et le package _nan_ correspondant sur npm. Le projet NAN met à disposition
 une couche d'abstraction pour les auteurs d'add-on natifs pour Node.js,
-en aidant à l'écriture de code compatible avec les versions actives de Node.js,
+en facilitant l'écriture de code compatible avec les versions actives de Node.js,
 V8 et libuv.
 
 Ses responsabilités incluent:
 * Maintenir le dépôt GitHub [NAN](https://github.com/nodejs/nan), y compris le
   code, les tickets et la documentation.
-* maintenir le dépôt GitHub [addon-examples](https://github.com/nodejs/node-addon-examples)
+* Maintenir le dépôt GitHub [addon-examples](https://github.com/nodejs/node-addon-examples)
   y compris le code, les tickets et la documentation.
 * Maintenir l'API pour Addon C++ du projet Node.js, en coordination avec le TSC
   de Node.js
@@ -203,7 +202,7 @@ La liste des membres actuels du groupe se trouve sur leur
 
 ### [Benchmarking](https://github.com/nodejs/benchmarking)
 
-L'objectif du Groupe de Travail Benchmark est d'arriver à un
+L'objectif du Groupe de Travail de Benchmark est d'arriver à un
 consensus sur une ensemble de points de référence qui pourront
 être utilisés pour:
 * suivre et communiquer sur les gains de performance entre chaque
@@ -213,22 +212,22 @@ consensus sur une ensemble de points de référence qui pourront
 Ses responsabilités incluent:
 * Identifier un ou plusieurs points de référence qui reflètent
   les utilisations client.
-  Celà incluera certainement plusieurs points pour couvrir
+  Cela incluera certainement plusieurs points pour couvrir
   les usages habituels de Node.js, y compris la réduction de latence
   et la concurrence élevée
-* Travailler pour obtenir un consensus communautaire sur la liste
+* Encourager un consensus de la communauté sur la liste
   choisie
-* Aider à l'exécution régulière des benchmarks choisis sur les builds
+* Ajouter l'exécution régulière des benchmarks choisis sur les builds de 
   Node.js
-* Traquer/Communiquer sur les performances des différentes versions
+* Traquer/Publier les performances des différentes versions
 
 ### [Post-mortem](https://github.com/nodejs/post-mortem)
 
-Le Groupe de Travail de Diagnostic Post-Mortem est dédié à la maintenance
-et à l'amélioration du débuggage portmortem pour Node.js. Il cherche
-l'augmentation du rôle du débug postmortel pour Node.js, afin d'aider
-au développement d'outils et de techniques, et pour faire connaitre ces
-techniques et outils auprès des utilisateurs de Node.js.
+Le Groupe de Travail des Diagnostics Post-Mortem est dédié à la maintenance
+et à l'amélioration du débogage portmortem pour Node.js. Il cherche à élever
+le rôle du débogage post-mortem pour Node.js, afin d'aider au développement 
+d'outils et de techniques, et pour faire connaitre ces techniques et outils
+auprès des utilisateurs de Node.js.
 
 Ses responsabilités incluent:
 * Définir et ajouter des interfaces/APIs pour permettre la génération
@@ -237,14 +236,13 @@ Ses responsabilités incluent:
   afin de faciliter la création d'outil d'inspection de ces dumps.
 
 ### [Release](https://github.com/nodejs/LTS)
-Le Groupe de Travail Release gère le processus de publication de version
-de Node.js.
+Le Groupe de Travail de la Release gère le processus des releases de Node.js.
 
 Ses responsabilités incluent:
 * Définir le processus de release.
 * Définir le contenu des releases.
 * Générer et créer les releases.
 * Tester les releases.
-* Gérer le Support Longue Durée et les branches courrantes, y compris
+* Gérer le Support Longue Durée et les branches courantes, y compris
   le rétroportage des changements sur ces branches.
 * Définir la politique de rétroportage pour les canaux de release.
