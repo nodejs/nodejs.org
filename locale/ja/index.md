@@ -13,6 +13,11 @@ labels:
   tagline-lts: 推奨版
   changelog: 変更履歴
   api: API ドキュメント
+  version-schedule-prompt: または、
+  version-schedule-prompt-link-text: LTSのリリーススケジュールをご覧ください
+  newsletter: true
+  newsletter-prefix: "公式 Node.js ニュースレター"
+  newsletter-postfix: "を購読しましょう。"
 ---
 
 Node.js® は、[Chrome の V8 JavaScript エンジン](https://developers.google.com/v8/) で動作する JavaScript 環境です。
