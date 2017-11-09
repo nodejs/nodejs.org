@@ -215,8 +215,7 @@ Ses responsabilités incluent:
   Cela incluera certainement plusieurs points pour couvrir
   les usages habituels de Node.js, y compris la réduction de latence
   et la concurrence élevée
-* Encourager un consensus de la communauté sur la liste
-  choisie
+* Encourager un consensus de la communauté sur la liste choisie
 * Ajouter l'exécution régulière des benchmarks choisis sur les builds de 
   Node.js
 * Traquer/Publier les performances des différentes versions
