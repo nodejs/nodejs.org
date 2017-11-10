@@ -14,7 +14,7 @@ labels:
   changelog: Changelog
   api: Documentazione API
   version-schedule-prompt: Dai un'occhiata alla
-  version-schedule-prompt-link-text: tabella di marcia LTS
+  version-schedule-prompt-link-text: tabella di marcia LTS.
   newsletter: true
   newsletter-prefix: Iscriviti a
   newsletter-postfix: ", la newsletter settimanale di Node.js"

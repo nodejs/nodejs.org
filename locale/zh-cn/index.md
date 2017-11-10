@@ -14,7 +14,7 @@ labels:
   changelog: 更新日志
   api: API 文档
   version-schedule-prompt: 可参考
-  version-schedule-prompt-link-text: LTS 日程
+  version-schedule-prompt-link-text: LTS 日程。
   newsletter: true
   newsletter-prefix: 注册
   newsletter-postfix: ", Node.js 官方的新闻周报。"
