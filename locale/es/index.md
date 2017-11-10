@@ -14,7 +14,7 @@ labels:
   changelog: Cambios
   api: Documentación del API
   version-schedule-prompt: Ó revise la
-  version-schedule-prompt-link-text: Agenda de LTS
+  version-schedule-prompt-link-text: Agenda de LTS.
 ---
 
 Node.js® es un entorno de ejecución para JavaScript construido con el [motor de JavaScript V8 de Chrome](https://developers.google.com/v8/).

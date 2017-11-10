@@ -14,7 +14,7 @@ labels:
   changelog: 変更履歴
   api: API ドキュメント
   version-schedule-prompt: または、
-  version-schedule-prompt-link-text: LTSのリリーススケジュールをご覧ください
+  version-schedule-prompt-link-text: LTSのリリーススケジュールをご覧ください。
   newsletter: true
   newsletter-prefix: "公式 Node.js ニュースレター"
   newsletter-postfix: "を購読しましょう。"
