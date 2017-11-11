@@ -1,0 +1,11 @@
+{
+  "name": "contributor-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "node-github-graphql": "^0.2.6"
+  }
+}
