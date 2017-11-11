@@ -25,7 +25,7 @@ Les Groupes de Travail du Core sont créés par le
 
 ### [Site Web](https://github.com/nodejs/nodejs.org)
 
-L'objectif du Groupe de Travail du Site Web est des construire et maintenir
+L'objectif du Groupe de Travail du Site Web est de construire et maintenir
 un site web public pour le projet Node.js.
 
 Ses responsabilités incluent:
@@ -40,7 +40,7 @@ Le Groupe de Travail des Streams est dédié au support et à l'amélioration de
 Streams telle qu'utilisée dans Node.js et dans l'écosystème npm. Nous cherchons à
 créer une API composable qui résoud le problème de la représentation de multiples
 occurrences d'un évènement dans le temps de façon simple et accessible. Les
-améliorations sur cette API seront faites selon les besoin de l'écosystème; 
+améliorations sur cette API seront faites selon les besoins de l'écosystème; 
 l'intéropérabilité et la rétrocompatibilité avec d'autres solutions et les anciennes
 versions sont une priorité absolue.
 
@@ -75,7 +75,7 @@ Ses responsabilités incluent:
 * Collaborer avec V8 pour intégrer `v8_inspector` dans Node.js.
 * Collaborer avec V8 pour intégrer `trace_event` dans Node.js.
 * Collaborer avec Core pour affiner `async_wrap` et `async_hooks`.
-* Maintenir et améliorer l'intégration des système de trace des systèmes d'exploitation
+* Maintenir et améliorer l'intégration des systèmes de trace des systèmes d'exploitation
   (ex. ETW, LTTNG, dtrace).
 * Explorer les opportunités et failles, discuter des demandes d'amélioration, et
   résoudre les conflits dans les diagnotics de Node.js.
@@ -83,7 +83,7 @@ Ses responsabilités incluent:
 
 ### i18n
 
-Les Groupes de Travail d'Internationalisation (`i18n`) gère plus que les traductions.
+Les Groupes de Travail d'Internationalisation (`i18n`) gèrent plus que les traductions.
 Ils sont les points d'accès qui permettent aux membres de la communauté de 
 collaborer dans la langue de leur choix.
 
@@ -94,7 +94,7 @@ ressources du projet.
 Leurs responsabilités incluent:
 * Traduire tout matériel Node.js qui leur parait pertinent pour leur
   communauté.
-* Contrôler les processus de maintient des traductions fidèles et à jour.
+* Contrôler les processus de maintien des traductions fidèles et à jour.
 * Gérer et surveiller les réseaux sociaux dans leur langue.
 * Faire la promotion d'intervenants Node.js pour les meetups et conférences
   dans leur langue.
@@ -212,7 +212,7 @@ consensus sur une ensemble de points de référence qui pourront
 Ses responsabilités incluent:
 * Identifier un ou plusieurs points de référence qui reflètent
   les utilisations client.
-  Cela incluera certainement plusieurs points pour couvrir
+  Cela inclura certainement plusieurs points pour couvrir
   les usages habituels de Node.js, y compris la réduction de latence
   et la concurrence élevée
 * Encourager un consensus de la communauté sur la liste choisie
@@ -223,9 +223,9 @@ Ses responsabilités incluent:
 ### [Post-mortem](https://github.com/nodejs/post-mortem)
 
 Le Groupe de Travail des Diagnostics Post-Mortem est dédié à la maintenance
-et à l'amélioration du débogage portmortem pour Node.js. Il cherche à élever
+et à l'amélioration du débogage port-mortem pour Node.js. Il cherche à élever
 le rôle du débogage post-mortem pour Node.js, afin d'aider au développement 
-d'outils et de techniques, et pour faire connaitre ces techniques et outils
+d'outils et de techniques, et pour faire connaître ces techniques et outils
 auprès des utilisateurs de Node.js.
 
 Ses responsabilités incluent:
