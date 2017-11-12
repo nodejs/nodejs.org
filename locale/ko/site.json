@@ -25,10 +25,6 @@
         {
             "link": "feed/vulnerability.xml",
             "text": "Node.js 블로그: 취약점 보고"
-        },
-        {
-            "link": "feed/tsc-minutes.xml",
-            "text": "Node.js TSC 회의록"
         }
     ],
     "home": { "text": "홈" },
