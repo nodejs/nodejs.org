@@ -25,10 +25,6 @@
         {
             "link": "feed/vulnerability.xml",
             "text": "Node.js Blog: Vulnerability Reports"
-        },
-        {
-            "link": "feed/tsc-minutes.xml",
-            "text": "Node.js TSC meeting minutes"
         }
     ],
     "home": { "text": "Home" },

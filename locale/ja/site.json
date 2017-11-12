@@ -24,10 +24,6 @@
         {
             "link": "feed/vulnerability.xml",
             "text": "Node.js ブログ: 脆弱性のレポート"
-        },
-        {
-            "link": "feed/tsc-minutes.xml",
-            "text": "Node.js 技術委員会資料"
         }
     ],
     "home": { "text": "ホーム" },

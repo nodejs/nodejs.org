@@ -25,10 +25,6 @@
         {
             "link": "feed/vulnerability.xml",
             "text": "Node.js 博客: 安全报告"
-        },
-        {
-            "link": "feed/tsc-minutes.xml",
-            "text": "TSC 会议记录"
         }
     ],
     "home": { "text": "首页" },

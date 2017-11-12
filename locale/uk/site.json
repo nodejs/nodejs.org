@@ -24,10 +24,6 @@
         {
             "link": "feed/vulnerability.xml",
             "text": "Node.js Blog: Звіти про вразливості"
-        },
-        {
-            "link": "feed/tsc-minutes.xml",
-            "text": "Протоколи засідання Node.js TSC"
         }
     ],
     "home": { "text": "Головна" },
