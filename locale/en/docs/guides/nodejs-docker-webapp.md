@@ -104,10 +104,9 @@ file will *not* be generated.
 
 ```docker
 # Install app dependencies
-COPY package.json package-lock.json ./
-# For npm@4 or earlier, a package-lock.json file will not be generated
-# COPY package.json .
-
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
 
 RUN npm install
 # If you are building your code for production
@@ -151,9 +150,9 @@ FROM node:carbon
 WORKDIR /usr/src/app
 
 # Install app dependencies
-COPY package.json package-lock.json ./
-# For npm@4 or earlier, a package-lock.json file will not be generated
-# COPY package.json .
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
 
 RUN npm install
 # If you are building your code for production
