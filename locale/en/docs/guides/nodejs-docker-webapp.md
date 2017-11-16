@@ -36,10 +36,14 @@ create a `package.json` file that describes your app and its dependencies:
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.16.1"
   }
 }
 ```
+
+With your new `package.json` file, run `npm install`. If you are using `npm`
+version 5 or later, this will generate a `package-lock.json` file which will be copied
+to your Docker image.
 
 Then, create a `server.js` file that defines a web app using the
 [Express.js](http://expressjs.com/) framework:
@@ -78,11 +82,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `boron` of `node`
+Here we will use the latest LTS (long term support) version `carbon` of `node`
 available from the [Docker Hub](https://hub.docker.com/):
 
 ```docker
-FROM node:boron
+FROM node:carbon
 ```
 
 Next we create a directory to hold the application code inside the image, this
@@ -95,14 +99,14 @@ WORKDIR /usr/src/app
 
 This image comes with Node.js and NPM already installed so the next thing we
 need to do is to install your app dependencies using the `npm` binary. Please
-note that if you are using `npm` version 5 or later you will also want to copy
-`package-lock.json`, which is generated once you run `npm install`:
+note that if you are using `npm` version 4 or earlier a `package-lock.json`
+file will *not* be generated.
 
 ```docker
 # Install app dependencies
-COPY package.json .
-# For npm@5 or later, copy package-lock.json as well
-# COPY package.json package-lock.json ./
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
 
 RUN npm install
 # If you are building your code for production
@@ -140,15 +144,15 @@ CMD [ "npm", "start" ]
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:boron
+FROM node:carbon
 
 # Create app directory
 WORKDIR /usr/src/app
 
 # Install app dependencies
-COPY package.json .
-# For npm@5 or later, copy package-lock.json as well
-# COPY package.json package-lock.json ./
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
 
 RUN npm install
 # If you are building your code for production
@@ -191,7 +195,7 @@ $ docker images
 
 # Example
 REPOSITORY                      TAG        ID              CREATED
-node                            boron      539c0211cd76    3 weeks ago
+node                            carbon     1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
@@ -250,7 +254,8 @@ HTTP/1.1 200 OK
 X-Powered-By: Express
 Content-Type: text/html; charset=utf-8
 Content-Length: 12
-Date: Sun, 02 Jun 2013 03:53:22 GMT
+ETag: W/"c-M6tWOb/Y57lesdjQuHeB1P/qTV0"
+Date: Mon, 13 Nov 2017 20:53:59 GMT
 Connection: keep-alive
 
 Hello world
