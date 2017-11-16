@@ -2,6 +2,10 @@
 title: Node.js Foundation Resources
 layout: foundation.hbs
 ---
+## Take Our Node.js 2018 Survey!
+
+It’s that time of year again when we gather data on how you use Node.js. The survey is completely anonymized, and takes about 20 minutes to complete. You can start taking it now [here](https://www.surveymonkey.com/r/NodejsUserSurvey). Please share the link on your social channels too — the more the merrier.
+
 ## Node.js Foundation 2017 Survey Results
 
 The primary objective of the research was to profile Node.js users, understand usage patterns and trends and identify potential areas of improvement. With over 8 million Node.js instances online, three in four users are planning to increase their use of Node.js in the next 12 months. Many are learning Node.js in a foreign language with China being the second largest population outside of the U.S. using Node. Want to get a better understanding on how people are using and learning Node.js?
