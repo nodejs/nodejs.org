@@ -46,7 +46,7 @@ version 5 or later, this will generate a `package-lock.json` file which will be 
 to your Docker image.
 
 Then, create a `server.js` file that defines a web app using the
-[Express.js](http://expressjs.com/) framework:
+[Express.js](https://expressjs.com/) framework:
 
 ```javascript
 'use strict';
