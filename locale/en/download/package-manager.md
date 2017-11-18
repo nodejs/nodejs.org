@@ -42,14 +42,14 @@ Node.js is available from the [NodeSource](https://nodesource.com) Debian and Ub
 **NOTE:** If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 6.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-Alternatively, for Node.js 8:
+Alternatively, for Node.js 9:
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
@@ -114,13 +114,13 @@ Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the **[EP
 On RHEL, CentOS or Fedora, for Node.js v6 LTS:
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_6.x | sudo bash -
+curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
 ```
 
-Alternatively for Node.js 8:
+Alternatively for Node.js 9:
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
+curl --silent --location https://rpm.nodesource.com/setup_9.x | sudo bash -
 ```
 
 Then install:
