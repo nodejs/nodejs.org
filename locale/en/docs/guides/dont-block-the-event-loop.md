@@ -111,6 +111,7 @@ Whether or not your regular expression is vulnerable (i.e. the regexp engine mig
 1. Avoid nested quantifiers like `(a+)*`. Node's regexp engine can handle these quickly sometimes but not others.
 2. Avoid OR's with overlapping clauses, like `(a|a)*`. Again, these are sometimes-fast.
 3. Avoid use backreferences, like `(a.*) \1`. No regexp engine can guarantee evaluating these in linear time.
+4. If you're doing a simple string match, just use `indexOf`. It will be cheaper.
 
 In addition, Node generally doesn't have trouble reporting a *match* even for a vulnerable regexp and a long input string.
 The exponential behavior is triggered when there is a mismatch but Node can't be certain until it tries many divisions of the input string.
