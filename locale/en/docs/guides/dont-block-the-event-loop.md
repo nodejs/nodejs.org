@@ -233,7 +233,12 @@ console.log('JSON.parse took ' + took);
 ```
 
 ### Complex calculations without blocking the Event Loop
-If you want to do complex calculations in JavaScript without blocking the Event Loop, you should *partition* your calculations.
+Suppose you want to do complex calculations in JavaScript without blocking the Event Loop.
+You have two options: partitioning or offloading.
+
+#### Partitioning
+You could *partition* your calculations so that each runs on the Event Loop but regularly yields (gives turns to) other pending events.
+In JavaScript it's easy to save the state of an ongoing task in a closure, as shown in example 2 below.
 
 For a simple example, suppose you want to compute the average of the numbers `1` to `n`.
 
@@ -276,13 +281,123 @@ avg(n, function(avg){
 
 You can apply this principle to array iterations and so forth.
 
-However, think carefully:
-- Is Node really a good fit for your project? Node excels for I/O-bound work, but for expensive computation it might not be the best option.
-- If you have a lot of computation to do, a better route might be to develop a [C++ addon](https://nodejs.org/api/addons.html) and offload the work to the Worker Pool.
-- Alternatively, you could offload the work to a [Child Process](https://nodejs.org/api/child_process.html), although taking this route you create a child for every client, losing the "few threads for many clients" benefit of Node.
+#### Offloading
+If you need to do something more complex, partitioning is not a good option.
+This is because partitioning uses only the Event Loop, and you won't benefit from multiple cores almost certainly available on your machine.
+*Remember, the Event Loop should orchestrate client requests, not fulfill them itself.*
+For a complicated task, move the work off of the Event Loop onto a Worker Pool.
+
+##### How to offload
+You have two options for a destination Worker Pool to which to offload work.
+1. You can use the built-in Node Worker Pool by developing a [C++ addon](https://nodejs.org/api/addons.html). On older versions of Node, build your C++ addon using [NAN](https://github.com/nodejs/nan), and on newer versions use [N-API](https://nodejs.org/api/n-api.html). [node-webworker-threads](https://www.npmjs.com/package/webworker-threads) offers a JavaScript-only way to access Node's Worker Pool.
+2. You can create and manage your own Worker Pool dedicated to computation rather than Node's I/O-themed Worker Pool. The most straightforward ways to do this is using [Child Process](https://nodejs.org/api/child_process.html) or [Cluster](https://nodejs.org/api/cluster.html).
+
+You should *not* simply create a [Child Process](https://nodejs.org/api/child_process.html) for every client.
+You can receive client requests more quickly than you can create and manage children, and your server would then be essentially a [fork bomb](https://en.wikipedia.org/wiki/Fork_bomb).
+
+##### Downside of offloading
+The downside of the offloading approach is that it incurs overhead in the form of *communication costs*.
+Only the Event Loop is allowed to see the "namespace" (JavaScript state) of your application.
+From a Worker, you cannot manipulate a JavaScript object in the Event Loop's namespace.
+Instead, you have to serialize and deserialize any objects you wish to share.
+Then the Worker can operate on its own copy of these object(s) and return the modified object (or a "patch") to the Event Loop.
+
+For serialization concerns, see the section on JSON DOS.
+
+##### Best practices for offloading
+Follow these best practices for offloading:
+1. You should create your own Computation Worker Pool for extensive computation.
+2. The Computation Worker Pool should have no more than Workers than your machine has [logical cores](https://nodejs.org/api/os.html#os_os_cpus).
+
+This will result in two Worker Pools: Node's *I/O Worker Pool* (I/O-WP) and your *Computation Worker Pool* (C-WP).
+You should distinguish between these Pools because they perform work with different characteristics.
+
+The C-WP should contain no more Workers than your machine has logical cores.
+This is because *computational tasks only make progress when the Worker is scheduled*, and the Worker must be scheduled onto one of your machine's logical cores.
+If you have 4 logical cores and 5 C-WP Workers, one of these Workers cannot make progress.
+As a result, you are paying overhead (memory and scheduling costs) for this Worker and getting no return for it.
+
+The I/O-WP can have more Workers than your machine has logical cores.
+Node's native Worker Pool (I/O-WP) uses [libuv's threadpool](https://nodejs.org/api/cli.html#cli_uv_threadpool_size_size), which defaults to 4 Workers and has a hard-coded maximum of 128, probably more than the number of logical cores on your machine.
+This is appropriate because the tasks on the I/O-WP are I/O (Input/Output), not computation.
+I/O tasks involve querying an external service provider (database, file system, etc.) and waiting for its response.
+While an I/O-WP Worker is waiting for its response, it has nothing else to do and can be de-scheduled by the operating system, giving another Worker a chance to submit their request.
+*I/O tasks will make progress even while the associated thread is not running*.
+External service providers like databases and file systems have been highly optimized to handle many pending requests concurrently.
+For example, a file system will examine a large set of pending write and read requests to merge conflicting updates and to retrieve files in an optimal order (e.g. see [these slides](http://researcher.ibm.com/researcher/files/il-AVISHAY/01-block_io-v1.3.pdf)).
+
+If you have only one Worker Pool, e.g. the Node Worker Pool, then the differing characteristics of CPU-bound and I/O-bound work will harm your application's performance.
+
+#### Conclusions
+For simple tasks, like iterating over the elements of an arbitrarily long array, partitioning might be a good option.
+If your computation is more complex, offloading is a better approach: the communication costs, i.e. the overhead of passing serialized objects between the Event Loop and the Worker Pool, are offset by the benefit of using multiple cores.
+
+However, if your server relies heavily on complex calculations, you should think about whether Node is really a good fit. Node excels for I/O-bound work, but for expensive computation it might not be the best option.
+
+If you take the offloading approach, see the section on not blocking the Worker Pool.
 
 ## Don't block the Worker Pool
-Work in progress.
+Node has a Worker Pool composed of `k` Workers.
+If you are using the Offloading paradigm discussed above, you might have your own Computational Worker Pool, to which the same principles apply.
+In either case, let us assume that `k` is much smaller than the number of clients you might be handling concurrently.
+This is in keeping with Node's "one thread for many clients" philosophy, the secret to its scalability.
+
+The Workers of this Pool use the cooperative multitasking approach discussed above: each Worker completes its current Task before proceeding to the next one on the Worker Pool queue.
+
+Now, there will be variation in the cost of the Tasks required to handle your clients' requests.
+Some Tasks can be completed quickly (e.g. reading short or cached files in the I/O-WP, or computing the average of a small array in the C-WP), and others will take longer (e.g reading larger or uncached files in the I/O-WP, or doing more expensive computation in the C-WP).
+Your goal should be to *minimize the variation in Task times*, and you should use *Task partitioning* to accomplish this.
+
+### Minimizing the variation in Task times
+If a Worker's current Task is much more expensive than other Tasks, then it will be unavailable to work on other pending Tasks.
+In other words, *each relatively long Task effectively decreases the size of the Worker Pool by one until it is completed*.
+This is undesirable because, up to a point, the more Workers in the Worker Pool, the greater the Worker Pool throughput (tasks/second) and thus the greater the server throughput (client requests/second).
+One client with a relatively expensive Task will decrease the throughput of the Worker Pool, in turn decreasing the throughput of the server.
+
+To avoid this, you should try to minimize variation in the length of Tasks you submit to the Worker Pool.
+While it's appropriate to treat the external systems accessed by your I/O requests (DB, FS, etc.) as black boxes, you should be aware of the relative cost of these I/O requests and avoid submitting requests you can expect to be particularly long ones.
+
+For example, suppose your server must read files in order to handle some client requests.
+After consulting Node's [File system](https://nodejs.org/api/fs.html) APIs, you opted to use `fs.readFile()` for simplicity.
+However, `fs.readFile()` is not partitioned: it submits a single `fs.read()` request spanning the entire file.
+If you read shorter files for some users and longer files for others, `fs.readFile()` may introduce significant variation in Task lengths, to the detriment of Worker Pool throughput.
+
+For a worst-case scenario, suppose an attacker can convince your server to read an *arbitrary* file (this is a [directory traversal vulnerability](https://www.owasp.org/index.php/Path_Traversal)).
+If your server is running Linux, the attacker can name an extremely slow file: [`/dev/random`](http://man7.org/linux/man-pages/man4/random.4.html).
+For all practical purposes, `/dev/random` is infinitely slow, and every Worker asked to read from `/dev/random` will never finish that Task.
+An attacker then submits `k` requests, one for each Worker, and no other client requests that use the Worker Pool will make progress.
+
+### Task partitioning
+Tasks with variable time costs can harm the throughput of both the I/O-WP and the C-WP.
+To minimize variation in Task times, as far as possible you should *partition* each Task into comparable-cost sub-Tasks.
+When each sub-Task completes it should submit the next sub-Task, and when the final sub-Task completes it should notify the submitter.
+
+To continue the `fs.readFile()` example, you should instead use `fs.read()` (manual partitioning) or `ReadStream` (automatically partitioned).
+
+The same principle applies to CPU-bound tasks; the `asyncAvg` example might be inappropriate for the Event Loop, but it is well suited to the C-WP.
+
+When you partition a Task into sub-Tasks, shorter Tasks expand into a small number of sub-Tasks, and longer Tasks expand into a larger number of sub-Tasks.
+Between each sub-Task of a longer Task, the Worker to which it was assigned can work on a sub-Task from another, shorter, Task, thus improving the overall Task throughput of the Worker Pool.
+
+Note that the number of sub-Tasks completed is not a useful metric for the throughput of the Worker Pool.
+Instead, concern yourself with the number of *Tasks* completed.
+
+### Avoiding Task partitioning
+Recall that the purpose of Task partitioning is to minimize the variation in Task times.
+If you can distinguish between shorter Tasks and longer Tasks (e.g. summing an array vs. sorting an array), you could create one Worker Pool for each class of Task.
+Routing shorter Tasks and longer Tasks to separate Worker Pools is another way to minimize Task time variation.
+
+In favor of this approach, partitioning Tasks incurs overhead (the costs of creating a Worker Pool Task representation and of manipulating the Worker Pool queue), and avoiding partitioning saves you the costs of additional trips to the Worker Pool.
+It also keeps you from making mistakes in partitioning your Tasks.
+
+The downside of this approach is that Workers in all of your Computational Worker Pools will compete with each other for CPU time.
+Remember that each CPU-bound Task makes progress only while it is scheduled.
+As a result, you should only consider this approach after careful analysis.
+
+### Conclusions
+Whether you use one Worker Pool or maintain a separate I/O Worker Pool and Computation Worker Pool, you should optimize the Task throughput of your Pool(s).
+
+To do this, minimize the variation in Task times by using Task partitioning.
 
 ##  The risks of npm modules
 Node developers benefit tremendously from the [npm ecosystem](https://www.npmjs.com/), with hundreds of thousands of modules offering functionality to accelerate your development process.
@@ -293,8 +408,7 @@ A developer using an npm module should be concerned about two things, though the
 2. Might its APIs block one of my Event Handlers?
 Many modules make no effort to indicate the cost of their APIs, to the detriment of the community.
 
-In some cases you can estimate the cost of the APIs.
-The cost of string manipulation isn't hard to fathom.
+For simple APIs you can estimate the cost of the APIs; the cost of string manipulation isn't hard to fathom.
 But in many cases it's unclear how much an API might cost.
 
 *If you are calling an API that might do something expensive, ask the developers to document its cost, or examine the source code yourself (and submit a PR documenting the cost).*
