@@ -25,7 +25,8 @@ Node uses a small number of threads to handle many clients.
 While a thread is working on behalf of one client, it can't work for any other clients.
 
 This provides two motivations for blocking neither the Event Loop nor the Worker Pool.
-Since both the Event Loop and the Workers respond to events, we will refer to these generally as *Event Handlers*. All threads in Node are Event Handlers: one Event Loop and several Workers.
+Since both the Event Loop and the Workers respond to events, we will refer to these threads generally as *Event Handlers* or *Event-Handler Threads*.
+All threads in Node are Event Handlers: one Event Loop and several Workers.
 
 1. Performance: If you regularly perform heavyweight tasks on an Event Handler, the *throughput* (requests/second) of your server will suffer.
 2. Security: If it is possible that for certain input you might block an Event Handler, a malicious client might be able to figure out the "evil input", make your code block, and keep you from working on other clients. This would be a Denial of Service attack.
@@ -58,7 +59,8 @@ The operating system ensures that clients are treated fairly.
 In Node's cooperative multitasking design, *your application* is put in charge of scheduling client jobs.
 This is part of why Node can scale well, but it also means that you are responsible for ensuring fair scheduling.
 
-The next sections talk about how to achieve this for the Event Loop and for the Worker Pool.
+In other words, Node manages placing pending events in queues, but it does not manage the fair handling of these events.
+The next sections talk about how to ensure fair scheduling for the Event Loop and for the Worker Pool.
 
 ## Don't block the Event Loop
 The Event Loop notices each new client connection and orchestrates the generation of a response.
@@ -282,15 +284,29 @@ However, think carefully:
 ## Don't block the Worker Pool
 Work in progress.
 
-## What about all of these npm modules I use?
+##  The risks of npm modules
+Node developers benefit tremendously from the [npm ecosystem](https://www.npmjs.com/), with hundreds of thousands of modules offering functionality to accelerate your development process.
 
-If you're like everybody else and you rely a lot on npm modules to process your input, you might not know how expensive these APIs are. 
+However, the vast majority of these modules are written by third-party developers and undergo no formal verification process.
+A developer using an npm module should be concerned about two things, though the latter is frequently forgotten.
+1. Does it honor its APIs?
+2. Might its APIs block one of my Event Handlers?
+Many modules make no effort to indicate the cost of their APIs, to the detriment of the community.
 
-Some APIs are pretty simple, e.g. APIs that manipulate strings.
-But if the API you're calling does something complicated, ask the developers to document how expensive it is, or check out the source code yourself.
-Remember, even if the API is asynchronous, you don't know how much time it might spend on the Event Loop in any given step.
-If it partitions its work nicely as discussed above, it's OK, but if it does large chunks of work in each step than you might be in trouble.
+In some cases you can estimate the cost of the APIs.
+The cost of string manipulation isn't hard to fathom.
+But in many cases it's unclear how much an API might cost.
+
+*If you are calling an API that might do something expensive, ask the developers to document its cost, or examine the source code yourself (and submit a PR documenting the cost).*
+
+Remember, even if the API is asynchronous, you don't know how much time it might spend on an Event Handler in each of its partitions.
+For example, suppose in the `asyncAvg` example given above, each call to the helper function summed *half* of the numbers rather than one of them.
+Then this function would still be asynchronous, but the cost of each partition would be `O(n)`, not `O(1)`, making it much less safe to use for arbitrary values of `n`.
 
 ## Conclusion
-I hope you learned a lot about the Node architecture, and how to avoid blocking the Event Loop and the Worker Pool.
-These are important concepts if you want to write a high-performance, more DoS-proof Node server.
+Node has threads called Event Handlers, i.e. the Event Loop and the threadpool Workers, and these execute JS- and C++-callbacks.
+Node uses a cooperative multitasking scheduling scheme: an Event Handler *completes* a callbacks before proceeding to the next pending event.
+If any callback takes a long time, you have *blocked* the Event Handler running it, thus blocking the Event Loop or a Worker.
+If blocking an Event Handler is possible in your Node-based server, it can lead to degraded throughput (clients/second) at best, and complete denial of service at worst.
+
+To write a high-throughput, more DoS-proof web server, you must ensure that on benign and on malicious input, neither your Event Loop nor your Workers will block.
