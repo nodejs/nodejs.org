@@ -348,6 +348,15 @@ Now, there will be variation in the cost of the Tasks required to handle your cl
 Some Tasks can be completed quickly (e.g. reading short or cached files in the I/O-WP, or computing the average of a small array in the C-WP), and others will take longer (e.g reading larger or uncached files in the I/O-WP, or doing more expensive computation in the C-WP).
 Your goal should be to *minimize the variation in Task times*, and you should use *Task partitioning* to accomplish this.
 
+### What is the Node Worker Pool used for?
+In the Node core modules, the Node Worker Pool is used for the asynchronous versions of the following classes of APIs:
+1. File system I/O
+2. DNS queries
+3. Encryption
+4. Compression
+
+In addition, npm modules may make use of the Node Worker Pool as described in the section on Offloading.
+
 ### Minimizing the variation in Task times
 If a Worker's current Task is much more expensive than other Tasks, then it will be unavailable to work on other pending Tasks.
 In other words, *each relatively long Task effectively decreases the size of the Worker Pool by one until it is completed*.
