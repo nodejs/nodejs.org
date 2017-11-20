@@ -305,7 +305,7 @@ http.createServer((request, response) => {
 Now let's tweak this. We want to only send an echo under the following
 conditions:
 
-* The request method is GET.
+* The request method is POST.
 * The URL is `/echo`.
 
 In any other case, we want to simply respond with a 404.
@@ -314,7 +314,7 @@ In any other case, we want to simply respond with a 404.
 const http = require('http');
 
 http.createServer((request, response) => {
-  if (request.method === 'GET' && request.url === '/echo') {
+  if (request.method === 'POST' && request.url === '/echo') {
     let body = [];
     request.on('data', (chunk) => {
       body.push(chunk);
@@ -343,7 +343,7 @@ exactly what we want for an echo server!
 const http = require('http');
 
 http.createServer((request, response) => {
-  if (request.method === 'GET' && request.url === '/echo') {
+  if (request.method === 'POST' && request.url === '/echo') {
     request.pipe(response);
   } else {
     response.statusCode = 404;
@@ -377,7 +377,7 @@ http.createServer((request, response) => {
   response.on('error', (err) => {
     console.error(err);
   });
-  if (request.method === 'GET' && request.url === '/echo') {
+  if (request.method === 'POST' && request.url === '/echo') {
     request.pipe(response);
   } else {
     response.statusCode = 404;
