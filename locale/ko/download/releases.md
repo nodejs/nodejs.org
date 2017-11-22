@@ -18,6 +18,7 @@ Node.js 4.0.0에서 io.js의 이전 릴리스 라인과 Node.js 0.12.x가 합쳐
     Looking for latest release of a version branch?
 
     <ul class="list-divider-pipe">
+        <li><a href="https://nodejs.org/dist/latest-v8.x/">Node.js 8.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v6.x/">Node.js 6.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v4.x/">Node.js 4.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v0.12.x/">Node.js 0.12.x</a></li>

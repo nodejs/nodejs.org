@@ -11,6 +11,7 @@ modules: "<code>NODE_MODULE_VERSION</code> refers to the ABI (application binary
     Шукаєте останній реліз певної версії?
 
     <ul class="list-divider-pipe">
+        <li><a href="https://nodejs.org/dist/latest-v8.x/">Node.js 8.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v6.x/">Node.js 6.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v5.x/">Node.js 5.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v0.12.x/">Node.js 0.12.x</a></li>
