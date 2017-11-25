@@ -10,7 +10,7 @@ layout: blog-post.hbs
 > New Node.js Foundation Members Drive Enterprise Growth
 
 **SAN FRANCISCO, Aug. 17, 2016** —
-[The Node.js Foundation](https://nodejs.org/en/foundation/), a community-led
+[The Node.js Foundation](https://foundation.nodejs.org/), a community-led
 and industry-backed consortium to advance the development of the Node.js
 platform, today announced [Cars.com](https://www.cars.com/) and
 [Dynatrace](https://www.dynatrace.com) have joined the Foundation as

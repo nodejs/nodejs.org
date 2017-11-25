@@ -94,32 +94,8 @@
         }
     },
     "foundation": {
-        "link": "foundation",
-        "text": "재단",
-        "casestudies": {
-            "link": "foundation/case-studies",
-            "text": "사례"
-        },
-        "members": {
-            "link": "foundation/members",
-            "text": "멤버"
-        },
-        "board": {
-            "link": "foundation/board",
-            "text": "보드"
-        },
-        "tsc": {
-            "link": "foundation/tsc",
-            "text": "기술 거버넌스"
-        },
-        "itn": {
-             "link": "foundation/in-the-news",
-             "text": "언론 보도"
-        },
-        "announce": {
-            "link": "foundation/announcements",
-            "text": "공지사항"
-        }
+        "link": "https://foundation.nodejs.org/",
+        "text": "재단"
     },
     "getinvolved": {
         "link": "get-involved",

@@ -30,7 +30,7 @@ Keep in mind that every meeting of the Board must reach quorum in order to pass 
 
 The Board meets every month to approve resolutions and discuss Node.js Foundation administrative matters. This includes legal considerations, budgeting and approving Foundation-led conferences and other initiatives. Technical governance is overseen by the TSC, not the Board of Directors.
 
-The current board members are listed [here](../../../foundation/board).
+The current board members are listed [here](https://foundation.nodejs.org/about/leadership).
 
 ## What are the term lengths?
 

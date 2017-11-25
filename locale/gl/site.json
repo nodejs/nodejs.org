@@ -94,36 +94,8 @@
         }
     },
     "foundation": {
-        "link": "foundation",
-        "text": "Fundación",
-        "casestudies": {
-            "link": "foundation/case-studies",
-            "text": "Recursos"
-        },
-        "members": {
-            "link": "foundation/members",
-            "text": "Membros"
-        },
-        "board": {
-            "link": "foundation/board",
-            "text": "Xunta"
-        },
-        "tsc": {
-            "link": "foundation/tsc",
-            "text": "Goberno Técnico"
-        },
-        "itn": {
-             "link": "foundation/in-the-news",
-             "text": "Nas noticias"
-        },
-        "announce": {
-            "link": "foundation/announcements",
-            "text": "Anuncios"
-        },
-        "education": {
-            "link": "foundation/education",
-            "text": "Iniciativas de Educación"
-        }
+        "link": "https://foundation.nodejs.org/",
+        "text": "Fundación"
     },
     "getinvolved": {
         "link": "get-involved",

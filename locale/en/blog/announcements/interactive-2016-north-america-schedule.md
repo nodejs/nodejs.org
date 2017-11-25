@@ -9,7 +9,7 @@ layout: blog-post.hbs
 
 > IBM, Netflix, Microsoft, and leading community experts to showcase the current and future of Node.js
 
-**SAN FRANCISCO, September 12, 2016** — [The Node.js Foundation](https://nodejs.org/en/foundation/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced the keynotes and agenda for Node.js Interactive North America, November 29 - December 2, 2016, in Austin, TX. The event attracts enterprise users, developers, and community stakeholders, providing them with the tools and training they need to optimize the Node.js platform.
+**SAN FRANCISCO, September 12, 2016** — [The Node.js Foundation](https://foundation.nodejs.org/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced the keynotes and agenda for Node.js Interactive North America, November 29 - December 2, 2016, in Austin, TX. The event attracts enterprise users, developers, and community stakeholders, providing them with the tools and training they need to optimize the Node.js platform.
 
 With almost 5 million users a month and adoption across numerous industries, Node.js is a universal platform for web applications, IoT, enterprise application development, and microservice architectures. Its liberal contribution policies have also allowed the platform to increase the number of contributors working on the project by a sustained 100% year-over-year growth for the last several years.
 

@@ -101,36 +101,8 @@
     }
   },
   "foundation": {
-    "link": "foundation",
-    "text": "Fundació",
-    "casestudies": {
-      "link": "foundation/case-studies",
-      "text": "Recursos"
-    },
-    "members": {
-      "link": "foundation/members",
-      "text": "Membres"
-    },
-    "board": {
-      "link": "foundation/board",
-      "text": "Consell directiu"
-    },
-    "tsc": {
-      "link": "foundation/tsc",
-      "text": "Govern tècnic"
-    },
-    "itn": {
-      "link": "foundation/in-the-news",
-      "text": "En les notícies"
-    },
-    "announce": {
-      "link": "foundation/announcements",
-      "text": "Anuncis"
-    },
-    "education": {
-      "link": "foundation/education",
-      "text": "iniciatives d'Educació"
-    }
+    "link": "https://foundation.nodejs.org/",
+    "text": "Fundació"
   },
   "getinvolved": {
     "link": "get-involved",
