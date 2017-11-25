@@ -8,7 +8,7 @@ layout: blog-post.hbs
 
 > With 5.7 million users; increased community participation and a solid Foundation backing: 2016 was a good year for the platform.
 
-**NODE.JS INTERACTIVE 2016, AUSTIN, TX., Nov. 30, 2016** — [The Node.js Foundation](https://nodejs.org/en/foundation/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced [Snyk](https://snyk.io) as a Silver Member, major community and code growth, and the opening of an expansive Node.js user survey.
+**NODE.JS INTERACTIVE 2016, AUSTIN, TX., Nov. 30, 2016** — [The Node.js Foundation](https://foundation.nodejs.org/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced [Snyk](https://snyk.io) as a Silver Member, major community and code growth, and the opening of an expansive Node.js user survey.
 
 Founded in 2015, the Node.js Foundation was created to accelerate the development of Node.js and support the large ecosystem that encompasses it through open governance. Membership has grown 30 percent growth since the Foundation’s inception and represents a mix of Fortune 500 companies and startups alike. The newest member Snyk is a security company that finds, fixes and monitors known vulnerabilities in Node.js and Ruby on Rails applications.
 

@@ -89,32 +89,8 @@
         }
     },
     "foundation": {
-        "link": "foundation",
-        "text": "Fundación",
-        "casestudies": {
-            "link": "foundation/case-studies",
-            "text": "Recursos"
-        },
-        "members": {
-            "link": "foundation/members",
-            "text": "Miembros"
-        },
-        "board": {
-            "link": "foundation/board",
-            "text": "Junta"
-        },
-        "tsc": {
-            "link": "foundation/tsc",
-            "text": "Gobierno técnico"
-        },
-        "itn": {
-             "link": "foundation/in-the-news",
-             "text": "En las noticias"
-        },
-        "announce": {
-            "link": "foundation/announcements",
-            "text": "Anuncios"
-        }
+        "link": "https://foundation.nodejs.org/",
+        "text": "Fundación"
     },
     "getinvolved": {
         "link": "get-involved",

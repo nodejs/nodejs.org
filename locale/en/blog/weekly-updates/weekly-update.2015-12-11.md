@@ -28,7 +28,7 @@ This week we have one release: [Node.js v5.2.0 (Current)](https://nodejs.org/en/
 
 ### Apigee, RisingStack and Yahoo Join the Node.js Foundation
 
-* [The Node.js Foundation](https://nodejs.org/en/foundation/), a community-led and industry-backed consortium to advance the development of the Node.js platform, announced Apigee, RisingStack and Yahoo are joining the Foundation as Silver Members to build and support the Node.js platform.
+* [The Node.js Foundation](https://foundation.nodejs.org/), a community-led and industry-backed consortium to advance the development of the Node.js platform, announced Apigee, RisingStack and Yahoo are joining the Foundation as Silver Members to build and support the Node.js platform.
 * With over 2 million downloads per month, Node.js is the runtime of choice for developers building everything from enterprise applications to Industrial IoT.
 * The Node.js Foundation members work together alongside the community to help grow this diverse technology for large financial services, web-scale, cloud computing companies, and more.
 * The newly added [Long-Term Support](https://nodejs.org/en/blog/release/v4.2.0/) release version 4.0 is just one of the many initiatives from the Foundation, which addresses the needs of enterprises that are using Node.js in more complex production environments, and signals the growing maturity of the technology.
@@ -37,7 +37,7 @@ See https://nodejs.org/en/blog/announcements/apigee-rising-stack-yahoo/ for more
 
 ### Node.js Foundation Advances Platform with More Than Three Million Users
 
-* [The Node.js Foundation](https://nodejs.org/en/foundation/), announced major community, code and membership growth, adoption statistics of the technology at large, and the Foundation’s new incubation program.
+* [The Node.js Foundation](https://foundation.nodejs.org/), announced major community, code and membership growth, adoption statistics of the technology at large, and the Foundation’s new incubation program.
 * Since the independent Node.js Foundation launched earlier this year, development progress continues to accelerate with dramatic increases in contributions to the project.
 * The first Node.js Interactive event unites more than 700 developers, engineers, system architects, DevOps professionals and users representing a wide range of projects, products and companies in Portland, Ore.
 * Node.js Interactive brings together a broad range of speakers to help experienced and novice Node.js users alike learn tips, best practices, new skills, as well as gain insight into future developments for the technology.

@@ -98,40 +98,8 @@
         }
     },
     "foundation": {
-        "link": "foundation",
-        "text": "Foundation",
-        "casestudies": {
-            "link": "foundation/case-studies",
-            "text": "Resources"
-        },
-        "members": {
-            "link": "foundation/members",
-            "text": "Members"
-        },
-        "board": {
-            "link": "foundation/board",
-            "text": "Board"
-        },
-        "tsc": {
-            "link": "foundation/tsc",
-            "text": "Technical Governance"
-        },
-        "certification": {
-            "link": "foundation/certification",
-            "text": "Certification"
-        },
-        "itn": {
-             "link": "foundation/in-the-news",
-             "text": "In the News"
-        },
-        "announce": {
-            "link": "foundation/announcements",
-            "text": "Announcements"
-        },
-        "education": {
-            "link": "foundation/education",
-            "text": "Education Initiatives"
-        }
+        "link": "https://foundation.nodejs.org/",
+        "text": "Foundation"
     },
     "getinvolved": {
         "link": "get-involved",

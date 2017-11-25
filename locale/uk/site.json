@@ -85,32 +85,8 @@
         }
     },
     "foundation": {
-        "link": "foundation",
-        "text": "Фундація",
-        "casestudies": {
-            "link": "foundation/case-studies",
-            "text": "Ресурси"
-        },
-        "members": {
-            "link": "foundation/members",
-            "text": "Учасники"
-        },
-        "board": {
-            "link": "foundation/board",
-            "text": "Рада директорів"
-        },
-        "tsc": {
-            "link": "foundation/tsc",
-            "text": "Технічне керівництво"
-        },
-        "itn": {
-             "link": "foundation/in-the-news",
-             "text": "У новинах"
-        },
-        "announce": {
-            "link": "foundation/announcements",
-            "text": "Анонси"
-        }
+        "link": "https://foundation.nodejs.org/",
+        "text": "Фундація"
     },
     "getinvolved": {
         "link": "get-involved",

@@ -89,32 +89,8 @@
         }
     },
     "foundation": {
-        "link": "foundation",
-        "text": "財団",
-        "casestudies": {
-            "link": "foundation/case-studies",
-            "text": "リソース"
-        },
-        "members": {
-            "link": "foundation/members",
-            "text": "メンバー"
-        },
-        "board": {
-            "link": "foundation/board",
-            "text": "運営委員会"
-        },
-        "tsc": {
-            "link": "foundation/tsc",
-            "text": "技術委員会"
-        },
-        "itn": {
-             "link": "foundation/in-the-news",
-             "text": "ニュース"
-        },
-        "announce": {
-            "link": "foundation/announcements",
-            "text": "お知らせ"
-        }
+        "link": "https://foundation.nodejs.org/",
+        "text": "財団"
     },
     "getinvolved": {
         "link": "get-involved",

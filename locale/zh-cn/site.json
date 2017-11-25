@@ -98,36 +98,8 @@
         }
     },
     "foundation": {
-        "link": "foundation",
-        "text": "基金会",
-        "casestudies": {
-            "link": "foundation/case-studies",
-            "text": "资源"
-        },
-        "members": {
-            "link": "foundation/members",
-            "text": "会员"
-        },
-        "board": {
-            "link": "foundation/board",
-            "text": "董事会"
-        },
-        "tsc": {
-            "link": "foundation/tsc",
-            "text": "技术指导委员会"
-        },
-        "itn": {
-             "link": "foundation/in-the-news",
-             "text": "新闻"
-        },
-        "announce": {
-            "link": "foundation/announcements",
-            "text": "公告"
-        },
-        "education": {
-            "link": "foundation/education",
-            "text": "教学行动"
-        }
+        "link": "https://foundation.nodejs.org/",
+        "text": "基金会"
     },
     "getinvolved": {
         "link": "get-involved",
