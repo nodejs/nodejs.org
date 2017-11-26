@@ -13,7 +13,11 @@
 
         {{#each nav.main}}
           <li{{#startswith ../path link}} class="active"{{/startswith}}>
-            <a href="/{{../site.locale}}/{{link}}/">{{text}}</a>
+            {{#startswith link 'http'}}
+              <a href="{{link}}">{{text}}</a>
+            {{else}}
+              <a href="/{{../site.locale}}/{{link}}/">{{text}}</a>
+            {{/startswith}}
           </li>
         {{/each}}
       </ul>
