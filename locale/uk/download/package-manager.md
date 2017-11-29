@@ -38,17 +38,17 @@ Also including: **Linux Mint**, **Linux Mint Debian Edition (LMDE)**, **elementa
 
 Node.js is available from the [NodeSource](https://nodesource.com) Debian and Ubuntu binary distributions repository (formerly [Chris Lea's](https://github.com/chrislea) Launchpad PPA). Support for this repository, along with its scripts, can be found on GitHub at [nodesource/distributions](https://github.com/nodesource/distributions).
 
-**NOTE:** If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+**NOTE:** If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 6.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-Alternatively, for Node.js v6:
+Alternatively, for Node.js v8:
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
@@ -125,7 +125,7 @@ curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
 Alternatively for Node.js 0.10:
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup | bash -
+curl --silent --location https://rpm.nodesource.com/setup_0.10 | bash -
 ```
 
 Then install, as root:
