@@ -1,131 +1,138 @@
 {
-    "title": "Node.js",
-    "author": "Node.js Foundation",
-    "url": "https://nodejs.org/de/",
-    "locale": "de",
-    "scrollToTop": "Zum Seitenanfang",
-    "reportNodeIssue": "Node.js-Fehler melden",
-    "reportWebsiteIssue": "Webseitenfehler melden",
-    "getHelpIssue": "Hilfe",
-    "by": "von",
-    "all-downloads": "Alle Download-Optionen",
-    "nightly": "Nightly Builds",
-    "previous": "Zurück",
-    "next": "Weiter",
-    "feeds": [
-        {
-            "link": "feed/blog.xml",
-            "text": "Node.js-Blog"
-        },
-        {
-            "link": "feed/releases.xml",
-            "text": "Node.js-Blog: Versionen"
-        },
-        {
-            "link": "feed/vulnerability.xml",
-            "text": "Node.js-Blog: Berichte über Sicherheitslücken"
-        },
-        {
-            "link": "feed/tsc-minutes.xml",
-            "text": "Node.js TSC-Sitzungsprotokoll"
-        }
-    ],
-    "home": { "text": "Startseite" },
-    "about": {
-        "link": "about",
-        "text": "Über Node.js",
-        "governance": {
-            "link": "about/governance",
-            "text": "Governance"
-        },
-        "workinggroups": {
-            "link": "about/working-groups",
-            "text": "Arbeitskreise"
-        },
-        "releases": {
-            "link": "about/releases",
-            "text": "Versionen"
-        },
-        "resources": {
-            "link": "about/resources",
-            "text": "Ressourcen"
-        },
-        "trademark": {
-            "link": "about/trademark",
-            "text": "Trademark"
-        }
+  "title": "Node.js",
+  "author": "Node.js Foundation",
+  "url": "https://nodejs.org/de/",
+  "locale": "de",
+  "scrollToTop": "Zum Seitenanfang",
+  "reportNodeIssue": "Node.js-Fehler melden",
+  "reportWebsiteIssue": "Webseitenfehler melden",
+  "getHelpIssue": "Hilfe",
+  "by": "von",
+  "all-downloads": "Alle Download-Optionen",
+  "nightly": "Nightly Builds",
+  "previous": "Zurück",
+  "next": "Weiter",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Node.js-Blog"
     },
-    "download": {
-        "link": "download",
-        "text": "Downloads",
-        "releases": {
-            "link": "download/releases",
-            "text": "Alle Versionen"
-        },
-        "package-manager": {
-            "link": "download/package-manager",
-            "text": "Node.js mit Paketmanagern installieren"
-        },
-        "shasums":{
-          "link": "SHASUMS256.txt.asc",
-          "text": "Signierte SHASUMS für die Versionsdateien"
-        }
+    {
+      "link": "feed/releases.xml",
+      "text": "Node.js-Blog: Versionen"
     },
-    "docs": {
-        "link": "docs",
-        "text": "Dokumentation",
-        "es6": {
-            "link": "docs/es6",
-            "text": "ES6 und darüber hinaus"
-        },
-        "api-lts": {
-            "link": "/dist/latest-%ver-major%/docs/api",
-            "subtext": "LTS",
-            "text": "%ver% API"
-        },
-        "api-current": {
-            "link": "/dist/latest-%ver-major%/docs/api",
-            "text": "%ver% API"
-        },
-        "guides": {
-            "link": "docs/guides",
-            "text": "Anleitungen"
-        }
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "Node.js-Blog: Berichte über Sicherheitslücken"
     },
-    "foundation": {
-        "link": "https://foundation.nodejs.org/",
-        "text": "Foundation"
-    },
-    "getinvolved": {
-        "link": "get-involved",
-        "text": "Mitmachen",
-        "code-and-learn": {
-            "link": "get-involved/code-and-learn",
-            "text": "Programmiere + Lerne"
-        },
-        "contribute": {
-            "link": "get-involved/contribute",
-            "text": "Mitwirken"
-        },
-        "development": {
-            "link": "get-involved/development",
-            "text": "Entwicklung"
-        },
-        "conduct": {
-            "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
-            "text": "Verhaltenskodex"
-        }
-    },
-    "security"   : { "link": "security",        "text": "Sicherheit" },
-    "blog"       : { "link": "blog",            "text": "Neuigkeiten" },
-
-    "releases": {
-        "title": "Versionshistorie",
-        "downloads": "Downloads"
-    },
-    "links": {
-        "pages": {
-            "changelog": "Änderungshistorie"
-        }
+    {
+      "link": "feed/tsc-minutes.xml",
+      "text": "Node.js TSC-Sitzungsprotokoll"
     }
+  ],
+  "home": {
+    "text": "Startseite"
+  },
+  "about": {
+    "link": "about",
+    "text": "Über Node.js",
+    "governance": {
+      "link": "about/governance",
+      "text": "Governance"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "Arbeitskreise"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "Versionen"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "Ressourcen"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "Trademark"
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "Downloads",
+    "releases": {
+      "link": "download/releases",
+      "text": "Alle Versionen"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "Node.js mit Paketmanagern installieren"
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "Signierte SHASUMS für die Versionsdateien"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "Dokumentation",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 und darüber hinaus"
+    },
+    "api-lts": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "Anleitungen"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "Mitmachen",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "Programmiere + Lerne"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "Mitwirken"
+    },
+    "development": {
+      "link": "get-involved/development",
+      "text": "Entwicklung"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+      "text": "Verhaltenskodex"
+    }
+  },
+  "security": {
+    "link": "security",
+    "text": "Sicherheit"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "Neuigkeiten"
+  },
+  "foundation": {
+    "link": "https://foundation.nodejs.org/",
+    "text": "Foundation"
+  },
+  "releases": {
+    "title": "Versionshistorie",
+    "downloads": "Downloads"
+  },
+  "links": {
+    "pages": {
+      "changelog": "Änderungshistorie"
+    }
+  }
 }

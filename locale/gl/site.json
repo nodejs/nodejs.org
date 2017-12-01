@@ -1,132 +1,139 @@
 {
-    "title": "Node.js",
-    "author": "Fundación de Node.js",
-    "url": "https://nodejs.org/gl/",
-    "locale": "gl",
-    "scrollToTop": "Volta ao principio",
-    "reportNodeIssue": "Informar dun problema con Node.js",
-    "reportWebsiteIssue": "Informar dun problema co sitio",
-    "getHelpIssue": "Obter axuda",
-    "by": "por",
-    "all-downloads": "Todas as opcións de descarga",
-    "nightly": "Versións Nightly",
-    "chakracore-nightly": "Versións Node-ChakraCore Nightly",
-    "previous": "Anterior",
-    "next": "Seguinte",
-    "feeds": [
-        {
-            "link": "feed/blog.xml",
-            "text": "Node.js Blog"
-        },
-        {
-            "link": "feed/releases.xml",
-            "text": "Node.js Blog: Versións"
-        },
-        {
-            "link": "feed/vulnerability.xml",
-            "text": "Node.js Blog: Informes de vulnerabilidade"
-        }
-    ],
-    "home": { "text": "Inicio" },
-    "about": {
-        "link": "about",
-        "text": "Acerca de",
-        "governance": {
-            "link": "about/governance",
-            "text": "Goberno"
-        },
-        "workinggroups": {
-            "link": "about/working-groups",
-            "text": "Grupos de traballo"
-        },
-        "releases": {
-            "link": "about/releases",
-            "text": "Versións"
-        },
-        "resources": {
-            "link": "about/resources",
-            "text": "Recursos"
-        },
-        "trademark": {
-            "link": "about/trademark",
-            "text": "Marca"
-        },
-        "privacy": {
-            "link": "about/privacy",
-            "text": "Política de Privacidade"
-        }
+  "title": "Node.js",
+  "author": "Fundación de Node.js",
+  "url": "https://nodejs.org/gl/",
+  "locale": "gl",
+  "scrollToTop": "Volta ao principio",
+  "reportNodeIssue": "Informar dun problema con Node.js",
+  "reportWebsiteIssue": "Informar dun problema co sitio",
+  "getHelpIssue": "Obter axuda",
+  "by": "por",
+  "all-downloads": "Todas as opcións de descarga",
+  "nightly": "Versións Nightly",
+  "chakracore-nightly": "Versións Node-ChakraCore Nightly",
+  "previous": "Anterior",
+  "next": "Seguinte",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Node.js Blog"
     },
-    "download": {
-        "link": "download",
-        "text": "Descargas",
-        "releases": {
-            "link": "download/releases",
-            "text": "Versións anteriores"
-        },
-        "package-manager": {
-            "link": "download/package-manager",
-            "text": "Instalar Node.js usando un xestor de paquetes"
-        },
-        "shasums":{
-          "link": "SHASUMS256.txt.asc",
-          "text": "Firmas SHASUMS para os arquivos de versións"
-        }
+    {
+      "link": "feed/releases.xml",
+      "text": "Node.js Blog: Versións"
     },
-    "docs": {
-        "link": "docs",
-        "text": "Documentación",
-        "es6": {
-            "link": "docs/es6",
-            "text": "ES6 e máis aló"
-        },
-        "api-lts": {
-            "link": "/dist/latest-%ver-major%/docs/api",
-            "subtext": "LTS",
-            "text": "%ver% API"
-        },
-        "api-current": {
-            "link": "/dist/latest-%ver-major%/docs/api",
-            "text": "%ver% API"
-        },
-        "guides": {
-            "link": "docs/guides",
-            "text": "Guías"
-        }
-    },
-    "foundation": {
-        "link": "https://foundation.nodejs.org/",
-        "text": "Fundación"
-    },
-    "getinvolved": {
-        "link": "get-involved",
-        "text": "Participa",
-        "code-and-learn": {
-            "link": "get-involved/code-and-learn",
-            "text": "Programa e Aprende"
-        },
-        "contribute": {
-            "link": "get-involved/contribute",
-            "text": "Contribúe"
-        },
-        "development": {
-            "link": "get-involved/development",
-            "text": "Desenvolvemento"
-        },
-        "conduct": {
-            "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
-            "text": "Comportamento"
-        }
-    },
-    "security"   : { "link": "security",        "text": "Seguridade" },
-    "blog"       : { "link": "blog",            "text": "Noticias" },
-
-    "releases": {
-        "title": "Histórico de versións",
-        "downloads": "Descargas"
-    },
-    "links": {
-        "pages": {
-            "changelog": "Cambios"
-        }
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "Node.js Blog: Informes de vulnerabilidade"
     }
+  ],
+  "home": {
+    "text": "Inicio"
+  },
+  "about": {
+    "link": "about",
+    "text": "Acerca de",
+    "governance": {
+      "link": "about/governance",
+      "text": "Goberno"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "Grupos de traballo"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "Versións"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "Recursos"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "Marca"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "Política de Privacidade"
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "Descargas",
+    "releases": {
+      "link": "download/releases",
+      "text": "Versións anteriores"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "Instalar Node.js usando un xestor de paquetes"
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "Firmas SHASUMS para os arquivos de versións"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "Documentación",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 e máis aló"
+    },
+    "api-lts": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "Guías"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "Participa",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "Programa e Aprende"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "Contribúe"
+    },
+    "development": {
+      "link": "get-involved/development",
+      "text": "Desenvolvemento"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+      "text": "Comportamento"
+    }
+  },
+  "security": {
+    "link": "security",
+    "text": "Seguridade"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "Noticias"
+  },
+  "foundation": {
+    "link": "https://foundation.nodejs.org/",
+    "text": "Fundación"
+  },
+  "releases": {
+    "title": "Histórico de versións",
+    "downloads": "Descargas"
+  },
+  "links": {
+    "pages": {
+      "changelog": "Cambios"
+    }
+  }
 }

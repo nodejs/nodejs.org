@@ -1,123 +1,130 @@
 {
-    "title": "Node.js",
-    "author": "Node.js Foundation",
-    "url": "https://nodejs.org/uk/",
-    "locale": "uk",
-    "scrollToTop": "Вгору",
-    "reportNodeIssue": "Проблеми з Node.js",
-    "reportWebsiteIssue": "Проблеми з сайтом",
-    "getHelpIssue": "Допомога",
-    "by": "від",
-    "all-downloads": "Всі варіанти завантажень",
-    "nightly": "Нічні збірки",
-    "previous": "Попередній",
-    "next": "Далі",
-    "feeds": [
-        {
-            "link": "feed/blog.xml",
-            "text": "Блог Node.js"
-        },
-        {
-            "link": "feed/releases.xml",
-            "text": "Блог Node.js: Релізи"
-        },
-        {
-            "link": "feed/vulnerability.xml",
-            "text": "Node.js Blog: Звіти про вразливості"
-        }
-    ],
-    "home": { "text": "Головна" },
-    "about": {
-        "link": "about",
-        "text": "Про проект",
-        "governance": {
-            "link": "about/governance",
-            "text": "Управління"
-        },
-        "workinggroups": {
-            "link": "about/working-groups",
-            "text": "Робочі групи"
-        },
-        "releases": {
-            "link": "about/releases",
-            "text": "Релізи"
-        },
-        "resources": {
-            "link": "about/resources",
-            "text": "Ресурси"
-        },
-        "trademark": {
-            "link": "about/trademark",
-            "text": "Товарний знак"
-        }
+  "title": "Node.js",
+  "author": "Node.js Foundation",
+  "url": "https://nodejs.org/uk/",
+  "locale": "uk",
+  "scrollToTop": "Вгору",
+  "reportNodeIssue": "Проблеми з Node.js",
+  "reportWebsiteIssue": "Проблеми з сайтом",
+  "getHelpIssue": "Допомога",
+  "by": "від",
+  "all-downloads": "Всі варіанти завантажень",
+  "nightly": "Нічні збірки",
+  "previous": "Попередній",
+  "next": "Далі",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Блог Node.js"
     },
-    "download": {
-        "link": "download",
-        "text": "Завантаження",
-        "releases": {
-            "link": "download/releases",
-            "text": "Попередні Релізи"
-        },
-        "package-manager": {
-            "link": "download/package-manager",
-            "text": "Встановлення Node.js через пакетний менеджер"
-        }
+    {
+      "link": "feed/releases.xml",
+      "text": "Блог Node.js: Релізи"
     },
-    "docs": {
-        "link": "docs",
-        "text": "Документація",
-        "es6": {
-            "link": "docs/es6",
-            "text": "ES6 і вище"
-        },
-        "api-lts": {
-            "link": "/dist/latest-%ver-major%/docs/api",
-            "subtext": "LTS",
-            "text": "%ver% API"
-        },
-        "api-current": {
-            "link": "/dist/latest-%ver-major%/docs/api",
-            "text": "%ver% API"
-        },
-        "guides": {
-            "link": "docs/guides",
-            "text": "Керівництва"
-        }
-    },
-    "foundation": {
-        "link": "https://foundation.nodejs.org/",
-        "text": "Фундація"
-    },
-    "getinvolved": {
-        "link": "get-involved",
-        "text": "Приєднатись",
-        "code-and-learn": {
-            "link": "get-involved/code-and-learn",
-            "text": "Code + Learn"
-        },
-        "contribute": {
-            "link": "get-involved/contribute",
-            "text": "Сприяння"
-        },
-        "development": {
-            "link": "get-involved/development",
-            "text": "Розробка"
-        },
-        "conduct": {
-            "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
-            "text": "Правила"
-        }
-    },
-    "security"   : { "link": "security",        "text": "Безпека" },
-    "blog"       : { "link": "blog",            "text": "Новини" },
-
-    "releases": {
-        "title": "Історія релізів",
-        "downloads": "Завантаження"
-    },
-    "links": {
-        "pages": {
-            "changelog": "Список змін"
-        }
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "Node.js Blog: Звіти про вразливості"
     }
+  ],
+  "home": {
+    "text": "Головна"
+  },
+  "about": {
+    "link": "about",
+    "text": "Про проект",
+    "governance": {
+      "link": "about/governance",
+      "text": "Управління"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "Робочі групи"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "Релізи"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "Ресурси"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "Товарний знак"
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "Завантаження",
+    "releases": {
+      "link": "download/releases",
+      "text": "Попередні Релізи"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "Встановлення Node.js через пакетний менеджер"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "Документація",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 і вище"
+    },
+    "api-lts": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "Керівництва"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "Приєднатись",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "Code + Learn"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "Сприяння"
+    },
+    "development": {
+      "link": "get-involved/development",
+      "text": "Розробка"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+      "text": "Правила"
+    }
+  },
+  "security": {
+    "link": "security",
+    "text": "Безпека"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "Новини"
+  },
+  "foundation": {
+    "link": "https://foundation.nodejs.org/",
+    "text": "Фундація"
+  },
+  "releases": {
+    "title": "Історія релізів",
+    "downloads": "Завантаження"
+  },
+  "links": {
+    "pages": {
+      "changelog": "Список змін"
+    }
+  }
 }
