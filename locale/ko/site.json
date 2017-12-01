@@ -1,132 +1,139 @@
 {
-    "title": "Node.js",
-    "author": "Node.js 재단",
-    "url": "https://nodejs.org/ko/",
-    "locale": "ko",
-    "scrollToTop": "맨 위로",
-    "reportNodeIssue": "Node.js 이슈 보고",
-    "reportWebsiteIssue": "웹사이트 이슈 보고",
-    "getHelpIssue": "도움 얻기",
-    "by": "by",
-    "all-downloads": "모든 다운로드 보기",
-    "nightly": "나이틀리 빌드",
-    "chakracore-nightly": "Node-ChakraCore 나이틀리 빌드",
-    "previous": "너무 이른",
-    "next": "다음 것",
-    "feeds": [
-        {
-            "link": "feed/blog.xml",
-            "text": "Node.js 블로그"
-        },
-        {
-            "link": "feed/releases.xml",
-            "text": "Node.js 블로그: 릴리스"
-        },
-        {
-            "link": "feed/vulnerability.xml",
-            "text": "Node.js 블로그: 취약점 보고"
-        }
-    ],
-    "home": { "text": "홈" },
-    "about": {
-        "link": "about",
-        "text": "About",
-        "governance": {
-            "link": "about/governance",
-            "text": "거버넌스"
-        },
-        "workinggroups": {
-            "link": "about/working-groups",
-            "text": "워킹 그룹"
-        },
-        "releases": {
-            "link": "about/releases",
-            "text": "릴리스"
-        },
-        "resources": {
-            "link": "about/resources",
-            "text": "관련 자료"
-        },
-        "trademark": {
-            "link": "about/trademark",
-            "text": "트레이드마크"
-        },
-        "privacy": {
-            "link": "about/privacy",
-            "text": "개인정보 보호정책"
-        }
+  "title": "Node.js",
+  "author": "Node.js 재단",
+  "url": "https://nodejs.org/ko/",
+  "locale": "ko",
+  "scrollToTop": "맨 위로",
+  "reportNodeIssue": "Node.js 이슈 보고",
+  "reportWebsiteIssue": "웹사이트 이슈 보고",
+  "getHelpIssue": "도움 얻기",
+  "by": "by",
+  "all-downloads": "모든 다운로드 보기",
+  "nightly": "나이틀리 빌드",
+  "chakracore-nightly": "Node-ChakraCore 나이틀리 빌드",
+  "previous": "너무 이른",
+  "next": "다음 것",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Node.js 블로그"
     },
-    "download": {
-        "link": "download",
-        "text": "다운로드",
-        "releases": {
-            "link": "download/releases",
-            "text": "이전 릴리스"
-        },
-        "package-manager": {
-            "link": "download/package-manager",
-            "text": "패키지 관리자를 통한 Node.js 설치"
-        },
-        "shasums":{
-          "link": "SHASUMS256.txt.asc",
-          "text": "릴리스 파일에 서명된 SHASUMS"
-        }
+    {
+      "link": "feed/releases.xml",
+      "text": "Node.js 블로그: 릴리스"
     },
-    "docs": {
-        "link": "docs",
-        "text": "문서",
-        "es6": {
-            "link": "docs/es6",
-            "text": "ES6와 그 이후"
-        },
-        "api-lts": {
-            "link": "/dist/latest-%ver-major%/docs/api",
-            "subtext": "LTS",
-            "text": "%ver% API"
-        },
-        "api-current": {
-            "link": "/dist/latest-%ver-major%/docs/api",
-            "text": "%ver% API"
-        },
-        "guides": {
-            "link": "docs/guides",
-            "text": "안내"
-        }
-    },
-    "foundation": {
-        "link": "https://foundation.nodejs.org/",
-        "text": "재단"
-    },
-    "getinvolved": {
-        "link": "get-involved",
-        "text": "참여하기",
-        "code-and-learn": {
-            "link": "get-involved/code-and-learn",
-            "text": "코딩 + 배우기"
-        },
-        "contribute": {
-            "link": "get-involved/contribute",
-            "text": "기여하기"
-        },
-        "development": {
-            "link": "get-involved/development",
-            "text": "개발하기"
-        },
-        "conduct": {
-            "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
-            "text": "행동강령"
-        }
-    },
-    "security"   : { "link": "security",        "text": "보안" },
-    "blog"       : { "link": "blog",            "text": "뉴스" },
-
-    "releases": {
-        "title": "릴리스 이력",
-        "downloads": "다운로드"
-    },
-    "links": {
-        "pages": {
-            "changelog": "변경사항"
-        }
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "Node.js 블로그: 취약점 보고"
     }
+  ],
+  "home": {
+    "text": "홈"
+  },
+  "about": {
+    "link": "about",
+    "text": "About",
+    "governance": {
+      "link": "about/governance",
+      "text": "거버넌스"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "워킹 그룹"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "릴리스"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "관련 자료"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "트레이드마크"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "개인정보 보호정책"
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "다운로드",
+    "releases": {
+      "link": "download/releases",
+      "text": "이전 릴리스"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "패키지 관리자를 통한 Node.js 설치"
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "릴리스 파일에 서명된 SHASUMS"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "문서",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6와 그 이후"
+    },
+    "api-lts": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "안내"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "참여하기",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "코딩 + 배우기"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "기여하기"
+    },
+    "development": {
+      "link": "get-involved/development",
+      "text": "개발하기"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+      "text": "행동강령"
+    }
+  },
+  "security": {
+    "link": "security",
+    "text": "보안"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "뉴스"
+  },
+  "foundation": {
+    "link": "https://foundation.nodejs.org/",
+    "text": "재단"
+  },
+  "releases": {
+    "title": "릴리스 이력",
+    "downloads": "다운로드"
+  },
+  "links": {
+    "pages": {
+      "changelog": "변경사항"
+    }
+  }
 }

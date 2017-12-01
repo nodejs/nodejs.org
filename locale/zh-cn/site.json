@@ -1,141 +1,143 @@
 {
-    "title": "Node.js",
-    "author": "Node.js 基金会",
-    "url": "https://nodejs.org/zh-cn/",
-    "locale": "zh-cn",
-    "scrollToTop": "回到页顶",
-    "reportNodeIssue": "报告 Node.js 问题 ",
-    "reportWebsiteIssue": "报告 Node.js 网站问题",
-    "getHelpIssue": "获取帮助",
-    "by": "于",
-    "all-downloads": "所有下载选项",
-    "nightly": "每日构建",
-    "chakracore-nightly": "Node-ChakraCore 每日构建",
-    "previous": "以前",
-    "next": "下一個",
-    "feeds": [
-        {
-            "link": "feed/blog.xml",
-            "text": "Node.js 博客"
-        },
-        {
-            "link": "feed/releases.xml",
-            "text": "Node.js 博客: 发布"
-        },
-        {
-            "link": "feed/vulnerability.xml",
-            "text": "Node.js 博客: 安全报告"
-        }
-    ],
-    "home": { "text": "首页" },
-    "about": {
-        "link": "about",
-        "text": "关于我们",
-        "governance": {
-            "link": "about/governance",
-            "text": "管理规则"
-        },
-        "workinggroups": {
-            "link": "about/working-groups",
-            "text": "工作组"
-        },
-        "releases": {
-            "link": "about/releases",
-            "text": "发布"
-        },
-        "resources": {
-            "link": "about/resources",
-            "text": "资源"
-        },
-        "trademark": {
-            "link": "about/trademark",
-            "text": "商标"
-        },
-        "privacy": {
-            "link": "about/privacy",
-            "text": "隐私政策"
-        }
+  "title": "Node.js",
+  "author": "Node.js 基金会",
+  "url": "https://nodejs.org/zh-cn/",
+  "locale": "zh-cn",
+  "scrollToTop": "回到页顶",
+  "reportNodeIssue": "报告 Node.js 问题 ",
+  "reportWebsiteIssue": "报告 Node.js 网站问题",
+  "getHelpIssue": "获取帮助",
+  "by": "于",
+  "all-downloads": "所有下载选项",
+  "nightly": "每日构建",
+  "chakracore-nightly": "Node-ChakraCore 每日构建",
+  "previous": "以前",
+  "next": "下一個",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Node.js 博客"
     },
-    "download": {
-        "link": "download",
-        "text": "下载",
-        "releases": {
-            "link": "download/releases",
-            "text": "以往的版本"
-        },
-        "package-manager": {
-            "link": "download/package-manager",
-            "text": "使用包管理器安装 Node.js"
-        },
-        "shasums": {
-          "link": "SHASUMS256.txt.asc",
-          "text": "查看发布文件的 SHASUM 签名"
-        }
+    {
+      "link": "feed/releases.xml",
+      "text": "Node.js 博客: 发布"
     },
-    "docs": {
-        "link": "docs",
-        "text": "文档",
-        "es6": {
-            "link": "docs/es6",
-            "text": "ES6 相关"
-        },
-        "inspector": {
-            "link": "docs/inspector",
-            "text": "调试"
-        },
-        "api-lts": {
-            "link": "/dist/latest-%ver-major%/docs/api",
-            "subtext": "LTS",
-            "text": "%ver% API"
-        },
-        "api-current": {
-            "link": "/dist/latest-%ver-major%/docs/api",
-            "text": "%ver% API"
-        },
-        "guides": {
-            "link": "docs/guides",
-            "text": "教程"
-        }
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "Node.js 博客: 安全报告"
+    }
+  ],
+  "home": {
+    "text": "首页"
+  },
+  "about": {
+    "link": "about",
+    "text": "关于我们",
+    "governance": {
+      "link": "about/governance",
+      "text": "管理规则"
     },
-    "foundation": {
-        "link": "https://foundation.nodejs.org/",
-        "text": "基金会"
-    },
-    "getinvolved": {
-        "link": "get-involved",
-        "text": "加入我们",
-        "code-and-learn": {
-            "link": "get-involved/code-and-learn",
-            "text": "代码与学习"
-        },
-        "contribute": {
-            "link": "get-involved/contribute",
-            "text": "贡献"
-        },
-        "development": {
-            "link": "get-involved/development",
-            "text": "开发"
-        },
-        "conduct": {
-            "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
-            "text": "管理"
-        }
-    },
-    "security": {
-        "link": "security",
-        "text": "安全"
-    },
-    "blog": {
-        "link": "blog",
-        "text": "博客"
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "工作组"
     },
     "releases": {
-        "title": "发布历史",
-        "downloads": "下载"
+      "link": "about/releases",
+      "text": "发布"
     },
-    "links": {
-        "pages": {
-            "changelog": "更新日志"
-        }
+    "resources": {
+      "link": "about/resources",
+      "text": "资源"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "商标"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "隐私政策"
     }
+  },
+  "download": {
+    "link": "download",
+    "text": "下载",
+    "releases": {
+      "link": "download/releases",
+      "text": "以往的版本"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "使用包管理器安装 Node.js"
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "查看发布文件的 SHASUM 签名"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "文档",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 相关"
+    },
+    "inspector": {
+      "link": "docs/inspector",
+      "text": "调试"
+    },
+    "api-lts": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "教程"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "加入我们",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "代码与学习"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "贡献"
+    },
+    "development": {
+      "link": "get-involved/development",
+      "text": "开发"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+      "text": "管理"
+    }
+  },
+  "security": {
+    "link": "security",
+    "text": "安全"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "博客"
+  },
+  "foundation": {
+    "link": "https://foundation.nodejs.org/",
+    "text": "基金会"
+  },
+  "releases": {
+    "title": "发布历史",
+    "downloads": "下载"
+  },
+  "links": {
+    "pages": {
+      "changelog": "更新日志"
+    }
+  }
 }

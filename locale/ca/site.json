@@ -13,7 +13,8 @@
   "chakracore-nightly": "Versions Node-ChakraCore Nightly",
   "previous": "Précédent",
   "next": "Prochain",
-  "feeds": [{
+  "feeds": [
+    {
       "link": "feed/blog.xml",
       "text": "Node.js Blog"
     },
@@ -30,7 +31,9 @@
       "text": "Minutes de les reunions del TSC de Node.js"
     }
   ],
-  "home": { "text": "Inici" },
+  "home": {
+    "text": "Inici"
+  },
   "about": {
     "link": "about",
     "text": "Quant a",
@@ -100,10 +103,6 @@
       "text": "Guies"
     }
   },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "Fundació"
-  },
   "getinvolved": {
     "link": "get-involved",
     "text": "Implica't",
@@ -124,9 +123,18 @@
       "text": "Conducta"
     }
   },
-  "security": { "link": "security", "text": "Seguretat" },
-  "blog": { "link": "blog", "text": "Notícies" },
-
+  "security": {
+    "link": "security",
+    "text": "Seguretat"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "Notícies"
+  },
+  "foundation": {
+    "link": "https://foundation.nodejs.org/",
+    "text": "Fundació"
+  },
   "releases": {
     "title": "Històric de Versions",
     "downloads": "Descarrègues"
