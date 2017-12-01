@@ -11,7 +11,7 @@ contribuir de la manera que puguin. Si vols [reportar un error](https://github.c
 
 <hr>
 
-## Discusió
+## Discussió
 
 - La [llista d'errors en ](https://github.com/nodejs/node/issues) és el lloc per discutir les característiques del nucli de Node.js.
 
@@ -32,7 +32,7 @@ contribuir de la manera que puguin. Si vols [reportar un error](https://github.c
 
 - La [Documentació oficial de l'API](/api) detalla l'API de Node.
 
-- [NodeSchool.io](http://nodeschool.io) li ensenyarà conceptes de Node.js de forma interactiva mitjançant jocs utilitzant la línia de comandos.
+- [NodeSchool.io](http://nodeschool.io) li ensenyarà conceptes de Node.js de forma interactiva mitjançant jocs utilitzant la línia de comandes.
 
 - L'[etiqueta de Node.js en StackOverflow](http://stackoverflow.com/questions/tagged/node.js) col·lecciona nova informació cada dia.
 
@@ -41,7 +41,7 @@ contribuir de la manera que puguin. Si vols [reportar un error](https://github.c
 - [How To Node](http://howtonode.org/) té un nombre creixent d'útils tutorials.
 
 
-## Llocs de la comunitat internaciona i projectes
+## Llocs de la comunitat internacional i projectes
 
 - [Blog Australià de Node.js blog &amp; llista de desenvolupadors](http://nodejs.org.au/)
 - [Comunitat Brasileira de Node.js](http://www.nodebr.com/)
