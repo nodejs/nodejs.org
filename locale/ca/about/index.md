@@ -5,10 +5,10 @@ trademark: Trademark
 ---
 # Sobre Node.js&reg;
 
-Concebit com a un entorne d' execució de JavaScript orientat a events asíncrons, Node està dissenyat
-per construir aplicacions en xarxa escalables. En la seguent aplicació de exemple "hola món", es pot
-manegar moltes conexions concurrents. Per cada conexió el *callback* serà executat, no obstant això
-si no hi ha treball que fer Node estarà dormint.
+Nascut com a un entorn d'execució de Javascript orientat a esdeveniments asíncrons, Node.js està 
+dissenyat per a crear aplicacions en xarxa de manera escalable. En la següent aplicació d'exemple 
+"hola món", es pot manegar moltes connexions concurrents. Per a cada connexió el callback serà 
+executat, no obstant si no hi hagués tasques pendents per a fer, Node.js romandrà adormit.
 
 ```javascript
 const http = require('http');
@@ -26,14 +26,15 @@ server.listen(port, hostname, () => {
   console.log(`El servidor s'està executant en http://${hostname}:${port}/`);
 });
 ```
-Això contrasta amb el model de concurrència més comú avui dia, on s'usen fils del
-Sistema Operatiu. Les operacions de xarxes basades en fils són relativament ineficients
-i són molt difícils d'usar. A més, els usuaris de Node són lliures de preocupacions
-sobre el bloqueig del procés, ja que no existeix. Gairebé cap funció en Node realitza
-I/O directament, així que el procés mai es bloqueja. A causa de que no hi ha bloqueig
-és molt raonable desenvolupar sistemes escalables en Node.
+Això contrasta amb el model de concurrència més comú d'avui dia, o es fan servir els 
+fils del Sistema Operatiu. Les operacions en xarxes basades en fils són relativament 
+ineficients i són molt més complicades de fer servir. A més a més, els usuaris de 
+Node.js no han d'estar preocupats quant als bloquejos dels processos ja que són 
+inexistents. Gairebé cap funció en Node.js realitza I/O directament, d'aquesta manera 
+el procés mai és bloquejat. A raó de què no hi ha bloquejos, és més raonable desenvolupar 
+sistemes escalables en Node.js.
 
-Si algú d'aquests termes no li és familiar, hi ha un article complet en
+Si cap d'aquests termes no li és familiar, hi ha un article complet en
 [Blocking vs Non-Blocking][].
 
 ---
