@@ -217,15 +217,31 @@ And particularly complicated regexps are not supported by node-re2.
 If you're trying to match something "obvious", like a URL or a file path, find an example in a [regexp library](http://www.regexlib.com) or use an npm module, e.g. [ip-regex](https://www.npmjs.com/package/ip-regex).
 
 ### Blocking the Event Loop: Node core modules
-Node exposes synchronous versions of several expensive APIs, including:
+Several Node core modules have synchronous expensive APIs, including:
 - [Encryption](https://nodejs.org/api/crypto.html)
 - [Compression](https://nodejs.org/api/zlib.html)
-- [File I/O](https://nodejs.org/api/fs.html)
-- [Child process interaction](https://nodejs.org/api/child_process.html)
+- [File system](https://nodejs.org/api/fs.html)
+- [Child process](https://nodejs.org/api/child_process.html)
 
-In a server, *you should not use the synchronous APIs from these modules*.
-These APIs are expensive, because they involve significant computation or require I/O.
-If you execute them on the Event Loop, they will take far longer to complete than a typical JavaScript instruction, blocking the Event Loop.
+These APIs are expensive, because they involve significant computation (encryption, compression), require I/O (file I/O), or potentially both (child process). These APIs are intended for scripting convenience, but are not intended for use in the server context. If you execute them on the Event Loop, they will take far longer to complete than a typical JavaScript instruction, blocking the Event Loop.
+
+In a server, *you should not use the following synchronous APIs from these modules*:
+- Encryption:
+    - `crypto.randomBytes` (synchronous version)
+    - `crypto.randomFillSync`
+    - `crypto.pbkdf2Sync`
+    - You should also be careful about providing large input to the encryption and decryption routines.
+- Compression:
+    - `zlib.inflateSync`
+    - `zlib.deflateSync`
+- File system:
+    - Do not use the synchronous file system APIs. For example, if the file you access is in a [distributed file system](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems) like [NFS](https://en.wikipedia.org/wiki/Network_File_System), access times can vary widely.
+- Child process:
+    - `child_process.spawnSync`
+    - `child_process.execSync`
+    - `child_process.execFileSync`
+
+This list is reasonably complete as of Node v9.
 
 ### Blocking the Event Loop: JSON DOS
 `JSON.parse` and `JSON.stringify` are other potentially expensive operations.
@@ -260,6 +276,10 @@ res = JSON.parse(str);
 took = process.hrtime(n);
 console.log('JSON.parse took ' + took);
 ```
+
+There are npm modules that offer asynchronous JSON APIs. See for example:
+- [JSONStream](https://www.npmjs.com/package/JSONStream), which has stream APIs.
+- [Big-Friendly JSON](https://github.com/philbooth/bfj), which has stream APIs as well as asynchronous versions of the standard JSON APIs using the partitioning-on-the-Event-Loop paradigm outlined below.
 
 ### Complex calculations without blocking the Event Loop
 Suppose you want to do complex calculations in JavaScript without blocking the Event Loop.
@@ -350,7 +370,7 @@ If you rely on only one Worker Pool, e.g. the Node Worker Pool, then the differi
 
 For this reason, you might wish to maintain a separate Computation Worker Pool.
 
-#### Conclusions
+#### Offloading: conclusions
 For simple tasks, like iterating over the elements of an arbitrarily long array, partitioning might be a good option.
 If your computation is more complex, offloading is a better approach: the communication costs, i.e. the overhead of passing serialized objects between the Event Loop and the Worker Pool, are offset by the benefit of using multiple cores.
 
@@ -424,16 +444,15 @@ The downside of this approach is that Workers in all of these Worker Pools will 
 Remember that each CPU-bound Task makes progress only while it is scheduled.
 As a result, you should only consider this approach after careful analysis.
 
-### Conclusions
+### Worker Pool: conclusions
 Whether you use only the Node Worker Pool or maintain separate Worker Pool(s), you should optimize the Task throughput of your Pool(s).
 
 To do this, minimize the variation in Task times by using Task partitioning.
 
 ##  The risks of npm modules
-Node developers benefit tremendously from the [npm ecosystem](https://www.npmjs.com/), with hundreds of thousands of modules offering functionality to accelerate your development process.
+While the Node core modules offer building blocks for a wide variety of applications, sometimes something more is needed. Node developers benefit tremendously from the [npm ecosystem](https://www.npmjs.com/), with hundreds of thousands of modules offering functionality to accelerate your development process.
 
-However, the vast majority of these modules are written by third-party developers and undergo no formal verification process.
-A developer using an npm module should be concerned about two things, though the latter is frequently forgotten.
+Remember, however, that the majority of these modules are written by third-party developers and are generally released with only best-effort guarantees. A developer using an npm module should be concerned about two things, though the latter is frequently forgotten.
 1. Does it honor its APIs?
 2. Might its APIs block the Event Loop or a Worker?
 Many modules make no effort to indicate the cost of their APIs, to the detriment of the community.
@@ -441,7 +460,7 @@ Many modules make no effort to indicate the cost of their APIs, to the detriment
 For simple APIs you can estimate the cost of the APIs; the cost of string manipulation isn't hard to fathom.
 But in many cases it's unclear how much an API might cost.
 
-*If you are calling an API that might do something expensive, ask the developers to document its cost, or examine the source code yourself (and submit a PR documenting the cost).*
+*If you are calling an API that might do something expensive, double-check the cost. Ask the developers to document it, or examine the source code yourself (and submit a PR documenting the cost).*
 
 Remember, even if the API is asynchronous, you don't know how much time it might spend on a Worker or on the Event Loop in each of its partitions.
 For example, suppose in the `asyncAvg` example given above, each call to the helper function summed *half* of the numbers rather than one of them.
