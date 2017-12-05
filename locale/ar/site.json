@@ -3,6 +3,7 @@
   "author": "Node.js Foundation",
   "url": "https://nodejs.org/ar/",
   "locale": "ar",
+  "rtl": true,
   "scrollToTop": "Scroll to top",
   "reportNodeIssue": "Report Node.js issue",
   "reportWebsiteIssue": "Report website issue",
