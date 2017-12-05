@@ -17,7 +17,7 @@ Existeixen tres tipus de documentació a l'abast en aquest lloc:
 
 La [Referència de l'API](/api/) proporciona informació detallada sobre una funció ó un objecte en Node.js. Aquesta
 documentació indica quins arguments acepta un mètode, el valor que retorna aquest mètode i quins errors poden estar
-relacionats al mateix. També indica quins mètodes estàn a l'abast per les diferents versions de Node.js
+relacionats al mateix. També indica quins mètodes són a l'abast per les diferents versions de Node.js
 
 També descriu els mòduls inclosos que proporciona Node.js, mes no documenta els mòduls que proporciona la comunitat.
 
