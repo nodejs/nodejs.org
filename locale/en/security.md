@@ -4,7 +4,7 @@ title: Security
 ---
 # Security
 
-## Reporting a Bug
+## Reporting a Bug in Node.js
 
 All security bugs in Node.js are taken seriously and should be reported by emailing [security@nodejs.org](mailto:security@nodejs.org).
 This will be delivered to a subset of the core team who handle security issues.
@@ -16,12 +16,16 @@ After the initial reply to your report, the security team will endeavor to keep 
 towards a fix and full announcement, and may ask for additional information or guidance surrounding the reported issue.
 These updates will be sent at least every five days, in practice, this is more likely to be every 24-48 hours.
 
-Security bugs in third party modules should be reported to their respective maintainers and can also be coordinated
-through the [Node Security Project](https://nodesecurity.io).
+## Reporting a Bug in a third party module
 
-Thank you for improving the security of Node.js. Your efforts and responsible disclosure are greatly appreciated and
+Security bugs in third party modules should be reported to their respective maintainers and should also be coordinated
+through the [Node Ecosystem Security Team](https://hackerone.com/nodejs-ecosystem) or by emailing 
+[security-ecosystem@nodejs.org](mailto:security-ecosystem@nodejs.org).
+
+Details regarding this process can be found in the [Security Working Group repository](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md).
+
+Thank you for improving the security of Node.js and its ecosystem. Your efforts and responsible disclosure are greatly appreciated and
 will be acknowledged.
-
 
 ## Disclosure Policy
 
