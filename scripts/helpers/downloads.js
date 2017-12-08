@@ -40,10 +40,6 @@ const postMergeDownloads = [
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-ppc64le.tar.xz'
   },
   {
-    'title': 'Linux PPC BE 64-bit Binary',
-    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-ppc64.tar.xz'
-  },
-  {
     'title': 'Linux s390x 64-bit Binary',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-s390x.tar.xz'
   },
