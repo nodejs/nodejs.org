@@ -27,10 +27,6 @@ familiarize themselves before folks get onsite, having the general collaborator
 discussions, and then dive into breakout sessions.
 
 We'd love to see you at Collab Summit! Check out the [Summit repo](https://github.com/nodejs/summit)
-for [issues filed](https://github.com/nodejs/summit/issues) that share what
+for upcoming and past Collab Summits and have a look at the
+[issues filed](https://github.com/nodejs/summit/issues) that share what
 individual working groups and committees are looking to discuss in-person.
-
-## Past Collab Summit events
-- Berlin in May 2017
-- Austin in December 2016
-- Amsterdam in September 2016
