@@ -41,15 +41,12 @@ right place. Explore our community resources to find out how you can help:
 
 - [docs.nodejitsu.com](http://docs.nodejitsu.com/) answers many of the common problems people come across.
 
-- [How To Node](http://howtonode.org/) has a growing number of useful tutorials.
-
 
 ## International community sites and projects
 
 - [Australian Node.js blog &amp; developers listing](http://nodejs.org.au/)
 - [Chinese community](http://cnodejs.org)
 - [French Google+ Community of Node.js users](https://plus.google.com/communities/113346206415381691435)
-- [German Node.js community](http://nodecode.de)
 - [Hungarian (Magyar) community](http://nodehun.blogspot.com/)
 - [Iranian group in Persian](http://nodejs.ir)
 - [Israeli Facebook group for Node.js](https://www.facebook.com/groups/node.il/)
@@ -58,5 +55,4 @@ right place. Explore our community resources to find out how you can help:
 - [Nicaragua Node.js community](http://nodenica.com/)
 - [Spanish language Facebook group for Node.js](https://www.facebook.com/groups/node.es/)
 - [Spanish language community](http://nodehispano.com)
-- [Turkey group in Turkish (Türkçe)](http://node.ist/)
 - [Việt Nam Node.js community](http://nodejs.vn)
