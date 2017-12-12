@@ -26,7 +26,6 @@ Core Working Groups are created by the
 * [Build](#build)
 * [Diagnostics](#diagnostics)
 * [i18n](#i18n)
-* [Intl](#intl)
 * [Evangelism](#evangelism)
 * [Docker](#docker)
 * [Addon API](#addon-api)
@@ -42,7 +41,6 @@ Core Working Groups are created by the
 * [Build](#build)
 * [Diagnostics](#diagnostics)
 * [i18n](#i18n)
-* [Intl](#intl)
 * [Evangelism](#evangelism)
 * [Docker](#docker)
 * [Addon API](#addon-api)
@@ -200,8 +198,6 @@ Responsibilities include:
 * 언어별 밋업 및 콘퍼런스의 node.js 발표자를 추천합니다.
 
 <!--
-Note that the i18n Working Groups are distinct from the [Intl](#Intl) Working Group.
-
 Each language community maintains its own membership.
 
 * [nodejs-ar - Arabic (اللغة العربية)](https://github.com/nodejs/nodejs-ar)
@@ -240,8 +236,6 @@ Each language community maintains its own membership.
 * [nodejs-vi - Vietnamese (Tiếng Việtnam)](https://github.com/nodejs/nodejs-vi)
 -->
 
-i18n 워킹 그룹은 [Intl](#Intl) 워킹 그룹과는 다릅니다.
-
 언어별 커뮤니티는 개별 권한을 가지고 운영되고 있습니다.
 
 * [nodejs-ar - Arabic (العَرَبِيَّة)](https://github.com/nodejs/nodejs-ar)
@@ -278,36 +272,6 @@ i18n 워킹 그룹은 [Intl](#Intl) 워킹 그룹과는 다릅니다.
 * [nodejs-zh-TW - Taiwanese (國語)](https://github.com/nodejs/nodejs-zh-TW)
 * [nodejs-uk - Ukrainian (Українська)](https://github.com/nodejs/nodejs-uk)
 * [nodejs-vi - Vietnamese (Tiếng Việt)](https://github.com/nodejs/nodejs-vi)
-
-<!--
-### [Intl](https://github.com/nodejs/Intl)
-
-The Intl Working Group is dedicated to support and improvement of
-Internationalization (i18n) and Localization (l10n) in Node.
-
-Responsibilities include:
-* Ensuring functionality & compliance (standards: ECMA, Unicode…)
-* Supporting Globalization and Internationalization issues that come up
-  in the tracker
-* Communicating guidance and best practices
-* Refining the existing `Intl` implementation
-
-The Intl Working Group is not responsible for translation of content. That is the
-responsibility of the specific [i18n](#i18n) group for each language.
--->
-
-### [Intl](https://github.com/nodejs/Intl)
-
-Intl 워킹 그룹은 Node의 국제화(i18n)와 지역화(l10n)를 지원하고 개선합니다.
-
-이 워킹 그룹은 다음에 대한 책임이 있습니다.
-* 모든 기능과 표준 준수 (표준: ECMA, 유니코드...)
-* 트래커에 올라온 세계화(Globalization)와 국제화(Internationalization) 이슈를 지원합니다.
-* 가이드라인과 권장 사례를 만듭니다.
-* 기존의 `Intl` 구현체를 정제합니다.
-
-Intl 워킹 그룹은 콘텐츠의 번역은 책임지지 않습니다.
-이는 각 언어에 대한 [i18n](#i18n)에 책임이 있습니다.
 
 <!--
 ### [Evangelism](https://github.com/nodejs/evangelism)
