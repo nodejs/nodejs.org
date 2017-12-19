@@ -4,28 +4,28 @@
   "url": "https://nodejs.org/ar/",
   "locale": "ar",
   "rtl": true,
-  "scrollToTop": "Scroll to top",
-  "reportNodeIssue": "Report Node.js issue",
-  "reportWebsiteIssue": "Report website issue",
-  "getHelpIssue": "Get Help",
-  "by": "by",
-  "all-downloads": "All download options",
-  "nightly": "Nightly builds",
-  "chakracore-nightly": "Node-ChakraCore Nightly builds",
-  "previous": "Previous",
-  "next": "Next",
+  "scrollToTop": "إنتقل إلى الأعلى",
+  "reportNodeIssue": "أبلغ عن عطل في Node.js",
+  "reportWebsiteIssue": "أبلغ عن عطل في الموقع",
+  "getHelpIssue": "احصل على مساعدة",
+  "by": "من طرف",
+  "all-downloads": "تحميل جميع النسخ",
+  "nightly": "إصدارات ليلية",
+  "chakracore-nightly": "Node-ChakraCore إصدارات ليلية خاصة ب",
+  "previous": "السابق",
+  "next": "التالي",
   "feeds": [
     {
       "link": "feed/blog.xml",
-      "text": "Node.js Blog"
+      "text": "Node.js مدونة"
     },
     {
       "link": "feed/releases.xml",
-      "text": "Node.js Blog: Releases"
+      "text": "الاصدارات : Node.js مدونة"
     },
     {
       "link": "feed/vulnerability.xml",
-      "text": "Node.js Blog: Vulnerability Reports"
+      "text": "تقارير أمنية : Node.js مدونة"
     }
   ],
   "home": {
@@ -33,34 +33,34 @@
   },
   "about": {
     "link": "about",
-    "text": "About",
+    "text": "عن الموقع",
     "governance": {
       "link": "about/governance",
-      "text": "Governance"
+      "text": "الحوكمة"
     },
     "community": {
       "link": "about/community",
-      "text": "Community"
+      "text": "المجمع"
     },
     "workinggroups": {
       "link": "about/working-groups",
-      "text": "Working Groups"
+      "text": "مجموعات العمل"
     },
     "releases": {
       "link": "about/releases",
-      "text": "Releases"
+      "text": "الاصدارات"
     },
     "resources": {
       "link": "about/resources",
-      "text": "Resources"
+      "text": "مصادر"
     },
     "trademark": {
       "link": "about/trademark",
-      "text": "Trademark"
+      "text": "علامة تجارية"
     },
     "privacy": {
       "link": "about/privacy",
-      "text": "Privacy Policy"
+      "text": "سياسة الخصوصية"
     }
   },
   "download": {
@@ -68,27 +68,27 @@
     "text": "تحميل",
     "releases": {
       "link": "download/releases",
-      "text": "Previous Releases"
+      "text": "الاصدارات السابقة"
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "Installing Node.js via package manager"
+      "text": "تحميل Node.js عن طريق نظام إدارة الحزم الافتراضي"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "Signed SHASUMS for release files"
+      "text": "وتائق الاصدارات مختومة SHASUMS"
     }
   },
   "docs": {
     "link": "docs",
-    "text": "Docs",
+    "text": "توتيق",
     "es6": {
       "link": "docs/es6",
-      "text": "ES6 and beyond"
+      "text": "وما بعدها ES6"
     },
     "inspector": {
       "link": "docs/inspector",
-      "text": "Inspector"
+      "text": "مفتش"
     },
     "api-lts": {
       "link": "/dist/latest-%ver-major%/docs/api",
@@ -101,7 +101,7 @@
     },
     "guides": {
       "link": "docs/guides",
-      "text": "Guides"
+      "text": "إرشادات"
     }
   },
   "getinvolved": {
@@ -109,23 +109,23 @@
     "text": "قم بالانضمام",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
-      "text": "Code + Learn"
+      "text": "برمج + تعلم"
     },
     "collab-summit": {
       "link": "get-involved/collab-summit",
-      "text": "Collab Summit"
+      "text": "قمة تعاونية"
     },
     "contribute": {
       "link": "get-involved/contribute",
-      "text": "Contribute"
+      "text": "ساهم"
     },
     "development": {
       "link": "get-involved/development",
-      "text": "Development"
+      "text": "تطوير"
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
-      "text": "Conduct"
+      "text": "القواعد السلوكية"
     }
   },
   "security": {
@@ -134,19 +134,19 @@
   },
   "blog": {
     "link": "blog",
-    "text": "أخبار"
+    "text": "مدونة"
   },
   "foundation": {
     "link": "https://foundation.nodejs.org/",
-    "text": "Foundation"
+    "text": "المؤسسة"
   },
   "releases": {
-    "title": "Release History",
-    "downloads": "Downloads"
+    "title": "أرشيف الاصدارات",
+    "downloads": "تحميل"
   },
   "links": {
     "pages": {
-      "changelog": "Changelog"
+      "changelog": "سجل التغييرات"
     }
   }
 }
