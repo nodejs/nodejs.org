@@ -44,7 +44,7 @@ and approving Foundation-led conferences and other initiatives. Technical
 governance is overseen by the TSC, not the Board of Directors.
 
 The current board members are listed
-[here](https://nodejs.org/en/foundation/board).
+[here](https://foundation.nodejs.org/board).
 
 ### Who is running for the Individual Membership Director seat?
 Read more about why our candidates are running below.

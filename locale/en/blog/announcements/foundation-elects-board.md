@@ -9,7 +9,7 @@ layout: blog-post.hbs
 
 > New Foundation Committed to Accelerating Growth of the Node.js Platform Also Adds Marketing Chair and Community Manager
 
-SAN FRANCISCO, Sept. 4, 2015 – The [Node.js Foundation](https://nodejs.org/en/foundation/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced key executives have been elected to its Board of Directors. The Board of Directors represents the broad Node.js community and will guide the Foundation as it executes on its mission to enable widespread adoption and help accelerate development of Node.js and other related modules.
+SAN FRANCISCO, Sept. 4, 2015 – The [Node.js Foundation](https://foundation.nodejs.org/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced key executives have been elected to its Board of Directors. The Board of Directors represents the broad Node.js community and will guide the Foundation as it executes on its mission to enable widespread adoption and help accelerate development of Node.js and other related modules.
 
 The Node.js Foundation board, which sets the business and technical direction as well as oversees IP management, marketing, and events on behalf of the organization, includes:
 

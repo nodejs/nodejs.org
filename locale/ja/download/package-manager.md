@@ -44,18 +44,18 @@ pacman -S nodejs npm
 Node.js は [NodeSource](https://nodesource.com) の Debian と Ubuntu ベースの Linux ディストリビューションリポジトリ (以前の [Chris Lea's](https://github.com/chrislea) Launchpad PPA) から利用できます。このリポジトリをサポートするには、GitHub にある [nodesource/distributions](https://github.com/nodesource/distributions) を参照ください。
 
 <!-- **NOTE:** If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md). -->
-**注意:** Ubuntu Precise や Debian Wheezy をお使いの場合は、 [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md) を読むことをお勧めします。
+**注意:** Ubuntu Precise や Debian Wheezy をお使いの場合は、 [running Node.js >= 6.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md) を読むことをお勧めします。
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
 <!-- Alternatively, for Node.js v6: -->
-Node.js v6 を利用するには:
+Node.js v8 を利用するには:
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 

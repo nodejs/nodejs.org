@@ -51,7 +51,7 @@ create a `package.json` file that describes your app and its dependencies:
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.16.1"
   }
 }
 ```
@@ -73,14 +73,19 @@ create a `package.json` file that describes your app and its dependencies:
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.16.1"
   }
 }
 ```
 
 <!--
+
+With your new `package.json` file, run `npm install`. If you are using `npm`
+version 5 or later, this will generate a `package-lock.json` file which will be copied
+to your Docker image.
+
 Then, create a `server.js` file that defines a web app using the
-[Express.js](http://expressjs.com/) framework:
+[Express.js](https://expressjs.com/) framework:
 
 ```javascript
 'use strict';
@@ -106,7 +111,7 @@ container using the official Docker image. First, you'll need to build a Docker
 image of your app.
 -->
 
-이제 [Express.js](http://expressjs.com/) 프레임워크로 웹앱을 정의하는 `server.js`를 만들겠습니다.
+이제 [Express.js](https://expressjs.com/) 프레임워크로 웹앱을 정의하는 `server.js`를 만들겠습니다.
 
 ```javascript
 'use strict';
@@ -142,11 +147,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `boron` of `node`
+Here we will use the latest LTS (long term support) version `carbon` of `node`
 available from the [Docker Hub](https://hub.docker.com/):
 
 ```docker
-FROM node:boron
+FROM node:carbon
 ```
 -->
 
@@ -162,10 +167,10 @@ touch Dockerfile
 
 가장 먼저 해야 할 것은 어떤 이미지를 사용해서 빌드할 것인지를 정의하는 것입니다. 여기서는
 [Docker Hub](https://hub.docker.com/)에 있는
-`node`의 최신 LTS(장기 지원) 버전인 `boron`을 사용할 것입니다.
+`node`의 최신 LTS(장기 지원) 버전인 `carbon`을 사용할 것입니다.
 
 ```docker
-FROM node:boron
+FROM node:carbon
 ```
 
 <!--
@@ -174,17 +179,23 @@ will be the working directory for your application:
 
 ```docker
 # Create app directory
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 ```
 
 This image comes with Node.js and NPM already installed so the next thing we
-need to do is to install your app dependencies using the `npm` binary:
+need to do is to install your app dependencies using the `npm` binary. Please
+note that if you are using `npm` version 4 or earlier a `package-lock.json`
+file will *not* be generated.
 
 ```docker
 # Install app dependencies
-COPY package.json /usr/src/app/
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+
 RUN npm install
+# If you are building your code for production
+# RUN npm install --only=production
 ```
 -->
 
@@ -202,17 +213,22 @@ WORKDIR /usr/src/app
 
 ```docker
 # 앱 의존성 설치
-COPY package.json /usr/src/app/
+COPY package*.json ./
 RUN npm install
 ```
 
 <!--
+Note that, rather than copying the entire working directory, we are only copying
+the `package.json` file. This allows us to take advantage of cached Docker
+layers. bitJudo has a good explanation of this
+[here](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/).
+
 To bundle your app's source code inside the Docker image, use the `COPY`
 instruction:
 
 ```docker
 # Bundle app source
-COPY . /usr/src/app
+COPY . .
 ```
 
 Your app binds to port `8080` so you'll use the `EXPOSE` instruction to have it
@@ -227,7 +243,7 @@ Docker 이미지 안에 앱의 소스코드를 넣기 위해 `COPY` 지시어를
 
 ```docker
 # 앱 소스 추가
-COPY . /usr/src/app
+COPY . .
 ```
 
 앱이 `8080`포트에 바인딩 되어 있으므로 `EXPOSE` 지시어를 사용해서 `docker` 데몬에 매핑합니다.
@@ -248,18 +264,22 @@ CMD [ "npm", "start" ]
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:boron
+FROM node:carbon
 
 # Create app directory
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Install app dependencies
-COPY package.json /usr/src/app/
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+
 RUN npm install
+# If you are building your code for production
+# RUN npm install --only=production
 
 # Bundle app source
-COPY . /usr/src/app
+COPY . .
 
 EXPOSE 8080
 CMD [ "npm", "start" ]
@@ -276,18 +296,17 @@ CMD [ "npm", "start" ]
 `Dockerfile`은 다음과 같아야 합니다.
 
 ```docker
-FROM node:boron
+FROM node:carbon
 
 # 앱 디렉토리 생성
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # 앱 의존성 설치
-COPY package.json /usr/src/app/
+COPY package*.json ./
 RUN npm install
 
 # 앱 소스 추가
-COPY . /usr/src/app
+COPY . .
 
 EXPOSE 8080
 CMD [ "npm", "start" ]
@@ -338,7 +357,7 @@ $ docker images
 
 # Example
 REPOSITORY                      TAG        ID              CREATED
-node                            boron      539c0211cd76    3 weeks ago
+node                            carbon     1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 -->
@@ -360,7 +379,7 @@ $ docker images
 
 # 예시
 REPOSITORY                      TAG        ID              CREATED
-node                            boron      539c0211cd76    3 weeks ago
+node                            carbon     1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
@@ -451,7 +470,8 @@ HTTP/1.1 200 OK
 X-Powered-By: Express
 Content-Type: text/html; charset=utf-8
 Content-Length: 12
-Date: Sun, 02 Jun 2013 03:53:22 GMT
+ETag: W/"c-M6tWOb/Y57lesdjQuHeB1P/qTV0"
+Date: Mon, 13 Nov 2017 20:53:59 GMT
 Connection: keep-alive
 
 Hello world
@@ -481,9 +501,9 @@ HTTP/1.1 200 OK
 X-Powered-By: Express
 Content-Type: text/html; charset=utf-8
 Content-Length: 12
-Date: Sun, 02 Jun 2013 03:53:22 GMT
+ETag: W/"c-M6tWOb/Y57lesdjQuHeB1P/qTV0"
+Date: Mon, 13 Nov 2017 20:53:59 GMT
 Connection: keep-alive
-
 Hello world
 ```
 
@@ -497,7 +517,7 @@ following places:
 * [Official Node.js Docker Image](https://registry.hub.docker.com/_/node/)
 * [Node.js Docker Best Practices Guide](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 * [Official Docker documentation](https://docs.docker.com/)
-* [Docker Tag on StackOverflow](http://stackoverflow.com/questions/tagged/docker)
+* [Docker Tag on StackOverflow](https://stackoverflow.com/questions/tagged/docker)
 * [Docker Subreddit](https://reddit.com/r/docker)
 -->
 
@@ -508,5 +528,5 @@ following places:
 * [공식 Node.js Docker 이미지](https://registry.hub.docker.com/_/node/)
 * [Node.js Docker 사용사례 문서](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 * [공시 Docker 문서](https://docs.docker.com/)
-* [StackOverflow에 Docker 태그로 올라온 질문](http://stackoverflow.com/questions/tagged/docker)
+* [StackOverflow에 Docker 태그로 올라온 질문](https://stackoverflow.com/questions/tagged/docker)
 * [Docker 레딧](https://reddit.com/r/docker)

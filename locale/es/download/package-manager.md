@@ -38,17 +38,17 @@ También incluidas: **Linux Mint**, **Linux Mint Debian Edition (LMDE)**, **elem
 
 Node.js está disponible desde el repositorio de binarios para Debian y Ubuntu de [NodeSource](https://nodesource.com) (antiguamente soportado por [Chris Lea](https://github.com/chrislea) en Launchpad mediante PPA). Soporte para este repositorio y sus scripts, pueden ser encontrados en GitHub bajo [nodesource/distributions](https://github.com/nodesource/distributions).
 
-**NOTA:** Si usted está usando Ubuntu Precise ó Debian Wheezy, Usted probablemente deba leer sobre [ejecutar Node.js >= 4.x en distribuciones antiguas](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+**NOTA:** Si usted está usando Ubuntu Precise ó Debian Wheezy, Usted probablemente deba leer sobre [ejecutar Node.js >= 6.x en distribuciones antiguas](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-Alternativamente, para Node.js v6:
+Alternativamente, para Node.js v8:
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 

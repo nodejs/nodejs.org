@@ -8,7 +8,7 @@ layout: blog-post.hbs
 
 > Foundation Announces Dates for Node.js Interactive Conferences in Amsterdam and Austin, Texas 
 
-SAN FRANCISCO, Mar. 9, 2016 — The [Node.js Foundation](https://nodejs.org/en/foundation/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced AppDynamics, New Relic, Opbeat and Sphinx are joining the Foundation as Silver Members to continue to sustain and grow the Node.js platform.
+SAN FRANCISCO, Mar. 9, 2016 — The [Node.js Foundation](https://foundation.nodejs.org/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced AppDynamics, New Relic, Opbeat and Sphinx are joining the Foundation as Silver Members to continue to sustain and grow the Node.js platform.
 
 Many of the new members are within the application performance management industry, both established and up-and-coming vendors. Application performance management is an essential part of any infrastructure and there is a need across public, private and hybrid clouds to ensure that current and future products offer next-generation application performance with Node.js as a core component to the stability and potential of these offerings.
 

@@ -617,7 +617,7 @@ http.createServer((request, response) => {
 Now let's tweak this. We want to only send an echo under the following
 conditions:
 
-* The request method is GET.
+* The request method is POST.
 * The URL is `/echo`.
 
 In any other case, we want to simply respond with a 404.
@@ -626,7 +626,7 @@ In any other case, we want to simply respond with a 404.
 const http = require('http');
 
 http.createServer((request, response) => {
-  if (request.method === 'GET' && request.url === '/echo') {
+  if (request.method === 'POST' && request.url === '/echo') {
     let body = [];
     request.on('data', (chunk) => {
       body.push(chunk);
@@ -644,7 +644,7 @@ http.createServer((request, response) => {
 
 이제 약간의 변경을 해보겠습니다. 다음의 조건에서만 에코 응답을 보내려고 합니다.
 
-* 요청 메소드가 GET인 경우
+* 요청 메소드가 POST인 경우
 * URL이 `/echo`인 경우
 
 위 조건이 아닌 경우에는 404를 응답합니다.
@@ -653,7 +653,7 @@ http.createServer((request, response) => {
 const http = require('http');
 
 http.createServer((request, response) => {
-  if (request.method === 'GET' && request.url === '/echo') {
+  if (request.method === 'POST' && request.url === '/echo') {
     let body = [];
     request.on('data', (chunk) => {
       body.push(chunk);
@@ -683,7 +683,7 @@ exactly what we want for an echo server!
 const http = require('http');
 
 http.createServer((request, response) => {
-  if (request.method === 'GET' && request.url === '/echo') {
+  if (request.method === 'POST' && request.url === '/echo') {
     request.pipe(response);
   } else {
     response.statusCode = 404;
@@ -706,7 +706,7 @@ http.createServer((request, response) => {
 const http = require('http');
 
 http.createServer((request, response) => {
-  if (request.method === 'GET' && request.url === '/echo') {
+  if (request.method === 'POST' && request.url === '/echo') {
     request.pipe(response);
   } else {
     response.statusCode = 404;
@@ -741,7 +741,7 @@ http.createServer((request, response) => {
   response.on('error', (err) => {
     console.error(err);
   });
-  if (request.method === 'GET' && request.url === '/echo') {
+  if (request.method === 'POST' && request.url === '/echo') {
     request.pipe(response);
   } else {
     response.statusCode = 404;
@@ -774,7 +774,7 @@ http.createServer((request, response) => {
   response.on('error', (err) => {
     console.error(err);
   });
-  if (request.method === 'GET' && request.url === '/echo') {
+  if (request.method === 'POST' && request.url === '/echo') {
     request.pipe(response);
   } else {
     response.statusCode = 404;

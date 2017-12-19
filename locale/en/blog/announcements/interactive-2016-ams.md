@@ -9,7 +9,7 @@ layout: blog-post.hbs
 
 > Event provides neutral forum for learning about the future of Node.js and JavaScript from the community and enterprise alike
 
-**SAN FRANCISCO, June 29, 2016** – [Node.js Foundation](https://nodejs.org/en/foundation/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced the initial programming for Node.js Interactive Europe, September 15 -16, 2016, in Amsterdam, Netherlands. The event will showcase workshops, community and technical talks, and use cases that will inform the future development of Node.js and JavaScript.
+**SAN FRANCISCO, June 29, 2016** – [Node.js Foundation](https://foundation.nodejs.org/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced the initial programming for Node.js Interactive Europe, September 15 -16, 2016, in Amsterdam, Netherlands. The event will showcase workshops, community and technical talks, and use cases that will inform the future development of Node.js and JavaScript.
 
 With 4 million users a month and adoption across numerous industries, Node.js is emerging as a universal platform used for web applications, IoT, enterprise application development and microservice architectures. This marquee event attracts enterprise users, developers and community stakeholders, providing them with a unique opportunity for cross-disciplinary discussions that are aimed to provide new insights and new opportunities around Node.js development. 
 

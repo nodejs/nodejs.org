@@ -385,12 +385,12 @@ const server = net.createServer(() => {}).listen(8080);
 server.on('listening', () => {});
 ```
 
-When only a port is passed the port is bound immediately. So the
-`'listening'` callback could be called immediately. Problem is that the
-`.on('listening')` will not have been set by that time.
+When only a port is passed, the port is bound immediately. So, the
+`'listening'` callback could be called immediately. The problem is that the
+`.on('listening')` callback will not have been set by that time.
 
-To get around this the `'listening'` event is queued in a `nextTick()`
-to allow the script to run to completion. Which allows the user to set
+To get around this, the `'listening'` event is queued in a `nextTick()`
+to allow the script to run to completion. This allows the user to set
 any event handlers they want.
 
 ## `process.nextTick()` vs `setImmediate()`
@@ -403,7 +403,7 @@ their names are confusing.
 event loop
 
 In essence, the names should be swapped. `process.nextTick()` fires more
-immediately than `setImmediate()` but this is an artifact of the past
+immediately than `setImmediate()`, but this is an artifact of the past
 which is unlikely to change. Making this switch would break a large
 percentage of the packages on npm. Every day more new modules are being
 added, which mean every day we wait, more potential breakages occur.
@@ -434,9 +434,9 @@ server.on('listening', () => { });
 ```
 
 Say that `listen()` is run at the beginning of the event loop, but the
-listening callback is placed in a `setImmediate()`. Now, unless a
-hostname is passed binding to the port will happen immediately. Now for
-the event loop to proceed it must hit the **poll** phase, which means
+listening callback is placed in a `setImmediate()`. Unless a
+hostname is passed, binding to the port will happen immediately. For
+the event loop to proceed, it must hit the **poll** phase, which means
 there is a non-zero chance that a connection could have been received
 allowing the connection event to be fired before the listening event.
 

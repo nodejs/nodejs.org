@@ -180,16 +180,17 @@ The following table lists the impact of various runtime flags on debugging:
     <td>
       <ul>
         <li>Enable inspector agent</li>
-        <li>Listen on default port (9229)</li>
+        <li>Listen on default address and port (127.0.0.1:9229)</li>
       </ul>
     </td>
   </tr>
   <tr>
-    <td>--inspect=<i>port</i></td>
+    <td>--inspect=<i>[host:port]</i></td>
     <td>
       <ul>
         <li>Enable inspector agent</li>
-        <li>Listen on port <i>port</i></li>
+        <li>Bind to address or hostname <i>host</i> (default: 127.0.0.1)</li>
+        <li>Listen on port <i>port</i> (default: 9229)</li>
       </ul>
     </td>
   </tr>
@@ -198,17 +199,18 @@ The following table lists the impact of various runtime flags on debugging:
     <td>
       <ul>
         <li>Enable inspector agent</li>
-        <li>Listen on default port (9229)</li>
+        <li>Listen on default address and port (127.0.0.1:9229)</li>
         <li>Break before user code starts</li>
       </ul>
     </td>
   </tr>
   <tr>
-    <td>--inspect-brk=<i>port</i></td>
+    <td>--inspect-brk=<i>[host:port]</i></td>
     <td>
       <ul>
         <li>Enable inspector agent</li>
-        <li>Listen on port <i>port</i></li>
+        <li>Bind to address or hostname <i>host</i> (default: 127.0.0.1)</li>
+        <li>Listen on port <i>port</i> (default: 9229)</li>
         <li>Break before user code starts</li>
       </ul>
     </td>
@@ -243,7 +245,7 @@ The following table lists the impact of various runtime flags on debugging:
     </td>
   </tr>
   <tr>
-    <td>--inspect=<i>port</i></td>
+    <td>--inspect=<i>[host:port]</i></td>
     <td>
       <ul>
         <li>인스펙터 에이전트 활성화</li>
@@ -262,7 +264,7 @@ The following table lists the impact of various runtime flags on debugging:
     </td>
   </tr>
   <tr>
-    <td>--inspect-brk=<i>port</i></td>
+    <td>--inspect-brk=<i>[host:port]</i></td>
     <td>
       <ul>
         <li>인스펙터 에이전트 활성화</li>

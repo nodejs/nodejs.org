@@ -9,7 +9,7 @@ layout: blog-post.hbs
 
 More Stability, Security, and Improved Test Coverage Appeals to Growing Number of Enterprises Using Node.js
 
-SAN FRANCISCO, Sept. 14, 2015 – The [Node.js Foundation](https://nodejs.org/en/foundation/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced the release of Node.js version 4.0.0. A record number of individuals and companies helped to contribute to the release, which combines both the Node.js project and io.js project in a single codebase under the direction of the Node.js Foundation.
+SAN FRANCISCO, Sept. 14, 2015 – The [Node.js Foundation](https://foundation.nodejs.org/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced the release of Node.js version 4.0.0. A record number of individuals and companies helped to contribute to the release, which combines both the Node.js project and io.js project in a single codebase under the direction of the Node.js Foundation.
 
 Currently, Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 2 million downloads per month. With major stability and security updates, a new test cluster, support for ARM processors and long-term support, Node.js v4 represents the latest framework innovation for enterprise users leveraging it to run JavaScript programs.
 
@@ -34,7 +34,7 @@ Additional Resources
 
 About Node.js Foundation
 Node.js Foundation is a collaborative open source project dedicated to building and supporting the Node.js platform and other related modules. Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 2 million downloads per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites. The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft and PayPal. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, npm, Sauce Labs, SAP, StrongLoop and YLD!. Get involved here: [http://nodejs.org](http://nodejs.org).
-The Node.js Foundation is a Collaborative Project at The Linux Foundation. Linux Foundation Collaborative Projects are independently funded software projects that harness the power of collaborative development to fuel innovation across industries and ecosystems. [https://nodejs.org/en/foundation/](https://nodejs.org/en/foundation/)
+The Node.js Foundation is a Collaborative Project at The Linux Foundation. Linux Foundation Collaborative Projects are independently funded software projects that harness the power of collaborative development to fuel innovation across industries and ecosystems. [https://foundation.nodejs.org/](https://foundation.nodejs.org/)
 
 > Node.js Foundation is a licensed mark of Node.js Foundation. Node.js is a trademark of Joyent, Inc. and is used with its permission
 

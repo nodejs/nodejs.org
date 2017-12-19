@@ -31,7 +31,7 @@ Core Working Groups are created by the
 * [Addon API](#addon-api)
 * [Benchmarking](#benchmarking)
 * [Post-mortem](#post-mortem)
-* [Intl](#intl)
+* [Release](#release)
 -->
 
 ## 현재의 워킹 그룹
@@ -46,7 +46,7 @@ Core Working Groups are created by the
 * [Addon API](#addon-api)
 * [Benchmarking](#benchmarking)
 * [Post-mortem](#post-mortem)
-* [Intl](#intl)
+* [Release](#release)
 
 <!--
 ### [Website](https://github.com/nodejs/nodejs.org)
@@ -198,8 +198,6 @@ Responsibilities include:
 * 언어별 밋업 및 콘퍼런스의 node.js 발표자를 추천합니다.
 
 <!--
-Note that the i18n Working Groups are distinct from the [Intl](#Intl) Working Group.
-
 Each language community maintains its own membership.
 
 * [nodejs-ar - Arabic (اللغة العربية)](https://github.com/nodejs/nodejs-ar)
@@ -238,8 +236,6 @@ Each language community maintains its own membership.
 * [nodejs-vi - Vietnamese (Tiếng Việtnam)](https://github.com/nodejs/nodejs-vi)
 -->
 
-i18n 워킹 그룹은 [Intl](#Intl) 워킹 그룹과는 다릅니다.
-
 언어별 커뮤니티는 개별 권한을 가지고 운영되고 있습니다.
 
 * [nodejs-ar - Arabic (العَرَبِيَّة)](https://github.com/nodejs/nodejs-ar)
@@ -276,36 +272,6 @@ i18n 워킹 그룹은 [Intl](#Intl) 워킹 그룹과는 다릅니다.
 * [nodejs-zh-TW - Taiwanese (國語)](https://github.com/nodejs/nodejs-zh-TW)
 * [nodejs-uk - Ukrainian (Українська)](https://github.com/nodejs/nodejs-uk)
 * [nodejs-vi - Vietnamese (Tiếng Việt)](https://github.com/nodejs/nodejs-vi)
-
-<!--
-### [Intl](https://github.com/nodejs/Intl)
-
-The Intl Working Group is dedicated to support and improvement of
-Internationalization (i18n) and Localization (l10n) in Node.
-
-Responsibilities include:
-* Ensuring functionality & compliance (standards: ECMA, Unicode…)
-* Supporting Globalization and Internationalization issues that come up
-  in the tracker
-* Communicating guidance and best practices
-* Refining the existing `Intl` implementation
-
-The Intl Working Group is not responsible for translation of content. That is the
-responsibility of the specific [i18n](#i18n) group for each language.
--->
-
-### [Intl](https://github.com/nodejs/Intl)
-
-Intl 워킹 그룹은 Node의 국제화(i18n)와 지역화(l10n)를 지원하고 개선합니다.
-
-이 워킹 그룹은 다음에 대한 책임이 있습니다.
-* 모든 기능과 표준 준수 (표준: ECMA, 유니코드...)
-* 트래커에 올라온 세계화(Globalization)와 국제화(Internationalization) 이슈를 지원합니다.
-* 가이드라인과 권장 사례를 만듭니다.
-* 기존의 `Intl` 구현체를 정제합니다.
-
-Intl 워킹 그룹은 콘텐츠의 번역은 책임지지 않습니다.
-이는 각 언어에 대한 [i18n](#i18n)에 책임이 있습니다.
 
 <!--
 ### [Evangelism](https://github.com/nodejs/evangelism)
@@ -363,7 +329,7 @@ abstraction layer for native add-on authors for Node.js,
 assisting in the writing of code that is compatible with many actively used
 versions of Node.js, V8 and libuv.
 
-Responsibilities include
+Responsibilities include:
 * Maintaining the [NAN](https://github.com/nodejs/nan) GitHub repository,
   including code, issues and documentation.
 * Maintaining the [addon-examples](https://github.com/nodejs/node-addon-examples)
@@ -454,3 +420,15 @@ Responsibilities include:
 이 워킹 그룹은 다음에 대한 책임이 있습니다.
 * 필요할 때 덤프를 생성할 수 있도록 인터페이스/API를 정의하고 추가합니다.
 * 이러한 덤프를 분석하는 도구를 지원하기 위해 생성된 덤프의 공통 구조를 정의하고 추가합니다.
+
+### [Release](https://github.com/nodejs/LTS)
+The Release Working Group manages the release process for Node.js.
+
+Responsibilities include:
+* Define the release process.
+* Define the content of releases.
+* Generate and create releases.
+* Test Releases.
+* Manage the Long Term Support and Current branches including
+  backporting changes to these branches.
+* Define the policy for what gets backported to release streams

@@ -6,15 +6,15 @@
 
 ## What is this repo?
 
-[nodejs.org](https://nodejs.org) by the [Node.js Foundation](https://nodejs.org/foundation/) builds on the merged community's past website projects to form a self-publishing, community-managed version of the previous site.
+[nodejs.org](https://nodejs.org) by the [Node.js Foundation](https://foundation.nodejs.org/) builds on the merged community's past website projects to form a self-publishing, community-managed version of the previous site.
 
 On a technical level, inspiration has been taken from the `iojs.org` repo while design and content has been migrated from the old [nodejs.org repo](https://github.com/nodejs/nodejs.org-archive). These technical changes have helped to facilitate community involvement and empower the foundation's internationalization communities to provide alternative website content in other languages.
 
-This repo's issues section has become the primary home for the Website WG's coordination efforts (meeting planning, minute approval, etc.).
+This repo's issues section has become the primary home for the Website WG's coordination efforts (meeting planning, minute approval, etc).
 
 ## Contributing
 
-Please contribute! There are plenty of [good first contributions](https://github.com/nodejs/nodejs.org/labels/good%20first%20contribution) to do. To get started, you have to [fork](https://github.com/nodejs/nodejs.org/fork) this repo to your own GitHub account first. Then open up a terminal on your machine and enter the following commands:
+Please contribute! There are plenty of [good first issues](https://github.com/nodejs/nodejs.org/labels/good%20first%20issue) to work on. To get started, you have to [fork](https://github.com/nodejs/nodejs.org/fork) this repo to your own GitHub account first. Then open up a terminal on your machine and enter the following commands:
 
 ```bash
 $ git clone https://github.com/<your user name>/nodejs.org.git
@@ -23,7 +23,7 @@ $ npm install
 $ npm start
 ```
 
-This will start the development server on http://localhost:8080/en/ and should reload automatically when you make changes but it's all just code and no code is perfect so sometimes you may need to restart it. :)
+This will start the development server on http://localhost:8080/en/. This should reload automatically when you make changes to the code, but no code is perfect, so sometimes you may need to restart it. :)
 
 Note: You'll need Node.js v4 or newer as the build system uses some native ES2015 features.
 

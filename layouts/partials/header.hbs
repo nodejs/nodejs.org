@@ -12,8 +12,12 @@
         </li>
 
         {{#each nav.main}}
-          <li{{#startswith ../path link}} class="active"{{/startswith}}>
-            <a href="/{{../site.locale}}/{{link}}/">{{text}}</a>
+          <li{{#startswith ../path link}} class="active"{{/startswith}}{{#startswith link 'https://foundation.nodejs.org'}} class="nav-foundation"{{/startswith}}>
+            {{#startswith link 'http'}}
+              <a href="{{link}}">{{text}}</a>
+            {{else}}
+              <a href="/{{../site.locale}}/{{link}}/">{{text}}</a>
+            {{/startswith}}
           </li>
         {{/each}}
       </ul>

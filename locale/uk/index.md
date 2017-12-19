@@ -14,7 +14,7 @@ labels:
   changelog: Список змін
   api: Документація
   version-schedule-prompt: Або подивіться на
-  version-schedule-prompt-link-text: графік LTS
+  version-schedule-prompt-link-text: графік LTS.
 ---
 
 Node.js® — це JavaScript–оточення побудоване на JavaScript–рушієві [Chrome V8](https://developers.google.com/v8/).

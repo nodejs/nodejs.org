@@ -100,12 +100,6 @@ function buildLocale (source, locale) {
         refer: false,
         limit: 1
       },
-      tscMinutes: {
-        pattern: 'foundation/tsc/minutes/*.md',
-        sortBy: 'date',
-        reverse: true,
-        refer: false
-      },
       knowledgeBase: {
         pattern: 'knowledge/**/*.md',
         refer: false
@@ -149,11 +143,6 @@ function buildLocale (source, locale) {
       collection: 'blogVulnerability',
       destination: 'feed/vulnerability.xml',
       title: 'Node.js Blog: Vulnerability Reports'
-    }))
-    .use(feed({
-      collection: 'tscMinutes',
-      destination: 'feed/tsc-minutes.xml',
-      title: 'Node.js Technical Steering Committee meetings'
     }))
     // Finally, this compiles the rest of the layouts present in ./layouts.
     // They're language-agnostic, but have to be regenerated for every locale
@@ -281,7 +270,7 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          content: 'Important <a href="https://nodejs.org/en/blog/vulnerability/september-2017-path-validation/">security release for 8.x</a>, please update now!'
+          content: 'Important <a href="https://nodejs.org/en/blog/vulnerability/december-2017-security-releases/">security releases</a>, please update now!'
         }
       }
     }
