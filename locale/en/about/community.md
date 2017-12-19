@@ -14,7 +14,7 @@ The Community Committee (CommComm) is a top-level committee in the Node.js Found
  - Project Moderation/Mediation
  - Public Outreach and [Publications](https://medium.com/the-node-js-collection)
 
-There are four types of involvment with the Community Committee:
+There are four types of involvement with the Community Committee:
 
   - A **Contributor** is any individual creating or commenting on an issue or pull request.
   - A **Collaborator** is a contributor who has been given write access to the repository
@@ -37,7 +37,7 @@ If you're interested in participating in the Community Committee as a committee 
 
 ## Observers and Membership
 
-If you're interested in becoming more deeply involved with the Community Committee and its projects, we encourage you to become an active observer, and work toward acheiving member status. To become a member you must:
+If you're interested in becoming more deeply involved with the Community Committee and its projects, we encourage you to become an active observer, and work toward achieving member status. To become a member you must:
 
  1. Attend the bi-weekly meetings, investigate issues tagged as good first issue, file issues and pull requests, and provide insight via GitHub as a contributor or collaborator.
  2. Request to become an Observer by filing an issue. Once added as an Observer to meetings, we will track attendance and participation for 3 months, in accordance with our governance guidelines. You can find a great example of such an issue [here](https://github.com/nodejs/community-committee/issues/142).
