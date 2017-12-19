@@ -25,7 +25,6 @@ layout: contribute.hbs
   - [Dependency Stability](#dependency-stability)
 - [Working Groups](#working-groups)
 - [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin)
-- [A Few Open Questions](#a-few-open-questions)
 - [Notes](#notes)
 
 ---
@@ -342,11 +341,6 @@ By making a contribution to this project, I certify that:
   personal information I submit with it, including my sign-off) is
   maintained indefinitely and may be redistributed consistent with
   this project or the open source license(s) involved.
-
-## A Few Open Questions
-
-1. What about things like http_parser and libuv? Does it make sense to see about bringing each into the foundation as their own projects?
-2. What about all the other repos under iojs/* and joyent/*, which of those will move over to the foundation?
 
 ## Notes
 
