@@ -1,7 +1,7 @@
 ---
 layout: index.hbs
 labels:
-  banner: Important security releases, please update now!
+  banner: Mises à jour de sécurité importantes, veuillez mettre à jour!
   current-version: Version actuelle
   download: Téléchargements
   download-for: Téléchargements pour
