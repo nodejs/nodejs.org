@@ -1,6 +1,7 @@
 ---
 layout: index.hbs
 labels:
+  banner: Important security releases, please update now!
   current-version: 当前版本
   download: 下载
   download-for: 下载为
