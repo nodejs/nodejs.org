@@ -270,7 +270,7 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          content: 'Important <a href="https://nodejs.org/en/blog/vulnerability/december-2017-security-releases/">security releases</a>, please update now!'
+          link: 'https://nodejs.org/en/blog/vulnerability/december-2017-security-releases/'
         }
       }
     }
