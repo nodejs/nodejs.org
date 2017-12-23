@@ -1,0 +1,152 @@
+{
+  "title": "Node.js",
+  "author": "Node.js Foundation",
+  "url": "https://nodejs.org/ar/",
+  "locale": "ar",
+  "rtl": true,
+  "scrollToTop": "إنتقل إلى الأعلى",
+  "reportNodeIssue": "أبلغ عن عطل في Node.js",
+  "reportWebsiteIssue": "أبلغ عن عطل في الموقع",
+  "getHelpIssue": "احصل على مساعدة",
+  "by": "من طرف",
+  "all-downloads": "تحميل جميع النسخ",
+  "nightly": "إصدارات ليلية",
+  "chakracore-nightly": "Node-ChakraCore إصدارات ليلية خاصة ب",
+  "previous": "السابق",
+  "next": "التالي",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Node.js مدونة"
+    },
+    {
+      "link": "feed/releases.xml",
+      "text": "الاصدارات : Node.js مدونة"
+    },
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "تقارير أمنية : Node.js مدونة"
+    }
+  ],
+  "home": {
+    "text": "الرئيسية"
+  },
+  "about": {
+    "link": "about",
+    "text": "عن الموقع",
+    "governance": {
+      "link": "about/governance",
+      "text": "الحوكمة"
+    },
+    "community": {
+      "link": "about/community",
+      "text": "المجمع"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "مجموعات العمل"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "الاصدارات"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "مصادر"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "علامة تجارية"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "سياسة الخصوصية"
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "تحميل",
+    "releases": {
+      "link": "download/releases",
+      "text": "الاصدارات السابقة"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "تحميل Node.js عن طريق نظام إدارة الحزم الافتراضي"
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "وتائق الاصدارات مختومة SHASUMS"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "توتيق",
+    "es6": {
+      "link": "docs/es6",
+      "text": "وما بعدها ES6"
+    },
+    "inspector": {
+      "link": "docs/inspector",
+      "text": "مفتش"
+    },
+    "api-lts": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "إرشادات"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "قم بالانضمام",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "برمج + تعلم"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "قمة تعاونية"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "ساهم"
+    },
+    "development": {
+      "link": "get-involved/development",
+      "text": "تطوير"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+      "text": "القواعد السلوكية"
+    }
+  },
+  "security": {
+    "link": "security",
+    "text": "أمن"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "مدونة"
+  },
+  "foundation": {
+    "link": "https://foundation.nodejs.org/",
+    "text": "المؤسسة"
+  },
+  "releases": {
+    "title": "أرشيف الاصدارات",
+    "downloads": "تحميل"
+  },
+  "links": {
+    "pages": {
+      "changelog": "سجل التغييرات"
+    }
+  }
+}
