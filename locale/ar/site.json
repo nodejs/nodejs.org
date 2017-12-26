@@ -5,7 +5,7 @@
   "locale": "ar",
   "rtl": true,
   "scrollToTop": "إنتقل إلى الأعلى",
-  "reportNodeIssue": "أبلغ عن عطل في Node.js",
+  "reportNodeIssue": "Node.js أبلغ عن عطل في",
   "reportWebsiteIssue": "أبلغ عن عطل في الموقع",
   "getHelpIssue": "احصل على مساعدة",
   "by": "من طرف",
@@ -84,11 +84,11 @@
     "text": "توتيق",
     "es6": {
       "link": "docs/es6",
-      "text": "وما بعدها ES6"
+      "text": "ES6 وما بعدها"
     },
     "inspector": {
       "link": "docs/inspector",
-      "text": "مفتش"
+      "text": "أدوات التفتيش"
     },
     "api-lts": {
       "link": "/dist/latest-%ver-major%/docs/api",
@@ -113,7 +113,7 @@
     },
     "collab-summit": {
       "link": "get-involved/collab-summit",
-      "text": "قمة تعاونية"
+      "text": "القمة التعاونية"
     },
     "contribute": {
       "link": "get-involved/contribute",
