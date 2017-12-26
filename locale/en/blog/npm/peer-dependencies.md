@@ -124,6 +124,10 @@ peer-depend on, and add it to your `package.json`:
 Now, when installing `chai-as-promised`, the `chai` package will come along with it. And if later you try to install
 another Chai plugin that only works with 0.x versions of Chai, you'll get an error. Nice!
 
+<div class="highlight-box">
+  <strong>UPDATE:</strong> npm versions 1 and 2 will automatically install peerDependencies if they are not explicitly depended upon higher in the dependency tree. For all following versions of npm (starting with npm@3), this will no longer be the case. You will receive a warning that the peerDependency is not installed instead.
+</div>
+
 One piece of advice: peer dependency requirements, unlike those for regular dependencies, *should be lenient*. You
 should not lock your peer dependencies down to specific patch versions. It would be really annoying if one Chai plugin
 peer-depended on Chai 1.4.1, while another depended on Chai 1.5.0, simply because the authors were lazy and didn't spend
