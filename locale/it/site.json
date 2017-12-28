@@ -97,10 +97,6 @@
       "link": "get-involved/contribute",
       "text": "Contribuire"
     },
-    "development": {
-      "link": "get-involved/development",
-      "text": "Sviluppo"
-    },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
       "text": "Condotta"

@@ -97,10 +97,6 @@
       "link": "get-involved/contribute",
       "text": "Сприяння"
     },
-    "development": {
-      "link": "get-involved/development",
-      "text": "Розробка"
-    },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
       "text": "Правила"

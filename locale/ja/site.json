@@ -101,10 +101,6 @@
       "link": "get-involved/contribute",
       "text": "貢献する"
     },
-    "development": {
-      "link": "get-involved/development",
-      "text": "開発体制"
-    },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
       "text": "行動規範"
