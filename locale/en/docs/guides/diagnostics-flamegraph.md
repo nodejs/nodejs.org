@@ -14,9 +14,7 @@ Flame graphs are a way of visualizing CPU time spent in functions. They can help
 You might have heard creating a flame graph for Node.js is difficult, but that's not true (anymore).
 Solaris vms are no longer needed for flame graphs on linux!
 
-1. install lldb in your system (eg. with apt-get)
-1. install llnode according to readme in [github project](https://github.com/nodejs/llnode)
-1. install linux-tools-common (eg. with apt-get)
+1. install linux-tools-common - the package containing `perf` (eg. with apt-get)
 1. try running `perf` - it might complain about missing kernel modules, install them too
 1. install stackvis `npm i -g stackvis`
 1. run node with perf enabled `perf record -e cycles:u -g -- node --perf-basic-prof app.js`
@@ -36,7 +34,7 @@ perf record -F99 -p `pgrep -n node` -g -- sleep 3
 
 Wait, what is that `sleep 3` for? It's there to keep the perf running - despite `-p` option pointing to a different pid, the command needs to be executed on a process and end with it. Just a convenient way to keep perf going for a given time.
 
-Why is `-F` (profiling frequency) set to 99? I honestly don't know, Netflix guys used that value. Results look good. You can adjust if you want.
+Why is `-F` (profiling frequency) set to 99? It's a reasonable default. You can adjust if you want. Lower values should produce less output with less precise results.
 
 After you get that 3 second perf record, proceed with generating the flame graph with last two steps from above.
 
@@ -56,8 +54,10 @@ Why do I need them at all?
 
 Well, without these options you'll still get a flame graph, but with most bars labeled `v8::Function::Call`.
 
+## Node.js 8.x V8 pipeline changes
+
+Node.js 8.x ships with new optimizations to JavaScript compilation pipeline in V8 engine which makes function names/references unreachable for perf. The result is you might not get your function names right in the flame graph. See this thread for details: https://github.com/nodejs/benchmarking/issues/168
+
 ## Examples
 
-See a real flame graph - download the file from /samples/flame-graph-example.html
-
-Or even better, practice capturing it yourself with [a flame graph exercise](https://github.com/naugtur/node-example-flamegraph)
+Practice capturing a flame graph yourself with [a flame graph exercise](https://github.com/naugtur/node-example-flamegraph)
