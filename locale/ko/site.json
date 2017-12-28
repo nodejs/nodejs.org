@@ -106,10 +106,6 @@
       "link": "get-involved/contribute",
       "text": "기여하기"
     },
-    "development": {
-      "link": "get-involved/development",
-      "text": "개발하기"
-    },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
       "text": "행동강령"

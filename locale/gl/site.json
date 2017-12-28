@@ -106,10 +106,6 @@
       "link": "get-involved/contribute",
       "text": "Contribúe"
     },
-    "development": {
-      "link": "get-involved/development",
-      "text": "Desenvolvemento"
-    },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
       "text": "Comportamento"

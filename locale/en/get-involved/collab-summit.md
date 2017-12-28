@@ -12,10 +12,7 @@ exciting efforts they want to push forward in-person.
 
 ## Who attends?
 
-Anyone is welcome to attend Collab Summit. Conversations can move fast as
-working groups have a lot of context. However, this Fall's instance of Collab
-Summit will include a morning [Code + Learn](https://nodejs.org/en/get-involved/code-and-learn/)
-to learn how to contribute prior to congregating for the summit. During the
+Anyone is welcome to attend Collab Summit. During the
 summit, leaders will help onboard new contributors to groups they'd love to help
 prior to integrating them into the working sessions.
 

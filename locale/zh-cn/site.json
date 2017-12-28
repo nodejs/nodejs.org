@@ -110,10 +110,6 @@
       "link": "get-involved/contribute",
       "text": "贡献"
     },
-    "development": {
-      "link": "get-involved/development",
-      "text": "开发"
-    },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
       "text": "管理"
