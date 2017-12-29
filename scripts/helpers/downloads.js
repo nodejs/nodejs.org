@@ -40,6 +40,10 @@ const postMergeDownloads = [
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-ppc64le.tar.xz'
   },
   {
+    'title': 'Linux PPC BE 64-bit Binary',
+    'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-ppc64.tar.xz'
+  },
+  {
     'title': 'Linux s390x 64-bit Binary',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-s390x.tar.xz'
   },
@@ -72,6 +76,9 @@ const postMergeDownloads = [
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%.tar.gz'
   }
 ]
+
+// Latest releases (v8.x and above) don't offer 'Linux PPC BE 64-bit Binary' any longer
+const latestDownloads = postMergeDownloads.filter(download => download.title !== 'Linux PPC BE 64-bit Binary')
 
 // v0.x of Node.js
 const legacyDownloads = [
@@ -131,6 +138,12 @@ function resolveUrl (item, version) {
 }
 
 module.exports = (version) => {
-  const downloads = semver.satisfies(version, '>= 1.0.0') ? postMergeDownloads : legacyDownloads
+  let downloads = latestDownloads
+  if (semver.satisfies(version, '< 8.0.0')) {
+    downloads = postMergeDownloads
+  }
+  if (semver.satisfies(version, '< 1.0.0')) {
+    downloads = legacyDownloads
+  }
   return downloads.map((item) => resolveUrl(item, version))
 }
