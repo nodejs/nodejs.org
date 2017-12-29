@@ -291,7 +291,7 @@ sudo zypper in nodejs nodejs-devel
 
 ## macOS
 
-Simplemente descargue el [Instalador para Macintosh](http://nodejs.org/#download) directamente desde el sitio web de [nodejs.org](http://nodejs.org).
+Simplemente descargue el [Instalador para macOS](http://nodejs.org/#download) directamente desde el sitio web de [nodejs.org](http://nodejs.org).
 
 _Si usted quiere descargar el paquete con bash:_
 

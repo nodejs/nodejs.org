@@ -675,7 +675,7 @@ zypper install nodejs4
 <!--
 ## macOS
 
-Simply download the [Macintosh Installer](http://nodejs.org/#download) direct from the [nodejs.org](http://nodejs.org) web site.
+Simply download the [macOS Installer](http://nodejs.org/#download) direct from the [nodejs.org](http://nodejs.org) web site.
 
 _If you want to download the package with bash:_
 
