@@ -350,8 +350,8 @@ sudo zypper in nodejs nodejs-devel
 
 ## macOS
 
-<!-- Simply download the [Macintosh Installer](http://nodejs.org/#download) direct from the [nodejs.org](http://nodejs.org) web site. -->
-直接 [nodejs.org](http://nodejs.org) のサイトから [Macintosh Installer](http://nodejs.org/#download) をダウンロードしてください。
+<!-- Simply download the [macOS Installer](http://nodejs.org/#download) direct from the [nodejs.org](http://nodejs.org) web site. -->
+直接 [nodejs.org](http://nodejs.org) のサイトから [macOS Installer](http://nodejs.org/#download) をダウンロードしてください。
 
 <!-- _If you want to download the package with bash:_ -->
 _bash でパッケージをダウンロードしたい場合:_
