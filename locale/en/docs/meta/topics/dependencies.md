@@ -92,7 +92,7 @@ from V8. It can generate project files for use with build systems across many
 platforms. Node.js requires a build system because large parts of it — and its
 dependencies — are written in languages that require compilation.
 
-- [Documentation](https://chromium.googlesource.com/external/gyp/+/master/docs/UserDocumentation.md)
+- [Documentation](https://gyp.gsrc.io/docs/UserDocumentation.md)
 
 ### gtest
 

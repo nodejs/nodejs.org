@@ -185,7 +185,7 @@ from V8. It can generate project files for use with build systems across many
 platforms. Node.js requires a build system because large parts of it — and its
 dependencies — are written in languages that require compilation.
 
-- [Documentation](https://chromium.googlesource.com/external/gyp/+/master/docs/UserDocumentation.md)
+- [Documentation](https://gyp.gsrc.io/docs/UserDocumentation.md)
 -->
 
 ### gyp
@@ -194,7 +194,7 @@ V8에서 파생된 Python 기반의 프로젝트 제너레이터인 gyp가 빌�
 플랫폼에서 빌드 시스템을 사용하기 위한 프로젝트 파일을 생성할 수 있습니다. Node.js는 컴파일이
 필요한 언어로 작성된 부분이 많이 있으므로(혹은 의존성 라이브러리에서) 빌드 시스템이 필요합니다.
 
-- [문서](https://chromium.googlesource.com/external/gyp/+/master/docs/UserDocumentation.md)
+- [문서](https://gyp.gsrc.io/docs/UserDocumentation.md)
 
 <!--
 ### gtest
