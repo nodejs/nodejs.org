@@ -1,7 +1,7 @@
 ---
 layout: index.hbs
 labels:
-  banner: Spectre and Meltdown in the context of Node.js - no current action required.
+  banner: Spectre and Meltdown in the context of Node.js.
   current-version: 当前版本
   download: 下载
   download-for: 下载为
