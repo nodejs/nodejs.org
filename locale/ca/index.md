@@ -1,7 +1,7 @@
 ---
 layout: index.hbs
 labels:
-  banner: Important security releases, please update now!
+  banner: Spectre and Meltdown in the context of Node.js - no current action required.
   current-version: Versió actual
   download: Descarregar
   download-for: Descarregar per
