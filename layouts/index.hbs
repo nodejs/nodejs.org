@@ -14,7 +14,7 @@
 
         {{#if project.banner.visible}}
           <p class="home-version home-version-banner">
-            <a href="{{ project.banner.link }}">{{{ labels.banner }}}</a>
+            <a href="{{ project.banner.link }}">{{#if project.banner.text}}{{{ project.banner.text }}}{{else}}{{{ labels.banner }}}{{/if}}</a>
           </p>
         {{/if}}
 
