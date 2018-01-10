@@ -10,7 +10,7 @@ downloads:
     tagline-lts: Recommandé pour la plupart des utilisateurs
     display-hint: Afficher les téléchargement pour Node
     intro: >
-        Téléchargez le code source de Node.js ou pour votre système d'exploitation et commencez à développer dès aujourd'hui.
+        Téléchargez le code source de Node.js pour votre système d'exploitation et commencez à développer dès aujourd'hui.
     currentVersion: Dernière version Actuelle
     buildInstructions: Compiler Node.js depuis les sources sur les systèmes d'exploitation maintenus
     WindowsInstaller: Installeur Windows
