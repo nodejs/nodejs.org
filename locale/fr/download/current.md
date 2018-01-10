@@ -13,6 +13,12 @@ downloads:
         Téléchargez le code source de Node.js ou pour votre système d'exploitation et commencez à développer dès aujourd'hui.
     currentVersion: Dernière version Actuelle
     buildInstructions: Compiler Node.js depuis les sources sur les systèmes d'exploitation maintenus
+    WindowsInstaller: Installeur Windows
+    WindowsBinary: Binaire Windows
+    MacOSInstaller: Installeur macOS
+    MacOSBinary: Binaire macOS
+    LinuxBinaries: Binaires Linux
+    SourceCode: Code Source
 additional:
     headline: Autres plate-formes
     intro: >
@@ -20,4 +26,10 @@ additional:
     dockerImage: Image officielle Node.js pour Docker
     platform: Plate-forme
     provider: Fournisseur
+    SunOSBinaries: Binaires SunOS
+    DockerImage: Image Docker
+    officialDockerImage: Image officielle Node.js pour Docker
+    LinuxPowerSystems: Linux sur Power Systems
+    LinuxSystemZ: Linux sur System z
+    AIXPowerSystems: AIX sur Power Systems
 ---
