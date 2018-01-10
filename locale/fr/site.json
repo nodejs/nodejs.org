@@ -61,7 +61,7 @@
     "text": "Téléchargements",
     "releases": {
       "link": "download/releases",
-      "text": "Précédentes versions"
+      "text": "Versions précédentes"
     },
     "package-manager": {
       "link": "download/package-manager",
