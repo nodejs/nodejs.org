@@ -8,7 +8,7 @@ downloads:
     current: Actuelle
     tagline-current: Dernières fonctionnalités
     tagline-lts: Recommandé pour la plupart des utilisateurs
-    display-hint: Afficher les téléchargement pour Node
+    display-hint: Afficher les téléchargements pour Node
     intro: >
         Téléchargez le code source de Node.js pour votre système d'exploitation et commencez à développer dès aujourd'hui.
     currentVersion: Dernière version Actuelle
