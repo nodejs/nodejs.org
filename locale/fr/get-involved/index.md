@@ -29,6 +29,8 @@ de notre communauté pour trouver comment vous pouvez aider:
 
 - [NodeJS Reactions](http://nodejsreactions.tumblr.com) capture des experiences Node.js sous forme de GIFs animés [en].
 
+- La [Community Committee](https://github.com/nodejs/community-committee) s'agit d'un comité de haut niveau de la Fondation Node.js axé sur les efforts communautaires.
+
 
 ## Apprentissage
 

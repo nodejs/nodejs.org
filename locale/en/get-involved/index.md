@@ -16,6 +16,7 @@ The Node.js community is large, inclusive, and excited to enable as many users t
 - [Node.js Collection](https://medium.com/the-node-js-collection) is a collection of community-curated content on Medium.
 - [NodeUp](http://nodeup.com) is a podcast covering the latest Node news in the community.
 - [NodeJS Reactions](http://nodejsreactions.tumblr.com) captures the Node.js experience in the form of animated GIFs.
+- The [Community Committee](https://github.com/nodejs/community-committee) is a top-level committee in the Node.js Foundation focused on community-facing efforts.
 
 
 ## Learning
