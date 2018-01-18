@@ -16,6 +16,7 @@ layout: contribute.hbs
 - [Node Weekly](http://nodeweekly.com) це поштове розсилання, що збирає найсвіжіші події та новини довкола спільноти Node.js.
 - [NodeUp](http://nodeup.com) подкаст в якому обговорюють найсвіжіші новини з Nod–спільноти.
 - [NodeJS Reactions](http://nodejsreactions.tumblr.com) відображає досвід роботи з Node.js через анімовані GIF.
+- [Community Committee](https://github.com/nodejs/community-committee) є комітетом вищого рівня в Node.js Фонд зосереджений на спільних зусиллях.
 
 
 ## Навчання
