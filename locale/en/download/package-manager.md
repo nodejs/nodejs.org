@@ -74,10 +74,10 @@ sudo apt-get install -y build-essential
 
 **Supported Debian versions:**
 
-* **Debian 7** (wheezy)
-* **Debian 8 / stable** (jessie)
-* **Debian testing** (stretch, aliased to jessie)
-* **Debian unstable** (sid)
+* **Debian 8** (jessie, old-stable)
+* **Debian 9 / stable** (stretch)
+* **Debian testing** (buster to-be-released-as-next-stable)
+* **Debian unstable** (sid never-to-be-released, aka rolling)
 
 A Node.js package is also available in the [official repo](http://packages.debian.org/search?searchon=names&keywords=nodejs) for Debian Sid (unstable), Jessie (testing) and Wheezy (wheezy-backports) as "nodejs". It only installs a `nodejs` binary.
 
