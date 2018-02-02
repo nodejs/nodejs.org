@@ -27,11 +27,10 @@ These commercial and open source tools make debugging Node.js apps easier.
 * Can also be installed independently with `npm install -g node-inspect`
   and invoked with `node-inspect myscript.js`.
 
-### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
+### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend)
 
 * **Option 1**: Open `chrome://inspect` in a Chromium-based
-  browser. Click the Configure button and ensure your target host and port
-  are listed. Then select your Node.js app from the list.
+  browser. Click the "Open dedicated DevTools for Node" link.
 * **Option 2**: Install the Chrome Extension NIM (Node Inspector Manager):
   https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 
