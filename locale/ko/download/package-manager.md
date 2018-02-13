@@ -135,7 +135,7 @@ sudo apt-get install -y build-essential
 * **Debian testing** (stretch, aliased to jessie)
 * **Debian unstable** (sid)
 -->
-Node.js 9을 사용하고 싶다면 다음을 실행합니다.
+Node.js 9를 사용하고 싶다면 다음을 실행합니다.
 
 ```bash
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
@@ -245,7 +245,7 @@ On RHEL, CentOS or Fedora, for Node.js v8 LTS:
 CentOS 5)의 Node.js 패키지도 사용할 수 있습니다. 설치되어 있지 않다면 설정 스크립트가 확인하고
 안내할 것입니다.
 
-RHEL, CentOS, Fedora에서 Node.js v8을 사용하려면 다음을 실행합니다.
+RHEL, CentOS, Fedora에서 Node.js v8 LTS를 사용하려면 다음을 실행합니다.
 
 <!--
 ```bash
@@ -448,7 +448,7 @@ Additionally, versions of **CentOS** and **Scientific Linux** corresponding to t
 * **RHEL 6** (i686/x86_64)
 * **RHEL 7** (x86_64)
 
-RHEL 6에서는 더이상 EPEL로 지원되지 않습니다.하지만 [Red Hat Software Collections](https://www.softwarecollections.org/en/scls/?search=nodejs)에서 사용 할 수 있습니다.
+RHEL 6에서는 더이상 EPEL로 지원되지 않습니다.하지만 [Red Hat Software Collections](https://www.softwarecollections.org/en/scls/?search=nodejs)를 사용 할 수 있습니다.
 
 게다가 위 RHEL에 대응되는 **CentOS**와 **Scientific Linux** 버전도 모든 EPEL
 패키지에서(nodejs 포함) 공식적으로 지원합니다. Amazon Linux는 과거 epel-devel 메일링 리스트에
@@ -461,7 +461,6 @@ RHEL 6에서는 더이상 EPEL로 지원되지 않습니다.하지만 [Red Hat S
 * **Fedora 26** (i686/x86_64/armv7hl/aarch64/ppc64/ppc64le)
 * **Fedora 25** (i686/x86_64/armv7hl)
 * **Fedora 24** (i686/x86_64/armv7hl)
-(Schrödinger's Cat)** (i686/x86_64/armv7hl)
 
 <!--
 ## FreeBSD and OpenBSD
@@ -508,13 +507,13 @@ pkg install node-devel
 
 Node.js는 ports 시스템으로 설치할 수 있습니다.
 
-**FreeBSD**
+**FreeBSD**:
 
 ```bash
 /usr/ports/www/node
 ```
 
-**OpenBSD**
+**OpenBSD**:
 
 ```bash
 /usr/ports/lang/node
