@@ -69,20 +69,20 @@ pacman -S nodejs npm
 <!--
 ## Debian and Ubuntu based Linux distributions
 
-Also including: **Linux Mint**, **Linux Mint Debian Edition (LMDE)**, **elementaryOS** and others.
+Also including: **Linux Mint**, **Linux Mint Debian Edition (LMDE)**, **elementaryOS**, **bash on Windows** and others.
 
 Node.js is available from the [NodeSource](https://nodesource.com) Debian and Ubuntu binary distributions repository (formerly [Chris Lea's](https://github.com/chrislea) Launchpad PPA). Support for this repository, along with its scripts, can be found on GitHub at [nodesource/distributions](https://github.com/nodesource/distributions).
 
 **NOTE:** If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 6.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 -->
 ## Debian과 Ubuntu에 기반을 둔 Linux 배포판
 
-**Linux Mint**, **Linux Mint Debian Edition (LMDE)**, **elementaryOS** 등도
+**Linux Mint**, **Linux Mint Debian Edition (LMDE)**, **elementaryOS**, **bash on Windows** 등도
 포함합니다.
 
 [NodeSource](https://nodesource.com) Debian과 Ubuntu 바이너리 배포판
@@ -96,16 +96,16 @@ Node.js를 이용할 수 있습니다. 이 저장소의 지원내용과 스크�
 읽어볼 필요가 있습니다.
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
 
 <!--
-Alternatively, for Node.js v7:
+Alternatively, for Node.js 9:
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
@@ -135,10 +135,10 @@ sudo apt-get install -y build-essential
 * **Debian testing** (stretch, aliased to jessie)
 * **Debian unstable** (sid)
 -->
-Node.js v7을 사용하고 싶다면 다음을 실행합니다.
+Node.js 9를 사용하고 싶다면 다음을 실행합니다.
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
@@ -230,7 +230,7 @@ Node.js is available from the [NodeSource](https://nodesource.com) Enterprise Li
 
 Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the **[EPEL](https://fedoraproject.org/wiki/EPEL)** repository being available. The setup script will check and provide instructions if it is not installed.
 
-Run as root on RHEL, CentOS or Fedora, for Node.js v6 LTS:
+On RHEL, CentOS or Fedora, for Node.js v8 LTS:
 -->
 ## Enterprise Linux와 Fedora
 
@@ -245,51 +245,39 @@ Run as root on RHEL, CentOS or Fedora, for Node.js v6 LTS:
 CentOS 5)의 Node.js 패키지도 사용할 수 있습니다. 설치되어 있지 않다면 설정 스크립트가 확인하고
 안내할 것입니다.
 
-Node.js v6 LTS를 설치하려면 RHEL, CentOS, Fedora에서 root로 실행하세요.
+RHEL, CentOS, Fedora에서 Node.js v8 LTS를 사용하려면 다음을 실행합니다.
 
 <!--
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
 ```
 
-Alternatively for Node.js v7:
+Alternatively for Node.js 9:
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_7.x | bash -
+curl --silent --location https://rpm.nodesource.com/setup_9.x | sudo bash -
 ```
 
-Alternatively for Node.js 0.10:
+Then install:
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup | bash -
-```
-
-Then install, as root:
-
-```bash
-yum -y install nodejs
+sudo yum -y install nodejs
 ```
 -->
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
 ```
 
-Node.js v7를 사용한다면 다음을 실행하세요.
+Node.js 9를 사용한다면 다음을 실행하세요.
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_7.x | bash -
+curl --silent --location https://rpm.nodesource.com/setup_9.x | sudo bash -
 ```
 
-Node.js 0.10을 사용한다면 다음을 실행하세요.
+그 다음 아래의 명령어로 설치하세요.
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup | bash -
-```
-
-그 다음 root 계정으로 설치하세요.
-
-```bash
-yum -y install nodejs
+sudo yum -y install nodejs
 ```
 
 <!--
@@ -433,14 +421,16 @@ In a hurry for the latest updates?  [Grab them from epel-testing.](https://fedor
 * **RHEL 6** (i686/x86_64)
 * **RHEL 7** (x86_64)
 
+RHEL 6 is no longer supported through EPEL, you can however use [Red Hat Software Collections](https://www.softwarecollections.org/en/scls/?search=nodejs).
+
 Additionally, versions of **CentOS** and **Scientific Linux** corresponding to the above RHEL versions are also officially supported by all EPEL packages, including nodejs.  Amazon Linux is not officially supported by EPEL due to significant incompatibilities previously reported to the epel-devel mailing list, however you might find that nodejs at least still works.
 
 **Supported Fedora versions:**
 
-* **Fedora Rawhide** (i686/x86_64/armv7hl)
-* **Fedora 21** (i686/x86_64/armv7hl)
-* **Fedora 20 (Heisenbug)** (i686/x86_64/armv6hl/armv7hl)
-* **Fedora 19 (Schrödinger's Cat)** (i686/x86_64/armv7hl)
+* **Fedora Rawhide** (i686/x86_64/armv7hl/aarch64/ppc64/ppc64le/s390x)
+* **Fedora 26** (i686/x86_64/armv7hl/aarch64/ppc64/ppc64le)
+* **Fedora 25** (i686/x86_64/armv7hl)
+* **Fedora 24** (i686/x86_64/armv7hl)
 -->
 
 최신 업데이트를 바로 적용하고 싶다면
@@ -458,6 +448,8 @@ Additionally, versions of **CentOS** and **Scientific Linux** corresponding to t
 * **RHEL 6** (i686/x86_64)
 * **RHEL 7** (x86_64)
 
+RHEL 6에서는 더이상 EPEL로 지원되지 않습니다. 하지만 [Red Hat Software Collections](https://www.softwarecollections.org/en/scls/?search=nodejs)를 사용 할 수 있습니다.
+
 게다가 위 RHEL에 대응되는 **CentOS**와 **Scientific Linux** 버전도 모든 EPEL
 패키지에서(nodejs 포함) 공식적으로 지원합니다. Amazon Linux는 과거 epel-devel 메일링 리스트에
 호환 안 된다는 보고가 많아서 EPEL에서 공식 지원하지 않습니다만 현재 동작하는 nodejs를
@@ -465,21 +457,29 @@ Additionally, versions of **CentOS** and **Scientific Linux** corresponding to t
 
 **지원하는 Fedora 버전:**
 
-* **Fedora Rawhide** (i686/x86_64/armv7hl)
-* **Fedora 21** (i686/x86_64/armv7hl)
-* **Fedora 20 (Heisenbug)** (i686/x86_64/armv6hl/armv7hl)
-* **Fedora 19 (Schrödinger's Cat)** (i686/x86_64/armv7hl)
+* **Fedora Rawhide** (i686/x86_64/armv7hl/aarch64/ppc64/ppc64le/s390x)
+* **Fedora 26** (i686/x86_64/armv7hl/aarch64/ppc64/ppc64le)
+* **Fedora 25** (i686/x86_64/armv7hl)
+* **Fedora 24** (i686/x86_64/armv7hl)
 
 <!--
 ## FreeBSD and OpenBSD
 
 Node.js is available through the ports system.
 
+**FreeBSD**:
+
 ```bash
 /usr/ports/www/node
 ```
 
-Development versions are also available using ports
+**OpenBSD**:
+
+```bash
+/usr/ports/lang/node
+```
+
+Development versions are also available using ports on FreeBSD
 
 ```bash
 cd /usr/ports/www/node-devel/ && make install clean
@@ -507,11 +507,19 @@ pkg install node-devel
 
 Node.js는 ports 시스템으로 설치할 수 있습니다.
 
+**FreeBSD**:
+
 ```bash
 /usr/ports/www/node
 ```
 
-개발 버전도 ports에서 사용할 수 있습니다.
+**OpenBSD**:
+
+```bash
+/usr/ports/lang/node
+```
+
+개발 버전도 FreeBSD의 ports에서 사용할 수 있습니다.
 
 ```bash
 cd /usr/ports/www/node-devel/ && make install clean
@@ -575,7 +583,7 @@ pkgsrc에서 Node.js를 설치할 수 있습니다
 cd /usr/pkgsrc/lang/nodejs && make install
 ```
 
-pkgin로 바이너리 패키지를 설치하는 방법도 있습니다.(사용하는 플랫폼에서 가능하다면)
+사용하는 플랫폼에서 가능하다면 pkgin로 바이너리 패키지를 설치하는 방법도 있습니다.
 
 ```bash
 pkgin -y install nodejs
@@ -641,10 +649,10 @@ $ nvm uninstall 8
 
 Node.js is available in the main repositories under the following packages:
 
- - **openSUSE 13.2 and Leap 42.1**: `nodejs` (4.x)
  - **openSUSE Leap 42.2**: `nodejs4`
- - **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`
- - **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`<sup>1</sup>
+ - **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
+ - **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
+ - **SUSE Linux Enterprise Server (SLES) 12**<sup>1</sup>: `nodejs4`, `nodejs6`
 
 <sup>1:</sup> The "Web and Scripting Module" must be [added before installing](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).
 
@@ -659,10 +667,10 @@ zypper install nodejs4
 
 다음 패키지 아래 주 저장소에서 Node.js를 사용할 수 있습니다.
 
- - **openSUSE 13.2와 Leap 42.1**: `nodejs` (4.x)
  - **openSUSE Leap 42.2**: `nodejs4`
- - **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`
- - **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`<sup>1</sup>
+ - **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
+ - **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
+ - **SUSE Linux Enterprise Server (SLES) 12**<sup>1</sup>: `nodejs4`, `nodejs6`
 
 <sup>1:</sup> "웹과 스크립트 모듈"은 반드시 [설치 전에 추가](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html)해야 합니다.
 
