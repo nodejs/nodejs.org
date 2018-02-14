@@ -448,7 +448,7 @@ Additionally, versions of **CentOS** and **Scientific Linux** corresponding to t
 * **RHEL 6** (i686/x86_64)
 * **RHEL 7** (x86_64)
 
-RHEL 6에서는 더이상 EPEL로 지원되지 않습니다.하지만 [Red Hat Software Collections](https://www.softwarecollections.org/en/scls/?search=nodejs)를 사용 할 수 있습니다.
+RHEL 6에서는 더이상 EPEL로 지원되지 않습니다. 하지만 [Red Hat Software Collections](https://www.softwarecollections.org/en/scls/?search=nodejs)를 사용 할 수 있습니다.
 
 게다가 위 RHEL에 대응되는 **CentOS**와 **Scientific Linux** 버전도 모든 EPEL
 패키지에서(nodejs 포함) 공식적으로 지원합니다. Amazon Linux는 과거 epel-devel 메일링 리스트에
