@@ -20,6 +20,7 @@ title: Installing Node.js via package manager
 * [macOS](#macos)
 * [SmartOS and illumos](#smartos-and-illumos)
 * [Void Linux](#void-linux)
+* [Solus](#solus)
 * [Windows](#windows)
 
 ----------------------------
@@ -387,6 +388,14 @@ Void Linux ships node.js stable in the main repository.
 
 ```bash
 xbps-install -Sy nodejs
+```
+
+## Solus
+
+Solus provides node.js in its main repository.
+
+```bash
+sudo eopkg install nodejs
 ```
 
 
