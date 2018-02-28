@@ -9,6 +9,7 @@ title: Installing Node.js via package manager
 
 ----------------------------
 
+* [Android](#android)
 * [Arch Linux](#arch-linux)
 * [Debian and Ubuntu based Linux distributions](#debian-and-ubuntu-based-linux-distributions)
 * [Enterprise Linux and Fedora](#enterprise-linux-and-fedora)
@@ -24,6 +25,19 @@ title: Installing Node.js via package manager
 * [Windows](#windows)
 
 ----------------------------
+
+## Android
+
+Android support is still experimental in Node.js, so precompiled binaries are not yet provided by Node.js developers.
+
+However, there are some third-party solutions. For example, [Termux](https://termux.com/) community provides terminal emulator and Linux environment for Android, as well as own package manager and [extensive collection](https://github.com/termux/termux-packages) of many precompiled applications. These commands in Termux app will install the last LTS or a current Node.js version respectively:
+
+```bash
+pkg install nodejs
+pkg install nodejs-current
+```
+
+Currently, Termux Node.js binaries are compiled without ICU and Inspector support.
 
 ## Arch Linux
 
