@@ -85,7 +85,7 @@ high latency on requests. We can easily run the app with the built in profiler:
 NODE_ENV=production node --prof app.js
 ```
 
-and put some load on the server using ab (ApacheBench):
+and put some load on the server using `ab` (ApacheBench):
 
 ```
 curl -X GET "http://localhost:8080/newUser?username=matt&password=password"
