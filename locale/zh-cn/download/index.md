@@ -13,8 +13,6 @@ downloads:
         在你的平台上下载 Node.js 源码或预编译安装包，然后即可马上进行开发。
     currentVersion: 当前版本
     buildInstructions: 在支持的平台上，使用源代码构建 Node.js
-    currentVersion: Latest LTS Version
-    buildInstructions: Building Node.js from source on supported platforms
     WindowsInstaller: Windows Installer
     WindowsBinary: Windows Binary
     MacOSInstaller: macOS Installer
