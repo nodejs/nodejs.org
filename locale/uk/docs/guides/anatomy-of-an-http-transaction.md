@@ -247,7 +247,6 @@ all of the data that was sent to us by the user. We'll format that data as JSON
 using `JSON.stringify`.
 
 ```javascript
-
 const http = require('http');
 
 http.createServer((request, response) => {
@@ -364,7 +363,7 @@ though, we'd want to inspect the error to figure out what the correct status cod
 and message would be. As usual with errors, you should consult the
 [`Error` documentation][].
 
-On the response, we'll just log the error to `stdout`.
+On the response, we'll just log the error to `stderr`.
 
 ```javascript
 const http = require('http');
