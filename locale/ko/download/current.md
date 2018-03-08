@@ -13,8 +13,6 @@ downloads:
         플랫폼에 맞게 미리 빌드된 Node.js 인스톨러나 소스코드를 다운받아서 바로 개발을 시작하세요.
     currentVersion: 최신 현재 버전
     buildInstructions: Building Node.js from source on supported platforms
-    currentVersion: Latest LTS Version
-    buildInstructions: Building Node.js from source on supported platforms
     WindowsInstaller: Windows Installer
     WindowsBinary: Windows Binary
     MacOSInstaller: macOS Installer
