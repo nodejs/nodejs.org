@@ -1,14 +1,11 @@
 ---
 layout: about.hbs
-title: About
+title: 关于 Node.js
 trademark: Trademark
 ---
-# About Node.js&reg;
+# 关于 Node.js&reg;
 
-As an asynchronous event driven JavaScript runtime, Node is designed to build
-scalable network applications. In the following "hello world" example, many
-connections can be handled concurrently. Upon each connection the callback is
-fired, but if there is no work to be done, Node will sleep.
+作为异步事件驱动的 JavaScript 运行时环境，Node 旨在构建可扩展的网络应用程序。在下面的 “hello world” 的示例中，许多连接可同时被处理。在每次连接时都会触发回调函数，但如果没有任务要执行，Node 将会休眠。
 
 ```javascript
 const http = require('http');
@@ -27,39 +24,17 @@ server.listen(port, hostname, () => {
 });
 ```
 
-This is in contrast to today's more common concurrency model where OS threads
-are employed. Thread-based networking is relatively inefficient and very
-difficult to use. Furthermore, users of Node are free from worries of
-dead-locking the process, since there are no locks. Almost no function in Node
-directly performs I/O, so the process never blocks. Because nothing blocks,
-scalable systems are very reasonable to develop in Node.
+这与现今常见使用 OS 线程的并发模型形成对比。基于线程的网络效率相对较低，且使用较为困难。此外，由于没有锁的概念，Node 用户无需担心锁死进程。Node 中几乎没有函数直接进行 I/O 操作，所以该过程不会阻塞。由于没有任何阻塞，使用 Node 开发可扩展系统非常合理。
 
-If some of this language is unfamiliar, there is a full article on
-[Blocking vs Non-Blocking][].
+如果对该编程语言中内容(阻塞)不熟悉，那么有篇关于[阻塞与非阻塞][Blocking vs Non-Blocking]的完整文章。
 
 ---
 
-Node is similar in design to, and influenced by, systems like Ruby's
-[Event Machine][] or Python's [Twisted][]. Node takes the event model a bit
-further. It presents an [event loop][] as a runtime construct instead of as a library. In other systems there is always a blocking call to start the
-event-loop.
-Typically behavior is defined through callbacks at the beginning of a script
-and at the end starts a server through a blocking call like
-`EventMachine::run()`. In Node there is no such start-the-event-loop call. Node
-simply enters the event loop after executing the input script. Node exits the
-event loop when there are no more callbacks to perform. This behavior is like
-browser JavaScript — the event loop is hidden from the user.
+Node 在设计上与 Ruby 的 [Event Machine][] 或 Python 的 [Twisted][] 等系统相似，并且受其影响。Node 进一步完善了事件模型进行。它将[事件循环][event loop]表现为运行时构建而不是作为一个库。在其他系统中，总是通过阻塞调用来启动事件循环。通常，行为是通过 script 开始处的回调来定义的，并且最终通过调用像 `EventMachine::run()` 这样的(函数)来阻塞启动服务器。在 Node 中，并不存在 start-the-event-loop 的调用。Node 只需在执行入口 script 后进入事件循环。当没有回调执行时，Node 将推出事件循环。这种行为就像浏览器中的 JavaScript - 事件循环对用户是不可见的。
 
-HTTP is a first class citizen in Node, designed with streaming and low latency
-in mind. This makes Node well suited for the foundation of a web library or
-framework.
+HTTP 是 Node 中的头等公民，设计时考虑到了流媒体和低延迟的情况。这是的 Node 非常适合作为 Web 基础库或基础框架。
 
-Just because Node is designed without threads, doesn't mean you cannot take
-advantage of multiple cores in your environment. Child processes can be spawned
-by using our [`child_process.fork()`][] API, and are designed to be easy to
-communicate with. Built upon that same interface is the [`cluster`][] module,
-which allows you to share sockets between processes to enable load balancing
-over your cores.
+只因为 Node 没有线程设计，并不意味着你无法利用你环境中的多核。可以通过使用 [`child_process.fork()`][] API 产生子进程，并且被设计的容易使用。基于相同接口构建的是 [`cluster`][] 模块，它允许你在进程间共享套接字以启用对核的负载均衡。
 
 [Blocking vs Non-Blocking]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
