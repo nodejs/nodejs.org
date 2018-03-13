@@ -258,6 +258,21 @@ function copyStatic () {
   })
 }
 
+// This function copies files to be placed under the .well-known URI to their subfolder
+// in the build directory.
+function copyWellKnown () {
+  console.log('[metalsmith] build/well-known started')
+  console.time('[metalsmith] build/well-known finished')
+  fs.mkdir(path.join(__dirname, 'build'), () => {
+    fs.mkdir(path.join(__dirname, 'build', '.well-known'), () => {
+      ncp(path.join(__dirname, '.well-known'), path.join(__dirname, 'build', '.well-known'), (err) => {
+        if (err) { return console.error(err) }
+        console.timeEnd('[metalsmith] build/well-known finished')
+      })
+    })
+  })
+}
+
 function getSource (callback) {
   // Loads all node/io.js versions.
   loadVersions((err, versions) => {
@@ -285,6 +300,8 @@ function getSource (callback) {
 function fullBuild () {
   // Build static files.
   copyStatic()
+  // Build well-known files
+  copyWellKnown()
   // Build layouts
   buildLayouts()
   getSource((err, source) => {
