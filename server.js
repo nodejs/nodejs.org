@@ -13,13 +13,6 @@ const mount = st({
   index: 'index.html',
   passthrough: true
 })
-const wellknown = st({
-  url: '/.well-known',
-  path: path.join(__dirname, 'build', '.well-known'),
-  cache: false,
-  dot: true,
-  passthrough: true
-})
 
 const build = require('./build')
 
@@ -96,7 +89,6 @@ statics.on('add', (filePath) => {
 
 // Initializes the server and mounts it in the generated build directory.
 http.createServer((req, res) => {
-  if (wellknown(req, res)) return
   mount(req, res, redirectToEnglishUrl(req, res))
 }).listen(port, () => console.log(`http://localhost:${port}/en/`))
 
