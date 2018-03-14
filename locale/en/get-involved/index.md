@@ -7,7 +7,7 @@ layout: contribute.hbs
 
 The Node.js community is large, inclusive, and excited to enable as many users to contribute in whatever way they can. If you want to [report an issue](https://github.com/nodejs/node/issues), [help with documentation or contribute to the code base](/en/get-involved/contribute/) of the project, you’ve come to the right place. Explore our community resources to find out how you can help:
 
-## Discussion
+## Community Discussion
 
 - The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
 - For real-time chat about Node development go to `irc.freenode.net` in the `#node.js` channel with an [IRC client](http://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [freenode's WebChat](http://webchat.freenode.net/?channels=node.js).
