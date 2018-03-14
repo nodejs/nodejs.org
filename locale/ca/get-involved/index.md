@@ -18,7 +18,6 @@ contribuir de la manera que puguin. Si vols [reportar un error](https://github.c
 - [Node Weekly](http://nodeweekly.com) és una llista de correu que recopila els últims esdeveniments i notícies al voltant de la comunitat de Node.js.
 - [Planet Node](http://planetnodejs.com) és un agregador de blogs de desenvolupadors de Node.
 - [NodeUp](http://nodeup.com) és un podcast cobrint les últimes notícies en la comunitat de Node.
-- [NodeJS Reactions](http://nodejsreactions.tumblr.com) captura l'experiència de Node.js en forma de GIFs animats.
 - La [Community Committee](https://github.com/nodejs/community-committee) és una comissió de primer nivell a la Fundació Node.js centrada en els esforços que afronta la comunitat.
 
 
