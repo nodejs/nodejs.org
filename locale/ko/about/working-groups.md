@@ -421,6 +421,7 @@ Responsibilities include:
 * 필요할 때 덤프를 생성할 수 있도록 인터페이스/API를 정의하고 추가합니다.
 * 이러한 덤프를 분석하는 도구를 지원하기 위해 생성된 덤프의 공통 구조를 정의하고 추가합니다.
 
+<!--
 ### [Release](https://github.com/nodejs/LTS)
 The Release Working Group manages the release process for Node.js.
 
@@ -432,3 +433,15 @@ Responsibilities include:
 * Manage the Long Term Support and Current branches including
   backporting changes to these branches.
 * Define the policy for what gets backported to release streams
+-->
+
+### [Release](https://github.com/nodejs/LTS)
+릴리스 워킹 그룹은 Node.js의 릴리스 프로세스를 관리합니다.
+
+이 워킹 그룹은 다음과 같은 업무를 담당합니다.
+* 릴리스 프로세스를 정의합니다.
+* 릴리스의 콘텐츠를 정의합니다.
+* 릴리스를 생성합니다.
+* 릴리스를 테스트합니다.
+* LTS 및 현재 버전 브랜치를 관리하고 변경 사항을 백포트합니다.
+* 어떤 사항을 백포트할지에 대한 정책을 정의합니다.
