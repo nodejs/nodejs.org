@@ -90,7 +90,7 @@ communicate with. Built upon that same interface is the [`cluster`][] module,
 which allows you to share sockets between processes to enable load balancing
 over your cores.
 -->
-Node에서 HTTP는 일급 시민(first class citizen)이고 스트리밍과 저지연은 염두에 두고
+Node에서 HTTP는 일급 객체(first class citizen)이고 스트리밍과 저지연을 염두에 두고
 설계되었습니다. 이는 Node가 웹 라이브러리나 프레임워크의 기반으로 아주 적합하게 하였습니다.
 
 Node는 스레드를 사용하지 않도록 설계되지만 멀티 코어 환경의 장점을 얻지 못한다는 의미는 아닙니다.

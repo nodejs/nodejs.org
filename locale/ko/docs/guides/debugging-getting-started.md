@@ -120,9 +120,9 @@ Node 인스펙터에 접속할 수 있는 여러 상용 도구와 오픈소스 �
 
 #### [node-inspect](https://github.com/nodejs/node-inspect)
 
-* Node.js 재단에서 지원하는 CLI 디버거로 [Inspector 프로토콜][]를 사용합니다.
+* Node.js 재단에서 지원하는 CLI 디버거로 [Inspector 프로토콜][]을 사용합니다.
 * Node에 포함되어 있고 `node inspect myscript.js`로 사용할 수 있습니다.
-* 최신 버전을 별도로 설치할 수 있고 (예시: `npm install -g node-inspect`)
+* 최신 버전을 별도로 설치할 수 있고(예시: `npm install -g node-inspect`)
   `node-inspect myscript.js`로 사용할 수 있습니다.
 
 #### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+

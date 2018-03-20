@@ -299,7 +299,7 @@ handle. More on this in _Resource Cleanup on Exception_.
 사실을 전달하는 문제가 여전히 남아있고 이 분기의 추가작업은 중단되어야 합니다. http 요청 핸들러
 예제에서 다수의 비동기 요청을 보내고 각 요청에서 `write()`의 데이터를 다시 클라이언트에 보내면
 닫힌 핸들에 `write()`를 시도하면서 더 많은 오류가 발생합니다.
-이것에 대한 자세한 내용은 _예외발생시 리소스 정리_를 참고하세요.
+이것에 대한 자세한 내용은 _예외발생시 자원 정리_를 참고하세요.
 
 <!--
 ### Resource Cleanup on Exception
@@ -751,7 +751,7 @@ function dataTransformed(chunk) {
 function DataStream(cb) {
   this.cb = cb;
   // DataStream은 데이터 전파에도 도메인을 사용하려고 합니다!
-  // 불행히도 이는 이미 존재하는 다른 도메인과 충돌 날 것입니다.
+  // 불행히도 이는 이미 존재하는 다른 도메인과 충돌할 것입니다.
   this.domain = domain.create();
   this.domain.data = { inst: this };
 }

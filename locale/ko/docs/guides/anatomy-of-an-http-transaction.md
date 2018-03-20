@@ -86,10 +86,10 @@ the port number you want the server to listen on. There are some other options
 too, so consult the [API reference][].
 -->
 
-HTTP 요청이 서버에 오면 node가 트랜잭션을 다루려고 `request`과 `response` 객체를 전달하며
+HTTP 요청이 서버에 오면 node가 트랜잭션을 다루려고 `request`와 `response` 객체를 전달하며
 요청 핸들러 함수를 호출합니다. 곧 이 객체를 사용해 볼 것입니다.
 
-요청을 실제로 처리하려면 [`listen`][] 메소드가 `server` 객체에서 호출되어야 합니다.
+요청을 실제로 처리하려면 [`listen`][] 메서드가 `server` 객체에서 호출되어야 합니다.
 대부분은 서버가 사용하고자 하는 포트 번호를 `listen`에 전달하기만 하면 됩니다.
 몇 가지 다른 옵션도 있으므로 [API 문서][]를 참고하세요.
 
@@ -106,9 +106,9 @@ const { method, url } = request;
 > **Note:** The `request` object is an instance of [`IncomingMessage`][].
 -->
 
-## 메소드, URL, 헤더
+## 메서드, URL, 헤더
 
-요청을 처리할 때, 우선은 메소드와 URL을 확인한 후 이와 관련된 적절한 작업을 실행하려고 할 것입니다.
+요청을 처리할 때, 우선은 메서드와 URL을 확인한 후 이와 관련된 적절한 작업을 실행하려고 할 것입니다.
 Node가 `request` 객체에 유용한 프로퍼티를 넣어두었으므로 이 작업은 비교적 쉽게 할 수 있습니다.
 
 ```javascript
@@ -130,7 +130,7 @@ const userAgent = headers['user-agent'];
 ```
 -->
 
-여기서 `method`는 항상 일반적인 HTTP 메소드/동사가 될 것입니다. `url`은 전체 URL에서 서버,
+여기서 `method`는 항상 일반적인 HTTP 메서드/동사가 될 것입니다. `url`은 전체 URL에서 서버,
 프로토콜, 포트를 제외한 것으로, 세 번째 슬래시 이후의 나머지 전부라고 볼 수 있습니다.
 
 헤더도 많이 다르지 않습니다. `request`에 `headers`라는 전용 객체가 있습니다.
@@ -289,7 +289,7 @@ http.createServer((request, response) => {
 
 ## 지금까지 살펴본 내용
 
-지금까지 서버를 생성하고 요청의 메소드, UL, 헤더, 바디를 가져왔습니다.
+지금까지 서버를 생성하고 요청의 메서드, UL, 헤더, 바디를 가져왔습니다.
 이를 모두 사용하면 다음과 같이 될 것입니다.
 
 ```javascript
@@ -304,7 +304,7 @@ http.createServer((request, response) => {
     body.push(chunk);
   }).on('end', () => {
     body = Buffer.concat(body).toString();
-    // 여기서 헤더, 메소드, url, 바디를 가지게 되었고
+    // 여기서 헤더, 메서드, url, 바디를 가지게 되었고
     // 이 요청에 응답하는 데 필요한 어떤 일이라도 할 수 있게 되었습니다.
   });
 }).listen(8080); // 이 서버를 활성화하고 8080 포트로 받습니다.
@@ -325,7 +325,7 @@ useful methods for sending data back to the client. We'll cover that next.
 
 지금까지 `response` 객체는 전혀 건드리지 않았습니다. 이 객체는 [`ServerResponse`][]의
 인스턴스이면서 [`WritableStream`][]입니다. 여기에는 클라이언트에 데이터를 응답하기 위한
-여러 가지 유용한 메소드가 있습니다. 이제 이를 살펴볼 것입니다.
+여러 가지 유용한 메서드가 있습니다. 이제 이를 살펴볼 것입니다.
 
 <!--
 ## HTTP Status Code
@@ -371,7 +371,7 @@ sent.
 
 ## 응답 헤더 설정
 
-편리한 [`setHeader`][] 메소드로 헤더를 설정합니다.
+편리한 [`setHeader`][] 메서드로 헤더를 설정합니다.
 
 ```javascript
 response.setHeader('Content-Type', 'application/json');
@@ -405,11 +405,11 @@ start sending response data.
 
 ## 명시적인 헤더 데이터 전송
 
-지금까지 설명한 헤더와 상태 코드를 설정하는 메소드는 "암묵적인 헤더"를 사용하고 있다고 가정합니다. 이는
+지금까지 설명한 헤더와 상태 코드를 설정하는 메서드는 "암묵적인 헤더"를 사용하고 있다고 가정합니다. 이는
 바디 데이터를 보내기 전 적절한 순간에 헤더를 보내는 일을 노드에 의존하고 있다는 의미입니다.
 
 원한다면 *명시적으로* 응답 스트림에 헤더를 작성할 수 있습니다. 헤더를 작성하는 [`writeHead`][]
-메소드가 있습니다. 이 메소드는 스트림에 상태 코드와 헤더를 작성합니다.
+메서드가 있습니다. 이 메서드는 스트림에 상태 코드와 헤더를 작성합니다.
 
 ```javascript
 response.writeHead(200, {
@@ -450,7 +450,7 @@ the body in HTTP responses.
 ## 응답 바디 전송
 
 `response` 객체는 [`WritableStream`][]이므로 클라이언트로 보내는 응답 바디는 일반적인
-스트림 메소드를 사용해서 작성합니다.
+스트림 메서드를 사용해서 작성합니다.
 
 ```javascript
 response.write('<html>');
@@ -642,9 +642,9 @@ http.createServer((request, response) => {
 ```
 -->
 
-이제 약간의 변경을 해보겠습니다. 다음의 조건에서만 에코 응답을 보내려고 합니다.
+이제 약간 변경해보겠습니다. 다음의 조건에서만 에코 응답을 보내려고 합니다.
 
-* 요청 메소드가 POST인 경우
+* 요청 메서드가 POST인 경우
 * URL이 `/echo`인 경우
 
 위 조건이 아닌 경우에는 404를 응답합니다.
@@ -803,7 +803,7 @@ read through the API docs for [`EventEmitters`][], [`Streams`][], and [`HTTP`][]
 지금까지 HTTP 요청을 다루는 기본 내용을 거의 다 다루었습니다. 이제 다음을 할 수 있어야 합니다.
 
 * 요청 핸들러 함수로 HTTP 서버의 인스턴스를 생성하고 특정 포트로 서버를 열 수 있습니다.
-* `request` 객체에서 헤더, URL, 메소드, 바디 데이터를 가져올 수 있습니다.
+* `request` 객체에서 헤더, URL, 메서드, 바디 데이터를 가져올 수 있습니다.
 * URL이나 `request` 객체의 데이터에 기반을 둬서 라우팅을 할 수 있습니다.
 * `response` 객체로 헤더, HTTP 상태 코드, 바디 데이터를 보낼 수 있습니다.
 * `request` 객체에서 `response` 객체로 데이터를 파이프로 연결할 수 있습니다.

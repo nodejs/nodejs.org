@@ -163,3 +163,5 @@ they do when adding another.
 - 그 API의 사용자가 쉽게 대체할 수 있는 외부 모듈이 존재하는가?
 
 코어 팀은 Node.js API를 폐기할 때 API를 추가할 때와 마찬가지로 신중하게 고려합니다.
+
+[`EventEmitter`]: https://nodejs.org/api/events.html#events_class_eventemitter

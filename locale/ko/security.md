@@ -75,8 +75,8 @@ release process above to ensure that the disclosure is handled in a consistent m
 
 다음은 Node.js의 보안 공개 정책입니다.
 
-- 보안 보고를 받으면 주요 처리자에게 할당됩니다. 이 사람은 수정사항과 릴리스 정차를 책임질 것입니다.
-  해당 문제를 확인하고 영향을 받는 버전 목록을 결정합니다. 잠재적으로 비슷한 문제를 일으킬 수 있는
+- 보안 보고를 받으면 1차 담당자에게 할당됩니다. 이 사람은 수정사항과 릴리스 절차를 조율합니다.
+  해당 문제가 확인되면 영향을 받는 버전 목록을 결정합니다. 잠재적으로 비슷한 문제를 일으킬 수 있는
   코드를 점검합니다. 관리 중인 모든 릴리스 버전에 대한 수정사항을 준비합니다. 이 수정사항은
   공개 저장소에 커밋하지 않고 공지할 때까지 로컬에 보관해 둡니다.
 
@@ -107,8 +107,8 @@ Security notifications will be distributed via the following methods.
 
 다음 방법으로 보안 공지를 합니다.
 
-- [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+- <https://groups.google.com/group/nodejs-sec>
+- <https://nodejs.org/en/blog>
 
 <!--
 ## Comments on this Policy
