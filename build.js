@@ -270,8 +270,8 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'Spectre and Meltdown in the context of Node.js.',
-          link: 'https://nodejs.org/en/blog/vulnerability/jan-2018-spectre-meltdown/'
+          text: 'March 2018 Security Releases',
+          link: '/en/blog/vulnerability/march-2018-security-releases/'
         }
       }
     }
