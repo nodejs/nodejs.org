@@ -65,7 +65,7 @@ Responsibilities include:
 
 웹사이트 워킹그룹의 목적은 Node.js 프로젝트의 공개 웹사이트를 만들고 관리하는 것입니다.
 
-이는 다음에 대한 책임이 있습니다.
+이 워킹 그룹은 다음과 같은 업무를 담당합니다.
 * nodejs.org의 빌드와 자동화 시스템을 개발하고 유지 보수합니다.
 * 릴리스와 기능처럼 Node.js에 변경된 내용을 정기적으로 사이트에 갱신합니다.
 * 번역 커뮤니티를 지원합니다.
@@ -98,7 +98,7 @@ Responsibilities include:
 있습니다. 생태계에 요구사항에 따라 API를 개선할 것입니다. 다른 솔루션과의 상호운용성과 하위 호환성 및
 이전 버전이 가장 중요합니다.
 
-이 워킹 그룹은 다음에 대한 책임이 있습니다.
+이 워킹 그룹은 다음과 같은 업무를 담당합니다.
 * Node.js 이슈 트래커에서 스트림 관련 이슈를 처리합니다.
 * Node.js 프로젝트 내 스트림 문서를 작성하고 수정합니다.
 * Node.js 프로젝트 내 스트림 하위 클래스의 변경사항을 리뷰합니다.
@@ -124,7 +124,7 @@ Responsibilities include:
 
 빌드 워킹 그룹의 목적은 분산 자동화 인프라스트럭처를 만들고 유지 보수하는 것입니다.
 
-이 워킹 그룹은 다음에 대한 책임이 있습니다.
+이 워킹 그룹은 다음과 같은 업무를 담당합니다.
 * 모든 대상 플랫폼에서 패키지를 만듭니다.
 * 테스트를 수행합니다.
 * 성능테스트를 수행하고 비교합니다.
@@ -153,7 +153,7 @@ Responsibilities include:
 Diagnostics 워킹 그룹의 목적은 Node.js 도구와 JavaScript VM에서 사용할 수 있는
 광범위한 진단 인터페이스를 확장성있게 만들고 문서화하는 것입니다.
 
-이 워킹 그룹은 다음에 대한 책임이 있습니다.
+이 워킹 그룹은 다음과 같은 업무를 담당합니다.
 * `v8_inspector`를 Node.js에 통합하도록 V8과 협업합니다.
 * `trace_event`를 Node.js에 통합하도록 V8과 협업합니다.
 * `async_wrap`과 `async_hooks`를 개량할 수 있도록 Core 팀과 협업합니다.
@@ -191,7 +191,7 @@ Responsibilities include:
 * Promoting Node.js speakers for meetups and conferences in their language.
 -->
 
-이 워킹 그룹은 다음에 대한 책임이 있습니다.
+이 워킹 그룹은 다음과 같은 업무를 담당합니다.
 * 커뮤니티와 연관있는 Node.js 자료를 모두 번역합니다.
 * 높은 품질로 번역하고 번역된 내용이 최신화되도록 번역 과정을 검토합니다.
 * 언어별 소셜 미디어 채널을 관리합니다.
@@ -292,7 +292,7 @@ Responsibilities include:
 
 에반젤리즘 워킹 그룹은 Node.js의 성과를 홍보하고 커뮤니티가 참여하는 방법을 알립니다.
 
-이 워킹 그룹은 다음에 대한 책임이 있습니다.
+이 워킹 그룹은 다음과 같은 업무를 담당합니다.
 * 프로젝트 메시징
 * 공식 프로젝트 소셜 미디어
 * 밋업과 콘퍼런스의 발표자 추천
@@ -315,7 +315,7 @@ Responsibilities include:
 
 Docker 워킹 그룹은 Node.js 프로젝트의 공식 Docker 이미지를 만들고 관리하고 개선합니다.
 
-이 워킹 그룹은 다음에 대한 책임이 있습니다.
+이 워킹 그룹은 다음과 같은 업무를 담당합니다.
 * 새로운 Node.js 릴리스로 공식 Docker 이미지를 갱신합니다.
 * 이미지의 개선이나 수정사항 구현을 결정합니다.
 * 이미지 문서를 관리하고 개선합니다.
@@ -352,10 +352,10 @@ The current members can be found in their
 NAN 프로젝트는 네이티브 애드온 작성자가 다수가 사용하는 Node.js, V8, libuv 버전과 호환성 있는
 코드를 작성할 수 있도록 추상화 계층을 제공한다.
 
-이 워킹 그룹은 다음에 대한 책임이 있습니다.
+이 워킹 그룹은 다음과 같은 업무를 담당합니다.
 * [NAN](https://github.com/nodejs/nan) GitHub 저장소에서 코드, 이슈, 문서를 관리합니다.
 * [addon-examples](https://github.com/nodejs/node-addon-examples)
-  GitHub 저장에서 코드, 이슈, 문서를 관리합니다.
+  GitHub 저장소에서 코드, 이슈, 문서를 관리합니다.
 * Node.js TSC 하에 Node.js 프로젝트의 C++ Addon API를 관리합니다.
 * Node.js TSC 하에 Node.js 프로젝트의 Addon 문서를 관리합니다.
 * npm의 _nan_ 패키지를 관리하고 절절하게 새로운 버전을 릴리스합니다.
@@ -389,7 +389,7 @@ Responsibilities include:
 * Node 릴리스 간의 성능 차이를 추적하고 알립니다.
 * 릴리즈 간의 성능 저하를 피합니다.
 
-이 워킹 그룹은 다음에 대한 책임이 있습니다.
+이 워킹 그룹은 다음과 같은 업무를 담당합니다.
 * 사용자 용도를 반역하는 하나 이상의 벤치마크를 확인합니다. 지연이 낮고 높은 동시성을 가지는 것을 포함해서 일반적인 Node 사용 사례를 다루는 하나 이상의 벤치마크가 필요합니다.
 * 선택한 벤치마크 목록에서 커뮤니티의 합의를 합니다.
 * Node 빌드에 선정한 벤치마크를 정기적으로 실행합니다.
@@ -417,10 +417,11 @@ Responsibilities include:
 포스트모템 디버깅의 역할을 향상시켜서 기술과 도구개발을 돕고 Node.js 사용자가 알고 있고 사용하는
 기술과 도구를 만드는 것입니다.
 
-이 워킹 그룹은 다음에 대한 책임이 있습니다.
+이 워킹 그룹은 다음과 같은 업무를 담당합니다.
 * 필요할 때 덤프를 생성할 수 있도록 인터페이스/API를 정의하고 추가합니다.
 * 이러한 덤프를 분석하는 도구를 지원하기 위해 생성된 덤프의 공통 구조를 정의하고 추가합니다.
 
+<!--
 ### [Release](https://github.com/nodejs/LTS)
 The Release Working Group manages the release process for Node.js.
 
@@ -432,3 +433,15 @@ Responsibilities include:
 * Manage the Long Term Support and Current branches including
   backporting changes to these branches.
 * Define the policy for what gets backported to release streams
+-->
+
+### [Release](https://github.com/nodejs/LTS)
+릴리스 워킹 그룹은 Node.js의 릴리스 프로세스를 관리합니다.
+
+이 워킹 그룹은 다음과 같은 업무를 담당합니다.
+* 릴리스 프로세스를 정의합니다.
+* 릴리스의 콘텐츠를 정의합니다.
+* 릴리스를 생성합니다.
+* 릴리스를 테스트합니다.
+* LTS 및 현재 버전 브랜치를 관리하고 변경 사항을 백포트합니다.
+* 어떤 사항을 백포트할지에 대한 정책을 정의합니다.

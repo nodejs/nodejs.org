@@ -22,7 +22,7 @@ V8을 최신 릴리스로 유지하기 때문에 Node.js 개발자에게
 [JavaScript ECMA-262 명세](http://www.ecma-international.org/publications/standards/Ecma-262.htm)의
 새로운 기능을 제때에 지원하면서 성능과 안정성 개선도 할 수 있습니다.
 
-모든 ECMAScript 2015(ES6) 기능은  **shipping**, **staged**, **in progress** 기능의
+모든 ECMAScript 2015(ES6) 기능은 **shipping**, **staged**, **in progress**라는
 세 가지 그룹으로 나뉩니다.
 
 * 모든 **shipping** 기능은 V8이 안정적이라고 간주한 것으로

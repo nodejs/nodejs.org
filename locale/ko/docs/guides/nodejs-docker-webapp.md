@@ -298,7 +298,7 @@ CMD [ "npm", "start" ]
 ```docker
 FROM node:carbon
 
-# 앱 디렉토리 생성
+# 앱 디렉터리 생성
 WORKDIR /usr/src/app
 
 # 앱 의존성 설치
@@ -364,7 +364,7 @@ node                            carbon     1934b0b038d1    5 days ago
 
 ## 이미지 빌드
 
-작성한 `Dockerfile`이 있는 디렉토리로 가서 Docker 이미지를 빌드하는 다음 명령어를 실행하세요.
+작성한 `Dockerfile`이 있는 디렉터리로 가서 Docker 이미지를 빌드하는 다음 명령어를 실행하세요.
 `-t` 플래그로 이미지에 태그를 추가하기 때문에 나중에 `docker images` 명령어로
 쉽게 찾을 수 있습니다.
 

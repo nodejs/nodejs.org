@@ -35,14 +35,15 @@ This documentation describes the built-in modules provided by Node.js. It does n
 ### API 레퍼런스 문서
 
 [API 레퍼런스 문서](/api/)에는 Node.js의 함수나 객체에 대한 자세한 정보가 있습니다.
-이 문서에서 메소드가 어떤 인자를 받고 어떤 값을 반환하는지 해당 메소드와 관련된 에러에는 어떤 것이
-있는지를 알려줍니다. 다양한 Node.js에서 어떤 메소드를 사용할 수 있는지도 알려줍니다.
+이 문서에서 메서드가 어떤 인자를 받고 어떤 값을 반환하는지 해당 메서드와 관련된 에러에는 어떤 것이
+있는지를 알려줍니다. 다양한 Node.js에서 어떤 메서드를 사용할 수 있는지도 알려줍니다.
 
 <!--
 <div class="highlight-box">
     <h4>Looking for API docs of previous releases?</h4>
 
     <ul>
+        <li><a href="https://nodejs.org/docs/latest-v7.x/api/">Node.js 7.x</a></li>
         <li><a href="https://nodejs.org/docs/latest-v5.x/api/">Node.js 5.x</a></li>
         <li><a href="https://nodejs.org/docs/latest-v4.x/api/">Node.js 4.x</a></li>
         <li><a href="https://nodejs.org/docs/latest-v0.12.x/api/">Node.js 0.12.x</a></li>
@@ -85,4 +86,4 @@ Long-form, in-depth articles about Node.js technical features and capabilities.
 
 ### 안내
 
-Node.js의 기술적인 기능에 대한 길고 상세한 글
+Node.js의 기술적인 기능에 대한 길고 상세한 글입니다.
