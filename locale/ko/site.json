@@ -93,6 +93,10 @@
     "guides": {
       "link": "docs/guides",
       "text": "안내"
+    },
+    "inspector": {
+      "link": "docs/inspector",
+      "text": "인스펙터"
     }
   },
   "getinvolved": {
