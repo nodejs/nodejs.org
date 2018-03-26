@@ -28,24 +28,24 @@ The following diagram shows a simplified overview of the event loop's
 order of operations.
 
 ```
-   ┌───────────────────────┐
-┌─>│        timers         │
-│  └──────────┬────────────┘
-│  ┌──────────┴────────────┐
-│  │     I/O callbacks     │
-│  └──────────┬────────────┘
-│  ┌──────────┴────────────┐
-│  │     idle, prepare     │
-│  └──────────┬────────────┘      ┌───────────────┐
-│  ┌──────────┴────────────┐      │   incoming:   │
-│  │         poll          │<─────┤  connections, │
-│  └──────────┬────────────┘      │   data, etc.  │
-│  ┌──────────┴────────────┐      └───────────────┘
-│  │        check          │
-│  └──────────┬────────────┘
-│  ┌──────────┴────────────┐
-└──┤    close callbacks    │
-   └───────────────────────┘
+   ┌───────────────────────────┐
+┌─>│           timers          │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+│  │     pending callbacks     │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+│  │       idle, prepare       │
+│  └─────────────┬─────────────┘      ┌───────────────┐
+│  ┌─────────────┴─────────────┐      │   incoming:   │
+│  │           poll            │<─────┤  connections, │
+│  └─────────────┬─────────────┘      │   data, etc.  │
+│  ┌─────────────┴─────────────┐      └───────────────┘
+│  │           check           │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+└──┤      close callbacks      │
+   └───────────────────────────┘
 ```
 
 *note: each box will be referred to as a "phase" of the event loop.*
@@ -76,12 +76,14 @@ actually uses - are those above._
 
 * **timers**: this phase executes callbacks scheduled by `setTimeout()`
  and `setInterval()`.
-* **I/O callbacks**: executes almost all callbacks with the exception of
- close callbacks, the ones scheduled by timers, and `setImmediate()`.
+* **pending callbacks**: executes I/O callbacks deferred to the next loop
+ iteration.
 * **idle, prepare**: only used internally.
-* **poll**: retrieve new I/O events; node will block here when appropriate.
+* **poll**: retrieve new I/O events; execute I/O related callbacks (almost
+ all with the exception of close callbacks, the ones scheduled by timers,
+ and `setImmediate()`); node will block here when appropriate.
 * **check**: `setImmediate()` callbacks are invoked here.
-* **close callbacks**: e.g. `socket.on('close', ...)`.
+* **close callbacks**: some close callbacks, e.g. `socket.on('close', ...)`.
 
 Between each run of the event loop, Node.js checks if it is waiting for
 any asynchronous I/O or timers and shuts down cleanly if there are not
@@ -151,18 +153,18 @@ event loop and all of the asynchronous behaviors of the platform)
 also has a hard maximum (system dependent) before it stops polling for
 more events.
 
-### I/O callbacks
+### pending callbacks
 
 This phase executes callbacks for some system operations such as types
 of TCP errors. For example if a TCP socket receives `ECONNREFUSED` when
 attempting to connect, some \*nix systems want to wait to report the
-error. This will be queued to execute in the **I/O callbacks** phase.
+error. This will be queued to execute in the **pending callbacks** phase.
 
 ### poll
 
 The **poll** phase has two main functions:
 
-1. Executing scripts for timers whose threshold has elapsed, then
+1. Calculating how long it should block and poll for I/O, then
 2. Processing events in the **poll** queue.
 
 When the event loop enters the **poll** phase _and there are no timers
