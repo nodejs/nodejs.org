@@ -39,8 +39,6 @@ de notre communauté pour trouver comment vous pouvez aider:
 
 - [L'étiquette StackOverflow Node.js](http://stackoverflow.com/questions/tagged/node.js) rassemble de nouvelles informations chaque jours [en].
 
-- [docs.nodejitsu.com](http://docs.nodejitsu.com/) répond à de nombreux problèmes communs et récurrents [en].
-
 - [How To Node](http://howtonode.org/) a de nombreux tutoriaux utiles [en].
 
 

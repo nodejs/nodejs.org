@@ -26,7 +26,6 @@ contribuir de la manera que puguin. Si vols [reportar un error](https://github.c
 - La [Documentació oficial de l'API](/api) detalla l'API de Node.
 - [NodeSchool.io](http://nodeschool.io) li ensenyarà conceptes de Node.js de forma interactiva mitjançant jocs utilitzant la línia de comandes.
 - L'[etiqueta de Node.js en StackOverflow](http://stackoverflow.com/questions/tagged/node.js) col·lecciona nova informació cada dia.
-- [docs.nodejitsu.com](http://docs.nodejitsu.com/) soluciona molts dels problemes més comuns que la gent es troba.
 - [How To Node](http://howtonode.org/) té un nombre creixent d'útils tutorials.
 
 
