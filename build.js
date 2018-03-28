@@ -270,7 +270,7 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'March 2018 Security Releases',
+          text: 'Important March 2018 security upgrades now available',
           link: '/en/blog/vulnerability/march-2018-security-releases/'
         }
       }
