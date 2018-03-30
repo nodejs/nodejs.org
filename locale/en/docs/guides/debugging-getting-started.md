@@ -70,10 +70,15 @@ info on these follows:
 * **Option 3**: Install the Chrome Extension NIM (Node Inspector Manager):
   https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 
-#### [VS Code](https://github.com/microsoft/vscode) 1.10+
+#### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
 
 * In the Debug panel, click the settings icon to open `.vscode/launch.json`.
   Select "Node.js" for initial setup.
+
+#### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
+
+* Choose "Debug > Start Debugging" from the menu or hit F5.
+* [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging).
 
 #### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ and other JetBrains IDEs
 
@@ -91,7 +96,7 @@ info on these follows:
 
 The following table lists the impact of various runtime flags on debugging:
 
-<table cellpadding=0 cellspacing=0>
+<table cellpadding="0" cellspacing="0">
   <tr><th>Flag</th><th>Meaning</th></tr>
   <tr>
     <td>--inspect</td>
@@ -139,6 +144,16 @@ The following table lists the impact of various runtime flags on debugging:
       <ul>
         <li>Spawn child process to run user's script under --inspect flag;
             and use main process to run CLI debugger.</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>node inspect --port=xxxx <i>script.js</i></code></td>
+    <td>
+      <ul>
+        <li>Spawn child process to run user's script under --inspect flag;
+            and use main process to run CLI debugger.</li>
+        <li>Listen on port <i>port</i> (default: 9229)</li>
       </ul>
     </td>
   </tr>

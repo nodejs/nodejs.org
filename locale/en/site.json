@@ -85,10 +85,6 @@
       "link": "docs/es6",
       "text": "ES6 and beyond"
     },
-    "inspector": {
-      "link": "docs/inspector",
-      "text": "Inspector"
-    },
     "api-lts": {
       "link": "/dist/latest-%ver-major%/docs/api",
       "subtext": "LTS",
