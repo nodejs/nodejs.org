@@ -59,7 +59,7 @@ const queryCommits = variables => github.query(`
 
     const historyAfter = page.endCursor
     return queryCommits(_.defaults({historyAfter}, variables))
-        .then(others => _.concat(commits, others))
+      .then(others => _.concat(commits, others))
   })
 
 const queryCollaborators = variables => github.query(`
@@ -92,7 +92,7 @@ const queryCollaborators = variables => github.query(`
 
     const collaboratorsAfter = page.endCursor
     return queryCollaborators(_.defaults({collaboratorsAfter}, variables))
-        .then(others => _.concat(collaborators, others))
+      .then(others => _.concat(collaborators, others))
   })
 
 const repositoryOwner = 'nodejs'
