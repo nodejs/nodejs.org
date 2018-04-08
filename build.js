@@ -8,6 +8,8 @@ const Metalsmith = require('metalsmith')
 const autoprefixer = require('autoprefixer-stylus')
 const collections = require('metalsmith-collections')
 const feed = require('metalsmith-feed')
+const discoverHelpers = require('metalsmith-discover-helpers')
+const discoverPartials = require('metalsmith-discover-partials')
 const layouts = require('metalsmith-layouts')
 const markdown = require('metalsmith-markdown')
 const prism = require('metalsmith-prism')
@@ -147,32 +149,15 @@ function buildLocale (source, locale) {
     // Finally, this compiles the rest of the layouts present in ./layouts.
     // They're language-agnostic, but have to be regenerated for every locale
     // anyways.
-    .use(layouts({
-      engine: 'handlebars',
-      pattern: '**/*.html',
-      partials: 'layouts/partials',
-      helpers: {
-        apidocslink: require('./scripts/helpers/apidocslink.js'),
-        changeloglink: require('./scripts/helpers/changeloglink.js'),
-        copyright: require('./scripts/helpers/copyright-year.js'),
-        equals: require('./scripts/helpers/equals.js'),
-        majorapidocslink: require('./scripts/helpers/majorapidocslink.js'),
-        startswith: require('./scripts/helpers/startswith.js'),
-        strftime: require('./scripts/helpers/strftime.js'),
-        stripv: require('./scripts/helpers/stripv.js'),
-        summary: require('./scripts/helpers/summary.js'),
-        json: (context) => JSON.stringify(context),
-        getListJson: (context) => {
-          const result = context.map(item => ({
-            title: item.title,
-            date: item.date,
-            local: true,
-            path: item.path.replace(/\\/, '/')
-          }))
-          return JSON.stringify(result)
-        }
-      }
+    .use(discoverPartials({
+      directory: 'layouts/partials',
+      pattern: /\.hbs$/
     }))
+    .use(discoverHelpers({
+      directory: 'scripts/helpers',
+      pattern: /\.js$/
+    }))
+    .use(layouts())
     // Pipes the generated files into their respective subdirectory in the build
     // directory.
     .destination(path.join(__dirname, 'build', locale))
@@ -220,18 +205,18 @@ function buildLayouts () {
     fs.mkdir(path.join(__dirname, 'build', 'layouts'), () => {
       const metalsmith = Metalsmith(__dirname)
       metalsmith
-          // Sets the build source as /layouts/css.
-          .source(path.join(__dirname, 'layouts', 'css'))
-          // Deletes Stylus partials since they'll be included in the main CSS
-          // file anyways.
-          .use(filterStylusPartials())
-          .use(stylus({
-            compress: true,
-            paths: [path.join(__dirname, 'layouts', 'css')],
-            use: [autoprefixer()]
-          }))
-          // Pipes the generated files into /build/layouts/css.
-          .destination(path.join(__dirname, 'build', 'layouts', 'css'))
+        // Sets the build source as /layouts/css.
+        .source(path.join(__dirname, 'layouts', 'css'))
+        // Deletes Stylus partials since they'll be included in the main CSS
+        // file anyways.
+        .use(filterStylusPartials())
+        .use(stylus({
+          compress: true,
+          paths: [path.join(__dirname, 'layouts', 'css')],
+          use: [autoprefixer()]
+        }))
+        // Pipes the generated files into /build/layouts/css.
+        .destination(path.join(__dirname, 'build', 'layouts', 'css'))
 
       // This actually executes the build and stops the internal timer after
       // completion.
