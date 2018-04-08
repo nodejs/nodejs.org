@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports = (context) => {
+module.exports = context => {
   const result = context.map(item => ({
     title: item.title,
     date: item.date,
