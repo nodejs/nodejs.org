@@ -11,11 +11,11 @@ const map = (release) => release && {
 }
 
 exports.current = (releases) => {
-  const match = releases.find((release) => !release.lts && semver.gte(release.version, '5.0.0'))
+  const match = releases && releases.find((release) => !release.lts && semver.gte(release.version, '5.0.0'))
   return map(match)
 }
 
-exports.lts = (releases) => map(releases.find((release) => release.lts))
+exports.lts = (releases) => map(releases && releases.find((release) => release.lts))
 
 function majorStr (release) {
   return `v${semver.major(release.version)}.x`
