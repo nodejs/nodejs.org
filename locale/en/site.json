@@ -75,7 +75,9 @@
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "Signed SHASUMS for release files"
+      "text": "Signed SHASUMS for release files",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "How to verify"
     }
   },
   "docs": {
