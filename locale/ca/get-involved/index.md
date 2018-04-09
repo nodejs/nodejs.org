@@ -10,7 +10,7 @@ contribuir de la manera que puguin. Si vols [reportar un error](https://github.c
 [ajudar amb la documentació o contribuir amb el codi](/en/get-involved/contribute/) del projecte, has vingut al lloc indicat. Explora els recursos de la nostra comunitat per trobar una forma d'ajudar:
 
 
-## Discussió
+## Discussió de la comunitat
 
 - La [llista d'errors en ](https://github.com/nodejs/node/issues) és el lloc per discutir les característiques del nucli de Node.js.
 - Per xatejar en temps real sobre el desenvolupament de Node vagi a `irc.freenode.net` al canal `#node.js` fent servir un [client d'IRC](http://es.wikipedia.org/wiki/Anexo:Clientes_IRC) o connecti's amb el seu navegador al canal usant [WebChat de freenode](http://webchat.freenode.net/?channels=node.js).

@@ -8,7 +8,7 @@ layout: contribute.hbs
 Спільнота Node.js — велика, цілісна і відкрита для багатьох користувачів, які підтримують нас. Якщо ви хочете [повідомити про помилку](https://github.com/nodejs/node/issues), [допомогти з документацією або вдосконалити кодову базу](/en/get-involved/contribute/) проекту, ви прийшли за адресою. Перегляньте ресурси нашої спільноти, щоб зрозуміти, як ви можете допомогти:
 
 
-## Обговорення
+## Громадське обговорення
 
 - [Список іш’ю на GitHub](https://github.com/nodejs/node/issues) — це місце, де обговорюють ключовий функціонал Node.js.
 - Для живого чату про розробку на Node перейдіть на `irc.freenode.net` у канал `#node.js` через [IRC клієнт](http://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) або підключіться до каналу через веб–браузер з допомогою [ WebChat від freenode](http://webchat.freenode.net/?channels=node.js).

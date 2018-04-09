@@ -13,7 +13,7 @@ de notre communauté pour trouver comment vous pouvez aider:
 
 <hr>
 
-## Discussion
+## Discussion de la communauté
 
 - La [liste des tickets GitHub](https://github.com/nodejs/node/issues) est le bon endroit pour discuter des fonctionnalités coeurs de Node.js.
 

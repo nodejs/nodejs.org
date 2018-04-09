@@ -10,7 +10,7 @@ a contribuir de cualquier forma posible. Si usted quiere [reportar un error](htt
 [ayudar con la documentación ó contribuir con el código](/en/get-involved/contribute/) del proyecto, ha venido al lugar indicado. Explore los recursos de nuestra comunidad para encontrar una forma de ayudar:
 
 
-## Discusión
+## Discusión de la comunidad
 
 - La [lista de errores en ](https://github.com/nodejs/node/issues) es el lugar para discutir las características del núcleo de Node.js.
 - Para chatear en tiempo real sobre el desarrollo de Node vaya a `irc.freenode.net` en el canal `#node.js` usando un [cliente de IRC](http://es.wikipedia.org/wiki/Anexo:Clientes_IRC) ó conéctese con su navegador al canal usando [WebChat de freenode](http://webchat.freenode.net/?channels=node.js).
