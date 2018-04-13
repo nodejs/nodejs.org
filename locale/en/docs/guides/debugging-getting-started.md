@@ -9,8 +9,6 @@ This guide will help you get started debugging your Node.js apps and scripts.
 
 ## Enable Inspector
 
-**NOTE**: The `--inspect` option and [Inspector Protocol][] are _experimental_ and may change.
-
 When started with the **--inspect** switch, a Node.js process listens via WebSockets
 for diagnostic commands as defined by the [Inspector Protocol][],
 by default at host and port 127.0.0.1:9229. Each process is also assigned a
