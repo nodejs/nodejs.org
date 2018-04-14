@@ -66,7 +66,7 @@ to the debugger. Doing so may expose you a potentially significant security
 threat. We suggest you ensure appropriate firewalls and access controls in place
 to prevent a security exposure.
 
-See the section on 'Enabling remote debugging scenarios' on some advice on how
+See the section on '[Enabling remote debugging scenarios](#enabling-remote-debugging-scenarios)' on some advice on how
 to safely allow remote debugger clients to connect.
 
 ### Local applications have full access to the inspector
@@ -78,7 +78,7 @@ to allow local debuggers to be able to attach conveniently.
 ### Browsers, WebSockets and same-origin policy
 
 Websites open in a web-browser can make WebSocket and HTTP requests under the
-browser security model. A initial HTTP connection is necessary to obtain a
+browser security model. An initial HTTP connection is necessary to obtain a
 unique debugger session id. The same-origin-policy prevents websites from being
 able to make this HTTP connection. For additional security against
 [DNS rebinding attacks](https://en.wikipedia.org/wiki/DNS_rebinding), Node.js
@@ -218,7 +218,7 @@ with the inspector listening only to localhost (the default).
 $ node --inspect server.js
 ```
 
-Now, on your local machine from where you want initiate a debug client
+Now, on your local machine from where you want to initiate a debug client
 connection, you can setup an ssh tunnel:
 
 ```
