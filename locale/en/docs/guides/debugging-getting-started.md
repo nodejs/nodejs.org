@@ -47,6 +47,47 @@ OS X). As of Node 7 this activates the legacy Debugger API; in Node 8 and later
 it will activate the Inspector API.
 
 ---
+## Security Implications
+
+Since the debugger has full access to the Node.js execution environment, a
+malicious actor able to connect to this port may be able to execute arbitrary
+code on behalf of the Node process. It is important to understand the security
+implications of exposing the debugger port on public and private networks.
+
+### Exposing the debug port publicly is unsafe
+
+If the debugger is bound to a public IP address, or to 0.0.0.0, any clients that
+can reach your IP address will be able to connect to the debugger without any
+restriction and will be able to run arbitrary code.
+
+By default `node --inspect` binds to 127.0.0.1. You explicitly need to provide a
+public IP address or 0.0.0.0, etc., if you intend to allow external connections
+to the debugger. Doing so may expose you a potentially significant security
+threat. We suggest you ensure appropriate firewalls and access controls in place
+to prevent a security exposure.
+
+See the section on '[Enabling remote debugging scenarios](#enabling-remote-debugging-scenarios)' on some advice on how
+to safely allow remote debugger clients to connect.
+
+### Local applications have full access to the inspector
+
+Even if you bind the inspector port to 127.0.0.1 (the default), any applications
+running locally on your machine will have unrestricted access. This is by design
+to allow local debuggers to be able to attach conveniently.
+
+### Browsers, WebSockets and same-origin policy
+
+Websites open in a web-browser can make WebSocket and HTTP requests under the
+browser security model. An initial HTTP connection is necessary to obtain a
+unique debugger session id. The same-origin-policy prevents websites from being
+able to make this HTTP connection. For additional security against
+[DNS rebinding attacks](https://en.wikipedia.org/wiki/DNS_rebinding), Node.js
+verifies that the 'Host' headers for the connection either
+specify an IP address or `localhost` or `localhost6` precisely.
+
+These security policies disallow connecting to a remote debug server by
+specifying the hostname. You can work-around this restriction by specifying
+either the IP address or by using ssh tunnels as described below.
 
 ## Inspector Clients
 
@@ -158,6 +199,36 @@ The following table lists the impact of various runtime flags on debugging:
     </td>
   </tr>
 </table>
+
+---
+
+## Enabling remote debugging scenarios
+
+We recommend that you never have the debugger listen on a public IP address. If
+you need to allow remote debugging connections we recommend the use of ssh
+tunnels instead. We provide the following example for illustrative purposes only.
+Please understand the security risk of allowing remote access to a privileged
+service before proceeding.
+
+Let's say you are running Node on remote machine, remote.example.com, that you
+want to be able to debug. On that machine, you should start the node process
+with the inspector listening only to localhost (the default).
+
+```sh
+$ node --inspect server.js
+```
+
+Now, on your local machine from where you want to initiate a debug client
+connection, you can setup an ssh tunnel:
+
+```
+$ ssh -L 9221:localhost:9229 user@remote.example.com
+```
+
+This starts a ssh tunnel session where a connection to port 9221 on your local
+machine will be forwarded to port 9229 on remote.example.com. You can now attach
+a debugger such as Chrome DevTools or Visual Studio Code to localhost:9221,
+which should be able to debug as if the Node.js application was running locally.
 
 ---
 
