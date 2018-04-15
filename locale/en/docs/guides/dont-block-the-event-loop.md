@@ -323,7 +323,7 @@ function asyncAvg(n, avgCB) {
   });
 }
 
-avg(n, function(avg){
+asyncAvg(n, function(avg){
   console.log('avg of 1-n: ' + avg);
 });
 ```
