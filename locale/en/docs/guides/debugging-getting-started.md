@@ -212,14 +212,14 @@ Let's say you are running Node on remote machine, remote.example.com, that you
 want to be able to debug. On that machine, you should start the node process
 with the inspector listening only to localhost (the default).
 
-```sh
+```bash
 $ node --inspect server.js
 ```
 
 Now, on your local machine from where you want to initiate a debug client
 connection, you can setup an ssh tunnel:
 
-```
+```bash
 $ ssh -L 9221:localhost:9229 user@remote.example.com
 ```
 
