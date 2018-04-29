@@ -47,7 +47,7 @@ Node.js は [NodeSource](https://nodesource.com) の Debian と Ubuntu ベース
 **注意:** Ubuntu Precise や Debian Wheezy をお使いの場合は、 [running Node.js >= 6.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md) を読むことをお勧めします。
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
