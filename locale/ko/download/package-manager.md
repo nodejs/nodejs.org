@@ -102,10 +102,10 @@ sudo apt-get install -y nodejs
 
 
 <!--
-Alternatively, for Node.js 9:
+Alternatively, for Node.js 10:
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
@@ -135,10 +135,10 @@ sudo apt-get install -y build-essential
 * **Debian testing** (stretch, aliased to jessie)
 * **Debian unstable** (sid)
 -->
-Node.js 9를 사용하고 싶다면 다음을 실행합니다.
+Node.js 10를 사용하고 싶다면 다음을 실행합니다.
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
@@ -252,10 +252,10 @@ RHEL, CentOS, Fedora에서 Node.js v8 LTS를 사용하려면 다음을 실행합
 curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
 ```
 
-Alternatively for Node.js 9:
+Alternatively for Node.js 10:
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_9.x | sudo bash -
+curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -
 ```
 
 Then install:
@@ -268,10 +268,10 @@ sudo yum -y install nodejs
 curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
 ```
 
-Node.js 9를 사용한다면 다음을 실행하세요.
+Node.js 10를 사용한다면 다음을 실행하세요.
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_9.x | sudo bash -
+curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -
 ```
 
 그 다음 아래의 명령어로 설치하세요.
