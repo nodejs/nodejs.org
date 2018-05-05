@@ -15,7 +15,7 @@ labels:
   changelog: Changelog
   api: API Docs
   version-schedule-prompt: Or have a look at the
-  version-schedule-prompt-link-text: LTS schedule.
+  version-schedule-prompt-link-text: Long Term Support (LTS) schedule.
   newsletter: true
   newsletter-prefix: Sign up for
   newsletter-postfix: ", the official Node.js Weekly Newsletter."
