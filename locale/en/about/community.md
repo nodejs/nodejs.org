@@ -47,7 +47,7 @@ Membership is for 6 months. The group will ask on a regular basis if the expirin
 
 Regular CommComm meetings are held bi-monthly in a Zoom video conference, and broadcast live to the public on YouTube. Any community member or contributor can ask that something be added to the next meeting's agenda by logging a GitHub Issue.
 
-Meeting announcements and agendas are posted before the meeting begins in the organization's [GitHub issues](https://github.com/nodejs/community-committee/issues). You can also find the regularly shceduled meetings on the [Node.js Calendar](https://nodejs.org/calendar). To follow Node.js meeting livestreams on YouTube, subscribe to the Node.js Foundation [YouTube channel](https://www.youtube.com/channel/UCQPYJluYC_sn_Qz_XE-YbTQ). Be sure to click the bell to be notified of new videos!
+Meeting announcements and agendas are posted before the meeting begins in the organization's [GitHub issues](https://github.com/nodejs/community-committee/issues). You can also find the regularly scheduled meetings on the [Node.js Calendar](https://nodejs.org/calendar). To follow Node.js meeting livestreams on YouTube, subscribe to the Node.js Foundation [YouTube channel](https://www.youtube.com/channel/UCQPYJluYC_sn_Qz_XE-YbTQ). Be sure to click the bell to be notified of new videos!
 
 ## Consensus Seeking Process
 
