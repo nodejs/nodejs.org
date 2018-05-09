@@ -12,7 +12,7 @@ downloads:
     intro: >
         Descargue el código fuente de Node.js o un instalador pre-compilado para su plataforma, y comience a desarrollar hoy.
     currentVersion: Versión actual
-    buildInstructions: Building Node.js from source on supported platforms
+    buildInstructions: Compilando Node.js desde el código fuente en las plataformas soportadas
     WindowsInstaller: Windows Installer
     WindowsBinary: Windows Binary
     MacOSInstaller: macOS Installer
