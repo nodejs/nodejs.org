@@ -408,7 +408,7 @@ In essence, the names should be swapped. `process.nextTick()` fires more
 immediately than `setImmediate()`, but this is an artifact of the past
 which is unlikely to change. Making this switch would break a large
 percentage of the packages on npm. Every day more new modules are being
-added, which mean every day we wait, more potential breakages occur.
+added, which means every day we wait, more potential breakages occur.
 While they are confusing, the names themselves won't change.
 
 *We recommend developers use `setImmediate()` in all cases because it's
