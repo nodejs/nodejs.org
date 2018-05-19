@@ -16,8 +16,8 @@ title: Installing Node.js via package manager
 * [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
 * [NetBSD](#netbsd)
-* [OpenBSD](#openbsd)
 * [nvm](#nvm)
+* [OpenBSD](#openbsd)
 * [openSUSE and SLE](#opensuse-and-sle)
 * [macOS](#macos)
 * [SmartOS and illumos](#smartos-and-illumos)
@@ -232,7 +232,7 @@ Additionally, versions of **CentOS** and **Scientific Linux** corresponding to t
 
 ## FreeBSD 
 
-The most recent release of Node.js is always available via the [www/node](http://freshports.org/www/node) port.
+The most recent release of Node.js is available via the [www/node](http://freshports.org/www/node) port.
 
 Install a binary package via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
@@ -304,7 +304,7 @@ Node.js is available through the ports system.
 /usr/ports/lang/node
 ```
 
-Using [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD
+Using [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
 
 ```bash
 pkg_add node
