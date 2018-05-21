@@ -13,10 +13,11 @@ title: Installing Node.js via package manager
 * [Arch Linux](#arch-linux)
 * [Debian and Ubuntu based Linux distributions](#debian-and-ubuntu-based-linux-distributions)
 * [Enterprise Linux and Fedora](#enterprise-linux-and-fedora)
-* [FreeBSD and OpenBSD](#freebsd-and-openbsd)
+* [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
+* [OpenBSD](#openbsd)
 * [openSUSE and SLE](#opensuse-and-sle)
 * [macOS](#macos)
 * [SmartOS and illumos](#smartos-and-illumos)
@@ -229,51 +230,20 @@ Additionally, versions of **CentOS** and **Scientific Linux** corresponding to t
 * **Fedora 27** (i686/x86_64/armv7hl/aarch64/ppc64/ppc64le/s390x)
 * **Fedora 26** (i686/x86_64/armv7hl/aarch64/ppc64/ppc64le)
 
+## FreeBSD 
 
-## FreeBSD and OpenBSD
+The most recent release of Node.js is available via the [www/node](http://freshports.org/www/node) port.
 
-Node.js is available through the ports system.
+Install a binary package via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
-**FreeBSD**:
-
-```bash
-/usr/ports/www/node
-```
-
-**OpenBSD**:
-
-```bash
-/usr/ports/lang/node
-```
-
-Development versions are also available using ports on FreeBSD
-
-```bash
-cd /usr/ports/www/node-devel/ && make install clean
-```
-
-Or packages on FreeBSD:
-
-```bash
-pkg_add -r node-devel
-```
-
-Using [pkg-ng](https://wiki.freebsd.org/pkgng) on FreeBSD
-
-```bash
+```sh
 pkg install node
 ```
 
-Or the development versions:
+Or compile it on your own using [ports](https://www.freebsd.org/cgi/man.cgi?ports):
 
-```bash
-pkg install node-devel
-```
-
-Using [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD
-
-```bash
-pkg_add node
+```sh
+cd /usr/ports/www/node && make install
 ```
 
 ## Gentoo
@@ -324,6 +294,20 @@ from source:
 
 ```bash
 $ nvm uninstall 8
+```
+
+## OpenBSD
+
+Node.js is available through the ports system.
+
+```bash
+/usr/ports/lang/node
+```
+
+Using [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
+
+```bash
+pkg_add node
 ```
 
 ## openSUSE and SLE
