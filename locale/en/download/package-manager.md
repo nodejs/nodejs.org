@@ -236,13 +236,13 @@ The most recent release of Node.js is available via the [www/node](http://freshp
 
 Install a binary package via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
-```sh
+```bash
 pkg install node
 ```
 
 Or compile it on your own using [ports](https://www.freebsd.org/cgi/man.cgi?ports):
 
-```sh
+```bash
 cd /usr/ports/www/node && make install
 ```
 
