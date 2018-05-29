@@ -43,7 +43,7 @@ $ node example.js
 
 ### Finding problematic bits of code using linters
 
-Eslint rules [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer-constructor)
+ESLint rules [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer-constructor)
 or
 [node/no-deprecated-api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md)
 also find calls to deprecated `Buffer()` API. Those rules are included in some presets.
@@ -69,7 +69,7 @@ What you would do in this case is to convert all `new Buffer()` or `Buffer()` ca
 Note that `Buffer.alloc()` is also _faster_ on the current Node.js versions than
 `new Buffer(size).fill(0)`, which is what you would otherwise need to ensure zero-filling.
 
-Enabling eslint rule [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer-constructor)
+Enabling ESLint rule [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer-constructor)
 or
 [node/no-deprecated-api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md)
 is recommended to avoid accidental unsafe Buffer API usage.
