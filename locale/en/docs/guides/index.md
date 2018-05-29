@@ -11,6 +11,7 @@ layout: docs.hbs
 - [Debugging - Getting Started](debugging-getting-started/)
 - [Easy profiling for Node.js Applications](simple-profiling/)
 - [Dockerizing a Node.js web app](nodejs-docker-webapp/)
+- [Migrating to safe Buffer constructors](buffer-constructor-deprecation/)
 
 
 ## Node.js core concepts
