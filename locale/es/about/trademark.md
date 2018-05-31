@@ -1,6 +1,6 @@
 ---
 layout: about.hbs
-title: Trademark Policy
+title: Política de marcas comerciales
 ---
 # Política de marcas comerciales
 
