@@ -6,8 +6,9 @@
   "scripts": {
     "build": "node build.js",
     "serve": "node server.js",
+    "external:survey": "rsync -avz --exclude 'node_modules*' --exclude 'package*' external/survey-2018/ build/en/user-survey-report",
     "gzip": "find build -type f \\( -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.xml' -o -name '*.json' \\) -exec gzip -kf9 {} \\;",
-    "deploy": "npm run build && npm run gzip",
+    "deploy": "npm run build && npm run external:survey && npm run gzip",
     "load-versions": "node scripts/load-versions.js",
     "start": "npm run serve",
     "test": "npm run test:lint && npm run test:unit && npm run test:smoke",
@@ -25,7 +26,8 @@
     "ignore": [
       "static/js/modernizr.custom.js",
       "static/js/dnt_helper.js",
-      "static/legacy/*"
+      "static/legacy/*",
+      "external"
     ]
   },
   "dependencies": {

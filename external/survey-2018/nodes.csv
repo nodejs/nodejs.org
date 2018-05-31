@@ -1,0 +1,46 @@
+name,value
+Node,0
+PostgreSQL,1
+MySQL,1
+MariaDB,1
+MongoDB,1
+Redis,1
+ElasticSearch,1
+SQLite,1
+CouchDB,1
+Cassandra,1
+JSON file,1
+React,2
+Angular,2
+Angular 2,2
+Vue,2
+jQuery,2
+Meteor,2
+Ember,2
+Express,3
+Hapi,3
+GraphQL,3
+Koa,3
+Restify,3
+RabbitMQ,4
+ZeroMQ,4
+ActiveMQ,4
+NSQ,4
+Docker,5
+Triton,5
+Kubernetes,5
+AWS Lambda,5
+IBM Whisk,5
+Apache Whisk,5
+Azure Functions,5
+Google Cloud Functions,5
+Circle,6
+Travis,6
+Codeship,6
+Shippable,6
+Jenkins,6
+HAProxy,7
+Nginx,7
+Apache HTTP,7
+Apache Traffic Server,7
+pm2,7
