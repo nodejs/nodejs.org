@@ -1,0 +1,10 @@
+{
+  "name": "survey-report-2018",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "uglifyjs -c -m -o {data,full,graph}.min.js {data,full,graph}.js"
+  },
+  "devDependencies": {
+    "uglify-js": "^3.3.28"
+  }
+}

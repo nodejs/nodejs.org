@@ -1,0 +1,467 @@
+source,target,weight
+Node,React,5
+Node,JSON file,5
+Node,Express,5
+Node,MongoDB,5
+React,Express,5
+JSON file,Express,5
+Node,Docker,5
+Node,jQuery,5
+MongoDB,Express,5
+Node,Nginx,5
+MongoDB,JSON file,5
+JSON file,React,4
+MongoDB,React,4
+React,Docker,4
+Express,Docker,5
+Node,PostgreSQL,5
+JSON file,Docker,5
+JSON file,Nginx,5
+Node,MySQL,5
+Express,Nginx,5
+MongoDB,Docker,5
+MongoDB,Nginx,5
+Node,pm2,5
+Node,Redis,5
+MySQL,Express,5
+JSON file,jQuery,4
+React,Nginx,4
+jQuery,Express,4
+Docker,Nginx,4
+MongoDB,jQuery,4
+Express,pm2,4
+Redis,Express,5
+Node,Angular 2,4
+Node,Angular,4
+Node,Jenkins,4
+PostgreSQL,Express,4
+PostgreSQL,JSON file,4
+MySQL,MongoDB,4
+MySQL,JSON file,4
+Node,Vue,3
+React,jQuery,3
+Node,GraphQL,3
+PostgreSQL,React,3
+Node,Travis,3
+Angular,Express,3
+jQuery,Docker,3
+MongoDB,Angular,3
+PostgreSQL,Docker,3
+MySQL,React,3
+PostgreSQL,MongoDB,3
+jQuery,Nginx,3
+JSON file,pm2,4
+Nginx,pm2,4
+MongoDB,pm2,4
+MongoDB,Redis,4
+Redis,React,4
+Redis,JSON file,4
+MySQL,Docker,4
+Node,ElasticSearch,4
+Redis,Nginx,4
+Redis,Docker,4
+MySQL,Nginx,4
+Angular 2,Express,3
+React,GraphQL,3
+Vue,Express,3
+JSON file,Angular 2,3
+JSON file,Vue,3
+Express,GraphQL,3
+JSON file,Angular,3
+JSON file,Jenkins,3
+React,Jenkins,3
+React,Travis,3
+MongoDB,Vue,3
+JSON file,Travis,3
+MongoDB,Angular 2,3
+Express,Travis,3
+Node,SQLite,3
+Express,Jenkins,3
+Docker,Jenkins,3
+JSON file,GraphQL,3
+React,pm2,3
+MySQL,jQuery,3
+PostgreSQL,Nginx,3
+Node,AWS Lambda,3
+Docker,pm2,4
+React,Angular,2
+React,Angular 2,2
+React,Vue,2
+Angular,Angular 2,2
+Vue,jQuery,2
+Angular,jQuery,3
+MongoDB,GraphQL,3
+Jenkins,Nginx,3
+Vue,Nginx,3
+Angular 2,Docker,3
+GraphQL,Docker,3
+Node,Apache HTTP,3
+Angular,Docker,3
+PostgreSQL,jQuery,3
+SQLite,JSON file,3
+Angular 2,Nginx,3
+React,AWS Lambda,3
+MongoDB,Jenkins,3
+Travis,Nginx,3
+Docker,Travis,3
+Express,AWS Lambda,3
+SQLite,Express,3
+Angular,Nginx,3
+MongoDB,Travis,3
+MySQL,Angular,3
+ElasticSearch,JSON file,3
+PostgreSQL,MySQL,3
+ElasticSearch,React,3
+Node,Hapi,3
+Redis,jQuery,3
+JSON file,AWS Lambda,3
+PostgreSQL,pm2,3
+MongoDB,ElasticSearch,3
+Node,Koa,3
+ElasticSearch,Express,3
+MongoDB,AWS Lambda,3
+MySQL,Angular 2,3
+Angular,pm2,3
+Redis,pm2,4
+MySQL,Redis,4
+Vue,Docker,2
+Angular 2,jQuery,2
+jQuery,Jenkins,2
+SQLite,React,2
+PostgreSQL,Angular,2
+PostgreSQL,GraphQL,2
+MongoDB,SQLite,2
+jQuery,GraphQL,2
+PostgreSQL,SQLite,2
+jQuery,Travis,2
+GraphQL,Nginx,2
+Redis,Vue,2
+ElasticSearch,Docker,3
+Docker,AWS Lambda,3
+ElasticSearch,Nginx,3
+AWS Lambda,Nginx,3
+PostgreSQL,Redis,3
+Redis,Angular,3
+jQuery,pm2,3
+Node,Kubernetes,3
+MySQL,Jenkins,3
+Docker,Kubernetes,3
+MySQL,pm2,3
+Redis,Jenkins,3
+Express,Apache HTTP,3
+Redis,ElasticSearch,3
+MySQL,ElasticSearch,3
+Redis,AWS Lambda,3
+Node,RabbitMQ,3
+Express,RabbitMQ,3
+MySQL,AWS Lambda,3
+PostgreSQL,Vue,1
+PostgreSQL,Jenkins,2
+Angular 2,Jenkins,2
+Angular,Jenkins,2
+PostgreSQL,Angular 2,2
+React,Koa,2
+MySQL,Vue,2
+JSON file,Apache HTTP,2
+MySQL,GraphQL,2
+React,Hapi,2
+JSON file,Hapi,2
+SQLite,jQuery,2
+SQLite,Nginx,2
+Node,MariaDB,2
+Vue,pm2,2
+SQLite,Docker,2
+MongoDB,Apache HTTP,2
+jQuery,Apache HTTP,2
+MySQL,SQLite,2
+Redis,Travis,2
+MariaDB,Express,2
+jQuery,AWS Lambda,2
+Redis,GraphQL,2
+Jenkins,pm2,3
+AWS Lambda,pm2,3
+PostgreSQL,AWS Lambda,3
+Express,Kubernetes,3
+Redis,Angular 2,3
+JSON file,Kubernetes,3
+ElasticSearch,pm2,3
+Redis,RabbitMQ,3
+MongoDB,RabbitMQ,3
+RabbitMQ,Nginx,3
+JSON file,RabbitMQ,3
+RabbitMQ,Docker,3
+Angular 2,Vue,1
+Node,Circle,1
+Node,Google Cloud Functions,2
+Express,Hapi,2
+Koa,Docker,2
+Angular 2,pm2,2
+MongoDB,Hapi,2
+Koa,Nginx,2
+GraphQL,Jenkins,2
+React,Kubernetes,2
+Hapi,Docker,2
+Express,Koa,2
+GraphQL,Travis,2
+Travis,Jenkins,2
+GraphQL,pm2,2
+Nginx,Apache HTTP,2
+ElasticSearch,jQuery,2
+Hapi,Nginx,2
+Express,Google Cloud Functions,2
+Angular,AWS Lambda,2
+JSON file,Google Cloud Functions,2
+PostgreSQL,Travis,2
+JSON file,Koa,2
+Kubernetes,Nginx,2
+MySQL,Apache HTTP,2
+MariaDB,MongoDB,2
+Docker,Apache HTTP,2
+ElasticSearch,GraphQL,2
+MongoDB,Google Cloud Functions,2
+ElasticSearch,Angular,2
+Hapi,pm2,2
+Angular 2,AWS Lambda,2
+PostgreSQL,ElasticSearch,2
+Redis,SQLite,2
+Travis,pm2,2
+MariaDB,Nginx,2
+GraphQL,AWS Lambda,2
+MongoDB,Koa,2
+AWS Lambda,Jenkins,2
+MySQL,MariaDB,2
+Redis,Hapi,2
+ElasticSearch,Jenkins,2
+Node,Restify,2
+MongoDB,Kubernetes,2
+MariaDB,Docker,2
+Express,Restify,2
+Node,CouchDB,2
+ElasticSearch,Angular 2,2
+SQLite,pm2,2
+ElasticSearch,AWS Lambda,2
+Redis,Kubernetes,2
+JSON file,Restify,2
+Google Cloud Functions,Nginx,2
+MariaDB,JSON file,2
+MySQL,Travis,2
+Node,HAProxy,2
+MongoDB,Restify,2
+MySQL,Hapi,2
+Express,HAProxy,2
+Docker,HAProxy,2
+MySQL,Koa,2
+React,RabbitMQ,2
+Redis,Koa,2
+PostgreSQL,Hapi,2
+RabbitMQ,pm2,2
+MySQL,Kubernetes,2
+jQuery,RabbitMQ,2
+HAProxy,Nginx,2
+Apache HTTP,pm2,2
+Redis,Apache HTTP,2
+JSON file,HAProxy,2
+ElasticSearch,Vue,2
+PostgreSQL,RabbitMQ,2
+MongoDB,HAProxy,2
+RabbitMQ,AWS Lambda,2
+MariaDB,Redis,2
+MySQL,RabbitMQ,2
+React,Apache HTTP,1
+React,Circle,1
+Angular,Vue,1
+Vue,Jenkins,1
+SQLite,Angular 2,1
+Express,Circle,1
+Angular 2,GraphQL,1
+React,Google Cloud Functions,1
+Angular,Travis,1
+Angular,GraphQL,1
+JSON file,Circle,1
+PostgreSQL,Koa,1
+Docker,Google Cloud Functions,1
+Circle,Nginx,1
+PostgreSQL,Apache HTTP,1
+jQuery,Hapi,1
+SQLite,GraphQL,1
+Docker,Circle,1
+Node,Meteor,1
+MongoDB,Meteor,1
+Angular 2,Apache HTTP,1
+Hapi,Travis,1
+MariaDB,jQuery,1
+MariaDB,React,1
+MongoDB,Circle,1
+PostgreSQL,MariaDB,1
+Jenkins,Apache HTTP,1
+Vue,AWS Lambda,1
+SQLite,Jenkins,1
+Meteor,Express,1
+Restify,Docker,1
+React,Restify,1
+jQuery,Google Cloud Functions,1
+CouchDB,JSON file,1
+jQuery,Kubernetes,1
+Angular,Apache HTTP,1
+Redis,Circle,1
+PostgreSQL,Circle,1
+MySQL,Google Cloud Functions,1
+Redis,Google Cloud Functions,1
+jQuery,Restify,1
+Restify,Nginx,1
+GraphQL,Kubernetes,1
+jQuery,Koa,1
+Hapi,AWS Lambda,1
+CouchDB,Docker,1
+MariaDB,pm2,1
+AWS Lambda,Travis,1
+SQLite,Apache HTTP,1
+CouchDB,Express,1
+Restify,pm2,1
+MariaDB,SQLite,1
+Koa,pm2,2
+Hapi,Jenkins,2
+Kubernetes,pm2,2
+ElasticSearch,Travis,2
+React,HAProxy,2
+PostgreSQL,Kubernetes,2
+ElasticSearch,Kubernetes,2
+Kubernetes,Jenkins,2
+ElasticSearch,RabbitMQ,2
+Redis,HAProxy,2
+RabbitMQ,Jenkins,2
+HAProxy,pm2,2
+MySQL,HAProxy,2
+Vue,Travis,0
+SQLite,Vue,0
+Vue,GraphQL,0
+Circle,Travis,0
+JSON file,Meteor,0
+React,Meteor,0
+Meteor,Docker,0
+Circle,pm2,0
+SQLite,Angular,1
+SQLite,Travis,1
+Node,Azure Functions,1
+Node,Ember,1
+Hapi,GraphQL,1
+Koa,Jenkins,1
+Angular,Kubernetes,1
+ElasticSearch,Hapi,1
+Vue,Koa,1
+GraphQL,Koa,1
+Kubernetes,Travis,1
+PostgreSQL,Google Cloud Functions,1
+Koa,Kubernetes,1
+Ember,Express,1
+Kubernetes,AWS Lambda,1
+Angular,Hapi,1
+Google Cloud Functions,pm2,1
+AWS Lambda,Google Cloud Functions,1
+Koa,AWS Lambda,1
+Restify,Jenkins,1
+CouchDB,Nginx,1
+SQLite,AWS Lambda,1
+Koa,Travis,1
+Angular,RabbitMQ,1
+MariaDB,ElasticSearch,1
+ElasticSearch,SQLite,1
+Hapi,Kubernetes,1
+AWS Lambda,Apache HTTP,1
+ElasticSearch,Google Cloud Functions,1
+Redis,Restify,1
+CouchDB,React,1
+RabbitMQ,Travis,1
+Node,Cassandra,1
+Jenkins,HAProxy,1
+Cassandra,Docker,1
+ElasticSearch,HAProxy,1
+Cassandra,Express,1
+MongoDB,Cassandra,1
+Redis,Cassandra,1
+MySQL,Restify,1
+MongoDB,CouchDB,1
+PostgreSQL,Restify,1
+MariaDB,Apache HTTP,1
+Redis,CouchDB,1
+GraphQL,RabbitMQ,1
+Hapi,RabbitMQ,1
+PostgreSQL,HAProxy,1
+SQLite,RabbitMQ,1
+MariaDB,Travis,1
+ElasticSearch,Apache HTTP,1
+MySQL,CouchDB,1
+Koa,RabbitMQ,1
+RabbitMQ,Kubernetes,2
+Vue,Hapi,0
+Angular,Google Cloud Functions,0
+GraphQL,Apache HTTP,0
+GraphQL,Circle,0
+GraphQL,Google Cloud Functions,0
+Angular 2,Kubernetes,0
+JSON file,Azure Functions,0
+jQuery,Circle,0
+Vue,Apache HTTP,0
+MariaDB,GraphQL,0
+MongoDB,Ember,0
+Meteor,GraphQL,0
+Meteor,Nginx,0
+AWS Lambda,Circle,0
+Node,Codeship,0
+Angular 2,Hapi,0
+Angular 2,Google Cloud Functions,0
+Vue,Circle,0
+React,Codeship,0
+Angular,Restify,0
+CouchDB,Vue,0
+Docker,Azure Functions,0
+Angular,Circle,0
+jQuery,Meteor,0
+Circle,Jenkins,0
+PostgreSQL,Meteor,0
+Express,Codeship,0
+Hapi,Circle,0
+MariaDB,Angular,0
+PostgreSQL,CouchDB,0
+MariaDB,Jenkins,0
+ElasticSearch,Circle,0
+Google Cloud Functions,Travis,0
+CouchDB,jQuery,0
+React,Ember,0
+Cassandra,Nginx,0
+CouchDB,Travis,0
+SQLite,Kubernetes,0
+MariaDB,Vue,0
+MySQL,Circle,0
+jQuery,HAProxy,0
+MySQL,Meteor,0
+MariaDB,Angular 2,0
+Cassandra,JSON file,0
+Hapi,Koa,0
+Vue,Google Cloud Functions,0
+MongoDB,Codeship,0
+SQLite,Restify,0
+Vue,Restify,0
+Vue,RabbitMQ,0
+Redis,Meteor,0
+SQLite,HAProxy,0
+MariaDB,AWS Lambda,0
+CouchDB,pm2,0
+Redis,Codeship,0
+GraphQL,HAProxy,0
+CouchDB,AWS Lambda,0
+Vue,HAProxy,0
+Angular 2,Travis,1
+Angular 2,Koa,1
+MongoDB,Azure Functions,1
+Angular 2,Restify,1
+JSON file,Ember,1
+ElasticSearch,Koa,1
+ElasticSearch,Restify,1
+Angular 2,RabbitMQ,1
+Restify,AWS Lambda,1
+Kubernetes,HAProxy,1
+AWS Lambda,HAProxy,1
+RabbitMQ,HAProxy,1
+Ember,Docker,1
+RabbitMQ,Apache HTTP,1
