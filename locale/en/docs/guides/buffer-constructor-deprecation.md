@@ -95,8 +95,8 @@ There are three different polyfills available:
   You would take exactly the same steps as in [Variant 1](#variant-1), but with a polyfill
   `const Buffer = require('safer-buffer').Buffer` in all files where you use the new `Buffer` API.
 
-  Make sure that you do not use old `new Buffer` API — in any files where the line above is added,
-  using old `new Buffer()` API will _throw_. It will be easy to notice that in CI, though.
+  Do not use the old `new Buffer` API. In any files where the line above is added,
+  using old `new Buffer()` API will _throw_.
 
 - **[buffer-from](https://www.npmjs.com/package/buffer-from) and/or
   [buffer-alloc](https://www.npmjs.com/package/buffer-alloc)** are
