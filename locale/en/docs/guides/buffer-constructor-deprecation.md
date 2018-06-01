@@ -92,27 +92,36 @@ your users will not observe a runtime deprecation warning when running your code
 <a id="variant-2"></a>
 ## Variant 2: Use a polyfill
 
-Utilize [safer-buffer](https://www.npmjs.com/package/safer-buffer) as a polyfill to support older
-Node.js versions.
+There are three different polyfills available:
 
-You would take exactly the same steps as in [Variant 1](#variant-1), but with a polyfill
-`const Buffer = require('safer-buffer').Buffer` in all files where you use the new `Buffer` API.
+- **[safer-buffer](https://www.npmjs.com/package/safer-buffer)** is a drop-in replacement for the
+  entire `Buffer` API, that will _throw_ when using `new Buffer()`.
 
-Make sure that you do not use old `new Buffer` API — in any files where the line above is added,
-using old `new Buffer()` API will _throw_. It will be easy to notice that in CI, though.
+  You would take exactly the same steps as in [Variant 1](#variant-1), but with a polyfill
+  `const Buffer = require('safer-buffer').Buffer` in all files where you use the new `Buffer` API.
 
-Alternatively, you could use [buffer-from](https://www.npmjs.com/package/buffer-from) and/or
-[buffer-alloc](https://www.npmjs.com/package/buffer-alloc) [ponyfills](https://ponyfill.com/) —
-those are great, the only downsides being 4 additional dependencies and slightly more code changes to
-migrate off them (as you would be using e.g. `Buffer.from` under a different name). If you need only
-`Buffer.from` polyfilled — `buffer-from` alone which comes with no extra dependencies.
+  Do not use the old `new Buffer` API. In any files where the line above is added,
+  using old `new Buffer()` API will _throw_.
 
-_Alternatively, you could use [safe-buffer](https://www.npmjs.com/package/safe-buffer) — it also
-provides a polyfill, but takes a different approach which has
-[its drawbacks](https://github.com/chalker/safer-buffer#why-not-safe-buffer). It will allow you
-to also use the older `new Buffer()` API in your code, though — but that's arguably a benefit, as
-it is problematic, can cause issues in your code, and will start emitting runtime deprecation
-warnings starting with Node.js 10._
+- **[buffer-from](https://www.npmjs.com/package/buffer-from) and/or
+  [buffer-alloc](https://www.npmjs.com/package/buffer-alloc)** are
+  [ponyfills](https://ponyfill.com/) for their respective part of the `Buffer` API. You only need
+  to add the package(s) corresponding to the API you are using.
+
+  You would import the module needed with an appropriate name, e.g.
+  `const bufferFrom = require('buffer-from')` and then use that instead of the call to
+  `new Buffer`, e.g. `new Buffer('test')` becomes `bufferFrom('test')`.
+
+  A downside with this approach is slightly more code changes to migrate off them (as you would be
+  using e.g. `Buffer.from` under a different name).
+
+- **[safe-buffer](https://www.npmjs.com/package/safe-buffer)** is also a drop-in replacement for
+  the entire `Buffer` API, but using `new Buffer()` will still work as before.
+
+  A downside to this approach is that it will allow you to also use the older `new Buffer()` API
+  in your code, which is problematic since it can cause issues in your code, and will start
+  emitting runtime deprecation warnings starting with Node.js 10
+  ([read more here](https://github.com/chalker/safer-buffer#why-not-safe-buffer)).
 
 Note that in either case, it is important that you also remove all calls to the old Buffer
 API manually — just throwing in `safe-buffer` doesn't fix the problem by itself, it just provides
