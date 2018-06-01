@@ -110,7 +110,7 @@ There are three different polyfills available:
   A downside with this approach is slightly more code changes to migrate off them (as you would be
   using e.g. `Buffer.from` under a different name).
 
-- **[safe-buffer](https://www.npmjs.com/package/safe-buffer)** is also a drop in replacement for
+- **[safe-buffer](https://www.npmjs.com/package/safe-buffer)** is also a drop-in replacement for
   the entire `Buffer` API, but using `new Buffer()` will still work as before.
 
   A downside to this approach is that it will allow you to also use the older `new Buffer()` API
