@@ -1,3 +1,8 @@
+---
+title: Porting to the Buffer.from/Buffer.alloc API
+layout: docs.hbs
+---
+
 # Porting to the Buffer.from/Buffer.alloc API
 
 <a id="overview"></a>
