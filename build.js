@@ -254,9 +254,9 @@ function getSource (callback) {
           lts: latestVersion.lts(versions)
         },
         banner: {
-          visible: false,
-          text: 'Important March 2018 security upgrades now available',
-          link: '/en/blog/vulnerability/march-2018-security-releases/'
+          visible: true,
+          text: 'June 2018 Security Releases',
+          link: '/en/blog/vulnerability/june-2018-security-releases/'
         }
       }
     }
