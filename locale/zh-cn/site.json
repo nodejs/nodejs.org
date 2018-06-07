@@ -5,7 +5,7 @@
   "locale": "zh-cn",
   "scrollToTop": "回到页顶",
   "reportNodeIssue": "报告 Node.js 问题 ",
-  "reportWebsiteIssue": "报告 Node.js 网站问题",
+  "reportWebsiteIssue": "报告网站问题",
   "getHelpIssue": "获取帮助",
   "by": "于",
   "all-downloads": "所有下载选项",
@@ -32,7 +32,7 @@
   },
   "about": {
     "link": "about",
-    "text": "关于我们",
+    "text": "关于",
     "governance": {
       "link": "about/governance",
       "text": "管理规则"
@@ -71,7 +71,9 @@
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "查看发布文件的 SHASUM 签名"
+      "text": "查看发布文件的 SHASUM 签名",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "如何校验"
     }
   },
   "docs": {
@@ -79,7 +81,7 @@
     "text": "文档",
     "es6": {
       "link": "docs/es6",
-      "text": "ES6 相关"
+      "text": "ES6 及更高"
     },
     "inspector": {
       "link": "docs/inspector",
@@ -121,7 +123,7 @@
   },
   "blog": {
     "link": "blog",
-    "text": "博客"
+    "text": "新闻"
   },
   "foundation": {
     "link": "https://foundation.nodejs.org/",
