@@ -1,7 +1,6 @@
-
 ---
 name: 📗 Node.js API Docs
-about: Please open an issue in the main [Node.js repo](https://github.com/nodejs/node/issues/), prefixed with "doc".
+about: Please open an issue in the main Node.js repo, prefixed with "doc".
 
 ---
 <!--
