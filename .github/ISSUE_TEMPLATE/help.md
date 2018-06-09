@@ -4,6 +4,6 @@ about: Need help with Node.js? File an Issue [here](https://github.com/nodejs/he
 
 ---
 <!--
-We have a special help section for general quesitons about Node.js:
+We have a special help section for general questions about Node.js:
 https://github.com/nodejs/help/issues/
 -->

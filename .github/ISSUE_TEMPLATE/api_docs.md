@@ -6,5 +6,5 @@ about: Please open an issue in the main [Node.js repo](https://github.com/nodejs
 ---
 <!--
 For issues regarding the Node.js API docs, please head over to:
-https://github.com/nodejs/node/issues/ (prefix your issue name with "doc")
+https://github.com/nodejs/node/issues/ (prefix your issue name with "doc").
 -->
