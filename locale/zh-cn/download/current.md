@@ -13,9 +13,9 @@ downloads:
         在你的平台上下载 Node.js 源码或预编译安装包，然后即可马上进行开发。
     currentVersion: 当前最新版本
     buildInstructions: 在支持的平台上，使用源代码构建 Node.js
-    WindowsInstaller: Windows 安装器
+    WindowsInstaller: Windows 安装包
     WindowsBinary: Windows 二进制文件
-    MacOSInstaller: macOS 安装器
+    MacOSInstaller: macOS 安装包
     MacOSBinary: macOS 二进制文件
     LinuxBinaries: Linux 二进制文件
     SourceCode: 源码
