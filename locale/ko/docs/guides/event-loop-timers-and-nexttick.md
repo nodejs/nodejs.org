@@ -162,7 +162,7 @@ any.
 * **poll**: 새로운 I/O 이벤트를 가져옵니다. I/O와 연관된 콜백(클로즈 콜백, 타이머로 스케줄링된 콜백,
   `setImmediate()`를 제외한 거의 모든 콜백)을 실행합니다. 적절한 시기에 node는 여기서 블록 합니다.
 * **check**: `setImmediate()` 콜백은 여기서 호출됩니다.
-* **close callbacks**: 예시: `socket.on('close', ...)`
+* **close callbacks**: 일부 close 콜백들, 예를 들어 `socket.on('close', ...)`.
 
 이벤트 루프가 실행하는 사이 Node.js는 다른 비동기 I/O나 타이머를 기다리고 있는지
 확인하고 기다리고 있는 것이 없다면 깔끔하게 종료합니다.
