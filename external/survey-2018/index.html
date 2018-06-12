@@ -3,6 +3,25 @@
 <head>
   <meta charset="utf-8">
   <title>Web Survey Report 2018 | Node.js</title>
+
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+  <link rel="icon" sizes="32x32" type="image/png" href="/static/favicon.png">
+
+  <meta property="og:site_name" content="Node.js">
+  <meta property="og:title" content="Web Survey Report 2018 | Node.js">
+  <meta property="og:image" content="https://nodejs.org/static/images/logo-hexagon-card.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="224">
+  <meta property="og:image:height" content="256">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@nodejs">
+  <meta name="twitter:title" content="Web Survey Report 2018 | Node.js">
+  <meta name="twitter:image" content="https://nodejs.org/static/images/logo-hexagon-card.png">
+  <meta name="twitter:image:alt" content="The Node.js Hexagon Logo">
+
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="bootstrap.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" >
@@ -2228,7 +2247,22 @@ https://twitter.com/intent/tweet?text=Check%20out%20Availability%20of%20Multiple
   <script src="d3.v3.min.js"></script>
   <script src="data.min.js"></script>
   <script src="full.min.js"></script>
+
+  <script src="/static/js/dnt_helper.js"></script>
   <script>
+    (function(){
+      if (!_dntEnabled()) {
+        !function(n,o,d,e,j,s){n.GoogleAnalyticsObject=d;n[d]||(n[d]=function(){
+        (n[d].q=n[d].q||[]).push(arguments)});n[d].l=+new Date;j=o.createElement(e);
+        s=o.getElementsByTagName(e)[0];j.async=1;j.src='//www.google-analytics.com/analytics.js';
+        s.parentNode.insertBefore(j,s)}(window,document,'ga','script');
+
+        if (!ga) return;
+
+        ga('create', 'UA-67020396-1', 'auto');
+        ga('send', 'pageview');
+      }
+    })();
   </script>
 </body>
 </html>
