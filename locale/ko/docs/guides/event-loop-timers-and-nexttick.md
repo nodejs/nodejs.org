@@ -47,7 +47,7 @@ order of operations.
 ┌─>│        timers         │
 │  └──────────┬────────────┘
 │  ┌──────────┴────────────┐
-│  │     I/O callbacks     │
+│  │   pending callbacks   │
 │  └──────────┬────────────┘
 │  ┌──────────┴────────────┐
 │  │     idle, prepare     │
@@ -80,7 +80,7 @@ Node.js를 시작할 때 이벤트 루프를 초기화하고 제공된 입력 �
 ┌─>│        timers         │
 │  └──────────┬────────────┘
 │  ┌──────────┴────────────┐
-│  │     I/O callbacks     │
+│  │   pending callbacks   │
 │  └──────────┬────────────┘
 │  ┌──────────┴────────────┐
 │  │     idle, prepare     │
@@ -142,12 +142,11 @@ _**NOTE:** 윈도우와 Unix/Linux 구현체간에 약간의 차이가 있지만
 
 * **timers**: this phase executes callbacks scheduled by `setTimeout()`
  and `setInterval()`.
-* **I/O callbacks**: executes almost all callbacks with the exception of
- close callbacks, the ones scheduled by timers, and `setImmediate()`.
+* **pending callbacks**: executes I/O callbacks deferred to the next loop iteration.
 * **idle, prepare**: only used internally.
-* **poll**: retrieve new I/O events; node will block here when appropriate.
+* **poll**: retrieve new I/O events; execute I/O related callbacks (almost all with the exception of close callbacks, the ones scheduled by timers, and `setImmediate()`); node will block here when appropriate.
 * **check**: `setImmediate()` callbacks are invoked here.
-* **close callbacks**: e.g. `socket.on('close', ...)`.
+* **close callbacks**: some close callbacks, e.g. `socket.on('close', ...)`.
 
 Between each run of the event loop, Node.js checks if it is waiting for
 any asynchronous I/O or timers and shuts down cleanly if there are not
@@ -158,12 +157,12 @@ any.
 
 * **timers**: 이 단계는 `setTimeout()`과 `setInterval()`로 스케줄링한
   콜백을 실행합니다.
-* **I/O callbacks**: 클로즈 콜백, 타이머로 스케줄링된 콜백,
-  `setImmediate()`를 제외한 거의 모든 콜백을 실행합니다.
+* **pending callbacks**: 다음 루프 반복으로 연기된 I/O 콜백들을 실행합니다.
 * **idle, prepare**: 내부용으로만 사용합니다.
-* **poll**: 새로운 I/O 이벤트를 가져옵니다. 적절한 시기에 node는 여기서 블록 합니다.
+* **poll**: 새로운 I/O 이벤트를 가져옵니다. I/O와 연관된 콜백(클로즈 콜백, 타이머로 스케줄링된 콜백,
+  `setImmediate()`를 제외한 거의 모든 콜백)을 실행합니다. 적절한 시기에 node는 여기서 블록 합니다.
 * **check**: `setImmediate()` 콜백은 여기서 호출됩니다.
-* **close callbacks**: 예시: `socket.on('close', ...)`
+* **close callbacks**: 일부 close 콜백들, 예를 들어 `socket.on('close', ...)`.
 
 이벤트 루프가 실행하는 사이 Node.js는 다른 비동기 I/O나 타이머를 기다리고 있는지
 확인하고 기다리고 있는 것이 없다면 깔끔하게 종료합니다.
@@ -291,19 +290,19 @@ Note: **poll** 단계가 이벤트 루프를 모두 차지하지 않게 하기 �
 멈추는 하는 하드 최댓값(시스템에 따라 다릅니다.)도 가집니다.
 
 <!--
-### I/O callbacks
+### pending callbacks
 
 This phase executes callbacks for some system operations such as types
 of TCP errors. For example if a TCP socket receives `ECONNREFUSED` when
 attempting to connect, some \*nix systems want to wait to report the
-error. This will be queued to execute in the **I/O callbacks** phase.
+error. This will be queued to execute in the **pending callbacks** phase.
 -->
 
-### I/O 콜백
+### pending 콜백
 
 이 단계에서는 TCP 오류 같은 시스템 작업의 콜백을 실행합니다. 예를 들어 TCP 소켓이
 연결을 시도하다가 `ECONNREFUSED`를 받으면 일부 \*nix 시스템은 오류를 보고하기를
-기다리려고 합니다. 이는 **I/O callbacks** 단계에서 실행되기 위해 큐에 추가될 것입니다.
+기다리려고 합니다. 이는 **pending callbacks** 단계에서 실행되기 위해 큐에 추가될 것입니다.
 
 <!--
 ### poll
@@ -385,7 +384,7 @@ and the **poll** phase becomes idle, it will end and continue to the
 ### check
 
 이 단계는 **poll** 단계가 완료된 직후 사람이 콜백을 실행할 수 있게 합니다. **poll**
-단계가 유휴상태가 되고 스크립트가 `setImmediate()`로 큐에 추가되었다면 이벤트 루프틑
+단계가 유휴상태가 되고 스크립트가 `setImmediate()`로 큐에 추가되었다면 이벤트 루프를
 기다리지 않고 **check** 단계를 계속할 것입니다.
 
 `setImmediate()`는 사실 이벤트 루프의 별도 단계에서 실행되는 특수한 타이머입니다.
