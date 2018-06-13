@@ -1,7 +1,7 @@
 ---
 layout: download-releases.hbs
 title: 過去的版本
-modules: "<code>NODE_MODULE_VERSION</code> 指的是 Node.js 的 ABI (application binary interface) 版本編號，用来確定編譯 Node.js 的 C++ 函式庫版本，以確定是否可以直接使用而不需重新編譯。在早期版本中其作为一位十六進位值来儲存，而现在則為一個整數。"
+modules: "<code>NODE_MODULE_VERSION</code> 指的是 Node.js 的 ABI (application binary interface) 版本編號，用来確定編譯 Node.js 的 C++ 函式庫版本，以確定是否可以直接使用而不需重新編譯。在早期版本中其作为一位十六進位值來儲存，而現在則為一個整數。"
 ---
 
 ### io.js 与 Node.js
