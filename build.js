@@ -255,7 +255,7 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'June 2018 Security Releases',
+          text: 'Important June 2018 security upgrades now available',
           link: '/en/blog/vulnerability/june-2018-security-releases/'
         }
       }
