@@ -22,7 +22,7 @@ downloads:
 additional:
     headline: 其它平台
     intro: >
-        Node.js 社群為其它平台維護非官方的建構。請註意這些構建並不受 Node.js 核心團隊技術支持且可能尚未跟 Node.js 的目前發布版本保持一致。
+        Node.js 社群為其它平台維護非官方的建構。請注意這些構建並不受 Node.js 核心團隊技術支持且可能尚未跟 Node.js 的目前發布版本保持一致。
     platform: 平台
     provider: 提供者
     SunOSBinaries: SunOS Binaries
