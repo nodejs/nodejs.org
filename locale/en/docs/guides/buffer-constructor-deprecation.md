@@ -160,8 +160,9 @@ let buf;
 if (Buffer.from && Buffer.from !== Uint8Array.from) {
   buf = Buffer.from(notNumber, encoding);
 } else {
-  if (typeof notNumber === 'number')
-    throw new Error('The "size" argument must be of type number.');
+  if (typeof notNumber === 'number') {
+    throw new Error('The "size" argument must be not of type number.');
+  }
   buf = new Buffer(notNumber, encoding);
 }
 ```
