@@ -10,7 +10,9 @@ layout: docs.hbs
 
 This guide explains how to migrate to safe Buffer constructor methods. The migration fixes the following deprecation warning:
 
-`The Buffer() and new Buffer() constructors are not recommended for use due to security and usability concerns. Please use the new Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() construction methods instead.`
+<div class="highlight-box"> 
+The Buffer() and new Buffer() constructors are not recommended for use due to security and usability concerns. Please use the new Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() construction methods instead.
+</div>
 
 - [Variant 1: Drop support for Node.js ≤ 4.4.x and 5.0.0 — 5.9.x.](#variant-1) (*recommended*)
 - [Variant 2: Use a polyfill](#variant-2)
@@ -33,7 +35,7 @@ If you’re using Node.js ≥ 8.0.0 (which is recommended), Node.js exposes mult
 
 You can set these flags using an environment variable:
 
-```console
+```bash
 $ export NODE_OPTIONS='--trace-warnings --pending-deprecation'
 $ cat example.js
 'use strict';
