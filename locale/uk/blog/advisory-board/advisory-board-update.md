@@ -6,7 +6,7 @@ slug: advisory-board-update
 layout: blog-post.hbs
 ---
 
-A lot has been happening in Node.js, so I wanted bring everyone up to date on
+A lot has been happening in Node.js, so I wanted to bring everyone up to date on
 where we are with regards to the advisory board, its working groups, and the
 release of v0.12.
 
