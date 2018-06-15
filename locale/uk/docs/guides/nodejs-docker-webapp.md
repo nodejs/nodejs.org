@@ -267,7 +267,7 @@ on Docker.
 You can find more information about Docker and Node.js on Docker in the
 following places:
 
-* [Official Node.js Docker Image](https://registry.hub.docker.com/_/node/)
+* [Official Node.js Docker Image](https://hub.docker.com/_/node/)
 * [Node.js Docker Best Practices Guide](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 * [Official Docker documentation](https://docs.docker.com/)
 * [Docker Tag on Stack Overflow](https://stackoverflow.com/questions/tagged/docker)

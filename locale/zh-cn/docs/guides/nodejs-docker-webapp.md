@@ -230,7 +230,7 @@ Hello world
 
 你也可以在以下一些地方寻觅到更多有关于 Docker 和基于 Docker 的 Node.js 相关内容：
 
-* [官方 Node.js 的 Docker 镜像](https://registry.hub.docker.com/_/node/)
+* [官方 Node.js 的 Docker 镜像](https://hub.docker.com/_/node/)
 * [Node.js 基于 Docker 使用的最佳经验](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 * [官方 Docker 文档](https://docs.docker.com/)
 * [在 StackOverFlow 上有关 Docker 标记内容](https://stackoverflow.com/questions/tagged/docker)
