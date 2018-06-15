@@ -82,11 +82,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `carbon` of `node`
+Here we will use the latest LTS (long term support) version `8` of `node`
 available from the [Docker Hub](https://hub.docker.com/):
 
 ```docker
-FROM node:carbon
+FROM node:8
 ```
 
 Next we create a directory to hold the application code inside the image, this
@@ -144,7 +144,7 @@ CMD [ "npm", "start" ]
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:carbon
+FROM node:8
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -195,7 +195,7 @@ $ docker images
 
 # Example
 REPOSITORY                      TAG        ID              CREATED
-node                            carbon     1934b0b038d1    5 days ago
+node                            8          1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
