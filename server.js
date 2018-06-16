@@ -37,18 +37,22 @@ const statics = chokidar.watch(path.join(__dirname, 'static'), opts)
 
 // Redirect mechanism meant as a fix for languages where some pages
 // has not translated yet, therefore redirect to the english equivalent,
-// which ofc isn't the correct language, but better than a 404-page
+// which isn't the correct language, but better than a 404-page
 function redirectToEnglishUrl (req, res) {
   return () => {
-    const isAlreadyEnglish = req.url.startsWith('/en')
-    const urlContainsLanguage = req.url.split('/').length > 2
+    // Union the Url to lower case (ignore the case sensitive)
+    // E.g: `zh-cn` equals to `zh-CN`
+    const url = req.url.toLowerCase()
+
+    const isAlreadyEnglish = url.startsWith('/en')
+    const urlContainsLanguage = url.split('/').length > 2
 
     if (isAlreadyEnglish || !urlContainsLanguage) {
       res.writeHead(404, 'Not found')
       return res.end()
     }
 
-    let englishUrl = req.url.replace(/^\/\w+\//, '/en/')
+    const englishUrl = url.replace(/^\/\w+\//, '/en/')
 
     res.writeHead(302, {
       location: englishUrl
