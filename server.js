@@ -36,7 +36,7 @@ const layouts = chokidar.watch(path.join(__dirname, 'layouts'), opts)
 const statics = chokidar.watch(path.join(__dirname, 'static'), opts)
 
 // Redirect mechanism meant as a fix for languages where some pages
-// has not translated yet, therefore redirect to the english equivalent,
+// have not been translated yet, therefore redirect to the english equivalent,
 // which isn't the correct language, but better than a 404-page
 function redirectToEnglishUrl (req, res) {
   return () => {
