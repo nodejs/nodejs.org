@@ -312,12 +312,11 @@ pkg_add node
 
 在以下安装包中，Node.js在以下主版本库中可用：
 
- - **openSUSE Leap 42.2**: `nodejs4`
- - **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
- - **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
- - **SUSE Linux Enterprise Server (SLES) 12**<sup>1</sup>: `nodejs4`, `nodejs6`
-
-<sup>1:</sup>“Web 和 Scripting 模块” [安装前必须添加](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html)。
+* **openSUSE Leap 42.2**: `nodejs4`
+* **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
+* **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
+* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`  
+  （“Web 和 Scripting 模块” [安装前必须添加](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html)。）
 
 举个例子，在 openSUSE Leap 42.2 上安装 Node.js，用 root 角色运行命令：
 
