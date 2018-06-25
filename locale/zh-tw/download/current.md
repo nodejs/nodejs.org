@@ -10,7 +10,7 @@ downloads:
     tagline-lts: 推薦大多數使用者使用
     display-hint: 顯示
     intro: >
-        在你的平台上下載 Node.js 原始碼或者安裝套件，立刻開始使用 Node.js。
+        下載適合你的平台的 Node.js 原始碼或安裝套件，立刻開始使用 Node.js。
     currentVersion: 目前版本
     buildInstructions: 在支援的平台上，使用原始碼建構 Node.js
     WindowsInstaller: Windows 安裝包
@@ -22,7 +22,7 @@ downloads:
 additional:
     headline: 其它平台
     intro: >
-        Node.js 社群為其它平台維護非官方的建構。請注意這些構建並不受 Node.js 核心團隊技術支持且可能尚未跟 Node.js 的目前發布版本保持一致。
+        Node.js 社群為其它平台維護的非官方建構。請注意 Node.js 團隊並不為這些建構提供技術支援且其可能與現行 Node.js 版本不一致。
     platform: 平台
     provider: 提供者
     SunOSBinaries: SunOS 二進制檔案
