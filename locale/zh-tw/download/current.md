@@ -10,7 +10,7 @@ downloads:
     tagline-lts: 推薦大多數使用者使用
     display-hint: 顯示
     intro: >
-        下載適合你的平台的 Node.js 原始碼或安裝包，並立刻開始使用 Node.js。
+        下載適合你的平台的 Node.js 原始碼或安裝套件，立刻開始使用 Node.js。
     currentVersion: 目前版本
     buildInstructions: 在支援的平台上，使用原始碼建構 Node.js
     WindowsInstaller: Windows 安裝包
