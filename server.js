@@ -34,28 +34,34 @@ const opts = {
 const locales = chokidar.watch(path.join(__dirname, 'locale'), opts)
 const layouts = chokidar.watch(path.join(__dirname, 'layouts'), opts)
 const statics = chokidar.watch(path.join(__dirname, 'static'), opts)
+const fs = require('fs')
+// Read all the langs under `locale`
+const SUPPORTED_LANGUAGES = new Set(fs.readdirSync(path.join(__dirname, 'locale')))
 
 // Redirect mechanism meant as a fix for languages where some pages
 // have not been translated yet, therefore redirect to the english equivalent,
 // which isn't the correct language, but better than a 404-page
 function redirectToEnglishUrl (req, res) {
   return () => {
-    // Union the Url to lower case (ignore the case sensitive)
-    // E.g: `zh-cn` equals to `zh-CN`
-    const url = req.url.toLowerCase()
-
-    const isAlreadyEnglish = url.startsWith('/en')
-    const urlContainsLanguage = url.split('/').length > 2
-
-    if (isAlreadyEnglish || !urlContainsLanguage) {
-      res.writeHead(404, 'Not found')
-      return res.end()
+    // Url should be case insensitive.(e.g: zh-CN = zh-cn),
+    // So we should make a convert to the lower case and check the route values.
+    let url = req.url.toLowerCase()
+    const splitedValues = url.split('/')
+    // For urls like `/blog`, add `en` before that
+    if (splitedValues.length === 2) {
+      splitedValues[0] = 'en'
+      url = splitedValues.join('/').trim()
+    } else if (splitedValues[1] !== 'en' && SUPPORTED_LANGUAGES.has(splitedValues[1])) {
+      // For urls like `/lang/docs/`.
+      // If we found the lang in our set, this means the specific lang
+      // doesn't have proper translated pages yet, so force the default
+      // lang to `en`.
+      splitedValues[1] = 'en'
+      url = splitedValues.join('/').trim()
     }
 
-    const englishUrl = url.replace(/^\/\w+\//, '/en/')
-
     res.writeHead(302, {
-      location: englishUrl
+      location: url
     })
     res.end()
   }
@@ -93,6 +99,11 @@ statics.on('add', (filePath) => {
 
 // Initializes the server and mounts it in the generated build directory.
 http.createServer((req, res) => {
+  // If we are accessing the root, it should be redirected to `/en` instead.
+  // We shouldn't get a 404 page.
+  if (req.url === '/') {
+    req.url = '/en'
+  }
   mount(req, res, redirectToEnglishUrl(req, res))
 }).listen(port, () => console.log(`http://localhost:${port}/en/`))
 
