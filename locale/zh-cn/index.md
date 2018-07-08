@@ -1,7 +1,7 @@
 ---
 layout: index.hbs
 labels:
-  banner: 重要的安全版本，请立即更新！
+  banner: 崩溃和幽灵(漏洞) - 对Node.js的影响
   current-version: 当前版本
   download: 下载
   download-for: 下载为
