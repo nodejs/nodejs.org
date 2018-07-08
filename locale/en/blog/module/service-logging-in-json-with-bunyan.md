@@ -60,17 +60,17 @@ Blah, some other unstructured output to from a console.log call.
 
 <h1 style="margin:48px 0 24px;" id="json-for-logs">JSON for Logs</h1>
 
-<p><code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">JSON.parse()</code> solves all that. Let's log in JSON. But it means a change in thinking: <strong>The first-level audience for log files shouldn't be a person, but a machine.</strong></p>
+<p><code>JSON.parse()</code> solves all that. Let's log in JSON. But it means a change in thinking: <strong>The first-level audience for log files shouldn't be a person, but a machine.</strong></p>
 
-<p>That is not said lightly. The "Unix Way" of small focused tools lightly coupled with text output is important. JSON is less "text-y" than, e.g., Apache common log format. JSON makes <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">grep</code> and <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">awk</code> awkward. Using <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">less</code> directly on a log is handy.</p>
+<p>That is not said lightly. The "Unix Way" of small focused tools lightly coupled with text output is important. JSON is less "text-y" than, e.g., Apache common log format. JSON makes <code>grep</code> and <code>awk</code> awkward. Using <code>less</code> directly on a log is handy.</p>
 
-<p>But not handy enough. That <a href="http://bit.ly/wTPlN3">80's pastel jumpsuit awkwardness</a> you're feeling isn't the JSON, it's your tools. Time to find a <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">json</code> tool -- <a href="https://github.com/trentm/json">json</a> is one, <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">bunyan</code> described below is another one. Time to learn your JSON library instead of your regex library: <a href="https://developer.mozilla.org/en/JSON">JavaScript</a>, <a href="http://docs.python.org/library/json.html">Python</a>, <a href="http://flori.github.com/json/">Ruby</a>, <a href="http://json.org/java/">Java</a>, <a href="http://search.cpan.org/~makamaka/JSON-2.53/lib/JSON.pm">Perl</a>.</p>
+<p>But not handy enough. That <a href="http://bit.ly/wTPlN3">80's pastel jumpsuit awkwardness</a> you're feeling isn't the JSON, it's your tools. Time to find a <code>json</code> tool -- <a href="https://github.com/trentm/json">json</a> is one, <code>bunyan</code> described below is another one. Time to learn your JSON library instead of your regex library: <a href="https://developer.mozilla.org/en/JSON">JavaScript</a>, <a href="http://docs.python.org/library/json.html">Python</a>, <a href="http://flori.github.com/json/">Ruby</a>, <a href="http://json.org/java/">Java</a>, <a href="http://search.cpan.org/~makamaka/JSON-2.53/lib/JSON.pm">Perl</a>.</p>
 
 <p>Time to burn your log4j Layout classes and move formatting to the tools side. Creating a log message with semantic information and throwing that away to make a string is silly. The win at being able to trivially parse log records is huge. The possibilities at being able to add ad hoc structured information to individual log records is interesting: think program state metrics, think feeding to Splunk, or loggly, think easy audit logs.</p>
 
 <h1 style="margin:48px 0 24px;" id="introducing-bunyan">Introducing Bunyan</h1>
 
-<p><a href="https://github.com/trentm/node-bunyan">Bunyan</a> is <strong>a node.js module for logging in JSON</strong> and <strong>a <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">bunyan</code> CLI tool</strong> to view those logs.</p>
+<p><a href="https://github.com/trentm/node-bunyan">Bunyan</a> is <strong>a node.js module for logging in JSON</strong> and <strong>a <code>bunyan</code> CLI tool</strong> to view those logs.</p>
 
 <p>Logging with Bunyan basically looks like this:</p>
 
@@ -86,7 +86,7 @@ log.info("hi %s", "paul");
 {"name":"hello","hostname":"banana.local","pid":40026,"level":30,"msg":"hi paul","time":"2012-03-28T17:25:37.050Z","v":0}
 </code></pre>
 
-<p>Pipe that through the <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">bunyan</code> tool that is part of the "node-bunyan" install to get more readable output:</p>
+<p>Pipe that through the <code>bunyan</code> tool that is part of the "node-bunyan" install to get more readable output:</p>
 
 <pre style="overflow:auto;color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:5px;"><code>$ node hi.js | ./node_modules/.bin/bunyan       # formatted text output
 [2012-02-07T18:50:18.003Z]  INFO: hello/40026 on banana.local: hi paul
@@ -103,7 +103,7 @@ $ node hi.js | ./node_modules/.bin/bunyan -j    # indented JSON output
 }
 </code></pre>
 
-<p>Bunyan is log4j-like: create a Logger with a name, call <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">log.info(...)</code>, etc. However it has no intention of reproducing much of the functionality of log4j. IMO, much of that is overkill for the types of services you'll tend to be writing with node.js.</p>
+<p>Bunyan is log4j-like: create a Logger with a name, call <code>log.info(...)</code>, etc. However it has no intention of reproducing much of the functionality of log4j. IMO, much of that is overkill for the types of services you'll tend to be writing with node.js.</p>
 
 <h1 style="margin:48px 0 24px;" id="longer-bunyan-example">Longer Bunyan Example</h1>
 
@@ -144,7 +144,7 @@ var log = new Logger({
 
 <p>Every Bunyan logger has one or more <strong>streams</strong>, to which log records are written. Here we've defined two: logging at DEBUG level and above is written to stdout, and logging at TRACE and above is appended to 'hello.log'.</p>
 
-<p>Bunyan has the concept of <strong>serializers</strong>: a registry of functions that know how to convert a JavaScript object for a certain log record field to a nice JSON representation for logging. For example, here we register the <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">Logger.stdSerializers.req</code> function to convert HTTP Request objects (using the field name "req") to JSON. More on serializers later.</p>
+<p>Bunyan has the concept of <strong>serializers</strong>: a registry of functions that know how to convert a JavaScript object for a certain log record field to a nice JSON representation for logging. For example, here we register the <code>Logger.stdSerializers.req</code> function to convert HTTP Request objects (using the field name "req") to JSON. More on serializers later.</p>
 
 <h2 id="restify-server">Restify Server</h2>
 
@@ -156,7 +156,7 @@ var log = new Logger({
 });
 </code></pre>
 
-<p>Our simple API will have a single <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">GET /hello?name=NAME</code> endpoint:</p>
+<p>Our simple API will have a single <code>GET /hello?name=NAME</code> endpoint:</p>
 
 <pre style="overflow:auto;color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:5px;"><code>server.get({path: '/hello', name: 'SayHello'}, function(req, res, next) {
   var caller = req.params.name || 'caller';
@@ -166,7 +166,7 @@ var log = new Logger({
 });
 </code></pre>
 
-<p>If we run that, <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">node server.js</code>, and call the endpoint, we get the expected restify response:</p>
+<p>If we run that, <code>node server.js</code>, and call the endpoint, we get the expected restify response:</p>
 
 <pre style="overflow:auto;color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:5px;"><code>$ curl -iSs http://0.0.0.0:8080/hello?name=paul
 HTTP/1.1 200 OK
@@ -188,7 +188,7 @@ X-Response-Time: 4
 
 <h2 id="setup-server-logging">Setup Server Logging</h2>
 
-<p>Let's add two things to our server. First, we'll use the <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">server.pre</code> to hook into restify's request handling before routing where we'll <strong>log the request</strong>.</p>
+<p>Let's add two things to our server. First, we'll use the <code>server.pre</code> to hook into restify's request handling before routing where we'll <strong>log the request</strong>.</p>
 
 <pre style="overflow:auto;color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:5px;"><code>server.pre(function (request, response, next) {
   request.log.info({req: request}, 'start');        // (1)
@@ -196,19 +196,19 @@ X-Response-Time: 4
 });
 </code></pre>
 
-<p>This is the first time we've seen this <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">log.info</code> style with an object as the first argument. Bunyan logging methods (<code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">log.trace</code>, <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">log.debug</code>, ...) all support an optional <strong>first object argument with extra log record fields</strong>:</p>
+<p>This is the first time we've seen this <code>log.info</code> style with an object as the first argument. Bunyan logging methods (<code>log.trace</code>, <code>log.debug</code>, ...) all support an optional <strong>first object argument with extra log record fields</strong>:</p>
 
 <pre style="overflow:auto;color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:5px;"><code>log.info(&lt;object&gt; fields, &lt;string&gt; msg, ...)
 </code></pre>
 
-<p>Here we pass in the restify Request object, <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">req</code>. The "req" serializer we registered above will come into play here, but bear with me.</p>
+<p>Here we pass in the restify Request object, <code>req</code>. The "req" serializer we registered above will come into play here, but bear with me.</p>
 
 <p>Remember that we already had this debug log statement in our endpoint handler:</p>
 
 <pre style="overflow:auto;color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:5px;"><code>req.log.debug('caller is "%s"', caller);            // (2)
 </code></pre>
 
-<p>Second, use the restify server <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">after</code> event to <strong>log the response</strong>:</p>
+<p>Second, use the restify server <code>after</code> event to <strong>log the response</strong>:</p>
 
 <pre style="overflow:auto;color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:5px;"><code>server.on('after', function (req, res, route) {
   req.log.info({res: res}, "finished");             // (3)
@@ -237,7 +237,7 @@ X-Request-Id: 9496dfdd-4ec7-4b59-aae7-3fed57aed5ba
 {"name":"helloapi","hostname":"banana.local","pid":40341,"route":"SayHello","req_id":"9496dfdd-4ec7-4b59-aae7-3fed57aed5ba","level":30,"res":{"statusCode":200,"headers":{"access-control-allow-origin":"*","access-control-allow-headers":"Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version","access-control-expose-headers":"X-Api-Version, X-Request-Id, X-Response-Time","server":"Hello API","x-request-id":"9496dfdd-4ec7-4b59-aae7-3fed57aed5ba","access-control-allow-methods":"GET","connection":"close","content-length":16,"content-md5":"Xmn3QcFXaIaKw9RPUARGBA==","content-type":"application/json","date":"Wed, 28 Mar 2012 17:37:29 GMT","x-response-time":3}},"msg":"finished","time":"2012-03-28T17:37:29.510Z","v":0}
 </code></pre>
 
-<p>Lets look at each in turn to see what is interesting -- pretty-printed with <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">node server.js | ./node_modules/.bin/bunyan -j</code>:</p>
+<p>Lets look at each in turn to see what is interesting -- pretty-printed with <code>node server.js | ./node_modules/.bin/bunyan -j</code>:</p>
 
 <pre style="overflow:auto;color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:5px;"><code>{                                                   // (1)
   "name": "helloapi",
@@ -261,9 +261,9 @@ X-Request-Id: 9496dfdd-4ec7-4b59-aae7-3fed57aed5ba
 }
 </code></pre>
 
-<p>Here we logged the incoming request with <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">request.log.info({req: request}, 'start')</code>. The use of the "req" field triggers the <a href="https://github.com/trentm/node-bunyan/blob/master/lib/bunyan.js#L857-870">"req" serializer</a> <a href="https://github.com/trentm/hello-json-logging/blob/master/server.js#L24">registered at Logger creation</a>.</p>
+<p>Here we logged the incoming request with <code>request.log.info({req: request}, 'start')</code>. The use of the "req" field triggers the <a href="https://github.com/trentm/node-bunyan/blob/master/lib/bunyan.js#L857-870">"req" serializer</a> <a href="https://github.com/trentm/hello-json-logging/blob/master/server.js#L24">registered at Logger creation</a>.</p>
 
-<p>Next the <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">req.log.debug</code> in our handler:</p>
+<p>Next the <code>req.log.debug</code> in our handler:</p>
 
 <pre style="overflow:auto;color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:5px;"><code>{                                                   // (2)
   "name": "helloapi",
@@ -313,13 +313,13 @@ X-Request-Id: 9496dfdd-4ec7-4b59-aae7-3fed57aed5ba
 <p>Two useful details of note here:</p>
 
 <ol>
-<li><p>The last two log messages include <strong>a "req_id" field</strong> (added to the <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">req.log</code> logger by restify). Note that this is the same UUID as the "X-Request-Id" header in the <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">curl</code> response. This means that if you use <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">req.log</code> for logging in your API handlers you will get an easy way to collate all logging for particular requests.</p>
+<li><p>The last two log messages include <strong>a "req_id" field</strong> (added to the <code>req.log</code> logger by restify). Note that this is the same UUID as the "X-Request-Id" header in the <code>curl</code> response. This means that if you use <code>req.log</code> for logging in your API handlers you will get an easy way to collate all logging for particular requests.</p>
 
 <p>If your's is an SOA system with many services, a best practice is to carry that X-Request-Id/req_id through your system to enable collating handling of a single top-level request.</p></li>
 <li><p>The last two log messages include <strong>a "route" field</strong>. This tells you to which handler restify routed the request. While possibly useful for debugging, this can be very helpful for log-based monitoring of endpoints on a server.</p></li>
 </ol>
 
-<p>Recall that we also setup all logging to go the "hello.log" file. This was set at the TRACE level. Restify will log more detail of its operation at the trace level. See <a href="https://gist.github.com/1761772">my "hello.log"</a> for an example. The <code style="color:#999;background-color:#2f2f2f;border:1px solid #484848;padding:.2em .4em;">bunyan</code> tool does a decent job of <a href="https://gist.github.com/1761772#file_2.+cat+hello.log+pipe+bunyan">nicely formatting</a> multiline messages and "req"/"res" keys (with color, not shown in the gist).</p>
+<p>Recall that we also setup all logging to go the "hello.log" file. This was set at the TRACE level. Restify will log more detail of its operation at the trace level. See <a href="https://gist.github.com/1761772">my "hello.log"</a> for an example. The <code>bunyan</code> tool does a decent job of <a href="https://gist.github.com/1761772#file_2.+cat+hello.log+pipe+bunyan">nicely formatting</a> multiline messages and "req"/"res" keys (with color, not shown in the gist).</p>
 
 <p><em>This</em> is logging you can use effectively.</p>
 
