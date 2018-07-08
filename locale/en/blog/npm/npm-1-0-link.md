@@ -41,7 +41,7 @@ layout: blog-post.hbs
 
 <p><em>Also</em>, there&#8217;s a third use case that I didn&#8217;t really appreciate until I started writing more programs that had more dependencies:</p>
 
-<ol start="3"> <li><p>Globally install something, and use it in development in a bunch of projects, and then update them all at once so that they all use the latest version. </ol>
+<ol start="3"> <li><p>Globally install something, and use it in development in a bunch of projects, and then update them all at once so that they all use the latest version.</p></li></ol>
 
 <p>Really, the second case above is a special-case of this third case.</p>
 
