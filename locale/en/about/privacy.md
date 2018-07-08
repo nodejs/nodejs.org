@@ -77,7 +77,6 @@ In the event the Foundation becomes aware that the security of a Site has been c
 While our aim is to keep data from unauthorized or unsafe access, modification or destruction, no method of transmission on the Internet, or method of electronic storage, is 100% secure and we cannot guarantee its absolute security.
 
 ## Data Protection
-
 Given the international scope of the Foundation, personal information may be visible to persons outside your country of residence, including to persons in countries that your own country’s privacy laws and regulations deem deficient in ensuring an adequate level of protection for such information.  If you are unsure whether this privacy statement is in conflict with applicable local rules, you should not submit your information.  If you are located within the European Union, you should note that your information will be transferred to the United States, which is deemed by the European Union to have inadequate data protection.  Nevertheless, in accordance with local laws implementing the European Union Privacy Directive on the protection of individuals with regard to the processing of personal data and on the free movement of such data, individuals located in countries outside of the United States of America who submit personal information do thereby consent to the general use of such information as provided in this Privacy Policy and to its transfer to and/or storage in the United States of America. By utilizing any Site and/or directly providing personal information to us, you hereby agree to and acknowledge your understanding of the terms of this Privacy Policy, and consent to have your personal data transferred to and processed in the United States and/or in other jurisdictions as determined by the Foundation, notwithstanding your country of origin, or country, state and/or province of residence.  If you do not want your personal information collected and used by the Foundation, please do not visit or use the Sites.
 
 ## Governing Law
@@ -88,7 +87,7 @@ The California Online Privacy Protection Action (“CalOPPA”) permits customer
 
 Please note that the Foundation does not respond to “do not track” signals or other similar mechanisms intended to allow California residents to opt-out of Internet tracking under CalOPPA.  The Foundation may track and/or disclose your online activities over time and across different websites to third parties when you use our services.
 
-What to Do in the Event of Lost or Stolen Information
+## What to Do in the Event of Lost or Stolen Information
 You must promptly notify us if you become aware that any information provided by or submitted to our Site or through our Product is lost, stolen, or used without permission at privacy@nodejs.org.
 
 ## Questions or Concerns
