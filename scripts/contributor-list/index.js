@@ -100,7 +100,10 @@ const repositoryName = 'nodejs.org'
 
 const formatOutput = (users) => {
   console.log(`${repositoryOwner}/${repositoryName} committers since ${args[0]}, which aren't contributors yet:\n`)
-  console.log(users.map(user => `* ${user.login} (${user.name})`).join('\n'))
+  console.log(users.map(user => {
+    const name = user.name ? `(${user.name})` : ``
+    return `* ${user.login} ${name}`
+  }).join('\n'))
 }
 
 Promise
