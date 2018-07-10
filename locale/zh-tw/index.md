@@ -22,4 +22,3 @@ labels:
 ---
 
 Node.js® 是款基於 [Chrome V8 引擎](https://developers.google.com/v8/)的 JavaScript 執行環境。
-Node.js 使用高效且輕量的事件驅動、非阻塞 I/O 模型。它的套件生態系統 [npm](https://www.npmjs.com/) 是目前世界上最大的開源套件生態系統。
