@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Web Survey Report 2018: Technologies | Node.js</title>
+  <style>
+  body,
+  html {
+    margin: 0;
+  }
+
+  body {
+    font-family: 'HelveticaNeue-Roman', Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    overflow: hidden;
+  }
+
+  .node {
+    stroke: #fff;
+    stroke-width: 2px;
+  }
+
+  .node circle {
+    stroke: #000;
+    stroke-width: 1.5px;
+  }
+
+
+  .textClass {
+    stroke: #323232;
+    font-weight: normal;
+    stroke-width: .1;
+    font-size: 5px;
+  }
+
+  .svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    /* aspect ratio */
+    vertical-align: top;
+    overflow: hidden;
+    margin-left: -50px;
+  }
+
+  .svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 90px;
+    left: 0;
+  }
+
+  button {
+    display: inline-block;
+    padding: 10px 16px;
+    margin: 1em 0;
+    font-size: 14px;
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background: #000;
+    border-color: #000;
+    color: #fff;
+  }
+
+  label {
+    display: inline-block;
+    width: 10em;
+  }
+
+  </style>
+</head>
+<body>
+  <!--
+    <button data-action="addNodesBE">Back End</button>
+    <button data-action="addNodesFE">Front End</button>
+    <button data-action="addNodesFS">Full Stack</button>
+    <button data-action="remove">remove</button> <br>
+    -->
+  <form>
+    <label>Developer Segment:</label>
+    <input type="radio" name="stack" value="ac" id="tr1" checked="checked">Back End
+    <input type="radio" name="stack" value="sc" id="tr2">Front End
+    <input type="radio" name="stack" value="smc" id="tr3">Full Stack
+  </form>
+  <form>
+    <label>Connection Types:</label>
+    <input type="radio" name="stack" value="ac" id="cr1" checked="checked"> All
+    <input type="radio" name="stack" value="sc" id="cr2"> Strong
+    <input type="radio" name="stack" value="smc" id="cr3"> Strong and Medium
+  </form>
+  <button data-action="addNodes">Draw</button>
+  <div id="graph-container"></div>
+  <script src="d3.v3.min.js"></script>
+  <script src="jquery.min.js"></script>
+  <script src="graph.min.js" async defer></script>
+</body>
+</html>

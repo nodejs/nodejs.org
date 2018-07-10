@@ -13,10 +13,11 @@ title: Installing Node.js via package manager
 * [Arch Linux](#arch-linux)
 * [Debian and Ubuntu based Linux distributions](#debian-and-ubuntu-based-linux-distributions)
 * [Enterprise Linux and Fedora](#enterprise-linux-and-fedora)
-* [FreeBSD and OpenBSD](#freebsd-and-openbsd)
+* [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
+* [OpenBSD](#openbsd)
 * [openSUSE and SLE](#opensuse-and-sle)
 * [macOS](#macos)
 * [SmartOS and illumos](#smartos-and-illumos)
@@ -61,10 +62,10 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-Alternatively, for Node.js 9:
+Alternatively, for Node.js 10:
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
@@ -135,10 +136,10 @@ On RHEL, CentOS or Fedora, for Node.js v8 LTS:
 curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
 ```
 
-Alternatively for Node.js 9:
+Alternatively for Node.js 10:
 
 ```bash
-curl --silent --location https://rpm.nodesource.com/setup_9.x | sudo bash -
+curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -
 ```
 
 Then install:
@@ -229,51 +230,20 @@ Additionally, versions of **CentOS** and **Scientific Linux** corresponding to t
 * **Fedora 27** (i686/x86_64/armv7hl/aarch64/ppc64/ppc64le/s390x)
 * **Fedora 26** (i686/x86_64/armv7hl/aarch64/ppc64/ppc64le)
 
+## FreeBSD 
 
-## FreeBSD and OpenBSD
+The most recent release of Node.js is available via the [www/node](http://freshports.org/www/node) port.
 
-Node.js is available through the ports system.
-
-**FreeBSD**:
-
-```bash
-/usr/ports/www/node
-```
-
-**OpenBSD**:
-
-```bash
-/usr/ports/lang/node
-```
-
-Development versions are also available using ports on FreeBSD
-
-```bash
-cd /usr/ports/www/node-devel/ && make install clean
-```
-
-Or packages on FreeBSD:
-
-```bash
-pkg_add -r node-devel
-```
-
-Using [pkg-ng](https://wiki.freebsd.org/pkgng) on FreeBSD
+Install a binary package via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
 ```bash
 pkg install node
 ```
 
-Or the development versions:
+Or compile it on your own using [ports](https://www.freebsd.org/cgi/man.cgi?ports):
 
 ```bash
-pkg install node-devel
-```
-
-Using [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD
-
-```bash
-pkg_add node
+cd /usr/ports/www/node && make install
 ```
 
 ## Gentoo
@@ -326,16 +296,29 @@ from source:
 $ nvm uninstall 8
 ```
 
+## OpenBSD
+
+Node.js is available through the ports system.
+
+```bash
+/usr/ports/lang/node
+```
+
+Using [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
+
+```bash
+pkg_add node
+```
+
 ## openSUSE and SLE
 
 Node.js is available in the main repositories under the following packages:
 
- - **openSUSE Leap 42.2**: `nodejs4`
- - **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
- - **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
- - **SUSE Linux Enterprise Server (SLES) 12**<sup>1</sup>: `nodejs4`, `nodejs6`
-
-<sup>1:</sup> The "Web and Scripting Module" must be [added before installing](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).
+* **openSUSE Leap 42.2**: `nodejs4`
+* **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
+* **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
+* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`  
+  (The "Web and Scripting Module" must be [added before installing](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).)
 
 For example, to install Node.js 4.x on openSUSE Leap 42.2, run the following as root:
 

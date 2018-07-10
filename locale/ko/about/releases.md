@@ -27,7 +27,7 @@ Patch releases:
 - Do not add nor change public interfaces.
 - Do not alter the expected behavior of a given interface.
 - Can correct behavior if it is out-of-sync with the documentation.
-- Do not introduce changes which make seamless upgrades impossible .
+- Do not introduce changes which make seamless upgrades impossible.
 -->
 
 ## 패치
