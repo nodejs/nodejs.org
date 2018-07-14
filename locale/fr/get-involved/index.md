@@ -37,7 +37,7 @@ de notre communauté pour trouver comment vous pouvez aider:
 
 - [NodeSchool.io](http://nodeschool.io) vous apprendra les concepts de Node.js avec des jeux intéractifs en ligne de commande [en].
 
-- [L'étiquette StackOverflow Node.js](http://stackoverflow.com/questions/tagged/node.js) rassemble de nouvelles informations chaque jours [en].
+- [L'étiquette Stack Overflow Node.js](http://stackoverflow.com/questions/tagged/node.js) rassemble de nouvelles informations chaque jours [en].
 
 - [How To Node](http://howtonode.org/) a de nombreux tutoriaux utiles [en].
 
