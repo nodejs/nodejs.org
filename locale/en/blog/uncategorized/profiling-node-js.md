@@ -27,7 +27,7 @@ It's incredibly easy to visualize where your Node program spends its time using 
 
 You'll be looking at something like this:
 
-<a href="https://www.cs.brown.edu/~dap/helloworld.svg" class="imagelink"><img src="https://www.cs.brown.edu/~dap/helloworld.svg" alt="'Hello World' HTTP server flame graph" /></a>
+<a href="http://cs.brown.edu/people/dapachec/helloworld.svg" class="imagelink"><img src="http://cs.brown.edu/people/dapachec/helloworld.svg" alt="'Hello World' HTTP server flame graph" /></a>
 
 This is a visualization of all of the profiled call stacks. This example is from the "hello world" HTTP server on the <a href="https://nodejs.org">Node.js</a> home page under load. Start at the bottom, where you have "main", which is present in most Node stacks because Node spends most on-CPU time in the main thread. Above each row, you have the functions called by the frame beneath it. As you move up, you'll see actual JavaScript function names. The boxes in each row are not in chronological order, but their width indicates how much time was spent there. When you hover over each box, you can see exactly what percentage of time is spent in each function. This lets you see at a glance where your program spends its time.
 
