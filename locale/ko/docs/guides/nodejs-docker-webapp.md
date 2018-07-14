@@ -517,7 +517,7 @@ following places:
 * [Official Node.js Docker Image](https://registry.hub.docker.com/_/node/)
 * [Node.js Docker Best Practices Guide](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 * [Official Docker documentation](https://docs.docker.com/)
-* [Docker Tag on StackOverflow](https://stackoverflow.com/questions/tagged/docker)
+* [Docker Tag on Stack Overflow](https://stackoverflow.com/questions/tagged/docker)
 * [Docker Subreddit](https://reddit.com/r/docker)
 -->
 
@@ -528,5 +528,5 @@ following places:
 * [공식 Node.js Docker 이미지](https://registry.hub.docker.com/_/node/)
 * [Node.js Docker 사용사례 문서](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 * [공시 Docker 문서](https://docs.docker.com/)
-* [StackOverflow에 Docker 태그로 올라온 질문](https://stackoverflow.com/questions/tagged/docker)
+* [Stack Overflow에 Docker 태그로 올라온 질문](https://stackoverflow.com/questions/tagged/docker)
 * [Docker 레딧](https://reddit.com/r/docker)

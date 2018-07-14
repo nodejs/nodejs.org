@@ -22,7 +22,7 @@ Node.js 是個包容的大家庭，我們鼓勵用戶一展長才。若你想[�
 
 - [官方 API 參考文件](/api)中詳細介紹了 Node API。
 - [NodeSchool.io](http://nodeschool.io) 以互動命令列的方式，教會你 Node.js 的概念。
-- [StackOverflow 上的 Node.js 標籤](http://stackoverflow.com/questions/tagged/node.js)搜羅了每日新資訊。
+- [Stack Overflow 上的 Node.js 標籤](http://stackoverflow.com/questions/tagged/node.js)搜羅了每日新資訊。
 
 
 ## 國際性社群網站及專案

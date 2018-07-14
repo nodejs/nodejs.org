@@ -24,7 +24,7 @@ a contribuir de cualquier forma posible. Si usted quiere [reportar un error](htt
 
 - La [Documentación oficial de la API](/api) detalla la API de Node.
 - [NodeSchool.io](http://nodeschool.io) le enseñará conceptos de Node.js de forma interactiva mediante juegos utilizando la línea de comandos.
-- La [etiqueta de Node.js en StackOverflow](http://stackoverflow.com/questions/tagged/node.js) colecciona nueva información cada día.
+- La [etiqueta de Node.js en Stack Overflow](http://stackoverflow.com/questions/tagged/node.js) colecciona nueva información cada día.
 - [How To Node](http://howtonode.org/) tiene un número creciente de útiles tutoriales.
 
 
