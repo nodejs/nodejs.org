@@ -37,6 +37,10 @@
       "link": "about/governance",
       "text": "管理规则"
     },
+    "community": {
+      "link": "about/community",
+      "text": "社区"
+    },
     "workinggroups": {
       "link": "about/working-groups",
       "text": "工作组"
