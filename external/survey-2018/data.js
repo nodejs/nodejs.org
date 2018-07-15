@@ -2726,7 +2726,7 @@ var tab45_1content = [{
   'value': 66,
   'unit': '%'
 }, {
-  'name': 'StackOverflow',
+  'name': 'Stack Overflow',
   'value': 71,
   'unit': '%'
 }, {
