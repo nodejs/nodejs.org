@@ -22,7 +22,7 @@ The Node.js community is large, inclusive, and excited to enable as many users t
 
 - [Official API reference documentation](/api) details the Node API.
 - [NodeSchool.io](http://nodeschool.io) will teach you Node.js concepts via interactive command-line games.
-- [StackOverflow Node.js tag](http://stackoverflow.com/questions/tagged/node.js) collects new information every day.
+- [Stack Overflow Node.js tag](http://stackoverflow.com/questions/tagged/node.js) collects new information every day.
 
 
 ## International community sites and projects
