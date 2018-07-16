@@ -75,3 +75,18 @@ pre
     color $light-gray3
     background-color inherit
     padding 0
+
+blockquote
+  position relative
+  margin 0
+  padding 0 1em
+
+  &::before
+    width 6px
+    height 100%
+    position absolute
+    top 0
+    left 0
+    background-color rgba(0, 0, 0, 0.14)
+    content ""
+    display block
