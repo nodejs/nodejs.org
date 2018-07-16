@@ -112,3 +112,4 @@ content area.
 - Yosuke Furukawa ([yosuke-furukawa](https://github.com/yosuke-furukawa))
 - Chayoung You ([yous](https://github.com/yous))
 - Zeke Sikelianos ([zeke](https://github.com/zeke))
+- Belhassen Chelbi ([belhassen07](https://github.com/belhassen07))
