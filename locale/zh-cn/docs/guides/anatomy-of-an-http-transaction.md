@@ -28,8 +28,7 @@ server.on('request', (request, response) => {
 });
 ```
 
-当一个 HTTP 到达服务端，node 调用 request 处理程序，并产生一些唾手可得的对象用以处理传输，
-这些对象就是  `request` 和 `response`。我们马上会讲到。
+当一个 HTTP 到达服务端，node 调用 request 处理程序，并产生一些唾手可得的对象用以处理传输，这些对象就是  `request` 和 `response`。我们马上会讲到。
 
 实际上，为了处理请求，[`listen`][] 方法需要在 `server` 对象上被显式调用。在大多数情况下，你只要把端口号作为参数传入 `listen` 方法中，作为监听端口即可。当然也有一些其它选项，具体可以参考 [API 参考文档][]。
 

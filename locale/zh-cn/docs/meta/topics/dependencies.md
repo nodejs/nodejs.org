@@ -53,7 +53,7 @@ OpenSSL 广泛地在 `tls` 和 `crypto` 模块中使用。它提供了战争环�
 
 ### zlib
 
-为了快速压缩解压，Node.js 依赖与工业标准的 zlib 类库。同名可知的还有 gzip 和 libpng。Node.js 使用 zlib 创建同步、异步和数据流压缩、解压缩接口。
+为了快速压缩解压，Node.js 依赖于工业标准的 zlib 类库。同名可知的还有 gzip 和 libpng。Node.js 使用 zlib 创建同步、异步和数据流压缩、解压缩接口。
 
 - [相关文档](http://www.zlib.net/manual.html)
 

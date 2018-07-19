@@ -11,7 +11,7 @@ layout: docs.hbs
 
 ## 阻塞
 
-**阻塞** 是说 Node.js 中其它的 JavaScript 命令必须等到一个非 JavaScript 操作完成之后才可以执行。这是因为当 **阻塞** 发生时，事件机制无法继续运行JavaSCript。
+**阻塞** 是说 Node.js 中其它的 JavaScript 命令必须等到一个非 JavaScript 操作完成之后才可以执行。这是因为当 **阻塞** 发生时，事件机制无法继续运行JavaScript。
 
 在 Node.js 中，JavaScript由于 CPU 密集操作而表现不佳。而不是等待非 JavaScript操作 （例如I/O）。这被称为 **阻塞**。在 Node.js 基本类库中，使用 libuv 的同步方法大多数都是 **阻塞** 的。原生方法也可能是 **阻塞** 的。
 
