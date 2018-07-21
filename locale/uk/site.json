@@ -10,6 +10,7 @@
   "by": "від",
   "all-downloads": "Всі варіанти завантажень",
   "nightly": "Нічні збірки",
+  "chakracore-nightly": "Нічні збірки Node-ChakraCore",
   "previous": "Попередній",
   "next": "Далі",
   "feeds": [
@@ -36,6 +37,10 @@
       "link": "about/governance",
       "text": "Управління"
     },
+    "community": {
+      "link": "about/community",
+      "text": "Спільнота"
+    },
     "workinggroups": {
       "link": "about/working-groups",
       "text": "Робочі групи"
@@ -51,6 +56,10 @@
     "trademark": {
       "link": "about/trademark",
       "text": "Товарний знак"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "Політика приватності"
     }
   },
   "download": {
@@ -63,6 +72,12 @@
     "package-manager": {
       "link": "download/package-manager",
       "text": "Встановлення Node.js через пакетний менеджер"
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "Підписані SHASUMS для файлів релізу",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "Як перевірити"
     }
   },
   "docs": {
@@ -92,6 +107,10 @@
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
       "text": "Code + Learn"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "Саміт співпраці"
     },
     "contribute": {
       "link": "get-involved/contribute",
