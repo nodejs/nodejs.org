@@ -26,6 +26,6 @@ The Node.js Foundation Incubator Program was launched last year. Projects under 
 
 Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 3 million active users per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites.
 
-The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft, PayPal and Red Hat. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, npm, RisingStack, Sauce Labs, SAP, StrongLoop (an IBM company), YLD!, and Yahoo!. Get involved here: http://nodejs.org.
+The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft, PayPal and Red Hat. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, npm, RisingStack, Sauce Labs, SAP, StrongLoop (an IBM company), YLD!, and Yahoo!. Get involved here: https://nodejs.org.
 
 The Node.js Foundation is a Collaborative Project at The Linux Foundation. Linux Foundation Collaborative Projects are independently funded software projects that harness the power of collaborative development to fuel innovation across industries and ecosystems. [www.linuxfoundation.org](http://www.linuxfoundation.org)

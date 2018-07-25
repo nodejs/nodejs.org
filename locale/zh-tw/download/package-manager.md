@@ -325,7 +325,7 @@ zypper install nodejs4
 
 ## macOS
 
-只需從 [nodejs.org](http://nodejs.org) 下載 [macOS 安裝器](http://nodejs.org/#download)即可。
+只需從 [nodejs.org](https://nodejs.org) 下載 [macOS 安裝器](https://nodejs.org/#download)即可。
 
 _或者你也可以使用 bash 下載套件_
 
@@ -398,7 +398,7 @@ sudo eopkg install nodejs
 
 ## Windows
 
-只需從 [nodejs.org](http://nodejs.org) 下載 [Windows 安裝器](http://nodejs.org/#download)即可。
+只需從 [nodejs.org](https://nodejs.org) 下載 [Windows 安裝器](https://nodejs.org/#download)即可。
 
 ### 其它方式
 

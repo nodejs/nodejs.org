@@ -8,7 +8,7 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-Node allows users to create their own REPLs with the [repl module](http://nodejs.org/docs/v0.4.10/api/repl.html). Its basic use looks like this:
+Node allows users to create their own REPLs with the [repl module](https://nodejs.org/docs/v0.4.10/api/repl.html). Its basic use looks like this:
 
     repl.start(prompt, stream);
 
