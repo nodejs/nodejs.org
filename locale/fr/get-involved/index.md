@@ -21,7 +21,7 @@ de notre communauté pour trouver comment vous pouvez aider:
 
 - Le compte Twitter officiel de Node.js est [nodejs](https://twitter.com/nodejs) [en].
 
-- [Node.js Everywhere](https://newsletter.nodejs.org) est la newsletter hebdomadaire officielle de Node.js [en].
+- [Node.js Everywhere](https://newsletter.nodejs.org) est la newsletter mensuelle officielle de Node.js [en].
 
 - [Node.js Collection](https://medium.com/the-node-js-collection) est une liste de contenus maintenue par la communauté sur Medium [en].
 
