@@ -10,13 +10,13 @@ layout: knowledge-post.hbs
 
 
 
-Node.js ships with a REPL, which is short for 'Read-Eval-Print Loop'.  It is the Node.js shell; any valid Javascript which can be written in a script can be passed to the REPL. It can be extremely useful for experimenting with node.js, debugging code, and figuring out some of Javascript's more eccentric behaviors.
+Node.js ships with a REPL, which is short for 'Read-Eval-Print Loop'.  It is the Node.js shell; any valid JavaScript which can be written in a script can be passed to the REPL. It can be extremely useful for experimenting with node.js, debugging code, and figuring out some of JavaScript's more eccentric behaviors.
 
 Running it is simple - just run node without a filename.
 
      docs@nodejitsu:~/$ node
 
-It then drops you into a simple prompt ('>') where you can type any Javascript command you wish. As in most shells, you can press the up and down arrow keys to scroll through your command history and modify previous commands. The REPL also  `Tab` to make the REPL try to autocomplete the command.
+It then drops you into a simple prompt ('>') where you can type any JavaScript command you wish. As in most shells, you can press the up and down arrow keys to scroll through your command history and modify previous commands. The REPL also  `Tab` to make the REPL try to autocomplete the command.
 
 Whenever you type a command, it will print the return value of the command. If you want to reuse the previous return value, you can use the special `_` variable.
 

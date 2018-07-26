@@ -22,7 +22,7 @@ values, e.g. an Object.
 
 ## Encoding and Decoding
 
-Javascript provides 2 methods for encoding data structures to json and
+JavaScript provides 2 methods for encoding data structures to json and
 encoding json back to javascript objects and arrays. They are both
 available on the `JSON` object that is available in the global scope.
 
