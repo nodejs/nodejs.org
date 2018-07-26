@@ -22,9 +22,3 @@ labels:
 ---
 
 Node.js® هو اطار عمل مبني على محرك [Chrome V8](https://developers.google.com/v8/).
-
-Node.js uses an event-driven, non-blocking I/O model that makes it
-lightweight and efficient.
-
-نظام إدارة الحزم الافتراضي المستعمل في Node.js هو مدير حزم البرامج الحرة الأكثر شعبية في العالم npm.
-

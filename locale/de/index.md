@@ -19,4 +19,3 @@ labels:
 ---
 
 Node.js® ist eine JavaScript-Laufzeitumgebung, die auf  [Chromes V8 JavaScript-Engine](https://developers.google.com/v8/) basiert.
-Durch ein Event-basiertes, blockierungsfreies I/O-Modell ist Node.js schlank und effizient. Mit [npm](https://www.npmjs.com/) hat Node.js das größte Ökosystem für Open Source Bibliotheken der Welt.

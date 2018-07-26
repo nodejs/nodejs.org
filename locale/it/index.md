@@ -22,5 +22,3 @@ labels:
 ---
 
 Node.js® è un runtime Javascript costruito sul [motore JavaScript V8 di Chrome](https://developers.google.com/v8/).
-Node.js usa un modello I/O non bloccante e ad eventi, che lo rende un framework leggero ed efficiente.
-L'ecosistema dei pacchetti di Node.js, [npm](https://www.npmjs.com/), è il più grande ecosistema di librerie open source al mondo.
