@@ -312,7 +312,7 @@ up by language. First, we look at the summary section and see:
 <!--
 This tells us that 97% of all samples gathered occurred in C++ code and that
 when viewing other sections of the processed output we should pay most attention
-to work being done in C++ (as opposed to Javascript). With this in mind, we next
+to work being done in C++ (as opposed to JavaScript). With this in mind, we next
 find the [C++] section which contains information about which C++ functions are
 taking the most CPU time and see:
 
@@ -326,7 +326,7 @@ taking the most CPU time and see:
 -->
 
 이 부분을 보면 C++ 코드에서 수집된 샘플이 97%를 차지하는 것을 볼 수 있으므로 처리된 결과에서
-다른 부분을 볼 때 C++에서 이뤄진 작업에 대부분의 관심을 기울여야 합니다.(Javascript 대비)
+다른 부분을 볼 때 C++에서 이뤄진 작업에 대부분의 관심을 기울여야 합니다.(JavaScript 대비)
 그래서 C++ 함수가 대부분의 CPU 시간을 차지한 정보를 담고 있는 [C++] 부분을 찾아볼 것입니다.
 
 ```

@@ -155,7 +155,7 @@ up by language. First, we look at the summary section and see:
 
 This tells us that 97% of all samples gathered occurred in C++ code and that
 when viewing other sections of the processed output we should pay most attention
-to work being done in C++ (as opposed to Javascript). With this in mind, we next
+to work being done in C++ (as opposed to JavaScript). With this in mind, we next
 find the [C++] section which contains information about which C++ functions are
 taking the most CPU time and see:
 

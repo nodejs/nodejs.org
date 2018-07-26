@@ -5,7 +5,7 @@ trademark: Trademark
 ---
 # Sobre Node.js&reg;
 
-Nascut com a un entorn d'execució de Javascript orientat a esdeveniments asíncrons, Node.js està 
+Nascut com a un entorn d'execució de JavaScript orientat a esdeveniments asíncrons, Node.js està 
 dissenyat per a crear aplicacions en xarxa de manera escalable. En la següent aplicació d'exemple 
 "hola món", es pot manegar moltes connexions concurrents. Per a cada connexió el callback serà 
 executat, no obstant si no hi hagués tasques pendents per a fer, Node.js romandrà adormit.
@@ -47,7 +47,7 @@ El comportament és típicament definit a través de *callbacks* a l'inici del s
 s'inicia el servidor mitjançant una trucada de bloqueig com `EventMachine::run()`. En Node no
 existeix aquesta trucada. Node simplement ingressa el bucle d'esdeveniments després d'executar
 el script d'entrada. Node surt del bucle d'esdeveniments quan no hi ha més *callbacks* que executar.
-s comporta d'una forma similar a Javascript al navegador - el bucle d'esdeveniments està ocult a l'usuari.
+s comporta d'una forma similar a JavaScript al navegador - el bucle d'esdeveniments està ocult a l'usuari.
 
 HTTP es ciutadà de primera classe en Node, disenyat amb operacions de streaming y baixa latència
 en ment. Això no fa a Node candidat per ser la base d'una llibrería o un framework web.

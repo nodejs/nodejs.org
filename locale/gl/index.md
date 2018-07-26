@@ -18,4 +18,4 @@ labels:
   version-schedule-prompt-link-text: Axenda de LTS.
 ---
 
-Node.js® é un entorno de execución para JavaScript construído co [motor de Javascript V8 de Chrome](https://developers.google.com/v8/).
+Node.js® é un entorno de execución para JavaScript construído co [motor de JavaScript V8 de Chrome](https://developers.google.com/v8/).
