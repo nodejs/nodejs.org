@@ -88,6 +88,68 @@ a chunk of data were to fail to be properly received, the `Readable` source or
 properly destroy all the streams in a pipeline if one of them fails or closes,
 and is a must have in this case!
 
+As for Node 10.0.0 or later version, [`pipeline`][] is introduced to replace for
+[`pump`][]. This is a module method to pipe between streams forwarding errors
+and properly cleaning up and provide a callback when the pipeline is complete.
+
+You can use it like this following:
+
+```javascript
+const { pipeline } = require('stream');
+const fs = require('fs');
+const zlib = require('zlib');
+
+// Use the pipeline API to easily pipe a series of streams
+// together and get notified when the pipeline is fully done.
+// A pipeline to gzip a potentially huge tar file efficiently:
+
+pipeline(
+  fs.createReadStream('The.Matrix.1080p.mkv'),
+  zlib.createGzip(),
+  fs.createWriteStream('The.Matrix.1080p.mkv.gz'),
+  (err) => {
+    if (err) {
+      console.error('Pipeline failed', err);
+    } else {
+      console.log('Pipeline succeeded');
+    }
+  }
+);
+```
+or if you wanna `async` with `await`, you can use it wrapped by [`promisify`][]:
+
+```javascript
+const stream = require('stream');
+const fs = require('fs');
+const zlib = require('zlib');
+
+const pipeline = util.promisify(stream.pipeline);
+
+async function run() {
+  await pipeline(
+     fs.createReadStream('The.Matrix.1080p.mkv'),
+     zlib.createGzip(),
+     fs.createWriteStream('The.Matrix.1080p.mkv.gz'),
+  );
+}
+
+// Either of the following ways you can call the `run()`:
+
+// Way 1: You can use this to catch exceptions in async mode.
+run().catch((err) => console.log('Pipeline failed', err));
+
+// Way 2: You can also use 'try...catch...' to surround the `run()`
+// in another `async` function, something like this following:
+async function executeRun() {
+  try {
+    await run();
+    console.log('Pipeline succeeded');
+  } catch(err) {
+    console.error('Pipeline failed', err);
+  }
+}
+```
+
 ## Too Much Data, Too Quickly
 
 There are instances where a [`Readable`][] stream might give data to the
@@ -580,3 +642,5 @@ Node.js.
 [`.pipe()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
 [piped]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
 [`pump`]: https://github.com/mafintosh/pump
+[`pipeline`]: https://nodejs.org/api/stream.html#stream_stream_pipeline_streams_callback
+[`promisify`]: https://nodejs.org/api/util.html#util_util_promisify_original
