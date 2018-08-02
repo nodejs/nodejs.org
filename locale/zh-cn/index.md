@@ -7,11 +7,11 @@ labels:
   download-for: 下载为
   other-downloads: 其它下载
   other-lts-downloads: 其它 LTS 版下载
-  other-current-downloads: 其它最新版下载
-  current: 当前
-  lts: LTS
-  tagline-current: 最近更新
-  tagline-lts: 推荐
+  other-current-downloads: 其它尝鲜版下载
+  current: 最新发布版
+  lts: 长期维护版
+  tagline-current: 含实验性功能
+  tagline-lts: 推荐多数用户使用 (LTS)
   changelog: 更新日志
   api: API 文档
   version-schedule-prompt: 可参考
@@ -21,4 +21,4 @@ labels:
   newsletter-postfix: ，Node.js 官方的新闻周报。
 ---
 
-Node.js® 是一个基于 [Chrome V8 引擎 ](https://developers.google.com/v8/)的 JavaScript 运行时。
+Node.js® 是一个基于 [Chrome V8 引擎](https://developers.google.com/v8/) 的 JavaScript 运行时。
