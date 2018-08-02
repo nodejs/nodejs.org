@@ -5,7 +5,7 @@ download: 下载
 downloads:
     headline: 下载
     lts: 长期维护版
-    current: 最新尝鲜版
+    current: 最新发布版
     tagline-current: 含实验性功能
     tagline-lts: 推荐多数用户使用 (LTS)
     display-hint: 下载版本：

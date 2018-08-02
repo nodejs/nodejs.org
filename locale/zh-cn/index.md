@@ -8,7 +8,7 @@ labels:
   other-downloads: 其它下载
   other-lts-downloads: 其它 LTS 版下载
   other-current-downloads: 其它尝鲜版下载
-  current: 最新尝鲜版
+  current: 最新发布版
   lts: 长期维护版
   tagline-current: 含实验性功能
   tagline-lts: 推荐多数用户使用 (LTS)
