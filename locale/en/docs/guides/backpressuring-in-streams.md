@@ -117,7 +117,7 @@ pipeline(
   }
 );
 ```
-You can call [`promisify`][] on pipeline to use it with `async` / `await`:
+You can also call [`promisify`][] on pipeline to use it with `async` / `await`:
 
 ```javascript
 const stream = require('stream');
