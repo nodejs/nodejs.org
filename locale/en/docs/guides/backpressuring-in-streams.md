@@ -88,6 +88,58 @@ a chunk of data were to fail to be properly received, the `Readable` source or
 properly destroy all the streams in a pipeline if one of them fails or closes,
 and is a must have in this case!
 
+[`pump`][] is only necessary for Nodejs 8.x or earlier, as for Node 10.x
+or later version, [`pipeline`][] is introduced to replace for [`pump`][].
+This is a module method to pipe between streams forwarding errors and properly
+cleaning up and provide a callback when the pipeline is complete.
+
+Here is an example of using pipeline:
+
+```javascript
+const { pipeline } = require('stream');
+const fs = require('fs');
+const zlib = require('zlib');
+
+// Use the pipeline API to easily pipe a series of streams
+// together and get notified when the pipeline is fully done.
+// A pipeline to gzip a potentially huge video file efficiently:
+
+pipeline(
+  fs.createReadStream('The.Matrix.1080p.mkv'),
+  zlib.createGzip(),
+  fs.createWriteStream('The.Matrix.1080p.mkv.gz'),
+  (err) => {
+    if (err) {
+      console.error('Pipeline failed', err);
+    } else {
+      console.log('Pipeline succeeded');
+    }
+  }
+);
+```
+You can also call [`promisify`][] on pipeline to use it with `async` / `await`:
+
+```javascript
+const stream = require('stream');
+const fs = require('fs');
+const zlib = require('zlib');
+
+const pipeline = util.promisify(stream.pipeline);
+
+async function run() {
+    try {
+        await pipeline(
+            fs.createReadStream('The.Matrix.1080p.mkv'),
+            zlib.createGzip(),
+            fs.createWriteStream('The.Matrix.1080p.mkv.gz'),
+        );
+        console.log('Pipeline succeeded');
+    } catch (err) {
+        console.error('Pipeline failed', err);
+    }
+}
+```
+
 ## Too Much Data, Too Quickly
 
 There are instances where a [`Readable`][] stream might give data to the
@@ -580,3 +632,5 @@ Node.js.
 [`.pipe()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
 [piped]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
 [`pump`]: https://github.com/mafintosh/pump
+[`pipeline`]: https://nodejs.org/api/stream.html#stream_stream_pipeline_streams_callback
+[`promisify`]: https://nodejs.org/api/util.html#util_util_promisify_original
