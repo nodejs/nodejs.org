@@ -53,7 +53,7 @@
     "metalsmith-yearly-pagination": "2.0.0",
     "ncp": "2.0.0",
     "node-version-data": "1.0.1",
-    "octonode": "0.9.2",
+    "octonode": "^0.9.3",
     "request": "2.85.0",
     "require-dir": "1.0.0",
     "semver": "5.5.0",
