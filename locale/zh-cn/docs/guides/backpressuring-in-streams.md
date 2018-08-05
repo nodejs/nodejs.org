@@ -57,6 +57,55 @@ inp.pipe(gzip).pipe(out);
 
 请注意：这个例子中我们使用 `.pipe()` 从一个数据源终端到另外一个终端，不过没有使用任何出错处理机制。如果一大堆数据出错了但是又要被接收， `可读` 和 `gzip` 流不会被销毁。 [`pump`][] 是一个工具类，如果有某个流发生错误或者关闭，它会自动销毁相关所有的流，在这个情况下是必须使用的！
 
+[`pump`][] 对于 Nodejs 8.x 以及先前版本是必须的。但对于 10.x 和之后的版本而言，我们引入了 [`pipeline`][] 来取而代之它。这是一个模块化函数，用于对接不同的数据流，可以处理异常错误并善后清理释放资源。它同时也提供了一个回调函数——当整个 pipeline 任务完成时将触发。
+
+这里给出一个例子，告诉你如何使用 pipeline：
+
+```javascript
+const { pipeline } = require('stream');
+const fs = require('fs');
+const zlib = require('zlib');
+
+// Use the pipeline API to easily pipe a series of streams
+// together and get notified when the pipeline is fully done.
+// A pipeline to gzip a potentially huge video file efficiently:
+
+pipeline(
+  fs.createReadStream('The.Matrix.1080p.mkv'),
+  zlib.createGzip(),
+  fs.createWriteStream('The.Matrix.1080p.mkv.gz'),
+  (err) => {
+    if (err) {
+      console.error('Pipeline failed', err);
+    } else {
+      console.log('Pipeline succeeded');
+    }
+  }
+);
+```
+你也可以使用 [`promisify`][] 包装 pipeline，配合 `async` / `await` 进行使用：
+
+```javascript
+const stream = require('stream');
+const fs = require('fs');
+const zlib = require('zlib');
+
+const pipeline = util.promisify(stream.pipeline);
+
+async function run() {
+    try {
+        await pipeline(
+            fs.createReadStream('The.Matrix.1080p.mkv'),
+            zlib.createGzip(),
+            fs.createWriteStream('The.Matrix.1080p.mkv.gz'),
+        );
+        console.log('Pipeline succeeded');
+    } catch (err) {
+        console.error('Pipeline failed', err);
+    }
+}
+```
+
 ## 数据太多，速度太快
 有太多的例子证明有时 [`Readable`][] 传输给 [`Writable`][] 的速度远大于它接受和处理的速度！
 
@@ -443,3 +492,5 @@ function doUncork(stream) {
 [`.pipe()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
 [piped]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
 [`pump`]: https://github.com/mafintosh/pump
+[`pipeline`]: https://nodejs.org/api/stream.html#stream_stream_pipeline_streams_callback
+[`promisify`]: https://nodejs.org/api/util.html#util_util_promisify_original
