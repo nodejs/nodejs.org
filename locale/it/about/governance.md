@@ -57,58 +57,32 @@ Un membro del TSC potrebbe essere sollevato dal TSC tramite dimissioni volontari
 Eventuali modifiche all'assetto dei membri dovrebbero essere inserite in agenda, e potrebbero essere suggerite come ogni altro elemento dell'agenda (Vedi "Incontri del TSC" sotto).
 
 Non più di 1/3 dei membri del TSC possono essere aggiunti dallo stesso principale.
-Se la rimozione o dimissione di un membro del TSC, o una modifica di 
-No more than 1/3 of the TSC members may be affiliated with the same
-employer.  If removal or resignation of a TSC member, or a change of
-employment by a TSC member, creates a situation where more than 1/3 of
-the TSC membership shares an employer, then the situation must be
-immediately remedied by the resignation or removal of one or more TSC
-members affiliated with the over-represented employer(s).
+Se la rimozione o dimissione di un membro del TSC, o una modifica di carica di un membro del TSC, dovesse creare una situazione in cui più di 1/3 dei membri del TSC condivide un principale, allora il problema dovrà essere immediatamente risolto con la riassegnazione o dimissione di uno o più membri del TSC affiliati con il/i principale/i sovrarappresentato/i.
 
-## TSC Meetings
+## Incontri del TSC
 
-The TSC meets weekly on a Google Hangout On Air. The meeting is run by
-a designated moderator approved by the TSC. Each meeting should be
-published to YouTube.
+Il TSC si riunisce settimanalmente su Google Hangout On Air. Il meeting viene ospitato da un moderatore scelto, approvato dal TSC. Ogni riunione dovrebbe essere pubblicata su YouTube.
 
-Items are added to the TSC agenda which are considered contentious or
-are modifications of governance, contribution policy, TSC membership,
-or release process.
+Vengono aggiunti all'agenda del TSC punti di discussione quali screzi o cambi di direzione del progetto, di politica di contribuzione, gestione dei membri del TSC, o processi di rilascio.
 
-The intention of the agenda is not to approve or review all patches.
-That should happen continuously on GitHub and be handled by the larger
-group of Collaborators.
+L'intenzione dell'agenda è di non approvare o revisionare tutte le modifiche.
+Esse dovrebbero susseguirsi di continuo su GitHub e sono gestite dal più vasto gruppo di Collaboratori.
 
-Any community member or contributor can ask that something be added to
-the next meeting's agenda by logging a GitHub Issue. Any Collaborator,
-TSC member or the moderator can add the item to the agenda by adding
-the ***tsc-agenda*** tag to the issue.
+Ogni membro della comunità o contributore può chiedere che qualcosa sia aggiunto all'agenda del prossimo incontro inserendo una Issue in GitHub. Ogni Collaboratore, membro del TSC o il moderatore può aggiungere l'elemento all'agenda inserendo il tag ***tsc-agenda*** alla segnalazione.
 
-Prior to each TSC meeting, the moderator will share the Agenda with
-members of the TSC. TSC members can add any items they like to the
-agenda at the beginning of each meeting. The moderator and the TSC
-cannot veto or remove items.
+Prima di ogni meeting del TSC, il moderatore condividerà l'Agenda con i membri del TSC. I membri del TSC possono aggiungere qualsiasi cosa vogliano all'agenda all'inizio di ogni meeting. Il moderatore e il TSC non possono apporre veto o rimuovere elementi.
 
-The TSC may invite persons or representatives from certain projects to
-participate in a non-voting capacity. These invitees currently are:
+Il TSC potrebbe invitare persone o rappresentati di alcuni progetti a partecipare in qualità di ospiti non votanti. Attualmente questi invitati sono:
+ 
+* Un rappresentante da [build](https://github.com/node-forward/build)
+  scelto da quel progetto.
 
-* A representative from [build](https://github.com/node-forward/build)
-  chosen by that project.
+Il moderatore deve riassumere la discussione di ogni elemento dell'agenda e deve poi inviarlo come pull request al termine dell'incontro. 
 
-The moderator is responsible for summarizing the discussion of each
-agenda item and sending it as a pull request after the meeting.
+## Processo di Ricerca del Consenso
 
-## Consensus Seeking Process
+Il TSC segue un modello di [Ricerca del Consenso](http://en.wikipedia.org/wiki/Consensus-seeking_decision-making) per la presa di decisioni
 
-The TSC follows a
-[Consensus Seeking](http://en.wikipedia.org/wiki/Consensus-seeking_decision-making)
-decision making model.
+Quando l'oggetto dell'agenda pare aver raggiunto un consenso, il moderatore chiederà "Qualcuno ha delle obiezioni?" come ultima chiamata per un dissenso.
 
-When an agenda item has appeared to reach a consensus, the moderator
-will ask "Does anyone object?" as a final call for dissent from the
-consensus.
-
-If an agenda item cannot reach a consensus, a TSC member can call for
-either a closing vote or a vote to table the issue to the next
-meeting. The call for a vote must be approved by a majority of the TSC
-or else the discussion will continue. Simple majority wins.
+Se un oggetto dell'agenda non raggiunge il consenso, un membro del TSC può chiamare un voto di chiusura o una sospensione del giudizio al prossimo meeting. La chiamata al voto deve essere approvata da una maggioranza del TSC oppure la discussione continuerà. La maggioranza semplice vince.
