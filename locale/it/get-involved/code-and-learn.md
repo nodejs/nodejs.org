@@ -3,15 +3,16 @@ title: Code + Learn
 layout: contribute.hbs
 ---
 
-# Code + Learn
+# Sviluppa + Impara
 
-Code & Learn events allow you to get started (or go further) with Node.js core contributions. Experienced contributors help guide you through your first (or second or third or fourth) commit to Node.js core. They also are available to provide impromptu guided tours through specific areas of Node.js core source code.
+Gli eventi Code & Learn (Sviluppa e Impara) ti permettono di iniziare (o approfondire) con i contributi nel core di Node.js.
+I contributori esperti ti aiuteranno guidandoti attraverso il tuo primo (o secondo, o terzo, o quarto...) commit verso il core di Node.js. Sono anche disponibili a fornirti tour guidati improvvisati per le aree specifiche del codice sorgente del core di Node.js
 
-## Upcoming Code + Learn Events
+## Codice futuro + Eventi educativi
 
 - tbd
 
-## Past Code + Learn Events
+## Codice passato + Eventi educativi
 
 - [Oakland on April 22, 2017](https://medium.com/the-node-js-collection/code-learn-learn-how-to-contribute-to-node-js-core-8a2dbdf9be45)
 - Shanghai at JSConf.CN: July 2017
