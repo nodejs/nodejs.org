@@ -3,12 +3,9 @@ layout: about.hbs
 title: About
 trademark: Trademark
 ---
-# About Node.js&reg;
+# Riguardo a Node.js&reg;
 
-As an asynchronous event driven JavaScript runtime, Node is designed to build
-scalable network applications. In the following "hello world" example, many
-connections can be handled concurrently. Upon each connection the callback is
-fired, but if there is no work to be done, Node will sleep.
+In quanto runtime JavaScript guidato dagli eventi, Node è pensato per creare applicazioni di rete scalabili. Nell'esempio "hello world" seguente, possono essere gestite molte connessioni simultaneamente. Nel momento in cui la callback di ogni connessione è richiamata, ma non c'è lavoro da svolgere, Node rimarrà dormiente.
 
 ```javascript
 const http = require('http');
@@ -23,47 +20,31 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+  console.log(`Server in esecuzione all'indirizzo http://${hostname}:${port}/`);
 });
 ```
+Ciò è in contrasto con il modello comune del giorno d'oggi, in cui vengono sfruttati i thread del sistema operativo. Il networking basato sui thread è piuttosto inefficiente e molto difficile da usare. Inoltre, gli utenti di Node sono liberi da preoccupazioni di processi che entrano in dead-lock, dal momento in cui non ci sono blocchi. Quasi nessuna funzione in Node esegue direttamente operazioni di I/O, perciò il processo non si blocca mai. Dal momento che nulla si blocca, è molto facile sviluppare sistemi scalabili in Node.
 
-This is in contrast to today's more common concurrency model where OS threads
-are employed. Thread-based networking is relatively inefficient and very
-difficult to use. Furthermore, users of Node are free from worries of
-dead-locking the process, since there are no locks. Almost no function in Node
-directly performs I/O, so the process never blocks. Because nothing blocks,
-scalable systems are very reasonable to develop in Node.
-
-If some of this language is unfamiliar, there is a full article on
-[Blocking vs Non-Blocking][].
+Se qualcosa in questa terminologia ti è poco familiare, qui c'è un articolo completo su [Bloccante vs Non Bloccante][]. 
 
 ---
 
-Node is similar in design to, and influenced by, systems like Ruby's
-[Event Machine][] or Python's [Twisted][]. Node takes the event model a bit
-further. It presents an [event loop][] as a runtime construct instead of as a library. In other systems there is always a blocking call to start the
-event-loop.
-Typically behavior is defined through callbacks at the beginning of a script
-and at the end starts a server through a blocking call like
-`EventMachine::run()`. In Node there is no such start-the-event-loop call. Node
-simply enters the event loop after executing the input script. Node exits the
-event loop when there are no more callbacks to perform. This behavior is like
-browser JavaScript — the event loop is hidden from the user.
+Node è simile in design, e influenzato, da sistemi come la [Event Machine][] di Ruby o [Twisted][] di Python. Node porta il modello ad eventi un po' oltre. Presenta un [loop di eventi][] come un costrutto a runtime invece che come libreria. In altri sistemi c'è sempre una chiamata bloccante per chiamare un Event Loop.
 
-HTTP is a first class citizen in Node, designed with streaming and low latency
-in mind. This makes Node well suited for the foundation of a web library or
-framework.
+Normalmente il comportamento viene definito tramite callbacks all'inizio di uno script e alla fine viene avviato un server tramite una chiamata bloccante come `EventMachine::run()`.
+In Node non c'è un loop d'avvio dell'evento come quello. 
+Node semplicemente entra nell'event loop dopo aver eseguito lo script di input. 
+Node esce dal loop d'evento quando non ci sono più callbacks da eseguire.
+Questo comportamento è simile al JavaScript dei browser - il loop d'eventi è nascosto all'utente.
 
-Just because Node is designed without threads, doesn't mean you cannot take
-advantage of multiple cores in your environment. Child processes can be spawned
-by using our [`child_process.fork()`][] API, and are designed to be easy to
-communicate with. Built upon that same interface is the [`cluster`][] module,
-which allows you to share sockets between processes to enable load balancing
-over your cores.
+HTTP è la prima classe abitante in Node, pensata con l'idea di streaming e bassa la tenza in mente.
+Questo rende Node adatto per la creazione di una libreria web o di un framework.
 
-[Blocking vs Non-Blocking]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
+Solo perché Node è pensato senza thread, non significa che non puoi trarre vantaggio dai core multipli nel tuo ambiente. Puoi produrre processi figli utilizzando la nostra API [`child_process.fork()`][], ed essi sono progettati in modo tale da poterci comunicare agevolmente. Creato a partire dalla medesima interfaccia è inoltre il modulo [`cluster`][], il quale ti consente di condividere sockets tra processi per abilitare il load balancing sui tuoi core.
+
+[Bloccante vs Non Bloccante]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[event loop]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
+[loop di eventi]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: http://rubyeventmachine.com/
 [Twisted]: http://twistedmatrix.com/
