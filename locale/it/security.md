@@ -42,19 +42,16 @@ Queste fix non sono pubblicate nel repository ma piuttosto mantenute localmente 
 - Solitamente la data d'embargo viene stabilita a 72 ore dal momento in cui il CVE è stato richiesto. Tuttavia, ciò potrebbe variare dipendentemente alla gravità del problema o alla difficoltà di applicare un fix.
 
 - Questo processo può richiedere del tempo, specialmente nel momento in cui è richiesto un coordinamento con i manutentori di altri progetti. Ogni sforzo verrà fatto per gestire il bug nella maniera più rapida possibile; d'altro canto, è importante che noi seguiamo il processo di rilascio sovrastante per assicurare che la scoperta venga gestita in modo coerente.
-- This process can take some time, especially when coordination is required with maintainers of other projects. Every
-effort will be made to handle the bug in as timely a manner as possible; however, it’s important that we follow the
-release process above to ensure that the disclosure is handled in a consistent manner.
 
 
-## Receiving Security Updates
+## Ricezione aggiornamenti di sicurezza
 
-Security notifications will be distributed via the following methods.
+Le notifiche di sicurezza verranno distribuite nei seguenti modi.
 
 - [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
 - [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
 
-## Comments on this Policy
+## Commenti su questa Politica
 
-If you have suggestions on how this process could be improved please submit a [pull request](https://github.com/nodejs/nodejs.org)
-or [file an issue](https://github.com/nodejs/security-wg/issues/new) to discuss.
+Se hai suggerimenti su come questo processo potrebbe essere migliorato per favore invia una [pull request](https://github.com/nodejs/nodejs.org) o [crea una segnalazione](https://github.com/nodejs/security-wg/issues/new) per discuterne.
+
