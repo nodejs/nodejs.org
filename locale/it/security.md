@@ -3,57 +3,45 @@ layout: security.hbs
 title: Sicurezza
 ---
 
-# Security
+# Sicurezza
 
-## Reporting a Bug in Node.js
+## Riportare un Bug in Node.js
 
-All security bugs in Node.js are taken seriously and should be reported via [HackerOne](https://hackerone.com/nodejs)
-or by emailing [security@nodejs.org](mailto:security@nodejs.org). This will be delivered to a subset of the core team
-who handle security issues.
+Tutti i bug di sicurezza in Node.js sono presi con la massima serietà e dovrebbero essere riportati tramite [HackerOne](https://hackerone.com/nodejs) o mandando una mail a [security@nodejs.org](mailto:security@nodejs.org). Questa verrà recapitata ad un sottoinsieme del team principale che gestisce i problemi di sicurezza.
 
-Your report will be acknowledged within 24 hours, and you’ll receive a more detailed response to your report within 48
-hours indicating the next steps in handling your submission.
+Il tuo report verrà riconosciuto entro 24 ore, e riceverai una risposta più dettagliata al tuo report entro 48 ore indicando i prossimi passi nella gestione della tua richiesta.
 
-After the initial reply to your report, the security team will endeavor to keep you informed of the progress being made
-towards a fix and full announcement, and may ask for additional information or guidance surrounding the reported issue.
-These updates will be sent at least every five days; in practice, this is more likely to be every 24-48 hours.
+Dopo averti dato una prima risposta, il team della sicurezza cercherà di tenerti informato dei progressi fatti prima di un annuncio completo e una fix, e potrebbe richiederti informazioni aggiuntivi o una consulenza circa il problema riportato.
+Questi aggiornamenti verranno inviati come minimo ogni 5 giorni; nella pratica, è più probabile che succeda ogni 24-48 ore.
 
-### Node.js Bug Bounty Program
+### Programma Premio Bug Node.js 
 
-The Node.js project engages in an official bug bounty program for security researchers and responsible public disclosures.
+Il progetto Node.js intraprende un programma ufficiale di premiazione bug per ricercatori di sicurezza e responsabili di pubblicazioni.
 
-The program is managed through the HackerOne platform at [https://hackerone.com/nodejs](https://hackerone.com/nodejs) with further details.
+Il programma è gestito nel dettaglio tramite la piattaforma HackerOne [https://hackerone.com/nodejs](https://hackerone.com/nodejs)
 
-## Reporting a Bug in a third party module
+## Segnalare un bug in un modulo di terze parti
 
-Security bugs in third party modules should be reported to their respective maintainers and should also be coordinated
-through the [Node Ecosystem Security Team](https://hackerone.com/nodejs-ecosystem) or by emailing 
-[security-ecosystem@nodejs.org](mailto:security-ecosystem@nodejs.org).
+I bug di sicurezza nei moduli di terze parti dovrebbero essere riportati ai loro rispettivi manutentori e dovrebbero inoltre essere coordinati per mezzo del [Node Ecosystem Security Team](https://hackerone.com/nodejs-ecosystem) o mandando una mail a [security-ecosystem@nodejs.org](mailto:security-ecosystem@nodejs.org).
 
-Details regarding this process can be found in the [Security Working Group repository](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md).
+Dettagli a riguardo del processo possono essere trovati nel [Security Working Group repository](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md)
 
-Thank you for improving the security of Node.js and its ecosystem. Your efforts and responsible disclosure are greatly
-appreciated and will be acknowledged.
+Grazie per l'aiuto nel migliorare la sicurezza di Node.js e del suo ecosistema. I tuoi sforzi e le tue scoperte sono molto apprezzate e saranno considerate.
 
-## Disclosure Policy
+## Policy delle scoperte
 
-Here is the security disclosure policy for Node.js
+Ecco la politica delle rivelazioni di sicurezza per Node.js
 
-- The security report is received and is assigned a primary handler. This person will coordinate the fix and release
-process. The problem is confirmed and a list of all affected versions is determined. Code is audited to find any
-potential similar problems. Fixes are prepared for all releases which are still under maintenance. These fixes are not
-committed to the public repository but rather held locally pending the announcement.
+- Il report di sicurezza viene ricevuto e assegnato al gestore primario. Questa persona coordinerà la fix e il processo di rilascio. Il problema viene confermato e una lista di tutte le versioni affette viene stilata. Il codice viene sottoposto a revisione per trovare altri potenziali problemi della medesima natura. Delle fix vengono preparate per tutte le release che sono ancora supportate.
+Queste fix non sono pubblicate nel repository ma piuttosto mantenute localmente in attesa dell'annuncio.
 
-- A suggested embargo date for this vulnerability is chosen and a CVE (Common Vulnerabilities and Exposures (CVE®))
-is requested for the vulnerability.
+- Una data di embargo per questa vulnerabilità viene decretata e un CVE (Common Vulnerabilities and Exposures (CVE®)) viene richiesto per la vulnerabilità.
 
-- On the embargo date, the Node.js security mailing list is sent a copy of the announcement. The changes are pushed to
-the public repository and new builds are deployed to nodejs.org. Within 6 hours of the mailing list being notified, a
-copy of the advisory will be published on the Node.js blog.
+- Giunta la data di embargo, alla mailing list di sicurezza di Node.js viene inviata una copia dell'annuncio. Le modifiche vengono inviate al repository pubblico e vengono pubblicate nuove build su nodejs.org. Entro 6 ore dalla notifica alla mailing list, una copia dell'annuncio verrà pubblicata sul blog di Node.js. 
 
-- Typically the embargo date will be set 72 hours from the time the CVE is issued. However, this may vary depending on
-the severity of the bug or difficulty in applying a fix.
+- Solitamente la data d'embargo viene stabilita a 72 ore dal momento in cui il CVE è stato richiesto. Tuttavia, ciò potrebbe variare dipendentemente alla gravità del problema o alla difficoltà di applicare un fix.
 
+- Questo processo può richiedere del tempo, specialmente nel momento in cui è richiesto un coordinamento con i manutentori di altri progetti. Ogni sforzo verrà fatto per gestire il bug nella maniera più rapida possibile; d'altro canto, è importante che noi seguiamo il processo di rilascio sovrastante per assicurare che la scoperta venga gestita in modo coerente.
 - This process can take some time, especially when coordination is required with maintainers of other projects. Every
 effort will be made to handle the bug in as timely a manner as possible; however, it’s important that we follow the
 release process above to ensure that the disclosure is handled in a consistent manner.
