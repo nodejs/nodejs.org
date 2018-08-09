@@ -33,7 +33,7 @@
   "dependencies": {
     "autoprefixer-stylus": "0.14.0",
     "cheerio": "0.22.0",
-    "chokidar": "2.0.3",
+    "chokidar": "^2.0.4",
     "handlebars": "4.0.11",
     "jstransformer-handlebars": "1.1.0",
     "junk": "2.1.0",
@@ -54,7 +54,7 @@
     "ncp": "2.0.0",
     "node-version-data": "1.0.1",
     "octonode": "^0.9.3",
-    "request": "2.85.0",
+    "request": "^2.87.0",
     "require-dir": "1.0.0",
     "semver": "5.5.0",
     "st": "1.2.2",
@@ -63,11 +63,11 @@
   "devDependencies": {
     "faucet": "^0.0.1",
     "htmllint-cli": "^0.0.6",
-    "nock": "^9.2.3",
+    "nock": "^9.5.0",
     "pre-commit": "^1.2.2",
     "proxyquire": "^2.0.1",
     "standard": "^11.0.1",
     "stylint": "^1.5.9",
-    "tape": "^4.9.0"
+    "tape": "^4.9.1"
   }
 }
