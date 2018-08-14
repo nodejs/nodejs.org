@@ -18,7 +18,7 @@ labels:
   version-schedule-prompt-link-text: LTS 日程。
   newsletter: true
   newsletter-prefix: 订阅
-  newsletter-postfix: ，Node.js 官方的新闻周报。
+  newsletter-postfix: ，Node.js 官方的新闻月报。
 ---
 
 Node.js® 是一个基于 [Chrome V8 引擎](https://developers.google.com/v8/) 的 JavaScript 运行时。

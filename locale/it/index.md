@@ -18,7 +18,7 @@ labels:
   version-schedule-prompt-link-text: tabella di marcia LTS.
   newsletter: true
   newsletter-prefix: Iscriviti a
-  newsletter-postfix: ", la newsletter settimanale di Node.js"
+  newsletter-postfix: ", la newsletter mensile di Node.js"
 ---
 
 Node.js® è un runtime JavaScript costruito sul [motore JavaScript V8 di Chrome](https://developers.google.com/v8/).
