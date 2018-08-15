@@ -24,6 +24,7 @@ Node.js 是个包容的大家庭，因此我们鼓励用户各施所长。 若�
 - [NodeSchool.io](http://nodeschool.io) 通过互动命令的方式教会你 Node.js 的概念。
 - [Stack Overflow Node.js tag](http://stackoverflow.com/questions/tagged/node.js) 每日收集最新资讯。
 - [The DEV Community Node.js tag](https://dev.to/t/node) 是一个共享 Node.js 项目、文章和教程，以及开始讨论、并接受与 Node.js 相关的主题。欢迎所有技能级别的开发人员参与。
+- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) 是一个 Nodejs 后端开发者在 Discord 上互相支援的友好社区。
 
 ## 国际化社区站点及项目
 
