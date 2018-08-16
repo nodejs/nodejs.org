@@ -255,7 +255,7 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'Security releases announced for August 15th',
+          text: 'August 2018 security releases available, upgrade now',
           link: '/en/blog/vulnerability/august-2018-security-releases/'
         }
       }
