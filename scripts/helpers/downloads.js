@@ -139,11 +139,14 @@ function resolveUrl (item, version) {
 
 module.exports = (version) => {
   let downloads = latestDownloads
-  if (semver.satisfies(version, '< 8.0.0')) {
-    downloads = postMergeDownloads
-  }
   if (semver.satisfies(version, '< 1.0.0')) {
     downloads = legacyDownloads
+  } else if (semver.satisfies(version, '< 8.0.0')) {
+    downloads = postMergeDownloads
+  } else if (semver.satisfies(version, '>= 10.0.0')) {
+    downloads = postMergeDownloads.filter(ver =>
+      ver.title !== 'Linux 32-bit Binary' &&
+      ver.title !== 'SunOS 32-bit Binary')
   }
   return downloads.map((item) => resolveUrl(item, version))
 }
