@@ -169,7 +169,7 @@ Whether or not your regular expression pattern is vulnerable (i.e. the regexp en
 
 1. Avoid nested quantifiers like `(a+)*`. Node's regexp engine can handle some of these quickly, but others are vulnerable.
 2. Avoid OR's with overlapping clauses, like `(a|a)*`. Again, these are sometimes-fast.
-3. Avoid use backreferences, like `(a.*) \1`. No regexp engine can guarantee evaluating these in linear time.
+3. Avoid using backreferences, like `(a.*) \1`. No regexp engine can guarantee evaluating these in linear time.
 4. If you're doing a simple string match, use `indexOf` or the local equivalent. It will be cheaper and will never take more than `O(n)`.
 
 If you aren't sure whether your regular expression is vulnerable, remember that Node generally doesn't have trouble reporting a *match* even for a vulnerable regexp and a long input string.
