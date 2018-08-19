@@ -25,7 +25,7 @@ The Node.js community is large, inclusive, and excited to enable as many users t
 - [Stack Overflow Node.js tag](http://stackoverflow.com/questions/tagged/node.js) collects new information every day.
 - [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
 - [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node backend developers supporting each other on Discord.
-
+- [How To Node](http://howtonode.org/) has a growing number of useful tutorials.
 
 ## International community sites and projects
 
