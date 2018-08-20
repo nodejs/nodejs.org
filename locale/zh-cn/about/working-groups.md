@@ -7,7 +7,7 @@ title: 工作组
 
 核心工作组由 [ 技术指导委员会(TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md) 创建。
 
-## Current Working Groups
+## 现有工作组
 
 * [Website](#website)
 * [Streams](#streams)
