@@ -221,6 +221,6 @@ function stringToBase64(req, res) {
 当使用 `Buffer.from(req.body.string)` 的时候，如果传入一个数字总是抛出异常，给程序提供了一个总是可以自我处理的机会。
 
 <a id="ecosystem-usage"></a>
-###`Buffer()` 构造函数废弃有一阵了，它有问题吗？
+### `Buffer()` 构造函数废弃有一阵了，它有问题吗？
 
 检测 `npm` 生态系统的代码，表明 `Buffer()` 仍然广泛被使用。这包含新提交的代码，以及这类代码的使用仍然在 *增长中*。
