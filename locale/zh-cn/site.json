@@ -87,10 +87,6 @@
       "link": "docs/es6",
       "text": "ES6 及更高"
     },
-    "inspector": {
-      "link": "docs/inspector",
-      "text": "调试"
-    },
     "api-lts": {
       "link": "/dist/latest-%ver-major%/docs/api",
       "subtext": "LTS",
@@ -111,6 +107,10 @@
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
       "text": "代码与学习"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "协作者峰会"
     },
     "contribute": {
       "link": "get-involved/contribute",
