@@ -126,5 +126,9 @@
     "pages": {
       "changelog": "Cambios"
     }
+  },
+  "collab-summit": {
+    "link": "get-involved/collab-summit",
+    "text": "Conferencia de colaboradores"
   }
 }
