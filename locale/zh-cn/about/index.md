@@ -42,5 +42,5 @@ HTTP 是 Node 中的一等公民。它设计的是流式和低延迟。这使得
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
 [事件轮询]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
-[事件机]: http://rubyeventmachine.com/
+[事件机]: https://github.com/eventmachine/eventmachine
 [扭曲]: http://twistedmatrix.com/
