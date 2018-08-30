@@ -17,7 +17,6 @@ Core Working Groups are created by the
 * [Docker](#docker)
 * [Evangelism](#evangelism)
 * [i18n](#i18n)
-* [Post-mortem](#post-mortem)
 * [Release](#release)
 * [Security](#security)
 * [Streams](#streams)
@@ -89,6 +88,10 @@ Responsibilities include:
 * Exploring opportunities and gaps, discussing feature requests, and addressing
   conflicts in Node.js diagnostics.
 * Fostering an ecosystem of diagnostics tools for Node.js.
+* Defining and adding interfaces/APIs in order to allow dumps to be generated
+  when needed.
+* Defining and adding common structures to the dumps generated in order to
+  support tools that want to introspect those dumps.
 
 ### [Docker](https://github.com/nodejs/docker-node)
 
@@ -166,21 +169,6 @@ Each language community maintains its own membership.
 * [nodejs-zh-TW - Taiwanese (國語)](https://github.com/nodejs/nodejs-zh-TW)
 * [nodejs-uk - Ukrainian (Українська)](https://github.com/nodejs/nodejs-uk)
 * [nodejs-vi - Vietnamese (Tiếng Việt)](https://github.com/nodejs/nodejs-vi)
-
-
-### [Post-mortem](https://github.com/nodejs/post-mortem)
-
-The Post-mortem Diagnostics Working Group is dedicated to the support
-and improvement of postmortem debugging for Node.js. It seeks to
-elevate the role of postmortem debugging for Node, to assist in the
-development of techniques and tools, and to make techniques and tools
-known and available to Node.js users.
-
-Responsibilities include:
-* Defining and adding interfaces/APIs in order to allow dumps
-  to be generated when needed.
-* Defining and adding common structures to the dumps generated
-  in order to support tools that want to introspect those dumps.
 
 ### [Release](https://github.com/nodejs/LTS)
 The Release Working Group manages the release process for Node.js.
