@@ -7,14 +7,14 @@ layout: docs.hbs
 
 There are several dependencies that Node.js relies on to work the way it does.
 
-- [Libraries](#Libraries)
-  - [V8](#V8)
+- [Libraries](#libraries)
+  - [V8](#v8)
   - [libuv](#libuv)
   - [http-parser](#http-parser)
   - [c-ares](#c-ares)
-  - [OpenSSL](#OpenSSL)
+  - [OpenSSL](#openssl)
   - [zlib](#zlib)
-- [Tools](#Tools)
+- [Tools](#tools)
   - [npm](#npm)
   - [gyp](#gyp)
   - [gtest](#gtest)

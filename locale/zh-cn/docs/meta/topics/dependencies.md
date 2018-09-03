@@ -7,19 +7,19 @@ layout: docs.hbs
 
 Node.js 依赖于以下一些依赖项，这样它才能正常工作。
 
-- [Libraries](#Libraries)
-  - [V8](#V8)
+- [类库](#libraries)
+  - [V8](#v8)
   - [libuv](#libuv)
   - [http-parser](#http-parser)
   - [c-ares](#c-ares)
-  - [OpenSSL](#OpenSSL)
+  - [OpenSSL](#openssl)
   - [zlib](#zlib)
-- [Tools](#Tools)
+- [工具](#tools)
   - [npm](#npm)
   - [gyp](#gyp)
   - [gtest](#gtest)
 
-## 类库
+## <!--libraries-->类库
 
 ### V8
 
@@ -57,7 +57,7 @@ OpenSSL 广泛地在 `tls` 和 `crypto` 模块中使用。它提供了战争环�
 
 - [相关文档](http://www.zlib.net/manual.html)
 
-## 工具
+## <!--tools-->工具
 
 ### npm
 
