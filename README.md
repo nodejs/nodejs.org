@@ -58,7 +58,3 @@ The Website WG defers to these WGs on matters of content and routinely adds coll
 working groups as they add and improve content on the website. In other words, the Website WG is not
 an *editorial* Working Group except when no other Working Group has taken responsibility for a
 content area.
-
-### Website Working Group Members
-
-[Member list](https://github.com/orgs/nodejs/teams/website/members)
