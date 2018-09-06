@@ -119,7 +119,7 @@ app.get('/constant-time', (req, res) => {
 app.get('/countToN', (req, res) => {
   let n = req.query.n;
 
-  // 先执行 n 次循环，才给其他请求执行机会
+  // n iterations before giving someone else a turn
   for (let i = 0; i < n; i++) {
     console.log(`Iter {$i}`);
   }
@@ -134,7 +134,7 @@ app.get('/countToN', (req, res) => {
 app.get('/countToN2', (req, res) => {
   let n = req.query.n;
 
-  // 先执行 n^2 次循环，才给其他请求执行机会
+  // n^2 iterations before giving someone else a turn
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {
       console.log(`Iter ${i}.${j}`);
