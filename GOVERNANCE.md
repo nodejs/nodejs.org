@@ -19,9 +19,6 @@ The Website WG has final authority over this project including:
 * Conduct guidelines
 * Maintaining the list of additional Collaborators
 
-For the current list of WG members, see the project
-[README.md](./README.md#current-project-team-members).
-
 ## Collaborators
 
 The [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org)
@@ -51,9 +48,6 @@ modifications, or modifications that have not found consensus to the
 WG for discussion by assigning the ***WG-agenda*** tag to a pull
 request or issue. The WG should serve as the final arbiter where
 required.
-
-For the current list of Collaborators, see the project
-[README.md](./README.md#website-working-group-collaborators).
 
 ## WG Membership
 
