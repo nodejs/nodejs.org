@@ -70,6 +70,8 @@ title: 工作组
 * 在 Node.js 及其组件中记录诊断功能和 API。
 * 探索机会和差距并讨论功能请求，解决 Node.js 中的冲突。
 * 培养 Node.js 的诊断工具生态系统。
+* 定义并添加接口 / API 函数，在需要时允许产生转储。
+* 定义并向生成的转储添加公共结构，对这些转储进行内省的工具给予支持。
 
 ### [Docker](https://github.com/nodejs/docker-node)
 
