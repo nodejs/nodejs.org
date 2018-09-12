@@ -293,8 +293,11 @@ within an I/O cycle, independently of how many timers are present.
 You may have noticed that `process.nextTick()` was not displayed in the
 diagram, even though it's a part of the asynchronous API. This is because
 `process.nextTick()` is not technically part of the event loop. Instead,
-the `nextTickQueue` will be processed after the current operation
-completes, regardless of the current phase of the event loop.
+the `nextTickQueue` will be processed after the current operation is
+completed, regardless of the current phase of the event loop. Here, 
+an *operation* is defined as a transition from the
+underlying C/C++ handler, and handling the JavaScript that needs to be
+executed.
 
 Looking back at our diagram, any time you call `process.nextTick()` in a
 given phase, all callbacks passed to `process.nextTick()` will be
@@ -394,6 +397,56 @@ When only a port is passed, the port is bound immediately. So, the
 To get around this, the `'listening'` event is queued in a `nextTick()`
 to allow the script to run to completion. This allows the user to set
 any event handlers they want.
+
+### Deduplication
+
+For the `timers` and `check` phases, there is a single transition 
+between C to JavaScript for multiple immediates and timers. This deduplication
+is a form of optimization, which may produce some unexpected side effects.
+Take this code snippet as an example:
+
+```js
+// dedup.js
+const foo = [1, 2];
+const bar = ['a', 'b'];
+
+foo.forEach(num => {
+  setImmediate(() => {
+    console.log('setImmediate', num);
+    bar.forEach(char => {
+      process.nextTick(() => {
+        console.log('process.nextTick', char);
+      });
+    });
+  });
+});
+```
+```bash
+$ node dedup.js
+setImmediate 1
+setImmediate 2
+process.nextTick a
+process.nextTick b
+process.nextTick a
+process.nextTick b
+```
+
+The main thread adds two `setImmediate()` events, which when processed
+will add two `process.nextTick()` events. When the event loop reaches
+the `check` phase, it sees that there are currently two events created by
+`setImmediate()`. The first event is grabbed and processed, which prints
+and adds two events to the `nextTickQueue`.
+
+Because of deduplication, the event loop does not transition back to the
+C/C++ layer to check if there are items in the `nextTickQueue` immediately. It
+instead continues to process any remaining `setImmediate()` events, of which
+one currently remains. After processing this event, two more events are 
+added to the `nextTickQueue` for a total of four events.
+
+At this point, all previously added `setImmediate()` events have been processed.
+The `nextTickQueue` is now checked, and events are processed in FIFO order. When
+this `nextTickQueue` is emptied, the event loop considers all operations to have 
+been completed for the current phase and transitions to the next phase.
 
 ## `process.nextTick()` vs `setImmediate()`
 
