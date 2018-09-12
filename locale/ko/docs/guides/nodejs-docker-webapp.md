@@ -514,7 +514,7 @@ on Docker.
 You can find more information about Docker and Node.js on Docker in the
 following places:
 
-* [Official Node.js Docker Image](https://registry.hub.docker.com/_/node/)
+* [Official Node.js Docker Image](https://hub.docker.com/_/node/)
 * [Node.js Docker Best Practices Guide](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 * [Official Docker documentation](https://docs.docker.com/)
 * [Docker Tag on Stack Overflow](https://stackoverflow.com/questions/tagged/docker)
@@ -525,7 +525,7 @@ following places:
 
 다음 링크에서 Docker와 Docker에서의 Node.js에 대한 정보를 더 자세히 볼 수 있습니다.
 
-* [공식 Node.js Docker 이미지](https://registry.hub.docker.com/_/node/)
+* [공식 Node.js Docker 이미지](https://hub.docker.com/_/node/)
 * [Node.js Docker 사용사례 문서](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 * [공시 Docker 문서](https://docs.docker.com/)
 * [Stack Overflow에 Docker 태그로 올라온 질문](https://stackoverflow.com/questions/tagged/docker)
