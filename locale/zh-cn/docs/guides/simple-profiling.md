@@ -55,7 +55,7 @@ app.get('/auth', (req, res) => {
   const { salt, hash } = users[username];
   const encryptHash = crypto.pbkdf2Sync(password, salt, 10000, 512, 'sha512');
 
-  if (hash.toString() === encryptHash.toString()) {
+  if (crypto.timingSafeEqual(hash, encryptHash)) {
     res.sendStatus(200);
   } else {
     res.sendStatus(401);
