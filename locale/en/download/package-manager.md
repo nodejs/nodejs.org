@@ -31,14 +31,13 @@ title: Installing Node.js via package manager
 
 Android support is still experimental in Node.js, so precompiled binaries are not yet provided by Node.js developers.
 
-However, there are some third-party solutions. For example, [Termux](https://termux.com/) community provides terminal emulator and Linux environment for Android, as well as own package manager and [extensive collection](https://github.com/termux/termux-packages) of many precompiled applications. These commands in Termux app will install the last LTS or a current Node.js version respectively:
+However, there are some third-party solutions. For example, [Termux](https://termux.com/) community provides terminal emulator and Linux environment for Android, as well as own package manager and [extensive collection](https://github.com/termux/termux-packages) of many precompiled applications. This command in Termux app will install the last available Node.js version:
 
 ```bash
 pkg install nodejs
-pkg install nodejs-current
 ```
 
-Currently, Termux Node.js binaries are compiled without ICU and Inspector support.
+Currently, Termux Node.js binaries are compiled without Inspector support and linked against `system-icu` (depending on `libicu` package).
 
 ## Arch Linux
 
@@ -230,7 +229,7 @@ Additionally, versions of **CentOS** and **Scientific Linux** corresponding to t
 * **Fedora 27** (i686/x86_64/armv7hl/aarch64/ppc64/ppc64le/s390x)
 * **Fedora 26** (i686/x86_64/armv7hl/aarch64/ppc64/ppc64le)
 
-## FreeBSD 
+## FreeBSD
 
 The most recent release of Node.js is available via the [www/node](http://freshports.org/www/node) port.
 
@@ -317,7 +316,7 @@ Node.js is available in the main repositories under the following packages:
 * **openSUSE Leap 42.2**: `nodejs4`
 * **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
 * **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
-* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`  
+* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`
   (The "Web and Scripting Module" must be [added before installing](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).)
 
 For example, to install Node.js 4.x on openSUSE Leap 42.2, run the following as root:
