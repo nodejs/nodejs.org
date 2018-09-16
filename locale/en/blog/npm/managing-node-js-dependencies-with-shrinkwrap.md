@@ -27,16 +27,20 @@ Photo by Luc Viatour (flickr)</p>
 <p>That brings us to <a href="https://npmjs.com/doc/shrinkwrap.html">npm shrinkwrap</a><a href="#note1-note" name="note1-top">[1]</a>:
 
 </p>
-<pre><code>NAME
+
+```
+NAME
        npm-shrinkwrap -- Lock down dependency versions
 
 SYNOPSIS
        npm shrinkwrap
 
 DESCRIPTION
-       This  command  locks down the versions of a package&#039;s dependencies so
+       This  command  locks down the versions of a package's dependencies so
        that you can control exactly which versions of each  dependency  will
-       be used when your package is installed.</code></pre>
+       be used when your package is installed.
+```
+
 <p>Let&#039;s consider package A:
 
 </p>
