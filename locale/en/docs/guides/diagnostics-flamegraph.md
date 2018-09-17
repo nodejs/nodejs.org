@@ -32,10 +32,10 @@ Now let's get to work.
 
 1. Install `perf` (usually available through the linux-tools-common package if not already installed)
 2. try running `perf` - it might complain about missing kernel modules, install them too
-3. run node with perf enabled 
+3. run node with perf enabled (see [perf output issues](#perf-output-issues) for tips specific to node versions)
 ```bash
 perf record -e cycles:u -g -- node --perf-basic-prof app.js
-```
+``` 
 4. disregard warnings unless they're saying you can't run perf due to missing packages; you may get some warnings about not being able to access kernel module samples which you're not after anyway.
 5. Run `perf script > perfs.out` to generate the data file you'll visualize in a moment. It's useful to [apply some cleanup](#filtering-out-node-internal-functions) for a more readable graph 
 6. install stackvis if not yet installed `npm i -g stackvis`
@@ -68,7 +68,7 @@ Usually you just want to look at the performance of your own calls, so filtering
 
 ```bash
 sed -i \
-  -e "s/( __libc_start| LazyCompile | v8::internal::| Builtin:| Stub:| LoadIC:|\[unknown\]| LoadPolymorphicIC:)/d" \
+  -e "/( __libc_start| LazyCompile | v8::internal::| Builtin:| Stub:| LoadIC:|\[unknown\]| LoadPolymorphicIC:)/d" \
   -e 's/ LazyCompile:[*~]\?/ /' \
   perfs.out
 ```
@@ -89,16 +89,23 @@ Well, without these options you'll still get a flame graph, but with most bars l
 
 ### Node.js 8.x V8 pipeline changes
 
-Node.js 8.x and above ships with new optimizations to JavaScript compilation pipeline in V8 engine which makes function names/references unreachable for perf sometimes. The result is you might not get your function names right in the flame graph. 
+Node.js 8.x and above ships with new optimizations to JavaScript compilation pipeline in V8 engine which makes function names/references unreachable for perf sometimes. (It's called Turbofan) 
 
-You'll notice `ByteCodeHandler:` instead of function names in your flame graph.
+The result is you might not get your function names right in the flame graph. 
 
-[0x](https://www.npmjs.com/package/0x) has some fixes for that built in. 
+You'll notice `ByteCodeHandler:` where you'd expect function names.
 
+[0x](https://www.npmjs.com/package/0x) has some mitigations for that built in. 
 
 For details see:
 - https://github.com/nodejs/benchmarking/issues/168
 - https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
+
+### Node.js 10+ 
+
+Node.js 10.x addresses the issue with Turbofan using the`--interpreted-frames-native-stack` flag.
+
+Run `node --interpreted-frames-native-stack --perf-basic-prof-only-functions` to get finction names in the flame graph regardless of which pipeline V8 used to compile your JavaScript.
 
 
 ## Examples
