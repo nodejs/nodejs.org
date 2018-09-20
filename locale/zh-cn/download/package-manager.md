@@ -31,14 +31,14 @@ title: 通过包管理器安装 Node.js
 
 因为 Android 版的 Nodejs 目前处于实验阶段，所以当下不提供预编译版本。
 
-但是你有一些第三方的解决方案可供选择：拿 [Termux](https://termux.com/) 来说，它为安卓提供了终端模拟器和 Linux 环境，以及内置的包管理器和 [可扩展应用集](https://github.com/termux/termux-packages)，其中包含了大量预编译的应用。在 Termux 中，以下的命令将会安装最新的 LTS 版或是 Nodejs：
+但是你有一些第三方的解决方案可供选择：拿 [Termux](https://termux.com/) 来说，它为安卓提供了终端模拟器和 Linux 环境，以及内置的包管理器和 [可扩展应用集](https://github.com/termux/termux-packages)，其中包含了大量预编译的应用。在 Termux 中，以下的命令将会安装最新版 Nodejs：
 
 ```bash
 pkg install nodejs
 pkg install nodejs-current
 ```
 
-截止到目前，基于 Termux 的 Node.js 二进制程序包不支持在 ICU 和 Inspector 上编译。
+目前，Termux 的 Nodejs 二进制程序包是在没有检查器支持的情况下编译的，并与 `system-icu` （依赖于 `libicu` 包）相关联。
 
 ## Arch Linux
 
@@ -231,7 +231,7 @@ RHEL 6 在 EPEL 中已经不被支持，但你可以使用 [Red Hat Software Col
 * **Fedora 27** (i686/x86_64/armv7hl/aarch64/ppc64/ppc64le/s390x)
 * **Fedora 26** (i686/x86_64/armv7hl/aarch64/ppc64/ppc64le)
 
-## FreeBSD 
+## FreeBSD
 
 可以通过 [www/node](http://freshports.org/www/node) 获取最近的 Node.js。
 
@@ -315,7 +315,7 @@ pkg_add node
 * **openSUSE Leap 42.2**: `nodejs4`
 * **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
 * **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
-* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`  
+* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`
   （“Web 和 Scripting 模块” [安装前必须添加](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html)。）
 
 举个例子，在 openSUSE Leap 42.2 上安装 Node.js，用 root 角色运行命令：
