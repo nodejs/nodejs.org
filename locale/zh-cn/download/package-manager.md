@@ -31,7 +31,7 @@ title: 通过包管理器安装 Node.js
 
 因为 Android 版的 Nodejs 目前处于实验阶段，所以当下不提供预编译版本。
 
-但是你有一些第三方的解决方案可供选择：拿 [Termux](https://termux.com/) 来说，它为安卓提供了终端模拟器和 Linux 环境，以及内置的包管理器和 [可扩展应用集](https://github.com/termux/termux-packages)，其中包含了大量预编译的应用。在 Termux 中，以下的命令将会安装最新可用的 Nodejs：
+但是你有一些第三方的解决方案可供选择：拿 [Termux](https://termux.com/) 来说，它为安卓提供了终端模拟器和 Linux 环境，以及内置的包管理器和 [可扩展应用集](https://github.com/termux/termux-packages)，其中包含了大量预编译的应用。在 Termux 中，以下的命令将会安装最新版 Nodejs：
 
 ```bash
 pkg install nodejs
