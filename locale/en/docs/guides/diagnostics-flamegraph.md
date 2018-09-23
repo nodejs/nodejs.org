@@ -105,7 +105,15 @@ For details see:
 
 Node.js 10.x addresses the issue with Turbofan using the`--interpreted-frames-native-stack` flag.
 
-Run `node --interpreted-frames-native-stack --perf-basic-prof-only-functions` to get finction names in the flame graph regardless of which pipeline V8 used to compile your JavaScript.
+Run `node --interpreted-frames-native-stack --perf-basic-prof-only-functions` to get function names in the flame graph regardless of which pipeline V8 used to compile your JavaScript.
+
+### broken labels in flamegraph
+
+If you're seeing labels looking like this
+```
+node`_ZN2v88internal11interpreter17BytecodeGenerator15VisitStatementsEPNS0_8ZoneListIPNS0_9StatementEEE
+```
+it means the Linux perf you're using was not compiled with demangle support, see https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1396654 for example
 
 
 ## Examples
