@@ -19,16 +19,16 @@ labels:
 Ця документація описує вбудовані модулі, які надаються Node.js. Вона не документує модулі, що надаються спільнотою.
 
 <div class="highlight-box">
-    <h4>Шукаєте документацію про API для попередніх релізів?</h4>
+  <h4>Шукаєте документацію про API для попередніх релізів?</h4>
 
-    <ul>
-        <li><a href="https://nodejs.org/docs/latest-v7.x/api/">Node.js 7.x</a></li>
-        <li><a href="https://nodejs.org/docs/latest-v5.x/api/">Node.js 5.x</a></li>
-        <li><a href="https://nodejs.org/docs/latest-v4.x/api/">Node.js 4.x</a></li>
-        <li><a href="https://nodejs.org/docs/latest-v0.12.x/api/">Node.js 0.12.x</a></li>
-        <li><a href="https://nodejs.org/docs/latest-v0.10.x/api/">Node.js 0.10.x</a></li>
-        <li><a href="https://nodejs.org/docs/">всі версії</a></li>
-    </ul>
+  <ul>
+    <li><a href="https://nodejs.org/docs/latest-v7.x/api/">Node.js 7.x</a></li>
+    <li><a href="https://nodejs.org/docs/latest-v5.x/api/">Node.js 5.x</a></li>
+    <li><a href="https://nodejs.org/docs/latest-v4.x/api/">Node.js 4.x</a></li>
+    <li><a href="https://nodejs.org/docs/latest-v0.12.x/api/">Node.js 0.12.x</a></li>
+    <li><a href="https://nodejs.org/docs/latest-v0.10.x/api/">Node.js 0.10.x</a></li>
+    <li><a href="https://nodejs.org/docs/">всі версії</a></li>
+  </ul>
 </div>
 
 ### Функціонал ES6
