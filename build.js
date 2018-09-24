@@ -254,7 +254,7 @@ function getSource (callback) {
           lts: latestVersion.lts(versions)
         },
         banner: {
-          visible: true,
+          visible: false,
           text: 'August 2018 security releases available, upgrade now',
           link: '/en/blog/vulnerability/august-2018-security-releases/'
         }
