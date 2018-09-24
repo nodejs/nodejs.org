@@ -144,7 +144,7 @@ module.exports = (version) => {
   } else if (semver.satisfies(version, '< 8.0.0')) {
     downloads = postMergeDownloads
   } else if (semver.satisfies(version, '>= 10.0.0')) {
-    downloads = postMergeDownloads.filter(ver =>
+    downloads = downloads.filter(ver =>
       ver.title !== 'Linux 32-bit Binary' &&
       ver.title !== 'SunOS 32-bit Binary')
   }
