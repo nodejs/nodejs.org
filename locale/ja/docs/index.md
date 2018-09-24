@@ -27,18 +27,18 @@ labels:
 このドキュメントでは Node.js によって提供された組み込みのモジュールについて説明しています。コアに組み込まれていないモジュールは含みません。
 
 <div class="highlight-box">
-    <!-- <h4>Looking for API docs of previous releases?</h4> -->
-    <h4>以前のバージョンの API リファレンスをお探しですか？</h4>
+  <!-- <h4>Looking for API docs of previous releases?</h4> -->
+  <h4>以前のバージョンの API リファレンスをお探しですか？</h4>
 
-    <ul>
-        <li><a href="https://nodejs.org/docs/latest-v7.x/api/">Node.js 7.x</a></li>
-        <li><a href="https://nodejs.org/docs/latest-v5.x/api/">Node.js 5.x</a></li>
-        <li><a href="https://nodejs.org/docs/latest-v4.x/api/">Node.js 4.x</a></li>
-        <li><a href="https://nodejs.org/docs/latest-v0.12.x/api/">Node.js 0.12.x</a></li>
-        <li><a href="https://nodejs.org/docs/latest-v0.10.x/api/">Node.js 0.10.x</a></li>
-        <!-- <li><a href="https://nodejs.org/docs/">all versions</a></li> -->
-        <li><a href="https://nodejs.org/docs/">すべてのバージョン</a></li>
-    </ul>
+  <ul>
+    <li><a href="https://nodejs.org/docs/latest-v7.x/api/">Node.js 7.x</a></li>
+    <li><a href="https://nodejs.org/docs/latest-v5.x/api/">Node.js 5.x</a></li>
+    <li><a href="https://nodejs.org/docs/latest-v4.x/api/">Node.js 4.x</a></li>
+    <li><a href="https://nodejs.org/docs/latest-v0.12.x/api/">Node.js 0.12.x</a></li>
+    <li><a href="https://nodejs.org/docs/latest-v0.10.x/api/">Node.js 0.10.x</a></li>
+    <!-- <li><a href="https://nodejs.org/docs/">all versions</a></li> -->
+    <li><a href="https://nodejs.org/docs/">すべてのバージョン</a></li>
+  </ul>
 </div>
 
 <!-- ### ES6 Features -->
