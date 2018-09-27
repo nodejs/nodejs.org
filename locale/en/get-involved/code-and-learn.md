@@ -9,7 +9,8 @@ Code & Learn events allow you to get started (or go further) with Node.js core c
 
 ## Upcoming Code + Learn Events
 
-- tbd
+- Vancouver, BC at [Node Interactive](https://events.linuxfoundation.org/events/node-js-interactive-2018/): October 12, 2018
+- Kilkenny, Ireland at [NodeConfEU](https://www.nodeconf.eu/): November 4, 2018
 
 ## Past Code + Learn Events
 
