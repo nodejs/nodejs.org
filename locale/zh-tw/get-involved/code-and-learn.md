@@ -9,7 +9,8 @@ Node.js 核心貢獻者在 Code & Learn 活動能帶大家新手上路（或飛�
 
 ## 即將到來的 Code + Learn 活動
 
-- 待定
+- Vancouver, BC at [Node Interactive](https://events.linuxfoundation.org/events/node-js-interactive-2018/): October 12, 2018
+- Kilkenny, Ireland at [NodeConfEU](https://www.nodeconf.eu/): November 4, 2018
 
 ## 已經結束的 Code + Learn 活動
 

@@ -9,7 +9,8 @@ layout: contribute.hbs
 
 ## 即将到来的代码 + 学习活动
 
-- 待定
+- Vancouver, BC at [Node Interactive](https://events.linuxfoundation.org/events/node-js-interactive-2018/): October 12, 2018
+- Kilkenny, Ireland at [NodeConfEU](https://www.nodeconf.eu/): November 4, 2018
 
 ## 已经结束的代码 + 学习活动
 
