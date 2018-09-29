@@ -11,10 +11,10 @@ layout: contribute.hbs
 
 ## 誰能參與？
 
-歡迎所有人參加 Collab Summit。峰會期間，組長們會在新進的協作者融入工作議程之前，協助他們加入想要貢獻的群組。
+歡迎所有人參加協作者峰會。峰會期間，組長們會在新進的協作者融入工作議程之前，協助他們加入想要貢獻的群組。
 
 這是一個你可以學習社群事務的好機會，同時也能貢獻及精進你的技能。
 
 在進行現場分組討論之前，工作組會先安排行程好讓人們可以互相熟悉對方。
 
-期待能與你在 Collab Summit 相見！[Summit repo](https://github.com/nodejs/summit) 中有即將到來及過往的 Collab Summit 資訊，並記得看看 [issue](https://github.com/nodejs/summit/issues)，裡頭分享了個別工作組及委員會的討論。
+期待能與你在協作者峰會相見！[Summit repo](https://github.com/nodejs/summit) 中有即將到來及過往的協作者峰會資訊，並記得看看 [issue](https://github.com/nodejs/summit/issues)，裡頭分享了個別工作組及委員會的討論。
