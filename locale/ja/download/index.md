@@ -12,6 +12,7 @@ downloads:
     intro: >
         Node.js のソースコードをダウンロードするか、事前にビルドされたインストーラーを利用して、今日から開発を始めましょう。
     currentVersion: 最新のバージョン
+    includes: 同梱
     buildInstructions: Building Node.js from source on supported platforms
     WindowsInstaller: Windows Installer
     WindowsBinary: Windows Binary
