@@ -29,3 +29,4 @@ layout: docs.hbs
 - [Backpressuring in Streams](backpressuring-in-streams/)
 - [Domain Module Postmortem](domain-postmortem/)
 - [How to publish N-API package](publishing-napi-modules/)
+- [ABI Stability](abi-stability/)
