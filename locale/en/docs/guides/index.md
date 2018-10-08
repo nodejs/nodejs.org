@@ -22,7 +22,7 @@ layout: docs.hbs
 - [Timers in Node.js](timers-in-node/)
 
 
-## Module related guides
+## Module-related guides
 
 - [Anatomy of an HTTP Transaction](anatomy-of-an-http-transaction/)
 - [Working with Different Filesystems](working-with-different-filesystems/)
