@@ -76,7 +76,7 @@ Node.js is available from the [NodeSource](https://nodesource.com) Debian and Ub
 **NOTE:** If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 6.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+wget -qO- https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 -->
@@ -96,7 +96,7 @@ Node.js를 이용할 수 있습니다. 이 저장소의 지원내용과 스크�
 읽어볼 필요가 있습니다.
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+wget -qO- https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
@@ -105,7 +105,7 @@ sudo apt-get install -y nodejs
 Alternatively, for Node.js 10:
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+wget -qO- https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
@@ -138,7 +138,7 @@ sudo apt-get install -y build-essential
 Node.js 10를 사용하고 싶다면 다음을 실행합니다.
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+wget -qO- https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
