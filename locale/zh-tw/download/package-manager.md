@@ -60,14 +60,14 @@ Node.js 可由 [NodeSource](https://nodesource.com)（前身為  [Chris Lea](htt
 **請注意：**如果你正在使用 Ubuntu Precise 或 Debian Wheezy，你可能需要閱讀 [running Node.js >= 6.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md)。
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+wget -qO- https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
 或者若你想安裝的是 Node.js 10：
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+wget -qO- https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
