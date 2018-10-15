@@ -71,7 +71,7 @@
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "Instal·lar Node.js mitjançant gestor de paquets"
+      "text": "Instal·lar Node.js mitjançant un gestor de paquets"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
