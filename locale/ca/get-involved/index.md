@@ -12,7 +12,7 @@ contribuir de la manera que puguin. Si vols [reportar un error](https://github.c
 
 ## Discussió de la comunitat
 
-- La [llista Github de qüestions](https://github.com/nodejs/node/issues) és el lloc per discutir les característiques del nucli de Node.js.
+- La [llista d'incidències de Github](https://github.com/nodejs/node/issues) és el lloc per discutir les característiques del nucli de Node.js.
 - Per xatejar en temps real sobre el desenvolupament de Node vagi a `irc.freenode.net` al canal `#node.js` fent servir un [client d'IRC](http://es.wikipedia.org/wiki/Anexo:Clientes_IRC) o connecti's amb el seu navegador al canal usant [WebChat de freenode](http://webchat.freenode.net/?channels=node.js).
 - El compte de Twitter oficial de Node.js és [nodejs](https://twitter.com/nodejs).
 - [Node.js Everywhere](https://newsletter.nodejs.org) és el Butlletí oficial mensual de Node.js.
@@ -26,7 +26,7 @@ contribuir de la manera que puguin. Si vols [reportar un error](https://github.c
 - [NodeSchool.io](http://nodeschool.io) li ensenyarà conceptes de Node.js de forma interactiva mitjançant jocs utilitzant la línia de comandes.
 - L'[etiqueta de Node.js en Stack Overflow](http://stackoverflow.com/questions/tagged/node.js) col·lecciona nova informació cada dia.
 - L'[etiqueta de Node.js en la DEV Community](https://dev.to/t/node) és un lloc on compartir projectes de Node.js, articles i tutorials, així com iniciar debats i demanar realimentació sobre temes relacionats amb Node.js. Els desenvolupadors de tots els nivells d'experiència són benvinguts a participar.
-- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) és una comunitat amigable de desenvolupadors de backend amb Node que es recolzen mútuament en Discord.
+- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) és una comunitat amigable de desenvolupadors de backend amb Node que es recolzen mútuament a Discord.
 - [How To Node](http://howtonode.org/) té un nombre creixent d'útils tutorials.
 
 
