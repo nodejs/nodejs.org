@@ -71,7 +71,7 @@
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "instal·lar Node.js mitjançant gestor de paquets"
+      "text": "Instal·lar Node.js mitjançant gestor de paquets"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
@@ -107,7 +107,7 @@
   },
   "getinvolved": {
     "link": "get-involved",
-    "text": "Implica't",
+    "text": "Participa",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
       "text": "Programa + Aprèn"
