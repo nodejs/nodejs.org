@@ -41,6 +41,6 @@ contribuir de la manera que puguin. Si vols [reportar un error](https://github.c
 - [Grup d'usuaris de Japó](http://nodejs.jp/)
 - [Comunitat Coreana de Node.js](http://nodejs.github.io/nodejs-ko/)
 - [Comunitat de Nicaragua de Node.js](http://nodenica.com/)
-- [Grup de Facebook en espanyol per Node.js](https://www.facebook.com/groups/node.es/)
+- [Grup de Facebook en espanyol de Node.js](https://www.facebook.com/groups/node.es/)
 - [Comunitat en espanyol](http://nodehispano.com)
 - [Comunitat Node.js de Việt Nam](http://nodejs.vn)
