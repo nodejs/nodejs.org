@@ -29,3 +29,4 @@ layout: docs.hbs
 - [流的背压](backpressuring-in-streams/)
 - [Postmortem 中的主要模块](domain-postmortem/)
 - [如何发布 N-API 包](publishing-napi-modules/)
+- [ABI 的稳定性](abi-stability/)
