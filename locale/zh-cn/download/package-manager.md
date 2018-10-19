@@ -58,14 +58,14 @@ pacman -S nodejs npm
 **注意：** 如果你在使用 Ubuntu Precise 或 Debian Wheezy 系统，你可能需要阅读相关信息：[在更古老的发行版系统上运行大于 6.0 版的 Nodejs](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md)。
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+wget -qO- https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
 而在 Node.js 10 版本中：
 
 ```bash
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+wget -qO- https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
