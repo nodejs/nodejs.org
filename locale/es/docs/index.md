@@ -7,10 +7,11 @@ labels:
 
 # Sobre la documentación
 
-Existen tres tipos de documentación disponible en este sitio:
+Existen diferentes tipos de documentación disponible en este sitio:
 
 * Referencia de la API
 * Características de ES6
+* Guías
 
 ### Referencia de la API
 
@@ -24,17 +25,23 @@ También describe los módulos incluidos que proporciona Node.js, mas no documen
   <h4>¿Buscando la referencia de la API para una versión anterior?</h4>
 
   <ul>
+    <li><a href="https://nodejs.org/docs/latest-v9.x/api/">Node.js 9.x</a></li>
     <li><a href="https://nodejs.org/docs/latest-v7.x/api/">Node.js 7.x</a></li>
+    <li><a href="https://nodejs.org/docs/latest-v6.x/api/">Node.js 6.x</a></li>
     <li><a href="https://nodejs.org/docs/latest-v5.x/api/">Node.js 5.x</a></li>
     <li><a href="https://nodejs.org/docs/latest-v4.x/api/">Node.js 4.x</a></li>
     <li><a href="https://nodejs.org/docs/latest-v0.12.x/api/">Node.js 0.12.x</a></li>
     <li><a href="https://nodejs.org/docs/latest-v0.10.x/api/">Node.js 0.10.x</a></li>
-    <li><a href="https://nodejs.org/docs/">Todas las versiones</a></li>
+    <li><a href="https://nodejs.org/docs/">all versions</a></li>
   </ul>
 </div>
 
-### Características de ES6
+### Funcionalidades de ES6
 
-La [sección de ES6](/en/docs/es6/) describe el árbol de los grupos de las características de ES6, y detalla qué
-características están activadas por defecto en Node.js, junto con enlaces explicativos. También muestra cómo encontrar
+La [sección de ES6](/en/docs/es6/) describe los tres grupos de funcionalidades de ES6, y detalla qué
+funcionalidades están activadas por defecto en Node.js, junto con enlaces explicativos. También muestra cómo encontrar
 qué versión de V8 usa una versión particular de Node.js.
+
+### Guías
+
+De formato largo, artículos en profundidad sobre las funcionalides y capacidades técnicas de Node.js
