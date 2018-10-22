@@ -4,12 +4,13 @@
   "url": "https://nodejs.org/es/",
   "locale": "es",
   "scrollToTop": "Vuelve al comienzo",
-  "reportNodeIssue": "Reporte un problema con Node.js",
-  "reportWebsiteIssue": "Reporte un problema con el sitio",
-  "getHelpIssue": "Consiga ayuda",
+  "reportNodeIssue": "Informe de un problema con Node.js",
+  "reportWebsiteIssue": "Informe de un problema con el sitio",
+  "getHelpIssue": "Consiga Ayuda",
   "by": "por",
   "all-downloads": "Todas las opciones de descarga",
-  "nightly": "Versiones nightly",
+  "nightly": "Versiones Nightly",
+  "chakracore-nightly": "Versiones Node-ChakraCore Nightly",
   "previous": "Anterior",
   "next": "Siguiente",
   "feeds": [
@@ -23,7 +24,7 @@
     },
     {
       "link": "feed/vulnerability.xml",
-      "text": "Node.js Blog: Reportes de vulnerabilidades"
+      "text": "Node.js Blog: Informes de Vulnerabilidad"
     }
   ],
   "home": {
@@ -36,9 +37,13 @@
       "link": "about/governance",
       "text": "Gobierno"
     },
+    "community": {
+      "link": "about/community",
+      "text": "Comunidad"
+    },
     "workinggroups": {
       "link": "about/working-groups",
-      "text": "Grupos de trabajo"
+      "text": "Grupos de Trabajo"
     },
     "releases": {
       "link": "about/releases",
@@ -51,6 +56,10 @@
     "trademark": {
       "link": "about/trademark",
       "text": "Marca"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "Política de privacidad"
     }
   },
   "download": {
@@ -62,11 +71,13 @@
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "Instale Node.js mediante un manejador de paquetes"
+      "text": "Instale Node.js mediante un gestor de paquetes"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "Firmas SHASUMS de los archivos de versiones"
+      "text": "Firmas SHASUMS de los archivos de versiones",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "Cómo verificarlo"
     }
   },
   "docs": {
@@ -88,6 +99,10 @@
     "guides": {
       "link": "docs/guides",
       "text": "Guías"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "Dependencias"
     }
   },
   "getinvolved": {
@@ -95,7 +110,11 @@
     "text": "Participa",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
-      "text": "Programa y Aprende"
+      "text": "Programa + Aprende"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "Colabora en el Summit"
     },
     "contribute": {
       "link": "get-involved/contribute",
@@ -103,7 +122,7 @@
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
-      "text": "Conducta"
+      "text": "Código de Conducta"
     }
   },
   "security": {
@@ -124,11 +143,7 @@
   },
   "links": {
     "pages": {
-      "changelog": "Cambios"
+      "changelog": "Registro de Cambios"
     }
-  },
-  "collab-summit": {
-    "link": "get-involved/collab-summit",
-    "text": "Conferencia de colaboradores"
   }
 }
