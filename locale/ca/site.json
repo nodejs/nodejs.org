@@ -6,13 +6,13 @@
   "scrollToTop": "Torna al començament",
   "reportNodeIssue": "Informe d'un problema de Node.js",
   "reportWebsiteIssue": "Informe d'un problema al lloc web",
-  "getHelpIssue": "Aconseguir ajuda",
+  "getHelpIssue": "Aconseguir Ajuda",
   "by": "per",
   "all-downloads": "Totes les opcions de descàrrega",
   "nightly": "Versions Nightly",
   "chakracore-nightly": "Versions Node-ChakraCore Nightly",
-  "previous": "Précédent",
-  "next": "Prochain",
+  "previous": "Anterior",
+  "next": "Següent",
   "feeds": [
     {
       "link": "feed/blog.xml",
@@ -24,11 +24,7 @@
     },
     {
       "link": "feed/vulnerability.xml",
-      "text": "Node.js Blog: Informes de vulnerabilitat"
-    },
-    {
-      "link": "feed/tsc-minutes.xml",
-      "text": "Minutes de les reunions del TSC de Node.js"
+      "text": "Node.js Blog: Informes de Vulnerabilitat"
     }
   ],
   "home": {
@@ -41,9 +37,13 @@
       "link": "about/governance",
       "text": "Govern"
     },
+    "community": {
+      "link": "about/community",
+      "text": "Comunitat"
+    },
     "workinggroups": {
       "link": "about/working-groups",
-      "text": "Grups de treball"
+      "text": "Grups de Treball"
     },
     "releases": {
       "link": "about/releases",
@@ -59,7 +59,7 @@
     },
     "privacy": {
       "link": "about/privacy",
-      "text": "Política de privacitat"
+      "text": "Política de Privacitat"
     }
   },
   "download": {
@@ -71,11 +71,13 @@
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "instal·lar Node.js amb gestor de paquets"
+      "text": "Instal·lar Node.js mitjançant un gestor de paquets"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "Signatures SHASUMS per arxius de versions"
+      "text": "Signatures SHASUMS per arxius de versions",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "Com verificar-ho"
     }
   },
   "docs": {
@@ -84,10 +86,6 @@
     "es6": {
       "link": "docs/es6",
       "text": "ES6 i més enllà"
-    },
-    "inspector": {
-      "link": "docs/inspector",
-      "text": "Inspector"
     },
     "api-lts": {
       "link": "/dist/latest-%ver-major%/docs/api",
@@ -101,14 +99,22 @@
     "guides": {
       "link": "docs/guides",
       "text": "Guies"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "Dependències"
     }
   },
   "getinvolved": {
     "link": "get-involved",
-    "text": "Implica't",
+    "text": "Participa",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
-      "text": "Programa i Aprèn"
+      "text": "Programa + Aprèn"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "Col·labora en el Summit"
     },
     "contribute": {
       "link": "get-involved/contribute",
@@ -116,7 +122,7 @@
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
-      "text": "Conducta"
+      "text": "Codi de Conducta"
     }
   },
   "security": {
@@ -137,7 +143,7 @@
   },
   "links": {
     "pages": {
-      "changelog": "Canvis"
+      "changelog": "Registre de Canvis"
     }
   }
 }
