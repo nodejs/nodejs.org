@@ -26,7 +26,7 @@ contribuir de la manera que puguin. Si vols [reportar un error](https://github.c
 - [NodeSchool.io](http://nodeschool.io) li ensenyarà conceptes de Node.js de forma interactiva mitjançant jocs utilitzant la línia de comandes.
 - L'[etiqueta de Node.js en Stack Overflow](http://stackoverflow.com/questions/tagged/node.js) col·lecciona nova informació cada dia.
 - L'[etiqueta de Node.js en la DEV Community](https://dev.to/t/node) és un lloc on compartir projectes de Node.js, articles i tutorials, així com iniciar debats i demanar realimentació sobre temes relacionats amb Node.js. Els desenvolupadors de tots els nivells d'experiència són benvinguts a participar.
-- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) és una comunitat amigable de desenvolupadors de backend amb Node que es recolzen mútuament a Discord.
+- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) és una comunitat amigable de desenvolupadors de backend amb Node.js que es recolzen mútuament a Discord.
 - [How To Node](http://howtonode.org/) té un nombre creixent d'útils tutorials.
 
 
