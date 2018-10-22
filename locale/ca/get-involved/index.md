@@ -13,7 +13,7 @@ contribuir de la manera que puguin. Si vols [reportar un error](https://github.c
 ## Discussió de la comunitat
 
 - La [llista d'incidències de Github](https://github.com/nodejs/node/issues) és el lloc per discutir les característiques del nucli de Node.js.
-- Per xatejar en temps real sobre el desenvolupament de Node vagi a `irc.freenode.net` al canal `#node.js` fent servir un [client d'IRC](http://es.wikipedia.org/wiki/Anexo:Clientes_IRC) o connecti's amb el seu navegador al canal usant [WebChat de freenode](http://webchat.freenode.net/?channels=node.js).
+- Per xatejar en temps real sobre el desenvolupament de Node.js vagi a `irc.freenode.net` al canal `#node.js` fent servir un [client d'IRC](http://es.wikipedia.org/wiki/Anexo:Clientes_IRC) o connecti's amb el seu navegador al canal usant [WebChat de freenode](http://webchat.freenode.net/?channels=node.js).
 - El compte de Twitter oficial de Node.js és [nodejs](https://twitter.com/nodejs).
 - [Node.js Everywhere](https://newsletter.nodejs.org) és el Butlletí oficial mensual de Node.js.
 - [Node.js Collection](https://medium.com/the-node-js-collection) és una col·lecció de contingut comissat per la comunitat a Medium.
