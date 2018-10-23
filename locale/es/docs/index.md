@@ -22,7 +22,7 @@ relacionados al mismo. También indica qué métodos están disponibles para las
 También describe los módulos incluidos que proporciona Node.js, mas no documenta los módulos que proporciona la comunidad.
 
 <div class="highlight-box">
-  <h4>¿Buscando la referencia de la API para una versión anterior?</h4>
+  <h4>¿Buscando la referencia de la API de versiones anteriores?</h4>
 
   <ul>
     <li><a href="https://nodejs.org/docs/latest-v9.x/api/">Node.js 9.x</a></li>
