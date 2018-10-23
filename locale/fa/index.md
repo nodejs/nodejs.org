@@ -1,24 +1,24 @@
 ---
 layout: index.hbs
 labels:
-  banner: بروزرسانی امنیت بسیار مهمی منتشر شده. همین الان بروزرسانی کنید
-  current-version: نگارش جاری
+  banner: انتشار امنیتی مهم! لطفا بروزرسانی نمایید.
+  current-version: نگارش کنونی
   download: دانلود
   download-for: دانلود برای
   other-downloads: سایر دانلود‌ها
-  other-lts-downloads: سایر دریافت‌های با پشیبانی طولانی مدت
-  other-current-downloads: سایر دانلود‌های جاری
+  other-lts-downloads: سایر دانلود‌های با پشتیبانی طولانی
+  other-current-downloads: سایر دانلودهای جاری
   current: جاری
   lts: پشتیبانی طولانی مدت
   tagline-current: آخرین ویژگی‌ها
-  tagline-lts: پیشنهاد شده برای اغلب کاربران
+  tagline-lts: پیشنهاد شده برای بیشتر کاربران
   changelog: گزارش تغییرات
-  api: مستندات برنامه‌نویسی
-  version-schedule-prompt: یا نگاهی به این بیاندازید
-  version-schedule-prompt-link-text: زمان‌بندی پشتیبانی طولانی مدت.
-  newsletter: true
+  api: مستندات API
+  version-schedule-prompt: یا نگاهی بیاندازید به
+  version-schedule-prompt-link-text: زمان بندی پشتیبانی طولانی مدت
+  newsletter: درست
   newsletter-prefix: نام‌نویسی برای
-  newsletter-postfix: ", خبرنامه رسمی ماهانهٔ نودجی‌اس"
+  newsletter-postfix: "، خبرنامهٔ رسمی NodeJs.org"
 ---
 
 Node.js® is a JavaScript runtime built on [Chrome's V8 JavaScript engine](https://developers.google.com/v8/).
