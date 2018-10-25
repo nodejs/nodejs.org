@@ -47,7 +47,7 @@
     "metalsmith-layouts": "2.1.0",
     "metalsmith-markdown": "^1.0.1",
     "metalsmith-metadata": "0.0.4",
-    "metalsmith-permalinks": "^1.0.0",
+    "metalsmith-permalinks": "^2.0.0",
     "metalsmith-prism": "3.1.1",
     "metalsmith-stylus": "3.0.0",
     "metalsmith-yearly-pagination": "^2.0.1",
