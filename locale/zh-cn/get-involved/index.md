@@ -12,6 +12,7 @@ Node.js 是个包容的大家庭，因此我们鼓励用户各施所长。 若�
 - [GitHub 议题清单](https://github.com/nodejs/node/issues) 是讨论 Node.js 核心功能的好地方。
 - 关于 Node.js 开发的实时对话，请使用 [IRC 客户端](http://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) 或 [freenode 网页聊天室](http://webchat.freenode.net/?channels=node.js) 转到 `irc.freenode.net` 中的 `#node.js` 頻道。
 - Node.js 官方的 Twitter 账号：[nodejs](https://twitter.com/nodejs).
+- The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
 - [Node.js Everywhere](https://newsletter.nodejs.org) 是 Node.js 官方的月报。
 - [Node.js Collection](https://medium.com/the-node-js-collection) 是一堆在媒体上的社区策划内容集合。
 - [NodeUp](http://nodeup.com) 是一个播客，它覆盖了所有相关于 Node 社区最新消息。
