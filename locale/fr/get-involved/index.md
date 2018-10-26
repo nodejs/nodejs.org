@@ -21,12 +21,13 @@ de notre communauté pour trouver comment vous pouvez aider:
 
 - Le compte Twitter officiel de Node.js est [nodejs](https://twitter.com/nodejs) [en].
 
+- The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
+
 - [Node.js Everywhere](https://newsletter.nodejs.org) est la newsletter mensuelle officielle de Node.js [en].
 
 - [Node.js Collection](https://medium.com/the-node-js-collection) est une liste de contenus maintenue par la communauté sur Medium [en].
 
 - [NodeUp](http://nodeup.com) est un podcast sur les actualités de la communauté Node [en].
-
 
 - La [Community Committee](https://github.com/nodejs/community-committee) s'agit d'un comité de haut niveau de la Fondation Node.js axé sur les efforts communautaires.
 
