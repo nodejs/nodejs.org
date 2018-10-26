@@ -185,8 +185,8 @@ function githubLinks (options) {
       const file = files[path]
       const url = `https://github.com/nodejs/nodejs.org/edit/master/locale/${options.locale}/${path.replace('.html', '.md')}`
 
-      const contents = file.contents.toString().replace(/<h1(.*?)>(.*?)<\/h1>/, ($1, $2, $3) => {
-        return `<a class="edit-link" href="${url}">Edit on GitHub</a> <h1>${$3}</h1>`
+      const contents = file.contents.toString().replace(/<h1(.*?)>(.*?)<\/h1>/, (match, $1, $2) => {
+        return `<a class="edit-link" href="${url}">Edit on GitHub</a> <h1${$1}>${$2}</h1>`
       })
 
       file.contents = Buffer.from(contents)
