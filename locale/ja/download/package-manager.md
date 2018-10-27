@@ -12,7 +12,7 @@ title: パッケージマネージャを利用した Node.js のインストー�
 ----------------------------
 
 * [Arch Linux](#arch-linux)
-* [Debian と Ubuntu ベースの Linux ディストリビューション、エンタープライズ Linux/Fedora と Snap packages](#debian-ubuntu-linux-linux-fedora-snap-packages)
+* [Debian と Ubuntu ベースの Linux ディストリビューション、エンタープライズ Linux/Fedora と Snap パッケージ](#debian-ubuntu-linux-linux-fedora-snap)
 * [FreeBSD と OpenBSD](#freebsd-openbsd)
 * [Gentoo](#gentoo)
 * [NetBSD](#netbsd)
