@@ -9,9 +9,10 @@ Node.js 是個包容的大家庭，我們鼓勵用戶一展長才。若你想[�
 
 ## 社群討論
 
-- [GitHub issues 清單](https://github.com/nodejs/node/issues)是討論 Node.js 核心功能的好地方。
+- [GitHub issues 清單](https://github.com/nodejs/node/issues) 是討論 Node.js 核心功能的好地方。
 - 關於 Node.js 開發的即時對話請使用 [IRC 用戶端](http://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) 或 [freenode 網頁聊天室](http://webchat.freenode.net/?channels=node.js) 連線至 `irc.freenode.net` 中的 `#node.js` 頻道。
-- Node.js 官方的 Twitter 帳號是 [nodejs](https://twitter.com/nodejs).
+- Node.js 官方的 Twitter 帳號是 [nodejs](https://twitter.com/nodejs)。
+- [Node.js Foundation 行事曆](https://nodejs.org/calendar) 中列出了所有的公開團隊會議。
 - [Node.js Everywhere](https://newsletter.nodejs.org) 是 Node.js 官方的月報。
 - [Node.js Collection](https://medium.com/the-node-js-collection) 是個由社群策劃的 Medium 文章合集。
 - [NodeUp](http://nodeup.com) 是關於 Node 社群最新消息的 podcast。
