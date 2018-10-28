@@ -21,7 +21,7 @@ de notre communauté pour trouver comment vous pouvez aider:
 
 - Le compte Twitter officiel de Node.js est [nodejs](https://twitter.com/nodejs) [en].
 
-- The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
+- Le [calendaire de la Fondation Node.js](https://nodejs.org/calendar) avec toutes les réunions d'équipe publiques.
 
 - [Node.js Everywhere](https://newsletter.nodejs.org) est la newsletter mensuelle officielle de Node.js [en].
 
