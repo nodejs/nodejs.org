@@ -9,6 +9,7 @@ title: Instalando Node.js usando un gestor de paquetes
 
 ----------------------------
 
+* [Android](#android)
 * [Arch Linux](#arch-linux)
 * [Distribuciones de Linux basadas en Debian y Ubuntu, Enterprise Linux/Fedora y Snap](#distribuciones-de-linux-basadas-en-debian-y-ubuntu-enterprise-linux-fedora-y-snap)
 * [FreeBSD y OpenBSD](#freebsd-y-openbsd)
@@ -17,10 +18,23 @@ title: Instalando Node.js usando un gestor de paquetes
 * [openSUSE y SLE](#opensuse-y-sle)
 * [macOS](#macos)
 * [SmartOS y illumos](#smartos-y-illumos)
+* [Solus](#solus)
 * [Void Linux](#void-linux)
 * [Windows](#windows)
 
 ----------------------------
+
+## Android
+
+Android support is still experimental in Node.js, so precompiled binaries are not yet provided by Node.js developers.
+
+However, there are some third-party solutions. For example, [Termux](https://termux.com/) community provides terminal emulator and Linux environment for Android, as well as own package manager and [extensive collection](https://github.com/termux/termux-packages) of many precompiled applications. This command in Termux app will install the last available Node.js version:
+
+```bash
+pkg install nodejs
+```
+
+Currently, Termux Node.js binaries are compiled without Inspector support and linked against `system-icu` (depending on `libicu` package).
 
 ## Arch Linux
 
@@ -161,6 +175,15 @@ pkgin -y install nodejs
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
+```
+
+
+## Solus
+
+Solus provides node.js in its main repository.
+
+```bash
+sudo eopkg install nodejs
 ```
 
 
