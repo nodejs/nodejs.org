@@ -1,6 +1,6 @@
 ---
 layout: download.hbs
-title: Download
+title: دانلود
 download: Download
 downloads:
     headline: Downloads
@@ -10,15 +10,15 @@ downloads:
     tagline-lts: Recommended For Most Users
     display-hint: Display downloads for
     intro: >
-        Download the Node.js source code or a pre-built installer for your platform, and start developing today.
-    currentVersion: Latest LTS Version
+        کدهای منبع یا نصب‌کنندهٔ نسخهٔ پیش‌ساختهٔ نودجی‌اس را برای پلتفرم خود دریافت و همین امروز کار را شروع کنید.
+    currentVersion: آخرین انتشار با پشتیبانی طولانی
     buildInstructions: Building Node.js from source on supported platforms
     WindowsInstaller: Windows Installer
     WindowsBinary: Windows Binary
     MacOSInstaller: macOS Installer
     MacOSBinary: macOS Binary
-    LinuxBinaries: Linux Binaries
-    SourceCode: Source Code
+    LinuxBinaries: باینری لینوکس
+    SourceCode: کدهای منبع
 additional:
     headline: Additional Platforms
     intro: >
