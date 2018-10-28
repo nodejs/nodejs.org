@@ -20,8 +20,8 @@ title: 通过包管理器安装 Node.js
 * [openSUSE 和 SLE](#opensuse-and-sle)
 * [macOS](#macos)
 * [SmartOS 和 illumos](#smartos-and-illumos)
-* [Void Linux](#void-linux)
 * [Solus](#solus)
+* [Void Linux](#void-linux)
 * [Windows](#windows)
 
 ----------------------------
@@ -200,14 +200,6 @@ cd pkgsrc/lang/nodejs && bmake install
 ```
 
 
-## Void Linux
-
-在主版本库中 Void Linux 发布稳定的 node.js。
-
-```bash
-xbps-install -Sy nodejs
-```
-
 ## Solus
 
 在主版本库中，Solus 提供了 node.js。
@@ -216,6 +208,14 @@ xbps-install -Sy nodejs
 sudo eopkg install nodejs
 ```
 
+
+## Void Linux
+
+在主版本库中 Void Linux 发布稳定的 node.js。
+
+```bash
+xbps-install -Sy nodejs
+```
 
 ## Windows
 

@@ -20,8 +20,8 @@ title: Installing Node.js via package manager
 * [openSUSE and SLE](#opensuse-and-sle)
 * [macOS](#macos)
 * [SmartOS and illumos](#smartos-and-illumos)
-* [Void Linux](#void-linux)
 * [Solus](#solus)
+* [Void Linux](#void-linux)
 * [Windows](#windows)
 
 ----------------------------
@@ -201,14 +201,6 @@ cd pkgsrc/lang/nodejs && bmake install
 ```
 
 
-## Void Linux
-
-Void Linux ships node.js stable in the main repository.
-
-```bash
-xbps-install -Sy nodejs
-```
-
 ## Solus
 
 Solus provides node.js in its main repository.
@@ -217,6 +209,14 @@ Solus provides node.js in its main repository.
 sudo eopkg install nodejs
 ```
 
+
+## Void Linux
+
+Void Linux ships node.js stable in the main repository.
+
+```bash
+xbps-install -Sy nodejs
+```
 
 ## Windows
 

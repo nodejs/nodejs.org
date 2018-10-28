@@ -20,8 +20,8 @@ title: 透過套件管理安裝 Node.js
 * [openSUSE 及 SLE](#opensuse-and-sle)
 * [macOS](#macos)
 * [SmartOS 及 illumos](#smartos-and-illumos)
-* [Void Linux](#void-linux)
 * [Solus](#solus)
+* [Void Linux](#void-linux)
 * [Windows](#windows)
 
 ----------------------------
@@ -202,14 +202,6 @@ cd pkgsrc/lang/nodejs && bmake install
 ```
 
 
-## Void Linux
-
-Void Linux 在其主要軟體庫中提供了 Node.js 穩定版。
-
-```bash
-xbps-install -Sy nodejs
-```
-
 ## Solus
 
 Solus 在其主要軟體庫中提供了 Node.js。
@@ -218,6 +210,14 @@ Solus 在其主要軟體庫中提供了 Node.js。
 sudo eopkg install nodejs
 ```
 
+
+## Void Linux
+
+Void Linux 在其主要軟體庫中提供了 Node.js 穩定版。
+
+```bash
+xbps-install -Sy nodejs
+```
 
 ## Windows
 
