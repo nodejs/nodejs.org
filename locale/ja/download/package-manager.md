@@ -11,6 +11,7 @@ title: パッケージマネージャを利用した Node.js のインストー�
 
 ----------------------------
 
+* [Android](#android)
 * [Arch Linux](#arch-linux)
 * [Debian と Ubuntu ベースの Linux ディストリビューション、エンタープライズ Linux/Fedora と Snap パッケージ](#debian-ubuntu-linux-linux-fedora-snap)
 * [FreeBSD と OpenBSD](#freebsd-openbsd)
@@ -19,10 +20,23 @@ title: パッケージマネージャを利用した Node.js のインストー�
 * [openSUSE と SLE](#opensuse-sle)
 * [macOS](#macos)
 * [SmartOS と illumos](#smartos-illumos)
+* [Solus](#solus)
 * [Void Linux](#void-linux)
 * [Windows](#windows)
 
 ----------------------------
+
+## Android
+
+Android support is still experimental in Node.js, so precompiled binaries are not yet provided by Node.js developers.
+
+However, there are some third-party solutions. For example, [Termux](https://termux.com/) community provides terminal emulator and Linux environment for Android, as well as own package manager and [extensive collection](https://github.com/termux/termux-packages) of many precompiled applications. This command in Termux app will install the last available Node.js version:
+
+```bash
+pkg install nodejs
+```
+
+Currently, Termux Node.js binaries are compiled without Inspector support and linked against `system-icu` (depending on `libicu` package).
 
 ## Arch Linux
 
@@ -185,6 +199,15 @@ pkgin -y install nodejs
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
+```
+
+
+## Solus
+
+Solus provides node.js in its main repository.
+
+```bash
+sudo eopkg install nodejs
 ```
 
 
