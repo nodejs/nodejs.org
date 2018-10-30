@@ -1,8 +1,9 @@
 {
   "title": "Node.js",
   "author": "Node.js Foundation",
-  "url": "https://nodejs.org/en/",
-  "locale": "en",
+  "url": "https://nodejs.org/fa/",
+  "locale": "fa",
+  "rtl": true,
   "scrollToTop": "Scroll to top",
   "reportNodeIssue": "Report Node.js issue",
   "reportWebsiteIssue": "Report website issue",
