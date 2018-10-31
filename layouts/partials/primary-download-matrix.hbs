@@ -64,19 +64,10 @@
         <th>{{downloads.MacOSBinary}} (.tar.gz)</th>
         <td colspan="6"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-darwin-x64.tar.gz">64-bit</a></td>
       </tr>
-      {{#if versionTypeCurrent }}
       <tr>
         <th>{{downloads.LinuxBinaries}} (x64)</th>
         <td colspan="6"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-x64.tar.xz">64-bit</a></td>
       </tr>
-      {{else}}
-        <tr>
-          <th>{{downloads.LinuxBinaries}} (x86/x64)</th>
-          <td colspan="3"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-x86.tar.xz">32-bit</a></td>
-          <td colspan="3"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-x64.tar.xz">64-bit</a></td>
-        </tr>
-      {{/if}}
-
       <tr>
         <th>{{downloads.LinuxBinaries}} (ARM)</th>
         <td colspan="2"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-armv6l.tar.xz">ARMv6</a></td>
