@@ -1,14 +1,13 @@
 ---
 layout: about.hbs
-title: About
-trademark: Trademark
+title: درباره
+trademark: نشان تجاری
 ---
-# About Node.js&reg;
+# درباره Node.js&reg;
 
-As an asynchronous event driven JavaScript runtime, Node is designed to build
-scalable network applications. In the following "hello world" example, many
-connections can be handled concurrently. Upon each connection the callback is
-fired, but if there is no work to be done, Node will sleep.
+به عنوان یک اجرا کننده رویدادهای ناهماهنگ در جاوا اسکریپت، Node به شکلی طراحی شده است که بتوان با آن برنامه‌های تحت وب توسعه پذیر ساخت. در مثال "hello world" پایین، تعداد خیلی زیادی اتصال به صورت هم زمان انجام گیرد. 
+پس از هر اتصال یه فراخوان (callback) اجرا خواهد شد، اما اگر کاری برای انجام نباشد نود میخوابد.
+
 
 ```javascript
 const http = require('http');
@@ -54,13 +53,9 @@ HTTP is a first class citizen in Node, designed with streaming and low latency
 in mind. This makes Node well suited for the foundation of a web library or
 framework.
 
-Just because Node is designed without threads, doesn't mean you cannot take
-advantage of multiple cores in your environment. Child processes can be spawned
-by using our [`child_process.fork()`][] API, and are designed to be easy to
-communicate with. Built upon that same interface is the [`cluster`][] module,
-which allows you to share sockets between processes to enable load balancing
-over your cores.
-
+فقط به خاطر اینکه Node بدون threads طراحی شده، به این معنی نیست که نتوانید از چند هسته در مخیط خود بهره ببرید. پروسه‌های زیرن میتوانند توسط ‌[`child_process.fork()`][] API  اجرا شوند. پروسه های زیرین به شکلی طراحی شده اند که تعامل کردن با آن ها به سادگی انجام شود. 
+ماژول [`cluster`][] هم به همین شکل ساخته شده که به ما قابلیتی برای اشتراک گذاری سوکت ها بین پروسه‌ها محیا می‌سازد. که به همین شکل قادر خواهید بود برای هسته های پردازشگر خود load balancing را فعال کنید.
+ 
 [Blocking vs Non-Blocking]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html

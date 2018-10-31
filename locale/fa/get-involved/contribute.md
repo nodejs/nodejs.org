@@ -1,5 +1,5 @@
 ---
-title: Contributing
+title: مشارکت
 layout: contribute.hbs
 ---
 
