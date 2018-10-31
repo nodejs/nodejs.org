@@ -22,7 +22,7 @@
   "feeds": [
     {
       "link": "feed/blog.xml",
-      "text": "وبلاگ نودجی‌اس"
+      "text": "بلاگ نودجی‌اس"
     },
     {
       "link": "feed/releases.xml",
@@ -38,14 +38,14 @@
   },
   "about": {
     "link": "about",
-    "text": "دربارهٔ...",
+    "text": "دربارهٔ ما...",
     "governance": {
       "link": "about/governance",
       "text": "مدیریت"
     },
     "community": {
       "link": "about/community",
-      "text": "اجتماع"
+      "text": "جامعه"
     },
     "workinggroups": {
       "link": "about/working-groups",
@@ -65,7 +65,7 @@
     },
     "privacy": {
       "link": "about/privacy",
-      "text": "سیاست‌های حریم شخصی"
+      "text": "سیاست‌های حریم خصوصی"
     }
   },
   "download": {
@@ -77,7 +77,7 @@
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "نصب نودجی‌اس با package manager"
+      "text": "نصب نودجی‌اس با پکیج‌منیجر"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
@@ -91,7 +91,7 @@
     "text": "اسناد",
     "es6": {
       "link": "docs/es6",
-      "text": "ES6 و فراتر"
+      "text": "اکمااسکریپت ۶ و فراتر"
     },
     "api-lts": {
       "link": "/dist/latest-%ver-major%/docs/api",
@@ -124,7 +124,7 @@
     },
     "contribute": {
       "link": "get-involved/contribute",
-      "text": "Contribute"
+      "text": "مشارکت‌ جستن"
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
