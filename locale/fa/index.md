@@ -8,8 +8,8 @@ labels:
   other-downloads: سایر دانلود‌ها
   other-lts-downloads: سایر دانلود‌های با پشتیبانی طولانی
   other-current-downloads: سایر دانلودهای کنونی
-  current: کنونی
-  lts: پشتیبانی طولانی مدت
+  current: نگارش کنونی
+  lts: نگارش با پشتیبانی طولانی مدت
   tagline-current: آخرین ویژگی‌ها
   tagline-lts: پیشنهاد شده برای بیشتر کاربران
   changelog: گزارش تغییرات
@@ -21,4 +21,4 @@ labels:
   newsletter-postfix: "، خبرنامهٔ رسمی نودجی‌اس"
 ---
 
-Node.js® یک ابزار جاوااسکریپ بر مبنای [Chrome V8](https://developers.google.com/v8/) است.
+Node.js® یک ابزار جاوااسکریپ بر مبنای  موتور جاوااسکریپت کروم [Chrome V8](https://developers.google.com/v8/) است.
