@@ -263,17 +263,17 @@ for (var i = 0; i < len; i++) {
 
 before = process.hrtime();
 res = JSON.stringify(obj);
-took = process.hrtime(n);
+took = process.hrtime(before);
 console.log('JSON.stringify took ' + took);
 
 before = process.hrtime();
 res = str.indexOf('nomatch');
-took = process.hrtime(n);
+took = process.hrtime(before);
 console.log('Pure indexof took ' + took);
 
 before = process.hrtime();
 res = JSON.parse(str);
-took = process.hrtime(n);
+took = process.hrtime(before);
 console.log('JSON.parse took ' + took);
 ```
 
