@@ -12,11 +12,11 @@ Node.js 0.12.x と iojsの旧リリースラインは、Node.js 4.0.0 からリ�
 <div class="highlight-box">
     <!-- Looking for latest release of a version branch? -->
     最新のリリースバージョン用ブランチをお探しですか？
-
-    <ul class="list-divider-pipe">
+     <ul class="list-divider-pipe">
+        <li><a href="https://nodejs.org/dist/latest-v10.x/">Node.js 10.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v8.x/">Node.js 8.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v6.x/">Node.js 6.x</a></li>
-        <li><a href="https://nodejs.org/dist/latest-v5.x/">Node.js 5.x</a></li>
+        <li><a href="https://nodejs.org/dist/latest-v4.x/">Node.js 4.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v0.12.x/">Node.js 0.12.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v0.10.x/">Node.js 0.10.x</a></li>
         <li><a href="https://nodejs.org/dist/">全てのバージョン</a></li>
