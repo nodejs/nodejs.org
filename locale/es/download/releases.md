@@ -9,11 +9,11 @@ Las versiones desde la 1.x hasta la 3.x fueron llamadas "io.js" ya que fueron pa
 
 <div class="highlight-box">
     Buscando las últimas versiones de una rama específica?
-
     <ul class="list-divider-pipe">
+        <li><a href="https://nodejs.org/dist/latest-v10.x/">Node.js 10.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v8.x/">Node.js 8.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v6.x/">Node.js 6.x</a></li>
-        <li><a href="https://nodejs.org/dist/latest-v5.x/">Node.js 5.x</a></li>
+        <li><a href="https://nodejs.org/dist/latest-v4.x/">Node.js 4.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v0.12.x/">Node.js 0.12.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v0.10.x/">Node.js 0.10.x</a></li>
         <li><a href="https://nodejs.org/dist/">Todas las versiones</a></li>
