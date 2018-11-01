@@ -21,4 +21,4 @@ labels:
   newsletter-postfix: "، خبرنامهٔ رسمی NodeJs.org"
 ---
 
-Node.js®   چارچوبی است برای اجرای جاوااسکریپت  ساخته شده بر روی  [موتور جاوااسکریپتکروم](https://developers.google.com/v8/).
+Node.js®   چارچوبی است برای اجرای جاوااسکریپت  ساخته شده بر روی  [موتور جاوااسکریپت کروم](https://developers.google.com/v8/).
