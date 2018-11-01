@@ -21,4 +21,4 @@ labels:
   newsletter-postfix: "، خبرنامهٔ رسمی NodeJs.org"
 ---
 
-Node.js® is a JavaScript runtime built on [Chrome's V8 JavaScript engine](https://developers.google.com/v8/).
+Node.js®   چارچوبی است برای اجرای جاوااسکریپت  ساخته شده بر روی  [موتور جاوااسکریپتکروم](https://developers.google.com/v8/).

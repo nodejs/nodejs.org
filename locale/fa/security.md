@@ -1,72 +1,66 @@
 ---
 layout: security.hbs
-title: Security
+title: امنیت
 ---
 
-# Security
+# امنیت
 
-## Reporting a Bug in Node.js
+### گزارش باگ در Node.js
 
-All security bugs in Node.js are taken seriously and should be reported via [HackerOne](https://hackerone.com/nodejs)
-or by emailing [security@nodejs.org](mailto:security@nodejs.org). This will be delivered to a subset of the core team
-who handle security issues.
-
-Your report will be acknowledged within 24 hours, and you’ll receive a more detailed response to your report within 48
-hours indicating the next steps in handling your submission.
-
-After the initial reply to your report, the security team will endeavor to keep you informed of the progress being made
-towards a fix and full announcement, and may ask for additional information or guidance surrounding the reported issue.
-These updates will be sent at least every five days; in practice, this is more likely to be every 24-48 hours.
-
-### Node.js Bug Bounty Program
-
-The Node.js project engages in an official bug bounty program for security researchers and responsible public disclosures.
-
-The program is managed through the HackerOne platform at [https://hackerone.com/nodejs](https://hackerone.com/nodejs) with further details.
-
-## Reporting a Bug in a third party module
-
-Security bugs in third party modules should be reported to their respective maintainers and should also be coordinated
-through the [Node Ecosystem Security Team](https://hackerone.com/nodejs-ecosystem) or by emailing 
-[security-ecosystem@nodejs.org](mailto:security-ecosystem@nodejs.org).
-
-Details regarding this process can be found in the [Security Working Group repository](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md).
-
-Thank you for improving the security of Node.js and its ecosystem. Your efforts and responsible disclosure are greatly
-appreciated and will be acknowledged.
-
-## Disclosure Policy
-
-Here is the security disclosure policy for Node.js
-
-- The security report is received and is assigned a primary handler. This person will coordinate the fix and release
-process. The problem is confirmed and a list of all affected versions is determined. Code is audited to find any
-potential similar problems. Fixes are prepared for all releases which are still under maintenance. These fixes are not
-committed to the public repository but rather held locally pending the announcement.
-
-- A suggested embargo date for this vulnerability is chosen and a CVE (Common Vulnerabilities and Exposures (CVE®))
-is requested for the vulnerability.
-
-- On the embargo date, the Node.js security mailing list is sent a copy of the announcement. The changes are pushed to
-the public repository and new builds are deployed to nodejs.org. Within 6 hours of the mailing list being notified, a
-copy of the advisory will be published on the Node.js blog.
-
-- Typically the embargo date will be set 72 hours from the time the CVE is issued. However, this may vary depending on
-the severity of the bug or difficulty in applying a fix.
-
-- This process can take some time, especially when coordination is required with maintainers of other projects. Every
-effort will be made to handle the bug in as timely a manner as possible; however, it’s important that we follow the
-release process above to ensure that the disclosure is handled in a consistent manner.
+تمامی مشکل‌های امنیتی در Node.js جدی گرفته می‌شوند و باید از طریق [HackerOne](https://hackerone.com/nodejs) یا رایانامه [security@nodejs.org](mailto:security@nodejs.org) گزارش داده شوند. این گزارش به زیر مجموعه‌ای از تیم هسته Node.js که مسئول رفع کردن مشکلات امنیتی هستند تحویل داده خواهد شد.
 
 
-## Receiving Security Updates
+گزارش شما حداکثر تا ۲۴ ساعت تصدیق خوهد شد و حداکثر تا ۴۸ ساعت پاسخ دقیقی به گزارش خود دریافت خواهید کرد که نشان خواهد داد کام های بعدی در رسیدگی به درخواست شما چیست.
+ 
+ پس از پاسخ اولیه به گزارش شما، تیم امنیتی تلاش خواهد کرد تا شما را از پیشرفت کار در جهت یک اعلامیه کامل  و تعمیر مطلع سازد و ممکن است از شما در رابطه با اطلاعات تکمیلی یا راهنمایی در حیطه مسئله گزارش شده سوال پرسیده شود. این به‌روزرسانی حداقل هر پنج روز یک بار ارسال خواهد شد. اما در عمل امکان بیشتری وجود دارد که هر ۲۴ تا ۴۸ ساعت یک بار ارسال شوند.
 
-Security notifications will be distributed via the following methods.
+ 
+###  برنامه جایزه پیدا کردن باگ در Node.js
+ 
+پروژه Node.js در یک برنامه رسمی جایزه برای باگ شرکت می‌کند که برای فعالان امنیتی و  افشاهای عمومی است.
 
-- [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+این برنامه از طریق پلتفرم HackerOne مدیریت می‌شود به آدرس  [https://hackerone.com/nodejs](https://hackerone.com/nodejs) برای اطلاعات بیشتر.
 
-## Comments on this Policy
+## گزارش باگ در ماژول‌های سوم شخص
 
-If you have suggestions on how this process could be improved please submit a [pull request](https://github.com/nodejs/nodejs.org)
-or [file an issue](https://github.com/nodejs/security-wg/issues/new) to discuss.
+گزارش‌های  باگ در ماژول‌های سوم شخص باید به نگاه دارندگان آن ها اعلام شود و همجنین باید از طریق [تیم اکو سیستم Node](https://hackerone.com/nodejs-ecosystem) رایانامه  [security-ecosystem@nodejs.org](mailto:security-ecosystem@nodejs.org)  اعلام شود.
+ 
+
+اطلاعات بیشتر در رابطه با این فرایند را می‌توانید در  [مخزن گروه کاری امینت ](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md).
+پیدا کنید.
+
+از شما بابت بهتر کردن امنیت Node.js و اکوسیستم آن متشکریم. 
+از تلاش‌ها  و فاش‌سازی مسئولانه شما بسیار استقبال میکنیم و متوجه آن خواهیم بود.
+
+
+## سیاست افشاگری
+
+- گزارش امنیتی دریافت و سپس به یک رسیدگی کننده اصلی محول خواهد شد. این شخص مختصات تعمیر را مشخص و منتشر خواهد کرد.
+مشکل تایید شده و فهرست تمامی نسخه‌های تاثیر دیده مشخص می‌شود. کد برای پیدا کردن اشکالات مشابه بازرسی خواهد شد.
+تعمیرها برای تمام انتشارهایی که هنوز نگه‌داری می‌شوند آماده خواهد شد.
+این اقدامات بر روی مخازن اصلی اعمال نخواهد شد و تا انتشار اعلامیه به صورت داخلی نگه‌داری خواهند شد. 
+
+- تاریخ منع پیشنهادی برای این آسیب‌پذیری انتخاب و یک CVE (Common Vulnerabilities and Exposures  CVE®) برای این آسیب‌پذیری درخواست خواهد شد. 
+
+- در تاریخ منع، به فهرست رایانامه امنیتی Node.js یک رونویس از اعلامیه ارسال خواهد شد. 
+تغییرات به مخزن عمومی اعمال خواهند شد و ساخت های جدید در nodejs.org مستقر خواهند شد. 
+ظرف مدت ۶ ساعت از اطلاع‌رسانی به فهرست رایانامه، یک رونویس از مشاوره بر روی بلاگ Node.js منتشر خواهد شد.
+
+
+- به طور معمول تاریخ منع ۷۲ ساعت پس از ثبت CVE تنظیم خواهد شد. با این حال، این ممکن است به نسبت به شدت اشکال یا سختی تعمیر، متفاوت باشد.
+
+
+- این فرایند ممکن است کمی زمان ببرد، مخصوصاً زمانی که هماهنگی با نگهدارندگان پروژه‌های دیگر نیاز است.
+تلاش خواهد شد تا باگ‌ها در سریع‌ترین حالت ممکن رسیدگی شوند. با این حال مهم است که ما فرایند انتشار بالا را تا پیدا کردن یک راه مشخص برای رفع مشکل دنبال کنیم.
+
+##   دریافت به‌روزرسانی‌های امنیتی
+
+
+اعلان‌های امنیتی به روش‌های زیر توزیع خواهند شد.
+
+- [گروه گوگل https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
+- [بلاگ https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+
+##   نظرات بر روی این سیاست
+
+اگر شما در رابطه با بهبود این فرایند پیشنهادی دارید برای بحث در رابطه با آن لطفاً یک [pull request](https://github.com/nodejs/nodejs.org) بفرستید یا  [یک   issue ایجاد کنید](https://github.com/nodejs/security-wg/issues/new).
