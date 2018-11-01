@@ -9,11 +9,11 @@ modules: "<code>NODE_MODULE_VERSION</code> 指的是 Node.js 的 ABI (applicatio
 
 <div class="highlight-box">
     正在寻找某个大版本的最新版？
-
-    <ul class="list-divider-pipe">
+     <ul class="list-divider-pipe">
+        <li><a href="https://nodejs.org/dist/latest-v10.x/">Node.js 10.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v8.x/">Node.js 8.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v6.x/">Node.js 6.x</a></li>
-        <li><a href="https://nodejs.org/dist/latest-v5.x/">Node.js 5.x</a></li>
+        <li><a href="https://nodejs.org/dist/latest-v4.x/">Node.js 4.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v0.12.x/">Node.js 0.12.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v0.10.x/">Node.js 0.10.x</a></li>
         <li><a href="https://nodejs.org/dist/">all versions</a></li>
