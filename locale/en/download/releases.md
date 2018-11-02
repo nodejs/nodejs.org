@@ -8,8 +8,8 @@ modules: "<code>NODE_MODULE_VERSION</code> refers to the ABI (application binary
 Releases 1.x through 3.x were called "io.js" as they were part of the io.js fork. As of Node.js 4.0.0 the former release lines of io.js converged with Node.js 0.12.x into unified Node.js releases.
 
 <div class="highlight-box">
-    Looking for latest release of a version branch?
-    <ul class="list-divider-pipe">
+    <h4>Looking for latest release of a version branch?</h4>
+    <ul>
         <li><a href="https://nodejs.org/dist/latest-v10.x/">Node.js 10.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v8.x/">Node.js 8.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v6.x/">Node.js 6.x</a></li>
