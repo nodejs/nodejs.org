@@ -11,8 +11,7 @@ modules: "<code>NODE_MODULE_VERSION</code> refers to the ABI (application binary
 
 <div class="highlight-box">
     به دنبال آخرین انتشار از شاخه ورژن می‌گردید؟
-
-     <ul class="list-divider-pipe">
+      <ul class="list-divider-pipe">
         <li><a href="https://nodejs.org/dist/latest-v10.x/">Node.js 10.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v8.x/">Node.js 8.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v6.x/">Node.js 6.x</a></li>
@@ -22,3 +21,4 @@ modules: "<code>NODE_MODULE_VERSION</code> refers to the ABI (application binary
         <li><a href="https://nodejs.org/dist/">تمامی نسخه‌ها</a></li>
     </ul>
 </div>
+ 
