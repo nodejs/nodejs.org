@@ -41,4 +41,4 @@ The [ES6 section](/en/docs/es6/) describes the three ES6 feature groups, and det
 
 ### Guides
 
-Long-form, in-depth articles about Node.js technical features and capabilities.
+The [Guides section](/en/docs/guides/) has long-form, in-depth articles about Node.js technical features and capabilities.
