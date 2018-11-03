@@ -49,3 +49,9 @@ labels:
 
 <!-- The [ES6 section](/en/docs/es6/) describes the three ES6 feature groups, and details which features are enabled by default in Node.js, alongside explanatory links. It also shows how to find version of V8 shipped with a particular Node.js release. -->
 [ES6 のセクション](/en/docs/es6/) では、ES6 の3つの機能について説明しており、それぞれの機能ごとのリンクと一緒に Node.js の標準で有効化されているかについて書いてあります。また、リリースされた Node.js のバージョンごとに組み込まれている V8 のバージョンを知るのにも利用することができます。
+
+<!-- ### Guides -->
+### ガイド
+
+<!-- The [Guides section](/en/docs/guides/) has long-form, in-depth articles about Node.js technical features and capabilities. -->
+[ガイドのセクション](/ja/docs/guides)に Node.js の技術的な機能や能力について詳細な記事があります。
