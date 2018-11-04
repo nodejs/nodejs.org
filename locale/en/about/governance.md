@@ -11,7 +11,7 @@ The Node.js project follows a [Consensus Seeking][] decision making model.
 ## Collaborators
 
 The [nodejs/node][] core GitHub repository is maintained by the Collaborators
-who are added by the Technical Steering Committee (TSC) on an ongoing basis.
+who are added by the Technical Steering Committee ([TSC][]) on an ongoing basis.
 
 Individuals making significant and valuable contributions are made Collaborators
 and given commit-access to the project. These individuals are identified by the
@@ -33,4 +33,5 @@ extending the Node.js community.
 [Consensus Seeking]: http://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [README.md]: https://github.com/nodejs/node/blob/master/README.md#current-project-team-members
 [Technical Steering Committee (TSC)]: https://github.com/nodejs/TSC/blob/master/TSC-Charter.md
+[TSC]: https://github.com/nodejs/TSC
 [nodejs/node]: https://github.com/nodejs/node
