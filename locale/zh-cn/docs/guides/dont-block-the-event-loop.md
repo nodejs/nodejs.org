@@ -258,7 +258,7 @@ var niter = 20;
 
 var before, res, took;
 
-for (var i = 0; i < len; i++) {
+for (var i = 0; i < niter; i++) {
   obj = { obj1: obj, obj2: obj }; // 每个循环里面将对象 size 加倍
 }
 
