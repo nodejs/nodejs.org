@@ -49,6 +49,10 @@
       "link": "about/releases",
       "text": "Releases"
     },
+    "release-schedule": {
+      "link": "about/release-schedule",
+      "text": "Release Schedule"
+    },
     "resources": {
       "link": "about/resources",
       "text": "Resources"
