@@ -4,7 +4,7 @@ title: 릴리스
 statuses:
   maintenance: '유지보수 LTS'
   active: '활성 LTS'
-  current: '현재버전'
+  current: '현재 버전'
   pending: '대기 중'
 columns:
   - '릴리스'
