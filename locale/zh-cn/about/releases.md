@@ -4,8 +4,8 @@ title: 发布
 statuses:
   maintenance: '长期支持版(维护)'
   active: '长期支持版(活跃)'
-  current: '目前版本'
-  pending: '待决'
+  current: '当前版'
+  pending: '待定'
 columns:
   - '发布'
   - '状态'
