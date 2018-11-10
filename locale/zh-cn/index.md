@@ -7,10 +7,10 @@ labels:
   download-for: 下载为
   other-downloads: 其它下载
   other-lts-downloads: 其它 LTS 版下载
-  other-current-downloads: 其它尝鲜版下载
-  current: 最新发布版
-  lts: 长期维护版
-  tagline-current: 含实验性功能
+  other-current-downloads: 其它当前版下载
+  current: 当前发布版
+  lts: 长期支持版
+  tagline-current: 含最新功能
   tagline-lts: 推荐多数用户使用 (LTS)
   changelog: 更新日志
   api: API 文档
