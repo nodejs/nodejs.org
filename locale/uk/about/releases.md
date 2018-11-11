@@ -2,17 +2,17 @@
 layout: about-release-schedule.hbs
 title: Релізи
 statuses:
-  maintenance: 'Maintenance LTS'
-  active: 'Active LTS'
-  current: 'Current'
-  pending: 'Pending'
+  maintenance: 'Підтримуваний LTS'
+  active: 'Активний LTS'
+  current: 'Поточний'
+  pending: 'Майбутній'
 columns:
-  - 'Release'
-  - 'Status'
-  - 'Codename'
-  - 'Initial Release'
-  - 'Active LTS Start'
-  - 'Maintenance LTS Start'
-  - 'End-of-life'
-schedule-footer: Dates are subject to change.
+  - 'Резіз'
+  - 'Статус'
+  - 'Кодова назва'
+  - 'Початковий реліз'
+  - 'Початок активного LTS'
+  - 'Початок підтримуваного LTS'
+  - 'Кінець підтримки'
+schedule-footer: Дати можуть змінитись.
 ---
