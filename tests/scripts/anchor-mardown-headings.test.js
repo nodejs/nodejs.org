@@ -59,4 +59,17 @@ test('anchorMarkdownHeadings', (t) => {
     t.plan(1)
     t.equal(output, expected)
   })
+
+  t.test('Makes pretty slugs', (t) => {
+    const text = '$$$ WIN BIG!! $$$'
+    const level = 4
+    const raw = '$$$ WIN BIG!! $$$'
+    const output = anchorMarkdownHeadings(text, level, raw)
+    const expected = '<h4 id="header-win-big">$$$ WIN BIG! $$$' +
+      '<a name="win-big" class="anchor" href="#win-big" ' +
+      'aria-labelledby="header-win-big"></a></h4>'
+
+    t.plan(1)
+    t.equal(output, expected)
+  })
 })
