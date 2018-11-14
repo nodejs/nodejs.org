@@ -105,7 +105,7 @@ http.createServer((req, res) => {
     req.url = '/en'
   }
   mount(req, res, redirectToEnglishUrl(req, res))
-}).listen(port, () => console.log(`\x1B[32mServer running at http://localhost:${port}/en/\x1B[39m`))
+}).listen(port, () => console.log(`Server running at http://localhost:${port}/en/`))
 
 // Start the initial build of static HTML pages
 build.fullBuild()
