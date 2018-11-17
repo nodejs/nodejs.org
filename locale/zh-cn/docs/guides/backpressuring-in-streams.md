@@ -20,7 +20,7 @@ layout: docs.hbs
 ```javascript
 const readline = require('readline');
 
-// process.stdin and process.stdout are both instances of Streams
+// process.stdin 和 process.stdout 都是 Stream 的实例
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
@@ -66,9 +66,9 @@ const { pipeline } = require('stream');
 const fs = require('fs');
 const zlib = require('zlib');
 
-// Use the pipeline API to easily pipe a series of streams
-// together and get notified when the pipeline is fully done.
-// A pipeline to gzip a potentially huge video file efficiently:
+// 使用 pipiline API 可以轻松地把数据流连接到一起，并且在整个数据流
+// 处理完毕时得到通知。下面的例子就是把一个很大的视频文件使用 pipeline
+// 进行 gzip 压缩。
 
 pipeline(
   fs.createReadStream('The.Matrix.1080p.mkv'),
@@ -114,9 +114,8 @@ async function run() {
 写入磁盘的速度远比从磁盘读取数据慢得多，因此，当我们试图压缩一个文件并写入磁盘时，积压的问题也就出现了。因为写磁盘的速度不能跟上读磁盘的速度。
 
 ```javascript
-// Secretly the stream is saying: "whoa, whoa! hang on, this is way too much!"
-// Data will begin to build up on the read-side of the data buffer as
-// `write` tries to keep up with the incoming data flow.
+// 数据流会偷偷地说：“好了，好了！停一下，这太过分了！”
+// 然后数据将会在读入侧堆积，这样写入侧才能和数据流的读入速度保持同步。
 inp.pipe(gzip).pipe(outputFile);
 ```
 这就是为什么说积压机制很重要——如果积压机制不存在，进程将用完你全部的系统内存，从而对其它进程产生显著影响，它独占系统大量资源直到任务完成为止。
@@ -353,8 +352,8 @@ Readable.pipe(Transformable).pipe(Writable);
 这里有个糟糕的使用 [`.push()`][] 的例子：
 
 ```javascript
-// This is problematic as it completely ignores return value from push
-// which may be a signal for backpressure from the destination stream!
+// 下面的代码是有问题的，因为它完全忽略了 push 的返回值，而这个返回值是表示
+// 目的地是否存在积压的重要信号！
 class MyReadable extends Readable {
   _read(size) {
     let chunk;
@@ -368,9 +367,8 @@ class MyReadable extends Readable {
 另外，从定制流之外，忽略积压简直可笑至极。在以下反例中，代码仅关注数据是否到达（通过 [`.data` event][] 订阅）：
 
 ```javascript
-// This ignores the backpressure mechanisms Node.js has set in place,
-// and unconditionally pushes through data, regardless if the
-// destination stream is ready for it or not.
+// 下面的代码忽略了 Node.js 内部处理积压的机制，无条件地写入数据，不管目的地的流
+// 有没有做好准备接收。
 readable.on('data', (data) =>
   writable.write(data)
 );
@@ -387,9 +385,8 @@ readable.on('data', (data) =>
 
 <!-- eslint-disable indent -->
 ```javascript
-// This writable is invalid because of the async nature of JavaScript callbacks.
-// Without a return statement for each callback prior to the last,
-// there is a great chance multiple callbacks will be called.
+// 下面的可写流是有问题的，因为 JavaScript 的异步回调机制。
+// 每个 callback 都没有返回，将会有很大的几率触发多次 callback。
 class MyWritable extends Writable {
   _write(chunk, encoding, callback) {
     if (chunk.toString().indexOf('a') >= 0)
@@ -400,7 +397,7 @@ class MyWritable extends Writable {
   }
 }
 
-// The proper way to write this would be:
+// 更恰当的写法是下面这样：
     if (chunk.contains('a'))
       return callback();
     else if (chunk.contains('b'))
@@ -411,8 +408,7 @@ class MyWritable extends Writable {
 在实现 [`._writev()`][] 方法时还有其它一些东西值得考虑。此函数与 [`.cork()`][] 耦合，但是编写代码的时有一个容易犯的错误：
 
 ```javascript
-// Using .uncork() twice here makes two calls on the C++ layer, rendering the
-// cork/uncork technique useless.
+// 这里调用了 .uncork() 两次，将会对 C++ 层产生两次调用，使 cork/uncork 机制无效。
 ws.cork();
 ws.write('hello ');
 ws.write('world ');
@@ -423,8 +419,7 @@ ws.write('from ');
 ws.write('Matteo');
 ws.uncork();
 
-// The correct way to write this is to utilize process.nextTick(), which fires
-// on the next event loop.
+// 正确的做法是在 process.nextTick() 中调用 .uncork()，这样就可以在下次事件循环中触发。
 ws.cork();
 ws.write('hello ');
 ws.write('world ');
@@ -435,13 +430,13 @@ ws.write('from ');
 ws.write('Matteo');
 process.nextTick(doUncork, ws);
 
-// as a global function
+// 作为一个全局函数
 function doUncork(stream) {
   stream.uncork();
 }
 ```
 
-[`.cork()`][] 方法可以让我们调用任意多次，我们只需小心调用 [`.uncork()`][] 方法使得它可以正常流入。
+[`.cork()`][] 方法可以调用任意多次，但同时也要记得调用 [`.uncork()`][] 方法同样的次数，使得它可以正常流入。
 
 ## 总结
 
