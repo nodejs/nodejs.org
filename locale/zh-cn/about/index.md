@@ -29,7 +29,7 @@ server.listen(port, hostname, () => {
 如果你对这门语言其中的一部分尚未熟悉理解，这里有一篇专门关于 [阻塞对比非阻塞][] 的文章供你参考。
 
 ---
-Node 在设计上类似于 Ruby 的 [事件机][] 或 Python 的 [扭曲][] 之类的系统。 Node 更深入地考虑事件模型。它呈现一个 [事件轮询][] 作为运行时构造而不是库。在其它系统中，总是有一个阻止调用来启动事件循环。
+Node 在设计上类似于 Ruby 的 [事件机][] 或 Python 的 [Twisted][] 之类的系统。 Node 更深入地考虑事件模型。它呈现一个 [事件轮询][] 作为运行时构造而不是库。在其它系统中，总是有一个阻止调用来启动事件循环。
 
 通常 Node 的行为是通过在脚本开头的回调定义的，在结束时通过阻塞调用（如 `EventMachine::run()` ）启动服务器。在 Node 中没有这样的启动-事件循环调用。Node 在执行输入脚本后只需输入事件循环即可。
 当没有更多要执行的回调时，Node 退出事件循环。此行为类似于浏览器中的 JavaScript ——事件循环总是对用户不可见的。
@@ -43,4 +43,4 @@ HTTP 是 Node 中的一等公民。它设计的是流式和低延迟。这使得
 [`cluster`]: https://nodejs.org/api/cluster.html
 [事件轮询]: https://nodejs.org/zh-cn/docs/guides/event-loop-timers-and-nexttick/
 [事件机]: https://github.com/eventmachine/eventmachine
-[扭曲]: http://twistedmatrix.com/
+[Twisted]: http://twistedmatrix.com/
