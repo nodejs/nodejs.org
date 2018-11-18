@@ -16,3 +16,5 @@ columns:
   - 'End-of-life'
 schedule-footer: Dates are subject to change.
 ---
+
+# Releases
