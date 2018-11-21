@@ -6,7 +6,6 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 by a Working Group (WG). The WG is responsible for high-level guidance of this and
 related projects which include:
 
-- [nodejs/iojs.org](https://github.com/nodejs/iojs.org) published to https://iojs.org
 - [nodejs/nodejs.org](https://github.com/nodejs/iojs.org) published to https://nodejs.org
 - [nodejs/nodejs.org-archive](https://github.com/nodejs/nodejs.org-archive) 
 
