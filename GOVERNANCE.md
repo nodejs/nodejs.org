@@ -4,10 +4,7 @@
 
 All of the Node.js Foundation websites, including this repo, are jointly governed
 by a Working Group (WG). The WG is responsible for high-level guidance of this and
-related projects which include:
-
-- [nodejs/nodejs.org](https://github.com/nodejs/iojs.org) published to https://nodejs.org
-- [nodejs/nodejs.org-archive](https://github.com/nodejs/nodejs.org-archive) 
+related projects.
 
 The Website WG has final authority over this project including:
 
