@@ -16,3 +16,6 @@ columns:
   - '지원 종료'
 schedule-footer: 날짜는 변경될 수 있습니다.
 ---
+
+# 릴리스
+ 
