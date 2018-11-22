@@ -42,8 +42,6 @@ These commercial and open source tools make debugging Node.js apps easier.
 
 * **Option 1**: Open `chrome://inspect` in a Chromium-based browser. Click the "Open dedicated DevTools for Node" link.
   are listed. Then select your Node.js app from the list.
-* **Option 2**: Install the Chrome Extension NIM (Node Inspector Manager):
-  https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 -->
 
 ## 인스펙터 도구와 클라이언트
@@ -59,8 +57,6 @@ These commercial and open source tools make debugging Node.js apps easier.
 ### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend)
 
 * **옵션 1**: 크로미움 기반의 브라우저에서 `chrome://inspect`에 접속 후 "Open dedicated DevTools for Node"를 클릭하십시오.
-* **옵션 2**: 크롬 확장프로그램 NIM(Node Inspector Manager)을 설치하세요.
-  https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 
 <!--
 ### [VS Code](https://github.com/microsoft/vscode) 1.10+

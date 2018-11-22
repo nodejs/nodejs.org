@@ -68,7 +68,6 @@ Node.js 进程如果 *不使用* `--inspect` 开关启动，也可以由指令�
 
 * **选项 1**: 在基于 Chromium 内核的浏览器下打开 `chrome://inspect`。点击配置按钮确保你的目标宿主和端口号列入其中。
 * **选项 2**: 从 `/json/list` 中拷贝 `devtoolsFrontendUrl`（见上），或者加上 --inspect 以检查提示文本并粘贴到 Chrome 中。
-* **选项 3**: 安装 Chrome 扩展（Node 监视管理器）：https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 
 #### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
 
