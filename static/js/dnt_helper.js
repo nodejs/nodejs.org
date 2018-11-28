@@ -1,5 +1,4 @@
 /**
- * http://schalkneethling.github.io/blog/2015/11/06/respect-user-choice-do-not-track/
  * https://github.com/schalkneethling/dnt-helper/blob/master/js/dnt-helper.js
  *
  * Returns true or false based on whether doNotTack is enabled. It also takes into account the
@@ -45,5 +44,5 @@ function _dntEnabled(dnt, userAgent) {
         dntStatus = { '0': 'Disabled', '1': 'Enabled' }[dntStatus] || 'Unspecified';
     }
 
-    return dntStatus === 'Enabled' ? true : false;
+    return dntStatus === 'Enabled';
 }

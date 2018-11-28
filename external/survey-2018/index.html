@@ -3,6 +3,25 @@
 <head>
   <meta charset="utf-8">
   <title>Web Survey Report 2018 | Node.js</title>
+
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+  <link rel="icon" sizes="32x32" type="image/png" href="/static/favicon.png">
+
+  <meta property="og:site_name" content="Node.js">
+  <meta property="og:title" content="Web Survey Report 2018 | Node.js">
+  <meta property="og:image" content="https://nodejs.org/static/images/logo-hexagon-card.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="224">
+  <meta property="og:image:height" content="256">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@nodejs">
+  <meta name="twitter:title" content="Web Survey Report 2018 | Node.js">
+  <meta name="twitter:image" content="https://nodejs.org/static/images/logo-hexagon-card.png">
+  <meta name="twitter:image:alt" content="The Node.js Hexagon Logo">
+
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="bootstrap.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" >
@@ -1499,7 +1518,7 @@ https://twitter.com/intent/tweet?text=Check%20out%20Availability%20of%20Multiple
                 Newer Node users are less enthusiastic about availability and quality of resources than longer term users, although most are still positive.
               </li>
               <li>
-                Documentation and StackOverflow are the main sources users rely on when learning a new language – but free online courses and tutorial videos are also important and something users would like more of (especially new users and those in Latin America.
+                Documentation and Stack Overflow are the main sources users rely on when learning a new language – but free online courses and tutorial videos are also important and something users would like more of (especially new users and those in Latin America.
               </li>
             </ul>
               <!-- <img src="images/picture9.png" width="100%" height="520"> -->
@@ -1706,13 +1725,13 @@ https://twitter.com/intent/tweet?text=Check%20out%20Availability%20of%20Multiple
           <div class="section-content">
             <ul>
               <li>
-                Respondents use many resources when learning a new language – documentation and StackOverflow chief among them.
+                Respondents use many resources when learning a new language – documentation and Stack Overflow chief among them.
               </li>
               <li>
                 Tutorial videos are also widely used – more than in last year.
               </li>
               <li>
-                While documentation and StackOverflow are still top, newer Node users are more likely than others to also use free &amp; paid online courses and tutorial videos.
+                While documentation and Stack Overflow are still top, newer Node users are more likely than others to also use free &amp; paid online courses and tutorial videos.
               </li>
             </ul>
             <div class="imagesection">
@@ -2228,7 +2247,22 @@ https://twitter.com/intent/tweet?text=Check%20out%20Availability%20of%20Multiple
   <script src="d3.v3.min.js"></script>
   <script src="data.min.js"></script>
   <script src="full.min.js"></script>
+
+  <script src="/static/js/dnt_helper.js"></script>
   <script>
+    (function(){
+      if (!_dntEnabled()) {
+        !function(n,o,d,e,j,s){n.GoogleAnalyticsObject=d;n[d]||(n[d]=function(){
+        (n[d].q=n[d].q||[]).push(arguments)});n[d].l=+new Date;j=o.createElement(e);
+        s=o.getElementsByTagName(e)[0];j.async=1;j.src='//www.google-analytics.com/analytics.js';
+        s.parentNode.insertBefore(j,s)}(window,document,'ga','script');
+
+        if (!ga) return;
+
+        ga('create', 'UA-67020396-1', 'auto');
+        ga('send', 'pageview');
+      }
+    })();
   </script>
 </body>
 </html>

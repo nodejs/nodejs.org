@@ -21,12 +21,13 @@ de notre communauté pour trouver comment vous pouvez aider:
 
 - Le compte Twitter officiel de Node.js est [nodejs](https://twitter.com/nodejs) [en].
 
-- [Node.js Everywhere](https://newsletter.nodejs.org) est la newsletter hebdomadaire officielle de Node.js [en].
+- Le [calendaire de la Fondation Node.js](https://nodejs.org/calendar) avec toutes les réunions d'équipe publiques.
+
+- [Node.js Everywhere](https://newsletter.nodejs.org) est la newsletter mensuelle officielle de Node.js [en].
 
 - [Node.js Collection](https://medium.com/the-node-js-collection) est une liste de contenus maintenue par la communauté sur Medium [en].
 
 - [NodeUp](http://nodeup.com) est un podcast sur les actualités de la communauté Node [en].
-
 
 - La [Community Committee](https://github.com/nodejs/community-committee) s'agit d'un comité de haut niveau de la Fondation Node.js axé sur les efforts communautaires.
 
@@ -37,7 +38,7 @@ de notre communauté pour trouver comment vous pouvez aider:
 
 - [NodeSchool.io](http://nodeschool.io) vous apprendra les concepts de Node.js avec des jeux intéractifs en ligne de commande [en].
 
-- [L'étiquette StackOverflow Node.js](http://stackoverflow.com/questions/tagged/node.js) rassemble de nouvelles informations chaque jours [en].
+- [L'étiquette Stack Overflow Node.js](http://stackoverflow.com/questions/tagged/node.js) rassemble de nouvelles informations chaque jours [en].
 
 - [How To Node](http://howtonode.org/) a de nombreux tutoriaux utiles [en].
 

@@ -12,23 +12,23 @@ downloads:
     intro: >
         Завантажте початковий код Node.js або інсталятор для вашої платформи та почніть розробку сьогодні.
     currentVersion: Поточна версія
-    buildInstructions: Building Node.js from source on supported platforms
-    WindowsInstaller: Windows Installer
-    WindowsBinary: Windows Binary
-    MacOSInstaller: macOS Installer
-    MacOSBinary: macOS Binary
-    LinuxBinaries: Linux Binaries
-    SourceCode: Source Code
+    buildInstructions: Побудова Node.js з вихідного коду на платформах, що підтримуються
+    WindowsInstaller: Інсталятор для Windows
+    WindowsBinary: Бінарний файл для Windows
+    MacOSInstaller: Інсталятор для macOS
+    MacOSBinary: Бінарний файл для macOS
+    LinuxBinaries: Бінарні файли для Linux
+    SourceCode: Вихідний код
 additional:
     headline: Додаткові платформи
     intro: >
         Учасники спільноти Node.js підтримують неофіційні збірки Node.js для додаткових платформ. Майте на увазі, що ці збірки не підтримуються основною командою Node.js і можуть не мати тієї ж функціональності що й поточний реліз Node.js.
     platform: Платформа
     provider: Провайдер
-    SunOSBinaries: SunOS Binaries
-    DockerImage: Docker Image
-    officialDockerImage: Official Node.js Docker Image
-    LinuxPowerSystems: Linux on Power Systems
-    LinuxSystemZ: Linux on System z
-    AIXPowerSystems: AIX on Power Systems
+    SunOSBinaries: Бінарні файли для SunOS
+    DockerImage: Образ для Docker
+    officialDockerImage: Офіційний образ Node.js для Docker
+    LinuxPowerSystems: Linux на Power Systems
+    LinuxSystemZ: Linux на System z
+    AIXPowerSystems: AIX на Power Systems
 ---

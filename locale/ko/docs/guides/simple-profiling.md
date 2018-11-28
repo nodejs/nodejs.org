@@ -69,7 +69,7 @@ app.get('/newUser', (req, res) => {
   }
 
   const salt = crypto.randomBytes(128).toString('base64');
-  const hash = crypto.pbkdf2Sync(password, salt, 10000, 512);
+  const hash = crypto.pbkdf2Sync(password, salt, 10000, 512, 'sha512');
 
   users[username] = { salt, hash };
 
@@ -92,7 +92,7 @@ app.get('/newUser', (req, res) => {
   }
 
   const salt = crypto.randomBytes(128).toString('base64');
-  const hash = crypto.pbkdf2Sync(password, salt, 10000, 512);
+  const hash = crypto.pbkdf2Sync(password, salt, 10000, 512, 'sha512');
 
   users[username] = { salt, hash };
 
@@ -114,9 +114,10 @@ app.get('/auth', (req, res) => {
     return res.sendStatus(400);
   }
 
-  const hash = crypto.pbkdf2Sync(password, users[username].salt, 10000, 512);
+  const { salt, hash } = users[username];
+  const encryptHash = crypto.pbkdf2Sync(password, salt, 10000, 512, 'sha512');
 
-  if (users[username].hash.toString() === hash.toString()) {
+  if (crypto.timingSafeEqual(hash, encryptHash)) {
     res.sendStatus(200);
   } else {
     res.sendStatus(401);
@@ -136,9 +137,10 @@ app.get('/auth', (req, res) => {
     return res.sendStatus(400);
   }
 
-  const hash = crypto.pbkdf2Sync(password, users[username].salt, 10000, 512);
+  const { salt, hash } = users[username];
+  const encryptHash = crypto.pbkdf2Sync(password, salt, 10000, 512, 'sha512');
 
-  if (users[username].hash.toString() === hash.toString()) {
+  if (crypto.timingSafeEqual(hash, encryptHash)) {
     res.sendStatus(200);
   } else {
     res.sendStatus(401);
@@ -312,7 +314,7 @@ up by language. First, we look at the summary section and see:
 <!--
 This tells us that 97% of all samples gathered occurred in C++ code and that
 when viewing other sections of the processed output we should pay most attention
-to work being done in C++ (as opposed to Javascript). With this in mind, we next
+to work being done in C++ (as opposed to JavaScript). With this in mind, we next
 find the [C++] section which contains information about which C++ functions are
 taking the most CPU time and see:
 
@@ -326,7 +328,7 @@ taking the most CPU time and see:
 -->
 
 이 부분을 보면 C++ 코드에서 수집된 샘플이 97%를 차지하는 것을 볼 수 있으므로 처리된 결과에서
-다른 부분을 볼 때 C++에서 이뤄진 작업에 대부분의 관심을 기울여야 합니다.(Javascript 대비)
+다른 부분을 볼 때 C++에서 이뤄진 작업에 대부분의 관심을 기울여야 합니다.(JavaScript 대비)
 그래서 C++ 함수가 대부분의 CPU 시간을 차지한 정보를 담고 있는 [C++] 부분을 찾아볼 것입니다.
 
 ```
@@ -391,15 +393,15 @@ Parsing this section takes a little more work than the raw tick counts above.
 Within each of the "call stacks" above, the percentage in the parent column
 tells you the percentage of samples for which the function in the row above was
 called by the function in the current row. For example, in the middle "call
-stack" above for _sha1_block_data_order, we see that _sha1_block_data_order occurred
+stack" above for _sha1_block_data_order, we see that `_sha1_block_data_order` occurred
 in 11.9% of samples, which we knew from the raw counts above. However, here, we
 can also tell that it was always called by the pbkdf2 function inside the
-Node.js crypto module. We see that similarly, _malloc_zone_malloc was called
+Node.js crypto module. We see that similarly, `_malloc_zone_malloc` was called
 almost exclusively by the same pbkdf2 function. Thus, using the information in
 this view, we can tell that our hash computation from the user's password
 accounts not only for the 51.8% from above but also for all CPU time in the top
-3 most sampled functions since the calls to _sha1_block_data_order and
-_malloc_zone_malloc were made on behalf of the pbkdf2 function.
+3 most sampled functions since the calls to `_sha1_block_data_order` and
+`_malloc_zone_malloc` were made on behalf of the pbkdf2 function.
 
 At this point, it is very clear that the password based hash generation should
 be the target of our optimization. Thankfully, you've fully internalized the

@@ -147,11 +147,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `carbon` of `node`
+Here we will use the latest LTS (long term support) version `8` of `node`
 available from the [Docker Hub](https://hub.docker.com/):
 
 ```docker
-FROM node:carbon
+FROM node:8
 ```
 -->
 
@@ -167,10 +167,10 @@ touch Dockerfile
 
 가장 먼저 해야 할 것은 어떤 이미지를 사용해서 빌드할 것인지를 정의하는 것입니다. 여기서는
 [Docker Hub](https://hub.docker.com/)에 있는
-`node`의 최신 LTS(장기 지원) 버전인 `carbon`을 사용할 것입니다.
+`node`의 최신 LTS(장기 지원) 버전인 `8`을 사용할 것입니다.
 
 ```docker
-FROM node:carbon
+FROM node:8
 ```
 
 <!--
@@ -264,7 +264,7 @@ CMD [ "npm", "start" ]
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:carbon
+FROM node:8
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -296,7 +296,7 @@ CMD [ "npm", "start" ]
 `Dockerfile`은 다음과 같아야 합니다.
 
 ```docker
-FROM node:carbon
+FROM node:8
 
 # 앱 디렉터리 생성
 WORKDIR /usr/src/app
@@ -357,7 +357,7 @@ $ docker images
 
 # Example
 REPOSITORY                      TAG        ID              CREATED
-node                            carbon     1934b0b038d1    5 days ago
+node                            8          1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 -->
@@ -379,7 +379,7 @@ $ docker images
 
 # 예시
 REPOSITORY                      TAG        ID              CREATED
-node                            carbon     1934b0b038d1    5 days ago
+node                            8          1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
@@ -514,10 +514,10 @@ on Docker.
 You can find more information about Docker and Node.js on Docker in the
 following places:
 
-* [Official Node.js Docker Image](https://registry.hub.docker.com/_/node/)
+* [Official Node.js Docker Image](https://hub.docker.com/_/node/)
 * [Node.js Docker Best Practices Guide](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 * [Official Docker documentation](https://docs.docker.com/)
-* [Docker Tag on StackOverflow](https://stackoverflow.com/questions/tagged/docker)
+* [Docker Tag on Stack Overflow](https://stackoverflow.com/questions/tagged/docker)
 * [Docker Subreddit](https://reddit.com/r/docker)
 -->
 
@@ -525,8 +525,8 @@ following places:
 
 다음 링크에서 Docker와 Docker에서의 Node.js에 대한 정보를 더 자세히 볼 수 있습니다.
 
-* [공식 Node.js Docker 이미지](https://registry.hub.docker.com/_/node/)
+* [공식 Node.js Docker 이미지](https://hub.docker.com/_/node/)
 * [Node.js Docker 사용사례 문서](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 * [공시 Docker 문서](https://docs.docker.com/)
-* [StackOverflow에 Docker 태그로 올라온 질문](https://stackoverflow.com/questions/tagged/docker)
+* [Stack Overflow에 Docker 태그로 올라온 질문](https://stackoverflow.com/questions/tagged/docker)
 * [Docker 레딧](https://reddit.com/r/docker)

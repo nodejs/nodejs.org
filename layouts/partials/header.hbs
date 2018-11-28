@@ -1,18 +1,18 @@
 <header>
   <div class="container">
 
-    <a href="/{{site.locale}}" id="logo">
+    <a href="/{{site.locale}}/" id="logo">
       <img src="/static/images/logo.svg" alt="node.js">
     </a>
 
     <nav>
       <ul class="list-divider-pipe">
-        <li{{#equals path ''}} class="active"{{/equals}}>
+        <li {{#equals path ''}}class="active"{{/equals}}>
           <a href="/{{site.locale}}/">{{site.home.text}}</a>
         </li>
 
         {{#each nav.main}}
-          <li{{#startswith ../path link}} class="active"{{/startswith}}{{#startswith link 'https://foundation.nodejs.org'}} class="nav-foundation"{{/startswith}}>
+          <li {{#startswith ../path link}}class="active"{{/startswith}}{{#startswith link 'https://foundation.nodejs.org'}} class="nav-foundation"{{/startswith}}>
             {{#startswith link 'http'}}
               <a href="{{link}}">{{text}}</a>
             {{else}}

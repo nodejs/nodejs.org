@@ -45,7 +45,7 @@ If you want to submit a new feature or a bugfix, the best way is to create the c
 
 Full set up is in https://github.com/nodejs/build/tree/master/setup/www minus secrets and certificates. The webhook is setup on GitHub for this project and talks to a small Node server on the host which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
 
-## Governance and Current Members
+## Governance
 
 All of the Node.js Foundation websites, including this repo, are jointly governed by the **Website Working Group**. See [GOVERNANCE.md](./GOVERNANCE.md) to learn more about the group's structure and [CONTRIBUTING.md](./CONTRIBUTING.md) for guidance about the expectations for all contributors to this project.
 
@@ -58,57 +58,3 @@ The Website WG defers to these WGs on matters of content and routinely adds coll
 working groups as they add and improve content on the website. In other words, the Website WG is not
 an *editorial* Working Group except when no other Working Group has taken responsibility for a
 content area.
-
-### Website Working Group Members
-
-- Yuta Hiroto ([abouthiroppy](https://github.com/abouthiroppy))
-- Andy Gout ([andygout](https://github.com/andygout))
-- Austin Winstanley ([AustinWinstanley](https://github.com/AustinWinstanley))
-- Benget Nata ([bentinata](https://github.com/bentinata))
-- &! (bitandbang) ([bnb](https://github.com/bnb))
-- Divjot Singh ([bogas04](https://github.com/bogas04))
-- Bryce Baril ([brycebaril](https://github.com/brycebaril))
-- Csaba Palfi ([csabapalfi](https://github.com/csabapalfi))
-- Bruno Heridet ([Delapouite](https://github.com/Delapouite))
-- Steven Sinatra ([diagramatics](https://github.com/diagramatics))
-- Evan Lucas ([evanlucas](https://github.com/evanlucas))
-- Fábio Santos ([fabiosantoscode](https://github.com/fabiosantoscode))
-- Jeremiah Senkpiel ([Fishrock123](https://github.com/Fishrock123))
-- Frederic Hemberger ([fhemberger](https://github.com/fhemberger))
-- Wyatt Preul ([geek](https://github.com/geek))
-- Charlie Robbins ([indexzero](https://github.com/indexzero))
-- Minwoo Jung ([JungMinu](https://github.com/JungMinu))
-- Daniel Levy ([justsml](https://github.com/justsml))
-- Kohei TAKATA ([kohei-takata](https://github.com/kohei-takata))
-- Luigi Pinca ([lpinca](https://github.com/lpinca))
-- marocchino ([marocchino](https://github.com/marocchino))
-- Massimiliano Mura ([MassimilianoMura](https://github.com/MassimilianoMura))
-- Matthew Loring ([matthewloring](https://github.com/matthewloring))
-- Mikeal Rogers ([mikeal](https://github.com/mikeal))
-- Mike Dolan ([mkdolan](https://github.com/mkdolan))
-- Kiffie Liversage ([mrkiffie](https://github.com/mrkiffie))
-- Vladimir Varankin ([narqo](https://github.com/narqo))
-- Patrick Heneise ([PatrickHeneise](https://github.com/PatrickHeneise))
-- Paul Grock ([paulgrock](https://github.com/paulgrock))
-- Phillip Johnsen ([phillipj](https://github.com/phillipj))
-- rnsloan ([rnsloan](https://github.com/rnsloan))
-- Robert Kowalski ([robertkowalski](https://github.com/robertkowalski))
-- Rod Vagg ([rvagg](https://github.com/rvagg))
-- Seth Thompson ([s3ththompson](https://github.com/s3ththompson))
-- silverwind ([silverwind](https://github.com/silverwind))
-- Sean Ouimet ([snostorm](https://github.com/snostorm))
-- Steven R. Loomis ([srl295](https://github.com/srl295))
-- Steve Mao ([stevemao](https://github.com/stevemao))
-- Michaël Zasso ([targos](https://github.com/targos))
-- Myles Borins ([MylesBorins](https://github.com/MylesBorins))
-- Sakthipriyan Vairamani ([thefourtheye](https://github.com/thefourtheye))
-- Trent Oswald ([therebelrobot](https://github.com/therebelrobot))
-- Anton Wilhelm ([timaschew](https://github.com/timaschew))
-- Thomas Jensen ([tjconcept](https://github.com/tjconcept))
-- Rich Trott ([Trott](https://github.com/Trott))
-- wonderdogone ([wonderdogone](https://github.com/wonderdogone))
-- Xcat Liu ([xcatliu](https://github.com/xcatliu))
-- Francisco Baio Dias ([xicombd](https://github.com/xicombd))
-- Yosuke Furukawa ([yosuke-furukawa](https://github.com/yosuke-furukawa))
-- Chayoung You ([yous](https://github.com/yous))
-- Zeke Sikelianos ([zeke](https://github.com/zeke))

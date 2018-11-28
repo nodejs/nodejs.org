@@ -1,5 +1,5 @@
 <section>
-  <p class="color-lightgray">{{downloads.currentVersion}}: <strong>{{stripv version.node}}</strong> (includes npm {{version.npm}})</p>
+  <p class="color-lightgray">{{downloads.currentVersion}}: <strong>{{stripv version.node}}</strong> ({{#if downloads.includes}}{{downloads.includes}}{{else}}includes{{/if}} npm {{version.npm}})</p>
   <p>{{downloads.intro}}</p>
   <div class="download-hero full-width">
     <ul class="no-padding download-version-toggle">
@@ -64,19 +64,10 @@
         <th>{{downloads.MacOSBinary}} (.tar.gz)</th>
         <td colspan="6"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-darwin-x64.tar.gz">64-bit</a></td>
       </tr>
-      {{#if versionTypeCurrent }}
       <tr>
         <th>{{downloads.LinuxBinaries}} (x64)</th>
         <td colspan="6"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-x64.tar.xz">64-bit</a></td>
       </tr>
-      {{else}}
-        <tr>
-          <th>{{downloads.LinuxBinaries}} (x86/x64)</th>
-          <td colspan="3"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-x86.tar.xz">32-bit</a></td>
-          <td colspan="3"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-x64.tar.xz">64-bit</a></td>
-        </tr>
-      {{/if}}
-
       <tr>
         <th>{{downloads.LinuxBinaries}} (ARM)</th>
         <td colspan="2"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-armv6l.tar.xz">ARMv6</a></td>

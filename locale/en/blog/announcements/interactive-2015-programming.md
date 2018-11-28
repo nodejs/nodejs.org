@@ -38,7 +38,7 @@ IoT Session Highlights:
 * IoT && Node.js && You *with* Emily Rose, Senior Software Engineer at Particle IO
 * Node.s Bots at Scale *with* Matteo Collina, Architect at nearForm
 * Node.js Development for the Next Generation of IoT *with* Melissa Evers-Hood, Software Product Line Manager at Intel Corporation
-* Node.js While Crafting: Make Textile to Compute! *with* Mariko Kosaka, Javascript Engineer at Scripto
+* Node.js While Crafting: Make Textile to Compute! *with* Mariko Kosaka, JavaScript Engineer at Scripto
 
 “Node.js has become pervasive within the last few years, with so many community accomplishments to highlight, including forming the new Node.js Foundation and the convergence of io.js and node.js,” said Mikeal Rogers, Community Manager, Node.js Foundation. “We created this conference to help showcase this growth, to accommodate the Node.js community’s many different needs, and to help accelerate adoption as it expands into enterprises.”
 
@@ -56,5 +56,5 @@ Follow on [Twitter](https://twitter.com/nodejs?ref_src=twsrc%5Egoogle%7Ctwcamp%5
 
 About Node.js Foundation Node.js Foundation is a collaborative open source project dedicated to building and supporting the Node.js platform and other related modules. Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 2 million downloads per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites.
 
-The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft, PayPal and Red Hat. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, npm, Rising Stack, Sauce Labs, SAP, and YLD!. Get involved here: [http://nodejs.org](http://nodejs.org).
+The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft, PayPal and Red Hat. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, npm, Rising Stack, Sauce Labs, SAP, and YLD!. Get involved here: [https://nodejs.org](https://nodejs.org).
 The Node.js Foundation is a Collaborative Project at The Linux Foundation. Linux Foundation Collaborative Projects are independently funded software projects that harness the power of collaborative development to fuel innovation across industries and ecosystems. [https://foundation.nodejs.org/](https://foundation.nodejs.org/)

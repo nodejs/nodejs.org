@@ -4,11 +4,7 @@
 
 All of the Node.js Foundation websites, including this repo, are jointly governed
 by a Working Group (WG). The WG is responsible for high-level guidance of this and
-related projects which include:
-
-- [nodejs/iojs.org](https://github.com/nodejs/iojs.org) published to https://iojs.org
-- [nodejs/nodejs.org](https://github.com/nodejs/iojs.org) published to https://nodejs.org
-- [nodejs/nodejs.org-archive](https://github.com/nodejs/nodejs.org-archive) 
+related projects.
 
 The Website WG has final authority over this project including:
 
@@ -18,9 +14,6 @@ The Website WG has final authority over this project including:
 * GitHub repository hosting
 * Conduct guidelines
 * Maintaining the list of additional Collaborators
-
-For the current list of WG members, see the project
-[README.md](./README.md#current-project-team-members).
 
 ## Collaborators
 
@@ -51,9 +44,6 @@ modifications, or modifications that have not found consensus to the
 WG for discussion by assigning the ***WG-agenda*** tag to a pull
 request or issue. The WG should serve as the final arbiter where
 required.
-
-For the current list of Collaborators, see the project
-[README.md](./README.md#website-working-group-collaborators).
 
 ## WG Membership
 

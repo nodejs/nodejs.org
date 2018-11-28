@@ -23,7 +23,7 @@ The JavaScript runtime environment is resource-efficient, high-performing and
 well-suited to scalability, making it an increasingly mainstream technology in
 startups and enterprises alike for application development and microservice
 architectures. Furthermore, Node.js ranks among the Top 10 languages for full
-stack, frontend and backend developers surveyed by StackOverflow in its 2016
+stack, frontend and backend developers surveyed by Stack Overflow in its 2016
 developer survey.
 
 More about today’s new Node.js Foundation members:

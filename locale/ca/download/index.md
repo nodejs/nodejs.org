@@ -11,7 +11,7 @@ downloads:
     display-hint: Mostrar descàrregues per a
     intro: >
         Descarregui el codi font de Node.js o un instal·lador pre-compilat per a la seva plataforma, i comenci a desenvolupar avui.
-    currentVersion: Versió actual
+    currentVersion: Versió LTS
     buildInstructions: Building Node.js from source on supported platforms
     WindowsInstaller: Windows Installer
     WindowsBinary: Windows Binary

@@ -52,7 +52,7 @@ In Node gibt es keinen solchen Aufruf, um die Ereignisschleife zu starten.
 Node beginnt einfach mit der Ereignisschleife, nachdem das Eingabe-Skript
 ausgeführt wurde. Node verlässt die Ereignisschleife, wenn keine
 Callback-Funktionen mehr auszuführen sind. Dieses Verhalten ist wie bei
-Browser-Javascript - die Ereignisschleife ist vor dem Nutzer versteckt.
+Browser-JavaScript - die Ereignisschleife ist vor dem Nutzer versteckt.
 
 HTTP ist ein Basiselement in Node, entworfen mit Fokus auf Streaming und
 geringe Latenz. Dadurch ist Node sehr gut als Grundlage für Web-Bibliotheken
@@ -70,5 +70,5 @@ ermöglichen.
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`Cluster`]: https://nodejs.org/api/cluster.html
 [Ereignisschleife]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
-[Event Machine]: http://rubyeventmachine.com/
+[Event Machine]: https://github.com/eventmachine/eventmachine
 [Twisted]: http://twistedmatrix.com/

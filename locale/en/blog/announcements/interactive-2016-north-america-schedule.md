@@ -38,7 +38,7 @@ Experts from the leading open source projects and enterprises will share their e
 
 ### Cloud and Back End
 
-- “Hitchhiker’s Guide to ‘Serverless’ Javascript” - Steven Faulkner of Bustle
+- “Hitchhiker’s Guide to ‘Serverless’ JavaScript” - Steven Faulkner of Bustle
 - “Making Magic in the Cloud with Node.js at Google” - Justin Beckwith of Google
 - “Buzzword Bingo: Architecting a Cloud-Native Internet Time Machine” - Ross Kukulinski of NodeSource
 

@@ -31,7 +31,9 @@
 <script type="text/javascript">
   var $scrollToTop = document.getElementById('scroll-to-top');
   (window.onscroll = function() {
-    $scrollToTop.style.display = (window.pageYOffset > window.innerHeight) ? 'block' : 'none';
+    window.requestAnimationFrame(function() {
+      $scrollToTop.style.display = (window.pageYOffset > window.innerHeight) ? 'block' : 'none';
+    })
   })();
   $scrollToTop.onclick = function() {
     window.scrollTo(0, 0);
