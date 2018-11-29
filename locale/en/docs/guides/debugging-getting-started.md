@@ -127,6 +127,10 @@ info on these follows:
 
 * Library to ease connections to Inspector Protocol endpoints.
 
+#### [Gitpod](https://www.gitpod.io)
+
+* Start a Node.js debug configuration from the `Debug` view or hit `F5`. [Detailed instructions](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
+
 ---
 
 ## Command-line options
