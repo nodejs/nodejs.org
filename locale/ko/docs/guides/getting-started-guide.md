@@ -1,5 +1,5 @@
 ---
-title: Getting Started Guide
+title: 시작 가이드
 layout: docs.hbs
 ---
 
