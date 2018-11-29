@@ -7,6 +7,7 @@ layout: docs.hbs
 
 ## General
 
+- [시작 가이드](getting-started-guide/)
 - [디버깅 - 시작하기](debugging-getting-started/)
 - [Node.js 애플리케이션의 간단한 프로파일링](simple-profiling/)
 - [Node.js 웹 앱의 도커라이징](nodejs-docker-webapp/)
