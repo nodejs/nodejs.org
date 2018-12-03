@@ -4,7 +4,7 @@ title: Logos y Gráficos
 ---
 # Recursos
 
-## Logo Downloads
+## Descargas de Logo
 
  Por favor revise la [Política de Marcas Registradas](/about/trademark/) para obtener información sobre el uso permitido de Node.js&reg; logos y marcas.
 
