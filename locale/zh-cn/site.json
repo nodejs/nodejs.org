@@ -98,7 +98,7 @@
     },
     "guides": {
       "link": "docs/guides",
-      "text": "教程"
+      "text": "指南"
     },
     "dependencies": {
       "link": "docs/meta/topics/dependencies",

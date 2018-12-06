@@ -1,5 +1,5 @@
 ---
-title: 入门教程
+title: 入门指南
 layout: docs.hbs
 ---
 

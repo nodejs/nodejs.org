@@ -1,5 +1,5 @@
 ---
-title: 调试 - 入门教程
+title: 调试 - 入门指南
 layout: docs.hbs
 ---
 
