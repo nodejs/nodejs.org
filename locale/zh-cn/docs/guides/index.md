@@ -5,9 +5,9 @@ layout: docs.hbs
 
 # 指南
 
-## 一般教程
+## 一般指南
 
-- [入门教程](getting-started-guide/)
+- [入门指南](getting-started-guide/)
 - [调试入门](debugging-getting-started/)
 - [Node.js 应用一窥](simple-profiling/)
 - [将 Node.js 网络应用安装到 Docker 中](nodejs-docker-webapp/)
@@ -22,7 +22,7 @@ layout: docs.hbs
 - [Node.js 中的定时器](timers-in-node/)
 
 
-## 与模块相关的教程
+## 与模块相关的指南
 
 - [HTTP 传输解析](anatomy-of-an-http-transaction/)
 - [搭配不同的文件系统工作](working-with-different-filesystems/)
