@@ -42,3 +42,4 @@ The Node.js community is large, inclusive, and excited to enable as many users t
 - [Spanish language Facebook group for Node.js](https://www.facebook.com/groups/node.es/)
 - [Spanish language community](http://nodehispano.com)
 - [Việt Nam Node.js community](http://nodejs.vn)
+- [NodeJS Discord community](https://discord.gg/Uaq5RHu)
