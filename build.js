@@ -118,7 +118,7 @@ function buildLocale (source, locale) {
       })
     }))
     .use(markdown(markedOptions))
-    .use(githubLinks({ locale: locale }))
+    .use(githubLinks({ locale: locale, site: i18nJSON(locale) }))
     .use(prism())
     // Set pretty permalinks, we don't want .html suffixes everywhere.
     .use(permalinks({
@@ -184,9 +184,10 @@ function githubLinks (options) {
 
       const file = files[path]
       const url = `https://github.com/nodejs/nodejs.org/edit/master/locale/${options.locale}/${path.replace('.html', '.md')}`
+      const editText = options.site.editOnGithub || 'Edit on GitHub'
 
       const contents = file.contents.toString().replace(/<h1(.*?)>(.*?)<\/h1>/, (match, $1, $2) => {
-        return `<a class="edit-link" href="${url}">Edit on GitHub</a> <h1${$1}>${$2}</h1>`
+        return `<a class="edit-link" href="${url}">${editText}</a> <h1${$1}>${$2}</h1>`
       })
 
       file.contents = Buffer.from(contents)
