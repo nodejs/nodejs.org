@@ -72,6 +72,9 @@
     "shasums": {
       "link": "SHASUMS256.txt.asc",
       "text": "發佈文件的 SHASUM 簽名"
+    },
+    "install-on-linux": {
+      "text": "Installing Node.js via binary archive on Linux"
     }
   },
   "docs": {
