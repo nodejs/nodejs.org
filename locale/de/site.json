@@ -71,6 +71,9 @@
     "shasums": {
       "link": "SHASUMS256.txt.asc",
       "text": "Signierte SHASUMS für die Versionsdateien"
+    },
+    "install-on-linux": {
+      "text": "Installing Node.js via binary archive on Linux"
     }
   },
   "docs": {

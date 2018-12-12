@@ -72,6 +72,9 @@
     "shasums": {
       "link": "SHASUMS256.txt.asc",
       "text": "릴리스 파일에 서명된 SHASUMS"
+    },
+    "install-on-linux": {
+      "text": "Installing Node.js via binary archive on Linux"
     }
   },
   "docs": {

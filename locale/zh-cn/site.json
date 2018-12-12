@@ -78,6 +78,9 @@
       "text": "查看发布文件的 SHASUM 签名",
       "verify-link": "https://github.com/nodejs/node#verifying-binaries",
       "verify-text": "如何校验"
+    },
+    "install-on-linux": {
+      "text": "Installing Node.js via binary archive on Linux"
     }
   },
   "docs": {
