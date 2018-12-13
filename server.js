@@ -18,6 +18,8 @@ const build = require('./build')
 
 const port = process.env.PORT || 8080
 
+const preserveLocale = process.argv.includes('--preserveLocale')
+
 // Watches for file changes in the locale, layout and static directories, and
 // rebuilds the modified one.
 const opts = {
@@ -108,4 +110,4 @@ http.createServer((req, res) => {
 }).listen(port, () => console.log(`\x1B[32mServer running at http://localhost:${port}/en/\x1B[39m`))
 
 // Start the initial build of static HTML pages
-build.fullBuild()
+build.fullBuild({ preserveLocale })

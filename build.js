@@ -56,7 +56,7 @@ function i18nJSON (lang) {
 // This is the function where the actual magic happens. This contains the main
 // Metalsmith build cycle used for building a locale subsite, such as the
 // english one.
-function buildLocale (source, locale) {
+function buildLocale (source, locale, opts) {
   console.log(`[metalsmith] build/${locale} started`)
   console.time(`[metalsmith] build/${locale} finished`)
   const metalsmith = Metalsmith(__dirname)
@@ -164,10 +164,122 @@ function buildLocale (source, locale) {
 
   // This actually executes the build and stops the internal timer after
   // completion.
-  metalsmith.build((err) => {
+  metalsmith.build((err, files) => {
     if (err) { throw err }
     console.timeEnd(`[metalsmith] build/${locale} finished`)
+    if (opts && opts.preserveLocale) {
+      buildMissing(source, locale, files)
+    }
   })
+}
+
+function buildMissing (source, locale, localeFiles) {
+  console.log(`[metalsmith] build/${locale} missing files started`)
+  console.time(`[metalsmith] build/${locale} missing files finished`)
+
+  const metalsmith = Metalsmith(__dirname)
+  metalsmith
+    .clean(false)
+    .metadata({ site: i18nJSON(locale), project: source.project })
+  // Sets the build source as the DEFAULT_LANG (en) locale folder.
+    .source(path.join(__dirname, 'locale', DEFAULT_LANG))
+  // Ignores files already built with current locale
+    .ignore([...Object.keys(localeFiles).map(file =>
+      path.join(__dirname, 'locale', 'en', file.replace('.html', '.md'))
+    ), ...Object.keys(localeFiles)
+      .filter(key => `${localeFiles[key].path}/index.html` === key)
+      .map(key => path.join(__dirname, 'locale', 'en', `${localeFiles[key].path}.md`))])
+    .use(navigation(source.project.latestVersions))
+    .use(collections({
+      blog: {
+        pattern: 'blog/**/*.md',
+        sortBy: 'date',
+        reverse: true,
+        refer: false
+      },
+      blogAnnounce: {
+        pattern: 'blog/announcements/*.md',
+        sortBy: 'date',
+        reverse: true,
+        refer: false
+      },
+      blogReleases: {
+        pattern: 'blog/release/*.md',
+        sortBy: 'date',
+        reverse: true,
+        refer: false
+      },
+      blogVulnerability: {
+        pattern: 'blog/vulnerability/*.md',
+        sortBy: 'date',
+        reverse: true,
+        refer: false
+      },
+      lastWeekly: {
+        pattern: 'blog/weekly-updates/*.md',
+        sortBy: 'date',
+        reverse: true,
+        refer: false,
+        limit: 1
+      },
+      knowledgeBase: {
+        pattern: 'knowledge/**/*.md',
+        refer: false
+      },
+      guides: {
+        pattern: 'docs/guides/!(index).md'
+      }
+    }))
+    .use(pagination({
+      path: 'blog/year',
+      iteratee: (post, idx) => ({
+        post,
+        displaySummary: idx < 10
+      })
+    }))
+    .use(markdown(markedOptions))
+    .use(githubLinks({ locale: locale }))
+    .use(prism())
+    .use(permalinks({
+      relative: false
+    }))
+    .use(feed({
+      collection: 'blog',
+      destination: 'feed/blog.xml',
+      title: 'Node.js Blog'
+    }))
+    .use(feed({
+      collection: 'blogAnnounce',
+      destination: 'feed/announce.xml',
+      title: 'Node.js Announcements'
+    }))
+    .use(feed({
+      collection: 'blogReleases',
+      destination: 'feed/releases.xml',
+      title: 'Node.js Blog: Releases'
+    }))
+    .use(feed({
+      collection: 'blogVulnerability',
+      destination: 'feed/vulnerability.xml',
+      title: 'Node.js Blog: Vulnerability Reports'
+    }))
+    .use(discoverPartials({
+      directory: 'layouts/partials',
+      pattern: /\.hbs$/
+    }))
+    .use(discoverHelpers({
+      directory: 'scripts/helpers',
+      pattern: /\.js$/
+    }))
+    .use(layouts())
+    .destination(path.join(__dirname, 'build', locale))
+
+  if (locale !== DEFAULT_LANG) {
+    metalsmith.build((err) => {
+      if (err) { throw err }
+      console.timeEnd(`[metalsmith] build/${locale} missing files finished`)
+    })
+  }
 }
 
 // This middleware adds "Edit on GitHub" links to every editable page
@@ -267,7 +379,7 @@ function getSource (callback) {
 
 // This is where the build is orchestrated from, as indicated by the function
 // name. It brings together all build steps and dependencies and executes them.
-function fullBuild () {
+function fullBuild (opts) {
   // Build static files.
   copyStatic()
   // Build layouts
@@ -278,7 +390,7 @@ function fullBuild () {
     // Executes the build cycle for every locale.
     fs.readdir(path.join(__dirname, 'locale'), (e, locales) => {
       locales.filter(junk.not).forEach((locale) => {
-        buildLocale(source, locale)
+        buildLocale(source, locale, opts)
       })
     })
   })
@@ -286,7 +398,8 @@ function fullBuild () {
 
 // Starts the build if the file was executed from the command line
 if (require.main === module) {
-  fullBuild()
+  const preserveLocale = process.argv.includes('--preserveLocale')
+  fullBuild({ preserveLocale })
 }
 
 exports.getSource = getSource
