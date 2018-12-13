@@ -80,7 +80,7 @@
       "verify-text": "如何校验"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "在 Linux 上，通过二进制文件安装 Node.js"
     }
   },
   "docs": {
