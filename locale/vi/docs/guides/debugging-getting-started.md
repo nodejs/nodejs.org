@@ -1,6 +1,6 @@
 ---
-tiêu đề: Lỗi - Bắt Đầu
-bố trí: tài liệu.cơ sở kinh doanh
+title: Lỗi - Bắt Đầu
+layout: docs.hbs
 ---
 
 # Lỗi Hướng Dẫn

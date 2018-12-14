@@ -1,6 +1,6 @@
 ---
-nosaukums: Debugging - darba Sākšana
-plānojums: docs.hbs
+title: Debugging - darba Sākšana
+layout: docs.hbs
 ---
 
 # Atkļūdošanas Ceļvedis

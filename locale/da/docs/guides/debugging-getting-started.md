@@ -1,6 +1,6 @@
 ---
-titel: Debugging - Kom godt i Gang
-layout: docs.hb
+title: Debugging - Kom godt i Gang
+layout: docs.hbs
 ---
 
 # Debugging Guide

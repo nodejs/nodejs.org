@@ -1,6 +1,6 @@
 ---
-cím: Hibakeresés - az első lépések
-elrendezés: docs.hbs
+title: Hibakeresés - az első lépések
+layout: docs.hbs
 ---
 
 # Hibakeresési Útmutató

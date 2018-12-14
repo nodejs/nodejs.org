@@ -1,6 +1,6 @@
 ---
-naslov: debugging - početak rada
-izgled: docs.ОБДХ
+title: debugging - početak rada
+layout: docs.hbs
 ---
 
 # Vodič Za Ispravljanje Pogrešaka

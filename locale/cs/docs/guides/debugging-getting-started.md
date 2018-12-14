@@ -1,6 +1,6 @@
 ---
-název: Ladění - začínáme
-dispozice: docs.hbs
+title: Ladění - začínáme
+layout: docs.hbs
 ---
 
 # Ladění Průvodce

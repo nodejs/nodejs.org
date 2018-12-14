@@ -1,6 +1,6 @@
 ---
-hlava: Mono - Začíname
-rozloženie: dokumenty.hs
+title: Mono - Začíname
+layout: docs.hbs
 ---
 
 # Ladenie Príručka

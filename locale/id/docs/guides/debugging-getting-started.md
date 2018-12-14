@@ -1,6 +1,6 @@
 ---
-judul: Debugging - Memulai
-tata letak: docs.hbs
+title: Debugging - Memulai
+layout: docs.hbs
 ---
 
 # Debugging Panduan

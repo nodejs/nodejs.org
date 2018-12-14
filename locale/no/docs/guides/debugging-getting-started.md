@@ -1,6 +1,6 @@
 ---
-tittel: Debugging - Komme i Gang
-layout: google dokumenter.hbs
+title: Debugging - Komme i Gang
+layout: docs.hbs
 ---
 
 # Debugging Guide

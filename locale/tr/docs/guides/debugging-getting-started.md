@@ -1,6 +1,6 @@
 ---
-başlık: hata ayıklama - Başlarken
-düzen: dokümanlar.hbs
+title: hata ayıklama - Başlarken
+layout: docs.hbs
 ---
 
 # Hata Ayıklama Kılavuzu

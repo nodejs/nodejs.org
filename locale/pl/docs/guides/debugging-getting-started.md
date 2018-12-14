@@ -1,6 +1,6 @@
 ---
-tytuł: debugowanie - początek pracy
-układ: docs.ОБДХ
+title: debugowanie - początek pracy
+layout: docs.hbs
 ---
 
 # Instrukcja Debugowania

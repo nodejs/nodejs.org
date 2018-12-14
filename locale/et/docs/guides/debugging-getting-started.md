@@ -1,6 +1,6 @@
 ---
-pealkiri: silumine-alustamine
-paigutus: dokumendidhbs
+title: silumine-alustamine
+layout: docs.hbs
 ---
 
 # Silumine Guide

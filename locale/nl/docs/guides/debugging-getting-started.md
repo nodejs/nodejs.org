@@ -1,6 +1,6 @@
 ---
-titel: debuggen-starten
-lay-out: docs.hbs
+title: debuggen-starten
+layout: docs.hbs
 ---
 
 # Debuggids

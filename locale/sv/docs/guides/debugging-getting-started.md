@@ -1,6 +1,6 @@
 ---
-avdelning: felsökning-komma igång
-layout: dokument.hbs
+title: felsökning-komma igång
+layout: docs.hbs
 ---
 
 # Felsökning Guide

@@ -1,5 +1,5 @@
 ---
-titlu: Depanare - Noțiuni de bază
+title: Depanare - Noțiuni de bază
 layout: docs.hbs
 ---
 

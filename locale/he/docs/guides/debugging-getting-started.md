@@ -1,6 +1,6 @@
 ---
-כותרת: ניפוי באגים-מתחיל
-סידור: מסמכים.hbs
+title: ניפוי באגים-מתחיל
+layout: docs.hbs
 ---
 
 # debugging guide
