@@ -1,0 +1,152 @@
+{
+  "title": "Node.js",
+  "author": "Node.js Foundation",
+  "url": "https://nodejs.org/en/",
+  "locale": "hr",
+  "scrollToTop": "Na vrh",
+  "reportNodeIssue": "Pitanje Node.js izvješće ",
+  "reportWebsiteIssue": "Pitanje stranice izvješće ",
+  "getHelpIssue": "Da Biste Dobili Pomoć",
+  "by": "na",
+  "all-downloads": "Sve opcije za download ",
+  "nightly": "Noćni build",
+  "chakracore-nightly": "Čvor-ChakraCore noćni build",
+  "previous": "Prethodni",
+  "next": "Dalje",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Blog Node.js "
+    },
+    {
+      "link": "feed/releases.xml",
+      "text": "Blog Node.js : Javnost"
+    },
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "Blog Node.js : Poruke O Ranjivosti "
+    }
+  ],
+  "home": {
+    "text": "Kuće"
+  },
+  "about": {
+    "link": "about",
+    "text": "O",
+    "governance": {
+      "link": "about/governance",
+      "text": "Upravljanje"
+    },
+    "community": {
+      "link": "about/community",
+      "text": "Zajednica"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "Radne Grupe"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "Javnost"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "Resursi"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "Zaštitni znak"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "Politika Privatnosti "
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "Preuzimanja",
+    "releases": {
+      "link": "download/releases",
+      "text": "Prethodna Izdanja"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "Instalacija Node.js preko package manager "
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "Potpisan SHASUMS za datoteke izdanje ",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "How to verify"
+    },
+    "install-on-linux": {
+      "text": "Instalacija Node.js kroz binarni zapis u Linux"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "Dokumenti",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 i izvan nje"
+    },
+    "api-lts": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "subtext": "LTS",
+      "text": "%Vere% na API"
+    },
+    "api-current": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "text": "%Vere% na API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "Vodiči"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "Ovisnosti"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "Da se uključe",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "Code + Learn"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "Summit Коллаб "
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "Doprinos"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "text": "Kodeks ponašanja"
+    }
+  },
+  "security": {
+    "link": "security",
+    "text": "Sigurnost"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "Vijesti"
+  },
+  "foundation": {
+    "link": "https://foundation.nodejs.org/",
+    "text": "Fond"
+  },
+  "releases": {
+    "title": "Release History",
+    "downloads": "Downloads"
+  },
+  "links": {
+    "pages": {
+      "changelog": "Changelog"
+    }
+  }
+}

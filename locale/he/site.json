@@ -1,0 +1,152 @@
+{
+  "title": "Node.js",
+  "author": "Node.js Foundation",
+  "url": "https://nodejs.org/en/",
+  "locale": "he",
+  "scrollToTop": "לגלול לראש הדף",
+  "reportNodeIssue": "דו " ח Node.js בעיה",
+  "reportWebsiteIssue": "הדו " ח באתר האינטרנט בעיה",
+  "getHelpIssue": "לקבל עזרה",
+  "by": "על ידי",
+  "all-downloads": "כל אפשרויות הורדה",
+  "nightly": "לילי בונה",
+  "chakracore-nightly": "צומת-ChakraCore לילי בונה",
+  "previous": "הקודם",
+  "next": "הבא",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Node.js הבלוג"
+    },
+    {
+      "link": "feed/releases.xml",
+      "text": "Node.js בלוג: משחרר"
+    },
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "Node.js בלוג: פגיעות דוחות"
+    }
+  ],
+  "home": {
+    "text": "בבית"
+  },
+  "about": {
+    "link": "about",
+    "text": "על",
+    "governance": {
+      "link": "about/governance",
+      "text": "ממשל"
+    },
+    "community": {
+      "link": "about/community",
+      "text": "הקהילה"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "קבוצות עבודה"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "משחרר"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "משאבים"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "מסחרי"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "מדיניות הפרטיות"
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "הורדות",
+    "releases": {
+      "link": "download/releases",
+      "text": "מהדורות קודמות"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "התקנת Node.js באמצעות מנהל החבילות"
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "חתם SHASUMS לשחרור קבצים",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "How to verify"
+    },
+    "install-on-linux": {
+      "text": "התקנת Node.js באמצעות בינארי ארכיון על לינוקס"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "Docs",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 ומעבר"
+    },
+    "api-lts": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "מדריכים"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "תלות"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "מעורב",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "Code + Learn"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "למשתף פעולה הפסגה"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "לתרום"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "text": "קוד התנהגות"
+    }
+  },
+  "security": {
+    "link": "security",
+    "text": "אבטחה"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "חדשות"
+  },
+  "foundation": {
+    "link": "https://foundation.nodejs.org/",
+    "text": "קרן"
+  },
+  "releases": {
+    "title": "Release History",
+    "downloads": "Downloads"
+  },
+  "links": {
+    "pages": {
+      "changelog": "Changelog"
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "title": "Node.js",
+  "author": "Node.js Foundation",
+  "url": "https://nodejs.org/en/",
+  "locale": "sk",
+  "scrollToTop": "Prejdite na začiatok",
+  "reportNodeIssue": "Správa Node.js problém",
+  "reportWebsiteIssue": "Správa webových stránok problém",
+  "getHelpIssue": "Získať Pomoc",
+  "by": "tým, že",
+  "all-downloads": "Všetky možností preberania",
+  "nightly": "Nočné stavia",
+  "chakracore-nightly": "Uzol-ChakraCore Nočné stavia",
+  "previous": "Predchádzajúce",
+  "next": "Ďalej",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Node.js Blog"
+    },
+    {
+      "link": "feed/releases.xml",
+      "text": "Node.js Blog: Uvoľňovanie"
+    },
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "Node.js Blog: Zraniteľnosť Správy"
+    }
+  ],
+  "home": {
+    "text": "Domov"
+  },
+  "about": {
+    "link": "about",
+    "text": "O",
+    "governance": {
+      "link": "about/governance",
+      "text": "Riadenie"
+    },
+    "community": {
+      "link": "about/community",
+      "text": "Spoločenstva"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "Pracovné Skupiny"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "Uvoľňovanie"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "Zdroje"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "Ochranné známky"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "Ochrana Osobných Údajov"
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "Súbory na stiahnutie",
+    "releases": {
+      "link": "download/releases",
+      "text": "Predošlé Vydania"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "Inštalácia Node.js cez package manager"
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "Podpísané SHASUMS pre release súbory",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "How to verify"
+    },
+    "install-on-linux": {
+      "text": "Inštalácia Node.js cez binárne archív na Linux"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "Dokumenty",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 a za"
+    },
+    "api-lts": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "Sprievodcovia"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "Závislosti"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "Zapojiť",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "Code + Learn"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "Collab Summit"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "Prispieť"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "text": "Kódex Správania"
+    }
+  },
+  "security": {
+    "link": "security",
+    "text": "Bezpečnosť"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "Novinky"
+  },
+  "foundation": {
+    "link": "https://foundation.nodejs.org/",
+    "text": "Nadácia"
+  },
+  "releases": {
+    "title": "Release History",
+    "downloads": "Downloads"
+  },
+  "links": {
+    "pages": {
+      "changelog": "Changelog"
+    }
+  }
+}

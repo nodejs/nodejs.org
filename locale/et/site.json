@@ -1,0 +1,152 @@
+{
+  "title": "Node.js",
+  "author": "Node.js Foundation",
+  "url": "https://nodejs.org/en/",
+  "locale": "et",
+  "scrollToTop": "Leidke top",
+  "reportNodeIssue": "Aruanne Node.js küsimus",
+  "reportWebsiteIssue": "Aruande koduleht küsimus",
+  "getHelpIssue": "Saan Aidata",
+  "by": "poolt",
+  "all-downloads": "Kõik allalaadimise valikud",
+  "nightly": "Öösel ehitab",
+  "chakracore-nightly": "Node-ChakraCore Öösel ehitab",
+  "previous": "Eelmine",
+  "next": "Järgmine",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Node.js Blogi"
+    },
+    {
+      "link": "feed/releases.xml",
+      "text": "Node.js Blogi: Pressiteated"
+    },
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "Node.js Blogi: Haavatavuse Aruanded"
+    }
+  ],
+  "home": {
+    "text": "Kodu"
+  },
+  "about": {
+    "link": "about",
+    "text": "Umbes",
+    "governance": {
+      "link": "about/governance",
+      "text": "Juhtimine"
+    },
+    "community": {
+      "link": "about/community",
+      "text": "Ühendus"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "Töörühmad"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "Pressiteated"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "Vahendid"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "Kaubamärk"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "Eraelu Puutumatuse Poliitika"
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "Lingid",
+    "releases": {
+      "link": "download/releases",
+      "text": "Eelnevate Keskkonda Viimiste"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "Paigaldamine Node.js via paketi manager"
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "Allkirjastatud SHASUMS vabastamise failid",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "How to verify"
+    },
+    "install-on-linux": {
+      "text": "Paigaldamine Node.js via binaarne arhiiv Linux"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "Docs",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 ja kaugemale"
+    },
+    "api-lts": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "Juhendid"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "Sõltuvused"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "Lööge",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "Code + Learn"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "Collab Tippkohtumise"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "Aitama"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "text": "Tegevusjuhend"
+    }
+  },
+  "security": {
+    "link": "security",
+    "text": "Turvalisus"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "Uudised"
+  },
+  "foundation": {
+    "link": "https://foundation.nodejs.org/",
+    "text": "Sihtasutus"
+  },
+  "releases": {
+    "title": "Release History",
+    "downloads": "Downloads"
+  },
+  "links": {
+    "pages": {
+      "changelog": "Changelog"
+    }
+  }
+}

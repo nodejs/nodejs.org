@@ -1,0 +1,152 @@
+{
+  "title": "Node.js",
+  "author": "Node.js Foundation",
+  "url": "https://nodejs.org/en/",
+  "locale": "ka",
+  "scrollToTop": "Scroll to top",
+  "reportNodeIssue": "ანგარიში Node.js საკითხი",
+  "reportWebsiteIssue": "ანგარიში ნახვა საკითხი",
+  "getHelpIssue": "მიიღეთ დახმარება",
+  "by": "ავტორი",
+  "all-downloads": "ყველა უფასო ვარიანტი",
+  "nightly": "ღამის აშენებს",
+  "chakracore-nightly": "Node-ChakraCore დღიური აშენებს",
+  "previous": "წინა",
+  "next": "შემდეგი",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Node.js დღიური"
+    },
+    {
+      "link": "feed/releases.xml",
+      "text": "Node.js წაკითხვა: რელიზები"
+    },
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "Node.js წაკითხვა: დაუცველობის იუწყება"
+    }
+  ],
+  "home": {
+    "text": "მთავარი"
+  },
+  "about": {
+    "link": "about",
+    "text": "შესახებ",
+    "governance": {
+      "link": "about/governance",
+      "text": "მმართველობის"
+    },
+    "community": {
+      "link": "about/community",
+      "text": "საზოგადოების"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "სამუშაო ჯგუფები"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "რელიზები"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "რესურსები"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "სასაქონლო ნიშნის"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "კონფიდენციალურობის პოლიტიკა"
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "გადმოწერა",
+    "releases": {
+      "link": "download/releases",
+      "text": "წინა რელიზები"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "დაყენების Node.js მეშვეობით პაკეტი მენეჯერი."
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "ხელმოწერილი SHASUMS გათავისუფლების ფაილი",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "How to verify"
+    },
+    "install-on-linux": {
+      "text": "დაყენების Node.js მეშვეობით ორობითი არქივი Linux"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "Docs",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 და მის ფარგლებს გარეთ"
+    },
+    "api-lts": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "ფორუმი"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "დამოკიდებულებები"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "ჩაერთოს",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "Code + Learn"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "Collab სამიტზე"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "შეუწყობს"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "text": "ქცევის კოდექსი"
+    }
+  },
+  "security": {
+    "link": "security",
+    "text": "უსაფრთხოების"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "ახალი ამბები"
+  },
+  "foundation": {
+    "link": "https://foundation.nodejs.org/",
+    "text": "ფონდი"
+  },
+  "releases": {
+    "title": "Release History",
+    "downloads": "Downloads"
+  },
+  "links": {
+    "pages": {
+      "changelog": "Changelog"
+    }
+  }
+}

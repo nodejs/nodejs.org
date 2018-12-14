@@ -1,0 +1,152 @@
+{
+  "title": "Node.js",
+  "author": "Node.js Foundation",
+  "url": "https://nodejs.org/en/",
+  "locale": "ru",
+  "scrollToTop": "Наверх",
+  "reportNodeIssue": "Вопрос Node.js отчет ",
+  "reportWebsiteIssue": "Вопрос сайт отчет ",
+  "getHelpIssue": "Получить Помощь",
+  "by": "по",
+  "all-downloads": "Все варианты скачать ",
+  "nightly": "Ночные сборки",
+  "chakracore-nightly": "Узел-ChakraCore ночные сборки",
+  "previous": "Предыдущие",
+  "next": "Далее",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Блог Node.js "
+    },
+    {
+      "link": "feed/releases.xml",
+      "text": "Блог Node.js : Релизы"
+    },
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "Блог Node.js : Сообщения Об Уязвимостях "
+    }
+  ],
+  "home": {
+    "text": "Дома"
+  },
+  "about": {
+    "link": "about",
+    "text": "О",
+    "governance": {
+      "link": "about/governance",
+      "text": "Управление"
+    },
+    "community": {
+      "link": "about/community",
+      "text": "Сообщество"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "Рабочие Группы"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "Релизы"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "Ресурсы"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "Товарный знак"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "Политика Конфиденциальности "
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "Загрузок",
+    "releases": {
+      "link": "download/releases",
+      "text": "Предыдущие Релизы"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "Установка Node.js через менеджер пакетов "
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "Подписано SHASUMS для файлов релиз ",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "How to verify"
+    },
+    "install-on-linux": {
+      "text": "Установка Node.js через бинарный архив в Linux"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "Документы",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 и за его пределами"
+    },
+    "api-lts": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "subtext": "LTS",
+      "text": "%Вер% по API"
+    },
+    "api-current": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "text": "%Вер% по API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "Гиды"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "Зависимостей"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "Ввязываться",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "Code + Learn"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "Саммит Коллаб "
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "Вклад"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "text": "Кодекс поведения"
+    }
+  },
+  "security": {
+    "link": "security",
+    "text": "Безопасности"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "Новости"
+  },
+  "foundation": {
+    "link": "https://foundation.nodejs.org/",
+    "text": "Фонд"
+  },
+  "releases": {
+    "title": "Release History",
+    "downloads": "Downloads"
+  },
+  "links": {
+    "pages": {
+      "changelog": "Changelog"
+    }
+  }
+}

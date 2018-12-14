@@ -1,0 +1,152 @@
+{
+  "title": "Node.js",
+  "author": "Node.js Foundation",
+  "url": "https://nodejs.org/en/",
+  "locale": "el",
+  "scrollToTop": "Μετακινηθείτε στην κορυφή",
+  "reportNodeIssue": "Έκθεση Node.js το ζήτημα",
+  "reportWebsiteIssue": "Ιστοσελίδα της έκθεσης ζήτημα",
+  "getHelpIssue": "Βοήθεια",
+  "by": "από",
+  "all-downloads": "Όλες οι επιλογές λήψης",
+  "nightly": "Nightly builds",
+  "chakracore-nightly": "Κόμβος-ChakraCore Nightly builds",
+  "previous": "Προηγούμενο",
+  "next": "Την επόμενη",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Node.js Blog"
+    },
+    {
+      "link": "feed/releases.xml",
+      "text": "Node.js Blog: Εκδόσεις"
+    },
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "Node.js Blog: Ένα Θέμα Ευπάθειας Εκθέσεις"
+    }
+  ],
+  "home": {
+    "text": "Το σπίτι"
+  },
+  "about": {
+    "link": "about",
+    "text": "Για",
+    "governance": {
+      "link": "about/governance",
+      "text": "Διακυβέρνησης"
+    },
+    "community": {
+      "link": "about/community",
+      "text": "Κοινότητα"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "Ομάδες Εργασίας"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "Κυκλοφορίες"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "Πόρων"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "Σήμα κατατεθέν"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "Πολιτική Προστασίας Προσωπικών Δεδομένων"
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "Λήψεις",
+    "releases": {
+      "link": "download/releases",
+      "text": "Προηγούμενες Εκδόσεις"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "Εγκατάσταση Node.js μέσω του package manager"
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "Υπεγράφη SHASUMS για την απελευθέρωση αρχεία",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "How to verify"
+    },
+    "install-on-linux": {
+      "text": "Εγκατάσταση Node.js μέσω δυαδικό αρχείο στο Linux"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "Docs",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 και πέρα"
+    },
+    "api-lts": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "Οδηγοί"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "Εξαρτήσεις"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "Συμμετέχουν",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "Code + Learn"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "Συνεταιριστική Κορυφής"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "Συμβάλλουν"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "text": "Κώδικας Δεοντολογίας"
+    }
+  },
+  "security": {
+    "link": "security",
+    "text": "Ασφάλεια"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "Ειδήσεις"
+  },
+  "foundation": {
+    "link": "https://foundation.nodejs.org/",
+    "text": "Ίδρυμα"
+  },
+  "releases": {
+    "title": "Release History",
+    "downloads": "Downloads"
+  },
+  "links": {
+    "pages": {
+      "changelog": "Changelog"
+    }
+  }
+}
