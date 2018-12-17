@@ -12,6 +12,9 @@ Deze gids zal u helpen met het debuggen van uw Node.js apps en scripts.
 Wanneer gestart met de **--inspecteer** switch, een Node.js-proces luistert via WebSockets
 voor diagnostische opdrachten zoals gedefinieerd in het [Inspector Protocol][],
 standaard bij host en poort 127.0.0.1: 9229. Elk proces krijgt ook een
+Wanneer Node.js gestart wordt met de **--inspect** switch, luistert het process via WebSockets
+voor diagnostische opdrachten zoals gedefinieerd in het [Inspector Protocol][],
+standaard op host en poort 127.0.0.1:9229. Elk proces krijgt ook een
 uniek [UUID] [] (bv. "0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e").
 
 Inspecteur clients moeten host adres, poort en UUID kennen en specificeren om verbinding te maken
