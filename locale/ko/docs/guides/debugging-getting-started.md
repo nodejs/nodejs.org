@@ -111,7 +111,7 @@ info on these follows:
   are listed.
 * **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
   (see above) or the --inspect hint text and paste into Chrome.
-* **Option 2**: Install the Chrome Extension NIM (Node Inspector Manager):  
+* **Option 3**: Install the Chrome Extension NIM (Node Inspector Manager):  
   https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 -->
 
