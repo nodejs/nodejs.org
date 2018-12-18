@@ -113,7 +113,7 @@
     "text": "Participe",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
-      "text": "Programe + Aprende"
+      "text": "Programe + Aprenda"
     },
     "collab-summit": {
       "link": "get-involved/collab-summit",
@@ -121,7 +121,7 @@
     },
     "contribute": {
       "link": "get-involved/contribute",
-      "text": "Contribue"
+      "text": "Contribua"
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
