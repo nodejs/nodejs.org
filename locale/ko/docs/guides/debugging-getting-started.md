@@ -126,7 +126,7 @@ Even if you bind the inspector port to 127.0.0.1 (the default), any applications
 running locally on your machine will have unrestricted access. This is by design
 to allow local debuggers to be able to attach conveniently. -->
 
-### 로컬 응용프로그램은 인스펙터에 완전히 액세스 할 수 있습니다.
+### 로컬 애플리케이션은 인스펙터에 완전히 액세스 할 수 있습니다.
 
 인스펙터 포트를 127.0.0.1(기본값)에 바인딩하더라도 시스템에서 로컬로 실행되는 애플리케이션들은 제한 없이 액세스 할 수 있습니다. 이것은 로컬 디버거를 편리하게 부착할 수 있도록 의도적으로 설계되었습니다.
 
@@ -140,9 +140,9 @@ able to make this HTTP connection. For additional security against
 verifies that the 'Host' headers for the connection either
 specify an IP address or `localhost` or `localhost6` precisely. -->
 
-### 브라우저, 웹 소켓, 그리고 same-origin 정책
+### 브라우저, 웹 소켓, 동일 출처 정책
 
-웹브라우저에서 열리는 웹사이트는 브라우저 보안 모델에 따라 웹소켓과 HTTP 요청을 할 수 있습니다. 고유한 디버거 세션 ID를 얻으려면 초기 HTTP 연결이 필요합니다.  same-origin 정책은 이 HTTP 연결을 만들 수 없도록 합니다. [DNS 리바인딩 공격](https://en.wikipedia.org/wiki/DNS_rebinding)에 대한 추가 보안을 위해 Node.js는 연결을 위한 'Host' 헤더가 IP 주소나 `localhost` 또는 `localhost6`을 정확하게 지정하는지 검증합니다.
+웹 브라우저에서 열리는 웹사이트는 브라우저 보안 모델에 따라 웹 소켓과 HTTP 요청을 할 수 있습니다. 고유한 디버거 세션 ID를 얻으려면 초기 HTTP 연결이 필요합니다. 동일 출처 정책은 이 HTTP 연결을 만들 수 없도록 합니다. [DNS 리바인딩 공격](https://en.wikipedia.org/wiki/DNS_rebinding)에 대한 추가 보안을 위해 Node.js는 연결의 'Host' 헤더가 IP 주소나 `localhost` 또는 `localhost6`을 정확하게 지정하는지 검증합니다.
 
 <!-- These security policies disallow connecting to a remote debug server by
 specifying the hostname. You can work-around this restriction by specifying
@@ -319,7 +319,7 @@ The following table lists the impact of various runtime flags on debugging:
     <td>
       <ul>
         <li>인스펙터 에이전트 활성화</li>
-        <li>기본 주소와 포트를 수신(127.0.0.1:9229)</li>
+        <li>기본 주소와 포트에서 수신(127.0.0.1:9229)</li>
       </ul>
     </td>
   </tr>
@@ -329,7 +329,7 @@ The following table lists the impact of various runtime flags on debugging:
       <ul>
         <li>인스펙터 에이전트 활성화</li>
         <li>주소 또는 호스트 이름 <i>host</i>에 바인딩 (기본값: 127.0.0.1)</li>
-        <li><i>port</i> 포트를 수신 (기본값: 9229)</li>
+        <li><i>port</i> 포트에서 수신 (기본값: 9229)</li>
       </ul>
     </td>
   </tr>
@@ -338,7 +338,7 @@ The following table lists the impact of various runtime flags on debugging:
     <td>
       <ul>
         <li>인스펙터 에이전트 활성화</li>
-        <li>기본 주소와 포트를 수신(127.0.0.1:9229)</li>
+        <li>기본 주소와 포트에서 수신(127.0.0.1:9229)</li>
         <li>사용자 코드 시작 전 멈춤</li>
       </ul>
     </td>
@@ -349,7 +349,7 @@ The following table lists the impact of various runtime flags on debugging:
       <ul>
         <li>인스펙터 에이전트 활성화</li>
         <li>주소 또는 호스트 이름 <i>host</i>에 바인딩 (기본값: 127.0.0.1)</li>
-        <li><i>port</i> 포트를 수신 (기본값: 9229)</li>
+        <li><i>port</i> 포트에서 수신 (기본값: 9229)</li>
         <li>사용자 코드 시작 전 멈춤</li>
       </ul>
     </td>
@@ -367,7 +367,7 @@ The following table lists the impact of various runtime flags on debugging:
     <td>
       <ul>
         <li>사용자의 스크립트를 --inspect 플래그로 실행하는 자식 프로세스를 생성하고 CLI 디버거 실행에 메인 프로세스를 사용합니다.</li>
-        <li><i>port</i> 포트를 수신 (기본값: 9229)</li>
+        <li><i>port</i> 포트에서 수신 (기본값: 9229)</li>
       </ul>
     </td>
   </tr>
@@ -392,7 +392,7 @@ Let's say you are running Node on remote machine, remote.example.com, that you
 want to be able to debug. On that machine, you should start the node process
 with the inspector listening only to localhost (the default). 
 -->
-디버깅하기를 원하는 원격 시스템의 노드인 remote.example.com을 실행 중이라고 가정하겠습니다. 해당 시스템에서 localhost(기본값)만 수신하는 인스펙터로 노드 프로세스를 시작해야 합니다.
+디버깅하기를 원하는 remote.example.com 원격 시스템에서 노드가 실행 중이라고 가정하겠습니다. 해당 시스템에서 localhost(기본값)만 수신하는 인스펙터로 노드 프로세스를 시작해야 합니다.
 
 ```bash
 $ node --inspect server.js
