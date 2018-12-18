@@ -255,7 +255,7 @@ function getSource (callback) {
           lts: latestVersion.lts(versions)
         },
         banner: {
-          visible: true,
+          visible: false,
           text: 'November 2018 security releases available, upgrade now',
           link: '/en/blog/vulnerability/november-2018-security-releases/'
         }
