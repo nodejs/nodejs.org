@@ -1,7 +1,7 @@
 ---
 layout: index.hbs
 labels:
-  banner: Liberaçao de versões seguras importantes, por favor atualize agora!
+  banner: Atualizações de segurança importantes, por favor atualize agora!
   current-version: Versão Atual
   download: Baixar
   download-for: Baixar para
@@ -10,15 +10,15 @@ labels:
   other-current-downloads: Outros Downloads Atuais
   current: Atual
   lts: LTS
-  tagline-current: Últimas Features
+  tagline-current: Últimas Funcionalidades
   tagline-lts: Recomendado Para Maioria dos Usuários
   changelog: Changelog
   api: Documentação da API
-  version-schedule-prompt: Ou verifique a
-  version-schedule-prompt-link-text: Cronograma do LTS.
+  version-schedule-prompt: Ou verifique o
+  version-schedule-prompt-link-text: Cronograma de versões LTS.
   newsletter: true
   newsletter-prefix: Inscreva-se para
-  newsletter-postfix: ", as Atualizações Mensais Oficial do Node.js."
+  newsletter-postfix: ", o boletim oficial de atualizações do Node.js."
 ---
 
-Node.js® é um runtime JavaScript desenvolvido com o [motor JavaScript V8 do Chrome](https://developers.google.com/v8/).
+Node.js® é um runtime JavaScript desenvolvido com o [Chrome's V8 JavaScript engine](https://developers.google.com/v8/).
