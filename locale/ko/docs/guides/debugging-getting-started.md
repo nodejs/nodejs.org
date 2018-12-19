@@ -327,7 +327,7 @@ which translates the Inspector Protocol used in Chromium to the V8 Debugger
 protocol used in Node.js.
 -->
 
-#### [내장 디버거](https://github.com/nodejs/node/blob/master/lib/_debugger.js)
+#### [내장 디버거](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
 
 Node의 내장 명령형 디버거로 스크립트를 실행하려면 `node debug script_name.js`로 실행하세요.
 스크립트가 다른 Node 프로세스에서 `--debug-brk` 옵션으로 시작되고 원래의 Node 프로세스는
