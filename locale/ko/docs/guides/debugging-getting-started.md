@@ -313,7 +313,7 @@ TCP 포트(기본 `5858`)로 지금은 중단된 V8 디버깅 프로토콜에서
 V8 디버깅 프로토콜은 더는 관리되지 않고 문서화도 되지 않습니다.
 
 <!--
-#### [Built-in Debugger](https://github.com/nodejs/node/blob/master/lib/_debugger.js)
+#### [Built-in Debugger](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
 
 Start `node debug script_name.js` to start your script under Node's builtin
 command-line debugger. Your script starts in another Node process started with
