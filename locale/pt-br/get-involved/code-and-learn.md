@@ -1,25 +1,25 @@
 ---
-title: Code + Learn
+title: Programe + Aprenda
 layout: contribute.hbs
 ---
 
-# Code + Learn
+# Programe + Aprenda
 
-Code & Learn events allow you to get started (or go further) with Node.js core contributions. Experienced contributors help guide you through your first (or second or third or fourth) commit to Node.js core. They also are available to provide impromptu guided tours through specific areas of Node.js core source code.
+Eventos Programe & Aprenda permitem que você comece a contribuir (ou de um passo adiante) com a principais funcionalidades do Node.js. Contribuidores experientes irão auxiliá-lo em seu primeiro (ou segundo ou teceiro ou quarto) _commit_ ao Node.js. Eles também estarão disponíveis para guiá-los através de áreas específicas do código fonte do Node.js.
 
-## Upcoming Code + Learn Events
+## Próximos Eventos Programe + Aprenda
 
-- Bangalore, India at [Node.js - Code & Learn Meetup](https://www.meetup.com/Polyglot-Languages-Runtimes-Java-JVM-nodejs-Swift/events/256057028/): November 17, 2018
+- Bangalore, India em [Node.js - Code & Learn Meetup](https://www.meetup.com/Polyglot-Languages-Runtimes-Java-JVM-nodejs-Swift/events/256057028/): 17 de Novembro de 2018
 
-## Past Code + Learn Events
+## Eventos Programe + Aprenda Anteriores
 
-- Kilkenny, Ireland at [NodeConfEU](https://www.nodeconf.eu/): November 4, 2018
-- Vancouver, BC at [Node Interactive](https://events.linuxfoundation.org/events/node-js-interactive-2018/): October 12, 2018
-- [Oakland on April 22, 2017](https://medium.com/the-node-js-collection/code-learn-learn-how-to-contribute-to-node-js-core-8a2dbdf9be45)
-- Shanghai at JSConf.CN: July 2017
-- Vancouver, BC at [Node Interactive](http://events.linuxfoundation.org/events/node-interactive): October 6, 2017
-- Kilkenny, Ireland at [NodeConfEU](http://www.nodeconf.eu/): November 5, 2017
-- Austin in December 2016
-- Tokyo in November 2016
-- Amsterdam in September 2016
-- Dublin and London in September 2015
+- Kilkenny, Ireland na [NodeConfEU](https://www.nodeconf.eu/): 4 de Novembro de 2018
+- Vancouver, BC na [Node Interactive](https://events.linuxfoundation.org/events/node-js-interactive-2018/): 12 de Outubro de 2018
+- [Oakland em 22 de Abril de 2017](https://medium.com/the-node-js-collection/code-learn-learn-how-to-contribute-to-node-js-core-8a2dbdf9be45)
+- Shanghai na JSConf.CN: Julho de 2017
+- Vancouver, BC na [Node Interactive](http://events.linuxfoundation.org/events/node-interactive): 6 de October de 2017
+- Kilkenny, Ireland na [NodeConfEU](http://www.nodeconf.eu/): 5 de Novembro de 2017
+- Austin em Dezembro 2016
+- Tokyo em Novembro de 2016
+- Amsterdam em Setembro de 2016
+- Dublin e London em Setembro de 2015
