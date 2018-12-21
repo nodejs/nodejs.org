@@ -4,26 +4,25 @@ layout: contribute.hbs
 ---
 
 # Collab Summit
-Collaboration Summit is an un-conference for bringing current and
-potential contributors together to discuss Node.js  with lively collaboration,
-education, and knowledge sharing. Committees and working groups come together
-twice per year to make important decisions while also being able to work on some
-exciting efforts they want to push forward in-person.
+O _Collaboration Summit_ é uma desconferência organizada para juntar contribuidores e
+potênciais contribuidores e discutir sobre Node.js com colaborações animadas, educação,
+e compartilhamento de conhecimento. Comitês e grupos de trabalho se reunem duas vezes
+por ano para tomar decisões importantes e trabalhar pessoalmente em alguns esforços que
+precisam de um empurrãozinho.
 
-## Who attends?
+## Quem pode participar?
 
-Anyone is welcome to attend Collab Summit. During the
-summit, leaders will help onboard new contributors to groups they'd love to help
-prior to integrating them into the working sessions.
+Todos são bem-vindos a participar do _Collab Summit_. Durante o evento, líderes irão
+ajudar a integrar novos contribuidores ao grupos em que estes gostariam de colaborar
+antes de levá-los as sessões de trabalho (_workinkg sessions_).
 
-This is your opportunity to learn what is happening within the community to jump
-in and contribute with the skills you have and would like to hone.
+Essa é uma oportuidade para você ficar a par do que está acontecendo na comunidade,
+embarcar e contribuir com as habilidade que possui e gostaria de aprimorar.
 
-Working groups will put together a schedule so that people can
-familiarize themselves before folks get onsite, having the general collaborator
-discussions, and then dive into breakout sessions.
+Os grupos de trabalho irão fornecer um cronograma para que as pessoas possam se familiarizar
+antes de chegar ao local, participar das discussões gerais dos colaboradores e então
+mergulhar nas sessões específicas.
 
-We'd love to see you at Collab Summit! Check out the [Summit repo](https://github.com/nodejs/summit)
-for upcoming and past Collab Summits and have a look at the
-[issues filed](https://github.com/nodejs/summit/issues) that share what
-individual working groups and committees are looking to discuss in-person.
+Nós adoraríamos ver você no _Collab Summit_! Confira o [_Summit repo_](https://github.com/nodejs/summit)
+para verificar eventos futuros e passados. Também de uma olhada nos [tópicos reportados](https://github.com/nodejs/summit/issues)
+que compartilham o que grupos de trabalhos e comitês estão planejando discutir pessoalmente.
