@@ -140,9 +140,9 @@ able to make this HTTP connection. For additional security against
 verifies that the 'Host' headers for the connection either
 specify an IP address or `localhost` or `localhost6` precisely. -->
 
-### 브라우저, 웹 소켓, 동일 출처 정책
+### 브라우저, 웹소켓, 동일 출처 정책
 
-웹 브라우저에서 열리는 웹사이트는 브라우저 보안 모델에 따라 웹 소켓과 HTTP 요청을 할 수 있습니다. 고유한 디버거 세션 ID를 얻으려면 초기 HTTP 연결이 필요합니다. 동일 출처 정책은 이 HTTP 연결을 만들 수 없도록 합니다. [DNS 리바인딩 공격](https://en.wikipedia.org/wiki/DNS_rebinding)에 대한 추가 보안을 위해 Node.js는 연결의 'Host' 헤더가 IP 주소나 `localhost` 또는 `localhost6`을 정확하게 지정하는지 검증합니다.
+웹 브라우저에서 열리는 웹사이트는 브라우저 보안 모델에 따라 웹소켓과 HTTP 요청을 할 수 있습니다. 고유한 디버거 세션 ID를 얻으려면 초기 HTTP 연결이 필요합니다. 동일 출처 정책은 이 HTTP 연결을 만들 수 없도록 합니다. [DNS 리바인딩 공격](https://en.wikipedia.org/wiki/DNS_rebinding)에 대한 추가 보안을 위해 Node.js는 연결의 'Host' 헤더가 IP 주소나 `localhost` 또는 `localhost6`을 정확하게 지정하는지 검증합니다.
 
 <!-- These security policies disallow connecting to a remote debug server by
 specifying the hostname. You can work-around this restriction by specifying
