@@ -20,6 +20,6 @@ Eventos Programe & Aprenda permitem que você comece a contribuir (ou de um pass
 - Vancouver, BC no [Node Interactive](http://events.linuxfoundation.org/events/node-interactive): 6 de Outubro de 2017
 - Kilkenny, Irlanda na [NodeConfEU](http://www.nodeconf.eu/): 5 de Novembro de 2017
 - Austin em Dezembro 2016
-- Tokyo em Novembro de 2016
+- Tóquio em Novembro de 2016
 - Amsterdam em Setembro de 2016
 - Dublin e London em Setembro de 2015
