@@ -16,7 +16,7 @@ Todos são bem-vindos a participar do _Collab Summit_. Durante o evento, lídere
 ajudar a integrar novos contribuidores ao grupos em que estes gostariam de colaborar
 antes de levá-los as sessões de trabalho (_workinkg sessions_).
 
-Essa é uma oportuidade para você ficar a par do que está acontecendo na comunidade,
+Essa é uma oportunidade para você ficar a par do que está acontecendo na comunidade,
 embarcar e contribuir com as habilidade que possui e gostaria de aprimorar.
 
 Os grupos de trabalho irão fornecer um cronograma para que as pessoas possam se familiarizar
