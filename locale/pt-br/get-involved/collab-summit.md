@@ -17,7 +17,7 @@ ajudar a integrar novos contribuidores ao grupos em que estes gostariam de colab
 antes de levá-los as sessões de trabalho (_workinkg sessions_).
 
 Essa é uma oportunidade para você ficar a par do que está acontecendo na comunidade,
-embarcar e contribuir com as habilidade que possui e gostaria de aprimorar.
+embarcar e contribuir com as habilidades que possui e gostaria de aprimorar.
 
 Os grupos de trabalho irão fornecer um cronograma para que as pessoas possam se familiarizar
 antes de chegar ao local, participar das discussões gerais dos colaboradores e então
