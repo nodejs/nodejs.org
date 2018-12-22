@@ -5,7 +5,7 @@ layout: contribute.hbs
 
 # Programe + Aprenda
 
-Eventos Programe & Aprenda permitem que você comece a contribuir (ou de um passo adiante) com a principais funcionalidades do Node.js. Contribuidores experientes irão auxiliá-lo em seu primeiro (ou segundo ou teceiro ou quarto) _commit_ ao Node.js. Eles também estarão disponíveis para guiá-los através de áreas específicas do código fonte do Node.js.
+Eventos Programe & Aprenda permitem que você comece a contribuir (ou de um passo adiante) com as principais funcionalidades do Node.js. Contribuidores experientes irão auxiliá-lo em seu primeiro (ou segundo ou terceiro ou quarto) _commit_ ao Node.js. Eles também estarão disponíveis para guiá-los através de áreas específicas do código fonte do Node.js.
 
 ## Próximos Eventos Programe + Aprenda
 
