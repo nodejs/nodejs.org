@@ -62,4 +62,4 @@ As atividade que são levadas em consideração incluem (mas não se limitam) a 
 * participação em grupos de trabaho (_Working Groups_)
 * outras participações na comunidade Node.js
 
-Se alguém, realizando contribuições, valiosas acredita que não foi considerado para receber esse título, poderá [abrir um pedido](https://github.com/nodejs/TSC/issues) ou [contatar um membro do TSC](https://github.com/nodejs/TSC#current-members) diretamente.
+Se alguém, realizando contribuições valiosas acredita que não foi considerado para receber esse título, poderá [abrir um pedido](https://github.com/nodejs/TSC/issues) ou [contatar um membro do TSC](https://github.com/nodejs/TSC#current-members) diretamente.
