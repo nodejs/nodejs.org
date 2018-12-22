@@ -14,7 +14,7 @@ Eventos Programe & Aprenda permitem que você comece a contribuir (ou de um pass
 ## Eventos Programe + Aprenda Anteriores
 
 - Kilkenny, Ireland na [NodeConfEU](https://www.nodeconf.eu/): 4 de Novembro de 2018
-- Vancouver, BC na [Node Interactive](https://events.linuxfoundation.org/events/node-js-interactive-2018/): 12 de Outubro de 2018
+- Vancouver, BC no [Node Interactive](https://events.linuxfoundation.org/events/node-js-interactive-2018/): 12 de Outubro de 2018
 - [Oakland em 22 de Abril de 2017](https://medium.com/the-node-js-collection/code-learn-learn-how-to-contribute-to-node-js-core-8a2dbdf9be45)
 - Shanghai na JSConf.CN: Julho de 2017
 - Vancouver, BC na [Node Interactive](http://events.linuxfoundation.org/events/node-interactive): 6 de October de 2017
