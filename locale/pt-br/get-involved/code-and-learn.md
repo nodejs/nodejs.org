@@ -18,7 +18,7 @@ Eventos Programe & Aprenda permitem que você comece a contribuir (ou de um pass
 - [Oakland em 22 de Abril de 2017](https://medium.com/the-node-js-collection/code-learn-learn-how-to-contribute-to-node-js-core-8a2dbdf9be45)
 - Shanghai na JSConf.CN: Julho de 2017
 - Vancouver, BC no [Node Interactive](http://events.linuxfoundation.org/events/node-interactive): 6 de Outubro de 2017
-- Kilkenny, Ireland na [NodeConfEU](http://www.nodeconf.eu/): 5 de Novembro de 2017
+- Kilkenny, Irlanda na [NodeConfEU](http://www.nodeconf.eu/): 5 de Novembro de 2017
 - Austin em Dezembro 2016
 - Tokyo em Novembro de 2016
 - Amsterdam em Setembro de 2016
