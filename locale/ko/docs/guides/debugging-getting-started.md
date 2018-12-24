@@ -95,7 +95,7 @@ implications of exposing the debugger port on public and private networks. -->
 
 ## 보안 관련
 
-디버거가 Node.js 실행 환경에 완전히 액세스하기 때문에 이 포트에 연결할 수 있는 악의적인 행위자가 노드 프로세스를 대신하여 임의의 코드를 실행할 수 있습니다. 디버거 포트를 공용 및 개인 네트워크에 노출하는 경우 보안에 미치는 영향을 이해하는 것은 중요합니다.
+디버거가 Node.js 실행 환경에 완전히 액세스하기 때문에 이 포트에 연결할 수 있는 공격자가 노드 프로세스를 대신하여 임의의 코드를 실행할 수 있습니다. 디버거 포트를 공용 및 개인 네트워크에 노출하는 경우 보안에 미치는 영향을 이해하는 것은 중요합니다.
 
 <!-- ### Exposing the debug port publicly is unsafe
 
@@ -385,7 +385,7 @@ tunnels instead. We provide the following example for illustrative purposes only
 Please understand the security risk of allowing remote access to a privileged
 service before proceeding. 
 -->
-디버거가 퍼블릭 IP 주소에서 수신하지 않는 것을 권장합니다. 만약 원격 디버깅 연결을 허용해야 하는 경우 ssh 터널링을 대신 사용할 것을 권장합니다. 설명을 위해 아래 예제를 제공합니다. 진행하기 전에 권한 있는 서비스에 대한 원격 액세스 허용의 보안 위험을 이해하십시오.
+디버거가 퍼블릭 IP 주소에서 수신하지 않는 것을 권장합니다. 만약 원격 디버깅 연결을 허용해야 하는 경우 ssh 터널링을 대신 사용할 것을 권장합니다. 설명을 위해 아래 예제를 제공합니다. 진행하기 전 권한을 가진 서비스에 원격 액세스를 허용할 경우 발생할 수 있는 보안 위험을 이해하시기 바랍니다.
 
 <!-- 
 Let's say you are running Node on remote machine, remote.example.com, that you
