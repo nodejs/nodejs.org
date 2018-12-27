@@ -61,10 +61,11 @@ function buildLocale (source, locale, opts) {
   console.time(`[metalsmith] build/${locale} finished`)
   const metalsmith = Metalsmith(__dirname)
   metalsmith
-    // Sets global metadata imported from the locale's respective site.json.
+  // Sets global metadata imported from the locale's respective site.json.
     .metadata({ site: i18nJSON(locale), project: source.project })
-    // Sets the build source as the locale folder.
+  // Sets the build source as the locale folder.
     .source(path.join(__dirname, 'locale', locale))
+    .use(withPreserveLocale(opts && opts.preserveLocale))
     // Extracts the main menu and sub-menu links form locale's site.json and
     // adds them to the metadata. This data is used in the navigation template
     .use(navigation(source.project.latestVersions))
@@ -118,7 +119,7 @@ function buildLocale (source, locale, opts) {
       })
     }))
     .use(markdown(markedOptions))
-    .use(githubLinks({ locale: locale }))
+    .use(githubLinks({ locale }))
     .use(prism())
     // Set pretty permalinks, we don't want .html suffixes everywhere.
     .use(permalinks({
@@ -167,118 +168,31 @@ function buildLocale (source, locale, opts) {
   metalsmith.build((err, files) => {
     if (err) { throw err }
     console.timeEnd(`[metalsmith] build/${locale} finished`)
-    if (opts && opts.preserveLocale) {
-      buildMissing(source, locale, files)
-    }
   })
 }
 
-function buildMissing (source, locale, localeFiles) {
-  console.log(`[metalsmith] build/${locale} missing files started`)
-  console.time(`[metalsmith] build/${locale} missing files finished`)
+// This plugin reads the files present in the english locale that are missing
+// in the current locale being built (requires preserveLocale flag)
+function withPreserveLocale (preserveLocale) {
+  return (files, m, next) => {
+    if (preserveLocale) {
+      var path = m.path('locale/en')
+      m.read(path, function (err, newfiles) {
+        if (err) {
+          console.error(err)
+          return next(err)
+        }
 
-  const metalsmith = Metalsmith(__dirname)
-  metalsmith
-    .clean(false)
-    .metadata({ site: i18nJSON(locale), project: source.project })
-  // Sets the build source as the DEFAULT_LANG (en) locale folder.
-    .source(path.join(__dirname, 'locale', DEFAULT_LANG))
-  // Ignores files already built with current locale
-    .ignore([...Object.keys(localeFiles).map(file =>
-      path.join(__dirname, 'locale', 'en', file.replace('.html', '.md'))
-    ), ...Object.keys(localeFiles)
-      .filter(key => `${localeFiles[key].path}/index.html` === key)
-      .map(key => path.join(__dirname, 'locale', 'en', `${localeFiles[key].path}.md`))])
-    .use(navigation(source.project.latestVersions))
-    .use(collections({
-      blog: {
-        pattern: 'blog/**/*.md',
-        sortBy: 'date',
-        reverse: true,
-        refer: false
-      },
-      blogAnnounce: {
-        pattern: 'blog/announcements/*.md',
-        sortBy: 'date',
-        reverse: true,
-        refer: false
-      },
-      blogReleases: {
-        pattern: 'blog/release/*.md',
-        sortBy: 'date',
-        reverse: true,
-        refer: false
-      },
-      blogVulnerability: {
-        pattern: 'blog/vulnerability/*.md',
-        sortBy: 'date',
-        reverse: true,
-        refer: false
-      },
-      lastWeekly: {
-        pattern: 'blog/weekly-updates/*.md',
-        sortBy: 'date',
-        reverse: true,
-        refer: false,
-        limit: 1
-      },
-      knowledgeBase: {
-        pattern: 'knowledge/**/*.md',
-        refer: false
-      },
-      guides: {
-        pattern: 'docs/guides/!(index).md'
-      }
-    }))
-    .use(pagination({
-      path: 'blog/year',
-      iteratee: (post, idx) => ({
-        post,
-        displaySummary: idx < 10
+        Object.keys(newfiles).forEach(function (key) {
+          if (!files[key]) {
+            files[key] = newfiles[key]
+          }
+        })
+        next()
       })
-    }))
-    .use(markdown(markedOptions))
-    .use(githubLinks({ locale: locale }))
-    .use(prism())
-    .use(permalinks({
-      relative: false
-    }))
-    .use(feed({
-      collection: 'blog',
-      destination: 'feed/blog.xml',
-      title: 'Node.js Blog'
-    }))
-    .use(feed({
-      collection: 'blogAnnounce',
-      destination: 'feed/announce.xml',
-      title: 'Node.js Announcements'
-    }))
-    .use(feed({
-      collection: 'blogReleases',
-      destination: 'feed/releases.xml',
-      title: 'Node.js Blog: Releases'
-    }))
-    .use(feed({
-      collection: 'blogVulnerability',
-      destination: 'feed/vulnerability.xml',
-      title: 'Node.js Blog: Vulnerability Reports'
-    }))
-    .use(discoverPartials({
-      directory: 'layouts/partials',
-      pattern: /\.hbs$/
-    }))
-    .use(discoverHelpers({
-      directory: 'scripts/helpers',
-      pattern: /\.js$/
-    }))
-    .use(layouts())
-    .destination(path.join(__dirname, 'build', locale))
-
-  if (locale !== DEFAULT_LANG) {
-    metalsmith.build((err) => {
-      if (err) { throw err }
-      console.timeEnd(`[metalsmith] build/${locale} missing files finished`)
-    })
+    } else {
+      next()
+    }
   }
 }
 
@@ -380,6 +294,7 @@ function getSource (callback) {
 // This is where the build is orchestrated from, as indicated by the function
 // name. It brings together all build steps and dependencies and executes them.
 function fullBuild (opts) {
+  const { preserveLocale, selectedLocales } = opts
   // Build static files.
   copyStatic()
   // Build layouts
@@ -389,9 +304,10 @@ function fullBuild (opts) {
 
     // Executes the build cycle for every locale.
     fs.readdir(path.join(__dirname, 'locale'), (e, locales) => {
-      locales.filter(junk.not).forEach((locale) => {
-        buildLocale(source, locale, opts)
-      })
+      locales.filter(file => junk.not(file) && (selectedLocales ? selectedLocales.includes(file) : true))
+        .forEach((locale) => {
+          buildLocale(source, locale, { preserveLocale })
+        })
     })
   })
 }
@@ -399,7 +315,8 @@ function fullBuild (opts) {
 // Starts the build if the file was executed from the command line
 if (require.main === module) {
   const preserveLocale = process.argv.includes('--preserveLocale')
-  fullBuild({ preserveLocale })
+  const selectedLocales = process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE.toLowerCase().split(',') : process.env.DEFAULT_LOCALE
+  fullBuild({ selectedLocales, preserveLocale })
 }
 
 exports.getSource = getSource
