@@ -15,7 +15,6 @@ The Node.js community is large, inclusive, and excited to enable as many users t
 - The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
 - [Node.js Everywhere](https://newsletter.nodejs.org) is the official Node.js Monthly Newsletter.
 - [Node.js Collection](https://medium.com/the-node-js-collection) is a collection of community-curated content on Medium.
-- [NodeUp](http://nodeup.com) is a podcast covering the latest Node.js news in the community.
 - The [Community Committee](https://github.com/nodejs/community-committee) is a top-level committee in the Node.js Foundation focused on community-facing efforts.
 
 
