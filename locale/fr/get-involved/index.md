@@ -46,6 +46,8 @@ de notre communauté pour trouver comment vous pouvez aider&nbps;:
 
 - [How To Node](http://howtonode.org/) a de nombreux tutoriaux utiles (en anglais).
 
+- [Node.js • Apprendre par la pratique](https://oncletom.io/node.js/) est un livre pour apprendre Node.js pas à pas, édité par les Éditions Eyrolles. Le code source est ouvert ; il est lisible en ligne gratuitement ; les copies numérique et papier sont payantes.
+
 
 ## Site et projets des commuanutés internationales 
 
