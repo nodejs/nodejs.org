@@ -78,6 +78,9 @@
       "text": "Підписані SHASUMS для файлів релізу",
       "verify-link": "https://github.com/nodejs/node#verifying-binaries",
       "verify-text": "Як перевірити"
+    },
+    "install-on-linux": {
+      "text": "Installing Node.js via binary archive on Linux"
     }
   },
   "docs": {

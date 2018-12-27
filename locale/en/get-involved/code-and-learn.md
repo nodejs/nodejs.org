@@ -9,10 +9,11 @@ Code & Learn events allow you to get started (or go further) with Node.js core c
 
 ## Upcoming Code + Learn Events
 
-- Bangalore, India at [Node.js - Code & Learn Meetup](https://www.meetup.com/Polyglot-Languages-Runtimes-Java-JVM-nodejs-Swift/events/256057028/): November 17, 2018
+- To be announced
 
 ## Past Code + Learn Events
 
+- Bangalore, India at [Node.js - Code & Learn Meetup](https://www.meetup.com/Polyglot-Languages-Runtimes-Java-JVM-nodejs-Swift/events/256057028/): November 17, 2018
 - Kilkenny, Ireland at [NodeConfEU](https://www.nodeconf.eu/): November 4, 2018
 - Vancouver, BC at [Node Interactive](https://events.linuxfoundation.org/events/node-js-interactive-2018/): October 12, 2018
 - [Oakland on April 22, 2017](https://medium.com/the-node-js-collection/code-learn-learn-how-to-contribute-to-node-js-core-8a2dbdf9be45)

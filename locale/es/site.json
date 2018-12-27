@@ -1,5 +1,6 @@
 {
   "title": "Node.js",
+  "editOnGithub":"Editar en Github",
   "author": "Fundación de Node.js",
   "url": "https://nodejs.org/es/",
   "locale": "es",
@@ -78,6 +79,9 @@
       "text": "Firmas SHASUMS de los archivos de versiones",
       "verify-link": "https://github.com/nodejs/node#verifying-binaries",
       "verify-text": "Cómo verificarlo"
+    },
+    "install-on-linux": {
+      "text": "Installing Node.js via binary archive on Linux"
     }
   },
   "docs": {

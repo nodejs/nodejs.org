@@ -7,8 +7,7 @@ title: 安全
 
 ## 向 Node.js 报告问题缺陷
 
-在 Node.js 中，所有有关于安全性的问题都应该被严肃对待，并且通过 [HackerOne](https://hackerone.com/nodejs) 或者发送电邮至 [security@nodejs.org](mailto:security@nodejs.org)
-进行汇报。这将被转发至核心小组，专门处理安全问题的子部门。
+通过 [HackerOne](https://hackerone.com/nodejs) 或发送电子邮件至 [security@nodejs.org](mailto:security@nodejs.org) 报告 Node.js 中的安全漏洞。
 
 你的报告将在 24 小时内得到确认，并且你将会在 48 小时内收到一封更为详细的回复，告知接下来处理你
 的提交的一些步骤。
