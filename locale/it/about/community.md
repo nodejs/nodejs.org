@@ -3,7 +3,7 @@ title: Community Committee
 layout: about.hbs
 ---
 
-# Commissione Community
+# Community Committee (Commissione Community)
 La commissione della Community (CommComm) è una commissione di primaria importanza nella Fondazione Node.js. La CommComm ha autorità sulle iniziative della comunità esterna, incluse:  
 
  - Community [Evangelism](https://github.com/nodejs/evangelism)
@@ -22,7 +22,7 @@ Ci sono quattro tipi di coinvolgimenti con il Comitato della Community:
 
 Per la lista attuale dei membri del Comitato della Community, vedere il [README.md] del progetto (https://github.com/nodejs/community-committee).
 
-## Contributori e Collaboratori
+## Contributors and Collaborators (Contributori e Collaboratori)
 
 La missione del CommComm è di consolidare ulteriormente la comunità di Node.js. Se stai leggendo questo documento, sei già parte di quella comunità - e in qualità di membro della Community di Node.js, ci piacerebbe moltissimo avere il tuo aiuto!
 
@@ -36,7 +36,7 @@ Prima di tuffarti, per favore assicurati di leggere la [Guida del Collaboratore]
 Se sei interessato a partecipare nel Comitato della Community come un membro del comitato, dovresti leggere la sezione qui sotto riguardo a **Osservatori e condizione di Membro**, e creare una segnalazione richiedendo di essere un Osservatore nel nostro prossimo incontro del Comitato Community.
 Puoi trovare un esempio lampante di tale segnalazione [qui](https://github.com/nodejs/community-committee/issues/142).
 
-## Osservatori e condizione di Membro
+## Observers and Membership (Osservatori e condizione di Membro)
 
 Se sei interessato a farti coinvolgere più a fondo nel Comitato della Community e nei suoi progetti, ti incoraggiamo a diventare un osservatore attivo, e lavorare per raggiungere lo stato di membro. Per diventare un membro devi:
 
@@ -52,7 +52,7 @@ Gli annunci degli incontri e gli ODG sono pubblicati prima dell'inizio del meeti
 Puoi anche trovare gli incontri pianificati regolarmente sul [Calendario Node.js](https://nodejs.org/calendar). Per seguire i livestream degli incontri Node.js su YouTube, sottoscrivi al [Canale Youtube](https://www.youtube.com/channel/UCQPYJluYC_sn_Qz_XE-YbTQ) "Node.js Foundation".
 Assicurati di cliccare sulla campanella per essere notificato dei nuovi video! 
 
-## Processo di Ricerca del Consenso
+## Consensus Seeking Process (Processo di Ricerca del Consenso)
 
 Il CommComm segue il modello decisionale della [Ricerca del Consenso](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making)
 

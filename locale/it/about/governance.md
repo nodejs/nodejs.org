@@ -4,7 +4,7 @@ layout: about.hbs
 ---
 # Gestione progetto
 
-## Comitato direttivo tecnico
+## Technical Steering Committee (Comitato direttivo tecnico)
 
 Il progetto è gestito congiuntamente da un Comitato Direttivo Tecnico (TSC, Technical Steering Committee) il quale è responsabile della direzione generale del progetto.
 
