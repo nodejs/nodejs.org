@@ -49,8 +49,8 @@ L'iscrizione come membro è valida 6 mesi. Il gruppo chiederà su base regolare 
 Gli incontri regolari del CommComm sono tenuti bimestralmente in una conferenza video Zoom, e trasmessi live al pubblico su YouTube. Ogni membro della comunità o contributore può chiedere che qualcosa venga aggiunta all'agenda del prossimo incontro aprendo una segnalazione su GitHub.
 
 Gli annunci degli incontri e gli ODG sono pubblicati prima dell'inizio del meeting negli [Issues di GitHub](https://github.com/nodejs/community-committee/issues) dell'organizzazione.
-Puoi anche trovare gli incontri pianificati regolarmente sul [Calendario Node.js](https://nodejs.org/calendar). Per seguire i livestream degli incontri Node.js su YouTube, sottoscrivi al [Canale Youtube](https://www.youtube.com/channel/UCQPYJluYC_sn_Qz_XE-YbTQ) "Node.js Foundation".
-Assicurati di cliccare sulla campanella per essere notificato dei nuovi video! 
+Puoi anche trovare gli incontri pianificati regolarmente sul [Calendario Node.js](https://nodejs.org/calendar). Per seguire i livestream degli incontri Node.js su YouTube, sottoscrivi il [Canale Youtube](https://www.youtube.com/channel/UCQPYJluYC_sn_Qz_XE-YbTQ) "Node.js Foundation".
+Assicurati di cliccare sulla campanella per ricevere le notifiche dei nuovi video! 
 
 ## Consensus Seeking Process (Processo di Ricerca del Consenso)
 
