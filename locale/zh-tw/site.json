@@ -1,5 +1,6 @@
 {
   "title": "Node.js",
+  "editOnGithub":"在 GitHub 上編輯",
   "author": "Node.js 基金會",
   "url": "https://nodejs.org/zh-tw/",
   "locale": "zh-tw",
@@ -72,6 +73,9 @@
     "shasums": {
       "link": "SHASUMS256.txt.asc",
       "text": "發佈文件的 SHASUM 簽名"
+    },
+    "install-on-linux": {
+      "text": "Installing Node.js via binary archive on Linux"
     }
   },
   "docs": {
@@ -106,12 +110,16 @@
       "link": "get-involved/code-and-learn",
       "text": "程式碼與學習"
     },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "協作者峰會"
+    },
     "contribute": {
       "link": "get-involved/contribute",
       "text": "貢獻"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
       "text": "管理"
     }
   },

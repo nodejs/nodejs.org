@@ -1,0 +1,153 @@
+{
+  "title": "Node.js",
+  "author": "Node.js بنیاد",
+  "url": "https://nodejs.org/fa/",
+  "locale": "fa",
+  "rtl": true,
+  "scrollToTop": "رفتن به بالا",
+  "reportNodeIssue": "را گزارش کنید Node.js مشکلی در",
+  "reportWebsiteIssue": "مشکلی در وبسایت را گزارش کنید",
+  "getHelpIssue": "کمک بگیرید",
+  "by": "توسط",
+  "all-downloads": "تمام گزینه‌ها برای دانلود",
+  "nightly": "ساخت‌های شبانه",
+  "chakracore-nightly": "ساخت‌های شبانه Node-ChakraCore ",
+  "previous": "قبلی",
+  "next": "بعدی",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "وبلاگ نودجی‌اس"
+    },
+    {
+      "link": "feed/releases.xml",
+      "text": "بلاگ نودجی‌اس: انتشارها"
+    },
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "بلاگ نودجی‌اس: مسائل امنیتی"
+    }
+  ],
+  "home": {
+    "text": "خانه"
+  },
+  "about": {
+    "link": "about",
+    "text": "درباره",
+    "governance": {
+      "link": "about/governance",
+      "text": "مدیریت"
+    },
+    "community": {
+      "link": "about/community",
+      "text": "جامعه"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "گروه‌های کاری"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "انتشارها"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "منابع"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "نشان تجاری"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "سیاست‌های حریم شخصی"
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "دانلود‌ها",
+    "releases": {
+      "link": "download/releases",
+      "text": "انتشارهای پیشین"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "نصب نودجی‌اس با package manager"
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "Signed SHASUMS for release files",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "چگونه راستی‌آزمایی کنیم؟"
+    },
+    "install-on-linux": {
+      "text": "Installing Node.js via binary archive on Linux"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "اسناد",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 و فراتر"
+    },
+    "api-lts": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "راهنمایی‌ها"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "وابستگی‌ها"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "مشارکت جستن",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "کد بزنید و یادبگیرید"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "نشت مشارکت کنندگان"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "مشارکت"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+      "text": "شیوه تعامل برای مشارکت"
+    }
+  },
+  "security": {
+    "link": "security",
+    "text": "امنیت"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "بلاگ"
+  },
+  "foundation": {
+    "link": "https://foundation.nodejs.org/",
+    "text": "بنیاد"
+  },
+  "releases": {
+    "title": "تاریخچه انتشارها",
+    "downloads": "Downloads"
+  },
+  "links": {
+    "pages": {
+      "changelog": "تغییرات"
+    }
+  }
+}

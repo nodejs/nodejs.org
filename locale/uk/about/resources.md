@@ -13,19 +13,19 @@ title: Лого та графіка
 
 <table border="0" cellspacing="0" cellpadding="10" class="logos">
   <tr>
-    <td bgcolor="#FFFFFF">[![Node.js на світлому фоні](/static/images/logos/nodejs-new-pantone-black.png)](/static/images/logos/nodejs-new-pantone-black.ai)</td>
-    <td bgcolor="#333333">[![Node.js на темному фоні](/static/images/logos/nodejs-new-pantone-white.png)](/static/images/logos/nodejs-new-pantone-white.ai)</td>
+    <td bgcolor="#FFFFFF"><a href="/static/images/logos/nodejs-new-pantone-black.ai"><img src="/static/images/logos/nodejs-new-pantone-black.png" alt="Node.js на світлому фоні"></a></td>
+    <td bgcolor="#333333"><a href="/static/images/logos/nodejs-new-pantone-white.ai"><img src="/static/images/logos/nodejs-new-pantone-white.png" alt="Node.js на темному фоні"></a></td>
   </tr>
   <tr>
-    <td>[Node.js звичайний AI](/static/images/logos/nodejs-new-pantone-black.ai)</td>
-    <td>[Node.js інвертований AI](/static/images/logos/nodejs-new-pantone-white.ai)</td>
+    <td><a href="/static/images/logos/nodejs-new-pantone-black.ai">Node.js звичайний AI</a></td>
+    <td><a href="/static/images/logos/nodejs-new-pantone-white.ai">Node.js інвертований AI</a></td>
   </tr>
   <tr>
-    <td bgcolor="#FFFFFF">[![Node.js на світлому фоні](/static/images/logos/nodejs-new-black.png)](/static/images/logos/nodejs-new-black.ai)</td>
-    <td bgcolor="#333333">[![Node.js на темному фоні](/static/images/logos/nodejs-new-white.png)](/static/images/logos/nodejs-new-white.ai)</td>
+    <td bgcolor="#FFFFFF"><a href="/static/images/logos/nodejs-new-black.ai"><img src="/static/images/logos/nodejs-new-black.png" alt="Node.js на світлому фоні"></a></td>
+    <td bgcolor="#333333"><a href="/static/images/logos/nodejs-new-white.ai"><img src="/static/images/logos/nodejs-new-white.png" alt="Node.js на темному фоні"></a></td>
   </tr>
   <tr>
-    <td>[Node.js звичайний з меншою кількістю кольорів AI](/static/images/logos/nodejs-new-black.ai)</td>
-    <td>[Node.js інвертований з меншою кількістю кольорів AI](/static/images/logos/nodejs-new-white.ai)</td>
+    <td><a href="/static/images/logos/nodejs-new-black.ai">Node.js звичайний з меншою кількістю кольорів AI</a></td>
+    <td><a href="/static/images/logos/nodejs-new-white.ai">Node.js інвертований з меншою кількістю кольорів AI</a></td>
   </tr>
 </table>

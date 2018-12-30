@@ -12,19 +12,19 @@ title: 商标和图像
 
 <table border="0" cellspacing="0" cellpadding="10" class="logos">
   <tr>
-    <td bgcolor="#FFFFFF">[![Node.js 浅色背景](/static/images/logos/nodejs-new-pantone-black.png)](/static/images/logos/nodejs-new-pantone-black.ai)</td>
-    <td bgcolor="#333333">[![Node.js 深色背景](/static/images/logos/nodejs-new-pantone-white.png)](/static/images/logos/nodejs-new-pantone-white.ai)</td>
+    <td bgcolor="#FFFFFF"><a href="/static/images/logos/nodejs-new-pantone-black.ai"><img src="/static/images/logos/nodejs-new-pantone-black.png" alt="Node.js 浅色背景"></a></td>
+    <td bgcolor="#333333"><a href="/static/images/logos/nodejs-new-pantone-white.ai"><img src="/static/images/logos/nodejs-new-pantone-white.png" alt="Node.js 深色背景"></a></td>
   </tr>
   <tr>
-    <td>[Node.js 标准 AI](/static/images/logos/nodejs-new-pantone-black.ai)</td>
-    <td>[Node.js 保留 AI](/static/images/logos/nodejs-new-pantone-white.ai)</td>
+    <td><a href="/static/images/logos/nodejs-new-pantone-black.ai">Node.js 标准 AI</a></td>
+    <td><a href="/static/images/logos/nodejs-new-pantone-white.ai">Node.js 保留 AI</a></td>
   </tr>
   <tr>
-    <td bgcolor="#FFFFFF">[![Node.js 浅色背景 ](/static/images/logos/nodejs-new-black.png)](/static/images/logos/nodejs-new-black.ai)</td>
-    <td bgcolor="#333333">[![Node.js 深色背景 ](/static/images/logos/nodejs-new-white.png)](/static/images/logos/nodejs-new-white.ai)</td>
+    <td bgcolor="#FFFFFF"><a href="/static/images/logos/nodejs-new-black.ai"><img src="/static/images/logos/nodejs-new-black.png" alt="Node.js 浅色背景 "></a></td>
+    <td bgcolor="#333333"><a href="/static/images/logos/nodejs-new-white.ai"><img src="/static/images/logos/nodejs-new-white.png" alt="Node.js 深色背景 "></a></td>
   </tr>
   <tr>
-    <td>[少彩色的标准 Node.js AI](/static/images/logos/nodejs-new-black.ai)</td>
-    <td>[少彩色的保留 Node.js AI](/static/images/logos/nodejs-new-white.ai)</td>
+    <td><a href="/static/images/logos/nodejs-new-black.ai">少彩色的标准 Node.js AI</a></td>
+    <td><a href="/static/images/logos/nodejs-new-white.ai">少彩色的保留 Node.js AI</a></td>
   </tr>
 </table>

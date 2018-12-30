@@ -1,5 +1,6 @@
 {
   "title": "Node.js",
+  "editOnGithub":"在 GitHub 上编辑",
   "author": "Node.js 基金会",
   "url": "https://nodejs.org/zh-cn/",
   "locale": "zh-cn",
@@ -78,6 +79,9 @@
       "text": "查看发布文件的 SHASUM 签名",
       "verify-link": "https://github.com/nodejs/node#verifying-binaries",
       "verify-text": "如何校验"
+    },
+    "install-on-linux": {
+      "text": "在 Linux 上，通过二进制文件安装 Node.js"
     }
   },
   "docs": {
@@ -86,10 +90,6 @@
     "es6": {
       "link": "docs/es6",
       "text": "ES6 及更高"
-    },
-    "inspector": {
-      "link": "docs/inspector",
-      "text": "调试"
     },
     "api-lts": {
       "link": "/dist/latest-%ver-major%/docs/api",
@@ -102,7 +102,11 @@
     },
     "guides": {
       "link": "docs/guides",
-      "text": "教程"
+      "text": "指南"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "依赖项"
     }
   },
   "getinvolved": {
@@ -112,12 +116,16 @@
       "link": "get-involved/code-and-learn",
       "text": "代码与学习"
     },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "协作者峰会"
+    },
     "contribute": {
       "link": "get-involved/contribute",
       "text": "贡献"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
       "text": "管理"
     }
   },

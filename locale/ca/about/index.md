@@ -62,5 +62,5 @@ compartir sockets entre processos per activar el balanceig de càrregues en els 
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
 [bucle de eventos]: https://github.com/nodejs/node/blob/master/doc/topics/event-loop-timers-and-nexttick.md
-[Event Machine]: http://rubyeventmachine.com/
+[Event Machine]: https://github.com/eventmachine/eventmachine
 [Twisted]: http://twistedmatrix.com/

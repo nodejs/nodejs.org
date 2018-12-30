@@ -18,7 +18,7 @@ labels:
   version-schedule-prompt-link-text: LTS（長期維護版）時程
   newsletter: true
   newsletter-prefix: 訂閱
-  newsletter-postfix: "：Node.js 官方的新聞週報。"
+  newsletter-postfix: "：Node.js 官方的新聞月報。"
 ---
 
 Node.js® 是款基於 [Chrome V8 引擎](https://developers.google.com/v8/)的 JavaScript 執行環境。

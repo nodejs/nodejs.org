@@ -7,9 +7,8 @@ title: Security
 
 ## Reporting a Bug in Node.js
 
-All security bugs in Node.js are taken seriously and should be reported via [HackerOne](https://hackerone.com/nodejs)
-or by emailing [security@nodejs.org](mailto:security@nodejs.org). This will be delivered to a subset of the core team
-who handle security issues.
+Report security bugs in Node.js via [HackerOne](https://hackerone.com/nodejs) or
+by emailing [security@nodejs.org](mailto:security@nodejs.org).
 
 Your report will be acknowledged within 24 hours, and you’ll receive a more detailed response to your report within 48
 hours indicating the next steps in handling your submission.

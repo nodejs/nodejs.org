@@ -7,19 +7,19 @@ layout: docs.hbs
 
 Node.js використовує кілька залежностей, на які використовуються для забезпечення його роботи.
 
-- [Бібліотеки](#Бібліотеки)
-  - [V8](#V8)
+- [Бібліотеки](#libraries)
+  - [V8](#v8)
   - [libuv](#libuv)
   - [http-parser](#http-parser)
   - [c-ares](#c-ares)
-  - [OpenSSL](#OpenSSL)
+  - [OpenSSL](#openssl)
   - [zlib](#zlib)
-- [Інструменти](#Інструменти)
+- [Інструменти](#tools)
   - [npm](#npm)
   - [gyp](#gyp)
   - [gtest](#gtest)
 
-## Бібліотеки
+## <!--libraries-->Бібліотеки
 
 ### V8
 
@@ -73,7 +73,7 @@ Node.js використовує zlib для створення синхронн
 
 - [Документація](http://www.zlib.net/manual.html)
 
-## Інструменти
+## <!--tools-->Інструменти
 
 ### npm
 

@@ -106,8 +106,6 @@ info on these follows:
   are listed.
 * **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
   (see above) or the --inspect hint text and paste into Chrome.
-* **Option 3**: Install the Chrome Extension NIM (Node Inspector Manager):
-  https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 
 #### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
 
@@ -128,6 +126,10 @@ info on these follows:
 #### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 
 * Library to ease connections to Inspector Protocol endpoints.
+
+#### [Gitpod](https://www.gitpod.io)
+
+* Start a Node.js debug configuration from the `Debug` view or hit `F5`. [Detailed instructions](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
 
 ---
 

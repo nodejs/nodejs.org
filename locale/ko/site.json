@@ -72,6 +72,9 @@
     "shasums": {
       "link": "SHASUMS256.txt.asc",
       "text": "릴리스 파일에 서명된 SHASUMS"
+    },
+    "install-on-linux": {
+      "text": "Installing Node.js via binary archive on Linux"
     }
   },
   "docs": {
@@ -93,10 +96,6 @@
     "guides": {
       "link": "docs/guides",
       "text": "안내"
-    },
-    "inspector": {
-      "link": "docs/inspector",
-      "text": "인스펙터"
     }
   },
   "getinvolved": {
@@ -111,7 +110,7 @@
       "text": "기여하기"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
       "text": "행동강령"
     }
   },

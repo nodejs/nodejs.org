@@ -78,6 +78,9 @@
       "text": "Signed SHASUMS for release files",
       "verify-link": "https://github.com/nodejs/node#verifying-binaries",
       "verify-text": "How to verify"
+    },
+    "install-on-linux": {
+      "text": "Installing Node.js via binary archive on Linux"
     }
   },
   "docs": {
@@ -99,6 +102,10 @@
     "guides": {
       "link": "docs/guides",
       "text": "Guides"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "Dependencies"
     }
   },
   "getinvolved": {
@@ -117,7 +124,7 @@
       "text": "Contribute"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
       "text": "Code of Conduct"
     }
   },

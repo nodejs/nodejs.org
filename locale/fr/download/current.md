@@ -1,5 +1,5 @@
 ---
-layout: download.hbs
+layout: download-current.hbs
 title: Téléchargements
 download: Télécharger
 downloads:

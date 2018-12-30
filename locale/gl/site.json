@@ -72,6 +72,9 @@
     "shasums": {
       "link": "SHASUMS256.txt.asc",
       "text": "Firmas SHASUMS para os arquivos de versións"
+    },
+    "install-on-linux": {
+      "text": "Installing Node.js via binary archive on Linux"
     }
   },
   "docs": {
@@ -107,7 +110,7 @@
       "text": "Contribúe"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
       "text": "Comportamento"
     }
   },

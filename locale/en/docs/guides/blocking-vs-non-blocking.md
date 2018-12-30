@@ -123,7 +123,7 @@ fs.unlinkSync('/file.md');
 
 In the above example, `fs.unlinkSync()` is likely to be run before
 `fs.readFile()`, which would delete `file.md` before it is actually read. A
-better way to write this that is completely **non-blocking** and guaranteed to
+better way to write this, which is completely **non-blocking** and guaranteed to
 execute in the correct order is:
 
 

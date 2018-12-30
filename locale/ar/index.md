@@ -18,7 +18,7 @@ labels:
   version-schedule-prompt-link-text: LTS schedule.
   newsletter: نعم
   newsletter-prefix: قم بالانضمام الى
-  newsletter-postfix: " , القائمة البريدية الأسبوعية الرسمية ل  Node.js "
+  newsletter-postfix: " , الرسالة الإخبارية الشّهريّة عن Node.js "
 ---
 
 Node.js® هو اطار عمل مبني على محرك [Chrome V8](https://developers.google.com/v8/).

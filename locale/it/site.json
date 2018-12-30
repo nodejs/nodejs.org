@@ -63,6 +63,9 @@
     "package-manager": {
       "link": "download/package-manager",
       "text": "Installa Node.js con un gestore di pacchetti"
+    },
+    "install-on-linux": {
+      "text": "Installing Node.js via binary archive on Linux"
     }
   },
   "docs": {
@@ -98,7 +101,7 @@
       "text": "Contribuire"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
       "text": "Condotta"
     }
   },

@@ -6,6 +6,6 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.4",
-    "node-github-graphql": "^0.2.6"
+    "node-github-graphql": "^0.2.7"
   }
 }
