@@ -31,7 +31,7 @@ Se hai delle idee su come organizzare e costruire la community, sentiti libero d
 
 Puoi partecipare ulteriormente nei nostri continui sforzi nel costruire la comunità - ad esempio le traduzioni, evangelism, la Node.js Collection, e altri - cercando informazioni nei loro rispettivi repositories e entrando nel vivo!
 
-Prima di tuffarti, per favore assicurati di leggere la [Guida del Collaboratore](https://github.com/nodejs/community-committee/blob/master/COLLABORATOR_GUIDE.md).
+Prima di approfondire, per favore assicurati di leggere la [Guida del Collaboratore](https://github.com/nodejs/community-committee/blob/master/COLLABORATOR_GUIDE.md).
 
 Se sei interessato a partecipare nel Comitato della Community come un membro del comitato, dovresti leggere la sezione qui sotto riguardo a **Osservatori e condizione di Membro**, e creare una segnalazione richiedendo di essere un Osservatore nel nostro prossimo incontro del Comitato Community.
 Puoi trovare un esempio lampante di tale segnalazione [qui](https://github.com/nodejs/community-committee/issues/142).
@@ -40,7 +40,7 @@ Puoi trovare un esempio lampante di tale segnalazione [qui](https://github.com/n
 
 Se sei interessato a farti coinvolgere più a fondo nel Comitato della Community e nei suoi progetti, ti incoraggiamo a diventare un osservatore attivo, e lavorare per raggiungere lo stato di membro. Per diventare un membro devi:
 
- 1. Presenziare ai meeting 2 volte a settimana, investigare segnalazioni taggate come "good first issue", compilare segnalazioni e pull requests, e fornire approfondimenti tramite GitHub come contributore o collaboratore.
+ 1. Presenziare ai meeting ogni 2 settimane, investigare segnalazioni taggate come "good first issue", compilare segnalazioni e pull requests, e fornire approfondimenti tramite GitHub come contributore o collaboratore.
  2. Richiedere di diventare un Osservatore creando una segnalazione. Una volta aggiunto come Osservatore agli incontri, tracceremo la partecipazione e la presenza per 3 mesi, in accordo con le nostre linee guida. Troverai un esempio di una segnalazione del genere [qui](https://github.com/nodejs/community-committee/issues/142).
  3. Quando soddisferai il requisito minimo di partecipazione di 3 mesi, e le aspettative di intervento, il CommComm voterà per inserirti come membro.
 
