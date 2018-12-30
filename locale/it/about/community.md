@@ -24,12 +24,12 @@ Per la lista attuale dei membri del Comitato della Community, vedere il [README.
 
 ## Contributori e Collaboratori
 
-La missione del CommComm è di consolidare ulteriormente la comunità di Node.js. Se stai leggendo questo, sei già parte di quella comunità - e in qualità di membro della Community di Node.js, ci piacerebbe moltissimo avere il tuo aiuto!
+La missione del CommComm è di consolidare ulteriormente la comunità di Node.js. Se stai leggendo questo documento, sei già parte di quella comunità - e in qualità di membro della Community di Node.js, ci piacerebbe moltissimo avere il tuo aiuto!
 
 Il repository GitHub [nodejs/community-committee](https://github.com/nodejs/community-committee) è un posto fantastico da cui iniziare. Dai un'occhiata a [issues labeled "Good first issue"](https://github.com/nodejs/community-committee/labels/good%20first%20issue) per vedere in quali settori abbiamo bisogno d'aiuto.
 Se hai delle idee su come organizzare e costruire la community, sentiti libero di aprire delle tue segnalazioni, creare pull requests che evidenzino migliori al nostro lavoro attuale, o aiutaci condividendo i tuoi pensieri e le tue idee nelle attuali discussioni che stiamo avendo su GitHub.
 
-Puoi partecipare ulteriormente nei nostri continui sforzi nel costruire la comunità - ad esempio le traduzioni, evangelism, la Node.js Collection, e altri - scavando nei loro rispettivi repositories e entrando nel vivo!
+Puoi partecipare ulteriormente nei nostri continui sforzi nel costruire la comunità - ad esempio le traduzioni, evangelism, la Node.js Collection, e altri - ricercando nei loro rispettivi repositories e entrando nel vivo!
 
 Prima di tuffarti, per favore assicurati di leggere la [Guida del Collaboratore](https://github.com/nodejs/community-committee/blob/master/COLLABORATOR_GUIDE.md).
 
