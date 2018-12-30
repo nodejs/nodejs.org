@@ -32,15 +32,15 @@ Se qualcosa in questa terminologia ti è poco familiare, qui c'è un articolo co
 Node è simile in design, e influenzato, da sistemi come la [Event Machine][] di Ruby o [Twisted][] di Python. Node porta il modello ad eventi un po' oltre. Presenta un [loop di eventi][] come un costrutto a runtime invece che come libreria. In altri sistemi c'è sempre una chiamata bloccante per chiamare un Event Loop.
 
 Normalmente il comportamento viene definito tramite callbacks all'inizio di uno script e alla fine viene avviato un server tramite una chiamata bloccante come `EventMachine::run()`.
-In Node non c'è un loop d'avvio dell'evento come quello. 
+In Node non c'è un loop d'avvio dell'evento come quello descritto sopra. 
 Node semplicemente entra nell'event loop dopo aver eseguito lo script di input. 
 Node esce dal loop d'evento quando non ci sono più callbacks da eseguire.
-Questo comportamento è simile al JavaScript dei browser - il loop d'eventi è nascosto all'utente.
+Questo comportamento è simile al JavaScript eseguito nei browser - il loop d'eventi è nascosto all'utente.
 
-HTTP è la prima classe abitante in Node, pensata con l'idea di streaming e bassa la tenza in mente.
-Questo rende Node adatto per la creazione di una libreria web o di un framework.
+HTTP è una classe di primaria importanza in Node, pensata con l'idea di streaming e bassa latenza in mente.
+Ciò rende Node adatto alla creazione di una libreria web o di un framework.
 
-Solo perché Node è pensato senza thread, non significa che non puoi trarre vantaggio dai core multipli nel tuo ambiente. Puoi produrre processi figli utilizzando la nostra API [`child_process.fork()`][], ed essi sono progettati in modo tale da poterci comunicare agevolmente. Creato a partire dalla medesima interfaccia è inoltre il modulo [`cluster`][], il quale ti consente di condividere sockets tra processi per abilitare il load balancing sui tuoi core.
+Solo perché Node è pensato senza thread, non significa che tu non possa trarre vantaggio dai core multipli nel tuo ambiente. Puoi produrre processi figli utilizzando la nostra API [`child_process.fork()`][], ed essi sono progettati in modo tale da poterci comunicare agevolmente. Creato a partire dalla medesima interfaccia è inoltre il modulo [`cluster`][], il quale ti consente di condividere sockets tra processi per abilitare il load balancing sui tuoi core.
 
 [Bloccante vs Non Bloccante]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
