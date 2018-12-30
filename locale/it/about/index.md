@@ -5,7 +5,7 @@ trademark: Trademark
 ---
 # Riguardo a Node.js&reg;
 
-In quanto runtime JavaScript guidato dagli eventi, Node è pensato per creare applicazioni di rete scalabili. Nell'esempio "hello world" seguente, possono essere gestite molte connessioni simultaneamente. Nel momento in cui la callback di ogni connessione è richiamata, ma non c'è lavoro da svolgere, Node rimarrà dormiente.
+In quanto runtime JavaScript guidato dagli eventi, Node è pensato per creare applicazioni di rete scalabili. Nell'esempio "hello world" seguente, possono essere gestite molte connessioni simultaneamente. Nel momento in cui la callback di ogni connessione è chiamata, ma non c'è lavoro da svolgere, Node rimarrà dormiente.
 
 ```javascript
 const http = require('http');

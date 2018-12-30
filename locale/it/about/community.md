@@ -56,4 +56,4 @@ Assicurati di cliccare sulla campanella per ricevere le notifiche dei nuovi vide
 
 Il CommComm segue il modello decisionale della [Ricerca del Consenso](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making)
 
-Quando un argomento in agenda sembra aver raggiunto il consenso, il moderatore chiederà "C'è qualche obiezione?" come chiamata finale per un dissenso. Se non si riesce ad ottenere un consenso esente da obiezioni, allora viene chiamato il voto a maggioranza. Ci si aspetta che la maggioranza delle decisioni prese dal CommComm siano per mezzo del processo di ricerca del consenso e che votare sia utilizzato solo come ultima spiaggia.
+Quando un argomento in agenda sembra aver raggiunto il consenso, il moderatore chiederà "C'è qualche obiezione?" come chiamata finale per un dissenso. Se non si riesce ad ottenere un consenso esente da obiezioni, allora viene chiamato il voto a maggioranza. Ci si aspetta che la maggioranza delle decisioni prese dal CommComm siano per mezzo del processo di ricerca del consenso e che il voto sia utilizzato solo come ultima spiaggia.
