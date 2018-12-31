@@ -7,7 +7,7 @@ layout: docs.hbs
 
 Denne guiden vil hjelpe deg med å komme i gang med debugging av dine Node.js programmer og skript.
 
-## Aktivere Inspector
+## Aktiver Inspector
 
 Når begynte med **--inspisere** * slå, en Node.js prosessen lytter via WebSockets
 for diagnostiske kommandoer som definert av [Inspector-Protokollen][],
