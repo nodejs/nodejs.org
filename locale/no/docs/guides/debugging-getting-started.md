@@ -14,7 +14,7 @@ for diagnostiske kommandoer som er definert av [Inspector-Protokollen][],
 som standard på vertsnavn og port 127.0.0.1:9229. Hver prosess er også tildelt en
 unik [UUID][] (f.eks `0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`).
 
-Inspektøren kunder må vite og angi vertsadresse, port, og UUID å koble
+Inspector klienter må vite og angi vertsadresse, port, og UUID for å koble
 til WebSocket grensesnitt. Den fullstendige URL er
 `ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`, selvfølgelig avhengig
 på faktiske vertsnavn og port, og med riktig UUID for eksempel.
