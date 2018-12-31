@@ -1,5 +1,5 @@
 ---
-title: Debugging - Komme i Gang
+title: Debugging - Hvordan komme i gang
 layout: docs.hbs
 ---
 
