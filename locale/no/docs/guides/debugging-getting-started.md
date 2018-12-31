@@ -19,7 +19,7 @@ til WebSocket grensesnitt. Den fullstendige URL er
 `ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`, selvfølgelig avhengig
 på faktiske vertsnavn og port, og med riktig UUID for eksempel.
 
-Inspektøren inneholder også en HTTP-endepunkt å tjene metadata om debuggee,
+Inspektøren inneholder også et HTTP-endepunkt for å tilby metadata om prosessen som debugges,
 inkludert WebSocket URL, UUID og Chrome DevTools URL. Få denne metadata
 ved å sende en HTTP-forespørsel til `http://[vert:port]/json/list". Dette gir et
 JSON-objekt som følgende; bruk `webSocketDebuggerUrl` eiendom som
