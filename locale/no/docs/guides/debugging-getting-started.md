@@ -28,7 +28,7 @@ URL-adressen til å koble direkte til Inspektør.
 <!-- eslint-hopp -->
 ``javascript
 {
-"description": "node.js forekomst",
+"description": "node.js instans",
  "devtoolsFrontendUrl": "chrome-devtools://devtools/bundled/inspector.html?experiments=true&v8only=true&ws=127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e",
 "faviconUrl": "https://nodejs.org/static/favicon.ico",
 "id": "0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e",
