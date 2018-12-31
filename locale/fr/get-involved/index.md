@@ -3,21 +3,21 @@ title: Comment s'impliquer ?
 layout: contribute.hbs
 ---
 
-# Nous encourageons toutes formes de contribution de la part de la communauté 
+# Nous encourageons toutes formes de contribution de la part de la communauté
 
-La communauté Node.js est vaste, inclusive et entousiaste à l'idée de permettre à autant 
+La communauté Node.js est vaste, inclusive et enthousiaste à l'idée de permettre à autant
 d'utilisateurs de contribuer de toutes les manières possibles. Si vous souhaitez
 [signaler un problème](https://github.com/nodejs/node/issues), aider à documenter
-ou contribuer au code du projet, vous êtes au bon endroit. Explorez les ressources 
+ou contribuer au code du projet, vous êtes au bon endroit. Explorez les ressources
 de notre communauté pour trouver comment vous pouvez aider&nbps;:
 
 <hr>
 
 ## Discussions de la communauté
 
-- La [liste des tickets GitHub](https://github.com/nodejs/node/issues) est le bon endroit pour discuter des fonctionnalités principales de Node.js.
+- La [liste des tickets GitHub](https://github.com/nodejs/node/issues) est le bon endroit pour discuter des fonctionnalités cœurs de Node.js.
 
-- Pour une discussion temps réel à propos du développement Node, allez sur `irc.freenode.net` dans le canal `#node.js` avec un [client IRC](https://fr.wikipedia.org/wiki/Liste_de_clients_IRC) ou connectez vous depuis votre navigateur web en utilisant [le WebChat de freenode](http://webchat.freenode.net/?channels=node.js).
+- Pour une discussion temps réel à propos du développement Node, allez sur `irc.freenode.net` dans le canal `#node.js` avec un [client IRC](https://fr.wikipedia.org/wiki/Liste_de_clients_IRC) ou connectez vous depuis votre navigateur web en utilisant [le WebChat de freenode](http://webchat.freenode.net/?channels=node.js) (en anglais).
 
 - Le compte Twitter officiel de Node.js est [nodejs](https://twitter.com/nodejs) (en anglais).
 
@@ -38,16 +38,16 @@ de notre communauté pour trouver comment vous pouvez aider&nbps;:
 
 - [NodeSchool.io](https://nodeschool.io/fr-fr/) vous apprendra les concepts de Node.js avec des jeux interactifs en ligne de commande.
 
-- [L'étiquette Stack Overflow Node.js](http://stackoverflow.com/questions/tagged/node.js) rassemble de nouvelles informations chaque jours (en anglais).
+- [L'étiquette Stack Overflow Node.js](http://stackoverflow.com/questions/tagged/node.js) rassemble de nouvelles informations chaque jour (en anglais).
 
 - [L'étiquette Node.js de la communauté DEV](https://dev.to/t/node) est un endroit pour partager ses projets Node.js, des articles et des tutoriaux mais aussi pour démarrer des conversations et demander des retours sur des sujets liés à Node.js. Tous les niveaux de connaissances sont acceptés. (en anglais)
 
-- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) est une communauté sympathique d'entraide entre développeu·r·se·s _back-end_ Node.js sur le service Discord (en anglais).
+- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) est une communauté sympathique centrée sur le développement _back-end_ avec Node.js sur le service Discord (en anglais).
 
 - [How To Node](http://howtonode.org/) a de nombreux tutoriaux utiles (en anglais).
 
 
-## Site et projets des commuanutés internationales 
+## Site et projets des commuanutés internationales
 
 - [blog Node.js australien](http://nodejs.org.au/)
 - [communauté chinoise](http://cnodejs.org)
