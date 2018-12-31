@@ -25,7 +25,7 @@ ved å sende en HTTP-forespørsel til `http://[vert:port]/json/list". Dette gir 
 JSON-objekt som følgende; bruk `webSocketDebuggerUrl` eiendom som
 URL-adressen til å koble direkte til Inspektør.
 
-<!-- eslint-hopp -->
+<!-- eslint-skip -->
 ``javascript
 {
 "description": "node.js instans",
