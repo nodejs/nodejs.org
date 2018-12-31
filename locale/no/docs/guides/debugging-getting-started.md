@@ -21,7 +21,7 @@ på faktiske vertsnavn og port, og med riktig UUID for eksempel.
 
 Inspektøren inneholder også en HTTP-endepunkt å tjene metadata om debuggee,
 inkludert WebSocket URL, UUID og Chrome DevTools URL. Få denne metadata
-ved å sende en HTTP-forespørsel til `http://[vert:port]/json/list". Dette gir en
+ved å sende en HTTP-forespørsel til `http://[vert:port]/json/list". Dette gir et
 JSON-objekt som følgende; bruk `webSocketDebuggerUrl` eiendom som
 URL-adressen til å koble direkte til Inspektør.
 
