@@ -11,7 +11,7 @@ Denne guiden vil hjelpe deg med å komme i gang med debugging av dine Node.js pr
 
 Når en node prosess startes med **--inspect** vil den lytte via WebSockets
 for diagnostiske kommandoer som er definert av [Inspector-Protokollen][],
-standard på vertsnavn og port 127.0.0.1:9229. Hver prosess er også tildelt en
+som standard på vertsnavn og port 127.0.0.1:9229. Hver prosess er også tildelt en
 unik [UUID][] (f.eks `0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`).
 
 Inspektøren kunder må vite og angi vertsadresse, port, og UUID å koble
