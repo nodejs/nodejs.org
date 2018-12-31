@@ -5,7 +5,7 @@ layout: docs.hbs
 
 # Debugging Guide
 
-Denne guiden vil hjelpe deg med å komme i gang debugging din Node.js programmer og skript.
+Denne guiden vil hjelpe deg med å komme i gang med debugging av dine Node.js programmer og skript.
 
 ## Aktivere Inspector
 
