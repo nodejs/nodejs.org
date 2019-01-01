@@ -3,12 +3,7 @@ title: Participa
 layout: contribute.hbs
 ---
 
-# Fomentem tota classe de contribucions de la comunitat.
-
-La comunitat de Node.js és gran, inclusiva i entusiasmada per permetre al major nombre d'usuaris,
-contribuir de la manera que puguin. Si vols [reportar un error](https://github.com/nodejs/node/issues),
-[ajudar amb la documentació o contribuir amb el codi](/en/get-involved/contribute/) del projecte, has vingut al lloc indicat. Explora els recursos de la nostra comunitat per trobar una forma d'ajudar:
-
+# Participa
 
 ## Discussió de la comunitat
 
