@@ -28,15 +28,10 @@ Node.js 是个包容的大家庭，因此我们鼓励用户各施所长。 若�
 
 ## 国际化社区站点及项目
 
-- [Australian Node.js blog &amp; developers listing](http://nodejs.org.au/)
 - [Chinese community](http://cnodejs.org)
 - [French Google+ Community of Node.js users](https://plus.google.com/communities/113346206415381691435)
 - [Hungarian (Magyar) community](http://nodehun.blogspot.com/)
-- [Iranian group in Persian](http://nodejs.ir)
 - [Israeli Facebook group for Node.js](https://www.facebook.com/groups/node.il/)
 - [Japanese user group](http://nodejs.jp/)
-- [Korean Node.js community](http://nodejs.github.io/nodejs-ko/)
-- [Nicaragua Node.js community](http://nodenica.com/)
 - [Spanish language Facebook group for Node.js](https://www.facebook.com/groups/node.es/)
 - [Spanish language community](http://nodehispano.com)
-- [Việt Nam Node.js community](http://nodejs.vn)

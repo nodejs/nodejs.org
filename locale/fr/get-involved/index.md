@@ -41,17 +41,10 @@ de notre communauté pour trouver comment vous pouvez aider:
 
 ## Site et projets des commuanutés internationales 
 
-- [blog Node.js australien](http://nodejs.org.au/)
 - [communauté chinoise](http://cnodejs.org)
 - [communauté française Google+ des utilisateurs Node.js](https://plus.google.com/communities/113346206415381691435)
-- [communauté allemande Node.js](http://nodecode.de)
 - [communauté hongroise (Magyar)](http://nodehun.blogspot.com/)
-- [communauté iranienne](http://nodejs.ir)
 - [communauté israelienne sur Facebook](https://www.facebook.com/groups/node.il/)
 - [communauté japonaise](http://nodejs.jp/)
-- [communauté Coréenne](http://nodejs.github.io/nodejs-ko/)
-- [communauté du Nicaragua](http://nodenica.com/)
 - [communauté espagnole sur Facebook](https://www.facebook.com/groups/node.es/)
 - [communauté espagnole](http://nodehispano.com)
-- [communauté turque](http://node.ist/)
-- [communauté du Viêt Nam](http://nodejs.vn)

@@ -29,17 +29,10 @@ a contribuir de cualquier forma posible. Si usted quiere [reportar un error](htt
 
 ## Sitios de la comunidad internacional y proyectos
 
-- [Comunidad Alemana de Node.js](http://nodecode.de)
-- [Blog Australiano de Node.js blog &amp; lista de desarrolladores](http://nodejs.org.au/)
 - [Comunidad China](http://cnodejs.org)
-- [Comunidad Coreana de Node.js](http://nodejs.github.io/nodejs-ko/)
-- [Comunidad en Facebook de Español/Castellano](https://www.facebook.com/groups/node.es/)
 - [Comunidad en Google+ de usuarios Franceses de Node.js](https://plus.google.com/communities/113346206415381691435)
-- [Comunidad de lenguaje hispano](http://nodehispano.com)
 - [Comunidad de Hungría (Magyar)](http://nodehun.blogspot.com/)
-- [Grupo de Irán en persa](http://nodejs.ir)
 - [Comunidad en Facebook de usuarios Israelí de Node.js](https://www.facebook.com/groups/node.il/)
 - [Grupo de usuarios de Japón](http://nodejs.jp/)
-- [Comunidad de Nicaragua de Node.js](http://nodenica.com/)
-- [Grupo de Turquía en turco (Türkçe)](http://node.ist/)
-- [Comunidad Việt Nam](http://nodejs.vn)
+- [Comunidad en Facebook de Español/Castellano](https://www.facebook.com/groups/node.es/)
+- [Comunidad de lenguaje hispano](http://nodehispano.com)

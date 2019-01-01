@@ -27,16 +27,10 @@ layout: contribute.hbs
 
 ## Сайти міжнародних спільнот та проекти
 
-- [Australian Node.js blog &amp; developers listing](http://nodejs.org.au/)
 - [Chinese community](http://cnodejs.org)
 - [French Google+ Community of Node.js users](https://plus.google.com/communities/113346206415381691435)
-- [German Node.js community](http://nodecode.de)
 - [Hungarian (Magyar) community](http://nodehun.blogspot.com/)
-- [Iranian group in Persian](http://nodejs.ir)
 - [Israeli Facebook group for Node.js](https://www.facebook.com/groups/node.il/)
 - [Japanese user group](http://nodejs.jp/)
-- [Korean Node.js community](http://nodejs.github.io/nodejs-ko/)
-- [Nicaragua Node.js community](http://nodenica.com/)
+- [Spanish language Facebook group for Node.js](https://www.facebook.com/groups/node.es/)
 - [Spanish language community](http://nodehispano.com)
-- [Turkey group in Turkish (Türkçe)](http://node.ist/)
-- [Việt Nam Node.js community](http://nodejs.vn)

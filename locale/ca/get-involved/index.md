@@ -31,15 +31,10 @@ contribuir de la manera que puguin. Si vols [reportar un error](https://github.c
 
 ## Llocs de la comunitat internacional i projectes
 
-- [Blog Australià de Node.js blog &amp; llista de desenvolupadors](http://nodejs.org.au/)
 - [Comunitat Xinesa de Node.js](http://cnodejs.org)
 - [Comunitat en Google+ d'usuaris Francesos de Node.js](https://plus.google.com/communities/113346206415381691435)
 - [Comunitat d'Hongria(Magyar)](http://nodehun.blogspot.com/)
-- [Grup d'Iran en persa](http://nodejs.ir)
 - [Grup de Facebook israelià per Node.js](https://www.facebook.com/groups/node.il/)
 - [Grup d'usuaris de Japó](http://nodejs.jp/)
-- [Comunitat Coreana de Node.js](http://nodejs.github.io/nodejs-ko/)
-- [Comunitat de Nicaragua de Node.js](http://nodenica.com/)
 - [Grup de Facebook en espanyol de Node.js](https://www.facebook.com/groups/node.es/)
 - [Comunitat en espanyol](http://nodehispano.com)
-- [Comunitat Node.js de Việt Nam](http://nodejs.vn)

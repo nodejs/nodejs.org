@@ -28,15 +28,10 @@ A comunidade Node.js é ampla, inclusiva e animada em possibilitar que todos os 
 
 ## Sites e projetos internacionais da comunidade
 
-- [Blog Node.js Australino &amp; lista de desenvolvedores](http://nodejs.org.au/)
 - [Comunidade Chinesa](http://cnodejs.org)
 - [Comunidade Francesa de usuários Node.js no Google+](https://plus.google.com/communities/113346206415381691435)
 - [Comunidade Húngara(Magyar)](http://nodehun.blogspot.com/)
-- [Grupo Iraniano em Persa](http://nodejs.ir)
 - [Grupo Node.js Israelense no Facebook](https://www.facebook.com/groups/node.il/)
 - [Grupo de usuários Japoneses](http://nodejs.jp/)
-- [Comunidade Coreana Node.js](http://nodejs.github.io/nodejs-ko/)
-- [Comunidade Node.js de Nicarágua](http://nodenica.com/)
 - [Grupo Node.js em espanhol no Facebook](https://www.facebook.com/groups/node.es/)
 - [Comunidade em lingua Espanhola](http://nodehispano.com)
-- [Comunidade Node.js do Vietnã](http://nodejs.vn)

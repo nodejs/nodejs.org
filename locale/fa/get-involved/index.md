@@ -27,15 +27,10 @@ The Node.js community is large, inclusive, and excited to enable as many users t
 
 ## International community sites and projects
 
-- [Australian Node.js blog &amp; developers listing](http://nodejs.org.au/)
 - [Chinese community](http://cnodejs.org)
 - [French Google+ Community of Node.js users](https://plus.google.com/communities/113346206415381691435)
 - [Hungarian (Magyar) community](http://nodehun.blogspot.com/)
-- [Iranian group in Persian](http://nodejs.ir)
 - [Israeli Facebook group for Node.js](https://www.facebook.com/groups/node.il/)
 - [Japanese user group](http://nodejs.jp/)
-- [Korean Node.js community](http://nodejs.github.io/nodejs-ko/)
-- [Nicaragua Node.js community](http://nodenica.com/)
 - [Spanish language Facebook group for Node.js](https://www.facebook.com/groups/node.es/)
 - [Spanish language community](http://nodehispano.com)
-- [Việt Nam Node.js community](http://nodejs.vn)
