@@ -15,7 +15,6 @@ Node.js 是個包容的大家庭，我們鼓勵用戶一展長才。若你想[�
 - [Node.js Foundation 行事曆](https://nodejs.org/calendar) 中列出了所有的公開團隊會議。
 - [Node.js Everywhere](https://newsletter.nodejs.org) 是 Node.js 官方的月報。
 - [Node.js Collection](https://medium.com/the-node-js-collection) 是個由社群策劃的 Medium 文章合集。
-- [NodeUp](http://nodeup.com) 是關於 Node 社群最新消息的 podcast。
 - [Community Committee](https://github.com/nodejs/community-committee) 是 Node.js 基金會中的高級委員會，專責社群事務。
 
 
@@ -24,6 +23,8 @@ Node.js 是個包容的大家庭，我們鼓勵用戶一展長才。若你想[�
 - [官方 API 參考文件](/api)中詳細介紹了 Node API。
 - [NodeSchool.io](http://nodeschool.io) 以互動命令列的方式，教會你 Node.js 的概念。
 - [Stack Overflow 上的 Node.js 標籤](http://stackoverflow.com/questions/tagged/node.js)搜羅了每日新資訊。
+- [開發社區上的 Node.js 標籤](https://dev.to/t/node) 是一個共亯 Node.js項目、文章和教程，以及開始討論、並接受與 Node.js 相關的主題。歡迎所有技能級別的開發人員參與。
+- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) 是一個 Nodejs 後端開發者在 Discord 上互相支援的友好社區。
 
 
 ## 國際性社群網站及專案

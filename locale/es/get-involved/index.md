@@ -17,7 +17,6 @@ a contribuir de cualquier forma posible. Si usted quiere [reportar un error](htt
 - La cuenta de Twitter oficial de Node.js es [nodejs](https://twitter.com/nodejs).
 - El [calendario de la Fundación Node.js](https://nodejs.org/calendar) con todas las reuniones del equipo público.
 - [Node Weekly](http://nodeweekly.com) es una lista de correo que recopila los últimos eventos y noticias alrededor de la comunidad de Node.js.
-- [NodeUp](http://nodeup.com) es un podcast cubriendo las últimas noticias en la comunidad de Node.
 - La [Community Committee](https://github.com/nodejs/community-committee) es un comité de alto nivel de la Fundación Node.js centrado en los esfuerzos de la comunidad.
 
 
@@ -26,7 +25,6 @@ a contribuir de cualquier forma posible. Si usted quiere [reportar un error](htt
 - La [Documentación oficial de la API](/api) detalla la API de Node.
 - [NodeSchool.io](http://nodeschool.io) le enseñará conceptos de Node.js de forma interactiva mediante juegos utilizando la línea de comandos.
 - La [etiqueta de Node.js en Stack Overflow](http://stackoverflow.com/questions/tagged/node.js) colecciona nueva información cada día.
-- [How To Node](http://howtonode.org/) tiene un número creciente de útiles tutoriales.
 
 
 ## Sitios de la comunidad internacional y proyectos

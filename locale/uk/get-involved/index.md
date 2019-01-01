@@ -15,7 +15,6 @@ layout: contribute.hbs
 - Офіційний аккаунт Node.js у Twitter [nodejs](https://twitter.com/nodejs).
 - The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
 - [Node Weekly](http://nodeweekly.com) це поштове розсилання, що збирає найсвіжіші події та новини довкола спільноти Node.js.
-- [NodeUp](http://nodeup.com) подкаст в якому обговорюють найсвіжіші новини з Nod–спільноти.
 - [Community Committee](https://github.com/nodejs/community-committee) є комітетом вищого рівня в Node.js Фонд зосереджений на спільних зусиллях.
 
 
@@ -24,7 +23,6 @@ layout: contribute.hbs
 - [Офіційна довідкова документація по API](/api) описує Node API.
 - [NodeSchool.io](http://nodeschool.io) навчить вас концепцій Node.js через інтерактивні консольні ігри.
 - [Stack Overflow Node.js tag](http://stackoverflow.com/questions/tagged/node.js) щодня поповнюється новою інформацією.
-- [How To Node](http://howtonode.org/) має велику кількість корисних туторіалів.
 
 
 ## Сайти міжнародних спільнот та проекти
