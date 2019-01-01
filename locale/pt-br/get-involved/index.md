@@ -3,9 +3,7 @@ title: Participe
 layout: contribute.hbs
 ---
 
-# Nós encorajamos todos os tipos de contribuições da comunidade.
-
-A comunidade Node.js é ampla, inclusiva e animada em possibilitar que todos os usuários possam contribuir de alguma maneira. Se você quer [reportar um problema](https://github.com/nodejs/node/issues), [ajudar com a documentação ou contribuir para a base de código](/pt-br/get-involved/contribute/) do projeto você veio ao lugar certo. Explore os recursos de nossa comunidade para descobrir como você pode ajudar:
+# Participe
 
 ## Discussões da Comunidade
 

@@ -3,15 +3,7 @@ title: Comment s'impliquer ?
 layout: contribute.hbs
 ---
 
-# Nous encourageons toute forme de contributions de la part de la communauté 
-
-La communauté Node.js est vaste, inclusive et heureuse de permettre à autant 
-d'utilisateurs de contribuer de toutes les manières possibles. Si vous souhaitez
-[signaler un problème](https://github.com/nodejs/node/issues), aider à documenter
-ou contribuer au code du projet, vous êtes au bon endroit. Explorez les ressources 
-de notre communauté pour trouver comment vous pouvez aider:
-
-<hr>
+# Comment s'impliquer ?
 
 ## Discussion de la communauté
 
