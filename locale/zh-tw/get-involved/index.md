@@ -3,9 +3,7 @@ title: 加入我們
 layout: contribute.hbs
 ---
 
-# 我們鼓勵各種形式的社群貢獻
-
-Node.js 是個包容的大家庭，我們鼓勵用戶一展長才。若你想[回報問題](https://github.com/nodejs/node/issues)或[協助編輯文件及貢獻原始碼](/zh-tw/get-involved/contribute/)，那就來對地方了，看看下列的社群資源是不是能幫到你：
+# 加入我們
 
 ## 社群討論
 
