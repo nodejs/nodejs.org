@@ -27,8 +27,6 @@ de notre communauté pour trouver comment vous pouvez aider:
 
 - [Node.js Collection](https://medium.com/the-node-js-collection) est une liste de contenus maintenue par la communauté sur Medium [en].
 
-- [NodeUp](http://nodeup.com) est un podcast sur les actualités de la communauté Node [en].
-
 - La [Community Committee](https://github.com/nodejs/community-committee) s'agit d'un comité de haut niveau de la Fondation Node.js axé sur les efforts communautaires.
 
 
@@ -39,8 +37,6 @@ de notre communauté pour trouver comment vous pouvez aider:
 - [NodeSchool.io](http://nodeschool.io) vous apprendra les concepts de Node.js avec des jeux intéractifs en ligne de commande [en].
 
 - [L'étiquette Stack Overflow Node.js](http://stackoverflow.com/questions/tagged/node.js) rassemble de nouvelles informations chaque jours [en].
-
-- [How To Node](http://howtonode.org/) a de nombreux tutoriaux utiles [en].
 
 
 ## Site et projets des commuanutés internationales 
