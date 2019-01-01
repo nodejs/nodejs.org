@@ -15,7 +15,6 @@ A comunidade Node.js é ampla, inclusiva e animada em possibilitar que todos os 
 - O [calendário da Fundação Node.js](https://nodejs.org/calendar) contém todas as reuniões dos times públicos
 - [Node.js Everywhere](https://newsletter.nodejs.org) é o boletim oficial do Node.js.
 - [Node.js Collection](https://medium.com/the-node-js-collection) é uma coleção de conteúdos, com curadoria da comunidade, disponível no Medium.
-- [NodeUp](http://nodeup.com) é um _podcast_ sobre as últimas notícias do Node.js na comunidade.
 - O [Community Committee](https://github.com/nodejs/community-committee) é um dos principais comitês na Fundação Node.js, focado nos esforços da comunidade.
 
 
@@ -26,7 +25,6 @@ A comunidade Node.js é ampla, inclusiva e animada em possibilitar que todos os 
 - [Tag Node.js no Stack Overflow](http://stackoverflow.com/questions/tagged/node.js) coleta novas informações todos os dias.
 - [Tag Node.js na DEV Community](https://dev.to/t/node) é o lugar para compartilhar projetos, artigos e tutoriais, bem como iniciar discussões e solicitar _feedback_ sobre tópicos relacionados ao Node.js. Desenvolvedores de todos os níveis são bem-vindos a participar.
 - [Nodeiflux](https://discordapp.com/invite/vUsrbjd) é uma comunidade de desenvolvedores _backend_ que utilizam Node.js, auxiliando uns aos outros através do Discord.
-- [How To Node](http://howtonode.org/) possui um número cada vez maior de tutoriais com grande utilidade.
 
 ## Sites e projetos internacionais da comunidade
 
