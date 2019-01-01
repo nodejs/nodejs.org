@@ -101,3 +101,17 @@ a:hover .color-lightgray
 
   & *:first-child
     margin-top 0.5rem
+
+html[dir="rtl"]
+    .has-side-nav
+      aside
+        float right
+
+      article
+        margin-right 220px
+        margin-left 0px
+
+    @media screen and (max-width: 480px)
+      .has-side-nav
+        article
+          margin-right 0px
