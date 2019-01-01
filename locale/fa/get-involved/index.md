@@ -3,9 +3,7 @@ title: Get involved
 layout: contribute.hbs
 ---
 
-# We encourage all kinds of contribution from the community.
-
-The Node.js community is large, inclusive, and excited to enable as many users to contribute in whatever way they can. If you want to [report an issue](https://github.com/nodejs/node/issues), [help with documentation or contribute to the code base](/en/get-involved/contribute/) of the project, you’ve come to the right place. Explore our community resources to find out how you can help:
+# Get involved
 
 ## Community Discussion
 
