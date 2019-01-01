@@ -18,7 +18,6 @@ contribuir de la manera que puguin. Si vols [reportar un error](https://github.c
 - The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
 - [Node.js Everywhere](https://newsletter.nodejs.org) és el Butlletí oficial mensual de Node.js.
 - [Node.js Collection](https://medium.com/the-node-js-collection) és una col·lecció de contingut comissat per la comunitat a Medium.
-- [NodeUp](http://nodeup.com) és un podcast cobrint les últimes notícies en la comunitat de Node.
 - La [Community Committee](https://github.com/nodejs/community-committee) és una comissió de primer nivell a la Fundació Node.js centrada en els esforços que afronta la comunitat.
 
 ## Aprenentatge
@@ -28,7 +27,6 @@ contribuir de la manera que puguin. Si vols [reportar un error](https://github.c
 - L'[etiqueta de Node.js en Stack Overflow](http://stackoverflow.com/questions/tagged/node.js) col·lecciona nova informació cada dia.
 - L'[etiqueta de Node.js en la DEV Community](https://dev.to/t/node) és un lloc on compartir projectes de Node.js, articles i tutorials, així com iniciar debats i demanar realimentació sobre temes relacionats amb Node.js. Els desenvolupadors de tots els nivells d'experiència són benvinguts a participar.
 - [Nodeiflux](https://discordapp.com/invite/vUsrbjd) és una comunitat amigable de desenvolupadors de backend amb Node.js que es recolzen mútuament a Discord.
-- [How To Node](http://howtonode.org/) té un nombre creixent d'útils tutorials.
 
 
 ## Llocs de la comunitat internacional i projectes
