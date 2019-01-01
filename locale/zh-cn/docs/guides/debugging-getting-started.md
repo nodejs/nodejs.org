@@ -11,9 +11,9 @@ layout: docs.hbs
 
 当使用 `--inspect` 开关符启动检查器时，一个 Node.js 进程开始侦听调试客户端。默认情况下侦听 127.0.0.1:9229 的域名和端口号；每个进程都有一个唯一的 [UUID][] 标示符。
 
-检查器的客户端必须知晓并制定连接的域名地址、端口号以及 UUID。一个典型的 URL 看上去如：`ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`。
+检查器的客户端必须知晓并制定连接的域名地址、端口号以及 UUID。一个完整的 URL 看上去如：`ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`。
 
-如果收到了 `SIGUSR1` 信号 (`SIGUSR1` 在 Windows 下不可用)，Node.js 同样会开始侦听调试信息；在 Node.js 7 以及先前的版本中，这将激活遗留版本的调试 API（legacy Debugger API）；在 Nodejs 8 和后续版本中，将激活检查器 API（Inspector API）。
+如果收到了 `SIGUSR1` 信号 (`SIGUSR1` 在 Windows 下不可用)，Node.js 同样会开始侦听调试信息；在 Node.js 7 以及先前的版本中，这将激活遗留版本的调试 API（legacy Debugger API）；在 Node.js 8 和后续版本中，将激活检查器 API（Inspector API）。
 
 ---
 ## 安全含义
