@@ -15,7 +15,6 @@ Node.js 是个包容的大家庭，因此我们鼓励用户各施所长。 若�
 - The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
 - [Node.js Everywhere](https://newsletter.nodejs.org) 是 Node.js 官方的月报。
 - [Node.js Collection](https://medium.com/the-node-js-collection) 是一堆在媒体上的社区策划内容集合。
-- [NodeUp](http://nodeup.com) 是一个播客，它覆盖了所有相关于 Node 社区最新消息。
 - [Community Committee](https://github.com/nodejs/community-committee) 是 Node.js 基金会中的高级委员会，专注于社区事务。
 
 
@@ -26,7 +25,6 @@ Node.js 是个包容的大家庭，因此我们鼓励用户各施所长。 若�
 - [Stack Overflow Node.js tag](http://stackoverflow.com/questions/tagged/node.js) 每日收集最新资讯。
 - [The DEV Community Node.js tag](https://dev.to/t/node) 是一个共享 Node.js 项目、文章和教程，以及开始讨论、并接受与 Node.js 相关的主题。欢迎所有技能级别的开发人员参与。
 - [Nodeiflux](https://discordapp.com/invite/vUsrbjd) 是一个 Nodejs 后端开发者在 Discord 上互相支援的友好社区。
-- [How To Node](http://howtonode.org/) 包含不断增长的有用教程。
 
 ## 国际化社区站点及项目
 
