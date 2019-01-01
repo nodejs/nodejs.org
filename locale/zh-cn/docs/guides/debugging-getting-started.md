@@ -9,27 +9,11 @@ layout: docs.hbs
 
 ## 启用检查器
 
-当启动 **--inspect** 开关时，Node.js 进程通过网络套接字监听；对于由 [检查器协议][] 定义的诊断命令，默认情况下主机和端口 127.0.0.1:9229。每个进程也被分配一个独特的 [UUID][] (e.g. `0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`)。
+当使用 `--inspect` 开关符启动检查器时，一个 Node.js 进程开始侦听调试客户端。默认情况下侦听 127.0.0.1:9229 的域名和端口号；每个进程都有一个唯一的 [UUID][] 标示符。
 
-检查器的客户端必须知道且指定宿主地址、端口以及连接网络套接字接口的 UUID。完整的地址是：`ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`。当然，这依赖实际上的宿主地址、端口和相关连接实体的 UUID。
+检查器的客户端必须知晓并制定连接的域名地址、端口号以及 UUID。一个典型的 URL 看上去如：`ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`。
 
-检查器同时也包含一个 HTTP 的终结点，它是为服务除错工具的元数据而准备的，包含网络套接字地址、UUID 以及 Chrome 开发工具的 URL。通过发送一个 HTTP 请求到 `http://[host:port]/json/list` 就可以得到元数据，它返回一个 JSON 对象如下所示。使用 `webSocketDebuggerUrl` 属性作为直接连接检查器的地址。
-
-<!-- eslint-skip -->
-```javascript
-{
-  "description": "node.js instance",
-  "devtoolsFrontendUrl": "chrome-devtools://devtools/bundled/inspector.html?experiments=true&v8only=true&ws=127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e",
-  "faviconUrl": "https://nodejs.org/static/favicon.ico",
-  "id": "0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e",
-  "title": "node",
-  "type": "node",
-  "url": "file://",
-  "webSocketDebuggerUrl": "ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e"
-}
-```
-
-Node.js 进程如果 *不使用* `--inspect` 开关启动，也可以由指令启动，通过用 `SIGUSR1` 发出信号侦听调试消息（在Linux上 和 OSX）。在 Node 7上，激活了传统的调试器 API；在 Node 8 和以后它将激活监视器 API。
+如果收到了 `SIGUSR1` 信号 (`SIGUSR1` 在 Windows 下不可用)，Node.js 同样会开始侦听调试信息；在 Node.js 7 以及先前的版本中，这将激活遗留版本的调试 API（legacy Debugger API）；在 Nodejs 8 和后续版本中，将激活检查器 API（Inspector API）。
 
 ---
 ## 安全含义
