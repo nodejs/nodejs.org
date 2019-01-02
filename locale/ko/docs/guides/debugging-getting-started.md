@@ -10,39 +10,18 @@ This guide will help you get started debugging your Node.js apps and scripts.
 
 ## Enable Inspector
 
-When started with the **--inspect** switch, a Node.js process listens via WebSockets
-for diagnostic commands as defined by the [Inspector Protocol][],
-by default at host and port 127.0.0.1:9229. Each process is also assigned a
-unique [UUID][] (e.g. `0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`).
+When started with the `--inspect` switch, a Node.js process listens for a
+debugging client. By default, it will listen at host and port 127.0.0.1:9229.
+Each process is also assigned a unique [UUID][].
 
-Inspector clients must know and specify host address, port, and UUID to connect
-to the WebSocket interface. The full URL is
-`ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`, of course dependent
-on actual host and port and with the correct UUID for the instance.
+Inspector clients must know and specify host address, port, and UUID to connect.
+A full URL will look something like
+`ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`.
 
-Inspector also includes an HTTP endpoint to serve metadata about the debuggee,
-including its WebSocket URL, UUID, and Chrome DevTools URL. Get this metadata
-by sending an HTTP request to `http://[host:port]/json/list`.  This returns a
-JSON object like the following; use the `webSocketDebuggerUrl` property as the
-URL to connect directly to Inspector.
-
-```javascript
-{
-  "description": "node.js instance",
-  "devtoolsFrontendUrl": "chrome-devtools://devtools/bundled/inspector.html?experiments=true&v8only=true&ws=127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e",
-  "faviconUrl": "https://nodejs.org/static/favicon.ico",
-  "id": "0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e",
-  "title": "node",
-  "type": "node",
-  "url": "file://",
-  "webSocketDebuggerUrl": "ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e"
-}
-```
-
-A Node.js process started *without* `--inspect` can also be instructed to start
-listening for debugging messages by signaling it with `SIGUSR1` (on Linux and
-OS X). As of Node 7 this activates the legacy Debugger API; in Node 8 and later
-it will activate the Inspector API.
+Node.js will also start listening for debugging messages if it receives a 
+`SIGUSR1` signal. (`SIGUSR1` is not available on Windows.) In Node.js 7 and
+earlier, this activates the legacy Debugger API. In Node.js 8 and later, it will
+activate the Inspector API.
 
 ---
 -->
@@ -66,24 +45,6 @@ it will activate the Inspector API.
 웹소켓 URL, UUID, 크롬 개발자도구 URL이 포함됩니다. `http://[host:port]/json/list`에
 HTTP 요청을 보내서 이 메타데이터를 받을 수 있습니다. 이는 다음과 같은 JSON 객체를 반환합니다.
 인스펙터에 직접 접속하려면 URL로 `webSocketDebuggerUrl` 프로퍼티를 사용하세요.
-
-<!-- eslint-skip -->
-```javascript
-{
-  "description": "node.js instance",
-  "devtoolsFrontendUrl": "chrome-devtools://devtools/bundled/inspector.html?experiments=true&v8only=true&ws=127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e",
-  "faviconUrl": "https://nodejs.org/static/favicon.ico",
-  "id": "0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e",
-  "title": "node",
-  "type": "node",
-  "url": "file://",
-  "webSocketDebuggerUrl": "ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e"
-}
-```
-
-`--inspect` *없이* 시작된 Node.js 프로세스에도 `SIGUSR1` 신호(Linux와 OS X에서)를 보내서
-디버깅 메시지를 받도록 지시할 수 있습니다. Node 7부터는 레거시 디버거 API를 활성화하고
-Node 8 부터는 인스펙터 API를 활성화할 것입니다.
 
 ---
 <!-- ## Security Implications
