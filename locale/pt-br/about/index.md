@@ -14,7 +14,7 @@ fired, but if there is no work to be done, Node will sleep.
 Como um ambiente de execução Javascript assíncrono orientado a eventos, o Node
 é projetado para desenvolvimento de aplicações escaláveis de rede. No exemplo a
 seguir, diversas conexões podem ser controladas ao mesmo tempo. Em cada conexão
-a função de _callback_ é chamada, mas se não houver trabalho a ser realizado,
+a função de _callback_ é chamada. Mas, se não houver trabalho a ser realizado,
 o Node ficará inativo.
 
 ```javascript
