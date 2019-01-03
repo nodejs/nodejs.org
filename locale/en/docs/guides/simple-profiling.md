@@ -32,11 +32,11 @@ our system:
 
 ```javascript
 
-const express = require('express', '4.16.4' )
-const crypto  = require('crypto')
-const app = express()
-const port = 3000
-const users = {}
+const express = require('express', '4.16.4' );
+const crypto  = require('crypto');
+const app = express();
+const port = 3000;
+const users = {};
 
 app.get('/newUser', (req, res) => {
   let username = req.query.username || '';
@@ -78,7 +78,9 @@ app.get('/auth', (req, res) => {
   }
 });
 
-app.listen(port, () => console.log(`profiling example app running on port ${port}`))
+app.listen(port, () => {
+        console.log(`example app running on port ${port}`)
+});
 ```
 
 *Please note that these are NOT recommended handlers for authenticating users in
@@ -240,13 +242,14 @@ app.get('/auth', (req, res) => {
     return res.sendStatus(400);
   }
 
-  crypto.pbkdf2(password, users[username].salt, 10000, 512, 'sha512', (err, hash) => {
-    if (users[username].hash.toString() === hash.toString()) {
-      res.sendStatus(200);
-    } else {
-      res.sendStatus(401);
-    }
-  });
+  crypto.pbkdf2(password, users[username].salt, 10000, 512, 'sha512',
+      (err, hash) => {
+          if (users[username].hash.toString() == hash.toString()) {
+              res.sendStatus(200);
+          } else {
+              res.sendStatus(401);
+          }
+      });
 });
 ```
 
