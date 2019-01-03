@@ -49,7 +49,7 @@ If some of this language is unfamiliar, there is a full article on
 Essa é uma alternativa que contrasta com o modelo de concorrência mais comum, onde são
 utilizadas _threads_ do SO. Aplicações de rede baseadas em _threads_ são relativamente
 ineficientes e difíceis de usar. Além disso, os usuários do Node não precisam
-se preocupar com _deadlock_ de processos, pois não existem _locks_. Quase nenhum função
+se preocupar com _deadlock_ de processos, pois não existem _locks_. Quase nenhuma função
 no Node realiza diretamente operações de E/S, por essa razão o processo nunca bloqueia.
 Por não existirem operações bloqueantes, sistemas escaláveis são razoavelmente fáceis
 de serem desenvolvidos em Node.
