@@ -27,7 +27,9 @@ Let's see how the built-in profiler can help provide insight into application
 performance.
 
 To illustrate the use of the tick profiler, we will work with a simple Express
-application (See [here](http://expressjs.com/en/starter/installing.html) for installation instructions). Our application will have two handlers, one for adding new users to
+application (See [here](http://expressjs.com/en/starter/installing.html) for
+installation instructions). Our application will have two handlers, one for
+adding new users to
 our system:
 
 ```javascript
