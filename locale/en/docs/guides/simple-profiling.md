@@ -81,7 +81,7 @@ app.get('/auth', (req, res) => {
 });
 
 app.listen(port, () => {
-        console.log(`example app running on port ${port}`)
+  console.log(`example app running on port ${port}`);
 });
 ```
 
