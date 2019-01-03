@@ -27,10 +27,17 @@ Let's see how the built-in profiler can help provide insight into application
 performance.
 
 To illustrate the use of the tick profiler, we will work with a simple Express
-application. Our application will have two handlers, one for adding new users to
+application (See [here](http://expressjs.com/en/starter/installing.html) for installation instructions). Our application will have two handlers, one for adding new users to
 our system:
 
 ```javascript
+
+const express = require('express', '4.16.4' )
+const crypto  = require('crypto')
+const app = express()
+const port = 3000
+const users = {}
+
 app.get('/newUser', (req, res) => {
   let username = req.query.username || '';
   const password = req.query.password || '';
@@ -48,11 +55,9 @@ app.get('/newUser', (req, res) => {
 
   res.sendStatus(200);
 });
-```
 
-and another for validating user authentication attempts:
+// and another for validating user authentication attempts:
 
-```javascript
 app.get('/auth', (req, res) => {
   let username = req.query.username || '';
   const password = req.query.password || '';
@@ -72,6 +77,8 @@ app.get('/auth', (req, res) => {
     res.sendStatus(401);
   }
 });
+
+app.listen(port, () => console.log(`profiling example app running on port ${port}`))
 ```
 
 *Please note that these are NOT recommended handlers for authenticating users in
@@ -86,10 +93,15 @@ high latency on requests. We can easily run the app with the built in profiler:
 NODE_ENV=production node --prof app.js
 ```
 
-and put some load on the server using `ab` (ApacheBench):
+We'll create a new user:
 
 ```
 curl -X GET "http://localhost:8080/newUser?username=matt&password=password"
+```
+
+and put some load on the server using `ab` (ApacheBench):
+
+```
 ab -k -c 20 -n 250 "http://localhost:8080/auth?username=matt&password=password"
 ```
 
@@ -228,7 +240,7 @@ app.get('/auth', (req, res) => {
     return res.sendStatus(400);
   }
 
-  crypto.pbkdf2(password, users[username].salt, 10000, 512, (err, hash) => {
+  crypto.pbkdf2(password, users[username].salt, 10000, 512, 'sha512', (err, hash) => {
     if (users[username].hash.toString() === hash.toString()) {
       res.sendStatus(200);
     } else {
