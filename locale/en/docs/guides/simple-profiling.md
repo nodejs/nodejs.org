@@ -37,7 +37,7 @@ our system:
 const express = require('express');
 const crypto  = require('crypto');
 const app = express();
-const port = 3000;
+const port = 8080;
 const users = {};
 
 app.get('/newUser', (req, res) => {
