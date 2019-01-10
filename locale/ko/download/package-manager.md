@@ -37,7 +37,7 @@ title: 패키지 매니저로 Node.js 설치하기
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
-* [Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora and Snap packages](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
+* [데비안과 우분투 기반 리눅스 배포판. 엔터프라이즈 리눅스/페도라와 Snap 패키지](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
 * [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
 * [NetBSD](#netbsd)
@@ -51,6 +51,7 @@ title: 패키지 매니저로 Node.js 설치하기
 
 ----------------------------
 
+<!--
 ## Android
 
 Android support is still experimental in Node.js, so precompiled binaries are not yet provided by Node.js developers.
@@ -62,7 +63,18 @@ pkg install nodejs
 ```
 
 Currently, Termux Node.js binaries are compiled without Inspector support and linked against `system-icu` (depending on `libicu` package).
+-->
+## 안드로이드
 
+Node.js의 안드로이드 지원은 현재 시험 단계에 있기 때문에 Node.js 개발자들이 제공하는 미리 컴파일된 바이너리가 아직 없습니다.
+
+하지만 몇 가지 써드파티는 존재합니다. 일례로 [Termux](https://termux.com/) 커뮤니티는 안드로이드를 위한 터미널 에뮬레이터와 리눅스 환경을 제공하는데, 고유한 패키지 매니저와 다수의 [미리 컴파일된 애플리케이션 패키지]((https://github.com/termux/termux-packages)도 함께 제공하고 있습니다. Termux 앱에서 다음 명령어를 사용하면 최신 Node.js 버전을 설치합니다.
+
+```bash
+pkg install nodejs
+```
+
+현재 Termux Node.js 바이너리는 Inspector 지원이 빠진 채 컴파일 되어 있으며, `libicu` 패키지에 의존하는 `system-icu`에 링크되어 있습니다.
 
 <!--
 ## Arch Linux
@@ -81,15 +93,17 @@ pacman -S nodejs npm
 pacman -S nodejs npm
 ```
 
-
+<!--
 ## Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora and Snap packages
 
 [Official Node.js binary distributions](https://github.com/nodesource/distributions/blob/master/README.md) are provided by NodeSource.
+-->
+## 데비안과 우분투 기반 리눅스 배포판. 엔터프라이즈 리눅스/페도라와 Snap 패키지
+
+[공식 Node.js 바이너리 배포판](https://github.com/nodesource/distributions/blob/master/README.md)은 NodeSource가 제공합니다.
 
 <!--
 ## FreeBSD
-
-The most recent release of Node.js is available via the [www/node](http://freshports.org/www/node) port.
 
 The most recent release of Node.js is available via the [www/node](http://freshports.org/www/node) port.
 
@@ -108,15 +122,15 @@ cd /usr/ports/www/node && make install
 -->
 ## FreeBSD
 
-The most recent release of Node.js is available via the [www/node](http://freshports.org/www/node) port.
+Node.js의 최신 릴리스는 [www/node](http://freshports.org/www/node) 포트를 통해 사용할 수 있습니다.
 
-Install a binary package via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
+바이너리 패키지는 다음과 같이 [pkg](https://www.freebsd.org/cgi/man.cgi?pkg)를 통해 설치할 수 있습니다.
 
 ```bash
 pkg install node
 ```
 
-Or compile it on your own using [ports](https://www.freebsd.org/cgi/man.cgi?ports):
+또는 다음과 같이 [ports](https://www.freebsd.org/cgi/man.cgi?ports)를 사용해 컴파일 할 수도 있습니다.
 
 ```bash
 cd /usr/ports/www/node && make install
@@ -223,6 +237,7 @@ $ nvm use 8
 $ nvm uninstall 8
 ```
 
+<!--
 ## OpenBSD
 
 Node.js is available through the ports system.
@@ -232,6 +247,20 @@ Node.js is available through the ports system.
 ```
 
 Using [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
+
+```bash
+pkg_add node
+```
+-->
+## OpenBSD
+
+다음과 같이 ports 시스템을 통해 Node.js를 사용할 수 있습니다.
+
+```bash
+/usr/ports/lang/node
+```
+
+OpenBSD 환경에서 [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1)를 사용하는 방법도 있습니다.
 
 ```bash
 pkg_add node
@@ -384,7 +413,7 @@ pkgsrc에서 수동으로 빌드할 수도 있습니다.
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-
+<!--
 ## Solus
 
 Solus provides node.js in its main repository.
@@ -392,7 +421,14 @@ Solus provides node.js in its main repository.
 ```bash
 sudo eopkg install nodejs
 ```
+-->
+## Solus
 
+Solus는 메인 저장소에서 node.js를 제공합니다.
+
+```bash
+sudo eopkg install nodejs
+```
 
 <!--
 ## Void Linux
