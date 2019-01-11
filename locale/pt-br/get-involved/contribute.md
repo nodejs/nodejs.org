@@ -10,12 +10,12 @@ Existem muitas maneiras e locais que você pode contribuir, e nós estamos aqui 
 
 ## Pedindo ajuda (geral)
 
-A quantidade de atividade no reposítório `nodejs/node` é tão alta que, questões e solicitações de ajuda sobre
+A quantidade de atividade no repositório `nodejs/node` é tão alta que, questões e solicitações de ajuda sobre
 a utilização do Node.js de forma geral devem ser direcionadas para o [repositório de ajuda do Node.js](https://github.com/nodejs/help/issues).
 
 ## Reportando um problema
 
-Se você encontrou o que acredita ser um problema com o Nodej.js, por favor não hesite em reportá-lo no Github
+Se você encontrou o que acredita ser um problema com o Node.js, por favor não hesite em reportá-lo no Github
 do projeto. Quando for reportar um problema, certifique-se de descrevê-lo juntamente com um caso de teste. Este
 caso de teste não deve incluir nenhuma dependência externa, isto é, devemos conseguir executar o teste com nada
 mais nada menos que o próprio Node.js.
@@ -38,7 +38,9 @@ contribuidores ficará mais do que contente em fornecer a ajuda necessária e ap
 
 ## Contribuições de códigos
 
+<!--
 If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the [Node.js Contribution Guidelines](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#pull-requests). The review process by existing collaborators for all contributions to the project is explained there as well.
+-->
 
 Se você gostaria de corrigir _bugs_ ou adicionar novas funcionalidades ao Node.js, por favor consulte
 o [Guia de Contribuições do Node.js](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#pull-requests).
