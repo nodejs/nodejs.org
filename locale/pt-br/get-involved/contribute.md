@@ -25,7 +25,7 @@ que este ocorreu. Nós nunca sabemos qual informação será importante quando t
 Por favor, inclua ao menos as seguintes informações:
 
 * Versão do Node
-* Plataforma em que está sendo executado (macOS, SunOS, Linux, Windows)
+* Plataforma em que está sendo executado (macOS, SmartOS, Linux, Windows)
 * Arquitetura em que está sendo executado (32bit ou 64bit e x86 ou ARM)
 
 O projeto Node.js é atualmente gerênciando através de diversos repositórios separados no GitHub, cada

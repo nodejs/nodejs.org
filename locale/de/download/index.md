@@ -27,7 +27,7 @@ additional:
         aktuelle Node.js-Version sind.
     platform: Plattform
     provider: Anbieter
-    SunOSBinaries: SunOS Binaries
+    SmartOSBinaries: SmartOS Binaries
     DockerImage: Docker Image
     officialDockerImage: Official Node.js Docker Image
     LinuxPowerSystems: Linux on Power Systems

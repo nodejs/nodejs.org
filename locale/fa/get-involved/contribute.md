@@ -18,7 +18,7 @@ If you have found what you believe to be an issue with Node.js please do not hes
 When reporting an issue we also need as much information about your environment that you can include. We never know what information will be pertinent when trying narrow down the issue. Please include at least the following information:
 
 * Version of Node
-* Platform you're running on (macOS, SunOS, Linux, Windows)
+* Platform you're running on (macOS, SmartOS, Linux, Windows)
 * Architecture you're running on (32bit or 64bit and x86 or ARM)
 
 The Node.js project is currently managed across a number of separate GitHub repositories, each with their own separate issues database. If possible, please direct any issues you are reporting to the appropriate repository but don't worry if things happen to get put in the wrong place, the community of contributors will be more than happy to help get you pointed in the right direction.

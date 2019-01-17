@@ -26,7 +26,7 @@ additional:
     dockerImage: Image officielle Node.js pour Docker
     platform: Plate-forme
     provider: Fournisseur
-    SunOSBinaries: Binaires SunOS
+    SmartOSBinaries: Binaires SmartOS
     DockerImage: Image Docker
     officialDockerImage: Image officielle Node.js pour Docker
     LinuxPowerSystems: Linux sur Power Systems
