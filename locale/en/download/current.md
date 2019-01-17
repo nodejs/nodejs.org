@@ -25,7 +25,7 @@ additional:
         Members of the Node.js community maintain unofficial builds of Node.js for additional platforms. Note that such builds are not supported by the Node.js core team and may not yet be at the same build level as current Node.js release.
     platform: Platform
     provider: Provider
-    SunOSBinaries: SunOS Binaries
+    SmartOSBinaries: SmartOS Binaries
     DockerImage: Docker Image
     officialDockerImage: Official Node.js Docker Image
     LinuxPowerSystems: Linux on Power Systems

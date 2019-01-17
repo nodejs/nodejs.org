@@ -25,7 +25,7 @@ additional:
         Учасники спільноти Node.js підтримують неофіційні збірки Node.js для додаткових платформ. Майте на увазі, що ці збірки не підтримуються основною командою Node.js і можуть не мати того ж функціоналу що й поточний реліз Node.js.
     platform: Платформа
     provider: Провайдер
-    SunOSBinaries: SunOS Binaries
+    SmartOSBinaries: SmartOS Binaries
     DockerImage: Docker Image
     officialDockerImage: Official Node.js Docker Image
     LinuxPowerSystems: Linux on Power Systems

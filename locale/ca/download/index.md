@@ -25,7 +25,7 @@ additional:
         Membres de la comunitat de Node.js proveeixen paquets pre-compilats de forma no oficial per a plataformes addicionals no suportades per l'equip central de Node.js que poden no estar al mateix nivell de les versions actuals oficials de Node.js.
     platform: Plataforma
     provider: Proveïdor
-    SunOSBinaries: SunOS Binaries
+    SmartOSBinaries: SmartOS Binaries
     DockerImage: Docker Image
     officialDockerImage: Official Node.js Docker Image
     LinuxPowerSystems: Linux on Power Systems

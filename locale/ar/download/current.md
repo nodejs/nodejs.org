@@ -26,7 +26,7 @@ additional:
         يجب التذكير أن هذه النسخ غير مدعومة من الفريق الأساسي للنود جي اس و قد لا تكون على نفس مستوى التطوير الخاص بالاصدارات الحالية للنود جي اس.
     platform: منصة
     provider: مزود
-    SunOSBinaries: ملف ثنائي لـSun OS
+    SmartOSBinaries: ملف ثنائي لـSmartOS
     DockerImage: اسطوانة دوكر
     officialDockerImage: اسطوانة نود جي اس الرسمية الخاصة بالدوكر 
     LinuxPowerSystems: لينكس على Power Systems

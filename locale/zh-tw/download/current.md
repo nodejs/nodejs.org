@@ -26,7 +26,7 @@ additional:
         Node.js 社群為其它平台維護的非官方建構。請注意 Node.js 團隊並不為這些建構提供技術支援且其可能與現行 Node.js 版本不一致。
     platform: 平台
     provider: 提供者
-    SunOSBinaries: SunOS 二進制檔案
+    SmartOSBinaries: SmartOS 二進制檔案
     DockerImage: Docker 映像檔
     officialDockerImage: Node.js 官方 Docker 映像檔
     LinuxPowerSystems: Linux on Power Systems

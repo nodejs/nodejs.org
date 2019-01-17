@@ -18,7 +18,7 @@ layout: contribute.hbs
 回報問題時我們也需要一些關於執行環境的資訊，我們不知道確切哪些資訊是我們要的，所以請至少提供下列幾項資訊：
 
 * Node.js 版本
-* 作業系統（macOS、SunOS、Linux 或 Windows）
+* 作業系統（macOS、SmartOS、Linux 或 Windows）
 * 你的機器架構（32bit 或 64bit 及 x86 或 ARM 等）
 
 目前 Node.js 專案分散在一些 GitHub repository 中個別管理，每個 repository 都有自己的 issue 資料庫。如果可以的話，請將你的問題回報至適合的 repository，但也別怕不小心發錯地方，我們的社群會很熱心幫你找到對的地方。
