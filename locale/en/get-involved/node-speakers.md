@@ -12,6 +12,18 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 
 ## Speakers
 
+### Canada 🇨🇦
+
+#### British Columbia
+
+##### Vancouver
+
+###### Manil Chowdhury
+
+- [@keywordnew](https://twitter.com/keywordnew)
+- [LinkedIn](https://www.linkedin.com/in/manilchowdhury/)
+- Topics - Node Community, Open Source, Education, Diversity & Inclusion, wombats
+
 ### United States
 
 #### California
