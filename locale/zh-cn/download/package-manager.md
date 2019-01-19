@@ -37,7 +37,7 @@ pkg install nodejs
 pkg install nodejs-current
 ```
 
-目前，Termux 的 Nodejs 二进制程序包是在没有检查器支持的情况下编译的，并与 `system-icu` （依赖于 `libicu` 包）相关联。
+目前，Termux 的 Node.js 二进制程序包与 `system-icu` （依赖于 `libicu` 包）相关联。
 
 ## Arch Linux
 
