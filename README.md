@@ -41,6 +41,15 @@ If you want to submit a new feature or a bugfix, the best way is to create the c
   * The top of each Markdown file is a block of YAML for page specific localization information that is passed to various templates.
   * The bulk of the Markdown content for each page is referenced as `{{{content}}}` in the corresponding template.
 
+### Serve/Build Options
+
+* `DEFAULT_LOCALE={{locale}} npm run serve` builds only the files present in the specified locale folder (will display 404 if file is not present)
+* `DEFAULT_LOCALE={{locale}} npm run serve -- --preserveLocale` builds the files present in the specified locale folder and adds the pages present in the english locale that are missing.
+* `npm run serve` builds all languages and returns 404 when a file is not present in the current locale
+* `npm run serve -- --preserveLocale` builds all languages and adds the pages present in the english locale that are missing.
+* Multiple locales can be built by using comma separated values in the DEFAULT_LOCALE option. i.e: DEFAULT_LOCALE=en,es,it
+
+
 ### Deployment
 
 Full set up is in https://github.com/nodejs/build/tree/master/setup/www minus secrets and certificates. The webhook is setup on GitHub for this project and talks to a small Node server on the host which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
