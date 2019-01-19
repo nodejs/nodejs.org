@@ -74,15 +74,18 @@ statics.on('add', (filePath) => {
   build.copyStatic()
 })
 
+const mainLocale = (selectedLocales && selectedLocales[0]) || 'en'
+
 // Initializes the server and mounts it in the generated build directory.
 http.createServer((req, res) => {
   // If we are accessing the root, it should be redirected to `/en` instead.
   // We shouldn't get a 404 page.
+
   if (req.url === '/') {
-    req.url = '/en'
+    req.url = `/${mainLocale}`
   }
   mount(req, res)
-}).listen(port, () => console.log(`\x1B[32mServer running at http://localhost:${port}/en/\x1B[39m`))
+}).listen(port, () => console.log(`\x1B[32mServer running at http://localhost:${port}/${mainLocale}/\x1B[39m`))
 
 // Start the initial build of static HTML pages
 build.fullBuild({ selectedLocales, preserveLocale })
