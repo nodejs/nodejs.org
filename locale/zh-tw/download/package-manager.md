@@ -39,7 +39,7 @@ pkg install nodejs
 pkg install nodejs-current
 ```
 
-目前 Termux Node.js 二進制檔尚不支援 ICU 及 Inspector。
+目前，Termux 的 Node.js 二進位套裝程式與 `system-icu`（依賴于 `libicu` 包）相關聯。
 
 ## Arch Linux
 
