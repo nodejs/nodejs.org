@@ -36,7 +36,7 @@ However, there are some third-party solutions. For example, [Termux](https://ter
 pkg install nodejs
 ```
 
-Currently, Termux Node.js binaries are compiled without Inspector support and linked against `system-icu` (depending on `libicu` package).
+Currently, Termux Node.js binaries are linked against `system-icu` (depending on `libicu` package).
 
 ## Arch Linux
 
