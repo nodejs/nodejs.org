@@ -56,15 +56,16 @@ function i18nJSON (lang) {
 // This is the function where the actual magic happens. This contains the main
 // Metalsmith build cycle used for building a locale subsite, such as the
 // english one.
-function buildLocale (source, locale) {
+function buildLocale (source, locale, opts) {
   console.log(`[metalsmith] build/${locale} started`)
   console.time(`[metalsmith] build/${locale} finished`)
   const metalsmith = Metalsmith(__dirname)
   metalsmith
-    // Sets global metadata imported from the locale's respective site.json.
+  // Sets global metadata imported from the locale's respective site.json.
     .metadata({ site: i18nJSON(locale), project: source.project })
-    // Sets the build source as the locale folder.
+  // Sets the build source as the locale folder.
     .source(path.join(__dirname, 'locale', locale))
+    .use(withPreserveLocale(opts && opts.preserveLocale))
     // Extracts the main menu and sub-menu links form locale's site.json and
     // adds them to the metadata. This data is used in the navigation template
     .use(navigation(source.project.latestVersions))
@@ -170,6 +171,31 @@ function buildLocale (source, locale) {
   })
 }
 
+// This plugin reads the files present in the english locale that are missing
+// in the current locale being built (requires preserveLocale flag)
+function withPreserveLocale (preserveLocale) {
+  return (files, m, next) => {
+    if (preserveLocale) {
+      var path = m.path('locale/en')
+      m.read(path, function (err, newfiles) {
+        if (err) {
+          console.error(err)
+          return next(err)
+        }
+
+        Object.keys(newfiles).forEach(function (key) {
+          if (!files[key]) {
+            files[key] = newfiles[key]
+          }
+        })
+        next()
+      })
+    } else {
+      next()
+    }
+  }
+}
+
 // This middleware adds "Edit on GitHub" links to every editable page
 function githubLinks (options) {
   return (files, m, next) => {
@@ -268,7 +294,8 @@ function getSource (callback) {
 
 // This is where the build is orchestrated from, as indicated by the function
 // name. It brings together all build steps and dependencies and executes them.
-function fullBuild () {
+function fullBuild (opts) {
+  const { preserveLocale, selectedLocales } = opts
   // Build static files.
   copyStatic()
   // Build layouts
@@ -278,16 +305,19 @@ function fullBuild () {
 
     // Executes the build cycle for every locale.
     fs.readdir(path.join(__dirname, 'locale'), (e, locales) => {
-      locales.filter(junk.not).forEach((locale) => {
-        buildLocale(source, locale)
-      })
+      locales.filter(file => junk.not(file) && (selectedLocales ? selectedLocales.includes(file) : true))
+        .forEach((locale) => {
+          buildLocale(source, locale, { preserveLocale })
+        })
     })
   })
 }
 
 // Starts the build if the file was executed from the command line
 if (require.main === module) {
-  fullBuild()
+  const preserveLocale = process.argv.includes('--preserveLocale')
+  const selectedLocales = process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE.toLowerCase().split(',') : process.env.DEFAULT_LOCALE
+  fullBuild({ selectedLocales, preserveLocale })
 }
 
 exports.getSource = getSource
