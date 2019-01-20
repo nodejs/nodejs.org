@@ -165,7 +165,7 @@ function buildLocale (source, locale, opts) {
 
   // This actually executes the build and stops the internal timer after
   // completion.
-  metalsmith.build((err, files) => {
+  metalsmith.build((err) => {
     if (err) { throw err }
     console.timeEnd(`[metalsmith] build/${locale} finished`)
   })
