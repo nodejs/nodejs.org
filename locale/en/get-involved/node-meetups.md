@@ -1,3 +1,8 @@
+---
+title: Node Meetups
+layout: contribute.hbs
+---
+
 # Node Meetups
 
 This is a list of node meetups. Please submit a PR if you'd like to add your local group!
