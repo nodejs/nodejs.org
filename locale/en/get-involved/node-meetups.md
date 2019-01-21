@@ -11,7 +11,7 @@ If any meetup does not have a CoC and/or is reported as an unsafe place, it will
 FORMAT
 - [Meetup](https://www.meetup.com/pdxnode/)
 - Frequency of meetups 
-- How to submit a talk? <<list here>>
+- How to submit a talk? \<\<list here\>\>
 - Organizer names (if you wish to provide)
 - Organizers contact info (if you wish to provide)
 
