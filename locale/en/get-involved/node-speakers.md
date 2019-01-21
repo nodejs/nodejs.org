@@ -16,6 +16,11 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 
 #### British Columbia
 
+#### Ontario 
+- [@mhdawson](https://twitter.com/mhdawson1)
+- [LinkedIn](https://www.linkedin.com/in/michael-dawson-6051282/)
+- Topics - Node
+
 ##### Vancouver
 
 ###### Manil Chowdhury
