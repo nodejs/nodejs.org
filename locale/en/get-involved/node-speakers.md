@@ -1,3 +1,8 @@
+---
+title: Node Speakers
+layout: contribute.hbs
+---
+
 # Node Speakers
 
 This is a list of local Node speakers. Please submit a PR if you'd like to add yourself or add others! Make sure you have permission before doing so as well.
