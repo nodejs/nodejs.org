@@ -13,7 +13,7 @@ There are several types of documentation available on this website:
 * ES6 features
 * Guides
 
-### API Reference Documentation
+### API Reference Documentation.
 
 The [API reference documentation](/api/) provides detailed information about a function or object in Node.js. This documentation indicates what arguments a method accepts, the return value of that method, and what errors may be related to that method. It also indicates which methods are available for different versions of Node.js.
 
