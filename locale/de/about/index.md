@@ -30,7 +30,7 @@ server.listen(port, hostname, () => {
 
 Dies steht im Gegensatz zu den heutzutage üblichen Modellen für Nebenläufigkeit,
 bei denen Threads des Betriebssystems genutzt werden. Thread-basiertes
-Networking is vergleichsweise ineffizent and sehr schwer umzusetzen.
+Networking ist vergleichsweise ineffizient und sehr schwer umzusetzen.
 Zudem müssen sich Node-Nutzer nicht um Deadlocks im Prozess sorgen, da es
 keine Blockierung gibt. Fast keine Funktion in Node.js führt direkt I/O-Operationen aus, daher wird der Prozess nie blockiert. Da nichts blockiert,
 können mit Node sinnvoll skalierbare Systeme entwickelt werden.
