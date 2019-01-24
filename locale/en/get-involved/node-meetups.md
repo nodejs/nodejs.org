@@ -41,7 +41,7 @@ REQUIREMENTS
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name -Andrey Sidorov
-- Organizer contact info -sidorares@yandex.com
+- Organizer contact info - sidorares@yandex.com
 
 ##### Sidney
 
