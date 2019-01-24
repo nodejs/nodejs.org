@@ -40,7 +40,7 @@ REQUIREMENTS
 - [Meetup](https://www.meetup.com/NodeMelbourne/)
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
-- Organizer name -Andrey Sidorov
+- Organizer name - Andrey Sidorov
 - Organizer contact info - sidorares@yandex.com
 
 ##### Sidney
@@ -48,8 +48,8 @@ REQUIREMENTS
 - [Meetup](https://www.meetup.com/node-sydney/)
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
-- Organizer name -James Richardson. Co-organizer: Jessica Claire
-- Organizer contact info -[@jsscclr](https://twitter.com/jsscclr/)
+- Organizer name - James Richardson. Co-organizer: Jessica Claire
+- Organizer contact info - [@jsscclr](https://twitter.com/jsscclr/)
 
 
 #### Belgium
@@ -59,7 +59,7 @@ REQUIREMENTS
 - [Meetup](https://www.meetup.com/Belgian-node-js-User-Group/)
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
-- Organizer name -Steven Beeckman
+- Organizer name - Steven Beeckman
 - Organizer contact info - [@stevenbeeckman](https://twitter.com/stevenbeeckman/)
 
 #### Brazil
@@ -118,7 +118,7 @@ REQUIREMENTS
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page
 - Organizer name - Juha Lehtomaki
-- Organizer contact info -[@juhanet](https://twitter.com/juhanet/)
+- Organizer contact info - [@juhanet](https://twitter.com/juhanet/)
 
 #### Colombia
 
@@ -128,7 +128,7 @@ REQUIREMENTS
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Camilo Montoya
-- Organizer contact info -[@camilomontoyau](https://twitter.com/camilomontoyau/)
+- Organizer contact info - [@camilomontoyau](https://twitter.com/camilomontoyau/)
 
 
 #### France
@@ -139,7 +139,7 @@ REQUIREMENTS
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page or DM organizer: https://twitter.com/Ornthalas
 - Organizer name - Etienne Folio
-- Organizer contact info -[@ornthalas](https://twitter.com/Ornthalas)
+- Organizer contact info - [@ornthalas](https://twitter.com/Ornthalas)
 
 #### Germany
 
@@ -259,7 +259,7 @@ REQUIREMENTS
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Alex Fernández
-- Organizer contact info -alexfernandeznpm@gmail.com
+- Organizer contact info - alexfernandeznpm@gmail.com
 
 #### Thailand
 
@@ -484,7 +484,7 @@ REQUIREMENTS
 - Frequency of meetups - monthly
 - How to submit a talk? Write to adam@admataz.com
 - Organizer name - Adam Davis
-- Organizer contact info -adam@admataz.com
+- Organizer contact info - adam@admataz.com
 
 - [Meetup](https://www.meetup.com/NodeWorkshops//)
 - Frequency of meetups - monthly
@@ -498,7 +498,7 @@ REQUIREMENTS
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page or write to Rob Moran: github@thegecko.org
 - Organizer name - Joe Parry, co-organizer Rob Moran
-- Organizer contact info -(Rob Moran) github@thegecko.org
+- Organizer contact info - (Rob Moran) github@thegecko.org
 
 
 #### Ukraine
@@ -509,7 +509,7 @@ REQUIREMENTS
 - Frequency of meetups - monthly
 - How to submit a talk? Write to Timur Shemsedinov timur.shemsedinov@gmail.com
 - Organizer name - Timur Shemsedinov
-- Organizer contact info -timur.shemsedinov@gmail.com
+- Organizer contact info - timur.shemsedinov@gmail.com
 
 
 
