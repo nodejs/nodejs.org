@@ -37,7 +37,7 @@ REQUIREMENTS
 
 #### Illinois 
 
-###### Chicago
+##### Chicago
 - [Meetup](https://www.meetup.com/Chicago-Nodejs/)
 - Frequency - monthly
 - [How to submit talk](https://airtable.com/shrTDwmMH3zsnsWOE)
