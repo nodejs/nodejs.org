@@ -40,6 +40,12 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 
 ##### San Francisco
 
+###### Atishay Jain
+- [@atishay811](http://twitter.com/atishay811)
+- [LinkedIn](https://linkedin.com/in/atishay)
+- [Github](https://github.com/atishay)
+- Topics - Node, Native Modules(N-API, Nan), Node on desktop
+
 ###### Dan Shaw
 
 - [@dshaw](http://twitter.com/dshaw)
