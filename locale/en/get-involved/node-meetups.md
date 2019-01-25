@@ -28,6 +28,18 @@ REQUIREMENTS
 
 ## Meetups
 
+### Canada
+
+#### British Columbia
+
+##### Vancouver
+
+- [Meetup](https://www.meetup.com/Node-JS-Community-Hangouts)
+- Frequency of meetups - quarterly
+- How to submit a talk? DM @keywordnew on twitter
+- Organizer name - Manil Chowdhury
+- Organizer contact info - [@keywordnew](https://www.twitter.com/keywordnew/)
+
 ### United States
 
 #### California
