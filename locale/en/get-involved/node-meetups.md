@@ -71,3 +71,13 @@ REQUIREMENTS
 - How to submit a talk? DM @obensource on twitter
 - Organizer name - Ben Michel
 - Organizer contact info - [@obensource](https://www.twitter.com/obensource/)
+
+### Germany
+
+#### Passau
+
+- [Meetup](https://www.meetup.com/de-DE/Nodeschool-Passau/)
+- Frequency of meetups - quarterly
+- How to submit a talk? Email [Valentin](mailto:valentin.huber@msg.group)
+- Organizer name - Valentin Huber
+- Organizer contact info - [Email](mailto:valentin.huber@msg.group)
