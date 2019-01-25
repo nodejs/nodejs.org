@@ -129,7 +129,11 @@
     },
     "node-meetups": {
       "link": "get-involved/node-meetups",
-      "text": "Node Meetups"
+      "text": "Node.js Meetups"
+    },
+    "node-speakers": {
+      "link": "get-involved/node-speakers",
+      "text": "Local Node.js Speakers"
     }
   },
   "security": {
