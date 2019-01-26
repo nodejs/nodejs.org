@@ -89,3 +89,9 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 
 - [@obensource](http://twitter.com/obensource)
 - Topics - Node 
+
+###### Christopher Hiller
+
+- [@b0neskull](https://twitter.com/b0neskull)
+- Topics - Node.js, Testing, Tooling, Maintainership & OSS Sustainability
+
