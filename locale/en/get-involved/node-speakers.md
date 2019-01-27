@@ -71,6 +71,12 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 - [@bitandbang](http://twitter.com/bitandbang)
 - Topics - Node 
 
+###### Joe Sepi
+
+- [@joe_sepi](http://twitter.com/joe_sepi)
+- [LinkedIn](https://www.linkedin.com/in/joesepi/)
+- Topics - Node, JavaScript, Open Source, Community, Leadership, Punk Rock
+
 #### North Carolina
 
 ##### Raleigh
