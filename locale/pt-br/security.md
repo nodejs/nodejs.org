@@ -13,7 +13,7 @@ Seu relatório será confirmado em até 24 horas, e você receberá, dentro de 4
 Após a resposta inicial do seu reporte, a equipe de segurança se encarregará de manter você informado sobre o progresso que está sendo feito em relação à resolução e ao anúncio completo, e pode solicitar informações adicionais ou orientação sobre o problema reportado.
 Estas atualizações serāo enviadas pelo menos a cada cinco dias. Mas na prática, isso é geralmente feito entre 24 à 48 horas.
 
-### Programa Node.js de Bug Bounty
+## Programa Node.js de Bug Bounty
 
 O projeto do Node.js é engajado em um programa oficial de recompensa por bugs (bug bounty) para pesquisadores de segurança e responsáveis por divulgações públicas.
 

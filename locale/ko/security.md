@@ -16,7 +16,7 @@ hours indicating the next steps in handling your report.
 -->
 # 보안
 
-# 버그 보고
+## 버그 보고
 
 Node.js의 모든 보안 버그는 심각한 문제이므로
 [security@nodejs.org](mailto:security@nodejs.org) 이메일로 보고해야 합니다.

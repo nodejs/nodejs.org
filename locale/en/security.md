@@ -17,7 +17,7 @@ After the initial reply to your report, the security team will endeavor to keep 
 towards a fix and full announcement, and may ask for additional information or guidance surrounding the reported issue.
 These updates will be sent at least every five days; in practice, this is more likely to be every 24-48 hours.
 
-### Node.js Bug Bounty Program
+## Node.js Bug Bounty Program
 
 The Node.js project engages in an official bug bounty program for security researchers and responsible public disclosures.
 
