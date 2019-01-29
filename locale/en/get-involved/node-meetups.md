@@ -52,6 +52,17 @@ REQUIREMENTS
 - Organizer name - Dan Shaw
 - Organizer contact info - [@dshaw](https://www.twitter.com/dshaw/)
 
+#### Illinois 
+
+##### Chicago
+- [Meetup](https://www.meetup.com/Chicago-Nodejs/)
+- Frequency - monthly
+- [How to submit talk](https://airtable.com/shrTDwmMH3zsnsWOE)
+- Organizer name - Zeke Nierenberg & Ben Neiswander
+- Organizer contact info
+  - [@ZekeNierenberg](https://www.twitter.com/ZekeNierenberg)
+  - node@chicagojs.org
+
 #### North Carolina
 
 ##### Raleigh Durham
