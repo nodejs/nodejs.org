@@ -26,9 +26,11 @@ REQUIREMENTS
 - If you do not currently have a CoC, update the meetup with CoC before submitting.
 - Submit your PR in alphabetical order.
 
-## Meetups
 
-#### Argentina
+
+### Argentina
+
+#### Buenos Aires Province
 
 ##### Buenos Aires
 
@@ -38,7 +40,9 @@ REQUIREMENTS
 - Organizer name - Alejandro Oviedo
 - Organizer contact info - alejandro.oviedo.g@gmail.com
 
-#### Australia
+### Australia
+
+#### Victoria
 
 ##### Melbourne
 
@@ -57,7 +61,9 @@ REQUIREMENTS
 - Organizer contact info - [@jsscclr](https://twitter.com/jsscclr/)
 
 
-#### Belgium
+### Belgium
+
+#### Brussels
 
 ##### Brussels
 
@@ -67,7 +73,9 @@ REQUIREMENTS
 - Organizer name - Steven Beeckman
 - Organizer contact info - [@stevenbeeckman](https://twitter.com/stevenbeeckman/)
 
-#### Brazil
+### Brazil
+
+#### Sao Paulo
 
 ##### Campinas
 
@@ -77,7 +85,7 @@ REQUIREMENTS
 - Organizer name - Filipe Oliveira
 - Organizer contact info - [@tfmoliveira](https://twitter.com/tfmoliveira/)
 
-##### Mina Gerais
+#### Mina Gerais
 
 - [Meetup](https://www.meetup.com/nodebr/)
 - Frequency of meetups - monthly
@@ -85,6 +93,7 @@ REQUIREMENTS
 - Organizer name - Hugo Iuri
 - Organizer contact info - [@hugoiuri](https://twitter.com/hugoiuri/)
 
+#### Rio Grande do Sul
 ##### Porto Alegre
 
 - [Meetup](https://www.meetup.com/Node-js-Porto-Alegre-Meetup/)
@@ -92,6 +101,8 @@ REQUIREMENTS
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Henrique Schreiner
 - Organizer contact info - [@hmschreiner](https://twitter.com/hmschreiner/)
+
+#### Sao Paulo
 
 ##### Sao Paulo
 
@@ -107,15 +118,10 @@ REQUIREMENTS
 - Organizer name - Thiago Adriano
 - Organizer contact info - [@programadriano](https://twitter.com/programadriano)
 
-##### Mina Gerais
 
-- [Meetup](https://www.meetup.com/nodebr/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Hugo Iuri
-- Organizer contact info - [@hugoiuri](https://twitter.com/hugoiuri/)
+### Finland
 
-#### Finland
+#### Uusimaa
 
 ##### Helsinski
 
@@ -125,7 +131,9 @@ REQUIREMENTS
 - Organizer name - Juha Lehtomaki
 - Organizer contact info - [@juhanet](https://twitter.com/juhanet/)
 
-#### Colombia
+### Colombia
+
+#### Antioquia
 
 ##### Medellín
 
@@ -136,7 +144,9 @@ REQUIREMENTS
 - Organizer contact info - [@camilomontoyau](https://twitter.com/camilomontoyau/)
 
 
-#### France
+### France
+
+#### Île-de-France
 
 ##### Paris
 
@@ -146,7 +156,7 @@ REQUIREMENTS
 - Organizer name - Etienne Folio
 - Organizer contact info - [@ornthalas](https://twitter.com/Ornthalas)
 
-#### Germany
+### Germany
 
 ##### Hamburg
 
@@ -158,6 +168,8 @@ REQUIREMENTS
 
 #### Greece
 
+#### Attica
+
 ##### Athens
 
 - [Meetup](https://www.meetup.com/nodejsathens/)
@@ -166,7 +178,7 @@ REQUIREMENTS
 - Organizer name - Gregor Elke
 - Organizer contact info - greelgorke@gmail.comm
 
-#### Hungary
+### Hungary
 
 ##### Budapest
 
@@ -176,7 +188,7 @@ REQUIREMENTS
 - Organizer name - Ioannis Nikolau
 - Organizer contact info - yianisn@gmail.com
 
-#### India
+### India
 
 ##### Delhi
 
@@ -192,6 +204,8 @@ REQUIREMENTS
 - Organizer name - Gaurav Gandhi.
 - Organizer contact info - https://www.linkedin.com/in/gauravgandhi1/
 
+#### Gujarat
+
 ##### Ahmedabad
 
 - [Meetup](https://www.meetup.com/meetup-group-iAIoTVuS/)
@@ -200,7 +214,7 @@ REQUIREMENTS
 - Organizer name - Dipesh Patel
 - Organizer contact info - dipesh@rapidops.com
 
-#### Indonesia
+### Indonesia
 
 ##### Jakarta
 
@@ -210,7 +224,7 @@ REQUIREMENTS
 - Organizer name - Lukluk Luhuring Santoso
 - Organizer contact info - luklukaha@gmail.com
 
-#### Irland
+### Ireland
 
 ##### Dublin
 
@@ -226,7 +240,7 @@ REQUIREMENTS
 - Organizer name - Anton Whalley
 - Organizer contact info - [@dhigit9](https://twitter.com/dhigit9)
 
-#### Israel
+### Israel
 
 ##### Tel Aviv
 
@@ -236,7 +250,7 @@ REQUIREMENTS
 - Organizer name - Lior Kesos
 - Organizer contact info - [@liorkesos](https://twitter.com/liorkesos/)
 
-#### Mexico
+### Mexico
 
 ##### Mexico City
 
@@ -246,7 +260,7 @@ REQUIREMENTS
 - Organizer name - Saúl Buentello
 - Organizer contact info - [@cosmoduende](https://twitter.com/cosmoduende)
 
-#### New Zealand
+### New Zealand
 
 ##### Auckland
 
@@ -256,7 +270,7 @@ REQUIREMENTS
 - Organizer name - George Czabania
 - Organizer contact info - [@stayradiated](https://twitter.com/stayradiated)
 
-#### Spain
+### Spain
 
 ##### Madrid
 
@@ -266,7 +280,7 @@ REQUIREMENTS
 - Organizer name - Alex Fernández
 - Organizer contact info - alexfernandeznpm@gmail.com
 
-#### Thailand
+### Thailand
 
 ##### Bangkok
 
@@ -276,7 +290,7 @@ REQUIREMENTS
 - Organizer name - Dylan Jay
 - Organizer contact info - [@djay75(]https://twitter.com/djay75/)
 
-#### Turkey
+### Turkey
 
 ##### Istanbul
 
@@ -301,7 +315,6 @@ REQUIREMENTS
 
 
 ### United States
-
 
 #### Arizona
 
@@ -350,7 +363,7 @@ REQUIREMENTS
 - Organizer contact info - [@Brooks_Patton](https://twitter.com/Brooks_Patton/)
 
 
-##### Georgia 
+#### Georgia 
 
 #### Atlanta 
 
@@ -380,9 +393,9 @@ REQUIREMENTS
 - Organizer name - Mike Seidle
 - Organizer contact info - [@indymike](https://twitter.com/indymike)
 
-##### Massachusetts
+#### Massachusetts
 
-#### Boston 
+##### Boston 
 
 - [Meetup](https://www.meetup.com/nodejs/)
 - Frequency of meetups - monthly
@@ -400,9 +413,9 @@ REQUIREMENTS
 - Organizer name - Mike Frey
 - Organizer contact info - frey.mike@gmail.com
 
-##### New York 
-
 #### New York 
+
+##### New York 
 
 - [Meetup](https://www.meetup.com/nodejs/)
 - Frequency of meetups - monthly
@@ -494,7 +507,7 @@ REQUIREMENTS
 - Organizer name - Andrew Dunkman
 - Organizer contact info - adunkman@gmail.com
 
-#### UK
+### UK
 
 ##### London
 
@@ -519,7 +532,7 @@ REQUIREMENTS
 - Organizer contact info - (Rob Moran) github@thegecko.org
 
 
-#### Ukraine
+### Ukraine
 
 ##### Kiev
 
