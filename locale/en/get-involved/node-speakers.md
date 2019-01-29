@@ -40,6 +40,12 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 
 ##### San Francisco
 
+###### Atishay Jain
+- [@atishay811](http://twitter.com/atishay811)
+- [LinkedIn](https://linkedin.com/in/atishay)
+- [Github](https://github.com/atishay)
+- Topics - Node, Native Modules(N-API, Nan), Node on desktop
+
 ###### Dan Shaw
 
 - [@dshaw](http://twitter.com/dshaw)
@@ -65,6 +71,12 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 - [@bitandbang](http://twitter.com/bitandbang)
 - Topics - Node 
 
+###### Joe Sepi
+
+- [@joe_sepi](http://twitter.com/joe_sepi)
+- [LinkedIn](https://www.linkedin.com/in/joesepi/)
+- Topics - Node, JavaScript, Open Source, Community, Leadership, Punk Rock
+
 #### North Carolina
 
 ##### Raleigh
@@ -83,3 +95,9 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 
 - [@obensource](http://twitter.com/obensource)
 - Topics - Node 
+
+###### Christopher Hiller
+
+- [@b0neskull](https://twitter.com/b0neskull)
+- Topics - Node.js, Testing, Tooling, Maintainership & OSS Sustainability
+
