@@ -127,6 +127,14 @@
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
       "text": "管理"
+    },
+    "node-meetups": {
+      "link": "get-involved/node-meetups",
+      "text": "Node.js 聚会"
+    },
+    "node-speakers": {
+      "link": "get-involved/node-speakers",
+      "text": "本地 Node.js 演讲者"
     }
   },
   "security": {
