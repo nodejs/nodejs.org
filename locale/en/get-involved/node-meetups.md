@@ -74,7 +74,9 @@ REQUIREMENTS
 
 ### Germany
 
-#### Passau
+#### Bavaria
+
+##### Passau
 
 - [Meetup](https://www.meetup.com/de-DE/Nodeschool-Passau/)
 - Frequency of meetups - quarterly
