@@ -77,7 +77,7 @@
       "link": "SHASUMS256.txt.asc",
       "text": "Signert SHASUMS for slipp filer",
       "verify-link": "https://github.com/nodejs/node#verifying-binaries",
-      "verify-text": "How to verify"
+      "verify-text": "Hvordan verifisere"
     },
     "install-on-linux": {
       "text": "Installere Node.js via binære arkiv på Linux"
