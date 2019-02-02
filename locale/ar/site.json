@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "Node.js",
   "author": "Node.js Foundation",
   "url": "https://nodejs.org/ar/",
@@ -7,11 +7,11 @@
   "scrollToTop": "إنتقل إلى الأعلى",
   "reportNodeIssue": "Node.js أبلغ عن عطل في",
   "reportWebsiteIssue": "أبلغ عن عطل في الموقع",
-  "getHelpIssue": "احصل على مساعدة",
+  "getHelpIssue": "الحصول على مساعدة",
   "by": "من طرف",
   "all-downloads": "تحميل جميع النسخ",
   "nightly": "إصدارات ليلية",
-  "chakracore-nightly": "Node-ChakraCore إصدارات ليلية خاصة ب",
+  "chakracore-nightly": "Node-ChakraCore إصدارات ليلية خاصة بـ",
   "previous": "السابق",
   "next": "التالي",
   "feeds": [
@@ -40,7 +40,7 @@
     },
     "community": {
       "link": "about/community",
-      "text": "المجمع"
+      "text": "المجتمع"
     },
     "workinggroups": {
       "link": "about/working-groups",
@@ -52,11 +52,11 @@
     },
     "resources": {
       "link": "about/resources",
-      "text": "مصادر"
+      "text": "المصادر"
     },
     "trademark": {
       "link": "about/trademark",
-      "text": "علامة تجارية"
+      "text": "العلامة التجارية"
     },
     "privacy": {
       "link": "about/privacy",
@@ -65,7 +65,7 @@
   },
   "download": {
     "link": "download",
-    "text": "تحميل",
+    "text": "تنزيلات",
     "releases": {
       "link": "download/releases",
       "text": "الاصدارات السابقة"
@@ -76,22 +76,22 @@
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "وتائق الاصدارات مختومة SHASUMS"
+      "text": "وثائق الاصدارات مختومة SHASUMS"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "تثبيت Node.js باستعمال أرشيف ثنائي على لينكس"
     }
   },
   "docs": {
     "link": "docs",
-    "text": "توتيق",
+    "text": "التوثيق",
     "es6": {
       "link": "docs/es6",
       "text": "ES6 وما بعدها"
     },
     "inspector": {
       "link": "docs/inspector",
-      "text": "أدوات التفتيش"
+      "text": "أدوات الإشراف"
     },
     "api-lts": {
       "link": "/dist/latest-%ver-major%/docs/api",
@@ -109,10 +109,10 @@
   },
   "getinvolved": {
     "link": "get-involved",
-    "text": "قم بالانضمام",
+    "text": "إنضم إلينا",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
-      "text": "برمج + تعلم"
+      "text": "برمج و تعلم"
     },
     "collab-summit": {
       "link": "get-involved/collab-summit",
@@ -120,7 +120,7 @@
     },
     "contribute": {
       "link": "get-involved/contribute",
-      "text": "ساهم"
+      "text": "مساهمة"
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
@@ -133,7 +133,7 @@
   },
   "blog": {
     "link": "blog",
-    "text": "مدونة"
+    "text": "المدونة"
   },
   "foundation": {
     "link": "https://foundation.nodejs.org/",
@@ -141,7 +141,7 @@
   },
   "releases": {
     "title": "أرشيف الاصدارات",
-    "downloads": "تحميل"
+    "downloads": "التنزيلات"
   },
   "links": {
     "pages": {
