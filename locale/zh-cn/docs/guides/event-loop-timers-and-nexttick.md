@@ -199,9 +199,9 @@ timeout
 
 ### 理解 `process.nextTick()`
 
-您可能已经注意到 `process.nextTick()` 在关系图中没有显示，即使它是异步 API 的一部分。这是因为 `process.nextTick()` 在技术上不是事件循环的一部分。相反，无论事件循环的当前阶段如何，都将在当前操作完成后处理 `nextTickQueue`。
+您可能已经注意到 `process.nextTick()` 在关系图中没有显示，即使它是异步 API 的一部分。这是因为 `process.nextTick()` 在技术上不是事件循环的一部分。相反，无论事件循环的当前阶段如何，都将在当前操作完成后处理 `nextTickQueue`。这里的一个*操作*被视作为一个从 C++ 底层处理开始过渡，并且处理需要执行的 JavaScript 代码。
 
-回顾我们的关系图，任何时候您调用 `process.nextTick()` 在给定的阶段中，所有传递到 `process.nextTick()` 的回调将在事件循环继续之前得到解决。这可能会造成一些糟糕的情况, 因为**它允许您通过进行递归 `process.nextTick()` 来“饿死”您的 I/O 调用**，阻止事件循环到达 **轮询** 阶段。
+回顾我们的关系图，任何时候在给定的阶段中调用 `process.nextTick()`，所有传递到 `process.nextTick()` 的回调将在事件循环继续之前得到解决。这可能会造成一些糟糕的情况, 因为**它允许您通过进行递归 `process.nextTick()` 来“饿死”您的 I/O 调用**，阻止事件循环到达 **轮询** 阶段。
 
 ### 为什么会允许这样？
 
@@ -217,8 +217,7 @@ function apiCall(arg, callback) {
 
 代码段进行参数检查。如果不正确，则会将错误传递给回调函数。最近对 API 进行了更新，允许将参数传递给 `process.nextTick()`，允许它在回调后传递任何参数作为回调的参数传播，这样您就不必嵌套函数了。
 
-我们正在做的是将错误传递给用户，但仅在我们允许用户的其余代码执行之后。通过使用`process.nextTick()`，我们保证 `apiCall()` 始终在用户代码的其余部分 *之后* 运行其回调函数，并在允许事件循环 *之前* 继续进行。为了实现这一点，JS 调用栈被允许
-展开，然后立即执行提供的回调，允许进行递归调用 `process.nextTick()`，而不达到 `RangeError: 超过 v8 的最大调用堆栈大小`。
+我们正在做的是将错误传递给用户，但仅在我们允许用户的其余代码执行之后。通过使用`process.nextTick()`，我们保证 `apiCall()` 始终在用户代码的其余部分*之后*运行其回调函数，并在允许事件循环*之前*继续进行。为了实现这一点，JS 调用栈被允许展开，然后立即执行提供的回调，允许进行递归调用 `process.nextTick()`，而不达到 `RangeError: 超过 v8 的最大调用堆栈大小`。
 
 这种哲学可能会导致一些潜在的问题。
 以此代码段为例：
@@ -268,6 +267,43 @@ server.on('listening', () => {});
 
 为了绕过此现象，`'listening'` 事件在 `nextTick()` 中排队，以允许脚本运行到完成阶段。这允许用户设置所需的任何事件处理程序。
 
+### 去重
+
+对于 `timers` 以及 `check` 两个阶段而言，多个 immediates 和 timers 中存在着单一的从 C 到 JavaScript 的转变。此去重是一种优化形式，可能会造成一些意想不到的副作用。
+我们用以下代码举例子说明：
+
+```js
+// dedup.js
+const foo = [1, 2];
+const bar = ['a', 'b'];
+
+foo.forEach(num => {
+  setImmediate(() => {
+    console.log('setImmediate', num);
+    bar.forEach(char => {
+      process.nextTick(() => {
+        console.log('process.nextTick', char);
+      });
+    });
+  });
+});
+```
+```bash
+$ node dedup.js
+setImmediate 1
+setImmediate 2
+process.nextTick a
+process.nextTick b
+process.nextTick a
+process.nextTick b
+```
+
+主线程添加了两个 `setImmediate()` 事件，这样的话在处理的时候就会增加两个 `process.nextTick()` 事件。当事件轮询到 `check` 阶段的时候，它就发现目前有两个由 `setImmediate()` 创建的两个事件，第一个事件就被立即抓取且得到了处理，这样就打印出相应的结果，并且添加了两个事件到 `nextTickQueue` 队列中。
+
+因为去重的缘故，事件循环机制并不会立即折回到 C/C++ 层面上去检查 `nextTickQueue` 队列中是否存在任务项需要执行；相反地，它只会执行剩余的 `setImmediate()` 事件（目前只剩下一个）。这样一来，在处理了这个事件之后，多余两个的事件添加到了 `nextTickQueue` 队列中，所以总共产生了四个事件。
+
+此时，先前所有的 `setImmediate()` 事件已被处理。终于等到 `nextTickQueue` 队列接受检查，而事件又是按着先进先出的顺序进行处理；因此当 `nextTickQueue` 清空之时，事件循环机制认为所有的操作对于现阶段均已完成，然后直接进行下一个阶段的处理了。
+
 ## `process.nextTick()` 对比 `setImmediate()`
 
 就用户而言我们有两个类似的调用，但它们的名称令人费解。
@@ -275,8 +311,7 @@ server.on('listening', () => {});
 * `process.nextTick()` 在同一个阶段立即执行。
 * `setImmediate()` 在以下迭代或 ‘tick’ 上触发事件循环。
 
-实质上，应该交换名称。`process.nextTick()` 比 `setImmediate()` 触发得更直接，但这是过去遗留的，所以不太可能改变。进行此开关将会破坏 npm 上的大部分软件包。每天都有新的模块在不断增长，这意味着我们每天等待，而更多的潜在破损在发生。
-虽然他们很迷惑，但名字本身不会改变。
+实质上，这两个名称应该交换，因为 `process.nextTick()` 比 `setImmediate()` 触发得更直接，但这是过去遗留问题，因此不太可能改变。如果贸然进行名称交换，将破坏 npm 上的大部分软件包。每天都有新的模块在不断增长，这意味着我们我们每等待一天，就有更多的潜在破损在发生。所以说尽管这些名称使人感到困惑，但它们的名字本身不会改变。
 
 *我们建议开发人员在所有情况下都使用 `setImmediate()`，因为它更容易被推理（并且它导致代码与更广泛的环境，如浏览器 JS 所兼容。）*
 
