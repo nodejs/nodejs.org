@@ -35,7 +35,7 @@ title: 패키지 매니저로 Node.js 설치하기
 
 ----------------------------
 
-* [Android](#android)
+* [안드로이드](#android)
 * [Arch Linux](#arch-linux)
 * [데비안과 우분투 기반 리눅스 배포판. 엔터프라이즈 리눅스/페도라와 Snap 패키지](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
 * [FreeBSD](#freebsd)
@@ -43,9 +43,10 @@ title: 패키지 매니저로 Node.js 설치하기
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
 * [OpenBSD](#openbsd)
-* [openSUSE와 SLE](#opensuse-sle)
+* [openSUSE와 SLE](#opensuse-and-sle)
 * [macOS](#macos)
-* [SmartOS와 illumos](#smartos-illumos)
+* [SmartOS와 illumos](#smartos-and-illumos)
+* [Solus](#solus)
 * [Void Linux](#void-linux)
 * [Windows](#windows)
 
@@ -64,7 +65,7 @@ pkg install nodejs
 
 Currently, Termux Node.js binaries are compiled without Inspector support and linked against `system-icu` (depending on `libicu` package).
 -->
-## 안드로이드
+<h2>안드로이드<a name="android" class="anchor" href="#android"></a></h2>
 
 Node.js의 안드로이드 지원은 현재 시험 단계에 있기 때문에 Node.js 개발자들이 제공하는 미리 컴파일된 바이너리가 아직 없습니다.
 
