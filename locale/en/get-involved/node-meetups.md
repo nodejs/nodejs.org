@@ -40,6 +40,16 @@ REQUIREMENTS
 - Organizer name - Manil Chowdhury
 - Organizer contact info - [@keywordnew](https://www.twitter.com/keywordnew/)
 
+#### Ontario
+
+##### Toronto
+
+- [Toronto JS Meetup](http://torontojs.com/)
+- Frequency of meetups - weekly
+- How to submit a talk? _Contact Organizers through Slack: http://slack.torontojs.com/_
+- Organizers name - Dann T. & Paul D.
+- Organizer contact info - _Community Slack_
+
 ### United States
 
 #### California
