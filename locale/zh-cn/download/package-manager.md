@@ -134,7 +134,7 @@ pkg_add node
   请不要把此改成 ## 的形式，因为自动生成器会完全忽略非英语字符，导致生成的 anchor 名称与上面实际的名称不符合，导致无法正确跳转到所要的位置。
   相关修复：https://github.com/nodejs/nodejs.org/pull/2028
 -->
-<h2>openSUSE 以及 SLE<a name="opensuse-and-sle" class="anchor" href="#opensuse-and-sle"></a></h2>
+<h2>openSUSE 和 SLE<a name="opensuse-and-sle" class="anchor" href="#opensuse-and-sle"></a></h2>
 
 在以下安装包中，Node.js在以下主版本库中可用：
 
