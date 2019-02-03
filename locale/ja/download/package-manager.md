@@ -48,7 +48,7 @@ pacman -S nodejs npm
 ```
 
 
-## <!-- Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora and Snap packages --> Debian と Ubuntu ベースの Linux ディストリビューション、エンタープライズ Linux/Fedora と Snap packages
+## Debian と Ubuntu ベースの Linux ディストリビューション、エンタープライズ Linux/Fedora と Snap パッケージ
 
 <!-- [Official Node.js binary distributions](https://github.com/nodesource/distributions/blob/master/README.md) are provided by NodeSource. -->
 [Node.js 公式のバイナリディストリビューション](https://github.com/nodesource/distributions/blob/master/README.md)が NodeSource によって提供されています。
