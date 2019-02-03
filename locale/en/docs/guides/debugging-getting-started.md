@@ -9,40 +9,18 @@ This guide will help you get started debugging your Node.js apps and scripts.
 
 ## Enable Inspector
 
-When started with the **--inspect** switch, a Node.js process listens via WebSockets
-for diagnostic commands as defined by the [Inspector Protocol][],
-by default at host and port 127.0.0.1:9229. Each process is also assigned a
-unique [UUID][] (e.g. `0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`).
+When started with the `--inspect` switch, a Node.js process listens for a
+debugging client. By default, it will listen at host and port 127.0.0.1:9229.
+Each process is also assigned a unique [UUID][].
 
-Inspector clients must know and specify host address, port, and UUID to connect
-to the WebSocket interface. The full URL is
-`ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`, of course dependent
-on actual host and port and with the correct UUID for the instance.
+Inspector clients must know and specify host address, port, and UUID to connect.
+A full URL will look something like
+`ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`.
 
-Inspector also includes an HTTP endpoint to serve metadata about the debuggee,
-including its WebSocket URL, UUID, and Chrome DevTools URL. Get this metadata
-by sending an HTTP request to `http://[host:port]/json/list`.  This returns a
-JSON object like the following; use the `webSocketDebuggerUrl` property as the
-URL to connect directly to Inspector.
-
-<!-- eslint-skip -->
-```javascript
-{
-  "description": "node.js instance",
-  "devtoolsFrontendUrl": "chrome-devtools://devtools/bundled/inspector.html?experiments=true&v8only=true&ws=127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e",
-  "faviconUrl": "https://nodejs.org/static/favicon.ico",
-  "id": "0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e",
-  "title": "node",
-  "type": "node",
-  "url": "file://",
-  "webSocketDebuggerUrl": "ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e"
-}
-```
-
-A Node.js process started *without* `--inspect` can also be instructed to start
-listening for debugging messages by signaling it with `SIGUSR1` (on Linux and
-OS X). As of Node 7 this activates the legacy Debugger API; in Node 8 and later
-it will activate the Inspector API.
+Node.js will also start listening for debugging messages if it receives a 
+`SIGUSR1` signal. (`SIGUSR1` is not available on Windows.) In Node.js 7 and
+earlier, this activates the legacy Debugger API. In Node.js 8 and later, it will
+activate the Inspector API.
 
 ---
 ## Security Implications

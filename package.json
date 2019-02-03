@@ -5,10 +5,11 @@
   "homepage": "https://nodejs.org",
   "scripts": {
     "build": "node build.js",
+    "build:deploy":"node build.js --preserveLocale",
     "serve": "node server.js",
     "external:survey": "rsync -avz --exclude 'node_modules*' --exclude 'package*' external/survey-2018/ build/en/user-survey-report",
     "gzip": "find build -type f \\( -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.xml' -o -name '*.json' \\) -exec gzip -kf9 {} \\;",
-    "deploy": "npm run load-schedule && npm run build && npm run external:survey && npm run gzip",
+    "deploy": "npm run load-schedule && npm run build:deploy && npm run external:survey && npm run gzip",
     "load-versions": "node scripts/load-versions.js",
     "load-schedule": "curl -sS https://raw.githubusercontent.com/nodejs/Release/master/schedule.json -o source/schedule.json",
     "start": "npm run serve",

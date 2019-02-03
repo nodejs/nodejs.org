@@ -32,3 +32,4 @@ layout: contribute.hbs
 - [Japanese user group](http://nodejs.jp/)
 - [Spanish language Facebook group for Node.js](https://www.facebook.com/groups/node.es/)
 - [Spanish language community](http://nodehispano.com)
+- [Vietnamese Node.js community](https://www.facebook.com/nodejs.vn/)
