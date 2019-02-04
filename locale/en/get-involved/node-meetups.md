@@ -16,7 +16,7 @@ If any meetup does not have a CoC and/or is reported as an unsafe place, it will
 FORMAT
 - [Meetup](https://www.meetup.com/pdxnode/)
 - Frequency of meetups 
-- How to submit a talk? \<\<list here\>\>
+- How to submit a talk? &lt;&lt;list here&gt;&gt;
 - Organizer names (if you wish to provide)
 - Organizers contact info (if you wish to provide)
 
@@ -313,6 +313,16 @@ REQUIREMENTS
 - Organizer name - Manil Chowdhury
 - Organizer contact info - [@keywordnew](https://www.twitter.com/keywordnew/)
 
+#### Ontario
+
+##### Toronto
+
+- [Toronto JS Meetup](http://torontojs.com/)
+- Frequency of meetups - weekly
+- How to submit a talk? _Contact Organizers through Slack: http://slack.torontojs.com/_
+- Organizers name - Dann T. & Paul D.
+- Organizer contact info - _Community Slack_
+
 
 ### United States
 
@@ -423,6 +433,16 @@ REQUIREMENTS
 - Organizer name - Patrick Scott Co-organizer: Matt Walters.
 - Organizer contact info - (Matt Walters) github@iammattwalters.com
 
+#### Illinois 
+
+##### Chicago
+- [Meetup](https://www.meetup.com/Chicago-Nodejs/)
+- Frequency - monthly
+- [How to submit talk](https://airtable.com/shrTDwmMH3zsnsWOE)
+- Organizer name - Zeke Nierenberg & Ben Neiswander
+- Organizer contact info
+  - [@ZekeNierenberg](https://www.twitter.com/ZekeNierenberg)
+  - node@chicagojs.org
 
 #### North Carolina
 
@@ -542,5 +562,14 @@ REQUIREMENTS
 - Organizer name - Timur Shemsedinov
 - Organizer contact info - timur.shemsedinov@gmail.com
 
+### Germany
 
+#### Bavaria
 
+##### Passau
+
+- [Meetup](https://www.meetup.com/de-DE/Nodeschool-Passau/)
+- Frequency of meetups - quarterly
+- How to submit a talk? Email [Valentin](mailto:valentin.huber@msg.group)
+- Organizer name - Valentin Huber
+- Organizer contact info - [Email](mailto:valentin.huber@msg.group)

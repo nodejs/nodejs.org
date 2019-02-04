@@ -10,39 +10,18 @@ This guide will help you get started debugging your Node.js apps and scripts.
 
 ## Enable Inspector
 
-When started with the **--inspect** switch, a Node.js process listens via WebSockets
-for diagnostic commands as defined by the [Inspector Protocol][],
-by default at host and port 127.0.0.1:9229. Each process is also assigned a
-unique [UUID][] (e.g. `0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`).
+When started with the `--inspect` switch, a Node.js process listens for a
+debugging client. By default, it will listen at host and port 127.0.0.1:9229.
+Each process is also assigned a unique [UUID][].
 
-Inspector clients must know and specify host address, port, and UUID to connect
-to the WebSocket interface. The full URL is
-`ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`, of course dependent
-on actual host and port and with the correct UUID for the instance.
+Inspector clients must know and specify host address, port, and UUID to connect.
+A full URL will look something like
+`ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`.
 
-Inspector also includes an HTTP endpoint to serve metadata about the debuggee,
-including its WebSocket URL, UUID, and Chrome DevTools URL. Get this metadata
-by sending an HTTP request to `http://[host:port]/json/list`.  This returns a
-JSON object like the following; use the `webSocketDebuggerUrl` property as the
-URL to connect directly to Inspector.
-
-```javascript
-{
-  "description": "node.js instance",
-  "devtoolsFrontendUrl": "chrome-devtools://devtools/bundled/inspector.html?experiments=true&v8only=true&ws=127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e",
-  "faviconUrl": "https://nodejs.org/static/favicon.ico",
-  "id": "0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e",
-  "title": "node",
-  "type": "node",
-  "url": "file://",
-  "webSocketDebuggerUrl": "ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e"
-}
-```
-
-A Node.js process started *without* `--inspect` can also be instructed to start
-listening for debugging messages by signaling it with `SIGUSR1` (on Linux and
-OS X). As of Node 7 this activates the legacy Debugger API; in Node 8 and later
-it will activate the Inspector API.
+Node.js will also start listening for debugging messages if it receives a 
+`SIGUSR1` signal. (`SIGUSR1` is not available on Windows.) In Node.js 7 and
+earlier, this activates the legacy Debugger API. In Node.js 8 and later, it will
+activate the Inspector API.
 
 ---
 -->
@@ -53,37 +32,18 @@ it will activate the Inspector API.
 
 ## 인스펙터 활성화
 
-**--inspect** 스위치로 시작하면 Node.js 프로세스가 [Inspector 프로토콜][]에서 정의된
-진단 명령어를 웹소켓으로 받습니다. [Inspector 프로토콜][]은 기본적으로 127.0.0.1:9229를
-사용합니다. 각 프로세스에는 고유한 [UUID][](예: `0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`)도
-할당됩니다.
+`--inspect` 스위치로 시작하면 Node.js 프로세스가 디버깅 클라이언트에서 수신을
+시작하고 기본 호스트와 포트로 `127.0.0.1:9229`를 사용합니다. 각 프로세스는
+고유한 [UUID][]도 할당받습니다.
 
-인스펙터 클라이언트가 웹소켓 인터페이스로 접속하기 위해 호스트 주소, 포트, UUID를 알고 지정해야 합니다.
-전체 URL은 `ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`와 같고 당연히
-인스턴스의 실제 호스트와 포트, UUID에 따라 달라집니다.
+인스펙터 클라이언트는 호스트 주소, 포트, UUID를 알아야 접속할 수 있습니다. 전체
+URL은 `ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e` 같은 형태가
+됩니다.
 
-인스펙터도 디버깅 대상에 대한 메타데이터를 제공하는 HTTP 엔드포인트를 가집니다. 이 메타데이터에는
-웹소켓 URL, UUID, 크롬 개발자도구 URL이 포함됩니다. `http://[host:port]/json/list`에
-HTTP 요청을 보내서 이 메타데이터를 받을 수 있습니다. 이는 다음과 같은 JSON 객체를 반환합니다.
-인스펙터에 직접 접속하려면 URL로 `webSocketDebuggerUrl` 프로퍼티를 사용하세요.
-
-<!-- eslint-skip -->
-```javascript
-{
-  "description": "node.js instance",
-  "devtoolsFrontendUrl": "chrome-devtools://devtools/bundled/inspector.html?experiments=true&v8only=true&ws=127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e",
-  "faviconUrl": "https://nodejs.org/static/favicon.ico",
-  "id": "0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e",
-  "title": "node",
-  "type": "node",
-  "url": "file://",
-  "webSocketDebuggerUrl": "ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e"
-}
-```
-
-`--inspect` *없이* 시작된 Node.js 프로세스에도 `SIGUSR1` 신호(Linux와 OS X에서)를 보내서
-디버깅 메시지를 받도록 지시할 수 있습니다. Node 7부터는 레거시 디버거 API를 활성화하고
-Node 8 부터는 인스펙터 API를 활성화할 것입니다.
+Node.js가 `SIGUSR1` 신호를 받으면 디버깅 메시지도 수신하기
+시작합니다.(`SIGUSR1`은 Windows에서는 사용할 수 없습니다.) Node.js 7 이하
+버전에서는 레거시 Debugger API가 활성화되고 Node.js 8 이상에서는 Inspector API를
+활성화합니다.
 
 ---
 <!-- ## Security Implications
@@ -212,6 +172,10 @@ Node 인스펙터에 접속할 수 있는 여러 상용 도구와 오픈소스 �
 
 * Library to ease connections to Inspector Protocol endpoints.
 
+#### [Gitpod](https://www.gitpod.io)
+
+* Start a Node.js debug configuration from the `Debug` view or hit `F5`. [Detailed instructions](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
+
 ---
 -->
 
@@ -234,6 +198,11 @@ Node 인스펙터에 접속할 수 있는 여러 상용 도구와 오픈소스 �
 #### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 
 * 인스펙터 프로토콜 엔드포인트로의 연결을 쉽게 하는 라이브러리입니다.
+
+#### [Gitpod](https://www.gitpod.io)
+
+* `Debug` 뷰에서 Node.js 디버그 설정을 실행하거나 `F5` 키를 누르세요.
+  [자세한 방법은 여기를 참고하세요.](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
 
 ---
 
@@ -378,19 +347,19 @@ The following table lists the impact of various runtime flags on debugging:
 <!-- ## Enabling remote debugging scenarios -->
 ## 원격 디버깅 활성화 시나리오
 
-<!-- 
+<!--
 We recommend that you never have the debugger listen on a public IP address. If
 you need to allow remote debugging connections we recommend the use of ssh
 tunnels instead. We provide the following example for illustrative purposes only.
 Please understand the security risk of allowing remote access to a privileged
-service before proceeding. 
+service before proceeding.
 -->
 디버거가 퍼블릭 IP 주소에서 수신하지 않는 것을 권장합니다. 만약 원격 디버깅 연결을 허용해야 하는 경우 ssh 터널링을 대신 사용할 것을 권장합니다. 설명을 위해 아래 예제를 제공합니다. 진행하기 전 권한을 가진 서비스에 원격 액세스를 허용할 경우 발생할 수 있는 보안 위험을 이해하시기 바랍니다.
 
-<!-- 
+<!--
 Let's say you are running Node on remote machine, remote.example.com, that you
 want to be able to debug. On that machine, you should start the node process
-with the inspector listening only to localhost (the default). 
+with the inspector listening only to localhost (the default).
 -->
 디버깅하기를 원하는 remote.example.com 원격 시스템에서 노드가 실행 중이라고 가정하겠습니다. 해당 시스템에서 localhost(기본값)만 수신하는 인스펙터로 노드 프로세스를 시작해야 합니다.
 
@@ -398,9 +367,9 @@ with the inspector listening only to localhost (the default).
 $ node --inspect server.js
 ```
 
-<!-- 
+<!--
 Now, on your local machine from where you want to initiate a debug client
-connection, you can setup an ssh tunnel: 
+connection, you can setup an ssh tunnel:
 -->
 이제 디버그 클라이언트 연결을 시작하려는 로컬 시스템에서 ssh 터널을 설정할 수 있습니다.
 
@@ -408,12 +377,12 @@ connection, you can setup an ssh tunnel:
 $ ssh -L 9221:localhost:9229 user@remote.example.com
 ```
 
-<!-- 
+<!--
 This starts a ssh tunnel session where a connection to port 9221 on your local
 machine will be forwarded to port 9229 on remote.example.com. You can now attach
 a debugger such as Chrome DevTools or Visual Studio Code to localhost:9221,
 which should be able to debug as if the Node.js application was running locally.
- -->
+-->
 그러면 로컬 시스템의 9221 포트에서 remote.example.com의 9229 포트로 전달되는 ssh 터널 세션이 시작됩니다. Chrome DevTools 또는 Visual Studio Code 등의 디버거로 localhost:9221에 연결 할 수 있으며 Node.js 애플리케이션이 로컬에서 실행 중인 것처럼 디버깅할 수 있습니다.
 
 ---

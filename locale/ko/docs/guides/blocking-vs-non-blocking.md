@@ -45,9 +45,9 @@ methods also have **blocking** counterparts, which have names that end with
 
 ## 블로킹
 
-**블로킹**은 Node.js에서 추가적인 JavaScript를 실행할 때 프로세스는 JavaScript가 아닌
-작업이 완료될 때까지 반드시 기다려야 합니다. 이는 이벤트 루프가 **블로킹** 작업을 하는 동안
-JavaScript 실행을 계속할 수 없기 때문입니다.
+**블로킹**은 Node.js 프로세스에서 추가적인 JavaScript의 실행을 위해 JavaScript가 아닌
+작업이 완료될 때까지 기다려야만 하는 상황입니다. 이는 이벤트 루프가 **블로킹** 작업을 하는
+동안 JavaScript 실행을 계속할 수 없기 때문입니다.
 
 Node.js에서, I/O 등의 JavaScript가 아닌 작업을 기다리는 것보다 CPU 집약적인 작업 때문에
 나쁜 성능을 보여주는 JavaScript는 보통 **블로킹**이라고 부르지 않습니다. libuv를 사용하는
