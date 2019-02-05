@@ -166,7 +166,7 @@ REQUIREMENTS
 - Organizer name - Ioannis Nikolau
 - Organizer contact info -
 
-#### Greece
+### Greece
 
 #### Attica
 
