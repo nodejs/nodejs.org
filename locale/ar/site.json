@@ -1,0 +1,151 @@
+﻿{
+  "title": "Node.js",
+  "author": "Node.js Foundation",
+  "url": "https://nodejs.org/ar/",
+  "locale": "ar",
+  "rtl": true,
+  "scrollToTop": "إنتقل إلى الأعلى",
+  "reportNodeIssue": "Node.js أبلغ عن عطل في",
+  "reportWebsiteIssue": "أبلغ عن عطل في الموقع",
+  "getHelpIssue": "الحصول على مساعدة",
+  "by": "من طرف",
+  "all-downloads": "تحميل جميع النسخ",
+  "nightly": "إصدارات ليلية",
+  "chakracore-nightly": "Node-ChakraCore إصدارات ليلية خاصة بـ",
+  "previous": "السابق",
+  "next": "التالي",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Node.js مدونة"
+    },
+    {
+      "link": "feed/releases.xml",
+      "text": "الاصدارات : Node.js مدونة"
+    },
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "تقارير أمنية : Node.js مدونة"
+    }
+  ],
+  "home": {
+    "text": "الرئيسية"
+  },
+  "about": {
+    "link": "about",
+    "text": "عن الموقع",
+    "governance": {
+      "link": "about/governance",
+      "text": "الحوكمة"
+    },
+    "community": {
+      "link": "about/community",
+      "text": "المجتمع"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "مجموعات العمل"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "الاصدارات"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "المصادر"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "العلامة التجارية"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "سياسة الخصوصية"
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "تنزيلات",
+    "releases": {
+      "link": "download/releases",
+      "text": "الاصدارات السابقة"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "تحميل Node.js عن طريق نظام إدارة الحزم الافتراضي"
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "وثائق الاصدارات مختومة SHASUMS"
+    },
+    "install-on-linux": {
+      "text": "تثبيت Node.js باستعمال أرشيف ثنائي على لينكس"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "التوثيق",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 وما بعدها"
+    },
+    "inspector": {
+      "link": "docs/inspector",
+      "text": "أدوات الإشراف"
+    },
+    "api-lts": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "/dist/latest-%ver-major%/docs/api",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "إرشادات"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "إنضم إلينا",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "برمج و تعلم"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "القمة التعاونية"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "مساهمة"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "text": "القواعد السلوكية"
+    }
+  },
+  "security": {
+    "link": "security",
+    "text": "أمن"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "المدونة"
+  },
+  "foundation": {
+    "link": "https://foundation.nodejs.org/",
+    "text": "المؤسسة"
+  },
+  "releases": {
+    "title": "أرشيف الاصدارات",
+    "downloads": "التنزيلات"
+  },
+  "links": {
+    "pages": {
+      "changelog": "سجل التغييرات"
+    }
+  }
+}
