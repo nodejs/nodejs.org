@@ -374,7 +374,7 @@ REQUIREMENTS
 
 #### Georgia 
 
-#### Atlanta 
+##### Atlanta 
 
 - [Meetup](https://www.meetup.com/Atlanta-Nodejs-Developers/)
 - Frequency of meetups - monthly
