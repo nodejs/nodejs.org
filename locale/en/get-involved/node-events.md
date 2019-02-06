@@ -1,0 +1,20 @@
+---
+title: Node Events
+layout: contribute.hbs
+---
+
+# Node Events
+
+This is a list of node events and conferences. Please submit a PR if you'd like to add a new event that isn't yet tracked in the list below.
+
+## Notes for adding events
+
+FORMAT
+- [Event Name](https://) - Location, Dates
+
+## Events
+
+### 2019
+- [NodeConf Columbia](https://colombia.nodeconf.com) - Medellin, Columbia, June 21-22 
+- [NodeConf EU](https://www.nodeconf.eu/2019.html) - Lyrath Estate, Kilkenny, November 10-13
+- [NodeSummit](https://www.nodesummit.com) - San Francisco, TBA 
