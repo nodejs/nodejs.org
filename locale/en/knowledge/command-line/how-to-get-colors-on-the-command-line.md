@@ -8,7 +8,7 @@ layout: knowledge-post.hbs
 ---
 
 
-When working on the command line, it can be both fun and extremely useful to colorize one's output. To colorize console output, you need to use ANSI escape codes. The module `colors.js`, available on `npm`, provides an extremely easy to use wrapper that makes adding colors a breeze.
+When working on the command line, it can be both fun and extremely useful to colorize one's output. To colorize console output, you need to use ANSI escape codes. The module [colors.js](https://www.npmjs.com/package/colors), available on `npm`, provides an extremely easy to use wrapper that makes adding colors a breeze.
 
 First, install it to the directory you'd like to work in.
 
@@ -20,10 +20,12 @@ Now open up a little test script for yourself, and try something like this:
      var colors = require('colors'),
          stringOne = 'This is a plain string.',
          stringTwo = 'This string is red.'.red,
-         stringThree = 'This string is blue.'.blue;
-     
-     console.log(stringOne.green);
-     console.log(stringOne.yellow);
+         stringThree = 'This string is blue.'.blue,
+         today = new Date().toLocaleDateString(); // returns today's date in mm/dd/yyyy format
+
+     console.log(stringOne.black.bgMagenta);
+     console.log(stringOne.yellow.bgRed.bold);
+     console.log(`Today is: ${today}`.black.bgGreen);
 
      console.log(stringTwo);
      console.log(stringThree);
@@ -31,7 +33,7 @@ Now open up a little test script for yourself, and try something like this:
      console.log(stringTwo.magenta);
      console.log(stringThree.grey.bold);
 
-There are several things to take note of here - first, the string object has been prototyped, so any color may be added simply by adding the property to the string!  It works both on string literals and on variables, as shown at the top of the example above.
+There are several things to take note of here - first, the string object has been prototyped, so any color may be added simply by adding the property to the string!  It works on string literals, template literals and on variables, as shown at the top of the example above.
 
 Notice, also, from the second pair of `console.log` statements, that once set, a color value persists as part of the string.  This is because under the hood, the proper ANSI color tags have been prepended and appended as necessary - anywhere the string gets passed where ANSI color codes are also supported, the color will remain.
 
@@ -45,22 +47,91 @@ You can think of your terminal saying to itself, "Make this green. No, make this
 
 The last thing to note is the final line of the example script.  While a color code was set previously, a 'bold' code was not, so the example was made bold, but not given a different color.
 
+### By popular demand, `colors` now ships with one more usage!!!
+Now an instance of the `Colors interface` can also be used. Though this approach is slightly less nifty but is beginner friendly and is specially useful if you don't want to touch `String.prototype`. Some example of this are:
+
+    var colors = require('colors'),
+         stringOne = 'This is a plain string.',
+         stringTwo = 'This string is red.',
+         stringThree = 'This string is blue.',
+         today = new Date().toLocaleDateString(); // returns today's date in mm/dd/yyyy format
+
+     console.log(colors.bgMagenta.black(stringOne));
+     console.log(colors.bold.bgRed.yellow(stringOne));
+     console.log(colors.bgGreen.black(`Today is: ${today}`));
+
+     console.log(colors.red(stringTwo));
+     console.log(colors.blue(stringThree));
+
+     console.log(colors.magenta.red(stringTwo));
+     console.log(colors.bold.grey.black.blue(stringThree));
+
+**Note**: Unlike the `String.prototype` approach, the chained methods on the `colors instance` are executed left to right i.e., the method closest to the string is finally applied. In the last `console.log` you can think of your terminal saying to itself, "Make this grey. Now, make this black.  Now, make this blue.  No more coloring methods now?  Blue it is, then."
+
+With the latest version of `colors.js` you can also define **[Custom Themes](https://www.npmjs.com/package/colors#custom-themes)** in color.js which makes our code more Robust and allows better Encapsulation of data. A nice use case of this maybe:
+
+    var colors = require('colors');
+
+    colors.setTheme({
+      info: 'bgGreen',
+      help: 'cyan',
+      warn: 'yellow',
+      success: 'bgBlue',
+      error: 'red'
+    });
+
+    // outputs red text
+    console.log("this is an error".error);
+
+    // outputs text on blue background
+    console.log("this is a success message".success);
+
 One last thing: the colors can look quite different in different terminals - sometimes, `bold` is bold, sometimes it's just a different color. Try it out and see for yourself!
 
 For reference, here's the full list of available `colors.js` properties.
 
+### text colors
+- black
+- red
+- green
+- yellow
+- blue
+- magenta
+- cyan
+- white
+- gray
+- grey
+
+### background colors
+- bgBlack
+- bgRed
+- bgGreen
+- bgYellow
+- bgBlue
+- bgMagenta
+- bgCyan
+- bgWhite
+
+### styles
+- reset
 - bold
+- dim
 - italic
 - underline
 - inverse
-- yellow
-- cyan
-- white
-- magenta
-- green
-- red
-- grey
-- blue
+- hidden
+- strikethrough
+
+### extras
 - rainbow
+- zebra
+- america
+- trap
+- random
+
+### Usage
+
+- A preferred way(not mandatory) of using `String.prototype` approach could be `String.textColor.backgroundColor.style`
+- For the colors object approach use `colors.style.backgroundColor.textColor(String)`
 
 Some people may tell you that `colors.js` is haunted, but those people are just trolls... right?
