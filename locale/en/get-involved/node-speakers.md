@@ -1,11 +1,11 @@
 ---
-title: Node Speakers
+title: Node.js Speakers
 layout: contribute.hbs
 ---
 
-# Node Speakers
+# Node.js Speakers
 
-This is a list of local Node speakers. Please submit a PR if you'd like to add yourself or add others! Make sure you have permission before doing so as well.
+This is a list of local Node.js speakers. Please submit a PR if you'd like to add yourself or add others! Make sure you have permission before doing so as well.
 
 ## Code of Conduct
 
@@ -27,7 +27,7 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 
 - [@mhdawson](https://twitter.com/mhdawson1)
 - [LinkedIn](https://www.linkedin.com/in/michael-dawson-6051282/)
-- Topics - Node
+- Topics - Node.js
 
 #### British Columbia
 
@@ -49,23 +49,23 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 - [@atishay811](http://twitter.com/atishay811)
 - [LinkedIn](https://linkedin.com/in/atishay)
 - [Github](https://github.com/atishay)
-- Topics - Node, Native Modules(N-API, Nan), Node on desktop
+- Topics - Node.js, Native Modules(N-API, Nan), Node.js on desktop
 
 ###### Dan Shaw
 
 - [@dshaw](http://twitter.com/dshaw)
-- Topics - Node 
+- Topics - Node.js 
 
 ###### Shruti Kapoor
 
 - [@shrutikapoor08](http://twitter.com/shrutikapoor08)
-- Topics - Node 
+- Topics - Node.js 
 
 ###### Tracy Lee
 
 - [@ladyleet](http://twitter.com/ladyleet)
 - [LinkedIn](https://linkedin.com/in/tracyslee)
-- Topics - Node Community, Women in Tech, Diversity & Inclusion, RxJS & Node
+- Topics - Node.js Community, Women in Tech, Diversity & Inclusion, RxJS & Node.js
 
 #### New York
 
@@ -74,13 +74,13 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 ###### Tierney Cyren
 
 - [@bitandbang](http://twitter.com/bitandbang)
-- Topics - Node 
+- Topics - Node.js 
 
 ###### Joe Sepi
 
 - [@joe_sepi](http://twitter.com/joe_sepi)
 - [LinkedIn](https://www.linkedin.com/in/joesepi/)
-- Topics - Node, JavaScript, Open Source, Community, Leadership, Punk Rock
+- Topics - Node.js, JavaScript, Open Source, Community, Leadership, Punk Rock
 
 #### North Carolina
 
@@ -90,7 +90,7 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 
 - [@ladyleet](http://twitter.com/ladyleet)
 - [LinkedIn](https://linkedin.com/in/tracyslee)
-- Topics - Node Community, Women in Tech, Diversity & Inclusion, RxJS & Node
+- Topics - Node.js Community, Women in Tech, Diversity & Inclusion, RxJS & Node.js
 
 #### Oregon
 
@@ -99,7 +99,7 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 ###### Ben Michel
 
 - [@obensource](http://twitter.com/obensource)
-- Topics - Node 
+- Topics - Node.js 
 
 ###### Christopher Hiller
 
