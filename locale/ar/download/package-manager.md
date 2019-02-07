@@ -26,7 +26,7 @@ title: Installing Node.js via package manager
 
 ----------------------------
 
-## آندرويد
+<h2>آندرويد<a name="android" class="anchor" href="#android" ></a></h2>
 
 لا يزال دعم النود جي اس على الاندرويد قيد التجربة، لذلك فإن الملفات الثنائية المنتجة قبلا لا تزال غير متوفرة من قبل مطوري النود جي اس.
 
@@ -46,7 +46,7 @@ pkg install nodejs
 pacman -S nodejs npm
 ```
 
-## التوزيعات المبنية على ديبيان أو اوبنتو، لينكس للمؤسسات / فيدورا و حزم سناب
+<h2>التوزيعات المبنية على ديبيان أو اوبنتو، لينكس للمؤسسات / فيدورا و حزم سناب<a name="debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages" class="anchor" href="#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages"></a></h2>
 
 يتم توفير [الملف الثنائي الرسمي للنود جي اس](https://github.com/nodesource/distributions/blob/master/README.md) من قبل NodeSource.
 
@@ -181,7 +181,7 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-## SmartOS و illumos
+<h2>SmartOS و illumos<a name="smartos-and-illumos" class="anchor" href="#smartos-and-illumos"></a></h2>
 
 تأتي اسطوانة SmartOS مثبتة افتراضيا مع pkgsrc. على توزيعات أخرى من illumos، قم بتثبيت **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)** أولا و عندها يمكنك تثبيت الحزمة الثنائية اعتياديا:
 
@@ -213,7 +213,7 @@ sudo eopkg install nodejs
 xbps-install -Sy nodejs
 ```
 
-## ويندوز
+<h2>ويندوز<a name="windows" class="anchor" href="#windows"></a></h2>
 
 قم بتحميل [المثبت الخاص بويندوز](https://nodejs.org/#download) مباشرة من موقع [nodejs.org](https://nodejs.org).
 
