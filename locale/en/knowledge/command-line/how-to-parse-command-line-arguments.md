@@ -57,37 +57,53 @@ JS PRO TIP: Remember to `break` after each `case` - otherwise you'll run the nex
 
 Referring to your command-line arguments by array index isn't very clean, and can quickly turn into a nightmare when you start working with flags and the like - imagine you made a server, and it needed a lot of arguments.  Imagine having to deal with something like `myapp -h host -p port -r -v -b --quiet -x -o outfile` - some flags need to know about what comes next, some don't, and most CLIs let users specify arguments in any order they want.  Sound like a fun string to parse?
 
-Luckily, there's a third party module that makes all of this trivial - it's called [Optimist](https://github.com/substack/node-optimist), written by one Mr. James Halliday (aka SubStack).  It's available via `npm`.  Use this command from your app's base path:
+Luckily, there are many third party modules that makes all of this trivial - one of which is [yargs](https://www.npmjs.com/package/yargs). It's available via `npm`.  Use this command from your app's base path:
 
-     npm install optimist
+     npm i yargs
      
-Once you have it, give it a try - it can really be a life-saver.  
+Once you have it, give it a try - it can really be a life-saver. Lets test it with little fun Leap Year checker and Current Time teller
 
-     var myArgs = require('optimist').argv,
-         help = 'This would be a great place for real help information.';
-     
-     if ((myArgs.h)||(myArgs.help)) {
-       console.log(help);
-       process.exit(0);
-     }
-     
-     switch (myArgs._[0]) {
-       case 'insult':
-         console.log(myArgs.n || myArgs.name, 'smells quite badly.');
-         break;
-       case 'compliment':
-         console.log(myArgs.n || myArgs.name, 'is really cool.');
-         break;
-       default:
-         console.log(help);
-     }
-     
-     console.log('myArgs: ', myArgs);
-     
-The last line was included to let you see how Optimist handles your arguments.  Here's a quick reference:
+     var yargs = require('yargs'),
+       argv = yargs
+      .command('lyr', 'Tells whether an year is leap year or not', {
+        year: {
+          description: 'the year to check for',
+          alias: 'y',
+          type: 'number',
+        }
+      })
+      .option('time', {
+        alias: 't',
+        description: 'Tell the present Time',
+        type: 'boolean',
+      })
+      .help()
+      .alias('help', 'h')
+      .argv;
 
-- `argv.$0` contains the first two elements of `process.argv` joined together - "node ./myapp.js".
-- `argv._` is an array containing each element not attached to a flag.
-- Individual flags become properties of `argv`, such as with `myArgs.h` and `myArgs.help`.  Note that non-single-letter flags must be passed in as `--flag`.  
+    if (argv.time) console.log('The current time is: ', new Date().toLocaleTimeString());
 
-For more information on Optimist and the many, many other things it can do for your command-line arguments, please visit [https://github.com/substack/node-optimist](https://github.com/substack/node-optimist)
+    if (argv._.includes('lyr')) {
+      var year = argv.year || new Date().getFullYear();
+      if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
+        console.log(`${year} is a Leap Year`);
+      } else console.log(`${year} is NOT a Leap Year`);
+    }
+
+    console.log(argv);
+
+The last line was included to let you see how `yargs` handles your arguments. Here's a quick reference:
+
+- `argv.$0` contains the name of the script file which is executed like: `$0: myapp.js`.
+- `argv._` is an array containing each element not attached to an option(or flag) these elements are referred as `commands` in yargs.
+- Individual options(flags) become properties of `argv`, such as with `argv.h` and `argv.time`.  Note that non-single-letter flags must be passed in as `--flag` like: `node myapp.js --time`.
+
+A summary of elements used in the program:
+
+- **argv**: This is the modified `process.argv` which we have configured with yargs.
+- **command()**: This method is used to add commands, their description and options which are applicable to this command only
+- **option()**: This method is used to add global options(flags) which can be accessed by all commands or without any command.
+- **help()**: This method is used to display a help dialogue when `--help` option is encountered which contains description oof ll the `commands` and `options` available.
+- **alias()**: This method provides an alias name to an option, like in the above code both `--help` and `-h` triggers the help dialogue.
+
+For more information on yargs and the many, many other things it can do for your command-line arguments, please visit [http://yargs.js.org/docs/](http://yargs.js.org/docs/)
