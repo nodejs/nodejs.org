@@ -41,9 +41,9 @@ NODE PRO TIP: Do remember to use `rl.close()` to close the transmitting otherwis
 
 The last part of the code uses `rl.on()` method to add an event listener to the `close` event which simply `console.log` to the output stream and exits the process. This part is completely optional and can be removed at will. For more in-depth details and usage refer to the docs [here](https://nodejs.org/api/readline.html).
 
-If all of this sounds complicated, or if you want a higher-level interface to this sort of thing, don't worry - as usual, the Node.js community has come to the rescue.  One particularly friendly and beautiful command line interface module to use for this is `inquirer.js` available on `npm`:
+If all of this sounds complicated, or if you want a higher-level interface to this sort of thing, don't worry - as usual, the Node.js community has come to the rescue.  One particularly friendly module to use for this is `prompt`, available on `npm`:
 
-     npm install inquirer
+     npm install prompt
 
 Prompt is built to be easy - if your eyes started to glaze over as soon as you saw `Readable Stream`, then this is the section for you.  Compare the following to the example above:
 
@@ -63,7 +63,7 @@ Prompt is built to be easy - if your eyes started to glaze over as soon as you s
         return 1;
       }
 
-NODE PRO TIP: This short script also demonstrates proper error handling in node - errors are a callback's first argument, and `return` is used with the error handler so that the rest of the function doesn't execute when errors happen.  For more information, look (here).
+NODE PRO TIP: This short script also demonstrates proper error handling in node - errors are a callback's first argument, and `return` is used with the error handler so that the rest of the function doesn't execute when errors happen.
 
 Prompt also makes it trivial to handle a certain set of recurring properties that one might want to attach. 
 
@@ -95,4 +95,4 @@ Prompt also makes it trivial to handle a certain set of recurring properties tha
         return 1;
       }
       
-For more information on Prompt, please see [the project's GitHub page](http://github.com/nodejitsu/node-prompt).
+For more information on Prompt, please see [the project's GitHub page](https://github.com/flatiron/prompt).
