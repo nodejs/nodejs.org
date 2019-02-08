@@ -63,7 +63,7 @@ However, there are some third-party solutions. For example, [Termux](https://ter
 pkg install nodejs
 ```
 
-Currently, Termux Node.js binaries are compiled without Inspector support and linked against `system-icu` (depending on `libicu` package).
+Currently, Termux Node.js binaries are linked against `system-icu` (depending on `libicu` package).
 -->
 <h2>안드로이드<a name="android" class="anchor" href="#android"></a></h2>
 
@@ -75,7 +75,7 @@ Node.js의 안드로이드 지원은 현재 시험 단계에 있기 때문에 No
 pkg install nodejs
 ```
 
-현재 Termux Node.js 바이너리는 Inspector 지원이 빠진 채 컴파일 되어 있으며, `libicu` 패키지에 의존하는 `system-icu`에 링크되어 있습니다.
+현재 Termux Node.js 바이너리는 `libicu` 패키지에 의존하는 `system-icu`에 링크되어 있습니다.
 
 <!--
 ## Arch Linux
