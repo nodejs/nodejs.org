@@ -48,9 +48,8 @@ Node.js 及 npm 套件可由公有軟體庫取得。
 ```bash
 pacman -S nodejs npm
 ```
-<!--請不要把此改成 ## 的形式，因為自動產生器會完全忽略非英語字元，導致生成的 anchor 名稱與上面實際的名稱不符合，導致無法正確跳轉到所要的位置。
-相關修復：HTTPs://github.com/nodejs/nodejs.org/pull/2028-->
-<h2>Debian 及 Ubuntu 系列發行版，企業版 Linux/Fedora 和 Snap packages<a name="debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages" class="anchor" href="#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages"></a></h2>
+
+## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages-->Debian 及 Ubuntu 系列發行版，企業版 Linux/Fedora 和 Snap packages
 
 [官方 Node.js 二進制發行版](https://github.com/nodesource/distributions/blob/master/README.md) 透過 NodeSource 提供.
 
@@ -129,9 +128,7 @@ Node.js 可於 ports 系統中取得。
 pkg_add node
 ```
 
-<!--請不要把此改成 ## 的形式，因為自動產生器會完全忽略非英語字元，導致生成的 anchor 名稱與上面實際的名稱不符合，導致無法正確跳轉到所要的位置。
-相關修復：HTTPs://github.com/nodejs/nodejs.org/pull/2028-->
-<h2>openSUSE 及 SLE<a name="opensuse-and-sle" class="anchor" href="#opensuse-and-sle"></a></h2>
+## <!--opensuse-and-sle-->openSUSE 及 SLE
 
 主要軟體庫中都提供了下列套件：
 
@@ -189,9 +186,7 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-<!--請不要把此改成 ## 的形式，因為自動產生器會完全忽略非英語字元，導致生成的 anchor 名稱與上面實際的名稱不符合，導致無法正確跳轉到所要的位置。
-相關修復：HTTPs://github.com/nodejs/nodejs.org/pull/2028-->
-<h2>SmartOS 及 illumos<a name="smartos-and-illumos" class="anchor" href="#smartos-and-illumos"></a></h2>
+## <!--smartos-and-illumos-->SmartOS 及 illumos
 
 SmartOS 映像檔已經預載了 pkgsrc，其他的 illumos 發行版則需要先**[安裝pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**，接著你就可以依照平常的方式安裝二進制套件：
 

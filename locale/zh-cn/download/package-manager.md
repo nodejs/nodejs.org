@@ -48,10 +48,11 @@ pacman -S nodejs npm
 ```
 
 <!--
-请不要把此改成 ## 的形式，因为自动生成器会完全忽略非英语字符，导致生成的 anchor 名称与上面实际的名称不符合，导致无法正确跳转到所要的位置。
-相关修复：https://github.com/nodejs/nodejs.org/pull/2028
+If your title has non-English characters, please
+put your anchor name into the comment symbol before
+your real title.
 -->
-<h2>基于 Linux 的 Debian 和 Ubuntu 发行版，Enterprise Linux/Fedora 和 Snap packages<a name="debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages" class="anchor" href="#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages"></a></h2>
+## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages--> 基于 Linux 的 Debian 和 Ubuntu 发行版，Enterprise Linux/Fedora 和 Snap packages
 
 [Node.js 官方二进制发行版](https://github.com/nodesource/distributions/blob/master/README.md) 由 NodeSource 提供。
 
@@ -131,11 +132,8 @@ Node.js 也可以通过 ports 系统获取。
 ```bash
 pkg_add node
 ```
-<!--
-请不要把此改成 ## 的形式，因为自动生成器会完全忽略非英语字符，导致生成的 anchor 名称与上面实际的名称不符合，导致无法正确跳转到所要的位置。
-相关修复：https://github.com/nodejs/nodejs.org/pull/2028
- -->
-<h2>openSUSE 和 SLE<a name="opensuse-and-sle" class="anchor" href="#opensuse-and-sle"></a></h2>
+
+## <!--opensuse-and-sle-->openSUSE 和 SLE
 
 在以下安装包中，Node.js在以下主版本库中可用：
 
@@ -192,11 +190,7 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-<!--
-请不要把此改成 ## 的形式，因为自动生成器会完全忽略非英语字符，导致生成的 anchor 名称与上面实际的名称不符合，导致无法正确跳转到所要的位置。
-相关修复：https://github.com/nodejs/nodejs.org/pull/2028
- -->
-<h2>SmartOS 和 illumos<a name="smartos-and-illumos" class="anchor" href="#smartos-and-illumos"></a></h2>
+## <!--smartos-and-illumos-->SmartOS 和 illumos
 
 SmartOS 镜像随 pkgsrc 预装。在其它的 illumos 发布版中，先安装 **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**，然后你可以正常安装二进制文件包：
 

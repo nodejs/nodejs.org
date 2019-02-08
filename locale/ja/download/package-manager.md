@@ -13,13 +13,13 @@ title: パッケージマネージャを利用した Node.js のインストー�
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
-* [Debian と Ubuntu ベースの Linux ディストリビューション、エンタープライズ Linux/Fedora と Snap パッケージ](#debian-ubuntu-linux-linux-fedora-snap)
+* [Debian と Ubuntu ベースの Linux ディストリビューション、エンタープライズ Linux/Fedora と Snap パッケージ](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
 * [FreeBSD と OpenBSD](#freebsd-openbsd)
 * [Gentoo](#gentoo)
 * [NetBSD](#netbsd)
-* [openSUSE と SLE](#opensuse-sle)
+* [openSUSE と SLE](#opensuse-and-sle)
 * [macOS](#macos)
-* [SmartOS と illumos](#smartos-illumos)
+* [SmartOS と illumos](#smartos-and-illumos)
 * [Solus](#solus)
 * [Void Linux](#void-linux)
 * [Windows](#windows)
@@ -48,7 +48,7 @@ pacman -S nodejs npm
 ```
 
 
-## Debian と Ubuntu ベースの Linux ディストリビューション、エンタープライズ Linux/Fedora と Snap パッケージ
+## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages-->Debian と Ubuntu ベースの Linux ディストリビューション、エンタープライズ Linux/Fedora と Snap パッケージ
 
 <!-- [Official Node.js binary distributions](https://github.com/nodesource/distributions/blob/master/README.md) are provided by NodeSource. -->
 [Node.js 公式のバイナリディストリビューション](https://github.com/nodesource/distributions/blob/master/README.md)が NodeSource によって提供されています。
@@ -120,7 +120,7 @@ pkgin -y install nodejs
 
 
 <!-- ## openSUSE and SLE -->
-## openSUSE と SLE
+## <!--opensuse-and-sle-->openSUSE と SLE
 
 <!-- [Download Node.js via openSUSE one-click](http://software.opensuse.org/download.html?project=devel%3Alanguages%3Anodejs&package=nodejs). -->
 [openSUSE one-click を利用して Node.js をダウンロード](http://software.opensuse.org/download.html?project=devel%3Alanguages%3Anodejs&package=nodejs)する。
@@ -185,7 +185,7 @@ cd pkgsrc/lang/nodejs && bmake install
 ```
 
 <!-- ## SmartOS and illumos -->
-## SmartOS と illumos
+## <!--smartos-and-illumos-->SmartOS と illumos
 
 <!-- SmartOS images come with pkgsrc pre-installed.  On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal: -->
 SmartOS のイメージには pkgsrc が付属しています。一方、illumos ディストリビューションの場合は、まず **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)** をインストールし、それから、通常通りバイナリパッケージをインストールすることが出来ます:

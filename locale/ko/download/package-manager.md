@@ -43,9 +43,9 @@ title: 패키지 매니저로 Node.js 설치하기
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
 * [OpenBSD](#openbsd)
-* [openSUSE와 SLE](#opensuse-and-sle)
+* [openSUSE 와 SLE](#opensuse-and-sle)
 * [macOS](#macos)
-* [SmartOS와 illumos](#smartos-and-illumos)
+* [SmartOS 와 illumos](#smartos-and-illumos)
 * [Solus](#solus)
 * [Void Linux](#void-linux)
 * [Windows](#windows)
@@ -65,7 +65,7 @@ pkg install nodejs
 
 Currently, Termux Node.js binaries are linked against `system-icu` (depending on `libicu` package).
 -->
-<h2>안드로이드<a name="android" class="anchor" href="#android"></a></h2>
+## <!--android-->안드로이드
 
 Node.js의 안드로이드 지원은 현재 시험 단계에 있기 때문에 Node.js 개발자들이 제공하는 미리 컴파일된 바이너리가 아직 없습니다.
 
@@ -99,7 +99,7 @@ pacman -S nodejs npm
 
 [Official Node.js binary distributions](https://github.com/nodesource/distributions/blob/master/README.md) are provided by NodeSource.
 -->
-<h2>데비안과 우분투 기반 리눅스 배포판. 엔터프라이즈 리눅스/페도라와 Snap 패키지<a name="debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages" class="anchor" href="#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages"></a></h2>
+## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages-->데비안과 우분투 기반 리눅스 배포판. 엔터프라이즈 리눅스/페도라와 Snap 패키지
 
 [공식 Node.js 바이너리 배포판](https://github.com/nodesource/distributions/blob/master/README.md)은 NodeSource가 제공합니다.
 
@@ -284,7 +284,7 @@ zypper install nodejs4
 ```
 -->
 
-<h2>openSUSE와 SLE<a name="opensuse-and-sle" class="anchor" href="#opensuse-and-sle"></a></h2>
+## <!--opensuse-and-sle-->openSUSE 와 SLE
 
 다음 패키지 아래 주 저장소에서 Node.js를 사용할 수 있습니다.
 
@@ -398,7 +398,7 @@ Or build manually from pkgsrc:
 cd pkgsrc/lang/nodejs && bmake install
 ```
 -->
-<h2>SmartOS와 illumoss<a name="smartos-and-illumos" class="anchor" href="#smartos-and-illumos"></a></h2>
+## <!--smartos-and-illumos-->SmartOS 와 illumoss
 
 SmartOS 이미지에는 미리 설치된 pkgsrc가 포함되어 있습니다. illumos 배포판에서는 먼저
 **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**를 설치하고 평소처럼
