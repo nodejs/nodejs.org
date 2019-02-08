@@ -5,7 +5,7 @@
   "homepage": "https://nodejs.org",
   "scripts": {
     "build": "node build.js",
-    "build:deploy":"node build.js --preserveLocale",
+    "build:deploy": "node build.js --preserveLocale",
     "serve": "node server.js",
     "external:survey": "rsync -avz --exclude 'node_modules*' --exclude 'package*' external/survey-2018/ build/en/user-survey-report",
     "gzip": "find build -type f \\( -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.xml' -o -name '*.json' \\) -exec gzip -kf9 {} \\;",
