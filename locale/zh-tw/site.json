@@ -75,7 +75,7 @@
       "text": "發佈文件的 SHASUM 簽名"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "在 Linux 上，通過二進位檔案安裝 Node.js"
     }
   },
   "docs": {
@@ -121,6 +121,14 @@
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
       "text": "管理"
+    },
+    "node-meetups": {
+      "link": "get-involved/node-meetups",
+      "text": "Node.js 開發者大會"
+    },
+    "node-speakers": {
+      "link": "get-involved/node-speakers",
+      "text": "本地 Node.js 演講者"
     }
   },
   "security": {
