@@ -481,6 +481,12 @@ REQUIREMENTS
 - Organizer name - Stefan von Ellenrieder
 - Organizer contact info -
 
+- [Meetup](https://www.meetup.com/austinnodejs/)
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Matt Walters
+- Organizer contact info -
+
 ##### Dallas
 
 - [Meetup](https://www.meetup.com/DallasNode/)
