@@ -76,6 +76,11 @@ REQUIREMENTS
 ### Brazil
 
 #### Sao Paulo
+- [Meetup](https://meetup.com/nodebr)
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - [Erick Wendel](https://github.com/erickwendel), Alan Hoffmeister, Igor França, Icaro Caldeira, Marcus Bergamo
+- Organizer contact info - [@erickwendel_](twitter.com/erickwendel_)
 
 ##### Campinas
 
