@@ -470,11 +470,11 @@ REQUIREMENTS
 
 ##### Portland
 
-- [Meetup](https://www.meetup.com/pdxnode/)
-- Frequency of meetups - monthly
-- How to submit a talk? DM @obensource on twitter
-- Organizer name - Ben Michel
-- Organizer contact info - 
+- [Meetup](http://pdxnode.org/)
+- Frequency of meetups - Biweekly (presentation night 2nd Thursdays, hack night last Thursdays)
+- How to submit a talk? [Submit a talk proposal](https://github.com/PDXNode/pdxnode/issues/new), or DM [@obensource](https://twitter.com/obensource) or [@MichelleJLevine](https://twitter.com/MichelleJLevine) on twitter
+- Organizer names - Ben Michel, Michelle Levine
+- Organizer contact info - Ben: benpmichel@gmail.com, Michelle: michelle@michellejl.com
 
 #### Philadelphia
 
