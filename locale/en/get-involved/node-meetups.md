@@ -569,11 +569,11 @@ REQUIREMENTS
 
 ##### Kiev
 
-- [Meetup](https://www.meetup.com/KievNodeJS/)
-- Frequency of meetups - monthly
-- How to submit a talk?
+- [Meetup](https://www.meetup.com/NodeUA/), [Old group](https://www.meetup.com/KievNodeJS/)
+- Frequency of meetups - 1-8 times a month
+- How to submit a talk? Contact organizer by email.
 - Organizer name - Timur Shemsedinov
-- Organizer contact info -
+- Organizer contact info - [Email](mailto:timur.shemsedinov@gmail.com)
 
 ### Germany
 
