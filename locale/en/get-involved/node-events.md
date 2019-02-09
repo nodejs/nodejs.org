@@ -1,5 +1,5 @@
 ---
-title: Node Events
+title: Node.js Events
 layout: contribute.hbs
 ---
 
