@@ -12,46 +12,56 @@ Passing in arguments via the command line is an extremely basic programming task
 
 Node.js exposes this array for every running process in the form of `process.argv` - let's take a look at an example.  Make a file called `argv.js` and add this line:
 
-     console.log(process.argv);
+```js
+console.log(process.argv);
+```
 
 Now save it, and try the following in your shell:
 
-     $ node argv.js one two three four five
-     [ 'node',
-       '/home/avian/argvdemo/argv.js',
-       'one',
-       'two',
-       'three',
-       'four',
-       'five' ]
+```bash
+$ node argv.js one two three four five
+[ 'node',
+  '/home/avian/argvdemo/argv.js',
+  'one',
+  'two',
+  'three',
+  'four',
+  'five' ]
+```
 
 There you have it - an array containing any arguments you passed in.  Notice the first two elements - `node` and the path to your script.  These will always be present - even if your program takes no arguments of its own, your script's interpreter and path are still considered arguments to the shell you're using.  
 
 Where everyday CLI arguments are concerned, you'll want to skip the first two.  Now try this in `argv.js`:
 
-     var myArgs = process.argv.slice(2);
-     console.log('myArgs: ', myArgs);
+```js
+var myArgs = process.argv.slice(2);
+console.log('myArgs: ', myArgs);
+```
 
 This yields:
 
-     $ node argv.js one two three four
-     myArgs:  [ 'one', 'two', 'three', 'four' ]
+```bash
+$ node argv.js one two three four
+myArgs:  [ 'one', 'two', 'three', 'four' ]
+```
 
 Now let's actually do something with the args:
 
-     var myArgs = process.argv.slice(2);
-     console.log('myArgs: ', myArgs);
+```js
+var myArgs = process.argv.slice(2);
+console.log('myArgs: ', myArgs);
 
-     switch (myArgs[0]) {
-       case 'insult':
-         console.log(myArgs[1], 'smells quite badly.');
-         break;
-       case 'compliment':
-         console.log(myArgs[1], 'is really cool.');
-         break;
-       default:
-         console.log('Sorry, that is not something I know how to do.');
-     }
+switch (myArgs[0]) {
+case 'insult':
+    console.log(myArgs[1], 'smells quite badly.');
+    break;
+case 'compliment':
+    console.log(myArgs[1], 'is really cool.');
+    break;
+default:
+    console.log('Sorry, that is not something I know how to do.');
+}
+```
 
 JS PRO TIP: Remember to `break` after each `case` - otherwise you'll run the next case too!
 
@@ -59,38 +69,47 @@ Referring to your command-line arguments by array index isn't very clean, and ca
 
 Luckily, there are many third party modules that makes all of this trivial - one of which is [yargs](https://www.npmjs.com/package/yargs). It's available via `npm`.  Use this command from your app's base path:
 
-     npm i yargs
-     
+```
+npm i yargs
+```
+
 Once you have it, give it a try - it can really be a life-saver. Lets test it with little fun Leap Year checker and Current Time teller
 
-     var yargs = require('yargs'),
-       argv = yargs
-      .command('lyr', 'Tells whether an year is leap year or not', {
+```js
+const yargs = require('yargs');
+
+const argv = yargs
+    .command('lyr', 'Tells whether an year is leap year or not', {
         year: {
-          description: 'the year to check for',
-          alias: 'y',
-          type: 'number',
+            description: 'the year to check for',
+            alias: 'y',
+            type: 'number',
         }
-      })
-      .option('time', {
+    })
+    .option('time', {
         alias: 't',
         description: 'Tell the present Time',
         type: 'boolean',
-      })
-      .help()
-      .alias('help', 'h')
-      .argv;
+    })
+    .help()
+    .alias('help', 'h')
+    .argv;
 
-    if (argv.time) console.log('The current time is: ', new Date().toLocaleTimeString());
+if (argv.time) {
+    console.log('The current time is: ', new Date().toLocaleTimeString());
+}
 
-    if (argv._.includes('lyr')) {
-      var year = argv.year || new Date().getFullYear();
-      if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
+if (argv._.includes('lyr')) {
+    const year = argv.year || new Date().getFullYear();
+    if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
         console.log(`${year} is a Leap Year`);
-      } else console.log(`${year} is NOT a Leap Year`);
+    } else {
+        console.log(`${year} is NOT a Leap Year`);
     }
+}
 
-    console.log(argv);
+console.log(argv);
+```
 
 The last line was included to let you see how `yargs` handles your arguments. Here's a quick reference:
 
