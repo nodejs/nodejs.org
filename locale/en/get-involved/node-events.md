@@ -5,7 +5,7 @@ layout: contribute.hbs
 
 # Node.js Events
 
-This is a list of node events and conferences. Please submit a PR if you'd like to add a new event that isn't yet tracked in the list below.
+This is a list of Node.js events and conferences. Please submit a PR if you'd like to add a new event that isn't yet tracked in the list below.
 
 ## Notes for adding events
 
