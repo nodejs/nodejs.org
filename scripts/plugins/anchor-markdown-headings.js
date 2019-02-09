@@ -1,7 +1,7 @@
 'use strict'
 
 // Check whether we've got the comment
-// Matches <!--comment-->, <!-- comment --> and even <!-- comment -->
+// Matches <!--comment-->, <!--comment --> and even <!-- comment-->
 // (20 hex = 32 dec = space character)
 const ANCHOR_COMMENTREG = /<!--\x20?([\w-]+)\x20?-->/gi
 
