@@ -15,23 +15,25 @@ Streams are Node's way of dealing with evented I/O - they're a big topic, and yo
 
 Here's a simple example.  Try the following in a new file:
 
-    var readline = require("readline"),
-      rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-      });
+```js
+const readline = require("readline");
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
-    rl.question("What is your name ? ", function(name) {
-      rl.question("Which Country do you belong ? ", function(country) {
+rl.question("What is your name ? ", function(name) {
+    rl.question("Which Country do you belong ? ", function(country) {
         console.log(`${name}, is a citizen of ${country}`);
         rl.close();
-      });
     });
+});
 
-    rl.on("close", function() {
-      console.log("\nBYE BYE !!!");
-      process.exit(0);
-    });
+rl.on("close", function() {
+    console.log("\nBYE BYE !!!");
+    process.exit(0);
+});
+```
 
 In the above code `readline.createInterface()` is used for creating an instance of `readline` by configuring the readable and the writable streams. The `input` key takes a readable stream like `process.stdin` or `fs.createReadStream('file.txt')` and the `output` key takes a writable stream like `process.stdout` or `process.stderr`.
 
@@ -43,56 +45,62 @@ The last part of the code uses `rl.on()` method to add an event listener to the 
 
 If all of this sounds complicated, or if you want a higher-level interface to this sort of thing, don't worry - as usual, the Node.js community has come to the rescue.  One particularly friendly module to use for this is `prompt`, available on `npm`:
 
-     npm install prompt
+```bash
+npm install prompt
+```
 
 Prompt is built to be easy - if your eyes started to glaze over as soon as you saw `Readable Stream`, then this is the section for you.  Compare the following to the example above:
 
-      var prompt = require('prompt');
-      
-      prompt.start();
-      
-      prompt.get(['username', 'email'], function (err, result) {
-        if (err) { return onErr(err); }
-        console.log('Command-line input received:');
-        console.log('  Username: ' + result.username);
-        console.log('  Email: ' + result.email);
-      });
-      
-      function onErr(err) {
-        console.log(err);
-        return 1;
-      }
+```js
+const prompt = require('prompt');
+
+prompt.start();
+
+prompt.get(['username', 'email'], function (err, result) {
+    if (err) { return onErr(err); }
+    console.log('Command-line input received:');
+    console.log('  Username: ' + result.username);
+    console.log('  Email: ' + result.email);
+});
+
+function onErr(err) {
+    console.log(err);
+    return 1;
+}
+```
 
 NODE PRO TIP: This short script also demonstrates proper error handling in node - errors are a callback's first argument, and `return` is used with the error handler so that the rest of the function doesn't execute when errors happen.
 
 Prompt also makes it trivial to handle a certain set of recurring properties that one might want to attach. 
 
-      var prompt = require('prompt');
+```js
+const prompt = require('prompt');
 
-      var properties = [
-        {
-          name: 'username', 
-          validator: /^[a-zA-Z\s\-]+$/,
-          warning: 'Username must be only letters, spaces, or dashes'
-        },
-        {
-          name: 'password',
-          hidden: true
-        }
-      ];
+const properties = [
+    {
+        name: 'username', 
+        validator: /^[a-zA-Z\s\-]+$/,
+        warning: 'Username must be only letters, spaces, or dashes'
+    },
+    {
+        name: 'password',
+        hidden: true
+    }
+];
 
-      prompt.start();
+prompt.start();
 
-      prompt.get(properties, function (err, result) {
-        if (err) { return onErr(err); }
-        console.log('Command-line input received:');
-        console.log('  Username: ' + result.username);
-        console.log('  Password: ' + result.password);
-      });
+prompt.get(properties, function (err, result) {
+    if (err) { return onErr(err); }
+    console.log('Command-line input received:');
+    console.log('  Username: ' + result.username);
+    console.log('  Password: ' + result.password);
+});
 
-      function onErr(err) {
-        console.log(err);
-        return 1;
-      }
-      
+function onErr(err) {
+    console.log(err);
+    return 1;
+}
+```
+
 For more information on Prompt, please see [the project's GitHub page](https://github.com/flatiron/prompt).
