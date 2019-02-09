@@ -3,7 +3,7 @@ title: Node.js Events
 layout: contribute.hbs
 ---
 
-# Node Events
+# Node.js Events
 
 This is a list of node events and conferences. Please submit a PR if you'd like to add a new event that isn't yet tracked in the list below.
 
