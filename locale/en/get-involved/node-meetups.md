@@ -270,6 +270,16 @@ REQUIREMENTS
 - Organizer name - George Czabania
 - Organizer contact info -
 
+### South Africa
+
+##### Cape Town
+
+- [Meetup](https://www.meetup.com/nodecpt/)
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Guy Bedford
+- Organizer contact info -
+
 ### Spain
 
 ##### Madrid
@@ -479,6 +489,12 @@ REQUIREMENTS
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Stefan von Ellenrieder
+- Organizer contact info -
+
+- [Meetup](https://www.meetup.com/austinnodejs/)
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Matt Walters
 - Organizer contact info -
 
 ##### Dallas
