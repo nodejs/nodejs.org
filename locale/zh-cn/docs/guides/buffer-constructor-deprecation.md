@@ -14,7 +14,7 @@ layout: docs.hbs
 Buffer() 和 new Buffer() 构造函数对于有安全顾虑的人而言是不推荐使用的。请使用新的方法 Buffer.alloc()，Buffer.allocUnsafe() 或者是 Buffer.from() 构造函数。
 </div>
 
-- [变化 1： 在 Node.js ≤ 4.4.x 和 5.0.0 — 5.9.x 版本中不支持](#variant-1) (*recommended*)
+- [变化 1： 在 Node.js ≤ 4.4.x 和 5.0.0 — 5.9.x 版本中不支持](#variant-1) (*推荐*)
 - [变化 2： 使用 polyfill 库](#variant-2)
 - [变化 3： 带安全守护的手动检测](#variant-3)
 
@@ -54,8 +54,7 @@ ESLint 规则 [不使用缓存构造函数](https://eslint.org/docs/rules/no-buf
 
 不过这存在一个劣势，举个例子，当 `Buffer` 被 polyfill重写的时候，它不保证一直[正常工作](https://github.com/chalker/safer-buffer#why-not-safe-buffer)。所以推荐使用此方法和其它如上描述的方法在一起使用。
 
-<a id="variant-1"></a>
-## 变化 1： 在 Node.js ≤ 4.4.x 和 5.0.0 — 5.9.x 版本中不支持
+## <!--variant-1-->变化 1： 在 Node.js ≤ 4.4.x 和 5.0.0 — 5.9.x 版本中不支持
 
 这是现在的一个推荐的解决方案，暗示仅有极小的成本。
 
@@ -77,8 +76,7 @@ Node.js 5.x 发行自 2016 年就不再支持，而 4.x 版本 发行线支持�
 
 _如果你目前支持那些旧版本的 Node.js，并且抛弃对它们的支持又不可能的情况下，或者你需要支持你包中的旧版本情况下，请考虑使用 [版本 2](#variant-2)，或者 [版本 3](#variant-3)。这样人们可以在使用这些旧版本情况下照样修复这些安全问题。那样的话，这些由不安全的 `Buffer` 所引发的问题会被你彻底根除，你的用户也不用在你运行 Node.js 10 的时候观察你的运行时废弃警告。_
 
-<a id="variant-2"></a>
-## 变化 2： 使用替换库
+## <!--variant-2-->变化 2： 使用替换库
 
 存在着三种替换库：
 
@@ -106,8 +104,7 @@ _如果你目前支持那些旧版本的 Node.js，并且抛弃对它们的支�
 
 _如果你抛弃了对 Node.js 版本小于 4.5.0 的支持，请不要忘记把替代库也一起去掉。_
 
-<a id="variant-3"></a>
-## 变化 3 — 带安全守护的手动检测
+## <!--variant-3-->变化 3 — 带安全守护的手动检测
 
 在某些情况下这对于你创建 `Buffer` 实例是有帮助的（例如：只需要一个实例的情况下）。或者你有你自己的包装围绕在它们身边。
 
@@ -178,11 +175,9 @@ const buf = Buffer.alloc ? Buffer.alloc(number) : new Buffer(number).fill(0);
 
 _注意，当你不用 0 去填充缓存，此问题同样发生在 `new Buffer()` 上。这依赖于 Node.js 版本（缺少类型检查也会额外增加 DoS 攻击）。_
 
-<a id="faq"></a>
-## 常见问题
+## <!--faq-->常见问题
 
-<a id="design-flaws"></a>
-###  `Buffer` 构造函数有什么问题？
+### <!--design-flaws-->`Buffer` 构造函数有什么问题？
 
 `Buffer` 构造函数可以用不同方式创建缓存：
 
@@ -220,7 +215,6 @@ function stringToBase64(req, res) {
 
 当使用 `Buffer.from(req.body.string)` 的时候，如果传入一个数字总是抛出异常，给程序提供了一个总是可以自我处理的机会。
 
-<a id="ecosystem-usage"></a>
-### `Buffer()` 构造函数废弃有一阵了，它有问题吗？
+### <!--ecosystem-usage-->`Buffer()` 构造函数废弃有一阵了，它有问题吗？
 
 检测 `npm` 生态系统的代码，表明 `Buffer()` 仍然广泛被使用。这包含新提交的代码，以及这类代码的使用仍然在 *增长中*。

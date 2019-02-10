@@ -1,10 +1,5 @@
 'use strict'
 
-// Check whether we've got the comment
-// Matches <!--comment-->, <!--comment --> and even <!-- comment-->
-// (20 hex = 32 dec = space character)
-const ANCHOR_COMMENTREG = /<!--\x20?([\w-]+)\x20?-->/gi
-
 /**
  * This module will automatically replace the header style words
  * (such as `#`,`##`...ect) to an anchor name.
@@ -18,6 +13,11 @@ const ANCHOR_COMMENTREG = /<!--\x20?([\w-]+)\x20?-->/gi
  * own title beside it.
  */
 module.exports = function anchorMarkdownHeadings (text, level, raw) {
+  // Check whether we've got the comment matches
+  // <!--comment-->, <!--comment --> and even <!-- comment-->
+  // (20 hex = 32 dec = space character)
+  const ANCHOR_COMMENTREG = /<!--\x20?([\w|-]+)\x20?-->/gi
+
   let anchorTitle = null
 
   // If we've checked the title has a comment symbol,
@@ -38,7 +38,7 @@ module.exports = function anchorMarkdownHeadings (text, level, raw) {
   anchorTitle = anchorTitle.toLowerCase()
 
   return '<h' + level + ' id="header-' + anchorTitle + '">' + text + '<a name="' +
-  anchorTitle + '" class="anchor" href="#' +
-  anchorTitle + '" aria-labelledby="header-' +
-  anchorTitle + '"></a></h' + level + '>'
+    anchorTitle + '" class="anchor" href="#' +
+    anchorTitle + '" aria-labelledby="header-' +
+    anchorTitle + '"></a></h' + level + '>'
 }
