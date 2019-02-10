@@ -75,7 +75,7 @@ REQUIREMENTS
 
 ### Brazil
 
-#### Sao Paulo
+#### São Paulo
 
 - [Meetup](https://meetup.com/nodebr)
 - Frequency of meetups - monthly
