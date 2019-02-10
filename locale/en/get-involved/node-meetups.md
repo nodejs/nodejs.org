@@ -533,7 +533,7 @@ REQUIREMENTS
 ### UK
 
 ##### London
-
+###### LNUG
 - [Meetup](https://www.meetup.com/london-nodejs/)
 - [GitHub/lnug](https://github.com/lnug/)
 - Frequency of meetups - monthly
@@ -541,7 +541,7 @@ REQUIREMENTS
 - Organizer name - Adam Davis
 - Organizer contact info - contact@lnug.org, [@lnugOrg](https://twitter.com/lnugorg)
 
-
+###### Node Workshopes
 - [Meetup](https://www.meetup.com/NodeWorkshops//)
 - Frequency of meetups - monthly
 - How to submit a talk?
