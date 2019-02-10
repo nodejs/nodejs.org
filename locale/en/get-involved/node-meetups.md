@@ -75,12 +75,13 @@ REQUIREMENTS
 
 ### Brazil
 
-#### Sao Paulo
+#### São Paulo
+
 - [Meetup](https://meetup.com/nodebr)
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - [Erick Wendel](https://github.com/erickwendel), Alan Hoffmeister, Igor França, Icaro Caldeira, Marcus Bergamo
-- Organizer contact info - [@erickwendel_](twitter.com/erickwendel_)
+- Organizer names - [Erick Wendel](https://github.com/erickwendel), [Alan Hoffmeister](https://github.com/alanhoff), [Igor França](https://github.com/horaddrim), [Icaro Caldeira](https://github.com/icarcal), [Marcus Bergamo](https://github.com/thebergamo), [Igor Halfeld](https://github.com/igorHalfeld).
+- Organizer contact info - [@erickwendel_](https://twitter.com/erickwendel_)
 
 ##### Campinas
 
@@ -99,6 +100,7 @@ REQUIREMENTS
 - Organizer contact info -
 
 #### Rio Grande do Sul
+
 ##### Porto Alegre
 
 - [Meetup](https://www.meetup.com/Node-js-Porto-Alegre-Meetup/)
@@ -106,23 +108,6 @@ REQUIREMENTS
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Henrique Schreiner
 - Organizer contact info -
-
-#### Sao Paulo
-
-##### Sao Paulo
-
-- [Meetup](https://www.meetup.com/nodebr/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Erick Wendel
-- Organizer contact info -
-
-- [Meetup](https://www.meetup.com/learning-nodejs/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Thiago Adriano
-- Organizer contact info -
-
 
 ### Finland
 
