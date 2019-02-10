@@ -536,9 +536,11 @@ REQUIREMENTS
 
 - [Meetup](https://www.meetup.com/london-nodejs/)
 - Frequency of meetups - monthly
-- How to submit a talk? 
+- How to submit a talk? Visit our [speakers repos](https://github.com/lnug/speakers) and read the guidelines, and [submit a talk proposal as a new issue](https://github.com/lnug/speakers/issues). 
 - Organizer name - Adam Davis
-- Organizer contact info -
+- Organizer contact info - contact@lnug.org
+
+---
 
 - [Meetup](https://www.meetup.com/NodeWorkshops//)
 - Frequency of meetups - monthly
