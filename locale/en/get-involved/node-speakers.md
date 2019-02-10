@@ -17,6 +17,20 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 
 ## Speakers
 
+### Brazil 🇧🇷
+
+#### São Paulo
+
+##### São Paulo 
+
+###### Erick Wendel
+
+- [@erickwendel_](https://twitter.com/erickwendel_)
+- [Activities](https://erickwendel.com)
+- [Linkedin](https://linkedin.com/in/erickwendel/)
+
+- Topics: Node.js, Kubernetes, Docker, Serverless, Communities, Cloud Computing.
+
 ### Canada 🇨🇦
 
 #### Ontario 
