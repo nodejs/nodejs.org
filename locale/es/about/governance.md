@@ -10,7 +10,7 @@ El proyecto Node.js sigue un modelo de [Búsqueda de Consenso][] en la toma de d
 
 ## Colaboradores
 
-El repositorio GitHub de [nodejs/node][] es mantenido por los Colaboradores que son agregados por el Comité Directivo Técnico ([TSC][]) de forma continua.
+El repositorio GitHub de [nodejs/node][] es mantenido por los Colaboradores que son agregados por el Comité Directiv Técnico ([TSC][]) de forma continua.
 
 Las personas que hacen contribuciones importantes y valiosas se convierten en Colaboradores y se les otorga permisos de escritura al proyecto. Estas personas están identificadas por el TSC y su nominación se discute con los Colaboradores existentes. 
 
