@@ -5,7 +5,6 @@ layout: docs.hbs
 
 # Porting to the `Buffer.from()`/`Buffer.alloc()` API
 
-<a id="overview"></a>
 ## Overview
 
 This guide explains how to migrate to safe `Buffer` constructor methods. The migration fixes the following deprecation warning:
@@ -60,8 +59,7 @@ There is a drawback, though, that it doesn't always
 overridden e.g. with a polyfill, so recommended is a combination of this and some other method
 described above.
 
-<a id="variant-1"></a>
-## Variant 1: Drop support for Node.js ≤ 4.4.x and 5.0.0 — 5.9.x
+## <!--variant-1-->Variant 1: Drop support for Node.js ≤ 4.4.x and 5.0.0 — 5.9.x
 
 This is the recommended solution nowadays that would imply only minimal overhead.
 
@@ -91,8 +89,7 @@ or [Variant 3](#variant-3) on older branches, so people using those older branch
 the fix. That way, you will eradicate potential issues caused by unguarded `Buffer` API usage and
 your users will not observe a runtime deprecation warning when running your code on Node.js 10._
 
-<a id="variant-2"></a>
-## Variant 2: Use a polyfill
+## <!--variant-2-->Variant 2: Use a polyfill
 
 There are three different polyfills available:
 
@@ -136,8 +133,7 @@ is recommended.
 
 _Don't forget to drop the polyfill usage once you drop support for Node.js < 4.5.0._
 
-<a id="variant-3"></a>
-## Variant 3 — Manual detection, with safeguards
+## <!--variant-3-->Variant 3 — Manual detection, with safeguards
 
 This is useful if you create `Buffer` instances in only a few places (e.g. one), or you have your own
 wrapper around them.
@@ -223,11 +219,9 @@ leaking to the remote attacker.
 _Note that the same applies to `new Buffer()` usage without zero-filling, depending on the Node.js
 version (and lacking type checks also adds DoS to the list of potential problems)._
 
-<a id="faq"></a>
 ## FAQ
 
-<a id="design-flaws"></a>
-### What is wrong with the `Buffer` constructor?
+### <!--design-flaws-->What is wrong with the `Buffer` constructor?
 
 The `Buffer` constructor could be used to create a buffer in many different ways:
 
@@ -280,8 +274,7 @@ When using `Buffer.from(req.body.string)` instead, passing a number will always
 throw an exception instead, giving a controlled behavior that can always be
 handled by the program.
 
-<a id="ecosystem-usage"></a>
-### The `Buffer()` constructor has been deprecated for a while. Is this really an issue?
+### <!--ecosystem-usage-->The `Buffer()` constructor has been deprecated for a while. Is this really an issue?
 
 Surveys of code in the `npm` ecosystem have shown that the `Buffer()` constructor is still
 widely used. This includes new code, and overall usage of such code has actually been

@@ -52,11 +52,11 @@ const postMergeDownloads = [
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-aix-ppc64.tar.gz'
   },
   {
-    'title': 'SunOS 32-bit Binary',
+    'title': 'SmartOS 32-bit Binary',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-sunos-x86.tar.xz'
   },
   {
-    'title': 'SunOS 64-bit Binary',
+    'title': 'SmartOS 64-bit Binary',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-sunos-x64.tar.xz'
   },
   {
@@ -119,11 +119,11 @@ const legacyDownloads = [
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-linux-x64.tar.gz'
   },
   {
-    'title': 'SunOS 32-bit Binary',
+    'title': 'SmartOS 32-bit Binary',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-sunos-x86.tar.gz'
   },
   {
-    'title': 'SunOS 64-bit Binary',
+    'title': 'SmartOS 64-bit Binary',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-sunos-x64.tar.gz'
   },
   {
@@ -146,7 +146,7 @@ module.exports = (version) => {
   } else if (semver.satisfies(version, '>= 10.0.0')) {
     downloads = downloads.filter(ver =>
       ver.title !== 'Linux 32-bit Binary' &&
-      ver.title !== 'SunOS 32-bit Binary')
+      ver.title !== 'SmartOS 32-bit Binary')
   }
   return downloads.map((item) => resolveUrl(item, version))
 }

@@ -26,7 +26,7 @@ additional:
         その他のプラットフォームのための Node.js のビルドは、 Node.js コミュニティのメンバーによってメンテナンスされています。これらは Node.js のコアチームによってサポートされていません。また、最新の Node.js のリリースと同じ状態ではないかもしれないことにご注意ください。
     platform: Platform
     provider: Provider
-    SunOSBinaries: SunOS Binaries
+    SmartOSBinaries: SmartOS Binaries
     DockerImage: Docker Image
     officialDockerImage: Official Node.js Docker Image
     LinuxPowerSystems: Linux on Power Systems

@@ -5,7 +5,7 @@ const test = require('tape')
 test('anchorMarkdownHeadings', (t) => {
   const anchorMarkdownHeadings = require('../../scripts/plugins/anchor-markdown-headings')
 
-  t.plan(4)
+  t.plan(5)
   t.test('correctly pharses markdown heading without links', (t) => {
     const text = 'Simple title'
     const level = 1
@@ -56,6 +56,19 @@ test('anchorMarkdownHeadings', (t) => {
       '<a name="win-big" class="anchor" href="#win-big" ' +
       'aria-labelledby="header-win-big"></a></h4>'
 
+    t.plan(1)
+    t.equal(output, expected)
+  })
+
+  t.test('correctly pharses markdown heading with non-English characters', (t) => {
+    const text = '这是<a href="b">链接</a>的<a href="d">测试！</a>'
+    const level = 2
+    const raw = '<!-- anchor-With-Non-English-Characters -->这是[链接](b)c[测试！](d)'
+    const output = anchorMarkdownHeadings(text, level, raw)
+    const expected = '<h2 id="header-anchor-with-non-english-characters">' +
+      '这是<a href="b">链接</a>的<a href="d">测试！</a>' +
+      '<a name="anchor-with-non-english-characters" class="anchor" href="#anchor-with-non-english-characters" ' +
+      'aria-labelledby="header-anchor-with-non-english-characters"></a></h2>'
     t.plan(1)
     t.equal(output, expected)
   })

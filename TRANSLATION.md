@@ -40,7 +40,7 @@ would like to contribute to the translation of nodejs.org, please refer to the f
     * [`nodejs-sv`](https://github.com/nodejs/nodejs-sv) Swedish Community
     * [`nodejs-ta`](https://github.com/nodejs/nodejs-ta) Tamil Community
     * [`nodejs-tr`](https://github.com/nodejs/nodejs-tr) Turkish Community
-    * [`nodejs-zh-TW`](https://github.com/nodejs/nodejs-zh-TW) Taiwan Community
+    * [`nodejs-zh-TW`](https://github.com/nodejs/nodejs-zh-TW) Taiwanese Community
     * [`nodejs-uk`](https://github.com/nodejs/nodejs-uk) Ukrainian Community
     * [`nodejs-vi`](https://github.com/nodejs/nodejs-vi) Vietnamese Community
 

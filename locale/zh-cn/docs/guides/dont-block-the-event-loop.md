@@ -60,7 +60,7 @@ Node 模块中有如下这些 API 用到了工作线程池：
     1. [DNS](https://nodejs.org/api/dns.html)：`dns.lookup()`，`dns.lookupService()`。
     2. [文件系统](https://nodejs.org/api/fs.html#fs_threadpool_usage)：所有的文件系统 API。除 `fs.FSWatcher()` 和那些显式同步调用的 API 之外，都使用 libuv 的线程池。
 2. CPU 密集型任务：
-    1. [Crypto](https://nodejs.org/api/crypto.html)：`crypto.pbkdf2()`，`crypto.randomBytes()`，`crypto.randomFill()`。
+    1. [Crypto](https://nodejs.org/api/crypto.html)：`crypto.pbkdf2()`、`crypto.scrypt()`、`crypto.randomBytes()`、`crypto.randomFill()`、`crypto.generateKeyPair()`。
     2. [Zlib](https://nodejs.org/api/zlib.html#zlib_threadpool_usage)：所有 Zlib 相关函数，除那些显式同步调用的 API 之外，都适用 libuv 的线程池。
 
 在许多 Node 应用程序中，这些 API 是工作线程池任务的唯一来源。此外应用程序和模块可以使用 [C++ 插件](https://nodejs.org/api/addons.html) 向工作线程池提交其它任务。

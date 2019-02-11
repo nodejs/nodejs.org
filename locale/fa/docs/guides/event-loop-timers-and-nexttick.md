@@ -215,7 +215,7 @@ emitted via `process.nextTick()`.
 
 ## `setImmediate()` vs `setTimeout()`
 
-`setImmediate` and `setTimeout()` are similar, but behave in different
+`setImmediate()` and `setTimeout()` are similar, but behave in different
 ways depending on when they are called.
 
 * `setImmediate()` is designed to execute a script once the current
