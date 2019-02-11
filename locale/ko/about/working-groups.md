@@ -174,7 +174,7 @@ language community might then produce multiple localizations for
 various project resources.
 -->
 
-### i18n
+### [i18n](https://github.com/nodejs/i18n)
 
 i18n 워킹 그룹은 단순 번역 이상의 작업을 수행합니다. 이 워킹 그룹은 커뮤니티 회원들이 각자의 언어로
 협업할 수 있도록 하는 종점입니다.
