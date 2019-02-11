@@ -11,8 +11,8 @@
   "all-downloads": "모든 다운로드 보기",
   "nightly": "나이틀리 빌드",
   "chakracore-nightly": "Node-ChakraCore 나이틀리 빌드",
-  "previous": "너무 이른",
-  "next": "다음 것",
+  "previous": "이전",
+  "next": "다음",
   "feeds": [
     {
       "link": "feed/blog.xml",
@@ -36,6 +36,10 @@
     "governance": {
       "link": "about/governance",
       "text": "거버넌스"
+    },
+    "community": {
+      "link": "about/community",
+      "text": "커뮤니티"
     },
     "workinggroups": {
       "link": "about/working-groups",
@@ -71,10 +75,12 @@
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "릴리스 파일에 서명된 SHASUMS"
+      "text": "릴리스 파일에 서명된 SHASUMS",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "검증 방법"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "Linux에서 바이너리 아카이브를 통해 Node.js 설치하기"
     }
   },
   "docs": {
@@ -96,6 +102,10 @@
     "guides": {
       "link": "docs/guides",
       "text": "안내"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "의존성"
     }
   },
   "getinvolved": {
@@ -105,6 +115,10 @@
       "link": "get-involved/code-and-learn",
       "text": "코딩 + 배우기"
     },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "협업자 서밋"
+    },
     "contribute": {
       "link": "get-involved/contribute",
       "text": "기여하기"
@@ -112,6 +126,14 @@
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
       "text": "행동강령"
+    },
+    "node-meetups": {
+      "link": "get-involved/node-meetups",
+      "text": "Node.js 미트업"
+    },
+    "node-speakers": {
+      "link": "get-involved/node-speakers",
+      "text": "지역 Node.js 강연자"
     }
   },
   "security": {
