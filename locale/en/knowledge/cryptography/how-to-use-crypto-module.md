@@ -8,9 +8,9 @@ difficulty: 3
 layout: knowledge-post.hbs
 ---
 
-The [crypto](https://nodejs.org/docs/v0.4.10/api/crypto.html) module is a wrapper for [OpenSSL](http://en.wikipedia.org/wiki/Openssl) cryptographic functions. It supports calculating hashes, authentication with HMAC, ciphers, and more!
+The [crypto](https://nodejs.org/api/crypto.html) module is a wrapper for [OpenSSL](http://en.wikipedia.org/wiki/Openssl) cryptographic functions. It supports calculating hashes, authentication with HMAC, ciphers, and more!
 
-The crypto module is mostly useful as a tool for implementing [cryptographic protocols](http://en.wikipedia.org/wiki/Cryptographic_protocol) such as [TLS](http://en.wikipedia.org/wiki/Transport_Layer_Security) and [https](http://en.wikipedia.org/wiki/Https). For most users, Node's built-in [tls module](https://nodejs.org/docs/v0.4.10/api/tls.html) and [https module](https://nodejs.org/docs/v0.4.10/api/https.html) should more than suffice. However, for the user that only wants to use small parts of what's needed for full-scale cryptography or is crazy/desperate enough to implement a protocol using OpenSSL and Node: Read on.
+The crypto module is mostly useful as a tool for implementing [cryptographic protocols](http://en.wikipedia.org/wiki/Cryptographic_protocol) such as [TLS](http://en.wikipedia.org/wiki/Transport_Layer_Security) and [https](http://en.wikipedia.org/wiki/Https). For most users, Node's built-in [tls module](https://nodejs.org/api/tls.html) and [https module](https://nodejs.org/api/https.html) should more than suffice. However, for the user that only wants to use small parts of what's needed for full-scale cryptography or is crazy/desperate enough to implement a protocol using OpenSSL and Node: Read on.
 
 ## Hashes
 
@@ -37,10 +37,12 @@ The hashes that work with crypto are dependent on what your version of OpenSSL s
 
 Crypto has a method called `createHash` which allows you to calculate a hash. Its only argument is a string representing the hash This example finds the md5 hash for the string, "Man oh man do I love node!":
 
-    require("crypto")
-      .createHash("md5")
-      .update("Man oh man do I love node!")
-      .digest("hex");
+```js
+require("crypto")
+  .createHash("md5")
+  .update("Man oh man do I love node!")
+  .digest("hex");
+```
 
 The `update` method is used to push data to later be turned into a hash with the `digest` method. `update` can be invoked multiple times to ingest streaming data, such as buffers from a file read stream. The argument for `digest` represents the output format, and may either be "binary", "hex" or "base64". It defaults to binary.
 
@@ -50,9 +52,11 @@ HMAC stands for Hash-based Message Authentication Code, and is a process for app
 
 The API for hmacs is very similar to that of `createHash`, except that the method is called `createHmac` and it takes a key as a second argument:
 
-    require("crypto").createHmac("md5", "password")
-      .update("If you love node so much why don't you marry it?")
-      .digest("hex");
+```js
+require("crypto").createHmac("md5", "password")
+  .update("If you love node so much why don't you marry it?")
+  .digest("hex");
+```
 
 The resulting md5 hash is unique to both the input data and the key.
 
@@ -62,56 +66,76 @@ Ciphers allow you to encode and decode messages given a password.
 
 ### Cipher Algorithms That Work With Crypto
 
-Like crypto's hash algorithms, the cyphers that work with crypto are dependent on what your version of OpenSSL supports. You can get a list of hash types your OpenSSL supports by typing `openssl list-cipher-commands` into the command line for older versions, or `openssl list-cipher-algorithms` for newer versions of OpenSSL. OpenSSL supports *many* ciphers; A good and popular one is [AES192](http://en.wikipedia.org/wiki/Aes192).
+Like crypto's hash algorithms, the cyphers that work with crypto are dependent on what your version of OpenSSL supports. You can get a list of hash types your OpenSSL supports by typing `openssl list-cipher-commands` into the command line for older versions, or `openssl list-cipher-algorithms` for newer versions of OpenSSL. OpenSSL supports *many* ciphers; A good and popular one is `AES_128`.
 
 ### How To Use Cipher Algorithms with Crypto:
 
 Crypto comes with two methods for ciphering and deciphering:
 
-* `crypto.createCypher(algorithm, key)`
-* `crypto.createDecipher(algorithm, key)`
+* `crypto.createCipheriv(algorithm, key, iv)`
+* `crypto.createDecipheriv(algorithm, key, iv)`
 
 Both of these methods take arguments similarly to `createHmac`. They also both have analogous `update` functions. However, each use of `update` returns a chunk of the encoded/decoded data instead of requiring one to call `digest` to get the result. Moreover, after encoding (or decoding) your data, you will likely have to call the `final` method to get the last chunk of encoded information.
 
-Here's an example, slightly less trivial than previous examples, that uses crypto and [optimist](https://github.com/substack/node-optimist) to encode and decode messages from the command line:
+Another important addition in the cipher method is of the `iv` or [initialization vector](https://en.wikipedia.org/wiki/Initialization_vector). Initialization vectors should be unpredictable and unique, typically required to be random or pseudorandom. Randomization is crucial for encryption schemes to achieve semantic security, a property whereby repeated usage of the scheme under the same key does not allow an attacker to infer relationships between segments of the encrypted message.
 
-    #!/usr/bin/env node
+Here's an example, slightly less trivial than previous examples, that uses crypto and [yargs](https://github.com/yargs/yargs) to encode and decode messages from the command line:
 
-    var crypto = require("crypto"),
-        argv = require("optimist").argv;
+```js
+#!/usr/bin/env node
 
-    if (argv.e && argv.password) {
-        var cipher = crypto.createCipher("aes192", argv.password),
-            msg = [];
+const crypto = require('crypto'),
+    argv = require("yargs").argv,
+    iv = crypto
+      .createHash("md5")
+      .update("myHashedIV")
+      .digest();
 
-        argv._.forEach( function (phrase) {
-            msg.push(cipher.update(phrase, "binary", "hex"));
-        });
+if (argv.e && argv.key) {
+    const key = crypto
+        .createHash("md5")
+        .update(argv.key)
+        .digest(),
+        cipher = crypto.createCipheriv("aes128", key, iv),
+        msg = [];
 
-        msg.push(cipher.final("hex"));
-        console.log(msg.join(""));
+    argv._.forEach( function (phrase) {
+        msg.push(cipher.update(phrase, "binary", "hex"));
+    });
 
-    } else if (argv.d && argv.password) {
-        var decipher = crypto.createDecipher("aes192", argv.password),
-            msg = [];
+    msg.push(cipher.final("hex"));
+    console.log(msg.join(""));
 
-        argv._.forEach( function (phrase) {
-            msg.push(decipher.update(phrase, "hex", "binary"));
-        });
+} else if (argv.d && argv.key) {
+    const key = crypto
+        .createHash("md5")
+        .update(argv.key)
+        .digest(),
+        decipher = crypto.createDecipheriv("aes128", key, iv),
+        msg = [];
 
-        msg.push(decipher.final("binary"));
-        console.log(msg.join(""));   
-    }
+    argv._.forEach( function (phrase) {
+        msg.push(decipher.update(phrase, "hex", "binary"));
+    });
+
+    msg.push(decipher.final("binary"));
+    console.log(msg.join(""));
+}
+```
 
 Using this script to encode a message looks like this:
 
-    $ ./secretmsg.js -e --password="popcorn" "My treasure is buried behind Carl's Jr. on Telegraph."
-    6df66752b24f0886f8a6c55e56977788c2090bb657ff3bd645097f8abe11099963fb3bd9627986c60fa7e5120d8fead928cff620b37e3e79be8de519f490527a
+```bash
+$ node ./secretmsg.js -e --key="popcorn" "My treasure is buried behind Carl's Jr. on Telegraph."
+c01857868fc0a8b6320e67a3d063a25177d61b80bfada77056f1fd53c4cd6d6391034970ea5b159770131eea6f39d12873b4a2c3291110d955a669bf7ab90bf8
+```
 
-Now, if I gave somebody the same script, my encoded message and the password, they can decode the message and find out where I buried my treasure:
+Now, if I gave somebody the same script, my encoded message and the key, they can decode the message and find out where I buried my treasure:
 
-    $ ./secretmsg.js -d --password="popcorn" 6df66752b24f0886f8a6c55e56977788c2090bb657ff3bd645097f8abe11099963fb3bd9627986c60fa7e5120d8fead928cff620b37e3e79be8de519f490527a
-    My treasure is buried behind Carl's Jr. on Telegraph.
+```bash
+$ node ./secretmsg.js -d --key="popcorn" c01857868fc0a8b6320e67a3d063a25177d61b80bfada77056f1fd53c4cd6d6391034970ea5b159770131eea6f39d12873b4a2c3291110d955a669bf7ab90bf8
+My treasure is buried behind Carl's Jr. on Telegraph.
+```
 
 You should know that what I buried behind Carl's Jr was just a cigarette butt, and that this script is obviously not for serious use.
 
@@ -123,4 +147,4 @@ Crypto has other methods used for dealing with certificates and credentials, as 
 * `crypto.createSign`
 * `crypto.createVerify`
 
-These methods supply the last building blocks for a complete cryptographic protocol, and require an advanced knowledge of real-world cryptographic protocols to be useful. Again, it is recommended that developers use either the [tls](https://nodejs.org/docs/v0.4.10/api/tls.html) module or the [https](https://nodejs.org/docs/v0.4.10/api/https.html) module if applicable.
+These methods supply the last building blocks for a complete cryptographic protocol, and require an advanced knowledge of real-world cryptographic protocols to be useful. Again, it is recommended that developers use either the [tls](https://nodejs.org/api/tls.html) module or the [https](https://nodejs.org/api/https.html) module if applicable.
