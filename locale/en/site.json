@@ -131,6 +131,10 @@
       "link": "get-involved/node-meetups",
       "text": "Node.js Meetups"
     },
+    "node-events": {
+      "link": "get-involved/node-events",
+      "text": "Node.js Events"
+    },
     "node-speakers": {
       "link": "get-involved/node-speakers",
       "text": "Local Node.js Speakers"
