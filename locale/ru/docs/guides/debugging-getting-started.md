@@ -101,12 +101,12 @@ OS X). С узла 7 это активирует устаревший API отл
 
 #### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
 
-* * * * Вариант 1**: Открыть " chrome: / / inspect` в хроме на основе
+* Вариант 1: Открыть " chrome: / / inspect` в хроме на основе
   броузер. Нажмите кнопку Настроить и убедитесь, что целевой хост и порт
   перечислены.
-* **Вариант 2**: скопировать `devtoolsFrontendUrl` на выходе `/в JSON/список`
+* Вариант 2: скопировать `devtoolsFrontendUrl` на выходе `/в JSON/список`
   (см. выше) или-проверить подсказку текст и вставить в Хром.
-* * * * Опция 3**: Установите расширение Chrome NIM (Node Inspector Manager):  
+* Опция 3: Установите расширение Chrome NIM (Node Inspector Manager):  
   https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 
 #### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+

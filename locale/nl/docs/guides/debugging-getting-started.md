@@ -104,12 +104,12 @@ informatie hierover:
 
 #### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
 
-* * * Optie 1**: Open 'chroom: / / inspecteren' in een chroom-gebaseerde
+* Optie 1: Open 'chroom: / / inspecteren' in een chroom-gebaseerde
   browser. Klik op de knop Configureren en zorg ervoor dat uw doel host en poort
   zijn vermeld.
-** * * Optie 2**: kopieer de 'devtoolsFrontendUrl' uit de output van ' /json / list`
+* Optie 2: kopieer de 'devtoolsFrontendUrl' uit de output van ' /json / list`
   (zie hierboven) of de --inspecteer hint tekst en plak in chroom.
-** * * Optie 3**: Installeer de Chrome Extension NIM (Node Inspector Manager):  
+* Optie 3: Installeer de Chrome Extension NIM (Node Inspector Manager):  
   https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 
 #### [Visual Studio Code](https://github.com/microsoft/vscode) 1,10+
