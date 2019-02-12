@@ -35,7 +35,7 @@ ls.on('exit', function (code) {
 });
 ```
 
-NODE PRO TIP: `error.stack` is a stack trace to the point that the [Error object](/en/knowledge/errors/what-is-the-error-object/) was created.
+NODE PRO TIP: `error.stack` is a stack trace to the point that the [Error object](https://github.com/nodejs/nodejs.org/blob/master/locale/en/knowledge/errors/what-is-the-error-object.md) was created.
 
 It should be noted that the `stderr` of a given process is not exclusively reserved for error messages. Many programs use it as a channel for secondary data instead.  As such, when trying to work with a program that you have not previously spawned as a child process, it can be helpful to start out dumping both `stdout` and `stderr`, as shown above, to avoid any surprises.
 
