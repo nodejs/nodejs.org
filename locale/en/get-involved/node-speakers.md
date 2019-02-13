@@ -19,6 +19,19 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 
 ### Brazil 🇧🇷
 
+#### Rio de Janeiro
+
+##### Rio de Janeiro 
+
+###### Glaucia Lemos
+
+- [GitHub](https://github.com/glaucia86)
+- [@glaucia_lemos86](https://twitter.com/glaucia_lemos86)
+- [Linkedin](https://www.linkedin.com/in/glaucialemos/)
+- [Personal Website](https://glaucialemos.netlify.com/)
+
+- Topics - Node.js, Women in Tech, Testing, Cloud Computing, Node.js with A.I, Community, Open Source, JavaScript, Node.js + Bots  
+
 #### São Paulo
 
 ##### São Paulo 

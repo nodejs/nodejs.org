@@ -60,7 +60,6 @@ REQUIREMENTS
 - Organizer name - James Richardson. Co-organizer: Jessica Claire
 - Organizer contact info -
 
-
 ### Belgium
 
 #### Brussels
@@ -91,7 +90,7 @@ REQUIREMENTS
 - Organizer name - Filipe Oliveira
 - Organizer contact info -
 
-#### Mina Gerais
+#### Minas Gerais
 
 - [Meetup](https://www.meetup.com/nodebr/)
 - Frequency of meetups - monthly
