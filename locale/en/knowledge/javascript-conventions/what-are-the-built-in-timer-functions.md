@@ -84,11 +84,11 @@ This only has one
 
 #### setImmediate()
 
-`setImmedaite()` is another built-in timer function which as the name suggest, runs immediately after the first iteration of the event loop is completed. In other words, `setImmedaite()` is similar to a `setTimeout()` function with a `0ms` delay. The `setImmedaite()` function can also take extra parameters that are passed when the callback is called:
+`setImmediate()` is another built-in timer function which as the name suggest, runs immediately after the first iteration of the event loop is completed. In other words, `setImmediate()` is similar to a `setTimeout()` function with a `0ms` delay. The `setImmediate()` function can also take extra parameters that are passed when the callback is called:
 
 ```js
 console.log("This will be printed first");
-setImmedaite(console.log, "This is an extra parameter");
+setImmediate(console.log, "This is an extra parameter");
 console.log("This will be printed second");
 ```
 
@@ -100,4 +100,4 @@ This will be printed second
 This is an extra parameter
 ```
 
-Remember that though `setImmedaite()` has no delay (i.e, 0ms) this doesn't mean that the code will run synchronously. It simply means that there will be no delay (i.e, 0ms) after the first iteration of the event loop is completed i.e, all synchronous commands have been executed.
+Remember that though `setImmediate()` has no delay (i.e, 0ms) this doesn't mean that the code will run synchronously. It simply means that there will be no delay (i.e, 0ms) after the first iteration of the event loop is completed i.e, all synchronous commands have been executed.
