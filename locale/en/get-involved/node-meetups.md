@@ -1,11 +1,11 @@
 ---
-title: Node Meetups
+title: Node.js Meetups
 layout: contribute.hbs
 ---
 
-# Node Meetups
+# Node.js Meetups
 
-This is a list of node meetups. Please submit a PR if you'd like to add your local group!
+This is a list of Node.js meetups. Please submit a PR if you'd like to add your local group!
 
 ## Code of Conduct
 
