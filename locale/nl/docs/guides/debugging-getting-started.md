@@ -138,68 +138,68 @@ informatie hierover:
 
 De volgende tabel geeft een overzicht van de impact van verschillende runtime vlaggen op debuggen:
 
-<tabel cellpadding= " 0 "cellspacing= "0">
-  <tr> < th>vlag< / th> < th > Betekenis< / th > < / tr>
+<table cellpadding= " 0 "cellspacing= "0">
+  <tr><th>vlag</th><th> Betekenis</th></tr>
   <tr>
-    <td>--inspecteer< / td>
+    <td>--inspecteer</td>
+    <td>
+      <ul>
+        <li>Inspecteur agent </li>inschakelen
+        <li>luister naar standaard adres en poort (127.0.0.1: 9229)</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>--inspection=<i>[host: port]</i></td>
+    <td>
+      <ul>
+        <li>Inspecteur agent </li>inschakelen
+        <li>binden aan adres of hostnaam <i>host</i> (standaard: 127.0.0.1)</li>
+        <li>luisteren op poort<i>Poort </i> (standaard: 9229)</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>--inspection-brk</td>
+    <td>
+      <ul>
+        <li>Inspecteur agent </li>inschakelen
+        <li>luister naar standaard adres en poort (127.0.0.1: 9229)</li>
+        < li>breken voordat de gebruikerscode begint</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>--inspection-brk=<i>[host: port]< / i></td>
     <td>
       <ul>
         <li>Inspecteur agent < /li>inschakelen
-        <li>luister naar standaard adres en poort (127.0.0.1: 9229)< / li>
-      < / ul>
-    < / td>
-  < / tr>
+        <li>binden aan adres of hostnaam <i>host</i> (standaard: 127.0.0.1)</li>
+        <li>luisteren op poort<i>Poort </i> (standaard: 9229)</li>
+        <li>breken voordat de gebruikerscode begint</li>
+      </ul>
+    </td>
+  </tr>
   <tr>
-    <td>--inspection=<i>[host: port]< / i>< / td>
-    <td>
-      <ul>
-        <li>Inspecteur agent < /li>inschakelen
-        < li>binden aan adres of hostnaam <I>host< / i> (standaard: 127.0.0.1)< / li>
-        <li>luisteren op poort<I>Poort < /i> (standaard: 9229)< / li>
-      < / ul>
-    < / td>
-  < / tr>
-  <tr>
-    <td>--inspection-brk< / td>
-    <td>
-      <ul>
-        <li>Inspecteur agent < /li>inschakelen
-        <li>luister naar standaard adres en poort (127.0.0.1: 9229)< / li>
-        < li>breken voordat de gebruikerscode begint< / li>
-      < / ul>
-    < / td>
-  < / tr>
-  <tr>
-    <td>--inspection-brk=<i>[host: port]< / i>< / td>
-    <td>
-      <ul>
-        <li>Inspecteur agent < /li>inschakelen
-        < li>binden aan adres of hostnaam <I>host< / i> (standaard: 127.0.0.1)< / li>
-        <li>luisteren op poort<I>Poort < /i> (standaard: 9229)< / li>
-        < li>breken voordat de gebruikerscode begint< / li>
-      < / ul>
-    < / td>
-  < / tr>
-  <tr>
-    <td><code>node inspecteer < I>script.js< / i>< / code>< / td>
+    <td><code>node inspecteer <i>script.js</i></code></td>
     <td>
       <ul>
         <li>Spawn child proces om gebruikersscript te draaien onder --inspecteer vlag;
-            en gebruik het hoofdproces om Clip debugger te draaien.</lithium>
-      < / ul>
-    < / td>
-  < / tr>
+            en gebruik het hoofdproces om Clip debugger te draaien.</li>
+      </ul>
+    </td>
+  </tr>
   <tr>
-    <td><code>node inspecteren --port=xxxx < I>script.js< / i>< / code>< / td>
+    <td><code>node inspecteren --port=xxxx<i>script.js</i></code></td>
     <td>
       <ul>
         <li>Spawn child proces om gebruikersscript te draaien onder --inspecteer vlag;
-            en gebruik het hoofdproces om Clip debugger te draaien.</lithium>
-        <li>luisteren op poort<I>Poort < /i> (standaard: 9229)< / li>
-      < / ul>
-    < / td>
-  < / tr>
-</tabel>
+            en gebruik het hoofdproces om Clip debugger te draaien.</li>
+        <li>luisteren op poort<i>Poort</i> (standaard: 9229)</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ---
 
