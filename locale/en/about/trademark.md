@@ -20,7 +20,7 @@ word about Node.js and participating in the Node.js community. Keeping that
 goal in mind, we’ve tried to make the policy as flexible and easy to understand
 as legally possible.
 
-Please read the [full policy](/static/documents/trademark-policy.pdf).
+Please read the [full policy](https://foundation.nodejs.org/wp-content/uploads/sites/50/2019/02/Node-js-Trademark-Guidelines-06-10-2015.pdf).
 If you have any questions don't hesitate to
 [email us](mailto:trademark@nodejs.org).
 
