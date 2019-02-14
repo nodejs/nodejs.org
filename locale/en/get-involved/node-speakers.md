@@ -52,6 +52,16 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 
 - Topics: Node.js, Kubernetes, Docker, Serverless, Communities, Cloud Computing.
 
+
+###### Lucas Santos
+
+- [@_staticvoid](https://twitter.com/_staticvoid)
+- [Personal Website](https://lsantos.me)
+- [Linkedin](https://linkedin.com/in/lhs-santos)
+- [Github](https://github.com/khaosdoctor)
+
+- Topics: Node.js, Kubernetes, Docker, Serverless, Career, Cloud Computing, Infrastructure, JavaScript, TypeScript, Code Quality
+
 ### Canada 🇨🇦
 
 #### Ontario 
