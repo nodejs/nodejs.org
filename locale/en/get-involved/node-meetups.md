@@ -152,29 +152,27 @@ REQUIREMENTS
 - [Meetup](https://www.meetup.com/node-HH/)
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Ioannis Nikolau
+- Organizer name - Gregor Elke
 - Organizer contact info -
 
 ### Greece
 
-#### Attica
-
 ##### Athens
 
 - [Meetup](https://www.meetup.com/nodejsathens/)
-- Frequency of meetups - monthly
+- Frequency of meetups - every two months
 - How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Gregor Elke
-- Organizer contact info -
+- Organizer name - [Ioannis Nikolaou](https://www.linkedin.com/in/ioannis-nikolaou/) Co-organizers - Stratoula Kalafateli, [Kostas Siabanis](https://github.com/ksiabani), Megaklis Vasilakis
+- Organizer contact info - 
 
 ### Hungary
 
 ##### Budapest
 
-- [Meetup](https://www.meetup.com/nodejsathens/)
+- Meetup
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Ioannis Nikolau
+- Organizer name - 
 - Organizer contact info -
 
 ### India
