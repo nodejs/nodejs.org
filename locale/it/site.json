@@ -19,7 +19,7 @@
     },
     {
       "link": "feed/releases.xml",
-      "text": "Blog Node.js: Releases"
+      "text": "Blog Node.js: Rilasci"
     },
     {
       "link": "feed/vulnerability.xml",
@@ -31,10 +31,10 @@
   },
   "about": {
     "link": "about",
-    "text": "About",
+    "text": "Informazioni",
     "governance": {
       "link": "about/governance",
-      "text": "Governance"
+      "text": "Gestione"
     },
     "workinggroups": {
       "link": "about/working-groups",
@@ -42,7 +42,7 @@
     },
     "releases": {
       "link": "about/releases",
-      "text": "Release"
+      "text": "Rilasci"
     },
     "resources": {
       "link": "about/resources",
@@ -58,7 +58,7 @@
     "text": "Download",
     "releases": {
       "link": "download/releases",
-      "text": "Release Precedenti"
+      "text": "Rilasci Precedenti"
     },
     "package-manager": {
       "link": "download/package-manager",
