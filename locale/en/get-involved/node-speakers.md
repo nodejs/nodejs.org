@@ -36,6 +36,14 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 
 ##### São Paulo 
 
+###### Claudiney Junior
+
+- [@claudineyjr](https://twitter.com/claudineyjr)
+- [Activities](https://claudineyjunior.com.br)
+- [Linkedin](https://linkedin.com/in/claudiney-junior/)
+
+- Topics: Node.js, Docker, Swarm, Kubernetes, Programming Logic, Best Pratices, Cloud Computing, IA, Carrer
+
 ###### Erick Wendel
 
 - [@erickwendel_](https://twitter.com/erickwendel_)
