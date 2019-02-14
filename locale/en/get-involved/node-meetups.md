@@ -150,10 +150,10 @@ REQUIREMENTS
 ##### Hamburg
 
 - [Meetup](https://www.meetup.com/node-HH/)
-- Frequency of meetups - monthly
+- Frequency of meetups - monthly and on demand
 - How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Gregor Elke
-- Organizer contact info -
+- Organizer name - Gregor Elke, Oliver Lorenz
+- Organizer contact info - via Meetup, via [Slack](http://bit.ly/web-hh)
 
 ### Greece
 
