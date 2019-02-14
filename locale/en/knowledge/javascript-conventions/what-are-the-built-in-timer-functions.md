@@ -35,7 +35,7 @@ Typically you want to be careful with `setInterval` because it can cause some un
 setInterval(ping, 1000);
 ```
 
-This can cause problems, however, if your server is slow and it takes, say, 3 seconds to respond to the first request. In the time it takes to get back the response, you would have sent off 3 more requests - not exactly desirable!  This isn't the end of the world when serving small static files, but if you doing an expensive operation such as database query or any complicated computation this can have some undesirable results. A common solution looks like this:
+This can cause problems, however, if your server is slow and it takes, for example, 3 seconds to respond to the first request. In the time it takes to get back the response, you would have sent off 3 more requests - not exactly desirable! Overall, this doesn't have a large impact when serving small static files. But if you're doing an expensive operation, such as a database query or any complex computation, this can have undesirable results. A common solution looks like this:
 
 ```js
 const recursive = function () {
