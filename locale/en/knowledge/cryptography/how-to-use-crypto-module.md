@@ -66,7 +66,7 @@ Ciphers allow you to encode and decode messages given a password.
 
 ### Cipher Algorithms That Work With Crypto
 
-Like crypto's hash algorithms, the cyphers that work with crypto are dependent on what your version of OpenSSL supports. You can get a list of hash types your OpenSSL supports by typing `openssl list-cipher-commands` into the command line for older versions, or `openssl list-cipher-algorithms` for newer versions of OpenSSL. OpenSSL supports *many* ciphers; A good and popular one is [AES_128](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard).
+Like crypto's hash algorithms, the cyphers that work with crypto are dependent on what your version of OpenSSL supports. You can get a list of hash types your OpenSSL supports by typing `openssl list-cipher-commands` into the command line for older versions, or `openssl list-cipher-algorithms` for newer versions of OpenSSL. OpenSSL supports *many* ciphers; A good and popular one is [AES_256](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard).
 
 ### How To Use Cipher Algorithms with Crypto:
 
@@ -86,17 +86,20 @@ Here's an example, slightly less trivial than previous examples, that uses crypt
 
 const crypto = require('crypto'),
     argv = require("yargs").argv,
+    resizedIV = Buffer.allocUnsafe(16),
     iv = crypto
-      .createHash("md5")
+      .createHash("sha256")
       .update("myHashedIV")
       .digest();
+      
+iv.copy(resizedIV);
 
 if (argv.e && argv.key) {
     const key = crypto
-        .createHash("md5")
+        .createHash("sha256")
         .update(argv.key)
         .digest(),
-        cipher = crypto.createCipheriv("aes128", key, iv),
+        cipher = crypto.createCipheriv("aes256", key, resizedIV),
         msg = [];
 
     argv._.forEach( function (phrase) {
@@ -108,10 +111,10 @@ if (argv.e && argv.key) {
 
 } else if (argv.d && argv.key) {
     const key = crypto
-        .createHash("md5")
+        .createHash("sha256")
         .update(argv.key)
         .digest(),
-        decipher = crypto.createDecipheriv("aes128", key, iv),
+        decipher = crypto.createDecipheriv("aes256", key, resizedIV),
         msg = [];
 
     argv._.forEach( function (phrase) {
@@ -125,26 +128,26 @@ if (argv.e && argv.key) {
 
 NODE PRO TIP: The `crypto.createCipheriv()` and `crypto.createDecipheriv()` methods do not take a password, rather a `key` and an `iv` which are combined together to form a random password. The size of the `key` and `iv` depends on the choosen algorithm. A reference to common algorithms and their `key` and `iv` size is given below:
 
-| Algorithm        | Key          | iv      |
-| ------------- |:-------------:| :-----:|
-| aes128      | 16 byte (128 bits) | 16 byte (128 bits) |
-| aes-128-cbc      | 16 byte (128 bits) |   16 byte (128 bits) |
-| aes192 | 24 byte (192 bits)      |    16 byte (128 bits) |
-| aes256 | 32 byte (256 bits)      |    16 byte (128 bits) |
+| Algorithm      | Key                | iv                 |
+| -------------  |:-----------------: | :----------------: |
+| aes128         | 16 byte (128 bits) | 16 byte (128 bits) |
+| aes-128-cbc    | 16 byte (128 bits) | 16 byte (128 bits) |
+| aes192         | 24 byte (192 bits) | 16 byte (128 bits) |
+| aes256         | 32 byte (256 bits) | 16 byte (128 bits) |
 
-In the code above The user entered `key` is hashed using `md5 encryption` which produces a 16 byte buffer by default, this buffered key is then used as the [cryptographic key](https://en.wikipedia.org/wiki/Key_(cryptography)) in the `crypto.createCipheriv()` and `crypto.createDecipheriv()` methods. The same is done for the `iv`.
+In the code above The user entered `key` is hashed using `SHA256 encryption` which produces a 32 byte buffer by default, this buffered key is then used as the [cryptographic key](https://en.wikipedia.org/wiki/Key_(cryptography)) in the `crypto.createCipheriv()` and `crypto.createDecipheriv()` methods. The `iv` is also hashed with `SHA256 encryption` and is 32 byte in size but all AES (CBC mode and CFB mode) take `iv` of exactly 16 byte (128 bits) therefor another Buffer `resizedIV` is used which contains the first 16 byte of orignal 32 byte `iv`.
 
 Using this script to encode a message looks like this:
 
 ```bash
 $ node ./secretmsg.js -e --key="popcorn" "My treasure is buried behind Carl's Jr. on Telegraph."
-c01857868fc0a8b6320e67a3d063a25177d61b80bfada77056f1fd53c4cd6d6391034970ea5b159770131eea6f39d12873b4a2c3291110d955a669bf7ab90bf8
+c8c78895fd91da17cca9cf0d28e742c6077fb5a89ef5cdc23d9c37c96c5fb7f321d7f52c06e73c46633783d9535e2aa5cc07f2ad1803d73614c4e6882026bfd9
 ```
 
 Now, if I gave somebody the same script, my encoded message and the key, they can decode the message and find out where I buried my treasure:
 
 ```bash
-$ node ./secretmsg.js -d --key="popcorn" c01857868fc0a8b6320e67a3d063a25177d61b80bfada77056f1fd53c4cd6d6391034970ea5b159770131eea6f39d12873b4a2c3291110d955a669bf7ab90bf8
+$ node ./secretmsg.js -d --key="popcorn" c8c78895fd91da17cca9cf0d28e742c6077fb5a89ef5cdc23d9c37c96c5fb7f321d7f52c06e73c46633783d9535e2aa5cc07f2ad1803d73614c4e6882026bfd9
 My treasure is buried behind Carl's Jr. on Telegraph.
 ```
 
