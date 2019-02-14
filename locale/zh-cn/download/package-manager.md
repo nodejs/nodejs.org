@@ -11,7 +11,7 @@ title: 通过包管理器安装 Node.js
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
-* [基于 Linux 的 Debian 和 Ubuntu 发行版, Enterprise Linux/Fedora 和 Snap packages](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
+* [基于 Linux 的 Debian 和 Ubuntu 发行版，Enterprise Linux/Fedora 和 Snap packages](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
 * [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
 * [NetBSD](#netbsd)
@@ -37,7 +37,7 @@ pkg install nodejs
 pkg install nodejs-current
 ```
 
-目前，Termux 的 Nodejs 二进制程序包是在没有检查器支持的情况下编译的，并与 `system-icu` （依赖于 `libicu` 包）相关联。
+目前，Termux 的 Node.js 二进制程序包与 `system-icu` （依赖于 `libicu` 包）相关联。
 
 ## Arch Linux
 
@@ -47,7 +47,12 @@ Node.js 以及 npm 包管理器在社区库中可如下方式使用：
 pacman -S nodejs npm
 ```
 
-## 基于 Linux 的 Debian 和 Ubuntu 发行版, Enterprise Linux/Fedora 和 Snap packages
+<!--
+If your title has non-English characters, please
+put your anchor name into the comment symbol before
+your real title.
+-->
+## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages--> 基于 Linux 的 Debian 和 Ubuntu 发行版，Enterprise Linux/Fedora 和 Snap packages
 
 [Node.js 官方二进制发行版](https://github.com/nodesource/distributions/blob/master/README.md) 由 NodeSource 提供。
 
@@ -128,7 +133,7 @@ Node.js 也可以通过 ports 系统获取。
 pkg_add node
 ```
 
-## openSUSE 以及 SLE
+## <!--opensuse-and-sle-->openSUSE 和 SLE
 
 在以下安装包中，Node.js在以下主版本库中可用：
 
@@ -185,7 +190,7 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-## SmartOS 和 illumos
+## <!--smartos-and-illumos-->SmartOS 和 illumos
 
 SmartOS 镜像随 pkgsrc 预装。在其它的 illumos 发布版中，先安装 **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**，然后你可以正常安装二进制文件包：
 

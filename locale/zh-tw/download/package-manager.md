@@ -39,7 +39,7 @@ pkg install nodejs
 pkg install nodejs-current
 ```
 
-目前 Termux Node.js 二進制檔尚不支援 ICU 及 Inspector。
+目前，Termux 的 Node.js 二進位套裝程式與 `system-icu`（依賴于 `libicu` 包）相關聯。
 
 ## Arch Linux
 
@@ -49,8 +49,7 @@ Node.js 及 npm 套件可由公有軟體庫取得。
 pacman -S nodejs npm
 ```
 
-
-## Debian 及 Ubuntu 系列發行版，企業版 Linux/Fedora 和 Snap packages
+## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages-->Debian 及 Ubuntu 系列發行版，企業版 Linux/Fedora 和 Snap packages
 
 [官方 Node.js 二進制發行版](https://github.com/nodesource/distributions/blob/master/README.md) 透過 NodeSource 提供.
 
@@ -129,7 +128,7 @@ Node.js 可於 ports 系統中取得。
 pkg_add node
 ```
 
-## openSUSE 及 SLE
+## <!--opensuse-and-sle-->openSUSE 及 SLE
 
 主要軟體庫中都提供了下列套件：
 
@@ -187,7 +186,7 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-## SmartOS 及 illumos
+## <!--smartos-and-illumos-->SmartOS 及 illumos
 
 SmartOS 映像檔已經預載了 pkgsrc，其他的 illumos 發行版則需要先**[安裝pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**，接著你就可以依照平常的方式安裝二進制套件：
 

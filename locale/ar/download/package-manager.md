@@ -17,7 +17,7 @@ title: Installing Node.js via package manager
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
 * [OpenBSD](#openbsd)
-* [openSUSE and SLE](#opensuse-and-sle)
+* [openSUSE و SLE](#opensuse-and-sle)
 * [macOS](#macos)
 * [SmartOS و illumos](#smartos-and-illumos)
 * [Solus](#solus)
@@ -26,7 +26,7 @@ title: Installing Node.js via package manager
 
 ----------------------------
 
-## آندرويد
+## <!--android-->آندرويد
 
 لا يزال دعم النود جي اس على الاندرويد قيد التجربة، لذلك فإن الملفات الثنائية المنتجة قبلا لا تزال غير متوفرة من قبل مطوري النود جي اس.
 
@@ -46,7 +46,7 @@ pkg install nodejs
 pacman -S nodejs npm
 ```
 
-## التوزيعات المبنية على ديبيان أو اوبنتو، لينكس للمؤسسات / فيدورا و حزم سناب
+## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages-->التوزيعات المبنية على ديبيان أو اوبنتو، لينكس للمؤسسات / فيدورا و حزم سناب
 
 يتم توفير [الملف الثنائي الرسمي للنود جي اس](https://github.com/nodesource/distributions/blob/master/README.md) من قبل NodeSource.
 
@@ -124,7 +124,7 @@ $ nvm uninstall 8
 pkg_add node
 ```
 
-## openSUSE and SLE
+## <!--opensuse-and-sle-->openSUSE و SLE
 
 يتوفر النود جي اس في المستودعات الرئيسية تحت الحزم الاتية:
 
@@ -181,7 +181,7 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-## SmartOS و illumos
+## <!--smartos-and-illumos-->SmartOS و illumos
 
 تأتي اسطوانة SmartOS مثبتة افتراضيا مع pkgsrc. على توزيعات أخرى من illumos، قم بتثبيت **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)** أولا و عندها يمكنك تثبيت الحزمة الثنائية اعتياديا:
 
@@ -213,7 +213,7 @@ sudo eopkg install nodejs
 xbps-install -Sy nodejs
 ```
 
-## ويندوز
+## <!--windows-->ويندوز
 
 قم بتحميل [المثبت الخاص بويندوز](https://nodejs.org/#download) مباشرة من موقع [nodejs.org](https://nodejs.org).
 

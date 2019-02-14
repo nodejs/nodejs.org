@@ -116,7 +116,7 @@ Responsibilities include:
 * Publishing regular update summaries and other promotional
   content.
 
-### i18n
+### [i18n](https://github.com/nodejs/i18n)
 
 The i18n Working Groups handle more than just translations. They
 are endpoints for community members to collaborate with each

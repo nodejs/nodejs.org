@@ -434,7 +434,7 @@ process:
 
 ## `setImmediate()` 대 `setTimeout()`
 
-`setImmediate`와 `setTimeout()`은 비슷하지만 호출된 시기에 따라 다르게 동작합니다.
+`setImmediate()`와 `setTimeout()`은 비슷하지만 호출된 시기에 따라 다르게 동작합니다.
 
 * `setImmediate()`는 현재 **poll** 단계가 완료되면 스크립트를 실행하도록 설계되었습니다.
 * `setTimeout()`는 최소 임계 값(ms)이 지난 후 스크립트가 실행되도록 스케줄링합니다.
