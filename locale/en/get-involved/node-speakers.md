@@ -60,7 +60,7 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 - [Linkedin](https://linkedin.com/in/lhs-santos)
 - [Github](https://github.com/khaosdoctor)
 
-- Topics: Node.js, Kubernetes, Docker, Serverless, Career, Cloud Computing, Infrastructure, Javascript, Typescript, Code Quality
+- Topics: Node.js, Kubernetes, Docker, Serverless, Career, Cloud Computing, Infrastructure, JavaScript, TypeScript, Code Quality
 
 ### Canada 🇨🇦
 
