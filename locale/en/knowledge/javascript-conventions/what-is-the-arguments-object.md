@@ -64,7 +64,7 @@ to convert `arguments` into a true array using the `Array.slice` method.
 myfunc.apply(obj, arguments).
 
 // concat arguments onto the 
-Array.prototype.concat.apply([1,2,3], arguments).
+Array.prototype.concat.apply([1,2,3], arguments);
 
 // turn arguments into a true array
 const args = Array.prototype.slice.call(arguments);
