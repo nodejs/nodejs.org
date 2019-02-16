@@ -14,7 +14,7 @@ has become the defacto standard for the web. JSON can be represented
 as either a list of values, e.g. an Array, or a hash of properties and
 values, e.g. an Object.
 
-```js
+```json
 // a JSON array
 ["one", "two", "three"]
 
@@ -73,7 +73,7 @@ format. There are several gotchas that can produce invalid JSON as well.
 
 These are all examples of valid JSON.
 
-```js
+```json
 {"name":"John Doe","age":32,"title":"Vice President of JavaScript"}
 
 ["one", "two", "three"]
@@ -94,7 +94,7 @@ null
 
 These are all examples of bad JSON formatting.
 
-```js
+```json
 { name: "John Doe", 'age': 32 } // name and age should be in double quotes
 
 [32, 64, 128, 0xFFF] // hex numbers are not allowed
@@ -120,6 +120,14 @@ arrays. Functions, dates and other types are excluded. This may not
 seem to make sense at first. But remember that JSON is a data format,
 not a format for transferring complex javascript objects along with
 their functionality.
+
+## JSON Validators
+
+As JSON has become the most widely used data formate with well-defined rules to abide by, there are many validators available to assist your workflow:
+
+* **Online Validators**: If you are just playing around with JSON or checking someone's JSON (without IDEs/editors) then online validators could be of great help. For instance: [jsonlint.com](https://jsonlint.com) is a good online JSON validator and reformatter.
+* **npm Packages**: If you are working with a team and want JSON Validation baked into your project or simply like to automate validation in your workflow then the large collection of npm packages are at your disposal. For instance: [jsonlint](https://www.npmjs.com/package/jsonlint) is a pure JavaScript version of the service provided at `jsonlint.com`.
+* **Plugins for IDEs/editors**: There are many plugins/extensions available for most of the IDEs/editors which validate JSON for you. Some editors like `VS Code` come with JSON IntelliSense & Validation out of the box.
 
 ## JSON in other languages
 
