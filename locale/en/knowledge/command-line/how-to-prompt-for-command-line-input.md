@@ -23,7 +23,7 @@ const rl = readline.createInterface({
 });
 
 rl.question("What is your name ? ", function(name) {
-    rl.question("Which country do you belong ? ", function(country) {
+    rl.question("Which country do you belong to ? ", function(country) {
         console.log(`${name}, is a citizen of ${country}`);
         rl.close();
     });
