@@ -123,6 +123,7 @@ You can also call [`promisify`][] on pipeline to use it with `async` / `await`:
 const stream = require('stream');
 const fs = require('fs');
 const zlib = require('zlib');
+const util = require('util');
 
 const pipeline = util.promisify(stream.pipeline);
 
@@ -422,7 +423,7 @@ In this case, your output from your [`Readable`][] stream will enter in the
 Readable.pipe(Transformable).pipe(Writable);
 ```
 
-Backpressure will be automatically applied, but note the both the incoming and
+Backpressure will be automatically applied, but note that both the incoming and
 outgoing `highWaterMark` of the [`Transform`][] stream may be manipulated and
 will effect the backpressure system.
 
