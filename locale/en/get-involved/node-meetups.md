@@ -402,11 +402,11 @@ REQUIREMENTS
 
 ##### Boston 
 
-- [Meetup](https://www.meetup.com/nodejs/)
-- Frequency of meetups - monthly
-- How to submit a talk? Write to Brian Sodano.
-- Organizer name - Brian Sodano
-- Organizer contact info -
+- [Meetup](https://www.meetup.com/Boston-Node/)
+- Frequency of meetups - ~monthly
+- How to submit a talk? Contact organizers in the meetup page or post in slack workspace #\_node\_meetup (see below).
+- Organizer name - [Brian Sodano](https://github.com/codemouse)
+- Organizer contact info - [briansodano@gmail.com](mailto:briansodano@gmail.com) or [Boston JS slack workspace](https://bostonjavascript.slack.com)
 
 #### Minnesota
 
