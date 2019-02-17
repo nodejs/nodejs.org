@@ -99,7 +99,7 @@ These are all examples of bad JSON formatting.
 
 [32, 64, 128, 0xFFF] // hex numbers are not allowed
 
-{ "name": "John Doe", age: undefined } // undefined is an invalid value
+{ "name": "John Doe", "age": undefined } // undefined is an invalid value
 
 // functions and dates are not allowed
 { "name": "John Doe",
