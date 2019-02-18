@@ -9,7 +9,7 @@ Eventos Programe & Aprenda permitem que você comece a contribuir (ou de um pass
 
 ## Próximos Eventos Programe + Aprenda
 
-- Aguardando anúncio.
+- update the 'upcomig code+learn events'.
 
 ## Eventos Programe + Aprenda Anteriores
 
