@@ -9,7 +9,7 @@ layout: contribute.hbs
 
 ## 即将到来的代码 + 学习活动
 
-- To be announced.
+- Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/).
 
 ## 已经结束的代码 + 学习活动
 
