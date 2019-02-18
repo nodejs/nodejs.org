@@ -169,21 +169,15 @@ REQUIREMENTS
 
 ##### Budapest
 
-- Meetup
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - 
-- Organizer contact info -
-
-### India
-
-##### Delhi
-
 - [Meetup](https://www.meetup.com/nodebp/)
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Oroszi Róbert
 - Organizer contact info -
+
+### India
+
+##### Delhi
 
 - [Meetup](https://www.meetup.com/nodeJS-Devs/)
 - Frequency of meetups - monthly
