@@ -9,7 +9,7 @@ Node.js 核心貢獻者在 Code & Learn 活動能帶大家新手上路（或飛�
 
 ## 即將到來的 Code + Learn 活動
 
-- To be announced.
+- Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/).
 
 ## 已經結束的 Code + Learn 活動
 
