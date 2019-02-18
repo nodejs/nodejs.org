@@ -19,6 +19,7 @@ will run the image as a container.
 Docker allows you to package an application with all of its dependencies into a
 standardized unit, called a container, for software development. A container is
 a stripped-to-basics version of a Linux operating system. An image is software
+you load into a container.
 -->
 
 # Node.js 웹 앱의 도커라이징
@@ -26,13 +27,14 @@ a stripped-to-basics version of a Linux operating system. An image is software
 이 예제에서는 Node.js 애플리케이션을 Docker 컨테이너에 넣는 방법을 보여줍니다. 이 가이드는
 개발 목적이지 프로덕션 배포용이 *아닙니다*.
 [Docker가 설치](https://docs.docker.com/engine/installation/)되어 있고
-Node.js 애플리케이션을 구조화하는 방법에 관해 기본적인 지식이 있어야 합니다.
+Node.js 애플리케이션의 구조에 대한 기본적인 지식이 있어야 합니다.
 
 먼저 간단한 Node.js 웹 애플리케이션을 만든 후에 이 애플리케이션을 위한 Docker 이미지를
 만들어서 컨테이너로 실행할 것입니다.
 
 Docker를 사용하면 애플리케이션과 모든 의존성을 소프트웨어 개발에서 컨테이너라고 부르는 표준화된
 단위로 패키징할 수 있습니다. 컨테이너는 리눅스 운영체제의 간단 버전입니다.
+이미지는 컨테이너에 로드하는 소프트웨어를 말합니다.
 
 <!--
 ## Create the Node.js app
@@ -79,7 +81,6 @@ create a `package.json` file that describes your app and its dependencies:
 ```
 
 <!--
-
 With your new `package.json` file, run `npm install`. If you are using `npm`
 version 5 or later, this will generate a `package-lock.json` file which will be copied
 to your Docker image.
@@ -110,6 +111,9 @@ In the next steps, we'll look at how you can run this app inside a Docker
 container using the official Docker image. First, you'll need to build a Docker
 image of your app.
 -->
+
+`package.json` 파일을 만든 후, `npm install`을 실행하세요. 버전 5 이상의 `npm`을
+사용한다면, Docker 이미지에 복사할 `package-lock.json` 파일을 `npm`에서 생성할 것입니다.
 
 이제 [Express.js](https://expressjs.com/) 프레임워크로 웹앱을 정의하는 `server.js`를 만들겠습니다.
 
@@ -195,26 +199,31 @@ COPY package*.json ./
 
 RUN npm install
 # If you are building your code for production
-# RUN npm install --only=production
+# RUN npm ci --only=production
 ```
 -->
 
 다음으로 이미지 안에 애플리케이션 코드를 넣기 위해 디렉터리를 생성할 것입니다.
-이 디렉터리가 애플리케이션의 워킹 디렉터리가 됩니다.
+이 디렉터리가 애플리케이션의 작업 디렉터리가 됩니다.
 
 ```docker
 # 앱 디렉터리 생성
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 ```
 
 이 이미지에는 이미 Node.js와 NPM이 설치되어 있으므로 `npm` 바이너리로
-앱의 의존성을 설치하기만 하면 됩니다.
+앱의 의존성을 설치하기만 하면 됩니다. 버전 4 이하의 `npm`은 `package-lock.json`
+파일을 생성하지 *않을* 것입니다.
 
 ```docker
 # 앱 의존성 설치
+# 가능한 경우(npm@5+) package.json과 package-lock.json을 모두 복사하기 위해
+# 와일드카드를 사용
 COPY package*.json ./
+
 RUN npm install
+# 프로덕션을 위한 코드를 빌드하는 경우
+# RUN npm ci --only=production
 ```
 
 <!--
@@ -222,6 +231,8 @@ Note that, rather than copying the entire working directory, we are only copying
 the `package.json` file. This allows us to take advantage of cached Docker
 layers. bitJudo has a good explanation of this
 [here](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/).
+Furthermore, the `npm ci` command, specified in the comments, helps provide faster, reliable, reproducible builds for production environments.
+You can read more about this [here](https://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable).
 
 To bundle your app's source code inside the Docker image, use the `COPY`
 instruction:
@@ -238,6 +249,14 @@ mapped by the `docker` daemon:
 EXPOSE 8080
 ```
 -->
+
+작업 디렉터리 전체가 아닌 `package.json` 파일만을 복사하고 있는데, 이는 캐시된
+Docker 레이어의 장점을 활용하기 위함입니다. bitJudo가 이에 대해
+[여기](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/)에
+잘 설명해 두었습니다. 추가로, 주석에 언급된 `npm ci` 커맨드는 프로덕션 환경을
+위한 더 빠르고, 신뢰할 수 있고, 재현 가능한 빌드를 제공합니다. 이에 대해
+[여기](https://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable)에서
+자세히 알아볼 수 있습니다.
 
 Docker 이미지 안에 앱의 소스코드를 넣기 위해 `COPY` 지시어를 사용합니다.
 
@@ -276,7 +295,7 @@ COPY package*.json ./
 
 RUN npm install
 # If you are building your code for production
-# RUN npm install --only=production
+# RUN npm ci --only=production
 
 # Bundle app source
 COPY . .
@@ -302,8 +321,13 @@ FROM node:8
 WORKDIR /usr/src/app
 
 # 앱 의존성 설치
+# 가능한 경우(npm@5+) package.json과 package-lock.json을 모두 복사하기 위해
+# 와일드카드를 사용
 COPY package*.json ./
+
 RUN npm install
+# 프로덕션을 위한 코드를 빌드하는 경우
+# RUN npm ci --only=production
 
 # 앱 소스 추가
 COPY . .
@@ -365,7 +389,7 @@ node                            8          1934b0b038d1    5 days ago
 ## 이미지 빌드
 
 작성한 `Dockerfile`이 있는 디렉터리로 가서 Docker 이미지를 빌드하는 다음 명령어를 실행하세요.
-`-t` 플래그로 이미지에 태그를 추가하기 때문에 나중에 `docker images` 명령어로
+`-t` 플래그로 이미지에 태그를 추가할 수 있어 나중에 `docker images` 명령어로
 쉽게 찾을 수 있습니다.
 
 ```bash
@@ -418,7 +442,7 @@ $ docker exec -it <container id> /bin/bash
 ## 이미지 실행
 
 `-d`로 이미지를 실행하면 분리 모드로 컨테이너를 실행해서 백그라운드에서 컨테이너가 돌아가도록 합니다.
-`-p` 플래그는 공개 포트를 컨테이너 내의 비밀 포트로 리다이렉트합니다. 앞에서 만들 이미지를 실행하세요.
+`-p` 플래그는 공개 포트를 컨테이너 내의 비공개 포트로 리다이렉트합니다. 앞에서 만든 이미지를 실행하세요.
 
 ```bash
 $ docker run -p 49160:8080 -d <your username>/node-web-app
@@ -504,6 +528,7 @@ Content-Length: 12
 ETag: W/"c-M6tWOb/Y57lesdjQuHeB1P/qTV0"
 Date: Mon, 13 Nov 2017 20:53:59 GMT
 Connection: keep-alive
+
 Hello world
 ```
 
@@ -527,6 +552,6 @@ following places:
 
 * [공식 Node.js Docker 이미지](https://hub.docker.com/_/node/)
 * [Node.js Docker 사용사례 문서](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
-* [공시 Docker 문서](https://docs.docker.com/)
+* [공식 Docker 문서](https://docs.docker.com/)
 * [Stack Overflow에 Docker 태그로 올라온 질문](https://stackoverflow.com/questions/tagged/docker)
 * [Docker 레딧](https://reddit.com/r/docker)
