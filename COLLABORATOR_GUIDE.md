@@ -71,7 +71,7 @@ Where there is no disagreement amongst Collaborators, a pull request
 may be landed given appropriate review. Where there is discussion
 amongst Collaborators, consensus should be sought if possible. The
 lack of consensus may indicate the need to elevate discussion to the
-Website Admin Group for resolution (see below).
+Website Group for resolution (see below).
 
 All bugfixes require a test case which demonstrates the defect. The
 test should *fail* before the change, and *pass* after the change.
@@ -82,7 +82,7 @@ continuous integration tests on the
 
 ### Involving the Website Group
 
-Collaborators may opt to elevate pull requests or issues to the admin group for
+Collaborators may opt to elevate pull requests or issues to the group for
 discussion by mentioning `@nodejs/website`. This should be done
 where a pull request:
 
@@ -91,7 +91,7 @@ where a pull request:
 - has failed to reach consensus amongst the Collaborators who are
   actively participating in the discussion.
 
-The Website Admin group should serve as the final arbiter where required.
+The Website group should serve as the final arbiter where required.
 
 ## Developer's Certificate of Origin 1.1
 
