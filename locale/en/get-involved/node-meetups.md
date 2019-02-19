@@ -338,7 +338,7 @@ REQUIREMENTS
 
 ##### Irvine
 
-- [Meetup]https://www.meetup.com/Node-JS-OC/)
+- [Meetup](https://www.meetup.com/Node-JS-OC/)
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Farsheed Atef
@@ -363,7 +363,7 @@ REQUIREMENTS
 
 ##### Denver
 
-- [Meetup](https://www.meetup.com/Node-js-Denver-Boulder//)
+- [Meetup](https://www.meetup.com/Node-js-Denver-Boulder/)
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page
 - Organizer name - Brooks Patton
@@ -377,15 +377,16 @@ REQUIREMENTS
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Ryan Connelly
-- Organizer contact info - 
+- Organizer contact info -
+
 #### Illinois
 
 ##### Chicago
 
 - [Meetup](https://www.meetup.com/Chicago-Nodejs/)
 - Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Mike Hostetler
+- How to submit a talk? Contact organizers in the meetup page or (https://airtable.com/shrTDwmMH3zsnsWOE)
+- Organizer name - Mike Hostetler, Zeke Nierenberg, & Ben Neiswander
 - Organizer contact info -
 
 #### Indiana
@@ -428,16 +429,6 @@ REQUIREMENTS
 - Organizer name - Patrick Scott Co-organizer: Matt Walters.
 - Organizer contact info - 
 
-#### Illinois 
-
-##### Chicago
-- [Meetup](https://www.meetup.com/Chicago-Nodejs/)
-- Frequency - monthly
-- [How to submit talk](https://airtable.com/shrTDwmMH3zsnsWOE)
-- Organizer name - Zeke Nierenberg & Ben Neiswander
-- Organizer contact info
-
-
 #### North Carolina
 
 ##### Raleigh Durham
@@ -458,7 +449,7 @@ REQUIREMENTS
 - Organizer names - Ben Michel, Michelle Levine
 - Organizer contact info - Ben: benpmichel@gmail.com, Michelle: michelle@michellejl.com
 
-#### Philadelphia
+#### Pennsylvania
 
 ##### Philadelphia
 
