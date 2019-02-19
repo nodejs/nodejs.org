@@ -9,7 +9,7 @@ Eventos Programe & Aprenda permitem que você comece a contribuir (ou de um pass
 
 ## Próximos Eventos Programe + Aprenda
 
-- Aguardando anúncio.
+- Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/).
 
 ## Eventos Programe + Aprenda Anteriores
 

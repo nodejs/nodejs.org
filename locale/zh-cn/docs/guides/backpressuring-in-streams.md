@@ -89,6 +89,7 @@ pipeline(
 const stream = require('stream');
 const fs = require('fs');
 const zlib = require('zlib');
+const util = require('util');
 
 const pipeline = util.promisify(stream.pipeline);
 

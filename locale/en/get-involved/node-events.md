@@ -15,6 +15,6 @@ FORMAT
 ## Events
 
 ### 2019
-- [NodeConf Columbia](https://colombia.nodeconf.com) - Medellin, Columbia, June 21-22 
+- [NodeConf Colombia](https://colombia.nodeconf.com) - Medellin, Colombia, June 21-22 
 - [NodeConf EU](https://www.nodeconf.eu/2019.html) - Lyrath Estate, Kilkenny, November 10-13
 - [NodeSummit](https://www.nodesummit.com) - San Francisco, TBA 

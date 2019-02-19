@@ -9,7 +9,7 @@ Code + Learn це всесвітня ініціатива воркшопів, щ
 
 ## Upcoming Code + Learn Events
 
-- To be announced.
+- Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/).
 
 ## Past Code + Learn Events
 

@@ -110,13 +110,15 @@ COPY package*.json ./
 
 RUN npm install
 # If you are building your code for production
-# RUN npm install --only=production
+# RUN npm ci --only=production
 ```
 
 Note that, rather than copying the entire working directory, we are only copying
 the `package.json` file. This allows us to take advantage of cached Docker
 layers. bitJudo has a good explanation of this
-[here](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/).
+[here](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/). 
+Furthermore, the `npm ci` command, specified in the comments, helps provide faster, reliable, reproducible builds for production environments. 
+You can read more about this [here](https://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable). 
 
 To bundle your app's source code inside the Docker image, use the `COPY`
 instruction:
@@ -156,7 +158,7 @@ COPY package*.json ./
 
 RUN npm install
 # If you are building your code for production
-# RUN npm install --only=production
+# RUN npm ci --only=production
 
 # Bundle app source
 COPY . .
