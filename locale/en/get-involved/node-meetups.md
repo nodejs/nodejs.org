@@ -108,17 +108,27 @@ REQUIREMENTS
 - Organizer name - Henrique Schreiner
 - Organizer contact info -
 
-### Finland
+### Canada
 
-#### Uusimaa
+#### British Columbia
 
-##### Helsinski
+##### Vancouver
 
-- [Meetup](https://www.meetup.com/Helsinki-Node-js/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page
-- Organizer name - Juha Lehtomaki
+- [Meetup](https://www.meetup.com/Node-JS-Community-Hangouts)
+- Frequency of meetups - quarterly
+- How to submit a talk? DM @keywordnew on twitter
+- Organizer name - Manil Chowdhury
 - Organizer contact info -
+
+#### Ontario
+
+##### Toronto
+
+- [Toronto JS Meetup](http://torontojs.com/)
+- Frequency of meetups - weekly
+- How to submit a talk? _Contact Organizers through Slack: http://slack.torontojs.com/_
+- Organizers name - Dann T. & Paul D.
+- Organizer contact info - _Community Slack_
 
 ### Colombia
 
@@ -132,6 +142,17 @@ REQUIREMENTS
 - Organizer name - Camilo Montoya
 - Organizer contact info -
 
+### Finland
+
+#### Uusimaa
+
+##### Helsinski
+
+- [Meetup](https://www.meetup.com/Helsinki-Node-js/)
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page
+- Organizer name - Juha Lehtomaki
+- Organizer contact info -
 
 ### France
 
@@ -146,6 +167,16 @@ REQUIREMENTS
 - Organizer contact info -
 
 ### Germany
+
+#### Bavaria
+
+##### Passau
+
+- [Meetup](https://www.meetup.com/de-DE/Nodeschool-Passau/)
+- Frequency of meetups - quarterly
+- How to submit a talk? Email [Valentin](mailto:valentin.huber@msg.group)
+- Organizer name - Valentin Huber
+- Organizer contact info - [Email](mailto:valentin.huber@msg.group)
 
 ##### Hamburg
 
@@ -291,30 +322,6 @@ REQUIREMENTS
 - Organizer name - Arif Çakıroğlu
 - Organizer contact info - 
 
-=======
-### Canada
-
-#### British Columbia
-
-##### Vancouver
-
-- [Meetup](https://www.meetup.com/Node-JS-Community-Hangouts)
-- Frequency of meetups - quarterly
-- How to submit a talk? DM @keywordnew on twitter
-- Organizer name - Manil Chowdhury
-- Organizer contact info -
-
-#### Ontario
-
-##### Toronto
-
-- [Toronto JS Meetup](http://torontojs.com/)
-- Frequency of meetups - weekly
-- How to submit a talk? _Contact Organizers through Slack: http://slack.torontojs.com/_
-- Organizers name - Dann T. & Paul D.
-- Organizer contact info - _Community Slack_
-
-
 ### United States
 
 #### Arizona
@@ -326,7 +333,6 @@ REQUIREMENTS
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Chris Matthieu
 - Organizer contact info -
-
 
 #### California
 
@@ -557,15 +563,3 @@ REQUIREMENTS
 - How to submit a talk? Contact organizer by email.
 - Organizer name - Timur Shemsedinov
 - Organizer contact info - [Email](mailto:timur.shemsedinov@gmail.com)
-
-### Germany
-
-#### Bavaria
-
-##### Passau
-
-- [Meetup](https://www.meetup.com/de-DE/Nodeschool-Passau/)
-- Frequency of meetups - quarterly
-- How to submit a talk? Email [Valentin](mailto:valentin.huber@msg.group)
-- Organizer name - Valentin Huber
-- Organizer contact info - [Email](mailto:valentin.huber@msg.group)
