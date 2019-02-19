@@ -4,7 +4,15 @@
 
 * [Issues and Pull Requests](#issues-and-pull-requests)
 * [Accepting Modifications](#accepting-modifications)
- - [Involving the Website Admin Group](#involving-the-website-admin-group)
+  - [Involving the Website Admin Group](#involving-the-website-admin-group)
+* [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin-11)
+* [Code of Conduct](#code-of-conduct)
+* [Code editing](#code-editing)
+  - [Adding new pages](#adding-new-pages)
+    - [Create the page content](#create-the-page-content)
+    - [Update locale site.json to add link attributes](#update-locale-sitejson-to-add-link-attributes)
+    - [Update the layout to add a link](#update-the-layout-to-add-a-link)
+  - [Translating pages](#translating-pages)
 
 This document contains information for Collaborators of the Node.js
 website project regarding maintaining the code, documentation and issues.
@@ -35,7 +43,7 @@ necessary.
 ## Accepting Modifications
 
 All modifications to the Node.js code and documentation should be
-performed via GitHub pull requests. Only the `Website Admin` group
+performed via GitHub pull requests. Only the `Website` group
 can merge their own work and should do so with great care.
 
 All pull requests must be reviewed and accepted by a Collaborator with
@@ -72,10 +80,10 @@ All pull requests that modify executable code should be subjected to
 continuous integration tests on the
 [project CI server](https://ci.nodejs.org/).
 
-### Involving the Website Admin Group
+### Involving the Website Group
 
 Collaborators may opt to elevate pull requests or issues to the admin group for
-discussion by mentioning `@nodejs/website-admin`. This should be done
+discussion by mentioning `@nodejs/website`. This should be done
 where a pull request:
 
 - has a significant impact on the codebase,
@@ -85,7 +93,6 @@ where a pull request:
 
 The Website Admin group should serve as the final arbiter where required.
 
-<a id="developers-certificate-of-origin"></a>
 ## Developer's Certificate of Origin 1.1
 
 By making a contribution to this project, I certify that:
