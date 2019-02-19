@@ -4,7 +4,7 @@
 
 * [Issues and Pull Requests](#issues-and-pull-requests)
 * [Accepting Modifications](#accepting-modifications)
-  - [Involving the Website Admin Group](#involving-the-website-admin-group)
+  - [Involving the Website Group](#involving-the-website-group)
 * [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin-11)
 * [Code of Conduct](#code-of-conduct)
 * [Code editing](#code-editing)
