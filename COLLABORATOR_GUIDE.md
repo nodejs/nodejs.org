@@ -30,7 +30,7 @@ pull requests to the Node.js website project.
 Collaborators should feel free to take full responsibility for
 managing issues and pull requests they feel qualified to handle, as
 long as this is done while being mindful of these guidelines, the
-opinions of other Collaborators and guidance of the Website Admin Group.
+opinions of other Collaborators and guidance of the Website Group.
 
 Collaborators may **close** any issue or pull request they believe is
 not relevant for the future of the Node.js project. Where this is
