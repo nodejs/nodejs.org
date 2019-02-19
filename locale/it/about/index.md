@@ -5,7 +5,7 @@ trademark: Trademark
 ---
 # Informazioni su Node.js&reg;
 
-Come runtime JavaScript guidato da eventi asincroni, Node è progettato per
+Come runtime JavaScript guidato da eventi asincroni, Node.js è progettato per
 creare applicazioni di rete scalabili.Nel seguente esempio "Hello World",
 molte connessioni possono essere gestite contemporaneamente.
 Ad ogni connessione viene chiamata la callback, ma se non c'è nulla da fare, Node rimarrà inattivo.
@@ -33,7 +33,7 @@ i thread. Il networking basato su thread è relativamente inefficiente e
 molto difficile da utilizzare. Inoltre, gli utenti di Node sono liberi da preoccupazioni di 
 blocco permanente del processo, poiché non ci sono blocchi. Quasi nessuna funzione in Node 
 esegue direttamente I / O, quindi il processo non blocca mai. Perché nulla blocca, i sistemi 
-scalabili sono molto ragionevoli da sviluppare con Nodo.
+scalabili sono molto ragionevoli da sviluppare con Node.js.
 
 
 
@@ -47,15 +47,15 @@ Node è  influenzato da sistemi come Ru Ruby's
  Presenta un [event loop][] come un costrutto di runtime invece che come una libreria. In altri sistemi, c'è sempre una chiamata di blocco per avviare l'event-loop.
 In genere il comportamento è definito tramite callback all'inizio di uno script
 e alla fine avvia un server attraverso una chiamata di blocco come
-`EventMachine :: run ()`. In Node non esiste alcuna chiamata per avviare il ciclo. Nodo
+`EventMachine :: run ()`. In Node non esiste alcuna chiamata per avviare il ciclo. Node.js
 entra semplicemente nel ciclo degli eventi dopo aver eseguito lo script di input. Node esce dal
 ciclo di eventi quando non ci sono più callback da eseguire. Questo comportamento è simile a
 JavaScript in browser: il ciclo degli eventi è nascosto all'utente.
 
-HTTP ha un posto di rilievo in Nodo, che è stato progettato per lo streaming e bassa latenza.
+HTTP ha un posto di rilievo in Node.js, che è stato progettato per lo streaming e bassa latenza.
  Ciò rende Node una base perfetta per una libreria o un framework web.
 
-Solo perché il nodo è progettato senza thread, non significa che non è possibile sfruttare i multi-core nel proprio ambiente. I processi figlio possono essere generati utilizzando la nostra API [`child_process.fork()`][], con cui è possibile comunicare facilmente. Costruito sulla stessa interfaccia è il modulo [`cluster`][], che consente di condividere i socket tra i processi per consentire il bilanciamento del carico sui core.
+Solo perché Node.js è progettato senza thread, non significa che non è possibile sfruttare i multi-core nel proprio ambiente. I processi figlio possono essere generati utilizzando la nostra API [`child_process.fork()`][], con cui è possibile comunicare facilmente. Costruito sulla stessa interfaccia è il modulo [`cluster`][], che consente di condividere i socket tra i processi per consentire il bilanciamento del carico sui core.
 
 
 [Bloccante vs Non Bloccante]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
