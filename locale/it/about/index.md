@@ -8,7 +8,7 @@ trademark: Trademark
 Come runtime JavaScript guidato da eventi asincroni, Node.js è progettato per
 creare applicazioni di rete scalabili. Nel seguente esempio "Hello World",
 molte connessioni possono essere gestite contemporaneamente.
-Ad ogni connessione viene chiamata la callback, ma se non c'è nulla da fare, Node rimarrà inattivo.
+Ad ogni connessione viene chiamata la callback, ma se non c'è nulla da fare, Node.js rimarrà inattivo.
                                                                  
 
 ```javascript
