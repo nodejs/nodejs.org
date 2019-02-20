@@ -118,6 +118,16 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 - [dkundel.com](https://dkundel.com)
 - Topics - Node.js, TypeScript, Nodebots, Web Security, Web Components
 
+#### Florida
+
+##### Saint Petersburg
+
+###### Mark Pieszak
+
+- [@MarkPieszak](http://twitter.com/MarkPieszak)
+- [Github](https://github.com/MarkPieszak)
+- Topics - Node.js, JavaScript SSR (Server-side Rendering), Performance, Open Source, Community
+
 #### New York
 
 ##### New York City
