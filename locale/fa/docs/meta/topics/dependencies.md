@@ -50,9 +50,9 @@ per-request memory footprint.
 ### c-ares
 
 For some asynchronous DNS requests, Node.js uses a C library called c-ares.
-It is exposed through the DNS module in JavaScript as the resolve() family of
-functions. The lookup() function, which is what the rest of core uses, makes
-use of threaded getaddrinfo(3) calls in libuv. The reason for this is that
+It is exposed through the DNS module in JavaScript as the `resolve()` family of
+functions. The `lookup()` function, which is what the rest of core uses, makes
+use of threaded `getaddrinfo(3)` calls in libuv. The reason for this is that
 c-ares supports /etc/hosts, /etc/resolv.conf and /etc/svc.conf, but not things
 like mDNS.
 

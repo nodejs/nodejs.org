@@ -41,7 +41,7 @@ HTTP 解析是通过一个由 C 语言编写、轻量级称作 http-parser 的�
 
 ### c-ares
 
-对于某些异步的 DNS 请求，Node.js 使用由 C 编写，称作 c-areas 的类库。它是通过 JavaScript 的 DNS 模块，以 resolve() 家族函数的形式发布。lookup() 函数，核心剩余部分使用它，并利用了在 libuv 中可跨越getaddrinfo(3) 的调用。那是因为 c-areas 支持 /etc/hosts，/etc/resolv.conf 以及 /etc/svc.conf。但不是像 mDNS 一样的东西。
+对于某些异步的 DNS 请求，Node.js 使用由 C 编写，称作 c-areas 的类库。它是通过 JavaScript 的 DNS 模块，以 `resolve()` 家族函数的形式发布。`lookup()` 函数，核心剩余部分使用它，借助在 libuv 中 `getaddrinfo(3)` 跨越函数的调用。那是因为 c-areas 支持 /etc/hosts，/etc/resolv.conf 以及 /etc/svc.conf。但不是像 mDNS 一样的东西。
 
 - [相关文档](http://c-ares.haxx.se/docs.html)
 
