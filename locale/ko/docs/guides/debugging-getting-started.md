@@ -130,6 +130,8 @@ info on these follows:
   are listed.
 * **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
   (see above) or the --inspect hint text and paste into Chrome.
+* **Option 3**: Install the Chrome Extension NIM (Node Inspector Manager):  
+  https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 -->
 
 ## 인스펙터 클라이언트
@@ -150,6 +152,8 @@ Node 인스펙터에 접속할 수 있는 여러 상용 도구와 오픈소스 �
   Configure 버튼을 눌러서 대상 호스트와 포트 목록을 확인합니다.
 * **방법 2**: `/json/list`(상단 참고)의 출력에서 `devtoolsFrontendUrl`을
   복사하거나 --inspect가 알려준 텍스트에서 복사해서 크롬에 붙여넣기를 합니다.
+* **방법 3**: 크롬 확장프로그램 NIM(Node Inspector Manager)을 설치하세요. 
+  https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 
 <!--
 #### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+

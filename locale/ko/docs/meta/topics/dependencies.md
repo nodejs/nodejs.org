@@ -112,8 +112,8 @@ like mDNS.
 ### c-ares
 
 일부 비동기 DNS 요청을 위해서 Node.js는 c-ares라는 C 라이브러리를 사용합니다. c-ares는
-JavaScript DNS 모듈로 resolve() 류의 함수들을 노출합니다. 코어의 다른 부분에서 사용하는
-lookup() 함수는 libuv에서 스레드로 관리되는 getaddrinfo(3) 호출을 사용합니다. 이렇게 사용하는
+JavaScript DNS 모듈로 `resolve()` 류의 함수들을 노출합니다. 코어의 다른 부분에서 사용하는
+`lookup()` 함수는 libuv에서 스레드로 관리되는 `getaddrinfo(3)` 호출을 사용합니다. 이렇게 사용하는
 이유는 c-ares가 /etc/hosts, /etc/resolv.conf, /etc/svc.conf는 지원하지만
 mDNS 같은 것은 지원하지 않기 때문입니다.
 
