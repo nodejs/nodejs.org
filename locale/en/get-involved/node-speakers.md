@@ -112,7 +112,7 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 - [LinkedIn](https://linkedin.com/in/tracyslee)
 - Topics - Node.js Community, Women in Tech, Diversity & Inclusion, RxJS & Node.js
 
-#### Florida 🌴
+#### Florida
 
 ##### Saint Petersburg
 
