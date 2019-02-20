@@ -26,6 +26,8 @@ layout: contribute.hbs
 
 - [La documentation officielle de l'API de référence](/api) détaille l'API Node (en anglais).
 
+- [Node.js Guides](https://nodejs.dev) Guides to Node.js development.
+
 - [NodeSchool.io](https://nodeschool.io/fr-fr/) vous apprendra les concepts de Node.js avec des jeux interactifs en ligne de commande.
 
 - [L'étiquette Stack Overflow Node.js](http://stackoverflow.com/questions/tagged/node.js) rassemble de nouvelles informations chaque jour (en anglais).

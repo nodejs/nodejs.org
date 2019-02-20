@@ -19,6 +19,7 @@ layout: contribute.hbs
 ## التعلم
 
 - [التوثيق الرسمي لواجهة برمجة التطبيق](/api) يتحدث بالتفصيل على وجاهة برمجة التطبيق الخاصة بالـ Node.js
+- [Node.js Guides](https://nodejs.dev) Guides to Node.js development.
 - [NodeSchool.io] (http://nodeschool.io) سيعلمك مفاهيم الـ Node.js باستعمال العاب سطر اوامر تفاعلية.
 - [التاق الخاص بالـ Node.js على Stack Overflow](http://stackoverflow.com/questions/tagged/node.js) يجمع معلومات جديدة كل يوم.
 - [التاق الخاص بمجتمع مطوري الـ Node.js](https://dev.to/t/node) يمثل مكانا لمشاركة مشاريع الـ Node.js و المقالات و الدروس المتعلقة به إضافة إلى بدء النقاشات و طلب الآراء عن المواضيع المتعلقة بالـ Node.js. إن جميع المطورين من كافة المستويات مرحب بها هنا.
