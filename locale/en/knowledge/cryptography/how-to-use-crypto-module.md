@@ -18,7 +18,7 @@ The crypto module is mostly useful as a tool for implementing [cryptographic pro
 
 A hash is a fixed-length string of bits that is procedurally and deterministially generated from some arbitrary block of source data. Some important properties of these hashes (the type useful for cryptography) include:
 
-* **Fixed length:** This means that, no matter what the input, the length of the hash is the same. For example, md5 hashes are always 128 bits long whether the input data is a few bits or a few gigabytes.
+* **Fixed length:** This means that, no matter what the input, the length of the hash is the same. For example, SHA-256 hashes are always 256 bits long whether the input data is a few bits or a few gigabytes.
 
 * **Deterministic:** For the same input, you should expect to be able to calculate exactly the same hash. This makes hashes useful for checksums.
 
@@ -28,18 +28,17 @@ A hash is a fixed-length string of bits that is procedurally and deterministiall
 
 ### Hash Algorithms That Work With Crypto
 
-The hashes that work with crypto are dependent on what your version of OpenSSL supports. If you have a new enough version of OpenSSL, you can get a list of hash types your OpenSSL supports by typing `openssl list-message-digest-algorithms` into the command line. For older versions, simply type `openssl list-message-digest-commands` instead! Some of the most common hash types are: 
+The hashes that work with crypto are dependent on what your version of OpenSSL supports. If you have a new enough version of OpenSSL, you can get a list of hash types your OpenSSL supports by typing `openssl list-message-digest-algorithms` into the command line. For older versions, simply type `openssl list-message-digest-commands` instead!
 
-* [sha1](http://en.wikipedia.org/wiki/Sha1)
-* [md5](http://en.wikipedia.org/wiki/Md5).
+One of the most common hash algorithms is [SHA-256](https://en.wikipedia.org/wiki/SHA-2). Older popular types like **[SHA-1](http://en.wikipedia.org/wiki/Sha1) or [MD5](https://en.wikipedia.org/wiki/MD5#Security) are not secure any more** and should not be used.
 
 ### How To Calculate Hashes with Crypto
 
-Crypto has a method called `createHash` which allows you to calculate a hash. Its only argument is a string representing the hash This example finds the md5 hash for the string, "Man oh man do I love node!":
+Crypto has a method called `createHash` which allows you to calculate a hash. Its only argument is a string representing the hash This example finds the SHA-256 hash for the string, "Man oh man do I love node!":
 
 ```js
 require("crypto")
-  .createHash("md5")
+  .createHash("sha256")
   .update("Man oh man do I love node!")
   .digest("hex");
 ```
@@ -48,17 +47,17 @@ The `update` method is used to push data to later be turned into a hash with the
 
 ## HMAC
 
-HMAC stands for Hash-based Message Authentication Code, and is a process for applying a hash algorithm to both data and a secret key that results in a single final hash. Its use is similar to that of a vanilla hash, but also allows to check the *authenticity* of data as *well* as the integrity of said data (as you can using md5 checksums).
+HMAC stands for Hash-based Message Authentication Code, and is a process for applying a hash algorithm to both data and a secret key that results in a single final hash. Its use is similar to that of a vanilla hash, but also allows to check the *authenticity* of data as *well* as the integrity of said data (as you can using SHA-256 checksums).
 
 The API for hmacs is very similar to that of `createHash`, except that the method is called `createHmac` and it takes a key as a second argument:
 
 ```js
-require("crypto").createHmac("md5", "password")
+require("crypto").createHmac("sha256", "password")
   .update("If you love node so much why don't you marry it?")
   .digest("hex");
 ```
 
-The resulting md5 hash is unique to both the input data and the key.
+The resulting SHA-256 hash is unique to both the input data and the key.
 
 ## Ciphers
 
@@ -135,7 +134,7 @@ NODE PRO TIP: The `crypto.createCipheriv()` and `crypto.createDecipheriv()` meth
 | aes192         | 24 byte (192 bits) | 16 byte (128 bits) |
 | aes256         | 32 byte (256 bits) | 16 byte (128 bits) |
 
-In the code above The user entered `key` is hashed using `SHA256 encryption` which produces a 32 byte buffer by default, this buffered key is then used as the [cryptographic key](https://en.wikipedia.org/wiki/Key_(cryptography)) in the `crypto.createCipheriv()` and `crypto.createDecipheriv()` methods. The `iv` is also hashed with `SHA256 encryption` and is 32 byte in size but all AES (CBC mode and CFB mode) take `iv` of exactly 16 byte (128 bits) therefor another Buffer `resizedIV` is used which contains the first 16 byte of orignal 32 byte `iv`.
+In the code above The user entered `key` is hashed using `SHA-256 encryption` which produces a 32 byte buffer by default, this buffered key is then used as the [cryptographic key](https://en.wikipedia.org/wiki/Key_(cryptography)) in the `crypto.createCipheriv()` and `crypto.createDecipheriv()` methods. The `iv` is also hashed with `SHA-256 encryption` and is 32 byte in size but all AES (CBC mode and CFB mode) take `iv` of exactly 16 byte (128 bits) therefor another Buffer `resizedIV` is used which contains the first 16 byte of orignal 32 byte `iv`.
 
 Using this script to encode a message looks like this:
 
