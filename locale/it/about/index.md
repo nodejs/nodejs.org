@@ -44,7 +44,7 @@ Se alcuni dei termini utilizzati non ti sono familiari, ecco un articolo complet
 
 Node.js è influenzato da sistemi come la [Event Machine][] di Ruby o [Twisted][] di Python.
  Node.js prende un po' dal modello a eventi.
- Node.js usa un [event loop][] costrutto di runtime invece che come una libreria. In altri sistemi, c'è sempre una chiamata di blocco per avviare l'event-loop.
+ Node.js usa un [event loop][] come costrutto di runtime invece che come una libreria. In altri sistemi, c'è sempre una chiamata di blocco per avviare l'event-loop.
 In genere il comportamento è definito tramite callback all'inizio di uno script
 e alla fine avvia un server attraverso una chiamata di blocco come
 `EventMachine::run()`. In Node.js non esiste alcuna chiamata per avviare il ciclo. Node.js
