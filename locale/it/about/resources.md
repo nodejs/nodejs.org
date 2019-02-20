@@ -6,10 +6,11 @@ title: Logos and Graphics
 
 ## Logo Downloads
 
- Si prega di rivedere il [trademark policy](/about/trademark/) per informazioni sull'uso consenso di Node.js&reg; loghi e marchi.
+ Si prega di leggere il [trademark policy](/about/trademark/) per informazioni su come utilizzare i loghi
+  e il marchio Node.js&reg; loghi e marchi.
 
- Le linee guida per la visualizzazione del marchio Node.js sono descritte
- nelle [Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
+Le linee guida visive sono descritte nelle
+ [Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
 
 <table border="0" cellspacing="0" cellpadding="10" class="logos">
   <tr>
