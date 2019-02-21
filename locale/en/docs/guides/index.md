@@ -10,6 +10,7 @@ layout: docs.hbs
 - [Getting Started Guide](getting-started-guide/)
 - [Debugging - Getting Started](debugging-getting-started/)
 - [Easy profiling for Node.js Applications](simple-profiling/)
+- [Diagnostics - Flame Graphs](diagnostics-flamegraph/)
 - [Dockerizing a Node.js web app](nodejs-docker-webapp/)
 - [Migrating to safe Buffer constructors](buffer-constructor-deprecation/)
 
