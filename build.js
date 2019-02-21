@@ -281,9 +281,9 @@ function getSource (callback) {
           lts: latestVersion.lts(versions)
         },
         banner: {
-          visible: false,
-          text: 'November 2018 security releases available, upgrade now',
-          link: '/en/blog/vulnerability/november-2018-security-releases/'
+          visible: true,
+          text: 'New security releases to be made available Feb 27th, 2019',
+          link: '/en/blog/vulnerability/february-2019-security-releases/'
         }
       }
     }
