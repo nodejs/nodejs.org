@@ -125,6 +125,18 @@
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
       "text": "القواعد السلوكية"
+    },
+    "node-meetups": {
+      "link": "get-involved/node-meetups",
+      "text": "Node.js لقاءات"
+    },
+    "node-events": {
+      "link": "get-involved/node-events",
+      "text": "Node.js فعاليات"
+    },
+    "node-speakers": {
+      "link": "get-involved/node-speakers",
+      "text": "متحدثو الـ Node.js"
     }
   },
   "security": {
