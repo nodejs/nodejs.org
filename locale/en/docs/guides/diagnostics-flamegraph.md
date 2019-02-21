@@ -45,11 +45,11 @@ Now open the flame graph file in your favorite browser and watch it burn. It's c
 
 Worth mentioning - if you click an element of a flame graph a zoom-in of its surroundings will get displayed above the graph.
 
-### Using perf to sample a running process
+### Using `perf` to sample a running process
 
 This is great for recording flame graph data from an already running process that you don't want to interrupt. Imagine a production process with a hard to reproduce issue.
 
-```
+```bash
 perf record -F99 -p `pgrep -n node` -g -- sleep 3
 ```
 
@@ -57,12 +57,11 @@ Wait, what is that `sleep 3` for? It's there to keep the perf running - despite 
 perf runs for the life of the command you pass to it, whether or not you're actually profiling that command. `sleep 3` ensures that perf runs for 3 seconds.
 
 Why is `-F` (profiling frequency) set to 99? It's a reasonable default. You can adjust if you want. 
--F99 tells perf to take 99 samples per second, for more precision increase the value. Lower values should produce less output with less precise results. Precision you need depends on how long your CPU intensive functions really run. IF you're looking for the reason of a noticeable slowdown 99 frames per second should be more than enough.
+`-F99` tells perf to take 99 samples per second, for more precision increase the value. Lower values should produce less output with less precise results. Precision you need depends on how long your CPU intensive functions really run. If you're looking for the reason of a noticeable slowdown, 99 frames per second should be more than enough.
 
 After you get that 3 second perf record, proceed with generating the flame graph with the last two steps from above.
 
 ### Filtering out Node internal functions
-
 
 Usually you just want to look at the performance of your own calls, so filtering out Node and V8 internal functions can make the graph much easier to read. You can clean up your perf file with:
 
@@ -81,11 +80,11 @@ If you read your flame graph and it seems odd, as if something is missing in the
 
 `--perf-basic-prof-only-functions` produces less output, so it's the option with least overhead.
 
-Why do I need them at all?
+### Why do I need them at all?
 
 Well, without these options you'll still get a flame graph, but with most bars labeled `v8::Function::Call`.
 
-## perf output issues
+## `perf` output issues
 
 ### Node.js 8.x V8 pipeline changes
 
@@ -101,13 +100,13 @@ For details see:
 - https://github.com/nodejs/benchmarking/issues/168
 - https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
 
-### Node.js 10+ 
+### Node.js 10+
 
-Node.js 10.x addresses the issue with Turbofan using the`--interpreted-frames-native-stack` flag.
+Node.js 10.x addresses the issue with Turbofan using the `--interpreted-frames-native-stack` flag.
 
 Run `node --interpreted-frames-native-stack --perf-basic-prof-only-functions` to get function names in the flame graph regardless of which pipeline V8 used to compile your JavaScript.
 
-### broken labels in flamegraph
+### Broken labels in the flame graph
 
 If you're seeing labels looking like this
 ```
