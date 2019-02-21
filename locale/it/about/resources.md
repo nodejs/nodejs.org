@@ -6,26 +6,27 @@ title: Logos and Graphics
 
 ## Logo Downloads
 
- Please review the [trademark policy](/about/trademark/) for information about permissible use of Node.js&reg; logos and marks.
+ Si prega di leggere il [trademark policy](/about/trademark/) per informazioni su come utilizzare i loghi
+  e il marchio Node.js&reg; loghi e marchi.
 
- Guidelines for the visual display of the Node.js mark are described in
- the [Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
+Le linee guida visive sono descritte nelle
+ [Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
 
 <table border="0" cellspacing="0" cellpadding="10" class="logos">
   <tr>
-    <td bgcolor="#FFFFFF">[![Node.js on light background](/static/images/logos/nodejs-new-pantone-black.png)](/static/images/logos/nodejs-new-pantone-black.ai)</td>
-    <td bgcolor="#333333">[![Node.js on dark background](/static/images/logos/nodejs-new-pantone-white.png)](/static/images/logos/nodejs-new-pantone-white.ai)</td>
+    <td bgcolor="#FFFFFF"><a href="/static/images/logos/nodejs-new-pantone-black.ai"><img src="/static/images/logos/nodejs-new-pantone-black.png" alt="Node.js on light background"></a></td>
+    <td bgcolor="#333333"><a href="/static/images/logos/nodejs-new-pantone-white.ai"><img src="/static/images/logos/nodejs-new-pantone-white.png" alt="Node.js on dark background"></a></td>
   </tr>
   <tr>
-    <td>[Node.js standard AI](/static/images/logos/nodejs-new-pantone-black.ai)</td>
-    <td>[Node.js reversed AI](/static/images/logos/nodejs-new-pantone-white.ai)</td>
+    <td><a href="/static/images/logos/nodejs-new-pantone-black.ai">Node.js standard AI</a></td>
+    <td><a href="/static/images/logos/nodejs-new-pantone-white.ai">Node.js invertito AI</a></td>
   </tr>
   <tr>
-    <td bgcolor="#FFFFFF">[![Node.js on light background](/static/images/logos/nodejs-new-black.png)](/static/images/logos/nodejs-new-black.ai)</td>
-    <td bgcolor="#333333">[![Node.js on dark background](/static/images/logos/nodejs-new-white.png)](/static/images/logos/nodejs-new-white.ai)</td>
+    <td bgcolor="#FFFFFF"><a href="/static/images/logos/nodejs-new-black.ai"><img src="/static/images/logos/nodejs-new-black.png" alt="Node.js on light background"></a></td>
+    <td bgcolor="#333333"><a href="/static/images/logos/nodejs-new-white.ai"><img src="/static/images/logos/nodejs-new-white.png" alt="Node.js on dark background"></a></td>
   </tr>
   <tr>
-    <td>[Node.js standard with less color AI](/static/images/logos/nodejs-new-black.ai)</td>
-    <td>[Node.js reversed with less color AI](/static/images/logos/nodejs-new-white.ai)</td>
+    <td><a href="/static/images/logos/nodejs-new-black.ai">Node.js standard con meno colori AI</a></td>
+    <td><a href="/static/images/logos/nodejs-new-white.ai">Node.js invertito con meno colori AI</a></td>
   </tr>
 </table>

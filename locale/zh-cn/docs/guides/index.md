@@ -10,6 +10,7 @@ layout: docs.hbs
 - [入门指南](getting-started-guide/)
 - [调试入门](debugging-getting-started/)
 - [Node.js 应用一窥](simple-profiling/)
+- [诊断 - 火焰图](diagnostics-flamegraph/)
 - [将 Node.js 网络应用安装到 Docker 中](nodejs-docker-webapp/)
 - [迁移到安全的 Buffer 构造函数中](buffer-constructor-deprecation/)
 
