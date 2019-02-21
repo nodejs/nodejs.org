@@ -13,7 +13,7 @@ layout: docs.hbs
 
 或许你已经听说对于 Node.js，创建火焰图不是非常容易，但是那并不是真的（永远不会）。我们再也不需要 Solaris vms 创建火焰图了！
 
-火焰图通过 `perf` 输出，这并不是一个 node 所指定的工具。即便它是把 CPU 耗时可视化的最佳工具，它仍然存在一些问题 —— 如在 Node 8 和之后版本中 JavaScript 编码是如何优化的。欲了解详情可以看[perf 输出的问题](#perf-output-issues)这部分。
+火焰图通过 `perf` 输出，这并不是一个 node 所指定的工具。即便它是把 CPU 耗时可视化的最佳工具，它仍然存在一些问题 —— 如在 Node.js 8 和之后版本中 JavaScript 编码是如何优化的。欲了解详情可以看[perf 输出的问题](#perf-output-issues)这部分。
 
 ### 使用预包装工具
 
@@ -31,7 +31,7 @@ layout: docs.hbs
 
 1. 安装 `perf`（如果你没有安装，那么通常通过 linux-tools-common 安装包进行安装）
 2. 尝试运行 `perf` - 或许会告诉你缺少内核模块，请同样安装他们。
-3. 启用 pref 并运行 node（具体参考 [perf 输出的问题](#perf-output-issues)以此了解针对不同 Node 版本的建议）
+3. 启用 pref 并运行 node（具体参考 [perf 输出的问题](#perf-output-issues)以此了解针对不同 Node.js 版本的建议）
 ```bash
 perf record -e cycles:u -g -- node --perf-basic-prof app.js
 ``` 
@@ -58,9 +58,9 @@ perf record -F99 -p `pgrep -n node` -g -- sleep 3
 
 当你得到了那 3 秒 pref 生成的记录，请用以上步骤的最后 2 步 处理生成火焰图。
 
-### 过滤掉 Nodejs 的内置函数
+### 过滤掉 Node.js 的内置函数
 
-通常你只希望看到你自定义函数的调用性能如何，因此把 Node 和 V8 内置函数过滤掉，可以让你的图变得简单又容易看懂。你可以这样做：
+通常你只希望看到你自定义函数的调用性能如何，因此把 Node.js 和 V8 内置函数过滤掉，可以让你的图变得简单又容易看懂。你可以这样做：
 
 ```bash
 sed -i \
@@ -69,11 +69,11 @@ sed -i \
   perfs.out
 ```
 
-如果你现在读火焰图，就会觉得它看上去很怪 —— 花费了多数时间的主要函数就像丢了什么一样，你可以尝试不使用过滤参数，那么你也许得到一个罕见的情况下 Node 自身的问题。
+如果你现在读火焰图，就会觉得它看上去很怪 —— 花费了多数时间的主要函数就像丢了什么一样，你可以尝试不使用过滤参数，那么你也许得到一个罕见的情况下 Node.js 自身的问题。
 
 ### Node 的分析选项
 
-`--perf-basic-prof-only-functions` 和 `--perf-basic-prof`：此二者函数对你的 JavaScript 调试有帮助，其余选项则用于分析 Node 自身，这已经超出了本章的范畴。
+`--perf-basic-prof-only-functions` 和 `--perf-basic-prof`：此二者函数对你的 JavaScript 调试有帮助，其余选项则用于分析 Node.js 自身，这已经超出了本章的范畴。
 
 `--perf-basic-prof-only-functions`：因为输出少，所以使用此参数选项开销也少。
 
