@@ -47,7 +47,7 @@
     "metalsmith-discover-partials": "^0.1.2",
     "metalsmith-feed": "1.0.0",
     "metalsmith-layouts": "2.1.0",
-    "metalsmith-markdown": "^1.0.1",
+    "metalsmith-markdown": "^1.2.0",
     "metalsmith-metadata": "0.0.4",
     "metalsmith-permalinks": "^2.0.0",
     "metalsmith-prism": "3.1.1",
