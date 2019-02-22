@@ -1,7 +1,6 @@
 ---
 layout: index.hbs
 labels:
-  banner: مستجدات أمنية مهمة، المرجو التحميل الآن !
   current-version: الاصدار الحالي
   download: تحميل
   download-for: تحميل النسخة الخاصة ب

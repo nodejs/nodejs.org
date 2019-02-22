@@ -1,7 +1,6 @@
 ---
 layout: index.hbs
 labels:
-  banner: انتشار امنیتی مهم! لطفا بروزرسانی نمایید.
   current-version: نگارش کنونی
   download: دانلود
   download-for: دانلود برای
