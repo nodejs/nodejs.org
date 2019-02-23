@@ -218,8 +218,8 @@ emitted via `process.nextTick()`.
 `setImmediate()` and `setTimeout()` are similar, but behave in different
 ways depending on when they are called.
 
-* `setImmediate()` is designed to execute a script once the current
-**poll** phase completes.
+* `setImmediate()` is designed to execute a script once the
+current **poll** phase completes.
 * `setTimeout()` schedules a script to be run after a minimum threshold
 in ms has elapsed.
 
