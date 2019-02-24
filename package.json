@@ -36,7 +36,7 @@
     "autoprefixer-stylus": "0.14.0",
     "cheerio": "0.22.0",
     "chokidar": "^2.0.4",
-    "handlebars": "4.0.12",
+    "handlebars": "^4.1.0",
     "jstransformer-handlebars": "1.1.0",
     "junk": "2.1.0",
     "lodash.defaultsdeep": "4.6.0",
@@ -68,7 +68,7 @@
     "nock": "^10.0.6",
     "pre-commit": "^1.2.2",
     "proxyquire": "^2.0.1",
-    "standard": "^11.0.1",
+    "standard": "^12.0.0",
     "stylint": "^1.5.9",
     "tape": "^4.9.1"
   }
