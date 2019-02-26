@@ -34,7 +34,7 @@ module.exports = (contents, locale, path) => {
         return false
       }
 
-      // dont re-add nested elements when extracting summary
+      // Don't re-add nested elements when extracting summary
       // from blog posts not contained in a complete HTML document
       if (!hasBody && elem.parent) {
         return
