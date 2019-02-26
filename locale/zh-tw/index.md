@@ -1,7 +1,6 @@
 ---
 layout: index.hbs
 labels:
-  banner: 重要的安全版本，請立即更新！
   current-version: 目前版本
   download: 下載
   download-for: 目前版本：
