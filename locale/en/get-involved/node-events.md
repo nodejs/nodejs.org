@@ -11,7 +11,7 @@ This is a list of Node.js events and conferences. Please submit a PR if you'd li
 
 FORMAT
 
-- [Event Name]() | Location | Dates
+- Event Name | Location | Dates
 
 ## Events
 
