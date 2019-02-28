@@ -349,7 +349,7 @@ REQUIREMENTS
 - Frequency of meetups - monthly
 - How to submit a talk? [contribute.js.la](https://contribute.js.la)
 - Organizer name - David Guttman
-- Organizer contact info - 
+- Organizer contact info - @dguttman on [slack.js.la](https://slack.js.la)
 
 ##### Irvine
 
