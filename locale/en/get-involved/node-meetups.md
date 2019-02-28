@@ -343,6 +343,14 @@ REQUIREMENTS
 
 #### California
 
+#### Los Angeles
+
+- [js.la](https://js.la)
+- Frequency of meetups - monthly
+- How to submit a talk? [contribute.js.la](https://contribute.js.la)
+- Organizer name - David Guttman
+- Organizer contact info - 
+
 ##### Irvine
 
 - [Meetup](https://www.meetup.com/Node-JS-OC/)
