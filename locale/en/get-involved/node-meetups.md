@@ -59,7 +59,7 @@ REQUIREMENTS
 - Organizer name - Andrey Sidorov
 - Organizer contact info -
 
-##### Sidney
+##### Sydney
 
 - [Meetup](https://www.meetup.com/node-sydney/)
 - Frequency of meetups - monthly
