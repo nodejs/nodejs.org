@@ -282,7 +282,7 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'New security releases to be made available Feb 27th, 2019',
+          text: 'New security releases now available for all release lines',
           link: '/en/blog/vulnerability/february-2019-security-releases/'
         }
       }
