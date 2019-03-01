@@ -343,7 +343,7 @@ REQUIREMENTS
 
 #### California
 
-#### Los Angeles
+##### Los Angeles
 
 - [js.la](https://js.la)
 - Frequency of meetups - monthly
