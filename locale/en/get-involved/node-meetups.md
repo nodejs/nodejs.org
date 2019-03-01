@@ -376,6 +376,8 @@ REQUIREMENTS
 - Organizer name - Brooks Patton
 - Organizer contact info -
 
+#### Florida
+
 #### Georgia 
 
 ##### Atlanta 
@@ -385,8 +387,6 @@ REQUIREMENTS
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Ryan Connelly
 - Organizer contact info -
-
-#### Florida
 
 ##### Jacksonville
 
