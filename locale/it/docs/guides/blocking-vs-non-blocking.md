@@ -67,7 +67,7 @@ Let's expand our example a little bit:
 const fs = require('fs');
 const data = fs.readFileSync('/file.md'); // blocks here until file is read
 console.log(data);
-// moreWork(); will run after console.log
+moreWork(); // will run after console.log
 ```
 
 And here is a similar, but not equivalent asynchronous example:
@@ -78,7 +78,7 @@ fs.readFile('/file.md', (err, data) => {
   if (err) throw err;
   console.log(data);
 });
-// moreWork(); will run before console.log
+moreWork(); // will run before console.log
 ```
 
 In the first example above, `console.log` will be called before `moreWork()`. In
