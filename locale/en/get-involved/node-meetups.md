@@ -564,7 +564,7 @@ REQUIREMENTS
 
 - [JSOxford](https://www.meetup.com/jsoxford/)
 - Frequency of meetups - every 2 months
-- How to submit a talk? [submit form](https://docs.google.com/forms/d/e/1FAIpQLSflx7LU44PuwlyCJj-WwlP_SlrUvxAd8uaXlY7_O65c7RLpGQ/viewform?usp=sf_link)
+- How to submit a talk? [Submit Form](https://docs.google.com/forms/d/e/1FAIpQLSflx7LU44PuwlyCJj-WwlP_SlrUvxAd8uaXlY7_O65c7RLpGQ/viewform?usp=sf_link)
 - Organizer names - Marcus Noble, Seren Davies
 - Organizers contact info - organisers@jsoxford.com
 
