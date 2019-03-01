@@ -265,9 +265,10 @@ REQUIREMENTS
 
 - [Meetup](https://www.meetup.com/NodeJS-Israel/)
 - Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Lior Kesos
-- Organizer contact info -
+- How to submit a talk? Contact organizers in the meetup page or submit your talk on [Node.js-IL website](http://www.nodejsil.com/).
+- Organizer name - [Idan Dagan](https://github.com/idandagan1), [Guy Segev](https://github.com/guyguyon), [Tomer Omri](https://github.com/TomerOmri)
+- Organizer contact info - [Email](mailto:nodejsisrael8@gmail.com
+)
 
 ### Mexico
 
