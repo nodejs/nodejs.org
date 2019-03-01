@@ -378,6 +378,15 @@ REQUIREMENTS
 
 #### Florida
 
+##### Jacksonville
+
+- [Meetup](https://www.meetup.com/Jax-Node-js-UG/)
+- [Website](https://www.jaxnode.com)
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - David Fekke
+- Organizer contact info - David Fekke at gmail dot com
+
 #### Georgia 
 
 ##### Atlanta 
@@ -387,15 +396,6 @@ REQUIREMENTS
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Ryan Connelly
 - Organizer contact info -
-
-##### Jacksonville
-
-- [Meetup](https://www.meetup.com/Jax-Node-js-UG/)
-- [Website](https://www.jaxnode.com)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - David Fekke
-- Organizer contact info - David Fekke at gmail dot com
 
 #### Illinois
 
