@@ -385,6 +385,17 @@ REQUIREMENTS
 - Organizer name - Brooks Patton
 - Organizer contact info -
 
+#### Florida
+
+##### Jacksonville
+
+- [Meetup](https://www.meetup.com/Jax-Node-js-UG/)
+- [Website](https://www.jaxnode.com)
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - David Fekke
+- Organizer contact info - David Fekke at gmail dot com
+
 #### Georgia 
 
 ##### Atlanta 
