@@ -29,7 +29,7 @@ REQUIREMENTS
 ## Meetups
 
 ### Africa
-- [Meetup](https://www.meetup.com/banodejs/)
+- [Meetup](https://www.nodejs.africa)
 - Frequency of meetups - bi-monthly
 - How to submit a talk? [Submit to this form](https://docs.google.com/forms/d/e/1FAIpQLSe3vPkiO8ijtbP7fUhEotKefXU-fWUoDGtUSo1khmtA_7v1WQ/viewform)
 - Organizer name - Agiri Abraham
