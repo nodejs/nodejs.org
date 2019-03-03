@@ -436,6 +436,15 @@ REQUIREMENTS
 - Organizer name - [Brian Sodano](https://github.com/codemouse)
 - Organizer contact info - [briansodano@gmail.com](mailto:briansodano@gmail.com) or [Boston JS slack workspace](https://bostonjavascript.slack.com)
 
+#### Michigan
+
+##### Detroit
+
+- [Meetup](https://www.meetup.com/DetNode/)
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Steve Marsh, Norman Witte and Israel V
+
 #### Minnesota
 
 ##### Minneapolis
