@@ -36,7 +36,7 @@ title: Installing Node.js via package manager
 ```bash
 pkg install nodejs
 ```
-حاليا، النسخ الثنائية الخاصة بـ Termux تنتج بدون الحاجة إلى دعم مراقب و هي مربوطة بـ `system-icu` (تعتمد على حزمة `libicu`).
+حاليا، النسخ الثنائية الخاصة بـ Termux و هي مربوطة بـ `system-icu` (تعتمد على حزمة `libicu`).
 
 ## Arch Linux
 
