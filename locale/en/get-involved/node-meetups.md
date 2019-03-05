@@ -97,6 +97,14 @@ REQUIREMENTS
 - Organizer name - Filipe Oliveira
 - Organizer contact info -
 
+#### Chile
+
+- [Meetup](https://www.meetup.com/es-ES/NodersJS/)
+- Frequency of meetups - monthly
+- How to submit a talk? Issue on Github [here](https://github.com/Noders/Meetups/issues/new)
+- Organizer name - Rodrigo Adones and Ender Bonnet
+- Organizer contact info - [Rodrigo](https://github.com/L0rdKras), [Ender](https://twitter.com/enbonnet)
+
 #### Minas Gerais
 
 - [Meetup](https://www.meetup.com/nodebr/)
