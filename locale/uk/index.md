@@ -17,4 +17,4 @@ labels:
   version-schedule-prompt-link-text: графік LTS.
 ---
 
-Node.js® — це JavaScript–оточення побудоване на JavaScript–рушієві [Chrome V8](https://developers.google.com/v8/).
+Node.js® — це JavaScript–оточення побудоване на JavaScript–рушієві [Chrome V8](https://v8.dev/).

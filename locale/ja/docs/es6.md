@@ -5,9 +5,9 @@ layout: docs.hbs
 <!-- # ECMAScript 2015 (ES6) and beyond -->
 # ECMAScript 2015 (ES6) とそれ以降のバージョン
 
-<!-- Node.js is built against modern versions of [V8](https://developers.google.com/v8/). By keeping up-to-date with the latest releases of this engine, we ensure new features from the [JavaScript ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm) which are brought to Node.js developers in a timely manner, as well as continued performance and stability improvements. -->
+<!-- Node.js is built against modern versions of [V8](https://v8.dev/). By keeping up-to-date with the latest releases of this engine, we ensure new features from the [JavaScript ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm) which are brought to Node.js developers in a timely manner, as well as continued performance and stability improvements. -->
 
-Node.js は [V8](https://developers.google.com/v8/) のモダンなバージョンに対して作られています。V8 を最新の状態に保つことで [JavaScript ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm) の新機能を開発者にすみやかに提供し、継続的なパフォーマンスと安定性の向上を保証しています。
+Node.js は [V8](https://v8.dev/) のモダンなバージョンに対して作られています。V8 を最新の状態に保つことで [JavaScript ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm) の新機能を開発者にすみやかに提供し、継続的なパフォーマンスと安定性の向上を保証しています。
 
 <!-- All ECMAScript 2015 (ES6) features are split into three groups for **shipping**, **staged**, and **in progress** features: -->
 すべての ECMAScript 2015 (ES6) の機能は **shipping（リリース済み）**、**staged（ステージング）** と **in progress（開発中）**の3つに分けられています：

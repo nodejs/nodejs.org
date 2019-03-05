@@ -20,4 +20,4 @@ labels:
   newsletter-postfix: " , الرسالة الإخبارية الشّهريّة عن Node.js "
 ---
 
-Node.js® هو اطار عمل مبني على محرك [Chrome V8](https://developers.google.com/v8/).
+Node.js® هو اطار عمل مبني على محرك [Chrome V8](https://v8.dev/).

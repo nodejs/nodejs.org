@@ -217,5 +217,5 @@ Percentage of the requests served within a certain time (ms)
 
 希望通过对此（诚然是做作的）示例的性能调查，您已经看到了 V8 刻度处理器如何帮助您更好地了解 Node.js 应用程序的性能。
 
-[V8 内探测器]: https://developers.google.com/v8/profiler_example
+[V8 内探测器]: https://v8.dev/docs/profile
 [异步编程的好处]: https://nodesource.com/blog/why-asynchronous

@@ -17,4 +17,4 @@ labels:
   version-schedule-prompt-link-text: Planning LTS.
 ---
 
-Node.js® est un environnement d’exécution JavaScript construit sur le [moteur JavaScript V8 de Chrome](https://developers.google.com/v8/).
+Node.js® est un environnement d’exécution JavaScript construit sur le [moteur JavaScript V8 de Chrome](https://v8.dev/).

@@ -17,4 +17,4 @@ labels:
   version-schedule-prompt-link-text: Agenda de LTS.
 ---
 
-Node.js® és un entorn d'execució per a JavaScript construït amb el [motor de JavaScript V8 de Chrome](https://developers.google.com/v8/).
+Node.js® és un entorn d'execució per a JavaScript construït amb el [motor de JavaScript V8 de Chrome](https://v8.dev/).

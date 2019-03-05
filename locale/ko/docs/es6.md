@@ -6,7 +6,7 @@ layout: docs.hbs
 <!--
 # ECMAScript 2015 (ES6) and beyond
 
-Node.js is built against modern versions of [V8](https://developers.google.com/v8/). By keeping up-to-date with the latest releases of this engine, we ensure new features from the [JavaScript ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm) are brought to Node.js developers in a timely manner, as well as continued performance and stability improvements.
+Node.js is built against modern versions of [V8](https://v8.dev/). By keeping up-to-date with the latest releases of this engine, we ensure new features from the [JavaScript ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm) are brought to Node.js developers in a timely manner, as well as continued performance and stability improvements.
 
 All ECMAScript 2015 (ES6) features are split into three groups for **shipping**, **staged**, and **in progress** features:
 
@@ -17,7 +17,7 @@ All ECMAScript 2015 (ES6) features are split into three groups for **shipping**,
 
 # ECMAScript 2015(ES6)와 그 다음
 
-Node.js는 [V8](https://developers.google.com/v8/)의 최신 버전으로 만들었습니다.
+Node.js는 [V8](https://v8.dev/)의 최신 버전으로 만들었습니다.
 V8을 최신 릴리스로 유지하기 때문에 Node.js 개발자에게
 [JavaScript ECMA-262 명세](http://www.ecma-international.org/publications/standards/Ecma-262.htm)의
 새로운 기능을 제때에 지원하면서 성능과 안정성 개선도 할 수 있습니다.
