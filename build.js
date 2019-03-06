@@ -58,7 +58,8 @@ function i18nJSON (lang) {
 // english one.
 function buildLocale (source, locale, opts) {
   console.log(`[metalsmith] build/${locale} started`)
-  console.time(`[metalsmith] build/${locale} finished`)
+  const labelForBuild = `[metalsmith] build/${locale} finished`
+  console.time(labelForBuild)
   const metalsmith = Metalsmith(__dirname)
   metalsmith
   // Sets global metadata imported from the locale's respective site.json.
@@ -167,7 +168,7 @@ function buildLocale (source, locale, opts) {
   // completion.
   metalsmith.build((err) => {
     if (err) { throw err }
-    console.timeEnd(`[metalsmith] build/${locale} finished`)
+    console.timeEnd(labelForBuild)
   })
 }
 
@@ -226,7 +227,8 @@ function githubLinks (options) {
 // This function builds the layouts folder for all the Stylus files.
 function buildLayouts () {
   console.log('[metalsmith] build/layouts started')
-  console.time('[metalsmith] build/layouts finished')
+  const labelForBuild = '[metalsmith] build/layouts finished'
+  console.time(labelForBuild)
 
   fs.mkdir(path.join(__dirname, 'build'), () => {
     fs.mkdir(path.join(__dirname, 'build', 'layouts'), () => {
@@ -249,7 +251,7 @@ function buildLayouts () {
       // completion.
       metalsmith.build((err) => {
         if (err) { throw err }
-        console.timeEnd('[metalsmith] build/layouts finished')
+        console.timeEnd(labelForBuild)
       })
     })
   })
