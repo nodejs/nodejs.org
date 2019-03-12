@@ -43,7 +43,7 @@ const example = function (optionalArg) {
 }
 
 const betterExample = function (optionalArg) {
-  if (typeof optionalArg === 'undefined') {
+  if (optionalArg === undefined) {
     optionalArg = "No parameter was passed";
   }
   console.log(optionalArg);
@@ -66,7 +66,7 @@ The second idiom is when the optional value is in the middle it can cause some u
 
 ```js
 const example = function (param1, optParam, callback) {
-  if (typeof callback === 'undefined') {
+  if (callback === undefined) {
     // only two parameters were passed, so the callback is actually in `optParam`
     callback = optParam;
 
