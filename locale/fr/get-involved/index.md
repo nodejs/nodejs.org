@@ -46,3 +46,4 @@ layout: contribute.hbs
 - [communauté japonaise](http://nodejs.jp/)
 - [communauté espagnole sur Facebook](https://www.facebook.com/groups/node.es/)
 - [communauté espagnole](http://nodehispano.com)
+- [Vietnamese Node.js community](https://www.facebook.com/nodejs.vn/)

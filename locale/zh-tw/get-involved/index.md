@@ -27,10 +27,11 @@ layout: contribute.hbs
 
 ## 國際性社群網站及專案
 
-- [Chinese community](http://cnodejs.org)
-- [French Google+ Community of Node.js users](https://plus.google.com/communities/113346206415381691435)
-- [Hungarian (Magyar) community](http://nodehun.blogspot.com/)
-- [Israeli Facebook group for Node.js](https://www.facebook.com/groups/node.il/)
-- [Japanese user group](http://nodejs.jp/)
-- [Spanish language Facebook group for Node.js](https://www.facebook.com/groups/node.es/)
-- [Spanish language community](http://nodehispano.com)
+- [漢語社群](http://cnodejs.org)
+- [Google+ 上的法語 Node.js 用戶組](https://plus.google.com/communities/113346206415381691435)
+- [匈牙利（馬劄爾人）語社群](http://nodehun.blogspot.com/)
+- [Facebook 上以色列語 Node.js 用戶組](https://www.facebook.com/groups/node.il/)
+- [日本語使用者組](http://nodejs.jp/)
+- [Facebook 上西班牙語 Node.js 用戶組](https://www.facebook.com/groups/node.es/)
+- [西班牙語社群](http://nodehispano.com)
+- [越南語 Node.js 社群](https://www.facebook.com/nodejs.vn/)
