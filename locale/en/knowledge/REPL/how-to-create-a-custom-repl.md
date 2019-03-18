@@ -11,18 +11,20 @@ layout: knowledge-post.hbs
 Node allows users to create their own REPLs with the [repl module](https://nodejs.org/api/repl.html). Its basic use looks like this:
 
 ```js
+var repl = require('repl')
+
 repl.start(prompt, stream);
 ```
 
-`prompt` is a string that's used for the prompt of your REPL and defaults to "> ". `stream` is the stream that the repl listens on and defaults to `process.stdin`. When you run `node` from the command prompt, what it's doing in the background is running `repl.start()` to give you the standard REPL.
+Above, `prompt` is a string that's used for the prompt of your REPL (which defaults to "> ") and `stream` is the stream that the repl listens on, defaulting to `process.stdin`. When you run the standalone `node` REPL from the command prompt, what it's doing in the background is running `repl.start()` to give you the standard REPL.
 
 However, the repl is pretty flexible. Here's an example that shows this off:
 
 ```js
 #!/usr/bin/env node
 
-var net = require("net"),
-    repl = require("repl");
+var net = require("net");
+var repl = require("repl");
 
 var mood = function () {
     var m = [ "^__^", "-___-;", ">.<", "<_>" ];
@@ -46,11 +48,11 @@ var local = repl.start("node::local> ");
 local.context.mood = mood;
 ```
 
-This script creates *two* REPLs: One is normal excepting for its custom prompt, but the *other* is exposed via the net module so I can telnet to it! In addition, it uses the `context` property to expose the function "mood" to both REPLs, and the "bonus" string to the remote REPL only. As you will see, this approach of trying to expose objects to one REPL and not the other *doesn't really work*.
+This script creates *two* REPLs: One is normal excepting for its custom prompt, but the *other* is exposed via the net module so you can telnet to it! In addition, it uses the `context` property to expose the function "mood" to both REPLs, and the "bonus" string to the remote REPL only. As you will see, this approach of trying to expose objects to one REPL and not the other *doesn't really work*.
 
 In addition, all objects in the global scope will also be accessible to your REPLs.
 
-Here's what happens when I run the script:
+Here's what happens when you run the script:
 
 ```shell
 $ node repl.js 
@@ -77,7 +79,7 @@ ReferenceError: bonus is not defined
 As may be seen, the `mood` function is usable within the local REPL, but the
 `bonus` string is not. This is as expected.
 
-Now, here's what happens when I try to telnet to port 5001:
+Now, here's what happens when you try to telnet to port 5001:
 
 ```shell
 $ telnet localhost 5001
