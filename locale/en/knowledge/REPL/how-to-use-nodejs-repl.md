@@ -15,7 +15,7 @@ Node.js ships with a REPL, which is short for 'Read-Eval-Print Loop'.  It is the
 Running it is simple - just run node without a filename.
 
 ```shell
-docs@nodejitsu:~/$ node
+$ node
 ```
 
 It then drops you into a simple prompt ('>') where you can type any JavaScript command you wish. As in most shells, you can press the up and down arrow keys to scroll through your command history and modify previous commands. The REPL also  `Tab` to make the REPL try to autocomplete the command.
@@ -24,7 +24,7 @@ Whenever you type a command, it will print the return value of the command. If y
 
 For example:
 ```shell
-node
+$ node
 > 1+1
 2
 > _+1
@@ -50,7 +50,7 @@ If you need to access any of the builtin modules, or any third party modules, th
 For example:
 
 ```shell
-node
+$ node
 > path = require('path')
 { resolve: [Function],
   normalize: [Function],
