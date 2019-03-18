@@ -19,6 +19,19 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 
 ### Brazil 🇧🇷
 
+#### Minas Gerais
+
+##### Belo Horizonte
+
+###### Hugo Iuri Cordeiro
+
+- [GitHub](https://github.com/hugoiuri)
+- [@hugoiuri](https://twitter.com/hugoiuri)
+- [Linkedin](https://www.linkedin.com/in/hugoiuri)
+- [Personal Website](http://www.hugoiuri.dev)
+
+- Topics - Node.js, Testing, Cloud Computing, Community, Open Source, JavaScript, Continuous Delivery, Deploy Automatization
+
 #### Rio de Janeiro
 
 ##### Rio de Janeiro 
