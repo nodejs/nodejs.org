@@ -37,7 +37,7 @@ You can also use the `Tab` key to autocomplete some commands. When multiple auto
 
 ## Special Commands and Exiting the REPL
 
-The following special commands are supported by all REPL instances:
+The following special commands are supported by all REPL instances (from [Node.js REPL docs](https://nodejs.org/api/repl.html#repl_commands_and_special_keys):
 
 * `.exit` - Close the I/O stream, causing the REPL to exit.
 * `.break` - When in the process of inputting a multi-line expression, entering
@@ -52,16 +52,16 @@ The following special commands are supported by all REPL instances:
   `> .load ./file/to/load.js`
 * `.editor` - Enter editor mode (`<ctrl>-D` to finish, `<ctrl>-C` to cancel).
 
-```console
+```shell
 > .editor
-// Entering editor mode (^D to finish, ^C to cancel)
+# Entering editor mode (<ctrl>-D to finish, <ctrl>-C to cancel)
 function welcome(name) {
   return `Hello ${name}!`;
 }
 
 welcome('Node.js User');
 
-// ^D
+# <ctrl>-D
 'Hello Node.js User!'
 >
 ```
