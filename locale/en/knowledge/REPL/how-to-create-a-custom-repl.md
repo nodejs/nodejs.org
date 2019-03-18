@@ -58,22 +58,14 @@ Here's what happens when you run the script:
 $ node repl.js 
 Remote REPL started on port 5001.
 node::local> .exit
-^Cjosh@pidgey:/tmp/telnet$ node repl.js 
+# <ctrl>-C
+
+$ node repl.js 
 Remote REPL started on port 5001.
 node::local> mood()
 '^__^'
 node::local> bonus
 ReferenceError: bonus is not defined
-    at [object Context]:1:1
-    at Interface.<anonymous> (repl.js:171:22)
-    at Interface.emit (events.js:64:17)
-    at Interface._onLine (readline.js:153:10)
-    at Interface._line (readline.js:408:8)
-    at Interface._ttyWrite (readline.js:585:14)
-    at ReadStream.<anonymous> (readline.js:73:12)
-    at ReadStream.emit (events.js:81:20)
-    at ReadStream._emitKey (tty_posix.js:307:10)
-    at ReadStream.onData (tty_posix.js:70:12)
 ```
 
 As may be seen, the `mood` function is usable within the local REPL, but the
