@@ -25,11 +25,11 @@ layout: about.hbs
 
 ## 贡献者与合作者
 
-发展壮大 Node.js 社区是社区委员会的使命。当你读到这时，你其实已经是社区的一份子了——同时也是 Node.js 社区的一份子。我们热爱你的帮助！
+发展壮大 Node.js 社区是社区委员会的使命。当你读到这时，你其实已经是社区的一份子了 —— 同时也是 Node.js 社区的一份子。我们热爱你的帮助！
 
-在 [nodejs/ 社区委员会](https://github.com/nodejs/community-committee) 中，GitHub 是一个很好的开始。请查看 [标记为“首要议题”](https://github.com/nodejs/community-committee/labels/good%20first%20issue) 相关内容以便了解我们需要在哪里需要你的帮助。如果你有关于我们如何更好地鼓励和构建我们社区的建议，放心大胆地提出议题并向我们已有的工作提出 PR。或者通过我们在 GitHub 上已有的讨论中分享你的相关想法。
+在 [nodejs/community-committee](https://github.com/nodejs/community-committee) 中，GitHub 是一个很好的开始。请查看 [标记为“首要议题”](https://github.com/nodejs/community-committee/labels/good%20first%20issue) 相关内容以便了解我们需要在哪里需要你的帮助。如果你有关于我们如何更好地鼓励和构建我们社区的建议，放心大胆地提出议题并向我们已有的工作提出 PR。或者通过我们在 GitHub 上已有的讨论中分享你的相关想法。
 
-你可以进一步参与我们持续构建社区的活动——像本地化、布道、Node.js 意见收集和其它活动——通过对 Node.js 源仓库的深入挖掘开始融入其中！
+你可以进一步参与我们持续构建社区的活动 —— 像本地化、布道、Node.js 意见收集和其它活动 —— 通过对 Node.js 源仓库的深入挖掘开始融入其中！
 
 在此之前，请确认你已经细读了 [合作者指南](https://github.com/nodejs/community-committee/blob/master/COLLABORATOR_GUIDE.md)。
 
@@ -40,7 +40,7 @@ layout: about.hbs
 如果你对更进一步参与社区委员会以及相关项目感兴趣的话，我们鼓励你成为一个活跃的观察者，为直接成为会员而努力工作。要想成为一个会员，你必须做到：
 
  1. 参与每周两次的会议，探讨那些标记为首要议题、会议文件以及 PR。并通过 GitHub，以贡献者或者合作者的身份凸显你的洞察力。
- 2. 通过发起请求成为一个观察者。一旦作为观察者被邀请加入参与会议，我们会持续三个月跟踪记录你的参与度以符合我们的治理准则。你可以在 [ 此处 ](https://github.com/nodejs/community-committee/issues/142) 寻找到有关于此的绝好例子。
+ 2. 通过发起请求成为一个观察者。一旦作为观察者被邀请加入参与会议，我们会持续三个月跟踪记录你的参与度以符合我们的治理准则。你可以在 [此处](https://github.com/nodejs/community-committee/issues/142) 寻找到有关于此的绝好例子。
  3. 当你已经符合了三个月的最低考勤条件，且符合期望参与度，社区委员会将投票把你纳入会员。
 
 会员身份可以保持六个月。小组会定期询问逾期会员是否继续愿意留任。会员只需回复“留任”即可。社区委员会虽无固定大小限制，但是，希望的人数最好在九到十二人之间。你可以在 [治理准则](https://github.com/nodejs/community-committee/blob/master/GOVERNANCE.md) 中阅读更多有关会员身份的资料信息，以及其它管理信息。
