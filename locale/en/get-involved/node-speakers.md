@@ -141,6 +141,12 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 - [Github](https://github.com/MarkPieszak)
 - Topics - Node.js, JavaScript SSR (Server-side Rendering), Performance, Open Source, Community
 
+###### Julián Duque
+
+- [@julian_duque](https://twitter.com/julian_duque)
+- [GitHub](https://github.com/julianduque)
+- Topics - Node.js, Debugging, Performance, Best Practices, Community Outreach, Education
+
 #### New York
 
 ##### New York City
