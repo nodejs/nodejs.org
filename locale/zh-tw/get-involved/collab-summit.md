@@ -1,9 +1,9 @@
 ---
-title: Collab Summit
+title: 協作者峰會
 layout: contribute.hbs
 ---
 
-# Collab Summit
+# 協作者峰會
 
 協作者峰會（Collaboration Summit）是個非正式會議（un-conference），其目的在於讓現有及具有淺力的協作者齊聚一堂，讓大家以現場協作、教學及分享知識的方式一同討論 Node.js。
 
