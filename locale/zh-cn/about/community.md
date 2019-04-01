@@ -29,7 +29,7 @@ layout: about.hbs
 
 在 [nodejs/ 社区委员会](https://github.com/nodejs/community-committee) 中，GitHub 是一个很好的开始。请查看 [标记为“首要议题”](https://github.com/nodejs/community-committee/labels/good%20first%20issue) 相关内容以便了解我们需要在哪里需要你的帮助。如果你有关于我们如何更好地鼓励和构建我们社区的建议，放心大胆地提出议题并向我们已有的工作提出 PR。或者通过我们在 GitHub 上已有的讨论中分享你的相关想法。
 
-你可以进一步参与我们持续构建社区的活动 —— 像本地化、布道、Node.js 意见收集和其它活动——通过对 Node.js 源仓库的深入挖掘开始融入其中！
+你可以进一步参与我们持续构建社区的活动 —— 像本地化、布道、Node.js 意见收集和其它活动 —— 通过对 Node.js 源仓库的深入挖掘开始融入其中！
 
 在此之前，请确认你已经细读了 [合作者指南](https://github.com/nodejs/community-committee/blob/master/COLLABORATOR_GUIDE.md)。
 
