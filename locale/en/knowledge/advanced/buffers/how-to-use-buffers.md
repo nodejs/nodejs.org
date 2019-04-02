@@ -21,7 +21,7 @@ Don't use binary strings. Use *buffers* instead!
 
 ## What Are Buffers?
 
-Buffers are instances of the `Buffer` class in node, which is designed to handle raw binary data. Each buffer corresponds to some raw memory allocated outside V8. Buffers act somewhat like arrays of integers, but aren't resizable and have a whole bunch of methods specifically for binary data. In addition, the "integers" in a buffer each represent a byte and so are limited to values from 0 to 255 (2^8 - 1), inclusive. When using `console.log()` to print the `Buffer` instance, you'll get a chain of values in hex.
+The `Buffer` class in Node.js is designed to handle raw binary data. Each buffer corresponds to some raw memory allocated outside V8. Buffers act somewhat like arrays of integers, but aren't resizable and have a whole bunch of methods specifically for binary data. The integers in a buffer each represent a byte and so are limited to values from 0 to 255 inclusive. When using `console.log()` to print the `Buffer` instance, you'll get a chain of values in hexadecimal values.
 
 ## Where You See Buffers:
 
@@ -38,9 +38,7 @@ var buffer = Buffer.alloc(8);
 // This will print out 8 bytes of zero:
 // <Buffer 00 00 00 00 00 00 00 00>
 ```
-This buffer is uninitialized and contains 8 bytes of zero, notice that `new Buffer(size)` is deprecated since v6.0.0.
-
-Besides, we've also got [Buffer.allocUnsafe(size)](https://nodejs.org/dist/latest/docs/api/buffer.html#buffer_class_method_buffer_allocunsafe_size). This makes you get a buffer quickly without initializing it with zero values, so it's sometimes unsafe.
+This buffer is initialized and contains 8 bytes of zero.
 
 ```js
 var buffer = Buffer.from([ 8, 6, 7, 5, 3, 0, 9]);
@@ -48,7 +46,7 @@ var buffer = Buffer.from([ 8, 6, 7, 5, 3, 0, 9]);
 // <Buffer 08 06 07 05 03 00 09>
 ```
 
-This initializes the buffer to the contents of this array. Keep in mind that the contents of the array are integers representing bytes. Notice that `new Buffer(array)` is deprecated since v6.0.0.
+This initializes the buffer to the contents of this array. Keep in mind that the contents of the array are integers representing bytes.
 
 ```js
 var buffer = Buffer.from("I'm a string!", "utf-8");
@@ -56,9 +54,7 @@ var buffer = Buffer.from("I'm a string!", "utf-8");
 // <Buffer 49 27 6d 20 61 20 73 74 72 69 6e 67 21>
 ```
 
-This initializes the buffer to a binary encoding of the first string as specified by the second argument (in this case, utf-8). **utf-8** is by far the most common encoding used with node, but `Buffer` also supports some other formations, please see [Supported Encodings](https://nodejs.org/dist/latest/docs/api/buffer.html#buffer_buffers_and_character_encodings).
-
-Notice that `new Buffer(string[, encoding])` is deprecated since v6.0.0.
+This initializes the buffer to a binary encoding of the first string as specified by the second argument (in this case, `'utf-8'`). `'utf-8'` is by far the most common encoding used with Node.js, but `Buffer` also supports others. See [Supported Encodings](https://nodejs.org/dist/latest/docs/api/buffer.html#buffer_buffers_and_character_encodings) for more details.
 
 ### Writing to Buffers
 
