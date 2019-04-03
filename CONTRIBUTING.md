@@ -4,7 +4,7 @@
 
 The Code of Conduct explains the *bare minimum* behavior
 expectations the Node Foundation requires of its contributors.
-[Please read it before participating.](https://github.com/nodejs/admin/blob/master/CODE_OF_CONDUCT.md)
+[Please read it before participating](https://github.com/nodejs/admin/blob/master/CODE_OF_CONDUCT.md).
 
 ## Vocabulary
 
@@ -48,8 +48,8 @@ In the case of an objection being raised in a pull request by another collaborat
 collaborators should seek to arrive at a consensus by way of addressing concerns being expressed
 by discussion, compromise on the proposed change, or withdrawal of the proposed change.
 
-If a contribution is controversial and collaborators cannot agree about how to get it to land
-or if it should land then it should be escalated to the WG. WG members should regularly
+If a contribution is controversial and collaborators cannot agree about how to get it landed
+or if it should be landed, then it should be escalated to the WG. WG members should regularly
 discuss pending contributions in order to find a resolution. It is expected that only a
 small minority of issues be brought to the WG for resolution and that discussion and
 compromise among collaborators be the default resolution mechanism.
