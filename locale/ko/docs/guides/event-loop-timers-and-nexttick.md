@@ -43,24 +43,24 @@ The following diagram shows a simplified overview of the event loop's
 order of operations.
 
 ```
-   ┌───────────────────────┐
-┌─>│        timers         │
-│  └──────────┬────────────┘
-│  ┌──────────┴────────────┐
-│  │   pending callbacks   │
-│  └──────────┬────────────┘
-│  ┌──────────┴────────────┐
-│  │     idle, prepare     │
-│  └──────────┬────────────┘      ┌───────────────┐
-│  ┌──────────┴────────────┐      │   incoming:   │
-│  │         poll          │<─────┤  connections, │
-│  └──────────┬────────────┘      │   data, etc.  │
-│  ┌──────────┴────────────┐      └───────────────┘
-│  │        check          │
-│  └──────────┬────────────┘
-│  ┌──────────┴────────────┐
-└──┤    close callbacks    │
-   └───────────────────────┘
+   ┌───────────────────────────┐
+┌─>│           timers          │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+│  │     pending callbacks     │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+│  │       idle, prepare       │
+│  └─────────────┬─────────────┘      ┌───────────────┐
+│  ┌─────────────┴─────────────┐      │   incoming:   │
+│  │           poll            │<─────┤  connections, │
+│  └─────────────┬─────────────┘      │   data, etc.  │
+│  ┌─────────────┴─────────────┐      └───────────────┘
+│  │           check           │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+└──┤      close callbacks      │
+   └───────────────────────────┘
 ```
 
 *note: each box will be referred to as a "phase" of the event loop.*
@@ -76,24 +76,24 @@ Node.js를 시작할 때 이벤트 루프를 초기화하고 제공된 입력 �
 아래 다이어그램은 이벤트 루프의 작업 순서의 간단한 개요를 보여줍니다.
 
 ```
-   ┌───────────────────────┐
-┌─>│        timers         │
-│  └──────────┬────────────┘
-│  ┌──────────┴────────────┐
-│  │   pending callbacks   │
-│  └──────────┬────────────┘
-│  ┌──────────┴────────────┐
-│  │     idle, prepare     │
-│  └──────────┬────────────┘      ┌───────────────┐
-│  ┌──────────┴────────────┐      │   incoming:   │
-│  │         poll          │<─────┤  connections, │
-│  └──────────┬────────────┘      │   data, etc.  │
-│  ┌──────────┴────────────┐      └───────────────┘
-│  │        check          │
-│  └──────────┬────────────┘
-│  ┌──────────┴────────────┐
-└──┤    close callbacks    │
-   └───────────────────────┘
+   ┌───────────────────────────┐
+┌─>│           timers          │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+│  │     pending callbacks     │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+│  │       idle, prepare       │
+│  └─────────────┬─────────────┘      ┌───────────────┐
+│  ┌─────────────┴─────────────┐      │   incoming:   │
+│  │           poll            │<─────┤  connections, │
+│  └─────────────┬─────────────┘      │   data, etc.  │
+│  ┌─────────────┴─────────────┐      └───────────────┘
+│  │           check           │
+│  └─────────────┬─────────────┘
+│  ┌─────────────┴─────────────┐
+└──┤      close callbacks      │
+   └───────────────────────────┘
 ```
 
 *note: 각 박스는 이벤트 루프의 "단계"를 의미합니다.*
@@ -142,9 +142,12 @@ _**NOTE:** 윈도우와 Unix/Linux 구현체간에 약간의 차이가 있지만
 
 * **timers**: this phase executes callbacks scheduled by `setTimeout()`
  and `setInterval()`.
-* **pending callbacks**: executes I/O callbacks deferred to the next loop iteration.
+* **pending callbacks**: executes I/O callbacks deferred to the next loop
+ iteration.
 * **idle, prepare**: only used internally.
-* **poll**: retrieve new I/O events; execute I/O related callbacks (almost all with the exception of close callbacks, the ones scheduled by timers, and `setImmediate()`); node will block here when appropriate.
+* **poll**: retrieve new I/O events; execute I/O related callbacks (almost
+ all with the exception of close callbacks, the ones scheduled by timers,
+ and `setImmediate()`); node will block here when appropriate.
 * **check**: `setImmediate()` callbacks are invoked here.
 * **close callbacks**: some close callbacks, e.g. `socket.on('close', ...)`.
 
@@ -309,7 +312,7 @@ error. This will be queued to execute in the **pending callbacks** phase.
 
 The **poll** phase has two main functions:
 
-1. Executing scripts for timers whose threshold has elapsed, then
+1. Calculating how long it should block and poll for I/O, then
 2. Processing events in the **poll** queue.
 
 When the event loop enters the **poll** phase _and there are no timers
@@ -325,7 +328,7 @@ is reached.
 
 **poll** 단계는 두 가지 주요 기능을 가집니다.
 
-1. 임계 값이 지난 타이머의 스크립트를 실행합니다. 그다음
+1. I/O를 얼마나 오래 블록하고 폴링해야 하는지 계산합니다. 그 다음
 2. **poll** 큐에 있는 이벤트를 처리합니다.
 
 이벤트 루프가 **poll** 단계에 진입하고 _스케줄링된 타이머가 없을 때_
@@ -413,11 +416,11 @@ emitted via `process.nextTick()`.
 <!--
 ## `setImmediate()` vs `setTimeout()`
 
-`setImmediate` and `setTimeout()` are similar, but behave in different
+`setImmediate()` and `setTimeout()` are similar, but behave in different
 ways depending on when they are called.
 
-* `setImmediate()` is designed to execute a script once the current
-**poll** phase completes.
+* `setImmediate()` is designed to execute a script once the
+current **poll** phase completes.
 * `setTimeout()` schedules a script to be run after a minimum threshold
 in ms has elapsed.
 
@@ -560,8 +563,11 @@ timeout
 You may have noticed that `process.nextTick()` was not displayed in the
 diagram, even though it's a part of the asynchronous API. This is because
 `process.nextTick()` is not technically part of the event loop. Instead,
-the `nextTickQueue` will be processed after the current operation
-completes, regardless of the current phase of the event loop.
+the `nextTickQueue` will be processed after the current operation is
+completed, regardless of the current phase of the event loop. Here, 
+an *operation* is defined as a transition from the
+underlying C/C++ handler, and handling the JavaScript that needs to be
+executed.
 
 Looking back at our diagram, any time you call `process.nextTick()` in a
 given phase, all callbacks passed to `process.nextTick()` will be
@@ -577,8 +583,9 @@ from reaching the **poll** phase.
 
 `process.nextTick()`이 비동기 API에 속해있지만, 다이어그램에는 표시되지 않은 것을
 눈치챘을 겁니다. 이는 `process.nextTick()`이 기술적으로는 이벤트 루프의 일부가
-아니기 때문입니다. 대신 `process.nextTick()`은 이벤트 루프의 현재 단계와 관계없이
-현재 작업이 완료된 후에 처리될 것입니다.
+아니기 때문입니다. 대신 `nextTickQueue`는 이벤트 루프의 현재 단계와 관계없이
+현재 작업이 완료된 후에 처리될 것입니다. 여기에서 *작업*이란 기저의 C/C++
+핸들러에서 전환하는 것, 또 실행되어야 하는 JavaScript를 처리하는 것을 말합니다.
 
 다이어그램을 다시 보겠습니다. 해당 단계에서 `process.nextTick()`을 호출하면
 `process.nextTick()`에 전달한 모든 콜백은 언제나 이벤트 루프를 계속 진행하기
@@ -730,12 +737,12 @@ const server = net.createServer(() => {}).listen(8080);
 server.on('listening', () => {});
 ```
 
-When only a port is passed the port is bound immediately. So the
-`'listening'` callback could be called immediately. Problem is that the
-`.on('listening')` will not have been set by that time.
+When only a port is passed, the port is bound immediately. So, the
+`'listening'` callback could be called immediately. The problem is that the
+`.on('listening')` callback will not have been set by that time.
 
-To get around this the `'listening'` event is queued in a `nextTick()`
-to allow the script to run to completion. Which allows the user to set
+To get around this, the `'listening'` event is queued in a `nextTick()`
+to allow the script to run to completion. This allows the user to set
 any event handlers they want.
 -->
 
@@ -762,7 +769,7 @@ server.on('listening', () => {});
 ```
 
 포트만 전달하면 포트가 바로 바인딩 됩니다. 그래서 `'listening'` 콜백이 바로 호출될 수 있습니다.
-문제는 `.on('listening')`이 이때 설정되지 않는다는 것입니다.
+문제는 `.on('listening')` 콜백이 이때 설정되지 않는다는 것입니다.
 
 이를 피하려면 `'listening'` 이벤트를 `nextTick()`으로 큐에 넣어서 스크립트가 완료될 때까지
 실행되도록 할 수 있습니다. 이를 통해 어떤 이벤트 핸들러라도 설정하도록 할 수 있습니다.
@@ -778,10 +785,10 @@ their names are confusing.
 event loop
 
 In essence, the names should be swapped. `process.nextTick()` fires more
-immediately than `setImmediate()` but this is an artifact of the past
+immediately than `setImmediate()`, but this is an artifact of the past
 which is unlikely to change. Making this switch would break a large
 percentage of the packages on npm. Every day more new modules are being
-added, which mean every day we wait, more potential breakages occur.
+added, which means every day we wait, more potential breakages occur.
 While they are confusing, the names themselves won't change.
 
 *We recommend developers use `setImmediate()` in all cases because it's
@@ -847,9 +854,9 @@ server.on('listening', () => { });
 
 <!--
 Say that `listen()` is run at the beginning of the event loop, but the
-listening callback is placed in a `setImmediate()`. Now, unless a
-hostname is passed binding to the port will happen immediately. Now for
-the event loop to proceed it must hit the **poll** phase, which means
+listening callback is placed in a `setImmediate()`. Unless a
+hostname is passed, binding to the port will happen immediately. For
+the event loop to proceed, it must hit the **poll** phase, which means
 there is a non-zero chance that a connection could have been received
 allowing the connection event to be fired before the listening event.
 
@@ -875,8 +882,8 @@ myEmitter.on('event', () => {
 -->
 
 `listen()`이 이벤트 루프 시작 부분에서 실행되었지만, listening 콜백은 `setImmediate()`에
-있습니다. 이제 바인딩할 호스트네임을 전달하지 않는 한 포트는 즉시 적용될 것입니다. 이제 이벤트 루프를
-진행하려면 **poll** 단계에 도달해야 하는데 이 말은 listening 이벤트 전에 connection 이벤트가
+있습니다. 바인딩할 호스트네임을 전달하지 않는 한 포트는 즉시 적용될 것입니다. 이벤트 루프를
+진행하려면 **poll** 단계에 도달해야 하는데, 이 말은 listening 이벤트 전에 connection 이벤트가
 발생하도록 해서 연결을 받을 가능성이 있다는 것입니다.
 
 또 다른 예제는 `EventEmitter`를 상속받고 생성자 내에서 이벤트를 호출하고자 하는
