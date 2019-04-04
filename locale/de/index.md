@@ -1,7 +1,6 @@
 ---
 layout: index.hbs
 labels:
-  banner: Wichtige Sicherheits-Updates, bitte aktualisieren Sie jetzt!
   current-version: Aktuelle Version
   download: Download
   download-for: Herunterladen für
@@ -18,4 +17,4 @@ labels:
   version-schedule-prompt-link-text: LTS Release Plan.
 ---
 
-Node.js® ist eine JavaScript-Laufzeitumgebung, die auf  [Chromes V8 JavaScript-Engine](https://developers.google.com/v8/) basiert.
+Node.js® ist eine JavaScript-Laufzeitumgebung, die auf  [Chromes V8 JavaScript-Engine](https://v8.dev/) basiert.

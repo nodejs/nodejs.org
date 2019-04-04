@@ -1,7 +1,6 @@
 ---
 layout: index.hbs
 labels:
-  banner: Atualizações de segurança importantes, por favor atualize agora!
   current-version: Versão Atual
   download: Baixar
   download-for: Baixar para
@@ -21,4 +20,4 @@ labels:
   newsletter-postfix: ", o boletim oficial de atualizações do Node.js."
 ---
 
-Node.js® é um runtime JavaScript desenvolvido com o [Chrome's V8 JavaScript engine](https://developers.google.com/v8/).
+Node.js® é um runtime JavaScript desenvolvido com o [Chrome's V8 JavaScript engine](https://v8.dev/).

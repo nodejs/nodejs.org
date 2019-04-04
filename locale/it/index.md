@@ -1,7 +1,6 @@
 ---
 layout: index.hbs
 labels:
-  banner: Important security releases, please update now!
   current-version: Versione corrente
   download: Download
   download-for: Download per
@@ -21,4 +20,4 @@ labels:
   newsletter-postfix: ", la newsletter mensile di Node.js"
 ---
 
-Node.js® è un runtime JavaScript costruito sul [motore JavaScript V8 di Chrome](https://developers.google.com/v8/).
+Node.js® è un runtime JavaScript costruito sul [motore JavaScript V8 di Chrome](https://v8.dev/).

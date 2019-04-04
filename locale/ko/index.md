@@ -1,7 +1,6 @@
 ---
 layout: index.hbs
 labels:
-  banner: Important security releases, please update now!
   current-version: 현재 버전
   download: 다운로드
   download-for: 다운로드 -
@@ -18,4 +17,4 @@ labels:
   version-schedule-prompt-link-text: 여기서 확인하세요.
 ---
 
-Node.js®는 [Chrome V8 JavaScript 엔진](https://developers.google.com/v8/)으로 빌드된 JavaScript 런타임입니다.
+Node.js®는 [Chrome V8 JavaScript 엔진](https://v8.dev/)으로 빌드된 JavaScript 런타임입니다.

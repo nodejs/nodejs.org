@@ -46,7 +46,7 @@ fs.readFile('/file.md', (err, data) => {
 const fs = require('fs');
 const data = fs.readFileSync('/file.md'); // 在这里阻塞直到文件被读取
 console.log(data);
-// moreWork(); 在console.log之后执行
+moreWork(); // 在console.log之后执行
 ```
 
 这是一个类似但不等同的异步示例：
@@ -57,7 +57,7 @@ fs.readFile('/file.md', (err, data) => {
   if (err) throw err;
   console.log(data);
 });
-// moreWork(); 在console.log之前执行
+moreWork(); // 在console.log之前执行
 ```
 
 在上述第一个例子中， `console.log` 将在 `moreWork()` 之前被调用。在第二个例子中， `fs.readFile()` 是 **非阻塞** 的，所以 JavaScript 执行可以继续， `moreWork()` 将被首先调用。在不等待文件读取完成的情况下运行 `moreWork（）` 的能力是一个可以提高吞吐量的关键设计选择。

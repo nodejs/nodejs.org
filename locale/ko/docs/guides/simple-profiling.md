@@ -546,7 +546,7 @@ Hopefully, through the performance investigation of this (admittedly contrived)
 example, you've seen how the V8 tick processor can help you gain a better
 understanding of the performance of your Node.js applications.
 
-[profiler inside V8]: https://developers.google.com/v8/profiler_example
+[profiler inside V8]: https://v8.dev/docs/profile
 [benefits of asynchronous programming]: https://nodesource.com/blog/why-asynchronous
 -->
 
@@ -556,5 +556,5 @@ understanding of the performance of your Node.js applications.
 이 예시의 성능 분석을 통해 V8 tick 프로세서가 Node.js 애플리케이션 성능을 이해하는데
 어떻게 도움이 되는지 알기 바랍니다.
 
-[V8 내의 프로파일러]: https://developers.google.com/v8/profiler_example
+[V8 내의 프로파일러]: https://v8.dev/docs/profile
 [비동기 프로그래밍의 장점]: https://nodesource.com/blog/why-asynchronous

@@ -35,9 +35,9 @@ layout: contribute.hbs
 
 协作者的影响力可扩及整个项目，成为协作者后将能审核他人的贡献内容、将问题进行分类，及策划项目未来。因重大贡献而被 TSC 认可的开发者可能会被授与项目协作者身份及享有项目的代码提交权限，重大贡献的评估标准如（包括但不限于）下方所列：
 
-* 代码提交以及 pull requests
-* 文档修订提交及 pull requests
-* 对问题的评论及 pull requests
+* 代码提交以及 Pull Requests
+* 文档修订提交及 Pull Requests
+* 对问题的评论及 Pull Requests
 * 对 Node.js 网站的贡献
 * 提供给终端用户及初学贡献者的帮助
 * 参与工作组

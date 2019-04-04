@@ -71,7 +71,7 @@ browser JavaScript — the event loop is hidden from the user.
 -->
 Node는 Ruby의 [Event Machine][]이나 Python의 [Twisted][]같은 시스템과 설계상 유사하고
 영향을 받았습니다. Node는 좀 더 발전된 이벤트 모델을 선택해서 라이브러리가 아닌 런타임 생성자로
-[event loop][]를 제공합니다. 다른 시스템에서는 이벤트 루프를 시작하는 블럭킹 호출이 항상 존재합니다.
+[이벤트 루프][]를 제공합니다. 다른 시스템에서는 이벤트 루프를 시작하는 블럭킹 호출이 항상 존재합니다.
 
 보통은 스크립트의 시작 부분에서 콜백을 통해서 동작을 정의하고 마지막에서 `EventMachine::run()`같은
 블로킹 호출로 서버를 시작합니다. Node에서는 이와 같은 이벤트 루프를 시작하는 호출이 없습니다. Node는
@@ -107,9 +107,9 @@ Node는 스레드를 사용하지 않도록 설계되지만 멀티 코어 환경
 [Twisted]: http://twistedmatrix.com/
 -->
 
-[Blocking vs Non-Blocking]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
+[블로킹 대 논-블로킹]: https://nodejs.org/ko/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[event loop]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
+[이벤트 루프]: https://nodejs.org/ko/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
 [Twisted]: http://twistedmatrix.com/

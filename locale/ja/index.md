@@ -1,7 +1,6 @@
 ---
 layout: index.hbs
 labels:
-  banner: Important security releases, please update now!
   current-version: 最新のバージョン
   download: ダウンロード
   download-for: ダウンロード
@@ -21,4 +20,4 @@ labels:
   newsletter-postfix: "を購読しましょう。"
 ---
 
-Node.js® は、[Chrome の V8 JavaScript エンジン](https://developers.google.com/v8/) で動作する JavaScript 環境です。
+Node.js® は、[Chrome の V8 JavaScript エンジン](https://v8.dev/) で動作する JavaScript 環境です。

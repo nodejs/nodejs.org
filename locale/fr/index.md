@@ -1,7 +1,6 @@
 ---
 layout: index.hbs
 labels:
-  banner: Mises à jour de sécurité importantes, veuillez mettre à jour!
   current-version: Version actuelle
   download: Téléchargements
   download-for: Téléchargements pour
@@ -18,4 +17,4 @@ labels:
   version-schedule-prompt-link-text: Planning LTS.
 ---
 
-Node.js® est un environnement d’exécution JavaScript construit sur le [moteur JavaScript V8 de Chrome](https://developers.google.com/v8/).
+Node.js® est un environnement d’exécution JavaScript construit sur le [moteur JavaScript V8 de Chrome](https://v8.dev/).

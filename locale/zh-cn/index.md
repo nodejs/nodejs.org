@@ -1,7 +1,6 @@
 ---
 layout: index.hbs
 labels:
-  banner: 重要的安全版本，请立即更新！
   current-version: 当前版本
   download: 下载
   download-for: 下载为
@@ -21,4 +20,4 @@ labels:
   newsletter-postfix: ，Node.js 官方的新闻月报。
 ---
 
-Node.js® 是一个基于 [Chrome V8 引擎](https://developers.google.com/v8/) 的 JavaScript 运行时。
+Node.js® 是一个基于 [Chrome V8 引擎](https://v8.dev/) 的 JavaScript 运行时。

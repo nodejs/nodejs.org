@@ -1,7 +1,6 @@
 ---
 layout: index.hbs
 labels:
-  banner: Important security releases, please update now!
   current-version: Versió actual
   download: Descarregar
   download-for: Descarregar per
@@ -18,4 +17,4 @@ labels:
   version-schedule-prompt-link-text: Agenda de LTS.
 ---
 
-Node.js® és un entorn d'execució per a JavaScript construït amb el [motor de JavaScript V8 de Chrome](https://developers.google.com/v8/).
+Node.js® és un entorn d'execució per a JavaScript construït amb el [motor de JavaScript V8 de Chrome](https://v8.dev/).

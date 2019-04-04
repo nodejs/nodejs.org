@@ -1,7 +1,6 @@
 ---
 layout: index.hbs
 labels:
-  banner: انتشار امنیتی مهم! لطفا بروزرسانی نمایید.
   current-version: نگارش کنونی
   download: دانلود
   download-for: دانلود برای
@@ -21,4 +20,4 @@ labels:
   newsletter-postfix: "، خبرنامهٔ رسمی NodeJs.org"
 ---
 
-Node.js®   چارچوبی است برای اجرای جاوااسکریپت  ساخته شده بر روی  [موتور جاوااسکریپت کروم](https://developers.google.com/v8/).
+Node.js®   چارچوبی است برای اجرای جاوااسکریپت  ساخته شده بر روی  [موتور جاوااسکریپت کروم](https://v8.dev/).

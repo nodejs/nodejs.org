@@ -28,6 +28,13 @@ REQUIREMENTS
 
 ## Meetups
 
+### Africa
+- [Meetup](https://www.nodejs.africa)
+- Frequency of meetups - bi-monthly
+- How to submit a talk? [Submit to this form](https://docs.google.com/forms/d/e/1FAIpQLSe3vPkiO8ijtbP7fUhEotKefXU-fWUoDGtUSo1khmtA_7v1WQ/viewform)
+- Organizer name - Agiri Abraham
+- Organizer contact info -
+
 ### Argentina
 
 #### Buenos Aires Province
@@ -52,7 +59,7 @@ REQUIREMENTS
 - Organizer name - Andrey Sidorov
 - Organizer contact info -
 
-##### Sidney
+##### Sydney
 
 - [Meetup](https://www.meetup.com/node-sydney/)
 - Frequency of meetups - monthly
@@ -89,6 +96,14 @@ REQUIREMENTS
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Filipe Oliveira
 - Organizer contact info -
+
+#### Chile
+
+- [Meetup](https://www.meetup.com/es-ES/NodersJS/)
+- Frequency of meetups - monthly
+- How to submit a talk? Issue on Github [here](https://github.com/Noders/Meetups/issues/new)
+- Organizer name - Rodrigo Adones and Ender Bonnet
+- Organizer contact info - [Rodrigo](https://github.com/L0rdKras), [Ender](https://twitter.com/enbonnet)
 
 #### Minas Gerais
 
@@ -162,8 +177,8 @@ REQUIREMENTS
 
 - [Meetup](https://www.meetup.com/Nodejs-Paris/)
 - Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page or DM organizer: https://twitter.com/Ornthalas
-- Organizer name - Etienne Folio
+- How to submit a talk? Contact organizers in the meetup page or submit your talk on [nodejs.paris wbesite](http://nodejs.paris/meetups)
+- Organizer name - [Etienne Folio](https://twitter.com/Ornthalas), [Stanislas Ormières](https://twitter.com/laruiss), [Nicolas KOKLA](https://twitter.com/nkokla), Quentin Raynaud
 - Organizer contact info -
 
 ### Germany
@@ -258,9 +273,10 @@ REQUIREMENTS
 
 - [Meetup](https://www.meetup.com/NodeJS-Israel/)
 - Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Lior Kesos
-- Organizer contact info -
+- How to submit a talk? Contact organizers in the meetup page or submit your talk on [Node.js-IL website](http://www.nodejsil.com/).
+- Organizer name - [Idan Dagan](https://github.com/idandagan1), [Guy Segev](https://github.com/guyguyon), [Tomer Omri](https://github.com/TomerOmri)
+- Organizer contact info - [Email](mailto:nodejsisrael8@gmail.com
+)
 
 ### Mexico
 
@@ -336,6 +352,14 @@ REQUIREMENTS
 
 #### California
 
+##### Los Angeles
+
+- [js.la](https://js.la)
+- Frequency of meetups - monthly
+- How to submit a talk? [contribute.js.la](https://contribute.js.la)
+- Organizer name - David Guttman
+- Organizer contact info - @dguttman on [slack.js.la](https://slack.js.la)
+
 ##### Irvine
 
 - [Meetup](https://www.meetup.com/Node-JS-OC/)
@@ -368,6 +392,17 @@ REQUIREMENTS
 - How to submit a talk? Contact organizers in the meetup page
 - Organizer name - Brooks Patton
 - Organizer contact info -
+
+#### Florida
+
+##### Jacksonville
+
+- [Meetup](https://www.meetup.com/Jax-Node-js-UG/)
+- [Website](https://www.jaxnode.com)
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - David Fekke
+- Organizer contact info - David Fekke at gmail dot com
 
 #### Georgia 
 
@@ -408,6 +443,15 @@ REQUIREMENTS
 - How to submit a talk? Contact organizers in the meetup page or post in slack workspace #\_node\_meetup (see below).
 - Organizer name - [Brian Sodano](https://github.com/codemouse)
 - Organizer contact info - [briansodano@gmail.com](mailto:briansodano@gmail.com) or [Boston JS slack workspace](https://bostonjavascript.slack.com)
+
+#### Michigan
+
+##### Detroit
+
+- [Meetup](https://www.meetup.com/DetNode/)
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Steve Marsh, Norman Witte and Israel V
 
 #### Minnesota
 
@@ -543,6 +587,14 @@ REQUIREMENTS
 - How to submit a talk? 
 - Organizer name - Joe Parry, co-organizer Rob Moran
 - Organizer contact info - 
+
+##### Oxford
+
+- [JSOxford](https://www.meetup.com/jsoxford/)
+- Frequency of meetups - every 2 months
+- How to submit a talk? [Submit Form](https://docs.google.com/forms/d/e/1FAIpQLSflx7LU44PuwlyCJj-WwlP_SlrUvxAd8uaXlY7_O65c7RLpGQ/viewform?usp=sf_link)
+- Organizer names - Marcus Noble, Seren Davies
+- Organizers contact info - organisers@jsoxford.com
 
 
 ### Ukraine
