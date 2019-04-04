@@ -215,11 +215,11 @@ emitted via `process.nextTick()`.
 
 ## `setImmediate()` vs `setTimeout()`
 
-`setImmediate` and `setTimeout()` are similar, but behave in different
+`setImmediate()` and `setTimeout()` are similar, but behave in different
 ways depending on when they are called.
 
-* `setImmediate()` is designed to execute a script once the current
-**poll** phase completes.
+* `setImmediate()` is designed to execute a script once the
+current **poll** phase completes.
 * `setTimeout()` schedules a script to be run after a minimum threshold
 in ms has elapsed.
 
@@ -293,8 +293,11 @@ within an I/O cycle, independently of how many timers are present.
 You may have noticed that `process.nextTick()` was not displayed in the
 diagram, even though it's a part of the asynchronous API. This is because
 `process.nextTick()` is not technically part of the event loop. Instead,
-the `nextTickQueue` will be processed after the current operation
-completes, regardless of the current phase of the event loop.
+the `nextTickQueue` will be processed after the current operation is
+completed, regardless of the current phase of the event loop. Here, 
+an *operation* is defined as a transition from the
+underlying C/C++ handler, and handling the JavaScript that needs to be
+executed.
 
 Looking back at our diagram, any time you call `process.nextTick()` in a
 given phase, all callbacks passed to `process.nextTick()` will be
