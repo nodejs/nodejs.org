@@ -20,7 +20,7 @@ code-creation,Stub,2,0x2d5000a33d40,182,"DoubleToIStub"
 code-creation,Stub,2,0x2d5000a33e00,507,"NumberToStringStub"
 ```
 
-In the past you need the V8 source code to be able to interpret the ticks.
+In the past, you needed the V8 source code to be able to interpret the ticks.
 Luckily, tools have recently been introduced into Node.js 4.4.0 that facilitate
 the consumption of this information without separately building V8 from source.
 Let's see how the built-in profiler can help provide insight into application
