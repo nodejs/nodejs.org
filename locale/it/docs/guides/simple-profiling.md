@@ -20,9 +20,9 @@ code-creation,Stub,2,0x2d5000a33d40,182,"DoubleToIStub"
 code-creation,Stub,2,0x2d5000a33e00,507,"NumberToStringStub"
 ```
 
-In the past you need the V8 source code to be able to interpret the ticks.
-Luckily, tools have recently been introduced into Node.js 4.4.0 that facilitate
-the consumption of this information without separately building V8 from source.
+In the past, you needed the V8 source code to be able to interpret the ticks.
+Luckily, tools have been introduced since Node.js 4.4.0 that facilitate the
+consumption of this information without separately building V8 from source.
 Let's see how the built-in profiler can help provide insight into application
 performance.
 
@@ -42,7 +42,7 @@ app.get('/newUser', (req, res) => {
   }
 
   const salt = crypto.randomBytes(128).toString('base64');
-  const hash = crypto.pbkdf2Sync(password, salt, 10000, 512);
+  const hash = crypto.pbkdf2Sync(password, salt, 10000, 512, 'sha512');
 
   users[username] = { salt, hash };
 
@@ -63,9 +63,10 @@ app.get('/auth', (req, res) => {
     return res.sendStatus(400);
   }
 
-  const hash = crypto.pbkdf2Sync(password, users[username].salt, 10000, 512);
+  const { salt, hash } = users[username];
+  const encryptHash = crypto.pbkdf2Sync(password, salt, 10000, 512, 'sha512');
 
-  if (users[username].hash.toString() === hash.toString()) {
+  if (crypto.timingSafeEqual(hash, encryptHash)) {
     res.sendStatus(200);
   } else {
     res.sendStatus(401);
@@ -196,15 +197,15 @@ Parsing this section takes a little more work than the raw tick counts above.
 Within each of the "call stacks" above, the percentage in the parent column
 tells you the percentage of samples for which the function in the row above was
 called by the function in the current row. For example, in the middle "call
-stack" above for _sha1_block_data_order, we see that _sha1_block_data_order occurred
+stack" above for _sha1_block_data_order, we see that `_sha1_block_data_order` occurred
 in 11.9% of samples, which we knew from the raw counts above. However, here, we
 can also tell that it was always called by the pbkdf2 function inside the
-Node.js crypto module. We see that similarly, _malloc_zone_malloc was called
+Node.js crypto module. We see that similarly, `_malloc_zone_malloc` was called
 almost exclusively by the same pbkdf2 function. Thus, using the information in
 this view, we can tell that our hash computation from the user's password
 accounts not only for the 51.8% from above but also for all CPU time in the top
-3 most sampled functions since the calls to _sha1_block_data_order and
-_malloc_zone_malloc were made on behalf of the pbkdf2 function.
+3 most sampled functions since the calls to `_sha1_block_data_order` and
+`_malloc_zone_malloc` were made on behalf of the pbkdf2 function.
 
 At this point, it is very clear that the password based hash generation should
 be the target of our optimization. Thankfully, you've fully internalized the

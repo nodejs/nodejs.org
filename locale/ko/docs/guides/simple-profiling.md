@@ -38,9 +38,9 @@ code-creation,Stub,2,0x2d5000a33e00,507,"NumberToStringStub"
 ```
 
 <!--
-In the past you need the V8 source code to be able to interpret the ticks.
-Luckily, tools have recently been introduced into Node.js 4.4.0 that facilitate
-the consumption of this information without separately building V8 from source.
+In the past, you needed the V8 source code to be able to interpret the ticks.
+Luckily, tools have been introduced since Node.js 4.4.0 that facilitate the
+consumption of this information without separately building V8 from source.
 Let's see how the built-in profiler can help provide insight into application
 performance.
 
@@ -50,7 +50,7 @@ our system:
 -->
 
 이전에는 tick을 해석하려면 V8 소스 코드가 필요했습니다. 다행히, 소스에서 V8 빌드를 따로 하지 않고
-이 정보를 사용할 수 있는 도구가 최근 Node.js 4.4.0에 도입되었습니다. 애플리케이션의 성능을
+이 정보를 사용할 수 있는 도구가 Node.js 4.4.0부터 도입되었습니다. 애플리케이션의 성능을
 볼 수 있는 내장된 프로파일러를 어떻게 사용하는지 살펴보겠습니다.
 
 tick 프로파일러의 사용방법을 설명하기 위해 간단한 Express 애플리케이션을 만들어 보겠습니다.
@@ -161,7 +161,7 @@ high latency on requests. We can easily run the app with the built in profiler:
 NODE_ENV=production node --prof app.js
 ```
 
-and put some load on the server using ab (ApacheBench):
+and put some load on the server using `ab` (ApacheBench):
 
 ```
 curl -X GET "http://localhost:8080/newUser?username=matt&password=password"
@@ -182,7 +182,7 @@ and get an ab output of:
 NODE_ENV=production node --prof app.js
 ```
 
-ab(ApacheBench)로 서버에 부하를 줄 수 있습니다.
+`ab`(ApacheBench)로 서버에 부하를 줄 수 있습니다.
 
 ```
 curl -X GET "http://localhost:8080/newUser?username=matt&password=password"
