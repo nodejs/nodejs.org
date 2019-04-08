@@ -66,8 +66,8 @@
         downloadHead[text] = dlLocal + ' Windows (' + arch + ')'
         break
       case 'Linux':
-        versionIntoHref(buttons, 'node-%version%-linux-' + arch + '.tar.xz')
-        downloadHead[text] = dlLocal + ' Linux (' + arch + ')'
+        versionIntoHref(buttons, 'node-%version%-linux-x64.tar.xz')
+        downloadHead[text] = dlLocal + ' Linux (x64)'
         break
     }
   }
