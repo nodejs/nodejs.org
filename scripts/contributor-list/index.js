@@ -8,7 +8,7 @@ const GithubGraphQLApi = require('node-github-graphql')
 const args = process.argv.splice(2)
 const since = new Date(args[0])
 
-if (_.isNaN(since.getTime())) {
+if (Number.isNaN(since.getTime())) {
   console.error(`usage: ${path.basename(process.argv[1])} YYYY-MM-DD`)
   process.exit(1)
 }
