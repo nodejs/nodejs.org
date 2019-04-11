@@ -7,7 +7,7 @@ title: 安全
 
 ## 向 Node.js 报告问题缺陷
 
-通过 [HackerOne](https://hackerone.com/nodejs) 或发送电子邮件至 [security@nodejs.org](mailto:security@nodejs.org) 报告 Node.js 中的安全漏洞。
+通过 [HackerOne](https://hackerone.com/nodejs) 报告 Node.js 中的安全漏洞。
 
 你的报告将在 24 小时内得到确认，并且你将会在 48 小时内收到一封更为详细的回复，告知接下来处理你
 的提交的一些步骤。
@@ -25,7 +25,7 @@ Node.js 项目参与了一个为安全研究员和负责任的公众披露者的
 
 ## 向第三方模块汇报缺陷问题
 
-你应该向第三方模块相关负责维护人直接汇报此类安全问题，并通过 [Node 生态安全团队](https://hackerone.com/nodejs-ecosystem)，或发送电邮至 [security-ecosystem@nodejs.org](mailto:security-ecosystem@nodejs.org) 进行组织协调。
+你应该向第三方模块相关负责维护人直接汇报此类安全问题，并通过 [Node 生态安全团队](https://hackerone.com/nodejs-ecosystem)进行组织协调。
 
 有关于此计划的详情部分可以在 [安全工作组](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md) 寻找到。
 
