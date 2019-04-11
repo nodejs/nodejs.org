@@ -101,7 +101,9 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 
 #### Baden-Württemberg
 
-##### Golo Roden
+##### Riegel am Kaiserstuhl
+
+###### Golo Roden
 
 - [@goloroden](https://twitter.com/goloroden)
 - [Github](https://github.com/thenativeweb)
