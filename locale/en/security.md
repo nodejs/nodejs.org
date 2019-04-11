@@ -7,8 +7,7 @@ title: Security
 
 ## Reporting a Bug in Node.js
 
-Report security bugs in Node.js via [HackerOne](https://hackerone.com/nodejs) or
-by emailing [security@nodejs.org](mailto:security@nodejs.org).
+Report security bugs in Node.js via [HackerOne](https://hackerone.com/nodejs).
 
 Your report will be acknowledged within 24 hours, and you’ll receive a more detailed response to your report within 48
 hours indicating the next steps in handling your submission.
@@ -26,8 +25,7 @@ The program is managed through the HackerOne platform at [https://hackerone.com/
 ## Reporting a Bug in a third party module
 
 Security bugs in third party modules should be reported to their respective maintainers and should also be coordinated
-through the [Node Ecosystem Security Team](https://hackerone.com/nodejs-ecosystem) or by emailing 
-[security-ecosystem@nodejs.org](mailto:security-ecosystem@nodejs.org).
+through the Node Ecosystem Security Team via [HackerOne](https://hackerone.com/nodejs-ecosystem).
 
 Details regarding this process can be found in the [Security Working Group repository](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md).
 
