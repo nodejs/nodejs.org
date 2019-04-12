@@ -7,7 +7,7 @@ layout: docs.hbs
 
 ## General
 
-- [Getting Started Guide](getting-started-guide/)
+- [入門ガイド](getting-started-guide/)
 - [Debugging - Getting Started](debugging-getting-started/)
 - [Easy profiling for Node.js Applications](simple-profiling/)
 - [Diagnostics - Flame Graphs](diagnostics-flamegraph/)
