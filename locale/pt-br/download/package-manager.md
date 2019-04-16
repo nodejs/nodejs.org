@@ -101,7 +101,7 @@ $ env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version
 ```
 
 Despois disso, você pode usar o `nvm` para alternar entre versões lançadas e versões
-construidas a partir do fonte.
+compiladas a partir do código fonte.
 Por exemplo, se a versão do Node.js é v8.0.0-pre:
 
 ```bash
