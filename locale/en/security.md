@@ -19,8 +19,7 @@ These updates will be sent at least every five days; in practice, this is more l
 ### Node.js Bug Bounty Program
 
 The Node.js project engages in an official bug bounty program for security researchers and responsible public disclosures.
-
-The program is managed through the HackerOne platform at <https://hackerone.com/nodejs> with further details.
+The program is managed through the HackerOne platform. See <https://hackerone.com/nodejs> for further details.
 
 ## Reporting a Bug in a third party module
 
