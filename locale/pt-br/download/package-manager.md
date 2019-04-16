@@ -109,7 +109,7 @@ $ nvm use 8
 ```
 
 Uma vez que a versão oficial for lançada você pode querer desinstalar a versão compilada
-a partir do fonte:
+a partir do código fonte:
 
 ```bash
 $ nvm uninstall 8
