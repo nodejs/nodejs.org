@@ -174,7 +174,7 @@ app.get('/auth', (req, res) => {
     return res.sendStatus(400);
   }
 
-  crypto.pbkdf2(password, users[username].salt, 10000, 512, (err, hash) => {
+  crypto.pbkdf2(password, users[username].salt, 10000, 512, 'sha512', (err, hash) => {
     if (users[username].hash.toString() === hash.toString()) {
       res.sendStatus(200);
     } else {
