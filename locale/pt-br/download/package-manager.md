@@ -108,7 +108,7 @@ Por exemplo, se a versão do Node.js é v8.0.0-pre:
 $ nvm use 8
 ```
 
-Uma vez que a versão oficial for lançada você pode querer desinstalar a versão construída
+Uma vez que a versão oficial for lançada você pode querer desinstalar a versão compilada
 a partir do fonte:
 
 ```bash
