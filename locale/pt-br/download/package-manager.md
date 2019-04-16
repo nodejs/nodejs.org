@@ -194,7 +194,7 @@ Imagens do SmartOS vêm com o pkgsrc pré-instalado. Em outras distribuições i
 pkgin -y install nodejs
 ```
 
-Ou construa manualmente pelo pkgsrc:
+Ou compile manualmente pelo pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
