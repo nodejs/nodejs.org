@@ -20,7 +20,7 @@ These updates will be sent at least every five days; in practice, this is more l
 
 The Node.js project engages in an official bug bounty program for security researchers and responsible public disclosures.
 
-The program is managed through the HackerOne platform at [https://hackerone.com/nodejs](https://hackerone.com/nodejs) with further details.
+The program is managed through the HackerOne platform at <https://hackerone.com/nodejs> with further details.
 
 ## Reporting a Bug in a third party module
 
@@ -60,8 +60,8 @@ release process above to ensure that the disclosure is handled in a consistent m
 
 Security notifications will be distributed via the following methods.
 
-- [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+- <https://groups.google.com/group/nodejs-sec>
+- <https://nodejs.org/en/blog>
 
 ## Comments on this Policy
 
