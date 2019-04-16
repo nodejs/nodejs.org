@@ -180,7 +180,7 @@ Instale o pacote binário:
 pkgin -y install nodejs
 ```
 
-Ou constrindo manualmente pelo pkgsrc:
+Ou compile manualmente pelo pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
