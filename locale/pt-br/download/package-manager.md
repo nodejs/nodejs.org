@@ -54,7 +54,7 @@ pacman -S nodejs npm
 
 A versão mais recente do Node.js está disponível na porta [www/node](http://freshports.org/www/node).
 
-Intalar um pacote binário via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
+Instale um pacote binário via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
 ```bash
 pkg install node
