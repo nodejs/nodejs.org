@@ -28,7 +28,7 @@ title: Instalando Node.js via gerenciador pacotes
 
 ## Android
 
-O suporte ao Android ainda é experimental no Node.js, portanto, os binários pré-compilados ainda não são fornecidos pelos programadores do Node.js
+O suporte ao Android ainda é experimental no Node.js, portanto, os binários pré-compilados ainda não são fornecidos pelos desenvolvedores do Node.js
 
 Entretanto, existem algumas soluções de terceiros. Por exemplo, a comunidade [Termux](https://termux.com/) que fornece um emulador de terminal e ambiente Linux para Android, assim como seu próprio gerenciador de pacotes e [extensa coleção](https://github.com/termux/termux-packages) com muitas aplicações pré-compiladas. Esse comando no Termux vai instalar a última versão disponível do Node.js:
 
