@@ -40,7 +40,7 @@ Atualmente, os binários do Node.js no Termux estão ligados ao `system-icu` (de
 
 ## Arch Linux
 
-O Node.js pacotes npm estão disponíveis no Repositório da Comunidade.
+Os pacotes para o Node.js e o npm estão disponíveis no Repositório da Comunidade.
 
 ```bash
 pacman -S nodejs npm
