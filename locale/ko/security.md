@@ -6,44 +6,70 @@ title: 보안
 <!--
 # Security
 
-## Reporting a Bug
+## Reporting a Bug in Node.js
 
-All security bugs in Node.js are taken seriously and should be reported by emailing [security@nodejs.org](mailto:security@nodejs.org).
-This will be delivered to a subset of the core team who handle security issues.
+Report security bugs in Node.js via [HackerOne](https://hackerone.com/nodejs).
 
-Your email will be acknowledged within 24 hours, and you’ll receive a more detailed response to your email within 48
-hours indicating the next steps in handling your report.
+Your report will be acknowledged within 24 hours, and you’ll receive a more detailed response to your report within 48
+hours indicating the next steps in handling your submission.
 -->
+
 # 보안
 
-# 버그 보고
+# Node.js 버그 보고
 
-Node.js의 모든 보안 버그는 심각한 문제이므로
-[security@nodejs.org](mailto:security@nodejs.org) 이메일로 보고해야 합니다.
-이 이메일은 보안 이슈를 처리하는 코어 팀 내의 사람들에게 보내질 것입니다.
+Node.js의 보안 버그는 [HackerOne](https://hackerone.com/nodejs)을 통해
+보고해주시기 바랍니다.
 
-보고된 내용은 24시간 이내에 승인하고 48시간 이내에 다음 처리 단계를 안내하는
-자세한 내용을 응답할 것입니다.
+보고된 내용은 24시간 이내에 확인될 것이고, 48시간 이내에 다음 처리 단계를
+안내하는 자세한 답변을 받게 될 것입니다.
 
 <!--
 After the initial reply to your report, the security team will endeavor to keep you informed of the progress being made
 towards a fix and full announcement, and may ask for additional information or guidance surrounding the reported issue.
-These updates will be sent at least every five days, in practice, this is more likely to be every 24-48 hours.
-
-Security bugs in third party modules should be reported to their respective maintainers and can also be coordinated
-through the [Node Security Project](https://nodesecurity.io).
-
-Thank you for improving the security of Node.js. Your efforts and responsible disclosure are greatly appreciated and
-will be acknowledged.
+These updates will be sent at least every five days; in practice, this is more likely to be every 24-48 hours.
 -->
+
 보고한 내용에 첫 답변을 한 후 보안 팀은 수정사항과 전체 공지를 만드는 과정을 보고자에게 계속 알려주려고
 노력할 것입니다. 보고된 이슈에 대한 추가 정보나 안내를 물어볼 수도 있습니다. 이러한 진행사항은
-최소 5일마다 계속 알려줄 것입니다만 실제로는 24~48시간 마다 알려줄 가능성이 큽니다.
+최소 5일마다 계속 알려줄 것입니다만 실제로는 24~48시간마다 알려줄 가능성이 큽니다.
 
-서드파티 모듈의 보안 버그는 각 메인테이너에게 보고해야 하고
-[Node 보안 프로젝트](https://nodesecurity.io)를 통해 조정할 수도 있습니다.
+<!--
+### Node.js Bug Bounty Program
 
-Node.js의 보안을 개선하게 해 준 것에 감사드립니다. 당신이 들인 노력과 책임 있는 공개에 아주
+The Node.js project engages in an official bug bounty program for security researchers and responsible public disclosures.
+
+The program is managed through the HackerOne platform at <https://hackerone.com/nodejs> with further details.
+-->
+
+### Node.js 버그 바운티 프로그램
+
+Node.js 프로젝트는 보안 연구자와 책임 있는 공개를 위해 공식 버그 바운티 프로그램에 참여합니다.
+
+이 프로그램은 HackerOne 플랫폼을 통해 관리되며, 자세한 사항은
+<https://hackerone.com/nodejs>에서 확인하실 수 있습니다.
+
+<!--
+## Reporting a Bug in a third party module
+
+Security bugs in third party modules should be reported to their respective maintainers and should also be coordinated
+through the Node Ecosystem Security Team via [HackerOne](https://hackerone.com/nodejs-ecosystem).
+
+Details regarding this process can be found in the [Security Working Group repository](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md).
+
+Thank you for improving the security of Node.js and its ecosystem. Your efforts and responsible disclosure are greatly
+appreciated and will be acknowledged.
+-->
+
+## 서드 파티 모듈의 버그 제보하기
+
+서드 파티 모듈의 보안 버그는 각 메인테이너에게 보고해야 하고
+[HackerOne](https://hackerone.com/nodejs-ecosystem)의 Node 생태계 보안 팀을 통해 조정되어야 합니다.
+
+절차에 관한 자세한 사항은 [보안 워킹 그룹 저장소](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md)에서
+보실 수 있습니다.
+
+Node.js와 Node.js 생태계의 보안을 개선해주셔서 감사드립니다. 당신이 들인 노력과 책임 있는 공개에 아주
 감사드리고 이는 인정받을 것입니다.
 
 <!--
@@ -56,7 +82,7 @@ process. The problem is confirmed and a list of all affected versions is determi
 potential similar problems. Fixes are prepared for all releases which are still under maintenance. These fixes are not
 committed to the public repository but rather held locally pending the announcement.
 
-- A suggested embargo date for this vulnerability is chosen and a CVE (Common Vulnerabilities and  Exposures (CVE®))
+- A suggested embargo date for this vulnerability is chosen and a CVE (Common Vulnerabilities and Exposures (CVE®))
 is requested for the vulnerability.
 
 - On the embargo date, the Node.js security mailing list is sent a copy of the announcement. The changes are pushed to
@@ -67,7 +93,7 @@ copy of the advisory will be published on the Node.js blog.
 the severity of the bug or difficulty in applying a fix.
 
 - This process can take some time, especially when coordination is required with maintainers of other projects. Every
-effort will be made to handle the bug in as timely a manner as possible, however, it’s important that we follow the
+effort will be made to handle the bug in as timely a manner as possible; however, it’s important that we follow the
 release process above to ensure that the disclosure is handled in a consistent manner.
 -->
 
@@ -99,8 +125,8 @@ release process above to ensure that the disclosure is handled in a consistent m
 
 Security notifications will be distributed via the following methods.
 
-- [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+- <https://groups.google.com/group/nodejs-sec>
+- <https://nodejs.org/en/blog>
 -->
 
 ## 보안 업데이트 받기
@@ -114,10 +140,10 @@ Security notifications will be distributed via the following methods.
 ## Comments on this Policy
 
 If you have suggestions on how this process could be improved please submit a [pull request](https://github.com/nodejs/nodejs.org)
-or email [security@nodejs.org](mailto:security@nodejs.org) to discuss.
+or [file an issue](https://github.com/nodejs/security-wg/issues/new) to discuss.
 -->
 
 ## 이 정책에 대한 의견
 
 이 절차를 개선하기 위한 의견이 있다면 논의를 위해 [풀 리퀘스트](https://github.com/nodejs/nodejs.org)를 올리거나
-[security@nodejs.org](mailto:security@nodejs.org)로 이메일을 보내주시기 바랍니다.
+[이슈를 생성](https://github.com/nodejs/security-wg/issues/new)해주시기 바랍니다.
