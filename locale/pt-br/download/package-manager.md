@@ -11,7 +11,7 @@ title: Instalando Node.js via gerenciador pacotes
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
-* [Debian e Destribuições Linux baseadas em Ubuntu, Enterprise Linux/Fedora e pacotes Snap](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
+* [Debian e Distribuições Linux baseadas em Ubuntu, Enterprise Linux/Fedora e pacotes Snap](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
 * [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
 * [NetBSD](#netbsd)
