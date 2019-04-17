@@ -68,7 +68,7 @@ cd /usr/ports/www/node && make install
 
 ## Gentoo
 
-O Node.js está disponível na portage tree.
+O Node.js está disponível no diretório portage.
 
 ```bash
 emerge nodejs
