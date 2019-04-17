@@ -220,7 +220,7 @@ xbps-install -Sy nodejs
 
 ## Windows
 
-Apenas baixe o [Windows Installer](https://nodejs.org/#download) diretamente do site [nodejs.org](https://nodejs.org).
+Baixe o [Windows Installer](https://nodejs.org/#download) diretamente do site [nodejs.org](https://nodejs.org).
 
 ### Alternativas
 
