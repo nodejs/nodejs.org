@@ -31,7 +31,7 @@ layout: about.hbs
 
 你可以进一步参与我们持续构建社区的活动 —— 像本地化、布道、Node.js 意见收集和其它活动 —— 通过对 Node.js 源仓库的深入挖掘开始融入其中！
 
-在此之前，请确认你已经细读了 [合作者指南](https://github.com/nodejs/community-committee/blob/master/COLLABORATOR_GUIDE.md)。
+在此之前，请确认你已经细读了 [合作者指南](https://github.com/nodejs/community-committee/blob/master/governance/COLLABORATOR_GUIDE.md)。
 
 如果你对以社区会员身份参与社区委员会活动感兴趣的话，你应该阅读以下 **观察者与会员** 相关章节部分。随后发出请求希望成为我们下一届社区委员会的观察者。你可以在 [此处](https://github.com/nodejs/community-committee/issues/142) 寻找到相关的内容。
 
