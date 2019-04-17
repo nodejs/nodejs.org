@@ -74,7 +74,7 @@ Node é semelhante no projeto, e influenciado por sistemas como [Event Machine][
 ou [Twisted][] do Python. Porém, leva o modelo de eventos um pouco mais além. No Node o _[event loop][]_
 é exposto como uma parte do ambiente de execução ao invés de uma biblioteca. Em outros sistemas há
 sempre uma chamada bloqueante para iniciar o _event-loop_. Tipicamente o comportamento esperado é
-definidio através de _callbacks_ no início do _script_, e no final um servidor é iniciado por uma
+definido através de _callbacks_ no início do _script_, e no final um servidor é iniciado por uma
 chamada bloqueante como por exemplo `EventMachine::run()`.
 
 <!--
