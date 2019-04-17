@@ -131,7 +131,7 @@ pkg_add node
 
 ## openSUSE e SLE
 
-Node.js está disponível nos principais repositórios nos seguintes pacotes:
+Node.js está disponível nos principais repositórios sob os seguintes pacotes:
 
 * **openSUSE Leap 42.2**: `nodejs4`
 * **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
