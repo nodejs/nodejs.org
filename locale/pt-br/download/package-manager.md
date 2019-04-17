@@ -149,7 +149,7 @@ zypper install nodejs4
 
 Basta baixar o [macOS Installer](https://nodejs.org/#download) diretamente do site [nodejs.org](https://nodejs.org).
 
-_Se você quer baixar o pacote com bash:_
+_Se desejar baixar o pacote com bash:_
 
 ```bash
 curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
