@@ -5,7 +5,7 @@ title: Instalando Node.js via gerenciador pacotes
 
 # Instalando Node.js via gerenciador pacotes
 
-***Nota:*** Os pacotes nessa página são mantidos e suportados por seus respectivos empacotadores, **não** pela equipe principal do Node.js. Por favor, relate quaisquer problemas encontrados para o mantenedor do pacote.
+***Nota:*** Os pacotes nessa página são mantidos e suportados por seus respectivos empacotadores, **não** pela equipe principal do Node.js. Por favor, relate quaisquer problemas encontrados para o mantenedor do pacote. Se o problema for um bug no próprio Node.js, a mantenedor deve reportar o problema.
 
 ----------------------------
 
@@ -46,7 +46,7 @@ Os pacotes para o Node.js e o npm estão disponíveis no Repositório da Comunid
 pacman -S nodejs npm
 ```
 
-## Debian e distribuições Linux basedas em  Ubuntu, Enterprise Linux/Fedora e pacotes Snap
+## Debian e distribuições Linux basedas em Ubuntu, Enterprise Linux/Fedora e pacotes Snap
 
 [Distribuição dos binários oficiais do Node.js](https://github.com/nodesource/distributions/blob/master/README.md) são fornecidos pelo NodeSource.
 
@@ -60,7 +60,7 @@ Instale um pacote binário via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 pkg install node
 ```
 
-Ou compile por conta própria usando [ports](https://www.freebsd.org/cgi/man.cgi?ports):
+Ou compile-o por conta própria usando [ports](https://www.freebsd.org/cgi/man.cgi?ports):
 
 ```bash
 cd /usr/ports/www/node && make install
@@ -76,13 +76,13 @@ emerge nodejs
 
 ## NetBSD
 
-Node.js está disponível na pkgsrc tree:
+Node.js está disponível no diretório pkgsrc:
 
 ```bash
 cd /usr/pkgsrc/lang/nodejs && make install
 ```
 
-Ou instale um pacote binário (se estiver disponível para sua plataforma)  usando pkgin:
+Ou instale um pacote binário (se estiver disponível para sua plataforma) usando pkgin:
 
 ```bash
 pkgin -y install nodejs
@@ -90,8 +90,7 @@ pkgin -y install nodejs
 
 ## nvm
 
-Node Version Manager é um script bash utilizado para gerenciar múltiplas versões do Node.js. Ele Permite
-que você instale, desinstale, mude de versão e etc. Para instalar o nvm, use esse [script de instalação](https://github.com/creationix/nvm#install-script).
+Node Version Manager é um script bash utilizado para gerenciar múltiplas versões do Node.js. Ele Permite que você instale, desinstale, mude de versão e etc. Para instalar o nvm, use esse [script de instalação](https://github.com/creationix/nvm#install-script).
 
 Em sistemas Unix / OS X o Node.js compilado a partir do código fonte pode ser instalado usando [nvm](https://github.com/creationix/nvm), instalando-o no
 local em que o nvm espera:
@@ -228,7 +227,7 @@ Usando **[Chocolatey](http://chocolatey.org)**:
 
 ```bash
 cinst nodejs
-# or for full install with npm
+# ou para a instalação completa com npm
 cinst nodejs.install
 ```
 
