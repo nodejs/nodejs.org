@@ -31,7 +31,7 @@ Se hai delle idee su come organizzare e costruire la community, sentiti libero d
 
 Puoi partecipare ulteriormente nei nostri continui sforzi nel costruire la comunità - ad esempio le traduzioni, evangelism, la Node.js Collection, e altri - cercando informazioni nei loro rispettivi repositories e entrando nel vivo!
 
-Prima di approfondire, per favore assicurati di leggere la [Guida del Collaboratore](https://github.com/nodejs/community-committee/blob/master/COLLABORATOR_GUIDE.md).
+Prima di approfondire, per favore assicurati di leggere la [Guida del Collaboratore](https://github.com/nodejs/community-committee/blob/master/governance/COLLABORATOR_GUIDE.md).
 
 Se sei interessato a partecipare nel Comitato della Community come un membro del comitato, dovresti leggere la sezione qui sotto riguardo a **Osservatori e condizione di Membro**, e creare una segnalazione richiedendo di essere un Osservatore nel nostro prossimo incontro del Comitato Community.
 Puoi trovare un esempio lampante di tale segnalazione [qui](https://github.com/nodejs/community-committee/issues/142).

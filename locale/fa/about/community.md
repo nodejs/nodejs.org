@@ -31,7 +31,7 @@ The [nodejs/community-committee](https://github.com/nodejs/community-committee) 
 
 You can further participate in our ongoing efforts around community building - like localization, evangelism, the Node.js Collection, and others - by digging into their respective repositories and getting involved!
 
-Before diving in, please be sure to read the [Collaborator Guide](https://github.com/nodejs/community-committee/blob/master/COLLABORATOR_GUIDE.md).
+Before diving in, please be sure to read the [Collaborator Guide](https://github.com/nodejs/community-committee/blob/master/governance/COLLABORATOR_GUIDE.md).
 
 If you're interested in participating in the Community Committee as a committee member, you should read the section below on **Observers and Membership**, and create an issue asking to be an Observer in our next Community Committee meeting. You can find a great example of such an issue [here](https://github.com/nodejs/community-committee/issues/142).
 
