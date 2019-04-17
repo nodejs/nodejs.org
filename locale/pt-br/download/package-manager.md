@@ -212,7 +212,7 @@ sudo eopkg install nodejs
 
 ## Void Linux
 
-Void Linux entrega o Node.js estável no repositório principal.
+Void Linux possui versões estáveis de Node.js no seu repositório principal.
 
 ```bash
 xbps-install -Sy nodejs
