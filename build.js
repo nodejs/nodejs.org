@@ -178,13 +178,13 @@ function withPreserveLocale (preserveLocale) {
   return (files, m, next) => {
     if (preserveLocale) {
       var path = m.path('locale/en')
-      m.read(path, function (err, newfiles) {
+      m.read(path, (err, newfiles) => {
         if (err) {
           console.error(err)
           return next(err)
         }
 
-        Object.keys(newfiles).forEach(function (key) {
+        Object.keys(newfiles).forEach((key) => {
           if (!files[key]) {
             files[key] = newfiles[key]
           }
