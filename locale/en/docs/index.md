@@ -31,7 +31,7 @@ This documentation describes the built-in modules provided by Node.js. It does n
     <li><a href="https://nodejs.org/docs/latest-v4.x/api/">Node.js 4.x</a></li>
     <li><a href="https://nodejs.org/docs/latest-v0.12.x/api/">Node.js 0.12.x</a></li>
     <li><a href="https://nodejs.org/docs/latest-v0.10.x/api/">Node.js 0.10.x</a></li>
-    <li><a href="https://nodejs.org/docs/">all versions</a></li>
+    <li><a href="https://nodejs.org/docs/">All versions</a></li>
   </ul>
 </div>
 
