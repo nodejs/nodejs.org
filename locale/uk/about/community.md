@@ -31,7 +31,7 @@ layout: about.hbs
 
 Далі, ви можете брати участь у наших починаннях, пов'язаних з побудовою спільноти, таких як: локалізація, євангелізація, Node.js Collection та інші ― копаючись у репозиторіях і беручи участь!
 
-Та перед тим як почати, будь ласка, озайомтесь з [рекомендаціями](https://github.com/nodejs/community-committee/blob/master/governance/COLLABORATOR_GUIDE.md).
+Та перед тим як почати, будь ласка, ознайомтесь з [рекомендаціями](https://github.com/nodejs/community-committee/blob/master/governance/COLLABORATOR_GUIDE.md).
 
 Якщо ви зацікавлені в участі в CommComm як член комітету, вам слід прочитати розділ нижче ― про **Спостерігачів та Членство**, і створити issue з проханням бути спостерігачем, на нашому наступному засіданні CommComm. Ознайомитись з прикладом такого питання можна [тут](https://github.com/nodejs/community-committee/issues/142).
 
