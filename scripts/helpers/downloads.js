@@ -147,6 +147,11 @@ module.exports = (version) => {
     downloads = downloads.filter(ver =>
       ver.title !== 'Linux 32-bit Binary' &&
       ver.title !== 'SmartOS 32-bit Binary')
+  } else if (semver.satisfies(version, '>= 12.0.0')) {
+    downloads = downloads.filter(ver =>
+      ver.title !== 'Linux 32-bit Binary' &&
+      ver.title !== 'SmartOS 32-bit Binary' &&
+      ver.title !== 'ARMv6 32-bit Binary')
   }
   return downloads.map((item) => resolveUrl(item, version))
 }
