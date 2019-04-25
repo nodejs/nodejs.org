@@ -109,6 +109,21 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 - [Github](https://github.com/thenativeweb)
 - Topics – Node.js, JavaScript, Docker, Kubernetes, CQRS, event-sourcing, DDD
 
+### Israel 🇮🇱
+
+#### Tel Aviv
+
+##### Benjamin Gruenbaum
+
+- [Github](https://github.com/benjamingr)
+- Topics - Node.js, Promises, Node.js core, Testing, Mobx, Vue.js, Sinon
+
+##### Liran Tal
+
+- [Github](https://github.com/lirantal)
+- [@liran_tal](http://twitter.com/liran_tal)
+- Topics - Node.js, Security, Testing, CLIs, APIs
+
 ### United States 🇺🇸
 
 #### California
