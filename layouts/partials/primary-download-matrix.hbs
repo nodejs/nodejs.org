@@ -70,9 +70,14 @@
       </tr>
       <tr>
         <th>{{downloads.LinuxBinaries}} (ARM)</th>
-        <td colspan="2"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-armv6l.tar.xz">ARMv6</a></td>
-        <td colspan="2"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-armv7l.tar.xz">ARMv7</a></td>
-        <td colspan="2"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-arm64.tar.xz">ARMv8</a></td>
+        {{#semver-gte version.node "12.0.0"}}
+          <td colspan="3"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-armv7l.tar.xz">ARMv7</a></td>
+          <td colspan="3"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-arm64.tar.xz">ARMv8</a></td>
+        {{else}}
+          <td colspan="2"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-armv6l.tar.xz">ARMv6</a></td>
+          <td colspan="2"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-armv7l.tar.xz">ARMv7</a></td>
+          <td colspan="2"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-arm64.tar.xz">ARMv8</a></td>
+        {{/semver-gte}}
       </tr>
 
       <tr>
