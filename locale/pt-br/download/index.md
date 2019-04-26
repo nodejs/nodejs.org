@@ -10,7 +10,7 @@ downloads:
     tagline-lts: Recomendado Para a Maioria dos Usuários
     display-hint: Mostrar downloads para
     intro: >
-        Baixar o código fonte do Node.js ou um instalador pré-compilado para o seu sistema, e comece a devenvolver hoje.
+        Baixe o código fonte do Node.js ou um instalador pré-compilado para o seu sistema, e comece a desenvolver hoje.
     currentVersion: Versão LTS Mais Recente
     buildInstructions: Compile o Node.js pelo código nas plataformas suportadas
     WindowsInstaller: Instalador Windows
