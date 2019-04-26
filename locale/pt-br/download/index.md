@@ -22,7 +22,7 @@ downloads:
 additional:
     headline: Plataformas adicionais
     intro: >
-        Membros da comunidade Node.js mantêm compilados não oficiais do Node.js para plataformas adicionais. Note, que tais compilados não são mantidos pela equipe principal do Node.js e pode não estar ainda no mesmo nível de compilação da versão atual do Node.js.
+        Membros da comunidade Node.js mantêm compilados não oficiais do Node.js para plataformas adicionais. Note, tais compilados não são mantidos pela equipe oficial do Node.js e podem não estar no mesmo nível de compilação da versão atual do Node.js.
     platform: Plataforma
     provider: Provedor
     SmartOSBinaries: Binários SmartOS
