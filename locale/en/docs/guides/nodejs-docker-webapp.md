@@ -13,12 +13,10 @@ understanding of how a Node.js application is structured.
 
 In the first part of this guide we will create a simple web application in
 Node.js, then we will build a Docker image for that application, and lastly we
-will run the image as a container.
+will instantiate a container from that image.
 
-Docker allows you to package an application with all of its dependencies into a
-standardized unit, called a container, for software development. A container is
-a stripped-to-basics version of a Linux operating system. An image is software
-you load into a container.
+Docker allows you to package an application with its environment and all of its dependencies into a
+"box", called a container. Usually, a container consists of an application running in a stripped-to-basics version of a Linux operating system. An image is the blueprint for a container, a container is a running instance of an image.
 
 ## Create the Node.js app
 
