@@ -79,7 +79,7 @@ emerge nodejs
 
 LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](http://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs8`, `nodejs10`, `nodejs12`, etc)
 
-For example, to install Node.js 10.x from the command line, run the following as a user with *ALLOBJ special authority :
+To install Node.js 12.x from the command line, run the following as a user with *ALLOBJ special authority :
 
 ```bash
 yum install nodejs12
