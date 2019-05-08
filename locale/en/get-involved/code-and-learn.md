@@ -9,6 +9,7 @@ Code & Learn events allow you to get started (or go further) with Node.js core c
 
 ## Upcoming Code + Learn Events
 
+- [Saint-Petersburg, Russia on May 26](https://medium.com/piterjs/code-learn-ce20d330530f) 
 - Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/)
 
 ## Past Code + Learn Events
