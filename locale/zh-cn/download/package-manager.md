@@ -89,7 +89,7 @@ Node.js 长期支持版（LTS）各类版本可以通过 IBM 处获得，使用 
 ```bash
 yum install nodejs12
 ```
-Node.js 也可以通过 IMB i 客户端访问解决方案产品安装。具体参考 [this support document](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619)。
+Node.js 也可以通过客户端访问解决方案产品（IBM i Access Client Solutions）安装。具体参考 [this support document](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619)。
 
 ## NetBSD
 
