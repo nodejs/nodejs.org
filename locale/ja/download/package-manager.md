@@ -16,6 +16,7 @@ title: パッケージマネージャを利用した Node.js のインストー�
 * [Debian と Ubuntu ベースの Linux ディストリビューション、エンタープライズ Linux/Fedora と Snap パッケージ](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
 * [FreeBSD と OpenBSD](#freebsd-openbsd)
 * [Gentoo](#gentoo)
+* [IBM i](#ibm-i)
 * [NetBSD](#netbsd)
 * [openSUSE と SLE](#opensuse-and-sle)
 * [macOS](#macos)
@@ -101,6 +102,23 @@ Node.js は Portageツリー で利用可能です。
 emerge nodejs
 ```
 
+## IBM i
+
+<!-- LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](http://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs8`, `nodejs10`, `nodejs12`, etc) -->
+
+Node.js の LTS バージョンは IBM から ['yum' パッケージマネージャ](http://ibm.biz/ibmi-rpms) で利用可能です。パッケージの名前は `nodejs` の後にメジャーバージョンの数字が付きます(例えば `nodejs8`, `nodejs10`, `nodejs12`, など)
+
+<!-- To install Node.js 12.x from the command line, run the following as a user with \*ALLOBJ special authority: -->
+
+Node.js 12.x をコマンドラインからインストールするには、以下のコマンドを \*ALLOBJ 権限のユーザで実行します
+
+```bash
+yum install nodejs12
+```
+
+<!-- Node.js can also be installed with the IBM i Access Client Solutions product. See [this support document](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) for more details -->
+
+Node.js は IBM i Access Client Solutions と一緒にインストールすることもできます。[こちらのサポートドキュメント(英語)](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619)に詳細があります。
 
 ## NetBSD
 
