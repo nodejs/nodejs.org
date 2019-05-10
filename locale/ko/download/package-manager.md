@@ -171,7 +171,7 @@ pkgin -y install nodejs
 -->
 ## NetBSD
 
-pkgsrc에서 Node.js를 설치할 수 있습니다
+pkgsrc에서 Node.js를 설치할 수 있습니다.
 
 ```bash
 cd /usr/pkgsrc/lang/nodejs && make install
@@ -277,6 +277,7 @@ Node.js is available in the main repositories under the following packages:
 * **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
 * **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`
   (The "Web and Scripting Module" must be [added before installing](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).)
+
 For example, to install Node.js 4.x on openSUSE Leap 42.2, run the following as root:
 
 ```bash
@@ -284,7 +285,7 @@ zypper install nodejs4
 ```
 -->
 
-## <!--opensuse-and-sle-->openSUSE 와 SLE
+## <!--opensuse-and-sle-->openSUSE와 SLE
 
 다음 패키지 아래 주 저장소에서 Node.js를 사용할 수 있습니다.
 
@@ -398,7 +399,7 @@ Or build manually from pkgsrc:
 cd pkgsrc/lang/nodejs && bmake install
 ```
 -->
-## <!--smartos-and-illumos-->SmartOS 와 illumoss
+## <!--smartos-and-illumos-->SmartOS와 illumoss
 
 SmartOS 이미지에는 미리 설치된 pkgsrc가 포함되어 있습니다. illumos 배포판에서는 먼저
 **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**를 설치하고 평소처럼
