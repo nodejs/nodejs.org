@@ -10,7 +10,7 @@ layout: contribute.hbs
 
 ## فعاليات برمج + تعلم قادمة
 
-- [Saint-Petersburg, Russia on May 26](https://medium.com/piterjs/code-learn-ce20d330530f) 
+- [سانت بطرسبرغ ، روسيا في 26 ماي](https://medium.com/piterjs/code-learn-ce20d330530f) 
 - سوف يعلن عنها
 
 ##  فعاليات برمج + تعلم سابقة 
