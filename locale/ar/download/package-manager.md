@@ -78,12 +78,13 @@ emerge nodejs
 
 نسخ LTS لـNode.js متوفرة من IBM و متوفرة عبر [مدير الحزمة الـ'yum'](http://ibm.biz/ibmi-rpms). إسم الحزمة هو `nodejs` متبوعا برقم الإصدار الرائد (مثلا، `nodejs8`، `nodejs10`، `nodejs12`، إلخ
 
-لتثبيت Node.js 12.x من سطر الأوامر شغل التالي كمستخدم مع \*ALLOBJ  سلطة خاصة :
+لتثبيت Node.js 12.x باستخدام سطر الأوامر، شغل الامر التالي كمستخدم مع سلطة *ALLOBJ الخاصة :
 
  ```bash
 yum install nodejs12
 ```
-يمكن أيضًا تثبيت Node.js مع IBM i وصول العملاء لحلول المنتج. انظر [هذه الوثيقة الدعم](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) .لمزيد من التفاصيل
+
+يمكن أيضًا تثبيت Node.js مع منتج IBM i الخاص بحلول وصول العملاء. انظر [وثيقة الدعم هذه](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) لتفاصيل أكثر
 
 ## NetBSD
 
