@@ -1,5 +1,5 @@
 ---
-title: Contributing
+title: 貢献する
 layout: contribute.hbs
 ---
 

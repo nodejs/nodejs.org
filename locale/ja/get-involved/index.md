@@ -1,5 +1,5 @@
 ---
-title: Get involved
+title: 参加する
 layout: contribute.hbs
 ---
 # 参加する
