@@ -3,28 +3,28 @@ title: Node.js ミートアップ
 layout: contribute.hbs
 ---
 
-# Node.js ミートアップ
+# Node.js Meetups
 
-これは Node.js のミートアップのリストです。ローカルグループを追加したい場合は、PR を送信してください。
+This is a list of Node.js meetups. Please submit a PR if you'd like to add your local group!
 
-## 行動規範
+## Code of Conduct
 
-ミートアップに CoC がない、または安全でない場所として報告された場合、このリストからは削除されます。
+If any meetup does not have a CoC and/or is reported as an unsafe place, it will be removed from this list. 
 
-## ミートアップを追加する時の注意
+## Notes for adding meetups
 
-フォーマット
+FORMAT
 - [Meetup](https://www.meetup.com/pdxnode/)
-- ミートアップの頻度
-- 講演を提出するにはどうすればいいですか？ &lt;&lt;一覧はこちら&gt;&gt;
-- 主催者名 (あなたが提供したい場合)
-- 主催者の連絡先情報 (提供したい場合)
+- Frequency of meetups 
+- How to submit a talk? &lt;&lt;list here&gt;&gt;
+- Organizer names (if you wish to provide)
+- Organizers contact info (if you wish to provide)
 
-必要事項
-- このミートアップが CoC に従っているかどうか、PR に記載してください。
-- 確認のため CoC にリンクしてください。
-- CoC がない場合は、送信する前に CoC 付きのミートアップに更新してください。
-- PR をアルファベット順に送信してください。
+REQUIREMENTS
+- Please state in your PR if this meetup abides by CoC.
+- Link to CoC for verification.
+- If you do not currently have a CoC, update the meetup with CoC before submitting.
+- Submit your PR in alphabetical order.
 
 ## Meetups
 

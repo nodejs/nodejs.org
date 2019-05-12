@@ -3,17 +3,17 @@ title: Node.js イベント
 layout: contribute.hbs
 ---
 
-# Node.js イベント
+# Node.js Events
 
-これは、Node.js のイベントと会議のリストです。まだ下のリストに記録されていない新しいイベントを追加する場合は、PR を送信してください。
+This is a list of Node.js events and conferences. Please submit a PR if you'd like to add a new event that isn't yet tracked in the list below.
 
-## イベントを追加するときの注意事項
+## Notes for adding events
 
-フォーマット
+FORMAT
 
 - Event Name | Location | Dates
 
-## イベント
+## Events
 
 ### 2019
 

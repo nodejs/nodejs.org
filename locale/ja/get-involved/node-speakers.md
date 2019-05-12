@@ -3,17 +3,17 @@ title: Node.js スピーカー
 layout: contribute.hbs
 ---
 
-# Node.js スピーカー
+# Node.js Speakers
 
-これは、地元の Node.js スピーカーのリストです。自分を追加したり他の人を追加したい場合は、PR を送信してください。同様にそうする前にあなたが許可を持っていることを確認してください。
+This is a list of local Node.js speakers. Please submit a PR if you'd like to add yourself or add others! Make sure you have permission before doing so as well.
 
-## 行動規範
+## Code of Conduct
 
-誰かが悪意があると報告されたり、他の人を不快にさせたりした場合、それらはこのリストから削除される可能性があります。
+If anyone is reported as malicious or making others feel uncomfortable, they may be removed from this list. 
 
-## 説明書
+## Instructions
 
-- すべてアルファベット順に送信
+- Submit everything alphabetically
 
 ## Speakers
 
