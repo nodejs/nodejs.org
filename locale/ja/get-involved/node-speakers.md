@@ -15,13 +15,13 @@ layout: contribute.hbs
 
 - すべてアルファベット順に送信
 
-## スピーカー
+## Speakers
 
-### ブラジル 🇧🇷
+### Brazil 🇧🇷
 
-#### ミナスジェライス
+#### Minas Gerais
 
-##### ベロオリゾンテ
+##### Belo Horizonte
 
 ###### Hugo Iuri Cordeiro
 
@@ -30,11 +30,11 @@ layout: contribute.hbs
 - [Linkedin](https://www.linkedin.com/in/hugoiuri)
 - [Personal Website](http://www.hugoiuri.dev)
 
-- トピック - Node.js, テスト, クラウドコンピューティング, コミュニティ, オープンソース, JavaScript, 継続的デリバリー, デプロイ自動化
+- Topics - Node.js, Testing, Cloud Computing, Community, Open Source, JavaScript, Continuous Delivery, Deploy Automatization
 
-#### リオデジャネイロ
+#### Rio de Janeiro
 
-##### リオデジャネイロ
+##### Rio de Janeiro 
 
 ###### Glaucia Lemos
 
@@ -43,11 +43,11 @@ layout: contribute.hbs
 - [Linkedin](https://www.linkedin.com/in/glaucialemos/)
 - [Personal Website](https://glaucialemos.netlify.com/)
 
-- トピック - Node.js, Women in Tech, テスト, クラウドコンピューティング, Node.js with A.I, コミュニティ, オープンソース, JavaScript, Node.js + Bots  
+- Topics - Node.js, Women in Tech, Testing, Cloud Computing, Node.js with A.I, Community, Open Source, JavaScript, Node.js + Bots  
 
-#### サンパウロ
+#### São Paulo
 
-##### サンパウロ 
+##### São Paulo 
 
 ###### Claudiney Junior
 
@@ -55,7 +55,7 @@ layout: contribute.hbs
 - [Activities](https://claudineyjunior.com.br)
 - [Linkedin](https://linkedin.com/in/claudiney-junior/)
 
-- トピック: Node.js, Docker, Swarm, Kubernetes, プログラミングロジック, ベストプラクティス, クラウドコンピューティング, IA, キャリア
+- Topics: Node.js, Docker, Swarm, Kubernetes, Programming Logic, Best Pratices, Cloud Computing, IA, Carrer
 
 ###### Erick Wendel
 
@@ -63,7 +63,7 @@ layout: contribute.hbs
 - [Activities](https://erickwendel.com)
 - [Linkedin](https://linkedin.com/in/erickwendel/)
 
-- トピック: Node.js, Kubernetes, Docker, サーバレス, Communities, クラウドコンピューティング.
+- Topics: Node.js, Kubernetes, Docker, Serverless, Communities, Cloud Computing.
 
 
 ###### Lucas Santos
@@ -73,143 +73,143 @@ layout: contribute.hbs
 - [Linkedin](https://linkedin.com/in/lhs-santos)
 - [Github](https://github.com/khaosdoctor)
 
-- トピック: Node.js, Kubernetes, Docker, サーバレス, キャリア, クラウドコンピューティング, インフラ, JavaScript, TypeScript, Code Quality
+- Topics: Node.js, Kubernetes, Docker, Serverless, Career, Cloud Computing, Infrastructure, JavaScript, TypeScript, Code Quality
 
-### カナダ 🇨🇦
+### Canada 🇨🇦
 
-#### オンタリオ州 
+#### Ontario 
 
-##### オタワ
+##### Ottawa
 
 ###### Michael Dawson
 
 - [@mhdawson](https://twitter.com/mhdawson1)
 - [LinkedIn](https://www.linkedin.com/in/michael-dawson-6051282/)
-- トピック - Node.js
+- Topics - Node.js
 
-#### ブリティッシュコロンビア
+#### British Columbia
 
-##### バンクーバー
+##### Vancouver
 
 ###### Manil Chowdhury
 
 - [@keywordnew](https://twitter.com/keywordnew)
 - [LinkedIn](https://www.linkedin.com/in/manilchowdhury/)
-- トピック - Node コミュニティ, オープンソース, 教育, 多様性とインクルージョン, wombats
+- Topics - Node Community, Open Source, Education, Diversity & Inclusion, wombats
 
-### ドイツ 🇩🇪
+### Germany 🇩🇪
 
-#### バーデン=ヴュルテンベルク
+#### Baden-Württemberg
 
-##### カイザーシュトゥールのリーゲル
+##### Riegel am Kaiserstuhl
 
 ###### Golo Roden
 
 - [@goloroden](https://twitter.com/goloroden)
 - [Github](https://github.com/thenativeweb)
-- トピック – Node.js, JavaScript, Docker, Kubernetes, CQRS, event-sourcing, DDD
+- Topics – Node.js, JavaScript, Docker, Kubernetes, CQRS, event-sourcing, DDD
 
-### イスラエル 🇮🇱
+### Israel 🇮🇱
 
-#### テルアビブ
+#### Tel Aviv
 
 ##### Benjamin Gruenbaum
 
 - [Github](https://github.com/benjamingr)
-- トピック - Node.js, Promises, Node.js core, テスト, Mobx, Vue.js, Sinon
+- Topics - Node.js, Promises, Node.js core, Testing, Mobx, Vue.js, Sinon
 
 ##### Liran Tal
 
 - [Github](https://github.com/lirantal)
 - [@liran_tal](http://twitter.com/liran_tal)
-- トピック - Node.js, セキュリティ, テスト, CLIs, APIs
+- Topics - Node.js, Security, Testing, CLIs, APIs
 
-### アメリカ 🇺🇸
+### United States 🇺🇸
 
-#### カリフォルニア州
+#### California
 
-##### サンフランシスコ
+##### San Francisco
 
 ###### Atishay Jain
 - [@atishay811](http://twitter.com/atishay811)
 - [LinkedIn](https://linkedin.com/in/atishay)
 - [Github](https://github.com/atishay)
-- トピック - Node.js, ネイティブモジュール(N-API, Nan), Node.js on desktop
+- Topics - Node.js, Native Modules(N-API, Nan), Node.js on desktop
 
 ###### Dan Shaw
 
 - [@dshaw](http://twitter.com/dshaw)
-- トピック - Node.js 
+- Topics - Node.js 
 
 ###### Shruti Kapoor
 
 - [@shrutikapoor08](http://twitter.com/shrutikapoor08)
-- トピック - Node.js 
+- Topics - Node.js 
 
 ###### Tracy Lee
 
 - [@ladyleet](http://twitter.com/ladyleet)
 - [LinkedIn](https://linkedin.com/in/tracyslee)
-- トピック - Node.js コミュニティ, Women in Tech, 多様性とインクルージョン, RxJS & Node.js
+- Topics - Node.js Community, Women in Tech, Diversity & Inclusion, RxJS & Node.js
 
 ###### Dominik Kundel
 - [@dkundel](https://twitter.com/dkundel)
 - [GitHub](https://github.com/dkundel)
 - [dkundel.com](https://dkundel.com)
-- トピック - Node.js, TypeScript, Nodebots, Web セキュリティ, Web コンポーネント
+- Topics - Node.js, TypeScript, Nodebots, Web Security, Web Components
 
-#### フロリダ州
+#### Florida
 
-##### セントピーターズバーグ
+##### Saint Petersburg
 
 ###### Mark Pieszak
 
 - [@MarkPieszak](http://twitter.com/MarkPieszak)
 - [Github](https://github.com/MarkPieszak)
-- トピック - Node.js, JavaScript SSR (サーバサイドレンダリング), パフォーマンス, オープンソース, コミュニティ
+- Topics - Node.js, JavaScript SSR (Server-side Rendering), Performance, Open Source, Community
 
 ###### Julián Duque
 
 - [@julian_duque](https://twitter.com/julian_duque)
 - [GitHub](https://github.com/julianduque)
-- トピック - Node.js, Debugging, パフォーマンス, ベストプラクティス, コミュニティアウトリーチ, 教育
+- Topics - Node.js, Debugging, Performance, Best Practices, Community Outreach, Education
 
-#### ニューヨーク州
+#### New York
 
-##### ニューヨークシティ
+##### New York City
 
 ###### Tierney Cyren
 
 - [@bitandbang](http://twitter.com/bitandbang)
-- トピック - Node.js 
+- Topics - Node.js 
 
 ###### Joe Sepi
 
 - [@joe_sepi](http://twitter.com/joe_sepi)
 - [LinkedIn](https://www.linkedin.com/in/joesepi/)
-- トピック - Node.js, JavaScript, オープンソース, コミュニティ, リーダーシップ, Punk Rock
+- Topics - Node.js, JavaScript, Open Source, Community, Leadership, Punk Rock
 
-#### ノースカロライナ州
+#### North Carolina
 
-##### ローリー
+##### Raleigh
 
 ###### Tracy Lee
 
 - [@ladyleet](http://twitter.com/ladyleet)
 - [LinkedIn](https://linkedin.com/in/tracyslee)
-- トピック - Node.js コミュニティ, Women in Tech, 多様性とインクルージョン, RxJS & Node.js
+- Topics - Node.js Community, Women in Tech, Diversity & Inclusion, RxJS & Node.js
 
-#### オレゴン州
+#### Oregon
 
-##### ポートランド
+##### Portland
 
 ###### Ben Michel
 
 - [@obensource](http://twitter.com/obensource)
-- トピック - Node.js 
+- Topics - Node.js 
 
 ###### Christopher Hiller
 
 - [@b0neskull](https://twitter.com/b0neskull)
-- トピック - Node.js, テスト, Tooling, Maintainership & OSS Sustainability
+- Topics - Node.js, Testing, Tooling, Maintainership & OSS Sustainability
 

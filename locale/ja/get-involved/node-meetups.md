@@ -26,583 +26,583 @@ layout: contribute.hbs
 - CoC がない場合は、送信する前に CoC 付きのミートアップに更新してください。
 - PR をアルファベット順に送信してください。
 
-## ミートアップ
+## Meetups
 
-### アフリカ
+### Africa
 - [Meetup](https://www.nodejs.africa)
-- ミートアップの頻度 - bi-monthly
-- 講演を提出するにはどうすればいいですか？ [Submit to this form](https://docs.google.com/forms/d/e/1FAIpQLSe3vPkiO8ijtbP7fUhEotKefXU-fWUoDGtUSo1khmtA_7v1WQ/viewform)
-- 主催者名 - Agiri Abraham
-- 主催者の連絡先情報 -
+- Frequency of meetups - bi-monthly
+- How to submit a talk? [Submit to this form](https://docs.google.com/forms/d/e/1FAIpQLSe3vPkiO8ijtbP7fUhEotKefXU-fWUoDGtUSo1khmtA_7v1WQ/viewform)
+- Organizer name - Agiri Abraham
+- Organizer contact info -
 
-### アルゼンチン
+### Argentina
 
-#### ブエノスアイレス州
+#### Buenos Aires Province
 
-##### ブエノスアイレス
+##### Buenos Aires
 
 - [Meetup](https://www.meetup.com/banodejs/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ Write a message in the meetup page
-- 主催者名 - Alejandro Oviedo
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Write a message in the meetup page
+- Organizer name - Alejandro Oviedo
+- Organizer contact info -
 
-### オーストラリア
+### Australia
 
 #### Victoria
 
-##### メルボルン
+##### Melbourne
 
 - [Meetup](https://www.meetup.com/NodeMelbourne/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Andrey Sidorov
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Andrey Sidorov
+- Organizer contact info -
 
-##### シドニー
+##### Sydney
 
 - [Meetup](https://www.meetup.com/node-sydney/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - James Richardson. Co-organizer: Jessica Claire
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - James Richardson. Co-organizer: Jessica Claire
+- Organizer contact info -
 
-### ベルギー
+### Belgium
 
-#### ブリュッセル
+#### Brussels
 
-##### ブリュッセル
+##### Brussels
 
 - [Meetup](https://www.meetup.com/Belgian-node-js-User-Group/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Steven Beeckman
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Steven Beeckman
+- Organizer contact info -
 
-### ブラジル
+### Brazil
 
-#### サンパウロ
+#### São Paulo
 
 - [Meetup](https://meetup.com/nodebr)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名s - [Erick Wendel](https://github.com/erickwendel), [Alan Hoffmeister](https://github.com/alanhoff), [Igor França](https://github.com/horaddrim), [Icaro Caldeira](https://github.com/icarcal), [Marcus Bergamo](https://github.com/thebergamo), [Igor Halfeld](https://github.com/igorHalfeld).
-- 主催者の連絡先情報 - [@erickwendel_](https://twitter.com/erickwendel_)
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer names - [Erick Wendel](https://github.com/erickwendel), [Alan Hoffmeister](https://github.com/alanhoff), [Igor França](https://github.com/horaddrim), [Icaro Caldeira](https://github.com/icarcal), [Marcus Bergamo](https://github.com/thebergamo), [Igor Halfeld](https://github.com/igorHalfeld).
+- Organizer contact info - [@erickwendel_](https://twitter.com/erickwendel_)
 
-##### カンピナス
+##### Campinas
 
 - [Meetup](https://www.meetup.com/Nodeschool-Campinas/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Filipe Oliveira
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Filipe Oliveira
+- Organizer contact info -
 
-#### チリ
+#### Chile
 
 - [Meetup](https://www.meetup.com/es-ES/NodersJS/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ Issue on Github [here](https://github.com/Noders/Meetups/issues/new)
-- 主催者名 - Rodrigo Adones and Ender Bonnet
-- 主催者の連絡先情報 - [Rodrigo](https://github.com/L0rdKras), [Ender](https://twitter.com/enbonnet)
+- Frequency of meetups - monthly
+- How to submit a talk? Issue on Github [here](https://github.com/Noders/Meetups/issues/new)
+- Organizer name - Rodrigo Adones and Ender Bonnet
+- Organizer contact info - [Rodrigo](https://github.com/L0rdKras), [Ender](https://twitter.com/enbonnet)
 
-#### ミナスジェライス
+#### Minas Gerais
 
 - [Meetup](https://www.meetup.com/nodebr/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Hugo Iuri
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Hugo Iuri
+- Organizer contact info -
 
-#### リオグランデドスル
+#### Rio Grande do Sul
 
-##### ポルトアレグレ
+##### Porto Alegre
 
 - [Meetup](https://www.meetup.com/Node-js-Porto-Alegre-Meetup/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Henrique Schreiner
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Henrique Schreiner
+- Organizer contact info -
 
-### カナダ
+### Canada
 
-#### ブリティッシュコロンビア
+#### British Columbia
 
-##### バンクーバー
+##### Vancouver
 
 - [Meetup](https://www.meetup.com/Node-JS-Community-Hangouts)
-- ミートアップの頻度 - quarterly
-- 講演を提出するにはどうすればいいですか？ DM @keywordnew on twitter
-- 主催者名 - Manil Chowdhury
-- 主催者の連絡先情報 -
+- Frequency of meetups - quarterly
+- How to submit a talk? DM @keywordnew on twitter
+- Organizer name - Manil Chowdhury
+- Organizer contact info -
 
-#### オンタリオ
+#### Ontario
 
-##### トロント
+##### Toronto
 
 - [Toronto JS Meetup](http://torontojs.com/)
-- ミートアップの頻度 - weekly
-- 講演を提出するにはどうすればいいですか？ _Contact Organizers through Slack: http://slack.torontojs.com/_
-- 主催者名 - Dann T. & Paul D.
-- 主催者の連絡先情報 - _Community Slack_
+- Frequency of meetups - weekly
+- How to submit a talk? _Contact Organizers through Slack: http://slack.torontojs.com/_
+- Organizers name - Dann T. & Paul D.
+- Organizer contact info - _Community Slack_
 
-### コロンビア
+### Colombia
 
-#### アンティオキア
+#### Antioquia
 
-##### メデリン
+##### Medellín
 
 - [Meetup](https://www.meetup.com/node_co/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Camilo Montoya
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Camilo Montoya
+- Organizer contact info -
 
-### フィンランド
+### Finland
 
-#### ウーシマー県
+#### Uusimaa
 
-##### ヘルシンキ
+##### Helsinski
 
 - [Meetup](https://www.meetup.com/Helsinki-Node-js/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Juha Lehtomaki
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page
+- Organizer name - Juha Lehtomaki
+- Organizer contact info -
 
-### フランス
+### France
 
-#### イル=ド=フランス
+#### Île-de-France
 
-##### パリ
+##### Paris
 
 - [Meetup](https://www.meetup.com/Nodejs-Paris/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。 or submit your talk on [nodejs.paris wbesite](http://nodejs.paris/meetups)
-- 主催者名 - [Etienne Folio](https://twitter.com/Ornthalas), [Stanislas Ormières](https://twitter.com/laruiss), [Nicolas KOKLA](https://twitter.com/nkokla), Quentin Raynaud
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page or submit your talk on [nodejs.paris wbesite](http://nodejs.paris/meetups)
+- Organizer name - [Etienne Folio](https://twitter.com/Ornthalas), [Stanislas Ormières](https://twitter.com/laruiss), [Nicolas KOKLA](https://twitter.com/nkokla), Quentin Raynaud
+- Organizer contact info -
 
-### ドイツ
+### Germany
 
-#### バイエルン州
+#### Bavaria
 
-##### パッサウ
+##### Passau
 
 - [Meetup](https://www.meetup.com/de-DE/Nodeschool-Passau/)
-- ミートアップの頻度 - quarterly
-- 講演を提出するにはどうすればいいですか？ Email [Valentin](mailto:valentin.huber@msg.group)
-- 主催者名 - Valentin Huber
-- 主催者の連絡先情報 - [Email](mailto:valentin.huber@msg.group)
+- Frequency of meetups - quarterly
+- How to submit a talk? Email [Valentin](mailto:valentin.huber@msg.group)
+- Organizer name - Valentin Huber
+- Organizer contact info - [Email](mailto:valentin.huber@msg.group)
 
-##### ハンブルク
+##### Hamburg
 
 - [Meetup](https://www.meetup.com/node-HH/)
-- ミートアップの頻度 - monthly and on demand
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Gregor Elke, Oliver Lorenz
-- 主催者の連絡先情報 - via Meetup, via [Slack](http://bit.ly/web-hh)
+- Frequency of meetups - monthly and on demand
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Gregor Elke, Oliver Lorenz
+- Organizer contact info - via Meetup, via [Slack](http://bit.ly/web-hh)
 
-### ギリシャ
+### Greece
 
-##### アテネ
+##### Athens
 
 - [Meetup](https://www.meetup.com/nodejsathens/)
-- ミートアップの頻度 - every two months
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - [Ioannis Nikolaou](https://www.linkedin.com/in/ioannis-nikolaou/) Co-organizers - Stratoula Kalafateli, [Kostas Siabanis](https://github.com/ksiabani), Megaklis Vasilakis
-- 主催者の連絡先情報 - 
+- Frequency of meetups - every two months
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - [Ioannis Nikolaou](https://www.linkedin.com/in/ioannis-nikolaou/) Co-organizers - Stratoula Kalafateli, [Kostas Siabanis](https://github.com/ksiabani), Megaklis Vasilakis
+- Organizer contact info - 
 
-### ハンガリー
+### Hungary
 
-##### ブタペスト
+##### Budapest
 
 - [Meetup](https://www.meetup.com/nodebp/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Oroszi Róbert
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Oroszi Róbert
+- Organizer contact info -
 
-### インド
+### India
 
-##### デリー
+##### Delhi
 
 - [Meetup](https://www.meetup.com/nodeJS-Devs/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Gaurav Gandhi.
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Gaurav Gandhi.
+- Organizer contact info -
 
-#### グジャラート州
+#### Gujarat
 
-##### アーメダバード
+##### Ahmedabad
 
 - [Meetup](https://www.meetup.com/meetup-group-iAIoTVuS/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。 or write to dipesh@rapidops.com
-- 主催者名 - Dipesh Patel
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page or write to dipesh@rapidops.com
+- Organizer name - Dipesh Patel
+- Organizer contact info -
 
-### インドネシア
+### Indonesia
 
-##### ジャカルタ
+##### Jakarta
 
 - [Meetup](https://www.meetup.com/Node-js-Workshop/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Lukluk Luhuring Santoso
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Lukluk Luhuring Santoso
+- Organizer contact info -
 
-### アイルランド
+### Ireland
 
-##### ダブリン
+##### Dublin
 
 - [Meetup](https://www.meetup.com/Dublin-Node-js-Meetup/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Sean Walsh. Co-organizer: Leanne Vaughey
-- 主催者の連絡先情報 - 
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Sean Walsh. Co-organizer: Leanne Vaughey
+- Organizer contact info - 
 
 - [Meetup](https://www.meetup.com/Nodeschool-Dublin-Meetup/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Anton Whalley
-- 主催者の連絡先情報 - 
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Anton Whalley
+- Organizer contact info - 
 
-### イスラエル
+### Israel
 
-##### テルアビブ
+##### Tel Aviv
 
 - [Meetup](https://www.meetup.com/NodeJS-Israel/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。 or submit your talk on [Node.js-IL website](http://www.nodejsil.com/).
-- 主催者名 - [Idan Dagan](https://github.com/idandagan1), [Guy Segev](https://github.com/guyguyon), [Tomer Omri](https://github.com/TomerOmri)
-- 主催者の連絡先情報 - [Email](mailto:nodejsisrael8@gmail.com
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page or submit your talk on [Node.js-IL website](http://www.nodejsil.com/).
+- Organizer name - [Idan Dagan](https://github.com/idandagan1), [Guy Segev](https://github.com/guyguyon), [Tomer Omri](https://github.com/TomerOmri)
+- Organizer contact info - [Email](mailto:nodejsisrael8@gmail.com
 )
 
-### メキシコ
+### Mexico
 
-##### メキシコシティ
+##### Mexico City
 
 - [Meetup](https://www.meetup.com/NodeBotsMX/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Saúl Buentello
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Saúl Buentello
+- Organizer contact info -
 
-### ニュージーランド
+### New Zealand
 
-##### オークランド
+##### Auckland
 
 - [Meetup](https://www.meetup.com/AucklandNodeJs/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - George Czabania
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - George Czabania
+- Organizer contact info -
 
-### 南アフリカ
+### South Africa
 
-##### ケープタウン
+##### Cape Town
 
 - [Meetup](https://www.meetup.com/nodecpt/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Guy Bedford
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Guy Bedford
+- Organizer contact info -
 
-### スペイン
+### Spain
 
-##### マドリッド
+##### Madrid
 
 - [Meetup](https://www.meetup.com/Node-js-Madrid/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Alex Fernández
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Alex Fernández
+- Organizer contact info -
 
-### タイ
+### Thailand
 
-##### バンコク
+##### Bangkok
 
 - [Meetup](https://www.meetup.com/Bangkok-Node-js/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Dylan Jay
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Dylan Jay
+- Organizer contact info -
 
-### トルコ
+### Turkey
 
-##### イスタンブール
+##### Istanbul
 
 - [Meetup](https://www.meetup.com/nodeschool-istanbul/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Arif Çakıroğlu
-- 主催者の連絡先情報 - 
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Arif Çakıroğlu
+- Organizer contact info - 
 
-### アメリカ
+### United States
 
-#### アリゾナ
+#### Arizona
 
-##### メサ
+##### Mesa
 
 - [Meetup](https://www.meetup.com/NodeAZ/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Chris Matthieu
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Chris Matthieu
+- Organizer contact info -
 
-#### カリフォルニア
+#### California
 
-##### ロサンゼルス
+##### Los Angeles
 
 - [js.la](https://js.la)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ [contribute.js.la](https://contribute.js.la)
-- 主催者名 - David Guttman
-- 主催者の連絡先情報 - @dguttman on [slack.js.la](https://slack.js.la)
+- Frequency of meetups - monthly
+- How to submit a talk? [contribute.js.la](https://contribute.js.la)
+- Organizer name - David Guttman
+- Organizer contact info - @dguttman on [slack.js.la](https://slack.js.la)
 
-##### アーバイン
+##### Irvine
 
 - [Meetup](https://www.meetup.com/Node-JS-OC/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Farsheed Atef
-- 主催者の連絡先情報 - 
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Farsheed Atef
+- Organizer contact info - 
 
-##### サンフランシスコ
+##### San Francisco
 
 - [Meetup](https://www.meetup.com/sfnode/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ 
-- 主催者名 - Dan Shaw
-- 主催者の連絡先情報 - 
+- Frequency of meetups - monthly
+- How to submit a talk? 
+- Organizer name - Dan Shaw
+- Organizer contact info - 
 
 - [Meetup](https://www.meetup.com/Node-js-Serverside-Javascripters-Club-SF/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ 
-- 主催者名 - Matt Pardee
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? 
+- Organizer name - Matt Pardee
+- Organizer contact info -
 
 
-#### コロラド州
+#### Colorado
 
-##### デンバー
+##### Denver
 
 - [Meetup](https://www.meetup.com/Node-js-Denver-Boulder/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Brooks Patton
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page
+- Organizer name - Brooks Patton
+- Organizer contact info -
 
-#### フロリダ
+#### Florida
 
-##### ジャクソンビル
+##### Jacksonville
 
 - [Meetup](https://www.meetup.com/Jax-Node-js-UG/)
 - [Website](https://www.jaxnode.com)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - David Fekke
-- 主催者の連絡先情報 - David Fekke at gmail dot com
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - David Fekke
+- Organizer contact info - David Fekke at gmail dot com
 
-#### ジョージア 
+#### Georgia 
 
-##### アトランタ 
+##### Atlanta 
 
 - [Meetup](https://www.meetup.com/Atlanta-Nodejs-Developers/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Ryan Connelly
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Ryan Connelly
+- Organizer contact info -
 
-#### イリノイ州
+#### Illinois
 
-##### シカゴ
+##### Chicago
 
 - [Meetup](https://www.meetup.com/Chicago-Nodejs/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。 or (https://airtable.com/shrTDwmMH3zsnsWOE)
-- 主催者名 - Mike Hostetler, Zeke Nierenberg, & Ben Neiswander
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page or (https://airtable.com/shrTDwmMH3zsnsWOE)
+- Organizer name - Mike Hostetler, Zeke Nierenberg, & Ben Neiswander
+- Organizer contact info -
 
-#### インディアナ
+#### Indiana
 
-##### インディアナポリス
+##### Indianapolis
 
 - [Meetup](https://www.meetup.com/Node-indy/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Mike Seidle
-- 主催者の連絡先情報 - 
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Mike Seidle
+- Organizer contact info - 
 
-#### マサチューセッツ
+#### Massachusetts
 
-##### ボストン 
+##### Boston 
 
 - [Meetup](https://www.meetup.com/Boston-Node/)
-- ミートアップの頻度 - ~monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。 or post in slack workspace #\_node\_meetup (see below).
-- 主催者名 - [Brian Sodano](https://github.com/codemouse)
-- 主催者の連絡先情報 - [briansodano@gmail.com](mailto:briansodano@gmail.com) or [Boston JS slack workspace](https://bostonjavascript.slack.com)
+- Frequency of meetups - ~monthly
+- How to submit a talk? Contact organizers in the meetup page or post in slack workspace #\_node\_meetup (see below).
+- Organizer name - [Brian Sodano](https://github.com/codemouse)
+- Organizer contact info - [briansodano@gmail.com](mailto:briansodano@gmail.com) or [Boston JS slack workspace](https://bostonjavascript.slack.com)
 
-#### ミシガン州
+#### Michigan
 
-##### デトロイト
+##### Detroit
 
 - [Meetup](https://www.meetup.com/DetNode/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Steve Marsh, Norman Witte and Israel V
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Steve Marsh, Norman Witte and Israel V
 
-#### ミネソタ
+#### Minnesota
 
-##### ミネアポリス
+##### Minneapolis
 
 - [Meetup](https://www.meetup.com/NodeMN/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Mike Frey
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Mike Frey
+- Organizer contact info -
 
-#### ニューヨーク 
+#### New York 
 
-##### ニューヨーク 
+##### New York 
 
 - [Meetup](https://www.meetup.com/nodejs/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ 
-- 主催者名 - Patrick Scott Co-organizer: Matt Walters.
-- 主催者の連絡先情報 - 
+- Frequency of meetups - monthly
+- How to submit a talk? 
+- Organizer name - Patrick Scott Co-organizer: Matt Walters.
+- Organizer contact info - 
 
-#### ノースカロライナ州
+#### North Carolina
 
-##### ローリーダーラム
+##### Raleigh Durham
 
 - [Meetup](https://www.meetup.com/triangle-nodejs/)
-- ミートアップの頻度 - quarterly
-- 講演を提出するにはどうすればいいですか？ Email ladyleet@nodejs.org
-- 主催者名 - Tracy Lee
-- 主催者の連絡先情報 - ladyleet@nodejs.org
+- Frequency of meetups - quarterly
+- How to submit a talk? Email ladyleet@nodejs.org
+- Organizer name - Tracy Lee
+- Organizer contact info - ladyleet@nodejs.org
 
-#### オレゴン
+#### Oregon
 
-##### ポートランド
+##### Portland
 
 - [Meetup](http://pdxnode.org/)
-- ミートアップの頻度 - Biweekly (presentation night 2nd Thursdays, hack night last Thursdays)
-- 講演を提出するにはどうすればいいですか？ [Submit a talk proposal](https://github.com/PDXNode/pdxnode/issues/new), or DM [@obensource](https://twitter.com/obensource) or [@MichelleJLevine](https://twitter.com/MichelleJLevine) on twitter
-- 主催者名s - Ben Michel, Michelle Levine
-- 主催者の連絡先情報 - Ben: benpmichel@gmail.com, Michelle: michelle@michellejl.com
+- Frequency of meetups - Biweekly (presentation night 2nd Thursdays, hack night last Thursdays)
+- How to submit a talk? [Submit a talk proposal](https://github.com/PDXNode/pdxnode/issues/new), or DM [@obensource](https://twitter.com/obensource) or [@MichelleJLevine](https://twitter.com/MichelleJLevine) on twitter
+- Organizer names - Ben Michel, Michelle Levine
+- Organizer contact info - Ben: benpmichel@gmail.com, Michelle: michelle@michellejl.com
 
-#### ペンシルバニア
+#### Pennsylvania
 
-##### フィラデルフィア
+##### Philadelphia
 
 - [Meetup](https://www.meetup.com/nodejs-philly/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。: https://www.meetup.com/nodejs-philly/members/14283814/
-- 主催者名 - Leomar Durán
-- 主催者の連絡先情報 - 
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page: https://www.meetup.com/nodejs-philly/members/14283814/
+- Organizer name - Leomar Durán
+- Organizer contact info - 
 
-#### テキサス
+#### Texas
 
-##### オースティン
+##### Austin
 
 - [Meetup](https://www.meetup.com/ATXNodeSchool/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Stefan von Ellenrieder
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Stefan von Ellenrieder
+- Organizer contact info -
 
 - [Meetup](https://www.meetup.com/austinnodejs/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Matt Walters
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Matt Walters
+- Organizer contact info -
 
-##### ダラス
+##### Dallas
 
 - [Meetup](https://www.meetup.com/DallasNode/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - [Cameron Steele](https://github.com/ATechAdventurer)
-- 主催者の連絡先情報 - [Cam.steeleis@gmail.com](mailto:Cam.steeleis@gmail.com)
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - [Cameron Steele](https://github.com/ATechAdventurer)
+- Organizer contact info - [Cam.steeleis@gmail.com](mailto:Cam.steeleis@gmail.com)
 
-#### ユタ州
+#### Utah
 
-##### ソルトレイクシティ
+##### Salt Lake City
 
 - [Meetup](https://www.meetup.com/utahnodejs/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Aaron Seth Madsen
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer name - Aaron Seth Madsen
+- Organizer contact info -
 
 
-#### ワシントン
+#### Washington
 
-##### シアトル
+##### Seattle
 
 - [Meetup](https://www.meetup.com/Seattle-Node-js/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？
-- 主催者名 - Ryan Roemer
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk?
+- Organizer name - Ryan Roemer
+- Organizer contact info -
 
 - [Meetup](https://www.meetup.com/Seattle-NodeSchool/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ ミートアップページで主催者に連絡してください。
-- 主催者名 - Wil Alvarez
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page
+- Organizer name - Wil Alvarez
+- Organizer contact info -
 
-#### ワシントン DC
+#### Washington, DC.
 
 - [Meetup](https://www.meetup.com/node-dc/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ Write to Andrew Dunkman adunkman@gmail.com
-- 主催者名 - Andrew Dunkman
-- 主催者の連絡先情報 -
+- Frequency of meetups - monthly
+- How to submit a talk? Write to Andrew Dunkman adunkman@gmail.com
+- Organizer name - Andrew Dunkman
+- Organizer contact info -
 
-### 英国
+### UK
 
-##### ロンドン
+##### London
 ###### LNUG
 - [Meetup](https://www.meetup.com/london-nodejs/)
 - [GitHub/lnug](https://github.com/lnug/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ Visit our [speakers repos](https://github.com/lnug/speakers), read the guidelines, and [submit a talk proposal as a new issue](https://github.com/lnug/speakers/issues). 
-- 主催者名 - Adam Davis
-- 主催者の連絡先情報 - contact@lnug.org, [@lnugOrg](https://twitter.com/lnugorg)
+- Frequency of meetups - monthly
+- How to submit a talk? Visit our [speakers repos](https://github.com/lnug/speakers), read the guidelines, and [submit a talk proposal as a new issue](https://github.com/lnug/speakers/issues). 
+- Organizer name - Adam Davis
+- Organizer contact info - contact@lnug.org, [@lnugOrg](https://twitter.com/lnugorg)
 
-###### Node ワークショップ
+###### Node Workshops
 - [Meetup](https://www.meetup.com/NodeWorkshops//)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？
-- 主催者名 - Daryn Holmes
-- 主催者の連絡先情報 - 
+- Frequency of meetups - monthly
+- How to submit a talk?
+- Organizer name - Daryn Holmes
+- Organizer contact info - 
 
-##### ケンブリッジ
+##### Cambridge
 
 - [Meetup](https://www.meetup.com/JavaScript-Cambridge/)
-- ミートアップの頻度 - monthly
-- 講演を提出するにはどうすればいいですか？ 
-- 主催者名 - Joe Parry, co-organizer Rob Moran
-- 主催者の連絡先情報 - 
+- Frequency of meetups - monthly
+- How to submit a talk? 
+- Organizer name - Joe Parry, co-organizer Rob Moran
+- Organizer contact info - 
 
-##### オックスフォード
+##### Oxford
 
 - [JSOxford](https://www.meetup.com/jsoxford/)
-- ミートアップの頻度 - every 2 months
-- 講演を提出するにはどうすればいいですか？ [Submit Form](https://docs.google.com/forms/d/e/1FAIpQLSflx7LU44PuwlyCJj-WwlP_SlrUvxAd8uaXlY7_O65c7RLpGQ/viewform?usp=sf_link)
-- 主催者名s - Marcus Noble, Seren Davies
+- Frequency of meetups - every 2 months
+- How to submit a talk? [Submit Form](https://docs.google.com/forms/d/e/1FAIpQLSflx7LU44PuwlyCJj-WwlP_SlrUvxAd8uaXlY7_O65c7RLpGQ/viewform?usp=sf_link)
+- Organizer names - Marcus Noble, Seren Davies
 - Organizers contact info - organisers@jsoxford.com
 
 
-### ウクライナ
+### Ukraine
 
-##### キエフ
+##### Kiev
 
 - [Meetup](https://www.meetup.com/NodeUA/), [Old group](https://www.meetup.com/KievNodeJS/)
-- ミートアップの頻度 - 1-8 times a month
-- 講演を提出するにはどうすればいいですか？ Contact organizer by email.
-- 主催者名 - Timur Shemsedinov
-- 主催者の連絡先情報 - [Email](mailto:timur.shemsedinov@gmail.com)
+- Frequency of meetups - 1-8 times a month
+- How to submit a talk? Contact organizer by email.
+- Organizer name - Timur Shemsedinov
+- Organizer contact info - [Email](mailto:timur.shemsedinov@gmail.com)
