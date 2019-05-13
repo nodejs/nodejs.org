@@ -15,7 +15,7 @@ exciting efforts they want to push forward in-person.
 # コラボレーションサミット
 コラボレーションサミットは、活発なコラボレーション、教育、および知識の共有で Node.js について議論するために
 現在および将来のコントリビュータを集めるためのアンカンファレンスです。
-委員会と作業部会は年に2回集まり、
+委員会とワーキンググループは年に2回集まり、
 重要な決断を下すと同時に、
 直接推進したいというエキサイティングな取り組みに参加することもできます。
 
@@ -53,6 +53,6 @@ individual working groups and committees are looking to discuss in-person.
 人々が彼ら自身に慣れることができるようにスケジュールをまとめます。
 
 コラボレーションサミットでお会いしましょう！
-次回および過去のコラボレーションサミットについては [Summit レポ](https://github.com/nodejs/summit)をチェックし、
+次回および過去のコラボレーションサミットについては [Summit リポジトリ](https://github.com/nodejs/summit)をチェックし、
 個々の作業部会および委員会が直接話し合うことを検討しているものに関して
 共有されている[問題](https://github.com/nodejs/summit/issues)を見てください。

@@ -10,7 +10,7 @@ Code & Learn events allow you to get started (or go further) with Node.js core c
  -->
 # Code + Learn
 
-Code ＆ Learn イベントを使用すると、Node.js の主な貢献で始めることができます (またはさらに進みます)。経験豊富なコントリビュータが、Node.js コアへの最初 (または2、3、4) 回目のコミットを手助けします。また、Node.js のコアソースコードの特定の領域を通じて、即席のガイド付きツアーを提供するためにも利用できます。
+Code ＆ Learn イベントを使用すると、Node.js の主な貢献で始めることができます (またはさらに踏み込むことができます)。経験豊富なコントリビュータが、Node.js コアへの最初 (または2、3、4) 回目のコミットを手助けします。また、Node.js のコアソースコードの特定の領域を通じて、即席のガイド付きツアーを提供するためにも利用できます。
 
 <!-- 
 ## Upcoming Code + Learn Events
