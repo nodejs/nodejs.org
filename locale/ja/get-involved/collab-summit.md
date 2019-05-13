@@ -53,6 +53,6 @@ individual working groups and committees are looking to discuss in-person.
 人々が彼ら自身に慣れることができるようにスケジュールをまとめます。
 
 コラボレーションサミットでお会いしましょう！
-次回および過去のコラボレーションサミットについては [Summit レポ](https://github.com/nodejs/summit)をチェックし、
+次回および過去のコラボレーションサミットについては [Summit リポジトリ](https://github.com/nodejs/summit)をチェックし、
 個々の作業部会および委員会が直接話し合うことを検討しているものに関して
 共有されている[問題](https://github.com/nodejs/summit/issues)を見てください。
