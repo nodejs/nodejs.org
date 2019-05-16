@@ -29,7 +29,7 @@ Flame graphs are generated from `perf` output, which is not a node-specific tool
 ## フレームグラフの作り方
 
 Node.js のフレームグラフを作成するのは難しいと聞いたことがあるかもしれませんが、(もはや) そうではありません。
-Solaris vms はフレームグラフには不要です。:
+Solaris vms はフレームグラフには不要です。
 
 フレームグラフは `perf` 出力から生成されます。これは Node 固有のツールではありません。これは、費やされた CPU 時間を視覚化する最も強力な方法ですが、Node.js 8 以降で JavaScript コードが最適化される方法に問題がある可能性があります。下記の[perf 出力の問題](#perf-output-issues) のセクションを参照してください。
 

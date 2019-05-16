@@ -131,7 +131,7 @@ Web ブラウザで開かれた Web サイトは、ブラウザセキュリテ�
 WebSocket および HTTP リクエストを行うことができます。
 一意のデバッガセッション ID を取得するには、
 最初の HTTP 接続が必要です。
-same-origin-policy は、Web サイトがこの HTTP 接続を確立できないようにします。
+同一生成元ポリシーは、Web サイトがこの HTTP 接続を確立できないようにします。
 [DNS リバインド攻撃](https://en.wikipedia.org/wiki/DNS_rebinding)に対するさらなるセキュリティのために、
 Node.js は接続のための 'Host' ヘッダが IP アドレスまたは `localhost` もしくは `localhost6` を正確に指定していることを検証します。
 
