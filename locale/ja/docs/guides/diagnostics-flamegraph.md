@@ -99,6 +99,7 @@ Worth mentioning - if you click an element of a flame graph a zoom-in of its sur
 
 言及する価値のあること - フレームグラフの要素をクリックするならば、その周囲のズームインはグラフの上に表示されるでしょう。
 
+<!-- 
 ### Using `perf` to sample a running process
 
 This is great for recording flame graph data from an already running process that you don't want to interrupt. Imagine a production process with a hard to reproduce issue.
@@ -115,6 +116,22 @@ Why is `-F` (profiling frequency) set to 99? It's a reasonable default. You can 
 
 After you get that 3 second perf record, proceed with generating the flame graph with the last two steps from above.
 
+ -->
+### `perf`を使って実行中のプロセスをサンプリングする
+
+これは、中断したくない、既に実行中のプロセスからフレームグラフデータを記録するのに最適です。再現が困難な問題を伴う製造プロセスを想像してください。
+
+```bash
+perf record -F99 -p `pgrep -n node` -g -- sleep 3
+```
+
+ちょっと待ってください、何のための `sleep 3` でしょうか？ それはperf を実行し続けるためにあります。`-p` オプションが異なる pid を指していますが、コマンドはプロセス上で実行され、そこで終了する必要があります。perf は、実際にそのコマンドをプロファイリングしているかどうかにかかわらず、渡したコマンドの存続期間にわたって実行されます。`sleep 3` は perf が 3 秒間実行されるようにします。
+
+`-F` (プロファイリング頻度) が 99 に設定されているのはなぜですか？ これは妥当なデフォルトの値です。必要に応じて調整できます。`-F99` はサンプルを毎秒 99 取るように perf に指示します。より正確にするには値を増やします。値が低いと出力が少なくなり、精度が低下します。必要な精度は、CPU に負荷がかかる機能が実際にどれくらいの時間実行されるかによって異なります。顕著な減速の理由を探しているなら、毎秒 99 フレームで十分すぎるはずです。
+
+その 3 秒の perf レコードを取得したら、上に書いてある手順の最後の2つを実施してフレームグラフの生成に進みます。
+
+<!-- 
 ### Filtering out Node.js internal functions
 
 Usually you just want to look at the performance of your own calls, so filtering out Node.js and V8 internal functions can make the graph much easier to read. You can clean up your perf file with:
@@ -128,11 +145,34 @@ sed -i \
 
 If you read your flame graph and it seems odd, as if something is missing in the key function taking up most time, try generating your flame graph without the filters - maybe you got a rare case of an issue with Node.js itself.
 
+ -->
+### Node.js の内部関数を除外する
+
+通常、自身の呼び出しのパフォーマンスを見たいだけなので、Node.js と V8 の内部関数を除外することでグラフをもっと読みやすくすることができます。次のようにして perf ファイルをクリーンアップできます。
+
+```bash
+sed -i \
+  -e "/( __libc_start| LazyCompile | v8::internal::| Builtin:| Stub:| LoadIC:|\[unknown\]| LoadPolymorphicIC:)/d" \
+  -e 's/ LazyCompile:[*~]\?/ /' \
+  perfs.out
+```
+
+フレームグラフを参照していて、何か時間がかかるキー関数が欠けているかのように不思議に思った場合は、フィルタなしでフレームグラフを生成してみてください。Node.js 自体に問題が発生することはまれです。
+
+
+<!-- 
 ### Node.js's profiling options
 
 `--perf-basic-prof-only-functions` and `--perf-basic-prof` are the two that are useful for debugging your JavaScript code. Other options are used for profiling Node.js itself, which is outside the scope of this guide.
 
 `--perf-basic-prof-only-functions` produces less output, so it's the option with least overhead.
+
+ -->
+### Node.js のプロファイリングオプション
+
+`--perf-basic-prof-only-functions` と `--perf-basic-prof` は JavaScript コードをデバッグするのに便利です。Node.js 自体をプロファイリングするために他のオプションが使用されますが、これはこのガイドの範囲外です。
+
+`--perf-basic-prof-only-functions` は出力が少なくなるので、オーバーヘッドが最も少ないオプションです。
 
 ### Why do I need them at all?
 
