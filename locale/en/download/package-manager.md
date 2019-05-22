@@ -14,6 +14,7 @@ title: Installing Node.js via package manager
 * [Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora and Snap packages](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
 * [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
+* [IBM i](#ibm-i)
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
 * [OpenBSD](#openbsd)
@@ -73,6 +74,18 @@ Node.js is available in the portage tree.
 ```bash
 emerge nodejs
 ```
+
+## IBM i
+
+LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](http://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs8`, `nodejs10`, `nodejs12`, etc)
+
+To install Node.js 12.x from the command line, run the following as a user with \*ALLOBJ special authority:
+
+```bash
+yum install nodejs12
+```
+
+Node.js can also be installed with the IBM i Access Client Solutions product. See [this support document](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) for more details
 
 ## NetBSD
 

@@ -14,6 +14,7 @@ title: Installing Node.js via package manager
 * [التوزيعات المبنية على ديبيان أو اوبنتو، لينكس للمؤسسات / فيدورا و حزم سناب](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
 * [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
+* [IBM i](#ibm-i)
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
 * [OpenBSD](#openbsd)
@@ -72,6 +73,18 @@ cd /usr/ports/www/node && make install
 ```bash
 emerge nodejs
 ```
+
+## IBM i
+
+نسخ LTS لـNode.js متوفرة من IBM و متوفرة عبر [مدير الحزمة الـ'yum'](http://ibm.biz/ibmi-rpms). إسم الحزمة هو `nodejs` متبوعا برقم الإصدار الرائد (مثلا، `nodejs8`، `nodejs10`، `nodejs12`، إلخ
+
+لتثبيت Node.js 12.x باستخدام سطر الأوامر، شغل الامر التالي كمستخدم مع سلطة *ALLOBJ الخاصة :
+
+ ```bash
+yum install nodejs12
+```
+
+يمكن أيضًا تثبيت Node.js مع منتج IBM i الخاص بحلول وصول العملاء. انظر [وثيقة الدعم هذه](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) لتفاصيل أكثر
 
 ## NetBSD
 
