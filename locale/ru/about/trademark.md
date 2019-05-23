@@ -1,28 +1,24 @@
 ---
 layout: about.hbs
-title: Trademark Policy
+title: Товарный знак
 ---
-# Trademark Policy
+# Политика товарного знака
 
-The Node.js trademarks, service marks, and graphics marks are symbols of the
-quality, performance, and ease of use that people have come to associate with
-the Node.js software and project. To ensure that the Node.js marks continue to
-symbolize these qualities, we must ensure that the marks are only used in ways
-that do not mislead people or cause them to confuse Node.js with other software
-of lower quality. If we don’t ensure the marks are used in this way, it cannot
-only confuse users, it can make it impossible to use the mark to protect
-against people who maliciously exploit the mark in the future. The primary goal
-of this policy is to make sure that this doesn’t happen to the Node.js mark, so
-that the community and users of Node.js are always protected in the future.
+Товарные знаки, знаки обслуживания и графические знаки Node.js являются символами качества,
+производительности и простоты использования, которые люди ассоциируют с программным обеспечением
+и проектом Node.js. Чтобы метки Node.js продолжали символизировать эти качества, мы должны убедиться,
+что метки используются только таким образом, чтобы не вводить людей в заблуждение или не вызывать путаницу
+Node.js с другим программным обеспечением более низкого качества. Если мы не гарантируем, что знаки
+используются таким образом, это не только сбивает с толку пользователей, но и делает невозможным
+использование знака для защиты от людей, которые злонамеренно используют его в будущем. Основная цель
+этой политики ― убедиться, что этого не происходит с знаком Node.js, чтобы сообщество
+и пользователи Node.js всегда были защищены.
 
-At the same time, we’d like community members to feel comfortable spreading the
-word about Node.js and participating in the Node.js community. Keeping that
-goal in mind, we’ve tried to make the policy as flexible and easy to understand
-as legally possible.
+В то же время мы хотели бы, чтобы члены сообщества чувствовали себя комфортно в распространении
+информации о Node.js и участии в сообществе Node.js. Помня об этой цели, мы постарались сделать
+политику максимально гибкой и понятной с точки зрения закона.
 
-Please read the [full policy](/static/documents/trademark-policy.pdf).
-If you have any questions don't hesitate to
-[email us](mailto:trademark@nodejs.org).
+Пожалуйста ознакомтесь с [полным документом](/static/documents/trademark-policy.pdf).
+В случае возникновения вопросов [напишите нам](mailto:trademark@nodejs.org).
 
-Guidelines for the visual display of the Node.js mark are described in
-the [Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
+Рекомендации по визуальному отображению метки Node.js описаны в разделе [Визуальные рекомендации](/static/documents/foundation-visual-guidelines.pdf).
