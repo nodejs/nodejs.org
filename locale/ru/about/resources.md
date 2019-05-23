@@ -1,15 +1,15 @@
 ---
 layout: about.hbs
-title: Logos and Graphics
+title: Лого и графика
 ---
-# Resources
+# Ресурсы
 
-## Logo Downloads
+## Загрузка лого
 
- Please review the [trademark policy](/about/trademark/) for information about permissible use of Node.js&reg; logos and marks.
+Пожалуйста ознакомтесь с [политикой товарных знаков](/about/trademark/) для получения
+информации о разрешениях на использование логотипов и знаков Node.js&reg;.
 
- Guidelines for the visual display of the Node.js mark are described in
- the [Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
+Рекомендации по визуальному отображению метки Node.js описаны в разделе [Визуальные рекомендации](/static/documents/foundation-visual-guidelines.pdf).
 
 <table border="0" cellspacing="0" cellpadding="10" class="logos">
   <tr>
