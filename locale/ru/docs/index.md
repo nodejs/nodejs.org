@@ -1,26 +1,26 @@
 ---
-title: Документація
+title: Docs
 layout: docs.hbs
 labels:
   lts: LTS
 ---
 
-# Про документацію
+# About Docs
 
-Є три типи документації, що доступні на цьому сайті:
+There are several types of documentation available on this website:
 
-* довідкова документація про API;
-* функціонал ES6;
-* посібники
+* API reference documentation
+* ES6 features
+* Guides
 
-### Довідкова документація про API
+### API Reference Documentation
 
-[Довідкова документація про API](/api/) надає детальну інформацію про функції та об’єкти у Node.js. Ця документація показує які аргументи приймають методи, які значення ці методи повертають та які помилки пов'язані з цими методами. Вона також показує які методи доступні для різних версій Node.js.
+The [API reference documentation](/api/) provides detailed information about a function or object in Node.js. This documentation indicates what arguments a method accepts, the return value of that method, and what errors may be related to that method. It also indicates which methods are available for different versions of Node.js.
 
-Ця документація описує вбудовані модулі, які надаються Node.js. Вона не документує модулі, що надаються спільнотою.
+This documentation describes the built-in modules provided by Node.js. It does not document modules provided by the community.
 
 <div class="highlight-box">
-  <h4>Шукаєте документацію про API для попередніх релізів?</h4>
+  <h4>Looking for API docs of previous releases?</h4>
 
   <ul>
     <li><a href="https://nodejs.org/docs/latest-v9.x/api/">Node.js 9.x</a></li>
@@ -31,14 +31,14 @@ labels:
     <li><a href="https://nodejs.org/docs/latest-v4.x/api/">Node.js 4.x</a></li>
     <li><a href="https://nodejs.org/docs/latest-v0.12.x/api/">Node.js 0.12.x</a></li>
     <li><a href="https://nodejs.org/docs/latest-v0.10.x/api/">Node.js 0.10.x</a></li>
-    <li><a href="https://nodejs.org/docs/">всі версії</a></li>
+    <li><a href="https://nodejs.org/docs/">All versions</a></li>
   </ul>
 </div>
 
-### Функціонал ES6
+### ES6 Features
 
-[Секція ES6](/en/docs/es6/) описує три групи функціоналу ES6 і описує який функціонал наразі доступний у Node.js за замовчуванням разом з пояснювальними посиланнями. Вона також показує звідки дізнатись яка версія V8 постачається з певним релізом Node.js.
+The [ES6 section](/en/docs/es6/) describes the three ES6 feature groups, and details which features are enabled by default in Node.js, alongside explanatory links. It also shows how to find which version of V8 shipped with a particular Node.js release.
 
-### Посібники
+### Guides
 
-[Розділ посібників](/en/docs/guides/) містить великі та ретельні статті про технічні особливості та можливості Node.js.
+The [Guides section](/en/docs/guides/) has long-form, in-depth articles about Node.js technical features and capabilities.
