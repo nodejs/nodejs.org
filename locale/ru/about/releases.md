@@ -1,20 +1,20 @@
 ---
 layout: about-release-schedule.hbs
-title: Releases
+title: Релизы
 statuses:
-  maintenance: 'Maintenance LTS'
-  active: 'Active LTS'
-  current: 'Current'
-  pending: 'Pending'
+  maintenance: 'Поддерживаемый LTS'
+  active: 'Активный LTS'
+  current: 'Текущий'
+  pending: 'Грядущий'
 columns:
-  - 'Release'
-  - 'Status'
-  - 'Codename'
-  - 'Initial Release'
-  - 'Active LTS Start'
-  - 'Maintenance LTS Start'
-  - 'End-of-life'
-schedule-footer: Dates are subject to change.
+  - 'Релиз'
+  - 'Статус'
+  - 'Кодовое название'
+  - 'Начальный релиз'
+  - 'Начало активного LTS'
+  - 'Начало поддерживаемого LTS'
+  - 'Конец поддержки'
+schedule-footer: Даты могут меняться.
 ---
 
-# Releases
+# Релизы

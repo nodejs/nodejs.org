@@ -1,5 +1,5 @@
 ---
-title: Privacy Policy
+title: Политика Конфиденциальности
 layout: about.hbs
 ---
 # Privacy Policy
