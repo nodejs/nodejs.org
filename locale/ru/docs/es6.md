@@ -1,44 +1,68 @@
 ---
-title: ECMAScript 2015 (ES6) and beyond
+title: ECMAScript 2015 (ES6) и выше
 layout: docs.hbs
 ---
-# ECMAScript 2015 (ES6) and beyond
+# ECMAScript 2015 (ES6) и выше
 
-Node.js is built against modern versions of [V8](https://v8.dev/). By keeping up-to-date with the latest releases of this engine, we ensure new features from the [JavaScript ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm) are brought to Node.js developers in a timely manner, as well as continued performance and stability improvements.
+Node.js строится на современных версиях [V8](https://v8.dev/). Базируясь на последних
+выпусках этого движка, мы обеспечиваем поддержку новых функций из
+[спецификации JavaScript ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
+своевременно предоставляя их разработчикам Node.js, а также улучшая производительность и стабильность.
 
-All ECMAScript 2015 (ES6) features are split into three groups for **shipping**, **staged**, and **in progress** features:
+Весь функционал ECMAScript 2015 (ES6) разделен на три группы: **поставляемый (shipping)**,
+**подготовленный (staged)** и **в процессе (in progress)**:
 
-* All **shipping** features, which V8 considers stable, are turned **on by default on Node.js** and do **NOT** require any kind of runtime flag.
-* **Staged** features, which are almost-completed features that are not considered stable by the V8 team, require a runtime flag: `--harmony`.
-* **In progress** features can be activated individually by their respective harmony flag, although this is highly discouraged unless for testing purposes. Note: these flags are exposed by V8 and will potentially change without any deprecation notice.
+* Весь **поставляемый** функционал, который V8 считает стабильным, включен **по умолчанию в Node.js**
+  и **НЕ** нуждается в дополнительных конфигурациях и флагах.
+* **Подготовленный** функционал, это список почти готовых внедрений, который еще не утвержден
+  командой V8 как стабильный, и требует дополнительный флаг `--harmony`.
+* Функционал под знаком **в процессе** может быть активирован индивидуально, с помощью соответствующего
+  флага гармонизации, хотя это крайне нежелательно, кроме как для целей тестирования. Примечание: 
+  эти флаги доступны в V8 и могут измениться без уведомления об их устаревании.
 
-## Which features ship with which Node.js version by default?
+## Какие функции поставляются с какой версией Node.js по умолчанию?
 
-The website [node.green](http://node.green) provides an excellent overview over supported ECMAScript features in various versions of Node.js, based on kangax's compat-table.
+На сайте [node.green](http://node.green) представлен отличный обзор поддерживаемого функционала
+ECMAScript в различных версиях Node.js на основе таблицы сравнения kangax.
 
-## Which features are in progress?
+## Какие функции в процессе?
 
-New features are constantly being added to the V8 engine. Generally speaking, expect them to land on a future Node.js release, although timing is unknown.
+Новые функции постоянно добавляются в движок V8. Вообще говоря, ожидайте, что они появятся
+в будущем выпуске Node.js, хотя точных дат неизвестно.
 
-You may list all the *in progress* features available on each Node.js release by grepping through the `--v8-options` argument. Please note that these are incomplete and possibly broken features of V8, so use them at your own risk:
+Вы можете узнать функционал *в процессе*, доступный в каждом выпуске Node.js, используя аргумент
+`--v8-options`. Обратите внимание, что это неполные и, возможно, некорректные функции V8, поэтому
+используйте их на свой страх и риск:
 
 ```bash
 node --v8-options | grep "in progress"
 ```
 
-## What about the performance of a particular feature?
+## А как насчет производительности конкретного функционала?
 
-The V8 team is constantly working to improve the performance of new language features to eventually reach parity with their transpiled or native counterparts in EcmaScript 5 and earlier. The current progress there is tracked on the website [six-speed](https://fhinkel.github.io/six-speed), which shows the performance of ES2015 and ESNext features compared to their native ES5 counterparts.
+Команда V8 постоянно работает над улучшением производительности новых языковых функций, чтобы в
+конечном итоге достичь равенства со своими транспилированными или нативными аналогами в EcmaScript 5
+или более ранних версиях. Текущий прогресс отслеживается на веб-сайте [six-speed](https://fhinkel.github.io/six-speed),
+который показывает производительность функций ES2015 и ESNext по сравнению с их родными аналогами ES5.
 
-The work on optimizing features introduced with ES2015 and beyond is coordinated via a [performance plan](https://docs.google.com/document/d/1EA9EbfnydAmmU_lM8R_uEMQ-U_v4l9zulePSBkeYWmY), where the V8 team gathers and coordinates areas that need improvement, and design documents to tackle those problems.
+Работа по оптимизации функций, представленных в ES2015 и более поздних версиях, координируется с помощью
+[плана производительности](https://docs.google.com/document/d/1EA9EbfnydAmmU_lM8R_uEMQ-U_v4l9zulePSBkeYWmY),
+где команда V8 собирает и координирует сферы, требующие улучшения, и разрабатывает документы для решения этих проблем.
 
-## I have my infrastructure set up to leverage the --harmony flag. Should I remove it?
+## Моя инфраструктура настроена с использованием флага --harmony. Должен ли я удалить его?
 
-The current behaviour of the `--harmony` flag on Node.js is to enable **staged** features only. After all, it is now a synonym of `--es_staging`. As mentioned above, these are completed features that have not been considered stable yet. If you want to play safe, especially on production environments, consider removing this runtime flag until it ships by default on V8 and, consequently, on Node.js. If you keep this enabled, you should be prepared for further Node.js upgrades to break your code if V8 changes their semantics to more closely follow the standard.
+Текущее поведение флага `--harmony` на Node.js состоит в том, чтобы включать только **подготовленный** функционал.
+В конце концов, теперь это синоним `--es_staging`. Как упомянуто выше, это законченные функции, которые еще не считаются
+стабильными. Если вы хотите играть безопасно, особенно в производственных средах, рассмотрите возможность удаления
+этого флага до тех пор, пока требуемые функции не перейдут в стадию по умолчанию на V8 и, следовательно, на Node.js.
+Если вы оставите это включенным, вы должны быть готовы к дальнейшим обновлениям Node.js, которые могут сломать ваш код,
+если V8 изменит свою семантику, чтобы более точно следовать стандарту.
 
-## How do I find which version of V8 ships with a particular version of Node.js?
+## Как мне узнать, какая версия V8 поставляется с определенной версией Node.js?
 
-Node.js provides a simple way to list all dependencies and respective versions that ship with a specific binary through the `process` global object. In case of the V8 engine, type the following in your terminal to retrieve its version:
+Node.js предоставляет простой способ перечисления всех зависимостей и соответствующих версий, которые поставляются
+с конкретным бинарным файлом через глобальный объект `process`. В случае с двигателем V8 введите следующее в своем
+терминале, чтобы узнать его версию:
 
 ```bash
 node -p process.versions.v8
