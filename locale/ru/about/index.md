@@ -57,9 +57,9 @@ HTTP является объектом первого рода в Node, разр
 с помощью API [`Child_process.fork()`][]. Модуль [`cluster`][] построен на этом интерфейсе и позволяет делиться сокетами
 между процессами и распределять нагрузку между ядрами.
 
-[blocking vs non-blocking]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
-[`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
-[`cluster`]: https://nodejs.org/api/cluster.html
-[event loop]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
+[blocking vs non-blocking]: /ru/docs/guides/blocking-vs-non-blocking/
+[`child_process.fork()`]: /api/child_process.html#child_process_child_process_fork_modulepath_args_options
+[`cluster`]: /api/cluster.html
+[event loop]: /ru/docs/guides/event-loop-timers-and-nexttick/
 [event machine]: https://github.com/eventmachine/eventmachine
 [twisted]: http://twistedmatrix.com/
