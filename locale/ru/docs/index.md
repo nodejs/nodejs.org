@@ -1,26 +1,29 @@
 ---
-title: Docs
+title: Документация
 layout: docs.hbs
 labels:
   lts: LTS
 ---
 
-# About Docs
+# О документации
 
-There are several types of documentation available on this website:
+На этом сайте представлено несколько видов документаций:
 
-* API reference documentation
-* ES6 features
-* Guides
+* Документация API
+* Функционал ES6
+* Руководства
 
-### API Reference Documentation
+### Документация API
 
-The [API reference documentation](/api/) provides detailed information about a function or object in Node.js. This documentation indicates what arguments a method accepts, the return value of that method, and what errors may be related to that method. It also indicates which methods are available for different versions of Node.js.
+[API документации](/api/) предоставляет подробную информацию о функциях и объектах в Node.js.
+В ней содержится информация о принимаемых аргументах, возвращаемом значении и ошибках связанных
+рассматриваемым методом. Также содержит информацию о доступных методах доступны для разных версий Node.js.
 
-This documentation describes the built-in modules provided by Node.js. It does not document modules provided by the community.
+В этой документации описываются встроенные модули, предоставляемые Node.js. Он не документирует модули,
+предоставленные сообществом.
 
 <div class="highlight-box">
-  <h4>Looking for API docs of previous releases?</h4>
+  <h4>Нужна документация API предыдущих версий?</h4>
 
   <ul>
     <li><a href="https://nodejs.org/docs/latest-v9.x/api/">Node.js 9.x</a></li>
@@ -31,14 +34,16 @@ This documentation describes the built-in modules provided by Node.js. It does n
     <li><a href="https://nodejs.org/docs/latest-v4.x/api/">Node.js 4.x</a></li>
     <li><a href="https://nodejs.org/docs/latest-v0.12.x/api/">Node.js 0.12.x</a></li>
     <li><a href="https://nodejs.org/docs/latest-v0.10.x/api/">Node.js 0.10.x</a></li>
-    <li><a href="https://nodejs.org/docs/">All versions</a></li>
+    <li><a href="https://nodejs.org/docs/">Все версии</a></li>
   </ul>
 </div>
 
-### ES6 Features
+### Функционал ES6
 
-The [ES6 section](/en/docs/es6/) describes the three ES6 feature groups, and details which features are enabled by default in Node.js, alongside explanatory links. It also shows how to find which version of V8 shipped with a particular Node.js release.
+[Раздел ES6](/ru/docs/es6/) описывает три группы функционала ES6 и подробную информацию о том, какие функции
+включены по умолчанию в Node.js. Также рассматривается вопрос: как найти версию V8, поставляемую с конкретным
+выпуском Node.js.
 
-### Guides
+### Руководства
 
-The [Guides section](/en/docs/guides/) has long-form, in-depth articles about Node.js technical features and capabilities.
+[Раздел руководств](/ru/docs/guides/) содержит подробные статьи о технических возможностях Node.js.
