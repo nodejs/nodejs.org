@@ -141,7 +141,7 @@ console.log(`Running on http://${HOST}:${PORT}`);
 
 次のステップでは、公式の Docker イメージを使用して
 Docker コンテナ内でこのアプリケーションを実行する方法を見ていきます。
-まず、アプリの Docker イメージを作成する必要があります。
+まず、アプリケーションの Docker イメージを作成する必要があります。
 
 <!-- 
 ## Creating a Dockerfile
