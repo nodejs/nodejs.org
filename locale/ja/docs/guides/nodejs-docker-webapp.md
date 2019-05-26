@@ -271,7 +271,7 @@ WORKDIR /usr/src/app
 `package-lock.json` ファイルは*生成されない*ことに注意してください。
 
 ```docker
-# アプリの依存関係をインストールする
+# アプリケーションの依存関係をインストールする
 # ワイルドカードを使用して、package.json と package-lock.json の両方が確実にコピーされるようにします。
 # 可能であれば (npm@5+)
 COPY package*.json ./
