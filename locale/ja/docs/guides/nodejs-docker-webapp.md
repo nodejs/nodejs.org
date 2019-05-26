@@ -286,7 +286,7 @@ RUN npm install
 これにより、キャッシュされた Docker レイヤーを利用することができます。
 bitJudo は[このこと](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/)についてよく説明しています。
 
-アプリのソースコードを Docker イメージ内にバンドルするには、`COPY`
+アプリケーションのソースコードを Docker イメージ内にバンドルするには、`COPY`
 命令を使います。
 
 ```docker
