@@ -290,7 +290,7 @@ bitJudo は[このこと](http://bitjudo.com/blog/2014/03/13/building-efficient-
 命令を使います。
 
 ```docker
-# アプリのソースをバンドルする
+# アプリケーションのソースをバンドルする
 COPY . .
 ```
 
