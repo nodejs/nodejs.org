@@ -294,7 +294,7 @@ bitJudo は[このこと](http://bitjudo.com/blog/2014/03/13/building-efficient-
 COPY . .
 ```
 
-アプリは `8080` ポートにバインドされているので `EXPOSE` 命令を使って
+アプリケーションは `8080` ポートにバインドされているので `EXPOSE` 命令を使って
 `docker` デーモンによってマッピングされるでしょう：
 
 ```docker
