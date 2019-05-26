@@ -314,7 +314,7 @@ CMD [ "npm", "start" ]
 ```docker
 FROM node:8
 
-# アプリディレクトリを作成する
+# アプリケーションディレクトリを作成する
 WORKDIR /usr/src/app
 
 # アプリケーションの依存関係をインストールする
