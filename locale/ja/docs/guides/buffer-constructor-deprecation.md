@@ -29,9 +29,9 @@ The Buffer() and new Buffer() constructors are not recommended for use due to se
 The Buffer() and new Buffer() constructors are not recommended for use due to security and usability concerns. Please use the new Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() construction methods instead.
 </div>
 
-- [Variant 1: Drop support for Node.js ≤ 4.4.x and 5.0.0 — 5.9.x](#variant-1) (*推奨*)
-- [Variant 2: Use a polyfill](#variant-2)
-- [Variant 3: Manual detection, with safeguards](#variant-3)
+- [Variant 1: Node.js ≤ 4.4.x および 5.0.0 — 5.9.x のサポートを終了](#variant-1) (*推奨*)
+- [Variant 2: ポリフィルの使用](#variant-2)
+- [Variant 3: セーフガード付きの手動検出](#variant-3)
 
 <!-- 
 ### Finding problematic bits of code using `grep`
@@ -179,7 +179,7 @@ ESLint ルール [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer
 現在のところ、引数がリテラルである場合、
 またはコンストラクタが2つの引数で呼び出される場合にのみ機能することに注意してください。
 
-_現在、それらの古いバージョンの Node.js をサポートしていて、それらのサポートを削除することができない場合、または古いブランチをサポートしている場合は、
+_現在、古いバージョンの Node.js をサポートしていて、それらのサポートを削除することができない場合、または古いブランチをサポートしている場合は、
 [Variant 2](#variant-2) または [Variant 3](#variant-3) の使用を検討してください。また修正を受け取ります。
 そうすることで、無防備な `Buffer` API の使用によって引き起こされる潜在的な問題を根絶し、
 Node.js 10 でコードを実行するときにユーザは実行時廃止予定の警告を見ることはないでしょう。_
@@ -230,19 +230,18 @@ is recommended.
 _Don't forget to drop the polyfill usage once you drop support for Node.js < 4.5.0._
 
  -->
-<a name="variant-2"></a>
 ## <!--variant-2-->Variant 2: ポリフィルの使用
 
-There are three different polyfills available:
+利用可能な3つの異なるポリフィルがあります。
 
-- **[safer-buffer](https://www.npmjs.com/package/safer-buffer)** is a drop-in replacement for the
-  entire `Buffer` API, that will _throw_ when using `new Buffer()`.
+- **[safer-buffer](https://www.npmjs.com/package/safer-buffer)** は `Buffer` API 全体の代わりとなるドロップインであり、
+  `new Buffer()` を使用すると _throw_ します。
 
-  You would take exactly the same steps as in [Variant 1](#variant-1), but with a polyfill
-  `const Buffer = require('safer-buffer').Buffer` in all files where you use the new `Buffer` API.
+  [Variant 1](#variant-1)とまったく同じ手順を踏みますが、
+  新しい `Buffer` API を使うすべてのファイルにポリフィル `const Buffer = require('safer-buffer').Buffer` を入れます。
 
-  Do not use the old `new Buffer()` API. In any files where the line above is added,
-  using old `new Buffer()` API will _throw_.
+  古い `new Buffer()` API を使わないでください。上記の行が追加されているファイルでは、
+  古い `new Buffer()` API を使用すると _throw_ されます。
 
 - **[buffer-from](https://www.npmjs.com/package/buffer-from) and/or
   [buffer-alloc](https://www.npmjs.com/package/buffer-alloc)** are
