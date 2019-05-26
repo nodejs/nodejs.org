@@ -92,7 +92,7 @@ container using the official Docker image. First, you'll need to build a Docker
 image of your app.
 
  -->
-## Node.js アプリを作成する
+## Node.js アプリケーションを作成する
 
 まず、すべてのファイルを配置する新しいディレクトリを作成します。
 このディレクトリにあなたのアプリケーションとその依存関係を記述する `package.json` ファイルを作成してください：
