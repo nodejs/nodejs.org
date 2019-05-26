@@ -92,10 +92,10 @@ container using the official Docker image. First, you'll need to build a Docker
 image of your app.
 
  -->
-## Node.js アプリを作成する
+## Node.js アプリケーションを作成する
 
 まず、すべてのファイルを配置する新しいディレクトリを作成します。
-このディレクトリにあなたのアプリとその依存関係を記述する `package.json` ファイルを作成してください：
+このディレクトリにあなたのアプリケーションとその依存関係を記述する `package.json` ファイルを作成してください：
 
 ```json
 {
@@ -140,8 +140,8 @@ console.log(`Running on http://${HOST}:${PORT}`);
 ```
 
 次のステップでは、公式の Docker イメージを使用して
-Docker コンテナ内でこのアプリを実行する方法を見ていきます。
-まず、アプリの Docker イメージを作成する必要があります。
+Docker コンテナ内でこのアプリケーションを実行する方法を見ていきます。
+まず、アプリケーションの Docker イメージを作成する必要があります。
 
 <!-- 
 ## Creating a Dockerfile
@@ -257,11 +257,11 @@ touch Dockerfile
 FROM node:8
 ```
 
-次に、画像内にアプリケーションコードを入れるディレクトリを作成します。
+次に、イメージ内にアプリケーションコードを入れるディレクトリを作成します。
 アプリケーションの作業ディレクトリになります。
 
 ```docker
-# アプリディレクトリを作成する
+# アプリケーションディレクトリを作成する
 WORKDIR /usr/src/app
 ```
 
@@ -271,7 +271,7 @@ WORKDIR /usr/src/app
 `package-lock.json` ファイルは*生成されない*ことに注意してください。
 
 ```docker
-# アプリの依存関係をインストールする
+# アプリケーションの依存関係をインストールする
 # ワイルドカードを使用して、package.json と package-lock.json の両方が確実にコピーされるようにします。
 # 可能であれば (npm@5+)
 COPY package*.json ./
@@ -286,15 +286,15 @@ RUN npm install
 これにより、キャッシュされた Docker レイヤーを利用することができます。
 bitJudo は[このこと](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/)についてよく説明しています。
 
-アプリのソースコードを Docker イメージ内にバンドルするには、`COPY`
+アプリケーションのソースコードを Docker イメージ内にバンドルするには、`COPY`
 命令を使います。
 
 ```docker
-# アプリのソースをバンドルする
+# アプリケーションのソースをバンドルする
 COPY . .
 ```
 
-アプリは `8080` ポートにバインドされているので `EXPOSE` 命令を使って
+アプリケーションは `8080` ポートにバインドされているので `EXPOSE` 命令を使って
 `docker` デーモンによってマッピングされるでしょう：
 
 ```docker
@@ -314,10 +314,10 @@ CMD [ "npm", "start" ]
 ```docker
 FROM node:8
 
-# アプリディレクトリを作成する
+# アプリケーションディレクトリを作成する
 WORKDIR /usr/src/app
 
-# アプリの依存関係をインストールする
+# アプリケーションの依存関係をインストールする
 # ワイルドカードを使用して、package.json と package-lock.json の両方が確実にコピーされるようにします。
 # 可能であれば (npm@5+)
 COPY package*.json ./
@@ -326,7 +326,7 @@ RUN npm install
 # 本番用にコードを作成している場合
 # RUN npm install --only=production
 
-# アプリのソースをバンドルする
+# アプリケーションのソースをバンドルする
 COPY . .
 
 EXPOSE 8080
@@ -441,7 +441,7 @@ $ docker exec -it <container id> /bin/bash
 
 イメージを `-d` で実行するとコンテナは分離モードで実行され、バックグラウンドで実行されたままになります。
 `-p` フラグはパブリックポートをコンテナ内のプライベートポートにリダイレクトします。
-以前に構築した画像を実行します。
+以前に構築したイメージを実行します。
 
 ```bash
 $ docker run -p 49160:8080 -d <your username>/node-web-app
@@ -515,7 +515,7 @@ following places:
  -->
 ## テスト
 
-アプリをテストするには、Docker がマッピングしたアプリのポートを取得します。
+アプリケーションをテストするには、Docker がマッピングしたアプリケーションのポートを取得します。
 
 ```bash
 $ docker ps
