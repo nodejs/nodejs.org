@@ -326,7 +326,7 @@ RUN npm install
 # 本番用にコードを作成している場合
 # RUN npm install --only=production
 
-# アプリのソースをバンドルする
+# アプリケーションのソースをバンドルする
 COPY . .
 
 EXPOSE 8080
