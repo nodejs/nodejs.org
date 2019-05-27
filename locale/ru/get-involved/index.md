@@ -1,35 +1,38 @@
 ---
-title: Get involved
+title: Присоединиться
 layout: contribute.hbs
 ---
-# Get Involved
+# Присоединиться
 
-## Community Discussion
+## Обсуждение сообщества
 
-- The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
-- For real-time chat about Node.js development go to `irc.freenode.net` in the `#node.js` channel with an [IRC client](http://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [freenode's WebChat](http://webchat.freenode.net/?channels=node.js).
-- The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
-- The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
-- [Node.js Everywhere](https://newsletter.nodejs.org) is the official Node.js Monthly Newsletter.
-- [Node.js Collection](https://medium.com/the-node-js-collection) is a collection of community-curated content on Medium.
-- The [Community Committee](https://github.com/nodejs/community-committee) is a top-level committee in the Node.js Foundation focused on community-facing efforts.
+- [Список проблем на GitHub](https://github.com/nodejs/node/issues) это место для обсуждения возможностей ядра Node.js.
+- Для чата в реальном времени о разработке Node.js перейдите на `irc.freenode.net` в канале`#node.js` с [IRC-клиентом](http://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) или подключитесь в своем веб-браузере к каналу с помощью [веб-чата freenode](http://webchat.freenode.net/?channels=node.js).
+- Официальный аккаунт Node.js в Твиттере ― [nodejs](https://twitter.com/nodejs).
+- [Календарь Фонда Node.js](https://nodejs.org/calendar) со всеми общественными встречами.
+- [Node.js Everywhere](https://newsletter.nodejs.org) официальный ежемесячный блог Node.js
+- [Node.js](https://medium.com/the-node-js-collection) контент, создаваемый сообществом Medium.
+- [Community Committee](https://github.com/nodejs/community-committee) является комитетом высшего уровня в Фонде Node.js, ориентированным на развитие сообщества.
 
 
-## Learning
+## Обучение
 
-- [Official API reference documentation](/api) details the Node.js API.
-- [NodeSchool.io](http://nodeschool.io) will teach you Node.js concepts via interactive command-line games.
-- [Stack Overflow Node.js tag](http://stackoverflow.com/questions/tagged/node.js) collects new information every day.
-- [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
-- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
+- [Официальная справочная документация по API](/api) описывает API Node.js
+- [NodeSchool.io](http://nodeschool.io) научит вас концепциям Node.js через интерактивные игры командной строки.
+- [Тег Node.js на Stack Overflow](http://stackoverflow.com/questions/tagged/node.js) собирает новую информацию каждый день.
+- [Тег сообщества на DEV.js](https://dev.to/t/node) ― это место, где можно делиться проектами, статьями и учебными
+  пособиями по Node.js, а также начинать обсуждения и запрашивать отзывы по темам, связанным с Node.js. Разработчики
+  всех уровней квалификации могут принять участие.
+- [Nodeiflux](https://discordapp.com/invite/vUsrbjd), является дружественным сообществом бекенд-разработчиков на Node.js,
+  поддерживающих друг друга на Discord.
 
-## International community sites and projects
+## Международные общественные сайты и проекты
 
-- [Chinese community](http://cnodejs.org)
-- [French Google+ Community of Node.js users](https://plus.google.com/communities/113346206415381691435)
-- [Hungarian (Magyar) community](http://nodehun.blogspot.com/)
-- [Israeli Facebook group for Node.js](https://www.facebook.com/groups/node.il/)
-- [Japanese user group](http://nodejs.jp/)
-- [Spanish language Facebook group for Node.js](https://www.facebook.com/groups/node.es/)
-- [Spanish language community](http://nodehispano.com)
-- [Vietnamese Node.js community](https://www.facebook.com/nodejs.vn/)
+- [Китайское сообщество](http://cnodejs.org)
+- [Французское сообщество Google+ пользователей Node.js](https://plus.google.com/communities/113346206415381691435)
+- [Венгерское (мадьярское) сообщество](http://nodehun.blogspot.com/)
+- [Израильская группа Facebook для Node.js](https://www.facebook.com/groups/node.il/)
+- [Японская группа пользователей](http://nodejs.jp/)
+- [Испанская языковая группа Facebook для Node.js](https://www.facebook.com/groups/node.es/)
+- [Сообщество испанского языка](http://nodehispano.com)
+- [Вьетнамское сообщество Node.js](https://www.facebook.com/nodejs.vn/)
