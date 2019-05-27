@@ -2,7 +2,7 @@
 
 const semver = require('semver')
 
-const postMergeDownloads = [
+const allDownloads = [
   {
     'title': 'Windows 32-bit Installer',
     'templateUrl': 'https://nodejs.org/dist/v%version%/node-v%version%-x86.msi'
@@ -77,9 +77,6 @@ const postMergeDownloads = [
   }
 ]
 
-// Latest releases (v8.x and above) don't offer 'Linux PPC BE 64-bit Binary' any longer
-const latestDownloads = postMergeDownloads.filter(download => download.title !== 'Linux PPC BE 64-bit Binary')
-
 // v0.x of Node.js
 const legacyDownloads = [
   {
@@ -132,21 +129,39 @@ const legacyDownloads = [
   }
 ]
 
-function resolveUrl (item, version) {
+const resolveUrl = (item, version) => {
   const url = item.templateUrl.replace(/%version%/g, version)
   return Object.assign({ url }, item)
 }
 
-module.exports = (version) => {
-  let downloads = latestDownloads
+const resolveDownloads = (version) => {
+  let downloads = allDownloads
+
   if (semver.satisfies(version, '< 1.0.0')) {
-    downloads = legacyDownloads
-  } else if (semver.satisfies(version, '< 8.0.0')) {
-    downloads = postMergeDownloads
-  } else if (semver.satisfies(version, '>= 10.0.0')) {
+    return legacyDownloads
+  }
+
+  if (semver.satisfies(version, '>= 8.0.0')) {
+    downloads = downloads.filter(ver =>
+      ver.title !== 'Linux PPC BE 64-bit Binary'
+    )
+  }
+
+  if (semver.satisfies(version, '>= 10.0.0')) {
     downloads = downloads.filter(ver =>
       ver.title !== 'Linux 32-bit Binary' &&
-      ver.title !== 'SmartOS 32-bit Binary')
+      ver.title !== 'SmartOS 32-bit Binary'
+    )
   }
-  return downloads.map((item) => resolveUrl(item, version))
+
+  if (semver.satisfies(version, '>= 12.0.0')) {
+    downloads = downloads.filter(ver =>
+      ver.title !== 'ARMv6 32-bit Binary'
+    )
+  }
+
+  return downloads
 }
+
+module.exports = (version) =>
+  resolveDownloads(version).map((item) => resolveUrl(item, version))

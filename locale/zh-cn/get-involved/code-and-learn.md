@@ -9,7 +9,8 @@ layout: contribute.hbs
 
 ## 即将到来的代码 + 学习活动
 
-- Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/).
+- [Saint-Petersburg, Russia on May 26](https://medium.com/piterjs/code-learn-ce20d330530f)
+- Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/)
 
 ## 已经结束的代码 + 学习活动
 
