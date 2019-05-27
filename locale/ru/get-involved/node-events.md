@@ -1,25 +1,26 @@
 ---
-title: Node.js Events
+title: Мероприятия Node.js
 layout: contribute.hbs
 ---
 
-# Node.js Events
+# Мероприятия Node.js
 
-This is a list of Node.js events and conferences. Please submit a PR if you'd like to add a new event that isn't yet tracked in the list below.
+Это список событий и конференций Node.js. Пожалуйста, отправьте PR, если вы хотите добавить
+новое событие, которое еще не отслеживается в списке ниже.
 
-## Notes for adding events
+## Примечания для добавления событий
 
-FORMAT
+ФОРМАТ
 
-- Event Name | Location | Dates
+- Название мероприятия | Расположение | Даты
 
-## Events
+## Мероприятия
 
 ### 2019
 
-|                     Event Name                     |        Location         |      Date      |
+|               Название мероприятия                 |      Расположение       |      Даты      |
 | :------------------------------------------------: | :---------------------: | :------------: |
-| [NodeConf Colombia](https://colombia.nodeconf.com) |   Medellin, Colombia    |   June 21-22   |
-|  [NodeConf EU](https://www.nodeconf.eu/2019.html)  | Lyrath Estate, Kilkenny | November 10-13 |
-|      [NodeSummit](https://www.nodesummit.com)      |      San Francisco      |      TBA       |
-|      [NodeUkraine](https://nodeukraine.org.ua)     |      Kyiv, Ukraine      |     May 18     |
+|      [NodeUkraine](https://nodeukraine.org.ua)     |      Киев, Украина      |     18 мая     |
+| [NodeConf Colombia](https://colombia.nodeconf.com) |   Медельин, Колумбия    |   21-22 июня   |
+|  [NodeConf EU](https://www.nodeconf.eu/2019.html)  | Лират Эстейт, Килкенни  |  10-13 ноября  |
+|      [NodeSummit](https://www.nodesummit.com)      |      Сан-Франциско      |будет объявлено |

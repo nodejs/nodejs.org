@@ -1,21 +1,22 @@
 ---
-title: Node.js Speakers
+title: Докладчики Node.js
 layout: contribute.hbs
 ---
 
-# Node.js Speakers
+# Докладчики Node.js
 
-This is a list of local Node.js speakers. Please submit a PR if you'd like to add yourself or add others! Make sure you have permission before doing so as well.
+Это список местных спикеров Node.js. Пожалуйста, отправьте PR, если вы хотите добавить себя или добавить других!
+Убедитесь, что у вас есть разрешение, прежде чем сделать это.
 
-## Code of Conduct
+## Нормы поведения
 
-If anyone is reported as malicious or making others feel uncomfortable, they may be removed from this list. 
+Если кто-либо не будет соблюдать прописанных норм поведения и/или будет отмечен как небезопасный, он будет удален из этого списка. 
 
-## Instructions
+## Инструкции
 
-- Submit everything alphabetically
+- Отправляйте все в алфавитном порядке
 
-## Speakers
+## Докладчики
 
 ### Brazil 🇧🇷
 
@@ -30,7 +31,7 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 - [Linkedin](https://www.linkedin.com/in/hugoiuri)
 - [Personal Website](http://www.hugoiuri.dev)
 
-- Topics - Node.js, Testing, Cloud Computing, Community, Open Source, JavaScript, Continuous Delivery, Deploy Automatization
+- Темы ― Node.js, Testing, Cloud Computing, Community, Open Source, JavaScript, Continuous Delivery, Deploy Automatization
 
 #### Rio de Janeiro
 
@@ -43,7 +44,7 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 - [Linkedin](https://www.linkedin.com/in/glaucialemos/)
 - [Personal Website](https://glaucialemos.netlify.com/)
 
-- Topics - Node.js, Women in Tech, Testing, Cloud Computing, Node.js with A.I, Community, Open Source, JavaScript, Node.js + Bots  
+- Темы ― Node.js, Women in Tech, Testing, Cloud Computing, Node.js with A.I, Community, Open Source, JavaScript, Node.js + Bots  
 
 #### São Paulo
 
@@ -85,7 +86,7 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 
 - [@mhdawson](https://twitter.com/mhdawson1)
 - [LinkedIn](https://www.linkedin.com/in/michael-dawson-6051282/)
-- Topics - Node.js
+- Темы ― Node.js
 
 #### British Columbia
 
@@ -95,7 +96,7 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 
 - [@keywordnew](https://twitter.com/keywordnew)
 - [LinkedIn](https://www.linkedin.com/in/manilchowdhury/)
-- Topics - Node Community, Open Source, Education, Diversity & Inclusion, wombats
+- Темы ― Node Community, Open Source, Education, Diversity & Inclusion, wombats
 
 ### Germany 🇩🇪
 
@@ -119,29 +120,29 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 - [@atishay811](http://twitter.com/atishay811)
 - [LinkedIn](https://linkedin.com/in/atishay)
 - [Github](https://github.com/atishay)
-- Topics - Node.js, Native Modules(N-API, Nan), Node.js on desktop
+- Темы ― Node.js, Native Modules(N-API, Nan), Node.js on desktop
 
 ###### Dan Shaw
 
 - [@dshaw](http://twitter.com/dshaw)
-- Topics - Node.js 
+- Темы ― Node.js 
 
 ###### Shruti Kapoor
 
 - [@shrutikapoor08](http://twitter.com/shrutikapoor08)
-- Topics - Node.js 
+- Темы ― Node.js 
 
 ###### Tracy Lee
 
 - [@ladyleet](http://twitter.com/ladyleet)
 - [LinkedIn](https://linkedin.com/in/tracyslee)
-- Topics - Node.js Community, Women in Tech, Diversity & Inclusion, RxJS & Node.js
+- Темы ― Node.js Community, Women in Tech, Diversity & Inclusion, RxJS & Node.js
 
 ###### Dominik Kundel
 - [@dkundel](https://twitter.com/dkundel)
 - [GitHub](https://github.com/dkundel)
 - [dkundel.com](https://dkundel.com)
-- Topics - Node.js, TypeScript, Nodebots, Web Security, Web Components
+- Темы ― Node.js, TypeScript, Nodebots, Web Security, Web Components
 
 #### Florida
 
@@ -151,13 +152,13 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 
 - [@MarkPieszak](http://twitter.com/MarkPieszak)
 - [Github](https://github.com/MarkPieszak)
-- Topics - Node.js, JavaScript SSR (Server-side Rendering), Performance, Open Source, Community
+- Темы ― Node.js, JavaScript SSR (Server-side Rendering), Performance, Open Source, Community
 
 ###### Julián Duque
 
 - [@julian_duque](https://twitter.com/julian_duque)
 - [GitHub](https://github.com/julianduque)
-- Topics - Node.js, Debugging, Performance, Best Practices, Community Outreach, Education
+- Темы ― Node.js, Debugging, Performance, Best Practices, Community Outreach, Education
 
 #### New York
 
@@ -166,13 +167,13 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 ###### Tierney Cyren
 
 - [@bitandbang](http://twitter.com/bitandbang)
-- Topics - Node.js 
+- Темы ― Node.js 
 
 ###### Joe Sepi
 
 - [@joe_sepi](http://twitter.com/joe_sepi)
 - [LinkedIn](https://www.linkedin.com/in/joesepi/)
-- Topics - Node.js, JavaScript, Open Source, Community, Leadership, Punk Rock
+- Темы ― Node.js, JavaScript, Open Source, Community, Leadership, Punk Rock
 
 #### North Carolina
 
@@ -182,7 +183,7 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 
 - [@ladyleet](http://twitter.com/ladyleet)
 - [LinkedIn](https://linkedin.com/in/tracyslee)
-- Topics - Node.js Community, Women in Tech, Diversity & Inclusion, RxJS & Node.js
+- Темы ― Node.js Community, Women in Tech, Diversity & Inclusion, RxJS & Node.js
 
 #### Oregon
 
@@ -191,10 +192,10 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 ###### Ben Michel
 
 - [@obensource](http://twitter.com/obensource)
-- Topics - Node.js 
+- Темы ― Node.js 
 
 ###### Christopher Hiller
 
 - [@b0neskull](https://twitter.com/b0neskull)
-- Topics - Node.js, Testing, Tooling, Maintainership & OSS Sustainability
+- Темы ― Node.js, Testing, Tooling, Maintainership & OSS Sustainability
 
