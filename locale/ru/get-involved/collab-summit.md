@@ -1,29 +1,26 @@
 ---
-title: Collab Summit
+title: Саммит сотрудников
 layout: contribute.hbs
 ---
 
-# Collab Summit
-Collaboration Summit is an un-conference for bringing current and
-potential contributors together to discuss Node.js  with lively collaboration,
-education, and knowledge sharing. Committees and working groups come together
-twice per year to make important decisions while also being able to work on some
-exciting efforts they want to push forward in-person.
+# Саммит сотрудников
 
-## Who attends?
+Саммит сотрудников (Collaboration Summit) ― это "анти"-конференция, на которую собираются нынешние
+и потенциальные участники, чтобы вживую обсудить Node.js, и поделится знаниями. Комитеты и рабочие
+группы собираются два раза в год для принятия важных решений, а также могут работать над некоторыми
+проектами, которые они хотят продвигать лично.
 
-Anyone is welcome to attend Collab Summit. During the
-summit, leaders will help onboard new contributors to groups they'd love to help
-prior to integrating them into the working sessions.
+## Кто приглашен?
 
-This is your opportunity to learn what is happening within the community to jump
-in and contribute with the skills you have and would like to hone.
+Любой желающий может посетить саммит сотрудников. Во время саммита лидеры будут помогать новым участникам
+внедрится в интерисующие их группы, прежде чем добавить их в рабочие сессии.
 
-Working groups will put together a schedule so that people can
-familiarize themselves before folks get onsite, having the general collaborator
-discussions, and then dive into breakout sessions.
+Это возможность узнать о том, что происходит в сообществе, прежде чем присоединиться и поделиться своими
+навыками, которые вы хотели бы отточить.
 
-We'd love to see you at Collab Summit! Check out the [Summit repo](https://github.com/nodejs/summit)
-for upcoming and past Collab Summits and have a look at the
-[issues filed](https://github.com/nodejs/summit/issues) that share what
-individual working groups and committees are looking to discuss in-person.
+Рабочие группы заранее составят график мероприятия, чтобы участники могли строить свои планы прежде,
+чем окажутся на месте. Проведут общие обсуждения с сотрудниками, а затем погрузятся в секционные заседания.
+
+Мы будем рады видеть вас на саммит сотрудников! Посмотрите [репозиторий саммита](https://github.com/nodejs/summit)
+для предстоящих и прошедших мероприятий и ознакомьтесь с [вопросами](https://github.com/nodejs/summit/issues)
+посталвенными для дальнейшего живого обсуждения.
