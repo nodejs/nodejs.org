@@ -1,34 +1,34 @@
 ---
 layout: download-current.hbs
-title: Завантажити
-download: Завантажити
+title: Загрузка
+download: Загрузка
 downloads:
-    headline: Завантаження
+    headline: Загрузки
     lts: LTS
-    current: Поточна
-    tagline-current: Найновіші можливості
-    tagline-lts: Рекомендовано для більшості
-    display-hint: Показати завантаження для
+    current: Текущая
+    tagline-current: Последний функционал
+    tagline-lts: Рекомендованный для большинства
+    display-hint: Показать загрузки для
     intro: >
-        Завантажте початковий код Node.js або інсталятор для вашої платформи та почніть розробку сьогодні.
-    currentVersion: Поточна версія
-    buildInstructions: Building Node.js from source on supported platforms
-    WindowsInstaller: Windows Installer
-    WindowsBinary: Windows Binary
-    MacOSInstaller: macOS Installer
-    MacOSBinary: macOS Binary
-    LinuxBinaries: Linux Binaries
-    SourceCode: Source Code
+        Загрузите исходный код Node.js или готовый установщик для вашей платформы и начните разработку уже сегодня.
+    currentVersion: Последняя текущая версия
+    buildInstructions: Сборка Node.js из исходного кода на поддерживаемых платформах
+    WindowsInstaller: Установщик Windows
+    WindowsBinary: Исходный код для Windows
+    MacOSInstaller: Установщик macOS
+    MacOSBinary: Исходный код для macOS
+    LinuxBinaries: Исходный код для Linux
+    SourceCode: Исходный код
 additional:
-    headline: Додаткові платформи
+    headline: Дополнительные платформы
     intro: >
-        Учасники спільноти Node.js підтримують неофіційні збірки Node.js для додаткових платформ. Майте на увазі, що ці збірки не підтримуються основною командою Node.js і можуть не мати того ж функціоналу що й поточний реліз Node.js.
+        Члены сообщества Node.js поддерживают неофициальные сборки Node.js для ряда других платформ. Обратите внимание, что такие сборки не поддерживаются основной командой Node.js и могут не содержать всего функционала, что и текущая версия Node.js.
     platform: Платформа
     provider: Провайдер
-    SmartOSBinaries: SmartOS Binaries
-    DockerImage: Docker Image
-    officialDockerImage: Official Node.js Docker Image
-    LinuxPowerSystems: Linux on Power Systems
-    LinuxSystemZ: Linux on System z
-    AIXPowerSystems: AIX on Power Systems
+    SmartOSBinaries: Исходный код для SmartOS
+    DockerImage: Образ Docker
+    officialDockerImage: Официальный Docker-образ Node.js
+    LinuxPowerSystems: Linux на Power Systems
+    LinuxSystemZ: Linux на System z
+    AIXPowerSystems: AIX на Power Systems
 ---

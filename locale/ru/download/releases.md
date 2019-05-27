@@ -1,14 +1,14 @@
 ---
 layout: download-releases.hbs
-title: Previous Releases
-modules: "<code>NODE_MODULE_VERSION</code> refers to the ABI (application binary interface) version number of Node.js, used to determine which versions of Node.js compiled C++ add-on binaries can be loaded in to without needing to be re-compiled. It used to be stored as hex value in earlier versions, but is now represented as an integer."
+title: Предыдущие версии
+modules: "<code>NODE_MODULE_VERSION</code> относится к номеру версии Node.js ABI (двоичный интерфейс приложения), который используется для определения того, в какие версии скомпилированных двоичных файлов C++ Node.js можно загружать файлы без необходимости перекомпиляции. Раньше он хранился как шестнадцатеричное значение в более ранних версиях, но теперь представляется как целое число."
 ---
 
-### io.js та Node.js
-Релізи від 1.x до 3.x називались "io.js", оскільки вони були частиною форку io.js. Node.js 4.0.0 є загальним релізом io.js об'єднаного з Node.js 0.12.x у спільні релізи Node.js.
+### io.js &amp; Node.js
+Релизы от 1.x до 3.x выходили под именем "io.js", так как они были частью форка io.js. Начиная с Node.js 4.0.0, предыдущие версии io.js перешли с Node.js 0.12.x в унифицированные версии Node.js.
 
 <div class="highlight-box">
-    <h4>Шукаєте останній реліз певної версії?</h4>
+    <h4>Ищете последнюю версию ветки версии?</h4>
     <ul>
         <li><a href="https://nodejs.org/dist/latest-v10.x/">Node.js 10.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v8.x/">Node.js 8.x</a></li>
@@ -16,6 +16,6 @@ modules: "<code>NODE_MODULE_VERSION</code> refers to the ABI (application binary
         <li><a href="https://nodejs.org/dist/latest-v4.x/">Node.js 4.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v0.12.x/">Node.js 0.12.x</a></li>
         <li><a href="https://nodejs.org/dist/latest-v0.10.x/">Node.js 0.10.x</a></li>
-        <li><a href="https://nodejs.org/dist/">усі версії</a></li>
+        <li><a href="https://nodejs.org/dist/">все версии</a></li>
     </ul>
 </div>
