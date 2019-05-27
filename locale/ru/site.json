@@ -121,7 +121,7 @@
     },
     "contribute": {
       "link": "get-involved/contribute",
-      "text": "Сотрудничество"
+      "text": "Участие"
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
