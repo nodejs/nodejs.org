@@ -1,28 +1,29 @@
 ---
-title: Приєднатись
+title: Get involved
 layout: contribute.hbs
 ---
+# Get Involved
 
-# Приєднатись
+## Community Discussion
 
-## Громадське обговорення
-
-- [Список іш’ю на GitHub](https://github.com/nodejs/node/issues) — це місце, де обговорюють ключовий функціонал Node.js.
-- Для живого чату про розробку на Node перейдіть на `irc.freenode.net` у канал `#node.js` через [IRC клієнт](http://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) або підключіться до каналу через веб–браузер з допомогою [ WebChat від freenode](http://webchat.freenode.net/?channels=node.js).
-- Офіційний аккаунт Node.js у Twitter [nodejs](https://twitter.com/nodejs).
+- The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
+- For real-time chat about Node.js development go to `irc.freenode.net` in the `#node.js` channel with an [IRC client](http://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [freenode's WebChat](http://webchat.freenode.net/?channels=node.js).
+- The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
 - The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
-- [Node Weekly](http://nodeweekly.com) це поштове розсилання, що збирає найсвіжіші події та новини довкола спільноти Node.js.
-- [Community Committee](https://github.com/nodejs/community-committee) є комітетом вищого рівня в Node.js Фонд зосереджений на спільних зусиллях.
+- [Node.js Everywhere](https://newsletter.nodejs.org) is the official Node.js Monthly Newsletter.
+- [Node.js Collection](https://medium.com/the-node-js-collection) is a collection of community-curated content on Medium.
+- The [Community Committee](https://github.com/nodejs/community-committee) is a top-level committee in the Node.js Foundation focused on community-facing efforts.
 
 
-## Навчання
+## Learning
 
-- [Офіційна довідкова документація по API](/api) описує Node API.
-- [NodeSchool.io](http://nodeschool.io) навчить вас концепцій Node.js через інтерактивні консольні ігри.
-- [Stack Overflow Node.js tag](http://stackoverflow.com/questions/tagged/node.js) щодня поповнюється новою інформацією.
+- [Official API reference documentation](/api) details the Node.js API.
+- [NodeSchool.io](http://nodeschool.io) will teach you Node.js concepts via interactive command-line games.
+- [Stack Overflow Node.js tag](http://stackoverflow.com/questions/tagged/node.js) collects new information every day.
+- [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
+- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
 
-
-## Сайти міжнародних спільнот та проекти
+## International community sites and projects
 
 - [Chinese community](http://cnodejs.org)
 - [French Google+ Community of Node.js users](https://plus.google.com/communities/113346206415381691435)
