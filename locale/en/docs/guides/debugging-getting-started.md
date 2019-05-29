@@ -38,7 +38,7 @@ restriction and will be able to run arbitrary code.
 
 By default `node --inspect` binds to 127.0.0.1. You explicitly need to provide a
 public IP address or 0.0.0.0, etc., if you intend to allow external connections
-to the debugger. Doing so may expose you a potentially significant security
+to the debugger. Doing so may expose you to a potentially significant security
 threat. We suggest you ensure appropriate firewalls and access controls in place
 to prevent a security exposure.
 

@@ -12,6 +12,7 @@
   "all-downloads": "所有下载选项",
   "nightly": "每日构建",
   "chakracore-nightly": "Node-ChakraCore 每日构建",
+  "unofficial-builds": "非官方构建版",
   "previous": "以前",
   "next": "下一个",
   "feeds": [
