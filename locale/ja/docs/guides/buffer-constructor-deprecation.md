@@ -114,7 +114,7 @@ described above.
 
 ESLint の規則 [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer-constructor)
 または
-[node/no-deprecated-api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) にも、廃止予定の `Buffer()` API への呼び出しがあります。
+[node/no-deprecated-api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) にも、廃止予定の `Buffer()` API への呼び出しを検知するAPIがあります。
 これらの規則はいくつかのプリセットに含まれています。
 
 ただし、`Buffer` がオーバーライドされると
