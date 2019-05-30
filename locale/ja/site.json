@@ -11,6 +11,7 @@
   "by": "by",
   "all-downloads": "All download options",
   "nightly": "Nightly builds",
+  "unofficial-builds": "非公式のビルド版",
   "previous": "前",
   "next": "次",
   "feeds": [
@@ -92,6 +93,10 @@
     "guides": {
       "link": "docs/guides",
       "text": "ガイド"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "依存関係"
     }
   },
   "getinvolved": {
