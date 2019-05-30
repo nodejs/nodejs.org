@@ -174,10 +174,17 @@ sed -i \
 
 `--perf-basic-prof-only-functions` は出力が少なくなるので、オーバーヘッドが最も少ないオプションです。
 
+<!-- 
 ### Why do I need them at all?
 
 Well, without these options you'll still get a flame graph, but with most bars labeled `v8::Function::Call`.
 
+ -->
+### どうしてそれらを全く必要としないのですか？
+
+ええ、これらのオプションがなくてもフレームグラフが得られますが、ほとんどのバーには `v8::Function::Call` というラベルが付いています。
+
+<!-- 
 ## `perf` output issues
 
 ### Node.js 8.x V8 pipeline changes
@@ -194,12 +201,38 @@ For details see:
 - https://github.com/nodejs/benchmarking/issues/168
 - https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
 
+ -->
+## `perf`出力の問題
+
+### Node.js 8.x V8 パイプラインの変更
+
+Node.js 8.x 以降には、V8 エンジンの JavaScript コンパイルパイプラインに対する新しい最適化が付属しているため、関数名/参照がperf にアクセスできない場合があります。(それはターボファンと呼ばれています)
+
+その結果、関数名がフレームグラフの中で正しく得られないかもしれません。
+
+あなたは、関数名を期待するところで `ByteCodeHandler:` に気付くでしょう。
+
+[0x](https://www.npmjs.com/package/0x) にはいくつかの緩和策が組み込まれています。
+
+詳細:
+- https://github.com/nodejs/benchmarking/issues/168
+- https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
+
+<!-- 
 ### Node.js 10+
 
 Node.js 10.x addresses the issue with Turbofan using the `--interpreted-frames-native-stack` flag.
 
 Run `node --interpreted-frames-native-stack --perf-basic-prof-only-functions` to get function names in the flame graph regardless of which pipeline V8 used to compile your JavaScript.
 
+ -->
+### Node.js 10 以降
+
+Node.js 10.x は Turbofan の問題に `--interpreted-frames-native-stack` フラグを使って対処します。
+
+JavaScript をコンパイルするためにどの V8 パイプラインが使用されたかにかかわらず、フレームグラフの関数名を得るために `node --interpreted-frames-native-stack --perf-basic-prof-only-functions` を実行してください。
+
+<!-- 
 ### Broken labels in the flame graph
 
 If you're seeing labels looking like this
@@ -209,6 +242,22 @@ node`_ZN2v88internal11interpreter17BytecodeGenerator15VisitStatementsEPNS0_8Zone
 it means the Linux perf you're using was not compiled with demangle support, see https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1396654 for example
 
 
+ -->
+### フレームグラフのラベルが壊れている
+
+このようなラベルが表示されている場合
+```
+node`_ZN2v88internal11interpreter17BytecodeGenerator15VisitStatementsEPNS0_8ZoneListIPNS0_9StatementEEE
+```
+それは使っている Linux の perf が demangle サポート付きでコンパイルされていないことを意味します。例は https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1396654 を参照してください。
+
+
+<!-- 
 ## Examples
 
 Practice capturing flame graphs yourself with [a flame graph exercise](https://github.com/naugtur/node-example-flamegraph)!
+
+ -->
+## 例
+
+[フレームグラフ演習](https://github.com/naugtur/node-example-flamegraph)を使用してフレームグラフを自分でキャプチャする練習をしてください!

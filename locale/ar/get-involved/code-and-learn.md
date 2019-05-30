@@ -10,7 +10,6 @@ layout: contribute.hbs
 
 ## فعاليات برمج + تعلم قادمة
 
-- [سانت بطرسبرغ ، روسيا في 26 ماي](https://medium.com/piterjs/code-learn-ce20d330530f) 
 - ميدلين ، كولومبيا في 21 و 22 جوان [NodeConfCo](https://colombia.nodeconf.com/)
 
 ##  فعاليات برمج + تعلم سابقة 
