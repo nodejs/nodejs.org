@@ -259,5 +259,3 @@ Practice capturing flame graphs yourself with [a flame graph exercise](https://g
 
  -->
 ## 例
-
-[フレームグラフ演習](https://github.com/naugtur/node-example-flamegraph)を使用してフレームグラフを自分でキャプチャする練習をしてください!

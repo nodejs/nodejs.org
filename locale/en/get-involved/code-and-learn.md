@@ -24,4 +24,3 @@ Code & Learn events allow you to get started (or go further) with Node.js core c
 - Austin in December 2016
 - Tokyo in November 2016
 - Amsterdam in September 2016
-- Dublin and London in September 2015
