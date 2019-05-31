@@ -243,17 +243,17 @@ _Don't forget to drop the polyfill usage once you drop support for Node.js < 4.5
   古い `new Buffer()` API を使わないでください。上記の行が追加されているファイルでは、
   古い `new Buffer()` API を使用すると _throw_ されます。
 
-- **[buffer-from](https://www.npmjs.com/package/buffer-from) and/or
-  [buffer-alloc](https://www.npmjs.com/package/buffer-alloc)** are
-  [ponyfills](https://ponyfill.com/) for their respective part of the `Buffer` API. You only need
-  to add the package(s) corresponding to the API you are using.
+- **[buffer-from](https://www.npmjs.com/package/buffer-from) 
+  または [buffer-alloc](https://www.npmjs.com/package/buffer-alloc)** あるいはその両方は
+  `Buffer` API のそれぞれの部分の [ポリフィル](https://ponyfill.com/) です。
+  使用している API に対応するパッケージを追加するだけです。
 
-  You would import the module needed with an appropriate name, e.g.
-  `const bufferFrom = require('buffer-from')` and then use that instead of the call to
-  `new Buffer()`, e.g. `new Buffer('test')` becomes `bufferFrom('test')`.
+  必要なモジュールを適切な名前、例えば `const bufferFrom = require('buffer-from')` でインポートします。
+  そして `new Buffer()` の呼び出しの代わりにそれを使います。
+  `new Buffer('test')` は `bufferFrom('test')`になります。
 
-  A downside with this approach is slightly more code changes to migrate off them (as you would be
-  using e.g. `Buffer.from()` under a different name).
+  このアプローチの欠点は、移行するためのコード変更 (たとえば、`Buffer.from()` を別の名前で使用しているような) が
+  多少増えることです。
 
 - **[safe-buffer](https://www.npmjs.com/package/safe-buffer)** is also a drop-in replacement for
   the entire `Buffer` API, but using `new Buffer()` will still work as before.
