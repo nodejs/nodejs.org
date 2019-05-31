@@ -1,8 +1,9 @@
 ---
-title: Porting to the Buffer.from()/Buffer.alloc() API
+title: Buffer.from()/Buffer.alloc() API への移植
 layout: docs.hbs
 ---
 
+<!-- 
 # Porting to the `Buffer.from()`/`Buffer.alloc()` API
 
 ## Overview
@@ -17,6 +18,22 @@ The Buffer() and new Buffer() constructors are not recommended for use due to se
 - [Variant 2: Use a polyfill](#variant-2)
 - [Variant 3: Manual detection, with safeguards](#variant-3)
 
+ -->
+# `Buffer.from()`/`Buffer.alloc()` API への移植
+
+## 概要
+
+このガイドは安全な `Buffer` コンストラクタメソッドに移行する方法を説明します。マイグレーションにより、以下の非推奨警告が修正されました。
+
+<div class="highlight-box"> 
+The Buffer() and new Buffer() constructors are not recommended for use due to security and usability concerns. Please use the new Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() construction methods instead.
+</div>
+
+- [Variant 1: Node.js ≤ 4.4.x および 5.0.0 — 5.9.x のサポートを終了](#variant-1) (*推奨*)
+- [Variant 2: ポリフィルの使用](#variant-2)
+- [Variant 3: セーフガード付きの手動検出](#variant-3)
+
+<!-- 
 ### Finding problematic bits of code using `grep`
 
 Just run `grep -nrE '[^a-zA-Z](Slow)?Buffer\s*\(' --exclude-dir node_modules`.
@@ -24,6 +41,14 @@ Just run `grep -nrE '[^a-zA-Z](Slow)?Buffer\s*\(' --exclude-dir node_modules`.
 It will find all the potentially unsafe places in your own code (with some considerably unlikely
 exceptions).
 
+ -->
+### `grep` を使って問題のあるコードを見つける
+
+`grep -nrE '[^a-zA-Z](Slow)?Buffer\s*\(' --exclude-dir node_modules` を実行するだけです。
+
+それにより自身のコードの中ですべての潜在的に危険な箇所が分かるでしょう (とてもありそうにない例外を除いて)。
+
+<!-- 
 ### Finding problematic bits of code using Node.js 8
 
 If you’re using Node.js ≥ 8.0.0 (which is recommended), Node.js exposes multiple options that help with finding the relevant pieces of code:
@@ -47,6 +72,31 @@ $ node example.js
     [... more stack trace lines ...]
 ```
 
+ -->
+### Node.js 8 を使用して問題のあるコードを見つける
+
+Node.js ≥ 8.0.0 (これが推奨されています) を使用している場合、Node.js は関連するコードを見つけるのに役立つ複数のオプションを公開します。
+
+- `--trace-warnings` は Node.js にこの警告と Node.js によって表示される他の警告のスタックトレースを表示させます
+- `--trace-deprecation` でも同じことができますが、それは非推奨警告のためだけです
+- `--pending-deprecation` はより多くの種類の非推奨警告を表示します。特に Node.js 8 でも、`Buffer()` の非推奨警告が表示されます
+
+環境変数を使用してこれらのフラグを設定できます。
+
+```bash
+$ export NODE_OPTIONS='--trace-warnings --pending-deprecation'
+$ cat example.js
+'use strict';
+const foo = new Buffer('foo');
+$ node example.js
+(node:7147) [DEP0005] DeprecationWarning: The Buffer() and new Buffer() constructors are not recommended for use due to security and usability concerns. Please use the new Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() construction methods instead.
+    at showFlaggedDeprecation (buffer.js:127:13)
+    at new Buffer (buffer.js:148:3)
+    at Object.<anonymous> (/path/to/example.js:2:13)
+    [... more stack trace lines ...]
+```
+
+<!-- 
 ### Finding problematic bits of code using linters
 
 ESLint rules [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer-constructor)
@@ -59,7 +109,21 @@ There is a drawback, though, that it doesn't always
 overridden e.g. with a polyfill, so recommended is a combination of this and some other method
 described above.
 
-## <!--variant-1-->Variant 1: Drop support for Node.js ≤ 4.4.x and 5.0.0 — 5.9.x
+ -->
+### リンターを使用して問題のあるコードを見つける
+
+ESLint の規則 [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer-constructor)
+または
+[node/no-deprecated-api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) にも、廃止予定の `Buffer()` API への呼び出しを検知するAPIがあります。
+これらの規則はいくつかのプリセットに含まれています。
+
+ただし、`Buffer` がオーバーライドされると
+必ずしも[正しく動作する](https://github.com/chalker/safer-buffer#why-not-safe-buffer)とは限らないという欠点があります。
+ポリフィルでは、この方法と上記の他の方法を
+組み合わせて使用することをお勧めします。
+
+<!-- 
+## &lt;!--variant-1--&gt;Variant 1: Drop support for Node.js ≤ 4.4.x and 5.0.0 — 5.9.x
 
 This is the recommended solution nowadays that would imply only minimal overhead.
 
@@ -89,7 +153,39 @@ or [Variant 3](#variant-3) on older branches, so people using those older branch
 the fix. That way, you will eradicate potential issues caused by unguarded `Buffer` API usage and
 your users will not observe a runtime deprecation warning when running your code on Node.js 10._
 
-## <!--variant-2-->Variant 2: Use a polyfill
+ -->
+## <!--variant-1-->Variant 1: Node.js ≤ 4.4.x および 5.0.0 — 5.9.x のサポートを終了
+
+これは現在推奨されている解決策であり、最小限のオーバーヘッドしか意味しません。
+
+Node.js 5.x リリースラインは2016年7月からサポートされていません。Node.js 4.x リリースラインは2018年4月にサポート終了となります (→ [Schedule](https://github.com/nodejs/Release#release-schedule))。つまり、セキュリティ上の問題が発生した場合でも、これらのバージョンの Node.js は更新を*受け取らない*ので、可能な限りこれらのリリースラインを使用しないでください。
+
+この場合にすることは、すべての `new Buffer()` または `Buffer()` 呼び出しが `Buffer.alloc()` または `Buffer.from()` を使用するように変換することです。
+
+- `new Buffer(number)` の場合は、`Buffer.alloc(number)` に置き換えます
+- `new Buffer(string)` (または `new Buffer(string, encoding)`) の場合は、`Buffer.from(string)` (または `Buffer.from(string, encoding)`) に置き換えます
+- 他のすべての引数の組み合わせ (これは滅多にありません)では、`new Buffer(...arguments)` を `Buffer.from(...arguments)` に置き換えます
+
+`Buffer.alloc()` は現在の Node.js バージョンにおいても
+`new Buffer(size).fill(0)`と比べて _より速い_ ことに注意してください。
+
+ESLint ルール [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer-constructor)
+または
+[node/no-deprecated-api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) を有効にすることは、
+誤った安全でない `Buffer` API の使用を避けるために推奨されます。
+
+`Buffer` コンストラクタを自動的に `Buffer.alloc()` または `Buffer.from()` に移行するための
+[JSCodeshift codemod](https://github.com/joyeecheung/node-dep-codemod#dep005) もあります。
+現在のところ、引数がリテラルである場合、
+またはコンストラクタが2つの引数で呼び出される場合にのみ機能することに注意してください。
+
+_現在、古いバージョンの Node.js をサポートしていて、それらのサポートを削除することができない場合、または古いブランチをサポートしている場合は、
+[Variant 2](#variant-2) または [Variant 3](#variant-3) の使用を検討してください。また修正を受け取ります。
+そうすることで、無防備な `Buffer` API の使用によって引き起こされる潜在的な問題を根絶し、
+Node.js 10 でコードを実行するときにユーザは実行時廃止予定の警告を見ることはないでしょう。_
+
+<!-- 
+## &lt;!--variant-2--&gt;Variant 2: Use a polyfill
 
 There are three different polyfills available:
 
@@ -101,6 +197,51 @@ There are three different polyfills available:
 
   Do not use the old `new Buffer()` API. In any files where the line above is added,
   using old `new Buffer()` API will _throw_.
+
+- **[buffer-from](https://www.npmjs.com/package/buffer-from) and/or
+  [buffer-alloc](https://www.npmjs.com/package/buffer-alloc)** are
+  [ponyfills](https://ponyfill.com/) for their respective part of the `Buffer` API. You only need
+  to add the package(s) corresponding to the API you are using.
+
+  You would import the module needed with an appropriate name, e.g.
+  `const bufferFrom = require('buffer-from')` and then use that instead of the call to
+  `new Buffer()`, e.g. `new Buffer('test')` becomes `bufferFrom('test')`.
+
+  A downside with this approach is slightly more code changes to migrate off them (as you would be
+  using e.g. `Buffer.from()` under a different name).
+
+- **[safe-buffer](https://www.npmjs.com/package/safe-buffer)** is also a drop-in replacement for
+  the entire `Buffer` API, but using `new Buffer()` will still work as before.
+
+  A downside to this approach is that it will allow you to also use the older `new Buffer()` API
+  in your code, which is problematic since it can cause issues in your code, and will start
+  emitting runtime deprecation warnings starting with Node.js 10
+  ([read more here](https://github.com/chalker/safer-buffer#why-not-safe-buffer)).
+
+Note that in either case, it is important that you also remove all calls to the old `Buffer`
+API manually — just throwing in `safe-buffer` doesn't fix the problem by itself, it just provides
+a polyfill for the new API. I have seen people doing that mistake.
+
+Enabling ESLint rule [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer-constructor)
+or
+[node/no-deprecated-api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md)
+is recommended.
+
+_Don't forget to drop the polyfill usage once you drop support for Node.js < 4.5.0._
+
+ -->
+## <!--variant-2-->Variant 2: ポリフィルの使用
+
+利用可能な3つの異なるポリフィルがあります。
+
+- **[safer-buffer](https://www.npmjs.com/package/safer-buffer)** は `Buffer` API 全体の代わりとなるドロップインであり、
+  `new Buffer()` を使用すると _throw_ します。
+
+  [Variant 1](#variant-1)とまったく同じ手順を踏みますが、
+  新しい `Buffer` API を使うすべてのファイルにポリフィル `const Buffer = require('safer-buffer').Buffer` を入れます。
+
+  古い `new Buffer()` API を使わないでください。上記の行が追加されているファイルでは、
+  古い `new Buffer()` API を使用すると _throw_ されます。
 
 - **[buffer-from](https://www.npmjs.com/package/buffer-from) and/or
   [buffer-alloc](https://www.npmjs.com/package/buffer-alloc)** are
