@@ -79,6 +79,16 @@ REQUIREMENTS
 - Organizer name - Steven Beeckman
 - Organizer contact info -
 
+### Bolivia 
+
+#### La Paz 
+
+- [Meetup](https://www.meetup.com/LaPazjs)
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer names - [Mauricio De La Quintana](https://github.com/maudel), [Guillermo Paredes](https://github.com/GuillermoParedes), [Adrian Zelada](https://github.com/adrianzelada).
+- Organizer contact info - [@maudelaquintana](https://twitter.com/maudelaquintana)
+
 ### Brazil
 
 #### São Paulo
