@@ -76,7 +76,7 @@ REQUIREMENTS
 - [Meetup](https://www.meetup.com/Belgian-node-js-User-Group/)
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Steven Beeckmanhttps://www.google.com/search?client=firefox-b-d&ei=J0XZXKn7LYPcrQGK8JegAQ&q=hacktoberfest+2020&oq=hacktoberfest+2020&gs_l=psy-ab.3...2615.2615..2865...0.0..0.0.0.......0....1..gws-wiz.887bUkHnPTo
+- Organizer name - Steven Beeckman
 - Organizer contact info -
 
 ### Bolivia 
@@ -292,7 +292,7 @@ REQUIREMENTS
 ### Israel
 
 ##### Tel Aviv
-https://www.meetup.com/JaipurJS-Developer-Meetup/
+
 - [Meetup](https://www.meetup.com/NodeJS-Israel/)
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page or submit your talk on [Node.js-IL website](http://www.nodejsil.com/).
