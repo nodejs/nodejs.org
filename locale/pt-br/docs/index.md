@@ -37,8 +37,8 @@ Esta documentação descreve os módulos embarcadas (built-in) providos pelo Nod
 
 ### Funcionalidades do ES6
 
-A [seção do ES6](/en/docs/es6/) descreve os três grupos de funcionalidade e detalha quais funcionalidades estão habilitadas por padrão no Node.js, incluindo links com explicações. Ela também mostra como encontrar qual versão do V8 está embarcada em conjunto com uma versão particular do Node.js.
+A [seção do ES6](/pt-br/docs/es6/) descreve os três grupos de funcionalidade e detalha quais funcionalidades estão habilitadas por padrão no Node.js, incluindo links com explicações. Ela também mostra como encontrar qual versão do V8 está embarcada em conjunto com uma versão particular do Node.js.
 
 ### Guias
 
-A [seção de Guias](/en/docs/guides/) têm uma longa lista de artigos densos sobre as funcionalidades técnicas e capacidades do Node.js.features and capabilities.
+A [seção de Guias](/pt-br/docs/guides/) têm uma longa lista de artigos densos sobre as funcionalidades técnicas e capacidades do Node.js.features and capabilities.
