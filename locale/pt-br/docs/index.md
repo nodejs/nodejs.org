@@ -41,4 +41,4 @@ A [seção do ES6](/pt-br/docs/es6/) descreve os três grupos de funcionalidade 
 
 ### Guias
 
-A [seção de Guias](/pt-br/docs/guides/) têm uma longa lista de artigos densos sobre as funcionalidades técnicas e capacidades do Node.js.features and capabilities.
+A [seção de Guias](/pt-br/docs/guides/) têm uma longa lista de artigos que detalham as funcionalidades técnicas e capacidades do Node.js.
