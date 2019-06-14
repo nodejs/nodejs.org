@@ -253,6 +253,16 @@ REQUIREMENTS
 - Organizer name - Dipesh Patel
 - Organizer contact info -
 
+#### Rajasthan
+
+##### Jaipur
+
+- [Meetup](https://www.meetup.com/JaipurJS-Developer-Meetup/)
+- Frequency of meetups - monthly
+- How to submit a talk? [Email ayushrawal12@gmail.com](mailto:ayushrawal12@gmail.com) or [reach out to me on LinkedIn](https://www.linkedin.com/in/ayush-rawal)
+- Organizer name - [Ayush Rawal](https://github.com/ayush-rawal)
+- Organizer contact info - [Email](mailto:ayushrawal12@gmail.com)
+
 ### Indonesia
 
 ##### Jakarta
