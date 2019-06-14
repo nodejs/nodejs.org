@@ -35,6 +35,13 @@ REQUIREMENTS
 - Organizer name - Agiri Abraham
 - Organizer contact info -
 
+### Armenia/Yerevan
+- [Meetup](https://www.facebook.com/nodejsarmenia/)
+- Frequency of meetups - quarterly
+- How to submit a talk? [Write in our Telegram chat](https://t.me/nodejsarmenia)
+- Organizer name - Node.js Armenian Community
+- Organizer contact info - nodejsarm@gmail.com
+
 ### Argentina
 
 #### Buenos Aires Province
