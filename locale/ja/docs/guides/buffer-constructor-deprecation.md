@@ -255,24 +255,24 @@ _Don't forget to drop the polyfill usage once you drop support for Node.js < 4.5
   このアプローチの欠点は、移行するためのコード変更 (たとえば、`Buffer.from()` を別の名前で使用しているような) が
   多少増えることです。
 
-- **[safe-buffer](https://www.npmjs.com/package/safe-buffer)** is also a drop-in replacement for
-  the entire `Buffer` API, but using `new Buffer()` will still work as before.
+- **[safe-buffer](https://www.npmjs.com/package/safe-buffer)** も `Buffer` API 全体の代わりになるドロップインですが、
+  `new Buffer()` を使用しても以前と同じように動作します。
 
-  A downside to this approach is that it will allow you to also use the older `new Buffer()` API
-  in your code, which is problematic since it can cause issues in your code, and will start
-  emitting runtime deprecation warnings starting with Node.js 10
-  ([read more here](https://github.com/chalker/safer-buffer#why-not-safe-buffer)).
+  このアプローチのマイナス面は、コード内で古い `new Buffer()` API を使用することも可能になることです。
+  これは、コード内で問題を引き起こす可能性があり、
+  Node.js 10 以降で実行時に非推奨の警告を発行し始めます 
+  ([詳細はこちらをご覧ください](https://github.com/chalker/safer-buffer#why-not-safe-buffer))。
 
-Note that in either case, it is important that you also remove all calls to the old `Buffer`
-API manually — just throwing in `safe-buffer` doesn't fix the problem by itself, it just provides
-a polyfill for the new API. I have seen people doing that mistake.
+どちらの場合も、古い `Buffer` API へのすべての呼び出しを手動で削除することも重要です。
+`safe-buffer` を投入しただけでは問題が解決するわけではなく、新しい API にポリフィルを提供するだけです。
+その間違いをしている人を見かけます。
 
-Enabling ESLint rule [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer-constructor)
-or
-[node/no-deprecated-api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md)
-is recommended.
+ESLint ルールの [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer-constructor)
+または
+[node/no-deprecated-api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) を有効にすることを
+お勧めします。
 
-_Don't forget to drop the polyfill usage once you drop support for Node.js < 4.5.0._
+_Node.js 4.5.0 以前のサポートを終了したら、必ず polyfill の使用をやめてください。_
 
 ## <!--variant-3-->Variant 3 — Manual detection, with safeguards
 
