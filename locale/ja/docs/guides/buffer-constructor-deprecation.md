@@ -450,9 +450,10 @@ version (and lacking type checks also adds DoS to the list of potential problems
 _Node.js のバージョンによっては、ゼロフィリングなしに `new Buffer()` を使用する場合も同様です
 (また、型チェックがないと、DoS が潜在的な問題のリストに追加されます)。_
 
-## <!--faq-->FAQ
+<!-- 
+## &lt;!--faq--&gt;FAQ
 
-### <!--design-flaws-->What is wrong with the `Buffer` constructor?
+### &lt;!--design-flaws--&gt;What is wrong with the `Buffer` constructor?
 
 The `Buffer` constructor could be used to create a buffer in many different ways:
 
@@ -505,8 +506,70 @@ When using `Buffer.from(req.body.string)` instead, passing a number will always
 throw an exception instead, giving a controlled behavior that can always be
 handled by the program.
 
-### <!--ecosystem-usage-->The `Buffer()` constructor has been deprecated for a while. Is this really an issue?
+### &lt;!--ecosystem-usage--&gt;The `Buffer()` constructor has been deprecated for a while. Is this really an issue?
 
 Surveys of code in the `npm` ecosystem have shown that the `Buffer()` constructor is still
 widely used. This includes new code, and overall usage of such code has actually been
 *increasing*.
+
+ -->
+## <!--faq-->FAQ
+
+### <!--design-flaws-->`Buffer` コンストラクタの何が問題になっていますか。
+
+`Buffer` コンストラクタは、さまざまな方法でバッファを作成するために使うことができます:
+
+- `new Buffer(42)` は 42 バイトの `Buffer` を作成します。
+  Node.js 8 以前は、このバッファにはパフォーマンス上の理由から*任意のメモリ*が含まれていました。
+  これには、プログラムのソースコードからパスワードや暗号化キーまで、さまざまなものが含まれます。
+- `new Buffer('abc')` は、文字列 `'abc'` の UTF-8 エンコードバージョンを含む `Buffer` を作成します。
+  2番目の引数は別のエンコーディングを指定できます。
+  たとえば、`new Buffer(string, 'base64')` を使用して、
+  Base64 文字列をそれが表す元のバイトシーケンスに変換できます。
+- 引数には他にもいくつかの組み合わせがあります。
+
+つまり、`var buffer = new Buffer(foo);`のようなコードでは、
+`foo` の型を知ることなしに、生成されたバッファの内容が正確に何であるかを知ることはできません。
+
+時々、`foo` の値は外部の情報源から来ます。
+たとえば、この関数は Web サーバ上のサービスとして公開され、UTF-8 文字列を Base64 形式に変換します:
+
+```js
+function stringToBase64(req, res) {
+  // リクエストボディは `{ string: 'foobar' }` のフォーマットを持つべきです。
+  const rawBytes = new Buffer(req.body.string);
+  const encoded = rawBytes.toString('base64');
+  res.end({ encoded });
+}
+```
+
+このコードは `req.body.string` の型を検証*しない*ことに注意してください:
+
+- `req.body.string` は文字列であることが期待されています。この場合、すべてうまくいきます。
+- `req.body.string` はリクエストを送信するクライアントによって制御されます。
+- `req.body.string` が *数値の* `50` の場合、 `rawBytes` は `50` バイトになります。
+  - Node.js 8 以前の場合、コンテンツは初期化されていませんでした。
+  - Node.js 8 以降の場合、コンテンツは値が `0` の `50` バイトになります。
+
+型チェックがないため、攻撃者は意図的にリクエストの一部として番号を送信する可能性があります。
+これを使用して、次のいずれかを実行する可能性があります:
+
+- 未初期化メモリを読み取ります。
+  これにより、パスワード、暗号化キー、その他の機密情報が**漏洩します**。(情報漏洩)
+- プログラムに大量のメモリーを割り当てさせます。
+  たとえば、`500000000` を入力値として指定した場合、各リクエストは 500MB のメモリを割り当てます。
+  これは、プログラムの利用可能なメモリを完全に使い果たしてクラッシュさせる、
+  または大幅に遅くするために使用できます。(サービス拒否)
+
+これらのシナリオは両方とも、
+実際の Web サーバのコンテキストでは深刻なセキュリティ問題と見なされています。
+
+代わりに `Buffer.from(req.body.string)` を使うと、
+数値を渡すと常に例外を投げ、
+常にプログラムによって処理されることができる制御された振る舞いを与えます。
+
+### <!--ecosystem-usage-->`Buffer()` コンストラクタはしばらくの間非推奨です。これは本当に問題なのでしょうか。
+
+`npm` エコシステムのコードを調査したところ、`Buffer()` コンストラクターはまだ広く使用されていることがわかりました。
+これには新しいコードも含まれ、
+そのようなコードの全体的な使用量は実際には*増え続けています*。
