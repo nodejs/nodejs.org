@@ -412,6 +412,7 @@ if (Buffer.alloc) {
 const buf = Buffer.alloc ? Buffer.alloc(number) : new Buffer(number).fill(0);
 ```
 
+<!-- 
 ## Regarding `Buffer.allocUnsafe()`
 
 Be extra cautious when using `Buffer.allocUnsafe()`:
@@ -429,6 +430,25 @@ leaking to the remote attacker.
 
 _Note that the same applies to `new Buffer()` usage without zero-filling, depending on the Node.js
 version (and lacking type checks also adds DoS to the list of potential problems)._
+
+ -->
+## `Buffer.allocUnsafe()` について
+
+`Buffer.allocUnsafe()` を使用するときは特に注意してください:
+ * 正当な理由がない場合は使用しないでください
+   * 例えば、おそらく小さなバッファのパフォーマンスの違いを見たことがない場合でしょう。
+     実際、それらは `Buffer.alloc()` でもっと速いかもしれません
+   * コードがホットコードパスにない場合 - おそらく違いに気付かないでしょう
+   * ゼロフィリングは潜在的なリスクを最小限に抑えることに留意してください
+ * 使用する場合は、決してバッファを部分的に満たした状態で返さないようにしてください
+   * 順番にそれを書いているならば - 常に実際に書かれた長さにそれを切り捨てます
+
+`Buffer.allocUnsafe()` で割り当てられたバッファの処理エラーは、
+コードの未定義の動作からリモートの攻撃者に漏洩する機密データ (ユーザ入力、パスワード、証明書) まで、
+さまざまな問題を引き起こす可能性があります。
+
+_Node.js のバージョンによっては、ゼロフィリングなしに `new Buffer()` を使用する場合も同様です
+(また、型チェックがないと、DoS が潜在的な問題のリストに追加されます)。_
 
 ## <!--faq-->FAQ
 
