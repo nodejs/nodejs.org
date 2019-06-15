@@ -274,7 +274,8 @@ ESLint ルールの [no-buffer-constructor](https://eslint.org/docs/rules/no-buf
 
 _Node.js 4.5.0 以前のサポートを終了したら、必ず polyfill の使用をやめてください。_
 
-## <!--variant-3-->Variant 3 — Manual detection, with safeguards
+<!-- 
+## &lt;!--variant-3--&gt;Variant 3 — Manual detection, with safeguards
 
 This is useful if you create `Buffer` instances in only a few places (e.g. one), or you have your own
 wrapper around them.
@@ -337,6 +338,75 @@ if (Buffer.alloc) {
 ```
 
 Otherwise (Node.js ≥ 0.12.x):
+
+```js
+const buf = Buffer.alloc ? Buffer.alloc(number) : new Buffer(number).fill(0);
+```
+
+ -->
+## <!--variant-3-->Variant 3 — セーフガード付きの手動検出
+
+これは、少数の場所 (たとえば1か所) だけで `Buffer` インスタンスを作成する場合、
+またはそれらの周りに独自のラッパーがある場合に便利です。
+
+### `Buffer(0)`
+
+空のバッファを作成するためのこの特別なケースは安全に `Buffer.concat([])` で置き換えることができます。
+これは Node.js 0.8.x までずっと同じ結果を返します。
+
+### `Buffer(notNumber)`
+
+使用前:
+
+```js
+const buf = new Buffer(notNumber, encoding);
+```
+
+使用後:
+
+```js
+let buf;
+if (Buffer.from && Buffer.from !== Uint8Array.from) {
+  buf = Buffer.from(notNumber, encoding);
+} else {
+  if (typeof notNumber === 'number') {
+    throw new Error('The "size" argument must be not of type number.');
+  }
+  buf = new Buffer(notNumber, encoding);
+}
+```
+
+`encoding` は任意です。
+
+`new Buffer()` の前の `typeof notNumber` は必須であり (`notNumber` 引数がハードコーディングされていない場合)、
+_`Buffer` コンストラクタの廃止が原因ではない_ ことに注意してください。
+`Buffer` コンストラクタが廃止されるのはそのためです。
+この型チェックに欠けているエコシステムパッケージは多くのセキュリティ問題を引き起こしました。
+悪意のあるユーザー入力が `Buffer(arg)` になって DoS からプロセスメモリから攻撃者への機密情報の漏洩に至る問題を引き起こすことです。
+
+`notNumber` 引数がハードコードされている場合 (例: リテラル  `"abc"` または `[0,1,2]`)、
+`typeof` チェックは省略できます。
+
+また、TypeScript を使用してもこの問題は解決されないことに注意してください。
+`TypeScript` で記述されたライブラリが JS から使用される場合、またはユーザ入力がそこで終わる場合、
+すべての型チェックは変換時のみであり、
+TS がコンパイルする実際の JS コードには存在しません。
+
+### `Buffer(number)`
+
+Node.js 0.10.x (およびそれ以下) をサポートする場合
+
+```js
+var buf;
+if (Buffer.alloc) {
+  buf = Buffer.alloc(number);
+} else {
+  buf = new Buffer(number);
+  buf.fill(0);
+}
+```
+
+そうでない場合 (Node.js 0.12.x 以降):
 
 ```js
 const buf = Buffer.alloc ? Buffer.alloc(number) : new Buffer(number).fill(0);
