@@ -4,11 +4,11 @@ título: Política de Marca Registrada
 ---
 # Política de Marca Registrada
 
-As marcas registradas do Node.js, marcas de serviço e marcas gráficas símbolos de
+As marcas registradas do Node.js, marcas de serviço e marcas gráficas são símbolos de
 qualidade, desempenho e facilidade de uso com as quais as pessoas se associaram
 ao software e projeto do Node.js. Para garantir que as marcas do Node.js continuem
 simbolizar essas qualidades, devemos assegurar que as marcas sejam usadas apenas de formas
-que não enganaem as pessoas ou fazem com que confundam o Node.js com outro software
+que não enganem as pessoas ou fazem com que confundam o Node.js com outro software
 de menor qualidade. Se não garantirmos que as marcas sejam usadas dessa maneira, não
 somente confundiram os usuários, pode impossibilitar o uso da marca para proteger
 contra pessoas que explorem maliciosamente a marca no futuro. O objetivo principal
