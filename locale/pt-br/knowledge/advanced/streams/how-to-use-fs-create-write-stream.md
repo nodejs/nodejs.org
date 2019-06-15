@@ -1,5 +1,5 @@
 ---
-title: Como usar fs.createWriteStream?
+title: Como usar o fs.createWriteStream?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - core
@@ -9,7 +9,7 @@ difficulty: 3
 layout: knowledge-post.hbs
 ---
 
-A função `fs.createWriteStream()` cria um fluxo corrente de uma maneira muito simples. Depois de chamar a função `fs.createWriteStream` com o caminho da pasta, voce tem um fluxo corrente. Os objetos de respostas (assim como a solicitação) são fluxos. Então vamos transmitir os dados `POST` para o arquivo `output`. Como o código é simples, é muito fácil lê-lo e comentar por que cada linha é necessária.
+A função `fs.createWriteStream()` cria um fluxo corrente de uma maneira muito simples. Depois de chamar a função `fs.createWriteStream` com o caminho da pasta, você tem um fluxo corrente. Os objetos de respostas (assim como a solicitação) são fluxos. Então vamos transmitir os dados `POST` para o arquivo `output`. Como o código é simples, é muito fácil lê-lo e comentar por que cada linha é necessária.
 
     var http = require('http');
     var fs = require('fs');
