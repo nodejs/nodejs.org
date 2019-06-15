@@ -20,6 +20,11 @@ FORMAT
 |                     Event Name                     |        Location         |      Date      |
 | :------------------------------------------------: | :---------------------: | :------------: |
 | [NodeConf Colombia](https://colombia.nodeconf.com) |   Medellin, Colombia    |   June 21-22   |
-|  [NodeConf EU](https://www.nodeconf.eu/2019.html)  | Lyrath Estate, Kilkenny | November 10-13 |
+|      [NodeConf EU](https://www.nodeconf.eu/)       | Lyrath Estate, Kilkenny | November 10-13 |
 |      [NodeSummit](https://www.nodesummit.com)      |      San Francisco      |      TBA       |
-|      [NodeUkraine](https://nodeukraine.org.ua)     |      Kyiv, Ukraine      |     May 18     |
+
+### 2020
+
+|                     Event Name                     |        Location         |      Date      |
+| :------------------------------------------------: | :---------------------: | :------------: |
+|    [NodeAtlanta](https://twitter.com/NodeAtlanta)  |      Atlanta, GA        |   Feb 17-21    |
