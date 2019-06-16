@@ -1,25 +1,42 @@
 ---
-title: ABI Stability
+title: Estabilidade ABI
 layout: docs.hbs
 ---
 
-# ABI Stability
+# Estabilidade ABI
 
-## Introduction
-An Application Binary Interface (ABI) is a way for programs to call functions
+## Introdução
+
+<!-- An Application Binary Interface (ABI) is a way for programs to call functions
 and use data structures from other compiled programs. It is the compiled version
 of an Application Programming Interface (API). In other words, the headers files
 describing the classes, functions, data structures, enumerations, and constants
 which enable an application to perform a desired task correspond by way of
 compilation to a set of addresses and expected parameter values and memory
-structure sizes and layouts with which the provider of the ABI was compiled.
+structure sizes and layouts with which the provider of the ABI was compiled. -->
 
-The application using the ABI must be compiled such that the available
+Uma Interface Binária de Aplicação (IBA, ou *Application Binary Interface (ABI)* em inglês)
+é uma forma que programas utilizam para chamar funções e utilizar estruturas de
+dados de outros programas compilados. É a versão compilada de uma Interface
+de Programação de Aplicações (API). Em outras palavras, os arquivos de
+cabeçalho que descrevem as classes, funções, estruturas, enumeradores
+e constante que permitem a aplicação performar uma tarefa desejada
+correspondem, a nível de compilação, a um conjunto de endereços, valores de
+parâmetros esperados, tamanhos de estruturas de memória e layouts com os quais
+o provedor da ABI foi compilado.
+
+<!-- The application using the ABI must be compiled such that the available
 addresses, expected parameter values, and memory structure sizes and layouts
 agree with those with which the ABI provider was compiled. This is usually
-accomplished by compiling against the headers provided by the ABI provider.
+accomplished by compiling against the headers provided by the ABI provider. -->
 
-Since the provider of the ABI and the user of the ABI may be compiled at
+A aplicação que está usando o ABI deve ser compilada de tal maneira que
+os endereços disponíveis, valores esperados de parâmetros, tamanhos de
+estruturas de memória e layouts concordem com aqueles com os quais o
+provedor da ABI foi compilado. Isto é normalmente feito compilando
+a aplicação utilizando os headers providos pelo provedor da ABI.
+
+<!-- Since the provider of the ABI and the user of the ABI may be compiled at
 different times with different versions of the compiler, a portion of the
 responsibility for ensuring ABI compatibility lies with the compiler. Different
 versions of the compiler, perhaps provided by different vendors, must all
@@ -27,7 +44,16 @@ produce the same ABI from a header file with a certain content, and must produce
 code for the application using the ABI that accesses the API described in a
 given header according to the conventions of the ABI resulting from the
 description in the header. Modern compilers have a fairly good track record of
-not breaking the ABI compatibility of the applications they compile.
+not breaking the ABI compatibility of the applications they compile. -->
+
+Já que o provedor da ABI e o usuário da ABI podem ser compilados em tempos
+diferentes e com versões diferentes do compilador, uma porção da responsabilidade
+de garantir a compatibilidade da ABI está no compilador. Diferentes versões
+do compilador, talvez providas por diferentes fornecedores, devem todas
+produzir a mesma ABI a partir de um arquivo de cabeçalho com um conteúdo
+determinado, e devem produzir código para a aplicação utilizando a ABI
+que acessa a API descrita em um dado cabeçalho de acordo com as convenções
+da ABI. Resultando
 
 The remaining responsibility for ensuring ABI compatibility lies with the team
 maintaining the header files which provide the API that results, upon
