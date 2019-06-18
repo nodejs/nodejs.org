@@ -166,77 +166,9 @@ info on these follows:
 * バージョンは Node にバンドルされており、`node inspect myscript.js`と一緒に使うことができます
 * 最新バージョンは独立してインストールすることもでき (例えば `npm install -g node-inspect`)、 `node-inspect myscript.js` と一緒に使うことができます
 
-<!-- 
-#### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
-
-* **Option 1**: Open `chrome://inspect` in a Chromium-based
-  browser. Click the Configure button and ensure your target host and port
-  are listed.
-* **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
-  (see above) or the --inspect hint text and paste into Chrome.
-
- -->
-#### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
-
-* **オプション 1**: Chromium ベースのブラウザで `chrome://inspect` を開きます。設定ボタンをクリックして、ターゲットホストとポートが表示されていることを確認します。
-* **オプション 2**: `/json/list`の出力 (上記を参照) または --inspect ヒントテキストから `devtoolsFrontendUrl` をコピーして Chrome に貼り付けます
-  
-<!-- 
-#### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
-
-* In the Debug panel, click the settings icon to open `.vscode/launch.json`.
-  Select "Node.js" for initial setup.
-
- -->
-#### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
-
-* デバッグパネルで、設定アイコンをクリックして `.vscode/launch.json` を開きます。初期設定は "Node.js" を選択してください
-
-<!-- 
-#### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
-
-* Choose "Debug > Start Debugging" from the menu or hit F5.
-* [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging).
-
- -->
-#### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
-
-* メニューから "デバッグ > デバッグの開始" を選択するか、F5 を押します
-* [詳しい説明](https://github.com/Microsoft/nodejstools/wiki/Debugging)
-
-<!-- 
-#### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ and other JetBrains IDEs
-
-* Create a new Node.js debug configuration and hit Debug. `--inspect` will be used
-  by default for Node.js 7+. To disable uncheck `js.debugger.node.use.inspect` in
-  the IDE Registry.
-
- -->
-#### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ と他の JetBrains IDE
-
-* 新しい Node.js デバッグ設定を作成して Debug をクリックします。Node.js 7 以降の場合、`--inspect` がデフォルトで使用されます。IDE レジストリで `js.debugger.node.use.inspect` のチェックを外します
-
-<!-- 
-#### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
-
-* Library to ease connections to Inspector Protocol endpoints.
-
- -->
 #### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 
 * Inspector Protocol エンドポイントへの接続を容易にするためのライブラリ
-
-<!-- 
-#### [Gitpod](https://www.gitpod.io)
-
-* Start a Node.js debug configuration from the `Debug` view or hit `F5`. [Detailed instructions](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
-
----
-
- -->
-#### [Gitpod](https://www.gitpod.io)
-
-* `Debug` ビュー から Node.js デバッグ設定を開始するか、`F5` を押します。[詳しい説明](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
 
 ---
 
@@ -404,7 +336,7 @@ $ ssh -L 9221:localhost:9229 user@remote.example.com
 
 This starts a ssh tunnel session where a connection to port 9221 on your local
 machine will be forwarded to port 9229 on remote.example.com. You can now attach
-a debugger such as Chrome DevTools or Visual Studio Code to localhost:9221,
+a debugger to localhost:9221,
 which should be able to debug as if the Node.js application was running locally.
 
 ---
@@ -484,20 +416,6 @@ Node の組み込みコマンドラインデバッガの下でスクリプトを
 `node debug script_name.js` を起動します。
 スクリプトは `--debug-brk` オプションで開始された別のノードプロセスで開始され、
 最初のノードプロセスは `_debugger.js` スクリプトを実行してターゲットに接続します。
-
-<!-- 
-#### [node-inspector](https://github.com/node-inspector/node-inspector)
-
-Debug your Node.js app with Chrome DevTools by using an intermediary process
-which translates the Inspector Protocol used in Chromium to the V8 Debugger
-protocol used in Node.js.
-
- -->
-#### [node-inspector](https://github.com/node-inspector/node-inspector)
-
-Chromium で使用されるインスペクタプロトコルを 
-Node.js で使用される V8 デバッガプロトコルに変換する中間プロセスを使用して、
-Chrome DevTools で Node.js アプリケーションをデバッグします。
 
 <!-- refs -->
 
