@@ -9,7 +9,7 @@ layout: knowledge-post.hbs
 
 Quando trabalhamos com a linha de comando, pode ser muito últil e divertido ter respostas coloridas. Para colorir a resposta do console você precisa usar códigos escape ANSI. O módulo [colors.js](https://www.npmjs.com/package/colors), disponível no `npm`, provê um pacote extremamente fácil de usar que torna a adição de cores na linha de comando bastante simples.
 
-Primro, instale-o no diretório ao qual você gostaria de trabalhar.
+Primeiro instale-o no diretório ao qual você gostaria de trabalhar.
 
 ```js
 cd mydir
@@ -39,9 +39,9 @@ console.log(stringThree.grey.bold)
 
 Há muitas coisas para tomar nota aqui - primeiro, o objeto _string_ foi prototipado, então qualquer cor pode ser adicionada simplesmente passando a propriedade para a _string_! Funciona em _string literals_, _template literals_ e em variáveis, como mostrado no topo do exemplo acima.
 
-Note também, a partir do segundo par de chamadas `console.log`, que, uma vez atrbuída, o valor da cor persiste como parte da _string_. Isto é porque, por debaixo dos panos a tag de cor ANSI apropriada foi anexada como necessário - Em qualquer lugar que a _string_ for passada onde códigos de cores ANSI forem suportadas, a cor irá permanecer.
+Note também, a partir do segundo par de chamadas `console.log` que, uma vez atrbuído, o valor da cor persiste como parte da _string_. Isto é porque, por debaixo dos panos, a tag de cor ANSI apropriada foi anexada como necessário - Em qualquer lugar que a _string_ for passada onde códigos de cores ANSI forem suportadas, a cor irá permanecer.
 
-O último par de chamadas `console.log` são provavelmente as mais importantes. Por causa da forma em que o `colors.js` e os códigos de cores ANSI funcionam, se mais de uma propriedade de cor é atribuída à _string_, **apenas a primeia propriedade passada terá efeito.** Isso ocorre porque as cores funcionam como "mudanças de estado", e não como _tags_.
+O último par de chamadas `console.log` é, provavelmente, o mais importante. Por causa da forma em que o `colors.js` e os códigos de cores ANSI funcionam, se mais de uma propriedade de cor é atribuída à _string_, **apenas a primeia propriedade passada terá efeito**. Isso ocorre porque as cores funcionam como "mudanças de estado", e não como _tags_.
 
 Vamos dar uma olhada em um exemplo mais explícito. Se você você passar as seguintes propriedades com `colors.js`:
 
@@ -76,7 +76,7 @@ console.log(colors.magenta.red(stringTwo))
 console.log(colors.bold.grey.black.blue(stringThree))
 ```
 
-**Nota**: A menos que esteja usando a aborgdem `String.prototype`, os métodos encadeados da instância de `colors` são executados da esquerda para a direita, ou seja, o método mais perto da _string_ é aplicado. Na última chamada `console.log` você pode pensar no seu terminal dizendo para si mesmo, "Faça isto cinza. Agora faça isto preto. Agora, faça azul. Sem mais cores, agora? É azul mesmo, então."
+**Nota**: A menos que esteja usando a aborgdem `String.prototype`, os métodos encadeados da instância de `colors` são executados da esquerda para a direita, ou seja, o método mais distante da _string_ é aplicado. Na última chamada `console.log` você pode pensar no seu terminal dizendo para si mesmo, "Faça isto cinza. Agora faça isto preto. Agora, faça azul. Sem mais cores, agora? É azul mesmo, então."
 
 Com a última versão de `colors.js` você pode definir **[Temas Personalizados](https://www.npmjs.com/package/colors#custom-themes)** no colors.js o que faz com que seu código seja mais robusto e permite melhor encapsulamento de dados. Um bom exemplo de caso de uso pode ser:
 
