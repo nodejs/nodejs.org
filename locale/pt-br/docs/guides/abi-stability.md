@@ -102,7 +102,7 @@ major sobre a qual o addon foi compilado.
 remains stable across multiple Node.js major versions. The motivation for
 creating such an API is as follows: -->
 Uma demanda para equipar o Node.js com uma API que resulta em uma ABI que permanece
-estável dentre multiplas versões major do Node.js acabou surgindo. A motivação para
+estável dentre múltiplas versões major do Node.js acabou surgindo. A motivação para
 criar tal API são as seguintes:
 
 <!-- * The JavaScript language has remained compatible with itself since its very
