@@ -214,7 +214,7 @@ forma que se tornasse incompatível com a ABI no futuro, ela ainda não foi sufi
 testada em produção para ser dada como correta e útil e, por conta disso, pode sofrer
 mudanças incompatíveis com a ABI antes de ser finalmente incorporada dentro da próxima
 versão da N-API. Isto é, uma versão experimental da N-API ainda não está coberta pela
-garantia de compatilibilidade com versões posteriores que comentamos anteriormente.
+garantia de compatibilidade com versões posteriores que comentamos anteriormente.
 
 [`node_api.h`]: https://github.com/nodejs/node/blob/master/src/node_api.h
 [`node_api_types.h`]: https://github.com/nodejs/node/blob/master/src/node_api_types.h
