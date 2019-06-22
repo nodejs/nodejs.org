@@ -8,7 +8,7 @@ layout: knowledge-post.hbs
 ---
 
 <!-- When working on the command line, it can be both fun and extremely useful to colorize one's output. To colorize console output, you need to use ANSI escape codes. The module [colors.js](https://www.npmjs.com/package/colors), available on `npm`, provides an extremely easy to use wrapper that makes adding colors a breeze. -->
-Quando trabalhamos com a linha de comando, pode ser muito últil e divertido ter respostas coloridas. Para colorir a resposta do console você precisa usar códigos escape ANSI. O módulo [colors.js](https://www.npmjs.com/package/colors), disponível no `npm`, provê um pacote extremamente fácil de usar que torna a adição de cores na linha de comando bastante simples.
+Quando trabalhamos com a linha de comando, pode ser muito útil e divertido ter respostas coloridas. Para colorir a resposta do console você precisa usar códigos de escape ANSI. O módulo [colors.js](https://www.npmjs.com/package/colors), disponível no `npm`, provê um pacote extremamente fácil de usar que torna a adição de cores na linha de comando bastante simples.
 
 <!-- First, install it to the directory you'd like to work in. -->
 Primeiro instale-o no diretório ao qual você gostaria de trabalhar.
@@ -43,10 +43,10 @@ console.log(stringThree.grey.bold)
 Há muitas coisas para tomar nota aqui - primeiro, o objeto _string_ foi prototipado, então qualquer cor pode ser adicionada simplesmente passando a propriedade para a _string_! Funciona em _string literals_, _template literals_ e em variáveis, como mostrado no topo do exemplo acima.
 
 <!-- Notice, also, from the second pair of `console.log` statements, that once set, a color value persists as part of the string.  This is because under the hood, the proper ANSI color tags have been prepended and appended as necessary - anywhere the string gets passed where ANSI color codes are also supported, the color will remain. -->
-Note também, a partir do segundo par de chamadas `console.log` que, uma vez atrbuído, o valor da cor persiste como parte da _string_. Isto é porque, por debaixo dos panos, a tag de cor ANSI apropriada foi anexada como necessário - Em qualquer lugar que a _string_ for passada onde códigos de cores ANSI forem suportadas, a cor irá permanecer.
+Note também, a partir do segundo par de chamadas `console.log` que, uma vez atribuído, o valor da cor persiste como parte da _string_. Isto é porque, por debaixo dos panos, a tag de cor ANSI apropriada foi anexada como necessário - Em qualquer lugar que a _string_ for passada onde códigos de cores ANSI forem suportadas, a cor irá permanecer.
 
 <!-- The last pair of `console.log` statements are probably the most important.  Because of the way `colors.js` and ANSI color codes work, if more than one color property is set on a string, **only the first color property to be set on the string takes effect.**  This is because the colors function as 'state shifts' rather than as tags. -->
-O último par de chamadas `console.log` é, provavelmente, o mais importante. Por causa da forma em que o `colors.js` e os códigos de cores ANSI funcionam, se mais de uma propriedade de cor é atribuída à _string_, **apenas a primeia propriedade passada terá efeito**. Isso ocorre porque as cores funcionam como "mudanças de estado", e não como _tags_.
+O último par de chamadas `console.log` é, provavelmente, o mais importante. Por causa da forma em que o `colors.js` e os códigos de cores ANSI funcionam, se mais de uma propriedade de cor é atribuída à _string_, **apenas a primeira propriedade passada terá efeito**. Isso ocorre porque as cores funcionam como "mudanças de estado", e não como _tags_.
 
 <!-- Let's look at a more explicit example.  If you set the following properties with `colors.js`: -->
 Vamos dar uma olhada em um exemplo mais explícito. Se você você passar as seguintes propriedades com `colors.js`:
