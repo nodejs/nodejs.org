@@ -109,6 +109,18 @@ If anyone is reported as malicious or making others feel uncomfortable, they may
 - [Github](https://github.com/thenativeweb)
 - Topics – Node.js, JavaScript, Docker, Kubernetes, CQRS, event-sourcing, DDD
 
+### India IN
+
+#### Telangana, Hyderabad
+
+##### Bhanu Chella
+
+- [Twitter](https://twitter.com/bhanuchellas)
+- [Personal Website](http://www.bhanuchella.me)
+- [Linkedin](https://www.linkedin.com/in/bhanu-prakash-5b293992)
+- [Github](https://github.com/bhanurpl)
+- Topics - Node.js, Java Script, Ionic, Hybrid/Cordova, Angular, React, Python, AWS etc
+
 ### Israel 🇮🇱
 
 #### Tel Aviv
