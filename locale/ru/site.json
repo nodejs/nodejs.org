@@ -135,10 +135,6 @@
     "node-events": {
       "link": "get-involved/node-events",
       "text": "Мероприятия Node.js"
-    },
-    "node-speakers": {
-      "link": "get-involved/node-speakers",
-      "text": "Докладчики Node.js"
     }
   },
   "security": {
