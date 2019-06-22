@@ -4,7 +4,7 @@ layout: docs.hbs
 ---
 # ECMAScript 2015 (ES6) 以及未来展望
 
-Node.js 不是为 [V8](https://v8.dev/) 引擎构建的。为了与此引擎保持实时更新，我们确保来源于 [JavaScript ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm) 的新功将被及时地给予 Node.js 开发者们，同时继续包含性能以及稳定性上的更新。
+Node.js 是针对 [V8](https://v8.dev/) 引擎构建的。为了与此引擎保持实时更新，我们确保来源于 [JavaScript ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm) 的新功将被及时地给予 Node.js 开发者们，同时继续包含性能以及稳定性上的更新。
 
 所有的 ECMAScript 2015 (ES6) 功能将被分为三个部分 **shipping**，**staged** 和 **in progress**：
 

@@ -174,16 +174,12 @@ info on these follows:
   are listed.
 * **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
   (see above) or the --inspect hint text and paste into Chrome.
-* **Option 3**: Install the Chrome Extension NIM (Node Inspector Manager):  
-  https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 
  -->
 #### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
 
 * **オプション 1**: Chromium ベースのブラウザで `chrome://inspect` を開きます。設定ボタンをクリックして、ターゲットホストとポートが表示されていることを確認します。
 * **オプション 2**: `/json/list`の出力 (上記を参照) または --inspect ヒントテキストから `devtoolsFrontendUrl` をコピーして Chrome に貼り付けます
-* **オプション 3**: Chrome Extension NIM (ノードインスペクタマネージャ) をインストールします:   
-  https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
   
 <!-- 
 #### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
