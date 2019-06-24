@@ -26,8 +26,8 @@ Objeto.
 ## Codificação e Decodificação
 
 O JavaScript fornece 2 métodos. Um para codificar estrutura de dados para JSON
-e o outro para decodificar json para objetos e arrays javascript.
-Eles são ambos disponíveis no objeto `JSON` que está disponível no escopo
+e o outro para decodificar JSON para objetos e arrays javascript.
+Ambos estão disponíveis no objeto `JSON` que existe no escopo
 global.
 
 `JSON.stringify` recebe um objeto ou um array javascript e retorna uma string
@@ -44,7 +44,7 @@ const jsonStr = JSON.stringify(dados);
 
 console.log(jsonStr);
 
-// imprimi '{"nome":"John Doe","idade":32,"titulo":"Vice Presidente do JavaScript"}'
+// imprime '{"nome":"John Doe","idade":32,"titulo":"Vice Presidente do JavaScript"}'
 ```
 
 `JSON.parse` recebe uma string JSON e decodifica para um dado javascript
@@ -123,12 +123,12 @@ Esses são todos os exemplos de um JSON no formato incorreto.
 
 Chamar `JSON.parse` com uma string JSON inválida resultará em uma exceção
 SyntaxError. Se você não tem certeza que seu dado JSON é válido,
-você pode anticipar os erros encapsulando a chamada em um block try/catch.
+você pode antecipar os erros encapsulando a chamada em um bloco try/catch.
 
 Observe que os únicos valores complexos permitidos em JSON são objetos e
 arrays. Funções, datas e outros tipos são excluídos. Isso pode não
-parece fazer sentido no começo. Mas lembre-se que o JSON é um formato de dados,
-não é um formato para transferir objetos javascript complexos junto com
+parecer fazer sentido no começo. Mas lembre-se que o JSON é um formato de dados,
+não um formato para transferir objetos javascript complexos junto com
 sua funcionalidade.
 
 ## Validadores JSON
@@ -139,7 +139,7 @@ Como o JSON se tornou o formato de dados mais amplamente usado, com regras bem d
 
 * **Pacotes npm**: Se você estiver trabalhando com uma equipe e quiser que um validador JSON seja incluído em seu projeto ou simplesmente goste de automatizar a validação em seu fluxo de trabalho, a grande coleção de pacotes npm estará à sua disposição. Por exemplo: [jsonlint](https://www.npmjs.com/package/jsonlint) é uma versão em JavaScript puro do serviço fornecido em `jsonlint.com`.
 
-- **Plugins para IDEs/editores**: Existem muitos plugins/extensões disponíveis para a maioria dos IDEs/editores que validam o JSON para você. Alguns editores como o `VS Code` vêm com JSON IntelliSense e Validação pronto para uso.
+- **Plugins para IDEs/editores**: Existem muitos plugins/extensões disponíveis para a maioria dos IDEs/editores que validam o JSON para você. Alguns editores como o `VS Code` vêm com JSON intelliSense e validação pronto para uso.
 
 ## JSON em outras linguagens
 
@@ -154,5 +154,5 @@ require 'json'
 dado = { :um => 1 }
 puts dado.to_json
 
-# imprimi "{ \"um\": 1 }"
+# imprime "{ \"um\": 1 }"
 ```
