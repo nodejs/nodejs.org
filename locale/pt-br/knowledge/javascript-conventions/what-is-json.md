@@ -11,7 +11,7 @@ layout: knowledge-post.hbs
 ---
 
 JavaScript Object Notation ou JSON, é um formato de dados leve que tornou-se
-o padrão de fato para a web. JSON pode ser representado como uma lista de
+o padrão para a web. JSON pode ser representado como uma lista de
 valores, ex: um Array, ou um hash de propriedades e valores, ex: um
 Objeto.
 
