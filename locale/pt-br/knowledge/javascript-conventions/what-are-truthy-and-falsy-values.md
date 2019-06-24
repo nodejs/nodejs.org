@@ -14,7 +14,7 @@ layout: knowledge-post.hbs
 <!-- JavaScript is weakly typed language. That means different types can be
 used in operations and the language will try to convert the types
 until the operation makes sense. -->
-JavaScript é uma linguagem fracamente tipada. Isso significa que diferentes tipos podem ser usados em operações e a linguagem tentará converter os tipos até que a operação faça sentido.
+JavaScript é uma linguagem fracamente tipada. Isso significa que diferentes tipos podem ser usados em operações e a linguagem tentará converter estes tipos até que a operação faça sentido.
 
 
 ```js
