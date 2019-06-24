@@ -54,7 +54,7 @@ Note that all objects and arrays are truthy, even empty ones.
 
 Truthiness and Falsiness also come into play with logical
 operators. When using logical AND/OR, the values will be converted
-based on truthiness or falseness and then the expression will resolve
+based on truthiness or falsiness and then the expression will resolve
 to the last truthy value. Short circuit rules apply. Here's an
 extended example.
 
