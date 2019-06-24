@@ -55,7 +55,7 @@ NaN
 ```
     
 <!-- Note that all objects and arrays are truthy, even empty ones. -->
-Note que todas os objetos e arrays são truthy, ainda que sejam vazios.
+Note que todos os objetos e arrays são truthy, ainda que sejam vazios.
 
 <!-- Truthiness and Falsiness also come into play with logical
 operators. When using logical AND/OR, the values will be converted
