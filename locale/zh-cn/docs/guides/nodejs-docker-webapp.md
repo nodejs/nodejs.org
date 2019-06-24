@@ -112,7 +112,7 @@ EXPOSE 8080
 最后但同样重要的事是，使用定义运行时的 `CMD` 定义命令来运行应用程序。这里我们使用最简单的 `npm start` 命令，它将运行 `node server.js` 启动你的服务器：
 
 ```docker
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
 你的 `Dockerfile` 现在看上去是这个样子：
@@ -136,7 +136,7 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
 ## .dockerignore 文件

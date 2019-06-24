@@ -273,11 +273,10 @@ EXPOSE 8080
 
 <!--
 Last but not least, define the command to run your app using `CMD` which defines
-your runtime. Here we will use the basic `npm start` which will run
-`node server.js` to start your server:
+your runtime. Here we will use `node server.js` to start your server:
 
 ```docker
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
 Your `Dockerfile` should now look like this:
@@ -301,7 +300,7 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 -->
 
@@ -309,7 +308,7 @@ CMD [ "npm", "start" ]
 여기서는 서버를 구동하도록 `node server.js`을 실행하는 기본 `npm start`을 사용할 것입니다.
 
 ```docker
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
 `Dockerfile`은 다음과 같아야 합니다.
@@ -333,7 +332,7 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
 <!--
