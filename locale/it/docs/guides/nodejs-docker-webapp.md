@@ -82,11 +82,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `8` of `node`
+Here we will use the latest LTS (long term support) version `10` of `node`
 available from the [Docker Hub](https://hub.docker.com/):
 
 ```docker
-FROM node:8
+FROM node:10
 ```
 
 Next we create a directory to hold the application code inside the image, this
@@ -144,7 +144,7 @@ CMD [ "npm", "start" ]
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:8
+FROM node:10
 
 # Create app directory
 WORKDIR /usr/src/app
