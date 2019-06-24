@@ -62,7 +62,7 @@ operators. When using logical AND/OR, the values will be converted
 based on truthiness or falseness and then the expression will resolve
 to the last truthy value. Short circuit rules apply. Here's an
 extended example. -->
-Truthiness e Falsiness também entram em jogo com operadores lógicos. Quando usamos operadores lógicos AND/OR, os valores serão convertidos com base em truthiness ou falseness e, em seguida, a expressão será resolvida para o último valor do truthy. Regras de curto-circuito se aplicam. Aqui está um breve exemplo.
+Truthiness e Falsiness também entram em jogo com operadores lógicos. Quando usamos operadores lógicos AND/OR, os valores serão convertidos com base em truthiness ou falsiness e, em seguida, a expressão será resolvida para o último valor truthy. Regras de curto-circuito se aplicam. Aqui está um breve exemplo.
 
 ```js
 let first = "truthy",
