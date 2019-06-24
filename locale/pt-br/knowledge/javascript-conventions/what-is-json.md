@@ -25,7 +25,7 @@ Objeto.
 
 ## Codificação e Decodificação
 
-O JavaScript fornece 2 métodos, um para codificar estrutura de dados para json
+O JavaScript fornece 2 métodos. Um para codificar estrutura de dados para JSON
 e o outro para decodificar json para objetos e arrays javascript.
 Eles são ambos disponíveis no objeto `JSON` que está disponível no escopo
 global.
