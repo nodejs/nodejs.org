@@ -23,5 +23,15 @@
       </ul>
     </nav>
 
+    <div class="lang-picker">
+      <ul>
+        {{#each locales}}
+          <li>
+            <a href="/{{locale}}/">{{language}}</a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+
   </div>
 </header>

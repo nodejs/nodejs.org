@@ -1,6 +1,7 @@
 header
   background-color $node-gray
   text-align center
+  position relative
 
   > .container
     overflow visible
@@ -23,6 +24,19 @@ header
     a:hover
       background-color transparent
       text-decoration underline
+  
+  .lang-picker
+    position absolute
+    right 0
+    top 100%
+    height 100%
+    overflow auto
+    background $node-gray
+    list-style none
+
+    > ul
+      padding 0
+      margin 0
 
 // Special format for external 'Foundation' link in main navigation
 .nav-foundation
