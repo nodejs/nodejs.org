@@ -3,6 +3,7 @@
   "author": "Node.js Foundation",
   "url": "https://nodejs.org/ru/",
   "locale": "ru",
+  "language": "Русский",
   "scrollToTop": "Вверх",
   "reportNodeIssue": "Проблемы с Node.js",
   "reportWebsiteIssue": "Проблемы с сайтом",

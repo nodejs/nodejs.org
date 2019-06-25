@@ -3,6 +3,7 @@
   "author": "Node.js Foundation",
   "url": "https://nodejs.org/pt-br/",
   "locale": "pt-br",
+  "language": "Português do Brasil",
   "scrollToTop": "Retorne ao começo",
   "reportNodeIssue": "Reporte um problema do Node.js",
   "reportWebsiteIssue": "Reporte um problema do Website",
