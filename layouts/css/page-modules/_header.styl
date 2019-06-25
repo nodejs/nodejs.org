@@ -25,14 +25,30 @@ header
       background-color transparent
       text-decoration underline
   
+  #lang-picker-toggler
+    position absolute
+    right 0
+    bottom 0
+    height 20%
+    fill $light-gray2
+    cursor pointer
+    padding 12px
+
   .lang-picker
     position absolute
     right 0
     top 100%
-    height 100%
+    min-height 100%
+    max-height 200%
     overflow auto
     background $node-gray
     list-style none
+
+    &.hidden
+      display none
+
+    a
+      color $light-gray2
 
     > ul
       padding 0
@@ -90,6 +106,11 @@ header
     a,
     a:link,
     a:active
+      padding 0
+
+    #lang-picker-toggler
+      position relative
+      height 1.5em
       padding 0
 
 #logo
