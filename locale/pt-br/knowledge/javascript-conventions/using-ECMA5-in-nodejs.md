@@ -11,11 +11,11 @@ layout: knowledge-post.hbs
 
 <!-- When developing in the browser there are many wonderful built in JavaScript functions that we can't use because certain browsers don't implement them.  As a result, most developers never use them.  In Node, however we can assume that everyone has the same JavaScript implementation and as such can use these wonderful functions and not implement them over and over in our own libraries. -->
 
-Ao desenvolver no navegador, há muitas funções maravilhosas construídas em JavaScript que não podemos usar, porque certos navegadores não as implementam. Como resultado, a maioria dos desenvolvedores nunca os usa. No Node, no entanto, podemos assumir que todos têm a mesma implementação de JavaScript e, como tal, podem usar essas funções maravilhosas e não implementá-las repetidamente em nossas próprias bibliotecas.
+Ao desenvolver no navegador, há muitas funções maravilhosas construídas em JavaScript que não podemos usar, porque certos navegadores não as implementam. Como resultado, a maioria dos desenvolvedores nunca as usa. No Node, no entanto, podemos assumir que todos têm a mesma implementação de JavaScript e, como tal, podem usar essas funções maravilhosas e não implementá-las repetidamente em nossas próprias bibliotecas.
 
 <!-- The following is a list of some interesting api bits that aren't considered safe to use in a web setting but are built in to node's V8 engine. -->
 
-A seguir está uma lista de alguns pedaços interessantes da API que não são considerados seguros para uso em uma configuração da Web, mas que são incorporados ao mecanismo V8 do node.
+A seguir está uma lista de alguns partes interessantes da API que não são considerados seguros para uso em uma configuração da Web, mas que são incorporados ao mecanismo V8 do node.
 
 <!-- Note that V8 implements all of ECMA 3rd edition and parts of the new stuff in the [ECMA 5th edition](http://www.ecma-international.org/publications/standards/Ecma-262.htm) -->
 
@@ -99,8 +99,10 @@ Observe que o V8 implementa toda a terceira edição do ECMA e partes do novo ma
   <!-- - `Object.isExtensible(obj)` - Checks if Object.preventExtensions() has been called on this object. -->
 - `Object.isExtensible(obj)` - Verifica se Object.preventExtensions() foi chamado neste objeto.
   <!-- - `Object.seal(obj)` - Prevents code from adding or deleting properties, or changing the descriptors of any property on an object. Property values can be changed however. -->
-- `Object.seal(obj)` - Impede que o código adicione ou exclua propriedades ou altere os descritores de qualquer propriedade em um objeto. Valores de propriedade podem ser alterados no entanto.
+- `Object.seal(obj)` - Impede que o código adicione ou exclua propriedades ou altere os descritores de qualquer propriedade em um objeto. No entanto, valores de propriedade podem ser alterados.
+
   <!-- - `Object.isSealed(obj)` - Checks if Object.seal() has been called on this object. -->
+
 - `Object.isSealed(obj)` - Verifica se Object.seal() foi chamado neste objeto.
   <!-- - `Object.freeze(obj)` - Same as Object.seal, except property values cannot be changed. -->
 - `Object.freeze(obj)` - O mesmo que Object.seal, exceto que os valores da propriedade não podem ser alterados.
