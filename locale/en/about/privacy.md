@@ -20,7 +20,7 @@ Unless specifically indicated within a Site, the Sites are not intended for mino
 ## Information About Users that the Foundation Collects
 On the Sites, users may order products or services, and register to receive materials. Information collected on the Sites includes community forum content, diaries, profiles, photographs, names, unique identifiers (e.g., social media handles or usernames), contact and billing information (e.g., email address, postal address, telephone, fax), and transaction information. In order to access certain personalized services on the Sites, you may be asked to also create and store a username and password for an account from the Foundation.
 
-In order to tailor the Foundation’s subsequent communications to users and continuously improve the Sites’ products and services, the Foundation may also ask users to provide information regarding their interests, demographics, experience and detailed contact preferences. the Foundation and third party advertising companies may track information concerning a user’s use of the Sites, such as a user’s IP address.
+In order to tailor the Foundation’s subsequent communications to users and continuously improve the Sites’ products and services, the Foundation may also ask users to provide information regarding their interests, demographics, experience and detailed contact preferences. The Foundation and third party advertising companies may track information concerning a user’s use of the Sites, such as a user’s IP address.
 
 ## How the Foundation Uses the Information Collected
 The Foundation may use collected information for any lawful purpose related to the Foundation’s business, including, but not limited to:

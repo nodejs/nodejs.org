@@ -15,6 +15,7 @@ title: 패키지 매니저로 Node.js 설치하기
 * [Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora and Snap packages](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
 * [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
+* [IBM i](#ibm-i)
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
 * [OpenBSD](#openbsd)
@@ -40,6 +41,7 @@ title: 패키지 매니저로 Node.js 설치하기
 * [데비안과 우분투 기반 리눅스 배포판. 엔터프라이즈 리눅스/페도라와 Snap 패키지](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
 * [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
+* [IBM i](#ibm-i)
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
 * [OpenBSD](#openbsd)
@@ -155,6 +157,33 @@ emerge nodejs
 ```
 
 <!--
+## IBM i
+
+LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](http://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs8`, `nodejs10`, `nodejs12`, etc)
+
+To install Node.js 12.x from the command line, run the following as a user with \*ALLOBJ special authority:
+
+```bash
+yum install nodejs12
+```
+
+Node.js can also be installed with the IBM i Access Client Solutions product. See [this support document](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) for more details
+-->
+## IBM i
+
+IBM에서 ['yum' 패키지 매니저](http://ibm.biz/ibmi-rpms)를 통해 Node.js의 LTS 버전을 사용할 수 있습니다.
+패키지 이름은 `nodejs` 뒤에 주 버전 숫자를 붙이면 됩니다(`nodejs8`, `nodejs10`, `nodejs12` 등).
+
+커맨드 라인에서 Node.js 12.x를 설치하려면 \*ALLOBJ 특수 권한을 가진 사용자로 다음 명령을 실행하세요.
+
+```bash
+yum install nodejs12
+```
+
+IBM i Access Client 솔루션 제품을 통해 Node.js를 설치할 수도 있습니다.
+자세한 사항은 [지원 문서](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619)를 참조하세요.
+
+<!--
 ## NetBSD
 
 Node.js is available in the pkgsrc tree:
@@ -171,7 +200,7 @@ pkgin -y install nodejs
 -->
 ## NetBSD
 
-pkgsrc에서 Node.js를 설치할 수 있습니다
+pkgsrc에서 Node.js를 설치할 수 있습니다.
 
 ```bash
 cd /usr/pkgsrc/lang/nodejs && make install
@@ -277,6 +306,7 @@ Node.js is available in the main repositories under the following packages:
 * **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
 * **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`
   (The "Web and Scripting Module" must be [added before installing](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).)
+
 For example, to install Node.js 4.x on openSUSE Leap 42.2, run the following as root:
 
 ```bash
@@ -284,7 +314,7 @@ zypper install nodejs4
 ```
 -->
 
-## <!--opensuse-and-sle-->openSUSE 와 SLE
+## <!--opensuse-and-sle-->openSUSE와 SLE
 
 다음 패키지 아래 주 저장소에서 Node.js를 사용할 수 있습니다.
 
@@ -398,7 +428,7 @@ Or build manually from pkgsrc:
 cd pkgsrc/lang/nodejs && bmake install
 ```
 -->
-## <!--smartos-and-illumos-->SmartOS 와 illumoss
+## <!--smartos-and-illumos-->SmartOS와 illumoss
 
 SmartOS 이미지에는 미리 설치된 pkgsrc가 포함되어 있습니다. illumos 배포판에서는 먼저
 **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**를 설치하고 평소처럼

@@ -11,7 +11,7 @@ title: Logos y Gráficos
  Las pautas para la visualización de la marca Node.js se describen en
  las [Pautas Visuales](/static/documents/foundation-visual-guidelines.pdf).
 
-<table border="0" cellspacing="0" cellpadding="10" class="logos">
+<table border="0" cellspacing="0" cellpadding="20" class="logos">
   <tr>
     <td bgcolor="#FFFFFF"><a href="/static/images/logos/nodejs-new-pantone-black.ai"><img src="/static/images/logos/nodejs-new-pantone-black.png" alt="Node.js sobre fondo claro"></a></td>
     <td bgcolor="#333333"><a href="/static/images/logos/nodejs-new-pantone-white.ai"><img src="/static/images/logos/nodejs-new-pantone-white.png" alt="Node.js sobre fondo oscuro"></a></td>

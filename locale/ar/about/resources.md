@@ -10,7 +10,7 @@ title: الشعارات والرسومات
 
 الإرشادات من أجل العرض المرئي لعلامة Node.js موضحة في [القواعد العرض الإرشادية](/static/documents/foundation-visual-guidelines.pdf).
 
-<table border="0" cellspacing="0" cellpadding="10" class="logos">
+<table border="0" cellspacing="0" cellpadding="20" class="logos">
   <tr>
     <td bgcolor="#FFFFFF"><a href="/static/images/logos/nodejs-new-pantone-black.ai"><img src="/static/images/logos/nodejs-new-pantone-black.png" alt="Node.js on light background"></a></td>
     <td bgcolor="#333333"><a href="/static/images/logos/nodejs-new-pantone-white.ai"><img src="/static/images/logos/nodejs-new-pantone-white.png" alt="Node.js on dark background"></a></td>

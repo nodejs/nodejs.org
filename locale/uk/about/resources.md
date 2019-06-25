@@ -11,7 +11,7 @@ title: Лого та графіка
 Правила візуального оформлення позначень Node.js описані у
 [Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
 
-<table border="0" cellspacing="0" cellpadding="10" class="logos">
+<table border="0" cellspacing="0" cellpadding="20" class="logos">
   <tr>
     <td bgcolor="#FFFFFF"><a href="/static/images/logos/nodejs-new-pantone-black.ai"><img src="/static/images/logos/nodejs-new-pantone-black.png" alt="Node.js на світлому фоні"></a></td>
     <td bgcolor="#333333"><a href="/static/images/logos/nodejs-new-pantone-white.ai"><img src="/static/images/logos/nodejs-new-pantone-white.png" alt="Node.js на темному фоні"></a></td>
