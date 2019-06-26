@@ -31,7 +31,10 @@
     <div class="lang-picker hidden">
       <ul>
         {{#each locales}}
-          <li data-lang="{{locale}}">
+          <li
+            data-lang="{{locale}}"
+            title="{{languageEnglishVersion}}"
+          >
             {{language}}
           </li>
         {{/each}}

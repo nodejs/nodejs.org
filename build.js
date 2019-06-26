@@ -54,11 +54,11 @@ function i18nJSON (lang) {
 }
 
 // This function imports language file for each given locale in array 'localesList'
-// and based on it generating locales data, which includes full language name, locale and link
+// and based on it generating locales data, which includes full language name, english language name, locale and link
 function generateLocalesData (localesList) {
   return localesList.map(localeEl => {
-    const { language, locale, url } = require(`./locale/${localeEl}/site.json`)
-    return { language, locale, url }
+    const { language, languageEnglishVersion, locale, url } = require(`./locale/${localeEl}/site.json`)
+    return { language, locale, url, languageEnglishVersion }
   })
 }
 
@@ -323,7 +323,7 @@ function fullBuild (opts) {
       const filteredLocales = locales.filter(file => junk.not(file) && (selectedLocales ? selectedLocales.includes(file) : true))
       const localesData = generateLocalesData(filteredLocales)
       filteredLocales.forEach((locale) => {
-        buildLocale(source, locale, { preserveLocale, localesData: localesData })
+        buildLocale(source, locale, { preserveLocale, localesData })
       })
     })
   })
