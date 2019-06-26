@@ -42,7 +42,6 @@ header
     max-height 200%
     overflow auto
     background $node-gray
-    list-style none
 
     &.hidden
       display none
@@ -53,6 +52,18 @@ header
     > ul
       padding 0
       margin 0
+
+      > li
+        padding 0.3em 0
+        text-transform uppercase
+        font-size 14px
+        color $light-gray2 !important
+        cursor pointer
+        list-style none
+
+        &:hover
+          background-color $node-green
+          text-decoration underline
 
 // Special format for external 'Foundation' link in main navigation
 .nav-foundation
