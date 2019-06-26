@@ -1,51 +1,73 @@
 ---
-title: Overview of Blocking vs Non-Blocking
+title: Visão geral sobre operações bloqueantes e não bloqueantes
 layout: docs.hbs
 ---
 
-# Overview of Blocking vs Non-Blocking
+<!-- # Overview of Blocking vs Non-Blocking -->
+# Visão geral sobre operações bloqueantes e não-bloqueantes
 
-This overview covers the difference between **blocking** and **non-blocking**
+<!-- This overview covers the **difference** between **blocking** and **non-blocking**
 calls in Node.js. This overview will refer to the event loop and libuv but no
 prior knowledge of those topics is required. Readers are assumed to have a
 basic understanding of the JavaScript language and Node.js [callback pattern](https://nodejs.org/en/knowledge/getting-started/control-flow/what-are-callbacks/).
 
 > "I/O" refers primarily to interaction with the system's disk and
-> network supported by [libuv](http://libuv.org/).
+> network supported by [libuv](http://libuv.org/). -->
+Esta visão geral cobre as **diferenças** entre chamadas **bloqueantes** e **não-bloqueantes** no Node.js.
+Vamos nos referir ao event loop e à libuv, mas não é necessário nenhum conhecimento prévio sobre
+estes tópicos. É esperado que o leitor tenha um conhecimento básico de [padrões de callback](https://nodejs.org/en/knowledge/getting-started/control-flow/what-are-callbacks/) no Javascript e Node.js.
 
+> "I/O" se refere, principalmente, à interação com o disco do sistema
+> e a rede suportada pela [libuv](http://libuv.org).
 
-## Blocking
+<!-- ## Blocking -->
+## Chamadas bloqueantes
 
-**Blocking** is when the execution of additional JavaScript in the Node.js
+<!-- **Blocking** is when the execution of additional JavaScript in the Node.js
 process must wait until a non-JavaScript operation completes. This happens
 because the event loop is unable to continue running JavaScript while a
-**blocking** operation is occurring.
+**blocking** operation is occurring. -->
+Ser **bloqueante** é quando a execução do código do resto do código Javascript no processo
+do Node.js precisa esperar até que uma operação não-Javascript seja completada. Isso acontece
+porque o event loop é incapaz de continuar executando Javascript enquanto uma operação
+**bloqueante** está sendo executada.
 
-In Node.js, JavaScript that exhibits poor performance due to being CPU intensive
+<!-- In Node.js, JavaScript that exhibits poor performance due to being CPU intensive
 rather than waiting on a non-JavaScript operation, such as I/O, isn't typically
 referred to as **blocking**. Synchronous methods in the Node.js standard library
 that use libuv are the most commonly used **blocking** operations. Native
-modules may also have **blocking** methods.
+modules may also have **blocking** methods. -->
+No Node.js, Javascript que mostra uma performance ruim devido ao fato de que é um
+processo que usa CPU intensivamente ao invés de esperar uma operação não-Javascript,
+como I/O, não é geralmente identificada como uma operação **bloqueante**. Métodos
+síncronos na biblioteca padrão do Node.js que usam a libuv são as operações **bloqueantes**
+mais utilizadas. Módulos nativos também podem conter métodos **bloqueantes**.
 
-All of the I/O methods in the Node.js standard library provide asynchronous
+<!-- All of the I/O methods in the Node.js standard library provide asynchronous
 versions, which are **non-blocking**, and accept callback functions. Some
 methods also have **blocking** counterparts, which have names that end with
-`Sync`.
+`Sync`. -->
+Todos os métodos I/O na biblioteca padrão do Node.js tem uma versão assíncrona,
+que, por definição, são **não-bloqueantes**, e aceitam funções de callback. Alguns métodos
+também tem suas versões **bloqueantes**, que possuem o sufixo `Sync` no nome.
 
+<!-- ## Comparing Code -->
+## Comparando códigos
 
-## Comparing Code
-
-**Blocking** methods execute **synchronously** and **non-blocking** methods
+<!-- **Blocking** methods execute **synchronously** and **non-blocking** methods
 execute **asynchronously**.
 
-Using the File System module as an example, this is a **synchronous** file read:
+Using the File System module as an example, this is a **synchronous** file read: -->
+Métodos **bloqueantes** executam de forma **síncrona** e métodos **não-bloqueantes**
+executam de forma **assíncrona**.
 
 ```js
 const fs = require('fs');
-const data = fs.readFileSync('/file.md'); // blocks here until file is read
+const data = fs.readFileSync('/file.md'); // a execução é bloqueada aqui até o arquivo ser lido
 ```
 
-And here is an equivalent **asynchronous** example:
+<!-- And here is an equivalent **asynchronous** example: -->
+E aqui temos um exemplo equivalente usando um método **assíncrono**:
 
 ```js
 const fs = require('fs');
