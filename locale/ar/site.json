@@ -134,10 +134,6 @@
     "node-events": {
       "link": "get-involved/node-events",
       "text": "Node.js فعاليات"
-    },
-    "node-speakers": {
-      "link": "get-involved/node-speakers",
-      "text": "متحدثو الـ Node.js"
     }
   },
   "security": {

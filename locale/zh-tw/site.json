@@ -126,10 +126,6 @@
     "node-meetups": {
       "link": "get-involved/node-meetups",
       "text": "Node.js 開發者大會"
-    },
-    "node-speakers": {
-      "link": "get-involved/node-speakers",
-      "text": "Node.js 演講者"
     }
   },
   "security": {

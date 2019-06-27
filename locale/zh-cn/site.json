@@ -136,10 +136,6 @@
     "node-events": {
       "link": "get-involved/node-events",
       "text": "Node.js 重大事件"
-    },
-    "node-speakers": {
-      "link": "get-involved/node-speakers",
-      "text": "Node.js 演讲者"
     }
   },
   "security": {
