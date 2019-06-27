@@ -10,6 +10,8 @@ layout: contribute.hbs
 
 ## فعاليات برمج + تعلم قادمة
 
+- To be accounced
+
 ##  فعاليات برمج + تعلم سابقة 
 
 - ميدلين ، كولومبيا في 21 و 22 جوان [NodeConfCo](https://colombia.nodeconf.com/)
