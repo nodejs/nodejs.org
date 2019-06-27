@@ -9,11 +9,12 @@ Node.js 核心貢獻者在 Code & Learn 活動能帶大家新手上路（或飛�
 
 ## 即將到來的 Code + Learn 活動
 
-- [Saint-Petersburg, Russia on May 26](https://medium.com/piterjs/code-learn-ce20d330530f)
-- Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/)
+- 暫無
 
 ## 已經結束的 Code + Learn 活動
 
+- Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/)
+- [Saint-Petersburg, Russia on May 26](https://medium.com/piterjs/code-learn-ce20d330530f)
 - Bangalore, India at [Node.js - Code & Learn Meetup](https://www.meetup.com/Polyglot-Languages-Runtimes-Java-JVM-nodejs-Swift/events/256057028/): November 17, 2018
 - Kilkenny, Ireland at [NodeConfEU](https://www.nodeconf.eu/): November 4, 2018
 - Vancouver, BC at [Node Interactive](https://events.linuxfoundation.org/events/node-js-interactive-2018/): October 12, 2018
