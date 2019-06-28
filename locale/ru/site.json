@@ -131,10 +131,6 @@
     "node-meetups": {
       "link": "get-involved/node-meetups",
       "text": "Встречи Node.js"
-    },
-    "node-events": {
-      "link": "get-involved/node-events",
-      "text": "Мероприятия Node.js"
     }
   },
   "security": {
