@@ -4,6 +4,8 @@
   "author": "Node.js 基金會",
   "url": "https://nodejs.org/zh-tw/",
   "locale": "zh-tw",
+  "language": "中文(繁體)",
+  "languageEnglishVersion": "Chinese Traditional",
   "scrollToTop": "回到頁首",
   "reportNodeIssue": "回報 Node.js 問題 ",
   "reportWebsiteIssue": "回報 Node.js 網站問題",

@@ -3,6 +3,8 @@
   "author": "Fundación de Node.js",
   "url": "https://nodejs.org/gl/",
   "locale": "gl",
+  "language": "Galego",
+  "languageEnglishVersion": "Galician",
   "scrollToTop": "Volta ao principio",
   "reportNodeIssue": "Informar dun problema con Node.js",
   "reportWebsiteIssue": "Informar dun problema co sitio",
