@@ -21,7 +21,8 @@ Code ＆ Learn イベントを使用すると、Node.js の主な貢献で始め
  -->
 ## 近日開催予定の Code + Learn イベント
 
-- To be announced
+- 近日発表予定
+
 <!-- 
 ## Past Code + Learn Events
 - Bangalore, India at [Node.js - Code & Learn Meetup](https://www.meetup.com/Polyglot-Languages-Runtimes-Java-JVM-nodejs-Swift/events/256057028/): November 17, 2018
