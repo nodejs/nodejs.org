@@ -15,7 +15,7 @@ Let's provide a basic example. `util.inspect()` can be used on any object - a go
      var util = require('util');
      util.inspect(console); -->
      
-O Node oferece uma função utilitária, para fins de depuração, que retorna uma representação string de um objeto. `util.inspect ()` pode ser de grande ajuda quando utilizada com propriedades de grandes e complexos objetos.
+O Node oferece uma função utilitária, para fins de depuração, que retorna uma representação string de um objeto. `util.inspect()` pode ser de grande ajuda quando utilizada com propriedades de objetos que são muito grandes ou complexos.
 
 Vamos ver um exemplo simples. `util.inspect()` pode ser usado em qualquer objeto - uma boa demonstração será utilizá-la em um dos objetos internos do Node. Tente isso no REPL (digite `node` na sua linha de comando, sem argumentos):
 
@@ -61,7 +61,7 @@ The `depth` argument is the number of levels deep into a nested object to recurs
 
 Por exemplo, `util.inspect(myObj, true, 7, true)` inspecionaria `myObj`, mostrando todas as propriedades ocultas e não ocultas até uma profundidade de `7` e coloriria o output. Vamos conferir os argumentos individualmente.
 
-O argumento `depth` é o número de níveis dentro de um objeto aninhado para ser recursivo - o padrão é 2. Configurá-lo para `null` fará com que ele recurse tudo, mostrando todos os níveis. Compare o tamanho dos outputs dessas duas instruções `util.inspect` no REPL:
+O argumento `depth` representa o número de níveis dentro de um objeto aninhado para ser recursivo - o padrão é 2. Configurá-lo para `null` fará com que ele vá até o último nível, mostrando todos os níveis. Compare o tamanho dos outputs dessas duas instruções `util.inspect` no REPL:
 
      var http = require('http');
      util.inspect(http, true, 1);
