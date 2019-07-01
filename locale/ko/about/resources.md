@@ -45,7 +45,7 @@ Node.js의 시각적인 가이드라인은
 </table>
 -->
 
-<table border="0" cellspacing="0" cellpadding="10" class="logos">
+<table border="0" cellspacing="0" cellpadding="20" class="logos">
   <tr>
     <td bgcolor="#FFFFFF"><a href="/static/images/logos/nodejs-new-pantone-black.ai"><img src="/static/images/logos/nodejs-new-pantone-black.png" alt="밝은 배경의 Node.js"></a></td>
     <td bgcolor="#333333"><a href="/static/images/logos/nodejs-new-pantone-white.ai"><img src="/static/images/logos/nodejs-new-pantone-white.png" alt="어두운 배경의 Node.js"></a></td>

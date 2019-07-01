@@ -3,6 +3,8 @@
   "author": "Node.js Foundation",
   "url": "https://nodejs.org/ar/",
   "locale": "ar",
+  "language": "العربية",
+  "languageEnglishVersion": "Arabic",
   "rtl": true,
   "scrollToTop": "إنتقل إلى الأعلى",
   "reportNodeIssue": "Node.js أبلغ عن عطل في",
@@ -11,6 +13,7 @@
   "by": "من طرف",
   "all-downloads": "تحميل جميع النسخ",
   "nightly": "إصدارات ليلية",
+  "unofficial-builds": "بُنْيَات غير رسمية",
   "chakracore-nightly": "Node-ChakraCore إصدارات ليلية خاصة بـ",
   "previous": "السابق",
   "next": "التالي",
@@ -133,10 +136,6 @@
     "node-events": {
       "link": "get-involved/node-events",
       "text": "Node.js فعاليات"
-    },
-    "node-speakers": {
-      "link": "get-involved/node-speakers",
-      "text": "متحدثو الـ Node.js"
     }
   },
   "security": {

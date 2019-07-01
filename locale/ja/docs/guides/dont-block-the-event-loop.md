@@ -11,7 +11,7 @@ If you're writing anything more complicated than a brief command-line script, re
 This document is written with Node servers in mind, but the concepts apply to complex Node applications as well.
 Where OS-specific details vary, this document is Linux-centric.
 
-## TL; DR
+## Summary
 Node.js runs JavaScript code in the Event Loop (initialization and callbacks), and offers a Worker Pool to handle expensive tasks like file I/O.
 Node scales well, sometimes better than more heavyweight approaches like Apache.
 The secret to Node's scalability is that it uses a small number of threads to handle many clients.

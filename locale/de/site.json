@@ -3,6 +3,8 @@
   "author": "Node.js Foundation",
   "url": "https://nodejs.org/de/",
   "locale": "de",
+  "language": "Deutsch",
+  "languageEnglishVersion": "German",
   "scrollToTop": "Zum Seitenanfang",
   "reportNodeIssue": "Node.js-Fehler melden",
   "reportWebsiteIssue": "Webseitenfehler melden",
@@ -10,6 +12,7 @@
   "by": "von",
   "all-downloads": "Alle Download-Optionen",
   "nightly": "Nightly Builds",
+  "unofficial-builds": "Inoffizielle Builds",
   "previous": "Zurück",
   "next": "Weiter",
   "feeds": [
@@ -24,10 +27,6 @@
     {
       "link": "feed/vulnerability.xml",
       "text": "Node.js-Blog: Berichte über Sicherheitslücken"
-    },
-    {
-      "link": "feed/tsc-minutes.xml",
-      "text": "Node.js TSC-Sitzungsprotokoll"
     }
   ],
   "home": {

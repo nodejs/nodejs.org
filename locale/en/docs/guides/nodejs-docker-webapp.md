@@ -13,12 +13,10 @@ understanding of how a Node.js application is structured.
 
 In the first part of this guide we will create a simple web application in
 Node.js, then we will build a Docker image for that application, and lastly we
-will run the image as a container.
+will instantiate a container from that image.
 
-Docker allows you to package an application with all of its dependencies into a
-standardized unit, called a container, for software development. A container is
-a stripped-to-basics version of a Linux operating system. An image is software
-you load into a container.
+Docker allows you to package an application with its environment and all of its dependencies into a
+"box", called a container. Usually, a container consists of an application running in a stripped-to-basics version of a Linux operating system. An image is the blueprint for a container, a container is a running instance of an image.
 
 ## Create the Node.js app
 
@@ -82,11 +80,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `8` of `node`
+Here we will use the latest LTS (long term support) version `10` of `node`
 available from the [Docker Hub](https://hub.docker.com/):
 
 ```docker
-FROM node:8
+FROM node:10
 ```
 
 Next we create a directory to hold the application code inside the image, this
@@ -136,17 +134,16 @@ EXPOSE 8080
 ```
 
 Last but not least, define the command to run your app using `CMD` which defines
-your runtime. Here we will use the basic `npm start` which will run
-`node server.js` to start your server:
+your runtime. Here we will use `node server.js` to start your server:
 
 ```docker
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:8
+FROM node:10
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -164,7 +161,7 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
 ## .dockerignore file
@@ -197,7 +194,7 @@ $ docker images
 
 # Example
 REPOSITORY                      TAG        ID              CREATED
-node                            8          1934b0b038d1    5 days ago
+node                            10         1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 

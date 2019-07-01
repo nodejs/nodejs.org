@@ -35,6 +35,13 @@ REQUIREMENTS
 - Organizer name - Agiri Abraham
 - Organizer contact info -
 
+### Armenia/Yerevan
+- [Meetup](https://www.facebook.com/nodejsarmenia/)
+- Frequency of meetups - quarterly
+- How to submit a talk? [Write in our Telegram chat](https://t.me/nodejsarmenia)
+- Organizer name - Node.js Armenian Community
+- Organizer contact info - nodejsarm@gmail.com
+
 ### Argentina
 
 #### Buenos Aires Province
@@ -79,6 +86,16 @@ REQUIREMENTS
 - Organizer name - Steven Beeckman
 - Organizer contact info -
 
+### Bolivia 
+
+#### La Paz 
+
+- [Meetup](https://www.meetup.com/LaPazjs)
+- Frequency of meetups - monthly
+- How to submit a talk? Contact organizers in the meetup page.
+- Organizer names - [Mauricio De La Quintana](https://github.com/maudel), [Guillermo Paredes](https://github.com/GuillermoParedes), [Adrian Zelada](https://github.com/adrianzelada).
+- Organizer contact info - [@maudelaquintana](https://twitter.com/maudelaquintana)
+
 ### Brazil
 
 #### São Paulo
@@ -96,14 +113,6 @@ REQUIREMENTS
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Filipe Oliveira
 - Organizer contact info -
-
-#### Chile
-
-- [Meetup](https://www.meetup.com/es-ES/NodersJS/)
-- Frequency of meetups - monthly
-- How to submit a talk? Issue on Github [here](https://github.com/Noders/Meetups/issues/new)
-- Organizer name - Rodrigo Adones and Ender Bonnet
-- Organizer contact info - [Rodrigo](https://github.com/L0rdKras), [Ender](https://twitter.com/enbonnet)
 
 #### Minas Gerais
 
@@ -144,6 +153,16 @@ REQUIREMENTS
 - How to submit a talk? _Contact Organizers through Slack: http://slack.torontojs.com/_
 - Organizers name - Dann T. & Paul D.
 - Organizer contact info - _Community Slack_
+
+### Chile
+
+#### Santiago
+
+- [Meetup](https://www.meetup.com/es-ES/NodersJS/)
+- Frequency of meetups - monthly
+- How to submit a talk? Issue on Github [here](https://github.com/Noders/Meetups/issues/new)
+- Organizer name - Rodrigo Adones and Ender Bonnet
+- Organizer contact info - [Rodrigo](https://github.com/L0rdKras), [Ender](https://twitter.com/enbonnet)
 
 ### Colombia
 
@@ -222,7 +241,15 @@ REQUIREMENTS
 - Organizer contact info -
 
 ### India
+#### Maharashtra
 
+##### Pune
+ - [Meetup](https://www.meetup.com/JavaScripters)
+ - Frequency of meetups - monthly
+ - How to submit a talk? Send your queries to Pune.javascripters@gmail.com  or Contact organizers in the meetup page.
+ - Organizer name - Imran shaikh & Akash Jarad
+ - Organizer contact info - javascripters.community@gmail.com
+ 
 ##### Delhi
 
 - [Meetup](https://www.meetup.com/nodeJS-Devs/)
@@ -240,6 +267,16 @@ REQUIREMENTS
 - How to submit a talk? Contact organizers in the meetup page or write to dipesh@rapidops.com
 - Organizer name - Dipesh Patel
 - Organizer contact info -
+
+#### Rajasthan
+
+##### Jaipur
+
+- [Meetup](https://www.meetup.com/JaipurJS-Developer-Meetup/)
+- Frequency of meetups - monthly
+- How to submit a talk? [Email ayushrawal12@gmail.com](mailto:ayushrawal12@gmail.com) or [reach out to me on LinkedIn](https://www.linkedin.com/in/ayush-rawal)
+- Organizer name - [Ayush Rawal](https://github.com/ayush-rawal)
+- Organizer contact info - [Email](mailto:ayushrawal12@gmail.com)
 
 ### Indonesia
 
