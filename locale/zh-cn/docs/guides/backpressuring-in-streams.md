@@ -472,7 +472,7 @@ function doUncork(stream) {
 [实现可读的流]: https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_readable_stream
 
 [其它工具包]: https://github.com/sindresorhus/awesome-nodejs#streams
-[`backpressure`]: https://en.wikipedia.org/wiki/Back_pressure#Backpressure_in_information_technology
+[`backpressure`]: https://en.wikipedia.org/wiki/Backpressure_routing
 [Node.js v0.10]: https://nodejs.org/docs/v0.10.0/
 [`highWaterMark`]: https://nodejs.org/api/stream.html#stream_buffering
 [返回值]: https://github.com/nodejs/node/blob/55c42bc6e5602e5a47fb774009cfe9289cb88e71/lib/_stream_writable.js#L239
