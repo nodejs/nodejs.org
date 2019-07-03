@@ -35,7 +35,7 @@
     "autoprefixer-stylus": "0.14.0",
     "cheerio": "0.22.0",
     "chokidar": "^2.0.4",
-    "handlebars": "^4.1.0",
+    "handlebars": "^4.1.2",
     "jstransformer-handlebars": "1.1.0",
     "junk": "3.1.0",
     "lodash.defaultsdeep": "4.6.0",
