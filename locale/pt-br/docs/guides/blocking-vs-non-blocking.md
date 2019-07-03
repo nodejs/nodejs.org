@@ -76,23 +76,30 @@ fs.readFile('/file.md', (err, data) => {
 });
 ```
 
-The first example appears simpler than the second but has the disadvantage of
+<!-- The first example appears simpler than the second but has the disadvantage of
 the second line **blocking** the execution of any additional JavaScript until
 the entire file is read. Note that in the synchronous version if an error is
 thrown it will need to be caught or the process will crash. In the asynchronous
 version, it is up to the author to decide whether an error should throw as
 shown.
 
-Let's expand our example a little bit:
+Let's expand our example a little bit: -->
+O primeiro exemplo parece mais simples do que o segundo, mas ele possui o contra
+de que, na segunda linha, temos um código **bloqueando** a execução de qualquer
+JavaScript adicional até que todo o arquivo seja lido. Note que, na versão síncrona,
+qualquer erro que houver na aplicação vai precisar ser tratado ou então o processo
+vai sofrer um crash. Na versão assíncrona, é da decisão do programador se quer ou
+não tratar os erros.
 
 ```js
 const fs = require('fs');
-const data = fs.readFileSync('/file.md'); // blocks here until file is read
+const data = fs.readFileSync('/file.md'); // trava aqui até o arquivo ser lido
 console.log(data);
-moreWork(); // will run after console.log
+maisProcessamento(); // roda depois de console.log
 ```
 
-And here is a similar, but not equivalent asynchronous example:
+<!-- And here is a similar, but not equivalent asynchronous example: -->
+Um exemplo similar, mas não equivalente, no formato assíncrono:
 
 ```js
 const fs = require('fs');
@@ -100,39 +107,60 @@ fs.readFile('/file.md', (err, data) => {
   if (err) throw err;
   console.log(data);
 });
-moreWork(); // will run before console.log
+maisProcessamento(); // vai rodar antes do console.log
 ```
 
-In the first example above, `console.log` will be called before `moreWork()`. In
+<!-- In the first example above, `console.log` will be called before `moreWork()`. In
 the second example `fs.readFile()` is **non-blocking** so JavaScript execution
 can continue and `moreWork()` will be called first. The ability to run
 `moreWork()` without waiting for the file read to complete is a key design
-choice that allows for higher throughput.
+choice that allows for higher throughput. -->
+No primeiro exemplo acima, `console.log` vai ser chamado antes de `maisProcessamento()`.
+No segundo exemplo, `fs.readFile()` é uma operação **não-bloqueante**, então a execução
+de código JavaScript vai continuar e o método `maisProcessamento()` vai ser chamado
+primeiro. A habilidade de executar `maisProcessamento()` sem ter de esperar o arquivo
+ser completamente lido é um conceito chave de design que permite uma melhor escalabilidade
+através de mais rendimento.
 
 
-## Concurrency and Throughput
+## Concorrência e Rendimento
 
-JavaScript execution in Node.js is single threaded, so concurrency refers to the
+<!-- JavaScript execution in Node.js is single threaded, so concurrency refers to the
 event loop's capacity to execute JavaScript callback functions after completing
 other work. Any code that is expected to run in a concurrent manner must allow
 the event loop to continue running as non-JavaScript operations, like I/O, are
-occurring.
+occurring. -->
+A execução do JavaScript no Node.js é single threaded. Então a concorrência é
+referente somente à capacidade do event loop de executar funções de callback
+depois de completar qualquer outro processamento. Qualquer código que pode
+rodar de maneira concorrente deve permitir que o event loop continue executando
+enquanto uma operação não-JavaScript, como I/O, está sendo executada.
 
-As an example, let's consider a case where each request to a web server takes
+<!-- As an example, let's consider a case where each request to a web server takes
 50ms to complete and 45ms of that 50ms is database I/O that can be done
 asynchronously. Choosing **non-blocking** asynchronous operations frees up that
 45ms per request to handle other requests. This is a significant difference in
 capacity just by choosing to use **non-blocking** methods instead of
-**blocking** methods.
+**blocking** methods. -->
+Como um exemplo, vamos considerar o caso onde cada requisição de um servidor web
+leva 50ms para ser completada e 45ms desses 50ms é I/O de banco de dados que pode
+ser realizado de forma assíncrona. Escolhendo uma abordagen **não-bloqueante**
+vamos liberar esses 45ms por request para que seja possível lidar com outras
+requests. Isso é uma diferença bastante significante em capacidade só porque
+decidimos utilizar um método **não-bloqueante** ao invés de sua variante
+**bloqueante**.
 
-The event loop is different than models in many other languages where additional
-threads may be created to handle concurrent work.
+<!-- The event loop is different than models in many other languages where additional
+threads may be created to handle concurrent work. -->
+O event loop é diferente de outros modelos em muitas outras linguagens onde threads
+adicionais podem ser criadas para lidar com processamento concorrente.
 
+## Perigos de misturar códigos bloqueantes e não-bloqueantes
 
-## Dangers of Mixing Blocking and Non-Blocking Code
-
-There are some patterns that should be avoided when dealing with I/O. Let's look
-at an example:
+<!-- There are some patterns that should be avoided when dealing with I/O. Let's look
+at an example: -->
+Existem alguns padrões que devem ser evitados quando lidamos com I/O. Vamos ver um
+exemplo:
 
 ```js
 const fs = require('fs');
@@ -143,10 +171,14 @@ fs.readFile('/file.md', (err, data) => {
 fs.unlinkSync('/file.md');
 ```
 
-In the above example, `fs.unlinkSync()` is likely to be run before
+<!-- In the above example, `fs.unlinkSync()` is likely to be run before
 `fs.readFile()`, which would delete `file.md` before it is actually read. A
 better way to write this, which is completely **non-blocking** and guaranteed to
-execute in the correct order is:
+execute in the correct order is: -->
+No exemplo acima, `fs.unlinkSync()` provavelmente vai rodar antes de `fs.readFile()`,
+o que deletaria o arquivo `file.md` antes de que ele possa ser, de fato, lido. Uma forma
+melhor de escrever esse código, de forma completamente **não-bloqueante** e garantida de
+executar na ordem correta seria:
 
 
 ```js
@@ -160,8 +192,10 @@ fs.readFile('/file.md', (readFileErr, data) => {
 });
 ```
 
-The above places a **non-blocking** call to `fs.unlink()` within the callback of
-`fs.readFile()` which guarantees the correct order of operations.
+<!-- The above places a **non-blocking** call to `fs.unlink()` within the callback of
+`fs.readFile()` which guarantees the correct order of operations. -->
+O exemplo acima coloca uma chamada **não-bloqueante** a `fs.unlink()` dentro do callback
+de `fs.readFile()`, o que garante a ordem correta das operações.
 
 
 ## Additional Resources
