@@ -1,9 +1,9 @@
 ---
-title: Anatomy of an HTTP Transaction
+title: Анатомия HTTP Транзакции
 layout: docs.hbs
 ---
 
-# Anatomy of an HTTP Transaction
+# Анатомия HTTP Транзакции
 
 The purpose of this guide is to impart a solid understanding of the process of
 Node.js HTTP handling. We'll assume that you know, in a general sense, how HTTP
@@ -12,10 +12,19 @@ assume a bit of familiarity with Node.js [`EventEmitters`][] and [`Streams`][].
 If you're not quite familiar with them, it's worth taking a quick read through
 the API docs for each of those.
 
-## Create the Server
+Цель данного руководства дать твердое понимание процесса обработки HTTP в 
+Node.js. Мы предположим, что вам известно, в общих чертах, как работают HTTP
+запросы, в независимости от языка програмирования и среды разработки. Мы
+так же предположим, что у вас есть некоторое представление о [`EventEmitters`][]
+и [`Streams`][] в Node.js. Если вы недостаточно знакомы с этими модулями, стоит
+пролистать их API документацию.
+
+## Создание Сервера
 
 Any node web server application will at some point have to create a web server
 object. This is done by using [`createServer`][].
+
+Рано или поздно любое веб-сервер приложение в node должно создать объект веб-сервера.
 
 ```javascript
 const http = require('http');
