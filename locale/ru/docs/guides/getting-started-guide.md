@@ -1,12 +1,9 @@
 ---
-title: Getting Started Guide
+title: Первые шаги
 layout: docs.hbs
 ---
 
-# How do I start with Node.js after I installed it?
-
-Once you have installed Node, let's try building our first web server.
-Create a file named "app.js", and paste the following code:
+# С чего начать в Node.js, после его установки?
 
 После того как вы установили Node, давайте попробуем создать наш первый веб-сервер.
 Создайте файл с именем "app.js", и скопируйте следующий код:
@@ -28,5 +25,4 @@ server.listen(port, hostname, () => {
 });
 ```
 
-After that, run your web server using ``` node app.js ```, visit http://localhost:3000, and you will see a message 'Hello World'
 После этого запуститье ваш веб-сервер используя комманду  ``` node app.js ```, откройте http://localhost:3000 в браузере, и вы увидите сообщение 'Hello World'
