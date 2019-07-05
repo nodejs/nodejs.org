@@ -9,10 +9,11 @@ layout: contribute.hbs
 
 ## Следующие Code + Learn события
 
-- Медельин, Колумбия, 21 и 22 июня [NodeConfCo](https://colombia.nodeconf.com/)
+- To be announced
 
 ## Прошлые Code + Learn события
 
+- Медельин, Колумбия, 21 и 22 июня [NodeConfCo](https://colombia.nodeconf.com/)
 - Бангалор, Индия [Node.js ― Code & Learn митап](https://www.meetup.com/Polyglot-Languages-Runtimes-Java-JVM-nodejs-Swift/events/256057028/): 17 ноября 2018 г.
 - Килкенни, Ирландия [NodeConfEU](https://www.nodeconf.eu/): 4 ноября 2018 г.
 - Ванкувер, Британская Колумбия [Node Interactive](https://events.linuxfoundation.org/events/node-js-interactive-2018/): 12 октября 2018 г.

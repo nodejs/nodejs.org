@@ -10,10 +10,11 @@ layout: contribute.hbs
 
 ## فعاليات برمج + تعلم قادمة
 
-- ميدلين ، كولومبيا في 21 و 22 جوان [NodeConfCo](https://colombia.nodeconf.com/)
+- سوف يتم الإعلان عنها
 
 ##  فعاليات برمج + تعلم سابقة 
 
+- ميدلين ، كولومبيا في 21 و 22 جوان [NodeConfCo](https://colombia.nodeconf.com/)
 - [سانت بطرسبرغ ، روسيا في 26 ماي](https://medium.com/piterjs/code-learn-ce20d330530f)
 - بنغالور، الهند في [Node.js - ملتقى برمج و تعلم](https://www.meetup.com/Polyglot-Languages-Runtimes-Java-JVM-nodejs-Swift/events/256057028/): 17 نوفمبر 2018
 - كيلكيني، أيرلندا في [<span dir="rtl">NodeConfEU</span>](https://www.nodeconf.eu/) : 4 نوفمبر 2018
