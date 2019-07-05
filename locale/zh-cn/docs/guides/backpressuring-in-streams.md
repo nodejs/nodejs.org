@@ -5,13 +5,13 @@ layout: docs.hbs
 
 # 数据流中的积压问题
 
-通常在数据处理的时候我们会遇到一个普遍的问题：[`backpressure`][]，意思是在数据传输过程中有一大堆数据在缓存之后积压着。每次当数据到达结尾又遇到复杂的运算，又或者无论什么原因它比预期的慢，这样累积下来，从源头来的数据就会变得很庞大，像一个塞子一样堵塞住。
+通常在数据处理的时候我们会遇到一个普遍的问题：[`背压`][]，意思是在数据传输过程中有一大堆数据在缓存之后积压着。每次当数据到达结尾又遇到复杂的运算，又或者无论什么原因它比预期的慢，这样累积下来，从源头来的数据就会变得很庞大，像一个塞子一样堵塞住。
 
 为解决这个问题，必须存在一种适当的代理机制，确保流从一个源流入另外一个的时候是平滑顺畅的。不同的社区组织针对他们各自的问题单独做了解决，好例子比如 Unix 的管道和 TCP 的 Socket。此问题经常与 _流控制_ 相关。在 Node.js 中，流已经是被采纳的解决方案。
 
 此文的目的在于详细深入介绍什么是积压，并从代码角度详细解释在 Node.js 中，流是如何针对此问题进行处理的。本文的第二部分将给予你实现流的功能时最佳实践，以确保你的程序既安全又精简。
 
-我们假定你对 Node.js 中的 [`backpressure`][]，[`Buffer`][]，[`EventEmitter`][] 和 [`Stream`][] 的基本概念有一点了解。如果你尚未完整阅读过 API 文档，那么最好是先看一下相关 API 说明，它也会有助于你扩展理解本文的主旨。
+我们假定你对 Node.js 中的 [`背压`][]，[`Buffer`][]，[`EventEmitter`][] 和 [`Stream`][] 的基本概念有一点了解。如果你尚未完整阅读过 API 文档，那么最好是先看一下相关 API 说明，它也会有助于你扩展理解本文的主旨。
 
 ## 处理数据中遇到的问题
 
@@ -472,7 +472,7 @@ function doUncork(stream) {
 [实现可读的流]: https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_readable_stream
 
 [其它工具包]: https://github.com/sindresorhus/awesome-nodejs#streams
-[`backpressure`]: https://en.wikipedia.org/wiki/Back_pressure#Backpressure_in_information_technology
+[`背压`]: https://en.wikipedia.org/wiki/Backpressure_routing
 [Node.js v0.10]: https://nodejs.org/docs/v0.10.0/
 [`highWaterMark`]: https://nodejs.org/api/stream.html#stream_buffering
 [返回值]: https://github.com/nodejs/node/blob/55c42bc6e5602e5a47fb774009cfe9289cb88e71/lib/_stream_writable.js#L239
