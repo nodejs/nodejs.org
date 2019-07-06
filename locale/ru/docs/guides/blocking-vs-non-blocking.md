@@ -48,7 +48,7 @@ modules may also have **blocking** methods.
 если он является таким по причине высокой нагрузки на ЦПУ, а не по причине
 ожидания завершения сторонней операции. Синхронные методы в стандартной
 библиотеке Node.js, которые используют libuv, суть самые часто встречающиеся
-**блокирующие** операции.
+**блокирующие** операции. Нативные модули так же могут иметь **блокирующие** вызовы.
 
 All of the I/O methods in the Node.js standard library provide asynchronous
 versions, which are **non-blocking**, and accept callback functions. Some
@@ -62,18 +62,27 @@ methods also have **blocking** counterparts, which have names that end with
 
 
 ## Comparing Code
+## Сравнение Кода
 
 **Blocking** methods execute **synchronously** and **non-blocking** methods
 execute **asynchronously**.
 
+**Блокирующие** методы исполняются **синхронно**, а **неблокирующие** методы
+исполняются **асинхронно**.
+
 Using the File System module as an example, this is a **synchronous** file read:
+
+Для примера возмкм модуль File System. Это пример **синхронного** чтения файла:
 
 ```js
 const fs = require('fs');
-const data = fs.readFileSync('/file.md'); // blocks here until file is read
+const data = fs.readFileSync('/file.md'); // blocks here until file is read 
+const data = fs.readFileSync('/file.md'); // исполнение кода заблокированно, пока файл полностью не прочтен
 ```
 
 And here is an equivalent **asynchronous** example:
+
+А здесь эквивалентный **асинхронный** пример:
 
 ```js
 const fs = require('fs');
@@ -89,16 +98,26 @@ thrown it will need to be caught or the process will crash. In the asynchronous
 version, it is up to the author to decide whether an error should throw as
 shown.
 
+Первый пример выглядит проще чем второй, но он имеет один недостаток: вторая строка 
+**блокирует** исполнение лиюбого нижеследующего кода, пока весь файл не будет считан.
+Обратите внимание, если синхронная версия кода сгененирует исключение (throws an exception),
+его нужно поймать, иначе процесс Node.js "упадёт". 
+
 Let's expand our example a little bit:
+
+Давайте немного расширем наш пример:
 
 ```js
 const fs = require('fs');
 const data = fs.readFileSync('/file.md'); // blocks here until file is read
+const data = fs.readFileSync('/file.md'); // исполнение кода заблокированно, пока файл полностью не прочтен
 console.log(data);
 moreWork(); // will run after console.log
+moreWork(); // функция будет исполнена, после console.log
 ```
 
 And here is a similar, but not equivalent asynchronous example:
+А вот похожий, но не эквивалентный асинхронный пример:
 
 ```js
 const fs = require('fs');
@@ -107,6 +126,7 @@ fs.readFile('/file.md', (err, data) => {
   console.log(data);
 });
 moreWork(); // will run before console.log
+moreWork(); // функция будет исполнена до console.log
 ```
 
 In the first example above, `console.log` will be called before `moreWork()`. In
@@ -114,6 +134,13 @@ the second example `fs.readFile()` is **non-blocking** so JavaScript execution
 can continue and `moreWork()` will be called first. The ability to run
 `moreWork()` without waiting for the file read to complete is a key design
 choice that allows for higher throughput.
+
+В первом примере метод `console.log` будет вызван до срабатывания функции `moreWork()`.
+Во втором примере метод `fs.readFile()` является **неблокирующим**, поэтому исполнение
+JavaScript кода может продолжаться не дожидаясь окончания его работы, как следствие 
+функция `moreWork()` сработает раньше `console.log`. Эта возможность — отсутствие необходимости 
+дожидаться окончания чтения файла и т.п. системных вызовов — ключевое
+инженерное решение, которое обеспечивает высокую пропускную способность Node.js.
 
 
 ## Concurrency and Throughput
