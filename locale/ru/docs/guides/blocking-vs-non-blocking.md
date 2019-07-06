@@ -1,25 +1,42 @@
 ---
-title: Overview of Blocking vs Non-Blocking
+title: Обзор Блокирующих и Неблокирующих Вызовов
 layout: docs.hbs
 ---
 
 # Overview of Blocking vs Non-Blocking
+# Обзор Блокирующих и Неблокирующих Вызовов
 
 This overview covers the difference between **blocking** and **non-blocking**
 calls in Node.js. This overview will refer to the event loop and libuv but no
 prior knowledge of those topics is required. Readers are assumed to have a
 basic understanding of the JavaScript language and Node.js callback pattern.
 
+
+Этот обзор рассматривает разницу между **блокирующими** и **неблокирующими**
+вызовами в Node.js. Этот обзор ссылается на цикл событий (Event Loop) и библиотеку libuv,
+однако предварительное знание этих тем не требуется. Предпологается, что 
+читатели имеют базовое понимание JavaScript и паттерна обратных вызовов (callback)
+в Node.js.
+
 > "I/O" refers primarily to interaction with the system's disk and
 > network supported by [libuv](http://libuv.org/).
 
+> Обозначение "I/O" (Ввод/Вывод) в первую очередь ссылается на взаимодействие
+> с системным диском и сетью при поддержке [libuv](http://libuv.org/).
+
 
 ## Blocking
+## Блокирование
 
 **Blocking** is when the execution of additional JavaScript in the Node.js
 process must wait until a non-JavaScript operation completes. This happens
 because the event loop is unable to continue running JavaScript while a
 **blocking** operation is occurring.
+
+**Блокирование** происходит, когда исполнению оставшегося JavaScript кода в Node.js
+приходится ждать, пока не завершится сторонняя операция (напр. чтение содржания какого-нибудь файла).
+Так происходит, потомучто цикл событий не может продолжить исполнение JavaScript
+кода, пока работает **блокирующая** операция.
 
 In Node.js, JavaScript that exhibits poor performance due to being CPU intensive
 rather than waiting on a non-JavaScript operation, such as I/O, isn't typically
@@ -27,10 +44,21 @@ referred to as **blocking**. Synchronous methods in the Node.js standard library
 that use libuv are the most commonly used **blocking** operations. Native
 modules may also have **blocking** methods.
 
+В Node.js, медленный код JavaScript, как правило, не называют **блокирующим**,
+если он является таким по причине высокой нагрузки на ЦПУ, а не по причине
+ожидания завершения сторонней операции. Синхронные методы в стандартной
+библиотеке Node.js, которые используют libuv, суть самые часто встречающиеся
+**блокирующие** операции.
+
 All of the I/O methods in the Node.js standard library provide asynchronous
 versions, which are **non-blocking**, and accept callback functions. Some
 methods also have **blocking** counterparts, which have names that end with
 `Sync`.
+
+Все I/O методы в стандартной библиотеке Node.js предоставляют асинхронные версии,
+которые являются **неблокирующими**, и которые принимаю функции обратного вызова
+в качестве аргумента. Некоторые методы также имеют свои **блокирующие** аналоги.
+Названия таких методов закнчиваются на `Sync`. 
 
 
 ## Comparing Code
