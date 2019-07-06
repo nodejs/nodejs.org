@@ -152,6 +152,11 @@ other work. Any code that is expected to run in a concurrent manner must allow
 the event loop to continue running as non-JavaScript operations, like I/O, are
 occurring.
 
+Исполнение JavaScript в Node.js является однопоточным. Поэтому, говоря о конкурентности
+в Node.js, подразумевают, что после того как цикл событий обработал синхронный код, он также
+способен обработать обратные вызовы JavaScript. Подобно сторонним операциям, любой конкурентный
+код должен позволять циклу событий продолжать свою работу. ??????
+
 As an example, let's consider a case where each request to a web server takes
 50ms to complete and 45ms of that 50ms is database I/O that can be done
 asynchronously. Choosing **non-blocking** asynchronous operations frees up that
@@ -159,14 +164,27 @@ asynchronously. Choosing **non-blocking** asynchronous operations frees up that
 capacity just by choosing to use **non-blocking** methods instead of
 **blocking** methods.
 
+В качестве примера возьмем запросы к веб-серверу. Допустим обработк сервером одного запроса
+занимает 50мс. Из этих 50мс, 45мс уходит на операции чтения/записи в базу данных.
+С базой данных можно взаимодействовать и **асинхронно**. При таком подходе, на каждый запрос
+к веб-серверу **неблокирующая** асинхронная операция высвободит 45мс для обработки других
+запросов, а это существенная разница.
+
+
 The event loop is different than models in many other languages where additional
 threads may be created to handle concurrent work.
 
+Цикл событий отличается от способов во многих других языках программирования,
+где для исполнения конкурентной  работы могу создаваться дополнительные потоки.
+
 
 ## Dangers of Mixing Blocking and Non-Blocking Code
+## Опасность Смешивания Блокирующего и Неблокирующего Кода
 
 There are some patterns that should be avoided when dealing with I/O. Let's look
 at an example:
+
+Существует паттерны, которые следует избегать при работе с I/O. Взглянем на пример:
 
 ```js
 const fs = require('fs');
@@ -181,6 +199,10 @@ In the above example, `fs.unlinkSync()` is likely to be run before
 `fs.readFile()`, which would delete `file.md` before it is actually read. A
 better way to write this, which is completely **non-blocking** and guaranteed to
 execute in the correct order is:
+
+В данном примере, метод `fs.unlinkSync()`, с высокой вероятностью, будет исполнен до
+`fs.readFile()`. Что привед к удаленнию файла, до его прочтения. Лучше переписать
+весь этот код в **неблокирующем** виде, что гарантирует правильный порядок исполнения:
 
 
 ```js
@@ -197,8 +219,12 @@ fs.readFile('/file.md', (readFileErr, data) => {
 The above places a **non-blocking** call to `fs.unlink()` within the callback of
 `fs.readFile()` which guarantees the correct order of operations.
 
+В примере выше **неблокирующий** вызов метода `fs.unlink()` расположен в обратном вызове
+`fs.readFile()`. Такой подход гаррантирует парвильную последовательность операций.
+
 
 ## Additional Resources
+## Дополнительные рессурсы
 
 - [libuv](http://libuv.org/)
-- [About Node.js](https://nodejs.org/en/about/)
+- [О Node.js](https://nodejs.org/en/about/)
