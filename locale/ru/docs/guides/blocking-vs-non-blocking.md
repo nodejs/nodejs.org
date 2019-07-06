@@ -72,12 +72,12 @@ execute **asynchronously**.
 
 Using the File System module as an example, this is a **synchronous** file read:
 
-Для примера возмем модуль File System. Вот пример **синхронного** чтения файла:
+Для примера возьмем модуль File System. Вот пример **синхронного** чтения файла:
 
 ```js
 const fs = require('fs');
-const data = fs.readFileSync('/file.md'); // blocks here until file is read 
-const data = fs.readFileSync('/file.md'); // исполнение кода заблокированно, пока файл полностью не прочтен
+// исполнение кода заблокированно, пока файл будет полностью не считан
+const data = fs.readFileSync('/file.md'); 
 ```
 
 And here is an equivalent **asynchronous** example:
@@ -99,7 +99,7 @@ version, it is up to the author to decide whether an error should throw as
 shown.
 
 Первый пример выглядит проще чем второй, но он имеет один недостаток: вторая строка 
-**блокирует** исполнение лиюбого нижеследующего кода, пока весь файл не будет считан.
+**блокирует** исполнение лиюбого нижеследующего JavaScript кода, пока весь файл не будет считан.
 Обратите внимание, если синхронная версия кода сгененирует исключение (throws an exception),
 его нужно обработать, иначе процесс Node.js "упадёт". 
 
@@ -109,10 +109,9 @@ Let's expand our example a little bit:
 
 ```js
 const fs = require('fs');
-const data = fs.readFileSync('/file.md'); // blocks here until file is read
-const data = fs.readFileSync('/file.md'); // исполнение кода заблокированно, пока файл полностью не прочтен
+// исполнение кода заблокированно, пока файл не будет полностью не считан
+const data = fs.readFileSync('/file.md'); 
 console.log(data);
-moreWork(); // will run after console.log
 moreWork(); // функция будет исполнена, после console.log
 ```
 
@@ -125,7 +124,6 @@ fs.readFile('/file.md', (err, data) => {
   if (err) throw err;
   console.log(data);
 });
-moreWork(); // will run before console.log
 moreWork(); // функция будет исполнена до console.log
 ```
 
@@ -152,10 +150,10 @@ other work. Any code that is expected to run in a concurrent manner must allow
 the event loop to continue running as non-JavaScript operations, like I/O, are
 occurring.
 
-Исполнение JavaScript в Node.js является однопоточным. Поэтому, говоря о конкурентности
-в Node.js, подразумевают, что после того как цикл событий обработал синхронный код, он также
-способен обработать обратные вызовы JavaScript. Подобно сторонним операциям, любой конкурентный
-код должен позволять циклу событий продолжать свою работу. ??????
+Исполнение JavaScript кода в Node.js является однопоточным. Поэтому, говоря о конкурентности 
+(параллельности) в Node.js, подразумевают, что после того как цикл событий обработал синхронный код,
+он также способен обработать функции обратного вызова. Подобно сторонним операциям, 
+любой конкурентный код должен позволять циклу событий продолжать свою работу.
 
 As an example, let's consider a case where each request to a web server takes
 50ms to complete and 45ms of that 50ms is database I/O that can be done
@@ -164,7 +162,7 @@ asynchronously. Choosing **non-blocking** asynchronous operations frees up that
 capacity just by choosing to use **non-blocking** methods instead of
 **blocking** methods.
 
-В качестве примера возьмем запросы к веб-серверу. Допустим обработк сервером одного запроса
+В качестве примера возьмем запросы к веб-серверу. Допустим обработка сервером одного запроса
 занимает 50мс. Из этих 50мс, 45мс уходит на операции чтения/записи в базу данных.
 С базой данных можно взаимодействовать и **асинхронно**. При таком подходе, на каждый запрос
 к веб-серверу **неблокирующая** асинхронная операция высвободит 45мс для обработки других
@@ -174,8 +172,9 @@ capacity just by choosing to use **non-blocking** methods instead of
 The event loop is different than models in many other languages where additional
 threads may be created to handle concurrent work.
 
-Цикл событий отличается от способов во многих других языках программирования,
-где для исполнения конкурентной  работы могу создаваться дополнительные потоки.
+Обработка конкурентной (параллельной) работы при помощи цикла событий в Node.js
+отличается от подходов во многих других языках программрования, в которых могут
+создаваться дополнительные потоки.
 
 
 ## Dangers of Mixing Blocking and Non-Blocking Code
@@ -201,8 +200,8 @@ better way to write this, which is completely **non-blocking** and guaranteed to
 execute in the correct order is:
 
 В данном примере, метод `fs.unlinkSync()`, с высокой вероятностью, будет исполнен до
-`fs.readFile()`. Что привед к удаленнию файла, до его прочтения. Лучше переписать
-весь этот код в **неблокирующем** виде, что гарантирует правильный порядок исполнения:
+`fs.readFile()`. Это приведет к удалению файла до его прочтения. Лучше переписать 
+этот код в **неблокирующем** виде, что гарантирует правильный порядок исполнения:
 
 
 ```js
@@ -219,8 +218,8 @@ fs.readFile('/file.md', (readFileErr, data) => {
 The above places a **non-blocking** call to `fs.unlink()` within the callback of
 `fs.readFile()` which guarantees the correct order of operations.
 
-В примере выше **неблокирующий** вызов метода `fs.unlink()` расположен в обратном вызове
-`fs.readFile()`. Такой подход гаррантирует парвильную последовательность операций.
+В примере выше **неблокирующий** вызов метода `fs.unlink()` расположен в функции обратного вызова
+`fs.readFile()`. Такой подход гарантирует парвильную последовательность операций.
 
 
 ## Additional Resources
