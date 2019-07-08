@@ -1,74 +1,71 @@
 ---
-title: Debugging - Getting Started
+title: Отладка - Начало работы
 layout: docs.hbs
 ---
 
-# Debugging Guide
+# Руководство по отладке
 
-This guide will help you get started debugging your Node.js apps and scripts.
+Это руководство призвано помочь вам в отладке вашего Node.js Приложения или скрипта.
 
-## Enable Inspector
+## Включение 'Инспектора'
 
-When started with the `--inspect` switch, a Node.js process listens for a
-debugging client. By default, it will listen at host and port 127.0.0.1:9229.
-Each process is also assigned a unique [UUID][].
+При запуске с параметром `--inspect`,  Node.js Начинает прослушку 
+клиента отладки. По умолчанию он будет прослушивать хост 127.0.0.1 на порту 9229.
+Каждому процессу присваивается уникальный [UUID][].
 
-Inspector clients must know and specify host address, port, and UUID to connect.
-A full URL will look something like
+В клиенте инспектора вы должны знать и указывать адрес хоста, порт и UUID для соединения.
+Полный URL будет выглядеть примерно так:
 `ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`.
 
-Node.js will also start listening for debugging messages if it receives a 
-`SIGUSR1` signal. (`SIGUSR1` is not available on Windows.) In Node.js 7 and
-earlier, this activates the legacy Debugger API. In Node.js 8 and later, it will
-activate the Inspector API.
+Node.js также начнет прослушивание сообщений отладки если он получит
+Сигнал `SIGUSR1` (`SIGUSR1` Не доступен в Windows) В Node.js 7 и
+ранее, он активирует старый API отладчика. В Node.js 8  и позже, он будет
+активировать API инспектора.
 
 ---
-## Security Implications
+## Последствия для безопасности
 
-Since the debugger has full access to the Node.js execution environment, a
-malicious actor able to connect to this port may be able to execute arbitrary
-code on behalf of the Node process. It is important to understand the security
-implications of exposing the debugger port on public and private networks.
+Так как отладчик имеет полный доступ к Node.js, то
+злоумышленник, способный подключиться к этому порту, может выполнить произвольный
+код от имени процесса Node.js. Важно понимать, безопасность 
+предоставления порта отладчика в общих и частных сетях.
 
-### Exposing the debug port publicly is unsafe
+### Публичное предоставление порта отладки небезопасно
 
-If the debugger is bound to a public IP address, or to 0.0.0.0, any clients that
-can reach your IP address will be able to connect to the debugger without any
-restriction and will be able to run arbitrary code.
+Если отладчик привязан к вашему публичному IP адрессу, или к 0.0.0.0, другие клиенты дошедшие до вашего IP адресса смогут без проблем подключиться к вашему отладчику без каких либо ограничений, и смогут запускать произвольный код.
 
-By default `node --inspect` binds to 127.0.0.1. You explicitly need to provide a
-public IP address or 0.0.0.0, etc., if you intend to allow external connections
-to the debugger. Doing so may expose you a potentially significant security
-threat. We suggest you ensure appropriate firewalls and access controls in place
-to prevent a security exposure.
+По умолчанию `node --inspect` привязан к 127.0.0.1. Вы предоставив публичный
+IP адресс или 0.0.0.0, и тп., обеспечив возсожность внешнего подключения.
+Обеспечте соответствующие брандмауэры и контроль доступа на месте,
+чтобы предотвратить угрозу безопасности.
 
-See the section on '[Enabling remote debugging scenarios](#enabling-remote-debugging-scenarios)' on some advice on how
-to safely allow remote debugger clients to connect.
+См. раздел "[включение сценариев удаленной отладки](#enabling-remote-debugging-scenarios)' с некоторыми советами о том, как
+чтобы благоразумно разрешить клиентам удаленную отладку.
 
-### Local applications have full access to the inspector
+### Локальные приложения имеют полный доступ к инспектору
 
-Even if you bind the inspector port to 127.0.0.1 (the default), any applications
-running locally on your machine will have unrestricted access. This is by design
-to allow local debuggers to be able to attach conveniently.
+Даже если вы привязываете порт инспектора к 127.0.0.1 (по умолчанию), любые приложения
+запускаемые локально на вашем компьютере будут иметь неограниченный доступ. Это
+для того, чтобы местные отладчики могли иметь возможность без труда присоедениться.
 
-### Browsers, WebSockets and same-origin policy
+### Браузер, WebSockets и правило ограничения домена
 
-Websites open in a web-browser can make WebSocket and HTTP requests under the
-browser security model. An initial HTTP connection is necessary to obtain a
-unique debugger session id. The same-origin-policy prevents websites from being
-able to make this HTTP connection. For additional security against
-[DNS rebinding attacks](https://en.wikipedia.org/wiki/DNS_rebinding), Node.js
-verifies that the 'Host' headers for the connection either
-specify an IP address or `localhost` or `localhost6` precisely.
+Веб-сайты открытые в браузере могут открывать WebSocket и делать HTTP запросы модели 
+безопасности браузера. Начальное HTTP-соединение необходимо для получения
+уникального id сеанса отладчика. Правило ограничения домена запрещает веб-сайтам
+возможность сделать это HTTP-соединение. Для дополнительной безопасности против
+[Атаки повторной привязки DNS](https://ru.wikipedia.org/wiki/DNS_rebinding), Node.js
+проверяет, что заголовки 'Host' для подключения 
+укажите IP-адрес либо "localhost" или "localhost6".
 
-These security policies disallow connecting to a remote debug server by
-specifying the hostname. You can work-around this restriction by specifying
-either the IP address or by using ssh tunnels as described below.
+Эта политика безопасности запрещает подключение к удаленному серверу отладки
+через указание имени хоста. Это ограничение можно обойти, указав
+либо IP-адрес, либо с помощью SSH-туннелей, как описано ниже.
 
-## Inspector Clients
+## Клиенты Инспектора
 
-Several commercial and open source tools can connect to Node's Inspector. Basic
-info on these follows:
+Список нескольких коммерческих инструментов, и инструментов с открытым исходным кодом которые имеют возможность подключаться к инспектору.
+Основная информация о них следующая:
 
 #### [node-inspect](https://github.com/nodejs/node-inspect)
 
@@ -111,18 +108,18 @@ info on these follows:
 
 ---
 
-## Command-line options
+## Опции командной строки
 
-The following table lists the impact of various runtime flags on debugging:
+В следующей таблице показано влияние различных флагов на отладку:
 
 <table cellpadding="0" cellspacing="0">
-  <tr><th>Flag</th><th>Meaning</th></tr>
+  <tr><th>Флаг</th><th>Значение</th></tr>
   <tr>
     <td>--inspect</td>
     <td>
       <ul>
-        <li>Enable inspector agent</li>
-        <li>Listen on default address and port (127.0.0.1:9229)</li>
+        <li>Включить инспектора</li>
+        <li>Прослушивание адреса и порта по умолчанию (127.0.0.1:9229)</li>
       </ul>
     </td>
   </tr>
@@ -130,9 +127,9 @@ The following table lists the impact of various runtime flags on debugging:
     <td>--inspect=<i>[host:port]</i></td>
     <td>
       <ul>
-        <li>Enable inspector agent</li>
-        <li>Bind to address or hostname <i>host</i> (default: 127.0.0.1)</li>
-        <li>Listen on port <i>port</i> (default: 9229)</li>
+        <li>Включить инспектора</li>
+        <li>Привязать к хосту или порту <i>host</i> (default: 127.0.0.1)</li>
+        <li>Прослушивать порт <i>port</i> (default: 9229)</li>
       </ul>
     </td>
   </tr>
@@ -140,9 +137,9 @@ The following table lists the impact of various runtime flags on debugging:
     <td>--inspect-brk</td>
     <td>
       <ul>
-        <li>Enable inspector agent</li>
-        <li>Listen on default address and port (127.0.0.1:9229)</li>
-        <li>Break before user code starts</li>
+        <li>Включить инспектора</li>
+        <li>Прослушать дефолтный хост и порт (127.0.0.1:9229)</li>
+        <li>Останавливает перед исполнением пользовательского кода</li>
       </ul>
     </td>
   </tr>
@@ -150,10 +147,10 @@ The following table lists the impact of various runtime flags on debugging:
     <td>--inspect-brk=<i>[host:port]</i></td>
     <td>
       <ul>
-        <li>Enable inspector agent</li>
-        <li>Bind to address or hostname <i>host</i> (default: 127.0.0.1)</li>
-        <li>Listen on port <i>port</i> (default: 9229)</li>
-        <li>Break before user code starts</li>
+        <li>Включить инспектора</li>
+        <li>Привязать к хосту или порту <i>host</i> (default: 127.0.0.1)</li>
+        <li>Прослушивать порт <i>port</i> (default: 9229)</li>
+        <li>Останавливает перед исполнением пользовательского кода</li>
       </ul>
     </td>
   </tr>
@@ -161,8 +158,8 @@ The following table lists the impact of various runtime flags on debugging:
     <td><code>node inspect <i>script.js</i></code></td>
     <td>
       <ul>
-        <li>Spawn child process to run user's script under --inspect flag;
-            and use main process to run CLI debugger.</li>
+        <li>Породит дочерний процесс, чтобы запустить пользовательские скрипты при флаге --inspect;
+             и использовать основной процесс для ClI отладчика</li>
       </ul>
     </td>
   </tr>
@@ -170,9 +167,9 @@ The following table lists the impact of various runtime flags on debugging:
     <td><code>node inspect --port=xxxx <i>script.js</i></code></td>
     <td>
       <ul>
-        <li>Spawn child process to run user's script under --inspect flag;
-            and use main process to run CLI debugger.</li>
-        <li>Listen on port <i>port</i> (default: 9229)</li>
+        <li>Породит дочерний процесс, чтобы запустить пользовательские скрипты при флаге --inspect;
+             и использовать основной процесс для ClI отладчика</li>
+        <li>Прослушивать порт <i>port</i> (default: 9229)</li>
       </ul>
     </td>
   </tr>
@@ -180,37 +177,36 @@ The following table lists the impact of various runtime flags on debugging:
 
 ---
 
-## Enabling remote debugging scenarios
+## Включение сценариев удаленной отладки
 
-We recommend that you never have the debugger listen on a public IP address. If
-you need to allow remote debugging connections we recommend the use of ssh
-tunnels instead. We provide the following example for illustrative purposes only.
-Please understand the security risk of allowing remote access to a privileged
-service before proceeding.
+Мы рекомендуем не использовать публичный IP адресс для отладки. Если
+необходимо разрешить удаленную отладку соединений используйте ssh
+туннели. Мы приводим следующий пример только в демонстративных целях.
+Пожалуйста, осознайте опасность удалённого обслуживания.
 
-Let's say you are running Node on remote machine, remote.example.com, that you
-want to be able to debug. On that machine, you should start the node process
-with the inspector listening only to localhost (the default).
+Допустим, вы используете node.js на удаленной машине, remote.example.com, вы
+хотите иметь возможность отладки. На этой машине следует запустить процесс node.js
+с инспектором, прослушивая только localhost (по умолчанию).
 
 ```bash
 $ node --inspect server.js
 ```
 
-Now, on your local machine from where you want to initiate a debug client
-connection, you can setup an ssh tunnel:
+Теперь на локальном компьютере, с которого вы хотите запустить клиент отладки, 
+вы можете настроить ssh туннель:
 
 ```bash
 $ ssh -L 9221:localhost:9229 user@remote.example.com
 ```
 
-This starts a ssh tunnel session where a connection to port 9221 on your local
-machine will be forwarded to port 9229 on remote.example.com. You can now attach
-a debugger such as Chrome DevTools or Visual Studio Code to localhost:9221,
-which should be able to debug as if the Node.js application was running locally.
+Это запускает сеанс туннеля ssh, где соединение с портом 9221 на локальном компьютере,
+машина будет перенаправлена к порту 9229, а как следствие, к remote.example.com. Теперь вы можете прикрепить
+отладчик, например Chrome DevTools или Visual Studio Code к localhost: 9221,
+который должен быть в состоянии отладки, как если бы node.js приложение выполнялось локально.
 
 ---
 
-## Legacy Debugger
+## Старый отладчик
 
 **The legacy debugger has been deprecated as of Node 7.7.0. Please use --inspect
 and Inspector instead.**
@@ -240,3 +236,4 @@ protocol used in Node.js.
 
 [Inspector Protocol]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/
 [UUID]: https://tools.ietf.org/html/rfc4122
+
