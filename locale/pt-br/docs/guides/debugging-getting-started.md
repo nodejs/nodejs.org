@@ -3,67 +3,107 @@ title: Debugging - Getting Started
 layout: docs.hbs
 ---
 
-# Debugging Guide
+# Guia de debugging
 
-This guide will help you get started debugging your Node.js apps and scripts.
+<!-- This guide will help you get started debugging your Node.js apps and scripts. -->
+Este guia vai te ajudar a começar a debugar suas aplicações Node.js.
 
-## Enable Inspector
+## Ative o inspetor
 
-When started with the `--inspect` switch, a Node.js process listens for a
+<!-- When started with the `--inspect` switch, a Node.js process listens for a
 debugging client. By default, it will listen at host and port 127.0.0.1:9229.
-Each process is also assigned a unique [UUID][].
+Each process is also assigned a unique [UUID][]. -->
 
-Inspector clients must know and specify host address, port, and UUID to connect.
+Quando uma aplicação Node.js for iniciada com a flag `--inspect`, o processo irá
+esperar por um client de debugging. Por padrão, ele vai ouvir no host e porta
+locais `127.0.0.1:9229`. Cada processo também possuirá um [UUID][] único.
+
+<!-- Inspector clients must know and specify host address, port, and UUID to connect.
 A full URL will look something like
-`ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`.
+`ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`. -->
+Clients do inspector devem saber e especificar o endereço do host, porta e UUID
+para se conectarem. Uma URL completa é mais ou menos assim:
+`ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`
 
-Node.js will also start listening for debugging messages if it receives a 
+<!-- Node.js will also start listening for debugging messages if it receives a
 `SIGUSR1` signal. (`SIGUSR1` is not available on Windows.) In Node.js 7 and
 earlier, this activates the legacy Debugger API. In Node.js 8 and later, it will
-activate the Inspector API.
+activate the Inspector API. -->
+O Node.js também irá ouvir mensagens de debugging se o processo receber um sinal do tipo
+`SIGUSR1` (o `SIGUSR1` não está disponível no Windows). No Node.js 7 e anteriores, isto
+ativa a API legada de debugging. Nas versões 8 para frente, isto vai ativar a API de
+inspeção.
 
 ---
-## Security Implications
+## Implicações de segurança
 
-Since the debugger has full access to the Node.js execution environment, a
+<!-- Since the debugger has full access to the Node.js execution environment, a
 malicious actor able to connect to this port may be able to execute arbitrary
 code on behalf of the Node process. It is important to understand the security
-implications of exposing the debugger port on public and private networks.
+implications of exposing the debugger port on public and private networks. -->
+Uma vez que o debugger tem total acesso ao ambiente de execução do Node. Um ator
+malicioso que tiver acesso a conexão por esta porta pode executar um código qualquer
+em nome do processo que está sendo invadido. É importante notar e entender as implicações
+de se expor a porta de debugging em redes públicas ou privadas.
 
-### Exposing the debug port publicly is unsafe
+### Expor a porta de debugging publicamente é inseguro
 
-If the debugger is bound to a public IP address, or to 0.0.0.0, any clients that
+<!-- If the debugger is bound to a public IP address, or to 0.0.0.0, any clients that
 can reach your IP address will be able to connect to the debugger without any
-restriction and will be able to run arbitrary code.
+restriction and will be able to run arbitrary code. -->
+Se o debugger está conectado a um endereço de IP público, ou 0.0.0.0, qualquer client
+que puder chegar neste endereço vai poder se conectar a ele sem nenhuma restrição e
+vai ser capaz de rodar qualquer código.
 
-By default `node --inspect` binds to 127.0.0.1. You explicitly need to provide a
+<!-- By default `node --inspect` binds to 127.0.0.1. You explicitly need to provide a
 public IP address or 0.0.0.0, etc., if you intend to allow external connections
 to the debugger. Doing so may expose you to a potentially significant security
 threat. We suggest you ensure appropriate firewalls and access controls in place
-to prevent a security exposure.
+to prevent a security exposure. -->
+Por padrão `node --inspect` se liga a `127.0.0.1`. Você precisa explicitamente dar um
+endereço de IP ou 0.0.0.0, etc. Se você deseja permitir conexões externas. Fazer isto
+pode expor sua aplicação a uma falha de segurança potencialmente significante. Nós
+sugerimos que você garante que todos os firewalls e controles de acesso existam e estejam
+configurados de acordo para prevenir tal exposição.
 
-See the section on '[Enabling remote debugging scenarios](#enabling-remote-debugging-scenarios)' on some advice on how
-to safely allow remote debugger clients to connect.
+<!-- See the section on '[Enabling remote debugging scenarios](#enabling-remote-debugging-scenarios)' on some advice on how -->
+<!-- to safely allow remote debugger clients to connect. -->
+Veja a seção sobre '[Ativando cenários de debugging remoto](#enabling-remote-debugging-scenarios)' para dicas de como permitir
+de forma segura que outros clients se conectem.
 
-### Local applications have full access to the inspector
+### Aplicações locais tem acesso total ao inspetor
 
-Even if you bind the inspector port to 127.0.0.1 (the default), any applications
+<!-- Even if you bind the inspector port to 127.0.0.1 (the default), any applications
 running locally on your machine will have unrestricted access. This is by design
-to allow local debuggers to be able to attach conveniently.
+to allow local debuggers to be able to attach conveniently. -->
+Mesmo que você conecte a porta do inspetor a 127.0.0.1 (o padrão), qualquer aplicação
+que rode localmente na sua máquina vai ter acesso sem restrições ao mesmo. Isto foi
+desenhado para ser assim para permitir que debuggers locais possam se conectar de forma
+mais simples.
 
-### Browsers, WebSockets and same-origin policy
+### Browsers, websockets e políticas de mesma origem
 
-Websites open in a web-browser can make WebSocket and HTTP requests under the
+<!-- Websites open in a web-browser can make WebSocket and HTTP requests under the
 browser security model. An initial HTTP connection is necessary to obtain a
 unique debugger session id. The same-origin-policy prevents websites from being
 able to make this HTTP connection. For additional security against
 [DNS rebinding attacks](https://en.wikipedia.org/wiki/DNS_rebinding), Node.js
 verifies that the 'Host' headers for the connection either
-specify an IP address or `localhost` or `localhost6` precisely.
+specify an IP address or `localhost` or `localhost6` precisely. -->
+Sites abertos em um navegador podem fazer requisições via websockets e HTTP
+desde que estejam dentro do modelo de segurança do browser. Uma conexão HTTP inicial
+é necessária para obter um ID único para uma sessão de debugging. Para mais segurança
+contra [ataques de rebinding de DNS](https://en.wikipedia.org/wiki/DNS_rebinding),
+o Node.js verifica se o header `Host` para a conexão especificam ou um endereço de IP
+que seja exatamente `localhost` ou `localhost6`.
 
-These security policies disallow connecting to a remote debug server by
+
+<!-- These security policies disallow connecting to a remote debug server by
 specifying the hostname. You can work-around this restriction by specifying
-either the IP address or by using ssh tunnels as described below.
+either the IP address or by using ssh tunnels as described below. -->
+Estas políticas de segurança não permitem a conexão a um servidor de debug remoto
+somente especificando o hostname. Você pode contornar essa restrição especificando
+ou um IP ou usando um túnel SSH como descrito abaixo.
 
 ## Inspector Clients
 
@@ -84,7 +124,7 @@ info on these follows:
   are listed.
 * **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
   (see above) or the --inspect hint text and paste into Chrome.
-* **Option 3**: Install the Chrome Extension NIM (Node Inspector Manager):  
+* **Option 3**: Install the Chrome Extension NIM (Node Inspector Manager):
   https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 
 #### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
