@@ -14,14 +14,14 @@ First, let's go through the list of 'true globals':
 
 - `global` - The global namespace.  Setting a property to this namespace makes it globally visible within the running process.
 - `process` - Node's built-in `process` module, which provides interaction with the current Node process.  [Read More](/locale/en/knowledge/getting-started/the-process-module.md)
-- `console` - Node's built-in `console` module, which wraps various STDIO functionality in a browser-like way.  [Read More](/locale/en/knowledge/getting-started/the-console-module)
-- `setTimeout()`, `clearTimeout()`, `setInterval()`, `clearInterval()` - The built-in timer functions are globals. [Read More](/locale/en/knowledge/javascript-conventions/what-are-the-built-in-timer-functions)
+- `console` - Node's built-in `console` module, which wraps various STDIO functionality in a browser-like way.  [Read More](/locale/en/knowledge/getting-started/the-console-module.md)
+- `setTimeout()`, `clearTimeout()`, `setInterval()`, `clearInterval()` - The built-in timer functions are globals. [Read More](/locale/en/knowledge/javascript-conventions/what-are-the-built-in-timer-functions.md)
 
 As mentioned above, there are also a number of 'pseudo-globals' included at the module level in every module:
 
-- `module`, `module.exports`, `exports` - These objects all pertain to Node's module system.  [Read More](/locale/en/knowledge/getting-started/what-is-require)
+- `module`, `module.exports`, `exports` - These objects all pertain to Node's module system.  [Read More](/locale/en/knowledge/getting-started/what-is-require.md)
 - __filename - The `__filename` keyword contains the path of the currently executing file.  Note that this is not defined while running the [Node REPL](/articles/REPL/how-to-use-nodejs-repl).
 - __dirname - Like `__filename`, the `__dirname` keyword contains the path to the root directory of the currently executing script.  Also not present in the Node REPL.
-- require() - The `require()` function is a built-in function, exposed per-module, that allows other valid modules to be included.  [Read More](/locale/en/knowledge/getting-started/what-is-require)
+- require() - The `require()` function is a built-in function, exposed per-module, that allows other valid modules to be included.  [Read More](/locale/en/knowledge/getting-started/what-is-require.md)
 
 Much of this functionality can be extremely useful for a Node.js developer's daily life - but at the very least, remember these as bad names to use for your own functions! 
