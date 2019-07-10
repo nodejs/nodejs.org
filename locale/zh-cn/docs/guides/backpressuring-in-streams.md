@@ -94,16 +94,16 @@ const util = require('util');
 const pipeline = util.promisify(stream.pipeline);
 
 async function run() {
-    try {
-        await pipeline(
-            fs.createReadStream('The.Matrix.1080p.mkv'),
-            zlib.createGzip(),
-            fs.createWriteStream('The.Matrix.1080p.mkv.gz'),
-        );
-        console.log('Pipeline succeeded');
-    } catch (err) {
-        console.error('Pipeline failed', err);
-    }
+  try {
+    await pipeline(
+      fs.createReadStream('The.Matrix.1080p.mkv'),
+      zlib.createGzip(),
+      fs.createWriteStream('The.Matrix.1080p.mkv.gz'),
+    );
+    console.log('Pipeline succeeded');
+  } catch (err) {
+    console.error('Pipeline failed', err);
+  }
 }
 ```
 
@@ -175,7 +175,7 @@ approx. time (ms) | GC (ms) | modified GC (ms)
 
 但是，当积压机制处理不恰当，V8 垃圾回收机制开始变慢。一般情况下 GC 一分钟内进行 75 次回收，但是修改过的二进制库仅 36 次。
 
-随着内存占用越来越多，缓慢和渐进的欠债也不断积累。随着数据的传输，在没有积压系统的情况下，每个块传输都使用更多的内存。 
+随着内存占用越来越多，缓慢和渐进的欠债也不断积累。随着数据的传输，在没有积压系统的情况下，每个块传输都使用更多的内存。
 
 内存分配使用越多，GC 就越要照顾内存交换。内存交换得越多，GC 就需要考虑决定哪些内存可以被释放，并且要一直在大块内存中扫描独立区块，而这又要消耗更多的计算功率。
 
@@ -253,7 +253,7 @@ sys          7.43
 
 在数据缓存超出了 [`highWaterMark`][] 或者写入的列队处于繁忙状态，[`.write()`][] 会返回 `false`。
 
-当 `false` 返回之后，积压系统介入了。它将暂停从任何发送数据的数据流中进入的 [`Readable`][]。一旦数据流清空了， [`.drain()`][] 事件将被触发，消耗进来的数据流。
+当 `false` 返回之后，积压系统介入了。它将暂停从任何发送数据的数据流中进入的 [`Readable`][]。一旦数据流清空了， [`'drain'`][] 事件将被触发，消耗进来的数据流。
 
 一旦队列全部处理完毕，积压机制将允许允许数据再次发送。在使用中的内存空间将自我释放，同时准备接收下一次的批量数据。
 
@@ -365,7 +365,7 @@ class MyReadable extends Readable {
 }
 ```
 
-另外，从定制流之外，忽略积压简直可笑至极。在以下反例中，代码仅关注数据是否到达（通过 [`.data` event][] 订阅）：
+另外，从定制流之外，忽略积压简直可笑至极。在以下反例中，代码仅关注数据是否到达（通过 [`'data'` event][] 订阅）：
 
 ```javascript
 // 下面的代码忽略了 Node.js 内部处理积压的机制，无条件地写入数据，不管目的地的流
@@ -401,7 +401,7 @@ class MyWritable extends Writable {
 // 更恰当的写法是下面这样：
     if (chunk.contains('a'))
       return callback();
-    else if (chunk.contains('b'))
+    if (chunk.contains('b'))
       return callback();
     callback();
 ```
@@ -456,8 +456,8 @@ function doUncork(stream) {
 [`Duplex`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [`Transform`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [`zlib`]: https://nodejs.org/api/zlib.html
-[`.drain()`]: https://nodejs.org/api/stream.html#stream_event_drain
-[`.data` event]: https://nodejs.org/api/stream.html#stream_event_data
+[`'drain'`]: https://nodejs.org/api/stream.html#stream_event_drain
+[`'data'` event]: https://nodejs.org/api/stream.html#stream_event_data
 [`.read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size
 [`.write()`]: https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback
 [`._read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size_1

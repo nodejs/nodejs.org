@@ -39,7 +39,7 @@ are more than encouraged to use them too!
 ```javascript
 const readline = require('readline');
 
-// process.stdin and process.stdout are both instances of Streams
+// process.stdin and process.stdout are both instances of Streams.
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
@@ -128,16 +128,16 @@ const util = require('util');
 const pipeline = util.promisify(stream.pipeline);
 
 async function run() {
-    try {
-        await pipeline(
-            fs.createReadStream('The.Matrix.1080p.mkv'),
-            zlib.createGzip(),
-            fs.createWriteStream('The.Matrix.1080p.mkv.gz'),
-        );
-        console.log('Pipeline succeeded');
-    } catch (err) {
-        console.error('Pipeline failed', err);
-    }
+  try {
+    await pipeline(
+      fs.createReadStream('The.Matrix.1080p.mkv'),
+      zlib.createGzip(),
+      fs.createWriteStream('The.Matrix.1080p.mkv.gz'),
+    );
+    console.log('Pipeline succeeded');
+  } catch (err) {
+    console.error('Pipeline failed', err);
+  }
 }
 ```
 
@@ -337,7 +337,7 @@ the write queue is currently busy, [`.write()`][] will return `false`.
 
 When a `false` value is returned, the backpressure system kicks in. It will
 pause the incoming [`Readable`][] stream from sending any data and wait until
-the consumer is ready again. Once the data buffer is emptied, a [`.drain()`][]
+the consumer is ready again. Once the data buffer is emptied, a [`'drain'`][]
 event will be emitted and resume the incoming data flow.
 
 Once the queue is finished, backpressure will allow data to be sent again.
@@ -494,7 +494,7 @@ class MyReadable extends Readable {
 Additionally, from outside the custom stream, there are pratfalls for ignoring
 backpressure. In this counter-example of good practice, the application's code
 forces data through whenever it is available (signaled by the
-[`.data` event][]):
+[`'data'` event][]):
 ```javascript
 // This ignores the backpressure mechanisms Node.js has set in place,
 // and unconditionally pushes through data, regardless if the
@@ -536,7 +536,7 @@ class MyWritable extends Writable {
 // The proper way to write this would be:
     if (chunk.contains('a'))
       return callback();
-    else if (chunk.contains('b'))
+    if (chunk.contains('b'))
       return callback();
     callback();
 ```
@@ -569,7 +569,7 @@ ws.write('from ');
 ws.write('Matteo');
 process.nextTick(doUncork, ws);
 
-// as a global function
+// As a global function.
 function doUncork(stream) {
   stream.uncork();
 }
@@ -601,8 +601,8 @@ Node.js.
 [`Duplex`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [`Transform`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [`zlib`]: https://nodejs.org/api/zlib.html
-[`.drain()`]: https://nodejs.org/api/stream.html#stream_event_drain
-[`.data` event]: https://nodejs.org/api/stream.html#stream_event_data
+[`'drain'`]: https://nodejs.org/api/stream.html#stream_event_drain
+[`'data'` event]: https://nodejs.org/api/stream.html#stream_event_data
 [`.read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size
 [`.write()`]: https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback
 [`._read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size_1
