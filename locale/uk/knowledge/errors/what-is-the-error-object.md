@@ -39,4 +39,4 @@ If you want to add more information to the Error object, you can always add prop
     error.http_code = 404;
     console.log(error);
 
-For more details how to use the Error object, check out the [article on error conventions](/articles/errors/what-are-the-error-conventions)
+For more details how to use the Error object, check out the [article on error conventions](/uk/knowledge/errors/what-are-the-error-conventions)
