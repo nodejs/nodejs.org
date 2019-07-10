@@ -39,10 +39,10 @@ When only reading a file or two, or saving something quickly, the difference bet
 
 
 ### Callbacks
-Callbacks are a basic idiom in node.js for asynchronous operations. When most people talk about callbacks, they mean the function that is passed as the last parameter to an asynchronous function. The callback is then later called with any return value or error message that the function produced. For more details, see the article on [callbacks](/articles/getting-started/control-flow/what-are-callbacks)
+Callbacks are a basic idiom in node.js for asynchronous operations. When most people talk about callbacks, they mean the function that is passed as the last parameter to an asynchronous function. The callback is then later called with any return value or error message that the function produced. For more details, see the article on [callbacks](/ru/knowledge/getting-started/control-flow/what-are-callbacks)
 
 ### Event Emitters
-Event Emitters are another basic idiom in node.js. A constructor is provided in Node.js core: `require('events').EventEmitter`. An Event Emitter is typically used when there will be multiple parts to the response (since usually you only want to call a callback once). For more details, see the article on [EventEmitters](/articles/getting-started/control-flow/what-are-event-emitters)
+Event Emitters are another basic idiom in node.js. A constructor is provided in Node.js core: `require('events').EventEmitter`. An Event Emitter is typically used when there will be multiple parts to the response (since usually you only want to call a callback once). For more details, see the article on [EventEmitters](/ru/knowledge/getting-started/control-flow/what-are-event-emitters)
 
 ### A gotcha with asynchronous code
 A common mistake in asynchronous code with javascript is to write code that does something like this:

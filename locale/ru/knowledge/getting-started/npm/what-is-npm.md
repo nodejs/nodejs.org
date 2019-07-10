@@ -14,7 +14,7 @@ Let's say you're hard at work one day, developing the Next Great Application.  Y
 
 Let's look at an example of a global install - let's say `coffee-script`. The npm command is simple: `npm install coffee-script -g`. This will typically install the program and put a symlink to it in `/usr/local/bin/`.  This will then allow you to run the program from the console just like any other CLI tool.  In this case, running `coffee` will now allow you to use the coffee-script REPL.
 
-Another important use for npm is dependency management.  When you have a node project with a [package.json](/articles/getting-started/npm/what-is-the-file-package-json) file, you can run `npm install` from the project root and npm will install all the dependencies listed in the package.json. This makes installing a Node project from a git repo much easier! For example, `vows`, one of Node's testing frameworks, can be installed from git, and its single dependency, `eyes`, can be automatically handled:
+Another important use for npm is dependency management.  When you have a node project with a [package.json](/ru/knowledge/getting-started/npm/what-is-the-file-package-json) file, you can run `npm install` from the project root and npm will install all the dependencies listed in the package.json. This makes installing a Node project from a git repo much easier! For example, `vows`, one of Node's testing frameworks, can be installed from git, and its single dependency, `eyes`, can be automatically handled:
 
 Example:
 
