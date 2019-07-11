@@ -35,7 +35,7 @@ A gotcha with `console.log`, and all functions that depend on it, is that it buf
 
 `console.error()` works the same as `console.log`, except that the output is sent to `stderr` instead of `stdout`.  This is actually an extremely important difference, as `stderr` is always written to synchronously.  Any use of `console.error`, or any of the other functions in Node.js core that write to `stderr`, will block your process until the output has all been written.  This is useful for error messages - you get them exactly when they occur - but if used everywhere, can greatly slow down your process.
 
-`console.dir()`, as mentioned above, is an alias for `util.inspect()` - it is used to enumerate object properties.  [Read More](/articles/getting-started/how-to-use-util-inspect)
+`console.dir()`, as mentioned above, is an alias for `util.inspect()` - it is used to enumerate object properties.  [Read More](/en/knowledge/getting-started/how-to-use-util-inspect)
 
 That covers the basic `console` module functionality, but there are a few other methods worth mentioning as well.  First, the `console` module allows for the marking of time via `console.time()` and `console.timeEnd()`.  Here is an example:
 
