@@ -67,6 +67,6 @@ vous pourrez communiquer facilement. Basé sur la même interface, le
 [Bloquant vs Non-Bloquant]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[boucle événnementielle]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
+[boucle événementielle]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
 [Twisted]: http://twistedmatrix.com/
