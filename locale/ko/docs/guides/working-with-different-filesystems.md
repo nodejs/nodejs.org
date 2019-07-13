@@ -418,3 +418,8 @@ HFS+ NFD to be exactly the same as Unicode NFD all the time.
 `toLowerCase()` 비교보다 훨씬 복잡합니다. 사실 `toUpperCase()`가 `toLowerCase()`보다
 보통 더 좋습니다.(`toLowerCase()`가 특정 외국어 문자를 다르게 다루기 때문입니다.) 하지만 모든
 파일 시스템은 자신만의 대소문자 비교 테이블을 가지고 있으므로 파일시스템을 탐구하는 것이 좋습니다.
+
+예를 들어, Apple의 HFS+는 파일 이름을 NFD 형식으로 정규화 하지만 실제 이 NFD 형식은 현재의 NFD 양식의
+이전 버전이며 최신 유니코드 표준의 NFD 형식과는 조금 다릅니다. HFS+ NFD가 유니코드의 NFD와 항상
+같을 거라고 기대하면 안 됩니다.
+
