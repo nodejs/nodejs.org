@@ -517,6 +517,9 @@ REQUIREMENTS
 - How to submit a talk? 
 - Organizer name - Patrick Scott Co-organizer: Matt Walters.
 - Organizer contact info - 
+- How to submit a talk? Contact Pat Scott @ [pat@patscott.io](mailto:pat@patscott.io). Matt Walters @ [meetup@iammattwalters.com](mailto:meetup@iammattwalters.com).
+- Slack: [join.thenodejsmeetup.com](join.thenodejsmeetup.com)
+- Videos: [https://www.youtube.com/c/thenodejsmeetup](https://www.youtube.com/c/thenodejsmeetup)
 
 #### North Carolina
 
@@ -552,16 +555,18 @@ REQUIREMENTS
 
 ##### Austin
 
+- [Meetup](https://www.meetup.com/austinnodejs/)
+- Frequency of meetups - monthly
+- How to submit a talk? Contact Matt Walters @ [meetup@iammattwalters.com](mailto:meetup@iammattwalters.com).
+- Organizer name - [Matt Walters](https://github.com/mateodelnorte/)
+- Organizer contact info - [meetup@iammattwalters.com](mailto:meetup@iammattwalters.com)
+- Slack: [join.thenodejsmeetup.com](join.thenodejsmeetup.com)
+- Videos: [https://www.youtube.com/c/thenodejsmeetup](https://www.youtube.com/c/thenodejsmeetup)
+
 - [Meetup](https://www.meetup.com/ATXNodeSchool/)
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Stefan von Ellenrieder
-- Organizer contact info -
-
-- [Meetup](https://www.meetup.com/austinnodejs/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Matt Walters
 - Organizer contact info -
 
 ##### Dallas
