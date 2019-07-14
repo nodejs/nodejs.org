@@ -10,7 +10,7 @@ layout: knowledge-post.hbs
 
 O módulo path contém muitas funções auxiliares para ajudar a tornar a manipulação de caminhos mais fácil.
 
-A primeira função que vale a pena mencionar é `path.normalize`.  Esta função pega um caminho (na forma de uma string) e remove duplicações de barras e normaliza abreviações de diretórios, como '.' para 'este diretório' e '..' para 'um diretório acima'. Por exemplo:
+A primeira função que vale a pena mencionar é `path.normalize`.  Esta função pega um caminho (na forma de uma string) e remove  barras duplicadas e normaliza abreviações de diretórios, como '.' para 'este diretório' e '..' para 'um diretório acima'. Por exemplo:
 
     > var path = require('path');
     > path.normalize('/a/.///b/d/../c/')
@@ -22,7 +22,7 @@ Uma função  intimamente relacionada a `normalize` é `join`.  Esta função re
     > path.join('/a/.', './//b/', 'd/../c/')
     '/a/b/c'
 
-Um uso possível do `join` é manipular caminhos quando servem urls:
+Um uso possível do `join` é para manipular caminhos quando servem urls:
 
     > var path = require('path');
     > var url = '/index.html';
@@ -57,7 +57,7 @@ Por último, o módulo `path` fornece métodos para checar se um determinado cam
 
 `existsSync`, por outro lado, checa o caminho recebido de forma síncrona.  No Node.js, você normalmente irá querer usar as funções assíncronas para entrada/saída no sistema de arquivos - as versões síncronas bloquearão todo o seu processo até que esteja finalizado. 
 
-Bloqueio nem sempre é uma coisa ruim.  Checar a existência de um arquivo de configuração vital de forma síncrona faz sentido, por exemplo - não interessa muito se seu processo está bloqueado por algo que ele não pode executar sem!  Por outro lado, entretanto, em um servidor HTTP ocupado, qualquer entrada/saída de arquivos por requisição **DEVE** ser assíncrona, senão você responderá as requisições uma por uma. Veja o artigo em [asynchronous operations](/how-to-write-asynchronous-code) para mais detalhes.
+Bloqueio nem sempre é uma coisa ruim.  Checar a existência de um arquivo de configuração essencial de forma síncrona faz sentido, por exemplo - não interessa muito se seu processo está bloqueado por algo que ele não pode executar sem!  Por outro lado, entretanto, em um servidor HTTP muito ativo, qualquer entrada/saída de arquivos por requisição **DEVE** ser assíncrona, senão você responderá as requisições uma por uma. Veja o artigo em [asynchronous operations](/how-to-write-asynchronous-code) para mais detalhes.
 
         > var path = require('path')
         > path.exists('/etc', function(exists){console.log("Does the file exist?", exists)})
