@@ -87,7 +87,7 @@
   },
   "docs": {
     "link": "docs",
-    "text": "التوثيق",
+    "text": "المستندات",
     "es6": {
       "link": "docs/es6",
       "text": "ES6 وما بعدها"
@@ -104,6 +104,10 @@
     "guides": {
       "link": "docs/guides",
       "text": "إرشادات"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "تبعيات"
     }
   },
   "getinvolved": {
@@ -127,7 +131,7 @@
     },
     "node-meetups": {
       "link": "get-involved/node-meetups",
-      "text": "Node.js لقاءات"
+      "text": "Node.js مُلْتَقَيات"
     }
   },
   "security": {
