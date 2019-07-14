@@ -12,7 +12,7 @@ layout: knowledge-post.hbs
 
 Poison Null Bytes
 =================
-Poison null bytes are a way to trick your code into seeing another filename than the one that will actually be opened. This can in many cases be used to circumvent directory traversal protections, to trick servers into delivering files with wrong file types and to circumvent restrictions on the file names that may be used. [A more detailed description is here.](http://groups.google.com/group/nodejs/browse_thread/thread/51f66075e249d767/85f647474b564fde) Always use code like this when accessing files with user-supplied names:
+Poison null bytes é um modo de enganar o seu código para que ele veja outro nome de arquivo em vez do que realmente está sendo aberto. Isto pode, em muitos casos, ser usado para contornar proteções a directory traversal, para enganar servidores a entregar arquivos com tipos errados e para contornar restrições nos nomes de arquivos que podem ser usados. [Aqui está uma descrição mais detalhada.](http://groups.google.com/group/nodejs/browse_thread/thread/51f66075e249d767/85f647474b564fde) Sempre use código como este quando estiver acessando arquivos com nomes fornecidos pelo usuário:
 
     if (filename.indexOf('\0') !== -1) {
       return respond('That was evil.');
@@ -20,31 +20,31 @@ Poison null bytes are a way to trick your code into seeing another filename than
 
 Whitelisting
 ============
-You won't always be able to use whitelisting, but if you are, do it - it's very easy to implement and hard to get wrong. For example, if you know that all filenames are lowercase alphanumeric strings:
+Você sem sempre será capaz de usar whitelisting, mas se você for, use-a - é muito fácil de implementar e difícil de dar errado. Por exemplo, se você souber que todos os nomes de arquivos são strings alfanuméricas em caixa baixa:
 
     if (!/^[a-z0-9]+$/.test(filename)) {
       return respond('illegal character');
     }
 
-However, note that whitelisting alone isn't sufficient anymore as soon as you allow dots and slashes - people could enter things like `../../etc/passwd` in order to get files from outside the allowed folder.
+Contudo, note que whitelisting sozinha não será mais suficiente assim que  você permitir pontos e barras - pessoas poderiam entrar com coisas como `../../etc/passwd` a fim de obter arquivos de fora da pasta permitida.
 
-Preventing Directory Traversal
+Prevenindo Directory Traversal
 ==============================
-Directory traversal means that an attacker tries to access files outside of the folder you want to allow him to access. You can prevent this by using nodes built-in "path" module. **Do not implement the stuff in the path module again yourself** - for example, when someone runs your code on a windows server, not handling backslashes like slashes will allow attackers to do directory traversal.
+Directory traversal significa que um atacante tenta acessar arquivos fora do diretório que você quer permitir que ele acesse. Você pode prevenir isto usando o módulo "path" nativo do nodes. **Não reimplementar as coisas no módulo path por conta própria** - por exemplo, quando alguém executa seu código em um servidor windows, não manipular barras invertidas como barras normais permitrá que atacantes façam directory traversal.
 
-This example assumes that you already checked the `userSuppliedFilename` variable as described in the "Poison Null Bytes" section above.
+Este exemplo assume que você já checou a variável `userSuppliedFilename`  como descrito na seção acima "Poison Null Bytes".
 
     var rootDirectory = '/var/www/';
 
-Make sure that you have a slash at the end of the allowed folders name - you don't want people to be able to access `/var/www-secret/`, do you?.
+Garanta que você tem uma barra no final do nome dos diretórios permitidos - você não quer que pessoas sejam capazes de acessar `/var/www-secret/`, não é?.
 
     var path = require('path');
     var filename = path.join(rootDirectory, userSuppliedFilename);
 
-Now `filename` contains an absolute path and doesn't contain `..` sequences anymore - `path.join` takes care of that. However, it might be something like `/etc/passwd` now, so you have to check whether it starts with the `rootDirectory`:
+Agora `filename` contém um caminho absoluto e não contém mais sequências `..` - `path.join` cuida disso. Entretanto, pode ser algo como `/etc/passwd` agora, aí você tem que checar se começa com `rootDirectory`:
 
     if (filename.indexOf(rootDirectory) !== 0) {
       return respond('trying to sneak out of the web root?');
     }
 
-Now the `filename` variable should contain the name of a file or directory that's inside the allowed directory (unless it doesn't exist).
+Agora a varável `filename` deve conter o nome do arquivo ou  diretório que está dentro do diretório permitido (a menos que ele não exista).
