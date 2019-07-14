@@ -1,16 +1,8 @@
----
-title: Обзор Блокирующих и Неблокирующих Вызовов
+title: Блокирующие и Неблокирующие Вызовы
 layout: docs.hbs
 ---
 
-# Overview of Blocking vs Non-Blocking
 # Обзор Блокирующих и Неблокирующих Вызовов
-
-This overview covers the difference between **blocking** and **non-blocking**
-calls in Node.js. This overview will refer to the event loop and libuv but no
-prior knowledge of those topics is required. Readers are assumed to have a
-basic understanding of the JavaScript language and Node.js callback pattern.
-
 
 Этот обзор рассматривает разницу между **блокирующими** и **неблокирующими**
 вызовами в Node.js. Он ссылается на цикл событий (event loop) и библиотеку libuv,
@@ -18,69 +10,41 @@ basic understanding of the JavaScript language and Node.js callback pattern.
 читатели имеют базовое понимание JavaScript и паттерна обратных вызовов (callback)
 в Node.js.
 
-> "I/O" refers primarily to interaction with the system's disk and
-> network supported by [libuv](http://libuv.org/).
-
 > Обозначение "I/O" (Ввод/Вывод) в первую очередь ссылается на взаимодействие
 > с системным диском и сетью при поддержке [libuv](http://libuv.org/).
 
 
-## Blocking
 ## Блокирование
 
-**Blocking** is when the execution of additional JavaScript in the Node.js
-process must wait until a non-JavaScript operation completes. This happens
-because the event loop is unable to continue running JavaScript while a
-**blocking** operation is occurring.
-
 О **блокировании** говорят, когда выполнение оставшегося JavaScript кода в Node.js
-приостановленно до тех пор, пока не завершится работа сторонней операции (напр., чтение
-какого-нибудь файла). Поскольку цикл событий не может продолжить исполнение оставшегося JavaScript
+приостановленно до тех пор, пока не завершится работа сторонней операции (например, чтение
+какого-нибудь файла). Так происходит, потому что цикл событий не может продолжить исполнение оставшегося JavaScript
 кода, пока работает **блокирующая** операция.
 
-In Node.js, JavaScript that exhibits poor performance due to being CPU intensive
-rather than waiting on a non-JavaScript operation, such as I/O, isn't typically
-referred to as **blocking**. Synchronous methods in the Node.js standard library
-that use libuv are the most commonly used **blocking** operations. Native
-modules may also have **blocking** methods.
-
-В Node.js, медленный код JavaScript, не принято называть **блокирующим**,
-если причиной тому высокая нагрузка на процессор, а не ожидание завершения 
+В Node.js медленный код JavaScript не принято называть **блокирующим**,
+если причиной тому высокая нагрузка кода на процессор, а не ожидание завершения 
 сторонней операции. Синхронные методы в стандартной библиотеке Node.js, 
-которые используют libuv, наиболее часто встречающиеся **блокирующие** операции. 
-Нативные модули также могут иметь **блокирующие** вызовы.
-
-All of the I/O methods in the Node.js standard library provide asynchronous
-versions, which are **non-blocking**, and accept callback functions. Some
-methods also have **blocking** counterparts, which have names that end with
-`Sync`.
+которые используют libuv, наиболее часто применимые **блокирующие** операции. 
+Нативные модули также могут иметь **блокирующие** методы.
 
 Все I/O методы в стандартной библиотеке Node.js предоставляют свои асинхронные версии,
-которые являются **неблокирующими**, и которые принимают функции обратного вызова
+которые являются **неблокирующими** и которые принимают функции обратного вызова
 в качестве аргумента. Некоторые методы также имеют свои **блокирующие** аналоги.
 Названия таких методов закнчиваются на `Sync`. 
 
 
-## Comparing Code
 ## Сравнение Кода
-
-**Blocking** methods execute **synchronously** and **non-blocking** methods
-execute **asynchronously**.
 
 **Блокирующие** методы исполняются **синхронно**, а **неблокирующие** методы
 исполняются **асинхронно**.
 
-Using the File System module as an example, this is a **synchronous** file read:
-
-Для примера возьмем модуль File System. Вот пример **синхронного** чтения файла:
+Возьмем модуль File System для примера. Вот пример **синхронного** чтения файла:
 
 ```js
 const fs = require('fs');
-// исполнение кода заблокированно, пока файл будет полностью не считан
+// исполнение кода заблокированно, пока файл не будет полностью считан
 const data = fs.readFileSync('/file.md'); 
 ```
-
-And here is an equivalent **asynchronous** example:
 
 А вот эквивалентный **асинхронный** пример:
 
@@ -91,31 +55,22 @@ fs.readFile('/file.md', (err, data) => {
 });
 ```
 
-The first example appears simpler than the second but has the disadvantage of
-the second line **blocking** the execution of any additional JavaScript until
-the entire file is read. Note that in the synchronous version if an error is
-thrown it will need to be caught or the process will crash. In the asynchronous
-version, it is up to the author to decide whether an error should throw as
-shown.
-
 Первый пример выглядит проще чем второй, но он имеет один недостаток: вторая строка 
-**блокирует** исполнение лиюбого нижеследующего JavaScript кода, пока весь файл не будет считан.
-Обратите внимание, если синхронная версия кода сгененирует исключение (throws an exception),
-его нужно обработать, иначе процесс Node.js "упадёт". 
+**блокирует** исполнение любого нижеследующего JavaScript кода, пока весь file.md не будет считан.
+Обратите внимание, если синхронная версия кода сгенерирует исключение,
+его нужно обработать, иначе процесс Node.js "упадёт". В асинхронном варианте
+выбор сгенерировать исключение или нет оставлено на усмотрение программиста.
 
-Let's expand our example a little bit:
-
-Давайте немного расширем наш пример:
+Давайте немного расширим наш пример:
 
 ```js
 const fs = require('fs');
-// исполнение кода заблокированно, пока файл не будет полностью не считан
+// исполнение кода заблокированно, пока файл не будет полностью считан
 const data = fs.readFileSync('/file.md'); 
 console.log(data);
 moreWork(); // функция будет исполнена, после console.log
 ```
 
-And here is a similar, but not equivalent asynchronous example:
 А вот похожий, но не эквивалентный асинхронный пример:
 
 ```js
@@ -127,12 +82,6 @@ fs.readFile('/file.md', (err, data) => {
 moreWork(); // функция будет исполнена до console.log
 ```
 
-In the first example above, `console.log` will be called before `moreWork()`. In
-the second example `fs.readFile()` is **non-blocking** so JavaScript execution
-can continue and `moreWork()` will be called first. The ability to run
-`moreWork()` without waiting for the file read to complete is a key design
-choice that allows for higher throughput.
-
 В первом примере метод `console.log` будет вызван до срабатывания функции `moreWork()`.
 Во втором примере метод `fs.readFile()` является **неблокирующим**, поэтому исполнение
 JavaScript кода может продолжаться не дожидаясь окончания его работы, как следствие 
@@ -141,47 +90,25 @@ JavaScript кода может продолжаться не дожидаясь 
 инженерное решение, которое обеспечивает высокую пропускную способность Node.js.
 
 
-## Concurrency and Throughput
 ## Конкурентность и Пропускная Способность
 
-JavaScript execution in Node.js is single threaded, so concurrency refers to the
-event loop's capacity to execute JavaScript callback functions after completing
-other work. Any code that is expected to run in a concurrent manner must allow
-the event loop to continue running as non-JavaScript operations, like I/O, are
-occurring.
-
 Исполнение JavaScript кода в Node.js является однопоточным. Поэтому, говоря о конкурентности 
-(параллельности) в Node.js, подразумевают, что после того как цикл событий обработал синхронный код,
-он также способен обработать функции обратного вызова. Подобно сторонним операциям, 
+(параллельности вычислений) в Node.js, подразумевают, что после того как цикл событий обработал синхронный код,
+он способен обработать функции обратного вызова. Подобно сторонним операциям (таким как I/O), 
 любой конкурентный код должен позволять циклу событий продолжать свою работу.
 
-As an example, let's consider a case where each request to a web server takes
-50ms to complete and 45ms of that 50ms is database I/O that can be done
-asynchronously. Choosing **non-blocking** asynchronous operations frees up that
-45ms per request to handle other requests. This is a significant difference in
-capacity just by choosing to use **non-blocking** methods instead of
-**blocking** methods.
-
-В качестве примера возьмем запросы к веб-серверу. Допустим обработка сервером одного запроса
+В качестве примера возьмем запросы к веб-серверу. Допустим, обработка сервером одного запроса
 занимает 50мс. Из этих 50мс, 45мс уходит на операции чтения/записи в базу данных.
 С базой данных можно взаимодействовать и **асинхронно**. При таком подходе, на каждый запрос
 к веб-серверу **неблокирующая** асинхронная операция высвободит 45мс для обработки других
 запросов, а это существенная разница.
-
-
-The event loop is different than models in many other languages where additional
-threads may be created to handle concurrent work.
 
 Обработка конкурентной (параллельной) работы при помощи цикла событий в Node.js
 отличается от подходов во многих других языках программрования, в которых могут
 создаваться дополнительные потоки.
 
 
-## Dangers of Mixing Blocking and Non-Blocking Code
 ## Опасность Смешивания Блокирующего и Неблокирующего Кода
-
-There are some patterns that should be avoided when dealing with I/O. Let's look
-at an example:
 
 Существует паттерны, которые следует избегать при работе с I/O. Взглянем на пример:
 
@@ -194,14 +121,9 @@ fs.readFile('/file.md', (err, data) => {
 fs.unlinkSync('/file.md');
 ```
 
-In the above example, `fs.unlinkSync()` is likely to be run before
-`fs.readFile()`, which would delete `file.md` before it is actually read. A
-better way to write this, which is completely **non-blocking** and guaranteed to
-execute in the correct order is:
-
-В данном примере, метод `fs.unlinkSync()`, с высокой вероятностью, будет исполнен до
+В примере выше, метод `fs.unlinkSync()`, с высокой вероятностью, будет исполнен до
 `fs.readFile()`. Это приведет к удалению файла до его прочтения. Лучше переписать 
-этот код в **неблокирующем** виде, что гарантирует правильный порядок исполнения:
+этот код в **неблокирующем** виде, что гарантирует правильный порядок исполнения методов:
 
 
 ```js
@@ -215,14 +137,10 @@ fs.readFile('/file.md', (readFileErr, data) => {
 });
 ```
 
-The above places a **non-blocking** call to `fs.unlink()` within the callback of
-`fs.readFile()` which guarantees the correct order of operations.
-
 В примере выше **неблокирующий** вызов метода `fs.unlink()` расположен в функции обратного вызова
 `fs.readFile()`. Такой подход гарантирует парвильную последовательность операций.
 
 
-## Additional Resources
 ## Дополнительные рессурсы
 
 - [libuv](http://libuv.org/)
