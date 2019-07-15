@@ -9,7 +9,7 @@ layout: knowledge-post.hbs
 ---
 
 
-Armazenar os dados de configuração da sua aplicação Node.js é muito simples - cada objeto no JavaScript pode ser facilmente rendererizado como [JSON](/what-is-json), que por sua vez é apenas dados em string que podem ser enviados ou salvos da maneira que você preferir.  A forma mais simples de fazer isso envolve os métodos built-in `JSON.parse()` e `JSON.stringify()`.
+Armazenar os dados de configuração da sua aplicação Node.js é muito simples - cada objeto no JavaScript pode ser facilmente renderizado como [JSON](/what-is-json), que por sua vez é apenas dados em string que podem ser enviados ou salvos da maneira que você preferir.  A forma mais simples de fazer isso envolve os métodos built-in `JSON.parse()` e `JSON.stringify()`.
 
 Vamos dar uma olhada em um exemplo muito simples (e imaginário).  Primeiro, para salvar alguns dados bem simples:
 
