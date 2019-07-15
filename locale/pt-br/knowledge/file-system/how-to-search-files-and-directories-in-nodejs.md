@@ -20,7 +20,7 @@ Suponha que você queira listar todos os arquivos no seu diretório atual.  Uma 
     });
 
 
-Infelizmente, se você quuiser fazer uma lista recursiva dos arquivos, então as coisas rapidamente ficarão muito mais complicadas. Para evitar toda essa complexidade assustadora, esta é uma das circustâncias onde uma biblioteca feita por usuários salvar o dia. [Node-findit](https://github.com/substack/node-findit), pela SubStack, é um módulo auxiliar para facilitar a busca por arquivos.  Ele tem interfaces para permitir você trabalhar com callbacks, eventos, ou simplesmente da velha forma síncrona (o que na maioria das vezes não é uma boa ideia).
+Infelizmente, se você quiser fazer uma lista recursiva dos arquivos, então as coisas rapidamente ficarão muito mais complicadas. Para evitar toda essa complexidade assustadora, esta é uma das circunstâncias onde uma biblioteca feita por usuários salvar o dia. [Node-findit](https://github.com/substack/node-findit), pela SubStack, é um módulo auxiliar para facilitar a busca por arquivos.  Ele tem interfaces para permitir você trabalhar com callbacks, eventos, ou simplesmente da velha forma síncrona (o que na maioria das vezes não é uma boa ideia).
 
 Para instalar `node-findit`, simplemente use npm:
 
