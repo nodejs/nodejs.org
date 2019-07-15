@@ -422,4 +422,3 @@ HFS+ NFD to be exactly the same as Unicode NFD all the time.
 예를 들어, Apple의 HFS+는 파일 이름을 NFD 형식으로 정규화 하지만 실제 이 NFD 형식은 현재 NFD 형식의
 이전 버전이며 최신 유니코드 표준의 NFD 형식과는 조금 다를 수 있습니다. HFS+ NFD가 유니코드의 NFD와 항상
 같을 거라고 기대하면 안 됩니다.
-
