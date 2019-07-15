@@ -8,7 +8,7 @@ difficulty: 3
 layout: knowledge-post.hbs
 ---
 
-Às vezes, você pode querer deixar usuários lerem ou escreverem arquivos em seu servidor. Por exemplo, talvez você queira escrever um software de fórum sem usar um banco de dados de verdade. O problema é que você não quer que seus usuários possam modificar ou ler todo e qualquer arquivo em seu servidor, e por vezes há formas de contornar restrições que deveriam impedí-los. Continue lendo para ver como você pode proteger seu código contra atacantes malvados tentando bagunçar seus arquivos.
+Às vezes, você pode querer deixar usuários lerem ou escreverem arquivos em seu servidor. Por exemplo, talvez você queira escrever um software de fórum sem usar um banco de dados de verdade. O problema é que você não quer que seus usuários possam modificar ou ler todo e qualquer arquivo em seu servidor, e por vezes há formas de contornar restrições que deveriam impedi-los. Continue lendo para ver como você pode proteger seu código contra atacantes malvados tentando bagunçar seus arquivos.
 
 Poison Null Bytes
 =================
