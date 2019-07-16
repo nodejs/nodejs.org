@@ -28,7 +28,7 @@ Então, se nós quisermos escrever "Hello World" em `helloworld.txt`:
       console.log('Hello World > helloworld.txt');
     });
 
-    [contents of helloworld.txt]:
+    [conteúdo de helloworld.txt]:
     Hello World!
 
 Se nós propositalmente quisermos causar um erro, podemos tentar escrever em um arquivo que nós não temos permissão de acesso:
