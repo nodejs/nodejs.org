@@ -97,7 +97,6 @@ contra [ataques de rebinding de DNS](https://en.wikipedia.org/wiki/DNS_rebinding
 o Node.js verifica se o header `Host` para a conexão especificam ou um endereço de IP
 que seja exatamente `localhost` ou `localhost6`.
 
-
 <!-- These security policies disallow connecting to a remote debug server by
 specifying the hostname. You can work-around this restriction by specifying
 either the IP address or by using ssh tunnels as described below. -->
@@ -105,76 +104,93 @@ Estas políticas de segurança não permitem a conexão a um servidor de debug r
 somente especificando o hostname. Você pode contornar essa restrição especificando
 ou um IP ou usando um túnel SSH como descrito abaixo.
 
-## Inspector Clients
+## Clients de Inspetores
 
-Several commercial and open source tools can connect to Node's Inspector. Basic
+<!-- Several commercial and open source tools can connect to Node's Inspector. Basic
 info on these follows:
+ -->
+Muitas ferramentas comerciais e open source podem se conectar ao inspetor do Node. Aqui
+estão as informações básicas sobre eles:
 
 #### [node-inspect](https://github.com/nodejs/node-inspect)
 
-* CLI Debugger supported by the Node.js Foundation which uses the [Inspector Protocol][].
+<!-- * CLI Debugger supported by the Node.js Foundation which uses the [Inspector Protocol][].
 * A version is bundled with Node and can be used with `node inspect myscript.js`.
 * The latest version can also be installed independently (e.g. `npm install -g node-inspect`)
-  and used with `node-inspect myscript.js`.
+  and used with `node-inspect myscript.js`. -->
+* Um debugger de linha de comando que é mantido pela Node.js Foundation, utiliza o [Protocolo de Inspeção][]
+* A última versão pode ser instalada de forma independente (usando `npm install -g node-inspect`) e utilizada com `node-inspect script.js`
 
 #### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
 
-* **Option 1**: Open `chrome://inspect` in a Chromium-based
+<!-- * **Option 1**: Open `chrome://inspect` in a Chromium-based
   browser. Click the Configure button and ensure your target host and port
   are listed.
 * **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
   (see above) or the --inspect hint text and paste into Chrome.
 * **Option 3**: Install the Chrome Extension NIM (Node Inspector Manager):
-  https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
+  https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj -->
+* **Opção 1**: Abra uma nova aba em `chrome://inspect` em qualquer navegador baseado no Chromium. Clique no botão `configure` e tenha certeza que sua porta e host estão listados
+* **Opção 2**: Copie o `devtoolsFrontendUrl` da saída do `/json/list` (veja acima) ou da flag --inspect e cole no Chrome
+* **Opção 3**: Instale a extensão NIM (Node Inspector Manager): https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 
 #### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
 
-* In the Debug panel, click the settings icon to open `.vscode/launch.json`.
-  Select "Node.js" for initial setup.
+<!-- * In the Debug panel, click the settings icon to open `.vscode/launch.json`.
+  Select "Node.js" for initial setup. -->
+* No painel "Debug", clique no icone de configurações para abrir `./vscode/launch.json`
+  Seleciona "Node.js" para o setup inicial
 
 #### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
 
-* Choose "Debug > Start Debugging" from the menu or hit F5.
-* [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging).
+<!-- * Choose "Debug > Start Debugging" from the menu or hit F5.
+* [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging). -->
+* Escolha "Debug > Start Debugging" no menu ou aperte F5
+* [Mais detalhes](https://github.com/Microsoft/nodejstools/wiki/Debugging).
 
-#### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ and other JetBrains IDEs
+#### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ e outros IDEs da JetBrains
 
-* Create a new Node.js debug configuration and hit Debug. `--inspect` will be used
+<!-- * Create a new Node.js debug configuration and hit Debug. `--inspect` will be used
   by default for Node.js 7+. To disable uncheck `js.debugger.node.use.inspect` in
-  the IDE Registry.
+  the IDE Registry. -->
+* Crie uma nova configuraçõ de debug para Node.js e aperte o botão "Debug". A flag `--inspect` será usada
+  por padrão para o Node.js 7 ou superior. Para desativar esse comportamento, desmarque `js.debugger.node.use.inspect` no registro da IDE.
 
 #### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 
-* Library to ease connections to Inspector Protocol endpoints.
+<!-- * Library to ease connections to Inspector Protocol endpoints. -->
+* Biblioteca para facilitar a conexão nos protocolos de inspeção
 
 #### [Gitpod](https://www.gitpod.io)
 
-* Start a Node.js debug configuration from the `Debug` view or hit `F5`. [Detailed instructions](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
+<!-- * Start a Node.js debug configuration from the `Debug` view or hit `F5`. [Detailed instructions](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1) -->
+* Crie uma nova configuração de debug para Node.js a partir da view `Debug` ou aperte `F5`. [Mais instruções aqui](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
 
 ---
 
-## Command-line options
+## Opções de linha de comando
 
-The following table lists the impact of various runtime flags on debugging:
+<!-- The following table lists the impact of various runtime flags on debugging: -->
+Abaixo temos a lista de todas as flags que impactam a linha de comando enquanto em debugging:
 
 <table cellpadding="0" cellspacing="0">
-  <tr><th>Flag</th><th>Meaning</th></tr>
+  <tr><th>Flag</th><th>Significado</th></tr>
   <tr>
     <td>--inspect</td>
     <td>
       <ul>
-        <li>Enable inspector agent</li>
-        <li>Listen on default address and port (127.0.0.1:9229)</li>
+        <li>Ative o agente do inspetor</li>
+        <li>Ouve no endereço e porta padrões (127.0.0.1:9229)</li>
       </ul>
     </td>
   </tr>
   <tr>
-    <td>--inspect=<i>[host:port]</i></td>
+    <td>--inspect=<i>[host:porta]</i></td>
     <td>
       <ul>
-        <li>Enable inspector agent</li>
-        <li>Bind to address or hostname <i>host</i> (default: 127.0.0.1)</li>
-        <li>Listen on port <i>port</i> (default: 9229)</li>
+        <li>Ativa o agente do inspetor</li>
+        <li>Faz a conexão com o endereço ou hostname descrito em <i>host</i> (padrão: 127.0.0.1)</li>
+        <li>Ouve a porta descrita em <i>porta</i> (padrão: 9229)</li>
       </ul>
     </td>
   </tr>
@@ -182,9 +198,9 @@ The following table lists the impact of various runtime flags on debugging:
     <td>--inspect-brk</td>
     <td>
       <ul>
-        <li>Enable inspector agent</li>
-        <li>Listen on default address and port (127.0.0.1:9229)</li>
-        <li>Break before user code starts</li>
+        <li>Ativa o agente do inspetor</li>
+        <li>Ouve no endereço e porta padrões (127.0.0.1:9229)</li>
+        <li>Pausa antes do código do usuário iniciar</li>
       </ul>
     </td>
   </tr>
@@ -192,10 +208,10 @@ The following table lists the impact of various runtime flags on debugging:
     <td>--inspect-brk=<i>[host:port]</i></td>
     <td>
       <ul>
-        <li>Enable inspector agent</li>
-        <li>Bind to address or hostname <i>host</i> (default: 127.0.0.1)</li>
-        <li>Listen on port <i>port</i> (default: 9229)</li>
-        <li>Break before user code starts</li>
+        <li>Ativa o agente do inspetor</li>
+        <li>Faz a conexão com o endereço ou hostname descrito em <i>host</i> (default: 127.0.0.1)</li>
+        <li>Ouve na porta descrita por <i>porta</i> (padrão: 9229)</li>
+        <li>Pausa antes do código do usuário iniciar</li>
       </ul>
     </td>
   </tr>
@@ -203,8 +219,7 @@ The following table lists the impact of various runtime flags on debugging:
     <td><code>node inspect <i>script.js</i></code></td>
     <td>
       <ul>
-        <li>Spawn child process to run user's script under --inspect flag;
-            and use main process to run CLI debugger.</li>
+        <li>Inicia um child process para executar um script do usuário sob a flag --inspect; e usa o processo principal para executar o CLI do debugger.</li>
       </ul>
     </td>
   </tr>
@@ -212,9 +227,8 @@ The following table lists the impact of various runtime flags on debugging:
     <td><code>node inspect --port=xxxx <i>script.js</i></code></td>
     <td>
       <ul>
-        <li>Spawn child process to run user's script under --inspect flag;
-            and use main process to run CLI debugger.</li>
-        <li>Listen on port <i>port</i> (default: 9229)</li>
+        <li>Inicia um child process para executar um script do usuário sob a flag --inspect; e usa o processo principal para executar o CLI do debugger.</li>
+        <li>Ouve na porta descrita por <i>porta</i> (padrão: 9229)</li>
       </ul>
     </td>
   </tr>
@@ -222,63 +236,90 @@ The following table lists the impact of various runtime flags on debugging:
 
 ---
 
-## Enabling remote debugging scenarios
+## Ativando cenários de debugging remoto
 
-We recommend that you never have the debugger listen on a public IP address. If
+<!-- We recommend that you never have the debugger listen on a public IP address. If
 you need to allow remote debugging connections we recommend the use of ssh
 tunnels instead. We provide the following example for illustrative purposes only.
 Please understand the security risk of allowing remote access to a privileged
-service before proceeding.
+service before proceeding. -->
+Nós recomendamos que você nunca faça com que o debugger ouça um IP público. Se você
+precisar permitir conexões de debug remotas, nós recomendamos que use um túnel SSH.
+Os exemplos a seguir são apenas ilustrativos. Por favor entenda que existe um risco
+grande de segurança ao permitir acesso a um serviço privilegiado antes de continuar.
 
-Let's say you are running Node on remote machine, remote.example.com, that you
+<!-- Let's say you are running Node on remote machine, remote.example.com, that you
 want to be able to debug. On that machine, you should start the node process
-with the inspector listening only to localhost (the default).
+with the inspector listening only to localhost (the default). -->
+Digamos que você esteja executando o Node em uma máquina remota, com o endereço `remoto.exemplo.com`, que
+você quer ser capaz de debugar. Nesta máquina, você deve iniciar o processo do node com o inspetor ouvindo
+somente o `localhost` (o padrão)
 
 ```bash
 $ node --inspect server.js
 ```
 
-Now, on your local machine from where you want to initiate a debug client
-connection, you can setup an ssh tunnel:
+<!-- Now, on your local machine from where you want to initiate a debug client
+connection, you can setup an ssh tunnel: -->
+Agora, na sua máquina local, de onde você quer iniciar uma conexão de debug,
+crie um tunel SSH:
 
 ```bash
-$ ssh -L 9221:localhost:9229 user@remote.example.com
+$ ssh -L 9221:localhost:9229 user@remoto.exemplo.com
 ```
 
-This starts a ssh tunnel session where a connection to port 9221 on your local
+<!-- This starts a ssh tunnel session where a connection to port 9221 on your local
 machine will be forwarded to port 9229 on remote.example.com. You can now attach
 a debugger such as Chrome DevTools or Visual Studio Code to localhost:9221,
-which should be able to debug as if the Node.js application was running locally.
+which should be able to debug as if the Node.js application was running locally. -->
+Isso inicia um tunel SSH onde a conexão para a porta 9221 na sua máquina local vai ser
+direcionada para a porta 9229 no servidor remoto.exemplo.com. Agora você pode anexar
+um debugger, como o Chrome DevTools ou o Visual Studio Code, ao `localhost:9221`,
+que deve ser capaz de debugar como se a aplicação estivesse sendo executada localmente.
 
 ---
 
-## Legacy Debugger
+## Debugger legado
 
-**The legacy debugger has been deprecated as of Node 7.7.0. Please use --inspect
-and Inspector instead.**
+<!-- **The legacy debugger has been deprecated as of Node 7.7.0. Please use --inspect
+and Inspector instead.** -->
+**O debugger legado foi depreciado na versão 7.7.0 do Node. Por favor utilize --inspect e
+o inspetor ao invés dele**
 
-When started with the **--debug** or **--debug-brk** switches in version 7 and
+<!-- When started with the **--debug** or **--debug-brk** switches in version 7 and
 earlier, Node.js listens for debugging commands defined by the discontinued
 V8 Debugging Protocol on a TCP port, by default `5858`. Any debugger client
 which speaks this protocol can connect to and debug the running process; a
 couple popular ones are listed below.
 
-The V8 Debugging Protocol is no longer maintained or documented.
+The V8 Debugging Protocol is no longer maintained or documented. -->
+Quando iniciado com a flag **--debug** ou **--debug-brk** na versão 7 e anteriores,
+o Node.js começa a ouvir por comandos de debug definidos pelo protocolo de debug do V8,
+que já foi descontinuado, em uma porta TCP que, por padrão, é a `5858`. Qualquer client de debugging
+que conversa com esse protocolo pode conectar a ele e debugar um processo sendo executado; abaixo temos
+alguns dos mais populares.
 
-#### [Built-in Debugger](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
+#### [Debugger nativo](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
 
-Start `node debug script_name.js` to start your script under Node's builtin
+<!-- Start `node debug script_name.js` to start your script under Node's builtin
 command-line debugger. Your script starts in another Node process started with
 the `--debug-brk` option, and the initial Node process runs the `_debugger.js`
-script and connects to your target.
+script and connects to your target. -->
+Rode como `node debug script.js` para iniciar seu script através do debugger nativo
+de linha de comando. Seu script vai ser iniciado em um outro processo do node
+que vai ser rodado com a flag `--debug-brk`, e o processo inicial do Node vai executar
+o script `_debugger.js` e conectar à sua aplicação.
 
 #### [node-inspector](https://github.com/node-inspector/node-inspector)
 
-Debug your Node.js app with Chrome DevTools by using an intermediary process
+<!-- Debug your Node.js app with Chrome DevTools by using an intermediary process
 which translates the Inspector Protocol used in Chromium to the V8 Debugger
-protocol used in Node.js.
+protocol used in Node.js. -->
+Utiliza o Chrome DevTools para debugar sua aplicação Node.js através de um processo
+intermediário que traduz o protocolo de inspeção utilizado no Chromium para a o
+protocolo de debug do V8 utilizado no Node.js.
 
 <!-- refs -->
 
-[Inspector Protocol]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/
+[Protocolo de Inspeção]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/
 [UUID]: https://tools.ietf.org/html/rfc4122
