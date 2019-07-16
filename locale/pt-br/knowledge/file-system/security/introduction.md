@@ -30,7 +30,7 @@ Contudo, note que whitelisting sozinha não será suficiente assim que você per
 
 Prevenindo Directory Traversal
 ==============================
-Directory traversal significa que um atacante tenta acessar arquivos fora do diretório que você quer permitir que ele acesse. Você pode prevenir isto usando o módulo "path" nativo do Node.js. **Não re-implementar as coisas no módulo path por conta própria** - por exemplo, quando alguém executa seu código em um servidor windows, não manipular barras invertidas como barras normais permitirá que atacantes façam directory traversal.
+Directory traversal significa que um atacante tenta acessar arquivos fora do diretório que você quer permitir que ele acesse. Você pode prevenir isto usando o módulo "path" nativo do Node.js. **Não reimplementar as coisas no módulo path por conta própria** - por exemplo, quando alguém executa seu código em um servidor windows, não manipular barras invertidas como barras normais permitirá que atacantes façam directory traversal.
 
 Este exemplo assume que você já checou a variável `userSuppliedFilename`  como descrito na seção acima "Poison Null Bytes".
 
