@@ -26,7 +26,7 @@ Você nem sempre será capaz de usar whitelisting, mas se for, é muito fácil d
       return respond('illegal character');
     }
 
-Contudo, note que whitelisting sozinha não será mais suficiente assim que  você permitir pontos e barras - pessoas poderiam entrar com coisas como `../../etc/passwd` a fim de obter arquivos de fora da pasta permitida.
+Contudo, note que whitelisting sozinha não será suficiente assim que você permitir pontos e barras - pessoas poderiam entrar com coisas como `../../etc/passwd` a fim de obter arquivos de fora da pasta permitida.
 
 Prevenindo Directory Traversal
 ==============================
