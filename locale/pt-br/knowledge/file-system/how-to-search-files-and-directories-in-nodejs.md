@@ -7,7 +7,7 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-Suponha que você queira listar todos os arquivos no seu diretório atual.  Uma abordagem é utilizar a função builtin `fs.readdir` [method](/how-do-i-read-files-in-node-js). Isto lhe retornará um array com todos os arquivos e diretórios do caminho especificado:
+Suponha que você queira listar todos os arquivos no seu diretório atual.  Uma abordagem é utilizar a [função](/how-do-i-read-files-in-node-js) builtin `fs.readdir`. Isto lhe retornará um array com todos os arquivos e diretórios do caminho especificado:
 
     fs = require('fs');
 
