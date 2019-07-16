@@ -20,7 +20,7 @@ Poison null bytes é um modo de enganar o seu código para que ele veja outro no
 
 Whitelisting
 ============
-Você sem sempre será capaz de usar whitelisting, mas se você for, use-a - é muito fácil de implementar e difícil de dar errado. Por exemplo, se você souber que todos os nomes de arquivos são strings alfanuméricas em caixa baixa:
+Você nem sempre será capaz de usar whitelisting, mas se for, é muito fácil de implementar e difícil de dar errado. Por exemplo, se você souber que todos os nomes de arquivos são strings alfanuméricas em caixa baixa:
 
     if (!/^[a-z0-9]+$/.test(filename)) {
       return respond('illegal character');
