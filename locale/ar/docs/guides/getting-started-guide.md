@@ -16,12 +16,12 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
+  res.end('أهلا بالعالم\n');
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+  console.log(`الخادوم يعمل في http://${hostname}:${port}/`);
 });
 ```
 
-بعد ذلك، قم بتشغيل هذا الخادوم باستعمال الأمر ``` node app.js ```، و قم بزيارة الرابط http://localhost:3000 لترى رسالة مفادها 'Hello World'.
+بعد ذلك، قم بتشغيل هذا الخادوم باستعمال الأمر ``` node app.js ```، و قم بزيارة الرابط http://localhost:3000 لترى رسالة مفادها 'أهلا بالعالم'.
