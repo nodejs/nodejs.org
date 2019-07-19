@@ -212,7 +212,7 @@ REQUIREMENTS
 - Organizer name - Valentin Huber
 - Organizer contact info - [Email](mailto:valentin.huber@msg.group)
 
-##### Hamburg
+#### Hamburg
 
 - [Meetup](https://www.meetup.com/node-HH/)
 - Frequency of meetups - monthly and on demand
