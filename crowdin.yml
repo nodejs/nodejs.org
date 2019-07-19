@@ -1,0 +1,3 @@
+files:
+  - source: /locale/en/**/*.md
+    translation: /locale/%two_letters_code%/**/%original_file_name%
