@@ -14,7 +14,7 @@ labels:
   changelog: سجل التغييرات
   api: API Docs
   version-schedule-prompt: أو انظر الى
-  version-schedule-prompt-link-text: LTS schedule.
+  version-schedule-prompt-link-text: أجندة LTS.
   newsletter: نعم
   newsletter-prefix: قم بالانضمام الى
   newsletter-postfix: " , الرسالة الإخبارية الشّهريّة عن Node.js "
