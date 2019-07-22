@@ -10,7 +10,7 @@ title:  مجموعات العمل
 
 ## مجموعات العمل الحالية
 
-* [addon API](#addon-api)
+* [Addon API](#addon-api)
 * [القياس](#benchmarking)
 * [البناء](#build)
 * [التشخيص](#diagnostics)
