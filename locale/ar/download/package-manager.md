@@ -60,6 +60,7 @@ pacman -S nodejs npm
 ```bash
 pkg install node
 ```
+
 او يمكنك انتاجها باستعمال الـ[ports](https://www.freebsd.org/cgi/man.cgi?ports) الخاص بك:
 
 ```bash
@@ -80,7 +81,7 @@ emerge nodejs
 
 لتثبيت Node.js 12.x باستخدام سطر الأوامر، شغل الامر التالي كمستخدم مع سلطة *ALLOBJ الخاصة :
 
- ```bash
+```bash
 yum install nodejs12
 ```
 
@@ -93,6 +94,7 @@ yum install nodejs12
 ```bash
 cd /usr/pkgsrc/lang/nodejs && make install
 ```
+
 أو يمكنك تثبيت حزمة ثنائية (إذا كانت متوفرة لمنصتك) باستعمال pkgin:
 
 ```bash
