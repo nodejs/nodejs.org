@@ -10,9 +10,7 @@ layout: contribute.hbs
 - لأجل الانخراط في دردشة آنية عن تطوير الـ Node.js، تفضل بزيارة `irc.freenode.net` على قناة `#node.js` باستعمال [أحد برامج IRC](http://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) أو اتصل بواسطة متصفحك باستعمال خدمة الشات الخاصة بـ [freenode](http://webchat.freenode.net/?channels=node.js)
 - الحساب الرسمي للـ Node.js على تويتر هو [nodejs](https://twitter.com/nodejs)
 - [رزنامة مؤسسة الـ Node.js](https://nodejs.org/calendar) تحتوي على تواريخ لقاءات جميع الفرق العامة.
-
 - [Node.js Everywhere](https://newsletter.nodejs.org) و تمثل الرسالة الإخبارية الشهرية للـ Node.js.
-
 - [Node.js Collection](https://medium.com/the-node-js-collection) وهي مجموعة من المحتوى المكتوب من طرف مجتمعنا على موقع medium.
 - The [Community Committee](https://github.com/nodejs/community-committee) و هي تمثل لجنة ذات مستوى عالٍ في مؤسسة الـ Node.js و تركز على الجهود الخاصة بالمجتمع.
 
@@ -31,7 +29,6 @@ layout: contribute.hbs
 - [مجتمع Node.js الصيني](http://cnodejs.org)
 - [المجتمع الفرنسي للـ Node.js لمستخدمي Google+](https://plus.google.com/communities/113346206415381691435)
 - [المجتمع المجري (المجرية)](http://nodehun.blogspot.com/)
-- [مجموعة الفيسبوك الإسرائيلية للـ Node.js](https://www.facebook.com/groups/node.il/)
 - [مجموعة المستخدمين اليابانية](http://nodejs.jp/)
 - [مجموعة الفيسبوك باللغة الأسبانية للـ Node.js](https://www.facebook.com/groups/node.es/)
 - [مجتمع اللغة الاسبانية](http://nodehispano.com)
