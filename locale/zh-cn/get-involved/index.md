@@ -27,7 +27,6 @@ layout: contribute.hbs
 ## 国际化社区站点及项目
 
 - [汉语社团](http://cnodejs.org)
-- [Google+ 上的法语 Node.js 用户组](https://plus.google.com/communities/113346206415381691435)
 - [匈牙利（马札尔人）语社团](http://nodehun.blogspot.com/)
 - [Facebook 上以色列语 Node.js 用户组](https://www.facebook.com/groups/node.il/)
 - [日本语用户组](http://nodejs.jp/)

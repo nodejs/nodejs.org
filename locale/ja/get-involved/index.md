@@ -63,7 +63,6 @@ layout: contribute.hbs
 ## インターナショナルコミュニティサイトとプロジェクト
 
 - [中国コミュニティ](http://cnodejs.org)
-- [フランスの Node.js ユーザ Google+ コミュニティ](https://plus.google.com/communities/113346206415381691435)
 - [ハンガリー (マジャール) コミュニティ](http://nodehun.blogspot.com/)
 - [Node.js のイスラエル Facebook グループ](https://www.facebook.com/groups/node.il/)
 - [日本のユーザグループ](http://nodejs.jp/)

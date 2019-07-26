@@ -40,7 +40,6 @@ layout: contribute.hbs
 ## Site et projets des commuanutés internationales
 
 - [communauté chinoise](http://cnodejs.org)
-- [communauté française Google+ des utilisateurs Node.js](https://plus.google.com/communities/113346206415381691435)
 - [communauté hongroise (Magyar)](http://nodehun.blogspot.com/)
 - [communauté israelienne sur Facebook](https://www.facebook.com/groups/node.il/)
 - [communauté japonaise](http://nodejs.jp/)
