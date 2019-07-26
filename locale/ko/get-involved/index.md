@@ -61,7 +61,6 @@ layout: contribute.hbs
 ## 국제 커뮤니티 사이트 및 프로젝트
 
 - [중국 커뮤니티](http://cnodejs.org)
-- [프랑스 Google+ Node.js 사용자 커뮤니티](https://plus.google.com/communities/113346206415381691435)
 - [헝가리(마자르) 커뮤니티](http://nodehun.blogspot.com/)
 - [이스라엘 Facebook Node.js 그룹](https://www.facebook.com/groups/node.il/)
 - [일본 사용자 그룹](http://nodejs.jp/)

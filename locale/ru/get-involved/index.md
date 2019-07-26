@@ -29,7 +29,6 @@ layout: contribute.hbs
 ## Международные общественные сайты и проекты
 
 - [Китайское сообщество](http://cnodejs.org)
-- [Французское сообщество Google+ пользователей Node.js](https://plus.google.com/communities/113346206415381691435)
 - [Венгерское (мадьярское) сообщество](http://nodehun.blogspot.com/)
 - [Израильская группа Facebook для Node.js](https://www.facebook.com/groups/node.il/)
 - [Японская группа пользователей](http://nodejs.jp/)

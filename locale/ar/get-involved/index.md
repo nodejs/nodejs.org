@@ -29,7 +29,6 @@ layout: contribute.hbs
 
 - [مجموعة الفيسبوك للـ Node.js بالعربية](https://www.facebook.com/groups/node.ar)
 - [مجتمع Node.js الصيني](http://cnodejs.org)
-- [المجتمع الفرنسي للـ Node.js لمستخدمي Google+](https://plus.google.com/communities/113346206415381691435)
 - [المجتمع المجري (المجرية)](http://nodehun.blogspot.com/)
 - [مجموعة الفيسبوك الإسرائيلية للـ Node.js](https://www.facebook.com/groups/node.il/)
 - [مجموعة المستخدمين اليابانية](http://nodejs.jp/)
