@@ -11,10 +11,12 @@ layout: knowledge-post.hbs
 O Node permite aos usuários criarem seus próprios REPLs com o [módulo `repl`](https://nodejs.org/dist/latest/docs/api/repl.html). A forma de uso mais básica se parece com isso:
 
 ```js
+var repl = require('repl')
+
 repl.start(prompt, stream);
 ```
 
-`prompt` é uma string que é usada para o prompt do seu REPL e tem por padrão o "> ". `stream` é um stream que o repl escuta e tem por padrão o `processo.stdin`. Quando você executa o comando `node` pelo prompt de comando, o que ele faz nos bastidores é executar `repl.start()` para fornecer o REPL padrão.
+No exemplo acima, o `prompt` é uma string que é usada para o prompt do seu REPL, que tem por padrão o "> ". `stream` é um stream que o repl escuta e tem por padrão o `process.stdin`. Quando você executa o comando `node` pelo prompt de comando, o que ele faz nos bastidores é executar `repl.start()` para fornecer o REPL padrão.
 
 Entretanto, o repl é bem flexível. Abaixo segue um exemplo que demonstra isso:
 
@@ -46,59 +48,58 @@ var local = repl.start("node::local> ");
 local.context.mood = mood;
 ```
 
-Este script cria *dois* REPLs: Um é normal, exceto pelo prompt customizado. Porém o  *outro* é exposto através do módulo net de forma que se possa fazer a conexão telnet para ele! Além disso, ele usa a propriedade `context` para expor a função "mood" para os dois REPLs, e a string "bonus" apenas para o REPL remoto. Como pode ver, essa forma de tentar expor objetos em um REPL e não no outro *não funciona*.
+Este script cria *dois* REPLs: Um é normal, exceto pelo prompt customizado. Porém o  *outro* é exposto através do módulo net de forma que se possa fazer a conexão telnet para ele! Além disso, ele usa a propriedade `context` para expor a função "mood" para os dois REPLs, e a string "bonus" apenas para o REPL remoto. Como você verá, essa forma de tentar expor objetos em um REPL e não no outro *não funciona*.
 
 Além disso, todos os objetos no escopo global também serão acessíveis para os seus REPLs.
 
-Observe o que acontece quando eu executo o script:
+Aqui é o que acontece quando você executa o script:
 
-    $ node repl.js 
-    REPL remoto iniciou na porta 5001.
-    node::local> .exit
-    ^Cjosh@pidgey:/tmp/telnet$ node repl.js 
-    REPL remoto iniciou na porta 5001.
-    node::local> mood()
-    '^__^'
-    node::local> bonus
-    ReferenceError: bonus is not defined
-        at [object Context]:1:1
-        at Interface.<anonymous> (repl.js:171:22)
-        at Interface.emit (events.js:64:17)
-        at Interface._onLine (readline.js:153:10)
-        at Interface._line (readline.js:408:8)
-        at Interface._ttyWrite (readline.js:585:14)
-        at ReadStream.<anonymous> (readline.js:73:12)
-        at ReadStream.emit (events.js:81:20)
-        at ReadStream._emitKey (tty_posix.js:307:10)
-        at ReadStream.onData (tty_posix.js:70:12)
+```shell
+$ node repl.js 
+REPL remoto iniciou na porta 5001.
+node::local> .exit
+# <ctrl>-C
 
+$ node repl.js 
+REPL remoto iniciou na porta 5001.
+node::local> mood()
+'^__^'
+node::local> bonus
+ReferenceError: bonus is not defined
+```
 
 Como podem notar, a função `mood` é usada junto do REPL local. Mas a string `bonus` não. Isso é esperado.
 
 Observem agora o que acontece quando fazemos um telnet para a porta 5001:
 
-    josh@pidgey:/tmp/telnet$ telnet localhost 5001
-    Trying ::1...
-    Trying 127.0.0.1...
-    Connected to localhost.
-    Escape character is '^]'.
-    node::remote> mood()
-    '>.<'
-    node::remote> bonus
-    'DESBLOQUEADO'
+```shell
+$ telnet localhost 5001
+Trying ::1...
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+node::remote> mood()
+'>.<'
+node::remote> bonus
+'DESBLOQUEADO'
+```
 
-Como podem notar, a função `mood` *também* é disponibilizada através da telnet! Além disso `bonus` também é.
+Como você pode ver, a função `mood` *também* é disponibilizada através da telnet! Além disso `bonus` também é.
 
 Outro ponto interessante das minhas ações é que bonus agora também é definida no REPL local:
 
-    node::local> bonus
-    'UNLOCKED'
+```shell
+node::local> bonus
+'DESBLOQUEADO'
+```
 
 Parece que nós "desbloqueamos" a string `bonus` no REPL local também. Como parece ser, quaisquer variáveis criadas em um REPL também estão disponíveis no outro:
 
-    node::local> var node = "INCRÍVEL!"
+```shell
+node::local> var node = "INCRÍVEL!"
 
-    node::remote> node
-    'INCRÍVEL!'
+node::remote> node
+'INCRÍVEL!'
+```
 
-Como você pode ver, o REPL do node é potente e flexível.
+Como você pode ver, o REPL do node é poderoso e flexível.

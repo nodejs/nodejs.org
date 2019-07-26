@@ -3,6 +3,8 @@
   "author": "Node.js Foundation",
   "url": "https://nodejs.org/en/",
   "locale": "en",
+  "language": "English",
+  "languageEnglishVersion": "English",
   "scrollToTop": "Scroll to top",
   "reportNodeIssue": "Report Node.js issue",
   "reportWebsiteIssue": "Report website issue",
@@ -131,14 +133,6 @@
     "node-meetups": {
       "link": "get-involved/node-meetups",
       "text": "Node.js Meetups"
-    },
-    "node-events": {
-      "link": "get-involved/node-events",
-      "text": "Node.js Events"
-    },
-    "node-speakers": {
-      "link": "get-involved/node-speakers",
-      "text": "Node.js Speakers"
     }
   },
   "security": {

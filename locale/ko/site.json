@@ -3,6 +3,8 @@
   "author": "Node.js 재단",
   "url": "https://nodejs.org/ko/",
   "locale": "ko",
+  "language": "한국어",
+  "languageEnglishVersion": "Korean",
   "scrollToTop": "맨 위로",
   "reportNodeIssue": "Node.js 이슈 보고",
   "reportWebsiteIssue": "웹사이트 이슈 보고",
@@ -131,10 +133,6 @@
     "node-meetups": {
       "link": "get-involved/node-meetups",
       "text": "Node.js 미트업"
-    },
-    "node-speakers": {
-      "link": "get-involved/node-speakers",
-      "text": "Node.js 강연자"
     }
   },
   "security": {

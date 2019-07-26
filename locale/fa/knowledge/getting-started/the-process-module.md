@@ -11,7 +11,7 @@ layout: knowledge-post.hbs
 
 Each Node.js process has a set of built-in functionality, accessible through the global `process` module.  The `process` module doesn't need to be required - it is somewhat literally a wrapper around the currently executing process, and many of the methods it exposes are actually wrappers around calls into some of Node's core C libraries.
 
-##Events
+## Events
 
 There are two built-in events worth noting in the `process` module, `exit` and `uncaughtException`.
 
@@ -32,7 +32,7 @@ The other built-in event is called `uncaughtException`.  It fires, as you might 
 
 The default behavior on `uncaughtException` is to print a stack trace and exit - using the above, your program will display the message provided and the stack trace, but will **not** exit.
 
-##Streams
+## Streams
 
 The `process` object also provides wrappings for the three `STDIO` streams, `stdin`, `stdout`, and `stderr`.  Put briefly, `stdin` is a readable stream (where one would read input from the user), `stdout` is a non-blocking writeable stream (writes to `stdout` are asynchronous, in other words), and `stderr` is a blocking (synchronous) writeable stream.
 
@@ -50,9 +50,9 @@ STDOUT, or non-blocking functions: `console.log`, `console.info`, `util.puts`, `
 
 STDERR, or blocking functions: `console.warn`, `console.error`, `util.debug`
 
-Lastly, `process.stdin` is a readable stream for getting user input.  See [more on cli input](/articles/command-line/how-to-prompt-for-command-line-input).
+Lastly, `process.stdin` is a readable stream for getting user input.  See [more on cli input](/fa/knowledge/command-line/how-to-prompt-for-command-line-input).
 
-##Other Properties
+## Other Properties
 
 The `process` object additionally contains a variety of properties that allow you to access information about the running process.  Let's run through a few quick examples with the help of the REPL:
 
@@ -67,13 +67,13 @@ The `process` object additionally contains a variety of properties that allow yo
 
 The `pid` is the OS Process ID, `platform` is something general like 'linux' or 'darwin', and `version` refers to your Node version.  `process.title` is a little bit different - while set to `node` by default, it can be set to anything you want, and will be what gets displayed in lists of running processes.
 
-The `process` module also exposes `process.argv`, an array containing the command-line arguments to the current process, and `process.argc`, an integer representing the number of arguments passed in.  Read more on [how to parse command line arguments](/articles/command-line/how-to-parse-command-line-arguments)
+The `process` module also exposes `process.argv`, an array containing the command-line arguments to the current process, and `process.argc`, an integer representing the number of arguments passed in.  Read more on [how to parse command line arguments](/fa/knowledge/command-line/how-to-parse-command-line-arguments)
 
 `process.execPath` will return the absolute path of the executable that started this process.
 
 `process.env` contains your environment variables.  Try `process.env.HOME`, for example.
 
-##Methods
+## Methods
 
 There are also a variety of methods attached to the `process` object, many of which deal with quite advanced aspects of a program.  We'll take a look at a few of the more commonly useful ones, while leaving the more advanced parts for another article.
 

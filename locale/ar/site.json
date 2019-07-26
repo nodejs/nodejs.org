@@ -3,6 +3,8 @@
   "author": "Node.js Foundation",
   "url": "https://nodejs.org/ar/",
   "locale": "ar",
+  "language": "العربية",
+  "languageEnglishVersion": "Arabic",
   "rtl": true,
   "scrollToTop": "إنتقل إلى الأعلى",
   "reportNodeIssue": "Node.js أبلغ عن عطل في",
@@ -90,10 +92,6 @@
       "link": "docs/es6",
       "text": "ES6 وما بعدها"
     },
-    "inspector": {
-      "link": "docs/inspector",
-      "text": "أدوات الإشراف"
-    },
     "api-lts": {
       "link": "/dist/latest-%ver-major%/docs/api",
       "subtext": "LTS",
@@ -106,6 +104,10 @@
     "guides": {
       "link": "docs/guides",
       "text": "إرشادات"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "تبعيات"
     }
   },
   "getinvolved": {
@@ -129,15 +131,7 @@
     },
     "node-meetups": {
       "link": "get-involved/node-meetups",
-      "text": "Node.js لقاءات"
-    },
-    "node-events": {
-      "link": "get-involved/node-events",
-      "text": "Node.js فعاليات"
-    },
-    "node-speakers": {
-      "link": "get-involved/node-speakers",
-      "text": "متحدثو الـ Node.js"
+      "text": "Node.js مُلْتَقَيات"
     }
   },
   "security": {

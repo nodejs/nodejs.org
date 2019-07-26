@@ -3,6 +3,8 @@
   "author": "Node.js Foundation",
   "url": "https://nodejs.org/uk/",
   "locale": "uk",
+  "language": "Українська",
+  "languageEnglishVersion": "Ukrainian",
   "scrollToTop": "Вгору",
   "reportNodeIssue": "Проблеми з Node.js",
   "reportWebsiteIssue": "Проблеми з сайтом",

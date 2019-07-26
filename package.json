@@ -27,7 +27,6 @@
   "standard": {
     "ignore": [
       "static/js/modernizr.custom.js",
-      "static/js/dnt_helper.js",
       "static/legacy/*",
       "external"
     ]
@@ -36,10 +35,10 @@
     "autoprefixer-stylus": "0.14.0",
     "cheerio": "0.22.0",
     "chokidar": "^2.0.4",
-    "handlebars": "^4.1.0",
+    "handlebars": "^4.1.2",
     "jstransformer-handlebars": "1.1.0",
     "junk": "3.1.0",
-    "lodash.defaultsdeep": "4.6.0",
+    "lodash.defaultsdeep": "^4.6.1",
     "marked": "0.6.2",
     "metalsmith": "2.3.0",
     "metalsmith-collections": "0.9.0",
@@ -69,7 +68,7 @@
     "pre-commit": "^1.2.2",
     "proxyquire": "^2.0.1",
     "standard": "^12.0.0",
-    "stylint": "^1.5.9",
+    "stylint": "^2.0.0",
     "tape": "^4.9.1"
   }
 }

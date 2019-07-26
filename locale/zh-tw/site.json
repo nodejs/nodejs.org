@@ -4,6 +4,8 @@
   "author": "Node.js 基金會",
   "url": "https://nodejs.org/zh-tw/",
   "locale": "zh-tw",
+  "language": "中文(繁體)",
+  "languageEnglishVersion": "Chinese Traditional",
   "scrollToTop": "回到頁首",
   "reportNodeIssue": "回報 Node.js 問題 ",
   "reportWebsiteIssue": "回報 Node.js 網站問題",
@@ -86,10 +88,6 @@
       "link": "docs/es6",
       "text": "ES6 相關"
     },
-    "inspector": {
-      "link": "docs/inspector",
-      "text": "inspector"
-    },
     "api-lts": {
       "link": "/dist/latest-%ver-major%/docs/api",
       "subtext": "LTS",
@@ -126,10 +124,6 @@
     "node-meetups": {
       "link": "get-involved/node-meetups",
       "text": "Node.js 開發者大會"
-    },
-    "node-speakers": {
-      "link": "get-involved/node-speakers",
-      "text": "Node.js 演講者"
     }
   },
   "security": {

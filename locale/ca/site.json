@@ -3,6 +3,8 @@
   "author": "Fundació Node.js",
   "url": "https://nodejs.org/ca/",
   "locale": "ca",
+  "language": "Catalan",
+  "languageEnglishVersion": "Catalan",
   "scrollToTop": "Torna al començament",
   "reportNodeIssue": "Informe d'un problema de Node.js",
   "reportWebsiteIssue": "Informe d'un problema al lloc web",

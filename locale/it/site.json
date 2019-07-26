@@ -3,6 +3,8 @@
   "author": "Node.js Foundation",
   "url": "https://nodejs.org/en/",
   "locale": "it",
+  "language": "Italiano",
+  "languageEnglishVersion": "Italian",
   "scrollToTop": "Portami all'inizio",
   "reportNodeIssue": "Segnala un problema di Node.js",
   "reportWebsiteIssue": "Segnala un problema del sito",

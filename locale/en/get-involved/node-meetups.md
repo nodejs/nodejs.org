@@ -212,7 +212,7 @@ REQUIREMENTS
 - Organizer name - Valentin Huber
 - Organizer contact info - [Email](mailto:valentin.huber@msg.group)
 
-##### Hamburg
+#### Hamburg
 
 - [Meetup](https://www.meetup.com/node-HH/)
 - Frequency of meetups - monthly and on demand
@@ -241,7 +241,15 @@ REQUIREMENTS
 - Organizer contact info -
 
 ### India
+#### Maharashtra
 
+##### Pune
+ - [Meetup](https://www.meetup.com/JavaScripters)
+ - Frequency of meetups - monthly
+ - How to submit a talk? Send your queries to Pune.javascripters@gmail.com  or Contact organizers in the meetup page.
+ - Organizer name - Imran shaikh & Akash Jarad
+ - Organizer contact info - javascripters.community@gmail.com
+ 
 ##### Delhi
 
 - [Meetup](https://www.meetup.com/nodeJS-Devs/)

@@ -5,13 +5,13 @@ layout: docs.hbs
 
 # 数据流中的积压问题
 
-通常在数据处理的时候我们会遇到一个普遍的问题：[`backpressure`][]，意思是在数据传输过程中有一大堆数据在缓存之后积压着。每次当数据到达结尾又遇到复杂的运算，又或者无论什么原因它比预期的慢，这样累积下来，从源头来的数据就会变得很庞大，像一个塞子一样堵塞住。
+通常在数据处理的时候我们会遇到一个普遍的问题：[`背压`][]，意思是在数据传输过程中有一大堆数据在缓存之后积压着。每次当数据到达结尾又遇到复杂的运算，又或者无论什么原因它比预期的慢，这样累积下来，从源头来的数据就会变得很庞大，像一个塞子一样堵塞住。
 
 为解决这个问题，必须存在一种适当的代理机制，确保流从一个源流入另外一个的时候是平滑顺畅的。不同的社区组织针对他们各自的问题单独做了解决，好例子比如 Unix 的管道和 TCP 的 Socket。此问题经常与 _流控制_ 相关。在 Node.js 中，流已经是被采纳的解决方案。
 
 此文的目的在于详细深入介绍什么是积压，并从代码角度详细解释在 Node.js 中，流是如何针对此问题进行处理的。本文的第二部分将给予你实现流的功能时最佳实践，以确保你的程序既安全又精简。
 
-我们假定你对 Node.js 中的 [`backpressure`][]，[`Buffer`][]，[`EventEmitter`][] 和 [`Stream`][] 的基本概念有一点了解。如果你尚未完整阅读过 API 文档，那么最好是先看一下相关 API 说明，它也会有助于你扩展理解本文的主旨。
+我们假定你对 Node.js 中的 [`背压`][]，[`Buffer`][]，[`EventEmitter`][] 和 [`Stream`][] 的基本概念有一点了解。如果你尚未完整阅读过 API 文档，那么最好是先看一下相关 API 说明，它也会有助于你扩展理解本文的主旨。
 
 ## 处理数据中遇到的问题
 
@@ -94,16 +94,16 @@ const util = require('util');
 const pipeline = util.promisify(stream.pipeline);
 
 async function run() {
-    try {
-        await pipeline(
-            fs.createReadStream('The.Matrix.1080p.mkv'),
-            zlib.createGzip(),
-            fs.createWriteStream('The.Matrix.1080p.mkv.gz'),
-        );
-        console.log('Pipeline succeeded');
-    } catch (err) {
-        console.error('Pipeline failed', err);
-    }
+  try {
+    await pipeline(
+      fs.createReadStream('The.Matrix.1080p.mkv'),
+      zlib.createGzip(),
+      fs.createWriteStream('The.Matrix.1080p.mkv.gz'),
+    );
+    console.log('Pipeline succeeded');
+  } catch (err) {
+    console.error('Pipeline failed', err);
+  }
 }
 ```
 
@@ -175,7 +175,7 @@ approx. time (ms) | GC (ms) | modified GC (ms)
 
 但是，当积压机制处理不恰当，V8 垃圾回收机制开始变慢。一般情况下 GC 一分钟内进行 75 次回收，但是修改过的二进制库仅 36 次。
 
-随着内存占用越来越多，缓慢和渐进的欠债也不断积累。随着数据的传输，在没有积压系统的情况下，每个块传输都使用更多的内存。 
+随着内存占用越来越多，缓慢和渐进的欠债也不断积累。随着数据的传输，在没有积压系统的情况下，每个块传输都使用更多的内存。
 
 内存分配使用越多，GC 就越要照顾内存交换。内存交换得越多，GC 就需要考虑决定哪些内存可以被释放，并且要一直在大块内存中扫描独立区块，而这又要消耗更多的计算功率。
 
@@ -253,7 +253,7 @@ sys          7.43
 
 在数据缓存超出了 [`highWaterMark`][] 或者写入的列队处于繁忙状态，[`.write()`][] 会返回 `false`。
 
-当 `false` 返回之后，积压系统介入了。它将暂停从任何发送数据的数据流中进入的 [`Readable`][]。一旦数据流清空了， [`.drain()`][] 事件将被触发，消耗进来的数据流。
+当 `false` 返回之后，积压系统介入了。它将暂停从任何发送数据的数据流中进入的 [`Readable`][]。一旦数据流清空了， [`'drain'`][] 事件将被触发，消耗进来的数据流。
 
 一旦队列全部处理完毕，积压机制将允许允许数据再次发送。在使用中的内存空间将自我释放，同时准备接收下一次的批量数据。
 
@@ -365,7 +365,7 @@ class MyReadable extends Readable {
 }
 ```
 
-另外，从定制流之外，忽略积压简直可笑至极。在以下反例中，代码仅关注数据是否到达（通过 [`.data` event][] 订阅）：
+另外，从定制流之外，忽略积压简直可笑至极。在以下反例中，代码仅关注数据是否到达（通过 [`'data'` event][] 订阅）：
 
 ```javascript
 // 下面的代码忽略了 Node.js 内部处理积压的机制，无条件地写入数据，不管目的地的流
@@ -401,7 +401,7 @@ class MyWritable extends Writable {
 // 更恰当的写法是下面这样：
     if (chunk.contains('a'))
       return callback();
-    else if (chunk.contains('b'))
+    if (chunk.contains('b'))
       return callback();
     callback();
 ```
@@ -456,8 +456,8 @@ function doUncork(stream) {
 [`Duplex`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [`Transform`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [`zlib`]: https://nodejs.org/api/zlib.html
-[`.drain()`]: https://nodejs.org/api/stream.html#stream_event_drain
-[`.data` event]: https://nodejs.org/api/stream.html#stream_event_data
+[`'drain'`]: https://nodejs.org/api/stream.html#stream_event_drain
+[`'data'` event]: https://nodejs.org/api/stream.html#stream_event_data
 [`.read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size
 [`.write()`]: https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback
 [`._read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size_1
@@ -472,7 +472,7 @@ function doUncork(stream) {
 [实现可读的流]: https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_readable_stream
 
 [其它工具包]: https://github.com/sindresorhus/awesome-nodejs#streams
-[`backpressure`]: https://en.wikipedia.org/wiki/Back_pressure#Backpressure_in_information_technology
+[`背压`]: https://en.wikipedia.org/wiki/Backpressure_routing
 [Node.js v0.10]: https://nodejs.org/docs/v0.10.0/
 [`highWaterMark`]: https://nodejs.org/api/stream.html#stream_buffering
 [返回值]: https://github.com/nodejs/node/blob/55c42bc6e5602e5a47fb774009cfe9289cb88e71/lib/_stream_writable.js#L239

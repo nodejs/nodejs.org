@@ -4,6 +4,8 @@
   "author": "Fundación de Node.js",
   "url": "https://nodejs.org/es/",
   "locale": "es",
+  "language": "Español",
+  "languageEnglishVersion": "Spanish",
   "scrollToTop": "Vuelve al comienzo",
   "reportNodeIssue": "Informe de un problema con Node.js",
   "reportWebsiteIssue": "Informe de un problema con el sitio",
