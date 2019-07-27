@@ -1,13 +1,13 @@
 ---
-title: Guides
+title: Руководства
 layout: docs.hbs
 ---
 
-# Guides
+# Руководства
 
-## General
+## Общее
 
-- [Getting Started Guide](getting-started-guide/)
+- [Первые шаги](getting-started-guide/)
 - [Debugging - Getting Started](debugging-getting-started/)
 - [Easy profiling for Node.js Applications](simple-profiling/)
 - [Diagnostics - Flame Graphs](diagnostics-flamegraph/)
@@ -15,9 +15,9 @@ layout: docs.hbs
 - [Migrating to safe Buffer constructors](buffer-constructor-deprecation/)
 
 
-## Node.js core concepts
+## Ключевые концепции Node.js
 
-- [Overview of Blocking vs Non-Blocking](blocking-vs-non-blocking/)
+- [Блокирующие и Неблокирующие Вызовы](blocking-vs-non-blocking/)
 - [The Node.js Event Loop, Timers, and `process.nextTick()`](event-loop-timers-and-nexttick/)
 - [Don't Block the Event Loop (or the Worker Pool)](dont-block-the-event-loop/)
 - [Timers in Node.js](timers-in-node/)
