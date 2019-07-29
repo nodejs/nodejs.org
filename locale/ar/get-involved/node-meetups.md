@@ -240,15 +240,7 @@ layout: contribute.hbs
 - المنظم - انتون والي
 - معلومات الاتصال بالمنظم - 
 
-### إسرائيل
-
-##### تل أبيب
-
-- [اللقاء](https://www.meetup.com/NodeJS-Israel/)
-- تردد اللقاء - شهريا
-- كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-- المنظم - ليور كيسوس
-- معلومات الاتصال بالمنظم -
+<!-- لا وجود لدولة إسمها إسرائيل -->
 
 ### المكسيك
 
@@ -313,9 +305,9 @@ layout: contribute.hbs
 - المنظم - Manil Chowdhury
 - معلومات الاتصال بالمنظم -
 
-#### Ontario
+#### أونتاريو
 
-##### Toronto
+##### تورونتو
 
 - [Toronto JS Meetup](http://torontojs.com/)
 - Frequency of Meetups - weekly
@@ -324,11 +316,11 @@ layout: contribute.hbs
 - معلومات الاتصال بالمنظم - _Community Slack_
 
 
-### United States
+### الولايات المتحدة
 
-#### Arizona
+#### أريزونا
 
-##### Mesa
+##### ميسا
 
 - [اللقاء](https://www.meetup.com/NodeAZ/)
 - تردد اللقاء - شهريا
@@ -337,9 +329,9 @@ layout: contribute.hbs
 - معلومات الاتصال بالمنظم -
 
 
-#### California
+#### كاليفورنيا
 
-##### Irvine
+##### إرفين
 
 - [اللقاء]https://www.meetup.com/Node-JS-OC/)
 - تردد اللقاء - شهريا
@@ -347,7 +339,7 @@ layout: contribute.hbs
 - المنظم - Farsheed Atef
 - معلومات الاتصال بالمنظم - 
 
-##### San Francisco
+##### سان فرانسيسكو
 
 - [اللقاء](https://www.meetup.com/sfnode/)
 - تردد اللقاء - شهريا
@@ -362,9 +354,9 @@ layout: contribute.hbs
 - معلومات الاتصال بالمنظم -
 
 
-#### Colorado
+#### كولورادو
 
-##### Denver
+##### دنفر
 
 - [اللقاء](https://www.meetup.com/Node-js-Denver-Boulder//)
 - تردد اللقاء - شهريا
@@ -372,18 +364,19 @@ layout: contribute.hbs
 - المنظم - Brooks Patton
 - معلومات الاتصال بالمنظم -
 
-#### Georgia 
+#### جورجيا 
 
-##### Atlanta 
+##### أتلانتا 
 
 - [اللقاء](https://www.meetup.com/Atlanta-Nodejs-Developers/)
 - تردد اللقاء - شهريا
 - كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 - المنظم - Ryan Connelly
-- معلومات الاتصال بالمنظم - 
-#### Illinois
+- معلومات الاتصال بالمنظم 
+  
+#### إلينوي 
 
-##### Chicago
+##### شيكاغو
 
 - [اللقاء](https://www.meetup.com/Chicago-Nodejs/)
 - تردد اللقاء - شهريا
@@ -391,9 +384,9 @@ layout: contribute.hbs
 - المنظم - Mike Hostetler
 - معلومات الاتصال بالمنظم -
 
-#### Indiana
+#### إنديانا
 
-##### Indianapolis
+##### انديانابوليس
 
 - [اللقاء](https://www.meetup.com/Node-indy/)
 - تردد اللقاء - شهريا
@@ -401,9 +394,9 @@ layout: contribute.hbs
 - المنظم - Mike Seidle
 - معلومات الاتصال بالمنظم - 
 
-#### Massachusetts
+#### ماساتشوستس
 
-##### Boston 
+##### بوسطن 
 
 - [اللقاء](https://www.meetup.com/nodejs/)
 - تردد اللقاء - شهريا
@@ -411,9 +404,9 @@ layout: contribute.hbs
 - المنظم - Brian Sodano
 - معلومات الاتصال بالمنظم -
 
-#### Minnesota
+#### مينيسوتا
 
-##### Minneapolis
+##### مينيابوليس
 
 - [اللقاء](https://www.meetup.com/NodeMN/)
 - تردد اللقاء - شهريا
@@ -421,9 +414,9 @@ layout: contribute.hbs
 - المنظم - Mike Frey
 - معلومات الاتصال بالمنظم -
 
-#### New York 
+#### نيويورك
 
-##### New York 
+##### نيويورك 
 
 - [اللقاء](https://www.meetup.com/nodejs/)
 - تردد اللقاء - شهريا
@@ -431,9 +424,10 @@ layout: contribute.hbs
 - المنظم - Patrick Scott Co-organizer: Matt Walters.
 - معلومات الاتصال بالمنظم - 
 
-#### Illinois 
+#### إلينوي 
 
-##### Chicago
+##### شيكاغو
+
 - [اللقاء](https://www.meetup.com/Chicago-Nodejs/)
 - Frequency - monthly
 - [How to submit talk](https://airtable.com/shrTDwmMH3zsnsWOE)
@@ -441,9 +435,9 @@ layout: contribute.hbs
 - معلومات الاتصال بالمنظم
 
 
-#### North Carolina
+#### شمال كارولينا
 
-##### Raleigh Durham
+##### رالي
 
 - [اللقاء](https://www.meetup.com/triangle-nodejs/)
 - تردد اللقاءات - كل 3 أشهر
