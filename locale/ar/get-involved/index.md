@@ -18,7 +18,7 @@ layout: contribute.hbs
 
 - [التوثيق الرسمي لواجهة برمجة التطبيق](/api) يتحدث بالتفصيل على وجاهة برمجة التطبيق الخاصة بالـ Node.js
 - [دلائل الـ Node.js](https://nodejs.dev) يرشدك إلى أساسيات تطوير تطبيقات باستعمال الـ Node.js. 
-- [NodeSchool.io] (http://nodeschool.io) سيعلمك مفاهيم الـ Node.js باستعمال العاب سطر اوامر تفاعلية.
+- [NodeSchool.io](http://nodeschool.io) سيعلمك مفاهيم الـ Node.js باستعمال العاب سطر اوامر تفاعلية.
 - [التاق الخاص بالـ Node.js على Stack Overflow](http://stackoverflow.com/questions/tagged/node.js) يجمع معلومات جديدة كل يوم.
 - [التاق الخاص بمجتمع مطوري الـ Node.js](https://dev.to/t/node) يمثل مكانا لمشاركة مشاريع الـ Node.js و المقالات و الدروس المتعلقة به إضافة إلى بدء النقاشات و طلب الآراء عن المواضيع المتعلقة بالـ Node.js. إن جميع المطورين من كافة المستويات مرحب بها هنا.
 - [Nodeiflux](https://discordapp.com/invite/vUsrbjd) هو مجتمع داعم لمطوري الجهة الخلفية للـ Node.js الذين يدعمون بعضهم على منصة Discord.
