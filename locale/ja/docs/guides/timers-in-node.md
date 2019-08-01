@@ -228,7 +228,7 @@ Just like `setTimeout()`, `setInterval()` also returns a `Timeout` object which
 can be used to reference and modify the interval that was set.
 
  -->
-### 「無限ループ」実行 ~ *`setInterval()`*
+### "無限ループ" 実行 ~ *`setInterval()`*
 
 複数回実行する必要があるコードブロックがある場合、
 `setInterval()` を使用してそのコードを実行できます。
@@ -344,34 +344,34 @@ setImmediate(() => {
 });
 ```
  -->
-## Leaving Timeouts Behind
+## 後ろにタイムアウトを残す
 
-Remember that `Timeout` objects are returned by `setTimeout` and `setInterval`.
-The `Timeout` object provides two functions intended to augment `Timeout`
-behavior with `unref()` and `ref()`. If there is a `Timeout` object scheduled
-using a `set` function, `unref()` can be called on that object. This will change
-the behavior slightly, and not call the `Timeout` object *if it is the last
-code to execute*. The `Timeout` object will not keep the process alive, waiting
-to execute.
+`Timeout` オブジェクトは `setTimeout` と `setInterval` によって返されることを忘れないでください。
+`Timeout` オブジェクトは `unref()` と `ref()` で `Timeout` の振る舞いを増強することを目的とした2つの関数を提供します。
+`set` 関数を使ってスケジュールされた `Timeout` オブジェクトがあれば、
+そのオブジェクトに対して `unref()` を呼び出すことができます。
+これはふるまいをわずかに変えます、
+そして*それが実行する最後のコードであるなら* `Timeout` オブジェクトを呼ばないでください。
+`Timeout` オブジェクトはプロセスを実行し続け、実行するのを待ちません。
 
-In similar fashion, a `Timeout` object that has had `unref()` called on it
-can remove that behavior by calling `ref()` on that same `Timeout` object,
-which will then ensure its execution. Be aware, however, that this does
-not *exactly* restore the initial behavior for performance reasons. See
-below for examples of both:
+同様に、`unref()` が呼び出された `Timeout` オブジェクトは、
+同じ `Timeout` オブジェクトに対して `ref()` を呼び出すことでその振る舞いを取り除くことができ、
+それによってその実行が保証されます。
+ただし、パフォーマンス上の理由から、これによって初期の動作が*正確*に復元されるわけではないことに注意してください。
+両方の例については、以下を参照してください。
 
 ```js
 const timerObj = setTimeout(() => {
   console.log('will i run?');
 });
 
-// if left alone, this statement will keep the above
-// timeout from running, since the timeout will be the only
-// thing keeping the program from exiting
+// このままにしておくと、
+// タイムアウトがプログラムの終了を妨げる唯一のものになるので、
+// このステートメントは上記のタイムアウトを実行しないようにします。
 timerObj.unref();
 
-// we can bring it back to life by calling ref() inside
-// an immediate
+// immediate 内で ref() を呼び出すことでそれを元の状態に
+// 戻すことができます。
 setImmediate(() => {
   timerObj.ref();
 });
@@ -386,10 +386,10 @@ this Node.js guide: [The Node.js Event Loop, Timers, and
 process.nextTick()](/en/docs/guides/event-loop-timers-and-nexttick/).
 
  -->
-## Further Down the Event Loop
+## イベントループのさらに下へ
 
-There's much more to the Event Loop and Timers than this guide
-has covered. To learn more about the internals of the Node.js
-Event Loop and how Timers operate during execution, check out
-this Node.js guide: [The Node.js Event Loop, Timers, and
-process.nextTick()](/en/docs/guides/event-loop-timers-and-nexttick/).
+このガイドでカバーしてきた以上に
+イベントループとタイマーにはもっとたくさんのものがあります。
+Node.js イベントループの内部と、
+実行中のタイマーの動作の詳細については、
+この Node.js ガイド [Node.js イベントループ、タイマー、および process.nextTick()](/ja/docs/guides/event-loop-timers-and-nexttick/) を参照してください。
