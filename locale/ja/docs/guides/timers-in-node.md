@@ -16,7 +16,7 @@ read up on the the Node.js
  -->
 # Node.js のタイマーと仕組み
 
-Node.js の Timers モジュールには、
+Node.js のタイマーモジュールには、
 一定期間後にコードを実行する関数が含まれています。
 ブラウザの JavaScript API をエミュレートするためにすべてのメソッドがグローバルに利用可能であるため、
 `require()` を介してタイマーをインポートする必要はありません。
@@ -194,13 +194,8 @@ executing immediate: so immediate
 `setImmediate()` は `Immediate` オブジェクトを返します。
 これを使用して、スケジュールされた Immediate をキャンセル (下記の `clearImmediate()` を参照) できます。
 
-Note: Don't get `setImmediate()` confused with `process.nextTick()`. There are
-some major ways they differ. The first is that `process.nextTick()` will run
-*before* any `Immediate`s that are set as well as before any scheduled I/O.
-The second is that `process.nextTick()` is non-clearable, meaning once
-code has been scheduled to execute with `process.nextTick()`, the execution
-cannot be stopped, just like with a normal function. Refer to [this guide](/en/docs/guides/event-loop-timers-and-nexttick/#process-nexttick)
-to better understand the operation of `process.nextTick()`.
+注意: `setImmediate()` を `process.nextTick()` と混同しないでください。 いくつかの大きな違いがあります。 1つ目は、`process.nextTick()` は、設定されている `Immediate` やスケジュールされている I/O の*前*に実行されるということです。
+2つ目は、`process.nextTick()` は消去不可能であるということです。つまり、一度 `process.nextTick()` でコードを実行するようにスケジュールされると、通常の関数のように実行を停止することはできません。`process.nextTick()` の操作をよく理解するために[このガイド](/ja/docs/guides/event-loop-timers-and-nexttick/#process-nexttick)を参照してください。
 
 <!-- 
 ### "Infinite Loop" Execution ~ *`setInterval()`*
@@ -228,7 +223,7 @@ Just like `setTimeout()`, `setInterval()` also returns a `Timeout` object which
 can be used to reference and modify the interval that was set.
 
  -->
-### "Infinite Loop" Execution ~ *`setInterval()`*
+### 「無限ループ」実行 ~ *`setInterval()`*
 
 If there is a block of code that should execute multiple times, `setInterval()`
 can be used to execute that code. `setInterval()` takes a function
