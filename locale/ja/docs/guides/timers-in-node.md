@@ -194,8 +194,13 @@ executing immediate: so immediate
 `setImmediate()` は `Immediate` オブジェクトを返します。
 これを使用して、スケジュールされた Immediate をキャンセル (下記の `clearImmediate()` を参照) できます。
 
-注意: `setImmediate()` を `process.nextTick()` と混同しないでください。 いくつかの大きな違いがあります。 1つ目は、`process.nextTick()` は、設定されている `Immediate` やスケジュールされている I/O の*前*に実行されるということです。
-2つ目は、`process.nextTick()` は消去不可能であるということです。つまり、一度 `process.nextTick()` でコードを実行するようにスケジュールされると、通常の関数のように実行を停止することはできません。`process.nextTick()` の操作をよく理解するために[このガイド](/ja/docs/guides/event-loop-timers-and-nexttick/#process-nexttick)を参照してください。
+注意: `setImmediate()` を `process.nextTick()` と混同しないでください。
+いくつかの大きな違いがあります。
+1つ目は、`process.nextTick()` は、設定されている `Immediate` やスケジュールされている I/O の*前*に実行されるということです。
+2つ目は、`process.nextTick()` は消去不可能であるということです。
+つまり、一度 `process.nextTick()` でコードを実行するようにスケジュールされると、
+通常の関数のように実行を停止することはできません。
+`process.nextTick()` の操作をよく理解するために[このガイド](/ja/docs/guides/event-loop-timers-and-nexttick/#process-nexttick)を参照してください。
 
 <!-- 
 ### "Infinite Loop" Execution ~ *`setInterval()`*
@@ -225,14 +230,14 @@ can be used to reference and modify the interval that was set.
  -->
 ### 「無限ループ」実行 ~ *`setInterval()`*
 
-If there is a block of code that should execute multiple times, `setInterval()`
-can be used to execute that code. `setInterval()` takes a function
-argument that will run an infinite number of times with a given millisecond
-delay as the second argument. Just like `setTimeout()`, additional arguments
-can be added beyond the delay, and these will be passed on to the function call.
-Also like `setTimeout()`, the delay cannot be guaranteed because of operations
-that may hold on to the event loop, and therefore should be treated as an
-approximate delay. See the below example:
+複数回実行する必要があるコードブロックがある場合、
+`setInterval()` を使用してそのコードを実行できます。
+`setInterval()` は2番目の引数として指定されたミリ秒の遅れで無限回実行する関数の引数を取ります。
+`setTimeout()` と同じように、遅延を超えて追加の引数を追加することができ、
+それらは関数呼び出しに渡されます。
+`setTimeout()` と同様に、イベントループに耐えることができる操作のために遅延を保証することはできません。
+したがっておおよその遅延として扱われるべきです。
+以下の例を参照してください。
 
 ```js
 function intervalFunc() {
@@ -241,11 +246,11 @@ function intervalFunc() {
 
 setInterval(intervalFunc, 1500);
 ```
-In the above example, `intervalFunc()` will execute about every 1500
-milliseconds, or 1.5 seconds, until it is stopped (see below).
+上の例では、`intervalFunc()` は停止されるまで
+約 1500 ミリ秒 (1.5秒) ごとに実行されます(下記参照)。
 
-Just like `setTimeout()`, `setInterval()` also returns a `Timeout` object which
-can be used to reference and modify the interval that was set.
+`setTimeout()` と同様に、
+`setInterval()` もまた設定された間隔を参照したり修正したりするのに使用できる `Timeout` オブジェクトを返します。
 
 <!-- 
 ## Clearing the Future
@@ -277,15 +282,15 @@ clearInterval(intervalObj);
 ```
 
  -->
-## Clearing the Future
+## 未来をクリアする
 
-What can be done if a `Timeout` or `Immediate` object needs to be cancelled?
-`setTimeout()`, `setImmediate()`, and `setInterval()` return a timer object
-that can be used to reference the set `Timeout` or `Immediate` object.
-By passing said object into the respective `clear` function, execution of
-that object will be halted completely. The respective functions are
-`clearTimeout()`, `clearImmediate()`, and `clearInterval()`. See the example
-below for an example of each:
+`Timeout` または `Immediate` オブジェクトをキャンセルする必要がある場合はどうすればいいですか？
+`setTimeout()`、`setImmediate()`、および `setInterval()` は、
+set `Timeout`または `Immediate` オブジェクトを参照するために使用できるタイマーオブジェクトを返します。
+前述のオブジェクトをそれぞれの `clear` 関数に渡すことによって、
+そのオブジェクトの実行は完全に停止されます。
+それぞれの関数は `clearTimeout()`、`clearImmediate()`、そして `clearInterval()` です。
+それぞれの例については、以下の例を参照してください:
 
 ```js
 const timeoutObj = setTimeout(() => {
