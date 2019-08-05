@@ -14,7 +14,7 @@
     "load-schedule": "curl -sS https://raw.githubusercontent.com/nodejs/Release/master/schedule.json -o source/schedule.json",
     "start": "npm run serve",
     "test": "npm run test:lint && npm run test:unit && npm run test:smoke",
-    "test:lint": "standard --fix && htmllint **/*.hbs && stylint layouts/css",
+    "test:lint": "standard --fix && htmllint **/*.hbs && stylint layouts/css && markdownlint \"**/*.md\" -i \"node_modules/\"",
     "test:unit": "tape tests/**/*.test.js | faucet",
     "test:smoke": "tape tests/*.smoketest.js | faucet"
   },
@@ -64,6 +64,7 @@
   "devDependencies": {
     "faucet": "^0.0.1",
     "htmllint-cli": "^0.0.6",
+    "markdownlint-cli": "^0.17.0",
     "nock": "^10.0.6",
     "pre-commit": "^1.2.2",
     "proxyquire": "^2.0.1",
