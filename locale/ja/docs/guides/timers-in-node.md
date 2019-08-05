@@ -10,7 +10,7 @@ The Timers module in Node.js contains functions that execute code after a set
 period of time. Timers do not need to be imported via `require()`, since
 all the methods are available globally to emulate the browser JavaScript API.
 To fully understand when timer functions will be executed, it's a good idea to
-read up on the the Node.js
+read up on the Node.js
 [Event Loop](/en/docs/guides/event-loop-timers-and-nexttick/).
 
  -->
