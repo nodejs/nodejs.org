@@ -144,10 +144,10 @@ pkg_add node
 
 主要軟體庫中都提供了下列套件：
 
- - **openSUSE Leap 42.2**: `nodejs4`
- - **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
- - **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
- - **SUSE Linux Enterprise Server (SLES) 12**<sup>1</sup>: `nodejs4`, `nodejs6`
+- **openSUSE Leap 42.2**: `nodejs4`
+- **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
+- **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
+- **SUSE Linux Enterprise Server (SLES) 12**<sup>1</sup>: `nodejs4`, `nodejs6`
 
 <sup>1:</sup> 必須[於安裝前加入](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html) "Web and Scripting Module"。
 
