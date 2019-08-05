@@ -6,7 +6,7 @@ layout: contribute.hbs
 
 ## نقاش المجتمع
 
-- تعتبر [قائمة المشكلات على GitHub]() المكان المخصص للنقاشات حول المميزات الأساسية للـ Node.js.
+- تعتبر [قائمة المشكلات على GitHub](https://github.com/nodejs/node/issues) المكان المخصص للنقاشات حول المميزات الأساسية للـ Node.js.
 - لأجل الانخراط في دردشة آنية عن تطوير الـ Node.js، تفضل بزيارة `irc.freenode.net` على قناة `#node.js` باستعمال [أحد برامج IRC](http://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) أو اتصل بواسطة متصفحك باستعمال خدمة الشات الخاصة بـ [freenode](http://webchat.freenode.net/?channels=node.js)
 - الحساب الرسمي للـ Node.js على تويتر هو [nodejs](https://twitter.com/nodejs)
 - [رزنامة مؤسسة الـ Node.js](https://nodejs.org/calendar) تحتوي على تواريخ لقاءات جميع الفرق العامة.
