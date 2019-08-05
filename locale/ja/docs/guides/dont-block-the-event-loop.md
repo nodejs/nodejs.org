@@ -227,19 +227,19 @@ These APIs are expensive, because they involve significant computation (encrypti
 
 In a server, *you should not use the following synchronous APIs from these modules*:
 - Encryption:
-    - `crypto.randomBytes` (synchronous version)
-    - `crypto.randomFillSync`
-    - `crypto.pbkdf2Sync`
-    - You should also be careful about providing large input to the encryption and decryption routines.
+  - `crypto.randomBytes` (synchronous version)
+  - `crypto.randomFillSync`
+  - `crypto.pbkdf2Sync`
+  - You should also be careful about providing large input to the encryption and decryption routines.
 - Compression:
-    - `zlib.inflateSync`
-    - `zlib.deflateSync`
+  - `zlib.inflateSync`
+  - `zlib.deflateSync`
 - File system:
-    - Do not use the synchronous file system APIs. For example, if the file you access is in a [distributed file system](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems) like [NFS](https://en.wikipedia.org/wiki/Network_File_System), access times can vary widely.
+  - Do not use the synchronous file system APIs. For example, if the file you access is in a [distributed file system](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems) like [NFS](https://en.wikipedia.org/wiki/Network_File_System), access times can vary widely.
 - Child process:
-    - `child_process.spawnSync`
-    - `child_process.execSync`
-    - `child_process.execFileSync`
+  - `child_process.spawnSync`
+  - `child_process.execSync`
+  - `child_process.execFileSync`
 
 This list is reasonably complete as of Node v9.
 

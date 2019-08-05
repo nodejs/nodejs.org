@@ -228,19 +228,19 @@ app.get('/redos-me', (req, res) => {
 
 对于一个服务器而言，*你不应当使用以下同步的 API 函数*：
 - 加密：
-    - `crypto.randomBytes`（同步版本）
-    - `crypto.randomFillSync`
-    - `crypto.pbkdf2Sync`
-    - 同时你应当非常小心对加密和解密给予大数据输入的情况。
+  - `crypto.randomBytes`（同步版本）
+  - `crypto.randomFillSync`
+  - `crypto.pbkdf2Sync`
+  - 同时你应当非常小心对加密和解密给予大数据输入的情况。
 - 压缩：
-    - `zlib.inflateSync`
-    - `zlib.deflateSync`
+  - `zlib.inflateSync`
+  - `zlib.deflateSync`
 - 文件系统：
-    - 不能使用同步文件系统方法 API 函数。举个例子，如果你的程序运行于一个[分布式文件系统](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems)，像 [NFS](https://en.wikipedia.org/wiki/Network_File_System)，则访问时间会发生很大变化。
+  - 不能使用同步文件系统方法 API 函数。举个例子，如果你的程序运行于一个[分布式文件系统](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems)，像 [NFS](https://en.wikipedia.org/wiki/Network_File_System)，则访问时间会发生很大变化。
 - 子进程：
-    - `child_process.spawnSync`
-    - `child_process.execSync`
-    - `child_process.execFileSync`
+  - `child_process.spawnSync`
+  - `child_process.execSync`
+  - `child_process.execFileSync`
 
 此列表对于 Node 9 都是有效的。
 
