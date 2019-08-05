@@ -84,7 +84,7 @@ These releases are documented in the changelog so
 there is more visibility with respect to the changes in each release.
 Current releases are created roughly every 1-2 weeks.
 
-In addition to the the regular Node.js unit tests, CITGM (see
+In addition to the regular Node.js unit tests, CITGM (see
 later sections) is run on Current releases.
 
 If you want to try out the latest with a reasonable expectation
