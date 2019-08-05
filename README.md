@@ -35,9 +35,9 @@ If you want to submit a new feature or a bugfix, the best way is to create the c
 * Global styles are in `/layouts/css`
 * Global static files are in `/static`
 * All content and localization specific styles are in `/locale`
- * Initial development usually happens in English: `/locale/en`
- * `/locale/{{locale}}/site.json` is where global localization information lives.
- * All content is in Markdown and is per locale.
+  * Initial development usually happens in English: `/locale/en`
+  * `/locale/{{locale}}/site.json` is where global localization information lives.
+  * All content is in Markdown and is per locale.
   * The top of each Markdown file is a block of YAML for page specific localization information that is passed to various templates.
   * The bulk of the Markdown content for each page is referenced as `{{{content}}}` in the corresponding template.
 

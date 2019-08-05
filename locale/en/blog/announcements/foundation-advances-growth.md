@@ -29,11 +29,11 @@ Attendees have the opportunity to see and learn more about how organizations lik
 <br><br>In addition, the company is sharing real customer successes and adoption statistics of Node.js at large. The company gathered the data from 100 of their Node customers across the globe. The leading industries in implementation and adoption of Node.js include enterprise software companies and media companies. Financial, payment, travel, e-commerce and IoT tie for third in industries that are leading in both adoption and implementation. 
 <br><br>Startups are leading the way in adding Node.js into their strategy, but in 2013 and 2014 larger incumbents started to transition their stacks with Node.js as a core technology, notable names include PayPal, Condé Nast, and Costa. In terms of startup saturation: 
 
- * 25% of developers at growth-stage companies in enterprise software are using Node.js; 
- * 25% of developers at FinTech startups are using Node.js; 
- * Healthcare startups are using Node.js in a significant way - an average of 33% of developers are using Node.js with the primary    use-case to enable rapid-innovation;
- * 48% of developers are using Node.js at IoT companies;
- * 80% of developers at education startups are using the technology.
+  * 25% of developers at growth-stage companies in enterprise software are using Node.js; 
+  * 25% of developers at FinTech startups are using Node.js; 
+  * Healthcare startups are using Node.js in a significant way - an average of 33% of developers are using Node.js with the primary    use-case to enable rapid-innovation;
+  * 48% of developers are using Node.js at IoT companies;
+  * 80% of developers at education startups are using the technology.
 
 * NODESOURCE: The company will showcase [N|Solid](https://nodesource.com/products/nsolid) for Enterprise-grade Node.js platform. It extends the capability of Node.js to provide increased developer productivity, protection of critical applications, and peak application performance. 
 <br><br>The company will also have [free upgrade tools](https://marketing.nodesource.com/acton/fs/blocks/showLandingPage/a/15680/p/p-001f/t/page/fm/4) available to help developers implement the latest Long Term Support version, v4. This version is essential for enterprises and companies using Node.js in more complex environments as it is the most stable and highly security code from the platform. 
