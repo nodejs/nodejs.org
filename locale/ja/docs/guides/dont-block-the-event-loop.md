@@ -449,7 +449,7 @@ Whether you use only the Node Worker Pool or maintain separate Worker Pool(s), y
 
 To do this, minimize the variation in Task times by using Task partitioning.
 
-##  The risks of npm modules
+## The risks of npm modules
 While the Node core modules offer building blocks for a wide variety of applications, sometimes something more is needed. Node developers benefit tremendously from the [npm ecosystem](https://www.npmjs.com/), with hundreds of thousands of modules offering functionality to accelerate your development process.
 
 Remember, however, that the majority of these modules are written by third-party developers and are generally released with only best-effort guarantees. A developer using an npm module should be concerned about two things, though the latter is frequently forgotten.

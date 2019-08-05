@@ -73,7 +73,7 @@ The `process` module also exposes `process.argv`, an array containing the comman
 
 `process.env` contains your environment variables.  Try `process.env.HOME`, for example.
 
-##Methods
+## Methods
 
 There are also a variety of methods attached to the `process` object, many of which deal with quite advanced aspects of a program.  We'll take a look at a few of the more commonly useful ones, while leaving the more advanced parts for another article.
 
