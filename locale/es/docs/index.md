@@ -13,7 +13,7 @@ Existen diferentes tipos de documentación disponible en este sitio:
 * Características de ES6
 * Guías
 
-### Referencia de la API
+## Referencia de la API
 
 La [Referencia de la API](/api/) proporciona información detallada sobre una función ó un objeto en Node.js. Esta
 documentación indica que argumentos acepta un método, el valor que retorna este método y qué errores pueden estar
@@ -22,7 +22,7 @@ relacionados al mismo. También indica qué métodos están disponibles para las
 También describe los módulos incluidos que proporciona Node.js, pero no documenta los módulos que proporciona la comunidad.
 
 <div class="highlight-box">
-  <h4>¿Buscando la referencia de la API de versiones anteriores?</h4>
+  <h3>¿Buscando la referencia de la API de versiones anteriores?</h3>
 
   <ul>
     <li><a href="https://nodejs.org/docs/latest-v9.x/api/">Node.js 9.x</a></li>
@@ -37,12 +37,12 @@ También describe los módulos incluidos que proporciona Node.js, pero no docume
   </ul>
 </div>
 
-### Funcionalidades de ES6
+## Funcionalidades de ES6
 
 La [sección de ES6](/en/docs/es6/) describe los tres grupos de funcionalidades de ES6, y detalla qué
 funcionalidades están activadas por defecto en Node.js, junto con enlaces explicativos. También muestra cómo encontrar
 qué versión de V8 usa una versión particular de Node.js.
 
-### Guías
+## Guías
 
 De formato largo, artículos en profundidad sobre las funcionalides y capacidades técnicas de Node.js

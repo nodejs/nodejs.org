@@ -12,7 +12,7 @@ layout: blog-post.hbs
 # io.js 1.8.1 release
 This week we had one io.js release [v1.8.1](https://iojs.org/dist/v1.8.1/), complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
 
-### Notable changes
+## Notable changes
 
 * **NOTICE**: Skipped v1.8.0 due to problems with release tooling.
   See [#1436](https://github.com/nodejs/node/issues/1436) for details.
@@ -26,7 +26,7 @@ This week we had one io.js release [v1.8.1](https://iojs.org/dist/v1.8.1/), comp
 * **module**: The interaction of `require('.')` with `NODE_PATH` has been restored and deprecated. This functionality
 will be removed at a later point. (Roman Reiss) [#1363](https://github.com/nodejs/node/pull/1363)
 
-### Known issues
+## Known issues
 
 * Some problems with unreferenced timers running during `beforeExit` are still to be resolved. See [#1264](https://github.com/nodejs/node/issues/1264).
 * Surrogate pair in REPL can freeze terminal [#690](https://github.com/nodejs/node/issues/690)
@@ -35,14 +35,14 @@ will be removed at a later point. (Roman Reiss) [#1363](https://github.com/nodej
 * `url.resolve` may transfer the auth portion of the url when resolving between two full hosts, see [#1435](https://github.com/nodejs/node/issues/1435).
 * readline: split escapes are processed incorrectly, see [#1403](https://github.com/nodejs/node/issues/1403)
 
-### Community Updates
+## Community Updates
 
 * Fedor Indutny opened discussion about removing TLS `newSession` and `resumeSession` event. [iojs/io.js#1462](https://github.com/nodejs/node/issues/1462)
 * Proposal to change the C HTTP parser JS HTTP parser [here](https://github.com/nodejs/node/pull/1457)
 * NPM founder talks about io.js at [InfoWorld](http://www.infoworld.com/article/2910594/node-js/npm-founder-foresees-merger-node-js-io-js.html)
 * Proposal to add mikeal, mscdex, shigeki as new TC members. [iojs/io.js#1483](https://github.com/nodejs/node/issues/1483#issuecomment-95128140)
 
-### Upcoming Events
+## Upcoming Events
 
 * [JSConf Uruguay](http://jsconf.uy) tickets are on sale, April 24th & 25th at Montevideo, Uruguay
 * [NodeConf Adventure](http://nodeconf.com/) tickets are on sale, June 11th - 14th at Walker Creek Ranch, CA

@@ -5,7 +5,7 @@ layout: docs.hbs
 # دليل التصحيح
 سيساعدك هذا الدليل للبدء في تصحيح سكريبتات و تطبيقات الـ Node.js الخاصة بك.
 
-# تمكين المدقق
+## تمكين المدقق
 
 عند بدء الـ Node.js مع تمكين `--inspect`،  يتم الانصات إلى عملية تصحيح، و افتراضيا، يتم هذا الانصات عبر المضيف و المنفذ 127.0.0.1:9229.
 يتم إعطاء كل عملية إنصات رقم [UUID][] حصري.
@@ -55,37 +55,37 @@ layout: docs.hbs
 
 هناك عدة أدوات مفتوحة المصدر يمكنها الإتصال بالدقق الخاص بالـ Node.js و ما يلي هي معلومات مبدئية عنها:
 
-#### [node-inspect](https://github.com/nodejs/node-inspect)
+### [node-inspect](https://github.com/nodejs/node-inspect)
 
 * مصحح أخطاء في سطر الأوامر مدعوم من مؤسسة الـ Node.js و يستعمل البروتوكول المسمى [Inspector Protocol][].
 * تشحن نسخة منه مع الـ Node و يمكن استعماله بواسطة الأمر `node inspect myscript.js`.
 * يمكن تثبيت آخر نسخة منه بشكل مستقل (`npm install -g node-inspect` على سبيل المثال) و يمكن استعمالها  بواسطة الأمر `node inspect myscript.js`.
 
-#### <span dir="ltr">[Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+</span>
+### <span dir="ltr">[Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+</span>
 
 * **الطريقة الأولى**: قم بفتح  العنوان `chrome://inspect` في أي متصفح مبني على Chromium. قم بالضغط على زر Configure و تأكد 
 من أن المضيف و المنفذ في القائمة.
 * **الطريقة الثانية**: قم بنسخ `devtoolsFrontendUrl` من الناتج عن `/json/list` (أنظر أعلاه) أو النص التلميحي الناتج عن --inspect 
 و قم بلصقه في Chrome.
 
-#### <span dir="ltr">[Visual Studio Code](https://github.com/microsoft/vscode) 1.10+</span>
+### <span dir="ltr">[Visual Studio Code](https://github.com/microsoft/vscode) 1.10+</span>
 
 * في قائمة تصحيح الأخطاء، إضغط على ايقونة الإعدادات لفتح `.vscode/launch.json`.
   قم باختيار "Node.js" للتثبيت الأولي. 
 
-#### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
+### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
 * قم باختيار "Debug > Start Debugging" من القائمة أو قم بالضغط على F5.
 * [خطوات تفصيلية بالإنجليزية](https://github.com/Microsoft/nodejstools/wiki/Debugging)
 
-#### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ و منتجات JetBrains الأخرى
+### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ و منتجات JetBrains الأخرى
 
 * قم بإنشاء إعدادات تصحيح جديدة خاصة بالـ Node.js و اضغط على Debug. سيتم استعمال `--inspect` افتراضياً بالنسبة للنسخ 7 فما فوق.
   لإلغاء ذلك، قم بإلغاء تمكين `js.debugger.node.use.inspect` في السجل الخاص بالبرنامج.
 
-#### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
+### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 * مكتبة تسهل التواصل بأطراف اتصال بروتوكول التدقيق.
 
-#### [Gitpod](https://www.gitpod.io)
+### [Gitpod](https://www.gitpod.io)
 
 * قم بإنشاء إعدادات تصحيح الأخطاء الخاصة بالـ Node.js من `Debug` أو قم بالضغط على F5. هنا [خطوات تفصيلية بالإنجليزية](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
 
@@ -196,13 +196,13 @@ $ ssh -L 9221:localhost:9229 user@remote.example.com
 
 إن بروتوكول التصحيح الخاص بالـ V8 لم تعد يتم صيانته أو توثيقه دوريا.
 
-#### [مصحح الأخطاء المبني ضمنيا](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
+### [مصحح الأخطاء المبني ضمنيا](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
 
 قم بتنفيذ الأمر <span dir="ltr">`node debug script_name.js`</span> لبدء النص البرمجي الخاص بك عن طريق مصحح الأخطاء المبني ضمنيا في Node.
 يمكن للنص البرمجي الخاص بك أن يبدأ في عملية Node اخرى باستعمال <span dir="ltr">`--debug-brk`</span> كما تشغل عملية Node 
 المبدئية الملف <span dir="ltr">`_debugger.js`</span> و توصلك بوجهتك.
 
-#### [node-inspector](https://github.com/node-inspector/node-inspector)
+### [node-inspector](https://github.com/node-inspector/node-inspector)
 
 قم بتصحيح الأخطاء في تطبيق Node.js الخاص بواسطة الـ <span dir="ltr">Chrome DevTools</span> و ذلك باستعمال عملية وسيطة تقوم بتحويل 
 بروتوكول المدقق المستعمل في Chromium إلى بروتوكول تصحيح الأخطاء في الـ V8 المستعمل في الـ Node.js

@@ -137,14 +137,14 @@ info on these follows:
 Node 인스펙터에 접속할 수 있는 여러 상용 도구와 오픈소스 도구가 있습니다.
 아래에 이러한 도구들을 간략하게 정리했습니다.
 
-#### [node-inspect](https://github.com/nodejs/node-inspect)
+### [node-inspect](https://github.com/nodejs/node-inspect)
 
 * Node.js 재단에서 지원하는 CLI 디버거로 [Inspector 프로토콜][]을 사용합니다.
 * Node에 포함되어 있고 `node inspect myscript.js`로 사용할 수 있습니다.
 * 최신 버전을 별도로 설치할 수 있고(예시: `npm install -g node-inspect`)
   `node-inspect myscript.js`로 사용할 수 있습니다.
 
-#### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
+### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
 
 * **방법 1**: 크로미움에 기반을 둔 브라우저에서 `chrome://inspect`를 엽니다.
   Configure 버튼을 눌러서 대상 호스트와 포트 목록을 확인합니다.
@@ -179,27 +179,27 @@ Node 인스펙터에 접속할 수 있는 여러 상용 도구와 오픈소스 �
 ---
 -->
 
-#### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
+### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
 
 * Debug 패널에서 설정 아이콘을 클릭해서 `.vscode/launch.json`을 엽니다.
   초기 설정으로 "Node.js"를 선택하세요.
 
-#### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
+### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
 
 * 메뉴에서 "Debug > Start Debugging"을 선택하거나 F5를 누르세요.
 * [상세한 설명](https://github.com/Microsoft/nodejstools/wiki/Debugging)
 
-#### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+와 다른 JetBrains IDE
+### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+와 다른 JetBrains IDE
 
 * 새로운 Node.js 디버그 설정을 생성하고 Debug를 누르세요. Node.js 7+에서는
   기본적으로 `--inspect`를 사용할 것입니다. 비활성화하려면 IDE 레지스트리에서
   `js.debugger.node.use.inspect`의 체크를 해제하세요.
 
-#### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
+### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 
 * 인스펙터 프로토콜 엔드포인트로의 연결을 쉽게 하는 라이브러리입니다.
 
-#### [Gitpod](https://www.gitpod.io)
+### [Gitpod](https://www.gitpod.io)
 
 * `Debug` 뷰에서 Node.js 디버그 설정을 실행하거나 `F5` 키를 누르세요.
   [자세한 방법은 여기를 참고하세요.](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
@@ -428,13 +428,13 @@ which translates the Inspector Protocol used in Chromium to the V8 Debugger
 protocol used in Node.js.
 -->
 
-#### [내장 디버거](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
+### [내장 디버거](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
 
 Node의 내장 명령형 디버거로 스크립트를 실행하려면 `node debug script_name.js`로 실행하세요.
 스크립트가 다른 Node 프로세스에서 `--debug-brk` 옵션으로 시작되고 원래의 Node 프로세스는
 `_debugger.js`를 실행해서 대상에 접속합니다.
 
-#### [node-inspector](https://github.com/node-inspector/node-inspector)
+### [node-inspector](https://github.com/node-inspector/node-inspector)
 
 크로미움에서 사용하는 인스펙터 프로토콜을 Node.js가 사용하는 V8 디버거 프로토콜로 변환하는
 중간 프로세스를 사용해서 크롬 개발자도구로 Node.js 애플리케이션을 디버깅합니다.

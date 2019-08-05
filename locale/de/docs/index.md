@@ -13,7 +13,7 @@ Auf dieser Webseite gibt es verschiedene Arten von Dokumentationen:
 * ES6 Funktionalitäten
 * Anleitungen
 
-### API-Referenz
+## API-Referenz
 
 Die [API-Referenz](/api/) stellt detaillierte Informationen über Funktionen und
 Objekte in Node.js bereit. Diese Dokumentation zeigt, welche Argumente die
@@ -25,7 +25,7 @@ Die API-Referenz beschreibt Module, die in Node.js integriert sind. Module, die
 von der Community zur Verfügung gestellt werden, sind dort nicht dokumentiert.
 
 <div class="highlight-box">
-  <h4>Du suchst nach API Referenzen für ältere Versionen?</h4>
+  <h3>Du suchst nach API Referenzen für ältere Versionen?</h3>
 
   <ul>
     <li><a href="https://nodejs.org/docs/latest-v9.x/api/">Node.js 9.x</a></li>
@@ -40,14 +40,14 @@ von der Community zur Verfügung gestellt werden, sind dort nicht dokumentiert.
   </ul>
 </div>
 
-### ES6 Funktionalitäten
+## ES6 Funktionalitäten
 
 Der [ES6-Bereich](/en/docs/es6/) beschreibt die drei Gruppen von ES6-Funktionalitäten und gibt Detailinformation dazu, welche Funktionalitäten
 standardmäßig in Node.js eingeschaltet sind. Zudem gibt es Links zu weiteren
 Erklärungen. Dort finden sich auch Informationen, welche Version von V8 in
 welcher Node.js-Version enthalten ist.
 
-### Anleitungen
+## Anleitungen
 
 Unter Anleitungen finden sich ausführliche Artikel über technische
 Funktionalitäten und Leistungsfähigkeit von Node.js.
