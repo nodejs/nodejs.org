@@ -54,10 +54,10 @@ Read more about why our candidates are running below.
 - Kat Marchán [@zkat](https://github.com/zkat)
   - [Director nomination for Kat Marchán](https://gist.github.com/zkat/345d1485fc4cd1f45155678a3729cd21)
 - Charlie Robbins [@indexzero](https://github.com/indexzero)
- - [I'm running to increase transparency to the community from the Node.js Board
+  - [I'm running to increase transparency to the community from the Node.js Board
   of Directors](https://medium.com/@indexzero/vote-to-increase-transparency-in-the-node-js-foundation-4a2b22ffaada)
 - William P. Riley-Land [@wprl](https://github.com/wprl)
- - [I Would Like to Represent Individual Members of the Node.js Foundation](https://medium.com/@wprl/i-would-like-to-represent-individual-members-of-the-node-js-foundation-977157d90aa0#.hq3vo8d8m)
+  - [I Would Like to Represent Individual Members of the Node.js Foundation](https://medium.com/@wprl/i-would-like-to-represent-individual-members-of-the-node-js-foundation-977157d90aa0#.hq3vo8d8m)
 
 ### When is the election? Nominations were solicited until January 15th.
 - Ballot will be distributed on January 20th.
@@ -75,9 +75,9 @@ sub-projects, are eligible for free membership. Please
 required to have a GitHub account to register.
 
 ### What’s the benefit of being an individual member?
- - You have a vote and voice on the Node.js Foundation Board of Directors
- through the two above-mentioned elected Individual Membership Directors.
- - 20% off regular price registration to Node Interactive 2017
+- You have a vote and voice on the Node.js Foundation Board of Directors
+through the two above-mentioned elected Individual Membership Directors.
+- 20% off regular price registration to Node Interactive 2017
 
 
 See you at the (digital)poll?
