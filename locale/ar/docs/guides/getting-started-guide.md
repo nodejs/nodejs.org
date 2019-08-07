@@ -24,4 +24,4 @@ server.listen(port, hostname, () => {
 });
 ```
 
-بعد ذلك، قم بتشغيل هذا الخادوم باستعمال الأمر ``` node app.js ```، و قم بزيارة الرابط http://localhost:3000 لترى رسالة مفادها 'Hello World'.
+بعد ذلك، قم بتشغيل هذا الخادوم باستعمال الأمر `node app.js`، و قم بزيارة الرابط http://localhost:3000 لترى رسالة مفادها 'Hello World'.

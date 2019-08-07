@@ -25,4 +25,4 @@ server.listen(port, hostname, () => {
 });
 ```
 
-然后使用 ``` node app.js ``` 运行程序，访问 <http://localhost:3000>，你就会看到一个消息，写着“Hello World”。
+然后使用 `node app.js` 运行程序，访问 <http://localhost:3000>，你就会看到一个消息，写着“Hello World”。

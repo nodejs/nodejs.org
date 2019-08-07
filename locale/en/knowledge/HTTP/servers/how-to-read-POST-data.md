@@ -40,5 +40,5 @@ With the HTML out of the way, we [create a server](/how-do-i-create-a-http-serve
 
 Something important to note is that the event listeners are being added immediately after the request object is received. If you don't immediately set them, then there is a possibility of missing some of the events. If, for example, an event listener was attached from inside a callback, then the `data` and `end` events might be fired in the meantime with no listeners attached!
 
-You can save this script to `server.js` and run it with `node server.js`. Once you run it you will notice that occasionally you will see lines with no data, e.g. `POSTed: `. This happens because regular `GET` requests go through the same codepath. In a more 'real-world' application, it would be proper practice to check the type of request and handle the different request types differently.
+You can save this script to `server.js` and run it with `node server.js`. Once you run it you will notice that occasionally you will see lines with no data, e.g. `POSTed:`. This happens because regular `GET` requests go through the same codepath. In a more 'real-world' application, it would be proper practice to check the type of request and handle the different request types differently.
 
