@@ -16,7 +16,7 @@ hours indicating the next steps in handling your submission.
 
 # 보안
 
-# Node.js 버그 보고
+## Node.js 버그 보고
 
 Node.js의 보안 버그는 [HackerOne](https://hackerone.com/nodejs)을 통해
 보고해주시기 바랍니다.

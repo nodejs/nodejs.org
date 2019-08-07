@@ -5,7 +5,7 @@ title: امنیت
 
 # امنیت
 
-### گزارش باگ در Node.js
+## گزارش باگ در Node.js
 
 تمامی مشکلات امنیتی در Node.js جدی گرفته می‌شوند و باید از طریق [HackerOne](https://hackerone.com/nodejs) یا رایانامه [security@nodejs.org](mailto:security@nodejs.org) گزارش داده شوند. این گزارش به زیر مجموعه‌ای از تیم هسته Node.js که مسئول رفع کردن مشکلات امنیتی هستند تحویل داده خواهد شد.
 

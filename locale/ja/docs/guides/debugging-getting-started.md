@@ -160,7 +160,7 @@ info on these follows:
   and used with `node-inspect myscript.js`.
 
  -->
-#### [node-inspect](https://github.com/nodejs/node-inspect)
+### [node-inspect](https://github.com/nodejs/node-inspect)
 
 * [Inspector プロトコル][]を使用する Node.js Foundation によってサポートされている CLI デバッガ
 * バージョンは Node にバンドルされており、`node inspect myscript.js`と一緒に使うことができます
@@ -176,7 +176,7 @@ info on these follows:
   (see above) or the --inspect hint text and paste into Chrome.
 
  -->
-#### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
+### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
 
 * **オプション 1**: Chromium ベースのブラウザで `chrome://inspect` を開きます。設定ボタンをクリックして、ターゲットホストとポートが表示されていることを確認します。
 * **オプション 2**: `/json/list`の出力 (上記を参照) または --inspect ヒントテキストから `devtoolsFrontendUrl` をコピーして Chrome に貼り付けます
@@ -188,7 +188,7 @@ info on these follows:
   Select "Node.js" for initial setup.
 
  -->
-#### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
+### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
 
 * デバッグパネルで、設定アイコンをクリックして `.vscode/launch.json` を開きます。初期設定は "Node.js" を選択してください
 
@@ -199,7 +199,7 @@ info on these follows:
 * [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging).
 
  -->
-#### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
+### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
 
 * メニューから "デバッグ > デバッグの開始" を選択するか、F5 を押します
 * [詳しい説明](https://github.com/Microsoft/nodejstools/wiki/Debugging)
@@ -212,7 +212,7 @@ info on these follows:
   the IDE Registry.
 
  -->
-#### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ と他の JetBrains IDE
+### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ と他の JetBrains IDE
 
 * 新しい Node.js デバッグ設定を作成して Debug をクリックします。Node.js 7 以降の場合、`--inspect` がデフォルトで使用されます。IDE レジストリで `js.debugger.node.use.inspect` のチェックを外します
 
@@ -222,7 +222,7 @@ info on these follows:
 * Library to ease connections to Inspector Protocol endpoints.
 
  -->
-#### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
+### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 
 * Inspector Protocol エンドポイントへの接続を容易にするためのライブラリ
 
@@ -234,7 +234,7 @@ info on these follows:
 ---
 
  -->
-#### [Gitpod](https://www.gitpod.io)
+### [Gitpod](https://www.gitpod.io)
 
 * `Debug` ビュー から Node.js デバッグ設定を開始するか、`F5` を押します。[詳しい説明](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
 
@@ -478,7 +478,7 @@ the `--debug-brk` option, and the initial Node process runs the `_debugger.js`
 script and connects to your target.
 
  -->
-#### [組み込みデバッガ](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
+### [組み込みデバッガ](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
 
 Node の組み込みコマンドラインデバッガの下でスクリプトを起動するには、
 `node debug script_name.js` を起動します。
@@ -493,7 +493,7 @@ which translates the Inspector Protocol used in Chromium to the V8 Debugger
 protocol used in Node.js.
 
  -->
-#### [node-inspector](https://github.com/node-inspector/node-inspector)
+### [node-inspector](https://github.com/node-inspector/node-inspector)
 
 Chromium で使用されるインスペクタプロトコルを 
 Node.js で使用される V8 デバッガプロトコルに変換する中間プロセスを使用して、

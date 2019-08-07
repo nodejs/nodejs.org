@@ -203,7 +203,7 @@ layout: contribute.hbs
 
 ### Greece
 
-##### Athens
+#### Athens
 
 - [Встреча](https://www.Встреча.com/nodejsathens/)
 - Частота встреч ― every two months
@@ -213,7 +213,7 @@ layout: contribute.hbs
 
 ### Hungary
 
-##### Budapest
+#### Budapest
 
 - [Встреча](https://www.Встреча.com/nodebp/)
 - Частота встреч ― monthly
@@ -223,7 +223,7 @@ layout: contribute.hbs
 
 ### India
 
-##### Delhi
+#### Delhi
 
 - [Встреча](https://www.Встреча.com/nodeJS-Devs/)
 - Частота встреч ― monthly
@@ -243,7 +243,7 @@ layout: contribute.hbs
 
 ### Indonesia
 
-##### Jakarta
+#### Jakarta
 
 - [Встреча](https://www.Встреча.com/Node-js-Workshop/)
 - Частота встреч ― monthly
@@ -253,7 +253,7 @@ layout: contribute.hbs
 
 ### Ireland
 
-##### Dublin
+#### Dublin
 
 - [Встреча](https://www.Встреча.com/Dublin-Node-js-Встреча/)
 - Частота встреч ― monthly
@@ -269,7 +269,7 @@ layout: contribute.hbs
 
 ### Israel
 
-##### Tel Aviv
+#### Tel Aviv
 
 - [Встреча](https://www.Встреча.com/NodeJS-Israel/)
 - Частота встреч ― monthly
@@ -280,7 +280,7 @@ layout: contribute.hbs
 
 ### Mexico
 
-##### Mexico City
+#### Mexico City
 
 - [Встреча](https://www.Встреча.com/NodeBotsMX/)
 - Частота встреч ― monthly
@@ -290,7 +290,7 @@ layout: contribute.hbs
 
 ### New Zealand
 
-##### Auckland
+#### Auckland
 
 - [Встреча](https://www.Встреча.com/AucklandNodeJs/)
 - Частота встреч ― monthly
@@ -300,7 +300,7 @@ layout: contribute.hbs
 
 ### South Africa
 
-##### Cape Town
+#### Cape Town
 
 - [Встреча](https://www.Встреча.com/nodecpt/)
 - Частота встреч ― monthly
@@ -310,7 +310,7 @@ layout: contribute.hbs
 
 ### Spain
 
-##### Madrid
+#### Madrid
 
 - [Встреча](https://www.Встреча.com/Node-js-Madrid/)
 - Частота встреч ― monthly
@@ -320,7 +320,7 @@ layout: contribute.hbs
 
 ### Thailand
 
-##### Bangkok
+#### Bangkok
 
 - [Встреча](https://www.Встреча.com/Bangkok-Node-js/)
 - Частота встреч ― monthly
@@ -330,7 +330,7 @@ layout: contribute.hbs
 
 ### Turkey
 
-##### Istanbul
+#### Istanbul
 
 - [Встреча](https://www.Встреча.com/nodeschool-istanbul/)
 - Частота встреч ― monthly
@@ -564,8 +564,8 @@ layout: contribute.hbs
 
 ### UK
 
-##### London
-###### LNUG
+#### London
+##### LNUG
 - [Встреча](https://www.Встреча.com/london-nodejs/)
 - [GitHub/lnug](https://github.com/lnug/)
 - Частота встреч ― monthly
@@ -573,14 +573,14 @@ layout: contribute.hbs
 - Организаторы ― Adam Davis
 - Контакты организаторов ― contact@lnug.org, [@lnugOrg](https://twitter.com/lnugorg)
 
-###### Node Workshops
+##### Node Workshops
 - [Встреча](https://www.Встреча.com/NodeWorkshops//)
 - Частота встреч ― monthly
 - Как стать докладчиком?
 - Организаторы ― Daryn Holmes
 - Контакты организаторов ― 
 
-##### Cambridge
+#### Cambridge
 
 - [Встреча](https://www.Встреча.com/JavaScript-Cambridge/)
 - Частота встреч ― monthly
@@ -588,7 +588,7 @@ layout: contribute.hbs
 - Организаторы ― Joe Parry, co-organizer Rob Moran
 - Контакты организаторов ― 
 
-##### Oxford
+#### Oxford
 
 - [JSOxford](https://www.Встреча.com/jsoxford/)
 - Частота встреч ― every 2 months
@@ -599,7 +599,7 @@ layout: contribute.hbs
 
 ### Ukraine
 
-##### Kiev
+#### Kiev
 
 - [Встреча](https://www.Встреча.com/NodeUA/), [Old group](https://www.Встреча.com/KievNodeJS/)
 - Частота встреч ― 1-8 times a month
