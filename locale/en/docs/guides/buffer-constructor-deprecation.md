@@ -204,13 +204,13 @@ const buf = Buffer.alloc ? Buffer.alloc(number) : new Buffer(number).fill(0);
 ## Regarding `Buffer.allocUnsafe()`
 
 Be extra cautious when using `Buffer.allocUnsafe()`:
- * Don't use it if you don't have a good reason to
-   * e.g. you probably won't ever see a performance difference for small buffers, in fact, those
-     might be even faster with `Buffer.alloc()`,
-   * if your code is not in the hot code path — you also probably won't notice a difference,
-   * keep in mind that zero-filling minimizes the potential risks.
- * If you use it, make sure that you never return the buffer in a partially-filled state,
-   * if you are writing to it sequentially — always truncate it to the actual written length
+* Don't use it if you don't have a good reason to
+  * e.g. you probably won't ever see a performance difference for small buffers, in fact, those
+    might be even faster with `Buffer.alloc()`,
+  * if your code is not in the hot code path — you also probably won't notice a difference,
+  * keep in mind that zero-filling minimizes the potential risks.
+* If you use it, make sure that you never return the buffer in a partially-filled state,
+  * if you are writing to it sequentially — always truncate it to the actual written length
 
 Errors in handling buffers allocated with `Buffer.allocUnsafe()` could result in various issues,
 ranged from undefined behavior of your code to sensitive data (user input, passwords, certs)
