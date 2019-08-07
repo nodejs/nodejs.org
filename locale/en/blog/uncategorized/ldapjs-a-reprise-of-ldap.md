@@ -58,10 +58,10 @@ Oh, and on top of the technical merits, better or worse, it's an established st
 
 As I said earlier, I spent a lot of time at IBM observing how customers used LDAP, and the real items I took away from that experience were:
 <ul>
-	<li>LDAP implementations have suffered a lot from never having been designed from the ground up for a large number of concurrent connections with asynchronous operations.</li>
-	<li>There are use cases for LDAP that just don't always fit the traditional "here's my server and storage engine" model. A lot of simple customer use cases wanted an LDAP access point, but not be forced into taking the heavy backends that came with it (they wanted the original gateway model!). There was an entire "sub" industry for this known as "<a title="Metadirectory" href="http://en.wikipedia.org/wiki/Metadirectory">meta directories</a>" back in the late 90's and early 2000's.</li>
-	<li>Replication was always a sticking point. LDAP vendors all tried to offer a big multi-master, multi-site replication model. It was a lot of "bolt-on" complexity, done before the <a title="CAP Theorem" href="http://en.wikipedia.org/wiki/CAP_theorem">CAP theorem</a> was written, and certainly before it was accepted as "truth."</li>
-	<li>Nobody uses all of the protocol. In fact, 20% of the features solve 80% of the use cases (I'm making that number up, but you get the idea).</li>
+  <li>LDAP implementations have suffered a lot from never having been designed from the ground up for a large number of concurrent connections with asynchronous operations.</li>
+  <li>There are use cases for LDAP that just don't always fit the traditional "here's my server and storage engine" model. A lot of simple customer use cases wanted an LDAP access point, but not be forced into taking the heavy backends that came with it (they wanted the original gateway model!). There was an entire "sub" industry for this known as "<a title="Metadirectory" href="http://en.wikipedia.org/wiki/Metadirectory">meta directories</a>" back in the late 90's and early 2000's.</li>
+  <li>Replication was always a sticking point. LDAP vendors all tried to offer a big multi-master, multi-site replication model. It was a lot of "bolt-on" complexity, done before the <a title="CAP Theorem" href="http://en.wikipedia.org/wiki/CAP_theorem">CAP theorem</a> was written, and certainly before it was accepted as "truth."</li>
+  <li>Nobody uses all of the protocol. In fact, 20% of the features solve 80% of the use cases (I'm making that number up, but you get the idea).</li>
 </ul>
 
 For all the good parts of LDAP, those are really damned big failing points, and even I eventually abandoned LDAP for the greener pastures of NoSQL somewhere
@@ -70,10 +70,10 @@ aspects of the protocol itself too, but that's a lot harder).
 
 Well, in the last year, I went to work for <a title="Joyent" href="http://www.joyent.com/">Joyent</a>, and like everyone else, we have several use problems that are classic directory service problems. If you break down the list I outlined above:
 <ul>
-	<li><strong>Connection-oriented and asynchronous:</strong> Holy smokes batman, <a title="node.js" href="https://nodejs.org/">node.js</a> is a completely kick-ass event-driven asynchronous server platform that manages connections like a boss. Check!</li>
-	<li><strong>Lots of use cases:</strong> Yeah, we've got some. Man, the <a title="sinatra" href="http://www.sinatrarb.com/">sinatra</a>/<a title="express" href="http://expressjs.com/">express</a> paradigm is so easy to slap over anything. How about we just do that and leave as many use cases open as we can. Check!</li>
-	<li><strong>Replication is hard. CAP is right:</strong> There are a lot of distributed databases out vying to solve exactly this problem. At Joyent we went with <a title="Riak" href="http://www.basho.com/">Riak</a>. Check!</li>
-	<li><strong>Don't need all of the protocol:</strong> I'm lazy. Let's just skip the stupid things most people don't need. Check!</li>
+  <li><strong>Connection-oriented and asynchronous:</strong> Holy smokes batman, <a title="node.js" href="https://nodejs.org/">node.js</a> is a completely kick-ass event-driven asynchronous server platform that manages connections like a boss. Check!</li>
+  <li><strong>Lots of use cases:</strong> Yeah, we've got some. Man, the <a title="sinatra" href="http://www.sinatrarb.com/">sinatra</a>/<a title="express" href="http://expressjs.com/">express</a> paradigm is so easy to slap over anything. How about we just do that and leave as many use cases open as we can. Check!</li>
+  <li><strong>Replication is hard. CAP is right:</strong> There are a lot of distributed databases out vying to solve exactly this problem. At Joyent we went with <a title="Riak" href="http://www.basho.com/">Riak</a>. Check!</li>
+  <li><strong>Don't need all of the protocol:</strong> I'm lazy. Let's just skip the stupid things most people don't need. Check!</li>
 </ul>
 
 So that's the crux of ldapjs right there. Giving you the ability to put LDAP back into your application while nailing those 4 fundamental problems that plague most existing LDAP deployments.
