@@ -26,7 +26,7 @@ For diagnosing production deployments, read these notes: [0x production servers]
 
 The purpose of this guide is to show steps involved in creating a flame graph and keep you in control of each step.
 
-If you want to understand each step better take a look at the sections that follow where we go into more detail.
+If you want to understand each step better, take a look at the sections that follow where we go into more details.
 
 Now let's get to work.
 
