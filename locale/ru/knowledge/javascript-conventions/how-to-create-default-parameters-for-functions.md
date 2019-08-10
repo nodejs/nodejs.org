@@ -41,7 +41,7 @@ If the optional value is in the middle it can cause some undesired effects, sinc
 
     example = function (param1, optParam, callback) {
       if (typeof callback === 'undefined') {
-        // only two paramaters were passed, so the callback is actually in `optParam`
+        // only two parameters were passed, so the callback is actually in `optParam`
         callback = optParam;
 
         //give `optParam` a default value

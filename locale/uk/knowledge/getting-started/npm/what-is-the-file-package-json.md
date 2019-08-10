@@ -37,7 +37,7 @@ For a more complete package.json, we can check out `underscore`:
 
 As you can see, there are fields for the `description` and `keywords` of your projects. This allows people who find your project understand what it is in just a few words. The `author`, `contributors`, `homepage` and `repository` fields can all be used to credit the people who contributed to the project, show how to contact the author/maintainer, and give links for additional references. 
 
-The file listed in the `main` field is the main entry point for the libary; when someone runs `require(<library name>)`, require resolves this call to `require(<package.json:main>)`. 
+The file listed in the `main` field is the main entry point for the library; when someone runs `require(<library name>)`, require resolves this call to `require(<package.json:main>)`. 
 
 Finally, the `dependencies` field is used to list all the dependencies of your project that are available on `npm`. When someone installs your project through `npm`, all the dependencies listed will be installed as well.  Additionally, if someone runs `npm install` in the root directory of your project, it will install all the dependencies to `./node_modules`.
 

@@ -24,12 +24,12 @@ As an example, we are going to preform a GET request to [www.random.org/integers
     callback = function(response) {
       var str = '';
 
-      //another chunk of data has been recieved, so append it to `str`
+      //another chunk of data has been received, so append it to `str`
       response.on('data', function (chunk) {
         str += chunk;
       });
 
-      //the whole response has been recieved, so we just print it out here
+      //the whole response has been received, so we just print it out here
       response.on('end', function () {
         console.log(str);
       });
