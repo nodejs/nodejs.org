@@ -12,7 +12,7 @@ To echo <a href="https://nodejs.org/">Node</a>’s evolutionary nature, we have
 
 <strong>Building a brand</strong>
 
-We began exploring elements to express Node.js and jettisoned preconceived notions about what we thought Node should look like, and focused on what Node is: <strong>kinetic</strong>,<strong>connected</strong>, <strong>scalable</strong>, <strong>modular</strong>, <strong>mechanical</strong> and <strong>organic</strong>. Working with designer <a href="http://www.chrisglass.com">Chris Glass</a>, our explorations emphasized Node's dynamism and formed a visual language based on structure, relationships and interconnectedness.
+We began exploring elements to express Node.js and jettisoned preconceived notions about what we thought Node should look like, and focused on what Node is: <strong>kinetic</strong>, <strong>connected</strong>, <strong>scalable</strong>, <strong>modular</strong>, <strong>mechanical</strong> and <strong>organic</strong>. Working with designer <a href="http://www.chrisglass.com">Chris Glass</a>, our explorations emphasized Node's dynamism and formed a visual language based on structure, relationships and interconnectedness.
 
 <img class="alignnone size-full wp-image-184" title="grid" src="https://nodeblog.files.wordpress.com/2011/07/grid.png" alt="" width="520" height="178" />
 
