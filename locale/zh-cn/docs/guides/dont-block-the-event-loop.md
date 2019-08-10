@@ -341,7 +341,7 @@ asyncAvg(n, function(avg){
 1. 你可以通过开发 [C++ 插件](https://nodejs.org/api/addons.html) 的方式使用内置的 Node 工作池。稍早之前的 Node 版本，通过使用 [NAN](https://github.com/nodejs/nan) 的方式编译你的 C++ 插件，在新版的 Node 上使用 [N-API](https://nodejs.org/api/n-api.html)。 [node-webworker-threads](https://www.npmjs.com/package/webworker-threads) 提供了一个仅用 JavaScript 就可以访问 Node 的工作池的方式。
 2. 您可以创建和管理自己专用于计算的工作线程池，而不是使用 Node 自带的负责的 I/O 的工作线程池。最直接的方法就是使用 [Child Process](https://nodejs.org/api/child_process.html) 或者是 [cluster](https://nodejs.org/api/cluster.html)。
 
-你 *不* 应该直接为每个请求都创建一个[ 子进程 ](https://nodejs.org/api/child_process.html)。
+你 *不* 应该直接为每个请求都创建一个[子进程](https://nodejs.org/api/child_process.html)。
 因为客户端请求的频率可能远远高于你的服务器能创建和管理子进程的频率，这种情况你的服务器就变成了一个 [Fork 炸弹](https://en.wikipedia.org/wiki/Fork_bomb)。
 
 ##### 转移到工作线程池的缺陷

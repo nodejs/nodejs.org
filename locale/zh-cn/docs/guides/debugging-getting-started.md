@@ -26,7 +26,7 @@ layout: docs.hbs
 
 默认情况下，`node --inspect` 绑定 127.0.0.1。你可以显式提供一个 IP 地址或是 0.0.0.0 的地址等。如果你有意想要外部连接可以访问此调试器，这么做恐怕会把你置于潜在的巨大的威胁中。我们建议你有合适的防火墙以及访问控制权限，以提供一个安全的暴漏。
 
-查看 '[ 启用远程调试情形 ](#enabling-remote-debugging-scenarios)' 章节部分，以了解如何安全地允许远程调试器连接调试。
+查看 '[启用远程调试情形](#enabling-remote-debugging-scenarios)' 章节部分，以了解如何安全地允许远程调试器连接调试。
 
 ### 本地应用有足够的权限访问监视器
 
@@ -42,13 +42,13 @@ layout: docs.hbs
 
 一些商业和开源工具可以连接到 Node 的监视器上，关于它们基本信息如下：
 
-### [ Node 监视器 ](https://github.com/nodejs/node-inspect)
+### [Node 监视器](https://github.com/nodejs/node-inspect)
 
 * 由 Node.js 基础库，使用 [检查器协议][] 支持的 CLI 调试器。
 * 和 Node 绑定在一起的版本，并且可以使用 `node inspect myscript.js`。
 * 最新的版本同样可以单独通过（例如 `npm install -g node-inspect`）方式安装，并使用 `node-inspect myscript.js`。
 
-### [Chrome 开发工具 ](https://github.com/ChromeDevTools/devtools-frontend) 55+
+### [Chrome 开发工具](https://github.com/ChromeDevTools/devtools-frontend) 55+
 
 * **选项 1**: 在基于 Chromium 内核的浏览器下打开 `chrome://inspect`。点击配置按钮确保你的目标宿主和端口号列入其中。
 * **选项 2**: 从 `/json/list` 中拷贝 `devtoolsFrontendUrl`（见上），或者加上 --inspect 以检查提示文本并粘贴到 Chrome 中。
@@ -171,7 +171,7 @@ ssh 管道启动，在你机器上连接到 9221 端口将被重定向到 9229 �
 
 V8 调试协议再也不维护或是归档了。
 
-### [ 内置调试器 ](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
+### [内置调试器](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
 
 在 Node.js 内置命令行调试器中 用 `node debug script_name.js` 启动你的脚本。你的脚本就在 Node 另外一个进程中随着 `--debug-brk` 启动了起来，并且初始化的 Node 进程运行 `_debugger.js` 脚本连接上你的目标。
 

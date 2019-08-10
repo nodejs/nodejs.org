@@ -26,7 +26,7 @@ title: امنیت
 گزارش‌های  باگ در ماژول‌های سوم شخص باید به نگاه دارندگان آن ها اعلام شود و همجنین باید از طریق [تیم اکو سیستم Node](https://hackerone.com/nodejs-ecosystem) رایانامه  [security-ecosystem@nodejs.org](mailto:security-ecosystem@nodejs.org)  اعلام شود.
  
 
-اطلاعات بیشتر در رابطه با این فرایند را می‌توانید در  [مخزن گروه کاری امینت ](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md).
+اطلاعات بیشتر در رابطه با این فرایند را می‌توانید در  [مخزن گروه کاری امینت](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md).
 پیدا کنید.
 
 از شما بابت بهتر کردن امنیت Node.js و اکوسیستم آن متشکریم. 
