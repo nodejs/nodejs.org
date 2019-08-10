@@ -364,7 +364,7 @@ with the inspector listening only to localhost (the default).
 디버깅하기를 원하는 remote.example.com 원격 시스템에서 노드가 실행 중이라고 가정하겠습니다. 해당 시스템에서 localhost(기본값)만 수신하는 인스펙터로 노드 프로세스를 시작해야 합니다.
 
 ```bash
-$ node --inspect server.js
+node --inspect server.js
 ```
 
 <!--
@@ -374,7 +374,7 @@ connection, you can setup an ssh tunnel:
 이제 디버그 클라이언트 연결을 시작하려는 로컬 시스템에서 ssh 터널을 설정할 수 있습니다.
 
 ```bash
-$ ssh -L 9221:localhost:9229 user@remote.example.com
+ssh -L 9221:localhost:9229 user@remote.example.com
 ```
 
 <!--

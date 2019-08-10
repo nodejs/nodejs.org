@@ -392,14 +392,14 @@ want to be able to debug. On that machine, you should start the node process
 with the inspector listening only to localhost (the default).
 
 ```bash
-$ node --inspect server.js
+node --inspect server.js
 ```
 
 Now, on your local machine from where you want to initiate a debug client
 connection, you can setup an ssh tunnel:
 
 ```bash
-$ ssh -L 9221:localhost:9229 user@remote.example.com
+ssh -L 9221:localhost:9229 user@remote.example.com
 ```
 
 This starts a ssh tunnel session where a connection to port 9221 on your local
@@ -425,14 +425,14 @@ which should be able to debug as if the Node.js application was running locally.
 ノードプロセスを開始する必要があります。
 
 ```bash
-$ node --inspect server.js
+node --inspect server.js
 ```
 
 これで、デバッグクライアント接続を開始したい場所から
 ローカルマシンに SSH トンネルを設定できます。
 
 ```bash
-$ ssh -L 9221:localhost:9229 user@remote.example.com
+ssh -L 9221:localhost:9229 user@remote.example.com
 ```
 
 これにより、ローカルマシンの 9221 ポートへの接続が 

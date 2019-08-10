@@ -38,7 +38,7 @@ rl.question('Why should you use streams? ', (answer) => {
 在以下场景中，我们将拿一个巨大的文件（大概有 9gb 那么大），然后用熟悉的 [`zip(1)`][] 的工具压缩。
 
 ```bash
-$ zip The.Matrix.1080p.mkv
+zip The.Matrix.1080p.mkv
 ```
 
 当这个终端还需要等待一些时间来完成时，我们另起一个终端运行 Node.js 的模块： [`zlib`][]，它对 [`gzip(1)`][] 进行了包装。

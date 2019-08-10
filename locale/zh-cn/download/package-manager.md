@@ -112,7 +112,7 @@ Node 版本管理器是一个用于管理多个已发布的 Node.js 不同版本
 对于 Unix / OS X 系统，Node.js 从源代码构建，并通过 [nvm](https://github.com/creationix/nvm) 安装到你所期望的地方。
 
 ```bash
-$ env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
+env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
 随后你可以通过 `nvm` 在“发布版本”和“从源代码构建版本”中选择。
@@ -120,13 +120,13 @@ $ env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version
 举个例子，如果你的 Node.js 版本是 v8.0.0-pre：
 
 ```bash
-$ nvm use 8
+nvm use 8
 ```
 
 一旦官方发布了版本，并且你希望卸载从源代码编译的版本，可以这样做：
 
 ```bash
-$ nvm uninstall 8
+nvm uninstall 8
 ```
 
 ## OpenBSD

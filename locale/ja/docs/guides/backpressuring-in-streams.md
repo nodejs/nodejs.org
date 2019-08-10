@@ -60,7 +60,7 @@ In one scenario, we will take a large file (approximately ~9gb) and compress it
 using the familiar [`zip(1)`][] tool.
 
 ```
-$ zip The.Matrix.1080p.mkv
+zip The.Matrix.1080p.mkv
 ```
 
 While that will take a few minutes to complete, in another shell we may run

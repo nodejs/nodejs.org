@@ -106,7 +106,7 @@ This generates your certificate. Now you're cooking!
 
 One way to test out your new "hello world" server is to again use OpenSSL:
 
-    $ openssl s_client -connect 127.0.0.1:8000
+    openssl s_client -connect 127.0.0.1:8000
 
 You should see a bunch of output regarding the handshaking process, and then at the very end you should see a big, cyan figlet banner saying, "Hi world!"
 

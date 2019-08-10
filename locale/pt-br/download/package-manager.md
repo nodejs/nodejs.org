@@ -96,7 +96,7 @@ Em sistemas Unix / OS X o Node.js compilado a partir do código fonte pode ser i
 local em que o nvm espera:
 
 ```bash
-$ env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
+env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
 Despois disso, você pode usar o `nvm` para alternar entre versões lançadas e versões
@@ -104,14 +104,14 @@ compiladas a partir do código fonte.
 Por exemplo, se a versão do Node.js é v8.0.0-pre:
 
 ```bash
-$ nvm use 8
+nvm use 8
 ```
 
 Uma vez que a versão oficial for lançada você pode querer desinstalar a versão compilada
 a partir do código fonte:
 
 ```bash
-$ nvm uninstall 8
+nvm uninstall 8
 ```
 
 ## OpenBSD

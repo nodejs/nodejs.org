@@ -17,10 +17,10 @@ This repo's issues section has become the primary home for the Website WG's coor
 Please contribute! There are plenty of [good first issues](https://github.com/nodejs/nodejs.org/labels/good%20first%20issue) to work on. To get started, you have to [fork](https://github.com/nodejs/nodejs.org/fork) this repo to your own GitHub account first. Then open up a terminal on your machine and enter the following commands:
 
 ```bash
-$ git clone https://github.com/<your user name>/nodejs.org.git
-$ cd nodejs.org
-$ npm install
-$ npm start
+git clone https://github.com/<your user name>/nodejs.org.git
+cd nodejs.org
+npm install
+npm start
 ```
 
 This will start the development server on http://localhost:8080/en/. This should reload automatically when you make changes to the code, but no code is perfect, so sometimes you may need to restart it. :)
