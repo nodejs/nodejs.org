@@ -125,7 +125,7 @@ if (argv.e && argv.key) {
 }
 ```
 
-NODE PRO TIP: The `crypto.createCipheriv()` and `crypto.createDecipheriv()` methods do not take a password, rather a `key` and an `iv` which are combined together to form a random password. The size of the `key` and `iv` depends on the choosen algorithm. A reference to common algorithms and their `key` and `iv` size is given below:
+NODE PRO TIP: The `crypto.createCipheriv()` and `crypto.createDecipheriv()` methods do not take a password, rather a `key` and an `iv` which are combined together to form a random password. The size of the `key` and `iv` depends on the chosen algorithm. A reference to common algorithms and their `key` and `iv` size is given below:
 
 | Algorithm      | Key                | iv                 |
 | -------------  |:-----------------: | :----------------: |

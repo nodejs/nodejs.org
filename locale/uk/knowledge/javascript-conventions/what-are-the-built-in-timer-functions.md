@@ -23,13 +23,13 @@ An example output is:
     setInterval: It's been one second!
     ...
 
-As you can see the parameters to both are the same. The number second paramter says how long in milliseconds to wait before calling the function passed into the first parameter. The difference between the two functions is that `setTimeout` calls the callback only once while `setInterval` will call it over and over again.
+As you can see the parameters to both are the same. The number second parameter says how long in milliseconds to wait before calling the function passed into the first parameter. The difference between the two functions is that `setTimeout` calls the callback only once while `setInterval` will call it over and over again.
 
-Typically you want to be careful with `setInterval` because it can cause some undesireable effects.  If, for example, you wanted to make sure your server was up by pinging it every second, you might think to try something like this:
+Typically you want to be careful with `setInterval` because it can cause some undesirable effects.  If, for example, you wanted to make sure your server was up by pinging it every second, you might think to try something like this:
 
     setInterval(ping, 1000);
 
-This can cause problems, however, if your server is slow and it takes, say, 3 seconds to respond to the first request. In the time it takes to get back the response, you would have sent off 3 more requests - not exactly desirable!  This isn't the end of the world when serving small static files, but if you doing an expensive operation such as database query or any complicated computation this can have some undiserable results. A common solution looks like this:
+This can cause problems, however, if your server is slow and it takes, say, 3 seconds to respond to the first request. In the time it takes to get back the response, you would have sent off 3 more requests - not exactly desirable!  This isn't the end of the world when serving small static files, but if you doing an expensive operation such as database query or any complicated computation this can have some undesirable results. A common solution looks like this:
 
     var recursive = function () {
         console.log("It has been one second!");
