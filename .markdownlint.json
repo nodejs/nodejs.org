@@ -12,7 +12,25 @@
   "MD028": false,
   "MD031": false,
   "MD032": false,
-  "MD033": false,
+  "MD033": {
+    "allowed_elements": [
+      "a",
+      "br",
+      "blockquote",
+      "hr",
+      "h1", "h2", "h3", "h4",
+      "figure", "figcaption", "img",
+      "ol", "ul", "li",
+      "div", "span", "p",
+      "table", "th", "tr", "td",
+      "code", "pre",
+      "i", "strong", "em", "b",
+      "sup",
+      "anonymous",
+      "ins",
+      "prot"
+    ]
+  },
   "MD034": false,
   "MD035": false,
   "MD036": false,
