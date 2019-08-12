@@ -77,10 +77,10 @@ info on these follows:
 * The latest version can also be installed independently (e.g. `npm install -g node-inspect`)
   and used with `node-inspect myscript.js`.
 
-### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
+### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+, [Microsoft Edge](https://www.microsoftedgeinsider.com)
 
 * **Option 1**: Open `chrome://inspect` in a Chromium-based
-  browser. Click the Configure button and ensure your target host and port
+  browser or `edge://inspect` in Edge. Click the Configure button and ensure your target host and port
   are listed.
 * **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
   (see above) or the --inspect hint text and paste into Chrome.
