@@ -47,8 +47,8 @@
   const langPickerElement = document.querySelector('.lang-picker')
   const langElements = langPickerElement.querySelectorAll('li')
   const langPickerTogglerElement = document.querySelector('#lang-picker-toggler')
-  
-  langElements.forEach(el => 
+
+  langElements.forEach(el =>
     el.addEventListener('click', (e) => {
       const newLocale =  (e.target && e.target.dataset && e.target.dataset.lang) || "en";
       window.location.replace(window.location.pathname.replace(/\/[a-zA-Z-]+/, `/${newLocale}`))
