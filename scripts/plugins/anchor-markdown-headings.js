@@ -35,6 +35,11 @@ module.exports = function anchorMarkdownHeadings (text, level, raw) {
       .replace(/-{2,}/g, '-')
       .replace(/(^-|-$)/g, '')
   }
+
+  if (!anchorTitle) {
+    return `<h${level}>${text}</h${level}>`
+  }
+
   anchorTitle = anchorTitle.toLowerCase()
 
   return '<h' + level + ' id="header-' + anchorTitle + '">' + text + '<a name="' +
