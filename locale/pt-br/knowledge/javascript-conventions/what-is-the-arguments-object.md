@@ -10,85 +10,57 @@ difficulty: 4
 layout: knowledge-post.hbs
 ---
 
-Os objetos `arguments` são uma estrutura especial disponível dentro de todas as chamadas de função e que é representada como uma lista de argumentos que são passadas quando a função é chamada. Desde que JavaScript permite chamar funções com indeterminado número de argumentos, nós precisamos de um método para descobrir e acessar esses argumentos.
+O objeto `arguments` é uma estrutura especial disponível dentro de todas as chamadas de função. É representada como uma lista de argumentos que são passados quando a função é chamada. Uma vez que o JavaScript permite chamar funções com indeterminado número indeterminado de argumentos, nós precisamos de um método para descobrir e acessar esses argumentos.
 
-Os objetos `arguments` são um tipo de objeto array, seu tamanho corresponde a quantidade de argumentos passados para a função e que é possível acessar seu valor através de indexação do Array. Exemplo `arguments[0]` //Captura ao primeiro argumento. Existe apenas mais uma propriedade de `arguments` chamada `callee`, Nota: o ES5 impede o uso do `strict mode` mais informações podem ser encontradas [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments/callee). Veja mais exemplos sobre as propriedades `arguments`.
+O objeto `arguments` é um array-like, seu tamanho corresponde a quantidade de argumentos passados para a função. É possível acessar estes valores através da indexação do Array. Exemplo: `arguments[0]` captura o primeiro argumento. A única outra propriedade de `arguments` é chamada `callee`, a qual o ES5 impede o uso no `strict mode`, mais informações podem ser encontradas [aqui](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments/callee).
+Veja mais exemplos sobre as propriedades de `arguments`.
 
 ```js
-const minhaFunc = function(primeiro) {
-  const index0 = arguments[0] === primeiro;
-  const index1 = arguments[1] === 2;
-  const argumentsLength = arguments.length === 3;
-  return console.log(index0, index1, argumentsLength)
-}
-minhaFunc(1, 2, 3);
-// expectativa de retorno no console: true | true | true
-```
-```js
-const locais = function() {
-  console.log(
-    arguments[0] === ‘casa’, // return true
-    arguments[1] === ‘escritório’ , // return false
-    arguments.length < 4 // return true
-  )
+const myfunc = function(one) {
+  arguments[0] === one;
+  arguments[1] === 2;
+  arguments.length === 3;
 }
 
-locais('casa', 'praia', 'fazenda');
-// expectativa de retorno no console: true | false | true
+myfunc(1, 2, 3);
 ```
 
-NOTA: Para ES5 ou anteriores, o loop `for` serve para coletar os dados dos `arguments`
+Essa construção é muito útil e fornece muitas funções ao JavaScript. Mas há uma pegadinha. O objeto `arguments` se comporta como um tipo array, porém ele não é realmente um array. Ele não têm as funcionalidades que o Array herda de Array.prototype e não responde a nenhum método de array, exemplo. `arguments.sort()` gera um TypeError. Em vez disso, você precisa copiar os valores para um array verdadeiro.
+Com o advento do ES6 o método `Array.from()` torna isso bastante simples.
 
 ```js
-function casa(){
-  for (locais in arguments){
-    console.log(arguments[locais])
-  }
-  return arguments.length
+const myfunc = function(a, b, c) {
+  const args = Array.from(arguments);
+  console.log(args) // [1, 2, 3]
 }
-casa('quarto', 'banheiro', 'sala')
-// expectativa de retorno no console: quarto | banheiro | sala | 3
+
+myfunc(1, 2, 3);
 ```
-Em alguns casos você ainda pode tratar o `arguments` como um Array, neste caso você pode usar o `arguments` através de funções dinâmicas. Os métodos nativos do Array (Ex. Array.prototype.concat) serão aceitos para tratar os `arguments` dinamicamente. Essa técnica também oferece outros modos de conversão dos `arguments` para um tipo Array utilizando do método `Array.slice`.
+NOTA: Para ES5 e anteriores, um loop `for` normal pode fazer o truque
+
+Em alguns casos você ainda pode tratar o `arguments` como um Array, você pode usar o `arguments` através de invocações de funções dinâmicas. E a maioria dos métodos nativos Array (Ex. Array.prototype.concat) aceitarão `arguments` quando invocados dinamicamente utilizando `call` ou `apply`. Essa técnica também oferece outros modos de conversão dos `arguments` para um tipo Array utilizando método `Array.slice`.
 
 ```js
-const minhaFunc = function(primeiro) {...
-  minhaFunc.apply(obj, arguments).
-}
-// Concatena o Array com os `arguments`
-const minhaFunc = function(primeiro) {
-  return console.log(Array.prototype.concat.apply([1, 2, 3], arguments))
-}
-// expectativa de retorno no console: [ 1, 2, 3, 'PIN' ]
+myfunc.apply(obj, arguments).
 
-minhaFunc('PIN')
+// concat arguments onto the
+Array.prototype.concat.apply([1,2,3], arguments);
 
-// altera os `arguments` para um tipo Array
-const minhaFunc = function(primeiro) {
-  return console.log(Array.prototype.slice.call(arguments))
-}
+// turn arguments into a true array
+const args = Array.prototype.slice.call(arguments);
 
-minhaFunc(1,2,3,'PIN',5,6,7)
-// expectativa de retorno no console: [ 1, 2, 3, 'PIN', 5, 6, 7 ]
-
-// remova o primeiro item de `arguments`
-const minhaFunc = function(primeiro) {
-  return console.log( Array.prototype.slice.call(arguments, 1))
-}
-
-minhaFunc(1,2,3,'PIN',5,6,7)
-// expectativa de retorno no console: [ 2, 3, 'PIN', 5, 6, 7 ]
-
+// cut out first argument
+args = Array.prototype.slice.call(arguments, 1);
 ```
 
-O `arrow functions` foram adicionados no ECMAScript 2015 (ES6), propondo uma sintaxe mais compacta do que em sua versão anterior. Com isso, houve um modo alternativo para tratar os `arguments` o convertendo para `arguments objects` (além das palavras chaves `this`, `super`, e `new.target`). A solução para esse caso de uso é utilizar `rest parameter`. O `rest parameter` permite representar um indeterminado numero de argumentos como um tipo Array. Leia mais detalhes [aqui](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters).
+### Objeto Argments em arrow function
+
+As `arrow functions` foram adicionadas na especificação do ECMAScript 2015 (ES6), propondo uma alternativa mais compacta do que a declaração de uma função comum. A desvantagem dessa alternativa é que não existe mais o objecto `arguments` (e também as keywords `this`, `super` ou `new.target`). A solução para esses casos é o uso dos parâmetros `rest`. Os parâmetros `rest` permitem representar um número indeterminado de argumentos como um Array. Leia mais detalhes [aqui](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters).
 
 ```js
-const minhaFunc = (...args) => {
-  console.log('O parâmetro é ', args[0]);
+const myfunc = (...args) => {
+  console.log('first parameter is ', args[0]);
 }
 
-minhaFunc(1, 2, 3);
-// expectativa de retorno no console: "O parâmetro é 1"
-
+myfunc(1, 2, 3);
 ```
