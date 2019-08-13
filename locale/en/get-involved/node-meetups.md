@@ -212,6 +212,14 @@ REQUIREMENTS
 - Organizer name - Valentin Huber
 - Organizer contact info - [Email](mailto:valentin.huber@msg.group)
 
+#### Berlin
+
+- [Meetup](https://www.meetup.com/Node-js-Meetup-Berlin/)
+- Frequency of meetups - monthly
+- How to submit a talk? Email [Andreas](mailto:npm@lubbe.org)
+- Organizer name - Andreas Lubbe
+- Organizer contact info - [Email](mailto:npm@lubbe.org)
+
 #### Hamburg
 
 - [Meetup](https://www.meetup.com/node-HH/)
