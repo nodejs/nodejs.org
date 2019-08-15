@@ -68,7 +68,7 @@
     "nock": "^10.0.6",
     "pre-commit": "^1.2.2",
     "proxyquire": "^2.0.1",
-    "standard": "^12.0.0",
+    "standard": "^13.1.0",
     "stylint": "^2.0.0",
     "tape": "^4.9.1"
   }
