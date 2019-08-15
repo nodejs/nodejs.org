@@ -29,14 +29,16 @@
     </svg>
 
     <div class="lang-picker hidden">
-      <ul>
-        {{#each locales}}
-          <li
-            data-lang="{{locale}}"
-            title="{{languageEnglishVersion}}"
-          >
-            {{language}}
-          </li>
+      <ul
+        id="language-items">
+          {{#each locales}}
+            <li
+                data-lang="{{locale}}"
+                title="{{languageEnglishVersion}}"
+                language="{{language}}"
+            >
+                {{language}}
+            </li>
         {{/each}}
       </ul>
     </div>
@@ -47,13 +49,34 @@
   const langPickerElement = document.querySelector('.lang-picker')
   const langElements = langPickerElement.querySelectorAll('li')
   const langPickerTogglerElement = document.querySelector('#lang-picker-toggler')
+  const languageItemsSelector = document.querySelector('#language-items')
+  // Get the current URL language 
+  const currentLang = window.location.pathname.split('/')[1] || "en"
+  // Get the current URL language selector item as a li
+  let currentLangElement = null;
 
-  langElements.forEach(el =>
-    el.addEventListener('click', (e) => {
-      const newLocale =  (e.target && e.target.dataset && e.target.dataset.lang) || "en";
-      window.location.replace(window.location.pathname.replace(/\/[a-zA-Z-]+/, `/${newLocale}`))
-    })
+  langElements.forEach(el => {
+    if (el.getAttribute("data-lang") !== currentLang) {
+      el.addEventListener('click', (e) => {
+        const newLocale = (e.target && e.target.dataset && e.target.dataset.lang) || "en";
+        window.location.replace(window.location.pathname.replace(/\/[a-zA-Z-]+/, `/${newLocale}`))
+      })
+    }
+    else {
+      currentLangElement = el
+    }
+  }
   )
+
+  // Create dynamically label for tooltip 
+  let titleEle = document.createElementNS("http://www.w3.org/2000/svg", "title");
+  let textString = document.createTextNode(currentLangElement.getAttribute("language"));
+  titleEle.appendChild(textString);
+  langPickerTogglerElement.appendChild(titleEle);
+
+  // Remove the current selected langauge item, because we don't need to choose it
+  // any more unless we want to switch the new language
+  languageItemsSelector.removeChild(currentLangElement)
 
   langPickerTogglerElement.addEventListener('click', () => {
     langPickerElement.classList.toggle('hidden')
