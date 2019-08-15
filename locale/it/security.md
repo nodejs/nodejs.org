@@ -48,8 +48,8 @@ Queste fix non sono pubblicate nel repository ma piuttosto mantenute localmente 
 
 Le notifiche di sicurezza verranno distribuite nei seguenti modi.
 
-- [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog/](https://nodejs.org/en/blog/)
+- <https://groups.google.com/group/nodejs-sec>
+- <https://nodejs.org/en/blog/>
 
 ## Commenti su questa Politica
 

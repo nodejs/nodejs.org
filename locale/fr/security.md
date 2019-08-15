@@ -48,7 +48,7 @@ Voici la politique de divulgation des failles de sécurité pour Node.js :
 
 Les alertes de sécurité sont relayées sur les canaux suivants.
 
-- [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
+- <https://groups.google.com/group/nodejs-sec>
 - [https://nodejs.org/fr/blog](https://nodejs.org/fr/blog)
 
 ## Commentaires à propos de cette politique de sécurité
