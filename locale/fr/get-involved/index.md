@@ -9,7 +9,7 @@ layout: contribute.hbs
 
 - La [liste des tickets GitHub](https://github.com/nodejs/node/issues) est le bon endroit pour discuter des fonctionnalités cœurs de Node.js.
 
-- Pour une discussion temps réel à propos du développement Node, allez sur `irc.freenode.net` dans le canal `#node.js` avec un [client IRC](https://fr.wikipedia.org/wiki/Liste_de_clients_IRC) ou connectez vous depuis votre navigateur web en utilisant [le WebChat de freenode](http://webchat.freenode.net/?channels=node.js) (en anglais).
+- Pour une discussion temps réel à propos du développement Node, allez sur `irc.freenode.net` dans le canal `#node.js` avec un [client IRC](https://fr.wikipedia.org/wiki/Liste_de_clients_IRC) ou connectez vous depuis votre navigateur web en utilisant [le WebChat de freenode](https://webchat.freenode.net/#node.js) (en anglais).
 
 - Le compte Twitter officiel de Node.js est [nodejs](https://twitter.com/nodejs) (en anglais).
 

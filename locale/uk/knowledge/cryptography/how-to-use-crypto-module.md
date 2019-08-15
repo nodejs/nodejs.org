@@ -8,9 +8,9 @@ difficulty: 3
 layout: knowledge-post.hbs
 ---
 
-The [crypto](https://nodejs.org/docs/v0.4.10/api/crypto.html) module is a wrapper for [OpenSSL](http://en.wikipedia.org/wiki/Openssl) cryptographic functions. It supports calculating hashes, authentication with HMAC, ciphers, and more!
+The [crypto](https://nodejs.org/docs/v0.4.10/api/crypto.html) module is a wrapper for [OpenSSL](https://en.wikipedia.org/wiki/Openssl) cryptographic functions. It supports calculating hashes, authentication with HMAC, ciphers, and more!
 
-The crypto module is mostly useful as a tool for implementing [cryptographic protocols](http://en.wikipedia.org/wiki/Cryptographic_protocol) such as [TLS](http://en.wikipedia.org/wiki/Transport_Layer_Security) and [https](http://en.wikipedia.org/wiki/Https). For most users, Node's built-in [tls module](https://nodejs.org/docs/v0.4.10/api/tls.html) and [https module](https://nodejs.org/docs/v0.4.10/api/https.html) should more than suffice. However, for the user that only wants to use small parts of what's needed for full-scale cryptography or is crazy/desperate enough to implement a protocol using OpenSSL and Node: Read on.
+The crypto module is mostly useful as a tool for implementing [cryptographic protocols](https://en.wikipedia.org/wiki/Cryptographic_protocol) such as [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) and [https](https://en.wikipedia.org/wiki/Https). For most users, Node's built-in [tls module](https://nodejs.org/docs/v0.4.10/api/tls.html) and [https module](https://nodejs.org/docs/v0.4.10/api/https.html) should more than suffice. However, for the user that only wants to use small parts of what's needed for full-scale cryptography or is crazy/desperate enough to implement a protocol using OpenSSL and Node: Read on.
 
 ## Hashes
 
@@ -30,8 +30,8 @@ A hash is a fixed-length string of bits that is procedurally and deterministiall
 
 The hashes that work with crypto are dependent on what your version of OpenSSL supports. If you have a new enough version of OpenSSL, you can get a list of hash types your OpenSSL supports by typing `openssl list-message-digest-algorithms` into the command line. For older versions, simply type `openssl list-message-digest-commands` instead! Some of the most common hash types are: 
 
-* [sha1](http://en.wikipedia.org/wiki/Sha1)
-* [md5](http://en.wikipedia.org/wiki/Md5).
+* [sha1](https://en.wikipedia.org/wiki/Sha1)
+* [md5](https://en.wikipedia.org/wiki/Md5).
 
 ### How To Calculate Hashes with Crypto
 
@@ -62,7 +62,7 @@ Ciphers allow you to encode and decode messages given a password.
 
 ### Cipher Algorithms That Work With Crypto
 
-Like crypto's hash algorithms, the cyphers that work with crypto are dependent on what your version of OpenSSL supports. You can get a list of hash types your OpenSSL supports by typing `openssl list-cipher-commands` into the command line for older versions, or `openssl list-cipher-algorithms` for newer versions of OpenSSL. OpenSSL supports *many* ciphers; A good and popular one is [AES192](http://en.wikipedia.org/wiki/Aes192).
+Like crypto's hash algorithms, the cyphers that work with crypto are dependent on what your version of OpenSSL supports. You can get a list of hash types your OpenSSL supports by typing `openssl list-cipher-commands` into the command line for older versions, or `openssl list-cipher-algorithms` for newer versions of OpenSSL. OpenSSL supports *many* ciphers; A good and popular one is [AES192](https://en.wikipedia.org/wiki/Aes192).
 
 ### How To Use Cipher Algorithms with Crypto:
 

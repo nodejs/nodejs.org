@@ -8,7 +8,7 @@ layout: contribute.hbs
 ## Discusión de la comunidad
 
 - La [lista de errores en](https://github.com/nodejs/node/issues) es el lugar para discutir las características del núcleo de Node.js.
-- Para chatear en tiempo real sobre el desarrollo de Node vaya a `irc.freenode.net` en el canal `#node.js` usando un [cliente de IRC](http://es.wikipedia.org/wiki/Anexo:Clientes_IRC) ó conéctese con su navegador al canal usando [WebChat de freenode](http://webchat.freenode.net/?channels=node.js).
+- Para chatear en tiempo real sobre el desarrollo de Node vaya a `irc.freenode.net` en el canal `#node.js` usando un [cliente de IRC](https://es.wikipedia.org/wiki/Anexo:Clientes_IRC) ó conéctese con su navegador al canal usando [WebChat de freenode](https://webchat.freenode.net/#node.js).
 - La cuenta de Twitter oficial de Node.js es [nodejs](https://twitter.com/nodejs).
 - El [calendario de la Fundación Node.js](https://nodejs.org/calendar) con todas las reuniones del equipo público.
 - [Node Weekly](http://nodeweekly.com) es una lista de correo que recopila los últimos eventos y noticias alrededor de la comunidad de Node.js.

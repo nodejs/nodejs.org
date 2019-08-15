@@ -28,7 +28,7 @@ layout: about.hbs
 
 [COLLABORATOR_GUIDE.md]: https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md
 [Комитетом сообщества (CommComm)]: https://github.com/nodejs/community-committee/blob/master/Community-Committee-Charter.md
-[поиска консенсуса]: http://en.wikipedia.org/wiki/Consensus-seeking_decision-making
+[поиска консенсуса]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [README.md]: https://github.com/nodejs/node/blob/master/README.md#current-project-team-members
 [Техническим руководящим комитетом (TSC)]: https://github.com/nodejs/TSC/blob/master/TSC-Charter.md
 [TSC]: https://github.com/nodejs/TSC

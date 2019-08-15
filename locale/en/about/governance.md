@@ -30,7 +30,7 @@ extending the Node.js community.
 
 [COLLABORATOR_GUIDE.md]: https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md
 [Community Committee (CommComm)]: https://github.com/nodejs/community-committee/blob/master/Community-Committee-Charter.md
-[Consensus Seeking]: http://en.wikipedia.org/wiki/Consensus-seeking_decision-making
+[Consensus Seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [README.md]: https://github.com/nodejs/node/blob/master/README.md#current-project-team-members
 [Technical Steering Committee (TSC)]: https://github.com/nodejs/TSC/blob/master/TSC-Charter.md
 [TSC]: https://github.com/nodejs/TSC
