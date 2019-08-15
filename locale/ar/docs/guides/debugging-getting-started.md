@@ -170,13 +170,13 @@ layout: docs.hbs
 
 
 ```bash
-$ node --inspect server.js
+node --inspect server.js
 ```
 
 الآن، و على حاسوبك المحلي  الذي تريد من خلاله إنشاء اتصال بعميل تصحيح الأخطاء، يمكنك إنشاء قناة ssh:
 
 ```bash
-$ ssh -L 9221:localhost:9229 user@remote.example.com
+ssh -L 9221:localhost:9229 user@remote.example.com
 ```
 
 يقوم هذا الأمر بإنشاء جلسة لقناة ssh حيث يتم إعادة توجيه الإتصال من المنفذ 9221 على جهازك المحلي إلى المنفذ 9221 على النطاق remote.example.com. 

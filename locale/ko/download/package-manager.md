@@ -222,7 +222,7 @@ On Unix / OS X systems Node.js built from source can be installed using
 [nvm](https://github.com/creationix/nvm) by installing into the location that nvm expects:
 
 ```bash
-$ env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
+env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
 After this you can use `nvm` to switch between released versions and versions
@@ -230,14 +230,14 @@ built from source.
 For example, if the version of Node.js is v8.0.0-pre:
 
 ```bash
-$ nvm use 8
+nvm use 8
 ```
 
 Once the official release is out you will want to uninstall the version built
 from source:
 
 ```bash
-$ nvm uninstall 8
+nvm uninstall 8
 ```
 -->
 
@@ -251,20 +251,20 @@ Unix / OS X 시스템에서는 소스로 빌드된 Node.js를
 이는 nvm에 설정된 위치에 설치됩니다.
 
 ```bash
-$ env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
+env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
 설치 후 `nvm`으로 릴리스 된 버전이나 소스에서 빌드한 버전 간에 변경할 수 있습니다.
 예를 들어 Node.js 버전이 v8.0.0-pre라면 다음과 같이 실행합니다.
 
 ```bash
-$ nvm use 8
+nvm use 8
 ```
 
 공식적으로 릴리스 된 후 소스에서 빌드된 버전을 다음과 같이 제거할 수 있습니다.
 
 ```bash
-$ nvm uninstall 8
+nvm uninstall 8
 ```
 
 <!--

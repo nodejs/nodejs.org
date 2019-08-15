@@ -150,13 +150,13 @@ layout: docs.hbs
 让我们假定你在一台远程机器上运行 Node，譬如 remote.example.com。你想进行调试。在那台机器上你应该启动 node 进程，让监视器仅监听本地（默认）。
 
 ```bash
-$ node --inspect server.js
+node --inspect server.js
 ```
 
 现在，在你本地机器上，从你初始化一个调试客户端连接开始，你创建了一个 SSH 管道：
 
 ```bash
-$ ssh -L 9221:localhost:9229 user@remote.example.com
+ssh -L 9221:localhost:9229 user@remote.example.com
 ```
 
 ssh 管道启动，在你机器上连接到 9221 端口将被重定向到 9229 的 remote.example.com 地址上。你可以附加一个调试器，例如 Chrome 开发工具或者是指向 localhost:9221 的 Visual Studio Code。如果 Node.js 本地正在运行，应该可以调试了。

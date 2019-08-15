@@ -98,7 +98,7 @@ Node Version Manager ― это bash-скрипт, используемый дл
 [nvm](https://github.com/creationix/nvm) путем установки в папку по умолчанию nvm:
 
 ```bash
-$ env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
+env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
 После этого вы можете использовать `nvm` для переключения между выпущенными версиями и версиями
@@ -106,13 +106,13 @@ $ env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version
 Например, если версия Node.js v8.0.0-pre:
 
 ```bash
-$ nvm use 8
+nvm use 8
 ```
 
 После выхода официального релиза вы захотите удалить встроенную версию:
 
 ```bash
-$ nvm uninstall 8
+nvm uninstall 8
 ```
 
 ## OpenBSD

@@ -370,7 +370,7 @@ build the Docker image. The `-t` flag lets you tag your image so it's easier to
 find later using the `docker images` command:
 
 ```bash
-$ docker build -t <your username>/node-web-app .
+docker build -t <your username>/node-web-app .
 ```
 
 Your image will now be listed by Docker:
@@ -392,7 +392,7 @@ node                            8          1934b0b038d1    5 days ago
 쉽게 찾을 수 있습니다.
 
 ```bash
-$ docker build -t <your username>/node-web-app .
+docker build -t <your username>/node-web-app .
 ```
 
 Docker가 당신이 빌드한 이미지를 보여줄 것입니다.
@@ -414,7 +414,7 @@ container running in the background. The `-p` flag redirects a public port to a
 private port inside the container. Run the image you previously built:
 
 ```bash
-$ docker run -p 49160:8080 -d <your username>/node-web-app
+docker run -p 49160:8080 -d <your username>/node-web-app
 ```
 
 Print the output of your app:
@@ -444,7 +444,7 @@ $ docker exec -it <container id> /bin/bash
 `-p` 플래그는 공개 포트를 컨테이너 내의 비공개 포트로 리다이렉트합니다. 앞에서 만든 이미지를 실행하세요.
 
 ```bash
-$ docker run -p 49160:8080 -d <your username>/node-web-app
+docker run -p 49160:8080 -d <your username>/node-web-app
 ```
 
 앱의 로그를 출력하세요.
