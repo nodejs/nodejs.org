@@ -24,7 +24,7 @@ layout: contribute.hbs
 
 ## Apprentissage
 
-- [La documentation officielle de l'API de référence](/api) détaille l'API Node (en anglais).
+- [La documentation officielle de l'API de référence](/api/) détaille l'API Node (en anglais).
 
 - [NodeSchool.io](https://nodeschool.io/fr-fr/) vous apprendra les concepts de Node.js avec des jeux interactifs en ligne de commande.
 

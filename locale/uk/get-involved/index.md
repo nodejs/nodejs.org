@@ -17,7 +17,7 @@ layout: contribute.hbs
 
 ## Навчання
 
-- [Офіційна довідкова документація по API](/api) описує Node API.
+- [Офіційна довідкова документація по API](/api/) описує Node API.
 - [NodeSchool.io](http://nodeschool.io) навчить вас концепцій Node.js через інтерактивні консольні ігри.
 - [Stack Overflow Node.js tag](http://stackoverflow.com/questions/tagged/node.js) щодня поповнюється новою інформацією.
 

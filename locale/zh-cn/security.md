@@ -51,7 +51,7 @@ Node.js 项目参与了一个为安全研究员和负责任的公众披露者的
 安全通告将通过以下方式发布：
 
 - [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+- [https://nodejs.org/en/blog/](https://nodejs.org/en/blog/)
 
 ## 对于此政策的评论与建议
 

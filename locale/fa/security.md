@@ -59,7 +59,7 @@ title: امنیت
 اعلان‌های امنیتی به روش‌های زیر توزیع خواهند شد.
 
 - [گروه گوگل https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [بلاگ https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+- [بلاگ https://nodejs.org/en/blog/](https://nodejs.org/en/blog/)
 
 ## نظرات بر روی این سیاست
 

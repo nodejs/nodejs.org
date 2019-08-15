@@ -109,7 +109,7 @@ Node.js における、情報開示のポリシーをここに記します。
 Security notifications will be distributed via the following methods.
 
 - [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+- [https://nodejs.org/en/blog/](https://nodejs.org/en/blog/)
 -->
 
 ## セキュリティリポートを受け取る
@@ -117,7 +117,7 @@ Security notifications will be distributed via the following methods.
 セキュリティリポートは、以下のサイトを介して報告されます。
 
 - [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+- [https://nodejs.org/en/blog/](https://nodejs.org/en/blog/)
 
 <!--
 ## Comments on this Policy

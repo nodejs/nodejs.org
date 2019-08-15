@@ -47,7 +47,7 @@ title: الأمن
 يتم توزيع الإشعارات الأمنية بإتباع الطرق التالية.
 
 - [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+- [https://nodejs.org/en/blog/](https://nodejs.org/en/blog/)
 
 ## تعليقات على هذه السياسة
 

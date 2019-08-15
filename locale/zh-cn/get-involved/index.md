@@ -18,7 +18,7 @@ layout: contribute.hbs
 
 ## 学习资源
 
-- [官方 API 参考文档](/api) 中详细介绍了 Node 的 API 函数。
+- [官方 API 参考文档](/api/) 中详细介绍了 Node 的 API 函数。
 - [NodeSchool.io](http://nodeschool.io) 通过互动命令的方式教会你 Node.js 的概念。
 - [Stack Overflow Node.js tag](http://stackoverflow.com/questions/tagged/node.js) 每日收集最新资讯。
 - [The DEV Community Node.js tag](https://dev.to/t/node) 是一个共享 Node.js 项目、文章和教程，以及开始讨论并接受与 Node.js 相关的主题，我们欢迎任何级别的开发人员加入其中。

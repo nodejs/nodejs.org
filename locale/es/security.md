@@ -47,7 +47,7 @@ proceso descrito arriba, para asegurarse que la divulgación sea manejada de una
 Las notificaciones de seguridad serán distribuidas usando los siguientes medios.
 
 - [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+- [https://nodejs.org/en/blog/](https://nodejs.org/en/blog/)
 
 
 ## Comentarios sobre esta política

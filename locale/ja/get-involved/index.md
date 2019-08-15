@@ -32,7 +32,7 @@ layout: contribute.hbs
 <!-- 
 ## Learning
 
-- [Official API reference documentation](/api) details the Node.js API.
+- [Official API reference documentation](/api/) details the Node.js API.
 - [NodeSchool.io](http://nodeschool.io) will teach you Node.js concepts via interactive command-line games.
 - [Stack Overflow Node.js tag](http://stackoverflow.com/questions/tagged/node.js) collects new information every day.
 - [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
@@ -41,7 +41,7 @@ layout: contribute.hbs
  -->
 ## 学習
 
-- [公式 API リファレンスドキュメント](/api) は、Node.js API の詳細を説明しています。
+- [公式 API リファレンスドキュメント](/api/) は、Node.js API の詳細を説明しています。
 - [NodeSchool.io](http://nodeschool.io) はインタラクティブなコマンドラインゲームを介して Node.js の概念を教えます。
 - [Stack Overflow Node.js tag](http://stackoverflow.com/questions/tagged/node.js) は、毎日新しい情報を収集します。
 - [The DEV Community Node.js tag](https://dev.to/t/node) は、Node.js プロジェクト、記事、チュートリアルを共有したり、ディスカッションを開始したり、Node.js 関連のトピックについてのフィードバックを求めたりする場所です。スキルレベルに関係なくすべての開発者が参加できます。
