@@ -81,9 +81,9 @@ perf record -e cycles:u -g -- node --perf-basic-prof app.js
 1. `perf` をインストールします (まだインストールされていなければ、通常 linux-tools-common パッケージ経由で利用可能です)
 2. `perf` を実行してみてください - カーネルモジュールが足りないと表示されるかもしれません、それらもインストールしてください
 3. perf を有効にして node を実行します (Node.js のバージョンに固有のヒントについては [perf の出力の問題](#perf-output-issues) を参照してください)
-```bash
-perf record -e cycles:u -g -- node --perf-basic-prof app.js
-``` 
+    ```bash
+    perf record -e cycles:u -g -- node --perf-basic-prof app.js
+    ```
 4. パッケージが足りないために perf を実行できないと表示されていない限り、警告を無視してください。カーネルモジュールのサンプルにアクセスできないという警告が表示されることがあります
 5. `perf script > perfs.out` を実行して、すぐに視覚化できるデータファイルを生成します。読みやすいグラフに[クリーンアップを適用する](#filtering-out-node-internal-functions)と便利です
 6. stackvis がインストールされていない場合は、`npm i -g stackvis`を実行して stackvis をインストールします
