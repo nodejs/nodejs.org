@@ -26,7 +26,7 @@ El proyecto está gestionado conjuntamente por el [Comité de Dirección Técnic
 
 [COLLABORATOR_GUIDE.md]: https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md
 [Comité de la Comunidad (CommComm)]: https://github.com/nodejs/community-committee/blob/master/Community-Committee-Charter.md
-[Búsqueda de Consenso]: http://en.wikipedia.org/wiki/Consensus-seeking_decision-making
+[Búsqueda de Consenso]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [README.md]: https://github.com/nodejs/node/blob/master/README.md#current-project-team-members
 [Comité de Dirección Técnica (TSC)]: https://github.com/nodejs/TSC/blob/master/TSC-Charter.md
 [TSC]: https://github.com/nodejs/TSC

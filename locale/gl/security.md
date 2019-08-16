@@ -52,8 +52,8 @@ consistente.
 
 As notificacións de seguridade serán distribuídas usando os seguintes medios.
 
-- [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+- <https://groups.google.com/group/nodejs-sec>
+- <https://nodejs.org/en/blog/>
 
 
 ## Comentarios sobre esta política

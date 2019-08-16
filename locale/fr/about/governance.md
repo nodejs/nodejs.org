@@ -132,7 +132,7 @@ chaque réunion.
 ## Processus de Recherche de Consensus
 
 Le TSC suit un modèle décisionnaire de
-[Recherche de Consensus](http://en.wikipedia.org/wiki/Consensus-seeking_decision-making)
+[Recherche de Consensus](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making)
 (en anglais).
 
 Quand un objet du programme a atteint un consensus, le modérateur

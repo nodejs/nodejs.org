@@ -8,7 +8,7 @@ layout: contribute.hbs
 ## Community Discussion
 
 - The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
-- For real-time chat about Node.js development go to `irc.freenode.net` in the `#node.js` channel with an [IRC client](http://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [freenode's WebChat](http://webchat.freenode.net/?channels=node.js).
+- For real-time chat about Node.js development go to `irc.freenode.net` in the `#node.js` channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [freenode's WebChat](https://webchat.freenode.net/#node.js).
 - The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
 - The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
 - [Node.js Everywhere](https://newsletter.nodejs.org) is the official Node.js Monthly Newsletter.
@@ -22,7 +22,7 @@ layout: contribute.hbs
 ## コミュニティディスカッション
 
 - [GitHub issues リスト](https://github.com/nodejs/node/issues) は、Node.js のコア機能に関する議論の場です。
-- Node.js 開発についてのリアルタイムチャットは、[IRC クライアント](http://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) を使って `#node.js` チャンネルで `irc.freenode.net` に行くか、または [freenode's WebChat](http://webchat.freenode.net/?channels=node.js) を使ってあなたの Web ブラウザでそのチャンネルに接続してください。
+- Node.js 開発についてのリアルタイムチャットは、[IRC クライアント](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) を使って `#node.js` チャンネルで `irc.freenode.net` に行くか、または [freenode's WebChat](https://webchat.freenode.net/#node.js) を使ってあなたの Web ブラウザでそのチャンネルに接続してください。
 - Node.js 公式 Twitter アカウントは [nodejs](https://twitter.com/nodejs) です。
 - [Node.js Foundation calendar](https://nodejs.org/calendar) とすべての公開チームミーティング。
 - [Node.js Everywhere](https://newsletter.nodejs.org) は、公式の Node.js マンスリーニュースレターです。
@@ -32,7 +32,7 @@ layout: contribute.hbs
 <!-- 
 ## Learning
 
-- [Official API reference documentation](/api) details the Node.js API.
+- [Official API reference documentation](/api/) details the Node.js API.
 - [NodeSchool.io](http://nodeschool.io) will teach you Node.js concepts via interactive command-line games.
 - [Stack Overflow Node.js tag](http://stackoverflow.com/questions/tagged/node.js) collects new information every day.
 - [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
@@ -41,7 +41,7 @@ layout: contribute.hbs
  -->
 ## 学習
 
-- [公式 API リファレンスドキュメント](/api) は、Node.js API の詳細を説明しています。
+- [公式 API リファレンスドキュメント](/api/) は、Node.js API の詳細を説明しています。
 - [NodeSchool.io](http://nodeschool.io) はインタラクティブなコマンドラインゲームを介して Node.js の概念を教えます。
 - [Stack Overflow Node.js tag](http://stackoverflow.com/questions/tagged/node.js) は、毎日新しい情報を収集します。
 - [The DEV Community Node.js tag](https://dev.to/t/node) は、Node.js プロジェクト、記事、チュートリアルを共有したり、ディスカッションを開始したり、Node.js 関連のトピックについてのフィードバックを求めたりする場所です。スキルレベルに関係なくすべての開発者が参加できます。

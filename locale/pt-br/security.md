@@ -48,8 +48,8 @@ O código é auditado para encontrar possíveis problemas similares em potencial
 
 Notificaçōes de segurança serão distribuídas através dos seguintes métodos.
 
-- [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+- <https://groups.google.com/group/nodejs-sec>
+- <https://nodejs.org/en/blog/>
 
 ## Comentários sobre esta Política
 

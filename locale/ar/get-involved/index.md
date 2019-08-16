@@ -7,7 +7,7 @@ layout: contribute.hbs
 ## نقاش المجتمع
 
 - تعتبر [قائمة المشكلات على GitHub](https://github.com/nodejs/node/issues) المكان المخصص للنقاشات حول المميزات الأساسية للـ Node.js.
-- لأجل الانخراط في دردشة آنية عن تطوير الـ Node.js، تفضل بزيارة `irc.freenode.net` على قناة `#node.js` باستعمال [أحد برامج IRC](http://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) أو اتصل بواسطة متصفحك باستعمال خدمة الشات الخاصة بـ [freenode](http://webchat.freenode.net/?channels=node.js)
+- لأجل الانخراط في دردشة آنية عن تطوير الـ Node.js، تفضل بزيارة `irc.freenode.net` على قناة `#node.js` باستعمال [أحد برامج IRC](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) أو اتصل بواسطة متصفحك باستعمال خدمة الشات الخاصة بـ [freenode](https://webchat.freenode.net/#node.js)
 - الحساب الرسمي للـ Node.js على تويتر هو [nodejs](https://twitter.com/nodejs)
 - [رزنامة مؤسسة الـ Node.js](https://nodejs.org/calendar) تحتوي على تواريخ لقاءات جميع الفرق العامة.
 - [Node.js Everywhere](https://newsletter.nodejs.org) و تمثل الرسالة الإخبارية الشهرية للـ Node.js.
@@ -16,7 +16,7 @@ layout: contribute.hbs
 
 ## التعلم
 
-- [التوثيق الرسمي لواجهة برمجة التطبيق](/api) يتحدث بالتفصيل على وجاهة برمجة التطبيق الخاصة بالـ Node.js
+- [التوثيق الرسمي لواجهة برمجة التطبيق](/api/) يتحدث بالتفصيل على وجاهة برمجة التطبيق الخاصة بالـ Node.js
 - [دلائل الـ Node.js](https://nodejs.dev) يرشدك إلى أساسيات تطوير تطبيقات باستعمال الـ Node.js. 
 - [NodeSchool.io](http://nodeschool.io) سيعلمك مفاهيم الـ Node.js باستعمال العاب سطر اوامر تفاعلية.
 - [التاق الخاص بالـ Node.js على Stack Overflow](http://stackoverflow.com/questions/tagged/node.js) يجمع معلومات جديدة كل يوم.

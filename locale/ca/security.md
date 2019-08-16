@@ -46,8 +46,8 @@ Es farà tot el possible per gestionar l'error en la forma més oportuna possibl
 
 Les notificacions de seguretat seran distribuïdes usant els següents mitjans.
 
-- [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+- <https://groups.google.com/group/nodejs-sec>
+- <https://nodejs.org/en/blog/>
 
 
 ## Comentaris sobre aquesta política
