@@ -12,6 +12,7 @@ downloads:
     intro: >
         Завантажте початковий код Node.js або інсталятор для вашої платформи та почніть розробку сьогодні.
     currentVersion: Поточна версія
+    includes: Містить
     buildInstructions: Побудова Node.js з вихідного коду на платформах, що підтримуються
     WindowsInstaller: Інсталятор для Windows
     WindowsBinary: Бінарний файл для Windows
