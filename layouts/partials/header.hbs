@@ -35,7 +35,7 @@
             <li
                 data-lang="{{locale}}"
                 title="{{languageEnglishVersion}}"
-                language="{{language}}"
+                data-language="{{language}}"
             >
                 {{language}}
             </li>
@@ -50,7 +50,7 @@
   var langElements = langPickerElement.querySelectorAll('li')
   var langPickerTogglerElement = document.querySelector('#lang-picker-toggler')
   var languageItemsSelector = document.querySelector('#language-items')
-  // Get the current URL language 
+  // Get the current URL language
   var currentLang = window.location.pathname.split('/')[1] || 'en'
   // Get the current URL language selector item as a li
   var currentLangElement = null;
@@ -61,19 +61,18 @@
         var newLocale = (e.target && e.target.dataset && e.target.dataset.lang) || 'en';
         window.location.replace(window.location.pathname.replace(/\/[a-zA-Z-]+/, '/' + newLocale))
       })
-    }
-    else {
+    } else {
       currentLangElement = el
     }
   })
 
-  // Create dynamically label for tooltip 
+  // Create dynamically label for tooltip
   var titleEle = document.createElementNS('http://www.w3.org/2000/svg', 'title');
-  var textString = document.createTextNode(currentLangElement.getAttribute('language'));
+  var textString = document.createTextNode(currentLangElement.getAttribute('data-language'));
   titleEle.appendChild(textString);
   langPickerTogglerElement.appendChild(titleEle);
 
-  // Remove the current selected langauge item, because we don't need to choose it
+  // Remove the current selected language item, because we don't need to choose it
   // any more unless we want to switch the new language
   languageItemsSelector.removeChild(currentLangElement)
 
