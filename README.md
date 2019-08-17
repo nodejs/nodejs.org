@@ -25,7 +25,7 @@ npm start
 
 This will start the development server on http://localhost:8080/en/. This should reload automatically when you make changes to the code, but no code is perfect, so sometimes you may need to restart it. :)
 
-Note: You'll need Node.js v4 or newer as the build system uses some native ES2015 features.
+Note: You'll need Node.js 8.x or newer as the build system uses some native ES2015 features.
 
 If you want to submit a new feature or a bugfix, the best way is to create the changes in a separate branch, e.g.: `git checkout -b feature/mycoolfeature`. This will make it easier for you to submit a pull request and get your feature merged.
 
@@ -62,7 +62,7 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 
 The Website Working Group is primarily concerned with the code and overall structure of the website.
 
-The content of the website comes from a variety of working groups (Evangelism, Core, i18n, etc). 
+The content of the website comes from a variety of working groups (Evangelism, Core, i18n, etc).
 The Website WG defers to these WGs on matters of content and routinely adds collaborators from these
 working groups as they add and improve content on the website. In other words, the Website WG is not
 an *editorial* Working Group except when no other Working Group has taken responsibility for a
