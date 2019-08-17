@@ -3,24 +3,6 @@ title: 의존성
 layout: docs.hbs
 ---
 
-<!--
-# Dependencies
-
-There are several dependencies that Node.js relies on to work the way it does.
-
-- [Libraries](#Libraries)
-  - [V8](#V8)
-  - [libuv](#libuv)
-  - [http-parser](#http-parser)
-  - [c-ares](#c-ares)
-  - [OpenSSL](#OpenSSL)
-  - [zlib](#zlib)
-- [Tools](#Tools)
-  - [npm](#npm)
-  - [gyp](#gyp)
-  - [gtest](#gtest)
--->
-
 # 의존성
 
 Node.js가 의존하고 있는 여러 의존성
@@ -37,17 +19,6 @@ Node.js가 의존하고 있는 여러 의존성
   - [gyp](#gyp)
   - [gtest](#gtest)
 
-<!--
-## Libraries
-
-### V8
-
-The V8 library provides Node.js with a JavaScript engine, which Node.js
-controls via the V8 C++ API. V8 is maintained by Google, for use in Chrome.
-
-- [Documentation](https://v8docs.nodesource.com/)
--->
-
 ## <!--libraries-->라이브러리
 
 ### V8
@@ -56,19 +27,6 @@ V8 라이브러리는 Node.js가 V8 C++ API로 제어하는 JavaScript 엔진을
 V8은 구글이 관리하고 크롬에서 사용 중인 엔진입니다.
 
 - [문서](https://v8docs.nodesource.com/)
-
-<!--
-### libuv
-
-Another important dependency is libuv, a C library that is used to abstract
-non-blocking I/O operations to a consistent interface across all supported
-platforms. It provides mechanisms to handle file system, DNS, network, child
-processes, pipes, signal handling, polling and streaming. It also includes a
-thread pool for offloading work for some things that can't be done
-asynchronously at the operating system level.
-
-- [Documentation](http://docs.libuv.org/)
--->
 
 ### libuv
 
@@ -79,35 +37,12 @@ asynchronously at the operating system level.
 
 - [문서](http://docs.libuv.org/)
 
-<!--
-### http-parser
-
-HTTP parsing is handled by a lightweight C library called http-parser. It is
-designed to not make any syscalls or allocations, so it has a very small
-per-request memory footprint.
-
-- [Documentation](https://github.com/joyent/http-parser/)
--->
-
 ### http-parser
 
 HTTP 파싱은 http-parser라는 경량 C 라이브러리가 처리합니다. 이는 시스템 호출이나 할당을 하려고
 만들어진 것이 아니므로 요청당 아주 작은 메모리 공간만 차지합니다.
 
 - [문서](https://github.com/joyent/http-parser/)
-
-<!--
-### c-ares
-
-For some asynchronous DNS requests, Node.js uses a C library called c-ares.
-It is exposed through the DNS module in JavaScript as the resolve() family of
-functions. The lookup() function, which is what the rest of core uses, makes
-use of threaded getaddrinfo(3) calls in libuv. The reason for this is that
-c-ares supports /etc/hosts, /etc/resolv.conf and /etc/svc.conf, but not things
-like mDNS.
-
-- [Documentation](http://c-ares.haxx.se/docs.html)
--->
 
 ### c-ares
 
@@ -119,32 +54,12 @@ mDNS 같은 것은 지원하지 않기 때문입니다.
 
 - [문서](http://c-ares.haxx.se/docs.html)
 
-<!--
-### OpenSSL
-
-OpenSSL is used extensively in both the `tls` and `crypto` modules. It provides
-battle-tested implementations of many cryptographic functions that the modern
-web relies on for security.
-
-- [Documentation](https://www.openssl.org/docs/)
--->
-
 ### OpenSSL
 
 OpenSSL은 `tls`와 `crypto` 모듈에서 광범위하게 사용되고 있습니다. OpenSSL은 현대 웹이
 보안에서 사용하는 수많은 암호화 함수에 대한 검증된 구현체를 제공합니다.
 
 - [문서](https://www.openssl.org/docs/)
-
-<!--
-### zlib
-
-For fast compression and decompression, Node.js relies on the industry-standard
-zlib library, also known for its use in gzip and libpng. Node.js uses zlib to
-create sync, async and streaming compression and decompression interfaces.
-
-- [Documentation](http://www.zlib.net/manual.html)
--->
 
 ### zlib
 
@@ -153,19 +68,6 @@ gzip과 libpng를 사용한다고 알려져 있습니다. Node.js는 동기, 비
 압축 해제 인터페이스에 zlib을 사용합니다.
 
 - [문서](http://www.zlib.net/manual.html)
-
-<!--
-## Tools
-
-### npm
-
-Node.js is all about modularity, and with that comes the need for a quality
-package manager; for this purpose, npm was made. With npm comes the largest
-selection of community-created packages of any programming ecosystem,
-which makes building Node.js apps quick and easy.
-
-- [Documentation](https://docs.npmjs.com/)
--->
 
 ## <!--tools-->도구
 
@@ -177,17 +79,6 @@ npm이 만들어졌습니다. npm이 모든 프로그래밍 생태계에서 커�
 
 - [문서](https://docs.npmjs.com/)
 
-<!--
-### gyp
-
-The build system is handled by gyp, a python-based project generator copied
-from V8. It can generate project files for use with build systems across many
-platforms. Node.js requires a build system because large parts of it — and its
-dependencies — are written in languages that require compilation.
-
-- [Documentation](https://gyp.gsrc.io/docs/UserDocumentation.md)
--->
-
 ### gyp
 
 V8에서 파생된 Python 기반의 프로젝트 제너레이터인 gyp가 빌드 시스템을 다룹니다. gyp는 다수의
@@ -195,15 +86,6 @@ V8에서 파생된 Python 기반의 프로젝트 제너레이터인 gyp가 빌�
 필요한 언어로 작성된 부분이 많이 있으므로(혹은 의존성 라이브러리에서) 빌드 시스템이 필요합니다.
 
 - [문서](https://gyp.gsrc.io/docs/UserDocumentation.md)
-
-<!--
-### gtest
-
-Native code can be tested using gtest, which is taken from Chromium. It allows
-testing C/C++ without needing an existing node executable to bootstrap from.
-
-- [Documentation](https://code.google.com/p/googletest/wiki/V1_7_Documentation)
--->
 
 ### gtest
 
