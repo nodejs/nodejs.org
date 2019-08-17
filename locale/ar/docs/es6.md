@@ -2,6 +2,7 @@
 title: ECMAScript 2015 (ES6) و ما بعدها
 layout: docs.hbs
 ---
+
 # ECMAScript 2015 (ES6) و ما بعدها
 
 تم بناء الـ Node.js باستعمال نسخ حديثة من الـ [V8](https://v8.dev/docs/profile)، و هذا يضمن اتاحة آخر المميزات الخاصة بالجافاسكريبت و الموافقة لـ [مواصفات JavaScript ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm) للمطورين في الوقت المناسب، إضافة إلى التحسينات المستمرة في الأداء و الثبات.

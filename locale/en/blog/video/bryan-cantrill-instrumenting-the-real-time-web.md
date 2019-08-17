@@ -7,6 +7,7 @@ category: video
 slug: bryan-cantrill-instrumenting-the-real-time-web
 layout: blog-post.hbs
 ---
+
 Bryan Cantrill, VP of Engineering at Joyent, describes the challenges of instrumenting a distributed, dynamic, highly virtualized system -- and what their experiences taught them about the problem, the technologies used to tackle it, and promising approaches.
 
 This talk was given at Velocity Conf in 2011.

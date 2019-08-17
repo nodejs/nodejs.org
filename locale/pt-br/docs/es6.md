@@ -2,6 +2,7 @@
 title: ECMAScript 2015 (ES6) e além
 layout: docs.hbs
 ---
+
 # ECMAScript 2015 (ES6) e além
 
 O Node.js é construído com as novas versões do [V8](https://v8.dev/). Mantendo-se em dia com as últimas atualizações desta engine, nós garantimos que as novas funcionalidades da [especificação JavaScript ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm) são trazidas para os desenvolvedores Node.js em tempo hábil, assim como as melhorias contínuas de performance e estabilidade.

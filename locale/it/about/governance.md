@@ -2,6 +2,7 @@
 title: Project Governance
 layout: about.hbs
 ---
+
 # Project Governance
 
 ## Consensus Seeking Process

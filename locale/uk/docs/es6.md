@@ -2,6 +2,7 @@
 title: ECMAScript 2015 (ES6) та вище
 layout: docs.hbs
 ---
+
 # ECMAScript 2015 (ES6) та вище
 
 Node.js побудований на сучасних версіях [V8](https://v8.dev/).  Ми певні в тому, що новий функціонал зі [специфікації JavaScript ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm) постачається Node.js–розробникам поступово, для подальшого підвищення швидкодії та стабільності, оскільки використовуємо найсвіжіші релізи цього рушія.

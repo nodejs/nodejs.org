@@ -7,7 +7,6 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-
 Making a simple HTTP server in Node.js has become the de facto 'hello world' for the platform.  On the one hand, Node.js provides extremely easy-to-use HTTP APIs; on the other hand, a simple web server also serves as an excellent demonstration of Node's asynchronous strengths.
 
 Let's take a look at a very simple example:

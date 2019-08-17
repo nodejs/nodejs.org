@@ -3,6 +3,7 @@ layout: about.hbs
 title: A propos
 trademark: Trademark
 ---
+
 # A propos de Node.js&reg;
 
 En tant qu'environnement d'exécution JavaScript asynchrone et orienté événnement, Node.js est conçu

@@ -3,6 +3,7 @@ layout: about.hbs
 title: Über Node.js
 trademark: Trademark
 ---
+
 # Über Node.js&reg;
 
 Als asynchrone, Event-basierte Laufzeitumgebung wurde Node speziell für die

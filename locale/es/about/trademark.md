@@ -2,6 +2,7 @@
 layout: about.hbs
 title: Política de marcas comerciales
 ---
+
 # Política de marcas comerciales
 
 Las marcas comerciales, marcas de servicio y gráficos de Node.js son símbolos de 

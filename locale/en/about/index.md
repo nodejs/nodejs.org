@@ -3,6 +3,7 @@ layout: about.hbs
 title: About
 trademark: Trademark
 ---
+
 # About Node.js&reg;
 
 As an asynchronous event driven JavaScript runtime, Node.js is designed to build

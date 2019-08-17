@@ -2,6 +2,7 @@
 title: Gouvernance du Projet
 layout: about.hbs
 ---
+
 # Gouvernance du Projet
 
 ## Comité de Pilotage Technique

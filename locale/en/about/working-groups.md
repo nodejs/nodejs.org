@@ -2,6 +2,7 @@
 layout: about.hbs
 title: Working Groups
 ---
+
 # Core Working Groups
 <!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 

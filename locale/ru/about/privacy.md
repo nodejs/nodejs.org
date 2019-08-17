@@ -2,6 +2,7 @@
 title: Политика Конфиденциальности
 layout: about.hbs
 ---
+
 # Privacy Policy
 
 NODE.JS FOUNDATION (the "Foundation”) is committed to protecting the privacy of its users. This Privacy Policy (or the “Policy”) applies to its websites (whether currently or in the future supported, hosted or maintained, including without limitation nodejs.org, the “Sites”) and describes the information the Foundation collects about users of the Sites (“users”) and how that information may be used.

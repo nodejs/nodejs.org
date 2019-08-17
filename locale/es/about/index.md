@@ -3,6 +3,7 @@ layout: about.hbs
 title: Acerca
 trademark: Trademark
 ---
+
 # Acerca de Node.js&reg;
 
 Concebido como un entorno de ejecución de JavaScript orientado a eventos asíncronos, Node.js está diseñado

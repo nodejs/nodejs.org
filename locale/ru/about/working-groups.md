@@ -2,6 +2,7 @@
 layout: about.hbs
 title: Рабочие группы
 ---
+
 # Основные рабочие группы
 <!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 

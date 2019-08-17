@@ -2,6 +2,7 @@
 title: ECMAScript 2015 (ES6) とそれ以降のバージョン
 layout: docs.hbs
 ---
+
 <!-- # ECMAScript 2015 (ES6) and beyond -->
 # ECMAScript 2015 (ES6) とそれ以降のバージョン
 

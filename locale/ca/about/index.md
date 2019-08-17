@@ -3,6 +3,7 @@ layout: about.hbs
 title: Sobre nosaltres
 trademark: Trademark
 ---
+
 # Sobre Node.js&reg;
 
 Nascut com a un entorn d'execució de JavaScript orientat a esdeveniments asíncrons, Node.js està 

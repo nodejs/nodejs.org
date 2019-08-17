@@ -2,6 +2,7 @@
 layout: about.hbs
 title: Logos y Gráficos
 ---
+
 # Recursos
 
 ## Descargas de Logo

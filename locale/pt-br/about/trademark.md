@@ -2,6 +2,7 @@
 layout: about.hbs
 título: Política de Marca Registrada
 ---
+
 # Política de Marca Registrada
 
 As marcas registradas do Node.js, marcas de serviço e marcas gráficas são símbolos de

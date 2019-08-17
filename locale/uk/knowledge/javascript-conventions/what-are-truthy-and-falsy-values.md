@@ -10,7 +10,6 @@ difficulty: 4
 layout: knowledge-post.hbs
 ---
 
-
 JavaScript is weakly typed language. That means different types can be
 used in operations and the language will try to convert the types
 until the operation makes sense.

@@ -8,7 +8,6 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-
 Storing your Node.js application's configuration data is quite simple - every object in JavaScript can be easily rendered as [JSON](/what-is-json), which in turn is just string data that can be sent or saved any way you'd like.  The simplest way to do this involves the built-in `JSON.parse()` and `JSON.stringify()` methods.
 
 Let's take a look at a very simple (and contrived) example.  First, to save some very simple data:

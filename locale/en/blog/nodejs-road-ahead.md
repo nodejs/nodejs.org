@@ -5,6 +5,7 @@ author: Timothy J Fontaine
 slug: nodejs-road-ahead
 layout: blog-post.hbs
 ---
+
 As the new project lead for Node.js I am excited for our future, and want to
 give you an update on where we are.
 
