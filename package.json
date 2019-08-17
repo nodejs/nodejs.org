@@ -22,7 +22,7 @@
   "author": "Node.js Website Working Group",
   "license": "MIT",
   "engines": {
-    "node": ">=4.5.0"
+    "node": ">=8"
   },
   "standard": {
     "ignore": [
