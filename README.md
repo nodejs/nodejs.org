@@ -25,8 +25,6 @@ npm start
 
 This will start the development server on http://localhost:8080/en/. This should reload automatically when you make changes to the code, but no code is perfect, so sometimes you may need to restart it. :)
 
-Note: You'll need Node.js 8.x or newer as the build system uses some native ES2015 features.
-
 If you want to submit a new feature or a bugfix, the best way is to create the changes in a separate branch, e.g.: `git checkout -b feature/mycoolfeature`. This will make it easier for you to submit a pull request and get your feature merged.
 
 ### Layout
