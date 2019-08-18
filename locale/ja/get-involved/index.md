@@ -2,6 +2,7 @@
 title: 参加する
 layout: contribute.hbs
 ---
+
 <!-- 
 # Get Involved
 

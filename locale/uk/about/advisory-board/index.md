@@ -2,6 +2,7 @@
 layout: about.hbs
 title: Консультативна рада
 ---
+
 # Хартія консультативної ради Node.js
 
 ## 1. Background

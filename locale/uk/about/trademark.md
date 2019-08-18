@@ -2,6 +2,7 @@
 layout: about.hbs
 title: Політика торгової марки
 ---
+
 # Політика торгової марки
 
 The Node.js trademarks, service marks, and graphics marks are symbols of the

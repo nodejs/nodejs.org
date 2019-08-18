@@ -3,6 +3,7 @@ layout: about.hbs
 title: A propos
 trademark: Trademark
 ---
+
 # Informazioni su Node.js&reg;
 
 Come runtime JavaScript guidato da eventi asincroni, Node.js è progettato per

@@ -8,8 +8,6 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-
-
 Node.js ships with a REPL, which is short for 'Read-Eval-Print Loop'.  It is the Node.js shell; any valid JavaScript which can be written in a script can be passed to the REPL. It can be extremely useful for experimenting with node.js, debugging code, and figuring out some of JavaScript's more eccentric behaviors.
 
 Running it is simple - just run node without a filename.

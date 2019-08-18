@@ -2,6 +2,7 @@
 title: 프로젝트 거버넌스
 layout: about.hbs
 ---
+
 # 프로젝트 거버넌스
 
 ## 기술 결정 위원회(TSC, Technical Steering Committee)

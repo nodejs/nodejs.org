@@ -8,7 +8,6 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-
 If you find yourself wishing you could have your Node.js process start another program for you, then look no further than the `child_process` module.
 
 The simplest way is the "fire, forget, and buffer" method using `child_process.exec`.  It runs your process, buffers its output (up to a default maximum of 200kb), and lets you access it from a callback when it is finished. Let us take a look at an example:

@@ -2,6 +2,7 @@
 layout: security.hbs
 title: Segurança
 ---
+
 # Segurança
 
 ## Reportando um Bug

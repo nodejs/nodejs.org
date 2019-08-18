@@ -8,7 +8,6 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-
 Each Node.js process has a set of built-in functionality, accessible through the global `process` module.  The `process` module doesn't need to be required - it is somewhat literally a wrapper around the currently executing process, and many of the methods it exposes are actually wrappers around calls into some of Node's core C libraries.
 
 ## Events

@@ -3,6 +3,7 @@ layout: about.hbs
 title: Про проект
 trademark: Торгова марка
 ---
+
 # Про Node.js&reg;
 
 Як асинхронне подієве JavaScript–оточення, Node.js спроектований для побудови

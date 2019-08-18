@@ -10,7 +10,6 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-
 In a synchronous program, you would write something along the lines of:
 
     function processData () {

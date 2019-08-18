@@ -2,6 +2,7 @@
 title: Gestión del proyecto
 layout: about.hbs
 ---
+
 # Gestión del proyecto
 
 ## Proceso de búsqueda de consenso

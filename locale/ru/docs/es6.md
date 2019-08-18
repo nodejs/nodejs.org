@@ -2,6 +2,7 @@
 title: ECMAScript 2015 (ES6) и выше
 layout: docs.hbs
 ---
+
 # ECMAScript 2015 (ES6) и выше
 
 Node.js строится на современных версиях [V8](https://v8.dev/). Базируясь на последних

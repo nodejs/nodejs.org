@@ -6,6 +6,7 @@ category: Annoucements
 slug: interactive-2015
 layout: blog-post.hbs
 ---
+
 Are You Ready for Node.js Interactive?
 
 The Node.js Foundation is pleased to announce [Node.js Interactive](http://interactive.nodejs.org) happening from December 8-9, 2015 in Portland, OR. With node.js growing in all aspects of technology, the gathering will cover everything from streamlining development of fast websites and real-time applications to tips for managing node.js applications, and much more.

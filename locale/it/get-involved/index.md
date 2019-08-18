@@ -2,6 +2,7 @@
 title: Get involved
 layout: contribute.hbs
 ---
+
 # Get Involved
 
 ## Community Discussion
