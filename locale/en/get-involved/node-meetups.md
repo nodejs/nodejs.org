@@ -641,6 +641,14 @@ REQUIREMENTS
 - Organizer names - Marcus Noble, Seren Davies
 - Organizers contact info - organisers@jsoxford.com
 
+#### Edinburgh
+
+- [Node.js Edinburgh](https://www.meetup.com/Nodejs-Edinburgh/)
+- Frequency of meetups - every 2 months
+- How to submit a talk? [Submit Talk](mailto:michael@biggles.io?subject=Node.js%20Talk%20Proposal)
+- Organizer names - Michael Antczak
+- Organizers contact info - [AntczakMichael](https://twitter.com/AntczakMichael)
+
 
 ### Ukraine
 
