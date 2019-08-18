@@ -7,20 +7,19 @@ layout: docs.hbs
 
 هناك العديد من الإعتمادات التي يعتمد عليها Node.js للعمل بالطريقة التي يعمل بها.
 
-- [الإعتمادات](#%d8%a7%d9%84%d8%a5%d8%b9%d8%aa%d9%85%d8%a7%d8%af%d8%a7%d8%aa)
-  - [المكتبات](#%d8%a7%d9%84%d9%85%d9%83%d8%aa%d8%a8%d8%a7%d8%aa)
-    - [V8](#v8)
-    - [libuv](#libuv)
-    - [http-parser](#http-parser)
-    - [c-ares](#c-ares)
-    - [OpenSSL](#openssl)
-    - [zlib](#zlib)
-  - [الأدوات](#%d8%a7%d9%84%d8%a3%d8%af%d9%88%d8%a7%d8%aa)
-    - [npm](#npm)
-    - [gyp](#gyp)
-    - [gtest](#gtest)
+- [المكتبات](#libraries)
+  - [V8](#v8)
+  - [libuv](#libuv)
+  - [http-parser](#http-parser)
+  - [c-ares](#c-ares)
+  - [OpenSSL](#openssl)
+  - [zlib](#zlib)
+- [الأدوات](#tools)
+  - [npm](#npm)
+  - [gyp](#gyp)
+  - [gtest](#gtest)
 
-## المكتبات
+## <!--libraries-->المكتبات
 
 ### V8
 
@@ -58,7 +57,7 @@ layout: docs.hbs
 
 - [التوثيق](http://www.zlib.net/manual.html)
 
-## الأدوات
+## <!--tools-->الأدوات
 
 ### npm
 
