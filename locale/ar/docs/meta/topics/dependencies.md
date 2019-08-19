@@ -23,7 +23,7 @@ layout: docs.hbs
 
 ### V8
 
-تزود مكتبة V8 <span dir='ltr'> Node.js </span> بمحرك JavaScript ،الذي يتحكم به Node.js عبر واجهة برمجة التطبيقات V8 C++. يتم الإشراف على V8 بواسطة Google ، للاستخدام في Chrome.
+تزود مكتبة V8 <span dir='ltr'> Node.js </span> بمحرك جافاسكريبت ،الذي يتحكم به Node.js عبر واجهة برمجة التطبيقات V8 C++. يتم الإشراف على V8 بواسطة غوغل ، للاستخدام في متصفح كروم.
 
 - [التوثيق](https://v8docs.nodesource.com/)
 
