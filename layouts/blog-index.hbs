@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{site.locale}}" {{#if site.rtl}}dir="rtl"{{/if}}>
+<html lang="{{site.locale}}"{{#if site.rtl}} dir="rtl"{{/if}}>
 {{> html-head }}
 
 <body>
@@ -24,24 +24,24 @@
         {{/each}}
       </ul>
 
-          {{#if pagination}}
-          <nav class="pagination">
-            {{#if pagination.prev.path}}
-            <a href="/{{ site.locale }}/{{ pagination.prev.path }}">&lt; Newer</a>
-            {{/if}}
+      {{#if pagination}}
+      <nav class="pagination">
+        {{#if pagination.prev.path}}
+        <a href="/{{ site.locale }}/{{ pagination.prev.path }}">&lt; Newer</a>
+        {{/if}}
 
-            {{#if pagination.prev.path}}{{#if pagination.next.path}}
-            |
-            {{/if}}{{/if}}
+        {{#if pagination.prev.path}}{{#if pagination.next.path}}
+        |
+        {{/if}}{{/if}}
 
-            {{#if pagination.next.path}}
-            <a href="/{{ site.locale }}/{{ pagination.next.path }}">Older &gt;</a>
-            {{/if}}
-          </nav>
-          {{/if}}
-        </div>
-      </div>
+        {{#if pagination.next.path}}
+        <a href="/{{ site.locale }}/{{ pagination.next.path }}">Older &gt;</a>
+        {{/if}}
+      </nav>
+      {{/if}}
+    </div>
+  </div>
 
-      {{> footer }}
-    </body>
-    </html>
+  {{> footer }}
+</body>
+</html>

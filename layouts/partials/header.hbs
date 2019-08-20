@@ -7,7 +7,7 @@
 
     <nav>
       <ul class="list-divider-pipe">
-        <li {{#equals path ''}}class="active"{{/equals}}>
+        <li{{#equals path ''}} class="active"{{/equals}}>
           <a href="/{{site.locale}}/">{{site.home.text}}</a>
         </li>
 
@@ -29,16 +29,14 @@
     </svg>
 
     <div class="lang-picker hidden">
-      <ul
-        id="language-items">
-          {{#each locales}}
-            <li
-                data-lang="{{locale}}"
-                title="{{languageEnglishVersion}}"
-                data-language="{{language}}"
-            >
-                {{language}}
-            </li>
+      <ul id="language-items">
+        {{#each locales}}
+          <li
+            data-lang="{{locale}}"
+            title="{{languageEnglishVersion}}"
+            data-language="{{language}}">
+              {{language}}
+          </li>
         {{/each}}
       </ul>
     </div>
