@@ -4,7 +4,6 @@ tags:
   - json
   - stringify
   - parse
-# title: What is JSON?
 title: O que é JSON?
 difficulty: 5
 layout: knowledge-post.hbs

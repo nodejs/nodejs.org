@@ -1,6 +1,6 @@
 ---
 layout: about.hbs
-título: Política de Marca Registrada
+title: Política de Marca Registrada
 ---
 
 # Política de Marca Registrada
