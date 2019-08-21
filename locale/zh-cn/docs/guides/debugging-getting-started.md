@@ -80,7 +80,7 @@ layout: docs.hbs
 
 以下命令表列出了在调试状态下不同标示符的影响：
 
-<table cellpadding="0" cellspacing="0">
+<table class="table-no-border-no-padding">
   <tr><th>标示符</th><th>含义</th></tr>
   <tr>
     <td>--inspect</td>

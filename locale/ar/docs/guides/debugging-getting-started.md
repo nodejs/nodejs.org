@@ -98,7 +98,7 @@ layout: docs.hbs
 
 
 
-<table cellpadding="0" cellspacing="0" dir="rtl">
+<table class="table-no-border-no-padding" dir="rtl">
   <tr><th>التخصيص</th><th>المعنى</th></tr>
   <tr>
     <td><span dir="ltr">--inspect</span></td>

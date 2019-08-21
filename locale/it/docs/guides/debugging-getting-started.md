@@ -133,7 +133,7 @@ info on these follows:
 
 The following table lists the impact of various runtime flags on debugging:
 
-<table cellpadding="0" cellspacing="0">
+<table class="table-no-border-no-padding">
   <tr><th>Flag</th><th>Meaning</th></tr>
   <tr>
     <td>--inspect</td>
