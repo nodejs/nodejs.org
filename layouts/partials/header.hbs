@@ -46,31 +46,30 @@
   </div>
 </header>
 <script>
-  const langPickerElement = document.querySelector('.lang-picker')
-  const langElements = langPickerElement.querySelectorAll('li')
-  const langPickerTogglerElement = document.querySelector('#lang-picker-toggler')
-  const languageItemsSelector = document.querySelector('#language-items')
+  var langPickerElement = document.querySelector('.lang-picker')
+  var langElements = langPickerElement.querySelectorAll('li')
+  var langPickerTogglerElement = document.querySelector('#lang-picker-toggler')
+  var languageItemsSelector = document.querySelector('#language-items')
   // Get the current URL language 
-  const currentLang = window.location.pathname.split('/')[1] || "en"
+  var currentLang = window.location.pathname.split('/')[1] || 'en'
   // Get the current URL language selector item as a li
-  let currentLangElement = null;
+  var currentLangElement = null;
 
-  langElements.forEach(el => {
-    if (el.getAttribute("data-lang") !== currentLang) {
-      el.addEventListener('click', (e) => {
-        const newLocale = (e.target && e.target.dataset && e.target.dataset.lang) || "en";
-        window.location.replace(window.location.pathname.replace(/\/[a-zA-Z-]+/, `/${newLocale}`))
+  Array.prototype.forEach.call(langElements, function(el) {
+    if (el.getAttribute('data-lang') !== currentLang) {
+      el.addEventListener('click', function(e) {
+        var newLocale = (e.target && e.target.dataset && e.target.dataset.lang) || 'en';
+        window.location.replace(window.location.pathname.replace(/\/[a-zA-Z-]+/, '/' + newLocale))
       })
     }
     else {
       currentLangElement = el
     }
-  }
-  )
+  })
 
   // Create dynamically label for tooltip 
-  let titleEle = document.createElementNS("http://www.w3.org/2000/svg", "title");
-  let textString = document.createTextNode(currentLangElement.getAttribute("language"));
+  var titleEle = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+  var textString = document.createTextNode(currentLangElement.getAttribute('language'));
   titleEle.appendChild(textString);
   langPickerTogglerElement.appendChild(titleEle);
 
@@ -78,7 +77,7 @@
   // any more unless we want to switch the new language
   languageItemsSelector.removeChild(currentLangElement)
 
-  langPickerTogglerElement.addEventListener('click', () => {
+  langPickerTogglerElement.addEventListener('click', function() {
     langPickerElement.classList.toggle('hidden')
   })
 </script>
