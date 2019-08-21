@@ -211,7 +211,7 @@ Node 인스펙터에 접속할 수 있는 여러 상용 도구와 오픈소스 �
 
 The following table lists the impact of various runtime flags on debugging:
 
-<table cellpadding=0 cellspacing=0>
+<table class="table-no-border-no-padding">
   <tr><th>Flag</th><th>Meaning</th></tr>
   <tr>
     <td>--inspect</td>
@@ -281,7 +281,7 @@ The following table lists the impact of various runtime flags on debugging:
 
 다음 테이블은 디버깅용 여러 런타임 플래그의 기능을 보여줍니다.
 
-<table cellpadding=0 cellspacing=0>
+<table class="table-no-border-no-padding">
   <tr><th>플래그</th><th>의미</th></tr>
   <tr>
     <td>--inspect</td>

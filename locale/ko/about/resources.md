@@ -25,18 +25,18 @@ Node.js의 시각적인 가이드라인은
 <a href="/static/documents/foundation-visual-guidelines.pdf">시각적 가이드라인></a>에 나와 있습니다.
 
 <!--
-<table border="0" cellspacing="0" cellpadding="10" class="logos">
+<table class="logos">
   <tr>
-    <td bgcolor="#FFFFFF"><a href="/static/images/logos/nodejs-new-pantone-black.ai"><img src="/static/images/logos/nodejs-new-pantone-black.png" alt="Node.js on light background"></a></td>
-    <td bgcolor="#333333"><a href="/static/images/logos/nodejs-new-pantone-white.ai"><img src="/static/images/logos/nodejs-new-pantone-white.png" alt="Node.js on dark background"></a></td>
+    <td class="bg-white"><a href="/static/images/logos/nodejs-new-pantone-black.ai"><img src="/static/images/logos/nodejs-new-pantone-black.png" alt="Node.js on light background"></a></td>
+    <td class="bg-node-gray"><a href="/static/images/logos/nodejs-new-pantone-white.ai"><img src="/static/images/logos/nodejs-new-pantone-white.png" alt="Node.js on dark background"></a></td>
   </tr>
   <tr>
     <td><a href="/static/images/logos/nodejs-new-pantone-black.ai">Node.js standard AI</a></td>
     <td><a href="/static/images/logos/nodejs-new-pantone-white.ai">Node.js reversed AI</a></td>
   </tr>
   <tr>
-    <td bgcolor="#FFFFFF"><a href="/static/images/logos/nodejs-new-black.ai"><img src="/static/images/logos/nodejs-new-black.png" alt="Node.js on light background"></a></td>
-    <td bgcolor="#333333"><a href="/static/images/logos/nodejs-new-white.ai"><img src="/static/images/logos/nodejs-new-white.png" alt="Node.js on dark background"></a></td>
+    <td class="bg-white"><a href="/static/images/logos/nodejs-new-black.ai"><img src="/static/images/logos/nodejs-new-black.png" alt="Node.js on light background"></a></td>
+    <td class="bg-node-gray"><a href="/static/images/logos/nodejs-new-white.ai"><img src="/static/images/logos/nodejs-new-white.png" alt="Node.js on dark background"></a></td>
   </tr>
   <tr>
     <td><a href="/static/images/logos/nodejs-new-black.ai">Node.js standard with less color AI</a></td>
@@ -45,18 +45,18 @@ Node.js의 시각적인 가이드라인은
 </table>
 -->
 
-<table border="0" cellspacing="0" cellpadding="20" class="logos">
+<table class="logos">
   <tr>
-    <td bgcolor="#FFFFFF"><a href="/static/images/logos/nodejs-new-pantone-black.ai"><img src="/static/images/logos/nodejs-new-pantone-black.png" alt="밝은 배경의 Node.js"></a></td>
-    <td bgcolor="#333333"><a href="/static/images/logos/nodejs-new-pantone-white.ai"><img src="/static/images/logos/nodejs-new-pantone-white.png" alt="어두운 배경의 Node.js"></a></td>
+    <td class="bg-white"><a href="/static/images/logos/nodejs-new-pantone-black.ai"><img src="/static/images/logos/nodejs-new-pantone-black.png" alt="밝은 배경의 Node.js"></a></td>
+    <td class="bg-node-gray"><a href="/static/images/logos/nodejs-new-pantone-white.ai"><img src="/static/images/logos/nodejs-new-pantone-white.png" alt="어두운 배경의 Node.js"></a></td>
   </tr>
   <tr>
     <td><a href="/static/images/logos/nodejs-new-pantone-black.ai">Node.js 표준 AI</a></td>
     <td><a href="/static/images/logos/nodejs-new-pantone-white.ai">Node.js 반전 AI</a></td>
   </tr>
   <tr>
-    <td bgcolor="#FFFFFF"><a href="/static/images/logos/nodejs-new-black.ai"><img src="/static/images/logos/nodejs-new-black.png" alt="밝은 배경의 Node.js"></a></td>
-    <td bgcolor="#333333"><a href="/static/images/logos/nodejs-new-white.ai"><img src="/static/images/logos/nodejs-new-white.png" alt="어두운 배경의 Node.js"></a></td>
+    <td class="bg-white"><a href="/static/images/logos/nodejs-new-black.ai"><img src="/static/images/logos/nodejs-new-black.png" alt="밝은 배경의 Node.js"></a></td>
+    <td class="bg-node-gray"><a href="/static/images/logos/nodejs-new-white.ai"><img src="/static/images/logos/nodejs-new-white.png" alt="어두운 배경의 Node.js"></a></td>
   </tr>
   <tr>
     <td><a href="/static/images/logos/nodejs-new-black.ai">적은 색상을 가진 Node.js 표준 AI</a></td>
