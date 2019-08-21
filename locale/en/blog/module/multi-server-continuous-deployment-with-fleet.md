@@ -89,4 +89,4 @@ For help about a command, try `fleet help `.</pre>
 
 <p><span class="code">npm install -g fleet</span> and <a href="https://github.com/substack/fleet">check out the code on github</a>! </p>
 
-<img src="http://substack.net/images/fleet.png" width="849" height="568">
+<img src="http://substack.net/images/fleet.png" alt="" width="849" height="568">
