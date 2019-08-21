@@ -280,7 +280,7 @@ console.log('JSON.parse took ' + took);
 
 有一些 npm 的模块提供了异步的 JSON API 函数，参考：
 - [JSONStream](https://www.npmjs.com/package/JSONStream)，有流式操作的 API。
-- [Big-Friendly JSON](https://github.com/philbooth/bfj)，有流式 API 和使用下文所概述的任务拆分思想的异步 JSON 标准 API。
+- [Big-Friendly JSON](https://www.npmjs.com/package/bfj)，有流式 API 和使用下文所概述的任务拆分思想的异步 JSON 标准 API。
 
 ### 不要让复杂的计算阻塞事件循环
 假设你想在 JavaScript 处理一个复杂的计算，而又不想阻塞事件循环。
