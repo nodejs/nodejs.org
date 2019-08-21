@@ -41,7 +41,7 @@ const statics = chokidar.watch(path.join(__dirname, 'static'), opts)
 // Gets the locale name by path.
 function getLocale (filePath) {
   const pre = path.join(__dirname, 'locale')
-  return filePath.slice(pre.length + 1, filePath.indexOf('/', pre.length + 1))
+  return filePath.slice(pre.length + 1, filePath.indexOf(path.sep, pre.length + 1))
 }
 
 build.getSource((err, source) => {
