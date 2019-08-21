@@ -64,7 +64,7 @@
   "devDependencies": {
     "faucet": "^0.0.1",
     "htmllint-cli": "^0.0.6",
-    "markdownlint-cli": "^0.17.0",
+    "markdownlint-cli": "^0.18.0",
     "nock": "^10.0.6",
     "pre-commit": "^1.2.2",
     "proxyquire": "^2.0.1",
