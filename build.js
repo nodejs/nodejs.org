@@ -40,7 +40,8 @@ const renderer = new marked.Renderer()
 renderer.heading = anchorMarkdownHeadings
 const markedOptions = {
   langPrefix: 'language-',
-  renderer: renderer
+  renderer: renderer,
+  smartypants: renderer
 }
 
 // This function imports a given language file and uses the default language set
