@@ -5,6 +5,7 @@
 // BUILD.JS: This file is responsible for building static HTML pages
 
 const fs = require('fs')
+const os = require('os')
 const path = require('path')
 const Metalsmith = require('metalsmith')
 const collections = require('metalsmith-collections')
@@ -22,12 +23,16 @@ const marked = require('marked')
 const stylus = require('stylus')
 const ncp = require('ncp')
 const junk = require('junk')
+const async = require('async')
 
 const githubLinks = require('./scripts/plugins/githubLinks')
 const navigation = require('./scripts/plugins/navigation')
 const anchorMarkdownHeadings = require('./scripts/plugins/anchor-markdown-headings')
 const loadVersions = require('./scripts/load-versions')
 const latestVersion = require('./scripts/helpers/latestversion')
+
+const CPUS = os.cpus().length
+const THREADS = CPUS <= 2 ? 1 : CPUS + 2
 
 // Set the default language, also functions as a fallback for properties which
 // are not defined in the given language.
@@ -309,9 +314,17 @@ function fullBuild (opts) {
       }
       const filteredLocales = locales.filter(file => junk.not(file) && (selectedLocales ? selectedLocales.includes(file) : true))
       const localesData = generateLocalesData(filteredLocales)
-      filteredLocales.forEach((locale) => {
-        buildLocale(source, locale, { preserveLocale, localesData })
-      })
+      async.eachLimit(filteredLocales,
+        THREADS,
+        (locale, callback) => {
+          buildLocale(source, locale, { preserveLocale, localesData })
+          callback()
+        },
+        (er) => {
+          if (er) {
+            throw er
+          }
+        })
     })
   })
 }
