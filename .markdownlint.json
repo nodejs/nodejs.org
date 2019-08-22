@@ -24,8 +24,7 @@
       "table", "th", "tr", "td",
       "code", "pre",
       "i", "strong", "em", "b",
-      "sup",
-      "anonymous"
+      "sup"
     ]
   },
   "MD034": false,
