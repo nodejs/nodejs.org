@@ -27,3 +27,6 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Run linkinator
+        run: npm run test:linkinator
