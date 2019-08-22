@@ -32,7 +32,7 @@ const loadVersions = require('./scripts/load-versions')
 const latestVersion = require('./scripts/helpers/latestversion')
 
 const CPUS = os.cpus().length
-const THREADS = CPUS <= 2 ? 1 : CPUS + 2
+const THREADS = CPUS <= 2 ? 1 : CPUS * 1.5
 
 // Set the default language, also functions as a fallback for properties which
 // are not defined in the given language.
