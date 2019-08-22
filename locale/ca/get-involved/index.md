@@ -18,18 +18,18 @@ layout: contribute.hbs
 ## Aprenentatge
 
 - La [Documentació oficial de l'API](/api/) detalla l'API de Node.
-- [NodeSchool.io](http://nodeschool.io) li ensenyarà conceptes de Node.js de forma interactiva mitjançant jocs utilitzant la línia de comandes.
-- L'[etiqueta de Node.js en Stack Overflow](http://stackoverflow.com/questions/tagged/node.js) col·lecciona nova informació cada dia.
+- [NodeSchool.io](https://nodeschool.io/) li ensenyarà conceptes de Node.js de forma interactiva mitjançant jocs utilitzant la línia de comandes.
+- L'[etiqueta de Node.js en Stack Overflow](https://stackoverflow.com/questions/tagged/node.js) col·lecciona nova informació cada dia.
 - L'[etiqueta de Node.js en la DEV Community](https://dev.to/t/node) és un lloc on compartir projectes de Node.js, articles i tutorials, així com iniciar debats i demanar realimentació sobre temes relacionats amb Node.js. Els desenvolupadors de tots els nivells d'experiència són benvinguts a participar.
 - [Nodeiflux](https://discordapp.com/invite/vUsrbjd) és una comunitat amigable de desenvolupadors de backend amb Node.js que es recolzen mútuament a Discord.
 
 
 ## Llocs de la comunitat internacional i projectes
 
-- [Comunitat Xinesa de Node.js](http://cnodejs.org)
-- [Comunitat d'Hongria(Magyar)](http://nodehun.blogspot.com/)
+- [Comunitat Xinesa de Node.js](https://cnodejs.org/)
+- [Comunitat d'Hongria(Magyar)](https://nodehun.blogspot.com/)
 - [Grup de Facebook israelià per Node.js](https://www.facebook.com/groups/node.il/)
-- [Grup d'usuaris de Japó](http://nodejs.jp/)
+- [Grup d'usuaris de Japó](https://nodejs.jp/)
 - [Grup de Facebook en espanyol de Node.js](https://www.facebook.com/groups/node.es/)
 - [Comunitat en espanyol](http://nodehispano.com)
 - [Vietnamese Node.js community](https://www.facebook.com/nodejs.vn/)

@@ -19,8 +19,8 @@ layout: contribute.hbs
 ## Обучение
 
 - [Официальная справочная документация по API](/api/) описывает API Node.js
-- [NodeSchool.io](http://nodeschool.io) научит вас концепциям Node.js через интерактивные игры командной строки.
-- [Тег Node.js на Stack Overflow](http://stackoverflow.com/questions/tagged/node.js) собирает новую информацию каждый день.
+- [NodeSchool.io](https://nodeschool.io/) научит вас концепциям Node.js через интерактивные игры командной строки.
+- [Тег Node.js на Stack Overflow](https://stackoverflow.com/questions/tagged/node.js) собирает новую информацию каждый день.
 - [Тег сообщества на DEV.js](https://dev.to/t/node) ― это место, где можно делиться проектами, статьями и учебными
   пособиями по Node.js, а также начинать обсуждения и запрашивать отзывы по темам, связанным с Node.js. Разработчики
   всех уровней квалификации могут принять участие.
@@ -29,10 +29,10 @@ layout: contribute.hbs
 
 ## Международные общественные сайты и проекты
 
-- [Китайское сообщество](http://cnodejs.org)
-- [Венгерское (мадьярское) сообщество](http://nodehun.blogspot.com/)
+- [Китайское сообщество](https://cnodejs.org/)
+- [Венгерское (мадьярское) сообщество](https://nodehun.blogspot.com/)
 - [Израильская группа Facebook для Node.js](https://www.facebook.com/groups/node.il/)
-- [Японская группа пользователей](http://nodejs.jp/)
+- [Японская группа пользователей](https://nodejs.jp/)
 - [Испанская языковая группа Facebook для Node.js](https://www.facebook.com/groups/node.es/)
 - [Сообщество испанского языка](http://nodehispano.com)
 - [Вьетнамское сообщество Node.js](https://www.facebook.com/nodejs.vn/)

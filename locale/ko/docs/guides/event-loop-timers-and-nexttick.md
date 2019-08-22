@@ -932,7 +932,7 @@ myEmitter.on('event', () => {
 });
 ```
 
-[libuv]: http://libuv.org
+[libuv]: https://libuv.org/
 [REPL]: https://nodejs.org/api/repl.html#repl_repl
 -->
 
@@ -960,5 +960,5 @@ myEmitter.on('event', () => {
 });
 ```
 
-[libuv]: http://libuv.org
+[libuv]: https://libuv.org/
 [REPL]: https://nodejs.org/api/repl.html#repl_repl

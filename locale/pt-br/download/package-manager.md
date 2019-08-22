@@ -52,7 +52,7 @@ pacman -S nodejs npm
 
 ## FreeBSD
 
-A versão mais recente do Node.js está disponível na porta [www/node](http://freshports.org/www/node).
+A versão mais recente do Node.js está disponível na porta [www/node](https://www.freshports.org/www/node).
 
 Instale um pacote binário via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
@@ -122,7 +122,7 @@ O Node.js está disponível através das portas do sistema.
 /usr/ports/lang/node
 ```
 
-Usando [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) no OpenBSD:
+Usando [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) no OpenBSD:
 
 ```bash
 pkg_add node
@@ -156,13 +156,13 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 
 ### Alternativas
 
-Usando **[Homebrew](http://brew.sh/)**:
+Usando **[Homebrew](https://brew.sh/)**:
 
 ```bash
 brew install node
 ```
 
-Usando **[MacPorts](http://www.macports.org/)**:
+Usando **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -223,7 +223,7 @@ Baixe o [Windows Installer](https://nodejs.org/#download) diretamente do site [n
 
 ### Alternativas
 
-Usando **[Chocolatey](http://chocolatey.org)**:
+Usando **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
@@ -231,7 +231,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-Usando **[Scoop](http://scoop.sh/)**:
+Usando **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs

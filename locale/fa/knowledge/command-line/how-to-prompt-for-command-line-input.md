@@ -88,4 +88,4 @@ Prompt also makes it trivial to handle a certain set of recurring properties tha
         return 1;
       }
       
-For more information on Prompt, please see [the project's GitHub page](http://github.com/nodejitsu/node-prompt).
+For more information on Prompt, please see [the project's GitHub page](https://github.com/nodejitsu/node-prompt).

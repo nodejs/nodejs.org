@@ -53,7 +53,7 @@ pacman -S nodejs npm
 
 ## FreeBSD
 
-آخر إصدارات النود جي اس متوفرة عبر [www/node](http://freshports.org/www/node)
+آخر إصدارات النود جي اس متوفرة عبر [www/node](https://www.freshports.org/www/node)
 
 يمكنك تثبيت حزمة ثنائية عبر [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
@@ -133,7 +133,7 @@ nvm uninstall 8
 /usr/ports/lang/node
 ```
 
-باستعمال [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) على OpenBSD:
+باستعمال [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) على OpenBSD:
 
 ```bash
 pkg_add node
@@ -167,13 +167,13 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 
 ### البدائل
 
-باستعمال **[Homebrew](http://brew.sh/)**:
+باستعمال **[Homebrew](https://brew.sh/)**:
 
 ```bash
 brew install node
 ```
 
-باستعمال **[MacPorts](http://www.macports.org/)**:
+باستعمال **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -234,7 +234,7 @@ xbps-install -Sy nodejs
 
 ### البدائل
 
-باستعمال **[Chocolatey](http://chocolatey.org)**:
+باستعمال **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
@@ -242,7 +242,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-باستعمال **[Scoop](http://scoop.sh/)**:
+باستعمال **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs

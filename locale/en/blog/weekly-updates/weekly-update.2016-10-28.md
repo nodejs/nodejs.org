@@ -15,7 +15,7 @@ layout: blog-post.hbs
 ### Community Updates
 
 * [Graceful shutdown with Node.js and Kubernetes](https://blog.risingstack.com/graceful-shutdown-node-js-kubernetes/): This article helps you to understand what graceful shutdown is, what are the main benefits of it and how can you set up the graceful shutdown of a Kubernetes application.
-* [Node Todo](http://nodetodo.org/): Free and public gatherings for people that want to contribute to Node.js.
+* [Node Todo](https://www.nodetodo.org/): Free and public gatherings for people that want to contribute to Node.js.
 * [Node.js Examples - What Companies Use Node for in 2016](https://blog.risingstack.com/node-js-examples-what-companies-use-node-for/): This article on Node.js examples shows how Groupon, Lowe’s Home Improvement and Skycatch have successfully deployed their enterprise applications with Node.js. 
 If you have spotted or written something about Node.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.
 

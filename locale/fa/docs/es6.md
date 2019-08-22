@@ -15,7 +15,7 @@ All ECMAScript 2015 (ES6) features are split into three groups for **shipping**,
 
 ## Which features ship with which Node.js version by default?
 
-The website [node.green](http://node.green) provides an excellent overview over supported ECMAScript features in various versions of Node.js, based on kangax's compat-table.
+The website [node.green](https://node.green/) provides an excellent overview over supported ECMAScript features in various versions of Node.js, based on kangax's compat-table.
 
 ## Which features are in progress?
 

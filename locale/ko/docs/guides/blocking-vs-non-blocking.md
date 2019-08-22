@@ -12,7 +12,7 @@ prior knowledge of those topics is required. Readers are assumed to have a
 basic understanding of the JavaScript language and Node.js callback pattern.
 
 > "I/O" refers primarily to interaction with the system's disk and
-> network supported by [libuv](http://libuv.org/).
+> network supported by [libuv](https://libuv.org/).
 -->
 # 블로킹과 논블로킹 살펴보기
 
@@ -20,7 +20,7 @@ basic understanding of the JavaScript language and Node.js callback pattern.
 libuv를 참조할 것이지만 사전 지식이 필요하지는 않습니다. 이 글을 읽는 사람은 JavaScript
 언어와 Node.js 호출 패턴에 관해 기본적인 이해가 있다고 가정합니다.
 
-> "I/O"는 주로 [libuv](http://libuv.org/)가 지원하는 시스템 디스크나 네트워크와
+> "I/O"는 주로 [libuv](https://libuv.org/)가 지원하는 시스템 디스크나 네트워크와
 상호작용하는 것을 가리킵니다.
 
 <!--
@@ -272,7 +272,7 @@ The above places a **non-blocking** call to `fs.unlink()` within the callback of
 
 ## Additional Resources
 
-- [libuv](http://libuv.org/)
+- [libuv](https://libuv.org/)
 - [About Node.js](https://nodejs.org/en/about/)
 -->
 
@@ -281,5 +281,5 @@ The above places a **non-blocking** call to `fs.unlink()` within the callback of
 
 ## 추가 자료
 
-- [libuv](http://libuv.org/)
+- [libuv](https://libuv.org/)
 - [Node.js에 대해서](https://nodejs.org/ko/about/)

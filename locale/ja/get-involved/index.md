@@ -34,8 +34,8 @@ layout: contribute.hbs
 ## Learning
 
 - [Official API reference documentation](/api/) details the Node.js API.
-- [NodeSchool.io](http://nodeschool.io) will teach you Node.js concepts via interactive command-line games.
-- [Stack Overflow Node.js tag](http://stackoverflow.com/questions/tagged/node.js) collects new information every day.
+- [NodeSchool.io](https://nodeschool.io/) will teach you Node.js concepts via interactive command-line games.
+- [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) collects new information every day.
 - [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
 - [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
 
@@ -43,19 +43,19 @@ layout: contribute.hbs
 ## 学習
 
 - [公式 API リファレンスドキュメント](/api/) は、Node.js API の詳細を説明しています。
-- [NodeSchool.io](http://nodeschool.io) はインタラクティブなコマンドラインゲームを介して Node.js の概念を教えます。
-- [Stack Overflow Node.js tag](http://stackoverflow.com/questions/tagged/node.js) は、毎日新しい情報を収集します。
+- [NodeSchool.io](https://nodeschool.io/) はインタラクティブなコマンドラインゲームを介して Node.js の概念を教えます。
+- [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) は、毎日新しい情報を収集します。
 - [The DEV Community Node.js tag](https://dev.to/t/node) は、Node.js プロジェクト、記事、チュートリアルを共有したり、ディスカッションを開始したり、Node.js 関連のトピックについてのフィードバックを求めたりする場所です。スキルレベルに関係なくすべての開発者が参加できます。
 - [Nodeiflux](https://discordapp.com/invite/vUsrbjd) は、Discord でお互いをサポートする Node.js バックエンド開発者のフレンドリーなコミュニティです。
 
 <!-- 
 ## International community sites and projects
 
-- [Chinese community](http://cnodejs.org)
+- [Chinese community](https://cnodejs.org/)
 - [French Google+ Community of Node.js users](https://plus.google.com/communities/113346206415381691435)
-- [Hungarian (Magyar) community](http://nodehun.blogspot.com/)
+- [Hungarian (Magyar) community](https://nodehun.blogspot.com/)
 - [Israeli Facebook group for Node.js](https://www.facebook.com/groups/node.il/)
-- [Japanese user group](http://nodejs.jp/)
+- [Japanese user group](https://nodejs.jp/)
 - [Spanish language Facebook group for Node.js](https://www.facebook.com/groups/node.es/)
 - [Spanish language community](http://nodehispano.com)
 - [Vietnamese Node.js community](https://www.facebook.com/nodejs.vn/)
@@ -63,10 +63,10 @@ layout: contribute.hbs
  -->
 ## インターナショナルコミュニティサイトとプロジェクト
 
-- [中国コミュニティ](http://cnodejs.org)
-- [ハンガリー (マジャール) コミュニティ](http://nodehun.blogspot.com/)
+- [中国コミュニティ](https://cnodejs.org/)
+- [ハンガリー (マジャール) コミュニティ](https://nodehun.blogspot.com/)
 - [Node.js のイスラエル Facebook グループ](https://www.facebook.com/groups/node.il/)
-- [日本のユーザグループ](http://nodejs.jp/)
+- [日本のユーザグループ](https://nodejs.jp/)
 - [Node.js のスペイン語 Facebook グループ](https://www.facebook.com/groups/node.es/)
 - [スペイン語コミュニティ](http://nodehispano.com)
 - [ベトナム Node.js コミュニティ](https://www.facebook.com/nodejs.vn/)
