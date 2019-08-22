@@ -109,4 +109,4 @@ Node.js はスレッドがない設計をしているという理由だけで、
 [`cluster`]: https://nodejs.org/api/cluster.html
 [イベントループ]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
-[Twisted]: http://twistedmatrix.com/
+[Twisted]: https://twistedmatrix.com/trac/

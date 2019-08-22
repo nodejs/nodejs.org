@@ -106,7 +106,7 @@ Node.js 는 스레드를 사용하지 않도록 설계되지만 멀티 코어 �
 [`cluster`]: https://nodejs.org/api/cluster.html
 [event loop]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
-[Twisted]: http://twistedmatrix.com/
+[Twisted]: https://twistedmatrix.com/trac/
 -->
 
 [블로킹 대 논-블로킹]: https://nodejs.org/ko/docs/guides/blocking-vs-non-blocking/
@@ -114,4 +114,4 @@ Node.js 는 스레드를 사용하지 않도록 설계되지만 멀티 코어 �
 [`cluster`]: https://nodejs.org/api/cluster.html
 [이벤트 루프]: https://nodejs.org/ko/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
-[Twisted]: http://twistedmatrix.com/
+[Twisted]: https://twistedmatrix.com/trac/

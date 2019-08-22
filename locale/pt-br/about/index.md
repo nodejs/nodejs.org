@@ -107,4 +107,4 @@ permitir o balanceamento de carga entre os núcleos.
 [`cluster`]: https://nodejs.org/api/cluster.html
 [event loop]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
-[Twisted]: http://twistedmatrix.com/
+[Twisted]: https://twistedmatrix.com/trac/

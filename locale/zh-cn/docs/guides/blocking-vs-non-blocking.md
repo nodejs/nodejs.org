@@ -7,7 +7,7 @@ layout: docs.hbs
 
 本文介绍了在 Node.js 中 **阻塞** 和 **非阻塞** 调用的区别。本文涉及事件循环和 libuv ，但不必对其有事先了解。我们假定读者对于 JavaScript 语言和 Node.js 的回调机制有一个基本的了解。
 
-> "I/O" 主要指由[libuv](http://libuv.org/)支持的，与系统磁盘和网络之间的交互。
+> "I/O" 主要指由[libuv](https://libuv.org/)支持的，与系统磁盘和网络之间的交互。
 
 ## 阻塞
 
@@ -103,5 +103,5 @@ fs.readFile('/file.md', (readFileErr, data) => {
 
 ## 其它资源
 
-- [libuv](http://libuv.org/)
+- [libuv](https://libuv.org/)
 - [关于 Node.js](https://nodejs.org/zh-cn/about/)

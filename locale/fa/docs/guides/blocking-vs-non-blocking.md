@@ -11,7 +11,7 @@ prior knowledge of those topics is required. Readers are assumed to have a
 basic understanding of the JavaScript language and Node.js callback pattern.
 
 > "I/O" refers primarily to interaction with the system's disk and
-> network supported by [libuv](http://libuv.org/).
+> network supported by [libuv](https://libuv.org/).
 
 
 ## Blocking
@@ -144,5 +144,5 @@ The above places a **non-blocking** call to `fs.unlink()` within the callback of
 
 ## Additional Resources
 
-- [libuv](http://libuv.org/)
+- [libuv](https://libuv.org/)
 - [About Node.js](https://nodejs.org/en/about/)

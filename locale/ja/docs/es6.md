@@ -23,8 +23,8 @@ Node.js は [V8](https://v8.dev/) のモダンなバージョンに対して作�
 <!-- ## Which features ship with which Node.js version by default? -->
 ## どの機能がどの Node.js のバージョンで標準で有効になってますか？
 
-<!-- The website [node.green](http://node.green) provides an excellent overview over supported ECMAScript features in various versions of Node.js, based on kangax's compat-table. -->
-[node.green](http://node.green) は Kangax 氏の互換性テーブルに基づいて Node.js のさまざまなバージョンでサポートされている ECMAScript の機能に関する優れた概要を提供します。
+<!-- The website [node.green](https://node.green/) provides an excellent overview over supported ECMAScript features in various versions of Node.js, based on kangax's compat-table. -->
+[node.green](https://node.green/) は Kangax 氏の互換性テーブルに基づいて Node.js のさまざまなバージョンでサポートされている ECMAScript の機能に関する優れた概要を提供します。
 
 <!-- ## Which features are in progress? -->
 ## どの機能が開発中なのか？

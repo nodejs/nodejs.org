@@ -12,7 +12,7 @@ prior knowledge of those topics is required. Readers are assumed to have a
 basic understanding of the JavaScript language and Node.js callback pattern.
 
 > "I/O" refers primarily to interaction with the system's disk and
-> network supported by [libuv](http://libuv.org/).
+> network supported by [libuv](https://libuv.org/).
 
 
  -->
@@ -23,7 +23,7 @@ basic understanding of the JavaScript language and Node.js callback pattern.
 これらのトピックに関する事前知識は必要ありません。
 読者は JavaScript 言語と Node.js コールバックパターンの基本的な知識を持っていることを前提としています。
 
-> "I/O" とは、主に [libuv](http://libuv.org/) がサポートしている
+> "I/O" とは、主に [libuv](https://libuv.org/) がサポートしている
 > システムのディスクやネットワークとのやり取りを指します。
 
 
@@ -295,11 +295,11 @@ fs.readFile('/file.md', (readFileErr, data) => {
 <!-- 
 ## Additional Resources
 
-- [libuv](http://libuv.org/)
+- [libuv](https://libuv.org/)
 - [About Node.js](https://nodejs.org/en/about/)
 
  -->
 ## 追加のリソース
 
-- [libuv](http://libuv.org/)
+- [libuv](https://libuv.org/)
 - [About Node.js](https://nodejs.org/ja/about/)

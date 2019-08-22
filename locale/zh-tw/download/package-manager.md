@@ -56,7 +56,7 @@ pacman -S nodejs npm
 
 ## FreeBSD 
 
-近期的版本已可透過 [www/node](http://freshports.org/www/node) port 取得 Node.js。
+近期的版本已可透過 [www/node](https://www.freshports.org/www/node) port 取得 Node.js。
 
 透過 [pkg](https://www.freebsd.org/cgi/man.cgi?pkg) 安裝二進制套件：
 
@@ -134,7 +134,7 @@ Node.js 可於 ports 系統中取得。
 /usr/ports/lang/node
 ```
 
- 在 OpenBSD 上使用 [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1)：
+ 在 OpenBSD 上使用 [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1)：
 
 ```bash
 pkg_add node
@@ -169,13 +169,13 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 
 ### 替代方案
 
-使用 **[Homebrew](http://brew.sh/)**：
+使用 **[Homebrew](https://brew.sh/)**：
 
 ```bash
 brew install node
 ```
 
-使用 **[MacPorts](http://www.macports.org/)**：
+使用 **[MacPorts](https://www.macports.org/)**：
 
 ```bash
 port install nodejs<major version>
@@ -236,7 +236,7 @@ xbps-install -Sy nodejs
 
 ### 其它方式
 
-使用 **[Chocolatey](http://chocolatey.org)**：
+使用 **[Chocolatey](https://chocolatey.org/)**：
 
 ```bash
 cinst nodejs
@@ -244,7 +244,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-使用 **[Scoop](http://scoop.sh/)**：
+使用 **[Scoop](https://scoop.sh/)**：
 
 ```bash
 scoop install nodejs

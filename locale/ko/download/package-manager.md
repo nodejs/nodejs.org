@@ -108,7 +108,7 @@ pacman -S nodejs npm
 <!--
 ## FreeBSD
 
-The most recent release of Node.js is available via the [www/node](http://freshports.org/www/node) port.
+The most recent release of Node.js is available via the [www/node](https://www.freshports.org/www/node) port.
 
 Install a binary package via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
@@ -125,7 +125,7 @@ cd /usr/ports/www/node && make install
 -->
 ## FreeBSD
 
-Node.js의 최신 릴리스는 [www/node](http://freshports.org/www/node) 포트를 통해 사용할 수 있습니다.
+Node.js의 최신 릴리스는 [www/node](https://www.freshports.org/www/node) 포트를 통해 사용할 수 있습니다.
 
 바이너리 패키지는 다음과 같이 [pkg](https://www.freebsd.org/cgi/man.cgi?pkg)를 통해 설치할 수 있습니다.
 
@@ -276,7 +276,7 @@ Node.js is available through the ports system.
 /usr/ports/lang/node
 ```
 
-Using [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
+Using [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
 
 ```bash
 pkg_add node
@@ -290,7 +290,7 @@ pkg_add node
 /usr/ports/lang/node
 ```
 
-OpenBSD 환경에서 [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1)를 사용하는 방법도 있습니다.
+OpenBSD 환경에서 [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1)를 사용하는 방법도 있습니다.
 
 ```bash
 pkg_add node
@@ -354,13 +354,13 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 <!--
 ### Alternatives
 
-Using **[Homebrew](http://brew.sh/)**:
+Using **[Homebrew](https://brew.sh/)**:
 
 ```bash
 brew install node
 ```
 
-Using **[MacPorts](http://www.macports.org/)**:
+Using **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -385,13 +385,13 @@ cd pkgsrc/lang/nodejs && bmake install
 -->
 ### 그 밖의 방법
 
-**[Homebrew](http://brew.sh/)**를 사용할 수 있습니다.
+**[Homebrew](https://brew.sh/)**를 사용할 수 있습니다.
 
 ```bash
 brew install node
 ```
 
-**[MacPorts](http://www.macports.org/)**를 사용할 수 있습니다.
+**[MacPorts](https://www.macports.org/)**를 사용할 수 있습니다.
 
 ```bash
 port install nodejs<major version>
@@ -486,7 +486,7 @@ Simply download the [Windows Installer](https://nodejs.org/#download) directly f
 
 ### Alternatives
 
-Using **[Chocolatey](http://chocolatey.org)**:
+Using **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
@@ -494,7 +494,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-Using **[Scoop](http://scoop.sh/)**:
+Using **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs
@@ -507,7 +507,7 @@ scoop install nodejs
 
 ### 그 밖의 방법
 
-**[Chocolatey](http://chocolatey.org)**를 사용할 수 있습니다.
+**[Chocolatey](https://chocolatey.org/)**를 사용할 수 있습니다.
 
 ```bash
 cinst nodejs
@@ -515,7 +515,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-**[Scoop](http://scoop.sh/)**를 사용할 수 있습니다.
+**[Scoop](https://scoop.sh/)**를 사용할 수 있습니다.
 
 ```bash
 scoop install nodejs

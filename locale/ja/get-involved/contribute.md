@@ -60,14 +60,14 @@ Node.js プロジェクトは現在、いくつかの GitHub リポジトリに�
 
 If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the [Node.js Contribution Guidelines](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#pull-requests). The review process by existing collaborators for all contributions to the project is explained there as well.
 
-If you are wondering how to start, you can check [Node Todo](http://nodetodo.org/) which may guide you towards your first contribution.
+If you are wondering how to start, you can check [Node Todo](https://www.nodetodo.org/) which may guide you towards your first contribution.
 
  -->
 ## コードの貢献
 
 Node.js にバグを修正したり、新しい機能を追加したい場合は、必ず [Node.js コントリビューションガイドライン](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#pull-requests) を参照してください。 プロジェクトへのすべての貢献に対する既存のコラボレータによるレビュープロセスもここで説明されています。
 
-どのように始めるべきか疑問に思っているなら、最初の貢献に向かってあなたを導くかもしれない [Node Todo](http://nodetodo.org/) をチェックすることができます。
+どのように始めるべきか疑問に思っているなら、最初の貢献に向かってあなたを導くかもしれない [Node Todo](https://www.nodetodo.org/) をチェックすることができます。
 
 <!-- 
 ## Becoming a collaborator

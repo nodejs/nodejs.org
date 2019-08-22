@@ -47,7 +47,7 @@ o [Guia de Contribuições do Node.js](https://github.com/nodejs/node/blob/maste
 O processo de revisão realizado pelo colaboradores para todas as contribuições ao projeto é explicado
 neste documento também.
 
-Se você está se perguntando por onde começar, confira o [Node Todo](http://nodetodo.org/), que poderá
+Se você está se perguntando por onde começar, confira o [Node Todo](https://www.nodetodo.org/), que poderá
 ajudar você na sua primeira contribuição.
 
 ## Tornando-se um Colaborador

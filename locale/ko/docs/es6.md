@@ -36,12 +36,12 @@ V8을 최신 릴리스로 유지하기 때문에 Node.js 개발자에게
 <!--
 ## Which features ship with which Node.js version by default?
 
-The website [node.green](http://node.green) provides an excellent overview over supported ECMAScript features in various versions of Node.js, based on kangax's compat-table.
+The website [node.green](https://node.green/) provides an excellent overview over supported ECMAScript features in various versions of Node.js, based on kangax's compat-table.
 -->
 
 ## Node.js 버전에 어떤 기능이 기본적으로 포함되나요?
 
-[node.green](http://node.green) 웹사이트에서 어떤 Node.js가 어떤 ECMAScript 기능을
+[node.green](https://node.green/) 웹사이트에서 어떤 Node.js가 어떤 ECMAScript 기능을
 지원하는지 파악할 수 있습니다. 이는 kangax의 호환성 표를 기반으로 만들어졌습니다.
 
 <!--

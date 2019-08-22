@@ -134,13 +134,13 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 
 ### Alternativas
 
-Usando **[Homebrew](http://brew.sh/)**:
+Usando **[Homebrew](https://brew.sh/)**:
 
 ```bash
 brew install node
 ```
 
-Usando **[MacPorts](http://www.macports.org/)**:
+Usando **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -202,7 +202,7 @@ Simplemente descargue el [Instalador para Windows](https://nodejs.org/#download)
 
 ### Alternativas
 
-Usando **[Chocolatey](http://chocolatey.org)**:
+Usando **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
@@ -210,7 +210,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-Usando **[Scoop](http://scoop.sh/)**:
+Usando **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs

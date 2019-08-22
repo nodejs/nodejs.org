@@ -12,7 +12,7 @@ layout: docs.hbs
 в Node.js.
 
 > Обозначение "I/O" (Ввод/Вывод) в первую очередь ссылается на взаимодействие
-> с системным диском и сетью при поддержке [libuv](http://libuv.org/).
+> с системным диском и сетью при поддержке [libuv](https://libuv.org/).
 
 
 ## Блокирование
@@ -144,5 +144,5 @@ fs.readFile('/file.md', (readFileErr, data) => {
 
 ## Дополнительные рессурсы
 
-- [libuv](http://libuv.org/)
+- [libuv](https://libuv.org/)
 - [О Node.js](https://nodejs.org/en/about/)

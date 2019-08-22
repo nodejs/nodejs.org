@@ -27,7 +27,7 @@ version 4 (Node.js v4). This will help developers dramatically decrease the star
 large applications for the best productivity in development cycles and more seamless 
 experience with end users. In addition, Node.js v6 comes equipped with v8 JavaScript engine 
 5.0, which has improved ECMAScript 2015 (ES6) support. Ninety-three percent of 
-[ES6](http://node.green/) features are also now supported in the Node.js v6 release, up from 
+[ES6](https://node.green/) features are also now supported in the Node.js v6 release, up from 
 56 percent for Node.js v5 and 50 percent for Node.js v4. Key features from ES6 include: 
 default and rest parameters, destructuring, class and super keywords.
 

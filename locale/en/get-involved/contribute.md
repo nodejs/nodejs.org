@@ -30,7 +30,7 @@ The Node.js project is currently managed across a number of separate GitHub repo
 
 If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the [Node.js Contribution Guidelines](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#pull-requests). The review process by existing collaborators for all contributions to the project is explained there as well.
 
-If you are wondering how to start, you can check [Node Todo](http://nodetodo.org/) which may guide you towards your first contribution.
+If you are wondering how to start, you can check [Node Todo](https://www.nodetodo.org/) which may guide you towards your first contribution.
 
 ## Becoming a collaborator
 

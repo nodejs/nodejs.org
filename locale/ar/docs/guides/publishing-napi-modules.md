@@ -12,7 +12,7 @@ layout: docs.hbs
   - `npm publish`
 - بعد ذلك، قم بنشر النسخة الخاصة بالـ N-API:
   - قم بتحديث النسخة في ملفة `package.json`. في حالة `iotivity-node`، فإن النسخة ستصبح `1.2.0-3`. عند وضع أرقام النسخ، ننصحك بإتباع الطريقة الآتية لوضع نسخ قبلية:  
-  [semver.org](http://semver.org/#spec-item-9). `1.2.0-napi` كمثال.
+  [semver.org](https://semver.org/#spec-item-9). `1.2.0-napi` كمثال.
   - قم بتفحص قائمة التأكيدات الخاصة بالإصدارات (تأكد من ان test/demos/docs على ما يرام)
   - `npm publish --tag n-api`
 

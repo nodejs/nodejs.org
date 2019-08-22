@@ -171,13 +171,13 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 
 ### 代替手段
 
-**[Homebrew](http://brew.sh/)** を使う:
+**[Homebrew](https://brew.sh/)** を使う:
 
 ```bash
 brew install node
 ```
 
-**[MacPorts](http://www.macports.org/)** を使う:
+**[MacPorts](https://www.macports.org/)** を使う:
 
 ```bash
 port install nodejs<major version>
@@ -246,7 +246,7 @@ xbps-install -Sy nodejs
 
 ### 代替手段
 
-**[Chocolatey](http://chocolatey.org)** を使う:
+**[Chocolatey](https://chocolatey.org/)** を使う:
 
 ```bash
 cinst nodejs
@@ -254,7 +254,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-**[Scoop](http://scoop.sh/)** を使う:
+**[Scoop](https://scoop.sh/)** を使う:
 
 ```bash
 scoop install nodejs

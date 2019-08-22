@@ -55,7 +55,7 @@ layout: docs.hbs
 Причина этого в том, что c-ares поддерживает /etc/hosts, /etc/resolv.conf и /etc/svc.conf,
 но не такие вещи, как mDNS.
 
-- [Документация](http://c-ares.haxx.se/docs.html)
+- [Документация](https://c-ares.haxx.se/docs.html)
 
 ### OpenSSL
 
@@ -70,7 +70,7 @@ OpenSSL широко используется в модулях `tls` и `crypto
 использованием в gzip и libpng. Node.js использует zlib для создания интерфейсов синхронизации,
 асинхронного и потокового сжатия и распаковки.
 
-- [Документация](http://www.zlib.net/manual.html)
+- [Документация](https://www.zlib.net/manual.html)
 
 ## Инструменты
 

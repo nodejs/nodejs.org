@@ -70,4 +70,4 @@ vous pourrez communiquer facilement. Basé sur la même interface, le
 [`cluster`]: https://nodejs.org/api/cluster.html
 [boucle événementielle]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
-[Twisted]: http://twistedmatrix.com/
+[Twisted]: https://twistedmatrix.com/trac/

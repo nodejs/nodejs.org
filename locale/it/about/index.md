@@ -64,4 +64,4 @@ Solo perché Node.js è progettato senza thread, non significa che non è possib
 [`cluster`]: https://nodejs.org/api/cluster.html
 [loop di eventi]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: http://rubyeventmachine.com/
-[Twisted]: http://twistedmatrix.com/
+[Twisted]: https://twistedmatrix.com/trac/
