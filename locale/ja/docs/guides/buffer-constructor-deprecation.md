@@ -48,31 +48,6 @@ exceptions).
 
 それにより自身のコードの中ですべての潜在的に危険な箇所が分かるでしょう (とてもありそうにない例外を除いて)。
 
-<!-- 
-### Finding problematic bits of code using Node.js 8
-
-If you’re using Node.js ≥ 8.0.0 (which is recommended), Node.js exposes multiple options that help with finding the relevant pieces of code:
-
-- `--trace-warnings` will make Node.js show a stack trace for this warning and other warnings that are printed by Node.js.
-- `--trace-deprecation` does the same thing, but only for deprecation warnings.
-- `--pending-deprecation` will show more types of deprecation warnings. In particular, it will show the `Buffer()` deprecation warning, even on Node.js 8.
-
-You can set these flags using environment variables:
-
-```bash
-$ export NODE_OPTIONS='--trace-warnings --pending-deprecation'
-$ cat example.js
-'use strict';
-const foo = new Buffer('foo');
-$ node example.js
-(node:7147) [DEP0005] DeprecationWarning: The Buffer() and new Buffer() constructors are not recommended for use due to security and usability concerns. Please use the new Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() construction methods instead.
-    at showFlaggedDeprecation (buffer.js:127:13)
-    at new Buffer (buffer.js:148:3)
-    at Object.<anonymous> (/path/to/example.js:2:13)
-    [... more stack trace lines ...]
-```
-
- -->
 ### Node.js 8 を使用して問題のあるコードを見つける
 
 Node.js ≥ 8.0.0 (これが推奨されています) を使用している場合、Node.js は関連するコードを見つけるのに役立つ複数のオプションを公開します。
