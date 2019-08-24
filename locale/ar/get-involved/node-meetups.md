@@ -1,5 +1,5 @@
 ---
-title: Node Meetups
+title: Node.js مُلْتَقَيات
 layout: contribute.hbs
 ---
 
@@ -57,7 +57,7 @@ layout: contribute.hbs
 - [اللقاء](https://www.meetup.com/node-sydney/)
 - تردد اللقاء - شهريا
 - كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-- المنظم - James Richardson. Co-organizer: Jessica Claire
+- المنظم - جيمس ريتشاردسون. المشارك في تنظيم: جيسيكا كلير
 - معلومات الاتصال بالمنظم -
 
 
@@ -210,7 +210,7 @@ layout: contribute.hbs
 
 - [اللقاء](https://www.meetup.com/Meetup-group-iAIoTVuS/)
 - تردد اللقاء - شهريا
-- كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات or write to dipesh@rapidops.com
+- كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات أو اكتب إلى dipesh@rapidops.com .
 - المنظم - ديبش باتل
 - معلومات الاتصال بالمنظم -
 
@@ -292,7 +292,6 @@ layout: contribute.hbs
 - المنظم - عارف شاكر اوغلو
 - معلومات الاتصال بالمنظم - 
 
-=======
 ### كندا
 
 #### كولومبيا البريطانية
@@ -301,8 +300,8 @@ layout: contribute.hbs
 
 - [اللقاء](https://www.meetup.com/Node-JS-Community-Hangouts)
 - تردد اللقاءات - كل 3 أشهر
-- كيف تقدم طلب محاضرة ؟ DM @keywordnew on twitter
-- المنظم - Manil Chowdhury
+- كيف تقدم طلب محاضرة ؟ طلب @keywordnew على تويتر.
+- المنظم - مانيل تشودري
 - معلومات الاتصال بالمنظم -
 
 #### أونتاريو
@@ -311,9 +310,9 @@ layout: contribute.hbs
 
 - [Toronto JS Meetup](http://torontojs.com/)
 - Frequency of Meetups - weekly
-- كيف تقدم طلب محاضرة ؟ _Contact Organizers through Slack: http://slack.torontojs.com/_
-- Organizers name - Dann T. & Paul D.
-- معلومات الاتصال بالمنظم - _Community Slack_
+- كيف تقدم طلب محاضرة ؟ _تواصل مع المنظمين عبر منصة سلاك : http://slack.torontojs.com/_
+- أسماء المنظمون - دان ت. وبول د.
+- معلومات الاتصال بالمنظم - _مجتمع سلاك_
 
 
 ### الولايات المتحدة
@@ -325,7 +324,7 @@ layout: contribute.hbs
 - [اللقاء](https://www.meetup.com/NodeAZ/)
 - تردد اللقاء - شهريا
 - كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-- المنظم - Chris Matthieu
+- المنظم - كريس ماتيو
 - معلومات الاتصال بالمنظم -
 
 
@@ -336,7 +335,7 @@ layout: contribute.hbs
 - [اللقاء]https://www.meetup.com/Node-JS-OC/)
 - تردد اللقاء - شهريا
 - كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-- المنظم - Farsheed Atef
+- المنظم - فرشيد عاطف
 - معلومات الاتصال بالمنظم - 
 
 ##### سان فرانسيسكو
@@ -344,13 +343,13 @@ layout: contribute.hbs
 - [اللقاء](https://www.meetup.com/sfnode/)
 - تردد اللقاء - شهريا
 - كيف تقدم طلب محاضرة ؟ 
-- المنظم - Dan Shaw
+- المنظم - دان شو
 - معلومات الاتصال بالمنظم - 
 
 - [اللقاء](https://www.meetup.com/Node-js-Serverside-Javascripters-Club-SF/)
 - تردد اللقاء - شهريا
 - كيف تقدم طلب محاضرة ؟ 
-- المنظم - Matt Pardee
+- المنظم - مات باردي
 - معلومات الاتصال بالمنظم -
 
 
@@ -361,7 +360,7 @@ layout: contribute.hbs
 - [اللقاء](https://www.meetup.com/Node-js-Denver-Boulder//)
 - تردد اللقاء - شهريا
 - كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات
-- المنظم - Brooks Patton
+- المنظم - بروكس باتون
 - معلومات الاتصال بالمنظم -
 
 #### جورجيا 
@@ -371,7 +370,7 @@ layout: contribute.hbs
 - [اللقاء](https://www.meetup.com/Atlanta-Nodejs-Developers/)
 - تردد اللقاء - شهريا
 - كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-- المنظم - Ryan Connelly
+- المنظم - ريان كونيلي
 - معلومات الاتصال بالمنظم 
   
 #### إلينوي 
@@ -381,7 +380,7 @@ layout: contribute.hbs
 - [اللقاء](https://www.meetup.com/Chicago-Nodejs/)
 - تردد اللقاء - شهريا
 - كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-- المنظم - Mike Hostetler
+- المنظم - ميكروفون هوستيتلر
 - معلومات الاتصال بالمنظم -
 
 #### إنديانا
@@ -391,7 +390,7 @@ layout: contribute.hbs
 - [اللقاء](https://www.meetup.com/Node-indy/)
 - تردد اللقاء - شهريا
 - كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-- المنظم - Mike Seidle
+- المنظم - مايك سايدل
 - معلومات الاتصال بالمنظم - 
 
 #### ماساتشوستس
@@ -400,8 +399,8 @@ layout: contribute.hbs
 
 - [اللقاء](https://www.meetup.com/nodejs/)
 - تردد اللقاء - شهريا
-- كيف تقدم طلب محاضرة ؟ Write to Brian Sodano.
-- المنظم - Brian Sodano
+- كيف تقدم طلب محاضرة ؟ أكتب إلى براين سودانو.
+- المنظم - براين سودانو
 - معلومات الاتصال بالمنظم -
 
 #### مينيسوتا
@@ -411,7 +410,7 @@ layout: contribute.hbs
 - [اللقاء](https://www.meetup.com/NodeMN/)
 - تردد اللقاء - شهريا
 - كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-- المنظم - Mike Frey
+- المنظم - مايك فراي
 - معلومات الاتصال بالمنظم -
 
 #### نيويورك
@@ -421,7 +420,7 @@ layout: contribute.hbs
 - [اللقاء](https://www.meetup.com/nodejs/)
 - تردد اللقاء - شهريا
 - كيف تقدم طلب محاضرة ؟ 
-- المنظم - Patrick Scott Co-organizer: Matt Walters.
+- المنظم - باتريك سكوت شارك في تنظيم: مات والترز.
 - معلومات الاتصال بالمنظم - 
 
 #### إلينوي 
@@ -429,9 +428,9 @@ layout: contribute.hbs
 ##### شيكاغو
 
 - [اللقاء](https://www.meetup.com/Chicago-Nodejs/)
-- Frequency - monthly
+- لقاء شهري
 - [How to submit talk](https://airtable.com/shrTDwmMH3zsnsWOE)
-- المنظم - Zeke Nierenberg & Ben Neiswander
+- المنظم - زيك نيرينبرج وبن نيسواندر
 - معلومات الاتصال بالمنظم
 
 
@@ -461,7 +460,7 @@ layout: contribute.hbs
 
 - [اللقاء](https://www.meetup.com/nodejs-philly/)
 - تردد اللقاء - شهريا
-- كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات: https://www.meetup.com/nodejs-philly/members/14283814/
+- كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات من [هنا](https://www.meetup.com/nodejs-philly/members/14283814/)
 - المنظم - ليومار دوران
 - معلومات الاتصال بالمنظم - 
 
