@@ -380,7 +380,7 @@ layout: contribute.hbs
 - [اللقاء](https://www.meetup.com/Chicago-Nodejs/)
 - تردد اللقاء - شهريا
 - كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-- المنظم - ميكروفون هوستيتلر
+- المنظم - مايك هوستيتلر
 - معلومات الاتصال بالمنظم -
 
 #### إنديانا
@@ -430,7 +430,7 @@ layout: contribute.hbs
 - [اللقاء](https://www.meetup.com/Chicago-Nodejs/)
 - لقاء شهري
 - [How to submit talk](https://airtable.com/shrTDwmMH3zsnsWOE)
-- المنظم - زيك نيرينبرج وبن نيسواندر
+- المنظم - زيكي نيرينبرج وبن نيسواندر
 - معلومات الاتصال بالمنظم
 
 
