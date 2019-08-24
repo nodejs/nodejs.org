@@ -14,7 +14,7 @@ layout: contribute.hbs
 ## ملاحظة تخص إضافة اللقاءات
 
 الصيغة
-- [لقاء](https://www.meetup.com/pdxnode/)
+- [اللقاء](https://www.meetup.com/pdxnode/)
 - تردد اللقاء 
 - كيف يتم تقديم طلب المحاضرة? &lt;&lt;اذكر هنا&gt;&gt;
 - إسم المنظم أو المنظمين (إذا اردت الإدلاء به)
@@ -34,7 +34,7 @@ layout: contribute.hbs
 
 ##### بوينس ايرس
 
-- اللقاء(https://www.meetup.com/banodejs/)
+- [اللقاء](https://www.meetup.com/banodejs/)
 - تردد اللقاء - شهريا
 - كيف تقدم طلب محاضرة ؟ أكتب رسالة لصفحة Meetup
 - المنظم - آليخاندرو اوفيدو
