@@ -90,6 +90,11 @@ layout: docs.hbs
 
 * قم بإنشاء إعدادات تصحيح الأخطاء الخاصة بالـ Node.js من `Debug` أو قم بالضغط على F5. هنا [خطوات تفصيلية بالإنجليزية](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
 
+### [Eclipse IDE](https://eclipse.org/eclipseide) مع إضافة إكليبس الشاملة لتطوير الويب
+
+* من ملف .js، اختر "Debug As... > Node program", او 
+* إنشاء اعدادات تنقيح للمنقح لكي يتمكن من تشغيل تطبيق Node (بدأ بـ `--inspect`).
+
 ---
 
 ## خيارات سطر الأوامر
