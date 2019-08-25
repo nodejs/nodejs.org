@@ -257,8 +257,8 @@ function buildLayouts () {
           paths: [path.join(__dirname, 'layouts', 'css')],
           use: [autoprefixer()]
         }))
-        // Pipes the generated files into /build/layouts/css.
-        .destination(path.join(__dirname, 'build', 'layouts', 'css'))
+        // Pipes the generated files into /build/static/css.
+        .destination(path.join(__dirname, 'build/static/css'))
 
       // This actually executes the build and stops the internal timer after
       // completion.
