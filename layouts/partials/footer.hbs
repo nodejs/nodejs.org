@@ -29,16 +29,18 @@
 
 <link rel="stylesheet" href="/static/css/prism-tomorrow.css" media="all">
 <script>
-  var $scrollToTop = document.getElementById('scroll-to-top');
+  var scrollToTop = document.getElementById('scroll-to-top');
+
   (window.onscroll = function() {
     window.requestAnimationFrame(function() {
-      $scrollToTop.style.display = (window.pageYOffset > window.innerHeight) ? 'block' : 'none';
+      scrollToTop.style.display = window.pageYOffset > window.innerHeight ? 'block' : 'none';
     })
   })();
-  $scrollToTop.onclick = function() {
+
+  scrollToTop.addEventListener('click', function (e) {
+    e.preventDefault();
     window.scrollTo(0, 0);
-    return false;
-  };
+  });
 </script>
 
 {{!-- Load Modernizr dynamically for IE10/11 and add test classes for sticky footer with flexbox --}}
