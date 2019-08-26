@@ -80,7 +80,7 @@ These are all examples of valid JSON.
 
 // nesting valid values is okay
 {"names": ["John Doe", "Jane Doe"] }
-     
+
 [ { "name": "John Doe"}, {"name": "Jane Doe"} ]
 
 {} // empty hash

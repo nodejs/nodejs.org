@@ -35,7 +35,7 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 
 ### Node.js Foundation Welcomes Red Hat as Newest Platinum Member
 
-* The Node.js Foundation, a community-led and industry-backed consortium to advance the development of the Node.js platform, announced Red Hat, Inc. has joined the Foundation as a Platinum member. 
+* The Node.js Foundation, a community-led and industry-backed consortium to advance the development of the Node.js platform, announced Red Hat, Inc. has joined the Foundation as a Platinum member.
 * Red Hat joins platinum members, including Famous, IBM, Intel, Joyent, Microsoft and PayPal, to provide support in the adoption, development and long-term success of the Node.js project.
 
 See https://www.redhat.com/en/about/press-releases/red-hat-joins-nodejs-foundation for more information.

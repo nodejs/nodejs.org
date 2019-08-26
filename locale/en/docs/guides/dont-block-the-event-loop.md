@@ -111,7 +111,7 @@ Example 1: A constant-time callback.
 app.get('/constant-time', (req, res) => {
   res.sendStatus(200);
 });
-``` 
+```
 
 Example 2: An `O(n)` callback. This callback will run quickly for small `n` and more slowly for large `n`.
 
@@ -126,7 +126,7 @@ app.get('/countToN', (req, res) => {
 
   res.sendStatus(200);
 });
-``` 
+```
 
 Example 3: An `O(n^2)` callback. This callback will still run quickly for small `n`, but for large `n` it will run much more slowly than the previous `O(n)` example.
 

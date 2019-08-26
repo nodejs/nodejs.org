@@ -1,5 +1,5 @@
 ---
-title: multi-server continuous deployment with fleet 
+title: multi-server continuous deployment with fleet
 author: Isaac Schlueter
 date: 2012-05-02T18:00:00.000Z
 status: publish
@@ -19,13 +19,13 @@ Running a [seaport](http://substack.net/posts/7a1c42) can help with getting all 
 To start using fleet, just install the fleet command with [npm](https://npmjs.com):
 
 ```
-npm install -g fleet 
+npm install -g fleet
 ```
 
 Then on one of your servers, start a fleet hub. From a fresh directory, give it a passphrase and a port to listen on:
 
 ```
-fleet hub --port=7000 --secret=beepboop 
+fleet hub --port=7000 --secret=beepboop
 ```
 
 Now fleet is listening on :7000 for commands and has started a git server on :7001 over http. There's no ssh keys or post commit hooks to configure, just run that command and you're ready to go!
@@ -33,7 +33,7 @@ Now fleet is listening on :7000 for commands and has started a git server on :70
 Next set up some worker drones to run your processes. You can have as many workers as you like on a single server but each worker should be run from a separate directory. Just do:
 
 ```
-fleet drone --hub=x.x.x.x:7000 --secret=beepboop 
+fleet drone --hub=x.x.x.x:7000 --secret=beepboop
 ```
 
 where `x.x.x.x` is the address where the fleet hub is running. Spin up a few of these drones.
@@ -41,7 +41,7 @@ where `x.x.x.x` is the address where the fleet hub is running. Spin up a few of 
 Now navigate to the directory of the app you want to deploy. First set a remote so you don't need to type `--hub` and `--secret` all the time.
 
 ```
-fleet remote add default --hub=x.x.x.x:7000 --secret=beepboop 
+fleet remote add default --hub=x.x.x.x:7000 --secret=beepboop
 ```
 
 Fleet just created a `fleet.json` file for you to save your settings.
@@ -49,7 +49,7 @@ Fleet just created a `fleet.json` file for you to save your settings.
 From the same app directory, to deploy your code just do:
 
 ```
-fleet deploy 
+fleet deploy
 ```
 
 The deploy command does a `git push` to the fleet hub's git http server and then the hub instructs all the drones to pull from it. Your code gets checked out into a new directory on all the fleet drones every time you deploy.
@@ -57,7 +57,7 @@ The deploy command does a `git push` to the fleet hub's git http server and then
 Because fleet is designed specifically for managing applications with lots of tiny services, the deploy command isn't tied to running any processes. Starting processes is up to the programmer but it's super simple. Just use the `fleet spawn` command:
 
 ```
-fleet spawn -- node server.js 8080 
+fleet spawn -- node server.js 8080
 ```
 
 By default fleet picks a drone at random to run the process on. You can specify which drone you want to run a particular process on with the `--drone` switch if it matters.
