@@ -9,7 +9,7 @@ layout: knowledge-post.hbs
 ---
 
 <!-- In node.js, it is considered standard practice to handle errors in asynchronous functions by returning them as the first argument to the current function's callback.  If there is an error, the first parameter is passed an `Error` object with all the details. Otherwise, the first parameter is null. -->
-No node.js, considera-se uma prática padrão lidar com erros em funções assíncronas retornando-os como o primeiro argumento para o retorno de chamada da função atual.  Se houver um erro, o primeiro parâmetro recebe um objeto `Error` com todos os detalhes. Caso contrário, o primeiro parâmetro é null. 
+No node.js, considera-se uma prática padrão lidar com erros em funções assíncronas retornando-os como o primeiro argumento para o retorno de chamada da função atual.  Se houver um erro, o primeiro parâmetro recebe um objeto `Error` com todos os detalhes. Caso contrário, o primeiro parâmetro é null.
 
 <!-- It's simpler than it sounds; let's demonstrate. -->
 É mais simples do que parece; vamos demonstrar.
@@ -33,10 +33,10 @@ No node.js, considera-se uma prática padrão lidar com erros em funções assí
 
     <!--
           ORIGINAL BEGIN
-    
+
     // Note: when calling the same asynchronous function twice like this, you are in a race condition.
     // You have no way of knowing for certain which callback will be called first when calling the functions in this manner.
-    
+
           ORIGINAL END
     -->
     // Note: quando chamamos a mesma função assíncrona duas vezes, você está em uma condição de corrida.
@@ -52,7 +52,7 @@ No node.js, considera-se uma prática padrão lidar com erros em funções assí
     O valor era verdadeiro.
 
 <!-- As you can see from the example, the callback is called with null as its first argument if there is no error. However, if there is an error, you create an `Error` object, which then becomes the callback's only parameter.  -->
-Como você pode ver no exemplo, o callback é chamado recebendo null como o primeiro argumento se não houver erros. Todavia, se houver um erro, é criado um objeto `Error`, que então se torna o único parâmetro de retorno da chamada. 
+Como você pode ver no exemplo, o callback é chamado recebendo null como o primeiro argumento se não houver erros. Todavia, se houver um erro, é criado um objeto `Error`, que então se torna o único parâmetro de retorno da chamada.
 
 <!-- The `callback` function shows the reason for this: it allows a user to easily know whether or not an error occurred.  If `null` was not the first argument passed on success, the user would need to check the object being returned and determine themselves whether or not the object constituted an error - a much more complex and less user-friendly approach. -->
 A função de `callback` mostra o motivo: permite que um usuário saiba facilmente se ocorreu ou não um erro.  Se `null` não for o primeiro argumento de successo passado, o usuário precisaria verificar o objeto que está sendo retornado e determinar se o objeto constituía ou não um erro - uma abordagem muito mais complexa e menos amigável ao usuário.
