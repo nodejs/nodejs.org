@@ -3,14 +3,14 @@ title: Buffer.from()/Buffer.alloc() API への移植
 layout: docs.hbs
 ---
 
-<!-- 
+<!--
 # Porting to the `Buffer.from()`/`Buffer.alloc()` API
 
 ## Overview
 
 This guide explains how to migrate to safe `Buffer` constructor methods. The migration fixes the following deprecation warning:
 
-<div class="highlight-box"> 
+<div class="highlight-box">
 The Buffer() and new Buffer() constructors are not recommended for use due to security and usability concerns. Please use the new Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() construction methods instead.
 </div>
 
@@ -25,7 +25,7 @@ The Buffer() and new Buffer() constructors are not recommended for use due to se
 
 このガイドは安全な `Buffer` コンストラクタメソッドに移行する方法を説明します。マイグレーションにより、以下の非推奨警告が修正されました。
 
-<div class="highlight-box"> 
+<div class="highlight-box">
 The Buffer() and new Buffer() constructors are not recommended for use due to security and usability concerns. Please use the new Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() construction methods instead.
 </div>
 
@@ -33,7 +33,7 @@ The Buffer() and new Buffer() constructors are not recommended for use due to se
 - [Variant 2: ポリフィルの使用](#variant-2)
 - [Variant 3: セーフガード付きの手動検出](#variant-3)
 
-<!-- 
+<!--
 ### Finding problematic bits of code using `grep`
 
 Just run `grep -nrE '[^a-zA-Z](Slow)?Buffer\s*\(' --exclude-dir node_modules`.
@@ -71,7 +71,7 @@ $ node example.js
     [... more stack trace lines ...]
 ```
 
-<!-- 
+<!--
 ### Finding problematic bits of code using linters
 
 ESLint rules [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer-constructor)
@@ -97,7 +97,7 @@ ESLint の規則 [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer
 ポリフィルでは、この方法と上記の他の方法を
 組み合わせて使用することをお勧めします。
 
-<!-- 
+<!--
 ## &lt;!--variant-1--&gt;Variant 1: Drop support for Node.js ≤ 4.4.x and 5.0.0 — 5.9.x
 
 This is the recommended solution nowadays that would imply only minimal overhead.
@@ -159,7 +159,7 @@ _現在、古いバージョンの Node.js をサポートしていて、それ�
 そうすることで、無防備な `Buffer` API の使用によって引き起こされる潜在的な問題を根絶し、
 Node.js 10 でコードを実行するときにユーザは実行時廃止予定の警告を見ることはないでしょう。_
 
-<!-- 
+<!--
 ## &lt;!--variant-2--&gt;Variant 2: Use a polyfill
 
 There are three different polyfills available:
@@ -218,7 +218,7 @@ _Don't forget to drop the polyfill usage once you drop support for Node.js < 4.5
   古い `new Buffer()` API を使わないでください。上記の行が追加されているファイルでは、
   古い `new Buffer()` API を使用すると _throw_ されます。
 
-- **[buffer-from](https://www.npmjs.com/package/buffer-from) 
+- **[buffer-from](https://www.npmjs.com/package/buffer-from)
   または [buffer-alloc](https://www.npmjs.com/package/buffer-alloc)** あるいはその両方は
   `Buffer` API のそれぞれの部分の [ポリフィル](https://ponyfill.com/) です。
   使用している API に対応するパッケージを追加するだけです。
@@ -235,7 +235,7 @@ _Don't forget to drop the polyfill usage once you drop support for Node.js < 4.5
 
   このアプローチのマイナス面は、コード内で古い `new Buffer()` API を使用することも可能になることです。
   これは、コード内で問題を引き起こす可能性があり、
-  Node.js 10 以降で実行時に非推奨の警告を発行し始めます 
+  Node.js 10 以降で実行時に非推奨の警告を発行し始めます
   ([詳細はこちらをご覧ください](https://github.com/chalker/safer-buffer#why-not-safe-buffer))。
 
 どちらの場合も、古い `Buffer` API へのすべての呼び出しを手動で削除することも重要です。
@@ -249,7 +249,7 @@ ESLint ルールの [no-buffer-constructor](https://eslint.org/docs/rules/no-buf
 
 _Node.js 4.5.0 以前のサポートを終了したら、必ず polyfill の使用をやめてください。_
 
-<!-- 
+<!--
 ## &lt;!--variant-3--&gt;Variant 3 — Manual detection, with safeguards
 
 This is useful if you create `Buffer` instances in only a few places (e.g. one), or you have your own
@@ -387,7 +387,7 @@ if (Buffer.alloc) {
 const buf = Buffer.alloc ? Buffer.alloc(number) : new Buffer(number).fill(0);
 ```
 
-<!-- 
+<!--
 ## Regarding `Buffer.allocUnsafe()`
 
 Be extra cautious when using `Buffer.allocUnsafe()`:
@@ -425,7 +425,7 @@ version (and lacking type checks also adds DoS to the list of potential problems
 _Node.js のバージョンによっては、ゼロフィリングなしに `new Buffer()` を使用する場合も同様です
 (また、型チェックがないと、DoS が潜在的な問題のリストに追加されます)。_
 
-<!-- 
+<!--
 ## &lt;!--faq--&gt;FAQ
 
 ### &lt;!--design-flaws--&gt;What is wrong with the `Buffer` constructor?

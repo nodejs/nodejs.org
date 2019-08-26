@@ -3,7 +3,7 @@ title: ガイド
 layout: docs.hbs
 ---
 
-<!-- 
+<!--
 # Guides
 
 ## General
@@ -27,7 +27,7 @@ layout: docs.hbs
 - [Node.js Web アプリケーションを Docker 化する](nodejs-docker-webapp/)
 - [安全な Buffer コンストラクタへの移行](buffer-constructor-deprecation/)
 
-<!-- 
+<!--
 ## Node.js core concepts
 
 - [Overview of Blocking vs Non-Blocking](blocking-vs-non-blocking/)
@@ -43,7 +43,7 @@ layout: docs.hbs
 - [イベントループ (またはワーカープール) をブロックしない](dont-block-the-event-loop/)
 - [Node.js のタイマー](timers-in-node/)
 
-<!-- 
+<!--
 ## Module-related guides
 
 - [Anatomy of an HTTP Transaction](anatomy-of-an-http-transaction/)

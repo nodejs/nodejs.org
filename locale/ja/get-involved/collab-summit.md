@@ -3,7 +3,7 @@ title: コラボレーションサミット
 layout: contribute.hbs
 ---
 
-<!-- 
+<!--
 # Collab Summit
 Collaboration Summit is an un-conference for bringing current and
 potential contributors together to discuss Node.js  with lively collaboration,
@@ -19,7 +19,7 @@ exciting efforts they want to push forward in-person.
 重要な決断を下すと同時に、
 直接推進したいというエキサイティングな取り組みに参加することもできます。
 
-<!-- 
+<!--
 ## Who attends?
 
 Anyone is welcome to attend Collab Summit. During the

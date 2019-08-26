@@ -3,7 +3,7 @@ title: ブロッキングとノンブロッキングの概要
 layout: docs.hbs
 ---
 
-<!-- 
+<!--
 # Overview of Blocking vs Non-Blocking
 
 This overview covers the difference between **blocking** and **non-blocking**
@@ -25,7 +25,7 @@ basic understanding of the JavaScript language and Node.js callback pattern.
 > "I/O" とは、主に [libuv](https://libuv.org/) がサポートしている
 > システムのディスクやネットワークとのやり取りを指します。
 
-<!-- 
+<!--
 ## Blocking
 
 **Blocking** is when the execution of additional JavaScript in the Node.js
@@ -63,7 +63,7 @@ Node.js 標準ライブラリのすべての I/O メソッドは非同期バー�
 一部のメソッドには**ブロッキング**に対応したものもあり、
 その名前は `Sync` で終わります。
 
-<!-- 
+<!--
 ## Comparing Code
 
 **Blocking** methods execute **synchronously** and **non-blocking** methods
@@ -173,7 +173,7 @@ moreWork(); // console.log の前に実行されます
 ファイルの読み込みが完了するのを待たずに `moreWork()` を実行する機能は、
 より高いスループットを可能にする重要な設計上の選択です。
 
-<!-- 
+<!--
 ## Concurrency and Throughput
 
 JavaScript execution in Node.js is single threaded, so concurrency refers to the
@@ -211,7 +211,7 @@ I/O などの JavaScript 以外の操作が発生しても、
 イベントループは、
 並行作業を処理するために追加のスレッドが作成される可能性がある他の多くの言語のモデルとは異なります。
 
-<!-- 
+<!--
 ## Dangers of Mixing Blocking and Non-Blocking Code
 
 There are some patterns that should be avoided when dealing with I/O. Let's look
@@ -280,7 +280,7 @@ fs.readFile('/file.md', (readFileErr, data) => {
 上記は、`fs.readFile()`のコールバック内で `fs.unlink()` への**ノンブロッキング**呼び出しを行います。
 これにより、正しい操作順序が保証されます。
 
-<!-- 
+<!--
 ## Additional Resources
 
 - [libuv](https://libuv.org/)
