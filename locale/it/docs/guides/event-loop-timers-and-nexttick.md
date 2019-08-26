@@ -291,7 +291,7 @@ You may have noticed that `process.nextTick()` was not displayed in the
 diagram, even though it's a part of the asynchronous API. This is because
 `process.nextTick()` is not technically part of the event loop. Instead,
 the `nextTickQueue` will be processed after the current operation is
-completed, regardless of the current phase of the event loop. Here, 
+completed, regardless of the current phase of the event loop. Here,
 an *operation* is defined as a transition from the
 underlying C/C++ handler, and handling the JavaScript that needs to be
 executed.

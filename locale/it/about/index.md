@@ -28,11 +28,11 @@ server.listen(port, hostname, () => {
 });
 ```
 
-Ciò è in contrasto con il modello di concorrenza più comune di oggi in cui vengono utilizzati 
-i thread. Il networking basato su thread è relativamente inefficiente e 
-molto difficile da utilizzare. Inoltre, gli utenti di Node.js sono liberi da preoccupazioni di 
-blocco permanente del processo, poiché non ci sono blocchi. Quasi nessuna funzione in Node.js 
-esegue direttamente I/O, quindi il processo non blocca mai. Dal momento che nulla si blocca, 
+Ciò è in contrasto con il modello di concorrenza più comune di oggi in cui vengono utilizzati
+i thread. Il networking basato su thread è relativamente inefficiente e
+molto difficile da utilizzare. Inoltre, gli utenti di Node.js sono liberi da preoccupazioni di
+blocco permanente del processo, poiché non ci sono blocchi. Quasi nessuna funzione in Node.js
+esegue direttamente I/O, quindi il processo non blocca mai. Dal momento che nulla si blocca,
 è molto facile sviluppare sistemi scalabili in Node.js
 
 Se alcuni dei termini utilizzati non ti sono familiari, ecco un articolo completo
