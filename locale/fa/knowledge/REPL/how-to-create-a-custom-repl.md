@@ -48,10 +48,10 @@ In addition, all objects in the global scope will also be accessible to your REP
 
 Here's what happens when I run the script:
 
-    $ node repl.js 
+    $ node repl.js
     Remote REPL started on port 5001.
     node::local> .exit
-    ^Cjosh@pidgey:/tmp/telnet$ node repl.js 
+    ^Cjosh@pidgey:/tmp/telnet$ node repl.js
     Remote REPL started on port 5001.
     node::local> mood()
     '^__^'

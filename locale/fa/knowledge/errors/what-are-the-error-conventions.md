@@ -8,7 +8,7 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-In node.js, it is considered standard practice to handle errors in asynchronous functions by returning them as the first argument to the current function's callback.  If there is an error, the first parameter is passed an `Error` object with all the details. Otherwise, the first parameter is null. 
+In node.js, it is considered standard practice to handle errors in asynchronous functions by returning them as the first argument to the current function's callback.  If there is an error, the first parameter is passed an `Error` object with all the details. Otherwise, the first parameter is null.
 
 It's simpler than it sounds; let's demonstrate.
 
@@ -41,7 +41,7 @@ It's simpler than it sounds; let's demonstrate.
       message: 'Value is not true!' }
     Value was true.
 
-As you can see from the example, the callback is called with null as its first argument if there is no error. However, if there is an error, you create an `Error` object, which then becomes the callback's only parameter. 
+As you can see from the example, the callback is called with null as its first argument if there is no error. However, if there is an error, you create an `Error` object, which then becomes the callback's only parameter.
 
 The `callback` function shows the reason for this: it allows a user to easily know whether or not an error occurred.  If `null` was not the first argument passed on success, the user would need to check the object being returned and determine themselves whether or not the object constituted an error - a much more complex and less user-friendly approach.
 
