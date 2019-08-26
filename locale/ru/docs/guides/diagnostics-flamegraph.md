@@ -9,7 +9,7 @@ layout: docs.hbs
 
 Flame graphs are a way of visualizing CPU time spent in functions. They can help you pin down where you spend too much time doing synchronous operations.
 
-## How to create a flame graph 
+## How to create a flame graph
 
 You might have heard creating a flame graph for Node.js is difficult, but that's not true (anymore).
 Solaris vms are no longer needed for flame graphs!
@@ -37,7 +37,7 @@ Now let's get to work.
     perf record -e cycles:u -g -- node --perf-basic-prof app.js
     ```
 4. disregard warnings unless they're saying you can't run perf due to missing packages; you may get some warnings about not being able to access kernel module samples which you're not after anyway.
-5. Run `perf script > perfs.out` to generate the data file you'll visualize in a moment. It's useful to [apply some cleanup](#filtering-out-node-internal-functions) for a more readable graph 
+5. Run `perf script > perfs.out` to generate the data file you'll visualize in a moment. It's useful to [apply some cleanup](#filtering-out-node-internal-functions) for a more readable graph
 6. install stackvis if not yet installed `npm i -g stackvis`
 7. run `stackvis perf < perfs.out > flamegraph.htm`
 
@@ -53,10 +53,10 @@ This is great for recording flame graph data from an already running process tha
 perf record -F99 -p `pgrep -n node` -g -- sleep 3
 ```
 
-Wait, what is that `sleep 3` for? It's there to keep the perf running - despite `-p` option pointing to a different pid, the command needs to be executed on a process and end with it. 
+Wait, what is that `sleep 3` for? It's there to keep the perf running - despite `-p` option pointing to a different pid, the command needs to be executed on a process and end with it.
 perf runs for the life of the command you pass to it, whether or not you're actually profiling that command. `sleep 3` ensures that perf runs for 3 seconds.
 
-Why is `-F` (profiling frequency) set to 99? It's a reasonable default. You can adjust if you want. 
+Why is `-F` (profiling frequency) set to 99? It's a reasonable default. You can adjust if you want.
 `-F99` tells perf to take 99 samples per second, for more precision increase the value. Lower values should produce less output with less precise results. Precision you need depends on how long your CPU intensive functions really run. If you're looking for the reason of a noticeable slowdown, 99 frames per second should be more than enough.
 
 After you get that 3 second perf record, proceed with generating the flame graph with the last two steps from above.
@@ -88,13 +88,13 @@ Well, without these options you'll still get a flame graph, but with most bars l
 
 ### Node.js 8.x V8 pipeline changes
 
-Node.js 8.x and above ships with new optimizations to JavaScript compilation pipeline in V8 engine which makes function names/references unreachable for perf sometimes. (It's called Turbofan) 
+Node.js 8.x and above ships with new optimizations to JavaScript compilation pipeline in V8 engine which makes function names/references unreachable for perf sometimes. (It's called Turbofan)
 
-The result is you might not get your function names right in the flame graph. 
+The result is you might not get your function names right in the flame graph.
 
 You'll notice `ByteCodeHandler:` where you'd expect function names.
 
-[0x](https://www.npmjs.com/package/0x) has some mitigations for that built in. 
+[0x](https://www.npmjs.com/package/0x) has some mitigations for that built in.
 
 For details see:
 - https://github.com/nodejs/benchmarking/issues/168
