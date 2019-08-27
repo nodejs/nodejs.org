@@ -93,7 +93,7 @@ layout: docs.hbs
 ### [Eclipse IDE](https://eclipse.org/eclipseide) مع إضافة إكليبس الشاملة لتطوير الويب
 
 * من ملف .js، اختر "Debug As... > Node program", او 
-* إنشاء اعدادات تنقيح للمنقح لكي يتمكن من تشغيل تطبيق Node (بدأ بـ `--inspect`).
+* إنشاء اعدادات المنقح لكي يتمكن من تشغيل تطبيق Node (بدأ بـ `--inspect`).
 
 ---
 
