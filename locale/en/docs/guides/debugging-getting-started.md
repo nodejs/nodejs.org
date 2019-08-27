@@ -109,6 +109,11 @@ info on these follows:
 
 * Start a Node.js debug configuration from the `Debug` view or hit `F5`. [Detailed instructions](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
 
+### [Eclipse IDE](https://eclipse.org/eclipseide) with Eclipse Wild Web Developer extension
+
+* From a .js file, choose "Debug As... > Node program", or
+* Create a Debug Configuration to attach debugger to running Node application (already started with `--inspect`).
+
 ---
 
 ## Command-line options

@@ -70,10 +70,14 @@ layout: docs.hbs
 
 * 简化对检查器协议终端连接的库。
 
-#### [Gitpod](https://www.gitpod.io)
+### [Gitpod](https://www.gitpod.io)
 
 * 你可以通过 `Debug` 视图，或者按下 `F5` 启动 Node.js 调试。[查看详细教程](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
 
+### [Eclipse IDE](https://eclipse.org/eclipseide) 带有 Eclipse 万维网开发扩展的开发
+
+* 从某个后缀为 js 文件，选择 “以……方式调试（Debug As...） > Node 程序 （Node program）”，或者
+* 创建一个调试配置，它把调试器挂接到一个正在运行的 Node 程序上（并且该调试已经使用 `--inspect` 参数）。
 ---
 
 ## 命令行选项
