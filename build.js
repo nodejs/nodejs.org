@@ -310,7 +310,7 @@ function getSource (callback) {
 // This is where the build is orchestrated from, as indicated by the function
 // name. It brings together all build steps and dependencies and executes them.
 function fullBuild (opts) {
-  const { preserveLocale, selectedLocales } = opts
+  const { selectedLocales, preserveLocale } = opts
   // Build static files.
   copyStatic()
   // Build layouts
@@ -340,3 +340,4 @@ exports.getSource = getSource
 exports.fullBuild = fullBuild
 exports.buildLocale = buildLocale
 exports.copyStatic = copyStatic
+exports.generateLocalesData = generateLocalesData

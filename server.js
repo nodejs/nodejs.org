@@ -15,8 +15,9 @@ const mount = st({
 })
 
 const build = require('./build')
-
+const fs = require('fs')
 const port = process.env.PORT || 8080
+const junk = require('junk')
 
 const selectedLocales = process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE.toLowerCase().split(',') : process.env.DEFAULT_LOCALE
 const preserveLocale = process.argv.includes('--preserveLocale')
@@ -44,19 +45,40 @@ function getLocale (filePath) {
   return filePath.slice(pre.length + 1, filePath.indexOf(path.sep, pre.length + 1))
 }
 
+// This function has two meanings:
+// 1. Build for the specific language.
+// 2. Choose what languages for the menu.
+function dynamicallyBuildOnLanguages (source, locale) {
+  if (!selectedLocales || selectedLocales.length === 0) {
+    fs.readdir(path.join(__dirname, 'locale'), (e, locales) => {
+      const filteredLocales = locales.filter(file => junk.not(file))
+      const localesData = build.generateLocalesData(filteredLocales)
+      build.buildLocale(source, locale, { preserveLocale, localesData })
+    })
+  } else {
+    const localesData = build.generateLocalesData(selectedLocales)
+    build.buildLocale(source, locale, { preserveLocale, localesData })
+  }
+}
+
 build.getSource((err, source) => {
   if (err) { throw err }
 
   locales.on('change', (filePath) => {
     const locale = getLocale(filePath)
+
     if (!selectedLocales || selectedLocales.includes(locale)) {
-      build.buildLocale(source, locale)
+      console.log(`The language ${locale} is changed, file is ${filePath}.`)
+      dynamicallyBuildOnLanguages(source, locale)
     }
   })
+
   locales.on('add', (filePath) => {
     const locale = getLocale(filePath)
+
     if (!selectedLocales || selectedLocales.includes(locale)) {
-      build.buildLocale(source, locale)
+      console.log(`The language ${locale} is changed, file is ${filePath}.`)
+      dynamicallyBuildOnLanguages(source, locale)
       locales.add(filePath)
     }
   })
