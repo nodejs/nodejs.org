@@ -100,7 +100,7 @@ const mainLocale = (selectedLocales && selectedLocales[0]) || 'en'
 
 // Initializes the server and mounts it in the generated build directory.
 http.createServer((req, res) => {
-  // If we are accessing the root, it should be redirected to `/en` instead.
+  // If we are accessing the root, it should be redirected to the default language,
   // We shouldn't get a 404 page.
 
   if (req.url === '/') {
