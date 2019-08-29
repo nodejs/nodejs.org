@@ -360,7 +360,7 @@ A CPU-intensive task only makes progress when its Worker is scheduled, and the W
 If you have 4 logical cores and 5 Workers, one of these Workers cannot make progress.
 As a result, you are paying overhead (memory and scheduling costs) for this Worker and getting no return for it.
 
-I/O-intensive tasks involve querying an external service provider (DNS, file system, etc.) and waiting for its response.
+I/O-intensive tasks involve querying an external service provider ([DNS](https://hosting.review/web-hosting-glossary/#9), file system, etc.) and waiting for its response.
 While a Worker with an I/O-intensive task is waiting for its response, it has nothing else to do and can be de-scheduled by the operating system, giving another Worker a chance to submit their request.
 Thus, *I/O-intensive tasks will be making progress even while the associated thread is not running*.
 External service providers like databases and file systems have been highly optimized to handle many pending requests concurrently.
