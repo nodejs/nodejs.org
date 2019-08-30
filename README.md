@@ -1,6 +1,6 @@
 # [nodejs.org](https://nodejs.org/)
 
-[![Build Status](https://img.shields.io/travis/com/nodejs/nodejs.org/master.svg)](https://travis-ci.com/nodejs/nodejs.org)
+[![Build Status](https://github.com/nodejs/nodejs.org/workflows/Tests/badge.svg)](https://github.com/nodejs/nodejs.org/actions)
 [![Dependency Status](https://img.shields.io/david/nodejs/nodejs.org.svg)](https://david-dm.org/nodejs/nodejs.org)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 

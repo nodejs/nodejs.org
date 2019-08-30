@@ -1,0 +1,29 @@
+name: Tests
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "10"
+
+      - run: node --version
+      - run: npm --version
+
+      - name: Install npm dependencies
+        run: npm ci
+        env:
+          CI: true
+
+      - name: Build
+        run: npm run build
+
+      - name: Run tests
+        run: npm test
