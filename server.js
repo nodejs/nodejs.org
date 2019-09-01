@@ -51,6 +51,9 @@ function getLocale (filePath) {
 function dynamicallyBuildOnLanguages (source, locale) {
   if (!selectedLocales || selectedLocales.length === 0) {
     fs.readdir(path.join(__dirname, 'locale'), (e, locales) => {
+      if (e) {
+        throw e;
+      }
       const filteredLocales = locales.filter(file => junk.not(file))
       const localesData = build.generateLocalesData(filteredLocales)
       build.buildLocale(source, locale, { preserveLocale, localesData })
@@ -68,7 +71,7 @@ build.getSource((err, source) => {
     const locale = getLocale(filePath)
 
     if (!selectedLocales || selectedLocales.includes(locale)) {
-      console.log(`The language ${locale} is changed, file is ${filePath}.`)
+      console.log(`The language ${locale} is changed, '${filePath}' is modified.`)
       dynamicallyBuildOnLanguages(source, locale)
     }
   })
@@ -77,7 +80,7 @@ build.getSource((err, source) => {
     const locale = getLocale(filePath)
 
     if (!selectedLocales || selectedLocales.includes(locale)) {
-      console.log(`The language ${locale} is changed, file is ${filePath}.`)
+      console.log(`The language ${locale} is changed, '${filePath}' is added.`)
       dynamicallyBuildOnLanguages(source, locale)
       locales.add(filePath)
     }
