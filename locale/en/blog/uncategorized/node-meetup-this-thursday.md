@@ -8,7 +8,7 @@ slug: node-meetup-this-thursday
 layout: blog-post.hbs
 ---
 
-<a href="https://nodejs.org/meetup/" title="https://nodejs.org/meetup/ ">https://nodejs.org/meetup/</a>
+<a href="https://nodejs.org/meetup/" title="https://nodejs.org/meetup/">https://nodejs.org/meetup/</a>
 <a href="http://nodemeetup.eventbrite.com/">http://nodemeetup.eventbrite.com/</a>
 
 Three companies will describe their distributed Node applications. Sign up soon, space is limited!
