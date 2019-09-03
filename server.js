@@ -52,7 +52,7 @@ function dynamicallyBuildOnLanguages (source, locale) {
   if (!selectedLocales || selectedLocales.length === 0) {
     fs.readdir(path.join(__dirname, 'locale'), (e, locales) => {
       if (e) {
-        throw e;
+        throw e
       }
       const filteredLocales = locales.filter(file => junk.not(file))
       const localesData = build.generateLocalesData(filteredLocales)

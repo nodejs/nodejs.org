@@ -321,7 +321,7 @@ function fullBuild (opts) {
     // Executes the build cycle for every locale.
     fs.readdir(path.join(__dirname, 'locale'), (e, locales) => {
       if (e) {
-        throw e;
+        throw e
       }
       const filteredLocales = locales.filter(file => junk.not(file) && (selectedLocales ? selectedLocales.includes(file) : true))
       const localesData = generateLocalesData(filteredLocales)
