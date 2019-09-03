@@ -14,14 +14,13 @@
     "allowed_elements": [
       "a",
       "br",
-      "hr",
-      "h2", "h3", "h4",
+      "h3", "h4",
       "figure", "figcaption", "img",
-      "ol", "ul", "li",
+      "ul", "li",
       "div", "span", "p",
       "table", "th", "tr", "td",
       "code", "pre",
-      "i", "strong", "em", "b",
+      "i", "strong", "em",
       "sup"
     ]
   },
