@@ -83,7 +83,7 @@ emerge nodejs
 
 ## IBM i
 
-Node.js 长期支持版（LTS）各类版本可以通过 IBM 处获得，使用 ['yum' 包管理器](http://ibm.biz/ibmi-rpms)。包名字的组成是 `nodejs` 加上一个主版本号（举个例子，`nodejs8`，`nodejs10`，`nodejs12` 等)。
+Node.js 长期支持版（LTS）各类版本可以通过 IBM 处获得，使用 ['yum' 包管理器](https://ibm.biz/ibmi-rpms)。包名字的组成是 `nodejs` 加上一个主版本号（举个例子，`nodejs8`，`nodejs10`，`nodejs12` 等)。
 
 如果你要通过命令行安装 Node.js 12.x，请以\*ALLOBJ 特殊权限方式进行：
 ```bash

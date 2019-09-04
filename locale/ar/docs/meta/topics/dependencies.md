@@ -43,7 +43,7 @@ layout: docs.hbs
 
 بالنسبة لبعض طلبات الـ DNS الغير متزامنة ، يستخدم الـ Node.js مكتبة C تسمى c-ares. يتم كشفها من خلال وحدة DNS في جافا سكريبت كأنها عائلة من دوال الحلول ( `resolve()`) حيث تستخدم الدالة `lookup ()` ، وهي ما تستخدمه بقية النواة ، المكالمات المترابطة `getaddrinfo(3)` في libuv. والسبب في ذلك هو أن c-ares تدعم / etc / hosts ، و /etc/resolv.conf و /etc/svc.conf ، ولكن لا تفعل مع غيرها مثل mDNS.
 
-- [التوثيق](http://c-ares.haxx.se/docs.html)
+- [التوثيق](https://c-ares.haxx.se/docs.html)
 
 ### OpenSSL
 

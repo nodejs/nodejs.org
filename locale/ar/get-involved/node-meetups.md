@@ -308,7 +308,7 @@ layout: contribute.hbs
 
 ##### تورونتو
 
-- [Toronto JS Meetup](http://torontojs.com/)
+- [Toronto JS Meetup](https://torontojs.com/)
 - Frequency of Meetups - weekly
 - كيف تقدم طلب محاضرة ؟ _تواصل مع المنظمين عبر منصة سلاك : http://slack.torontojs.com/_
 - أسماء المنظمون - دان ت. وبول د.
