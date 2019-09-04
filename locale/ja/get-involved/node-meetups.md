@@ -382,7 +382,6 @@ REQUIREMENTS
 - Organizer name - Matt Pardee
 - Organizer contact info -
 
-
 #### Colorado
 
 ##### Denver
@@ -537,7 +536,6 @@ REQUIREMENTS
 - Organizer name - Aaron Seth Madsen
 - Organizer contact info -
 
-
 #### Washington
 
 ##### Seattle
@@ -595,7 +593,6 @@ REQUIREMENTS
 - How to submit a talk? [Submit Form](https://docs.google.com/forms/d/e/1FAIpQLSflx7LU44PuwlyCJj-WwlP_SlrUvxAd8uaXlY7_O65c7RLpGQ/viewform?usp=sf_link)
 - Organizer names - Marcus Noble, Seren Davies
 - Organizers contact info - organisers@jsoxford.com
-
 
 ### Ukraine
 

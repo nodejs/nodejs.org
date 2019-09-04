@@ -15,7 +15,6 @@ layout: contribute.hbs
 - [Node.js Collection](https://medium.com/the-node-js-collection) 是一堆在媒体上的社区策划内容集合。
 - [Community Committee](https://github.com/nodejs/community-committee) 是 Node.js 基金会中的高级委员会，专注于社区事务。
 
-
 ## 学习资源
 
 - [官方 API 参考文档](/api/) 中详细介绍了 Node 的 API 函数。

@@ -8,7 +8,6 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-
 Armazenar os dados de configuração da sua aplicação Node.js é muito simples - cada objeto no JavaScript pode ser facilmente renderizado como [JSON](/what-is-json), que por sua vez é apenas dados em string que podem ser enviados ou salvos da maneira que você preferir.  A forma mais simples de fazer isso envolve os métodos built-in `JSON.parse()` e `JSON.stringify()`.
 
 Vamos dar uma olhada em um exemplo muito simples (e imaginário).  Primeiro, para salvar alguns dados bem simples:
@@ -82,4 +81,3 @@ Após isso, a sintaxe é moleza. Veja um exemplo:
 A única coisa que requer atenção aqui é o delimitador - ':'. Quando se acessa propriedades aninhadas com o `nconf`, os dois-pontos são usados para delimitar os namespaces dos nomes das chaves.  Se uma sub-chave específica não é fornecida, o objeto inteiro é definido ou retornado.
 
 Quando usa-se o `nconf` para guardar seus dados de configurações em um arquivo, `nconf.save()` e `nconf.load()` são os únicos momentos em que acontecerá interações com o arquivo atual.  Todos os outros acessos são realizados em uma cópia de seus dados em memória, que não serão persistidos sem uma chamada do `nconf.save()`.  De maneira semelhante, se você está tentando trazer de volta dados de configuração da última vez que sua aplicação rodou, eles não existirão em memória sem uma chamada para `nconf.load()`, como mostrado acima.
-

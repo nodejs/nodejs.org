@@ -5,7 +5,6 @@ title: パッケージマネージャを利用した Node.js のインストー�
 
 # <!-- Installing Node.js via package manager -->パッケージマネージャを利用した Node.js のインストール
 
-
 <!-- ***Note:*** The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream. -->
 ***注意:*** このページにあるパッケージはそれぞれのパッケージ管理者によってメンテナンスされています。Node.js コアチームによるものでは**ありません**。遭遇した問題はパッケージの管理者に報告してください。もしその問題が Node.js 自体のバグだと判明した場合は、管理者が報告をあげてくれます。
 
@@ -47,7 +46,6 @@ Node.js と npm のパッケージがコミュニティのリポジトリから�
 ```bash
 pacman -S nodejs npm
 ```
-
 
 ## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages-->Debian と Ubuntu ベースの Linux ディストリビューション、エンタープライズ Linux/Fedora と Snap パッケージ
 
@@ -92,7 +90,6 @@ pkg install node
 pkg install node-devel
 ```
 
-
 ## Gentoo
 
 <!-- Node.js is available in the portage tree. -->
@@ -136,7 +133,6 @@ cd /usr/pkgsrc/lang/nodejs && make install
 pkgin -y install nodejs
 ```
 
-
 <!-- ## openSUSE and SLE -->
 ## <!--opensuse-and-sle-->openSUSE と SLE
 
@@ -155,7 +151,6 @@ sudo zypper ar \
   Node.js
 sudo zypper in nodejs nodejs-devel
 ```
-
 
 ## macOS
 
@@ -219,7 +214,6 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-
 ## Solus
 
 Solus provides node.js in its main repository.
@@ -227,7 +221,6 @@ Solus provides node.js in its main repository.
 ```bash
 sudo eopkg install nodejs
 ```
-
 
 ## Void Linux
 
@@ -237,7 +230,6 @@ Void Linux にはメインリポジトリに node.js の安定版があります
 ```bash
 xbps-install -Sy nodejs
 ```
-
 
 ## Windows
 

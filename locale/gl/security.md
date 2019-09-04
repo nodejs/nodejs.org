@@ -56,7 +56,6 @@ As notificacións de seguridade serán distribuídas usando os seguintes medios.
 - <https://groups.google.com/group/nodejs-sec>
 - <https://nodejs.org/en/blog/>
 
-
 ## Comentarios sobre esta política
 
 Se tes suxerencias sobre como este proceso podería ser mellorado, por favor envíe un [pull request](https://github.com/nodejs/nodejs.org)

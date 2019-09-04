@@ -36,7 +36,6 @@ As an example, we are going to preform a GET request to [www.random.org/integers
 
     http.request(options, callback).end();
 
-
 Making a POST request is just as easy. We will make a POST request to `www.nodejitsu.com:1337` which is running a server that will echo back what we post. The code for making a POST request is almost identical to making a GET request, just a few simple modifications:
 
     var http = require('http');

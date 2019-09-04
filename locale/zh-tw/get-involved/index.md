@@ -15,7 +15,6 @@ layout: contribute.hbs
 - [Node.js Collection](https://medium.com/the-node-js-collection) 是個由社群策劃的 Medium 文章合集。
 - [Community Committee](https://github.com/nodejs/community-committee) 是 Node.js 基金會中的高級委員會，專責社群事務。
 
-
 ## 學習資源
 
 - [官方 API 參考文件](/api/)中詳細介紹了 Node API。
@@ -23,7 +22,6 @@ layout: contribute.hbs
 - [Stack Overflow 上的 Node.js 標籤](https://stackoverflow.com/questions/tagged/node.js)搜羅了每日新資訊。
 - [開發社區上的 Node.js 標籤](https://dev.to/t/node) 是一個共亯 Node.js項目、文章和教程，以及開始討論、並接受與 Node.js 相關的主題。歡迎所有技能級別的開發人員參與。
 - [Nodeiflux](https://discordapp.com/invite/vUsrbjd) 是一個 Nodejs 後端開發者在 Discord 上互相支援的友好社區。
-
 
 ## 國際性社群網站及專案
 

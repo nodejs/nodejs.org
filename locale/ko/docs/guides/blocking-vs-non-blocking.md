@@ -237,7 +237,6 @@ In the above example, `fs.unlinkSync()` is likely to be run before
 better way to write this that is completely **non-blocking** and guaranteed to
 execute in the correct order is:
 
-
 ```js
 const fs = require('fs');
 fs.readFile('/file.md', (readFileErr, data) => {
@@ -269,7 +268,6 @@ fs.readFile('/file.md', (readFileErr, data) => {
 The above places a **non-blocking** call to `fs.unlink()` within the callback of
 `fs.readFile()` which guarantees the correct order of operations.
 
-
 ## Additional Resources
 
 - [libuv](https://libuv.org/)
@@ -277,7 +275,6 @@ The above places a **non-blocking** call to `fs.unlink()` within the callback of
 -->
 
 여기서는 `fs.readFile()`의 콜백에서 `fs.unlink()`를 **논블로킹**으로 호출하도록 해서 작업 순서가 올바르도록 보장했습니다.
-
 
 ## 추가 자료
 

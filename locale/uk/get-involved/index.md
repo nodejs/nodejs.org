@@ -14,13 +14,11 @@ layout: contribute.hbs
 - [Node Weekly](https://nodeweekly.com/) це поштове розсилання, що збирає найсвіжіші події та новини довкола спільноти Node.js.
 - [Community Committee](https://github.com/nodejs/community-committee) є комітетом вищого рівня в Node.js Фонд зосереджений на спільних зусиллях.
 
-
 ## Навчання
 
 - [Офіційна довідкова документація по API](/api/) описує Node API.
 - [NodeSchool.io](https://nodeschool.io/) навчить вас концепцій Node.js через інтерактивні консольні ігри.
 - [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) щодня поповнюється новою інформацією.
-
 
 ## Сайти міжнародних спільнот та проекти
 

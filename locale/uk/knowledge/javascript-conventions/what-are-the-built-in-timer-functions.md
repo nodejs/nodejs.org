@@ -58,7 +58,6 @@ The final trick for the timer objects is you can pass parameters to the callback
     setTimeout(console.log, 1000, "This", "has", 4, "parameters");
     setInterval(console.log, 1000, "This only has one");
 
-
     This has 4 parameters
     This only has one
     This only has one

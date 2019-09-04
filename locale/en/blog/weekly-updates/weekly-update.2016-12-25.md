@@ -16,7 +16,6 @@ layout: blog-post.hbs
 
 * [Node v7.3.0 (Current)](https://nodejs.org/en/blog/release/v7.3.0/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
 
-
 ### Help in Promoting our Node.js Foundation survey 
 
 * The Node.js Foundation launched a second user survey to learn more about how developers are using Node.js. 

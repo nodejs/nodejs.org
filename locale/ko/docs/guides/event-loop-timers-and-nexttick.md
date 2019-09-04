@@ -30,7 +30,6 @@ this in further detail later in this topic.
 이러한 작업 중 하나가 완료되면 커널이 Node.js에게 알려주어 적절한 콜백을 **poll** 큐에
 추가할 수 있게 하여 결국 실행되게 합니다. 이 글 후반부에서 더 자세한 내용을 설명할 것입니다.
 
-
 <!--
 ## Event Loop Explained
 
@@ -136,7 +135,6 @@ _**NOTE:** 윈도우와 Unix/Linux 구현체간에 약간의 차이가 있지만
 않습니다. 실제 7~8단계가 있지만 Node.js가 실제로 사용해서 신경 써야 하는
 가장 중요한 단계는 위의 단계입니다._
 
-
 <!--
 ## Phases Overview
 
@@ -221,7 +219,6 @@ setTimeout(() => {
   console.log(`${delay}ms have passed since I was scheduled`);
 }, 100);
 
-
 // do someAsyncOperation which takes 95 ms to complete
 someAsyncOperation(() => {
   const startCallback = Date.now();
@@ -267,7 +264,6 @@ setTimeout(() => {
 
   console.log(`${delay}ms have passed since I was scheduled`);
 }, 100);
-
 
 // 완료하는데 95ms가 걸리는 someAsyncOperation를 실행합니다.
 someAsyncOperation(() => {
@@ -448,7 +444,6 @@ process:
 
 예를 들어 I/O 주기 내에 있지 않은 컨텍스트(예: 메인 모듈)에서 다음 스크립트를 실행한다면
 두 타이머의 순서는 프로세스 성능에 영향을 받으므로 결정적이지 않습니다.
-
 
 <!--
 ```js
@@ -649,7 +644,6 @@ person to make recursive calls to `process.nextTick()` without reaching a
 바로 제공된 콜백을 실행하면서 개발자가
 `RangeError: Maximum call stack size exceeded from v8`에 도달하지 않으면서
 `process.nextTick()`을 재귀호출할 수 있게 합니다.
-
 
 <!--
 This philosophy can lead to some potentially problematic situations.

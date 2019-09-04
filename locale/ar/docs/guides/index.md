@@ -13,16 +13,12 @@ layout: docs.hbs
 - [عمل دوكر على تطبيق ويب Node.js](nodejs-docker-webapp/)
 - [ترحيل إلى منشئات Buffer آمنة](buffer-constructor-deprecation/)
 
- 
 ## المفاهيم الأساسية في الـ Node.js
-
 
 - [مقارنة عامة بين Blocking و Non-Blocking](blocking-vs-non-blocking/)
 - [الـ Node.js حلقة التكرارية، المؤقتات و process.nextTick()](event-loop-timers-and-nexttick/)
 - [لا تعرقل الحلقة التكرارية (أو يحشد العمل)](dont-block-the-event-loop/)
 - [مؤقتات في Node.js](timers-in-node/)
-
-
 
 ## الأدلة لوحدة المتعلقة
 

@@ -21,7 +21,6 @@ layout: contribute.hbs
 
 - La [Community Committee](https://github.com/nodejs/community-committee) s'agit d'un comité de haut niveau de la Fondation Node.js axé sur les efforts communautaires.
 
-
 ## Apprentissage
 
 - [La documentation officielle de l'API de référence](/api/) détaille l'API Node (en anglais).
@@ -35,7 +34,6 @@ layout: contribute.hbs
 - [Nodeiflux](https://discordapp.com/invite/vUsrbjd) est une communauté sympathique centrée sur le développement _back-end_ avec Node.js sur le service Discord (en anglais).
 
 - [How To Node](http://howtonode.org/) a de nombreux tutoriaux utiles (en anglais).
-
 
 ## Site et projets des commuanutés internationales
 

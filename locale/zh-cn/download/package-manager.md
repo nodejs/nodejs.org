@@ -214,7 +214,6 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-
 ## Solus
 
 在主版本库中，Solus 提供了 node.js。
@@ -222,7 +221,6 @@ cd pkgsrc/lang/nodejs && bmake install
 ```bash
 sudo eopkg install nodejs
 ```
-
 
 ## Void Linux
 

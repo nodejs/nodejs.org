@@ -71,7 +71,6 @@ demonstration. The most important parts are here. There are actually
 seven or eight steps, but the ones we care about — ones that Node.js
 actually uses - are those above._
 
-
 ## Phases Overview
 
 * **timers**: this phase executes callbacks scheduled by `setTimeout()`
@@ -122,7 +121,6 @@ setTimeout(() => {
 
   console.log(`${delay}ms have passed since I was scheduled`);
 }, 100);
-
 
 // do someAsyncOperation which takes 95 ms to complete
 someAsyncOperation(() => {
@@ -232,7 +230,6 @@ For example, if we run the following script which is not within an I/O
 cycle (i.e. the main module), the order in which the two timers are
 executed is non-deterministic, as it is bound by the performance of the
 process:
-
 
 ```js
 // timeout_vs_immediate.js

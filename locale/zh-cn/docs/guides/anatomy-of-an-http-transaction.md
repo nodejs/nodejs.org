@@ -119,7 +119,6 @@ http.createServer((request, response) => {
 
 谈了那么就，我们都还没有说到 `response` 对象。它是一个 [`ServerResponse`][] 实例，而 ServerRespose 又是 [`WritableStream`][]。它包含了很多方法可以用以把数据返回给客户端。我们下面就将涉及到此议题。
 
-
 ## HTTP 状态码
 
 如果你嫌麻烦不想设置它，返回客户端的默认状态码总是 200。当然，不是每个 HTTP 返回码必须都是 200，在某些情况下你一定希望返回一个不同的状态码，所以你应该设置 `statusCode` 属性。
@@ -321,8 +320,6 @@ http.createServer((request, response) => {
 * 在 `request` 和 `response` 流中处理错误。
 
 从这些基础知识中，关于 Node.js 的 HTTP 服务一些实用案例已经逐步被构建起来，API 文档还提供了大量其它的说明，所以请详细阅读 [`EventEmitters`][]，[`Streams`][] 以及 [`HTTP`][]。
-
-
 
 [`EventEmitters`]: https://nodejs.org/api/events.html
 [`Streams`]: https://nodejs.org/api/stream.html

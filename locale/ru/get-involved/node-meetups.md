@@ -382,7 +382,6 @@ layout: contribute.hbs
 - Организаторы ― Matt Pardee
 - Контакты организаторов -
 
-
 #### Colorado
 
 ##### Denver
@@ -537,7 +536,6 @@ layout: contribute.hbs
 - Организаторы ― Aaron Seth Madsen
 - Контакты организаторов -
 
-
 #### Washington
 
 ##### Seattle
@@ -595,7 +593,6 @@ layout: contribute.hbs
 - Как стать докладчиком? ― [Submit Form](https://docs.google.com/forms/d/e/1FAIpQLSflx7LU44PuwlyCJj-WwlP_SlrUvxAd8uaXlY7_O65c7RLpGQ/viewform?usp=sf_link)
 - Организаторы ― Marcus Noble, Seren Davies
 - Organizers contact info ― organisers@jsoxford.com
-
 
 ### Ukraine
 

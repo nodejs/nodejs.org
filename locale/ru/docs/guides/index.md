@@ -14,14 +14,12 @@ layout: docs.hbs
 - [Dockerizing a Node.js web app](nodejs-docker-webapp/)
 - [Migrating to safe Buffer constructors](buffer-constructor-deprecation/)
 
-
 ## Ключевые концепции Node.js
 
 - [Блокирующие и Неблокирующие Вызовы](blocking-vs-non-blocking/)
 - [The Node.js Event Loop, Timers, and `process.nextTick()`](event-loop-timers-and-nexttick/)
 - [Don't Block the Event Loop (or the Worker Pool)](dont-block-the-event-loop/)
 - [Timers in Node.js](timers-in-node/)
-
 
 ## Module-related guides
 

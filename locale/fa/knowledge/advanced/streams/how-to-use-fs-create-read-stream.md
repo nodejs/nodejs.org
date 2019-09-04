@@ -32,4 +32,3 @@ The function `fs.createReadStream()` allows you to open up a readable stream in 
         res.end(err);
       });
     }).listen(8080);
-

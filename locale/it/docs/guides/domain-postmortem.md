@@ -22,12 +22,10 @@ Here's an example of how one indirectly linked modules can affect another:
 const b = require('./b');
 const c = require('./c');
 
-
 // module b.js
 const d = require('domain').create();
 d.on('error', () => { /* silence everything */ });
 d.enter();
-
 
 // module c.js
 const dep = require('some-dep');
@@ -99,7 +97,6 @@ automatically bubble. Unfortunately both these situations occur, leading to
 potentially confusing behavior that may even be prone to difficult to debug
 timing conflicts.
 
-
 ### API Gaps
 
 While APIs based on using `EventEmitter` can use `bind()` and errback style
@@ -108,7 +105,6 @@ active domain must be executed inside of `run()`. Meaning if module authors
 wanted to support domains using a mechanism alternative to those mentioned they
 must manually implement domain support themselves. Instead of being able to
 leverage the implicit mechanisms already in place.
-
 
 ### Error Propagation
 
@@ -154,7 +150,6 @@ branch must cease. In the example of the http request handler, if we fire off
 several asynchronous requests and each one then `write()`'s data back to the
 client many more errors will arise from attempting to `write()` to a closed
 handle. More on this in _Resource Cleanup on Exception_.
-
 
 ### Resource Cleanup on Exception
 
@@ -333,7 +328,6 @@ In the end, in terms of handling errors, domains aren't much more than a
 glorified `'uncaughtException'` handler. Except with more implicit and
 unobservable behavior by third-parties.
 
-
 ### Resource Propagation
 
 Another use case for domains was to use it to propagate data along asynchronous
@@ -408,7 +402,6 @@ user's callback is called. Also the instantiation of `DataStream` in the
 In short, for this to have a prayer of a chance usage would need to strictly
 adhere to a set of guidelines that would be difficult to enforce or test.
 
-
 ## Performance Issues
 
 A significant deterrent from using domains is the overhead. Using node's
@@ -432,7 +425,6 @@ even adding 1 microsecond overhead per call for any type of setup or tear down
 will result in a 17% performance loss. Granted, this is for the optimized
 scenario of the benchmark, but I believe this demonstrates the necessity for a
 mechanism such as domain to be as cheap to run as possible.
-
 
 ## Looking Ahead
 

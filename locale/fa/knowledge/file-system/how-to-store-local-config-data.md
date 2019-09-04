@@ -81,4 +81,3 @@ After that, the syntax is a breeze. Have a look at an example:
 The only tricky thing to notice here is the delimiter - ':'.  When accessing nested properties with `nconf`, a colon is used to delimit the namespaces of key names.  If a specific sub-key is not provided, the whole object is set or returned.
 
 When using `nconf` to store your configuration data to a file, `nconf.save()` and `nconf.load()` are the only times that any actual file interaction will happen.  All other access is performed on an in-memory copy of your data, which will not persist without a call to `nconf.save()`.  Similarly, if you're trying to bring back configuration data from the last time your application ran, it will not exist in memory without a call to `nconf.load()`, as shown above.
-

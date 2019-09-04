@@ -210,7 +210,6 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-
 ## Solus
 
 توفر Solus النود جي اس في مستودعها الرئيسي.
@@ -218,7 +217,6 @@ cd pkgsrc/lang/nodejs && bmake install
 ```bash
 sudo eopkg install nodejs
 ```
-
 
 ## Void Linux
 

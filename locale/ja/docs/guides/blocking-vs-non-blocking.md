@@ -14,7 +14,6 @@ basic understanding of the JavaScript language and Node.js callback pattern.
 > "I/O" refers primarily to interaction with the system's disk and
 > network supported by [libuv](https://libuv.org/).
 
-
  -->
 # ブロッキングとノンブロッキングの概要
 
@@ -25,7 +24,6 @@ basic understanding of the JavaScript language and Node.js callback pattern.
 
 > "I/O" とは、主に [libuv](https://libuv.org/) がサポートしている
 > システムのディスクやネットワークとのやり取りを指します。
-
 
 <!-- 
 ## Blocking
@@ -46,7 +44,6 @@ versions, which are **non-blocking**, and accept callback functions. Some
 methods also have **blocking** counterparts, which have names that end with
 `Sync`.
 
-
  -->
 ## ブロッキング
 
@@ -65,7 +62,6 @@ Node.js 標準ライブラリのすべての I/O メソッドは非同期バー�
 これらは**ノンブロッキング**で、コールバック関数を受け入れます。
 一部のメソッドには**ブロッキング**に対応したものもあり、
 その名前は `Sync` で終わります。
-
 
 <!-- 
 ## Comparing Code
@@ -122,7 +118,6 @@ can continue and `moreWork()` will be called first. The ability to run
 `moreWork()` without waiting for the file read to complete is a key design
 choice that allows for higher throughput.
 
-
  -->
 ## コードを比較する
 
@@ -178,7 +173,6 @@ moreWork(); // console.log の前に実行されます
 ファイルの読み込みが完了するのを待たずに `moreWork()` を実行する機能は、
 より高いスループットを可能にする重要な設計上の選択です。
 
-
 <!-- 
 ## Concurrency and Throughput
 
@@ -198,7 +192,6 @@ capacity just by choosing to use **non-blocking** methods instead of
 The event loop is different than models in many other languages where additional
 threads may be created to handle concurrent work.
 
-
  -->
 ## 並行性とスループット
 
@@ -217,7 +210,6 @@ I/O などの JavaScript 以外の操作が発生しても、
 
 イベントループは、
 並行作業を処理するために追加のスレッドが作成される可能性がある他の多くの言語のモデルとは異なります。
-
 
 <!-- 
 ## Dangers of Mixing Blocking and Non-Blocking Code
@@ -239,7 +231,6 @@ In the above example, `fs.unlinkSync()` is likely to be run before
 better way to write this that is completely **non-blocking** and guaranteed to
 execute in the correct order is:
 
-
 ```js
 const fs = require('fs');
 fs.readFile('/file.md', (readFileErr, data) => {
@@ -253,7 +244,6 @@ fs.readFile('/file.md', (readFileErr, data) => {
 
 The above places a **non-blocking** call to `fs.unlink()` within the callback of
 `fs.readFile()` which guarantees the correct order of operations.
-
 
  -->
 ## ブロッキングコードとノンブロッキングコードが混在する危険性
@@ -276,7 +266,6 @@ fs.unlinkSync('/file.md');
 これを書くためのより良い方法は、
 完全に**ノンブロッキング**で正しい順序で実行されることが保証されていることです。
 
-
 ```js
 const fs = require('fs');
 fs.readFile('/file.md', (readFileErr, data) => {
@@ -290,7 +279,6 @@ fs.readFile('/file.md', (readFileErr, data) => {
 
 上記は、`fs.readFile()`のコールバック内で `fs.unlink()` への**ノンブロッキング**呼び出しを行います。
 これにより、正しい操作順序が保証されます。
-
 
 <!-- 
 ## Additional Resources

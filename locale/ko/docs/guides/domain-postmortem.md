@@ -37,12 +37,10 @@ Here's an example of how one indirectly linked modules can affect another:
 const b = require('./b');
 const c = require('./c');
 
-
 // module b.js
 const d = require('domain').create();
 d.on('error', () => { /* silence everything */ });
 d.enter();
-
 
 // module c.js
 const dep = require('some-dep');
@@ -63,12 +61,10 @@ running.
 const b = require('./b');
 const c = require('./c');
 
-
 // 모듈 b.js
 const d = require('domain').create();
 d.on('error', () => { /* 모든 것을 무시합니다. */ });
 d.enter();
-
 
 // 모듈 c.js
 const dep = require('some-dep');
@@ -193,7 +189,6 @@ d.run(() => {
 중첩된 도메인은 항상 중첩된 상태로 남아있고 예외는 항상 도메인 스택으로 전파되기를 기대할 수 있습니다.
 아니면 이 예외가 절대 자동으로 버블링되지 않기를 기대할 수 있습니다. 불행히도 두 가지 상황이 모두
 발생하고 이는 시점의 충돌을 디버깅하기 어렵게 만들기 쉬운 혼란스러운 동작입니다.
-
 
 <!--
 ### API Gaps
@@ -772,7 +767,6 @@ DataStream.prototype.data = function data(chunk) {
 };
 ```
 
-
 <!--
 The above shows that it is difficult to have more than one asynchronous API
 attempt to use domains to propagate data. This example could possibly be fixed
@@ -838,7 +832,6 @@ mechanism such as domain to be as cheap to run as possible.
 이는 어떤 종류의 설정이나 정리를 위한 호출당 1마이크로초의 오버헤드가 추가되어 17%의 성능 저하가
 발생한다는 것을 의미합니다. 당연히 이는 벤치마크에 최적화된 시나리오이지만 도메인 같은 메커니즘은
 가능한 한 싸게 실행되어야 할 필요성을 보여준다고 생각합니다.
-
 
 <!--
 ## Looking Ahead

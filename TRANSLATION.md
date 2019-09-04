@@ -4,7 +4,6 @@ Node.js is a global platform and so this site has many translations. The transla
 languages other than English is handled by the localization working group of the language in question. If you
 would like to contribute to the translation of nodejs.org, please refer to the following process:
 
-
 ## For Individuals wanting to contribute
 
 * Contact your appropriate localization group, and discuss with them the best possible way to contribute. A list of the localization groups can be found here (please keep in mind that some groups have not yet taken action upon the project name changes, hence the outdated repository names):
@@ -43,7 +42,6 @@ would like to contribute to the translation of nodejs.org, please refer to the f
   * [`nodejs-zh-TW`](https://github.com/nodejs/nodejs-zh-TW) Taiwanese Community
   * [`nodejs-uk`](https://github.com/nodejs/nodejs-uk) Ukrainian Community
   * [`nodejs-vi`](https://github.com/nodejs/nodejs-vi) Vietnamese Community
-
 
 ## For Localization Groups
 

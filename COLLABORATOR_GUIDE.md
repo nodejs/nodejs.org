@@ -201,7 +201,6 @@ link to the markup.  It's essential to update the handlebars paths to site.json.
 {{site.locale}}/{{site.getinvolved.events.link}}
 ```
 
-
 ### Translating pages
 
 See [TRANSLATION.md](./TRANSLATION.md) for the website translation policy.

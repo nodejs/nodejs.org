@@ -46,7 +46,6 @@ layout: docs.hbs
 
 _**注意：** 在 Windows 和 Unix/Linux 实现之间存在细微的差异，但这对演示来说并不重要。最重要的部分在这里。实际上有七或八个步骤，但我们关心的是 Node.js 实际上使用以上的某些步骤。_
 
-
 ## 阶段概述
 
 * **定时器**：本阶段执行已经安排的 `setTimeout()` 和 `setInterval()` 的回调函数。
@@ -83,7 +82,6 @@ setTimeout(() => {
 
   console.log(`${delay}ms have passed since I was scheduled`);
 }, 100);
-
 
 // do someAsyncOperation which takes 95 ms to complete
 someAsyncOperation(() => {

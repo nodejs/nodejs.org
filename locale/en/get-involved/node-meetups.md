@@ -427,7 +427,6 @@ REQUIREMENTS
 - Organizer name - Matt Pardee
 - Organizer contact info -
 
-
 #### Colorado
 
 ##### Denver
@@ -587,7 +586,6 @@ REQUIREMENTS
 - Organizer name - Aaron Seth Madsen
 - Organizer contact info -
 
-
 #### Washington
 
 ##### Seattle
@@ -653,7 +651,6 @@ REQUIREMENTS
 - How to submit a talk? [Submit Talk](mailto:michael@biggles.io?subject=Node.js%20Talk%20Proposal)
 - Organizer names - Michael Antczak
 - Organizers contact info - [AntczakMichael](https://twitter.com/AntczakMichael)
-
 
 ### Ukraine
 

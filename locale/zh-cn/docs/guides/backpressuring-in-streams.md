@@ -447,7 +447,6 @@ function doUncork(stream) {
 
 在此之后请仔细阅读更多的有关 [`Stream`][] 其它 API 函数，这样有助于当你在构建 Node.js 的应用程序之时更好地理解关于流的能力。
 
-
 [`Stream`]: https://nodejs.org/api/stream.html
 [`Buffer`]: https://nodejs.org/api/buffer.html
 [`EventEmitter`]: https://nodejs.org/api/events.html

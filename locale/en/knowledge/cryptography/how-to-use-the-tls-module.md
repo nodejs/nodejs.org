@@ -51,7 +51,6 @@ In most ways, the tls module's server api is similar to that of the net module. 
       s.pipe(s);
     }).listen(8000);
 
-
 In this example, a "hello world" tls server is created, listening on port 8000. The options object includes two properties: `key` and `cert`. The contents of these properties come directly from the private key and public certificate stored on the filesystem. In this case they are binary buffers, but the tls module can also accept unicode strings.
 
 ### Generating Your Private Key And Certificate With OpenSSL:
@@ -130,8 +129,6 @@ The tls module also supplies tools for connecting to such a server:
       }
         console.log();
     });
-
-
 
     conn.on("data", function (data) {
       console.log(data.toString());

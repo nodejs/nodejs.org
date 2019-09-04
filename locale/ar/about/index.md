@@ -48,7 +48,6 @@ server.listen(port, hostname, () => {
 يجب عليك ان تدرك ان تصميم Node.js بدون خيوط (threads) لا يعني انك لا تستطيع تحقيق الاستفادة الكاملة من الانوية المتعددة في البيئة التي تعمل عليها، فيمكن توليد المعالجات الفرعية عبر واجهة برمجة التطبيقات <span dir="ltr">[`child_process.fork()`][]</span> الخاصة بنا حيث انها مصممة لتكون سهلة التعامل.
 هناك ايضا نموذج [`cluster`][] المبني على نفس الواجهة والذي يسمح لك بمشاركة المآخذ (sockets) بين العمليات لموازنة الحمل على الانوية الخاصة بك.
 
-
 [Blocking vs Non-Blocking]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
