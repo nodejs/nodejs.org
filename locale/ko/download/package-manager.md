@@ -159,7 +159,7 @@ emerge nodejs
 <!--
 ## IBM i
 
-LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](http://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs8`, `nodejs10`, `nodejs12`, etc)
+LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](https://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs8`, `nodejs10`, `nodejs12`, etc)
 
 To install Node.js 12.x from the command line, run the following as a user with \*ALLOBJ special authority:
 
@@ -171,7 +171,7 @@ Node.js can also be installed with the IBM i Access Client Solutions product. Se
 -->
 ## IBM i
 
-IBM에서 ['yum' 패키지 매니저](http://ibm.biz/ibmi-rpms)를 통해 Node.js의 LTS 버전을 사용할 수 있습니다.
+IBM에서 ['yum' 패키지 매니저](https://ibm.biz/ibmi-rpms)를 통해 Node.js의 LTS 버전을 사용할 수 있습니다.
 패키지 이름은 `nodejs` 뒤에 주 버전 숫자를 붙이면 됩니다(`nodejs8`, `nodejs10`, `nodejs12` 등).
 
 커맨드 라인에서 Node.js 12.x를 설치하려면 \*ALLOBJ 특수 권한을 가진 사용자로 다음 명령을 실행하세요.

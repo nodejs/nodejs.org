@@ -104,9 +104,9 @@ emerge nodejs
 
 ## IBM i
 
-<!-- LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](http://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs8`, `nodejs10`, `nodejs12`, etc) -->
+<!-- LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](https://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs8`, `nodejs10`, `nodejs12`, etc) -->
 
-Node.js の LTS バージョンは IBM から ['yum' パッケージマネージャ](http://ibm.biz/ibmi-rpms) で利用可能です。パッケージの名前は `nodejs` の後にメジャーバージョンの数字が付きます(例えば `nodejs8`, `nodejs10`, `nodejs12`, など)
+Node.js の LTS バージョンは IBM から ['yum' パッケージマネージャ](https://ibm.biz/ibmi-rpms) で利用可能です。パッケージの名前は `nodejs` の後にメジャーバージョンの数字が付きます(例えば `nodejs8`, `nodejs10`, `nodejs12`, など)
 
 <!-- To install Node.js 12.x from the command line, run the following as a user with \*ALLOBJ special authority: -->
 

@@ -80,7 +80,7 @@ emerge nodejs
 
 ## IBM i
 
-IBM 提供了 Node.js 的長期支援版（LTS）並可透過 [yum 套件管理器](http://ibm.biz/ibmi-rpms)取得。套件命名規則為 `nodejs` 附加一個主版本號（如：`nodejs8` 、 `nodejs10` 或 `nodejs12` 等)。
+IBM 提供了 Node.js 的長期支援版（LTS）並可透過 [yum 套件管理器](https://ibm.biz/ibmi-rpms)取得。套件命名規則為 `nodejs` 附加一個主版本號（如：`nodejs8` 、 `nodejs10` 或 `nodejs12` 等)。
 
 若想於命令列安裝 Node.js 12.x，請以擁有 \*ALLOBJ 特殊權限的帳戶執行下列指令：
 
