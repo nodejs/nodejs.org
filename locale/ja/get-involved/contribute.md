@@ -3,7 +3,7 @@ title: 貢献する
 layout: contribute.hbs
 ---
 
-<!-- 
+<!--
 # Contributing
 
 Thank you for your interest in contributing to Node.js! There are multiple ways and places you can contribute, and we're here to help facilitate that.
@@ -13,7 +13,7 @@ Thank you for your interest in contributing to Node.js! There are multiple ways 
 
 Node.js への貢献に関心をお寄せいただきありがとうございます。貢献できる方法や場所は複数ありますが、それを促進するためにここにいます。
 
-<!-- 
+<!--
 ## Asking for General Help
 
 Because the level of activity in the `nodejs/node` repository is so high, questions or requests for general help using Node.js should be directed at the [Node.js help repository](https://github.com/nodejs/help/issues).
@@ -23,7 +23,7 @@ Because the level of activity in the `nodejs/node` repository is so high, questi
 
 `nodejs/node` リポジトリ内のアクティビティーのレベルは非常に高いため、Node.js を使用した一般的なヘルプについての質問または要求は、[Node.js ヘルプリポジトリ](https://github.com/nodejs/help/issues)に向けられるべきです。
 
-<!-- 
+<!--
 ## Reporting an Issue
 
 If you have found what you believe to be an issue with Node.js please do not hesitate to file an issue on the GitHub project. When filing your issue please make sure you can express the issue with a reproducible test case, and that test case should not include any external dependencies. That is to say, the test case can be executed without anything more than Node.js itself.
@@ -55,7 +55,7 @@ Node.js プロジェクトは現在、いくつかの GitHub リポジトリに�
 * Node.js 特有の問題を報告するには、[nodejs/node](https://github.com/nodejs/node) を使用してください。
 * この Web サイト特有の問題を報告するには、[nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues) を使用してください。
 
-<!-- 
+<!--
 ## Code contributions
 
 If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the [Node.js Contribution Guidelines](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#pull-requests). The review process by existing collaborators for all contributions to the project is explained there as well.
@@ -69,7 +69,7 @@ Node.js にバグを修正したり、新しい機能を追加したい場合は
 
 どのように始めるべきか疑問に思っているなら、最初の貢献に向かってあなたを導くかもしれない [Node Todo](https://www.nodetodo.org/) をチェックすることができます。
 
-<!-- 
+<!--
 ## Becoming a collaborator
 
 By becoming a collaborator, contributors can have even more impact on the project. They can help other contributors by reviewing their contributions, triage issues and take an even bigger part in shaping the project's future. Individuals identified by the TSC as making significant and valuable contributions across any Node.js repository may be made Collaborators and given commit access to the project. Activities taken into consideration include (but are not limited to) the quality of:

@@ -9,7 +9,7 @@ layout: docs.hbs
 
 This guide explains how to migrate to safe `Buffer` constructor methods. The migration fixes the following deprecation warning:
 
-<div class="highlight-box"> 
+<div class="highlight-box">
 The Buffer() and new Buffer() constructors are not recommended for use due to security and usability concerns. Please use the new Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() construction methods instead.
 </div>
 

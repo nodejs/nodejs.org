@@ -3,7 +3,7 @@ title: 参加する
 layout: contribute.hbs
 ---
 
-<!-- 
+<!--
 # Get Involved
 
 ## Community Discussion
@@ -29,7 +29,7 @@ layout: contribute.hbs
 - [Node.js Collection](https://medium.com/the-node-js-collection) は、Medium 上のコミュニティキュレーションコンテンツのコレクションです。
 - [Community Committee](https://github.com/nodejs/community-committee) は、Node.js Foundation のトップレベルの委員会で、コミュニティに向けた取り組みに焦点を当てています。
 
-<!-- 
+<!--
 ## Learning
 
 - [Official API reference documentation](/api/) details the Node.js API.
@@ -47,7 +47,7 @@ layout: contribute.hbs
 - [The DEV Community Node.js tag](https://dev.to/t/node) は、Node.js プロジェクト、記事、チュートリアルを共有したり、ディスカッションを開始したり、Node.js 関連のトピックについてのフィードバックを求めたりする場所です。スキルレベルに関係なくすべての開発者が参加できます。
 - [Nodeiflux](https://discordapp.com/invite/vUsrbjd) は、Discord でお互いをサポートする Node.js バックエンド開発者のフレンドリーなコミュニティです。
 
-<!-- 
+<!--
 ## International community sites and projects
 
 - [Chinese community](https://cnodejs.org/)

@@ -20,7 +20,7 @@ The individual board members are able to provide feedback on how proposed board
 items might impact the community and can provide suggestions on how the Node.js
 Foundation can better support the community. With this knowledge and feedback,
 the board is able to contribute the resources the community needs to stay
-healthy and continue to grow.”  
+healthy and continue to grow.”
 
 >> *Todd Moore, Node.js Foundation Director*
 
@@ -61,7 +61,7 @@ Read more about why our candidates are running below.
 
 ### When is the election? Nominations were solicited until January 15th.
 - Ballot will be distributed on January 20th.
-- The election will close **January 30th at 17:00 UTC**.  
+- The election will close **January 30th at 17:00 UTC**.
 
 ### How do I vote?
 You must be an Individual Member of the Node.js Foundation to cast a vote. If

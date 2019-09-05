@@ -17,8 +17,8 @@ columns:
 schedule-footer: Dates are subject to change.
 ---
 
-<!-- 
-# Releases 
+<!--
+# Releases
 -->
 # Lançamentos
 

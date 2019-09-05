@@ -12,7 +12,7 @@ Ler o conteúdo de um arquivo na memória é uma tarefa muito comum na programa�
     fs = require('fs');
     fs.readFile(file, [encoding], [callback]);
 
-    // file = (string) caminho do arquivo a ser lido 
+    // file = (string) caminho do arquivo a ser lido
 
 `encoding` é um parâmetro opcional que especifica o tipo de codificação para ler o arquivo. As codificações possíveis são 'ascii', 'utf8' e 'base64'. Se nenhuma codificação for fornecida, o valor padrão é `null`.
 

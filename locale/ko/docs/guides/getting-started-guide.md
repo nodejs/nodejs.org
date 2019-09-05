@@ -10,7 +10,7 @@ Create a file named "app.js", and paste the following code: -->
 
 # Node.js를 설치한 후 어떻게 시작할 수 있을까요?
 
-Node를 설치했으면 우리의 첫 번째 웹 사이트를 구축해 봅시다. 
+Node를 설치했으면 우리의 첫 번째 웹 사이트를 구축해 봅시다.
 "app.js"라는 이름의 파일을 만든 후 아래의 코드를 붙여넣으세요.
 
 ```javascript

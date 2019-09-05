@@ -3,7 +3,7 @@ title: Node.js のタイマー
 layout: docs.hbs
 ---
 
-<!-- 
+<!--
 # Timers in Node.js and beyond
 
 The Timers module in Node.js contains functions that execute code after a set
@@ -23,7 +23,7 @@ Node.js のタイマーモジュールには、
 タイマー関数がいつ実行されるかを完全に理解するためには、
 Node.js の[イベントループ](/ja/docs/guides/event-loop-timers-and-nexttick/)を読むことをお勧めします。
 
-<!-- 
+<!--
 ## Controlling the Time Continuum with Node.js
 
 The Node.js API provides several ways of scheduling code to execute at
@@ -43,7 +43,7 @@ Node.js は実際にはこれらのメソッドの独自の実装を提供しま
 タイマーはシステムと非常に密接に統合されており、
 API がブラウザ API を反映しているという事実があるにもかかわらず、実装にはいくつかの違いがあります。
 
-<!-- 
+<!--
 ### "When I say so" Execution ~ *`setTimeout()`*
 
 `setTimeout()` can be used to schedule code execution after a designated
@@ -115,7 +115,7 @@ setTimeout(myFunc, 1500, 'funky');
 この返されたオブジェクトを使用して、タイムアウトをキャンセル (下記の `clearTimeout()` を参照) し、
 実行動作を変更 (下記の`unref()` を参照) することができます。
 
-<!-- 
+<!--
 ### "Right after this" Execution ~ *`setImmediate()`*
 
 `setImmediate()` will execute code at the end of the current event loop cycle.
@@ -202,7 +202,7 @@ executing immediate: so immediate
 通常の関数のように実行を停止することはできません。
 `process.nextTick()` の操作をよく理解するために[このガイド](/ja/docs/guides/event-loop-timers-and-nexttick/#process-nexttick)を参照してください。
 
-<!-- 
+<!--
 ### "Infinite Loop" Execution ~ *`setInterval()`*
 
 If there is a block of code that should execute multiple times, `setInterval()`
@@ -252,7 +252,7 @@ setInterval(intervalFunc, 1500);
 `setTimeout()` と同様に、
 `setInterval()` もまた設定された間隔を参照したり修正したりするのに使用できる `Timeout` オブジェクトを返します。
 
-<!-- 
+<!--
 ## Clearing the Future
 
 What can be done if a `Timeout` or `Immediate` object needs to be cancelled?
@@ -310,7 +310,7 @@ clearImmediate(immediateObj);
 clearInterval(intervalObj);
 ```
 
-<!-- 
+<!--
 ## Leaving Timeouts Behind
 
 Remember that `Timeout` objects are returned by `setTimeout` and `setInterval`.
@@ -376,7 +376,7 @@ setImmediate(() => {
   timerObj.ref();
 });
 ```
-<!-- 
+<!--
 ## Further Down the Event Loop
 
 There's much more to the Event Loop and Timers than this guide
