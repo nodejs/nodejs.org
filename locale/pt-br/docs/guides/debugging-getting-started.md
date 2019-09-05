@@ -112,7 +112,7 @@ info on these follows:
 Muitas ferramentas comerciais e open source podem se conectar ao inspetor do Node. Aqui
 estão as informações básicas sobre eles:
 
-#### [node-inspect](https://github.com/nodejs/node-inspect)
+### [node-inspect](https://github.com/nodejs/node-inspect)
 
 <!-- * CLI Debugger supported by the Node.js Foundation which uses the [Inspector Protocol][].
 * A version is bundled with Node and can be used with `node inspect myscript.js`.
@@ -256,7 +256,7 @@ você quer ser capaz de debugar. Nesta máquina, você deve iniciar o processo d
 somente o `localhost` (o padrão)
 
 ```bash
-$ node --inspect server.js
+node --inspect server.js
 ```
 
 <!-- Now, on your local machine from where you want to initiate a debug client
@@ -265,7 +265,7 @@ Agora, na sua máquina local, de onde você quer iniciar uma conexão de debug,
 crie um tunel SSH:
 
 ```bash
-$ ssh -L 9221:localhost:9229 user@remoto.exemplo.com
+ssh -L 9221:localhost:9229 user@remoto.exemplo.com
 ```
 
 <!-- This starts a ssh tunnel session where a connection to port 9221 on your local
@@ -299,7 +299,7 @@ que já foi descontinuado, em uma porta TCP que, por padrão, é a `5858`. Qualq
 que conversa com esse protocolo pode conectar a ele e debugar um processo sendo executado; abaixo temos
 alguns dos mais populares.
 
-#### [Debugger nativo](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
+### [Debugger nativo](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
 
 <!-- Start `node debug script_name.js` to start your script under Node's builtin
 command-line debugger. Your script starts in another Node process started with
@@ -310,7 +310,7 @@ de linha de comando. Seu script vai ser iniciado em um outro processo do node
 que vai ser rodado com a flag `--debug-brk`, e o processo inicial do Node vai executar
 o script `_debugger.js` e conectar à sua aplicação.
 
-#### [node-inspector](https://github.com/node-inspector/node-inspector)
+### [node-inspector](https://github.com/node-inspector/node-inspector)
 
 <!-- Debug your Node.js app with Chrome DevTools by using an intermediary process
 which translates the Inspector Protocol used in Chromium to the V8 Debugger
