@@ -38,7 +38,6 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 * Calling `dns.setServers()` while a DNS query is in progress can cause the process to crash on a failed assertion. [#894](https://github.com/nodejs/node/issues/894)
 * `url.resolve` may transfer the auth portion of the url when resolving between two full hosts, see [#1435](https://github.com/nodejs/node/issues/1435).
 
-
 ### Node.js v0.12 LTS plan has been shortened
 
 * Node.js v0.12 LTS plan has been shortened to end at the end of 2016, because OpenSSL 1.0.1 LTS is scheduled until the end of 2016. The detail is [here](https://github.com/nodejs/LTS/pull/36).
@@ -59,6 +58,5 @@ If you have spotted or written something about Node.js and io.js, do come over t
 * [Node.js Italian Conference](http://nodejsconf.it/) tickets are on sale, October 10th at Desenzano - Brescia, Italy
 * [JSConf CO](http://www.jsconf.co/), October 16th - 17th at Ruta N, Medellin
 * [Nodevember](http://nodevember.org/?utm_source=io.js+and+Node.js+News&utm_medium=article), November 14th - 15th at Nashville, Tennessee, US.
-
 
 Have an event about Node.js and io.js coming up? You can put your events here through the [Evangelism team repo](https://github.com/nodejs/evangelism) and announce it in the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.

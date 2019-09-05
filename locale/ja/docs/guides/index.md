@@ -27,7 +27,6 @@ layout: docs.hbs
 - [Node.js Web アプリケーションを Docker 化する](nodejs-docker-webapp/)
 - [安全な Buffer コンストラクタへの移行](buffer-constructor-deprecation/)
 
-
 <!-- 
 ## Node.js core concepts
 
@@ -43,7 +42,6 @@ layout: docs.hbs
 - [Node.js イベントループ、タイマー、そして `process.nextTick()`](event-loop-timers-and-nexttick/)
 - [イベントループ (またはワーカープール) をブロックしない](dont-block-the-event-loop/)
 - [Node.js のタイマー](timers-in-node/)
-
 
 <!-- 
 ## Module-related guides

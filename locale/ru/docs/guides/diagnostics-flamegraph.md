@@ -114,7 +114,6 @@ node`_ZN2v88internal11interpreter17BytecodeGenerator15VisitStatementsEPNS0_8Zone
 ```
 it means the Linux perf you're using was not compiled with demangle support, see https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1396654 for example
 
-
 ## Examples
 
 Practice capturing flame graphs yourself with [a flame graph exercise](https://github.com/naugtur/node-example-flamegraph)!

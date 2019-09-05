@@ -36,7 +36,6 @@ The first idiom is giving a default value for the last parameter. This is done b
     example("");
     betterExample("");
 
-
 If the optional value is in the middle it can cause some undesired effects, since all the parameters are shifted over. The optional parameter is not the `undefined` value in this case - the last parameter is the `undefined` one. So you have to check if the last parameter is `undefined` and then manually fix all the other parameters before continuing in the code. This example shows you how to do that:
 
     example = function (param1, optParam, callback) {

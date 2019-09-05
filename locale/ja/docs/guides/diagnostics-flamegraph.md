@@ -159,7 +159,6 @@ sed -i \
 
 フレームグラフを参照していて、何か時間がかかるキー関数が欠けているかのように不思議に思った場合は、フィルタなしでフレームグラフを生成してみてください。Node.js 自体に問題が発生することはまれです。
 
-
 <!-- 
 ### Node.js's profiling options
 
@@ -241,7 +240,6 @@ node`_ZN2v88internal11interpreter17BytecodeGenerator15VisitStatementsEPNS0_8Zone
 ```
 it means the Linux perf you're using was not compiled with demangle support, see https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1396654 for example
 
-
  -->
 ### フレームグラフのラベルが壊れている
 
@@ -250,7 +248,6 @@ it means the Linux perf you're using was not compiled with demangle support, see
 node`_ZN2v88internal11interpreter17BytecodeGenerator15VisitStatementsEPNS0_8ZoneListIPNS0_9StatementEEE
 ```
 それは使っている Linux の perf が demangle サポート付きでコンパイルされていないことを意味します。例は https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1396654 を参照してください。
-
 
 <!-- 
 ## Examples

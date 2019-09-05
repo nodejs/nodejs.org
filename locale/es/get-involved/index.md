@@ -14,13 +14,11 @@ layout: contribute.hbs
 - [Node Weekly](https://nodeweekly.com/) es una lista de correo que recopila los últimos eventos y noticias alrededor de la comunidad de Node.js.
 - La [Community Committee](https://github.com/nodejs/community-committee) es un comité de alto nivel de la Fundación Node.js centrado en los esfuerzos de la comunidad.
 
-
 ## Aprendizaje
 
 - La [Documentación oficial de la API](/api/) detalla la API de Node.
 - [NodeSchool.io](https://nodeschool.io/) le enseñará conceptos de Node.js de forma interactiva mediante juegos utilizando la línea de comandos.
 - La [etiqueta de Node.js en Stack Overflow](https://stackoverflow.com/questions/tagged/node.js) colecciona nueva información cada día.
-
 
 ## Sitios de la comunidad internacional y proyectos
 

@@ -65,4 +65,3 @@ Bloqueio nem sempre é uma coisa ruim.  Checar a existência de um arquivo de co
 
         > path.existsSync('/etc')
         true
-

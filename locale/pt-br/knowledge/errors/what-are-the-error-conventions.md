@@ -59,4 +59,3 @@ A função de `callback` mostra o motivo: permite que um usuário saiba facilmen
 
 <!-- So to wrap it all up, when using callbacks, if an error comes up, then pass it as the first argument.  Otherwise, pass `null` first, and then your return arguments.  On the receiving end, inside the callback function, check if the first parameter is non-null;  if it is, handle it as an error. -->
 Então, para finalizar tudo, quando usar callbacks, se um erro aparecer, passe-o como primeiro argumento.  Caso contrário, passe `null` primeiro e depois seus argumentos de retorno.  Na extremidade receptora, dentro da função de retorno de chamada, verifique se o primeiro parâmetro não é nulo;  se for, manipule como um erro.
-

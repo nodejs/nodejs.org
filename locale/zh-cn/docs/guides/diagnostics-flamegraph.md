@@ -111,7 +111,6 @@ node`_ZN2v88internal11interpreter17BytecodeGenerator15VisitStatementsEPNS0_8Zone
 ```
 这意味着你正在运行的 Linux 的 perf 没有用 demangle 支持方法编译，请以 https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1396654 作为示例参考。
 
-
 ## 示例部分
 
 请通过[火焰图练习](https://github.com/naugtur/node-example-flamegraph)来练习捕获你的火焰图吧！

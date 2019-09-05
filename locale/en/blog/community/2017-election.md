@@ -79,5 +79,4 @@ required to have a GitHub account to register.
 through the two above-mentioned elected Individual Membership Directors.
 - 20% off regular price registration to Node Interactive 2017
 
-
 See you at the (digital)poll?

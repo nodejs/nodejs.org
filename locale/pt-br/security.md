@@ -44,7 +44,6 @@ O código é auditado para encontrar possíveis problemas similares em potencial
 
 - Este processo pode levar algum tempo, especialmente quando é necessária uma coordenação com _maintainers_ de outros projetos. Todo esforço será feito para garantir que o bug seja corrigida a tempo. Entretanto, é importante que acompanhe o processo de release acima para garantir que o anúncio seja feito de forma consistente.
 
-
 ## Recebendo Atualizações de segurança
 
 Notificaçōes de segurança serão distribuídas através dos seguintes métodos.

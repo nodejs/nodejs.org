@@ -46,4 +46,3 @@ Finally, the optional argument `colorize` is a boolean that adds ANSI escape cod
 
      var util = require('util');
      console.log(util.inspect({a:1, b:"b"}, false,2,true));
-

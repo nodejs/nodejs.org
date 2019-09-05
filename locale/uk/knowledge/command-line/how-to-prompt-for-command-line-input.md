@@ -32,7 +32,6 @@ Here's a simple example.  Try the following in a new file:
         console.log('Now that process.stdin is paused, there is nothing more to do.');
         process.exit();
       }
-      
 
 If all of this sounds complicated, or if you want a higher-level interface to this sort of thing, don't worry - as usual, the Node.js community has come to the rescue.  One particularly friendly module to use for this is Prompt, maintained by Nodejitsu.  It's available on `npm`:
 

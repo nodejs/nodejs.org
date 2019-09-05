@@ -200,7 +200,6 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-
 ## Solus
 
 Solus предоставляет node.js в своем основном репозитории.
@@ -208,7 +207,6 @@ Solus предоставляет node.js в своем основном репо
 ```bash
 sudo eopkg install nodejs
 ```
-
 
 ## Void Linux
 

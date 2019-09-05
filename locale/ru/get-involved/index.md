@@ -15,7 +15,6 @@ layout: contribute.hbs
 - [Node.js](https://medium.com/the-node-js-collection) контент, создаваемый сообществом Medium.
 - [Community Committee](https://github.com/nodejs/community-committee) является комитетом высшего уровня в Фонде Node.js, ориентированным на развитие сообщества.
 
-
 ## Обучение
 
 - [Официальная справочная документация по API](/api/) описывает API Node.js

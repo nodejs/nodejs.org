@@ -65,4 +65,3 @@ Blocking isn't always a bad thing.  Checking the existence of a vital configurat
 
         > path.existsSync('/etc')
         true
-

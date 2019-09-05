@@ -52,4 +52,3 @@ Note que você pode omitir o bloco `catch` ou `finally`, mas um deles deve exist
 
 <!-- In the core node.js libraries, the only place that one really *needs* to use a try-catch is around `JSON.parse()`. All of the other methods use either the standard Error object through the first parameter of the callback or emit an `error` event. Because of this, it is generally considered [standard](/what-are-the-error-conventions) to return errors through the callback rather than to use the `throw` statement. -->
 No core da biblioteca node.js, o único lugar que realmente *precisamos* usar um bloco try-catch é ao redor do método `JSON.parse()`. Todos os outros métodos usam o objeto Error padrão através do primeiro parâmetro do callback ou emitem um evento de `error`. Por causa disso, geralmente é considerado [padrão](/what-are-the-error-conventions) retornar erros por meio de callback, em vez de usar a instrução `throw`. 
-

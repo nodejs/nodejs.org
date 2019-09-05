@@ -23,7 +23,6 @@ layout: contribute.hbs
 - L'[etiqueta de Node.js en la DEV Community](https://dev.to/t/node) és un lloc on compartir projectes de Node.js, articles i tutorials, així com iniciar debats i demanar realimentació sobre temes relacionats amb Node.js. Els desenvolupadors de tots els nivells d'experiència són benvinguts a participar.
 - [Nodeiflux](https://discordapp.com/invite/vUsrbjd) és una comunitat amigable de desenvolupadors de backend amb Node.js que es recolzen mútuament a Discord.
 
-
 ## Llocs de la comunitat internacional i projectes
 
 - [Comunitat Xinesa de Node.js](https://cnodejs.org/)

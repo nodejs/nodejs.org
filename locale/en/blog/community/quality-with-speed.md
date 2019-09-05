@@ -183,7 +183,6 @@ on implementation.  The result being that the merits of the concept can be
 discussed at the appropriate level of abstraction without having to
 review all of the technical details.
 
-
 # Automation and Testing
 
 Automation and Testing are key strategies that go hand in hand in allowing
@@ -214,7 +213,6 @@ These levels include:
 * Stress Testing
 * Development Workflows
 * Use Case Testing
-
 
 ## Functional Tests
 
@@ -301,8 +299,6 @@ for the common use cases for Node.js.
 Our current strategy is to get some of this coverage through the
 benchmarking that we put in place, but it is another area we can work
 on once we have the other levels of testing in place.
-
-
 
 # Performance Benchmarks
 
