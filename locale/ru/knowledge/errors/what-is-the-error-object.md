@@ -33,7 +33,7 @@ Result:
 
 `error.stack` shows you where an error came from, as well as a list of the function calls that preceded it - for your convenience, `error.stack` always prints `error.message` as the first line of its output, making `error.stack` a convenient single property to log during debugging.
 
-If you want to add more information to the Error object, you can always add properities, just as with any other JavaScript object: 
+If you want to add more information to the Error object, you can always add properities, just as with any other JavaScript object:
 
     var error = new Error("The error message");
     error.http_code = 404;

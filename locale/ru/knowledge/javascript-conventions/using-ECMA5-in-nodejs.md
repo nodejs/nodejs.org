@@ -41,11 +41,11 @@ Note that V8 implements all of ECMA 3rd edition and parts of the new stuff in th
 
 ## Date.prototype
 
-* `toISOString()` - 
+* `toISOString()` -
 
 ## Object
 
-* `Object.create(proto, props)` - Creates a new object whose prototype is the passed in parent object and whose properties are those specified by props. 
+* `Object.create(proto, props)` - Creates a new object whose prototype is the passed in parent object and whose properties are those specified by props.
 * `Object.keys(obj)` - Returns a list of the ownProperties of an object that are enumerable.
 * `Object.defineProperty(obj, prop, desc)` - Defines a property on an object with the given descriptor
 * `Object.defineProperties(obj, props)` - Adds own properties and/or updates the attributes of existing own properties of an object

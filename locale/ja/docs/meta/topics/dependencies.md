@@ -3,7 +3,7 @@ title: 依存関係
 layout: docs.hbs
 ---
 
-<!-- 
+<!--
 # Dependencies
 
 There are several dependencies that Node.js relies on to work the way it does.
@@ -37,7 +37,7 @@ Node.js がそのように機能するために依存する依存関係がいく
   - [gyp](#gyp)
   - [gtest](#gtest)
 
-<!-- 
+<!--
 ## Libraries
 
 ### V8
@@ -57,7 +57,7 @@ V8 は Chrome で使用するために Google によってメンテナンスさ�
 
 - [ドキュメント](https://v8docs.nodesource.com/)
 
-<!-- 
+<!--
 ### libuv
 
 Another important dependency is libuv, a C library that is used to abstract
@@ -80,7 +80,7 @@ asynchronously at the operating system level.
 
 - [ドキュメント](http://docs.libuv.org/)
 
-<!-- 
+<!--
 ### http-parser
 
 HTTP parsing is handled by a lightweight C library called http-parser. It is
@@ -98,7 +98,7 @@ HTTP 解析は、http-parser という軽量の C ライブラリによって処
 
 - [ドキュメント](https://github.com/joyent/http-parser/)
 
-<!-- 
+<!--
 ### c-ares
 
 For some asynchronous DNS requests, Node.js uses a C library called c-ares.
@@ -122,7 +122,7 @@ mDNS のようなものはサポートしていないためです。
 
 - [ドキュメント](https://c-ares.haxx.se/docs.html)
 
-<!-- 
+<!--
 ### OpenSSL
 
 OpenSSL is used extensively in both the `tls` and `crypto` modules. It provides
@@ -140,7 +140,7 @@ OpenSSL は、`tls` モジュールと`crypto` モジュールの両方で広く
 
 - [ドキュメント](https://www.openssl.org/docs/)
 
-<!-- 
+<!--
 ### zlib
 
 For fast compression and decompression, Node.js relies on the industry-standard
@@ -158,7 +158,7 @@ Node.js は zlib を使って同期、非同期、ストリーミングの圧縮
 
 - [ドキュメント](https://www.zlib.net/manual.html)
 
-<!-- 
+<!--
 ## Tools
 
 ### npm
@@ -182,7 +182,7 @@ Node.js アプリケーションを素早く簡単に構築することができ
 
 - [ドキュメント](https://docs.npmjs.com/)
 
-<!-- 
+<!--
 ### gyp
 
 The build system is handled by gyp, a python-based project generator copied
@@ -196,13 +196,13 @@ dependencies — are written in languages that require compilation.
 ### gyp
 
 ビルドシステムは、V8 からコピーされた python ベースのプロジェクトジェネレータである gyp によって処理されます。
-それは多くのプラットフォームにわたるビルドシステムで使用するためのプロジェクトファイルを生成することができます。 
+それは多くのプラットフォームにわたるビルドシステムで使用するためのプロジェクトファイルを生成することができます。
 Node.js の大部分 (およびその依存関係) はコンパイルが必要な言語で書かれているため、
 Node.js にはビルドシステムが必要です。
 
 - [ドキュメント](https://gyp.gsrc.io/docs/UserDocumentation.md)
 
-<!-- 
+<!--
 ### gtest
 
 Native code can be tested using gtest, which is taken from Chromium. It allows

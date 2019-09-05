@@ -54,7 +54,7 @@ pacman -S nodejs npm
 
 [官方 Node.js 二進制發行版](https://github.com/nodesource/distributions/blob/master/README.md) 透過 NodeSource 提供.
 
-## FreeBSD 
+## FreeBSD
 
 近期的版本已可透過 [www/node](https://www.freshports.org/www/node) port 取得 Node.js。
 
@@ -212,7 +212,6 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-
 ## Solus
 
 Solus 在其主要軟體庫中提供了 Node.js。
@@ -220,7 +219,6 @@ Solus 在其主要軟體庫中提供了 Node.js。
 ```bash
 sudo eopkg install nodejs
 ```
-
 
 ## Void Linux
 

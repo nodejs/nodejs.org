@@ -53,8 +53,6 @@ On Friday, March 6th, [@rvagg](https://github.com/rvagg) released io.js [**v1.5.
 
 * [@eranhammer](https://twitter.com/eranhammer) wrote a blog post called [The Node Version Dilemma](http://hueniverse.com/2015/03/02/the-node-version-dilemma/) which discusses the various node.js / io.js versions and proposes which ones to use and when to use them.
 
-
-
 ## io.js Support Added
 
 * **[scrypt](https://npmjs.com/scrypt)** now supports io.js. Learn more from this [GitHub issue](https://github.com/barrysteyn/node-scrypt/issues/39)

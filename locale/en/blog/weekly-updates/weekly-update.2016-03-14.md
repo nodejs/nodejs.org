@@ -25,7 +25,7 @@ See https://nodejs.org/en/blog/announcements/appdynamics-newrelic-opbeat-sphinx/
 
 ### Initial benchmark data
 
-Initial benchmark data is now available here: https://benchmarking.nodejs.org/. 
+Initial benchmark data is now available here: https://benchmarking.nodejs.org/.
 
 For more information on the process of how these are generated check out: https://github.com/nodejs/benchmarking/blob/master/benchmarks/README.md
 

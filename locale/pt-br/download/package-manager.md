@@ -199,7 +199,6 @@ Ou compile manualmente pelo pkgsrc:
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-
 ## Solus
 
 O Solus fornece o Node.js em seu repositório principal.
@@ -207,7 +206,6 @@ O Solus fornece o Node.js em seu repositório principal.
 ```bash
 sudo eopkg install nodejs
 ```
-
 
 ## Void Linux
 

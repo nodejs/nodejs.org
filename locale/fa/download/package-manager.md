@@ -47,7 +47,6 @@ Node.js and npm packages are available in the Community Repository.
 pacman -S nodejs npm
 ```
 
-
 ## Debian and Ubuntu based Linux distributions
 
 Also including: **Linux Mint**, **Linux Mint Debian Edition (LMDE)**, **elementaryOS**, **bash on Windows** and others.
@@ -253,7 +252,6 @@ Node.js is available in the portage tree.
 emerge nodejs
 ```
 
-
 ## NetBSD
 
 Node.js is available in the pkgsrc tree:
@@ -380,7 +378,6 @@ Or build manually from pkgsrc:
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-
 ## Void Linux
 
 Void Linux ships node.js stable in the main repository.
@@ -396,7 +393,6 @@ Solus provides node.js in its main repository.
 ```bash
 sudo eopkg install nodejs
 ```
-
 
 ## Windows
 

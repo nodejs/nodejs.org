@@ -14,14 +14,12 @@ layout: docs.hbs
 - [Node.js 웹 앱의 도커라이징](nodejs-docker-webapp/)
 - [Migrating to safe Buffer constructors](buffer-constructor-deprecation/)
 
-
 ## Node.js core concepts
 
 - [블록킹과 논블록킹 살펴보기](blocking-vs-non-blocking/)
 - [Node.js 이벤트 루프, 타이머, `process.nextTick()`](event-loop-timers-and-nexttick/)
 - [Don't Block the Event Loop (or the Worker Pool)](dont-block-the-event-loop/)
 - [Node.js의 Timers](timers-in-node/)
-
 
 ## Module related guides
 

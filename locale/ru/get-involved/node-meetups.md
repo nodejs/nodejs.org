@@ -209,7 +209,7 @@ layout: contribute.hbs
 - Частота встреч ― every two months
 - Как стать докладчиком? ― Contact organizers in the Встреча page.
 - Организаторы ― [Ioannis Nikolaou](https://www.linkedin.com/in/ioannis-nikolaou/) Co-organizers ― Stratoula Kalafateli, [Kostas Siabanis](https://github.com/ksiabani), Megaklis Vasilakis
-- Контакты организаторов ― 
+- Контакты организаторов ―
 
 ### Hungary
 
@@ -259,13 +259,13 @@ layout: contribute.hbs
 - Частота встреч ― monthly
 - Как стать докладчиком? ― Contact organizers in the Встреча page.
 - Организаторы ― Sean Walsh. Co-organizer: Leanne Vaughey
-- Контакты организаторов ― 
+- Контакты организаторов ―
 
 - [Встреча](https://www.Встреча.com/Nodeschool-Dublin-Встреча/)
 - Частота встреч ― monthly
 - Как стать докладчиком? ― Contact organizers in the Встреча page.
 - Организаторы ― Anton Whalley
-- Контакты организаторов ― 
+- Контакты организаторов ―
 
 ### Israel
 
@@ -336,7 +336,7 @@ layout: contribute.hbs
 - Частота встреч ― monthly
 - Как стать докладчиком? ― Contact organizers in the Встреча page.
 - Организаторы ― Arif Çakıroğlu
-- Контакты организаторов ― 
+- Контакты организаторов ―
 
 ### United States
 
@@ -366,22 +366,21 @@ layout: contribute.hbs
 - Частота встреч ― monthly
 - Как стать докладчиком? ― Contact organizers in the Встреча page.
 - Организаторы ― Farsheed Atef
-- Контакты организаторов ― 
+- Контакты организаторов ―
 
 ##### San Francisco
 
 - [Встреча](https://www.Встреча.com/sfnode/)
 - Частота встреч ― monthly
-- Как стать докладчиком? ― 
+- Как стать докладчиком? ―
 - Организаторы ― Dan Shaw
-- Контакты организаторов ― 
+- Контакты организаторов ―
 
 - [Встреча](https://www.Встреча.com/Node-js-Serverside-Javascripters-Club-SF/)
 - Частота встреч ― monthly
-- Как стать докладчиком? ― 
+- Как стать докладчиком? ―
 - Организаторы ― Matt Pardee
 - Контакты организаторов -
-
 
 #### Colorado
 
@@ -404,9 +403,9 @@ layout: contribute.hbs
 - Организаторы ― David Fekke
 - Контакты организаторов ― David Fekke at gmail dot com
 
-#### Georgia 
+#### Georgia
 
-##### Atlanta 
+##### Atlanta
 
 - [Встреча](https://www.Встреча.com/Atlanta-Nodejs-Developers/)
 - Частота встреч ― monthly
@@ -432,11 +431,11 @@ layout: contribute.hbs
 - Частота встреч ― monthly
 - Как стать докладчиком? ― Contact organizers in the Встреча page.
 - Организаторы ― Mike Seidle
-- Контакты организаторов ― 
+- Контакты организаторов ―
 
 #### Massachusetts
 
-##### Boston 
+##### Boston
 
 - [Встреча](https://www.Встреча.com/Boston-Node/)
 - Частота встреч ― ~monthly
@@ -463,15 +462,15 @@ layout: contribute.hbs
 - Организаторы ― Mike Frey
 - Контакты организаторов -
 
-#### New York 
+#### New York
 
-##### New York 
+##### New York
 
 - [Встреча](https://www.Встреча.com/nodejs/)
 - Частота встреч ― monthly
-- Как стать докладчиком? ― 
+- Как стать докладчиком? ―
 - Организаторы ― Patrick Scott Co-organizer: Matt Walters.
-- Контакты организаторов ― 
+- Контакты организаторов ―
 
 #### North Carolina
 
@@ -501,7 +500,7 @@ layout: contribute.hbs
 - Частота встреч ― monthly
 - Как стать докладчиком? ― Contact organizers in the Встреча page: https://www.Встреча.com/nodejs-philly/members/14283814/
 - Организаторы ― Leomar Durán
-- Контакты организаторов ― 
+- Контакты организаторов ―
 
 #### Texas
 
@@ -537,7 +536,6 @@ layout: contribute.hbs
 - Организаторы ― Aaron Seth Madsen
 - Контакты организаторов -
 
-
 #### Washington
 
 ##### Seattle
@@ -569,7 +567,7 @@ layout: contribute.hbs
 - [Встреча](https://www.Встреча.com/london-nodejs/)
 - [GitHub/lnug](https://github.com/lnug/)
 - Частота встреч ― monthly
-- Как стать докладчиком? ― Visit our [speakers repos](https://github.com/lnug/speakers), read the guidelines, and [submit a talk proposal as a new issue](https://github.com/lnug/speakers/issues). 
+- Как стать докладчиком? ― Visit our [speakers repos](https://github.com/lnug/speakers), read the guidelines, and [submit a talk proposal as a new issue](https://github.com/lnug/speakers/issues).
 - Организаторы ― Adam Davis
 - Контакты организаторов ― contact@lnug.org, [@lnugOrg](https://twitter.com/lnugorg)
 
@@ -578,15 +576,15 @@ layout: contribute.hbs
 - Частота встреч ― monthly
 - Как стать докладчиком?
 - Организаторы ― Daryn Holmes
-- Контакты организаторов ― 
+- Контакты организаторов ―
 
 #### Cambridge
 
 - [Встреча](https://www.Встреча.com/JavaScript-Cambridge/)
 - Частота встреч ― monthly
-- Как стать докладчиком? ― 
+- Как стать докладчиком? ―
 - Организаторы ― Joe Parry, co-organizer Rob Moran
-- Контакты организаторов ― 
+- Контакты организаторов ―
 
 #### Oxford
 
@@ -595,7 +593,6 @@ layout: contribute.hbs
 - Как стать докладчиком? ― [Submit Form](https://docs.google.com/forms/d/e/1FAIpQLSflx7LU44PuwlyCJj-WwlP_SlrUvxAd8uaXlY7_O65c7RLpGQ/viewform?usp=sf_link)
 - Организаторы ― Marcus Noble, Seren Davies
 - Organizers contact info ― organisers@jsoxford.com
-
 
 ### Ukraine
 

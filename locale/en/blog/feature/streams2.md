@@ -535,7 +535,6 @@ the `read()` method.
 
 Resumes the incoming `'data'` events after a `pause()`.
 
-
 ## Class: stream.Writable
 
 <!--type=class-->
@@ -591,7 +590,6 @@ This method is prefixed with an underscore because it is internal to
 the class that defines it, and should not be called directly by user
 programs.  However, you **are** expected to override this method in
 your own extension classes.
-
 
 ### writable.write(chunk, [encoding], [callback])
 
@@ -842,13 +840,11 @@ source.pipe(parser)
 // with the parsed header data.
 ```
 
-
 ## Class: stream.PassThrough
 
 This is a trivial implementation of a `Transform` stream that simply
 passes the input bytes across to the output.  Its purpose is mainly
 for examples and testing, but there are occasionally use cases where
 it can come in handy.
-
 
 [EventEmitter]: https://nodejs.org/api/events.html#events_class_eventemitter

@@ -71,7 +71,6 @@ demonstration. The most important parts are here. There are actually
 seven or eight steps, but the ones we care about — ones that Node.js
 actually uses - are those above._
 
-
 ## Phases Overview
 
 * **timers**: this phase executes callbacks scheduled by `setTimeout()`
@@ -122,7 +121,6 @@ setTimeout(() => {
 
   console.log(`${delay}ms have passed since I was scheduled`);
 }, 100);
-
 
 // do someAsyncOperation which takes 95 ms to complete
 someAsyncOperation(() => {
@@ -233,7 +231,6 @@ cycle (i.e. the main module), the order in which the two timers are
 executed is non-deterministic, as it is bound by the performance of the
 process:
 
-
 ```js
 // timeout_vs_immediate.js
 setTimeout(() => {
@@ -294,7 +291,7 @@ You may have noticed that `process.nextTick()` was not displayed in the
 diagram, even though it's a part of the asynchronous API. This is because
 `process.nextTick()` is not technically part of the event loop. Instead,
 the `nextTickQueue` will be processed after the current operation is
-completed, regardless of the current phase of the event loop. Here, 
+completed, regardless of the current phase of the event loop. Here,
 an *operation* is defined as a transition from the
 underlying C/C++ handler, and handling the JavaScript that needs to be
 executed.

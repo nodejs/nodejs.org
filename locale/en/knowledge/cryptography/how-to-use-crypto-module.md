@@ -90,7 +90,7 @@ const crypto = require('crypto'),
       .createHash("sha256")
       .update("myHashedIV")
       .digest();
-      
+
 iv.copy(resizedIV);
 
 if (argv.e && argv.key) {

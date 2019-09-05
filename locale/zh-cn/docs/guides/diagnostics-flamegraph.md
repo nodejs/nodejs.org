@@ -85,7 +85,7 @@ sed -i \
 
 ### Node.js 8.x V8 管道上的变化
 
-Node.js 8.x 及以上版本使用了 V8 引擎，采用了新的优化 JavaScript 编译管道模式。这使得一些函数的名字、引用有时候无法被 perf 捕获到（这也被成为“Turbofan”）。 
+Node.js 8.x 及以上版本使用了 V8 引擎，采用了新的优化 JavaScript 编译管道模式。这使得一些函数的名字、引用有时候无法被 perf 捕获到（这也被成为“Turbofan”）。
 
 导致的结果也就是在火焰图中你无法正确地得到一些函数名字。
 
@@ -110,7 +110,6 @@ Node.js 10.x 使用 `--interpreted-frames-native-stack` 标志解决了“Turbof
 node`_ZN2v88internal11interpreter17BytecodeGenerator15VisitStatementsEPNS0_8ZoneListIPNS0_9StatementEEE
 ```
 这意味着你正在运行的 Linux 的 perf 没有用 demangle 支持方法编译，请以 https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1396654 作为示例参考。
-
 
 ## 示例部分
 

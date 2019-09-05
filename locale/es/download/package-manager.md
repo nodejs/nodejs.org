@@ -44,7 +44,6 @@ Paquetes para Node.js y npm están disponibles en el repositorio de la comunidad
 pacman -S nodejs npm
 ```
 
-
 ## Distribuciones de Linux basadas en Debian y Ubuntu, Enterprise Linux/Fedora y Snap
 
 [Las distribuciones de binarios oficiales de Node.js](https://github.com/nodesource/distributions/blob/master/README.md) son proporcinadas por NodeSource.
@@ -81,7 +80,6 @@ pkg install node
 pkg install node-devel
 ```
 
-
 ## Gentoo
 
 Node.js está disponible en el árbol de portage.
@@ -89,7 +87,6 @@ Node.js está disponible en el árbol de portage.
 ```bash
 emerge nodejs
 ```
-
 
 ## NetBSD
 
@@ -105,7 +102,6 @@ cd /usr/pkgsrc/lang/nodejs && make install
 pkgin -y install nodejs
 ```
 
-
 ## openSUSE y SLE
 
 [Descargue Node.js mediante openSUSE one-click](http://software.opensuse.org/download.html?project=devel%3Alanguages%3Anodejs&package=nodejs).
@@ -120,7 +116,6 @@ sudo zypper ar \
   Node.js
 sudo zypper in nodejs nodejs-devel
 ```
-
 
 ## macOS
 
@@ -177,7 +172,6 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-
 ## Solus
 
 Solus provides node.js in its main repository.
@@ -186,7 +180,6 @@ Solus provides node.js in its main repository.
 sudo eopkg install nodejs
 ```
 
-
 ## Void Linux
 
 Void Linux incluye node.js estable en el repositorio principal.
@@ -194,7 +187,6 @@ Void Linux incluye node.js estable en el repositorio principal.
 ```bash
 xbps-install -Sy nodejs
 ```
-
 
 ## Windows
 

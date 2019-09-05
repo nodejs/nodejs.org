@@ -29,7 +29,6 @@ layout: contribute.hbs
 - [Node.js 컬렉션](https://medium.com/the-node-js-collection)은 커뮤니티에서 선별한 콘텐츠를 Medium에 모아놓은 곳입니다.
 - [커뮤니티 위원회](https://github.com/nodejs/community-committee)는 Node.js 재단에서 커뮤니티와 관련한 것에 집중하는 최상위 위원회입니다.
 
-
 <!--
 ## Learning
 

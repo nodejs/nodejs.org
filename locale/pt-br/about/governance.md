@@ -58,7 +58,6 @@ O projeto é governado de forma conjunta pelo _[Technical Steering Committee (TS
 responsável pelas diretrizes do projeto, e pelo _[Community Committee (CommComm)][]_
 responsável por orientar e ampliar a comunidade Node.js.
 
-
 [COLLABORATOR_GUIDE.md]: https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md
 [Community Committee (CommComm)]: https://github.com/nodejs/community-committee/blob/master/Community-Committee-Charter.md
 [Busca por Consenso]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making

@@ -9,7 +9,6 @@ layout: knowledge-post.hbs
 
 Often times, not just in the Node.js community but in software at large, people debug simply with a liberal sprinkle of standard output statements. This allows you to track down where unexpected values are being generated. However, this method can be tedious, or worse yet, not robust enough to detect the real problem.
 
-
 ### Set up
 
 Thankfully, through the use of `node-inspector`, we can harness to power of the webkit-debuggers to work with our node.js code. The process itself is simple.

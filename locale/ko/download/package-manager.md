@@ -478,7 +478,6 @@ Void Linux는 메인 저장소에서 node.js 안정 버전을 제공합니다.
 xbps-install -Sy nodejs
 ```
 
-
 <!--
 ## Windows
 

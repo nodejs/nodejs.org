@@ -9,13 +9,13 @@ This is a list of Node.js meetups. Please submit a PR if you'd like to add your 
 
 ## Code of Conduct
 
-If any meetup does not have a CoC and/or is reported as an unsafe place, it will be removed from this list. 
+If any meetup does not have a CoC and/or is reported as an unsafe place, it will be removed from this list.
 
 ## Notes for adding meetups
 
 FORMAT
 - [Meetup](https://www.meetup.com/pdxnode/)
-- Frequency of meetups 
+- Frequency of meetups
 - How to submit a talk? &lt;&lt;list here&gt;&gt;
 - Organizer names (if you wish to provide)
 - Organizers contact info (if you wish to provide)
@@ -209,7 +209,7 @@ REQUIREMENTS
 - Frequency of meetups - every two months
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - [Ioannis Nikolaou](https://www.linkedin.com/in/ioannis-nikolaou/) Co-organizers - Stratoula Kalafateli, [Kostas Siabanis](https://github.com/ksiabani), Megaklis Vasilakis
-- Organizer contact info - 
+- Organizer contact info -
 
 ### Hungary
 
@@ -259,13 +259,13 @@ REQUIREMENTS
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Sean Walsh. Co-organizer: Leanne Vaughey
-- Organizer contact info - 
+- Organizer contact info -
 
 - [Meetup](https://www.meetup.com/Nodeschool-Dublin-Meetup/)
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Anton Whalley
-- Organizer contact info - 
+- Organizer contact info -
 
 ### Israel
 
@@ -336,7 +336,7 @@ REQUIREMENTS
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Arif Çakıroğlu
-- Organizer contact info - 
+- Organizer contact info -
 
 ### United States
 
@@ -366,22 +366,21 @@ REQUIREMENTS
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Farsheed Atef
-- Organizer contact info - 
+- Organizer contact info -
 
 ##### San Francisco
 
 - [Meetup](https://www.meetup.com/sfnode/)
 - Frequency of meetups - monthly
-- How to submit a talk? 
+- How to submit a talk?
 - Organizer name - Dan Shaw
-- Organizer contact info - 
+- Organizer contact info -
 
 - [Meetup](https://www.meetup.com/Node-js-Serverside-Javascripters-Club-SF/)
 - Frequency of meetups - monthly
-- How to submit a talk? 
+- How to submit a talk?
 - Organizer name - Matt Pardee
 - Organizer contact info -
-
 
 #### Colorado
 
@@ -404,9 +403,9 @@ REQUIREMENTS
 - Organizer name - David Fekke
 - Organizer contact info - David Fekke at gmail dot com
 
-#### Georgia 
+#### Georgia
 
-##### Atlanta 
+##### Atlanta
 
 - [Meetup](https://www.meetup.com/Atlanta-Nodejs-Developers/)
 - Frequency of meetups - monthly
@@ -432,11 +431,11 @@ REQUIREMENTS
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page.
 - Organizer name - Mike Seidle
-- Organizer contact info - 
+- Organizer contact info -
 
 #### Massachusetts
 
-##### Boston 
+##### Boston
 
 - [Meetup](https://www.meetup.com/Boston-Node/)
 - Frequency of meetups - ~monthly
@@ -463,15 +462,15 @@ REQUIREMENTS
 - Organizer name - Mike Frey
 - Organizer contact info -
 
-#### New York 
+#### New York
 
-##### New York 
+##### New York
 
 - [Meetup](https://www.meetup.com/nodejs/)
 - Frequency of meetups - monthly
-- How to submit a talk? 
+- How to submit a talk?
 - Organizer name - Patrick Scott Co-organizer: Matt Walters.
-- Organizer contact info - 
+- Organizer contact info -
 
 #### North Carolina
 
@@ -501,7 +500,7 @@ REQUIREMENTS
 - Frequency of meetups - monthly
 - How to submit a talk? Contact organizers in the meetup page: https://www.meetup.com/nodejs-philly/members/14283814/
 - Organizer name - Leomar Durán
-- Organizer contact info - 
+- Organizer contact info -
 
 #### Texas
 
@@ -537,7 +536,6 @@ REQUIREMENTS
 - Organizer name - Aaron Seth Madsen
 - Organizer contact info -
 
-
 #### Washington
 
 ##### Seattle
@@ -569,7 +567,7 @@ REQUIREMENTS
 - [Meetup](https://www.meetup.com/london-nodejs/)
 - [GitHub/lnug](https://github.com/lnug/)
 - Frequency of meetups - monthly
-- How to submit a talk? Visit our [speakers repos](https://github.com/lnug/speakers), read the guidelines, and [submit a talk proposal as a new issue](https://github.com/lnug/speakers/issues). 
+- How to submit a talk? Visit our [speakers repos](https://github.com/lnug/speakers), read the guidelines, and [submit a talk proposal as a new issue](https://github.com/lnug/speakers/issues).
 - Organizer name - Adam Davis
 - Organizer contact info - contact@lnug.org, [@lnugOrg](https://twitter.com/lnugorg)
 
@@ -578,15 +576,15 @@ REQUIREMENTS
 - Frequency of meetups - monthly
 - How to submit a talk?
 - Organizer name - Daryn Holmes
-- Organizer contact info - 
+- Organizer contact info -
 
 #### Cambridge
 
 - [Meetup](https://www.meetup.com/JavaScript-Cambridge/)
 - Frequency of meetups - monthly
-- How to submit a talk? 
+- How to submit a talk?
 - Organizer name - Joe Parry, co-organizer Rob Moran
-- Organizer contact info - 
+- Organizer contact info -
 
 #### Oxford
 
@@ -595,7 +593,6 @@ REQUIREMENTS
 - How to submit a talk? [Submit Form](https://docs.google.com/forms/d/e/1FAIpQLSflx7LU44PuwlyCJj-WwlP_SlrUvxAd8uaXlY7_O65c7RLpGQ/viewform?usp=sf_link)
 - Organizer names - Marcus Noble, Seren Davies
 - Organizers contact info - organisers@jsoxford.com
-
 
 ### Ukraine
 
