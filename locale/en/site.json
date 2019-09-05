@@ -3,6 +3,8 @@
   "author": "Node.js Foundation",
   "url": "https://nodejs.org/en/",
   "locale": "en",
+  "language": "English",
+  "languageEnglishVersion": "English",
   "scrollToTop": "Scroll to top",
   "reportNodeIssue": "Report Node.js issue",
   "reportWebsiteIssue": "Report website issue",
@@ -92,12 +94,12 @@
       "text": "ES6 and beyond"
     },
     "api-lts": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "/dist/latest-%ver-major%/docs/api/",
       "subtext": "LTS",
       "text": "%ver% API"
     },
     "api-current": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "/dist/latest-%ver-major%/docs/api/",
       "text": "%ver% API"
     },
     "guides": {
@@ -131,14 +133,6 @@
     "node-meetups": {
       "link": "get-involved/node-meetups",
       "text": "Node.js Meetups"
-    },
-    "node-events": {
-      "link": "get-involved/node-events",
-      "text": "Node.js Events"
-    },
-    "node-speakers": {
-      "link": "get-involved/node-speakers",
-      "text": "Node.js Speakers"
     }
   },
   "security": {

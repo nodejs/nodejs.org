@@ -2,6 +2,7 @@
 layout: about.hbs
 title: Консультативна рада
 ---
+
 # Хартія консультативної ради Node.js
 
 ## 1. Background
@@ -22,25 +23,25 @@ Node.js project core committers team leadership on matters related to
 supporting the long-term governance, structure, and roadmap of the Node.js open
 source project. The following main areas are included in this charter:
 
-  * Provide a forum for individuals, users, and companies to discuss the issues
-    under the scope listed below.
-  * Provide guidance and input to leadership, and where possible, present a
-    consistent and consolidated opinion from the broader Node.js community.
+* Provide a forum for individuals, users, and companies to discuss the issues
+  under the scope listed below.
+* Provide guidance and input to leadership, and where possible, present a
+  consistent and consolidated opinion from the broader Node.js community.
 
 ### 2.2
 
 The Node.js Advisory Board is not:
 
-  * Intended to serve as an authoritative governance board. The Node.js
-    Advisory Board advises, but does not manage the Node.js project core
-    committers team leadership.
-  * Intended to replace existing mechanisms for community input, governance,
-    or contribution.
-  * Intended to assume a formal, fiduciary role with respect to the project.
-    The Node.js Advisory Board members will not be asked to provide funds to
-    the project, assume liabilities with respect to the project or their
-    activities, or assume responsibility for enforcing either trademarks or
-    Node.js Advisory Board recommendations.
+* Intended to serve as an authoritative governance board. The Node.js
+  Advisory Board advises, but does not manage the Node.js project core
+  committers team leadership.
+* Intended to replace existing mechanisms for community input, governance,
+  or contribution.
+* Intended to assume a formal, fiduciary role with respect to the project.
+  The Node.js Advisory Board members will not be asked to provide funds to
+  the project, assume liabilities with respect to the project or their
+  activities, or assume responsibility for enforcing either trademarks or
+  Node.js Advisory Board recommendations.
 
 ## 3. Scope
 
@@ -49,26 +50,26 @@ The Node.js Advisory Board is not:
 The Node.js Advisory Board is expected to provide input and formal
 recommendations regarding the following areas:
 
-  * Node.js project long term roadmap
-  * Node.js project policies and procedures around maintenance, contributions,
-    core team membership and governance.
-  * Node.js project policies and procedures around intellectual property,
-    trademark, and licensing
-  * Node.js project release schedules
+* Node.js project long term roadmap
+* Node.js project policies and procedures around maintenance, contributions,
+  core team membership and governance.
+* Node.js project policies and procedures around intellectual property,
+  trademark, and licensing
+* Node.js project release schedules
 
 ## 4. Meetings and Memberships
 
 ### 4.1 General
 
-  * The Node.js Advisory Board will have 13 members
-  * The Node.js core committers project lead: TJ Fontaine
-  * 2 seats for the top core technical contributors
-  * Up to 8 additional seats: 4 corporate seats, 4 “user” seats
-  * One curator seat
-  * One Open Source Software guidance seat
-  * No fee or sponsorship is required for membership
-  * The membership term will last 12 months. With the exception of the Project
-    Lead, all members can serve a maximum of two consecutive terms
+* The Node.js Advisory Board will have 13 members
+* The Node.js core committers project lead: TJ Fontaine
+* 2 seats for the top core technical contributors
+* Up to 8 additional seats: 4 corporate seats, 4 “user” seats
+* One curator seat
+* One Open Source Software guidance seat
+* No fee or sponsorship is required for membership
+* The membership term will last 12 months. With the exception of the Project
+  Lead, all members can serve a maximum of two consecutive terms
 
 ### 4.2
 
@@ -119,14 +120,14 @@ Joyent, Inc. nor employees of companies that hold a corporate seat.
 Nomination is restricted to companies for whom all three of the following are
 true:
 
-  * Are in the top 5 companies in terms of non-trivial pull requests merged
-    into the master in the past six months as measured by contributions by the
-    entire organization.
-  * Have one or more employees for whom a key component of their job
-    description is to contribute to Node.js and/or make significant
-    contributions to the Node.js source code base.
-  * Have committed to integrate Node.js into widely used corporate products in
-    a manner consistent with Core Criteria listed in Section 8 below.
+* Are in the top 5 companies in terms of non-trivial pull requests merged
+  into the master in the past six months as measured by contributions by the
+  entire organization.
+* Have one or more employees for whom a key component of their job
+  description is to contribute to Node.js and/or make significant
+  contributions to the Node.js source code base.
+* Have committed to integrate Node.js into widely used corporate products in
+  a manner consistent with Core Criteria listed in Section 8 below.
 
 ### 5.3
 
@@ -183,19 +184,19 @@ guidelines.
 The Node.js Advisory Board will formulate recommendations in conjunction with
 the following open governance principles:
 
-  * Open Contributions: anyone should be able to participate and contribute.
-    All bugs and tasks will be tracked in a public tracker and all of the
-    source code and all of the tools needed to build it will be available under
-    an open license permitting unrestricted use.
-  * Open technical meritocracy: technical merit over pride of authorship. Code
-    is contributed for the express purpose of advancing technologies relevant
-    to the project, effectively separating technology advancement from
-    individual or commercial intent.
-  * Open design: Roadmaps are discussed in the open, and designs receive input
-    from all committers and contributors.
-  * Influence through contribution: organizations and individuals gain
-    influence over the project through contribution.
-  * Open Licensing: code is licensed under the MIT license.
+* Open Contributions: anyone should be able to participate and contribute.
+  All bugs and tasks will be tracked in a public tracker and all of the
+  source code and all of the tools needed to build it will be available under
+  an open license permitting unrestricted use.
+* Open technical meritocracy: technical merit over pride of authorship. Code
+  is contributed for the express purpose of advancing technologies relevant
+  to the project, effectively separating technology advancement from
+  individual or commercial intent.
+* Open design: Roadmaps are discussed in the open, and designs receive input
+  from all committers and contributors.
+* Influence through contribution: organizations and individuals gain
+  influence over the project through contribution.
+* Open Licensing: code is licensed under the MIT license.
 
 ## 8.  Core Criteria
 

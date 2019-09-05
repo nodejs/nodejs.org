@@ -3,7 +3,7 @@
     {{#each nav}}
       {{#equals @key ../key}}
         {{#each this}}
-          <li {{#equals ../../path link}}class="active"{{/equals}}>
+          <li {{#equals ../../path link}} class="active" {{/equals}}>
             {{#startswith link '/'}}
               <a href="{{link}}">{{text}}{{#if subtext}} <span class="small color-lightgray">{{subtext}}</span>{{/if}}</a>
             {{else}}

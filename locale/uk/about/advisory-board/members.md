@@ -2,64 +2,65 @@
 layout: about.hbs
 title: Члени консультативної ради
 ---
+
 # Члени консультативної ради
 
 ## Bert Belder
 
- * StrongLoop, Inc.
+* StrongLoop, Inc.
 
 ## Danese Cooper
 
- * Expert in Open Source Communities
+* Expert in Open Source Communities
 
 ## Kevin Decker
 
- * Walmart
+* Walmart
 
 ## TJ Fontaine
 
- * Joyent
+* Joyent
 
 ## Dav Glass
 
- * Yahoo
+* Yahoo
 
 ## Scott Hammond
 
- * Joyent
+* Joyent
 
 ## Cian Ó Maidín
 
- * nearForm
+* nearForm
 
 ## Todd M. Moore
 
- * IBM
+* IBM
 
 ## Gianugo Rabellino
 
- * Microsoft Open Technologies, Inc.
+* Microsoft Open Technologies, Inc.
 
 ## Issac Roth
 
- * StrongLoop, Inc.
+* StrongLoop, Inc.
 
 ## Chris Saint-Amant
 
- * Netflix
+* Netflix
 
 ## Isaac Schlueter
 
- * npm
+* npm
 
 ## Dan Shaw
 
- * NodeSource
+* NodeSource
 
 ## Erik Toth
 
- * PayPal
+* PayPal
 
 ## Chris Williams
 
- * Emerging Technology Advisors
+* Emerging Technology Advisors

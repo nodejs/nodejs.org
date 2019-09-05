@@ -29,9 +29,9 @@ A possible use of `join` is to manipulate paths when serving urls:
     > path.join(process.cwd(), 'static', url);
     '/home/nico/static/index.html'
 
-There are three functions which are used to extract the various parts of the path name: `basename`, `extname`, and `dirname`. 
-- `basename` returns the last portion of the path passed in. 
-- `extname` returns the extension of the last portion. Generally for directories, `extname` just returns ''. 
+There are three functions which are used to extract the various parts of the path name: `basename`, `extname`, and `dirname`.
+- `basename` returns the last portion of the path passed in.
+- `extname` returns the extension of the last portion. Generally for directories, `extname` just returns ''.
 - Finally, `dirname` returns everything that `basename` does not return.
 For example:
 
@@ -51,11 +51,11 @@ Note that `basename` has an optional second parameter that will strip out the ex
     > path.basename(a, path.extname(a))
     'c'
 
-Lastly, the `path` module provides methods to check whether or not a given path exists: `exists` and `existsSync` They both take the path of a file for the first parameter. 
+Lastly, the `path` module provides methods to check whether or not a given path exists: `exists` and `existsSync` They both take the path of a file for the first parameter.
 
-`exists` takes a callback as its second parameter, to which is returned a boolean representing the existance of the file. 
+`exists` takes a callback as its second parameter, to which is returned a boolean representing the existence of the file.
 
-`existsSync`, on the other hand, checks the given path synchronously, returning the boolean directly.  In Node.js, you will typically want to use the asynchronous functions for most file system I/O - the synchronous versions will block your entire process until they finish. 
+`existsSync`, on the other hand, checks the given path synchronously, returning the boolean directly.  In Node.js, you will typically want to use the asynchronous functions for most file system I/O - the synchronous versions will block your entire process until they finish.
 
 Blocking isn't always a bad thing.  Checking the existence of a vital configuration file synchronously makes sense, for example - it doesn't matter much if your process is blocking for something it can't run without!  Conversely, though, in a busy HTTP server, any per-request file I/O **MUST** be asynchronous, or else you'll be responding to requests one by one. See the article on [asynchronous operations](/how-to-write-asynchronous-code) for more details.
 
@@ -65,4 +65,3 @@ Blocking isn't always a bad thing.  Checking the existence of a vital configurat
 
         > path.existsSync('/etc')
         true
-

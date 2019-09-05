@@ -10,7 +10,7 @@ The Timers module in Node.js contains functions that execute code after a set
 period of time. Timers do not need to be imported via `require()`, since
 all the methods are available globally to emulate the browser JavaScript API.
 To fully understand when timer functions will be executed, it's a good idea to
-read up on the the Node.js
+read up on the Node.js
 [Event Loop](/en/docs/guides/event-loop-timers-and-nexttick/).
 -->
 
@@ -138,7 +138,6 @@ console.log('after immediate');
 모든 I/O 작업 후 다음 이벤트 루프에 스케줄링 된 모든 타이머 이전에 실행됩니다. 이 코드 실행은
 `setImmediate()` 함수 호출 뒤에 오는 모든 코드는 `setImmediate()` 함수 인자 이전에 실행된다는
 의미로 "바로 다음에" 실행한다고 생각할 수 있습니다.
-
 
 `setImmediate()`의 첫 인자는 실행할 함수입니다. 그 뒤의 인자는 실행될 때 함수로 전달됩니다.
 다음은 그 예제입니다.
@@ -347,7 +346,6 @@ setImmediate(() => {
 const timerObj = setTimeout(() => {
   console.log('will i run?');
 });
-
 
 // 이 부분만 있다면 이 타임아웃이 프로그램을 종료되지 않게 하고 있으므로
 // 위 타임아웃이 실행되지 않도록 합니다.

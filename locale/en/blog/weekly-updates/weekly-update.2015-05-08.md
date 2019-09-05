@@ -11,9 +11,9 @@ layout: blog-post.hbs
 # io.js 2.0 releases
 This week we had two io.js releases [v2.0.0](https://iojs.org/dist/v2.0.0/) and [v2.0.1](https://iojs.org/dist/v2.0.1/), complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
 
-### Notable changes
+## Notable changes
 
-#### 2.0.1
+### 2.0.1
 * **async_wrap**: (Trevor Norris) [#1614](https://github.com/nodejs/node/pull/1614)
   - it is now possible to filter by providers
   - bit flags have been removed and replaced with method calls on the binding object
@@ -26,7 +26,7 @@ This week we had two io.js releases [v2.0.0](https://iojs.org/dist/v2.0.0/) and 
 * **addons**: the `NODE_DEPRECATED` macro was causing problems when compiling addons with older compilers, this should now be resolved (Ben Noordhuis) [#1626](https://github.com/nodejs/node/pull/1626)
 * **V8**: upgrade V8 from 4.2.77.18 to 4.2.77.20 with minor fixes, including a bug preventing builds on FreeBSD
 
-#### 2.0.0
+### 2.0.0
 * **crypto**: significantly reduced memory usage for TLS (Fedor Indutny & Сковорода Никита Андреевич) [#1529](https://github.com/nodejs/node/pull/1529)
 * **net**: `socket.connect()` now accepts a `'lookup'` option for a custom DNS resolution mechanism, defaults to `dns.lookup()` (Evan Lucas) [#1505](https://github.com/nodejs/node/pull/1505)
 * **npm**: Upgrade npm to 2.9.0. See the [v2.8.4](https://github.com/npm/npm/releases/tag/v2.8.4) and [v2.9.0](https://github.com/npm/npm/releases/tag/v2.9.0) release notes for details. Notable items:
@@ -55,7 +55,7 @@ This week we had two io.js releases [v2.0.0](https://iojs.org/dist/v2.0.0/) and 
   - Rod Vagg (@rvagg) was added to the Technical Committee (TC)
   - Jeremiah Senkpiel (@Fishrock123) was added to the Technical Committee (TC)
 
-### Breaking changes
+## Breaking changes
 
 Full details at https://github.com/nodejs/node/wiki/Breaking-Changes#200-from-1x
 
@@ -65,7 +65,7 @@ Full details at https://github.com/nodejs/node/wiki/Breaking-Changes#200-from-1x
 
 _Note: a new version of the 'url' module was reverted prior to release as it was decided the potential for breakage across the npm ecosystem was too great and that more compatibility work needed to be done before releasing it. See [#1602](https://github.com/nodejs/node/pull/1602) for further information._
 
-### Known issues
+## Known issues
 See https://github.com/nodejs/node/labels/confirmed-bug for complete and current list of known issues.
 
 * Some problems with unreferenced timers running during `beforeExit` are still to be resolved. See [#1264](https://github.com/nodejs/node/issues/1264).
@@ -75,14 +75,14 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 * `url.resolve` may transfer the auth portion of the url when resolving between two full hosts, see [#1435](https://github.com/nodejs/node/issues/1435).
 * readline: split escapes are processed incorrectly, see [#1403](https://github.com/nodejs/node/issues/1403)
 
-### Community Updates
+## Community Updates
 
 * Michael Dawson creates [WG proposal](https://github.com/mhdawson/workgroup-proposals) under the Node Foundation.
 * Mikeal Rogers wrote about growing up of io.js [on Medium](https://medium.com/node-js-javascript/growing-up-27d6cc8b7c53).
 * CodeSchool [blog post](https://www.codeschool.com/blog/2015/05/08/whats-new-in-io-js-2-0-0/) on what's new in io.js 2.0.
 * Node Lead TJ Fontaine [steps back](http://blog.nodejs.org/2015/05/08/next-chapter/) from leader.
 
-### Upcoming Events
+## Upcoming Events
 
 * [NodeConf Adventure](http://nodeconf.com/) tickets are on sale, June 11th - 14th at Walker Creek Ranch, CA
 * [CascadiaJS](http://2015.cascadiajs.com/) tickets are on sale, July 8th - 10th at Washington State

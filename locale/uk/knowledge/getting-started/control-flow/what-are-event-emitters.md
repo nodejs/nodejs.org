@@ -9,8 +9,7 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-
-In node.js an event can be described simply as a string with a corresponding callback. An event can be "emitted" (or in other words, the corresponding callback be called) multiple times or you can choose to only listen for the first time it is emitted. So a simple example ran on the node [REPL](/articles/REPL/how-to-use-nodejs-repl):
+In node.js an event can be described simply as a string with a corresponding callback. An event can be "emitted" (or in other words, the corresponding callback be called) multiple times or you can choose to only listen for the first time it is emitted. So a simple example ran on the node [REPL](/uk/knowledge/REPL/how-to-use-nodejs-repl):
 
     var example_emitter = new (require('events').EventEmitter);
     example_emitter.on("test", function () { console.log("test"); });
@@ -34,7 +33,7 @@ In node.js an event can be described simply as a string with a corresponding cal
     > example_emitter.emit("unhandled");
     false   //return value
 
-This demonstates all the basic functionality of an EventEmitter. The `on` or `addListener` method (basically the subscription method) allows you to choose the event to watch for and the callback to be called. The `emit` method (the publish method), on the other hand, allows you to "emit" an event, which causes all callbacks registered to the event to 'fire', (get called).
+This demonstrates all the basic functionality of an EventEmitter. The `on` or `addListener` method (basically the subscription method) allows you to choose the event to watch for and the callback to be called. The `emit` method (the publish method), on the other hand, allows you to "emit" an event, which causes all callbacks registered to the event to 'fire', (get called).
 
 So in the example, we first subscribe to both the `test` and `print` events. Then we emit the `test`, `print`, and `unhandled` events. Since `unhandled` has no callback, it just returns false; the other two run all the attached callbacks and return true.
 
@@ -99,5 +98,4 @@ If you want remove a specific callback, you can use `removeListener`. If you wan
     > ee.emit("event");
     false
 
-NOTE: If you want create more than 10 listeners on a single event, you will have to make a call to `ee.setMaxListeners(n)` where n is the max numbers of listeners (with zero being unlimited number of listeners). This is used to make sure you aren't accidently leaking event listeners.
-
+NOTE: If you want create more than 10 listeners on a single event, you will have to make a call to `ee.setMaxListeners(n)` where n is the max numbers of listeners (with zero being unlimited number of listeners). This is used to make sure you aren't accidentally leaking event listeners.

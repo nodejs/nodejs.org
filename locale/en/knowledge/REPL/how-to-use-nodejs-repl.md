@@ -19,10 +19,10 @@ Node.js has a standalone REPL accessible from the command line, and a built in R
 Starting the REPL is simple - just run node on the command line without a filename.
 
 ```shell
-$ node
+node
 ```
 
-It then drops you into a simple prompt ('>') where you can type any JavaScript command you wish. As in most shells, you can press the up and down arrow keys to scroll through your command history and modify previous commands. 
+It then drops you into a simple prompt ('>') where you can type any JavaScript command you wish. As in most shells, you can press the up and down arrow keys to scroll through your command history and modify previous commands.
 
 ```shell
 $ node

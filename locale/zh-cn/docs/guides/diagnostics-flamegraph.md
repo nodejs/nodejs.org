@@ -32,9 +32,9 @@ layout: docs.hbs
 1. 安装 `perf`（如果你没有安装，那么通常通过 linux-tools-common 安装包进行安装）
 2. 尝试运行 `perf` - 或许会告诉你缺少内核模块，请同样安装他们。
 3. 启用 pref 并运行 node（具体参考 [perf 输出的问题](#perf-output-issues)以此了解针对不同 Node.js 版本的建议）
-```bash
-perf record -e cycles:u -g -- node --perf-basic-prof app.js
-``` 
+    ```bash
+    perf record -e cycles:u -g -- node --perf-basic-prof app.js
+    ```
 4. 忽略一些警告，除非它告诉你因为缺少必要的安装包而无法运行 pref，你可能会得到一些警告，告诉你不能访问内核模块的样本等。
 5. 运行命令 `perf script > perfs.out` 生成稍后你看到的可视化的数据文件。对于一个易读的火焰图而言，[应用清理](#filtering-out-node-internal-functions)是有作用的。
 6. 如果没有安装 stackvis，请运行 `npm i -g stackvis`
@@ -85,7 +85,7 @@ sed -i \
 
 ### Node.js 8.x V8 管道上的变化
 
-Node.js 8.x 及以上版本使用了 V8 引擎，采用了新的优化 JavaScript 编译管道模式。这使得一些函数的名字、引用有时候无法被 perf 捕获到（这也被成为“Turbofan”）。 
+Node.js 8.x 及以上版本使用了 V8 引擎，采用了新的优化 JavaScript 编译管道模式。这使得一些函数的名字、引用有时候无法被 perf 捕获到（这也被成为“Turbofan”）。
 
 导致的结果也就是在火焰图中你无法正确地得到一些函数名字。
 
@@ -110,7 +110,6 @@ Node.js 10.x 使用 `--interpreted-frames-native-stack` 标志解决了“Turbof
 node`_ZN2v88internal11interpreter17BytecodeGenerator15VisitStatementsEPNS0_8ZoneListIPNS0_9StatementEEE
 ```
 这意味着你正在运行的 Linux 的 perf 没有用 demangle 支持方法编译，请以 https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1396654 作为示例参考。
-
 
 ## 示例部分
 

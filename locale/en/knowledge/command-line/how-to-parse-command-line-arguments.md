@@ -7,8 +7,7 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-
-Passing in arguments via the command line is an extremely basic programming task, and a necessity for anyone trying to write a simple Command-Line Interface (CLI).  In Node.js, as in C and many related environments, all command-line arguments received by the shell are given to the process in an array called `argv` (short for 'argument values').  
+Passing in arguments via the command line is an extremely basic programming task, and a necessity for anyone trying to write a simple Command-Line Interface (CLI).  In Node.js, as in C and many related environments, all command-line arguments received by the shell are given to the process in an array called `argv` (short for 'argument values').
 
 Node.js exposes this array for every running process in the form of `process.argv` - let's take a look at an example.  Make a file called `argv.js` and add this line:
 
@@ -29,7 +28,7 @@ $ node argv.js one two three four five
   'five' ]
 ```
 
-There you have it - an array containing any arguments you passed in.  Notice the first two elements - `node` and the path to your script.  These will always be present - even if your program takes no arguments of its own, your script's interpreter and path are still considered arguments to the shell you're using.  
+There you have it - an array containing any arguments you passed in.  Notice the first two elements - `node` and the path to your script.  These will always be present - even if your program takes no arguments of its own, your script's interpreter and path are still considered arguments to the shell you're using.
 
 Where everyday CLI arguments are concerned, you'll want to skip the first two.  Now try this in `argv.js`:
 

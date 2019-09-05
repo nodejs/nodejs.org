@@ -53,6 +53,15 @@ function i18nJSON (lang) {
   return defaultsDeep({}, templateJSON, defaultJSON)
 }
 
+// This function imports language file for each given locale in array 'localesList'
+// and based on it generating locales data, which includes full language name, english language name, locale and link
+function generateLocalesData (localesList) {
+  return localesList.map(localeEl => {
+    const { language, languageEnglishVersion, locale, url } = require(`./locale/${localeEl}/site.json`)
+    return { language, locale, url, languageEnglishVersion }
+  })
+}
+
 // This is the function where the actual magic happens. This contains the main
 // Metalsmith build cycle used for building a locale subsite, such as the
 // english one.
@@ -63,7 +72,11 @@ function buildLocale (source, locale, opts) {
   const metalsmith = Metalsmith(__dirname)
   metalsmith
   // Sets global metadata imported from the locale's respective site.json.
-    .metadata({ site: i18nJSON(locale), project: source.project })
+    .metadata({
+      site: i18nJSON(locale),
+      project: source.project,
+      locales: opts.localesData
+    })
   // Sets the build source as the locale folder.
     .source(path.join(__dirname, 'locale', locale))
     .use(withPreserveLocale(opts && opts.preserveLocale))
@@ -297,7 +310,7 @@ function getSource (callback) {
 // This is where the build is orchestrated from, as indicated by the function
 // name. It brings together all build steps and dependencies and executes them.
 function fullBuild (opts) {
-  const { preserveLocale, selectedLocales } = opts
+  const { selectedLocales, preserveLocale } = opts
   // Build static files.
   copyStatic()
   // Build layouts
@@ -307,10 +320,14 @@ function fullBuild (opts) {
 
     // Executes the build cycle for every locale.
     fs.readdir(path.join(__dirname, 'locale'), (e, locales) => {
-      locales.filter(file => junk.not(file) && (selectedLocales ? selectedLocales.includes(file) : true))
-        .forEach((locale) => {
-          buildLocale(source, locale, { preserveLocale })
-        })
+      if (e) {
+        throw e
+      }
+      const filteredLocales = locales.filter(file => junk.not(file) && (selectedLocales ? selectedLocales.includes(file) : true))
+      const localesData = generateLocalesData(filteredLocales)
+      filteredLocales.forEach((locale) => {
+        buildLocale(source, locale, { preserveLocale, localesData })
+      })
     })
   })
 }
@@ -326,3 +343,4 @@ exports.getSource = getSource
 exports.fullBuild = fullBuild
 exports.buildLocale = buildLocale
 exports.copyStatic = copyStatic
+exports.generateLocalesData = generateLocalesData

@@ -1,6 +1,6 @@
 # [nodejs.org](https://nodejs.org/)
 
-[![Build Status](https://img.shields.io/travis/nodejs/nodejs.org/master.svg)](http://travis-ci.org/nodejs/nodejs.org)
+[![Build Status](https://img.shields.io/travis/com/nodejs/nodejs.org/master.svg)](https://travis-ci.com/nodejs/nodejs.org)
 [![Dependency Status](https://img.shields.io/david/nodejs/nodejs.org.svg)](https://david-dm.org/nodejs/nodejs.org)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -17,15 +17,13 @@ This repo's issues section has become the primary home for the Website WG's coor
 Please contribute! There are plenty of [good first issues](https://github.com/nodejs/nodejs.org/labels/good%20first%20issue) to work on. To get started, you have to [fork](https://github.com/nodejs/nodejs.org/fork) this repo to your own GitHub account first. Then open up a terminal on your machine and enter the following commands:
 
 ```bash
-$ git clone https://github.com/<your user name>/nodejs.org.git
-$ cd nodejs.org
-$ npm install
-$ npm start
+git clone https://github.com/<your user name>/nodejs.org.git
+cd nodejs.org
+npm install
+npm start
 ```
 
 This will start the development server on http://localhost:8080/en/. This should reload automatically when you make changes to the code, but no code is perfect, so sometimes you may need to restart it. :)
-
-Note: You'll need Node.js v4 or newer as the build system uses some native ES2015 features.
 
 If you want to submit a new feature or a bugfix, the best way is to create the changes in a separate branch, e.g.: `git checkout -b feature/mycoolfeature`. This will make it easier for you to submit a pull request and get your feature merged.
 
@@ -35,9 +33,9 @@ If you want to submit a new feature or a bugfix, the best way is to create the c
 * Global styles are in `/layouts/css`
 * Global static files are in `/static`
 * All content and localization specific styles are in `/locale`
- * Initial development usually happens in English: `/locale/en`
- * `/locale/{{locale}}/site.json` is where global localization information lives.
- * All content is in Markdown and is per locale.
+  * Initial development usually happens in English: `/locale/en`
+  * `/locale/{{locale}}/site.json` is where global localization information lives.
+  * All content is in Markdown and is per locale.
   * The top of each Markdown file is a block of YAML for page specific localization information that is passed to various templates.
   * The bulk of the Markdown content for each page is referenced as `{{{content}}}` in the corresponding template.
 
@@ -48,7 +46,6 @@ If you want to submit a new feature or a bugfix, the best way is to create the c
 * `npm run serve` builds all languages and returns 404 when a file is not present in the current locale
 * `npm run serve -- --preserveLocale` builds all languages and adds the pages present in the english locale that are missing.
 * Multiple locales can be built by using comma separated values in the DEFAULT_LOCALE option. i.e: DEFAULT_LOCALE=en,es,it
-
 
 ### Deployment
 
@@ -62,7 +59,7 @@ All of the Node.js Foundation websites, including this repo, are jointly governe
 
 The Website Working Group is primarily concerned with the code and overall structure of the website.
 
-The content of the website comes from a variety of working groups (Evangelism, Core, i18n, etc). 
+The content of the website comes from a variety of working groups (Evangelism, Core, i18n, etc).
 The Website WG defers to these WGs on matters of content and routinely adds collaborators from these
 working groups as they add and improve content on the website. In other words, the Website WG is not
 an *editorial* Working Group except when no other Working Group has taken responsibility for a

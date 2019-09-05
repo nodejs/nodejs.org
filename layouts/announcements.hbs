@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{site.locale}}" {{#if site.rtl}}dir="rtl"{{/if}}>
+<html lang="{{site.locale}}"{{#if site.rtl}} dir="rtl"{{/if}}>
 {{> html-head }}
 
 <body>
@@ -19,8 +19,8 @@
       </article>
     </div>
   </div>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.2/tabletop.min.js"></script>
-  <script type="text/javascript">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.2/tabletop.min.js"></script>
+  <script>
   var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1xwQ6ciZLADL43My_XBIWLVRuDMl8cx_omYd1FRkBZ58/pubhtml'
   var mdList = {{{getListJson collections.blogAnnounce}}}
   var siteLocal = '/{{site.locale}}/'

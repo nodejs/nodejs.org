@@ -401,8 +401,6 @@ From these basics, Node.js HTTP servers for many typical use cases can be
 constructed. There are plenty of other things these APIs provide, so be sure to
 read through the API docs for [`EventEmitters`][], [`Streams`][], and [`HTTP`][].
 
-
-
 [`EventEmitters`]: https://nodejs.org/api/events.html
 [`Streams`]: https://nodejs.org/api/stream.html
 [`createServer`]: https://nodejs.org/api/http.html#http_http_createserver_requestlistener

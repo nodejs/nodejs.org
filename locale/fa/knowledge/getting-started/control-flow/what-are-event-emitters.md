@@ -9,8 +9,7 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-
-In node.js an event can be described simply as a string with a corresponding callback. An event can be "emitted" (or in other words, the corresponding callback be called) multiple times or you can choose to only listen for the first time it is emitted. So a simple example ran on the node [REPL](/articles/REPL/how-to-use-nodejs-repl):
+In node.js an event can be described simply as a string with a corresponding callback. An event can be "emitted" (or in other words, the corresponding callback be called) multiple times or you can choose to only listen for the first time it is emitted. So a simple example ran on the node [REPL](/fa/knowledge/REPL/how-to-use-nodejs-repl):
 
     var example_emitter = new (require('events').EventEmitter);
     example_emitter.on("test", function () { console.log("test"); });
@@ -100,4 +99,3 @@ If you want remove a specific callback, you can use `removeListener`. If you wan
     false
 
 NOTE: If you want create more than 10 listeners on a single event, you will have to make a call to `ee.setMaxListeners(n)` where n is the max numbers of listeners (with zero being unlimited number of listeners). This is used to make sure you aren't accidentally leaking event listeners.
-

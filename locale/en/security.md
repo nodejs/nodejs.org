@@ -54,13 +54,12 @@ the severity of the bug or difficulty in applying a fix.
 effort will be made to handle the bug in as timely a manner as possible; however, it’s important that we follow the
 release process above to ensure that the disclosure is handled in a consistent manner.
 
-
 ## Receiving Security Updates
 
 Security notifications will be distributed via the following methods.
 
 - <https://groups.google.com/group/nodejs-sec>
-- <https://nodejs.org/en/blog>
+- <https://nodejs.org/en/blog/>
 
 ## Comments on this Policy
 

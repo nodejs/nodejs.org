@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{site.locale}}" {{#if site.rtl}}dir="rtl"{{/if}}>
+<html lang="{{site.locale}}"{{#if site.rtl}} dir="rtl"{{/if}}>
 {{> html-head }}
 
 <body>
@@ -12,8 +12,8 @@
       <ul class="blog-index">
         {{#each pagination.posts}}
           <li>
-            <time datetime="{{ post.date }}">{{ strftime post.date "%d %b" }}</time>
-            <a href="/{{ ../site.locale }}/{{ post.path }}/">{{ post.title }}</a>
+            <time datetime="{{ strftime post.date '%FT%T%z' }}">{{ strftime post.date "%d %b" }}</time>
+            <a href="/{{ ../site.locale }}/{{ slashes post.path }}/">{{ post.title }}</a>
 
             {{#if displaySummary}}
               <div class="summary">
@@ -24,24 +24,24 @@
         {{/each}}
       </ul>
 
-          {{#if pagination}}
-          <nav class="pagination">
-            {{#if pagination.prev.path}}
-            <a href="/{{ site.locale }}/{{ pagination.prev.path }}">&lt; Newer</a>
-            {{/if}}
+      {{#if pagination}}
+      <nav class="pagination">
+        {{#if pagination.prev.path}}
+        <a href="/{{ site.locale }}/{{ pagination.prev.path }}">&lt; Newer</a>
+        {{/if}}
 
-            {{#if pagination.prev.path}}{{#if pagination.next.path}}
-            |
-            {{/if}}{{/if}}
+        {{#if pagination.prev.path}}{{#if pagination.next.path}}
+        |
+        {{/if}}{{/if}}
 
-            {{#if pagination.next.path}}
-            <a href="/{{ site.locale }}/{{ pagination.next.path }}">Older &gt;</a>
-            {{/if}}
-          </nav>
-          {{/if}}
-        </div>
-      </div>
+        {{#if pagination.next.path}}
+        <a href="/{{ site.locale }}/{{ pagination.next.path }}">Older &gt;</a>
+        {{/if}}
+      </nav>
+      {{/if}}
+    </div>
+  </div>
 
-      {{> footer }}
-    </body>
-    </html>
+  {{> footer }}
+</body>
+</html>

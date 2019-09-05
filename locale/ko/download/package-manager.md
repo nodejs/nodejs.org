@@ -108,7 +108,7 @@ pacman -S nodejs npm
 <!--
 ## FreeBSD
 
-The most recent release of Node.js is available via the [www/node](http://freshports.org/www/node) port.
+The most recent release of Node.js is available via the [www/node](https://www.freshports.org/www/node) port.
 
 Install a binary package via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
@@ -125,7 +125,7 @@ cd /usr/ports/www/node && make install
 -->
 ## FreeBSD
 
-Node.js의 최신 릴리스는 [www/node](http://freshports.org/www/node) 포트를 통해 사용할 수 있습니다.
+Node.js의 최신 릴리스는 [www/node](https://www.freshports.org/www/node) 포트를 통해 사용할 수 있습니다.
 
 바이너리 패키지는 다음과 같이 [pkg](https://www.freebsd.org/cgi/man.cgi?pkg)를 통해 설치할 수 있습니다.
 
@@ -159,7 +159,7 @@ emerge nodejs
 <!--
 ## IBM i
 
-LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](http://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs8`, `nodejs10`, `nodejs12`, etc)
+LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](https://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs8`, `nodejs10`, `nodejs12`, etc)
 
 To install Node.js 12.x from the command line, run the following as a user with \*ALLOBJ special authority:
 
@@ -171,7 +171,7 @@ Node.js can also be installed with the IBM i Access Client Solutions product. Se
 -->
 ## IBM i
 
-IBM에서 ['yum' 패키지 매니저](http://ibm.biz/ibmi-rpms)를 통해 Node.js의 LTS 버전을 사용할 수 있습니다.
+IBM에서 ['yum' 패키지 매니저](https://ibm.biz/ibmi-rpms)를 통해 Node.js의 LTS 버전을 사용할 수 있습니다.
 패키지 이름은 `nodejs` 뒤에 주 버전 숫자를 붙이면 됩니다(`nodejs8`, `nodejs10`, `nodejs12` 등).
 
 커맨드 라인에서 Node.js 12.x를 설치하려면 \*ALLOBJ 특수 권한을 가진 사용자로 다음 명령을 실행하세요.
@@ -222,7 +222,7 @@ On Unix / OS X systems Node.js built from source can be installed using
 [nvm](https://github.com/creationix/nvm) by installing into the location that nvm expects:
 
 ```bash
-$ env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
+env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
 After this you can use `nvm` to switch between released versions and versions
@@ -230,14 +230,14 @@ built from source.
 For example, if the version of Node.js is v8.0.0-pre:
 
 ```bash
-$ nvm use 8
+nvm use 8
 ```
 
 Once the official release is out you will want to uninstall the version built
 from source:
 
 ```bash
-$ nvm uninstall 8
+nvm uninstall 8
 ```
 -->
 
@@ -251,20 +251,20 @@ Unix / OS X 시스템에서는 소스로 빌드된 Node.js를
 이는 nvm에 설정된 위치에 설치됩니다.
 
 ```bash
-$ env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
+env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
 설치 후 `nvm`으로 릴리스 된 버전이나 소스에서 빌드한 버전 간에 변경할 수 있습니다.
 예를 들어 Node.js 버전이 v8.0.0-pre라면 다음과 같이 실행합니다.
 
 ```bash
-$ nvm use 8
+nvm use 8
 ```
 
 공식적으로 릴리스 된 후 소스에서 빌드된 버전을 다음과 같이 제거할 수 있습니다.
 
 ```bash
-$ nvm uninstall 8
+nvm uninstall 8
 ```
 
 <!--
@@ -276,7 +276,7 @@ Node.js is available through the ports system.
 /usr/ports/lang/node
 ```
 
-Using [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
+Using [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
 
 ```bash
 pkg_add node
@@ -290,7 +290,7 @@ pkg_add node
 /usr/ports/lang/node
 ```
 
-OpenBSD 환경에서 [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1)를 사용하는 방법도 있습니다.
+OpenBSD 환경에서 [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1)를 사용하는 방법도 있습니다.
 
 ```bash
 pkg_add node
@@ -354,13 +354,13 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 <!--
 ### Alternatives
 
-Using **[Homebrew](http://brew.sh/)**:
+Using **[Homebrew](https://brew.sh/)**:
 
 ```bash
 brew install node
 ```
 
-Using **[MacPorts](http://www.macports.org/)**:
+Using **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -385,13 +385,13 @@ cd pkgsrc/lang/nodejs && bmake install
 -->
 ### 그 밖의 방법
 
-**[Homebrew](http://brew.sh/)**를 사용할 수 있습니다.
+**[Homebrew](https://brew.sh/)**를 사용할 수 있습니다.
 
 ```bash
 brew install node
 ```
 
-**[MacPorts](http://www.macports.org/)**를 사용할 수 있습니다.
+**[MacPorts](https://www.macports.org/)**를 사용할 수 있습니다.
 
 ```bash
 port install nodejs<major version>
@@ -478,7 +478,6 @@ Void Linux는 메인 저장소에서 node.js 안정 버전을 제공합니다.
 xbps-install -Sy nodejs
 ```
 
-
 <!--
 ## Windows
 
@@ -486,7 +485,7 @@ Simply download the [Windows Installer](https://nodejs.org/#download) directly f
 
 ### Alternatives
 
-Using **[Chocolatey](http://chocolatey.org)**:
+Using **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
@@ -494,7 +493,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-Using **[Scoop](http://scoop.sh/)**:
+Using **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs
@@ -507,7 +506,7 @@ scoop install nodejs
 
 ### 그 밖의 방법
 
-**[Chocolatey](http://chocolatey.org)**를 사용할 수 있습니다.
+**[Chocolatey](https://chocolatey.org/)**를 사용할 수 있습니다.
 
 ```bash
 cinst nodejs
@@ -515,7 +514,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-**[Scoop](http://scoop.sh/)**를 사용할 수 있습니다.
+**[Scoop](https://scoop.sh/)**를 사용할 수 있습니다.
 
 ```bash
 scoop install nodejs

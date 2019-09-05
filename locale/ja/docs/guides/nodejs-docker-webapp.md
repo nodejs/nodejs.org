@@ -3,7 +3,7 @@ title: Node.js Web アプリケーションを Docker 化する
 layout: docs.hbs
 ---
 
-<!-- 
+<!--
 # Dockerizing a Node.js web app
 
 The goal of this example is to show you how to get a Node.js application into a
@@ -39,7 +39,7 @@ Docker を使用すると、ソフトウェア開発用に、コンテナと呼�
 コンテナは、Linux オペレーティングシステムの基本バージョンを削除したものです。
 イメージはコンテナにロードするソフトウェアです。
 
-<!-- 
+<!--
 ## Create the Node.js app
 
 First, create a new directory where all the files would live. In this directory
@@ -143,7 +143,7 @@ console.log(`Running on http://${HOST}:${PORT}`);
 Docker コンテナ内でこのアプリケーションを実行する方法を見ていきます。
 まず、アプリケーションの Docker イメージを作成する必要があります。
 
-<!-- 
+<!--
 ## Creating a Dockerfile
 
 Create an empty file called `Dockerfile`:
@@ -155,11 +155,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `8` of `node`
+Here we will use the latest LTS (long term support) version `10` of `node`
 available from the [Docker Hub](https://hub.docker.com/):
 
 ```docker
-FROM node:8
+FROM node:10
 ```
 
 Next we create a directory to hold the application code inside the image, this
@@ -207,17 +207,16 @@ EXPOSE 8080
 ```
 
 Last but not least, define the command to run your app using `CMD` which defines
-your runtime. Here we will use the basic `npm start` which will run
-`node server.js` to start your server:
+your runtime. Here we will use `node server.js` to start your server:
 
 ```docker
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:8
+FROM node:10
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -235,7 +234,7 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
  -->
@@ -251,10 +250,10 @@ touch Dockerfile
 
 最初にしなければならないことは、どのイメージから構築したいかを定義することです。
 ここでは[Docker Hub](https://hub.docker.com/)から入手できる
-`node` の最新の LTS (long term support) バージョン `8` を使います。
+`node` の最新の LTS (long term support) バージョン `10` を使います。
 
 ```docker
-FROM node:8
+FROM node:10
 ```
 
 次に、イメージ内にアプリケーションコードを入れるディレクトリを作成します。
@@ -306,13 +305,13 @@ EXPOSE 8080
 基本的な `npm start` を使います：
 
 ```docker
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
 `Dockerfile` はこのようになっているはずです。
 
 ```docker
-FROM node:8
+FROM node:10
 
 # アプリケーションディレクトリを作成する
 WORKDIR /usr/src/app
@@ -330,10 +329,10 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
-<!-- 
+<!--
 ## .dockerignore file
 
 Create a `.dockerignore` file in the same directory as your `Dockerfile`
@@ -361,7 +360,7 @@ npm-debug.log
 これにより、ローカルモジュールとデバッグログが Docker イメージにコピーされたり、
 イメージ内にインストールされているモジュールが上書きされたりするのを防ぐことができます。
 
-<!-- 
+<!--
 ## Building your image
 
 Go to the directory that has your `Dockerfile` and run the following command to
@@ -369,7 +368,7 @@ build the Docker image. The `-t` flag lets you tag your image so it's easier to
 find later using the `docker images` command:
 
 ```bash
-$ docker build -t <your username>/node-web-app .
+docker build -t <your username>/node-web-app .
 ```
 
 Your image will now be listed by Docker:
@@ -391,7 +390,7 @@ node                            8          1934b0b038d1    5 days ago
 後で `docker images` コマンドを使って見つけやすくなります。
 
 ```bash
-$ docker build -t <your username>/node-web-app .
+docker build -t <your username>/node-web-app .
 ```
 
 あなたのイメージは Docker によって表示されます。
@@ -405,7 +404,7 @@ node                            8          1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
-<!-- 
+<!--
 ## Run the image
 
 Running your image with `-d` runs the container in detached mode, leaving the
@@ -413,7 +412,7 @@ container running in the background. The `-p` flag redirects a public port to a
 private port inside the container. Run the image you previously built:
 
 ```bash
-$ docker run -p 49160:8080 -d <your username>/node-web-app
+docker run -p 49160:8080 -d <your username>/node-web-app
 ```
 
 Print the output of your app:
@@ -444,7 +443,7 @@ $ docker exec -it <container id> /bin/bash
 以前に構築したイメージを実行します。
 
 ```bash
-$ docker run -p 49160:8080 -d <your username>/node-web-app
+docker run -p 49160:8080 -d <your username>/node-web-app
 ```
 
 アプリの出力をプリントします。
@@ -467,7 +466,7 @@ Running on http://localhost:8080
 $ docker exec -it <container id> /bin/bash
 ```
 
-<!-- 
+<!--
 ## Test
 
 To test your app, get the port of your app that Docker mapped:

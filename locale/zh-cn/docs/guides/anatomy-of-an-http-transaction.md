@@ -119,7 +119,6 @@ http.createServer((request, response) => {
 
 谈了那么就，我们都还没有说到 `response` 对象。它是一个 [`ServerResponse`][] 实例，而 ServerRespose 又是 [`WritableStream`][]。它包含了很多方法可以用以把数据返回给客户端。我们下面就将涉及到此议题。
 
-
 ## HTTP 状态码
 
 如果你嫌麻烦不想设置它，返回客户端的默认状态码总是 200。当然，不是每个 HTTP 返回码必须都是 200，在某些情况下你一定希望返回一个不同的状态码，所以你应该设置 `statusCode` 属性。
@@ -143,7 +142,8 @@ response.setHeader('X-Powered-By', 'bacon');
 
 ## 显示发送头数据
 
-我们之前讨论的设置响应头以及状态码的方法建立在你使用“隐式设置”的方式，这意味着你在发送消息体之前依赖于 node 发送请求头。  
+我们之前讨论的设置响应头以及状态码的方法建立在你使用“隐式设置”的方式，这意味着你在发送消息体之前依赖于 node 发送请求头。
+
 如果你愿意，你可以为返回流重写响应头。为做到这点，你可以使用 [`writeHead`][] 方法向消息流重写状态码和响应头。
 
 ```javascript
@@ -321,8 +321,6 @@ http.createServer((request, response) => {
 * 在 `request` 和 `response` 流中处理错误。
 
 从这些基础知识中，关于 Node.js 的 HTTP 服务一些实用案例已经逐步被构建起来，API 文档还提供了大量其它的说明，所以请详细阅读 [`EventEmitters`][]，[`Streams`][] 以及 [`HTTP`][]。
-
-
 
 [`EventEmitters`]: https://nodejs.org/api/events.html
 [`Streams`]: https://nodejs.org/api/stream.html

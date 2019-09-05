@@ -10,4 +10,4 @@ layout: blog-post.hbs
 
 Uber, Voxer, and Joyent described how they use Node in production
 
-<a href="http://www.joyent.com/blog/node-js-meetup-distributed-web-architectures/">http://www.joyent.com/blog/node-js-meetup-distributed-web-architectures/</a>
+<http://www.joyent.com/blog/node-js-meetup-distributed-web-architectures/>

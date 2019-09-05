@@ -14,10 +14,10 @@ The Node.js Foundation announced progress with efforts to make Node.js VM-neutra
 
 [NodeSource](https://nodesource.com/) announced [NodeSource Certified Modules™](https://certified.nodesource.com/) to bring security and trust to untrusted, third-party JavaScript. With [NodeSource Certified Modules](https://certified.nodesource.com/), consumers of the npm ecosystem can now rely on NodeSource as a secure, trusted and verifiable source. [Learn more here](https://nodesource.com/blog/announcing-nodesource-certified-modules-for-node-js). The team is also demoing its latest [N|Solid: N|Solid v2.0](https://nodesource.com/products/nsolid).
 
-### Daily Code Coverage Results 
+### Daily Code Coverage Results
 
 * Now available for Node.js master at: https://coverage.nodejs.org/. Please check results after your major PRs land to ensure coverage is not regressed.
-* This data is also a good way to identify where new tests can be added to improve the overall coverage numbers. 
+* This data is also a good way to identify where new tests can be added to improve the overall coverage numbers.
 * We are doing pretty well at 89.37% JS coverage and 88.3% C++ coverage but we can always do better.
 
 ### Community Updates

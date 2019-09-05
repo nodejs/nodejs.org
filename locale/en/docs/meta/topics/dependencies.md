@@ -56,7 +56,7 @@ use of threaded `getaddrinfo(3)` calls in libuv. The reason for this is that
 c-ares supports /etc/hosts, /etc/resolv.conf and /etc/svc.conf, but not things
 like mDNS.
 
-- [Documentation](http://c-ares.haxx.se/docs.html)
+- [Documentation](https://c-ares.haxx.se/docs.html)
 
 ### OpenSSL
 
@@ -72,7 +72,7 @@ For fast compression and decompression, Node.js relies on the industry-standard
 zlib library, also known for its use in gzip and libpng. Node.js uses zlib to
 create sync, async and streaming compression and decompression interfaces.
 
-- [Documentation](http://www.zlib.net/manual.html)
+- [Documentation](https://www.zlib.net/manual.html)
 
 ## Tools
 

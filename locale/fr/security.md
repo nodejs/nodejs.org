@@ -43,12 +43,11 @@ Voici la politique de divulgation des failles de sécurité pour Node.js :
 
 - Ce processus peut prendre du temps, surtout lorsqu'il requiert une coordination avec des personnes qui maintiennent d'autres projets. Tous les efforts possibles seront mis en œuvre pour résoudre la faille aussi vite que possible ; toutefois, il est important que nous suivions la procédure ci-dessus pour nous assurer que la divulgation s'effectue de la manière la plus responsable possible.
 
-
 ## Recevoir les alertes de sécurité
 
 Les alertes de sécurité sont relayées sur les canaux suivants.
 
-- [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
+- <https://groups.google.com/group/nodejs-sec>
 - [https://nodejs.org/fr/blog](https://nodejs.org/fr/blog)
 
 ## Commentaires à propos de cette politique de sécurité

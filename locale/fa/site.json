@@ -3,6 +3,8 @@
   "author": "Node.js بنیاد",
   "url": "https://nodejs.org/fa/",
   "locale": "fa",
+  "language": "زبان فارسی",
+  "languageEnglishVersion": "Persian",
   "rtl": true,
   "scrollToTop": "رفتن به بالا",
   "reportNodeIssue": "را گزارش کنید Node.js مشکلی در",
@@ -92,12 +94,12 @@
       "text": "ES6 و فراتر"
     },
     "api-lts": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "/dist/latest-%ver-major%/docs/api/",
       "subtext": "LTS",
       "text": "%ver% API"
     },
     "api-current": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "/dist/latest-%ver-major%/docs/api/",
       "text": "%ver% API"
     },
     "guides": {

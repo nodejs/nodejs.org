@@ -13,7 +13,7 @@
 .download-header::after
   display block
   clear both
-  content ""
+  content ''
 
 .download-hero
   margin-bottom 1em
@@ -99,7 +99,7 @@
       height 100%
       width 100%
       text-align center
-      font-size 0.8em;
+      font-size 0.8em
 
     a:hover, a:active
       background $node-green
@@ -111,6 +111,7 @@ h5.download-table-previous-releases-header
 .download-table
   font-size small
   border 1px solid $light-gray2
+  border-spacing 0
 
   td
     padding 5px
@@ -119,7 +120,7 @@ h5.download-table-previous-releases-header
     font-weight 600
 
   > tbody
-      td
+    td
       border-top 1px solid $light-gray2
 
     tr:nth-child(odd)
@@ -153,7 +154,7 @@ td.download-table-last
         flex-basis 160px
 
       .tag
-        font-size .6em
+        font-size 0.6em
 
   .download-matrix
     display block
@@ -168,13 +169,13 @@ td.download-table-last
 
     td
       display block
-      border 0
+      border none
 
       a
         text-align left
 
   .download-table
-    border 0
+    border none
 
     > thead
       display none
@@ -217,4 +218,4 @@ td.download-table-last
       li
         font-size 1em
       .tag
-        font-size .4em
+        font-size 0.4em

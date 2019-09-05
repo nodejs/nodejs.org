@@ -3,6 +3,8 @@
   "author": "Node.js Foundation",
   "url": "https://nodejs.org/uk/",
   "locale": "uk",
+  "language": "Українська",
+  "languageEnglishVersion": "Ukrainian",
   "scrollToTop": "Вгору",
   "reportNodeIssue": "Проблеми з Node.js",
   "reportWebsiteIssue": "Проблеми з сайтом",
@@ -91,12 +93,12 @@
       "text": "ES6 і вище"
     },
     "api-lts": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "/dist/latest-%ver-major%/docs/api/",
       "subtext": "LTS",
       "text": "%ver% API"
     },
     "api-current": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "/dist/latest-%ver-major%/docs/api/",
       "text": "%ver% API"
     },
     "guides": {

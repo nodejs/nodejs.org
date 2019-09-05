@@ -12,7 +12,7 @@
  * `<!---->` to quote your English anchor name inside, with your
  * own title beside it.
  */
-module.exports = function anchorMarkdownHeadings (text, level, raw) {
+module.exports = function anchorMarkdownHeadings (text, level, raw, slugger) {
   // Check whether we've got the comment matches
   // <!--comment-->, <!--comment --> and even <!-- comment-->
   // (20 hex = 32 dec = space character)
@@ -35,10 +35,15 @@ module.exports = function anchorMarkdownHeadings (text, level, raw) {
       .replace(/-{2,}/g, '-')
       .replace(/(^-|-$)/g, '')
   }
+
+  if (!anchorTitle) {
+    return `<h${level}>${text}</h${level}>`
+  }
+
   anchorTitle = anchorTitle.toLowerCase()
 
-  return '<h' + level + ' id="header-' + anchorTitle + '">' + text + '<a name="' +
-    anchorTitle + '" class="anchor" href="#' +
-    anchorTitle + '" aria-labelledby="header-' +
-    anchorTitle + '"></a></h' + level + '>'
+  const anchorId = `${slugger ? slugger.slug(anchorTitle) : anchorTitle}`
+  const headerId = `header-${anchorId}`
+
+  return `<h${level} id="${headerId}">${text}<a id="${anchorId}" class="anchor" href="#${anchorId}" aria-labelledby="${headerId}"></a></h${level}>`
 }

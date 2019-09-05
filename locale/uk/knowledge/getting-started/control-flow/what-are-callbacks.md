@@ -10,7 +10,6 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-
 In a synchronous program, you would write something along the lines of:
 
     function processData () {
@@ -26,7 +25,7 @@ The node.js way to deal with the above would look a bit more like this:
     function processData (callback) {
       fetchData(function (err, data) {
         if (err) {
-          console.log("An error has occured. Abort everything!");
+          console.log("An error has occurred. Abort everything!");
           return callback(err);
         }
         data += 1;
@@ -41,7 +40,7 @@ The typical convention with asynchronous functions (which almost all of your fun
     function asyncOperation ( a, b, c, callback ) {
       // ... lots of hard work ...
       if ( /* an error occurs */ ) {
-        return callback(new Error("An error has occured"));
+        return callback(new Error("An error has occurred"));
       }
       // ... more work ...
       callback(null, d, e, f);
@@ -51,4 +50,4 @@ The typical convention with asynchronous functions (which almost all of your fun
        //This code gets run after the async operation gets run
     });
 
-You will almost always want to follow the [error callback convention](/articles/errors/what-are-the-error-conventions), since most Node.js users will expect your project to follow them. The general idea is that the callback is the last parameter. The callback gets called after the function is done with all of its operations. Traditionally, the first parameter of the callback is the `error` value. If the function hits an error, then they typically call the callback with the first parameter being an Error object. If it cleanly exits, then they will call the callback with the first parameter being null and the rest being the return value(s).
+You will almost always want to follow the [error callback convention](/uk/knowledge/errors/what-are-the-error-conventions), since most Node.js users will expect your project to follow them. The general idea is that the callback is the last parameter. The callback gets called after the function is done with all of its operations. Traditionally, the first parameter of the callback is the `error` value. If the function hits an error, then they typically call the callback with the first parameter being an Error object. If it cleanly exits, then they will call the callback with the first parameter being null and the rest being the return value(s).

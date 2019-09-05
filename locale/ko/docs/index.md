@@ -32,11 +32,13 @@ The [API reference documentation](/api/) provides detailed information about a f
 This documentation describes the built-in modules provided by Node.js. It does not document modules provided by the community.
 -->
 
-### API 레퍼런스 문서
+## API 레퍼런스 문서
 
 [API 레퍼런스 문서](/api/)에는 Node.js의 함수나 객체에 대한 자세한 정보가 있습니다.
 이 문서에서 메서드가 어떤 인자를 받고 어떤 값을 반환하는지 해당 메서드와 관련된 에러에는 어떤 것이
 있는지를 알려줍니다. 다양한 Node.js에서 어떤 메서드를 사용할 수 있는지도 알려줍니다.
+
+이 문서는 Node.js가 제공하는 내장 모듈을 설명합니다. 커뮤니티에서 제공하는 모듈은 문서화하지 않습니다.
 
 <!--
 <div class="highlight-box">
@@ -54,7 +56,7 @@ This documentation describes the built-in modules provided by Node.js. It does n
 -->
 
 <div class="highlight-box">
-  <h4>이전 버전에 대한 API 문서가 필요한가요?</h4>
+  <h3>이전 버전에 대한 API 문서가 필요한가요?</h3>
 
   <ul>
     <li><a href="https://nodejs.org/docs/latest-v9.x/api/">Node.js 9.x</a></li>
@@ -75,7 +77,7 @@ This documentation describes the built-in modules provided by Node.js. It does n
 The [ES6 section](/en/docs/es6/) describes the three ES6 feature groups, and details which features are enabled by default in Node.js, alongside explanatory links. It also shows how to find which version of V8 shipped with a particular Node.js release.
 -->
 
-### ES6 기능
+## ES6 기능
 
 [ES6 부분](/ko/docs/es6/)에서는 세 가지 ES6 기능 그룹을 설명하고 Node.js에서 어떤 기능이
 기본적으로 활성화되어있는지 설명하면서 추가 링크를 제공합니다. 특정 Node.js 릴리스 버전에
@@ -87,6 +89,6 @@ The [ES6 section](/en/docs/es6/) describes the three ES6 feature groups, and det
 Long-form, in-depth articles about Node.js technical features and capabilities.
 -->
 
-### 안내
+## 안내
 
 Node.js의 기술적인 기능에 대한 길고 상세한 글입니다.

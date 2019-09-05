@@ -10,7 +10,6 @@ difficulty: 4
 layout: knowledge-post.hbs
 ---
 
-
 JavaScript is weakly typed language. That means different types can be
 used in operations and the language will try to convert the types
 until the operation makes sense.
@@ -27,7 +26,7 @@ it is "falsy".
     if(myval) {
       console.log("This value is truthy");
     }
-    
+
     myval = 0;
     if(!myval) {
       console.log("This value is falsy");
@@ -43,7 +42,7 @@ values. These are:
     null
     undefined
     NaN
-    
+
 Note that all objects and arrays are truthy, even empty ones.
 
 Truthiness and Falsiness also come into play with logical

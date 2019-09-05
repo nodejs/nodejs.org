@@ -52,7 +52,7 @@ pacman -S nodejs npm
 
 ## FreeBSD
 
-The most recent release of Node.js is available via the [www/node](http://freshports.org/www/node) port.
+The most recent release of Node.js is available via the [www/node](https://www.freshports.org/www/node) port.
 
 Install a binary package via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
@@ -97,7 +97,7 @@ On Unix / OS X systems Node.js built from source can be installed using
 [nvm](https://github.com/creationix/nvm) by installing into the location that nvm expects:
 
 ```bash
-$ env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
+env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
 After this you can use `nvm` to switch between released versions and versions
@@ -105,14 +105,14 @@ built from source.
 For example, if the version of Node.js is v8.0.0-pre:
 
 ```bash
-$ nvm use 8
+nvm use 8
 ```
 
 Once the official release is out you will want to uninstall the version built
 from source:
 
 ```bash
-$ nvm uninstall 8
+nvm uninstall 8
 ```
 
 ## OpenBSD
@@ -123,7 +123,7 @@ Node.js is available through the ports system.
 /usr/ports/lang/node
 ```
 
-Using [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
+Using [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
 
 ```bash
 pkg_add node
@@ -157,13 +157,13 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 
 ### Alternatives
 
-Using **[Homebrew](http://brew.sh/)**:
+Using **[Homebrew](https://brew.sh/)**:
 
 ```bash
 brew install node
 ```
 
-Using **[MacPorts](http://www.macports.org/)**:
+Using **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -200,7 +200,6 @@ Or build manually from pkgsrc:
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-
 ## Solus
 
 Solus provides node.js in its main repository.
@@ -208,7 +207,6 @@ Solus provides node.js in its main repository.
 ```bash
 sudo eopkg install nodejs
 ```
-
 
 ## Void Linux
 
@@ -224,7 +222,7 @@ Simply download the [Windows Installer](https://nodejs.org/#download) directly f
 
 ### Alternatives
 
-Using **[Chocolatey](http://chocolatey.org)**:
+Using **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
@@ -232,7 +230,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-Using **[Scoop](http://scoop.sh/)**:
+Using **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs

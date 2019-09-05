@@ -2,6 +2,7 @@
 title: Gouvernance du Projet
 layout: about.hbs
 ---
+
 # Gouvernance du Projet
 
 ## Comité de Pilotage Technique
@@ -29,7 +30,7 @@ Pour trouver la liste des membres actuels du TSC, voir le [README.md]
 
 ## Collaborateurs
 
-Le dépôt GitHub [nodejs/node](https://github.com/nodejs/node) est 
+Le dépôt GitHub [nodejs/node](https://github.com/nodejs/node) est
 maintenu par le TSC et un groupe de Collaborateurs additionnels
 qui sont ajoutés par le TSC de manière continue.
 
@@ -63,14 +64,14 @@ TSC servira alors d'arbitre final lorsque requis.
 Pour la liste des Collaborateurs actuels, voir le [README.md]
 (https://github.com/nodejs/node/blob/master/README.md#current-project-team-members) du projet.
 
-Un guide des Collaborateurs est maintenu sur 
+Un guide des Collaborateurs est maintenu sur
 [COLLABORATOR_GUIDE.md](https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md).
 
 ## Siéger au TSC
 
 Les sièges au TSC ne sont pas limités dans le temps. Le TSC n'a pas
-de taille fixe. Cependant, l'objectif recherché est entre 6 et 12 personnes, 
-afin d'assurer une couverture adéquate des différents domaines d'expertise, 
+de taille fixe. Cependant, l'objectif recherché est entre 6 et 12 personnes,
+afin d'assurer une couverture adéquate des différents domaines d'expertise,
 tout en conservant une capacité de prise de décision efficace.
 
 Il n'y a aucun prérequis ou qualifications nécessaires au-delà de
@@ -87,11 +88,11 @@ au programme et peuvent être ajoutés comme n'importe quel autre
 objet de programme (voir "Réunions du TSC" plus bas).
 
 Pas plus d'1/3 des membres du TSC ne pourra être affilié au même
-employeur. Si le retrait ou la démission d'un membre du TSC, ou le 
+employeur. Si le retrait ou la démission d'un membre du TSC, ou le
 changement d'employeur d'un membre du TSC, créé une situation dans
 laquelle plus d'1/3 des membres du TSC partage le même employeur,
 la situation devra immédiatement être corrigée par la démission ou le
-retrait d'un ou plusieurs membres du TSC affiliés avec le ou les 
+retrait d'un ou plusieurs membres du TSC affiliés avec le ou les
 employeurs sur-représentés.
 
 ## Réunions du TSC
@@ -104,7 +105,7 @@ Sont ajoutés au programme les objets qui sont considérés contentieux
 ou sont des modifications de gouvernance, de politique de contribution, de
 participation au TSC, ou concernant le processus de release.
 
-L'intention du programme n'est pas d'approuver ou relire tous les 
+L'intention du programme n'est pas d'approuver ou relire tous les
 correctifs. Ceci devra être fait de manière continue sur GitHub
 et géré par l'ensemble des Collaborateurs.
 
@@ -132,7 +133,7 @@ chaque réunion.
 ## Processus de Recherche de Consensus
 
 Le TSC suit un modèle décisionnaire de
-[Recherche de Consensus](http://en.wikipedia.org/wiki/Consensus-seeking_decision-making)
+[Recherche de Consensus](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making)
 (en anglais).
 
 Quand un objet du programme a atteint un consensus, le modérateur
@@ -140,7 +141,7 @@ demande une dernière fois "Quelqu'un a-t'il une objection?" pour valider
 le consensus.
 
 Si un objet du programme n'atteint pas de consensus, un membre du TSC
-peut soit appeler à un vote de clôture, ou à un vote pour reporter 
+peut soit appeler à un vote de clôture, ou à un vote pour reporter
 l'objet à la prochaine réunion. L'appel au vote doit être approuvé par
 la majorité du TSC, sinon la discussion continue. Seule la majorité simple
 est requise.

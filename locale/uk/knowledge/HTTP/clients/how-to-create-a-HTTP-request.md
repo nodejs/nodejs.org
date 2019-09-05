@@ -8,7 +8,6 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-
 Another extremely common programming task is making an HTTP request to a web server.  Node.js provides an extremely simple API for this functionality in the form of `http.request`.
 
 As an example, we are going to preform a GET request to [www.random.org/integers/?num=1&min=1&max=10&col=1&base=10&format=plain&rnd=new](www.random.org/integers/?num=1&min=1&max=10&col=1&base=10&format=plain&rnd=new) (which returns a random integer between 1 and 10) and print the result to the console.
@@ -24,19 +23,18 @@ As an example, we are going to preform a GET request to [www.random.org/integers
     callback = function(response) {
       var str = '';
 
-      //another chunk of data has been recieved, so append it to `str`
+      //another chunk of data has been received, so append it to `str`
       response.on('data', function (chunk) {
         str += chunk;
       });
 
-      //the whole response has been recieved, so we just print it out here
+      //the whole response has been received, so we just print it out here
       response.on('end', function () {
         console.log(str);
       });
     }
 
     http.request(options, callback).end();
-
 
 Making a POST request is just as easy. We will make a POST request to `www.nodejitsu.com:1337` which is running a server that will echo back what we post. The code for making a POST request is almost identical to making a GET request, just a few simple modifications:
 

@@ -2,10 +2,11 @@
 layout: about.hbs
 title: 工作组
 ---
+
 # 核心工作组
 <!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 
-核心工作组由 [ 技术指导委员会(TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md) 创建。
+核心工作组由 [技术指导委员会(TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md) 创建。
 
 ## 现有工作组
 

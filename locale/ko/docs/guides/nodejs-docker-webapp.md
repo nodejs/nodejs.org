@@ -151,11 +151,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `8` of `node`
+Here we will use the latest LTS (long term support) version `10` of `node`
 available from the [Docker Hub](https://hub.docker.com/):
 
 ```docker
-FROM node:8
+FROM node:10
 ```
 -->
 
@@ -171,10 +171,10 @@ touch Dockerfile
 
 가장 먼저 해야 할 것은 어떤 이미지를 사용해서 빌드할 것인지를 정의하는 것입니다. 여기서는
 [Docker Hub](https://hub.docker.com/)에 있는
-`node`의 최신 LTS(장기 지원) 버전인 `8`을 사용할 것입니다.
+`node`의 최신 LTS(장기 지원) 버전인 `10`을 사용할 것입니다.
 
 ```docker
-FROM node:8
+FROM node:10
 ```
 
 <!--
@@ -273,17 +273,16 @@ EXPOSE 8080
 
 <!--
 Last but not least, define the command to run your app using `CMD` which defines
-your runtime. Here we will use the basic `npm start` which will run
-`node server.js` to start your server:
+your runtime. Here we will use `node server.js` to start your server:
 
 ```docker
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:8
+FROM node:10
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -301,7 +300,7 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 -->
 
@@ -309,13 +308,13 @@ CMD [ "npm", "start" ]
 여기서는 서버를 구동하도록 `node server.js`을 실행하는 기본 `npm start`을 사용할 것입니다.
 
 ```docker
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
 `Dockerfile`은 다음과 같아야 합니다.
 
 ```docker
-FROM node:8
+FROM node:10
 
 # 앱 디렉터리 생성
 WORKDIR /usr/src/app
@@ -333,7 +332,7 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
 <!--
@@ -371,7 +370,7 @@ build the Docker image. The `-t` flag lets you tag your image so it's easier to
 find later using the `docker images` command:
 
 ```bash
-$ docker build -t <your username>/node-web-app .
+docker build -t <your username>/node-web-app .
 ```
 
 Your image will now be listed by Docker:
@@ -393,7 +392,7 @@ node                            8          1934b0b038d1    5 days ago
 쉽게 찾을 수 있습니다.
 
 ```bash
-$ docker build -t <your username>/node-web-app .
+docker build -t <your username>/node-web-app .
 ```
 
 Docker가 당신이 빌드한 이미지를 보여줄 것입니다.
@@ -415,7 +414,7 @@ container running in the background. The `-p` flag redirects a public port to a
 private port inside the container. Run the image you previously built:
 
 ```bash
-$ docker run -p 49160:8080 -d <your username>/node-web-app
+docker run -p 49160:8080 -d <your username>/node-web-app
 ```
 
 Print the output of your app:
@@ -445,7 +444,7 @@ $ docker exec -it <container id> /bin/bash
 `-p` 플래그는 공개 포트를 컨테이너 내의 비공개 포트로 리다이렉트합니다. 앞에서 만든 이미지를 실행하세요.
 
 ```bash
-$ docker run -p 49160:8080 -d <your username>/node-web-app
+docker run -p 49160:8080 -d <your username>/node-web-app
 ```
 
 앱의 로그를 출력하세요.

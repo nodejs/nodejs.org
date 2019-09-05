@@ -80,11 +80,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `8` of `node`
+Here we will use the latest LTS (long term support) version `10` of `node`
 available from the [Docker Hub](https://hub.docker.com/):
 
 ```docker
-FROM node:8
+FROM node:10
 ```
 
 Next we create a directory to hold the application code inside the image, this
@@ -114,9 +114,9 @@ RUN npm install
 Note that, rather than copying the entire working directory, we are only copying
 the `package.json` file. This allows us to take advantage of cached Docker
 layers. bitJudo has a good explanation of this
-[here](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/). 
-Furthermore, the `npm ci` command, specified in the comments, helps provide faster, reliable, reproducible builds for production environments. 
-You can read more about this [here](https://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable). 
+[here](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/).
+Furthermore, the `npm ci` command, specified in the comments, helps provide faster, reliable, reproducible builds for production environments.
+You can read more about this [here](https://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable).
 
 To bundle your app's source code inside the Docker image, use the `COPY`
 instruction:
@@ -134,17 +134,16 @@ EXPOSE 8080
 ```
 
 Last but not least, define the command to run your app using `CMD` which defines
-your runtime. Here we will use the basic `npm start` which will run
-`node server.js` to start your server:
+your runtime. Here we will use `node server.js` to start your server:
 
 ```docker
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:8
+FROM node:10
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -162,7 +161,7 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
 ## .dockerignore file
@@ -185,7 +184,7 @@ build the Docker image. The `-t` flag lets you tag your image so it's easier to
 find later using the `docker images` command:
 
 ```bash
-$ docker build -t <your username>/node-web-app .
+docker build -t <your username>/node-web-app .
 ```
 
 Your image will now be listed by Docker:
@@ -195,7 +194,7 @@ $ docker images
 
 # Example
 REPOSITORY                      TAG        ID              CREATED
-node                            8          1934b0b038d1    5 days ago
+node                            10         1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
@@ -206,7 +205,7 @@ container running in the background. The `-p` flag redirects a public port to a
 private port inside the container. Run the image you previously built:
 
 ```bash
-$ docker run -p 49160:8080 -d <your username>/node-web-app
+docker run -p 49160:8080 -d <your username>/node-web-app
 ```
 
 Print the output of your app:

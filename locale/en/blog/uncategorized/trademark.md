@@ -16,5 +16,4 @@ Where does our trademark policy come from? We started by looking at popular open
 
 While we realize that any changes involving lawyers can be intimidating to the community we want to make this transition as smoothly as possible and welcome your questions and feedback on the policy and how we are implementing it.
 
-<a href="/static/documents/trademark-policy.pdf">trademark-policy.pdf</a>
-trademark@joyent.com
+[trademark-policy.pdf](/static/documents/trademark-policy.pdf) trademark@joyent.com

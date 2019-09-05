@@ -3,6 +3,7 @@ layout: about.hbs
 title: Über Node.js
 trademark: Trademark
 ---
+
 # Über Node.js&reg;
 
 Als asynchrone, Event-basierte Laufzeitumgebung wurde Node speziell für die
@@ -71,4 +72,4 @@ ermöglichen.
 [`Cluster`]: https://nodejs.org/api/cluster.html
 [Ereignisschleife]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
-[Twisted]: http://twistedmatrix.com/
+[Twisted]: https://twistedmatrix.com/trac/

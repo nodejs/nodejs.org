@@ -92,40 +92,38 @@ either the IP address or by using ssh tunnels as described below.
 Several commercial and open source tools can connect to Node's Inspector. Basic
 info on these follows:
 
-#### [node-inspect](https://github.com/nodejs/node-inspect)
+### [node-inspect](https://github.com/nodejs/node-inspect)
 
 * CLI Debugger supported by the Node.js Foundation which uses the [Inspector Protocol][].
 * A version is bundled with Node and can be used with `node inspect myscript.js`.
 * The latest version can also be installed independently (e.g. `npm install -g node-inspect`)
   and used with `node-inspect myscript.js`.
 
-#### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
+### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
 
 * **Option 1**: Open `chrome://inspect` in a Chromium-based
   browser. Click the Configure button and ensure your target host and port
   are listed.
 * **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
   (see above) or the --inspect hint text and paste into Chrome.
-* **Option 3**: Install the Chrome Extension NIM (Node Inspector Manager):
-  https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 
-#### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
+### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
 
 * In the Debug panel, click the settings icon to open `.vscode/launch.json`.
   Select "Node.js" for initial setup.
 
-#### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
+### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
 
 * Choose "Debug > Start Debugging" from the menu or hit F5.
 * [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging).
 
-#### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ and other JetBrains IDEs
+### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ and other JetBrains IDEs
 
 * Create a new Node.js debug configuration and hit Debug. `--inspect` will be used
   by default for Node.js 7+. To disable uncheck `js.debugger.node.use.inspect` in
   the IDE Registry.
 
-#### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
+### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 
 * Library to ease connections to Inspector Protocol endpoints.
 
@@ -135,7 +133,7 @@ info on these follows:
 
 The following table lists the impact of various runtime flags on debugging:
 
-<table cellpadding="0" cellspacing="0">
+<table class="table-no-border-no-padding">
   <tr><th>Flag</th><th>Meaning</th></tr>
   <tr>
     <td>--inspect</td>
@@ -213,14 +211,14 @@ want to be able to debug. On that machine, you should start the node process
 with the inspector listening only to localhost (the default).
 
 ```bash
-$ node --inspect server.js
+node --inspect server.js
 ```
 
 Now, on your local machine from where you want to initiate a debug client
 connection, you can setup an ssh tunnel:
 
 ```bash
-$ ssh -L 9221:localhost:9229 user@remote.example.com
+ssh -L 9221:localhost:9229 user@remote.example.com
 ```
 
 This starts a ssh tunnel session where a connection to port 9221 on your local
@@ -243,14 +241,14 @@ couple popular ones are listed below.
 
 The V8 Debugging Protocol is no longer maintained or documented.
 
-#### [Built-in Debugger](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
+### [Built-in Debugger](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
 
 Start `node debug script_name.js` to start your script under Node's builtin
 command-line debugger. Your script starts in another Node process started with
 the `--debug-brk` option, and the initial Node process runs the `_debugger.js`
 script and connects to your target.
 
-#### [node-inspector](https://github.com/node-inspector/node-inspector)
+### [node-inspector](https://github.com/node-inspector/node-inspector)
 
 Debug your Node.js app with Chrome DevTools by using an intermediary process
 which translates the Inspector Protocol used in Chromium to the V8 Debugger
