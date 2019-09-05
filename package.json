@@ -53,7 +53,7 @@
     "metalsmith-stylus": "^3.0.0",
     "metalsmith-yearly-pagination": "^2.0.1",
     "ncp": "^2.0.0",
-    "node-version-data": "^1.0.1",
+    "node-version-data": "^1.1.0",
     "octonode": "^0.9.5",
     "request": "^2.88.0",
     "require-dir": "^1.2.0",
