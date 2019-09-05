@@ -111,7 +111,7 @@ Example 1: A constant-time callback.
 app.get('/constant-time', (req, res) => {
   res.sendStatus(200);
 });
-``` 
+```
 
 Example 2: An `O(n)` callback. This callback will run quickly for small `n` and more slowly for large `n`.
 
@@ -126,7 +126,7 @@ app.get('/countToN', (req, res) => {
 
   res.sendStatus(200);
 });
-``` 
+```
 
 Example 3: An `O(n^2)` callback. This callback will still run quickly for small `n`, but for large `n` it will run much more slowly than the previous `O(n)` example.
 
@@ -227,19 +227,19 @@ These APIs are expensive, because they involve significant computation (encrypti
 
 In a server, *you should not use the following synchronous APIs from these modules*:
 - Encryption:
-    - `crypto.randomBytes` (synchronous version)
-    - `crypto.randomFillSync`
-    - `crypto.pbkdf2Sync`
-    - You should also be careful about providing large input to the encryption and decryption routines.
+  - `crypto.randomBytes` (synchronous version)
+  - `crypto.randomFillSync`
+  - `crypto.pbkdf2Sync`
+  - You should also be careful about providing large input to the encryption and decryption routines.
 - Compression:
-    - `zlib.inflateSync`
-    - `zlib.deflateSync`
+  - `zlib.inflateSync`
+  - `zlib.deflateSync`
 - File system:
-    - Do not use the synchronous file system APIs. For example, if the file you access is in a [distributed file system](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems) like [NFS](https://en.wikipedia.org/wiki/Network_File_System), access times can vary widely.
+  - Do not use the synchronous file system APIs. For example, if the file you access is in a [distributed file system](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems) like [NFS](https://en.wikipedia.org/wiki/Network_File_System), access times can vary widely.
 - Child process:
-    - `child_process.spawnSync`
-    - `child_process.execSync`
-    - `child_process.execFileSync`
+  - `child_process.spawnSync`
+  - `child_process.execSync`
+  - `child_process.execFileSync`
 
 This list is reasonably complete as of Node v9.
 
@@ -449,7 +449,7 @@ Whether you use only the Node Worker Pool or maintain separate Worker Pool(s), y
 
 To do this, minimize the variation in Task times by using Task partitioning.
 
-##  The risks of npm modules
+## The risks of npm modules
 While the Node core modules offer building blocks for a wide variety of applications, sometimes something more is needed. Node developers benefit tremendously from the [npm ecosystem](https://www.npmjs.com/), with hundreds of thousands of modules offering functionality to accelerate your development process.
 
 Remember, however, that the majority of these modules are written by third-party developers and are generally released with only best-effort guarantees. A developer using an npm module should be concerned about two things, though the latter is frequently forgotten.
