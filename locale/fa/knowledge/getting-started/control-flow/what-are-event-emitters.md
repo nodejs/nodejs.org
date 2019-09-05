@@ -99,4 +99,3 @@ If you want remove a specific callback, you can use `removeListener`. If you wan
     false
 
 NOTE: If you want create more than 10 listeners on a single event, you will have to make a call to `ee.setMaxListeners(n)` where n is the max numbers of listeners (with zero being unlimited number of listeners). This is used to make sure you aren't accidentally leaking event listeners.
-

@@ -13,7 +13,7 @@ layout: blog-post.hbs
 
 Node.js is the runtime of choice for building mobile, web and cloud applications. The diversity of the technology and its capabilities are making it ubiquitous in almost every ecosystem from personal finance to robotics. To highlight changes with the platform and what’s to come, Node.js Interactive will focus on three tracks: Frontend, Backend and the Internet of Things (IoT). Highlights of these tracks available [here](https://nodejs.org/en/blog/announcements/interactive-2015-programming/); full track sessions [here](http://events.linuxfoundation.org/events/node-interactive/program/schedule).
 
-Node.js Interactive brings together a broad range of speakers to help experienced and novice Node.js users alike learn tips, best practices, new skills, as well as gain insight into future developments for the technology.  
+Node.js Interactive brings together a broad range of speakers to help experienced and novice Node.js users alike learn tips, best practices, new skills, as well as gain insight into future developments for the technology.
 
 2015 Node.js Interactive keynotes include:
 

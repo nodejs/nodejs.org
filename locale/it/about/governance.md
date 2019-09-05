@@ -16,7 +16,7 @@ who are added by the Technical Steering Committee ([TSC][]) on an ongoing basis.
 
 Individuals making significant and valuable contributions are made Collaborators
 and given commit-access to the project. These individuals are identified by the
-TSC and their nomination is discussed with the existing Collaborators. 
+TSC and their nomination is discussed with the existing Collaborators.
 
 For the current list of Collaborators, see the project's [README.md][].
 

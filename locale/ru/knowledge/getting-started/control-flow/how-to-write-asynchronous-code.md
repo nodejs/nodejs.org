@@ -37,7 +37,6 @@ The asynchronous version, on the other hand, does not stop time - instead, the c
 
 When only reading a file or two, or saving something quickly, the difference between synchronous and asynchronous file I/O can be quite small. On the other hand, though, when you have multiple requests coming in per second that require file or database IO, trying to do that IO synchronously would be quite thoroughly disastrous for performance.
 
-
 ### Callbacks
 Callbacks are a basic idiom in node.js for asynchronous operations. When most people talk about callbacks, they mean the function that is passed as the last parameter to an asynchronous function. The callback is then later called with any return value or error message that the function produced. For more details, see the article on [callbacks](/ru/knowledge/getting-started/control-flow/what-are-callbacks)
 

@@ -53,7 +53,7 @@ pacman -S nodejs npm
 
 ## FreeBSD
 
-Самый последний выпуск Node.js доступен через порт [www/node](http://freshports.org/www/node).
+Самый последний выпуск Node.js доступен через порт [www/node](https://www.freshports.org/www/node).
 
 Установите бинарный пакет через [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
@@ -123,7 +123,7 @@ Node.js доступен через систему портов.
 /usr/ports/lang/node
 ```
 
-Использование [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) в OpenBSD:
+Использование [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) в OpenBSD:
 
 ```bash
 pkg_add node
@@ -157,13 +157,13 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 
 ### Альтернативы
 
-Использование **[Homebrew](http://brew.sh/)**:
+Использование **[Homebrew](https://brew.sh/)**:
 
 ```bash
 brew install node
 ```
 
-Использование **[MacPorts](http://www.macports.org/)**:
+Использование **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -200,7 +200,6 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-
 ## Solus
 
 Solus предоставляет node.js в своем основном репозитории.
@@ -208,7 +207,6 @@ Solus предоставляет node.js в своем основном репо
 ```bash
 sudo eopkg install nodejs
 ```
-
 
 ## Void Linux
 
@@ -224,7 +222,7 @@ xbps-install -Sy nodejs
 
 ### Альтернативы
 
-Использование **[Chocolatey](http://chocolatey.org)**:
+Использование **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
@@ -232,7 +230,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-Использование **[Scoop](http://scoop.sh/)**:
+Использование **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs

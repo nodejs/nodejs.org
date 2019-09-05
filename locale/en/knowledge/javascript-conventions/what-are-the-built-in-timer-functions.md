@@ -61,7 +61,7 @@ clearTimeout(id1);
 clearInterval(id2);
 ```
 
-So if you keep track of the return values of the timers, you can easily unhook the timers. 
+So if you keep track of the return values of the timers, you can easily unhook the timers.
 
 The final trick for the timer objects is you can pass parameters to the callback by passing more parameters to setTimeout and setInterval:
 

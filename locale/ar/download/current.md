@@ -27,7 +27,7 @@ additional:
     provider: مزود
     SmartOSBinaries: ملف ثنائي لـSmartOS
     DockerImage: اسطوانة دوكر
-    officialDockerImage: اسطوانة نود جي اس الرسمية الخاصة بالدوكر 
+    officialDockerImage: اسطوانة نود جي اس الرسمية الخاصة بالدوكر
     LinuxPowerSystems: لينكس على Power Systems
     LinuxSystemZ: لينكس على System z
     AIXPowerSystems: AIX على Power Systems

@@ -592,7 +592,6 @@ Be sure to read up more on [`Stream`][] for other API functions to help
 improve and unleash your streaming capabilities when building an application with
 Node.js.
 
-
 [`Stream`]: https://nodejs.org/api/stream.html
 [`Buffer`]: https://nodejs.org/api/buffer.html
 [`EventEmitters`]: https://nodejs.org/api/events.html

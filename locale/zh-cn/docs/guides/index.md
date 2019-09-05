@@ -14,14 +14,12 @@ layout: docs.hbs
 - [将 Node.js 网络应用安装到 Docker 中](nodejs-docker-webapp/)
 - [迁移到安全的 Buffer 构造函数中](buffer-constructor-deprecation/)
 
-
 ## Node.js 核心概念
 
 - [阻塞对比非阻塞一览](blocking-vs-non-blocking/)
 - [Node.js 事件轮询，定时器 和 process.nextTick()](event-loop-timers-and-nexttick/)
 - [不要阻塞你的事件轮询（或是工作池）](dont-block-the-event-loop/)
 - [Node.js 中的定时器](timers-in-node/)
-
 
 ## 与模块相关的指南
 

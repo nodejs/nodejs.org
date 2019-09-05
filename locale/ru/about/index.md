@@ -62,4 +62,4 @@ HTTP является объектом первого рода в Node.js, ра�
 [`cluster`]: /api/cluster.html
 [event loop]: /ru/docs/guides/event-loop-timers-and-nexttick/
 [event machine]: https://github.com/eventmachine/eventmachine
-[twisted]: http://twistedmatrix.com/
+[twisted]: https://twistedmatrix.com/trac/

@@ -71,14 +71,14 @@ function onErr(err) {
 
 NODE PRO TIP: This short script also demonstrates proper error handling in node - errors are a callback's first argument, and `return` is used with the error handler so that the rest of the function doesn't execute when errors happen.
 
-Prompt also makes it trivial to handle a certain set of recurring properties that one might want to attach. 
+Prompt also makes it trivial to handle a certain set of recurring properties that one might want to attach.
 
 ```js
 const prompt = require('prompt');
 
 const properties = [
     {
-        name: 'username', 
+        name: 'username',
         validator: /^[a-zA-Z\s\-]+$/,
         warning: 'Username must be only letters, spaces, or dashes'
     },

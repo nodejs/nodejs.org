@@ -24,4 +24,4 @@ As mentioned above, there are also a number of 'pseudo-globals' included at the 
 - __dirname - Like `__filename`, the `__dirname` keyword contains the path to the root directory of the currently executing script.  Also not present in the Node REPL.
 - require() - The `require()` function is a built-in function, exposed per-module, that allows other valid modules to be included.  [Read More](/fa/knowledge/getting-started/what-is-require)
 
-Much of this functionality can be extremely useful for a Node.js developer's daily life - but at the very least, remember these as bad names to use for your own functions! 
+Much of this functionality can be extremely useful for a Node.js developer's daily life - but at the very least, remember these as bad names to use for your own functions!

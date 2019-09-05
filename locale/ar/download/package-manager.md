@@ -5,7 +5,7 @@ title: Installing Node.js via package manager
 
 # تثبيت النود جي اس عبر مدير حزم
 
-***ملاحظة*** إن صيانة و دعم الحزم المذكورة في هذه الصفحة تتم عبر المشرفين على مديري الحزم، و **ليس** فريق النود جي اس الأساسي. تفضل بإبلاغ أية مشكلة إلى المشرفين على الحزم و إذا كانت مشكلتك عبارة عن خطأ في النود جي اس بحد ذاتها فسيبلغ المشرف عن هذه المشكلة صعودا.  
+***ملاحظة*** إن صيانة و دعم الحزم المذكورة في هذه الصفحة تتم عبر المشرفين على مديري الحزم، و **ليس** فريق النود جي اس الأساسي. تفضل بإبلاغ أية مشكلة إلى المشرفين على الحزم و إذا كانت مشكلتك عبارة عن خطأ في النود جي اس بحد ذاتها فسيبلغ المشرف عن هذه المشكلة صعودا.
 
 ----------------------------
 
@@ -53,7 +53,7 @@ pacman -S nodejs npm
 
 ## FreeBSD
 
-آخر إصدارات النود جي اس متوفرة عبر [www/node](http://freshports.org/www/node)
+آخر إصدارات النود جي اس متوفرة عبر [www/node](https://www.freshports.org/www/node)
 
 يمكنك تثبيت حزمة ثنائية عبر [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
@@ -77,7 +77,7 @@ emerge nodejs
 
 ## IBM i
 
-نسخ LTS لـNode.js متوفرة من IBM و متوفرة عبر [مدير الحزمة الـ'yum'](http://ibm.biz/ibmi-rpms). إسم الحزمة هو `nodejs` متبوعا برقم الإصدار الرائد (مثلا، `nodejs8`، `nodejs10`، `nodejs12`، إلخ
+نسخ LTS لـNode.js متوفرة من IBM و متوفرة عبر [مدير الحزمة الـ'yum'](https://ibm.biz/ibmi-rpms). إسم الحزمة هو `nodejs` متبوعا برقم الإصدار الرائد (مثلا، `nodejs8`، `nodejs10`، `nodejs12`، إلخ
 
 لتثبيت Node.js 12.x باستخدام سطر الأوامر، شغل الامر التالي كمستخدم مع سلطة *ALLOBJ الخاصة :
 
@@ -133,7 +133,7 @@ nvm uninstall 8
 /usr/ports/lang/node
 ```
 
-باستعمال [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) على OpenBSD:
+باستعمال [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) على OpenBSD:
 
 ```bash
 pkg_add node
@@ -167,13 +167,13 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 
 ### البدائل
 
-باستعمال **[Homebrew](http://brew.sh/)**:
+باستعمال **[Homebrew](https://brew.sh/)**:
 
 ```bash
 brew install node
 ```
 
-باستعمال **[MacPorts](http://www.macports.org/)**:
+باستعمال **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -210,7 +210,6 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-
 ## Solus
 
 توفر Solus النود جي اس في مستودعها الرئيسي.
@@ -218,7 +217,6 @@ cd pkgsrc/lang/nodejs && bmake install
 ```bash
 sudo eopkg install nodejs
 ```
-
 
 ## Void Linux
 
@@ -234,7 +232,7 @@ xbps-install -Sy nodejs
 
 ### البدائل
 
-باستعمال **[Chocolatey](http://chocolatey.org)**:
+باستعمال **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
@@ -242,7 +240,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-باستعمال **[Scoop](http://scoop.sh/)**:
+باستعمال **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs

@@ -51,13 +51,12 @@ You can clear the timers you set with `clearTimeout` and `clearInterval`. Their 
     clearTimeout(id1);
     clearInterval(id2);
 
-So if you keep track of the return values of the timers, you can easily unhook the timers. 
+So if you keep track of the return values of the timers, you can easily unhook the timers.
 
 The final trick for the timer objects is you can pass parameters to the callback by passing more parameters to setTimeout and setInterval:
 
     setTimeout(console.log, 1000, "This", "has", 4, "parameters");
     setInterval(console.log, 1000, "This only has one");
-
 
     This has 4 parameters
     This only has one

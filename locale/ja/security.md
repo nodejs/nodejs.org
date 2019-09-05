@@ -58,7 +58,7 @@ appreciated and will be acknowledged.
 
 ## サードパーティのモジュールの脆弱性を報告する
 
-サードパーティモジュールのセキュリティバグはそれぞれのメンテナに報告されるべきであり、また [HackerOne](https://hackerone.com/nodejs-ecosystem) の Node エコシステムセキュリティチームを通じて調整されるべきです。 
+サードパーティモジュールのセキュリティバグはそれぞれのメンテナに報告されるべきであり、また [HackerOne](https://hackerone.com/nodejs-ecosystem) の Node エコシステムセキュリティチームを通じて調整されるべきです。
 
 このプロセスの詳細は [セキュリティワーキンググループリポジトリ](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md) に記載されています。
 

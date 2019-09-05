@@ -26,4 +26,3 @@ Code + Learn це всесвітня ініціатива воркшопів, щ
 - Tokyo in November 2016
 - Amsterdam in September 2016
 - Dublin and London in September 2015
-

@@ -9,7 +9,7 @@ trademark: Trademark
 En tant qu'environnement d'exécution JavaScript asynchrone et orienté événnement, Node.js est conçu
 pour générer des applications scalables. Dans le "hello world" d'exemple
 suivant, plusieurs connexions peuvent être gérées de manière concurrente.
-A chaque connexion, la fonction de rappel est déclenchée, mais si il n'y a rien à faire, Node.js restera en sommeil.                                                                   
+A chaque connexion, la fonction de rappel est déclenchée, mais si il n'y a rien à faire, Node.js restera en sommeil.
 
 ```javascript
 const http = require('http');
@@ -47,7 +47,7 @@ Node.js pousse le modèle événementiel encore plus loin. Il instaure la
 et non comme une librairie. Dans les autres systèmes, il y a toujours
 un appel bloquant pour démarrer la boucle événementielle.
 Le comportement est défini habituellement par des fonctions de rappel au
-début du script, et à la fin un serveur est démarré avec un appel bloquant 
+début du script, et à la fin un serveur est démarré avec un appel bloquant
 comme `EventMachine::run()`. Dans Node.js, il n'y a pas d'appel pour démarrer la boucle.
 Node.js entre simplement dans la boucle après avoir exécuté le script d'entrée.
 Node.js sort de la boucle événementielle lorsqu'il n'y a plus de fonction
@@ -58,9 +58,9 @@ HTTP a une place prépondérante dans Node.js, qui a été conçu pour le stream
 et une faible latence. Ceci fait de Node.js une base toute désignée pour une librairie web ou un framework.
 
 Et si Node.js a été conçu sans processus multiples, vous pouvez tout de même
-profiter d'un environnement multi-coeur. Vous pouvez générer des processus 
-enfant par le biais de l'API [`child_process.fork()`][] (en), avec lesquels 
-vous pourrez communiquer facilement. Basé sur la même interface, le 
+profiter d'un environnement multi-coeur. Vous pouvez générer des processus
+enfant par le biais de l'API [`child_process.fork()`][] (en), avec lesquels
+vous pourrez communiquer facilement. Basé sur la même interface, le
  module
  [`cluster`][] (en) vous permettra de partager les sockets entre vos processus
  pour faire de la répartition de charge entre vos coeurs.
@@ -70,4 +70,4 @@ vous pourrez communiquer facilement. Basé sur la même interface, le
 [`cluster`]: https://nodejs.org/api/cluster.html
 [boucle événementielle]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
-[Twisted]: http://twistedmatrix.com/
+[Twisted]: https://twistedmatrix.com/trac/

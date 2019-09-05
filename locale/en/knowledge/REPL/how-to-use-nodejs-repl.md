@@ -22,7 +22,7 @@ Starting the REPL is simple - just run node on the command line without a filena
 node
 ```
 
-It then drops you into a simple prompt ('>') where you can type any JavaScript command you wish. As in most shells, you can press the up and down arrow keys to scroll through your command history and modify previous commands. 
+It then drops you into a simple prompt ('>') where you can type any JavaScript command you wish. As in most shells, you can press the up and down arrow keys to scroll through your command history and modify previous commands.
 
 ```shell
 $ node

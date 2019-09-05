@@ -59,7 +59,7 @@ your real title.
 
 ## FreeBSD
 
-可以通过 [www/node](http://freshports.org/www/node) 获取最近的 Node.js。
+可以通过 [www/node](https://www.freshports.org/www/node) 获取最近的 Node.js。
 
 通过 [pkg](https://www.freebsd.org/cgi/man.cgi?pkg) 安装二进制文件包：
 
@@ -83,7 +83,7 @@ emerge nodejs
 
 ## IBM i
 
-Node.js 长期支持版（LTS）各类版本可以通过 IBM 处获得，使用 ['yum' 包管理器](http://ibm.biz/ibmi-rpms)。包名字的组成是 `nodejs` 加上一个主版本号（举个例子，`nodejs8`，`nodejs10`，`nodejs12` 等)。
+Node.js 长期支持版（LTS）各类版本可以通过 IBM 处获得，使用 ['yum' 包管理器](https://ibm.biz/ibmi-rpms)。包名字的组成是 `nodejs` 加上一个主版本号（举个例子，`nodejs8`，`nodejs10`，`nodejs12` 等)。
 
 如果你要通过命令行安装 Node.js 12.x，请以\*ALLOBJ 特殊权限方式进行：
 ```bash
@@ -137,7 +137,7 @@ Node.js 也可以通过 ports 系统获取。
 /usr/ports/lang/node
 ```
 
-在 OpenBSD 上中使用[pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1)：
+在 OpenBSD 上中使用[pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1)：
 
 ```bash
 pkg_add node
@@ -171,13 +171,13 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 
 ### 可替代方案
 
-使用 **[Homebrew](http://brew.sh/)**:
+使用 **[Homebrew](https://brew.sh/)**:
 
 ```bash
 brew install node
 ```
 
-使用 **[MacPorts](http://www.macports.org/)**:
+使用 **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -214,7 +214,6 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-
 ## Solus
 
 在主版本库中，Solus 提供了 node.js。
@@ -222,7 +221,6 @@ cd pkgsrc/lang/nodejs && bmake install
 ```bash
 sudo eopkg install nodejs
 ```
-
 
 ## Void Linux
 
@@ -238,7 +236,7 @@ xbps-install -Sy nodejs
 
 ### 可替代方案
 
-使用 **[Chocolatey](http://chocolatey.org)**:
+使用 **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
@@ -246,7 +244,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-使用 **[Scoop](http://scoop.sh/)**:
+使用 **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs

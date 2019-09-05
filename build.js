@@ -310,7 +310,7 @@ function getSource (callback) {
 // This is where the build is orchestrated from, as indicated by the function
 // name. It brings together all build steps and dependencies and executes them.
 function fullBuild (opts) {
-  const { preserveLocale, selectedLocales } = opts
+  const { selectedLocales, preserveLocale } = opts
   // Build static files.
   copyStatic()
   // Build layouts
@@ -320,6 +320,9 @@ function fullBuild (opts) {
 
     // Executes the build cycle for every locale.
     fs.readdir(path.join(__dirname, 'locale'), (e, locales) => {
+      if (e) {
+        throw e
+      }
       const filteredLocales = locales.filter(file => junk.not(file) && (selectedLocales ? selectedLocales.includes(file) : true))
       const localesData = generateLocalesData(filteredLocales)
       filteredLocales.forEach((locale) => {
@@ -340,3 +343,4 @@ exports.getSource = getSource
 exports.fullBuild = fullBuild
 exports.buildLocale = buildLocale
 exports.copyStatic = copyStatic
+exports.generateLocalesData = generateLocalesData

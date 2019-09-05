@@ -46,4 +46,4 @@ Now that your server is set up and started, you should be able to get the file w
 
     curl -k https://localhost:8000
 
-or in your browser, by going to https://localhost:8000 . 
+or in your browser, by going to https://localhost:8000 .

@@ -8,9 +8,10 @@ slug: some-new-node-projects
 layout: blog-post.hbs
 ---
 
-<ul>
-<li>Superfeedr released <a href="http://blog.superfeedr.com/node-xmpp-server/">a Node XMPP Server</a>. "<i>Since <a href="http://spaceboyz.net/~astro/">astro</a> had been doing an <strong>amazing work</strong> with his <a href="https://github.com/astro/node-xmpp">node-xmpp</a> library to build <em>Client</em>, <em>Components</em> and even <em>Server to server</em> modules, the logical next step was to try to build a <em>Client to Server</em> module so that we could have a full blown server. That&#8217;s what we worked on the past couple days, and <a href="https://github.com/superfeedr/node-xmpp">it&#8217;s now on Github</a>!</i></li>
+* Superfeedr released [a Node XMPP Server](http://blog.superfeedr.com/node-xmpp-server/). "_Since [astro](http://spaceboyz.net/~astro/) had been doing an **amazing work** with his [node-xmpp](https://github.com/astro/node-xmpp) library to build _Client_, _Components_ and even _Server to server_ modules, the logical next step was to try to build a _Client to Server_ module so that we could have a full blown server. That’s what we worked on the past couple days, and [it’s now on Github](https://github.com/superfeedr/node-xmpp)!_
 
-<li>Joyent's Mark Cavage released <a href="http://ldapjs.org/">LDAP.js</a>. "<i>ldapjs is a pure JavaScript, from-scratch framework for implementing <a href="http://tools.ietf.org/html/rfc4510">LDAP</a> clients and servers in <a href="https://nodejs.org">Node.js</a>.  It is intended for developers used to interacting with HTTP services in node and <a href="http://expressjs.com">express</a>.</i></li>
+* Joyent's Mark Cavage released [LDAP.js](http://ldapjs.org/). "_ldapjs is a pure JavaScript, from-scratch framework for implementing [LDAP](http://tools.ietf.org/html/rfc4510) clients and servers in [Node.js](https://nodejs.org). It is intended for developers used to interacting with HTTP services in node and [express](http://expressjs.com)._
 
-<li>Microsoft's Tomasz Janczuk released <a href="http://tomasz.janczuk.org/2011/08/hosting-nodejs-applications-in-iis-on.html">iisnode</a> "<i>The <a href="https://github.com/tjanczuk/iisnode">iisnode</a> project provides a native IIS 7.x module that allows hosting of node.js applications in IIS.</i><br /><br />Scott Hanselman posted <a href="http://www.hanselman.com/blog/InstallingAndRunningNodejsApplicationsWithinIISOnWindowsAreYouMad.aspx">a detailed walkthrough</a> of how to get started with iisnode
+* Microsoft's Tomasz Janczuk released [iisnode](http://tomasz.janczuk.org/2011/08/hosting-nodejs-applications-in-iis-on.html) "_The [iisnode](https://github.com/tjanczuk/iisnode) project provides a native IIS 7.x module that allows hosting of node.js applications in IIS._
+
+  Scott Hanselman posted [a detailed walkthrough](http://www.hanselman.com/blog/InstallingAndRunningNodejsApplicationsWithinIISOnWindowsAreYouMad.aspx) of how to get started with iisnode

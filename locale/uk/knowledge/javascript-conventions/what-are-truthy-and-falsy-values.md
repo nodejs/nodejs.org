@@ -26,7 +26,7 @@ it is "falsy".
     if(myval) {
       console.log("This value is truthy");
     }
-    
+
     myval = 0;
     if(!myval) {
       console.log("This value is falsy");
@@ -42,7 +42,7 @@ values. These are:
     null
     undefined
     NaN
-    
+
 Note that all objects and arrays are truthy, even empty ones.
 
 Truthiness and Falsiness also come into play with logical

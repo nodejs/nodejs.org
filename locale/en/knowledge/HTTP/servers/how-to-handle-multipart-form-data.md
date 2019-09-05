@@ -21,15 +21,15 @@ This example is taken directly from the `node-formidable` GitHub page, with some
       http.createServer(function(req, res) {
 
         // This if statement is here to catch form submissions, and initiate multipart form data parsing.
-        
+
         if (req.url == '/upload' && req.method.toLowerCase() == 'post') {
-          
+
           // Instantiate a new formidable form for processing.
-          
+
           var form = new formidable.IncomingForm();
-          
+
           // form.parse analyzes the incoming stream data, picking apart the different fields and files for you.
-          
+
           form.parse(req, function(err, fields, files) {
             if (err) {
 
@@ -40,9 +40,9 @@ This example is taken directly from the `node-formidable` GitHub page, with some
             }
             res.writeHead(200, {'content-type': 'text/plain'});
             res.write('received upload:\n\n');
-            
+
             // This last line responds to the form submission with a list of the parsed data and files.
-            
+
             res.end(util.inspect({fields: fields, files: files}));
           });
           return;

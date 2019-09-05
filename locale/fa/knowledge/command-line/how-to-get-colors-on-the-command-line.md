@@ -20,7 +20,7 @@ Now open up a little test script for yourself, and try something like this:
          stringOne = 'This is a plain string.',
          stringTwo = 'This string is red.'.red,
          stringThree = 'This string is blue.'.blue;
-     
+
      console.log(stringOne.green);
      console.log(stringOne.yellow);
 

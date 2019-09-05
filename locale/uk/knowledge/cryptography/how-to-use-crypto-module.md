@@ -28,7 +28,7 @@ A hash is a fixed-length string of bits that is procedurally and deterministiall
 
 ### Hash Algorithms That Work With Crypto
 
-The hashes that work with crypto are dependent on what your version of OpenSSL supports. If you have a new enough version of OpenSSL, you can get a list of hash types your OpenSSL supports by typing `openssl list-message-digest-algorithms` into the command line. For older versions, simply type `openssl list-message-digest-commands` instead! Some of the most common hash types are: 
+The hashes that work with crypto are dependent on what your version of OpenSSL supports. If you have a new enough version of OpenSSL, you can get a list of hash types your OpenSSL supports by typing `openssl list-message-digest-algorithms` into the command line. For older versions, simply type `openssl list-message-digest-commands` instead! Some of the most common hash types are:
 
 * [sha1](https://en.wikipedia.org/wiki/Sha1)
 * [md5](https://en.wikipedia.org/wiki/Md5).
@@ -100,7 +100,7 @@ Here's an example, slightly less trivial than previous examples, that uses crypt
         });
 
         msg.push(decipher.final("binary"));
-        console.log(msg.join(""));   
+        console.log(msg.join(""));
     }
 
 Using this script to encode a message looks like this:

@@ -3,7 +3,7 @@ title: Node.js Web アプリケーションを Docker 化する
 layout: docs.hbs
 ---
 
-<!-- 
+<!--
 # Dockerizing a Node.js web app
 
 The goal of this example is to show you how to get a Node.js application into a
@@ -39,7 +39,7 @@ Docker を使用すると、ソフトウェア開発用に、コンテナと呼�
 コンテナは、Linux オペレーティングシステムの基本バージョンを削除したものです。
 イメージはコンテナにロードするソフトウェアです。
 
-<!-- 
+<!--
 ## Create the Node.js app
 
 First, create a new directory where all the files would live. In this directory
@@ -143,7 +143,7 @@ console.log(`Running on http://${HOST}:${PORT}`);
 Docker コンテナ内でこのアプリケーションを実行する方法を見ていきます。
 まず、アプリケーションの Docker イメージを作成する必要があります。
 
-<!-- 
+<!--
 ## Creating a Dockerfile
 
 Create an empty file called `Dockerfile`:
@@ -332,7 +332,7 @@ EXPOSE 8080
 CMD [ "node", "server.js" ]
 ```
 
-<!-- 
+<!--
 ## .dockerignore file
 
 Create a `.dockerignore` file in the same directory as your `Dockerfile`
@@ -360,7 +360,7 @@ npm-debug.log
 これにより、ローカルモジュールとデバッグログが Docker イメージにコピーされたり、
 イメージ内にインストールされているモジュールが上書きされたりするのを防ぐことができます。
 
-<!-- 
+<!--
 ## Building your image
 
 Go to the directory that has your `Dockerfile` and run the following command to
@@ -404,7 +404,7 @@ node                            8          1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
-<!-- 
+<!--
 ## Run the image
 
 Running your image with `-d` runs the container in detached mode, leaving the
@@ -466,7 +466,7 @@ Running on http://localhost:8080
 $ docker exec -it <container id> /bin/bash
 ```
 
-<!-- 
+<!--
 ## Test
 
 To test your app, get the port of your app that Docker mapped:

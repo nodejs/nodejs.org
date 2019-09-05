@@ -44,7 +44,6 @@ Paquetes para Node.js y npm están disponibles en el repositorio de la comunidad
 pacman -S nodejs npm
 ```
 
-
 ## Distribuciones de Linux basadas en Debian y Ubuntu, Enterprise Linux/Fedora y Snap
 
 [Las distribuciones de binarios oficiales de Node.js](https://github.com/nodesource/distributions/blob/master/README.md) son proporcinadas por NodeSource.
@@ -81,7 +80,6 @@ pkg install node
 pkg install node-devel
 ```
 
-
 ## Gentoo
 
 Node.js está disponible en el árbol de portage.
@@ -89,7 +87,6 @@ Node.js está disponible en el árbol de portage.
 ```bash
 emerge nodejs
 ```
-
 
 ## NetBSD
 
@@ -104,7 +101,6 @@ cd /usr/pkgsrc/lang/nodejs && make install
 ```bash
 pkgin -y install nodejs
 ```
-
 
 ## openSUSE y SLE
 
@@ -121,7 +117,6 @@ sudo zypper ar \
 sudo zypper in nodejs nodejs-devel
 ```
 
-
 ## macOS
 
 Simplemente descargue el [Instalador para macOS](https://nodejs.org/#download) directamente desde el sitio web de [nodejs.org](https://nodejs.org).
@@ -134,13 +129,13 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 
 ### Alternativas
 
-Usando **[Homebrew](http://brew.sh/)**:
+Usando **[Homebrew](https://brew.sh/)**:
 
 ```bash
 brew install node
 ```
 
-Usando **[MacPorts](http://www.macports.org/)**:
+Usando **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -177,7 +172,6 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-
 ## Solus
 
 Solus provides node.js in its main repository.
@@ -185,7 +179,6 @@ Solus provides node.js in its main repository.
 ```bash
 sudo eopkg install nodejs
 ```
-
 
 ## Void Linux
 
@@ -195,14 +188,13 @@ Void Linux incluye node.js estable en el repositorio principal.
 xbps-install -Sy nodejs
 ```
 
-
 ## Windows
 
 Simplemente descargue el [Instalador para Windows](https://nodejs.org/#download) directamente desde el sitio web de [nodejs.org](https://nodejs.org).
 
 ### Alternativas
 
-Usando **[Chocolatey](http://chocolatey.org)**:
+Usando **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
@@ -210,7 +202,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-Usando **[Scoop](http://scoop.sh/)**:
+Usando **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs

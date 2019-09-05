@@ -1,8 +1,6 @@
 {
   "default": true,
   "MD004": false,
-  "MD009": false,
-  "MD012": false,
   "MD013": false,
   "MD022": false,
   "MD024": false,
@@ -12,7 +10,21 @@
   "MD028": false,
   "MD031": false,
   "MD032": false,
-  "MD033": false,
+  "MD033": {
+    "allowed_elements": [
+      "a",
+      "br",
+      "hr",
+      "h2", "h3", "h4",
+      "figure", "figcaption", "img",
+      "ol", "ul", "li",
+      "div", "span", "p",
+      "table", "th", "tr", "td",
+      "code", "pre",
+      "i", "strong", "em", "b",
+      "sup"
+    ]
+  },
   "MD034": false,
   "MD035": false,
   "MD036": false,

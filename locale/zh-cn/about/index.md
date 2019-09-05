@@ -44,4 +44,4 @@ HTTP 是 Node.js 中的一等公民。它设计的是流式和低延迟。这使
 [`cluster`]: https://nodejs.org/api/cluster.html
 [事件轮询]: https://nodejs.org/zh-cn/docs/guides/event-loop-timers-and-nexttick/
 [事件机]: https://github.com/eventmachine/eventmachine
-[Twisted]: http://twistedmatrix.com/
+[Twisted]: https://twistedmatrix.com/trac/

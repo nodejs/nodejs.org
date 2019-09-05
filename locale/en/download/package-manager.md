@@ -53,7 +53,7 @@ pacman -S nodejs npm
 
 ## FreeBSD
 
-The most recent release of Node.js is available via the [www/node](http://freshports.org/www/node) port.
+The most recent release of Node.js is available via the [www/node](https://www.freshports.org/www/node) port.
 
 Install a binary package via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
@@ -77,7 +77,7 @@ emerge nodejs
 
 ## IBM i
 
-LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](http://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs8`, `nodejs10`, `nodejs12`, etc)
+LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](https://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs8`, `nodejs10`, `nodejs12`, etc)
 
 To install Node.js 12.x from the command line, run the following as a user with \*ALLOBJ special authority:
 
@@ -136,7 +136,7 @@ Node.js is available through the ports system.
 /usr/ports/lang/node
 ```
 
-Using [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
+Using [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
 
 ```bash
 pkg_add node
@@ -170,13 +170,13 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 
 ### Alternatives
 
-Using **[Homebrew](http://brew.sh/)**:
+Using **[Homebrew](https://brew.sh/)**:
 
 ```bash
 brew install node
 ```
 
-Using **[MacPorts](http://www.macports.org/)**:
+Using **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -213,7 +213,6 @@ Or build manually from pkgsrc:
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-
 ## Solus
 
 Solus provides node.js in its main repository.
@@ -221,7 +220,6 @@ Solus provides node.js in its main repository.
 ```bash
 sudo eopkg install nodejs
 ```
-
 
 ## Void Linux
 
@@ -237,7 +235,7 @@ Simply download the [Windows Installer](https://nodejs.org/#download) directly f
 
 ### Alternatives
 
-Using **[Chocolatey](http://chocolatey.org)**:
+Using **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
@@ -245,7 +243,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-Using **[Scoop](http://scoop.sh/)**:
+Using **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs

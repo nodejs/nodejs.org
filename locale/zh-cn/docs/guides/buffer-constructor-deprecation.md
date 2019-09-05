@@ -10,7 +10,7 @@ layout: docs.hbs
 
 本教程将向你介绍如果迁移到安全的 `Buffer` 构造函数方法。此合并将消除以下已废除的警告：
 
-<div class="highlight-box"> 
+<div class="highlight-box">
 Buffer() 和 new Buffer() 构造函数对于有安全顾虑的人而言是不推荐使用的。请使用新的方法 Buffer.alloc()，Buffer.allocUnsafe() 或者是 Buffer.from() 构造函数。
 </div>
 
@@ -66,7 +66,7 @@ Node.js 5.x 发行自 2016 年就不再支持，而 4.x 版本 发行线支持�
 - 对于 `new Buffer(string)` （或 `new Buffer(string, encoding)`），请用对应的 `Buffer.from(string)` （或 `Buffer.from(string, encoding)`）进行替换。
 - 对于其它情况（一般极为罕见）中使用了 `new Buffer(...arguments)` 的，请用 `Buffer.from(...arguments)` 进行替换。
 
-注意：`Buffer.alloc()` 在当前的 Node.js 版本上 _快于_ 
+注意：`Buffer.alloc()` 在当前的 Node.js 版本上 _快于_
 `new Buffer(size).fill(0)`，后者是当你确认需要用 0 对整个缓存进行初始化。
 
 启用 ESLint 检查规则 [不使用缓存构造函数](https://eslint.org/docs/rules/no-buffer-constructor)
@@ -96,7 +96,7 @@ _如果你目前支持那些旧版本的 Node.js，并且抛弃对它们的支�
 - **[安全的缓存](https://www.npmjs.com/package/safe-buffer)** 同样也是替换整个 `Buffer` 的方案，但是用 `new Buffer()` 也可以像以前一样正常工作。
 
   欲达此目的而降阶到此，可以让你在代码中使用稍旧一些的 `new Buffer()` 函数，它会引发代码一些问题，并在 Node.js 10 （[阅读更多详情](https://github.com/chalker/safer-buffer#why-not-safe-buffer)） 激发对于运行时废弃函数的警告检查。
-  
+
 注意，在任意一种情况下，手动移除你代码中所有关于 `Buffer` 的调用非常重要——仅在 `safe-buffer` 中抛出警告不解决问题，它只是为新的 API 提供了一种替换而已。我亲眼见过人们犯过这类错误。
 
 启用 ESLint 规则 [不使用缓存构造函数](https://eslint.org/docs/rules/no-buffer-constructor)

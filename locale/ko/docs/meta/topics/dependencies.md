@@ -106,7 +106,7 @@ use of threaded getaddrinfo(3) calls in libuv. The reason for this is that
 c-ares supports /etc/hosts, /etc/resolv.conf and /etc/svc.conf, but not things
 like mDNS.
 
-- [Documentation](http://c-ares.haxx.se/docs.html)
+- [Documentation](https://c-ares.haxx.se/docs.html)
 -->
 
 ### c-ares
@@ -117,7 +117,7 @@ JavaScript DNS 모듈로 `resolve()` 류의 함수들을 노출합니다. 코어
 이유는 c-ares가 /etc/hosts, /etc/resolv.conf, /etc/svc.conf는 지원하지만
 mDNS 같은 것은 지원하지 않기 때문입니다.
 
-- [문서](http://c-ares.haxx.se/docs.html)
+- [문서](https://c-ares.haxx.se/docs.html)
 
 <!--
 ### OpenSSL
@@ -143,7 +143,7 @@ For fast compression and decompression, Node.js relies on the industry-standard
 zlib library, also known for its use in gzip and libpng. Node.js uses zlib to
 create sync, async and streaming compression and decompression interfaces.
 
-- [Documentation](http://www.zlib.net/manual.html)
+- [Documentation](https://www.zlib.net/manual.html)
 -->
 
 ### zlib
@@ -152,7 +152,7 @@ create sync, async and streaming compression and decompression interfaces.
 gzip과 libpng를 사용한다고 알려져 있습니다. Node.js는 동기, 비동기, 스트리밍 압축과
 압축 해제 인터페이스에 zlib을 사용합니다.
 
-- [문서](http://www.zlib.net/manual.html)
+- [문서](https://www.zlib.net/manual.html)
 
 <!--
 ## Tools

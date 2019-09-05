@@ -8,32 +8,46 @@ slug: npm-1-0-released
 layout: blog-post.hbs
 ---
 
-<p>npm 1.0 has been released. Here are the highlights:</p>
+npm 1.0 has been released. Here are the highlights:
 
-<ul> <li><a href="http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation/">Global vs local installation</a></li> <li><a href="http://blog.nodejs.org/2011/03/17/npm-1-0-the-new-ls/">ls displays a tree</a>, instead of being a remote search</li> <li>No more &#8220;activation&#8221; concept - dependencies are nested</li> <li><a href="http://blog.nodejs.org/2011/04/06/npm-1-0-link/">Updates to link command</a></li> <li>Install script cleans up any 0.x cruft it finds. (That is, it removes old packages, so that they can be installed properly.)</li> <li>Simplified &#8220;search&#8221; command. One line per package, rather than one line per version.</li> <li>Renovated &#8220;completion&#8221; approach</li> <li>More help topics</li> <li>Simplified folder structure</li> </ul>
+* [Global vs local installation](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation/)
+* [ls displays a tree](http://blog.nodejs.org/2011/03/17/npm-1-0-the-new-ls/), instead of being a remote search
+* No more “activation” concept - dependencies are nested
+* [Updates to link command](http://blog.nodejs.org/2011/04/06/npm-1-0-link/)
+* Install script cleans up any 0.x cruft it finds. (That is, it removes old packages, so that they can be installed properly.)
+* Simplified “search” command. One line per package, rather than one line per version.
+* Renovated “completion” approach
+* More help topics
+* Simplified folder structure
 
-<p>The focus is on npm being a development tool, rather than an apt-wannabe.</p>
+The focus is on npm being a development tool, rather than an apt-wannabe.
 
-<h2 id="installing_it">Installing it</h2>
+## <!-- installing_it -->Installing it
 
-<p>To get the new version, run this command:</p>
+To get the new version, run this command:
 
-<pre style="background:#333;color:#ccc;overflow:auto;padding:2px;"><code>curl https://npmjs.com/install.sh | sh </code></pre>
+```
+curl https://npmjs.com/install.sh | sh
+```
 
-<p>This will prompt to ask you if it&#8217;s ok to remove all the old 0.x cruft. If you want to not be asked, then do this:</p>
+This will prompt to ask you if it’s ok to remove all the old 0.x cruft. If you want to not be asked, then do this:
 
-<pre style="background:#333;color:#ccc;overflow:auto;padding:2px;"><code>curl https://npmjs.com/install.sh | clean=yes sh </code></pre>
+```
+curl https://npmjs.com/install.sh | clean=yes sh
+```
 
-<p>Or, if you want to not do the cleanup, and leave the old stuff behind, then do this:</p>
+Or, if you want to not do the cleanup, and leave the old stuff behind, then do this:
 
-<pre style="background:#333;color:#ccc;overflow:auto;padding:2px;"><code>curl https://npmjs.com/install.sh | clean=no sh </code></pre>
+```
+curl https://npmjs.com/install.sh | clean=no sh
+```
 
-<p>A lot of people in the node community were brave testers and helped make this release a lot better (and swifter) than it would have otherwise been. Thanks :)</p>
+A lot of people in the node community were brave testers and helped make this release a lot better (and swifter) than it would have otherwise been. Thanks :)
 
-<h2 id="code_freeze">Code Freeze</h2>
+## <!-- code_freeze -->Code Freeze
 
-<p>npm will not have any major feature enhancements or architectural changes <span style="border-bottom:1px dotted;cursor:default;" title="That is, the freeze ends no sooner than November 1, 2011">for at least 6 months</span>. There are interesting developments planned that leverage npm in some ways, but it&#8217;s time to let the client itself settle. Also, I want to focus attention on some other problems for a little while.</p>
+npm will not have any major feature enhancements or architectural changes for at least 6 months. There are interesting developments planned that leverage npm in some ways, but it’s time to let the client itself settle. Also, I want to focus attention on some other problems for a little while.
 
-<p>Of course, <a href="https://github.com/isaacs/npm/issues">bug reports</a> are always welcome.</p>
+Of course, [bug reports](https://github.com/isaacs/npm/issues) are always welcome.
 
-<p>See you at NodeConf!</p>
+See you at NodeConf!

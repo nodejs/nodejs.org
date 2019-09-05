@@ -1,10 +1,11 @@
 'use strict'
 
+const marked = require('marked')
 const test = require('tape')
 const anchorMarkdownHeadings = require('../../scripts/plugins/anchor-markdown-headings')
 
 test('anchorMarkdownHeadings', (t) => {
-  t.plan(6)
+  t.plan(7)
 
   t.test('correctly parses markdown heading without links', (t) => {
     const text = 'Simple title'
@@ -12,8 +13,8 @@ test('anchorMarkdownHeadings', (t) => {
     const raw = 'Simple title'
     const output = anchorMarkdownHeadings(text, level, raw)
     const expected = '<h1 id="header-simple-title">Simple title' +
-      '<a name="simple-title" class="anchor" ' +
-      'href="#simple-title" aria-labelledby="header-simple-title"></a></h1>'
+      '<a id="simple-title" class="anchor" href="#simple-title" ' +
+      'aria-labelledby="header-simple-title"></a></h1>'
 
     t.plan(1)
     t.equal(output, expected)
@@ -26,7 +27,7 @@ test('anchorMarkdownHeadings', (t) => {
     const output = anchorMarkdownHeadings(text, level, raw)
     const expected = '<h3 id="header-title-with-link">Title with ' +
       '<a href="#">link</a>' +
-      '<a name="title-with-link" class="anchor" href="#title-with-link" ' +
+      '<a id="title-with-link" class="anchor" href="#title-with-link" ' +
       'aria-labelledby="header-title-with-link"></a></h3>'
 
     t.plan(1)
@@ -40,7 +41,7 @@ test('anchorMarkdownHeadings', (t) => {
     const output = anchorMarkdownHeadings(text, level, raw)
     const expected = '<h2 id="header-a-b-cde">a <a href="b">b</a> c' +
       '<a href="d">d</a>e' +
-      '<a name="a-b-cde" class="anchor" href="#a-b-cde" ' +
+      '<a id="a-b-cde" class="anchor" href="#a-b-cde" ' +
       'aria-labelledby="header-a-b-cde"></a></h2>'
 
     t.plan(1)
@@ -53,7 +54,7 @@ test('anchorMarkdownHeadings', (t) => {
     const raw = '$$$ WIN BIG! $$$'
     const output = anchorMarkdownHeadings(text, level, raw)
     const expected = '<h4 id="header-win-big">$$$ WIN BIG! $$$' +
-      '<a name="win-big" class="anchor" href="#win-big" ' +
+      '<a id="win-big" class="anchor" href="#win-big" ' +
       'aria-labelledby="header-win-big"></a></h4>'
 
     t.plan(1)
@@ -67,7 +68,8 @@ test('anchorMarkdownHeadings', (t) => {
     const output = anchorMarkdownHeadings(text, level, raw)
     const expected = '<h2 id="header-anchor-with-non-english-characters">' +
       '这是<a href="b">链接</a>的<a href="d">测试！</a>' +
-      '<a name="anchor-with-non-english-characters" class="anchor" href="#anchor-with-non-english-characters" ' +
+      '<a id="anchor-with-non-english-characters" class="anchor" ' +
+      'href="#anchor-with-non-english-characters" ' +
       'aria-labelledby="header-anchor-with-non-english-characters"></a></h2>'
 
     t.plan(1)
@@ -80,6 +82,23 @@ test('anchorMarkdownHeadings', (t) => {
     const raw = 'إنضم إلينا'
     const output = anchorMarkdownHeadings(text, level, raw)
     const expected = '<h2>إنضم إلينا</h2>'
+
+    t.plan(1)
+    t.equal(output, expected)
+  })
+
+  t.test('does not generate duplicate IDs', (t) => {
+    const renderer = new marked.Renderer()
+    renderer.heading = anchorMarkdownHeadings
+
+    const text = '# Title\n# Title'
+    const output = marked(text, { renderer: renderer })
+    const expected = '<h1 id="header-title">Title' +
+      '<a id="title" class="anchor" ' +
+      'href="#title" aria-labelledby="header-title"></a></h1>' +
+      '<h1 id="header-title-1">Title' +
+      '<a id="title-1" class="anchor" ' +
+      'href="#title-1" aria-labelledby="header-title-1"></a></h1>'
 
     t.plan(1)
     t.equal(output, expected)

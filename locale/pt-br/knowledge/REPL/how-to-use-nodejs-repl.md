@@ -23,7 +23,7 @@ Iniciar o REPL é simples, basta executar o node na linha de comando sem um nome
 node
 ```
 
-Ele te deixa em um prompt simples ('>') onde você pode escrever qualquer comando JavaScript que desejar. Assim como na maioria dos shells, você pode apertar as setas para cima e para baixo para navegar através do histórico de comandos e modificar comandos anteriores. 
+Ele te deixa em um prompt simples ('>') onde você pode escrever qualquer comando JavaScript que desejar. Assim como na maioria dos shells, você pode apertar as setas para cima e para baixo para navegar através do histórico de comandos e modificar comandos anteriores.
 
 ```shell
 $ node

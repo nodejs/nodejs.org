@@ -6,9 +6,9 @@ trademark: Trademark
 
 # Sobre Node.js&reg;
 
-Nascut com a un entorn d'execució de JavaScript orientat a esdeveniments asíncrons, Node.js està 
-dissenyat per a crear aplicacions en xarxa de manera escalable. En la següent aplicació d'exemple 
-"hola món", es pot manegar moltes connexions concurrents. Per a cada connexió el callback serà 
+Nascut com a un entorn d'execució de JavaScript orientat a esdeveniments asíncrons, Node.js està
+dissenyat per a crear aplicacions en xarxa de manera escalable. En la següent aplicació d'exemple
+"hola món", es pot manegar moltes connexions concurrents. Per a cada connexió el callback serà
 executat, no obstant si no hi hagués tasques pendents per a fer, Node.js romandrà adormit.
 
 ```javascript
@@ -27,12 +27,12 @@ server.listen(port, hostname, () => {
   console.log(`El servidor s'està executant en http://${hostname}:${port}/`);
 });
 ```
-Això contrasta amb el model de concurrència més comú d'avui dia, o es fan servir els 
-fils del Sistema Operatiu. Les operacions en xarxes basades en fils són relativament 
-ineficients i són molt més complicades de fer servir. A més a més, els usuaris de 
-Node.js no han d'estar preocupats quant als bloquejos dels processos ja que són 
-inexistents. Gairebé cap funció en Node.js realitza I/O directament, d'aquesta manera 
-el procés mai és bloquejat. A raó de què no hi ha bloquejos, és més raonable desenvolupar 
+Això contrasta amb el model de concurrència més comú d'avui dia, o es fan servir els
+fils del Sistema Operatiu. Les operacions en xarxes basades en fils són relativament
+ineficients i són molt més complicades de fer servir. A més a més, els usuaris de
+Node.js no han d'estar preocupats quant als bloquejos dels processos ja que són
+inexistents. Gairebé cap funció en Node.js realitza I/O directament, d'aquesta manera
+el procés mai és bloquejat. A raó de què no hi ha bloquejos, és més raonable desenvolupar
 sistemes escalables en Node.js.
 
 Si cap d'aquests termes no li és familiar, hi ha un article complet en
@@ -40,7 +40,7 @@ Si cap d'aquests termes no li és familiar, hi ha un article complet en
 
 ---
 
-Node té un disseny similar i està influenciat per sistemes com [Event Machine][] 
+Node té un disseny similar i està influenciat per sistemes com [Event Machine][]
 de Ruby o [Twisted][] de Python. Node porta el model d'esdeveniments una mica
 més enllà, aquest presenta un [bucle d'esdeveniments][] com un entorn en comptes d'una llibreria.
 En altres sistemes sempre existeix una trucada que bloqueja per iniciar el bucle d'esdeveniments.
@@ -64,4 +64,4 @@ compartir sockets entre processos per activar el balanceig de càrregues en els 
 [`cluster`]: https://nodejs.org/api/cluster.html
 [bucle de eventos]: https://github.com/nodejs/node/blob/master/doc/topics/event-loop-timers-and-nexttick.md
 [Event Machine]: https://github.com/eventmachine/eventmachine
-[Twisted]: http://twistedmatrix.com/
+[Twisted]: https://twistedmatrix.com/trac/

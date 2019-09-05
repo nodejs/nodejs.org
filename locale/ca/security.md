@@ -40,7 +40,7 @@ Aquestes solucions no són enviades al repositori públic, en canvi són retingu
 - Normalment la data d'embargament s'establirà 72 hores des de la creació del CVE. Però això pot variar depenent de
 la severitat de l'error o la dificultat a aplicar la solució.
 
-- Aquest procés pot trigar algun temps, especialment quan es requereix coordinació amb els encarregats del manteniment d'altres projectes. 
+- Aquest procés pot trigar algun temps, especialment quan es requereix coordinació amb els encarregats del manteniment d'altres projectes.
 Es farà tot el possible per gestionar l'error en la forma més oportuna possible, però, és important que seguim el procés descrit a dalt per assegurar que la divulgació es gestiona d'una manera consistent.
 
 ## Rebi actualitzacions de seguretat
@@ -49,7 +49,6 @@ Les notificacions de seguretat seran distribuïdes usant els següents mitjans.
 
 - <https://groups.google.com/group/nodejs-sec>
 - <https://nodejs.org/en/blog/>
-
 
 ## Comentaris sobre aquesta política
 

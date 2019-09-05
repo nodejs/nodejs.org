@@ -111,7 +111,7 @@ Example 1: A constant-time callback.
 app.get('/constant-time', (req, res) => {
   res.sendStatus(200);
 });
-``` 
+```
 
 Example 2: An `O(n)` callback. This callback will run quickly for small `n` and more slowly for large `n`.
 
@@ -126,7 +126,7 @@ app.get('/countToN', (req, res) => {
 
   res.sendStatus(200);
 });
-``` 
+```
 
 Example 3: An `O(n^2)` callback. This callback will still run quickly for small `n`, but for large `n` it will run much more slowly than the previous `O(n)` example.
 
@@ -279,7 +279,7 @@ console.log('JSON.parse took ' + took);
 
 There are npm modules that offer asynchronous JSON APIs. See for example:
 - [JSONStream](https://www.npmjs.com/package/JSONStream), which has stream APIs.
-- [Big-Friendly JSON](https://github.com/philbooth/bfj), which has stream APIs as well as asynchronous versions of the standard JSON APIs using the partitioning-on-the-Event-Loop paradigm outlined below.
+- [Big-Friendly JSON](https://www.npmjs.com/package/bfj), which has stream APIs as well as asynchronous versions of the standard JSON APIs using the partitioning-on-the-Event-Loop paradigm outlined below.
 
 ### Complex calculations without blocking the Event Loop
 Suppose you want to do complex calculations in JavaScript without blocking the Event Loop.
