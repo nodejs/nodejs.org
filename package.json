@@ -14,7 +14,7 @@
     "load-schedule": "curl -sS https://raw.githubusercontent.com/nodejs/Release/master/schedule.json -o source/schedule.json",
     "start": "npm run serve",
     "test": "npm run test:lint && npm run test:unit && npm run test:smoke",
-    "test:lint": "standard --fix && htmllint **/*.hbs && stylint layouts/css && markdownlint \"**/*.md\" -i \"node_modules/\"",
+    "test:lint": "standard --fix && htmllint **/*.hbs && stylint layouts/css && markdownlint \"**/*.md\" -i \"**/node_modules/**\"",
     "test:unit": "tape tests/**/*.test.js | faucet",
     "test:smoke": "tape tests/*.smoketest.js | faucet"
   },
