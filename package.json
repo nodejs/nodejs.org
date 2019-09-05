@@ -53,7 +53,6 @@
     "metalsmith-metadata": "0.0.4",
     "metalsmith-permalinks": "^2.2.0",
     "metalsmith-prism": "^3.1.1",
-    "metalsmith-stylus": "^3.0.0",
     "metalsmith-yearly-pagination": "^4.0.0",
     "ncp": "^2.0.0",
     "node-version-data": "^1.1.0",
@@ -63,7 +62,8 @@
     "require-dir": "^1.2.0",
     "semver": "^6.3.0",
     "st": "^1.2.2",
-    "strftime": "^0.10.0"
+    "strftime": "^0.10.0",
+    "stylus": "^0.54.7"
   },
   "devDependencies": {
     "cross-env": "^6.0.0",
