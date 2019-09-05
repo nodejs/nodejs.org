@@ -157,7 +157,6 @@ node`_ZN2v88internal11interpreter17BytecodeGenerator15VisitStatementsEPNS0_8Zone
 <!-- it means the Linux perf you're using was not compiled with demangle support, see https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1396654 for example -->
 Significa que a versão do perf que voc6e está usando no Linux não foi compilada com o support para o demangle, veja https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1396654 para exemplos.
 
-
 ## Exemplos
 
 <!-- Practice capturing flame graphs yourself with [a flame graph exercise](https://github.com/naugtur/node-example-flamegraph)! -->

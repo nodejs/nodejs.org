@@ -122,7 +122,6 @@ primeiro. A habilidade de executar `maisProcessamento()` sem ter de esperar o ar
 ser completamente lido é um conceito chave de design que permite uma melhor escalabilidade
 através de mais rendimento.
 
-
 ## Concorrência e Rendimento
 
 <!-- JavaScript execution in Node.js is single threaded, so concurrency refers to the
@@ -180,7 +179,6 @@ o que deletaria o arquivo `file.md` antes de que ele possa ser, de fato, lido. U
 melhor de escrever esse código, de forma completamente **não-bloqueante** e garantida de
 executar na ordem correta seria:
 
-
 ```js
 const fs = require('fs');
 fs.readFile('/file.md', (readFileErr, data) => {
@@ -196,7 +194,6 @@ fs.readFile('/file.md', (readFileErr, data) => {
 `fs.readFile()` which guarantees the correct order of operations. -->
 O exemplo acima coloca uma chamada **não-bloqueante** a `fs.unlink()` dentro do callback
 de `fs.readFile()`, o que garante a ordem correta das operações.
-
 
 ## Additional Resources
 
