@@ -105,7 +105,7 @@ npm link is a development tool. It’s _awesome_ for managing packages on your l
 
 I highly doubt that a native Windows node will ever have comparable symbolic link support to what Unix systems provide. I know that there are junctions and such, and I've heard legends about symbolic links on Windows 7.
 
-When there is a native windows port of Node, if that native windows port has \`fs.symlink\` and \`fs.readlink\` support that is exactly identical to the way that they work on Unix, then this should work fine.
+When there is a native windows port of Node, if that native windows port has `fs.symlink` and `fs.readlink` support that is exactly identical to the way that they work on Unix, then this should work fine.
 
 But I wouldn't hold my breath. Any bugs about this not working on a native Windows system (ie, not Cygwin) will most likely be closed with `wontfix`.
 
