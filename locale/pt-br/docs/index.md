@@ -20,19 +20,19 @@ A [Documentação de referência de API](/api/) provê uma informação detalhad
 Esta documentação descreve os módulos embarcados (built-in) providos pelo Node.js. Ela não documenta os módulos providos pela comunidade.
 
 <div class="highlight-box">
-  <h3>Procurando por documentações de API de versões antigas?</h3>
 
-  <ul>
-    <li><a href="https://nodejs.org/docs/latest-v9.x/api/">Node.js 9.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v8.x/api/">Node.js 8.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v7.x/api/">Node.js 7.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v6.x/api/">Node.js 6.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v5.x/api/">Node.js 5.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v4.x/api/">Node.js 4.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v0.12.x/api/">Node.js 0.12.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v0.10.x/api/">Node.js 0.10.x</a></li>
-    <li><a href="https://nodejs.org/docs/">Todas as versões</a></li>
-  </ul>
+### Procurando por documentações de API de versões antigas?
+
+* [Node.js 9.x](https://nodejs.org/docs/latest-v9.x/api/)
+* [Node.js 8.x](https://nodejs.org/docs/latest-v8.x/api/)
+* [Node.js 7.x](https://nodejs.org/docs/latest-v7.x/api/)
+* [Node.js 6.x](https://nodejs.org/docs/latest-v6.x/api/)
+* [Node.js 5.x](https://nodejs.org/docs/latest-v5.x/api/)
+* [Node.js 4.x](https://nodejs.org/docs/latest-v4.x/api/)
+* [Node.js 0.12.x](https://nodejs.org/docs/latest-v0.12.x/api/)
+* [Node.js 0.10.x](https://nodejs.org/docs/latest-v0.10.x/api/)
+* [Todas as versões](https://nodejs.org/docs/)
+
 </div>
 
 ## Funcionalidades do ES6

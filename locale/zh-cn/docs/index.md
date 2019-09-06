@@ -20,19 +20,19 @@ labels:
 此文档描述了 Node.js 内建的模块，社区提供的模块并不记载在内。
 
 <div class="highlight-box">
-  <h3>在寻找先前发布的 API 函数接口文档吗？</h3>
 
-  <ul>
-    <li><a href="https://nodejs.org/docs/latest-v9.x/api/">Node.js 9.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v8.x/api/">Node.js 8.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v7.x/api/">Node.js 7.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v6.x/api/">Node.js 6.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v5.x/api/">Node.js 5.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v4.x/api/">Node.js 4.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v0.12.x/api/">Node.js 0.12.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v0.10.x/api/">Node.js 0.10.x</a></li>
-    <li><a href="https://nodejs.org/docs/">所有版本</a></li>
-  </ul>
+### 在寻找先前发布的 API 函数接口文档吗？
+
+* [Node.js 9.x](https://nodejs.org/docs/latest-v9.x/api/)
+* [Node.js 8.x](https://nodejs.org/docs/latest-v8.x/api/)
+* [Node.js 7.x](https://nodejs.org/docs/latest-v7.x/api/)
+* [Node.js 6.x](https://nodejs.org/docs/latest-v6.x/api/)
+* [Node.js 5.x](https://nodejs.org/docs/latest-v5.x/api/)
+* [Node.js 4.x](https://nodejs.org/docs/latest-v4.x/api/)
+* [Node.js 0.12.x](https://nodejs.org/docs/latest-v0.12.x/api/)
+* [Node.js 0.10.x](https://nodejs.org/docs/latest-v0.10.x/api/)
+* [所有版本](https://nodejs.org/docs/)
+
 </div>
 
 ## ES6 特性
