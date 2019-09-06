@@ -19,19 +19,19 @@ labels:
 يصف هذا التوثيق الوحدات المضمنة في الـ Node.js، و هو لا يوثق للوحدات المتوفرة عن طريق المجتمع.
 
 <div class="highlight-box">
-  <h3>تبحث عن توثيق لنسخة سابقة ؟?</h3>
 
-  <ul>
-    <li><a href="https://nodejs.org/docs/latest-v9.x/api/">Node.js 9.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v8.x/api/">Node.js 8.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v7.x/api/">Node.js 7.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v6.x/api/">Node.js 6.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v5.x/api/">Node.js 5.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v4.x/api/">Node.js 4.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v0.12.x/api/">Node.js 0.12.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v0.10.x/api/">Node.js 0.10.x</a></li>
-    <li><a href="https://nodejs.org/docs/">كافة النسخ</a></li>
-  </ul>
+### تبحث عن توثيق لنسخة سابقة ؟?
+
+* [Node.js 9.x](https://nodejs.org/docs/latest-v9.x/api/)
+* [Node.js 8.x](https://nodejs.org/docs/latest-v8.x/api/)
+* [Node.js 7.x](https://nodejs.org/docs/latest-v7.x/api/)
+* [Node.js 6.x](https://nodejs.org/docs/latest-v6.x/api/)
+* [Node.js 5.x](https://nodejs.org/docs/latest-v5.x/api/)
+* [Node.js 4.x](https://nodejs.org/docs/latest-v4.x/api/)
+* [Node.js 0.12.x](https://nodejs.org/docs/latest-v0.12.x/api/)
+* [Node.js 0.10.x](https://nodejs.org/docs/latest-v0.10.x/api/)
+* [كافة النسخ](https://nodejs.org/docs/)
+
 </div>
 
 ## خصائص الـ ES6

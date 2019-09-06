@@ -13,7 +13,6 @@
     "allowed_elements": [
       "a",
       "br",
-      "h3", "h4",
       "figure", "figcaption", "img",
       "ul", "li",
       "div", "span", "p",

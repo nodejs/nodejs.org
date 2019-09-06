@@ -25,19 +25,19 @@ Die API-Referenz beschreibt Module, die in Node.js integriert sind. Module, die
 von der Community zur Verfügung gestellt werden, sind dort nicht dokumentiert.
 
 <div class="highlight-box">
-  <h3>Du suchst nach API Referenzen für ältere Versionen?</h3>
 
-  <ul>
-    <li><a href="https://nodejs.org/docs/latest-v9.x/api/">Node.js 9.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v8.x/api/">Node.js 8.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v7.x/api/">Node.js 7.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v6.x/api/">Node.js 6.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v5.x/api/">Node.js 5.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v4.x/api/">Node.js 4.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v0.12.x/api/">Node.js 0.12.x</a></li>
-    <li><a href="https://nodejs.org/docs/latest-v0.10.x/api/">Node.js 0.10.x</a></li>
-    <li><a href="https://nodejs.org/docs/">Alle Versionen</a></li>
-  </ul>
+### Du suchst nach API Referenzen für ältere Versionen?
+
+* [Node.js 9.x](https://nodejs.org/docs/latest-v9.x/api/)
+* [Node.js 8.x](https://nodejs.org/docs/latest-v8.x/api/)
+* [Node.js 7.x](https://nodejs.org/docs/latest-v7.x/api/)
+* [Node.js 6.x](https://nodejs.org/docs/latest-v6.x/api/)
+* [Node.js 5.x](https://nodejs.org/docs/latest-v5.x/api/)
+* [Node.js 4.x](https://nodejs.org/docs/latest-v4.x/api/)
+* [Node.js 0.12.x](https://nodejs.org/docs/latest-v0.12.x/api/)
+* [Node.js 0.10.x](https://nodejs.org/docs/latest-v0.10.x/api/)
+* [Alle Versionen](https://nodejs.org/docs/)
+
 </div>
 
 ## ES6 Funktionalitäten

@@ -10,14 +10,15 @@ modules: "<code>NODE_MODULE_VERSION</code> refers to the ABI (application binary
   از Node.js 4.0.0 خط های انتشارهای قبلی  io.js در   Node.js 0.12.x  کاور شدند که به شکل انتشارهای یک پارجه در آمدند.
 
 <div class="highlight-box">
-  <h4>به دنبال آخرین انتشار از شاخه ورژن می‌گردید؟</h4>
-  <ul>
-        <li><a href="https://nodejs.org/dist/latest-v10.x/">Node.js 10.x</a></li>
-        <li><a href="https://nodejs.org/dist/latest-v8.x/">Node.js 8.x</a></li>
-        <li><a href="https://nodejs.org/dist/latest-v6.x/">Node.js 6.x</a></li>
-        <li><a href="https://nodejs.org/dist/latest-v4.x/">Node.js 4.x</a></li>
-        <li><a href="https://nodejs.org/dist/latest-v0.12.x/">Node.js 0.12.x</a></li>
-        <li><a href="https://nodejs.org/dist/latest-v0.10.x/">Node.js 0.10.x</a></li>
-        <li><a href="https://nodejs.org/dist/">تمامی نسخه‌ها</a></li>
-    </ul>
+
+#### به دنبال آخرین انتشار از شاخه ورژن می‌گردید؟
+
+* [Node.js 10.x](https://nodejs.org/dist/latest-v10.x/)
+* [Node.js 8.x](https://nodejs.org/dist/latest-v8.x/)
+* [Node.js 6.x](https://nodejs.org/dist/latest-v6.x/)
+* [Node.js 4.x](https://nodejs.org/dist/latest-v4.x/)
+* [Node.js 0.12.x](https://nodejs.org/dist/latest-v0.12.x/)
+* [Node.js 0.10.x](https://nodejs.org/dist/latest-v0.10.x/)
+* [تمامی نسخه‌ها](https://nodejs.org/dist/)
+
 </div>
