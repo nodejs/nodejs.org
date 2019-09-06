@@ -36,6 +36,7 @@ const myfunc = function(a, b, c) {
 
 myfunc(1, 2, 3);
 ```
+
 NOTA: Para ES5 e anteriores, um loop `for` normal pode fazer o truque
 
 Em alguns casos você ainda pode tratar o `arguments` como um Array, você pode usar o `arguments` através de invocações de funções dinâmicas. E a maioria dos métodos nativos Array (Ex. Array.prototype.concat) aceitarão `arguments` quando invocados dinamicamente utilizando `call` ou `apply`. Essa técnica também oferece outros modos de conversão dos `arguments` para um tipo Array utilizando método `Array.slice`.

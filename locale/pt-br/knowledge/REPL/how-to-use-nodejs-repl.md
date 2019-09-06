@@ -77,6 +77,7 @@ As seguintes combiações de teclas no REP têm esses efeitos especiais:
 Qualquer que seja o comando, ele imprimirá o valor de retorno deste comando. Se você quiser reutilizar o valor de retorno anterior, você pode usar a variável especial `_`.
 
 Por exemplo:
+
 ```shell
 $ node
 > 1+1

@@ -114,6 +114,7 @@ Node가 `request` 객체에 유용한 프로퍼티를 넣어두었으므로 이 
 ```javascript
 const { method, url } = request;
 ```
+
 > **주의:** `request` 객체는 [`IncomingMessage`][]의 인스턴스입니다.
 
 <!--

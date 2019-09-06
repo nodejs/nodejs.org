@@ -18,6 +18,7 @@ const pow = (base, power = 2) => {
 console.log(pow(2)); // 4
 console.log(pow(2,10)); // 1024
 ```
+
 In the above code The function `pow` return square of a number or any other power specified in the function call because the argument `power` is given a default value of 2 so whenever no second argument is provided or the provided value is `undefined` the function `pow` will use 2 as the value of argument `power`. But there is a small gotcha in it:
 
 ```js
@@ -28,6 +29,7 @@ const pow = (base, power = 2) => {
 console.log(pow(2, undefined)); // 4
 console.log(pow(2, null)); // 1
 ```
+
 In JavaScript there are many ways of indicating ["falsy"(false values)](/en/knowledge/javascript-conventions/what-are-truthy-and-falsy-values/) but out of them, only `undefined` will trigger the default parameter. This is the reason why `pow(2, undefined)` returns 4 and `pow(2, null)` returns 1.
 
 JS PRO TIP: In `Math.pow(base, power)` if `power` is 0 or any other "falsy" value (except NaN) the result will always be 1.

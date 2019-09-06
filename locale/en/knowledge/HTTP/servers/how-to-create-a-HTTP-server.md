@@ -24,6 +24,7 @@ Let's take a look at a very simple example:
 Save this in a file called `server.js` - run `node server.js`, and your program will hang there... it's waiting for connections to respond to, so you'll have to give it one if you want to see it do anything.  Try opening up a browser, and typing `localhost:8080` into the location bar.  If everything has been set up correctly, you should see your server saying hello!
 
 Also, from your terminal you should be able to get the response using curl:
+
 ```
 curl localhost:8080
 ```

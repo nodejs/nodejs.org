@@ -27,6 +27,7 @@ server.listen(port, hostname, () => {
   console.log(`El servidor s'està executant en http://${hostname}:${port}/`);
 });
 ```
+
 Això contrasta amb el model de concurrència més comú d'avui dia, o es fan servir els
 fils del Sistema Operatiu. Les operacions en xarxes basades en fils són relativament
 ineficients i són molt més complicades de fer servir. A més a més, els usuaris de

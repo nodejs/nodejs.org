@@ -293,6 +293,7 @@ console.log('JSON.parse took ' + took);
 举个例子，假设你想计算 `1` 到 `n` 的平均值。
 
 例子1：不分区算平均数，开销是 `O(n)`
+
 ```javascript
 for (let i = 0; i < n; i++)
   sum += i;
@@ -301,6 +302,7 @@ console.log('avg: ' + avg);
 ```
 
 例子2：分区算平均值，每个 `n` 的异步步骤开销为 `O(1)`。
+
 ```javascript
 function asyncAvg(n, avgCB) {
   // Save ongoing sum in JS closure.

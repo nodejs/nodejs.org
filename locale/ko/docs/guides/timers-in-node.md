@@ -234,6 +234,7 @@ function intervalFunc() {
 
 setInterval(intervalFunc, 1500);
 ```
+
 위 예제에서 `intervalFunc()`는 중단하기 전까지는(아래 참고) 1500밀리 초(1.5초)마다 실행될 것입니다.
 
 `setTimeout()`처럼 `setInterval()`도 설정한 인터벌을 참조하고 수정하는 데 사용할 수 있는

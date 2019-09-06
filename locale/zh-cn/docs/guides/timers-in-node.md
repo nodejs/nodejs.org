@@ -120,6 +120,7 @@ setImmediate(() => {
   timerObj.ref();
 });
 ```
+
 ## 进一步向下的事件循环
 
 还有远比本篇多得多的，关于时间轮询和定时器的东西，本文未涉及到。你可以通过 [Node.js 的时间轮询，定时器以及 process.nextTick()](/zh-cn/docs/guides/event-loop-timers-and-nexttick/) 学习到更多有关于 Node.js 内部事件轮询机制，以及定时器在执行时如何操作的。
