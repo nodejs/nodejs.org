@@ -39,6 +39,7 @@ server.on('request', (request, response) => {
 ```javascript
 const { method, url } = request;
 ```
+
 > **注意：** `request` 对象是 [`IncomingMessage`][] 的一个实例。
 
 这里的 `method` 总是一个普通的 HTTP 方法动作行为 (verb)，`url` 是指没有服务器协议和

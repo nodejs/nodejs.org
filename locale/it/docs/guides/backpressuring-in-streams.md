@@ -117,6 +117,7 @@ pipeline(
   }
 );
 ```
+
 You can also call [`promisify`][] on pipeline to use it with `async` / `await`:
 
 ```javascript
@@ -161,6 +162,7 @@ the read.
 // `write` tries to keep up with the incoming data flow.
 inp.pipe(gzip).pipe(outputFile);
 ```
+
 This is why a backpressure mechanism is important. If a backpressure system was
 not present, the process would use up your system's memory, effectively slowing
 down other processes, and monopolizing a large part of your system until
@@ -224,6 +226,7 @@ approx. time (ms) | GC (ms) | modified GC (ms)
       50000       |    8    |     28
       54000       |    6    |     35
 ```
+
 While the two processes start off the same and seem to work the GC at the same
 rate, it becomes evident that after a few seconds with a properly working
 backpressure system in place, it spreads the GC load across consistent
@@ -478,6 +481,7 @@ return value of [`.push()`][] used in the [`._read()`][] method. If
 source. Otherwise, it will continue without pause.
 
 Here is an example of bad practice using [`.push()`][]:
+
 ```javascript
 // This is problematic as it completely ignores return value from push
 // which may be a signal for backpressure from the destination stream!
@@ -495,6 +499,7 @@ Additionally, from outside the custom stream, there are pratfalls for ignoring
 backpressure. In this counter-example of good practice, the application's code
 forces data through whenever it is available (signaled by the
 [`'data'` event][]):
+
 ```javascript
 // This ignores the backpressure mechanisms Node.js has set in place,
 // and unconditionally pushes through data, regardless if the
@@ -544,6 +549,7 @@ class MyWritable extends Writable {
 There are also some things to look out for when implementing [`._writev()`][].
 The function is coupled with [`.cork()`][], but there is a common mistake when
 writing:
+
 ```javascript
 // Using .uncork() twice here makes two calls on the C++ layer, rendering the
 // cork/uncork technique useless.

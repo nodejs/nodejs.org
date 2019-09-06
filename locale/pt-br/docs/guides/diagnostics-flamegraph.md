@@ -52,9 +52,11 @@ perf record -e cycles:u -g -- node --perf-basic-prof app.js
 1. Instale o `perf` (geralmente disponível através do pacote `linux-tools-common` se já não tiver instalado)
 2. tente rodar o comando `perf` - ele pode reclamar sobre alguns módulos não encontrados do kernel, então instale eles também
 3. Execute o Node com o `perf` ativado (veja [problemas de saída do perf](#problemas-de-saída-do-perf) para dicas específicas de versões do Node)
+
     ```bash
     perf record -e cycles:u -g -- node --perf-basic-prof app.js
     ```
+
 4. Ignore os avisos a não ser que eles digam que você não pode rodar o `perf` por conta de pacotes não encontrados; Você pode ter alguns avisos sobre não poder acessar as samples dos módulos do kernel, mas não estamos querendo acessar elas de qualquer forma.
 5. Execute `perf script > perfs.out` para gerar o arquivo de dados que já vamos visualizar. É bom [fazer uma limpeza](#filtrando-funções-internas-do-node) para uma saída mais legível
 6. Instale o stackvis se não tiver já instalado através de `npm i -g stackvis`

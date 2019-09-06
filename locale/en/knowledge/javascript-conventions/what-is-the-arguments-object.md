@@ -48,6 +48,7 @@ const myfunc = function(a, b, c) {
 
 myfunc(1, 2, 3);
 ```
+
 NOTE: For ES5 and below, a normal `for` loop can do the trick.
 
 In certain cases you can still treat `arguments` as an array. You can

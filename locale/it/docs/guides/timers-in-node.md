@@ -117,6 +117,7 @@ function intervalFunc() {
 
 setInterval(intervalFunc, 1500);
 ```
+
 In the above example, `intervalFunc()` will execute about every 1500
 milliseconds, or 1.5 seconds, until it is stopped (see below).
 
@@ -183,6 +184,7 @@ setImmediate(() => {
   timerObj.ref();
 });
 ```
+
 ## Further Down the Event Loop
 
 There's much more to the Event Loop and Timers than this guide

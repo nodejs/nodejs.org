@@ -38,6 +38,7 @@ var buffer = Buffer.alloc(8);
 // This will print out 8 bytes of zero:
 // <Buffer 00 00 00 00 00 00 00 00>
 ```
+
 This buffer is initialized and contains 8 bytes of zero.
 
 ```js

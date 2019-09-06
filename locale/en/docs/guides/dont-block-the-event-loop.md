@@ -292,6 +292,7 @@ In JavaScript it's easy to save the state of an ongoing task in a closure, as sh
 For a simple example, suppose you want to compute the average of the numbers `1` to `n`.
 
 Example 1: Un-partitioned average, costs `O(n)`
+
 ```javascript
 for (let i = 0; i < n; i++)
   sum += i;
@@ -300,6 +301,7 @@ console.log('avg: ' + avg);
 ```
 
 Example 2: Partitioned average, each of the `n` asynchronous steps costs `O(1)`.
+
 ```javascript
 function asyncAvg(n, avgCB) {
   // Save ongoing sum in JS closure.

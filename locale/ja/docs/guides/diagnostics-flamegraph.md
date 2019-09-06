@@ -81,9 +81,11 @@ perf record -e cycles:u -g -- node --perf-basic-prof app.js
 1. `perf` をインストールします (まだインストールされていなければ、通常 linux-tools-common パッケージ経由で利用可能です)
 2. `perf` を実行してみてください - カーネルモジュールが足りないと表示されるかもしれません、それらもインストールしてください
 3. perf を有効にして node を実行します (Node.js のバージョンに固有のヒントについては [perf の出力の問題](#perf-output-issues) を参照してください)
+
     ```bash
     perf record -e cycles:u -g -- node --perf-basic-prof app.js
     ```
+
 4. パッケージが足りないために perf を実行できないと表示されていない限り、警告を無視してください。カーネルモジュールのサンプルにアクセスできないという警告が表示されることがあります
 5. `perf script > perfs.out` を実行して、すぐに視覚化できるデータファイルを生成します。読みやすいグラフに[クリーンアップを適用する](#filtering-out-node-internal-functions)と便利です
 6. stackvis がインストールされていない場合は、`npm i -g stackvis`を実行して stackvis をインストールします
@@ -244,9 +246,11 @@ it means the Linux perf you're using was not compiled with demangle support, see
 ### フレームグラフのラベルが壊れている
 
 このようなラベルが表示されている場合
+
 ```
 node`_ZN2v88internal11interpreter17BytecodeGenerator15VisitStatementsEPNS0_8ZoneListIPNS0_9StatementEEE
 ```
+
 それは使っている Linux の perf が demangle サポート付きでコンパイルされていないことを意味します。例は https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1396654 を参照してください。
 
 <!--

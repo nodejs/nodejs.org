@@ -33,9 +33,11 @@ Now let's get to work.
 1. Install `perf` (usually available through the linux-tools-common package if not already installed)
 2. try running `perf` - it might complain about missing kernel modules, install them too
 3. run node with perf enabled (see [perf output issues](#perf-output-issues) for tips specific to Node.js versions)
+
     ```bash
     perf record -e cycles:u -g -- node --perf-basic-prof app.js
     ```
+
 4. disregard warnings unless they're saying you can't run perf due to missing packages; you may get some warnings about not being able to access kernel module samples which you're not after anyway.
 5. Run `perf script > perfs.out` to generate the data file you'll visualize in a moment. It's useful to [apply some cleanup](#filtering-out-node-internal-functions) for a more readable graph
 6. install stackvis if not yet installed `npm i -g stackvis`
@@ -109,9 +111,11 @@ Run `node --interpreted-frames-native-stack --perf-basic-prof-only-functions` to
 ### Broken labels in the flame graph
 
 If you're seeing labels looking like this
+
 ```
 node`_ZN2v88internal11interpreter17BytecodeGenerator15VisitStatementsEPNS0_8ZoneListIPNS0_9StatementEEE
 ```
+
 it means the Linux perf you're using was not compiled with demangle support, see https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1396654 for example
 
 ## Examples

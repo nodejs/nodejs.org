@@ -81,6 +81,7 @@ The following key combinations in the REPL have these special effects:
 Whenever you type a command, it will print the return value of the command. If you want to reuse the previous return value, you can use the special `_` variable.
 
 For example:
+
 ```shell
 $ node
 > 1+1

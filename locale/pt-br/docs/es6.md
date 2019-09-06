@@ -26,6 +26,7 @@ Você pode listar todas as funcionalidades *em progresso* disponíveis em cada v
 ```bash
 node --v8-options | grep "in progress"
 ```
+
 ## E sobre a performance de uma funcionalidade em particular?
 
 O time do V8 está constantemente trabalhando para melhorar a performance de novas funcionalidades da linguagem, para eventualmente encontrar uma paridade com a sua contraparte transpilada ou nativa no EcmaScript 5 ou anterior. O progresso atual é registrado no site [six-speed](https://fhinkel.github.io/six-speed), que mostra a performance das funcionalidades do ES2015 e do ESNext comparadas com as suas respectivas contrapartes nativas do ES5.

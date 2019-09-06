@@ -246,6 +246,7 @@ function intervalFunc() {
 
 setInterval(intervalFunc, 1500);
 ```
+
 上の例では、`intervalFunc()` は停止されるまで
 約 1500 ミリ秒 (1.5秒) ごとに実行されます(下記参照)。
 
@@ -376,6 +377,7 @@ setImmediate(() => {
   timerObj.ref();
 });
 ```
+
 <!--
 ## Further Down the Event Loop
 

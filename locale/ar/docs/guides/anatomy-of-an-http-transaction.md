@@ -51,6 +51,7 @@ server.on('request', (request, response) => {
 ```javascript
 const { method, url } = request;
 ```
+
 > **ملاحظة:** كائن الطلب `request` هو مثيل لرسالة القادمة [`IncomingMessage`][].
 
 الطريقة `method` هنا ستكون دائما HTTP method/verb عاديا و `url` هو الرابط بدون خادم و

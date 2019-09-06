@@ -56,6 +56,7 @@ relatively painless by putting handy properties onto the `request` object.
 ```javascript
 const { method, url } = request;
 ```
+
 > **Note:** The `request` object is an instance of [`IncomingMessage`][].
 
 The `method` here will always be a normal HTTP method/verb. The `url` is the
