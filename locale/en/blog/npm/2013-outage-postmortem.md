@@ -29,7 +29,7 @@ There are two distinct components that make up npmjs.org operated by different p
 Here is a high-level summary of the _old architecture:_
 
 <figure>
-  <img src="https://i.cloudup.com/bapm3fk8Ve-3000x3000.png" alt="old npm architecture">
+  <img src="/static/images/blog/npm/2013-outage-postmortem/bapm3fk8Ve-3000x3000.png" alt="old npm architecture">
   <figcaption>Diagram 1. Old npm architecture</figcaption>
 </figure>
 
@@ -45,7 +45,7 @@ The incident on November 4th was ultimately resolved by a reboot and resize of t
 When neither of these yielded a solution Jason Smith and I decided to move to a multi-master architecture with continuous replication illustrated below:
 
 <figure>
-  <img src="https://i.cloudup.com/xu1faVCq8p-3000x3000.png" alt="current npm architecture">
+  <img src="/static/images/blog/npm/2013-outage-postmortem/xu1faVCq8p-3000x3000.png" alt="current npm architecture">
   <figcaption>Diagram 2. Current npm architecture -- Red-lines denote continuous replication</figcaption>
 </figure>
 
@@ -63,7 +63,7 @@ The public npm registry simply cannot go down. **Ever.** We gained a lot of oper
 When these new infrastructure components are in-place The npm Registry will look like this:
 
 <figure>
-  <img src="https://i.cloudup.com/XwrpFNICJ2-3000x3000.png" alt="planned npm architecture">
+  <img src="/static/images/blog/npm/2013-outage-postmortem/XwrpFNICJ2-3000x3000.png" alt="planned npm architecture">
   <figcaption>
   Diagram 3. Planned npm architecture -- Red-lines denote continuous replication</figcaption>
 </figure>
