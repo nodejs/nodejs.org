@@ -344,8 +344,7 @@ The following table lists the impact of various runtime flags on debugging:
 
 ---
 
-<!-- ## Enabling remote debugging scenarios -->
-## 원격 디버깅 활성화 시나리오
+## <!--enabling-remote-debugging-scenarios-->원격 디버깅 활성화 시나리오
 
 <!--
 We recommend that you never have the debugger listen on a public IP address. If

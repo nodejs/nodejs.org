@@ -409,10 +409,9 @@ which should be able to debug as if the Node.js application was running locally.
 
 ---
 
- -->
-<a name="enabling-remote-debugging-scenarios"></a>
+-->
 
-## リモートデバッグシナリオを有効にする
+## <!--enabling-remote-debugging-scenarios-->リモートデバッグシナリオを有効にする
 
 デバッガがパブリック IP アドレスを待ち受けないようにすることをお勧めします。
 リモートデバッグ接続を許可する必要がある場合は、代わりに ssh トンネルを使用することをお勧めします。
