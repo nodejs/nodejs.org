@@ -127,12 +127,12 @@ The following table lists the impact of various runtime flags on debugging:
     </td>
   </tr>
   <tr>
-    <td>--inspect=<i>[host:port]</i></td>
+    <td>--inspect=<em>[host:port]</em></td>
     <td>
       <ul>
         <li>Enable inspector agent</li>
-        <li>Bind to address or hostname <i>host</i> (default: 127.0.0.1)</li>
-        <li>Listen on port <i>port</i> (default: 9229)</li>
+        <li>Bind to address or hostname <em>host</em> (default: 127.0.0.1)</li>
+        <li>Listen on port <em>port</em> (default: 9229)</li>
       </ul>
     </td>
   </tr>
@@ -147,18 +147,18 @@ The following table lists the impact of various runtime flags on debugging:
     </td>
   </tr>
   <tr>
-    <td>--inspect-brk=<i>[host:port]</i></td>
+    <td>--inspect-brk=<em>[host:port]</em></td>
     <td>
       <ul>
         <li>Enable inspector agent</li>
-        <li>Bind to address or hostname <i>host</i> (default: 127.0.0.1)</li>
-        <li>Listen on port <i>port</i> (default: 9229)</li>
+        <li>Bind to address or hostname <em>host</em> (default: 127.0.0.1)</li>
+        <li>Listen on port <em>port</em> (default: 9229)</li>
         <li>Break before user code starts</li>
       </ul>
     </td>
   </tr>
   <tr>
-    <td><code>node inspect <i>script.js</i></code></td>
+    <td><code>node inspect <em>script.js</em></code></td>
     <td>
       <ul>
         <li>Spawn child process to run user's script under --inspect flag;
@@ -167,12 +167,12 @@ The following table lists the impact of various runtime flags on debugging:
     </td>
   </tr>
   <tr>
-    <td><code>node inspect --port=xxxx <i>script.js</i></code></td>
+    <td><code>node inspect --port=xxxx <em>script.js</em></code></td>
     <td>
       <ul>
         <li>Spawn child process to run user's script under --inspect flag;
             and use main process to run CLI debugger.</li>
-        <li>Listen on port <i>port</i> (default: 9229)</li>
+        <li>Listen on port <em>port</em> (default: 9229)</li>
       </ul>
     </td>
   </tr>

@@ -17,7 +17,7 @@
       "div", "span", "p",
       "table", "th", "tr", "td",
       "code", "pre",
-      "i", "strong", "em",
+      "strong", "em",
       "sup"
     ]
   },

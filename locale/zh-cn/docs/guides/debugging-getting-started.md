@@ -96,12 +96,12 @@ layout: docs.hbs
     </td>
   </tr>
   <tr>
-    <td>--inspect=<i>[host:port]</i></td>
+    <td>--inspect=<em>[host:port]</em></td>
     <td>
       <ul>
         <li>启用监视器代理</li>
-        <li>绑定地址或主机名<i>宿主</i> （默认：127.0.0.1）</li>
-        <li>监听<i>端口</i> （默认：9229）</li>
+        <li>绑定地址或主机名<em>宿主</em> （默认：127.0.0.1）</li>
+        <li>监听<em>端口</em> （默认：9229）</li>
       </ul>
     </td>
   </tr>
@@ -116,18 +116,18 @@ layout: docs.hbs
     </td>
   </tr>
   <tr>
-    <td>--inspect-brk=<i>[host:port]</i></td>
+    <td>--inspect-brk=<em>[host:port]</em></td>
     <td>
       <ul>
         <li>启用监视器代理</li>
-        <li>绑定地址和主机名<i>宿主</i>（默认：127.0.0.1）</li>
-        <li>监听<i>端口</i>（默认：9229）</li>
+        <li>绑定地址和主机名<em>宿主</em>（默认：127.0.0.1）</li>
+        <li>监听<em>端口</em>（默认：9229）</li>
         <li>在用户代码启动前终止</li>
       </ul>
     </td>
   </tr>
   <tr>
-    <td><code>Node 监视<i>script.js</i></code></td>
+    <td><code>Node 监视<em>script.js</em></code></td>
     <td>
       <ul>
         <li>通过 --inspect 标志生成一个新的子进程，使用主进程运行 CLI 调试器。</li>
@@ -135,11 +135,11 @@ layout: docs.hbs
     </td>
   </tr>
   <tr>
-    <td><code>node inspect --port=xxxx <i>script.js</i></code></td>
+    <td><code>node inspect --port=xxxx <em>script.js</em></code></td>
     <td>
       <ul>
         <li>通过 --inspect 标志生成一个新的子进程，使用主进程运行 CLI 调试器。</li>
-        <li>监听<i>端口</i>（默认：9229）</li>
+        <li>监听<em>端口</em>（默认：9229）</li>
       </ul>
     </td>
   </tr>
