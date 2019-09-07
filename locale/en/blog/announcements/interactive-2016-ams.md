@@ -76,7 +76,7 @@ Node.js Interactive is made possible by support from Platinum Sponsor IBM; Gold 
 
 For attendees who register before July 4th, the early bird registration fee is $400. Visit [here](https://www.regonline.com/Register/Checkin.aspx?EventID=1811779) to register.
 
-About the Node.js Foundation
+## About the Node.js Foundation
 
 Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 4 million active users per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites.
 
