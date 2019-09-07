@@ -113,12 +113,12 @@ layout: docs.hbs
     </td>
   </tr>
   <tr>
-    <td><span dir="ltr">--inspect=<i>[host:port]</i></span></td>
+    <td><span dir="ltr">--inspect=<em>[host:port]</em></span></td>
     <td>
       <ul>
         <li>يقوم بتمكين عميل التدقيق</li>
-        <li>يحدد عنوانا أو  إسم مضيف <i>host</i> (افتراضيا: 127.0.0.1)</li>
-        <li>يشتغل على المنفذ <i>port</i> (افتراضيا: 9229)</li>
+        <li>يحدد عنوانا أو  إسم مضيف <em>host</em> (افتراضيا: 127.0.0.1)</li>
+        <li>يشتغل على المنفذ <em>port</em> (افتراضيا: 9229)</li>
       </ul>
     </td>
   </tr>
@@ -133,18 +133,18 @@ layout: docs.hbs
     </td>
   </tr>
   <tr>
-    <td><span dir="ltr">--inspect-brk=<i>[host:port]</i><span></td>
+    <td><span dir="ltr">--inspect-brk=<em>[host:port]</em><span></td>
     <td>
       <ul>
         <li>يقوم بتمكين عميل التدقيق</li>
-        <li>يحدد عنوانا قيمته <i>host</i> (افتراضيا: 127.0.0.1)</li>
-        <li>يشتغل على المنفذ <i>port</i> (افتراضيا: 9229)</li>
+        <li>يحدد عنوانا قيمته <em>host</em> (افتراضيا: 127.0.0.1)</li>
+        <li>يشتغل على المنفذ <em>port</em> (افتراضيا: 9229)</li>
         <li>يتوقف قبل بدء تنفيذ شيفرة المستخدم</li>
       </ul>
     </td>
   </tr>
   <tr>
-    <td><span dir="ltr"><code>node inspect <i>script.js</i></code></span></td>
+    <td><span dir="ltr"><code>node inspect <em>script.js</em></code></span></td>
     <td>
       <ul>
         <li>يخبر العمليات الفرعية بتنفيذ السكربت الخاص بالمستخدم تحت علم <span dir="ltr">--inspect</span> مع استعمال العملية الرئيسية لتشغيل مصحح الأخطاء من سطر الأوامر.</li>
@@ -152,11 +152,11 @@ layout: docs.hbs
     </td>
   </tr>
   <tr>
-    <td><span dir="ltr"><code>node inspect --port=xxxx <i>script.js</i></code><span></td>
+    <td><span dir="ltr"><code>node inspect --port=xxxx <em>script.js</em></code><span></td>
     <td>
       <ul>
         <li>يخبر العمليات الفرعية بتنفيذ السكربت الخاص بالمستخدم تحت علم <span dir="ltr">--inspect</span> مع استعمال العملية الرئيسية لتشغيل مصحح الأخطاء من سطر الأوامر.</li>
-        <li>يشتغل عبر المنفذ <i>port</i> (افتراضيا: 9229)</li>
+        <li>يشتغل عبر المنفذ <em>port</em> (افتراضيا: 9229)</li>
       </ul>
     </td>
   </tr>

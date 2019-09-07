@@ -185,12 +185,12 @@ Abaixo temos a lista de todas as flags que impactam a linha de comando enquanto 
     </td>
   </tr>
   <tr>
-    <td>--inspect=<i>[host:porta]</i></td>
+    <td>--inspect=<em>[host:porta]</em></td>
     <td>
       <ul>
         <li>Ativa o agente do inspetor</li>
-        <li>Faz a conexão com o endereço ou hostname descrito em <i>host</i> (padrão: 127.0.0.1)</li>
-        <li>Ouve a porta descrita em <i>porta</i> (padrão: 9229)</li>
+        <li>Faz a conexão com o endereço ou hostname descrito em <em>host</em> (padrão: 127.0.0.1)</li>
+        <li>Ouve a porta descrita em <em>porta</em> (padrão: 9229)</li>
       </ul>
     </td>
   </tr>
@@ -205,18 +205,18 @@ Abaixo temos a lista de todas as flags que impactam a linha de comando enquanto 
     </td>
   </tr>
   <tr>
-    <td>--inspect-brk=<i>[host:port]</i></td>
+    <td>--inspect-brk=<em>[host:port]</em></td>
     <td>
       <ul>
         <li>Ativa o agente do inspetor</li>
-        <li>Faz a conexão com o endereço ou hostname descrito em <i>host</i> (default: 127.0.0.1)</li>
-        <li>Ouve na porta descrita por <i>porta</i> (padrão: 9229)</li>
+        <li>Faz a conexão com o endereço ou hostname descrito em <em>host</em> (default: 127.0.0.1)</li>
+        <li>Ouve na porta descrita por <em>porta</em> (padrão: 9229)</li>
         <li>Pausa antes do código do usuário iniciar</li>
       </ul>
     </td>
   </tr>
   <tr>
-    <td><code>node inspect <i>script.js</i></code></td>
+    <td><code>node inspect <em>script.js</em></code></td>
     <td>
       <ul>
         <li>Inicia um child process para executar um script do usuário sob a flag --inspect; e usa o processo principal para executar o CLI do debugger.</li>
@@ -224,11 +224,11 @@ Abaixo temos a lista de todas as flags que impactam a linha de comando enquanto 
     </td>
   </tr>
   <tr>
-    <td><code>node inspect --port=xxxx <i>script.js</i></code></td>
+    <td><code>node inspect --port=xxxx <em>script.js</em></code></td>
     <td>
       <ul>
         <li>Inicia um child process para executar um script do usuário sob a flag --inspect; e usa o processo principal para executar o CLI do debugger.</li>
-        <li>Ouve na porta descrita por <i>porta</i> (padrão: 9229)</li>
+        <li>Ouve na porta descrita por <em>porta</em> (padrão: 9229)</li>
       </ul>
     </td>
   </tr>
