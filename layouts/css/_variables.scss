@@ -1,21 +1,22 @@
-$body-max-width = 980px
+$body-max-width: 980px;
 
-$white = #fff
+$white: #fff;
 
-$node-green = #43853d
-$bright-green = #028a00
-$light-green = lighten($node-green, 90%)
-$active-green = darken($bright-green, 20%)
+$node-green: #43853d;
+//$bright-green: #028a00;
+$light-green: #eaf5e9;
+$active-green: #026e00;
 
-$light-gray3 = #f0f0f0
-$light-gray2 = #ccc
-$light-gray = #999
-$gray = #666
-$node-gray = #333
-$nav-foundation-green = #026e00
+$light-gray3: #f0f0f0;
+$light-gray2: #ccc;
+$light-gray: #999;
+$gray: #666;
+$node-gray: #333;
+$home-secondary-links-color: #51744e;
 
-padded-link($padding)
-  padding-left $padding
-  padding-right $padding
-  margin-left $padding * -1
-  margin-right $padding * -1
+@mixin padded-link($padding) {
+  padding-right: $padding;
+  padding-left: $padding;
+  margin-right: $padding * -1;
+  margin-left: $padding * -1;
+}

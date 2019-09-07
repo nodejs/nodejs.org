@@ -1,22 +1,27 @@
-.bg-white
-  background-color $white !important
+.bg-white {
+  background-color: $white !important;
+}
 
-.bg-node-gray
-  background-color $node-gray !important
+.bg-node-gray {
+  background-color: $node-gray !important;
+}
 
-.table-no-border-no-padding
-  border-spacing 0
+.table-no-border-no-padding {
+  border-spacing: 0;
 
-  td
-    padding 0
+  td {
+    padding: 0;
+  }
+}
 
 // borrowed from Bootstrap
-.sr-only
-  position absolute
-  width 1px
-  height 1px
-  padding 0
-  overflow hidden
-  clip rect(0, 0, 0, 0)
-  white-space nowrap
-  border none
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: none;
+}

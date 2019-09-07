@@ -18,7 +18,7 @@
     "test:linkinator": "npm-run-all --parallel --race \"serve -- --serve-only\" linkinator",
     "test:lint:js": "standard",
     "test:lint:md": "markdownlint \"**/*.md\" -i \"**/node_modules/**\"",
-    "test:lint:stylint": "stylint layouts/css",
+    "test:lint:stylelint": "stylelint \"layouts/css/**/*.{css,scss}\"",
     "test:lint": "npm-run-all --parallel test:lint:*",
     "test:html": "node scripts/vnu-jar.js",
     "test:unit": "tape tests/**/*.test.js | faucet"
@@ -37,7 +37,7 @@
     ]
   },
   "dependencies": {
-    "autoprefixer-stylus": "^1.0.0",
+    "autoprefixer": "^9.6.4",
     "cheerio": "^0.22.0",
     "handlebars": "^4.4.3",
     "jstransformer-handlebars": "^1.1.0",
@@ -56,13 +56,14 @@
     "metalsmith-prism": "^3.1.1",
     "metalsmith-yearly-pagination": "^4.0.0",
     "ncp": "^2.0.0",
+    "node-sass": "^4.12.0",
     "node-version-data": "^1.1.0",
     "npm-run-all": "^4.1.5",
     "octonode": "^0.9.5",
+    "postcss": "^7.0.18",
     "request": "^2.88.0",
     "semver": "^6.3.0",
-    "strftime": "^0.10.0",
-    "stylus": "^0.54.7"
+    "strftime": "^0.10.0"
   },
   "devDependencies": {
     "chokidar": "^3.2.1",
@@ -76,7 +77,10 @@
     "proxyquire": "^2.1.3",
     "st": "^1.2.2",
     "standard": "^14.3.1",
-    "stylint": "^2.0.0",
+    "stylelint": "^11.1.1",
+    "stylelint-config-recommended-scss": "^4.0.0",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-scss": "^3.11.1",
     "tape": "^4.11.0",
     "vnu-jar": "19.9.4"
   }

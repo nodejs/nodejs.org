@@ -1,122 +1,154 @@
-@import '_variables'
-@import '_base'
-@import '_utils'
+@charset "utf-8";
+
+@import "variables";
+@import "base";
+@import "utils";
+
 // Import specific page sections and layout parts
-@import 'layout/_sticky-footer'
-@import 'layout/_grid'
-@import 'layout/_main'
-@import 'layout/_lists'
-@import 'page-modules/_linuxfoundation'
-@import 'page-modules/_header'
-@import 'page-modules/_footer'
-@import 'page-modules/_home'
-@import 'page-modules/_blog-index'
-@import 'page-modules/_blog-post'
-@import 'page-modules/_in-the-news'
-@import 'page-modules/_download'
-@import 'page-modules/_scrollToTop'
-@import 'page-modules/_anchorLinks'
-@import 'page-modules/_prev-next-navigation'
-@import 'page-modules/_release-schedule'
-@import 'page-modules/_resources'
-@import 'vendor/_prism-tomorrow'
+@import "layout/sticky-footer";
+@import "layout/grid";
+@import "layout/main";
+@import "layout/lists";
+@import "page-modules/linuxfoundation";
+@import "page-modules/header";
+@import "page-modules/footer";
+@import "page-modules/home";
+@import "page-modules/blog-index";
+@import "page-modules/blog-post";
+@import "page-modules/in-the-news";
+@import "page-modules/download";
+@import "page-modules/scrollToTop";
+@import "page-modules/anchorLinks";
+@import "page-modules/prev-next-navigation";
+@import "page-modules/release-schedule";
+@import "page-modules/resources";
+@import "vendor/prism-tomorrow";
 
-article a
-  word-break break-word
+article a {
+  word-break: break-word;
+}
 
-.intro
-  margin-top 140px
-  font-size 38px
-  line-height 1.2
+.intro {
+  margin-top: 140px;
+  font-size: 38px;
+  line-height: 1.2;
 
-  h1
-    font-size inherit
-    margin-bottom 15px
+  h1 {
+    font-size: inherit;
+    margin-bottom: 15px;
 
-    & + p
-      margin-top 0
+    & + p {
+      margin-top: 0;
+    }
+  }
 
-  span
-    color $light-gray
-    display block
+  span {
+    color: $light-gray;
+    display: block;
+  }
+}
 
-.has-side-nav
-  aside
-    width 200px
-    float left
-    margin-top 1.5em
+.has-side-nav {
+  aside {
+    width: 200px;
+    float: left;
+    margin-top: 1.5em;
 
-    ul
-      list-style-type none
-      margin 0
-      padding 0
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
 
-    li
-      padding 0.1em 0.5em
+    li {
+      padding: .1em .5em;
+    }
 
-    a
-      display block
-      padded-link(10px)
-      padding-top 5px
-      padding-bottom 5px
-      line-height 1
+    a {
+      display: block;
+      padding: 5px 10px;
+      margin-right: -10px;
+      margin-left: -10px;
+      line-height: 1;
+    }
 
-    .active
+    .active {
       > a,
-      > a:hover
-        color $white
-        background-color $active-green
+      > a:hover {
+        color: $white;
+        background-color: $active-green;
+      }
+    }
+  }
 
-  article
-    margin-left 220px
+  article {
+    margin-left: 220px;
+  }
+}
 
-.edit-link
-  float right
-  font-size 0.9em
-  margin 0.5em 0
+.edit-link {
+  float: right;
+  font-size: .9em;
+  margin: .5em 0;
+}
 
-@media screen and (max-width: 480px)
-  .has-side-nav
-    aside
-      width 100%
-      float none
-    article
-      margin-left 0
+@media screen and (max-width: 480px) {
+  .has-side-nav {
+    aside {
+      width: 100%;
+      float: none;
+    }
 
-.full-width
-  width 100%
+    article {
+      margin-left: 0;
+    }
+  }
+}
 
-.small
-  font-size 10px
+.full-width {
+  width: 100%;
+}
 
-.color-lightgray
-  color $light-gray
+.small {
+  font-size: 10px;
+}
 
-a:hover .color-lightgray
-  color $white
+.color-lightgray {
+  color: $light-gray;
+}
 
-.no-padding
-  padding 0
+a:hover .color-lightgray {
+  color: $white;
+}
 
-.highlight-box
-  background-color $light-gray3
-  padding 5px 15px
-  border-radius 2px
-  margin-top 1em
+.no-padding {
+  padding: 0;
+}
 
-  & *:first-child // @stylint ignore
-    margin-top 0.5rem
+.highlight-box {
+  background-color: $light-gray3;
+  padding: 5px 15px;
+  border-radius: 2px;
+  margin-top: 1em;
 
-html[dir='rtl']
-  .has-side-nav
-    aside
-      float right
+  & *:first-child {
+    margin-top: .5rem;
+  }
+}
 
-    article
-      margin-right 220px
-      margin-left 0
+html[dir="rtl"] {
+  .has-side-nav {
+    aside {
+      float: right;
+    }
 
-  @media screen and (max-width: 480px)
-    .has-side-nav
-      article
-        margin-right 0
+    article {
+      margin-right: 220px;
+      margin-left: 0;
+
+      @media screen and (max-width: 480px) {
+        margin-right: 0;
+      }
+    }
+  }
+}
