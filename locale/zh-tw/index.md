@@ -20,4 +20,4 @@ labels:
   newsletter-postfix: "：Node.js 官方的新聞月報。"
 ---
 
-Node.js® 是款基於 [Chrome V8 引擎](https://v8.dev/)的 JavaScript 執行環境。
+# Node.js® 是款基於 [Chrome V8 引擎](https://v8.dev/)的 JavaScript 執行環境。

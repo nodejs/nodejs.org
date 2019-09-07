@@ -20,4 +20,4 @@ labels:
   newsletter-postfix: "を購読しましょう。"
 ---
 
-Node.js® は、[Chrome の V8 JavaScript エンジン](https://v8.dev/) で動作する JavaScript 環境です。
+# Node.js® は、[Chrome の V8 JavaScript エンジン](https://v8.dev/) で動作する JavaScript 環境です。

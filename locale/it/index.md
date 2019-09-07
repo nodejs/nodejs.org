@@ -20,4 +20,4 @@ labels:
   newsletter-postfix: ", la newsletter mensile di Node.js"
 ---
 
-Node.js® è un runtime JavaScript costruito sul [motore JavaScript V8 di Chrome](https://v8.dev/).
+# Node.js® è un runtime JavaScript costruito sul [motore JavaScript V8 di Chrome](https://v8.dev/).

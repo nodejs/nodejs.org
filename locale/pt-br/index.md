@@ -20,4 +20,4 @@ labels:
   newsletter-postfix: ", o boletim oficial de atualizações do Node.js."
 ---
 
-Node.js® é um runtime JavaScript desenvolvido com o [Chrome's V8 JavaScript engine](https://v8.dev/).
+# Node.js® é um runtime JavaScript desenvolvido com o [Chrome's V8 JavaScript engine](https://v8.dev/).

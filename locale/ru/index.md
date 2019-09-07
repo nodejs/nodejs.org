@@ -17,4 +17,4 @@ labels:
   version-schedule-prompt-link-text: график LTS.
 ---
 
-Node.js&reg; — это JavaScript-окружение построенное на движке [Chrome V8](https://v8.dev/).
+# Node.js&reg; — это JavaScript-окружение построенное на движке [Chrome V8](https://v8.dev/).

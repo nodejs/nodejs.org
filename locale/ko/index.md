@@ -17,4 +17,4 @@ labels:
   version-schedule-prompt-link-text: 여기서 확인하세요.
 ---
 
-Node.js®는 [Chrome V8 JavaScript 엔진](https://v8.dev/)으로 빌드된 JavaScript 런타임입니다.
+# Node.js®는 [Chrome V8 JavaScript 엔진](https://v8.dev/)으로 빌드된 JavaScript 런타임입니다.
