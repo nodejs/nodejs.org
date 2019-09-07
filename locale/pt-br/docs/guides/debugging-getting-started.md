@@ -173,7 +173,7 @@ estão as informações básicas sobre eles:
 <!-- The following table lists the impact of various runtime flags on debugging: -->
 Abaixo temos a lista de todas as flags que impactam a linha de comando enquanto em debugging:
 
-<table cellpadding="0" cellspacing="0">
+<table class="table-no-border-no-padding">
   <tr><th>Flag</th><th>Significado</th></tr>
   <tr>
     <td>--inspect</td>
