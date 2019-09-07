@@ -8,7 +8,7 @@ title: パッケージマネージャを利用した Node.js のインストー�
 <!-- ***Note:*** The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream. -->
 ***注意:*** このページにあるパッケージはそれぞれのパッケージ管理者によってメンテナンスされています。Node.js コアチームによるものでは**ありません**。遭遇した問題はパッケージの管理者に報告してください。もしその問題が Node.js 自体のバグだと判明した場合は、管理者が報告をあげてくれます。
 
-----------------------------
+---
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
@@ -24,7 +24,7 @@ title: パッケージマネージャを利用した Node.js のインストー�
 * [Void Linux](#void-linux)
 * [Windows](#windows)
 
-----------------------------
+---
 
 ## Android
 

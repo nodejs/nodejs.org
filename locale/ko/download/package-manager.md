@@ -8,7 +8,7 @@ title: 패키지 매니저로 Node.js 설치하기
 
 ***Note:*** The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
 
-----------------------------
+---
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
@@ -26,7 +26,7 @@ title: 패키지 매니저로 Node.js 설치하기
 * [Void Linux](#void-linux)
 * [Windows](#windows)
 
-----------------------------
+---
 -->
 # 패키지 매니저로 Node.js 설치하기
 
@@ -34,7 +34,7 @@ title: 패키지 매니저로 Node.js 설치하기
 **관리하지 않습니다**. 이슈가 있다면 패키지 관리자에게 보고해 주세요. 해당 이슈가 Node.js 자체의
 버그라면 관리자가 이슈를 Node.js에 보고할 것입니다.
 
-----------------------------
+---
 
 * [안드로이드](#android)
 * [Arch Linux](#arch-linux)
@@ -52,7 +52,7 @@ title: 패키지 매니저로 Node.js 설치하기
 * [Void Linux](#void-linux)
 * [Windows](#windows)
 
-----------------------------
+---
 
 <!--
 ## Android

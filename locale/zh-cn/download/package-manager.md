@@ -7,7 +7,7 @@ title: 通过包管理器安装 Node.js
 
 ***注意：*** 此页面上所有的安装包均有它们各自作者，**而非** Node.js 核心团队负责进行维护和支持。如遇任何问题，请直接向有关作者报告。 如你的问题被证实是因为 Nodejs 的缺陷引发的，维护者将直接向 Nodejs 汇报此问题。
 
-----------------------------
+---
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
@@ -25,7 +25,7 @@ title: 通过包管理器安装 Node.js
 * [Void Linux](#void-linux)
 * [Windows](#windows)
 
-----------------------------
+---
 
 ## Android
 
