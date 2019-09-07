@@ -40,7 +40,7 @@ If some of this language is unfamiliar, there is a full article on
 ---
 
 Node.js is similar in design to, and influenced by, systems like Ruby's
-[Event Machine][] or Python's [Twisted][]. Node.js takes the event model a bit
+[Event Machine][] and Python's [Twisted][]. Node.js takes the event model a bit
 further. It presents an [event loop][] as a runtime construct instead of as a library. In other systems there is always a blocking call to start the
 event-loop.
 Typically behavior is defined through callbacks at the beginning of a script
