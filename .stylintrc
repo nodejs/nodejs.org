@@ -8,7 +8,10 @@
     "expect": "never",
     "error": true
   },
-  "colors": false,
+  "colors": {
+    "expect": "always",
+    "error": true
+  },
   "commaSpace": {
     "expect": "always",
     "error": true
