@@ -13,16 +13,16 @@ Foundation Individual Director is the Node.js project’s community voice on the
 board. There are two individual directors that sit on the Node.js Foundation
 board and they serve a two-year term.
 
->> “Having the community represented is extremely important for open source
-projects with a Board of Directors as diverse as ours. This gives the community
-a voice on the board and helps to guide how we make the investment decisions.
-The individual board members are able to provide feedback on how proposed board
-items might impact the community and can provide suggestions on how the Node.js
-Foundation can better support the community. With this knowledge and feedback,
-the board is able to contribute the resources the community needs to stay
-healthy and continue to grow.”
-
->> *Todd Moore, Node.js Foundation Director*
+> “Having the community represented is extremely important for open source
+> projects with a Board of Directors as diverse as ours. This gives the community
+> a voice on the board and helps to guide how we make the investment decisions.
+> The individual board members are able to provide feedback on how proposed board
+> items might impact the community and can provide suggestions on how the Node.js
+> Foundation can better support the community. With this knowledge and feedback,
+> the board is able to contribute the resources the community needs to stay
+> healthy and continue to grow.”
+>
+> *Todd Moore, Node.js Foundation Director*
 
 The Individual Membership Director is responsible for soliciting feedback and
 data that represents the wishes of other individual members and the community at
