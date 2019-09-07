@@ -1,15 +1,20 @@
-.blog-index
-  list-style none
-  padding 0
+.blog-index {
+  list-style: none;
+  padding: 0;
 
-  time
-    margin-right 1em
-    color $light-gray
+  time {
+    margin-right: 1em;
+    color: $light-gray;
+  }
 
-  .summary
-    margin-left 1em
-    font-size 75%
+  .summary {
+    margin-left: 1em;
+    font-size: 75%;
+  }
+}
 
-nav.pagination
-  a
-    padded-link(2px)
+nav.pagination {
+  a {
+    @include padded-link(2px);
+  }
+}
