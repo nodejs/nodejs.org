@@ -134,7 +134,7 @@ NODE PRO TIP: The `crypto.createCipheriv()` and `crypto.createDecipheriv()` meth
 | aes192        | 24 byte (192 bits) | 16 byte (128 bits) |
 | aes256        | 32 byte (256 bits) | 16 byte (128 bits) |
 
-In the code above The user entered `key` is hashed using `SHA-256 encryption` which produces a 32 byte buffer by default, this buffered key is then used as the [cryptographic key](https://en.wikipedia.org/wiki/Key_(cryptography)) in the `crypto.createCipheriv()` and `crypto.createDecipheriv()` methods. The `iv` is also hashed with `SHA-256 encryption` and is 32 byte in size but all AES (CBC mode and CFB mode) take `iv` of exactly 16 byte (128 bits) therefor another Buffer `resizedIV` is used which contains the first 16 byte of orignal 32 byte `iv`.
+In the code above The user entered `key` is hashed using `SHA-256 encryption` which produces a 32 byte buffer by default, this buffered key is then used as the [cryptographic key](https://en.wikipedia.org/wiki/Key_(cryptography)) in the `crypto.createCipheriv()` and `crypto.createDecipheriv()` methods. The `iv` is also hashed with `SHA-256 encryption` and is 32 byte in size but all AES (CBC mode and CFB mode) take `iv` of exactly 16 byte (128 bits) therefor another Buffer `resizedIV` is used which contains the first 16 byte of original 32 byte `iv`.
 
 Using this script to encode a message looks like this:
 
