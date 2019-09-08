@@ -40,7 +40,7 @@ Pronto - agora você tem um array contendo os argumentos que passou. Perceba os 
 
 <!-- Where everyday CLI arguments are concerned, you'll want to skip the first two.  Now try this in `argv.js`: -->
 
-Enquanto diariamente a CLI está concentrada nos argumentos, você provavelmente vai querer pular os dois primeiros. Agora tente isso em `argv.js`:
+No que diz respeito a uso de argumentos no dia-a-dia, você provavelmente vai querer pular os dois primeiros. Agora tente isso em `argv.js`:
 
 ```js
 var myArgs = process.argv.slice(2);
