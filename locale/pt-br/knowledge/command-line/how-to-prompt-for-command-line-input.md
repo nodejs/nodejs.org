@@ -15,7 +15,7 @@ Então você possui uma pequena ferramenta CLI, mas deseja habilitar uma opção
 
 <!-- Streams are Node's way of dealing with evented I/O - it's a big topic, and you can read more about them [here](https://nodejs.org/api/stream.html). For now, we're going to use node's `readline` module which is a wrapper around Standard I/O, suitable for taking user input from command line(terminal). -->
 
-Stream é uma forma do Node.js lidar com tipos de E/S - é um tópico importante, e você pode ler mais sobre isso [aqui](https://nodejs.org/api/stream.html). No momento, nós vamos usar o módulo `readline` do Node.js que é um wrapper envolvendo o padrão de E/S, adequado para receber a entrada do usuário a partir da linha de comando (terminal).
+Streams são a forma do Node.js lidar com tipos de E/S - é um tópico importante, e você pode ler mais sobre isso [aqui](https://nodejs.org/api/stream.html). No momento, nós vamos usar o módulo `readline` do Node.js que é um wrapper envolvendo o padrão de E/S, adequado para receber a entrada do usuário a partir da linha de comando (terminal).
 
 <!-- Here's a simple example.  Try the following in a new file: -->
 
