@@ -11,7 +11,7 @@ layout: knowledge-post.hbs
 
 <!-- So you've got a little CLI tool, but you want to be able to prompt a user for additional data after the script has started, rather than passing it in as a command line argument or putting it in a file.  To do this, you'll need to listen to STDIN ("standard input", i.e. your keyboard), which Node.js exposes for you as `process.stdin`, a readable stream. -->
 
-Então você possui uma pequena ferramenta CLI, mas deseja habilitar uma opção onde o usuário possa inserir dados adicionais após o start do mesmo ao invés de passar esses dados como argumento de linha de comando ou inserindo dentro do arquivo. Para fazer isso, será necessário escutar ao STDIN ("standard input", ex: seu teclado), no qual o Node.js exporta para você como `process.stdin`, um stream de leitura.
+Então você possui uma pequena ferramenta CLI, mas deseja habilitar uma opção onde o usuário possa inserir dados adicionais após o start do mesmo ao invés de passar esses dados como argumento de linha de comando ou inserindo dentro do arquivo. Para fazer isso, será necessário escutar ao STDIN ("standard input", ex: seu teclado), no qual o Node.js exporta para você como `process.stdin`, uma stream de leitura.
 
 <!-- Streams are Node's way of dealing with evented I/O - it's a big topic, and you can read more about them [here](https://nodejs.org/api/stream.html). For now, we're going to use node's `readline` module which is a wrapper around Standard I/O, suitable for taking user input from command line(terminal). -->
 
