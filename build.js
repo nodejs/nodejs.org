@@ -47,6 +47,33 @@ const markedOptions = {
   renderer
 }
 
+const htmlMinifierOpts = {
+  collapseBooleanAttributes: true,
+  collapseWhitespace: true,
+  conservativeCollapse: true, // This is needed as things are now
+  decodeEntities: true,
+  minifyCSS: {
+    level: {
+      1: {
+        specialComments: 0
+      }
+    }
+  },
+  minifyJS: false, // we don't have a lot inline JS and this slows down things
+  minifyURLs: false,
+  processConditionalComments: true,
+  removeAttributeQuotes: true,
+  removeComments: true,
+  removeOptionalAttributes: true,
+  removeOptionalTags: true,
+  removeRedundantAttributes: true,
+  removeScriptTypeAttributes: true,
+  removeStyleLinkTypeAttributes: true,
+  removeTagWhitespace: false,
+  sortAttributes: true,
+  sortClassName: true
+}
+
 // This function imports a given language file and uses the default language set
 // in DEFAULT_LANG as a fallback to prevent any strings that aren't filled out
 // from appearing as blank.
@@ -181,7 +208,7 @@ function buildLocale (source, locale, opts) {
     }))
     .use(layouts())
     // Use the default options
-    .use(htmlMinifier())
+    .use(htmlMinifier({ minifierOptions: htmlMinifierOpts }))
     // Pipes the generated files into their respective subdirectory in the build
     // directory.
     .destination(path.join(__dirname, 'build', locale))
