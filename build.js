@@ -253,7 +253,7 @@ function buildLayouts () {
         // file anyways.
         .use(filterStylusPartials())
         .use(stylus({
-          compress: true,
+          compress: process.env.NODE_ENV !== 'development',
           paths: [path.join(__dirname, 'layouts', 'css')],
           use: [autoprefixer()]
         }))
