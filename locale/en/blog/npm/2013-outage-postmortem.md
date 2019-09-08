@@ -37,7 +37,7 @@ Here is a high-level summary of the _old architecture:_
 
 As illustrated above, before November 13th, 2013, npm operated as a single CouchDB server with regular daily backups. We briefly ran a multi-master CouchDB setup after downtime back in August, but after reports that `npm login` no longer worked correctly we rolled back to a single CouchDB server. On both November 13th and November 15th CouchDB became unresponsive on requests to the `/registry` database while requests to all other databases (e.g. `/public_users`) remained responsive. Although the root cause of the CouchDB failures have yet to be determined given that only requests to `/registry` were slow and/or timed out we suspect it is related to the massive number of attachments stored in the registry.
 
-The incident on November 4th was ultimately resolved by a reboot and resize of the host machine, but when the same symptoms reoccured less than 10 days later additional steps were taken:
+The incident on November 4th was ultimately resolved by a reboot and resize of the host machine, but when the same symptoms reoccurred less than 10 days later additional steps were taken:
 
 1. The [registry was moved to another machine][ops-new-machine] of equal resources to exclude the possibility of a hardware issue.
 2. The [registry database itself][ops-compaction] was [compacted][compaction].
