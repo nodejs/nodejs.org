@@ -1,7 +1,7 @@
 ---
 title: Node.js Foundation To Oversee Node.js Security Project To Further Improve Stability for Enterprises
 date: 2016-11-30T12:00:00.000Z
-category: Annoucements
+category: Announcements
 slug: foundation-adds-node.js-security-project
 layout: blog-post.hbs
 ---

@@ -1,7 +1,7 @@
 ---
 title: The Node.js Platform and Node.js Foundation Continue to Grow
 date: 2016-11-30T12:00:00.000Z
-category: Annoucements
+category: Announcements
 slug: node.js-foundation-momentum-release
 layout: blog-post.hbs
 ---

@@ -2,7 +2,7 @@
 title: Bem-vindo ao Google Cloud Platform!
 date: 2016-03-29T13:00:00.000Z
 status: publish
-category: Annoucements
+category: Announcements
 slug: welcome-google
 layout: blog-post.hbs
 ---

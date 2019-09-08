@@ -2,7 +2,7 @@
 title: Node.js Interactive
 date: 2015-09-10T17:00:00.000Z
 status: publish
-category: Annoucements
+category: Announcements
 slug: interactive-2015
 layout: blog-post.hbs
 ---
