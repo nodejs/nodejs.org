@@ -17,8 +17,7 @@
       "div", "span", "p",
       "table", "th", "tr", "td",
       "code", "pre",
-      "strong", "em",
-      "sup"
+      "strong", "em"
     ]
   },
   "MD034": false,
