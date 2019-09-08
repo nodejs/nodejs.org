@@ -94,7 +94,7 @@ DICA PRO NODE: Esse pequeno script também demonstra o tratamento adequado de er
 
 <!-- Prompt also makes it trivial to handle a certain set of recurring properties that one might want to attach. -->
 
-Prompt também torna trivial lidar com um determinado conjunto de propriedades recorrentes que você pode querer anexar.
+Usar o prompt também torna trivial lidar com um determinado conjunto de propriedades recorrentes que você pode querer anexar.
 
 ```js
 const prompt = require('prompt');
