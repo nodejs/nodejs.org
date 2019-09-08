@@ -90,7 +90,7 @@ function onErr(err) {
 
 <!-- NODE PRO TIP: This short script also demonstrates proper error handling in node - errors are a callback's first argument, and `return` is used with the error handler so that the rest of the function doesn't execute when errors happen. -->
 
-DICA PRO NODE: Esse pequeno script também demonstra o tratamento adequado de erros em node - erros são o primeiro argumento de uma callback, e `return` é utilizado com o controlador de erros de tal forma que o restante da função não seja executado quando um erro ocorrer.
+DICA PRO NODE: Esse pequeno script também demonstra o tratamento adequado de erros em node - erros são o primeiro argumento de um callback, e `return` é utilizado com o controlador de erros de tal forma que o restante da função não seja executado quando um erro ocorrer.
 
 <!-- Prompt also makes it trivial to handle a certain set of recurring properties that one might want to attach. -->
 
