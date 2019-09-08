@@ -17,6 +17,6 @@ modules: "<code>NODE_MODULE_VERSION</code> 指的是 Node.js 的 ABI (applicatio
 * [Node.js 4.x](https://nodejs.org/dist/latest-v4.x/)
 * [Node.js 0.12.x](https://nodejs.org/dist/latest-v0.12.x/)
 * [Node.js 0.10.x](https://nodejs.org/dist/latest-v0.10.x/)
-* [All versions](https://nodejs.org/dist/)
+* [所有版本](https://nodejs.org/dist/)
 
 </div>
