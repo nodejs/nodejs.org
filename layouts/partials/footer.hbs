@@ -27,20 +27,7 @@
 
 </footer>
 
-<script>
-  var scrollToTop = document.getElementById('scroll-to-top');
-
-  (window.onscroll = function() {
-    window.requestAnimationFrame(function() {
-      scrollToTop.style.display = window.pageYOffset > window.innerHeight ? 'block' : 'none';
-    })
-  })();
-
-  scrollToTop.addEventListener('click', function (e) {
-    e.preventDefault();
-    window.scrollTo(0, 0);
-  });
-</script>
+<script src="/static/js/main.js" async defer></script>
 
 {{!-- Load Modernizr dynamically for IE10/11 and add test classes for sticky footer with flexbox --}}
 <script>
