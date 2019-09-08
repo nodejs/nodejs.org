@@ -177,7 +177,7 @@ layout: contribute.hbs
 
 - [Встреча](https://www.Встреча.com/Nodejs-Paris/)
 - Частота встреч ― monthly
-- Как стать докладчиком? ― Contact organizers in the Встреча page or submit your talk on [nodejs.paris wbesite](http://nodejs.paris/Встречаs)
+- Как стать докладчиком? ― Contact organizers in the Встреча page or submit your talk on [nodejs.paris website](http://nodejs.paris/Встречаs)
 - Организаторы ― [Etienne Folio](https://twitter.com/Ornthalas), [Stanislas Ormières](https://twitter.com/laruiss), [Nicolas KOKLA](https://twitter.com/nkokla), Quentin Raynaud
 - Контакты организаторов -
 
