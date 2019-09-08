@@ -60,7 +60,7 @@ A última parte do código utiliza o método `rl.on()` para adicionar um evento 
 <!--
 If all of this sounds complicated, or if you want a higher-level interface to this sort of thing, don't worry - as usual, the Node.js community has come to the rescue.  One particularly friendly module to use for this is `prompt`, available on `npm`: -->
 
-Se tudo isso parece um pouco complicado, ou se você deseja uma interface de nível superior, não se preocupe - como sempre, a comunidade Node.js veio ao resgate. Existe um módulo amigável para isto, o `prompt` disponível no `npm`:
+Se tudo isso parece um pouco complicado, ou se você deseja uma interface de alto nível, não se preocupe - como sempre, a comunidade Node.js veio ao resgate. Existe um módulo amigável para isto, o `prompt` disponível no `npm`:
 
 ```bash
 npm install prompt
