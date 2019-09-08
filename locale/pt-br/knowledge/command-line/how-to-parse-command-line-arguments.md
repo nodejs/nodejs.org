@@ -154,7 +154,7 @@ Um resumo dos elementos usados ​​no programa:
 - **alias()**: This method provides an alias name to an option, like in the above code both `--help` and `-h` triggers the help dialogue. -->
 
 - **argv**: É uma modificação do `process.argv` no qual configuramos com o yargs.
-- **command()**: Este método é usado para adicionar comandos, a descrição e as opções são específicas somente para esse comando, como no seguinte código `lyr` que é um comando e `-y` é uma opção específica de lyr: `node myapp.js lyr -y 2016`
+- **command()**: Este método é usado para adicionar comandos, a descrição e as opções são específicas somente para esse comando, como no código anterior, `lyr`, que é um comando, e `-y` é uma opção específica de lyr: `node myapp.js lyr -y 2016`
 - **option()**: Este método é utilizado para adicionar opções(flags) globais que podem ser acessadas por todos os comandos ou sem nenhum comando.
 - **help()**: Este método é usado para exibir um texto de ajuda quando a opção `--help` é encontrada contendo a descrição de todos os `comandos` e `opções` disponíveis.
 - **alias()**: Este método fornece um pseudônimo para uma opção, como no código seguinte tanto `--help` quanto `-h` acionam o texto de ajuda.
