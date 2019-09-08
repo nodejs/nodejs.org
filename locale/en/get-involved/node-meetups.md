@@ -196,7 +196,7 @@ REQUIREMENTS
 
 - [Meetup](https://www.meetup.com/Nodejs-Paris/)
 - Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page or submit your talk on [nodejs.paris wbesite](http://nodejs.paris/meetups)
+- How to submit a talk? Contact organizers in the meetup page or submit your talk on [nodejs.paris website](http://nodejs.paris/meetups)
 - Organizer name - [Etienne Folio](https://twitter.com/Ornthalas), [Stanislas Ormières](https://twitter.com/laruiss), [Nicolas KOKLA](https://twitter.com/nkokla), Quentin Raynaud
 - Organizer contact info -
 
