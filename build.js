@@ -16,6 +16,7 @@ const markdown = require('metalsmith-markdown')
 const prism = require('metalsmith-prism')
 const permalinks = require('metalsmith-permalinks')
 const pagination = require('metalsmith-yearly-pagination')
+const htmlMinifier = require('metalsmith-html-minifier')
 const defaultsDeep = require('lodash.defaultsdeep')
 const autoprefixer = require('autoprefixer')
 const marked = require('marked')
@@ -179,6 +180,8 @@ function buildLocale (source, locale, opts) {
       pattern: /\.js$/
     }))
     .use(layouts())
+    // Use the default options
+    .use(htmlMinifier())
     // Pipes the generated files into their respective subdirectory in the build
     // directory.
     .destination(path.join(__dirname, 'build', locale))
