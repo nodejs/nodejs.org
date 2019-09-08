@@ -2,7 +2,7 @@
 title: Node.js Foundation Welcomes Red Hat as Newest Platinum Member
 date: 2015-10-06T12:30:00.000Z
 status: publish
-category: Annoucements
+category: Announcements
 slug: welcome-redhat
 layout: blog-post.hbs
 ---

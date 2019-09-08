@@ -2,7 +2,7 @@
 title: New Node.js Foundation Survey Reports New “Full Stack” In Demand Among Enterprise Developers
 date: 2016-04-12T13:00:00.000Z
 status: publish
-category: Annoucements
+category: Announcements
 slug: nodejs-foundation-survey
 layout: blog-post.hbs
 ---

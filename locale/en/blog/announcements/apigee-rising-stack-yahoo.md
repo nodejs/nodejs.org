@@ -2,7 +2,7 @@
 title: Apigee, RisingStack and Yahoo Join the Node.js Foundation
 date: 2015-12-08T12:00:00.000Z
 status: publish
-category: Annoucements
+category: Announcements
 slug: apigee-rising-stack-yahoo
 layout: blog-post.hbs
 ---

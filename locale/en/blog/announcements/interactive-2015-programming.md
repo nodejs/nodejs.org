@@ -2,7 +2,7 @@
 title: Node.js Foundation Announces Programming For Node.js Interactive
 date: 2015-10-20T17:00:00.000Z
 status: publish
-category: Annoucements
+category: Announcements
 slug: interactive-2015-programming
 layout: blog-post.hbs
 ---

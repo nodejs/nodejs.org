@@ -2,7 +2,7 @@
 title: World’s Fastest Growing Open Source Platform Pushes Out New Release
 date: 2016-04-26T12:00:00.000Z
 status: publish
-category: Annoucements
+category: Announcements
 slug: v6-release
 layout: blog-post.hbs
 ---

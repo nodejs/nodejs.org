@@ -2,7 +2,7 @@
 title: Node.js Foundation Combines Node.js and io.js Into Single Codebase in New Release
 date: 2015-09-14T17:00:00.000Z
 status: publish
-category: Annoucements
+category: Announcements
 slug: foundation-v4-announce
 layout: blog-post.hbs
 ---

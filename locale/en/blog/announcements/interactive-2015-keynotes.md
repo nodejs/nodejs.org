@@ -2,7 +2,7 @@
 title: Keynotes for Node.js Interactive 2015 Announced
 date: 2015-11-20T09:00:00.000Z
 status: publish
-category: Annoucements
+category: Announcements
 slug: interactive-2015-programming
 layout: blog-post.hbs
 ---
