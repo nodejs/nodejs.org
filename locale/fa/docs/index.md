@@ -23,6 +23,8 @@ This documentation describes the built-in modules provided by Node.js. It does n
 
 ### Looking for API docs of previous releases?
 
+* [Node.js 11.x](https://nodejs.org/docs/latest-v11.x/api/)
+* [Node.js 10.x](https://nodejs.org/docs/latest-v10.x/api/)
 * [Node.js 9.x](https://nodejs.org/docs/latest-v9.x/api/)
 * [Node.js 8.x](https://nodejs.org/docs/latest-v8.x/api/)
 * [Node.js 7.x](https://nodejs.org/docs/latest-v7.x/api/)
