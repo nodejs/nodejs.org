@@ -68,7 +68,7 @@ npm install prompt
 
 <!-- Prompt is built to be easy - if your eyes started to glaze over as soon as you saw `Readable Stream`, then this is the section for you.  Compare the following to the example above: -->
 
-Promt foi criado para ser fácil - se seus olhos começaram a brilhar assim que você leu `Readable Stream`,então essa é uma seção para você. Compare os seguintes exemplos abaixo:
+O prompt foi criado para ser fácil - se seus olhos começaram a brilhar assim que você leu `Readable Stream`,então essa é uma seção para você. Compare os seguintes exemplos abaixo:
 
 ```js
 const prompt = require('prompt');
