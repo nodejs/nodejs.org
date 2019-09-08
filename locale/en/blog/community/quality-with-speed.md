@@ -276,7 +276,7 @@ You can read more about our module testing efforts in
 ## Stress Tests
 
 Some problems only surface after running for a long time.  Stress tests help
-to flush those out by running certain scearios over a prolonged period
+to flush those out by running certain scenarios over a prolonged period
 of time.
 
 We don't have any stress tests running at this point but it will be our next
