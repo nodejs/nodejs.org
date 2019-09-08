@@ -16,7 +16,7 @@ The crypto module is mostly useful as a tool for implementing [cryptographic pro
 
 ### What Is A Hash?
 
-A hash is a fixed-length string of bits that is procedurally and deterministially generated from some arbitrary block of source data. Some important properties of these hashes (the type useful for cryptography) include:
+A hash is a fixed-length string of bits that is procedurally and deterministically generated from some arbitrary block of source data. Some important properties of these hashes (the type useful for cryptography) include:
 
 * **Fixed length:** This means that, no matter what the input, the length of the hash is the same. For example, SHA-256 hashes are always 256 bits long whether the input data is a few bits or a few gigabytes.
 
