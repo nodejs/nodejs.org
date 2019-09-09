@@ -13,14 +13,13 @@
     "load-versions": "node scripts/load-versions.js",
     "load-schedule": "curl -sS https://raw.githubusercontent.com/nodejs/Release/master/schedule.json -o source/schedule.json",
     "start": "npm run serve",
-    "test": "npm-run-all test:lint test:unit test:smoke",
+    "test": "npm-run-all test:lint test:unit",
     "test:lint:js": "standard",
     "test:lint:htmllint": "htmllint \"**/*.hbs\"",
     "test:lint:md": "markdownlint \"**/*.md\" -i \"**/node_modules/**\"",
     "test:lint:stylint": "stylint layouts/css",
     "test:lint": "npm-run-all --parallel test:lint:*",
-    "test:unit": "tape tests/**/*.test.js | faucet",
-    "test:smoke": "tape tests/*.smoketest.js | faucet"
+    "test:unit": "tape tests/**/*.test.js | faucet"
   },
   "repository": "nodejs/nodejs.org",
   "author": "Node.js Website Working Group",
