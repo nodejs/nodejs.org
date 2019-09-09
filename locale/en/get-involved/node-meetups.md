@@ -517,7 +517,7 @@ REQUIREMENTS
 - Organizer name - Patrick Scott Co-organizer: Matt Walters.
 - Organizer contact info -
 - How to submit a talk? Contact Pat Scott @ [pat@patscott.io](mailto:pat@patscott.io). Matt Walters @ [meetup@iammattwalters.com](mailto:meetup@iammattwalters.com).
-- Slack: [join.thenodejsmeetup.com](join.thenodejsmeetup.com)
+- Slack: [join.thenodejsmeetup.com](http://join.thenodejsmeetup.com/)
 - Videos: [https://www.youtube.com/c/thenodejsmeetup](https://www.youtube.com/c/thenodejsmeetup)
 
 #### North Carolina
@@ -559,7 +559,7 @@ REQUIREMENTS
 - How to submit a talk? Contact Matt Walters @ [meetup@iammattwalters.com](mailto:meetup@iammattwalters.com).
 - Organizer name - [Matt Walters](https://github.com/mateodelnorte/)
 - Organizer contact info - [meetup@iammattwalters.com](mailto:meetup@iammattwalters.com)
-- Slack: [join.thenodejsmeetup.com](join.thenodejsmeetup.com)
+- Slack: [join.thenodejsmeetup.com](http://join.thenodejsmeetup.com/)
 - Videos: [https://www.youtube.com/c/thenodejsmeetup](https://www.youtube.com/c/thenodejsmeetup)
 
 - [Meetup](https://www.meetup.com/ATXNodeSchool/)

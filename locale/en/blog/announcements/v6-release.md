@@ -77,4 +77,4 @@ IBM, Intel, Joyent, Microsoft, PayPal and Red Hat. Gold members include GoDaddy,
 and Modulus/Progress Software, and Silver members include Apigee, AppDynamics, Codefresh,
 DigitalOcean, Fidelity, Google, Groupon, nearForm, New Relic, npm, Opbeat, RisingStack, Sauce
 Labs, SAP, StrongLoop (an IBM company), Sphinx, YLD!, and Yahoo!. Get involved here:
-[https://nodejs.org](https://nodejs.org).
+<https://nodejs.org/>.

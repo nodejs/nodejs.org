@@ -154,8 +154,8 @@ sudo zypper in nodejs nodejs-devel
 
 ## macOS
 
-<!-- Simply download the [macOS Installer](https://nodejs.org/#download) direct from the [nodejs.org](https://nodejs.org) web site. -->
-直接 [nodejs.org](https://nodejs.org) のサイトから [macOS Installer](https://nodejs.org/#download) をダウンロードしてください。
+<!-- Simply download the [macOS Installer](https://nodejs.org/en/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site. -->
+直接 [nodejs.org](https://nodejs.org/) のサイトから [macOS Installer](https://nodejs.org/ja/#home-downloadhead) をダウンロードしてください。
 
 <!-- _If you want to download the package with bash:_ -->
 _bash でパッケージをダウンロードしたい場合:_
@@ -233,8 +233,8 @@ xbps-install -Sy nodejs
 
 ## Windows
 
-<!-- Simply download the [Windows Installer](https://nodejs.org/#download) directly from the [nodejs.org](https://nodejs.org) web site. -->
-直接 [nodejs.org](https://nodejs.org) のサイトから [Windows Installer](https://nodejs.org/#download) をダウンロードしてください。
+<!-- Simply download the [Windows Installer](https://nodejs.org/en/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site. -->
+直接 [nodejs.org](https://nodejs.org/) のサイトから [Windows Installer](https://nodejs.org/ja/#home-downloadhead) をダウンロードしてください。
 
 ### 代替手段
 

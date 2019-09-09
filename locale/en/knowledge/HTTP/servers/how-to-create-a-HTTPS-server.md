@@ -23,7 +23,7 @@ To generate a self-signed certificate, run the following in your shell:
     openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem
     rm csr.pem
 
-This should leave you with two files, `cert.pem` (the certificate) and `key.pem` (the private key). Put these files in the same directory as your Node.js server file. This is all you need for a SSL connection. So now you set up a quick hello world example (the biggest difference between https and [http](/how-do-i-create-a-http-server) is the `options` parameter):
+This should leave you with two files, `cert.pem` (the certificate) and `key.pem` (the private key). Put these files in the same directory as your Node.js server file. This is all you need for a SSL connection. So now you set up a quick hello world example (the biggest difference between https and [http](/en/knowledge/HTTP/servers/how-to-create-a-HTTP-server/) is the `options` parameter):
 
     const https = require('https');
     const fs = require('fs');

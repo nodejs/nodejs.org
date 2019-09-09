@@ -7,7 +7,7 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-A basic necessity for most [http servers](/how-do-i-create-a-https-server) is to be able to serve static files. Thankfully, it is not that hard to do in Node.js. First you [link]read the file, then you serve the file.  Here is an example of a script that will serve the files in the current directory:
+A basic necessity for most [http servers](/en/knowledge/HTTP/servers/how-to-create-a-HTTPS-server/) is to be able to serve static files. Thankfully, it is not that hard to do in Node.js. First you [read the file](/en/knowledge/file-system/how-to-read-files-in-nodejs/), then you serve the file.  Here is an example of a script that will serve the files in the current directory:
 
     var fs = require('fs'),
         http = require('http');

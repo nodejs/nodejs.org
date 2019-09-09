@@ -7,10 +7,10 @@ title: Logos and Graphics
 
 ## Logo Downloads
 
- Please review the [trademark policy](/about/trademark/) for information about permissible use of Node.js&reg; logos and marks.
+Please review the [trademark policy](/en/about/trademark/) for information about permissible use of Node.js&reg; logos and marks.
 
- Guidelines for the visual display of the Node.js mark are described in
- the [Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
+Guidelines for the visual display of the Node.js mark are described in
+the [Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
 
 <table class="logos">
   <tr>

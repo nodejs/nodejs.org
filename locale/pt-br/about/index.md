@@ -102,9 +102,9 @@ desenvolvidos para que a comunicação entre eles seja fácil. Da mesma maneira 
 [`cluster`][], que permite o compartilhamento de _sockets_ entre os processos, a fim de
 permitir o balanceamento de carga entre os núcleos.
 
-[Blocking vs Non-Blocking]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
+[Blocking vs Non-Blocking]: /en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[event loop]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
+[event loop]: /en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
 [Twisted]: https://twistedmatrix.com/trac/

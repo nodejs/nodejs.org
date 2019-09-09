@@ -55,9 +55,9 @@ HTTP ha un posto di rilievo in Node.js, che è stato progettato per lo streaming
 
 Solo perché Node.js è progettato senza thread, non significa che non è possibile sfruttare i multi-core nel proprio ambiente. I processi figlio possono essere generati utilizzando la API [`child_process.fork()`][], con cui è possibile comunicare facilmente. Costruito sulla stessa interfaccia è il modulo [`cluster`][], che consente di condividere i socket tra i processi per consentire il bilanciamento del carico sui core.
 
-[Bloccante vs Non Bloccante]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
+[Bloccante vs Non Bloccante]: /en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[loop di eventi]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
+[loop di eventi]: /en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: http://rubyeventmachine.com/
 [Twisted]: https://twistedmatrix.com/trac/

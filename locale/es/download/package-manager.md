@@ -119,7 +119,7 @@ sudo zypper in nodejs nodejs-devel
 
 ## macOS
 
-Simplemente descargue el [Instalador para macOS](https://nodejs.org/#download) directamente desde el sitio web de [nodejs.org](https://nodejs.org).
+Simplemente descargue el [Instalador para macOS](https://nodejs.org/es/#home-downloadhead) directamente desde el sitio web de [nodejs.org](https://nodejs.org/).
 
 _Si usted quiere descargar el paquete con bash:_
 
@@ -190,7 +190,7 @@ xbps-install -Sy nodejs
 
 ## Windows
 
-Simplemente descargue el [Instalador para Windows](https://nodejs.org/#download) directamente desde el sitio web de [nodejs.org](https://nodejs.org).
+Simplemente descargue el [Instalador para Windows](https://nodejs.org/es/#home-downloadhead) directamente desde el sitio web de [nodejs.org](https://nodejs.org/).
 
 ### Alternativas
 

@@ -65,9 +65,9 @@ vous pourrez communiquer facilement. Basé sur la même interface, le
  [`cluster`][] (en) vous permettra de partager les sockets entre vos processus
  pour faire de la répartition de charge entre vos coeurs.
 
-[Bloquant vs Non-Bloquant]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
+[Bloquant vs Non-Bloquant]: /en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[boucle événementielle]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
+[boucle événementielle]: /en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
 [Twisted]: https://twistedmatrix.com/trac/

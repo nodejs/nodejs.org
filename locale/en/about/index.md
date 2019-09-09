@@ -61,9 +61,9 @@ communicate with. Built upon that same interface is the [`cluster`][] module,
 which allows you to share sockets between processes to enable load balancing
 over your cores.
 
-[Blocking vs. Non-Blocking]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
+[Blocking vs. Non-Blocking]: /en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[event loop]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
+[event loop]: /en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
 [Twisted]: https://twistedmatrix.com/trac/
