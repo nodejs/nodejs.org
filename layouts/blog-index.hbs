@@ -31,11 +31,17 @@
         {{/if}}
 
         {{#if pagination.prev.path}}{{#if pagination.next.path}}
+        {{#equals (slashes pagination.next.path) 'blog/index.md'}}
+        {{else}}
         |
+        {{/equals}}
         {{/if}}{{/if}}
 
         {{#if pagination.next.path}}
+        {{#equals (slashes pagination.next.path) 'blog/index.md'}}
+        {{else}}
         <a href="/{{ site.locale }}/{{ pagination.next.path }}/">Older &gt;</a>
+        {{/equals}}
         {{/if}}
       </nav>
       {{/if}}
