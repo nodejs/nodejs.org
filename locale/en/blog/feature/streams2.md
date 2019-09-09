@@ -24,7 +24,7 @@ layout: blog-post.hbs
   `resume()`, then it'll sit in a paused state forever and never
   emit `'end'`.
 
--------
+---
 
 Throughout the life of Node, we've been gradually iterating on the
 ideal event-based API for handling data.  Over time, this developed
@@ -105,7 +105,7 @@ it out and see what you think.  Especially, if you have tests that you
 can run on your modules and libraries, that would be extremely useful
 feedback.
 
---------
+---
 
 # Stream
 

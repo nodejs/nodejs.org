@@ -7,7 +7,7 @@ title: 透過套件管理安裝 Node.js
 
 ***請注意：*** 下列的套件維護及支援 **並非由** Node.js 核心團隊提供，任何套件使用上的問題，應直接聯繫各套件的維護者，若發現問題出於 Node.js 本身，則應由套件維護者聯繫上層。
 
-----------------------------
+---
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
@@ -25,7 +25,7 @@ title: 透過套件管理安裝 Node.js
 * [Void Linux](#void-linux)
 * [Windows](#windows)
 
-----------------------------
+---
 
 ## Android
 
