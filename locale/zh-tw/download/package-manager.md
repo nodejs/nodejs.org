@@ -147,8 +147,7 @@ pkg_add node
 - **openSUSE Leap 42.2**: `nodejs4`
 - **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
 - **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
-- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`
-  必須[於安裝前加入](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html) "Web and Scripting Module"。
+- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`（必須[於安裝前加入](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html) "Web and Scripting Module"）
 
 舉例來說，若想在 openSUSE Leap 42.2 上安裝 Node.js 4.x，用 root 權限執行下列指令：
 
