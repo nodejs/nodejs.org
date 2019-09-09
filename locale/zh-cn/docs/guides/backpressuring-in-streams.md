@@ -135,8 +135,7 @@ inp.pipe(gzip).pipe(outputFile);
 
 让我们来看一个快速的基准。使用上面的同一个例子，我们进行两次试验以获得两个二进制文件的中位时间。
 
-<!-- eslint-skip -->
-```javascript
+```
    trial (#)  | `node` binary (ms) | modified `node` binary (ms)
 =================================================================
       1       |      56924         |           55011
@@ -152,8 +151,7 @@ average time: |      55299         |           55975
 
 GC（垃圾回收器）测量表明一个完整的周期间隔一个由垃圾回收器进行扫描：
 
-<!-- eslint-skip -->
-```javascript
+```
 approx. time (ms) | GC (ms) | modified GC (ms)
 =================================================
           0       |    0    |      0
@@ -187,8 +185,7 @@ approx. time (ms) | GC (ms) | modified GC (ms)
 
 这是普通程序输出结果：
 
-<!-- eslint-skip -->
-```javascript
+```
 Respecting the return value of .write()
 =============================================
 real        58.88
@@ -214,8 +211,7 @@ sys          8.79
 
 现在改变 [`.write()`][] 方法的 [返回值][]，我们得到以下结果：
 
-<!-- eslint-skip -->
-```javascript
+```
 Without respecting the return value of .write():
 ==================================================
 real        54.48
@@ -271,8 +267,7 @@ sys          7.43
 
 为了对积压有一个更好的理解，这里有一副 [`Readable`][] 流正通过 [piped][] 流入 [`Writable`][] 流的整个生命周期图：
 
-<!-- eslint-skip -->
-```javascript
+```
                                                      +===================+
                          x-->  Piping functions   +-->   src.pipe(dest)  |
                          x     are set up during     |===================|
