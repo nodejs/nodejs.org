@@ -23,7 +23,7 @@ npm install
 npm start
 ```
 
-This will start the development server on http://localhost:8080/en/. This should reload automatically when you make changes to the code, but no code is perfect, so sometimes you may need to restart it. :)
+This will start the development server on `http://localhost:8080/en/`. This should reload automatically when you make changes to the code, but no code is perfect, so sometimes you may need to restart it. :)
 
 If you want to submit a new feature or a bugfix, the best way is to create the changes in a separate branch, e.g.: `git checkout -b feature/mycoolfeature`. This will make it easier for you to submit a pull request and get your feature merged.
 
@@ -42,14 +42,14 @@ If you want to submit a new feature or a bugfix, the best way is to create the c
 ### Serve/Build Options
 
 * `DEFAULT_LOCALE={{locale}} npm run serve` builds only the files present in the specified locale folder (will display 404 if file is not present)
-* `DEFAULT_LOCALE={{locale}} npm run serve -- --preserveLocale` builds the files present in the specified locale folder and adds the pages present in the english locale that are missing.
+* `DEFAULT_LOCALE={{locale}} npm run serve -- --preserveLocale` builds the files present in the specified locale folder and adds the pages present in the English locale that are missing.
 * `npm run serve` builds all languages and returns 404 when a file is not present in the current locale
-* `npm run serve -- --preserveLocale` builds all languages and adds the pages present in the english locale that are missing.
-* Multiple locales can be built by using comma separated values in the DEFAULT_LOCALE option. i.e: DEFAULT_LOCALE=en,es,it
+* `npm run serve -- --preserveLocale` builds all languages and adds the pages present in the English locale that are missing.
+* Multiple locales can be built by using comma separated values in the `DEFAULT_LOCALE` variable. i.e: `DEFAULT_LOCALE=en,es,it`
 
 ### Deployment
 
-Full set up is in https://github.com/nodejs/build/tree/master/setup/www minus secrets and certificates. The webhook is setup on GitHub for this project and talks to a small Node server on the host which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
+Full set up is in <https://github.com/nodejs/build/tree/master/setup/www> minus secrets and certificates. The webhook is setup on GitHub for this project and talks to a small Node server on the host which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
 
 ## Governance
 
