@@ -185,8 +185,7 @@ and instead with the replaced `return true;`.
 Let's take a look at a quick benchmark. Using the same example from above, we
 ran a few time trials to get a median time for both binaries.
 
-<!-- eslint-skip -->
-```javascript
+```
    trial (#)  | `node` binary (ms) | modified `node` binary (ms)
 =================================================================
       1       |      56924         |           55011
@@ -206,8 +205,7 @@ collector.
 The GC (garbage collector) measured time indicates the intervals of a full cycle
 of a single sweep done by the garbage collector:
 
-<!-- eslint-skip -->
-```javascript
+```
 approx. time (ms) | GC (ms) | modified GC (ms)
 =================================================
           0       |    0    |      0
@@ -253,8 +251,7 @@ individually.
 
 This is the output on the normal binary:
 
-<!-- eslint-skip -->
-```javascript
+```
 Respecting the return value of .write()
 =============================================
 real        58.88
@@ -281,8 +278,7 @@ The maximum byte size occupied by virtual memory turns out to be approximately
 
 And now changing the [return value][] of the [`.write()`][] function, we get:
 
-<!-- eslint-skip -->
-```javascript
+```
 Without respecting the return value of .write():
 ==================================================
 real        54.48
@@ -370,8 +366,7 @@ To achieve a better understanding of backpressure, here is a flow-chart on the
 lifecycle of a [`Readable`][] stream being [piped][] into a [`Writable`][]
 stream:
 
-<!-- eslint-skip -->
-```javascript
+```
                                                      +===================+
                          x-->  Piping functions   +-->   src.pipe(dest)  |
                          x     are set up during     |===================|
