@@ -14,9 +14,9 @@ Votre signalement sera confirmé sous 24 heures, et vous recevrez une réponse d
 Après sa réponse initiale à votre signalement, l'équipe de sécurité s'efforcera de vous tenir informé·e de ses avancées en direction d'un correctif et d'une annonce publique ; elle pourrait vous recontacter pour demander des informations complémentaires ou des conseils à propos de la faille.
 Les progrès seront notifiés au moins tous les cinq jours ; en pratique, ce délai est plutôt toutes les 24 à 48 heures.
 
-### Le programme « Bug Bounty » de Node.js
+### Le programme « Bug Bounty » de Node.js
 
-Le projet Node.js s'engage dans un programme officiel de récompense de signalement de failles (« _Bug Bounty_ ») pour des chercheurs en sécurité et pour une approche responsable des signalements.
+Le projet Node.js s'engage dans un programme officiel de récompense de signalement de failles (« _Bug Bounty_ ») pour des chercheurs en sécurité et pour une approche responsable des signalements.
 
 Ce programme est géré au travers de la plate-forme HackerOne, où vous trouverez des informations complémentaires : [https://hackerone.com/nodejs](https://hackerone.com/nodejs).
 

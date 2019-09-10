@@ -9,7 +9,7 @@ layout: blog-post.hbs
 _Node.js Foundation to launch
 vendor-neutral certification program for fastest growing platform _
 
- **SAN FRANCISCO, Jan. 26, 2017** — [The Node.js Foundation](https://foundation.nodejs.org/), a community-led and
+**SAN FRANCISCO, Jan. 26, 2017** — [The Node.js Foundation](https://foundation.nodejs.org/), a community-led and
 industry-backed consortium to advance the development of the Node.js platform,
 today announced development of the inaugural Node.js certification program
 aimed to establish a baseline competency in Node.js.
