@@ -90,12 +90,12 @@
     }
 
     .title {
-      font-size: 1.5em;
+      font-size: 1.875rem;
       line-height: 1;
     }
 
     .tag {
-      font-size: .8em;
+      font-size: 1rem;
     }
   }
 
@@ -122,7 +122,7 @@
       height: 100%;
       width: 100%;
       text-align: center;
-      font-size: .8em;
+      font-size: 1rem;
     }
 
     a:hover,
@@ -138,7 +138,7 @@ h5.download-table-previous-releases-header {
 }
 
 .download-table {
-  font-size: small;
+  font-size: .8125rem;
   border: 1px solid $light-gray2;
   border-spacing: 0;
 
@@ -195,7 +195,7 @@ td.download-table-last {
       }
 
       .tag {
-        font-size: .6em;
+        font-size: .75rem;
       }
     }
   }
@@ -275,11 +275,11 @@ td.download-table-last {
   .download-hero {
     .download-version-toggle {
       li {
-        font-size: 1em;
+        font-size: 1.25rem;
       }
 
       .tag {
-        font-size: .4em;
+        font-size: .5rem;
       }
     }
   }

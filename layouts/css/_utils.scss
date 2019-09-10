@@ -6,12 +6,32 @@
   background-color: $node-gray !important;
 }
 
+.color-lightgray {
+  color: $light-gray;
+
+  a:hover & {
+    color: $white;
+  }
+}
+
 .table-no-border-no-padding {
   border-spacing: 0;
 
   td {
     padding: 0;
   }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.small {
+  font-size: .625rem;
+}
+
+.no-padding {
+  padding: 0;
 }
 
 // borrowed from Bootstrap

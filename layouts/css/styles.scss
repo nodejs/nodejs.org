@@ -29,7 +29,7 @@ article a {
 
 .intro {
   margin-top: 140px;
-  font-size: 38px;
+  font-size: 2.375rem;
   line-height: 1.2;
 
   h1 {
@@ -87,7 +87,7 @@ article a {
 
 .edit-link {
   float: right;
-  font-size: .9em;
+  font-size: 1.125rem;
   margin: .5em 0;
 }
 
@@ -102,26 +102,6 @@ article a {
       margin-left: 0;
     }
   }
-}
-
-.full-width {
-  width: 100%;
-}
-
-.small {
-  font-size: 10px;
-}
-
-.color-lightgray {
-  color: $light-gray;
-}
-
-a:hover .color-lightgray {
-  color: $white;
-}
-
-.no-padding {
-  padding: 0;
 }
 
 .highlight-box {
