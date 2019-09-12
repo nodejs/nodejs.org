@@ -92,7 +92,7 @@ test('anchorMarkdownHeadings', (t) => {
     renderer.heading = anchorMarkdownHeadings
 
     const text = '# Title\n# Title'
-    const output = marked(text, { renderer: renderer })
+    const output = marked(text, { renderer })
     const expected = '<h1 id="header-title">Title' +
       '<a id="title" class="anchor" ' +
       'href="#title" aria-labelledby="header-title"></a></h1>' +
