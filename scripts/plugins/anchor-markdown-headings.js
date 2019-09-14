@@ -12,12 +12,19 @@
  * `<!---->` to quote your English anchor name inside, with your
  * own title beside it.
  */
-module.exports = function anchorMarkdownHeadings (text, level, raw, slugger) {
-  // Check whether we've got the comment matches
-  // <!--comment-->, <!--comment --> and even <!-- comment-->
-  // (20 hex = 32 dec = space character)
-  const ANCHOR_COMMENTREG = /<!--\x20?([\w|-]+)\x20?-->/gi
 
+// Check whether we've got the comment matches
+// <!--comment-->, <!--comment --> and even <!-- comment-->
+// (20 hex = 32 dec = space character)
+// Only need to find one that matches the Regex, we cannot use
+// 'g' here because it will continue searching for the rest string,
+// and you have to reset the lastIndex, which isn't a necessary for
+// our current situation.
+// For more, you can see:
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex#Description
+const ANCHOR_COMMENTREG = /<!--\x20?([\w\x20-]+)\x20?-->/
+
+module.exports = function anchorMarkdownHeadings (text, level, raw, slugger) {
   let anchorTitle = null
 
   // If we've checked the title has a comment symbol,
@@ -27,14 +34,14 @@ module.exports = function anchorMarkdownHeadings (text, level, raw, slugger) {
   if (anchorTitleArray !== null) {
     anchorTitle = anchorTitleArray[1]
   } else {
-    // For others, directly replace all non-English characters
-    // to '-' in the middle, only keep the English characters
     anchorTitle = raw
-      .replace(/(\[([^\]]+)]\([^)]+\))/g, '$2')
-      .replace(/[^\w]+/g, '-')
-      .replace(/-{2,}/g, '-')
-      .replace(/(^-|-$)/g, '')
   }
+
+  anchorTitle = anchorTitle.replace(/(\[([^\]]+)]\([^)]+\))/g, '$2')
+    .replace(/[^\w]+/g, '-')
+    .replace(/[\x20]+/g, '-')
+    .replace(/-{2,}/g, '-')
+    .replace(/(^-|-$)/g, '')
 
   if (!anchorTitle) {
     return `<h${level}>${text}</h${level}>`

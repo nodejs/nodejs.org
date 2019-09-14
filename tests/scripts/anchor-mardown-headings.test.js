@@ -5,7 +5,7 @@ const test = require('tape')
 const anchorMarkdownHeadings = require('../../scripts/plugins/anchor-markdown-headings')
 
 test('anchorMarkdownHeadings', (t) => {
-  t.plan(7)
+  t.plan(8)
 
   t.test('correctly parses markdown heading without links', (t) => {
     const text = 'Simple title'
@@ -71,6 +71,21 @@ test('anchorMarkdownHeadings', (t) => {
       '<a id="anchor-with-non-english-characters" class="anchor" ' +
       'href="#anchor-with-non-english-characters" ' +
       'aria-labelledby="header-anchor-with-non-english-characters"></a></h2>'
+
+    t.plan(1)
+    t.equal(output, expected)
+  })
+
+  t.test('correctly parses markdown heading with empty spaces', (t) => {
+    const text = '这是<a href="b">链接</a>的<a href="d">测试！</a>'
+    const level = 2
+    const raw = '<!-- empty  spaces - id -->这是[链接](b)c[测试！](d)'
+    const output = anchorMarkdownHeadings(text, level, raw)
+    const expected = '<h2 id="header-empty-spaces-id">' +
+      '这是<a href="b">链接</a>的<a href="d">测试！</a>' +
+      '<a id="empty-spaces-id" class="anchor" ' +
+      'href="#empty-spaces-id" ' +
+      'aria-labelledby="header-empty-spaces-id"></a></h2>'
 
     t.plan(1)
     t.equal(output, expected)
