@@ -123,27 +123,27 @@ Percentage of the requests served within a certain time (ms)
  100%   4225 (longest request)
 ```
 
-From this output, we see that we're only managing to serve about 5 requests per
-second and that the average request takes just under 4 seconds round trip. In a
-real world example, we could be doing lots of work in many functions on behalf
-of a user request but even in our simple example, time could be lost compiling
-regular expressions, generating random salts, generating unique hashes from user
-passwords, or inside the Express framework itself.
+По выводу видно, что обрабатывается только около 5 запросов в секунду, а средний 
+запрос занимает чуть менее 4 секунд в оба конца. В реальной ситуации могло бы 
+последовать еще множество вычислений от имени пользовательского запроса, но даже 
+в нашем простом примере могут возникать временные потери как при компиляции 
+регулярных выражений, генерации случайных солей и хешей из паролей пользователей, 
+так и внутри самого фреймворка Express.
 
-Since we ran our application using the `--prof` option, a tick file was generated
-in the same directory as your local run of the application. It should have the
-form `isolate-0xnnnnnnnnnnnn-v8.log` (where `n` is a digit).
+Так как мы запустили приложение, используя опцию  `--prof`, тиковый файл был 
+сгенерирован в том же каталоге, откуда приложение было запущено. Он должен быть 
+вида `isolate-0xnnnnnnnnnnnn-v8.log` (где `n` - цифра).
 
-In order to make sense of this file, we need to use the tick processor bundled
-with the Node.js binary. To run the processor, use the `--prof-process` flag:
+Чтобы разобраться в этом файле, используйте тиковый процессор в комплекте с двоичным
+файлом Node.js. Чтобы запустить процессор, используйте флаг `--prof-process`:
 
 ```
 node --prof-process isolate-0xnnnnnnnnnnnn-v8.log > processed.txt
 ```
 
-Opening processed.txt in your favorite text editor will give you a few different
-types of information. The file is broken up into sections which are again broken
-up by language. First, we look at the summary section and see:
+Открыв обработанный текст в вашем любимом текстовом редакторе, вы увидите различного
+вида информацию. Файл разбит на секции, которые разбиты по языкам. Взглянем сначала 
+на итоговый раздел:
 
 ```
  [Summary]:
@@ -277,5 +277,5 @@ Hopefully, through the performance investigation of this (admittedly contrived)
 example, you've seen how the V8 tick processor can help you gain a better
 understanding of the performance of your Node.js applications.
 
-[profiler inside V8]: https://v8.dev/docs/profile
+[профайлер V8]: https://v8.dev/docs/profile
 [benefits of asynchronous programming]: https://nodesource.com/blog/why-asynchronous
