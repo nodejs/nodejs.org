@@ -14,7 +14,7 @@
     "load-schedule": "curl -sS https://raw.githubusercontent.com/nodejs/Release/master/schedule.json -o source/schedule.json",
     "start": "npm run serve",
     "test": "npm-run-all test:lint test:unit",
-    "linkinator": "delay 3 && linkinator http://localhost:8080/en/ --recurse --silent --skip \"^(?!http://localhost)\"",
+    "linkinator": "delay 3 && node scripts/linkinator.js",
     "test:linkinator": "npm-run-all --parallel --race \"serve -- --serve-only\" linkinator",
     "test:lint:js": "standard",
     "test:lint:md": "remark -qf .",
