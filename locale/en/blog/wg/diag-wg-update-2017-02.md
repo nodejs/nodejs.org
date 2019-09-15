@@ -13,8 +13,6 @@ for better tools and APIs for debugging and understanding your modules and apps.
 In fact, in last year's [Node.js Foundation survey][], the biggest ask from
 developers and technical leads was for better tools.
 
-[Node.js Foundation survey]: https://nodejs.org/static/documents/2016-survey-report.pdf
-
 Based on that feedback and thanks to contributions and collaboration from across
 our community, over the past year several experimental diagnostic APIs and tools
 have landed in Node itself and the Node.js Foundation, including:
@@ -24,24 +22,11 @@ have landed in Node itself and the Node.js Foundation, including:
 * [Trace Controller][] for gathering and streaming traces from V8 and Node
 * [node-report][] and [llnode][] for post-mortem analysis
 
-[async_hooks]: https://github.com/nodejs/node/pull/8531
-[Inspector]: https://github.com/nodejs/node/issues?utf8=%E2%9C%93&q=label%3Ainspector%20
-[node-inspect]: https://github.com/nodejs/node-inspect
-[Trace Controller]: https://github.com/nodejs/node/pull/9304
-[node-report]: https://github.com/nodejs/node-report
-[llnode]: https://github.com/nodejs/llnode
-
 Over the coming months we'll continue to improve the [stability][] of these projects
 and hope to eventually graduate some from experimental state with your help and
 feedback. Search the nodejs GitHub org for labels [diag-agenda][],
 [tracing][], and [inspector][] and review issues in the [Diagnostics WG][] to
 see what we're working on and how you can help.
-
-[stability]: https://nodejs.org/dist/latest-v7.x/docs/api/documentation.html#documentation_stability_index
-[diag-agenda]: https://github.com/search?q=org%3Anodejs+label%3A%22diag-agenda%22&type=Issues
-[tracing]: https://github.com/search?utf8=✓&q=org%3Anodejs+label%3A"tracing"+is%3Aopen&type=Issues
-[inspector]: https://github.com/search?utf8=✓&q=org%3Anodejs+label%3A"inspector"+is%3Aopen&type=Issues
-[Diagnostics WG]: https://github.com/nodejs/diagnostics/issues
 
 ## Inspector replaces legacy V8 Debugger
 
@@ -68,9 +53,6 @@ debug myscript.js`, has now (7.6.0+) been augmented with an Inspector-based
 equivalent invoked with `node inspect myscript.js`. `node debug myscript.js` will
 eventually be removed as well in favor of `node inspect`.
 
-[Inspector API]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/
-[CLI debugger]: https://nodejs.org/docs/v7.6.0/api/debugger.html
-
 ## Try it!
 
 Check out the [Debugging - Getting Started][] guide for help getting started
@@ -82,8 +64,21 @@ your experiences getting that info with tools and APIs old and new. [Open an
 issue][] in the Diagnostics WG for discussions or a PR in [nodejs/node][] to
 contribute code.
 
-[Debugging - Getting Started]: https://nodejs.org/en/docs/guides/debugging-getting-started/
-[Open an issue]: https://github.com/nodejs/diagnostics/issues/new
-[nodejs/node]: https://github.com/nodejs/node
-
 Thank you!
+
+[async_hooks]: https://github.com/nodejs/node/pull/8531
+[CLI debugger]: https://nodejs.org/docs/v7.6.0/api/debugger.html
+[Debugging - Getting Started]: https://nodejs.org/en/docs/guides/debugging-getting-started/
+[diag-agenda]: https://github.com/search?q=org%3Anodejs+label%3A%22diag-agenda%22&type=Issues
+[Diagnostics WG]: https://github.com/nodejs/diagnostics/issues
+[Inspector API]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/
+[Inspector]: https://github.com/nodejs/node/issues?utf8=%E2%9C%93&q=label%3Ainspector%20
+[llnode]: https://github.com/nodejs/llnode
+[node-inspect]: https://github.com/nodejs/node-inspect
+[node-report]: https://github.com/nodejs/node-report
+[Node.js Foundation survey]: https://nodejs.org/static/documents/2016-survey-report.pdf
+[nodejs/node]: https://github.com/nodejs/node
+[Open an issue]: https://github.com/nodejs/diagnostics/issues/new
+[stability]: https://nodejs.org/dist/latest-v7.x/docs/api/documentation.html#documentation_stability_index
+[Trace Controller]: https://github.com/nodejs/node/pull/9304
+[tracing]: https://github.com/search?utf8=✓&q=org%3Anodejs+label%3A"tracing"+is%3Aopen&type=Issues
