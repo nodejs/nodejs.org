@@ -76,7 +76,7 @@ Thank you!
 [llnode]: https://github.com/nodejs/llnode
 [node-inspect]: https://github.com/nodejs/node-inspect
 [node-report]: https://github.com/nodejs/node-report
-[Node.js Foundation survey]: https://nodejs.org/static/documents/2016-survey-report.pdf
+[Node.js Foundation survey]: /static/documents/2016-survey-report.pdf
 [nodejs/node]: https://github.com/nodejs/node
 [Open an issue]: https://github.com/nodejs/diagnostics/issues/new
 [stability]: https://nodejs.org/dist/latest-v7.x/docs/api/documentation.html#documentation_stability_index
