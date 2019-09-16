@@ -284,10 +284,10 @@ fs.readFile('/file.md', (readFileErr, data) => {
 ## Additional Resources
 
 - [libuv](https://libuv.org/)
-- [About Node.js](https://nodejs.org/en/about/)
+- [About Node.js](/en/about/)
 
  -->
 ## 追加のリソース
 
 - [libuv](https://libuv.org/)
-- [About Node.js](https://nodejs.org/ja/about/)
+- [About Node.js](/ja/about/)

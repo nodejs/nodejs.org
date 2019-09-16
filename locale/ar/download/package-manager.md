@@ -158,7 +158,7 @@ zypper install nodejs4
 
 ## macOS
 
-بكل بساطة، قم بتنزيل [مثبت الماك او اس](https://nodejs.org/#download) مباشرة من موقع [nodejs.org](https://nodejs.org).
+بكل بساطة، قم بتنزيل [مثبت الماك او اس](https://nodejs.org/ar/#home-downloadhead) مباشرة من موقع [nodejs.org](https://nodejs.org/).
 
 _إذا كنت تريد تنزيل الحزمة باستعمال الباش:_
 
@@ -229,7 +229,7 @@ xbps-install -Sy nodejs
 
 ## <!--windows-->ويندوز
 
-قم بتحميل [المثبت الخاص بويندوز](https://nodejs.org/#download) مباشرة من موقع [nodejs.org](https://nodejs.org).
+قم بتحميل [المثبت الخاص بويندوز](https://nodejs.org/ar/#home-downloadhead) مباشرة من موقع [nodejs.org](https://nodejs.org/).
 
 ### البدائل
 

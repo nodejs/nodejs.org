@@ -15,7 +15,7 @@ Auf dieser Webseite gibt es verschiedene Arten von Dokumentationen:
 
 ## API-Referenz
 
-Die [API-Referenz](/api/) stellt detaillierte Informationen über Funktionen und
+Die [API-Referenz](https://nodejs.org/api/) stellt detaillierte Informationen über Funktionen und
 Objekte in Node.js bereit. Diese Dokumentation zeigt, welche Argumente die
 Methoden erlauben, den Rückgabewert der Methode und welche Fehler im
 Zusammenhang mit der Methode stehen. Die Dokumentation zeigt auch, welche

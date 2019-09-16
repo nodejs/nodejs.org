@@ -34,9 +34,9 @@ Here is a quick script that shows you how to do exactly that:
       });
     }).listen(8080);
 
-The variable `postHTML` is a static string containing the HTML for two input boxes and a submit box - this HTML is provided so that you can `POST` example data. This is NOT the right way to serve static HTML - please see [How to Serve Static Files](link) for a more proper example.
+The variable `postHTML` is a static string containing the HTML for two input boxes and a submit box - this HTML is provided so that you can `POST` example data. This is NOT the right way to serve static HTML - please see [How to Serve Static Files](/en/knowledge/HTTP/servers/how-to-serve-static-files/) for a more proper example.
 
-With the HTML out of the way, we [create a server](/how-do-i-create-a-http-server) to listen for requests. It is important to note, when listening for POST data, that the `req` object is also an [Event Emitter](/what-are-event-emitters).  `req`, therefore, will emit a `data` event whenever a 'chunk' of incoming data is received; when there is no more incoming data, the `end` event is emitted. So, in our case, we listen for `data` events. Once all the data is received, we log the data to the console and send the response.
+With the HTML out of the way, we [create a server](/en/knowledge/HTTP/servers/how-to-create-a-HTTP-server/) to listen for requests. It is important to note, when listening for POST data, that the `req` object is also an [Event Emitter](/en/knowledge/getting-started/control-flow/what-are-event-emitters/).  `req`, therefore, will emit a `data` event whenever a 'chunk' of incoming data is received; when there is no more incoming data, the `end` event is emitted. So, in our case, we listen for `data` events. Once all the data is received, we log the data to the console and send the response.
 
 Something important to note is that the event listeners are being added immediately after the request object is received. If you don't immediately set them, then there is a possibility of missing some of the events. If, for example, an event listener was attached from inside a callback, then the `data` and `end` events might be fired in the meantime with no listeners attached!
 

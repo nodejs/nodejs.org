@@ -147,7 +147,7 @@ zypper install nodejs4
 
 ## macOS
 
-Просто загрузите [установщик macOS](https://nodejs.org/#download) прямо с веб-сайта [nodejs.org](https://nodejs.org).
+Просто загрузите [установщик macOS](https://nodejs.org/ru/#home-downloadhead) прямо с веб-сайта [nodejs.org](https://nodejs.org/).
 
 _Если вы хотите скачать пакет с bash:_
 
@@ -218,7 +218,7 @@ xbps-install -Sy nodejs
 
 ## Windows
 
-Просто загрузите [Установщик Windows](https://nodejs.org/#download) прямо с веб-сайта [nodejs.org](https://nodejs.org).
+Просто загрузите [Установщик Windows](https://nodejs.org/ru/#home-downloadhead) прямо с веб-сайта [nodejs.org](https://nodejs.org/).
 
 ### Альтернативы
 

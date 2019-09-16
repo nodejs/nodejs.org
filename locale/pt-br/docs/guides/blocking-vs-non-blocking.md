@@ -9,13 +9,13 @@ layout: docs.hbs
 <!-- This overview covers the **difference** between **blocking** and **non-blocking**
 calls in Node.js. This overview will refer to the event loop and libuv but no
 prior knowledge of those topics is required. Readers are assumed to have a
-basic understanding of the JavaScript language and Node.js [callback pattern](https://nodejs.org/en/knowledge/getting-started/control-flow/what-are-callbacks/).
+basic understanding of the JavaScript language and Node.js [callback pattern](/en/knowledge/getting-started/control-flow/what-are-callbacks/).
 
 > "I/O" refers primarily to interaction with the system's disk and
 > network supported by [libuv](http://libuv.org/). -->
 Esta visão geral cobre as **diferenças** entre chamadas **bloqueantes** e **não-bloqueantes** no Node.js.
 Vamos nos referir ao event loop e à libuv, mas não é necessário nenhum conhecimento prévio sobre
-estes tópicos. É esperado que o leitor tenha um conhecimento básico de [padrões de callback](https://nodejs.org/en/knowledge/getting-started/control-flow/what-are-callbacks/) no Javascript e Node.js.
+estes tópicos. É esperado que o leitor tenha um conhecimento básico de [padrões de callback](/en/knowledge/getting-started/control-flow/what-are-callbacks/) no Javascript e Node.js.
 
 > "I/O" se refere, principalmente, à interação com o disco do sistema
 > e a rede suportada pela [libuv](http://libuv.org).
@@ -198,4 +198,4 @@ de `fs.readFile()`, o que garante a ordem correta das operações.
 ## Additional Resources
 
 - [libuv](http://libuv.org/)
-- [About Node.js](https://nodejs.org/en/about/)
+- [About Node.js](/en/about/)

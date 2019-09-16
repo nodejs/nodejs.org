@@ -67,9 +67,9 @@ Schnittstelle setzt das [`Cluster`][] Modul auf, dass es Prozessen erlaubt
 Sockets gemeinsam zu nutzen, um Lastverteilung über Kerne hinweg zu
 ermöglichen.
 
-[blockierend vs. blockierungsfrei]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
+[blockierend vs. blockierungsfrei]: /en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`Cluster`]: https://nodejs.org/api/cluster.html
-[Ereignisschleife]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
+[Ereignisschleife]: /en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
 [Twisted]: https://twistedmatrix.com/trac/
