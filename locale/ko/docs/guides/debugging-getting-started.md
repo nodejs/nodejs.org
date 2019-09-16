@@ -209,7 +209,7 @@ Node 인스펙터에 접속할 수 있는 여러 상용 도구와 오픈소스 �
 * `Debug` 뷰에서 Node.js 디버그 설정을 실행하거나 `F5` 키를 누르세요.
   [자세한 방법은 여기를 참고하세요.](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
   
-### [Eclipse IDE](https://eclipse.org/eclipseide) with Eclipse Wild Web Developer extension
+### [Eclipse IDE](https://eclipse.org/eclipseide)와 Eclipse Wild Web Developer 확장 프로그램
 
 * .js 파일에서 "Debug As... > Node program" 을 선택하거나,
 * 실행 중인 Node 애플리케이션(이미`--inspect`로 시작)에 디버거를 연결하는 디버그 설정을 생성하세요.
