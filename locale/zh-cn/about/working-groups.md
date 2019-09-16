@@ -11,15 +11,15 @@ title: 工作组
 ## 现有工作组
 
 * [API 插件组](#addon-api)
-* [标杆分析法组](#benchmarking)
-* [编译组](#build)
+* [基准测试组](#benchmarking)
+* [构建组](#build)
 * [诊断组](#diagnostics)
 * [Docker组](#docker)
 * [宣传组](#evangelism)
 * [国际化翻译组](#i18n)
 * [发布组](#release)
 * [安全组](#security)
-* [‘流’工作组](#streams)
+* [Streams](#streams)
 * [网站开发组](#website)
 
 ### <!--addon api--> [API 插件组](https://github.com/nodejs/nan)
@@ -36,7 +36,7 @@ title: 工作组
 
 目前成员列表可以在 [README](https://github.com/nodejs/nan#collaborators) 中找到。
 
-### <!--benchmarking--> [标杆分析法组](https://github.com/nodejs/benchmarking)
+### <!--benchmarking--> [基准测试组](https://github.com/nodejs/benchmarking)
 
 基准工作组的目的是取得共识商定的基准，这些基准可用于：
 
@@ -49,7 +49,7 @@ title: 工作组
 * 将所选基准的常规执行添加到 Node.js 构建。
 * 跟踪 / 宣传生成 / 发布之间的性能。
 
-### <!--build--> [编译组](https://github.com/nodejs/build)
+### <!--build--> [构建组](https://github.com/nodejs/build)
 
 建立工作组的目的是创建和维护分布式自动化基础结构。
 
@@ -178,9 +178,9 @@ Docker 工作组的目的是为节点建立、维护和改进官方的 Docker �
 * 为核心 Node.js 项目提供安全性提高的建议。
 * 为一个健康安全的服务，以及产品提供者的生态系统提供便利，并促使其扩展。
 
-### <!--streams--> [‘流’工作组](https://github.com/nodejs/readable-stream)
+### [Streams](https://github.com/nodejs/readable-stream)
 
-流工作组致力于支持和改进 Node.js 中使用的流 API 和 npm 生态系统。我们寻求创建一个可组合的 API，解决了在一段时间内以人性化、低开销的方式表示多个事件发生的问题。对 API 的改善将由生态系统的需要所驱动；与其它解决方案和以前版本的互操作性和向后兼容性至关重要。
+Streams 工作组致力于支持和改进 Node.js 中使用的流 API 和 npm 生态系统。我们寻求创建一个可组合的 API，解决了在一段时间内以人性化、低开销的方式表示多个事件发生的问题。对 API 的改善将由生态系统的需要所驱动；与其它解决方案和以前版本的互操作性和向后兼容性至关重要。
 
 承担职责：
 * 解决在 Node.js 问题列表上的流问题。
