@@ -113,7 +113,7 @@ title:  مجموعات العمل
 * [nodejs-ar - Arabic (العَرَبِيَّة)](https://github.com/nodejs/nodejs-ar)
 * [nodejs-bg - Bulgarian (български)](https://github.com/nodejs/nodejs-bg)
 * [nodejs-bn - Bengali (বাংলা)](https://github.com/nodejs/nodejs-bn)
-* [nodejs-zh-CN - Chinese (中文)](https://github.com/nodejs/nodejs-zh-CN)
+* [nodejs-zh-CN - Chinese (简体中文)](https://github.com/nodejs/nodejs-zh-CN)
 * [nodejs-cs - Czech (Čeština)](https://github.com/nodejs/nodejs-cs)
 * [nodejs-da - Danish (Dansk)](https://github.com/nodejs/nodejs-da)
 * [nodejs-de - German (Deutsch)](https://github.com/nodejs/nodejs-de)
@@ -141,7 +141,7 @@ title:  مجموعات العمل
 * [nodejs-sv - Swedish (Svenska)](https://github.com/nodejs/nodejs-sv)
 * [nodejs-ta - Tamil (தமிழ்)](https://github.com/nodejs/nodejs-ta)
 * [nodejs-tr - Turkish (Türkçe)](https://github.com/nodejs/nodejs-tr)
-* [nodejs-zh-TW - Taiwanese (國語)](https://github.com/nodejs/nodejs-zh-TW)
+* [nodejs-zh-TW - Taiwanese (繁體中文（台灣）)](https://github.com/nodejs/nodejs-zh-TW)
 * [nodejs-uk - Ukrainian (Українська)](https://github.com/nodejs/nodejs-uk)
 * [nodejs-vi - Vietnamese (Tiếng Việt)](https://github.com/nodejs/nodejs-vi)
 
