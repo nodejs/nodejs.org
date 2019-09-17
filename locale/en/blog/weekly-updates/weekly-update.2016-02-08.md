@@ -16,9 +16,9 @@ The 2016 election was the first Individual Membership Election. The winner of th
 election is serving a two year term and the runner-up is serving a one year term.
 Future elections will happen each year for a new two year term.
 
-- The board members elected in the 2016 election are:
-  - Ashley Williams [@ashleygwilliams](https://github.com/ashleygwilliams) for a 2 year term.
-  - Feross Aboukhadijeh [@feross](https://github.com/feross) for a 1 year term.
+* The board members elected in the 2016 election are:
+  * Ashley Williams [@ashleygwilliams](https://github.com/ashleygwilliams) for a 2 year term.
+  * Feross Aboukhadijeh [@feross](https://github.com/feross) for a 1 year term.
 
 ### Upcoming Events
 
