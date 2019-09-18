@@ -10,7 +10,7 @@ layout: knowledge-post.hbs
 *If you're using [Nodejitsu](http://nodejitsu.com)*, we handle HTTPS for you. Free SSL on jit.su and nodejitsu.com subdomains, and SSL on custom domains for business customers.
 *It's never necessary to create an HTTPS server yourself.*
 
-- - -
+---
 
 To create an HTTPS server, you need two things: an SSL certificate, and Node's built-in `https` module.
 
@@ -23,7 +23,7 @@ To generate a self-signed certificate, run the following in your shell:
     openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem
     rm csr.pem
 
-This should leave you with two files, `cert.pem` (the certificate) and `key.pem` (the private key). Put these files in the same directory as your Node.js server file. This is all you need for a SSL connection. So now you set up a quick hello world example (the biggest difference between https and [http](/how-do-i-create-a-http-server) is the `options` parameter):
+This should leave you with two files, `cert.pem` (the certificate) and `key.pem` (the private key). Put these files in the same directory as your Node.js server file. This is all you need for a SSL connection. So now you set up a quick hello world example (the biggest difference between https and [http](/en/knowledge/HTTP/servers/how-to-create-a-HTTP-server/) is the `options` parameter):
 
     const https = require('https');
     const fs = require('fs');
@@ -46,4 +46,4 @@ Now that your server is set up and started, you should be able to get the file w
 
     curl -k https://localhost:8000
 
-or in your browser, by going to https://localhost:8000 . 
+or in your browser, by going to https://localhost:8000 .

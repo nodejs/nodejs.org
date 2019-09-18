@@ -9,10 +9,12 @@ Eventos Programe & Aprenda permitem que você comece a contribuir (ou de um pass
 
 ## Próximos Eventos Programe + Aprenda
 
-- Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/).
+- To be announced
 
 ## Eventos Programe + Aprenda Anteriores
 
+- Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/)
+- [Saint-Petersburg, Russia on May 26](https://medium.com/piterjs/code-learn-ce20d330530f)
 - Bangalore, India no [Node.js - Code & Learn Meetup](https://www.meetup.com/Polyglot-Languages-Runtimes-Java-JVM-nodejs-Swift/events/256057028/): 17 de Novembro de 2018
 - Kilkenny, Irlanda na [NodeConfEU](https://www.nodeconf.eu/): 4 de Novembro de 2018
 - Vancouver, BC no [Node Interactive](https://events.linuxfoundation.org/events/node-js-interactive-2018/): 12 de Outubro de 2018

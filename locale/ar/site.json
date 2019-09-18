@@ -93,17 +93,21 @@
       "text": "ES6 وما بعدها"
     },
     "api-lts": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "subtext": "LTS",
       "text": "%ver% API"
     },
     "api-current": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "text": "%ver% API"
     },
     "guides": {
       "link": "docs/guides",
       "text": "إرشادات"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "تبعيات"
     }
   },
   "getinvolved": {
@@ -127,7 +131,7 @@
     },
     "node-meetups": {
       "link": "get-involved/node-meetups",
-      "text": "Node.js لقاءات"
+      "text": "Node.js مُلْتَقَيات"
     }
   },
   "security": {

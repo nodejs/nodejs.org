@@ -1,16 +1,16 @@
 ---
-title: Easy profiling for Node.js Applications
+title: Простое профилирование Node.js приложений
 layout: docs.hbs
 ---
 
-# Easy profiling for Node.js Applications
+# Простое профилирование Node.js приложений
 
-There are many third party tools available for profiling Node.js applications
-but, in many cases, the easiest option is to use the Node.js built in profiler.
-The built in profiler uses the [profiler inside V8][] which samples the stack at
-regular intervals during program execution. It records the results of these
-samples, along with important optimization events such as jit compiles, as a
-series of ticks:
+Для профилирования приложений Node.js доступно множество сторонних инструментов,
+но во многих случаях проще всего использовать встроенный профайлер Node.js.
+Встроенный профайлер использует [профайлер V8][], который делит стек
+выполняющейся программы на фрагменты через равные промежутки времени. Профайлер
+представляет результаты этих фрагментов с учетом оптимизаций, таких как
+Jit-компиляция, в виде ряда тиков:
 
 ```
 code-creation,LazyCompile,0,0x2d5000a337a0,396,"bp native array.js:1153:16",0x289f644df68,~
@@ -20,15 +20,14 @@ code-creation,Stub,2,0x2d5000a33d40,182,"DoubleToIStub"
 code-creation,Stub,2,0x2d5000a33e00,507,"NumberToStringStub"
 ```
 
-In the past, you needed the V8 source code to be able to interpret the ticks.
-Luckily, tools have been introduced since Node.js 4.4.0 that facilitate the
-consumption of this information without separately building V8 from source.
-Let's see how the built-in profiler can help provide insight into application
-performance.
+В прошлом требовался бы исходный код V8, чтобы иметь возможность анализировать
+тики. К счастью, начиная с Node.js 4.4.0 были представлены инструменты, которые
+облегчают использование этой информации без отдельной сборки V8. Давайте посмотрим,
+как встроенный профайлер дает представление о производительности приложений.
 
-To illustrate the use of the tick profiler, we will work with a simple Express
-application. Our application will have two handlers, one for adding new users to
-our system:
+Возьмем простое приложением Express, чтобы проиллюстрировать использование профайлера.
+Приложение будет иметь два обработчика, один из которых будет использоваться для
+добавления новых пользователей в систему:
 
 ```javascript
 app.get('/newUser', (req, res) => {
@@ -50,7 +49,7 @@ app.get('/newUser', (req, res) => {
 });
 ```
 
-and another for validating user authentication attempts:
+а другой - для проверки аутентификации пользователей:
 
 ```javascript
 app.get('/auth', (req, res) => {
@@ -74,26 +73,28 @@ app.get('/auth', (req, res) => {
 });
 ```
 
-*Please note that these are NOT recommended handlers for authenticating users in
-your Node.js applications and are used purely for illustration purposes. You
-should not be trying to design your own cryptographic authentication mechanisms
-in general. It is much better to use existing, proven authentication solutions.*
+* Обратите внимание, что это НЕ рекомендуемые обработчики для аутентификации
+пользователей в приложениях Node.js. Они используются исключительно в качестве
+примера. В целом, не следует пытаться разработать свои собственные механизмы
+криптографической аутентификации. Гораздо лучше использовать готовые проверенные
+решения. *
 
-Now assume that we've deployed our application and users are complaining about
-high latency on requests. We can easily run the app with the built in profiler:
+Теперь предположим, что мы развернули наше приложение, и пользователи жалуются
+на высокую задержку запросов. Мы можем легко запустить приложение с помощью
+встроенного профайлера:
 
 ```
 NODE_ENV=production node --prof app.js
 ```
 
-and put some load on the server using `ab` (ApacheBench):
+и добавить нагрузку на сервер с помощью `ab` (ApacheBench):
 
 ```
 curl -X GET "http://localhost:8080/newUser?username=matt&password=password"
 ab -k -c 20 -n 250 "http://localhost:8080/auth?username=matt&password=password"
 ```
 
-and get an ab output of:
+и получить на выходе:
 
 ```
 Concurrency Level:      20

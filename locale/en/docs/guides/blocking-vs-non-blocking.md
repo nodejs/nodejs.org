@@ -8,11 +8,10 @@ layout: docs.hbs
 This overview covers the difference between **blocking** and **non-blocking**
 calls in Node.js. This overview will refer to the event loop and libuv but no
 prior knowledge of those topics is required. Readers are assumed to have a
-basic understanding of the JavaScript language and Node.js [callback pattern](https://nodejs.org/en/knowledge/getting-started/control-flow/what-are-callbacks/).
+basic understanding of the JavaScript language and Node.js [callback pattern](/en/knowledge/getting-started/control-flow/what-are-callbacks/).
 
 > "I/O" refers primarily to interaction with the system's disk and
-> network supported by [libuv](http://libuv.org/).
-
+> network supported by [libuv](https://libuv.org/).
 
 ## Blocking
 
@@ -31,7 +30,6 @@ All of the I/O methods in the Node.js standard library provide asynchronous
 versions, which are **non-blocking**, and accept callback functions. Some
 methods also have **blocking** counterparts, which have names that end with
 `Sync`.
-
 
 ## Comparing Code
 
@@ -87,7 +85,6 @@ can continue and `moreWork()` will be called first. The ability to run
 `moreWork()` without waiting for the file read to complete is a key design
 choice that allows for higher throughput.
 
-
 ## Concurrency and Throughput
 
 JavaScript execution in Node.js is single threaded, so concurrency refers to the
@@ -105,7 +102,6 @@ capacity just by choosing to use **non-blocking** methods instead of
 
 The event loop is different than models in many other languages where additional
 threads may be created to handle concurrent work.
-
 
 ## Dangers of Mixing Blocking and Non-Blocking Code
 
@@ -126,7 +122,6 @@ In the above example, `fs.unlinkSync()` is likely to be run before
 better way to write this, which is completely **non-blocking** and guaranteed to
 execute in the correct order is:
 
-
 ```js
 const fs = require('fs');
 fs.readFile('/file.md', (readFileErr, data) => {
@@ -141,8 +136,7 @@ fs.readFile('/file.md', (readFileErr, data) => {
 The above places a **non-blocking** call to `fs.unlink()` within the callback of
 `fs.readFile()` which guarantees the correct order of operations.
 
-
 ## Additional Resources
 
-- [libuv](http://libuv.org/)
-- [About Node.js](https://nodejs.org/en/about/)
+- [libuv](https://libuv.org/)
+- [About Node.js](/en/about/)

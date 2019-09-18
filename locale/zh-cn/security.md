@@ -45,13 +45,12 @@ Node.js 项目参与了一个为安全研究员和负责任的公众披露者的
 
 - 这个过程可能需要一些时间，特别是当需要与其他项目的维护人员进行协调时。但是将尽一切努力尽可能及时地处理 缺陷漏洞。但是我们仍必须遵循上面的发布过程，以确保以一致的方式处理泄漏。
 
-
 ## 收到安全更新
 
 安全通告将通过以下方式发布：
 
-- [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+- <https://groups.google.com/group/nodejs-sec>
+- <https://nodejs.org/en/blog/>
 
 ## 对于此政策的评论与建议
 

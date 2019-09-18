@@ -58,7 +58,7 @@ appreciated and will be acknowledged.
 
 ## サードパーティのモジュールの脆弱性を報告する
 
-サードパーティモジュールのセキュリティバグはそれぞれのメンテナに報告されるべきであり、また [HackerOne](https://hackerone.com/nodejs-ecosystem) の Node エコシステムセキュリティチームを通じて調整されるべきです。 
+サードパーティモジュールのセキュリティバグはそれぞれのメンテナに報告されるべきであり、また [HackerOne](https://hackerone.com/nodejs-ecosystem) の Node エコシステムセキュリティチームを通じて調整されるべきです。
 
 このプロセスの詳細は [セキュリティワーキンググループリポジトリ](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md) に記載されています。
 
@@ -108,16 +108,16 @@ Node.js における、情報開示のポリシーをここに記します。
 
 Security notifications will be distributed via the following methods.
 
-- [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+- <https://groups.google.com/group/nodejs-sec>
+- <https://nodejs.org/en/blog/>
 -->
 
 ## セキュリティリポートを受け取る
 
 セキュリティリポートは、以下のサイトを介して報告されます。
 
-- [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+- <https://groups.google.com/group/nodejs-sec>
+- <https://nodejs.org/en/blog/>
 
 <!--
 ## Comments on this Policy

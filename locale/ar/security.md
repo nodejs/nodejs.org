@@ -21,7 +21,7 @@ title: الأمن
 
 ## الإبلاغ عن ثغرة في أحد وحدات الطرف الثالث
 
-إن التبليغ عن الثغرات الامنية في وحدات الأطراف الثالثة يكون إلى المسؤولين عن صيانة تلك الوحدات، كما يجب أن يتم ذلك بالتنسيق مع [الفريق الأمني للنظام البيئي للـ Node.js](https://hackerone.com/nodejs-ecosystem) أو عبر مراسلة 
+إن التبليغ عن الثغرات الامنية في وحدات الأطراف الثالثة يكون إلى المسؤولين عن صيانة تلك الوحدات، كما يجب أن يتم ذلك بالتنسيق مع [الفريق الأمني للنظام البيئي للـ Node.js](https://hackerone.com/nodejs-ecosystem) أو عبر مراسلة
 [security-ecosystem@nodejs.org](mailto:security-ecosystem@nodejs.org).
 
 للإطلاع على تفاصيل اكثر حول العملية، قم بزيارة [مستودع مجموعة العمل الأمنية](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md)
@@ -46,8 +46,8 @@ title: الأمن
 
 يتم توزيع الإشعارات الأمنية بإتباع الطرق التالية.
 
-- [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+- <https://groups.google.com/group/nodejs-sec>
+- <https://nodejs.org/en/blog/>
 
 ## تعليقات على هذه السياسة
 

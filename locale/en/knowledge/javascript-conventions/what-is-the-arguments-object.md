@@ -48,6 +48,7 @@ const myfunc = function(a, b, c) {
 
 myfunc(1, 2, 3);
 ```
+
 NOTE: For ES5 and below, a normal `for` loop can do the trick.
 
 In certain cases you can still treat `arguments` as an array. You can
@@ -59,7 +60,7 @@ to convert `arguments` into a true array using the `Array.slice` method.
 ```js
 myfunc.apply(obj, arguments).
 
-// concat arguments onto the 
+// concat arguments onto the
 Array.prototype.concat.apply([1,2,3], arguments);
 
 // turn arguments into a true array

@@ -12,7 +12,7 @@ prior knowledge of those topics is required. Readers are assumed to have a
 basic understanding of the JavaScript language and Node.js callback pattern.
 
 > "I/O" refers primarily to interaction with the system's disk and
-> network supported by [libuv](http://libuv.org/).
+> network supported by [libuv](https://libuv.org/).
 -->
 # 블로킹과 논블로킹 살펴보기
 
@@ -20,7 +20,7 @@ basic understanding of the JavaScript language and Node.js callback pattern.
 libuv를 참조할 것이지만 사전 지식이 필요하지는 않습니다. 이 글을 읽는 사람은 JavaScript
 언어와 Node.js 호출 패턴에 관해 기본적인 이해가 있다고 가정합니다.
 
-> "I/O"는 주로 [libuv](http://libuv.org/)가 지원하는 시스템 디스크나 네트워크와
+> "I/O"는 주로 [libuv](https://libuv.org/)가 지원하는 시스템 디스크나 네트워크와
 상호작용하는 것을 가리킵니다.
 
 <!--
@@ -237,7 +237,6 @@ In the above example, `fs.unlinkSync()` is likely to be run before
 better way to write this that is completely **non-blocking** and guaranteed to
 execute in the correct order is:
 
-
 ```js
 const fs = require('fs');
 fs.readFile('/file.md', (readFileErr, data) => {
@@ -269,17 +268,15 @@ fs.readFile('/file.md', (readFileErr, data) => {
 The above places a **non-blocking** call to `fs.unlink()` within the callback of
 `fs.readFile()` which guarantees the correct order of operations.
 
-
 ## Additional Resources
 
-- [libuv](http://libuv.org/)
+- [libuv](https://libuv.org/)
 - [About Node.js](https://nodejs.org/en/about/)
 -->
 
 여기서는 `fs.readFile()`의 콜백에서 `fs.unlink()`를 **논블로킹**으로 호출하도록 해서 작업 순서가 올바르도록 보장했습니다.
 
-
 ## 추가 자료
 
-- [libuv](http://libuv.org/)
+- [libuv](https://libuv.org/)
 - [Node.js에 대해서](https://nodejs.org/ko/about/)

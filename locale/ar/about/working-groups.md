@@ -2,6 +2,7 @@
 layout: about.hbs
 title:  مجموعات العمل
 ---
+
 # مجموعات العمل الأساسية
 <!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 
@@ -10,7 +11,7 @@ title:  مجموعات العمل
 
 ## مجموعات العمل الحالية
 
-* [addon API](#addon-api)
+* [Addon API](#addon-api)
 * [القياس](#benchmarking)
 * [البناء](#build)
 * [التشخيص](#diagnostics)
@@ -24,10 +25,9 @@ title:  مجموعات العمل
 
 ### [addon-api](https://github.com/nodejs/nan)
 
-ان مجموعة <span dir="rtl">Addon API<span> مسؤولة عن صيانة مستودع مشروع NAN و الحزم التابعة له تحت مسمى _nan_ على مدير حزم النود. يوفر مشروع NAN طبقة مجردة للمؤلفين الاصليين لاضافة Node.js، و ذلك عبر المساعدة في كتابة شفرة برمجية متوافقة مع عدة اصدارات نشطة من Node.js و V8 و libuv.
+ان مجموعة <span dir="rtl">Addon API</span> مسؤولة عن صيانة مستودع مشروع NAN و الحزم التابعة له تحت مسمى _nan_ على مدير حزم النود. يوفر مشروع NAN طبقة مجردة للمؤلفين الاصليين لاضافة Node.js، و ذلك عبر المساعدة في كتابة شفرة برمجية متوافقة مع عدة اصدارات نشطة من Node.js و V8 و libuv.
 تشمل مسؤوليات هذه المجموعة:
 * صيانة مستودع [NAN](https://github.com/nodejs/nan) على الـGitHub، بما في ذلك الشفرة البرمجة، والمشاكل و التوثيق الخاص به
-
 
 * صيانة مستودع [addon-examples](https://github.com/nodejs/node-addon-examples) على الـGitHub، بما في ذلك الشفرة البرمجية، والمشاكل والتوثيق الخاص به
 * صيانة اضافة واجهة برمجة التطبيق المكتوبة بالـ C++ الخاصة بمشروع Node.js، تحت اشراف لجنة التوجيه التقني.
@@ -113,7 +113,7 @@ title:  مجموعات العمل
 * [nodejs-ar - Arabic (العَرَبِيَّة)](https://github.com/nodejs/nodejs-ar)
 * [nodejs-bg - Bulgarian (български)](https://github.com/nodejs/nodejs-bg)
 * [nodejs-bn - Bengali (বাংলা)](https://github.com/nodejs/nodejs-bn)
-* [nodejs-zh-CN - Chinese (中文)](https://github.com/nodejs/nodejs-zh-CN)
+* [nodejs-zh-CN - Chinese (简体中文)](https://github.com/nodejs/nodejs-zh-CN)
 * [nodejs-cs - Czech (Čeština)](https://github.com/nodejs/nodejs-cs)
 * [nodejs-da - Danish (Dansk)](https://github.com/nodejs/nodejs-da)
 * [nodejs-de - German (Deutsch)](https://github.com/nodejs/nodejs-de)
@@ -141,7 +141,7 @@ title:  مجموعات العمل
 * [nodejs-sv - Swedish (Svenska)](https://github.com/nodejs/nodejs-sv)
 * [nodejs-ta - Tamil (தமிழ்)](https://github.com/nodejs/nodejs-ta)
 * [nodejs-tr - Turkish (Türkçe)](https://github.com/nodejs/nodejs-tr)
-* [nodejs-zh-TW - Taiwanese (國語)](https://github.com/nodejs/nodejs-zh-TW)
+* [nodejs-zh-TW - Taiwanese (繁體中文（台灣）)](https://github.com/nodejs/nodejs-zh-TW)
 * [nodejs-uk - Ukrainian (Українська)](https://github.com/nodejs/nodejs-uk)
 * [nodejs-vi - Vietnamese (Tiếng Việt)](https://github.com/nodejs/nodejs-vi)
 
@@ -162,17 +162,17 @@ title:  مجموعات العمل
 
 تشمل مسؤولياتها:
 * تحديد و صيانة سياسات الأمن و إجراءاته لـ:
- * مشروع Node.js الأساسي
- * المشاريع الأخرى المصانة من قبل لجنة التوجيه التقني التابعة للنود جي اس
+  * مشروع Node.js الأساسي
+  * المشاريع الأخرى المصانة من قبل لجنة التوجيه التقني التابعة للنود جي اس
 * العمل مع منصة النود الأمنية لجلب ثغرات المجتمع الأمنية للمنظمة كمادة يتم مشاركتها.
 * ضمان أن بيانات الثغرات محدثة بطريفة فعالة و مراعية لعامل الوقت. مثلا، بأن يتم ضمان وجود معالجات موثقة جيدا فيما يخص عمليات الإبلاغ عن الثغرات في الوحدات التكميلية الخاصة بالمجتمع.
 * مراجعة عمليات توجيه التقارير الأمنية والتوصية بها (لا يعني ذلك إدارة التقارير الأمنية فعليا، فذلك يتم من خلال مجموعة من الأشخاص المختارين من قبل لجنة التوجيه التقني)
 * تحديد و صيانة السياسات و الإجراءات المتعلقة بالمخاوف الأمنية المشتركة في النظام البيئي الخارج و المفتوح للنود جي اس.
 * تقديم المساعدة للاشخاص الذين يتولون صيانة حزم النود، و ذلك لإصلاح الثغرات التي تشكل تهديدا جديا.
 * صيانة و توفير بيانات حول الثغرات التي تم الكشف عنها في:
- * مشروع Node.js الأساسي
- * المشاريع الأخرى المصانة من قبل لجنة التوجيه التقني التابعة للنود جي اس
- * النظام البيئي الخارجي مفتوح المصدر الخاص بNode.js
+  * مشروع Node.js الأساسي
+  * المشاريع الأخرى المصانة من قبل لجنة التوجيه التقني التابعة للنود جي اس
+  * النظام البيئي الخارجي مفتوح المصدر الخاص بNode.js
 * الترويج للتحسينات الأمنية في النظام البيئي للنود جي اس.
 * التوصية بالتحسينات الأمنية للمشروع الأساسي للنود جي اس.
 * تسهيل و ترويج توسع الخدمات الأمنية القوية و النظام البيئي لموفر المنتجات

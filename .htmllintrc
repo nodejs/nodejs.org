@@ -5,6 +5,7 @@
   "attr-quote-style": false,
   "attr-req-value": false,
   "id-class-style": "dash",
+  "id-class-ignore-regex": "{{.*?}}",
   "img-req-alt": false,
   "indent-style": "spaces",
   "indent-width": 2,

@@ -20,10 +20,10 @@ Node.js tem um REPL independente, acessível a partir da linha de comando, e um 
 Iniciar o REPL é simples, basta executar o node na linha de comando sem um nome de arquivo.
 
 ```shell
-$ node
+node
 ```
 
-Ele te deixa em um prompt simples ('>') onde você pode escrever qualquer comando JavaScript que desejar. Assim como na maioria dos shells, você pode apertar as setas para cima e para baixo para navegar através do histórico de comandos e modificar comandos anteriores. 
+Ele te deixa em um prompt simples ('>') onde você pode escrever qualquer comando JavaScript que desejar. Assim como na maioria dos shells, você pode apertar as setas para cima e para baixo para navegar através do histórico de comandos e modificar comandos anteriores.
 
 ```shell
 $ node
@@ -77,6 +77,7 @@ As seguintes combiações de teclas no REP têm esses efeitos especiais:
 Qualquer que seja o comando, ele imprimirá o valor de retorno deste comando. Se você quiser reutilizar o valor de retorno anterior, você pode usar a variável especial `_`.
 
 Por exemplo:
+
 ```shell
 $ node
 > 1+1

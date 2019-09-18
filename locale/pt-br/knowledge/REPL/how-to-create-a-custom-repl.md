@@ -55,12 +55,12 @@ Além disso, todos os objetos no escopo global também serão acessíveis para o
 Aqui é o que acontece quando você executa o script:
 
 ```shell
-$ node repl.js 
+$ node repl.js
 REPL remoto iniciou na porta 5001.
 node::local> .exit
 # <ctrl>-C
 
-$ node repl.js 
+$ node repl.js
 REPL remoto iniciou na porta 5001.
 node::local> mood()
 '^__^'

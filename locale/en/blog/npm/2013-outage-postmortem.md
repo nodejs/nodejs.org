@@ -15,9 +15,9 @@ We know the availability and overall health of The npm Registry is paramount to 
 
 The root cause of these downtime was insufficient resources: both hardware and human. This is a full post-mortem where we will be look at how npmjs.org works, what went wrong, how we changed the previous architecture of The npm Registry to fix it, as well next steps we are taking to prevent this from happening again.
 
-All of the next steps require additional expenditure from Nodejitsu: both servers and labor. This is why along with this post-mortem we are announcing our [crowdfunding campaign: scalenpm.org](https://scalenpm.org)! Our goal is to raise enough funds so that Nodejitsu can continue to run The npm Registry as a free service for _you, the community._ 
+All of the next steps require additional expenditure from Nodejitsu: both servers and labor. This is why along with this post-mortem we are announcing our [crowdfunding campaign: scalenpm.org](https://scalenpm.org)! Our goal is to raise enough funds so that Nodejitsu can continue to run The npm Registry as a free service for _you, the community._
 
-Please take a minute now to donate at [https://scalenpm.org](https://scalenpm.org)! 
+Please take a minute now to donate at [https://scalenpm.org](https://scalenpm.org)!
 
 ## How does npmjs.org work?
 
@@ -37,7 +37,7 @@ Here is a high-level summary of the _old architecture:_
 
 As illustrated above, before November 13th, 2013, npm operated as a single CouchDB server with regular daily backups. We briefly ran a multi-master CouchDB setup after downtime back in August, but after reports that `npm login` no longer worked correctly we rolled back to a single CouchDB server. On both November 13th and November 15th CouchDB became unresponsive on requests to the `/registry` database while requests to all other databases (e.g. `/public_users`) remained responsive. Although the root cause of the CouchDB failures have yet to be determined given that only requests to `/registry` were slow and/or timed out we suspect it is related to the massive number of attachments stored in the registry.
 
-The incident on November 4th was ultimately resolved by a reboot and resize of the host machine, but when the same symptoms reoccured less than 10 days later additional steps were taken:
+The incident on November 4th was ultimately resolved by a reboot and resize of the host machine, but when the same symptoms reoccurred less than 10 days later additional steps were taken:
 
 1. The [registry was moved to another machine][ops-new-machine] of equal resources to exclude the possibility of a hardware issue.
 2. The [registry database itself][ops-compaction] was [compacted][compaction].
@@ -74,7 +74,7 @@ The npm Registry has had a 10x year. In November 2012 there were 13.5 million do
 
 _**But we need your help!**_ All of these necessary improvements require more servers, more time from Nodejitsu staff and an overall increase to what we spend maintaining the public npm registry as a free service for the Node.js community.
 
-Please take a minute now to donate at [https://scalenpm.org](https://scalenpm.org)! 
+Please take a minute now to donate at [https://scalenpm.org](https://scalenpm.org)!
 
 [browserify]: http://browserify.org/
 [dotc]: https://github.com/substack/dotc

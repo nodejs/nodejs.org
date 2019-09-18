@@ -16,7 +16,7 @@ hours indicating the next steps in handling your submission.
 
 # 보안
 
-# Node.js 버그 보고
+## Node.js 버그 보고
 
 Node.js의 보안 버그는 [HackerOne](https://hackerone.com/nodejs)을 통해
 보고해주시기 바랍니다.
@@ -126,7 +126,7 @@ release process above to ensure that the disclosure is handled in a consistent m
 Security notifications will be distributed via the following methods.
 
 - <https://groups.google.com/group/nodejs-sec>
-- <https://nodejs.org/en/blog>
+- <https://nodejs.org/en/blog/>
 -->
 
 ## 보안 업데이트 받기
@@ -134,7 +134,7 @@ Security notifications will be distributed via the following methods.
 다음 방법으로 보안 공지를 합니다.
 
 - <https://groups.google.com/group/nodejs-sec>
-- <https://nodejs.org/en/blog>
+- <https://nodejs.org/en/blog/>
 
 <!--
 ## Comments on this Policy

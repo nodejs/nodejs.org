@@ -1,7 +1,8 @@
 ---
 layout: about.hbs
-título: Política de Marca Registrada
+title: Política de Marca Registrada
 ---
+
 # Política de Marca Registrada
 
 As marcas registradas do Node.js, marcas de serviço e marcas gráficas são símbolos de
@@ -16,7 +17,7 @@ desta política é garantir que isso não aconteça com a marca Node.js, por iss
 que a comunidade e os usuários do Node.js estão sempre protegidos no futuro.
 
 Ao mesmo tempo, gostaríamos que os membros da comunidade se sentissem à vontade para divulgar
-a palavra sobre Node.js e participando da comunidade Node.js. Mantendo isso com o 
+a palavra sobre Node.js e participando da comunidade Node.js. Mantendo isso com o
 objetivo em mente, tentamos tornar a política mais flexível e fácil de entender
 como legalmente possível.
 

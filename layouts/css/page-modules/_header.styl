@@ -24,12 +24,13 @@ header
     a:hover
       background-color transparent
       text-decoration underline
-  
+
   #lang-picker-toggler
     position absolute
     right 0
     bottom 0
-    height 20%
+    width 25px
+    height 25px
     fill $light-gray2
     cursor pointer
     padding 12px
@@ -79,13 +80,13 @@ header
   header
     li
       $border-width = 14px
-      padding-bottom 12px;
+      padding-bottom 12px
 
       &.active:after
         top 100%
         left 50%
         border solid transparent
-        content " "
+        content ' '
         height 0
         width 0
         position absolute
@@ -130,15 +131,10 @@ header
 
 #logo
   display block
-  border none
 
   &:hover
     background-color transparent
     text-decoration underline
 
   img
-    display block
-    margin .5em auto 0 auto
-    border none
-    max-height 75px
-    max-width 180px
+    margin 0.5em auto 0

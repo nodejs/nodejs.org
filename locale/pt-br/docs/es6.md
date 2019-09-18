@@ -2,6 +2,7 @@
 title: ECMAScript 2015 (ES6) e além
 layout: docs.hbs
 ---
+
 # ECMAScript 2015 (ES6) e além
 
 O Node.js é construído com as novas versões do [V8](https://v8.dev/). Mantendo-se em dia com as últimas atualizações desta engine, nós garantimos que as novas funcionalidades da [especificação JavaScript ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm) são trazidas para os desenvolvedores Node.js em tempo hábil, assim como as melhorias contínuas de performance e estabilidade.
@@ -14,7 +15,7 @@ Todas as funcionalidades do ECMAScript 2015 (ES6) são divididas em três grupos
 
 ## Quais funcionalidades são embarcadas com cada versão do Node.js por padrão?
 
-O site [node.green](http://node.green) oferece uma excelente visão sobre quais são as funcionalidades do ECMAScript suportadas em diversas versões do Node.js, baseadas na [tabela de compatibilidade](https://github.com/kangax/compat-table) de kangax.
+O site [node.green](https://node.green/) oferece uma excelente visão sobre quais são as funcionalidades do ECMAScript suportadas em diversas versões do Node.js, baseadas na [tabela de compatibilidade](https://github.com/kangax/compat-table) de kangax.
 
 ## Quais funcionalidades estão em progresso?
 
@@ -25,6 +26,7 @@ Você pode listar todas as funcionalidades *em progresso* disponíveis em cada v
 ```bash
 node --v8-options | grep "in progress"
 ```
+
 ## E sobre a performance de uma funcionalidade em particular?
 
 O time do V8 está constantemente trabalhando para melhorar a performance de novas funcionalidades da linguagem, para eventualmente encontrar uma paridade com a sua contraparte transpilada ou nativa no EcmaScript 5 ou anterior. O progresso atual é registrado no site [six-speed](https://fhinkel.github.io/six-speed), que mostra a performance das funcionalidades do ES2015 e do ESNext comparadas com as suas respectivas contrapartes nativas do ES5.

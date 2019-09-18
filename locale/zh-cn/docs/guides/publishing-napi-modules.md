@@ -6,15 +6,15 @@ layout: docs.hbs
 # 发布混合了 N-API 和 non-N-API 包
 
 以下步骤基于 `iotivity-node` 进行说明：
-  - 首先，发布一个 non-N-API 版本：
-    - 更新 `package.json` 版本。对于 `iotivity-node`，目前版本号是 `1.2.0-2`。
-    - 通览所有的清单（确保测试/示例/文档都正常）。
-    - `npm publish`
-  - 其次，发布 N-API 版本：
-    - 更新 `package.json` 版本。 在这种情况下，`iotivity-node` 的版本变成了 `1.2.0-3`。
-    版本审查， 我们推荐以下预发布的版本架构，由 [semver.org](http://semver.org/#spec-item-9)提供。如： `1.2.0-napi`。
-    - 通览所有的清单（确保测试/示例/文档都正常）。
-    - `npm publish --tag n-api`
+- 首先，发布一个 non-N-API 版本：
+  - 更新 `package.json` 版本。对于 `iotivity-node`，目前版本号是 `1.2.0-2`。
+  - 通览所有的清单（确保测试/示例/文档都正常）。
+  - `npm publish`
+- 其次，发布 N-API 版本：
+  - 更新 `package.json` 版本。 在这种情况下，`iotivity-node` 的版本变成了 `1.2.0-3`。
+  版本审查， 我们推荐以下预发布的版本架构，由 [semver.org](https://semver.org/#spec-item-9)提供。如： `1.2.0-napi`。
+  - 通览所有的清单（确保测试/示例/文档都正常）。
+  - `npm publish --tag n-api`
 
 在这个例子中，标记为 `n-api` 的发布版已经确保尽管其版本 1.2.0-3 比 non-N-API 的版本号要延后一些，但如果有人简单通过运行 `npm install iotivity-node` 安装 `iotivity-node`，它不会被安装而只会默认安装 non-N-API。此人应该运行 `npm install iotivity-node@n-api` 得到 N-API 的版本号，有关使用标签的更多详情请查阅 ["使用目标标签"][]。
 

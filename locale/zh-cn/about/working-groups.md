@@ -2,26 +2,27 @@
 layout: about.hbs
 title: 工作组
 ---
+
 # 核心工作组
 <!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 
-核心工作组由 [ 技术指导委员会(TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md) 创建。
+核心工作组由 [技术指导委员会(TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md) 创建。
 
 ## 现有工作组
 
-* [Addon API](#addon-api)
-* [Benchmarking](#benchmarking)
-* [Build](#build)
-* [Diagnostics](#diagnostics)
-* [Docker](#docker)
-* [Evangelism](#evangelism)
-* [i18n](#i18n)
-* [Release](#release)
-* [Security](#security)
+* [API 插件组](#addon-api)
+* [基准测试组](#benchmarking)
+* [构建组](#build)
+* [诊断组](#diagnostics)
+* [Docker组](#docker)
+* [宣传组](#evangelism)
+* [国际化翻译组](#i18n)
+* [发布组](#release)
+* [安全组](#security)
 * [Streams](#streams)
-* [Website](#website)
+* [网站开发组](#website)
 
-### [Addon API](https://github.com/nodejs/nan)
+### <!--addon api--> [API 插件组](https://github.com/nodejs/nan)
 
 插件 API 工作组负责在 npm 中维护 NAN 项目和相应的 _nan_ 包。NAN 项目为 Node.js 的本机加载项作者提供了一个抽象层，协助编写与许多活跃使用的 Node.js，V8 和 libuv 版本兼容的代码。
 
@@ -35,7 +36,7 @@ title: 工作组
 
 目前成员列表可以在 [README](https://github.com/nodejs/nan#collaborators) 中找到。
 
-### [Benchmarking](https://github.com/nodejs/benchmarking)
+### <!--benchmarking--> [基准测试组](https://github.com/nodejs/benchmarking)
 
 基准工作组的目的是取得共识商定的基准，这些基准可用于：
 
@@ -48,7 +49,7 @@ title: 工作组
 * 将所选基准的常规执行添加到 Node.js 构建。
 * 跟踪 / 宣传生成 / 发布之间的性能。
 
-### [Build](https://github.com/nodejs/build)
+### <!--build--> [构建组](https://github.com/nodejs/build)
 
 建立工作组的目的是创建和维护分布式自动化基础结构。
 
@@ -58,7 +59,7 @@ title: 工作组
 * 运行性能测试以及比较。
 * 创建且管理编译环境。
 
-### [Diagnostics](https://github.com/nodejs/diagnostics)
+### <!--diagnostics--> [诊断组](https://github.com/nodejs/diagnostics)
 
 诊断工作组的目的是提供一组全面的、文档化的和可扩展的诊断接口，供 Node.js 和 JavaScript 的虚拟机使用。
 
@@ -73,7 +74,7 @@ title: 工作组
 * 定义并添加接口 / API 函数，在需要时允许产生转储。
 * 定义并向生成的转储添加公共结构，对这些转储进行内省的工具给予支持。
 
-### [Docker](https://github.com/nodejs/docker-node)
+### <!--docker--> [Docker组](https://github.com/nodejs/docker-node)
 
 Docker 工作组的目的是为节点建立、维护和改进官方的 Docker 镜像。
 
@@ -82,7 +83,7 @@ Docker 工作组的目的是为节点建立、维护和改进官方的 Docker �
 * 决定以及实现新镜像的实现（修复）。
 * 维护与更新镜像的相关文档。
 
-### [Evangelism](https://github.com/nodejs/evangelism)
+### <!--evangelism--> [宣传组](https://github.com/nodejs/evangelism)
 
 布道工作小组促进 Node.js 的成就，让社区知道他们如何参与。
 
@@ -93,9 +94,9 @@ Docker 工作组的目的是为节点建立、维护和改进官方的 Docker �
 * 处理社区事件。
 * 发布定期更新摘要和其它促销内容。
 
-### [i18n](https://github.com/nodejs/i18n)
+### <!--i18n--> [国际化翻译组](https://github.com/nodejs/i18n)
 
-i18n 工作组处理的不仅仅是翻译。他们是社区成员，用他们各自的语音与他们各自的小组成员交流。
+国际化翻译组（i18n）不仅仅处理翻译，同时他们也是社区成员，用他们各自的语音与他们各自的小组成员交流。
 
 每一个团队都围绕着一个共同的口语组织。然后，每个语言社区可能会为各种项目资源生成多个定位。
 
@@ -110,7 +111,7 @@ i18n 工作组处理的不仅仅是翻译。他们是社区成员，用他们各
 * [nodejs-ar - Arabic (العَرَبِيَّة)](https://github.com/nodejs/nodejs-ar)
 * [nodejs-bg - Bulgarian (български)](https://github.com/nodejs/nodejs-bg)
 * [nodejs-bn - Bengali (বাংলা)](https://github.com/nodejs/nodejs-bn)
-* [nodejs-zh-CN - Chinese (中文)](https://github.com/nodejs/nodejs-zh-CN)
+* [nodejs-zh-CN - Chinese (简体中文)](https://github.com/nodejs/nodejs-zh-CN)
 * [nodejs-cs - Czech (Čeština)](https://github.com/nodejs/nodejs-cs)
 * [nodejs-da - Danish (Dansk)](https://github.com/nodejs/nodejs-da)
 * [nodejs-de - German (Deutsch)](https://github.com/nodejs/nodejs-de)
@@ -138,11 +139,11 @@ i18n 工作组处理的不仅仅是翻译。他们是社区成员，用他们各
 * [nodejs-sv - Swedish (Svenska)](https://github.com/nodejs/nodejs-sv)
 * [nodejs-ta - Tamil (தமிழ்)](https://github.com/nodejs/nodejs-ta)
 * [nodejs-tr - Turkish (Türkçe)](https://github.com/nodejs/nodejs-tr)
-* [nodejs-zh-TW - Taiwanese (國語)](https://github.com/nodejs/nodejs-zh-TW)
+* [nodejs-zh-TW - Taiwanese (繁體中文（台灣）)](https://github.com/nodejs/nodejs-zh-TW)
 * [nodejs-uk - Ukrainian (Українська)](https://github.com/nodejs/nodejs-uk)
 * [nodejs-vi - Vietnamese (Tiếng Việt)](https://github.com/nodejs/nodejs-vi)
 
-### [Release](https://github.com/nodejs/LTS)
+### <!--release--> [发布组](https://github.com/nodejs/LTS)
 
 发布工作小组管理 Node.js 的发布工作。
 
@@ -154,7 +155,7 @@ i18n 工作组处理的不仅仅是翻译。他们是社区成员，用他们各
 * 管理长期支持和现有分支，包括反向移植对这些分支的更改。
 * 定义用于释放流的 backported 的策略。
 
-### [Security](https://github.com/nodejs/security-wg)
+### <!--security--> [安全组](https://github.com/nodejs/security-wg)
 
 安全工作小组负责管理、处理与 Node.js 相关的安全性问题。
 
@@ -179,7 +180,7 @@ i18n 工作组处理的不仅仅是翻译。他们是社区成员，用他们各
 
 ### [Streams](https://github.com/nodejs/readable-stream)
 
-流工作组致力于支持和改进 Node.js 中使用的流 API 和 npm 生态系统。我们寻求创建一个可组合的 API，解决了在一段时间内以人性化、低开销的方式表示多个事件发生的问题。对 API 的改善将由生态系统的需要所驱动；与其它解决方案和以前版本的互操作性和向后兼容性至关重要。
+Streams 工作组致力于支持和改进 Node.js 中使用的流 API 和 npm 生态系统。我们寻求创建一个可组合的 API，解决了在一段时间内以人性化、低开销的方式表示多个事件发生的问题。对 API 的改善将由生态系统的需要所驱动；与其它解决方案和以前版本的互操作性和向后兼容性至关重要。
 
 承担职责：
 * 解决在 Node.js 问题列表上的流问题。
@@ -190,9 +191,9 @@ i18n 工作组处理的不仅仅是翻译。他们是社区成员，用他们各
 * 推荐在 Node.js 中包含 `readable-stream` 不同版本。
 * 及时向社区发声，告知流的未来发展。
 
-### [Website](https://github.com/nodejs/nodejs.org)
+### <!--website--> [网站开发组](https://github.com/nodejs/nodejs.org)
 
-WebSite 工作小组的目的旨在构建和维护一个 Node.js 项目的公共网站。
+网站开发组的目的旨在构建和维护一个 Node.js 项目的公共网站。
 
 承担职责：
 * 为 nodejs.org 开发以及维护一个构建以及自动化系统。

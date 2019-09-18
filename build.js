@@ -40,7 +40,7 @@ const renderer = new marked.Renderer()
 renderer.heading = anchorMarkdownHeadings
 const markedOptions = {
   langPrefix: 'language-',
-  renderer: renderer
+  renderer
 }
 
 // This function imports a given language file and uses the default language set
@@ -133,7 +133,7 @@ function buildLocale (source, locale, opts) {
       })
     }))
     .use(markdown(markedOptions))
-    .use(githubLinks({ locale: locale, site: i18nJSON(locale) }))
+    .use(githubLinks({ locale, site: i18nJSON(locale) }))
     .use(prism())
     // Set pretty permalinks, we don't want .html suffixes everywhere.
     .use(permalinks({
@@ -190,7 +190,7 @@ function buildLocale (source, locale, opts) {
 function withPreserveLocale (preserveLocale) {
   return (files, m, next) => {
     if (preserveLocale) {
-      var path = m.path('locale/en')
+      const path = m.path('locale/en')
       m.read(path, (err, newfiles) => {
         if (err) {
           console.error(err)
@@ -310,7 +310,7 @@ function getSource (callback) {
 // This is where the build is orchestrated from, as indicated by the function
 // name. It brings together all build steps and dependencies and executes them.
 function fullBuild (opts) {
-  const { preserveLocale, selectedLocales } = opts
+  const { selectedLocales, preserveLocale } = opts
   // Build static files.
   copyStatic()
   // Build layouts
@@ -320,6 +320,9 @@ function fullBuild (opts) {
 
     // Executes the build cycle for every locale.
     fs.readdir(path.join(__dirname, 'locale'), (e, locales) => {
+      if (e) {
+        throw e
+      }
       const filteredLocales = locales.filter(file => junk.not(file) && (selectedLocales ? selectedLocales.includes(file) : true))
       const localesData = generateLocalesData(filteredLocales)
       filteredLocales.forEach((locale) => {
@@ -340,3 +343,4 @@ exports.getSource = getSource
 exports.fullBuild = fullBuild
 exports.buildLocale = buildLocale
 exports.copyStatic = copyStatic
+exports.generateLocalesData = generateLocalesData

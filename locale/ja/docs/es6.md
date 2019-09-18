@@ -2,6 +2,7 @@
 title: ECMAScript 2015 (ES6) とそれ以降のバージョン
 layout: docs.hbs
 ---
+
 <!-- # ECMAScript 2015 (ES6) and beyond -->
 # ECMAScript 2015 (ES6) とそれ以降のバージョン
 
@@ -15,15 +16,15 @@ Node.js は [V8](https://v8.dev/) のモダンなバージョンに対して作�
 <!-- * All **shipping** features, which V8 considers stable, are turned **on by default on Node.js** and do **NOT** require any kind of runtime flag.
 * **Staged** features, which are almost-completed features that are not considered stable by the V8 team, require a runtime flag: `--harmony`.
 * **In progress** features can be activated individually by their respective harmony flag, although this is highly discouraged unless for testing purposes. Note: these flags are exposed by V8 and will potentially change without any deprecation notice. -->
-* V8 が安定しているみなす **shipping（リリース済み）** の機能は Node.js では**標準で有効**になっているので、ランタイムフラグは**必要ありません**。
+* V8 が安定しているとみなす **shipping（リリース済み）** の機能は Node.js では**標準で有効**になっているので、ランタイムフラグは**必要ありません**。
 * **staged（ステージング）**の機能は V8 チームによって安定しているとはみなされないほぼ完成した機能であり、ランタイムフラグを必要とします： `--harmony`。
 * **in progress（開発中）**の機能は、それぞれのハーモニーフラグによって個別に有効にすることができますが、テスト目的以外の使用は避けてください。注：これらのフラグは V8 によって公開されており、廃止予定の通知なしで変更される可能性があります。
 
 <!-- ## Which features ship with which Node.js version by default? -->
 ## どの機能がどの Node.js のバージョンで標準で有効になってますか？
 
-<!-- The website [node.green](http://node.green) provides an excellent overview over supported ECMAScript features in various versions of Node.js, based on kangax's compat-table. -->
-[node.green](http://node.green) は Kangax 氏の互換性テーブルに基づいて Node.js のさまざまなバージョンでサポートされている ECMAScript の機能に関する優れた概要を提供します。
+<!-- The website [node.green](https://node.green/) provides an excellent overview over supported ECMAScript features in various versions of Node.js, based on kangax's compat-table. -->
+[node.green](https://node.green/) は Kangax 氏の互換性テーブルに基づいて Node.js のさまざまなバージョンでサポートされている ECMAScript の機能に関する優れた概要を提供します。
 
 <!-- ## Which features are in progress? -->
 ## どの機能が開発中なのか？

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{site.locale}}" {{#if site.rtl}}dir="rtl"{{/if}}>
+<html lang="{{site.locale}}"{{#if site.rtl}} dir="rtl"{{/if}}>
 {{> html-head }}
 
 <body>
@@ -20,8 +20,8 @@
         </div>
       </article>
 
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.2/tabletop.min.js"></script>
-      <script type="text/javascript">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.4.2/tabletop.min.js"></script>
+      <script>
         /* global Tabletop */
         var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1jSxgB5MYd1xCOmhb5QZ90PbDiY57n4z4A0lcdQD-UG8/pubhtml'
         window.onload = function () {

@@ -9,7 +9,7 @@ The Timers module in Node.js contains functions that execute code after a set
 period of time. Timers do not need to be imported via `require()`, since
 all the methods are available globally to emulate the browser JavaScript API.
 To fully understand when timer functions will be executed, it's a good idea to
-read up on the the Node.js
+read up on the Node.js
 [Event Loop](/en/docs/guides/event-loop-timers-and-nexttick/).
 
 ## Controlling the Time Continuum with Node.js
@@ -117,6 +117,7 @@ function intervalFunc() {
 
 setInterval(intervalFunc, 1500);
 ```
+
 In the above example, `intervalFunc()` will execute about every 1500
 milliseconds, or 1.5 seconds, until it is stopped (see below).
 
@@ -183,6 +184,7 @@ setImmediate(() => {
   timerObj.ref();
 });
 ```
+
 ## Further Down the Event Loop
 
 There's much more to the Event Loop and Timers than this guide

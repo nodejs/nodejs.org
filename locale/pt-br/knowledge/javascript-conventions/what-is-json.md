@@ -4,7 +4,6 @@ tags:
   - json
   - stringify
   - parse
-# title: What is JSON?
 title: O que é JSON?
 difficulty: 5
 layout: knowledge-post.hbs
@@ -66,21 +65,21 @@ console.log(dados.titulo);
 Existem algumas regras a serem lembradas ao lidar com dados no formato JSON.
 Aqui estão várias pegadinhas que podem produzir um JSON inválido.
 
-- Objetos e arrays vazios são okay
+* Objetos e arrays vazios são okay
 
-- Strings podem conter qualquer caractere unicode, isso inclui as propriedades
+* Strings podem conter qualquer caractere unicode, isso inclui as propriedades
   do objeto
 
-- `null` é um valor JSON valido por si só
+* `null` é um valor JSON valido por si só
 
-- Todas as propriedades do objeto devem sempre estar com aspas duplas
+* Todas as propriedades do objeto devem sempre estar com aspas duplas
 
-- Os valores da propriedade do objeto devem ser um dos seguintes: String, Number,
+* Os valores da propriedade do objeto devem ser um dos seguintes: String, Number,
   Boolean, Object, Array, null
-- Os valores numéricos devem estar no formato decimal, sem representações octais
+* Os valores numéricos devem estar no formato decimal, sem representações octais
   ou hexadecimais
 
-- Vírgulas à direita em arrays não são permitidas
+* Vírgulas à direita em arrays não são permitidas
 
 Esses são todos exemplos de um JSON válido.
 
@@ -135,11 +134,11 @@ sua funcionalidade.
 
 Como o JSON se tornou o formato de dados mais amplamente usado, com regras bem definidas, existem muitos validadores disponíveis para auxiliar seu fluxo de trabalho:
 
-- **Validadores online**: Se você está apenas brincando com o JSON ou verificando o JSON de alguém (sem IDEs/editores), os validadores online podem ser de grande ajuda. Por exemplo: [jsonlint.com](https://jsonlint.com) é um bom validador e reformatador online JSON.
+* **Validadores online**: Se você está apenas brincando com o JSON ou verificando o JSON de alguém (sem IDEs/editores), os validadores online podem ser de grande ajuda. Por exemplo: [jsonlint.com](https://jsonlint.com) é um bom validador e reformatador online JSON.
 
 * **Pacotes npm**: Se você estiver trabalhando com uma equipe e quiser que um validador JSON seja incluído em seu projeto ou simplesmente goste de automatizar a validação em seu fluxo de trabalho, a grande coleção de pacotes npm estará à sua disposição. Por exemplo: [jsonlint](https://www.npmjs.com/package/jsonlint) é uma versão em JavaScript puro do serviço fornecido em `jsonlint.com`.
 
-- **Plugins para IDEs/editores**: Existem muitos plugins/extensões disponíveis para a maioria dos IDEs/editores que validam o JSON para você. Alguns editores como o `VS Code` vêm com JSON intelliSense e validação pronto para uso.
+* **Plugins para IDEs/editores**: Existem muitos plugins/extensões disponíveis para a maioria dos IDEs/editores que validam o JSON para você. Alguns editores como o `VS Code` vêm com JSON intelliSense e validação pronto para uso.
 
 ## JSON em outras linguagens
 

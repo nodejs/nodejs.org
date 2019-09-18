@@ -8,11 +8,12 @@ layout: contribute.hbs
 Code & Learn events allow you to get started (or go further) with Node.js core contributions. Experienced contributors help guide you through your first (or second or third or fourth) commit to Node.js core. They also are available to provide impromptu guided tours through specific areas of Node.js core source code.
 
 ## Upcoming Code + Learn Events
- 
-- Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/)
+
+- To be announced
 
 ## Past Code + Learn Events
 
+- Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/)
 - [Saint-Petersburg, Russia on May 26](https://medium.com/piterjs/code-learn-ce20d330530f)
 - Bangalore, India at [Node.js - Code & Learn Meetup](https://www.meetup.com/Polyglot-Languages-Runtimes-Java-JVM-nodejs-Swift/events/256057028/): November 17, 2018
 - Kilkenny, Ireland at [NodeConfEU](https://www.nodeconf.eu/): November 4, 2018

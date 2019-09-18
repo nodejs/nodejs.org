@@ -4,21 +4,21 @@ layout: about.hbs
 ---
 
 # Community Committee (Commissione Community)
-La commissione della Community (CommComm) è una commissione di primaria importanza nella Fondazione Node.js. La CommComm ha autorità sulle iniziative della comunità esterna, incluse:  
+La commissione della Community (CommComm) è una commissione di primaria importanza nella Fondazione Node.js. La CommComm ha autorità sulle iniziative della comunità esterna, incluse:
 
- - Community [Evangelism](https://github.com/nodejs/evangelism)
- - Iniziative educative
- - Direzione culturale della Fondazione Node.js
- - Iniziative di organizzazione della Community
- - Traduzione e internazionalizzazione
- - Mediazione/moderazione del progetto
- - Iniziative pubbliche e [Pubblicazioni](https://medium.com/the-node-js-collection)
+- Community [Evangelism](https://github.com/nodejs/evangelism)
+- Iniziative educative
+- Direzione culturale della Fondazione Node.js
+- Iniziative di organizzazione della Community
+- Traduzione e internazionalizzazione
+- Mediazione/moderazione del progetto
+- Iniziative pubbliche e [Pubblicazioni](https://medium.com/the-node-js-collection)
 
 Ci sono quattro tipi di coinvolgimenti con il Comitato della Community:
-  - Un **Contributore** è un individuo che crea o commenta una segnalazione o una pull request.
-  - Un **Collaboratore** è un contributore a cui sono stati concessi privilegi di scrittura sul repository.
-  - Un **Osservatore** è un individuo che ha richiesto o a cui è stato richiesto di assistere ad un incontro del CommComm. È anche il primo step per diventare un Membro.
-  - Un **Membro** è un collaboratore con diritti di voto che ha soddisfatto i requisiti di partecipazione ed è stato eletto dalla procedura di votazione del CommComm.
+- Un **Contributore** è un individuo che crea o commenta una segnalazione o una pull request.
+- Un **Collaboratore** è un contributore a cui sono stati concessi privilegi di scrittura sul repository.
+- Un **Osservatore** è un individuo che ha richiesto o a cui è stato richiesto di assistere ad un incontro del CommComm. È anche il primo step per diventare un Membro.
+- Un **Membro** è un collaboratore con diritti di voto che ha soddisfatto i requisiti di partecipazione ed è stato eletto dalla procedura di votazione del CommComm.
 
 Per la lista attuale dei membri del Comitato della Community, vedere il [README.md] del progetto (https://github.com/nodejs/community-committee).
 
@@ -50,7 +50,7 @@ Gli incontri regolari del CommComm sono tenuti bimestralmente in una conferenza 
 
 Gli annunci degli incontri e gli ODG sono pubblicati prima dell'inizio del meeting negli [Issues di GitHub](https://github.com/nodejs/community-committee/issues) dell'organizzazione.
 Puoi anche trovare gli incontri pianificati regolarmente sul [Calendario Node.js](https://nodejs.org/calendar). Per seguire i livestream degli incontri Node.js su YouTube, sottoscrivi il [Canale Youtube](https://www.youtube.com/channel/UCQPYJluYC_sn_Qz_XE-YbTQ) "Node.js Foundation".
-Assicurati di cliccare sulla campanella per ricevere le notifiche dei nuovi video! 
+Assicurati di cliccare sulla campanella per ricevere le notifiche dei nuovi video!
 
 ## Consensus Seeking Process (Processo di Ricerca del Consenso)
 

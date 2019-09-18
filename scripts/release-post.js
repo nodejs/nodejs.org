@@ -2,7 +2,7 @@
 
 /**
  * What's this?? It will help you create release blog
- * posts so you wont have to do the tedious work
+ * posts so you won't have to do the tedious work
  * of stitching together data from changelog, shasums etc,
  * but get a more or less complete release blog ready to go.
  *

@@ -6,13 +6,13 @@ layout: about.hbs
 # Комитет Сообщества
 
 Комитет Сообщества (CommComm) является комитетом наивысшего уровня в Node.js Foundation. CommComm обладает полномочиями по работе с общественностью, включая:
- - Community [Evangelism](https://github.com/nodejs/evangelism)
- - Образовательные инициативы
- - Культурное направление Node.js Foundation
- - Организация общественной пропаганды
- - Перевод и интернационализация
- - Модерация и поддержание стабильности проекта
- - Пропаганда и [публикации](https://medium.com/the-node-js-collection)
+- Community [Evangelism](https://github.com/nodejs/evangelism)
+- Образовательные инициативы
+- Культурное направление Node.js Foundation
+- Организация общественной пропаганды
+- Перевод и интернационализация
+- Модерация и поддержание стабильности проекта
+- Пропаганда и [публикации](https://medium.com/the-node-js-collection)
 
 Есть четыре типа участия в CommComm:
 
@@ -47,7 +47,7 @@ layout: about.hbs
 
 Регулярные встречи CommComm проводятся ежемесячно, на видеоконференции Zoom и публикуются в прямом эфире на YouTube. Любой член сообщества, или участник может попросить что-то добавить в повестку дня следующей встречи, с помощью GitHub Issues.
 
-Объявления публикуются до начала встречи в [GitHub issues](https://github.com/nodejs/community-committee/issues). Вы также можете найти расписание встреч в [Node.js календаре](/calendar). Для того, чтобы смотреть онлайн-трансляции по Node.js на YouTube, подпишитесь на [Node.js Foundation YouTube channel](https://www.youtube.com/channel/UCQPYJluYC_sn_Qz_XE-YbTQ). Не забудьте нажать колокольчик, чтобы получать уведомления о новых видео!
+Объявления публикуются до начала встречи в [GitHub issues](https://github.com/nodejs/community-committee/issues). Вы также можете найти расписание встреч в [Node.js календаре](https://nodejs.org/calendar). Для того, чтобы смотреть онлайн-трансляции по Node.js на YouTube, подпишитесь на [Node.js Foundation YouTube channel](https://www.youtube.com/channel/UCQPYJluYC_sn_Qz_XE-YbTQ). Не забудьте нажать колокольчик, чтобы получать уведомления о новых видео!
 
 ## Процесс поиска консенсуса
 

@@ -56,6 +56,7 @@ relatively painless by putting handy properties onto the `request` object.
 ```javascript
 const { method, url } = request;
 ```
+
 > **Note:** The `request` object is an instance of [`IncomingMessage`][].
 
 The `method` here will always be a normal HTTP method/verb. The `url` is the
@@ -400,8 +401,6 @@ on a port.
 From these basics, Node.js HTTP servers for many typical use cases can be
 constructed. There are plenty of other things these APIs provide, so be sure to
 read through the API docs for [`EventEmitters`][], [`Streams`][], and [`HTTP`][].
-
-
 
 [`EventEmitters`]: https://nodejs.org/api/events.html
 [`Streams`]: https://nodejs.org/api/stream.html

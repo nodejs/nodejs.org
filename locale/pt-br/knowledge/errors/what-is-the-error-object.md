@@ -42,5 +42,5 @@ Se você quiser/precisar adicionar mais informações ao objeto Error, você pod
     error.http_code = 404;
     console.log(error);
 
-<!-- For more details how to use the Error object, check out the [article on error conventions](/articles/errors/what-are-the-error-conventions) -->
-Para mais detalhes sobre como usar o objeto Error, confira o [artigo sobre convenções de erro](/articles/errors/what-are-the-error-conventions)
+<!-- For more details how to use the Error object, check out the [article on error conventions](/pt-br/knowledge/errors/what-are-the-error-conventions) -->
+Para mais detalhes sobre como usar o objeto Error, confira o [artigo sobre convenções de erro](/pt-br/knowledge/errors/what-are-the-error-conventions)

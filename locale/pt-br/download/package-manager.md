@@ -7,7 +7,7 @@ title: Instalando Node.js via gerenciador pacotes
 
 ***Nota:*** Os pacotes nessa página são mantidos e suportados por seus respectivos empacotadores, **não** pela equipe principal do Node.js. Por favor, relate quaisquer problemas encontrados para o mantenedor do pacote. Se o problema for um bug no próprio Node.js, o mantenedor deve relatar para o issue upstream.
 
-----------------------------
+---
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
@@ -24,7 +24,7 @@ title: Instalando Node.js via gerenciador pacotes
 * [Void Linux](#void-linux)
 * [Windows](#windows)
 
-----------------------------
+---
 
 ## Android
 
@@ -52,7 +52,7 @@ pacman -S nodejs npm
 
 ## FreeBSD
 
-A versão mais recente do Node.js está disponível na porta [www/node](http://freshports.org/www/node).
+A versão mais recente do Node.js está disponível na porta [www/node](https://www.freshports.org/www/node).
 
 Instale um pacote binário via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg):
 
@@ -96,7 +96,7 @@ Em sistemas Unix / OS X o Node.js compilado a partir do código fonte pode ser i
 local em que o nvm espera:
 
 ```bash
-$ env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
+env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
 Despois disso, você pode usar o `nvm` para alternar entre versões lançadas e versões
@@ -104,14 +104,14 @@ compiladas a partir do código fonte.
 Por exemplo, se a versão do Node.js é v8.0.0-pre:
 
 ```bash
-$ nvm use 8
+nvm use 8
 ```
 
 Uma vez que a versão oficial for lançada você pode querer desinstalar a versão compilada
 a partir do código fonte:
 
 ```bash
-$ nvm uninstall 8
+nvm uninstall 8
 ```
 
 ## OpenBSD
@@ -122,7 +122,7 @@ O Node.js está disponível através das portas do sistema.
 /usr/ports/lang/node
 ```
 
-Usando [pkg_add](http://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) no OpenBSD:
+Usando [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) no OpenBSD:
 
 ```bash
 pkg_add node
@@ -146,7 +146,7 @@ zypper install nodejs4
 
 ## macOS
 
-Basta baixar o [macOS Installer](https://nodejs.org/#download) diretamente do site [nodejs.org](https://nodejs.org).
+Basta baixar o [macOS Installer](https://nodejs.org/pt-br/#home-downloadhead) diretamente do site [nodejs.org](https://nodejs.org/).
 
 _Se desejar baixar o pacote com bash:_
 
@@ -156,13 +156,13 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 
 ### Alternativas
 
-Usando **[Homebrew](http://brew.sh/)**:
+Usando **[Homebrew](https://brew.sh/)**:
 
 ```bash
 brew install node
 ```
 
-Usando **[MacPorts](http://www.macports.org/)**:
+Usando **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -199,7 +199,6 @@ Ou compile manualmente pelo pkgsrc:
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-
 ## Solus
 
 O Solus fornece o Node.js em seu repositório principal.
@@ -207,7 +206,6 @@ O Solus fornece o Node.js em seu repositório principal.
 ```bash
 sudo eopkg install nodejs
 ```
-
 
 ## Void Linux
 
@@ -219,11 +217,11 @@ xbps-install -Sy nodejs
 
 ## Windows
 
-Baixe o [Windows Installer](https://nodejs.org/#download) diretamente do site [nodejs.org](https://nodejs.org).
+Baixe o [Windows Installer](https://nodejs.org/pt-br/#home-downloadhead) diretamente do site [nodejs.org](https://nodejs.org/).
 
 ### Alternativas
 
-Usando **[Chocolatey](http://chocolatey.org)**:
+Usando **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
@@ -231,7 +229,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-Usando **[Scoop](http://scoop.sh/)**:
+Usando **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs

@@ -2,6 +2,7 @@
 title: 项目管理
 layout: about.hbs
 ---
+
 # 项目管理
 
 ## 追求一致协商
@@ -24,7 +25,7 @@ Node.js 项目遵循 [一致协商][] 的工作模式。
 
 [COLLABORATOR_GUIDE.md]: https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md
 [社区委员会（CommComm）]: https://github.com/nodejs/community-committee/blob/master/Community-Committee-Charter.md
-[一致协商]: http://en.wikipedia.org/wiki/Consensus-seeking_decision-making
+[一致协商]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [README.md]: https://github.com/nodejs/node/blob/master/README.md#current-project-team-members
 [技术指导委员会（TSC）]: https://github.com/nodejs/TSC/blob/master/TSC-Charter.md
 [TSC]: https://github.com/nodejs/TSC

@@ -1,7 +1,7 @@
 ---
 title: The Node.js Platform and Node.js Foundation Continue to Grow
 date: 2016-11-30T12:00:00.000Z
-category: Annoucements
+category: Announcements
 slug: node.js-foundation-momentum-release
 layout: blog-post.hbs
 ---
@@ -24,7 +24,7 @@ The second Node.js Interactive North America is in full swing with more than 700
 
 Attendees are also getting a first look at Node.js advancements announced and demoed this week including:
 
-**The Node.js Foundation** announced progress with efforts to make Node.js VM-neutral - more information on this news can be found on the Node.js Foundation [Medium blog](https://medium.com/@nodejs/ibm-intel-microsoft-mozilla-and-nodesource-join-forces-on-node-js-48e21ffb697d#.jylk1mc0l). This morning, the Foundation announced it would oversee the Node.js Security Project to further improve stability for enterprises. More information [here](http://www.marketwired.com/press-release/nodejs-foundation-to-oversee-nodejs-security-project-to-further-improve-stability-enterprises-2179602.htm).    
+**The Node.js Foundation** announced progress with efforts to make Node.js VM-neutral - more information on this news can be found on the Node.js Foundation [Medium blog](https://medium.com/@nodejs/ibm-intel-microsoft-mozilla-and-nodesource-join-forces-on-node-js-48e21ffb697d#.jylk1mc0l). This morning, the Foundation announced it would oversee the Node.js Security Project to further improve stability for enterprises. More information [here](http://www.marketwired.com/press-release/nodejs-foundation-to-oversee-nodejs-security-project-to-further-improve-stability-enterprises-2179602.htm).
 
 **NodeSource** announced NodeSource Certified Modules™ to bring security and trust to untrusted, third-party JavaScript. With NodeSource Certified Modules, consumers of the npm ecosystem can now rely on NodeSource as a secure, trusted and verifiable source. Learn more [here](https://certified.nodesource.com/). The team is also demoing its latest [N|Solidv2.0](https://nodesource.com/products/nsolid).
 

@@ -14,7 +14,7 @@ Il tuo report verrà riconosciuto entro 24 ore, e riceverai una risposta più de
 Dopo averti dato una prima risposta, il team della sicurezza cercherà di tenerti informato dei progressi fatti prima di un annuncio completo e una fix, e potrebbe richiederti informazioni aggiuntivi o una consulenza circa il problema riportato.
 Questi aggiornamenti verranno inviati come minimo ogni 5 giorni; nella pratica, è più probabile che succeda ogni 24-48 ore.
 
-### Programma Premio Bug Node.js 
+### Programma Premio Bug Node.js
 
 Il progetto Node.js intraprende un programma ufficiale di premiazione bug per ricercatori di sicurezza e responsabili di pubblicazioni.
 
@@ -37,21 +37,19 @@ Queste fix non sono pubblicate nel repository ma piuttosto mantenute localmente 
 
 - Una data di embargo per questa vulnerabilità viene decretata e un CVE (Common Vulnerabilities and Exposures (CVE®)) viene richiesto per la vulnerabilità.
 
-- Giunta la data di embargo, alla mailing list di sicurezza di Node.js viene inviata una copia dell'annuncio. Le modifiche vengono inviate al repository pubblico e vengono pubblicate nuove build su nodejs.org. Entro 6 ore dalla notifica alla mailing list, una copia dell'annuncio verrà pubblicata sul blog di Node.js. 
+- Giunta la data di embargo, alla mailing list di sicurezza di Node.js viene inviata una copia dell'annuncio. Le modifiche vengono inviate al repository pubblico e vengono pubblicate nuove build su nodejs.org. Entro 6 ore dalla notifica alla mailing list, una copia dell'annuncio verrà pubblicata sul blog di Node.js.
 
 - Solitamente la data d'embargo viene stabilita a 72 ore dal momento in cui il CVE è stato richiesto. Tuttavia, ciò potrebbe variare dipendentemente alla gravità del problema o alla difficoltà di applicare un fix.
 
 - Questo processo può richiedere del tempo, specialmente nel momento in cui è richiesto un coordinamento con i manutentori di altri progetti. Ogni sforzo verrà fatto per gestire il bug nella maniera più rapida possibile; d'altro canto, è importante che noi seguiamo il processo di rilascio sovrastante per assicurare che la scoperta venga gestita in modo coerente.
 
-
 ## Ricezione aggiornamenti di sicurezza
 
 Le notifiche di sicurezza verranno distribuite nei seguenti modi.
 
-- [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+- <https://groups.google.com/group/nodejs-sec>
+- <https://nodejs.org/en/blog/>
 
 ## Commenti su questa Politica
 
 Se hai suggerimenti su come questo processo potrebbe essere migliorato per favore invia una [pull request](https://github.com/nodejs/nodejs.org) o [crea una segnalazione](https://github.com/nodejs/security-wg/issues/new) per discuterne.
-

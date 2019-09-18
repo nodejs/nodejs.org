@@ -84,7 +84,7 @@ These releases are documented in the changelog so
 there is more visibility with respect to the changes in each release.
 Current releases are created roughly every 1-2 weeks.
 
-In addition to the the regular Node.js unit tests, CITGM (see
+In addition to the regular Node.js unit tests, CITGM (see
 later sections) is run on Current releases.
 
 If you want to try out the latest with a reasonable expectation
@@ -183,7 +183,6 @@ on implementation.  The result being that the merits of the concept can be
 discussed at the appropriate level of abstraction without having to
 review all of the technical details.
 
-
 # Automation and Testing
 
 Automation and Testing are key strategies that go hand in hand in allowing
@@ -214,7 +213,6 @@ These levels include:
 * Stress Testing
 * Development Workflows
 * Use Case Testing
-
 
 ## Functional Tests
 
@@ -278,7 +276,7 @@ You can read more about our module testing efforts in
 ## Stress Tests
 
 Some problems only surface after running for a long time.  Stress tests help
-to flush those out by running certain scearios over a prolonged period
+to flush those out by running certain scenarios over a prolonged period
 of time.
 
 We don't have any stress tests running at this point but it will be our next
@@ -301,8 +299,6 @@ for the common use cases for Node.js.
 Our current strategy is to get some of this coverage through the
 benchmarking that we put in place, but it is another area we can work
 on once we have the other levels of testing in place.
-
-
 
 # Performance Benchmarks
 

@@ -2,6 +2,7 @@
 layout: security.hbs
 title: Безопасность
 ---
+
 # Безопасность
 
 ## Сообщения об ошибках
@@ -44,7 +45,7 @@ title: Безопасность
 Оповещения, касающиеся безопасности, будут распространяться с помощью:
 
 - <https://groups.google.com/group/nodejs-sec>
-- <https://nodejs.org/en/blog>
+- <https://nodejs.org/en/blog/>
 
 ## Комментарии относительно этой политики
 

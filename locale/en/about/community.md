@@ -6,20 +6,20 @@ layout: about.hbs
 # Community Committee
 
 The Community Committee (CommComm) is a top-level committee in the Node.js Foundation. The CommComm has authority over outward-facing community outreach efforts, including:
- - Community [Evangelism](https://github.com/nodejs/evangelism)
- - Education Initiatives
- - Cultural Direction of Node.js Foundation
- - Community Organization Outreach
- - Translation and Internationalization
- - Project Moderation/Mediation
- - Public Outreach and [Publications](https://medium.com/the-node-js-collection)
+- Community [Evangelism](https://github.com/nodejs/evangelism)
+- Education Initiatives
+- Cultural Direction of Node.js Foundation
+- Community Organization Outreach
+- Translation and Internationalization
+- Project Moderation/Mediation
+- Public Outreach and [Publications](https://medium.com/the-node-js-collection)
 
 There are four types of involvement with the Community Committee:
 
-  - A **Contributor** is any individual creating or commenting on an issue or pull request.
-  - A **Collaborator** is a contributor who has been given write access to the repository
-  - An **Observer** is any individual who has requested or been requested to attend a CommComm meeting. It is also the first step to becoming a Member.
-  - A **Member** is a collaborator with voting rights who has met the requirements of participation and voted in by the CommComm voting process.
+- A **Contributor** is any individual creating or commenting on an issue or pull request.
+- A **Collaborator** is a contributor who has been given write access to the repository
+- An **Observer** is any individual who has requested or been requested to attend a CommComm meeting. It is also the first step to becoming a Member.
+- A **Member** is a collaborator with voting rights who has met the requirements of participation and voted in by the CommComm voting process.
 
 For the current list of Community Committee members, see the project's [README.md](https://github.com/nodejs/community-committee).
 

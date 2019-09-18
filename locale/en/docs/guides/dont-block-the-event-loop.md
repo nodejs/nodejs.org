@@ -111,7 +111,7 @@ Example 1: A constant-time callback.
 app.get('/constant-time', (req, res) => {
   res.sendStatus(200);
 });
-``` 
+```
 
 Example 2: An `O(n)` callback. This callback will run quickly for small `n` and more slowly for large `n`.
 
@@ -126,7 +126,7 @@ app.get('/countToN', (req, res) => {
 
   res.sendStatus(200);
 });
-``` 
+```
 
 Example 3: An `O(n^2)` callback. This callback will still run quickly for small `n`, but for large `n` it will run much more slowly than the previous `O(n)` example.
 
@@ -227,19 +227,19 @@ These APIs are expensive, because they involve significant computation (encrypti
 
 In a server, *you should not use the following synchronous APIs from these modules*:
 - Encryption:
-    - `crypto.randomBytes` (synchronous version)
-    - `crypto.randomFillSync`
-    - `crypto.pbkdf2Sync`
-    - You should also be careful about providing large input to the encryption and decryption routines.
+  - `crypto.randomBytes` (synchronous version)
+  - `crypto.randomFillSync`
+  - `crypto.pbkdf2Sync`
+  - You should also be careful about providing large input to the encryption and decryption routines.
 - Compression:
-    - `zlib.inflateSync`
-    - `zlib.deflateSync`
+  - `zlib.inflateSync`
+  - `zlib.deflateSync`
 - File system:
-    - Do not use the synchronous file system APIs. For example, if the file you access is in a [distributed file system](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems) like [NFS](https://en.wikipedia.org/wiki/Network_File_System), access times can vary widely.
+  - Do not use the synchronous file system APIs. For example, if the file you access is in a [distributed file system](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems) like [NFS](https://en.wikipedia.org/wiki/Network_File_System), access times can vary widely.
 - Child process:
-    - `child_process.spawnSync`
-    - `child_process.execSync`
-    - `child_process.execFileSync`
+  - `child_process.spawnSync`
+  - `child_process.execSync`
+  - `child_process.execFileSync`
 
 This list is reasonably complete as of Node v9.
 
@@ -279,7 +279,7 @@ console.log('JSON.parse took ' + took);
 
 There are npm modules that offer asynchronous JSON APIs. See for example:
 - [JSONStream](https://www.npmjs.com/package/JSONStream), which has stream APIs.
-- [Big-Friendly JSON](https://github.com/philbooth/bfj), which has stream APIs as well as asynchronous versions of the standard JSON APIs using the partitioning-on-the-Event-Loop paradigm outlined below.
+- [Big-Friendly JSON](https://www.npmjs.com/package/bfj), which has stream APIs as well as asynchronous versions of the standard JSON APIs using the partitioning-on-the-Event-Loop paradigm outlined below.
 
 ### Complex calculations without blocking the Event Loop
 Suppose you want to do complex calculations in JavaScript without blocking the Event Loop.
@@ -292,6 +292,7 @@ In JavaScript it's easy to save the state of an ongoing task in a closure, as sh
 For a simple example, suppose you want to compute the average of the numbers `1` to `n`.
 
 Example 1: Un-partitioned average, costs `O(n)`
+
 ```javascript
 for (let i = 0; i < n; i++)
   sum += i;
@@ -300,6 +301,7 @@ console.log('avg: ' + avg);
 ```
 
 Example 2: Partitioned average, each of the `n` asynchronous steps costs `O(1)`.
+
 ```javascript
 function asyncAvg(n, avgCB) {
   // Save ongoing sum in JS closure.
@@ -360,7 +362,7 @@ A CPU-intensive task only makes progress when its Worker is scheduled, and the W
 If you have 4 logical cores and 5 Workers, one of these Workers cannot make progress.
 As a result, you are paying overhead (memory and scheduling costs) for this Worker and getting no return for it.
 
-I/O-intensive tasks involve querying an external service provider (DNS, file system, etc.) and waiting for its response.
+I/O-intensive tasks involve querying an external service provider ([DNS](https://hosting.review/web-hosting-glossary/#9), file system, etc.) and waiting for its response.
 While a Worker with an I/O-intensive task is waiting for its response, it has nothing else to do and can be de-scheduled by the operating system, giving another Worker a chance to submit their request.
 Thus, *I/O-intensive tasks will be making progress even while the associated thread is not running*.
 External service providers like databases and file systems have been highly optimized to handle many pending requests concurrently.
@@ -449,7 +451,7 @@ Whether you use only the Node Worker Pool or maintain separate Worker Pool(s), y
 
 To do this, minimize the variation in Task times by using Task partitioning.
 
-##  The risks of npm modules
+## The risks of npm modules
 While the Node core modules offer building blocks for a wide variety of applications, sometimes something more is needed. Node developers benefit tremendously from the [npm ecosystem](https://www.npmjs.com/), with hundreds of thousands of modules offering functionality to accelerate your development process.
 
 Remember, however, that the majority of these modules are written by third-party developers and are generally released with only best-effort guarantees. A developer using an npm module should be concerned about two things, though the latter is frequently forgotten.

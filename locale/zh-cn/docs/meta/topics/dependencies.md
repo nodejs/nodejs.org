@@ -43,7 +43,7 @@ HTTP 解析是通过一个由 C 语言编写、轻量级称作 http-parser 的�
 
 对于某些异步的 DNS 请求，Node.js 使用由 C 编写，称作 c-areas 的类库。它是通过 JavaScript 的 DNS 模块，以 `resolve()` 家族函数的形式发布。`lookup()` 函数，核心剩余部分使用它，借助在 libuv 中 `getaddrinfo(3)` 跨越函数的调用。那是因为 c-areas 支持 /etc/hosts，/etc/resolv.conf 以及 /etc/svc.conf。但不是像 mDNS 一样的东西。
 
-- [相关文档](http://c-ares.haxx.se/docs.html)
+- [相关文档](https://c-ares.haxx.se/docs.html)
 
 ### OpenSSL
 
@@ -55,7 +55,7 @@ OpenSSL 广泛地在 `tls` 和 `crypto` 模块中使用。它提供了战争环�
 
 为了快速压缩解压，Node.js 依赖于工业标准的 zlib 类库。同名可知的还有 gzip 和 libpng。Node.js 使用 zlib 创建同步、异步和数据流压缩、解压缩接口。
 
-- [相关文档](http://www.zlib.net/manual.html)
+- [相关文档](https://www.zlib.net/manual.html)
 
 ## <!--tools-->工具
 
