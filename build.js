@@ -213,7 +213,7 @@ function withPreserveLocale (preserveLocale) {
 // This middleware adds "Edit on GitHub" links to every editable page
 function githubLinks (options) {
   return (files, m, next) => {
-    // add suffix (".html" or "/") to each part of regex
+    // add suffix (".html" or "/" or "\" for windows) to each part of regex
     // to ignore possible occurrences in titles (e.g. blog posts)
     const isEditable = /security\.html|about(\/|\\)|docs(\/|\\)|foundation(\/|\\)|get-involved(\/|\\)|knowledge(\/|\\)/
 
