@@ -4,15 +4,15 @@
 
 * [Issues and Pull Requests](#issues-and-pull-requests)
 * [Accepting Modifications](#accepting-modifications)
-  - [Involving the Website Group](#involving-the-website-group)
+  * [Involving the Website Group](#involving-the-website-group)
 * [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin-11)
 * [Code of Conduct](#code-of-conduct)
 * [Code editing](#code-editing)
-  - [Adding new pages](#adding-new-pages)
-    - [Create the page content](#create-the-page-content)
-    - [Update locale site.json to add link attributes](#update-locale-sitejson-to-add-link-attributes)
-    - [Update the layout to add a link](#update-the-layout-to-add-a-link)
-  - [Translating pages](#translating-pages)
+  * [Adding new pages](#adding-new-pages)
+    * [Create the page content](#create-the-page-content)
+    * [Update locale site.json to add link attributes](#update-locale-sitejson-to-add-link-attributes)
+    * [Update the layout to add a link](#update-the-layout-to-add-a-link)
+  * [Translating pages](#translating-pages)
 
 This document contains information for Collaborators of the Node.js
 website project regarding maintaining the code, documentation and issues.
@@ -86,9 +86,9 @@ Collaborators may opt to elevate pull requests or issues to the group for
 discussion by mentioning `@nodejs/website`. This should be done
 where a pull request:
 
-- has a significant impact on the codebase,
-- is inherently controversial; or
-- has failed to reach consensus amongst the Collaborators who are
+* has a significant impact on the codebase,
+* is inherently controversial; or
+* has failed to reach consensus amongst the Collaborators who are
   actively participating in the discussion.
 
 The Website group should serve as the final arbiter where required.

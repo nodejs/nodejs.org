@@ -87,7 +87,7 @@ being able to answer them specifically and succinctly, for example:
 * Does this change have tests that verify its operation, now and in the future?
 * Does this change pass our style guidelines?
 * Does this change pass our integration tests for the matrix of our supported configurations?
-  - For instance: ia32 and x64 for Windows, Linux, OSX, SmartOS
+  * For instance: ia32 and x64 for Windows, Linux, OSX, SmartOS
 
 These are just some of the questions, and while the questions are not unusual
 or unique to Node.js, they are still important.

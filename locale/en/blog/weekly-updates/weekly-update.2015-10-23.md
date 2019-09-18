@@ -18,9 +18,9 @@ This week we have one release proposal: [Node.js v5.0.0](https://github.com/node
 ### Notable changes
 
 * console: console.time has been changed to log with sub-millisecond accuracy (Michaël Zasso) [#3166](https://github.com/nodejs/node/pull/3166).
-  - Values reported by console.time will now have 3 decimals of accuracy added.
+  * Values reported by console.time will now have 3 decimals of accuracy added.
 * fs: Added file descriptor support to *File functions (Johannes Wüller) [#3163](https://github.com/nodejs/node/pull/3163)
-  - fs.readFile, fs.writeFile, and fs.appendFile now also accept a file descriptor as their first argument.
+  * fs.readFile, fs.writeFile, and fs.appendFile now also accept a file descriptor as their first argument.
 
 ### Node.js foundation is considering an iteration on the official logo
 

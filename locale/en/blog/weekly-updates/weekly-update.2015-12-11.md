@@ -18,12 +18,12 @@ This week we have one release: [Node.js v5.2.0 (Current)](https://nodejs.org/en/
 ### Notable changes
 
 * **build**:
-  - Add support for Intel's VTune JIT profiling when compiled with `--enable-vtune-profiling`. For more information about VTune, see <https://software.intel.com/en-us/node/544211>. (Chunyang Dai) [#3785](https://github.com/nodejs/node/pull/3785).
-  - Properly enable V8 snapshots by default. Due to a configuration error, snapshots have been kept off by default when the intention is for the feature to be enabled. (Fedor Indutny) [#3962](https://github.com/nodejs/node/pull/3962).
+  * Add support for Intel's VTune JIT profiling when compiled with `--enable-vtune-profiling`. For more information about VTune, see <https://software.intel.com/en-us/node/544211>. (Chunyang Dai) [#3785](https://github.com/nodejs/node/pull/3785).
+  * Properly enable V8 snapshots by default. Due to a configuration error, snapshots have been kept off by default when the intention is for the feature to be enabled. (Fedor Indutny) [#3962](https://github.com/nodejs/node/pull/3962).
 * **crypto**:
-  - Simplify use of ECDH (Elliptic Curve Diffie-Hellman) objects (created via `crypto.createECDH(curve_name)`) with private keys that are not dynamically generated via `generateKeys()`. The public key is now computed when explicitly setting a private key. Added validity checks to reduce the possibility of computing weak or invalid shared secrets. Also, deprecated the `setPublicKey()` method for ECDH objects as its usage is unnecessary and can lead to inconsistent state. (Michael Ruddy) [#3511](https://github.com/nodejs/node/pull/3511).
-  - Update root certificates from the current list stored maintained by Mozilla NSS. (Ben Noordhuis) [#3951](https://github.com/nodejs/node/pull/3951).
-  - Multiple CA certificates can now be passed with the `ca` option to TLS methods as an array of strings or in a single new-line separated string. (Ben Noordhuis) [#4099](https://github.com/nodejs/node/pull/4099)
+  * Simplify use of ECDH (Elliptic Curve Diffie-Hellman) objects (created via `crypto.createECDH(curve_name)`) with private keys that are not dynamically generated via `generateKeys()`. The public key is now computed when explicitly setting a private key. Added validity checks to reduce the possibility of computing weak or invalid shared secrets. Also, deprecated the `setPublicKey()` method for ECDH objects as its usage is unnecessary and can lead to inconsistent state. (Michael Ruddy) [#3511](https://github.com/nodejs/node/pull/3511).
+  * Update root certificates from the current list stored maintained by Mozilla NSS. (Ben Noordhuis) [#3951](https://github.com/nodejs/node/pull/3951).
+  * Multiple CA certificates can now be passed with the `ca` option to TLS methods as an array of strings or in a single new-line separated string. (Ben Noordhuis) [#4099](https://github.com/nodejs/node/pull/4099)
 * **tools**: Include a tick processor in core, exposed via the `--prof-process` command-line argument which can be used to process V8 profiling output files generated when using the `--prof` command-line argument. (Matt Loring) [#4021](https://github.com/nodejs/node/pull/4021).
 
 ### Apigee, RisingStack and Yahoo Join the Node.js Foundation
