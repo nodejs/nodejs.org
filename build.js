@@ -215,7 +215,7 @@ function githubLinks (options) {
   return (files, m, next) => {
     // add suffix (".html" or "/") to each part of regex
     // to ignore possible occurrences in titles (e.g. blog posts)
-    const isEditable = /security\.html|about\/|docs\/|foundation\/|get-involved\/|knowledge\//
+    const isEditable = /security\.html|about(\/|\\)|docs(\/|\\)|foundation(\/|\\)|get-involved(\/|\\)|knowledge(\/|\\)/
 
     Object.keys(files).forEach((path) => {
       if (!isEditable.test(path)) {
