@@ -193,7 +193,7 @@ Streams 工作组致力于支持和改进 Node.js 中使用的流 API 和 npm �
 
 ### <!--website--> [网站开发组](https://github.com/nodejs/nodejs.org)
 
-WebSite 工作小组的目的旨在构建和维护一个 Node.js 项目的公共网站。
+网站开发组的目的旨在构建和维护一个 Node.js 项目的公共网站。
 
 承担职责：
 * 为 nodejs.org 开发以及维护一个构建以及自动化系统。
