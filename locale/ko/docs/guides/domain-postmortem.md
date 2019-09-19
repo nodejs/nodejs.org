@@ -3,22 +3,6 @@ title: 도메인 모듈 포스트모템
 layout: docs.hbs
 ---
 
-<!--
-# Domain Module Postmortem
-
-## Usability Issues
-
-### Implicit Behavior
-
-It's possible for a developer to create a new domain and then simply run
-`domain.enter()`. Which then acts as a catch-all for any exception in the
-future that couldn't be observed by the thrower. Allowing a module author to
-intercept the exceptions of unrelated code in a different module. Preventing
-the originator of the code from knowing about its own exceptions.
-
-Here's an example of how one indirectly linked modules can affect another:
--->
-
 # 도메인 모듈 포스트모템
 
 ## 사용성 이슈
@@ -30,31 +14,6 @@ Here's an example of how one indirectly linked modules can affect another:
 관련 없는 코드의 예외를 가로챌 수 있게 했고 코드의 작성자가 자신의 예외를 알지 못하게 했습니다.
 
 다음 예제는 간접적으로 연결된 모듈이 다른 모듈에 어떻게 영향을 끼칠 수 있는지를 보여줍니다.
-
-<!--
-```js
-// module a.js
-const b = require('./b');
-const c = require('./c');
-
-// module b.js
-const d = require('domain').create();
-d.on('error', () => { /* silence everything */ });
-d.enter();
-
-// module c.js
-const dep = require('some-dep');
-dep.method();  // Uh-oh! This method doesn't actually exist.
-```
-
-Since module `b` enters the domain but never exits any uncaught exception will
-be swallowed. Leaving module `c` in the dark as to why it didn't run the entire
-script. Leaving a potentially partially populated `module.exports`. Doing this
-is not the same as listening for `'uncaughtException'`. As the latter is
-explicitly meant to globally catch errors. The other issue is that domains are
-processed prior to any `'uncaughtException'` handlers, and prevent them from
-running.
--->
 
 ```js
 // 모듈 a.js
@@ -78,31 +37,6 @@ dep.method();  // 앗! 이 메서드는 실제로 존재하지 않습니다.
 어떤 `'uncaughtException'` 핸들러보다도 먼저 처리되어
 `'uncaughtException'`이 실행되지 않도록 한다는 것은 또 다른 문제입니다.
 
-<!--
-Another issue is that domains route errors automatically if no `'error'`
-handler was set on the event emitter. There is no opt-in mechanism for this,
-and automatically propagates across the entire asynchronous chain. This may
-seem useful at first, but once asynchronous calls are two or more modules deep
-and one of them doesn't include an error handler the creator of the domain will
-suddenly be catching unexpected exceptions, and the thrower's exception will go
-unnoticed by the author.
-
-The following is a simple example of how a missing `'error'` handler allows
-the active domain to hijack the error:
-
-```js
-const domain = require('domain');
-const net = require('net');
-const d = domain.create();
-d.on('error', (err) => console.error(err.message));
-
-d.run(() => net.createServer((c) => {
-  c.end();
-  c.write('bye');
-}).listen(8000));
-```
--->
-
 또 다른 문제는 도메인 라우트가 이벤트 이미터에 `'error'` 핸들러가 설정되어 있지 않다면 오류를
 발생시킨다는 것입니다. 이를 위한 옵트인 메커니즘은 존재하지 않고 전체 비동기 체인에 자동으로 전파됩니다.
 처음에는 유용해 보이지만 비동기 호출이 두 개 이상의 모듈을 호출하고 이 중 하나가 오류 핸들러를
@@ -122,42 +56,6 @@ d.run(() => net.createServer((c) => {
   c.write('bye');
 }).listen(8000));
 ```
-
-<!--
-Even manually removing the connection via `d.remove(c)` does not prevent the
-connection's error from being automatically intercepted.
-
-Failures that plagues both error routing and exception handling are the
-inconsistencies in how errors are bubbled. The following is an example of how
-nested domains will and won't bubble the exception based on when they happen:
-
-```js
-const domain = require('domain');
-const net = require('net');
-const d = domain.create();
-d.on('error', () => console.error('d intercepted an error'));
-
-d.run(() => {
-  const server = net.createServer((c) => {
-    const e = domain.create();  // No 'error' handler being set.
-    e.run(() => {
-      // This will not be caught by d's error handler.
-      setImmediate(() => {
-        throw new Error('thrown from setImmediate');
-      });
-      // Though this one will bubble to d's error handler.
-      throw new Error('immediately thrown');
-    });
-  }).listen(8080);
-});
-```
-
-It may be expected that nested domains always remain nested, and will always
-propagate the exception up the domain stack. Or that exceptions will never
-automatically bubble. Unfortunately both these situations occur, leading to
-potentially confusing behavior that may even be prone to difficult to debug
-timing conflicts.
--->
 
 `d.remove(c)`를 통해 수동으로 연결을 제거하더라도 연결 오류가 자동으로
 가로채지는 것을 막지 못합니다.
@@ -190,17 +88,6 @@ d.run(() => {
 아니면 이 예외가 절대 자동으로 버블링되지 않기를 기대할 수 있습니다. 불행히도 두 가지 상황이 모두
 발생하고 이는 시점의 충돌을 디버깅하기 어렵게 만들기 쉬운 혼란스러운 동작입니다.
 
-<!--
-### API Gaps
-
-While APIs based on using `EventEmitter` can use `bind()` and errback style
-callbacks can use `intercept()`, alternative APIs that implicitly bind to the
-active domain must be executed inside of `run()`. Meaning if module authors
-wanted to support domains using a mechanism alternative to those mentioned they
-must manually implement domain support themselves. Instead of being able to
-leverage the implicit mechanisms already in place.
--->
-
 ### API 차이
 
 `EventEmitter`에 기반을 둔 API는 `bind()`를 사용할 수 있고 에러를 다시 받는 형식의 콜백은
@@ -208,37 +95,6 @@ leverage the implicit mechanisms already in place.
 `run()` 안에서 실행되어야 합니다. 이는 모듈 작성자가 앞에서 말한 방식의 대안 메커니즘을 사용해서
 도메인을 지원하고자 하면 이미 적소에 있는 암묵적인 메커니즘을 이용하지 않고 직접 도메인 지원을
 구현해야 한다는 의미입니다.
-
-<!--
-### Error Propagation
-
-Propagating errors across nested domains is not straight forward, if even
-possible. Existing documentation shows a simple example of how to `close()` an
-`http` server if there is an error in the request handler. What it does not
-explain is how to close the server if the request handler creates another
-domain instance for another async request. Using the following as a simple
-example of the failing of error propagation:
-
-```js
-const d1 = domain.create();
-d1.foo = true;  // custom member to make more visible in console
-d1.on('error', (er) => { /* handle error */ });
-
-d1.run(() => setTimeout(() => {
-  const d2 = domain.create();
-  d2.bar = 43;
-  d2.on('error', (er) => console.error(er.message, domain._stack));
-  d2.run(() => {
-    setTimeout(() => {
-      setTimeout(() => {
-        throw new Error('outer');
-      });
-      throw new Error('inner');
-    });
-  });
-}));
-```
--->
 
 ### 오류 전파
 
@@ -267,24 +123,6 @@ d1.run(() => setTimeout(() => {
 }));
 ```
 
-<!--
-Even in the case that the domain instances are being used for local storage so
-access to resources are made available there is still no way to allow the error
-to continue propagating from `d2` back to `d1`. Quick inspection may tell us
-that simply throwing from `d2`'s domain `'error'` handler would allow `d1` to
-then catch the exception and execute its own error handler. Though that is not
-the case. Upon inspection of `domain._stack` you'll see that the stack only
-contains `d2`.
-
-This may be considered a failing of the API, but even if it did operate in this
-way there is still the issue of transmitting the fact that a branch in the
-asynchronous execution has failed, and that all further operations in that
-branch must cease. In the example of the http request handler, if we fire off
-several asynchronous requests and each one then `write()`'s data back to the
-client many more errors will arise from attempting to `write()` to a closed
-handle. More on this in _Resource Cleanup on Exception_.
--->
-
 도메인 인스턴스가 로컬 스토리지에 사용되어 자원에 대한 액세스가 가능해지더라도 여전히 오류가 `d2`에서
 `d1`으로 다시 계속 전파되도록 허용할 수 있는 방법이 없습니다. 빠른 검사는 `d2` 도메인의
 `'error'` 핸들러를 던지기만 하면 `d1`이 예외를 잡아서 자체 에러 핸들러를 실행할 수 있게 합니다.
@@ -295,155 +133,6 @@ handle. More on this in _Resource Cleanup on Exception_.
 예제에서 다수의 비동기 요청을 보내고 각 요청에서 `write()`의 데이터를 다시 클라이언트에 보내면
 닫힌 핸들에 `write()`를 시도하면서 더 많은 오류가 발생합니다.
 이것에 대한 자세한 내용은 _예외발생시 자원 정리_를 참고하세요.
-
-<!--
-### Resource Cleanup on Exception
-
-The following script contains a more complex example of properly cleaning up
-in a small resource dependency tree in the case that an exception occurs in a
-given connection or any of its dependencies. Breaking down the script into its
-basic operations:
-
-```js
-'use strict';
-
-const domain = require('domain');
-const EE = require('events');
-const fs = require('fs');
-const net = require('net');
-const util = require('util');
-const print = process._rawDebug;
-
-const pipeList = [];
-const FILENAME = '/tmp/tmp.tmp';
-const PIPENAME = '/tmp/node-domain-example-';
-const FILESIZE = 1024;
-let uid = 0;
-
-// Setting up temporary resources
-const buf = Buffer.alloc(FILESIZE);
-for (let i = 0; i < buf.length; i++)
-  buf[i] = ((Math.random() * 1e3) % 78) + 48;  // Basic ASCII
-fs.writeFileSync(FILENAME, buf);
-
-function ConnectionResource(c) {
-  EE.call(this);
-  this._connection = c;
-  this._alive = true;
-  this._domain = domain.create();
-  this._id = Math.random().toString(32).substr(2).substr(0, 8) + (++uid);
-
-  this._domain.add(c);
-  this._domain.on('error', () => {
-    this._alive = false;
-  });
-}
-util.inherits(ConnectionResource, EE);
-
-ConnectionResource.prototype.end = function end(chunk) {
-  this._alive = false;
-  this._connection.end(chunk);
-  this.emit('end');
-};
-
-ConnectionResource.prototype.isAlive = function isAlive() {
-  return this._alive;
-};
-
-ConnectionResource.prototype.id = function id() {
-  return this._id;
-};
-
-ConnectionResource.prototype.write = function write(chunk) {
-  this.emit('data', chunk);
-  return this._connection.write(chunk);
-};
-
-// Example begin
-net.createServer((c) => {
-  const cr = new ConnectionResource(c);
-
-  const d1 = domain.create();
-  fs.open(FILENAME, 'r', d1.intercept((fd) => {
-    streamInParts(fd, cr, 0);
-  }));
-
-  pipeData(cr);
-
-  c.on('close', () => cr.end());
-}).listen(8080);
-
-function streamInParts(fd, cr, pos) {
-  const d2 = domain.create();
-  const alive = true;
-  d2.on('error', (er) => {
-    print('d2 error:', er.message);
-    cr.end();
-  });
-  fs.read(fd, Buffer.alloc(10), 0, 10, pos, d2.intercept((bRead, buf) => {
-    if (!cr.isAlive()) {
-      return fs.close(fd);
-    }
-    if (cr._connection.bytesWritten < FILESIZE) {
-      // Documentation says callback is optional, but doesn't mention that if
-      // the write fails an exception will be thrown.
-      const goodtogo = cr.write(buf);
-      if (goodtogo) {
-        setTimeout(() => streamInParts(fd, cr, pos + bRead), 1000);
-      } else {
-        cr._connection.once('drain', () => streamInParts(fd, cr, pos + bRead));
-      }
-      return;
-    }
-    cr.end(buf);
-    fs.close(fd);
-  }));
-}
-
-function pipeData(cr) {
-  const pname = PIPENAME + cr.id();
-  const ps = net.createServer();
-  const d3 = domain.create();
-  const connectionList = [];
-  d3.on('error', (er) => {
-    print('d3 error:', er.message);
-    cr.end();
-  });
-  d3.add(ps);
-  ps.on('connection', (conn) => {
-    connectionList.push(conn);
-    conn.on('data', () => {});  // don't care about incoming data.
-    conn.on('close', () => {
-      connectionList.splice(connectionList.indexOf(conn), 1);
-    });
-  });
-  cr.on('data', (chunk) => {
-    for (let i = 0; i < connectionList.length; i++) {
-      connectionList[i].write(chunk);
-    }
-  });
-  cr.on('end', () => {
-    for (let i = 0; i < connectionList.length; i++) {
-      connectionList[i].end();
-    }
-    ps.close();
-  });
-  pipeList.push(pname);
-  ps.listen(pname);
-}
-
-process.on('SIGINT', () => process.exit());
-process.on('exit', () => {
-  try {
-    for (let i = 0; i < pipeList.length; i++) {
-      fs.unlinkSync(pipeList[i]);
-    }
-    fs.unlinkSync(FILENAME);
-  } catch (e) { }
-});
-
-```
--->
 
 ### 예외 발생 시 자원 정리
 
@@ -590,28 +279,6 @@ process.on('exit', () => {
 
 ```
 
-<!--
-- When a new connection happens, concurrently:
-  - Open a file on the file system
-  - Open Pipe to unique socket
-- Read a chunk of the file asynchronously
-- Write chunk to both the TCP connection and any listening sockets
-- If any of these resources error, notify all other attached resources that
-  they need to clean up and shutdown
-
-As we can see from this example a lot more must be done to properly clean up
-resources when something fails than what can be done strictly through the
-domain API. All that domains offer is an exception aggregation mechanism. Even
-the potentially useful ability to propagate data with the domain is easily
-countered, in this example, by passing the needed resources as a function
-argument.
-
-One problem domains perpetuated was the supposed simplicity of being able to
-continue execution, contrary to what the documentation stated, of the
-application despite an unexpected exception. This example demonstrates the
-fallacy behind that idea.
--->
-
 - 새로운 연결이 이뤄지면 동시에
   - 파일시스템에서 파일을 엽니다.
   - 유일한 소켓과 파이프를 연결합니다.
@@ -628,18 +295,6 @@ fallacy behind that idea.
 애플리케이션을 계속 실행할 수 있다는 단순한 생각이었습니다.
 이 예제는 이 생각에 오류가 있다는 것을 보여줍니다.
 
-<!--
-Attempting proper resource cleanup on unexpected exception becomes more complex
-as the application itself grows in complexity. This example only has 3 basic
-resources in play, and all of them with a clear dependency path. If an
-application uses something like shared resources or resource reuse the ability
-to cleanup, and properly test that cleanup has been done, grows greatly.
-
-In the end, in terms of handling errors, domains aren't much more than a
-glorified `'uncaughtException'` handler. Except with more implicit and
-unobservable behavior by third-parties.
--->
-
 예기치 않은 예외가 발생했을 때 적절하게 자원 정리를 시도하면 애플리케이션 자체의 복잡도가 증가하므로
 더 복잡해집니다. 이 예제는 3가지의 기본적인 자원만 가지고 있고 이 자원는 모두 명확한 의존성 경로를
 가집니다. 애플리케이션이 공유된 자원이나 자원 재사용을 사용하는 경우 정리 기능과 정리가
@@ -647,71 +302,6 @@ unobservable behavior by third-parties.
 
 결국, 오류처리 관점에서 도메인은 더 암묵적이고 서드파티가 관찰할 수 없는 동작이라는 점을 제외하면
 `'uncaughtException'` 핸들러와 별반 다르지 않습니다.
-
-<!--
-### Resource Propagation
-
-Another use case for domains was to use it to propagate data along asynchronous
-data paths. One problematic point is the ambiguity of when to expect the
-correct domain when there are multiple in the stack (which must be assumed if
-the async stack works with other modules). Also the conflict between being
-able to depend on a domain for error handling while also having it available to
-retrieve the necessary data.
-
-The following is a involved example demonstrating the failing using domains to
-propagate data along asynchronous stacks:
-
-```js
-const domain = require('domain');
-const net = require('net');
-
-const server = net.createServer((c) => {
-  // Use a domain to propagate data across events within the
-  // connection so that we don't have to pass arguments
-  // everywhere.
-  const d = domain.create();
-  d.data = { connection: c };
-  d.add(c);
-  // Mock class that does some useless async data transformation
-  // for demonstration purposes.
-  const ds = new DataStream(dataTransformed);
-  c.on('data', (chunk) => ds.data(chunk));
-}).listen(8080, () => console.log('listening on 8080'));
-
-function dataTransformed(chunk) {
-  // FAIL! Because the DataStream instance also created a
-  // domain we have now lost the active domain we had
-  // hoped to use.
-  domain.active.data.connection.write(chunk);
-}
-
-function DataStream(cb) {
-  this.cb = cb;
-  // DataStream wants to use domains for data propagation too!
-  // Unfortunately this will conflict with any domain that
-  // already exists.
-  this.domain = domain.create();
-  this.domain.data = { inst: this };
-}
-
-DataStream.prototype.data = function data(chunk) {
-  // This code is self contained, but pretend it's a complex
-  // operation that crosses at least one other module. So
-  // passing along "this", etc., is not easy.
-  this.domain.run(() => {
-    // Simulate an async operation that does the data transform.
-    setImmediate(() => {
-      for (let i = 0; i < chunk.length; i++)
-        chunk[i] = ((chunk[i] + Math.random() * 100) % 96) + 33;
-      // Grab the instance from the active domain and use that
-      // to call the user's callback.
-      const self = domain.active.data.inst;
-      self.cb(chunk);
-    });
-  });
-};
-```
--->
 
 ### 자원 전파
 
@@ -767,19 +357,6 @@ DataStream.prototype.data = function data(chunk) {
 };
 ```
 
-<!--
-The above shows that it is difficult to have more than one asynchronous API
-attempt to use domains to propagate data. This example could possibly be fixed
-by assigning `parent: domain.active` in the `DataStream` constructor.  Then
-restoring it via `domain.active = domain.active.data.parent` just before the
-user's callback is called. Also the instantiation of `DataStream` in the
-`'connection'` callback must be run inside `d.run()`, instead of simply using
-`d.add(c)`, otherwise there will be no active domain.
-
-In short, for this to have a prayer of a chance usage would need to strictly
-adhere to a set of guidelines that would be difficult to enforce or test.
--->
-
 위 예제는 데이터를 전파하려고 도메인을 사용하는 두 개 이상의 비동기 API를 가지기가 어렵다는 것을
 보여줍니다. 이 예제는 `DataStream` 생성자에서 `parent: domain.active`를 할당해서
 고칠 수 있습니다. 그런 다음 사용자의 콜백이 호출되기 직전에
@@ -788,32 +365,6 @@ adhere to a set of guidelines that would be difficult to enforce or test.
 `d.run()` 안에서 실행되어야 합니다. 그렇지 않으면 활성화된 도메인이 없을 것입니다.
 
 간단히 말해, 이렇게 하려면 적용이나 테스트가 어려울 수 있는 일련의 가이드라인을 엄격하게 따라야 합니다.
-
-<!--
-## Performance Issues
-
-A significant deterrent from using domains is the overhead. Using node's
-built-in http benchmark, `http_simple.js`, without domains it can handle over
-22,000 requests/second. Whereas if it's run with `NODE_USE_DOMAINS=1` that
-number drops down to under 17,000 requests/second. In this case there is only
-a single global domain. If we edit the benchmark so the http request callback
-creates a new domain instance performance drops further to 15,000
-requests/second.
-
-While this probably wouldn't affect a server only serving a few hundred or even
-a thousand requests per second, the amount of overhead is directly proportional
-to the number of asynchronous requests made. So if a single connection needs to
-connect to several other services all of those will contribute to the overall
-latency of delivering the final product to the client.
-
-Using `AsyncWrap` and tracking the number of times
-`init`/`pre`/`post`/`destroy` are called in the mentioned benchmark we find
-that the sum of all events called is over 170,000 times per second. This means
-even adding 1 microsecond overhead per call for any type of setup or tear down
-will result in a 17% performance loss. Granted, this is for the optimized
-scenario of the benchmark, but I believe this demonstrates the necessity for a
-mechanism such as domain to be as cheap to run as possible.
--->
 
 ## 성능 문제
 
@@ -832,17 +383,6 @@ mechanism such as domain to be as cheap to run as possible.
 이는 어떤 종류의 설정이나 정리를 위한 호출당 1마이크로초의 오버헤드가 추가되어 17%의 성능 저하가
 발생한다는 것을 의미합니다. 당연히 이는 벤치마크에 최적화된 시나리오이지만 도메인 같은 메커니즘은
 가능한 한 싸게 실행되어야 할 필요성을 보여준다고 생각합니다.
-
-<!--
-## Looking Ahead
-
-The domain module has been soft deprecated since Dec 2014, but has not yet been
-removed because node offers no alternative functionality at the moment. As of
-this writing there is ongoing work building out the `AsyncWrap` API and a
-proposal for Zones being prepared for the TC39. At such time there is suitable
-functionality to replace domains it will undergo the full deprecation cycle and
-eventually be removed from core.
--->
 
 ## 앞을 내다 보며
 

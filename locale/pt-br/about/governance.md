@@ -3,34 +3,12 @@ title: Governança do Projeto
 layout: about.hbs
 ---
 
-<!--
-# Project Governance
--->
 # Governança do Projeto
 
-<!--
-## Consensus Seeking Process
-
-The Node.js project follows a [Consensus Seeking][] decision making model.
--->
 ## Processo de Busca por Consenso
 
 O projeto Node.js segue o modelo de [Busca por Consenso][] para tomada de decisão.
 
-<!--
-## Collaborators
-
-The [nodejs/node][] core GitHub repository is maintained by the Collaborators
-who are added by the Technical Steering Committee ([TSC][]) on an ongoing basis.
-
-Individuals making significant and valuable contributions are made Collaborators
-and given commit-access to the project. These individuals are identified by the
-TSC and their nomination is discussed with the existing Collaborators.
-
-For the current list of Collaborators, see the project's [README.md][].
-
-A guide for Collaborators is maintained at [COLLABORATOR_GUIDE.md][].
--->
 ## Colaboradores
 
 O repositório principal [nodejs/node][] no Github é mantido por Colaboradores
@@ -44,14 +22,6 @@ Para ver a lista atual de Colaboradores, acesse o [README.md][] do projeto.
 
 Um guia para Colaboradores é mantido em [COLLABORATOR_GUIDE.md][].
 
-<!--
-## Top Level Committees
-
-The project is governed jointly by the [Technical Steering Committee (TSC)][]
-which is responsible for high-level guidance of the project, and the
-[Community Committee (CommComm)][] which is responsible for guiding and
-extending the Node.js community.
--->
 ## Comitês Superiores
 
 O projeto é governado de forma conjunta pelo _[Technical Steering Committee (TSC)][]_

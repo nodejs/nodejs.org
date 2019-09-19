@@ -5,17 +5,6 @@ labels:
   lts: LTS
 ---
 
-<!--
-# About Docs
-
-There are several types of documentation available on this website:
-
-* API reference documentation
-* ES6 features
-* Frequently asked questions
-* Guides
--->
-
 # 문서에 관해서
 
 이 웹사이트에는 여러 종류의 문서가 있습니다.
@@ -23,14 +12,6 @@ There are several types of documentation available on this website:
 * API 레퍼런스 문서
 * ES6 기능
 * 안내
-
-<!--
-### API Reference Documentation
-
-The [API reference documentation](https://nodejs.org/api/) provides detailed information about a function or object in Node.js. This documentation indicates what arguments a method accepts, the return value of that method, and what errors may be related to that method. It also indicates which methods are available for different versions of Node.js.
-
-This documentation describes the built-in modules provided by Node.js. It does not document modules provided by the community.
--->
 
 ## API 레퍼런스 문서
 
@@ -58,23 +39,11 @@ This documentation describes the built-in modules provided by Node.js. It does n
 
 </div>
 
-<!--
-### ES6 Features
-
-The [ES6 section](/en/docs/es6/) describes the three ES6 feature groups, and details which features are enabled by default in Node.js, alongside explanatory links. It also shows how to find which version of V8 shipped with a particular Node.js release.
--->
-
 ## ES6 기능
 
 [ES6 부분](/ko/docs/es6/)에서는 세 가지 ES6 기능 그룹을 설명하고 Node.js에서 어떤 기능이
 기본적으로 활성화되어있는지 설명하면서 추가 링크를 제공합니다. 특정 Node.js 릴리스 버전에
 어떤 V8 버전이 포함되었는지 찾는 방법도 알려줍니다.
-
-<!--
-### Guides
-
-Long-form, in-depth articles about Node.js technical features and capabilities.
--->
 
 ## 안내
 
