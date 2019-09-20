@@ -33,7 +33,9 @@
     "expect": "always",
     "error": true
   },
-  "exclude": [],
+  "exclude": [
+    "vendor/**"
+  ],
   "extendPref": "@extends",
   "globalDupe": false,
   "groupOutputByFile": true,
