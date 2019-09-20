@@ -14,42 +14,38 @@ No node.js, considera-se uma prática padrão lidar com erros em funções assí
 <!-- It's simpler than it sounds; let's demonstrate. -->
 É mais simples do que parece; vamos demonstrar.
 
-    var isTrue = function(value, callback) {
-      if (value === true) {
-        callback(null, "O valor era verdadeiro.");
-      }
-      else {
-        callback(new Error("O valor não era verdadeiro!;
-      }
-    }
+```javascript
+var isTrue = function(value, callback) {
+  if (value === true) {
+    callback(null, "O valor era verdadeiro.");
+  }
+  else {
+    callback(new Error("O valor não era verdadeiro!"));
+  }
+}
 
-    var callback = function (error, retval) {
-      if (error) {
-        console.log(error);
-        return;
-      }
-      console.log(retval);
-    }
+var callback = function (error, retval) {
+  if (error) {
+    console.log(error);
+    return;
+  }
+  console.log(retval);
+}
 
-    <!--
-          ORIGINAL BEGIN
+// Note: quando chamamos a mesma função assíncrona duas vezes, você está em uma condição de corrida.
+// Você não tem como saber com certeza qual retorno de chamada será chamado primeiro ao chamar as funções dessa maneira.
 
-    // Note: when calling the same asynchronous function twice like this, you are in a race condition.
-    // You have no way of knowing for certain which callback will be called first when calling the functions in this manner.
+isTrue(false, callback);
+isTrue(true,  callback);
+```
 
-          ORIGINAL END
-    -->
-    // Note: quando chamamos a mesma função assíncrona duas vezes, você está em uma condição de corrida.
-    // Você não tem como saber com certeza qual retorno de chamada será chamado primeiro ao chamar as funções dessa maneira.
-
-    isTrue(false, callback);
-    isTrue(true,  callback);
-
-    { stack: [Getter/Setter],
-      arguments: undefined,
-      type: undefined,
-      message: 'O valor não era verdadeiro!' }
-    O valor era verdadeiro.
+```
+{ stack: [Getter/Setter],
+  arguments: undefined,
+  type: undefined,
+  message: 'O valor não era verdadeiro!' }
+O valor era verdadeiro.
+```
 
 <!-- As you can see from the example, the callback is called with null as its first argument if there is no error. However, if there is an error, you create an `Error` object, which then becomes the callback's only parameter.  -->
 Como você pode ver no exemplo, o callback é chamado recebendo null como o primeiro argumento se não houver erros. Todavia, se houver um erro, é criado um objeto `Error`, que então se torna o único parâmetro de retorno da chamada.

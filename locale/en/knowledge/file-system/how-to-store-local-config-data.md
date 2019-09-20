@@ -12,43 +12,47 @@ Storing your Node.js application's configuration data is quite simple - every ob
 
 Let's take a look at a very simple (and contrived) example.  First, to save some very simple data:
 
-      var fs = require('fs');
+```javascript
+var fs = require('fs');
 
-      var myOptions = {
-        name: 'Avian',
-        dessert: 'cake'
-        flavor: 'chocolate',
-        beverage: 'coffee'
-      };
+var myOptions = {
+  name: 'Avian',
+  dessert: 'cake'
+  flavor: 'chocolate',
+  beverage: 'coffee'
+};
 
-      var data = JSON.stringify(myOptions);
+var data = JSON.stringify(myOptions);
 
-      fs.writeFile('./config.json', data, function (err) {
-        if (err) {
-          console.log('There has been an error saving your configuration data.');
-          console.log(err.message);
-          return;
-        }
-        console.log('Configuration saved successfully.')
-      });
+fs.writeFile('./config.json', data, function (err) {
+  if (err) {
+    console.log('There has been an error saving your configuration data.');
+    console.log(err.message);
+    return;
+  }
+  console.log('Configuration saved successfully.')
+});
+```
 
 It's really that simple - just `JSON.stringify()` and then save it however you'd like.
 
 Now let's load some configuration data:
 
-      var fs = require('fs');
+```javascript
+var fs = require('fs');
 
-      var data = fs.readFileSync('./config.json'),
-          myObj;
+var data = fs.readFileSync('./config.json'),
+    myObj;
 
-      try {
-        myObj = JSON.parse(data);
-        console.dir(myObj);
-      }
-      catch (err) {
-        console.log('There has been an error parsing your JSON.')
-        console.log(err);
-      }
+try {
+  myObj = JSON.parse(data);
+  console.dir(myObj);
+}
+catch (err) {
+  console.log('There has been an error parsing your JSON.')
+  console.log(err);
+}
+```
 
 NODE PRO TIP:  Even if you don't like using `try/catch`, this is a place to use it.  `JSON.parse` is a very strict JSON parser, and errors are common - most importantly, though, `JSON.parse` uses the `throw` statement rather than giving a callback, so `try/catch` is the only way to guard against the error.
 
@@ -56,27 +60,31 @@ Using the built-in `JSON` methods can take you far, but as with so many other pr
 
 Let's take a look now at how we'd perform some local configuration access with `nconf`.  First, you'll need to install it to your project's working directory:
 
-      npm install nconf
+```
+npm install nconf
+```
 
 After that, the syntax is a breeze. Have a look at an example:
 
-      var nconf = require('nconf');
+```javascript
+var nconf = require('nconf');
 
-      nconf.use('file', { file: './config.json' });
-      nconf.load();
-      nconf.set('name', 'Avian');
-      nconf.set('dessert:name', 'Ice Cream');
-      nconf.set('dessert:flavor', 'chocolate');
+nconf.use('file', { file: './config.json' });
+nconf.load();
+nconf.set('name', 'Avian');
+nconf.set('dessert:name', 'Ice Cream');
+nconf.set('dessert:flavor', 'chocolate');
 
-      console.log(nconf.get('dessert'));
+console.log(nconf.get('dessert'));
 
-      nconf.save(function (err) {
-        if (err) {
-          console.error(err.message);
-          return;
-        }
-        console.log('Configuration saved successfully.');
-      });
+nconf.save(function (err) {
+  if (err) {
+    console.error(err.message);
+    return;
+  }
+  console.log('Configuration saved successfully.');
+});
+```
 
 The only tricky thing to notice here is the delimiter - ':'.  When accessing nested properties with `nconf`, a colon is used to delimit the namespaces of key names.  If a specific sub-key is not provided, the whole object is set or returned.
 
