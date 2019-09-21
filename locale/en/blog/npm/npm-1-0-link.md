@@ -37,13 +37,11 @@ For npm 1.0, we backed up and looked at what the actual use cases were. Most of 
 1. globally install this package I’m working on so that I can run the command it creates and test its stuff as I work on it.
 2. locally install my thing into some _other_ thing that depends on it, so that the other thing can `require()` it.
 
-And, in both cases, changes should be immediately apparent and not require any re-linking.
+    And, in both cases, changes should be immediately apparent and not require any re-linking.
 
-_Also_, there’s a third use case that I didn’t really appreciate until I started writing more programs that had more dependencies:
+    _Also_, there’s a third use case that I didn’t really appreciate until I started writing more programs that had more dependencies:
 
-<!-- markdownlint-disable ol-prefix -->
 3. Globally install something, and use it in development in a bunch of projects, and then update them all at once so that they all use the latest version.
-<!-- markdownlint-enable ol-prefix -->
 
 Really, the second case above is a special-case of this third case.
 
