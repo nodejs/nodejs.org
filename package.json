@@ -13,14 +13,13 @@
     "load-schedule": "curl -sS https://raw.githubusercontent.com/nodejs/Release/master/schedule.json -o source/schedule.json",
     "start": "npm run serve",
     "test": "npm-run-all test:lint test:unit",
-    "linkinator": "delay 3 && linkinator http://localhost:8080/en/ --recurse --skip \"^(?!http://localhost)\" --verbosity error",
     "test:lint": "npm-run-all --parallel --aggregate-output test:lint:*",
     "test:lint:js": "standard",
     "test:lint:md": "remark -qf .",
     "test:lint:stylelint": "stylelint \"layouts/css/**/*.{css,scss}\"",
     "test:lint:lockfile": "lockfile-lint --allowed-hosts npm github.com --allowed-schemes https: --empty-hostname false --type npm --path package-lock.json",
     "test:html": "node scripts/vnu-jar.js",
-    "test:linkinator": "npm-run-all --parallel --race \"serve -- --serve-only\" linkinator",
+    "test:linkinator": "linkinator https://nodejs.org/en/ --recurse --verbosity error --skip \"^(https://nodejs.org(/dist|release|nightly))|(https://github.com)|(https://marketplace.visualstudio.com)\"",
     "test:unit": "tape tests/**/*.test.js | faucet"
   },
   "repository": "nodejs/nodejs.org",
@@ -66,7 +65,6 @@
   "devDependencies": {
     "chokidar": "^3.5.1",
     "cross-env": "^7.0.3",
-    "delay-cli": "^1.1.0",
     "faucet": "0.0.1",
     "linkinator": "^2.13.6",
     "lockfile-lint": "^4.6.2",
