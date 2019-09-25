@@ -57,7 +57,7 @@ Por último, o módulo `path` fornece métodos para checar se um determinado cam
 
 `existsSync`, por outro lado, checa o caminho recebido de forma síncrona.  No Node.js, você normalmente irá querer usar as funções assíncronas para entrada/saída no sistema de arquivos - as versões síncronas bloquearão todo o seu processo até que esteja finalizado.
 
-Bloqueio nem sempre é uma coisa ruim.  Checar a existência de um arquivo de configuração essencial de forma síncrona faz sentido, por exemplo - não interessa muito se seu processo está bloqueado por algo que ele não pode viver sem!  Por outro lado, entretanto, em um servidor HTTP muito ativo, qualquer entrada/saída de arquivos por requisição **DEVE** ser assíncrona, senão você responderá as requisições uma por uma. Veja o artigo em [operações assíncronas](/how-to-write-asynchronous-code) para mais detalhes.
+Bloqueio nem sempre é uma coisa ruim.  Checar a existência de um arquivo de configuração essencial de forma síncrona faz sentido, por exemplo - não interessa muito se seu processo está bloqueado por algo que ele não pode viver sem!  Por outro lado, entretanto, em um servidor HTTP muito ativo, qualquer entrada/saída de arquivos por requisição **DEVE** ser assíncrona, senão você responderá as requisições uma por uma. Veja o artigo em [operações assíncronas](/en/knowledge/getting-started/control-flow/how-to-write-asynchronous-code/) para mais detalhes.
 
         > var path = require('path')
         > path.exists('/etc', function(exists){console.log("Does the file exist?", exists)})

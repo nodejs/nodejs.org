@@ -50,4 +50,4 @@ layout: knowledge-post.hbs
       code: 'ENOENT',
       path: '/несуществующий/файл' }
 
-Это базовый [Error object](/what-is-the-error-object) Node.js ― часто может быть полезно вызывать `err.stack` напрямую, поскольку он содержит трассировку стека до места в коде, в котором был создан Error object.
+Это базовый [Error object](/en/knowledge/errors/what-is-the-error-object/) Node.js ― часто может быть полезно вызывать `err.stack` напрямую, поскольку он содержит трассировку стека до места в коде, в котором был создан Error object.

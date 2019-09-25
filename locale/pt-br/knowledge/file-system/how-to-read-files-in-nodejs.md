@@ -50,4 +50,4 @@ Esta é a saída:
       code: 'ENOENT',
       path: '/doesnt/exist' }
 
-Este é um [Error object](/what-is-the-error-object) básico do Node.js - muitas vezes pode ser útil logar diretamente `err.stack`, uma vez que ele contém uma stack trace para o local no código em que o objeto Error foi criado.
+Este é um [Error object](/pt-br/knowledge/errors/what-is-the-error-object/) básico do Node.js - muitas vezes pode ser útil logar diretamente `err.stack`, uma vez que ele contém uma stack trace para o local no código em que o objeto Error foi criado.

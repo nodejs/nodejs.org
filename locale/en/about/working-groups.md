@@ -171,7 +171,8 @@ Each language community maintains its own membership.
 * [nodejs-uk - Ukrainian (Українська)](https://github.com/nodejs/nodejs-uk)
 * [nodejs-vi - Vietnamese (Tiếng Việt)](https://github.com/nodejs/nodejs-vi)
 
-### [Release](https://github.com/nodejs/LTS)
+### [Release](https://github.com/nodejs/Release)
+
 The Release Working Group manages the release process for Node.js.
 
 Responsibilities include:

@@ -143,7 +143,7 @@ Docker 工作组的目的是为节点建立、维护和改进官方的 Docker �
 * [nodejs-uk - Ukrainian (Українська)](https://github.com/nodejs/nodejs-uk)
 * [nodejs-vi - Vietnamese (Tiếng Việt)](https://github.com/nodejs/nodejs-vi)
 
-### <!--release--> [发布组](https://github.com/nodejs/LTS)
+### <!--release--> [发布组](https://github.com/nodejs/Release)
 
 发布工作小组管理 Node.js 的发布工作。
 
