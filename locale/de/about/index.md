@@ -4,7 +4,7 @@ title: Über Node.js
 trademark: Trademark
 ---
 
-# Über Node.js&reg;
+# Über Node.js®
 
 Als asynchrone, Event-basierte Laufzeitumgebung wurde Node speziell für die
 Entwicklung von skalierbaren Netzwerkanwendungen entworfen. Im nachfolgenden

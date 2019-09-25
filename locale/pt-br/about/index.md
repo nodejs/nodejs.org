@@ -4,7 +4,7 @@ title: Sobre
 trademark: Trademark
 ---
 
-# Sobre Node.js&reg;
+# Sobre Node.js®
 <!--
 As an asynchronous event driven JavaScript runtime, Node is designed to build
 scalable network applications. In the following "hello world" example, many
