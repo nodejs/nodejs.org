@@ -22,7 +22,7 @@ is more likely to be every 24-48 hours.
 ### Node.js Bug Bounty Program
 
 The Node.js project engages in an official bug bounty program for security
-researchers and responsible public disclosures.  The program is managed through
+researchers and responsible public disclosures. The program is managed through
 the HackerOne platform. See <https://hackerone.com/nodejs> for further details.
 
 ## Reporting a Bug in a third party module
