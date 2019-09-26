@@ -25,13 +25,13 @@ header
       background-color transparent
       text-decoration underline
 
-  #lang-picker-toggler
+  .lang-picker-toggler
     position absolute
     right 0
     bottom 0
-    width 25px
-    height 25px
-    fill $light-gray2
+    background-color transparent
+    border none
+    color $light-gray2
     cursor pointer
     padding 12px
 
@@ -43,6 +43,8 @@ header
     max-height 200%
     overflow auto
     background $node-gray
+    margin 0
+    padding 0
 
     &.hidden
       display none
@@ -50,18 +52,24 @@ header
     a
       color $light-gray2
 
-    > ul
-      padding 0
-      margin 0
+    > li
+      padding-bottom 0
 
-      > li
-        padding 0.5em 1em
-        text-transform uppercase
-        font-size 14px
+      button
+        background-color transparent
+        border none
         color $light-gray2 !important
         cursor pointer
-        list-style none
+        display inline-block
+        font-family inherit
+        font-size 14px
+        line-height 1.5
+        margin 0 auto
+        padding 0.5em 1em
+        text-transform uppercase
+        width 100%
 
+        &:focus,
         &:hover
           background-color $node-green
           text-decoration underline
@@ -120,7 +128,7 @@ header
     a:active
       padding 0
 
-    #lang-picker-toggler
+    .lang-picker-toggler
       position relative
       height 1.5em
       padding 0
