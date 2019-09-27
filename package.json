@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node build.js",
     "build:deploy": "node build.js --preserveLocale",
-    "serve": "node server.js",
+    "serve": "cross-env NODE_ENV=development node server.js",
     "external:survey": "rsync -avz --exclude 'node_modules*' --exclude 'package*' external/survey-2018/ build/en/user-survey-report",
     "gzip": "find build -type f \\( -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.xml' -o -name '*.json' \\) -exec gzip -kf9 {} \\;",
     "deploy": "npm-run-all load-schedule build:deploy external:survey gzip",
@@ -66,6 +66,7 @@
     "strftime": "^0.10.0"
   },
   "devDependencies": {
+    "cross-env": "^6.0.0",
     "faucet": "0.0.1",
     "htmllint-cli": "0.0.6",
     "markdownlint-cli": "^0.18.0",
