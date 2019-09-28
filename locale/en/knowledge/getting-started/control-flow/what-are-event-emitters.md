@@ -9,7 +9,7 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-In node.js an event can be described simply as a string with a corresponding callback. An event can be "emitted" (or in other words, the corresponding callback be called) multiple times or you can choose to only listen for the first time it is emitted. So a simple example ran on the node [REPL](/en/knowledge/REPL/how-to-use-nodejs-repl):
+In node.js an event can be described simply as a string with a corresponding callback. An event can be "emitted" (or in other words, the corresponding callback be called) multiple times or you can choose to only listen for the first time it is emitted. So a simple example ran on the node [REPL](/en/knowledge/REPL/how-to-use-nodejs-repl/):
 
     var example_emitter = new (require('events').EventEmitter);
     example_emitter.on("test", function () { console.log("test"); });

@@ -153,7 +153,7 @@ _nan_ в npm. Проект NAN предоставляет уровень абс�
 * [nodejs-uk - Украинский (Українська)](https://github.com/nodejs/nodejs-uk)
 * [nodejs-vi - Вьетнамский (Tiếng Việt)](https://github.com/nodejs/nodejs-vi)
 
-### <!--release--> [Релиз](https://github.com/nodejs/LTS)
+### <!--release--> [Релиз](https://github.com/nodejs/Release)
 
 Рабочая группа по релизам управляет процессом выпусков для Node.js.
 

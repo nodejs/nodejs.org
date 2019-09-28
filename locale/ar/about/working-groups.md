@@ -145,7 +145,8 @@ title:  مجموعات العمل
 * [nodejs-uk - Ukrainian (Українська)](https://github.com/nodejs/nodejs-uk)
 * [nodejs-vi - Vietnamese (Tiếng Việt)](https://github.com/nodejs/nodejs-vi)
 
-### <!--release-->[الإصدارات الطويلة الأمد](https://github.com/nodejs/LTS)
+### <!--release-->[الإصدارات الطويلة الأمد](https://github.com/nodejs/Release)
+
 تقوم هذه المجموعة بإدارة عمليات الأصدار للنسخ الجديدة من Node.js.
 
 تشمل مسؤولياتها:
