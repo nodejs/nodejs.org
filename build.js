@@ -69,6 +69,7 @@ function buildLocale (source, locale, opts) {
   const labelForBuild = `[metalsmith] build/${locale} finished`
   console.time(labelForBuild)
   const metalsmith = Metalsmith(__dirname)
+
   metalsmith
   // Sets global metadata imported from the locale's respective site.json.
     .metadata({
@@ -319,10 +320,6 @@ function getSource (callback) {
 // name. It brings together all build steps and dependencies and executes them.
 function fullBuild (opts) {
   const { selectedLocales, preserveLocale } = opts
-  // Build static files.
-  copyStatic()
-  // Build CSS
-  buildCSS()
   getSource((err, source) => {
     if (err) { throw err }
 
@@ -344,11 +341,16 @@ function fullBuild (opts) {
 if (require.main === module) {
   const preserveLocale = process.argv.includes('--preserveLocale')
   const selectedLocales = process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE.toLowerCase().split(',') : process.env.DEFAULT_LOCALE
+  // Copy static files
+  copyStatic()
+  // Build CSS
+  buildCSS()
   fullBuild({ selectedLocales, preserveLocale })
 }
 
 exports.getSource = getSource
 exports.fullBuild = fullBuild
+exports.buildCSS = buildCSS
 exports.buildLocale = buildLocale
 exports.copyStatic = copyStatic
 exports.generateLocalesData = generateLocalesData
