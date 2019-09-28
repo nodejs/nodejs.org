@@ -41,8 +41,8 @@ asynchronously at the operating system level.
 
 ### llhttp
 
-HTTP parsing is handled by a lightweight C library called llhttp. It is
-designed to not make any syscalls or allocations, so it has a very small
+HTTP parsing is handled by a lightweight TypeScript and C library called llhttp.
+It is designed to not make any syscalls or allocations, so it has a very small
 per-request memory footprint.
 
 - [Documentation](https://github.com/nodejs/llhttp/)
