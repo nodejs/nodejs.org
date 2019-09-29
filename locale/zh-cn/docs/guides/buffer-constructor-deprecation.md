@@ -5,8 +5,7 @@ layout: docs.hbs
 
 # 请使用 `Buffer.from()`/`Buffer.alloc()`
 
-<a id="overview"></a>
-## 概括
+## <!--overview-->概括
 
 本教程将向你介绍如果迁移到安全的 `Buffer` 构造函数方法。此合并将消除以下已废除的警告：
 
