@@ -14,7 +14,7 @@
       <ul class="blog-index">
         {{#each collections.blog}}
           {{#unless listing}}
-            {{#startswith path ../path}}
+            {{#startswith path (slashes ../path)}}
               {{#if title}}
                 <li>
                   <time datetime="{{ strftime date '%FT%T%z' }}">{{ strftime date "%d %b %y" }}</time>
