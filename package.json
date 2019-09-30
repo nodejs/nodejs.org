@@ -39,7 +39,7 @@
   "dependencies": {
     "autoprefixer-stylus": "^1.0.0",
     "cheerio": "^0.22.0",
-    "handlebars": "^4.3.4",
+    "handlebars": "^4.4.0",
     "jstransformer-handlebars": "^1.1.0",
     "junk": "^3.1.0",
     "lodash.defaultsdeep": "^4.6.1",
@@ -65,7 +65,7 @@
     "stylus": "^0.54.7"
   },
   "devDependencies": {
-    "chokidar": "^3.1.1",
+    "chokidar": "^3.2.1",
     "cross-env": "^6.0.0",
     "delay-cli": "^1.1.0",
     "faucet": "0.0.1",
