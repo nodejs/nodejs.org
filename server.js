@@ -21,6 +21,7 @@ const junk = require('junk')
 
 const selectedLocales = process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE.toLowerCase().split(',') : process.env.DEFAULT_LOCALE
 const preserveLocale = process.argv.includes('--preserveLocale')
+const serveOnly = process.argv.includes('--serve-only')
 
 // Watches for file changes in the locale, layout and static directories, and
 // rebuilds the modified one.
@@ -112,5 +113,7 @@ http.createServer((req, res) => {
   mount(req, res)
 }).listen(port, () => console.log(`\x1B[32mServer running at http://localhost:${port}/${mainLocale}/\x1B[39m`))
 
-// Start the initial build of static HTML pages
-build.fullBuild({ selectedLocales, preserveLocale })
+if (!serveOnly) {
+  // Start the initial build of static HTML pages
+  build.fullBuild({ selectedLocales, preserveLocale })
+}
