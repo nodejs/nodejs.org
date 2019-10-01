@@ -208,7 +208,7 @@ function buildLocale (source, locale, opts) {
     }))
     .use(layouts())
     // Use the default options
-    .use(htmlMinifier({ minifierOptions: htmlMinifierOpts }))
+    .use(process.env.NODE_ENV !== 'development' ? htmlMinifier({ minifierOptions: htmlMinifierOpts }) : '')
     // Pipes the generated files into their respective subdirectory in the build
     // directory.
     .destination(path.join(__dirname, 'build', locale))
