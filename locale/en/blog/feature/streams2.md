@@ -109,7 +109,7 @@ feedback.
 
 # Stream
 
-    Stability: 2 - Unstable
+> Stability: 2 - Unstable
 
 A stream is an abstract interface implemented by various objects in
 Node.  For example a request to an HTTP server is a stream, as is
@@ -494,7 +494,9 @@ This function returns the `destination` stream.
 
 For example, emulating the Unix `cat` command:
 
-    process.stdin.pipe(process.stdout);
+```javascript
+process.stdin.pipe(process.stdout);
+```
 
 By default `end()` is called on the destination when the source stream
 emits `end`, so that `destination` is no longer writable. Pass `{ end:
@@ -503,10 +505,12 @@ false }` as `options` to keep the destination stream open.
 This keeps `writer` open so that "Goodbye" can be written at the
 end.
 
-    reader.pipe(writer, { end: false });
-    reader.on("end", function() {
-      writer.end("Goodbye\n");
-    });
+```javascript
+reader.pipe(writer, { end: false });
+reader.on("end", function() {
+  writer.end("Goodbye\n");
+});
+```
 
 Note that `process.stderr` and `process.stdout` are never closed until
 the process exits, regardless of the specified options.

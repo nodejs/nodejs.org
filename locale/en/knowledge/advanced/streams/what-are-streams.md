@@ -16,27 +16,29 @@ As a quick example, we can write a simple version of `cp` (the unix utility that
 
 Run this script with arguments like `node cp.js src.txt dest.txt`. This would mean, in the code below, that `process.argv[2]` is `src.txt` and `process.argv[3]` is `desc.txt`.
 
-    var fs = require('fs');
-    console.log(process.argv[2], '->', process.argv[3]);
+```javascript
+var fs = require('fs');
+console.log(process.argv[2], '->', process.argv[3]);
 
-    var readStream = fs.createReadStream(process.argv[2]);
-    var writeStream = fs.createWriteStream(process.argv[3]);
+var readStream = fs.createReadStream(process.argv[2]);
+var writeStream = fs.createWriteStream(process.argv[3]);
 
-    readStream.on('data', function (chunk) {
-      writeStream.write(chunk);
-    });
+readStream.on('data', function (chunk) {
+  writeStream.write(chunk);
+});
 
-    readStream.on('end', function () {
-      writeStream.end();
-    });
+readStream.on('end', function () {
+  writeStream.end();
+});
 
-    //Some basic error handling
-    readStream.on('error', function (err) {
-      console.log("ERROR", err);
-    });
+//Some basic error handling
+readStream.on('error', function (err) {
+  console.log("ERROR", err);
+});
 
-    writeStream.on('error', function (err) {
-      console.log("ERROR", err);
-    });
+writeStream.on('error', function (err) {
+  console.log("ERROR", err);
+});
+```
 
 This sets up a readable stream from the source file and a writable stream to the destination file. Then whenever the readable stream gets data, it gets written to the writeable stream. Then finally it closes the writable stream when the readable stream is finished. NOTE: it would have been better to use [pipe](/en/knowledge/advanced/streams/how-to-use-stream-pipe/) like `readStream.pipe(writeStream);`, however, to show how streams work, we have done things the long way.
