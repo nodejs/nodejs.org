@@ -21,6 +21,7 @@
     "test:lint:md": "markdownlint \"**/*.md\" -i \"**/node_modules/**\"",
     "test:lint:stylint": "stylint layouts/css",
     "test:lint": "npm-run-all --parallel test:lint:*",
+    "test:html": "node scripts/vnu-jar.js",
     "test:unit": "tape tests/**/*.test.js | faucet"
   },
   "repository": "nodejs/nodejs.org",
@@ -78,6 +79,7 @@
     "st": "^1.2.2",
     "standard": "^14.3.1",
     "stylint": "^2.0.0",
-    "tape": "^4.11.0"
+    "tape": "^4.11.0",
+    "vnu-jar": "19.9.4"
   }
 }
