@@ -4,7 +4,7 @@ title: A propos
 trademark: Trademark
 ---
 
-# A propos de Node.js&reg;
+# A propos de Node.js®
 
 En tant qu'environnement d'exécution JavaScript asynchrone et orienté événnement, Node.js est conçu
 pour générer des applications scalables. Dans le "hello world" d'exemple

@@ -4,7 +4,7 @@ title: About
 trademark: Trademark
 ---
 
-# About Node.js&reg;
+# About Node.js®
 
 As an asynchronous event-driven JavaScript runtime, Node.js is designed to build
 scalable network applications. In the following "hello world" example, many
