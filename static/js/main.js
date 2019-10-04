@@ -50,46 +50,113 @@
 })()
 
 ;(function () {
-  var thankingContributor = document.querySelector('.thanking-contributor')
-  var contributorAvatar = thankingContributor.querySelector('#contributor-avatar')
-  var contributorUsername = thankingContributor.querySelector('#contributor-username')
-  var contributorCommits = thankingContributor.querySelector('#contributor-commits')
+  var contributorCard = document.querySelector('.contributor-card')
 
-  if (!contributorAvatar) {
+  if (!contributorCard) {
     return
   }
 
-  var xhr = new window.XMLHttpRequest()
-  xhr.responseType = 'json'
+  var contributorAvatar = contributorCard.querySelector('#contributor-avatar')
+  var contributorUsername = contributorCard.querySelector('#contributor-username')
+  var contributorContributions = contributorCard.querySelector('#contributor-contributions')
+  var loadingSpinner = contributorCard.querySelector('.spinner')
 
-  xhr.open('GET', 'https://api.github.com/repos/nodejs/node/contributors?per_page=1')
-  xhr.send()
-  xhr.onload = function () {
-    if (xhr.status !== 200) {
-      return
+  if (window.IntersectionObserver) {
+    var observer = new window.IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.intersectionRatio > 0.5) {
+          // In viewport, fetch a random contributor
+          fetchRandomContributor()
+
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.5 }
+    )
+
+    observer.observe(document.querySelector('footer'))
+  } else {
+    // Does not support IntersectionObserver
+    fetchRandomContributor()
+  }
+
+  function fetchRandomContributor () {
+    var maxContributors
+    var fetchDate
+    var needToRefetch = false
+
+    if (window.localStorage) {
+      maxContributors = window.localStorage.getItem('max_contributors')
+      fetchDate = parseInt(window.localStorage.getItem('fetch_date'), 10)
     }
 
-    // Get Headers Links last page to generate a random contributor
-    var links = linkParser(xhr.getResponseHeader('Link'))
-    var randomPage = Math.floor(Math.random() * Math.floor(parseInt(links.last.page))) + 1
+    // If fetch date is a month old (2592000000 ms === 30 days)
+    if (Date.now() - fetchDate >= 2592000000) {
+      needToRefetch = true
+    }
 
-    // Fetch the contributor
+    // If localStorage and data is less than 1 month old, fetch 1 time
+    if (maxContributors && !needToRefetch) {
+      getContributor(Math.floor(Math.random() * Math.floor(parseInt(maxContributors))) + 1)
+    } else {
+      getMaxContributors(function (randomPage, lastPage) {
+        getContributor(randomPage)
+
+        if (window.localStorage) {
+          window.localStorage.setItem('max_contributors', lastPage)
+        }
+      })
+    }
+  }
+
+  function getMaxContributors (callback) {
+    var xhr = new window.XMLHttpRequest()
+    xhr.responseType = 'json'
+
+    xhr.open('GET', 'https://api.github.com/repos/nodejs/node/contributors?per_page=1')
+    xhr.send()
+    xhr.onload = function () {
+      if (xhr.status !== 200) {
+        return contributorCard.remove()
+      }
+
+      // Get Headers Links last page to generate a random contributor
+      var links = linkParser(xhr.getResponseHeader('Link'))
+      var randomPage = Math.floor(Math.random() * Math.floor(parseInt(links.last.page, 10))) + 1
+
+      if (window.localStorage) {
+        window.localStorage.setItem('fetch_date', Date.now())
+      }
+
+      callback(randomPage, links.last.page)
+    }
+  }
+
+  function getContributor (randomPage) {
+    var xhr = new window.XMLHttpRequest()
+    xhr.responseType = 'json'
+
     xhr.open('GET', 'https://api.github.com/repos/nodejs/node/contributors?per_page=1&page=' + randomPage)
     xhr.send()
     xhr.onload = function () {
       if (xhr.status !== 200) {
-        return
+        return contributorCard.remove()
       }
 
       var contributor = xhr.response[0]
+
+      // Remove loading spinner and show avatar
+      loadingSpinner.remove()
+      contributorAvatar.classList.remove('hidden')
       // Set new values
-      thankingContributor.classList.remove('hidden')
-      contributorAvatar.parentNode.classList.add('active')
       contributorAvatar.src = contributor.avatar_url
+      contributorAvatar.parentElement.href = contributor.html_url
       contributorUsername.innerText = contributor.login
       contributorUsername.href = contributor.html_url
-      contributorCommits.innerText = contributor.contributions
-      contributorCommits.innerText = contributor.contributions + ' contributions'
+      contributorContributions.innerText = contributor.contributions
+      contributorContributions.innerText = contributor.contributions + ' contributions'
+      contributorContributions.parentElement.href = 'https://github.com/nodejs/node/commits?author=' + contributor.login
     }
   }
 

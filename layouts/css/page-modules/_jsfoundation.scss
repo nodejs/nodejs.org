@@ -34,13 +34,6 @@
   margin-top: 1em;
   border: 1px solid $white;
   border-radius: 3px;
-  transition: opacity 1s ease-out;
-  opacity: 0;
-  overflow: hidden;
-
-  &.active {
-    opacity: 1;
-  }
 
   img {
     border-radius: 50%;
