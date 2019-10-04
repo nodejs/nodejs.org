@@ -1,0 +1,45 @@
+.contributor-card {
+  height: 42px;
+  width: 300px;
+  padding: 1.5em 1em;
+  margin: 1em auto;
+  border: 1px solid $white;
+  border-radius: 3px;
+
+  > a {
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin-right: 1em;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spinner {
+    margin: 5px 0;
+    width: 30px;
+    height: 30px;
+    border-top-color: $white;
+    border-left-color: #444;
+    animation: spinner 400ms linear infinite;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: inline-block;
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
+@keyframes spinner {
+  100% {
+    transform: rotate(360deg);
+  }
+}
