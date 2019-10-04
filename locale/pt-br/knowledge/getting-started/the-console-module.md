@@ -19,9 +19,7 @@ console.log('Este script é:', __filename);
 console.log(__filename, process.title, process.argv);
 ```
 
-O primeiro exemplo mais simples, apenas exibe a string fornecida no `stdout`. Também há a possibilidade de exibir o conteúdo das variáveis, como demonstrado no exemplo #2; e 
-
-The first, simplest example just prints the provided string to `stdout`.  It can also be used to output the contents of variables, as evidenced in #2; além disso, `console.dir()` é chamado em todos os objetos que são passados como argumentos, enumerando suas propriedades.
+O primeiro exemplo mais simples, apenas exibe a string fornecida no `stdout`. Também há a possibilidade de exibir o conteúdo das variáveis, como demonstrado no exemplo #2; e além disso, `console.dir()` é chamado em todos os objetos que são passados como argumentos, enumerando suas propriedades.
 
 DICA VALIOSA NODE.JS:
 `console.log()` aceita três caracteres para formatação, `%s`, `%d`, and `%j`. Estes caracteres de formatação podem ser usados para exibir strings, dígitos, ou dados formatos como JSON - A ordem dos caracteres precisa corresponder com a ordem dos argumentos.
