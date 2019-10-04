@@ -11,7 +11,8 @@ layout: knowledge-post.hbs
 
 Qualquer pessoa familiar com o desenvolvimento voltado para navegadores provavelmente já usou `console.log` para fins de debug - Node.js implementou um objeto próprio `console` para imitar grande parte desta experiência. Porém, como nós estamos trabalhado do lado do servidor, ela funciona como uma camada acima do `stdout`, `stdin` e `stderr` em vez do console de debug do navegador.
 
-Por conta deste paralelo com o navegador, o módulo `console` se tornou a casa para grande parte da funcionalidade de "output" do Node. O mais simples é `console.log()` .
+Por conta deste paralelo com o navegador, o módulo `console` se tornou a casa para grande parte da funcionalidade de "output" do Node. O mais simples é `console.log()`.
+
 ```javascript
 console.log('Olá, pessoal!');
 console.log('Este script é:', __filename);
@@ -24,6 +25,7 @@ The first, simplest example just prints the provided string to `stdout`.  It can
 
 DICA VALIOSA NODE.JS:
 `console.log()` aceita três caracteres para formatação, `%s`, `%d`, and `%j`. Estes caracteres de formatação podem ser usados para exibir strings, dígitos, ou dados formatos como JSON - A ordem dos caracteres precisa corresponder com a ordem dos argumentos.
+
 ```javascript
 const name = 'Harry';
 const number = 17;
