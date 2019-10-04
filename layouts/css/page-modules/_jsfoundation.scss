@@ -23,6 +23,10 @@
 }
 
 .thanking-contributor {
+  &.hidden {
+    display: none;
+  }
+
   max-width: 300px;
   display: flex;
   align-items: center;
@@ -32,12 +36,10 @@
   border-radius: 3px;
   transition: opacity 1s ease-out;
   opacity: 0;
-  height: 0;
   overflow: hidden;
 
   &.active {
     opacity: 1;
-    height: auto;
   }
 
   img {
