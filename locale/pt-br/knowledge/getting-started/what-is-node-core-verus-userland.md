@@ -28,7 +28,7 @@ Um objetivo da biblioteca core miníma do node, é encorajar as pessoas a implem
 
 ## Userland Não é Menos
 
-Pelo contrário, é mais. Contruindo funcionalidades em "userland" em vez de no "node-core" significa:
+Pelo contrário, é mais. Construindo funcionalidades em "userland" em vez de no "node-core" significa:
 
 * Você possui muito mais liberdade para iterar na idéia.
 * Todas as pessoas que quiserem usar o seu módulo podem instalar o mesmo facilmente (se você o publicar para o npm).
