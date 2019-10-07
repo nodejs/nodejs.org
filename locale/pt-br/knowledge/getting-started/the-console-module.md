@@ -11,7 +11,7 @@ layout: knowledge-post.hbs
 
 Qualquer pessoa familiar com o desenvolvimento voltado para navegadores provavelmente já usou `console.log` para fins de debug - O Node.js implementou um objeto `console` próprio para imitar grande parte desta experiência. Porém, como nós estamos trabalhado do lado do servidor, ela funciona como uma camada acima do `stdout`, `stdin` e `stderr` em vez do console de debug do navegador.
 
-Por conta deste paralelo com o navegador, o módulo `console` se tornou a casa para grande parte da funcionalidade de "output" do Node. O mais simples é `console.log()`.
+Por conta deste paralelo com o navegador, o módulo `console` se tornou a principal API para grande parte da funcionalidade de "output" do Node. O mais simples é o `console.log()`.
 
 ```javascript
 console.log('Olá, pessoal!');
