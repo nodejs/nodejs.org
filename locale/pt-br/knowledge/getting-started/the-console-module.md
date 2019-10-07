@@ -53,6 +53,6 @@ for (var i = 0; i < 300; i++) {
 console.timeEnd('timer');
 ```
 
-Isto iria determinar a quantidade de tempo necessária para executar as ações entre as chamadas de `console.time` e `console.timeEnd`.
+Isto irá determinar a quantidade de tempo necessária para executar as ações entre as chamadas de `console.time` e `console.timeEnd`.
 
 Uma última função que merece ser mencionada é `console.trace()`, que exibe o conteúdo da pilha (stack trace) do momento que é chamado, sem ocasionar um erro. Isso ocasionalmente pode vim a ser útil caso você queira descobrir de onde determinada função defeituosa foi chamada.
