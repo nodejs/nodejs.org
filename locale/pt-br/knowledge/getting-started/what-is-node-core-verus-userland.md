@@ -30,7 +30,7 @@ Um objetivo da biblioteca core miníma do node, é encorajar as pessoas a implem
 
 Pelo contrário, é mais. Construindo funcionalidades em "userland" em vez de no "node-core" significa:
 
-* Você possui muito mais liberdade para iterar na idéia.
+* Você possui muito mais liberdade para desenvolver a ideia.
 * Todas as pessoas que quiserem usar o seu módulo podem instalar o mesmo facilmente (se você o publicar para o npm).
 * Você têm liberdade para quebrar convenções do node se isto faz sentido para o seu caso de uso.
 
