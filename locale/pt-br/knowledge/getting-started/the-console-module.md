@@ -34,7 +34,7 @@ const myObj = {
 console.log('Meu nome é %s, meu número é %d, e o objeto é %j', name, number, myObj);
 ```
 
-Uma pegadinha com a função `console.log`, e todas as funções que dependem nela, é que ela possui um "buffer" para a sua saída. Portanto se o processo é interrompido abruptamente, seja por meio de algum erro ou através do `process.exit()`, é bem possível que o conteúdo no buffer nunca seja definitivamente enviado para a tela. Isso pode causar certa frustação, portanto fique atento para esta situação.
+Uma pegadinha com a função `console.log`, e todas as funções que dependem dela, é que ela possui um "buffer" para a sua saída. Portanto se o processo é interrompido abruptamente, seja por meio de algum erro ou através do `process.exit()`, é bem possível que o conteúdo no buffer nunca seja definitivamente enviado para a tela. Isso pode causar certa frustração, portanto fique atento para esta situação.
 
 `console.error()` funciona do mesmo modo que `console.log`, exceto pelo fato que o conteúdo enviado para `stderr` em vez de `stdout`. Isso é na realidade uma diferença extremamente importante, pois o conteúdo enviado para `stderr` é sempre escrito de forma síncrona. Qualquer uso de `console.error`, ou qualquer outra função no core do Node.js que escreva para `stderr`, irá bloquear o processo até que todo o conteúdo seja escrito. Isso é útil para mensagens de error - você recebe elas no momento que elas acontecem - porém se usado de forma indiscriminada, pode tornar o processo do Node.js bastante lento.
 
