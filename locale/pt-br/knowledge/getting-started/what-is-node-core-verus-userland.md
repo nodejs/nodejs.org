@@ -12,7 +12,7 @@ layout: knowledge-post.hbs
 
 Ocasionalmente, nas trocas de mensagens nas listas de discussões do Node.js e nos canais do IRC, você pode notar coisas denominadas como "node-core" e "userland".
 
-Certamente que, tradicionalmente, "userland" ou "userspace" referem-se a tudo que está fora da Kernel do sistema opercional. Neste sentido, o próprio Node é um programa "userland".
+Certamente que, tradicionalmente, "userland" ou "userspace" referem-se a tudo que está fora da Kernel do sistema operacional. Neste sentido, o próprio Node é um programa "userland".
 
 Porém, no contexto do NodeJS, "core" se refere aos módulos e bindings que são compiladas no NodeJS. Em geral, eles permitem um "gancho" em funcionalidades de baixo nível muito bem-entendidas que praticamente todos os programas que utilizam a rede precisam: TCP, HTTP, DNS, o sistema de arquivos, controle de processos e algumas outras coisas. Se algo é chique o suficiente para se discutir sobre, existe uma boa chance que não será parte do "node-core". HTTP já é grande o suficiente por si só, e se ele não fosse tão popular, ele muito provavelmente não faria parte do NodeJS.
 
