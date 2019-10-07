@@ -24,7 +24,7 @@ A pergunta sobre o que é propriamente dito "node-core" e o que deve ser "userla
 
 ## Isso é Uma Coisa Boa
 
-Um objetivo da biblioteca core miníma do node, é encorajar as pessoas a implementarem coisas de forma criativa, sem forçar determinadas idéias em todos. Com um core minúsculo e uma comunidade de módulos "userland" vibrante, nós podemos todos florescer e experimentar sem o ônus oneroso de ter que sempre concordar o tempo todo.
+Um objetivo da biblioteca core miníma do node, é encorajar as pessoas a implementarem coisas de forma criativa, sem forçar determinadas idéias em todos. Com um core minúsculo e uma comunidade de módulos "userland" vibrante, nós podemos todos florescer e experimentar sem a utopia de termos sempre que concordar o tempo todo.
 
 ## Userland Não é Menos
 
