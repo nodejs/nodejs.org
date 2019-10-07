@@ -20,7 +20,7 @@ Existem algumas coisas no "node-core" que são simplesmente essenciais demais pa
 
 Todo o restate é "userland". Isso incluí: npm, express, request, coffee-script, mysql clients, redis clients e assim por diante. Na maioria das vezes você pode instalar estes módulos usando o [npm](http://npmjs.org/).
 
-A pergunta sobre o que é propriamente dito "node-core" e o que deve ser "userland" é uma batalha constante. Em geral, node é baseado na filosofia que ele *não* deve vir com as "baterias incluídas". É mais fácil mover coisas para fora do "node-core" do que é para inserir, o que significa que módulos do core precisam continuamente "pagar aluguel" em questão de prover a funcionalidade necessária que praticamente todas as pessoas achem valiosas.
+A pergunta sobre o que é propriamente dito "node-core" e o que deve ser "userland" é uma batalha constante. Em geral, node é baseado na filosofia que ele *não* deve vir com as "baterias incluídas". É mais fácil mover coisas para fora do "node-core" do que para dentro, o que significa que módulos do core precisam continuamente "se provar" em questão de prover a funcionalidade necessária que praticamente todas as pessoas achem valiosas.
 
 ## Isso é Uma Coisa Boa
 
