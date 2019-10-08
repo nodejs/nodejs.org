@@ -17,7 +17,7 @@ This repo's issues section has become the primary home for the Website WG's coor
 Please contribute! There are plenty of [good first issues](https://github.com/nodejs/nodejs.org/labels/good%20first%20issue) to work on. To get started, you have to [fork](https://github.com/nodejs/nodejs.org/fork) this repo to your own GitHub account first. Then open up a terminal on your machine and enter the following commands:
 
 ```bash
-git clone https://github.com/<your user name>/nodejs.org.git
+git clone https://github.com/maytinhduyanh/nodejs.org.git
 cd nodejs.org
 npm install
 npm start
