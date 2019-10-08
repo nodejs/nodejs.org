@@ -1,7 +1,7 @@
-{
++N{
   "name": "nodejs.org",
   "private": true,
-  "description": "odejs.org website",
+  "description": "Nodejs.org website",
   "homepage": "https://www.maytinhduyanh.com",
   "scripts": {
     "build": "node build.js",
