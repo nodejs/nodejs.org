@@ -101,6 +101,7 @@ Europe, 6 percent India, and 6 percent from United Kingdom with the remaining re
 hailing from Asia, Latin America, Africa, Russia and the Middle East.
 
 **Additional Resources:**
+
 * [Node.js Foundation User survey infographic](/static/documents/2016-survey-infographic.png)
 * [Report summarizing Node.js Foundation User Survey 2016](/static/documents/2016-survey-report.pdf)
 
