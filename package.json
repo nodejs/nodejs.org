@@ -1,8 +1,8 @@
 {
-  "name": "nodejs.org",
+  "name": "maytinhduyanh.com",
   "private": true,
-  "description": "Nodejs.org website",
-  "homepage": "https://nodejs.org",
+  "description": "maytinhduyanh.com website",
+  "homepage": "https://www.maytinhduyanh.com",
   "scripts": {
     "build": "node build.js",
     "build:deploy": "node build.js --preserveLocale",
