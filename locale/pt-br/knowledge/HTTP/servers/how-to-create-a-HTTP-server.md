@@ -49,7 +49,7 @@ O objeto da requisição contém itens como a URL solicitada, mas neste exemplo 
 
 <!-- The response object is how we send the headers and contents of the response back to the user making the request. Here we return a 200 response code (signaling a successful response) with the body "Hello World". Other headers, such as `Content-type`, would also be set here. -->
 
-O objeto de resposta é como nós enviamos `headers` e `contents` na resposta de volta ao usuário que solicitou a requisição. Aqui retornamos um código de resposta 200 (sinalizando uma resposta bem-sucedida) com o `body` "Hello World". Outros `headers`, como o `Content-type`, também é definido aqui.
+O objeto da resposta é como nós enviamos `headers` e `contents` na resposta de volta ao usuário que solicitou a requisição. Aqui retornamos um código de resposta 200 (sinalizando uma resposta bem-sucedida) com o `body` "Hello World". Outros `headers`, como o `Content-type`, também poderiam ser definidos aqui.
 
 <!-- Next, the `http.createServer` method creates a server that calls `requestListener` whenever a request comes in. The next line, `server.listen(8080)`, calls the `listen` method, which causes the server to wait for incoming requests on the specified port - 8080, in this case. -->
 
