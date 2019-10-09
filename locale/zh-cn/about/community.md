@@ -6,7 +6,8 @@ layout: about.hbs
 # 社区委员会
 
 社区委员会（CommComm）是 Node.js 最高级别的委员会。委员会对外拥有一定的权利，其中包括：
-- 社区 [宣传](https://github.com/nodejs/evangelism)
+
+- 社区 [布道](https://github.com/nodejs/evangelism)
 - 教育倡议
 - Node.js 基础的文化指导
 - 社区组织拓展

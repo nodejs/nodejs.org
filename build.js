@@ -23,6 +23,7 @@ const stylus = require('stylus')
 const ncp = require('ncp')
 const junk = require('junk')
 
+const githubLinks = require('./scripts/plugins/githubLinks')
 const navigation = require('./scripts/plugins/navigation')
 const anchorMarkdownHeadings = require('./scripts/plugins/anchor-markdown-headings')
 const loadVersions = require('./scripts/load-versions')
@@ -79,6 +80,8 @@ function buildLocale (source, locale, opts) {
     })
   // Sets the build source as the locale folder.
     .source(path.join(__dirname, 'locale', locale))
+    // site.json files aren't needed in the output dir
+    .ignore('site.json')
     .use(withPreserveLocale(opts && opts.preserveLocale))
     // Extracts the main menu and sub-menu links form locale's site.json and
     // adds them to the metadata. This data is used in the navigation template
@@ -207,33 +210,6 @@ function withPreserveLocale (preserveLocale) {
     } else {
       next()
     }
-  }
-}
-
-// This middleware adds "Edit on GitHub" links to every editable page
-function githubLinks (options) {
-  return (files, m, next) => {
-    // add suffix (".html" or "/" or "\" for windows) to each part of regex
-    // to ignore possible occurrences in titles (e.g. blog posts)
-    const isEditable = /security\.html|about(\/|\\)|docs(\/|\\)|foundation(\/|\\)|get-involved(\/|\\)|knowledge(\/|\\)/
-
-    Object.keys(files).forEach((path) => {
-      if (!isEditable.test(path)) {
-        return
-      }
-
-      const file = files[path]
-      const url = `https://github.com/nodejs/nodejs.org/edit/master/locale/${options.locale}/${path.replace('.html', '.md').replace(/\\/g, '/')}`
-      const editText = options.site.editOnGithub || 'Edit on GitHub'
-
-      const contents = file.contents.toString().replace(/<h1(.*?)>(.*?)<\/h1>/, (match, $1, $2) => {
-        return `<a class="edit-link" href="${url}">${editText}</a> <h1${$1}>${$2}</h1>`
-      })
-
-      file.contents = Buffer.from(contents)
-    })
-
-    next()
   }
 }
 

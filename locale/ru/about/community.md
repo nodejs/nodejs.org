@@ -6,6 +6,7 @@ layout: about.hbs
 # Комитет Сообщества
 
 Комитет Сообщества (CommComm) является комитетом наивысшего уровня в Node.js Foundation. CommComm обладает полномочиями по работе с общественностью, включая:
+
 - Community [Evangelism](https://github.com/nodejs/evangelism)
 - Образовательные инициативы
 - Культурное направление Node.js Foundation
