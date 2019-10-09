@@ -78,6 +78,7 @@ perf record -e cycles:u -g -- node --perf-basic-prof app.js
 7. run `stackvis perf < perfs.out > flamegraph.htm`
 
  -->
+
 1. `perf` をインストールします (まだインストールされていなければ、通常 linux-tools-common パッケージ経由で利用可能です)
 2. `perf` を実行してみてください - カーネルモジュールが足りないと表示されるかもしれません、それらもインストールしてください
 3. perf を有効にして node を実行します (Node.js のバージョンに固有のヒントについては [perf の出力の問題](#perf-output-issues) を参照してください)
@@ -216,6 +217,7 @@ Node.js 8.x 以降には、V8 エンジンの JavaScript コンパイルパイ�
 [0x](https://www.npmjs.com/package/0x) にはいくつかの緩和策が組み込まれています。
 
 詳細:
+
 - https://github.com/nodejs/benchmarking/issues/168
 - https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
 

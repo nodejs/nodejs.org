@@ -79,6 +79,8 @@ function buildLocale (source, locale, opts) {
     })
   // Sets the build source as the locale folder.
     .source(path.join(__dirname, 'locale', locale))
+    // site.json files aren't needed in the output dir
+    .ignore('site.json')
     .use(withPreserveLocale(opts && opts.preserveLocale))
     // Extracts the main menu and sub-menu links form locale's site.json and
     // adds them to the metadata. This data is used in the navigation template
