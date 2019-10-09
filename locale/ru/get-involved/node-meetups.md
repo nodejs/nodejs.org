@@ -104,7 +104,7 @@ layout: contribute.hbs
 
 - [Встреча](https://www.Встреча.com/es-ES/NodersJS/)
 - Частота встреч ― monthly
-- Как стать докладчиком? ― Issue on Github [here](https://github.com/Noders/Встречаs/issues/new)
+- Как стать докладчиком? ― Issue on GitHub [here](https://github.com/Noders/Встречаs/issues/new)
 - Организаторы ― Rodrigo Adones and Ender Bonnet
 - Контакты организаторов ― [Rodrigo](https://github.com/L0rdKras), [Ender](https://twitter.com/enbonnet)
 
