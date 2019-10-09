@@ -29,7 +29,7 @@ controls via the V8 C++ API. V8 is maintained by Google, for use in Chrome.
 
 - [Documentation](https://v8docs.nodesource.com/) -->
 
-A biblioteca do V8 provê um engine Javascript para o Node.js, o qual
+A biblioteca do V8 provê um engine JavaScript para o Node.js, o qual
 é controlado pela API C++ do próprio V8. O V8 é atualmente mantido
 pelo Google, por conta de seu uso no navegador Chrome.
 
@@ -80,7 +80,7 @@ like mDNS.
 
 - [Documentation](http://c-ares.haxx.se/docs.html) -->
 Para algumas requisições assíncronas de DNS, o Node.js utilizar uma biblioteca
-escrita em C chamada *c-ares*. Ela é exposta através do módulo de DNS no Javascript
+escrita em C chamada *c-ares*. Ela é exposta através do módulo de DNS no JavaScript
 na família `resolve()` de funções. A função `lookup()`, que é o que o resto do core
 do Node.js usa, faz uso de uma chamada `getaddrinfo(3)` que é processada em threads
 na libuv. A razão por trás disso é que o c-ares suporta caminhos como
