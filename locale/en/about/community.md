@@ -6,6 +6,7 @@ layout: about.hbs
 # Community Committee
 
 The Community Committee (CommComm) is a top-level committee in the Node.js Foundation. The CommComm has authority over outward-facing community outreach efforts, including:
+
 - Community [Evangelism](https://github.com/nodejs/evangelism)
 - Education Initiatives
 - Cultural Direction of Node.js Foundation

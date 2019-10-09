@@ -6,6 +6,7 @@ layout: docs.hbs
 # 发布混合了 N-API 和 non-N-API 包
 
 以下步骤基于 `iotivity-node` 进行说明：
+
 - 首先，发布一个 non-N-API 版本：
   - 更新 `package.json` 版本。对于 `iotivity-node`，目前版本号是 `1.2.0-2`。
   - 通览所有的清单（确保测试/示例/文档都正常）。
