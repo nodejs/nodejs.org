@@ -21,7 +21,6 @@ Core Working Groups are created by the
 * [Release](#release)
 * [Security](#security)
 * [Streams](#streams)
-* [Website](#website)
 
 ### [Addon API](https://github.com/nodejs/nan)
 
@@ -240,15 +239,3 @@ Responsibilities include:
 * Assisting in the implementation of stream providers within Node.js.
 * Recommending versions of `readable-stream` to be included in Node.js.
 * Messaging about the future of streams to give the community advance notice of changes.
-
-### [Website](https://github.com/nodejs/nodejs.org)
-
-The Website Working Group's purpose is to build and maintain a public
-website for the Node.js project.
-
-Responsibilities include:
-
-* Developing and maintaining a build and automation system for nodejs.org.
-* Ensuring the site is regularly updated with changes made to Node.js, like
-  releases and features.
-* Fostering and enabling a community of translators.

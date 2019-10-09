@@ -24,7 +24,7 @@ Instead, the technical direction of the project will be established by a
 technical steering committee run with an open governance model. There has been a
 lot of discussion on the dev policies and [governance
 model](https://github.com/joyent/nodejs-advisory-board/tree/master/governance-proposal)
-on Github.  As we move toward the Foundation model, the core team on Node.js is
+on GitHub.  As we move toward the Foundation model, the core team on Node.js is
 already adopting some of these policies [as shown
 here](https://github.com/joyent/node-website/pull/111).
 

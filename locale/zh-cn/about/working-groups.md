@@ -20,7 +20,6 @@ title: 工作组
 * [发布组](#release)
 * [安全组](#security)
 * [Streams](#streams)
-* [网站开发组](#website)
 
 ### <!--addon api--> [API 插件组](https://github.com/nodejs/nan)
 
@@ -200,13 +199,3 @@ Streams 工作组致力于支持和改进 Node.js 中使用的流 API 和 npm �
 * 在 Node.js 中协助实现流的提供。
 * 推荐在 Node.js 中包含 `readable-stream` 不同版本。
 * 及时向社区发声，告知流的未来发展。
-
-### <!--website--> [网站开发组](https://github.com/nodejs/nodejs.org)
-
-网站开发组的目的旨在构建和维护一个 Node.js 项目的公共网站。
-
-承担职责：
-
-* 为 nodejs.org 开发以及维护一个构建以及自动化系统。
-* 确保网站随着 Node.js 的一些更改而定期更新，诸如新发布和新特性。
-* 培养和扶持译者群体。
