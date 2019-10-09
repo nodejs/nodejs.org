@@ -8,7 +8,7 @@ slug: some-new-node-projects
 layout: blog-post.hbs
 ---
 
-* Superfeedr released [a Node XMPP Server](http://blog.superfeedr.com/node-xmpp-server/). "_Since [astro](http://spaceboyz.net/~astro/) had been doing an **amazing work** with his [node-xmpp](https://github.com/astro/node-xmpp) library to build _Client_, _Components_ and even _Server to server_ modules, the logical next step was to try to build a _Client to Server_ module so that we could have a full blown server. That’s what we worked on the past couple days, and [it’s now on Github](https://github.com/superfeedr/node-xmpp)!_
+* Superfeedr released [a Node XMPP Server](http://blog.superfeedr.com/node-xmpp-server/). "_Since [astro](http://spaceboyz.net/~astro/) had been doing an **amazing work** with his [node-xmpp](https://github.com/astro/node-xmpp) library to build _Client_, _Components_ and even _Server to server_ modules, the logical next step was to try to build a _Client to Server_ module so that we could have a full blown server. That’s what we worked on the past couple days, and [it’s now on GitHub](https://github.com/superfeedr/node-xmpp)!_
 
 * Joyent's Mark Cavage released [LDAP.js](http://ldapjs.org/). "_ldapjs is a pure JavaScript, from-scratch framework for implementing [LDAP](http://tools.ietf.org/html/rfc4510) clients and servers in [Node.js](https://nodejs.org/). It is intended for developers used to interacting with HTTP services in node and [express](http://expressjs.com)._
 
