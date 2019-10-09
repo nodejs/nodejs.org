@@ -21,7 +21,7 @@ layout: contribute.hbs
 - [NodeSchool.io](https://nodeschool.io/) 通过互动命令的方式教会你 Node.js 的概念。
 - [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) 每日收集最新资讯。
 - [The DEV Community Node.js tag](https://dev.to/t/node) 是一个共享 Node.js 项目、文章和教程，以及开始讨论并接受与 Node.js 相关的主题，我们欢迎任何级别的开发人员加入其中。
-- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) 是一个 Nodejs 后端开发者在 Discord 上互相支援的友好社区。
+- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) 是一个 Node.js 后端开发者在 Discord 上互相支援的友好社区。
 
 ## 国际化社区站点及项目
 
