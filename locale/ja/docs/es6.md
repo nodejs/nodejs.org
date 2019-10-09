@@ -44,7 +44,7 @@ node --v8-options | grep "in progress"
 ## インフラ側で --harmony フラグを使うように設定しているんですが、フラグを除くべきですか？
 
 <!-- The current behaviour of the `--harmony` flag on Node.js is to enable **staged** features only. After all, it is now a synonym of `--es_staging`. As mentioned above, these are completed features that have not been considered stable yet. If you want to play safe, especially on production environments, consider removing this runtime flag until it ships by default on V8 and, consequently, on Node.js. If you keep this enabled, you should be prepared for further Node.js upgrades to break your code if V8 changes their semantics to more closely follow the standard. -->
-Node.js の --harmony フラグの現在の動作は **staged（ステージング）** 機能のみを有効にすることです。つまるところ `--es_staging` フラグと同じです。上記の通り、これらはまだ安定しているとは考えられていない完成した機能です。特に本番環境で安定して Node.js を使いたい場合は、このランタイムフラグが標準で V8 でリリースされ、その結果 Node.js でも標準になるまでランタイムフラグを削除することを検討してください。このフラグを継続的に利用する場合は Node.JS のアップグレードの際に標準に準拠するために変更された V8 に挙動によってコードが動作しなくなる可能性を考慮して対策をする必要があります。
+Node.js の --harmony フラグの現在の動作は **staged（ステージング）** 機能のみを有効にすることです。つまるところ `--es_staging` フラグと同じです。上記の通り、これらはまだ安定しているとは考えられていない完成した機能です。特に本番環境で安定して Node.js を使いたい場合は、このランタイムフラグが標準で V8 でリリースされ、その結果 Node.js でも標準になるまでランタイムフラグを削除することを検討してください。このフラグを継続的に利用する場合は Node.js のアップグレードの際に標準に準拠するために変更された V8 に挙動によってコードが動作しなくなる可能性を考慮して対策をする必要があります。
 
 <!-- ## How do I find which version of V8 ships with a particular version of Node.js? -->
 ## 特定のバージョンの Node.js が組み込まれている V8 のバージョンを確認するにはどうすればよいですか？
