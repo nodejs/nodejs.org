@@ -316,6 +316,7 @@ version (and lacking type checks also adds DoS to the list of potential problems
 ## `Buffer.allocUnsafe()` について
 
 `Buffer.allocUnsafe()` を使用するときは特に注意してください:
+
 * 正当な理由がない場合は使用しないでください
   * 例えば、おそらく小さなバッファのパフォーマンスの違いを見たことがない場合でしょう。
     実際、それらは `Buffer.alloc()` でもっと速いかもしれません

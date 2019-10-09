@@ -10,33 +10,37 @@ layout: knowledge-post.hbs
 
 Exemplo:
 
-    console.log("entrando na instrução try-catch");
+```javascript
+console.log("entrando na instrução try-catch");
 
-    try {
-      console.log("entrando no bloco try");
-      throw "lançar mensagem";
-      console.log("esta mensagem nunca será vista");
-    }
-    catch (e) {
-      console.log("entrando no bloco catch");
-      console.log(e);
-      console.log("saindo do bloco catch");
-    }
-    finally {
-      console.log("entrando e saindo do bloco finally");
-    }
+try {
+  console.log("entrando no bloco try");
+  throw "lançar mensagem";
+  console.log("esta mensagem nunca será vista");
+}
+catch (e) {
+  console.log("entrando no bloco catch");
+  console.log(e);
+  console.log("saindo do bloco catch");
+}
+finally {
+  console.log("entrando e saindo do bloco finally");
+}
 
-    console.log("saindo da instrução try-catch");
+console.log("saindo da instrução try-catch");
+```
 
 Results:
 
-    entrando na instrução try-catch
-    entrando no bloco try
-    entrando no bloco catch
-    lançar mensagem
-    saindo do bloco catch
-    entrando e saindo do bloco finally
-    saindo da instrução try-catch
+```
+entrando na instrução try-catch
+entrando no bloco try
+entrando no bloco catch
+lançar mensagem
+saindo do bloco catch
+entrando e saindo do bloco finally
+saindo da instrução try-catch
+```
 
 <!-- JavaScript's `try-catch-finally` statement works very similarly to the `try-catch-finally` encountered in C++ and Java.  First, the try block is executed until and unless the code in it throws an exception (whether it is an explicit `throw` statement, the code has an uncaught native exception, or if the code calls a function that uses `throw`).  -->
 A instrução de `try-catch-finally` em JavaScript funciona de forma muito semelhante ao `try-catch-finally` encontrado em C++ e Java.  Primeiro, o bloco try é executado até e a menos que o código nele dispare uma exceção (se houver uma instrução explícita `throw`, o código possui uma exceção nativa não identificado, ou se o código chamar uma função que usa `throw`).

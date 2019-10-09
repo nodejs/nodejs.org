@@ -11,28 +11,30 @@ Reading the data from a POST request (i.e. a form submission) can be a little bi
 
 Here is a quick script that shows you how to do exactly that:
 
-    var http = require('http');
-    var postHTML =
-      '<html><head><title>Post Example</title></head>' +
-      '<body>' +
-      '<form method="post">' +
-      'Input 1: <input name="input1"><br>' +
-      'Input 2: <input name="input2"><br>' +
-      '<input type="submit">' +
-      '</form>' +
-      '</body></html>';
+```javascript
+var http = require('http');
+var postHTML =
+  '<html><head><title>Post Example</title></head>' +
+  '<body>' +
+  '<form method="post">' +
+  'Input 1: <input name="input1"><br>' +
+  'Input 2: <input name="input2"><br>' +
+  '<input type="submit">' +
+  '</form>' +
+  '</body></html>';
 
-    http.createServer(function (req, res) {
-      var body = "";
-      req.on('data', function (chunk) {
-        body += chunk;
-      });
-      req.on('end', function () {
-        console.log('POSTed: ' + body);
-        res.writeHead(200);
-        res.end(postHTML);
-      });
-    }).listen(8080);
+http.createServer(function (req, res) {
+  var body = "";
+  req.on('data', function (chunk) {
+    body += chunk;
+  });
+  req.on('end', function () {
+    console.log('POSTed: ' + body);
+    res.writeHead(200);
+    res.end(postHTML);
+  });
+}).listen(8080);
+```
 
 The variable `postHTML` is a static string containing the HTML for two input boxes and a submit box - this HTML is provided so that you can `POST` example data. This is NOT the right way to serve static HTML - please see [How to Serve Static Files](/en/knowledge/HTTP/servers/how-to-serve-static-files/) for a more proper example.
 

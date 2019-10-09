@@ -17,8 +17,10 @@ Another important use for npm is dependency management.  When you have a node pr
 
 Example:
 
-    git clone https://github.com/cloudhead/vows.git
-    cd vows
-    npm install
+```
+git clone https://github.com/cloudhead/vows.git
+cd vows
+npm install
+```
 
 After running those commands, you will see a `node_modules` folder containing all of the project dependencies specified in the package.json.
