@@ -3,22 +3,6 @@ title: Buffer.from()/Buffer.alloc() API への移植
 layout: docs.hbs
 ---
 
-<!--
-# Porting to the `Buffer.from()`/`Buffer.alloc()` API
-
-## Overview
-
-This guide explains how to migrate to safe `Buffer` constructor methods. The migration fixes the following deprecation warning:
-
-<div class="highlight-box">
-The Buffer() and new Buffer() constructors are not recommended for use due to security and usability concerns. Please use the new Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() construction methods instead.
-</div>
-
-- [Variant 1: Drop support for Node.js ≤ 4.4.x and 5.0.0 — 5.9.x](#variant-1) (*recommended*)
-- [Variant 2: Use a polyfill](#variant-2)
-- [Variant 3: Manual detection, with safeguards](#variant-3)
-
- -->
 # `Buffer.from()`/`Buffer.alloc()` API への移植
 
 ## 概要
@@ -29,9 +13,9 @@ The Buffer() and new Buffer() constructors are not recommended for use due to se
 The Buffer() and new Buffer() constructors are not recommended for use due to security and usability concerns. Please use the new Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() construction methods instead.
 </div>
 
-- [Variant 1: Node.js ≤ 4.4.x および 5.0.0 — 5.9.x のサポートを終了](#variant-1) (*推奨*)
-- [Variant 2: ポリフィルの使用](#variant-2)
-- [Variant 3: セーフガード付きの手動検出](#variant-3)
+* [Variant 1: Node.js ≤ 4.4.x および 5.0.0 — 5.9.x のサポートを終了](#variant-1) (*推奨*)
+* [Variant 2: ポリフィルの使用](#variant-2)
+* [Variant 3: セーフガード付きの手動検出](#variant-3)
 
 <!--
 ### Finding problematic bits of code using `grep`
@@ -52,9 +36,9 @@ exceptions).
 
 Node.js ≥ 8.0.0 (これが推奨されています) を使用している場合、Node.js は関連するコードを見つけるのに役立つ複数のオプションを公開します。
 
-- `--trace-warnings` は Node.js にこの警告と Node.js によって表示される他の警告のスタックトレースを表示させます
-- `--trace-deprecation` でも同じことができますが、それは非推奨警告のためだけです
-- `--pending-deprecation` はより多くの種類の非推奨警告を表示します。特に Node.js 8 でも、`Buffer()` の非推奨警告が表示されます
+* `--trace-warnings` は Node.js にこの警告と Node.js によって表示される他の警告のスタックトレースを表示させます
+* `--trace-deprecation` でも同じことができますが、それは非推奨警告のためだけです
+* `--pending-deprecation` はより多くの種類の非推奨警告を表示します。特に Node.js 8 でも、`Buffer()` の非推奨警告が表示されます
 
 環境変数を使用してこれらのフラグを設定できます。
 
@@ -97,38 +81,6 @@ ESLint の規則 [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer
 ポリフィルでは、この方法と上記の他の方法を
 組み合わせて使用することをお勧めします。
 
-<!--
-## &lt;!--variant-1--&gt;Variant 1: Drop support for Node.js ≤ 4.4.x and 5.0.0 — 5.9.x
-
-This is the recommended solution nowadays that would imply only minimal overhead.
-
-The Node.js 5.x release line has been unsupported since July 2016, and the Node.js 4.x release line reaches its End of Life in April 2018 (→ [Schedule](https://github.com/nodejs/Release#release-schedule)). This means that these versions of Node.js will *not* receive any updates, even in case of security issues, so using these release lines should be avoided, if at all possible.
-
-What you would do in this case is to convert all `new Buffer()` or `Buffer()` calls to use `Buffer.alloc()` or `Buffer.from()`, in the following way:
-
-- For `new Buffer(number)`, replace it with `Buffer.alloc(number)`.
-- For `new Buffer(string)` (or `new Buffer(string, encoding)`), replace it with `Buffer.from(string)` (or `Buffer.from(string, encoding)`).
-- For all other combinations of arguments (these are much rarer), also replace `new Buffer(...arguments)` with `Buffer.from(...arguments)`.
-
-Note that `Buffer.alloc()` is also _faster_ on the current Node.js versions than
-`new Buffer(size).fill(0)`, which is what you would otherwise need to ensure zero-filling.
-
-Enabling ESLint rule [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer-constructor)
-or
-[node/no-deprecated-api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md)
-is recommended to avoid accidental unsafe `Buffer` API usage.
-
-There is also a [JSCodeshift codemod](https://github.com/joyeecheung/node-dep-codemod#dep005)
-for automatically migrating `Buffer` constructors to `Buffer.alloc()` or `Buffer.from()`.
-Note that it currently only works with cases where the arguments are literals or where the
-constructor is invoked with two arguments.
-
-_If you currently support those older Node.js versions and dropping support for them is not possible, or if you support older branches of your packages, consider using [Variant 2](#variant-2)
-or [Variant 3](#variant-3) on older branches, so people using those older branches will also receive
-the fix. That way, you will eradicate potential issues caused by unguarded `Buffer` API usage and
-your users will not observe a runtime deprecation warning when running your code on Node.js 10._
-
- -->
 ## <!--variant-1-->Variant 1: Node.js ≤ 4.4.x および 5.0.0 — 5.9.x のサポートを終了
 
 これは現在推奨されている解決策であり、最小限のオーバーヘッドしか意味しません。
@@ -137,9 +89,9 @@ Node.js 5.x リリースラインは2016年7月からサポートされていま
 
 この場合にすることは、すべての `new Buffer()` または `Buffer()` 呼び出しが `Buffer.alloc()` または `Buffer.from()` を使用するように変換することです。
 
-- `new Buffer(number)` の場合は、`Buffer.alloc(number)` に置き換えます
-- `new Buffer(string)` (または `new Buffer(string, encoding)`) の場合は、`Buffer.from(string)` (または `Buffer.from(string, encoding)`) に置き換えます
-- 他のすべての引数の組み合わせ (これは滅多にありません)では、`new Buffer(...arguments)` を `Buffer.from(...arguments)` に置き換えます
+* `new Buffer(number)` の場合は、`Buffer.alloc(number)` に置き換えます
+* `new Buffer(string)` (または `new Buffer(string, encoding)`) の場合は、`Buffer.from(string)` (または `Buffer.from(string, encoding)`) に置き換えます
+* 他のすべての引数の組み合わせ (これは滅多にありません)では、`new Buffer(...arguments)` を `Buffer.from(...arguments)` に置き換えます
 
 `Buffer.alloc()` は現在の Node.js バージョンにおいても
 `new Buffer(size).fill(0)`と比べて _より速い_ ことに注意してください。
@@ -159,57 +111,11 @@ _現在、古いバージョンの Node.js をサポートしていて、それ�
 そうすることで、無防備な `Buffer` API の使用によって引き起こされる潜在的な問題を根絶し、
 Node.js 10 でコードを実行するときにユーザは実行時廃止予定の警告を見ることはないでしょう。_
 
-<!--
-## &lt;!--variant-2--&gt;Variant 2: Use a polyfill
-
-There are three different polyfills available:
-
-- **[safer-buffer](https://www.npmjs.com/package/safer-buffer)** is a drop-in replacement for the
-  entire `Buffer` API, that will _throw_ when using `new Buffer()`.
-
-  You would take exactly the same steps as in [Variant 1](#variant-1), but with a polyfill
-  `const Buffer = require('safer-buffer').Buffer` in all files where you use the new `Buffer` API.
-
-  Do not use the old `new Buffer()` API. In any files where the line above is added,
-  using old `new Buffer()` API will _throw_.
-
-- **[buffer-from](https://www.npmjs.com/package/buffer-from) and/or
-  [buffer-alloc](https://www.npmjs.com/package/buffer-alloc)** are
-  [ponyfills](https://ponyfill.com/) for their respective part of the `Buffer` API. You only need
-  to add the package(s) corresponding to the API you are using.
-
-  You would import the module needed with an appropriate name, e.g.
-  `const bufferFrom = require('buffer-from')` and then use that instead of the call to
-  `new Buffer()`, e.g. `new Buffer('test')` becomes `bufferFrom('test')`.
-
-  A downside with this approach is slightly more code changes to migrate off them (as you would be
-  using e.g. `Buffer.from()` under a different name).
-
-- **[safe-buffer](https://www.npmjs.com/package/safe-buffer)** is also a drop-in replacement for
-  the entire `Buffer` API, but using `new Buffer()` will still work as before.
-
-  A downside to this approach is that it will allow you to also use the older `new Buffer()` API
-  in your code, which is problematic since it can cause issues in your code, and will start
-  emitting runtime deprecation warnings starting with Node.js 10
-  ([read more here](https://github.com/chalker/safer-buffer#why-not-safe-buffer)).
-
-Note that in either case, it is important that you also remove all calls to the old `Buffer`
-API manually — just throwing in `safe-buffer` doesn't fix the problem by itself, it just provides
-a polyfill for the new API. I have seen people doing that mistake.
-
-Enabling ESLint rule [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer-constructor)
-or
-[node/no-deprecated-api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md)
-is recommended.
-
-_Don't forget to drop the polyfill usage once you drop support for Node.js < 4.5.0._
-
- -->
 ## <!--variant-2-->Variant 2: ポリフィルの使用
 
 利用可能な3つの異なるポリフィルがあります。
 
-- **[safer-buffer](https://www.npmjs.com/package/safer-buffer)** は `Buffer` API 全体の代わりとなるドロップインであり、
+* **[safer-buffer](https://www.npmjs.com/package/safer-buffer)** は `Buffer` API 全体の代わりとなるドロップインであり、
   `new Buffer()` を使用すると _throw_ します。
 
   [Variant 1](#variant-1)とまったく同じ手順を踏みますが、
@@ -218,7 +124,7 @@ _Don't forget to drop the polyfill usage once you drop support for Node.js < 4.5
   古い `new Buffer()` API を使わないでください。上記の行が追加されているファイルでは、
   古い `new Buffer()` API を使用すると _throw_ されます。
 
-- **[buffer-from](https://www.npmjs.com/package/buffer-from)
+* **[buffer-from](https://www.npmjs.com/package/buffer-from)
   または [buffer-alloc](https://www.npmjs.com/package/buffer-alloc)** あるいはその両方は
   `Buffer` API のそれぞれの部分の [ポリフィル](https://ponyfill.com/) です。
   使用している API に対応するパッケージを追加するだけです。
@@ -230,7 +136,7 @@ _Don't forget to drop the polyfill usage once you drop support for Node.js < 4.5
   このアプローチの欠点は、移行するためのコード変更 (たとえば、`Buffer.from()` を別の名前で使用しているような) が
   多少増えることです。
 
-- **[safe-buffer](https://www.npmjs.com/package/safe-buffer)** も `Buffer` API 全体の代わりになるドロップインですが、
+* **[safe-buffer](https://www.npmjs.com/package/safe-buffer)** も `Buffer` API 全体の代わりになるドロップインですが、
   `new Buffer()` を使用しても以前と同じように動作します。
 
   このアプローチのマイナス面は、コード内で古い `new Buffer()` API を使用することも可能になることです。
@@ -410,6 +316,7 @@ version (and lacking type checks also adds DoS to the list of potential problems
 ## `Buffer.allocUnsafe()` について
 
 `Buffer.allocUnsafe()` を使用するときは特に注意してください:
+
 * 正当な理由がない場合は使用しないでください
   * 例えば、おそらく小さなバッファのパフォーマンスの違いを見たことがない場合でしょう。
     実際、それらは `Buffer.alloc()` でもっと速いかもしれません
@@ -425,83 +332,20 @@ version (and lacking type checks also adds DoS to the list of potential problems
 _Node.js のバージョンによっては、ゼロフィリングなしに `new Buffer()` を使用する場合も同様です
 (また、型チェックがないと、DoS が潜在的な問題のリストに追加されます)。_
 
-<!--
-## &lt;!--faq--&gt;FAQ
-
-### &lt;!--design-flaws--&gt;What is wrong with the `Buffer` constructor?
-
-The `Buffer` constructor could be used to create a buffer in many different ways:
-
-- `new Buffer(42)` creates a `Buffer` of 42 bytes. Before Node.js 8, this buffer contained
-  *arbitrary memory* for performance reasons, which could include anything ranging from
-  program source code to passwords and encryption keys.
-- `new Buffer('abc')` creates a `Buffer` that contains the UTF-8-encoded version of
-  the string `'abc'`. A second argument could specify another encoding: for example,
-  `new Buffer(string, 'base64')` could be used to convert a Base64 string into the original
-  sequence of bytes that it represents.
-- There are several other combinations of arguments.
-
-This meant that in code like `var buffer = new Buffer(foo);`, *it is not possible to tell
-what exactly the contents of the generated buffer are* without knowing the type of `foo`.
-
-Sometimes, the value of `foo` comes from an external source. For example, this function
-could be exposed as a service on a web server, converting a UTF-8 string into its Base64 form:
-
-```js
-function stringToBase64(req, res) {
-  // The request body should have the format of `{ string: 'foobar' }`.
-  const rawBytes = new Buffer(req.body.string);
-  const encoded = rawBytes.toString('base64');
-  res.end({ encoded });
-}
-```
-
-Note that this code does *not* validate the type of `req.body.string`:
-
-- `req.body.string` is expected to be a string. If this is the case, all goes well.
-- `req.body.string` is controlled by the client that sends the request.
-- If `req.body.string` is the *number* `50`, the `rawBytes` would be `50` bytes:
-  - Before Node.js 8, the content would be uninitialized
-  - After Node.js 8, the content would be `50` bytes with the value `0`
-
-Because of the missing type check, an attacker could intentionally send a number
-as part of the request. Using this, they can either:
-
-- Read uninitialized memory. This **will** leak passwords, encryption keys and other
-  kinds of sensitive information. (Information leak)
-- Force the program to allocate a large amount of memory. For example, when specifying
-  `500000000` as the input value, each request will allocate 500MB of memory.
-  This can be used to either exhaust the memory available of a program completely
-  and make it crash, or slow it down significantly. (Denial of Service)
-
-Both of these scenarios are considered serious security issues in a real-world
-web server context.
-
-When using `Buffer.from(req.body.string)` instead, passing a number will always
-throw an exception instead, giving a controlled behavior that can always be
-handled by the program.
-
-### &lt;!--ecosystem-usage--&gt;The `Buffer()` constructor has been deprecated for a while. Is this really an issue?
-
-Surveys of code in the `npm` ecosystem have shown that the `Buffer()` constructor is still
-widely used. This includes new code, and overall usage of such code has actually been
-*increasing*.
-
- -->
 ## <!--faq-->FAQ
 
 ### <!--design-flaws-->`Buffer` コンストラクタの何が問題になっていますか。
 
 `Buffer` コンストラクタは、さまざまな方法でバッファを作成するために使うことができます:
 
-- `new Buffer(42)` は 42 バイトの `Buffer` を作成します。
+* `new Buffer(42)` は 42 バイトの `Buffer` を作成します。
   Node.js 8 以前は、このバッファにはパフォーマンス上の理由から*任意のメモリ*が含まれていました。
   これには、プログラムのソースコードからパスワードや暗号化キーまで、さまざまなものが含まれます。
-- `new Buffer('abc')` は、文字列 `'abc'` の UTF-8 エンコードバージョンを含む `Buffer` を作成します。
+* `new Buffer('abc')` は、文字列 `'abc'` の UTF-8 エンコードバージョンを含む `Buffer` を作成します。
   2番目の引数は別のエンコーディングを指定できます。
   たとえば、`new Buffer(string, 'base64')` を使用して、
   Base64 文字列をそれが表す元のバイトシーケンスに変換できます。
-- 引数には他にもいくつかの組み合わせがあります。
+* 引数には他にもいくつかの組み合わせがあります。
 
 つまり、`var buffer = new Buffer(foo);`のようなコードでは、
 `foo` の型を知ることなしに、生成されたバッファの内容が正確に何であるかを知ることはできません。
@@ -520,18 +364,18 @@ function stringToBase64(req, res) {
 
 このコードは `req.body.string` の型を検証*しない*ことに注意してください:
 
-- `req.body.string` は文字列であることが期待されています。この場合、すべてうまくいきます。
-- `req.body.string` はリクエストを送信するクライアントによって制御されます。
-- `req.body.string` が *数値の* `50` の場合、 `rawBytes` は `50` バイトになります。
-  - Node.js 8 以前の場合、コンテンツは初期化されていませんでした。
-  - Node.js 8 以降の場合、コンテンツは値が `0` の `50` バイトになります。
+* `req.body.string` は文字列であることが期待されています。この場合、すべてうまくいきます。
+* `req.body.string` はリクエストを送信するクライアントによって制御されます。
+* `req.body.string` が *数値の* `50` の場合、 `rawBytes` は `50` バイトになります。
+  * Node.js 8 以前の場合、コンテンツは初期化されていませんでした。
+  * Node.js 8 以降の場合、コンテンツは値が `0` の `50` バイトになります。
 
 型チェックがないため、攻撃者は意図的にリクエストの一部として番号を送信する可能性があります。
 これを使用して、次のいずれかを実行する可能性があります:
 
-- 未初期化メモリを読み取ります。
+* 未初期化メモリを読み取ります。
   これにより、パスワード、暗号化キー、その他の機密情報が**漏洩します**。(情報漏洩)
-- プログラムに大量のメモリーを割り当てさせます。
+* プログラムに大量のメモリーを割り当てさせます。
   たとえば、`500000000` を入力値として指定した場合、各リクエストは 500MB のメモリを割り当てます。
   これは、プログラムの利用可能なメモリを完全に使い果たしてクラッシュさせる、
   または大幅に遅くするために使用できます。(サービス拒否)

@@ -37,7 +37,7 @@ You'll be looking at something like this:
 
 [!['Hello World' HTTP server flame graph](https://cs.brown.edu/people/dapachec/helloworld.svg)](https://cs.brown.edu/people/dapachec/helloworld.svg)
 
-This is a visualization of all of the profiled call stacks. This example is from the "hello world" HTTP server on the [Node.js](https://nodejs.org) home page under load. Start at the bottom, where you have "main", which is present in most Node stacks because Node spends most on-CPU time in the main thread. Above each row, you have the functions called by the frame beneath it. As you move up, you'll see actual JavaScript function names. The boxes in each row are not in chronological order, but their width indicates how much time was spent there. When you hover over each box, you can see exactly what percentage of time is spent in each function. This lets you see at a glance where your program spends its time.
+This is a visualization of all of the profiled call stacks. This example is from the "hello world" HTTP server on the [Node.js](https://nodejs.org/) home page under load. Start at the bottom, where you have "main", which is present in most Node stacks because Node spends most on-CPU time in the main thread. Above each row, you have the functions called by the frame beneath it. As you move up, you'll see actual JavaScript function names. The boxes in each row are not in chronological order, but their width indicates how much time was spent there. When you hover over each box, you can see exactly what percentage of time is spent in each function. This lets you see at a glance where your program spends its time.
 
 That's the summary. There are a few prerequisites:
 

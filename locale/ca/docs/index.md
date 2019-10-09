@@ -15,7 +15,7 @@ Existeixen tres tipus de documentació a l'abast en aquest lloc:
 
 ## Referència de l'API
 
-La [Referència de l'API](/api/) proporciona informació detallada sobre una funció ó un objecte en Node.js. Aquesta
+La [Referència de l'API](https://nodejs.org/api/) proporciona informació detallada sobre una funció ó un objecte en Node.js. Aquesta
 documentació indica quins arguments acepta un mètode, el valor que retorna aquest mètode i quins errors poden estar
 relacionats al mateix. També indica quins mètodes són a l'abast per les diferents versions de Node.js
 
@@ -43,7 +43,6 @@ La [secció d'ES6](/en/docs/es6/) descriu l'arbre dels grups de les característ
 característiques són activades per defecte en Node.js, juntament amb enllaços explicatius. També mostra com trobar
 quina versió de V8 fa servir una versió particular de Node.js.
 
-## Preguntes freqüents
+## Guides
 
-Les [Preguntes freqüents](/en/docs/faq/) cobreixen com tots podem contribuir a Node.js, el nostre codi de conducta i el
-model de govern, com contactar-se en GitHub i en IRC i com ajudar amb el triatge d'errors.
+The [Guides section](/en/docs/guides/) has long-form, in-depth articles about Node.js technical features and capabilities.

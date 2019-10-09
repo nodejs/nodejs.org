@@ -18,25 +18,29 @@ We need to start out with a word about SSL certificates.  Speaking generally, th
 
 To generate a self-signed certificate, run the following in your shell:
 
-    openssl genrsa -out key.pem
-    openssl req -new -key key.pem -out csr.pem
-    openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem
-    rm csr.pem
+```
+openssl genrsa -out key.pem
+openssl req -new -key key.pem -out csr.pem
+openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem
+rm csr.pem
+```
 
-This should leave you with two files, `cert.pem` (the certificate) and `key.pem` (the private key). Put these files in the same directory as your Node.js server file. This is all you need for a SSL connection. So now you set up a quick hello world example (the biggest difference between https and [http](/how-do-i-create-a-http-server) is the `options` parameter):
+This should leave you with two files, `cert.pem` (the certificate) and `key.pem` (the private key). Put these files in the same directory as your Node.js server file. This is all you need for a SSL connection. So now you set up a quick hello world example (the biggest difference between https and [http](/en/knowledge/HTTP/servers/how-to-create-a-HTTP-server/) is the `options` parameter):
 
-    const https = require('https');
-    const fs = require('fs');
+```javascript
+const https = require('https');
+const fs = require('fs');
 
-    const options = {
-      key: fs.readFileSync('key.pem'),
-      cert: fs.readFileSync('cert.pem')
-    };
+const options = {
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
+};
 
-    https.createServer(options, function (req, res) {
-      res.writeHead(200);
-      res.end("hello world\n");
-    }).listen(8000);
+https.createServer(options, function (req, res) {
+  res.writeHead(200);
+  res.end("hello world\n");
+}).listen(8000);
+```
 
 NODE PRO TIP: Note `fs.readFileSync` - unlike `fs.readFile`, `fs.readFileSync` will block the entire process until it completes.  In situations like this - loading vital configuration data - the `sync` functions are okay.  In a busy server, however, using a synchronous function during a request will force the server to deal with the requests one by one!
 
@@ -44,6 +48,8 @@ NODE PRO TIP: Note `fs.readFileSync` - unlike `fs.readFile`, `fs.readFileSync` w
 
 Now that your server is set up and started, you should be able to get the file with curl:
 
-    curl -k https://localhost:8000
+```
+curl -k https://localhost:8000
+```
 
 or in your browser, by going to https://localhost:8000 .

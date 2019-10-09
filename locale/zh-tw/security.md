@@ -42,7 +42,7 @@ Node.js 官方為了安全研究員們及負責的公開揭露而展開了一個
 安全通告會由下列方式發布：
 
 - [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
+- [https://nodejs.org/en/blog/](https://nodejs.org/en/blog/)
 
 ## 對本政策的建言
 

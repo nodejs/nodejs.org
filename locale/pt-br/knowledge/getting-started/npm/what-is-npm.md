@@ -17,8 +17,10 @@ Outro uso importante do npm é o gerenciamento de dependências. Quando você te
 
 Exemplo:
 
-    git clone https://github.com/cloudhead/vows.git
-    cd vows
-    npm install
+```
+git clone https://github.com/cloudhead/vows.git
+cd vows
+npm install
+```
 
 Após executar estes comandos, você verá o diretório `node_modules` contendo todas as dependências do projeto especificadas em package.json.

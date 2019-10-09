@@ -4,7 +4,7 @@ title: Про проект
 trademark: Торгова марка
 ---
 
-# Про Node.js&reg;
+# Про Node.js®
 
 Як асинхронне подієве JavaScript–оточення, Node.js спроектований для побудови
 масштабованих мережевих додатків. У нижче наведений приклад "hello world", який
@@ -63,9 +63,9 @@ HTTP є об'єктом першого роду в Node.js, розроблени
 інтерфейсі і дозволяє вам ділитись сокетами між процесами та
 розподіляти навантаження між ядрами.
 
-[Blocking vs Non-Blocking]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
+[Blocking vs Non-Blocking]: /en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[event loop]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
+[event loop]: /en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
 [Twisted]: https://twistedmatrix.com/trac/

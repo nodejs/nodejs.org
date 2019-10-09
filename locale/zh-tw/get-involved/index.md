@@ -17,7 +17,7 @@ layout: contribute.hbs
 
 ## 學習資源
 
-- [官方 API 參考文件](/api/)中詳細介紹了 Node API。
+- [官方 API 參考文件](https://nodejs.org/api/)中詳細介紹了 Node API。
 - [NodeSchool.io](https://nodeschool.io/) 以互動命令列的方式，教會你 Node.js 的概念。
 - [Stack Overflow 上的 Node.js 標籤](https://stackoverflow.com/questions/tagged/node.js)搜羅了每日新資訊。
 - [開發社區上的 Node.js 標籤](https://dev.to/t/node) 是一個共亯 Node.js項目、文章和教程，以及開始討論、並接受與 Node.js 相關的主題。歡迎所有技能級別的開發人員參與。

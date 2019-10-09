@@ -1,13 +1,13 @@
 {
   "default": true,
-  "MD004": false,
+  "MD003": {
+    "style": "atx"
+  },
   "MD013": false,
   "MD022": false,
   "MD024": false,
   "MD025": false,
   "MD026": false,
-  "MD027": false,
-  "MD032": false,
   "MD033": {
     "allowed_elements": [
       "a",
@@ -27,5 +27,7 @@
   "MD036": false,
   "MD040": false,
   "MD041": false,
-  "MD046": false
+  "MD046": {
+    "style": "fenced"
+  }
 }

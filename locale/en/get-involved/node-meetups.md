@@ -14,13 +14,15 @@ If any meetup does not have a CoC and/or is reported as an unsafe place, it will
 ## Notes for adding meetups
 
 FORMAT
+
 - [Meetup](https://www.meetup.com/pdxnode/)
 - Frequency of meetups
-- How to submit a talk? &lt;&lt;list here&gt;&gt;
+- How to submit a talk? «list here»
 - Organizer names (if you wish to provide)
 - Organizers contact info (if you wish to provide)
 
 REQUIREMENTS
+
 - Please state in your PR if this meetup abides by CoC.
 - Link to CoC for verification.
 - If you do not currently have a CoC, update the meetup with CoC before submitting.
@@ -29,6 +31,7 @@ REQUIREMENTS
 ## Meetups
 
 ### Africa
+
 - [Meetup](https://www.nodejs.africa)
 - Frequency of meetups - bi-monthly
 - How to submit a talk? [Submit to this form](https://docs.google.com/forms/d/e/1FAIpQLSe3vPkiO8ijtbP7fUhEotKefXU-fWUoDGtUSo1khmtA_7v1WQ/viewform)
@@ -36,6 +39,7 @@ REQUIREMENTS
 - Organizer contact info -
 
 ### Armenia/Yerevan
+
 - [Meetup](https://www.facebook.com/nodejsarmenia/)
 - Frequency of meetups - quarterly
 - How to submit a talk? [Write in our Telegram chat](https://t.me/nodejsarmenia)
@@ -160,7 +164,7 @@ REQUIREMENTS
 
 - [Meetup](https://www.meetup.com/es-ES/NodersJS/)
 - Frequency of meetups - monthly
-- How to submit a talk? Issue on Github [here](https://github.com/Noders/Meetups/issues/new)
+- How to submit a talk? Issue on GitHub [here](https://github.com/Noders/Meetups/issues/new)
 - Organizer name - Rodrigo Adones and Ender Bonnet
 - Organizer contact info - [Rodrigo](https://github.com/L0rdKras), [Ender](https://twitter.com/enbonnet)
 
@@ -252,6 +256,7 @@ REQUIREMENTS
 #### Maharashtra
 
 ##### Pune
+
 - [Meetup](https://www.meetup.com/JavaScripters)
 - Frequency of meetups - monthly
 - How to submit a talk? Send your queries to Pune.javascripters@gmail.com  or Contact organizers in the meetup page.
@@ -517,7 +522,7 @@ REQUIREMENTS
 - Organizer name - Patrick Scott Co-organizer: Matt Walters.
 - Organizer contact info -
 - How to submit a talk? Contact Pat Scott @ [pat@patscott.io](mailto:pat@patscott.io). Matt Walters @ [meetup@iammattwalters.com](mailto:meetup@iammattwalters.com).
-- Slack: [join.thenodejsmeetup.com](join.thenodejsmeetup.com)
+- Slack: [join.thenodejsmeetup.com](http://join.thenodejsmeetup.com/)
 - Videos: [https://www.youtube.com/c/thenodejsmeetup](https://www.youtube.com/c/thenodejsmeetup)
 
 #### North Carolina
@@ -559,7 +564,7 @@ REQUIREMENTS
 - How to submit a talk? Contact Matt Walters @ [meetup@iammattwalters.com](mailto:meetup@iammattwalters.com).
 - Organizer name - [Matt Walters](https://github.com/mateodelnorte/)
 - Organizer contact info - [meetup@iammattwalters.com](mailto:meetup@iammattwalters.com)
-- Slack: [join.thenodejsmeetup.com](join.thenodejsmeetup.com)
+- Slack: [join.thenodejsmeetup.com](http://join.thenodejsmeetup.com/)
 - Videos: [https://www.youtube.com/c/thenodejsmeetup](https://www.youtube.com/c/thenodejsmeetup)
 
 - [Meetup](https://www.meetup.com/ATXNodeSchool/)
@@ -614,6 +619,7 @@ REQUIREMENTS
 
 #### London
 ##### LNUG
+
 - [Meetup](https://www.meetup.com/london-nodejs/)
 - [GitHub/lnug](https://github.com/lnug/)
 - Frequency of meetups - monthly
@@ -622,6 +628,7 @@ REQUIREMENTS
 - Organizer contact info - contact@lnug.org, [@lnugOrg](https://twitter.com/lnugorg)
 
 ##### Node Workshops
+
 - [Meetup](https://www.meetup.com/NodeWorkshops//)
 - Frequency of meetups - monthly
 - How to submit a talk?

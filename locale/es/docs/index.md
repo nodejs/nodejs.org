@@ -15,7 +15,7 @@ Existen diferentes tipos de documentación disponible en este sitio:
 
 ## Referencia de la API
 
-La [Referencia de la API](/api/) proporciona información detallada sobre una función ó un objeto en Node.js. Esta
+La [Referencia de la API](https://nodejs.org/api/) proporciona información detallada sobre una función ó un objeto en Node.js. Esta
 documentación indica que argumentos acepta un método, el valor que retorna este método y qué errores pueden estar
 relacionados al mismo. También indica qué métodos están disponibles para las diferentes versiones de Node.js
 

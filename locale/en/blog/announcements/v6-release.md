@@ -62,6 +62,7 @@ will be permitted. Users should begin transitioning from v4 to v6 in October whe
 into LTS.
 
 Additional Resources
+
 * [Download version 6](https://nodejs.org/download/release/v6.0.0/)
 * [Download version 4](https://nodejs.org/en/download/)
 * [Technical blog with additional new features and updates](https://nodejs.org/en/blog/)
@@ -77,4 +78,4 @@ IBM, Intel, Joyent, Microsoft, PayPal and Red Hat. Gold members include GoDaddy,
 and Modulus/Progress Software, and Silver members include Apigee, AppDynamics, Codefresh,
 DigitalOcean, Fidelity, Google, Groupon, nearForm, New Relic, npm, Opbeat, RisingStack, Sauce
 Labs, SAP, StrongLoop (an IBM company), Sphinx, YLD!, and Yahoo!. Get involved here:
-[https://nodejs.org](https://nodejs.org).
+<https://nodejs.org/>.

@@ -17,7 +17,7 @@ layout: contribute.hbs
 
 ## Обучение
 
-- [Официальная справочная документация по API](/api/) описывает API Node.js
+- [Официальная справочная документация по API](https://nodejs.org/api/) описывает API Node.js
 - [NodeSchool.io](https://nodeschool.io/) научит вас концепциям Node.js через интерактивные игры командной строки.
 - [Тег Node.js на Stack Overflow](https://stackoverflow.com/questions/tagged/node.js) собирает новую информацию каждый день.
 - [Тег сообщества на DEV.js](https://dev.to/t/node) ― это место, где можно делиться проектами, статьями и учебными

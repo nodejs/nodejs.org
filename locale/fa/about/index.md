@@ -4,7 +4,7 @@ title: درباره
 trademark: نشان تجاری
 ---
 
-# درباره Node.js&reg;
+# درباره Node.js®
 
 به عنوان یک اجرا کننده رویدادهای ناهماهنگ در جاوا اسکریپت، Node.js به شکلی طراحی شده است که بتوان با آن برنامه‌های تحت وب توسعه پذیر ساخت. در مثال "hello world" پایین، تعداد خیلی زیادی اتصال به صورت هم زمان انجام گیرد.
 پس از هر اتصال یه فراخوان (callback) اجرا خواهد شد، اما اگر کاری برای انجام نباشد نود می‌خوابد.
@@ -52,9 +52,9 @@ HTTP در Node.js شهروند درجه یک محسوب می‌شود، طراح
 فقط به خاطر اینکه Node.js بدون Threadها طراحی شده، به این معنی نیست که نتوانید از چند هسته در محیط خود بهره ببرید. فرایند‌های زیرین می‌توانند توسط ‌[`child_process.fork()`][] API  اجرا شوند. فرایند های زیرین   به شکلی طراحی شده‌اند که تعامل کردن با آن‌ها به سادگی انجام شود.
 ماژول [`cluster`][] هم به همین شکل ساخته شده که برای ما قابلیتی برای اشتراک‌گذاری سوکت‌ها بین فرایند‌ها محیا می‌سازد. که به همین شکل قادر خواهید بود برای هسته‌های پردازشگر خود load balancing را فعال کنید.
 
-[Blocking vs Non-Blocking]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
+[Blocking vs Non-Blocking]: /en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[event loop]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
+[event loop]: /en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
 [Twisted]: https://twistedmatrix.com/trac/
