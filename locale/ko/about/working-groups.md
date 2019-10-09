@@ -21,7 +21,6 @@ Core Working Groups are created by the
 <!--
 ## Current Working Groups
 
-* [Website](#website)
 * [Streams](#streams)
 * [Build](#build)
 * [Diagnostics](#diagnostics)
@@ -36,7 +35,6 @@ Core Working Groups are created by the
 
 ## 현재의 워킹 그룹
 
-* [Website](#website)
 * [Streams](#streams)
 * [Build](#build)
 * [Diagnostics](#diagnostics)
@@ -47,29 +45,6 @@ Core Working Groups are created by the
 * [Benchmarking](#benchmarking)
 * [Post-mortem](#post-mortem)
 * [Release](#release)
-
-<!--
-### [Website](https://github.com/nodejs/nodejs.org)
-
-The Website Working Group's purpose is to build and maintain a public
-website for the Node.js project.
-
-Responsibilities include:
-* Developing and maintaining a build and automation system for nodejs.org.
-* Ensuring the site is regularly updated with changes made to Node.js, like
-  releases and features.
-* Fostering and enabling a community of translators.
--->
-
-### [Website](https://github.com/nodejs/nodejs.org)
-
-웹사이트 워킹그룹의 목적은 Node.js 프로젝트의 공개 웹사이트를 만들고 관리하는 것입니다.
-
-이 워킹 그룹은 다음과 같은 업무를 담당합니다.
-
-* nodejs.org의 빌드와 자동화 시스템을 개발하고 유지 보수합니다.
-* 릴리스와 기능처럼 Node.js에 변경된 내용을 정기적으로 사이트에 갱신합니다.
-* 번역 커뮤니티를 지원합니다.
 
 <!--
 ### [Streams](https://github.com/nodejs/readable-stream)
