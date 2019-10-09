@@ -197,6 +197,7 @@ This LTS release comes with 113 commits, 56 of which are doc related,
 and 7 which are benchmark related.
 
 ### Notable Changes
+
 * **build**:
   * Updated Logos for the OSX + Windows installers
     * (Rod Vagg) [#5401](https://github.com/nodejs/node/pull/5401)
@@ -338,6 +339,7 @@ This release also includes over 70 fixes to our docs and over 50 fixes to tests.
 ### Notable changes
 
 The SEMVER-MINOR changes include:
+
 * **deps**:
   * An update to v8 that introduces a new flag --perf_basic_prof_only_functions (Ali Ijaz Sheikh) [#3609](https://github.com/nodejs/node/pull/3609)
 * **http**:
