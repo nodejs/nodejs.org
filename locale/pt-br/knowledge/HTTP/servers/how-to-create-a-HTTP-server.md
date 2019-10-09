@@ -45,7 +45,7 @@ Vamos dar uma olhada mais aprofundada no que o código acima está fazendo. Prim
 
 <!-- The request object contains things such as the requested URL, but in this example we ignore it and always return "Hello World". -->
 
-O objeto de requisição contém itens como a URL solicitada, mas neste exemplo estamos ignorando isso e retornando sempre "Hello World".
+O objeto da requisição contém itens como a URL solicitada, mas neste exemplo estamos ignorando isso e retornando sempre "Hello World".
 
 <!-- The response object is how we send the headers and contents of the response back to the user making the request. Here we return a 200 response code (signaling a successful response) with the body "Hello World". Other headers, such as `Content-type`, would also be set here. -->
 
