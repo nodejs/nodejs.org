@@ -33,7 +33,7 @@ A guide for Collaborators is maintained at [COLLABORATOR_GUIDE.md][].
 -->
 ## Colaboradores
 
-O repositório principal [nodejs/node][] no Github é mantido por Colaboradores
+O repositório principal [nodejs/node][] no GitHub é mantido por Colaboradores
 que são nomeados continuamente pelo _Technical Steering Committee_ ([TSC][]).
 
 Pessoas que fazem contribuições significantes e valiosas são nomeadas Colaboradores

@@ -10,33 +10,37 @@ layout: knowledge-post.hbs
 
 Exemplo:
 
-    console.log("entrando na instrução try-catch");
+```javascript
+console.log("entrando na instrução try-catch");
 
-    try {
-      console.log("entrando no bloco try");
-      throw "lançar mensagem";
-      console.log("esta mensagem nunca será vista");
-    }
-    catch (e) {
-      console.log("entrando no bloco catch");
-      console.log(e);
-      console.log("saindo do bloco catch");
-    }
-    finally {
-      console.log("entrando e saindo do bloco finally");
-    }
+try {
+  console.log("entrando no bloco try");
+  throw "lançar mensagem";
+  console.log("esta mensagem nunca será vista");
+}
+catch (e) {
+  console.log("entrando no bloco catch");
+  console.log(e);
+  console.log("saindo do bloco catch");
+}
+finally {
+  console.log("entrando e saindo do bloco finally");
+}
 
-    console.log("saindo da instrução try-catch");
+console.log("saindo da instrução try-catch");
+```
 
 Results:
 
-    entrando na instrução try-catch
-    entrando no bloco try
-    entrando no bloco catch
-    lançar mensagem
-    saindo do bloco catch
-    entrando e saindo do bloco finally
-    saindo da instrução try-catch
+```
+entrando na instrução try-catch
+entrando no bloco try
+entrando no bloco catch
+lançar mensagem
+saindo do bloco catch
+entrando e saindo do bloco finally
+saindo da instrução try-catch
+```
 
 <!-- JavaScript's `try-catch-finally` statement works very similarly to the `try-catch-finally` encountered in C++ and Java.  First, the try block is executed until and unless the code in it throws an exception (whether it is an explicit `throw` statement, the code has an uncaught native exception, or if the code calls a function that uses `throw`).  -->
 A instrução de `try-catch-finally` em JavaScript funciona de forma muito semelhante ao `try-catch-finally` encontrado em C++ e Java.  Primeiro, o bloco try é executado até e a menos que o código nele dispare uma exceção (se houver uma instrução explícita `throw`, o código possui uma exceção nativa não identificado, ou se o código chamar uma função que usa `throw`).
@@ -50,5 +54,5 @@ Note que você pode omitir o bloco `catch` ou `finally`, mas um deles deve exist
 <!-- ## But wait, isn't it Node.js convention to not use try-catch? -->
 ## Mas espere, não é convenção do Node.js não usar try-catch?
 
-<!-- In the core node.js libraries, the only place that one really *needs* to use a try-catch is around `JSON.parse()`. All of the other methods use either the standard Error object through the first parameter of the callback or emit an `error` event. Because of this, it is generally considered [standard](/what-are-the-error-conventions) to return errors through the callback rather than to use the `throw` statement. -->
-No core da biblioteca node.js, o único lugar que realmente *precisamos* usar um bloco try-catch é ao redor do método `JSON.parse()`. Todos os outros métodos usam o objeto Error padrão através do primeiro parâmetro do callback ou emitem um evento de `error`. Por causa disso, geralmente é considerado [padrão](/what-are-the-error-conventions) retornar erros por meio de callback, em vez de usar a instrução `throw`.
+<!-- In the core node.js libraries, the only place that one really *needs* to use a try-catch is around `JSON.parse()`. All of the other methods use either the standard Error object through the first parameter of the callback or emit an `error` event. Because of this, it is generally considered [standard](/en/knowledge/errors/what-are-the-error-conventions/) to return errors through the callback rather than to use the `throw` statement. -->
+No core da biblioteca node.js, o único lugar que realmente *precisamos* usar um bloco try-catch é ao redor do método `JSON.parse()`. Todos os outros métodos usam o objeto Error padrão através do primeiro parâmetro do callback ou emitem um evento de `error`. Por causa disso, geralmente é considerado [padrão](/pt-br/knowledge/errors/what-are-the-error-conventions/) retornar erros por meio de callback, em vez de usar a instrução `throw`.

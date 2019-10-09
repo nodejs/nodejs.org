@@ -4,7 +4,7 @@ title: 关于
 trademark: Trademark
 ---
 
-# 关于 Node.js&reg;
+# 关于 Node.js®
 
 作为异步驱动的 JavaScript 运行时，Node.js 被设计成可升级的网络应用。在下面的“Hello World”示例中，许多连接可以并行处理。每一个连接都会触发一个回调，但是如果没有可做的事情，Node.js 就进入睡眠状态。
 

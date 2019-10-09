@@ -12,34 +12,38 @@ In node.js, it is considered standard practice to handle errors in asynchronous 
 
 It's simpler than it sounds; let's demonstrate.
 
-    var isTrue = function(value, callback) {
-      if (value === true) {
-        callback(null, "Value was true.");
-      }
-      else {
-        callback(new Error("Value is not true!"));
-      }
-    }
+```javascript
+var isTrue = function(value, callback) {
+  if (value === true) {
+    callback(null, "Value was true.");
+  }
+  else {
+    callback(new Error("Value is not true!"));
+  }
+}
 
-    var callback = function (error, retval) {
-      if (error) {
-        console.log(error);
-        return;
-      }
-      console.log(retval);
-    }
+var callback = function (error, retval) {
+  if (error) {
+    console.log(error);
+    return;
+  }
+  console.log(retval);
+}
 
-    // Note: when calling the same asynchronous function twice like this, you are in a race condition.
-    // You have no way of knowing for certain which callback will be called first when calling the functions in this manner.
+// Note: when calling the same asynchronous function twice like this, you are in a race condition.
+// You have no way of knowing for certain which callback will be called first when calling the functions in this manner.
 
-    isTrue(false, callback);
-    isTrue(true,  callback);
+isTrue(false, callback);
+isTrue(true,  callback);
+```
 
-    { stack: [Getter/Setter],
-      arguments: undefined,
-      type: undefined,
-      message: 'Value is not true!' }
-    Value was true.
+```
+{ stack: [Getter/Setter],
+  arguments: undefined,
+  type: undefined,
+  message: 'Value is not true!' }
+Value was true.
+```
 
 As you can see from the example, the callback is called with null as its first argument if there is no error. However, if there is an error, you create an `Error` object, which then becomes the callback's only parameter.
 

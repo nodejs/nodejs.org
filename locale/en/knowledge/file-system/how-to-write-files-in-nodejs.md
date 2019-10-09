@@ -9,8 +9,10 @@ layout: knowledge-post.hbs
 
 Writing to a file is another of the basic programming tasks that one usually needs to know about - luckily, this task is very simple in Node.js.  We can use the handy `writeFile` method inside the standard library's `fs` module, which can save all sorts of time and trouble.
 
-    fs = require('fs');
-    fs.writeFile(filename, data, [encoding], [callback])
+```javascript
+fs = require('fs');
+fs.writeFile(filename, data, [encoding], [callback])
+```
 
 `file = (string)` filepath of the file to read
 
@@ -22,29 +24,37 @@ Writing to a file is another of the basic programming tasks that one usually nee
 
 So if we wanted to write "Hello World" to `helloworld.txt`:
 
-    fs = require('fs');
-    fs.writeFile('helloworld.txt', 'Hello World!', function (err) {
-      if (err) return console.log(err);
-      console.log('Hello World > helloworld.txt');
-    });
+```javascript
+fs = require('fs');
+fs.writeFile('helloworld.txt', 'Hello World!', function (err) {
+  if (err) return console.log(err);
+  console.log('Hello World > helloworld.txt');
+});
+```
 
-    [contents of helloworld.txt]:
-    Hello World!
+```
+[contents of helloworld.txt]:
+Hello World!
+```
 
 If we purposely want to cause an error, we can try to write to a file that we don't have permission to access:
 
-    fs = require('fs')
-    fs.writeFile('/etc/doesntexist', 'abc', function (err,data) {
-      if (err) {
-        return console.log(err);
-      }
-      console.log(data);
-    });
+```javascript
+fs = require('fs')
+fs.writeFile('/etc/doesntexist', 'abc', function (err,data) {
+  if (err) {
+    return console.log(err);
+  }
+  console.log(data);
+});
+```
 
-    { stack: [Getter/Setter],
-      arguments: undefined,
-      type: undefined,
-      message: 'EACCES, Permission denied \'/etc/doesntexist\'',
-      errno: 13,
-      code: 'EACCES',
-      path: '/etc/doesntexist' }
+```
+{ stack: [Getter/Setter],
+  arguments: undefined,
+  type: undefined,
+  message: 'EACCES, Permission denied \'/etc/doesntexist\'',
+  errno: 13,
+  code: 'EACCES',
+  path: '/etc/doesntexist' }
+```

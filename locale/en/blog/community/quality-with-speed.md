@@ -48,6 +48,7 @@ quality.  These include:
 # Release Types
 
 The Node.js project maintains 3 key types of releases
+
 * Nightlies
 * Current
 * LTS

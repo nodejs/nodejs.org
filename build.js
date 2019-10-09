@@ -4,8 +4,9 @@
 
 // BUILD.JS: This file is responsible for building static HTML pages
 
+const fs = require('fs')
+const path = require('path')
 const Metalsmith = require('metalsmith')
-const autoprefixer = require('autoprefixer-stylus')
 const collections = require('metalsmith-collections')
 const feed = require('metalsmith-feed')
 const discoverHelpers = require('metalsmith-discover-helpers')
@@ -13,18 +14,17 @@ const discoverPartials = require('metalsmith-discover-partials')
 const layouts = require('metalsmith-layouts')
 const markdown = require('metalsmith-markdown')
 const prism = require('metalsmith-prism')
-const stylus = require('metalsmith-stylus')
 const permalinks = require('metalsmith-permalinks')
 const pagination = require('metalsmith-yearly-pagination')
 const defaultsDeep = require('lodash.defaultsdeep')
+const autoprefixer = require('autoprefixer-stylus')
 const marked = require('marked')
-const path = require('path')
-const fs = require('fs')
+const stylus = require('stylus')
 const ncp = require('ncp')
 const junk = require('junk')
 
+const githubLinks = require('./scripts/plugins/githubLinks')
 const navigation = require('./scripts/plugins/navigation')
-const filterStylusPartials = require('./scripts/plugins/filter-stylus-partials')
 const anchorMarkdownHeadings = require('./scripts/plugins/anchor-markdown-headings')
 const loadVersions = require('./scripts/load-versions')
 const latestVersion = require('./scripts/helpers/latestversion')
@@ -79,6 +79,8 @@ function buildLocale (source, locale, opts) {
     })
   // Sets the build source as the locale folder.
     .source(path.join(__dirname, 'locale', locale))
+    // site.json files aren't needed in the output dir
+    .ignore('site.json')
     .use(withPreserveLocale(opts && opts.preserveLocale))
     // Extracts the main menu and sub-menu links form locale's site.json and
     // adds them to the metadata. This data is used in the navigation template
@@ -210,62 +212,39 @@ function withPreserveLocale (preserveLocale) {
   }
 }
 
-// This middleware adds "Edit on GitHub" links to every editable page
-function githubLinks (options) {
-  return (files, m, next) => {
-    // add suffix (".html" or "/" or "\" for windows) to each part of regex
-    // to ignore possible occurrences in titles (e.g. blog posts)
-    const isEditable = /security\.html|about(\/|\\)|docs(\/|\\)|foundation(\/|\\)|get-involved(\/|\\)|knowledge(\/|\\)/
-
-    Object.keys(files).forEach((path) => {
-      if (!isEditable.test(path)) {
-        return
-      }
-
-      const file = files[path]
-      const url = `https://github.com/nodejs/nodejs.org/edit/master/locale/${options.locale}/${path.replace('.html', '.md')}`
-      const editText = options.site.editOnGithub || 'Edit on GitHub'
-
-      const contents = file.contents.toString().replace(/<h1(.*?)>(.*?)<\/h1>/, (match, $1, $2) => {
-        return `<a class="edit-link" href="${url}">${editText}</a> <h1${$1}>${$2}</h1>`
-      })
-
-      file.contents = Buffer.from(contents)
-    })
-
-    next()
-  }
-}
-
-// This function builds the layouts folder for all the Stylus files.
-function buildLayouts () {
-  console.log('[metalsmith] build/layouts started')
-  const labelForBuild = '[metalsmith] build/layouts finished'
+// This function builds the static/css folder for all the Stylus files.
+function buildCSS () {
+  console.log('[stylus] static/css started')
+  const labelForBuild = '[stylus] static/css finished'
   console.time(labelForBuild)
 
-  fs.mkdir(path.join(__dirname, 'build'), () => {
-    fs.mkdir(path.join(__dirname, 'build', 'layouts'), () => {
-      const metalsmith = Metalsmith(__dirname)
-      metalsmith
-        // Sets the build source as /layouts/css.
-        .source(path.join(__dirname, 'layouts', 'css'))
-        // Deletes Stylus partials since they'll be included in the main CSS
-        // file anyways.
-        .use(filterStylusPartials())
-        .use(stylus({
-          compress: process.env.NODE_ENV !== 'development',
-          paths: [path.join(__dirname, 'layouts', 'css')],
-          use: [autoprefixer()]
-        }))
-        // Pipes the generated files into /build/layouts/css.
-        .destination(path.join(__dirname, 'build', 'layouts', 'css'))
+  fs.mkdir(path.join(__dirname, 'build/static/css'), { recursive: true }, (err) => {
+    if (err) {
+      throw err
+    }
 
-      // This actually executes the build and stops the internal timer after
-      // completion.
-      metalsmith.build((err) => {
-        if (err) { throw err }
-        console.timeEnd(labelForBuild)
-      })
+    fs.readFile(path.join(__dirname, 'layouts/css/styles.styl'), 'utf8', (err, data) => {
+      if (err) {
+        throw err
+      }
+
+      stylus(data)
+        .set('compress', process.env.NODE_ENV !== 'development')
+        .set('paths', [path.join(__dirname, 'layouts/css')])
+        .use(autoprefixer())
+        .render((error, css) => {
+          if (error) {
+            throw error
+          }
+
+          fs.writeFile(path.join(__dirname, 'build/static/css/styles.css'), css, (err) => {
+            if (err) {
+              throw err
+            }
+
+            console.timeEnd(labelForBuild)
+          })
+        })
     })
   })
 }
@@ -273,14 +252,19 @@ function buildLayouts () {
 // This function copies the rest of the static assets to their subfolder in the
 // build directory.
 function copyStatic () {
-  console.log('[metalsmith] build/static started')
-  console.time('[metalsmith] build/static finished')
-  fs.mkdir(path.join(__dirname, 'build'), () => {
-    fs.mkdir(path.join(__dirname, 'build', 'static'), () => {
-      ncp(path.join(__dirname, 'static'), path.join(__dirname, 'build', 'static'), (err) => {
-        if (err) { return console.error(err) }
-        console.timeEnd('[metalsmith] build/static finished')
-      })
+  console.log('[ncp] build/static started')
+  const labelForBuild = '[ncp] build/static finished'
+  console.time(labelForBuild)
+  fs.mkdir(path.join(__dirname, 'build/static'), { recursive: true }, (err) => {
+    if (err) {
+      throw err
+    }
+
+    ncp(path.join(__dirname, 'static'), path.join(__dirname, 'build/static'), (error) => {
+      if (error) {
+        return console.error(error)
+      }
+      console.timeEnd(labelForBuild)
     })
   })
 }
@@ -313,8 +297,8 @@ function fullBuild (opts) {
   const { selectedLocales, preserveLocale } = opts
   // Build static files.
   copyStatic()
-  // Build layouts
-  buildLayouts()
+  // Build CSS
+  buildCSS()
   getSource((err, source) => {
     if (err) { throw err }
 
