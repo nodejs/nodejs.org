@@ -41,7 +41,7 @@ curl localhost:8080
 
 <!-- Let's take a more in-depth look at what the above code is doing.  First, a function is defined called `requestListener` that takes a request object and a response object as parameters. -->
 
-Vamos dar uma olhada mais aprofundada no que o código acima está fazendo. Primeiro, a função é definida como `requestListener` que recebe um objeto na requisição e um objeto de resposta como parâmetro.
+Vamos dar uma olhada mais aprofundada no que o código acima está fazendo. Primeiro, a função é definida como `requestListener` que recebe um objeto da requisição e um objeto da resposta como parâmetros.
 
 <!-- The request object contains things such as the requested URL, but in this example we ignore it and always return "Hello World". -->
 
