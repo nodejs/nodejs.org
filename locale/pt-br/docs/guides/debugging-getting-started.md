@@ -114,45 +114,27 @@ estão as informações básicas sobre eles:
 
 ### [node-inspect](https://github.com/nodejs/node-inspect)
 
-<!-- * CLI Debugger supported by the Node.js Foundation which uses the [Inspector Protocol][].
-* A version is bundled with Node and can be used with `node inspect myscript.js`.
-* The latest version can also be installed independently (e.g. `npm install -g node-inspect`)
-  and used with `node-inspect myscript.js`. -->
 * Um debugger de linha de comando que é mantido pela Node.js Foundation, utiliza o [Protocolo de Inspeção][]
 * A última versão pode ser instalada de forma independente (usando `npm install -g node-inspect`) e utilizada com `node-inspect script.js`
 
 #### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
 
-<!-- * **Option 1**: Open `chrome://inspect` in a Chromium-based
-  browser. Click the Configure button and ensure your target host and port
-  are listed.
-* **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
-  (see above) or the --inspect hint text and paste into Chrome.
-* **Option 3**: Install the Chrome Extension NIM (Node Inspector Manager):
-  https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj -->
 * **Opção 1**: Abra uma nova aba em `chrome://inspect` em qualquer navegador baseado no Chromium. Clique no botão `configure` e tenha certeza que sua porta e host estão listados
 * **Opção 2**: Copie o `devtoolsFrontendUrl` da saída do `/json/list` (veja acima) ou da flag --inspect e cole no Chrome
 * **Opção 3**: Instale a extensão NIM (Node Inspector Manager): https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 
 #### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
 
-<!-- * In the Debug panel, click the settings icon to open `.vscode/launch.json`.
-  Select "Node.js" for initial setup. -->
 * No painel "Debug", clique no icone de configurações para abrir `./vscode/launch.json`
   Seleciona "Node.js" para o setup inicial
 
 #### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
 
-<!-- * Choose "Debug > Start Debugging" from the menu or hit F5.
-* [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging). -->
 * Escolha "Debug > Start Debugging" no menu ou aperte F5
 * [Mais detalhes](https://github.com/Microsoft/nodejstools/wiki/Debugging).
 
 #### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ e outros IDEs da JetBrains
 
-<!-- * Create a new Node.js debug configuration and hit Debug. `--inspect` will be used
-  by default for Node.js 7+. To disable uncheck `js.debugger.node.use.inspect` in
-  the IDE Registry. -->
 * Crie uma nova configuraçõ de debug para Node.js e aperte o botão "Debug". A flag `--inspect` será usada
   por padrão para o Node.js 7 ou superior. Para desativar esse comportamento, desmarque `js.debugger.node.use.inspect` no registro da IDE.
 

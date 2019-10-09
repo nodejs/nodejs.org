@@ -69,6 +69,7 @@ const descriptors = Object.getOwnPropertyDescriptors(obj);
 ### From [V8 5.2](https://v8project.blogspot.ch/2016/06/release-52.html)
 
 Improvement of JavaScript built-ins, including:
+
 * `Array` operations like the `isArray` method.
 * The `in` operator.
 * `Function.prototype.bind`.

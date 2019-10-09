@@ -15,6 +15,7 @@ La commissione della Community (CommComm) è una commissione di primaria importa
 - Iniziative pubbliche e [Pubblicazioni](https://medium.com/the-node-js-collection)
 
 Ci sono quattro tipi di coinvolgimenti con il Comitato della Community:
+
 - Un **Contributore** è un individuo che crea o commenta una segnalazione o una pull request.
 - Un **Collaboratore** è un contributore a cui sono stati concessi privilegi di scrittura sul repository.
 - Un **Osservatore** è un individuo che ha richiesto o a cui è stato richiesto di assistere ad un incontro del CommComm. È anche il primo step per diventare un Membro.
