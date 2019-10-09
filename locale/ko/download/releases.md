@@ -5,7 +5,7 @@ modules: "<code>NODE_MODULE_VERSION</code>은 Node.js의 ABI(application binary 
 ---
 
 <!--
-### io.js &amp; Node.js
+### io.js & Node.js
 Releases 1.x through 3.x were called "io.js" as they were part of the io.js fork. As of Node.js 4.0.0 the former release lines of io.js converged with Node.js 0.12.x into unified Node.js releases.
 -->
 ### io.js와 Node.js

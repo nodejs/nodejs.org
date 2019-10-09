@@ -205,6 +205,7 @@ app.get('/redos-me', (req, res) => {
 
 #### 关于如何抵制 REDOS 的资源
 这里提供了你一些工具帮助你检查你的正则表达式是否安全，像：
+
 - [safe-regex](https://github.com/substack/safe-regex)
 - [rxxr2](http://www.cs.bham.ac.uk/~hxt/research/rxxr2/)
 
@@ -219,6 +220,7 @@ app.get('/redos-me', (req, res) => {
 
 ### 阻塞事件轮询：Node 的核心模块
 一些 Node 的核心模块有同步的高开销的 API 方法，包含：
+
 - [crypto 加密](https://nodejs.org/api/crypto.html)
 - [zlib 压缩](https://nodejs.org/api/zlib.html)
 - [fs 文件系统](https://nodejs.org/api/fs.html)
@@ -227,6 +229,7 @@ app.get('/redos-me', (req, res) => {
 这些 API 是高开销的，因为它们包括了非常巨大的计算（如加密、压缩上），需要 I/O（如文件 I/O），或者两者都有潜在包含（如子进程处理）。这些 API 是为脚本提供方便，并非让你在服务器上下文中使用。如果你在事件循环中使用它们，则需要花费比一般的 JavaScript 更长的执行时间从而可能导致阻塞事件轮询。
 
 对于一个服务器而言，*你不应当使用以下同步的 API 函数*：
+
 - 加密：
   - `crypto.randomBytes`（同步版本）
   - `crypto.randomFillSync`
@@ -279,6 +282,7 @@ console.log('JSON.parse took ' + took);
 ```
 
 有一些 npm 的模块提供了异步的 JSON API 函数，参考：
+
 - [JSONStream](https://www.npmjs.com/package/JSONStream)，有流式操作的 API。
 - [Big-Friendly JSON](https://www.npmjs.com/package/bfj)，有流式 API 和使用下文所概述的任务拆分思想的异步 JSON 标准 API。
 
@@ -340,6 +344,7 @@ asyncAvg(n, function(avg){
 
 ##### 如何进行任务分流？
 你有两种方式将任务转移到工作线程池执行。
+
 1. 你可以通过开发 [C++ 插件](https://nodejs.org/api/addons.html) 的方式使用内置的 Node 工作池。稍早之前的 Node 版本，通过使用 [NAN](https://github.com/nodejs/nan) 的方式编译你的 C++ 插件，在新版的 Node 上使用 [N-API](https://nodejs.org/api/n-api.html)。 [node-webworker-threads](https://www.npmjs.com/package/webworker-threads) 提供了一个仅用 JavaScript 就可以访问 Node 的工作池的方式。
 2. 您可以创建和管理自己专用于计算的工作线程池，而不是使用 Node 自带的负责的 I/O 的工作线程池。最直接的方法就是使用 [Child Process](https://nodejs.org/api/child_process.html) 或者是 [cluster](https://nodejs.org/api/cluster.html)。
 
@@ -453,6 +458,7 @@ Node 由 `k` 个工作线程组成了工作线程池。
 虽然 Node 核心模块为各种需求提供了基础支持，但有时还需要更多的功能。Node 的开发人员从 [npm 生态系统](https://www.npmjs.com/) 中获益良多，有成百上千个模块可以为你的应用开发提效。
 
 但是，请记住，这些模块中的大多数是由第三方开发人员编写的；它们通常只能保证尽力做到很好。使用 npm 模块的开发人员应该关注如下两件事，尽管后者经常被遗忘。
+
 1. 它是否拥有优秀的 API 设计？
 2. 它的 API 可能会阻塞事件循环线程或工作线程吗？
 
