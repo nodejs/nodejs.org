@@ -14,6 +14,7 @@ This week we had two io.js releases [v2.0.0](https://iojs.org/dist/v2.0.0/) and 
 ## Notable changes
 
 ### 2.0.1
+
 * **async_wrap**: (Trevor Norris) [#1614](https://github.com/nodejs/node/pull/1614)
   * it is now possible to filter by providers
   * bit flags have been removed and replaced with method calls on the binding object
@@ -27,6 +28,7 @@ This week we had two io.js releases [v2.0.0](https://iojs.org/dist/v2.0.0/) and 
 * **V8**: upgrade V8 from 4.2.77.18 to 4.2.77.20 with minor fixes, including a bug preventing builds on FreeBSD
 
 ### 2.0.0
+
 * **crypto**: significantly reduced memory usage for TLS (Fedor Indutny & Сковорода Никита Андреевич) [#1529](https://github.com/nodejs/node/pull/1529)
 * **net**: `socket.connect()` now accepts a `'lookup'` option for a custom DNS resolution mechanism, defaults to `dns.lookup()` (Evan Lucas) [#1505](https://github.com/nodejs/node/pull/1505)
 * **npm**: Upgrade npm to 2.9.0. See the [v2.8.4](https://github.com/npm/npm/releases/tag/v2.8.4) and [v2.9.0](https://github.com/npm/npm/releases/tag/v2.9.0) release notes for details. Notable items:

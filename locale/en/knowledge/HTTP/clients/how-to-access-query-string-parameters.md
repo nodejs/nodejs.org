@@ -29,6 +29,7 @@ The key part of this whole script is this line: `const queryObject = url.parse(r
 The `url.parse()` method returns an object which have many key value pairs one of which is the `query` object. Some other handy information returned by the method include `host`, `pathname`, `search` keys.
 
 In the above code:
+
 - `url.parse(req.url,true).query` returns `{ foo: 'bad', baz: 'foo' }`.
 - `url.parse(req.url,true).host` returns `'localhost:8080'`.
 - `url.parse(req.url,true).pathname` returns `'/app.js'`.

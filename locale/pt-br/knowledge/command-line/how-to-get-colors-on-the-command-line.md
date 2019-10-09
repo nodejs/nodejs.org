@@ -117,6 +117,7 @@ Para referência, aqui está a lista completa de cores disponíveis em `colors.j
 
 <!-- ### text colors -->
 ### cores de texto
+
 - black
 - red
 - green
@@ -130,6 +131,7 @@ Para referência, aqui está a lista completa de cores disponíveis em `colors.j
 
 <!-- ### background colors -->
 ### cores de fundo
+
 - bgBlack
 - bgRed
 - bgGreen
@@ -141,6 +143,7 @@ Para referência, aqui está a lista completa de cores disponíveis em `colors.j
 
 <!-- ### styles -->
 ### estilos
+
 - reset
 - bold
 - dim
@@ -152,6 +155,7 @@ Para referência, aqui está a lista completa de cores disponíveis em `colors.j
 
 <!-- ### extras -->
 ### extras
+
 - rainbow
 - zebra
 - america

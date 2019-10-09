@@ -39,16 +39,6 @@ Se você quiser entender melhor cada passo, dê uma olhada nas seções abaixo o
 <!-- Now let's get to work. -->
 Vamos começar!
 
-<!-- 1. Install `perf` (usually available through the linux-tools-common package if not already installed)
-2. try running `perf` - it might complain about missing kernel modules, install them too
-3. run node with perf enabled (see [perf output issues](#perf-output-issues) for tips specific to Node.js versions)
-```bash
-perf record -e cycles:u -g -- node --perf-basic-prof app.js
-```
-4. disregard warnings unless they're saying you can't run perf due to missing packages; you may get some warnings about not being able to access kernel module samples which you're not after anyway.
-5. Run `perf script > perfs.out` to generate the data file you'll visualize in a moment. It's useful to [apply some cleanup](#filtering-out-node-internal-functions) for a more readable graph
-6. install stackvis if not yet installed `npm i -g stackvis`
-7. run `stackvis perf < perfs.out > flamegraph.htm` -->
 1. Instale o `perf` (geralmente disponível através do pacote `linux-tools-common` se já não tiver instalado)
 2. tente rodar o comando `perf` - ele pode reclamar sobre alguns módulos não encontrados do kernel, então instale eles também
 3. Execute o Node com o `perf` ativado (veja [problemas de saída do perf](#problemas-de-saída-do-perf) para dicas específicas de versões do Node)
@@ -136,6 +126,7 @@ O [0x](https://www.npmjs.com/package/0x) tem algumas mitigações para isso já 
 
 <!-- For details see: -->
 Para mais detalhes veja:
+
 - https://github.com/nodejs/benchmarking/issues/168
 - https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
 
