@@ -20,7 +20,7 @@ In public-key cryptography, each peer has two keys: A public key, and a private 
 
 In TLS connections, the public key is called a *[certificate](https://en.wikipedia.org/wiki/Digital_certificate)*. This is because it's "[signed](https://en.wikipedia.org/wiki/Digital_signature)" to prove that the public key belongs to its owner. TLS certificates may either be signed by a third-party certificate authority (CA), or they may be [self-signed](https://en.wikipedia.org/wiki/Self-signed_certificate). In the case of Certificate Authorities, Mozilla keeps [a list of trusted root CAs](http://mxr.mozilla.org/mozilla/source/security/nss/lib/ckfw/builtins/certdata.txt) that are generally agreed upon by most web browsers. These root CAs may then issue certificates to other signing authorities, which in turn sign certificates for the general public.
 
-### History of TLS/SSL Support in Node.JS
+### History of TLS/SSL Support in Node.js
 
 TLS support in node is relatively new. The first stable version of node.js to support TSL and HTTPS was the v0.4 branch, which was released in early 2011. Since then, the primary focus of the core developers has shifted from TLS/HTTPS to Windows support in the v0.5 branch. As such, the TSL APIs in node are still a little rough around the edges, and documentation leaves something to be desired.
 
