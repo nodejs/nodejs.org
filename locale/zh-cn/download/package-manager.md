@@ -218,7 +218,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## Solus
 
-在主版本库中，Solus 提供了 node.js。
+在主版本库中，Solus 提供了 Node.js。
 
 ```bash
 sudo eopkg install nodejs
@@ -226,7 +226,7 @@ sudo eopkg install nodejs
 
 ## Void Linux
 
-在主版本库中 Void Linux 发布稳定的 node.js。
+在主版本库中 Void Linux 发布稳定的 Node.js。
 
 ```bash
 xbps-install -Sy nodejs
