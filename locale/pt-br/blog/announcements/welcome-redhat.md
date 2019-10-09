@@ -11,7 +11,6 @@ layout: blog-post.hbs
 
 > Empresa procura acelerar a adoção do Node.js para desenvolvimento de software corporativo
 
-
 **SAN FRANCISCO, 6 de outubro de 2015** - A [Fundação Node.js](https://foundation.nodejs.org/), um consórcio liderado pela comunidade e apoiado pelo mercado, para avançar o desenvolvimento da plataforma Node.js, anunciou hoje que a Red Hat, Inc. ingressou na Fundação como membro Platinum. A Red Hat se une aos membros Platinum, incluindo Famous, IBM, Intel, Joyent, Microsoft e PayPal, para fornecer apoio na adoção, desenvolvimento, e sucesso de longo prazo do projeto Node.js.
 
 O Node.js é o ambiente de execução para aplicativos de alto desempenho e baixa latência, possibilitando tudo, desde aplicativos corporativos a robôs. Nos últimos dois anos, cada vez mais, empresas grandes, incluindo Red Hat, IBM, PayPal, Fidelity e Microsoft, adotaram o Node.js como parte de sua estrutura corporativa. Hoje, existem 2 milhões de endereços IP exclusivos instalando pacotes Node.js. e mais de 2 bilhões de pacotes baixados no último mês.
