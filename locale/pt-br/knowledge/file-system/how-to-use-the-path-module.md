@@ -36,6 +36,7 @@ Um uso possível do `join` é para manipular caminhos quando servem urls:
 ```
 
 Há três funções que são usadas para extrair as várias partes do nome de um caminho: `basename`, `extname`, e `dirname`.
+
 - `basename` retorna o último pedaço do caminho recebido.
 - `extname` retorna a extensão do último pedaço. Geralmente para diretórios, `extname` retorna apenas ''.
 - Finalmente, `dirname` retorna tudo que `basename` não retorna.

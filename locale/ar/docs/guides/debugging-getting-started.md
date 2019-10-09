@@ -75,6 +75,7 @@ layout: docs.hbs
   قم باختيار "Node.js" للتثبيت الأولي.
 
 ### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
+
 * قم باختيار "Debug > Start Debugging" من القائمة أو قم بالضغط على F5.
 * [خطوات تفصيلية بالإنجليزية](https://github.com/Microsoft/nodejstools/wiki/Debugging)
 
@@ -84,6 +85,7 @@ layout: docs.hbs
   لإلغاء ذلك، قم بإلغاء تمكين `js.debugger.node.use.inspect` في السجل الخاص بالبرنامج.
 
 ### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
+
 * مكتبة تسهل التواصل بأطراف اتصال بروتوكول التدقيق.
 
 ### [Gitpod](https://www.gitpod.io)
