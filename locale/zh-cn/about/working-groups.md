@@ -69,7 +69,7 @@ title: 工作组
 
 * 与 V8 协作，集成 `v8_inspector` 入 Node.js 中。
 * 与 V8 协作，集成 `trace_event` 入 Node.js 中。
-* 与 Nodejs 核心协作，完善 `async_wrap` 与 `async_hooks`。
+* 与 Node.js 核心协作，完善 `async_wrap` 与 `async_hooks`。
 * 维护与提升、跟踪系统集成（如：ETW, LTTNG, dtrace）。
 * 在 Node.js 及其组件中记录诊断功能和 API。
 * 探索机会和差距并讨论功能请求，解决 Node.js 中的冲突。

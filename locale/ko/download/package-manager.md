@@ -447,7 +447,7 @@ cd pkgsrc/lang/nodejs && bmake install
 <!--
 ## Solus
 
-Solus provides node.js in its main repository.
+Solus provides Node.js in its main repository.
 
 ```bash
 sudo eopkg install nodejs
@@ -455,7 +455,7 @@ sudo eopkg install nodejs
 -->
 ## Solus
 
-Solus는 메인 저장소에서 node.js를 제공합니다.
+Solus는 메인 저장소에서 Node.js를 제공합니다.
 
 ```bash
 sudo eopkg install nodejs
@@ -464,7 +464,7 @@ sudo eopkg install nodejs
 <!--
 ## Void Linux
 
-Void Linux ships node.js stable in the main repository.
+Void Linux ships Node.js stable in the main repository.
 
 ```bash
 xbps-install -Sy nodejs
@@ -472,7 +472,7 @@ xbps-install -Sy nodejs
 -->
 ## Void Linux
 
-Void Linux는 메인 저장소에서 node.js 안정 버전을 제공합니다.
+Void Linux는 메인 저장소에서 Node.js 안정 버전을 제공합니다.
 
 ```bash
 xbps-install -Sy nodejs

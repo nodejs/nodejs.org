@@ -20,8 +20,8 @@ This week we had one io.js nightly release [v2.0](https://iojs.org/download/nigh
 * io.js [ARM cluster](https://twitter.com/rvagg/status/593226114992087041) is growing.
 * Onboarding another batch of committers [iojs/io.js#1552](https://github.com/nodejs/node/issues/1552)
 * io.js TC meeting 4/29 on [YouTube](https://www.youtube.com/watch?v=-e675TT4WEA) and [SoundCloud](https://twitter.com/dotproto/status/594145574204510208).
-* io.js/node.js code [convergence plan draft](https://github.com/jasnell/dev-policy/blob/master/convergence.md).
-* initial [repo](https://github.com/jasnell/node.js-convergence) for code convergence work for io.js/node.js.
+* io.js/Node.js code [convergence plan draft](https://github.com/jasnell/dev-policy/blob/master/convergence.md).
+* initial [repo](https://github.com/jasnell/node.js-convergence) for code convergence work for io.js/Node.js.
 * Node.js Foundation Governance/Convergence Call on [YouTube](https://www.youtube.com/watch?v=u9h0s3YtNAU).
 * Microsoft releases new [Visual Studio Code](https://code.visualstudio.com/) based on Electron (AtomShell).
 * io.js support coming to [Modulus](http://blog.modulus.io/upcoming-updates-for-nodejs-applications)
