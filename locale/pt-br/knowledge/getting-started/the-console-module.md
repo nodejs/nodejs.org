@@ -40,7 +40,7 @@ Uma pegadinha com a função `console.log`, e todas as funções que dependem de
 
 `console.dir()`, como mencionado acima, é um "alias" para `util.inspect()` - é uma função usada para enumerar as propriedades de um objeto. [Leia mais](/pt-br/knowledge/getting-started/how-to-use-util-inspect/)
 
-Isso cobre o básico da funcionalidade do módulo `console`, porém há certos metódos que merecem ser mencionados também. Primeiro, o módulo `console` permite marcar o tempo através das funções `console.time()` e `console.timeEnd()`.  Aqui um exemplo:
+Isso cobre o básico da funcionalidade do módulo `console`, porém há certos metódos que merecem ser mencionados também. Primeiro, o módulo `console` permite marcar o tempo através das funções `console.time()` e `console.timeEnd()`. Aqui um exemplo:
 
 ```javascript
 console.time('timer');

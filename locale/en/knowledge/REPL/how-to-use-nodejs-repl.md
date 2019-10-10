@@ -102,7 +102,7 @@ One thing worth noting where REPL return values are concerned:
 5
 ```
 
-When the `var` keyword is used, the value of the expression is stored, but *NOT* returned.  When a bare identifier is used, the value is also returned, as well as stored.
+When the `var` keyword is used, the value of the expression is stored, but *NOT* returned. When a bare identifier is used, the value is also returned, as well as stored.
 
 ## Accessing Modules
 

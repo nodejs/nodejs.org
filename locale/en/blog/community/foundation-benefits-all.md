@@ -31,7 +31,7 @@ of Node.js. We welcome community review and feedback on [the draft governance
 documents](https://github.com/joyent/nodejs-advisory-board/tree/master/governance-proposal).
 
 With the recent vote by the io.js TC to join the Node.js Foundation, we took a
-giant leap toward rebuilding a unified community.  @mikeal, @piscisaureus and
+giant leap toward rebuilding a unified community. @mikeal, @piscisaureus and
 others have done an excellent job evangelizing the value of the Foundation,
 and it’s great to see it have such positive impact this early in its
 formation.

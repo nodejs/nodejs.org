@@ -1,6 +1,6 @@
 ---
 title: Weekly Update - Apr 10th, 2015
-author:  Giovanny Gioyik (@Gioyik) & Julian Duque (@julianduque)
+author: Giovanny Gioyik (@Gioyik) & Julian Duque (@julianduque)
 date: 2015-04-10T12:00:00.000Z
 status: publish
 category: weekly

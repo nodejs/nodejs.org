@@ -10,7 +10,7 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
- Node.js follows the CommonJS module system, and the builtin `require` function is the easiest way to include modules that exist in separate files. The basic functionality of `require` is that it reads a JavaScript file, executes the file, and then proceeds to return the `exports` object. An example module:
+Node.js follows the CommonJS module system, and the builtin `require` function is the easiest way to include modules that exist in separate files. The basic functionality of `require` is that it reads a JavaScript file, executes the file, and then proceeds to return the `exports` object. An example module:
 
 ```javascript
 console.log("evaluating example.js");
@@ -59,7 +59,7 @@ node> require('./example.js') //One might think that this "reloads" the file...
 { message: 'hey', say: [Function] } //...but the message is still "hey" because of the module cache.
 ```
 
-As you can see from the above, `example.js` is evaluated the first time, but all subsequent calls to `require()` only invoke the module cache, rather than reading the file again.  As seen above, this can occasionally produce side effects.
+As you can see from the above, `example.js` is evaluated the first time, but all subsequent calls to `require()` only invoke the module cache, rather than reading the file again. As seen above, this can occasionally produce side effects.
 
 The rules of where `require` finds the files can be a little complex, but a simple rule of thumb is that if the file doesn't start with "./" or "/", then it is either considered a core module (and the local Node path is checked), or a dependency in the local `node_modules` folder. If the file starts with "./" it is considered a relative file to the file that called `require`. If the file starts with "/", it is considered an absolute path. NOTE: you can omit ".js" and `require` will automatically append it if needed. For more detailed information, see [the official docs](https://nodejs.org/docs/v0.4.2/api/modules.htmll#all_Together...)
 

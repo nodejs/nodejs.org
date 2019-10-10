@@ -21,7 +21,7 @@ Because it's so simple, console.log is by far the most common way of logging dat
 
 ### Custom Logging
 
-Logging only with functions such as `console.log` is not ideal for every use case, however.  Many applications have some sort of 'debugging mode', for example, that shows the user much more output than normal execution.  To do something like this, a better idea is to write your own simple logger, and use it instead of `console.log`.
+Logging only with functions such as `console.log` is not ideal for every use case, however. Many applications have some sort of 'debugging mode', for example, that shows the user much more output than normal execution. To do something like this, a better idea is to write your own simple logger, and use it instead of `console.log`.
 
 Here is an example of a basic custom logging module with configurable debugging levels.
 
@@ -55,9 +55,9 @@ The advantage here is that the behavior of our logging mechanisms can now be mod
 
 ### Winston - multi-transport logging made easy
 
-[Winston](https://github.com/indexzero/winston) is a multi-transport, asynchronous logging library for Node.js.  It is conceptually similar to our custom logger, but comes with a wide variety of useful features and functionality baked in. In addition, `winston` is battle-hardened by internal use at Nodejitsu!
+[Winston](https://github.com/indexzero/winston) is a multi-transport, asynchronous logging library for Node.js. It is conceptually similar to our custom logger, but comes with a wide variety of useful features and functionality baked in. In addition, `winston` is battle-hardened by internal use at Nodejitsu!
 
-Here is an example of setting up a `winston` logger.  This example includes most of the transports one could ever possibly want - please note that most use cases will only warrant a few of these.
+Here is an example of setting up a `winston` logger. This example includes most of the transports one could ever possibly want - please note that most use cases will only warrant a few of these.
 
 ```javascript
 var winston = require('winston');
@@ -80,7 +80,7 @@ var logger = new (winston.Logger)({
 });
 ```
 
-Here, we have instantiated a new `winston` logger, and provided a number of logging transports.  Winston has built-in support for configurable logging levels, and provides alias methods for each configured logging level.  For example, `winston.warn(x)` is an alias for `winston.log('warn', x)`.  Thus, the following:
+Here, we have instantiated a new `winston` logger, and provided a number of logging transports. Winston has built-in support for configurable logging levels, and provides alias methods for each configured logging level. For example, `winston.warn(x)` is an alias for `winston.log('warn', x)`. Thus, the following:
 
 ```javascript
 logger.warn('Hull Breach Detected on Deck 7!');
@@ -92,7 +92,7 @@ Would output to the screen:
 warn: Hull Breach Detected on Deck 7!
 ```
 
-Because of the file transport we set up, winston also logged the warning to 'somefile.log'.  After the `logger.warn` call we just used, the log file, `somefile.log`, would contain the following output:
+Because of the file transport we set up, winston also logged the warning to 'somefile.log'. After the `logger.warn` call we just used, the log file, `somefile.log`, would contain the following output:
 
 ```
 $ cat somefile.log
@@ -101,6 +101,6 @@ $ cat somefile.log
 
 Note that winston's file logger formats the logs differently for file logging (JSON in this case) than it does for the console transport.
 
-Winston also supports logging to Riak, CouchDB, MongoDB and [many other transports](https://github.com/winstonjs/winston/blob/master/docs/transports.md).  The `logger.warn` call we used before also put the same message into each database, according to the options we gave to each transport.
+Winston also supports logging to Riak, CouchDB, MongoDB and [many other transports](https://github.com/winstonjs/winston/blob/master/docs/transports.md). The `logger.warn` call we used before also put the same message into each database, according to the options we gave to each transport.
 
 For further information, please see the [thorough documentation for Winston.](https://github.com/indexzero/winston).

@@ -39,7 +39,7 @@ Error: A mensagem de erro
 <!-- `error.stack` shows you where an error came from, as well as a list of the function calls that preceded it - for your convenience, `error.stack` always prints `error.message` as the first line of its output, making `error.stack` a convenient single property to log during debugging. -->
 `error.stack` exibe de onde o erro veio, assim como a lista das chamadas de funções que o procederam - por convenção, `error.stack` sempre imprime `error.message` como a primeira linha de saída, tornando o `error.stack` uma conveniente propriedade para imprimir durante a depuração.
 
-<!-- If you want to add more information to the Error object, you can always add properities, just as with any other JavaScript object:  -->
+<!-- If you want to add more information to the Error object, you can always add properities, just as with any other JavaScript object: -->
 Se você quiser/precisar adicionar mais informações ao objeto Error, você pode sempre adicionar propriedades, assim como em qualquer outro objeto em JavaScript:
 
 ```javascript
