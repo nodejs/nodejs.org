@@ -9,7 +9,7 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-Node.js promotes an asynchronous coding style from the ground up, in contrast to many of the most popular web frameworks. There are a number of important things to be aware of when learning to write asynchronous code - otherwise, you will often find your code executing in extremely unexpected ways.  Take this (general) rule to heart:
+Node.js promotes an asynchronous coding style from the ground up, in contrast to many of the most popular web frameworks. There are a number of important things to be aware of when learning to write asynchronous code - otherwise, you will often find your code executing in extremely unexpected ways. Take this (general) rule to heart:
 
 ### Use the asynchronous functions, avoid the synchronous ones!
 
@@ -46,7 +46,7 @@ Callbacks are a basic idiom in Node.js for asynchronous operations. When most pe
 Event Emitters are another basic idiom in Node.js. A constructor is provided in Node.js core: `require('events').EventEmitter`. An Event Emitter is typically used when there will be multiple parts to the response (since usually you only want to call a callback once). For more details, see the article on [EventEmitters](/en/knowledge/getting-started/control-flow/what-are-event-emitters/)
 
 ### A gotcha with asynchronous code
-A common mistake in asynchronous code with javascript is to write code that does something like this:
+A common mistake in asynchronous code with JavaScript is to write code that does something like this:
 
 ```javascript
 for (var i = 0; i < 5; i++) {

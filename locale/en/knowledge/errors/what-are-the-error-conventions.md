@@ -8,7 +8,7 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-In Node.js, it is considered standard practice to handle errors in asynchronous functions by returning them as the first argument to the current function's callback.  If there is an error, the first parameter is passed an `Error` object with all the details. Otherwise, the first parameter is null.
+In Node.js, it is considered standard practice to handle errors in asynchronous functions by returning them as the first argument to the current function's callback. If there is an error, the first parameter is passed an `Error` object with all the details. Otherwise, the first parameter is null.
 
 It's simpler than it sounds; let's demonstrate.
 
