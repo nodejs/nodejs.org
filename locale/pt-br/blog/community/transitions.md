@@ -18,10 +18,10 @@ A missão da Fundação é acelerar a adoção de Node e garantir
 que o projeto seja conduzido pela comunidade sob uma governança transparente e de modelo
 aberto.
 
-Sob a proteção da Fundação, o projeto Node.js está entrando para a próxima
-fase de maturidade e adotando um modelo em que não há nenhum BD ou líder de projeto.
+Sob a proteção da Fundação, o Node.js está entrando em sua próxima
+fase de maturidade, adotando um modelo onde não há nenhum BD ou líder de projeto.
 Em vez disso, a direção técnica do projeto será estabelecida por um
-comitê técnico de direção executado com um modelo de gorvernança aberto. Houve muita
+comitê técnico de direção executado com um modelo de governança aberto. Houve muita
 discussão nas políticas de desenvolvimento e [modelo de
 governança](https://github.com/joyent/nodejs-advisory-board/tree/master/governance-proposal)
 no Github. Conforme avançamos em direção ao modelo da Fundação, o time principal do Node.js já
