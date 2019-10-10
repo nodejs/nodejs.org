@@ -43,7 +43,7 @@ IoT Session Highlights:
 * Node.js Development for the Next Generation of IoT *with* Melissa Evers-Hood, Software Product Line Manager at Intel Corporation
 * Node.js While Crafting: Make Textile to Compute! *with* Mariko Kosaka, JavaScript Engineer at Scripto
 
-“Node.js has become pervasive within the last few years, with so many community accomplishments to highlight, including forming the new Node.js Foundation and the convergence of io.js and node.js,” said Mikeal Rogers, Community Manager, Node.js Foundation. “We created this conference to help showcase this growth, to accommodate the Node.js community’s many different needs, and to help accelerate adoption as it expands into enterprises.”
+“Node.js has become pervasive within the last few years, with so many community accomplishments to highlight, including forming the new Node.js Foundation and the convergence of io.js and Node.js,” said Mikeal Rogers, Community Manager, Node.js Foundation. “We created this conference to help showcase this growth, to accommodate the Node.js community’s many different needs, and to help accelerate adoption as it expands into enterprises.”
 
 Early bird registration ends October 23, 2015. Standard registration closes November 21, 2015, after which the conference price will increase from $425 to $525. Discounted hotel rates are also available until Wednesday, November 11, 2015. To register visit [https://www.regonline.com/Register/Checkin.aspx?EventID=1753707](https://www.regonline.com/Register/Checkin.aspx?EventID=1753707).
 

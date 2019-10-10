@@ -22,7 +22,7 @@ In TLS connections, the public key is called a *[certificate](https://en.wikiped
 
 ### History of TLS/SSL Support in Node.js
 
-TLS support in node is relatively new. The first stable version of node.js to support TSL and HTTPS was the v0.4 branch, which was released in early 2011. Since then, the primary focus of the core developers has shifted from TLS/HTTPS to Windows support in the v0.5 branch. As such, the TSL APIs in node are still a little rough around the edges, and documentation leaves something to be desired.
+TLS support in node is relatively new. The first stable version of Node.js to support TSL and HTTPS was the v0.4 branch, which was released in early 2011. Since then, the primary focus of the core developers has shifted from TLS/HTTPS to Windows support in the v0.5 branch. As such, the TSL APIs in node are still a little rough around the edges, and documentation leaves something to be desired.
 
 ## The tls Module
 
