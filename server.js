@@ -26,15 +26,8 @@ const serveOnly = process.argv.includes('--serve-only')
 // Watches for file changes in the locale, layout and static directories, and
 // rebuilds the modified one.
 const opts = {
-  persistent: true,
   ignoreInitial: true,
-  followSymlinks: true,
-  usePolling: true,
-  alwaysStat: false,
-  depth: undefined,
-  interval: 100,
-  ignorePermissionErrors: false,
-  atomic: true
+  usePolling: true
 }
 const locales = chokidar.watch(path.join(__dirname, 'locale'), opts)
 const layouts = chokidar.watch(path.join(__dirname, 'layouts'), opts)
