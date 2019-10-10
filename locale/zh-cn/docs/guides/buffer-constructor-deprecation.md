@@ -5,8 +5,7 @@ layout: docs.hbs
 
 # 请使用 `Buffer.from()`/`Buffer.alloc()`
 
-<a id="overview"></a>
-## 概括
+## <!--overview-->概括
 
 本教程将向你介绍如果迁移到安全的 `Buffer` 构造函数方法。此合并将消除以下已废除的警告：
 
@@ -165,6 +164,7 @@ const buf = Buffer.alloc ? Buffer.alloc(number) : new Buffer(number).fill(0);
 ## 关于 `Buffer.allocUnsafe()`
 
 使用 `Buffer.allocUnsafe()` 须格外谨慎几点：
+
 * 如果没有一个很好的理由，请不要使用它：
   * 对于小缓存，你或许不想看到性能上的差别。实际上，用 `Buffer.alloc()` 甚至更快。
   * 如果你的代码不是在热代码路径中——你也不希望看到有差别，记住用零填充将把潜在的风险降到最低。

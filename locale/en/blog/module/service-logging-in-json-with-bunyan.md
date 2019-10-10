@@ -9,7 +9,7 @@ layout: blog-post.hbs
 ---
 
 <div style="float:right;margin:0 0 15px 15px;">
-<img class="alignnone size-full wp-image-469" title="Bunyan" src="https://nodeblog.files.wordpress.com/2012/03/bunyan.png" alt="Paul Bunyan and Babe the Blue Ox" width="240" height="320" /><br />
+<img title="Bunyan" src="/static/images/blog/module/bunyan.png" alt="Paul Bunyan and Babe the Blue Ox" width="240" height="320"><br>
 <a href="http://www.flickr.com/photos/stublag/2876034487">Photo by Paul Carroll</a>
 </div>
 

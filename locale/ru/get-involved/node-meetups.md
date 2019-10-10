@@ -14,13 +14,15 @@ layout: contribute.hbs
 ## Примечания для добавления встреч
 
 ФОРМАТ
+
 - [Встреча](https://www.Встреча.com/pdxnode/)
 - Частота встреч
-- Как стать докладчиком? ― &lt;&lt;список здесь&gt;&gt;
+- Как стать докладчиком? ― «здесь»
 - Имена организаторов (если вы хотите предоставить)
 - Контактная информация организаторов (если вы хотите предоставить)
 
 ТРЕБОВАНИЯ
+
 - Пожалуйста, укажите в своем PR, прописаны ли нормы поведения для этих встреч.
 - Добавьте ссылку на нормы поведения, для их проверки.
 - Если у вас нет прописанных норм поведения, добавьте их перед отправкой.
@@ -29,6 +31,7 @@ layout: contribute.hbs
 ## Встречи
 
 ### Africa
+
 - [Встреча](https://www.nodejs.africa)
 - Частота встреч ― bi-monthly
 - Как стать докладчиком? ― [Submit to this form](https://docs.google.com/forms/d/e/1FAIpQLSe3vPkiO8ijtbP7fUhEotKefXU-fWUoDGtUSo1khmtA_7v1WQ/viewform)
@@ -101,7 +104,7 @@ layout: contribute.hbs
 
 - [Встреча](https://www.Встреча.com/es-ES/NodersJS/)
 - Частота встреч ― monthly
-- Как стать докладчиком? ― Issue on Github [here](https://github.com/Noders/Встречаs/issues/new)
+- Как стать докладчиком? ― Issue on GitHub [here](https://github.com/Noders/Встречаs/issues/new)
 - Организаторы ― Rodrigo Adones and Ender Bonnet
 - Контакты организаторов ― [Rodrigo](https://github.com/L0rdKras), [Ender](https://twitter.com/enbonnet)
 
@@ -564,6 +567,7 @@ layout: contribute.hbs
 
 #### London
 ##### LNUG
+
 - [Встреча](https://www.Встреча.com/london-nodejs/)
 - [GitHub/lnug](https://github.com/lnug/)
 - Частота встреч ― monthly
@@ -572,6 +576,7 @@ layout: contribute.hbs
 - Контакты организаторов ― contact@lnug.org, [@lnugOrg](https://twitter.com/lnugorg)
 
 ##### Node Workshops
+
 - [Встреча](https://www.Встреча.com/NodeWorkshops//)
 - Частота встреч ― monthly
 - Как стать докладчиком?

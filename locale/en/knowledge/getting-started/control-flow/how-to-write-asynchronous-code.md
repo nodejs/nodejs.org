@@ -17,19 +17,21 @@ Many of the functions in Node.js core have both synchronous and asynchronous ver
 
 As a quick example comparing and contrasting the two, using `fs.readFile`:
 
-    var fs = require('fs');
+```javascript
+var fs = require('fs');
 
-    fs.readFile('example.file', 'utf8', function (err, data) {
-        if (err) {
-          return console.log(err);
-        }
-        console.log(data);
-    });
+fs.readFile('example.file', 'utf8', function (err, data) {
+  if (err) {
+    return console.log(err);
+  }
+  console.log(data);
+});
 
-    //====================
+//====================
 
-    var data = fs.readFileSync('example.file','utf8');
-    console.log(data);
+var data = fs.readFileSync('example.file','utf8');
+console.log(data);
+```
 
 Just looking at these two blocks of code, the synchronous version appears to be more concise. However, the asynchronous version is more complicated for a very good reason. In the synchronous version, the world is paused until the file is finished reading - your process will just sit there, waiting for the OS (which handles all file system tasks).
 
@@ -46,34 +48,42 @@ Event Emitters are another basic idiom in node.js. A constructor is provided in 
 ### A gotcha with asynchronous code
 A common mistake in asynchronous code with javascript is to write code that does something like this:
 
-     for (var i = 0; i < 5; i++) {
-       setTimeout(function () {
-         console.log(i);
-       }, i);
-     }
+```javascript
+for (var i = 0; i < 5; i++) {
+  setTimeout(function () {
+    console.log(i);
+  }, i);
+}
+```
 
 The unexpected output is then:
 
-    5
-    5
-    5
-    5
-    5
+```
+5
+5
+5
+5
+5
+```
 
 The reason this happens is because each timeout is created and then `i` is incremented. Then when the callback is called, it looks for the value of `i` and it is 5. The solution is to create a closure so that the current value of `i` is stored. For example:
 
-     for (var i = 0; i < 5; i++) {
-       (function(i) {
-         setTimeout(function () {
-           console.log(i);
-         }, i);
-       })(i);
-    }
+```javascript
+for (var i = 0; i < 5; i++) {
+  (function(i) {
+    setTimeout(function () {
+      console.log(i);
+    }, i);
+  })(i);
+}
+```
 
 This gives the proper output:
 
-    0
-    1
-    2
-    3
-    4
+```
+0
+1
+2
+3
+4
+```

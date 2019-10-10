@@ -19,6 +19,10 @@
 @import 'page-modules/_prev-next-navigation'
 @import 'page-modules/_release-schedule'
 @import 'page-modules/_resources'
+@import 'vendor/_prism-tomorrow'
+
+article a
+  word-break break-word
 
 .intro
   margin-top 140px
@@ -100,9 +104,7 @@ a:hover .color-lightgray
   border-radius 2px
   margin-top 1em
 
-  // @stylint off
-  & *:first-child
-  // @stylint on
+  & *:first-child // @stylint ignore
     margin-top 0.5rem
 
 html[dir='rtl']

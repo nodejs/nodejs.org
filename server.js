@@ -21,19 +21,13 @@ const junk = require('junk')
 
 const selectedLocales = process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE.toLowerCase().split(',') : process.env.DEFAULT_LOCALE
 const preserveLocale = process.argv.includes('--preserveLocale')
+const serveOnly = process.argv.includes('--serve-only')
 
 // Watches for file changes in the locale, layout and static directories, and
 // rebuilds the modified one.
 const opts = {
-  persistent: true,
   ignoreInitial: true,
-  followSymlinks: true,
-  usePolling: true,
-  alwaysStat: false,
-  depth: undefined,
-  interval: 100,
-  ignorePermissionErrors: false,
-  atomic: true
+  usePolling: true
 }
 const locales = chokidar.watch(path.join(__dirname, 'locale'), opts)
 const layouts = chokidar.watch(path.join(__dirname, 'layouts'), opts)
@@ -112,5 +106,7 @@ http.createServer((req, res) => {
   mount(req, res)
 }).listen(port, () => console.log(`\x1B[32mServer running at http://localhost:${port}/${mainLocale}/\x1B[39m`))
 
-// Start the initial build of static HTML pages
-build.fullBuild({ selectedLocales, preserveLocale })
+if (!serveOnly) {
+  // Start the initial build of static HTML pages
+  build.fullBuild({ selectedLocales, preserveLocale })
+}

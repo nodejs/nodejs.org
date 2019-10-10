@@ -23,13 +23,13 @@ Please take a minute now to donate at [https://scalenpm.org](https://scalenpm.or
 
 There are two distinct components that make up npmjs.org operated by different people:
 
-* **http://registry.npmjs.org**: The main CouchApp (Github: [isaacs/npmjs.org](https://github.com/isaacs/npmjs.org)) that stores both package tarballs and metadata. It is operated by Nodejitsu since we [acquired IrisCouch in May](https://www.nodejitsu.com/company/press/2013/05/22/iriscouch/). The primary system administrator is [Jason Smith](https://github.com/jhs), the current CTO at Nodejitsu, cofounder of IrisCouch, and the System Administrator of registry.npmjs.org since 2011.
-* **https://npmjs.com**: The npmjs website that you interact with using a web browser. It is a Node.js program (Github: [isaacs/npm-www](https://github.com/isaacs/npm-www)) maintained and operated by Isaac and running on a Joyent Public Cloud SmartMachine.
+* **http://registry.npmjs.org**: The main CouchApp (GitHub: [isaacs/npmjs.org](https://github.com/isaacs/npmjs.org)) that stores both package tarballs and metadata. It is operated by Nodejitsu since we [acquired IrisCouch in May](https://www.nodejitsu.com/company/press/2013/05/22/iriscouch/). The primary system administrator is [Jason Smith](https://github.com/jhs), the current CTO at Nodejitsu, cofounder of IrisCouch, and the System Administrator of registry.npmjs.org since 2011.
+* **https://npmjs.com**: The npmjs website that you interact with using a web browser. It is a Node.js program (GitHub: [isaacs/npm-www](https://github.com/isaacs/npm-www)) maintained and operated by Isaac and running on a Joyent Public Cloud SmartMachine.
 
 Here is a high-level summary of the _old architecture:_
 
 <figure>
-  <img src="https://i.cloudup.com/bapm3fk8Ve-3000x3000.png" alt="old npm architecture">
+  <img src="/static/images/blog/npm/2013-outage-postmortem/bapm3fk8Ve-3000x3000.png" alt="old npm architecture">
   <figcaption>Diagram 1. Old npm architecture</figcaption>
 </figure>
 
@@ -45,7 +45,7 @@ The incident on November 4th was ultimately resolved by a reboot and resize of t
 When neither of these yielded a solution Jason Smith and I decided to move to a multi-master architecture with continuous replication illustrated below:
 
 <figure>
-  <img src="https://i.cloudup.com/xu1faVCq8p-3000x3000.png" alt="current npm architecture">
+  <img src="/static/images/blog/npm/2013-outage-postmortem/xu1faVCq8p-3000x3000.png" alt="current npm architecture">
   <figcaption>Diagram 2. Current npm architecture -- Red-lines denote continuous replication</figcaption>
 </figure>
 
@@ -63,7 +63,7 @@ The public npm registry simply cannot go down. **Ever.** We gained a lot of oper
 When these new infrastructure components are in-place The npm Registry will look like this:
 
 <figure>
-  <img src="https://i.cloudup.com/XwrpFNICJ2-3000x3000.png" alt="planned npm architecture">
+  <img src="/static/images/blog/npm/2013-outage-postmortem/XwrpFNICJ2-3000x3000.png" alt="planned npm architecture">
   <figcaption>
   Diagram 3. Planned npm architecture -- Red-lines denote continuous replication</figcaption>
 </figure>

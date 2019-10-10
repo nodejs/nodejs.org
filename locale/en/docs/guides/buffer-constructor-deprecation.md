@@ -204,6 +204,7 @@ const buf = Buffer.alloc ? Buffer.alloc(number) : new Buffer(number).fill(0);
 ## Regarding `Buffer.allocUnsafe()`
 
 Be extra cautious when using `Buffer.allocUnsafe()`:
+
 * Don't use it if you don't have a good reason to
   * e.g. you probably won't ever see a performance difference for small buffers, in fact, those
     might be even faster with `Buffer.alloc()`,
