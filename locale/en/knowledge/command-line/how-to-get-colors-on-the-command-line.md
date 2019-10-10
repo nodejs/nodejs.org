@@ -102,6 +102,7 @@ One last thing: the colors can look quite different in different terminals - som
 For reference, here's the full list of available `colors.js` properties.
 
 ### text colors
+
 - black
 - red
 - green
@@ -114,6 +115,7 @@ For reference, here's the full list of available `colors.js` properties.
 - grey
 
 ### background colors
+
 - bgBlack
 - bgRed
 - bgGreen
@@ -124,6 +126,7 @@ For reference, here's the full list of available `colors.js` properties.
 - bgWhite
 
 ### styles
+
 - reset
 - bold
 - dim
@@ -134,6 +137,7 @@ For reference, here's the full list of available `colors.js` properties.
 - strikethrough
 
 ### extras
+
 - rainbow
 - zebra
 - america

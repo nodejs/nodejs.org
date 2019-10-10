@@ -14,6 +14,7 @@ io.js v3.0 and the new goodness, breaking changes, and our ongoing call for an L
 ### io.js v3.0 Release
 
 This week, io.js [v3.0.0](https://iojs.org/dist/v3.0.0/) is released! Since this is a major version bump, new features have been introduced to io.js. These are:
+
 * V8 upgrade from v4.2 to v4.4. Rod Vagg ([@rvagg](http://twitter.com/rvagg)) has [a Gist containing the changelogs of v4.3 and v4.4](https://gist.github.com/rvagg/1f115074cb3c890985bf).
 * Computed property names (`{['foo'+'bar']:'bam'}`) is now shipped without the need for any `harmony-` flag.
 * Unicode escape sequence (`\u{xxxxx}`) is also shipped. There is no need for the `--harmony` option anymore.
@@ -25,6 +26,7 @@ This week, io.js [v3.0.0](https://iojs.org/dist/v3.0.0/) is released! Since this
 * The `smalloc` module has been removed, and the `freelist` module has now been deprecated.
 
 With a major version bump, there are also breaking changes. These include:
+
 * Changes on `Buffer.concat`, `dgram send()` error and `http` server timing behaviors.
 * The upgrade on V8, which gives the need for recompiling of all native add-ons and the new `Maybe<>` and `MaybeLocal<>` types for add-on authors to transition to these new APIs as soon as possible.
 * HTTP status codes. The code mappings conform to the [IANA standard](http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) now and will be a backwards incompatible change to consumers that depend on the text value of a header.

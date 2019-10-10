@@ -6,6 +6,7 @@ layout: about.hbs
 # Комітет Спільноти
 
 Комітет Спільноти (CommComm) є комітетом найвищого рівня у Node.js Foundation. CommComm володіє повноваженнями щодо роботи з громадськістю, включаючи:
+
 - Community [Evangelism](https://github.com/nodejs/evangelism)
 - Освітні ініціативи
 - Культурний напрямок Node.js Foundation
