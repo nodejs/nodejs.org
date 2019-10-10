@@ -175,7 +175,7 @@ Responsibilities include:
 * 커뮤니티와 연관있는 Node.js 자료를 모두 번역합니다.
 * 높은 품질로 번역하고 번역된 내용이 최신화되도록 번역 과정을 검토합니다.
 * 언어별 소셜 미디어 채널을 관리합니다.
-* 언어별 밋업 및 콘퍼런스의 node.js 발표자를 추천합니다.
+* 언어별 밋업 및 콘퍼런스의 Node.js 발표자를 추천합니다.
 
 <!--
 Each language community maintains its own membership.

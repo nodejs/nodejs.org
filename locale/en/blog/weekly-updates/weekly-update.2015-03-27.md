@@ -32,7 +32,7 @@ This week we had one io.js releases [v1.6.2](https://iojs.org/dist/v1.6.2/), com
 
 * Node.js Technical Governance Draft is proposed, you can check the draft [here](https://github.com/joyent/nodejs-advisory-board/pull/30)
 * Microsoft Visual Studio team releases Node.js Tools 1.0 for Visual Studio, the release includes rich editor, code completions, interactive window, advanced debugging and profiling. Check [the announcement](http://blogs.msdn.com/b/visualstudio/archive/2015/03/25/node-js-tools-1-0-for-visual-studio.aspx).
-* [SPM monitor supports node.js and io.js](http://blog.sematext.com/2015/03/30/nodejs-iojs-monitoring/), the monitor adds performance monitoring, alerting, and anomaly detection.
+* [SPM monitor supports Node.js and io.js](http://blog.sematext.com/2015/03/30/nodejs-iojs-monitoring/), the monitor adds performance monitoring, alerting, and anomaly detection.
 
 # Upcoming Events
 

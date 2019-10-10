@@ -88,7 +88,7 @@ a chunk of data were to fail to be properly received, the `Readable` source or
 properly destroy all the streams in a pipeline if one of them fails or closes,
 and is a must have in this case!
 
-[`pump`][] is only necessary for Nodejs 8.x or earlier, as for Node 10.x
+[`pump`][] is only necessary for Node.js 8.x or earlier, as for Node 10.x
 or later version, [`pipeline`][] is introduced to replace for [`pump`][].
 This is a module method to pipe between streams forwarding errors and properly
 cleaning up and provide a callback when the pipeline is complete.

@@ -1,5 +1,5 @@
 ---
-title: Как прочесть файл в node.js?
+title: Как прочесть файл в Node.js?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - filesystem
