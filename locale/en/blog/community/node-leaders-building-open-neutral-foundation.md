@@ -42,7 +42,7 @@ at Mikeal Rogers blog post](https://medium.com/node-js-javascript/growing-up-27d
 The Node.js community has needed an avenue for other companies
 to participate as equals in a neutral field. rowing a community and widening
 the adoption of a technology all takes resources and a governance model that
-serves everyone involved. A foundation becomes the  place where participants
+serves everyone involved. A foundation becomes the place where participants
 can meet, agree on paths forward, ensure a neutral playing field in the
 community and invest resources to grow the community even more. It can also
 allow for broad community engagement through liberal contribution policies,

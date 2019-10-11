@@ -41,7 +41,7 @@ There are several things to take note of here - first, the string object has bee
 
 Notice, also, from the second pair of `console.log` statements, that once set, a color value persists as part of the string. This is because under the hood, the proper ANSI color tags have been prepended and appended as necessary - anywhere the string gets passed where ANSI color codes are also supported, the color will remain.
 
-The last pair of `console.log` statements are probably the most important. Because of the way `colors.js` and ANSI color codes work, if more than one color property is set on a string, **only the first color property to be set on the string takes effect.**  This is because the colors function as 'state shifts' rather than as tags.
+The last pair of `console.log` statements are probably the most important. Because of the way `colors.js` and ANSI color codes work, if more than one color property is set on a string, **only the first color property to be set on the string takes effect.** This is because the colors function as 'state shifts' rather than as tags.
 
 Let's look at a more explicit example. If you set the following properties with `colors.js`:
 
