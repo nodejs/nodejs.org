@@ -216,7 +216,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## Solus
 
-Solus provides node.js in its main repository.
+Solus provides Node.js in its main repository.
 
 ```bash
 sudo eopkg install nodejs
@@ -224,8 +224,8 @@ sudo eopkg install nodejs
 
 ## Void Linux
 
-<!-- Void Linux ships node.js stable in the main repository. -->
-Void Linux にはメインリポジトリに node.js の安定版があります。
+<!-- Void Linux ships Node.js stable in the main repository. -->
+Void Linux にはメインリポジトリに Node.js の安定版があります。
 
 ```bash
 xbps-install -Sy nodejs

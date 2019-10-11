@@ -77,21 +77,21 @@ View the [original article](https://medium.com/@mikeal/how-io-js-built-a-146-per
 ## io.js and Node.js
 View the [original article](https://medium.com/@iojs/io-js-and-a-node-js-foundation-4e14699fb7be) on Medium.
 
-* Scott Hammond, CEO of Joyent, expressed his desire to bring io.js back to the node.js.
+* Scott Hammond, CEO of Joyent, expressed his desire to bring io.js back to the Node.js.
 
 ### In only a few months io.js...
 
 * Has grown to 23 active core team members
 * Has several working groups
 * Has 29 language localization teams,
-* Has drawn more contributors to the project than we’ve ever had in the history of node.js, and
+* Has drawn more contributors to the project than we’ve ever had in the history of Node.js, and
 * Has been able to release quality software at a good pace with the support of an exceptional community.
 
 > We are eager to put this all behind us but we can’t sacrifice the progress we’ve made or the principles and open governance that got us here.
 
 ### The Future
 
-* Talks with the node.js foundation are ongoing.
+* Talks with the Node.js foundation are ongoing.
 * Once the foundation has a technical governance model you will see an issue on io.js’ GitHub about whether io.js should join.
 
   * This will be discussed and voted on openly in a public TC meeting following the governance rules we’ve already built.
