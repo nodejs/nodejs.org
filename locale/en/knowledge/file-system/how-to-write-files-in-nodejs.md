@@ -1,5 +1,5 @@
 ---
-title: How do I write files in node.js?
+title: How do I write files in Node.js?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - filesystem

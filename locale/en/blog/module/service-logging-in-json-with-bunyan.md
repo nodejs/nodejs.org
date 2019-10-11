@@ -26,7 +26,7 @@ These are what logs are good for. The current state of logging is barely adequat
 
 Let's log in JSON. Let's format log records with a filter _outside_ the app. Let's put more info in log records by not shoehorning into a printf-message. Debuggability can be improved. Monitoring and analysis can _definitely_ be improved. Let's _not_ write another regex-based parser, and use the time we've saved writing tools to collate logs from multiple nodes and services, to query structured logs (from all services, not just web servers), etc.
 
-At [Joyent](http://joyent.com) we use node.js for running many core services -- loosely coupled through HTTP REST APIs and/or AMQP. In this post I'll draw on experiences from my work on Joyent's [SmartDataCenter product](http://www.joyent.com/products/smartdatacenter/) and observations of [Joyent Cloud](http://www.joyentcloud.com/) operations to suggest some improvements to service logging. I'll show the (open source) **Bunyan logging library and tool** that we're developing to improve the logging toolchain.
+At [Joyent](http://joyent.com) we use Node.js for running many core services -- loosely coupled through HTTP REST APIs and/or AMQP. In this post I'll draw on experiences from my work on Joyent's [SmartDataCenter product](http://www.joyent.com/products/smartdatacenter/) and observations of [Joyent Cloud](http://www.joyentcloud.com/) operations to suggest some improvements to service logging. I'll show the (open source) **Bunyan logging library and tool** that we're developing to improve the logging toolchain.
 
 ## Current State of Log Formatting
 
@@ -69,7 +69,7 @@ Time to burn your log4j Layout classes and move formatting to the tools side. Cr
 
 ## Introducing Bunyan
 
-[Bunyan](https://github.com/trentm/node-bunyan) is **a node.js module for logging in JSON** and **a `bunyan` CLI tool** to view those logs.
+[Bunyan](https://github.com/trentm/node-bunyan) is **a Node.js module for logging in JSON** and **a `bunyan` CLI tool** to view those logs.
 
 Logging with Bunyan basically looks like this:
 
@@ -105,7 +105,7 @@ $ node hi.js | ./node_modules/.bin/bunyan -j    # indented JSON output
 }
 ```
 
-Bunyan is log4j-like: create a Logger with a name, call `log.info(...)`, etc. However it has no intention of reproducing much of the functionality of log4j. IMO, much of that is overkill for the types of services you'll tend to be writing with node.js.
+Bunyan is log4j-like: create a Logger with a name, call `log.info(...)`, etc. However it has no intention of reproducing much of the functionality of log4j. IMO, much of that is overkill for the types of services you'll tend to be writing with Node.js.
 
 ## Longer Bunyan Example
 
@@ -340,7 +340,7 @@ _This_ is logging you can use effectively.
 
 ## Other Tools
 
-Bunyan is just one of many options for logging in node.js-land. Others (that I know of) supporting JSON logging are [winston](https://github.com/flatiron/winston#readme) and [logmagic](https://github.com/pquerna/node-logmagic/). Paul Querna has [an excellent post on using JSON for logging](http://journal.paul.querna.org/articles/2011/12/26/log-for-machines-in-json/), which shows logmagic usage and also touches on topics like the GELF logging format, log transporting, indexing and searching.
+Bunyan is just one of many options for logging in Node.js-land. Others (that I know of) supporting JSON logging are [winston](https://github.com/flatiron/winston#readme) and [logmagic](https://github.com/pquerna/node-logmagic/). Paul Querna has [an excellent post on using JSON for logging](http://journal.paul.querna.org/articles/2011/12/26/log-for-machines-in-json/), which shows logmagic usage and also touches on topics like the GELF logging format, log transporting, indexing and searching.
 
 ## Final Thoughts
 
@@ -350,6 +350,6 @@ Separate log files for a single service is an anti-pattern. The typical Apache e
 
 JSON logs bring possibilities. Feeding to tools like Splunk becomes easy. Ad hoc fields allow for a lightly spec'd comm channel from apps to other services: records with a "metric" could feed to [statsd](http://codeascraft.etsy.com/2011/02/15/measure-anything-measure-everything/), records with a "loggly: true" could feed to loggly.com.
 
-Here I've described a very simple example of restify and bunyan usage for node.js-based API services with easy JSON logging. Restify provides a powerful framework for robust API services. Bunyan provides a light API for nice JSON logging and the beginnings of tooling to help consume Bunyan JSON logs.
+Here I've described a very simple example of restify and bunyan usage for Node.js-based API services with easy JSON logging. Restify provides a powerful framework for robust API services. Bunyan provides a light API for nice JSON logging and the beginnings of tooling to help consume Bunyan JSON logs.
 
 **Update (29-Mar-2012):** Fix styles somewhat for RSS readers.

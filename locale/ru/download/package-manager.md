@@ -202,7 +202,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## Solus
 
-Solus предоставляет node.js в своем основном репозитории.
+Solus предоставляет Node.js в своем основном репозитории.
 
 ```bash
 sudo eopkg install nodejs
@@ -210,7 +210,7 @@ sudo eopkg install nodejs
 
 ## Void Linux
 
-Void Linux поставляет стабильный файл node.js в основном репозитории.
+Void Linux поставляет стабильный файл Node.js в основном репозитории.
 
 ```bash
 xbps-install -Sy nodejs
