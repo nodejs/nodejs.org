@@ -38,9 +38,9 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 * [Schism and Reconciliation](https://nodesource.com/blog/was-this-trip-really-necessary) in the Node Community by Rod Vagg.
 * First Node TSC Meeting available on [SoundCloud](https://soundcloud.com/node-foundation/tsc-meeting-2015-05-27).
 * io.js have got a new Benchmarking Working Group [nodejs/benchmarking#1](https://github.com/nodejs/benchmarking/issues/1).
-* Blog post about iojs + node.js under Node Foundation by [nodejs.com](http://blog.nodejs.org/2015/05/15/the-nodejs-foundation-benefits-all/).
+* Blog post about iojs + Node.js under Node Foundation by [nodejs.com](http://blog.nodejs.org/2015/05/15/the-nodejs-foundation-benefits-all/).
 * io.js implements new [`good first contribution`](https://github.com/nodejs/node/labels/good%20first%20contribution) tag for new contributors.
-* Blog post from [TheNewStack](http://thenewstack.io/io-js-and-node-js-have-united-and-thats-a-good-thing/) about iojs and node.js new relation.
+* Blog post from [TheNewStack](http://thenewstack.io/io-js-and-node-js-have-united-and-thats-a-good-thing/) about iojs and Node.js new relation.
 * Oliver Zeigermann created a [repo](https://github.com/DJCordhose/ecmascript-2015-iojs) about ES6 and iojs implementation.
 
 ## Upcoming Events

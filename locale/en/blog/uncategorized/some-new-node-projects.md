@@ -12,6 +12,6 @@ layout: blog-post.hbs
 
 * Joyent's Mark Cavage released [LDAP.js](http://ldapjs.org/). "_ldapjs is a pure JavaScript, from-scratch framework for implementing [LDAP](http://tools.ietf.org/html/rfc4510) clients and servers in [Node.js](https://nodejs.org/). It is intended for developers used to interacting with HTTP services in node and [express](http://expressjs.com)._
 
-* Microsoft's Tomasz Janczuk released [iisnode](http://tomasz.janczuk.org/2011/08/hosting-nodejs-applications-in-iis-on.html) "_The [iisnode](https://github.com/tjanczuk/iisnode) project provides a native IIS 7.x module that allows hosting of node.js applications in IIS._
+* Microsoft's Tomasz Janczuk released [iisnode](http://tomasz.janczuk.org/2011/08/hosting-nodejs-applications-in-iis-on.html) "_The [iisnode](https://github.com/tjanczuk/iisnode) project provides a native IIS 7.x module that allows hosting of Node.js applications in IIS._
 
   Scott Hanselman posted [a detailed walkthrough](http://www.hanselman.com/blog/InstallingAndRunningNodejsApplicationsWithinIISOnWindowsAreYouMad.aspx) of how to get started with iisnode

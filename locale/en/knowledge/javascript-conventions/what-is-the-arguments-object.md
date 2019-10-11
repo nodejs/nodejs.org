@@ -12,7 +12,7 @@ layout: knowledge-post.hbs
 
 The `arguments` object is a special construct available inside all
 function calls. It represents the list of arguments that were passed
-in when invoking the function. Since javascript allows functions to be
+in when invoking the function. Since JavaScript allows functions to be
 called with any number args, we need a way to dynamically discover and
 access them.
 
@@ -33,7 +33,7 @@ const myfunc = function(one) {
 myfunc(1, 2, 3);
 ```
 
-This construct is very useful and gives javascript functions a lot of
+This construct is very useful and gives JavaScript functions a lot of
 flexibility. But there is an important gotcha. The `arguments` object
 behaves like an array, but it is not an actual array. It does not have
 Array in its prototype chain and it does not respond to any array

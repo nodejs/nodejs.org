@@ -1,5 +1,5 @@
 ---
-title: Como eu leio arquivos no node.js?
+title: Como eu leio arquivos no Node.js?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - filesystem
