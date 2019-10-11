@@ -25,11 +25,11 @@ Objeto.
 ## Codificação e Decodificação
 
 O JavaScript fornece 2 métodos. Um para codificar estrutura de dados para JSON
-e o outro para decodificar JSON para objetos e arrays javascript.
+e o outro para decodificar JSON para objetos e arrays JavaScript.
 Ambos estão disponíveis no objeto `JSON` que existe no escopo
 global.
 
-`JSON.stringify` recebe um objeto ou um array javascript e retorna uma string
+`JSON.stringify` recebe um objeto ou um array JavaScript e retorna uma string
 serializada no formato JSON.
 
 ```js
@@ -46,7 +46,7 @@ console.log(jsonStr);
 // imprime '{"nome":"John Doe","idade":32,"titulo":"Vice Presidente do JavaScript"}'
 ```
 
-`JSON.parse` recebe uma string JSON e decodifica para um dado javascript
+`JSON.parse` recebe uma string JSON e decodifica para um dado JavaScript
 estruturado.
 
 ```js
@@ -127,7 +127,7 @@ você pode antecipar os erros encapsulando a chamada em um bloco try/catch.
 Observe que os únicos valores complexos permitidos em JSON são objetos e
 arrays. Funções, datas e outros tipos são excluídos. Isso pode não
 parecer fazer sentido no começo. Mas lembre-se que o JSON é um formato de dados,
-não um formato para transferir objetos javascript complexos junto com
+não um formato para transferir objetos JavaScript complexos junto com
 sua funcionalidade.
 
 ## Validadores JSON
@@ -143,7 +143,7 @@ Como o JSON se tornou o formato de dados mais amplamente usado, com regras bem d
 ## JSON em outras linguagens
 
 Embora o JSON tenha sido inspirado pela simplicidade dos dados estruturados do
-javascript, o seu uso não se limita à linguagem javascript. Muitas
+JavaScript, o seu uso não se limita à linguagem JavaScript. Muitas
 outras linguagens têm métodos de transferência de hashes e listas nativas
 em objetos JSON stringificados. Aqui está um exemplo rápido em ruby.
 
