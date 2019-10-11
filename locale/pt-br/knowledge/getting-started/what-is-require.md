@@ -10,7 +10,7 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-O Node.js segue o sistema de módulos CommomJS, e a função nativa `require` é a forma mais fácil de incluir módulos que existem em arquivos separados. A funcionalidade básica do `require` é que ele lê um arquivo javascript, executa o arquivo e então retorna o objeto `exports`. Um exemplo de módulo:
+O Node.js segue o sistema de módulos CommomJS, e a função nativa `require` é a forma mais fácil de incluir módulos que existem em arquivos separados. A funcionalidade básica do `require` é que ele lê um arquivo JavaScript, executa o arquivo e então retorna o objeto `exports`. Um exemplo de módulo:
 
 ```javascript
 console.log("evaluating example.js");
