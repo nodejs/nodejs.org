@@ -10,7 +10,7 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
- Node.js follows the CommonJS module system, and the builtin `require` function is the easiest way to include modules that exist in separate files. The basic functionality of `require` is that it reads a javascript file, executes the file, and then proceeds to return the `exports` object. An example module:
+ Node.js follows the CommonJS module system, and the builtin `require` function is the easiest way to include modules that exist in separate files. The basic functionality of `require` is that it reads a JavaScript file, executes the file, and then proceeds to return the `exports` object. An example module:
 
 ```javascript
 console.log("evaluating example.js");
