@@ -20,7 +20,7 @@ fs.readFile(file, [encoding], [callback]);
 
 `callback` é uma função que será chamada quando um arquivo tiver sido lido e o conteúdo estiver pronto - são passados dois argumentos, `err` e `data`. Se não houver erros, `err` será `null` e `data` conterá o conteúdo do arquivo; caso contrário `err` irá conter a mensagem de erro.
 
-Então, se nós quisermos ler o arquivo `/etc/hosts` e imprimí-lo no stdout (como o `cat` no UNIX):
+Então, se nós quisermos ler o arquivo `/etc/hosts` e imprimí-lo no stdout (como o `cat` no Unix):
 
 ```javascript
 fs = require('fs')
