@@ -21,13 +21,13 @@ title: امنیت
 
 ## گزارش باگ در ماژول‌های سوم شخص
 
-گزارش‌های  باگ در ماژول‌های سوم شخص باید به نگاه دارندگان آن ها اعلام شود و همجنین باید از طریق [تیم اکو سیستم Node](https://hackerone.com/nodejs-ecosystem) رایانامه  [security-ecosystem@nodejs.org](mailto:security-ecosystem@nodejs.org)  اعلام شود.
+گزارش‌های باگ در ماژول‌های سوم شخص باید به نگاه دارندگان آن ها اعلام شود و همجنین باید از طریق [تیم اکو سیستم Node](https://hackerone.com/nodejs-ecosystem) رایانامه [security-ecosystem@nodejs.org](mailto:security-ecosystem@nodejs.org) اعلام شود.
 
-اطلاعات بیشتر در رابطه با این فرایند را می‌توانید در  [مخزن گروه کاری امینت](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md).
+اطلاعات بیشتر در رابطه با این فرایند را می‌توانید در [مخزن گروه کاری امینت](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md).
 پیدا کنید.
 
 از شما بابت بهتر کردن امنیت Node.js و اکوسیستم آن متشکریم.
-از تلاش‌ها  و فاش‌سازی مسئولانه شما بسیار استقبال میکنیم و متوجه آن خواهیم بود.
+از تلاش‌ها و فاش‌سازی مسئولانه شما بسیار استقبال میکنیم و متوجه آن خواهیم بود.
 
 ## سیاست افشاگری
 
@@ -56,4 +56,4 @@ title: امنیت
 
 ## نظرات بر روی این سیاست
 
-اگر شما در رابطه با بهبود این فرایند پیشنهادی دارید برای بحث در رابطه با آن لطفاً یک [pull request](https://github.com/nodejs/nodejs.org) بفرستید یا  [یک   issue ایجاد کنید](https://github.com/nodejs/security-wg/issues/new).
+اگر شما در رابطه با بهبود این فرایند پیشنهادی دارید برای بحث در رابطه با آن لطفاً یک [pull request](https://github.com/nodejs/nodejs.org) بفرستید یا [یک issue ایجاد کنید](https://github.com/nodejs/security-wg/issues/new).
