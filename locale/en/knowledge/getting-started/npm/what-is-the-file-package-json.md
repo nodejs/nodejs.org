@@ -9,7 +9,7 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-All npm packages contain a file, usually in the project root, called `package.json` - this file holds various metadata relevant to the project.  This file is used to give information to `npm` that allows it to identify the project as well as handle the project's dependencies. It can also contain other metadata such as a project description, the version of the project in a particular distribution, license information, even configuration data - all of which can be vital to both `npm` and to the end users of the package. The `package.json` file is normally located at the root directory of a Node.js project.
+All npm packages contain a file, usually in the project root, called `package.json` - this file holds various metadata relevant to the project. This file is used to give information to `npm` that allows it to identify the project as well as handle the project's dependencies. It can also contain other metadata such as a project description, the version of the project in a particular distribution, license information, even configuration data - all of which can be vital to both `npm` and to the end users of the package. The `package.json` file is normally located at the root directory of a Node.js project.
 
 Node itself is only aware of two fields in the `package.json`:
 
@@ -43,8 +43,8 @@ As you can see, there are fields for the `description` and `keywords` of your pr
 
 The file listed in the `main` field is the main entry point for the library; when someone runs `require(<library name>)`, require resolves this call to `require(<package.json:main>)`.
 
-Finally, the `dependencies` field is used to list all the dependencies of your project that are available on `npm`. When someone installs your project through `npm`, all the dependencies listed will be installed as well.  Additionally, if someone runs `npm install` in the root directory of your project, it will install all the dependencies to `./node_modules`.
+Finally, the `dependencies` field is used to list all the dependencies of your project that are available on `npm`. When someone installs your project through `npm`, all the dependencies listed will be installed as well. Additionally, if someone runs `npm install` in the root directory of your project, it will install all the dependencies to `./node_modules`.
 
-It is also possible to add a `devDependencies` field to your `package.json` - these are dependencies not required for normal operation, but required/recommended if you want to patch or modify the project.  If you built your unit tests using a testing framework, for example, it would be appropriate to put the testing framework you used in your `devDependencies` field.  To install a project's `devDependencies`, simply pass the `--dev` option when you use `npm install`.
+It is also possible to add a `devDependencies` field to your `package.json` - these are dependencies not required for normal operation, but required/recommended if you want to patch or modify the project. If you built your unit tests using a testing framework, for example, it would be appropriate to put the testing framework you used in your `devDependencies` field. To install a project's `devDependencies`, simply pass the `--dev` option when you use `npm install`.
 
 For even more options, you can look through the [online docs](https://github.com/npm/npm/blob/master/doc/files/package.json.md) or run `npm help json`

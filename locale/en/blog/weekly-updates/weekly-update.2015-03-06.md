@@ -10,7 +10,7 @@ layout: blog-post.hbs
 
 # io.js 1.5.0 Release
 
-On Friday, March 6th, [@rvagg](https://github.com/rvagg) released io.js [**v1.5.0**](https://iojs.org/dist/latest/).  The complete change log can be found [on GitHub](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
+On Friday, March 6th, [@rvagg](https://github.com/rvagg) released io.js [**v1.5.0**](https://iojs.org/dist/latest/). The complete change log can be found [on GitHub](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
 
 ## Notable changes
 
@@ -30,9 +30,9 @@ On Friday, March 6th, [@rvagg](https://github.com/rvagg) released io.js [**v1.5.
 
 ## Community Updates
 
-* You can relax knowing that io.js and latest node.js [**are not affected**](https://strongloop.com/strongblog/are-node-and-io-js-affected-by-the-freak-attack-openssl-vulnerability/) by the [FREAK Attack](https://freakattack.com/).  You are running io.js or the latest version of node.js, right?
+* You can relax knowing that io.js and latest Node.js [**are not affected**](https://strongloop.com/strongblog/are-node-and-io-js-affected-by-the-freak-attack-openssl-vulnerability/) by the [FREAK Attack](https://freakattack.com/). You are running io.js or the latest version of Node.js, right?
 
-* Walmart is now sponsoring a build machine for the io.js Jenkins CI system.  The @iojs/build team is working on creating io.js SunOS binaries (like you can get from nodejs.org).  A V8 fix ([iojs/io.js#1079](https://github.com/nodejs/node/pull/1079)) needs to be landed first before more progress can be made.
+* Walmart is now sponsoring a build machine for the io.js Jenkins CI system. The @iojs/build team is working on creating io.js SunOS binaries (like you can get from nodejs.org). A V8 fix ([iojs/io.js#1079](https://github.com/nodejs/node/pull/1079)) needs to be landed first before more progress can be made.
 * We would also like to thank the following companies for contributing hardware and related technology/support/engineering for io.js builds:
   * **Digital Ocean** (mainly Linux)
   * **Rackspace** (mainly Windows)
@@ -40,18 +40,18 @@ On Friday, March 6th, [@rvagg](https://github.com/rvagg) released io.js [**v1.5.
   * **NodeSource** (ARMv6 & ARMv7)
   * **Linaro** (ARMv8)
   * **Walmart** (SmartOS / Solaris)
-* The io.js community has been hard at work on the internationalization of all of its content.  There are now over 20 active languages published on [iojs.org](http://iojs.org) and i18n community sites.  Additionally, i18n links ([iojs/website#258](https://github.com/iojs/website/pull/258)) have been added to the website footer for easy access.  Are we missing your language?  [Help us add it!](https://github.com/iojs/website/blob/master/TRANSLATION.md)
+* The io.js community has been hard at work on the internationalization of all of its content. There are now over 20 active languages published on [iojs.org](http://iojs.org) and i18n community sites. Additionally, i18n links ([iojs/website#258](https://github.com/iojs/website/pull/258)) have been added to the website footer for easy access. Are we missing your language?  [Help us add it!](https://github.com/iojs/website/blob/master/TRANSLATION.md)
 * Speaking of translations, the [io.js roadmap presentation](http://roadmap.iojs.org/) has been updated to link to other language versions.
 
-* It seems that **PayPal** is running an experiment comparing [Kappa](https://www.npmjs.com/package/kappa)  on io.js vs node.js 0.12 vs node.js v0.10.  The PayPal team identified a likely TLS memory leak. Initial fix is in [#1078](https://github.com/nodejs/node/pull/1078) and progress towards closing is in [#1075](https://github.com/nodejs/node/issues/1075)
+* It seems that **PayPal** is running an experiment comparing [Kappa](https://www.npmjs.com/package/kappa) on io.js vs Node.js 0.12 vs Node.js v0.10. The PayPal team identified a likely TLS memory leak. Initial fix is in [#1078](https://github.com/nodejs/node/pull/1078) and progress towards closing is in [#1075](https://github.com/nodejs/node/issues/1075)
 
 * [**NodeSource**](http://nodesource.com) is now providing io.js [Linux binary](https://nodesource.com/blog/nodejs-v012-iojs-and-the-nodesource-linux-repositories) packages for Ubuntu/Debian as well as RHEL/Fedora distributions.
 * The io.js [Docker build](https://registry.hub.docker.com/u/library/iojs/) is one of thirteen new [official Docker repositories](http://blog.docker.com/2015/03/thirteen-new-official-repositories-added-in-january-and-february/) added in January and February.
 
 * NodeBots and IoT people should be happy to hear that the just-announced [**Tessel2**](http://blog.technical.io/post/112787427217/tessel-2-new-hardware-for-the-tessel-ecosystem) runs [io.js natively](http://blog.technical.io/post/112888410737/moving-faster-with-io-js).
-* [**@maxbeatty**](https://twitter.com/maxbeatty) is working on a new version of the [jsperf.com](http://jsperf.com/) backend, running on io.js and it is entirely [open source](https://github.com/jsperf/jsperf.com).  Contributions are welcome!
+* [**@maxbeatty**](https://twitter.com/maxbeatty) is working on a new version of the [jsperf.com](http://jsperf.com/) backend, running on io.js and it is entirely [open source](https://github.com/jsperf/jsperf.com). Contributions are welcome!
 
-* [@eranhammer](https://twitter.com/eranhammer) wrote a blog post called [The Node Version Dilemma](http://hueniverse.com/2015/03/02/the-node-version-dilemma/) which discusses the various node.js / io.js versions and proposes which ones to use and when to use them.
+* [@eranhammer](https://twitter.com/eranhammer) wrote a blog post called [The Node Version Dilemma](http://hueniverse.com/2015/03/02/the-node-version-dilemma/) which discusses the various Node.js / io.js versions and proposes which ones to use and when to use them.
 
 ## io.js Support Added
 

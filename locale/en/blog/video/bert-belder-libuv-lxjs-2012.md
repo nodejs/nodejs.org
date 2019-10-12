@@ -7,7 +7,7 @@ layout: blog-post.hbs
 ---
 
 Node core committer Bert Belder gave a talk at
-[LXJS](http://2012.lxjs.org/).  If you are interested in how Node does
+[LXJS](http://2012.lxjs.org/). If you are interested in how Node does
 asynchronous I/O across platforms, then you should definitely watch
 this video.
 

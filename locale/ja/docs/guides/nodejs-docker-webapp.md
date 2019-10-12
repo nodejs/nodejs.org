@@ -21,7 +21,7 @@ standardized unit, called a container, for software development. A container is
 a stripped-to-basics version of a Linux operating system. An image is software
 you load into a container.
 
- -->
+-->
 # Node.js Web アプリケーションを Docker 化する
 
 この例の目的は、Node.js アプリケーションを Docker コンテナに取り込む方法を説明することです。
@@ -91,7 +91,7 @@ In the next steps, we'll look at how you can run this app inside a Docker
 container using the official Docker image. First, you'll need to build a Docker
 image of your app.
 
- -->
+-->
 ## Node.js アプリケーションを作成する
 
 まず、すべてのファイルを配置する新しいディレクトリを作成します。
@@ -237,7 +237,7 @@ EXPOSE 8080
 CMD [ "node", "server.js" ]
 ```
 
- -->
+-->
 ## Dockerfile を作成する
 
 `Dockerfile` という名前の空のファイルを作ります。
@@ -346,7 +346,7 @@ npm-debug.log
 This will prevent your local modules and debug logs from being copied onto your
 Docker image and possibly overwriting modules installed within your image.
 
- -->
+-->
 ## .dockerignore ファイル
 
 以下の内容で `Dockerfile` と同じディレクトリに `.dockerignore` ファイルを
@@ -382,7 +382,7 @@ node                            8          1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
- -->
+-->
 ## 自分のイメージを構築する
 
 `Dockerfile` があるディレクトリに行き、次のコマンドを実行して Docker イメージを構築してください。
@@ -435,7 +435,7 @@ If you need to go inside the container you can use the `exec` command:
 $ docker exec -it <container id> /bin/bash
 ```
 
- -->
+-->
 ## イメージの実行
 
 イメージを `-d` で実行するとコンテナは分離モードで実行され、バックグラウンドで実行されたままになります。
@@ -511,7 +511,7 @@ following places:
 * [Docker Tag on Stack Overflow](https://stackoverflow.com/questions/tagged/docker)
 * [Docker Subreddit](https://reddit.com/r/docker)
 
- -->
+-->
 ## テスト
 
 アプリケーションをテストするには、Docker がマッピングしたアプリケーションのポートを取得します。
