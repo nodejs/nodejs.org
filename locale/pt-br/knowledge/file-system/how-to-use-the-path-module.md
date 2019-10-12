@@ -10,7 +10,7 @@ layout: knowledge-post.hbs
 
 O módulo path contém muitas funções auxiliares para ajudar a tornar a manipulação de caminhos mais fácil.
 
-A primeira função que vale a pena mencionar é `path.normalize`. Esta função pega um caminho (na forma de uma string) e remove  barras duplicadas e normaliza abreviações de diretórios, como '.' para 'este diretório' e '..' para 'um diretório acima'. Por exemplo:
+A primeira função que vale a pena mencionar é `path.normalize`. Esta função pega um caminho (na forma de uma string) e remove barras duplicadas e normaliza abreviações de diretórios, como '.' para 'este diretório' e '..' para 'um diretório acima'. Por exemplo:
 
 ```
 > var path = require('path');
@@ -18,7 +18,7 @@ A primeira função que vale a pena mencionar é `path.normalize`. Esta função
 '/a/b/c/'
 ```
 
-Uma função  intimamente relacionada a `normalize` é `join`. Esta função recebe um número variável de argumentos, junta-os, e normaliza o caminho.
+Uma função intimamente relacionada a `normalize` é `join`. Esta função recebe um número variável de argumentos, junta-os, e normaliza o caminho.
 
 ```
 > var path = require('path');

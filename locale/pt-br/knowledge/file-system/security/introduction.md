@@ -57,4 +57,4 @@ if (filename.indexOf(rootDirectory) !== 0) {
 }
 ```
 
-Agora a varável `filename` deve conter o nome do arquivo ou  diretório que está dentro do diretório permitido (a menos que ele não exista).
+Agora a varável `filename` deve conter o nome do arquivo ou diretório que está dentro do diretório permitido (a menos que ele não exista).

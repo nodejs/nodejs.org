@@ -36,7 +36,7 @@ or entity can change or dictate.
 
 It's important to note that while critical, an open governance model does not
 guarantee success or growth. The io.js project has a strong developer
-community, for example, but to grow further needs a  model to enable funding
+community, for example, but to grow further needs a model to enable funding
 and investments in the project. If you haven't already, please [take a look
 at Mikeal Rogers blog post](https://medium.com/node-js-javascript/growing-up-27d6cc8b7c53).
 The Node.js community has needed an avenue for other companies

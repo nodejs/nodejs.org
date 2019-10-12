@@ -34,7 +34,7 @@ Attendees have the opportunity to see and learn more about how organizations lik
 
   * 25% of developers at growth-stage companies in enterprise software are using Node.js;
   * 25% of developers at FinTech startups are using Node.js;
-  * Healthcare startups are using Node.js in a significant way - an average of 33% of developers are using Node.js with the primary    use-case to enable rapid-innovation;
+  * Healthcare startups are using Node.js in a significant way - an average of 33% of developers are using Node.js with the primary use-case to enable rapid-innovation;
   * 48% of developers are using Node.js at IoT companies;
   * 80% of developers at education startups are using the technology.
 
