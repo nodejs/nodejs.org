@@ -26,6 +26,7 @@ layout: contribute.hbs
 ## International community sites and projects
 
 - [Chinese community](https://cnodejs.org/)
+- [DEV community](https://dev.to/t/node/)
 - [Hungarian (Magyar) community](https://nodehun.blogspot.com/)
 - [Israeli Facebook group for Node.js](https://www.facebook.com/groups/node.il/)
 - [Japanese user group](https://nodejs.jp/)
