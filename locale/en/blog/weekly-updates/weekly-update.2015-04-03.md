@@ -1,6 +1,6 @@
 ---
 title: Weekly Update - Apr 3rd, 2015
-author:  Giovanny Gioyik (@Gioyik)
+author: Giovanny Gioyik (@Gioyik)
 date: 2015-04-03T12:00:00.000Z
 status: publish
 category: weekly

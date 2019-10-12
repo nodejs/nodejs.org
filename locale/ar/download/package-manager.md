@@ -191,7 +191,7 @@ port install nodejs7
 pkgin -y install nodejs
 ```
 
- من أو قم ببنائها يدويا من pkgsrc:
+من أو قم ببنائها يدويا من pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install

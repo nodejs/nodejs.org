@@ -160,7 +160,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## SmartOS y illumos
 
-Las imágenes de SmartOS vienen con pkgsrc pre-instalado.  En otras distribuciones de illumos, primero instale **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, luego usted puede instalar el paquete binario de la manera usual:
+Las imágenes de SmartOS vienen con pkgsrc pre-instalado. En otras distribuciones de illumos, primero instale **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, luego usted puede instalar el paquete binario de la manera usual:
 
 ```bash
 pkgin -y install nodejs
