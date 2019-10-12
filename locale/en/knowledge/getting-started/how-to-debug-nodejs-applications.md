@@ -77,7 +77,7 @@ To take a heap snapshot, just insert this line in the desired location and optio
 var snapshot = profiler.takeSnapshot(name);
 ```
 
-To take a cpu profile, just surround the code that you are profiling with the two lines shown below.  Optionally, a name can be included to indentify the cpu profile.
+To take a cpu profile, just surround the code that you are profiling with the two lines shown below. Optionally, a name can be included to indentify the cpu profile.
 
 ```javascript
 profiler.startProfiling(name);

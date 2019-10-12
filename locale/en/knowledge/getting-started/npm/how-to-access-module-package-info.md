@@ -24,7 +24,7 @@ var pkginfo = require('pkginfo')(module);
 console.dir(module.exports);
 ```
 
-That would show us the entire contents of the package.json, neatly displayed to our console.  If we only wanted certain pieces of information, we just specify them like so:
+That would show us the entire contents of the package.json, neatly displayed to our console. If we only wanted certain pieces of information, we just specify them like so:
 
 ```javascript
 var pkginfo = require('pkginfo')(module, 'version', 'author');

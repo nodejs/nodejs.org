@@ -7,7 +7,7 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-Reading the contents of a file into memory is a very common programming task, and, as with many other things, the Node.js core API provides methods to make this trivial.  There are a variety of file system methods, all contained in the `fs` module.  The easiest way to read the entire contents of a file is with `fs.readFile`, as follows:
+Reading the contents of a file into memory is a very common programming task, and, as with many other things, the Node.js core API provides methods to make this trivial. There are a variety of file system methods, all contained in the `fs` module. The easiest way to read the entire contents of a file is with `fs.readFile`, as follows:
 
 ```javascript
 fs = require('fs');
@@ -18,7 +18,7 @@ fs.readFile(file, [encoding], [callback]);
 
 `encoding` is an optional parameter that specifies the type of encoding to read the file. Possible encodings are 'ascii', 'utf8', and 'base64'. If no encoding is provided, the default is `null`.
 
-`callback` is a function to call when the file has been read and the contents are ready - it is passed two arguments, `error` and `data`.  If there is no error, `error` will be `null` and `data` will contain the file contents; otherwise `err` contains the error message.
+`callback` is a function to call when the file has been read and the contents are ready - it is passed two arguments, `error` and `data`. If there is no error, `error` will be `null` and `data` will contain the file contents; otherwise `err` contains the error message.
 
 So if we wanted to read `/etc/hosts` and print it to stdout (just like UNIX `cat`):
 

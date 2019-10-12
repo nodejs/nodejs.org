@@ -9,7 +9,7 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-When developing in the browser there are many wonderful built in JavaScript functions that we can't use because certain browsers don't implement them.  As a result, most developers never use them.  In Node, however we can assume that everyone has the same JavaScript implementation and as such can use these wonderful functions and not implement them over and over in our own libraries.
+When developing in the browser there are many wonderful built in JavaScript functions that we can't use because certain browsers don't implement them. As a result, most developers never use them. In Node, however we can assume that everyone has the same JavaScript implementation and as such can use these wonderful functions and not implement them over and over in our own libraries.
 
 The following is a list of some interesting api bits that aren't considered safe to use in a web setting but are built in to node's V8 engine.
 

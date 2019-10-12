@@ -34,7 +34,7 @@ myREPL.on('exit', function (code) {
 });
 ```
 
-There you have it - spawn the Node.js REPL as a child process, and pipe your stdin and stdout to its stdin and stdout.  Make sure to listen for the child's 'exit' event, too, or else your program will just hang there when the REPL exits.
+There you have it - spawn the Node.js REPL as a child process, and pipe your stdin and stdout to its stdin and stdout. Make sure to listen for the child's 'exit' event, too, or else your program will just hang there when the REPL exits.
 
 Another use for stream.pipe is file streams. In Node.js, fs.createReadStream and fs.createWriteStream are used to create a stream to an open file descriptor. Now let's look at how one might use stream.pipe to write to a file. You'll probably recognize most of the code:
 
@@ -64,9 +64,9 @@ myREPL.on('exit', function (code) {
 });
 ```
 
-With those small additions, your stdin and the stdout from your REPL will both be piped to the writeable file stream you opened to 'myOutput.txt'.  It's that simple - you can pipe streams to as many places as you want.
+With those small additions, your stdin and the stdout from your REPL will both be piped to the writeable file stream you opened to 'myOutput.txt'. It's that simple - you can pipe streams to as many places as you want.
 
-Another very important use case for stream.pipe is with HTTP request and response objects.  Here we have the very simplest kind of proxy:
+Another very important use case for stream.pipe is with HTTP request and response objects. Here we have the very simplest kind of proxy:
 
 ```javascript
 #!/usr/bin/env node
