@@ -17,7 +17,7 @@ title: امنیت
 
 پروژه Node.js در یک برنامه رسمی جایزه برای باگ شرکت می‌کند که برای فعالان امنیتی و افشاهای عمومی است.
 
-این برنامه از طریق پلتفرم HackerOne مدیریت می‌شود به آدرس  [https://hackerone.com/nodejs](https://hackerone.com/nodejs) برای اطلاعات بیشتر.
+این برنامه از طریق پلتفرم HackerOne مدیریت می‌شود به آدرس [https://hackerone.com/nodejs](https://hackerone.com/nodejs) برای اطلاعات بیشتر.
 
 ## گزارش باگ در ماژول‌های سوم شخص
 
