@@ -8,7 +8,7 @@ layout: contribute.hbs
 
 Code & Learn events allow you to get started (or go further) with Node.js core contributions. Experienced contributors help guide you through your first (or second or third or fourth) commit to Node.js core. They also are available to provide impromptu guided tours through specific areas of Node.js core source code.
 
- -->
+-->
 # Code + Learn
 
 Code ＆ Learn イベントを使用すると、Node.js の主な貢献で始めることができます (またはさらに踏み込むことができます)。経験豊富なコントリビュータが、Node.js コアへの最初 (または2、3、4) 回目のコミットを手助けします。また、Node.js のコアソースコードの特定の領域を通じて、即席のガイド付きツアーを提供するためにも利用できます。
@@ -19,7 +19,7 @@ Code ＆ Learn イベントを使用すると、Node.js の主な貢献で始め
 - [Saint-Petersburg, Russia on May 26](https://medium.com/piterjs/code-learn-ce20d330530f)
 - Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/)
 
- -->
+-->
 ## 近日開催予定の Code + Learn イベント
 
 - 近日発表予定
@@ -38,7 +38,7 @@ Code ＆ Learn イベントを使用すると、Node.js の主な貢献で始め
 - Amsterdam in September 2016
 - Dublin and London in September 2015
 
- -->
+-->
 ## 過去の Code + Learn イベント
 
 - Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/)

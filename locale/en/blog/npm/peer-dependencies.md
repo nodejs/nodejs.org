@@ -7,7 +7,7 @@ slug: peer-dependencies
 layout: blog-post.hbs
 ---
 
-_Reposted from [Domenic's blog](http://domenic.me/2013/02/08/peer-dependencies/) with permission.  Thanks!_
+_Reposted from [Domenic's blog](http://domenic.me/2013/02/08/peer-dependencies/) with permission. Thanks!_
 
 npm is awesome as a package manager. In particular, it handles sub-dependencies very well: if my package depends on
 `request` version 2 and `some-other-library`, but `some-other-library` depends on `request` version 1, the resulting

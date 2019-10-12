@@ -21,7 +21,7 @@ See https://nodejs.org/en/blog/vulnerability/december-2015-security-releases/ fo
 
 ### Community Updates
 
-* [Node.js running in the new Airbus A350 inflight servers](http://reaktor.com/blog/aircraft-customer-experience-on-a-new-level/), "We were allowed to run our own node.js-server on the inflight servers of the aircraft."
+* [Node.js running in the new Airbus A350 inflight servers](http://reaktor.com/blog/aircraft-customer-experience-on-a-new-level/), "We were allowed to run our own Node.js-server on the inflight servers of the aircraft."
 * [Automatic cat feeder powered by Node.js](https://github.com/rachelnicole/robokitty), "Is a DIY cat (or dog, or human) feeder controlled over the web."
 * [Netflix' Node powered interfaces](http://thenewstack.io/netflix-uses-node-js-power-user-interface/), "Shifting its user interfaces to Node.js, Netflix has been able to streamline the development."
 

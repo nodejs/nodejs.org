@@ -82,7 +82,7 @@ For all the good parts of LDAP, those are really damned big failing points, and 
 
 Well, in the last year, I went to work for [Joyent](http://www.joyent.com/ "Joyent"), and like everyone else, we have several use problems that are classic directory service problems. If you break down the list I outlined above:
 
-* **Connection-oriented and asynchronous:** Holy smokes batman, [node.js](https://nodejs.org/ "node.js") is a completely kick-ass event-driven asynchronous server platform that manages connections like a boss. Check!
+* **Connection-oriented and asynchronous:** Holy smokes batman, [Node.js](https://nodejs.org/ "Node.js") is a completely kick-ass event-driven asynchronous server platform that manages connections like a boss. Check!
 * **Lots of use cases:** Yeah, we've got some. Man, the [sinatra](http://www.sinatrarb.com/ "sinatra")/[express](http://expressjs.com/ "express") paradigm is so easy to slap over anything. How about we just do that and leave as many use cases open as we can. Check!
 * **Replication is hard. CAP is right:** There are a lot of distributed databases out vying to solve exactly this problem. At Joyent we went with [Riak](http://www.basho.com/ "Riak"). Check!
 * **Don't need all of the protocol:** I'm lazy. Let's just skip the stupid things most people don't need. Check!

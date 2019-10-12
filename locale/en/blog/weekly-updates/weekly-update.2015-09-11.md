@@ -57,7 +57,7 @@ Node.js Foundation posts an entry about Node.js new release and introduction of 
 
 ### Node.js Interactive
 
-[Node.js Interactive](http://events.linuxfoundation.org/events/node-interactive) is a new, annual, vendor-neutral conference for Node.js.  It is being led by the newly formed Node.js Foundation.
+[Node.js Interactive](http://events.linuxfoundation.org/events/node-interactive) is a new, annual, vendor-neutral conference for Node.js. It is being led by the newly formed Node.js Foundation.
 
 ### Community Updates
 
