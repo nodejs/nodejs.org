@@ -34,3 +34,6 @@ jobs:
 
       - name: Run linkinator
         run: npm run test:linkinator
+
+      - name: Run package-lock.json linting
+        run: npm run test:lockfile
