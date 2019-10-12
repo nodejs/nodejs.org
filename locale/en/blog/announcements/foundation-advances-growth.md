@@ -18,7 +18,7 @@ The first Node.js Interactive event unites more than 700 developers, engineers, 
 
 Attendees have the opportunity to see and learn more about how organizations like Capital One, GoDaddy, Intel, NodeSource, npm and Uber are using Node.js to meet their innovation needs. Attendees are also getting a first look at Node.js advancements announced and demoed this week including:
 
-* JOYENT: Joyent is announcing the 2016 Node.js Innovation Program, which provides Node.js expertise, marketing support and free cloud or on-premise infrastructure to start-ups and teams within larger enterprises that are driving innovation powered by Node.js. The 2015 program included [bitHound](https://www.bithound.io/), who will speak at Node.js Interactive about innovative approaches to identifying risk and priorities in dependencies and code.  More info can be found [here](https://www.joyent.com/innovation).
+* JOYENT: Joyent is announcing the 2016 Node.js Innovation Program, which provides Node.js expertise, marketing support and free cloud or on-premise infrastructure to start-ups and teams within larger enterprises that are driving innovation powered by Node.js. The 2015 program included [bitHound](https://www.bithound.io/), who will speak at Node.js Interactive about innovative approaches to identifying risk and priorities in dependencies and code. More info can be found [here](https://www.joyent.com/innovation).
 
   Joyent also released a new Node.js, Docker and NoSQL reference [architecture](https://www.joyent.com/blog/how-to-dockerize-a-complete-application) that enables microservices in seconds. To learn more, the company will be demoing this at booth number 7.
 

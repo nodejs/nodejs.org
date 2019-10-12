@@ -40,9 +40,9 @@ If you're interested in participating in the Community Committee as a committee 
 
 If you're interested in becoming more deeply involved with the Community Committee and its projects, we encourage you to become an active observer, and work toward achieving member status. To become a member you must:
 
- 1. Attend the bi-weekly meetings, investigate issues tagged as good first issue, file issues and pull requests, and provide insight via GitHub as a contributor or collaborator.
- 2. Request to become an Observer by filing an issue. Once added as an Observer to meetings, we will track attendance and participation for 3 months, in accordance with our governance guidelines. You can find a great example of such an issue [here](https://github.com/nodejs/community-committee/issues/142).
- 3. When you meet the 3 month minimum attendance, and participation expectations, the CommComm will vote to add you as a member.
+1. Attend the bi-weekly meetings, investigate issues tagged as good first issue, file issues and pull requests, and provide insight via GitHub as a contributor or collaborator.
+2. Request to become an Observer by filing an issue. Once added as an Observer to meetings, we will track attendance and participation for 3 months, in accordance with our governance guidelines. You can find a great example of such an issue [here](https://github.com/nodejs/community-committee/issues/142).
+3. When you meet the 3 month minimum attendance, and participation expectations, the CommComm will vote to add you as a member.
 
 Membership is for 6 months. The group will ask on a regular basis if the expiring members would like to stay on. A member just needs to reply to renew. There is no fixed size of the CommComm. However, the expected target is between 9 and 12. You can read more about membership, and other administrative details, in our [Governance Guide](https://github.com/nodejs/community-committee/blob/master/GOVERNANCE.md).
 

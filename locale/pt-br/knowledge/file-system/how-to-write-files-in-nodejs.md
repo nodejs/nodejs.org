@@ -1,5 +1,5 @@
 ---
-title: Como eu escrevo arquivos no node.js?
+title: Como eu escrevo arquivos no Node.js?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - filesystem
@@ -7,7 +7,7 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-Escrever em um arquivo é outra das tarefas básicas da programação que um desenvolvedor normalmente precisa conhecer - por sorte, esta tarefa é muito simples no Node.js.  Nós podemos usar o conveniente método `writeFile` do módulo `fs` da biblioteca padrão, que pode evitar todo tipo de problemas e economizar tempo.
+Escrever em um arquivo é outra das tarefas básicas da programação que um desenvolvedor normalmente precisa conhecer - por sorte, esta tarefa é muito simples no Node.js. Nós podemos usar o conveniente método `writeFile` do módulo `fs` da biblioteca padrão, que pode evitar todo tipo de problemas e economizar tempo.
 
 ```javascript
 fs = require('fs');

@@ -134,7 +134,7 @@ Node.js 可於 ports 系統中取得。
 /usr/ports/lang/node
 ```
 
- 在 OpenBSD 上使用 [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1)：
+在 OpenBSD 上使用 [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1)：
 
 ```bash
 pkg_add node

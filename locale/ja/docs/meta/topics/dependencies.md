@@ -20,7 +20,7 @@ There are several dependencies that Node.js relies on to work the way it does.
   - [gyp](#gyp)
   - [gtest](#gtest)
 
- -->
+-->
 # 依存関係
 
 Node.js がそのように機能するために依存する依存関係がいくつかあります。
@@ -47,7 +47,7 @@ controls via the V8 C++ API. V8 is maintained by Google, for use in Chrome.
 
 - [Documentation](https://v8docs.nodesource.com/)
 
- -->
+-->
 ## ライブラリ
 
 ### V8
@@ -69,7 +69,7 @@ asynchronously at the operating system level.
 
 - [Documentation](http://docs.libuv.org/)
 
- -->
+-->
 ### libuv
 
 もう1つの重要な依存関係は libuv です。
@@ -89,7 +89,7 @@ per-request memory footprint.
 
 - [Documentation](https://github.com/joyent/http-parser/)
 
- -->
+-->
 ### http-parser
 
 HTTP 解析は、http-parser という軽量の C ライブラリによって処理されます。
@@ -110,7 +110,7 @@ like mDNS.
 
 - [Documentation](https://c-ares.haxx.se/docs.html)
 
- -->
+-->
 ### c-ares
 
 一部の非同期 DNS 要求では、Node.js は c-ares というCライブラリを使用します。
@@ -131,7 +131,7 @@ web relies on for security.
 
 - [Documentation](https://www.openssl.org/docs/)
 
- -->
+-->
 ### OpenSSL
 
 OpenSSL は、`tls` モジュールと`crypto` モジュールの両方で広く使用されています。
@@ -149,7 +149,7 @@ create sync, async and streaming compression and decompression interfaces.
 
 - [Documentation](https://www.zlib.net/manual.html)
 
- -->
+-->
 ### zlib
 
 高速な圧縮と解凍のために、Node.js は gzip と libpng での使用でも知られている
@@ -170,7 +170,7 @@ which makes building Node.js apps quick and easy.
 
 - [Documentation](https://docs.npmjs.com/)
 
- -->
+-->
 ## ツール
 
 ### npm
@@ -192,7 +192,7 @@ dependencies — are written in languages that require compilation.
 
 - [Documentation](https://gyp.gsrc.io/docs/UserDocumentation.md)
 
- -->
+-->
 ### gyp
 
 ビルドシステムは、V8 からコピーされた python ベースのプロジェクトジェネレータである gyp によって処理されます。
@@ -210,7 +210,7 @@ testing C/C++ without needing an existing node executable to bootstrap from.
 
 - [Documentation](https://code.google.com/p/googletest/wiki/V1_7_Documentation)
 
- -->
+-->
 ### gtest
 
 ネイティブコードは、Chromium から入手した gtest を使用してテストできます。
