@@ -27,5 +27,4 @@ layout: contribute.hbs
 - [Comunidad en Facebook de usuarios Israelí de Node.js](https://www.facebook.com/groups/node.il/)
 - [Grupo de usuarios de Japón](https://nodejs.jp/)
 - [Comunidad en Facebook de Español/Castellano](https://www.facebook.com/groups/node.es/)
-- [Comunidad de lenguaje hispano](http://nodehispano.com)
 - [Vietnamese Node.js community](https://www.facebook.com/nodejs.vn/)
