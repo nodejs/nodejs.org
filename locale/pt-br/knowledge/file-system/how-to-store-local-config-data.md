@@ -54,7 +54,7 @@ catch (err) {
 }
 ```
 
-NODE PRO TIP: Mesmo que você não goste de usar `try/catch`, este é um lugar para usá-lo. `JSON.parse` é um analisador JSON muito rígido, e erros são comuns - mais importante, contudo, `JSON.parse` usa a declaração `throw`  em vez de dar uma callback, então `try/catch` é o único jeito de se proteger contra os erros.
+NODE PRO TIP: Mesmo que você não goste de usar `try/catch`, este é um lugar para usá-lo. `JSON.parse` é um analisador JSON muito rígido, e erros são comuns - mais importante, contudo, `JSON.parse` usa a declaração `throw` em vez de dar uma callback, então `try/catch` é o único jeito de se proteger contra os erros.
 
 Usar o método built-in `JSON` pode lhe levar longe, mas como tantos outros problemas que você pode estar procurando resolver com Node.js, já há uma solução da comunidade que pode levar você muito além. A solução, neste caso, é o `nconf`. Escrito por Charlie Robbins, é um gerenciador de configurações para Node.js que suporta armazenamento em memória, armazenamento de arquivos local, bem como suporte a backend `redis`, provido por um módulo separado.
 

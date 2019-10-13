@@ -40,7 +40,7 @@ On Friday, March 6th, [@rvagg](https://github.com/rvagg) released io.js [**v1.5.
   * **NodeSource** (ARMv6 & ARMv7)
   * **Linaro** (ARMv8)
   * **Walmart** (SmartOS / Solaris)
-* The io.js community has been hard at work on the internationalization of all of its content. There are now over 20 active languages published on [iojs.org](http://iojs.org) and i18n community sites. Additionally, i18n links ([iojs/website#258](https://github.com/iojs/website/pull/258)) have been added to the website footer for easy access. Are we missing your language?  [Help us add it!](https://github.com/iojs/website/blob/master/TRANSLATION.md)
+* The io.js community has been hard at work on the internationalization of all of its content. There are now over 20 active languages published on [iojs.org](http://iojs.org) and i18n community sites. Additionally, i18n links ([iojs/website#258](https://github.com/iojs/website/pull/258)) have been added to the website footer for easy access. Are we missing your language? [Help us add it!](https://github.com/iojs/website/blob/master/TRANSLATION.md)
 * Speaking of translations, the [io.js roadmap presentation](http://roadmap.iojs.org/) has been updated to link to other language versions.
 
 * It seems that **PayPal** is running an experiment comparing [Kappa](https://www.npmjs.com/package/kappa) on io.js vs Node.js 0.12 vs Node.js v0.10. The PayPal team identified a likely TLS memory leak. Initial fix is in [#1078](https://github.com/nodejs/node/pull/1078) and progress towards closing is in [#1075](https://github.com/nodejs/node/issues/1075)
