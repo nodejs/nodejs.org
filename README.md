@@ -51,10 +51,6 @@ If you want to submit a new feature or a bugfix, the best way is to create the c
 
 Full set up is in <https://github.com/nodejs/build/tree/master/setup/www> minus secrets and certificates. The webhook is setup on GitHub for this project and talks to a small Node server on the host which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
 
-## Governance
-
-All of the Node.js Foundation websites, including this repo, are jointly governed by the **Website Working Group**. See [GOVERNANCE.md](./GOVERNANCE.md) to learn more about the group's structure and [CONTRIBUTING.md](./CONTRIBUTING.md) for guidance about the expectations for all contributors to this project.
-
 ### Content vs. Code
 
 The Website Working Group is primarily concerned with the code and overall structure of the website.
