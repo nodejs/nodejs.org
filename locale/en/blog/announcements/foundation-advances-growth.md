@@ -22,7 +22,7 @@ Attendees have the opportunity to see and learn more about how organizations lik
 
   Joyent also released a new Node.js, Docker and NoSQL reference [architecture](https://www.joyent.com/blog/how-to-dockerize-a-complete-application) that enables microservices in seconds. To learn more, the company will be demoing this at booth number 7.
 
-* IBM is featuring multiple Node.js based solutions for: a complete API lifecycle via StrongLoop Arc and Loopback.io; real-time location tracking in Node using Cloudant®  data services; how to write Node applications against Apache Spark; and end-to-end mobile applications using IBM MobileFirst -- all running on Bluemix®, IBM's Cloud Platform.
+* IBM is featuring multiple Node.js based solutions for: a complete API lifecycle via StrongLoop Arc and Loopback.io; real-time location tracking in Node using Cloudant® data services; how to write Node applications against Apache Spark; and end-to-end mobile applications using IBM MobileFirst -- all running on Bluemix®, IBM's Cloud Platform.
 
 * INTEL: A leader in the Internet of Things, Intel will be demoing a SmartHouse at booth number 0013. Based on the [IoTivity](https://www.iotivity.org/) open source project, which is sponsored by the [Open Interconnect Consortium (OIC)](http://openinterconnect.org/), the SmartHouse includes a home gateway from MinnowBoard Max client, three Edison controlled LEDs, fan, motion sensor, and smoke detector. Intel developed Node.js binding for IoTivity to power the demo with everything being controlled from a WebGL 3D virtual house interface.
 

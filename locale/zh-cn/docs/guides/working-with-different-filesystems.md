@@ -62,7 +62,7 @@ Unicode 不敏感编码和 Unicode 编码保存是两种不同的文件系统行
 
 节点提供了 `string.normalize('NFC' / 'NFD')`，你可以使用它正常化一个 UTF-8 字符串, 无论是 NFC 或 NFD。您不应将输出从该函数中存储，而只将其用作比较函数的一部分以测试两个 UTF-8 字符串是否与用户看起来相同。
 
-你可以使用 `string1.normalize('NFC') === string2.normalize('NFC')` 或者 `string1.normalize('NFD') === string2.normalize('NFD')`  作为你的比较函数，至于使用哪种编码格式并不重要。
+你可以使用 `string1.normalize('NFC') === string2.normalize('NFC')` 或者 `string1.normalize('NFD') === string2.normalize('NFD')` 作为你的比较函数，至于使用哪种编码格式并不重要。
 
 规范化速度很快，但您可能希望使用缓存作为比较函数的输入以避免多次对同一字符串进行规范化。如果该字符串不存在于缓存中，则将其规范化并缓存它。注意不要存储或保留缓存，仅将其用作缓存。
 

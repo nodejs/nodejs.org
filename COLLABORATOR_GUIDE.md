@@ -137,7 +137,7 @@ CoC](https://github.com/rust-lang/rust/wiki/Note-development-policy#conduct).
 * Please keep unstructured critique to a minimum. If you have solid
   ideas you want to experiment with, make a fork and see how it works.
 * We will exclude you from interaction if you insult, demean or harass
-  anyone.  That is not welcome behaviour. We interpret the term
+  anyone. That is not welcome behaviour. We interpret the term
   "harassment" as including the definition in the [Citizen Code of
   Conduct](http://citizencodeofconduct.org/); if you have any lack of
   clarity about what might be included in that concept, please read
@@ -147,7 +147,7 @@ CoC](https://github.com/rust-lang/rust/wiki/Note-development-policy#conduct).
   you feel you have been or are being harassed or made uncomfortable
   by a community member, please contact one of the channel ops or any
   of the TC members immediately with a capture (log, photo, email) of
-  the harassment if possible.  Whether you're a regular contributor or
+  the harassment if possible. Whether you're a regular contributor or
   a newcomer, we care about making this community a safe place for you
   and we've got your back.
 * Likewise any spamming, trolling, flaming, baiting or other
@@ -166,7 +166,7 @@ CoC](https://github.com/rust-lang/rust/wiki/Note-development-policy#conduct).
 
 #### Create the page content
 
-Create a new markdown file in ```/local/en```.  As specified in the
+Create a new markdown file in ```/local/en```. As specified in the
 [README.md](./README.md#layout), initial development happens in English.
 
 At the top of the markdown file, set a page the title and layout.
@@ -195,7 +195,7 @@ Add a new object defining the link attributes.
 #### Update the layout to add a link
 
 Using the example layout, open ```/layouts/contribute.hbs``` and add your new
-link to the markup.  It's essential to update the handlebars paths to site.json.
+link to the markup. It's essential to update the handlebars paths to site.json.
 
 ```
 {{site.locale}}/{{site.getinvolved.events.link}}
