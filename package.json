@@ -19,8 +19,8 @@
     "test:lint:js": "standard",
     "test:lint:md": "remark -qf .",
     "test:lint:stylelint": "stylelint \"layouts/css/**/*.{css,scss}\"",
+    "test:lint:lockfile": "lockfile-lint --allowed-hosts npm github.com --validate-https --type npm --path package-lock.json",
     "test:lint": "npm-run-all --parallel test:lint:*",
-    "test:lockfile": "lockfile-lint --type npm --path package-lock.json --allowed-hosts npm github.com",
     "test:html": "node scripts/vnu-jar.js",
     "test:unit": "tape tests/**/*.test.js | faucet"
   },
