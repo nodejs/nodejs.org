@@ -36,7 +36,7 @@ O código é autidado para atopar calquea potenciais problemas semellantes. As c
 as versións que aínda están baixo mantemento. Estas correccións non son enviadas ao repositorio público, senón que
 son retidas localmente ata o anuncio público.
 
-- Unha data suxerida de embargo para esta vulnerabilidade é escollida e un CVE (Common Vulnerabilities and  Exposures (CVE®))
+- Unha data suxerida de embargo para esta vulnerabilidade é escollida e un CVE (Common Vulnerabilities and Exposures (CVE®))
 é solicitada para a vulnerabilidade.
 
 - Na data de embargo, unha copia do anuncio é publicada na lista de correo de seguridade de Node.js. Os cambios son subidos ao repositorio público e novas versións son desplegadas en nodejs.org. Nas seguintes 6 horas da notificación á lista de correo, unha copia do anuncio será publicada no blog de Node.js.

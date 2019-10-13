@@ -29,7 +29,7 @@ server.listen(8080);
 
 <!-- Save this in a file called `server.js` - run `node server.js`, and your program will hang there... it's waiting for connections to respond to, so you'll have to give it one if you want to see it do anything.  Try opening up a browser, and typing `localhost:8080` into the location bar.  If everything has been set up correctly, you should see your server saying hello! -->
 
-Salve este script em um arquivo chamado `server.js` - execute a linha de comando `node server.js`, o seu programa ficará em espera... está aguardando por conexões para responder, então você terá que dar uma conexão se quiser ver o programa fazer alguma coisa. Tente abrir um navegador e digite `localhost:8080` na barra de endereços.  Se você configurou tudo corretamente, você deverá ver o seu servidor dizendo hello!
+Salve este script em um arquivo chamado `server.js` - execute a linha de comando `node server.js`, o seu programa ficará em espera... está aguardando por conexões para responder, então você terá que dar uma conexão se quiser ver o programa fazer alguma coisa. Tente abrir um navegador e digite `localhost:8080` na barra de endereços. Se você configurou tudo corretamente, você deverá ver o seu servidor dizendo hello!
 
 <!-- Also, from your terminal you should be able to get the response using curl: -->
 

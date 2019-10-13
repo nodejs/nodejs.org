@@ -48,7 +48,7 @@ var local = repl.start("node::local> ");
 local.context.mood = mood;
 ```
 
-Este script cria *dois* REPLs: Um é normal, exceto pelo prompt customizado. Porém o  *outro* é exposto através do módulo net de forma que se possa fazer a conexão telnet para ele! Além disso, ele usa a propriedade `context` para expor a função "mood" para os dois REPLs, e a string "bonus" apenas para o REPL remoto. Como você verá, essa forma de tentar expor objetos em um REPL e não no outro *não funciona*.
+Este script cria *dois* REPLs: Um é normal, exceto pelo prompt customizado. Porém o *outro* é exposto através do módulo net de forma que se possa fazer a conexão telnet para ele! Além disso, ele usa a propriedade `context` para expor a função "mood" para os dois REPLs, e a string "bonus" apenas para o REPL remoto. Como você verá, essa forma de tentar expor objetos em um REPL e não no outro *não funciona*.
 
 Além disso, todos os objetos no escopo global também serão acessíveis para os seus REPLs.
 

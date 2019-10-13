@@ -37,7 +37,7 @@ console.log(stringTwo.magenta);
 console.log(stringThree.grey.bold);
 ```
 
-There are several things to take note of here - first, the string object has been prototyped, so any color may be added simply by adding the property to the string!  It works on string literals, template literals and on variables, as shown at the top of the example above.
+There are several things to take note of here - first, the string object has been prototyped, so any color may be added simply by adding the property to the string! It works on string literals, template literals and on variables, as shown at the top of the example above.
 
 Notice, also, from the second pair of `console.log` statements, that once set, a color value persists as part of the string. This is because under the hood, the proper ANSI color tags have been prepended and appended as necessary - anywhere the string gets passed where ANSI color codes are also supported, the color will remain.
 
@@ -49,7 +49,7 @@ Let's look at a more explicit example. If you set the following properties with 
 myString.red.blue.green
 ```
 
-You can think of your terminal saying to itself, "Make this green. No, make this blue. No, make this red. No more color codes now?  Red it is, then."  The codes are read in the reverse order, and the last/'innermost' is applied. This can be extremely useful if you're using a library that sets its own default colors that you don't like - if you set a color code yourself on the string you pass in to the library, it will supersede the other author's color code(s).
+You can think of your terminal saying to itself, "Make this green. No, make this blue. No, make this red. No more color codes now? Red it is, then." The codes are read in the reverse order, and the last/'innermost' is applied. This can be extremely useful if you're using a library that sets its own default colors that you don't like - if you set a color code yourself on the string you pass in to the library, it will supersede the other author's color code(s).
 
 The last thing to note is the final line of the example script. While a color code was set previously, a 'bold' code was not, so the example was made bold, but not given a different color.
 
@@ -75,7 +75,7 @@ console.log(colors.magenta.red(stringTwo));
 console.log(colors.bold.grey.black.blue(stringThree));
 ```
 
-**Note**: Unlike the `String.prototype` approach, the chained methods on the `colors` instance are executed left to right i.e., the method closest to the string is finally applied. In the last `console.log` you can think of your terminal saying to itself, "Make this grey. Now, make this black. Now, make this blue. No more coloring methods now?  Blue it is, then."
+**Note**: Unlike the `String.prototype` approach, the chained methods on the `colors` instance are executed left to right i.e., the method closest to the string is finally applied. In the last `console.log` you can think of your terminal saying to itself, "Make this grey. Now, make this black. Now, make this blue. No more coloring methods now? Blue it is, then."
 
 With the latest version of `colors.js` you can also define **[Custom Themes](https://www.npmjs.com/package/colors#custom-themes)** in color.js which makes our code more Robust and allows better Encapsulation of data. A nice use case of this maybe:
 
