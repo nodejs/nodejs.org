@@ -1,0 +1,27 @@
+.list-divider-pipe {
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+
+    + li::before {
+      content: "|";
+      padding: 0 .3em 0 .1em;
+      color: $light-gray;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav {
+    .list-divider-pipe {
+      margin-bottom: 1rem;
+      overflow: hidden;
+
+      li + li::before {
+        display: none;
+      }
+    }
+  }
+}
