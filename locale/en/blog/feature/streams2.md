@@ -149,7 +149,7 @@ introduces an edge case in the following conditions:
 For example, consider the following code:
 
 ```javascript
-// WARNING!  BROKEN!
+// WARNING! BROKEN!
 net.createServer(function(socket) {
 
   // we add an 'end' method, but never consume the data
@@ -216,7 +216,7 @@ initialized.
 
 * `size` {Number} Number of bytes to read asynchronously
 
-Note: **This function should NOT be called directly.**  It should be
+Note: **This function should NOT be called directly.** It should be
 implemented by child classes, and called by the internal Readable
 class methods only.
 
@@ -246,7 +246,7 @@ becomes available. There is no need, for example to "wait" until
 * return {Boolean} Whether or not more pushes should be performed
 
 Note: **This function should be called by Readable implementors, NOT
-by consumers of Readable subclasses.**  The `_read()` function will not
+by consumers of Readable subclasses.** The `_read()` function will not
 be called again until at least one `push(chunk)` call is made. If no
 data is available, then you MAY call `push('')` (an empty string) to
 allow a future `_read` call, without adding any data to the queue.
@@ -575,7 +575,7 @@ initialized.
 All Writable stream implementations must provide a `_write` method to
 send data to the underlying resource.
 
-Note: **This function MUST NOT be called directly.**  It should be
+Note: **This function MUST NOT be called directly.** It should be
 implemented by child classes, and called by the internal Writable
 class methods only.
 
@@ -716,7 +716,7 @@ initialized.
 * `callback` {Function} Call this function (optionally with an error
   argument) when you are done processing the supplied chunk.
 
-Note: **This function MUST NOT be called directly.**  It should be
+Note: **This function MUST NOT be called directly.** It should be
 implemented by child classes, and called by the internal Transform
 class methods only.
 
@@ -746,7 +746,7 @@ your own extension classes.
 * `callback` {Function} Call this function (optionally with an error
   argument) when you are done flushing any remaining data.
 
-Note: **This function MUST NOT be called directly.**  It MAY be implemented
+Note: **This function MUST NOT be called directly.** It MAY be implemented
 by child classes, and if so, will be called by the internal Transform
 class methods only.
 

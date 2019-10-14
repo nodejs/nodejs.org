@@ -411,7 +411,7 @@ Node 由 `k` 个工作线程组成了工作线程池。
 #### 动态执行时间示例: 长时间运行的文件系统读取
 假设您的服务器必须读取文件来处理某些客户端请求。
 在了解 Node 的 [文件系统](https://nodejs.org/api/fs.html) 的 API 之后，您选择使用 `fs.readFile()` 进行简单操作。
-但是，`fs.readFile()` 是（[当前](https://github.com/nodejs/node/pull/17054)）未拆分任务的：它提交一个  `fs.read()` 任务来读取整个文件。
+但是，`fs.readFile()` 是（[当前](https://github.com/nodejs/node/pull/17054)）未拆分任务的：它提交一个 `fs.read()` 任务来读取整个文件。
 如果您为某些用户读取较短的文件，并为其它人读取较长的文件，`fs.readFile()` 可能会在任务长度上引入显著的变化，从而损害工作线程池吞吐量。
 
 对于最坏的情况，假设攻击者可以促使您的服务器读取 *任意* 文件（这是一个 [目录遍历漏洞](https://www.owasp.org/index.php/Path_Traversal)）。

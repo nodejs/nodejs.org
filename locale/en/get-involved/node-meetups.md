@@ -259,7 +259,7 @@ REQUIREMENTS
 
 - [Meetup](https://www.meetup.com/JavaScripters)
 - Frequency of meetups - monthly
-- How to submit a talk? Send your queries to Pune.javascripters@gmail.com  or Contact organizers in the meetup page.
+- How to submit a talk? Send your queries to Pune.javascripters@gmail.com or Contact organizers in the meetup page.
 - Organizer name - Imran shaikh & Akash Jarad
 - Organizer contact info - javascripters.community@gmail.com
 

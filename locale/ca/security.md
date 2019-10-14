@@ -32,7 +32,7 @@ de publicació. Un cop el problema és confirmat es determina una llista de tote
 per trobar potencials problemes similars. Es preparen les solucions per a totes les versions que estan en manteniment.
 Aquestes solucions no són enviades al repositori públic, en canvi són retingudes localment fins a l'anunci públic.
 
-- Una data d'embargament per a aquesta vulnerabilitat és seleccionada i un CVE (Common Vulnerabilities and  Exposures (CVE®))
+- Una data d'embargament per a aquesta vulnerabilitat és seleccionada i un CVE (Common Vulnerabilities and Exposures (CVE®))
 és sol·licitat per la vulnerabilitat.
 
 - A la data d'embargament, se li envia una còpia de l'anunci a la llista de correu de seguretat de Node.js. Els canvis són pujats al repositori públic i noves versions són desplegades en nodejs.org. En les següents 6 hores de la notificació a la llista de correu, una còpia de l'anunci es publicarà al blog de Node.js.
