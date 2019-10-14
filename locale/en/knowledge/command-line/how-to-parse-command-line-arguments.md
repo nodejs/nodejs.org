@@ -7,9 +7,9 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-Passing in arguments via the command line is an extremely basic programming task, and a necessity for anyone trying to write a simple Command-Line Interface (CLI).  In Node.js, as in C and many related environments, all command-line arguments received by the shell are given to the process in an array called `argv` (short for 'argument values').
+Passing in arguments via the command line is an extremely basic programming task, and a necessity for anyone trying to write a simple Command-Line Interface (CLI). In Node.js, as in C and many related environments, all command-line arguments received by the shell are given to the process in an array called `argv` (short for 'argument values').
 
-Node.js exposes this array for every running process in the form of `process.argv` - let's take a look at an example.  Make a file called `argv.js` and add this line:
+Node.js exposes this array for every running process in the form of `process.argv` - let's take a look at an example. Make a file called `argv.js` and add this line:
 
 ```js
 console.log(process.argv);
@@ -28,9 +28,9 @@ $ node argv.js one two three four five
   'five' ]
 ```
 
-There you have it - an array containing any arguments you passed in.  Notice the first two elements - `node` and the path to your script.  These will always be present - even if your program takes no arguments of its own, your script's interpreter and path are still considered arguments to the shell you're using.
+There you have it - an array containing any arguments you passed in. Notice the first two elements - `node` and the path to your script. These will always be present - even if your program takes no arguments of its own, your script's interpreter and path are still considered arguments to the shell you're using.
 
-Where everyday CLI arguments are concerned, you'll want to skip the first two.  Now try this in `argv.js`:
+Where everyday CLI arguments are concerned, you'll want to skip the first two. Now try this in `argv.js`:
 
 ```js
 var myArgs = process.argv.slice(2);
@@ -64,9 +64,9 @@ default:
 
 JS PRO TIP: Remember to `break` after each `case` - otherwise you'll run the next case too!
 
-Referring to your command-line arguments by array index isn't very clean, and can quickly turn into a nightmare when you start working with flags and the like - imagine you made a server, and it needed a lot of arguments.  Imagine having to deal with something like `myapp -h host -p port -r -v -b --quiet -x -o outfile` - some flags need to know about what comes next, some don't, and most CLIs let users specify arguments in any order they want.  Sound like a fun string to parse?
+Referring to your command-line arguments by array index isn't very clean, and can quickly turn into a nightmare when you start working with flags and the like - imagine you made a server, and it needed a lot of arguments. Imagine having to deal with something like `myapp -h host -p port -r -v -b --quiet -x -o outfile` - some flags need to know about what comes next, some don't, and most CLIs let users specify arguments in any order they want. Sound like a fun string to parse?
 
-Luckily, there are many third party modules that makes all of this trivial - one of which is [yargs](https://www.npmjs.com/package/yargs). It's available via `npm`.  Use this command from your app's base path:
+Luckily, there are many third party modules that makes all of this trivial - one of which is [yargs](https://www.npmjs.com/package/yargs). It's available via `npm`. Use this command from your app's base path:
 
 ```
 npm i yargs
@@ -114,7 +114,7 @@ The last line was included to let you see how `yargs` handles your arguments. He
 
 - `argv.$0` contains the name of the script file which is executed like: `'$0': 'myapp.js'`.
 - `argv._` is an array containing each element not attached to an option(or flag) these elements are referred as `commands` in yargs.
-- Individual options(flags) become properties of `argv`, such as with `argv.h` and `argv.time`.  Note that non-single-letter flags must be passed in as `--flag` like: `node myapp.js --time`.
+- Individual options(flags) become properties of `argv`, such as with `argv.h` and `argv.time`. Note that non-single-letter flags must be passed in as `--flag` like: `node myapp.js --time`.
 
 A summary of elements used in the program:
 

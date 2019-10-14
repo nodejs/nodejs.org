@@ -6,12 +6,12 @@ layout: contribute.hbs
 <!--
 # Collab Summit
 Collaboration Summit is an un-conference for bringing current and
-potential contributors together to discuss Node.js  with lively collaboration,
+potential contributors together to discuss Node.js with lively collaboration,
 education, and knowledge sharing. Committees and working groups come together
 twice per year to make important decisions while also being able to work on some
 exciting efforts they want to push forward in-person.
 
- -->
+-->
 # コラボレーションサミット
 コラボレーションサミットは、活発なコラボレーション、教育、および知識の共有で Node.js について議論するために
 現在および将来のコントリビュータを集めるためのアンカンファレンスです。
@@ -38,7 +38,7 @@ for upcoming and past Collab Summits and have a look at the
 [issues filed](https://github.com/nodejs/summit/issues) that share what
 individual working groups and committees are looking to discuss in-person.
 
- -->
+-->
 ## 誰が参加しますか？
 
 コラボレーションサミットにはだれもが参加できます。

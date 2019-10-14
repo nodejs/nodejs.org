@@ -14,7 +14,7 @@ layout: knowledge-post.hbs
 
 To create an HTTPS server, you need two things: an SSL certificate, and Node's built-in `https` module.
 
-We need to start out with a word about SSL certificates.  Speaking generally, there are two kinds of certificates: those signed by a 'Certificate Authority', or CA, and 'self-signed certificates'.  A Certificate Authority is a trusted source for an SSL certificate, and using a certificate from a CA allows your users to be trust the identity of your website. In most cases, you would want to use a CA-signed certificate in a production environment - for testing purposes, however, a self-signed certicate will do just fine.
+We need to start out with a word about SSL certificates. Speaking generally, there are two kinds of certificates: those signed by a 'Certificate Authority', or CA, and 'self-signed certificates'. A Certificate Authority is a trusted source for an SSL certificate, and using a certificate from a CA allows your users to be trust the identity of your website. In most cases, you would want to use a CA-signed certificate in a production environment - for testing purposes, however, a self-signed certicate will do just fine.
 
 To generate a self-signed certificate, run the following in your shell:
 
@@ -42,7 +42,7 @@ https.createServer(options, function (req, res) {
 }).listen(8000);
 ```
 
-NODE PRO TIP: Note `fs.readFileSync` - unlike `fs.readFile`, `fs.readFileSync` will block the entire process until it completes.  In situations like this - loading vital configuration data - the `sync` functions are okay.  In a busy server, however, using a synchronous function during a request will force the server to deal with the requests one by one!
+NODE PRO TIP: Note `fs.readFileSync` - unlike `fs.readFile`, `fs.readFileSync` will block the entire process until it completes. In situations like this - loading vital configuration data - the `sync` functions are okay. In a busy server, however, using a synchronous function during a request will force the server to deal with the requests one by one!
 
 > To start your https server, run `node app.js` (here, app.js is name of the file) on the terminal.
 

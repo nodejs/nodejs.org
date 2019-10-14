@@ -31,7 +31,7 @@ de publicación. Una vez el problema es confirmado y se determina una lista de t
 para encontrar potenciales problemas similares. Se preparan las soluciones para todas las versiones que están en mantenimiento.
 Estas soluciones no son enviadas al repositorio público, en cambio son retenidas localmente hasta el anuncio público.
 
-- Una fecha de embargo para esta vulnerabilidad es seleccionada y un CVE (Common Vulnerabilities and  Exposures (CVE®))
+- Una fecha de embargo para esta vulnerabilidad es seleccionada y un CVE (Common Vulnerabilities and Exposures (CVE®))
 es solicitado para la vulnerabilidad.
 
 - En la fecha de embargo, se le envía una copia del anuncio a la lista de correo de seguridad de Node.js. Los cambios son subidos al repositorio público y nuevas versiones son desplegadas en nodejs.org. En las siguientes 6 horas de la notificación a la lista de correo, una copia del anuncio será publicada en el blog de Node.js.
