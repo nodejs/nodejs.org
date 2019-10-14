@@ -206,8 +206,8 @@ app.get('/redos-me', (req, res) => {
 #### 关于如何抵制 REDOS 的资源
 这里提供了你一些工具帮助你检查你的正则表达式是否安全，像：
 
-- [safe-regex](https://github.com/substack/safe-regex)
-- [rxxr2](http://www.cs.bham.ac.uk/~hxt/research/rxxr2/)
+* [safe-regex](https://github.com/substack/safe-regex)
+* [rxxr2](http://www.cs.bham.ac.uk/~hxt/research/rxxr2/)
 
 但是上述模块都无法保证能够捕获全部的正则表达式漏洞。
 
@@ -221,29 +221,29 @@ app.get('/redos-me', (req, res) => {
 ### 阻塞事件轮询：Node 的核心模块
 一些 Node 的核心模块有同步的高开销的 API 方法，包含：
 
-- [crypto 加密](https://nodejs.org/api/crypto.html)
-- [zlib 压缩](https://nodejs.org/api/zlib.html)
-- [fs 文件系统](https://nodejs.org/api/fs.html)
-- [child_process 子进程](https://nodejs.org/api/child_process.html)
+* [crypto 加密](https://nodejs.org/api/crypto.html)
+* [zlib 压缩](https://nodejs.org/api/zlib.html)
+* [fs 文件系统](https://nodejs.org/api/fs.html)
+* [child_process 子进程](https://nodejs.org/api/child_process.html)
 
 这些 API 是高开销的，因为它们包括了非常巨大的计算（如加密、压缩上），需要 I/O（如文件 I/O），或者两者都有潜在包含（如子进程处理）。这些 API 是为脚本提供方便，并非让你在服务器上下文中使用。如果你在事件循环中使用它们，则需要花费比一般的 JavaScript 更长的执行时间从而可能导致阻塞事件轮询。
 
 对于一个服务器而言，*你不应当使用以下同步的 API 函数*：
 
-- 加密：
-  - `crypto.randomBytes`（同步版本）
-  - `crypto.randomFillSync`
-  - `crypto.pbkdf2Sync`
-  - 同时你应当非常小心对加密和解密给予大数据输入的情况。
-- 压缩：
-  - `zlib.inflateSync`
-  - `zlib.deflateSync`
-- 文件系统：
-  - 不能使用同步文件系统方法 API 函数。举个例子，如果你的程序运行于一个[分布式文件系统](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems)，像 [NFS](https://en.wikipedia.org/wiki/Network_File_System)，则访问时间会发生很大变化。
-- 子进程：
-  - `child_process.spawnSync`
-  - `child_process.execSync`
-  - `child_process.execFileSync`
+* 加密：
+  * `crypto.randomBytes`（同步版本）
+  * `crypto.randomFillSync`
+  * `crypto.pbkdf2Sync`
+  * 同时你应当非常小心对加密和解密给予大数据输入的情况。
+* 压缩：
+  * `zlib.inflateSync`
+  * `zlib.deflateSync`
+* 文件系统：
+  * 不能使用同步文件系统方法 API 函数。举个例子，如果你的程序运行于一个[分布式文件系统](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems)，像 [NFS](https://en.wikipedia.org/wiki/Network_File_System)，则访问时间会发生很大变化。
+* 子进程：
+  * `child_process.spawnSync`
+  * `child_process.execSync`
+  * `child_process.execFileSync`
 
 此列表对于 Node 9 都是有效的。
 
@@ -283,8 +283,8 @@ console.log('JSON.parse took ' + took);
 
 有一些 npm 的模块提供了异步的 JSON API 函数，参考：
 
-- [JSONStream](https://www.npmjs.com/package/JSONStream)，有流式操作的 API。
-- [Big-Friendly JSON](https://www.npmjs.com/package/bfj)，有流式 API 和使用下文所概述的任务拆分思想的异步 JSON 标准 API。
+* [JSONStream](https://www.npmjs.com/package/JSONStream)，有流式操作的 API。
+* [Big-Friendly JSON](https://www.npmjs.com/package/bfj)，有流式 API 和使用下文所概述的任务拆分思想的异步 JSON 标准 API。
 
 ### 不要让复杂的计算阻塞事件循环
 假设你想在 JavaScript 处理一个复杂的计算，而又不想阻塞事件循环。

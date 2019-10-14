@@ -32,23 +32,23 @@ Grazie per l'aiuto nel migliorare la sicurezza di Node.js e del suo ecosistema. 
 
 Ecco la politica delle rivelazioni di sicurezza per Node.js
 
-- Il report di sicurezza viene ricevuto e assegnato al gestore primario. Questa persona coordinerà la fix e il processo di rilascio. Il problema viene confermato e una lista di tutte le versioni affette viene stilata. Il codice viene sottoposto a revisione per trovare altri potenziali problemi della medesima natura. Delle fix vengono preparate per tutte le release che sono ancora supportate.
+* Il report di sicurezza viene ricevuto e assegnato al gestore primario. Questa persona coordinerà la fix e il processo di rilascio. Il problema viene confermato e una lista di tutte le versioni affette viene stilata. Il codice viene sottoposto a revisione per trovare altri potenziali problemi della medesima natura. Delle fix vengono preparate per tutte le release che sono ancora supportate.
 Queste fix non sono pubblicate nel repository ma piuttosto mantenute localmente in attesa dell'annuncio.
 
-- Una data di embargo per questa vulnerabilità viene decretata e un CVE (Common Vulnerabilities and Exposures (CVE®)) viene richiesto per la vulnerabilità.
+* Una data di embargo per questa vulnerabilità viene decretata e un CVE (Common Vulnerabilities and Exposures (CVE®)) viene richiesto per la vulnerabilità.
 
-- Giunta la data di embargo, alla mailing list di sicurezza di Node.js viene inviata una copia dell'annuncio. Le modifiche vengono inviate al repository pubblico e vengono pubblicate nuove build su nodejs.org. Entro 6 ore dalla notifica alla mailing list, una copia dell'annuncio verrà pubblicata sul blog di Node.js.
+* Giunta la data di embargo, alla mailing list di sicurezza di Node.js viene inviata una copia dell'annuncio. Le modifiche vengono inviate al repository pubblico e vengono pubblicate nuove build su nodejs.org. Entro 6 ore dalla notifica alla mailing list, una copia dell'annuncio verrà pubblicata sul blog di Node.js.
 
-- Solitamente la data d'embargo viene stabilita a 72 ore dal momento in cui il CVE è stato richiesto. Tuttavia, ciò potrebbe variare dipendentemente alla gravità del problema o alla difficoltà di applicare un fix.
+* Solitamente la data d'embargo viene stabilita a 72 ore dal momento in cui il CVE è stato richiesto. Tuttavia, ciò potrebbe variare dipendentemente alla gravità del problema o alla difficoltà di applicare un fix.
 
-- Questo processo può richiedere del tempo, specialmente nel momento in cui è richiesto un coordinamento con i manutentori di altri progetti. Ogni sforzo verrà fatto per gestire il bug nella maniera più rapida possibile; d'altro canto, è importante che noi seguiamo il processo di rilascio sovrastante per assicurare che la scoperta venga gestita in modo coerente.
+* Questo processo può richiedere del tempo, specialmente nel momento in cui è richiesto un coordinamento con i manutentori di altri progetti. Ogni sforzo verrà fatto per gestire il bug nella maniera più rapida possibile; d'altro canto, è importante che noi seguiamo il processo di rilascio sovrastante per assicurare che la scoperta venga gestita in modo coerente.
 
 ## Ricezione aggiornamenti di sicurezza
 
 Le notifiche di sicurezza verranno distribuite nei seguenti modi.
 
-- <https://groups.google.com/group/nodejs-sec>
-- <https://nodejs.org/en/blog/>
+* <https://groups.google.com/group/nodejs-sec>
+* <https://nodejs.org/en/blog/>
 
 ## Commenti su questa Politica
 

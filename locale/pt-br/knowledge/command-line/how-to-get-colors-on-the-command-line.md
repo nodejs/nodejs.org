@@ -118,46 +118,46 @@ Para referência, aqui está a lista completa de cores disponíveis em `colors.j
 <!-- ### text colors -->
 ### cores de texto
 
-- black
-- red
-- green
-- yellow
-- blue
-- magenta
-- cyan
-- white
-- gray
-- grey
+* black
+* red
+* green
+* yellow
+* blue
+* magenta
+* cyan
+* white
+* gray
+* grey
 
 <!-- ### background colors -->
 ### cores de fundo
 
-- bgBlack
-- bgRed
-- bgGreen
-- bgYellow
-- bgBlue
-- bgMagenta
-- bgCyan
-- bgWhite
+* bgBlack
+* bgRed
+* bgGreen
+* bgYellow
+* bgBlue
+* bgMagenta
+* bgCyan
+* bgWhite
 
 <!-- ### styles -->
 ### estilos
 
-- reset
-- bold
-- dim
-- italic
-- underline
-- inverse
-- hidden
-- strikethrough
+* reset
+* bold
+* dim
+* italic
+* underline
+* inverse
+* hidden
+* strikethrough
 
 <!-- ### extras -->
 ### extras
 
-- rainbow
-- zebra
-- america
-- trap
-- random
+* rainbow
+* zebra
+* america
+* trap
+* random

@@ -69,22 +69,22 @@ Node.js とそのエコシステムのセキュリティを向上に協力いた
 
 Here is the security disclosure policy for Node.js
 
-- The security report is received and is assigned a primary handler. This person will coordinate the fix and release
+* The security report is received and is assigned a primary handler. This person will coordinate the fix and release
 process. The problem is confirmed and a list of all affected versions is determined. Code is audited to find any
 potential similar problems. Fixes are prepared for all releases which are still under maintenance. These fixes are not
 committed to the public repository but rather held locally pending the announcement.
 
-- A suggested embargo date for this vulnerability is chosen and a CVE (Common Vulnerabilities and Exposures (CVE®))
+* A suggested embargo date for this vulnerability is chosen and a CVE (Common Vulnerabilities and Exposures (CVE®))
 is requested for the vulnerability.
 
-- On the embargo date, the Node.js security mailing list is sent a copy of the announcement. The changes are pushed to
+* On the embargo date, the Node.js security mailing list is sent a copy of the announcement. The changes are pushed to
 the public repository and new builds are deployed to nodejs.org. Within 6 hours of the mailing list being notified, a
 copy of the advisory will be published on the Node.js blog.
 
-- Typically the embargo date will be set 72 hours from the time the CVE is issued. However, this may vary depending on
+* Typically the embargo date will be set 72 hours from the time the CVE is issued. However, this may vary depending on
 the severity of the bug or difficulty in applying a fix.
 
-- This process can take some time, especially when coordination is required with maintainers of other projects. Every
+* This process can take some time, especially when coordination is required with maintainers of other projects. Every
 effort will be made to handle the bug in as timely a manner as possible; however, it’s important that we follow the
 release process above to ensure that the disclosure is handled in a consistent manner.
 -->
@@ -93,31 +93,31 @@ release process above to ensure that the disclosure is handled in a consistent m
 
 Node.js における、情報開示のポリシーをここに記します。
 
-- 脆弱性が報告されると、主要なメンバーがアサインされます。このメンバーは、修正とリリースのプロセスを調整します。脆弱性が確認されたら、影響のある全てのバージョンのリストを作成します。コードは、潜在的な同様の問題があるか精査されます。修正は、メンテナンスされている全てのバージョンに向けて用意されます。これらの修正は、正式なアナウンスを行うまでは公開リポジトリには追加されません。
+* 脆弱性が報告されると、主要なメンバーがアサインされます。このメンバーは、修正とリリースのプロセスを調整します。脆弱性が確認されたら、影響のある全てのバージョンのリストを作成します。コードは、潜在的な同様の問題があるか精査されます。修正は、メンテナンスされている全てのバージョンに向けて用意されます。これらの修正は、正式なアナウンスを行うまでは公開リポジトリには追加されません。
 
-- CVE (Common Vulnerabilities and Exposures (CVE®)) により、脆弱性に関する情報解禁日が提案され、それを決定します。
+* CVE (Common Vulnerabilities and Exposures (CVE®)) により、脆弱性に関する情報解禁日が提案され、それを決定します。
 
-- 情報解禁日に、Node.js のメーリングリストに公式発表と同様のものが送信されます。修正済みのバージョンは、公開リポジトリに送信され、新しいビルドが nodejs.org に置かれます。メーリングリストに共有されてから6時間以内に、セキュリティ勧告を Node.js のブログにて行います。
+* 情報解禁日に、Node.js のメーリングリストに公式発表と同様のものが送信されます。修正済みのバージョンは、公開リポジトリに送信され、新しいビルドが nodejs.org に置かれます。メーリングリストに共有されてから6時間以内に、セキュリティ勧告を Node.js のブログにて行います。
 
-- 一般的に情報解禁日は、CVEに報告されてから72時間と設定されます。しかし、脆弱性を修正する複雑さによってはこの限りではありません。
+* 一般的に情報解禁日は、CVEに報告されてから72時間と設定されます。しかし、脆弱性を修正する複雑さによってはこの限りではありません。
 
-- このプロセスは他のプロジェクトの管理者との調整を必要とする際など、ときに時間を要することがあります。可能な限り迅速にバグを修正するために尽力するだけでなく、一貫性のあるプロセスで情報開示を行うために上記のリリースプロセスを従うこともまた重要です。
+* このプロセスは他のプロジェクトの管理者との調整を必要とする際など、ときに時間を要することがあります。可能な限り迅速にバグを修正するために尽力するだけでなく、一貫性のあるプロセスで情報開示を行うために上記のリリースプロセスを従うこともまた重要です。
 
 <!--
 ## Receiving Security Updates
 
 Security notifications will be distributed via the following methods.
 
-- <https://groups.google.com/group/nodejs-sec>
-- <https://nodejs.org/en/blog/>
+* <https://groups.google.com/group/nodejs-sec>
+* <https://nodejs.org/en/blog/>
 -->
 
 ## セキュリティリポートを受け取る
 
 セキュリティリポートは、以下のサイトを介して報告されます。
 
-- <https://groups.google.com/group/nodejs-sec>
-- <https://nodejs.org/en/blog/>
+* <https://groups.google.com/group/nodejs-sec>
+* <https://nodejs.org/en/blog/>
 
 <!--
 ## Comments on this Policy
