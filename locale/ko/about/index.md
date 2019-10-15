@@ -4,7 +4,7 @@ title: About
 trademark: 트레이드마크
 ---
 
-# Node.js&reg;에 대해서
+# Node.js®에 대해서
 
 <!--
 As an asynchronous event driven JavaScript runtime, Node is designed to build

@@ -36,7 +36,7 @@ Aqui encontra-se a política de divulgação de segurança para o Node.js:
 - O relatório de segurança é recebido e designado a um primeiro responsável. Esta pessoa coordenará os processos de atualização e revisão. O problema é confirmado e uma lista de todas as versões afetadas é determinada.
 O código é auditado para encontrar possíveis problemas similares em potencial. As correções são preparadas para todas as versões que ainda estão sob manutenção. Estas correções não são enviadas ao repositório público mas mantidos localmente aguardando a divulgação.
 
-- Uma data de embargo é sugerida e escolhida para essa vulnerabilidade e um CVE (Common Vulnerabilities and  Exposures (CVE®)) é solicitado para esta vulnerabilidade.
+- Uma data de embargo é sugerida e escolhida para essa vulnerabilidade e um CVE (Common Vulnerabilities and Exposures (CVE®)) é solicitado para esta vulnerabilidade.
 
 - Na data de embargo, é enviada uma cópia do anúncio para a lista de e-mails de segurança do Node.js. As alterações são enviadas para o repositório público e é feito o deploy dos novos builds para o nodejs.org. Dentro de 6 horas da notificação na lista de segurança, uma cópia do anúncio será publicada no blog do Node.js.
 

@@ -11,7 +11,7 @@ Often times, not just in the Node.js community but in software at large, people 
 
 ### Set up
 
-Thankfully, through the use of `node-inspector`, we can harness to power of the webkit-debuggers to work with our node.js code. The process itself is simple.
+Thankfully, through the use of `node-inspector`, we can harness to power of the webkit-debuggers to work with our Node.js code. The process itself is simple.
 
 First, ensure that node-inspector is installed:
 
@@ -53,7 +53,7 @@ At this point, you will be met with a fairly empty screen with the `scripts`, `p
 
 ### Scripts tab
 
-This is just like most webkit/firebug debuggers. It has a list of all the javascript files (including node.js core and third party libraries) which you can select and dive into. To stop the interpreter on a specific line, you set a breakpoint by clicking on the number of the desired line. When the execution is frozen, by a breakpoint or by manually pausing interpretation by pressing the pause button, you can check the callstack and examine all the local, closure, and global variables. You can also modify the code to try and fix behavior. Note that when you modify the code through the script tab, it does not get saved to the file, so you will need to transfer the modifications back by hand.
+This is just like most webkit/firebug debuggers. It has a list of all the JavaScript files (including Node.js core and third party libraries) which you can select and dive into. To stop the interpreter on a specific line, you set a breakpoint by clicking on the number of the desired line. When the execution is frozen, by a breakpoint or by manually pausing interpretation by pressing the pause button, you can check the callstack and examine all the local, closure, and global variables. You can also modify the code to try and fix behavior. Note that when you modify the code through the script tab, it does not get saved to the file, so you will need to transfer the modifications back by hand.
 
 ### Profiles tab
 
@@ -77,7 +77,7 @@ To take a heap snapshot, just insert this line in the desired location and optio
 var snapshot = profiler.takeSnapshot(name);
 ```
 
-To take a cpu profile, just surround the code that you are profiling with the two lines shown below.  Optionally, a name can be included to indentify the cpu profile.
+To take a cpu profile, just surround the code that you are profiling with the two lines shown below. Optionally, a name can be included to indentify the cpu profile.
 
 ```javascript
 profiler.startProfiling(name);

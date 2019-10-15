@@ -16,7 +16,7 @@ layout: contribute.hbs
 - [Node.js Collection](https://medium.com/the-node-js-collection) is a collection of community-curated content on Medium.
 - The [Community Committee](https://github.com/nodejs/community-committee) is a top-level committee in the Node.js Foundation focused on community-facing efforts.
 
- -->
+-->
 # 参加する
 
 ## コミュニティディスカッション
@@ -38,7 +38,7 @@ layout: contribute.hbs
 - [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
 - [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
 
- -->
+-->
 ## 学習
 
 - [公式 API リファレンスドキュメント](https://nodejs.org/api/) は、Node.js API の詳細を説明しています。
@@ -56,10 +56,9 @@ layout: contribute.hbs
 - [Israeli Facebook group for Node.js](https://www.facebook.com/groups/node.il/)
 - [Japanese user group](https://nodejs.jp/)
 - [Spanish language Facebook group for Node.js](https://www.facebook.com/groups/node.es/)
-- [Spanish language community](http://nodehispano.com)
 - [Vietnamese Node.js community](https://www.facebook.com/nodejs.vn/)
 
- -->
+-->
 ## インターナショナルコミュニティサイトとプロジェクト
 
 - [中国コミュニティ](https://cnodejs.org/)
@@ -67,5 +66,4 @@ layout: contribute.hbs
 - [Node.js のイスラエル Facebook グループ](https://www.facebook.com/groups/node.il/)
 - [日本のユーザグループ](https://nodejs.jp/)
 - [Node.js のスペイン語 Facebook グループ](https://www.facebook.com/groups/node.es/)
-- [スペイン語コミュニティ](http://nodehispano.com)
 - [ベトナム Node.js コミュニティ](https://www.facebook.com/nodejs.vn/)

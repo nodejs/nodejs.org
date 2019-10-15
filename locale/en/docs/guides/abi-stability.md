@@ -55,33 +55,34 @@ within the major version against which it was compiled.
 Demand has arisen for equipping Node.js with an API that results in an ABI that
 remains stable across multiple Node.js major versions. The motivation for
 creating such an API is as follows:
+
 * The JavaScript language has remained compatible with itself since its very
-early days, whereas the ABI of the engine executing the JavaScript code changes
-with every major version of Node.js. This means that applications consisting of
-Node.js packages written entirely in JavaScript need not be recompiled,
-reinstalled, or redeployed as a new major version of Node.js is dropped into
-the production environment in which such applications run. In contrast, if an
-application depends on a package that contains a native addon, the application
-has to be recompiled, reinstalled, and redeployed whenever a new major version
-of Node.js is introduced into the production environment. This disparity
-between Node.js packages containing native addons and those that are written
-entirely in JavaScript has added to the maintenance burden of production
-systems which rely on native addons.
+  early days, whereas the ABI of the engine executing the JavaScript code changes
+  with every major version of Node.js. This means that applications consisting of
+  Node.js packages written entirely in JavaScript need not be recompiled,
+  reinstalled, or redeployed as a new major version of Node.js is dropped into
+  the production environment in which such applications run. In contrast, if an
+  application depends on a package that contains a native addon, the application
+  has to be recompiled, reinstalled, and redeployed whenever a new major version
+  of Node.js is introduced into the production environment. This disparity
+  between Node.js packages containing native addons and those that are written
+  entirely in JavaScript has added to the maintenance burden of production
+  systems which rely on native addons.
 
 * Other projects have started to produce JavaScript interfaces that are
-essentially alternative implementations of Node.js. Since these projects are
-usually built on a different JavaScript engine than V8, their native addons
-necessarily take on a different structure and use a different API. Nevertheless,
-using a single API for a native addon across different implementations of the
-Node.js JavaScript API would allow these projects to take advantage of the
-ecosystem of JavaScript packages that has accrued around Node.js.
+  essentially alternative implementations of Node.js. Since these projects are
+  usually built on a different JavaScript engine than V8, their native addons
+  necessarily take on a different structure and use a different API. Nevertheless,
+  using a single API for a native addon across different implementations of the
+  Node.js JavaScript API would allow these projects to take advantage of the
+  ecosystem of JavaScript packages that has accrued around Node.js.
 
 * Node.js may contain a different JavaScript engine in the future. This means
-that, externally, all Node.js interfaces would remain the same, but the V8
-header file would be absent. Such a step would cause the disruption of the
-Node.js ecosystem in general, and that of the native addons in particular, if
-an API that is JavaScript engine agnostic is not first provided by Node.js and
-adopted by native addons.
+  that, externally, all Node.js interfaces would remain the same, but the V8
+  header file would be absent. Such a step would cause the disruption of the
+  Node.js ecosystem in general, and that of the native addons in particular, if
+  an API that is JavaScript engine agnostic is not first provided by Node.js and
+  adopted by native addons.
 
 To these ends Node.js has introduced N-API in version 8.6.0 and marked it as a
 stable component of the project as of Node.js 8.12.0. The API is defined in the

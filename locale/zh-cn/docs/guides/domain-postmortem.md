@@ -25,7 +25,7 @@ d.enter();
 
 // module c.js
 const dep = require('some-dep');
-dep.method();  // Uh-oh! This method doesn't actually exist.
+dep.method(); // Uh-oh! This method doesn't actually exist.
 ```
 
 因为模块 `b` 进入了域中且从未退出，任何未捕获的异常将被吞掉。茫茫然地留下模块 `c` 而为什么它没有运行整个脚本？留下一个可能部分填充的模块 `module.exports`。这么做与监听 `'uncaughtException'`是不同的。后者明显指全局捕获异常错误，另外一个问题是域在任何 `'uncaughtException'` 处理程序之前进行处理，并阻止它们继续执行。
@@ -58,7 +58,7 @@ d.on('error', () => console.error('d intercepted an error'));
 
 d.run(() => {
   const server = net.createServer((c) => {
-    const e = domain.create();  // No 'error' handler being set.
+    const e = domain.create(); // No 'error' handler being set.
     e.run(() => {
       // This will not be caught by d's error handler.
       setImmediate(() => {
@@ -83,7 +83,7 @@ d.run(() => {
 
 ```js
 const d1 = domain.create();
-d1.foo = true;  // custom member to make more visible in console
+d1.foo = true; // custom member to make more visible in console
 d1.on('error', (er) => { /* handle error */ });
 
 d1.run(() => setTimeout(() => {
@@ -128,7 +128,7 @@ let uid = 0;
 // Setting up temporary resources
 const buf = Buffer.alloc(FILESIZE);
 for (let i = 0; i < buf.length; i++)
-  buf[i] = ((Math.random() * 1e3) % 78) + 48;  // Basic ASCII
+  buf[i] = ((Math.random() * 1e3) % 78) + 48; // Basic ASCII
 fs.writeFileSync(FILENAME, buf);
 
 function ConnectionResource(c) {
@@ -217,7 +217,7 @@ function pipeData(cr) {
   d3.add(ps);
   ps.on('connection', (conn) => {
     connectionList.push(conn);
-    conn.on('data', () => {});  // don't care about incoming data.
+    conn.on('data', () => {}); // don't care about incoming data.
     conn.on('close', () => {
       connectionList.splice(connectionList.indexOf(conn), 1);
     });

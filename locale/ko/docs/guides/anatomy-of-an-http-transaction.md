@@ -470,7 +470,7 @@ response.end('<html><body><h1>Hello, World!</h1></body></html>');
 ```
 
 > **주의:** 바디에 데이터 청크를 *작성하기 전에* 상태 코드와 헤더를 설정해야 합니다.
-HTTP 응답에서 바디 전에 헤더가 있으므로 이는 이치에 맞습니다.
+> HTTP 응답에서 바디 전에 헤더가 있으므로 이는 이치에 맞습니다.
 
 <!--
 ## Another Quick Thing About Errors

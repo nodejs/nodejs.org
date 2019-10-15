@@ -15,7 +15,7 @@ layout: docs.hbs
 - [Dockerizing a Node.js web app](/en/docs/guides/nodejs-docker-webapp/)
 - [Migrating to safe Buffer constructors](/en/docs/guides/buffer-constructor-deprecation/)
 
- -->
+-->
 # ガイド
 
 ## 一般
@@ -35,7 +35,7 @@ layout: docs.hbs
 - [Don't Block the Event Loop (or the Worker Pool)](/en/docs/guides/dont-block-the-event-loop/)
 - [Timers in Node.js](/en/docs/guides/timers-in-node/)
 
- -->
+-->
 ## Node.js コアコンセプト
 
 - [ブロッキングとノンブロッキングの概要](/ja/docs/guides/blocking-vs-non-blocking/)
@@ -53,7 +53,7 @@ layout: docs.hbs
 - [How to publish N-API package](/en/docs/guides/publishing-napi-modules/)
 - [ABI Stability](/en/docs/guides/abi-stability/)
 
- -->
+-->
 ## モジュール関連ガイド
 
 - [HTTP トランザクションの構造](/ja/docs/guides/anatomy-of-an-http-transaction/)

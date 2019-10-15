@@ -88,7 +88,7 @@ a chunk of data were to fail to be properly received, the `Readable` source or
 properly destroy all the streams in a pipeline if one of them fails or closes,
 and is a must have in this case!
 
-[`pump`][] is only necessary for Nodejs 8.x or earlier, as for Node 10.x
+[`pump`][] is only necessary for Node.js 8.x or earlier, as for Node 10.x
 or later version, [`pipeline`][] is introduced to replace for [`pump`][].
 This is a module method to pipe between streams forwarding errors and properly
 cleaning up and provide a callback when the pipeline is complete.
@@ -231,8 +231,8 @@ backpressure system in place, it spreads the GC load across consistent
 intervals of 4-8 milliseconds until the end of the data transfer.
 
 However, when a backpressure system is not in place, the V8 garbage collection
-starts to drag out. The normal binary called the GC approximately __75__
-times in a minute, whereas, the modified binary fires only __36__ times.
+starts to drag out. The normal binary called the GC approximately **75**
+times in a minute, whereas, the modified binary fires only **36** times.
 
 This is the slow and gradual debt accumulating from growing memory usage. As
 data gets transferred, without a backpressure system in place, more memory is
@@ -438,7 +438,7 @@ the next section will go a little bit more in-depth.
 
 ## Rules to Abide By When Implementing Custom Streams
 
-The golden rule of streams is __to always respect backpressure__. What
+The golden rule of streams is **to always respect backpressure**. What
 constitutes as best practice is non-contradictory practice. So long as you are
 careful to avoid behaviours that conflict with internal backpressure support,
 you can be sure you're following good practice.

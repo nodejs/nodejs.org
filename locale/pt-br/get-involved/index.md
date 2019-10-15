@@ -7,8 +7,8 @@ layout: contribute.hbs
 
 ## Discussões da Comunidade
 
-- A [lista de problemas do Github](https://github.com/nodejs/node/issues) é o lugar para discutir as principais funcionalidades do Node.js.
-- Para conversar sobre o desenvolvimento do Node.js, em tempo real, entre em  `irc.freenode.net` no canal `#node.js` com um [cliente IRC](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) ou conecte-se através do navegador usando o [WebChat do freenode](https://webchat.freenode.net/#node.js).
+- A [lista de problemas do GitHub](https://github.com/nodejs/node/issues) é o lugar para discutir as principais funcionalidades do Node.js.
+- Para conversar sobre o desenvolvimento do Node.js, em tempo real, entre em `irc.freenode.net` no canal `#node.js` com um [cliente IRC](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) ou conecte-se através do navegador usando o [WebChat do freenode](https://webchat.freenode.net/#node.js).
 - A conta oficial do Node.js no Twitter é [nodejs](https://twitter.com/nodejs).
 - O [calendário da Fundação Node.js](https://nodejs.org/calendar) contém todas as reuniões dos times públicos
 - [Node.js Everywhere](https://newsletter.nodejs.org) é o boletim oficial do Node.js.
@@ -30,5 +30,4 @@ layout: contribute.hbs
 - [Grupo Node.js Israelense no Facebook](https://www.facebook.com/groups/node.il/)
 - [Grupo de usuários Japoneses](https://nodejs.jp/)
 - [Grupo Node.js em espanhol no Facebook](https://www.facebook.com/groups/node.es/)
-- [Comunidade em lingua Espanhola](http://nodehispano.com)
 - [Vietnamese Node.js community](https://www.facebook.com/nodejs.vn/)
