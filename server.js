@@ -30,7 +30,7 @@ const opts = {
   usePolling: true
 }
 const locales = chokidar.watch(path.join(__dirname, 'locale'), opts)
-const css = chokidar.watch(path.join(__dirname, 'layouts/css/**/*.styl'), opts)
+const css = chokidar.watch(path.join(__dirname, 'layouts/css/**/*.scss'), opts)
 const layouts = chokidar.watch(path.join(__dirname, 'layouts/**/*.hbs'), opts)
 const staticFiles = chokidar.watch(path.join(__dirname, 'static'), opts)
 
