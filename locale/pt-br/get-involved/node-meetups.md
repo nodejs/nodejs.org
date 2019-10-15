@@ -14,10 +14,7 @@ Se algum meetup não tem um código de conduta e/ou está denunciado como um lug
 ## Notas para inclusão de meetups
 
 FORMATO
-<<<<<<< HEAD
 
-=======
->>>>>>> ad76c856ffc61db92d3c9a79510e13012b280236
 - [Meetup](https://www.meetup.com/pdxnode/)
 - Frequência dos meetups
 - Como enviar uma palestra? &lt;&lt;lista aqui&gt;&gt;
@@ -25,10 +22,7 @@ FORMATO
 - Contato dos organizadores (se você quiser fornecer)
 
 EXIGÊNCIAS
-<<<<<<< HEAD
 
-=======
->>>>>>> ad76c856ffc61db92d3c9a79510e13012b280236
 - Indique no seu PR se este meetup obedece ao código de conduta.
 - Link para o código de conduta para verificação
 - Se você atualmente não tem um código de conduta, atualize o meetup com o código de conduta antes de enviar.
@@ -37,10 +31,7 @@ EXIGÊNCIAS
 ## Meetups
 
 ### África
-<<<<<<< HEAD
 
-=======
->>>>>>> ad76c856ffc61db92d3c9a79510e13012b280236
 - [Meetup](https://www.nodejs.africa)
 - Frequência dos meetups - bimestral
 - Como enviar uma palestra? [Envie para este formulário](https://docs.google.com/forms/d/e/1FAIpQLSe3vPkiO8ijtbP7fUhEotKefXU-fWUoDGtUSo1khmtA_7v1WQ/viewform)
@@ -48,10 +39,7 @@ EXIGÊNCIAS
 - Contato do organizador -
 
 ### Armênia/Yerevan
-<<<<<<< HEAD
 
-=======
->>>>>>> ad76c856ffc61db92d3c9a79510e13012b280236
 - [Meetup](https://www.facebook.com/nodejsarmenia/)
 - Frequência dos meetups - trimestral
 - Como enviar uma palestra? [Mande uma menssagem no nosso Telegram](https://t.me/nodejsarmenia)
@@ -269,10 +257,7 @@ EXIGÊNCIAS
 #### Maharashtra
 
 ##### Pune
-<<<<<<< HEAD
 
-=======
->>>>>>> ad76c856ffc61db92d3c9a79510e13012b280236
 - [Meetup](https://www.meetup.com/JavaScripters)
 - Frequência dos meetups - mensal
 - Como enviar uma palestra? Envie suas dúvidas para Pune.javascripters@gmail.com  ou fale com os organizadores na página do meetup
@@ -633,13 +618,9 @@ EXIGÊNCIAS
 ### Reino Unido
 
 #### Londres
-<<<<<<< HEAD
 
 ##### LNUG
 
-=======
-##### LNUG
->>>>>>> ad76c856ffc61db92d3c9a79510e13012b280236
 - [Meetup](https://www.meetup.com/london-nodejs/)
 - [GitHub/lnug](https://github.com/lnug/)
 - Frequência dos meetups - mensal
@@ -648,6 +629,7 @@ EXIGÊNCIAS
 - Contato do organizador - contact@lnug.org, [@lnugOrg](https://twitter.com/lnugorg)
 
 ##### Node Workshops
+
 - [Meetup](https://www.meetup.com/NodeWorkshops//)
 - Frequência dos meetups - mensal
 - Como enviar uma palestra?
