@@ -206,8 +206,10 @@ Por esse motivo, você deve desconfiar do uso de expressões regulares complexas
 
 #### Recursos anti-REDOS
 Existem algumas ferramentas para verificar a segurança de seus regexps, como
+
 - [safe-regex](https://github.com/substack/safe-regex)
 - [rxxr2](http://www.cs.bham.ac.uk/~hxt/research/rxxr2/).
+
 No entanto, nenhum deles capturará todos os regexps vulneráveis.
 
 Outra abordagem é usar um mecanismo diferente de regexp.
@@ -219,6 +221,7 @@ Se você estiver tentando corresponder a algo "óbvio", como uma URL ou um camin
 
 ### Bloqueando o Event Loop: módulos principais do Node
 Vários módulos principais do Node têm APIs síncronas custosas, incluindo:
+
 - [Encryption](https://nodejs.org/api/crypto.html)
 - [Compression](https://nodejs.org/api/zlib.html)
 - [File system](https://nodejs.org/api/fs.html)
@@ -227,6 +230,7 @@ Vários módulos principais do Node têm APIs síncronas custosas, incluindo:
 Essas APIs são custosas, porque envolvem computação significativa (criptografia, compactação), exigem I/O (I/O de arquivo) ou potencialmente ambas (child process). Essas APIs destinam-se à conveniência de script, mas não para uso no contexto de servidor. Se você executá-los no Event Loop, eles levarão muito mais tempo para serem concluídos do que uma instrução JavaScript típica, bloqueando o Event Loop.
 
 Em um servidor, *você não deve usar as seguintes APIs síncronas desses módulos*:
+
 - Criptografia:
   - `crypto.randomBytes` (versão síncrona)
   - `crypto.randomFillSync`
@@ -280,6 +284,7 @@ console.log('JSON.parse took ' + took);
 ```
 
 Existem módulos npm que oferecem APIs JSON assíncronas. Veja alguns exemplo:
+
 - [JSONStream](https://www.npmjs.com/package/JSONStream), que possui APIs de stream.
 - [Big-Friendly JSON](https://www.npmjs.com/package/bfj), que possui APIs de stream e versões assíncronas das APIs JSON padrão usando o paradigma de particionamento no Event Loop descrito abaixo.
 
@@ -342,6 +347,7 @@ Para uma tarefa complicada, mova o trabalho do Event Loop para uma Worker Pool.
 
 ##### Como fazer offload
 Você tem duas opções para uma Work Pool de destino no qual descarregar o trabalho.
+
 1. Você pode usar a Worker Pool built-in do Node desenvolvendo um [addon C++](https://nodejs.org/api/addons.html). Nas versões mais antigas do Node, crie seu complemento C++ usando [NAN](https://github.com/nodejs/nan) e nas versões mais recentes use [N-API](https://nodejs.org/api/n -api.html). [node-webworker-threads](https://www.npmjs.com/package/webworker-threads) oferece uma maneira JavaScript-only para acessar a Worker Pool do Node.
 2. Você pode criar e gerenciar sua própria Worker Pool dedicada à computação, em vez da Worker Pool de I/O do Node. As maneiras mais simples de fazer isso são usando [Child Process](https://nodejs.org/api/child_process.html) ou [Cluster](https://nodejs.org/api/cluster.html).
 
@@ -457,8 +463,10 @@ Para fazer isso, minimize a variação nos tempos da Task usando o particionamen
 Enquanto os módulos principais do Node oferecem blocos de construção para uma ampla variedade de aplicações, às vezes é necessário algo mais. Os desenvolvedores de Node se beneficiam enormemente do [ecosistema npm](https://www.npmjs.com/), com centenas de milhares de módulos oferecendo funcionalidade para acelerar seu processo de desenvolvimento.
 
 Lembre-se, no entanto, que a maioria desses módulos é escrita por desenvolvedores de terceiros e geralmente é liberada com apenas com o minímo necessário para funcionar. Um desenvolvedor que usa um módulo npm deve se preocupar com duas coisas, embora este último seja frequentemente esquecido.
+
 1. Honra suas APIs?
 2. Suas APIs podem bloquear o Event Loop ou um Worker?
+
 Muitos módulos não fazem nenhum esforço para indicar o custo de suas APIs, em detrimento da comunidade.
 
 Para APIs simples, você pode estimar seus custo; o custo da manipulação de string não é difícil de entender.
