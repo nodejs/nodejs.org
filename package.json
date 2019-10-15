@@ -39,6 +39,7 @@
   "dependencies": {
     "autoprefixer": "^9.7.2",
     "cheerio": "^0.22.0",
+    "fibers": "^4.0.2",
     "handlebars": "^4.5.3",
     "jstransformer-handlebars": "^1.1.0",
     "junk": "^3.1.0",
@@ -56,12 +57,12 @@
     "metalsmith-prism": "^3.1.1",
     "metalsmith-yearly-pagination": "^4.0.0",
     "ncp": "^2.0.0",
-    "node-sass": "^4.13.0",
     "node-version-data": "^1.1.0",
     "npm-run-all": "^4.1.5",
     "octonode": "^0.9.5",
     "postcss": "^7.0.23",
     "request": "^2.88.0",
+    "sass": "^1.23.7",
     "semver": "^6.3.0",
     "strftime": "^0.10.0"
   },
