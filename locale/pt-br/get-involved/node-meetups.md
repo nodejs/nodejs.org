@@ -5,437 +5,437 @@ layout: contribute.hbs
 
 # Node.js Meetups
 
-This is a list of Node.js meetups. Please submit a PR if you'd like to add your local group!
+Essa é uma lista de meetups do Node.js. Por favor envie um PR se você quer adicionar seu grupo local!
 
-## Code of Conduct
+## Código de Conduta
 
-If any meetup does not have a CoC and/or is reported as an unsafe place, it will be removed from this list.
+Se algum meetup não tem um código de conduta e/ou está denunciado como um lugar não-seguro, ele vai ser removido desta lista.
 
-## Notes for adding meetups
+## Notas para inclusão de meetups
 
-FORMAT
+FORMATO
 - [Meetup](https://www.meetup.com/pdxnode/)
-- Frequency of meetups
-- How to submit a talk? &lt;&lt;list here&gt;&gt;
-- Organizer names (if you wish to provide)
-- Organizers contact info (if you wish to provide)
+- Frequência dos meetups
+- Como enviar uma palestra? &lt;&lt;lista aqui&gt;&gt;
+- Nomes dos organizadores (se você quiser fornecer)
+- Contato dos organizadores (se você quiser fornecer)
 
-REQUIREMENTS
-- Please state in your PR if this meetup abides by CoC.
-- Link to CoC for verification.
-- If you do not currently have a CoC, update the meetup with CoC before submitting.
-- Submit your PR in alphabetical order.
+EXIGÊNCIAS
+- Indique no seu PR se este meetup obedece ao código de conduta.
+- Link para o código de conduta para verificação
+- Se você atualmente não tem um código de conduta, atualize o meetup com o código de conduta antes de enviar.
+- Envie seu PR em ordem alfabética
 
 ## Meetups
 
-### Africa
+### África
 - [Meetup](https://www.nodejs.africa)
-- Frequency of meetups - bi-monthly
-- How to submit a talk? [Submit to this form](https://docs.google.com/forms/d/e/1FAIpQLSe3vPkiO8ijtbP7fUhEotKefXU-fWUoDGtUSo1khmtA_7v1WQ/viewform)
-- Organizer name - Agiri Abraham
-- Organizer contact info -
+- Frequência dos meetups - bimestral
+- Como enviar uma palestra? [Envie para este formulário](https://docs.google.com/forms/d/e/1FAIpQLSe3vPkiO8ijtbP7fUhEotKefXU-fWUoDGtUSo1khmtA_7v1WQ/viewform)
+- Nome do organizador - Agiri Abraham
+- Contato do organizador -
 
-### Armenia/Yerevan
+### Armênia/Yerevan
 - [Meetup](https://www.facebook.com/nodejsarmenia/)
-- Frequency of meetups - quarterly
-- How to submit a talk? [Write in our Telegram chat](https://t.me/nodejsarmenia)
-- Organizer name - Node.js Armenian Community
-- Organizer contact info - nodejsarm@gmail.com
+- Frequência dos meetups - trimestral
+- Como enviar uma palestra? [Mande uma menssagem no nosso Telegram](https://t.me/nodejsarmenia)
+- Nome do organizador - Node.js Armenian Community
+- Contato do organizador - nodejsarm@gmail.com
 
 ### Argentina
 
-#### Buenos Aires Province
+#### Buenos Aires Província
 
 ##### Buenos Aires
 
 - [Meetup](https://www.meetup.com/banodejs/)
-- Frequency of meetups - monthly
-- How to submit a talk? Write a message in the meetup page
-- Organizer name - Alejandro Oviedo
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Mande uma mensagem na página do meetup
+- Nome do organizador - Alejandro Oviedo
+- Contato do organizador -
 
-### Australia
+### Austrália
 
 #### Victoria
 
 ##### Melbourne
 
 - [Meetup](https://www.meetup.com/NodeMelbourne/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Andrey Sidorov
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Andrey Sidorov
+- Contato do organizador -
 
 ##### Sydney
 
 - [Meetup](https://www.meetup.com/node-sydney/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - James Richardson. Co-organizer: Jessica Claire
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - James Richardson. Co-organizer: Jessica Claire
+- Contato do organizador -
 
-### Belgium
+### Bélgica
 
-#### Brussels
+#### Bruxelas
 
-##### Brussels
+##### Bruxelas
 
 - [Meetup](https://www.meetup.com/Belgian-node-js-User-Group/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Steven Beeckman
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Steven Beeckman
+- Contato do organizador -
 
-### Bolivia
+### Bolívia
 
 #### La Paz
 
 - [Meetup](https://www.meetup.com/LaPazjs)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer names - [Mauricio De La Quintana](https://github.com/maudel), [Guillermo Paredes](https://github.com/GuillermoParedes), [Adrian Zelada](https://github.com/adrianzelada).
-- Organizer contact info - [@maudelaquintana](https://twitter.com/maudelaquintana)
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nomes dos organizadores - [Mauricio De La Quintana](https://github.com/maudel), [Guillermo Paredes](https://github.com/GuillermoParedes), [Adrian Zelada](https://github.com/adrianzelada).
+- Contato do organizador - [@maudelaquintana](https://twitter.com/maudelaquintana)
 
-### Brazil
+### Brasil
 
 #### São Paulo
 
 - [Meetup](https://meetup.com/nodebr)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer names - [Erick Wendel](https://github.com/erickwendel), [Alan Hoffmeister](https://github.com/alanhoff), [Igor França](https://github.com/horaddrim), [Icaro Caldeira](https://github.com/icarcal), [Marcus Bergamo](https://github.com/thebergamo), [Igor Halfeld](https://github.com/igorHalfeld).
-- Organizer contact info - [@erickwendel_](https://twitter.com/erickwendel_)
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nomes dos organizadores - [Erick Wendel](https://github.com/erickwendel), [Alan Hoffmeister](https://github.com/alanhoff), [Igor França](https://github.com/horaddrim), [Icaro Caldeira](https://github.com/icarcal), [Marcus Bergamo](https://github.com/thebergamo), [Igor Halfeld](https://github.com/igorHalfeld).
+- Contato do organizador - [@erickwendel_](https://twitter.com/erickwendel_)
 
 ##### Campinas
 
 - [Meetup](https://www.meetup.com/Nodeschool-Campinas/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Filipe Oliveira
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Filipe Oliveira
+- Contato do organizador -
 
 #### Minas Gerais
 
 - [Meetup](https://www.meetup.com/nodebr/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Hugo Iuri
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Hugo Iuri
+- Contato do organizador -
 
 #### Rio Grande do Sul
 
 ##### Porto Alegre
 
 - [Meetup](https://www.meetup.com/Node-js-Porto-Alegre-Meetup/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Henrique Schreiner
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Henrique Schreiner
+- Contato do organizador -
 
-### Canada
+### Canadá
 
-#### British Columbia
+#### Colúmbia Britânica
 
 ##### Vancouver
 
 - [Meetup](https://www.meetup.com/Node-JS-Community-Hangouts)
-- Frequency of meetups - quarterly
-- How to submit a talk? DM @keywordnew on twitter
-- Organizer name - Manil Chowdhury
-- Organizer contact info -
+- Frequência dos meetups - trimestral
+- Como enviar uma palestra? DM @keywordnew no twitter
+- Nome do organizador - Manil Chowdhury
+- Contato do organizador -
 
-#### Ontario
+#### Ontário
 
 ##### Toronto
 
 - [Toronto JS Meetup](http://torontojs.com/)
-- Frequency of meetups - weekly
-- How to submit a talk? _Contact Organizers through Slack: http://slack.torontojs.com/_
+- Frequência dos meetups - semanal
+- Como enviar uma palestra? _Entre em contato com os organizadores através do Slack: http://slack.torontojs.com/_
 - Organizers name - Dann T. & Paul D.
-- Organizer contact info - _Community Slack_
+- Contato do organizador - _Comunidade do Slack_
 
 ### Chile
 
 #### Santiago
 
 - [Meetup](https://www.meetup.com/es-ES/NodersJS/)
-- Frequency of meetups - monthly
-- How to submit a talk? Issue on Github [here](https://github.com/Noders/Meetups/issues/new)
-- Organizer name - Rodrigo Adones and Ender Bonnet
-- Organizer contact info - [Rodrigo](https://github.com/L0rdKras), [Ender](https://twitter.com/enbonnet)
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Issue no Github [here](https://github.com/Noders/Meetups/issues/new)
+- Nomes dos organizadores - Rodrigo Adones e Ender Bonnet
+- Contato dos organizadores - [Rodrigo](https://github.com/L0rdKras), [Ender](https://twitter.com/enbonnet)
 
-### Colombia
+### Colômbia
 
 #### Antioquia
 
 ##### Medellín
 
 - [Meetup](https://www.meetup.com/node_co/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Camilo Montoya
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Camilo Montoya
+- Contato do organizador -
 
-### Finland
+### Finlândia
 
 #### Uusimaa
 
 ##### Helsinski
 
 - [Meetup](https://www.meetup.com/Helsinki-Node-js/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page
-- Organizer name - Juha Lehtomaki
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Juha Lehtomaki
+- Contato do organizador -
 
-### France
+### França
 
-#### Île-de-France
+#### Ilha de França
 
 ##### Paris
 
 - [Meetup](https://www.meetup.com/Nodejs-Paris/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page or submit your talk on [nodejs.paris website](http://nodejs.paris/meetups)
-- Organizer name - [Etienne Folio](https://twitter.com/Ornthalas), [Stanislas Ormières](https://twitter.com/laruiss), [Nicolas KOKLA](https://twitter.com/nkokla), Quentin Raynaud
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup ou envie sua palestra no [site nodejs.paris](http://nodejs.paris/meetups)
+- Nome do organizador - [Etienne Folio](https://twitter.com/Ornthalas), [Stanislas Ormières](https://twitter.com/laruiss), [Nicolas KOKLA](https://twitter.com/nkokla), Quentin Raynaud
+- Contato do organizador -
 
-### Germany
+### Alemanha
 
 #### Bavaria
 
 ##### Passau
 
 - [Meetup](https://www.meetup.com/de-DE/Nodeschool-Passau/)
-- Frequency of meetups - quarterly
-- How to submit a talk? Email [Valentin](mailto:valentin.huber@msg.group)
-- Organizer name - Valentin Huber
-- Organizer contact info - [Email](mailto:valentin.huber@msg.group)
+- Frequência dos meetups - trimestral
+- Como enviar uma palestra? Email [Valentin](mailto:valentin.huber@msg.group)
+- Nome do organizador - Valentin Huber
+- Contato do organizador - [Email](mailto:valentin.huber@msg.group)
 
-#### Berlin
+#### Berlim
 
 - [Meetup](https://www.meetup.com/Node-js-Meetup-Berlin/)
-- Frequency of meetups - monthly
-- How to submit a talk? Email [Andreas](mailto:npm@lubbe.org)
-- Organizer name - Andreas Lubbe
-- Organizer contact info - [Email](mailto:npm@lubbe.org)
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Email [Andreas](mailto:npm@lubbe.org)
+- Nome do organizador - Andreas Lubbe
+- Contato do organizador - [Email](mailto:npm@lubbe.org)
 
 #### Hamburg
 
 - [Meetup](https://www.meetup.com/node-HH/)
-- Frequency of meetups - monthly and on demand
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Gregor Elke, Oliver Lorenz
-- Organizer contact info - via Meetup, via [Slack](http://bit.ly/web-hh)
+- Frequência dos meetups - mensal e sob demanda
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nomes dos organizadores - Gregor Elke, Oliver Lorenz
+- Contato dos organizadores - via Meetup, via [Slack](http://bit.ly/web-hh)
 
-### Greece
+### Grécia
 
-#### Athens
+#### Atenas
 
 - [Meetup](https://www.meetup.com/nodejsathens/)
-- Frequency of meetups - every two months
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - [Ioannis Nikolaou](https://www.linkedin.com/in/ioannis-nikolaou/) Co-organizers - Stratoula Kalafateli, [Kostas Siabanis](https://github.com/ksiabani), Megaklis Vasilakis
-- Organizer contact info -
+- Frequência dos meetups - a cada dois meses
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - [Ioannis Nikolaou](https://www.linkedin.com/in/ioannis-nikolaou/) Coorganizadores - Stratoula Kalafateli, [Kostas Siabanis](https://github.com/ksiabani), Megaklis Vasilakis
+- Contato do organizador -
 
-### Hungary
+### Hungria
 
-#### Budapest
+#### Budapeste
 
 - [Meetup](https://www.meetup.com/nodebp/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Oroszi Róbert
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Oroszi Róbert
+- Contato do organizador -
 
-### India
+### Índia
+
 #### Maharashtra
 
 ##### Pune
 - [Meetup](https://www.meetup.com/JavaScripters)
-- Frequency of meetups - monthly
-- How to submit a talk? Send your queries to Pune.javascripters@gmail.com  or Contact organizers in the meetup page.
-- Organizer name - Imran shaikh & Akash Jarad
-- Organizer contact info - javascripters.community@gmail.com
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Envie suas dúvidas para Pune.javascripters@gmail.com  ou fale com os organizadores na página do meetup
+- Nome do organizador - Imran shaikh & Akash Jarad
+- Contato do organizador - javascripters.community@gmail.com
 
 ##### Delhi
 
 - [Meetup](https://www.meetup.com/nodeJS-Devs/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Gaurav Gandhi.
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Gaurav Gandhi.
+- Contato do organizador -
 
 #### Gujarat
 
 ##### Ahmedabad
 
 - [Meetup](https://www.meetup.com/meetup-group-iAIoTVuS/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page or write to dipesh@rapidops.com
-- Organizer name - Dipesh Patel
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup ou escreva para dipesh@rapidops.com
+- Nome do organizador - Dipesh Patel
+- Contato do organizador -
 
 #### Rajasthan
 
 ##### Jaipur
 
 - [Meetup](https://www.meetup.com/JaipurJS-Developer-Meetup/)
-- Frequency of meetups - monthly
-- How to submit a talk? [Email ayushrawal12@gmail.com](mailto:ayushrawal12@gmail.com) or [reach out to me on LinkedIn](https://www.linkedin.com/in/ayush-rawal)
-- Organizer name - [Ayush Rawal](https://github.com/ayush-rawal)
-- Organizer contact info - [Email](mailto:ayushrawal12@gmail.com)
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? [Email ayushrawal12@gmail.com](mailto:ayushrawal12@gmail.com) ou [entre em contato comigo no LinkedIn](https://www.linkedin.com/in/ayush-rawal)
+- Nome do organizador - [Ayush Rawal](https://github.com/ayush-rawal)
+- Contato do organizador - [Email](mailto:ayushrawal12@gmail.com)
 
-### Indonesia
+### Indonésia
 
 #### Jakarta
 
 - [Meetup](https://www.meetup.com/Node-js-Workshop/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Lukluk Luhuring Santoso
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Lukluk Luhuring Santoso
+- Contato do organizador -
 
-### Ireland
+### Irlanda
 
 #### Dublin
 
 - [Meetup](https://www.meetup.com/Dublin-Node-js-Meetup/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Sean Walsh. Co-organizer: Leanne Vaughey
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Sean Walsh. Co-organizer: Leanne Vaughey
+- Contato do organizador -
 
 - [Meetup](https://www.meetup.com/Nodeschool-Dublin-Meetup/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Anton Whalley
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Anton Whalley
+- Contato do organizador -
 
 ### Israel
 
 #### Tel Aviv
 
 - [Meetup](https://www.meetup.com/NodeJS-Israel/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page or submit your talk on [Node.js-IL website](http://www.nodejsil.com/).
-- Organizer name - [Idan Dagan](https://github.com/idandagan1), [Guy Segev](https://github.com/guyguyon), [Tomer Omri](https://github.com/TomerOmri)
-- Organizer contact info - [Email](mailto:nodejsisrael8@gmail.com
-)
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup ou envie sua palestra em [Node.js-IL website](http://www.nodejsil.com/).
+- Nomes dos organizadores - [Idan Dagan](https://github.com/idandagan1), [Guy Segev](https://github.com/guyguyon), [Tomer Omri](https://github.com/TomerOmri)
+- Contato dos organizadores - [Email](mailto:nodejsisrael8@gmail.com)
 
-### Mexico
+### México
 
-#### Mexico City
+#### Cidade do México
 
 - [Meetup](https://www.meetup.com/NodeBotsMX/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Saúl Buentello
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Saúl Buentello
+- Contato do organizador -
 
-### New Zealand
+### Nova Zelândia
 
 #### Auckland
 
 - [Meetup](https://www.meetup.com/AucklandNodeJs/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - George Czabania
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - George Czabania
+- Contato do organizador -
 
-### South Africa
+### África do Sul
 
-#### Cape Town
+#### Cidade do Cabo
 
 - [Meetup](https://www.meetup.com/nodecpt/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Guy Bedford
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Guy Bedford
+- Contato do organizador -
 
-### Spain
+### Espanha
 
 #### Madrid
 
 - [Meetup](https://www.meetup.com/Node-js-Madrid/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Alex Fernández
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Alex Fernández
+- Contato do organizador -
 
-### Thailand
+### Tailândia
 
 #### Bangkok
 
 - [Meetup](https://www.meetup.com/Bangkok-Node-js/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Dylan Jay
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Dylan Jay
+- Contato do organizador -
 
-### Turkey
+### Turquia
 
 #### Istanbul
 
 - [Meetup](https://www.meetup.com/nodeschool-istanbul/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Arif Çakıroğlu
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Arif Çakıroğlu
+- Contato do organizador -
 
-### United States
+### Estados Unidos
 
 #### Arizona
 
 ##### Mesa
 
 - [Meetup](https://www.meetup.com/NodeAZ/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Chris Matthieu
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Chris Matthieu
+- Contato do organizador -
 
-#### California
+#### Califórnia
 
 ##### Los Angeles
 
 - [js.la](https://js.la)
-- Frequency of meetups - monthly
-- How to submit a talk? [contribute.js.la](https://contribute.js.la)
-- Organizer name - David Guttman
-- Organizer contact info - @dguttman on [slack.js.la](https://slack.js.la)
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? [contribute.js.la](https://contribute.js.la)
+- Nome do organizador - David Guttman
+- Contato do organizador - @dguttman on [slack.js.la](https://slack.js.la)
 
 ##### Irvine
 
 - [Meetup](https://www.meetup.com/Node-JS-OC/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Farsheed Atef
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Farsheed Atef
+- Contato do organizador -
 
-##### San Francisco
+##### São Francisco
 
 - [Meetup](https://www.meetup.com/sfnode/)
-- Frequency of meetups - monthly
-- How to submit a talk?
-- Organizer name - Dan Shaw
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra?
+- Nome do organizador - Dan Shaw
+- Contato do organizador -
 
 - [Meetup](https://www.meetup.com/Node-js-Serverside-Javascripters-Club-SF/)
-- Frequency of meetups - monthly
-- How to submit a talk?
-- Organizer name - Matt Pardee
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra?
+- Nome do organizador - Matt Pardee
+- Contato do organizador -
 
 #### Colorado
 
 ##### Denver
 
 - [Meetup](https://www.meetup.com/Node-js-Denver-Boulder/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page
-- Organizer name - Brooks Patton
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Brooks Patton
+- Contato do organizador -
 
 #### Florida
 
@@ -443,221 +443,221 @@ REQUIREMENTS
 
 - [Meetup](https://www.meetup.com/Jax-Node-js-UG/)
 - [Website](https://www.jaxnode.com)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - David Fekke
-- Organizer contact info - David Fekke at gmail dot com
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - David Fekke
+- Contato do organizador - David Fekke arroba gmail ponto com
 
 #### Georgia
 
 ##### Atlanta
 
 - [Meetup](https://www.meetup.com/Atlanta-Nodejs-Developers/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Ryan Connelly
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Ryan Connelly
+- Contato do organizador -
 
 #### Illinois
 
 ##### Chicago
 
 - [Meetup](https://www.meetup.com/Chicago-Nodejs/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page or (https://airtable.com/shrTDwmMH3zsnsWOE)
-- Organizer name - Mike Hostetler, Zeke Nierenberg, & Ben Neiswander
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup or (https://airtable.com/shrTDwmMH3zsnsWOE)
+- Nome do organizador - Mike Hostetler, Zeke Nierenberg, & Ben Neiswander
+- Contato do organizador -
 
 #### Indiana
 
-##### Indianapolis
+##### Indianápolis
 
 - [Meetup](https://www.meetup.com/Node-indy/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Mike Seidle
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Mike Seidle
+- Contato do organizador -
 
 #### Massachusetts
 
 ##### Boston
 
 - [Meetup](https://www.meetup.com/Boston-Node/)
-- Frequency of meetups - ~monthly
-- How to submit a talk? Contact organizers in the meetup page or post in slack workspace #\_node\_meetup (see below).
-- Organizer name - [Brian Sodano](https://github.com/codemouse)
-- Organizer contact info - [briansodano@gmail.com](mailto:briansodano@gmail.com) or [Boston JS slack workspace](https://bostonjavascript.slack.com)
+- Frequência dos meetups - ~mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup ou envie no workspace do slack #\_node\_meetup (see below).
+- Nome do organizador - [Brian Sodano](https://github.com/codemouse)
+- Contato do organizador - [briansodano@gmail.com](mailto:briansodano@gmail.com) ou [Boston JS slack workspace](https://bostonjavascript.slack.com)
 
 #### Michigan
 
 ##### Detroit
 
 - [Meetup](https://www.meetup.com/DetNode/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Steve Marsh, Norman Witte and Israel V
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Steve Marsh, Norman Witte e Israel V
 
 #### Minnesota
 
 ##### Minneapolis
 
 - [Meetup](https://www.meetup.com/NodeMN/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Mike Frey
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Mike Frey
+- Contato do organizador -
 
-#### New York
+#### Nova Iorque
 
-##### New York
+##### Nova Iorque
 
 - [Meetup](https://www.meetup.com/nodejs/)
-- Frequency of meetups - monthly
-- How to submit a talk?
-- Organizer name - Patrick Scott Co-organizer: Matt Walters.
-- Organizer contact info -
-- How to submit a talk? Contact Pat Scott @ [pat@patscott.io](mailto:pat@patscott.io). Matt Walters @ [meetup@iammattwalters.com](mailto:meetup@iammattwalters.com).
+- Frequência dos meetups - mensal
+- Como enviar uma palestra?
+- Nome do organizador - Patrick Scott Coorganizador: Matt Walters.
+- Contato do organizador -
+- Como enviar uma palestra? Fale com Pat Scott @ [pat@patscott.io](mailto:pat@patscott.io). Matt Walters @ [meetup@iammattwalters.com](mailto:meetup@iammattwalters.com).
 - Slack: [join.thenodejsmeetup.com](http://join.thenodejsmeetup.com/)
 - Videos: [https://www.youtube.com/c/thenodejsmeetup](https://www.youtube.com/c/thenodejsmeetup)
 
-#### North Carolina
+#### Carolina do Norte
 
 ##### Raleigh Durham
 
 - [Meetup](https://www.meetup.com/triangle-nodejs/)
-- Frequency of meetups - quarterly
-- How to submit a talk? Email ladyleet@nodejs.org
-- Organizer name - Tracy Lee
-- Organizer contact info - ladyleet@nodejs.org
+- Frequência dos meetups - trimestral
+- Como enviar uma palestra? Email ladyleet@nodejs.org
+- Nome do organizador - Tracy Lee
+- Contato do organizador - ladyleet@nodejs.org
 
 #### Oregon
 
 ##### Portland
 
 - [Meetup](http://pdxnode.org/)
-- Frequency of meetups - Biweekly (presentation night 2nd Thursdays, hack night last Thursdays)
-- How to submit a talk? [Submit a talk proposal](https://github.com/PDXNode/pdxnode/issues/new), or DM [@obensource](https://twitter.com/obensource) or [@MichelleJLevine](https://twitter.com/MichelleJLevine) on twitter
-- Organizer names - Ben Michel, Michelle Levine
-- Organizer contact info - Ben: benpmichel@gmail.com, Michelle: michelle@michellejl.com
+- Frequência dos meetups - quinzenal (noite de apresentação na segunda quinta-feira, noite de hack última quinta-feira)
+- Como enviar uma palestra? [Envie uma proposta de palestra](https://github.com/PDXNode/pdxnode/issues/new), ou DM [@obensource](https://twitter.com/obensource) ou [@MichelleJLevine](https://twitter.com/MichelleJLevine) no twitter
+- Nomes dos organizadores - Ben Michel, Michelle Levine
+- Contato dos organizadores - Ben: benpmichel@gmail.com, Michelle: michelle@michellejl.com
 
-#### Pennsylvania
+#### Pensilvânia
 
-##### Philadelphia
+##### Filadélfia
 
 - [Meetup](https://www.meetup.com/nodejs-philly/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page: https://www.meetup.com/nodejs-philly/members/14283814/
-- Organizer name - Leomar Durán
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup: https://www.meetup.com/nodejs-philly/members/14283814/
+- Nome do organizador - Leomar Durán
+- Contato do organizador -
 
 #### Texas
 
 ##### Austin
 
 - [Meetup](https://www.meetup.com/austinnodejs/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact Matt Walters @ [meetup@iammattwalters.com](mailto:meetup@iammattwalters.com).
-- Organizer name - [Matt Walters](https://github.com/mateodelnorte/)
-- Organizer contact info - [meetup@iammattwalters.com](mailto:meetup@iammattwalters.com)
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Contact Matt Walters @ [meetup@iammattwalters.com](mailto:meetup@iammattwalters.com).
+- Nome do organizador - [Matt Walters](https://github.com/mateodelnorte/)
+- Contato do organizador - [meetup@iammattwalters.com](mailto:meetup@iammattwalters.com)
 - Slack: [join.thenodejsmeetup.com](http://join.thenodejsmeetup.com/)
 - Videos: [https://www.youtube.com/c/thenodejsmeetup](https://www.youtube.com/c/thenodejsmeetup)
 
 - [Meetup](https://www.meetup.com/ATXNodeSchool/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Stefan von Ellenrieder
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Stefan von Ellenrieder
+- Contato do organizador -
 
 ##### Dallas
 
 - [Meetup](https://www.meetup.com/DallasNode/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - [Cameron Steele](https://github.com/ATechAdventurer)
-- Organizer contact info - [Cam.steeleis@gmail.com](mailto:Cam.steeleis@gmail.com)
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - [Cameron Steele](https://github.com/ATechAdventurer)
+- Contato do organizador - [Cam.steeleis@gmail.com](mailto:Cam.steeleis@gmail.com)
 
 #### Utah
 
 ##### Salt Lake City
 
 - [Meetup](https://www.meetup.com/utahnodejs/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page.
-- Organizer name - Aaron Seth Madsen
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Aaron Seth Madsen
+- Contato do organizador -
 
 #### Washington
 
 ##### Seattle
 
 - [Meetup](https://www.meetup.com/Seattle-Node-js/)
-- Frequency of meetups - monthly
-- How to submit a talk?
-- Organizer name - Ryan Roemer
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra?
+- Nome do organizador - Ryan Roemer
+- Contato do organizador -
 
 - [Meetup](https://www.meetup.com/Seattle-NodeSchool/)
-- Frequency of meetups - monthly
-- How to submit a talk? Contact organizers in the meetup page
-- Organizer name - Wil Alvarez
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Fale com os organizadores na página do meetup
+- Nome do organizador - Wil Alvarez
+- Contato do organizador -
 
 #### Washington, DC.
 
 - [Meetup](https://www.meetup.com/node-dc/)
-- Frequency of meetups - monthly
-- How to submit a talk? Write to Andrew Dunkman adunkman@gmail.com
-- Organizer name - Andrew Dunkman
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Write to Andrew Dunkman adunkman@gmail.com
+- Nome do organizador - Andrew Dunkman
+- Contato do organizador -
 
-### UK
+### Reino Unido
 
-#### London
+#### Londres
 ##### LNUG
 - [Meetup](https://www.meetup.com/london-nodejs/)
 - [GitHub/lnug](https://github.com/lnug/)
-- Frequency of meetups - monthly
-- How to submit a talk? Visit our [speakers repos](https://github.com/lnug/speakers), read the guidelines, and [submit a talk proposal as a new issue](https://github.com/lnug/speakers/issues).
-- Organizer name - Adam Davis
-- Organizer contact info - contact@lnug.org, [@lnugOrg](https://twitter.com/lnugorg)
+- Frequência dos meetups - mensal
+- Como enviar uma palestra? Visite nosso [repositório de palestrantes](https://github.com/lnug/speakers), leia as orientações, e [envie uma proposta de palestra como uma nova issue](https://github.com/lnug/speakers/issues).
+- Nome do organizador - Adam Davis
+- Contato do organizador - contact@lnug.org, [@lnugOrg](https://twitter.com/lnugorg)
 
 ##### Node Workshops
 - [Meetup](https://www.meetup.com/NodeWorkshops//)
-- Frequency of meetups - monthly
-- How to submit a talk?
-- Organizer name - Daryn Holmes
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra?
+- Nome do organizador - Daryn Holmes
+- Contato do organizador -
 
 #### Cambridge
 
 - [Meetup](https://www.meetup.com/JavaScript-Cambridge/)
-- Frequency of meetups - monthly
-- How to submit a talk?
-- Organizer name - Joe Parry, co-organizer Rob Moran
-- Organizer contact info -
+- Frequência dos meetups - mensal
+- Como enviar uma palestra?
+- Nome do organizador - Joe Parry, coorganizador Rob Moran
+- Contato do organizador -
 
 #### Oxford
 
 - [JSOxford](https://www.meetup.com/jsoxford/)
-- Frequency of meetups - every 2 months
-- How to submit a talk? [Submit Form](https://docs.google.com/forms/d/e/1FAIpQLSflx7LU44PuwlyCJj-WwlP_SlrUvxAd8uaXlY7_O65c7RLpGQ/viewform?usp=sf_link)
-- Organizer names - Marcus Noble, Seren Davies
-- Organizers contact info - organisers@jsoxford.com
+- Frequência dos meetups - a cada 2 meses
+- Como enviar uma palestra? [Preencha o formulário](https://docs.google.com/forms/d/e/1FAIpQLSflx7LU44PuwlyCJj-WwlP_SlrUvxAd8uaXlY7_O65c7RLpGQ/viewform?usp=sf_link)
+- Nomes dos organizadores - Marcus Noble, Seren Davies
+- Contato dos organizadores - organisers@jsoxford.com
 
 #### Edinburgh
 
 - [Node.js Edinburgh](https://www.meetup.com/Nodejs-Edinburgh/)
-- Frequency of meetups - every 2 months
-- How to submit a talk? [Submit Talk](mailto:michael@biggles.io?subject=Node.js%20Talk%20Proposal)
-- Organizer names - Michael Antczak
-- Organizers contact info - [AntczakMichael](https://twitter.com/AntczakMichael)
+- Frequência dos meetups - a cada 2 meses
+- Como enviar uma palestra? [Envie a palestra para](mailto:michael@biggles.io?subject=Node.js%20Talk%20Proposal)
+- Nomes dos organizadores - Michael Antczak
+- Contato dos organizadores - [AntczakMichael](https://twitter.com/AntczakMichael)
 
-### Ukraine
+### Ucrânia
 
 #### Kiev
 
-- [Meetup](https://www.meetup.com/NodeUA/), [Old group](https://www.meetup.com/KievNodeJS/)
-- Frequency of meetups - 1-8 times a month
-- How to submit a talk? Contact organizer by email.
-- Organizer name - Timur Shemsedinov
-- Organizer contact info - [Email](mailto:timur.shemsedinov@gmail.com)
+- [Meetup](https://www.meetup.com/NodeUA/), [Grupo antigo](https://www.meetup.com/KievNodeJS/)
+- Frequência dos meetups - 1-8 vezes por mês
+- Como enviar uma palestra? Entre em contato com o organizador por e-mail.
+- Nome do organizador - Timur Shemsedinov
+- Contato do organizador - [Email](mailto:timur.shemsedinov@gmail.com)
