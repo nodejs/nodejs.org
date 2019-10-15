@@ -53,7 +53,7 @@ would like to contribute to the translation of nodejs.org, please refer to the f
 
   * `site.json` (this contains the basic settings and navigation structure for the website)
   * `index.md` (this contains the Markdown translation for the home page.)
-  * `styles.styl` (this imports the necessary Stylus files)
+  * `styles.scss` (this imports the necessary Sass files)
   * All files and files in subfolders that end in `.md` are content pages and should be translated.
 
 * Prefix your PR with the localization group's name (e.g. `nodejs-no`). If you are only translating one of the above files, please mention them in your PR's subject as well, e.g.:

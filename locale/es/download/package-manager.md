@@ -160,7 +160,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## SmartOS y illumos
 
-Las imágenes de SmartOS vienen con pkgsrc pre-instalado.  En otras distribuciones de illumos, primero instale **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, luego usted puede instalar el paquete binario de la manera usual:
+Las imágenes de SmartOS vienen con pkgsrc pre-instalado. En otras distribuciones de illumos, primero instale **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, luego usted puede instalar el paquete binario de la manera usual:
 
 ```bash
 pkgin -y install nodejs
@@ -174,7 +174,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## Solus
 
-Solus provides node.js in its main repository.
+Solus provides Node.js in its main repository.
 
 ```bash
 sudo eopkg install nodejs
@@ -182,7 +182,7 @@ sudo eopkg install nodejs
 
 ## Void Linux
 
-Void Linux incluye node.js estable en el repositorio principal.
+Void Linux incluye Node.js estable en el repositorio principal.
 
 ```bash
 xbps-install -Sy nodejs

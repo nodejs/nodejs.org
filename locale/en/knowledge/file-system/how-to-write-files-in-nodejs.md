@@ -1,5 +1,5 @@
 ---
-title: How do I write files in node.js?
+title: How do I write files in Node.js?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - filesystem
@@ -7,7 +7,7 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-Writing to a file is another of the basic programming tasks that one usually needs to know about - luckily, this task is very simple in Node.js.  We can use the handy `writeFile` method inside the standard library's `fs` module, which can save all sorts of time and trouble.
+Writing to a file is another of the basic programming tasks that one usually needs to know about - luckily, this task is very simple in Node.js. We can use the handy `writeFile` method inside the standard library's `fs` module, which can save all sorts of time and trouble.
 
 ```javascript
 fs = require('fs');

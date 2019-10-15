@@ -78,6 +78,7 @@ layout: docs.hbs
 
 * 从某个后缀为 js 文件，选择 “以……方式调试（Debug As...） > Node 程序 （Node program）”，或者
 * 创建一个调试配置，它把调试器挂接到一个正在运行的 Node 程序上（并且该调试已经使用 `--inspect` 参数）。
+
 ---
 
 ## 命令行选项

@@ -6,6 +6,7 @@ layout: docs.hbs
 # To publish N-API version of a package alongside a non-N-API version
 
 The following steps are illustrated using the package `iotivity-node`:
+
 - First, publish the non-N-API version:
   - Update the version in `package.json`. For `iotivity-node`, the version
   becomes `1.2.0-2`.

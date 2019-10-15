@@ -33,5 +33,4 @@ layout: contribute.hbs
 - [Израильская группа Facebook для Node.js](https://www.facebook.com/groups/node.il/)
 - [Японская группа пользователей](https://nodejs.jp/)
 - [Испанская языковая группа Facebook для Node.js](https://www.facebook.com/groups/node.es/)
-- [Сообщество испанского языка](http://nodehispano.com)
 - [Вьетнамское сообщество Node.js](https://www.facebook.com/nodejs.vn/)
