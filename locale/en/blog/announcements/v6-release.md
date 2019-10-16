@@ -8,7 +8,7 @@ layout: blog-post.hbs
 ---
 
 > New “Current” version line focuses on performance improvements, increased reliability and
-better security for its 3.5 million users
+> better security for its 3.5 million users
 
 SAN FRANCISCO, April, 26, 2016 — [The Node.js Foundation](http://ctt.marketwire.com/?release=11G082331-001&id=8448115&type=0&url=https%3a%2f%2fnodejs.org%2fen%2ffoundation%2f), a
 community-led and industry-backed consortium to advance the development of the Node.js

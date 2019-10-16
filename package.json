@@ -37,7 +37,7 @@
     ]
   },
   "dependencies": {
-    "autoprefixer": "^9.6.4",
+    "autoprefixer": "^9.6.5",
     "cheerio": "^0.22.0",
     "handlebars": "^4.4.3",
     "jstransformer-handlebars": "^1.1.0",
@@ -66,7 +66,7 @@
     "strftime": "^0.10.0"
   },
   "devDependencies": {
-    "chokidar": "^3.2.1",
+    "chokidar": "^3.2.2",
     "cross-env": "^6.0.3",
     "delay-cli": "^1.1.0",
     "faucet": "0.0.1",
