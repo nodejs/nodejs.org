@@ -24,7 +24,7 @@ Em vez disso, a direção técnica do projeto será estabelecida por um
 comitê técnico de direção executado com um modelo de governança aberto. Houve muita
 discussão nas políticas de desenvolvimento e [modelo de
 governança](https://github.com/joyent/nodejs-advisory-board/tree/master/governance-proposal)
-no Github. Conforme avançamos em direção ao modelo da Fundação, o time principal do Node.js já
+no GitHub. Conforme avançamos em direção ao modelo da Fundação, o time principal do Node.js já
 está adotando algumas dessas políticas [como é mostrado
 aqui](https://github.com/joyent/node-website/pull/111).
 
