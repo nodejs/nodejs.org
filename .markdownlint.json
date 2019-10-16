@@ -3,6 +3,9 @@
   "MD003": {
     "style": "atx"
   },
+  "MD004": {
+    "style": "asterisk"
+  },
   "MD013": false,
   "MD022": false,
   "MD024": false,

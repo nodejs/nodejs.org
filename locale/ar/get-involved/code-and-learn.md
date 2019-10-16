@@ -9,20 +9,20 @@ layout: contribute.hbs
 
 ## فعاليات برمج + تعلم القادمة
 
-- سوف يتم الإعلان عنها
+* سوف يتم الإعلان عنها
 
 ## فعاليات برمج + تعلم السابقة
 
-- ميدلين ، كولومبيا في 21 و 22 جوان [NodeConfCo](https://colombia.nodeconf.com/)
-- [سانت بطرسبرغ ، روسيا في 26 ماي](https://medium.com/piterjs/code-learn-ce20d330530f)
-- بنغالور، الهند في [Node.js - ملتقى برمج و تعلم](https://www.meetup.com/Polyglot-Languages-Runtimes-Java-JVM-nodejs-Swift/events/256057028/): 17 نوفمبر 2018
-- كيلكيني، أيرلندا في [<span dir="rtl">NodeConfEU</span>](https://www.nodeconf.eu/) : 4 نوفمبر 2018
-- فانكوفر، كولومبيا البريطانية في [<span dir="rtl">Node Interactive</span>](https://events.linuxfoundation.org/events/node-js-interactive-2018/): 12 أكتوبر 2018
-- [أوكلاند في 22 أفريل 2017](https://medium.com/the-node-js-collection/code-learn-learn-how-to-contribute-to-node-js-core-8a2dbdf9be45)
-- شنغهاي في JSConf.CN : جويلية 2017
-- فانكوفر، كولومبيا البريطانية في [<span dir="rtl">Node Interactive</span>](http://events.linuxfoundation.org/events/node-interactive): 6 أكتوبر 2017
-- كيلكيني، أيرلندا في [<span dir="rtl">NodeConfEU</span>](https://www.nodeconf.eu/): 5 نوفمبر 2017
-- أوستين في ديسمبر 2016
-- طوكيو في نوفمبر 2016
-- أمستردام في سبتمبر 2016
-- دبلن ولندن في سبتمبر 2015
+* ميدلين ، كولومبيا في 21 و 22 جوان [NodeConfCo](https://colombia.nodeconf.com/)
+* [سانت بطرسبرغ ، روسيا في 26 ماي](https://medium.com/piterjs/code-learn-ce20d330530f)
+* بنغالور، الهند في [Node.js - ملتقى برمج و تعلم](https://www.meetup.com/Polyglot-Languages-Runtimes-Java-JVM-nodejs-Swift/events/256057028/): 17 نوفمبر 2018
+* كيلكيني، أيرلندا في [<span dir="rtl">NodeConfEU</span>](https://www.nodeconf.eu/) : 4 نوفمبر 2018
+* فانكوفر، كولومبيا البريطانية في [<span dir="rtl">Node Interactive</span>](https://events.linuxfoundation.org/events/node-js-interactive-2018/): 12 أكتوبر 2018
+* [أوكلاند في 22 أفريل 2017](https://medium.com/the-node-js-collection/code-learn-learn-how-to-contribute-to-node-js-core-8a2dbdf9be45)
+* شنغهاي في JSConf.CN : جويلية 2017
+* فانكوفر، كولومبيا البريطانية في [<span dir="rtl">Node Interactive</span>](http://events.linuxfoundation.org/events/node-interactive): 6 أكتوبر 2017
+* كيلكيني، أيرلندا في [<span dir="rtl">NodeConfEU</span>](https://www.nodeconf.eu/): 5 نوفمبر 2017
+* أوستين في ديسمبر 2016
+* طوكيو في نوفمبر 2016
+* أمستردام في سبتمبر 2016
+* دبلن ولندن في سبتمبر 2015
