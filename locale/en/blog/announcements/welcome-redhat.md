@@ -2,7 +2,7 @@
 title: Node.js Foundation Welcomes Red Hat as Newest Platinum Member
 date: 2015-10-06T12:30:00.000Z
 status: publish
-category: Annoucements
+category: Announcements
 slug: welcome-redhat
 layout: blog-post.hbs
 ---
@@ -22,10 +22,11 @@ Often used for building fast, scalable network applications, Node.js supports Re
 “Node.js is exploding in popularity in almost every aspect of technology from microservices architecture to data-intensive applications that run across distributed devices,” said Danese Cooper, Chairperson of the Node.js Foundation Board. “It is a pivotal moment for the technology, and the support of Foundation members is imperative to ensure that Node.js stays relevant and addresses topical projects and problems that are happening within the wider Node.js community.”
 
 Additional Resources
+
 * Learn more about the [Node.js Foundation](https://foundation.nodejs.org/) and get involved with [the project](https://nodejs.org/en/get-involved/).
 
 ## About Node.js Foundation
 
-Node.js Foundation is a collaborative open source project dedicated to building and supporting the Node.js platform and other related modules. Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 2 million downloads per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites. The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft, PayPal and Red Hat. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, npm, Sauce Labs, SAP, and YLD!. Get involved here: [https://nodejs.org](https://nodejs.org).
+Node.js Foundation is a collaborative open source project dedicated to building and supporting the Node.js platform and other related modules. Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 2 million downloads per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites. The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft, PayPal and Red Hat. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, npm, Sauce Labs, SAP, and YLD!. Get involved here: <https://nodejs.org/>.
 
 The Node.js Foundation is a Collaborative Project at The Linux Foundation. Linux Foundation Collaborative Projects are independently funded software projects that harness the power of collaborative development to fuel innovation across industries and ecosystems. [https://foundation.nodejs.org/](https://foundation.nodejs.org/)

@@ -27,14 +27,14 @@ There are several types of documentation available on this website:
 <!--
 ### API Reference Documentation
 
-The [API reference documentation](/api/) provides detailed information about a function or object in Node.js. This documentation indicates what arguments a method accepts, the return value of that method, and what errors may be related to that method. It also indicates which methods are available for different versions of Node.js.
+The [API reference documentation](https://nodejs.org/api/) provides detailed information about a function or object in Node.js. This documentation indicates what arguments a method accepts, the return value of that method, and what errors may be related to that method. It also indicates which methods are available for different versions of Node.js.
 
 This documentation describes the built-in modules provided by Node.js. It does not document modules provided by the community.
 -->
 
 ## API 레퍼런스 문서
 
-[API 레퍼런스 문서](/api/)에는 Node.js의 함수나 객체에 대한 자세한 정보가 있습니다.
+[API 레퍼런스 문서](https://nodejs.org/api/)에는 Node.js의 함수나 객체에 대한 자세한 정보가 있습니다.
 이 문서에서 메서드가 어떤 인자를 받고 어떤 값을 반환하는지 해당 메서드와 관련된 에러에는 어떤 것이
 있는지를 알려줍니다. 다양한 Node.js에서 어떤 메서드를 사용할 수 있는지도 알려줍니다.
 
@@ -44,6 +44,8 @@ This documentation describes the built-in modules provided by Node.js. It does n
 
 ### 이전 버전에 대한 API 문서가 필요한가요?
 
+* [Node.js 11.x](https://nodejs.org/docs/latest-v11.x/api/)
+* [Node.js 10.x](https://nodejs.org/docs/latest-v10.x/api/)
 * [Node.js 9.x](https://nodejs.org/docs/latest-v9.x/api/)
 * [Node.js 8.x](https://nodejs.org/docs/latest-v8.x/api/)
 * [Node.js 7.x](https://nodejs.org/docs/latest-v7.x/api/)

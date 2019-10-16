@@ -10,7 +10,7 @@ layout: blog-post.hbs
 
 <p style="float:right;text-align:center;margin:5px;">
 <a href="http://www.flickr.com/photos/luc_viatour/4247957432/">
-<img style="border:1px #000 solid;" title="Web" src="http://dtrace.org/blogs/dap/files/2012/02/web-300x300.jpg" alt="" width="250" height="250">
+<img style="border:1px #000 solid;" title="Web" src="/static/images/blog/npm/managing-node-js-dependencies-with-shrinkwrap/web-300x300.jpg" alt="" width="250" height="250">
 </a>
 <br>
 Photo by Luc Viatour (flickr)

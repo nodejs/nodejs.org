@@ -4,7 +4,7 @@ title: About
 trademark: 트레이드마크
 ---
 
-# Node.js&reg;에 대해서
+# Node.js®에 대해서
 
 <!--
 As an asynchronous event driven JavaScript runtime, Node is designed to build
@@ -101,17 +101,17 @@ Node.js 는 스레드를 사용하지 않도록 설계되지만 멀티 코어 �
 소켓을 공유할 수 있습니다.
 
 <!--
-[Blocking vs Non-Blocking]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
+[Blocking vs Non-Blocking]: /en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[event loop]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
+[event loop]: /en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
 [Twisted]: https://twistedmatrix.com/trac/
 -->
 
-[블로킹 대 논-블로킹]: https://nodejs.org/ko/docs/guides/blocking-vs-non-blocking/
+[블로킹 대 논-블로킹]: /ko/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[이벤트 루프]: https://nodejs.org/ko/docs/guides/event-loop-timers-and-nexttick/
+[이벤트 루프]: /ko/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
 [Twisted]: https://twistedmatrix.com/trac/

@@ -82,7 +82,7 @@ For all the good parts of LDAP, those are really damned big failing points, and 
 
 Well, in the last year, I went to work for [Joyent](http://www.joyent.com/ "Joyent"), and like everyone else, we have several use problems that are classic directory service problems. If you break down the list I outlined above:
 
-* **Connection-oriented and asynchronous:** Holy smokes batman, [node.js](https://nodejs.org/ "node.js") is a completely kick-ass event-driven asynchronous server platform that manages connections like a boss. Check!
+* **Connection-oriented and asynchronous:** Holy smokes batman, [Node.js](https://nodejs.org/ "Node.js") is a completely kick-ass event-driven asynchronous server platform that manages connections like a boss. Check!
 * **Lots of use cases:** Yeah, we've got some. Man, the [sinatra](http://www.sinatrarb.com/ "sinatra")/[express](http://expressjs.com/ "express") paradigm is so easy to slap over anything. How about we just do that and leave as many use cases open as we can. Check!
 * **Replication is hard. CAP is right:** There are a lot of distributed databases out vying to solve exactly this problem. At Joyent we went with [Riak](http://www.basho.com/ "Riak"). Check!
 * **Don't need all of the protocol:** I'm lazy. Let's just skip the stupid things most people don't need. Check!
@@ -91,7 +91,7 @@ So that's the crux of ldapjs right there. Giving you the ability to put LDAP bac
 
 The obvious question is how it turned out, and the answer is, honestly, better than I thought it would. When I set out to do this, I actually assumed I'd be shipping a much smaller percentage of the RFC than is there. There's actually about 95% of the core RFC implemented. I wasn't sure if the marriage of this protocol to node/JavaScript would work out, but if you've used express ever, this should be _really_ familiar. And I tried to make it as natural as possible to use "pure" JavaScript objects, rather than requiring the developer to understand [ASN.1](https://en.wikipedia.org/wiki/Abstract_Syntax_Notation_One "ASN.1") (the binary wire protocol) or the [LDAP RFC](http://tools.ietf.org/html/rfc4510 "RFC 4510") in detail (this one mostly worked out; ldap\_modify is still kind of a PITA).
 
-Within 24 hours of releasing ldapjs on [Twitter](http://twitter.com/#!/mcavage/status/106767571012952064 "twitter"), there was an [implementation of an address book](https://gist.github.com/1173999 "github ldapjs address book") that works with Thunderbird/Evolution, by the end of that weekend there was some [slick integration with CouchDB](http://i.imgur.com/uR16U.png), and ldapjs even got used in one of the [node knockout apps](http://twitter.com/#!/jheusala/status/108977708649811970). Off to a pretty good start!
+Within 24 hours of releasing ldapjs on [Twitter](http://twitter.com/#!/mcavage/status/106767571012952064 "twitter"), there was an [implementation of an address book](https://gist.github.com/1173999 "github ldapjs address book") that works with Thunderbird/Evolution, by the end of that weekend there was some [slick integration with CouchDB](/static/images/blog/uncategorized/ldapjs-a-reprise-of-ldap/uR16U.png), and ldapjs even got used in one of the [node knockout apps](http://twitter.com/#!/jheusala/status/108977708649811970). Off to a pretty good start!
 
 ## The Road Ahead
 

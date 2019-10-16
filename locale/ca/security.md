@@ -27,28 +27,28 @@ i han de ser reconeguts.
 
 Aquesta és la política de divulgació de Node.js
 
-- L'informe de seguretat és rebut i assignat a un responsable inicial. Aquesta persona coordinarà la solució i el procés
+* L'informe de seguretat és rebut i assignat a un responsable inicial. Aquesta persona coordinarà la solució i el procés
 de publicació. Un cop el problema és confirmat es determina una llista de totes les versions afectades. El codi és auditat
 per trobar potencials problemes similars. Es preparen les solucions per a totes les versions que estan en manteniment.
 Aquestes solucions no són enviades al repositori públic, en canvi són retingudes localment fins a l'anunci públic.
 
-- Una data d'embargament per a aquesta vulnerabilitat és seleccionada i un CVE (Common Vulnerabilities and  Exposures (CVE®))
+* Una data d'embargament per a aquesta vulnerabilitat és seleccionada i un CVE (Common Vulnerabilities and Exposures (CVE®))
 és sol·licitat per la vulnerabilitat.
 
-- A la data d'embargament, se li envia una còpia de l'anunci a la llista de correu de seguretat de Node.js. Els canvis són pujats al repositori públic i noves versions són desplegades en nodejs.org. En les següents 6 hores de la notificació a la llista de correu, una còpia de l'anunci es publicarà al blog de Node.js.
+* A la data d'embargament, se li envia una còpia de l'anunci a la llista de correu de seguretat de Node.js. Els canvis són pujats al repositori públic i noves versions són desplegades en nodejs.org. En les següents 6 hores de la notificació a la llista de correu, una còpia de l'anunci es publicarà al blog de Node.js.
 
-- Normalment la data d'embargament s'establirà 72 hores des de la creació del CVE. Però això pot variar depenent de
+* Normalment la data d'embargament s'establirà 72 hores des de la creació del CVE. Però això pot variar depenent de
 la severitat de l'error o la dificultat a aplicar la solució.
 
-- Aquest procés pot trigar algun temps, especialment quan es requereix coordinació amb els encarregats del manteniment d'altres projectes.
+* Aquest procés pot trigar algun temps, especialment quan es requereix coordinació amb els encarregats del manteniment d'altres projectes.
 Es farà tot el possible per gestionar l'error en la forma més oportuna possible, però, és important que seguim el procés descrit a dalt per assegurar que la divulgació es gestiona d'una manera consistent.
 
 ## Rebi actualitzacions de seguretat
 
 Les notificacions de seguretat seran distribuïdes usant els següents mitjans.
 
-- <https://groups.google.com/group/nodejs-sec>
-- <https://nodejs.org/en/blog/>
+* <https://groups.google.com/group/nodejs-sec>
+* <https://nodejs.org/en/blog/>
 
 ## Comentaris sobre aquesta política
 

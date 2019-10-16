@@ -7,7 +7,7 @@ title: Установка Node.js через пакетный менеджер
 
 ***Заметка:*** Пакеты, описанные на этой странице, разрабатываются и поддерживаются соответствующими упаковщиками, **а не** командой Node.js. Пожалуйста, сообщайте о любых проблемах, с которыми вы сталкиваетесь с конкретным пакетом. Если выяснится, что ваша проблема ― ошибка в самом Node.js, проблема будет передана выше.
 
-----------------------------
+---
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
@@ -24,7 +24,7 @@ title: Установка Node.js через пакетный менеджер
 * [Void Linux](#void-linux)
 * [Windows](#windows)
 
-----------------------------
+---
 
 ## Android
 
@@ -147,7 +147,7 @@ zypper install nodejs4
 
 ## macOS
 
-Просто загрузите [установщик macOS](https://nodejs.org/#download) прямо с веб-сайта [nodejs.org](https://nodejs.org).
+Просто загрузите [установщик macOS](https://nodejs.org/ru/#home-downloadhead) прямо с веб-сайта [nodejs.org](https://nodejs.org/).
 
 _Если вы хотите скачать пакет с bash:_
 
@@ -202,7 +202,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## Solus
 
-Solus предоставляет node.js в своем основном репозитории.
+Solus предоставляет Node.js в своем основном репозитории.
 
 ```bash
 sudo eopkg install nodejs
@@ -210,7 +210,7 @@ sudo eopkg install nodejs
 
 ## Void Linux
 
-Void Linux поставляет стабильный файл node.js в основном репозитории.
+Void Linux поставляет стабильный файл Node.js в основном репозитории.
 
 ```bash
 xbps-install -Sy nodejs
@@ -218,7 +218,7 @@ xbps-install -Sy nodejs
 
 ## Windows
 
-Просто загрузите [Установщик Windows](https://nodejs.org/#download) прямо с веб-сайта [nodejs.org](https://nodejs.org).
+Просто загрузите [Установщик Windows](https://nodejs.org/ru/#home-downloadhead) прямо с веб-сайта [nodejs.org](https://nodejs.org/).
 
 ### Альтернативы
 

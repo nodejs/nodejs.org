@@ -15,7 +15,7 @@ There are several types of documentation available on this website:
 
 ## API Reference Documentation
 
-The [API reference documentation](/api/) provides detailed information about a function or object in Node.js. This documentation indicates what arguments a method accepts, the return value of that method, and what errors may be related to that method. It also indicates which methods are available for different versions of Node.js.
+The [API reference documentation](https://nodejs.org/api/) provides detailed information about a function or object in Node.js. This documentation indicates what arguments a method accepts, the return value of that method, and what errors may be related to that method. It also indicates which methods are available for different versions of Node.js.
 
 This documentation describes the built-in modules provided by Node.js. It does not document modules provided by the community.
 
@@ -23,6 +23,8 @@ This documentation describes the built-in modules provided by Node.js. It does n
 
 ### Looking for API docs of previous releases?
 
+* [Node.js 11.x](https://nodejs.org/docs/latest-v11.x/api/)
+* [Node.js 10.x](https://nodejs.org/docs/latest-v10.x/api/)
 * [Node.js 9.x](https://nodejs.org/docs/latest-v9.x/api/)
 * [Node.js 8.x](https://nodejs.org/docs/latest-v8.x/api/)
 * [Node.js 7.x](https://nodejs.org/docs/latest-v7.x/api/)

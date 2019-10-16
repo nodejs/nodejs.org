@@ -15,7 +15,7 @@ labels:
 
 ## Документация API
 
-[API документации](/api/) предоставляет подробную информацию о функциях и объектах в Node.js.
+[API документации](https://nodejs.org/api/) предоставляет подробную информацию о функциях и объектах в Node.js.
 В ней содержится информация о принимаемых аргументах, возвращаемом значении и ошибках связанных
 рассматриваемым методом. Также содержит информацию о доступных методах доступны для разных версий Node.js.
 
@@ -26,6 +26,8 @@ labels:
 
 ### Нужна документация API предыдущих версий?
 
+* [Node.js 11.x](https://nodejs.org/docs/latest-v11.x/api/)
+* [Node.js 10.x](https://nodejs.org/docs/latest-v10.x/api/)
 * [Node.js 9.x](https://nodejs.org/docs/latest-v9.x/api/)
 * [Node.js 8.x](https://nodejs.org/docs/latest-v8.x/api/)
 * [Node.js 7.x](https://nodejs.org/docs/latest-v7.x/api/)

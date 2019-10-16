@@ -2,7 +2,7 @@
 title: Node.js Foundation Advances Platform with More Than Three Million Users
 date: 2015-12-08T12:00:00.000Z
 status: publish
-category: Annoucements
+category: Announcements
 slug: foundation-advances-growth
 layout: blog-post.hbs
 ---
@@ -18,11 +18,11 @@ The first Node.js Interactive event unites more than 700 developers, engineers, 
 
 Attendees have the opportunity to see and learn more about how organizations like Capital One, GoDaddy, Intel, NodeSource, npm and Uber are using Node.js to meet their innovation needs. Attendees are also getting a first look at Node.js advancements announced and demoed this week including:
 
-* JOYENT: Joyent is announcing the 2016 Node.js Innovation Program, which provides Node.js expertise, marketing support and free cloud or on-premise infrastructure to start-ups and teams within larger enterprises that are driving innovation powered by Node.js. The 2015 program included [bitHound](https://www.bithound.io/), who will speak at Node.js Interactive about innovative approaches to identifying risk and priorities in dependencies and code.  More info can be found [here](https://www.joyent.com/innovation).
+* JOYENT: Joyent is announcing the 2016 Node.js Innovation Program, which provides Node.js expertise, marketing support and free cloud or on-premise infrastructure to start-ups and teams within larger enterprises that are driving innovation powered by Node.js. The 2015 program included [bitHound](https://www.bithound.io/), who will speak at Node.js Interactive about innovative approaches to identifying risk and priorities in dependencies and code. More info can be found [here](https://www.joyent.com/innovation).
 
-  Joyent also released a new Node.js, Docker and NoSQL reference [architecture](https://www.joyent.com/blog/how-to-dockerize-a-complete-application) that enables microservices in seconds. To learn more, the company will be demoing this at booth number 7.
+  Joyent also released a new Node.js, Docker and NoSQL reference [architecture](https://www.joyent.com/blog/how-to-dockerize-a-complete-application) that enables microservices in seconds. To learn more, the company will be demoing this at booth number 7.
 
-* IBM is featuring multiple Node.js based solutions for: a complete API lifecycle via StrongLoop Arc and Loopback.io; real-time location tracking in Node using Cloudant®  data services; how to write Node applications against Apache Spark; and end-to-end mobile applications using IBM MobileFirst -- all running on Bluemix®, IBM's Cloud Platform.
+* IBM is featuring multiple Node.js based solutions for: a complete API lifecycle via StrongLoop Arc and Loopback.io; real-time location tracking in Node using Cloudant® data services; how to write Node applications against Apache Spark; and end-to-end mobile applications using IBM MobileFirst -- all running on Bluemix®, IBM's Cloud Platform.
 
 * INTEL: A leader in the Internet of Things, Intel will be demoing a SmartHouse at booth number 0013. Based on the [IoTivity](https://www.iotivity.org/) open source project, which is sponsored by the [Open Interconnect Consortium (OIC)](http://openinterconnect.org/), the SmartHouse includes a home gateway from MinnowBoard Max client, three Edison controlled LEDs, fan, motion sensor, and smoke detector. Intel developed Node.js binding for IoTivity to power the demo with everything being controlled from a WebGL 3D virtual house interface.
 
@@ -34,7 +34,7 @@ Attendees have the opportunity to see and learn more about how organizations lik
 
   * 25% of developers at growth-stage companies in enterprise software are using Node.js;
   * 25% of developers at FinTech startups are using Node.js;
-  * Healthcare startups are using Node.js in a significant way - an average of 33% of developers are using Node.js with the primary    use-case to enable rapid-innovation;
+  * Healthcare startups are using Node.js in a significant way - an average of 33% of developers are using Node.js with the primary use-case to enable rapid-innovation;
   * 48% of developers are using Node.js at IoT companies;
   * 80% of developers at education startups are using the technology.
 
@@ -54,4 +54,4 @@ In addition, the Foundation announced three new Silver members to the team, Apig
 
 #### About Node.js Foundation
 
-Node.js Foundation is a collaborative open source project dedicated to building and supporting the Node.js platform and other related modules. Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 2 million downloads per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites. The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft, PayPal and Red Hat. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, npm, RisingStack, Sauce Labs, SAP, StrongLoop (an IBM company), YLD!, and Yahoo!. Get involved here: [https://nodejs.org](https://nodejs.org).
+Node.js Foundation is a collaborative open source project dedicated to building and supporting the Node.js platform and other related modules. Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 2 million downloads per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites. The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft, PayPal and Red Hat. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, npm, RisingStack, Sauce Labs, SAP, StrongLoop (an IBM company), YLD!, and Yahoo!. Get involved here: <https://nodejs.org/>.

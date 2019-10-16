@@ -1,7 +1,7 @@
 ---
 title: Node.js Foundation To Oversee Node.js Security Project To Further Improve Stability for Enterprises
 date: 2016-11-30T12:00:00.000Z
-category: Annoucements
+category: Announcements
 slug: foundation-adds-node.js-security-project
 layout: blog-post.hbs
 ---
@@ -29,7 +29,7 @@ The Node.js Security Project, founded by Adam Baldwin and previously managed by 
 * Vetting participants in the private security disclosure group;
 * Facilitating ongoing research and testing of security data;
 * Owning and publishing the base dataset of disclosures, and
-* Defining a standard for the data, which tool vendors can build on top of, and security and vendors can add data and    value to as well.
+* Defining a standard for the data, which tool vendors can build on top of, and security and vendors can add data and value to as well.
 
 “We are very excited about the opportunity to donate this project to the Node.js Foundation” said Adam Baldwin, team lead at ^[Lift](https://liftsecurity.io/)[Security](https://liftsecurity.io/) and founder of the Node.js Security Project. “The Foundation will be able to funnel contributions from numerous vendors, developers and end users to create an incredibly useful baseline of data sets that will be available to anyone. This ensures broader reach and long-lasting viability of the project to encourage availability of more security tools, which is increasingly in demand among Node.js enterprise developers and users.”
 

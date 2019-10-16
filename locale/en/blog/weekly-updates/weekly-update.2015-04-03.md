@@ -1,6 +1,6 @@
 ---
 title: Weekly Update - Apr 3rd, 2015
-author:  Giovanny Gioyik (@Gioyik)
+author: Giovanny Gioyik (@Gioyik)
 date: 2015-04-03T12:00:00.000Z
 status: publish
 category: weekly
@@ -16,9 +16,9 @@ This week we had one io.js release [v1.6.3](https://iojs.org/dist/v1.6.3/), comp
 * **fs**: corruption can be caused by `fs.writeFileSync()` and append-mode `fs.writeFile()` and `fs.writeFileSync()` under certain circumstances, reported in [#1058](https://github.com/nodejs/node/issues/1058), fixed in [#1063](https://github.com/nodejs/node/pull/1063) (Olov Lassus).
 * **iojs**: an "internal modules" API has been introduced to allow core code to share JavaScript modules internally only without having to expose them as a public API, this feature is for core-only [#848](https://github.com/nodejs/node/pull/848) (Vladimir Kurchatkin).
 * **timers**: two minor problems with timers have been fixed:
-  - `Timer#close()` is now properly idempotent [#1288](https://github.com/nodejs/node/issues/1288) (Petka Antonov).
-  - `setTimeout()` will only run the callback once now after an `unref()` during the callback [#1231](https://github.com/nodejs/node/pull/1231) (Roman Reiss).
-  - NOTE: there are still other unresolved concerns with the timers code, such as [#1152](https://github.com/nodejs/node/pull/1152).
+  * `Timer#close()` is now properly idempotent [#1288](https://github.com/nodejs/node/issues/1288) (Petka Antonov).
+  * `setTimeout()` will only run the callback once now after an `unref()` during the callback [#1231](https://github.com/nodejs/node/pull/1231) (Roman Reiss).
+  * NOTE: there are still other unresolved concerns with the timers code, such as [#1152](https://github.com/nodejs/node/pull/1152).
 * **Windows**: a "delay-load hook" has been added for compiled add-ons on Windows that should alleviate some of the problems that Windows users may be experiencing with add-ons in io.js [#1251](https://github.com/nodejs/node/pull/1251) (Bert Belder).
 * **V8**: minor bug-fix upgrade for V8 to 4.1.0.27.
 * **npm**: upgrade npm to 2.7.4. See [npm CHANGELOG.md](https://github.com/npm/npm/blob/master/CHANGELOG.md#v274-2015-03-20) for details.
@@ -35,7 +35,7 @@ This week we had one io.js release [v1.6.3](https://iojs.org/dist/v1.6.3/), comp
 ## Community Updates
 
 * [Scaleway](https://www.scaleway.com/) provides some ARM resources for the iojs test/build infrastructure.
-* New post on Medium about Node.js reconciliation: [Help us reconcile node.js and io.js](https://medium.com/node-js-javascript/help-us-reconcile-node-js-and-io-js-c060a9ec1bd4)
+* New post on Medium about Node.js reconciliation: [Help us reconcile Node.js and io.js](https://medium.com/node-js-javascript/help-us-reconcile-node-js-and-io-js-c060a9ec1bd4)
 * Added support for iojs in [Reactive-Extensions/RxJS](https://travis-ci.org/Reactive-Extensions/RxJS/builds/56671837)
 * [joyent/nodejs-advisory-board#30](https://github.com/joyent/nodejs-advisory-board/pull/30) merged
 * Mikeal Rogers working on reconciling Project Lifecycle and WG [joyent/nodejs-advisory-board#33](https://github.com/joyent/nodejs-advisory-board/pull/33)

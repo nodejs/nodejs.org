@@ -25,4 +25,4 @@ server.listen(port, hostname, () => {
 });
 ```
 
-After that, run your web server using `node app.js`, visit http://localhost:3000, and you will see a message 'Hello World'
+After that, run your web server using `node app.js`, visit `http://localhost:3000`, and you will see a message 'Hello World'

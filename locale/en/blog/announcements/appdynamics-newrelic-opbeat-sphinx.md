@@ -1,7 +1,7 @@
 ---
 title: AppDynamics, New Relic, Opbeat and Sphinx Join the Node.js Foundation as Silver Members
 date: 2016-03-09T21:00:00.000Z
-category: Annoucements
+category: Announcements
 slug: appdynamics-newrelice-opbeat-sphinx
 layout: blog-post.hbs
 ---

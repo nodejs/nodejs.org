@@ -4,23 +4,21 @@
 
 * [Issues and Pull Requests](#issues-and-pull-requests)
 * [Accepting Modifications](#accepting-modifications)
-  - [Involving the Website Group](#involving-the-website-group)
+  * [Involving the Website Group](#involving-the-website-group)
 * [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin-11)
 * [Code of Conduct](#code-of-conduct)
 * [Code editing](#code-editing)
-  - [Adding new pages](#adding-new-pages)
-    - [Create the page content](#create-the-page-content)
-    - [Update locale site.json to add link attributes](#update-locale-sitejson-to-add-link-attributes)
-    - [Update the layout to add a link](#update-the-layout-to-add-a-link)
-  - [Translating pages](#translating-pages)
+  * [Adding new pages](#adding-new-pages)
+    * [Create the page content](#create-the-page-content)
+    * [Update locale site.json to add link attributes](#update-locale-sitejson-to-add-link-attributes)
+    * [Update the layout to add a link](#update-the-layout-to-add-a-link)
+  * [Translating pages](#translating-pages)
 
 This document contains information for Collaborators of the Node.js
 website project regarding maintaining the code, documentation and issues.
 
 Collaborators should be familiar with the guidelines for new
-contributors in [CONTRIBUTING.md](./CONTRIBUTING.md) and also
-understand the project governance model as outlined in
-[GOVERNANCE.md](./GOVERNANCE.md).
+contributors in [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Issues and Pull Requests
 
@@ -86,9 +84,9 @@ Collaborators may opt to elevate pull requests or issues to the group for
 discussion by mentioning `@nodejs/website`. This should be done
 where a pull request:
 
-- has a significant impact on the codebase,
-- is inherently controversial; or
-- has failed to reach consensus amongst the Collaborators who are
+* has a significant impact on the codebase,
+* is inherently controversial; or
+* has failed to reach consensus amongst the Collaborators who are
   actively participating in the discussion.
 
 The Website group should serve as the final arbiter where required.
@@ -137,7 +135,7 @@ CoC](https://github.com/rust-lang/rust/wiki/Note-development-policy#conduct).
 * Please keep unstructured critique to a minimum. If you have solid
   ideas you want to experiment with, make a fork and see how it works.
 * We will exclude you from interaction if you insult, demean or harass
-  anyone.  That is not welcome behaviour. We interpret the term
+  anyone. That is not welcome behaviour. We interpret the term
   "harassment" as including the definition in the [Citizen Code of
   Conduct](http://citizencodeofconduct.org/); if you have any lack of
   clarity about what might be included in that concept, please read
@@ -147,7 +145,7 @@ CoC](https://github.com/rust-lang/rust/wiki/Note-development-policy#conduct).
   you feel you have been or are being harassed or made uncomfortable
   by a community member, please contact one of the channel ops or any
   of the TC members immediately with a capture (log, photo, email) of
-  the harassment if possible.  Whether you're a regular contributor or
+  the harassment if possible. Whether you're a regular contributor or
   a newcomer, we care about making this community a safe place for you
   and we've got your back.
 * Likewise any spamming, trolling, flaming, baiting or other
@@ -166,7 +164,7 @@ CoC](https://github.com/rust-lang/rust/wiki/Note-development-policy#conduct).
 
 #### Create the page content
 
-Create a new markdown file in ```/local/en```.  As specified in the
+Create a new markdown file in ```/local/en```. As specified in the
 [README.md](./README.md#layout), initial development happens in English.
 
 At the top of the markdown file, set a page the title and layout.
@@ -195,7 +193,7 @@ Add a new object defining the link attributes.
 #### Update the layout to add a link
 
 Using the example layout, open ```/layouts/contribute.hbs``` and add your new
-link to the markup.  It's essential to update the handlebars paths to site.json.
+link to the markup. It's essential to update the handlebars paths to site.json.
 
 ```
 {{site.locale}}/{{site.getinvolved.events.link}}

@@ -1,16 +1,16 @@
 ---
-title: Easy profiling for Node.js Applications
+title: Простое профилирование Node.js приложений
 layout: docs.hbs
 ---
 
-# Easy profiling for Node.js Applications
+# Простое профилирование Node.js приложений
 
-There are many third party tools available for profiling Node.js applications
-but, in many cases, the easiest option is to use the Node.js built in profiler.
-The built in profiler uses the [profiler inside V8][] which samples the stack at
-regular intervals during program execution. It records the results of these
-samples, along with important optimization events such as jit compiles, as a
-series of ticks:
+Для профилирования приложений Node.js доступно множество сторонних инструментов,
+но во многих случаях проще всего использовать встроенный профайлер Node.js.
+Встроенный профайлер использует [профайлер V8][], который делит стек
+выполняющейся программы на фрагменты через равные промежутки времени. Профайлер
+представляет результаты этих фрагментов с учетом оптимизаций, таких как
+Jit-компиляция, в виде ряда тиков:
 
 ```
 code-creation,LazyCompile,0,0x2d5000a337a0,396,"bp native array.js:1153:16",0x289f644df68,~
@@ -20,15 +20,14 @@ code-creation,Stub,2,0x2d5000a33d40,182,"DoubleToIStub"
 code-creation,Stub,2,0x2d5000a33e00,507,"NumberToStringStub"
 ```
 
-In the past, you needed the V8 source code to be able to interpret the ticks.
-Luckily, tools have been introduced since Node.js 4.4.0 that facilitate the
-consumption of this information without separately building V8 from source.
-Let's see how the built-in profiler can help provide insight into application
-performance.
+В прошлом требовался бы исходный код V8, чтобы иметь возможность анализировать
+тики. К счастью, начиная с Node.js 4.4.0 были представлены инструменты, которые
+облегчают использование этой информации без отдельной сборки V8. Давайте посмотрим,
+как встроенный профайлер дает представление о производительности приложений.
 
-To illustrate the use of the tick profiler, we will work with a simple Express
-application. Our application will have two handlers, one for adding new users to
-our system:
+Возьмем простое приложением Express, чтобы проиллюстрировать использование профайлера.
+Приложение будет иметь два обработчика, один из которых будет использоваться для
+добавления новых пользователей в систему:
 
 ```javascript
 app.get('/newUser', (req, res) => {
@@ -50,7 +49,7 @@ app.get('/newUser', (req, res) => {
 });
 ```
 
-and another for validating user authentication attempts:
+а другой - для проверки аутентификации пользователей:
 
 ```javascript
 app.get('/auth', (req, res) => {
@@ -74,26 +73,28 @@ app.get('/auth', (req, res) => {
 });
 ```
 
-*Please note that these are NOT recommended handlers for authenticating users in
-your Node.js applications and are used purely for illustration purposes. You
-should not be trying to design your own cryptographic authentication mechanisms
-in general. It is much better to use existing, proven authentication solutions.*
+*Обратите внимание, что это НЕ рекомендуемые обработчики для аутентификации
+пользователей в приложениях Node.js. Они используются исключительно в качестве
+примера. В целом, не следует пытаться разработать свои собственные механизмы
+криптографической аутентификации. Гораздо лучше использовать готовые проверенные
+решения.*
 
-Now assume that we've deployed our application and users are complaining about
-high latency on requests. We can easily run the app with the built in profiler:
+Теперь предположим, что мы развернули наше приложение, и пользователи жалуются
+на высокую задержку запросов. Мы можем легко запустить приложение с помощью
+встроенного профайлера:
 
 ```
 NODE_ENV=production node --prof app.js
 ```
 
-and put some load on the server using `ab` (ApacheBench):
+и добавить нагрузку на сервер с помощью `ab` (ApacheBench):
 
 ```
 curl -X GET "http://localhost:8080/newUser?username=matt&password=password"
 ab -k -c 20 -n 250 "http://localhost:8080/auth?username=matt&password=password"
 ```
 
-and get an ab output of:
+и получить на выходе:
 
 ```
 Concurrency Level:      20
@@ -122,27 +123,27 @@ Percentage of the requests served within a certain time (ms)
  100%   4225 (longest request)
 ```
 
-From this output, we see that we're only managing to serve about 5 requests per
-second and that the average request takes just under 4 seconds round trip. In a
-real world example, we could be doing lots of work in many functions on behalf
-of a user request but even in our simple example, time could be lost compiling
-regular expressions, generating random salts, generating unique hashes from user
-passwords, or inside the Express framework itself.
+По выводу видно, что обрабатывается только около 5 запросов в секунду, и в среднем
+занимает чуть менее 4 секунд в обе стороны. В реальной ситуации могло бы
+последовать еще множество вычислений от имени пользовательского запроса, но даже
+в нашем простом примере могут возникать временные потери как при компиляции
+регулярных выражений, генерации случайных солей и хешей из паролей пользователей,
+так и внутри самого фреймворка Express.
 
-Since we ran our application using the `--prof` option, a tick file was generated
-in the same directory as your local run of the application. It should have the
-form `isolate-0xnnnnnnnnnnnn-v8.log` (where `n` is a digit).
+Так как мы запустили приложение, используя опцию `--prof`, тиковый файл был
+сгенерирован в том же каталоге, откуда приложение было запущено. Он должен быть
+вида `isolate-0xnnnnnnnnnnnn-v8.log` (где `n` - цифра).
 
-In order to make sense of this file, we need to use the tick processor bundled
-with the Node.js binary. To run the processor, use the `--prof-process` flag:
+Чтобы разобраться в этом файле, используйте тиковый процессор в комплекте с двоичным
+файлом Node.js. Чтобы запустить процессор, используйте флаг `--prof-process`:
 
 ```
 node --prof-process isolate-0xnnnnnnnnnnnn-v8.log > processed.txt
 ```
 
-Opening processed.txt in your favorite text editor will give you a few different
-types of information. The file is broken up into sections which are again broken
-up by language. First, we look at the summary section and see:
+Открыв обработанный текст в вашем любимом текстовом редакторе, вы увидите различного
+вида информацию. Файл разбит на секции, которые разбиты по языкам. Взглянем сначала
+на итоговый раздел:
 
 ```
  [Summary]:
@@ -276,5 +277,5 @@ Hopefully, through the performance investigation of this (admittedly contrived)
 example, you've seen how the V8 tick processor can help you gain a better
 understanding of the performance of your Node.js applications.
 
-[profiler inside V8]: https://v8.dev/docs/profile
+[профайлер V8]: https://v8.dev/docs/profile
 [benefits of asynchronous programming]: https://nodesource.com/blog/why-asynchronous

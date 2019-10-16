@@ -1,5 +1,3 @@
 'use strict'
 
-module.exports = function (str) {
-  return str.replace(/\\/g, '/')
-}
+module.exports = (str) => str.replace(/\\/g, '/')

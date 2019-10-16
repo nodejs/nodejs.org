@@ -231,8 +231,8 @@ response.end('<html><body><h1>Hello, World!</h1></body></html>');
 ```
 
 > **Note:** It's important to set the status and headers *before* you start
-writing chunks of data to the body. This makes sense, since headers come before
-the body in HTTP responses.
+> writing chunks of data to the body. This makes sense, since headers come before
+> the body in HTTP responses.
 
 ## Another Quick Thing About Errors
 

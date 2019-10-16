@@ -3,11 +3,11 @@ layout: page.hbs
 title: 通过包管理器安装 Node.js
 ---
 
-# 通过包管理器方式安装 Nodejs
+# 通过包管理器方式安装 Node.js
 
-***注意：*** 此页面上所有的安装包均有它们各自作者，**而非** Node.js 核心团队负责进行维护和支持。如遇任何问题，请直接向有关作者报告。 如你的问题被证实是因为 Nodejs 的缺陷引发的，维护者将直接向 Nodejs 汇报此问题。
+***注意：*** 此页面上所有的安装包均有它们各自作者，**而非** Node.js 核心团队负责进行维护和支持。如遇任何问题，请直接向有关作者报告。 如你的问题被证实是因为 Node.js 的缺陷引发的，维护者将直接向 Node.js 汇报此问题。
 
-----------------------------
+---
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
@@ -25,13 +25,13 @@ title: 通过包管理器安装 Node.js
 * [Void Linux](#void-linux)
 * [Windows](#windows)
 
-----------------------------
+---
 
 ## Android
 
-因为 Android 版的 Nodejs 目前处于实验阶段，所以当下不提供预编译版本。
+因为 Android 版的 Node.js 目前处于实验阶段，所以当下不提供预编译版本。
 
-但是你有一些第三方的解决方案可供选择：拿 [Termux](https://termux.com/) 来说，它为安卓提供了终端模拟器和 Linux 环境，以及内置的包管理器和 [可扩展应用集](https://github.com/termux/termux-packages)，其中包含了大量预编译的应用。在 Termux 中，以下的命令将会安装最新版 Nodejs：
+但是你有一些第三方的解决方案可供选择：拿 [Termux](https://termux.com/) 来说，它为安卓提供了终端模拟器和 Linux 环境，以及内置的包管理器和 [可扩展应用集](https://github.com/termux/termux-packages)，其中包含了大量预编译的应用。在 Termux 中，以下的命令将会安装最新版 Node.js：
 
 ```bash
 pkg install nodejs
@@ -163,7 +163,7 @@ zypper install nodejs4
 
 ## macOS
 
-从 [nodejs.org](https://nodejs.org) 官网直接下载 [macOS Installer](https://nodejs.org/#download)。
+从 [nodejs.org](https://nodejs.org/) 官网直接下载 [macOS Installer](https://nodejs.org/zh-cn/#home-downloadhead)。
 
 _如果你想用 bash 命令下载：_
 
@@ -218,7 +218,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## Solus
 
-在主版本库中，Solus 提供了 node.js。
+在主版本库中，Solus 提供了 Node.js。
 
 ```bash
 sudo eopkg install nodejs
@@ -226,7 +226,7 @@ sudo eopkg install nodejs
 
 ## Void Linux
 
-在主版本库中 Void Linux 发布稳定的 node.js。
+在主版本库中 Void Linux 发布稳定的 Node.js。
 
 ```bash
 xbps-install -Sy nodejs
@@ -234,7 +234,7 @@ xbps-install -Sy nodejs
 
 ## Windows
 
-直接通过 [nodejs.org](https://nodejs.org) 下载 [Windows Installer](https://nodejs.org/#download) 安装。
+直接通过 [nodejs.org](https://nodejs.org/) 下载 [Windows Installer](https://nodejs.org/zh-cn/#home-downloadhead) 安装。
 
 ### 可替代方案
 

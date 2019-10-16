@@ -16,7 +16,8 @@ Node.js は [V8](https://v8.dev/) のモダンなバージョンに対して作�
 <!-- * All **shipping** features, which V8 considers stable, are turned **on by default on Node.js** and do **NOT** require any kind of runtime flag.
 * **Staged** features, which are almost-completed features that are not considered stable by the V8 team, require a runtime flag: `--harmony`.
 * **In progress** features can be activated individually by their respective harmony flag, although this is highly discouraged unless for testing purposes. Note: these flags are exposed by V8 and will potentially change without any deprecation notice. -->
-* V8 が安定しているみなす **shipping（リリース済み）** の機能は Node.js では**標準で有効**になっているので、ランタイムフラグは**必要ありません**。
+
+* V8 が安定しているとみなす **shipping（リリース済み）** の機能は Node.js では**標準で有効**になっているので、ランタイムフラグは**必要ありません**。
 * **staged（ステージング）**の機能は V8 チームによって安定しているとはみなされないほぼ完成した機能であり、ランタイムフラグを必要とします： `--harmony`。
 * **in progress（開発中）**の機能は、それぞれのハーモニーフラグによって個別に有効にすることができますが、テスト目的以外の使用は避けてください。注：これらのフラグは V8 によって公開されており、廃止予定の通知なしで変更される可能性があります。
 
@@ -43,7 +44,7 @@ node --v8-options | grep "in progress"
 ## インフラ側で --harmony フラグを使うように設定しているんですが、フラグを除くべきですか？
 
 <!-- The current behaviour of the `--harmony` flag on Node.js is to enable **staged** features only. After all, it is now a synonym of `--es_staging`. As mentioned above, these are completed features that have not been considered stable yet. If you want to play safe, especially on production environments, consider removing this runtime flag until it ships by default on V8 and, consequently, on Node.js. If you keep this enabled, you should be prepared for further Node.js upgrades to break your code if V8 changes their semantics to more closely follow the standard. -->
-Node.js の --harmony フラグの現在の動作は **staged（ステージング）** 機能のみを有効にすることです。つまるところ `--es_staging` フラグと同じです。上記の通り、これらはまだ安定しているとは考えられていない完成した機能です。特に本番環境で安定して Node.js を使いたい場合は、このランタイムフラグが標準で V8 でリリースされ、その結果 Node.js でも標準になるまでランタイムフラグを削除することを検討してください。このフラグを継続的に利用する場合は Node.JS のアップグレードの際に標準に準拠するために変更された V8 に挙動によってコードが動作しなくなる可能性を考慮して対策をする必要があります。
+Node.js の --harmony フラグの現在の動作は **staged（ステージング）** 機能のみを有効にすることです。つまるところ `--es_staging` フラグと同じです。上記の通り、これらはまだ安定しているとは考えられていない完成した機能です。特に本番環境で安定して Node.js を使いたい場合は、このランタイムフラグが標準で V8 でリリースされ、その結果 Node.js でも標準になるまでランタイムフラグを削除することを検討してください。このフラグを継続的に利用する場合は Node.js のアップグレードの際に標準に準拠するために変更された V8 に挙動によってコードが動作しなくなる可能性を考慮して対策をする必要があります。
 
 <!-- ## How do I find which version of V8 ships with a particular version of Node.js? -->
 ## 特定のバージョンの Node.js が組み込まれている V8 のバージョンを確認するにはどうすればよいですか？

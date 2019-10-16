@@ -1,0 +1,20 @@
+footer {
+  margin-top: 2em;
+  background-color: $node-gray;
+  padding: 0;
+
+  a,
+  a:link,
+  a:active {
+    color: $light-gray2;
+  }
+
+  a:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  &.no-margin-top {
+    margin-top: 0;
+  }
+}

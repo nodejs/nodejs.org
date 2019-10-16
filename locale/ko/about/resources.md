@@ -8,21 +8,21 @@ title: 로고와 그래픽
 
 ## Logo Downloads
 
- Please review the <a href="/about/trademark/">trademark policy></a> for information about permissible use of Node.js&reg; logos and marks.
+Please review the [trademark policy](/en/about/trademark/) for information about permissible use of Node.js® logos and marks.
 
- Guidelines for the visual display of the Node.js mark are described in
- the <a href="/static/documents/foundation-visual-guidelines.pdf">Visual Guidelines></a>.
+Guidelines for the visual display of the Node.js mark are described in
+the [Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
 -->
 
 # 관련 자료
 
 ## 로고 다운로드
 
-Node.js&reg; 로고와 마크를 사용할 수 있는 경우에 대한 정보는 <a href="/about/trademark/">상표 정책></a>을
+Node.js® 로고와 마크를 사용할 수 있는 경우에 대한 정보는 [상표 정책](/ko/about/trademark/)을
 확인해보기 바랍니다.
 
 Node.js의 시각적인 가이드라인은
-<a href="/static/documents/foundation-visual-guidelines.pdf">시각적 가이드라인></a>에 나와 있습니다.
+[시각적 가이드라인](/static/documents/foundation-visual-guidelines.pdf)에 나와 있습니다.
 
 <!--
 <table class="logos">

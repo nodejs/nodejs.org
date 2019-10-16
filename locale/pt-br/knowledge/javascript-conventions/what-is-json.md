@@ -25,11 +25,11 @@ Objeto.
 ## Codificação e Decodificação
 
 O JavaScript fornece 2 métodos. Um para codificar estrutura de dados para JSON
-e o outro para decodificar JSON para objetos e arrays javascript.
+e o outro para decodificar JSON para objetos e arrays JavaScript.
 Ambos estão disponíveis no objeto `JSON` que existe no escopo
 global.
 
-`JSON.stringify` recebe um objeto ou um array javascript e retorna uma string
+`JSON.stringify` recebe um objeto ou um array JavaScript e retorna uma string
 serializada no formato JSON.
 
 ```js
@@ -46,7 +46,7 @@ console.log(jsonStr);
 // imprime '{"nome":"John Doe","idade":32,"titulo":"Vice Presidente do JavaScript"}'
 ```
 
-`JSON.parse` recebe uma string JSON e decodifica para um dado javascript
+`JSON.parse` recebe uma string JSON e decodifica para um dado JavaScript
 estruturado.
 
 ```js
@@ -65,21 +65,21 @@ console.log(dados.titulo);
 Existem algumas regras a serem lembradas ao lidar com dados no formato JSON.
 Aqui estão várias pegadinhas que podem produzir um JSON inválido.
 
-- Objetos e arrays vazios são okay
+* Objetos e arrays vazios são okay
 
-- Strings podem conter qualquer caractere unicode, isso inclui as propriedades
+* Strings podem conter qualquer caractere unicode, isso inclui as propriedades
   do objeto
 
-- `null` é um valor JSON valido por si só
+* `null` é um valor JSON valido por si só
 
-- Todas as propriedades do objeto devem sempre estar com aspas duplas
+* Todas as propriedades do objeto devem sempre estar com aspas duplas
 
-- Os valores da propriedade do objeto devem ser um dos seguintes: String, Number,
+* Os valores da propriedade do objeto devem ser um dos seguintes: String, Number,
   Boolean, Object, Array, null
-- Os valores numéricos devem estar no formato decimal, sem representações octais
+* Os valores numéricos devem estar no formato decimal, sem representações octais
   ou hexadecimais
 
-- Vírgulas à direita em arrays não são permitidas
+* Vírgulas à direita em arrays não são permitidas
 
 Esses são todos exemplos de um JSON válido.
 
@@ -127,23 +127,23 @@ você pode antecipar os erros encapsulando a chamada em um bloco try/catch.
 Observe que os únicos valores complexos permitidos em JSON são objetos e
 arrays. Funções, datas e outros tipos são excluídos. Isso pode não
 parecer fazer sentido no começo. Mas lembre-se que o JSON é um formato de dados,
-não um formato para transferir objetos javascript complexos junto com
+não um formato para transferir objetos JavaScript complexos junto com
 sua funcionalidade.
 
 ## Validadores JSON
 
 Como o JSON se tornou o formato de dados mais amplamente usado, com regras bem definidas, existem muitos validadores disponíveis para auxiliar seu fluxo de trabalho:
 
-- **Validadores online**: Se você está apenas brincando com o JSON ou verificando o JSON de alguém (sem IDEs/editores), os validadores online podem ser de grande ajuda. Por exemplo: [jsonlint.com](https://jsonlint.com) é um bom validador e reformatador online JSON.
+* **Validadores online**: Se você está apenas brincando com o JSON ou verificando o JSON de alguém (sem IDEs/editores), os validadores online podem ser de grande ajuda. Por exemplo: [jsonlint.com](https://jsonlint.com) é um bom validador e reformatador online JSON.
 
 * **Pacotes npm**: Se você estiver trabalhando com uma equipe e quiser que um validador JSON seja incluído em seu projeto ou simplesmente goste de automatizar a validação em seu fluxo de trabalho, a grande coleção de pacotes npm estará à sua disposição. Por exemplo: [jsonlint](https://www.npmjs.com/package/jsonlint) é uma versão em JavaScript puro do serviço fornecido em `jsonlint.com`.
 
-- **Plugins para IDEs/editores**: Existem muitos plugins/extensões disponíveis para a maioria dos IDEs/editores que validam o JSON para você. Alguns editores como o `VS Code` vêm com JSON intelliSense e validação pronto para uso.
+* **Plugins para IDEs/editores**: Existem muitos plugins/extensões disponíveis para a maioria dos IDEs/editores que validam o JSON para você. Alguns editores como o `VS Code` vêm com JSON intelliSense e validação pronto para uso.
 
 ## JSON em outras linguagens
 
 Embora o JSON tenha sido inspirado pela simplicidade dos dados estruturados do
-javascript, o seu uso não se limita à linguagem javascript. Muitas
+JavaScript, o seu uso não se limita à linguagem JavaScript. Muitas
 outras linguagens têm métodos de transferência de hashes e listas nativas
 em objetos JSON stringificados. Aqui está um exemplo rápido em ruby.
 

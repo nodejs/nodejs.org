@@ -7,7 +7,7 @@ title: Installing Node.js via package manager
 
 ***ملاحظة*** إن صيانة و دعم الحزم المذكورة في هذه الصفحة تتم عبر المشرفين على مديري الحزم، و **ليس** فريق النود جي اس الأساسي. تفضل بإبلاغ أية مشكلة إلى المشرفين على الحزم و إذا كانت مشكلتك عبارة عن خطأ في النود جي اس بحد ذاتها فسيبلغ المشرف عن هذه المشكلة صعودا.
 
-----------------------------
+---
 
 * [آندرويد](#android)
 * [Arch Linux](#arch-linux)
@@ -25,7 +25,7 @@ title: Installing Node.js via package manager
 * [Void Linux](#void-linux)
 * [ويندوز](#windows)
 
-----------------------------
+---
 
 ## <!--android-->آندرويد
 
@@ -158,7 +158,7 @@ zypper install nodejs4
 
 ## macOS
 
-بكل بساطة، قم بتنزيل [مثبت الماك او اس](https://nodejs.org/#download) مباشرة من موقع [nodejs.org](https://nodejs.org).
+بكل بساطة، قم بتنزيل [مثبت الماك او اس](https://nodejs.org/ar/#home-downloadhead) مباشرة من موقع [nodejs.org](https://nodejs.org/).
 
 _إذا كنت تريد تنزيل الحزمة باستعمال الباش:_
 
@@ -191,7 +191,7 @@ port install nodejs7
 pkgin -y install nodejs
 ```
 
- من أو قم ببنائها يدويا من pkgsrc:
+من أو قم ببنائها يدويا من pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
@@ -229,7 +229,7 @@ xbps-install -Sy nodejs
 
 ## <!--windows-->ويندوز
 
-قم بتحميل [المثبت الخاص بويندوز](https://nodejs.org/#download) مباشرة من موقع [nodejs.org](https://nodejs.org).
+قم بتحميل [المثبت الخاص بويندوز](https://nodejs.org/ar/#home-downloadhead) مباشرة من موقع [nodejs.org](https://nodejs.org/).
 
 ### البدائل
 

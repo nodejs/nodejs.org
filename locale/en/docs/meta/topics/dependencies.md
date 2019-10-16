@@ -7,17 +7,17 @@ layout: docs.hbs
 
 There are several dependencies that Node.js relies on to work the way it does.
 
-- [Libraries](#libraries)
-  - [V8](#v8)
-  - [libuv](#libuv)
-  - [http-parser](#http-parser)
-  - [c-ares](#c-ares)
-  - [OpenSSL](#openssl)
-  - [zlib](#zlib)
-- [Tools](#tools)
-  - [npm](#npm)
-  - [gyp](#gyp)
-  - [gtest](#gtest)
+* [Libraries](#libraries)
+  * [V8](#v8)
+  * [libuv](#libuv)
+  * [http-parser](#http-parser)
+  * [c-ares](#c-ares)
+  * [OpenSSL](#openssl)
+  * [zlib](#zlib)
+* [Tools](#tools)
+  * [npm](#npm)
+  * [gyp](#gyp)
+  * [gtest](#gtest)
 
 ## Libraries
 
@@ -26,7 +26,7 @@ There are several dependencies that Node.js relies on to work the way it does.
 The V8 library provides Node.js with a JavaScript engine, which Node.js
 controls via the V8 C++ API. V8 is maintained by Google, for use in Chrome.
 
-- [Documentation](https://v8docs.nodesource.com/)
+* [Documentation](https://v8docs.nodesource.com/)
 
 ### libuv
 
@@ -37,15 +37,15 @@ processes, pipes, signal handling, polling and streaming. It also includes a
 thread pool for offloading work for some things that can't be done
 asynchronously at the operating system level.
 
-- [Documentation](http://docs.libuv.org/)
+* [Documentation](http://docs.libuv.org/)
 
-### http-parser
+### llhttp
 
-HTTP parsing is handled by a lightweight C library called http-parser. It is
-designed to not make any syscalls or allocations, so it has a very small
+HTTP parsing is handled by a lightweight TypeScript and C library called llhttp.
+It is designed to not make any syscalls or allocations, so it has a very small
 per-request memory footprint.
 
-- [Documentation](https://github.com/joyent/http-parser/)
+* [Documentation](https://github.com/joyent/http-parser/)
 
 ### c-ares
 
@@ -56,7 +56,7 @@ use of threaded `getaddrinfo(3)` calls in libuv. The reason for this is that
 c-ares supports /etc/hosts, /etc/resolv.conf and /etc/svc.conf, but not things
 like mDNS.
 
-- [Documentation](https://c-ares.haxx.se/docs.html)
+* [Documentation](https://c-ares.haxx.se/docs.html)
 
 ### OpenSSL
 
@@ -64,7 +64,7 @@ OpenSSL is used extensively in both the `tls` and `crypto` modules. It provides
 battle-tested implementations of many cryptographic functions that the modern
 web relies on for security.
 
-- [Documentation](https://www.openssl.org/docs/)
+* [Documentation](https://www.openssl.org/docs/)
 
 ### zlib
 
@@ -72,7 +72,7 @@ For fast compression and decompression, Node.js relies on the industry-standard
 zlib library, also known for its use in gzip and libpng. Node.js uses zlib to
 create sync, async and streaming compression and decompression interfaces.
 
-- [Documentation](https://www.zlib.net/manual.html)
+* [Documentation](https://www.zlib.net/manual.html)
 
 ## Tools
 
@@ -83,7 +83,7 @@ package manager; for this purpose, npm was made. With npm comes the largest
 selection of community-created packages of any programming ecosystem,
 which makes building Node.js apps quick and easy.
 
-- [Documentation](https://docs.npmjs.com/)
+* [Documentation](https://docs.npmjs.com/)
 
 ### gyp
 
@@ -92,11 +92,11 @@ from V8. It can generate project files for use with build systems across many
 platforms. Node.js requires a build system because large parts of it — and its
 dependencies — are written in languages that require compilation.
 
-- [Documentation](https://gyp.gsrc.io/docs/UserDocumentation.md)
+* [Documentation](https://gyp.gsrc.io/docs/UserDocumentation.md)
 
 ### gtest
 
 Native code can be tested using gtest, which is taken from Chromium. It allows
 testing C/C++ without needing an existing node executable to bootstrap from.
 
-- [Documentation](https://code.google.com/p/googletest/wiki/V1_7_Documentation)
+* [Documentation](https://code.google.com/p/googletest/wiki/V1_7_Documentation)

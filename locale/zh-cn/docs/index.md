@@ -15,7 +15,7 @@ labels:
 
 ## API函数接口文档
 
-[API 函数接口文档](/api/) 提供了在 Node.js 中的函数或者对象的详细信息。这个文档告诉你什么方法该用什么参数，方法返回值是什么以及使用那个方法会有什么错误异常。它同时也告知你不同版本中的 Node.js 有哪些方法是可用的。
+[API 函数接口文档](https://nodejs.org/api/) 提供了在 Node.js 中的函数或者对象的详细信息。这个文档告诉你什么方法该用什么参数，方法返回值是什么以及使用那个方法会有什么错误异常。它同时也告知你不同版本中的 Node.js 有哪些方法是可用的。
 
 此文档描述了 Node.js 内建的模块，社区提供的模块并不记载在内。
 
@@ -23,6 +23,8 @@ labels:
 
 ### 在寻找先前发布的 API 函数接口文档吗？
 
+* [Node.js 11.x](https://nodejs.org/docs/latest-v11.x/api/)
+* [Node.js 10.x](https://nodejs.org/docs/latest-v10.x/api/)
 * [Node.js 9.x](https://nodejs.org/docs/latest-v9.x/api/)
 * [Node.js 8.x](https://nodejs.org/docs/latest-v8.x/api/)
 * [Node.js 7.x](https://nodejs.org/docs/latest-v7.x/api/)

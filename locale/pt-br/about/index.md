@@ -4,7 +4,7 @@ title: Sobre
 trademark: Trademark
 ---
 
-# Sobre Node.js&reg;
+# Sobre Node.js®
 <!--
 As an asynchronous event driven JavaScript runtime, Node is designed to build
 scalable network applications. In the following "hello world" example, many
@@ -12,7 +12,7 @@ connections can be handled concurrently. Upon each connection the callback is
 fired, but if there is no work to be done, Node will sleep.
 -->
 
-Como um ambiente de execução Javascript assíncrono orientado a eventos, o Node.js
+Como um ambiente de execução JavaScript assíncrono orientado a eventos, o Node.js
 é projetado para desenvolvimento de aplicações escaláveis de rede. No exemplo a
 seguir, diversas conexões podem ser controladas ao mesmo tempo. Em cada conexão
 a função de _callback_ é chamada. Mas, se não houver trabalho a ser realizado,
@@ -102,9 +102,9 @@ desenvolvidos para que a comunicação entre eles seja fácil. Da mesma maneira 
 [`cluster`][], que permite o compartilhamento de _sockets_ entre os processos, a fim de
 permitir o balanceamento de carga entre os núcleos.
 
-[Blocking vs Non-Blocking]: https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/
+[Blocking vs Non-Blocking]: /en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[event loop]: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
+[event loop]: /en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
 [Twisted]: https://twistedmatrix.com/trac/

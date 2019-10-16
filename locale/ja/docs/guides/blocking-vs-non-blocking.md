@@ -14,7 +14,7 @@ basic understanding of the JavaScript language and Node.js callback pattern.
 > "I/O" refers primarily to interaction with the system's disk and
 > network supported by [libuv](https://libuv.org/).
 
- -->
+-->
 # ブロッキングとノンブロッキングの概要
 
 この概要では、Node.js における**ブロッキング**と**ノンブロッキング**呼び出しの違いについて説明します。
@@ -44,7 +44,7 @@ versions, which are **non-blocking**, and accept callback functions. Some
 methods also have **blocking** counterparts, which have names that end with
 `Sync`.
 
- -->
+-->
 ## ブロッキング
 
 **ブロッキング**は、Node.js プロセス内の追加の JavaScript の実行が、
@@ -118,7 +118,7 @@ can continue and `moreWork()` will be called first. The ability to run
 `moreWork()` without waiting for the file read to complete is a key design
 choice that allows for higher throughput.
 
- -->
+-->
 ## コードを比較する
 
 **ブロッキング**メソッドは同期的に実行され、
@@ -192,7 +192,7 @@ capacity just by choosing to use **non-blocking** methods instead of
 The event loop is different than models in many other languages where additional
 threads may be created to handle concurrent work.
 
- -->
+-->
 ## 並行性とスループット
 
 Node.js での JavaScript の実行はシングルスレッドであるため、
@@ -245,7 +245,7 @@ fs.readFile('/file.md', (readFileErr, data) => {
 The above places a **non-blocking** call to `fs.unlink()` within the callback of
 `fs.readFile()` which guarantees the correct order of operations.
 
- -->
+-->
 ## ブロッキングコードとノンブロッキングコードが混在する危険性
 
 I/O を扱うときに避けるべきいくつかのパターンがあります。
@@ -283,11 +283,11 @@ fs.readFile('/file.md', (readFileErr, data) => {
 <!--
 ## Additional Resources
 
-- [libuv](https://libuv.org/)
-- [About Node.js](https://nodejs.org/en/about/)
+* [libuv](https://libuv.org/)
+* [About Node.js](/en/about/)
 
- -->
+-->
 ## 追加のリソース
 
-- [libuv](https://libuv.org/)
-- [About Node.js](https://nodejs.org/ja/about/)
+* [libuv](https://libuv.org/)
+* [About Node.js](/ja/about/)

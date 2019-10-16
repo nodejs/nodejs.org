@@ -8,7 +8,7 @@ title: 패키지 매니저로 Node.js 설치하기
 
 ***Note:*** The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
 
-----------------------------
+---
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
@@ -26,7 +26,7 @@ title: 패키지 매니저로 Node.js 설치하기
 * [Void Linux](#void-linux)
 * [Windows](#windows)
 
-----------------------------
+---
 -->
 # 패키지 매니저로 Node.js 설치하기
 
@@ -34,7 +34,7 @@ title: 패키지 매니저로 Node.js 설치하기
 **관리하지 않습니다**. 이슈가 있다면 패키지 관리자에게 보고해 주세요. 해당 이슈가 Node.js 자체의
 버그라면 관리자가 이슈를 Node.js에 보고할 것입니다.
 
-----------------------------
+---
 
 * [안드로이드](#android)
 * [Arch Linux](#arch-linux)
@@ -52,7 +52,7 @@ title: 패키지 매니저로 Node.js 설치하기
 * [Void Linux](#void-linux)
 * [Windows](#windows)
 
-----------------------------
+---
 
 <!--
 ## Android
@@ -71,7 +71,7 @@ Currently, Termux Node.js binaries are linked against `system-icu` (depending on
 
 Node.js의 안드로이드 지원은 현재 시험 단계에 있기 때문에 Node.js 개발자들이 제공하는 미리 컴파일된 바이너리가 아직 없습니다.
 
-하지만 몇 가지 서드파티는 존재합니다. 일례로 [Termux](https://termux.com/) 커뮤니티는 안드로이드를 위한 터미널 에뮬레이터와 리눅스 환경을 제공하는데, 고유한 패키지 매니저와 다수의 [미리 컴파일된 애플리케이션 패키지]((https://github.com/termux/termux-packages)도 함께 제공하고 있습니다. Termux 앱에서 다음 명령어를 사용하면 최신 Node.js 버전을 설치합니다.
+하지만 몇 가지 서드파티는 존재합니다. 일례로 [Termux](https://termux.com/) 커뮤니티는 안드로이드를 위한 터미널 에뮬레이터와 리눅스 환경을 제공하는데, 고유한 패키지 매니저와 다수의 [미리 컴파일된 애플리케이션 패키지](https://github.com/termux/termux-packages)도 함께 제공하고 있습니다. Termux 앱에서 다음 명령어를 사용하면 최신 Node.js 버전을 설치합니다.
 
 ```bash
 pkg install nodejs
@@ -333,7 +333,7 @@ zypper install nodejs4
 <!--
 ## macOS
 
-Simply download the [macOS Installer](https://nodejs.org/#download) direct from the [nodejs.org](https://nodejs.org) web site.
+Simply download the [macOS Installer](https://nodejs.org/en/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
 
 _If you want to download the package with bash:_
 
@@ -343,7 +343,7 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 -->
 ## macOS
 
-[nodejs.org](https://nodejs.org) 웹사이트에서 [매킨토시 인스톨러](https://nodejs.org/#download)를 다운로드 받으세요.
+[nodejs.org](https://nodejs.org/) 웹사이트에서 [매킨토시 인스톨러](https://nodejs.org/ko/#home-downloadhead)를 다운로드 받으세요.
 
 _bash에서 패키지를 다운로드 받고 싶다면 다음 명령어를 실행하세요._
 
@@ -416,7 +416,7 @@ cd pkgsrc/lang/nodejs && bmake install
 <!--
 ## SmartOS and illumos
 
-SmartOS images come with pkgsrc pre-installed.  On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal:
+SmartOS images come with pkgsrc pre-installed. On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal:
 
 ```bash
 pkgin -y install nodejs
@@ -447,7 +447,7 @@ cd pkgsrc/lang/nodejs && bmake install
 <!--
 ## Solus
 
-Solus provides node.js in its main repository.
+Solus provides Node.js in its main repository.
 
 ```bash
 sudo eopkg install nodejs
@@ -455,7 +455,7 @@ sudo eopkg install nodejs
 -->
 ## Solus
 
-Solus는 메인 저장소에서 node.js를 제공합니다.
+Solus는 메인 저장소에서 Node.js를 제공합니다.
 
 ```bash
 sudo eopkg install nodejs
@@ -464,7 +464,7 @@ sudo eopkg install nodejs
 <!--
 ## Void Linux
 
-Void Linux ships node.js stable in the main repository.
+Void Linux ships Node.js stable in the main repository.
 
 ```bash
 xbps-install -Sy nodejs
@@ -472,7 +472,7 @@ xbps-install -Sy nodejs
 -->
 ## Void Linux
 
-Void Linux는 메인 저장소에서 node.js 안정 버전을 제공합니다.
+Void Linux는 메인 저장소에서 Node.js 안정 버전을 제공합니다.
 
 ```bash
 xbps-install -Sy nodejs
@@ -481,7 +481,7 @@ xbps-install -Sy nodejs
 <!--
 ## Windows
 
-Simply download the [Windows Installer](https://nodejs.org/#download) directly from the [nodejs.org](https://nodejs.org) web site.
+Simply download the [Windows Installer](https://nodejs.org/en/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
 
 ### Alternatives
 
@@ -501,8 +501,8 @@ scoop install nodejs
 -->
 ## Windows
 
-[nodejs.org](https://nodejs.org) 웹사이트에서
-[윈도우 인스톨러](https://nodejs.org/#download)를 직접 다운로드 받으세요.
+[nodejs.org](https://nodejs.org/) 웹사이트에서
+[윈도우 인스톨러](https://nodejs.org/ko/#home-downloadhead)를 직접 다운로드 받으세요.
 
 ### 그 밖의 방법
 

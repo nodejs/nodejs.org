@@ -2,7 +2,7 @@
 title: New Node.js Foundation Survey Reports New “Full Stack” In Demand Among Enterprise Developers
 date: 2016-04-12T13:00:00.000Z
 status: publish
-category: Annoucements
+category: Announcements
 slug: nodejs-foundation-survey
 layout: blog-post.hbs
 ---
@@ -101,6 +101,7 @@ Europe, 6 percent India, and 6 percent from United Kingdom with the remaining re
 hailing from Asia, Latin America, Africa, Russia and the Middle East.
 
 **Additional Resources:**
+
 * [Node.js Foundation User survey infographic](/static/documents/2016-survey-infographic.png)
 * [Report summarizing Node.js Foundation User Survey 2016](/static/documents/2016-survey-report.pdf)
 
@@ -116,4 +117,4 @@ IBM, Intel, Joyent, Microsoft, PayPal and Red Hat. Gold members include GoDaddy,
 and Modulus/Progress Software, and Silver members include Apigee, AppDynamics, Codefresh,
 DigitalOcean, Fidelity, Google, Groupon, nearForm, New Relic, npm, Opbeat, RisingStack, Sauce
 Labs, SAP, StrongLoop (an IBM company), Sphinx, YLD!, and Yahoo!. Get involved here:
-[https://nodejs.org](https://nodejs.org).
+<https://nodejs.org/>.

@@ -1,6 +1,6 @@
 # [nodejs.org](https://nodejs.org/)
 
-[![Build Status](https://img.shields.io/travis/com/nodejs/nodejs.org/master.svg)](https://travis-ci.com/nodejs/nodejs.org)
+[![Build Status](https://github.com/nodejs/nodejs.org/workflows/Tests/badge.svg)](https://github.com/nodejs/nodejs.org/actions?workflow=Tests)
 [![Dependency Status](https://img.shields.io/david/nodejs/nodejs.org.svg)](https://david-dm.org/nodejs/nodejs.org)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -23,7 +23,7 @@ npm install
 npm start
 ```
 
-This will start the development server on http://localhost:8080/en/. This should reload automatically when you make changes to the code, but no code is perfect, so sometimes you may need to restart it. :)
+This will start the development server on `http://localhost:8080/en/`. This should reload automatically when you make changes to the code, but no code is perfect, so sometimes you may need to restart it. :)
 
 If you want to submit a new feature or a bugfix, the best way is to create the changes in a separate branch, e.g.: `git checkout -b feature/mycoolfeature`. This will make it easier for you to submit a pull request and get your feature merged.
 
@@ -32,7 +32,7 @@ If you want to submit a new feature or a bugfix, the best way is to create the c
 * Page templates are in `/layouts`
 * Global styles are in `/layouts/css`
 * Global static files are in `/static`
-* All content and localization specific styles are in `/locale`
+* All content is in `/locale`
   * Initial development usually happens in English: `/locale/en`
   * `/locale/{{locale}}/site.json` is where global localization information lives.
   * All content is in Markdown and is per locale.
@@ -42,18 +42,14 @@ If you want to submit a new feature or a bugfix, the best way is to create the c
 ### Serve/Build Options
 
 * `DEFAULT_LOCALE={{locale}} npm run serve` builds only the files present in the specified locale folder (will display 404 if file is not present)
-* `DEFAULT_LOCALE={{locale}} npm run serve -- --preserveLocale` builds the files present in the specified locale folder and adds the pages present in the english locale that are missing.
+* `DEFAULT_LOCALE={{locale}} npm run serve -- --preserveLocale` builds the files present in the specified locale folder and adds the pages present in the English locale that are missing.
 * `npm run serve` builds all languages and returns 404 when a file is not present in the current locale
-* `npm run serve -- --preserveLocale` builds all languages and adds the pages present in the english locale that are missing.
-* Multiple locales can be built by using comma separated values in the DEFAULT_LOCALE option. i.e: DEFAULT_LOCALE=en,es,it
+* `npm run serve -- --preserveLocale` builds all languages and adds the pages present in the English locale that are missing.
+* Multiple locales can be built by using comma separated values in the `DEFAULT_LOCALE` variable. i.e: `DEFAULT_LOCALE=en,es,it`
 
 ### Deployment
 
-Full set up is in https://github.com/nodejs/build/tree/master/setup/www minus secrets and certificates. The webhook is setup on GitHub for this project and talks to a small Node server on the host which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
-
-## Governance
-
-All of the Node.js Foundation websites, including this repo, are jointly governed by the **Website Working Group**. See [GOVERNANCE.md](./GOVERNANCE.md) to learn more about the group's structure and [CONTRIBUTING.md](./CONTRIBUTING.md) for guidance about the expectations for all contributors to this project.
+Full set up is in <https://github.com/nodejs/build/tree/master/setup/www> minus secrets and certificates. The webhook is setup on GitHub for this project and talks to a small Node server on the host which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
 
 ### Content vs. Code
 

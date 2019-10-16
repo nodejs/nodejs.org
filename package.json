@@ -6,23 +6,28 @@
   "scripts": {
     "build": "node build.js",
     "build:deploy": "node build.js --preserveLocale",
-    "serve": "node server.js",
+    "serve": "cross-env NODE_ENV=development node server.js",
     "external:survey": "rsync -avz --exclude 'node_modules*' --exclude 'package*' external/survey-2018/ build/en/user-survey-report",
     "gzip": "find build -type f \\( -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.xml' -o -name '*.json' \\) -exec gzip -kf9 {} \\;",
-    "deploy": "npm run load-schedule && npm run build:deploy && npm run external:survey && npm run gzip",
+    "deploy": "npm-run-all load-schedule build:deploy external:survey gzip",
     "load-versions": "node scripts/load-versions.js",
     "load-schedule": "curl -sS https://raw.githubusercontent.com/nodejs/Release/master/schedule.json -o source/schedule.json",
     "start": "npm run serve",
-    "test": "npm run test:lint && npm run test:unit && npm run test:smoke",
-    "test:lint": "standard --fix && htmllint \"**/*.hbs\" && stylint layouts/css && markdownlint \"**/*.md\" -i \"**/node_modules/**\"",
-    "test:unit": "tape tests/**/*.test.js | faucet",
-    "test:smoke": "tape tests/*.smoketest.js | faucet"
+    "test": "npm-run-all test:lint test:unit",
+    "linkinator": "delay 3 && linkinator http://localhost:8080/en/ --recurse --silent --skip \"^(?!http://localhost)\"",
+    "test:linkinator": "npm-run-all --parallel --race \"serve -- --serve-only\" linkinator",
+    "test:lint:js": "standard",
+    "test:lint:md": "markdownlint \"**/*.md\" -i \"**/node_modules/**\"",
+    "test:lint:stylelint": "stylelint \"layouts/css/**/*.{css,scss}\"",
+    "test:lint": "npm-run-all --parallel test:lint:*",
+    "test:html": "node scripts/vnu-jar.js",
+    "test:unit": "tape tests/**/*.test.js | faucet"
   },
   "repository": "nodejs/nodejs.org",
   "author": "Node.js Website Working Group",
   "license": "MIT",
   "engines": {
-    "node": ">=8"
+    "node": ">=10.12.0"
   },
   "standard": {
     "ignore": [
@@ -32,10 +37,9 @@
     ]
   },
   "dependencies": {
-    "autoprefixer-stylus": "^1.0.0",
+    "autoprefixer": "^9.6.4",
     "cheerio": "^0.22.0",
-    "chokidar": "^3.0.2",
-    "handlebars": "^4.2.0",
+    "handlebars": "^4.4.3",
     "jstransformer-handlebars": "^1.1.0",
     "junk": "^3.1.0",
     "lodash.defaultsdeep": "^4.6.1",
@@ -50,26 +54,34 @@
     "metalsmith-metadata": "0.0.4",
     "metalsmith-permalinks": "^2.2.0",
     "metalsmith-prism": "^3.1.1",
-    "metalsmith-stylus": "^3.0.0",
-    "metalsmith-yearly-pagination": "^2.0.1",
+    "metalsmith-yearly-pagination": "^4.0.0",
     "ncp": "^2.0.0",
+    "node-sass": "^4.12.0",
     "node-version-data": "^1.1.0",
+    "npm-run-all": "^4.1.5",
     "octonode": "^0.9.5",
+    "postcss": "^7.0.18",
     "request": "^2.88.0",
-    "require-dir": "^1.2.0",
     "semver": "^6.3.0",
-    "st": "^1.2.2",
     "strftime": "^0.10.0"
   },
   "devDependencies": {
+    "chokidar": "^3.2.1",
+    "cross-env": "^6.0.3",
+    "delay-cli": "^1.1.0",
     "faucet": "0.0.1",
-    "htmllint-cli": "0.0.6",
+    "linkinator": "^1.6.0",
     "markdownlint-cli": "^0.18.0",
-    "nock": "^11.3.2",
+    "nock": "^11.4.0",
     "pre-commit": "^1.2.2",
     "proxyquire": "^2.1.3",
-    "standard": "^14.1.0",
-    "stylint": "^2.0.0",
-    "tape": "^4.11.0"
+    "st": "^1.2.2",
+    "standard": "^14.3.1",
+    "stylelint": "^11.1.1",
+    "stylelint-config-recommended-scss": "^4.0.0",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-scss": "^3.11.1",
+    "tape": "^4.11.0",
+    "vnu-jar": "19.9.4"
   }
 }
