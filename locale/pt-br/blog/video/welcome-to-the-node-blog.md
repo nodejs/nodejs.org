@@ -1,5 +1,5 @@
 ---
-title: Welcome to the Node blog
+title: Bem vindo ao blog Node
 author: ryandahl
 date: 2011-03-18T03:17:12.000Z
 status: publish
