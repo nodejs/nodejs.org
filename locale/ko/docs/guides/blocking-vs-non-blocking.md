@@ -21,7 +21,7 @@ libuv를 참조할 것이지만 사전 지식이 필요하지는 않습니다. �
 언어와 Node.js 호출 패턴에 관해 기본적인 이해가 있다고 가정합니다.
 
 > "I/O"는 주로 [libuv](https://libuv.org/)가 지원하는 시스템 디스크나 네트워크와
-상호작용하는 것을 가리킵니다.
+> 상호작용하는 것을 가리킵니다.
 
 <!--
 ## Blocking
@@ -270,13 +270,13 @@ The above places a **non-blocking** call to `fs.unlink()` within the callback of
 
 ## Additional Resources
 
-- [libuv](https://libuv.org/)
-- [About Node.js](https://nodejs.org/en/about/)
+* [libuv](https://libuv.org/)
+* [About Node.js](https://nodejs.org/en/about/)
 -->
 
 여기서는 `fs.readFile()`의 콜백에서 `fs.unlink()`를 **논블로킹**으로 호출하도록 해서 작업 순서가 올바르도록 보장했습니다.
 
 ## 추가 자료
 
-- [libuv](https://libuv.org/)
-- [Node.js에 대해서](https://nodejs.org/ko/about/)
+* [libuv](https://libuv.org/)
+* [Node.js에 대해서](https://nodejs.org/ko/about/)

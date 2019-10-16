@@ -27,22 +27,22 @@ Node.js 官方為了安全研究員們及負責的公開揭露而展開了一個
 
 下列為 Node.js 之安全性揭露政策
 
-- 收到安全性的回報後我們會指派一個主要負責人，此人會負責確認問題，並協調修補、釋出的流程及確認受影響版本，審核程式碼以確保沒有其他類似問題，為所有維護中的版本提供修補程式，並確保這些修補程式不會在發布前被公開。
+* 收到安全性的回報後我們會指派一個主要負責人，此人會負責確認問題，並協調修補、釋出的流程及確認受影響版本，審核程式碼以確保沒有其他類似問題，為所有維護中的版本提供修補程式，並確保這些修補程式不會在發布前被公開。
 
-- 對此漏洞建議一個解禁日期 (Embargo Date)，並提出 CVE® (Common Vulnerabilities and Exposures)。
+* 對此漏洞建議一個解禁日期 (Embargo Date)，並提出 CVE® (Common Vulnerabilities and Exposures)。
 
-- Node.js 安全性郵件列表將於解禁日時以公告副本形式發出，並將更動推送至公開 repository 且部署新版本至 nodejs.org。諮詢副本將在通知郵件列表的六小時內發佈至 Node.js 部落格。
+* Node.js 安全性郵件列表將於解禁日時以公告副本形式發出，並將更動推送至公開 repository 且部署新版本至 nodejs.org。諮詢副本將在通知郵件列表的六小時內發佈至 Node.js 部落格。
 
-- 一般而言解禁日會訂於 CVE 發布的 72 小時後，但仍可能依照漏洞的複雜度及部署的困難度而有變化。
+* 一般而言解禁日會訂於 CVE 發布的 72 小時後，但仍可能依照漏洞的複雜度及部署的困難度而有變化。
 
-- 整個流程需要耗費不少時間，尤其在需要與其他專案的維護者協調的情況下更是如此，我們會盡力即時處理漏洞，最重要的是我們仍會遵循上述的流程來確保以一致的手段處理漏洞。
+* 整個流程需要耗費不少時間，尤其在需要與其他專案的維護者協調的情況下更是如此，我們會盡力即時處理漏洞，最重要的是我們仍會遵循上述的流程來確保以一致的手段處理漏洞。
 
 ## 接收安全性更新
 
 安全通告會由下列方式發布：
 
-- [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog/](https://nodejs.org/en/blog/)
+* [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
+* [https://nodejs.org/en/blog/](https://nodejs.org/en/blog/)
 
 ## 對本政策的建言
 

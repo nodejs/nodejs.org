@@ -30,10 +30,10 @@ The `url.parse()` method returns an object which have many key value pairs one o
 
 In the above code:
 
-- `url.parse(req.url,true).query` returns `{ foo: 'bad', baz: 'foo' }`.
-- `url.parse(req.url,true).host` returns `'localhost:8080'`.
-- `url.parse(req.url,true).pathname` returns `'/app.js'`.
-- `url.parse(req.url,true).search` returns `'?foo=bad&baz=foo'`.
+* `url.parse(req.url,true).query` returns `{ foo: 'bad', baz: 'foo' }`.
+* `url.parse(req.url,true).host` returns `'localhost:8080'`.
+* `url.parse(req.url,true).pathname` returns `'/app.js'`.
+* `url.parse(req.url,true).search` returns `'?foo=bad&baz=foo'`.
 
 ### Parsing with querystring
 
