@@ -107,7 +107,7 @@ EXIGÊNCIAS
 - [Meetup](https://meetup.com/nodebr)
 - Frequência dos meetups - mensal
 - Como enviar uma palestra? Fale com os organizadores na página do meetup
-- Nomes dos organizadores - [Erick Wendel](https://github.com/erickwendel), [Alan Hoffmeister](https://github.com/alanhoff), [Igor França](https://github.com/horaddrim), [Icaro Caldeira](https://github.com/icarcal), [Marcus Bergamo](https://github.com/thebergamo), [Igor Halfeld](https://github.com/igorHalfeld).
+- Nomes dos organizadores - [Erick Wendel](https://github.com/erickwendel), [Alan Hoffmeister](https://github.com/alanhoff), [Igor França](https://github.com/horaddrim), [Icaro Caldeira](https://github.com/icarcal), [Marcus Bergamo](https://github.com/thebergamo), [Igor Halfeld](https://github.com/igorHalfeld), [Lucas Santos](https://github.com/khaosdoctor).
 - Contato do organizador - [@erickwendel_](https://twitter.com/erickwendel_)
 
 ##### Campinas
