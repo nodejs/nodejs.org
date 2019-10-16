@@ -207,8 +207,8 @@ For this reason, you should be leery of using complex regular expressions to val
 #### Anti-REDOS Resources
 There are some tools to check your regexps for safety, like
 
-- [safe-regex](https://github.com/substack/safe-regex)
-- [rxxr2](http://www.cs.bham.ac.uk/~hxt/research/rxxr2/).
+* [safe-regex](https://github.com/substack/safe-regex)
+* [rxxr2](http://www.cs.bham.ac.uk/~hxt/research/rxxr2/).
 However, neither of these will catch all vulnerable regexps.
 
 Another approach is to use a different regexp engine.
@@ -221,29 +221,29 @@ If you're trying to match something "obvious", like a URL or a file path, find a
 ### Blocking the Event Loop: Node core modules
 Several Node core modules have synchronous expensive APIs, including:
 
-- [Encryption](https://nodejs.org/api/crypto.html)
-- [Compression](https://nodejs.org/api/zlib.html)
-- [File system](https://nodejs.org/api/fs.html)
-- [Child process](https://nodejs.org/api/child_process.html)
+* [Encryption](https://nodejs.org/api/crypto.html)
+* [Compression](https://nodejs.org/api/zlib.html)
+* [File system](https://nodejs.org/api/fs.html)
+* [Child process](https://nodejs.org/api/child_process.html)
 
 These APIs are expensive, because they involve significant computation (encryption, compression), require I/O (file I/O), or potentially both (child process). These APIs are intended for scripting convenience, but are not intended for use in the server context. If you execute them on the Event Loop, they will take far longer to complete than a typical JavaScript instruction, blocking the Event Loop.
 
 In a server, *you should not use the following synchronous APIs from these modules*:
 
-- Encryption:
-  - `crypto.randomBytes` (synchronous version)
-  - `crypto.randomFillSync`
-  - `crypto.pbkdf2Sync`
-  - You should also be careful about providing large input to the encryption and decryption routines.
-- Compression:
-  - `zlib.inflateSync`
-  - `zlib.deflateSync`
-- File system:
-  - Do not use the synchronous file system APIs. For example, if the file you access is in a [distributed file system](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems) like [NFS](https://en.wikipedia.org/wiki/Network_File_System), access times can vary widely.
-- Child process:
-  - `child_process.spawnSync`
-  - `child_process.execSync`
-  - `child_process.execFileSync`
+* Encryption:
+  * `crypto.randomBytes` (synchronous version)
+  * `crypto.randomFillSync`
+  * `crypto.pbkdf2Sync`
+  * You should also be careful about providing large input to the encryption and decryption routines.
+* Compression:
+  * `zlib.inflateSync`
+  * `zlib.deflateSync`
+* File system:
+  * Do not use the synchronous file system APIs. For example, if the file you access is in a [distributed file system](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems) like [NFS](https://en.wikipedia.org/wiki/Network_File_System), access times can vary widely.
+* Child process:
+  * `child_process.spawnSync`
+  * `child_process.execSync`
+  * `child_process.execFileSync`
 
 This list is reasonably complete as of Node v9.
 
@@ -283,8 +283,8 @@ console.log('JSON.parse took ' + took);
 
 There are npm modules that offer asynchronous JSON APIs. See for example:
 
-- [JSONStream](https://www.npmjs.com/package/JSONStream), which has stream APIs.
-- [Big-Friendly JSON](https://www.npmjs.com/package/bfj), which has stream APIs as well as asynchronous versions of the standard JSON APIs using the partitioning-on-the-Event-Loop paradigm outlined below.
+* [JSONStream](https://www.npmjs.com/package/JSONStream), which has stream APIs.
+* [Big-Friendly JSON](https://www.npmjs.com/package/bfj), which has stream APIs as well as asynchronous versions of the standard JSON APIs using the partitioning-on-the-Event-Loop paradigm outlined below.
 
 ### Complex calculations without blocking the Event Loop
 Suppose you want to do complex calculations in JavaScript without blocking the Event Loop.

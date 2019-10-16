@@ -63,8 +63,8 @@ Note that V8 implements all of ECMA 3rd edition and parts of the new stuff in th
 
 * `__defineGetter__(name, callback)` - (Mozilla extension, not ECMAScript 5) Associates a function with a property that, when accessed, executes that function and returns its return value.
 * `__defineSetter__(name, callback)` - (Mozilla extension, not ECMAScript 5) Associates a function with a property that, when set, executes that function which modifies the property.
-* `__lookupGetter__(name)` - (Mozilla extension, not ECMAScript 5) Returns the function associated with the specified property by the __defineGetter__ method.
-* `__lookupSetter__(name)` - (Mozilla extension, not ECMAScript 5) Returns the function associated with the specified property by the __defineSetter__ method.
+* `__lookupGetter__(name)` - (Mozilla extension, not ECMAScript 5) Returns the function associated with the specified property by the \_\_defineGetter\_\_ method.
+* `__lookupSetter__(name)` - (Mozilla extension, not ECMAScript 5) Returns the function associated with the specified property by the \_\_defineSetter\_\_ method.
 * `isPrototypeOf(obj)` - (EcmaScript 3 and 5) Returns true if `this` is a prototype of the passed in object.
 
 ## Function.prototype

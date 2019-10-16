@@ -17,9 +17,10 @@ const prism = require('metalsmith-prism')
 const permalinks = require('metalsmith-permalinks')
 const pagination = require('metalsmith-yearly-pagination')
 const defaultsDeep = require('lodash.defaultsdeep')
-const autoprefixer = require('autoprefixer-stylus')
+const autoprefixer = require('autoprefixer')
 const marked = require('marked')
-const stylus = require('stylus')
+const postcss = require('postcss')
+const sass = require('node-sass')
 const ncp = require('ncp')
 const junk = require('junk')
 
@@ -213,39 +214,45 @@ function withPreserveLocale (preserveLocale) {
   }
 }
 
-// This function builds the static/css folder for all the Stylus files.
+// This function builds the static/css folder for all the Sass files.
 function buildCSS () {
-  console.log('[stylus] static/css started')
-  const labelForBuild = '[stylus] static/css finished'
+  console.log('[sass] static/css started')
+  const labelForBuild = '[sass] static/css finished'
   console.time(labelForBuild)
+
+  const src = path.join(__dirname, 'layouts/css/styles.scss')
+  const dest = path.join(__dirname, 'build/static/css/styles.css')
+
+  const sassOpts = {
+    file: src,
+    outFile: dest,
+    outputStyle: process.env.NODE_ENV !== 'development' ? 'compressed' : 'expanded',
+    precision: 6
+  }
 
   fs.mkdir(path.join(__dirname, 'build/static/css'), { recursive: true }, (err) => {
     if (err) {
       throw err
     }
 
-    fs.readFile(path.join(__dirname, 'layouts/css/styles.styl'), 'utf8', (err, data) => {
-      if (err) {
-        throw err
+    sass.render(sassOpts, (error, result) => {
+      if (error) {
+        throw error
       }
 
-      stylus(data)
-        .set('compress', process.env.NODE_ENV !== 'development')
-        .set('paths', [path.join(__dirname, 'layouts/css')])
-        .use(autoprefixer())
-        .render((error, css) => {
-          if (error) {
-            throw error
+      postcss([autoprefixer]).process(result.css, { from: src }).then(res => {
+        res.warnings().forEach(warn => {
+          console.warn(warn.toString())
+        })
+
+        fs.writeFile(dest, res.css, (err) => {
+          if (err) {
+            throw err
           }
 
-          fs.writeFile(path.join(__dirname, 'build/static/css/styles.css'), css, (err) => {
-            if (err) {
-              throw err
-            }
-
-            console.timeEnd(labelForBuild)
-          })
+          console.timeEnd(labelForBuild)
         })
+      })
     })
   })
 }

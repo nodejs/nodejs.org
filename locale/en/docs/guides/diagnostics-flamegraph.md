@@ -100,8 +100,8 @@ You'll notice `ByteCodeHandler:` where you'd expect function names.
 
 For details see:
 
-- https://github.com/nodejs/benchmarking/issues/168
-- https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
+* https://github.com/nodejs/benchmarking/issues/168
+* https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
 
 ### Node.js 10+
 
