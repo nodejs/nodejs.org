@@ -103,43 +103,43 @@ For reference, here's the full list of available `colors.js` properties.
 
 ### text colors
 
-- black
-- red
-- green
-- yellow
-- blue
-- magenta
-- cyan
-- white
-- gray
-- grey
+* black
+* red
+* green
+* yellow
+* blue
+* magenta
+* cyan
+* white
+* gray
+* grey
 
 ### background colors
 
-- bgBlack
-- bgRed
-- bgGreen
-- bgYellow
-- bgBlue
-- bgMagenta
-- bgCyan
-- bgWhite
+* bgBlack
+* bgRed
+* bgGreen
+* bgYellow
+* bgBlue
+* bgMagenta
+* bgCyan
+* bgWhite
 
 ### styles
 
-- reset
-- bold
-- dim
-- italic
-- underline
-- inverse
-- hidden
-- strikethrough
+* reset
+* bold
+* dim
+* italic
+* underline
+* inverse
+* hidden
+* strikethrough
 
 ### extras
 
-- rainbow
-- zebra
-- america
-- trap
-- random
+* rainbow
+* zebra
+* america
+* trap
+* random

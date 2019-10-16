@@ -138,5 +138,5 @@ fs.readFile('/file.md', (readFileErr, data) => {
 
 ## Дополнительные рессурсы
 
-- [libuv](https://libuv.org/)
-- [О Node.js](https://nodejs.org/en/about/)
+* [libuv](https://libuv.org/)
+* [О Node.js](https://nodejs.org/en/about/)

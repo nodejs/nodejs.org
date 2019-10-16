@@ -97,8 +97,8 @@ Node.js 8.x 及以上版本使用了 V8 引擎，采用了新的优化 JavaScrip
 
 欲知详情，请了解以下内容：
 
-- https://github.com/nodejs/benchmarking/issues/168
-- https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
+* https://github.com/nodejs/benchmarking/issues/168
+* https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
 
 ### Node.js 10+
 
