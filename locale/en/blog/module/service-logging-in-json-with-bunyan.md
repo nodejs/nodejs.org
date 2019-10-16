@@ -17,10 +17,10 @@ Service logs are gold, if you can mine them. We scan them for occasional debuggi
 
 ["Log. (Huh) What is it good for. Absolutely ..."](https://www.youtube.com/watch?v=01-2pNCZiNk)
 
-- debugging
-- monitors tools that alert operators
-- non real-time analysis (business or operational analysis)
-- historical analysis
+* debugging
+* monitors tools that alert operators
+* non real-time analysis (business or operational analysis)
+* historical analysis
 
 These are what logs are good for. The current state of logging is barely adequate for the first of these. Doing reliable analysis, and even monitoring, of varied ["printf-style" logs](http://journal.paul.querna.org/articles/2011/12/26/log-for-machines-in-json/) is a grueling or hacky task that most either don't bother with, fallback to paying someone else to do (viz. Splunk's great successes), or, for web sites, punt and use the plethora of JavaScript-based web analytics tools.
 

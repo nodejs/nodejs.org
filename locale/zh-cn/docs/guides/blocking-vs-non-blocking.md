@@ -99,5 +99,5 @@ fs.readFile('/file.md', (readFileErr, data) => {
 
 ## 其它资源
 
-- [libuv](https://libuv.org/)
-- [关于 Node.js](https://nodejs.org/zh-cn/about/)
+* [libuv](https://libuv.org/)
+* [关于 Node.js](https://nodejs.org/zh-cn/about/)

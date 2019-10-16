@@ -112,16 +112,16 @@ console.log(argv);
 
 The last line was included to let you see how `yargs` handles your arguments. Here's a quick reference:
 
-- `argv.$0` contains the name of the script file which is executed like: `'$0': 'myapp.js'`.
-- `argv._` is an array containing each element not attached to an option(or flag) these elements are referred as `commands` in yargs.
-- Individual options(flags) become properties of `argv`, such as with `argv.h` and `argv.time`. Note that non-single-letter flags must be passed in as `--flag` like: `node myapp.js --time`.
+* `argv.$0` contains the name of the script file which is executed like: `'$0': 'myapp.js'`.
+* `argv._` is an array containing each element not attached to an option(or flag) these elements are referred as `commands` in yargs.
+* Individual options(flags) become properties of `argv`, such as with `argv.h` and `argv.time`. Note that non-single-letter flags must be passed in as `--flag` like: `node myapp.js --time`.
 
 A summary of elements used in the program:
 
-- **argv**: This is the modified `process.argv` which we have configured with yargs.
-- **command()**: This method is used to add commands, their description and options which are specific to these commands only, like in the above code `lyr` is the command and `-y` is lyr specific option: `node myapp.js lyr -y 2016`
-- **option()**: This method is used to add global options(flags) which can be accessed by all commands or without any command.
-- **help()**: This method is used to display a help dialogue when `--help` option is encountered which contains description oof ll the `commands` and `options` available.
-- **alias()**: This method provides an alias name to an option, like in the above code both `--help` and `-h` triggers the help dialogue.
+* **argv**: This is the modified `process.argv` which we have configured with yargs.
+* **command()**: This method is used to add commands, their description and options which are specific to these commands only, like in the above code `lyr` is the command and `-y` is lyr specific option: `node myapp.js lyr -y 2016`
+* **option()**: This method is used to add global options(flags) which can be accessed by all commands or without any command.
+* **help()**: This method is used to display a help dialogue when `--help` option is encountered which contains description oof ll the `commands` and `options` available.
+* **alias()**: This method provides an alias name to an option, like in the above code both `--help` and `-h` triggers the help dialogue.
 
 For more information on yargs and the many, many other things it can do for your command-line arguments, please visit [http://yargs.js.org/docs/](http://yargs.js.org/docs/)

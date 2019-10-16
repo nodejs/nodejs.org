@@ -127,8 +127,8 @@ O [0x](https://www.npmjs.com/package/0x) tem algumas mitigações para isso já 
 <!-- For details see: -->
 Para mais detalhes veja:
 
-- https://github.com/nodejs/benchmarking/issues/168
-- https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
+* https://github.com/nodejs/benchmarking/issues/168
+* https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
 
 ### Node.js 10+
 

@@ -197,5 +197,5 @@ de `fs.readFile()`, o que garante a ordem correta das operações.
 
 ## Additional Resources
 
-- [libuv](http://libuv.org/)
-- [About Node.js](/en/about/)
+* [libuv](http://libuv.org/)
+* [About Node.js](/en/about/)
