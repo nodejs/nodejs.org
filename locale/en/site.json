@@ -82,6 +82,10 @@
       "verify-link": "https://github.com/nodejs/node#verifying-binaries",
       "verify-text": "How to verify"
     },
+    "install-on-wsl": {
+      "link": "https://docs.microsoft.com/windows/nodejs/setup-on-wsl2",
+      "text": "Installing Node.js via the Windows Subsystem for Linux (WSL2)"
+    },
     "install-on-linux": {
       "text": "Installing Node.js via binary archive on Linux"
     }
