@@ -107,8 +107,8 @@ REQUIREMENTS
 * [Meetup](https://meetup.com/nodebr)
 * Frequency of meetups - monthly
 * How to submit a talk? Contact organizers in the meetup page.
-* Organizer names - [Erick Wendel](https://github.com/erickwendel), [Alan Hoffmeister](https://github.com/alanhoff), [Igor França](https://github.com/horaddrim), [Icaro Caldeira](https://github.com/icarcal), [Marcus Bergamo](https://github.com/thebergamo), [Igor Halfeld](https://github.com/igorHalfeld).
-* Organizer contact info - [@erickwendel_](https://twitter.com/erickwendel_)
+* Organizer names - [Erick Wendel](https://github.com/erickwendel), [Alan Hoffmeister](https://github.com/alanhoff), [Igor França](https://github.com/horaddrim), [Icaro Caldeira](https://github.com/icarcal), [Marcus Bergamo](https://github.com/thebergamo), [Igor Halfeld](https://github.com/igorHalfeld), [Lucas Santos](https://github.com/khaosdoctor).
+* Organizer contact info - [@erickwendel_](https://twitter.com/erickwendel_), [@_StaticVoid](https://twitter.com/_staticvoid)
 
 ##### Campinas
 
