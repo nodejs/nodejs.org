@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News — November 6th
+
 Node.js v4.2.2 (LTS) is released
 
 ### Node.js v4.2.2 (LTS) Releases

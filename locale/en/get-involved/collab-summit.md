@@ -4,6 +4,7 @@ layout: contribute.hbs
 ---
 
 # Collab Summit
+
 Collaboration Summit is an un-conference for bringing current and
 potential contributors together to discuss Node.js with lively collaboration,
 education, and knowledge sharing. Committees and working groups come together

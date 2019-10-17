@@ -15,6 +15,7 @@ layout: blog-post.hbs
 * [Microsoft Azure](http://azure.microsoft.com/en-us/documentation/articles/web-sites-nodejs-iojs/)
 
 ## io.js breaks 10,000 stars on GitHub
+
 On Feb. 13, io.js reached the goal of 10,000 stars on GitHub. We couldn't have done it without the support of the amazing community behind JavaScript. Thank you all!
 
 ## io.js 1.2.0 released
@@ -31,6 +32,7 @@ On Feb. 13, io.js reached the goal of 10,000 stars on GitHub. We couldn't have d
   * Shigeki Ohtsu (@shigeki)
 
 ## Opened our doors to the international community
+
 View the [original article](https://medium.com/@mikeal/how-io-js-built-a-146-person-27-language-localization-effort-in-one-day-65e5b1c49a62) on Medium.
 
 * Added interested contributors to teams for their language.
@@ -75,6 +77,7 @@ View the [original article](https://medium.com/@mikeal/how-io-js-built-a-146-per
 * [`iojs-uk`](https://github.com/iojs/iojs-uk) Ukrainian Community
 
 ## io.js and Node.js
+
 View the [original article](https://medium.com/@iojs/io-js-and-a-node-js-foundation-4e14699fb7be) on Medium.
 
 * Scott Hammond, CEO of Joyent, expressed his desire to bring io.js back to the Node.js.

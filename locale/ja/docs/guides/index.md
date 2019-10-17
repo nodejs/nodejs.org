@@ -16,6 +16,7 @@ layout: docs.hbs
 * [Migrating to safe Buffer constructors](/en/docs/guides/buffer-constructor-deprecation/)
 
 -->
+
 # ガイド
 
 ## 一般
@@ -36,6 +37,7 @@ layout: docs.hbs
 * [Timers in Node.js](/en/docs/guides/timers-in-node/)
 
 -->
+
 ## Node.js コアコンセプト
 
 * [ブロッキングとノンブロッキングの概要](/ja/docs/guides/blocking-vs-non-blocking/)
@@ -54,6 +56,7 @@ layout: docs.hbs
 * [ABI Stability](/en/docs/guides/abi-stability/)
 
 -->
+
 ## モジュール関連ガイド
 
 * [HTTP トランザクションの構造](/ja/docs/guides/anatomy-of-an-http-transaction/)

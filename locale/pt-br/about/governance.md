@@ -6,6 +6,7 @@ layout: about.hbs
 <!--
 # Project Governance
 -->
+
 # Governança do Projeto
 
 <!--
@@ -13,6 +14,7 @@ layout: about.hbs
 
 The Node.js project follows a [Consensus Seeking][] decision making model.
 -->
+
 ## Processo de Busca por Consenso
 
 O projeto Node.js segue o modelo de [Busca por Consenso][] para tomada de decisão.
@@ -31,6 +33,7 @@ For the current list of Collaborators, see the project's [README.md][].
 
 A guide for Collaborators is maintained at [COLLABORATOR_GUIDE.md][].
 -->
+
 ## Colaboradores
 
 O repositório principal [nodejs/node][] no GitHub é mantido por Colaboradores
@@ -52,6 +55,7 @@ which is responsible for high-level guidance of the project, and the
 [Community Committee (CommComm)][] which is responsible for guiding and
 extending the Node.js community.
 -->
+
 ## Comitês Superiores
 
 O projeto é governado de forma conjunta pelo _[Technical Steering Committee (TSC)][]_

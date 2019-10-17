@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 # io.js News
+
 This week we hadn't io.js releases, complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
 
 ## Community Updates

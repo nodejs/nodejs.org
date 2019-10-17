@@ -6,6 +6,7 @@ labels:
 ---
 
 <!-- # About Docs -->
+
 # ドキュメント
 
 <!-- There are three types of documentation available on this website: -->
@@ -18,6 +19,7 @@ labels:
 * ES6 の機能
 
 <!-- ### API Reference Documentation -->
+
 ## API リファレンス
 
 <!-- The [API reference documentation](https://nodejs.org/api/) provides detailed information about a function or object in Node.js. This documentation indicates what arguments a method accepts, the return value of that method, and what errors may be related to that method. It also indicates which methods are available for different versions of Node.js. -->
@@ -45,12 +47,14 @@ labels:
 </div>
 
 <!-- ### ES6 Features -->
+
 ## ES6 の機能
 
 <!-- The [ES6 section](/en/docs/es6/) describes the three ES6 feature groups, and details which features are enabled by default in Node.js, alongside explanatory links. It also shows how to find version of V8 shipped with a particular Node.js release. -->
 [ES6 のセクション](/ja/docs/es6/) では、ES6 の3つの機能について説明しており、それぞれの機能ごとのリンクと一緒に Node.js の標準で有効化されているかについて書いてあります。また、リリースされた Node.js のバージョンごとに組み込まれている V8 のバージョンを知るのにも利用することができます。
 
 <!-- ### Guides -->
+
 ## ガイド
 
 <!-- The [Guides section](/en/docs/guides/) has long-form, in-depth articles about Node.js technical features and capabilities. -->

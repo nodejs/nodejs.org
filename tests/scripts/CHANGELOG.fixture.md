@@ -45,6 +45,7 @@
 will be supported actively until April 2017 and maintained until April 2018.
 
 <a id="4.4.4"></a>
+
 ## 2016-05-05, Version 4.4.4 'Argon' (LTS), @thealphanerd
 
 ### Notable changes
@@ -66,6 +67,7 @@ will be supported actively until April 2017 and maintained until April 2018.
 * [[`72f9952516`](https://github.com/nodejs/node/commit/72f9952516)] - **deps**: upgrade openssl sources to 1.0.2h (Shigeki Ohtsu) [#6551](https://github.com/nodejs/node/pull/6551)
 
 <a id="4.4.3"></a>
+
 ## 2016-04-12, Version 4.4.3 'Argon' (LTS), @thealphanerd
 
 ### Notable Changes
@@ -133,6 +135,7 @@ will be supported actively until April 2017 and maintained until April 2018.
 * [[`f7eb48302c`](https://github.com/nodejs/node/commit/f7eb48302c)] - **win,build**: build and test add-ons on test-ci (Bogdan Lobor) [#5886](https://github.com/nodejs/node/pull/5886)
 
 <a id="4.4.2"></a>
+
 ## 2016-03-31, Version 4.4.2 'Argon' (LTS), @thealphanerd
 
 ### Notable Changes
@@ -190,6 +193,7 @@ will be supported actively until April 2017 and maintained until April 2018.
 * [[`3a901b0e3e`](https://github.com/nodejs/node/commit/3a901b0e3e)] - **tools**: remove unused imports (Sakthipriyan Vairamani) [#5765](https://github.com/nodejs/node/pull/5765)
 
 <a id="4.4.1"></a>
+
 ## 2016-03-22, Version 4.4.1 'Argon' (LTS), @thealphanerd
 
 This LTS release comes with 113 commits, 56 of which are doc related,
@@ -327,6 +331,7 @@ and 7 which are benchmark related.
 * [[`0e97a3ea51`](https://github.com/nodejs/node/commit/0e97a3ea51)] - **win,build**: support Visual C++ Build Tools 2015 (João Reis) [#5627](https://github.com/nodejs/node/pull/5627)
 
 <a id="4.4.0"></a>
+
 ## 2016-03-08, Version 4.4.0 'Argon' (LTS), @thealphanerd
 
 In December we announced that we would be doing a minor release in order to
@@ -591,6 +596,7 @@ Notable semver patch changes include:
 * [[`57a5f8731a`](https://github.com/nodejs/node/commit/57a5f8731a)] - **url**: change scoping of variables with let (Kári Tristan Helgason) [#4867](https://github.com/nodejs/node/pull/4867)
 
 <a id="4.3.2"></a>
+
 ## 2016-03-02, Version 4.3.2 'Argon' (LTS), @thealphanerd
 
 This is a security release with only a single commit, an update to openssl due to a recent security advisory. You can read more about the security advisory on [the Node.js website](https://nodejs.org/en/blog/vulnerability/openssl-march-2016/)
@@ -607,6 +613,7 @@ This is a security release with only a single commit, an update to openssl due t
 * [[`c133797d09`](https://github.com/nodejs/node/commit/c133797d09)] - **deps**: upgrade openssl to 1.0.2g (Ben Noordhuis) [#5507](https://github.com/nodejs/node/pull/5507)
 
 <a id="4.3.1"></a>
+
 ## 2016-02-16, Version 4.3.1 'Argon' (LTS), @thealphanerd
 
 ### Notable changes
@@ -693,6 +700,7 @@ This is a security release with only a single commit, an update to openssl due t
 * [[`720b03dca7`](https://github.com/nodejs/node/commit/720b03dca7)] - **tools**: add license-builder.sh to construct LICENSE (Rod Vagg) [#4194](https://github.com/nodejs/node/pull/4194)
 
 <a id="4.3.0"></a>
+
 ## 2016-02-09, Version 4.3.0 'Argon' (LTS), @jasnell
 
 This is an important security release. All Node.js users should consult the security release summary at nodejs.org for details on patched vulnerabilities.
@@ -718,6 +726,7 @@ Note that this release includes a non-backward compatible change to address a se
 * [[`da3750f981`](https://github.com/nodejs/node/commit/da3750f981)] - **(SEMVER-MAJOR)** **src**: add --security-revert command line flag (James M Snell)
 
 <a id="4.2.6"></a>
+
 ## 2016-01-21, Version 4.2.6 'Argon' (LTS), @TheAlphaNerd
 
 ### Notable changes
@@ -737,6 +746,7 @@ Note that this release includes a non-backward compatible change to address a se
 * [[`1f8e1472cc`](https://github.com/nodejs/node/commit/1f8e1472cc)] - **test**: add test for debugging one line files (cjihrig) [#4298](https://github.com/nodejs/node/pull/4298)
 
 <a id="4.2.5"></a>
+
 ## 2016-01-20, Version 4.2.5 'Argon' (LTS), @TheAlphaNerd
 
 Maintenance update.
@@ -963,6 +973,7 @@ Maintenance update.
 * [[`1bf84b9d41`](https://github.com/nodejs/node/commit/1bf84b9d41)] - **util,src**: allow lookup of hidden values (cjihrig) [#3988](https://github.com/nodejs/node/pull/3988)
 
 <a id="4.2.4"></a>
+
 ## 2015-12-23, Version 4.2.4 'Argon' (LTS), @jasnell
 
 Maintenance update.
@@ -1140,6 +1151,7 @@ Maintenance update.
 * [[`4733a60158`](https://github.com/nodejs/node/commit/4733a60158)] - **zlib**: pass kind to recursive calls to flush (Myles Borins) [#3534](https://github.com/nodejs/node/pull/3534)
 
 <a id="4.2.3"></a>
+
 ## 2015-12-04, Version 4.2.3 'Argon' (LTS), @rvagg
 
 Security Update
@@ -1168,6 +1180,7 @@ Security Update
 * [[`1c8e6de78e`](https://github.com/nodejs/node/commit/1c8e6de78e)] - **http**: fix pipeline regression (Fedor Indutny)
 
 <a id="4.2.2"></a>
+
 ## 2015-11-03, Version 4.2.2 'Argon' (LTS), @jasnell
 
 ### Notable changes
@@ -1262,6 +1275,7 @@ This is an LTS maintenance release that addresses a number of issues:
 * [[`0b32bbbf69`](https://github.com/nodejs/node/commit/0b32bbbf69)] - **v8**: pull fix for builtin code size on PPC (Michael Dawson) [#3474](https://github.com/nodejs/node/pull/3474)
 
 <a id="4.2.1"></a>
+
 ## 2015-10-13, Version 4.2.1 'Argon' (LTS), @jasnell
 
 ### Notable changes
@@ -1285,6 +1299,7 @@ This is an LTS maintenance release that addresses a number of issues:
 * [[`c245a199a7`](https://github.com/nodejs/node/commit/c245a199a7)] - **lib**: fix undefined timeout regression (Ryan Graham) [#3331](https://github.com/nodejs/node/pull/3331)
 
 <a id="4.2.0"></a>
+
 ## 2015-10-07, Version 4.2.0 'Argon' (LTS), @jasnell
 
 ### Notable changes
@@ -1370,6 +1385,7 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 * [[`b5c51fdba0`](https://github.com/nodejs/node/commit/b5c51fdba0)] - **util**: fix check for Array constructor (Evan Lucas) [#3119](https://github.com/nodejs/node/pull/3119)
 
 <a id="4.1.2"></a>
+
 ## 2015-10-05, Version 4.1.2 (Stable), @rvagg
 
 ### Notable changes
@@ -1438,6 +1454,7 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 * [[`d8ab4e185d`](https://github.com/nodejs/node/commit/d8ab4e185d)] - **util**: optimize promise introspection (Ben Noordhuis) [#3130](https://github.com/nodejs/node/pull/3130)
 
 <a id="4.1.1"></a>
+
 ## 2015-09-22, Version 4.1.1 (Stable), @rvagg
 
 ### Notable changes
@@ -1491,6 +1508,7 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 * [[`6ea8ec1c59`](https://github.com/nodejs/node/commit/6ea8ec1c59)] - **tools**: single, cross-platform tick processor (Matt Loring) [#2868](https://github.com/nodejs/node/pull/2868)
 
 <a id="4.1.0"></a>
+
 ## 2015-09-17, Version 4.1.0 (Stable), @Fishrock123
 
 ### Notable changes
@@ -1576,6 +1594,7 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 * [[`e035266805`](https://github.com/nodejs/node/commit/e035266805)] - **win,msi**: fix documentation shortcut url (Brian White) [#2781](https://github.com/nodejs/node/pull/2781)
 
 <a id="4.0.0"></a>
+
 ## 2015-09-08, Version 4.0.0 (Stable), @rvagg
 
 ### Notable changes

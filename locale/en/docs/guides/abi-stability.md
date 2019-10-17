@@ -6,6 +6,7 @@ layout: docs.hbs
 # ABI Stability
 
 ## Introduction
+
 An Application Binary Interface (ABI) is a way for programs to call functions
 and use data structures from other compiled programs. It is the compiled version
 of an Application Programming Interface (API). In other words, the headers files
@@ -37,6 +38,7 @@ that, upon compilation, the ABI does not change in a way that will render
 existing users of the ABI incompatible with the new version.
 
 ## ABI Stability in Node.js
+
 Node.js provides header files maintained by several independent teams. For
 example, header files such as `node.h` and `node_buffer.h` are maintained by
 the Node.js team. `v8.h` is maintained by the V8 team, which, although in close
@@ -52,6 +54,7 @@ Node.js will load successfully when loaded by any Node.js minor or patch version
 within the major version against which it was compiled.
 
 ## N-API
+
 Demand has arisen for equipping Node.js with an API that results in an ABI that
 remains stable across multiple Node.js major versions. The motivation for
 creating such an API is as follows:

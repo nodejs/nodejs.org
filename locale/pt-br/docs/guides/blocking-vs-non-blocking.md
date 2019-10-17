@@ -4,6 +4,7 @@ layout: docs.hbs
 ---
 
 <!-- # Overview of Blocking vs Non-Blocking -->
+
 # Visão geral sobre operações bloqueantes e não-bloqueantes
 
 <!-- This overview covers the **difference** between **blocking** and **non-blocking**
@@ -21,6 +22,7 @@ estes tópicos. É esperado que o leitor tenha um conhecimento básico de [padr�
 > e a rede suportada pela [libuv](http://libuv.org).
 
 <!-- ## Blocking -->
+
 ## Chamadas bloqueantes
 
 <!-- **Blocking** is when the execution of additional JavaScript in the Node.js
@@ -52,6 +54,7 @@ que, por definição, são **não-bloqueantes**, e aceitam funções de callback
 também tem suas versões **bloqueantes**, que possuem o sufixo `Sync` no nome.
 
 <!-- ## Comparing Code -->
+
 ## Comparando códigos
 
 <!-- **Blocking** methods execute **synchronously** and **non-blocking** methods

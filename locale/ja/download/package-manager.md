@@ -53,6 +53,7 @@ pacman -S nodejs npm
 [Node.js 公式のバイナリディストリビューション](https://github.com/nodesource/distributions/blob/master/README.md)が NodeSource によって提供されています。
 
 <!-- ## FreeBSD and OpenBSD -->
+
 ## FreeBSD と OpenBSD
 
 <!-- Node.js is available through the ports system. -->
@@ -134,6 +135,7 @@ pkgin -y install nodejs
 ```
 
 <!-- ## openSUSE and SLE -->
+
 ## <!--opensuse-and-sle-->openSUSE と SLE
 
 <!-- [Download Node.js via openSUSE one-click](http://software.opensuse.org/download.html?project=devel%3Alanguages%3Anodejs&package=nodejs). -->
@@ -198,6 +200,7 @@ cd pkgsrc/lang/nodejs && bmake install
 ```
 
 <!-- ## SmartOS and illumos -->
+
 ## <!--smartos-and-illumos-->SmartOS と illumos
 
 <!-- SmartOS images come with pkgsrc pre-installed. On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal: -->

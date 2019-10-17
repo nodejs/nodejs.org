@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News — September 11th
+
 Node.js v4.1.0 / io.js v3.3.1 are released
 
 ### Node.js v4.1.0 and io.js v3.3.1 Releases

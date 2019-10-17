@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 # io.js 2.3 releases
+
 This week we had one io.js release [v2.3.0](https://iojs.org/dist/v2.3.0/), complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
 
 ## Notable changes

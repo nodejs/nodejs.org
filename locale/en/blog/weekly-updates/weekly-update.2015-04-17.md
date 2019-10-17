@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 # io.js 1.7 releases
+
 This week we had two io.js releases [v1.7.0](https://iojs.org/dist/v1.7.0/) and [v1.7.1](https://iojs.org/dist/v1.7.1/), complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
 
 ## Notable changes

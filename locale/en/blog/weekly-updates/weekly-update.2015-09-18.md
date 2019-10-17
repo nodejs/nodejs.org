@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News — September 18th
+
 Node.js v4.1.1 is released
 
 ### Node.js v4.1.1 Releases

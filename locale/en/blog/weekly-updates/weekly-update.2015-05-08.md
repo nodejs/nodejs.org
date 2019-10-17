@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 # io.js 2.0 releases
+
 This week we had two io.js releases [v2.0.0](https://iojs.org/dist/v2.0.0/) and [v2.0.1](https://iojs.org/dist/v2.0.1/), complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
 
 ## Notable changes
@@ -68,6 +69,7 @@ Full details at https://github.com/nodejs/node/wiki/Breaking-Changes#200-from-1x
 _Note: a new version of the 'url' module was reverted prior to release as it was decided the potential for breakage across the npm ecosystem was too great and that more compatibility work needed to be done before releasing it. See [#1602](https://github.com/nodejs/node/pull/1602) for further information._
 
 ## Known issues
+
 See https://github.com/nodejs/node/labels/confirmed-bug for complete and current list of known issues.
 
 * Some problems with unreferenced timers running during `beforeExit` are still to be resolved. See [#1264](https://github.com/nodejs/node/issues/1264).

@@ -59,6 +59,7 @@ Collaborators and given commit-access to the project. These
 individuals are identified by the TSC and their addition as
 Collaborators is discussed during the weekly TSC meeting.
 -->
+
 ## 협업자
 
 TSC와 TSC가 지속적으로 추가한 협업자들이
@@ -132,6 +133,7 @@ membership beyond these rules.
 
 The TSC may add additional members to the TSC by a standard TSC motion.
 -->
+
 ## TSC 멤버십
 
 TSC 멤버십은 기간 제한이 없고 TSC에 인원 제한도 없습니다. 하지만, 전문성과 균형을 가진 채
@@ -178,6 +180,7 @@ The intention of the agenda is not to approve or review all patches.
 That should happen continuously on GitHub and be handled by the larger
 group of Collaborators.
 -->
+
 ## TSC 회의
 
 TSC는 구글 행아웃으로 매주 만납니다. TSC가 승인해서 선정한 중재자가 회의를 주최합니다.
@@ -239,6 +242,7 @@ either a closing vote or a vote to table the issue to the next
 meeting. The call for a vote must be approved by a majority of the TSC
 or else the discussion will continue. Simple majority wins.
 -->
+
 ## 합의점을 찾는 과정
 
 TSC는 [합의점 찾기](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making) 의사결정 모델을 따릅니다.

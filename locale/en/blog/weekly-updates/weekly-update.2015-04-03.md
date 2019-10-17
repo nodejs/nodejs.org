@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 # io.js 1.6.3 release
+
 This week we had one io.js release [v1.6.3](https://iojs.org/dist/v1.6.3/), complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
 
 ## Notable changes

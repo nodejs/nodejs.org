@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### io.js and Node.js News — August 28th
+
 io.js v3.2.0/v3.3.0 and Node v4 evangelism, nodejs.org, nodefest/empirenode event.
 
 ### io.js 3.2 and 3.3 Releases

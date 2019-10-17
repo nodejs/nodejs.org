@@ -12,7 +12,9 @@ twice per year to make important decisions while also being able to work on some
 exciting efforts they want to push forward in-person.
 
 -->
+
 # コラボレーションサミット
+
 コラボレーションサミットは、活発なコラボレーション、教育、および知識の共有で Node.js について議論するために
 現在および将来のコントリビュータを集めるためのアンカンファレンスです。
 委員会とワーキンググループは年に2回集まり、
@@ -39,6 +41,7 @@ for upcoming and past Collab Summits and have a look at the
 individual working groups and committees are looking to discuss in-person.
 
 -->
+
 ## 誰が参加しますか？
 
 コラボレーションサミットにはだれもが参加できます。

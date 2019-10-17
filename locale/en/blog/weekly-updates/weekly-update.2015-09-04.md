@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News — September 4th
+
 Node.js v4.0.0 is released
 
 ### Node.js v4.0.0

@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News — October 30th
+
 Node.js v5.0.0 (Current) is released
 
 ### Node.js v5.0.0 (Current) Releases

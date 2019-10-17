@@ -6,6 +6,7 @@ layout: contribute.hbs
 <!--
 # Get Involved
 -->
+
 # 참여하기
 
 <!--
@@ -19,6 +20,7 @@ layout: contribute.hbs
 * [Node.js Collection](https://medium.com/the-node-js-collection) is a collection of community-curated content on Medium.
 * The [Community Committee](https://github.com/nodejs/community-committee) is a top-level committee in the Node.js Foundation focused on community-facing efforts.
 -->
+
 ## 커뮤니티 논의
 
 * [GitHub 이슈 목록](https://github.com/nodejs/node/issues)에서 Node.js 코어 기능에 대한 논의가 이루어집니다.
@@ -38,6 +40,7 @@ layout: contribute.hbs
 * [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
 * [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
 -->
+
 ## 알아보기
 
 * [공식 API 레퍼런스 문서](https://nodejs.org/api/)는 Node.js API에 대해 설명합니다.
@@ -57,6 +60,7 @@ layout: contribute.hbs
 * [Spanish language Facebook group for Node.js](https://www.facebook.com/groups/node.es/)
 * [Vietnamese Node.js community](https://www.facebook.com/nodejs.vn/)
 -->
+
 ## 국제 커뮤니티 사이트 및 프로젝트
 
 * [중국 커뮤니티](https://cnodejs.org/)

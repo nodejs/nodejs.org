@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ## io.js Releases 1.3.0
+
 Notable changes include:
 
 * **url**: `url.resolve('/path/to/file', '.')` now returns `/path/to/` with the trailing slash, `url.resolve('/', '.')` returns `/` [#278](https://github.com/nodejs/node/pull/278) (Amir Saboury)

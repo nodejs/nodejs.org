@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News — December 11st
+
 Node v5.2.0 (Current) is released
 
 ### Node.js v5.2.0 (Current) Releases

@@ -9,9 +9,11 @@ layout: blog-post.hbs
 ---
 
 ### io.js and Node.js News — August 14th
+
 The move of nodejs/io.js to nodejs/node, the Collaborator Summit, and more.
 
 ### nodejs/io.js has moved to nodejs/node!
+
 [Rod Vagg](http://twitter.com/rvagg) made a [proposal](https://github.com/nodejs/node/issues/2327) regarding the convergence work between io.js and Node.js earlier this week, and one of them is about renaming the nodejs/io.js repository to [nodejs/node](https://github.com/nodejs/node). A decision has been made, and [nodejs/node](https://github.com/nodejs/node) is our new home!
 
 With the new repository name, io.js v3.x will be our last major version of io.js as the next (v4.x) will be Node.js v4.x.

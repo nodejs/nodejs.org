@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 # io.js and Node.js News
+
 This week we have one io.js [release v2.3.1](https://github.com/nodejs/node/blob/master/CHANGELOG.md#2015-06-23-version-231-rvagg), complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
 
 ## Notable changes

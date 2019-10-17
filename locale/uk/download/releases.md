@@ -5,6 +5,7 @@ modules: "<code>NODE_MODULE_VERSION</code> refers to the ABI (application binary
 ---
 
 ### io.js та Node.js
+
 Релізи від 1.x до 3.x називались "io.js", оскільки вони були частиною форку io.js. Node.js 4.0.0 є загальним релізом io.js об'єднаного з Node.js 0.12.x у спільні релізи Node.js.
 
 <div class="highlight-box">

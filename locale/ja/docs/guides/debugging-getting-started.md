@@ -9,6 +9,7 @@ layout: docs.hbs
 This guide will help you get started debugging your Node.js apps and scripts.
 
 -->
+
 # デバッグガイド
 
 このガイドは、Node.js アプリケーションとスクリプトのデバッグを開始するのに役立ちます。
@@ -31,6 +32,7 @@ activate the Inspector API.
 
 ---
 -->
+
 ## インスペクタを有効にする
 
 `--inspect` スイッチを指定して起動すると、Node.js プロセスはデバッグクライアントを待機します。
@@ -56,6 +58,7 @@ code on behalf of the Node process. It is important to understand the security
 implications of exposing the debugger port on public and private networks.
 
 -->
+
 ## セキュリティへの影響
 
 デバッガは Node.js 実行環境にフルアクセスできるため、
@@ -80,6 +83,7 @@ See the section on '[Enabling remote debugging scenarios](#enabling-remote-debug
 to safely allow remote debugger clients to connect.
 
 -->
+
 ### デバッグポートを公開するのは危険です
 
 デバッガがパブリック IP アドレス、または 0.0.0.0 にバインドされている場合、
@@ -103,6 +107,7 @@ running locally on your machine will have unrestricted access. This is by design
 to allow local debuggers to be able to attach conveniently.
 
 -->
+
 ### ローカルアプリケーションはインスペクタにフルアクセスできます
 
 インスペクタポートを 127.0.0.1 (デフォルト) にバインドしても、
@@ -125,6 +130,7 @@ specifying the hostname. You can work-around this restriction by specifying
 either the IP address or by using ssh tunnels as described below.
 
 -->
+
 ### ブラウザ、WebSocket、および同一生成元ポリシー
 
 Web ブラウザで開かれた Web サイトは、ブラウザセキュリティモデルの下で
@@ -146,6 +152,7 @@ Several commercial and open source tools can connect to Node's Inspector. Basic
 info on these follows:
 
 -->
+
 ## インスペクタクライアント
 
 一部の商用およびオープンソースのツールが Node の Inspector に接続できます。
@@ -160,6 +167,7 @@ info on these follows:
   and used with `node-inspect myscript.js`.
 
 -->
+
 ### [node-inspect](https://github.com/nodejs/node-inspect)
 
 * [Inspector プロトコル][]を使用する Node.js Foundation によってサポートされている CLI デバッガ
@@ -176,6 +184,7 @@ info on these follows:
   (see above) or the --inspect hint text and paste into Chrome.
 
 -->
+
 ### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
 
 * **オプション 1**: Chromium ベースのブラウザで `chrome://inspect` を開きます。設定ボタンをクリックして、ターゲットホストとポートが表示されていることを確認します。
@@ -188,6 +197,7 @@ info on these follows:
   Select "Node.js" for initial setup.
 
 -->
+
 ### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
 
 * デバッグパネルで、設定アイコンをクリックして `.vscode/launch.json` を開きます。初期設定は "Node.js" を選択してください
@@ -199,6 +209,7 @@ info on these follows:
 * [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging).
 
 -->
+
 ### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
 
 * メニューから "デバッグ > デバッグの開始" を選択するか、F5 を押します
@@ -212,6 +223,7 @@ info on these follows:
   the IDE Registry.
 
 -->
+
 ### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ と他の JetBrains IDE
 
 * 新しい Node.js デバッグ設定を作成して Debug をクリックします。Node.js 7 以降の場合、`--inspect` がデフォルトで使用されます。IDE レジストリで `js.debugger.node.use.inspect` のチェックを外します
@@ -222,6 +234,7 @@ info on these follows:
 * Library to ease connections to Inspector Protocol endpoints.
 
 -->
+
 ### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 
 * Inspector Protocol エンドポイントへの接続を容易にするためのライブラリ
@@ -234,6 +247,7 @@ info on these follows:
 ---
 
 -->
+
 ### [Gitpod](https://www.gitpod.io)
 
 * `Debug` ビュー から Node.js デバッグ設定を開始するか、`F5` を押します。[詳しい説明](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
@@ -311,6 +325,7 @@ The following table lists the impact of various runtime flags on debugging:
 ---
 
 -->
+
 ## コマンドラインオプション
 
 次の表は、デバッグ時のさまざまなランタイムフラグの影響を示しています。
@@ -456,6 +471,7 @@ couple popular ones are listed below.
 The V8 Debugging Protocol is no longer maintained or documented.
 
 -->
+
 ## レガシーデバッガ
 
 **レガシーデバッガは Node 7.7.0 の時点で非推奨になりました。代わりに --inspect と Inspector を使ってください。**
@@ -477,6 +493,7 @@ the `--debug-brk` option, and the initial Node process runs the `_debugger.js`
 script and connects to your target.
 
 -->
+
 ### [組み込みデバッガ](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
 
 Node の組み込みコマンドラインデバッガの下でスクリプトを起動するには、
@@ -492,6 +509,7 @@ which translates the Inspector Protocol used in Chromium to the V8 Debugger
 protocol used in Node.js.
 
 -->
+
 ### [node-inspector](https://github.com/node-inspector/node-inspector)
 
 Chromium で使用されるインスペクタプロトコルを

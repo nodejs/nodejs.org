@@ -95,6 +95,7 @@ layout: contribute.hbs
 * معلومات الاتصال بالمنظم -
 
 #### ريو غراندي دو سول
+
 ##### بورتو آليغري
 
 * [اللقاء](https://www.meetup.com/Node-js-Porto-Alegre-Meetup/)

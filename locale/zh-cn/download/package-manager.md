@@ -53,6 +53,7 @@ If your title has non-English characters, please
 put your anchor name into the comment symbol before
 your real title.
 -->
+
 ## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages--> 基于 Linux 的 Debian 和 Ubuntu 发行版，Enterprise Linux/Fedora 和 Snap packages
 
 [Node.js 官方二进制发行版](https://github.com/nodesource/distributions/blob/master/README.md) 由 NodeSource 提供。
@@ -108,6 +109,7 @@ pkgin -y install nodejs
 ```
 
 ## nvm
+
 Node 版本管理器是一个用于管理多个已发布的 Node.js 不同版本的 bash 脚本。它允许你执行诸如“安装”、“卸载”以及“版本切换”等诸多功能。
 使用 [安装脚本](https://github.com/creationix/nvm#install-script) 安装 nvm。
 

@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 # io.js 2.0 release candidate
+
 This week we had one io.js nightly release [v2.0](https://iojs.org/download/nightly/v2.0.0-nightly20150501b4ad5d7050/), complete changelog will be found soon [on GitHub](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
 
 ## Community Updates

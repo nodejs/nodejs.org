@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News — January 1st
+
 Node.js Node v4.2.4 (LTS) is released
 
 ### Node.js Node v4.2.4 (LTS) Releases

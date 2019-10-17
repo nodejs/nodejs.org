@@ -14,6 +14,7 @@ basic understanding of the JavaScript language and Node.js callback pattern.
 > "I/O" refers primarily to interaction with the system's disk and
 > network supported by [libuv](https://libuv.org/).
 -->
+
 # 블로킹과 논블로킹 살펴보기
 
 이 글에서는 Node.js에서 **블로킹**과 **논블로킹** 호출의 차이점을 다룹니다. 이벤트 루프와

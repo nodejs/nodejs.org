@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### io.js and Node.js News — July 10th
+
 Security patches for io.js 1.8 and 2.3 and upcoming events.
 
 ### io.js 1.8 and 2.3 Releases

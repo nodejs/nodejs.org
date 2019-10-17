@@ -23,6 +23,7 @@ earlier, this activates the legacy Debugger API. In Node.js 8 and later, it will
 activate the Inspector API.
 
 ---
+
 ## Security Implications
 
 Since the debugger has full access to the Node.js execution environment, a

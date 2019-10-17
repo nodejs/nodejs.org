@@ -16,6 +16,7 @@ layout: docs.hbs
 如果收到了 `SIGUSR1` 信号 (`SIGUSR1` 在 Windows 下不可用)，Node.js 同样会开始侦听调试信息；在 Node.js 7 以及先前的版本中，这将激活遗留版本的调试 API（legacy Debugger API）；在 Node.js 8 和后续版本中，将激活检查器 API（Inspector API）。
 
 ---
+
 ## 安全含义
 
 由于调试器对 Node.js 执行环境具有完全访问权限，所以能够连接到该端口的恶意角色可以执行任意操作。代码代表节点进程。理解将调试器端口暴露在公共和专用网络上所受影响的安全性是很重要的。

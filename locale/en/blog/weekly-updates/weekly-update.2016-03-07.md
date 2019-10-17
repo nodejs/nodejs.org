@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News
+
 Node v0.10.43 (Maintenance), Node v0.12.11 (LTS), Node v5.7.1 (Current) and Node v4.3.2 (LTS) are released.
 
 ### Node v0.10.43 (Maintenance), Node v0.12.11 (LTS), Node v5.7.1 (Current) and Node v4.3.2 (LTS) Releases

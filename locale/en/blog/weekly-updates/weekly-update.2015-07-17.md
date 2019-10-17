@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### io.js and Node.js News — July 17th
+
 io.js 2.4.0 is released, Apigee joined our foundation and Intl WG start.
 
 ### io.js 2.4 Release

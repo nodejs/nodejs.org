@@ -38,6 +38,7 @@ Node.js Foundation Board of
 Directors?”](https://medium.com/@nodejs/whats-it-like-being-on-the-node-js-foundation-board-of-directors-f9456b8b7c4d).
 
 ### What does the Board of Directors do?
+
 The Board meets every month to approve resolutions and discuss Node.js
 Foundation administrative matters. This includes legal considerations, budgeting
 and approving Foundation-led conferences and other initiatives. Technical
@@ -47,6 +48,7 @@ The current board members are listed
 [here](https://foundation.nodejs.org/board).
 
 ### Who is running for the Individual Membership Director seat?
+
 Read more about why our candidates are running below.
 
 * William Kapke [@williamkapke](https://github.com/williamkapke)
@@ -65,10 +67,12 @@ Read more about why our candidates are running below.
 * The election will close **January 30th at 17:00 UTC**.
 
 ### How do I vote?
+
 You must be an Individual Member of the Node.js Foundation to cast a vote. If
 you are a member, you can vote [NOW](https://vote.linuxfoundation.org)!
 
 ### How do I become a member?
+
 Individual membership costs [$100 a year, or $25 for students](https://identity.linuxfoundation.org/pid/99).
 Contributors to the Node.js project, including all Working Groups and
 sub-projects, are eligible for free membership. Please

@@ -105,6 +105,7 @@ pkgin -y install nodejs
 ```
 
 ## nvm
+
 Node 版本管理器（Node Version Manager, nvm）是款用來管理 Node.js 多重版本的 bash 腳本，它可讓你執行安裝、移除及切換版本等操作。
 若要安裝 NVM 可以使用此[安裝腳本](https://github.com/creationix/nvm#install-script)。
 

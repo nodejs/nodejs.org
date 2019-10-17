@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News — November 27th
+
 Node v0.12.8 (LTS) is released
 
 ### Node v0.12.8 (LTS) Releases

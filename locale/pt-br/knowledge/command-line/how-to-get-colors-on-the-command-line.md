@@ -63,7 +63,9 @@ A última coisa para tomar nota é a última linha do _script_ exemplo. Enquanto
 
 <!-- ### Using `colors` without changing `String.prototype`
 Now an instance of `colors` can also be used. Though this approach is slightly less nifty but is beginner friendly and is specially useful if you don't want to touch `String.prototype`. Some example of this are: -->
+
 ### Usando `colors` sem alterar `String.prototype`
+
 Agora uma instânia de `colors` também pode ser usada. Embora esta abordagem seja menos engenhosa, é amigável à iniciantes e é especialmente útil se você não deseja alterar `String.prototype`. Alguns exemplos disto são:
 
 ```js
@@ -116,6 +118,7 @@ Uma última coisa: as cores podem ser vistas em tons bastante diferentes em dife
 Para referência, aqui está a lista completa de cores disponíveis em `colors.js`.
 
 <!-- ### text colors -->
+
 ### cores de texto
 
 * black
@@ -130,6 +133,7 @@ Para referência, aqui está a lista completa de cores disponíveis em `colors.j
 * grey
 
 <!-- ### background colors -->
+
 ### cores de fundo
 
 * bgBlack
@@ -142,6 +146,7 @@ Para referência, aqui está a lista completa de cores disponíveis em `colors.j
 * bgWhite
 
 <!-- ### styles -->
+
 ### estilos
 
 * reset
@@ -154,6 +159,7 @@ Para referência, aqui está a lista completa de cores disponíveis em `colors.j
 * strikethrough
 
 <!-- ### extras -->
+
 ### extras
 
 * rainbow

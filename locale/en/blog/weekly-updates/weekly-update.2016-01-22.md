@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News
+
 Node v4.2.6 (LTS), Node v5.5.0 (Current), Node v4.2.5 (LTS) are released
 
 ### Nominations for the 2016 election

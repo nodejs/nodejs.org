@@ -17,6 +17,7 @@ layout: contribute.hbs
 * The [Community Committee](https://github.com/nodejs/community-committee) is a top-level committee in the Node.js Foundation focused on community-facing efforts.
 
 -->
+
 # 参加する
 
 ## コミュニティディスカッション
@@ -39,6 +40,7 @@ layout: contribute.hbs
 * [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
 
 -->
+
 ## 学習
 
 * [公式 API リファレンスドキュメント](https://nodejs.org/api/) は、Node.js API の詳細を説明しています。
@@ -59,6 +61,7 @@ layout: contribute.hbs
 * [Vietnamese Node.js community](https://www.facebook.com/nodejs.vn/)
 
 -->
+
 ## インターナショナルコミュニティサイトとプロジェクト
 
 * [中国コミュニティ](https://cnodejs.org/)

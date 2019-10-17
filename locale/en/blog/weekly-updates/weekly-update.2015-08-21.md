@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### io.js and Node.js News — August 21st
+
 io.js v3.1.0 and the v0.12 LTS plan, ARM build, nodeday event.
 
 ### io.js v3.1.0 Release

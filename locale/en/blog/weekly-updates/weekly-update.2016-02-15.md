@@ -9,9 +9,11 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News
+
 Node v0.10.42 (LTS), Node v0.12.10 (LTS), Node v4.3.0 (LTS) and Node v5.6.0 (Current) are released.
 
 ### February 2016 Security Release Summary
+
 We had released Node.js [v0.10.42 (Maintenance)](/en/blog/release/v0.10.42/), [v0.12.10 (LTS)](/en/blog/release/v0.12.10/), [v4.3.0 "Argon" (LTS)](/en/blog/release/v4.3.0/) and [v5.6.0 (Current)](/en/blog/release/v5.6.0/) with fixes for the announced vulnerabilities and updates to OpenSSL.
 
 **Please note that our LTS "Argon" release line has moved from v4.2.x to v4.3.x due to the security fixes enclosed. There will be no further updates to v4.2.x.** Users are advised to upgrade to v4.3.0 as soon as possible.

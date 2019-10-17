@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News — October 2nd
+
 Node.js v4.1.2 release proposal
 
 ### Node.js v4.1.2 Release proposal

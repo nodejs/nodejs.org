@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News — October 16th
+
 Node.js v4.2.1 (LTS), v4.2.0 (LTS) are released
 
 ### Node.js v4.2.1 (LTS) and v4.2.0 (LTS) Releases

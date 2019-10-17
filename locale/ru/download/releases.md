@@ -5,6 +5,7 @@ modules: "<code>NODE_MODULE_VERSION</code> относится к номеру в
 ---
 
 ### io.js & Node.js
+
 Релизы от 1.x до 3.x выходили под именем "io.js", так как они были частью форка io.js. Начиная с Node.js 4.0.0, предыдущие версии io.js перешли с Node.js 0.12.x в унифицированные версии Node.js.
 
 <div class="highlight-box">

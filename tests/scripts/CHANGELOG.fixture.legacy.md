@@ -38,6 +38,7 @@
 will be maintained until December 31st, 2016.
 
 <a id="0.12.14"></a>
+
 ## 2016-05-06, Version 0.12.14 (Maintenance), @rvagg
 
 ### Notable changes:
@@ -61,6 +62,7 @@ will be maintained until December 31st, 2016.
 * [810fb211a7] - tools: remove obsolete npm test-legacy command (Kat Marchán) https://github.com/nodejs/node/pull/5988
 
 <a id="0.12.13"></a>
+
 ## 2016-03-31, Version 0.12.13 (LTS), @rvagg
 
 ### Notable changes
@@ -78,6 +80,7 @@ will be maintained until December 31st, 2016.
 * [ff2bed6e86] - win,build: support Visual C++ Build Tools 2015 (João Reis) https://github.com/nodejs/node/pull/5627
 
 <a id="0.12.12"></a>
+
 ## 2016-03-08, Version 0.12.12 (LTS), @rvagg
 
 ### Notable changes:
@@ -91,6 +94,7 @@ Note that the upgrade to OpenSSL 1.0.1s in Node.js v0.12.11 removed internal SSL
 * [dbfc9d9241] - crypto,tls: remove SSLv2 support (Ben Noordhuis) https://github.com/nodejs/node/pull/5536
 
 <a id="0.12.11"></a>
+
 ## 2016-03-03, Version 0.12.11 (LTS), @rvagg
 
 ### Notable changes:
@@ -122,6 +126,7 @@ Note that the upgrade to OpenSSL 1.0.1s in Node.js v0.12.11 removed internal SSL
 * [da66166b9a] - test: fix test-domain-exit-dispose-again (Julien Gilli) https://github.com/nodejs/node/pull/3991
 
 <a id="0.12.10"></a>
+
 ## 2016-02-09, Version 0.12.10 (LTS), @jasnell
 
 This is an important security release. All Node.js users should consult the security release summary at nodejs.org for details on patched vulnerabilities.
@@ -150,6 +155,7 @@ This is an important security release. All Node.js users should consult the secu
 * [f41a3c73e7] - tools: backport tools/install.py for headers (Richard Lau) https://github.com/nodejs/node/pull/4149
 
 <a id="0.12.9"></a>
+
 ## 2015-12-04, Version 0.12.9 (LTS), @rvagg
 
 Security Update
@@ -165,6 +171,7 @@ Security Update
 * [dfc6f4a9af] - http: fix pipeline regression (Fedor Indutny)
 
 <a id="0.12.8"></a>
+
 ## 2015.11.25, Version 0.12.8 (LTS), @rvagg
 
 * [d9399569bd] - build: backport tools/release.sh (Rod Vagg) https://github.com/nodejs/node/pull/3642
@@ -240,6 +247,7 @@ Security Update
 * [b8d47a7b6f] - fix (Fedor Indutny) https://github.com/nodejs/node-v0.x-archive/pull/25739
 
 <a id="0.12.7"></a>
+
 ## 2015-07-09, Version 0.12.7 (Stable)
 
 ### Commits
@@ -250,6 +258,7 @@ Security Update
 * [[`18d413d299`](https://github.com/nodejs/node/commit/18d413d299)] - **win,msi**: create npm folder in AppData directory (Steven Rockarts) [#8838](https://github.com/joyent/node/pull/8838)
 
 <a id="0.12.6"></a>
+
 ## 2015-07-03, Version 0.12.6 (Stable)
 
 ### Notable changes
@@ -261,6 +270,7 @@ Security Update
 * [[`78b0e30954`](https://github.com/nodejs/node/commit/78b0e30954)] - **deps**: fix out-of-band write in utf8 decoder (Fedor Indutny)
 
 <a id="0.12.5"></a>
+
 ## 2015-06-22, Version 0.12.5 (Stable)
 
 ### Commits
@@ -275,6 +285,7 @@ Security Update
 * [[`e7c84f82c7`](https://github.com/nodejs/node/commit/e7c84f82c7)] - **windows**: broadcast WM_SETTINGCHANGE after install (Mathias Küsel) [#25100](https://github.com/joyent/node/pull/25100)
 
 <a id="0.12.4"></a>
+
 ## 2015-05-22, Version 0.12.4 (Stable)
 
 ### Commits
@@ -284,6 +295,7 @@ Security Update
 * [[`3122052890`](https://github.com/nodejs/node/commit/3122052890)] - **win**: bring back xp/2k3 support (Bert Belder) [#25367](https://github.com/joyent/node/pull/25367)
 
 <a id="0.12.3"></a>
+
 ## 2015-05-13, Version 0.12.3 (Stable)
 
 ### Commits
@@ -300,6 +312,7 @@ Security Update
 * [[`f99eaefe75`](https://github.com/nodejs/node/commit/f99eaefe75)] - **src**: fix backport of SIGINT crash fix on FreeBSD (Julien Gilli) [#14819](https://github.com/joyent/node/pull/14819)
 
 <a id="0.12.2"></a>
+
 ## 2015-03-31, Version 0.12.2 (Stable)
 
 ### Commits
@@ -328,6 +341,7 @@ Security Update
 * [[`7e9d2f8de8`](https://github.com/nodejs/node/commit/7e9d2f8de8)] - **watchdog**: fix timeout for early polling return (Saúl Ibarra Corretgé) [#9410](https://github.com/joyent/node/pull/9410)
 
 <a id="0.12.1"></a>
+
 ## 2015-03-23, Version 0.12.1 (Stable)
 
 ### Commits
@@ -335,6 +349,7 @@ Security Update
 * [[`3b511a8ccd`](https://github.com/nodejs/node/commit/3b511a8ccd)] - **openssl**: upgrade to 1.0.1m (Addressing multiple CVES)
 
 <a id="0.12.0"></a>
+
 ## 2015-02-06, Version 0.12.0 (Stable)
 
 ### Commits

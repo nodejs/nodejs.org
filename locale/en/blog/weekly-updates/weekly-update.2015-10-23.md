@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News — October 23rd
+
 Node.js v5.0.0 release proposal
 
 ### Node.js v5.0.0 release proposal

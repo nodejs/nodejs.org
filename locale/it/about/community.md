@@ -4,6 +4,7 @@ layout: about.hbs
 ---
 
 # Community Committee (Commissione Community)
+
 La commissione della Community (CommComm) è una commissione di primaria importanza nella Fondazione Node.js. La CommComm ha autorità sulle iniziative della comunità esterna, incluse:
 
 * Community [Evangelism](https://github.com/nodejs/evangelism)

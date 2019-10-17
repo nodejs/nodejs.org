@@ -26,6 +26,7 @@ It will find all the potentially unsafe places in your own code (with some consi
 exceptions).
 
 -->
+
 ### `grep` を使って問題のあるコードを見つける
 
 `grep -nrE '[^a-zA-Z](Slow)?Buffer\s*\(' --exclude-dir node_modules` を実行するだけです。
@@ -69,6 +70,7 @@ overridden e.g. with a polyfill, so recommended is a combination of this and som
 described above.
 
 -->
+
 ### リンターを使用して問題のあるコードを見つける
 
 ESLint の規則 [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer-constructor)
@@ -225,6 +227,7 @@ const buf = Buffer.alloc ? Buffer.alloc(number) : new Buffer(number).fill(0);
 ```
 
 -->
+
 ## <!--variant-3-->Variant 3 — セーフガード付きの手動検出
 
 これは、少数の場所 (たとえば1か所) だけで `Buffer` インスタンスを作成する場合、
@@ -313,6 +316,7 @@ _Note that the same applies to `new Buffer()` usage without zero-filling, depend
 version (and lacking type checks also adds DoS to the list of potential problems)._
 
 -->
+
 ## `Buffer.allocUnsafe()` について
 
 `Buffer.allocUnsafe()` を使用するときは特に注意してください:

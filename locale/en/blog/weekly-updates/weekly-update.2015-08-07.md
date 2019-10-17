@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### io.js and Node.js News — August 7th
+
 io.js v3.0 and the new goodness, breaking changes, and our ongoing call for an LTS build V8 maintainer.
 
 ### io.js v3.0 Release

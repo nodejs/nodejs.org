@@ -54,6 +54,7 @@ You can think of your terminal saying to itself, "Make this green. No, make this
 The last thing to note is the final line of the example script. While a color code was set previously, a 'bold' code was not, so the example was made bold, but not given a different color.
 
 ### Using `colors` without changing `String.prototype`
+
 Now an instance of `colors` can also be used. Though this approach is slightly less nifty but is beginner friendly and is specially useful if you don't want to touch `String.prototype`. Some example of this are:
 
 ```js
