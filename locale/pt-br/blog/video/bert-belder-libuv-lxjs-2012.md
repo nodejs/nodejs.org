@@ -6,7 +6,7 @@ date: 2012-09-30T17:28:45.000Z
 layout: blog-post.hbs
 ---
 
-Bert Belder, Desenvovedor do núcleo Node, deu uma palestra no
+Bert Belder, Desenvovedor do core do Node, deu uma palestra no
 [LXJS](http://2012.lxjs.org/). Se você estiver interessado em como Node faz
 I/O assíncrona entre plataformas, então você deveria assistir a
 este vídeo.

@@ -8,7 +8,7 @@ slug: bryan-cantrill-instrumenting-the-real-time-web
 layout: blog-post.hbs
 ---
 
-Bryan Cantrill, VP de Engenharia na Joyent, fala sobre os desafios de trabalhar em um sistema distribuído, dinâmico e altamente virtualizado - e também fala sobre o que essas experiências lhe ensinou, tecnologias utilizadas e abordagens promissoras.
+Bryan Cantrill, VP de Engenharia na Joyent, fala sobre os desafios de trabalhar em um sistema distribuído, dinâmico e altamente virtualizado - e também fala sobre o que essas experiências lhe ensinaram, tecnologias utilizadas e abordagens promissoras.
 
 Esta palestra foi dada no Velocity Conf em 2011.
 

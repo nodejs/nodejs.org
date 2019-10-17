@@ -8,7 +8,7 @@ slug: welcome-to-the-node-blog
 layout: blog-post.hbs
 ---
 
-Desde Livejournal começou ser considerado como spam russo, eu estou movendo meu blog técnico para <http://blog.nodejs.org/>. Espero fazer pequenos artigos frequentemente sobre o que está acontecendo no desenvolvimento do Node como também outros artigos dos desenvolvedores do núcleo Node. Por favor, assine o feed RSS.
+Desde que o Livejournal começou ser considerado como spam russo, eu estou movendo meu blog técnico para <http://blog.nodejs.org/>. Espero fazer pequenos artigos frequentemente sobre o que está acontecendo no desenvolvimento do Node como também outros artigos dos desenvolvedores do core do Node. Por favor, assine o feed RSS.
 
 Para evitar que este post completamente desprovido de conteúdo, aqui é um novo vídeo de uma palestra que dei no grupo SF PHP produzido por [Marakana](http://marakana.com/forums/java/general/278.html):
 
