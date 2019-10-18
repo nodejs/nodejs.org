@@ -30,7 +30,7 @@ This section is a highlight of the most notable changes, as selected from all "[
     * Now shipping npm 6.10.3, and all previous updates since the latest version of npm that shipped in Node.js v10 LTS.
     * For more details, see the [npm releases' changelog](https://github.com/npm/cli/releases).
   * OpenSSL
-    * Now shipping OpenSSL 1.1.1c, and all previous updates since the latest version of OpenSSL that shipped in Node.js v10 LTS.
+    * Now shipping OpenSSL 1.1.1d, and all previous updates since the latest version of OpenSSL that shipped in Node.js v10 LTS.
     * For more details, see the [OpenSSL releases' changelog](https://www.openssl.org/news/changelog.html)
   * V8
     * Now shipping V8 7.7.299.13, and all previous updates since the latest version of V8 that shipped in Node.js v10 LTS.
