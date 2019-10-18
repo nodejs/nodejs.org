@@ -27,7 +27,7 @@ This section is a highlight of the most notable changes, as selected from all "[
   * libuv
     * Now shipping libuv 1.32.0, and all previous updates since the latest version of libuv that shipped in Node.js v10 LTS.
   * npm
-    * Now shipping npm 6.10.3, and all previous updates since the latest version of npm that shipped in Node.js v10 LTS.
+    * Now shipping npm 6.12.0, and all previous updates since the latest version of npm that shipped in Node.js v10 LTS.
     * For more details, see the [npm releases' changelog](https://github.com/npm/cli/releases).
   * OpenSSL
     * Now shipping OpenSSL 1.1.1d, and all previous updates since the latest version of OpenSSL that shipped in Node.js v10 LTS.
