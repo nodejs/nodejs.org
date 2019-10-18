@@ -25,7 +25,7 @@ This section is a highlight of the most notable changes, as selected from all "[
   * Added brotli support (Anna Henningsen and Zach Vacura) [#24938](https://github.com/nodejs/node/pull/24938)
 * **deps**:
   * libuv
-    * Now shipping libuv 1.31.0, and all previous updates since the latest version of libuv that shipped in Node.js v10 LTS.
+    * Now shipping libuv 1.32.0, and all previous updates since the latest version of libuv that shipped in Node.js v10 LTS.
   * npm
     * Now shipping npm 6.10.3, and all previous updates since the latest version of npm that shipped in Node.js v10 LTS.
     * For more details, see the [npm releases' changelog](https://github.com/npm/cli/releases).
