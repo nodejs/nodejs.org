@@ -77,7 +77,7 @@ will be backported to Current, however there may be a lag if
 there are specific concerns or for larger changes where the community
 believes more soak time is required. One key exception is
 that semver breaking changes will not be backported until the
-next major version (ex 5 -> 6). This includes v8 and other
+next major version (ex 5 -> 6). This includes V8 and other
 components such that the expectation is that an application/module
 written to run on a major level will continue to do so.
 
@@ -157,7 +157,7 @@ changes that will be pulled in narrows, further reducing the risk.
 
 When it comes to new LTS versions, changes will have soaked in the latest
 release for up to 6 months. In particular, larger changes like an upgrade
-to v8 are done early in the lifespan of the stream such that they will have
+to V8 are done early in the lifespan of the stream such that they will have
 significant soaking and usage in the Current stream before they make it
 into an LTS release.
 
@@ -252,12 +252,12 @@ uncover as many problems as early as possible.
 Node.js has a number of key dependencies. It's important that we ensure
 that any changes we apply to those dependencies don't have a negative effect.
 
-To this end we have a job which runs the v8 tests on the v8 tree within
+To this end we have a job which runs the V8 tests on the V8 tree within
 the Node.js repo. This job runs nightly and on request for PRs that are
-making changes to the v8 tree.
+making changes to the V8 tree.
 
 We don't currently run the tests for other dependencies, but the delta in
-the Node.js tree for the dependencies other than v8 is more limited.
+the Node.js tree for the dependencies other than V8 is more limited.
 
 ## Module Tests
 
