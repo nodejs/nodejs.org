@@ -1414,7 +1414,6 @@ This is a section containing every logged commit as they can be found in the rel
 * [[`315ee2e626`](https://github.com/nodejs/node/commit/315ee2e626)] - **(SEMVER-MINOR)** **http,https**: protect against slow headers attack (Matteo Collina) [nodejs-private/node-private#144](https://github.com/nodejs-private/node-private/pull/144)
 * [[`d7504324e1`](https://github.com/nodejs/node/commit/d7504324e1)] - **url**: avoid hostname spoofing w/ javascript protocol (Matteo Collina) [nodejs-private/node-private#145](https://github.com/nodejs-private/node-private/pull/145)
 
-
 ### Commits in Node.js 11.4.0
 
 * [[`7fb8d319fa`](https://github.com/nodejs/node/commit/7fb8d319fa)] - **assert**: fix loose deepEqual map comparison (Ruben Bridgewater) [#24749](https://github.com/nodejs/node/pull/24749)
