@@ -164,7 +164,7 @@ EXIGÊNCIAS
 
 * [Meetup](https://www.meetup.com/es-ES/NodersJS/)
 * Frequência dos meetups - mensal
-* Como enviar uma palestra? Issue no Github [here](https://github.com/Noders/Meetups/issues/new)
+* Como enviar uma palestra? Issue no GitHub [here](https://github.com/Noders/Meetups/issues/new)
 * Nomes dos organizadores - Rodrigo Adones e Ender Bonnet
 * Contato dos organizadores - [Rodrigo](https://github.com/L0rdKras), [Ender](https://twitter.com/enbonnet)
 
