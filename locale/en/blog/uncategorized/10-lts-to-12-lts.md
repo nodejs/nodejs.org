@@ -33,7 +33,7 @@ This section is a highlight of the most notable changes, as selected from all "[
     * Now shipping OpenSSL 1.1.1c, and all previous updates since the latest version of OpenSSL that shipped in Node.js v10 LTS.
     * For more details, see the [OpenSSL releases' changelog](https://www.openssl.org/news/changelog.html)
   * V8
-    * Now shipping V8 7.7.299.11, and all previous updates since the latest version of V8 that shipped in Node.js v10 LTS.
+    * Now shipping V8 7.7.299.13, and all previous updates since the latest version of V8 that shipped in Node.js v10 LTS.
     * For more details, see the [release posts on the V8 blog](https://v8.dev/blog).
   * ICU
     * Now requiring minimum ICU 63 [#25852](https://github.com/nodejs/node/pull/25852)
