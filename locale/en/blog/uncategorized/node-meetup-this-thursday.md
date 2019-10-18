@@ -8,7 +8,7 @@ slug: node-meetup-this-thursday
 layout: blog-post.hbs
 ---
 
-[https://nodejs.org/meetup/](https://nodejs.org/meetup/ "https://nodejs.org/meetup/")
+[https://nodejs.org/meetup/](https://nodejs.org/meetup/)
 
 [http://nodemeetup.eventbrite.com/](http://nodemeetup.eventbrite.com/)
 
