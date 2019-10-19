@@ -26,18 +26,18 @@ In order to tailor the Foundation’s subsequent communications to users and con
 ## How the Foundation Uses the Information Collected
 The Foundation may use collected information for any lawful purpose related to the Foundation’s business, including, but not limited to:
 
-- To understand a user’s needs and create content that is relevant to the user;
-- To generate statistical studies;
-- To conduct market research and planning by sending user surveys;
-- To notify user referrals of services, information, or products when a user requests that the Foundation send such information to referrals;
-- To improve services, information, and products;
-- To help a user complete a transaction, or provide services or customer support;
-- To communicate back to the user;
-- To update the user on services, information, and products;
-- To personalize a Site for the user;
-- To notify the user of any changes with a Site that may affect the user;
-- To enforce terms of use on a Site; and
-- To allow the user to purchase products, access services, or otherwise engage in activities the user selects.
+* To understand a user’s needs and create content that is relevant to the user;
+* To generate statistical studies;
+* To conduct market research and planning by sending user surveys;
+* To notify user referrals of services, information, or products when a user requests that the Foundation send such information to referrals;
+* To improve services, information, and products;
+* To help a user complete a transaction, or provide services or customer support;
+* To communicate back to the user;
+* To update the user on services, information, and products;
+* To personalize a Site for the user;
+* To notify the user of any changes with a Site that may affect the user;
+* To enforce terms of use on a Site; and
+* To allow the user to purchase products, access services, or otherwise engage in activities the user selects.
 
 User names, identifications ("IDs"), and email addresses (as well as any additional information that a user may choose to post) may be publicly available on a Site when users voluntarily and publicly disclose personal information, such as when a user posts information in conjunction with content subject to an Open Source license, or as part of a message posted to a public forum or a publicly released software application. The personal information you may provide to the Foundation may reveal or allow others to discern aspects of your life that are not expressly stated in your profile (for example, your picture or your name may reveal your hair color, race or approximate age). By providing personal information to us when you create or update your account and profile or post a photograph, you are expressly and voluntarily accepting our Terms of Use and freely accepting and agreeing to our processing of your personal information in ways set out by this Privacy Policy. Supplying information to us, including any information deemed “sensitive” by applicable law, is entirely voluntary on your part. You may withdraw your consent to the Foundation’s collection and processing of your information by closing your account. You should be aware that your information may continue to be viewable to others after you close your account, such as on cached pages on Internet search engines. Users may not be able to change or remove public postings once posted. Such information may be used by visitors of these pages to send unsolicited messages. The Foundation is not responsible for any consequences which may occur from the third-party use of information that a user chooses to submit to public pages.
 

@@ -37,9 +37,9 @@ A possible use of `join` is to manipulate paths when serving urls:
 
 There are three functions which are used to extract the various parts of the path name: `basename`, `extname`, and `dirname`.
 
-- `basename` returns the last portion of the path passed in.
-- `extname` returns the extension of the last portion. Generally for directories, `extname` just returns ''.
-- Finally, `dirname` returns everything that `basename` does not return.
+* `basename` returns the last portion of the path passed in.
+* `extname` returns the extension of the last portion. Generally for directories, `extname` just returns ''.
+* Finally, `dirname` returns everything that `basename` does not return.
 
 For example:
 

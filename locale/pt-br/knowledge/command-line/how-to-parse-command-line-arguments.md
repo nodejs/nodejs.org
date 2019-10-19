@@ -85,7 +85,7 @@ Se referir aos argumentos da linha de comando pelo índice do array não é cons
 
 <!-- Luckily, there are many third party modules that makes all of this trivial - one of which is [yargs](https://www.npmjs.com/package/yargs). It's available via `npm`. Use this command from your app's base path: -->
 
-Felizmente, existem muitos módulos de terceiros que tornam isso tudo trivial - um deles é o [yargs] (https://www.npmjs.com/package/yargs). Está disponível via `npm`. Use este comando no diretório do seu aplicativo:
+Felizmente, existem muitos módulos de terceiros que tornam isso tudo trivial - um deles é o [yargs](https://www.npmjs.com/package/yargs). Está disponível via `npm`. Use este comando no diretório do seu aplicativo:
 
 ```
 npm i yargs
@@ -136,28 +136,28 @@ console.log(argv);
 A última linha foi incluída para você ver como o `yargs` lida com os argumentos. Segue Uma pequena referência:
 
 <!-- - `argv.$0` contains the name of the script file which is executed like: `'$0': 'myapp.js'`.
-- `argv._` is an array containing each element not attached to an option(or flag) these elements are referred as `commands` in yargs.
-- Individual options(flags) become properties of `argv`, such as with `argv.h` and `argv.time`. Note that non-single-letter flags must be passed in as `--flag` like: `node myapp.js --time`. -->
+* `argv._` is an array containing each element not attached to an option(or flag) these elements are referred as `commands` in yargs.
+* Individual options(flags) become properties of `argv`, such as with `argv.h` and `argv.time`. Note that non-single-letter flags must be passed in as `--flag` like: `node myapp.js --time`. -->
 
-- `argv.$0` contém o nome do arquivo script no qual é executado como: `'$0': 'myapp.js'`.
-- `argv._` é um array contendo cada elemento não atrelado a uma opção(ou flag), estes elementos são referenciados como `commands` no yargs.
-- Opções(flags) individuais se tornam propriedades `argv`, assim como o `argv.h` e `argv.time`. Observe que flags sem-letra-unica precisam ser enviadas como `--flag` assim: `node myapp.js --time`.
+* `argv.$0` contém o nome do arquivo script no qual é executado como: `'$0': 'myapp.js'`.
+* `argv._` é um array contendo cada elemento não atrelado a uma opção(ou flag), estes elementos são referenciados como `commands` no yargs.
+* Opções(flags) individuais se tornam propriedades `argv`, assim como o `argv.h` e `argv.time`. Observe que flags sem-letra-unica precisam ser enviadas como `--flag` assim: `node myapp.js --time`.
 
 <!-- A summary of elements used in the program: -->
 
 Um resumo dos elementos usados ​​no programa:
 
 <!-- - **argv**: This is the modified `process.argv` which we have configured with yargs.
-- **command()**: This method is used to add commands, their description and options which are specific to these commands only, like in the above code `lyr` is the command and `-y` is lyr specific option: `node myapp.js lyr -y 2016`
-- **option()**: This method is used to add global options(flags) which can be accessed by all commands or without any command.
-- **help()**: This method is used to display a help dialogue when `--help` option is encountered which contains description oof ll the `commands` and `options` available.
-- **alias()**: This method provides an alias name to an option, like in the above code both `--help` and `-h` triggers the help dialogue. -->
+* **command()**: This method is used to add commands, their description and options which are specific to these commands only, like in the above code `lyr` is the command and `-y` is lyr specific option: `node myapp.js lyr -y 2016`
+* **option()**: This method is used to add global options(flags) which can be accessed by all commands or without any command.
+* **help()**: This method is used to display a help dialogue when `--help` option is encountered which contains description oof ll the `commands` and `options` available.
+* **alias()**: This method provides an alias name to an option, like in the above code both `--help` and `-h` triggers the help dialogue. -->
 
-- **argv**: É uma modificação do `process.argv` no qual configuramos com o yargs.
-- **command()**: Este método é usado para adicionar comandos, a descrição e as opções são específicas somente para esse comando, como no código anterior, `lyr`, que é um comando, e `-y` é uma opção específica de lyr: `node myapp.js lyr -y 2016`
-- **option()**: Este método é utilizado para adicionar opções(flags) globais que podem ser acessadas por todos os comandos ou sem nenhum comando.
-- **help()**: Este método é usado para exibir um texto de ajuda quando a opção `--help` é encontrada contendo a descrição de todos os `comandos` e `opções` disponíveis.
-- **alias()**: Este método fornece um pseudônimo para uma opção, como no código seguinte tanto `--help` quanto `-h` acionam o texto de ajuda.
+* **argv**: É uma modificação do `process.argv` no qual configuramos com o yargs.
+* **command()**: Este método é usado para adicionar comandos, a descrição e as opções são específicas somente para esse comando, como no código anterior, `lyr`, que é um comando, e `-y` é uma opção específica de lyr: `node myapp.js lyr -y 2016`
+* **option()**: Este método é utilizado para adicionar opções(flags) globais que podem ser acessadas por todos os comandos ou sem nenhum comando.
+* **help()**: Este método é usado para exibir um texto de ajuda quando a opção `--help` é encontrada contendo a descrição de todos os `comandos` e `opções` disponíveis.
+* **alias()**: Este método fornece um pseudônimo para uma opção, como no código seguinte tanto `--help` quanto `-h` acionam o texto de ajuda.
 
 <!-- For more information on yargs and the many, many other things it can do for your command-line arguments, please visit [http://yargs.js.org/docs/](http://yargs.js.org/docs/) -->
 
