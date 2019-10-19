@@ -16,7 +16,7 @@ O Node.js executa código JavaScript no Event Loop (inicialização e callbacks)
 Node escala bem, as vezes mais do que abordagens pesadas como Apache.
 O segredo da escalabilidade do Node é que ele usa um pequeno número de threads para manipular muitos clientes.
 Se o Node pode trabalhar com menos threads, ele poderá gastar mais tempo do seu sistema e memória trabalhando nos clientes em vez de disperdiçar recursos de espaço e tempo para as threads (memória e mudança de contexto).
-Mas pelo fato do Node ter poucas threads, você precisa estruturar sua aplicação para usá-las com sabadoria.  
+Mas pelo fato do Node ter poucas threads, você precisa estruturar sua aplicação para usá-las com sabedoria.  
 
 Aqui está um princípio básico para manter o servidor Node rápido: *Node é rápido quando o trabalho associado a cada cliente em um determinado momento é "pequeno"*.
 
