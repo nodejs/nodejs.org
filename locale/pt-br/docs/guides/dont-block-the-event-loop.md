@@ -207,8 +207,8 @@ Por esse motivo, você deve desconfiar do uso de expressões regulares complexas
 #### Recursos anti-REDOS
 Existem algumas ferramentas para verificar a segurança de seus regexps, como
 
-- [safe-regex](https://github.com/substack/safe-regex)
-- [rxxr2](http://www.cs.bham.ac.uk/~hxt/research/rxxr2/).
+* [safe-regex](https://github.com/substack/safe-regex)
+* [rxxr2](http://www.cs.bham.ac.uk/~hxt/research/rxxr2/).
 
 No entanto, nenhum deles capturará todos os regexps vulneráveis.
 
@@ -222,30 +222,30 @@ Se você estiver tentando corresponder a algo "óbvio", como uma URL ou um camin
 ### Bloqueando o Event Loop: módulos principais do Node
 Vários módulos principais do Node têm APIs síncronas custosas, incluindo:
 
-- [Encryption](https://nodejs.org/api/crypto.html)
-- [Compression](https://nodejs.org/api/zlib.html)
-- [File system](https://nodejs.org/api/fs.html)
-- [Child process](https://nodejs.org/api/child_process.html)
+* [Encryption](https://nodejs.org/api/crypto.html)
+* [Compression](https://nodejs.org/api/zlib.html)
+* [File system](https://nodejs.org/api/fs.html)
+* [Child process](https://nodejs.org/api/child_process.html)
 
 Essas APIs são custosas, porque envolvem computação significativa (criptografia, compactação), exigem I/O (I/O de arquivo) ou potencialmente ambas (child process). Essas APIs destinam-se à conveniência de script, mas não para uso no contexto de servidor. Se você executá-los no Event Loop, eles levarão muito mais tempo para serem concluídos do que uma instrução JavaScript típica, bloqueando o Event Loop.
 
 Em um servidor, *você não deve usar as seguintes APIs síncronas desses módulos*:
 
-- Criptografia:
-  - `crypto.randomBytes` (versão síncrona)
-  - `crypto.randomFillSync`
-  - `crypto.pbkdf2Sync`
-  - Você também deve ter cuidado ao fornecer uma entrada grande para as rotinas de criptografia e descriptografia.
-- Compression:
-- Compressão:
-  - `zlib.inflateSync`
-  - `zlib.deflateSync`
-- Sistema de arquivo:
-  - Não use as APIs do sistema de arquivos síncronas. Por exemplo, se o arquivo que você acessar estiver em um [sistema de arquivos distribuído](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems) como [NFS](https://en.wikipedia.org/wiki/ Network_File_System), os tempos de acesso podem variar bastante.
-- Child process:
-  - `child_process.spawnSync`
-  - `child_process.execSync`
-  - `child_process.execFileSync`
+* Criptografia:
+  * `crypto.randomBytes` (versão síncrona)
+  * `crypto.randomFillSync`
+  * `crypto.pbkdf2Sync`
+  * Você também deve ter cuidado ao fornecer uma entrada grande para as rotinas de criptografia e descriptografia.
+* Compression:
+* Compressão:
+  * `zlib.inflateSync`
+  * `zlib.deflateSync`
+* Sistema de arquivo:
+  * Não use as APIs do sistema de arquivos síncronas. Por exemplo, se o arquivo que você acessar estiver em um [sistema de arquivos distribuído](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems) como [NFS](https://en.wikipedia.org/wiki/ Network_File_System), os tempos de acesso podem variar bastante.
+* Child process:
+  * `child_process.spawnSync`
+  * `child_process.execSync`
+  * `child_process.execFileSync`
 
 Esta lista está razoavelmente completa a partir do Node v9.
 
@@ -285,8 +285,8 @@ console.log('JSON.parse took ' + took);
 
 Existem módulos npm que oferecem APIs JSON assíncronas. Veja alguns exemplo:
 
-- [JSONStream](https://www.npmjs.com/package/JSONStream), que possui APIs de stream.
-- [Big-Friendly JSON](https://www.npmjs.com/package/bfj), que possui APIs de stream e versões assíncronas das APIs JSON padrão usando o paradigma de particionamento no Event Loop descrito abaixo.
+* [JSONStream](https://www.npmjs.com/package/JSONStream), que possui APIs de stream.
+* [Big-Friendly JSON](https://www.npmjs.com/package/bfj), que possui APIs de stream e versões assíncronas das APIs JSON padrão usando o paradigma de particionamento no Event Loop descrito abaixo.
 
 ### Cálculos complexos sem bloquear o Event Loop
 Suponha que você queira fazer cálculos complexos em JavaScript sem bloquear o Event Loop.
