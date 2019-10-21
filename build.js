@@ -295,7 +295,6 @@ function getSource (callback) {
         }
       }
     }
-
     if (semver.gt(source.project.latestVersions.lts.node, source.project.latestVersions.current.node)) {
       // If LTS is higher than Current hide it from the main page
       source.project.latestVersions.hideCurrent = true

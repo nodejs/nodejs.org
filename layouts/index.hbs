@@ -42,7 +42,7 @@
         </div>
 
         {{#if project.latestVersions.current.node}}
-        {{#if project.latestVersions.current.hideCurrent}}
+        {{#unless project.latestVersions.hideCurrent}}
           <div class="home-downloadblock">
 
             <a href="https://nodejs.org/dist/{{ project.latestVersions.current.node }}/" class="home-downloadbutton"  title="{{ labels.download }} {{stripv project.latestVersions.current.node }} {{ labels.current }}"  data-version="{{ project.latestVersions.current.node }}">
@@ -63,7 +63,7 @@
             </ul>
 
           </div>
-        {{/if}}
+        {{/unless}}
         {{/if}}
         <p>
           {{{ labels.version-schedule-prompt }}} <a href="https://nodejs.org/{{site.locale}}/about/releases/">{{ labels.version-schedule-prompt-link-text }}</a>
