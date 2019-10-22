@@ -74,7 +74,6 @@
     "linkinator": "^1.6.0",
     "lockfile-lint": "^2.1.5",
     "nock": "^11.4.0",
-    "pre-commit": "^1.2.2",
     "proxyquire": "^2.1.3",
     "remark-cli": "^7.0.0",
     "remark-frontmatter": "^1.3.2",
