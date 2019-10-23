@@ -2,7 +2,7 @@
 title: Apigee, RisingStack and Yahoo Join the Node.js Foundation
 date: 2015-12-08T12:00:00.000Z
 status: publish
-category: Annoucements
+category: Announcements
 slug: apigee-rising-stack-yahoo
 layout: blog-post.hbs
 ---
@@ -32,6 +32,7 @@ Yahoo is a guide focused on informing, connecting and entertaining its users. By
 “Joining the Node.js Foundation underscores our deep appreciation for the Node.js community, and our commitment to drive its health and growth,” said Preeti Somal, vice president of engineering, Yahoo. “As a technology pioneer with a deep legacy of JavaScript expertise and a strong commitment to open source, we saw the promise of Node.js from the start and have since scaled to become one of the industry’s largest deployments. We embrace Node.js’s evolution and encourage our developers to be contributing citizens of the Open Source community.”
 
 Additional Resources
+
 * Learn more about the [Node.js Foundation](https://foundation.nodejs.org/) and get involved with [the project](https://nodejs.org/en/get-involved/).
 
 About Node.js Foundation

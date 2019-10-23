@@ -46,7 +46,6 @@ layout: docs.hbs
 
 _**注意：** 在 Windows 和 Unix/Linux 实现之间存在细微的差异，但这对演示来说并不重要。最重要的部分在这里。实际上有七或八个步骤，但我们关心的是 Node.js 实际上使用以上的某些步骤。_
 
-
 ## 阶段概述
 
 * **定时器**：本阶段执行已经安排的 `setTimeout()` 和 `setInterval()` 的回调函数。
@@ -83,7 +82,6 @@ setTimeout(() => {
 
   console.log(`${delay}ms have passed since I was scheduled`);
 }, 100);
-
 
 // do someAsyncOperation which takes 95 ms to complete
 someAsyncOperation(() => {
@@ -217,7 +215,7 @@ function apiCall(arg, callback) {
 
 代码段进行参数检查。如果不正确，则会将错误传递给回调函数。最近对 API 进行了更新，允许将参数传递给 `process.nextTick()`，允许它在回调后传递任何参数作为回调的参数传播，这样您就不必嵌套函数了。
 
-我们正在做的是将错误传递给用户，但仅在我们允许用户的其余代码执行之后。通过使用`process.nextTick()`，我们保证 `apiCall()` 始终在用户代码的其余部分*之后*运行其回调函数，并在允许事件循环*之前*继续进行。为了实现这一点，JS 调用栈被允许展开，然后立即执行提供的回调，允许进行递归调用 `process.nextTick()`，而不达到 `RangeError: 超过 v8 的最大调用堆栈大小`。
+我们正在做的是将错误传递给用户，但仅在我们允许用户的其余代码执行之后。通过使用`process.nextTick()`，我们保证 `apiCall()` 始终在用户代码的其余部分*之后*运行其回调函数，并在允许事件循环*之前*继续进行。为了实现这一点，JS 调用栈被允许展开，然后立即执行提供的回调，允许进行递归调用 `process.nextTick()`，而不达到 `RangeError: 超过 V8 的最大调用堆栈大小`。
 
 这种哲学可能会导致一些潜在的问题。
 以此代码段为例：
@@ -338,5 +336,5 @@ myEmitter.on('event', () => {
 });
 ```
 
-[libuv]: http://libuv.org
+[libuv]: https://libuv.org/
 [REPL]: https://nodejs.org/api/repl.html#repl_repl

@@ -69,6 +69,7 @@ const descriptors = Object.getOwnPropertyDescriptors(obj);
 ### From [V8 5.2](https://v8project.blogspot.ch/2016/06/release-52.html)
 
 Improvement of JavaScript built-ins, including:
+
 * `Array` operations like the `isArray` method.
 * The `in` operator.
 * `Function.prototype.bind`.
@@ -77,7 +78,7 @@ Improvement of JavaScript built-ins, including:
 
 * The new Ignition interpreter is now feature complete and can be tested with the flag `--ignition`. Read the [blog post](https://v8project.blogspot.ch/2016/08/firing-up-ignition-interpreter.html) from V8's team for more information.
 * The garbage collector has been improved and full garbage collection pause times can be reduced up to 25%.
-* Improvement of ES6 Promise performance. 
+* Improvement of ES6 Promise performance.
 
 ### From [V8 5.4](https://v8project.blogspot.ch/2016/09/v8-release-54.html)
 

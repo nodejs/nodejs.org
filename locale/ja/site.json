@@ -4,6 +4,8 @@
   "author": "Node.js 財団",
   "url": "https://nodejs.org/ja/",
   "locale": "ja",
+  "language": "日本語",
+  "languageEnglishVersion": "Japanese",
   "scrollToTop": "上部へスクロールする",
   "reportNodeIssue": "Node.js の不具合を報告",
   "reportWebsiteIssue": "サイトの不具合を報告",
@@ -82,12 +84,12 @@
       "text": "ES6 について"
     },
     "api-lts": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "subtext": "LTS",
       "text": "%ver% API"
     },
     "api-current": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "text": "%ver% API"
     },
     "guides": {

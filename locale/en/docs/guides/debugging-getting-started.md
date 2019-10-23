@@ -17,7 +17,7 @@ Inspector clients must know and specify host address, port, and UUID to connect.
 A full URL will look something like
 `ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`.
 
-Node.js will also start listening for debugging messages if it receives a 
+Node.js will also start listening for debugging messages if it receives a
 `SIGUSR1` signal. (`SIGUSR1` is not available on Windows.) In Node.js 7 and
 earlier, this activates the legacy Debugger API. In Node.js 8 and later, it will
 activate the Inspector API.
@@ -70,46 +70,49 @@ either the IP address or by using ssh tunnels as described below.
 Several commercial and open source tools can connect to Node's Inspector. Basic
 info on these follows:
 
-#### [node-inspect](https://github.com/nodejs/node-inspect)
+### [node-inspect](https://github.com/nodejs/node-inspect)
 
 * CLI Debugger supported by the Node.js Foundation which uses the [Inspector Protocol][].
 * A version is bundled with Node and can be used with `node inspect myscript.js`.
 * The latest version can also be installed independently (e.g. `npm install -g node-inspect`)
   and used with `node-inspect myscript.js`.
 
-#### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
+### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+, [Microsoft Edge](https://www.microsoftedgeinsider.com)
 
 * **Option 1**: Open `chrome://inspect` in a Chromium-based
-  browser. Click the Configure button and ensure your target host and port
+  browser or `edge://inspect` in Edge. Click the Configure button and ensure your target host and port
   are listed.
 * **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
   (see above) or the --inspect hint text and paste into Chrome.
-* **Option 3**: Install the Chrome Extension NIM (Node Inspector Manager):  
-  https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 
-#### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
+### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
 
 * In the Debug panel, click the settings icon to open `.vscode/launch.json`.
   Select "Node.js" for initial setup.
 
-#### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
+### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
 
 * Choose "Debug > Start Debugging" from the menu or hit F5.
 * [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging).
 
-#### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ and other JetBrains IDEs
+### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ and other JetBrains IDEs
 
 * Create a new Node.js debug configuration and hit Debug. `--inspect` will be used
   by default for Node.js 7+. To disable uncheck `js.debugger.node.use.inspect` in
   the IDE Registry.
 
-#### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
+### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 
 * Library to ease connections to Inspector Protocol endpoints.
 
-#### [Gitpod](https://www.gitpod.io)
+### [Gitpod](https://www.gitpod.io)
 
 * Start a Node.js debug configuration from the `Debug` view or hit `F5`. [Detailed instructions](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
+
+### [Eclipse IDE](https://eclipse.org/eclipseide) with Eclipse Wild Web Developer extension
+
+* From a .js file, choose "Debug As... > Node program", or
+* Create a Debug Configuration to attach debugger to running Node application (already started with `--inspect`).
 
 ---
 
@@ -117,7 +120,7 @@ info on these follows:
 
 The following table lists the impact of various runtime flags on debugging:
 
-<table cellpadding="0" cellspacing="0">
+<table class="table-no-border-no-padding">
   <tr><th>Flag</th><th>Meaning</th></tr>
   <tr>
     <td>--inspect</td>
@@ -129,12 +132,12 @@ The following table lists the impact of various runtime flags on debugging:
     </td>
   </tr>
   <tr>
-    <td>--inspect=<i>[host:port]</i></td>
+    <td>--inspect=<em>[host:port]</em></td>
     <td>
       <ul>
         <li>Enable inspector agent</li>
-        <li>Bind to address or hostname <i>host</i> (default: 127.0.0.1)</li>
-        <li>Listen on port <i>port</i> (default: 9229)</li>
+        <li>Bind to address or hostname <em>host</em> (default: 127.0.0.1)</li>
+        <li>Listen on port <em>port</em> (default: 9229)</li>
       </ul>
     </td>
   </tr>
@@ -149,18 +152,18 @@ The following table lists the impact of various runtime flags on debugging:
     </td>
   </tr>
   <tr>
-    <td>--inspect-brk=<i>[host:port]</i></td>
+    <td>--inspect-brk=<em>[host:port]</em></td>
     <td>
       <ul>
         <li>Enable inspector agent</li>
-        <li>Bind to address or hostname <i>host</i> (default: 127.0.0.1)</li>
-        <li>Listen on port <i>port</i> (default: 9229)</li>
+        <li>Bind to address or hostname <em>host</em> (default: 127.0.0.1)</li>
+        <li>Listen on port <em>port</em> (default: 9229)</li>
         <li>Break before user code starts</li>
       </ul>
     </td>
   </tr>
   <tr>
-    <td><code>node inspect <i>script.js</i></code></td>
+    <td><code>node inspect <em>script.js</em></code></td>
     <td>
       <ul>
         <li>Spawn child process to run user's script under --inspect flag;
@@ -169,12 +172,12 @@ The following table lists the impact of various runtime flags on debugging:
     </td>
   </tr>
   <tr>
-    <td><code>node inspect --port=xxxx <i>script.js</i></code></td>
+    <td><code>node inspect --port=xxxx <em>script.js</em></code></td>
     <td>
       <ul>
         <li>Spawn child process to run user's script under --inspect flag;
             and use main process to run CLI debugger.</li>
-        <li>Listen on port <i>port</i> (default: 9229)</li>
+        <li>Listen on port <em>port</em> (default: 9229)</li>
       </ul>
     </td>
   </tr>
@@ -195,14 +198,14 @@ want to be able to debug. On that machine, you should start the node process
 with the inspector listening only to localhost (the default).
 
 ```bash
-$ node --inspect server.js
+node --inspect server.js
 ```
 
 Now, on your local machine from where you want to initiate a debug client
 connection, you can setup an ssh tunnel:
 
 ```bash
-$ ssh -L 9221:localhost:9229 user@remote.example.com
+ssh -L 9221:localhost:9229 user@remote.example.com
 ```
 
 This starts a ssh tunnel session where a connection to port 9221 on your local
@@ -225,14 +228,14 @@ couple popular ones are listed below.
 
 The V8 Debugging Protocol is no longer maintained or documented.
 
-#### [Built-in Debugger](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
+### [Built-in Debugger](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
 
 Start `node debug script_name.js` to start your script under Node's builtin
 command-line debugger. Your script starts in another Node process started with
 the `--debug-brk` option, and the initial Node process runs the `_debugger.js`
 script and connects to your target.
 
-#### [node-inspector](https://github.com/node-inspector/node-inspector)
+### [node-inspector](https://github.com/node-inspector/node-inspector)
 
 Debug your Node.js app with Chrome DevTools by using an intermediary process
 which translates the Inspector Protocol used in Chromium to the V8 Debugger

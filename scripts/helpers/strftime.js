@@ -3,7 +3,7 @@
 const strftime = require('strftime')
 
 module.exports = (date, format) => {
-  let parsedDate = new Date(date)
+  const parsedDate = new Date(date)
 
   if (!(parsedDate instanceof Date && isFinite(parsedDate))) {
     // If date is invalid (but not undefined) log error for debugging

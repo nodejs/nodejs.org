@@ -8,15 +8,15 @@ difficulty: 3
 layout: knowledge-post.hbs
 ---
 
-The [crypto](https://nodejs.org/api/crypto.html) module is a wrapper for [OpenSSL](http://en.wikipedia.org/wiki/Openssl) cryptographic functions. It supports calculating hashes, authentication with HMAC, ciphers, and more!
+The [crypto](https://nodejs.org/api/crypto.html) module is a wrapper for [OpenSSL](https://en.wikipedia.org/wiki/Openssl) cryptographic functions. It supports calculating hashes, authentication with HMAC, ciphers, and more!
 
-The crypto module is mostly useful as a tool for implementing [cryptographic protocols](http://en.wikipedia.org/wiki/Cryptographic_protocol) such as [TLS](http://en.wikipedia.org/wiki/Transport_Layer_Security) and [https](http://en.wikipedia.org/wiki/Https). For most users, Node's built-in [tls module](https://nodejs.org/api/tls.html) and [https module](https://nodejs.org/api/https.html) should more than suffice. However, for the user that only wants to use small parts of what's needed for full-scale cryptography or is crazy/desperate enough to implement a protocol using OpenSSL and Node: Read on.
+The crypto module is mostly useful as a tool for implementing [cryptographic protocols](https://en.wikipedia.org/wiki/Cryptographic_protocol) such as [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) and [https](https://en.wikipedia.org/wiki/Https). For most users, Node's built-in [tls module](https://nodejs.org/api/tls.html) and [https module](https://nodejs.org/api/https.html) should more than suffice. However, for the user that only wants to use small parts of what's needed for full-scale cryptography or is crazy/desperate enough to implement a protocol using OpenSSL and Node: Read on.
 
 ## Hashes
 
 ### What Is A Hash?
 
-A hash is a fixed-length string of bits that is procedurally and deterministially generated from some arbitrary block of source data. Some important properties of these hashes (the type useful for cryptography) include:
+A hash is a fixed-length string of bits that is procedurally and deterministically generated from some arbitrary block of source data. Some important properties of these hashes (the type useful for cryptography) include:
 
 * **Fixed length:** This means that, no matter what the input, the length of the hash is the same. For example, SHA-256 hashes are always 256 bits long whether the input data is a few bits or a few gigabytes.
 
@@ -30,7 +30,7 @@ A hash is a fixed-length string of bits that is procedurally and deterministiall
 
 The hashes that work with crypto are dependent on what your version of OpenSSL supports. If you have a new enough version of OpenSSL, you can get a list of hash types your OpenSSL supports by typing `openssl list-message-digest-algorithms` into the command line. For older versions, simply type `openssl list-message-digest-commands` instead!
 
-One of the most common hash algorithms is [SHA-256](https://en.wikipedia.org/wiki/SHA-2). Older popular types like **[SHA-1](http://en.wikipedia.org/wiki/Sha1) or [MD5](https://en.wikipedia.org/wiki/MD5#Security) are not secure any more** and should not be used.
+One of the most common hash algorithms is [SHA-256](https://en.wikipedia.org/wiki/SHA-2). Older popular types like **[SHA-1](https://en.wikipedia.org/wiki/Sha1) or [MD5](https://en.wikipedia.org/wiki/MD5#Security) are not secure any more** and should not be used.
 
 ### How To Calculate Hashes with Crypto
 
@@ -90,7 +90,7 @@ const crypto = require('crypto'),
       .createHash("sha256")
       .update("myHashedIV")
       .digest();
-      
+
 iv.copy(resizedIV);
 
 if (argv.e && argv.key) {
@@ -125,16 +125,16 @@ if (argv.e && argv.key) {
 }
 ```
 
-NODE PRO TIP: The `crypto.createCipheriv()` and `crypto.createDecipheriv()` methods do not take a password, rather a `key` and an `iv` which are combined together to form a random password. The size of the `key` and `iv` depends on the choosen algorithm. A reference to common algorithms and their `key` and `iv` size is given below:
+NODE PRO TIP: The `crypto.createCipheriv()` and `crypto.createDecipheriv()` methods do not take a password, rather a `key` and an `iv` which are combined together to form a random password. The size of the `key` and `iv` depends on the chosen algorithm. A reference to common algorithms and their `key` and `iv` size is given below:
 
-| Algorithm      | Key                | iv                 |
-| -------------  |:-----------------: | :----------------: |
-| aes128         | 16 byte (128 bits) | 16 byte (128 bits) |
-| aes-128-cbc    | 16 byte (128 bits) | 16 byte (128 bits) |
-| aes192         | 24 byte (192 bits) | 16 byte (128 bits) |
-| aes256         | 32 byte (256 bits) | 16 byte (128 bits) |
+| Algorithm     | Key                | iv                 |
+| ------------- | ------------------ | ------------------ |
+| aes128        | 16 byte (128 bits) | 16 byte (128 bits) |
+| aes-128-cbc   | 16 byte (128 bits) | 16 byte (128 bits) |
+| aes192        | 24 byte (192 bits) | 16 byte (128 bits) |
+| aes256        | 32 byte (256 bits) | 16 byte (128 bits) |
 
-In the code above The user entered `key` is hashed using `SHA-256 encryption` which produces a 32 byte buffer by default, this buffered key is then used as the [cryptographic key](https://en.wikipedia.org/wiki/Key_(cryptography)) in the `crypto.createCipheriv()` and `crypto.createDecipheriv()` methods. The `iv` is also hashed with `SHA-256 encryption` and is 32 byte in size but all AES (CBC mode and CFB mode) take `iv` of exactly 16 byte (128 bits) therefor another Buffer `resizedIV` is used which contains the first 16 byte of orignal 32 byte `iv`.
+In the code above The user entered `key` is hashed using `SHA-256 encryption` which produces a 32 byte buffer by default, this buffered key is then used as the [cryptographic key](https://en.wikipedia.org/wiki/Key_(cryptography)) in the `crypto.createCipheriv()` and `crypto.createDecipheriv()` methods. The `iv` is also hashed with `SHA-256 encryption` and is 32 byte in size but all AES (CBC mode and CFB mode) take `iv` of exactly 16 byte (128 bits) therefor another Buffer `resizedIV` is used which contains the first 16 byte of original 32 byte `iv`.
 
 Using this script to encode a message looks like this:
 

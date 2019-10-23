@@ -27,7 +27,6 @@ This is an LTS maintenance release that addresses a number of issues:
 * NodeUp podcast episode 93, 94 were published this week: <http://nodeup.com/ninetythree>, <http://nodeup.com/ninetyfour>.
 * The subjects of the podcast are "An LTS Show with Kat Marchán, James Snell, and Rich Trott", "A Node.js Interactive Show with Dan Shaw, Mikeal Rogers, and Kassandra Perch.".
 
-
 ### Community Updates
 
 * [Understanding Garbage Collection and hunting Memory Leaks in Node.js](http://apmblog.dynatrace.com/2015/11/04/understanding-garbage-collection-and-hunting-memory-leaks-in-node-js/), "Covers how Node.js manages memory and how to trace down memory-related problems"

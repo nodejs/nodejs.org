@@ -15,7 +15,6 @@ io.js v3.2.0/v3.3.0 and Node v4 evangelism, nodejs.org, nodefest/empirenode even
 
 This week we have two io.js releases: [v3.2.0](https://iojs.org/dist/v3.2.0/) and [v3.3.0](https://iojs.org/dist/v3.3.0/), complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
 
-
 ### io.js v3.3.0 Notable changes
 
 * **build**: Add a `--link-module` option to `configure` that can be used to bundle additional JavaScript modules into a built binary (Bradley Meck) [#2497](https://github.com/nodejs/node/pull/2497)
@@ -44,29 +43,28 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 * Calling `dns.setServers()` while a DNS query is in progress can cause the process to crash on a failed assertion. [#894](https://github.com/nodejs/node/issues/894)
 * `url.resolve` may transfer the auth portion of the url when resolving between two full hosts, see [#1435](https://github.com/nodejs/node/issues/1435).
 
-
 ### We need Node.js v4 evangelists
 
 * Node.js v4 is released soon. We need evangelists for Node.js v4. If you have an interest to evangelize, provide your information in [this issue](https://github.com/nodejs/node/issues/2633).
 * Current members:
-- Fedor Indutny ([@indutny](https://github.com/indutny))
-- Yosuke Furukawa ([@yosuke-furukawa](https://github.com/yosuke-furukawa))
-- Sakthipriyan Vairamani ([@thefourtheye](https://github.com/thefourtheye))
-- Jackson Tian ([@JacksonTian](https://github.com/JacksonTian))
-- P.S.V.R ([@pmq20](https://github.com/pmq20))
-- James M Snell ([@pmq20](https://github.com/pmq20))
-- Mikeal Rogers ([@mikeal](https://github.com/mikeal))
-- Colin Ihrig ([@cjihrig](https://github.com/cjihrig))
-- Jeremiah Senkpiel ([@Fishrock123](https://github.com/Fishrock123))
-- Rich Trott ([@Trott](https://github.com/Trott))
-- Julian Duque ([@julianduque](https://github.com/julianduque))
-- Stephen Belanger ([@Qard](https://github.com/Qard))
-- Ben Noordhuis ([@bnoordhuis](https://github.com/bnoordhuis))
-- Trevor Norris ([@trevnorris](https://github.com/trevnorris))
-- Rod Vagg ([@rvagg](https://github.com/rvagg))
-- Evan Lucas ([@evanlucas](https://github.com/evanlucas))
-- Daniel Khan ([@danielkhan](https://github.com/danielkhan))
-- Raja Sekar ([@rajzshkr](https://github.com/rajzshkr))
+  * Fedor Indutny ([@indutny](https://github.com/indutny))
+  * Yosuke Furukawa ([@yosuke-furukawa](https://github.com/yosuke-furukawa))
+  * Sakthipriyan Vairamani ([@thefourtheye](https://github.com/thefourtheye))
+  * Jackson Tian ([@JacksonTian](https://github.com/JacksonTian))
+  * P.S.V.R ([@pmq20](https://github.com/pmq20))
+  * James M Snell ([@pmq20](https://github.com/pmq20))
+  * Mikeal Rogers ([@mikeal](https://github.com/mikeal))
+  * Colin Ihrig ([@cjihrig](https://github.com/cjihrig))
+  * Jeremiah Senkpiel ([@Fishrock123](https://github.com/Fishrock123))
+  * Rich Trott ([@Trott](https://github.com/Trott))
+  * Julian Duque ([@julianduque](https://github.com/julianduque))
+  * Stephen Belanger ([@Qard](https://github.com/Qard))
+  * Ben Noordhuis ([@bnoordhuis](https://github.com/bnoordhuis))
+  * Trevor Norris ([@trevnorris](https://github.com/trevnorris))
+  * Rod Vagg ([@rvagg](https://github.com/rvagg))
+  * Evan Lucas ([@evanlucas](https://github.com/evanlucas))
+  * Daniel Khan ([@danielkhan](https://github.com/danielkhan))
+  * Raja Sekar ([@rajzshkr](https://github.com/rajzshkr))
 
 ### New nodejs.org went live today
 
@@ -88,6 +86,5 @@ If you have spotted or written something about Node.js and io.js, do come over t
 * [JSConf CO](http://www.jsconf.co/), October 16th - 17th at Ruta N, Medellin, Colombia
 * [NodeFest](http://nodefest.jp/2015/), November 7th at Tokyo, Japan
 * [Nodevember](http://nodevember.org/?utm_source=io.js+and+Node.js+News&utm_medium=article), November 14th - 15th at Nashville, Tennessee, US.
-
 
 Have an event about Node.js and io.js coming up? You can put your events here through the [Evangelism team repo](https://github.com/nodejs/evangelism) and announce it in the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.

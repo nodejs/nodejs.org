@@ -9,11 +9,11 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-So you've got a little CLI tool, but you want to be able to prompt a user for additional data after the script has started, rather than passing it in as a command line argument or putting it in a file.  To do this, you'll need to listen to STDIN ("standard input", i.e. your keyboard), which Node.js exposes for you as `process.stdin`, a readable stream.
+So you've got a little CLI tool, but you want to be able to prompt a user for additional data after the script has started, rather than passing it in as a command line argument or putting it in a file. To do this, you'll need to listen to STDIN ("standard input", i.e. your keyboard), which Node.js exposes for you as `process.stdin`, a readable stream.
 
 Streams are Node's way of dealing with evented I/O - it's a big topic, and you can read more about them [here](https://nodejs.org/api/stream.html). For now, we're going to use node's `readline` module which is a wrapper around Standard I/O, suitable for taking user input from command line(terminal).
 
-Here's a simple example.  Try the following in a new file:
+Here's a simple example. Try the following in a new file:
 
 ```js
 const readline = require("readline");
@@ -43,13 +43,13 @@ NODE PRO TIP: Do remember to use `rl.close()` to close the transmitting otherwis
 
 The last part of the code uses `rl.on()` method to add an event listener to the `close` event which simply `console.log` to the output stream and exits the process. This part is completely optional and can be removed at will. For more in-depth details and usage refer to the docs [here](https://nodejs.org/api/readline.html).
 
-If all of this sounds complicated, or if you want a higher-level interface to this sort of thing, don't worry - as usual, the Node.js community has come to the rescue.  One particularly friendly module to use for this is `prompt`, available on `npm`:
+If all of this sounds complicated, or if you want a higher-level interface to this sort of thing, don't worry - as usual, the Node.js community has come to the rescue. One particularly friendly module to use for this is `prompt`, available on `npm`:
 
 ```bash
 npm install prompt
 ```
 
-Prompt is built to be easy - if your eyes started to glaze over as soon as you saw `Readable Stream`, then this is the section for you.  Compare the following to the example above:
+Prompt is built to be easy - if your eyes started to glaze over as soon as you saw `Readable Stream`, then this is the section for you. Compare the following to the example above:
 
 ```js
 const prompt = require('prompt');
@@ -71,14 +71,14 @@ function onErr(err) {
 
 NODE PRO TIP: This short script also demonstrates proper error handling in node - errors are a callback's first argument, and `return` is used with the error handler so that the rest of the function doesn't execute when errors happen.
 
-Prompt also makes it trivial to handle a certain set of recurring properties that one might want to attach. 
+Prompt also makes it trivial to handle a certain set of recurring properties that one might want to attach.
 
 ```js
 const prompt = require('prompt');
 
 const properties = [
     {
-        name: 'username', 
+        name: 'username',
         validator: /^[a-zA-Z\s\-]+$/,
         warning: 'Username must be only letters, spaces, or dashes'
     },

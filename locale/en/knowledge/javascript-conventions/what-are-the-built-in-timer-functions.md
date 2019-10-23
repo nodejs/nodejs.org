@@ -29,7 +29,7 @@ setInterval: It's been one second!
 
 As you can see the parameters to both are the same. The number second parameter says how long in milliseconds to wait before calling the function passed into the first parameter. The difference between the two functions is that `setTimeout` calls the callback only once while `setInterval` will call it over and over again.
 
-Typically you want to be careful with `setInterval` because it can cause some undesirable effects.  If, for example, you wanted to make sure your server was up by pinging it every second, you might think to try something like this:
+Typically you want to be careful with `setInterval` because it can cause some undesirable effects. If, for example, you wanted to make sure your server was up by pinging it every second, you might think to try something like this:
 
 ```js
 setInterval(ping, 1000);
@@ -61,7 +61,7 @@ clearTimeout(id1);
 clearInterval(id2);
 ```
 
-So if you keep track of the return values of the timers, you can easily unhook the timers. 
+So if you keep track of the return values of the timers, you can easily unhook the timers.
 
 The final trick for the timer objects is you can pass parameters to the callback by passing more parameters to setTimeout and setInterval:
 

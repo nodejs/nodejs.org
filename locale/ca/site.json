@@ -3,6 +3,8 @@
   "author": "Fundació Node.js",
   "url": "https://nodejs.org/ca/",
   "locale": "ca",
+  "language": "Catalan",
+  "languageEnglishVersion": "Catalan",
   "scrollToTop": "Torna al començament",
   "reportNodeIssue": "Informe d'un problema de Node.js",
   "reportWebsiteIssue": "Informe d'un problema al lloc web",
@@ -91,12 +93,12 @@
       "text": "ES6 i més enllà"
     },
     "api-lts": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "subtext": "LTS",
       "text": "%ver% API"
     },
     "api-current": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "text": "%ver% API"
     },
     "guides": {

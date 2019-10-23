@@ -3,6 +3,8 @@
   "author": "Node.js 재단",
   "url": "https://nodejs.org/ko/",
   "locale": "ko",
+  "language": "한국어",
+  "languageEnglishVersion": "Korean",
   "scrollToTop": "맨 위로",
   "reportNodeIssue": "Node.js 이슈 보고",
   "reportWebsiteIssue": "웹사이트 이슈 보고",
@@ -92,12 +94,12 @@
       "text": "ES6와 그 이후"
     },
     "api-lts": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "subtext": "LTS",
       "text": "%ver% API"
     },
     "api-current": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "text": "%ver% API"
     },
     "guides": {
@@ -131,10 +133,6 @@
     "node-meetups": {
       "link": "get-involved/node-meetups",
       "text": "Node.js 미트업"
-    },
-    "node-speakers": {
-      "link": "get-involved/node-speakers",
-      "text": "Node.js 강연자"
     }
   },
   "security": {

@@ -2,11 +2,12 @@
 layout: security.hbs
 title: Seguridade
 ---
+
 # Seguridade
 
 ## Informando dun erro
 
-Todos os erros de seguridade en Node.js son tomadas en serio e deben ser informadas por correo electrónico a 
+Todos os erros de seguridade en Node.js son tomadas en serio e deben ser informadas por correo electrónico a
 [security@nodejs.org](mailto:security@nodejs.org).
 Este será recibido por un subconxunto do equipo central que lida con cuestións de seguridade.
 
@@ -29,22 +30,22 @@ serán recoñecidos.
 
 Esta é a política de divulgación de Node.js
 
-- O informe de seguridade é recibido e asignado a un responsable inicial. Esta persoa vai coordinar a solución 
+* O informe de seguridade é recibido e asignado a un responsable inicial. Esta persoa vai coordinar a solución
 e o proceso de publicación. Cando o problema é confirmado e unha lista de todas as versións afectadas é determinada.
 O código é autidado para atopar calquea potenciais problemas semellantes. As correccións son preparadas para todas
 as versións que aínda están baixo mantemento. Estas correccións non son enviadas ao repositorio público, senón que
 son retidas localmente ata o anuncio público.
 
-- Unha data suxerida de embargo para esta vulnerabilidade é escollida e un CVE (Common Vulnerabilities and  Exposures (CVE®))
+* Unha data suxerida de embargo para esta vulnerabilidade é escollida e un CVE (Common Vulnerabilities and Exposures (CVE®))
 é solicitada para a vulnerabilidade.
 
-- Na data de embargo, unha copia do anuncio é publicada na lista de correo de seguridade de Node.js. Os cambios son subidos ao repositorio público e novas versións son desplegadas en nodejs.org. Nas seguintes 6 horas da notificación á lista de correo, unha copia do anuncio será publicada no blog de Node.js. 
+* Na data de embargo, unha copia do anuncio é publicada na lista de correo de seguridade de Node.js. Os cambios son subidos ao repositorio público e novas versións son desplegadas en nodejs.org. Nas seguintes 6 horas da notificación á lista de correo, unha copia do anuncio será publicada no blog de Node.js.
 
-- Normalmente a data de embargo será fixada 72 horas desde o momento que o CVE é emitido. Sin embargo, isto pode
+* Normalmente a data de embargo será fixada 72 horas desde o momento que o CVE é emitido. Sin embargo, isto pode
 variar en función da gravidade do erro ou da dificultade de aplicar unha corrección.
 
-- Este proceso pode levar algún tempo, especialmente cando é requerida coordinación cos responsables de outros
-proxectos. Cada esforzo posible será feito para manexar o erro da forma máis oportuna posible, con todo, é 
+* Este proceso pode levar algún tempo, especialmente cando é requerida coordinación cos responsables de outros
+proxectos. Cada esforzo posible será feito para manexar o erro da forma máis oportuna posible, con todo, é
 importante que se siga o proceso descrito arriba, para garantir que a divulgación sexa tratada de forma
 consistente.
 
@@ -52,11 +53,10 @@ consistente.
 
 As notificacións de seguridade serán distribuídas usando os seguintes medios.
 
-- [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-- [https://nodejs.org/en/blog](https://nodejs.org/en/blog)
-
+* <https://groups.google.com/group/nodejs-sec>
+* <https://nodejs.org/en/blog/>
 
 ## Comentarios sobre esta política
 
 Se tes suxerencias sobre como este proceso podería ser mellorado, por favor envíe un [pull request](https://github.com/nodejs/nodejs.org)
-ou un correo electrónico [security@nodejs.org] (mailto: security@nodejs.org) para discutilo.
+ou un correo electrónico [security@nodejs.org](mailto:security@nodejs.org) para discutilo.

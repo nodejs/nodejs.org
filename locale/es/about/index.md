@@ -3,12 +3,13 @@ layout: about.hbs
 title: Acerca
 trademark: Trademark
 ---
-# Acerca de Node.js&reg;
 
-Concebido como un entorno de ejecución de JavaScript orientado a eventos asíncronos, Node está diseñado
+# Acerca de Node.js®
+
+Concebido como un entorno de ejecución de JavaScript orientado a eventos asíncronos, Node.js está diseñado
 para construir aplicaciones en red escalables. En la siguiente aplicación de ejemplo "hola mundo", se pueden
 manejar muchas conexiones concurrentes. Por cada conexión el *callback* será ejecutado, sin embargo
-si no hay trabajo que hacer Node estará durmiendo.
+si no hay trabajo que hacer Node.js estará durmiendo.
 
 ```javascript
 const http = require('http');
@@ -29,29 +30,29 @@ server.listen(port, hostname, () => {
 
 Esto contrasta con el modelo de concurrencia más común hoy en día, donde se usan
 hilos del Sistema Operativo. Las operaciones de redes basadas en hilos son relativamente ineficientes
-y son muy difíciles de usar. Además, los usuarios de Node están libres de preocupaciones
-sobre el bloqueo del proceso, ya que no existe. Casi ninguna función en Node realiza
+y son muy difíciles de usar. Además, los usuarios de Node.js están libres de preocupaciones
+sobre el bloqueo del proceso, ya que no existe. Casi ninguna función en Node.js realiza
 I/O directamente, así que el proceso nunca se bloquea. Debido a que no hay bloqueo
-es muy razonable desarrollar sistemas escalables en Node.
+es muy razonable desarrollar sistemas escalables en Node.js.
 
 Si alguno de estos términos no le es familiar, hay un artículo completo en
 [Blocking vs Non-Blocking][].
 
 ---
 
-Node tiene un diseño similar y está influenciado por sistemas como
-[Event Machine][] de Ruby ó [Twisted][] de Python. Node lleva el modelo de eventos un poco
+Node.js tiene un diseño similar y está influenciado por sistemas como
+[Event Machine][] de Ruby ó [Twisted][] de Python. Node.js lleva el modelo de eventos un poco
 más allá, este presenta un [bucle de eventos][] como un entorno en vez de una librería. En otros sistemas siempre existe una llamada
 que bloquea para iniciar el bucle de eventos. El comportamiento es típicamente definido a través de *callbacks* al inicio
-del script y al final se inicia el servidor mediante una llamada de bloqueo como `EventMachine::run()`. En Node no existe esta llamada.
-Node simplemente ingresa el bucle de eventos después de ejecutar el script de entrada.
-Node sale del bucle de eventos cuando no hay más *callbacks* que ejecutar. Se comporta de una
+del script y al final se inicia el servidor mediante una llamada de bloqueo como `EventMachine::run()`. En Node.js no existe esta llamada.
+Node.js simplemente ingresa el bucle de eventos después de ejecutar el script de entrada.
+Node.js sale del bucle de eventos cuando no hay más *callbacks* que ejecutar. Se comporta de una
 forma similar a JavaScript en el navegador - el bucle de eventos está oculto al usuario.
 
-HTTP es ciudadano de primera clase en Node, diseñado con operaciones de streaming y baja latencia
-en mente. Esto hace a Node candidato para ser la base de una librería o un framework web.
+HTTP es ciudadano de primera clase en Node.js, diseñado con operaciones de streaming y baja latencia
+en mente. Esto hace a Node.js candidato para ser la base de una librería o un framework web.
 
-Solo porque Node esté diseñado sin hilos, no significa que usted no puede
+Solo porque Node.js esté diseñado sin hilos, no significa que usted no puede
 aprovechar los múltiples cores de su sistema. Procesos hijos pueden ser lanzados
 usando nuestra API [`child_process.fork()`][], la cual está diseñada para comunicarse
 fácilmente con el proceso principal. Construida sobre la misma interfaz está el módulo [`cluster`][],
@@ -62,4 +63,4 @@ el cual permite compartir sockets entre procesos para activar el balanceo de car
 [`cluster`]: https://nodejs.org/api/cluster.html
 [bucle de eventos]: https://github.com/nodejs/node/blob/master/doc/topics/event-loop-timers-and-nexttick.md
 [Event Machine]: https://github.com/eventmachine/eventmachine
-[Twisted]: http://twistedmatrix.com/
+[Twisted]: https://twistedmatrix.com/trac/

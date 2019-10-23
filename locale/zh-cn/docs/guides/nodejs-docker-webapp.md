@@ -11,7 +11,6 @@ layout: docs.hbs
 
 Docker 允许你以应用程序所有的依赖全部打包成一个标准化的单元，这被成为一个容器。对于应用开发而言，一个容器就是一个蜕化到最基础的 Linux 操作系统。一个镜像是你加载到容器中的软件。
 
-
 ## 创建 Node.js 应用
 
 首先，创建一个新文件夹以便于容纳需要的所有文件，并且在此其中创建一个 `package.json` 文件，描述你应用程序以及需要的依赖：
@@ -67,10 +66,10 @@ touch Dockerfile
 
 用你最喜欢的文本编辑器打开这个 `Dockerfile`。
 
-我们要做的第一件事是定义我们需要从哪个镜像进行构建。这里我们将使用最新的 LTS（长期服务器支持版），`Node` 的版本号为 `8`。你可以从 [Docker 站点](https://hub.docker.com/) 获取相关镜像：
+我们要做的第一件事是定义我们需要从哪个镜像进行构建。这里我们将使用最新的 LTS（长期服务器支持版），`Node` 的版本号为 `10`。你可以从 [Docker 站点](https://hub.docker.com/) 获取相关镜像：
 
 ```docker
-FROM node:8
+FROM node:10
 ```
 
 下一步在镜像中创建一个文件夹存放应用程序代码，这将是你的应用程序工作目录：
@@ -112,13 +111,13 @@ EXPOSE 8080
 最后但同样重要的事是，使用定义运行时的 `CMD` 定义命令来运行应用程序。这里我们使用最简单的 `npm start` 命令，它将运行 `node server.js` 启动你的服务器：
 
 ```docker
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
 你的 `Dockerfile` 现在看上去是这个样子：
 
 ```docker
-FROM node:8
+FROM node:10
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -136,7 +135,7 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
 ```
 
 ## .dockerignore 文件
@@ -155,7 +154,7 @@ npm-debug.log
 进入到 `Dockerfile` 所在的那个目录中，运行以下命令构建 Docker 镜像。开关符 `-t` 让你标记你的镜像，以至于让你以后很容易地用 `docker images` 找到它。
 
 ```bash
-$ docker build -t <your username>/node-web-app .
+docker build -t <your username>/node-web-app .
 ```
 
 Docker 现在将给出你的镜像列表：
@@ -174,7 +173,7 @@ node                            8          1934b0b038d1    5 days ago
 使用 `-d` 模式运行镜像将以分离模式运行 Docker 容器，使得容器在后台自助运行。开关符 `-p` 在容器中把一个公共端口导向到私有的端口，请用以下命令运行你之前构建的镜像：
 
 ```bash
-$ docker run -p 49160:8080 -d <your username>/node-web-app
+docker run -p 49160:8080 -d <your username>/node-web-app
 ```
 
 把你应用程序的输出打印出来：

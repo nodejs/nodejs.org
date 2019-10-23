@@ -2,7 +2,7 @@
 title: Node.js Foundation Elects Board of Directors
 date: 2015-09-04T21:00:00.000Z
 status: publish
-category: Annoucements
+category: Announcements
 slug: foundation-elects-board
 layout: blog-post.hbs
 ---
@@ -33,6 +33,6 @@ In early June, the Node.js and io.js developer community announced that they wer
 
 Node.js Foundation is a collaborative open source project dedicated to building and supporting the Node.js platform and other related modules. Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 2 million downloads per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites.
 
-The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft and PayPal. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, npm, Sauce Labs, SAP, StrongLoop and YLD!. Get involved here: [https://nodejs.org](https://nodejs.org).
+The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft and PayPal. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, npm, Sauce Labs, SAP, StrongLoop and YLD!. Get involved here: <https://nodejs.org/>.
 
 The Node.js Foundation is a Collaborative Project at The Linux Foundation. Linux Foundation Collaborative Projects are independently funded software projects that harness the power of collaborative development to fuel innovation across industries and ecosystems. [www.linuxfoundation.org](http://www.linuxfoundation.org)

@@ -5,11 +5,10 @@ title: パッケージマネージャを利用した Node.js のインストー�
 
 # <!-- Installing Node.js via package manager -->パッケージマネージャを利用した Node.js のインストール
 
-
 <!-- ***Note:*** The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream. -->
 ***注意:*** このページにあるパッケージはそれぞれのパッケージ管理者によってメンテナンスされています。Node.js コアチームによるものでは**ありません**。遭遇した問題はパッケージの管理者に報告してください。もしその問題が Node.js 自体のバグだと判明した場合は、管理者が報告をあげてくれます。
 
-----------------------------
+---
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
@@ -25,7 +24,7 @@ title: パッケージマネージャを利用した Node.js のインストー�
 * [Void Linux](#void-linux)
 * [Windows](#windows)
 
-----------------------------
+---
 
 ## Android
 
@@ -47,7 +46,6 @@ Node.js と npm のパッケージがコミュニティのリポジトリから�
 ```bash
 pacman -S nodejs npm
 ```
-
 
 ## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages-->Debian と Ubuntu ベースの Linux ディストリビューション、エンタープライズ Linux/Fedora と Snap パッケージ
 
@@ -92,7 +90,6 @@ pkg install node
 pkg install node-devel
 ```
 
-
 ## Gentoo
 
 <!-- Node.js is available in the portage tree. -->
@@ -104,9 +101,9 @@ emerge nodejs
 
 ## IBM i
 
-<!-- LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](http://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs8`, `nodejs10`, `nodejs12`, etc) -->
+<!-- LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](https://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs8`, `nodejs10`, `nodejs12`, etc) -->
 
-Node.js の LTS バージョンは IBM から ['yum' パッケージマネージャ](http://ibm.biz/ibmi-rpms) で利用可能です。パッケージの名前は `nodejs` の後にメジャーバージョンの数字が付きます(例えば `nodejs8`, `nodejs10`, `nodejs12`, など)
+Node.js の LTS バージョンは IBM から ['yum' パッケージマネージャ](https://ibm.biz/ibmi-rpms) で利用可能です。パッケージの名前は `nodejs` の後にメジャーバージョンの数字が付きます(例えば `nodejs8`, `nodejs10`, `nodejs12`, など)
 
 <!-- To install Node.js 12.x from the command line, run the following as a user with \*ALLOBJ special authority: -->
 
@@ -136,7 +133,6 @@ cd /usr/pkgsrc/lang/nodejs && make install
 pkgin -y install nodejs
 ```
 
-
 <!-- ## openSUSE and SLE -->
 ## <!--opensuse-and-sle-->openSUSE と SLE
 
@@ -156,11 +152,10 @@ sudo zypper ar \
 sudo zypper in nodejs nodejs-devel
 ```
 
-
 ## macOS
 
-<!-- Simply download the [macOS Installer](https://nodejs.org/#download) direct from the [nodejs.org](https://nodejs.org) web site. -->
-直接 [nodejs.org](https://nodejs.org) のサイトから [macOS Installer](https://nodejs.org/#download) をダウンロードしてください。
+<!-- Simply download the [macOS Installer](https://nodejs.org/en/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site. -->
+直接 [nodejs.org](https://nodejs.org/) のサイトから [macOS Installer](https://nodejs.org/ja/#home-downloadhead) をダウンロードしてください。
 
 <!-- _If you want to download the package with bash:_ -->
 _bash でパッケージをダウンロードしたい場合:_
@@ -171,13 +166,13 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 
 ### 代替手段
 
-**[Homebrew](http://brew.sh/)** を使う:
+**[Homebrew](https://brew.sh/)** を使う:
 
 ```bash
 brew install node
 ```
 
-**[MacPorts](http://www.macports.org/)** を使う:
+**[MacPorts](https://www.macports.org/)** を使う:
 
 ```bash
 port install nodejs<major version>
@@ -205,7 +200,7 @@ cd pkgsrc/lang/nodejs && bmake install
 <!-- ## SmartOS and illumos -->
 ## <!--smartos-and-illumos-->SmartOS と illumos
 
-<!-- SmartOS images come with pkgsrc pre-installed.  On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal: -->
+<!-- SmartOS images come with pkgsrc pre-installed. On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal: -->
 SmartOS のイメージには pkgsrc が付属しています。一方、illumos ディストリビューションの場合は、まず **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)** をインストールし、それから、通常通りバイナリパッケージをインストールすることが出来ます:
 
 ```bash
@@ -219,34 +214,31 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-
 ## Solus
 
-Solus provides node.js in its main repository.
+Solus provides Node.js in its main repository.
 
 ```bash
 sudo eopkg install nodejs
 ```
 
-
 ## Void Linux
 
-<!-- Void Linux ships node.js stable in the main repository. -->
-Void Linux にはメインリポジトリに node.js の安定版があります。
+<!-- Void Linux ships Node.js stable in the main repository. -->
+Void Linux にはメインリポジトリに Node.js の安定版があります。
 
 ```bash
 xbps-install -Sy nodejs
 ```
 
-
 ## Windows
 
-<!-- Simply download the [Windows Installer](https://nodejs.org/#download) directly from the [nodejs.org](https://nodejs.org) web site. -->
-直接 [nodejs.org](https://nodejs.org) のサイトから [Windows Installer](https://nodejs.org/#download) をダウンロードしてください。
+<!-- Simply download the [Windows Installer](https://nodejs.org/en/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site. -->
+直接 [nodejs.org](https://nodejs.org/) のサイトから [Windows Installer](https://nodejs.org/ja/#home-downloadhead) をダウンロードしてください。
 
 ### 代替手段
 
-**[Chocolatey](http://chocolatey.org)** を使う:
+**[Chocolatey](https://chocolatey.org/)** を使う:
 
 ```bash
 cinst nodejs
@@ -254,7 +246,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-**[Scoop](http://scoop.sh/)** を使う:
+**[Scoop](https://scoop.sh/)** を使う:
 
 ```bash
 scoop install nodejs

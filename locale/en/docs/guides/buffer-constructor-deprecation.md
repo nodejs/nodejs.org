@@ -9,13 +9,13 @@ layout: docs.hbs
 
 This guide explains how to migrate to safe `Buffer` constructor methods. The migration fixes the following deprecation warning:
 
-<div class="highlight-box"> 
+<div class="highlight-box">
 The Buffer() and new Buffer() constructors are not recommended for use due to security and usability concerns. Please use the new Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() construction methods instead.
 </div>
 
-- [Variant 1: Drop support for Node.js ≤ 4.4.x and 5.0.0 — 5.9.x](#variant-1) (*recommended*)
-- [Variant 2: Use a polyfill](#variant-2)
-- [Variant 3: Manual detection, with safeguards](#variant-3)
+* [Variant 1: Drop support for Node.js ≤ 4.4.x and 5.0.0 — 5.9.x](#variant-1) (*recommended*)
+* [Variant 2: Use a polyfill](#variant-2)
+* [Variant 3: Manual detection, with safeguards](#variant-3)
 
 ### Finding problematic bits of code using `grep`
 
@@ -28,9 +28,9 @@ exceptions).
 
 If you’re using Node.js ≥ 8.0.0 (which is recommended), Node.js exposes multiple options that help with finding the relevant pieces of code:
 
-- `--trace-warnings` will make Node.js show a stack trace for this warning and other warnings that are printed by Node.js.
-- `--trace-deprecation` does the same thing, but only for deprecation warnings.
-- `--pending-deprecation` will show more types of deprecation warnings. In particular, it will show the `Buffer()` deprecation warning, even on Node.js 8.
+* `--trace-warnings` will make Node.js show a stack trace for this warning and other warnings that are printed by Node.js.
+* `--trace-deprecation` does the same thing, but only for deprecation warnings.
+* `--pending-deprecation` will show more types of deprecation warnings. In particular, it will show the `Buffer()` deprecation warning, even on Node.js 8.
 
 You can set these flags using environment variables:
 
@@ -67,9 +67,9 @@ The Node.js 5.x release line has been unsupported since July 2016, and the Node.
 
 What you would do in this case is to convert all `new Buffer()` or `Buffer()` calls to use `Buffer.alloc()` or `Buffer.from()`, in the following way:
 
-- For `new Buffer(number)`, replace it with `Buffer.alloc(number)`.
-- For `new Buffer(string)` (or `new Buffer(string, encoding)`), replace it with `Buffer.from(string)` (or `Buffer.from(string, encoding)`).
-- For all other combinations of arguments (these are much rarer), also replace `new Buffer(...arguments)` with `Buffer.from(...arguments)`.
+* For `new Buffer(number)`, replace it with `Buffer.alloc(number)`.
+* For `new Buffer(string)` (or `new Buffer(string, encoding)`), replace it with `Buffer.from(string)` (or `Buffer.from(string, encoding)`).
+* For all other combinations of arguments (these are much rarer), also replace `new Buffer(...arguments)` with `Buffer.from(...arguments)`.
 
 Note that `Buffer.alloc()` is also _faster_ on the current Node.js versions than
 `new Buffer(size).fill(0)`, which is what you would otherwise need to ensure zero-filling.
@@ -93,7 +93,7 @@ your users will not observe a runtime deprecation warning when running your code
 
 There are three different polyfills available:
 
-- **[safer-buffer](https://www.npmjs.com/package/safer-buffer)** is a drop-in replacement for the
+* **[safer-buffer](https://www.npmjs.com/package/safer-buffer)** is a drop-in replacement for the
   entire `Buffer` API, that will _throw_ when using `new Buffer()`.
 
   You would take exactly the same steps as in [Variant 1](#variant-1), but with a polyfill
@@ -102,7 +102,7 @@ There are three different polyfills available:
   Do not use the old `new Buffer()` API. In any files where the line above is added,
   using old `new Buffer()` API will _throw_.
 
-- **[buffer-from](https://www.npmjs.com/package/buffer-from) and/or
+* **[buffer-from](https://www.npmjs.com/package/buffer-from) and/or
   [buffer-alloc](https://www.npmjs.com/package/buffer-alloc)** are
   [ponyfills](https://ponyfill.com/) for their respective part of the `Buffer` API. You only need
   to add the package(s) corresponding to the API you are using.
@@ -114,7 +114,7 @@ There are three different polyfills available:
   A downside with this approach is slightly more code changes to migrate off them (as you would be
   using e.g. `Buffer.from()` under a different name).
 
-- **[safe-buffer](https://www.npmjs.com/package/safe-buffer)** is also a drop-in replacement for
+* **[safe-buffer](https://www.npmjs.com/package/safe-buffer)** is also a drop-in replacement for
   the entire `Buffer` API, but using `new Buffer()` will still work as before.
 
   A downside to this approach is that it will allow you to also use the older `new Buffer()` API
@@ -204,13 +204,14 @@ const buf = Buffer.alloc ? Buffer.alloc(number) : new Buffer(number).fill(0);
 ## Regarding `Buffer.allocUnsafe()`
 
 Be extra cautious when using `Buffer.allocUnsafe()`:
- * Don't use it if you don't have a good reason to
-   * e.g. you probably won't ever see a performance difference for small buffers, in fact, those
-     might be even faster with `Buffer.alloc()`,
-   * if your code is not in the hot code path — you also probably won't notice a difference,
-   * keep in mind that zero-filling minimizes the potential risks.
- * If you use it, make sure that you never return the buffer in a partially-filled state,
-   * if you are writing to it sequentially — always truncate it to the actual written length
+
+* Don't use it if you don't have a good reason to
+  * e.g. you probably won't ever see a performance difference for small buffers, in fact, those
+    might be even faster with `Buffer.alloc()`,
+  * if your code is not in the hot code path — you also probably won't notice a difference,
+  * keep in mind that zero-filling minimizes the potential risks.
+* If you use it, make sure that you never return the buffer in a partially-filled state,
+  * if you are writing to it sequentially — always truncate it to the actual written length
 
 Errors in handling buffers allocated with `Buffer.allocUnsafe()` could result in various issues,
 ranged from undefined behavior of your code to sensitive data (user input, passwords, certs)
@@ -225,14 +226,14 @@ version (and lacking type checks also adds DoS to the list of potential problems
 
 The `Buffer` constructor could be used to create a buffer in many different ways:
 
-- `new Buffer(42)` creates a `Buffer` of 42 bytes. Before Node.js 8, this buffer contained
+* `new Buffer(42)` creates a `Buffer` of 42 bytes. Before Node.js 8, this buffer contained
   *arbitrary memory* for performance reasons, which could include anything ranging from
   program source code to passwords and encryption keys.
-- `new Buffer('abc')` creates a `Buffer` that contains the UTF-8-encoded version of
+* `new Buffer('abc')` creates a `Buffer` that contains the UTF-8-encoded version of
   the string `'abc'`. A second argument could specify another encoding: for example,
   `new Buffer(string, 'base64')` could be used to convert a Base64 string into the original
   sequence of bytes that it represents.
-- There are several other combinations of arguments.
+* There are several other combinations of arguments.
 
 This meant that in code like `var buffer = new Buffer(foo);`, *it is not possible to tell
 what exactly the contents of the generated buffer are* without knowing the type of `foo`.
@@ -251,18 +252,18 @@ function stringToBase64(req, res) {
 
 Note that this code does *not* validate the type of `req.body.string`:
 
-- `req.body.string` is expected to be a string. If this is the case, all goes well.
-- `req.body.string` is controlled by the client that sends the request.
-- If `req.body.string` is the *number* `50`, the `rawBytes` would be `50` bytes:
-  - Before Node.js 8, the content would be uninitialized
-  - After Node.js 8, the content would be `50` bytes with the value `0`
+* `req.body.string` is expected to be a string. If this is the case, all goes well.
+* `req.body.string` is controlled by the client that sends the request.
+* If `req.body.string` is the *number* `50`, the `rawBytes` would be `50` bytes:
+  * Before Node.js 8, the content would be uninitialized
+  * After Node.js 8, the content would be `50` bytes with the value `0`
 
 Because of the missing type check, an attacker could intentionally send a number
 as part of the request. Using this, they can either:
 
-- Read uninitialized memory. This **will** leak passwords, encryption keys and other
+* Read uninitialized memory. This **will** leak passwords, encryption keys and other
   kinds of sensitive information. (Information leak)
-- Force the program to allocate a large amount of memory. For example, when specifying
+* Force the program to allocate a large amount of memory. For example, when specifying
   `500000000` as the input value, each request will allocate 500MB of memory.
   This can be used to either exhaust the memory available of a program completely
   and make it crash, or slow it down significantly. (Denial of Service)

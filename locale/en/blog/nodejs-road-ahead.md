@@ -5,6 +5,7 @@ author: Timothy J Fontaine
 slug: nodejs-road-ahead
 layout: blog-post.hbs
 ---
+
 As the new project lead for Node.js I am excited for our future, and want to
 give you an update on where we are.
 
@@ -33,7 +34,7 @@ functionality to embed Node in your existing project.
 
 The list can go on and on. Yet, Node is larger than the software itself. Node
 is also the community, the businesses, the ecosystems, and their related
-events. With that in mind there are things we can work to improve. 
+events. With that in mind there are things we can work to improve.
 
 The core team will be improving its procedures such that we can quickly and
 efficiently communicate with you. We want to provide high quality and timely
@@ -47,7 +48,7 @@ After the release of v0.12 we will facilitate the community to contribute and
 curate content for nodejs.org. Allowing the community to continue to invest in
 Node will ensure nodejs.org is an excellent starting point and the primary
 resource for tutorials, documentation, and materials regarding Node. We have an
-awesome and engaged community, and they're paramount to our success. 
+awesome and engaged community, and they're paramount to our success.
 
 I'm excited for Node's future, to see new and interesting use cases, and to
 continue to help businesses scale and innovate with Node. We have a lot we can
