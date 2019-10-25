@@ -9,7 +9,7 @@ layout: contribute.hbs
 
 ## فعاليات برمج + تعلم القادمة
 
-* سوف يتم الإعلان عنها
+* [موسكو ، روسيا في 6 نوفمبر 2019](https://medium.com/piterjs/announcement-node-js-code-learn-in-moscow-fd997241c77)
 
 ## فعاليات برمج + تعلم السابقة
 
