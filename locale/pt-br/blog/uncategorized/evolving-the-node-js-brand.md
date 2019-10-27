@@ -32,6 +32,6 @@ Estamos ansiosos para explorar essa linguagem visual, pois a tecnologia tem um f
 
 Esperamos que você se divirta usando.
 
-Para baixar o novo logotipo, visite [[nodejs.org/pt-br/about/resources/](http://nodejs.org/en/about/resources/)]([https://nodejs.org/pt-br/about/resources/](https://nodejs.org/en/about/resources/)).
+Para baixar o novo logotipo, visite [nodejs.org/pt-br/about/resources/](http://nodejs.org/pt-br/about/resources/)
 
 ![Tri-color Node](/static/images/blog/uncategorized/evolving-the-node-js-brand/tri-color-node.png)
