@@ -1,5 +1,5 @@
 ---
-title: Evolving the Node.js Brand
+title: Evoluindo a Marca Node.js
 author: Emily Tanaka-Delgado
 date: 2011-07-11T19:02:45.000Z
 status: publish

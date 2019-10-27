@@ -1,5 +1,5 @@
 ---
-title: An Easy Way to Build Scalable Network Programs
+title: Um Jeito Fácil de Construir Programas Escaláveis de Rede
 author: ryandahl
 date: 2011-10-04T22:39:56.000Z
 status: publish

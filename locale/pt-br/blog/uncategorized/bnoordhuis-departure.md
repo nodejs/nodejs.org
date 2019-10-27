@@ -1,5 +1,5 @@
 ---
-title: Ben Noordhuis's Departure
+title: A saída de Ben Noordhuis
 date: 2013-12-03T22:13:57.000Z
 slug: bnoordhuis-departure
 layout: blog-post.hbs
