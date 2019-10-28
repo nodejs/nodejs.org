@@ -23,6 +23,7 @@ const postcss = require('postcss')
 const sass = require('node-sass')
 const ncp = require('ncp')
 const junk = require('junk')
+const semver = require('semver')
 
 const githubLinks = require('./scripts/plugins/githubLinks')
 const navigation = require('./scripts/plugins/navigation')
@@ -293,6 +294,10 @@ function getSource (callback) {
           link: '/en/blog/vulnerability/february-2019-security-releases/'
         }
       }
+    }
+    if (semver.gt(source.project.latestVersions.lts.node, source.project.latestVersions.current.node)) {
+      // If LTS is higher than Current hide it from the main page
+      source.project.latestVersions.hideCurrent = true
     }
 
     callback(err, source)

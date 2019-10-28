@@ -183,7 +183,7 @@ app.get('/redos-me', (req, res) => {
   let filePath = req.query.filePath;
 
   // REDOS
-  if (fileName.match(/(\/.+)+$/)) {
+  if (filePath.match(/(\/.+)+$/)) {
     console.log('valid path');
   }
   else {
