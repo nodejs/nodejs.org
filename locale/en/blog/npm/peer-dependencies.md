@@ -7,9 +7,7 @@ slug: peer-dependencies
 layout: blog-post.hbs
 ---
 
-<i>Reposted from [Domenic's
-blog](http://domenic.me/2013/02/08/peer-dependencies/) with
-permission.  Thanks!</i>
+_Reposted from [Domenic's blog](http://domenic.me/2013/02/08/peer-dependencies/) with permission. Thanks!_
 
 npm is awesome as a package manager. In particular, it handles sub-dependencies very well: if my package depends on
 `request` version 2 and `some-other-library`, but `some-other-library` depends on `request` version 1, the resulting
@@ -30,11 +28,11 @@ There's one use case where this falls down, however: *plugins*. A plugin package
 package, even though it does not always directly *use* the host package. There are many examples of this pattern in the
 Node.js package ecosystem already:
 
-- Grunt [plugins](http://gruntjs.com/#plugins-all)
-- Chai [plugins](http://chaijs.com/plugins)
-- LevelUP [plugins](https://github.com/rvagg/node-levelup/wiki/Modules)
-- Express [middleware](http://expressjs.com/api.html#middleware)
-- Winston [transports](https://github.com/flatiron/winston/blob/master/docs/transports.md)
+* Grunt [plugins](http://gruntjs.com/#plugins-all)
+* Chai [plugins](http://chaijs.com/plugins)
+* LevelUP [plugins](https://github.com/rvagg/node-levelup/wiki/Modules)
+* Express [middleware](http://expressjs.com/api.html#middleware)
+* Winston [transports](https://github.com/flatiron/winston/blob/master/docs/transports.md)
 
 Even if you're not familiar with any of those use cases, surely you recall "jQuery plugins" from back when you were a
 client-side developer: little `<script>`s you would drop into your page that would attach things to `jQuery.prototype`

@@ -5,18 +5,17 @@ layout: docs.hbs
 
 # 请使用 `Buffer.from()`/`Buffer.alloc()`
 
-<a id="overview"></a>
-## 概括
+## <!--overview-->概括
 
 本教程将向你介绍如果迁移到安全的 `Buffer` 构造函数方法。此合并将消除以下已废除的警告：
 
-<div class="highlight-box"> 
+<div class="highlight-box">
 Buffer() 和 new Buffer() 构造函数对于有安全顾虑的人而言是不推荐使用的。请使用新的方法 Buffer.alloc()，Buffer.allocUnsafe() 或者是 Buffer.from() 构造函数。
 </div>
 
-- [变化 1： 在 Node.js ≤ 4.4.x 和 5.0.0 — 5.9.x 版本中不支持](#variant-1) (*推荐*)
-- [变化 2： 使用 polyfill 库](#variant-2)
-- [变化 3： 带安全守护的手动检测](#variant-3)
+* [变化 1： 在 Node.js ≤ 4.4.x 和 5.0.0 — 5.9.x 版本中不支持](#variant-1) (*推荐*)
+* [变化 2： 使用 polyfill 库](#variant-2)
+* [变化 3： 带安全守护的手动检测](#variant-3)
 
 ### 在使用 `grep` 的代码中找出一些问题
 
@@ -28,9 +27,9 @@ Buffer() 和 new Buffer() 构造函数对于有安全顾虑的人而言是不推
 
 如果你使用的 Node.js 版本大于等于 8.0.0，Node.js 提供了一些选项帮助你在代码中寻找相关问题：
 
-- `--trace-warnings` 通过 Node.js 向您展示堆栈信息跟踪，打印出此警告和其它警告信息。
-- `--trace-deprecation` 和上面差不多，不过只打印废弃警告。
-- `--pending-deprecation` 将对废弃警告给出更多的类型。尤其它会展示 `Buffer()` 的废弃警告，即便在 Node.js 8 也是如此。
+* `--trace-warnings` 通过 Node.js 向您展示堆栈信息跟踪，打印出此警告和其它警告信息。
+* `--trace-deprecation` 和上面差不多，不过只打印废弃警告。
+* `--pending-deprecation` 将对废弃警告给出更多的类型。尤其它会展示 `Buffer()` 的废弃警告，即便在 Node.js 8 也是如此。
 
 你可以使用环境变量设置这些开关：
 
@@ -62,11 +61,11 @@ Node.js 5.x 发行自 2016 年就不再支持，而 4.x 版本 发行线支持�
 
 在这种情况下，你应该把全部的 `new Buffer()` 或 `Buffer()` 更改为 `Buffer.alloc()` 或 `Buffer.from()`，规则如下：
 
-- 对于 `new Buffer(number)`, 请用 `Buffer.alloc(number)` 替换。
-- 对于 `new Buffer(string)` （或 `new Buffer(string, encoding)`），请用对应的 `Buffer.from(string)` （或 `Buffer.from(string, encoding)`）进行替换。
-- 对于其它情况（一般极为罕见）中使用了 `new Buffer(...arguments)` 的，请用 `Buffer.from(...arguments)` 进行替换。
+* 对于 `new Buffer(number)`, 请用 `Buffer.alloc(number)` 替换。
+* 对于 `new Buffer(string)` （或 `new Buffer(string, encoding)`），请用对应的 `Buffer.from(string)` （或 `Buffer.from(string, encoding)`）进行替换。
+* 对于其它情况（一般极为罕见）中使用了 `new Buffer(...arguments)` 的，请用 `Buffer.from(...arguments)` 进行替换。
 
-注意：`Buffer.alloc()` 在当前的 Node.js 版本上 _快于_ 
+注意：`Buffer.alloc()` 在当前的 Node.js 版本上 _快于_
 `new Buffer(size).fill(0)`，后者是当你确认需要用 0 对整个缓存进行初始化。
 
 启用 ESLint 检查规则 [不使用缓存构造函数](https://eslint.org/docs/rules/no-buffer-constructor)
@@ -80,12 +79,12 @@ _如果你目前支持那些旧版本的 Node.js，并且抛弃对它们的支�
 
 存在着三种替换库：
 
-- **[更安全的缓存](https://www.npmjs.com/package/safer-buffer)** 是整个用来替换 `Buffer` 函数的方法。当你在使用 `new Buffer()` 的时候，将会 _抛出_ 异常。
+* **[更安全的缓存](https://www.npmjs.com/package/safer-buffer)** 是整个用来替换 `Buffer` 函数的方法。当你在使用 `new Buffer()` 的时候，将会 _抛出_ 异常。
   和 [变化 1](#版本-1) 中一样，你会得到详细同样的步骤。不过请用 `const Buffer = require('safer-buffer').Buffer` 在你所有文件中对 `Buffer` 函数进行替换。
 
   请不要使用旧版本的 `new Buffer()` 函数，在添加上面的行的任何文件中，使用 `new Buffer()` 会 _抛出_ 异常。
 
-- **[buffer-from](https://www.npmjs.com/package/buffer-from) 或
+* **[buffer-from](https://www.npmjs.com/package/buffer-from) 或
   [buffer-alloc](https://www.npmjs.com/package/buffer-alloc)** 都是
   [ponyfills](https://ponyfill.com/) `Buffer` 可接受的方案。 你所要做的就是针对你自己的 API 添加所需的包。
 
@@ -93,10 +92,10 @@ _如果你目前支持那些旧版本的 Node.js，并且抛弃对它们的支�
 
   这种方法的缺点是稍微改变代码以迁移它们（如您所希望的那样）。例如在不同的名称下使用 `Buffer.from()`。
 
-- **[安全的缓存](https://www.npmjs.com/package/safe-buffer)** 同样也是替换整个 `Buffer` 的方案，但是用 `new Buffer()` 也可以像以前一样正常工作。
+* **[安全的缓存](https://www.npmjs.com/package/safe-buffer)** 同样也是替换整个 `Buffer` 的方案，但是用 `new Buffer()` 也可以像以前一样正常工作。
 
   欲达此目的而降阶到此，可以让你在代码中使用稍旧一些的 `new Buffer()` 函数，它会引发代码一些问题，并在 Node.js 10 （[阅读更多详情](https://github.com/chalker/safer-buffer#why-not-safe-buffer)） 激发对于运行时废弃函数的警告检查。
-  
+
 注意，在任意一种情况下，手动移除你代码中所有关于 `Buffer` 的调用非常重要——仅在 `safe-buffer` 中抛出警告不解决问题，它只是为新的 API 提供了一种替换而已。我亲眼见过人们犯过这类错误。
 
 启用 ESLint 规则 [不使用缓存构造函数](https://eslint.org/docs/rules/no-buffer-constructor)
@@ -165,11 +164,12 @@ const buf = Buffer.alloc ? Buffer.alloc(number) : new Buffer(number).fill(0);
 ## 关于 `Buffer.allocUnsafe()`
 
 使用 `Buffer.allocUnsafe()` 须格外谨慎几点：
- * 如果没有一个很好的理由，请不要使用它：
-   * 对于小缓存，你或许不想看到性能上的差别。实际上，用 `Buffer.alloc()` 甚至更快。
-   * 如果你的代码不是在热代码路径中——你也不希望看到有差别，记住用零填充将把潜在的风险降到最低。
- * 如果你使用它，请务必保证你从不会返回只填充了一部分的缓存，
-   * 如果你按顺序写入此缓存——总是截取此缓存到你写入缓存的实际长度。
+
+* 如果没有一个很好的理由，请不要使用它：
+  * 对于小缓存，你或许不想看到性能上的差别。实际上，用 `Buffer.alloc()` 甚至更快。
+  * 如果你的代码不是在热代码路径中——你也不希望看到有差别，记住用零填充将把潜在的风险降到最低。
+* 如果你使用它，请务必保证你从不会返回只填充了一部分的缓存，
+  * 如果你按顺序写入此缓存——总是截取此缓存到你写入缓存的实际长度。
 
 处理与 `Buffer.allocUnsafe()` 相关的缓存错误可能会引发各种各样的问题，从你代码的不确定行为表现到敏感数据（如用户输入，密码，相关证书等）被泄露给远程的攻击者等。
 
@@ -181,9 +181,9 @@ _注意，当你不用 0 去填充缓存，此问题同样发生在 `new Buffer(
 
 `Buffer` 构造函数可以用不同方式创建缓存：
 
-- `new Buffer(42)` 创建一个 42 个字节的 `缓存`。在 Node.js 8 之前，该缓存考虑性能，它包含 *随机内存*，而这可能包括任何数据，从编码的源码到密码，以及加密秘钥等。
-- `new Buffer('abc')` 创建一个 UTF-8 编码的字符串 `'abc'`。第二个参数可以指定用何种编码：举一个例子，`new Buffer(string, 'base64')` 可用于将Base64字符串转换为原始字符串表示的字节序列。
-- 除此之外，还有一些其它参数的组合。
+* `new Buffer(42)` 创建一个 42 个字节的 `缓存`。在 Node.js 8 之前，该缓存考虑性能，它包含 *随机内存*，而这可能包括任何数据，从编码的源码到密码，以及加密秘钥等。
+* `new Buffer('abc')` 创建一个 UTF-8 编码的字符串 `'abc'`。第二个参数可以指定用何种编码：举一个例子，`new Buffer(string, 'base64')` 可用于将Base64字符串转换为原始字符串表示的字节序列。
+* 除此之外，还有一些其它参数的组合。
 
 这意味着在代码中诸如 `var buffer = new Buffer(foo);`，当你不知道 `foo` 是什么类型，想要知道生成的缓存里边到底存了什么内容几乎是不可能的。
 
@@ -200,16 +200,16 @@ function stringToBase64(req, res) {
 
 注意这个代码 *不会* 验证 `req.body.string` 的类型：
 
-- `req.body.string` 期望的类型是字符串型。如果是这种情况一切正常。
-- `req.body.string` 受客户端发送请求所控制。
-- 如果 `req.body.string` 是 *数字* `50`，`rawBytes` 将变成 `50` 个字节：
-  - 在 Node.js 8 之前，内容是未经初始化的。
-  - 在 Node.js 8 之后，内容是 50 个 0。
+* `req.body.string` 期望的类型是字符串型。如果是这种情况一切正常。
+* `req.body.string` 受客户端发送请求所控制。
+* 如果 `req.body.string` 是 *数字* `50`，`rawBytes` 将变成 `50` 个字节：
+  * 在 Node.js 8 之前，内容是未经初始化的。
+  * 在 Node.js 8 之后，内容是 50 个 0。
 
 因为缺少类型检查，攻击者可以别有用心地发送一个数字作为请求的一部分，借助它，他们可以：
 
-- 读取未初始化的内存数据。 这显然 **会** 导致密码、秘钥和其它敏感数据的泄露（信息泄露）。
-- 强迫程序开辟一个超大内存区域。举一个例子，当指定 `500000000` 作为输入数据时，每个请求将开辟 500MB 内存区。这不是会耗尽内存使得程序崩溃，就会导致明显的程序性能下降（服务拒绝攻击）。
+* 读取未初始化的内存数据。 这显然 **会** 导致密码、秘钥和其它敏感数据的泄露（信息泄露）。
+* 强迫程序开辟一个超大内存区域。举一个例子，当指定 `500000000` 作为输入数据时，每个请求将开辟 500MB 内存区。这不是会耗尽内存使得程序崩溃，就会导致明显的程序性能下降（服务拒绝攻击）。
 
 这些情况在现实的网络服务中都被认为是非常严重的安全问题。
 

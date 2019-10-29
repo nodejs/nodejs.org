@@ -11,7 +11,7 @@ layout: blog-post.hbs
 # io.js and Node.js News
 This week we didn't have io.js releases, complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
 
-### Community Updates
+## Community Updates
 
 * ES2015 is approved, ES2015 is now an [ecma standard](https://esdiscuss.org/topic/ecmascript-2015-is-now-an-ecma-standard).
 * Linux foundation announces [Node.js Foundation](http://www.linuxfoundation.org/news-media/announcements/2015/06/nodejs-foundation-advances-community-collaboration-announces-new)
@@ -45,7 +45,7 @@ This week we didn't have io.js releases, complete changelog from previous releas
   * [GoDaddy](https://garage.godaddy.com/godaddy/godaddy-supports-the-new-node-js-foundation/)
   * [Microsoft](http://blogs.microsoft.com/firehose/2015/02/11/microsoft-joins-industry-to-create-node-js-foundation/)
 
-### Upcoming Events
+## Upcoming Events
 
 * [Nodeday](http://nodeday.com) tickets are free, June 26th at DigitasLBi, London
 * [CascadiaJS](http://2015.cascadiajs.com/) tickets are on sale, July 8th - 10th at Washington State

@@ -7,7 +7,7 @@ title: Instalando Node.js usando un gestor de paquetes
 
 ***Nota:*** Los paquetes en esta página son mantenidos y soportados por sus respectivos responsables, **no** el equipo central de Node.js. Por favor reporte cualquier problema que usted encuentre al responsable del paquete. Sí su problema resulta ser un error en Node.js mismo, el encargado reportará y escalará el error.
 
-----------------------------
+---
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
@@ -22,7 +22,7 @@ title: Instalando Node.js usando un gestor de paquetes
 * [Void Linux](#void-linux)
 * [Windows](#windows)
 
-----------------------------
+---
 
 ## Android
 
@@ -43,7 +43,6 @@ Paquetes para Node.js y npm están disponibles en el repositorio de la comunidad
 ```bash
 pacman -S nodejs npm
 ```
-
 
 ## Distribuciones de Linux basadas en Debian y Ubuntu, Enterprise Linux/Fedora y Snap
 
@@ -81,7 +80,6 @@ pkg install node
 pkg install node-devel
 ```
 
-
 ## Gentoo
 
 Node.js está disponible en el árbol de portage.
@@ -89,7 +87,6 @@ Node.js está disponible en el árbol de portage.
 ```bash
 emerge nodejs
 ```
-
 
 ## NetBSD
 
@@ -104,7 +101,6 @@ cd /usr/pkgsrc/lang/nodejs && make install
 ```bash
 pkgin -y install nodejs
 ```
-
 
 ## openSUSE y SLE
 
@@ -121,10 +117,9 @@ sudo zypper ar \
 sudo zypper in nodejs nodejs-devel
 ```
 
-
 ## macOS
 
-Simplemente descargue el [Instalador para macOS](https://nodejs.org/#download) directamente desde el sitio web de [nodejs.org](https://nodejs.org).
+Simplemente descargue el [Instalador para macOS](https://nodejs.org/es/#home-downloadhead) directamente desde el sitio web de [nodejs.org](https://nodejs.org/).
 
 _Si usted quiere descargar el paquete con bash:_
 
@@ -134,13 +129,13 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 
 ### Alternativas
 
-Usando **[Homebrew](http://brew.sh/)**:
+Usando **[Homebrew](https://brew.sh/)**:
 
 ```bash
 brew install node
 ```
 
-Usando **[MacPorts](http://www.macports.org/)**:
+Usando **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -165,7 +160,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## SmartOS y illumos
 
-Las imágenes de SmartOS vienen con pkgsrc pre-instalado.  En otras distribuciones de illumos, primero instale **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, luego usted puede instalar el paquete binario de la manera usual:
+Las imágenes de SmartOS vienen con pkgsrc pre-instalado. En otras distribuciones de illumos, primero instale **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, luego usted puede instalar el paquete binario de la manera usual:
 
 ```bash
 pkgin -y install nodejs
@@ -177,32 +172,29 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-
 ## Solus
 
-Solus provides node.js in its main repository.
+Solus provides Node.js in its main repository.
 
 ```bash
 sudo eopkg install nodejs
 ```
 
-
 ## Void Linux
 
-Void Linux incluye node.js estable en el repositorio principal.
+Void Linux incluye Node.js estable en el repositorio principal.
 
 ```bash
 xbps-install -Sy nodejs
 ```
 
-
 ## Windows
 
-Simplemente descargue el [Instalador para Windows](https://nodejs.org/#download) directamente desde el sitio web de [nodejs.org](https://nodejs.org).
+Simplemente descargue el [Instalador para Windows](https://nodejs.org/es/#home-downloadhead) directamente desde el sitio web de [nodejs.org](https://nodejs.org/).
 
 ### Alternativas
 
-Usando **[Chocolatey](http://chocolatey.org)**:
+Usando **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
@@ -210,7 +202,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-Usando **[Scoop](http://scoop.sh/)**:
+Usando **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs

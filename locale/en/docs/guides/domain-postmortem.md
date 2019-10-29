@@ -22,16 +22,14 @@ Here's an example of how one indirectly linked modules can affect another:
 const b = require('./b');
 const c = require('./c');
 
-
 // module b.js
 const d = require('domain').create();
 d.on('error', () => { /* silence everything */ });
 d.enter();
 
-
 // module c.js
 const dep = require('some-dep');
-dep.method();  // Uh-oh! This method doesn't actually exist.
+dep.method(); // Uh-oh! This method doesn't actually exist.
 ```
 
 Since module `b` enters the domain but never exits any uncaught exception will
@@ -80,7 +78,7 @@ d.on('error', () => console.error('d intercepted an error'));
 
 d.run(() => {
   const server = net.createServer((c) => {
-    const e = domain.create();  // No 'error' handler being set.
+    const e = domain.create(); // No 'error' handler being set.
     e.run(() => {
       // This will not be caught by d's error handler.
       setImmediate(() => {
@@ -99,7 +97,6 @@ automatically bubble. Unfortunately both these situations occur, leading to
 potentially confusing behavior that may even be prone to difficult to debug
 timing conflicts.
 
-
 ### API Gaps
 
 While APIs based on using `EventEmitter` can use `bind()` and errback style
@@ -108,7 +105,6 @@ active domain must be executed inside of `run()`. Meaning if module authors
 wanted to support domains using a mechanism alternative to those mentioned they
 must manually implement domain support themselves. Instead of being able to
 leverage the implicit mechanisms already in place.
-
 
 ### Error Propagation
 
@@ -121,7 +117,7 @@ example of the failing of error propagation:
 
 ```js
 const d1 = domain.create();
-d1.foo = true;  // custom member to make more visible in console
+d1.foo = true; // custom member to make more visible in console
 d1.on('error', (er) => { /* handle error */ });
 
 d1.run(() => setTimeout(() => {
@@ -155,7 +151,6 @@ several asynchronous requests and each one then `write()`'s data back to the
 client many more errors will arise from attempting to `write()` to a closed
 handle. More on this in _Resource Cleanup on Exception_.
 
-
 ### Resource Cleanup on Exception
 
 The following script contains a more complex example of properly cleaning up
@@ -182,7 +177,7 @@ let uid = 0;
 // Setting up temporary resources
 const buf = Buffer.alloc(FILESIZE);
 for (let i = 0; i < buf.length; i++)
-  buf[i] = ((Math.random() * 1e3) % 78) + 48;  // Basic ASCII
+  buf[i] = ((Math.random() * 1e3) % 78) + 48; // Basic ASCII
 fs.writeFileSync(FILENAME, buf);
 
 function ConnectionResource(c) {
@@ -271,7 +266,7 @@ function pipeData(cr) {
   d3.add(ps);
   ps.on('connection', (conn) => {
     connectionList.push(conn);
-    conn.on('data', () => {});  // don't care about incoming data.
+    conn.on('data', () => {}); // don't care about incoming data.
     conn.on('close', () => {
       connectionList.splice(connectionList.indexOf(conn), 1);
     });
@@ -303,12 +298,12 @@ process.on('exit', () => {
 
 ```
 
-- When a new connection happens, concurrently:
-  - Open a file on the file system
-  - Open Pipe to unique socket
-- Read a chunk of the file asynchronously
-- Write chunk to both the TCP connection and any listening sockets
-- If any of these resources error, notify all other attached resources that
+* When a new connection happens, concurrently:
+  * Open a file on the file system
+  * Open Pipe to unique socket
+* Read a chunk of the file asynchronously
+* Write chunk to both the TCP connection and any listening sockets
+* If any of these resources error, notify all other attached resources that
   they need to clean up and shutdown
 
 As we can see from this example a lot more must be done to properly clean up
@@ -332,7 +327,6 @@ to cleanup, and properly test that cleanup has been done, grows greatly.
 In the end, in terms of handling errors, domains aren't much more than a
 glorified `'uncaughtException'` handler. Except with more implicit and
 unobservable behavior by third-parties.
-
 
 ### Resource Propagation
 
@@ -399,7 +393,7 @@ DataStream.prototype.data = function data(chunk) {
 
 The above shows that it is difficult to have more than one asynchronous API
 attempt to use domains to propagate data. This example could possibly be fixed
-by assigning `parent: domain.active` in the `DataStream` constructor.  Then
+by assigning `parent: domain.active` in the `DataStream` constructor. Then
 restoring it via `domain.active = domain.active.data.parent` just before the
 user's callback is called. Also the instantiation of `DataStream` in the
 `'connection'` callback must be run inside `d.run()`, instead of simply using
@@ -407,7 +401,6 @@ user's callback is called. Also the instantiation of `DataStream` in the
 
 In short, for this to have a prayer of a chance usage would need to strictly
 adhere to a set of guidelines that would be difficult to enforce or test.
-
 
 ## Performance Issues
 
@@ -432,7 +425,6 @@ even adding 1 microsecond overhead per call for any type of setup or tear down
 will result in a 17% performance loss. Granted, this is for the optimized
 scenario of the benchmark, but I believe this demonstrates the necessity for a
 mechanism such as domain to be as cheap to run as possible.
-
 
 ## Looking Ahead
 

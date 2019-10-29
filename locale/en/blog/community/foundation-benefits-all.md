@@ -31,7 +31,7 @@ of Node.js. We welcome community review and feedback on [the draft governance
 documents](https://github.com/joyent/nodejs-advisory-board/tree/master/governance-proposal).
 
 With the recent vote by the io.js TC to join the Node.js Foundation, we took a
-giant leap toward rebuilding a unified community.  @mikeal, @piscisaureus and
+giant leap toward rebuilding a unified community. @mikeal, @piscisaureus and
 others have done an excellent job evangelizing the value of the Foundation,
 and it’s great to see it have such positive impact this early in its
 formation.
@@ -40,7 +40,7 @@ Reunification of the Node.js developer community remains an important goal of
 the Foundation. But to have a successful project, we must also maintain focus
 on addressing the concerns of Node.js users and the ecosystem of vendors. If
 we succeed, Node.js will continue its meteoric rise as the defacto server side
-javascript platform, and everyone wins. If we get it wrong, we jeapordize the
+JavaScript platform, and everyone wins. If we get it wrong, we jeapordize the
 momentum and critical mass that's driven that growth, and everyone loses.
 
 In the user community, enterprise adoption of Node.js has skyrocketed with an

@@ -17,8 +17,8 @@ This week we have one release: [Node.js v5.0.0 (Current)](https://nodejs.org/en/
 
 ### Notable changes : v5.0.0 (Current)
 
-* **v8**: _(Breaking)_ Upgraded to 4.6.85.25 from 4.5.103.35  (Ali Ijaz Sheikh) [#3351](https://github.com/nodejs/node/pull/3351).
-  - Implements the spread operator, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator for further information.
+* **v8**: _(Breaking)_ Upgraded to 4.6.85.25 from 4.5.103.35 (Ali Ijaz Sheikh) [#3351](https://github.com/nodejs/node/pull/3351).
+  * Implements the spread operator, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator for further information.
 * **npm**: Upgraded to version 3.3.6 from 2.14.7, see https://github.com/npm/npm/releases/tag/v3.3.6 for more details. This is a major version bump for npm and it has seen a significant amount of change. Please see the original [npm v3.0.0 release notes](https://github.com/npm/npm/blob/master/CHANGELOG.md#v300-2015-06-25) for a list of major changes (Rebecca Turner) [#3310](https://github.com/nodejs/node/pull/3310).
 
 ### Node.js foundation is considering an iteration on the official logo

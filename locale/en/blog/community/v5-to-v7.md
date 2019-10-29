@@ -2,7 +2,7 @@
 title: Farewell to Node.js v5, Preparing for v7
 date: 2016-09-06T23:36:16.645Z
 status: publish
-category: Annoucements
+category: Announcements
 slug: v5-to-v7
 layout: blog-post.hbs
 author: Rod Vagg

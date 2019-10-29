@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{site.locale}}" {{#if site.rtl}}dir="rtl"{{/if}}>
+<html lang="{{site.locale}}"{{#if site.rtl}} dir="rtl"{{/if}}>
 {{> html-head }}
 
 <body>
@@ -42,6 +42,7 @@
         </div>
 
         {{#if project.latestVersions.current.node}}
+        {{#unless project.latestVersions.hideCurrent}}
           <div class="home-downloadblock">
 
             <a href="https://nodejs.org/dist/{{ project.latestVersions.current.node }}/" class="home-downloadbutton"  title="{{ labels.download }} {{stripv project.latestVersions.current.node }} {{ labels.current }}"  data-version="{{ project.latestVersions.current.node }}">
@@ -62,6 +63,7 @@
             </ul>
 
           </div>
+        {{/unless}}
         {{/if}}
         <p>
           {{{ labels.version-schedule-prompt }}} <a href="https://nodejs.org/{{site.locale}}/about/releases/">{{ labels.version-schedule-prompt-link-text }}</a>
@@ -77,7 +79,5 @@
   </div>
 
   {{> footer className="no-margin-top" }}
-  <script src="/static/js/download.js" async defer></script>
-
 </body>
 </html>

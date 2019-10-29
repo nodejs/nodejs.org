@@ -28,7 +28,7 @@ server.on('request', (request, response) => {
 });
 ```
 
-当一个 HTTP 到达服务端，node 调用 request 处理程序，并产生一些唾手可得的对象用以处理传输，这些对象就是  `request` 和 `response`。我们马上会讲到。
+当一个 HTTP 到达服务端，node 调用 request 处理程序，并产生一些唾手可得的对象用以处理传输，这些对象就是 `request` 和 `response`。我们马上会讲到。
 
 实际上，为了处理请求，[`listen`][] 方法需要在 `server` 对象上被显式调用。在大多数情况下，你只要把端口号作为参数传入 `listen` 方法中，作为监听端口即可。当然也有一些其它选项，具体可以参考 [API 参考文档][]。
 
@@ -39,6 +39,7 @@ server.on('request', (request, response) => {
 ```javascript
 const { method, url } = request;
 ```
+
 > **注意：** `request` 对象是 [`IncomingMessage`][] 的一个实例。
 
 这里的 `method` 总是一个普通的 HTTP 方法动作行为 (verb)，`url` 是指没有服务器协议和
@@ -78,11 +79,11 @@ request.on('data', (chunk) => {
 ```
 
 > **注意：** 这看起来有些单调乏味，大多数情况下也确实是这样。
-不过庆幸的是因为 [`npm`][] 上实在有太多的诸如 [`concat-stream`][] 和 [`body`][] 一类类库屏蔽了部分细节逻辑而替你做了这些事情。当然，对于你而言在使用这些类库前知道它们到底干了什么非常重要，这就是你为什么需要读这篇文章！
+> 不过庆幸的是因为 [`npm`][] 上实在有太多的诸如 [`concat-stream`][] 和 [`body`][] 一类类库屏蔽了部分细节逻辑而替你做了这些事情。当然，对于你而言在使用这些类库前知道它们到底干了什么非常重要，这就是你为什么需要读这篇文章！
 
 ## 一笔带过关于错误的一些信息
 
-因为 `request` 是一个 [`ReadableStream`][] 对象，它同样也是 [`EventEmitter`][] 对象。所以当有错误发生时，表现的行为是很相像的。当有错误在 `request` 流上发生时，它会自动激发自身的 `'error'` 事件。**如果你不去处理监听这个事件，此错误将被*抛出*，这导致你的程序崩溃。** 你应该无论如何都要添加  `'error'` 事件去监听你的请求对象，哪怕你只是做一个日志或者用你自己的独有方式去处理（当然，最佳的处理方式是返回一些出错的信息，这已是后话了）。
+因为 `request` 是一个 [`ReadableStream`][] 对象，它同样也是 [`EventEmitter`][] 对象。所以当有错误发生时，表现的行为是很相像的。当有错误在 `request` 流上发生时，它会自动激发自身的 `'error'` 事件。**如果你不去处理监听这个事件，此错误将被*抛出*，这导致你的程序崩溃。** 你应该无论如何都要添加 `'error'` 事件去监听你的请求对象，哪怕你只是做一个日志或者用你自己的独有方式去处理（当然，最佳的处理方式是返回一些出错的信息，这已是后话了）。
 
 ```javascript
 request.on('error', (err) => {
@@ -119,7 +120,6 @@ http.createServer((request, response) => {
 
 谈了那么就，我们都还没有说到 `response` 对象。它是一个 [`ServerResponse`][] 实例，而 ServerRespose 又是 [`WritableStream`][]。它包含了很多方法可以用以把数据返回给客户端。我们下面就将涉及到此议题。
 
-
 ## HTTP 状态码
 
 如果你嫌麻烦不想设置它，返回客户端的默认状态码总是 200。当然，不是每个 HTTP 返回码必须都是 200，在某些情况下你一定希望返回一个不同的状态码，所以你应该设置 `statusCode` 属性。
@@ -143,7 +143,8 @@ response.setHeader('X-Powered-By', 'bacon');
 
 ## 显示发送头数据
 
-我们之前讨论的设置响应头以及状态码的方法建立在你使用“隐式设置”的方式，这意味着你在发送消息体之前依赖于 node 发送请求头。  
+我们之前讨论的设置响应头以及状态码的方法建立在你使用“隐式设置”的方式，这意味着你在发送消息体之前依赖于 node 发送请求头。
+
 如果你愿意，你可以为返回流重写响应头。为做到这点，你可以使用 [`writeHead`][] 方法向消息流重写状态码和响应头。
 
 ```javascript
@@ -175,11 +176,11 @@ response.end('<html><body><h1>Hello, World!</h1></body></html>');
 ```
 
 > **注意：** 你只有在开始向返回体写数据 *之前* 设置状态和响应头，这点很重要。
-因为响应头信息总是在消息体前到达。
+> 因为响应头信息总是在消息体前到达。
 
 ## 另一件一笔带过关于错误的事
 
- `response` 返回流同样也会触发 `'error'` 事件，某种程度上说你不得不自己去处理它。之前全部关于 `request` 消息流出错的处理方法在这里也同样适用。
+`response` 返回流同样也会触发 `'error'` 事件，某种程度上说你不得不自己去处理它。之前全部关于 `request` 消息流出错的处理方法在这里也同样适用。
 
 ## 把之前所学的全部整合到一起
 
@@ -265,7 +266,7 @@ http.createServer((request, response) => {
 ```
 
 > **注意：** 为了检查请求路径，我们设计了一个路由格式。
-其它形式的路由 `switch`，简单的可以通过 `switch` 的形式检查，复杂的诸如 [`express`][] 框架，如果你正在寻找路由而不需要做其它事情，简单用 [`router`][]。
+> 其它形式的路由 `switch`，简单的可以通过 `switch` 的形式检查，复杂的诸如 [`express`][] 框架，如果你正在寻找路由而不需要做其它事情，简单用 [`router`][]。
 
 太棒了！现在我们进一步简化它。记住，`request` 是一个 [`ReadableStream`][]对象，`response`对象是一个 [`WritableStream`][]。那意味着我们可以使用 [`pipe`][]直接从一个流转到另外一个流。那的确是我们需要的：
 
@@ -321,8 +322,6 @@ http.createServer((request, response) => {
 * 在 `request` 和 `response` 流中处理错误。
 
 从这些基础知识中，关于 Node.js 的 HTTP 服务一些实用案例已经逐步被构建起来，API 文档还提供了大量其它的说明，所以请详细阅读 [`EventEmitters`][]，[`Streams`][] 以及 [`HTTP`][]。
-
-
 
 [`EventEmitters`]: https://nodejs.org/api/events.html
 [`Streams`]: https://nodejs.org/api/stream.html

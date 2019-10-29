@@ -2,6 +2,7 @@
 layout: about.hbs
 title: Working Groups
 ---
+
 # Core Working Groups
 <!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 
@@ -20,7 +21,6 @@ Core Working Groups are created by the
 * [Release](#release)
 * [Security](#security)
 * [Streams](#streams)
-* [Website](#website)
 
 ### [Addon API](https://github.com/nodejs/nan)
 
@@ -31,6 +31,7 @@ assisting in the writing of code that is compatible with many actively used
 versions of Node.js, V8 and libuv.
 
 Responsibilities include:
+
 * Maintaining the [NAN](https://github.com/nodejs/nan) GitHub repository,
   including code, issues and documentation.
 * Maintaining the [addon-examples](https://github.com/nodejs/node-addon-examples)
@@ -55,6 +56,7 @@ on an agreed set of benchmarks that can be used to:
 * avoid performance regressions between releases
 
 Responsibilities include:
+
 * Identifying 1 or more benchmarks that reflect customer usage.
   Likely will need more than one to cover typical Node.js use cases
   including low-latency and high concurrency
@@ -68,6 +70,7 @@ The Build Working Group's purpose is to create and maintain a distributed
 automation infrastructure.
 
 Responsibilities include:
+
 * Producing packages for all target platforms.
 * Running tests.
 * Running performance testing and comparisons.
@@ -80,6 +83,7 @@ documented, and extensible diagnostic interfaces for use by Node.js tools and
 JavaScript VMs.
 
 Responsibilities include:
+
 * Collaborating with V8 to integrate `v8_inspector` into Node.js.
 * Collaborating with V8 to integrate `trace_event` into Node.js.
 * Collaborating with Core to refine `async_wrap` and `async_hooks`.
@@ -99,6 +103,7 @@ The Docker Working Group's purpose is to build, maintain, and improve official
 Docker images for the Node.js project.
 
 Responsibilities include:
+
 * Keeping the official Docker images updated in line with new Node.js releases.
 * Decide and implement image improvements and/or fixes.
 * Maintain and improve the images' documentation.
@@ -109,6 +114,7 @@ The Evangelism Working Group promotes the accomplishments
 of Node.js and lets the community know how they can get involved.
 
 Responsibilities include:
+
 * Facilitating project messaging.
 * Managing official project social media.
 * Handling the promotion of speakers for meetups and conferences.
@@ -127,6 +133,7 @@ language community might then produce multiple localizations for
 various project resources.
 
 Responsibilities include:
+
 * Translating any Node.js materials they believe are relevant to their
   community.
 * Reviewing processes for keeping translations up to date and of high quality.
@@ -138,7 +145,7 @@ Each language community maintains its own membership.
 * [nodejs-ar - Arabic (العَرَبِيَّة)](https://github.com/nodejs/nodejs-ar)
 * [nodejs-bg - Bulgarian (български)](https://github.com/nodejs/nodejs-bg)
 * [nodejs-bn - Bengali (বাংলা)](https://github.com/nodejs/nodejs-bn)
-* [nodejs-zh-CN - Chinese (中文)](https://github.com/nodejs/nodejs-zh-CN)
+* [nodejs-zh-CN - Chinese (简体中文)](https://github.com/nodejs/nodejs-zh-CN)
 * [nodejs-cs - Czech (Čeština)](https://github.com/nodejs/nodejs-cs)
 * [nodejs-da - Danish (Dansk)](https://github.com/nodejs/nodejs-da)
 * [nodejs-de - German (Deutsch)](https://github.com/nodejs/nodejs-de)
@@ -166,14 +173,16 @@ Each language community maintains its own membership.
 * [nodejs-sv - Swedish (Svenska)](https://github.com/nodejs/nodejs-sv)
 * [nodejs-ta - Tamil (தமிழ்)](https://github.com/nodejs/nodejs-ta)
 * [nodejs-tr - Turkish (Türkçe)](https://github.com/nodejs/nodejs-tr)
-* [nodejs-zh-TW - Taiwanese (國語)](https://github.com/nodejs/nodejs-zh-TW)
+* [nodejs-zh-TW - Taiwanese (繁體中文（台灣）)](https://github.com/nodejs/nodejs-zh-TW)
 * [nodejs-uk - Ukrainian (Українська)](https://github.com/nodejs/nodejs-uk)
 * [nodejs-vi - Vietnamese (Tiếng Việt)](https://github.com/nodejs/nodejs-vi)
 
-### [Release](https://github.com/nodejs/LTS)
+### [Release](https://github.com/nodejs/Release)
+
 The Release Working Group manages the release process for Node.js.
 
 Responsibilities include:
+
 * Define the release process.
 * Define the content of releases.
 * Generate and create releases.
@@ -187,6 +196,7 @@ Responsibilities include:
 The Security Working Group manages all aspects and processes linked to Node.js security.
 
 Responsibilities include:
+
 * Define and maintain security policies and procedures for:
   * the core Node.js project
   * other projects maintained by the Node.js Technical Steering Committee (TSC).
@@ -221,6 +231,7 @@ backwards compatibility with other solutions and prior versions are paramount
 in importance.
 
 Responsibilities include:
+
 * Addressing stream issues on the Node.js issue tracker.
 * Authoring and editing stream documentation within the Node.js project.
 * Reviewing changes to stream subclasses within the Node.js project.
@@ -228,14 +239,3 @@ Responsibilities include:
 * Assisting in the implementation of stream providers within Node.js.
 * Recommending versions of `readable-stream` to be included in Node.js.
 * Messaging about the future of streams to give the community advance notice of changes.
-
-### [Website](https://github.com/nodejs/nodejs.org)
-
-The Website Working Group's purpose is to build and maintain a public
-website for the Node.js project.
-
-Responsibilities include:
-* Developing and maintaining a build and automation system for nodejs.org.
-* Ensuring the site is regularly updated with changes made to Node.js, like
-  releases and features.
-* Fostering and enabling a community of translators.

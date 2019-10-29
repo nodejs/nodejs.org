@@ -4,6 +4,8 @@
   "author": "Node.js 基金会",
   "url": "https://nodejs.org/zh-cn/",
   "locale": "zh-cn",
+  "language": "中文(简体)",
+  "languageEnglishVersion": "Chinese Simplified",
   "scrollToTop": "回到页顶",
   "reportNodeIssue": "报告 Node.js 问题 ",
   "reportWebsiteIssue": "报告网站问题",
@@ -93,12 +95,12 @@
       "text": "ES6 及更高"
     },
     "api-lts": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "subtext": "LTS",
       "text": "%ver% API"
     },
     "api-current": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "text": "%ver% API"
     },
     "guides": {
@@ -132,14 +134,6 @@
     "node-meetups": {
       "link": "get-involved/node-meetups",
       "text": "Node.js 开发者大会"
-    },
-    "node-events": {
-      "link": "get-involved/node-events",
-      "text": "Node.js 重大事件"
-    },
-    "node-speakers": {
-      "link": "get-involved/node-speakers",
-      "text": "Node.js 演讲者"
     }
   },
   "security": {

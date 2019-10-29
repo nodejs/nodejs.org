@@ -1,12 +1,12 @@
 <a href="#" id="scroll-to-top">&uarr; <span>{{site.scrollToTop}}</span></a>
 
-<footer {{#if className}}class="{{className}}"{{/if}} role="contentinfo">
+<footer {{#if className}} class="{{className}}"{{/if}}>
 
   <div class="container">
     <div class="linuxfoundation-footer">
       <div class="issue-link-container">
         <a class="linuxfoundation-logo" href="http://collabprojects.linuxfoundation.org">
-          <img alt="Linux Foundation Collaborative Projects" src="/static/images/lfcp.png">
+          <img alt="Linux Foundation Collaborative Projects" src="/static/images/lfcp.png" width="416" height="15">
         </a>
         <ul class="list-divider-pipe issue-link">
           <li><a href="https://github.com/nodejs/node/issues">{{site.reportNodeIssue}}</a></li>
@@ -15,7 +15,7 @@
         </ul>
       </div>
 
-      <p>© Node.js Foundation. All Rights Reserved. Portions of this site originally © Joyent. </p>
+      <p>© Node.js Foundation. All Rights Reserved. Portions of this site originally © Joyent.</p>
       <p>Node.js is a trademark of Joyent, Inc. and is used with its permission. Please review the <a href="/static/documents/trademark-policy.pdf">Trademark Guidelines of the Node.js Foundation</a>.</p>
       <p>Linux Foundation is a registered trademark of The Linux Foundation.</p>
       <p>Linux is a registered <a href="http://www.linuxfoundation.org/programs/legal/trademark" title="Linux Mark Institute">trademark</a> of Linus Torvalds.</p>
@@ -27,56 +27,4 @@
 
 </footer>
 
-<link rel="stylesheet" href="/static/css/prism-tomorrow.css" media="all">
-<script type="text/javascript">
-  var $scrollToTop = document.getElementById('scroll-to-top');
-  (window.onscroll = function() {
-    window.requestAnimationFrame(function() {
-      $scrollToTop.style.display = (window.pageYOffset > window.innerHeight) ? 'block' : 'none';
-    })
-  })();
-  $scrollToTop.onclick = function() {
-    window.scrollTo(0, 0);
-    return false;
-  };
-</script>
-
-{{!-- Load Modernizr dynamically for IE10/11 and add test classes for sticky footer with flexbox --}}
-<script>
-  (function(d,e,m,s){
-    if (!/(MSIE|Trident)/.test(navigator.userAgent)){return;}
-    m=d.createElement(e);
-    s=d.getElementsByTagName(e)[0];m.async=1;m.src='/static/js/modernizr.custom.js';
-    m.onload=function(){Modernizr.addTest('flexboxtweener', Modernizr.testAllProps('flexAlign'));};
-    s.parentNode.insertBefore(m,s);
-  })(document,'script');
-</script>
-
-<script src="/static/js/dnt_helper.js"></script>
-<script>
-  (function(){
-    if (!_dntEnabled()) {
-      !function(n,o,d,e,j,s){n.GoogleAnalyticsObject=d;n[d]||(n[d]=function(){
-      (n[d].q=n[d].q||[]).push(arguments)});n[d].l=+new Date;j=o.createElement(e);
-      s=o.getElementsByTagName(e)[0];j.async=1;j.src='//www.google-analytics.com/analytics.js';
-      s.parentNode.insertBefore(j,s)}(window,document,'ga','script');
-
-      if (!ga) return;
-
-      ga('create', 'UA-67020396-1', 'auto');
-      ga('send', 'pageview');
-
-      document.documentElement.addEventListener('click', function(e) {
-
-        // Track case studies
-        if(!e.target || !e.target.dataset || !e.target.dataset.casestudy) return;
-        ga('send', 'event', {
-          eventCategory: 'casestudy',
-          eventAction: 'click',
-          eventLabel: e.target.dataset.casestudy,
-          eventValue: 0
-        });
-      });
-    }
-  })();
-</script>
+<script src="/static/js/main.js" async defer></script>

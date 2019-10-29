@@ -2,6 +2,7 @@
 title: 프로젝트 거버넌스
 layout: about.hbs
 ---
+
 # 프로젝트 거버넌스
 
 ## 기술 결정 위원회(TSC, Technical Steering Committee)
@@ -121,7 +122,7 @@ TSC는 필요한 경우 최종 중재자가 되어야 합니다.
 <!--
 ## TSC Membership
 
-TSC seats are not time-limited.  There is no fixed size of the TSC.
+TSC seats are not time-limited. There is no fixed size of the TSC.
 However, the expected target is between 6 and 12, to ensure adequate
 coverage of important areas of expertise, balanced with the ability to
 make decisions efficiently.
@@ -148,7 +149,7 @@ Changes to TSC membership should be posted in the agenda, and may be
 suggested as any other agenda item (see "TSC Meetings" below).
 
 No more than 1/3 of the TSC members may be affiliated with the same
-employer.  If removal or resignation of a TSC member, or a change of
+employer. If removal or resignation of a TSC member, or a change of
 employment by a TSC member, creates a situation where more than 1/3 of
 the TSC membership shares an employer, then the situation must be
 immediately remedied by the resignation or removal of one or more TSC
@@ -226,7 +227,7 @@ TSC는 특정 프로젝트의 사람들이나 대표자가 투표권 없이 회�
 ## Consensus Seeking Process
 
 The TSC follows a
-[Consensus Seeking](http://en.wikipedia.org/wiki/Consensus-seeking_decision-making)
+[Consensus Seeking](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making)
 decision making model.
 
 When an agenda item has appeared to reach a consensus, the moderator
@@ -240,7 +241,7 @@ or else the discussion will continue. Simple majority wins.
 -->
 ## 합의점을 찾는 과정
 
-TSC는 [합의점 찾기](http://en.wikipedia.org/wiki/Consensus-seeking_decision-making) 의사결정 모델을 따릅니다.
+TSC는 [합의점 찾기](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making) 의사결정 모델을 따릅니다.
 
 의제가 합의점을 찾았을 때 중재자는 합의점에 대한 반대의견을 받기 위한 마지막 요청으로 "반대하는 사람 있습니까?"라고 물을 것입니다.
 

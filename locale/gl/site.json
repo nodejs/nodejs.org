@@ -3,6 +3,8 @@
   "author": "Fundación de Node.js",
   "url": "https://nodejs.org/gl/",
   "locale": "gl",
+  "language": "Galego",
+  "languageEnglishVersion": "Galician",
   "scrollToTop": "Volta ao principio",
   "reportNodeIssue": "Informar dun problema con Node.js",
   "reportWebsiteIssue": "Informar dun problema co sitio",
@@ -85,12 +87,12 @@
       "text": "ES6 e máis aló"
     },
     "api-lts": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "subtext": "LTS",
       "text": "%ver% API"
     },
     "api-current": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "text": "%ver% API"
     },
     "guides": {

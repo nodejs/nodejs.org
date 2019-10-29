@@ -9,16 +9,16 @@ layout: blog-post.hbs
 ---
 
 # io.js 1.6 release
-This week we had a two io.js releases [v1.6.1](https://iojs.org/dist/v1.6.1/) and  [v1.6.0](https://iojs.org/dist/v1.6.0/), complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
+This week we had a two io.js releases [v1.6.1](https://iojs.org/dist/v1.6.1/) and [v1.6.0](https://iojs.org/dist/v1.6.0/), complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
 
-### Notable changes
+## Notable changes
 
-#### 1.6.1
+### 1.6.1
 
 * **path**: New type-checking on `path.resolve()` [#1153](https://github.com/nodejs/node/pull/1153) uncovered some edge-cases being relied upon in the wild, most notably `path.dirname(undefined)`. Type-checking has been loosened for `path.dirname()`, `path.basename()`, and `path.extname()` (Colin Ihrig) [#1216](https://github.com/nodejs/node/pull/1216).
 * **querystring**: Internal optimizations in `querystring.parse()` and `querystring.stringify()` [#847](https://github.com/nodejs/node/pull/847) prevented `Number` literals from being properly converted via `querystring.escape()` [#1208](https://github.com/nodejs/node/issues/1208), exposing a blind-spot in the test suite. The bug and the tests have now been fixed (Jeremiah Senkpiel) [#1213](https://github.com/nodejs/node/pull/1213).
 
-#### 1.6.0
+### 1.6.0
 
 * **node**: a new `-r` or `--require` command-line option can be used to pre-load modules at start-up (Ali Ijaz Sheikh) [#881](https://github.com/nodejs/node/pull/881).
 * **querystring**: `parse()` and `stringify()` are now faster (Brian White) [#847](https://github.com/nodejs/node/pull/847).
@@ -29,7 +29,7 @@ This week we had a two io.js releases [v1.6.1](https://iojs.org/dist/v1.6.1/) an
 * **platforms**: the io.js CI system now reports passes on **FreeBSD** and **SmartOS** (_Solaris_).
 * **npm**: upgrade npm to 2.7.1. See [npm CHANGELOG.md](https://github.com/npm/npm/blob/master/CHANGELOG.md#v271-2015-03-05) for details.
 
-### Known Issues
+## Known Issues
 
 * Possible remaining TLS-related memory leak(s), details at [#1075](https://github.com/nodejs/node/issues/1075).
 * Surrogate pair in REPL can freeze terminal [#690](https://github.com/nodejs/node/issues/690)
@@ -37,7 +37,7 @@ This week we had a two io.js releases [v1.6.1](https://iojs.org/dist/v1.6.1/) an
 * `process.send()` is not synchronous as the docs suggest, a regression introduced in 1.0.2, see [#760](https://github.com/nodejs/node/issues/760) and fix in [#774](https://github.com/nodejs/node/issues/774)
 * Calling `dns.setServers()` while a DNS query is in progress can cause the process to crash on a failed assertion [#894](https://github.com/nodejs/node/issues/894)
 
-# Community Updates
+## Community Updates
 
 * browserify supports io.js, you can check the announcement [here](https://twitter.com/yosuke_furukawa/status/577150547850969088)
 * express.js added [support](https://github.com/strongloop/express/commit/165660811aa9ba5f3733a7b033894f3d9a9c5e60) to io.js
@@ -45,7 +45,7 @@ This week we had a two io.js releases [v1.6.1](https://iojs.org/dist/v1.6.1/) an
 * [Petka Antonov](https://github.com/petkaantonov) is proposing a workers implementation in io.js under an experimental flag, you can join the discussion [here](https://github.com/nodejs/node/pull/1159)
 * io.js [upgraded](https://github.com/nodejs/node/pull/1206) openssl to `1.0.1m`
 
-# Upcoming Events
+## Upcoming Events
 
 * [NodeConf](http://nodeconf.com/) tickets are on sale, June 8th and 9th at Oakland, CA and NodeConf Adventure for June 11th - 14th at Walker Creek Ranch, CA
 * [CascadiaJS](http://2015.cascadiajs.com/) tickets are on sale, July 8th - 10th at Washington State

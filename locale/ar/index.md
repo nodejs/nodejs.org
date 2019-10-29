@@ -5,7 +5,7 @@ labels:
   download: تحميل
   download-for: تحميل النسخة الخاصة ب
   other-downloads: تحميل نسخ أخرى
-  other-lts-downloads: أخرى LTS تحميل نسخ 
+  other-lts-downloads: أخرى LTS تحميل نسخ
   other-current-downloads: تحميلات حالية أخرى
   current: النسخة الحالية
   lts: LTS
@@ -14,7 +14,7 @@ labels:
   changelog: سجل التغييرات
   api: API Docs
   version-schedule-prompt: أو انظر الى
-  version-schedule-prompt-link-text: LTS schedule.
+  version-schedule-prompt-link-text: أجندة LTS.
   newsletter: نعم
   newsletter-prefix: قم بالانضمام الى
   newsletter-postfix: " , الرسالة الإخبارية الشّهريّة عن Node.js "

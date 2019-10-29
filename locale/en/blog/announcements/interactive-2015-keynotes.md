@@ -2,7 +2,7 @@
 title: Keynotes for Node.js Interactive 2015 Announced
 date: 2015-11-20T09:00:00.000Z
 status: publish
-category: Annoucements
+category: Announcements
 slug: interactive-2015-programming
 layout: blog-post.hbs
 ---
@@ -13,7 +13,7 @@ layout: blog-post.hbs
 
 Node.js is the runtime of choice for building mobile, web and cloud applications. The diversity of the technology and its capabilities are making it ubiquitous in almost every ecosystem from personal finance to robotics. To highlight changes with the platform and what’s to come, Node.js Interactive will focus on three tracks: Frontend, Backend and the Internet of Things (IoT). Highlights of these tracks available [here](https://nodejs.org/en/blog/announcements/interactive-2015-programming/); full track sessions [here](http://events.linuxfoundation.org/events/node-interactive/program/schedule).
 
-Node.js Interactive brings together a broad range of speakers to help experienced and novice Node.js users alike learn tips, best practices, new skills, as well as gain insight into future developments for the technology.  
+Node.js Interactive brings together a broad range of speakers to help experienced and novice Node.js users alike learn tips, best practices, new skills, as well as gain insight into future developments for the technology.
 
 2015 Node.js Interactive keynotes include:
 
@@ -58,5 +58,5 @@ Node.js Interactive is made possible by Platinum sponsor IBM; Gold sponsors: Joy
 * Follow on [Twitter](https://twitter.com/nodejs?ref_src=twsrc^google|twcamp^serp|twgr^author) and [Google+](https://plus.google.com/u/1/100598160817214911030/posts).
 
 About Node.js Foundation
-Node.js Foundation is a collaborative open source project dedicated to building and supporting the Node.js platform and other related modules. Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 2 million downloads per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites. The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft, PayPal and Red Hat. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, npm, Sauce Labs, SAP, and YLD!. Get involved here: [https://nodejs.org](https://nodejs.org).
+Node.js Foundation is a collaborative open source project dedicated to building and supporting the Node.js platform and other related modules. Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 2 million downloads per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites. The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft, PayPal and Red Hat. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, npm, Sauce Labs, SAP, and YLD!. Get involved here: <https://nodejs.org/>.
 The Node.js Foundation is a Collaborative Project at The Linux Foundation. Linux Foundation Collaborative Projects are independently funded software projects that harness the power of collaborative development to fuel innovation across industries and ecosystems. [https://foundation.nodejs.org/](https://foundation.nodejs.org/)

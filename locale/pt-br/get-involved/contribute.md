@@ -15,7 +15,7 @@ a utilização do Node.js de forma geral devem ser direcionadas para o [reposit�
 
 ## Reportando um problema
 
-Se você encontrou o que acredita ser um problema com o Node.js, por favor não hesite em reportá-lo no Github
+Se você encontrou o que acredita ser um problema com o Node.js, por favor não hesite em reportá-lo no GitHub
 do projeto. Quando for reportar um problema, certifique-se de descrevê-lo juntamente com um caso de teste. Este
 caso de teste não deve incluir nenhuma dependência externa, isto é, devemos conseguir executar o teste com nada
 mais nada menos que o próprio Node.js.
@@ -47,7 +47,7 @@ o [Guia de Contribuições do Node.js](https://github.com/nodejs/node/blob/maste
 O processo de revisão realizado pelo colaboradores para todas as contribuições ao projeto é explicado
 neste documento também.
 
-Se você está se perguntando por onde começar, confira o [Node Todo](http://nodetodo.org/), que poderá
+Se você está se perguntando por onde começar, confira o [Node Todo](https://www.nodetodo.org/), que poderá
 ajudar você na sua primeira contribuição.
 
 ## Tornando-se um Colaborador

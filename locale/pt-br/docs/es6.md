@@ -2,6 +2,7 @@
 title: ECMAScript 2015 (ES6) e além
 layout: docs.hbs
 ---
+
 # ECMAScript 2015 (ES6) e além
 
 O Node.js é construído com as novas versões do [V8](https://v8.dev/). Mantendo-se em dia com as últimas atualizações desta engine, nós garantimos que as novas funcionalidades da [especificação JavaScript ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm) são trazidas para os desenvolvedores Node.js em tempo hábil, assim como as melhorias contínuas de performance e estabilidade.
@@ -14,7 +15,7 @@ Todas as funcionalidades do ECMAScript 2015 (ES6) são divididas em três grupos
 
 ## Quais funcionalidades são embarcadas com cada versão do Node.js por padrão?
 
-O site [node.green](http://node.green) oferece uma excelente visão sobre quais são as funcionalidades do ECMAScript suportadas em diversas versões do Node.js, baseadas na [tabela de compatibilidade](https://github.com/kangax/compat-table) de kangax.
+O site [node.green](https://node.green/) oferece uma excelente visão sobre quais são as funcionalidades do ECMAScript suportadas em diversas versões do Node.js, baseadas na [tabela de compatibilidade](https://github.com/kangax/compat-table) de kangax.
 
 ## Quais funcionalidades estão em progresso?
 
@@ -25,6 +26,7 @@ Você pode listar todas as funcionalidades *em progresso* disponíveis em cada v
 ```bash
 node --v8-options | grep "in progress"
 ```
+
 ## E sobre a performance de uma funcionalidade em particular?
 
 O time do V8 está constantemente trabalhando para melhorar a performance de novas funcionalidades da linguagem, para eventualmente encontrar uma paridade com a sua contraparte transpilada ou nativa no EcmaScript 5 ou anterior. O progresso atual é registrado no site [six-speed](https://fhinkel.github.io/six-speed), que mostra a performance das funcionalidades do ES2015 e do ESNext comparadas com as suas respectivas contrapartes nativas do ES5.
@@ -33,7 +35,7 @@ O trabalho de otimizar as funcionalidades introduzidas com o ES2015 e além são
 
 ## Eu tenho a minha infraestrutura configurada para suportar a flag --harmony. Eu devo remove-la?
 
-O comportamento atual da flag `--harmony` é habilitar somente funcionalidades **em homologação**.  Além disso, ela agora é um sinônimo da flag `--es_staging`. Como mencionado anteriormente, estas funcionalidades estão completas, mas não foram consideradas estáveis ainda. Se você deseja rodar sua aplicação de forma segura, especialmente em ambientes de produção, considere remover esta flag até que ela seja lançada por padrão no V8 e, consequentemente, no Node.js. Se você deseja a manter habilitada, você deve estar preparado para atualizações futuras do Node.js que podem quebrar o seu código caso o V8 mude a sua semântica para seguir o padrão de maneira mais fiel.
+O comportamento atual da flag `--harmony` é habilitar somente funcionalidades **em homologação**. Além disso, ela agora é um sinônimo da flag `--es_staging`. Como mencionado anteriormente, estas funcionalidades estão completas, mas não foram consideradas estáveis ainda. Se você deseja rodar sua aplicação de forma segura, especialmente em ambientes de produção, considere remover esta flag até que ela seja lançada por padrão no V8 e, consequentemente, no Node.js. Se você deseja a manter habilitada, você deve estar preparado para atualizações futuras do Node.js que podem quebrar o seu código caso o V8 mude a sua semântica para seguir o padrão de maneira mais fiel.
 
 ## Como eu encontro qual versão do V8 foi embarcada com uma versão particular do Node.js?
 
