@@ -10,6 +10,7 @@ layout: contribute.hbs
 ## فعاليات برمج + تعلم القادمة
 
 * [موسكو ، روسيا في 6 نوفمبر 2019](https://medium.com/piterjs/announcement-node-js-code-learn-in-moscow-fd997241c77)
+* شنغهاي ، الصين في [COSCon](https://bagevent.com/event/5744455) : 3 نوفمبر 2019
 
 ## فعاليات برمج + تعلم السابقة
 
