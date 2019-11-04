@@ -12,7 +12,7 @@ Este documento foi escrito com servidores Node em mente, mas os conceitos são a
 Onde detalhes específicos do sistema operacional variam, este documento é centrado no Linux.
 
 ## Resumo
-O Node.js executa código JavaScript no Event Loop (inicialização e callbacks), e oferece uma Worker Pool para manipular tarefas custusas como I/O de arquivo.
+O Node.js executa código JavaScript no Event Loop (inicialização e callbacks), e oferece uma Worker Pool para manipular tarefas custosas como I/O de arquivo.
 Node escala bem, as vezes mais do que abordagens pesadas como Apache.
 O segredo da escalabilidade do Node é que ele usa um pequeno número de threads para manipular muitos clientes.
 Se o Node pode trabalhar com menos threads, ele poderá gastar mais tempo do seu sistema e memória trabalhando nos clientes em vez de disperdiçar recursos de espaço e tempo para as threads (memória e mudança de contexto).
@@ -31,14 +31,14 @@ Enquanto uma thread está bloqueada trabalhando para um cliente, ela não pode l
 Isso fornece duas motivações para não bloquear o Event Loop nem a Worker Pool:
 
 1. Performance: Se você executar regularmente atividades pesadas em qualquer tipo de thread, o *throughput* (requisições por segundo) do seu servidor sofrerá.
-2. Segurança: Se for possível que para determinadas entradas uma de suas threads possam bloquear, um cliente malicioso pode enviar esse "evil input", para fazer suas threads bloquearem, e mantê-las trabalhando para outros clientes. Isso seria um ataque de [Negação de Serviço](https://en.wikipedia.org/wiki/Denial-of-service_attack)
+2. Segurança: Se for possível que, para determinadas entradas, uma de suas threads possa bloquear, um cliente malicioso pode enviar esse "evil input", para fazer suas threads bloquearem, e mantê-las trabalhando para outros clientes. Isso seria um ataque de [Negação de Serviço](https://en.wikipedia.org/wiki/Denial-of-service_attack)
 
 ## Uma rápida revisão do Node
 
 O Node usa a Arquitetura Orientada a Eventos: ele tem um Event Loop para orquestração e uma Worker Pool para tarefas custosas.
 
 ### Que código é executado no Event Loop?
-Quando elas começam, aplicações Node primeiro concluem uma fase de inicialização, fazendo "`require`'ing" de módulos e registrando callbacks para events.
+Quando elas começam, aplicações Node primeiro concluem uma fase de inicialização, fazendo "`require`'ing" de módulos e registrando callbacks para eventos.
 As Aplicações Node entram no Event Loop, respondendo requisições recebidas do cliente para executar o callback apropriado.
 Esse callback executa de forma síncrona, e pode registrar requisições assíncronas para continuar o processamento após a conclusão.
 
@@ -46,7 +46,7 @@ Os callbacks para essas requisições assíncronas também serão executadas no 
 
 O Event Loop também atenderá às requisições assíncronas não-bloqueantes feitas por seus callbacks, por exemplo, I/O de rede.
 
-Em resumo, o Event Loop executa as callbacks JavaScript registradas por eventos, e também é responsável atender requisições assíncronas não-bloqueantes, como I/O de rede.
+Em resumo, o Event Loop executa os callbacks JavaScript registrados por eventos, e também é responsável atender requisições assíncronas não-bloqueantes, como I/O de rede.
 
 ### Que código é executado na Worker Pool?
 A Worker Pool do Node é implementado na libuv ([docs](http://docs.libuv.org/en/v1.x/threadpool.html)), que expõe uma API geral para envio de tarefas.
