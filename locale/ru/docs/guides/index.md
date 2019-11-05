@@ -11,7 +11,7 @@ layout: docs.hbs
 * [Debugging - Getting Started](/ru/docs/guides/debugging-getting-started/)
 * [Easy profiling for Node.js Applications](/ru/docs/guides/simple-profiling/)
 * [Diagnostics - Flame Graphs](/en/docs/guides/diagnostics-flamegraph/)
-* [Докеризация веб-приложения node.js](/ru/docs/guides/nodejs-docker-webapp/)
+* [Докеризация веб-приложения Node.js](/ru/docs/guides/nodejs-docker-webapp/)
 * [Migrating to safe Buffer constructors](/en/docs/guides/buffer-constructor-deprecation/)
 
 ## Ключевые концепции Node.js
