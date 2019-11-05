@@ -38,9 +38,9 @@
     ]
   },
   "dependencies": {
-    "autoprefixer": "^9.7.0",
+    "autoprefixer": "^9.7.1",
     "cheerio": "^0.22.0",
-    "handlebars": "^4.4.5",
+    "handlebars": "^4.5.1",
     "jstransformer-handlebars": "^1.1.0",
     "junk": "^3.1.0",
     "lodash.defaultsdeep": "^4.6.1",
@@ -51,7 +51,7 @@
     "metalsmith-discover-partials": "^0.1.2",
     "metalsmith-feed": "^1.0.0",
     "metalsmith-layouts": "^2.3.1",
-    "metalsmith-markdown": "^1.2.0",
+    "metalsmith-markdown": "^1.3.0",
     "metalsmith-metadata": "0.0.4",
     "metalsmith-permalinks": "^2.2.0",
     "metalsmith-prism": "^3.1.1",
@@ -67,13 +67,13 @@
     "strftime": "^0.10.0"
   },
   "devDependencies": {
-    "chokidar": "^3.2.2",
+    "chokidar": "^3.3.0",
     "cross-env": "^6.0.3",
     "delay-cli": "^1.1.0",
     "faucet": "0.0.1",
-    "linkinator": "^1.6.0",
+    "linkinator": "^1.6.3",
     "lockfile-lint": "^2.1.6",
-    "nock": "^11.6.0",
+    "nock": "^11.7.0",
     "proxyquire": "^2.1.3",
     "remark-cli": "^7.0.0",
     "remark-frontmatter": "^1.3.2",
@@ -81,9 +81,7 @@
     "st": "^1.2.2",
     "standard": "^14.3.1",
     "stylelint": "^11.1.1",
-    "stylelint-config-recommended-scss": "^4.0.0",
-    "stylelint-config-standard": "^19.0.0",
-    "stylelint-scss": "^3.12.0",
+    "stylelint-config-twbs-bootstrap": "^0.9.0",
     "tape": "^4.11.0",
     "vnu-jar": "19.9.4"
   }
