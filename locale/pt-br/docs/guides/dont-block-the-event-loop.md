@@ -16,7 +16,7 @@ O Node.js executa código JavaScript no Event Loop (inicialização e callbacks)
 Node escala bem, as vezes mais do que abordagens pesadas como Apache.
 O segredo da escalabilidade do Node é que ele usa um pequeno número de threads para manipular muitos clientes.
 Se o Node pode trabalhar com menos threads, ele poderá gastar mais tempo do seu sistema e memória trabalhando nos clientes em vez de disperdiçar recursos de espaço e tempo para as threads (memória e mudança de contexto).
-Mas pelo fato do Node ter poucas threads, você precisa estruturar sua aplicação para usá-las com sabedoria.  
+Mas pelo fato do Node ter poucas threads, você precisa estruturar sua aplicação para usá-las com sabedoria.
 
 Aqui está um princípio básico para manter o servidor Node rápido: *Node é rápido quando o trabalho associado a cada cliente em um determinado momento é "pequeno"*.
 
@@ -27,11 +27,11 @@ O Node usa um pequeno número de threads para manipular muitos clientes.
 No Node existem dois tipos de threads: um Event Loop (também conhecido como main loop, main thread, event thread, etc.), e uma pool de `k` Workers em uma Worker Pool (também conhecido como threadpool)
 
 Se uma thread está levando muito tempo para excutar um callback (Event Loop) ou uma tarefa (Worker), nós a chamamos de "bloqueada".
-Enquanto uma thread está bloqueada trabalhando para um cliente, ela não pode lidar com requisições de outros clientes.  
+Enquanto uma thread está bloqueada trabalhando para um cliente, ela não pode lidar com requisições de outros clientes.
 Isso fornece duas motivações para não bloquear o Event Loop nem a Worker Pool:
 
 1. Performance: Se você executar regularmente atividades pesadas em qualquer tipo de thread, o *throughput* (requisições por segundo) do seu servidor sofrerá.
-2. Segurança: Se for possível que, para determinadas entradas, uma de suas threads possa bloquear, um cliente malicioso pode enviar esse "evil input", para fazer suas threads bloquearem, e mantê-las trabalhando para outros clientes. Isso seria um ataque de [Negação de Serviço](https://en.wikipedia.org/wiki/Denial-of-service_attack)
+2. Segurança: Se for possível que para determinadas entradas uma de suas threads seja bloqueada, um cliente malicioso pode enviar esse "evil input", para fazer suas threads bloquearem, e mantê-las trabalhando para outros clientes. Isso seria um ataque de [Negação de Serviço](https://en.wikipedia.org/wiki/Denial-of-service_attack)
 
 ## Uma rápida revisão do Node
 
