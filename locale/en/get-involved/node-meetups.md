@@ -348,6 +348,16 @@ REQUIREMENTS
 * Organizer name - George Czabania
 * Organizer contact info -
 
+### Russia
+
+#### Moscow
+
+* [Meetup](https://www.meetup.com/Moscow-NodeJS-Meetup/)
+* Frequency of meetups - every 6-9 month
+* How to submit a talk? Contact organizers in the meetup page or use contacts information below
+* Organizer name - Denis Izmaylov
+* Organizer contact info - [Telegram](https://t.me/DenisIzmaylov) [Twitter](https://twitter.com/DenisIzmaylov] [Facebook](https://facebook.com/denis.izmaylov)
+
 ### South Africa
 
 #### Cape Town

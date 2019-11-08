@@ -9,7 +9,8 @@ Code & Learn events allow you to get started (or go further) with Node.js core c
 
 ## Upcoming Code + Learn Events
 
-* To be announced
+* [Moscow, Russia on November 6, 2019](https://medium.com/piterjs/announcement-node-js-code-learn-in-moscow-fd997241c77)
+* Shanghai, China at [COSCon](https://bagevent.com/event/5744455): November 3, 2019
 
 ## Past Code + Learn Events
 
