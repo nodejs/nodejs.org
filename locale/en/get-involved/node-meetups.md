@@ -299,7 +299,7 @@ REQUIREMENTS
 * Frequency of meetups - monthly - online
 * How to submit a talk? [telegram group](https://t.me/nodejsid)
 * Organizer name - Lukluk Luhuring Santoso
-* Organizer contact info - [Email](luklukaha@gmail.com)
+* Organizer contact info - [Email](mailto:luklukaha@gmail.com)
 
 ### Ireland
 
