@@ -3,7 +3,7 @@ layout: index.hbs
 labels:
   current-version: 当前版本
   download: 下载
-  download-for: 下载
+  download-for: 下载为平台
   other-downloads: 其它下载
   other-lts-downloads: 其它 LTS 版下载
   other-current-downloads: 其它当前版下载
