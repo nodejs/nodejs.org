@@ -296,10 +296,10 @@ REQUIREMENTS
 #### Jakarta
 
 * [Meetup](https://www.meetup.com/Node-js-Workshop/)
-* Frequency of meetups - monthly
-* How to submit a talk? Contact organizers in the meetup page.
+* Frequency of meetups - monthly - online
+* How to submit a talk? [telegram group](https://t.me/nodejsid)
 * Organizer name - Lukluk Luhuring Santoso
-* Organizer contact info -
+* Organizer contact info - [Email](mailto:luklukaha@gmail.com)
 
 ### Ireland
 
