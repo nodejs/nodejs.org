@@ -85,7 +85,7 @@ Se referir aos argumentos da linha de comando pelo índice do array não é cons
 
 <!-- Luckily, there are many third party modules that makes all of this trivial - one of which is [yargs](https://www.npmjs.com/package/yargs). It's available via `npm`. Use this command from your app's base path: -->
 
-Felizmente, existem muitos módulos de terceiros que tornam isso tudo trivial - um deles é o [yargs] (https://www.npmjs.com/package/yargs). Está disponível via `npm`. Use este comando no diretório do seu aplicativo:
+Felizmente, existem muitos módulos de terceiros que tornam isso tudo trivial - um deles é o [yargs](https://www.npmjs.com/package/yargs). Está disponível via `npm`. Use este comando no diretório do seu aplicativo:
 
 ```
 npm i yargs
