@@ -7,12 +7,6 @@ layout: contribute.hbs
 
 Eventos Programe & Aprenda permitem que você comece a contribuir (ou de um passo adiante) com as principais funcionalidades do Node.js. Contribuidores experientes irão auxiliá-lo em seu primeiro (ou segundo ou terceiro ou quarto) _commit_ ao Node.js. Eles também estarão disponíveis para guiá-los através de áreas específicas do código fonte do Node.js.
 
-## Próximos Eventos Programe + Aprenda
-
-* To be announced
-
-## Eventos Programe + Aprenda Anteriores
-
 * Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/)
 * [Saint-Petersburg, Russia on May 26](https://medium.com/piterjs/code-learn-ce20d330530f)
 * Bangalore, India no [Node.js - Code & Learn Meetup](https://www.meetup.com/Polyglot-Languages-Runtimes-Java-JVM-nodejs-Swift/events/256057028/): 17 de Novembro de 2018

@@ -7,12 +7,6 @@ layout: contribute.hbs
 
 Node.js 核心貢獻者在 Code & Learn 活動能帶大家新手上路（或飛得更高走得更遠），無論你是你第一次還是第二第三第四次貢獻 Node.js 核心，經驗老道的貢獻者們都能提供協助，他們也能現場即興帶領大家攻略 Node.js 核心源碼。
 
-## 即將到來的 Code + Learn 活動
-
-* 暫無
-
-## 已經結束的 Code + Learn 活動
-
 * Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/)
 * [Saint-Petersburg, Russia on May 26](https://medium.com/piterjs/code-learn-ce20d330530f)
 * Bangalore, India at [Node.js - Code & Learn Meetup](https://www.meetup.com/Polyglot-Languages-Runtimes-Java-JVM-nodejs-Swift/events/256057028/): November 17, 2018
