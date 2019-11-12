@@ -7,13 +7,8 @@ layout: contribute.hbs
 
 تسمح لك فعاليات برمج + تعلم في البدء (أو التعمق) بمساهمتك في الـ Node.js. سيساعدك المتعاونون ذوو الخبرة اجل القيام اول (أو ثاني، أو ثالث او رابع) مساهمة في الـ Node.js. هم أيضاً سيكونون متوفرين لإجراء دروس تعريفية من تلقاء أنفسهم لأجزاء محددة من الشفرة المصدرية الأساسية للـ Node.js.
 
-## فعاليات برمج + تعلم القادمة
-
 * [موسكو ، روسيا في 6 نوفمبر 2019](https://medium.com/piterjs/announcement-node-js-code-learn-in-moscow-fd997241c77)
 * شنغهاي ، الصين في [COSCon](https://bagevent.com/event/5744455) : 3 نوفمبر 2019
-
-## فعاليات برمج + تعلم السابقة
-
 * ميدلين ، كولومبيا في 21 و 22 جوان [NodeConfCo](https://colombia.nodeconf.com/)
 * [سانت بطرسبرغ ، روسيا في 26 ماي](https://medium.com/piterjs/code-learn-ce20d330530f)
 * بنغالور، الهند في [Node.js - ملتقى برمج و تعلم](https://www.meetup.com/Polyglot-Languages-Runtimes-Java-JVM-nodejs-Swift/events/256057028/): 17 نوفمبر 2018
