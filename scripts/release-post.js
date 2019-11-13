@@ -23,7 +23,7 @@
 const fs = require('fs')
 const path = require('path')
 const Handlebars = require('handlebars')
-const request = require('request')
+const got = require('got')
 
 const downloads = require('./helpers/downloads')
 
@@ -33,15 +33,13 @@ function sendRequest (opts) {
       headers: { 'User-Agent': 'nodejs.org release blog post script' }
     }, opts)
 
-    request(options, (err, res, body) => {
-      if (err) {
-        return reject(new Error(`Error requesting URL ${options.url}: ${err.message}`))
+    got(options.url, options).then(response => {
+      if (response.statusCode !== 200) {
+        return reject(new Error(`Invalid status code (!= 200) while retrieving ${options.url}: ${response.statusCode}`))
       }
-      if (res.statusCode !== 200) {
-        return reject(new Error(`Invalid status code (!= 200) while retrieving ${options.url}: ${res.statusCode}`))
-      }
-
-      resolve(body)
+      resolve(response.body)
+    }).catch(error => {
+      reject(new Error(`Error requesting URL ${options.url}: ${error.message}`))
     })
   })
 }
