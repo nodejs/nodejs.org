@@ -4,11 +4,9 @@
   "description": "Nodejs.org website",
   "homepage": "https://nodejs.org",
   "scripts": {
-    "build": "node build.js",
-    "prebuild": "npm run load-schedule",
+    "build": "npm run load-schedule && node build.js",
     "build:deploy": "npm run build -- --preserveLocale",
-    "preserve": "npm run load-schedule",
-    "serve": "cross-env NODE_ENV=development node server.js",
+    "serve": "cross-env NODE_ENV=development npm run load-schedule && node server.js",
     "external:survey": "rsync -avz --exclude 'node_modules*' --exclude 'package*' external/survey-2018/ build/en/user-survey-report",
     "deploy": "npm-run-all build:deploy external:survey",
     "load-versions": "node scripts/load-versions.js",
