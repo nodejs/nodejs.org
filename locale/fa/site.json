@@ -3,11 +3,11 @@
   "author": "Node.js بنیاد",
   "url": "https://nodejs.org/fa/",
   "locale": "fa",
-  "language": "زبان فارسی",
+  "language": "فارسی",
   "languageEnglishVersion": "Persian",
   "rtl": true,
   "scrollToTop": "رفتن به بالا",
-  "reportNodeIssue": "را گزارش کنید Node.js مشکلی در",
+  "reportNodeIssue": "مشکلی در نود جی اس را گزارش کنید",
   "reportWebsiteIssue": "مشکلی در وبسایت را گزارش کنید",
   "getHelpIssue": "کمک بگیرید",
   "by": "توسط",
@@ -50,7 +50,7 @@
     },
     "releases": {
       "link": "about/releases",
-      "text": "انتشارها"
+      "text": "انتشارات"
     },
     "resources": {
       "link": "about/resources",
