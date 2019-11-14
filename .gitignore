@@ -12,3 +12,6 @@ npm-debug.log
 
 # Netlify
 .netlify
+
+# This is downloaded on build time
+/source/schedule.json
