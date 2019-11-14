@@ -7,12 +7,6 @@ layout: contribute.hbs
 
 События Code & Learn (Разрабатывай & Учись) позволяют начать (или продолжить) работать с главными разработчиками Node.js. Опытные участники помогут сделать первый (или второй, третий или четвертый) коммит в ядро Node.js. Они также рады провести импровизированные экскурсии по конкретным областям исходного кода Node.js.
 
-## Следующие Code + Learn события
-
-* To be announced
-
-## Прошлые Code + Learn события
-
 * Медельин, Колумбия, 21 и 22 июня [NodeConfCo](https://colombia.nodeconf.com/)
 * Бангалор, Индия [Node.js ― Code & Learn митап](https://www.meetup.com/Polyglot-Languages-Runtimes-Java-JVM-nodejs-Swift/events/256057028/): 17 ноября 2018 г.
 * Килкенни, Ирландия [NodeConfEU](https://www.nodeconf.eu/): 4 ноября 2018 г.

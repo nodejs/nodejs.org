@@ -7,12 +7,6 @@ layout: contribute.hbs
 
 Code + Learn це всесвітня ініціатива воркшопів, що мають за мету познайомити нових розробників з тим, як працювати з Node.js. Консультуючі практичні сесії під наставництвом поточних співавторів та вирішення реальних проблем.
 
-## Upcoming Code + Learn Events
-
-* To be announced
-
-## Past Code + Learn Events
-
 * Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/)
 * [Saint-Petersburg, Russia on May 26](https://medium.com/piterjs/code-learn-ce20d330530f)
 * Bangalore, India at [Node.js - Code & Learn Meetup](https://www.meetup.com/Polyglot-Languages-Runtimes-Java-JVM-nodejs-Swift/events/256057028/): November 17, 2018

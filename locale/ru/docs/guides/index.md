@@ -11,7 +11,7 @@ layout: docs.hbs
 * [Debugging - Getting Started](/ru/docs/guides/debugging-getting-started/)
 * [Easy profiling for Node.js Applications](/ru/docs/guides/simple-profiling/)
 * [Diagnostics - Flame Graphs](/en/docs/guides/diagnostics-flamegraph/)
-* [Dockerizing a Node.js web app](/en/docs/guides/nodejs-docker-webapp/)
+* [Докеризация веб-приложения Node.js](/ru/docs/guides/nodejs-docker-webapp/)
 * [Migrating to safe Buffer constructors](/en/docs/guides/buffer-constructor-deprecation/)
 
 ## Ключевые концепции Node.js
@@ -27,5 +27,5 @@ layout: docs.hbs
 * [Working with Different Filesystems](/en/docs/guides/working-with-different-filesystems/)
 * [Backpressuring in Streams](/en/docs/guides/backpressuring-in-streams/)
 * [Domain Module Postmortem](/en/docs/guides/domain-postmortem/)
-* [How to publish N-API package]/en/docs/guides/(publishing-napi-modules/)
+* [How to publish N-API package](/en/docs/guides/publishing-napi-modules/)
 * [ABI Stability](/en/docs/guides/abi-stability/)

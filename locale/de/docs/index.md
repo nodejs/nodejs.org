@@ -28,6 +28,8 @@ von der Community zur Verfügung gestellt werden, sind dort nicht dokumentiert.
 
 ### Du suchst nach API Referenzen für ältere Versionen?
 
+* [Node.js 11.x](https://nodejs.org/docs/latest-v11.x/api/)
+* [Node.js 10.x](https://nodejs.org/docs/latest-v10.x/api/)
 * [Node.js 9.x](https://nodejs.org/docs/latest-v9.x/api/)
 * [Node.js 8.x](https://nodejs.org/docs/latest-v8.x/api/)
 * [Node.js 7.x](https://nodejs.org/docs/latest-v7.x/api/)

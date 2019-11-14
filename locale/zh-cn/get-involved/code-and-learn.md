@@ -7,12 +7,6 @@ layout: contribute.hbs
 
 “编码 & 学习”活动将让你随着 Node.js 核心贡献者们共同起步（或飞得更高）。无论你是你第一次还是第二、第三或是第四次为 Node.js 核心做出贡献，经验老道的贡献者们都能提供协助，他们也能现场即兴带领大家攻略 Node.js 核心源码。
 
-## 即将到来的代码 + 学习活动
-
-* 暂无
-
-## 已经结束的代码 + 学习活动
-
 * Medellin, Colombia in June 21st & 22nd [NodeConfCo](https://colombia.nodeconf.com/)
 * [Saint-Petersburg, Russia on May 26](https://medium.com/piterjs/code-learn-ce20d330530f)
 * Bangalore, India at [Node.js - Code & Learn Meetup](https://www.meetup.com/Polyglot-Languages-Runtimes-Java-JVM-nodejs-Swift/events/256057028/): November 17, 2018

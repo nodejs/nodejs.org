@@ -25,6 +25,8 @@ También describe los módulos incluidos que proporciona Node.js, pero no docume
 
 ### ¿Buscando la referencia de la API de versiones anteriores?
 
+* [Node.js 11.x](https://nodejs.org/docs/latest-v11.x/api/)
+* [Node.js 10.x](https://nodejs.org/docs/latest-v10.x/api/)
 * [Node.js 9.x](https://nodejs.org/docs/latest-v9.x/api/)
 * [Node.js 8.x](https://nodejs.org/docs/latest-v8.x/api/)
 * [Node.js 7.x](https://nodejs.org/docs/latest-v7.x/api/)
