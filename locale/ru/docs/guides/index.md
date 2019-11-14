@@ -27,5 +27,5 @@ layout: docs.hbs
 * [Working with Different Filesystems](/en/docs/guides/working-with-different-filesystems/)
 * [Backpressuring in Streams](/en/docs/guides/backpressuring-in-streams/)
 * [Domain Module Postmortem](/en/docs/guides/domain-postmortem/)
-* [How to publish N-API package]/en/docs/guides/(publishing-napi-modules/)
+* [How to publish N-API package](/en/docs/guides/publishing-napi-modules/)
 * [ABI Stability](/en/docs/guides/abi-stability/)
