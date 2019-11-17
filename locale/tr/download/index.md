@@ -6,13 +6,14 @@ downloads:
     headline: İndirmeler
     lts: Uzun Süreli Destek(LTS)
     current: Güncel
-    tagline-current: Son özellikler
+    tagline-current: Son Özellikler
     tagline-lts: Çoğu kullanıcı için önerilir
     display-hint: "İndirmeleri göster:"
+    includes: "dahili"
     intro: >
-        Node.js kaynak kodunu ya da platformunuz için inşa edilmiş yükleyicileri indirin, geliştirmeye bugün başlayın. 
+        Node.js kaynak kodunu ya da platformunuz için inşa edilmiş yükleyiciyi indirin, geliştirmeye bugün başlayın. 
     currentVersion: Son Uzun Süreli Destek(LTS) Versiyonu
-    buildInstructions: Building Node.js from source on supported platforms
+    buildInstructions: Node.js'yi desteklenen platformlarda oluşturmak
     WindowsInstaller: Windows Yükleyici
     WindowsBinary: Windows Binary
     MacOSInstaller: macOS Yükleyici

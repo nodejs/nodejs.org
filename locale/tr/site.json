@@ -11,9 +11,9 @@
   "getHelpIssue": "Yardım",
   "by": "tarafından",
   "all-downloads": "Tüm indirme seçenekleri",
-  "nightly": "Gecelik sürümler",
+  "nightly": "Gecelik Sürümler",
   "chakracore-nightly": "Node-ChakraCore Gecelik sürümler",
-  "unofficial-builds": "Resmi olmayan sürümler",
+  "unofficial-builds": "Resmi Olmayan Sürümler",
   "previous": "Önceki",
   "next": "Sonraki",
   "feeds": [
@@ -95,7 +95,7 @@
     },
     "api-lts": {
       "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
-      "subtext": "LTS - Uzun Süreli Destek",
+      "subtext": "LTS",
       "text": "%ver% API"
     },
     "api-current": {
