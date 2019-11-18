@@ -10,7 +10,7 @@ There are several dependencies that Node.js relies on to work the way it does.
 * [Libraries](#libraries)
   * [V8](#v8)
   * [libuv](#libuv)
-  * [http-parser](#http-parser)
+  * [llhttp](#llhttp)
   * [c-ares](#c-ares)
   * [OpenSSL](#openssl)
   * [zlib](#zlib)
