@@ -16,7 +16,7 @@ layout: docs.hbs
 
 ## Ключевые концепции Node.js
 
-* [Блокирующие и Неблокирующие Вызовы](/en/docs/guides/blocking-vs-non-blocking/)
+* [Блокирующие и Неблокирующие Вызовы](/ru/docs/guides/blocking-vs-non-blocking/)
 * [The Node.js Event Loop, Timers, and `process.nextTick()`](/en/docs/guides/event-loop-timers-and-nexttick/)
 * [Don't Block the Event Loop (or the Worker Pool)](/en/docs/guides/dont-block-the-event-loop/)
 * [Timers in Node.js](/en/docs/guides/timers-in-node/)
