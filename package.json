@@ -40,7 +40,7 @@
   "dependencies": {
     "autoprefixer": "^9.7.1",
     "cheerio": "^0.22.0",
-    "handlebars": "^4.5.2",
+    "handlebars": "^4.5.3",
     "jstransformer-handlebars": "^1.1.0",
     "junk": "^3.1.0",
     "lodash.defaultsdeep": "^4.6.1",
