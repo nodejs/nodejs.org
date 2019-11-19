@@ -83,7 +83,7 @@
       "verify-text": "چگونه راستی‌آزمایی کنیم؟"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "Installing Node.js via binary archive"
     }
   },
   "docs": {
