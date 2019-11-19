@@ -67,7 +67,7 @@
       "text": "Installa Node.js con un gestore di pacchetti"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "Installing Node.js via binary archive"
     }
   },
   "docs": {
