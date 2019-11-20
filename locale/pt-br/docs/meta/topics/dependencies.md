@@ -11,7 +11,7 @@ O Node.js precisa de diversas dependências para funcionar do jeito que funciona
   * [Bibliotecas](#bibliotecas)
     * [V8](#v8)
     * [libuv](#libuv)
-    * [http-parser](#http-parser)
+    * [llhttp](#llhttp)
     * [c-ares](#c-ares)
     * [OpenSSL](#openssl)
     * [zlib](#zlib)
@@ -55,19 +55,19 @@ para distribuir o trabalho que não pode ser feito assíncronamente a nível de 
 
 * [Documentação](http://docs.libuv.org/)
 
-### http-parser
+### llhttp
 
-<!-- HTTP parsing is handled by a lightweight C library called http-parser. It is
+<!-- HTTP parsing is handled by a lightweight C library called llhttp. It is
 designed to not make any syscalls or allocations, so it has a very small
 per-request memory footprint.
 
-* [Documentation](https://github.com/joyent/http-parser/) -->
+* [Documentation](https://github.com/nodejs/llhttp) -->
 
 O parsing do protocolo HTTP é delegado a uma biblioteca leve, escrita em C,
-chamada *http-parser*. Ela foi desenhada para não fazer nenhuma syscall ou
+chamada *llhttp*. Ela foi desenhada para não fazer nenhuma syscall ou
 alocações, portanto acaba possuindo um baixo consumo de memória por requisição.
 
-* [Documentação](https://github.com/joyent/http-parser/)
+* [Documentação](https://github.com/nodejs/llhttp)
 
 ### c-ares
 
