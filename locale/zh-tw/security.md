@@ -5,7 +5,7 @@ title: 安全
 
 # 安全
 
-## 回報 Node.js 的臭蟲
+## 回報 Node.js 臭蟲
 
 Node.js 非常嚴肅地看待安全性臭蟲，所有的臭蟲都應回報至 [HackerOne](https://hackerone.com/nodejs)，其後將由專責安全問題的部門處理。
 
@@ -46,4 +46,4 @@ Node.js 官方為了安全研究員們及負責的公開揭露而展開了一個
 
 ## 對本政策的建言
 
-若你對改善本流程有任何建議的話，請開啟一個 [pull request](https://github.com/nodejs/nodejs.org) 或是 [一個 issue](https://github.com/nodejs/security-wg/issues/new) 來與我們一同討論。
+若你對改善本流程有任何建議的話，請開一個 [pull request](https://github.com/nodejs/nodejs.org) 或是 [issue](https://github.com/nodejs/security-wg/issues/new) 來與我們一同討論。

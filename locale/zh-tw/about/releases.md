@@ -1,25 +1,25 @@
 ---
 layout: about-release-schedule.hbs
-title: Releases
+title: 發布版
 statuses:
-  maintenance: 'Maintenance LTS'
-  active: 'Active LTS'
-  current: 'Current'
-  pending: 'Pending'
+  maintenance: '維護 LTS'
+  active: '活躍 LTS'
+  current: '最新版'
+  pending: '待發布版'
 columns:
-  - 'Release'
-  - 'Status'
-  - 'Codename'
-  - 'Initial Release'
-  - 'Active LTS Start'
-  - 'Maintenance LTS Start'
-  - 'End-of-life'
-schedule-footer: Dates are subject to change.
+  - '發布版'
+  - '狀態'
+  - '內部代號'
+  - '初發布版'
+  - '活躍 LTS 週期開始'
+  - '維護 LTS 週期開始'
+  - '結束生命週期'
+schedule-footer: 日期會隨時變更。
 ---
 
-# Releases
+# 發布版
 
-Major Node.js versions enter _Current_ release status for six months, which gives library authors time to add support for them.
-After six months, odd-numbered releases (9, 11, etc.) become unsupported, and even-numbered releases (10, 12, etc.) move to _Active LTS_ status and are ready for general use.
-_LTS_ release status is "long-term support", which typically guarantees that critical bugs will be fixed for a total of 30 months.
-Production applications should only use _Active LTS_ or _Maintenance LTS_ releases.
+主要 Node.js 版本會進入為時 6 個月的 _最新版_ 發布狀態，以讓函式庫作者有時間支援。
+6 個月後，奇數版號（9、11 等等）會不再受支援，而偶數版號（10、12 等等）會移至 _活躍 LTS_ 狀態並準備日常使用。
+_LTS_ 發布版狀態指「長期維護」，通常會保證嚴重臭蟲會在 30 個月內修正。
+生產環境的應用程式應只使用 _活躍 LTS_ 或 _維護 LTS_ 版本。
