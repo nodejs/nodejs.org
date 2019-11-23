@@ -71,7 +71,7 @@
     "cross-env": "^6.0.3",
     "delay-cli": "^1.1.0",
     "faucet": "0.0.1",
-    "linkinator": "^1.7.5",
+    "linkinator": "^1.8.0",
     "lockfile-lint": "^2.2.0",
     "nock": "^11.7.0",
     "proxyquire": "^2.1.3",
