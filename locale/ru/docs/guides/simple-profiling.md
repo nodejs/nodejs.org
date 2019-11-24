@@ -36,7 +36,7 @@ app.get('/newUser', (req, res) => {
 
   username = username.replace(/[!@#$%^&*]/g, '');
 
-  if (!username || !password || users.username) {
+  if (!username || !password || users[username]) {
     return res.sendStatus(400);
   }
 
@@ -155,11 +155,11 @@ node --prof-process isolate-0xnnnnnnnnnnnn-v8.log > processed.txt
     215    0.6%          Unaccounted
 ```
 
-This tells us that 97% of all samples gathered occurred in C++ code and that
-when viewing other sections of the processed output we should pay most attention
-to work being done in C++ (as opposed to JavaScript). With this in mind, we next
-find the [C++] section which contains information about which C++ functions are
-taking the most CPU time and see:
+Это говорит нам о том, что 97% всех собранных замеров происходили в коде C++, 
+и что при просмотре других разделов обработанного вывода мы должны уделять 
+больше внимания работе, выполняемой именно в C++ (а не, к примеру, JavaScript). 
+Имея это в виду, мы затем находим раздел [C++], который содержит информацию о том, 
+какие функции C++ отнимают больше всего процессорного времени, и видим:
 
 ```
  [C++]:
@@ -169,15 +169,15 @@ taking the most CPU time and see:
    3165    8.4%    8.6%  _malloc_zone_malloc
 ```
 
-We see that the top 3 entries account for 72.1% of CPU time taken by the
-program. From this output, we immediately see that at least 51.8% of CPU time is
-taken up by a function called PBKDF2 which corresponds to our hash generation
-from a user's password. However, it may not be immediately obvious how the lower
-two entries factor into our application (or if it is we will pretend otherwise
-for the sake of example). To better understand the relationship between these
-functions, we will next look at the [Bottom up (heavy) profile] section which
-provides information about the primary callers of each function. Examining this
-section, we find:
+Мы видим, что на первые три записи приходится 72,1% процессорного времени, 
+используемого программой. Мы также сразу видим, что как минимум 51,8% 
+процессорного времени занято функцией PBKDF2, которая соответствует нашей 
+генерации хеш-кода из пароля пользователя. Тем не менее, может быть 
+не сразу очевидно, как две нижние записи влияют на наше приложение 
+(если же вы догадываетесь об этом, мы притворимся, что это не очевидно, в целях примера). 
+Чтобы лучше понять взаимосвязь между этими функциями, мы обратимся затем к 
+разделу [Bottom up (heavy) profile], который предоставляет информацию о том,
+где чаще всего вызывается каждая функция. Исследуя этот раздел, мы находим:
 
 ```
    ticks parent  name
@@ -194,29 +194,28 @@ section, we find:
    3161  100.0%      LazyCompile: *exports.pbkdf2Sync crypto.js:552:30
 ```
 
-Parsing this section takes a little more work than the raw tick counts above.
-Within each of the "call stacks" above, the percentage in the parent column
-tells you the percentage of samples for which the function in the row above was
-called by the function in the current row. For example, in the middle "call
-stack" above for _sha1_block_data_order, we see that `_sha1_block_data_order` occurred
-in 11.9% of samples, which we knew from the raw counts above. However, here, we
-can also tell that it was always called by the pbkdf2 function inside the
-Node.js crypto module. We see that similarly, `_malloc_zone_malloc` was called
-almost exclusively by the same pbkdf2 function. Thus, using the information in
-this view, we can tell that our hash computation from the user's password
-accounts not only for the 51.8% from above but also for all CPU time in the top
-3 most sampled functions since the calls to `_sha1_block_data_order` and
-`_malloc_zone_malloc` were made on behalf of the pbkdf2 function.
+Анализ этого раздела требует немного больше работы, чем простой подсчет тиков как выше. 
+В каждом из вышеприведенных стеков вызовов процент в родительском столбце показывает 
+процент выборок, для которых функция в строке выше была вызвана функцией в текущей строке. 
+Например, в среднем стеке для _sha1_block_data_order мы видим, 
+что вызов `_sha1_block_data_order` встречался в 11,9% выборок, что мы и так знали 
+исходя из подсчетов выше. Однако теперь мы также можем сказать, 
+что он всегда вызывался функцией pbkdf2 внутри модуля crypto Node.js. Мы видим, 
+что аналогичным образом `_malloc_zone_malloc` вызывалась практически всегда 
+той же функцией pbkdf2. Таким образом, используя информацию в этом представлении, 
+мы можем сказать, что наше вычисление хеша из пароля пользователя составляет 
+не только указанные 51,8%, а все процессорное время в 3 самых часто вызываемых функциях, 
+так как вызовы `_sha1_block_data_order` и `_malloc_zone_malloc` были сделаны 
+от имени функции pbkdf2.
 
-At this point, it is very clear that the password based hash generation should
-be the target of our optimization. Thankfully, you've fully internalized the
-[benefits of asynchronous programming][] and you realize that the work to
-generate a hash from the user's password is being done in a synchronous way and
-thus tying down the event loop. This prevents us from working on other incoming
-requests while computing a hash.
+Теперь становится ясно, что целью нашей оптимизации должна быть генерация хеша на основе пароля. 
+К счастью, вы полностью усвоили [преимущества асинхронного программирования][] 
+и понимаете, что работа по генерации хеша выполняется синхронно 
+и, таким образом, связывает цикл обработки событий. Это лишает нас возможности работать с 
+другими входящими запросами во время вычисления хеша.
 
-To remedy this issue, you make a small modification to the above handlers to use
-the asynchronous version of the pbkdf2 function:
+Чтобы устранить эту проблему, внесем небольшую модификацию в наши обработчики, 
+используя асинхронную версию функции pbkdf2:
 
 ```javascript
 app.get('/auth', (req, res) => {
@@ -239,8 +238,8 @@ app.get('/auth', (req, res) => {
 });
 ```
 
-A new run of the ab benchmark above with the asynchronous version of your app
-yields:
+В результате нового запуска теста ab для асинхронной версии приложения 
+получаем результат:
 
 ```
 Concurrency Level:      20
@@ -269,13 +268,14 @@ Percentage of the requests served within a certain time (ms)
  100%   1079 (longest request)
 ```
 
-Yay! Your app is now serving about 20 requests per second, roughly 4 times more
-than it was with the synchronous hash generation. Additionally, the average
-latency is down from the 4 seconds before to just over 1 second.
+Ура! Наше приложение теперь обрабатывает около 20 запросов в секунду, 
+что примерно в 4 раза больше, чем при синхронном генерировании хешей. 
+Кроме того, средняя задержка снизилась с 4 секунд 
+до чуть более 1 секунды.
 
-Hopefully, through the performance investigation of this (admittedly contrived)
-example, you've seen how the V8 tick processor can help you gain a better
-understanding of the performance of your Node.js applications.
+Надеемся, что благодаря разбору производительности этого 
+(заведомо надуманного) примера вы увидели, как тиковый процессор 
+V8 может дать вам лучшее понимание производительности ваших приложений Node.js.
 
 [профайлер V8]: https://v8.dev/docs/profile
-[benefits of asynchronous programming]: https://nodesource.com/blog/why-asynchronous
+[преимущества асинхронного программирования]: https://nodesource.com/blog/why-asynchronous

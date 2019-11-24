@@ -16,11 +16,13 @@ const markdown = require('metalsmith-markdown')
 const prism = require('metalsmith-prism')
 const permalinks = require('metalsmith-permalinks')
 const pagination = require('metalsmith-yearly-pagination')
+const htmlMinifier = require('metalsmith-html-minifier')
 const defaultsDeep = require('lodash.defaultsdeep')
 const autoprefixer = require('autoprefixer')
 const marked = require('marked')
 const postcss = require('postcss')
-const sass = require('node-sass')
+const fibers = require('fibers')
+const sass = require('sass')
 const ncp = require('ncp')
 const junk = require('junk')
 const semver = require('semver')
@@ -43,6 +45,33 @@ renderer.heading = anchorMarkdownHeadings
 const markedOptions = {
   langPrefix: 'language-',
   renderer
+}
+
+const htmlMinifierOpts = {
+  collapseBooleanAttributes: true,
+  collapseWhitespace: true,
+  conservativeCollapse: true, // This is needed as things are now
+  decodeEntities: true,
+  minifyCSS: {
+    level: {
+      1: {
+        specialComments: 0
+      }
+    }
+  },
+  minifyJS: false, // we don't have a lot inline JS and this slows down things
+  minifyURLs: false,
+  processConditionalComments: true,
+  removeAttributeQuotes: true,
+  removeComments: true,
+  removeOptionalAttributes: true,
+  removeOptionalTags: true,
+  removeRedundantAttributes: true,
+  removeScriptTypeAttributes: true,
+  removeStyleLinkTypeAttributes: true,
+  removeTagWhitespace: false,
+  sortAttributes: true,
+  sortClassName: true
 }
 
 // This function imports a given language file and uses the default language set
@@ -178,6 +207,8 @@ function buildLocale (source, locale, opts) {
       pattern: /\.js$/
     }))
     .use(layouts())
+    // Use the default options
+    .use(process.env.NODE_ENV !== 'development' ? htmlMinifier({ minifierOptions: htmlMinifierOpts }) : '')
     // Pipes the generated files into their respective subdirectory in the build
     // directory.
     .destination(path.join(__dirname, 'build', locale))
@@ -226,9 +257,9 @@ function buildCSS () {
 
   const sassOpts = {
     file: src,
+    fiber: fibers,
     outFile: dest,
-    outputStyle: process.env.NODE_ENV !== 'development' ? 'compressed' : 'expanded',
-    precision: 6
+    outputStyle: process.env.NODE_ENV !== 'development' ? 'compressed' : 'expanded'
   }
 
   fs.mkdir(path.join(__dirname, 'build/static/css'), { recursive: true }, (err) => {

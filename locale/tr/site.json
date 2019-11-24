@@ -1,21 +1,21 @@
 {
   "title": "Node.js",
-  "editOnGithub":"Editar en Github",
-  "author": "Fundación de Node.js",
-  "url": "https://nodejs.org/es/",
-  "locale": "es",
-  "language": "Español",
-  "languageEnglishVersion": "Spanish",
-  "scrollToTop": "Vuelve al comienzo",
-  "reportNodeIssue": "Informe de un problema con Node.js",
-  "reportWebsiteIssue": "Informe de un problema con el sitio",
-  "getHelpIssue": "Consiga Ayuda",
-  "by": "por",
-  "all-downloads": "Todas las opciones de descarga",
-  "nightly": "Versiones Nightly",
-  "chakracore-nightly": "Versiones Node-ChakraCore Nightly",
-  "previous": "Anterior",
-  "next": "Siguiente",
+  "author": "Node.js Foundation",
+  "url": "https://nodejs.org/tr/",
+  "locale": "tr",
+  "language": "Türkçe",
+  "languageEnglishVersion": "Turkish",
+  "scrollToTop": "Yukarı",
+  "reportNodeIssue": "Node.js hatası bildir",
+  "reportWebsiteIssue": "Website hatası bildir",
+  "getHelpIssue": "Yardım",
+  "by": "tarafından",
+  "all-downloads": "Tüm indirme seçenekleri",
+  "nightly": "Gecelik Sürümler",
+  "chakracore-nightly": "Node-ChakraCore Gecelik sürümler",
+  "unofficial-builds": "Resmi Olmayan Sürümler",
+  "previous": "Önceki",
+  "next": "Sonraki",
   "feeds": [
     {
       "link": "feed/blog.xml",
@@ -23,75 +23,75 @@
     },
     {
       "link": "feed/releases.xml",
-      "text": "Node.js Blog: Versiones"
+      "text": "Node.js Blog: Sürümler"
     },
     {
       "link": "feed/vulnerability.xml",
-      "text": "Node.js Blog: Informes de Vulnerabilidad"
+      "text": "Node.js Blog: Güvenlik açığı raporları"
     }
   ],
   "home": {
-    "text": "Inicio"
+    "text": "Anasayfa"
   },
   "about": {
     "link": "about",
-    "text": "Acerca",
+    "text": "Hakkında",
     "governance": {
       "link": "about/governance",
-      "text": "Gobierno"
+      "text": "Yönetim"
     },
     "community": {
       "link": "about/community",
-      "text": "Comunidad"
+      "text": "Topluluk"
     },
     "workinggroups": {
       "link": "about/working-groups",
-      "text": "Grupos de Trabajo"
+      "text": "Çalışma Grupları"
     },
     "releases": {
       "link": "about/releases",
-      "text": "Versiones"
+      "text": "Sürümler"
     },
     "resources": {
       "link": "about/resources",
-      "text": "Recursos"
+      "text": "Kaynaklar"
     },
     "trademark": {
       "link": "about/trademark",
-      "text": "Marca"
+      "text": "Marka"
     },
     "privacy": {
       "link": "about/privacy",
-      "text": "Política de privacidad"
+      "text": "Gizlilik Politikası"
     }
   },
   "download": {
     "link": "download",
-    "text": "Descargas",
+    "text": "İndir",
     "releases": {
       "link": "download/releases",
-      "text": "Versiones anteriores"
+      "text": "Önceki Sürümler"
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "Instale Node.js mediante un gestor de paquetes"
+      "text": "Node.js'i paket yöneticisi ile kurmak"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "Firmas SHASUMS de los archivos de versiones",
+      "text": "Sürüm dosyaları için İmzalı SHASUMS",
       "verify-link": "https://github.com/nodejs/node#verifying-binaries",
-      "verify-text": "Cómo verificarlo"
+      "verify-text": "Doğrulama nasıl yapılır"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive"
+      "text": "Linux'ta ikili(binary) arşiv yoluyla Node.js kurulumu"
     }
   },
   "docs": {
     "link": "docs",
-    "text": "Documentación",
+    "text": "Belgeler",
     "es6": {
       "link": "docs/es6",
-      "text": "ES6 y más allá"
+      "text": "ES6 ve ötesi"
     },
     "api-lts": {
       "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
@@ -104,52 +104,56 @@
     },
     "guides": {
       "link": "docs/guides",
-      "text": "Guías"
+      "text": "Rehberler"
     },
     "dependencies": {
       "link": "docs/meta/topics/dependencies",
-      "text": "Dependencias"
+      "text": "Bağımlılıklar"
     }
   },
   "getinvolved": {
     "link": "get-involved",
-    "text": "Participa",
+    "text": "Katıl",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
-      "text": "Programa + Aprende"
+      "text": "Kodla + Öğren"
     },
     "collab-summit": {
       "link": "get-involved/collab-summit",
-      "text": "Colabora en el Summit"
+      "text": "İşbirliği Zirvesi"
     },
     "contribute": {
       "link": "get-involved/contribute",
-      "text": "Contribuye"
+      "text": "Katkıda bulunmak"
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
-      "text": "Código de Conducta"
+      "text": "Davranış Kuralları"
+    },
+    "node-meetups": {
+      "link": "get-involved/node-meetups",
+      "text": "Node.js Toplantıları"
     }
   },
   "security": {
     "link": "security",
-    "text": "Seguridad"
+    "text": "Güvenlik"
   },
   "blog": {
     "link": "blog",
-    "text": "Noticias"
+    "text": "Haberler"
   },
   "foundation": {
     "link": "https://foundation.nodejs.org/",
-    "text": "Fundación"
+    "text": "Vakıf"
   },
   "releases": {
-    "title": "Histórico de versiones",
-    "downloads": "Descargas"
+    "title": "Release History",
+    "downloads": "İndirmeler"
   },
   "links": {
     "pages": {
-      "changelog": "Registro de Cambios"
+      "changelog": "Değişiklikler"
     }
   }
 }
