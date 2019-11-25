@@ -5,7 +5,7 @@ title: 安全
 
 # 安全
 
-## 回報 Node.js 臭蟲
+## 回報 Node.js 的臭蟲
 
 Node.js 非常嚴肅地看待安全性臭蟲，所有的臭蟲都應回報至 [HackerOne](https://hackerone.com/nodejs)，其後將由專責安全問題的部門處理。
 
@@ -19,7 +19,7 @@ Node.js 官方為了安全研究員們及負責的公開揭露而展開了一個
 
 ## 回報第三方模組中的臭蟲
 
-第三方模組中的安全性臭蟲應向其維護者回報，且應透過 [HackerOne](https://hackerone.com/nodejs-ecosystem) 來協調。關於此流程的細節可參考安全性工作小組的 [repository](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md)。
+第三方模組中的安全性臭蟲應向其維護者回報，且應透過 [HackerOne](https://hackerone.com/nodejs-ecosystem) 來協調。關於此流程的細節可參考安全性工作小組的[檔案庫](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md)。
 
 感謝你對於 Node.js 及其生態系安全性的改善，我們相當感謝並認可你的付出及負責任地揭露問題。
 
