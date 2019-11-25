@@ -20,4 +20,4 @@ labels:
   newsletter-postfix: "'e kaydolun."
 ---
 
-Node.js® [Chrome'un V8 Javascript motoru](https://v8.dev/) üzerine inşa edilmiş bir Javascript çalışma ortamıdır.
+Node.js® [Chrome'un V8 JavaScript motoru](https://v8.dev/) üzerine inşa edilmiş bir JavaScript çalışma ortamıdır.
