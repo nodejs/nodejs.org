@@ -19,7 +19,7 @@ layout: docs.hbs
 * [Блокирующие и Неблокирующие Вызовы](/ru/docs/guides/blocking-vs-non-blocking/)
 * [The Node.js Event Loop, Timers, and `process.nextTick()`](/en/docs/guides/event-loop-timers-and-nexttick/)
 * [Don't Block the Event Loop (or the Worker Pool)](/en/docs/guides/dont-block-the-event-loop/)
-* [Timers in Node.js](/en/docs/guides/timers-in-node/)
+* [Таймеры в Node.js](/ru/docs/guides/timers-in-node/)
 
 ## Module-related guides
 
