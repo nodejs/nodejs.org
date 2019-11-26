@@ -116,7 +116,7 @@
 
     xhr.open('GET', 'https://api.github.com/repos/nodejs/node/contributors?per_page=1')
     xhr.send()
-    xhr.onload = function () {
+    xhr.addEventListener('load', function () {
       if (xhr.status !== 200) {
         return contributorCard.remove()
       }
@@ -130,7 +130,7 @@
       }
 
       callback(randomPage, links.last.page)
-    }
+    })
   }
 
   function getContributor (randomPage) {
@@ -139,7 +139,7 @@
 
     xhr.open('GET', 'https://api.github.com/repos/nodejs/node/contributors?per_page=1&page=' + randomPage)
     xhr.send()
-    xhr.onload = function () {
+    xhr.addEventListener('load', function () {
       if (xhr.status !== 200) {
         return contributorCard.remove()
       }
@@ -154,10 +154,9 @@
       contributorAvatar.parentElement.href = contributor.html_url
       contributorUsername.innerText = contributor.login
       contributorUsername.href = contributor.html_url
-      contributorContributions.innerText = contributor.contributions
       contributorContributions.innerText = contributor.contributions + ' contributions'
       contributorContributions.parentElement.href = 'https://github.com/nodejs/node/commits?author=' + contributor.login
-    }
+    })
   }
 
   function linkParser (linkHeader) {
