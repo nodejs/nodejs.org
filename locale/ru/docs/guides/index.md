@@ -10,7 +10,7 @@ layout: docs.hbs
 * [Первые шаги](/ru/docs/guides/getting-started-guide/)
 * [Отладка - начало работы](/ru/docs/guides/debugging-getting-started/)
 * [Простое профилирование Node.js приложений](/ru/docs/guides/simple-profiling/)
-* [Diagnostics - Flame Graphs](/en/docs/guides/diagnostics-flamegraph/)
+* [Диагностика - Flame Graphs](/ru/docs/guides/diagnostics-flamegraph/)
 * [Докеризация веб-приложения Node.js](/ru/docs/guides/nodejs-docker-webapp/)
 * [Migrating to safe Buffer constructors](/en/docs/guides/buffer-constructor-deprecation/)
 
