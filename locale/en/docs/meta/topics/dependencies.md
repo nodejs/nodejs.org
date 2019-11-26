@@ -10,7 +10,7 @@ There are several dependencies that Node.js relies on to work the way it does.
 * [Libraries](#libraries)
   * [V8](#v8)
   * [libuv](#libuv)
-  * [http-parser](#http-parser)
+  * [llhttp](#llhttp)
   * [c-ares](#c-ares)
   * [OpenSSL](#openssl)
   * [zlib](#zlib)
@@ -45,7 +45,7 @@ HTTP parsing is handled by a lightweight TypeScript and C library called llhttp.
 It is designed to not make any syscalls or allocations, so it has a very small
 per-request memory footprint.
 
-* [Documentation](https://github.com/joyent/http-parser/)
+* [Documentation](https://github.com/nodejs/llhttp)
 
 ### c-ares
 
