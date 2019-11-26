@@ -30,6 +30,6 @@ additional:
     DockerImage: Docker 映像檔
     officialDockerImage: Node.js 官方 Docker 映像檔
     LinuxPowerSystems: 建置在 Power Systems 上的 Linux
-    LinuxSystemZ: 建置在 System Z 上的 Linux
+    LinuxSystemZ: 建置在 System z 上的 Linux
     AIXPowerSystems: 建置在 Power Systems 上的 AIX
 ---
