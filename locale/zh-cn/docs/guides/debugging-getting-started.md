@@ -44,7 +44,7 @@ layout: docs.hbs
 
 ### [Node 监视器](https://github.com/nodejs/node-inspect)
 
-* 由 Node.js 基础库，使用[检查器协议][] 支持的 CLI 调试器。
+* 由 Node.js 基础库，使用[检查器协议][]支持的 CLI 调试器。
 * 和 Node 绑定在一起的版本，并且可以使用 `node inspect myscript.js`。
 * 最新的版本同样可以单独通过（例如 `npm install -g node-inspect`）方式安装，并使用 `node-inspect myscript.js`。
 

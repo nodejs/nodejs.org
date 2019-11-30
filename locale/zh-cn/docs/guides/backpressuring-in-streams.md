@@ -130,7 +130,7 @@ inp.pipe(gzip).pipe(outputFile);
 * 太多繁重的垃圾回收
 * 内存耗尽
 
-以下例子中我们把 `.write()` 函数的[返回值][] 值取出，改成 `true`，这样明显地禁止了 Node.js 核心的积压的支持。在任何引用了 'modified' 二进制库的地方，我们探讨在不适用 `return ret;` 的情况下运行 `node` 二进制代码，并用 `return true;` 取代它。
+以下例子中我们把 `.write()` 函数的[返回值][]值取出，改成 `true`，这样明显地禁止了 Node.js 核心的积压的支持。在任何引用了 'modified' 二进制库的地方，我们探讨在不适用 `return ret;` 的情况下运行 `node` 二进制代码，并用 `return true;` 取代它。
 
 ## 过度的垃圾收集
 
