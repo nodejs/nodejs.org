@@ -10,7 +10,7 @@ Node.js 依赖于以下一些依赖项，这样它才能正常工作。
 * [类库](#libraries)
   * [V8](#v8)
   * [libuv](#libuv)
-  * [http-parser](#http-parser)
+  * [llhttp](#llhttp)
   * [c-ares](#c-ares)
   * [OpenSSL](#openssl)
   * [zlib](#zlib)
@@ -23,7 +23,7 @@ Node.js 依赖于以下一些依赖项，这样它才能正常工作。
 
 ### V8
 
-V8 类库为 Node.js 提供了 JavaScript引擎，Node.js 通过 V8 C++ 的 API 函数接口进行操控， V8 由谷歌公司维护，用于谷歌浏览器中。
+V8 类库为 Node.js 提供了 JavaScript 引擎，Node.js 通过 V8 C++ 的 API 函数接口进行操控， V8 由谷歌公司维护，用于谷歌浏览器中。
 
 * [相关文档](https://v8docs.nodesource.com/)
 
@@ -33,11 +33,11 @@ V8 类库为 Node.js 提供了 JavaScript引擎，Node.js 通过 V8 C++ 的 API 
 
 * [相关文档](http://docs.libuv.org/)
 
-### http-parser
+### llhttp
 
-HTTP 解析是通过一个由 C 语言编写、轻量级称作 http-parser 的类库进行的。由于它的设计不会引发系统调用和系统资源分配，因而它的预请求内存痕迹极小。
+HTTP 解析是通过一个由 C 语言编写、轻量级称作 llhttp 的类库进行的。由于它的设计不会引发系统调用和系统资源分配，因而它的预请求内存痕迹极小。
 
-* [相关文档](https://github.com/joyent/http-parser/)
+* [相关文档](https://github.com/nodejs/llhttp)
 
 ### c-ares
 

@@ -11,9 +11,9 @@ layout: docs.hbs
 
 ## 阻塞
 
-**阻塞** 是指在 Node.js 程序中，其它 JavaScript 语句的执行，必须等待一个非 JavaScript 操作完成。这是因为当 **阻塞** 发生时，事件循环无法继续运行JavaScript。
+**阻塞** 是指在 Node.js 程序中，其它 JavaScript 语句的执行，必须等待一个非 JavaScript 操作完成。这是因为当 **阻塞** 发生时，事件循环无法继续运行 JavaScript。
 
-在 Node.js 中，JavaScript 由于执行 CPU 密集型操作，而不是等待一个非 JavaScript 操作（例如I/O）而表现不佳，通常不被称为 **阻塞**。在 Node.js 标准库中使用 libuv 的同步方法是最常用的 **阻塞** 操作。原生模块中也有 **阻塞** 方法。
+在 Node.js 中，JavaScript 由于执行 CPU 密集型操作，而不是等待一个非 JavaScript 操作（例如 I/O）而表现不佳，通常不被称为 **阻塞**。在 Node.js 标准库中使用 libuv 的同步方法是最常用的 **阻塞** 操作。原生模块中也有 **阻塞** 方法。
 
 在 Node.js 标准库中的所有 I/O 方法都提供异步版本，**非阻塞**，并且接受回调函数。某些方法也有对应的 **阻塞** 版本，名字以 `Sync` 结尾。
 
@@ -25,7 +25,7 @@ layout: docs.hbs
 
 ```js
 const fs = require('fs');
-const data = fs.readFileSync('/file.md'); // 在这里阻塞直到文件被读取
+const data = fs.readFileSync('/file.md'); // blocks here until file is read
 ```
 
 这是一个等同的 **异步** 示例：
@@ -43,9 +43,9 @@ fs.readFile('/file.md', (err, data) => {
 
 ```js
 const fs = require('fs');
-const data = fs.readFileSync('/file.md'); // 在这里阻塞直到文件被读取
+const data = fs.readFileSync('/file.md'); // blocks here until file is read
 console.log(data);
-moreWork(); // 在console.log之后执行
+moreWork(); // will run after console.log
 ```
 
 这是一个类似但不等同的异步示例：
@@ -56,7 +56,7 @@ fs.readFile('/file.md', (err, data) => {
   if (err) throw err;
   console.log(data);
 });
-moreWork(); // 在console.log之前执行
+moreWork(); // will run before console.log
 ```
 
 在上述第一个例子中， `console.log` 将在 `moreWork()` 之前被调用。在第二个例子中， `fs.readFile()` 是 **非阻塞** 的，所以 JavaScript 执行可以继续， `moreWork()` 将被首先调用。在不等待文件读取完成的情况下运行 `moreWork（）` 的能力是一个可以提高吞吐量的关键设计选择。

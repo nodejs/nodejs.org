@@ -13,7 +13,7 @@ Node.js 是针对 [V8](https://v8.dev/) 引擎构建的。为了与此引擎保�
 * **Staged**：这些是将要完成的特性，并且在 V8 团队看来并不一定稳定，需要一个 `--harmony` 标记。
 * **In progress**：这些特性可以通过各自单独的 harmony 标记被激活使用。除非为了测试用途，否则绝不鼓励这样做。值得注意的是这些标记是借由 V8 引擎公开，将来或许会有潜在的变化而不会有任何免责声明或者协议。
 
-## 默认情况下什么特性随着 Node.js一起发布？
+## 默认情况下什么特性随着 Node.js 一起发布？
 
 [node.green](https://node.green/) 提供了非常完整、几乎涵盖了不同版本的 Node.js 中所支持的 ECMAScript 特性。它基于 kangax 的兼容性对照表构建。
 
@@ -31,7 +31,7 @@ node --v8-options | grep "in progress"
 
 V8 团队现正在努力持续工作，他们借助 EcmaScript 5 或是更早时代的语言规范，利用转译或是本地相当的技术以提高新语言的功能特性，使之达到平衡。目前研发进度记录可以在 [six-speed](https://fhinkel.github.io/six-speed) 查询到，它会告诉你 ES2015 和 ESNext 的性能究竟如何（和本地的 ES5 同等技术相比）。
 
-特性优化的工作也随着 ES2015 到来，以上计划是通过 [执行计划](https://docs.google.com/document/d/1EA9EbfnydAmmU_lM8R_uEMQ-U_v4l9zulePSBkeYWmY)，有一个 V8 团队在那儿收集整理相关信息，并协调需要提高性能、设计追踪问题的文稿等部门。
+特性优化的工作也随着 ES2015 到来，以上计划是通过[执行计划](https://docs.google.com/document/d/1EA9EbfnydAmmU_lM8R_uEMQ-U_v4l9zulePSBkeYWmY)，有一个 V8 团队在那儿收集整理相关信息，并协调需要提高性能、设计追踪问题的文稿等部门。
 
 ## 我有我自己的基本框架，可以利用 --harmony，所以我可以移除这个标记吗？
 

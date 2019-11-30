@@ -11,7 +11,7 @@ There are several dependencies that Node.js relies on to work the way it does.
 * [Libraries](#Libraries)
   * [V8](#V8)
   * [libuv](#libuv)
-  * [http-parser](#http-parser)
+  * [llhttp](#llhttp)
   * [c-ares](#c-ares)
   * [OpenSSL](#OpenSSL)
   * [zlib](#zlib)
@@ -28,7 +28,7 @@ Node.js가 의존하고 있는 여러 의존성
 * [라이브러리](#libraries)
   * [V8](#v8)
   * [libuv](#libuv)
-  * [http-parser](#http-parser)
+  * [llhttp](#llhttp)
   * [c-ares](#c-ares)
   * [OpenSSL](#openssl)
   * [zlib](#zlib)
@@ -80,21 +80,21 @@ asynchronously at the operating system level.
 * [문서](http://docs.libuv.org/)
 
 <!--
-### http-parser
+### llhttp
 
-HTTP parsing is handled by a lightweight C library called http-parser. It is
+HTTP parsing is handled by a lightweight C library called llhttp. It is
 designed to not make any syscalls or allocations, so it has a very small
 per-request memory footprint.
 
-* [Documentation](https://github.com/joyent/http-parser/)
+* [Documentation](https://github.com/nodejs/llhttp)
 -->
 
-### http-parser
+### llhttp
 
-HTTP 파싱은 http-parser라는 경량 C 라이브러리가 처리합니다. 이는 시스템 호출이나 할당을 하려고
+HTTP 파싱은 llhttp라는 경량 C 라이브러리가 처리합니다. 이는 시스템 호출이나 할당을 하려고
 만들어진 것이 아니므로 요청당 아주 작은 메모리 공간만 차지합니다.
 
-* [문서](https://github.com/joyent/http-parser/)
+* [문서](https://github.com/nodejs/llhttp)
 
 <!--
 ### c-ares

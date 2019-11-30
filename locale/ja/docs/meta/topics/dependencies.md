@@ -11,7 +11,7 @@ There are several dependencies that Node.js relies on to work the way it does.
 * [Libraries](#libraries)
   * [V8](#v8)
   * [libuv](#libuv)
-  * [http-parser](#http-parser)
+  * [llhttp](#llhttp)
   * [c-ares](#c-ares)
   * [OpenSSL](#openssl)
   * [zlib](#zlib)
@@ -28,7 +28,7 @@ Node.js がそのように機能するために依存する依存関係がいく
 * [ライブラリ](#libraries)
   * [V8](#v8)
   * [libuv](#libuv)
-  * [http-parser](#http-parser)
+  * [llhttp](#llhttp)
   * [c-ares](#c-ares)
   * [OpenSSL](#openssl)
   * [zlib](#zlib)
@@ -81,22 +81,22 @@ asynchronously at the operating system level.
 * [ドキュメント](http://docs.libuv.org/)
 
 <!--
-### http-parser
+### llhttp
 
-HTTP parsing is handled by a lightweight C library called http-parser. It is
+HTTP parsing is handled by a lightweight C library called llhttp. It is
 designed to not make any syscalls or allocations, so it has a very small
 per-request memory footprint.
 
-* [Documentation](https://github.com/joyent/http-parser/)
+* [Documentation](https://github.com/nodejs/llhttp)
 
 -->
-### http-parser
+### llhttp
 
-HTTP 解析は、http-parser という軽量の C ライブラリによって処理されます。
+HTTP 解析は、llhttp という軽量の C ライブラリによって処理されます。
 システムコールや割り当てを行わないように設計されているため、
 リクエストごとのメモリ使用量は非常に小さくなっています。
 
-* [ドキュメント](https://github.com/joyent/http-parser/)
+* [ドキュメント](https://github.com/nodejs/llhttp)
 
 <!--
 ### c-ares
