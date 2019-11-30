@@ -27,7 +27,7 @@ Node.js 项目参与了一个为安全研究员和负责任的公众披露者的
 
 你应该向第三方模块相关负责维护人直接汇报此类安全问题，并通过 [Node 生态安全团队](https://hackerone.com/nodejs-ecosystem)进行组织协调。
 
-有关于此计划的详情部分可以在 [安全工作组](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md) 寻找到。
+有关于此计划的详情部分可以在[安全工作组](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md)寻找到。
 
 感谢你为提升 Node.js 及其生态系统的安全作出贡献。我们非常感激并认可你的努力以及负责任的公开信息。
 
@@ -43,7 +43,7 @@ Node.js 项目参与了一个为安全研究员和负责任的公众披露者的
 
 * 通常禁运日期将在 CVE 发布之时起，在 72 小时内设置。但是这可能会因安全缺陷的严重程度或应用修复程序的困难程度而有所不同。
 
-* 这个过程可能需要一些时间，特别是当需要与其他项目的维护人员进行协调时。但是将尽一切努力尽可能及时地处理 缺陷漏洞。但是我们仍必须遵循上面的发布过程，以确保以一致的方式处理泄漏。
+* 这个过程可能需要一些时间，特别是当需要与其他项目的维护人员进行协调时。但是将尽一切努力尽可能及时地处理缺陷漏洞。但是我们仍必须遵循上面的发布过程，以确保以一致的方式处理泄漏。
 
 ## 收到安全更新
 
@@ -54,5 +54,4 @@ Node.js 项目参与了一个为安全研究员和负责任的公众披露者的
 
 ## 对于此政策的评论与建议
 
-如果你对于如何提高优化此流程有独特建议，请通过发送一个 [请求](https://github.com/nodejs/nodejs.org)
-或是 [创建新提议](https://github.com/nodejs/security-wg/issues/new) 来与我们讨论。
+如果你对于如何提高优化此流程有独特建议，请通过发送一个[请求](https://github.com/nodejs/nodejs.org)或是[创建新提议](https://github.com/nodejs/security-wg/issues/new)来与我们讨论。

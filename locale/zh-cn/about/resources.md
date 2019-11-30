@@ -7,9 +7,9 @@ title: 商标和图像
 
 ## 商标下载
 
-请查看相关 [商标政策](/zh-cn/about/trademark/) 以便了解许可范围内的 Node.js®；商标以及标记等。
+请查看相关[商标政策](/zh-cn/about/trademark/)以便了解许可范围内的 Node.js®；商标以及标记等。
 
-对于 Node.js 标志的可视化展示指南也在 [可视化指南](/static/documents/foundation-visual-guidelines.pdf) 有所描述。
+对于 Node.js 标志的可视化展示指南也在[可视化指南](/static/documents/foundation-visual-guidelines.pdf)有所描述。
 
 <table class="logos">
   <tr>
