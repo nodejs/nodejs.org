@@ -6,7 +6,7 @@ title: 工作组
 # 核心工作组
 <!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 
-核心工作组由 [技术指导委员会(TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md) 创建。
+核心工作组由[技术指导委员会(TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md)创建。
 
 ## 现有工作组
 
@@ -14,7 +14,7 @@ title: 工作组
 * [基准测试组](#benchmarking)
 * [构建组](#build)
 * [诊断组](#diagnostics)
-* [Docker组](#docker)
+* [Docker 组](#docker)
 * [宣传组](#evangelism)
 * [国际化翻译组](#i18n)
 * [发布组](#release)
@@ -30,7 +30,7 @@ title: 工作组
 * 维护 [NAN](https://github.com/nodejs/nan) Git 仓库，包含代码、议题以及文档。
 * 维护 [addon-examples](https://github.com/nodejs/node-addon-examples) Git 仓库，包含代码、议题以及文档。
 * 维护在 Node.js 项目中从属于 Node.js TSC 的 C++ 插件。
-* 维护在 Node.js 项目中从属于 Node.js TSC 的 文档。
+* 维护在 Node.js 项目中从属于 Node.js TSC 的文档。
 * 维护 npm 中的 _nan_ 包，在合适的时候发布新版本。
 * 传递有关 Node.js 和 NAN 接口的未来消息，给社区提前通知变更。
 
@@ -77,7 +77,7 @@ title: 工作组
 * 定义并添加接口 / API 函数，在需要时允许产生转储。
 * 定义并向生成的转储添加公共结构，对这些转储进行内省的工具给予支持。
 
-### <!--docker--> [Docker组](https://github.com/nodejs/docker-node)
+### <!--docker--> [Docker 组](https://github.com/nodejs/docker-node)
 
 Docker 工作组的目的是为节点建立、维护和改进官方的 Docker 镜像。
 
@@ -169,7 +169,7 @@ Docker 工作组的目的是为节点建立、维护和改进官方的 Docker �
 承担职责：
 
 * 为以下情况制定及维护安全性协议与流程：
-  * 核心 Node.js 项目the core Node.js project
+  * 核心 Node.js 项目
   * 由技术指导委员会（TSC）维护的其它项目。
 * 与 Node 安全平台合作，将社区汇报的安全隐患相关数据作为共享协助带入到基础库中。
 * 确保隐患数据以一个有效定时的方式更新。

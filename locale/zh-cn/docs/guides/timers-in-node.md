@@ -5,7 +5,7 @@ layout: docs.hbs
 
 # Node.js 中的定时器
 
-Node.js 中的定时器模块包含了隔一定时间执行一遍代码的函数。定时器不必通过 `require()` 的方式引入，因为所有这些方法都是模拟浏览器中 JavaScript 函数，是全局的。为了更好的全面理解何时这些函数将执行，阅读 Node.js 中 [事件轮询](/en/docs/guides/event-loop-timers-and-nexttick/) 是一个好主意。
+Node.js 中的定时器模块包含了隔一定时间执行一遍代码的函数。定时器不必通过 `require()` 的方式引入，因为所有这些方法都是模拟浏览器中 JavaScript 函数，是全局的。为了更好的全面理解何时这些函数将执行，阅读 Node.js 中[事件轮询](/en/docs/guides/event-loop-timers-and-nexttick/)是一个好主意。
 
 ## 用 Node.js 控制时间的连续
 
@@ -58,7 +58,7 @@ executing immediate: so immediate
 
 `setImmediate()` 返回一个 `Immediate` 对象，它可以被用于取消安排的定时任务（见下面的 `clearImmediate()` ）。
 
-注意：不要把 `setImmediate()` 和 `process.nextTick()` 相混淆。它们有一些主要的差别：第一， `process.nextTick()` 将在任何设置好的 `Immediate` 以及任何安排好的 I/O *前* 执行。第二， `process.nextTick()` 是不可擦除的，换句话说，一旦有代码使用 `process.nextTick()` 执行，执行无法中断，这就像一个普通函数一样，具体可以参考 [此教程](/en/docs/guides/event-loop-timers-and-nexttick/#process-nexttick) 来更好地理解 `process.nextTick()` 的操作。
+注意：不要把 `setImmediate()` 和 `process.nextTick()` 相混淆。它们有一些主要的差别：第一， `process.nextTick()` 将在任何设置好的 `Immediate` 以及任何安排好的 I/O *前* 执行。第二， `process.nextTick()` 是不可擦除的，换句话说，一旦有代码使用 `process.nextTick()` 执行，执行无法中断，这就像一个普通函数一样，具体可以参考[此教程](/en/docs/guides/event-loop-timers-and-nexttick/#process-nexttick)来更好地理解 `process.nextTick()` 的操作。
 
 ### "永远的轮询" 执行 ~ *`setInterval()`*
 

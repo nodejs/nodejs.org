@@ -192,15 +192,15 @@ immediate
 timeout
 ```
 
-使用 `setImmediate()` 相对于`setTimeout()` 的主要优势是，如果`setImmediate()`是在I/O周期内被调度的，那它将会在其中任何的定时器之前执行，跟这里存在多少个定时器无关
+使用 `setImmediate()` 相对于`setTimeout()` 的主要优势是，如果`setImmediate()`是在 I/O 周期内被调度的，那它将会在其中任何的定时器之前执行，跟这里存在多少个定时器无关
 
 ## `process.nextTick()`
 
 ### 理解 `process.nextTick()`
 
-您可能已经注意到 `process.nextTick()` 在图示中没有显示，即使它是异步 API 的一部分。这是因为 `process.nextTick()` 从技术上讲不是事件循环的一部分。相反，它都将在当前操作完成后处理 `nextTickQueue`， 而不管事件循环的当前阶段如何。这里的一个*操作*被视作为一个从 底层C/C++ 处理器开始过渡，并且处理需要执行的 JavaScript 代码。
+您可能已经注意到 `process.nextTick()` 在图示中没有显示，即使它是异步 API 的一部分。这是因为 `process.nextTick()` 从技术上讲不是事件循环的一部分。相反，它都将在当前操作完成后处理 `nextTickQueue`， 而不管事件循环的当前阶段如何。这里的一个*操作*被视作为一个从底层 C/C++ 处理器开始过渡，并且处理需要执行的 JavaScript 代码。
 
-回顾我们的图示，任何时候在给定的阶段中调用 `process.nextTick()`，所有传递到 `process.nextTick()` 的回调将在事件循环继续之前解析。这可能会造成一些糟糕的情况, 因为**它允许您通过递归 `process.nextTick()`调用来“饿死”您的 I/O**，阻止事件循环到达 **轮询** 阶段。
+回顾我们的图示，任何时候在给定的阶段中调用 `process.nextTick()`，所有传递到 `process.nextTick()` 的回调将在事件循环继续之前解析。这可能会造成一些糟糕的情况，因为**它允许您通过递归 `process.nextTick()`调用来“饿死”您的 I/O**，阻止事件循环到达 **轮询** 阶段。
 
 ### 为什么会允许这样？
 
@@ -295,7 +295,7 @@ server.listen(8080);
 server.on('listening', () => { });
 ```
 
-假设 `listen()` 在事件循环开始时运行，但listening的回调被放置在 `setImmediate()` 中。除非传递过主机名，才会立即绑定到端口。为使事件循环继续进行，它必须命中 **轮询** 阶段，这意味着有可能已经接收了一个连接，并在侦听事件之前触发了连接事件。
+假设 `listen()` 在事件循环开始时运行，但 listening 的回调被放置在 `setImmediate()` 中。除非传递过主机名，才会立即绑定到端口。为使事件循环继续进行，它必须命中 **轮询** 阶段，这意味着有可能已经接收了一个连接，并在侦听事件之前触发了连接事件。
 
 另一个示例运行的函数构造函数是从 `EventEmitter` 继承的，它想调用构造函数：
 

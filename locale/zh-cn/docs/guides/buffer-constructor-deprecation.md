@@ -48,16 +48,15 @@ $ node example.js
 
 ### 在使用 `linter` 的代码中找出一些问题
 
-ESLint 规则 [不使用缓存构造函数](https://eslint.org/docs/rules/no-buffer-constructor)
-或 [node/ 无废除的 Api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) 也会寻找到使用 `Buffer()` 废弃的函数。 这些规则预先已经包含了。
+ESLint 规则[不使用缓存构造函数](https://eslint.org/docs/rules/no-buffer-constructor)或 [node/ 无废除的 Api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) 也会寻找到使用 `Buffer()` 废弃的函数。 这些规则预先已经包含了。
 
-不过这存在一个劣势，举个例子，当 `Buffer` 被 polyfill重写的时候，它不保证一直[正常工作](https://github.com/chalker/safer-buffer#why-not-safe-buffer)。所以推荐使用此方法和其它如上描述的方法在一起使用。
+不过这存在一个劣势，举个例子，当 `Buffer` 被 polyfill 重写的时候，它不保证一直[正常工作](https://github.com/chalker/safer-buffer#why-not-safe-buffer)。所以推荐使用此方法和其它如上描述的方法在一起使用。
 
 ## <!--variant-1-->变化 1： 在 Node.js ≤ 4.4.x 和 5.0.0 — 5.9.x 版本中不支持
 
 这是现在的一个推荐的解决方案，暗示仅有极小的成本。
 
-Node.js 5.x 发行自 2016 年就不再支持，而 4.x 版本 发行线支持到 2018 年 4 月就寿终正寝了（→ [计划表](https://github.com/nodejs/Release#release-schedule)）。这意味着这些版本 *不会* 接受任何更新，即便有安全问题也不会被修复，所以如果可能，我们不应使用这些版本。
+Node.js 5.x 发行自 2016 年就不再支持，而 4.x 版本发行线支持到 2018 年 4 月就寿终正寝了（→ [计划表](https://github.com/nodejs/Release#release-schedule)）。这意味着这些版本 *不会* 接受任何更新，即便有安全问题也不会被修复，所以如果可能，我们不应使用这些版本。
 
 在这种情况下，你应该把全部的 `new Buffer()` 或 `Buffer()` 更改为 `Buffer.alloc()` 或 `Buffer.from()`，规则如下：
 
@@ -68,19 +67,18 @@ Node.js 5.x 发行自 2016 年就不再支持，而 4.x 版本 发行线支持�
 注意：`Buffer.alloc()` 在当前的 Node.js 版本上 _快于_
 `new Buffer(size).fill(0)`，后者是当你确认需要用 0 对整个缓存进行初始化。
 
-启用 ESLint 检查规则 [不使用缓存构造函数](https://eslint.org/docs/rules/no-buffer-constructor)
-或[node/ 无废除的 Api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) 时，也会建议避免使用不安全的 `Buffer` 函数。
+启用 ESLint 检查规则[不使用缓存构造函数](https://eslint.org/docs/rules/no-buffer-constructor)或 [node/ 无废除的 Api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) 时，也会建议避免使用不安全的 `Buffer` 函数。
 
 同样我们还有 [JSCodeshift codemod](https://github.com/joyeecheung/node-dep-codemod#dep005)，它可以把 `Buffer` 构造函数的地方自动替换成 `Buffer.alloc()` 或 `Buffer.from()`。注意目前它只会工作在参数是文本型，或者带有两个参数的构造函数的情况下。
 
-_如果你目前支持那些旧版本的 Node.js，并且抛弃对它们的支持又不可能的情况下，或者你需要支持你包中的旧版本情况下，请考虑使用 [版本 2](#variant-2)，或者 [版本 3](#variant-3)。这样人们可以在使用这些旧版本情况下照样修复这些安全问题。那样的话，这些由不安全的 `Buffer` 所引发的问题会被你彻底根除，你的用户也不用在你运行 Node.js 10 的时候观察你的运行时废弃警告。_
+_如果你目前支持那些旧版本的 Node.js，并且抛弃对它们的支持又不可能的情况下，或者你需要支持你包中的旧版本情况下，请考虑使用[版本 2](#variant-2)，或者[版本 3](#variant-3)。这样人们可以在使用这些旧版本情况下照样修复这些安全问题。那样的话，这些由不安全的 `Buffer` 所引发的问题会被你彻底根除，你的用户也不用在你运行 Node.js 10 的时候观察你的运行时废弃警告。_
 
 ## <!--variant-2-->变化 2： 使用替换库
 
 存在着三种替换库：
 
 * **[更安全的缓存](https://www.npmjs.com/package/safer-buffer)** 是整个用来替换 `Buffer` 函数的方法。当你在使用 `new Buffer()` 的时候，将会 _抛出_ 异常。
-  和 [变化 1](#版本-1) 中一样，你会得到详细同样的步骤。不过请用 `const Buffer = require('safer-buffer').Buffer` 在你所有文件中对 `Buffer` 函数进行替换。
+  和[变化 1](#版本-1) 中一样，你会得到详细同样的步骤。不过请用 `const Buffer = require('safer-buffer').Buffer` 在你所有文件中对 `Buffer` 函数进行替换。
 
   请不要使用旧版本的 `new Buffer()` 函数，在添加上面的行的任何文件中，使用 `new Buffer()` 会 _抛出_ 异常。
 
@@ -98,7 +96,7 @@ _如果你目前支持那些旧版本的 Node.js，并且抛弃对它们的支�
 
 注意，在任意一种情况下，手动移除你代码中所有关于 `Buffer` 的调用非常重要——仅在 `safe-buffer` 中抛出警告不解决问题，它只是为新的 API 提供了一种替换而已。我亲眼见过人们犯过这类错误。
 
-启用 ESLint 规则 [不使用缓存构造函数](https://eslint.org/docs/rules/no-buffer-constructor)
+启用 ESLint 规则[不使用缓存构造函数](https://eslint.org/docs/rules/no-buffer-constructor)
 或是 [node/ 无废除的 Api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) 是推荐的。
 
 _如果你抛弃了对 Node.js 版本小于 4.5.0 的支持，请不要忘记把替代库也一起去掉。_
@@ -135,7 +133,7 @@ if (Buffer.from && Buffer.from !== Uint8Array.from) {
 
 `encoding` 为可选参数。
 
-注意在 `new Buffer()` 前的 `typeof notNumber` 检测必不可少（对于 `notNumber` 参数不是硬编码的情况下），并且 _不会引发 `Buffer` 构造函数废弃的警报_——这就是 _为什么_ 说 `Buffer` 构造函数被废弃的原因。缺少此类型检测的生态系统引发过不计其数的安全事故——如脏用户的某些输入，在 `Buffer(arg)` 可能会意外终止，这会导致从DoS攻击到从进程内存向攻击者泄露敏感信息范围内一系列问题。
+注意在 `new Buffer()` 前的 `typeof notNumber` 检测必不可少（对于 `notNumber` 参数不是硬编码的情况下），并且 _不会引发 `Buffer` 构造函数废弃的警报_——这就是 _为什么_ 说 `Buffer` 构造函数被废弃的原因。缺少此类型检测的生态系统引发过不计其数的安全事故——如脏用户的某些输入，在 `Buffer(arg)` 可能会意外终止，这会导致从 DoS 攻击到从进程内存向攻击者泄露敏感信息范围内一系列问题。
 
 当 `notNumber` 被硬编码（如文本型 `"abc"` 或者 `[0,1,2]`）， `typeof` 类型检查可以被忽略。
 
@@ -182,7 +180,7 @@ _注意，当你不用 0 去填充缓存，此问题同样发生在 `new Buffer(
 `Buffer` 构造函数可以用不同方式创建缓存：
 
 * `new Buffer(42)` 创建一个 42 个字节的 `缓存`。在 Node.js 8 之前，该缓存考虑性能，它包含 *随机内存*，而这可能包括任何数据，从编码的源码到密码，以及加密秘钥等。
-* `new Buffer('abc')` 创建一个 UTF-8 编码的字符串 `'abc'`。第二个参数可以指定用何种编码：举一个例子，`new Buffer(string, 'base64')` 可用于将Base64字符串转换为原始字符串表示的字节序列。
+* `new Buffer('abc')` 创建一个 UTF-8 编码的字符串 `'abc'`。第二个参数可以指定用何种编码：举一个例子，`new Buffer(string, 'base64')` 可用于将 Base64 字符串转换为原始字符串表示的字节序列。
 * 除此之外，还有一些其它参数的组合。
 
 这意味着在代码中诸如 `var buffer = new Buffer(foo);`，当你不知道 `foo` 是什么类型，想要知道生成的缓存里边到底存了什么内容几乎是不可能的。
