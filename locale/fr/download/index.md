@@ -13,9 +13,9 @@ downloads:
         Téléchargez le code source de Node.js pour votre système d'exploitation et commencez à développer dès aujourd'hui.
     currentVersion: Dernière version LTS
     buildInstructions: Compiler Node.js depuis les sources sur les systèmes d'exploitation maintenus
-    WindowsInstaller: Installeur Windows
+    WindowsInstaller: Installateur Windows
     WindowsBinary: Exécutable Windows
-    MacOSInstaller: Installeur macOS
+    MacOSInstaller: Installateur macOS
     MacOSBinary: Exécutable macOS
     LinuxBinaries: Exécutables Linux
     SourceCode: Code Source
