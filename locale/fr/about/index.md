@@ -7,7 +7,7 @@ trademark: Trademark
 # A propos de Node.js®
 
 En tant qu'environnement d'exécution JavaScript asynchrone et orienté événement, Node.js est conçu
-pour générer des applications évolutives. Dans cet exemple ("hello world"), plusieures connexions peuvent être gérées de manière concurrente.
+pour générer des applications extensibles. Dans cet exemple ("hello world"), plusieures connexions peuvent être gérées de manière concurrente.
 À chaque connexion, la fonction de rappel (_callback function_) est déclenchée, mais si il n'y a rien à faire, Node.js restera inactif.
 
 ```javascript
@@ -32,7 +32,7 @@ sont utilisés. La gestion réseau basée sur les processus est relativement
 inefficace et difficile à utiliser. De plus, les utilisateurs de Node.js n'ont pas à se soucier des problèmes d'interblocage des processus
 puisqu'il n'y a pas de verrouillage. Aucune fonction de Node.js ou presque
 n'effectue d'entrée/sortie, donc le processus ne se bloque pas. Et comme rien
-n'est bloquant, développer un système évolutif est relativement aisé avec Node.js.
+n'est bloquant, développer un système extensible est relativement aisé avec Node.js.
 
 Si une partie des termes utilisés ne vous sont pas familliers, voici
 un article complet (en anglais) [Bloquant vs Non-Bloquant][].
