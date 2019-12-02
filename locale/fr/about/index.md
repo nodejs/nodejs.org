@@ -8,7 +8,7 @@ trademark: Trademark
 
 En tant qu'environnement d'exécution JavaScript asynchrone et orienté événement, Node.js est conçu
 pour générer des applications évolutives. Dans cet exemple ("hello world"), plusieures connexions peuvent être gérées de manière concurrente.
-A chaque connexion, la fonction de rappel est déclenchée, mais si il n'y a rien à faire, Node.js restera inactif.
+À chaque connexion, la fonction de rappel (_callback function_) est déclenchée, mais si il n'y a rien à faire, Node.js restera inactif.
 
 ```javascript
 const http = require('http');
