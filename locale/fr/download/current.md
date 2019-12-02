@@ -5,7 +5,7 @@ download: Télécharger
 downloads:
     headline: Téléchargements
     lts: LTS
-    current: Actuel
+    current: Dernière
     tagline-current: Dernières fonctionnalités
     tagline-lts: Recommandé pour la plupart des utilisateurs
     display-hint: Afficher les téléchargements pour Node
