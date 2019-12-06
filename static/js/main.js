@@ -105,13 +105,3 @@
     winText[text] = winText[text].replace(/x(86|64)/, arch)
   }
 })(document, navigator)
-
-/* eslint-disable */
-/* Load Modernizr dynamically for IE10/11 and add test classes for sticky footer with flexbox */
-;(function(d,e,m,s){
-  if (!/(MSIE|Trident)/.test(navigator.userAgent)){return;}
-  m=d.createElement(e);
-  s=d.getElementsByTagName(e)[0];m.async=1;m.src='/static/js/modernizr.custom.js';
-  m.onload=function(){Modernizr.addTest('flexboxtweener', Modernizr.testAllProps('flexAlign'));};
-  s.parentNode.insertBefore(m,s);
-})(document,'script');
