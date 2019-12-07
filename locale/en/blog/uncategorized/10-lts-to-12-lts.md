@@ -15,7 +15,7 @@ As such, I've pulled together **all release notes** from every release from Node
 
 ## Best of the Best: Most Notable Changes
 
-This section is a highlight of the most notable changes, as selected from all "[Notable Changes](#notable-changess)" from every release since Node.js v10 went LTS.
+This section is a highlight of the most notable changes, as selected from all "[Notable Changes](#notable-changes)" from every release since Node.js v10 went LTS.
 
 * **assert**:
   * Legacy mode deprecation (`DEP0089`) is revoked (Colin Ihrig) [#28892](https://github.com/nodejs/node/pull/28892)
