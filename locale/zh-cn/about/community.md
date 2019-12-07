@@ -41,17 +41,17 @@ layout: about.hbs
 如果你对更进一步参与社区委员会以及相关项目感兴趣的话，我们鼓励你成为一个活跃的观察者，为直接成为会员而努力工作。要想成为一个会员，你必须做到：
 
 1. 参与每周两次的会议，探讨那些标记为首要议题、会议文件以及 PR。并通过 GitHub，以贡献者或者合作者的身份凸显你的洞察力。
-2. 通过发起请求成为一个观察者。一旦作为观察者被邀请加入参与会议，我们会持续三个月跟踪记录你的参与度以符合我们的治理准则。你可以在[此处](https://github.com/nodejs/community-committee/issues/142) 寻找到有关于此的绝好例子。
+2. 通过发起请求成为一个观察者。一旦作为观察者被邀请加入参与会议，我们会持续三个月跟踪记录你的参与度以符合我们的治理准则。你可以在[此处](https://github.com/nodejs/community-committee/issues/142)寻找到有关于此的绝好例子。
 3. 当你已经符合了三个月的最低考勤条件，且符合期望参与度，社区委员会将投票把你纳入会员。
 
 会员身份可以保持六个月。小组会定期询问逾期会员是否继续愿意留任。会员只需回复“留任”即可。社区委员会虽无固定大小限制，但是，希望的人数最好在九到十二人之间。你可以在[治理准则](https://github.com/nodejs/community-committee/blob/master/GOVERNANCE.md)中阅读更多有关会员身份的资料信息，以及其它管理信息。
 
 定期社区委员会的会议每两个月通过变焦视频举行，然后会在 YouTube 上向公众播放。任何一个社区会员或者贡献者都可以通过 GitHub 发起请求参与下一次的会议议程。
 
-在会议开始前，相关的宣告以及议程都将在相关组织 [GitHub 议题](https://github.com/nodejs/community-committee/issues) 中列出。你也可以在 [Node.js 会议安排](https://nodejs.org/calendar) 中找到相关计划会议。为跟上 YouTube 上的 Node.js 实时会议，你应该订阅 [YouTube 频道](https://www.youtube.com/channel/UCQPYJluYC_sn_Qz_XE-YbTQ)。请勿忘记点击铃铛，这样每次有新的会议你就会收到提醒了！
+在会议开始前，相关的宣告以及议程都将在相关组织 [GitHub 议题](https://github.com/nodejs/community-committee/issues)中列出。你也可以在 [Node.js 会议安排](https://nodejs.org/calendar) 中找到相关计划会议。为跟上 YouTube 上的 Node.js 实时会议，你应该订阅 [YouTube 频道](https://www.youtube.com/channel/UCQPYJluYC_sn_Qz_XE-YbTQ)。请勿忘记点击铃铛，这样每次有新的会议你就会收到提醒了！
 
 ## 寻求协商一致的过程
 
-社区委员会遵循着[寻求共识](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making) 的原则来决定规划。
+社区委员会遵循着[寻求共识](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making)的原则来决定规划。
 
 当任意一个议题将进入达成共识的阶段时，主持人会问大家“有人有不同意见吗？”作为最后的提醒，确保达成了共识而没有异议。如果实在无法达成共识但是又没有异议，那么只能采取多数投票。但是我们希望多数的决议是通过寻求共识做出的，而投票只是最后的备选方案。
