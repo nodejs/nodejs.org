@@ -48,7 +48,7 @@ $ node example.js
 
 ### 在使用 `linter` 的代码中找出一些问题
 
-ESLint 规则[不使用缓存构造函数](https://eslint.org/docs/rules/no-buffer-constructor)或 [node/ 无废除的 Api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) 也会寻找到使用 `Buffer()` 废弃的函数。 这些规则预先已经包含了。
+ESLint 规则[不使用缓存构造函数](https://eslint.org/docs/rules/no-buffer-constructor)或 [node/ 未废除的 Api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) 也会寻找到使用 `Buffer()` 废弃的函数。 这些规则预先已经包含了。
 
 不过这存在一个劣势，举个例子，当 `Buffer` 被 polyfill 重写的时候，它不保证一直[正常工作](https://github.com/chalker/safer-buffer#why-not-safe-buffer)。所以推荐使用此方法和其它如上描述的方法在一起使用。
 
@@ -67,7 +67,7 @@ Node.js 5.x 发行自 2016 年就不再支持，而 4.x 版本发行线支持到
 注意：`Buffer.alloc()` 在当前的 Node.js 版本上 _快于_
 `new Buffer(size).fill(0)`，后者是当你确认需要用 0 对整个缓存进行初始化。
 
-启用 ESLint 检查规则[不使用缓存构造函数](https://eslint.org/docs/rules/no-buffer-constructor)或 [node/ 无废除的 Api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) 时，也会建议避免使用不安全的 `Buffer` 函数。
+启用 ESLint 检查规则[不使用缓存构造函数](https://eslint.org/docs/rules/no-buffer-constructor)或 [node/ 未废除的 Api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) 时，也会建议避免使用不安全的 `Buffer` 函数。
 
 同样我们还有 [JSCodeshift codemod](https://github.com/joyeecheung/node-dep-codemod#dep005)，它可以把 `Buffer` 构造函数的地方自动替换成 `Buffer.alloc()` 或 `Buffer.from()`。注意目前它只会工作在参数是文本型，或者带有两个参数的构造函数的情况下。
 
@@ -97,7 +97,7 @@ _如果你目前支持那些旧版本的 Node.js，并且抛弃对它们的支�
 注意，在任意一种情况下，手动移除你代码中所有关于 `Buffer` 的调用非常重要——仅在 `safe-buffer` 中抛出警告不解决问题，它只是为新的 API 提供了一种替换而已。我亲眼见过人们犯过这类错误。
 
 启用 ESLint 规则[不使用缓存构造函数](https://eslint.org/docs/rules/no-buffer-constructor)
-或是 [node/ 无废除的 Api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) 是推荐的。
+或是 [node/ 未废除的 Api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) 是推荐的。
 
 _如果你抛弃了对 Node.js 版本小于 4.5.0 的支持，请不要忘记把替代库也一起去掉。_
 
