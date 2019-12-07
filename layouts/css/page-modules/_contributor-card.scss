@@ -1,5 +1,6 @@
 .contributor-card {
-  height: 42px;
+  display: flex;
+  min-height: 42px;
   width: 300px;
   padding: 1.5em 1em;
   margin: 1em auto;
@@ -7,7 +8,6 @@
   border-radius: 3px;
 
   > a {
-    float: left;
     height: 40px;
     width: 40px;
     margin-right: 1em;
@@ -17,8 +17,12 @@
     margin: 0;
   }
 
+  img {
+    max-width: initial;
+  }
+
   .spinner {
-    margin: 5px 0;
+    margin: 5px;
     width: 30px;
     height: 30px;
     border-top-color: $white;
@@ -41,5 +45,11 @@
 @keyframes spinner {
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 350px) {
+  .contributor-card {
+    width: auto;
   }
 }
