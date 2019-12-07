@@ -9,7 +9,7 @@ author: Tierney Cyren
 
 With the transition of Node.js 12 from LTS into Current, a suite of new features have been added to Node.js!
 
-In each release's changelog we capture notable changes – but going through over two dozen individual release notes to find those can be a bit daunting.
+In each release's changelog, we capture notable changes. But going through over two dozen individual release notes to find those can be a bit daunting.
 
 As such, I've pulled together **all release notes** from every release from Node.js 11.0.0 to 12.12.0 and included an even higher level "Best of the Best: Most Notable Changes" section that allows you to see what some of the biggest changes are between Node.js v10.x LTS at launch and Node.js v12.x LTS at launch.
 
