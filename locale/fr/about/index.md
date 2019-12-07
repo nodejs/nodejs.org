@@ -6,10 +6,9 @@ trademark: Trademark
 
 # A propos de Node.js®
 
-En tant qu'environnement d'exécution JavaScript asynchrone et orienté événnement, Node.js est conçu
-pour générer des applications scalables. Dans le "hello world" d'exemple
-suivant, plusieurs connexions peuvent être gérées de manière concurrente.
-A chaque connexion, la fonction de rappel est déclenchée, mais si il n'y a rien à faire, Node.js restera en sommeil.
+En tant qu'environnement d'exécution JavaScript asynchrone et orienté événement, Node.js est conçu
+pour générer des applications extensibles. Dans cet exemple ("hello world"), plusieures connexions peuvent être gérées de manière concurrente.
+À chaque connexion, la fonction de rappel (_callback function_) est déclenchée, mais si il n'y a rien à faire, Node.js restera inactif.
 
 ```javascript
 const http = require('http');
@@ -32,8 +31,8 @@ Ceci contraste avec le modèle de concurrence plus commun dans lequel les proces
 sont utilisés. La gestion réseau basée sur les processus est relativement
 inefficace et difficile à utiliser. De plus, les utilisateurs de Node.js n'ont pas à se soucier des problèmes d'interblocage des processus
 puisqu'il n'y a pas de verrouillage. Aucune fonction de Node.js ou presque
-n'effectue d'entrée/sortie, donc le processus ne bloque pas. Et comme rien
-n'est bloquant, développer un système scalable est relativement aisé avec Node.js.
+n'effectue d'entrée/sortie, donc le processus ne se bloque pas. Et comme rien
+n'est bloquant, développer un système extensible est relativement aisé avec Node.js.
 
 Si une partie des termes utilisés ne vous sont pas familliers, voici
 un article complet (en anglais) [Bloquant vs Non-Bloquant][].

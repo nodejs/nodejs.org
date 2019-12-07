@@ -12,7 +12,7 @@ layout: docs.hbs
 文章中如有涉及到不同操作系统的细节，仅以 Linux 系统为代表。
 
 ## 概述
-Node.js 通过事件循环机制（初始化和回调）的方式运行 JavaScript 代码，并且提供了一个线程池处理诸如 文件 I/O 等高成本的任务。
+Node.js 通过事件循环机制（初始化和回调）的方式运行 JavaScript 代码，并且提供了一个线程池处理诸如文件 I/O 等高成本的任务。
 Node 的伸缩性非常好，某些场景下它甚至比类似 Apache 等更重量级的解决方案表现更优异。
 Node 可伸缩性的秘诀在于它仅使用了极少数的线程就可以处理大量客户端连接。
 如果 Node 只需占用很少的线程，那么它就可以将更多的系统 CPU 时间和内存花费在客户端任务而不是线程的空间和时间消耗上（内存，上下文切换）。
@@ -32,7 +32,7 @@ Node 是用很少量的线程来处理大量客户端请求的。
 这里给出两个不能阻塞事件轮询线程和工作线程的理由：
 
 1. 性能：如果你在任意类型的线程上频繁处理繁重的任务，那么你的服务器的 *吞吐量*（请求/秒）将面临严峻考验。
-2. 安全性：如果对于特定的输入，你的某种类型的线程可能会被阻塞，那么恶意攻击者可以通过构造类似这样的“恶意输入”，故意让你的线程阻塞，然后使其它客户端请求得不到处理。这就是 [拒绝服务攻击](https://en.wikipedia.org/wiki/Denial-of-service_attack)。
+2. 安全性：如果对于特定的输入，你的某种类型的线程可能会被阻塞，那么恶意攻击者可以通过构造类似这样的“恶意输入”，故意让你的线程阻塞，然后使其它客户端请求得不到处理。这就是[拒绝服务攻击](https://en.wikipedia.org/wiki/Denial-of-service_attack)。
 
 ## 对 Node 的快速回顾
 
@@ -49,7 +49,7 @@ Node 使用事件驱动机制：它有一个事件轮询线程负责任务编排
 总体来说，事件轮询线程执行事件的回调函数，并且负责对处理类似网络 I/O 的非阻塞异步请求。
 
 ### 哪种代码运行在工作线程池？
-Node 的工作线程池是通过 libuv ([相关文档](http://docs.libuv.org/en/v1.x/threadpool.html)) 来实现的，它对外提供了一个通用的任务处理 API。
+Node 的工作线程池是通过 libuv（[相关文档](http://docs.libuv.org/en/v1.x/threadpool.html)）来实现的，它对外提供了一个通用的任务处理 API。
 
 Node 使用工作线程池来处理“高成本”的任务。
 这包括一些操作系统并没有提供非阻塞版本的 I/O 操作，以及一些 CPU 密集型的任务。
@@ -75,7 +75,7 @@ Node 模块中有如下这些 API 用到了工作线程池：
 而事实上，事件轮询线程本身并不维护队列，它持有一堆要求操作系统使用诸如 [epoll](http://man7.org/linux/man-pages/man7/epoll.7.html) (Linux)，[kqueue](https://developer.apple.com/library/content/documentation/Darwin/Conceptual/FSEvents_ProgGuide/KernelQueues/KernelQueues.html) (OSX)，event ports (Solaris) 或者 [IOCP](https://msdn.microsoft.com/en-us/library/windows/desktop/aa365198.aspx) (Windows) 等机制去监听的文件描述符。
 这些文件描述符可能代表一个网络套接字，一个监听的文件等等。
 当操作系统确定某个文件的描述符发生变化，事件轮询线程将把它转换成合适的事件，然后触发与该事件对应的回调函数。
-你可以通过 [这里](https://www.youtube.com/watch?v=P9csgxBgaZ8) 学习到更多有关这个过程的知识。
+你可以通过[这里](https://www.youtube.com/watch?v=P9csgxBgaZ8)学习到更多有关这个过程的知识。
 
 相对而言，工作线程池则使用一个真实的队列，里边装的都是要被处理的任务。
 一个工作线程从这个队列中取出一个任务，开始处理它。当完成之后这个工作线程向事件循环线程中发出一个“至少有一个任务完成了”的消息。
@@ -154,7 +154,7 @@ Node 使用谷歌的 V8 引擎处理 JavaScript，对于大部分操作确实很
 然后你可以评估此回调函数的最糟糕执行时间，根据你的业务场景决定此运行时间是否可以接受。
 
 ### 阻塞事件轮询：REDOS
-一个灾难性地阻塞事件轮询的常见错误是使用“有漏洞”的 [正则表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)。
+一个灾难性地阻塞事件轮询的常见错误是使用“有漏洞”的[正则表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)。
 
 #### 避免易受攻击的正则表达式
 一个正则表达式是一定的规则去尝试匹配一个输入的字符串。
@@ -216,7 +216,7 @@ app.get('/redos-me', (req, res) => {
 但注意，RE2 对 Node 正则表达式不是 100% 兼容，所以如果你想用 node-re2 模块来处理你的正则表达式的话，请检仔细查你的表达式。
 这里尤其值得提醒的是，一些特殊的复杂正则表达式不被 node-re2 支持。
 
-如果你想匹配一些较为“明显”的东西，如网络路径或者是文件路径，请在 [正则表达式库](http://www.regexlib.com) 中寻找到对应例子，或者使用一个 npm 的模块，如 [ip-regex](https://www.npmjs.com/package/ip-regex)。
+如果你想匹配一些较为“明显”的东西，如网络路径或者是文件路径，请在[正则表达式库](http://www.regexlib.com)中寻找到对应例子，或者使用一个 npm 的模块，如 [ip-regex](https://www.npmjs.com/package/ip-regex)。
 
 ### 阻塞事件轮询：Node 的核心模块
 一些 Node 的核心模块有同步的高开销的 API 方法，包含：
@@ -262,7 +262,7 @@ var niter = 20;
 var before, str, pos, res, took;
 
 for (var i = 0; i < niter; i++) {
-  obj = { obj1: obj, obj2: obj }; // 每个循环里面将对象 size 加倍
+  obj = { obj1: obj, obj2: obj }; // Doubles in size each iter
 }
 
 before = process.hrtime();
@@ -363,7 +363,7 @@ asyncAvg(n, function(avg){
 ##### 一些关于分流的建议
 您可能希望区分 CPU 密集型和 I/O 密集型任务，因为它们具有明显不同的特性。
 
-CPU 密集型任务只有在该 Worker 线程被调度到时候才得到执行机会，并且必须将该任务分配到机器的某一个 [逻辑核心](https://nodejs.org/api/os.html#os_os_cpus)中。
+CPU 密集型任务只有在该 Worker 线程被调度到时候才得到执行机会，并且必须将该任务分配到机器的某一个[逻辑核心](https://nodejs.org/api/os.html#os_os_cpus)中。
 
 如果你的机器有 4 个逻辑核心和 5 个工作线程，那这些工作线程中的某一个则无法得到执行。
 因此，您实质上只是在为该工作线程白白支付开销（内存和调度开销），却无法得到任何返回。
@@ -372,7 +372,7 @@ I/O 密集型任务通常包括查询外部服务提供程序（DNS、文件系�
 当 I/O 密集型任务的工作线程正在等待其响应时，它没有其它工作可做，并且可以被操作系统重新调度，从而使另一个 Worker 有机会提交它的任务。
 因此，*即使关联的线程并没有被保持，I/O 密集型任务也可以持续运行*。
 像数据库和文件系统这样的外部服务提供程序已经经过高度优化，可以同时处理许多并发的请求。
-例如，文件系统会检查一大组并发等待的写入和读取请求，以合并冲突更新并以最佳顺序读取文件（请参阅 [这些幻灯片](http://researcher.ibm.com/researcher/files/il-AVISHAY/01-block_io-v1.3.pdf)）。
+例如，文件系统会检查一大组并发等待的写入和读取请求，以合并冲突更新并以最佳顺序读取文件（请参阅[这些幻灯片](http://researcher.ibm.com/researcher/files/il-AVISHAY/01-block_io-v1.3.pdf)）。
 
 如果只依赖一个工作线程池（例如 Node 工作池），则 CPU 密集和 I/O 密集的任务的不同特效性可能会损害应用程序的性能。
 
@@ -410,11 +410,11 @@ Node 由 `k` 个工作线程组成了工作线程池。
 
 #### 动态执行时间示例: 长时间运行的文件系统读取
 假设您的服务器必须读取文件来处理某些客户端请求。
-在了解 Node 的 [文件系统](https://nodejs.org/api/fs.html) 的 API 之后，您选择使用 `fs.readFile()` 进行简单操作。
+在了解 Node 的[文件系统](https://nodejs.org/api/fs.html)的 API 之后，您选择使用 `fs.readFile()` 进行简单操作。
 但是，`fs.readFile()` 是（[当前](https://github.com/nodejs/node/pull/17054)）未拆分任务的：它提交一个 `fs.read()` 任务来读取整个文件。
 如果您为某些用户读取较短的文件，并为其它人读取较长的文件，`fs.readFile()` 可能会在任务长度上引入显著的变化，从而损害工作线程池吞吐量。
 
-对于最坏的情况，假设攻击者可以促使您的服务器读取 *任意* 文件（这是一个 [目录遍历漏洞](https://www.owasp.org/index.php/Path_Traversal)）。
+对于最坏的情况，假设攻击者可以促使您的服务器读取 *任意* 文件（这是一个[目录遍历漏洞](https://www.owasp.org/index.php/Path_Traversal)）。
 如果您的服务器运行的是 Linux，攻击者可以命名一个非常慢的文件：[`/dev/random`](http://man7.org/linux/man-pages/man4/random.4.html)。
 对于所有实际的目的，`/dev/random` 是无限缓慢的；每个工作线程都被要求读取 `/dev/random`，这样下去将永远不会完成这项任务。
 然后，攻击者提交 `k` 个请求，每一个被分配给一个工作线程，则其它需要使用工作线程的客户端请求将得不到执行机会。

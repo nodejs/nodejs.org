@@ -19,13 +19,13 @@ Node.js 官方為了安全研究員們及負責的公開揭露而展開了一個
 
 ## 回報第三方模組中的臭蟲
 
-第三方模組中的安全性臭蟲應向其維護者回報，且應透過 [HackerOne](https://hackerone.com/nodejs-ecosystem) 來協調。關於此流程的細節可參考安全性工作小組的 [repository](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md)。
+第三方模組中的安全性臭蟲應向其維護者回報，且應透過 [HackerOne](https://hackerone.com/nodejs-ecosystem) 來協調。關於此流程的細節可參考安全性工作小組的 [Repository](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md)。
 
 感謝你對於 Node.js 及其生態系安全性的改善，我們相當感謝並認可你的付出及負責任地揭露問題。
 
 ## 揭露政策
 
-下列為 Node.js 之安全性揭露政策
+下列為 Node.js 之安全性揭露政策：
 
 * 收到安全性的回報後我們會指派一個主要負責人，此人會負責確認問題，並協調修補、釋出的流程及確認受影響版本，審核程式碼以確保沒有其他類似問題，為所有維護中的版本提供修補程式，並確保這些修補程式不會在發布前被公開。
 
@@ -46,4 +46,4 @@ Node.js 官方為了安全研究員們及負責的公開揭露而展開了一個
 
 ## 對本政策的建言
 
-若你對改善本流程有任何建議的話，請開啟一個 [pull request](https://github.com/nodejs/nodejs.org) 或是 [一個 issue](https://github.com/nodejs/security-wg/issues/new) 來與我們一同討論。
+若你對改善本流程有任何建議的話，請開一個 [pull request](https://github.com/nodejs/nodejs.org) 或是 [issue](https://github.com/nodejs/security-wg/issues/new) 來與我們一同討論。

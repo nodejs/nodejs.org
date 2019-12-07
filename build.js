@@ -20,7 +20,8 @@ const defaultsDeep = require('lodash.defaultsdeep')
 const autoprefixer = require('autoprefixer')
 const marked = require('marked')
 const postcss = require('postcss')
-const sass = require('node-sass')
+const fibers = require('fibers')
+const sass = require('sass')
 const ncp = require('ncp')
 const junk = require('junk')
 const semver = require('semver')
@@ -226,9 +227,9 @@ function buildCSS () {
 
   const sassOpts = {
     file: src,
+    fiber: fibers,
     outFile: dest,
-    outputStyle: process.env.NODE_ENV !== 'development' ? 'compressed' : 'expanded',
-    precision: 6
+    outputStyle: process.env.NODE_ENV !== 'development' ? 'compressed' : 'expanded'
   }
 
   fs.mkdir(path.join(__dirname, 'build/static/css'), { recursive: true }, (err) => {

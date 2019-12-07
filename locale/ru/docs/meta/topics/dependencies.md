@@ -10,7 +10,7 @@ layout: docs.hbs
 * [Библиотеки](#libraries)
   * [V8](#v8)
   * [libuv](#libuv)
-  * [http-parser](#http-parser)
+  * [llhttp](#llhttp)
   * [c-ares](#c-ares)
   * [OpenSSL](#openssl)
   * [zlib](#zlib)
@@ -39,13 +39,13 @@ layout: docs.hbs
 
 * [Документация](http://docs.libuv.org/)
 
-### http-parser
+### llhttp
 
-Синтаксический анализ HTTP выполняется легкой библиотекой C, которая называется http-parser.
+Синтаксический анализ HTTP выполняется легкой библиотекой C, которая называется llhttp.
 Он спроектирован таким образом, чтобы не делать никаких системных вызовов или распределений,
 поэтому занимает требует мало памяти на каждый запрос.
 
-* [Документация](https://github.com/joyent/http-parser/)
+* [Документация](https://github.com/nodejs/llhttp)
 
 ### c-ares
 

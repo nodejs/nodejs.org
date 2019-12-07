@@ -11,4 +11,4 @@ layout: contribute.hbs
 
 欢迎所有人参加。峰会期间，组长们会在新进的协作者融入工作议程之前协助他们加入想要贡献的群组。 这是一个你可以学习社群事务的好机会，同时也能贡献及精进你的技能。在进行现场分组讨论之前，工作组会先安排行程好让人们可以互相熟悉对方。
 
-期待能与你在协作者峰会中相见！[峰会回顾](https://github.com/nodejs/summit) 中有即将到来及过往的协作者峰会信息，并记得看看 [议题](https://github.com/nodejs/summit/issues)，里头分享了个别工作组及委员会的讨论。
+期待能与你在协作者峰会中相见！[峰会回顾](https://github.com/nodejs/summit)中有即将到来及过往的协作者峰会信息，并记得看看[议题](https://github.com/nodejs/summit/issues)，里头分享了个别工作组及委员会的讨论。

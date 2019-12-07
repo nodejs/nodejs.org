@@ -82,7 +82,7 @@
       "verify-text": "Com verificar-ho"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "Installing Node.js via binary archive"
     }
   },
   "docs": {

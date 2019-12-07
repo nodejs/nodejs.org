@@ -9,7 +9,7 @@ layout: contribute.hbs
 
 * La [liste des tickets GitHub](https://github.com/nodejs/node/issues) est le bon endroit pour discuter des fonctionnalités cœurs de Node.js.
 
-* Pour une discussion temps réel à propos du développement Node, allez sur `irc.freenode.net` dans le canal `#node.js` avec un [client IRC](https://fr.wikipedia.org/wiki/Liste_de_clients_IRC) ou connectez vous depuis votre navigateur web en utilisant [le WebChat de freenode](https://webchat.freenode.net/#node.js) (en anglais).
+* Pour une discussion en temps réel à propos du développement de Node, allez sur `irc.freenode.net` dans le canal `#node.js` avec un [client IRC](https://fr.wikipedia.org/wiki/Liste_de_clients_IRC) ou connectez vous depuis votre navigateur web en utilisant [le WebChat de freenode](https://webchat.freenode.net/#node.js) (en anglais).
 
 * Le compte Twitter officiel de Node.js est [nodejs](https://twitter.com/nodejs) (en anglais).
 
@@ -19,7 +19,7 @@ layout: contribute.hbs
 
 * [Node.js Collection](https://medium.com/the-node-js-collection) est une liste de contenus maintenue par la communauté sur Medium (en anglais).
 
-* La [Community Committee](https://github.com/nodejs/community-committee) s'agit d'un comité de haut niveau de la Fondation Node.js axé sur les efforts communautaires.
+* La [Community Committee](https://github.com/nodejs/community-committee) est un comité de haut niveau de la Fondation Node.js axé sur les efforts communautaires.
 
 ## Apprentissage
 
