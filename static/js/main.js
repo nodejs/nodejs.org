@@ -150,11 +150,11 @@
       loadingSpinner.remove()
       contributorAvatar.classList.remove('hidden')
       // Set new values
-      contributorAvatar.src = contributor.avatar_url
+      contributorAvatar.src = contributor.avatar_url + '&s=80'
       contributorAvatar.parentElement.href = contributor.html_url
-      contributorUsername.innerText = contributor.login
+      contributorUsername.textContent = contributor.login
       contributorUsername.href = contributor.html_url
-      contributorContributions.innerText = contributor.contributions + ' contributions'
+      contributorContributions.textContent = contributor.contributions + ' contributions'
       contributorContributions.parentElement.href = 'https://github.com/nodejs/node/commits?author=' + contributor.login
     })
   }
