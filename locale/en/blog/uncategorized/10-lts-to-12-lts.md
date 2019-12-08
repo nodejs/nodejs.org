@@ -7,7 +7,7 @@ layout: blog-post.hbs
 author: Tierney Cyren
 ---
 
-With the transition of Node.js 12 from LTS into Current, a suite of new features have been added to Node.js!
+With the transition of Node.js 12 from Current into LTS, a suite of new features are now available inside Node.js LTS release lines!
 
 In each release's changelog, we capture notable changes. But going through over two dozen individual release notes to find those can be a bit daunting.
 
