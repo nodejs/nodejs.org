@@ -59,7 +59,7 @@
   var contributorAvatar = contributorCard.querySelector('#contributor-avatar')
   var contributorUsername = contributorCard.querySelector('#contributor-username')
   var contributorContributions = contributorCard.querySelector('#contributor-contributions')
-  var loadingSpinner = contributorCard.querySelector('.spinner')
+  var loadingSpinner = contributorCard.querySelector('.spinner-border')
 
   if (window.IntersectionObserver) {
     var observer = new window.IntersectionObserver(function (entries) {
@@ -112,51 +112,54 @@
 
   function getMaxContributors (callback) {
     var xhr = new window.XMLHttpRequest()
-    xhr.responseType = 'json'
+    xhr.open('GET', 'https://api.github.com/repos/nodejs/node/contributors?per_page=1', true)
 
-    xhr.open('GET', 'https://api.github.com/repos/nodejs/node/contributors?per_page=1')
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          // Get Headers Links last page to generate a random contributor
+          var links = linkParser(xhr.getResponseHeader('Link'))
+          var randomPage = Math.floor(Math.random() * Math.floor(parseInt(links.last.page, 10))) + 1
+
+          if (window.localStorage) {
+            window.localStorage.setItem('fetch_date', Date.now())
+          }
+          callback(randomPage, links.last.page)
+        } else {
+          return contributorCard.parentNode.removeChild(contributorCard)
+        }
+      }
+    }
+
     xhr.send()
-    xhr.addEventListener('load', function () {
-      if (xhr.status !== 200) {
-        return contributorCard.remove()
-      }
-
-      // Get Headers Links last page to generate a random contributor
-      var links = linkParser(xhr.getResponseHeader('Link'))
-      var randomPage = Math.floor(Math.random() * Math.floor(parseInt(links.last.page, 10))) + 1
-
-      if (window.localStorage) {
-        window.localStorage.setItem('fetch_date', Date.now())
-      }
-
-      callback(randomPage, links.last.page)
-    })
   }
 
   function getContributor (randomPage) {
     var xhr = new window.XMLHttpRequest()
-    xhr.responseType = 'json'
+    xhr.open('GET', 'https://api.github.com/repos/nodejs/node/contributors?per_page=1&page=' + randomPage, true)
 
-    xhr.open('GET', 'https://api.github.com/repos/nodejs/node/contributors?per_page=1&page=' + randomPage)
-    xhr.send()
-    xhr.addEventListener('load', function () {
-      if (xhr.status !== 200) {
-        return contributorCard.remove()
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          var contributor = JSON.parse(xhr.responseText)[0]
+
+          // Remove loading spinner and show avatar
+          loadingSpinner.parentNode.removeChild(loadingSpinner)
+          contributorAvatar.classList.remove('hidden')
+          // Set new values
+          contributorAvatar.src = contributor.avatar_url + '&s=80'
+          contributorAvatar.parentElement.href = contributor.html_url
+          contributorUsername.textContent = contributor.login
+          contributorUsername.href = contributor.html_url
+          contributorContributions.textContent = contributor.contributions + ' contributions'
+          contributorContributions.parentElement.href = 'https://github.com/nodejs/node/commits?author=' + contributor.login
+        } else {
+          return contributorCard.parentNode.removeChild(contributorCard)
+        }
       }
+    }
 
-      var contributor = xhr.response[0]
-
-      // Remove loading spinner and show avatar
-      loadingSpinner.remove()
-      contributorAvatar.classList.remove('hidden')
-      // Set new values
-      contributorAvatar.src = contributor.avatar_url + '&s=80'
-      contributorAvatar.parentElement.href = contributor.html_url
-      contributorUsername.textContent = contributor.login
-      contributorUsername.href = contributor.html_url
-      contributorContributions.textContent = contributor.contributions + ' contributions'
-      contributorContributions.parentElement.href = 'https://github.com/nodejs/node/commits?author=' + contributor.login
-    })
+    xhr.send()
   }
 
   function linkParser (linkHeader) {
