@@ -4,7 +4,7 @@ title: Node.js とは
 trademark: Trademark
 ---
 
-# <!-- About Node.js&reg; -->Node.js&reg; とは
+# <!--about-node-js-->Node.js® とは
 
 <!--
 As an asynchronous event driven JavaScript runtime, Node is designed to build

@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  max-width: $body-max-width;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}

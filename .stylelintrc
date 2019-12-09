@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "stylelint-config-twbs-bootstrap/scss"
+  ],
+  "rules": {
+    "declaration-no-important": null,
+    "order/properties-order": null,
+    "selector-max-id": 1,
+    "selector-max-type": null,
+    "selector-no-qualifying-type": null
+  }
+}

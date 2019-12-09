@@ -6,20 +6,21 @@ layout: about.hbs
 # Community Committee
 
 The Community Committee (CommComm) is a top-level committee in the Node.js Foundation. The CommComm has authority over outward-facing community outreach efforts, including:
-- Community [Evangelism](https://github.com/nodejs/evangelism)
-- Education Initiatives
-- Cultural Direction of Node.js Foundation
-- Community Organization Outreach
-- Translation and Internationalization
-- Project Moderation/Mediation
-- Public Outreach and [Publications](https://medium.com/the-node-js-collection)
+
+* Community [Evangelism](https://github.com/nodejs/evangelism)
+* Education Initiatives
+* Cultural Direction of Node.js Foundation
+* Community Organization Outreach
+* Translation and Internationalization
+* Project Moderation/Mediation
+* Public Outreach and [Publications](https://medium.com/the-node-js-collection)
 
 There are four types of involvement with the Community Committee:
 
-- A **Contributor** is any individual creating or commenting on an issue or pull request.
-- A **Collaborator** is a contributor who has been given write access to the repository
-- An **Observer** is any individual who has requested or been requested to attend a CommComm meeting. It is also the first step to becoming a Member.
-- A **Member** is a collaborator with voting rights who has met the requirements of participation and voted in by the CommComm voting process.
+* A **Contributor** is any individual creating or commenting on an issue or pull request.
+* A **Collaborator** is a contributor who has been given write access to the repository
+* An **Observer** is any individual who has requested or been requested to attend a CommComm meeting. It is also the first step to becoming a Member.
+* A **Member** is a collaborator with voting rights who has met the requirements of participation and voted in by the CommComm voting process.
 
 For the current list of Community Committee members, see the project's [README.md](https://github.com/nodejs/community-committee).
 
@@ -39,9 +40,9 @@ If you're interested in participating in the Community Committee as a committee 
 
 If you're interested in becoming more deeply involved with the Community Committee and its projects, we encourage you to become an active observer, and work toward achieving member status. To become a member you must:
 
- 1. Attend the bi-weekly meetings, investigate issues tagged as good first issue, file issues and pull requests, and provide insight via GitHub as a contributor or collaborator.
- 2. Request to become an Observer by filing an issue. Once added as an Observer to meetings, we will track attendance and participation for 3 months, in accordance with our governance guidelines. You can find a great example of such an issue [here](https://github.com/nodejs/community-committee/issues/142).
- 3. When you meet the 3 month minimum attendance, and participation expectations, the CommComm will vote to add you as a member.
+1. Attend the bi-weekly meetings, investigate issues tagged as good first issue, file issues and pull requests, and provide insight via GitHub as a contributor or collaborator.
+2. Request to become an Observer by filing an issue. Once added as an Observer to meetings, we will track attendance and participation for 3 months, in accordance with our governance guidelines. You can find a great example of such an issue [here](https://github.com/nodejs/community-committee/issues/142).
+3. When you meet the 3 month minimum attendance, and participation expectations, the CommComm will vote to add you as a member.
 
 Membership is for 6 months. The group will ask on a regular basis if the expiring members would like to stay on. A member just needs to reply to renew. There is no fixed size of the CommComm. However, the expected target is between 9 and 12. You can read more about membership, and other administrative details, in our [Governance Guide](https://github.com/nodejs/community-committee/blob/master/GOVERNANCE.md).
 

@@ -105,18 +105,6 @@ Uma demanda para equipar o Node.js com uma API que resulta em uma ABI que perman
 estável dentre múltiplas versões major do Node.js acabou surgindo. A motivação para
 criar tal API são as seguintes:
 
-<!-- * The JavaScript language has remained compatible with itself since its very
-early days, whereas the ABI of the engine executing the JavaScript code changes
-with every major version of Node.js. This means that applications consisting of
-Node.js packages written entirely in JavaScript need not be recompiled,
-reinstalled, or redeployed as a new major version of Node.js is dropped into
-the production environment in which such applications run. In contrast, if an
-application depends on a package that contains a native addon, the application
-has to be recompiled, reinstalled, and redeployed whenever a new major version
-of Node.js is introduced into the production environment. This disparity
-between Node.js packages containing native addons and those that are written
-entirely in JavaScript has added to the maintenance burden of production
-systems which rely on native addons. -->
 * A linguagem JavaScript permaneceu compatível com ela mesma desde o seus
 primeiros dias, enquanto a ABI do engine que executa o código JavaScript muda
 com cada versão major do Node.js. Isso significa que aplicações que consistem
@@ -130,33 +118,19 @@ de produção. Essa disparidade entre os pacotes que contém addons nativos e os
 escritos com JavaScript em sua totalidade acabou por adicionar um peso a mais na
 manutenção em sistemas que estão em produção e dependem de addons nativos.
 
-<!-- * Other projects have started to produce JavaScript interfaces that are
-essentially alternative implementations of Node.js. Since these projects are
-usually built on a different JavaScript engine than V8, their native addons
-necessarily take on a different structure and use a different API. Nevertheless,
-using a single API for a native addon across different implementations of the
-Node.js JavaScript API would allow these projects to take advantage of the
-ecosystem of JavaScript packages that has accrued around Node.js. -->
 * Outros projetos começaram a produzir interfaces JavaScript que são, essencialmente,
-alternativas às implementações do Node.js. Uma vez que estes projetos são, geralmente,
-criados e construídos em um engine JavaScript diferente do V8, seus addons nativos
-necessariamente tem uma estrutura diferente e usam uma API diferente. Mesmo assim,
-utilizar uma única API para um módulo nativo entre diferentes implementações da
-API JavaScript do Node.js permitiria que estes projetos tirassem vantagem do
-ecossistema de pacotes JavaScript que já se acumulou ao redor do Node.js.
-
-<!-- * Node.js may contain a different JavaScript engine in the future. This means
-that, externally, all Node.js interfaces would remain the same, but the V8
-header file would be absent. Such a step would cause the disruption of the
-Node.js ecosystem in general, and that of the native addons in particular, if
-an API that is JavaScript engine agnostic is not first provided by Node.js and
-adopted by native addons. -->
+  alternativas às implementações do Node.js. Uma vez que estes projetos são, geralmente,
+  criados e construídos em um engine JavaScript diferente do V8, seus addons nativos
+  necessariamente tem uma estrutura diferente e usam uma API diferente. Mesmo assim,
+  utilizar uma única API para um módulo nativo entre diferentes implementações da
+  API JavaScript do Node.js permitiria que estes projetos tirassem vantagem do
+  ecossistema de pacotes JavaScript que já se acumulou ao redor do Node.js.
 * O Node.js pode mudar para utilizar um engine JavaScript diferente do V8 no futuro.
-Isto significa que, externamente, todas as interfaces do Node.js continuariam iguais,
-porém o cabeçalho do V8 não existiria. Tal alteração causaria uma disrupção do
-ecossistema do Node.js no geral, e também do ecossistema de addons nativos em particular,
-se a API que é agnóstica do engine JavaScript que está sendo utilizado não for provida
-pelo Node.js e adotada pelos addons nativos.
+  Isto significa que, externamente, todas as interfaces do Node.js continuariam iguais,
+  porém o cabeçalho do V8 não existiria. Tal alteração causaria uma disrupção do
+  ecossistema do Node.js no geral, e também do ecossistema de addons nativos em particular,
+  se a API que é agnóstica do engine JavaScript que está sendo utilizado não for provida
+  pelo Node.js e adotada pelos addons nativos.
 
 <!-- To these ends Node.js has introduced N-API in version 8.6.0 and marked it as a
 stable component of the project as of Node.js 8.12.0. The API is defined in the

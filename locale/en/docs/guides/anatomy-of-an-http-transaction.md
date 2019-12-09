@@ -103,9 +103,9 @@ request.on('data', (chunk) => {
 ```
 
 > **Note:** This may seem a tad tedious, and in many cases, it is. Luckily,
-there are modules like [`concat-stream`][] and [`body`][] on [`npm`][] which can
-help hide away some of this logic. It's important to have a good understanding
-of what's going on before going down that road, and that's why you're here!
+> there are modules like [`concat-stream`][] and [`body`][] on [`npm`][] which can
+> help hide away some of this logic. It's important to have a good understanding
+> of what's going on before going down that road, and that's why you're here!
 
 ## A Quick Thing About Errors
 
@@ -231,8 +231,8 @@ response.end('<html><body><h1>Hello, World!</h1></body></html>');
 ```
 
 > **Note:** It's important to set the status and headers *before* you start
-writing chunks of data to the body. This makes sense, since headers come before
-the body in HTTP responses.
+> writing chunks of data to the body. This makes sense, since headers come before
+> the body in HTTP responses.
 
 ## Another Quick Thing About Errors
 
@@ -331,9 +331,9 @@ http.createServer((request, response) => {
 ```
 
 > **Note:** By checking the URL in this way, we're doing a form of "routing".
-Other forms of routing can be as simple as `switch` statements or as complex as
-whole frameworks like [`express`][]. If you're looking for something that does
-routing and nothing else, try [`router`][].
+> Other forms of routing can be as simple as `switch` statements or as complex as
+> whole frameworks like [`express`][]. If you're looking for something that does
+> routing and nothing else, try [`router`][].
 
 Great! Now let's take a stab at simplifying this. Remember, the `request` object
 is a [`ReadableStream`][] and the `response` object is a [`WritableStream`][].

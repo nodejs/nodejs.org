@@ -7,7 +7,7 @@ layout: about.hbs
 
 ## 追求一致协商
 
-Node.js 项目遵循 [一致协商][] 的工作模式。
+Node.js 项目遵循[一致协商][]的工作模式。
 
 ## 贡献者
 
@@ -21,7 +21,7 @@ Node.js 项目遵循 [一致协商][] 的工作模式。
 
 ## 最高级别的委员会
 
-本项目由 [技术指导委员会（TSC）][] 和 [社区委员会（CommComm）][] 共同管理。前者对于项目中高级别的技术负责指导，后者则对指导和扩展社区进行负责。
+本项目由[技术指导委员会（TSC）][]和[社区委员会（CommComm）][]共同管理。前者对于项目中高级别的技术负责指导，后者则对指导和扩展社区进行负责。
 
 [COLLABORATOR_GUIDE.md]: https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md
 [社区委员会（CommComm）]: https://github.com/nodejs/community-committee/blob/master/Community-Committee-Charter.md

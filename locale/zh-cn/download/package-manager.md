@@ -3,9 +3,9 @@ layout: page.hbs
 title: 通过包管理器安装 Node.js
 ---
 
-# 通过包管理器方式安装 Nodejs
+# 通过包管理器方式安装 Node.js
 
-***注意：*** 此页面上所有的安装包均有它们各自作者，**而非** Node.js 核心团队负责进行维护和支持。如遇任何问题，请直接向有关作者报告。 如你的问题被证实是因为 Nodejs 的缺陷引发的，维护者将直接向 Nodejs 汇报此问题。
+***注意：*** 此页面上所有的安装包均有它们各自作者，**而非** Node.js 核心团队负责进行维护和支持。如遇任何问题，请直接向有关作者报告。 如你的问题被证实是因为 Node.js 的缺陷引发的，维护者将直接向 Node.js 汇报此问题。
 
 ---
 
@@ -29,9 +29,9 @@ title: 通过包管理器安装 Node.js
 
 ## Android
 
-因为 Android 版的 Nodejs 目前处于实验阶段，所以当下不提供预编译版本。
+因为 Android 版的 Node.js 目前处于实验阶段，所以当下不提供预编译版本。
 
-但是你有一些第三方的解决方案可供选择：拿 [Termux](https://termux.com/) 来说，它为安卓提供了终端模拟器和 Linux 环境，以及内置的包管理器和 [可扩展应用集](https://github.com/termux/termux-packages)，其中包含了大量预编译的应用。在 Termux 中，以下的命令将会安装最新版 Nodejs：
+但是你有一些第三方的解决方案可供选择：拿 [Termux](https://termux.com/) 来说，它为安卓提供了终端模拟器和 Linux 环境，以及内置的包管理器和[可扩展应用集](https://github.com/termux/termux-packages)，其中包含了大量预编译的应用。在 Termux 中，以下的命令将会安装最新版 Node.js：
 
 ```bash
 pkg install nodejs
@@ -91,7 +91,7 @@ Node.js 长期支持版（LTS）各类版本可以通过 IBM 处获得，使用 
 yum install nodejs12
 ```
 
-Node.js 也可以通过客户端访问解决方案产品（IBM i Access Client Solutions）安装。具体参考 [支持文档](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619)。
+Node.js 也可以通过客户端访问解决方案产品（IBM i Access Client Solutions）安装。具体参考[支持文档](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619)。
 
 ## NetBSD
 
@@ -109,7 +109,7 @@ pkgin -y install nodejs
 
 ## nvm
 Node 版本管理器是一个用于管理多个已发布的 Node.js 不同版本的 bash 脚本。它允许你执行诸如“安装”、“卸载”以及“版本切换”等诸多功能。
-使用 [安装脚本](https://github.com/creationix/nvm#install-script) 安装 nvm。
+使用[安装脚本](https://github.com/creationix/nvm#install-script)安装 nvm。
 
 对于 Unix / OS X 系统，Node.js 从源代码构建，并通过 [nvm](https://github.com/creationix/nvm) 安装到你所期望的地方。
 
@@ -147,7 +147,7 @@ pkg_add node
 
 ## <!--opensuse-and-sle-->openSUSE 和 SLE
 
-在以下安装包中，Node.js在以下主版本库中可用：
+在以下安装包中，Node.js 在以下主版本库中可用：
 
 * **openSUSE Leap 42.2**: `nodejs4`
 * **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
@@ -218,7 +218,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## Solus
 
-在主版本库中，Solus 提供了 node.js。
+在主版本库中，Solus 提供了 Node.js。
 
 ```bash
 sudo eopkg install nodejs
@@ -226,7 +226,7 @@ sudo eopkg install nodejs
 
 ## Void Linux
 
-在主版本库中 Void Linux 发布稳定的 node.js。
+在主版本库中 Void Linux 发布稳定的 Node.js。
 
 ```bash
 xbps-install -Sy nodejs

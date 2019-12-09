@@ -25,7 +25,7 @@ d.enter();
 
 // module c.js
 const dep = require('some-dep');
-dep.method();  // Uh-oh! This method doesn't actually exist.
+dep.method(); // Uh-oh! This method doesn't actually exist.
 ```
 
 因为模块 `b` 进入了域中且从未退出，任何未捕获的异常将被吞掉。茫茫然地留下模块 `c` 而为什么它没有运行整个脚本？留下一个可能部分填充的模块 `module.exports`。这么做与监听 `'uncaughtException'`是不同的。后者明显指全局捕获异常错误，另外一个问题是域在任何 `'uncaughtException'` 处理程序之前进行处理，并阻止它们继续执行。
@@ -58,7 +58,7 @@ d.on('error', () => console.error('d intercepted an error'));
 
 d.run(() => {
   const server = net.createServer((c) => {
-    const e = domain.create();  // No 'error' handler being set.
+    const e = domain.create(); // No 'error' handler being set.
     e.run(() => {
       // This will not be caught by d's error handler.
       setImmediate(() => {
@@ -83,7 +83,7 @@ d.run(() => {
 
 ```js
 const d1 = domain.create();
-d1.foo = true;  // custom member to make more visible in console
+d1.foo = true; // custom member to make more visible in console
 d1.on('error', (er) => { /* handle error */ });
 
 d1.run(() => setTimeout(() => {
@@ -128,7 +128,7 @@ let uid = 0;
 // Setting up temporary resources
 const buf = Buffer.alloc(FILESIZE);
 for (let i = 0; i < buf.length; i++)
-  buf[i] = ((Math.random() * 1e3) % 78) + 48;  // Basic ASCII
+  buf[i] = ((Math.random() * 1e3) % 78) + 48; // Basic ASCII
 fs.writeFileSync(FILENAME, buf);
 
 function ConnectionResource(c) {
@@ -217,7 +217,7 @@ function pipeData(cr) {
   d3.add(ps);
   ps.on('connection', (conn) => {
     connectionList.push(conn);
-    conn.on('data', () => {});  // don't care about incoming data.
+    conn.on('data', () => {}); // don't care about incoming data.
     conn.on('close', () => {
       connectionList.splice(connectionList.indexOf(conn), 1);
     });
@@ -249,12 +249,12 @@ process.on('exit', () => {
 
 ```
 
-- 当一个新的连接发生时，同时也发生：
-  - 打开文件系统上的文件
-  - 针对唯一的套接字打开文件管道
-- 异步读取文件块
-- 将块写入 TCP 连接和任何监听套接字中
-- 如果这些资源中的任何一个出错，则通知其它需要清理和关闭的附加资源
+* 当一个新的连接发生时，同时也发生：
+  * 打开文件系统上的文件
+  * 针对唯一的套接字打开文件管道
+* 异步读取文件块
+* 将块写入 TCP 连接和任何监听套接字中
+* 如果这些资源中的任何一个出错，则通知其它需要清理和关闭的附加资源
 
 正如我们从这个例子中看到的那样，当某些事情发生故障时必须做正确的清理。所有域提供的是异常聚合机制。在这个例子中，即使通过域传递数据的潜在有用能力也很容易通过将需要的资源作为函数参数传递。
 

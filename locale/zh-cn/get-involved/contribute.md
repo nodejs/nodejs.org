@@ -44,4 +44,4 @@ layout: contribute.hbs
 * 参与工作组
 * 参与其它 Node.js 社区群
 
-若你自己认为已经做出重大贡献，却没有被授予提交权限，你可以尝试 [开启 TSC 议题](https://github.com/nodejs/TSC/issues) 或 [直接联系 TSC 成员](https://github.com/nodejs/TSC#current-members) 以获得相应权限。
+若你自己认为已经做出重大贡献，却没有被授予提交权限，你可以尝试[开启 TSC 议题](https://github.com/nodejs/TSC/issues)或[直接联系 TSC 成员](https://github.com/nodejs/TSC#current-members)以获得相应权限。

@@ -7,7 +7,7 @@ title: Logos y Gráficos
 
 ## Descargas de Logo
 
-Por favor revise la [Política de Marca Registrada](/es/about/trademark/) para obtener información sobre el uso permitido de Node.js&reg; logos y marcas.
+Por favor revise la [Política de Marca Registrada](/es/about/trademark/) para obtener información sobre el uso permitido de Node.js® logos y marcas.
 
 Las pautas para la visualización de la marca Node.js se describen en
 las [Pautas Visuales](/static/documents/foundation-visual-guidelines.pdf).

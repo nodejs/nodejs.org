@@ -13,7 +13,7 @@ regular intervals during program execution. It records the results of these
 samples, along with important optimization events such as jit compiles, as a
 series of ticks:
 
- -->
+-->
 # Node.js アプリケーションの簡単なプロファイリング
 
 Node.js アプリケーションのプロファイリングに使用できるサードパーティ製ツールは多数ありますが、
@@ -38,7 +38,7 @@ consumption of this information without separately building V8 from source.
 Let's see how the built-in profiler can help provide insight into application
 performance.
 
- -->
+-->
 以前は、ティックを解釈するために V8 ソースコードが必要でした。
 幸いなことに、Node.js 4.4.0 以降、ソースとは別に V8 を構築することなく
 容易にこの情報を利用できるツールが導入されました。
@@ -50,7 +50,7 @@ To illustrate the use of the tick profiler, we will work with a simple Express
 application. Our application will have two handlers, one for adding new users to
 our system:
 
- -->
+-->
 ティックプロファイラーの使い方を説明するために、
 簡単な Express アプリケーションを使います。
 アプリケーションには、システムに新しいユーザを追加する2つのハンドラがあります。
@@ -78,7 +78,7 @@ app.get('/newUser', (req, res) => {
 <!--
 and another for validating user authentication attempts:
 
- -->
+-->
 ユーザ認証の試行を検証するためのものもあります。
 
 ```javascript
@@ -109,7 +109,7 @@ your Node.js applications and are used purely for illustration purposes. You
 should not be trying to design your own cryptographic authentication mechanisms
 in general. It is much better to use existing, proven authentication solutions.*
 
- -->
+-->
 *これらは、Node.js アプリケーションでユーザを認証する推奨のハンドラではなく、
 純粋に例を示す目的で使用されていることに注意してください。
 自身の暗号認証メカニズムを一般的に設計しようとしてはいけません。
@@ -119,7 +119,7 @@ in general. It is much better to use existing, proven authentication solutions.*
 Now assume that we've deployed our application and users are complaining about
 high latency on requests. We can easily run the app with the built in profiler:
 
- -->
+-->
 ここで、アプリケーションをデプロイし、ユーザがリクエストの待ち時間が長いことについて不満を言っているとします。
 内蔵のプロファイラーでアプリを簡単に実行できます。
 
@@ -130,7 +130,7 @@ NODE_ENV=production node --prof app.js
 <!--
 and put some load on the server using `ab` (ApacheBench):
 
- -->
+-->
 `ab` (ApacheBench) を使用してサーバに負荷をかけます。
 
 ```
@@ -141,7 +141,7 @@ ab -k -c 20 -n 250 "http://localhost:8080/auth?username=matt&password=password"
 <!--
 and get an ab output of:
 
- -->
+-->
 そして、次の ab 出力を取得します。
 
 ```
@@ -179,7 +179,7 @@ of a user request but even in our simple example, time could be lost compiling
 regular expressions, generating random salts, generating unique hashes from user
 passwords, or inside the Express framework itself.
 
- -->
+-->
 この出力から、1秒あたり約5つのリクエストを処理することに成功しているだけで、
 平均リクエストはラウンドトリップで4秒弱かかります。
 実際の例では、ユーザのリクエストに代わって
@@ -192,7 +192,7 @@ Since we ran our application using the `--prof` option, a tick file was generate
 in the same directory as your local run of the application. It should have the
 form `isolate-0xnnnnnnnnnnnn-v8.log` (where `n` is a digit).
 
- -->
+-->
 `--prof` オプションを使用してアプリケーションを実行したため、
 ティックファイルはローカルで実行しているアプリケーションと同じディレクトリに生成されました。
 形式は `isolate-0xnnnnnnnnnnnn-v8.log` (`n` は数字) です。
@@ -201,7 +201,7 @@ form `isolate-0xnnnnnnnnnnnn-v8.log` (where `n` is a digit).
 In order to make sense of this file, we need to use the tick processor bundled
 with the Node.js binary. To run the processor, use the `--prof-process` flag:
 
- -->
+-->
 このファイルを理解するには、Node.js バイナリにバンドルされている tick プロセッサを使用する必要があります。
 プロセッサを実行するには `--prof-process` フラグを使用します。
 
@@ -214,7 +214,7 @@ Opening processed.txt in your favorite text editor will give you a few different
 types of information. The file is broken up into sections which are again broken
 up by language. First, we look at the summary section and see:
 
- -->
+-->
 お気に入りのテキストエディタで processed.txt を開くと、情報が何種類か表示されます。
 ファイルはセクションに分割されており、セクションは言語ごとに分割されています。
 まず、要約セクションを見ると、このようになっています：
@@ -236,7 +236,7 @@ to work being done in C++ (as opposed to JavaScript). With this in mind, we next
 find the [C++] section which contains information about which C++ functions are
 taking the most CPU time and see:
 
- -->
+-->
 これは、収集されたすべてのサンプルの 97％ が C++ コードで発生しており、
 処理された出力の他のセクションを見るときは
 (JavaScript ではなく) C++ で行われている作業に最も注意する必要があることを示しています。
@@ -262,7 +262,7 @@ functions, we will next look at the [Bottom up (heavy) profile] section which
 provides information about the primary callers of each function. Examining this
 section, we find:
 
- -->
+-->
 上位 3 つのエントリが、プログラムで使用された CPU 時間の 72.1％ を占めていることがわかります。
 この出力から、すぐにユーザのパスワードからのハッシュ生成に対応する PBKDF2 と呼ばれる機能によって
 CPU 時間の少なくとも 51.8％ が占められていることが分かります。
@@ -303,7 +303,7 @@ accounts not only for the 51.8% from above but also for all CPU time in the top
 3 most sampled functions since the calls to `_sha1_block_data_order` and
 `_malloc_zone_malloc` were made on behalf of the pbkdf2 function.
 
- -->
+-->
 このセクションを解析することは、
 上の生のティックカウントよりも少し多くの作業を要します。
 上記の各「コールスタック」内で、親列のパーセントは、
@@ -326,7 +326,7 @@ generate a hash from the user's password is being done in a synchronous way and
 thus tying down the event loop. This prevents us from working on other incoming
 requests while computing a hash.
 
- -->
+-->
 この時点で、パスワードベースのハッシュ生成が最適化の対象になるはずです。
 幸い、[非同期プログラミングの利点][] を完全に内部化したので、
 ユーザのパスワードからハッシュを生成する作業は同期的に行われ、
@@ -338,7 +338,7 @@ requests while computing a hash.
 To remedy this issue, you make a small modification to the above handlers to use
 the asynchronous version of the pbkdf2 function:
 
- -->
+-->
 この問題を解決するには、非同期バージョンの pbkdf2 関数を使用するように
 上記のハンドラを少し変更します。
 
@@ -367,7 +367,7 @@ app.get('/auth', (req, res) => {
 A new run of the ab benchmark above with the asynchronous version of your app
 yields:
 
- -->
+-->
 非同期バージョンのアプリを使って新しい上記の ab ベンチマークを実行すると、
 次のようになります。
 
@@ -403,7 +403,7 @@ Yay! Your app is now serving about 20 requests per second, roughly 4 times more
 than it was with the synchronous hash generation. Additionally, the average
 latency is down from the 4 seconds before to just over 1 second.
 
- -->
+-->
 やりました！ アプリは現在、毎秒約20リクエストを処理しています。
 これは同期ハッシュ生成の場合の約4倍です。
 さらに、平均待ち時間は4秒弱から1秒強に減少しています。
@@ -413,7 +413,7 @@ Hopefully, through the performance investigation of this (admittedly contrived)
 example, you've seen how the V8 tick processor can help you gain a better
 understanding of the performance of your Node.js applications.
 
- -->
+-->
 うまくいけば、この (明らかに考案された) 例のパフォーマンス調査を通じて、
 V8 ティックプロセッサが Node.js アプリケーションのパフォーマンスの理解を深めるのに
 役立つ方法を見ることがあるでしょう。
@@ -422,6 +422,6 @@ V8 ティックプロセッサが Node.js アプリケーションのパフォ�
 [profiler inside V8]: https://v8.dev/docs/profile
 [benefits of asynchronous programming]: https://nodesource.com/blog/why-asynchronous
 
- -->
+-->
 [V8 内部のプロファイラ]: https://v8.dev/docs/profile
 [非同期プログラミングの利点]: https://nodesource.com/blog/why-asynchronous
