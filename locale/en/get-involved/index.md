@@ -22,6 +22,7 @@ layout: contribute.hbs
 - [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) collects new information every day.
 - [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
 - [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
+- [The gitconnected.com community-ranked Node.js tutorial list](https://gitconnected.com/learn/node-js) shares the most recommended courses and tutorials for any skill level, submitted and reviewed by Node.js developers.
 
 ## International community sites and projects
 
