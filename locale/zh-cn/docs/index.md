@@ -43,4 +43,4 @@ labels:
 
 ## 指南
 
-[指南篇](/zh-cn/docs/guides/) 是关于 Node.js 技术特性和性能的长篇具有深度的文章。
+[指南篇](/zh-cn/docs/guides/)是关于 Node.js 技术特性和性能的长篇具有深度的文章。

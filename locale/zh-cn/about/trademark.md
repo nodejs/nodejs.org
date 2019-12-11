@@ -11,4 +11,4 @@ Node.js 的商标、服务性标志，以及图像商标等都是质量、性能
 
 请阅读相关[完整版政策](/static/documents/trademark-policy.pdf)。如果你有任何疑问，请不要犹豫并[给我们来信](mailto:trademark@nodejs.org)。
 
-对于 Node.js 标志的可视化展示指南也在[可视化指南](/static/documents/foundation-visual-guidelines.pdf) 中有所描述。
+对于 Node.js 标志的可视化展示指南也在[可视化指南](/static/documents/foundation-visual-guidelines.pdf)中有所描述。

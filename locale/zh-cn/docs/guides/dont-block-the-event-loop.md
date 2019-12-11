@@ -49,7 +49,7 @@ Node 使用事件驱动机制：它有一个事件轮询线程负责任务编排
 总体来说，事件轮询线程执行事件的回调函数，并且负责对处理类似网络 I/O 的非阻塞异步请求。
 
 ### 哪种代码运行在工作线程池？
-Node 的工作线程池是通过 libuv ([相关文档](http://docs.libuv.org/en/v1.x/threadpool.html)) 来实现的，它对外提供了一个通用的任务处理 API。
+Node 的工作线程池是通过 libuv（[相关文档](http://docs.libuv.org/en/v1.x/threadpool.html)）来实现的，它对外提供了一个通用的任务处理 API。
 
 Node 使用工作线程池来处理“高成本”的任务。
 这包括一些操作系统并没有提供非阻塞版本的 I/O 操作，以及一些 CPU 密集型的任务。
@@ -75,7 +75,7 @@ Node 模块中有如下这些 API 用到了工作线程池：
 而事实上，事件轮询线程本身并不维护队列，它持有一堆要求操作系统使用诸如 [epoll](http://man7.org/linux/man-pages/man7/epoll.7.html) (Linux)，[kqueue](https://developer.apple.com/library/content/documentation/Darwin/Conceptual/FSEvents_ProgGuide/KernelQueues/KernelQueues.html) (OSX)，event ports (Solaris) 或者 [IOCP](https://msdn.microsoft.com/en-us/library/windows/desktop/aa365198.aspx) (Windows) 等机制去监听的文件描述符。
 这些文件描述符可能代表一个网络套接字，一个监听的文件等等。
 当操作系统确定某个文件的描述符发生变化，事件轮询线程将把它转换成合适的事件，然后触发与该事件对应的回调函数。
-你可以通过[这里](https://www.youtube.com/watch?v=P9csgxBgaZ8) 学习到更多有关这个过程的知识。
+你可以通过[这里](https://www.youtube.com/watch?v=P9csgxBgaZ8)学习到更多有关这个过程的知识。
 
 相对而言，工作线程池则使用一个真实的队列，里边装的都是要被处理的任务。
 一个工作线程从这个队列中取出一个任务，开始处理它。当完成之后这个工作线程向事件循环线程中发出一个“至少有一个任务完成了”的消息。
@@ -216,7 +216,7 @@ app.get('/redos-me', (req, res) => {
 但注意，RE2 对 Node 正则表达式不是 100% 兼容，所以如果你想用 node-re2 模块来处理你的正则表达式的话，请检仔细查你的表达式。
 这里尤其值得提醒的是，一些特殊的复杂正则表达式不被 node-re2 支持。
 
-如果你想匹配一些较为“明显”的东西，如网络路径或者是文件路径，请在[正则表达式库](http://www.regexlib.com) 中寻找到对应例子，或者使用一个 npm 的模块，如 [ip-regex](https://www.npmjs.com/package/ip-regex)。
+如果你想匹配一些较为“明显”的东西，如网络路径或者是文件路径，请在[正则表达式库](http://www.regexlib.com)中寻找到对应例子，或者使用一个 npm 的模块，如 [ip-regex](https://www.npmjs.com/package/ip-regex)。
 
 ### 阻塞事件轮询：Node 的核心模块
 一些 Node 的核心模块有同步的高开销的 API 方法，包含：
