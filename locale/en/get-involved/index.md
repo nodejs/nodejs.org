@@ -14,7 +14,7 @@ layout: contribute.hbs
 * [Node.js Everywhere](https://newsletter.nodejs.org) is the official Node.js Monthly Newsletter.
 * [Node.js Collection](https://medium.com/the-node-js-collection) is a collection of community-curated content on Medium.
 * The [Community Committee](https://github.com/nodejs/community-committee) is a top-level committee in the Node.js Foundation focused on community-facing efforts.
-* You can receive an invitation to join the NodeJS Slack workspace by visiting [https://www.nodeslackers.com/](https://www.nodeslackers.com/).  Once you join the NodeJS Foundation Slack Workspace, you can participate in any of the public channels.  If you are new to Slack, you can view a full list of available channels by clicking the “Channels” link on the left.
+* You can receive an invitation to join the NodeJS Slack workspace by visiting [https://www.nodeslackers.com/](https://www.nodeslackers.com/).  Once you join the NodeJS workspace, you can participate in any of the public channels.  If you are new to Slack, you can view a full list of available channels by clicking the “Channels” link on the left.
 
 ## Learning
 
