@@ -200,8 +200,8 @@ You'll notice `ByteCodeHandler:` where you'd expect function names.
 [0x](https://www.npmjs.com/package/0x) has some mitigations for that built in.
 
 For details see:
-- https://github.com/nodejs/benchmarking/issues/168
-- https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
+* https://github.com/nodejs/benchmarking/issues/168
+* https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
 
 -->
 ## `perf`出力の問題
@@ -218,8 +218,8 @@ Node.js 8.x 以降には、V8 エンジンの JavaScript コンパイルパイ�
 
 詳細:
 
-- https://github.com/nodejs/benchmarking/issues/168
-- https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
+* https://github.com/nodejs/benchmarking/issues/168
+* https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
 
 <!--
 ### Node.js 10+

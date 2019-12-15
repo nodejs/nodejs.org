@@ -44,7 +44,7 @@ layout: docs.hbs
 
 ### [Node 监视器](https://github.com/nodejs/node-inspect)
 
-* 由 Node.js 基础库，使用 [检查器协议][] 支持的 CLI 调试器。
+* 由 Node.js 基础库，使用[检查器协议][]支持的 CLI 调试器。
 * 和 Node 绑定在一起的版本，并且可以使用 `node inspect myscript.js`。
 * 最新的版本同样可以单独通过（例如 `npm install -g node-inspect`）方式安装，并使用 `node-inspect myscript.js`。
 
@@ -178,13 +178,11 @@ V8 调试协议再也不维护或是归档了。
 
 ### [内置调试器](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
 
-在 Node.js 内置命令行调试器中 用 `node debug script_name.js` 启动你的脚本。你的脚本就在 Node 另外一个进程中随着 `--debug-brk` 启动了起来，并且初始化的 Node 进程运行 `_debugger.js` 脚本连接上你的目标。
+在 Node.js 内置命令行调试器中用 `node debug script_name.js` 启动你的脚本。你的脚本就在 Node 另外一个进程中随着 `--debug-brk` 启动了起来，并且初始化的 Node 进程运行 `_debugger.js` 脚本连接上你的目标。
 
 ### [node 监视器](https://github.com/node-inspector/node-inspector)
 
 用 Chrome 开发工具，通过 Node.js 的中间进程把 Chromium 中的检查器协议转换成 V8 调试器协议进行程序调试。
-
-<!-- refs -->
 
 [检查器协议]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/
 [UUID]: https://tools.ietf.org/html/rfc4122

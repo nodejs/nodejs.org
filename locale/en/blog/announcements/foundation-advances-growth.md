@@ -8,7 +8,7 @@ layout: blog-post.hbs
 ---
 
 > Node.js Platform Stronger Than Ever with New Node.js Foundation Members,
-Community Contributions, and 100 Percent Year-Over-Year User Growth
+> Community Contributions, and 100 Percent Year-Over-Year User Growth
 
 **NODE.JS INTERACTIVE 2015, PORTLAND, OR.** — [The Node.js Foundation](https://foundation.nodejs.org/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today is announcing major community, code and membership growth, adoption statistics of the technology at large, and the Foundation’s new incubation program.
 

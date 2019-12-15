@@ -20,9 +20,11 @@ const defaultsDeep = require('lodash.defaultsdeep')
 const autoprefixer = require('autoprefixer')
 const marked = require('marked')
 const postcss = require('postcss')
-const sass = require('node-sass')
+const fibers = require('fibers')
+const sass = require('sass')
 const ncp = require('ncp')
 const junk = require('junk')
+const semver = require('semver')
 
 const githubLinks = require('./scripts/plugins/githubLinks')
 const navigation = require('./scripts/plugins/navigation')
@@ -225,9 +227,9 @@ function buildCSS () {
 
   const sassOpts = {
     file: src,
+    fiber: fibers,
     outFile: dest,
-    outputStyle: process.env.NODE_ENV !== 'development' ? 'compressed' : 'expanded',
-    precision: 6
+    outputStyle: process.env.NODE_ENV !== 'development' ? 'compressed' : 'expanded'
   }
 
   fs.mkdir(path.join(__dirname, 'build/static/css'), { recursive: true }, (err) => {
@@ -288,11 +290,15 @@ function getSource (callback) {
           lts: latestVersion.lts(versions)
         },
         banner: {
-          visible: false,
-          text: 'New security releases now available for all release lines',
-          link: '/en/blog/vulnerability/february-2019-security-releases/'
+          visible: true,
+          text: 'New security releases to be made available Dec 17, 2019',
+          link: '/en/blog/vulnerability/december-2019-security-releases/'
         }
       }
+    }
+    if (semver.gt(source.project.latestVersions.lts.node, source.project.latestVersions.current.node)) {
+      // If LTS is higher than Current hide it from the main page
+      source.project.latestVersions.hideCurrent = true
     }
 
     callback(err, source)

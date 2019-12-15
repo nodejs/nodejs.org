@@ -298,12 +298,12 @@ process.on('exit', () => {
 
 ```
 
-- When a new connection happens, concurrently:
-  - Open a file on the file system
-  - Open Pipe to unique socket
-- Read a chunk of the file asynchronously
-- Write chunk to both the TCP connection and any listening sockets
-- If any of these resources error, notify all other attached resources that
+* When a new connection happens, concurrently:
+  * Open a file on the file system
+  * Open Pipe to unique socket
+* Read a chunk of the file asynchronously
+* Write chunk to both the TCP connection and any listening sockets
+* If any of these resources error, notify all other attached resources that
   they need to clean up and shutdown
 
 As we can see from this example a lot more must be done to properly clean up

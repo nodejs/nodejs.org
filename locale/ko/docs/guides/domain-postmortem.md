@@ -591,12 +591,12 @@ process.on('exit', () => {
 ```
 
 <!--
-- When a new connection happens, concurrently:
-  - Open a file on the file system
-  - Open Pipe to unique socket
-- Read a chunk of the file asynchronously
-- Write chunk to both the TCP connection and any listening sockets
-- If any of these resources error, notify all other attached resources that
+* When a new connection happens, concurrently:
+  * Open a file on the file system
+  * Open Pipe to unique socket
+* Read a chunk of the file asynchronously
+* Write chunk to both the TCP connection and any listening sockets
+* If any of these resources error, notify all other attached resources that
   they need to clean up and shutdown
 
 As we can see from this example a lot more must be done to properly clean up
@@ -612,12 +612,12 @@ application despite an unexpected exception. This example demonstrates the
 fallacy behind that idea.
 -->
 
-- 새로운 연결이 이뤄지면 동시에
-  - 파일시스템에서 파일을 엽니다.
-  - 유일한 소켓과 파이프를 연결합니다.
-- 파일의 청크를 비동기로 읽습니다.
-- TCP 연결과 리스닝 중인 모든 소켓에 청크를 작성합니다.
-- 이러한 자원에서 오류가 발생하면 정리하고 종료해야 하는 모든 연결된 자원에 알립니다.
+* 새로운 연결이 이뤄지면 동시에
+  * 파일시스템에서 파일을 엽니다.
+  * 유일한 소켓과 파이프를 연결합니다.
+* 파일의 청크를 비동기로 읽습니다.
+* TCP 연결과 리스닝 중인 모든 소켓에 청크를 작성합니다.
+* 이러한 자원에서 오류가 발생하면 정리하고 종료해야 하는 모든 연결된 자원에 알립니다.
 
 이 예제에서 알 수 있듯이 도메인 API로 엄격하게 수행할 수 있는 것보다 실패했을 때 자원을 적절하게
 정리하려면 더 많은 작업을 해야 합니다. 도메인이 제공하는 모든 것은 예외를 수집하는 메커니즘입니다.

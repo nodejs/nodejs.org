@@ -55,8 +55,6 @@ resolution mechanism.
 
 # Becoming a Collaborator
 
-All contributors who land a non-trivial contribution should be on-boarded in a timely manner,
-and added as a collaborator, and be given write access to the repository.
-
-Collaborators are expected to follow this policy and continue to send pull requests, go through
-proper review, and have other collaborators merge their pull requests.
+Individuals with non-trivial contributions may be added as Collaborators.
+Collaborators are expected to follow this policy and continue to send pull
+requests and go through proper review.

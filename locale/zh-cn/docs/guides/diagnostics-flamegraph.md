@@ -44,7 +44,7 @@ layout: docs.hbs
 
 现在你可以使用你最喜爱的浏览器打开火焰图文件，然后观察其燃烧状况。此图是带色编码的，因此你首先应该关注饱和度最深的橘色条。这些最有可能意味着你的 CPU 运行复杂函数消耗的状况。
 
-值得一提的是：如果你点击火焰图的一个元素, 它周围相关的元素将被放大，并将显示在图形的上方。
+值得一提的是：如果你点击火焰图的一个元素，它周围相关的元素将被放大，并将显示在图形的上方。
 
 ### 使用 `perf` 对一个运行的进程采样
 
@@ -58,7 +58,7 @@ perf record -F99 -p `pgrep -n node` -g -- sleep 3
 
 为什么 `-F`（采样频率）要被设置成 99？这是有默认原因的，当然你如果愿意可以任意设置。`-F99` 告诉 pref 每秒采样 99 个样本，目的是为了更精确地提高数值。越是低的数值意味着产出越是低的输出，相伴的也就是越是低精度的结果。你需要的精度取决于你的 CPU 运行多长时间的密集型函数。如果你正在寻找一个明显的减速的原因，那么 99 帧每秒应该是足够的。
 
-当你得到了那 3 秒 pref 生成的记录，请用以上步骤的最后 2 步 处理生成火焰图。
+当你得到了那 3 秒 pref 生成的记录，请用以上步骤的最后 2 步处理生成火焰图。
 
 ### 过滤掉 Node.js 的内置函数
 
@@ -97,8 +97,8 @@ Node.js 8.x 及以上版本使用了 V8 引擎，采用了新的优化 JavaScrip
 
 欲知详情，请了解以下内容：
 
-- https://github.com/nodejs/benchmarking/issues/168
-- https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
+* https://github.com/nodejs/benchmarking/issues/168
+* https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
 
 ### Node.js 10+
 

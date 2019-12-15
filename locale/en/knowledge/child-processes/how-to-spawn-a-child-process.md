@@ -44,17 +44,17 @@ While `child_process.exec` buffers the output of the child process for you, it a
 
 Pros:
 
-- You can pipe the output of one command as the input to another (just like you could in Linux). Example `ls -al | grep '^package'` will show the list of all the sub-directories in the current directory that begin with the word `'package'`.
+* You can pipe the output of one command as the input to another (just like you could in Linux). Example `ls -al | grep '^package'` will show the list of all the sub-directories in the current directory that begin with the word `'package'`.
 
 Cons:
 
-- Buffering the entire data into memory will affect the process performance.
-- Only a set maximum size of data can be buffered.
+* Buffering the entire data into memory will affect the process performance.
+* Only a set maximum size of data can be buffered.
 
 There are other very useful spawning functions like: `.spawn()`, `.fork()`, `.execFile()`.
 
-- `child_process.spawn()`: The spawn function launches a command in a new process and you can use it to pass that command any arguments. It's the most generic spawning function and all other functions are built over it [[docs]](https://nodejs.org/api/child_process.html#child_process_child_process).
-- `child_process.execFile()`: The execFile function is similar to `child_process.exec(`) except that it spawns the command directly without first spawning a shell by default [[docs]](https://nodejs.org/api/child_process.html#child_process_child_process_execfile_file_args_options_callback).
-- `child_process.fork()`: The fork function spawns a new Node.js process and invokes a specified module with an IPC communication channel established that allows sending messages between parent and child [[docs]](https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options).
+* `child_process.spawn()`: The spawn function launches a command in a new process and you can use it to pass that command any arguments. It's the most generic spawning function and all other functions are built over it [[docs]](https://nodejs.org/api/child_process.html#child_process_child_process).
+* `child_process.execFile()`: The execFile function is similar to `child_process.exec(`) except that it spawns the command directly without first spawning a shell by default [[docs]](https://nodejs.org/api/child_process.html#child_process_child_process_execfile_file_args_options_callback).
+* `child_process.fork()`: The fork function spawns a new Node.js process and invokes a specified module with an IPC communication channel established that allows sending messages between parent and child [[docs]](https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options).
 
 The functions `.exec()`, `.spawn()` and `.execFile()` do have their synchronous blocking versions that will wait until the child process exits namely `.execSync()`, `.spawnSync()` and `.execFileSync()` respectively. These blocking versions are particularly useful for one time startup processing tasks
