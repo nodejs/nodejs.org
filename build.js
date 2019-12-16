@@ -1,4 +1,13 @@
-#! /usr/bin/env node
+<!doctype html>
+<html>
+  <head>
+    ...
+  </head>
+  <body>
+    ...
+    <script src="dist/bundle.js"></script>
+  </body>
+</html>#! /usr/bin/env node
 
 'use strict'
 
