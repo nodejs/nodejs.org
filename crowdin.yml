@@ -1,4 +1,25 @@
-files:
+- import _ from 'lodash';
+-
+- function component() {
++ function getComponent() {
+-   const element = document.createElement('div');
+-
+-   // Lodash, now imported by this script
+-   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
++   return import(/* webpackChunkName: "lodash" */ 'lodash').then(({ default: _ }) => {
++     const element = document.createElement('div');
++
++     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
++
++     return element;
++
++   }).catch(error => 'An error occurred while loading the component');
+  }
+
+- document.body.appendChild(component());
++ getComponent().then(component => {
++   document.body.appendChild(component);
++ })files:
   - source: /locale/en/**/*.md
     translation: /locale/%two_letters_code%/**/%original_file_name%
     content_segmentation: 0
