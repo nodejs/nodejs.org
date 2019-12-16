@@ -1,4 +1,14 @@
 {
+  "port": 9999,
+  "path": "/webhook",
+  "secret": "mygithubsecret",
+  "log": "/var/log/webhook.log",
+  "rules": [{
+    "event": "push",
+    "match": "ref == \"refs/heads/master\" && repository.name == \"myrepo\"",
+    "exec": "echo yay!"
+  }]
+}{
   "name": "nodejs.org",
   "private": true,
   "description": "Nodejs.org website",
