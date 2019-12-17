@@ -3,7 +3,7 @@
   "author": "Node.js بنیاد",
   "url": "https://nodejs.org/fa/",
   "locale": "fa",
-  "language": "زبان فارسی",
+  "language": "فارسی",
   "languageEnglishVersion": "Persian",
   "rtl": true,
   "scrollToTop": "رفتن به بالا",
@@ -83,7 +83,7 @@
       "verify-text": "چگونه راستی‌آزمایی کنیم؟"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive"
+      "text": "نصب نود جی اس از طریق آرشیو دودویی"
     }
   },
   "docs": {
@@ -129,6 +129,10 @@
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
       "text": "شیوه تعامل برای مشارکت"
+    },
+    "node-meetups": {
+      "link": "get-involved/node-meetups",
+      "text": "دورهمی های Node.js"
     }
   },
   "security": {
