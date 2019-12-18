@@ -291,7 +291,7 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'New security releases to be made available Dec 17, 2019',
+          text: 'New security releases now available for all release lines',
           link: '/en/blog/vulnerability/december-2019-security-releases/'
         }
       }
