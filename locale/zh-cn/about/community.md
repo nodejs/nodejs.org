@@ -48,7 +48,7 @@ layout: about.hbs
 
 定期社区委员会的会议每两个月通过变焦视频举行，然后会在 YouTube 上向公众播放。任何一个社区会员或者贡献者都可以通过 GitHub 发起请求参与下一次的会议议程。
 
-在会议开始前，相关的宣告以及议程都将在相关组织 [GitHub 议题](https://github.com/nodejs/community-committee/issues) 中列出。你也可以在 [Node.js 会议安排](https://nodejs.org/calendar) 中找到相关计划会议。为跟上 YouTube 上的 Node.js 实时会议，你应该订阅 [YouTube 频道](https://www.youtube.com/channel/UCQPYJluYC_sn_Qz_XE-YbTQ)。请勿忘记点击铃铛，这样每次有新的会议你就会收到提醒了！
+在会议开始前，相关的宣告以及议程都将在相关组织 [GitHub 议题](https://github.com/nodejs/community-committee/issues)中列出。你也可以在 [Node.js 会议安排](https://nodejs.org/calendar) 中找到相关计划会议。为跟上 YouTube 上的 Node.js 实时会议，你应该订阅 [YouTube 频道](https://www.youtube.com/channel/UCQPYJluYC_sn_Qz_XE-YbTQ)。请勿忘记点击铃铛，这样每次有新的会议你就会收到提醒了！
 
 ## 寻求协商一致的过程
 
