@@ -10,7 +10,7 @@
     if (el.getAttribute('data-lang') !== currentLang) {
       el.addEventListener('click', function (e) {
         var newLocale = (e.target && e.target.dataset && e.target.dataset.lang) || 'en'
-        window.location.replace(window.location.pathname.replace(/\/[a-zA-Z-]+/, '/' + newLocale))
+        window.location.assign(window.location.pathname.replace(/\/[a-zA-Z-]+/, '/' + newLocale))
       })
     } else {
       currentLangElement = el
