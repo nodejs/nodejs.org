@@ -122,7 +122,7 @@ app.get('/countToN', (req, res) => {
 
   // n iterations before giving someone else a turn
   for (let i = 0; i < n; i++) {
-    console.log(`Iter {$i}`);
+    console.log(`Iter ${i}`);
   }
 
   res.sendStatus(200);
