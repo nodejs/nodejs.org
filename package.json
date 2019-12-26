@@ -80,7 +80,7 @@
     "remark-preset-lint-node": "^1.11.0",
     "st": "^2.0.0",
     "standard": "^14.3.1",
-    "stylelint": "^12.0.0",
+    "stylelint": "^12.0.1",
     "stylelint-config-twbs-bootstrap": "^1.0.0",
     "tape": "^4.12.1",
     "vnu-jar": "19.9.4"
