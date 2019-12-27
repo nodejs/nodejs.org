@@ -116,13 +116,6 @@ function buildLocale (source, locale, opts) {
         reverse: true,
         refer: false
       },
-      lastWeekly: {
-        pattern: 'blog/weekly-updates/*.md',
-        sortBy: 'date',
-        reverse: true,
-        refer: false,
-        limit: 1
-      },
       knowledgeBase: {
         pattern: 'knowledge/**/*.md',
         refer: false

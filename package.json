@@ -59,7 +59,6 @@
     "ncp": "^2.0.0",
     "node-version-data": "^1.1.0",
     "npm-run-all": "^4.1.5",
-    "octonode": "^0.9.5",
     "postcss": "^7.0.25",
     "request": "^2.88.0",
     "sass": "^1.24.0",
