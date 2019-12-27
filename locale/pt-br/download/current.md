@@ -28,7 +28,7 @@ additional:
     SmartOSBinaries: Binários SmartOS
     DockerImage: Imagem Docker
     officialDockerImage: Imagem Docker Oficial do Node.js
-    LinuxPowerSystems: Linux no Power Systems
+    LinuxPowerSystems: Linux no Power LE Systems
     LinuxSystemZ: Linux no System z
     AIXPowerSystems: AIX no Power Systems
 ---
