@@ -43,7 +43,7 @@ If you have spotted or written something about Node.js, do come over to our [Eva
 * [NodeFest](http://nodefest.jp/2015/), November 7th at Tokyo, Japan
 * [Node Girls London](https://nodegirls.typeform.com/to/atW4HR), November 7th at London, UK
 * [Playnode](http://playnode.io/), November 12nd at Seoul, South Korea
-* [Nodevember](http://nodevember.org/?utm_source=io.js+and+Node.js+News&utm_medium=article), November 14th - 15th at Nashville, Tennessee, US.
+* [Nodevember](http://nodevember.org/), November 14th - 15th at Nashville, Tennessee, US.
 * [NodeConf Barcelona](https://ti.to/barcelonajs/nodeconf-barcelona-2015), November 21st at Barcelona, Spain
 * [CampJS VI](http://vi.campjs.com), November 20 – 23th at Queensland, Australia
 * [Node.js Interactive](http://events.linuxfoundation.org/events/node-interactive), December 8-9 at Portland, US.
