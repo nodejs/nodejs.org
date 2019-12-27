@@ -77,9 +77,9 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 ### Community Updates
 
 * We *still* need a V8 maintainer for our LTS build! Head on over [to GitHub](https://github.com/nodejs/LTS/issues/28) to see if the requirements match your capabilities.
-* [webkid.io](http://webkid.io) co-founder [Moritz Klack](http://twitter.com/moklick) has written about [creating a REST API with Hapi, Dogwater and Bedwetter](http://blog.webkid.io/how-to-create-a-rest-api-with-hapi/?utm_source=io.js+and+Node.js+News&utm_medium=article).
-* [RisingStack](http://risingstack.com) CEO [Gergely Nemeth](http://twitter.com/nthgergo) has a post in the company blog about [using GraphQL with Graffiti](https://blog.risingstack.com/start-using-graphql-with-graffiti/?utm_source=io.js+and+Node.js+News&utm_medium=article).
-* [Samsung banks on JavaScript, Node.js for IoT](http://www.infoworld.com/article/2953719/javascript/samsung-banks-on-javascript-node-js-for-iot.html?utm_source=io.js+and+Node.js+News&utm_medium=article), as reported by [Paul Krill](https://twitter.com/pjkrill), editor at large at [InfoWorld](http://www.infoworld.com/).
+* [webkid.io](http://webkid.io) co-founder [Moritz Klack](http://twitter.com/moklick) has written about [creating a REST API with Hapi, Dogwater and Bedwetter](http://blog.webkid.io/how-to-create-a-rest-api-with-hapi/).
+* [RisingStack](http://risingstack.com) CEO [Gergely Nemeth](http://twitter.com/nthgergo) has a post in the company blog about [using GraphQL with Graffiti](https://blog.risingstack.com/start-using-graphql-with-graffiti/).
+* [Samsung banks on JavaScript, Node.js for IoT](http://www.infoworld.com/article/2953719/javascript/samsung-banks-on-javascript-node-js-for-iot.html), as reported by [Paul Krill](https://twitter.com/pjkrill), editor at large at [InfoWorld](http://www.infoworld.com/).
 
 If you have spotted or written something about Node.js and io.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.
 
