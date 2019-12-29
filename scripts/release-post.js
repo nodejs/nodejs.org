@@ -41,14 +41,12 @@ function sendRequest (opts) {
       }
       resp.text().then(text => resolve(text))
     }).catch(err => {
-      if (err) {
-        return reject(new Error(`Error requesting URL ${options.url}: ${err.message}`))
-      }
       if (err.status !== 200) {
         return reject(new Error(`Invalid status code (!= 200) while retrieving ${options.url}: ${err.status}`))
       }
-
-      return reject(err)
+      if (err) {
+        return reject(new Error(`Error requesting URL ${options.url}: ${err.message}`))
+      }
     })
   })
 }
