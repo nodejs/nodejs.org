@@ -33,11 +33,13 @@ function sendRequest (opts) {
       headers: { 'User-Agent': 'nodejs.org release blog post script' }
     }, opts)
     fetch(options.url, options).then(resp => {
+      if (options.method === 'HEAD') {
+        return
+      }
       if (options.json) {
         resp.json().then(json => resolve(json))
-      } else {
-        resp.text().then(text => resolve(text))
       }
+      resp.text().then(text => resolve(text))
     }).catch(err => {
       if (err) {
         return reject(new Error(`Error requesting URL ${options.url}: ${err.message}`))
