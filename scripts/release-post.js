@@ -23,7 +23,7 @@
 const fs = require('fs')
 const path = require('path')
 const Handlebars = require('handlebars')
-const request = require('request')
+const fetch = require('isomorphic-fetch')
 
 const downloads = require('./helpers/downloads')
 
@@ -32,16 +32,19 @@ function sendRequest (opts) {
     const options = Object.assign({
       headers: { 'User-Agent': 'nodejs.org release blog post script' }
     }, opts)
-
-    request(options, (err, res, body) => {
+    fetch(options.url, options).then(resp => {
+      if (options.json) {
+        resp.json().then(json => resolve(json))
+      } else {
+        resp.text().then(text => resolve(text))
+      }
+    }).catch(err => {
       if (err) {
         return reject(new Error(`Error requesting URL ${options.url}: ${err.message}`))
       }
-      if (res.statusCode !== 200) {
-        return reject(new Error(`Invalid status code (!= 200) while retrieving ${options.url}: ${res.statusCode}`))
+      if (err.statusCode !== 200) {
+        return reject(new Error(`Invalid status code (!= 200) while retrieving ${options.url}: ${err.statusCode}`))
       }
-
-      resolve(body)
     })
   })
 }
