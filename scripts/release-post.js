@@ -28,26 +28,15 @@ const fetch = require('node-fetch')
 const downloads = require('./helpers/downloads')
 
 function sendRequest (opts) {
-  return new Promise((resolve, reject) => {
-    const options = Object.assign({
-      headers: { 'User-Agent': 'nodejs.org release blog post script' }
-    }, opts)
-    fetch(options.url, options).then(resp => {
-      if (resp.status !== 200) {
-        return reject(new Error(`Invalid status code (!= 200) while retrieving ${options.url}: ${resp.status}`))
-      }
-      if (options.json) {
-        resp.json().then(json => resolve(json))
-      }
-      resp.text().then(text => resolve(text))
-    }).catch(err => {
-      if (err.status !== 200) {
-        return reject(new Error(`Invalid status code (!= 200) while retrieving ${options.url}: ${err.status}`))
-      }
-      if (err) {
-        return reject(new Error(`Error requesting URL ${options.url}: ${err.message}`))
-      }
-    })
+  const options = Object.assign({
+    headers: { 'User-Agent': 'nodejs.org release blog post script' }
+  }, opts)
+
+  return fetch(options.url, options).then(resp => {
+    if (resp.status !== 200) {
+      throw new Error(`Invalid status code (!= 200) while retrieving ${options.url}: ${resp.status}`)
+    }
+    return options.json ? resp.json() : resp.text()
   })
 }
 
