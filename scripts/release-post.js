@@ -29,8 +29,8 @@ const downloads = require('./helpers/downloads')
 
 function sendRequest (opts) {
   const options = {
-    ...opts,
-    headers: { 'User-Agent': 'nodejs.org release blog post script' }
+    headers: { 'User-Agent': 'nodejs.org release blog post script' },
+    ...opts
   }
 
   return fetch(options.url, options).then(resp => {
