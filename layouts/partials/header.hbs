@@ -12,7 +12,7 @@
         </li>
 
         {{#each nav.main}}
-          <li {{#startswith ../path link}}class="active"{{/startswith}}{{#startswith link 'https://foundation.nodejs.org'}} class="nav-foundation"{{/startswith}}>
+          <li {{#startswith ../path link}}class="active"{{/startswith}}>
             {{#startswith link 'http'}}
               <a href="{{link}}">{{text}}</a>
             {{else}}
