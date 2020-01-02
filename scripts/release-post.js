@@ -28,9 +28,10 @@ const fetch = require('node-fetch')
 const downloads = require('./helpers/downloads')
 
 function sendRequest (opts) {
-  const options = Object.assign({
+  const options = {
+    ...opts,
     headers: { 'User-Agent': 'nodejs.org release blog post script' }
-  }, opts)
+  }
 
   return fetch(options.url, options).then(resp => {
     if (resp.status !== 200) {
