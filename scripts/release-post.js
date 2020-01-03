@@ -23,26 +23,21 @@
 const fs = require('fs')
 const path = require('path')
 const Handlebars = require('handlebars')
-const request = require('request')
+const fetch = require('node-fetch')
 
 const downloads = require('./helpers/downloads')
 
 function sendRequest (opts) {
-  return new Promise((resolve, reject) => {
-    const options = Object.assign({
-      headers: { 'User-Agent': 'nodejs.org release blog post script' }
-    }, opts)
+  const options = {
+    headers: { 'User-Agent': 'nodejs.org release blog post script' },
+    ...opts
+  }
 
-    request(options, (err, res, body) => {
-      if (err) {
-        return reject(new Error(`Error requesting URL ${options.url}: ${err.message}`))
-      }
-      if (res.statusCode !== 200) {
-        return reject(new Error(`Invalid status code (!= 200) while retrieving ${options.url}: ${res.statusCode}`))
-      }
-
-      resolve(body)
-    })
+  return fetch(options.url, options).then(resp => {
+    if (resp.status !== 200) {
+      throw new Error(`Invalid status code (!= 200) while retrieving ${options.url}: ${resp.status}`)
+    }
+    return options.json ? resp.json() : resp.text()
   })
 }
 
