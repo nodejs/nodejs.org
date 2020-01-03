@@ -87,19 +87,6 @@ header {
   }
 }
 
-// Special format for external "Foundation" link in main navigation
-.nav-foundation {
-  background-color: $active-green;
-
-  &::before {
-    content: none !important;
-  }
-
-  a {
-    padding: 0 16px !important;
-  }
-}
-
 @media screen and (min-width: 481px) {
   header {
     li {
@@ -131,10 +118,6 @@ header {
     a:active {
       padding: 0 8px;
     }
-  }
-
-  .nav-foundation {
-    margin-left: 8px;
   }
 }
 
