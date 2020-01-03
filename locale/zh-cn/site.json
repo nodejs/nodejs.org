@@ -1,7 +1,7 @@
 {
   "title": "Node.js",
   "editOnGithub":"在 GitHub 上编辑",
-  "author": "Node.js 基金会",
+  "author": "Node.js",
   "url": "https://nodejs.org/zh-cn/",
   "locale": "zh-cn",
   "language": "中文(简体)",
@@ -143,10 +143,6 @@
   "blog": {
     "link": "blog",
     "text": "新闻"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "基金会"
   },
   "releases": {
     "title": "发布历史",

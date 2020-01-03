@@ -1,6 +1,6 @@
 {
   "title": "Node.js",
-  "author": "Node.js بنیاد",
+  "author": "Node.js",
   "url": "https://nodejs.org/fa/",
   "locale": "fa",
   "language": "زبان فارسی",
@@ -138,10 +138,6 @@
   "blog": {
     "link": "blog",
     "text": "بلاگ"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "بنیاد"
   },
   "releases": {
     "title": "تاریخچه انتشارها",
