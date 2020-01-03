@@ -1,7 +1,7 @@
 {
   "title": "Node.js",
   "editOnGithub":"GitHub 上で編集",
-  "author": "Node.js 財団",
+  "author": "Node.js",
   "url": "https://nodejs.org/ja/",
   "locale": "ja",
   "language": "日本語",
@@ -124,10 +124,6 @@
   "blog": {
     "link": "blog",
     "text": "ニュース"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "財団"
   },
   "releases": {
     "title": "過去のリリース",
