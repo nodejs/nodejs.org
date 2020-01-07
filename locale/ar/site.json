@@ -1,6 +1,6 @@
 ﻿{
   "title": "Node.js",
-  "author": "Node.js Foundation",
+  "author": "Node.js",
   "url": "https://nodejs.org/ar/",
   "locale": "ar",
   "language": "العربية",
@@ -141,10 +141,6 @@
   "blog": {
     "link": "blog",
     "text": "المدونة"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "المؤسسة"
   },
   "releases": {
     "title": "أرشيف الاصدارات",

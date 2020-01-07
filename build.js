@@ -272,7 +272,7 @@ function getSource (callback) {
           lts: latestVersion.lts(versions)
         },
         banner: {
-          visible: true,
+          visible: false,
           text: 'New security releases now available for all release lines',
           link: '/en/blog/vulnerability/december-2019-security-releases/'
         }
