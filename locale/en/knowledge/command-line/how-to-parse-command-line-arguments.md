@@ -121,7 +121,7 @@ A summary of elements used in the program:
 * **argv**: This is the modified `process.argv` which we have configured with yargs.
 * **command()**: This method is used to add commands, their description and options which are specific to these commands only, like in the above code `lyr` is the command and `-y` is lyr specific option: `node myapp.js lyr -y 2016`
 * **option()**: This method is used to add global options(flags) which can be accessed by all commands or without any command.
-* **help()**: This method is used to display a help dialogue when `--help` option is encountered which contains description oof ll the `commands` and `options` available.
+* **help()**: This method is used to display a help dialogue when `--help` option is encountered which contains description of all the `commands` and `options` available.
 * **alias()**: This method provides an alias name to an option, like in the above code both `--help` and `-h` triggers the help dialogue.
 
 For more information on yargs and the many, many other things it can do for your command-line arguments, please visit [http://yargs.js.org/docs/](http://yargs.js.org/docs/)
