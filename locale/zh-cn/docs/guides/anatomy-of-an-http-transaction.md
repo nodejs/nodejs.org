@@ -118,7 +118,7 @@ http.createServer((request, response) => {
 
 如果我们运行这个示例代码，我们只能 *接收* 到请求但得不到 *回应*。实际上，如果你在浏览器内运行这个示例，你的请求只会超时，因为服务器那边根本没有返回给客户端任何东西。
 
-谈了那么就，我们都还没有说到 `response` 对象。它是一个 [`ServerResponse`][] 实例，而 ServerRespose 又是 [`WritableStream`][]。它包含了很多方法可以用以把数据返回给客户端。我们下面就将涉及到此议题。
+谈了那么久，我们都还没有说到 `response` 对象。它是一个 [`ServerResponse`][] 实例，而 ServerRespose 又是 [`WritableStream`][]。它包含了很多方法可以用以把数据返回给客户端。我们下面就将涉及到此议题。
 
 ## HTTP 状态码
 
