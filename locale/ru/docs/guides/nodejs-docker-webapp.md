@@ -58,7 +58,7 @@ const host = '0.0.0.0';
 // приложение
 const app = express();
 app.get('/', (req, res) => {
-  res.send('hello world\n');
+  res.send('Hello World');
 });
 
 app.listen(port, host);
