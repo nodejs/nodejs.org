@@ -1,6 +1,5 @@
 .contributor-card {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   min-height: 42px;
   width: 300px;
@@ -12,15 +11,13 @@
   > a {
     height: 40px;
     width: 40px;
-    margin-right: 1em;
+    flex: 0 0 auto;
   }
 
   p {
+    padding-left: 1em;
     margin: 0;
-  }
-
-  img {
-    max-width: none;
+    flex: 1 1 1px;
   }
 
   .spinner-border {
