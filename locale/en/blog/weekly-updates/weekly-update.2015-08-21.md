@@ -57,6 +57,6 @@ If you have spotted or written something about Node.js and io.js, do come over t
 * [NodeConf EU](http://nodeconf.eu/) tickets are on sale, September 6th - 9th at Waterford, Ireland
 * [Node.js Italian Conference](http://nodejsconf.it/) tickets are on sale, October 10th at Desenzano - Brescia, Italy
 * [JSConf CO](http://www.jsconf.co/), October 16th - 17th at Ruta N, Medellin
-* [Nodevember](http://nodevember.org/?utm_source=io.js+and+Node.js+News&utm_medium=article), November 14th - 15th at Nashville, Tennessee, US.
+* [Nodevember](http://nodevember.org/), November 14th - 15th at Nashville, Tennessee, US.
 
 Have an event about Node.js and io.js coming up? You can put your events here through the [Evangelism team repo](https://github.com/nodejs/evangelism) and announce it in the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.

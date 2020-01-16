@@ -92,7 +92,7 @@ pkgin -y install nodejs
 ## nvm
 Node Version Manager ― это bash-скрипт, используемый для управления несколькими выпущенными версиями Node.js. Он позволяет
 выполнять такие операции, как установка, удаление, переключение версий и т.д..
-Чтобы установить nvm, используйте этот [скрипт установки](https://github.com/creationix/nvm#install-script).
+Чтобы установить nvm, используйте этот [скрипт установки](https://github.com/nvm-sh/nvm#install--update-script).
 
 В системах Unix/OS X Node.js, созданный из исходного кода, можно установить с помощью
 [nvm](https://github.com/creationix/nvm) путем установки в папку по умолчанию nvm:

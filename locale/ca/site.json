@@ -1,6 +1,6 @@
 {
   "title": "Node.js",
-  "author": "Fundació Node.js",
+  "author": "Node.js",
   "url": "https://nodejs.org/ca/",
   "locale": "ca",
   "language": "Catalan",
@@ -137,10 +137,6 @@
   "blog": {
     "link": "blog",
     "text": "Notícies"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "Fundació"
   },
   "releases": {
     "title": "Històric de Versions",
