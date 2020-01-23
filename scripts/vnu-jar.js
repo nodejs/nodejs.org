@@ -20,9 +20,6 @@ childProcess.exec('java -version', (error, stdout, stderr) => {
     'Section lacks heading.*',
     // This seems to happen due to some Unicode characters
     'Text run is not in Unicode Normalization Form C.',
-    // These are real errors but hard to tackle.
-    // We should fix them eventually
-    'Table column.*',
     // These happen due to the commented out English HTML code some translations have...
     // They should be removed at some point
     'The document is not mappable to XML 1.0 due to two consecutive hyphens in a comment.'
