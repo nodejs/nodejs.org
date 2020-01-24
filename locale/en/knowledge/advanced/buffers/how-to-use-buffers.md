@@ -35,8 +35,9 @@ There are a few ways to create new buffers:
 
 ```js
 var buffer = new Buffer(8);
-// Notice: Prior to Node.js 8.0.0, the underlying memory for Buffer instances created in this way is not initialized. The contents of a newly created Buffer are unknown and may contain sensitive data. So this method is DEPRECATED now, DO NOT use it any more!
+// This will print out 8 bytes of zero:
 // <Buffer 00 00 00 00 00 00 00 00>
+// Notice: Prior to Node.js 8.0.0, the underlying memory for Buffer instances created in this way is not initialized. The contents of a newly created Buffer are unknown and may contain sensitive data. So this method is DEPRECATED now, DO NOT use it any more!
 ```
 
 ```js
