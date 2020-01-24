@@ -77,7 +77,7 @@ console.log(colors.bold.grey.black.blue(stringThree));
 
 **Note**: Unlike the `String.prototype` approach, the chained methods on the `colors` instance are executed left to right i.e., the method closest to the string is finally applied. In the last `console.log` you can think of your terminal saying to itself, "Make this grey. Now, make this black. Now, make this blue. No more coloring methods now? Blue it is, then."
 
-With the latest version of `colors.js` you can also define **[Custom Themes](https://www.npmjs.com/package/colors#custom-themes)** in `color.js`, which makes our codes more Robust and allows better Encapsulation of data. A nice use case of this maybe:
+With the latest version of `colors.js` you can also define **[Custom Themes](https://www.npmjs.com/package/colors#custom-themes)** in `color.js`, which makes our code more Robust and allows better Encapsulation of data. A nice use case of this maybe:
 
 ```js
 var colors = require('colors');
