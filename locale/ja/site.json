@@ -12,7 +12,7 @@
   "getHelpIssue": "ヘルプ",
   "by": "by",
   "all-downloads": "ダウンロード全種一覧",
-  "nightly": "最新不安定版",
+  "nightly": "最新の開発版",
   "unofficial-builds": "非公式のビルド版",
   "previous": "前",
   "next": "次",
@@ -73,7 +73,7 @@
       "text": "リリースファイルのための SHASUM 署名"
     },
     "install-on-linux": {
-      "text": "書庫化バイナリから Node.js をインストールする"
+      "text": "バイナリアーカイブから Node.js をインストールする"
     }
   },
   "docs": {
@@ -106,7 +106,7 @@
     "text": "参加する",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
-      "text": "コード及び学習"
+      "text": "コードおよび学習"
     },
     "contribute": {
       "link": "get-involved/contribute",
