@@ -14,6 +14,7 @@
 /locale/ko/ @nodejs/nodejs-ko
 /locale/pt-br/ @nodejs/nodejs-pt
 /locale/ru/ @nodejs/nodejs-ru
+/locale/tr/ @nodejs/nodejs-tr
 /locale/uk/ @nodejs/nodejs-uk
 /locale/zh-cn/ @nodejs/nodejs-cn
 /locale/zh-tw/ @nodejs/nodejs-tw
