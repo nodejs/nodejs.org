@@ -9,7 +9,7 @@ difficulty: 3
 layout: knowledge-post.hbs
 ---
 
-The function `fs.createReadStream()` allows you to open up a readable stream in a very simple manner. All you have to do is pass the path of the file to start streaming in. It turns out that the response (as well as the request) objects are streams. So we will use this fact to create a http server that streams the files to the client. Since the code is simple enough, it is pretty easy just to read through it and comment why each line is necessary.
+The function `fs.createReadStream()` allows you to open up a readable stream in a very simple manner. All you have to do is to pass the path of the file to start streaming in. It turns out that the response (as well as the request) objects are streams. So we will use this fact to create a http server that streams the files to the client. Since the code is simple enough, it is pretty easy just to read through it and comment why each line is necessary.
 
 ```javascript
 var http = require('http');
