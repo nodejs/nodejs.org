@@ -36,7 +36,7 @@ myREPL.on('exit', function (code) {
 
 There you have it - spawn the Node.js REPL as a child process, and pipe your stdin and stdout to its stdin and stdout. Make sure to listen for the child's 'exit' event, too, or else your program will just hang there when the REPL exits.
 
-Another use for `stream.pipe()` is file streams. In Node.js, `fs.createReadStream()` and `fs.createWriteStream()` are used to create a stream to an open file descriptor. Now let's look at how one might use `stream.pipe()` to write to a file. You'll probably recognize most of the codes:
+Another use for `stream.pipe()` is file streams. In Node.js, `fs.createReadStream()` and `fs.createWriteStream()` are used to create a stream to an open file descriptor. Now let's look at how one might use `stream.pipe()` to write to a file. You'll probably recognize most of the code:
 
 ```javascript
 #!/usr/bin/env node
