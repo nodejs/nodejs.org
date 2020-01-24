@@ -14,7 +14,7 @@ The simplest way is the "fire, forget, and buffer" method using `child_process.e
 
 *Note that the examples you will see in this article are all Linux-based. On Windows, you need to switch these commands with their Windows alternatives.*
 
-Let us take a look at an example:
+Let's take a look at an example:
 
 ```js
 const { exec } = require('child_process');
@@ -34,7 +34,7 @@ ls.on('exit', function (code) {
 });
 ```
 
-NODE PRO TIP: `error.stack` is a stack trace to the point that the [Error object](/en/knowledge/errors/what-is-the-error-object/) was created.
+*NODE PRO TIP*: `error.stack` is a stack trace to the point that the [Error object](/en/knowledge/errors/what-is-the-error-object/) was created.
 
 It should be noted that the `stderr` of a given process is not exclusively reserved for error messages. Many programs use it as a channel for secondary data instead. As such, when trying to work with a program that you have not previously spawned as a child process, it can be helpful to start out dumping both `stdout` and `stderr`, as shown above, to avoid any surprises.
 
