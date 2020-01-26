@@ -8,9 +8,9 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-Node provides a utility function, for debugging purposes, that returns a string representation of an object. `util.inspect()` can be a true lifesaver while working with properties of large, complex objects.
+Node.js provides a utility function, for debugging purposes, that returns a string representation of an object. `util.inspect()` can be a true lifesaver while working with properties of large, complex objects.
 
-Let's provide a basic example. `util.inspect()` can be used on any object - a good demonstration will be one of Node's built-in objects. Try this in the REPL (type `node` at your command line with no arguments):
+Let's provide a basic example. `util.inspect()` can be used on any object - a good demonstration will be one of the built-in objects of Node.js. Try this in the REPL (type `node` at your command line with no arguments):
 
 ```javascript
 var util = require('util');
