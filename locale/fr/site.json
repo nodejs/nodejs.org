@@ -1,6 +1,6 @@
 {
   "title": "Node.js",
-  "author": "Node.js Foundation",
+  "author": "Node.js",
   "url": "https://nodejs.org/fr/",
   "locale": "fr",
   "language": "Français",
@@ -121,10 +121,6 @@
   "blog": {
     "link": "blog",
     "text": "Actualités"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "Fondation"
   },
   "releases": {
     "title": "Historique des versions",

@@ -1,6 +1,6 @@
 {
   "title": "Node.js",
-  "author": "Node.js Foundation",
+  "author": "Node.js",
   "url": "https://nodejs.org/ru/",
   "locale": "ru",
   "language": "Русский",
@@ -142,10 +142,6 @@
   "blog": {
     "link": "blog",
     "text": "Новости"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "Организация"
   },
   "releases": {
     "title": "История релизов",

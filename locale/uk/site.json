@@ -1,6 +1,6 @@
 {
   "title": "Node.js",
-  "author": "Node.js Foundation",
+  "author": "Node.js",
   "url": "https://nodejs.org/uk/",
   "locale": "uk",
   "language": "Українська",
@@ -137,10 +137,6 @@
   "blog": {
     "link": "blog",
     "text": "Новини"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "Фундація"
   },
   "releases": {
     "title": "Історія релізів",

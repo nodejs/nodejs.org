@@ -27,16 +27,16 @@ Node.js의 시각적인 가이드라인은
 <!--
 <table class="logos">
   <tr>
-    <td class="bg-white"><a href="/static/images/logos/nodejs-new-pantone-black.ai"><img src="/static/images/logos/nodejs-new-pantone-black.png" alt="Node.js on light background"></a></td>
-    <td class="bg-node-gray"><a href="/static/images/logos/nodejs-new-pantone-white.ai"><img src="/static/images/logos/nodejs-new-pantone-white.png" alt="Node.js on dark background"></a></td>
+    <td class="bg-white"><a href="/static/images/logos/nodejs-new-pantone-black.ai"><img src="/static/images/logos/nodejs-new-pantone-black.svg" alt="Node.js on light background"></a></td>
+    <td class="bg-node-gray"><a href="/static/images/logos/nodejs-new-pantone-white.ai"><img src="/static/images/logos/nodejs-new-pantone-white.svg" alt="Node.js on dark background"></a></td>
   </tr>
   <tr>
     <td><a href="/static/images/logos/nodejs-new-pantone-black.ai">Node.js standard AI</a></td>
     <td><a href="/static/images/logos/nodejs-new-pantone-white.ai">Node.js reversed AI</a></td>
   </tr>
   <tr>
-    <td class="bg-white"><a href="/static/images/logos/nodejs-new-black.ai"><img src="/static/images/logos/nodejs-new-black.png" alt="Node.js on light background"></a></td>
-    <td class="bg-node-gray"><a href="/static/images/logos/nodejs-new-white.ai"><img src="/static/images/logos/nodejs-new-white.png" alt="Node.js on dark background"></a></td>
+    <td class="bg-white"><a href="/static/images/logos/nodejs-new-black.ai"><img src="/static/images/logos/nodejs-new-black.svg" alt="Node.js on light background"></a></td>
+    <td class="bg-node-gray"><a href="/static/images/logos/nodejs-new-white.ai"><img src="/static/images/logos/nodejs-new-white.svg" alt="Node.js on dark background"></a></td>
   </tr>
   <tr>
     <td><a href="/static/images/logos/nodejs-new-black.ai">Node.js standard with less color AI</a></td>
@@ -47,16 +47,16 @@ Node.js의 시각적인 가이드라인은
 
 <table class="logos">
   <tr>
-    <td class="bg-white"><a href="/static/images/logos/nodejs-new-pantone-black.ai"><img src="/static/images/logos/nodejs-new-pantone-black.png" alt="밝은 배경의 Node.js"></a></td>
-    <td class="bg-node-gray"><a href="/static/images/logos/nodejs-new-pantone-white.ai"><img src="/static/images/logos/nodejs-new-pantone-white.png" alt="어두운 배경의 Node.js"></a></td>
+    <td class="bg-white"><a href="/static/images/logos/nodejs-new-pantone-black.ai"><img src="/static/images/logos/nodejs-new-pantone-black.svg" alt="밝은 배경의 Node.js"></a></td>
+    <td class="bg-node-gray"><a href="/static/images/logos/nodejs-new-pantone-white.ai"><img src="/static/images/logos/nodejs-new-pantone-white.svg" alt="어두운 배경의 Node.js"></a></td>
   </tr>
   <tr>
     <td><a href="/static/images/logos/nodejs-new-pantone-black.ai">Node.js 표준 AI</a></td>
     <td><a href="/static/images/logos/nodejs-new-pantone-white.ai">Node.js 반전 AI</a></td>
   </tr>
   <tr>
-    <td class="bg-white"><a href="/static/images/logos/nodejs-new-black.ai"><img src="/static/images/logos/nodejs-new-black.png" alt="밝은 배경의 Node.js"></a></td>
-    <td class="bg-node-gray"><a href="/static/images/logos/nodejs-new-white.ai"><img src="/static/images/logos/nodejs-new-white.png" alt="어두운 배경의 Node.js"></a></td>
+    <td class="bg-white"><a href="/static/images/logos/nodejs-new-black.ai"><img src="/static/images/logos/nodejs-new-black.svg" alt="밝은 배경의 Node.js"></a></td>
+    <td class="bg-node-gray"><a href="/static/images/logos/nodejs-new-white.ai"><img src="/static/images/logos/nodejs-new-white.svg" alt="어두운 배경의 Node.js"></a></td>
   </tr>
   <tr>
     <td><a href="/static/images/logos/nodejs-new-black.ai">적은 색상을 가진 Node.js 표준 AI</a></td>

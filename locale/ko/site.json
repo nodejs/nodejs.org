@@ -1,6 +1,6 @@
 {
   "title": "Node.js",
-  "author": "Node.js 재단",
+  "author": "Node.js",
   "url": "https://nodejs.org/ko/",
   "locale": "ko",
   "language": "한국어",
@@ -142,10 +142,6 @@
   "blog": {
     "link": "blog",
     "text": "뉴스"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "재단"
   },
   "releases": {
     "title": "릴리스 이력",

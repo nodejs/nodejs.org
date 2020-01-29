@@ -98,12 +98,6 @@ function buildLocale (source, locale, opts) {
         reverse: true,
         refer: false
       },
-      blogAnnounce: {
-        pattern: 'blog/announcements/*.md',
-        sortBy: 'date',
-        reverse: true,
-        refer: false
-      },
       blogReleases: {
         pattern: 'blog/release/*.md',
         sortBy: 'date',
@@ -115,13 +109,6 @@ function buildLocale (source, locale, opts) {
         sortBy: 'date',
         reverse: true,
         refer: false
-      },
-      lastWeekly: {
-        pattern: 'blog/weekly-updates/*.md',
-        sortBy: 'date',
-        reverse: true,
-        refer: false,
-        limit: 1
       },
       knowledgeBase: {
         pattern: 'knowledge/**/*.md',
@@ -151,11 +138,6 @@ function buildLocale (source, locale, opts) {
       collection: 'blog',
       destination: 'feed/blog.xml',
       title: 'Node.js Blog'
-    }))
-    .use(feed({
-      collection: 'blogAnnounce',
-      destination: 'feed/announce.xml',
-      title: 'Node.js Announcements'
     }))
     .use(feed({
       collection: 'blogReleases',
@@ -291,8 +273,8 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'New security releases now available for all release lines',
-          link: '/en/blog/vulnerability/december-2019-security-releases/'
+          text: 'New security releases to be made available Feb 4, 2020',
+          link: '/en/blog/vulnerability/february-2020-security-releases/'
         }
       }
     }
