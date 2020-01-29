@@ -9,7 +9,7 @@ difficulty: 3
 layout: knowledge-post.hbs
 ---
 
-The function `fs.createWriteStream()` creates a writable stream in a very simple manner. After a call to `fs.createWriteStream` with the filepath, you have a writeable stream to work with. It turns out that the response (as well as the request) objects are streams. So we will stream the `POST` data to the file `output`. Since the code is simple enough, it is pretty easy just to read through it and comment why each line is necessary.
+The function `fs.createWriteStream()` creates a writable stream in a very simple manner. After a call to `fs.createWriteStream()` with the filepath, you have a writeable stream to work with. It turns out that the response (as well as the request) objects are streams. So we will stream the `POST` data to the file `output`. Since the code is simple enough, it is pretty easy just to read through it and comment why each line is necessary.
 
 ```javascript
 var http = require('http');
