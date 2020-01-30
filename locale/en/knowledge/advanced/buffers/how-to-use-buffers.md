@@ -61,13 +61,13 @@ This initializes the buffer to a binary encoding of the first string as specifie
 
 Given that there is already a buffer created:
 
-```console
+```
 > var buffer = Buffer.alloc(16)
 ```
 
 we can start writing strings to it:
 
-```console
+```
 > buffer.write("Hello", "utf-8")
 5
 ```
@@ -76,7 +76,7 @@ The first argument to `buffer.write` is the string to write to the buffer, and t
 
 `buffer.write` returned 5. This means that we wrote to five bytes of the buffer. The fact that the string "Hello" is also 5 characters long is coincidental, since each character *just happened* to be 8 bits apiece. This is useful if you want to complete the message:
 
-```console
+```
 > buffer.write(" world!", 5, "utf-8")
 7
 ```
@@ -89,14 +89,14 @@ When `buffer.write` has 3 arguments, the second argument indicates an offset, or
 
 Probably the most common way to read buffers is to use the `toString` method, since many buffers contain text:
 
-```console
+```
 > buffer.toString('utf-8')
 'Hello world!\u0000�k\t'
 ```
 
 Again, the first argument is the encoding. In this case, it can be seen that not the entire buffer was used! Luckily, because we know how many bytes we've written to the buffer, we can simply add more arguments to "stringify" the slice that's actually interesting:
 
-```console
+```
 > buffer.toString("utf-8", 0, 12)
 'Hello world!'
 ```
@@ -105,7 +105,7 @@ Again, the first argument is the encoding. In this case, it can be seen that not
 
 You can also set individual bytes by using an array-like syntax:
 
-```console
+```
 > buffer[12] = buffer[11];
 33
 > buffer[13] = "1".charCodeAt();
@@ -130,7 +130,7 @@ This method checks to see if `object` is a buffer, similar to `Array.isArray`.
 
 With this function, you can check the number of bytes required to encode a string with a given encoding (which defaults to utf-8). This length is *not* the same as string length, since many characters require more bytes to encode. For example:
 
-```console
+```
 > var snowman = "☃";
 > snowman.length
 1
@@ -144,7 +144,7 @@ The unicode snowman is only one character, but takes 3 entire bytes to encode!
 
 This is the length of your buffer, and represents how much memory is allocated. It is not the same as the size of the buffer's contents, since a buffer may be half-filled. For example:
 
-```console
+```
 > var buffer = Buffer.alloc(16)
 > buffer.write(snowman)
 3
@@ -158,7 +158,7 @@ In this example, the contents written to the buffer only consist of three groups
 
 `buffer.copy` allows one to copy the contents of one buffer onto another. The first argument is the target buffer on which to copy the contents of `buffer`, and the rest of the arguments allow for copying only a subsection of the source buffer to somewhere in the middle of the target buffer. For example:
 
-```console
+```
 > var frosty = Buffer.alloc(24)
 > var snowman = Buffer.from("☃", "utf-8")
 > frosty.write("Happy birthday! ", "utf-8")
@@ -175,7 +175,7 @@ In this example, I copied the "snowman" buffer, which contains a 3 byte long cha
 
 This method's API is generally the same as that of `Array.prototype.slice`, but with one very import difference: The slice is **not** a new buffer and merely references a subset of the memory space. *Modifying the slice will also modify the original buffer*! For example:
 
-```console
+```
 > var puddle = frosty.slice(16, 19)
 > puddle.toString()
 '☃'

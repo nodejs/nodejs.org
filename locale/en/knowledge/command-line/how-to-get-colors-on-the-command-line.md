@@ -11,7 +11,7 @@ When working on the command line, it can be both fun and extremely useful to col
 
 First, install it to the directory you'd like to work in.
 
-```console
+```bash
 npm install colors
 ```
 
