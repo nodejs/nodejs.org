@@ -12,7 +12,7 @@ Streams are another basic construct in Node.js that encourages asynchronous codi
 
 In other words, Streams use events to deal with data as it happens, rather than only with a callback at the end. Readable streams emit the event `data` for each chunk of data that comes in, and an `end` event, which is emitted when there is no more data. Writeable streams can be written to with the `write()` function, and closed with the `end()` function. All types of streams emit `error` events when errors arise.
 
-As a quick example, we can write a simple version of `cp` (the Unix utility that copies files). We could do that by reading the whole file with standard filesystem calls and then writing it out to a file. Unfortunately, that requires that the whole file be read in before it can be written. In the case of 1-2 giga files, you could run into out of memory operations. The biggest advantage that streams give you over their non-stream versions are that you can start process the info before you have all the information. In this case, writing out the file doesn't get sped up, but if we were streaming over the internet or doing cpu processing on it then there could be measurable performance improvements.
+As a quick example, we can write a simple version of `cp` (the Unix utility that copies files). We could do that by reading the whole file with standard filesystem calls and then writing it out to a file. Unfortunately, that requires that the whole file be read in before it can be written. In this case, writing the file isn't faster, but if we were streaming over a network or doing CPU processing on the data, then there could be measurable performance improvements.
 
 Run this script with arguments like `node cp.js src.txt dest.txt`. This would mean, in the code below, that `process.argv[2]` is `src.txt` and `process.argv[3]` is `desc.txt`.
 
@@ -41,4 +41,6 @@ writeStream.on('error', function (err) {
 });
 ```
 
-This sets up a readable stream from the source file and a writable stream to the destination file. Then whenever the readable stream gets data, it gets written to the writeable stream. Then finally it closes the writable stream when the readable stream is finished. NOTE: it would have been better to use [pipe](/en/knowledge/advanced/streams/how-to-use-stream-pipe/) like `readStream.pipe(writeStream);`, however, to show how streams work, we have done things the long way.
+This sets up a readable stream from the source file and a writable stream to the destination file. Then whenever the readable stream gets data, it gets written to the writeable stream. Then finally it closes the writable stream when the readable stream is finished.
+
+It would have been better to use [pipe](/en/knowledge/advanced/streams/how-to-use-stream-pipe/) like `readStream.pipe(writeStream);`, however, to show how streams work, we have done things the long way.
