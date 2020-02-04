@@ -70,7 +70,7 @@
     "delay-cli": "^1.1.0",
     "faucet": "0.0.1",
     "linkinator": "^1.8.2",
-    "lockfile-lint": "^3.0.9",
+    "lockfile-lint": "^3.0.10",
     "nock": "^11.7.2",
     "node-fetch": "^2.6.0",
     "proxyquire": "^2.1.3",
