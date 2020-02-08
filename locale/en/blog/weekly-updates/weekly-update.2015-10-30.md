@@ -17,7 +17,7 @@ This week we have one release: [Node.js v5.0.0 (Current)](https://nodejs.org/en/
 
 ### Notable changes : v5.0.0 (Current)
 
-* **v8**: _(Breaking)_ Upgraded to 4.6.85.25 from 4.5.103.35  (Ali Ijaz Sheikh) [#3351](https://github.com/nodejs/node/pull/3351).
+* **v8**: _(Breaking)_ Upgraded to 4.6.85.25 from 4.5.103.35 (Ali Ijaz Sheikh) [#3351](https://github.com/nodejs/node/pull/3351).
   * Implements the spread operator, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator for further information.
 * **npm**: Upgraded to version 3.3.6 from 2.14.7, see https://github.com/npm/npm/releases/tag/v3.3.6 for more details. This is a major version bump for npm and it has seen a significant amount of change. Please see the original [npm v3.0.0 release notes](https://github.com/npm/npm/blob/master/CHANGELOG.md#v300-2015-06-25) for a list of major changes (Rebecca Turner) [#3310](https://github.com/nodejs/node/pull/3310).
 
@@ -42,7 +42,7 @@ If you have spotted or written something about Node.js, do come over to our [Eva
 * [Node Knockout](http://www.nodeknockout.com/), November 7 - 8th, Worldwide
 * [Node Girls London](https://nodegirls.typeform.com/to/atW4HR), November 7th at London, UK
 * [Playnode](http://playnode.io/), November 12nd at Seoul, South Korea
-* [Nodevember](http://nodevember.org/?utm_source=io.js+and+Node.js+News&utm_medium=article), November 14th - 15th at Nashville, Tennessee, US.
+* [Nodevember](http://nodevember.org/), November 14th - 15th at Nashville, Tennessee, US.
 * [NodeConf Barcelona](https://ti.to/barcelonajs/nodeconf-barcelona-2015), November 21st at Barcelona, Spain
 * [CampJS VI](http://vi.campjs.com), November 20 – 23th at Queensland, Australia
 * [Node.js Interactive](http://events.linuxfoundation.org/events/node-interactive), December 8-9th at Portland, US.

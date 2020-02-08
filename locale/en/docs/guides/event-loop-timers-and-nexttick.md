@@ -174,7 +174,7 @@ either the queue has been exhausted, or the system-dependent hard limit
 is reached.
 
 * _If the **poll** queue **is empty**_, one of two more things will
-happen:
+  happen:
   * If scripts have been scheduled by `setImmediate()`, the event loop
   will end the **poll** phase and continue to the **check** phase to
   execute those scheduled scripts.
@@ -412,8 +412,7 @@ added, which means every day we wait, more potential breakages occur.
 While they are confusing, the names themselves won't change.
 
 *We recommend developers use `setImmediate()` in all cases because it's
-easier to reason about (and it leads to code that's compatible with a
-wider variety of environments, like browser JS.)*
+easier to reason about.*
 
 ## Why use `process.nextTick()`?
 

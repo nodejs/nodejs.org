@@ -13,18 +13,18 @@ layout: docs.hbs
 
 检查器的客户端必须知晓并制定连接的域名地址、端口号以及 UUID。一个完整的 URL 看上去如：`ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`。
 
-如果收到了 `SIGUSR1` 信号 (`SIGUSR1` 在 Windows 下不可用)，Node.js 同样会开始侦听调试信息；在 Node.js 7 以及先前的版本中，这将激活遗留版本的调试 API（legacy Debugger API）；在 Node.js 8 和后续版本中，将激活检查器 API（Inspector API）。
+如果收到了 `SIGUSR1` 信号 (`SIGUSR1` 在 Windows 下不可用)，Node.js 同样会开始侦听调试信息；在 Node.js 7 以及先前的版本中，这将激活旧版本的调试 API（legacy Debugger API）；在 Node.js 8 和后续版本中，将激活检查器 API（Inspector API）。
 
 ---
-## 安全含义
+## 安全隐患
 
-由于调试器对 Node.js 执行环境具有完全访问权限，所以能够连接到该端口的恶意角色可以执行任意操作。代码代表节点进程。理解将调试器端口暴露在公共和专用网络上所受影响的安全性是很重要的。
+由于调试器对 Node.js 执行环境具有完全访问权限，能够连接到此端口的恶意行为者能够代替 Node 进程执行任意代码。理解将调试器端口暴露在公共和专用网络上所受影响的安全性是很重要的。
 
 ### 把调试端口暴漏在公共网络是不安全的
 
 如果调试器与一个公共的 IP 地址绑定，或者与 0.0.0.0 绑定，任何可以访问你 IP 地址的客户端都可以在不受限的情况下连接调试器，然后随意运行代码。
 
-默认情况下，`node --inspect` 绑定 127.0.0.1。你可以显式提供一个 IP 地址或是 0.0.0.0 的地址等。如果你有意想要外部连接可以访问此调试器，这么做恐怕会把你置于潜在的巨大的威胁中。我们建议你有合适的防火墙以及访问控制权限，以提供一个安全的暴漏。
+默认情况下，`node --inspect` 绑定 127.0.0.1。如果打算允许外部连接到调试器，则明确需要提供公共 IP 地址或 0.0.0.0 等。这样做可能会使您面临潜在的重大安全威胁。我们建议您在适当的位置确保适当的防火墙和访问控制，以防止安全隐患。
 
 查看 '[启用远程调试情形](#enabling-remote-debugging-scenarios)' 章节部分，以了解如何安全地允许远程调试器连接调试。
 
@@ -44,7 +44,7 @@ layout: docs.hbs
 
 ### [Node 监视器](https://github.com/nodejs/node-inspect)
 
-* 由 Node.js 基础库，使用 [检查器协议][] 支持的 CLI 调试器。
+* 由 Node.js 基础库，使用[检查器协议][]支持的 CLI 调试器。
 * 和 Node 绑定在一起的版本，并且可以使用 `node inspect myscript.js`。
 * 最新的版本同样可以单独通过（例如 `npm install -g node-inspect`）方式安装，并使用 `node-inspect myscript.js`。
 
@@ -78,6 +78,7 @@ layout: docs.hbs
 
 * 从某个后缀为 js 文件，选择 “以……方式调试（Debug As...） > Node 程序 （Node program）”，或者
 * 创建一个调试配置，它把调试器挂接到一个正在运行的 Node 程序上（并且该调试已经使用 `--inspect` 参数）。
+
 ---
 
 ## 命令行选项
@@ -177,13 +178,11 @@ V8 调试协议再也不维护或是归档了。
 
 ### [内置调试器](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
 
-在 Node.js 内置命令行调试器中 用 `node debug script_name.js` 启动你的脚本。你的脚本就在 Node 另外一个进程中随着 `--debug-brk` 启动了起来，并且初始化的 Node 进程运行 `_debugger.js` 脚本连接上你的目标。
+在 Node.js 内置命令行调试器中用 `node debug script_name.js` 启动你的脚本。你的脚本就在 Node 另外一个进程中随着 `--debug-brk` 启动了起来，并且初始化的 Node 进程运行 `_debugger.js` 脚本连接上你的目标。
 
 ### [node 监视器](https://github.com/node-inspector/node-inspector)
 
 用 Chrome 开发工具，通过 Node.js 的中间进程把 Chromium 中的检查器协议转换成 V8 调试器协议进行程序调试。
-
-<!-- refs -->
 
 [检查器协议]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/
 [UUID]: https://tools.ietf.org/html/rfc4122

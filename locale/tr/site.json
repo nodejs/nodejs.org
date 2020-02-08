@@ -1,0 +1,155 @@
+{
+  "title": "Node.js",
+  "author": "Node.js",
+  "url": "https://nodejs.org/tr/",
+  "locale": "tr",
+  "language": "Türkçe",
+  "languageEnglishVersion": "Turkish",
+  "scrollToTop": "Yukarı",
+  "reportNodeIssue": "Node.js hatası bildir",
+  "reportWebsiteIssue": "Website hatası bildir",
+  "getHelpIssue": "Yardım",
+  "by": "tarafından",
+  "all-downloads": "Tüm indirme seçenekleri",
+  "nightly": "Gecelik Sürümler",
+  "chakracore-nightly": "Node-ChakraCore Gecelik sürümler",
+  "unofficial-builds": "Resmi Olmayan Sürümler",
+  "previous": "Önceki",
+  "next": "Sonraki",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Node.js Blog"
+    },
+    {
+      "link": "feed/releases.xml",
+      "text": "Node.js Blog: Sürümler"
+    },
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "Node.js Blog: Güvenlik açığı raporları"
+    }
+  ],
+  "home": {
+    "text": "Anasayfa"
+  },
+  "about": {
+    "link": "about",
+    "text": "Hakkında",
+    "governance": {
+      "link": "about/governance",
+      "text": "Yönetim"
+    },
+    "community": {
+      "link": "about/community",
+      "text": "Topluluk"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "Çalışma Grupları"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "Sürümler"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "Kaynaklar"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "Marka"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "Gizlilik Politikası"
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "İndir",
+    "releases": {
+      "link": "download/releases",
+      "text": "Önceki Sürümler"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "Node.js'i paket yöneticisi ile kurmak"
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "Sürüm dosyaları için İmzalı SHASUMS",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "Doğrulama nasıl yapılır"
+    },
+    "install-on-linux": {
+      "text": "Linux'ta ikili(binary) arşiv yoluyla Node.js kurulumu"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "Belgeler",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 ve ötesi"
+    },
+    "api-lts": {
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "Rehberler"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "Bağımlılıklar"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "Katıl",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "Kodla + Öğren"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "İşbirliği Zirvesi"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "Katkıda bulunmak"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "text": "Davranış Kuralları"
+    },
+    "node-meetups": {
+      "link": "get-involved/node-meetups",
+      "text": "Node.js Toplantıları"
+    }
+  },
+  "security": {
+    "link": "security",
+    "text": "Güvenlik"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "Haberler"
+  },
+  "releases": {
+    "title": "Release History",
+    "downloads": "İndirmeler"
+  },
+  "links": {
+    "pages": {
+      "changelog": "Değişiklikler"
+    }
+  }
+}

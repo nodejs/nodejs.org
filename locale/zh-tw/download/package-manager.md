@@ -1,11 +1,11 @@
 ---
 layout: page.hbs
-title: 透過套件管理安裝 Node.js
+title: 使用套件管理器安裝 Node.js
 ---
 
-# 透過套件管理安裝 Node.js
+# 使用套件管理器安裝 Node.js
 
-***請注意：*** 下列的套件維護及支援 **並非由** Node.js 核心團隊提供，任何套件使用上的問題，應直接聯繫各套件的維護者，若發現問題出於 Node.js 本身，則應由套件維護者聯繫上層。
+***請注意：*** 下列的套件維護及支援 **並非由** Node.js 核心團隊提供，任何套件使用上的問題，應直接聯絡各套件的維護者，若發現問題出於 Node.js 本身，則應由套件維護者聯絡上游。
 
 ---
 
@@ -29,7 +29,7 @@ title: 透過套件管理安裝 Node.js
 
 ## Android
 
-Android 的 Node.js 支援仍是試驗版，因此 Node.js 開發者尚未提供預先編譯的二進制檔。
+Android 的 Node.js 支援仍是試驗版，因此 Node.js 開發者尚未提供預先編譯的二進位檔。
 
 但社群提供了第三方的解決方式，舉例來說，[Termux](https://termux.com/) 社群提供了終端機模擬器及 Android 的 Linux 環境，也有自己的套件管理器及許多預先編譯的[程式清單](https://github.com/termux/termux-packages)。
 
@@ -52,13 +52,13 @@ pacman -S nodejs npm
 
 ## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages-->Debian 及 Ubuntu 系列發行版，企業版 Linux/Fedora 和 Snap packages
 
-[官方 Node.js 二進制發行版](https://github.com/nodesource/distributions/blob/master/README.md) 透過 NodeSource 提供.
+[官方 Node.js 二進位發行版](https://github.com/nodesource/distributions/blob/master/README.md) 透過 NodeSource 提供.
 
 ## FreeBSD
 
 近期的版本已可透過 [www/node](https://www.freshports.org/www/node) port 取得 Node.js。
 
-透過 [pkg](https://www.freebsd.org/cgi/man.cgi?pkg) 安裝二進制套件：
+透過 [pkg](https://www.freebsd.org/cgi/man.cgi?pkg) 安裝二進位套件：
 
 ```bash
 pkg install node
@@ -98,15 +98,15 @@ Node.js 可透過 pkgsrc 樹取得：
 cd /usr/pkgsrc/lang/nodejs && make install
 ```
 
-或使用 pkgin 安裝二進制套件（若適用於你的平台的話）：
+或使用 pkgin 安裝二進位套件（若適用於你的平台的話）：
 
 ```bash
 pkgin -y install nodejs
 ```
 
 ## nvm
-Node 版本管理器（Node Version Manager, nvm）是款用來管理 Node.js 多重版本的 bash 腳本，它可讓你執行安裝、移除及切換版本等操作。
-若要安裝 NVM 可以使用此[安裝腳本](https://github.com/creationix/nvm#install-script)。
+Node 版本管理器（Node Version Manager, nvm）是款用來管理 Node.js 多重版本的 bash 指令稿，它可讓你執行安裝、移除及切換版本等操作。
+若要安裝 NVM 可以使用此[安裝指令稿](https://github.com/nvm-sh/nvm#install--update-script)。
 
 在 Unix / OS X 系統上從源碼編譯的 Node.js 可以透過 [nvm](https://github.com/creationix/nvm) 安裝至其指定位置：
 
@@ -134,7 +134,7 @@ Node.js 可於 ports 系統中取得。
 /usr/ports/lang/node
 ```
 
- 在 OpenBSD 上使用 [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1)：
+在 OpenBSD 上使用 [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1)：
 
 ```bash
 pkg_add node
@@ -184,7 +184,7 @@ port install nodejs7
 
 使用 **[pkgsrc](https://pkgsrc.joyent.com/install-on-osx/)**：
 
-安裝二進制套件：
+安裝二進位套件：
 
 ```bash
 pkgin -y install nodejs
@@ -198,7 +198,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## <!--smartos-and-illumos-->SmartOS 及 illumos
 
-SmartOS 映像檔已經預載了 pkgsrc，其他的 illumos 發行版則需要先**[安裝pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**，接著你就可以依照平常的方式安裝二進制套件：
+SmartOS 映像檔已經預載了 pkgsrc，其他的 illumos 發行版則需要先**[安裝pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**，接著你就可以依照平常的方式安裝二進位套件：
 
 ```bash
 pkgin -y install nodejs

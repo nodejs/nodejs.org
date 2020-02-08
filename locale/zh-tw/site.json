@@ -1,21 +1,21 @@
 {
   "title": "Node.js",
-  "editOnGithub":"在 GitHub 上編輯",
-  "author": "Node.js 基金會",
+  "editOnGithub": "在 GitHub 上編輯",
+  "author": "Node.js",
   "url": "https://nodejs.org/zh-tw/",
   "locale": "zh-tw",
-  "language": "中文(繁體)",
-  "languageEnglishVersion": "Chinese Traditional",
+  "language": "中文 (繁體)",
+  "languageEnglishVersion": "Traditional Chinese",
   "scrollToTop": "回到頁首",
-  "reportNodeIssue": "回報 Node.js 問題 ",
+  "reportNodeIssue": "回報 Node.js 問題",
   "reportWebsiteIssue": "回報 Node.js 網站問題",
   "getHelpIssue": "取得協助",
   "by": "by",
   "all-downloads": "所有下載選項",
-  "nightly": "每日構建",
-  "chakracore-nightly": "Node-ChakraCore 每日構建",
-  "unofficial-builds": "非官方構建版",
-  "previous": "前一個",
+  "nightly": "每日建置版本",
+  "chakracore-nightly": "Node-ChakraCore 每日建置版本",
+  "unofficial-builds": "非官方建置版本",
+  "previous": "上一個",
   "next": "下一個",
   "feeds": [
     {
@@ -24,11 +24,11 @@
     },
     {
       "link": "feed/releases.xml",
-      "text": "Node.js 部落格: 發佈"
+      "text": "Node.js 部落格：發佈版"
     },
     {
       "link": "feed/vulnerability.xml",
-      "text": "Node.js 部落格: 安全報告"
+      "text": "Node.js 部落格：安全報告"
     }
   ],
   "home": {
@@ -43,11 +43,11 @@
     },
     "workinggroups": {
       "link": "about/working-groups",
-      "text": "工作組"
+      "text": "工作群組"
     },
     "releases": {
       "link": "about/releases",
-      "text": "發佈"
+      "text": "發佈版"
     },
     "resources": {
       "link": "about/resources",
@@ -67,7 +67,7 @@
     "text": "下載",
     "releases": {
       "link": "download/releases",
-      "text": "以往的版本"
+      "text": "舊版"
     },
     "package-manager": {
       "link": "download/package-manager",
@@ -75,10 +75,10 @@
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "發佈文件的 SHASUM 簽名"
+      "text": "發佈檔案的 SHASUM 簽名"
     },
     "install-on-linux": {
-      "text": "在 Linux 上，通過二進位檔案安裝 Node.js"
+      "text": "在 Linux 上使用二進位檔案安裝 Node.js"
     }
   },
   "docs": {
@@ -99,7 +99,7 @@
     },
     "guides": {
       "link": "docs/guides",
-      "text": "教學"
+      "text": "技術指南"
     }
   },
   "getinvolved": {
@@ -134,12 +134,8 @@
     "link": "blog",
     "text": "部落格"
   },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "基金會"
-  },
   "releases": {
-    "title": "發佈歷史",
+    "title": "發佈版歷史",
     "downloads": "下載"
   },
   "links": {

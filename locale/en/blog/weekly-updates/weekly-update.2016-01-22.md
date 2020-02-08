@@ -14,6 +14,7 @@ Node v4.2.6 (LTS), Node v5.5.0 (Current), Node v4.2.5 (LTS) are released
 ### Nominations for the 2016 election
 
 [Nominations](https://github.com/nodejs/membership/issues/12) closed last Friday for the individual member representative to the Node.js Foundation Board. 12 members put their hands up with nominations:
+
 * **[@guyellis](https://github.com/guyellis)**: [nomination post](http://www.guyellisrocks.com/2015/11/node-foundation-membership-election.html), [Q/A thread](https://github.com/nodejs/membership/issues/19)
 * **[@sup](https://github.com/sup)**: [nomination post](http://jona.io/blog/board-application/), [Q/A thread](https://github.com/nodejs/membership/issues/20)
 * **[@ashleygwilliams](https://github.com/ashleygwilliams)**: [nomination post](https://medium.com/@ag_dubs/hi-i-m-running-for-the-node-foundation-board-of-directors-c87d762cb78b), [Q/A thread](https://github.com/nodejs/membership/issues/21)

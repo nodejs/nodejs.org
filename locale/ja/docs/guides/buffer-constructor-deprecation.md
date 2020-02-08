@@ -25,7 +25,7 @@ Just run `grep -nrE '[^a-zA-Z](Slow)?Buffer\s*\(' --exclude-dir node_modules`.
 It will find all the potentially unsafe places in your own code (with some considerably unlikely
 exceptions).
 
- -->
+-->
 ### `grep` を使って問題のあるコードを見つける
 
 `grep -nrE '[^a-zA-Z](Slow)?Buffer\s*\(' --exclude-dir node_modules` を実行するだけです。
@@ -68,7 +68,7 @@ There is a drawback, though, that it doesn't always
 overridden e.g. with a polyfill, so recommended is a combination of this and some other method
 described above.
 
- -->
+-->
 ### リンターを使用して問題のあるコードを見つける
 
 ESLint の規則 [no-buffer-constructor](https://eslint.org/docs/rules/no-buffer-constructor)
@@ -224,7 +224,7 @@ Otherwise (Node.js ≥ 0.12.x):
 const buf = Buffer.alloc ? Buffer.alloc(number) : new Buffer(number).fill(0);
 ```
 
- -->
+-->
 ## <!--variant-3-->Variant 3 — セーフガード付きの手動検出
 
 これは、少数の場所 (たとえば1か所) だけで `Buffer` インスタンスを作成する場合、
@@ -265,7 +265,7 @@ _`Buffer` コンストラクタの廃止が原因ではない_ ことに注意�
 この型チェックに欠けているエコシステムパッケージは多くのセキュリティ問題を引き起こしました。
 悪意のあるユーザー入力が `Buffer(arg)` になって DoS からプロセスメモリから攻撃者への機密情報の漏洩に至る問題を引き起こすことです。
 
-`notNumber` 引数がハードコードされている場合 (例: リテラル  `"abc"` または `[0,1,2]`)、
+`notNumber` 引数がハードコードされている場合 (例: リテラル `"abc"` または `[0,1,2]`)、
 `typeof` チェックは省略できます。
 
 また、TypeScript を使用してもこの問題は解決されないことに注意してください。
@@ -312,10 +312,11 @@ leaking to the remote attacker.
 _Note that the same applies to `new Buffer()` usage without zero-filling, depending on the Node.js
 version (and lacking type checks also adds DoS to the list of potential problems)._
 
- -->
+-->
 ## `Buffer.allocUnsafe()` について
 
 `Buffer.allocUnsafe()` を使用するときは特に注意してください:
+
 * 正当な理由がない場合は使用しないでください
   * 例えば、おそらく小さなバッファのパフォーマンスの違いを見たことがない場合でしょう。
     実際、それらは `Buffer.alloc()` でもっと速いかもしれません

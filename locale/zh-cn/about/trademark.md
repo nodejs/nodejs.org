@@ -9,6 +9,6 @@ Node.js 的商标、服务性标志，以及图像商标等都是质量、性能
 
 与此同时，我们期望社区成员们可以随意轻松地传播 Node.js 的任何消息，并且参与 Node.js 的社区活动。请始终牢记关键点：我们已试图把政策制定得尽可能地弹性化、容易理解并且合法化。
 
-请阅读相关 [完整版政策](/static/documents/trademark-policy.pdf)。如果你有任何疑问，请不要犹豫并 [给我们来信](mailto:trademark@nodejs.org)。
+请阅读相关[完整版政策](/static/documents/trademark-policy.pdf)。如果你有任何疑问，请不要犹豫并[给我们来信](mailto:trademark@nodejs.org)。
 
-对于 Node.js 标志的可视化展示指南也在 [可视化指南](/static/documents/foundation-visual-guidelines.pdf) 中有所描述。
+对于 Node.js 标志的可视化展示指南也在[可视化指南](/static/documents/foundation-visual-guidelines.pdf)中有所描述。

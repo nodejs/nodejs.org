@@ -4,7 +4,7 @@ title: Sobre nosaltres
 trademark: Trademark
 ---
 
-# Sobre Node.js&reg;
+# Sobre Node.js®
 
 Nascut com a un entorn d'execució de JavaScript orientat a esdeveniments asíncrons, Node.js està
 dissenyat per a crear aplicacions en xarxa de manera escalable. En la següent aplicació d'exemple
@@ -20,7 +20,7 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hola Món\n');
+  res.end('Hola Món');
 });
 
 server.listen(port, hostname, () => {

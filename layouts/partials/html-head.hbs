@@ -4,10 +4,14 @@
 
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://api.github.com">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=fallback">
+  <link rel="stylesheet" href="/static/css/styles.css">
 
   <meta name="author" content="{{ site.author }}">
   <meta name="robots" content="{{#if robots}}{{ robots }}{{else}}index, follow{{/if}}">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.">
 
   {{> favicons }}
@@ -30,6 +34,4 @@
   {{#each site.feeds}}
   <link rel="alternate" href="/{{ ../site.locale }}/{{ link }}" title="{{ text }}" type="application/rss+xml">
   {{/each}}
-  <link rel="stylesheet" href="/layouts/css/styles.css" media="all">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600">
 </head>

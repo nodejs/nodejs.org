@@ -1,0 +1,12 @@
+.logos {
+
+  img {
+    // Fixes logo size on Firefox, see:
+    // https://github.com/nodejs/nodejs.org/issues/558
+    width: 100%;
+  }
+
+  td {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,50 @@
+.openjsfoundation-footer {
+  padding: 1em 20px;
+  font-size: 14px;
+  color: $white;
+  background: $node-gray;
+  direction: ltr;
+
+  p + p {
+    margin-top: 0;
+    margin-bottom: .25em;
+  }
+}
+
+.issue-link-container {
+  display: flex;
+  align-items: center;
+}
+
+.issue-link {
+  text-align: right;
+  min-width: 330px;
+  margin-left: auto;
+}
+
+.thanking-contributor {
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  padding: .5em 1em;
+  margin-top: 1em;
+  border: 1px solid $white;
+  border-radius: 3px;
+
+  img {
+    border-radius: 50%;
+    margin-right: 1em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .issue-link-container {
+    flex-wrap: wrap;
+  }
+
+  .issue-link {
+    text-align: start;
+    margin: 1em 0 0;
+    min-width: 0;
+  }
+}

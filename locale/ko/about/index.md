@@ -4,7 +4,7 @@ title: About
 trademark: 트레이드마크
 ---
 
-# Node.js&reg;에 대해서
+# Node.js®에 대해서
 
 <!--
 As an asynchronous event driven JavaScript runtime, Node is designed to build
@@ -26,7 +26,7 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
+  res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {

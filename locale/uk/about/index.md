@@ -4,7 +4,7 @@ title: Про проект
 trademark: Торгова марка
 ---
 
-# Про Node.js&reg;
+# Про Node.js®
 
 Як асинхронне подієве JavaScript–оточення, Node.js спроектований для побудови
 масштабованих мережевих додатків. У нижче наведений приклад "hello world", який
@@ -20,7 +20,7 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
+  res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {

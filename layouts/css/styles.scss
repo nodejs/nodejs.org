@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+@import "variables";
+@import "base";
+@import "utils";
+
+// Import specific page sections and layout parts
+@import "layout/sticky-footer";
+@import "layout/grid";
+@import "layout/main";
+@import "layout/lists";
+@import "page-modules/jsfoundation";
+@import "page-modules/header";
+@import "page-modules/footer";
+@import "page-modules/home";
+@import "page-modules/blog-index";
+@import "page-modules/blog-post";
+@import "page-modules/download";
+@import "page-modules/scrollToTop";
+@import "page-modules/anchorLinks";
+@import "page-modules/prev-next-navigation";
+@import "page-modules/release-schedule";
+@import "page-modules/resources";
+@import "page-modules/contributor-card";
+@import "page-modules/spinner";
+@import "vendor/prism-tomorrow";
+
+article a {
+  word-break: break-word;
+}
+
+.intro {
+  margin-top: 140px;
+  font-size: 38px;
+  line-height: 1.2;
+
+  h1 {
+    font-size: inherit;
+    margin-bottom: 15px;
+
+    & + p {
+      margin-top: 0;
+    }
+  }
+
+  span {
+    color: $light-gray;
+    display: block;
+  }
+}
+
+.has-side-nav {
+  aside {
+    width: 200px;
+    float: left;
+    margin-top: 1.5em;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      padding: .1em .5em;
+    }
+
+    a {
+      display: block;
+      padding: 5px 10px;
+      margin-right: -10px;
+      margin-left: -10px;
+      line-height: 1;
+    }
+
+    .active {
+      > a,
+      > a:hover {
+        color: $white;
+        background-color: $active-green;
+      }
+    }
+  }
+
+  article {
+    margin-left: 220px;
+  }
+}
+
+.edit-link {
+  float: right;
+  font-size: .9em;
+  margin: .5em 0;
+}
+
+@media screen and (max-width: 480px) {
+  .has-side-nav {
+    aside {
+      width: 100%;
+      float: none;
+    }
+
+    article {
+      margin-left: 0;
+    }
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.small {
+  font-size: 10px;
+}
+
+.color-lightgray {
+  color: $light-gray;
+}
+
+a:hover .color-lightgray {
+  color: $white;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.highlight-box {
+  background-color: $light-gray3;
+  padding: 5px 15px;
+  border-radius: 2px;
+  margin-top: 1em;
+
+  & *:first-child {
+    margin-top: .5rem;
+  }
+}
+
+html[dir="rtl"] {
+  .has-side-nav {
+    aside {
+      float: right;
+    }
+
+    article {
+      margin-right: 220px;
+      margin-left: 0;
+
+      @media screen and (max-width: 480px) {
+        margin-right: 0;
+      }
+    }
+  }
+}

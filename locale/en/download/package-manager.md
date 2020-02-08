@@ -104,7 +104,7 @@ pkgin -y install nodejs
 ## nvm
 Node Version Manager is a bash script used to manage multiple released Node.js versions. It allows
 you to perform operations like install, uninstall, switch version, etc.
-To install nvm, use this [install script](https://github.com/creationix/nvm#install-script).
+To install nvm, use this [install script](https://github.com/nvm-sh/nvm#install--update-script).
 
 On Unix / OS X systems Node.js built from source can be installed using
 [nvm](https://github.com/creationix/nvm) by installing into the location that nvm expects:
@@ -201,7 +201,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## SmartOS and illumos
 
-SmartOS images come with pkgsrc pre-installed.  On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal:
+SmartOS images come with pkgsrc pre-installed. On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal:
 
 ```bash
 pkgin -y install nodejs
@@ -215,7 +215,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## Solus
 
-Solus provides node.js in its main repository.
+Solus provides Node.js in its main repository.
 
 ```bash
 sudo eopkg install nodejs
@@ -223,7 +223,7 @@ sudo eopkg install nodejs
 
 ## Void Linux
 
-Void Linux ships node.js stable in the main repository.
+Void Linux ships Node.js stable in the main repository.
 
 ```bash
 xbps-install -Sy nodejs

@@ -29,7 +29,7 @@ d.enter();
 
 // module c.js
 const dep = require('some-dep');
-dep.method();  // Uh-oh! This method doesn't actually exist.
+dep.method(); // Uh-oh! This method doesn't actually exist.
 ```
 
 Since module `b` enters the domain but never exits any uncaught exception will
@@ -78,7 +78,7 @@ d.on('error', () => console.error('d intercepted an error'));
 
 d.run(() => {
   const server = net.createServer((c) => {
-    const e = domain.create();  // No 'error' handler being set.
+    const e = domain.create(); // No 'error' handler being set.
     e.run(() => {
       // This will not be caught by d's error handler.
       setImmediate(() => {
@@ -117,7 +117,7 @@ example of the failing of error propagation:
 
 ```js
 const d1 = domain.create();
-d1.foo = true;  // custom member to make more visible in console
+d1.foo = true; // custom member to make more visible in console
 d1.on('error', (er) => { /* handle error */ });
 
 d1.run(() => setTimeout(() => {
@@ -177,7 +177,7 @@ let uid = 0;
 // Setting up temporary resources
 const buf = Buffer.alloc(FILESIZE);
 for (let i = 0; i < buf.length; i++)
-  buf[i] = ((Math.random() * 1e3) % 78) + 48;  // Basic ASCII
+  buf[i] = ((Math.random() * 1e3) % 78) + 48; // Basic ASCII
 fs.writeFileSync(FILENAME, buf);
 
 function ConnectionResource(c) {
@@ -266,7 +266,7 @@ function pipeData(cr) {
   d3.add(ps);
   ps.on('connection', (conn) => {
     connectionList.push(conn);
-    conn.on('data', () => {});  // don't care about incoming data.
+    conn.on('data', () => {}); // don't care about incoming data.
     conn.on('close', () => {
       connectionList.splice(connectionList.indexOf(conn), 1);
     });
@@ -298,12 +298,12 @@ process.on('exit', () => {
 
 ```
 
-- When a new connection happens, concurrently:
-  - Open a file on the file system
-  - Open Pipe to unique socket
-- Read a chunk of the file asynchronously
-- Write chunk to both the TCP connection and any listening sockets
-- If any of these resources error, notify all other attached resources that
+* When a new connection happens, concurrently:
+  * Open a file on the file system
+  * Open Pipe to unique socket
+* Read a chunk of the file asynchronously
+* Write chunk to both the TCP connection and any listening sockets
+* If any of these resources error, notify all other attached resources that
   they need to clean up and shutdown
 
 As we can see from this example a lot more must be done to properly clean up
@@ -393,7 +393,7 @@ DataStream.prototype.data = function data(chunk) {
 
 The above shows that it is difficult to have more than one asynchronous API
 attempt to use domains to propagate data. This example could possibly be fixed
-by assigning `parent: domain.active` in the `DataStream` constructor.  Then
+by assigning `parent: domain.active` in the `DataStream` constructor. Then
 restoring it via `domain.active = domain.active.data.parent` just before the
 user's callback is called. Also the instantiation of `DataStream` in the
 `'connection'` callback must be run inside `d.run()`, instead of simply using

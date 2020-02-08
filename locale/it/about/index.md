@@ -4,7 +4,7 @@ title: A propos
 trademark: Trademark
 ---
 
-# Informazioni su Node.js&reg;
+# Informazioni su Node.js®
 
 Come runtime JavaScript guidato da eventi asincroni, Node.js è progettato per
 creare applicazioni di rete scalabili. Nel seguente esempio "Hello World",
@@ -20,7 +20,7 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
+  res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {

@@ -26,20 +26,20 @@ y serán reconocidos.
 
 Esta es la política de divulgación de Node.js
 
-- El reporte de seguridad es recibido y asignado a un responsable inicial. Esta persona coordinará la solución y el proceso
+* El reporte de seguridad es recibido y asignado a un responsable inicial. Esta persona coordinará la solución y el proceso
 de publicación. Una vez el problema es confirmado y se determina una lista de todas las versiones afectadas. El código es auditado
 para encontrar potenciales problemas similares. Se preparan las soluciones para todas las versiones que están en mantenimiento.
 Estas soluciones no son enviadas al repositorio público, en cambio son retenidas localmente hasta el anuncio público.
 
-- Una fecha de embargo para esta vulnerabilidad es seleccionada y un CVE (Common Vulnerabilities and  Exposures (CVE®))
+* Una fecha de embargo para esta vulnerabilidad es seleccionada y un CVE (Common Vulnerabilities and Exposures (CVE®))
 es solicitado para la vulnerabilidad.
 
-- En la fecha de embargo, se le envía una copia del anuncio a la lista de correo de seguridad de Node.js. Los cambios son subidos al repositorio público y nuevas versiones son desplegadas en nodejs.org. En las siguientes 6 horas de la notificación a la lista de correo, una copia del anuncio será publicada en el blog de Node.js.
+* En la fecha de embargo, se le envía una copia del anuncio a la lista de correo de seguridad de Node.js. Los cambios son subidos al repositorio público y nuevas versiones son desplegadas en nodejs.org. En las siguientes 6 horas de la notificación a la lista de correo, una copia del anuncio será publicada en el blog de Node.js.
 
-- Típicamente la fecha de embargo será fijada 72 horas desde la creación del CVE. Sin embargo, esto puede variar dependiendo de
+* Típicamente la fecha de embargo será fijada 72 horas desde la creación del CVE. Sin embargo, esto puede variar dependiendo de
 la severidad del error ó la dificultad en aplicar la solución.
 
-- Este proceso puede tomar algún tiempo, especialmente cuando se requiere cordinación con responsables de otros proyectos. Cada
+* Este proceso puede tomar algún tiempo, especialmente cuando se requiere cordinación con responsables de otros proyectos. Cada
 esfuerzo posible se hará para encargarse del error en la forma más oportuna posible, sin embargo, es importante que sigamos el
 proceso descrito arriba, para asegurarse que la divulgación sea manejada de una manera consistente.
 
@@ -47,8 +47,8 @@ proceso descrito arriba, para asegurarse que la divulgación sea manejada de una
 
 Las notificaciones de seguridad serán distribuidas usando los siguientes medios.
 
-- <https://groups.google.com/group/nodejs-sec>
-- <https://nodejs.org/en/blog/>
+* <https://groups.google.com/group/nodejs-sec>
+* <https://nodejs.org/en/blog/>
 
 ## Comentarios sobre esta política
 

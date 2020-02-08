@@ -4,7 +4,7 @@ title: Node.js とは
 trademark: Trademark
 ---
 
-# <!-- About Node.js&reg; -->Node.js&reg; とは
+# <!--about-node-js-->Node.js® とは
 
 <!--
 As an asynchronous event driven JavaScript runtime, Node is designed to build
@@ -26,7 +26,7 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
+  res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {

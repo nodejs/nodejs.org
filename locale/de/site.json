@@ -1,6 +1,6 @@
 {
   "title": "Node.js",
-  "author": "Node.js Foundation",
+  "author": "Node.js",
   "url": "https://nodejs.org/de/",
   "locale": "de",
   "language": "Deutsch",
@@ -72,7 +72,7 @@
       "text": "Signierte SHASUMS für die Versionsdateien"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "Installing Node.js via binary archive"
     }
   },
   "docs": {
@@ -119,10 +119,6 @@
   "blog": {
     "link": "blog",
     "text": "Neuigkeiten"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "Foundation"
   },
   "releases": {
     "title": "Versionshistorie",

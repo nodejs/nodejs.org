@@ -9,7 +9,7 @@ layout: docs.hbs
 
 在本教程的第一部分我们在 Node.js 中创建一个 Web 的应用程序，然后我们为那个应用构建一个 Docker 镜像；最后我们将把那个镜像作为容器运行之。
 
-Docker 允许你以应用程序所有的依赖全部打包成一个标准化的单元，这被成为一个容器。对于应用开发而言，一个容器就是一个蜕化到最基础的 Linux 操作系统。一个镜像是你加载到容器中的软件。
+Docker 允许你以应用程序所有的依赖全部打包成一个标准化的单元，这被称为一个容器。对于应用开发而言，一个容器就是一个蜕化到最基础的 Linux 操作系统。一个镜像是你加载到容器中的软件。
 
 ## 创建 Node.js 应用
 
@@ -47,7 +47,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello world\n');
+  res.send('Hello World');
 });
 
 app.listen(PORT, HOST);
@@ -92,7 +92,7 @@ RUN npm install
 # RUN npm ci --only=production
 ```
 
-请注意，我们只是拷贝了 `package.json` 文件而非整个工作目录。这允许我们利用缓存 Docker 层的优势。bitJudo 对此有一个很好的解释，请 [见此](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/)。
+请注意，我们只是拷贝了 `package.json` 文件而非整个工作目录。这允许我们利用缓存 Docker 层的优势。bitJudo 对此有一个很好的解释，请[见此](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/)。
 进一步说，对于生产环境而言，注释中提及的 `npm ci` 命令协助提供了一个更快、可靠、可再生的构建环境。欲知详情，可以参考[此处](https://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable)。
 
 在 Docker 镜像中使用 `COPY` 命令绑定你的应用程序：

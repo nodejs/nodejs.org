@@ -4,7 +4,7 @@ title: Sobre
 trademark: Trademark
 ---
 
-# Sobre Node.js&reg;
+# Sobre Node.js®
 <!--
 As an asynchronous event driven JavaScript runtime, Node is designed to build
 scalable network applications. In the following "hello world" example, many
@@ -12,7 +12,7 @@ connections can be handled concurrently. Upon each connection the callback is
 fired, but if there is no work to be done, Node will sleep.
 -->
 
-Como um ambiente de execução Javascript assíncrono orientado a eventos, o Node.js
+Como um ambiente de execução JavaScript assíncrono orientado a eventos, o Node.js
 é projetado para desenvolvimento de aplicações escaláveis de rede. No exemplo a
 seguir, diversas conexões podem ser controladas ao mesmo tempo. Em cada conexão
 a função de _callback_ é chamada. Mas, se não houver trabalho a ser realizado,
@@ -27,7 +27,7 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
+  res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {

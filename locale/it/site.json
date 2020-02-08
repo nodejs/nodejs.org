@@ -1,6 +1,6 @@
 {
   "title": "Node.js",
-  "author": "Node.js Foundation",
+  "author": "Node.js",
   "url": "https://nodejs.org/en/",
   "locale": "it",
   "language": "Italiano",
@@ -67,7 +67,7 @@
       "text": "Installa Node.js con un gestore di pacchetti"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "Installing Node.js via binary archive"
     }
   },
   "docs": {
@@ -114,10 +114,6 @@
   "blog": {
     "link": "blog",
     "text": "Blog"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "Fondazione"
   },
   "releases": {
     "title": "Cronologia delle Release",

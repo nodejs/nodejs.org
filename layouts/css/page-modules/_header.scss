@@ -1,0 +1,158 @@
+header {
+  background-color: $node-gray;
+  text-align: center;
+  position: relative;
+
+  > .container {
+    overflow: visible;
+  }
+
+  li {
+    position: relative;
+  }
+
+  nav {
+    cursor: default;
+
+    a,
+    a:link,
+    a:active {
+      padding: 0 8px;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: $light-gray2 !important;
+    }
+
+    a:hover {
+      background-color: transparent;
+      text-decoration: underline;
+    }
+  }
+
+  .lang-picker-toggler {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    border: none;
+    color: $light-gray2;
+    cursor: pointer;
+    padding: 12px;
+  }
+
+  .lang-picker {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    min-height: 100%;
+    max-height: 200%;
+    overflow: auto;
+    background: $node-gray;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+      color: $light-gray2;
+    }
+
+    li {
+      padding-bottom: 0;
+
+      button {
+        background-color: transparent;
+        border: none;
+        color: $light-gray2 !important;
+        cursor: pointer;
+        display: inline-block;
+        font-family: inherit;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 auto;
+        padding: .5em 1em;
+        text-transform: uppercase;
+        width: 100%;
+
+        &:focus,
+        &:hover {
+          background-color: $node-green;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 481px) {
+  header {
+    li {
+      $border-width: 14px;
+
+      padding-bottom: 12px;
+
+      &.active::after {
+        top: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-top-color: $node-gray;
+        border-width: $border-width;
+        margin-left: -$border-width / 2;
+      }
+
+      &.active:first-child::after {
+        margin-left: -$border-width;
+      }
+    }
+
+    a,
+    a:link,
+    a:active {
+      padding: 0 8px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    li {
+      width: 50%;
+      float: left;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav {
+      margin: 0 20px;
+    }
+
+    a,
+    a:link,
+    a:active {
+      padding: 0;
+    }
+
+    .lang-picker-toggler {
+      position: relative;
+      height: 1.5em;
+      padding: 0;
+    }
+  }
+}
+
+#logo {
+  display: block;
+
+  &:hover {
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  img {
+    margin: .5em auto 0;
+  }
+}

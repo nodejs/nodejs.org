@@ -55,6 +55,7 @@ Node uses the Worker Pool to handle "expensive" tasks.
 This includes I/O for which an operating system does not provide a non-blocking version, as well as particularly CPU-intensive tasks.
 
 These are the Node module APIs that make use of this Worker Pool:
+
 1. I/O-intensive
     1. [DNS](https://nodejs.org/api/dns.html): `dns.lookup()`, `dns.lookupService()`.
     2. [File System](https://nodejs.org/api/fs.html#fs_threadpool_usage): All file system APIs except `fs.FSWatcher()` and those that are explicitly synchronous use libuv's threadpool.
@@ -121,7 +122,7 @@ app.get('/countToN', (req, res) => {
 
   // n iterations before giving someone else a turn
   for (let i = 0; i < n; i++) {
-    console.log(`Iter {$i}`);
+    console.log(`Iter ${i}`);
   }
 
   res.sendStatus(200);
@@ -183,7 +184,7 @@ app.get('/redos-me', (req, res) => {
   let filePath = req.query.filePath;
 
   // REDOS
-  if (fileName.match(/(\/.+)+$/)) {
+  if (filePath.match(/(\/.+)+$/)) {
     console.log('valid path');
   }
   else {
@@ -205,8 +206,9 @@ For this reason, you should be leery of using complex regular expressions to val
 
 #### Anti-REDOS Resources
 There are some tools to check your regexps for safety, like
-- [safe-regex](https://github.com/substack/safe-regex)
-- [rxxr2](http://www.cs.bham.ac.uk/~hxt/research/rxxr2/).
+
+* [safe-regex](https://github.com/substack/safe-regex)
+* [rxxr2](http://www.cs.bham.ac.uk/~hxt/research/rxxr2/).
 However, neither of these will catch all vulnerable regexps.
 
 Another approach is to use a different regexp engine.
@@ -218,28 +220,30 @@ If you're trying to match something "obvious", like a URL or a file path, find a
 
 ### Blocking the Event Loop: Node core modules
 Several Node core modules have synchronous expensive APIs, including:
-- [Encryption](https://nodejs.org/api/crypto.html)
-- [Compression](https://nodejs.org/api/zlib.html)
-- [File system](https://nodejs.org/api/fs.html)
-- [Child process](https://nodejs.org/api/child_process.html)
+
+* [Encryption](https://nodejs.org/api/crypto.html)
+* [Compression](https://nodejs.org/api/zlib.html)
+* [File system](https://nodejs.org/api/fs.html)
+* [Child process](https://nodejs.org/api/child_process.html)
 
 These APIs are expensive, because they involve significant computation (encryption, compression), require I/O (file I/O), or potentially both (child process). These APIs are intended for scripting convenience, but are not intended for use in the server context. If you execute them on the Event Loop, they will take far longer to complete than a typical JavaScript instruction, blocking the Event Loop.
 
 In a server, *you should not use the following synchronous APIs from these modules*:
-- Encryption:
-  - `crypto.randomBytes` (synchronous version)
-  - `crypto.randomFillSync`
-  - `crypto.pbkdf2Sync`
-  - You should also be careful about providing large input to the encryption and decryption routines.
-- Compression:
-  - `zlib.inflateSync`
-  - `zlib.deflateSync`
-- File system:
-  - Do not use the synchronous file system APIs. For example, if the file you access is in a [distributed file system](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems) like [NFS](https://en.wikipedia.org/wiki/Network_File_System), access times can vary widely.
-- Child process:
-  - `child_process.spawnSync`
-  - `child_process.execSync`
-  - `child_process.execFileSync`
+
+* Encryption:
+  * `crypto.randomBytes` (synchronous version)
+  * `crypto.randomFillSync`
+  * `crypto.pbkdf2Sync`
+  * You should also be careful about providing large input to the encryption and decryption routines.
+* Compression:
+  * `zlib.inflateSync`
+  * `zlib.deflateSync`
+* File system:
+  * Do not use the synchronous file system APIs. For example, if the file you access is in a [distributed file system](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems) like [NFS](https://en.wikipedia.org/wiki/Network_File_System), access times can vary widely.
+* Child process:
+  * `child_process.spawnSync`
+  * `child_process.execSync`
+  * `child_process.execFileSync`
 
 This list is reasonably complete as of Node v9.
 
@@ -255,19 +259,19 @@ Example: JSON blocking. We create an object `obj` of size 2^21 and `JSON.stringi
 var obj = { a: 1 };
 var niter = 20;
 
-var before, res, took;
+var before, str, pos, res, took;
 
 for (var i = 0; i < niter; i++) {
   obj = { obj1: obj, obj2: obj }; // Doubles in size each iter
 }
 
 before = process.hrtime();
-res = JSON.stringify(obj);
+str = JSON.stringify(obj);
 took = process.hrtime(before);
 console.log('JSON.stringify took ' + took);
 
 before = process.hrtime();
-res = str.indexOf('nomatch');
+pos = str.indexOf('nomatch');
 took = process.hrtime(before);
 console.log('Pure indexof took ' + took);
 
@@ -278,8 +282,9 @@ console.log('JSON.parse took ' + took);
 ```
 
 There are npm modules that offer asynchronous JSON APIs. See for example:
-- [JSONStream](https://www.npmjs.com/package/JSONStream), which has stream APIs.
-- [Big-Friendly JSON](https://www.npmjs.com/package/bfj), which has stream APIs as well as asynchronous versions of the standard JSON APIs using the partitioning-on-the-Event-Loop paradigm outlined below.
+
+* [JSONStream](https://www.npmjs.com/package/JSONStream), which has stream APIs.
+* [Big-Friendly JSON](https://www.npmjs.com/package/bfj), which has stream APIs as well as asynchronous versions of the standard JSON APIs using the partitioning-on-the-Event-Loop paradigm outlined below.
 
 ### Complex calculations without blocking the Event Loop
 Suppose you want to do complex calculations in JavaScript without blocking the Event Loop.
@@ -340,6 +345,7 @@ For a complicated task, move the work off of the Event Loop onto a Worker Pool.
 
 ##### How to offload
 You have two options for a destination Worker Pool to which to offload work.
+
 1. You can use the built-in Node Worker Pool by developing a [C++ addon](https://nodejs.org/api/addons.html). On older versions of Node, build your C++ addon using [NAN](https://github.com/nodejs/nan), and on newer versions use [N-API](https://nodejs.org/api/n-api.html). [node-webworker-threads](https://www.npmjs.com/package/webworker-threads) offers a JavaScript-only way to access Node's Worker Pool.
 2. You can create and manage your own Worker Pool dedicated to computation rather than Node's I/O-themed Worker Pool. The most straightforward ways to do this is using [Child Process](https://nodejs.org/api/child_process.html) or [Cluster](https://nodejs.org/api/cluster.html).
 
@@ -362,7 +368,7 @@ A CPU-intensive task only makes progress when its Worker is scheduled, and the W
 If you have 4 logical cores and 5 Workers, one of these Workers cannot make progress.
 As a result, you are paying overhead (memory and scheduling costs) for this Worker and getting no return for it.
 
-I/O-intensive tasks involve querying an external service provider ([DNS](https://hosting.review/web-hosting-glossary/#9), file system, etc.) and waiting for its response.
+I/O-intensive tasks involve querying an external service provider (DNS, file system, etc.) and waiting for its response.
 While a Worker with an I/O-intensive task is waiting for its response, it has nothing else to do and can be de-scheduled by the operating system, giving another Worker a chance to submit their request.
 Thus, *I/O-intensive tasks will be making progress even while the associated thread is not running*.
 External service providers like databases and file systems have been highly optimized to handle many pending requests concurrently.
@@ -455,6 +461,7 @@ To do this, minimize the variation in Task times by using Task partitioning.
 While the Node core modules offer building blocks for a wide variety of applications, sometimes something more is needed. Node developers benefit tremendously from the [npm ecosystem](https://www.npmjs.com/), with hundreds of thousands of modules offering functionality to accelerate your development process.
 
 Remember, however, that the majority of these modules are written by third-party developers and are generally released with only best-effort guarantees. A developer using an npm module should be concerned about two things, though the latter is frequently forgotten.
+
 1. Does it honor its APIs?
 2. Might its APIs block the Event Loop or a Worker?
 Many modules make no effort to indicate the cost of their APIs, to the detriment of the community.

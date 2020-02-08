@@ -6,7 +6,7 @@ layout: docs.hbs
 # كيف أبدأ باستعمال الـ Node.js بعد أن قمت بتثبيته؟
 
 بعد تثبيتك للـ Node، دعنا نجرب كيفية بناء أول خادوم ويب باستعماله.
-قم بإنشاء ملف بإسم "app.js" و ألصق داخله  الشفرة الآتية:
+قم بإنشاء ملف بإسم "app.js" و ألصق داخله الشفرة الآتية:
 
 ```javascript
 const http = require('http');
@@ -16,7 +16,7 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
+  res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {

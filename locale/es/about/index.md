@@ -4,7 +4,7 @@ title: Acerca
 trademark: Trademark
 ---
 
-# Acerca de Node.js&reg;
+# Acerca de Node.js®
 
 Concebido como un entorno de ejecución de JavaScript orientado a eventos asíncronos, Node.js está diseñado
 para construir aplicaciones en red escalables. En la siguiente aplicación de ejemplo "hola mundo", se pueden
@@ -20,7 +20,7 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hola Mundo\n');
+  res.end('Hola Mundo');
 });
 
 server.listen(port, hostname, () => {

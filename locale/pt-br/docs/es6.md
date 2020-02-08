@@ -35,7 +35,7 @@ O trabalho de otimizar as funcionalidades introduzidas com o ES2015 e além são
 
 ## Eu tenho a minha infraestrutura configurada para suportar a flag --harmony. Eu devo remove-la?
 
-O comportamento atual da flag `--harmony` é habilitar somente funcionalidades **em homologação**.  Além disso, ela agora é um sinônimo da flag `--es_staging`. Como mencionado anteriormente, estas funcionalidades estão completas, mas não foram consideradas estáveis ainda. Se você deseja rodar sua aplicação de forma segura, especialmente em ambientes de produção, considere remover esta flag até que ela seja lançada por padrão no V8 e, consequentemente, no Node.js. Se você deseja a manter habilitada, você deve estar preparado para atualizações futuras do Node.js que podem quebrar o seu código caso o V8 mude a sua semântica para seguir o padrão de maneira mais fiel.
+O comportamento atual da flag `--harmony` é habilitar somente funcionalidades **em homologação**. Além disso, ela agora é um sinônimo da flag `--es_staging`. Como mencionado anteriormente, estas funcionalidades estão completas, mas não foram consideradas estáveis ainda. Se você deseja rodar sua aplicação de forma segura, especialmente em ambientes de produção, considere remover esta flag até que ela seja lançada por padrão no V8 e, consequentemente, no Node.js. Se você deseja a manter habilitada, você deve estar preparado para atualizações futuras do Node.js que podem quebrar o seu código caso o V8 mude a sua semântica para seguir o padrão de maneira mais fiel.
 
 ## Como eu encontro qual versão do V8 foi embarcada com uma versão particular do Node.js?
 
