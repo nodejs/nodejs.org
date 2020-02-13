@@ -66,10 +66,10 @@ touch Dockerfile
 
 用你最喜欢的文本编辑器打开这个 `Dockerfile`。
 
-我们要做的第一件事是定义我们需要从哪个镜像进行构建。这里我们将使用最新的 LTS（长期服务器支持版），`Node` 的版本号为 `10`。你可以从 [Docker 站点](https://hub.docker.com/) 获取相关镜像：
+我们要做的第一件事是定义我们需要从哪个镜像进行构建。这里我们将使用最新的 LTS（长期服务器支持版），`Node` 的版本号为 `lts`。你可以从 [Docker 站点](https://hub.docker.com/) 获取相关镜像：
 
 ```docker
-FROM node:10
+FROM node:lts
 ```
 
 下一步在镜像中创建一个文件夹存放应用程序代码，这将是你的应用程序工作目录：
@@ -117,7 +117,7 @@ CMD [ "node", "server.js" ]
 你的 `Dockerfile` 现在看上去是这个样子：
 
 ```docker
-FROM node:10
+FROM node:lts
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -164,7 +164,7 @@ $ docker images
 
 # Example
 REPOSITORY                      TAG        ID              CREATED
-node                            8          1934b0b038d1    5 days ago
+node                            lts        1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 

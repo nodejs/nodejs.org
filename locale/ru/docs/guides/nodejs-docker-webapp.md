@@ -80,13 +80,13 @@ touch Dockerfile
 
 Первое, что нам надо сделать — определить базовый образ,
 который будет взят за основу. Мы будем использовать образ `node` последней версии
-LTS* (версии с долгосрочной поддержкой) — `10`,
+LTS* (версии с долгосрочной поддержкой) — `lts`,
 доступный на [Docker Hub](https://hub.docker.com/).
 
 \* Прим. переводчика: на момент написания статьи.
 
 ```docker
-FROM node:10
+FROM node:lts
 ```
 
 Затем создадим директорию для кода приложения внутри образа.
@@ -148,7 +148,7 @@ CMD [ "node", "server.js" ]
 Ваш `Dockerfile` теперь должен выглядеть примерно так:
 
 ```docker
-FROM node:10
+FROM node:lts
 
 # создание директории приложения
 WORKDIR /usr/src/app
@@ -200,7 +200,7 @@ $ docker images
 
 # пример вывода
 repository                      tag        id              created
-node                            10         1934b0b038d1    5 days ago
+node                            lts        1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
