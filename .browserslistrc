@@ -1,4 +1,4 @@
 # https://github.com/browserslist/browserslist#readme
 
 defaults
-Explorer >= 10
+Explorer 11
