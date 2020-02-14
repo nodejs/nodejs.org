@@ -49,7 +49,7 @@ pacman -S nodejs npm
 
 ## Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora and Snap packages
 
-[Official Node.js binary distributions](https://github.com/nodesource/distributions/blob/master/README.md) are provided by NodeSource.
+[Node.js binary distributions](https://github.com/nodesource/distributions/blob/master/README.md) are available from NodeSource.
 
 ## FreeBSD
 
