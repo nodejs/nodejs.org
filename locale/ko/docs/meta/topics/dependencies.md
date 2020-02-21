@@ -45,7 +45,7 @@ Node.js가 의존하고 있는 여러 의존성
 The V8 library provides Node.js with a JavaScript engine, which Node.js
 controls via the V8 C++ API. V8 is maintained by Google, for use in Chrome.
 
-* [Documentation](https://v8docs.nodesource.com/)
+* [Documentation](https://v8.dev/docs/)
 -->
 
 ## <!--libraries-->라이브러리
@@ -55,7 +55,7 @@ controls via the V8 C++ API. V8 is maintained by Google, for use in Chrome.
 V8 라이브러리는 Node.js가 V8 C++ API로 제어하는 JavaScript 엔진을 제공합니다.
 V8은 구글이 관리하고 크롬에서 사용 중인 엔진입니다.
 
-* [문서](https://v8docs.nodesource.com/)
+* [문서](https://v8.dev/docs/)
 
 <!--
 ### libuv
