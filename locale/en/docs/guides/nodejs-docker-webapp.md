@@ -84,7 +84,7 @@ Here we will use the latest LTS (long term support) version `10` of `node`
 available from the [Docker Hub](https://hub.docker.com/):
 
 ```docker
-FROM node:10
+FROM node:12
 ```
 
 Next we create a directory to hold the application code inside the image, this
