@@ -12,7 +12,7 @@ layout: knowledge-post.hbs
 
 ## What is TLS?
 
-[Transport Layer Security](https://en.wikipedia.org/wiki/Transport_Layer_Security) (or TSL) is the successor to Secure Sockets Layer (or SSL). It, along with SSL, are the de-facto standard cryptographic protocols for secure communications over the web. TSL encrypts communications on top of a network transport layer (typically tcp), and uses public-key cryptography to encrypt messages.
+[Transport Layer Security](https://en.wikipedia.org/wiki/Transport_Layer_Security) (or TLS) is the successor to Secure Sockets Layer (or SSL). It, along with SSL, are the de-facto standard cryptographic protocols for secure communications over the web. TLS encrypts communications on top of a network transport layer (typically tcp), and uses public-key cryptography to encrypt messages.
 
 ### Public-Key Cryptography
 
@@ -22,7 +22,7 @@ In TLS connections, the public key is called a *[certificate](https://en.wikiped
 
 ### History of TLS/SSL Support in Node.js
 
-TLS support in node is relatively new. The first stable version of Node.js to support TSL and HTTPS was the v0.4 branch, which was released in early 2011. Since then, the primary focus of the core developers has shifted from TLS/HTTPS to Windows support in the v0.5 branch. As such, the TSL APIs in node are still a little rough around the edges, and documentation leaves something to be desired.
+TLS support in node is relatively new. The first stable version of Node.js to support TLS and HTTPS was the v0.4 branch, which was released in early 2011. Since then, the primary focus of the core developers has shifted from TLS/HTTPS to Windows support in the v0.5 branch. As such, the TLS APIs in node are still a little rough around the edges, and documentation leaves something to be desired.
 
 ## The tls Module
 
