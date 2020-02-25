@@ -11,7 +11,7 @@ layout: knowledge-post.hbs
 
 So you've got a little CLI tool, but you want to be able to prompt a user for additional data after the script has started, rather than passing it in as a command line argument or putting it in a file. To do this, you'll need to listen to STDIN ("standard input", i.e. your keyboard), which Node.js exposes for you as `process.stdin`, a readable stream.
 
-Streams are the Node.js way of dealing with evented I/O - it's a big topic, and you can read more about them [here](https://nodejs.org/api/stream.html). For now, we're going to use node's `readline` module which is a wrapper around Standard I/O, suitable for taking user input from command line(terminal).
+Streams are the Node.js way of dealing with evented I/O - it's a big topic, and you can read more about them [here](https://nodejs.org/api/stream.html). For now, we're going to use the built-in `readline` module which is a wrapper around Standard I/O, suitable for taking user input from command line(terminal).
 
 Here's a simple example. Try the following in a new file:
 
