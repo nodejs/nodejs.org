@@ -13,7 +13,7 @@ labels:
   tagline-lts: Recomendado para la mayoría
   changelog: Cambios
   api: Documentación del API
-  version-schedule-prompt: Ó revise la
+  version-schedule-prompt: O revise la
   version-schedule-prompt-link-text: Agenda de LTS.
 ---
 
