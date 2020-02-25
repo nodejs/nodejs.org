@@ -155,11 +155,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `10` of `node`
+Here we will use the latest LTS (long term support) version `12` of `node`
 available from the [Docker Hub](https://hub.docker.com/):
 
 ```docker
-FROM node:10
+FROM node:12
 ```
 
 Next we create a directory to hold the application code inside the image, this
@@ -216,7 +216,7 @@ CMD [ "node", "server.js" ]
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:10
+FROM node:12
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -250,10 +250,10 @@ touch Dockerfile
 
 最初にしなければならないことは、どのイメージから構築したいかを定義することです。
 ここでは[Docker Hub](https://hub.docker.com/)から入手できる
-`node` の最新の LTS (long term support) バージョン `10` を使います。
+`node` の最新の LTS (long term support) バージョン `12` を使います。
 
 ```docker
-FROM node:10
+FROM node:12
 ```
 
 次に、イメージ内にアプリケーションコードを入れるディレクトリを作成します。
@@ -311,7 +311,7 @@ CMD [ "node", "server.js" ]
 `Dockerfile` はこのようになっているはずです。
 
 ```docker
-FROM node:10
+FROM node:12
 
 # アプリケーションディレクトリを作成する
 WORKDIR /usr/src/app

@@ -80,7 +80,7 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `10` of `node`
+Here we will use the latest LTS (long term support) version `12` of `node`
 available from the [Docker Hub](https://hub.docker.com/):
 
 ```docker
@@ -143,7 +143,7 @@ CMD [ "node", "server.js" ]
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:10
+FROM node:12
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -194,7 +194,7 @@ $ docker images
 
 # Example
 REPOSITORY                      TAG        ID              CREATED
-node                            10         1934b0b038d1    5 days ago
+node                            12         1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
