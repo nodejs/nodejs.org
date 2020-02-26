@@ -218,7 +218,7 @@ which should be able to debug as if the Node.js application was running locally.
 ## Legacy Debugger
 
 **The legacy debugger has been deprecated as of Node.js 7.7.0. Please use
---inspect and Inspector instead.**
+`--inspect` and Inspector instead.**
 
 When started with the **--debug** or **--debug-brk** switches in version 7 and
 earlier, Node.js listens for debugging commands defined by the discontinued
