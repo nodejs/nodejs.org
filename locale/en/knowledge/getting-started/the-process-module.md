@@ -8,7 +8,7 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-Each Node.js process has a set of built-in functionality, accessible through the global `process` module. The `process` module doesn't need to be required - it is somewhat literally a wrapper around the currently executing process, and many of the methods it exposes are actually wrappers around calls into some of Node's core C libraries.
+Each Node.js process has a set of built-in functionality, accessible through the global `process` module. The `process` module doesn't need to be required - it is somewhat literally a wrapper around the currently executing process, and many of the methods it exposes are actually wrappers around calls into core C libraries.
 
 ## Events
 
@@ -39,7 +39,7 @@ The default behavior on `uncaughtException` is to print a stack trace and exit -
 
 The `process` object also provides wrappings for the three `STDIO` streams, `stdin`, `stdout`, and `stderr`. Put briefly, `stdin` is a readable stream (where one would read input from the user), `stdout` is a non-blocking writeable stream (writes to `stdout` are asynchronous, in other words), and `stderr` is a blocking (synchronous) writeable stream.
 
-The simplest one to describe is `process.stdout`. Technically, most output in Node is accomplished by using `process.stdout.write()` - though most people would never know it. The following is from `console.js` in Node core:
+The simplest one to describe is `process.stdout`. Technically, most output in Node.js is accomplished by using `process.stdout.write()` - though most people would never know it. The following is from `console.js` in Node.js core:
 
 ```javascript
 exports.log = function() {
@@ -72,7 +72,7 @@ The `process` object additionally contains a variety of properties that allow yo
 'node'
 ```
 
-The `pid` is the OS Process ID, `platform` is something general like 'linux' or 'darwin', and `version` refers to your Node version. `process.title` is a little bit different - while set to `node` by default, it can be set to anything you want, and will be what gets displayed in lists of running processes.
+The `pid` is the OS Process ID, `platform` is something general like 'linux' or 'darwin', and `version` refers to your Node.js version. `process.title` is a little bit different - while set to `node` by default, it can be set to anything you want, and will be what gets displayed in lists of running processes.
 
 The `process` module also exposes `process.argv`, an array containing the command-line arguments to the current process, and `process.argc`, an integer representing the number of arguments passed in. Read more on [how to parse command line arguments](/en/knowledge/command-line/how-to-parse-command-line-arguments/)
 

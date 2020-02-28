@@ -168,4 +168,4 @@ Note that self-signing the server certificate results in a non-authorized status
 
 ## "starttls"
 
-It's entirely possible to "upgrade" an existing tcp connection into a TLS-encrypted one with node. However, node does not have a special functions for doing so as of the v0.4 branch. Therefore, it needs to be done "by-hand", using the crypto module and some undocumented tls module functionality. Node's documentation points to <https://gist.github.com/848444>, which aims to abstract the process.
+It's entirely possible to "upgrade" an existing tcp connection into a TLS-encrypted one with node. However, node does not have a special functions for doing so as of the v0.4 branch. Therefore, it needs to be done "by-hand", using the crypto module and some undocumented tls module functionality. The Node.js documentation points to <https://gist.github.com/848444>, which aims to abstract the process.
