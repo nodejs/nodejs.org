@@ -47,4 +47,4 @@ Finalmente, o campo `dependencies` é usado para listar todas as dependências d
 
 Também é possível adicionar um campo `devDependencies` ao seu `package.json` - são dependências não necessárias para a operação normal, mas necessárias/recomendadas se você deseja corrigir ou modificar o projeto. Por exemplo, se você construiu testes de unidade usando um framework, seria apropriado colocar o framework de testes utilizado no campo `devDependencies`. Para instalar o `devDependencies` de um projeto, simplesmente passe a opção` --dev` ao usar o `npm install`.
 
-Para ainda mais opções, você pode consultar os [documentos on-line](https://github.com/npm/npm/blob/master/doc/files/package.json.md) ou executar o `npm help json`.
+Para ainda mais opções, você pode consultar os [documentos on-line](https://docs.npmjs.com/files/package.json) ou executar o `npm help json`.
