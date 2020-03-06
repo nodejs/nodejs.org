@@ -50,7 +50,7 @@ too, so consult the [API reference][].
 ## Method, URL and Headers
 
 When handling a request, the first thing you'll probably want to do is look at
-the method and URL, so that appropriate actions can be taken. Node makes this
+the method and URL, so that appropriate actions can be taken. Node.js makes this
 relatively painless by putting handy properties onto the `request` object.
 
 ```javascript
