@@ -37,7 +37,7 @@ In the above code:
 
 ### Parsing with querystring
 
-Another way to access query string parameters is parsing them using the `querystring` builtin Node module.
+Another way to access query string parameters is parsing them using the `querystring` builtin Node.js module.
 
 This method, however, must be passed just a querystring portion of a url. Passing it the whole url, like you did in the `url.parse` example, won't parse the querystrings.
 

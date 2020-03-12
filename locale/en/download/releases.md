@@ -11,6 +11,7 @@ Releases 1.x through 3.x were called "io.js" as they were part of the io.js fork
 
 #### Looking for latest release of a version branch?
 
+* [Node.js 12.x](https://nodejs.org/dist/latest-v12.x/)
 * [Node.js 10.x](https://nodejs.org/dist/latest-v10.x/)
 * [Node.js 8.x](https://nodejs.org/dist/latest-v8.x/)
 * [Node.js 6.x](https://nodejs.org/dist/latest-v6.x/)

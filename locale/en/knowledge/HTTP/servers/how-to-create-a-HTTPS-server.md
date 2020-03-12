@@ -12,7 +12,7 @@ layout: knowledge-post.hbs
 
 ---
 
-To create an HTTPS server, you need two things: an SSL certificate, and Node's built-in `https` module.
+To create an HTTPS server, you need two things: an SSL certificate, and built-in `https` Node.js module.
 
 We need to start out with a word about SSL certificates. Speaking generally, there are two kinds of certificates: those signed by a 'Certificate Authority', or CA, and 'self-signed certificates'. A Certificate Authority is a trusted source for an SSL certificate, and using a certificate from a CA allows your users to be trust the identity of your website. In most cases, you would want to use a CA-signed certificate in a production environment - for testing purposes, however, a self-signed certicate will do just fine.
 
