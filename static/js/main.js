@@ -26,7 +26,7 @@
   langPickerTogglerElement.addEventListener('click', function () {
     langPickerElement.classList.toggle('hidden')
     const isAriaExpanded = langPickerTogglerElement.getAttribute('aria-expanded') === 'true'
-    langPickerTogglerElement.setAttribute('aria-expanded', (!isAriaExpanded).toString())
+    langPickerTogglerElement.setAttribute('aria-expanded', !isAriaExpanded)
   })
 })()
 
