@@ -16,6 +16,7 @@ layout: docs.hbs
 
 ## Node.js 核心概念
 
+* [Node.js 的介绍](https://nodejs.dev/)
 * [阻塞对比非阻塞一览](/zh-cn/docs/guides/blocking-vs-non-blocking/)
 * [Node.js 事件轮询，定时器和 process.nextTick()](/zh-cn/docs/guides/event-loop-timers-and-nexttick/)
 * [不要阻塞你的事件轮询（或是工作池）](/zh-cn/docs/guides/dont-block-the-event-loop/)
