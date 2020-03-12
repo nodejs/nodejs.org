@@ -25,12 +25,8 @@
 
   langPickerTogglerElement.addEventListener('click', function () {
     langPickerElement.classList.toggle('hidden')
-
-    if (langPickerTogglerElement.getAttribute('aria-expanded') === 'true') {
-      langPickerTogglerElement.setAttribute('aria-expanded', 'false')
-    } else {
-      langPickerTogglerElement.setAttribute('aria-expanded', 'true')
-    }
+    const isAriaExpanded = langPickerTogglerElement.getAttribute('aria-expanded') === 'true'
+    langPickerTogglerElement.setAttribute('aria-expanded', !isAriaExpanded)
   })
 })()
 
