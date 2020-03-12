@@ -23,6 +23,8 @@ labels:
 
 ### 在找舊版的 API 文件嗎？
 
+* [Node.js 13.x](https://nodejs.org/docs/latest-v13.x/api/)
+* [Node.js 12.x](https://nodejs.org/docs/latest-v12.x/api/)
 * [Node.js 11.x](https://nodejs.org/docs/latest-v11.x/api/)
 * [Node.js 10.x](https://nodejs.org/docs/latest-v10.x/api/)
 * [Node.js 9.x](https://nodejs.org/docs/latest-v9.x/api/)
