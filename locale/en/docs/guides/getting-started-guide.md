@@ -3,6 +3,8 @@ title: Getting Started Guide
 layout: docs.hbs
 ---
 
+# How do I installed it?
+
 # How do I start with Node.js after I installed it?
 
 Once we have installed Node.js, let's build our first web server.
