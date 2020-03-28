@@ -13,8 +13,11 @@ labels:
   tagline-lts: Recomendado para la mayoría
   changelog: Cambios
   api: Documentación del API
-  version-schedule-prompt: O revise la
-  version-schedule-prompt-link-text: Agenda de LTS.
+  version-schedule-prompt: O eche un vistazo a la
+  version-schedule-prompt-link-text: agenda LTS.
+  newsletter: true
+  newsletter-prefix: Regístrese en
+  newsletter-postfix: ", la Newsletter Mensual de Node.js."
 ---
 
 Node.js® es un entorno de ejecución para JavaScript construido con el [motor de JavaScript V8 de Chrome](https://v8.dev/).
