@@ -4,7 +4,7 @@
   "url": "https://nodejs.org/fr/",
   "locale": "fr",
   "language": "Français",
-  "languageEnglishVersion": "French",
+  "languageEnglishVersion": "Français",
   "scrollToTop": "Faire défiler en haut",
   "reportNodeIssue": "Rapporter un problème Node.js",
   "reportWebsiteIssue": "Rapporter un problème sur le site web",
@@ -13,6 +13,9 @@
   "all-downloads": "Toutes les options de téléchargement",
   "nightly": "Versions quotidiennes",
   "chakracore-nightly": "Versions quotidiennes de Node-ChakraCore",
+  "unofficial-builds": "Unofficial builds",
+  "previous": "Previous",
+  "next": "Next",
   "feeds": [
     {
       "link": "feed/blog.xml",
@@ -32,46 +35,52 @@
   },
   "about": {
     "link": "about",
-    "text": "À propos",
+    "text": "A propos",
     "governance": {
       "link": "about/governance",
       "text": "Gouvernance"
     },
+    "community": {
+      "link": "about/community",
+      "text": "Community"
+    },
     "workinggroups": {
       "link": "about/working-groups",
-      "text": "Groupes de travail"
+      "text": "Working Groups"
     },
     "releases": {
       "link": "about/releases",
-      "text": "Versions"
+      "text": "Releases"
     },
     "resources": {
       "link": "about/resources",
-      "text": "Ressources"
+      "text": "Resources"
     },
     "trademark": {
       "link": "about/trademark",
-      "text": "Marque déposée"
+      "text": "Trademark"
     },
     "privacy": {
       "link": "about/privacy",
-      "text": "Politique de confidentialité"
+      "text": "Privacy Policy"
     }
   },
   "download": {
     "link": "download",
-    "text": "Téléchargements",
+    "text": "Downloads",
     "releases": {
       "link": "download/releases",
-      "text": "Versions précédentes"
+      "text": "Previous Releases"
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "Installer Node.js via le gestionnaire de paquets"
+      "text": "Installing Node.js via package manager"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "SHASUMS signés pour les fichiers des versions"
+      "text": "SHASUMS signés pour les fichiers des versions",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "How to verify"
     },
     "install-on-linux": {
       "text": "Installing Node.js via binary archive"
@@ -96,14 +105,22 @@
     "guides": {
       "link": "docs/guides",
       "text": "Guides"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "Dependencies"
     }
   },
   "getinvolved": {
     "link": "get-involved",
-    "text": "S’impliquer",
+    "text": "Comment s'impliquer ?",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
-      "text": "Coder + Apprendre"
+      "text": "Code + Learn"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "Collab Summit"
     },
     "contribute": {
       "link": "get-involved/contribute",
@@ -111,12 +128,16 @@
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
-      "text": "Code de conduite"
+      "text": "Code of Conduct"
+    },
+    "node-meetups": {
+      "link": "get-involved/node-meetups",
+      "text": "Node.js Meetups"
     }
   },
   "security": {
     "link": "security",
-    "text": "Securité"
+    "text": "Security"
   },
   "blog": {
     "link": "blog",
@@ -124,7 +145,7 @@
   },
   "releases": {
     "title": "Historique des versions",
-    "downloads": "Téléchargements"
+    "downloads": "Downloads"
   },
   "links": {
     "pages": {
