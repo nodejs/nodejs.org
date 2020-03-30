@@ -1,4 +1,4 @@
-﻿---
+---
 title: الإنخراط
 layout: contribute.hbs
 ---
@@ -14,6 +14,7 @@ layout: contribute.hbs
 * [Node.js Everywhere](https://newsletter.nodejs.org) و تمثل الرسالة الإخبارية الشهرية للـ Node.js.
 * [Node.js Collection](https://medium.com/the-node-js-collection) وهي مجموعة من المحتوى المكتوب من طرف مجتمعنا على موقع medium.
 * The [Community Committee](https://github.com/nodejs/community-committee) و هي تمثل لجنة ذات مستوى عالٍ في مؤسسة الـ Node.js و تركز على الجهود الخاصة بالمجتمع.
+* [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
 
 ## التعلم
 
@@ -22,13 +23,12 @@ layout: contribute.hbs
 * [NodeSchool.io](https://nodeschool.io/) سيعلمك مفاهيم الـ Node.js باستعمال العاب سطر اوامر تفاعلية.
 * [التاق الخاص بالـ Node.js على Stack Overflow](https://stackoverflow.com/questions/tagged/node.js) يجمع معلومات جديدة كل يوم.
 * [التاق الخاص بمجتمع مطوري الـ Node.js](https://dev.to/t/node) يمثل مكانا لمشاركة مشاريع الـ Node.js و المقالات و الدروس المتعلقة به إضافة إلى بدء النقاشات و طلب الآراء عن المواضيع المتعلقة بالـ Node.js. إن جميع المطورين من كافة المستويات مرحب بها هنا.
-* [Nodeiflux](https://discordapp.com/invite/vUsrbjd) هو مجتمع داعم لمطوري الجهة الخلفية للـ Node.js الذين يدعمون بعضهم على منصة Discord.
 
 ## مواقع و مشاريع المجتمع دولي
 
-* [مجموعة الفيسبوك للـ Node.js بالعربية](https://www.facebook.com/groups/node.ar)
-* [مجتمع Node.js الصيني](https://cnodejs.org/)
-* [المجتمع المجري (المجرية)](https://nodehun.blogspot.com/)
+* [مجموعة الفيسبوك للـ Node.js بالعربية](https://cnodejs.org/)
+* [مجتمع Node.js الصيني](https://nodehun.blogspot.com/)
+* [المجتمع المجري (المجرية)](https://www.facebook.com/groups/node.il/)
 * [مجموعة المستخدمين اليابانية](https://nodejs.jp/)
 * [مجموعة الفيسبوك باللغة الأسبانية للـ Node.js](https://www.facebook.com/groups/node.es/)
 * [Vietnamese Node.js community](https://www.facebook.com/nodejs.vn/)
