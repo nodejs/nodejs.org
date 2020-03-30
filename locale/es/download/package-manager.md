@@ -11,13 +11,16 @@ title: Instalando Node.js usando un gestor de paquetes
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
-* [Distribuciones de Linux basadas en Debian y Ubuntu, Enterprise Linux/Fedora y Snap](#distribuciones-de-linux-basadas-en-debian-y-ubuntu-enterprise-linux-fedora-y-snap)
-* [FreeBSD y OpenBSD](#freebsd-y-openbsd)
+* [Distribuciones de Linux basadas en Debian y Ubuntu, Enterprise Linux/Fedora y Snap](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
+* [FreeBSD y OpenBSD](#freebsd)
 * [Gentoo](#gentoo)
-* [NetBSD](#netbsd)
-* [openSUSE y SLE](#opensuse-y-sle)
-* [macOS](#macos)
-* [SmartOS y illumos](#smartos-y-illumos)
+* [NetBSD](#ibm-i)
+* [openSUSE y SLE](#netbsd)
+* [macOS](#nvm)
+* [SmartOS y illumos](#openbsd)
+* [Solus](#opensuse-and-sle)
+* [Void Linux](#macos)
+* [Windows](#smartos-and-illumos)
 * [Solus](#solus)
 * [Void Linux](#void-linux)
 * [Windows](#windows)
@@ -52,63 +55,68 @@ pacman -S nodejs npm
 
 Node.js está disponible mediante el sistema de ports.
 
-```bash
-/usr/ports/www/node
-```
-
 Versiones de desarrollo también están disponibles usando ports
 
 ```bash
-cd /usr/ports/www/node-devel/ && make install clean
+/usr/ports/www/node
 ```
 
 Ó paquetes en FreeBSD:
 
 ```bash
+cd /usr/ports/www/node-devel/ && make install clean
+```
+
+## Gentoo
+
+Usando [pkg-ng](https://wiki.freebsd.org/pkgng) en FreeBSD
+
+```bash
 pkg_add -r node-devel
 ```
 
-Usando [pkg-ng](https://wiki.freebsd.org/pkgng) en FreeBSD
+## NetBSD
+
+Ó versiones de desarrollo:
+
+Node.js está disponible en el árbol de portage.
 
 ```bash
 pkg install node
 ```
 
-Ó versiones de desarrollo:
+Node.js está disponible en el árbol de pkgsrc:
+
+## openSUSE y SLE
+
+Ó instale un paquete binario (si está disponible para su plataforma) usando pkgin:
 
 ```bash
 pkg install node-devel
 ```
 
-## Gentoo
-
-Node.js está disponible en el árbol de portage.
+[Descargue Node.js mediante openSUSE one-click](http://software.opensuse.org/download.html?project=devel%3Alanguages%3Anodejs&package=nodejs).
 
 ```bash
 emerge nodejs
 ```
 
-## NetBSD
+## macOS
+Paquetes RPM disponibles para: openSUSE 11.4, 12.1, 12.2, 12.3, 13.1, Factory y Tumbleweed; SLE 11 (con las variaciones SP1/SP2/SP3).
 
-Node.js está disponible en el árbol de pkgsrc:
+Ejemplo de instalación en openSUSE 13.1:
 
 ```bash
 cd /usr/pkgsrc/lang/nodejs && make install
 ```
 
-Ó instale un paquete binario (si está disponible para su plataforma) usando pkgin:
+Simplemente descargue el [Instalador para macOS](https://nodejs.org/es/#home-downloadhead) directamente desde el sitio web de [nodejs.org](https://nodejs.org/).
 
 ```bash
 pkgin -y install nodejs
 ```
 
-## openSUSE y SLE
-
-[Descargue Node.js mediante openSUSE one-click](http://software.opensuse.org/download.html?project=devel%3Alanguages%3Anodejs&package=nodejs).
-
-Paquetes RPM disponibles para: openSUSE 11.4, 12.1, 12.2, 12.3, 13.1, Factory y Tumbleweed; SLE 11 (con las variaciones SP1/SP2/SP3).
-
-Ejemplo de instalación en openSUSE 13.1:
+Once the official release is out you will want to uninstall the version built from source:
 
 ```bash
 sudo zypper ar \
@@ -117,25 +125,30 @@ sudo zypper ar \
 sudo zypper in nodejs nodejs-devel
 ```
 
-## macOS
+## SmartOS y illumos
 
-Simplemente descargue el [Instalador para macOS](https://nodejs.org/es/#home-downloadhead) directamente desde el sitio web de [nodejs.org](https://nodejs.org/).
-
-_Si usted quiere descargar el paquete con bash:_
+Usando **[Homebrew](https://brew.sh/)**:
 
 ```bash
 curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
 ```
 
-### Alternativas
-
-Usando **[Homebrew](https://brew.sh/)**:
+Usando **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 brew install node
 ```
 
-Usando **[MacPorts](https://www.macports.org/)**:
+## Solus
+
+Usando **[pkgsrc](https://pkgsrc.joyent.com/install-on-osx/)**:
+
+* **openSUSE Leap 42.2**: `nodejs4`
+* **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
+* **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
+* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6` (The "Web and Scripting Module" must be [added before installing](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).)
+
+Instale el paquete binario:
 
 ```bash
 port install nodejs<major version>
@@ -144,27 +157,17 @@ port install nodejs<major version>
 port install nodejs7
 ```
 
-Usando **[pkgsrc](https://pkgsrc.joyent.com/install-on-osx/)**:
-
-Instale el paquete binario:
-
-```bash
-pkgin -y install nodejs
-```
+## Void Linux
 
 Ó compílelo manualmente desde pkgsrc:
 
-```bash
-cd pkgsrc/lang/nodejs && bmake install
-```
-
-## SmartOS y illumos
-
-Las imágenes de SmartOS vienen con pkgsrc pre-instalado. En otras distribuciones de illumos, primero instale **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, luego usted puede instalar el paquete binario de la manera usual:
+_If you want to download the package with bash:_
 
 ```bash
 pkgin -y install nodejs
 ```
+
+### Alternativas
 
 Ó compilarlo manualmente desde pkgsrc:
 
@@ -172,17 +175,51 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
-## Solus
-
 Solus provides Node.js in its main repository.
+
+```bash
+pkgin -y install nodejs
+```
+
+Void Linux incluye Node.js estable en el repositorio principal.
+
+Simplemente descargue el [Instalador para Windows](https://nodejs.org/es/#home-downloadhead) directamente desde el sitio web de [nodejs.org](https://nodejs.org/).
+
+```bash
+emerge nodejs
+```
+
+Usando **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 sudo eopkg install nodejs
 ```
 
+## Windows
+
+Usando **[Scoop](https://scoop.sh/)**:
+
+```bash
+emerge nodejs
+```
+
+Usando **[Chocolatey](https://chocolatey.org/)**:
+
+```bash
+sudo eopkg install nodejs
+```
+
+## Solus
+
+Solus provides Node.js in its main repository.
+
+```bash
+scoop install nodejs
+```
+
 ## Void Linux
 
-Void Linux incluye Node.js estable en el repositorio principal.
+Void Linux ships Node.js stable in the main repository.
 
 ```bash
 xbps-install -Sy nodejs
@@ -190,19 +227,19 @@ xbps-install -Sy nodejs
 
 ## Windows
 
-Simplemente descargue el [Instalador para Windows](https://nodejs.org/es/#home-downloadhead) directamente desde el sitio web de [nodejs.org](https://nodejs.org/).
+Simply download the [Windows Installer](https://nodejs.org/en/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
 
 ### Alternativas
 
-Usando **[Chocolatey](https://chocolatey.org/)**:
+Using **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
 cinst nodejs
-# ó para una instalación completa con npm
+# or for full install with npm
 cinst nodejs.install
 ```
 
-Usando **[Scoop](https://scoop.sh/)**:
+Using **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs
