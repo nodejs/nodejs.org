@@ -1,4 +1,4 @@
-﻿---
+---
 title: التوثيق
 layout: docs.hbs
 labels:
