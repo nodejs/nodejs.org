@@ -13,6 +13,7 @@
   "all-downloads": "Totes les opcions de descàrrega",
   "nightly": "Versions Nightly",
   "chakracore-nightly": "Versions Node-ChakraCore Nightly",
+  "unofficial-builds": "Unofficial builds",
   "previous": "Anterior",
   "next": "Següent",
   "feeds": [
@@ -34,46 +35,46 @@
   },
   "about": {
     "link": "about",
-    "text": "Quant a",
+    "text": "Sobre nosaltres",
     "governance": {
       "link": "about/governance",
       "text": "Govern"
     },
     "community": {
       "link": "about/community",
-      "text": "Comunitat"
+      "text": "Community"
     },
     "workinggroups": {
       "link": "about/working-groups",
-      "text": "Grups de Treball"
+      "text": "Working Groups"
     },
     "releases": {
       "link": "about/releases",
-      "text": "Versions"
+      "text": "Releases"
     },
     "resources": {
       "link": "about/resources",
-      "text": "Recursos"
+      "text": "Resources"
     },
     "trademark": {
       "link": "about/trademark",
-      "text": "Marca"
+      "text": "Trademark"
     },
     "privacy": {
       "link": "about/privacy",
-      "text": "Política de Privacitat"
+      "text": "Privacy Policy"
     }
   },
   "download": {
     "link": "download",
-    "text": "Descàrregues",
+    "text": "Downloads",
     "releases": {
       "link": "download/releases",
-      "text": "Versions anteriors"
+      "text": "Previous Releases"
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "Instal·lar Node.js mitjançant un gestor de paquets"
+      "text": "Installing Node.js via package manager"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
@@ -103,11 +104,11 @@
     },
     "guides": {
       "link": "docs/guides",
-      "text": "Guies"
+      "text": "Guides"
     },
     "dependencies": {
       "link": "docs/meta/topics/dependencies",
-      "text": "Dependències"
+      "text": "Dependencies"
     }
   },
   "getinvolved": {
@@ -115,11 +116,11 @@
     "text": "Participa",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
-      "text": "Programa + Aprèn"
+      "text": "Code + Learn"
     },
     "collab-summit": {
       "link": "get-involved/collab-summit",
-      "text": "Col·labora en el Summit"
+      "text": "Collab Summit"
     },
     "contribute": {
       "link": "get-involved/contribute",
@@ -127,12 +128,16 @@
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
-      "text": "Codi de Conducta"
+      "text": "Code of Conduct"
+    },
+    "node-meetups": {
+      "link": "get-involved/node-meetups",
+      "text": "Node.js Meetups"
     }
   },
   "security": {
     "link": "security",
-    "text": "Seguretat"
+    "text": "Security"
   },
   "blog": {
     "link": "blog",
@@ -140,11 +145,11 @@
   },
   "releases": {
     "title": "Històric de Versions",
-    "downloads": "Descarrègues"
+    "downloads": "Downloads"
   },
   "links": {
     "pages": {
-      "changelog": "Registre de Canvis"
+      "changelog": "Canvis"
     }
   }
 }
