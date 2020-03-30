@@ -1,11 +1,10 @@
 {
   "title": "Node.js",
-  "editOnGithub":"Editar en Github",
   "author": "Node.js",
   "url": "https://nodejs.org/es/",
   "locale": "es",
   "language": "Español",
-  "languageEnglishVersion": "Spanish",
+  "languageEnglishVersion": "Español",
   "scrollToTop": "Vuelve al comienzo",
   "reportNodeIssue": "Informe de un problema con Node.js",
   "reportWebsiteIssue": "Informe de un problema con el sitio",
@@ -14,6 +13,7 @@
   "all-downloads": "Todas las opciones de descarga",
   "nightly": "Versiones Nightly",
   "chakracore-nightly": "Versiones Node-ChakraCore Nightly",
+  "unofficial-builds": "Unofficial builds",
   "previous": "Anterior",
   "next": "Siguiente",
   "feeds": [
@@ -42,11 +42,11 @@
     },
     "community": {
       "link": "about/community",
-      "text": "Comunidad"
+      "text": "Community"
     },
     "workinggroups": {
       "link": "about/working-groups",
-      "text": "Grupos de Trabajo"
+      "text": "Working Groups"
     },
     "releases": {
       "link": "about/releases",
@@ -58,23 +58,23 @@
     },
     "trademark": {
       "link": "about/trademark",
-      "text": "Marca"
+      "text": "Trademark"
     },
     "privacy": {
       "link": "about/privacy",
-      "text": "Política de privacidad"
+      "text": "Privacy Policy"
     }
   },
   "download": {
     "link": "download",
-    "text": "Descargas",
+    "text": "Downloads",
     "releases": {
       "link": "download/releases",
-      "text": "Versiones anteriores"
+      "text": "Versiones Anteriores"
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "Instale Node.js mediante un gestor de paquetes"
+      "text": "Instalando Node.js usando un gestor de paquetes"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
@@ -104,11 +104,11 @@
     },
     "guides": {
       "link": "docs/guides",
-      "text": "Guías"
+      "text": "Guides"
     },
     "dependencies": {
       "link": "docs/meta/topics/dependencies",
-      "text": "Dependencias"
+      "text": "Dependencies"
     }
   },
   "getinvolved": {
@@ -116,11 +116,11 @@
     "text": "Participa",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
-      "text": "Programa + Aprende"
+      "text": "Code + Learn"
     },
     "collab-summit": {
       "link": "get-involved/collab-summit",
-      "text": "Colabora en el Summit"
+      "text": "Collab Summit"
     },
     "contribute": {
       "link": "get-involved/contribute",
@@ -128,12 +128,16 @@
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
-      "text": "Código de Conducta"
+      "text": "Code of Conduct"
+    },
+    "node-meetups": {
+      "link": "get-involved/node-meetups",
+      "text": "Node.js Meetups"
     }
   },
   "security": {
     "link": "security",
-    "text": "Seguridad"
+    "text": "Security"
   },
   "blog": {
     "link": "blog",
@@ -141,11 +145,11 @@
   },
   "releases": {
     "title": "Histórico de versiones",
-    "downloads": "Descargas"
+    "downloads": "Downloads"
   },
   "links": {
     "pages": {
-      "changelog": "Registro de Cambios"
+      "changelog": "Cambios"
     }
   }
 }
