@@ -3,7 +3,7 @@ title: Node.js مُلْتَقَيات
 layout: contribute.hbs
 ---
 
-# لقاءات الـ Node.js
+# Node.js مُلْتَقَيات
 
 هذه قائمة للقاءات الـ Node.js. فضلا، إذا قم بإنشاء طلب تعديل إذا أردت إضافة مجموعتك المحلية.
 
@@ -32,11 +32,7 @@ layout: contribute.hbs
 
 ### الآرجنتين
 
-#### مقاطعة بوينس ايرس
-
-##### بوينس ايرس
-
-* [اللقاء](https://www.meetup.com/banodejs/)
+* [اللقاء](https://www.nodejs.africa)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ أكتب رسالة لصفحة Meetup
 * المنظم - آليخاندرو اوفيدو
@@ -44,25 +40,45 @@ layout: contribute.hbs
 
 ### أستراليا
 
+* [اللقاء](https://www.facebook.com/nodejsarmenia/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بصفحة منظمي Meetup
+* المنظم - اندري سيدوروف
+* معلومات الاتصال بالمنظم -
+
+### بلجيكا
+
+#### مقاطعة بوينس ايرس
+
+##### بوينس ايرس
+
+* [اللقاء](https://www.meetup.com/banodejs/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* المنظم - جيمس ريتشاردسون. المشارك في تنظيم: جيسيكا كلير
+* معلومات الإتصال بالمنظم -
+
+### البرازيل
+
 #### فيكتوريا
 
 ##### ملبورن
 
 * [اللقاء](https://www.meetup.com/NodeMelbourne/)
 * تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟ اتصل بصفحة منظمي Meetup
-* المنظم - اندري سيدوروف
-* معلومات الاتصال بالمنظم -
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* المنظم - ستيفن بيكمان
+* معلومات الإتصال بالمنظم -
 
 ##### سيدني
 
 * [اللقاء](https://www.meetup.com/node-sydney/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-* المنظم - جيمس ريتشاردسون. المشارك في تنظيم: جيسيكا كلير
-* معلومات الاتصال بالمنظم -
+* المنظم - فيليب أوليفيرا
+* معلومات الإتصال بالمنظم -
 
-### بلجيكا
+### فنلندا
 
 #### بروكسل
 
@@ -71,488 +87,593 @@ layout: contribute.hbs
 * [اللقاء](https://www.meetup.com/Belgian-node-js-User-Group/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-* المنظم - ستيفن بيكمان
-* معلومات الاتصال بالمنظم -
+* المنظم - هوغو ايوري
+* معلومات الإتصال بالمنظم -
 
-### البرازيل
+### كولومبيا
 
 #### ساو باولو
+
+* [اللقاء](https://www.meetup.com/LaPazjs)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* المنظم - هنريك شراينر
+* معلومات الاتصال بالمنظم -
+
+### فرنسا
+
+#### مينا جيرايس
+
+* [اللقاء](https://meetup.com/nodebr)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* المنظم - ايريك فندل
+* Organizer contact info - [@erickwendel_](https://twitter.com/erickwendel_), [@_StaticVoid](https://twitter.com/_staticvoid)
 
 ##### كامبيناس
 
 * [اللقاء](https://www.meetup.com/Nodeschool-Campinas/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-* المنظم - فيليب أوليفيرا
-* معلومات الاتصال بالمنظم -
+* المنظم - يوها ليتوماكي
+* معلومات الإتصال بالمنظم -
 
-#### مينا جيرايس
+#### ريو غراندي دو سول
 
 * [اللقاء](https://www.meetup.com/nodebr/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-* المنظم - هوغو ايوري
-* معلومات الاتصال بالمنظم -
+* المنظم - كاميلو مونتويا
+* معلومات الإتصال بالمنظم -
 
-#### ريو غراندي دو سول
+#### ساو باولو
+
 ##### بورتو آليغري
 
 * [اللقاء](https://www.meetup.com/Node-js-Porto-Alegre-Meetup/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-* المنظم - هنريك شراينر
-* معلومات الاتصال بالمنظم -
+* المنظم - إتيان فوليو
+* معلومات الإتصال بالمنظم -
 
-#### ساو باولو
-
-##### ساو باولو
-
-* [اللقاء](https://www.meetup.com/nodebr/)
-* تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-* المنظم - ايريك فندل
-* معلومات الاتصال بالمنظم -
-
-* [اللقاء](https://www.meetup.com/learning-nodejs/)
-* تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-* المنظم - ثياغو ادريانو
-* معلومات الاتصال بالمنظم -
-
-### فنلندا
+### ألمانيا
 
 #### اوسيما
 
-##### هلسنكي
+##### ساو باولو
 
-* [اللقاء](https://www.meetup.com/Helsinki-Node-js/)
+* [اللقاء](https://www.meetup.com/Node-JS-Community-Hangouts)
 * تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات
-* المنظم - يوها ليتوماكي
-* معلومات الاتصال بالمنظم -
-
-### كولومبيا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* المنظم - ايوانيس نيكولاو
+* معلومات الإتصال بالمنظم -
 
 #### انتيوكيا
+
+##### هلسنكي
+
+* [اللقاء](http://torontojs.com/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* المنظم - غريغور الكه
+* معلومات الاتصال بالمنظم -
+
+### اليونان
+
+#### ايل-دو-فرانس
+
+* [اللقاء](https://www.meetup.com/es-ES/NodersJS/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* المنظم - ايوانيس نيكولاو
+* معلومات الاتصال بالمنظم -
+
+### المجر
+
+#### هامبورغ
 
 ##### ميدلين
 
 * [اللقاء](https://www.meetup.com/node_co/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-* المنظم - كاميلو مونتويا
-* معلومات الاتصال بالمنظم -
-
-### فرنسا
-
-#### ايل-دو-فرانس
-
-##### باريس
-
-* [اللقاء](https://www.meetup.com/Nodejs-Paris/)
-* تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات أو تشارك في التنظيم: https://twitter.com/Ornthalas
-* المنظم - إتيان فوليو
-* معلومات الاتصال بالمنظم -
-
-### ألمانيا
-
-#### هامبورغ
-
-* [اللقاء](https://www.meetup.com/node-HH/)
-* تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-* المنظم - ايوانيس نيكولاو
-* معلومات الاتصال بالمنظم -
-
-### اليونان
-
-#### آتيكا
-
-##### أثينا
-
-* [اللقاء](https://www.meetup.com/nodejsathens/)
-* تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-* المنظم - غريغور الكه
-* معلومات الاتصال بالمنظم -
-
-### المجر
-
-#### بودابست
-
-* [اللقاء](https://www.meetup.com/nodejsathens/)
-* تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-* المنظم - ايوانيس نيكولاو
-* معلومات الاتصال بالمنظم -
+* المنظم - روبرت اوروسزي
+* معلومات الإتصال بالمنظم -
 
 ### الهند
 
-#### دلهي
+#### آتيكا
 
-* [اللقاء](https://www.meetup.com/nodebp/)
-* تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-* المنظم - روبرت اوروسزي
-* معلومات الاتصال بالمنظم -
+##### باريس
 
-* [اللقاء](https://www.meetup.com/nodeJS-Devs/)
-* تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-* المنظم - غوراف غاندي.
-* معلومات الاتصال بالمنظم -
-
-#### غجرات
-
-##### أحمد أباد
-
-* [اللقاء](https://www.meetup.com/Meetup-group-iAIoTVuS/)
+* [اللقاء](https://www.meetup.com/Helsinki-Node-js/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات أو اكتب إلى dipesh@rapidops.com .
 * المنظم - ديبش باتل
-* معلومات الاتصال بالمنظم -
+* معلومات الإتصال بالمنظم -
 
 ### اندونيسيا
 
-#### جاكارتا
+#### بودابست
 
-* [اللقاء](https://www.meetup.com/Node-js-Workshop/)
+##### أثينا
+
+* [اللقاء](https://www.meetup.com/Nodejs-Paris/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - لوكلوك لوهورينغ سانتوسو
-* معلومات الاتصال بالمنظم -
+* معلومات الإتصال بالمنظم -
 
 ### ايرلندا
 
-#### دبلن
+#### دلهي
 
-* [اللقاء](https://www.meetup.com/Dublin-Node-js-Meetup/)
+##### أحمد أباد
+
+* [اللقاء](https://www.meetup.com/de-DE/Nodeschool-Passau/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم: شون والش - مساعد منظم: ليان فوهي
-* معلومات الاتصال بالمنظم -
+* Organizer contact info - [Email](mailto:valentin.huber@msg.group)
 
-* [اللقاء](https://www.meetup.com/Nodeschool-Dublin-Meetup/)
-* تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-* المنظم - انتون والي
-* معلومات الاتصال بالمنظم -
+#### غجرات
 
-<!-- لا وجود لدولة إسمها إسرائيل -->
-
-### المكسيك
-
-#### مكسيكو سيتي
-
-* [اللقاء](https://www.meetup.com/NodeBotsMX/)
+* [اللقاء](https://www.meetup.com/Node-js-Meetup-Berlin/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - ساوول بوينتيلو
 * معلومات الاتصال بالمنظم -
 
-### نيوزيلاندا
+#### جاكارتا
 
-#### أوكلاند
-
-* [اللقاء](https://www.meetup.com/AucklandNodeJs/)
+* [اللقاء](https://www.meetup.com/node-HH/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - جورج زابانيا
 * معلومات الاتصال بالمنظم -
 
-### إسبانيا
+### المكسيك
 
-#### مدريد
+#### دبلن
 
-* [اللقاء](https://www.meetup.com/Node-js-Madrid/)
+* [اللقاء](https://www.meetup.com/nodejsathens/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - آليكس فرنانديز
-* معلومات الاتصال بالمنظم -
+* معلومات الإتصال بالمنظم -
 
-### تايلاندا
+### نيوزيلاندا
 
-#### بانكوك
+#### مكسيكو سيتي
 
-* [اللقاء](https://www.meetup.com/Bangkok-Node-js/)
+* [اللقاء](https://www.meetup.com/nodebp/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - ديلان جاي
-* معلومات الاتصال بالمنظم -
+* معلومات الإتصال بالمنظم -
 
-### تركيا
+### إسبانيا
+#### أوكلاند
 
-#### إسطنبول
+##### فانكوفر
 
-* [اللقاء](https://www.meetup.com/nodeschool-istanbul/)
+* [اللقاء](https://www.meetup.com/JavaScripters)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - عارف شاكر اوغلو
 * معلومات الاتصال بالمنظم -
 
-### كندا
-
-#### كولومبيا البريطانية
-
-##### فانكوفر
-
-* [اللقاء](https://www.meetup.com/Node-JS-Community-Hangouts)
-* تردد اللقاءات - كل 3 أشهر
-* كيف تقدم طلب محاضرة ؟ طلب @keywordnew على تويتر.
-* المنظم - مانيل تشودري
-* معلومات الاتصال بالمنظم -
-
-#### أونتاريو
-
 ##### تورونتو
 
-* [Toronto JS Meetup](https://torontojs.com/)
-* Frequency of Meetups - weekly
-* كيف تقدم طلب محاضرة ؟ _تواصل مع المنظمين عبر منصة سلاك : http://slack.torontojs.com/_
-* أسماء المنظمون - دان ت. وبول د.
-* معلومات الاتصال بالمنظم - _مجتمع سلاك_
+* [اللقاء](https://www.meetup.com/nodeJS-Devs/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* المنظم - مانيل تشودري
+* معلومات الإتصال بالمنظم -
 
-### الولايات المتحدة
-
-#### أريزونا
+#### مدريد
 
 ##### ميسا
 
-* [اللقاء](https://www.meetup.com/NodeAZ/)
+* [اللقاء](https://www.meetup.com/meetup-group-iAIoTVuS/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ _تواصل مع المنظمين عبر منصة سلاك : http://slack.torontojs.com/_
+* أسماء المنظمون - دان ت. وبول د.
+* معلومات الإتصال بالمنظم -
+
+#### بانكوك
+
+##### إرفين
+
+* [اللقاء](https://www.meetup.com/JaipurJS-Developer-Meetup/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - كريس ماتيو
 * معلومات الاتصال بالمنظم -
 
-#### كاليفورنيا
+### تايلاندا
 
-##### إرفين
+#### إسطنبول
 
-* [اللقاء]https://www.meetup.com/Node-JS-OC/)
+* [اللقاء](https://www.meetup.com/Node-js-Workshop/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - فرشيد عاطف
 * معلومات الاتصال بالمنظم -
 
-##### سان فرانسيسكو
+### تركيا
 
-* [اللقاء](https://www.meetup.com/sfnode/)
+#### كولومبيا البريطانية
+
+* [اللقاء](https://www.meetup.com/Dublin-Node-js-Meetup/)
 * تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - دان شو
-* معلومات الاتصال بالمنظم -
+* معلومات الإتصال بالمنظم -
 
-* [اللقاء](https://www.meetup.com/Node-js-Serverside-Javascripters-Club-SF/)
+* [اللقاء](https://www.meetup.com/Nodeschool-Dublin-Meetup/)
 * تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - مات باردي
-* معلومات الاتصال بالمنظم -
+* معلومات الإتصال بالمنظم -
 
-#### كولورادو
+### كندا
 
-##### دنفر
+#### أونتاريو
 
-* [اللقاء](https://www.meetup.com/Node-js-Denver-Boulder//)
+* [اللقاء](https://www.meetup.com/NodeJS-Israel/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات
 * المنظم - بروكس باتون
 * معلومات الاتصال بالمنظم -
 
-#### جورجيا
+### الولايات المتحدة
 
-##### أتلانتا
+#### أريزونا
 
-* [اللقاء](https://www.meetup.com/Atlanta-Nodejs-Developers/)
+* [اللقاء](https://www.meetup.com/NodeBotsMX/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - ريان كونيلي
-* معلومات الاتصال بالمنظم
+* معلومات الإتصال بالمنظم -
 
-#### إلينوي
+### المملكة المتحدة
 
-##### شيكاغو
+#### كاليفورنيا
 
-* [اللقاء](https://www.meetup.com/Chicago-Nodejs/)
+* [اللقاء](https://www.meetup.com/AucklandNodeJs/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - مايك هوستيتلر
-* معلومات الاتصال بالمنظم -
+* معلومات الإتصال بالمنظم -
 
-#### إنديانا
+### اوكرانيا
 
-##### انديانابوليس
+#### كولورادو
 
-* [اللقاء](https://www.meetup.com/Node-indy/)
+* [اللقاء](https://www.meetup.com/Moscow-NodeJS-Meetup/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - مايك سايدل
 * معلومات الاتصال بالمنظم -
 
-#### ماساتشوستس
+### ألمانيا
 
-##### بوسطن
+#### جورجيا
 
-* [اللقاء](https://www.meetup.com/nodejs/)
-* تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟ أكتب إلى براين سودانو.
-* المنظم - براين سودانو
-* معلومات الاتصال بالمنظم -
-
-#### مينيسوتا
-
-##### مينيابوليس
-
-* [اللقاء](https://www.meetup.com/NodeMN/)
+* [اللقاء](https://www.meetup.com/nodecpt/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-* المنظم - مايك فراي
-* معلومات الاتصال بالمنظم -
+* المنظم - براين سودانو
+* معلومات الإتصال بالمنظم -
 
-#### نيويورك
-
-##### نيويورك
-
-* [اللقاء](https://www.meetup.com/nodejs/)
-* تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟
-* المنظم - باتريك سكوت شارك في تنظيم: مات والترز.
-* معلومات الاتصال بالمنظم -
+### Spain
 
 #### إلينوي
 
-##### شيكاغو
+* [اللقاء](https://www.meetup.com/Node-js-Madrid/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* المنظم - مايك فراي
+* معلومات الإتصال بالمنظم -
 
-* [اللقاء](https://www.meetup.com/Chicago-Nodejs/)
-* لقاء شهري
-* [How to submit talk](https://airtable.com/shrTDwmMH3zsnsWOE)
+### Thailand
+
+#### إنديانا
+
+* [اللقاء](https://www.meetup.com/Bangkok-Node-js/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* المنظم - باتريك سكوت شارك في تنظيم: مات والترز.
+* معلومات الإتصال بالمنظم -
+
+### Turkey
+
+#### ماساتشوستس
+
+* [اللقاء](https://www.meetup.com/nodeschool-istanbul/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - زيكي نيرينبرج وبن نيسواندر
-* معلومات الاتصال بالمنظم
+* معلومات الإتصال بالمنظم -
 
-#### شمال كارولينا
+### United States
 
-##### رالي
+#### مينيسوتا
 
-* [اللقاء](https://www.meetup.com/triangle-nodejs/)
-* تردد اللقاءات - كل 3 أشهر
-* كيف تقدم طلب محاضرة ؟ راسل البريد الآتي ladyleet@nodejs.org
+##### سان فرانسيسكو
+
+* [اللقاء](https://www.meetup.com/NodeAZ/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - ترايسي لي
-* معلومات الاتصال بالمنظم - ladyleet@nodejs.org
+* معلومات الإتصال بالمنظم -
 
-#### اوريغون
+#### نيويورك
 
-##### بورتلاند
+##### دنفر
 
-* [اللقاء](https://www.meetup.com/pdxnode/)
+* [اللقاء](https://js.la)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ راسل @obensource على تويتر
 * المنظم - بن ميشيل
 * معلومات الاتصال بالمنظم -
 
-#### فيلادلفيا
+##### أتلانتا
 
-##### فيلادلفيا
-
-* [اللقاء](https://www.meetup.com/nodejs-philly/)
+* [اللقاء](https://www.meetup.com/Node-JS-OC/)
 * تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات من [هنا](https://www.meetup.com/nodejs-philly/members/14283814/)
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - ليومار دوران
-* معلومات الاتصال بالمنظم -
+* معلومات الإتصال بالمنظم -
 
-#### تكساس
+##### شيكاغو
 
-##### أوستن
-
-* [اللقاء](https://www.meetup.com/ATXNodeSchool/)
+* [اللقاء](https://www.meetup.com/sfnode/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - ستيفان فون النريدر
-* معلومات الاتصال بالمنظم -
+* معلومات الإتصال بالمنظم -
 
-##### دالاس
-
-* [اللقاء](https://www.meetup.com/DallasNode/)
+* [اللقاء](https://www.meetup.com/Node-js-Serverside-Javascripters-Club-SF/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* Organizer name - Matt Pardee
+* معلومات الإتصال بالمنظم -
+
+#### إلينوي
+
+##### انديانابوليس
+
+* [اللقاء](https://www.meetup.com/Node-js-Denver-Boulder/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات أو اكتب إلى dipesh@rapidops.com .
 * المنظم - كاميرون ستيل
-* معلومات الاتصال بالمنظم -
+* معلومات الإتصال بالمنظم -
 
-#### يوتاه
+#### شمال كارولينا
 
-##### سالت لايك سيتي
+##### بوسطن
 
-* [اللقاء](https://www.meetup.com/utahnodejs/)
+* [اللقاء](https://www.meetup.com/Jax-Node-js-UG/)
+* [Website](https://www.jaxnode.com)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
-* المنظم - آرون سيث مادسن
 * معلومات الاتصال بالمنظم -
+* Organizer contact info - David Fekke at gmail dot com
 
-#### واشنطن
+#### اوريغون
 
-##### سياتل
+##### مينيابوليس
 
-* [اللقاء](https://www.meetup.com/Seattle-Node-js/)
+* [اللقاء](https://www.meetup.com/Atlanta-Nodejs-Developers/)
 * تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - ريان رومر
-* معلومات الاتصال بالمنظم -
+* معلومات الإتصال بالمنظم -
 
-* [اللقاء](https://www.meetup.com/Seattle-NodeSchool/)
-* تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات
-* المنظم - ويل آلفاريز
-* معلومات الاتصال بالمنظم -
+#### فيلادلفيا
 
-#### واشنطن العاصمة
+##### نيويورك
 
-* [اللقاء](https://www.meetup.com/node-dc/)
+* [اللقاء](https://www.meetup.com/Chicago-Nodejs/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ إكتب رسالة إلى آندرو دونكمان adunkman@gmail.com
 * المنظم - آندرو دونكمان
-* معلومات الاتصال بالمنظم -
+* معلومات الإتصال بالمنظم -
 
-### المملكة المتحدة
+#### تكساس
 
-#### لندن
+##### شيكاغو
 
-* [اللقاء](https://www.meetup.com/london-nodejs/)
+* [اللقاء](https://www.meetup.com/Node-indy/)
 * تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - آدم ديفيس
-* معلومات الاتصال بالمنظم -
+* معلومات الإتصال بالمنظم -
 
-* [اللقاء](https://www.meetup.com/NodeWorkshops//)
-* تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟
-* المنظم - دارين هولمز
-* معلومات الاتصال بالمنظم -
+#### يوتاه
 
-#### كامبريدج
+##### رالي
 
-* [اللقاء](https://www.meetup.com/JavaScript-Cambridge/)
+* [اللقاء](https://www.meetup.com/Boston-Node/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟
 * المنظم: جو باري - مساعد منظم: روب موران
 * معلومات الاتصال بالمنظم -
 
-### اوكرانيا
+#### واشنطن
+
+##### بورتلاند
+
+* [اللقاء](https://www.meetup.com/DetNode/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* المنظم - تيمور شمس الدينوف
+
+#### واشنطن العاصمة
+
+##### فيلادلفيا
+
+* [اللقاء](https://www.meetup.com/NodeMN/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* المنظم - فالنتين هوبر
+* معلومات الإتصال بالمنظم -
+
+#### لندن
+
+##### لندن
+
+* [اللقاء](https://www.meetup.com/nodejs/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* Organizer name - Patrick Scott Co-organizer: Matt Walters.
+* معلومات الإتصال بالمنظم -
+* How to submit a talk? Contact Pat Scott @ [pat@patscott.io](mailto:pat@patscott.io). Matt Walters @ [meetup@iammattwalters.com](mailto:meetup@iammattwalters.com).
+* Slack: [join.thenodejsmeetup.com](http://join.thenodejsmeetup.com/)
+* Videos: [https://www.youtube.com/c/thenodejsmeetup](https://www.youtube.com/c/thenodejsmeetup)
+
+#### كامبريدج
+
+##### دالاس
+
+* [اللقاء](https://www.meetup.com/triangle-nodejs/)
+* تردد اللقاء - شهريا
+* How to submit a talk? Email ladyleet@nodejs.org
+* Organizer name - Tracy Lee
+* Organizer contact info - ladyleet@nodejs.org
 
 #### كييف
 
-* [اللقاء](https://www.meetup.com/KievNodeJS/)
-* تردد اللقاء - شهريا
-* كيف تقدم طلب محاضرة ؟
-* المنظم - تيمور شمس الدينوف
-* معلومات الاتصال بالمنظم -
+##### سالت لايك سيتي
 
-### ألمانيا
+* [اللقاء](http://pdxnode.org/)
+* Frequency of meetups - Biweekly (presentation night 2nd Thursdays, hack night last Thursdays)
+* How to submit a talk? [Submit a talk proposal](https://github.com/PDXNode/pdxnode/issues/new), or DM [@obensource](https://twitter.com/obensource) or [@MichelleJLevine](https://twitter.com/MichelleJLevine) on twitter
+* Organizer names - Ben Michel, Michelle Levine
+* Organizer contact info - Ben: benpmichel@gmail.com, Michelle: michelle@michellejl.com
 
 #### بفاريا
 
+##### سياتل
+
+* [اللقاء](https://www.meetup.com/nodejs-philly/)
+* تردد اللقاء - شهريا
+* How to submit a talk? Contact organizers in the meetup page: https://www.meetup.com/nodejs-philly/members/14283814/
+* Organizer name - Leomar Durán
+* معلومات الإتصال بالمنظم -
+
+#### Texas
+
 ##### باساو
 
-* [اللقاء](https://www.meetup.com/de-DE/Nodeschool-Passau/)
-* تردد اللقاءات - كل 3 أشهر
-* كيف تقدم طلب محاضرة ؟ راسل [فالنتين](mailto:valentin.huber@msg.group)
-* المنظم - فالنتين هوبر
-* معلومات الاتصال بالمنظم - [راسل المنظم](mailto:valentin.huber@msg.group)
+* [اللقاء](https://www.meetup.com/austinnodejs/)
+* تردد اللقاء - شهريا
+* How to submit a talk? Contact Matt Walters @ [meetup@iammattwalters.com](mailto:meetup@iammattwalters.com).
+* Organizer name - [Matt Walters](https://github.com/mateodelnorte/)
+* Organizer contact info - [meetup@iammattwalters.com](mailto:meetup@iammattwalters.com)
+* Slack: [join.thenodejsmeetup.com](http://join.thenodejsmeetup.com/)
+* Videos: [https://www.youtube.com/c/thenodejsmeetup](https://www.youtube.com/c/thenodejsmeetup)
+
+* [اللقاء](https://www.meetup.com/ATXNodeSchool/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* Organizer name - Stefan von Ellenrieder
+* معلومات الإتصال بالمنظم -
+
+##### Dallas
+
+* [اللقاء](https://www.meetup.com/DallasNode/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* Organizer name - [Cameron Steele](https://github.com/ATechAdventurer)
+* Organizer contact info - [Cam.steeleis@gmail.com](mailto:Cam.steeleis@gmail.com)
+
+#### Utah
+
+##### Salt Lake City
+
+* [اللقاء](https://www.meetup.com/utahnodejs/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* Organizer name - Aaron Seth Madsen
+* معلومات الإتصال بالمنظم -
+
+#### Washington
+
+##### Seattle
+
+* [اللقاء](https://www.meetup.com/Seattle-Node-js/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* Organizer name - Ryan Roemer
+* معلومات الإتصال بالمنظم -
+
+* [اللقاء](https://www.meetup.com/Seattle-NodeSchool/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات أو اكتب إلى dipesh@rapidops.com .
+* Organizer name - Wil Alvarez
+* معلومات الإتصال بالمنظم -
+
+#### Washington, DC.
+
+* [اللقاء](https://www.meetup.com/node-dc/)
+* تردد اللقاء - شهريا
+* How to submit a talk? Write to Andrew Dunkman adunkman@gmail.com
+* Organizer name - Andrew Dunkman
+* معلومات الإتصال بالمنظم -
+
+### UK
+
+#### London
+##### LNUG
+
+* [اللقاء](https://www.meetup.com/london-nodejs/)
+* [GitHub/lnug](https://github.com/lnug/)
+* تردد اللقاء - شهريا
+* How to submit a talk? Visit our [speakers repos](https://github.com/lnug/speakers), read the guidelines, and [submit a talk proposal as a new issue](https://github.com/lnug/speakers/issues).
+* Organizer name - Adam Davis
+* Organizer contact info - contact@lnug.org, [@lnugOrg](https://twitter.com/lnugorg)
+
+##### Node.js Workshops
+
+* [اللقاء](https://www.meetup.com/NodeWorkshops//)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* Organizer name - Daryn Holmes
+* معلومات الإتصال بالمنظم -
+
+#### Cambridge
+
+* [اللقاء](https://www.meetup.com/JavaScript-Cambridge/)
+* تردد اللقاء - شهريا
+* كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
+* Organizer name - Joe Parry, co-organizer Rob Moran
+* معلومات الإتصال بالمنظم -
+
+#### Oxford
+
+* [JSOxford](https://www.meetup.com/jsoxford/)
+* Frequency of meetups - every 2 months
+* How to submit a talk? [Submit Form](https://docs.google.com/forms/d/e/1FAIpQLSflx7LU44PuwlyCJj-WwlP_SlrUvxAd8uaXlY7_O65c7RLpGQ/viewform?usp=sf_link)
+* Organizer names - Marcus Noble, Seren Davies
+* Organizers contact info - organisers@jsoxford.com
+
+#### Edinburgh
+
+* [Node.js Edinburgh](https://www.meetup.com/Nodejs-Edinburgh/)
+* Frequency of meetups - every 2 months
+* How to submit a talk? [Submit Talk](mailto:michael@biggles.io?subject=Node.js%20Talk%20Proposal)
+* Organizer names - Michael Antczak
+* Organizers contact info - [AntczakMichael](https://twitter.com/AntczakMichael)
+
+### Ukraine
+
+#### Kiev
+
+* [Meetup](https://www.meetup.com/NodeUA/), [Old group](https://www.meetup.com/KievNodeJS/)
+* Frequency of meetups - 1-8 times a month
+* How to submit a talk? Contact organizer by email.
+* Organizer name - Timur Shemsedinov
+* Organizer contact info - [Email](mailto:timur.shemsedinov@gmail.com)
