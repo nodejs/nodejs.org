@@ -14,6 +14,7 @@ layout: contribute.hbs
 * [Node.js Everywhere](https://newsletter.nodejs.org) és el Butlletí oficial mensual de Node.js.
 * [Node.js Collection](https://medium.com/the-node-js-collection) és una col·lecció de contingut comissat per la comunitat a Medium.
 * La [Community Committee](https://github.com/nodejs/community-committee) és una comissió de primer nivell a la Fundació Node.js centrada en els esforços que afronta la comunitat.
+* [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
 
 ## Aprenentatge
 
