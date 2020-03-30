@@ -1,11 +1,10 @@
-﻿{
+{
   "title": "Node.js",
   "author": "Node.js",
   "url": "https://nodejs.org/ar/",
   "locale": "ar",
   "language": "العربية",
-  "languageEnglishVersion": "Arabic",
-  "rtl": true,
+  "languageEnglishVersion": "العربية",
   "scrollToTop": "إنتقل إلى الأعلى",
   "reportNodeIssue": "Node.js أبلغ عن عطل في",
   "reportWebsiteIssue": "أبلغ عن عطل في الموقع",
@@ -13,8 +12,8 @@
   "by": "من طرف",
   "all-downloads": "تحميل جميع النسخ",
   "nightly": "إصدارات ليلية",
-  "unofficial-builds": "بُنْيَات غير رسمية",
   "chakracore-nightly": "Node-ChakraCore إصدارات ليلية خاصة بـ",
+  "unofficial-builds": "بُنْيَات غير رسمية",
   "previous": "السابق",
   "next": "التالي",
   "feeds": [
@@ -36,14 +35,14 @@
   },
   "about": {
     "link": "about",
-    "text": "عن الموقع",
+    "text": "عن النود جي اس",
     "governance": {
       "link": "about/governance",
       "text": "الحوكمة"
     },
     "community": {
       "link": "about/community",
-      "text": "المجتمع"
+      "text": "Community"
     },
     "workinggroups": {
       "link": "about/working-groups",
@@ -51,7 +50,7 @@
     },
     "releases": {
       "link": "about/releases",
-      "text": "الاصدارات"
+      "text": "الإصدارات"
     },
     "resources": {
       "link": "about/resources",
@@ -68,18 +67,20 @@
   },
   "download": {
     "link": "download",
-    "text": "تنزيلات",
+    "text": "Downloads",
     "releases": {
       "link": "download/releases",
-      "text": "الاصدارات السابقة"
+      "text": "النسخ سابقة"
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "تحميل Node.js عن طريق نظام إدارة الحزم الافتراضي"
+      "text": "Installing Node.js via package manager"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "وثائق الاصدارات مختومة SHASUMS"
+      "text": "وثائق الاصدارات مختومة SHASUMS",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "How to verify"
     },
     "install-on-linux": {
       "text": "تثبيت Node.js باستعمال أرشيف ثنائي على لينكس"
@@ -103,19 +104,19 @@
     },
     "guides": {
       "link": "docs/guides",
-      "text": "إرشادات"
+      "text": "الإرشادات"
     },
     "dependencies": {
       "link": "docs/meta/topics/dependencies",
-      "text": "تبعيات"
+      "text": "Dependencies"
     }
   },
   "getinvolved": {
     "link": "get-involved",
-    "text": "إنضم إلينا",
+    "text": "الإنخراط",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
-      "text": "برمج و تعلم"
+      "text": "برمج + تعلم"
     },
     "collab-summit": {
       "link": "get-involved/collab-summit",
@@ -136,7 +137,7 @@
   },
   "security": {
     "link": "security",
-    "text": "أمن"
+    "text": "الحماية"
   },
   "blog": {
     "link": "blog",
@@ -144,7 +145,7 @@
   },
   "releases": {
     "title": "أرشيف الاصدارات",
-    "downloads": "التنزيلات"
+    "downloads": "Downloads"
   },
   "links": {
     "pages": {
