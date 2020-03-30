@@ -5,8 +5,7 @@ layout: docs.hbs
 
 # كيف أبدأ باستعمال الـ Node.js بعد أن قمت بتثبيته؟
 
-بعد تثبيتك للـ Node، دعنا نجرب كيفية بناء أول خادوم ويب باستعماله.
-قم بإنشاء ملف بإسم "app.js" و ألصق داخله الشفرة الآتية:
+بعد تثبيتك للـ Node، دعنا نجرب كيفية بناء أول خادوم ويب باستعماله. قم بإنشاء ملف بإسم "app.js" و ألصق داخله الشفرة الآتية:
 
 ```javascript
 const http = require('http');
@@ -25,3 +24,5 @@ server.listen(port, hostname, () => {
 ```
 
 بعد ذلك، قم بتشغيل هذا الخادوم باستعمال الأمر `node app.js`، و قم بزيارة الرابط `http://localhost:3000` لترى رسالة مفادها 'Hello World'.
+
+Refer to the [Introduction to Node.js](https://nodejs.dev/) for a more comprehensive guide to getting started with Node.js.
