@@ -2,12 +2,12 @@
 layout: index.hbs
 labels:
   current-version: Version actuelle
-  download: Téléchargements
+  download: Download
   download-for: Téléchargements pour
   other-downloads: Autres téléchargements
   other-lts-downloads: Autres téléchargements LTS
   other-current-downloads: Autres téléchargements actuels
-  current: Actuel
+  current: Current
   lts: LTS
   tagline-current: Dernières fonctionnalités
   tagline-lts: Recommandé pour la plupart des utilisateurs
@@ -15,6 +15,9 @@ labels:
   api: Documentation API
   version-schedule-prompt: Ou regardez le
   version-schedule-prompt-link-text: Planning LTS.
+  newsletter: true
+  newsletter-prefix: Sign up for
+  newsletter-postfix: ", the official Node.js Monthly Newsletter."
 ---
 
 Node.js® est un environnement d’exécution JavaScript construit sur le [moteur JavaScript V8 de Chrome](https://v8.dev/).
