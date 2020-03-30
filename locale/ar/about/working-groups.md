@@ -1,4 +1,4 @@
-﻿---
+---
 layout: about.hbs
 title: مجموعات العمل
 ---
@@ -6,8 +6,7 @@ title: مجموعات العمل
 # مجموعات العمل الأساسية
 <!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 
-يتم إنشاء مجموعات العمل الأساسية من قبل لجنة التوجيه التقني
-[لجنة التوجيه التقني (TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).
+يتم إنشاء مجموعات العمل الأساسية من قبل لجنة التوجيه التقني [لجنة التوجيه التقني (TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).
 
 ## مجموعات العمل الحالية
 
@@ -18,82 +17,81 @@ title: مجموعات العمل
 * [دوكر](#docker)
 * [التوعية](#evangelism)
 * [i18n](#i18n)
-* [الإصدارات](#release)
+* [الإصدار](#release)
 * [الحماية](#security)
 * [التدفق](#streams)
 
-### [addon-api](https://github.com/nodejs/nan)
+### [Addon API](https://github.com/nodejs/nan)
 
-ان مجموعة <span dir="rtl">Addon API</span> مسؤولة عن صيانة مستودع مشروع NAN و الحزم التابعة له تحت مسمى _nan_ على مدير حزم النود. يوفر مشروع NAN طبقة مجردة للمؤلفين الاصليين لاضافة Node.js، و ذلك عبر المساعدة في كتابة شفرة برمجية متوافقة مع عدة اصدارات نشطة من Node.js و V8 و libuv.
-تشمل مسؤوليات هذه المجموعة:
+ان مجموعة <span dir="rtl">Addon API</span> مسؤولة عن صيانة مستودع مشروع NAN و الحزم التابعة له تحت مسمى _nan_ على مدير حزم النود. يوفر مشروع NAN طبقة مجردة للمؤلفين الاصليين لاضافة Node.js، و ذلك عبر المساعدة في كتابة شفرة برمجية متوافقة مع عدة اصدارات نشطة من Node.js و V8 و libuv. تشمل مسؤوليات هذه المجموعة:
+
+يمكنك الإطلاع على القائمة الحالية للاعضاء هنا: [README](https://github.com/nodejs/nan#collaborators).
 
 * صيانة مستودع [NAN](https://github.com/nodejs/nan) على الـGitHub، بما في ذلك الشفرة البرمجة، والمشاكل و التوثيق الخاص به
-
 * صيانة مستودع [addon-examples](https://github.com/nodejs/node-addon-examples) على الـGitHub، بما في ذلك الشفرة البرمجية، والمشاكل والتوثيق الخاص به
-* صيانة اضافة واجهة برمجة التطبيق المكتوبة بالـ C++ الخاصة بمشروع Node.js، تحت اشراف لجنة التوجيه التقني.
-* صيانة التوثيق الخاص بالإضافة في إطار مشروع Node.js تحت اشراف لجنة التوجيه التقني للنود جي اس.
-* صيانة حزمة _nan_ على مدير حزم النود، و اصدار النسخ الجديدة منها حسب ما يقتضيه الأمر.
+* Maintaining the C++ Addon API within the Node.js project, in subordination to the Node.js TSC.
+* Maintaining the Addon documentation within the Node.js project, in subordination to the Node.js TSC.
+* Maintaining the _nan_ package in npm, releasing new versions as appropriate.
 * التراسل حول مستقبل Node.js و واجهة NAN لإعطاء المجتمع ملاحظات مسبقة حول التغييرات المستقبلية.
 
-يمكنك الإطلاع على القائمة الحالية للاعضاء هنا:
-[README](https://github.com/nodejs/nan#collaborators).
-
-### <!--benchmarking-->[القياس](https://github.com/nodejs/benchmarking)
-
 يتمثل الغرض من مجموعة القياس الحصول على توافق حول مجموعة من المعايير المتفق عليها و الخاصة بالأداء التي يمكن استعمالها لأجل:
+
+### [القياس](https://github.com/nodejs/benchmarking)
+
+تشمل مسؤولياتها:
 
 * تتبع و تشخيص تحسينات الأداء بين إصدارات Node.js
 * تجنب التراجع في الأداء في النسخ الأحدث
 
-تشمل مسؤولياتها:
+يمكنك الإطلاع على القائمة الحالية للاعضاء هنا: [README](https://github.com/nodejs/nan#collaborators).
 
-* تحديد معيار واحد أو اكثر يمثل الاستخدام الاعتيادي. عادة ما يتطلب ذلك اكثر من معيار واحد لتغطية حالات الاستخدام الاعتيادية للنود جي اس، بما في ذلك الاستخدام الذي يشمل تزامنا عالياً و كموناً منخفضاً.
-* العمل لأجل الحصول على موافقة المجتمع على قائمة المعايير المختارة
+* Identifying 1 or more benchmarks that reflect customer usage. Likely will need more than one to cover typical Node.js use cases including low-latency and high concurrency
+* Working to get community consensus on the list chosen
 * إضافة تنفيذ دوري لجملة من المعايير المختارة لنسخ Node.js
 * تتبع و نشر نتائج الأداء بين مختلف الاصدارات و النسخ المبنية
 
-### <!--build-->[البناء](https://github.com/nodejs/build)
-
-إن غرض مجموعة البناء هو إنشاء و صيانة بنية تحتية مؤتمتة و موزعة.
+### [البناء](https://github.com/nodejs/build)
 
 تشمل مسؤولياتها:
+
+يمكنك الإطلاع على القائمة الحالية للاعضاء هنا: [README](https://github.com/nodejs/nan#collaborators).
 
 * إنتاج الحزم لجميع المنصات المستهدفة
 * إجراء الاختبارات.
 * إجراء اختبارات الأداء و المقارنات.
 * إنشاء و تسيير حاويات البناء
 
-### <!--diagnostics-->[التشخيص](https://github.com/nodejs/diagnostics)
-
-تهدف مجموعة التشخيص إلى تحديد مجموعة من واجهات التشخيص المحددة و الموثقة و القابلة للتوسع لاستعمالها من طرف أدوات Node.js و بيئات جافاسكريبت الإفتراضية.
+### [التشخيص](https://github.com/nodejs/diagnostics)
 
 تشمل مسؤولياتها:
+
+يمكنك الإطلاع على القائمة الحالية للاعضاء هنا: [README](https://github.com/nodejs/nan#collaborators).
 
 * التعاون مع V8 لإدماج `v8_inspector` ضمن Node.js.
 * التعاون مع V8 لإدماج `trace_event` ضمن Node.js.
 * التعاون مع مجموعة العمل الأساسية لتحسين `async_wrap` و `async_wrap`.
 * صيانة و تحسين الدمج الخاص بنظام تتبع نظام التشغيل (ETW، LTTNG، dtrace على سبيل المثال).
 * توثيق القدرات التشخيصية و وواجهات برمجة التطبيقات في Node.js و مكوناتها.
-* استكشاف الفرص و الفجوات، و مناقشة طلبات إضافة الميزات ، و معالجة التداخلات في تشخيصات Node.js.
-* تعزيز النظام البيئي لأدوات التشخيص الخاصة بNode.js.
-* تحديد و إضافة واجهات / واجهات برمجة تطبيقات لتمكين توليد مقالب عند الحاجة.
-* تحديد و إضافة هيكلية مشتركة للمقالب التي تم توليدها، و ذلك لأجل دعم الأدوات التي تهدف لاستقصاء تلك المقالب.
+* Exploring opportunities and gaps, discussing feature requests, and addressing conflicts in Node.js diagnostics.
+* Fostering an ecosystem of diagnostics tools for Node.js.
+* Defining and adding interfaces/APIs in order to allow dumps to be generated when needed.
+* Defining and adding common structures to the dumps generated in order to support tools that want to introspect those dumps.
 
-### <!--docker-->[دوكر](https://github.com/nodejs/docker-node)
-
-إن غرض مجموعة العمل الخاصة بالدوكر هو بناء وصيانة وتحسين اسطوانات الدوكر الرسمية لمشروع Node.js.
+### [دوكر](https://github.com/nodejs/docker-node)
 
 تشمل مسؤولياتها:
+
+يمكنك الإطلاع على القائمة الحالية للاعضاء هنا: [README](https://github.com/nodejs/nan#collaborators).
 
 * الإبقاء على اسطوانات الدوكر الرسمية محدثة بالتزامن مع اصدارات Node.js.
 * اتخاذ القرارات المتعلقة بتحسين و تطبيق الاسطوانات و / أو إجراء اصلاحات عليها.
 * صيانة و تحسين التوثيق الخاص بهذه الاسطوانات.
 
-### <!--evangelism-->[التوعية](https://github.com/nodejs/evangelism)
-
-تقوم مجموعة التوعية بإبراز انجازات Node.js و تسمح للمجتمع بمعرفة كيفية المساهمة في المشروع.
+### [التوعية](https://github.com/nodejs/evangelism)
 
 تشمل مسؤولياتها:
+
+يمكنك الإطلاع على القائمة الحالية للاعضاء هنا: [README](https://github.com/nodejs/nan#collaborators).
 
 * تسهيل التواصل داخل المشروع.
 * إدارة وسائل التواصل الإجتماعي الرسمية للمشروع.
@@ -103,18 +101,18 @@ title: مجموعات العمل
 
 ### [i18n](https://github.com/nodejs/i18n)
 
-إن مهام هذه المجموعة لا تقتصر على الترحمة فحسب، بل هي تمثل الوسيلة التي يتعاون من خلالها أعضاء المجتمع مع بعضهم باستخدام اللغة التي يختارونها.
-
 كل فريق ينتظم حول لغة معروفة، و يمكن كل مجتمع للغة معروفة ينتج عدة ترجمات للمشروعات المختلفة.
 
 تشمل مسؤولياتها:
 
-* ترجمة أي مواد خاصة بـ Node.js و التي قد يتم اعتبارها على صلة بمجتمعهم.
-* مراجعة المعالجات لإبقاء عمليات الترجمة محدثة و ذات جودة عالية.
+يمكنك الإطلاع على القائمة الحالية للاعضاء هنا: [README](https://github.com/nodejs/nan#collaborators).
+
+* Translating any Node.js materials they believe are relevant to their community.
+* Reviewing processes for keeping translations up to date and of high quality.
 * إدارة و مراقبة قنوات التواصل الاجتماعي بلغاتهم.
 * ترويج المتحدثين و اللقاءات و المؤتمرات الخاصة بـ Node.js بلغاتهم الأصلية.
 
-كل مجتمع يسهر على صيانة عضويته الخاصة.
+تقوم هذه المجموعة بإدارة عمليات الأصدار للنسخ الجديدة من Node.js.
 
 * [nodejs-ar - Arabic (العَرَبِيَّة)](https://github.com/nodejs/nodejs-ar)
 * [nodejs-bg - Bulgarian (български)](https://github.com/nodejs/nodejs-bg)
@@ -151,33 +149,33 @@ title: مجموعات العمل
 * [nodejs-uk - Ukrainian (Українська)](https://github.com/nodejs/nodejs-uk)
 * [nodejs-vi - Vietnamese (Tiếng Việt)](https://github.com/nodejs/nodejs-vi)
 
-### <!--release-->[الإصدارات الطويلة الأمد](https://github.com/nodejs/Release)
-
-تقوم هذه المجموعة بإدارة عمليات الأصدار للنسخ الجديدة من Node.js.
+### [الإصدار](https://github.com/nodejs/Release)
 
 تشمل مسؤولياتها:
+
+يمكنك الإطلاع على القائمة الحالية للاعضاء هنا: [README](https://github.com/nodejs/nan#collaborators).
 
 * تحديد عملية الإصدار.
 * تحديد محتوى الإصدارات.
 * توليد و إنشاء الإصدارات.
 * إختبار الإصدارات.
-* تولي تسيير الدعم طويل الأمد و الفروع الحالية، بما في ذلك إدماج التغييرات اللازمة لتلك الفروع
-* تحديد السياسة المتعلقة بما سيتم اضافته للاصدارات
+* Manage the Long Term Support and Current branches including backporting changes to these branches.
+* Define the policy for what gets backported to release streams
 
-### <!--security-->[الحماية](https://github.com/nodejs/security-wg)
-
-تتولى مجموعة الحماية جميع المسائل المرتبطة بتأمين Node.js.
+### [الحماية](https://github.com/nodejs/security-wg)
 
 تشمل مسؤولياتها:
+
+يمكنك الإطلاع على القائمة الحالية للاعضاء هنا: [README](https://github.com/nodejs/nan#collaborators).
 
 * تحديد و صيانة سياسات الأمن و إجراءاته لـ:
   * مشروع Node.js الأساسي
   * المشاريع الأخرى المصانة من قبل لجنة التوجيه التقني التابعة للنود جي اس
-* العمل مع منصة النود الأمنية لجلب ثغرات المجتمع الأمنية للمنظمة كمادة يتم مشاركتها.
-* ضمان أن بيانات الثغرات محدثة بطريفة فعالة و مراعية لعامل الوقت. مثلا، بأن يتم ضمان وجود معالجات موثقة جيدا فيما يخص عمليات الإبلاغ عن الثغرات في الوحدات التكميلية الخاصة بالمجتمع.
-* مراجعة عمليات توجيه التقارير الأمنية والتوصية بها (لا يعني ذلك إدارة التقارير الأمنية فعليا، فذلك يتم من خلال مجموعة من الأشخاص المختارين من قبل لجنة التوجيه التقني)
-* تحديد و صيانة السياسات و الإجراءات المتعلقة بالمخاوف الأمنية المشتركة في النظام البيئي الخارج و المفتوح للنود جي اس.
-* تقديم المساعدة للاشخاص الذين يتولون صيانة حزم النود، و ذلك لإصلاح الثغرات التي تشكل تهديدا جديا.
+* Work with the Node Security Platform to bring community vulnerability data into the foundation as a shared asset.
+* Ensure the vulnerability data is updated in an efficient and timely manner. For example, ensuring there are well-documented processes for reporting vulnerabilities in community modules.
+* Review and recommend processes for handling of security reports (but not the actual administration of security reports, which are reviewed by a group of people directly delegated to by the TSC).
+* Define and maintain policies and procedures for the coordination of security concerns within the external Node.js open source ecosystem.
+* Offer help to npm package maintainers to fix high-impact security bugs.
 * صيانة و توفير بيانات حول الثغرات التي تم الكشف عنها في:
   * مشروع Node.js الأساسي
   * المشاريع الأخرى المصانة من قبل لجنة التوجيه التقني التابعة للنود جي اس
@@ -186,10 +184,11 @@ title: مجموعات العمل
 * التوصية بالتحسينات الأمنية للمشروع الأساسي للنود جي اس.
 * تسهيل و ترويج توسع الخدمات الأمنية القوية و النظام البيئي لموفر المنتجات
 
-### <!--streams-->[التدفق](https://github.com/nodejs/readable-stream)
-تكرس هذه المجموعة عملها لدعم و تحسين واجهات برمجة التطبيقات الخاص بالتدفقات في النظام البيئي للنود جي اس و مدير حزم النود. نحن نهدف لخلق واجهات برمجة تطبيقات قابلة للتركيب و تحل مشكلة تمثيل حدث مرات عدة بطريقة معروفة وسهلة. يتم إدخال التحسينات على واجهة برمجة التطبيق حسب حاجة النظام البيئي. إن العمليات المشتركة إضافة إلى التوافق مع الإصدارات الاقدم مع حلول أخرى هي مهمة المجموعة.
+### [التدفق](https://github.com/nodejs/readable-stream)
 
 تشمل المسؤوليات:
+
+يمكنك الإطلاع على القائمة الحالية للاعضاء هنا: [README](https://github.com/nodejs/nan#collaborators).
 
 * تحديد مشاكل التدفق في متتبع المشاكل الخاص بNode.js.
 * تولي المسؤولية عن التوثيق الخاص بمشروع Node.js و تعديله.
