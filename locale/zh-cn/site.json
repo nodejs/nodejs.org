@@ -1,11 +1,10 @@
 {
   "title": "Node.js",
-  "editOnGithub":"在 GitHub 上编辑",
   "author": "Node.js",
   "url": "https://nodejs.org/zh-cn/",
   "locale": "zh-cn",
   "language": "中文(简体)",
-  "languageEnglishVersion": "Chinese Simplified",
+  "languageEnglishVersion": "中文(简体)",
   "scrollToTop": "回到页顶",
   "reportNodeIssue": "报告 Node.js 问题 ",
   "reportWebsiteIssue": "报告网站问题",
@@ -43,7 +42,7 @@
     },
     "community": {
       "link": "about/community",
-      "text": "社区"
+      "text": "Community"
     },
     "workinggroups": {
       "link": "about/working-groups",
@@ -59,23 +58,23 @@
     },
     "trademark": {
       "link": "about/trademark",
-      "text": "商标"
+      "text": "Trademark"
     },
     "privacy": {
       "link": "about/privacy",
-      "text": "隐私政策"
+      "text": "隐私权政策"
     }
   },
   "download": {
     "link": "download",
-    "text": "下载",
+    "text": "Downloads",
     "releases": {
       "link": "download/releases",
       "text": "以往的版本"
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "使用包管理器安装 Node.js"
+      "text": "通过包管理器安装 Node.js"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
@@ -89,7 +88,7 @@
   },
   "docs": {
     "link": "docs",
-    "text": "文档",
+    "text": "Docs",
     "es6": {
       "link": "docs/es6",
       "text": "ES6 及更高"
@@ -109,7 +108,7 @@
     },
     "dependencies": {
       "link": "docs/meta/topics/dependencies",
-      "text": "依赖项"
+      "text": "Dependencies"
     }
   },
   "getinvolved": {
@@ -117,7 +116,7 @@
     "text": "加入我们",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
-      "text": "代码与学习"
+      "text": "代码 + 学习"
     },
     "collab-summit": {
       "link": "get-involved/collab-summit",
@@ -129,16 +128,16 @@
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
-      "text": "管理"
+      "text": "Code of Conduct"
     },
     "node-meetups": {
       "link": "get-involved/node-meetups",
-      "text": "Node.js 开发者大会"
+      "text": "Node.js Meetups"
     }
   },
   "security": {
     "link": "security",
-    "text": "安全"
+    "text": "安全组"
   },
   "blog": {
     "link": "blog",
@@ -146,7 +145,7 @@
   },
   "releases": {
     "title": "发布历史",
-    "downloads": "下载"
+    "downloads": "Downloads"
   },
   "links": {
     "pages": {
