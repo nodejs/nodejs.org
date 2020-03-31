@@ -4,7 +4,7 @@
   "url": "https://nodejs.org/ru/",
   "locale": "ru",
   "language": "Русский",
-  "languageEnglishVersion": "Russian",
+  "languageEnglishVersion": "Русский",
   "scrollToTop": "Вверх",
   "reportNodeIssue": "Проблемы с Node.js",
   "reportWebsiteIssue": "Проблемы с сайтом",
@@ -42,7 +42,7 @@
     },
     "community": {
       "link": "about/community",
-      "text": "Сообщество"
+      "text": "Community"
     },
     "workinggroups": {
       "link": "about/working-groups",
@@ -58,23 +58,23 @@
     },
     "trademark": {
       "link": "about/trademark",
-      "text": "Товарный знак"
+      "text": "Торговая марка"
     },
     "privacy": {
       "link": "about/privacy",
-      "text": "Политика приватности"
+      "text": "Privacy Policy"
     }
   },
   "download": {
     "link": "download",
-    "text": "Загрузка",
+    "text": "Downloads",
     "releases": {
       "link": "download/releases",
-      "text": "Предыдущие релизы"
+      "text": "Предыдущие версии"
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "Установка Node.js с помощью пакетного менеджера"
+      "text": "Установка Node.js через пакетный менеджер"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
@@ -108,7 +108,7 @@
     },
     "dependencies": {
       "link": "docs/meta/topics/dependencies",
-      "text": "Зависимости"
+      "text": "Dependencies"
     }
   },
   "getinvolved": {
@@ -128,7 +128,7 @@
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
-      "text": "Правила"
+      "text": "Нормы поведения"
     },
     "node-meetups": {
       "link": "get-involved/node-meetups",
@@ -145,7 +145,7 @@
   },
   "releases": {
     "title": "История релизов",
-    "downloads": "Загрузки"
+    "downloads": "Downloads"
   },
   "links": {
     "pages": {
