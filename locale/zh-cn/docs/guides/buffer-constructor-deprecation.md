@@ -5,7 +5,7 @@ layout: docs.hbs
 
 # 请使用 `Buffer.from()`/`Buffer.alloc()`
 
-## <!--overview-->概括
+## 概括
 
 本教程将向你介绍如果迁移到安全的 `Buffer` 构造函数方法。此合并将消除以下已废除的警告：
 
@@ -64,8 +64,7 @@ Node.js 5.x 发行自 2016 年就不再支持，而 4.x 版本发行线支持到
 * 对于 `new Buffer(string)` （或 `new Buffer(string, encoding)`），请用对应的 `Buffer.from(string)` （或 `Buffer.from(string, encoding)`）进行替换。
 * 对于其它情况（一般极为罕见）中使用了 `new Buffer(...arguments)` 的，请用 `Buffer.from(...arguments)` 进行替换。
 
-注意：`Buffer.alloc()` 在当前的 Node.js 版本上 _快于_
-`new Buffer(size).fill(0)`，后者是当你确认需要用 0 对整个缓存进行初始化。
+注意：`Buffer.alloc()` 在当前的 Node.js 版本上 _快于_ `new Buffer(size).fill(0)`，后者是当你确认需要用 0 对整个缓存进行初始化。
 
 启用 ESLint 检查规则[不使用缓存构造函数](https://eslint.org/docs/rules/no-buffer-constructor)或 [node/ 未废除的 Api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) 时，也会建议避免使用不安全的 `Buffer` 函数。
 
@@ -73,18 +72,17 @@ Node.js 5.x 发行自 2016 年就不再支持，而 4.x 版本发行线支持到
 
 _如果你目前支持那些旧版本的 Node.js，并且抛弃对它们的支持又不可能的情况下，或者你需要支持你包中的旧版本情况下，请考虑使用[版本 2](#variant-2)，或者[版本 3](#variant-3)。这样人们可以在使用这些旧版本情况下照样修复这些安全问题。那样的话，这些由不安全的 `Buffer` 所引发的问题会被你彻底根除，你的用户也不用在你运行 Node.js 10 的时候观察你的运行时废弃警告。_
 
-## <!--variant-2-->变化 2： 使用替换库
+## <!--variant-2-->变化 2： 使用 polyfill 库
 
 存在着三种替换库：
 
-* **[更安全的缓存](https://www.npmjs.com/package/safer-buffer)** 是整个用来替换 `Buffer` 函数的方法。当你在使用 `new Buffer()` 的时候，将会 _抛出_ 异常。
-  和[变化 1](#版本-1) 中一样，你会得到详细同样的步骤。不过请用 `const Buffer = require('safer-buffer').Buffer` 在你所有文件中对 `Buffer` 函数进行替换。
+* **[更安全的缓存](https://www.npmjs.com/package/safer-buffer)** 是整个用来替换 `Buffer` 函数的方法。当你在使用 `new Buffer()` 的时候，将会 _抛出_ 异常。 和[变化 1](#版本-1) 中一样，你会得到详细同样的步骤。不过请用 `const Buffer = require('safer-buffer').Buffer` 在你所有文件中对 `Buffer` 函数进行替换。
 
   请不要使用旧版本的 `new Buffer()` 函数，在添加上面的行的任何文件中，使用 `new Buffer()` 会 _抛出_ 异常。
 
-* **[buffer-from](https://www.npmjs.com/package/buffer-from) 或
-  [buffer-alloc](https://www.npmjs.com/package/buffer-alloc)** 都是
-  [ponyfills](https://ponyfill.com/) `Buffer` 可接受的方案。 你所要做的就是针对你自己的 API 添加所需的包。
+  Do not use the old `new Buffer()` API. In any files where the line above is added, using old `new Buffer()` API will _throw_.
+
+* **[buffer-from](https://www.npmjs.com/package/buffer-from) 或 [buffer-alloc](https://www.npmjs.com/package/buffer-alloc)** 都是 [ponyfills](https://ponyfill.com/) `Buffer` 可接受的方案。 你所要做的就是针对你自己的 API 添加所需的包。
 
   你需要用一个合适的名字为这些调入的模块重命名，例如 `const bufferFrom = require('buffer-from')`。并且使用它们取代你的 `new Buffer()`。例如 `new Buffer('test')` 变成了 `bufferFrom('test')`。
 
@@ -96,8 +94,7 @@ _如果你目前支持那些旧版本的 Node.js，并且抛弃对它们的支�
 
 注意，在任意一种情况下，手动移除你代码中所有关于 `Buffer` 的调用非常重要——仅在 `safe-buffer` 中抛出警告不解决问题，它只是为新的 API 提供了一种替换而已。我亲眼见过人们犯过这类错误。
 
-启用 ESLint 规则[不使用缓存构造函数](https://eslint.org/docs/rules/no-buffer-constructor)
-或是 [node/ 未废除的 Api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) 是推荐的。
+启用 ESLint 规则[不使用缓存构造函数](https://eslint.org/docs/rules/no-buffer-constructor) 或是 [node/ 未废除的 Api](https://github.com/mysticatea/eslint-plugin-node/blob/master/docs/rules/no-deprecated-api.md) 是推荐的。
 
 _如果你抛弃了对 Node.js 版本小于 4.5.0 的支持，请不要忘记把替代库也一起去掉。_
 
@@ -166,6 +163,7 @@ const buf = Buffer.alloc ? Buffer.alloc(number) : new Buffer(number).fill(0);
 * 如果没有一个很好的理由，请不要使用它：
   * 对于小缓存，你或许不想看到性能上的差别。实际上，用 `Buffer.alloc()` 甚至更快。
   * 如果你的代码不是在热代码路径中——你也不希望看到有差别，记住用零填充将把潜在的风险降到最低。
+  * keep in mind that zero-filling minimizes the potential risks.
 * 如果你使用它，请务必保证你从不会返回只填充了一部分的缓存，
   * 如果你按顺序写入此缓存——总是截取此缓存到你写入缓存的实际长度。
 
@@ -173,15 +171,15 @@ const buf = Buffer.alloc ? Buffer.alloc(number) : new Buffer(number).fill(0);
 
 _注意，当你不用 0 去填充缓存，此问题同样发生在 `new Buffer()` 上。这依赖于 Node.js 版本（缺少类型检查也会额外增加 DoS 攻击）。_
 
-## <!--faq-->常见问题
+## 常见问题
 
 ### <!--design-flaws-->`Buffer` 构造函数有什么问题？
 
 `Buffer` 构造函数可以用不同方式创建缓存：
 
-* `new Buffer(42)` 创建一个 42 个字节的 `缓存`。在 Node.js 8 之前，该缓存考虑性能，它包含 *随机内存*，而这可能包括任何数据，从编码的源码到密码，以及加密秘钥等。
-* `new Buffer('abc')` 创建一个 UTF-8 编码的字符串 `'abc'`。第二个参数可以指定用何种编码：举一个例子，`new Buffer(string, 'base64')` 可用于将 Base64 字符串转换为原始字符串表示的字节序列。
-* 除此之外，还有一些其它参数的组合。
+* `new Buffer(42)` creates a `Buffer` of 42 bytes. Before Node.js 8, this buffer contained *arbitrary memory* for performance reasons, which could include anything ranging from program source code to passwords and encryption keys.
+* `new Buffer('abc')` creates a `Buffer` that contains the UTF-8-encoded version of the string `'abc'`. A second argument could specify another encoding: for example, `new Buffer(string, 'base64')` could be used to convert a Base64 string into the original sequence of bytes that it represents.
+* There are several other combinations of arguments.
 
 这意味着在代码中诸如 `var buffer = new Buffer(foo);`，当你不知道 `foo` 是什么类型，想要知道生成的缓存里边到底存了什么内容几乎是不可能的。
 
@@ -206,8 +204,8 @@ function stringToBase64(req, res) {
 
 因为缺少类型检查，攻击者可以别有用心地发送一个数字作为请求的一部分，借助它，他们可以：
 
-* 读取未初始化的内存数据。 这显然 **会** 导致密码、秘钥和其它敏感数据的泄露（信息泄露）。
-* 强迫程序开辟一个超大内存区域。举一个例子，当指定 `500000000` 作为输入数据时，每个请求将开辟 500MB 内存区。这不是会耗尽内存使得程序崩溃，就会导致明显的程序性能下降（服务拒绝攻击）。
+* Read uninitialized memory. This **will** leak passwords, encryption keys and other kinds of sensitive information. (Information leak)
+* Force the program to allocate a large amount of memory. For example, when specifying `500000000` as the input value, each request will allocate 500MB of memory. This can be used to either exhaust the memory available of a program completely and make it crash, or slow it down significantly. (Denial of Service)
 
 这些情况在现实的网络服务中都被认为是非常严重的安全问题。
 
