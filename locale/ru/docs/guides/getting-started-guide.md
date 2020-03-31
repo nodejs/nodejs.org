@@ -5,19 +5,18 @@ layout: docs.hbs
 
 # С чего начать в Node.js после его установки?
 
-После того, как вы установили Node, давайте попробуем создать наш первый веб-сервер.
-Создайте файл с именем "app.js" и скопируйте следующий код:
+После того, как вы установили Node, давайте попробуем создать наш первый веб-сервер. Создайте файл с именем "app.js" и скопируйте следующий код:
 
 ```javascript
-const http = require('http');
+const http = require("http");
 
-const hostname = '127.0.0.1';
+const hostname = "127.0.0.1";
 const port = 3000;
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+  res.setHeader("Content-Type", "text/plain");
+  res.end("Hello World\n");
 });
 
 server.listen(port, hostname, () => {
@@ -26,3 +25,5 @@ server.listen(port, hostname, () => {
 ```
 
 Далее запустите ваш веб-сервер, используя команду `node app.js`, откройте `http://localhost:3000` в браузере и вы увидите сообщение 'Hello World'.
+
+Refer to the [Introduction to Node.js](https://nodejs.dev/) for a more comprehensive guide to getting started with Node.js.
