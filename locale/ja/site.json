@@ -1,11 +1,10 @@
 {
   "title": "Node.js",
-  "editOnGithub":"GitHub 上で編集",
   "author": "Node.js",
   "url": "https://nodejs.org/ja/",
   "locale": "ja",
   "language": "日本語",
-  "languageEnglishVersion": "Japanese",
+  "languageEnglishVersion": "日本語",
   "scrollToTop": "上部へスクロールする",
   "reportNodeIssue": "Node.js の不具合を報告",
   "reportWebsiteIssue": "サイトの不具合を報告",
@@ -13,6 +12,7 @@
   "by": "by",
   "all-downloads": "All download options",
   "nightly": "Nightly builds",
+  "chakracore-nightly": "Node-ChakraCore Nightly builds",
   "unofficial-builds": "非公式のビルド版",
   "previous": "前",
   "next": "次",
@@ -40,37 +40,47 @@
       "link": "about/governance",
       "text": "委員会"
     },
+    "community": {
+      "link": "about/community",
+      "text": "Community"
+    },
     "workinggroups": {
       "link": "about/working-groups",
-      "text": "ワーキンググループ"
+      "text": "Working Groups"
     },
     "releases": {
       "link": "about/releases",
-      "text": "リリース"
+      "text": "Releases"
     },
     "resources": {
       "link": "about/resources",
-      "text": "リソース"
+      "text": "Resources"
     },
     "trademark": {
       "link": "about/trademark",
-      "text": "トレードマーク"
+      "text": "Trademark"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "Privacy Policy"
     }
   },
   "download": {
     "link": "download",
-    "text": "ダウンロード",
+    "text": "Downloads",
     "releases": {
       "link": "download/releases",
-      "text": "バージョンの一覧"
+      "text": "リリース一覧"
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "パッケージマネージャを使用したダウンロード"
+      "text": "パッケージマネージャを利用した Node.js のインストール"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "リリースファイルのための SHASUM 署名"
+      "text": "リリースファイルのための SHASUM 署名",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "How to verify"
     },
     "install-on-linux": {
       "text": "Installing Node.js via binary archive"
@@ -98,7 +108,7 @@
     },
     "dependencies": {
       "link": "docs/meta/topics/dependencies",
-      "text": "依存関係"
+      "text": "Dependencies"
     }
   },
   "getinvolved": {
@@ -108,18 +118,26 @@
       "link": "get-involved/code-and-learn",
       "text": "Code + Learn"
     },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "コラボレーションサミット"
+    },
     "contribute": {
       "link": "get-involved/contribute",
       "text": "貢献する"
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
-      "text": "行動規範"
+      "text": "Code of Conduct"
+    },
+    "node-meetups": {
+      "link": "get-involved/node-meetups",
+      "text": "Node.js Meetups"
     }
   },
   "security": {
     "link": "security",
-    "text": "セキュリティ"
+    "text": "Security"
   },
   "blog": {
     "link": "blog",
@@ -127,7 +145,7 @@
   },
   "releases": {
     "title": "過去のリリース",
-    "downloads": "ダウンロード"
+    "downloads": "Downloads"
   },
   "links": {
     "pages": {
