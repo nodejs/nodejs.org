@@ -1,9 +1,9 @@
 ---
-title: 把一个 Node.js web 应用程序给 Docker 化
+title: 将 Node.js 网络应用安装到 Docker 中
 layout: docs.hbs
 ---
 
-# 把一个 Node.js web 应用程序给 Docker 化
+# 将 Node.js 网络应用安装到 Docker 中
 
 本示例的目标是给你演示如何将一个 Node.js 的应用装入到 Docker 容器中。本教程旨在针对于开发人员，而 *非* 产品发布人员。此教程同样假定你有一个可以正常工作的 [Docker 安装](https://docs.docker.com/engine/installation/)，并且对于 Node.js 的应用程序是如何组织的有一个大致的基本了解。
 
@@ -92,8 +92,7 @@ RUN npm install
 # RUN npm ci --only=production
 ```
 
-请注意，我们只是拷贝了 `package.json` 文件而非整个工作目录。这允许我们利用缓存 Docker 层的优势。bitJudo 对此有一个很好的解释，请[见此](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/)。
-进一步说，对于生产环境而言，注释中提及的 `npm ci` 命令协助提供了一个更快、可靠、可再生的构建环境。欲知详情，可以参考[此处](https://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable)。
+请注意，我们只是拷贝了 `package.json` 文件而非整个工作目录。这允许我们利用缓存 Docker 层的优势。bitJudo 对此有一个很好的解释，请[见此](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/)。 进一步说，对于生产环境而言，注释中提及的 `npm ci` 命令协助提供了一个更快、可靠、可再生的构建环境。欲知详情，可以参考[此处](https://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable)。
 
 在 Docker 镜像中使用 `COPY` 命令绑定你的应用程序：
 
