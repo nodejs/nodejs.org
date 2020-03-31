@@ -14,17 +14,15 @@ layout: contribute.hbs
 * [Node.js Everywhere](https://newsletter.nodejs.org) официальный ежемесячный блог Node.js
 * [Node.js](https://medium.com/the-node-js-collection) контент, создаваемый сообществом Medium.
 * [Community Committee](https://github.com/nodejs/community-committee) является комитетом высшего уровня в Фонде Node.js, ориентированным на развитие сообщества.
+* [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
 
 ## Обучение
 
 * [Официальная справочная документация по API](https://nodejs.org/api/) описывает API Node.js
 * [NodeSchool.io](https://nodeschool.io/) научит вас концепциям Node.js через интерактивные игры командной строки.
 * [Тег Node.js на Stack Overflow](https://stackoverflow.com/questions/tagged/node.js) собирает новую информацию каждый день.
-* [Тег сообщества на DEV.js](https://dev.to/t/node) ― это место, где можно делиться проектами, статьями и учебными
-  пособиями по Node.js, а также начинать обсуждения и запрашивать отзывы по темам, связанным с Node.js. Разработчики
-  всех уровней квалификации могут принять участие.
-* [Nodeiflux](https://discordapp.com/invite/vUsrbjd), является дружественным сообществом бекенд-разработчиков на Node.js,
-  поддерживающих друг друга на Discord.
+* [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
+* [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
 
 ## Международные общественные сайты и проекты
 
