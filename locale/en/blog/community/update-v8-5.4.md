@@ -8,9 +8,7 @@ layout: blog-post.hbs
 author: Michaël Zasso
 ---
 
-With the release of Node.js 7.0.0, the V8 JavaScript engine has been upgraded from 5.1
-to its latest stable version, 5.4.
-It brings in new language features and increased performance.
+With the release of Node.js 7.0.0, the V8 JavaScript engine has been upgraded from 5.1 to its latest stable version, 5.4. It brings in new language features and increased performance.
 
 ## New ECMAScript features
 
@@ -30,8 +28,7 @@ const maxInt = 2**32 - 1; // Equivalent to: Math.pow(2, 32) - 1
 * [Proposal](https://github.com/tc39/proposal-object-values-entries)
 * [Spec (draft)](https://tc39.github.io/ecma262/#sec-object.values)
 
-Complementing `Object.keys`, those two new static methods return respectively an Array of enumerable own property values
-or entries (an entry being an array with two elements: key and value). Example:
+Complementing `Object.keys`, those two new static methods return respectively an Array of enumerable own property values or entries (an entry being an array with two elements: key and value). Example:
 
 ```javascript
 const obj = {
