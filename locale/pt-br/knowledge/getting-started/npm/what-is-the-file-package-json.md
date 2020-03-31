@@ -20,7 +20,7 @@ O Node em si reconhece apenas dois campos no `package.json`:
 }
 ```
 
-O campo `name` deve ser autoexplicativo: É o nome do seu projeto. O campo `version` é usado pelo npm para garantir que a versão correta do pacote esteja sendo instalado. Geralmente, assume a forma de `major.minor.patch`, onde` major`, `minor` e` patch` são números inteiros que aumentam após cada nova versão. Para mais detalhes, consulte esta especificação: http://semver.org.
+O campo `name` deve ser autoexplicativo: É o nome do seu projeto. O campo `version` é usado pelo npm para garantir que a versão correta do pacote esteja sendo instalado. Geralmente, assume a forma de `major.minor.patch`, onde`major`, `minor` e`patch` são números inteiros que aumentam após cada nova versão. Para mais detalhes, consulte esta especificação: http://semver.org.
 
 Para um package.json mais completo, podemos verificar `underscore`:
 
@@ -39,12 +39,12 @@ Para um package.json mais completo, podemos verificar `underscore`:
 }
 ```
 
-Como você pode ver, existem campos para a `description` (descrição) e `keywords` (palavras-chave) do seu projeto. Isso permite que as pessoas que acham o seu projeto entendam o que é em poucas palavras. Os campos `author`,` contributors`, `homepage` e `repository` podem ser usados ​​para creditar as pessoas que contribuíram para o projeto, mostrar como entrar em contato com o autor/mantenedor e fornecer links para referências adicionais.
+Como você pode ver, existem campos para a `description` (descrição) e `keywords` (palavras-chave) do seu projeto. Isso permite que as pessoas que acham o seu projeto entendam o que é em poucas palavras. Os campos `author`,`contributors`, `homepage` e `repository` podem ser usados ​​para creditar as pessoas que contribuíram para o projeto, mostrar como entrar em contato com o autor/mantenedor e fornecer links para referências adicionais.
 
 O arquivo listado no campo `main` é o principal ponto de entrada da biblioteca; quando alguém executa `require (<nome da biblioteca>)`, require resolve esta chamada para `require (<package.json:main>)`.
 
 Finalmente, o campo `dependencies` é usado para listar todas as dependências do seu projeto que estão disponíveis no `npm`. Quando alguém instala seu projeto através do `npm`, todas as dependências listadas também serão instaladas. Além disso, se alguém executar o `npm install` no diretório raiz do seu projeto, ele instalará todas as dependências em `./ Node_modules`.
 
-Também é possível adicionar um campo `devDependencies` ao seu `package.json` - são dependências não necessárias para a operação normal, mas necessárias/recomendadas se você deseja corrigir ou modificar o projeto. Por exemplo, se você construiu testes de unidade usando um framework, seria apropriado colocar o framework de testes utilizado no campo `devDependencies`. Para instalar o `devDependencies` de um projeto, simplesmente passe a opção` --dev` ao usar o `npm install`.
+Também é possível adicionar um campo `devDependencies` ao seu `package.json` - são dependências não necessárias para a operação normal, mas necessárias/recomendadas se você deseja corrigir ou modificar o projeto. Por exemplo, se você construiu testes de unidade usando um framework, seria apropriado colocar o framework de testes utilizado no campo `devDependencies`. Para instalar o `devDependencies` de um projeto, simplesmente passe a opção`--dev` ao usar o `npm install`.
 
 Para ainda mais opções, você pode consultar os [documentos on-line](https://docs.npmjs.com/files/package.json) ou executar o `npm help json`.
