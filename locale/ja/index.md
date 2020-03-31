@@ -2,12 +2,12 @@
 layout: index.hbs
 labels:
   current-version: 最新のバージョン
-  download: ダウンロード
+  download: Download
   download-for: ダウンロード
   other-downloads: 他のバージョン
   other-lts-downloads: 他の LTS のバージョン
   other-current-downloads: 他のバージョン
-  current: 最新版
+  current: Current
   lts: LTS
   tagline-current: 最新の機能
   tagline-lts: 推奨版
@@ -16,7 +16,7 @@ labels:
   version-schedule-prompt: または、
   version-schedule-prompt-link-text: LTSのリリーススケジュールをご覧ください。
   newsletter: true
-  newsletter-prefix: "公式 Node.js ニュースレター"
+  newsletter-prefix: 公式 Node.js ニュースレター
   newsletter-postfix: "を購読しましょう。"
 ---
 
