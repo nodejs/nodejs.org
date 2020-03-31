@@ -4,7 +4,7 @@
   "url": "https://nodejs.org/tr/",
   "locale": "tr",
   "language": "Türkçe",
-  "languageEnglishVersion": "Turkish",
+  "languageEnglishVersion": "Türkçe",
   "scrollToTop": "Yukarı",
   "reportNodeIssue": "Node.js hatası bildir",
   "reportWebsiteIssue": "Website hatası bildir",
@@ -42,15 +42,15 @@
     },
     "community": {
       "link": "about/community",
-      "text": "Topluluk"
+      "text": "Community"
     },
     "workinggroups": {
       "link": "about/working-groups",
-      "text": "Çalışma Grupları"
+      "text": "Working Groups"
     },
     "releases": {
       "link": "about/releases",
-      "text": "Sürümler"
+      "text": "Releases"
     },
     "resources": {
       "link": "about/resources",
@@ -58,23 +58,23 @@
     },
     "trademark": {
       "link": "about/trademark",
-      "text": "Marka"
+      "text": "Trademark"
     },
     "privacy": {
       "link": "about/privacy",
-      "text": "Gizlilik Politikası"
+      "text": "Privacy Policy"
     }
   },
   "download": {
     "link": "download",
-    "text": "İndir",
+    "text": "Downloads",
     "releases": {
       "link": "download/releases",
-      "text": "Önceki Sürümler"
+      "text": "Previous Releases"
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "Node.js'i paket yöneticisi ile kurmak"
+      "text": "Installing Node.js via package manager"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
@@ -88,7 +88,7 @@
   },
   "docs": {
     "link": "docs",
-    "text": "Belgeler",
+    "text": "Docs",
     "es6": {
       "link": "docs/es6",
       "text": "ES6 ve ötesi"
@@ -104,23 +104,23 @@
     },
     "guides": {
       "link": "docs/guides",
-      "text": "Rehberler"
+      "text": "Guides"
     },
     "dependencies": {
       "link": "docs/meta/topics/dependencies",
-      "text": "Bağımlılıklar"
+      "text": "Dependencies"
     }
   },
   "getinvolved": {
     "link": "get-involved",
-    "text": "Katıl",
+    "text": "Get Involved",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
-      "text": "Kodla + Öğren"
+      "text": "Code + Learn"
     },
     "collab-summit": {
       "link": "get-involved/collab-summit",
-      "text": "İşbirliği Zirvesi"
+      "text": "Collab Summit"
     },
     "contribute": {
       "link": "get-involved/contribute",
@@ -128,16 +128,16 @@
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
-      "text": "Davranış Kuralları"
+      "text": "Code of Conduct"
     },
     "node-meetups": {
       "link": "get-involved/node-meetups",
-      "text": "Node.js Toplantıları"
+      "text": "Node.js Meetups"
     }
   },
   "security": {
     "link": "security",
-    "text": "Güvenlik"
+    "text": "Security"
   },
   "blog": {
     "link": "blog",
@@ -145,7 +145,7 @@
   },
   "releases": {
     "title": "Release History",
-    "downloads": "İndirmeler"
+    "downloads": "Downloads"
   },
   "links": {
     "pages": {
