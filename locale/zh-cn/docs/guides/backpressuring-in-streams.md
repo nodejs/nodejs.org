@@ -37,7 +37,7 @@ rl.question('Why should you use streams? ', (answer) => {
 
 在以下场景中，我们将拿一个巨大的文件（大概有 9gb 那么大），然后用熟悉的 [`zip(1)`][] 的工具压缩。
 
-```bash
+```
 zip The.Matrix.1080p.mkv
 ```
 
@@ -109,6 +109,7 @@ async function run() {
 ```
 
 ## 数据太多，速度太快
+
 有太多的例子证明有时 [`Readable`][] 传输给 [`Writable`][] 的速度远大于它接受和处理的速度！
 
 如果发生了这种情况，消费者开始为后面的消费而将数据列队形式积压起来。写入队列的时间越来越长，也正因为如此，更多的数据不得不保存在内存中知道整个流程全部处理完毕。
@@ -130,7 +131,7 @@ inp.pipe(gzip).pipe(outputFile);
 * 太多繁重的垃圾回收
 * 内存耗尽
 
-以下例子中我们把 `.write()` 函数的[返回值][]值取出，改成 `true`，这样明显地禁止了 Node.js 核心的积压的支持。在任何引用了 'modified' 二进制库的地方，我们探讨在不适用 `return ret;` 的情况下运行 `node` 二进制代码，并用 `return true;` 取代它。
+以下例子中我们把 `.write()` 函数的[返回值](https://github.com/nodejs/node/blob/55c42bc6e5602e5a47fb774009cfe9289cb88e71/lib/_stream_writable.js#L239)值取出，改成 `true`，这样明显地禁止了 Node.js 核心的积压的支持。在任何引用了 'modified' 二进制库的地方，我们探讨在不适用 `return ret;` 的情况下运行 `node` 二进制代码，并用 `return true;` 取代它。
 
 ## 过度的垃圾收集
 
@@ -210,7 +211,7 @@ sys          8.79
 
 虚拟内存占用的最大字节块消耗了 87.81 mb。
 
-现在改变 [`.write()`][] 方法的[返回值][]，我们得到以下结果：
+现在改变 [`.write()`][] 方法的[返回值](https://github.com/nodejs/node/blob/55c42bc6e5602e5a47fb774009cfe9289cb88e71/lib/_stream_writable.js#L239)，我们得到以下结果：
 
 ```
 Without respecting the return value of .write():
@@ -242,7 +243,7 @@ sys          7.43
 
 ## 积压是怎么处理这些问题的？
 
-我们有不同的函数将数据从一个进程传入另外一个进程。在 Node.js 中，有一个内置函数称为 [`.pipe()`][]，同样地，你们也可以使用[其它工具包][]。最终，在这个进程的基本层面上我们有二个互不相关的组件：数据的 _源头_，和 _消费者_。
+我们有不同的函数将数据从一个进程传入另外一个进程。在 Node.js 中，有一个内置函数称为 [`.pipe()`][]，同样地，你们也可以使用[其它工具包](https://github.com/sindresorhus/awesome-nodejs#streams)。最终，在这个进程的基本层面上我们有二个互不相关的组件：数据的 _源头_，和 _消费者_。
 
 当 [`.pipe()`][] 被源调用之后，它通知消费者有数据需要传输。管道函数为事件触发建立了合适的积压封装。
 
@@ -266,7 +267,7 @@ sys          7.43
 
 ## `.pipe()` 的生命周期
 
-为了对积压有一个更好的理解，这里有一副 [`Readable`][] 流正通过 [piped][] 流入 [`Writable`][] 流的整个生命周期图：
+为了对积压有一个更好的理解，这里有一副 [`Readable`][] 流正通过 [piped](https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options) 流入 [`Writable`][] 流的整个生命周期图：
 
 ```
                                                      +===================+
@@ -324,9 +325,9 @@ Readable.pipe(Transformable).pipe(Writable);
 
 ## 积压行为的准则
 
-从 [Node.js v0.10][] 开始，[`Stream`][] 类借助带有下划线一些相关函数([`._read()`][] 和 [`._write()`][])，提供了访问 [`.read()`][] 或[`.write()`][] 的能力。
+从 [Node.js v0.10](https://nodejs.org/docs/v0.10.0/) 开始，[`Stream`][] 类借助带有下划线一些相关函数([`._read()`][] 和 [`._write()`][])，提供了访问 [`.read()`][] 或[`.write()`][] 的能力。
 
-这里有一些准则文档可供参考：[实现可读的流][]和[实现可写的流][]。我们假设你可以把这些文章已经读过了，下个章节将做稍许的深入讲解。
+这里有一些准则文档可供参考：[实现可读的流](https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_readable_stream)和[实现可写的流](https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_writable_stream)。我们假设你可以把这些文章已经读过了，下个章节将做稍许的深入讲解。
 
 ## 实现用户自定义流须知
 
@@ -338,7 +339,7 @@ Readable.pipe(Transformable).pipe(Writable);
 2. 在流返回 `false` 后不要调用 `.write()` 方法，而是等待 'drain'。
 3. 流在不同的 Node.js 版本和库中是有变化的。小心你的测试。
 
-注意：关于第三点，构建浏览器流的一个难以置信的方法是使用 [`readable-stream`][]。Rodd Vagg 曾经写过一篇[大作][]，详细描述这个工具库。简而言之，它为 [`Readable`][] 流提供了自动可销毁降解的类型，并且支持旧版的 Node.js 和浏览器。
+注意：关于第三点，构建浏览器流的一个难以置信的方法是使用 [`readable-stream`][]。Rodd Vagg 曾经写过一篇[大作](https://r.va.gg/2014/06/why-i-dont-use-nodes-core-stream-module.html)，详细描述这个工具库。简而言之，它为 [`Readable`][] 流提供了自动可销毁降解的类型，并且支持旧版的 Node.js 和浏览器。
 
 ## 对于可读流的规则
 
@@ -382,8 +383,6 @@ readable.on('data', (data) =>
 
 * 如果写队列确实繁忙，[`.write()`][] 方法将返回 false。
 * 如果数据块太大， [`.write()`][] 方法将返回 false（限定通过 [`highWaterMark`][] 决定）。
-
-<!-- eslint-disable indent -->
 ```javascript
 // This writable is invalid because of the async nature of JavaScript callbacks.
 // Without a return statement for each callback prior to the last,
@@ -448,46 +447,3 @@ function doUncork(stream) {
 现在我们希望你有能力进行故障排除，记住了是如何为你的 [`Writable`][] 和 [`Readable`][] 流编写积压处理的。并且你还可以把这些知识分享给你的同事和朋友们。
 
 在此之后请仔细阅读更多的有关 [`Stream`][] 其它 API 函数，这样有助于当你在构建 Node.js 的应用程序之时更好地理解关于流的能力。
-
-[`Stream`]: https://nodejs.org/api/stream.html
-[`Buffer`]: https://nodejs.org/api/buffer.html
-[`EventEmitter`]: https://nodejs.org/api/events.html
-[`Writable`]: https://nodejs.org/api/stream.html#stream_writable_streams
-[`Readable`]: https://nodejs.org/api/stream.html#stream_readable_streams
-[`Duplex`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
-[`Transform`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
-[`zlib`]: https://nodejs.org/api/zlib.html
-[`'drain'`]: https://nodejs.org/api/stream.html#stream_event_drain
-[`'data'` event]: https://nodejs.org/api/stream.html#stream_event_data
-[`.read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size
-[`.write()`]: https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback
-[`._read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size_1
-[`._write()`]: https://nodejs.org/docs/latest/api/stream.html#stream_writable_write_chunk_encoding_callback_1
-[`._writev()`]: https://nodejs.org/api/stream.html#stream_writable_writev_chunks_callback
-[`.cork()`]: https://nodejs.org/api/stream.html#stream_writable_cork
-[`.uncork()`]: https://nodejs.org/api/stream.html#stream_writable_uncork
-
-[`.push()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_push_chunk_encoding
-
-[实现可写的流]: https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_writable_stream
-[实现可读的流]: https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_readable_stream
-
-[其它工具包]: https://github.com/sindresorhus/awesome-nodejs#streams
-[`背压`]: https://en.wikipedia.org/wiki/Backpressure_routing
-[Node.js v0.10]: https://nodejs.org/docs/v0.10.0/
-[`highWaterMark`]: https://nodejs.org/api/stream.html#stream_buffering
-[返回值]: https://github.com/nodejs/node/blob/55c42bc6e5602e5a47fb774009cfe9289cb88e71/lib/_stream_writable.js#L239
-
-[`readable-stream`]: https://github.com/nodejs/readable-stream
-[大作]:https://r.va.gg/2014/06/why-i-dont-use-nodes-core-stream-module.html
-
-[`dtrace`]: http://dtrace.org/blogs/about/
-[`zip(1)`]: https://linux.die.net/man/1/zip
-[`gzip(1)`]: https://linux.die.net/man/1/gzip
-[`流状态机`]: https://en.wikipedia.org/wiki/Finite-state_machine
-
-[`.pipe()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
-[piped]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
-[`pump`]: https://github.com/mafintosh/pump
-[`pipeline`]: https://nodejs.org/api/stream.html#stream_stream_pipeline_streams_callback
-[`promisify`]: https://nodejs.org/api/util.html#util_util_promisify_original
