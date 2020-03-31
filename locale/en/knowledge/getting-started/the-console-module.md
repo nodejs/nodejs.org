@@ -21,8 +21,7 @@ console.log(__filename, process.title, process.argv);
 
 The first, simplest example just prints the provided string to `stdout`. It can also be used to output the contents of variables, as evidenced in #2; furthermore, `console.dir()` is called on any objects passed in as arguments, enumerating their properties.
 
-NODE.JS PRO TIP:
-`console.log()` accepts three format characters, `%s`, `%d`, and `%j`. These format characters can be used to insert string, integer, or JSON data into your output - the order of format characters must match the order of arguments.
+NODE.JS PRO TIP: `console.log()` accepts three format characters, `%s`, `%d`, and `%j`. These format characters can be used to insert string, integer, or JSON data into your output - the order of format characters must match the order of arguments.
 
 ```javascript
 var name = 'Harry',
