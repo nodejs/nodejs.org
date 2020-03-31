@@ -1,9 +1,9 @@
 ---
 layout: security.hbs
-title: Sicurezza
+title: Security
 ---
 
-# Sicurezza
+# Security
 
 ## Riportare un Bug in Node.js
 
@@ -11,29 +11,25 @@ Tutti i bug di sicurezza in Node.js sono presi con la massima serietà e dovrebb
 
 Il tuo report verrà riconosciuto entro 24 ore, e riceverai una risposta più dettagliata al tuo report entro 48 ore indicando i prossimi passi nella gestione della tua richiesta.
 
-Dopo averti dato una prima risposta, il team della sicurezza cercherà di tenerti informato dei progressi fatti prima di un annuncio completo e una fix, e potrebbe richiederti informazioni aggiuntivi o una consulenza circa il problema riportato.
-Questi aggiornamenti verranno inviati come minimo ogni 5 giorni; nella pratica, è più probabile che succeda ogni 24-48 ore.
+Dopo averti dato una prima risposta, il team della sicurezza cercherà di tenerti informato dei progressi fatti prima di un annuncio completo e una fix, e potrebbe richiederti informazioni aggiuntivi o una consulenza circa il problema riportato. Questi aggiornamenti verranno inviati come minimo ogni 5 giorni; nella pratica, è più probabile che succeda ogni 24-48 ore.
 
 ### Programma Premio Bug Node.js
 
 Il progetto Node.js intraprende un programma ufficiale di premiazione bug per ricercatori di sicurezza e responsabili di pubblicazioni.
 
-Il programma è gestito nel dettaglio tramite la piattaforma HackerOne [https://hackerone.com/nodejs](https://hackerone.com/nodejs)
-
 ## Segnalare un bug in un modulo di terze parti
+
+Il programma è gestito nel dettaglio tramite la piattaforma HackerOne [https://hackerone.com/nodejs](https://hackerone.com/nodejs)
 
 I bug di sicurezza nei moduli di terze parti dovrebbero essere riportati ai loro rispettivi manutentori e dovrebbero inoltre essere coordinati per mezzo del [Node Ecosystem Security Team](https://hackerone.com/nodejs-ecosystem) o mandando una mail a [security-ecosystem@nodejs.org](mailto:security-ecosystem@nodejs.org).
 
 Dettagli a riguardo del processo possono essere trovati nel [Security Working Group repository](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md)
 
-Grazie per l'aiuto nel migliorare la sicurezza di Node.js e del suo ecosistema. I tuoi sforzi e le tue scoperte sono molto apprezzate e saranno considerate.
-
 ## Policy delle scoperte
 
-Ecco la politica delle rivelazioni di sicurezza per Node.js
+Grazie per l'aiuto nel migliorare la sicurezza di Node.js e del suo ecosistema. I tuoi sforzi e le tue scoperte sono molto apprezzate e saranno considerate.
 
-* Il report di sicurezza viene ricevuto e assegnato al gestore primario. Questa persona coordinerà la fix e il processo di rilascio. Il problema viene confermato e una lista di tutte le versioni affette viene stilata. Il codice viene sottoposto a revisione per trovare altri potenziali problemi della medesima natura. Delle fix vengono preparate per tutte le release che sono ancora supportate.
-Queste fix non sono pubblicate nel repository ma piuttosto mantenute localmente in attesa dell'annuncio.
+* Il report di sicurezza viene ricevuto e assegnato al gestore primario. Questa persona coordinerà la fix e il processo di rilascio. Il problema viene confermato e una lista di tutte le versioni affette viene stilata. Il codice viene sottoposto a revisione per trovare altri potenziali problemi della medesima natura. Delle fix vengono preparate per tutte le release che sono ancora supportate. Queste fix non sono pubblicate nel repository ma piuttosto mantenute localmente in attesa dell'annuncio.
 
 * Una data di embargo per questa vulnerabilità viene decretata e un CVE (Common Vulnerabilities and Exposures (CVE®)) viene richiesto per la vulnerabilità.
 
@@ -45,11 +41,11 @@ Queste fix non sono pubblicate nel repository ma piuttosto mantenute localmente 
 
 ## Ricezione aggiornamenti di sicurezza
 
-Le notifiche di sicurezza verranno distribuite nei seguenti modi.
+Ecco la politica delle rivelazioni di sicurezza per Node.js
 
 * <https://groups.google.com/group/nodejs-sec>
 * <https://nodejs.org/en/blog/>
 
 ## Commenti su questa Politica
 
-Se hai suggerimenti su come questo processo potrebbe essere migliorato per favore invia una [pull request](https://github.com/nodejs/nodejs.org) o [crea una segnalazione](https://github.com/nodejs/security-wg/issues/new) per discuterne.
+Le notifiche di sicurezza verranno distribuite nei seguenti modi.
