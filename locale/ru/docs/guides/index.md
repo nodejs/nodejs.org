@@ -5,21 +5,22 @@ layout: docs.hbs
 
 # Руководства
 
-## Общее
+## General
 
-* [Первые шаги](/ru/docs/guides/getting-started-guide/)
-* [Отладка - начало работы](/ru/docs/guides/debugging-getting-started/)
-* [Простое профилирование Node.js приложений](/ru/docs/guides/simple-profiling/)
-* [Диагностика - Flame Graphs](/ru/docs/guides/diagnostics-flamegraph/)
-* [Докеризация веб-приложения Node.js](/ru/docs/guides/nodejs-docker-webapp/)
+* [Первые шаги](/en/docs/guides/getting-started-guide/)
+* [Отладка - Начало Работы](/en/docs/guides/debugging-getting-started/)
+* [Простое профилирование Node.js приложений](/en/docs/guides/simple-profiling/)
+* [Диагностика - Flame Graphs](/en/docs/guides/diagnostics-flamegraph/)
+* [Докеризация веб-приложения Node.js](/en/docs/guides/nodejs-docker-webapp/)
 * [Migrating to safe Buffer constructors](/en/docs/guides/buffer-constructor-deprecation/)
 
 ## Ключевые концепции Node.js
 
-* [Блокирующие и Неблокирующие Вызовы](/ru/docs/guides/blocking-vs-non-blocking/)
+* [Блокирующие и Неблокирующие Вызовы](https://nodejs.dev/)
+* [Блокирующие и Неблокирующие Вызовы](/en/docs/guides/blocking-vs-non-blocking/)
 * [The Node.js Event Loop, Timers, and `process.nextTick()`](/en/docs/guides/event-loop-timers-and-nexttick/)
 * [Don't Block the Event Loop (or the Worker Pool)](/en/docs/guides/dont-block-the-event-loop/)
-* [Таймеры в Node.js](/ru/docs/guides/timers-in-node/)
+* [Timers in Node.js](/en/docs/guides/timers-in-node/)
 
 ## Module-related guides
 
