@@ -2,12 +2,12 @@
 layout: index.hbs
 labels:
   current-version: Güncel Versiyon
-  download: İndir
+  download: Download
   download-for: İndirin
   other-downloads: Diğer indirmeler
   other-lts-downloads: Diğer LTS(Uzun Süreli Destek) İndirmeleri
   other-current-downloads: Diğer Güncel İndirmeler
-  current: Güncel
+  current: Current
   lts: LTS
   tagline-current: Son Özellikler
   tagline-lts: Çoğu kullanıcı için önerilir
