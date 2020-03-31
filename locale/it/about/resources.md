@@ -7,11 +7,9 @@ title: Logos and Graphics
 
 ## Logo Downloads
 
-Si prega di leggere il [trademark policy](/en/about/trademark/) per informazioni su come utilizzare i loghi
-e il marchio Node.js® loghi e marchi.
+Si prega di leggere il [trademark policy](/en/about/trademark/) per informazioni su come utilizzare i loghi e il marchio Node.js® loghi e marchi.
 
-Le linee guida visive sono descritte nelle
-[Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
+Le linee guida visive sono descritte nelle [Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
 
 <table class="logos">
   <tr>
@@ -31,3 +29,4 @@ Le linee guida visive sono descritte nelle
     <td><a href="/static/images/logos/nodejs-new-white.ai">Node.js invertito con meno colori AI</a></td>
   </tr>
 </table>
+
