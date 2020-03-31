@@ -31,9 +31,15 @@ node --v8-options | grep "in progress"
 
 Наразі флаг `--harmony` в Node.js вмикає лише **підготовлений** функціонал. Зрештою, тепер це синонім `--es_staging`. Як згадано вище, цей функціонал є завершеним, але ще не вважається стабільним. Якщо ви хочете використовувати його безпечно, особливо на production–середовищах, краще видалити цей флаг з оточення, поки від не буде постачатись з V8 і, відповідно, у Node.js за замовчування. Якщо ви залишите його увімкненим, вам слід бути готовими до можливих оновлень Node.js, що зламають ваш код, якщо зміни у V8, їхня семантика буде більш точно відповідати стандарту.
 
+Node.js надає простий спосіб для отримання списку залежностей та їх версій, що постачаються з певним бінарником через глобальний об’єкт `process`. У випадку з рушієм V8, введіть це в терміналі і ви отримаєте його версію:
+
 ## Як я можу дізнатись яка версія V8 постачається з певною версією Node.js?
 
-Node.js надає простий спосіб для отримання списку залежностей та їх версій, що постачаються з певним бінарником через глобальний об’єкт `process`. У випадку з рушієм V8, введіть це в терміналі і ви отримаєте його версію:
+The current behaviour of the `--harmony` flag on Node.js is to enable **staged** features only. After all, it is now a synonym of `--es_staging`. As mentioned above, these are completed features that have not been considered stable yet. If you want to play safe, especially on production environments, consider removing this runtime flag until it ships by default on V8 and, consequently, on Node.js. If you keep this enabled, you should be prepared for further Node.js upgrades to break your code if V8 changes their semantics to more closely follow the standard.
+
+## How do I find which version of V8 ships with a particular version of Node.js?
+
+Node.js provides a simple way to list all dependencies and respective versions that ship with a specific binary through the `process` global object. In case of the V8 engine, type the following in your terminal to retrieve its version:
 
 ```bash
 node -p process.versions.v8
