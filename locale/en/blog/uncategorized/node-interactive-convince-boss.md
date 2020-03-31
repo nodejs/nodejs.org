@@ -1,5 +1,5 @@
 ---
-title: “Convince Your Boss” Letter
+title: '“Convince Your Boss” Letter'
 date: 2015-10-22T17:00:00.000Z
 status: publish
 category: Uncategorized
