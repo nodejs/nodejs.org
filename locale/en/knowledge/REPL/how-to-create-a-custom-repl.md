@@ -68,8 +68,7 @@ node::local> bonus
 ReferenceError: bonus is not defined
 ```
 
-As may be seen, the `mood` function is usable within the local REPL, but the
-`bonus` string is not. This is as expected.
+As may be seen, the `mood` function is usable within the local REPL, but the `bonus` string is not. This is as expected.
 
 Now, here's what happens when you try to telnet to port 5001:
 
