@@ -9,10 +9,7 @@ difficulty: 5
 layout: knowledge-post.hbs
 ---
 
-JavaScript Object Notation, or JSON, is a lightweight data format that
-has become the defacto standard for the web. JSON can be represented
-as either a list of values, e.g. an Array, or a hash of properties and
-values, e.g. an Object.
+JavaScript Object Notation, or JSON, is a lightweight data format that has become the defacto standard for the web. JSON can be represented as either a list of values, e.g. an Array, or a hash of properties and values, e.g. an Object.
 
 ```json
 // a JSON array
@@ -24,12 +21,9 @@ values, e.g. an Object.
 
 ## Encoding and Decoding
 
-JavaScript provides 2 methods for encoding data structures to json and
-encoding json back to JavaScript objects and arrays. They are both
-available on the `JSON` object that is available in the global scope.
+JavaScript provides 2 methods for encoding data structures to json and encoding json back to JavaScript objects and arrays. They are both available on the `JSON` object that is available in the global scope.
 
-`JSON.stringify` takes a JavaScript object or array and returns a
-serialized string in the JSON format.
+`JSON.stringify` takes a JavaScript object or array and returns a serialized string in the JSON format.
 
 ```js
 const data = {
@@ -45,8 +39,7 @@ console.log(jsonStr);
 // prints '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}'
 ```
 
-`JSON.parse` takes a JSON string and decodes it to a JavaScript data
-structure.
+`JSON.parse` takes a JSON string and decodes it to a JavaScript data structure.
 
 ```js
 const jsonStr = '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}';
@@ -60,8 +53,7 @@ console.log(data.title);
 
 ## What is valid JSON?
 
-There are a few rules to remember when dealing with data in JSON
-format. There are several gotchas that can produce invalid JSON as well.
+There are a few rules to remember when dealing with data in JSON format. There are several gotchas that can produce invalid JSON as well.
 
 * Empty objects and arrays are okay
 * Strings can contain any unicode character, this includes object properties
@@ -110,16 +102,9 @@ These are all examples of bad JSON formatting.
 }
 ```
 
-Calling `JSON.parse` with an invalid JSON string will result in a
-SyntaxError being thrown. If you are not sure of the validity of your
-JSON data, you can anticipate errors by wrapping the call in a
-try/catch block.
+Calling `JSON.parse` with an invalid JSON string will result in a SyntaxError being thrown. If you are not sure of the validity of your JSON data, you can anticipate errors by wrapping the call in a try/catch block.
 
-Notice that the only complex values allowed in JSON are objects and
-arrays. Functions, dates and other types are excluded. This may not
-seem to make sense at first. But remember that JSON is a data format,
-not a format for transferring complex JavaScript objects along with
-their functionality.
+Notice that the only complex values allowed in JSON are objects and arrays. Functions, dates and other types are excluded. This may not seem to make sense at first. But remember that JSON is a data format, not a format for transferring complex JavaScript objects along with their functionality.
 
 ## JSON Validators
 
@@ -131,10 +116,7 @@ As JSON has become the most widely used data formate with well-defined rules to 
 
 ## JSON in other languages
 
-Although JSON was inspired by the simplicity of JavaScript data
-structures, it's use is not limited to the JavaScript language. Many
-other languages have methods of transferring native hashes and lists
-into stringified JSON objects. Here's a quick example in ruby.
+Although JSON was inspired by the simplicity of JavaScript data structures, it's use is not limited to the JavaScript language. Many other languages have methods of transferring native hashes and lists into stringified JSON objects. Here's a quick example in ruby.
 
 ```ruby
 require 'json'
