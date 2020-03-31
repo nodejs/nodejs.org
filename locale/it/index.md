@@ -7,10 +7,10 @@ labels:
   other-downloads: Altri download
   other-lts-downloads: Altri download LTS
   other-current-downloads: Altri download versione corrente
-  current: Corrente
+  current: Current
   lts: LTS
-  tagline-current: Ultime funzionalità
-  tagline-lts: Consigliata
+  tagline-current: Latest Features
+  tagline-lts: Recommended For Most Users
   changelog: Changelog
   api: Documentazione API
   version-schedule-prompt: Dai un'occhiata alla
