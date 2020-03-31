@@ -1,11 +1,10 @@
 {
   "title": "Node.js",
-  "editOnGithub": "在 GitHub 上編輯",
   "author": "Node.js",
   "url": "https://nodejs.org/zh-tw/",
   "locale": "zh-tw",
   "language": "中文 (繁體)",
-  "languageEnglishVersion": "Traditional Chinese",
+  "languageEnglishVersion": "中文 (繁體)",
   "scrollToTop": "回到頁首",
   "reportNodeIssue": "回報 Node.js 問題",
   "reportWebsiteIssue": "回報 Node.js 網站問題",
@@ -36,38 +35,42 @@
   },
   "about": {
     "link": "about",
-    "text": "關於我們",
+    "text": "About",
     "governance": {
       "link": "about/governance",
       "text": "管理規則"
     },
+    "community": {
+      "link": "about/community",
+      "text": "Community"
+    },
     "workinggroups": {
       "link": "about/working-groups",
-      "text": "工作群組"
+      "text": "Working Groups"
     },
     "releases": {
       "link": "about/releases",
-      "text": "發佈版"
+      "text": "發布版"
     },
     "resources": {
       "link": "about/resources",
-      "text": "資源"
+      "text": "Resources"
     },
     "trademark": {
       "link": "about/trademark",
-      "text": "商標"
+      "text": "Trademark"
     },
     "privacy": {
       "link": "about/privacy",
-      "text": "隱私權政策"
+      "text": "Privacy Policy"
     }
   },
   "download": {
     "link": "download",
-    "text": "下載",
+    "text": "Downloads",
     "releases": {
       "link": "download/releases",
-      "text": "舊版"
+      "text": "先前釋出的版本"
     },
     "package-manager": {
       "link": "download/package-manager",
@@ -75,7 +78,9 @@
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "發佈檔案的 SHASUM 簽名"
+      "text": "發佈檔案的 SHASUM 簽名",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "How to verify"
     },
     "install-on-linux": {
       "text": "在 Linux 上使用二進位檔案安裝 Node.js"
@@ -99,7 +104,11 @@
     },
     "guides": {
       "link": "docs/guides",
-      "text": "技術指南"
+      "text": "Guides"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "Dependencies"
     }
   },
   "getinvolved": {
@@ -107,7 +116,7 @@
     "text": "加入我們",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
-      "text": "程式碼與學習"
+      "text": "Code + Learn"
     },
     "collab-summit": {
       "link": "get-involved/collab-summit",
@@ -119,16 +128,16 @@
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
-      "text": "管理"
+      "text": "Code of Conduct"
     },
     "node-meetups": {
       "link": "get-involved/node-meetups",
-      "text": "Node.js 開發者大會"
+      "text": "Node.js Meetups"
     }
   },
   "security": {
     "link": "security",
-    "text": "安全"
+    "text": "Security"
   },
   "blog": {
     "link": "blog",
@@ -136,7 +145,7 @@
   },
   "releases": {
     "title": "發佈版歷史",
-    "downloads": "下載"
+    "downloads": "Downloads"
   },
   "links": {
     "pages": {
