@@ -12,8 +12,7 @@ layout: knowledge-post.hbs
 
 O objeto `arguments` é uma estrutura especial disponível dentro de todas as chamadas de função. É representada como uma lista de argumentos que são passados quando a função é chamada. Uma vez que o JavaScript permite chamar funções com indeterminado número indeterminado de argumentos, nós precisamos de um método para descobrir e acessar esses argumentos.
 
-O objeto `arguments` é um array-like, seu tamanho corresponde a quantidade de argumentos passados para a função. É possível acessar estes valores através da indexação do Array. Exemplo: `arguments[0]` captura o primeiro argumento. A única outra propriedade de `arguments` é chamada `callee`, a qual o ES5 impede o uso no `strict mode`, mais informações podem ser encontradas [aqui](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments/callee).
-Veja mais exemplos sobre as propriedades de `arguments`.
+O objeto `arguments` é um array-like, seu tamanho corresponde a quantidade de argumentos passados para a função. É possível acessar estes valores através da indexação do Array. Exemplo: `arguments[0]` captura o primeiro argumento. A única outra propriedade de `arguments` é chamada `callee`, a qual o ES5 impede o uso no `strict mode`, mais informações podem ser encontradas [aqui](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments/callee). Veja mais exemplos sobre as propriedades de `arguments`.
 
 ```js
 const myfunc = function(one) {
@@ -25,8 +24,7 @@ const myfunc = function(one) {
 myfunc(1, 2, 3);
 ```
 
-Essa construção é muito útil e fornece muitas funções ao JavaScript. Mas há uma pegadinha. O objeto `arguments` se comporta como um tipo array, porém ele não é realmente um array. Ele não têm as funcionalidades que o Array herda de Array.prototype e não responde a nenhum método de array, exemplo. `arguments.sort()` gera um TypeError. Em vez disso, você precisa copiar os valores para um array verdadeiro.
-Com o advento do ES6 o método `Array.from()` torna isso bastante simples.
+Essa construção é muito útil e fornece muitas funções ao JavaScript. Mas há uma pegadinha. O objeto `arguments` se comporta como um tipo array, porém ele não é realmente um array. Ele não têm as funcionalidades que o Array herda de Array.prototype e não responde a nenhum método de array, exemplo. `arguments.sort()` gera um TypeError. Em vez disso, você precisa copiar os valores para um array verdadeiro. Com o advento do ES6 o método `Array.from()` torna isso bastante simples.
 
 ```js
 const myfunc = function(a, b, c) {
