@@ -36,8 +36,7 @@ More About the New Members:
 
 “Becoming a silver member is a breakthrough for us, and gives us the opportunity to establish long-lasting relationships with companies that also share a common interest in the rapidly growing Node.js technology. We look forward to collaborating with other Foundation members and continuing to develop and support the open source community,” said Hai Luong, CEO and Co-Founder of Sphinx.
 
-About Node.js Foundation
-Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 3.5 million active users per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites.
+About Node.js Foundation Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 3.5 million active users per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites.
 
 The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft, PayPal and Red Hat. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, AppDynamics, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, New Relic, npm, Opbeat, RisingStack, Sauce Labs, SAP, StrongLoop (an IBM company), Sphinx, YLD!, and Yahoo!. Get involved here: [https://nodejs.org](https://nodejs.org/).
 
