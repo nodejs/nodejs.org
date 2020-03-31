@@ -77,7 +77,9 @@ npm link tap           # link the global thing into my project.
 
 Now when I make changes in `~/dev/js/node-tap`, they’ll be immediately reflected in `~/dev/js/node-glob/node_modules/tap`.
 
-## <!-- link_to_stuff_you_don8217t_build -->Link to stuff you _don’t_ build
+## <!-- link_to_stuff_you_don8217t_build -->Link to stuff you 
+
+_don’t_ build
 
 Let’s say I have 15 sites that all use express. I want the benefits of local development, but I also want to be able to update all my dev folders at once. You can globally install express, and then link it into your local development folder.
 
