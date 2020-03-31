@@ -28,8 +28,7 @@ This week we have one release proposal: [Node.js v4.1.2](https://github.com/node
 
 ### Node.js Help Repository
 
-[Node.js Help](https://github.com/nodejs/help) is open. Need help with Node? Please feel free to ask.
-Want to help others with issues? You can start simply, by answering open questions.
+[Node.js Help](https://github.com/nodejs/help) is open. Need help with Node? Please feel free to ask. Want to help others with issues? You can start simply, by answering open questions.
 
 Please do come over to our [Node.js Help](https://github.com/nodejs/help) to create a new issue if you have any questions.
 
