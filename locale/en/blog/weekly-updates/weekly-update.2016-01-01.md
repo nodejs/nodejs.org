@@ -17,8 +17,7 @@ This week we have one release: [Node.js Node v4.2.4 (LTS)](https://nodejs.org/en
 
 ### Notable changes
 
-Node.js v4.2.4 is a Long Term Support Maintenance Update. There are a number
-of fixes and documentation updates.
+Node.js v4.2.4 is a Long Term Support Maintenance Update. There are a number of fixes and documentation updates.
 
 * Roughly 78% of the commits are documentation and test improvements
 * **domains**:
