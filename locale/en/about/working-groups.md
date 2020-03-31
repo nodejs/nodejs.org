@@ -6,8 +6,7 @@ title: Working Groups
 # Core Working Groups
 <!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 
-Core Working Groups are created by the
-[Technical Steering Committee (TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).
+Core Working Groups are created by the [Technical Steering Committee (TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).
 
 ## Current Working Groups
 
@@ -24,50 +23,36 @@ Core Working Groups are created by the
 
 ### [Addon API](https://github.com/nodejs/nan)
 
-The Addon API Working Group is responsible for maintaining the NAN project and
-corresponding _nan_ package in npm. The NAN project makes available an
-abstraction layer for native add-on authors for Node.js,
-assisting in the writing of code that is compatible with many actively used
-versions of Node.js, V8 and libuv.
+The Addon API Working Group is responsible for maintaining the NAN project and corresponding _nan_ package in npm. The NAN project makes available an abstraction layer for native add-on authors for Node.js, assisting in the writing of code that is compatible with many actively used versions of Node.js, V8 and libuv.
 
 Responsibilities include:
 
-* Maintaining the [NAN](https://github.com/nodejs/nan) GitHub repository,
-  including code, issues and documentation.
-* Maintaining the [addon-examples](https://github.com/nodejs/node-addon-examples)
-  GitHub repository, including code, issues and documentation.
-* Maintaining the C++ Addon API within the Node.js project, in subordination to
-  the Node.js TSC.
-* Maintaining the Addon documentation within the Node.js project, in
-  subordination to the Node.js TSC.
+* Maintaining the [NAN](https://github.com/nodejs/nan) GitHub repository, including code, issues and documentation.
+* Maintaining the [addon-examples](https://github.com/nodejs/node-addon-examples) GitHub repository, including code, issues and documentation.
+* Maintaining the C++ Addon API within the Node.js project, in subordination to the Node.js TSC.
+* Maintaining the Addon documentation within the Node.js project, in subordination to the Node.js TSC.
 * Maintaining the _nan_ package in npm, releasing new versions as appropriate.
-* Messaging about the future of the Node.js and NAN interface to give the
-  community advance notice of changes.
+* Messaging about the future of the Node.js and NAN interface to give the community advance notice of changes.
 
-The current members can be found in their
-[README](https://github.com/nodejs/nan#collaborators).
+The current members can be found in their [README](https://github.com/nodejs/nan#collaborators).
 
 ### [Benchmarking](https://github.com/nodejs/benchmarking)
 
-The purpose of the Benchmark Working Group is to gain consensus
-on an agreed set of benchmarks that can be used to:
+The purpose of the Benchmark Working Group is to gain consensus on an agreed set of benchmarks that can be used to:
 
 * track and evangelize performance gains made between Node.js releases
 * avoid performance regressions between releases
 
 Responsibilities include:
 
-* Identifying 1 or more benchmarks that reflect customer usage.
-  Likely will need more than one to cover typical Node.js use cases
-  including low-latency and high concurrency
+* Identifying 1 or more benchmarks that reflect customer usage. Likely will need more than one to cover typical Node.js use cases including low-latency and high concurrency
 * Working to get community consensus on the list chosen
 * Adding regular execution of chosen benchmarks to Node.js builds
 * Tracking/publicizing performance between builds/releases
 
 ### [Build](https://github.com/nodejs/build)
 
-The Build Working Group's purpose is to create and maintain a distributed
-automation infrastructure.
+The Build Working Group's purpose is to create and maintain a distributed automation infrastructure.
 
 Responsibilities include:
 
@@ -78,9 +63,7 @@ Responsibilities include:
 
 ### [Diagnostics](https://github.com/nodejs/diagnostics)
 
-The Diagnostics Working Group's purpose is to surface a set of comprehensive,
-documented, and extensible diagnostic interfaces for use by Node.js tools and
-JavaScript VMs.
+The Diagnostics Working Group's purpose is to surface a set of comprehensive, documented, and extensible diagnostic interfaces for use by Node.js tools and JavaScript VMs.
 
 Responsibilities include:
 
@@ -89,18 +72,14 @@ Responsibilities include:
 * Collaborating with Core to refine `async_wrap` and `async_hooks`.
 * Maintaining and improving OS trace system integration (e.g. ETW, LTTNG, dtrace).
 * Documenting diagnostic capabilities and APIs in Node.js and its components.
-* Exploring opportunities and gaps, discussing feature requests, and addressing
-  conflicts in Node.js diagnostics.
+* Exploring opportunities and gaps, discussing feature requests, and addressing conflicts in Node.js diagnostics.
 * Fostering an ecosystem of diagnostics tools for Node.js.
-* Defining and adding interfaces/APIs in order to allow dumps to be generated
-  when needed.
-* Defining and adding common structures to the dumps generated in order to
-  support tools that want to introspect those dumps.
+* Defining and adding interfaces/APIs in order to allow dumps to be generated when needed.
+* Defining and adding common structures to the dumps generated in order to support tools that want to introspect those dumps.
 
 ### [Docker](https://github.com/nodejs/docker-node)
 
-The Docker Working Group's purpose is to build, maintain, and improve official
-Docker images for the Node.js project.
+The Docker Working Group's purpose is to build, maintain, and improve official Docker images for the Node.js project.
 
 Responsibilities include:
 
@@ -110,8 +89,7 @@ Responsibilities include:
 
 ### [Evangelism](https://github.com/nodejs/evangelism)
 
-The Evangelism Working Group promotes the accomplishments
-of Node.js and lets the community know how they can get involved.
+The Evangelism Working Group promotes the accomplishments of Node.js and lets the community know how they can get involved.
 
 Responsibilities include:
 
@@ -119,23 +97,17 @@ Responsibilities include:
 * Managing official project social media.
 * Handling the promotion of speakers for meetups and conferences.
 * Handling the promotion of community events.
-* Publishing regular update summaries and other promotional
-  content.
+* Publishing regular update summaries and other promotional content.
 
 ### [i18n](https://github.com/nodejs/i18n)
 
-The i18n Working Groups handle more than just translations. They
-are endpoints for community members to collaborate with each
-other in their language of choice.
+The i18n Working Groups handle more than just translations. They are endpoints for community members to collaborate with each other in their language of choice.
 
-Each team is organized around a common spoken language. Each
-language community might then produce multiple localizations for
-various project resources.
+Each team is organized around a common spoken language. Each language community might then produce multiple localizations for various project resources.
 
 Responsibilities include:
 
-* Translating any Node.js materials they believe are relevant to their
-  community.
+* Translating any Node.js materials they believe are relevant to their community.
 * Reviewing processes for keeping translations up to date and of high quality.
 * Managing and monitoring social media channels in their language.
 * Promoting Node.js speakers for meetups and conferences in their language.
@@ -187,8 +159,7 @@ Responsibilities include:
 * Define the content of releases.
 * Generate and create releases.
 * Test Releases.
-* Manage the Long Term Support and Current branches including
-  backporting changes to these branches.
+* Manage the Long Term Support and Current branches including backporting changes to these branches.
 * Define the policy for what gets backported to release streams
 
 ### [Security](https://github.com/nodejs/security-wg)
@@ -200,16 +171,10 @@ Responsibilities include:
 * Define and maintain security policies and procedures for:
   * the core Node.js project
   * other projects maintained by the Node.js Technical Steering Committee (TSC).
-* Work with the Node Security Platform to bring community vulnerability data into
-  the foundation as a shared asset.
-* Ensure the vulnerability data is updated in an efficient and timely manner.
-  For example, ensuring there are well-documented processes for reporting
-  vulnerabilities in community modules.
-* Review and recommend processes for handling of security reports (but not the
-  actual administration of security reports, which are reviewed by a group of people
-  directly delegated to by the TSC).
-* Define and maintain policies and procedures for the coordination of security
-  concerns within the external Node.js open source ecosystem.
+* Work with the Node Security Platform to bring community vulnerability data into the foundation as a shared asset.
+* Ensure the vulnerability data is updated in an efficient and timely manner. For example, ensuring there are well-documented processes for reporting vulnerabilities in community modules.
+* Review and recommend processes for handling of security reports (but not the actual administration of security reports, which are reviewed by a group of people directly delegated to by the TSC).
+* Define and maintain policies and procedures for the coordination of security concerns within the external Node.js open source ecosystem.
 * Offer help to npm package maintainers to fix high-impact security bugs.
 * Maintain and make available data on disclosed security vulnerabilities in:
   * the core Node.js project
@@ -217,18 +182,11 @@ Responsibilities include:
   * the external Node.js open source ecosystem
 * Promote the improvement of security practices within the Node.js ecosystem.
 * Recommend security improvements for the core Node.js project.
-* Facilitate and promote the expansion of a healthy security service and product
-  provider ecosystem.
+* Facilitate and promote the expansion of a healthy security service and product provider ecosystem.
 
 ### [Streams](https://github.com/nodejs/readable-stream)
 
-The Streams Working Group is dedicated to the support and improvement of the
-Streams API as used in Node.js and the npm ecosystem. We seek to create a
-composable API that solves the problem of representing multiple occurrences
-of an event over time in a humane, low-overhead fashion. Improvements to the
-API will be driven by the needs of the ecosystem; interoperability and
-backwards compatibility with other solutions and prior versions are paramount
-in importance.
+The Streams Working Group is dedicated to the support and improvement of the Streams API as used in Node.js and the npm ecosystem. We seek to create a composable API that solves the problem of representing multiple occurrences of an event over time in a humane, low-overhead fashion. Improvements to the API will be driven by the needs of the ecosystem; interoperability and backwards compatibility with other solutions and prior versions are paramount in importance.
 
 Responsibilities include:
 
