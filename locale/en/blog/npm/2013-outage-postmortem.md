@@ -7,7 +7,7 @@ category: npm
 layout: blog-post.hbs
 ---
 
-We know the availability and overall health of The npm Registry is paramount to everyone using Node.js as well as the larger JavaScript community and those of your using it for [some][browserify] [awesome][dotc] [projects][npm-rubygems] [and ideas][npm-python]. Between November 4th and November 15th 2013 The npm Registry had several hours of downtime over three distinct time periods:
+We know the availability and overall health of The npm Registry is paramount to everyone using Node.js as well as the larger JavaScript community and those of your using it for [some](http://browserify.org/) [awesome](https://github.com/substack/dotc) [projects](http://andrew.ghost.io/emulating-node-js-modules-in-ruby/) [and ideas](https://twitter.com/__lucas/status/391688082573258753). Between November 4th and November 15th 2013 The npm Registry had several hours of downtime over three distinct time periods:
 
 1. November 4th -- 16:30 to 15:00 UTC
 2. November 13th -- 15:00 to 19:30 UTC
@@ -39,8 +39,8 @@ As illustrated above, before November 13th, 2013, npm operated as a single Couch
 
 The incident on November 4th was ultimately resolved by a reboot and resize of the host machine, but when the same symptoms reoccurred less than 10 days later additional steps were taken:
 
-1. The [registry was moved to another machine][ops-new-machine] of equal resources to exclude the possibility of a hardware issue.
-2. The [registry database itself][ops-compaction] was [compacted][compaction].
+1. The [registry was moved to another machine](https://twitter.com/npmjs/status/400692071377276928) of equal resources to exclude the possibility of a hardware issue.
+2. The [registry database itself](https://twitter.com/npmjs/status/400705715846643712) was [compacted](http://wiki.apache.org/couchdb/Compaction).
 
 When neither of these yielded a solution Jason Smith and I decided to move to a multi-master architecture with continuous replication illustrated below:
 
@@ -49,7 +49,7 @@ When neither of these yielded a solution Jason Smith and I decided to move to a 
   <figcaption>Diagram 2. Current npm architecture -- Red-lines denote continuous replication</figcaption>
 </figure>
 
-This _should_ have been the end of our story but unfortunately our supervision logic did not function properly to restart the secondary master on the morning of November 15th. During this time we [moved briefly][ops-single-server] back to a single master architecture. Since then the secondary master has been closely monitored by the entire Nodejitsu operations team to ensure it's continued stability.
+This _should_ have been the end of our story but unfortunately our supervision logic did not function properly to restart the secondary master on the morning of November 15th. During this time we [moved briefly](https://twitter.com/npmjs/status/401384681507016704) back to a single master architecture. Since then the secondary master has been closely monitored by the entire Nodejitsu operations team to ensure it's continued stability.
 
 ## What is being done to prevent future incidents?
 
@@ -75,12 +75,3 @@ The npm Registry has had a 10x year. In November 2012 there were 13.5 million do
 _**But we need your help!**_ All of these necessary improvements require more servers, more time from Nodejitsu staff and an overall increase to what we spend maintaining the public npm registry as a free service for the Node.js community.
 
 Please take a minute now to donate at [https://scalenpm.org](https://scalenpm.org)!
-
-[browserify]: http://browserify.org/
-[dotc]: https://github.com/substack/dotc
-[npm-rubygems]: http://andrew.ghost.io/emulating-node-js-modules-in-ruby/
-[npm-python]: https://twitter.com/__lucas/status/391688082573258753
-[ops-new-machine]: https://twitter.com/npmjs/status/400692071377276928
-[ops-compaction]: https://twitter.com/npmjs/status/400705715846643712
-[compaction]: http://wiki.apache.org/couchdb/Compaction
-[ops-single-server]: https://twitter.com/npmjs/status/401384681507016704
