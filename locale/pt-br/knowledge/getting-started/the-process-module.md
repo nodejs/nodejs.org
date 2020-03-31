@@ -10,7 +10,7 @@ layout: knowledge-post.hbs
 
 Cada processo do Node.js tem uma série de funcionalidades embutidas, acessíveis através do módulo global `process`. O módulo `process` não precisa ser importado - ele é, de certo modo, literalmente um wrapper em volta do processo sendo executado, e muitos dos métodos que ele possui, nada mais são do que wrappers em torno de chamadas de algumas das bibliotecas em C do núcleo do Node.
 
-## Eventos
+## Events
 
 Existem 2 eventos embutidos que podem ser percebidos no módulo `process`, estes são `exit` e `uncaughtException`.
 
