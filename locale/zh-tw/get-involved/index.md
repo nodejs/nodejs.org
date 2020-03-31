@@ -14,6 +14,7 @@ layout: contribute.hbs
 * [Node.js Everywhere](https://newsletter.nodejs.org) 是 Node.js 官方的月報。
 * [Node.js Collection](https://medium.com/the-node-js-collection) 是個由社群策劃的 Medium 文章合集。
 * [Community Committee](https://github.com/nodejs/community-committee) 是 Node.js 基金會中的高級委員會，專責社群事務。
+* [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
 
 ## 學習資源
 
