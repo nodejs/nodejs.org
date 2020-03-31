@@ -1,6 +1,6 @@
 ---
 title: Como eu posso proteger meu código?
-date: null
+date:
 tags:
   - filesystem
   - security
