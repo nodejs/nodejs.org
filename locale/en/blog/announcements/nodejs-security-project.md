@@ -8,21 +8,19 @@ layout: blog-post.hbs
 
 > Node.js Security Project to become one of the largest community projects focused on detecting and fixing vulnerabilities for the fast-growing platform
 
-**SAN FRANCISCO, Nov. 30, 2016** — [The Node.js Foundation](https://foundation.nodejs.org/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced that the Node.js Security Project will become a part of the Node.js Foundation. Under the Node.js Foundation, the Node.js Security Project will provide a unified
-process for discovering and disclosing security vulnerabilities found in the Node.js module ecosystem.
+**SAN FRANCISCO, Nov. 30, 2016** — [The Node.js Foundation](https://foundation.nodejs.org/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced that the Node.js Security Project will become a part of the Node.js Foundation. Under the Node.js Foundation, the Node.js Security Project will provide a unified process for discovering and disclosing security vulnerabilities found in the Node.js module ecosystem.
 
 Last year Node.js Foundation worked with The Linux Foundation’s Core Infrastructure Initiative to form the Node.js Core Security Group to encourage security best practices. By overseeing datasets of vulnerability disclosures, which will be publically available and openly licensed, the Foundation is building on this work and expanding its role in fortifying Node.js through strong security governance. It will also allow the Foundation to drive standardization around security data and encourage a broader ecosystem of open source and vendor based tools on top of it.
 
 All security vendors are encouraged to contribute to the common vulnerability repository. Once it is openly licensed, the Foundation expects the repository to grow quickly as other vendors add to it.
 
-With 15 million downloads per month, more than a billion package downloads per week, and growing adoption across numerous industries, Node.js and its module ecosystem underpins some of the most heavily used desktop, web, mobile, cloud and IoT applications in the world. The need for a more open, robust, and standard process for finding and fixing vulnerabilities
-within the module ecosystem that surrounds Node.js is essential, according to Mikeal Rogers, community manager for Node.js Foundation.
+With 15 million downloads per month, more than a billion package downloads per week, and growing adoption across numerous industries, Node.js and its module ecosystem underpins some of the most heavily used desktop, web, mobile, cloud and IoT applications in the world. The need for a more open, robust, and standard process for finding and fixing vulnerabilities within the module ecosystem that surrounds Node.js is essential, according to Mikeal Rogers, community manager for Node.js Foundation.
 
 “The Node.js Security Project will become one of the largest projects to build a community around detecting and fixing vulnerabilities,” said Rogers. “Given the maturity of Node.js and how widely used it is in enterprise environments, it makes sense to tackle this endeavor under open governance facilitated by the Node.js Foundation. This allows for more collaboration and communication within the broad community of developers and end users, ensuring the stability and longevity of the large, continually growing Node.js ecosystem.”
 
 A Node.js Security Project Working Group will be established in the next few weeks to begin validating vulnerability disclosures and maintaining the base dataset. Individuals and anyone from the Technical Steering Committee and Core Technical Committee are encouraged to join the working group and provide input on GitHub.
 
-The Node.js Security Project, founded by Adam Baldwin and previously managed by [^Lift Security](https://liftsecurity.io/), an application security company, collects data around vulnerability and security flaws in the Node.js module ecosystem. The Node.js Foundation will take over the following responsibilities from ^Lift:
+The Node.js Security Project, founded by Adam Baldwin and previously managed by \[^Lift Security\](https://liftsecurity.io/), an application security company, collects data around vulnerability and security flaws in the Node.js module ecosystem. The Node.js Foundation will take over the following responsibilities from ^Lift:
 
 * Maintaining an entry point for ecosystem vulnerability disclosure;
 * Maintaining a private communication channel for vulnerabilities to be vetted;
