@@ -9,8 +9,7 @@ title: Лого та графіка
 
 Будь ласка, прочитайте [політику товарного знаку](/en/about/trademark/) щодо дозволеного використання логотипів та позначень Node.js®.
 
-Правила візуального оформлення позначень Node.js описані у
-[Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
+Правила візуального оформлення позначень Node.js описані у [Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
 
 <table class="logos">
   <tr>
@@ -30,3 +29,4 @@ title: Лого та графіка
     <td><a href="/static/images/logos/nodejs-new-white.ai">Node.js інвертований з меншою кількістю кольорів AI</a></td>
   </tr>
 </table>
+
