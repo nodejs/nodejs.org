@@ -33,6 +33,3 @@ Node.js 提供的一些头文件是由几个独立的团队维护的。举个例
 本地插件开发者可以通过确保插件只使用 `node_api.h` 中定义的 API 以及在 `node_api_types.h` 中定义的数据结构和常量，利用 N-API 向前兼容性保证。由此方式，开发者通过向生产用户表明其应用程序的维护负担将增加，而不是通过添加一个纯粹由 JavaScript 编写的包，从而简化其插件的采用。
 
 N-API 是版本化的，因为会不时添加新的 API；与语义版本控制不同，N-API 版本控制是累积性的。也就是说，N-API 的每个版本在 semver 系统中传达与次要版本相同的含义，这意味着对 N-API 所做的所有更改都将向后兼容。此外，新的 N-API 将添加到实验标志下，以使社区有机会在生产环境中对其进行审核。实验状态意味着，尽管已注意确保新 API 不会在将来以 ABI 不兼容的方式进行修改，但在生产中尚未充分证明它是正确和有用的。 因此，在最终并入即将推出的 N-API 版本之前可能会经历 ABI 不兼容的更改。也就是说，正向兼容性保证尚未涵盖实验性的 N-API。
-
-[`node_api.h`]: https://github.com/nodejs/node/blob/master/src/node_api.h
-[`node_api_types.h`]: https://github.com/nodejs/node/blob/master/src/node_api_types.h
