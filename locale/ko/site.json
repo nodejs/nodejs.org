@@ -4,7 +4,7 @@
   "url": "https://nodejs.org/ko/",
   "locale": "ko",
   "language": "한국어",
-  "languageEnglishVersion": "Korean",
+  "languageEnglishVersion": "한국어",
   "scrollToTop": "맨 위로",
   "reportNodeIssue": "Node.js 이슈 보고",
   "reportWebsiteIssue": "웹사이트 이슈 보고",
@@ -42,7 +42,7 @@
     },
     "community": {
       "link": "about/community",
-      "text": "커뮤니티"
+      "text": "Community"
     },
     "workinggroups": {
       "link": "about/working-groups",
@@ -62,19 +62,19 @@
     },
     "privacy": {
       "link": "about/privacy",
-      "text": "개인정보 보호정책"
+      "text": "Privacy Policy"
     }
   },
   "download": {
     "link": "download",
-    "text": "다운로드",
+    "text": "Downloads",
     "releases": {
       "link": "download/releases",
       "text": "이전 릴리스"
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "패키지 관리자를 통한 Node.js 설치"
+      "text": "패키지 매니저로 Node.js 설치하기"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
@@ -104,11 +104,11 @@
     },
     "guides": {
       "link": "docs/guides",
-      "text": "안내"
+      "text": "가이드"
     },
     "dependencies": {
       "link": "docs/meta/topics/dependencies",
-      "text": "의존성"
+      "text": "Dependencies"
     }
   },
   "getinvolved": {
@@ -116,11 +116,11 @@
     "text": "참여하기",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
-      "text": "코딩 + 배우기"
+      "text": "Code + Learn"
     },
     "collab-summit": {
       "link": "get-involved/collab-summit",
-      "text": "협업자 서밋"
+      "text": "Collab Summit"
     },
     "contribute": {
       "link": "get-involved/contribute",
@@ -128,16 +128,16 @@
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
-      "text": "행동강령"
+      "text": "Code of Conduct"
     },
     "node-meetups": {
       "link": "get-involved/node-meetups",
-      "text": "Node.js 미트업"
+      "text": "Node.js Meetups"
     }
   },
   "security": {
     "link": "security",
-    "text": "보안"
+    "text": "Post-mortem"
   },
   "blog": {
     "link": "blog",
@@ -145,7 +145,7 @@
   },
   "releases": {
     "title": "릴리스 이력",
-    "downloads": "다운로드"
+    "downloads": "Downloads"
   },
   "links": {
     "pages": {
