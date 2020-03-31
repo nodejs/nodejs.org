@@ -97,7 +97,7 @@ fs.readFile('/file.md', (readFileErr, data) => {
 
 以上代码在 `fs.readFile()` 的回调中对 `fs.unlink()` 进行了 **非阻塞** 调用，这保证了正确的操作顺序。
 
-## 其它资源
+## Additional Resources
 
 * [libuv](https://libuv.org/)
-* [关于 Node.js](https://nodejs.org/zh-cn/about/)
+* [关于 Node.js](/en/about/)
