@@ -10,13 +10,11 @@ author: mikeal
 
 The Node.js Foundation is a member-supported organization. To date we've added over 20 corporate members who provide the financial support necessary for the Foundation to thrive.
 
-With the support of the Linux Foundation we are now able to launch an Individual Membership program. These members will be electing two representatives to the Board of Directors this January who will be
-responsible for representing the diverse needs of the Node.js community in the administration of the Node.js Foundation.
+With the support of the Linux Foundation we are now able to launch an Individual Membership program. These members will be electing two representatives to the Board of Directors this January who will be responsible for representing the diverse needs of the Node.js community in the administration of the Node.js Foundation.
 
 ## How do I become a member?
 
-Membership costs [$100 a year, or $25 for students](https://identity.linuxfoundation.org/pid/99).
-Contributors to the Node.js project, including all Working Groups and sub-projects, are eligible for free membership.
+Membership costs [$100 a year, or $25 for students](https://identity.linuxfoundation.org/pid/99). Contributors to the Node.js project, including all Working Groups and sub-projects, are eligible for free membership.
 
 You are required to have a GitHub account to register.
 
