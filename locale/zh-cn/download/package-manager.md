@@ -3,7 +3,7 @@ layout: page.hbs
 title: 通过包管理器安装 Node.js
 ---
 
-# 通过包管理器方式安装 Node.js
+# 通过包管理器安装 Node.js
 
 ***注意：*** 此页面上所有的安装包均有它们各自作者，**而非** Node.js 核心团队负责进行维护和支持。如遇任何问题，请直接向有关作者报告。 如你的问题被证实是因为 Node.js 的缺陷引发的，维护者将直接向 Node.js 汇报此问题。
 
@@ -48,26 +48,21 @@ Node.js 以及 npm 包管理器在社区库中可如下方式使用：
 pacman -S nodejs npm
 ```
 
-<!--
-If your title has non-English characters, please
-put your anchor name into the comment symbol before
-your real title.
--->
-## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages--> 基于 Linux 的 Debian 和 Ubuntu 发行版，Enterprise Linux/Fedora 和 Snap packages
+## 基于 Linux 的 Debian 和 Ubuntu 发行版，Enterprise Linux/Fedora 和 Snap packages
 
-[Node.js 官方二进制发行版](https://github.com/nodesource/distributions/blob/master/README.md) 由 NodeSource 提供。
+[Node.js binary distributions](https://github.com/nodesource/distributions/blob/master/README.md) are available from NodeSource.
 
 ## FreeBSD
 
-可以通过 [www/node](https://www.freshports.org/www/node) 获取最近的 Node.js。
+[Node.js 官方二进制发行版](https://github.com/nodesource/distributions/blob/master/README.md) 由 NodeSource 提供。
 
-通过 [pkg](https://www.freebsd.org/cgi/man.cgi?pkg) 安装二进制文件包：
+可以通过 [www/node](https://www.freshports.org/www/node) 获取最近的 Node.js。
 
 ```bash
 pkg install node
 ```
 
-或通过 [ports](https://www.freebsd.org/cgi/man.cgi?ports) 进行构建。
+通过 [pkg](https://www.freebsd.org/cgi/man.cgi?pkg) 安装二进制文件包：
 
 ```bash
 cd /usr/ports/www/node && make install
@@ -75,7 +70,7 @@ cd /usr/ports/www/node && make install
 
 ## Gentoo
 
-可以在 portage tree 中获得 Node.js：
+或通过 [ports](https://www.freebsd.org/cgi/man.cgi?ports) 进行构建。
 
 ```bash
 emerge nodejs
@@ -83,49 +78,46 @@ emerge nodejs
 
 ## IBM i
 
-Node.js 长期支持版（LTS）各类版本可以通过 IBM 处获得，使用 ['yum' 包管理器](https://ibm.biz/ibmi-rpms)。包名字的组成是 `nodejs` 加上一个主版本号（举个例子，`nodejs8`，`nodejs10`，`nodejs12` 等)。
+可以在 portage tree 中获得 Node.js：
 
-如果你要通过命令行安装 Node.js 12.x，请以\*ALLOBJ 特殊权限方式进行：
+Node.js 长期支持版（LTS）各类版本可以通过 IBM 处获得，使用 ['yum' 包管理器](https://ibm.biz/ibmi-rpms)。包名字的组成是 `nodejs` 加上一个主版本号（举个例子，`nodejs8`，`nodejs10`，`nodejs12` 等)。
 
 ```bash
 yum install nodejs12
 ```
 
-Node.js 也可以通过客户端访问解决方案产品（IBM i Access Client Solutions）安装。具体参考[支持文档](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619)。
+如果你要通过命令行安装 Node.js 12.x，请以\*ALLOBJ 特殊权限方式进行：
 
 ## NetBSD
 
-可以在 pkgsrc 目录树中获得 Node.js：
+Node.js 也可以通过客户端访问解决方案产品（IBM i Access Client Solutions）安装。具体参考[支持文档](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619)。
 
 ```bash
 cd /usr/pkgsrc/lang/nodejs && make install
 ```
 
-或者使用 pkgin 安装一个二进制文件包 (如果它支持你的系统)：
+可以在 pkgsrc 目录树中获得 Node.js：
 
 ```bash
 pkgin -y install nodejs
 ```
 
 ## nvm
-Node 版本管理器是一个用于管理多个已发布的 Node.js 不同版本的 bash 脚本。它允许你执行诸如“安装”、“卸载”以及“版本切换”等诸多功能。
-使用[安装脚本](https://github.com/nvm-sh/nvm#install--update-script)安装 nvm。
+或者使用 pkgin 安装一个二进制文件包 (如果它支持你的系统)：
 
-对于 Unix / OS X 系统，Node.js 从源代码构建，并通过 [nvm](https://github.com/creationix/nvm) 安装到你所期望的地方。
+Node 版本管理器是一个用于管理多个已发布的 Node.js 不同版本的 bash 脚本。它允许你执行诸如“安装”、“卸载”以及“版本切换”等诸多功能。 使用[安装脚本](https://github.com/nvm-sh/nvm#install--update-script)安装 nvm。
 
 ```bash
 env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
-随后你可以通过 `nvm` 在“发布版本”和“从源代码构建版本”中选择。
-
-举个例子，如果你的 Node.js 版本是 v8.0.0-pre：
+对于 Unix / OS X 系统，Node.js 从源代码构建，并通过 [nvm](https://github.com/creationix/nvm) 安装到你所期望的地方。
 
 ```bash
 nvm use 8
 ```
 
-一旦官方发布了版本，并且你希望卸载从源代码编译的版本，可以这样做：
+随后你可以通过 `nvm` 在“发布版本”和“从源代码构建版本”中选择。
 
 ```bash
 nvm uninstall 8
@@ -133,29 +125,28 @@ nvm uninstall 8
 
 ## OpenBSD
 
-Node.js 也可以通过 ports 系统获取。
+举个例子，如果你的 Node.js 版本是 v8.0.0-pre：
 
 ```bash
 /usr/ports/lang/node
 ```
 
-在 OpenBSD 上中使用[pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1)：
+一旦官方发布了版本，并且你希望卸载从源代码编译的版本，可以这样做：
 
 ```bash
 pkg_add node
 ```
 
-## <!--opensuse-and-sle-->openSUSE 和 SLE
+## openSUSE 和 SLE
 
-在以下安装包中，Node.js 在以下主版本库中可用：
+Node.js 也可以通过 ports 系统获取。
 
 * **openSUSE Leap 42.2**: `nodejs4`
 * **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
 * **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
-* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`
-  （“Web 和 Scripting 模块” [安装前必须添加](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html)。）
+* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6` （“Web 和 Scripting 模块” [安装前必须添加](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html)。）
 
-举个例子，在 openSUSE Leap 42.2 上安装 Node.js，用 root 角色运行命令：
+在 OpenBSD 上中使用[pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1)：
 
 ```bash
 zypper install nodejs4
@@ -163,9 +154,9 @@ zypper install nodejs4
 
 ## macOS
 
-从 [nodejs.org](https://nodejs.org/) 官网直接下载 [macOS Installer](https://nodejs.org/zh-cn/#home-downloadhead)。
+在以下安装包中，Node.js 在以下主版本库中可用：
 
-_如果你想用 bash 命令下载：_
+_If you want to download the package with bash:_
 
 ```bash
 curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
@@ -173,13 +164,13 @@ curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.
 
 ### 可替代方案
 
-使用 **[Homebrew](https://brew.sh/)**:
+从 [nodejs.org](https://nodejs.org/) 官网直接下载 [macOS Installer](https://nodejs.org/zh-cn/#home-downloadhead)。
 
 ```bash
 brew install node
 ```
 
-使用 **[MacPorts](https://www.macports.org/)**:
+Using **[MacPorts](https://www.macports.org/)**:
 
 ```bash
 port install nodejs<major version>
@@ -188,7 +179,21 @@ port install nodejs<major version>
 port install nodejs7
 ```
 
+使用 **[Homebrew](https://brew.sh/)**:
+
+使用 **[MacPorts](https://www.macports.org/)**:
+
+```bash
+pkgin -y install nodejs
+```
+
 使用 **[pkgsrc](https://pkgsrc.joyent.com/install-on-osx/)**:
+
+```bash
+cd pkgsrc/lang/nodejs && bmake install
+```
+
+## SmartOS 和 illumos
 
 安装二进制文件包：
 
@@ -196,21 +201,7 @@ port install nodejs7
 pkgin -y install nodejs
 ```
 
-或者通过 pkgsrc 手动构建：
-
-```bash
-cd pkgsrc/lang/nodejs && bmake install
-```
-
-## <!--smartos-and-illumos-->SmartOS 和 illumos
-
-SmartOS 镜像随 pkgsrc 预装。在其它的 illumos 发布版中，先安装 **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**，然后你可以正常安装二进制文件包：
-
-```bash
-pkgin -y install nodejs
-```
-
-或通过 pkgsrc 手动构建：
+使用 **[pkgsrc](https://pkgsrc.joyent.com/install-on-osx/)**:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
@@ -218,7 +209,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## Solus
 
-在主版本库中，Solus 提供了 Node.js。
+SmartOS 镜像随 pkgsrc 预装。在其它的 illumos 发布版中，先安装 **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**，然后你可以正常安装二进制文件包：
 
 ```bash
 sudo eopkg install nodejs
@@ -226,7 +217,7 @@ sudo eopkg install nodejs
 
 ## Void Linux
 
-在主版本库中 Void Linux 发布稳定的 Node.js。
+或通过 pkgsrc 手动构建：
 
 ```bash
 xbps-install -Sy nodejs
@@ -234,11 +225,11 @@ xbps-install -Sy nodejs
 
 ## Windows
 
-直接通过 [nodejs.org](https://nodejs.org/) 下载 [Windows Installer](https://nodejs.org/zh-cn/#home-downloadhead) 安装。
+在主版本库中，Solus 提供了 Node.js。
 
 ### 可替代方案
 
-使用 **[Chocolatey](https://chocolatey.org/)**:
+在主版本库中 Void Linux 发布稳定的 Node.js。
 
 ```bash
 cinst nodejs
@@ -246,7 +237,7 @@ cinst nodejs
 cinst nodejs.install
 ```
 
-使用 **[Scoop](https://scoop.sh/)**:
+直接通过 [nodejs.org](https://nodejs.org/) 下载 [Windows Installer](https://nodejs.org/zh-cn/#home-downloadhead) 安装。
 
 ```bash
 scoop install nodejs
