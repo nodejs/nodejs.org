@@ -11,7 +11,7 @@ Existem diversos tipos de documentação disponíveis neste site:
 
 * Documentação de referência de API
 * Funcionalidades do ES6
-* Guias
+* Guides
 
 ## Documentação de referência de API
 
@@ -43,6 +43,6 @@ Esta documentação descreve os módulos embarcados (built-in) providos pelo Nod
 
 A [seção do ES6](/pt-br/docs/es6/) descreve os três grupos de funcionalidade e detalha quais funcionalidades estão habilitadas por padrão no Node.js, incluindo links com explicações. Ela também mostra como encontrar qual versão do V8 está embarcada em conjunto com uma versão particular do Node.js.
 
-## Guias
+## Guides
 
 A [seção de Guias](/pt-br/docs/guides/) têm uma longa lista de artigos que detalham as funcionalidades técnicas e capacidades do Node.js.
