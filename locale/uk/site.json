@@ -4,7 +4,7 @@
   "url": "https://nodejs.org/uk/",
   "locale": "uk",
   "language": "Українська",
-  "languageEnglishVersion": "Ukrainian",
+  "languageEnglishVersion": "Українська",
   "scrollToTop": "Вгору",
   "reportNodeIssue": "Проблеми з Node.js",
   "reportWebsiteIssue": "Проблеми з сайтом",
@@ -13,6 +13,7 @@
   "all-downloads": "Всі варіанти завантажень",
   "nightly": "Нічні збірки",
   "chakracore-nightly": "Нічні збірки Node-ChakraCore",
+  "unofficial-builds": "Unofficial builds",
   "previous": "Попередній",
   "next": "Далі",
   "feeds": [
@@ -41,11 +42,11 @@
     },
     "community": {
       "link": "about/community",
-      "text": "Спільнота"
+      "text": "Community"
     },
     "workinggroups": {
       "link": "about/working-groups",
-      "text": "Робочі групи"
+      "text": "Working Groups"
     },
     "releases": {
       "link": "about/releases",
@@ -57,23 +58,23 @@
     },
     "trademark": {
       "link": "about/trademark",
-      "text": "Товарний знак"
+      "text": "Торгова марка"
     },
     "privacy": {
       "link": "about/privacy",
-      "text": "Політика приватності"
+      "text": "Privacy Policy"
     }
   },
   "download": {
     "link": "download",
-    "text": "Завантаження",
+    "text": "Downloads",
     "releases": {
       "link": "download/releases",
-      "text": "Попередні Релізи"
+      "text": "Previous Releases"
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "Встановлення Node.js через пакетний менеджер"
+      "text": "Installing Node.js via package manager"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
@@ -103,11 +104,11 @@
     },
     "guides": {
       "link": "docs/guides",
-      "text": "Керівництва"
+      "text": "Guides"
     },
     "dependencies": {
       "link": "docs/meta/topics/dependencies",
-      "text": "Залежності"
+      "text": "Dependencies"
     }
   },
   "getinvolved": {
@@ -119,7 +120,7 @@
     },
     "collab-summit": {
       "link": "get-involved/collab-summit",
-      "text": "Саміт співпраці"
+      "text": "Collab Summit"
     },
     "contribute": {
       "link": "get-involved/contribute",
@@ -127,12 +128,16 @@
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
-      "text": "Правила"
+      "text": "Code of Conduct"
+    },
+    "node-meetups": {
+      "link": "get-involved/node-meetups",
+      "text": "Node.js Meetups"
     }
   },
   "security": {
     "link": "security",
-    "text": "Безпека"
+    "text": "Security"
   },
   "blog": {
     "link": "blog",
@@ -140,7 +145,7 @@
   },
   "releases": {
     "title": "Історія релізів",
-    "downloads": "Завантаження"
+    "downloads": "Downloads"
   },
   "links": {
     "pages": {
