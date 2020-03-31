@@ -11,7 +11,7 @@ labels:
 
 * API 參考文件
 * ES6 功能
-* 技術指南
+* Guides
 
 ## API 參考文件
 
@@ -43,6 +43,6 @@ labels:
 
 [ES6 章節](/zh-tw/docs/es6/)中介紹了三個 ES6 的特色群組以及 Node.js 預設啟用哪些功能的細節並附上連結。此章節也示範了如何查詢某版 Node.js 中的 V8 版本。
 
-## 技術指南
+## Guides
 
 [技術指南章節](/zh-tw/docs/guides/)中會深入且詳細地說明 Node.js 技術特點及功能。
