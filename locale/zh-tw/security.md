@@ -1,9 +1,9 @@
 ---
 layout: security.hbs
-title: 安全
+title: Security
 ---
 
-# 安全
+# Security
 
 ## 回報 Node.js 的臭蟲
 
@@ -23,9 +23,11 @@ Node.js 官方為了安全研究員們及負責的公開揭露而展開了一個
 
 感謝你對於 Node.js 及其生態系安全性的改善，我們相當感謝並認可你的付出及負責任地揭露問題。
 
+下列為 Node.js 之安全性揭露政策：
+
 ## 揭露政策
 
-下列為 Node.js 之安全性揭露政策：
+安全通告會由下列方式發布：
 
 * 收到安全性的回報後我們會指派一個主要負責人，此人會負責確認問題，並協調修補、釋出的流程及確認受影響版本，審核程式碼以確保沒有其他類似問題，為所有維護中的版本提供修補程式，並確保這些修補程式不會在發布前被公開。
 
@@ -39,11 +41,11 @@ Node.js 官方為了安全研究員們及負責的公開揭露而展開了一個
 
 ## 接收安全性更新
 
-安全通告會由下列方式發布：
+若你對改善本流程有任何建議的話，請開一個 [pull request](https://github.com/nodejs/nodejs.org) 或是 [issue](https://github.com/nodejs/security-wg/issues/new) 來與我們一同討論。
 
-* [https://groups.google.com/group/nodejs-sec](https://groups.google.com/group/nodejs-sec)
-* [https://nodejs.org/en/blog/](https://nodejs.org/en/blog/)
+* <https://groups.google.com/group/nodejs-sec>
+* <https://nodejs.org/en/blog/>
 
 ## 對本政策的建言
 
-若你對改善本流程有任何建議的話，請開一個 [pull request](https://github.com/nodejs/nodejs.org) 或是 [issue](https://github.com/nodejs/security-wg/issues/new) 來與我們一同討論。
+If you have suggestions on how this process could be improved please submit a [pull request](https://github.com/nodejs/nodejs.org) or [file an issue](https://github.com/nodejs/security-wg/issues/new) to discuss.
