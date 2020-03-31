@@ -13,17 +13,13 @@ This week we had one io.js release [v1.8.1](https://iojs.org/dist/v1.8.1/), comp
 
 ## Notable changes
 
-* **NOTICE**: Skipped v1.8.0 due to problems with release tooling.
-  See [#1436](https://github.com/nodejs/node/issues/1436) for details.
+* **NOTICE**: Skipped v1.8.0 due to problems with release tooling. See [#1436](https://github.com/nodejs/node/issues/1436) for details.
 * **build**: Support for building io.js as a static library (Marat Abdullin) [#1341](https://github.com/nodejs/node/pull/1341)
 * **deps**: Upgrade openssl to 1.0.2a (Shigeki Ohtsu) [#1389](https://github.com/nodejs/node/pull/1389)
-  * Users should see performance improvements when using the crypto API.
-  See [here](https://github.com/nodejs/node/wiki/Crypto-Performance-Notes-for-OpenSSL-1.0.2a-on-iojs-v1.8.0)
-  for details.
+  * Users should see performance improvements when using the crypto API. See [here](https://github.com/nodejs/node/wiki/Crypto-Performance-Notes-for-OpenSSL-1.0.2a-on-iojs-v1.8.0) for details.
 * **npm**: Upgrade npm to 2.8.3. See the [release notes](https://github.com/npm/npm/releases/tag/v2.8.3) for details. Includes improved git support.
 * **src**: Allow multiple arguments to be passed to process.nextTick (Trevor Norris) [#1077](https://github.com/nodejs/node/pull/1077)
-* **module**: The interaction of `require('.')` with `NODE_PATH` has been restored and deprecated. This functionality
-will be removed at a later point. (Roman Reiss) [#1363](https://github.com/nodejs/node/pull/1363)
+* **module**: The interaction of `require('.')` with `NODE_PATH` has been restored and deprecated. This functionality will be removed at a later point. (Roman Reiss) [#1363](https://github.com/nodejs/node/pull/1363)
 
 ## Known issues
 
