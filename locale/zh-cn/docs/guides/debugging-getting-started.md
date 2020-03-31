@@ -9,7 +9,7 @@ layout: docs.hbs
 
 ## 启用检查器
 
-当使用 `--inspect` 开关符启动检查器时，一个 Node.js 进程开始侦听调试客户端。默认情况下侦听 127.0.0.1:9229 的域名和端口号；每个进程都有一个唯一的 [UUID][] 标示符。
+当使用 `--inspect` 开关符启动检查器时，一个 Node.js 进程开始侦听调试客户端。默认情况下侦听 127.0.0.1:9229 的域名和端口号；每个进程都有一个唯一的 [UUID](https://tools.ietf.org/html/rfc4122) 标示符。
 
 检查器的客户端必须知晓并制定连接的域名地址、端口号以及 UUID。一个完整的 URL 看上去如：`ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`。
 
@@ -44,14 +44,14 @@ layout: docs.hbs
 
 ### [Node 监视器](https://github.com/nodejs/node-inspect)
 
-* 由 Node.js 基础库，使用[检查器协议][]支持的 CLI 调试器。
+* 由 Node.js 基础库，使用[检查器协议](https://chromedevtools.github.io/debugger-protocol-viewer/v8/)支持的 CLI 调试器。
 * 和 Node 绑定在一起的版本，并且可以使用 `node inspect myscript.js`。
 * 最新的版本同样可以单独通过（例如 `npm install -g node-inspect`）方式安装，并使用 `node-inspect myscript.js`。
 
 ### [Chrome 开发工具](https://github.com/ChromeDevTools/devtools-frontend) 55+
 
-* **选项 1**: 在基于 Chromium 内核的浏览器下打开 `chrome://inspect`。点击配置按钮确保你的目标宿主和端口号列入其中。
-* **选项 2**: 从 `/json/list` 中拷贝 `devtoolsFrontendUrl`（见上），或者加上 --inspect 以检查提示文本并粘贴到 Chrome 中。
+* **Option 1**: Open `chrome://inspect` in a Chromium-based browser or `edge://inspect` in Edge. Click the Configure button and ensure your target host and port are listed.
+* **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list` (see above) or the --inspect hint text and paste into Chrome.
 
 ### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
 
@@ -60,7 +60,7 @@ layout: docs.hbs
 ### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
 
 * 从菜单中或者单击 F5， "Debug > Start Debugging"。
-* [详细指导](https://github.com/Microsoft/nodejstools/wiki/Debugging)
+* [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging).
 
 ### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ 以及其它版本
 
@@ -111,7 +111,7 @@ layout: docs.hbs
     <td>
       <ul>
         <li>启用监视器代理</li>
-        <li>监听默认地址和端口（127.0.0.1:9229）</li>
+        <li>在默认地址和端口上监听（127.0.0.1:9229）</li>
         <li>在用户代码启动前终止</li>
       </ul>
     </td>
@@ -121,8 +121,8 @@ layout: docs.hbs
     <td>
       <ul>
         <li>启用监视器代理</li>
-        <li>绑定地址和主机名<em>宿主</em>（默认：127.0.0.1）</li>
-        <li>监听<em>端口</em>（默认：9229）</li>
+        <li>绑定地址或主机名<em>宿主</em> （默认：127.0.0.1）</li>
+        <li>监听<em>端口</em> （默认：9229）</li>
         <li>在用户代码启动前终止</li>
       </ul>
     </td>
@@ -140,7 +140,7 @@ layout: docs.hbs
     <td>
       <ul>
         <li>通过 --inspect 标志生成一个新的子进程，使用主进程运行 CLI 调试器。</li>
-        <li>监听<em>端口</em>（默认：9229）</li>
+        <li>监听<em>端口</em> （默认：9229）</li>
       </ul>
     </td>
   </tr>
@@ -148,7 +148,7 @@ layout: docs.hbs
 
 ---
 
-## <!--enabling-remote-debugging-scenarios-->启用远程调试的情形
+## 启用远程调试的情形
 
 我们推荐你千万不要使用调试器监听公共的 IP 地址。如果你真需要允许远程调试连接，那么就请使用 SSH 代替。以下我们提供你例子仅是为解释目的。请在开始前理解允许远程访问特权的安全风险。
 
@@ -184,5 +184,5 @@ V8 调试协议再也不维护或是归档了。
 
 用 Chrome 开发工具，通过 Node.js 的中间进程把 Chromium 中的检查器协议转换成 V8 调试器协议进行程序调试。
 
-[检查器协议]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/
-[UUID]: https://tools.ietf.org/html/rfc4122
+<!-- refs -->
+
