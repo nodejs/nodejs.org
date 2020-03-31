@@ -44,8 +44,7 @@ User names, identifications ("IDs"), and email addresses (as well as any additio
 ## Opt Out
 A user will always be able to make the decision whether to proceed with any activity that requests personal information including personally identifiable information. If a user does not provide requested information, the user may not be able to complete certain transactions.
 
-Users are not licensed to add other users to a Site (even users who entered into transactions with them) or to their mailing lists without written consent.
-The Foundation encourages users to evaluate privacy and security policies of any of the Sites’ transaction partners before entering into transactions or choosing to disclose information.
+Users are not licensed to add other users to a Site (even users who entered into transactions with them) or to their mailing lists without written consent. The Foundation encourages users to evaluate privacy and security policies of any of the Sites’ transaction partners before entering into transactions or choosing to disclose information.
 
 ## Email
 The Foundation may use (or provide to The Linux Foundation or other third party contractors to use) contact information received by the Foundation to email any user with respect to any Foundation or project of The Linux Foundation (a “Project”) opportunity, event or other matter.
