@@ -14,6 +14,7 @@ layout: contribute.hbs
 * [Node.js Everywhere](https://newsletter.nodejs.org) 是 Node.js 官方的月报。
 * [Node.js Collection](https://medium.com/the-node-js-collection) 是一堆在媒体上的社区策划内容集合。
 * [Community Committee](https://github.com/nodejs/community-committee) 是 Node.js 基金会中的高级委员会，专注于社区事务。
+* [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
 
 ## 学习资源
 
