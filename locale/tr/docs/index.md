@@ -11,7 +11,7 @@ Bu web sitesinde çeşitli dokümantasyon türleri bulunmaktadır:
 
 * API referans dokümantasyonu
 * ES6 özellikleri
-* Rehberler
+* Guides
 
 ## API Referans Dokümantasyonu
 
@@ -43,6 +43,6 @@ Bu belgede, Node.js. tarafından sağlanan yerleşik modüller açıklanmaktadı
 
 [ES6 bölümü](/en/docs/es6/), üç ES6 özellik grubunu ve açıklayıcı bağlantıların yanı sıra Node.js'de varsayılan olarak hangi özelliklerin etkin olduğunu açıklar. Ayrıca, belirli bir Node.js sürümüyle birlikte gönderilen V8 sürümünün nasıl bulunacağını da gösterir.
 
-## Rehberler
+## Guides
 
 [Rehber bölümü](/en/docs/guides/)'nde Node.js teknik özellikleri ve yetenekleriyle ilgili uzun ve derinlemesine makaleler bulunmaktadır.
