@@ -4,7 +4,6 @@ layout: contribute.hbs
 ---
 
 # 协作者峰会
-
 协作者峰会是一个非正式的会议，其目的在于让现有及具有潜力的协作者齐聚一堂，让大家以现场协作、教学及分享知识的方式一同讨论 Node.js。委员会及工作组每年有两次聚会，他们会一起做出重要的决定，同时推动一些令人期待的任务。
 
 ## 谁可以参与呢？
@@ -12,3 +11,7 @@ layout: contribute.hbs
 欢迎所有人参加。峰会期间，组长们会在新进的协作者融入工作议程之前协助他们加入想要贡献的群组。 这是一个你可以学习社群事务的好机会，同时也能贡献及精进你的技能。在进行现场分组讨论之前，工作组会先安排行程好让人们可以互相熟悉对方。
 
 期待能与你在协作者峰会中相见！[峰会回顾](https://github.com/nodejs/summit)中有即将到来及过往的协作者峰会信息，并记得看看[议题](https://github.com/nodejs/summit/issues)，里头分享了个别工作组及委员会的讨论。
+
+Working groups will put together a schedule so that people can familiarize themselves before folks get onsite, having the general collaborator discussions, and then dive into breakout sessions.
+
+We'd love to see you at Collab Summit! Check out the [Summit repo](https://github.com/nodejs/summit) for upcoming and past Collab Summits and have a look at the [issues filed](https://github.com/nodejs/summit/issues) that share what individual working groups and committees are looking to discuss in-person.
