@@ -1,0 +1,155 @@
+{
+  "title": "Node.js",
+  "author": "Node.js",
+  "url": "https://nodejs.org/en/",
+  "locale": "en",
+  "language": "English",
+  "languageEnglishVersion": "English",
+  "scrollToTop": "Scroll to top",
+  "reportNodeIssue": "Report Node.js issue",
+  "reportWebsiteIssue": "Report website issue",
+  "getHelpIssue": "Get Help",
+  "by": "by",
+  "all-downloads": "All download options",
+  "nightly": "Nightly builds",
+  "chakracore-nightly": "Node-ChakraCore Nightly builds",
+  "unofficial-builds": "Unofficial builds",
+  "previous": "Previous",
+  "next": "Next",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Node.js Blog"
+    },
+    {
+      "link": "feed/releases.xml",
+      "text": "Node.js Blog: Releases"
+    },
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "Node.js Blog: Vulnerability Reports"
+    }
+  ],
+  "home": {
+    "text": "Home"
+  },
+  "about": {
+    "link": "about",
+    "text": "About",
+    "governance": {
+      "link": "about/governance",
+      "text": "Governance"
+    },
+    "community": {
+      "link": "about/community",
+      "text": "Community"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "Working Groups"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "Releases"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "Resources"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "Trademark"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "Privacy Policy"
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "Downloads",
+    "releases": {
+      "link": "download/releases",
+      "text": "Previous Releases"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "Installing Node.js via package manager"
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "Signed SHASUMS for release files",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "How to verify"
+    },
+    "install-on-linux": {
+      "text": "Installing Node.js via binary archive"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "Docs",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 and beyond"
+    },
+    "api-lts": {
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "Guides"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "Dependencies"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "Get Involved",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "Code + Learn"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "Collab Summit"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "Contribute"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "text": "Code of Conduct"
+    },
+    "node-meetups": {
+      "link": "get-involved/node-meetups",
+      "text": "Node.js Meetups"
+    }
+  },
+  "security": {
+    "link": "security",
+    "text": "Security"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "News"
+  },
+  "releases": {
+    "title": "Release History",
+    "downloads": "Downloads"
+  },
+  "links": {
+    "pages": {
+      "changelog": "Changelog"
+    }
+  }
+}
