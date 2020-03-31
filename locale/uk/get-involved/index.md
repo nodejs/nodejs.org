@@ -13,12 +13,16 @@ layout: contribute.hbs
 * The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
 * [Node Weekly](https://nodeweekly.com/) це поштове розсилання, що збирає найсвіжіші події та новини довкола спільноти Node.js.
 * [Community Committee](https://github.com/nodejs/community-committee) є комітетом вищого рівня в Node.js Фонд зосереджений на спільних зусиллях.
+* The [Community Committee](https://github.com/nodejs/community-committee) is a top-level committee in the Node.js Foundation focused on community-facing efforts.
+* [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
 
 ## Навчання
 
 * [Офіційна довідкова документація по API](https://nodejs.org/api/) описує Node API.
 * [NodeSchool.io](https://nodeschool.io/) навчить вас концепцій Node.js через інтерактивні консольні ігри.
 * [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) щодня поповнюється новою інформацією.
+* [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
+* [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
 
 ## Сайти міжнародних спільнот та проекти
 
