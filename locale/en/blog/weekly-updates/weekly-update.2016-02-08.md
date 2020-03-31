@@ -12,9 +12,7 @@ layout: blog-post.hbs
 
 ### 2016 Election
 
-The 2016 election was the first Individual Membership Election. The winner of the
-election is serving a two year term and the runner-up is serving a one year term.
-Future elections will happen each year for a new two year term.
+The 2016 election was the first Individual Membership Election. The winner of the election is serving a two year term and the runner-up is serving a one year term. Future elections will happen each year for a new two year term.
 
 * The board members elected in the 2016 election are:
   * Ashley Williams [@ashleygwilliams](https://github.com/ashleygwilliams) for a 2 year term.
