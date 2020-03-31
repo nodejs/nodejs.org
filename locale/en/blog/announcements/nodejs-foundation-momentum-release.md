@@ -34,8 +34,7 @@ As with the January survey, the Node.js Foundation will produce and make availab
 
 If you are interested in receiving the latest updates from the conference and what’s to come in 2017, be sure to follow [@nodejs](https://twitter.com/nodejs) on Twitter and subscribe to the [Node.js Foundation mailing list](http://go.linuxfoundation.org/l/6342/2015-09-15/2sgqpp).
 
-About Node.js Foundation
-Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 4.5 million active users per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks, and mobile websites.
+About Node.js Foundation Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 4.5 million active users per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks, and mobile websites.
 
 The Foundation is made up of a diverse group of companies including Platinum members GoDaddy, IBM, Intel, Joyent, Microsoft, NodeSource, PayPal, and Red Hat. Silver members include Apigee, AppDynamics, Cars.com, Codefresh, DigitalOcean, Dynatrace, Fidelity, Google, Groupon, nearForm, New Relic, npm, Opbeat, RisingStack, Sauce Labs, SAP, Snyk, StrongLoop (an IBM company), Sphinx, YLD, and Yahoo!. Get involved here: [https://nodejs.org](https://nodejs.org/).
 
