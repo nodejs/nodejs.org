@@ -98,6 +98,4 @@ The Foundation is made up of a diverse group of companies including Platinum mem
 
 ### Media Contact
 
-Zibby Keaton
-Node.js Foundation
-zkeaton@linuxfoundation.org
+Zibby Keaton Node.js Foundation zkeaton@linuxfoundation.org
