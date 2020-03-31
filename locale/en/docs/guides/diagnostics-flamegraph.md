@@ -11,8 +11,7 @@ Flame graphs are a way of visualizing CPU time spent in functions. They can help
 
 ## How to create a flame graph
 
-You might have heard creating a flame graph for Node.js is difficult, but that's not true (anymore).
-Solaris vms are no longer needed for flame graphs!
+You might have heard creating a flame graph for Node.js is difficult, but that's not true (anymore). Solaris vms are no longer needed for flame graphs!
 
 Flame graphs are generated from `perf` output, which is not a node-specific tool. While it's the most powerful way to visualize CPU time spent, it may have issues with how JavaScript code is optimized in Node.js 8 and above. See [perf output issues](#perf-output-issues) section below.
 
@@ -55,11 +54,9 @@ This is great for recording flame graph data from an already running process tha
 perf record -F99 -p `pgrep -n node` -g -- sleep 3
 ```
 
-Wait, what is that `sleep 3` for? It's there to keep the perf running - despite `-p` option pointing to a different pid, the command needs to be executed on a process and end with it.
-perf runs for the life of the command you pass to it, whether or not you're actually profiling that command. `sleep 3` ensures that perf runs for 3 seconds.
+Wait, what is that `sleep 3` for? It's there to keep the perf running - despite `-p` option pointing to a different pid, the command needs to be executed on a process and end with it. perf runs for the life of the command you pass to it, whether or not you're actually profiling that command. `sleep 3` ensures that perf runs for 3 seconds.
 
-Why is `-F` (profiling frequency) set to 99? It's a reasonable default. You can adjust if you want.
-`-F99` tells perf to take 99 samples per second, for more precision increase the value. Lower values should produce less output with less precise results. Precision you need depends on how long your CPU intensive functions really run. If you're looking for the reason of a noticeable slowdown, 99 frames per second should be more than enough.
+Why is `-F` (profiling frequency) set to 99? It's a reasonable default. You can adjust if you want. `-F99` tells perf to take 99 samples per second, for more precision increase the value. Lower values should produce less output with less precise results. Precision you need depends on how long your CPU intensive functions really run. If you're looking for the reason of a noticeable slowdown, 99 frames per second should be more than enough.
 
 After you get that 3 second perf record, proceed with generating the flame graph with the last two steps from above.
 
