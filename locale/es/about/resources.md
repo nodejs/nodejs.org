@@ -29,4 +29,3 @@ Las pautas para la visualización de la marca Node.js se describen en las [Pauta
     <td><a href="/static/images/logos/nodejs-new-white.ai">Node.js invertido con menos color AI</a></td>
   </tr>
 </table>
-
