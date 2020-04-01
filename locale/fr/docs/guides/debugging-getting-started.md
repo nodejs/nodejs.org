@@ -187,4 +187,3 @@ Start `node debug script_name.js` to start your script under the builtin command
 Debug your Node.js app with Chrome DevTools by using an intermediary process which translates the Inspector Protocol used in Chromium to the V8 Debugger protocol used in Node.js.
 
 <!-- refs -->
-
