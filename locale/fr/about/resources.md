@@ -29,4 +29,3 @@ Guidelines for the visual display of the Node.js mark are described in the [Visu
     <td><a href="/static/images/logos/nodejs-new-white.ai">Node.js reversed with less color AI</a></td>
   </tr>
 </table>
-
