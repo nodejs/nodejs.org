@@ -7,33 +7,22 @@ layout: contribute.hbs
 
 ## Discussions de la communauté
 
-* La [liste des tickets GitHub](https://github.com/nodejs/node/issues) est le bon endroit pour discuter des fonctionnalités cœurs de Node.js.
-
-* Pour une discussion en temps réel à propos du développement de Node, allez sur `irc.freenode.net` dans le canal `#node.js` avec un [client IRC](https://fr.wikipedia.org/wiki/Liste_de_clients_IRC) ou connectez vous depuis votre navigateur web en utilisant [le WebChat de freenode](https://webchat.freenode.net/#node.js) (en anglais).
-
-* Le compte Twitter officiel de Node.js est [nodejs](https://twitter.com/nodejs) (en anglais).
-
-* Le [calendrier de la Fondation Node.js](https://nodejs.org/calendar) avec toutes les réunions publiques d'équipe (en anglais).
-
-* [Node.js Everywhere](https://newsletter.nodejs.org) est la _newsletter_ mensuelle officielle de Node.js (en anglais).
-
-* [Node.js Collection](https://medium.com/the-node-js-collection) est une liste de contenus maintenue par la communauté sur Medium (en anglais).
-
-* La [Community Committee](https://github.com/nodejs/community-committee) est un comité de haut niveau de la Fondation Node.js axé sur les efforts communautaires.
+* The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
+* For real-time chat about Node.js development go to `irc.freenode.net` in the `#node.js` channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [freenode's WebChat](https://webchat.freenode.net/#node.js).
+* The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
+* The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
+* [Node.js Everywhere](https://newsletter.nodejs.org) is the official Node.js Monthly Newsletter.
+* [Node.js Collection](https://medium.com/the-node-js-collection) is a collection of community-curated content on Medium.
+* The [Community Committee](https://github.com/nodejs/community-committee) is a top-level committee in the Node.js Foundation focused on community-facing efforts.
+* [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
 
 ## Apprentissage
 
-* [La documentation officielle de l'API de référence](https://nodejs.org/api/) détaille l'API Node (en anglais).
-
-* [NodeSchool.io](https://nodeschool.io/fr-fr/) vous apprendra les concepts de Node.js avec des jeux interactifs en ligne de commande.
-
-* [L'étiquette Stack Overflow Node.js](https://stackoverflow.com/questions/tagged/node.js) rassemble de nouvelles informations chaque jour (en anglais).
-
-* [L'étiquette Node.js de la communauté DEV](https://dev.to/t/node) est un endroit pour partager ses projets Node.js, des articles et des tutoriaux mais aussi pour démarrer des conversations et demander des retours sur des sujets liés à Node.js. Tous les niveaux de connaissances sont acceptés. (en anglais)
-
-* [Nodeiflux](https://discordapp.com/invite/vUsrbjd) est une communauté sympathique centrée sur le développement _back-end_ avec Node.js sur le service Discord (en anglais).
-
-* [How To Node](http://howtonode.org/) a de nombreux tutoriaux utiles (en anglais).
+* [Official API reference documentation](https://nodejs.org/api/) details the Node.js API.
+* [NodeSchool.io](https://nodeschool.io/) will teach you Node.js concepts via interactive command-line games.
+* [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) collects new information every day.
+* [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
+* [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
 
 ## Site et projets des commuanutés internationales
 
