@@ -4,9 +4,26 @@ Node.js is a global platform and so this site has many translations. The transla
 languages other than English is handled by the localization working group of the language in question. If you
 would like to contribute to the translation of nodejs.org, please refer to the following process:
 
-## For Individuals wanting to contribute
+> Since Apr, 1 2020 translation process moved to [Crowdin](https://crowdin.com/project/nodejs-website)
 
-* Contact your appropriate localization group, and discuss with them the best possible way to contribute. A list of the localization groups can be found here (please keep in mind that some groups have not yet taken action upon the project name changes, hence the outdated repository names):
+## Get started
+
+1. Open [nodejs-website](https://crowdin.com/project/nodejs-website) Crowdin project
+2. Find your locale and start translation. Find more details in [guide for volunteer translators](https://support.crowdin.com/for-volunteer-translators/)
+
+All translated and approved content will be pushed to this repo automatically, you don't need to create any PRs with translation. Just keep localization process on Crowdin.
+
+Original source can be found in [/locale/en](https://github.com/nodejs/nodejs.org/tree/master/locale/en). If you found any problem with original source, please create PR with changes directly to this folder. Crowdin automatically pull all updates in 24 hours.
+
+### Can't find my locale on Crowdin
+
+Please create a [new issue](https://github.com/nodejs/nodejs.org/issues/new?template=03-i18n.md) in this repo. Crowdin managers team would be happy to add new language. 
+
+## Localization groups
+
+Localization group it's **NOT MUST HAVE** to start translation, and you can simply contribute on Crowdin without it. Just think about groups like a basement to communicate with other translators of your locale.
+
+Contact your appropriate localization group, and discuss with them the best possible way to contribute. A list of the localization groups can be found here (please keep in mind that some groups have not yet taken action upon the project name changes, hence the outdated repository names):
 
   * [`nodejs-ar`](https://github.com/nodejs/nodejs-ar) Arabic Community
   * [`nodejs-bg`](https://github.com/nodejs/nodejs-bg) Bulgarian Community
@@ -42,30 +59,18 @@ would like to contribute to the translation of nodejs.org, please refer to the f
   * [`nodejs-zh-TW`](https://github.com/nodejs/nodejs-zh-TW) Taiwanese Community
   * [`nodejs-uk`](https://github.com/nodejs/nodejs-uk) Ukrainian Community
   * [`nodejs-vi`](https://github.com/nodejs/nodejs-vi) Vietnamese Community
+  
+### Group for my locale is not exist
 
-## For Localization Groups
+If you can't find group for your locale, Node.js team would be happy to create it:
 
-* Ensure that any site translations are done as pull requests into the appropriate language folder in this repo. This will ensure the build process, layout, and styling, remain consistent across the different translations of the site.
+1. Tranlsate 1000 strings or more on Crowdin for your locale
+2. Find at least one more translator for your locale
+3. Create a [new issue](https://github.com/nodejs/nodejs.org/issues/new?template=03-i18n.md) in this repo
 
-* You can find the appropriate language folder within `locale/`. If not, create one matching the two-letter [ISO code](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) of your language. To specify a dialect for your language, [separate it with a dash](https://en.wikipedia.org/wiki/IETF_language_tag) (e.g. `pt-br` for Brazilian Portuguese, `zh-tw` for Taiwanese Mandarin).
+### Group for my locale is archived
 
-* The following files need to be in your language folder:
+If you find group for your locale is archived, Node.js team would be happy to unarchive it:
 
-  * `site.json` (this contains the basic settings and navigation structure for the website)
-  * `index.md` (this contains the Markdown translation for the home page.)
-  * `styles.scss` (this imports the necessary Sass files)
-  * All files and files in subfolders that end in `.md` are content pages and should be translated.
-
-* Prefix your PR with the localization group's name (e.g. `nodejs-no`). If you are only translating one of the above files, please mention them in your PR's subject as well, e.g.:
-
-```
-    nodejs-de: Add files - index.md, faq.md
-    nodejs-ro: Add files - 15 files
-
-    nodejs-fr: Update files - es6.md
-    nodejs-ja: Update files - all files
-```
-
-* Do not make language specific changes to layout or styling in a translation PR. If they are needed, make a separate styling/layout pr and talk with one of the website WG about the change. We want to make sure, for example, a Chinese layout change doesn't cascade failure to the German page.
-
-* To be merged, translation PR's require a Website WG +1 and a +1 from another native speaker in your language. Make sure whoever you have review the PR adds a +1 in the comments of it so we know it is translated properly.
+1. Try to contact with members of this group by creating a [new issue](https://github.com/nodejs/nodejs.org/issues/new?template=03-i18n.md) in this repo. Add mentions for current members of this group
+2. If there is no response from members in 7 days, Node.js team would be happy to unarchive repo, if you already done 1000 strings or more on Crowdin for your locale.
