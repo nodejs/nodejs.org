@@ -9,8 +9,7 @@ title: Logos y Gráficos
 
 Por favor revise la [Política de Marca Registrada](/es/about/trademark/) para obtener información sobre el uso permitido de Node.js® logos y marcas.
 
-Las pautas para la visualización de la marca Node.js se describen en
-las [Pautas Visuales](/static/documents/foundation-visual-guidelines.pdf).
+Las pautas para la visualización de la marca Node.js se describen en las [Pautas Visuales](/static/documents/foundation-visual-guidelines.pdf).
 
 <table class="logos">
   <tr>
