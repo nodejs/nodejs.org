@@ -26,7 +26,7 @@ layout: docs.hbs
 Библиотека V8 предоставляет для Node.js движок JavaScript, которым Node.js управляет
 через API C++ V8. V8 поддерживается Google для использования в Chrome.
 
-* [Документация](https://v8docs.nodesource.com/)
+* [Документация](https://v8.dev/docs/)
 
 ### libuv
 

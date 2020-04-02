@@ -6,7 +6,7 @@ layout: docs.hbs
 # 在安装了 Node.js 之后，我怎么开始呢？
 
 一旦你已经安装了 Node，让我们尝试构建第一个 Web 服务器。
-请创建一个“app.js”文件，黏贴以下代码：
+请创建一个“app.js”文件，粘贴以下代码：
 
 ```javascript
 const http = require('http');
