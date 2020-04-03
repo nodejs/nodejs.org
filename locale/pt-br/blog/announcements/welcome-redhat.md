@@ -9,7 +9,7 @@ layout: blog-post.hbs
 
 # Fundação Node.js oferece boas vindas à Red Hat como a mais nova membro Platinum
 
-> Empresa procura acelerar a adoção do Node.js para desenvolvimento de software corporativo
+> A empresa procura acelerar a adoção do Node.js para desenvolvimento de software corporativo
 
 **SAN FRANCISCO, 6 de outubro de 2015** - A [Fundação Node.js](https://foundation.nodejs.org/), um consórcio liderado pela comunidade e apoiado pelo mercado, para avançar o desenvolvimento da plataforma Node.js, anunciou hoje que a Red Hat, Inc. ingressou na Fundação como membro Platinum. A Red Hat se une aos membros Platinum, incluindo Famous, IBM, Intel, Joyent, Microsoft e PayPal, para fornecer apoio na adoção, desenvolvimento, e sucesso de longo prazo do projeto Node.js.
 
