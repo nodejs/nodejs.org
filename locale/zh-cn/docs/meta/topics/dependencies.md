@@ -25,7 +25,7 @@ Node.js 依赖于以下一些依赖项，这样它才能正常工作。
 
 V8 类库为 Node.js 提供了 JavaScript 引擎，Node.js 通过 V8 C++ 的 API 函数接口进行操控， V8 由谷歌公司维护，用于谷歌浏览器中。
 
-* [相关文档](https://v8docs.nodesource.com/)
+* [相关文档](https://v8.dev/docs/)
 
 ### libuv
 

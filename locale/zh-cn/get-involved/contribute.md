@@ -17,7 +17,7 @@ layout: contribute.hbs
 
 汇报问题时我们也需要一些关于执行环境的信息，我们不知道确切哪些信息是我们要的，所以请至少提供下列几项信息：
 
-* Node 的版本号
+* Node.js 的版本号
 * 当前运行的操作系统（macOS、SmartOS、Linux、Windows）
 * 计算机架构体系（32 位还是 64 位；x86 或 ARM）
 

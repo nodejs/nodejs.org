@@ -27,13 +27,13 @@ O Node.js precisa de diversas dependências para funcionar do jeito que funciona
 <!-- The V8 library provides Node.js with a JavaScript engine, which Node.js
 controls via the V8 C++ API. V8 is maintained by Google, for use in Chrome.
 
-* [Documentation](https://v8docs.nodesource.com/) -->
+* [Documentation](https://v8.dev/docs/) -->
 
 A biblioteca do V8 provê um engine JavaScript para o Node.js, o qual
 é controlado pela API C++ do próprio V8. O V8 é atualmente mantido
 pelo Google, por conta de seu uso no navegador Chrome.
 
-* [Documentação](https://v8docs.nodesource.com/)
+* [Documentação](https://v8.dev/docs/)
 
 ### libuv
 

@@ -25,7 +25,7 @@ Node.js 项目参与了一个为安全研究员和负责任的公众披露者的
 
 ## 向第三方模块汇报缺陷问题
 
-你应该向第三方模块相关负责维护人直接汇报此类安全问题，并通过 [Node 生态安全团队](https://hackerone.com/nodejs-ecosystem)进行组织协调。
+你应该向第三方模块相关负责维护人直接汇报此类安全问题，并通过 [Node.js 生态安全团队](https://hackerone.com/nodejs-ecosystem)进行组织协调。
 
 有关于此计划的详情部分可以在[安全工作组](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md)寻找到。
 

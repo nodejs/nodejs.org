@@ -637,7 +637,7 @@ REQUIREMENTS
 * Organizer name - Adam Davis
 * Organizer contact info - contact@lnug.org, [@lnugOrg](https://twitter.com/lnugorg)
 
-##### Node Workshops
+##### Node.js Workshops
 
 * [Meetup](https://www.meetup.com/NodeWorkshops//)
 * Frequency of meetups - monthly
