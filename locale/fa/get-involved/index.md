@@ -3,9 +3,9 @@ title: مشارکت
 layout: contribute.hbs
 ---
 
-# مشارکت کن
+# مشارکت جستن
 
-## بحث در جامعه
+## بحث‌های اجتماع نودجی‌اس
 
 * The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
 * For real-time chat about Node.js development go to `irc.freenode.net` in the `#node.js` channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [freenode's WebChat](https://webchat.freenode.net/#node.js).

@@ -2,11 +2,11 @@
 layout: index.hbs
 labels:
   current-version: نگارش کنونی
-  download: دانلود
-  download-for: دانلود برای
-  other-downloads: سایر دانلود‌ها
-  other-lts-downloads: سایر دانلود‌های با پشتیبانی طولانی
-  other-current-downloads: سایر دانلودهای جاری
+  download: دریافت
+  download-for: دریافت برای
+  other-downloads: سایر دریافت‌ها
+  other-lts-downloads: سایر دریافت‌ها با پشتیبانی طولانی
+  other-current-downloads: سایر دریافت‌های جاری
   current: جاری
   lts: پشتیبانی طولانی مدت
   tagline-current: آخرین ویژگی‌ها
