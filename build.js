@@ -69,107 +69,109 @@ function generateLocalesData (localesList) {
 // Metalsmith build cycle used for building a locale subsite, such as the
 // english one.
 function buildLocale (source, locale, opts) {
-  console.log(`[metalsmith] build/${locale} started`)
-  const labelForBuild = `[metalsmith] build/${locale} finished`
-  console.time(labelForBuild)
-  const metalsmith = Metalsmith(__dirname)
+  return new Promise((resolve, reject) => {
+    const labelForBuild = `[metalsmith] build/${locale} finished`
+    console.time(labelForBuild)
+    const metalsmith = Metalsmith(__dirname)
 
-  metalsmith
-  // Sets global metadata imported from the locale's respective site.json.
-    .metadata({
-      site: i18nJSON(locale),
-      project: source.project,
-      locales: opts.localesData
-    })
-  // Sets the build source as the locale folder.
-    .source(path.join(__dirname, 'locale', locale))
-    // site.json files aren't needed in the output dir
-    .ignore('site.json')
-    .use(withPreserveLocale(opts && opts.preserveLocale))
-    // Extracts the main menu and sub-menu links form locale's site.json and
-    // adds them to the metadata. This data is used in the navigation template
-    .use(navigation(source.project.latestVersions))
-    // Defines the blog post/guide collections used to internally group them for
-    // easier future handling and feed generation.
-    .use(collections({
-      blog: {
-        pattern: 'blog/**/*.md',
-        sortBy: 'date',
-        reverse: true,
-        refer: false
-      },
-      blogReleases: {
-        pattern: 'blog/release/*.md',
-        sortBy: 'date',
-        reverse: true,
-        refer: false
-      },
-      blogVulnerability: {
-        pattern: 'blog/vulnerability/*.md',
-        sortBy: 'date',
-        reverse: true,
-        refer: false
-      },
-      knowledgeBase: {
-        pattern: 'knowledge/**/*.md',
-        refer: false
-      },
-      guides: {
-        pattern: 'docs/guides/!(index).md'
-      }
-    }))
-    .use(pagination({
-      path: 'blog/year',
-      iteratee: (post, idx) => ({
-        post,
-        displaySummary: idx < 10
+    metalsmith
+      // Sets global metadata imported from the locale's respective site.json.
+      .metadata({
+        site: i18nJSON(locale),
+        project: source.project,
+        locales: opts.localesData
       })
-    }))
-    .use(markdown(markedOptions))
-    .use(githubLinks({ locale, site: i18nJSON(locale) }))
-    .use(prism())
-    // Set pretty permalinks, we don't want .html suffixes everywhere.
-    .use(permalinks({
-      relative: false
-    }))
-    // Generates the feed XML files from their respective collections which were
-    // defined earlier on.
-    .use(feed({
-      collection: 'blog',
-      destination: 'feed/blog.xml',
-      title: 'Node.js Blog'
-    }))
-    .use(feed({
-      collection: 'blogReleases',
-      destination: 'feed/releases.xml',
-      title: 'Node.js Blog: Releases'
-    }))
-    .use(feed({
-      collection: 'blogVulnerability',
-      destination: 'feed/vulnerability.xml',
-      title: 'Node.js Blog: Vulnerability Reports'
-    }))
-    // Finally, this compiles the rest of the layouts present in ./layouts.
-    // They're language-agnostic, but have to be regenerated for every locale
-    // anyways.
-    .use(discoverPartials({
-      directory: 'layouts/partials',
-      pattern: /\.hbs$/
-    }))
-    .use(discoverHelpers({
-      directory: 'scripts/helpers',
-      pattern: /\.js$/
-    }))
-    .use(layouts())
-    // Pipes the generated files into their respective subdirectory in the build
-    // directory.
-    .destination(path.join(__dirname, 'build', locale))
+      // Sets the build source as the locale folder.
+      .source(path.join(__dirname, 'locale', locale))
+      // site.json files aren't needed in the output dir
+      .ignore('site.json')
+      .use(withPreserveLocale(opts && opts.preserveLocale))
+      // Extracts the main menu and sub-menu links form locale's site.json and
+      // adds them to the metadata. This data is used in the navigation template
+      .use(navigation(source.project.latestVersions))
+      // Defines the blog post/guide collections used to internally group them for
+      // easier future handling and feed generation.
+      .use(collections({
+        blog: {
+          pattern: 'blog/**/*.md',
+          sortBy: 'date',
+          reverse: true,
+          refer: false
+        },
+        blogReleases: {
+          pattern: 'blog/release/*.md',
+          sortBy: 'date',
+          reverse: true,
+          refer: false
+        },
+        blogVulnerability: {
+          pattern: 'blog/vulnerability/*.md',
+          sortBy: 'date',
+          reverse: true,
+          refer: false
+        },
+        knowledgeBase: {
+          pattern: 'knowledge/**/*.md',
+          refer: false
+        },
+        guides: {
+          pattern: 'docs/guides/!(index).md'
+        }
+      }))
+      .use(pagination({
+        path: 'blog/year',
+        iteratee: (post, idx) => ({
+          post,
+          displaySummary: idx < 10
+        })
+      }))
+      .use(markdown(markedOptions))
+      .use(githubLinks({ locale, site: i18nJSON(locale) }))
+      .use(prism())
+      // Set pretty permalinks, we don't want .html suffixes everywhere.
+      .use(permalinks({
+        relative: false
+      }))
+      // Generates the feed XML files from their respective collections which were
+      // defined earlier on.
+      .use(feed({
+        collection: 'blog',
+        destination: 'feed/blog.xml',
+        title: 'Node.js Blog'
+      }))
+      .use(feed({
+        collection: 'blogReleases',
+        destination: 'feed/releases.xml',
+        title: 'Node.js Blog: Releases'
+      }))
+      .use(feed({
+        collection: 'blogVulnerability',
+        destination: 'feed/vulnerability.xml',
+        title: 'Node.js Blog: Vulnerability Reports'
+      }))
+      // Finally, this compiles the rest of the layouts present in ./layouts.
+      // They're language-agnostic, but have to be regenerated for every locale
+      // anyways.
+      .use(discoverPartials({
+        directory: 'layouts/partials',
+        pattern: /\.hbs$/
+      }))
+      .use(discoverHelpers({
+        directory: 'scripts/helpers',
+        pattern: /\.js$/
+      }))
+      .use(layouts())
+      // Pipes the generated files into their respective subdirectory in the build
+      // directory.
+      .destination(path.join(__dirname, 'build', locale))
 
-  // This actually executes the build and stops the internal timer after
-  // completion.
-  metalsmith.build((err) => {
-    if (err) { throw err }
-    console.timeEnd(labelForBuild)
+    // This actually executes the build and stops the internal timer after
+    // completion.
+    metalsmith.build((err) => {
+      if (err) { return reject(err) }
+      console.timeEnd(labelForBuild)
+      resolve()
+    })
   })
 }
 
@@ -306,9 +308,16 @@ function fullBuild (opts) {
       }
       const filteredLocales = locales.filter(file => junk.not(file) && (selectedLocales ? selectedLocales.includes(file) : true))
       const localesData = generateLocalesData(filteredLocales)
+
+      // This is a list of parallel tasks to be run to save time
+      const asyncTasks = []
       filteredLocales.forEach((locale) => {
-        buildLocale(source, locale, { preserveLocale, localesData })
+        asyncTasks.push(buildLocale(source, locale, { preserveLocale, localesData }))
       })
+
+      Promise.all(asyncTasks)
+        .then(succ => console.info('\x1B[32mAll build successful!\x1B[39m'))
+        .catch(e => console.error(e))
     })
   })
 }
