@@ -3,17 +3,18 @@
   "author": "Node.js",
   "url": "https://nodejs.org/fa/",
   "locale": "fa",
-  "language": "زبان فارسی",
+  "language": "فارسی",
   "languageEnglishVersion": "Persian",
   "rtl": true,
   "scrollToTop": "رفتن به بالا",
-  "reportNodeIssue": "را گزارش کنید Node.js مشکلی در",
+  "reportNodeIssue": "را گزارش کنید نودجی‌اس مشکلی در",
   "reportWebsiteIssue": "مشکلی در وبسایت را گزارش کنید",
   "getHelpIssue": "کمک بگیرید",
   "by": "توسط",
-  "all-downloads": "تمام گزینه‌ها برای دانلود",
+  "all-downloads": "تمام گزینه‌ها برای دریافت",
   "nightly": "ساخت‌های شبانه",
-  "chakracore-nightly": "ساخت‌های شبانه Node-ChakraCore ",
+  "chakracore-nightly": "ساخت‌های شبانه Node-ChakraCore",
+  "unofficial-builds": "ساخت‌های غیررسمی",
   "previous": "قبلی",
   "next": "بعدی",
   "feeds": [
@@ -67,23 +68,23 @@
   },
   "download": {
     "link": "download",
-    "text": "دانلود‌ها",
+    "text": "دریافت",
     "releases": {
       "link": "download/releases",
       "text": "انتشارهای پیشین"
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "نصب نودجی‌اس با package manager"
+      "text": "نصب نودجی‌اس از طریق مدیر بسته‌ها"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "Signed SHASUMS for release files",
+      "text": "SHASUMهای امضاشده برای فایل‌های انتشار",
       "verify-link": "https://github.com/nodejs/node#verifying-binaries",
       "verify-text": "چگونه راستی‌آزمایی کنیم؟"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive"
+      "text": "نصب نودجی‌اس از طریق بایگانی دودویی"
     }
   },
   "docs": {
@@ -129,6 +130,10 @@
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
       "text": "شیوه تعامل برای مشارکت"
+    },
+    "node-meetups": {
+      "link": "get-involved/node-meetups",
+      "text": "دورهمی‌های نودجی‌اس"
     }
   },
   "security": {
@@ -141,7 +146,7 @@
   },
   "releases": {
     "title": "تاریخچه انتشارها",
-    "downloads": "Downloads"
+    "downloads": "دانلودها"
   },
   "links": {
     "pages": {
