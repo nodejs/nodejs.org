@@ -43,7 +43,7 @@ directly performs I/O, so the process never blocks. Because nothing blocks,
 scalable systems are very reasonable to develop in Node.
 -->
 
-これは OS のスレッドが採用されている一般的な同時実行モデルとは対象的です。
+これは OS のスレッドが採用されている一般的な同時実行モデルとは対照的です。
 スレッドベースのネットワーキングは比較的非効率であり、使うのはとても困難です。
 さらに Node.js にはロックがないので Node.js ユーザーはプロセスのデッドロックの悩みから開放されます。
 ほとんどの Node.js の関数は I/O を直接実行しないため、プロセスをブロックしません。
@@ -89,7 +89,7 @@ framework.
 -->
 
 HTTP はストリーミングと低遅延を念頭に置いて設計された Node.js の第一級オブジェクトです。
-これは Node.js で Web ライブラリやフレームワークの基礎を作るために適しています。
+これにより Node.js は Web ライブラリやフレームワークの基礎を作るために適しています。
 
 <!--
 Just because Node is designed without threads, doesn't mean you cannot take
