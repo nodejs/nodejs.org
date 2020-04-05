@@ -64,4 +64,4 @@ content area.
 
 ### Localization
 
-Content of the website tranlsating by [Crowdin](https://crowdin.com/project/nodejs-website). To help with localization please read [TRANSLATION](https://github.com/nodejs/nodejs.org/blob/master/TRANSLATION.md) guide.
+Website translations are handled via [Crowdin](https://crowdin.com/project/nodejs-website). To help with localization, please read the [TRANSLATION](https://github.com/nodejs/nodejs.org/blob/master/TRANSLATION.md) guide.
