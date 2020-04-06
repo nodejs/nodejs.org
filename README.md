@@ -61,3 +61,7 @@ The Website WG defers to these WGs on matters of content and routinely adds coll
 working groups as they add and improve content on the website. In other words, the Website WG is not
 an *editorial* Working Group except when no other Working Group has taken responsibility for a
 content area.
+
+### Localization
+
+Website translations are handled via [Crowdin](https://crowdin.com/project/nodejs-website). To help with localization, please read the [TRANSLATION](https://github.com/nodejs/nodejs.org/blob/master/TRANSLATION.md) guide.
