@@ -7,7 +7,7 @@ slug: welcome-redhat
 layout: blog-post.hbs
 ---
 
-# A Fundação Node.js oferece boas vindas à Red Hat como o mais novo membro Platinum
+# A Fundação Node.js oferece boas-vindas à Red Hat como o mais novo membro Platinum
 
 > A empresa procura acelerar a adoção do Node.js para desenvolvimento de software corporativo
 
