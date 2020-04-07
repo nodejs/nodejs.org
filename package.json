@@ -40,7 +40,7 @@
     "autoprefixer": "^9.7.5",
     "cheerio": "^0.22.0",
     "fibers": "^4.0.2",
-    "handlebars": "^4.7.5",
+    "handlebars": "^4.7.6",
     "jstransformer-handlebars": "^1.1.0",
     "junk": "^3.1.0",
     "lodash.defaultsdeep": "^4.6.1",
@@ -79,7 +79,7 @@
     "remark-preset-lint-node": "^1.13.0",
     "st": "^2.0.0",
     "standard": "^14.3.3",
-    "stylelint": "^13.2.1",
+    "stylelint": "^13.3.0",
     "stylelint-config-twbs-bootstrap": "^2.0.1",
     "tape": "^4.13.2",
     "vnu-jar": "20.3.16"
