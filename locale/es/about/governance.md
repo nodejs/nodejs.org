@@ -17,7 +17,7 @@ Las personas que hacen contribuciones importantes y valiosas se convierten en Co
 
 Para ver la lista actual de Colaboradores, consulte el archivo [README.md](https://github.com/nodejs/node/blob/master/README.md#current-project-team-members) del proyecto.
 
-Se mantiene una guía para Colaboradores en [COLLABORATOR_GUIDE.md](https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md).
+Se mantiene una guía para Colaboradores en [collaborator-guide.md](https://github.com/nodejs/node/blob/master/doc/guides/collaborator-guide.md).
 
 ## Comités de nivel superior
 

@@ -19,7 +19,7 @@ layout: about.hbs
 
 Текущий список Коллабораторов можно найти в [README.md][] проекта.
 
-Руководство для Коллабораторов находится по адресу [COLLABORATOR_GUIDE.md][].
+Руководство для Коллабораторов находится по адресу [collaborator-guide.md][].
 
 ## Комитеты высшего уровня
 
@@ -27,7 +27,7 @@ layout: about.hbs
 руководство проектом на высоком уровне, и [Комитетом сообщества (CommComm)][], который отвечает
 за руководство и расширение Node.js сообщества.
 
-[COLLABORATOR_GUIDE.md]: https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md
+[collaborator-guide.md]: https://github.com/nodejs/node/blob/master/doc/guides/collaborator-guide.md
 [Комитетом сообщества (CommComm)]: https://github.com/nodejs/community-committee/blob/master/Community-Committee-Charter.md
 [поиска консенсуса]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [README.md]: https://github.com/nodejs/node/blob/master/README.md#current-project-team-members
