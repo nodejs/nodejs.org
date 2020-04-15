@@ -20,7 +20,7 @@ empresas de todos os tamanhos, organizações que desejam expandir o uso de Node
 muitas vezes lutam ao treinar desenvolvedores Java e recrutar
 novos talentos.
 
-“A fundação Node.js, com ajuda ded incríveis membros da comunidade e principais
+“A fundação Node.js, com ajuda de incríveis membros da comunidade e principais
 especialistas, está criando um programa abrangente de certificação que amplia o
 funil de conhecimento qualificado do Node.js disponível. Seja trabalhando em ambientes
 corporativos ou como consultores individuais, aqueles que se tornam desenvolvedores
