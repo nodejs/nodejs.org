@@ -25,7 +25,7 @@ especialistas, está criando um programa abrangente de certificação que amplia
 funil de conhecimento qualificado do Node.js disponível. Seja trabalhando em ambientes
 corporativos ou como consultores individuais, aqueles que se tornam desenvolvedores
 certificadores Node.js serão bem posicionados a começar em todo vapor como um desenvolvedor
-Node.js, possuindo habilidades que estão em alta demanda,” disse Tracy Hinds,
+Node.js, possuindo habilidades que estão em alta demanda.” disse Tracy Hinds,
 gerente de comunidade educacional para a Fundação Node.js.
 
 O programa de desenvolvedor certificado Node.js, que está sendo desenvolvido com a contribuição dos principais
