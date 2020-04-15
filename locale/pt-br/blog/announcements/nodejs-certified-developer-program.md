@@ -7,7 +7,7 @@ layout: blog-post.hbs
 ---
 
 _Fundação Node.js a ser lançada
-fornecedor-neutro programa de certificação para a plataforma que mais cresce _
+fornecedor-neutro programa de certificação para a plataforma que mais cresce_
 
 **SAN FRANCISCO, Jan. 26, 2017** — [A Fundação Node.js](https://foundation.nodejs.org/), um liderado pela comunidade e
 apoiado pela indústria consórcio para avançar no desenvolvimento da plataforma Node.js,
