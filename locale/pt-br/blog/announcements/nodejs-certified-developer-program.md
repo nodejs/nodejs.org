@@ -42,7 +42,7 @@ envolvimento próximo com a comunidade de código aberto. Isso oferece vários c
 online abertos (MOOCs), Incluindo uma [Introdução ao Linux](https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-0), [Introdução ao DevOps: Transformando e melhorando operações](https://www.edx.org/course/introduction-devops-transforming-linuxfoundationx-lfs161x); [Desenvolvendo aplicações para Linux](https://training.linuxfoundation.org/linux-courses/development-training/developing-applications-for-linux); [Kubernetes Fundamentos](https://training.linuxfoundation.org/linux-courses/system-administration-training/kubernetes-fundamentals); entre muitos outros.
 
 Candidatos ideais ao desenvolvedor certificado do Node.js são desenvolvedores iniciais de nível intermediário
-quem já pode trabalhar proficientemente em JavaScript com a plataforma Node.js.
+que já podem trabalhar proficientemente com JavaScript e com a plataforma Node.js.
 Preços para o ritmo individual, exame on-line ainda está para ser determinado.
 
 Atualmente a Fundação Node.js está trabalhando com a comunidade para determinar questões especificas que serão perguntadas no exame. Para
