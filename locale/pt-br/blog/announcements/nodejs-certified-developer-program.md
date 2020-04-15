@@ -12,7 +12,7 @@ fornecedor-neutro programa de certificação para a plataforma que mais cresce_
 **SAN FRANCISCO, Jan. 26, 2017** — [A Fundação Node.js](https://foundation.nodejs.org/), um liderado pela comunidade e
 apoiado pela indústria consórcio para avançar no desenvolvimento da plataforma Node.js,
 hoje anunciamos o desenvolvimento do programa inaugural de certificação Node.js
-destinado a estabelecer uma competência de linha de base no Node.js.
+destinado a estabelecer um parâmetro base para as competências no Node.js.
 
 Node.js é uma das linguagens de programação mais populares com mais de 4.5 milhões
 de usuários ativos por mês. Enquanto Node.js é cada vez mais difundido hoje com
