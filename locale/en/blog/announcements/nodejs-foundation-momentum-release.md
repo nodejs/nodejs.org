@@ -1,7 +1,7 @@
 ---
 title: The Node.js Platform and Node.js Foundation Continue to Grow
 date: 2016-11-30T12:00:00.000Z
-category: Annoucements
+category: Announcements
 slug: node.js-foundation-momentum-release
 layout: blog-post.hbs
 ---
@@ -18,13 +18,13 @@ With more than 15 million downloads per month and more than a billion package do
 
 From a community growth standpoint, there were more than twice the number of new contributors than in 2015 and 1.5 times the number of unique contributors to the codebase per month compared to 2015.
 
-“The Node.js Project is focused on a new type of open source contribution philosophy, participatory governance, which liberalizes contribution policies and provides more direct ownership to contributors,” said Mikeal Rogers, community manager  of the Node.js Foundation. “Through this approach, we’ve seen an explosion in contributor growth, which is critical to sustaining such an important open source project.”
+“The Node.js Project is focused on a new type of open source contribution philosophy, participatory governance, which liberalizes contribution policies and provides more direct ownership to contributors,” said Mikeal Rogers, community manager of the Node.js Foundation. “Through this approach, we’ve seen an explosion in contributor growth, which is critical to sustaining such an important open source project.”
 
 The second Node.js Interactive North America is in full swing with more than 700 developers, DevOps professionals, IoT engineers, engineering managers, and more in Austin. Node.js Interactive brings together a broad range of speakers to help experienced and new technologists better understand the Node.js platform and get insights into the future development of the project.
 
 Attendees are also getting a first look at Node.js advancements announced and demoed this week including:
 
-**The Node.js Foundation** announced progress with efforts to make Node.js VM-neutral - more information on this news can be found on the Node.js Foundation [Medium blog](https://medium.com/@nodejs/ibm-intel-microsoft-mozilla-and-nodesource-join-forces-on-node-js-48e21ffb697d#.jylk1mc0l). This morning, the Foundation announced it would oversee the Node.js Security Project to further improve stability for enterprises. More information [here](http://www.marketwired.com/press-release/nodejs-foundation-to-oversee-nodejs-security-project-to-further-improve-stability-enterprises-2179602.htm).    
+**The Node.js Foundation** announced progress with efforts to make Node.js VM-neutral - more information on this news can be found on the Node.js Foundation [Medium blog](https://medium.com/@nodejs/ibm-intel-microsoft-mozilla-and-nodesource-join-forces-on-node-js-48e21ffb697d#.jylk1mc0l). This morning, the Foundation announced it would oversee the Node.js Security Project to further improve stability for enterprises. More information [here](http://www.marketwired.com/press-release/nodejs-foundation-to-oversee-nodejs-security-project-to-further-improve-stability-enterprises-2179602.htm).
 
 **NodeSource** announced NodeSource Certified Modules™ to bring security and trust to untrusted, third-party JavaScript. With NodeSource Certified Modules, consumers of the npm ecosystem can now rely on NodeSource as a secure, trusted and verifiable source. Learn more [here](https://certified.nodesource.com/). The team is also demoing its latest [N|Solidv2.0](https://nodesource.com/products/nsolid).
 

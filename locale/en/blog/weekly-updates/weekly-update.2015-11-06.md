@@ -27,7 +27,6 @@ This is an LTS maintenance release that addresses a number of issues:
 * NodeUp podcast episode 93, 94 were published this week: <http://nodeup.com/ninetythree>, <http://nodeup.com/ninetyfour>.
 * The subjects of the podcast are "An LTS Show with Kat Marchán, James Snell, and Rich Trott", "A Node.js Interactive Show with Dan Shaw, Mikeal Rogers, and Kassandra Perch.".
 
-
 ### Community Updates
 
 * [Understanding Garbage Collection and hunting Memory Leaks in Node.js](http://apmblog.dynatrace.com/2015/11/04/understanding-garbage-collection-and-hunting-memory-leaks-in-node-js/), "Covers how Node.js manages memory and how to trace down memory-related problems"
@@ -41,7 +40,7 @@ If you have spotted or written something about Node.js, do come over to our [Eva
 * [Node Knockout](http://www.nodeknockout.com/), November 7th - 8th, Worldwide
 * [Node Girls London](https://nodegirls.typeform.com/to/atW4HR), November 7th at London, UK
 * [Playnode](http://playnode.io/), November 12nd at Seoul, South Korea
-* [Nodevember](http://nodevember.org/?utm_source=io.js+and+Node.js+News&utm_medium=article), November 14th - 15th at Nashville, Tennessee, US.
+* [Nodevember](http://nodevember.org/), November 14th - 15th at Nashville, Tennessee, US.
 * [JSConf.Asia](http://2015.jsconf.asia/), November 19th - 20th in Singapore.
 * [NodeConf Barcelona](https://ti.to/barcelonajs/nodeconf-barcelona-2015), November 21st at Barcelona, Spain
 * [CampJS VI](http://vi.campjs.com), November 20th – 23th at Queensland, Australia

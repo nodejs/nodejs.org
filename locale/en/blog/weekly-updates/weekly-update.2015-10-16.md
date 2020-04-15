@@ -18,15 +18,15 @@ This week we have two releases: [Node.js v4.2.1 (LTS)](https://nodejs.org/en/blo
 ### Notable changes : v4.2.1 (LTS)
 
 * Includes fixes for two regressions
-  - Assertion error in WeakCallback  - see [#3329](https://github.com/nodejs/node/pull/3329)
-  - Undefined timeout regression - see [#3331](https://github.com/nodejs/node/pull/3331)
+  * Assertion error in WeakCallback - see [#3329](https://github.com/nodejs/node/pull/3329)
+  * Undefined timeout regression - see [#3331](https://github.com/nodejs/node/pull/3331)
 
 ### Notable changes : v4.2.0 (LTS)
 
 * **icu**: Updated to version 56 with significant performance improvements (Steven R. Loomis) [#3281](https://github.com/nodejs/node/pull/3281)
 * **node**:
-  - Added new `-c` (or `--check`) command line argument for checking script syntax without executing the code (Dave Eddy) [#2411](https://github.com/nodejs/node/pull/2411)
-  - Added `process.versions.icu` to hold the current ICU library version (Evan Lucas) [#3102](https://github.com/nodejs/node/pull/3102)
+  * Added new `-c` (or `--check`) command line argument for checking script syntax without executing the code (Dave Eddy) [#2411](https://github.com/nodejs/node/pull/2411)
+  * Added `process.versions.icu` to hold the current ICU library version (Evan Lucas) [#3102](https://github.com/nodejs/node/pull/3102)
 
 ### Community Updates
 
@@ -43,7 +43,7 @@ If you have spotted or written something about Node.js, do come over to our [Eva
 * [NodeFest](http://nodefest.jp/2015/), November 7th at Tokyo, Japan
 * [Node Girls London](https://nodegirls.typeform.com/to/atW4HR), November 7th at London, UK
 * [Playnode](http://playnode.io/), November 12nd at Seoul, South Korea
-* [Nodevember](http://nodevember.org/?utm_source=io.js+and+Node.js+News&utm_medium=article), November 14th - 15th at Nashville, Tennessee, US.
+* [Nodevember](http://nodevember.org/), November 14th - 15th at Nashville, Tennessee, US.
 * [NodeConf Barcelona](https://ti.to/barcelonajs/nodeconf-barcelona-2015), November 21st at Barcelona, Spain
 * [CampJS VI](http://vi.campjs.com), November 20 – 23th at Queensland, Australia
 * [Node.js Interactive](http://events.linuxfoundation.org/events/node-interactive), December 8-9 at Portland, US.

@@ -90,7 +90,7 @@ necessary. Node.js though is distributed under the venerable
 [MIT](http://opensource.org/licenses/MIT) license, and that's not going to
 change. The MIT license is one of the most permissible open source licenses out
 there, and has fostered a ton of development with Node.js and we want that to
-continue. 
+continue.
 
 In an effort to make it easier for users to contribute to Node.js the project
 has decided to lift the requirement of signing the CLA before contributions are

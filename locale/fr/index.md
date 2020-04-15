@@ -7,14 +7,17 @@ labels:
   other-downloads: Autres téléchargements
   other-lts-downloads: Autres téléchargements LTS
   other-current-downloads: Autres téléchargements actuels
-  current: Actuelle
+  current: Actuel
   lts: LTS
   tagline-current: Dernières fonctionnalités
   tagline-lts: Recommandé pour la plupart des utilisateurs
   changelog: Journal des modifications
-  api: API Docs
+  api: Documentation API
   version-schedule-prompt: Ou regardez le
   version-schedule-prompt-link-text: Planning LTS.
+  newsletter: true
+  newsletter-prefix: Sign up for
+  newsletter-postfix: ", the official Node.js Monthly Newsletter."
 ---
 
 Node.js® est un environnement d’exécution JavaScript construit sur le [moteur JavaScript V8 de Chrome](https://v8.dev/).

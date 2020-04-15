@@ -1,0 +1,42 @@
+// For smooth scroll behavior
+html {
+  scroll-behavior: smooth;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+#scroll-to-top {
+  font-size: 1rem;
+  color: $node-gray;
+  background-color: $light-gray3;
+  border: 1px solid $light-gray2;
+  border-radius: 2px;
+  position: fixed;
+  bottom: 10%;
+  right: 0;
+  min-width: 20px;
+  text-align: center;
+  padding: 0 5px 1px;
+
+  // Prevent button from flashing on page load
+  opacity: 0;
+  animation: buttonFade .5s 1s 1 forwards;
+
+  @keyframes buttonFade {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 600px) {
+    span {
+      display: none;
+    }
+  }
+}

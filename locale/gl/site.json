@@ -1,8 +1,10 @@
 {
   "title": "Node.js",
-  "author": "Fundación de Node.js",
+  "author": "Node.js",
   "url": "https://nodejs.org/gl/",
   "locale": "gl",
+  "language": "Galego",
+  "languageEnglishVersion": "Galician",
   "scrollToTop": "Volta ao principio",
   "reportNodeIssue": "Informar dun problema con Node.js",
   "reportWebsiteIssue": "Informar dun problema co sitio",
@@ -74,7 +76,7 @@
       "text": "Firmas SHASUMS para os arquivos de versións"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "Installing Node.js via binary archive"
     }
   },
   "docs": {
@@ -85,12 +87,12 @@
       "text": "ES6 e máis aló"
     },
     "api-lts": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "subtext": "LTS",
       "text": "%ver% API"
     },
     "api-current": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "text": "%ver% API"
     },
     "guides": {
@@ -110,7 +112,7 @@
       "text": "Contribúe"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "Comportamento"
     }
   },
@@ -121,10 +123,6 @@
   "blog": {
     "link": "blog",
     "text": "Noticias"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "Fundación"
   },
   "releases": {
     "title": "Histórico de versións",

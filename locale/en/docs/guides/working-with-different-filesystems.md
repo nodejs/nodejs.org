@@ -5,7 +5,7 @@ layout: docs.hbs
 
 # Working with Different Filesystems
 
-Node exposes many features of the filesystem. But not all filesystems are alike.
+Node.js exposes many features of the filesystem. But not all filesystems are alike.
 The following are suggested best practices to keep your code simple and safe
 when working with different filesystems.
 
@@ -124,8 +124,8 @@ You may create a directory called `test/café` (NFC Unicode form with byte
 sequence `<63 61 66 c3 a9>` and `string.length === 5`) and be surprised to see
 sometimes that `fs.readdir('test')` returns `['café']` (NFD Unicode form with
 byte sequence `<63 61 66 65 cc 81>` and `string.length === 6`). This is not a
-bug in Node. Node returns the filename as the filesystem stores it, and not all
-filesystems support Unicode form preservation.
+bug in Node. Node.js returns the filename as the filesystem stores it, and not
+all filesystems support Unicode form preservation.
 
 HFS+, for example, will normalize all filenames to a form almost always the same
 as NFD form. Do not expect HFS+ to behave the same as NTFS or EXT4 and
@@ -148,7 +148,7 @@ using Unicode normalization for comparison only.
 
 ## Comparing Different Unicode Forms
 
-Node provides `string.normalize('NFC' / 'NFD')` which you can use to normalize a
+Node.js provides `string.normalize('NFC' / 'NFD')` which you can use to normalize a
 UTF-8 string to either NFC or NFD. You should never store the output from this
 function but only use it as part of a comparison function to test whether two
 UTF-8 strings would look the same to the user.
@@ -162,16 +162,16 @@ comparison function to avoid normalizing the same string many times over. If the
 string is not present in the cache then normalize it and cache it. Be careful
 not to store or persist the cache, use it only as a cache.
 
-Note that using `normalize()` requires that your version of Node include ICU
+Note that using `normalize()` requires that your version of Node.js include ICU
 (otherwise `normalize()` will just return the original string). If you download
-the latest version of Node from the website then it will include ICU.
+the latest version of Node.js from the website then it will include ICU.
 
 ## Timestamp Resolution
 
 You may set the `mtime` (the modified time) of a file to `1444291759414`
 (millisecond resolution) and be surprised to see sometimes that `fs.stat`
 returns the new mtime as `1444291759000` (1-second resolution) or
-`1444291758000` (2-second resolution). This is not a bug in Node. Node returns
+`1444291758000` (2-second resolution). This is not a bug in Node. Node.js returns
 the timestamp as the filesystem stores it, and not all filesystems support
 nanosecond, millisecond or 1-second timestamp resolution. Some filesystems even
 have very coarse resolution for the atime timestamp in particular, e.g. 24 hours

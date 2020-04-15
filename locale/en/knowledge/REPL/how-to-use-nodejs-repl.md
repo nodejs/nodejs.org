@@ -10,7 +10,7 @@ layout: knowledge-post.hbs
 
 # Learn to use the REPL
 
-Node.js ships with a Read-Eval-Print Loop, also known as a REPL. It is the Node.js interactive shell; any valid JavaScript which can be written in a script can be passed to the REPL. It can be extremely useful for experimenting with node.js, debugging code, and figuring out some of JavaScript's more eccentric behaviors.
+Node.js ships with a Read-Eval-Print Loop, also known as a REPL. It is the Node.js interactive shell; any valid JavaScript which can be written in a script can be passed to the REPL. It can be extremely useful for experimenting with Node.js, debugging code, and figuring out some of JavaScript's more eccentric behaviors.
 
 Node.js has a standalone REPL accessible from the command line, and a built in REPL module you can use to [create your own custom REPLs](https://nodejs.org/api/repl.html#repl_repl). We are going to learn about the basics of the standalone REPL.
 
@@ -19,10 +19,10 @@ Node.js has a standalone REPL accessible from the command line, and a built in R
 Starting the REPL is simple - just run node on the command line without a filename.
 
 ```shell
-$ node
+node
 ```
 
-It then drops you into a simple prompt ('>') where you can type any JavaScript command you wish. As in most shells, you can press the up and down arrow keys to scroll through your command history and modify previous commands. 
+It then drops you into a simple prompt ('>') where you can type any JavaScript command you wish. As in most shells, you can press the up and down arrow keys to scroll through your command history and modify previous commands.
 
 ```shell
 $ node
@@ -81,6 +81,7 @@ The following key combinations in the REPL have these special effects:
 Whenever you type a command, it will print the return value of the command. If you want to reuse the previous return value, you can use the special `_` variable.
 
 For example:
+
 ```shell
 $ node
 > 1+1
@@ -101,7 +102,7 @@ One thing worth noting where REPL return values are concerned:
 5
 ```
 
-When the `var` keyword is used, the value of the expression is stored, but *NOT* returned.  When a bare identifier is used, the value is also returned, as well as stored.
+When the `var` keyword is used, the value of the expression is stored, but *NOT* returned. When a bare identifier is used, the value is also returned, as well as stored.
 
 ## Accessing Modules
 

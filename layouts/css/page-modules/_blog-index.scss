@@ -1,0 +1,20 @@
+.blog-index {
+  list-style: none;
+  padding: 0;
+
+  time {
+    margin-right: 1em;
+    color: $light-gray;
+  }
+
+  .summary {
+    margin-left: 1em;
+    font-size: 75%;
+  }
+}
+
+nav.pagination {
+  a {
+    @include padded-link(2px);
+  }
+}

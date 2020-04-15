@@ -1,8 +1,10 @@
 {
   "title": "Node.js",
-  "author": "Node.js بنیاد",
+  "author": "Node.js",
   "url": "https://nodejs.org/fa/",
   "locale": "fa",
+  "language": "زبان فارسی",
+  "languageEnglishVersion": "Persian",
   "rtl": true,
   "scrollToTop": "رفتن به بالا",
   "reportNodeIssue": "را گزارش کنید Node.js مشکلی در",
@@ -81,7 +83,7 @@
       "verify-text": "چگونه راستی‌آزمایی کنیم؟"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "Installing Node.js via binary archive"
     }
   },
   "docs": {
@@ -92,12 +94,12 @@
       "text": "ES6 و فراتر"
     },
     "api-lts": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "subtext": "LTS",
       "text": "%ver% API"
     },
     "api-current": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "text": "%ver% API"
     },
     "guides": {
@@ -125,7 +127,7 @@
       "text": "مشارکت"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "شیوه تعامل برای مشارکت"
     }
   },
@@ -136,10 +138,6 @@
   "blog": {
     "link": "blog",
     "text": "بلاگ"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "بنیاد"
   },
   "releases": {
     "title": "تاریخچه انتشارها",

@@ -99,5 +99,3 @@ much help and support to the rest of the core team as they need. However, I
 won't have the time to participate at the level needed to remain a core
 contributor. With the core team and the community working together, I know they
 won't miss a step.
-
-

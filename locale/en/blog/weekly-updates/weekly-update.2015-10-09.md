@@ -18,11 +18,11 @@ This week we have one release: [Node.js v4.1.2](https://nodejs.org/en/blog/relea
 ### Notable changes
 
 * **http**:
-  - Fix out-of-order 'finish' event bug in pipelining that can abort execution, fixes DoS vulnerability [CVE-2015-7384](https://github.com/nodejs/node/issues/3138) (Fedor Indutny) [#3128](https://github.com/nodejs/node/pull/3128)
-  - Account for pending response data instead of just the data on the current request to decide whether pause the socket or not (Fedor Indutny) [#3128](https://github.com/nodejs/node/pull/3128)
+  * Fix out-of-order 'finish' event bug in pipelining that can abort execution, fixes DoS vulnerability [CVE-2015-7384](https://github.com/nodejs/node/issues/3138) (Fedor Indutny) [#3128](https://github.com/nodejs/node/pull/3128)
+  * Account for pending response data instead of just the data on the current request to decide whether pause the socket or not (Fedor Indutny) [#3128](https://github.com/nodejs/node/pull/3128)
 * **libuv**: Upgraded from v1.7.4 to v1.7.5, see [release notes](https://github.com/libuv/libuv/releases/tag/v1.7.5) for details (Saúl Ibarra Corretgé) [#3010](https://github.com/nodejs/node/pull/3010)
-  - A better rwlock implementation for all Windows versions
-  - Improved AIX support
+  * A better rwlock implementation for all Windows versions
+  * Improved AIX support
 
 ### Known issues
 
@@ -35,7 +35,7 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 
 ### Node.js Foundation Welcomes Red Hat as Newest Platinum Member
 
-* The Node.js Foundation, a community-led and industry-backed consortium to advance the development of the Node.js platform, announced Red Hat, Inc. has joined the Foundation as a Platinum member. 
+* The Node.js Foundation, a community-led and industry-backed consortium to advance the development of the Node.js platform, announced Red Hat, Inc. has joined the Foundation as a Platinum member.
 * Red Hat joins platinum members, including Famous, IBM, Intel, Joyent, Microsoft and PayPal, to provide support in the adoption, development and long-term success of the Node.js project.
 
 See https://www.redhat.com/en/about/press-releases/red-hat-joins-nodejs-foundation for more information.
@@ -53,7 +53,7 @@ If you have spotted or written something about Node.js, do come over to our [Eva
 * [EmpireNode](http://2015.empirenode.org/), October 23rd at New York, US.
 * [NodeFest](http://nodefest.jp/2015/), November 7th at Stack Exchange HQ, Old St
 * [Node Girls London](https://nodegirls.typeform.com/to/atW4HR), November 7th at Stack Exchange HQ, Old St
-* [Nodevember](http://nodevember.org/?utm_source=io.js+and+Node.js+News&utm_medium=article), November 14th - 15th at Nashville, Tennessee, US.
+* [Nodevember](http://nodevember.org/), November 14th - 15th at Nashville, Tennessee, US.
 * [NodeConf Barcelona](https://ti.to/barcelonajs/nodeconf-barcelona-2015), November 21st at Barcelona, Spain
 * [CampJS VI](http://vi.campjs.com), November 20 – 23th at Queensland, Australia
 * [Playnode](https://playnode.io), call-for-proposals, November, Korea

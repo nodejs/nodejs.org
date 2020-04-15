@@ -18,7 +18,7 @@ Inspector clients must know and specify host address, port, and UUID to connect.
 A full URL will look something like
 `ws://127.0.0.1:9229/0f2c936f-b1cd-4ac9-aab3-f63b0f33d55e`.
 
-Node.js will also start listening for debugging messages if it receives a 
+Node.js will also start listening for debugging messages if it receives a
 `SIGUSR1` signal. (`SIGUSR1` is not available on Windows.) In Node.js 7 and
 earlier, this activates the legacy Debugger API. In Node.js 8 and later, it will
 activate the Inspector API.
@@ -130,8 +130,6 @@ info on these follows:
   are listed.
 * **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
   (see above) or the --inspect hint text and paste into Chrome.
-* **Option 3**: Install the Chrome Extension NIM (Node Inspector Manager):  
-  https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 -->
 
 ## 인스펙터 클라이언트
@@ -139,21 +137,19 @@ info on these follows:
 Node 인스펙터에 접속할 수 있는 여러 상용 도구와 오픈소스 도구가 있습니다.
 아래에 이러한 도구들을 간략하게 정리했습니다.
 
-#### [node-inspect](https://github.com/nodejs/node-inspect)
+### [node-inspect](https://github.com/nodejs/node-inspect)
 
 * Node.js 재단에서 지원하는 CLI 디버거로 [Inspector 프로토콜][]을 사용합니다.
 * Node에 포함되어 있고 `node inspect myscript.js`로 사용할 수 있습니다.
 * 최신 버전을 별도로 설치할 수 있고(예시: `npm install -g node-inspect`)
   `node-inspect myscript.js`로 사용할 수 있습니다.
 
-#### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
+### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
 
 * **방법 1**: 크로미움에 기반을 둔 브라우저에서 `chrome://inspect`를 엽니다.
   Configure 버튼을 눌러서 대상 호스트와 포트 목록을 확인합니다.
 * **방법 2**: `/json/list`(상단 참고)의 출력에서 `devtoolsFrontendUrl`을
   복사하거나 --inspect가 알려준 텍스트에서 복사해서 크롬에 붙여넣기를 합니다.
-* **방법 3**: 크롬 확장프로그램 NIM(Node Inspector Manager)을 설치하세요. 
-  https://chrome.google.com/webstore/detail/nim-node-inspector-manage/gnhhdgbaldcilmgcpfddgdbkhjohddkj
 
 <!--
 #### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
@@ -180,33 +176,43 @@ Node 인스펙터에 접속할 수 있는 여러 상용 도구와 오픈소스 �
 
 * Start a Node.js debug configuration from the `Debug` view or hit `F5`. [Detailed instructions](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
 
+### [Eclipse IDE](https://eclipse.org/eclipseide) with Eclipse Wild Web Developer extension
+
+* From a .js file, choose "Debug As... > Node program", or
+* Create a Debug Configuration to attach debugger to running Node application (already started with `--inspect`).
+
 ---
 -->
 
-#### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
+### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
 
 * Debug 패널에서 설정 아이콘을 클릭해서 `.vscode/launch.json`을 엽니다.
   초기 설정으로 "Node.js"를 선택하세요.
 
-#### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
+### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
 
 * 메뉴에서 "Debug > Start Debugging"을 선택하거나 F5를 누르세요.
 * [상세한 설명](https://github.com/Microsoft/nodejstools/wiki/Debugging)
 
-#### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+와 다른 JetBrains IDE
+### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+와 다른 JetBrains IDE
 
 * 새로운 Node.js 디버그 설정을 생성하고 Debug를 누르세요. Node.js 7+에서는
   기본적으로 `--inspect`를 사용할 것입니다. 비활성화하려면 IDE 레지스트리에서
   `js.debugger.node.use.inspect`의 체크를 해제하세요.
 
-#### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
+### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 
 * 인스펙터 프로토콜 엔드포인트로의 연결을 쉽게 하는 라이브러리입니다.
 
-#### [Gitpod](https://www.gitpod.io)
+### [Gitpod](https://www.gitpod.io)
 
 * `Debug` 뷰에서 Node.js 디버그 설정을 실행하거나 `F5` 키를 누르세요.
   [자세한 방법은 여기를 참고하세요.](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
+  
+### [Eclipse IDE](https://eclipse.org/eclipseide)와 Eclipse Wild Web Developer 확장 프로그램
+
+* .js 파일에서 "Debug As... > Node program"을 선택하거나,
+* 실행 중인 (`--inspect`로 시작한) Node 애플리케이션에 디버거를 연결하는 디버그 설정을 생성하세요.
 
 ---
 
@@ -215,7 +221,7 @@ Node 인스펙터에 접속할 수 있는 여러 상용 도구와 오픈소스 �
 
 The following table lists the impact of various runtime flags on debugging:
 
-<table cellpadding=0 cellspacing=0>
+<table class="table-no-border-no-padding">
   <tr><th>Flag</th><th>Meaning</th></tr>
   <tr>
     <td>--inspect</td>
@@ -227,12 +233,12 @@ The following table lists the impact of various runtime flags on debugging:
     </td>
   </tr>
   <tr>
-    <td>--inspect=<i>[host:port]</i></td>
+    <td>--inspect=<em>[host:port]</em></td>
     <td>
       <ul>
         <li>Enable inspector agent</li>
-        <li>Bind to address or hostname <i>host</i> (default: 127.0.0.1)</li>
-        <li>Listen on port <i>port</i> (default: 9229)</li>
+        <li>Bind to address or hostname <em>host</em> (default: 127.0.0.1)</li>
+        <li>Listen on port <em>port</em> (default: 9229)</li>
       </ul>
     </td>
   </tr>
@@ -247,18 +253,18 @@ The following table lists the impact of various runtime flags on debugging:
     </td>
   </tr>
   <tr>
-    <td>--inspect-brk=<i>[host:port]</i></td>
+    <td>--inspect-brk=<em>[host:port]</em></td>
     <td>
       <ul>
         <li>Enable inspector agent</li>
-        <li>Bind to address or hostname <i>host</i> (default: 127.0.0.1)</li>
-        <li>Listen on port <i>port</i> (default: 9229)</li>
+        <li>Bind to address or hostname <em>host</em> (default: 127.0.0.1)</li>
+        <li>Listen on port <em>port</em> (default: 9229)</li>
         <li>Break before user code starts</li>
       </ul>
     </td>
   </tr>
   <tr>
-    <td><code>node inspect <i>script.js</i></code></td>
+    <td><code>node inspect <em>script.js</em></code></td>
     <td>
       <ul>
         <li>Spawn child process to run user's script under --inspect flag;
@@ -267,12 +273,12 @@ The following table lists the impact of various runtime flags on debugging:
     </td>
   </tr>
   <tr>
-    <td><code>node inspect --port=xxxx <i>script.js</i></code></td>
+    <td><code>node inspect --port=xxxx <em>script.js</em></code></td>
     <td>
       <ul>
         <li>Spawn child process to run user's script under --inspect flag;
             and use main process to run CLI debugger.</li>
-        <li>Listen on port <i>port</i> (default: 9229)</li>
+        <li>Listen on port <em>port</em> (default: 9229)</li>
       </ul>
     </td>
   </tr>
@@ -285,7 +291,7 @@ The following table lists the impact of various runtime flags on debugging:
 
 다음 테이블은 디버깅용 여러 런타임 플래그의 기능을 보여줍니다.
 
-<table cellpadding=0 cellspacing=0>
+<table class="table-no-border-no-padding">
   <tr><th>플래그</th><th>의미</th></tr>
   <tr>
     <td>--inspect</td>
@@ -297,12 +303,12 @@ The following table lists the impact of various runtime flags on debugging:
     </td>
   </tr>
   <tr>
-    <td>--inspect=<i>[host:port]</i></td>
+    <td>--inspect=<em>[host:port]</em></td>
     <td>
       <ul>
         <li>인스펙터 에이전트 활성화</li>
-        <li>주소 또는 호스트 이름 <i>host</i>에 바인딩 (기본값: 127.0.0.1)</li>
-        <li><i>port</i> 포트에서 수신 (기본값: 9229)</li>
+        <li>주소 또는 호스트 이름 <em>host</em>에 바인딩 (기본값: 127.0.0.1)</li>
+        <li><em>port</em> 포트에서 수신 (기본값: 9229)</li>
       </ul>
     </td>
   </tr>
@@ -317,18 +323,18 @@ The following table lists the impact of various runtime flags on debugging:
     </td>
   </tr>
   <tr>
-    <td>--inspect-brk=<i>[host:port]</i></td>
+    <td>--inspect-brk=<em>[host:port]</em></td>
     <td>
       <ul>
         <li>인스펙터 에이전트 활성화</li>
-        <li>주소 또는 호스트 이름 <i>host</i>에 바인딩 (기본값: 127.0.0.1)</li>
-        <li><i>port</i> 포트에서 수신 (기본값: 9229)</li>
+        <li>주소 또는 호스트 이름 <em>host</em>에 바인딩 (기본값: 127.0.0.1)</li>
+        <li><em>port</em> 포트에서 수신 (기본값: 9229)</li>
         <li>사용자 코드 시작 전 멈춤</li>
       </ul>
     </td>
   </tr>
   <tr>
-    <td><code>node inspect <i>script.js</i></code></td>
+    <td><code>node inspect <em>script.js</em></code></td>
     <td>
       <ul>
         <li>사용자의 스크립트를 --inspect 플래그로 실행하는 자식 프로세스를 생성하고 CLI 디버거 실행에 메인 프로세스를 사용합니다.</li>
@@ -336,11 +342,11 @@ The following table lists the impact of various runtime flags on debugging:
     </td>
   </tr>
   <tr>
-    <td><code>node inspect --port=xxxx <i>script.js</i></code></td>
+    <td><code>node inspect --port=xxxx <em>script.js</em></code></td>
     <td>
       <ul>
         <li>사용자의 스크립트를 --inspect 플래그로 실행하는 자식 프로세스를 생성하고 CLI 디버거 실행에 메인 프로세스를 사용합니다.</li>
-        <li><i>port</i> 포트에서 수신 (기본값: 9229)</li>
+        <li><em>port</em> 포트에서 수신 (기본값: 9229)</li>
       </ul>
     </td>
   </tr>
@@ -348,8 +354,7 @@ The following table lists the impact of various runtime flags on debugging:
 
 ---
 
-<!-- ## Enabling remote debugging scenarios -->
-## 원격 디버깅 활성화 시나리오
+## <!--enabling-remote-debugging-scenarios-->원격 디버깅 활성화 시나리오
 
 <!--
 We recommend that you never have the debugger listen on a public IP address. If
@@ -368,7 +373,7 @@ with the inspector listening only to localhost (the default).
 디버깅하기를 원하는 remote.example.com 원격 시스템에서 노드가 실행 중이라고 가정하겠습니다. 해당 시스템에서 localhost(기본값)만 수신하는 인스펙터로 노드 프로세스를 시작해야 합니다.
 
 ```bash
-$ node --inspect server.js
+node --inspect server.js
 ```
 
 <!--
@@ -378,7 +383,7 @@ connection, you can setup an ssh tunnel:
 이제 디버그 클라이언트 연결을 시작하려는 로컬 시스템에서 ssh 터널을 설정할 수 있습니다.
 
 ```bash
-$ ssh -L 9221:localhost:9229 user@remote.example.com
+ssh -L 9221:localhost:9229 user@remote.example.com
 ```
 
 <!--
@@ -432,13 +437,13 @@ which translates the Inspector Protocol used in Chromium to the V8 Debugger
 protocol used in Node.js.
 -->
 
-#### [내장 디버거](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
+### [내장 디버거](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
 
 Node의 내장 명령형 디버거로 스크립트를 실행하려면 `node debug script_name.js`로 실행하세요.
 스크립트가 다른 Node 프로세스에서 `--debug-brk` 옵션으로 시작되고 원래의 Node 프로세스는
 `_debugger.js`를 실행해서 대상에 접속합니다.
 
-#### [node-inspector](https://github.com/node-inspector/node-inspector)
+### [node-inspector](https://github.com/node-inspector/node-inspector)
 
 크로미움에서 사용하는 인스펙터 프로토콜을 Node.js가 사용하는 V8 디버거 프로토콜로 변환하는
 중간 프로세스를 사용해서 크롬 개발자도구로 Node.js 애플리케이션을 디버깅합니다.

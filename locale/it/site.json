@@ -1,8 +1,10 @@
 {
   "title": "Node.js",
-  "author": "Node.js Foundation",
+  "author": "Node.js",
   "url": "https://nodejs.org/en/",
   "locale": "it",
+  "language": "Italiano",
+  "languageEnglishVersion": "Italian",
   "scrollToTop": "Portami all'inizio",
   "reportNodeIssue": "Segnala un problema di Node.js",
   "reportWebsiteIssue": "Segnala un problema del sito",
@@ -65,7 +67,7 @@
       "text": "Installa Node.js con un gestore di pacchetti"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "Installing Node.js via binary archive"
     }
   },
   "docs": {
@@ -76,12 +78,12 @@
       "text": "ES6 e oltre"
     },
     "api-lts": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "subtext": "LTS",
       "text": "%ver% API"
     },
     "api-current": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "text": "%ver% API"
     },
     "guides": {
@@ -101,7 +103,7 @@
       "text": "Contribuire"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "Condotta"
     }
   },
@@ -112,10 +114,6 @@
   "blog": {
     "link": "blog",
     "text": "Blog"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "Fondazione"
   },
   "releases": {
     "title": "Cronologia delle Release",

@@ -10,5 +10,8 @@ npm-debug.log
 .AppleDouble
 .LSOverride
 
+# Netlify
+.netlify
+
 # Commonly ignored IDE files
 .idea

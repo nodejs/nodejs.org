@@ -8,30 +8,30 @@ slug: evolving-the-node-js-brand
 layout: blog-post.hbs
 ---
 
-To echo <a href="https://nodejs.org/">Node</a>’s evolutionary nature, we have refreshed the identity to help mark an exciting time for developers, businesses and users who benefit from the pioneering technology.
+To echo [Node](https://nodejs.org/)’s evolutionary nature, we have refreshed the identity to help mark an exciting time for developers, businesses and users who benefit from the pioneering technology.
 
-<strong>Building a brand</strong>
+**Building a brand**
 
-We began exploring elements to express Node.js and jettisoned preconceived notions about what we thought Node should look like, and focused on what Node is: <strong>kinetic</strong>,<ins cite="mailto:EMILY%20TANAKA-DELGADO" datetime="2011-07-09T18:32"></ins><strong>connected</strong>, <strong>scalable</strong>, <strong>modular</strong>, <strong>mechanical</strong> and <strong>organic</strong>. Working with designer <a href="http://www.chrisglass.com">Chris Glass</a>, our explorations emphasized Node's dynamism and formed a visual language based on structure, relationships and interconnectedness.
+We began exploring elements to express Node.js and jettisoned preconceived notions about what we thought Node should look like, and focused on what Node is: **kinetic**, **connected**, **scalable**, **modular**, **mechanical** and **organic**. Working with designer [Chris Glass](http://www.chrisglass.com/), our explorations emphasized Node's dynamism and formed a visual language based on structure, relationships and interconnectedness.
 
-<img class="alignnone size-full wp-image-184" title="grid" src="https://nodeblog.files.wordpress.com/2011/07/grid.png" alt="" width="520" height="178" />
+![grid](/static/images/blog/uncategorized/evolving-the-node-js-brand/grid.png)
 
-Inspired by <strong>process visualization, </strong>we discovered pattern, form, and by relief, the hex shape. The angled infrastructure encourages energy to move through the letterforms.
+Inspired by **process visualization**, we discovered pattern, form, and by relief, the hex shape. The angled infrastructure encourages energy to move through the letterforms.
 
-<img class="alignnone size-full wp-image-185" title="nodejs" src="https://nodeblog.files.wordpress.com/2011/07/nodejs.png" alt="" width="520" height="178" />
+![nodejs](/static/images/blog/uncategorized/evolving-the-node-js-brand/nodejs.png)
 
-This language can expand into the organic network topography of Node or distill down into a single hex connection point.
+This language can expand into the organic network topography of Node or distill down into a single hex connection point.
 
 This scaling represents the dynamic nature of Node in a simple, distinct manner.
 
-<img title="Node.js network" src="https://joyeur.files.wordpress.com/2011/07/network.png" alt="" width="560" height="270" />
+![Node.js network](/static/images/blog/uncategorized/evolving-the-node-js-brand/network.png)
 
-We look forward to exploring<ins cite="mailto:EMILY%20TANAKA-DELGADO" datetime="2011-07-09T18:30"> </ins>this visual language as the technology charges into a very promising future.
+We look forward to exploring this visual language as the technology charges into a very promising future.
 
-<img title="Node.js nebula" src="https://joyeur.files.wordpress.com/2011/07/node.png" alt="" width="560" height="460" />
+![Node.js nebula](/static/images/blog/uncategorized/evolving-the-node-js-brand/node.png)
 
 We hope you'll have fun using it.
 
-To download the new logo, visit <a href="https://nodejs.org/en/about/resources/">nodejs.org/en/about/resources/</a>.
+To download the new logo, visit [nodejs.org/en/about/resources/](https://nodejs.org/en/about/resources/).
 
-<ins cite="mailto:EMILY%20TANAKA-DELGADO" datetime="2011-07-09T18:32"><img title="Tri-color Node" src="https://joyeur.files.wordpress.com/2011/07/tri-color-node.png" alt="" width="560" height="180" /></ins>
+![Tri-color Node](/static/images/blog/uncategorized/evolving-the-node-js-brand/tri-color-node.png)

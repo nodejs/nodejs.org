@@ -1,8 +1,10 @@
 {
   "title": "Node.js",
-  "author": "Node.js Foundation",
+  "author": "Node.js",
   "url": "https://nodejs.org/uk/",
   "locale": "uk",
+  "language": "Українська",
+  "languageEnglishVersion": "Ukrainian",
   "scrollToTop": "Вгору",
   "reportNodeIssue": "Проблеми з Node.js",
   "reportWebsiteIssue": "Проблеми з сайтом",
@@ -80,7 +82,7 @@
       "verify-text": "Як перевірити"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "Installing Node.js via binary archive"
     }
   },
   "docs": {
@@ -91,12 +93,12 @@
       "text": "ES6 і вище"
     },
     "api-lts": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "subtext": "LTS",
       "text": "%ver% API"
     },
     "api-current": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "text": "%ver% API"
     },
     "guides": {
@@ -124,7 +126,7 @@
       "text": "Сприяння"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "Правила"
     }
   },
@@ -135,10 +137,6 @@
   "blog": {
     "link": "blog",
     "text": "Новини"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "Фундація"
   },
   "releases": {
     "title": "Історія релізів",

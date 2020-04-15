@@ -1,8 +1,10 @@
 {
   "title": "Node.js",
-  "author": "Node.js Foundation",
+  "author": "Node.js",
   "url": "https://nodejs.org/fr/",
   "locale": "fr",
+  "language": "Français",
+  "languageEnglishVersion": "French",
   "scrollToTop": "Faire défiler en haut",
   "reportNodeIssue": "Rapporter un problème Node.js",
   "reportWebsiteIssue": "Rapporter un problème sur le site web",
@@ -11,6 +13,9 @@
   "all-downloads": "Toutes les options de téléchargement",
   "nightly": "Versions quotidiennes",
   "chakracore-nightly": "Versions quotidiennes de Node-ChakraCore",
+  "unofficial-builds": "Unofficial builds",
+  "previous": "Previous",
+  "next": "Next",
   "feeds": [
     {
       "link": "feed/blog.xml",
@@ -34,6 +39,10 @@
     "governance": {
       "link": "about/governance",
       "text": "Gouvernance"
+    },
+    "community": {
+      "link": "about/community",
+      "text": "Community"
     },
     "workinggroups": {
       "link": "about/working-groups",
@@ -69,10 +78,12 @@
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "SHASUMS signés pour les fichiers des versions"
+      "text": "SHASUMS signés pour les fichiers des versions",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "How to verify"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "Installing Node.js via binary archive"
     }
   },
   "docs": {
@@ -82,22 +93,22 @@
       "link": "docs/es6",
       "text": "ES6 et au-delà"
     },
-    "inspector": {
-      "link": "docs/inspector",
-      "text": "Inspecteur"
-    },
     "api-lts": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "subtext": "LTS",
       "text": "%ver% API"
     },
     "api-current": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "text": "%ver% API"
     },
     "guides": {
       "link": "docs/guides",
       "text": "Guides"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "Dependencies"
     }
   },
   "getinvolved": {
@@ -107,13 +118,21 @@
       "link": "get-involved/code-and-learn",
       "text": "Coder + Apprendre"
     },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "Collab Summit"
+    },
     "contribute": {
       "link": "get-involved/contribute",
       "text": "Contribuer"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "Code de conduite"
+    },
+    "node-meetups": {
+      "link": "get-involved/node-meetups",
+      "text": "Node.js Meetups"
     }
   },
   "security": {
@@ -123,10 +142,6 @@
   "blog": {
     "link": "blog",
     "text": "Actualités"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "Fondation"
   },
   "releases": {
     "title": "Historique des versions",

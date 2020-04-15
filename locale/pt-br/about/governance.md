@@ -2,6 +2,7 @@
 title: Governança do Projeto
 layout: about.hbs
 ---
+
 <!--
 # Project Governance
 -->
@@ -28,11 +29,11 @@ TSC and their nomination is discussed with the existing Collaborators.
 
 For the current list of Collaborators, see the project's [README.md][].
 
-A guide for Collaborators is maintained at [COLLABORATOR_GUIDE.md][].
+A guide for Collaborators is maintained at [collaborator-guide.md][].
 -->
 ## Colaboradores
 
-O repositório principal [nodejs/node][] no Github é mantido por Colaboradores
+O repositório principal [nodejs/node][] no GitHub é mantido por Colaboradores
 que são nomeados continuamente pelo _Technical Steering Committee_ ([TSC][]).
 
 Pessoas que fazem contribuições significantes e valiosas são nomeadas Colaboradores
@@ -41,7 +42,7 @@ pelo TSC e sua nomeação é debatida com os demais Colaboradores.
 
 Para ver a lista atual de Colaboradores, acesse o [README.md][] do projeto.
 
-Um guia para Colaboradores é mantido em [COLLABORATOR_GUIDE.md][].
+Um guia para Colaboradores é mantido em [collaborator-guide.md][].
 
 <!--
 ## Top Level Committees
@@ -57,10 +58,9 @@ O projeto é governado de forma conjunta pelo _[Technical Steering Committee (TS
 responsável pelas diretrizes do projeto, e pelo _[Community Committee (CommComm)][]_
 responsável por orientar e ampliar a comunidade Node.js.
 
-
-[COLLABORATOR_GUIDE.md]: https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md
+[collaborator-guide.md]: https://github.com/nodejs/node/blob/master/doc/guides/collaborator-guide.md
 [Community Committee (CommComm)]: https://github.com/nodejs/community-committee/blob/master/Community-Committee-Charter.md
-[Busca por Consenso]: http://en.wikipedia.org/wiki/Consensus-seeking_decision-making
+[Busca por Consenso]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [README.md]: https://github.com/nodejs/node/blob/master/README.md#current-project-team-members
 [Technical Steering Committee (TSC)]: https://github.com/nodejs/TSC/blob/master/TSC-Charter.md
 [TSC]: https://github.com/nodejs/TSC
