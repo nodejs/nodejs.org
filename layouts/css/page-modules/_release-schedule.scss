@@ -1,0 +1,26 @@
+table.release-schedule {
+  width: 100%;
+  font-size: 1rem;
+  border: 1px solid $light-gray2;
+
+  td {
+    padding: 5px;
+  }
+
+  > thead {
+    font-weight: 600;
+    text-align: left;
+  }
+
+  > tbody {
+    border-top: 1px solid $light-gray2;
+
+    tr:nth-child(odd) {
+      background-color: $light-gray3;
+    }
+
+    tr:nth-child(even) {
+      background-color: $white;
+    }
+  }
+}

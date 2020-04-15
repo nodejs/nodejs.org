@@ -1,9 +1,11 @@
 {
   "title": "Node.js",
   "editOnGithub":"Editar en Github",
-  "author": "Fundación de Node.js",
+  "author": "Node.js",
   "url": "https://nodejs.org/es/",
   "locale": "es",
+  "language": "Español",
+  "languageEnglishVersion": "Spanish",
   "scrollToTop": "Vuelve al comienzo",
   "reportNodeIssue": "Informe de un problema con Node.js",
   "reportWebsiteIssue": "Informe de un problema con el sitio",
@@ -81,7 +83,7 @@
       "verify-text": "Cómo verificarlo"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "Installing Node.js via binary archive"
     }
   },
   "docs": {
@@ -92,12 +94,12 @@
       "text": "ES6 y más allá"
     },
     "api-lts": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "subtext": "LTS",
       "text": "%ver% API"
     },
     "api-current": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "text": "%ver% API"
     },
     "guides": {
@@ -125,7 +127,7 @@
       "text": "Contribuye"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "Código de Conducta"
     }
   },
@@ -136,10 +138,6 @@
   "blog": {
     "link": "blog",
     "text": "Noticias"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "Fundación"
   },
   "releases": {
     "title": "Histórico de versiones",

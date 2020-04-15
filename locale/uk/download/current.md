@@ -12,6 +12,7 @@ downloads:
     intro: >
         Завантажте початковий код Node.js або інсталятор для вашої платформи та почніть розробку сьогодні.
     currentVersion: Поточна версія
+    includes: Містить
     buildInstructions: Building Node.js from source on supported platforms
     WindowsInstaller: Windows Installer
     WindowsBinary: Windows Binary
@@ -28,7 +29,7 @@ additional:
     SmartOSBinaries: SmartOS Binaries
     DockerImage: Docker Image
     officialDockerImage: Official Node.js Docker Image
-    LinuxPowerSystems: Linux on Power Systems
+    LinuxPowerSystems: Linux on Power LE Systems
     LinuxSystemZ: Linux on System z
     AIXPowerSystems: AIX on Power Systems
 ---

@@ -15,7 +15,7 @@ layout: blog-post.hbs
 ### Community Updates
 
 * [Node.js v7 Release Brief](https://nodesource.com/blog/node-js-v7-release-brief)
-* [Last Week in Node.js Working Groups](https://nodesource.com/blog/last-week-in-node-js-working-groups-october-17-24): Last week was quieter than usual as a lot of effort was put into the new v7 Current release line. As such, this is the summary for the last two weeks. 
+* [Last Week in Node.js Working Groups](https://nodesource.com/blog/last-week-in-node-js-working-groups-october-17-24): Last week was quieter than usual as a lot of effort was put into the new v7 Current release line. As such, this is the summary for the last two weeks.
 * [6 of the Most Exciting ES6 Features in Node.js v6 LTS](https://nodesource.com/blog/six-of-the-most-exciting-es6-features-in-node-js-v6-lts): With this article, we'll take a look at six of the best new ES6 features that are in the Node.js v6 LTS release.
 
 If you have spotted or written something about Node.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.

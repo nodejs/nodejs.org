@@ -8,15 +8,15 @@ modules: "<code>NODE_MODULE_VERSION</code> 指的是 Node.js 的 ABI (applicatio
 1.x 到 3.x 版本被叫做 “io.js”，因为它们属于 io.js 的分支。从 Node.js 4.0.0 开始，之前版本的 io.js 与 Node.js 0.12.x 合并到统一的 Node.js 发行版中。
 
 <div class="highlight-box">
-    <h4>正在寻找某个大版本的最新版？</h4>
-     <ul>
-        <li><a href="https://nodejs.org/dist/latest-v10.x/">Node.js 10.x</a></li>
-        <li><a href="https://nodejs.org/dist/latest-v8.x/">Node.js 8.x</a></li>
-        <li><a href="https://nodejs.org/dist/latest-v6.x/">Node.js 6.x</a></li>
-        <li><a href="https://nodejs.org/dist/latest-v4.x/">Node.js 4.x</a></li>
-        <li><a href="https://nodejs.org/dist/latest-v0.12.x/">Node.js 0.12.x</a></li>
-        <li><a href="https://nodejs.org/dist/latest-v0.10.x/">Node.js 0.10.x</a></li>
-        <li><a href="https://nodejs.org/dist/">all versions</a></li>
-    </ul>
-</div>
 
+#### 正在寻找某个大版本的最新版？
+
+* [Node.js 10.x](https://nodejs.org/dist/latest-v10.x/)
+* [Node.js 8.x](https://nodejs.org/dist/latest-v8.x/)
+* [Node.js 6.x](https://nodejs.org/dist/latest-v6.x/)
+* [Node.js 4.x](https://nodejs.org/dist/latest-v4.x/)
+* [Node.js 0.12.x](https://nodejs.org/dist/latest-v0.12.x/)
+* [Node.js 0.10.x](https://nodejs.org/dist/latest-v0.10.x/)
+* [所有版本](https://nodejs.org/dist/)
+
+</div>

@@ -1,0 +1,18 @@
+// borrowed from Bootstrap
+@keyframes spinner-border {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-border {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-bottom;
+  border: .25em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border .75s linear infinite;
+}

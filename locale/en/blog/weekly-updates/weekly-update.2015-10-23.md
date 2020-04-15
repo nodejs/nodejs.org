@@ -18,9 +18,9 @@ This week we have one release proposal: [Node.js v5.0.0](https://github.com/node
 ### Notable changes
 
 * console: console.time has been changed to log with sub-millisecond accuracy (Michaël Zasso) [#3166](https://github.com/nodejs/node/pull/3166).
-  - Values reported by console.time will now have 3 decimals of accuracy added.
+  * Values reported by console.time will now have 3 decimals of accuracy added.
 * fs: Added file descriptor support to *File functions (Johannes Wüller) [#3163](https://github.com/nodejs/node/pull/3163)
-  - fs.readFile, fs.writeFile, and fs.appendFile now also accept a file descriptor as their first argument.
+  * fs.readFile, fs.writeFile, and fs.appendFile now also accept a file descriptor as their first argument.
 
 ### Node.js foundation is considering an iteration on the official logo
 
@@ -61,7 +61,7 @@ If you have spotted or written something about Node.js, do come over to our [Eva
 * [Node Knockout](http://www.nodeknockout.com/), November 7 - 8th, Worldwide
 * [Node Girls London](https://nodegirls.typeform.com/to/atW4HR), November 7th at London, UK
 * [Playnode](http://playnode.io/), November 12nd at Seoul, South Korea
-* [Nodevember](http://nodevember.org/?utm_source=io.js+and+Node.js+News&utm_medium=article), November 14th - 15th at Nashville, Tennessee, US.
+* [Nodevember](http://nodevember.org/), November 14th - 15th at Nashville, Tennessee, US.
 * [NodeConf Barcelona](https://ti.to/barcelonajs/nodeconf-barcelona-2015), November 21st at Barcelona, Spain
 * [CampJS VI](http://vi.campjs.com), November 20 – 23th at Queensland, Australia
 * [Node.js Interactive](http://events.linuxfoundation.org/events/node-interactive), December 8-9th at Portland, US.

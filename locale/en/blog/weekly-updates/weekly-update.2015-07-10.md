@@ -23,7 +23,6 @@ This week we have two io.js releases: [v2.3.4](https://iojs.org/dist/v2.3.4/) an
 
 * **openssl**: Upgrade to 1.0.2d, fixes CVE-2015-1793 (Alternate Chains Certificate Forgery) [#2141](https://github.com/nodejs/node/pull/2141).
 
-
 #### 2.3.4
 
 * **openssl**: Upgrade to 1.0.2d, fixes CVE-2015-1793 (Alternate Chains Certificate Forgery) (Shigeki Ohtsu) [#2141](https://github.com/nodejs/node/pull/2141).

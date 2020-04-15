@@ -9,3 +9,6 @@ npm-debug.log
 .DS_Store
 .AppleDouble
 .LSOverride
+
+# Netlify
+.netlify

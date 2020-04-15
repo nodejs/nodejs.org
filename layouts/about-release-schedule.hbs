@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{site.locale}}" {{#if site.rtl}}dir="rtl"{{/if}}>
+<html lang="{{site.locale}}"{{#if site.rtl}} dir="rtl"{{/if}}>
 {{> html-head }}
 
 <body>
@@ -14,7 +14,7 @@
         {{{ contents }}}
 
         <p>
-          <img alt="{{ title }}" src="https://raw.githubusercontent.com/nodejs/Release/master/schedule.svg?sanitize=true">
+          <img src="https://raw.githubusercontent.com/nodejs/Release/master/schedule.svg?sanitize=true" alt="{{ title }}" width="960" height="500">
         </p>
 
         {{{ release-schedule }}}
@@ -22,8 +22,6 @@
         <p>
           <small>{{ schedule-footer }}</small>
         </p>
-
-
 
       </article>
 

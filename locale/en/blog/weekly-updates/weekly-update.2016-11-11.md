@@ -22,10 +22,10 @@ layout: blog-post.hbs
 * Benchmarks are curently run daily and the updated results published on this page in order to provide visibility and to encourage contributors to look for possible regressions after their commits go in.
 * This page/data is maintained by the [benchmarking working group](https://github.com/nodejs/benchmarking/blob/master/README.md).
 
-### Daily Code Coverage Results 
+### Daily Code Coverage Results
 
 * Now available for Node.js master at: https://coverage.nodejs.org/. Please check results after your major PRs land to ensure coverage is not regressed.
-* This data is also a good way to identify where new tests can be added to improve the overall coverage numbers. 
+* This data is also a good way to identify where new tests can be added to improve the overall coverage numbers.
 * We are doing pretty well at 89.37% JS coverage and 88.3% C++ coverage but we can always do better.
 
 ### Community Updates

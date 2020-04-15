@@ -5,22 +5,22 @@ layout: docs.hbs
 
 # 数据流中的积压问题
 
-通常在数据处理的时候我们会遇到一个普遍的问题：[`backpressure`][]，意思是在数据传输过程中有一大堆数据在缓存之后积压着。每次当数据到达结尾又遇到复杂的运算，又或者无论什么原因它比预期的慢，这样累积下来，从源头来的数据就会变得很庞大，像一个塞子一样堵塞住。
+通常在数据处理的时候我们会遇到一个普遍的问题：[`背压`][]，意思是在数据传输过程中有一大堆数据在缓存之后积压着。每次当数据到达结尾又遇到复杂的运算，又或者无论什么原因它比预期的慢，这样累积下来，从源头来的数据就会变得很庞大，像一个塞子一样堵塞住。
 
 为解决这个问题，必须存在一种适当的代理机制，确保流从一个源流入另外一个的时候是平滑顺畅的。不同的社区组织针对他们各自的问题单独做了解决，好例子比如 Unix 的管道和 TCP 的 Socket。此问题经常与 _流控制_ 相关。在 Node.js 中，流已经是被采纳的解决方案。
 
 此文的目的在于详细深入介绍什么是积压，并从代码角度详细解释在 Node.js 中，流是如何针对此问题进行处理的。本文的第二部分将给予你实现流的功能时最佳实践，以确保你的程序既安全又精简。
 
-我们假定你对 Node.js 中的 [`backpressure`][]，[`Buffer`][]，[`EventEmitter`][] 和 [`Stream`][] 的基本概念有一点了解。如果你尚未完整阅读过 API 文档，那么最好是先看一下相关 API 说明，它也会有助于你扩展理解本文的主旨。
+我们假定你对 Node.js 中的 [`背压`][]，[`Buffer`][]，[`EventEmitter`][] 和 [`Stream`][] 的基本概念有一点了解。如果你尚未完整阅读过 API 文档，那么最好是先看一下相关 API 说明，它也会有助于你扩展理解本文的主旨。
 
 ## 处理数据中遇到的问题
 
-在一个计算机系统中，通过管道，socket 和 信号量将数据从一个进程传到另外一个进程中。在 Node.js 中，我们发明了一个类似的机制，它称为 [`Stream`][]。流太棒了！它们为 Node.js 做了太多的事情，而且内部代码库的每个角落都用到了那个模块。作为一个开发者，你也应该鼓励自己多去使用这个模块！
+在一个计算机系统中，通过管道，socket 和信号量将数据从一个进程传到另外一个进程中。在 Node.js 中，我们发明了一个类似的机制，它称为 [`Stream`][]。流太棒了！它们为 Node.js 做了太多的事情，而且内部代码库的每个角落都用到了那个模块。作为一个开发者，你也应该鼓励自己多去使用这个模块！
 
 ```javascript
 const readline = require('readline');
 
-// process.stdin 和 process.stdout 都是 Stream 的实例
+// process.stdin and process.stdout are both instances of Streams.
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
@@ -38,7 +38,7 @@ rl.question('Why should you use streams? ', (answer) => {
 在以下场景中，我们将拿一个巨大的文件（大概有 9gb 那么大），然后用熟悉的 [`zip(1)`][] 的工具压缩。
 
 ```bash
-$ zip The.Matrix.1080p.mkv
+zip The.Matrix.1080p.mkv
 ```
 
 当这个终端还需要等待一些时间来完成时，我们另起一个终端运行 Node.js 的模块： [`zlib`][]，它对 [`gzip(1)`][] 进行了包装。
@@ -57,7 +57,7 @@ inp.pipe(gzip).pipe(out);
 
 请注意：这个例子中我们使用 `.pipe()` 从一个数据源终端到另外一个终端，不过没有使用任何出错处理机制。如果一大堆数据出错了但是又要被接收， `可读` 和 `gzip` 流不会被销毁。 [`pump`][] 是一个工具类，如果有某个流发生错误或者关闭，它会自动销毁相关所有的流，在这个情况下是必须使用的！
 
-[`pump`][] 对于 Nodejs 8.x 以及先前版本是必须的。但对于 10.x 和之后的版本而言，我们引入了 [`pipeline`][] 来取而代之。这是一个模块化函数，用于对接不同的数据流，可以处理异常错误并善后清理释放资源。它同时也提供了一个回调函数——当整个 pipeline 任务完成时将触发。
+[`pump`][] 对于 Node.js 8.x 以及先前版本是必须的。但对于 10.x 和之后的版本而言，我们引入了 [`pipeline`][] 来取而代之。这是一个模块化函数，用于对接不同的数据流，可以处理异常错误并善后清理释放资源。它同时也提供了一个回调函数——当整个 pipeline 任务完成时将触发。
 
 这里给出一个例子，告诉你如何使用 pipeline：
 
@@ -66,9 +66,9 @@ const { pipeline } = require('stream');
 const fs = require('fs');
 const zlib = require('zlib');
 
-// 使用 pipiline API 可以轻松地把数据流连接到一起，并且在整个数据流
-// 处理完毕时得到通知。下面的例子就是把一个很大的视频文件使用 pipeline
-// 进行 gzip 压缩。
+// Use the pipeline API to easily pipe a series of streams
+// together and get notified when the pipeline is fully done.
+// A pipeline to gzip a potentially huge video file efficiently:
 
 pipeline(
   fs.createReadStream('The.Matrix.1080p.mkv'),
@@ -83,6 +83,7 @@ pipeline(
   }
 );
 ```
+
 你也可以使用 [`promisify`][] 包装 pipeline，配合 `async` / `await` 进行使用：
 
 ```javascript
@@ -94,16 +95,16 @@ const util = require('util');
 const pipeline = util.promisify(stream.pipeline);
 
 async function run() {
-    try {
-        await pipeline(
-            fs.createReadStream('The.Matrix.1080p.mkv'),
-            zlib.createGzip(),
-            fs.createWriteStream('The.Matrix.1080p.mkv.gz'),
-        );
-        console.log('Pipeline succeeded');
-    } catch (err) {
-        console.error('Pipeline failed', err);
-    }
+  try {
+    await pipeline(
+      fs.createReadStream('The.Matrix.1080p.mkv'),
+      zlib.createGzip(),
+      fs.createWriteStream('The.Matrix.1080p.mkv.gz'),
+    );
+    console.log('Pipeline succeeded');
+  } catch (err) {
+    console.error('Pipeline failed', err);
+  }
 }
 ```
 
@@ -115,10 +116,12 @@ async function run() {
 写入磁盘的速度远比从磁盘读取数据慢得多，因此，当我们试图压缩一个文件并写入磁盘时，积压的问题也就出现了。因为写磁盘的速度不能跟上读磁盘的速度。
 
 ```javascript
-// 数据流会偷偷地说：“好了，好了！停一下，这太过分了！”
-// 然后数据将会在读入侧堆积，这样写入侧才能和数据流的读入速度保持同步。
+// Secretly the stream is saying: "whoa, whoa! hang on, this is way too much!"
+// Data will begin to build up on the read-side of the data buffer as
+// `write` tries to keep up with the incoming data flow.
 inp.pipe(gzip).pipe(outputFile);
 ```
+
 这就是为什么说积压机制很重要——如果积压机制不存在，进程将用完你全部的系统内存，从而对其它进程产生显著影响，它独占系统大量资源直到任务完成为止。
 
 这最终导致一些问题：
@@ -127,14 +130,13 @@ inp.pipe(gzip).pipe(outputFile);
 * 太多繁重的垃圾回收
 * 内存耗尽
 
-以下例子中我们把 `.write()` 函数的 [返回值][] 值取出，改成 `true`，这样明显地禁止了 Node.js 核心的积压的支持。在任何引用了 'modified' 二进制库的地方，我们探讨在不适用 `return ret;` 的情况下运行 `node` 二进制代码，并用 `return true;` 取代它。
+以下例子中我们把 `.write()` 函数的[返回值][]值取出，改成 `true`，这样明显地禁止了 Node.js 核心的积压的支持。在任何引用了 'modified' 二进制库的地方，我们探讨在不适用 `return ret;` 的情况下运行 `node` 二进制代码，并用 `return true;` 取代它。
 
 ## 过度的垃圾收集
 
 让我们来看一个快速的基准。使用上面的同一个例子，我们进行两次试验以获得两个二进制文件的中位时间。
 
-<!-- eslint-skip -->
-```javascript
+```
    trial (#)  | `node` binary (ms) | modified `node` binary (ms)
 =================================================================
       1       |      56924         |           55011
@@ -150,8 +152,7 @@ average time: |      55299         |           55975
 
 GC（垃圾回收器）测量表明一个完整的周期间隔一个由垃圾回收器进行扫描：
 
-<!-- eslint-skip -->
-```javascript
+```
 approx. time (ms) | GC (ms) | modified GC (ms)
 =================================================
           0       |    0    |      0
@@ -175,7 +176,7 @@ approx. time (ms) | GC (ms) | modified GC (ms)
 
 但是，当积压机制处理不恰当，V8 垃圾回收机制开始变慢。一般情况下 GC 一分钟内进行 75 次回收，但是修改过的二进制库仅 36 次。
 
-随着内存占用越来越多，缓慢和渐进的欠债也不断积累。随着数据的传输，在没有积压系统的情况下，每个块传输都使用更多的内存。 
+随着内存占用越来越多，缓慢和渐进的欠债也不断积累。随着数据的传输，在没有积压系统的情况下，每个块传输都使用更多的内存。
 
 内存分配使用越多，GC 就越要照顾内存交换。内存交换得越多，GC 就需要考虑决定哪些内存可以被释放，并且要一直在大块内存中扫描独立区块，而这又要消耗更多的计算功率。
 
@@ -185,8 +186,7 @@ approx. time (ms) | GC (ms) | modified GC (ms)
 
 这是普通程序输出结果：
 
-<!-- eslint-skip -->
-```javascript
+```
 Respecting the return value of .write()
 =============================================
 real        58.88
@@ -210,10 +210,9 @@ sys          8.79
 
 虚拟内存占用的最大字节块消耗了 87.81 mb。
 
-现在改变 [`.write()`][] 方法的 [返回值][]，我们得到以下结果：
+现在改变 [`.write()`][] 方法的[返回值][]，我们得到以下结果：
 
-<!-- eslint-skip -->
-```javascript
+```
 Without respecting the return value of .write():
 ==================================================
 real        54.48
@@ -243,7 +242,7 @@ sys          7.43
 
 ## 积压是怎么处理这些问题的？
 
-我们有不同的函数将数据从一个进程传入另外一个进程。在 Node.js 中，有一个内置函数称为 [`.pipe()`][]，同样地，你们也可以使用 [其它工具包][]。最终，在这个进程的基本层面上我们有二个互不相关的组件：数据的 _源头_，和 _消费者_。
+我们有不同的函数将数据从一个进程传入另外一个进程。在 Node.js 中，有一个内置函数称为 [`.pipe()`][]，同样地，你们也可以使用[其它工具包][]。最终，在这个进程的基本层面上我们有二个互不相关的组件：数据的 _源头_，和 _消费者_。
 
 当 [`.pipe()`][] 被源调用之后，它通知消费者有数据需要传输。管道函数为事件触发建立了合适的积压封装。
 
@@ -253,7 +252,7 @@ sys          7.43
 
 在数据缓存超出了 [`highWaterMark`][] 或者写入的列队处于繁忙状态，[`.write()`][] 会返回 `false`。
 
-当 `false` 返回之后，积压系统介入了。它将暂停从任何发送数据的数据流中进入的 [`Readable`][]。一旦数据流清空了， [`.drain()`][] 事件将被触发，消耗进来的数据流。
+当 `false` 返回之后，积压系统介入了。它将暂停从任何发送数据的数据流中进入的 [`Readable`][]。一旦数据流清空了， [`'drain'`][] 事件将被触发，消耗进来的数据流。
 
 一旦队列全部处理完毕，积压机制将允许允许数据再次发送。在使用中的内存空间将自我释放，同时准备接收下一次的批量数据。
 
@@ -269,8 +268,7 @@ sys          7.43
 
 为了对积压有一个更好的理解，这里有一副 [`Readable`][] 流正通过 [piped][] 流入 [`Writable`][] 流的整个生命周期图：
 
-<!-- eslint-skip -->
-```javascript
+```
                                                      +===================+
                          x-->  Piping functions   +-->   src.pipe(dest)  |
                          x     are set up during     |===================|
@@ -328,11 +326,11 @@ Readable.pipe(Transformable).pipe(Writable);
 
 从 [Node.js v0.10][] 开始，[`Stream`][] 类借助带有下划线一些相关函数([`._read()`][] 和 [`._write()`][])，提供了访问 [`.read()`][] 或[`.write()`][] 的能力。
 
-这里有一些准则文档可供参考：[实现可读的流][] 和 [实现可写的流][]。我们假设你可以把这些文章已经读过了，下个章节将做稍许的深入讲解。
+这里有一些准则文档可供参考：[实现可读的流][]和[实现可写的流][]。我们假设你可以把这些文章已经读过了，下个章节将做稍许的深入讲解。
 
 ## 实现用户自定义流须知
 
-流的黄金法则是 __总是接受积压__。作为最佳实践的构成是不矛盾的实践。只要你小心避免与内部积压支持冲突的行为，你可以确信你在遵循良好的实践。
+流的黄金法则是 **总是接受积压**。作为最佳实践的构成是不矛盾的实践。只要你小心避免与内部积压支持冲突的行为，你可以确信你在遵循良好的实践。
 
 一般而说。
 
@@ -340,7 +338,7 @@ Readable.pipe(Transformable).pipe(Writable);
 2. 在流返回 `false` 后不要调用 `.write()` 方法，而是等待 'drain'。
 3. 流在不同的 Node.js 版本和库中是有变化的。小心你的测试。
 
-注意：关于第三点，构建浏览器流的一个难以置信的方法是使用 [`readable-stream`][]。Rodd Vagg 曾经写过一篇 [大作][] 详细描述这个工具库。简而言之，它为 [`Readable`][] 流提供了自动可销毁降解的类型，并且支持旧版的 Node.js 和 浏览器。
+注意：关于第三点，构建浏览器流的一个难以置信的方法是使用 [`readable-stream`][]。Rodd Vagg 曾经写过一篇[大作][]，详细描述这个工具库。简而言之，它为 [`Readable`][] 流提供了自动可销毁降解的类型，并且支持旧版的 Node.js 和浏览器。
 
 ## 对于可读流的规则
 
@@ -353,8 +351,8 @@ Readable.pipe(Transformable).pipe(Writable);
 这里有个糟糕的使用 [`.push()`][] 的例子：
 
 ```javascript
-// 下面的代码是有问题的，因为它完全忽略了 push 的返回值，而这个返回值是表示
-// 目的地是否存在积压的重要信号！
+// This is problematic as it completely ignores return value from push
+// which may be a signal for backpressure from the destination stream!
 class MyReadable extends Readable {
   _read(size) {
     let chunk;
@@ -365,11 +363,12 @@ class MyReadable extends Readable {
 }
 ```
 
-另外，从定制流之外，忽略积压简直可笑至极。在以下反例中，代码仅关注数据是否到达（通过 [`.data` event][] 订阅）：
+另外，从定制流之外，忽略积压简直可笑至极。在以下反例中，代码仅关注数据是否到达（通过 [`'data'` event][] 订阅）：
 
 ```javascript
-// 下面的代码忽略了 Node.js 内部处理积压的机制，无条件地写入数据，不管目的地的流
-// 有没有做好准备接收。
+// This ignores the backpressure mechanisms Node.js has set in place,
+// and unconditionally pushes through data, regardless if the
+// destination stream is ready for it or not.
 readable.on('data', (data) =>
   writable.write(data)
 );
@@ -386,8 +385,9 @@ readable.on('data', (data) =>
 
 <!-- eslint-disable indent -->
 ```javascript
-// 下面的可写流是有问题的，因为 JavaScript 的异步回调机制。
-// 每个 callback 都没有返回，将会有很大的几率触发多次 callback。
+// This writable is invalid because of the async nature of JavaScript callbacks.
+// Without a return statement for each callback prior to the last,
+// there is a great chance multiple callbacks will be called.
 class MyWritable extends Writable {
   _write(chunk, encoding, callback) {
     if (chunk.toString().indexOf('a') >= 0)
@@ -398,10 +398,10 @@ class MyWritable extends Writable {
   }
 }
 
-// 更恰当的写法是下面这样：
+// The proper way to write this would be:
     if (chunk.contains('a'))
       return callback();
-    else if (chunk.contains('b'))
+    if (chunk.contains('b'))
       return callback();
     callback();
 ```
@@ -409,7 +409,8 @@ class MyWritable extends Writable {
 在实现 [`._writev()`][] 方法时还有其它一些东西值得考虑。此函数与 [`.cork()`][] 耦合，但是编写代码的时有一个容易犯的错误：
 
 ```javascript
-// 这里调用了 .uncork() 两次，将会对 C++ 层产生两次调用，使 cork/uncork 机制无效。
+// Using .uncork() twice here makes two calls on the C++ layer, rendering the
+// cork/uncork technique useless.
 ws.cork();
 ws.write('hello ');
 ws.write('world ');
@@ -420,7 +421,8 @@ ws.write('from ');
 ws.write('Matteo');
 ws.uncork();
 
-// 正确的做法是在 process.nextTick() 中调用 .uncork()，这样就可以在下次事件循环中触发。
+// The correct way to write this is to utilize process.nextTick(), which fires
+// on the next event loop.
 ws.cork();
 ws.write('hello ');
 ws.write('world ');
@@ -431,7 +433,7 @@ ws.write('from ');
 ws.write('Matteo');
 process.nextTick(doUncork, ws);
 
-// 作为一个全局函数
+// As a global function.
 function doUncork(stream) {
   stream.uncork();
 }
@@ -447,7 +449,6 @@ function doUncork(stream) {
 
 在此之后请仔细阅读更多的有关 [`Stream`][] 其它 API 函数，这样有助于当你在构建 Node.js 的应用程序之时更好地理解关于流的能力。
 
-
 [`Stream`]: https://nodejs.org/api/stream.html
 [`Buffer`]: https://nodejs.org/api/buffer.html
 [`EventEmitter`]: https://nodejs.org/api/events.html
@@ -456,8 +457,8 @@ function doUncork(stream) {
 [`Duplex`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [`Transform`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [`zlib`]: https://nodejs.org/api/zlib.html
-[`.drain()`]: https://nodejs.org/api/stream.html#stream_event_drain
-[`.data` event]: https://nodejs.org/api/stream.html#stream_event_data
+[`'drain'`]: https://nodejs.org/api/stream.html#stream_event_drain
+[`'data'` event]: https://nodejs.org/api/stream.html#stream_event_data
 [`.read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size
 [`.write()`]: https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback
 [`._read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size_1
@@ -472,7 +473,7 @@ function doUncork(stream) {
 [实现可读的流]: https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_readable_stream
 
 [其它工具包]: https://github.com/sindresorhus/awesome-nodejs#streams
-[`backpressure`]: https://en.wikipedia.org/wiki/Back_pressure#Backpressure_in_information_technology
+[`背压`]: https://en.wikipedia.org/wiki/Backpressure_routing
 [Node.js v0.10]: https://nodejs.org/docs/v0.10.0/
 [`highWaterMark`]: https://nodejs.org/api/stream.html#stream_buffering
 [返回值]: https://github.com/nodejs/node/blob/55c42bc6e5602e5a47fb774009cfe9289cb88e71/lib/_stream_writable.js#L239

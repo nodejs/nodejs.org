@@ -17,7 +17,7 @@ layout: contribute.hbs
 
 汇报问题时我们也需要一些关于执行环境的信息，我们不知道确切哪些信息是我们要的，所以请至少提供下列几项信息：
 
-* Node 的版本号
+* Node.js 的版本号
 * 当前运行的操作系统（macOS、SmartOS、Linux、Windows）
 * 计算机架构体系（32 位还是 64 位；x86 或 ARM）
 
@@ -28,8 +28,9 @@ layout: contribute.hbs
 
 ## 代码贡献者
 
-若你想要协助 Node.js 修复缺陷或是增加新功能，请确保你已仔细阅读 [Node.js 贡献指南](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#pull-requests)，里面也解释了贡献至本项目并等待协作者审核的详细过程。  
-如果你想知道该从何开始，你可以参考 [Node 该做什么列表](http://nodetodo.org/)，它可以引导你迈向你的第一个贡献。
+若你想要协助 Node.js 修复缺陷或是增加新功能，请确保你已仔细阅读 [Node.js 贡献指南](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#pull-requests)，里面也解释了贡献至本项目并等待协作者审核的详细过程。
+
+如果你想知道该从何开始，你可以参考 [Node 该做什么列表](https://www.nodetodo.org/)，它可以引导你迈向你的第一个贡献。
 
 ## 如何成为一个协作者？
 
@@ -43,4 +44,4 @@ layout: contribute.hbs
 * 参与工作组
 * 参与其它 Node.js 社区群
 
-若你自己认为已经做出重大贡献，却没有被授予提交权限，你可以尝试 [开启 TSC 议题](https://github.com/nodejs/TSC/issues) 或 [直接联系 TSC 成员](https://github.com/nodejs/TSC#current-members) 以获得相应权限。
+若你自己认为已经做出重大贡献，却没有被授予提交权限，你可以尝试[开启 TSC 议题](https://github.com/nodejs/TSC/issues)或[直接联系 TSC 成员](https://github.com/nodejs/TSC#current-members)以获得相应权限。

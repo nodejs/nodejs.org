@@ -27,4 +27,4 @@ We looked back at all the contributions in January and found that this is the 3r
 * Website Working Group Highlights
 * First Tracing Working Group Meeting
 * We've started reaching out to companies for feedback on our roadmap. https://github.com/iojs/roadmap/issues/13 If there are any companies we missed please drop the contact information in to that GitHub Issue.
-* Next week is Node Summit w/ many io.js people speaking and in attendance. Bert Belder,  Thorsten Lorenz, will be speaking Isaac Schlueter.
+* Next week is Node Summit w/ many io.js people speaking and in attendance. Bert Belder, Thorsten Lorenz, will be speaking Isaac Schlueter.

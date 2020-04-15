@@ -30,12 +30,12 @@ test('verifyDownloads(<version>)', (t) => {
   const downloads = () => {
     return [
       {
-        'title': 'Source Code',
-        'url': 'https://nodejs.org/dist/v4.1.1/node-v4.1.1.tar.gz'
+        title: 'Source Code',
+        url: 'https://nodejs.org/dist/v4.1.1/node-v4.1.1.tar.gz'
       },
       {
-        'title': 'ARMv6 32-bit Binary',
-        'url': 'https://nodejs.org/dist/v4.1.1/node-v4.1.1-linux-armv6l.tar.gz'
+        title: 'ARMv6 32-bit Binary',
+        url: 'https://nodejs.org/dist/v4.1.1/node-v4.1.1-linux-armv6l.tar.gz'
       }
     ]
   }

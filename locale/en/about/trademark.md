@@ -2,6 +2,7 @@
 layout: about.hbs
 title: Trademark Policy
 ---
+
 # Trademark Policy
 
 The Node.js trademarks, service marks, and graphics marks are symbols of the

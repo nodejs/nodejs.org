@@ -20,11 +20,11 @@ This week we have one release: [Node.js v4.1.1](https://nodejs.org/dist/v4.1.1/)
 * **buffer**: Fixed a bug introduced in v4.1.0 where allocating a new zero-length buffer can result in the _next_ allocation of a TypedArray in JavaScript not being zero-filled. In certain circumstances this could result in data leakage via reuse of memory space in TypedArrays, breaking the normally safe assumption that TypedArrays should be always zero-filled. (Trevor Norris) [#2931](https://github.com/nodejs/node/pull/2931).
 * **http**: Guard against response-splitting of HTTP trailing headers added via [`response.addTrailers()`](https://nodejs.org/api/http.html#http_response_addtrailers_headers) by removing new-line (`[\r\n]`) characters from values. Note that standard header values are already stripped of new-line characters. The expected security impact is low because trailing headers are rarely used. (Ben Noordhuis) [#2945](https://github.com/nodejs/node/pull/2945).
 * **npm**: Upgrade to npm 2.14.4 from 2.14.3, see [release notes](https://github.com/npm/npm/releases/tag/v2.14.4) for full details (Kat Marchán) [#2958](https://github.com/nodejs/node/pull/2958)
-  - Upgrades `graceful-fs` on multiple dependencies to no longer rely on monkey-patching `fs`
-  - Fix `npm link` for pre-release / RC builds of Node
+  * Upgrades `graceful-fs` on multiple dependencies to no longer rely on monkey-patching `fs`
+  * Fix `npm link` for pre-release / RC builds of Node
 * **v8**: Update post-mortem metadata to allow post-mortem debugging tools to find and inspect:
-  - JavaScript objects that use dictionary properties (Julien Gilli) [#2959](https://github.com/nodejs/node/pull/2959)
-  - ScopeInfo and thus closures (Julien Gilli) [#2974](https://github.com/nodejs/node/pull/2974)
+  * JavaScript objects that use dictionary properties (Julien Gilli) [#2959](https://github.com/nodejs/node/pull/2959)
+  * ScopeInfo and thus closures (Julien Gilli) [#2974](https://github.com/nodejs/node/pull/2974)
 
 ### Known issues
 
@@ -48,7 +48,7 @@ If you have spotted or written something about Node.js, do come over to our [Eva
 * [JSConf CO](http://www.jsconf.co/), October 16th - 17th at Ruta N, Medellin, Colombia
 * [EmpireNode](http://2015.empirenode.org/), October 23rd at New York, US.
 * [NodeFest](http://nodefest.jp/2015/), November 7th at Tokyo, Japan
-* [Nodevember](http://nodevember.org/?utm_source=io.js+and+Node.js+News&utm_medium=article), November 14th - 15th at Nashville, Tennessee, US.
+* [Nodevember](http://nodevember.org/), November 14th - 15th at Nashville, Tennessee, US.
 * [NodeConf Barcelona](https://ti.to/barcelonajs/nodeconf-barcelona-2015), November 21st at Barcelona, Spain
 * [Node.js Interactive](http://events.linuxfoundation.org/events/node-interactive), December 8-9 at Portland, US.
 

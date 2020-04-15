@@ -1,8 +1,10 @@
 ﻿{
   "title": "Node.js",
-  "author": "Node.js Foundation",
+  "author": "Node.js",
   "url": "https://nodejs.org/ar/",
   "locale": "ar",
+  "language": "العربية",
+  "languageEnglishVersion": "Arabic",
   "rtl": true,
   "scrollToTop": "إنتقل إلى الأعلى",
   "reportNodeIssue": "Node.js أبلغ عن عطل في",
@@ -90,22 +92,22 @@
       "link": "docs/es6",
       "text": "ES6 وما بعدها"
     },
-    "inspector": {
-      "link": "docs/inspector",
-      "text": "أدوات الإشراف"
-    },
     "api-lts": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "subtext": "LTS",
       "text": "%ver% API"
     },
     "api-current": {
-      "link": "/dist/latest-%ver-major%/docs/api",
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
       "text": "%ver% API"
     },
     "guides": {
       "link": "docs/guides",
       "text": "إرشادات"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "تبعيات"
     }
   },
   "getinvolved": {
@@ -124,20 +126,12 @@
       "text": "مساهمة"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "القواعد السلوكية"
     },
     "node-meetups": {
       "link": "get-involved/node-meetups",
-      "text": "Node.js لقاءات"
-    },
-    "node-events": {
-      "link": "get-involved/node-events",
-      "text": "Node.js فعاليات"
-    },
-    "node-speakers": {
-      "link": "get-involved/node-speakers",
-      "text": "متحدثو الـ Node.js"
+      "text": "Node.js مُلْتَقَيات"
     }
   },
   "security": {
@@ -147,10 +141,6 @@
   "blog": {
     "link": "blog",
     "text": "المدونة"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "المؤسسة"
   },
   "releases": {
     "title": "أرشيف الاصدارات",

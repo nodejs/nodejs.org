@@ -71,7 +71,6 @@ demonstration. The most important parts are here. There are actually
 seven or eight steps, but the ones we care about — ones that Node.js
 actually uses - are those above._
 
-
 ## Phases Overview
 
 * **timers**: this phase executes callbacks scheduled by `setTimeout()`
@@ -122,7 +121,6 @@ setTimeout(() => {
 
   console.log(`${delay}ms have passed since I was scheduled`);
 }, 100);
-
 
 // do someAsyncOperation which takes 95 ms to complete
 someAsyncOperation(() => {
@@ -176,7 +174,7 @@ either the queue has been exhausted, or the system-dependent hard limit
 is reached.
 
 * _If the **poll** queue **is empty**_, one of two more things will
-happen:
+  happen:
   * If scripts have been scheduled by `setImmediate()`, the event loop
   will end the **poll** phase and continue to the **check** phase to
   execute those scheduled scripts.
@@ -232,7 +230,6 @@ For example, if we run the following script which is not within an I/O
 cycle (i.e. the main module), the order in which the two timers are
 executed is non-deterministic, as it is bound by the performance of the
 process:
-
 
 ```js
 // timeout_vs_immediate.js
@@ -294,7 +291,7 @@ You may have noticed that `process.nextTick()` was not displayed in the
 diagram, even though it's a part of the asynchronous API. This is because
 `process.nextTick()` is not technically part of the event loop. Instead,
 the `nextTickQueue` will be processed after the current operation is
-completed, regardless of the current phase of the event loop. Here, 
+completed, regardless of the current phase of the event loop. Here,
 an *operation* is defined as a transition from the
 underlying C/C++ handler, and handling the JavaScript that needs to be
 executed.
@@ -346,7 +343,7 @@ function someAsyncApiCall(callback) { callback(); }
 
 // the callback is called before `someAsyncApiCall` completes.
 someAsyncApiCall(() => {
-  // since someAsyncApiCall has completed, bar hasn't been assigned any value
+  // since someAsyncApiCall hasn't completed, bar hasn't been assigned any value
   console.log('bar', bar); // undefined
 });
 
@@ -415,8 +412,7 @@ added, which means every day we wait, more potential breakages occur.
 While they are confusing, the names themselves won't change.
 
 *We recommend developers use `setImmediate()` in all cases because it's
-easier to reason about (and it leads to code that's compatible with a
-wider variety of environments, like browser JS.)*
+easier to reason about.*
 
 ## Why use `process.nextTick()`?
 
@@ -491,5 +487,5 @@ myEmitter.on('event', () => {
 });
 ```
 
-[libuv]: http://libuv.org
+[libuv]: https://libuv.org/
 [REPL]: https://nodejs.org/api/repl.html#repl_repl

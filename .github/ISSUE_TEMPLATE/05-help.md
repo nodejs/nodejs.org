@@ -1,6 +1,6 @@
 ---
 name: ⁉️ Need help with Node.js?
-about:  File an issue in our help repo.
+about: File an issue in our help repo.
 
 ---
 <!--
