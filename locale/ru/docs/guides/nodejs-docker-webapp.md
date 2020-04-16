@@ -272,7 +272,7 @@ Node.js с помощью Docker.
 Вы можете найти больше информации о Docker и Node.js в docker по следующим ссылкам:
 
 * [Официальный docker-образ Node.js](https://hub.docker.com/_/node/)
-* [Руководство по лучшим практикам Node.js в Docker](https://github.com/nodejs/docker-node/blob/master/docs/bestpractices.md)
+* [Руководство по лучшим практикам Node.js в Docker](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 * [Официальная документация Docker](https://docs.docker.com/)
 * [Тэг Docker на stack overflow](https://stackoverflow.com/questions/tagged/docker)
 * [Канал Docker на reddit](https://reddit.com/r/docker)
