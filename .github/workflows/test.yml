@@ -36,7 +36,9 @@ jobs:
         run: npm run build
 
       - name: Run tests
-        run: npm test
+        run: |
+          echo "::add-matcher::.github/workflows/remark-lint-problem-matcher.json"
+          npm test
 
       - name: Run HTML validator
         run: npm run test:html
