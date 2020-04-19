@@ -28,7 +28,7 @@ by default. The user will have to run `npm install iotivity-node@n-api` to
 receive the N-API version. For more information on using tags with npm check
 out ["Using dist-tags"][].
 
-# To introduce a dependency on an N-API version of a package
+## To introduce a dependency on an N-API version of a package
 
 To add the N-API version of `iotivity-node` as a dependency, the `package.json`
 will look like this:
