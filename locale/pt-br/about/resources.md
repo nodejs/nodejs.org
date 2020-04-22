@@ -14,7 +14,7 @@ Orientações para a exibição visual da marca Node.js estão disponíveis em [
 <table class="logos">
   <tr>
     <td class="bg-white"><a href="/static/images/logos/nodejs-new-pantone-black.ai"><img src="/static/images/logos/nodejs-new-pantone-black.svg" alt="Node.js on light background"></a></td>
-    <td class="bg-node-gray"><a href="/static/images/logos/nodejs-new-pantone-white.ai"><img src="/static/images/logos/nodejs-new-pantone-white.svg" alt="Node.js on dark background"></a></td>
+    <td class="bg-node-gray"><a href="/static/images/logos/nodejs-new-pantone-white.ai"><img src="/static/images/logos/nodejs-new-pantone-white.svg" alt="Node.js sobre um plano de fundo escuro"></a></td>
   </tr>
   <tr>
     <td><a href="/static/images/logos/nodejs-new-pantone-black.ai">AI padrão do Node.js</a></td>
