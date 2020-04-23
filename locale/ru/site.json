@@ -34,7 +34,7 @@
     "text": "Главная"
   },
   "about": {
-    "link": "о проекте",
+    "link": "about",
     "text": "О проекте",
     "governance": {
       "link": "about/governance",
@@ -66,7 +66,7 @@
     }
   },
   "download": {
-    "link": "загрузка",
+    "link": "download",
     "text": "Загрузка",
     "releases": {
       "link": "download/releases",
@@ -87,7 +87,7 @@
     }
   },
   "docs": {
-    "link": "документация",
+    "link": "docs",
     "text": "Документация",
     "es6": {
       "link": "docs/es6",
@@ -136,7 +136,7 @@
     }
   },
   "security": {
-    "link": "безопасность",
+    "link": "security",
     "text": "Безопасность"
   },
   "blog": {
