@@ -157,7 +157,7 @@ up by language. First, we look at the summary section and see:
 This tells us that 97% of all samples gathered occurred in C++ code and that
 when viewing other sections of the processed output we should pay most attention
 to work being done in C++ (as opposed to JavaScript). With this in mind, we next
-find the [C++] section which contains information about which C++ functions are
+find the \[C++\] section which contains information about which C++ functions are
 taking the most CPU time and see:
 
 ```
@@ -174,7 +174,7 @@ taken up by a function called PBKDF2 which corresponds to our hash generation
 from a user's password. However, it may not be immediately obvious how the lower
 two entries factor into our application (or if it is we will pretend otherwise
 for the sake of example). To better understand the relationship between these
-functions, we will next look at the [Bottom up (heavy) profile] section which
+functions, we will next look at the \[Bottom up (heavy) profile\] section which
 provides information about the primary callers of each function. Examining this
 section, we find:
 
