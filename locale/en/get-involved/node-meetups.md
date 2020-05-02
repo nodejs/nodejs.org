@@ -356,7 +356,7 @@ REQUIREMENTS
 * Frequency of meetups - every 6-9 month
 * How to submit a talk? Contact organizers in the meetup page or use contacts information below
 * Organizer name - Denis Izmaylov
-* Organizer contact info - [Telegram](https://t.me/DenisIzmaylov) [Twitter](https://twitter.com/DenisIzmaylov] [Facebook](https://facebook.com/denis.izmaylov)
+* Organizer contact info - [Telegram](https://t.me/DenisIzmaylov) [Twitter](https://twitter.com/DenisIzmaylov) [Facebook](https://facebook.com/denis.izmaylov)
 
 ### South Africa
 

@@ -129,7 +129,7 @@ Opening processed.txt in your favorite text editor will give you a few different
     215    0.6%          Unaccounted
 ```
 
-This tells us that 97% of all samples gathered occurred in C++ code and that when viewing other sections of the processed output we should pay most attention to work being done in C++ (as opposed to JavaScript). With this in mind, we next find the [C++] section which contains information about which C++ functions are taking the most CPU time and see:
+This tells us that 97% of all samples gathered occurred in C++ code and that when viewing other sections of the processed output we should pay most attention to work being done in C++ (as opposed to JavaScript). With this in mind, we next find the \[C++\] section which contains information about which C++ functions are taking the most CPU time and see:
 
 ```
  [C++]:
@@ -139,7 +139,7 @@ This tells us that 97% of all samples gathered occurred in C++ code and that whe
    3165    8.4%    8.6%  _malloc_zone_malloc
 ```
 
-We see that the top 3 entries account for 72.1% of CPU time taken by the program. From this output, we immediately see that at least 51.8% of CPU time is taken up by a function called PBKDF2 which corresponds to our hash generation from a user's password. However, it may not be immediately obvious how the lower two entries factor into our application (or if it is we will pretend otherwise for the sake of example). To better understand the relationship between these functions, we will next look at the [Bottom up (heavy) profile] section which provides information about the primary callers of each function. Examining this section, we find:
+We see that the top 3 entries account for 72.1% of CPU time taken by the program. From this output, we immediately see that at least 51.8% of CPU time is taken up by a function called PBKDF2 which corresponds to our hash generation from a user's password. However, it may not be immediately obvious how the lower two entries factor into our application (or if it is we will pretend otherwise for the sake of example). To better understand the relationship between these functions, we will next look at the \[Bottom up (heavy) profile\] section which provides information about the primary callers of each function. Examining this section, we find:
 
 ```
    ticks parent  name
