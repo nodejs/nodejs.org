@@ -207,7 +207,7 @@ pkgin -y install nodejs
 
 ## Nodenv
 
-`nodenv` is a lightweight node version manager, similar to `nvm`. It's simple and predictable. A rich plugin ecosystem lets you tailor it to suit your needs. Use `nodenv` to pick a Node version for your application and guarantee that your development environment matches production. 
+`nodenv` is a lightweight node version manager, similar to `nvm`. It's simple and predictable. A rich plugin ecosystem lets you tailor it to suit your needs. Use `nodenv` to pick a Node version for your application and guarantee that your development environment matches production.
 
 Nodenv installation instructions are maintained [on its Github page](https://github.com/nodenv/nodenv#installation). Please visit that page to ensure you're following the latest version of the installation steps.
 
@@ -301,7 +301,7 @@ pkg_add node
 
 Node.js is available in the main repositories under the following packages:
 
-* **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14` 
+* **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
 * **openSUSE Tumbleweed**: `nodejs16`
 * **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, and `nodejs14`
   (The "Web and Scripting Module" must be [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
@@ -376,4 +376,3 @@ IBM&reg; SDK for Node.js - z/OS&reg; is available in two installation formats,
 SMP/E and PAX. Select the installation format that applies to you:
 * [Installing and configuring SMP/E edition of Node.js on z/OS](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/smpe.htm)
 * [Installing and configuring PAX edition of Node.js on z/OS](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/paxz.htm)
- 

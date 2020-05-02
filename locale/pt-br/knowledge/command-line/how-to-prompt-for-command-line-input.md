@@ -1,5 +1,5 @@
 ---
-title: Como solicitar entrada do usuário a partir de um script de linha de comando? 
+title: Como solicitar entrada do usuário a partir de um script de linha de comando?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - javascript
