@@ -19,7 +19,7 @@ Currently there are two ways to contribute, the first is **submiting new feature
 
 In both cases the workflow is different, please check how it is done in each case.
 
-### If you want to submit a new feature or a bugfix
+### To submit a new feature or a bugfix
 
 Please contribute! There are plenty of [good first issues](https://github.com/nodejs/nodejs.org/labels/good%20first%20issue) to work on. To get started, you have to [fork](https://github.com/nodejs/nodejs.org/fork) this repo to your own GitHub account first. Then open up a terminal on your machine and enter the following commands:
 
@@ -34,7 +34,7 @@ This will start the development server on `http://localhost:8080/en/`. This shou
 
 If you want to submit a new feature or a bugfix, the best way is to create the changes in a separate branch, e.g.: `git checkout -b feature/mycoolfeature`. This will make it easier for you to submit a pull request and get your feature merged.
 
-### If you want to translate content into other languages
+### To translate content into other languages
 
 If you want to contribute in the translation to other languages or improve the current one, it isn't necessary that you work from Github, you can and should do it through Growdin, this is de correct workflow.
 
