@@ -15,8 +15,6 @@ This repo's issues section has become the primary home for the Website WG's coor
 
 ## Contributing
 
-How can you contribute?
-
 Currently there are two ways to contribute, the first is **submiting new features and/or solving bugfix** and the second is **translating content to other languages**.
 
 In both cases the workflow is different, please check how it is done in each case.
