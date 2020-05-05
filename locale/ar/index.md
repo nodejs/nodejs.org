@@ -15,9 +15,6 @@ labels:
   api: API Docs
   version-schedule-prompt: أو انظر إلى
   version-schedule-prompt-link-text: أجندة LTS.
-  newsletter: نعم
-  newsletter-prefix: قم بالانضمام الى
-  newsletter-postfix: " الرسالة الإخبارية الشّهريّة عن Node.js "
 ---
 
 Node.js® هو إطار عمل مبني على محرك [Chrome V8](https://v8.dev/).
