@@ -42,7 +42,7 @@ Crowdin is an online tool that facilitates the user experience for the translato
 
 Website translations are handled via [Crowdin](https://crowdin.com/project/nodejs-website).
 
-To help with localization, please read the [TRANSLATION](https://github.com/nodejs/nodejs.org/blob/master/TRANSLATION.md) guide.
+To help with localization, please read the [TRANSLATION](TRANSLATION.md) guide.
 
 ## Layout
 
