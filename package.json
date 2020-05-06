@@ -21,7 +21,8 @@
     "test:lint:lockfile": "lockfile-lint --allowed-hosts npm github.com --allowed-schemes https: --empty-hostname false --type npm --path package-lock.json",
     "test:lint": "npm-run-all --parallel test:lint:*",
     "test:html": "node scripts/vnu-jar.js",
-    "test:unit": "tape tests/**/*.test.js | faucet"
+    "test:unit": "tape tests/**/*.test.js | faucet",
+    "test:check-locale": "node git-hooks/check-locale.js"
   },
   "repository": "nodejs/nodejs.org",
   "author": "Node.js Website Working Group",
@@ -69,6 +70,7 @@
     "cross-env": "^7.0.2",
     "delay-cli": "^1.1.0",
     "faucet": "0.0.1",
+    "husky": "^4.2.5",
     "linkinator": "^2.0.6",
     "lockfile-lint": "^4.2.2",
     "nock": "^12.0.3",
@@ -83,5 +85,10 @@
     "stylelint-config-twbs-bootstrap": "^2.0.2",
     "tape": "^5.0.0",
     "vnu-jar": "20.3.16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test:check-locale"
+    }
   }
 }
