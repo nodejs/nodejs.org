@@ -15,7 +15,7 @@ This repo's issues section has become the primary home for the Website WG's coor
 
 ## Contributing
 
-Currently there are two ways to contribute, the first is **submiting new features and/or solving bugfix** and the second is **translating content to other languages**.
+There are two ways to contribute to this project. The first is **submitting new features or fixing bugs** and the second is **translating content to other languages**.
 
 In both cases the workflow is different, please check how it is done in each case.
 
@@ -36,7 +36,7 @@ If you want to submit a new feature or a bugfix, the best way is to create the c
 
 ### To translate content into other languages
 
-If you want to contribute in the translation to other languages or improve the current one, it isn't necessary that you work from Github, you can and should do it through Growdin, this is de correct workflow.
+If you want to help translate to other languages or improve existing translations, it isn't necessary to work from Github. You can and should do it through Growdin, this is the correct workflow.
 
 Crowdin is an online tool that facilitates the user experience for the translator, here is more information:
 
