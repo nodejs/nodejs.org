@@ -128,6 +128,12 @@ from source:
 nvm uninstall 8
 ```
 
+## Nodenv
+
+`nodenv` is a lightweight node version manager, similar to `nvm`. It's simple and predictable. A rich plugin ecosystem lets you tailor it to suit your needs. Use `nodenv` to pick a Node version for your application and guarantee that your development environment matches production. 
+
+Nodenv installation instructions are maintained [on its Github page](https://github.com/nodenv/nodenv#installation). Please visit that page to ensure you're following the latest version of the installation steps.
+
 ## OpenBSD
 
 Node.js is available through the ports system.
