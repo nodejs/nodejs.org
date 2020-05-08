@@ -22,7 +22,7 @@
     "test:lint": "npm-run-all --parallel test:lint:*",
     "test:html": "node scripts/vnu-jar.js",
     "test:unit": "tape tests/**/*.test.js | faucet",
-    "test:check-locale": "node git-hooks/check-locale.js"
+    "test:git:locale": "node git-hooks/locale.js"
   },
   "repository": "nodejs/nodejs.org",
   "author": "Node.js Website Working Group",
@@ -85,5 +85,10 @@
     "stylelint-config-twbs-bootstrap": "^2.0.2",
     "tape": "^5.0.0",
     "vnu-jar": "20.3.16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test:git:locale"
+    }
   }
 }
