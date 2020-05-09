@@ -15,12 +15,12 @@ title: Installing Node.js via package manager
 * [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
 * [IBM i](#ibm-i)
+* [macOS](#macos)
 * [NetBSD](#netbsd)
-* [nvm](#nvm)
 * [Nodenv](#nodenv)
+* [nvm](#nvm)
 * [OpenBSD](#openbsd)
 * [openSUSE and SLE](#opensuse-and-sle)
-* [macOS](#macos)
 * [SmartOS and illumos](#smartos-and-illumos)
 * [Solus](#solus)
 * [Void Linux](#void-linux)
@@ -88,83 +88,6 @@ yum install nodejs12
 
 Node.js can also be installed with the IBM i Access Client Solutions product. See [this support document](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) for more details
 
-## NetBSD
-
-Node.js is available in the pkgsrc tree:
-
-```bash
-cd /usr/pkgsrc/lang/nodejs && make install
-```
-
-Or install a binary package (if available for your platform) using pkgin:
-
-```bash
-pkgin -y install nodejs
-```
-
-## nvm
-Node Version Manager is a bash script used to manage multiple released Node.js versions. It allows
-you to perform operations like install, uninstall, switch version, etc.
-To install nvm, use this [install script](https://github.com/nvm-sh/nvm#install--update-script).
-
-On Unix / OS X systems Node.js built from source can be installed using
-[nvm](https://github.com/creationix/nvm) by installing into the location that nvm expects:
-
-```bash
-env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
-```
-
-After this you can use `nvm` to switch between released versions and versions
-built from source.
-For example, if the version of Node.js is v8.0.0-pre:
-
-```bash
-nvm use 8
-```
-
-Once the official release is out you will want to uninstall the version built
-from source:
-
-```bash
-nvm uninstall 8
-```
-
-## Nodenv
-
-`nodenv` is a lightweight node version manager, similar to `nvm`. It's simple and predictable. A rich plugin ecosystem lets you tailor it to suit your needs. Use `nodenv` to pick a Node version for your application and guarantee that your development environment matches production. 
-
-Nodenv installation instructions are maintained [on its Github page](https://github.com/nodenv/nodenv#installation). Please visit that page to ensure you're following the latest version of the installation steps.
-
-## OpenBSD
-
-Node.js is available through the ports system.
-
-```bash
-/usr/ports/lang/node
-```
-
-Using [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
-
-```bash
-pkg_add node
-```
-
-## openSUSE and SLE
-
-Node.js is available in the main repositories under the following packages:
-
-* **openSUSE Leap 42.2**: `nodejs4`
-* **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
-* **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
-* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`
-  (The "Web and Scripting Module" must be [added before installing](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).)
-
-For example, to install Node.js 4.x on openSUSE Leap 42.2, run the following as root:
-
-```bash
-zypper install nodejs4
-```
-
 ## macOS
 
 Download the [macOS Installer](https://nodejs.org/en/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
@@ -204,6 +127,83 @@ Or build manually from pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
+```
+
+## NetBSD
+
+Node.js is available in the pkgsrc tree:
+
+```bash
+cd /usr/pkgsrc/lang/nodejs && make install
+```
+
+Or install a binary package (if available for your platform) using pkgin:
+
+```bash
+pkgin -y install nodejs
+```
+
+## Nodenv
+
+`nodenv` is a lightweight node version manager, similar to `nvm`. It's simple and predictable. A rich plugin ecosystem lets you tailor it to suit your needs. Use `nodenv` to pick a Node version for your application and guarantee that your development environment matches production. 
+
+Nodenv installation instructions are maintained [on its Github page](https://github.com/nodenv/nodenv#installation). Please visit that page to ensure you're following the latest version of the installation steps.
+
+## nvm
+Node Version Manager is a bash script used to manage multiple released Node.js versions. It allows
+you to perform operations like install, uninstall, switch version, etc.
+To install nvm, use this [install script](https://github.com/nvm-sh/nvm#install--update-script).
+
+On Unix / OS X systems Node.js built from source can be installed using
+[nvm](https://github.com/creationix/nvm) by installing into the location that nvm expects:
+
+```bash
+env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
+```
+
+After this you can use `nvm` to switch between released versions and versions
+built from source.
+For example, if the version of Node.js is v8.0.0-pre:
+
+```bash
+nvm use 8
+```
+
+Once the official release is out you will want to uninstall the version built
+from source:
+
+```bash
+nvm uninstall 8
+```
+
+## OpenBSD
+
+Node.js is available through the ports system.
+
+```bash
+/usr/ports/lang/node
+```
+
+Using [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenBSD:
+
+```bash
+pkg_add node
+```
+
+## openSUSE and SLE
+
+Node.js is available in the main repositories under the following packages:
+
+* **openSUSE Leap 42.2**: `nodejs4`
+* **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
+* **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
+* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`
+  (The "Web and Scripting Module" must be [added before installing](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).)
+
+For example, to install Node.js 4.x on openSUSE Leap 42.2, run the following as root:
+
+```bash
+zypper install nodejs4
 ```
 
 ## SmartOS and illumos
