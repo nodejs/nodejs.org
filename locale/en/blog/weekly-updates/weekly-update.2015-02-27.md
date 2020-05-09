@@ -24,7 +24,7 @@ _Note: version **1.4.0** was tagged and built but not released. A libuv bug was 
   * [#7171](https://github.com/npm/npm/issues/7171) Warn that `engineStrict` in `package.json` will be going away in the next major version of npm (coming soon!)
 * **libuv**: Upgrade to 1.4.2. See [libuv ChangeLog](https://github.com/libuv/libuv/blob/v1.x/ChangeLog) for details of fixes.
 
-# ARM offers support for io.js on ARMv8
+## ARM offers support for io.js on ARMv8
 
 ARM contacted Rod Vagg, lead of the io.js Build Working Group, to offer their support to the io.js project. ARM and their hardware partners are on track to make ARMv8 a viable server platform and the nimble nature of server-side JavaScript make it a perfect fit to run on the new ARM.
 
@@ -34,7 +34,7 @@ From the beginning of the io.js project, Rod has championed the role of ARM for 
 
 The build team is in the process of being given access to the Linaro ARMv8 Server Cluster for integration with the io.js CI platform, which should eventually lead to regular ARMv8 binary releases.
 
-# Community Updates
+## Community Updates
 
 * [**Reconciliation Proposal**](https://github.com/nodejs/node/issues/978): The io.js project is preparing a plan for reconciliation that can be brought to The Node.js Foundation. Input from the community is very important at this early stage so please leave a comment.
 * **New internal C++ Streams API**: A [fresh C++ Streams API](https://github.com/nodejs/node/commit/b9686233fc0be679d7ba1262b611711629ee334e) landed in io.js this week, allowing you to wrap a TLS stream into another TLS stream.
@@ -47,7 +47,7 @@ The build team is in the process of being given access to the Linaro ARMv8 Serve
 * **iojs-cn - New io.js Chinese Blog**: Similarly to the iojs-jp community, the iojs-cn community created a [localized blog](http://cn.iojs.org/) to publish posts about io.js to in their language. Make sure to visit if you're curious about iojs-cn or Chinese news about io.js!
 * **[Roadmap Slides Review](https://www.youtube.com/watch?v=etI_UD4wXlo)** - A review of the roadmap slides before they were released to ensure they met with the message the project upholds.
 
-# io.js Support Added
+## io.js Support Added
 
 * **[Wallaby.js](http://wallabyjs.com/)**, a while-you-write testing library for JavaScript, hit version 1.0 and [added support for io.js](http://dm.gl/2015/02/23/wallaby-version-one/)!
 * **[jsdom](https://github.com/tmpvar/jsdom)**, an implementation of the WHATWG DOM and HTML standards, just hit [version 4.0.0](https://github.com/tmpvar/jsdom/blob/master/Changelog.md#400), which added a _requirement_ of io.js.

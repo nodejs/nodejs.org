@@ -27,7 +27,7 @@ are in support of this goal.
 
 This is our take on how these activities fit together.
 
-# Key strategies
+## Key strategies
 
 Several key strategies are in place to build the safety
 net in order to enable change/innovation while maintaining
@@ -45,7 +45,7 @@ quality. These include:
 * Performance Benchmarks
 * Tools
 
-# Release Types
+## Release Types
 
 The Node.js project maintains 3 key types of releases
 
@@ -61,7 +61,7 @@ to Current and LTS releases in a more controlled manner,
 such that the level of quality/stability increases at
 each level.
 
-## Nightlies
+### Nightlies
 
 These are built from master and contain the very latest changes
 that have been landed. If you want to try out the bleeding edge
@@ -69,7 +69,7 @@ these are the binaries to use. There is no additional testing
 on these releases, however, the standard Node.js unit tests are
 run for each change landed so these will most often be usable.
 
-## Current
+### Current
 
 Changes which have landed in master are backported to Current
 on a regular basis. In general all changes that land in master
@@ -92,7 +92,7 @@ If you want to try out the latest with a reasonable expectation
 that your application will continue to run, these are the releases
 to use.
 
-## LTS
+### LTS
 
 Once changes have been proven in the Current stream, they are candidates
 for the LTS streams. In the first stage of LTS (Active)
@@ -122,7 +122,7 @@ You can read more about the LTS releases [here](https://github.com/nodejs/lts).
 If you want the best level of stability/quality for your production
 applications these are the releases to use.
 
-# Change flow processes
+## Change flow processes
 
 We've already touched on this in the discussion on the different release
 types but we'll expand on this strategy here.
@@ -166,7 +166,7 @@ where those changes can be used/validated and a funnel through which
 these can flow in an appropriate manner into releases used by more
 risk-averse community members.
 
-# Enhancement Proposal Process
+## Enhancement Proposal Process
 
 Some changes are of such scope that they cannot simply be reviewed in a
 pull request. There are often larger questions that will factor into the
@@ -184,7 +184,7 @@ on implementation. The result being that the merits of the concept can be
 discussed at the appropriate level of abstraction without having to
 review all of the technical details.
 
-# Automation and Testing
+## Automation and Testing
 
 Automation and Testing are key strategies that go hand in hand in allowing
 rapid change in a safe manner.
@@ -215,7 +215,7 @@ These levels include:
 * Development Workflows
 * Use Case Testing
 
-## Functional Tests
+### Functional Tests
 
 Functional tests are the first level of defense. Our collaborator guidelines
 require test cases for all new features added, and our collaborators set a
@@ -232,7 +232,7 @@ the tests pass reliably and consistently. If you watch the continuous
 integration (ci) runs you will see that they are mostly green
 and intermittent failures are rare.
 
-## Platform/OS Coverage
+### Platform/OS Coverage
 
 This is not a type of test by itself. But by applying the strategy of
 running tests across a broad range of platforms and OS types and levels it
@@ -247,7 +247,7 @@ Our strategy is to test on a broad range of platforms both to ensure Node.js
 works on our supported platforms, but also to leverage the diversity to
 uncover as many problems as early as possible.
 
-## Dependency Testing
+### Dependency Testing
 
 Node.js has a number of key dependencies. It's important that we ensure
 that any changes we apply to those dependencies don't have a negative effect.
@@ -259,7 +259,7 @@ making changes to the V8 tree.
 We don't currently run the tests for other dependencies, but the delta in
 the Node.js tree for the dependencies other than V8 is more limited.
 
-## Module Tests
+### Module Tests
 
 Module tests are the next level of defense. They help to validate that
 changes are not going to break for end users. Most applications use
@@ -274,7 +274,7 @@ Current and LTS releases and we are working to increase that frequency.
 You can read more about our module testing efforts in
 [https://github.com/nodejs/citgm/](https://github.com/nodejs/citgm/).
 
-## Stress Tests
+### Stress Tests
 
 Some problems only surface after running for a long time. Stress tests help
 to flush those out by running certain scenarios over a prolonged period
@@ -283,7 +283,7 @@ of time.
 We don't have any stress tests running at this point but it will be our next
 priority after we have module testing running at an appropriate frequency.
 
-## Development Workflows
+### Development Workflows
 
 Development Workflows is another level up from Module Testing. It aims
 to test common development workflows to ensure changes will not introduce
@@ -292,7 +292,7 @@ any regressions to those flows.
 These are more work to put in place and run but they will be next on our
 list after getting stress tests in place.
 
-## Use Case Testing
+### Use Case Testing
 
 This would be the next logical step after Development Workflows, testing
 for the common use cases for Node.js.
@@ -301,7 +301,7 @@ Our current strategy is to get some of this coverage through the
 benchmarking that we put in place, but it is another area we can work
 on once we have the other levels of testing in place.
 
-# Performance Benchmarks
+## Performance Benchmarks
 
 While ensuring functional stability is good, its not enough. We also need
 to make sure that performance is not degraded as changes flow in.
@@ -318,7 +318,7 @@ across the major Node.js versions. You can view this data at:
 This data allows us to ensure we avoid performance regressions as
 changes flow in.
 
-# In Summary
+## In Summary
 
 This may have been a bit of a long read but I hope it has put a number
 of the activities you may have seen in the Node.js community over the last
