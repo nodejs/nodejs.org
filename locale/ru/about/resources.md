@@ -29,4 +29,3 @@ title: Логотипы и графика
     <td><a href="/static/images/logos/nodejs-new-white.ai">Node.js инвертированный AI с минимумом цветов</a></td>
   </tr>
 </table>
-
