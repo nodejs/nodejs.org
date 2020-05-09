@@ -11,7 +11,6 @@ layout: contribute.hbs
 * Для чата в реальном времени о разработке Node.js перейдите на `irc.freenode.net` в канале`#node.js` с [IRC-клиентом](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) или подключитесь в своем веб-браузере к каналу с помощью [веб-чата freenode](https://webchat.freenode.net/#node.js).
 * Официальный аккаунт Node.js в Твиттере ― [nodejs](https://twitter.com/nodejs).
 * [Календарь Фонда Node.js](https://nodejs.org/calendar) со всеми общественными встречами.
-* [Node.js Everywhere](https://newsletter.nodejs.org) официальный ежемесячный блог Node.js
 * [Node.js](https://medium.com/the-node-js-collection) контент, создаваемый сообществом Medium.
 * [Community Committee](https://github.com/nodejs/community-committee) является комитетом высшего уровня в Фонде Node.js, ориентированным на развитие сообщества.
 

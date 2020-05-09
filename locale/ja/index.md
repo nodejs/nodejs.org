@@ -15,9 +15,6 @@ labels:
   api: API ドキュメント
   version-schedule-prompt: または、
   version-schedule-prompt-link-text: LTSのリリーススケジュールをご覧ください。
-  newsletter: true
-  newsletter-prefix: "公式 Node.js ニュースレター"
-  newsletter-postfix: "を購読しましょう。"
 ---
 
 Node.js® は、[Chrome の V8 JavaScript エンジン](https://v8.dev/) で動作する JavaScript 環境です。

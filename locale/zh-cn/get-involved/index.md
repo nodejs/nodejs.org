@@ -11,7 +11,6 @@ layout: contribute.hbs
 * 关于 Node.js 开发的实时对话，请使用 [IRC 客户端](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) 或 [freenode 网页聊天室](https://webchat.freenode.net/#node.js)转到 `irc.freenode.net` 中的 `#node.js` 頻道。
 * Node.js 官方的 Twitter 账号：[nodejs](https://twitter.com/nodejs).
 * [Node.js Foundation calendar](https://nodejs.org/calendar) 是有关于所有 Node.js 团队会议的相关日程安排。
-* [Node.js Everywhere](https://newsletter.nodejs.org) 是 Node.js 官方的月报。
 * [Node.js Collection](https://medium.com/the-node-js-collection) 是一堆在媒体上的社区策划内容集合。
 * [Community Committee](https://github.com/nodejs/community-committee) 是 Node.js 基金会中的高级委员会，专注于社区事务。
 

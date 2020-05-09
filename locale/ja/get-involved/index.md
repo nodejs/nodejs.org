@@ -12,7 +12,6 @@ layout: contribute.hbs
 * For real-time chat about Node.js development go to `irc.freenode.net` in the `#node.js` channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [freenode's WebChat](https://webchat.freenode.net/#node.js).
 * The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
 * The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
-* [Node.js Everywhere](https://newsletter.nodejs.org) is the official Node.js Monthly Newsletter.
 * [Node.js Collection](https://medium.com/the-node-js-collection) is a collection of community-curated content on Medium.
 * The [Community Committee](https://github.com/nodejs/community-committee) is a top-level committee in the Node.js Foundation focused on community-facing efforts.
 
@@ -25,7 +24,6 @@ layout: contribute.hbs
 * Node.js 開発についてのリアルタイムチャットは、[IRC クライアント](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) を使って `#node.js` チャンネルで `irc.freenode.net` に行くか、または [freenode's WebChat](https://webchat.freenode.net/#node.js) を使ってあなたの Web ブラウザでそのチャンネルに接続してください。
 * Node.js 公式 Twitter アカウントは [nodejs](https://twitter.com/nodejs) です。
 * [Node.js Foundation calendar](https://nodejs.org/calendar) とすべての公開チームミーティング。
-* [Node.js Everywhere](https://newsletter.nodejs.org) は、公式の Node.js マンスリーニュースレターです。
 * [Node.js Collection](https://medium.com/the-node-js-collection) は、Medium 上のコミュニティキュレーションコンテンツのコレクションです。
 * [Community Committee](https://github.com/nodejs/community-committee) は、Node.js Foundation のトップレベルの委員会で、コミュニティに向けた取り組みに焦点を当てています。
 
