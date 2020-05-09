@@ -17,6 +17,7 @@ title: Installing Node.js via package manager
 * [IBM i](#ibm-i)
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
+* [Nodenv](#nodenv)
 * [OpenBSD](#openbsd)
 * [openSUSE and SLE](#opensuse-and-sle)
 * [macOS](#macos)
