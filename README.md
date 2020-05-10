@@ -36,7 +36,7 @@ If you want to submit a new feature or a bugfix, the best way is to create the c
 
 ### To translate content into other languages
 
-If you want to help translate to other languages or improve existing translations, it isn't necessary to work from Github. You can and should do it through Growdin, this is the correct workflow.
+If you want to help translate to other languages or improve existing translations, it isn't necessary to work from Github. You can and should do it through Crowdin, this is the correct workflow.
 
 Crowdin is an online tool that facilitates the user experience for the translator, here is more information:
 
