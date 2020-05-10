@@ -15,9 +15,6 @@ labels:
   api: Documentation API
   version-schedule-prompt: Ou regardez le
   version-schedule-prompt-link-text: Planning LTS.
-  newsletter: true
-  newsletter-prefix: Sign up for
-  newsletter-postfix: ", the official Node.js Monthly Newsletter."
 ---
 
 Node.js® est un environnement d’exécution JavaScript construit sur le [moteur JavaScript V8 de Chrome](https://v8.dev/).
