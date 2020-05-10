@@ -15,6 +15,12 @@ This repo's issues section has become the primary home for the Website WG's coor
 
 ## Contributing
 
+There are two ways to contribute to this project. The first is **submitting new features or fixing bugs** and the second is **translating content to other languages**.
+
+In both cases the workflow is different, please check how it is done in each case.
+
+### To submit a new feature or a bugfix
+
 Please contribute! There are plenty of [good first issues](https://github.com/nodejs/nodejs.org/labels/good%20first%20issue) to work on. To get started, you have to [fork](https://github.com/nodejs/nodejs.org/fork) this repo to your own GitHub account first. Then open up a terminal on your machine and enter the following commands:
 
 ```bash
@@ -28,7 +34,17 @@ This will start the development server on `http://localhost:8080/en/`. This shou
 
 If you want to submit a new feature or a bugfix, the best way is to create the changes in a separate branch, e.g.: `git checkout -b feature/mycoolfeature`. This will make it easier for you to submit a pull request and get your feature merged.
 
-### Layout
+### To translate content into other languages
+
+If you want to help translate to other languages or improve existing translations, it isn't necessary to work from Github. You can and should do it through Crowdin, this is the correct workflow.
+
+Crowdin is an online tool that facilitates the user experience for the translator, here is more information:
+
+Website translations are handled via [Crowdin](https://crowdin.com/project/nodejs-website).
+
+To help with localization, please read the [TRANSLATION](TRANSLATION.md) guide.
+
+## Layout
 
 * Page templates are in `/layouts`
 * Global styles are in `/layouts/css`
@@ -40,7 +56,7 @@ If you want to submit a new feature or a bugfix, the best way is to create the c
   * The top of each Markdown file is a block of YAML for page specific localization information that is passed to various templates.
   * The bulk of the Markdown content for each page is referenced as `{{{content}}}` in the corresponding template.
 
-### Serve/Build Options
+## Serve/Build Options
 
 * `DEFAULT_LOCALE={{locale}} npm run serve` builds only the files present in the specified locale folder (will display 404 if file is not present)
 * `DEFAULT_LOCALE={{locale}} npm run serve -- --preserveLocale` builds the files present in the specified locale folder and adds the pages present in the English locale that are missing.
@@ -48,11 +64,11 @@ If you want to submit a new feature or a bugfix, the best way is to create the c
 * `npm run serve -- --preserveLocale` builds all languages and adds the pages present in the English locale that are missing.
 * Multiple locales can be built by using comma separated values in the `DEFAULT_LOCALE` variable. i.e: `DEFAULT_LOCALE=en,es,it`
 
-### Deployment
+## Deployment
 
 Full set up is in <https://github.com/nodejs/build/tree/master/setup/www> minus secrets and certificates. The webhook is setup on GitHub for this project and talks to a small Node server on the host which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
 
-### Content vs. Code
+## Content vs. Code
 
 The Website Working Group is primarily concerned with the code and overall structure of the website.
 
@@ -61,7 +77,3 @@ The Website WG defers to these WGs on matters of content and routinely adds coll
 working groups as they add and improve content on the website. In other words, the Website WG is not
 an *editorial* Working Group except when no other Working Group has taken responsibility for a
 content area.
-
-### Localization
-
-Website translations are handled via [Crowdin](https://crowdin.com/project/nodejs-website). To help with localization, please read the [TRANSLATION](https://github.com/nodejs/nodejs.org/blob/master/TRANSLATION.md) guide.
