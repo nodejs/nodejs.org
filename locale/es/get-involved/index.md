@@ -20,7 +20,7 @@ layout: contribute.hbs
 * La [Documentación oficial de la API](https://nodejs.org/api/) detalla la API de Node.
 * [NodeSchool.io](https://nodeschool.io/) le enseñará conceptos de Node.js de forma interactiva mediante juegos utilizando la línea de comandos.
 * La [etiqueta de Node.js en Stack Overflow](https://stackoverflow.com/questions/tagged/node.js) colecciona nueva información cada día.
-* [La etiqueta DEV Community Node.js](https://dev.to/t/node) es un lugar para compartir proyectos, artículos y tutoriales de Node.js, así como para iniciar debates y hacer comentarios sobre temas relacionados con Node.js. Todos los desarrolladores son bienvenidos a ser parte de esta comunidad.
+* [La etiqueta DEV Community Node.js](https://dev.to/t/node) es un lugar para compartir proyectos, artículos y tutoriales de Node.js, así como para iniciar debates y pedir información sobre temas relacionados con Node.js. Desarrolladores de todos los niveles son bienvenidos a participar.
 * [Nodeiflux](https://discordapp.com/invite/vUsrbjd) es una comunidad amigable de desarrolladores de back-end de Node.js que se apoyan mutuamente en Discord.
 
 ## Sitios de la comunidad internacional y proyectos
