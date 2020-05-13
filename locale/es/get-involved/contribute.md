@@ -28,7 +28,7 @@ El proyecto Node.js se gestiona actualmente en varios repositorios de GitHub sep
 
 ## Aportaciones de Código
 
-Si desea corregir bugs fix o agregar una nueva funcionalidad a Node.js, asegúrese de consultar las <a href = "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#pull-requests">Pautas de contribución de Node.js</a>. El proceso de revisión por parte de los colaboradores actuales para todas las aportaciones al proyecto se explica también en ese enlace.
+Si desea corregir bugs fix o agregar una nueva funcionalidad a Node.js, asegúrese de consultar las [Pautas de contribución de Node.js](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#pull-requests). El proceso de revisión por parte de los colaboradores actuales para todas las aportaciones al proyecto se explica también en ese enlace.
 
 Si se pregunta cómo comenzar, consulte [Node Todo](https://www.nodetodo.org/), puede guiarle con su primera aportación.
 
@@ -44,4 +44,4 @@ Al convertirse en un colaborador, los contribuyentes pueden tener aún más impa
 * participación en los Working Groups
 * otra participación en la Comunidad de Node.js
 
-Si las personas que realizan aportaciones valiosas no creen que se les haya considerado para comprometerse con el proyecto y acceder, pueden [registrar una issue](https://github.com/nodejs/TSC/issues) o <a href = "https://github.com/nodejs/TSC#current-members">contactar a un miembro del TSC</a> directamente.
+Si las personas que realizan aportaciones valiosas no creen que se les haya considerado para comprometerse con el proyecto y acceder, pueden [registrar una issue](https://github.com/nodejs/TSC/issues) o [contactar a un miembro del TSC](https://github.com/nodejs/TSC#current-members) directamente.
