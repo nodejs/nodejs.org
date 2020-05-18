@@ -33,4 +33,4 @@ layout: docs.hbs
 
 ## Known issues
 
- * [Native dependencies on macOS Catalina (v10.15)](https://github.com/nodejs/node-gyp/blob/master/macOS_Catalina.md)
+* [Native dependencies on macOS Catalina (v10.15)](https://github.com/nodejs/node-gyp/blob/master/macOS_Catalina.md)
