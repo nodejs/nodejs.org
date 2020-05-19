@@ -12,7 +12,6 @@
   "by": "от",
   "all-downloads": "Все варианты загрузки",
   "nightly": "Ночные сборки",
-  "chakracore-nightly": "Ночные сборки Node-ChakraCore",
   "unofficial-builds": "Неофициальные сборки",
   "previous": "Предыдущий",
   "next": "Следующий",
@@ -27,7 +26,7 @@
     },
     {
       "link": "feed/vulnerability.xml",
-      "text": "Node.js Blog: Отчеты об уязвимостях"
+      "text": "Блог Node.js: Отчеты об уязвимостях"
     }
   ],
   "home": {
@@ -127,7 +126,7 @@
       "text": "Участие"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "Правила"
     },
     "node-meetups": {

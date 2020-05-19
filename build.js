@@ -273,8 +273,8 @@ function getSource (callback) {
         },
         banner: {
           visible: false,
-          text: 'New security releases now available for all release lines',
-          link: '/en/blog/vulnerability/february-2020-security-releases/'
+          text: 'Security releases may be necessary for all release lines',
+          link: '/en/blog/vulnerability/april-2020-openssl-updates/'
         }
       }
     }

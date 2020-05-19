@@ -1,19 +1,18 @@
 {
   "title": "Node.js",
-  "editOnGithub":"Editar en Github",
   "author": "Node.js",
   "url": "https://nodejs.org/es/",
   "locale": "es",
   "language": "Español",
   "languageEnglishVersion": "Spanish",
-  "scrollToTop": "Vuelve al comienzo",
-  "reportNodeIssue": "Informe de un problema con Node.js",
-  "reportWebsiteIssue": "Informe de un problema con el sitio",
+  "scrollToTop": "Vuelve arriba",
+  "reportNodeIssue": "Reporte un problema con Node.js",
+  "reportWebsiteIssue": "Reporte un problema con el sitio",
   "getHelpIssue": "Consiga Ayuda",
   "by": "por",
   "all-downloads": "Todas las opciones de descarga",
   "nightly": "Versiones Nightly",
-  "chakracore-nightly": "Versiones Node-ChakraCore Nightly",
+  "unofficial-builds": "Construcciones no oficiales",
   "previous": "Anterior",
   "next": "Siguiente",
   "feeds": [
@@ -38,7 +37,7 @@
     "text": "Acerca",
     "governance": {
       "link": "about/governance",
-      "text": "Gobierno"
+      "text": "Dirección"
     },
     "community": {
       "link": "about/community",
@@ -58,7 +57,7 @@
     },
     "trademark": {
       "link": "about/trademark",
-      "text": "Marca"
+      "text": "La Marca"
     },
     "privacy": {
       "link": "about/privacy",
@@ -83,7 +82,7 @@
       "verify-text": "Cómo verificarlo"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive"
+      "text": "Instalación de Node.js a través del archivo binario"
     }
   },
   "docs": {
@@ -113,22 +112,26 @@
   },
   "getinvolved": {
     "link": "get-involved",
-    "text": "Participa",
+    "text": "Participe",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
-      "text": "Programa + Aprende"
+      "text": "Programe + Aprenda"
     },
     "collab-summit": {
       "link": "get-involved/collab-summit",
-      "text": "Colabora en el Summit"
+      "text": "Colabore en el Summit"
     },
     "contribute": {
       "link": "get-involved/contribute",
-      "text": "Contribuye"
+      "text": "Contribuya"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "Código de Conducta"
+    },
+    "node-meetups": {
+      "link": "get-involved/node-meetups",
+      "text": "Meetups Node.js"
     }
   },
   "security": {
@@ -147,5 +150,6 @@
     "pages": {
       "changelog": "Registro de Cambios"
     }
-  }
+  },
+  "editOnGithub":"Editar en Github"
 }

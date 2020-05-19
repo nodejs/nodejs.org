@@ -58,6 +58,6 @@ Solo perché Node.js è progettato senza thread, non significa che non è possib
 [Bloccante vs Non Bloccante]: /en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[loop di eventi]: /en/docs/guides/event-loop-timers-and-nexttick/
+[event loop]: /en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: http://rubyeventmachine.com/
 [Twisted]: https://twistedmatrix.com/trac/

@@ -13,7 +13,6 @@
   "by": "توسط",
   "all-downloads": "تمام گزینه‌ها برای دانلود",
   "nightly": "ساخت‌های شبانه",
-  "chakracore-nightly": "ساخت‌های شبانه Node-ChakraCore ",
   "previous": "قبلی",
   "next": "بعدی",
   "feeds": [
@@ -127,7 +126,7 @@
       "text": "مشارکت"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "شیوه تعامل برای مشارکت"
     }
   },

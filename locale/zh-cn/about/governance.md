@@ -17,13 +17,13 @@ Node.js 项目遵循[一致协商][]的工作模式。
 
 关于当前贡献者列表，请看项目中有关 [README.md][] 的说明。
 
-关于贡献者指南在 [COLLABORATOR_GUIDE.md][] 中维护。
+关于贡献者指南在 [collaborator-guide.md][] 中维护。
 
 ## 最高级别的委员会
 
 本项目由[技术指导委员会（TSC）][]和[社区委员会（CommComm）][]共同管理。前者对于项目中高级别的技术负责指导，后者则对指导和扩展社区进行负责。
 
-[COLLABORATOR_GUIDE.md]: https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md
+[collaborator-guide.md]: https://github.com/nodejs/node/blob/master/doc/guides/collaborator-guide.md
 [社区委员会（CommComm）]: https://github.com/nodejs/community-committee/blob/master/Community-Committee-Charter.md
 [一致协商]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [README.md]: https://github.com/nodejs/node/blob/master/README.md#current-project-team-members

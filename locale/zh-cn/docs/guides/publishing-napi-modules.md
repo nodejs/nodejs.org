@@ -19,7 +19,7 @@ layout: docs.hbs
 
 在这个例子中，标记为 `n-api` 的发布版已经确保尽管其版本 1.2.0-3 比 non-N-API 的版本号要延后一些，但如果有人简单通过运行 `npm install iotivity-node` 安装 `iotivity-node`，它不会被安装而只会默认安装 non-N-API。此人应该运行 `npm install iotivity-node@n-api` 得到 N-API 的版本号，有关使用标签的更多详情请查阅 ["使用目标标签"][]。
 
-# 在某个版本的 N-API 包中引入特定的依赖
+## 在某个版本的 N-API 包中引入特定的依赖
 
 为了将 `iotivity-node` 的 N-API 版本作为依赖进行添加安装，`package.json` 应如下形式呈现：
 

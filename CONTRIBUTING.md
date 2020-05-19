@@ -11,7 +11,7 @@ expectations the Node Foundation requires of its contributors.
 * A **Contributor** is any individual creating or commenting on an issue or pull request.
 * A **Collaborator** is a subset of contributors who have been given write access to the repository.
 
-# Logging Issues
+## Logging Issues
 
 Log an issue for any question or problem you might have. When in doubt, log an issue,
 any additional policies about what to include will be provided in the responses. The only
@@ -23,7 +23,7 @@ add appropriate metadata before the issue is addressed.
 Please be courteous, respectful, and every participant is expected to follow the
 project's Code of Conduct.
 
-# Contributions
+## Contributions
 
 Any change to resources in this repository must be through pull requests. This applies to all changes
 to documentation, code, binary files, etc. Even long term collaborators must use
@@ -53,7 +53,7 @@ small minority of issues are brought to the Technical Steering Committee for
 resolution. Discussion and compromise among collaborators is the default
 resolution mechanism.
 
-# Becoming a Collaborator
+## Becoming a Collaborator
 
 Individuals with non-trivial contributions may be added as Collaborators.
 Collaborators are expected to follow this policy and continue to send pull
