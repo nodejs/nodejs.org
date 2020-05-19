@@ -22,7 +22,7 @@
     "test:lint": "npm-run-all --parallel test:lint:*",
     "test:html": "node scripts/vnu-jar.js",
     "test:unit": "tape tests/**/*.test.js | faucet",
-    "test:git:locale": "node .git-hooks/locale.js"
+    "test:i18n": "node tests/scripts/proctect-i18n.js"
   },
   "repository": "nodejs/nodejs.org",
   "author": "Node.js Website Working Group",
