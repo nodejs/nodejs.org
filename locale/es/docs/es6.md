@@ -27,12 +27,6 @@ Puede detallar todas las funciones *in progress* disponibles en cada versión de
 node --v8-options | grep "in progress"
 ```
 
-## ¿Qué ocurre con el performance de una característica en particular?
-
-El equipo V8 trabaja constantemente para mejorar el rendimiento de las nuevas características del lenguaje para eventualmente alcanzar la paridad con sus homólogos nativos o transpilados en EcmaScript 5 y versiones anteriores. El progreso actual se registra en la web [six-speed](https://fhinkel.github.io/six-speed), que muestra el rendimiento de las funciones de ES2015 y ESNext en comparación con sus nativas homólogos ES5.
-
-El trabajo para optimizar las características introducidas con ES2015 y posteriores se coordina a través de un [plan de rendimiento](https://docs.google.com/document/d/1EA9EbfnydAmmU_lM8R_uEMQ-U_v4l9zulePSBkeYWmY), donde se reúne el equipo V8 y coordina áreas que necesitan mejoras, y elaboran documentos para abordar esos problemas.
-
 ## Tengo mi infraestructura configurada para aprovechar la bandera --harmony. ¿Debo eliminarlo?
 
 El comportamiento actual del indicador `--harmony` en Node.js es habilitar solo las funcionalidades en **staged**. Después de todo, ahora es sinónimo de `--es_staging`. Como se mencionó anteriormente, estas son características completas que aún no se han considerado estables. Si desea jugar de forma segura, especialmente en entornos de producción, considere eliminar este indicador de tiempo de ejecución hasta que se envíe de forma predeterminada en V8 y, en consecuencia, en Node.js. Si mantiene esto habilitado, debe estar preparado para futuras actualizaciones de Node.js que puedan romper su código si V8 cambia su semántica para seguir más de cerca el estándar.
