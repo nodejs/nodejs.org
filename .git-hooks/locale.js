@@ -35,10 +35,11 @@ function gitHook(expresion) {
   // Iterate in array for search if RegExp is true or not.
   arrayResults.forEach(file => {
     // Control for search if exist or not file.
-    if (fs.existsSync(path.join(__dirname, '..', file)) && reg.test(path.join(__dirname, '..', file))) {
+    const filepath = path.join(__dirname, '..', file);
+    if (fs.existsSync(filepath) && reg.test(filepath)) {
       // Include path reference into array for resolve result console.
       filesNoChange.push({
-        Path: path.join(__dirname, '..', file)
+        Path: filepath
       })
     }
   })
