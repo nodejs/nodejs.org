@@ -88,7 +88,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test:git:locale"
+      "pre-commit": "npm run test:i18n"
     }
   }
 }
