@@ -25,7 +25,7 @@ const results = execSync('git diff --cached --name-only')
 const arrayResults = results.toString().trim().split('\n')
 
 // Define array files to not change.
-const filesNoChange = []
+const changedLocalizedFiles = []
 
 function gitHook(expresion) {
 
