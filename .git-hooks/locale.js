@@ -22,9 +22,7 @@ const path = require('path')
 const results = execSync('git diff --cached --name-only')
 
 // Create array with all files.
-const arrayResults = results.toString().split('\n')
-// Remove last element with empty line.
-arrayResults.pop()
+const arrayResults = results.toString().trim().split('\n')
 
 // Define array files to not change.
 const filesNoChange = []
