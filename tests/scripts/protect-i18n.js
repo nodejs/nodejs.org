@@ -46,7 +46,7 @@ function gitHook () {
 
   // Show an error and log table with the list of modified files in the "locale" folder.
   if (changedLocalizedFiles.length !== 0) {
-    console.error('\x1b[31m', '\n ❌ You can not commit changes of the following files:', '\x1b[0m')
+    console.error('\n ❌ Translations are handled via Crowdin, and direct changes not allowed. Read more in https://github.com/nodejs/nodejs.org/blob/master/TRANSLATION.md\n    Next files prevented from commit:')
     console.table(changedLocalizedFiles)
     process.exit(1)
   }
