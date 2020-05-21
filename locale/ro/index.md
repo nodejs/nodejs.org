@@ -15,9 +15,6 @@ labels:
   api: API Docs
   version-schedule-prompt: Or have a look at the
   version-schedule-prompt-link-text: Long Term Support (LTS) schedule.
-  newsletter: true
-  newsletter-prefix: Sign up for
-  newsletter-postfix: ", the official Node.js Monthly Newsletter."
 ---
 
 Node.js® is a JavaScript runtime built on [Chrome's V8 JavaScript engine](https://v8.dev/).
