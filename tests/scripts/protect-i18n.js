@@ -35,7 +35,6 @@ function gitHook () {
   arrayResults.forEach(file => {
     // Control for search if exist or not file.
     const filepath = path.join(__dirname, '../..', file)
-    console.log(filepath)
     if (fs.existsSync(filepath) && reg.test(filepath)) {
       // Include path reference into array for resolve result console.
       changedLocalizedFiles.push({
