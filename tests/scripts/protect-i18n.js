@@ -45,7 +45,7 @@ function gitHook () {
 
   // Show an error and log table with the list of modified files in the "locale" folder.
   if (changedLocalizedFiles.length !== 0) {
-    console.error('\n ❌ Translations are handled via Crowdin, and direct changes not allowed. Read more in https://github.com/nodejs/nodejs.org/blob/master/TRANSLATION.md\n    Next files prevented from commit:')
+    console.error('\n ❌ Translations are handled via Crowdin, and direct changes are not allowed. Read more in https://github.com/nodejs/nodejs.org/blob/master/TRANSLATION.md\nPlease revert changes to the following files before committing:')
     console.table(changedLocalizedFiles)
     process.exit(1)
   }
