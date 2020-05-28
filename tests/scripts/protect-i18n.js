@@ -13,6 +13,12 @@
 
 'use strict'
 
+/*
+ * Check Github Action Default environment variables.
+ * More info: https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables#default-environment-variables
+ */
+if (process.env.CI) process.exit()
+
 // Require main dependences.
 const { execSync } = require('child_process')
 const fs = require('fs')
