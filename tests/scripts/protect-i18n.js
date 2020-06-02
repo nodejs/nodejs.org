@@ -25,7 +25,7 @@ const fs = require('fs')
 const path = require('path')
 
 // Execute Git Diff for get all files with changes.
-const results = execSync('git diff --cached --name-only')
+const results = execSync('git diff --cached --name-only locale/ :!locale/en')
 
 // Create array with all files.
 const arrayResults = results.toString().trim().split('\n')
