@@ -34,9 +34,6 @@ const arrayResults = results.toString().trim().split('\n')
 const changedLocalizedFiles = []
 
 function gitHook () {
-  // Define RegExp with reg param.
-  const reg = /locale\/(?!en)/g;
-
   // Iterate in array for search if RegExp is true or not.
   arrayResults.forEach(file => {
     // Control for search if exist or not file.
