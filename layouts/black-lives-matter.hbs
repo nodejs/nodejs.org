@@ -112,6 +112,15 @@
         margin: 0;
       }
     }
+
+    @media not all and (min-resolution: 0.001dpcm) {
+      @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+        h1 {
+          flex-wrap: nowrap;
+          align-items: center;
+        }
+      }
+    }
   </style>
 </head>
 
