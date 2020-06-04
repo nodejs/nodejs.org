@@ -273,7 +273,7 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'New security releases to be made available June 2, 2020',
+          text: 'New security releases are available',
           link: '/en/blog/vulnerability/june-2020-security-releases/'
         }
       }
