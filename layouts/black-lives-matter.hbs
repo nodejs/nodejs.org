@@ -42,13 +42,17 @@
     body {
       background: #333;
       color: #fff;
-      min-width: 80%;
-      max-width: 50%;
-      margin: 0 auto;
+      font-family: system-ui, sans-serif;
     }
 
     section {
-      padding-bottom: 30px;
+      padding: 2rem;
+      max-width: 50ch;
+      margin: 0 auto;
+    }
+
+    .humans {
+      padding: 0;
     }
 
     ul.humans > li {
@@ -58,7 +62,18 @@
     }
 
     h1 {
-      font-size: 5rem
+      font-size: 5rem;
+      line-height: 0.8;
+      font-weight: lighter;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    h1 > span:first-child::before {
+      content: '#';
     }
 
     .center {
@@ -69,8 +84,8 @@
       padding-top: 4rem;
       padding-bottom: 2rem;
     }
-    
-   section#we-are-here-for-you > ul > li {
+
+    section#we-are-here-for-you > ul > li {
       display: inline;
     }
 
@@ -81,12 +96,41 @@
     footer {
       margin-bottom: 2rem;
     }
+
+    @media (max-width: 640px) {
+      h1 {
+        flex-direction: column;
+        place-content: center;
+      }
+
+      h1 > span:first-child::before {
+        position: absolute;
+        transform: translateX(-110%);
+      }
+
+      section {
+        margin: 0;
+      }
+    }
+
+    @media not all and (min-resolution: 0.001dpcm) {
+      @supports (-webkit-appearance: none) and (-webkit-text-stroke-color: transparent) {
+        h1 {
+          flex-wrap: nowrap;
+          align-items: center;
+        }
+      }
+    }
   </style>
 </head>
 
 <body>
-  <h1 class="center space">#BlackLivesMatter</h1>
-  <section id="lives" class='center'>
+  <h1 class="space">
+    <span>Black</span>
+    <span>Lives</span>
+    <span>Matter</span>
+  </h1>
+  <section id="lives">
     <ul class="humans">
       <li>Ahmaud Arbery</li>
       <li>Akai Gurley</li>
@@ -202,8 +246,10 @@
 
  <p>Beginning with our upcoming Collaborator Summit event, and extending beyond, we will be offering mentorship to Black members of the community who wish to become contributors to the Node.js project. If you are interested in this, please send us an email at <a href="mailto:blacklivesmatter@nodejs.org">blacklivesmatter@nodejs.org</a> or direct message us at <a href="https://twitter.com/nodejs">@nodejs</a> on Twitter. We will post more information on how we will be proceeding with this effort as we finalize the details both for the period of the Collaborator summit and beyond that single event.</p>
 
-    <section id="we-are-here-for-you">
-      <p>Please feel welcome to reach out to the <a href="https://github.com/nodejs/node#tsc-technical-steering-committee">Node.js TSC members</a> and <a href="https://github.com/nodejs/community-committee#community-committee-members">Node.js Community Committee members</a> via our email addresses listed in the links, respectively, or via Twitter DMs to the following folks in the project:
+  </section>
+
+  <section id="we-are-here-for-you">
+      <p>Please feel welcome to reach out to the <a href="https://github.com/nodejs/node#tsc-technical-steering-committee">Node.js TSC members</a> and <a href="https://github.com/nodejs/community-committee#community-committee-members">Node.js Community Committee members</a> via our email addresses listed in the links, respectively, or via Twitter DMs to the following folks in the project:</p>
       <ul>
         <li><a href='https://twitter.com/codeekage'>Abraham Jr. Agiri</a></li>
         <li><a href='https://twitter.com/obensource'>Ben Michel</a></li>
@@ -214,7 +260,6 @@
         <li><a href='https://twitter.com/codebytere'>Shelley Vohr</a></li>
         <li><a href='https://twitter.com/bitandbang'>Tierney Cyren</a></li>
       </ul>
-    </section>
   </section>
 
   <section id="temporary">
