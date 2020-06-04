@@ -22,7 +22,8 @@ childProcess.exec('java -version', (error, stdout, stderr) => {
     'Text run is not in Unicode Normalization Form C.',
     // These happen due to the commented out English HTML code some translations have...
     // They should be removed at some point
-    'The document is not mappable to XML 1.0 due to two consecutive hyphens in a comment.'
+    'The document is not mappable to XML 1.0 due to two consecutive hyphens in a comment.',
+    'Property "stroke-color" doesn\'t exist.'
   ].join('|')
 
   const args = [
