@@ -24,7 +24,6 @@ childProcess.exec('java -version', (error, stdout, stderr) => {
     // They should be removed at some point
     'The document is not mappable to XML 1.0 due to two consecutive hyphens in a comment.',
     '"stroke-color": Property "stroke-color" doesn\'t exist.'
-``
   ].join('|')
 
   const args = [
