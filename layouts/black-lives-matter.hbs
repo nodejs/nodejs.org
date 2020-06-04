@@ -74,8 +74,6 @@
 
     h1 > span:first-child::before {
       content: '#';
-      position: absolute;
-      transform: translateX(-110%);
     }
 
     .center {
@@ -104,6 +102,12 @@
         flex-direction: column;
         place-content: center;
       }
+
+      h1 > span:first-child::before {
+        position: absolute;
+        transform: translateX(-110%);
+      }
+
       section {
         margin: 0;
       }
