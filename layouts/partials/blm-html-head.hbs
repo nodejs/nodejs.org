@@ -1,0 +1,124 @@
+  <head>
+  <meta charset="utf-8">
+  <title>{{#if title}}{{ title }} | {{/if}}{{ site.title }}</title>
+
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://api.github.com">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&amp;display=fallback">
+  <link rel="stylesheet" href="https://nodejs.org/static/css/styles.css">
+
+  <meta name="author" content="Node.js">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="#BlackLivesMatter">
+
+  <link rel="apple-touch-icon" href="https://nodejs.org/static/images/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="https://nodejs.org/static/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="https://nodejs.org/static/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="manifest" href="https://nodejs.org/static/images/favicons/manifest.json">
+  <link rel="mask-icon" href="https://nodejs.org/static/images/favicons/safari-pinned-tab.svg" color="#43853d">
+  <link rel="shortcut icon" href="https://nodejs.org/static/images/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#333333">
+  <meta name="msapplication-config" content="https://nodejs.org/static/images/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#333333">
+
+  <meta property="og:site_name" content="Node.js">
+  <meta property="og:title" content="#BlackLivesMatter">
+  <meta property="og:image" content="https://nodejs.org/static/images/logo-hexagon-card.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="224">
+  <meta property="og:image:height" content="256">
+  <meta property="og:description" content="#BlackLivesMatter">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@nodejs">
+  <meta name="twitter:title" content="#BlackLivesMatter">
+  <meta name="twitter:image" content="https://nodejs.org/static/images/logo-hexagon-card.png">
+  <meta name="twitter:image:alt" content="The Node.js Hexagon Logo">
+  <style>
+    body {
+      background: #333;
+      color: #fff;
+      font-family: system-ui, sans-serif;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 50ch;
+      margin: 0 auto;
+    }
+
+    .humans {
+      padding: 0;
+    }
+
+    ul.humans > li {
+      list-style: none;
+      font-size: 1.7rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 5rem;
+      line-height: 0.8;
+      font-weight: lighter;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    h1 > span:first-child::before {
+      content: '#';
+    }
+
+    .center {
+      margin: 0 auto
+    }
+
+    .space {
+      padding-top: 4rem;
+      padding-bottom: 2rem;
+    }
+
+    section#we-are-here-for-you > ul > li {
+      display: inline;
+    }
+
+    section#we-are-here-for-you > ul > li:not(:last-child)::after {
+      content: ', '
+    }
+
+    footer {
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        flex-direction: column;
+        place-content: center;
+      }
+
+      h1 > span:first-child::before {
+        position: absolute;
+        transform: translateX(-110%);
+      }
+
+      section {
+        margin: 0;
+      }
+    }
+
+    @media not all and (min-resolution: 0.001dpcm) {
+      @supports (-webkit-appearance: none) and (-webkit-text-stroke-color: transparent) {
+        h1 {
+          flex-wrap: nowrap;
+          align-items: center;
+        }
+      }
+    }
+  </style>
+</head>
