@@ -272,9 +272,9 @@ function getSource (callback) {
           lts: latestVersion.lts(versions)
         },
         banner: {
-          visible: false,
-          text: 'Security releases may be necessary for all release lines',
-          link: '/en/blog/vulnerability/april-2020-openssl-updates/'
+          visible: true,
+          text: 'New security releases are available',
+          link: '/en/blog/vulnerability/june-2020-security-releases/'
         }
       }
     }
