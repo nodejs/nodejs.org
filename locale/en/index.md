@@ -1,6 +1,5 @@
 ---
 layout: black-lives-matter.hbs
-title: #BlackLivesMatter
 ---
 
 <h1 class="space">
@@ -8,191 +7,190 @@ title: #BlackLivesMatter
   <span>Lives</span>
   <span>Matter</span>
 </h1>
+
 <section id="lives">
-  <ul class="humans">
-    <li>Ahmaud Arbery</li>
-    <li>Akai Gurley</li>
-    <li>Akiel Denkins</li>
-    <li>Alfred Olango</li>
-    <li>Alton Sterling</li>
-    <li>Anthony Hill</li>
-    <li>Anthony Lamar Smith</li>
-    <li>Antwon Rose II</li>
-    <li>Ariane McCree</li>
-    <li>Botham Jean</li>
-    <li>Brandon Webber</li>
-    <li>Brendon Glenn</li>
-    <li>Breonna Taylor</li>
-    <li>Charly Keunang</li>
-    <li>Christian Taylor</li>
-    <li>Christopher Whitfield</li>
-    <li>Danny Ray Thomas</li>
-    <li>Dante Parker</li>
-    <li>Darius Tarver</li>
-    <li>DeAndre Ballard</li>
-    <li>DeJuan Guillory</li>
-    <li>Delrawn Small</li>
-    <li>De’Von Bailey</li>
-    <li>Dontre Hamilton</li>
-    <li>D’ettrick Griffin</li>
-    <li>Emantic Fitzgerald Bradford Jr</li>
-    <li>Eric Garner</li>
-    <li>Eric Logan</li>
-    <li>Ezell Ford</li>
-    <li>Finan H. Berhe</li>
-    <li>Freddie Gray</li>
-    <li>George Floyd</li>
-    <li>Gregory Gunn</li>
-    <li>Gregory Hill Jr</li>
-    <li>JaQuavion Slaton</li>
-    <li>Jamar Clark</li>
-    <li>Jamarion Robinson</li>
-    <li>Jamee Johnson</li>
-    <li>Jemel Roberson</li>
-    <li>Jerame Reid</li>
-    <li>Jimmy Atchison</li>
-    <li>John Crawford III</li>
-    <li>Jonathan Ferrell</li>
-    <li>Jonathan Hart</li>
-    <li>Jordan Baker</li>
-    <li>Jordan Edwards</li>
-    <li>Julius Johnson</li>
-    <li>Kajieme Powell</li>
-    <li>Keith Childress</li>
-    <li>Keith Lamont Scott</li>
-    <li>Kendrec McDade</li>
-    <li>Kwame Jones</li>
-    <li>Laquan McDonald</li>
-    <li>Larry Jackson Jr</li>
-    <li>Manuel Loggins Jr</li>
-    <li>Mario Woods</li>
-    <li>Maurice Granton</li>
-    <li>Michael Brown</li>
-    <li>Michael Dean</li>
-    <li>Mike Ramos</li>
-    <li>Miles Hall</li>
-    <li>Patrick Harmon</li>
-    <li>Philando Castile</li>
-    <li>Quintonio LeGrier</li>
-    <li>Ramarley Graham</li>
-    <li>Robert Lawrence White</li>
-    <li>Rumain Brisbon</li>
-    <li>Ryan Twyman</li>
-    <li>Samuel David Mallard</li>
-    <li>Samuel DuBose</li>
-    <li>Sandra Bland</li>
-    <li>Sean Reed</li>
-    <li>Stephon Clark</li>
-    <li>Steven Demarco Taylor</li>
-    <li>Tamir Rice</li>
-    <li>Terence Crutcher</li>
-    <li>Terrance Franklin</li>
-    <li>Terrence Sterling</li>
-    <li>Tony McDade</li>
-    <li>Tony Robinson</li>
-    <li>Trayvon Martin</li>
-    <li>Victor White III</li>
-    <li>Walter Scott</li>
-    <li>Wendell Allen</li>
-    <li>William Green</li>
-    <li>Willie McCoy</li>
-    <li>Yassin Mohamed</li>
-    <li>&hellip;<a href="https://mappingpoliceviolence.org/">and</a> <a href="https://twitter.com/samswey/status/1259254114606886913">countless</a> <a href="https://apps.npr.org/documents/document.html?id=6933593-NPR-CodeSwitch-Saytheirnameslistv3">more</a> <a href="https://ebwiki.org/">lives</a> not listed here, taken by violence and brutality.</li>
-  </ul>
-  <p>
-    White supremacy and police brutality are global problems. Every Black life
-    lost to police murder globally matters and mattered. The above list
-    contains the names of Black people murdered by police brutality in the
-    U.S. since 2009. This is because the U.S. is the origin of the Black Lives
-    Matter movement and currently the heart of the resistance.
-  </p>
+  
+  * Ahmaud Arbery
+  * Akai Gurley
+  * Akiel Denkins
+  * Alfred Olango
+  * Alton Sterling
+  * Anthony Hill
+  * Anthony Lamar Smith
+  * Antwon Rose II
+  * Ariane McCree
+  * Botham Jean
+  * Brandon Webber
+  * Brendon Glenn
+  * Breonna Taylor
+  * Charly Keunang
+  * Christian Taylor
+  * Christopher Whitfield
+  * Danny Ray Thomas
+  * Dante Parker
+  * Darius Tarver
+  * DeAndre Ballard
+  * DeJuan Guillory
+  * Delrawn Small
+  * De’Von Bailey
+  * Dontre Hamilton
+  * D’ettrick Griffin
+  * Emantic Fitzgerald Bradford Jr
+  * Eric Garner
+  * Eric Logan
+  * Ezell Ford
+  * Finan H. Berhe
+  * Freddie Gray
+  * George Floyd
+  * Gregory Gunn
+  * Gregory Hill Jr
+  * JaQuavion Slaton
+  * Jamar Clark
+  * Jamarion Robinson
+  * Jamee Johnson
+  * Jemel Roberson
+  * Jerame Reid
+  * Jimmy Atchison
+  * John Crawford III
+  * Jonathan Ferrell
+  * Jonathan Hart
+  * Jordan Baker
+  * Jordan Edwards
+  * Julius Johnson
+  * Kajieme Powell
+  * Keith Childress
+  * Keith Lamont Scott
+  * Kendrec McDade
+  * Kwame Jones
+  * Laquan McDonald
+  * Larry Jackson Jr
+  * Manuel Loggins Jr
+  * Mario Woods
+  * Maurice Granton
+  * Michael Brown
+  * Michael Dean
+  * Mike Ramos
+  * Miles Hall
+  * Patrick Harmon
+  * Philando Castile
+  * Quintonio LeGrier
+  * Ramarley Graham
+  * Robert Lawrence White
+  * Rumain Brisbon
+  * Ryan Twyman
+  * Samuel David Mallard
+  * Samuel DuBose
+  * Sandra Bland
+  * Sean Reed
+  * Stephon Clark
+  * Steven Demarco Taylor
+  * Tamir Rice
+  * Terence Crutcher
+  * Terrance Franklin
+  * Terrence Sterling
+  * Tony McDade
+  * Tony Robinson
+  * Trayvon Martin
+  * Victor White III
+  * Walter Scott
+  * Wendell Allen
+  * William Green
+  * Willie McCoy
+  * Yassin Mohamed
+  * &hellip;[and](https://mappingpoliceviolence.org/) [countless]("https://twitter.com/samswey/status/1259254114606886913") 
+    [more]("https://apps.npr.org/documents/document.html?id=6933593-NPR-CodeSwitch-Saytheirnameslistv3") 
+    [lives]("https://ebwiki.org/") 
+    not listed  here, taken by violence and brutality.
+
 </section>
 
-<section>
-  <p>Where you can donate:</p>
-  <ul>
-    <li>Donate to the <a href="https://www.gofundme.com/f/georgefloyd">Official George Floyd Memorial Fund</a>.</li>
-    <li>Donate to the <a href="https://www.gofundme.com/f/i-run-with-maud">I Run With Maud</a> fundraiser for Ahmaud Arbery.</li>
-    <li>Donate to the <a href="https://www.gofundme.com/f/justice-for-mike-ramos">Justice for Mike Ramos</a> fundraiser.</li>
-    <li>Find and donate to bail funds via the <a href="https://www.communityjusticeexchange.org/nbfn-directory">National Bail Fund Network</a>.</li>
-    <li><a href="https://www.facebook.com/reclaimtheblock/">Reclaim the Block</a> has published a <a href="https://docs.google.com/document/d/1yLWGTQIe3967hdc9RSxBq5s6KKZHe-3_mWp5oemd7OA/preview?pru=AAABcpUiX3k*Y6Q4I6UBtkH3lLz9GVLg0A">Google Doc of organizations to donate to.</a></li>
-  </ul>
-  <p>We will update this list as appropriate.</p>
+White supremacy and police brutality are global problems. Every Black life
+lost to police murder globally matters and mattered. The above list
+contains the names of Black people murdered by police brutality in the
+U.S. since 2009. This is because the U.S. is the origin of the Black Lives
+Matter movement and currently the heart of the resistance.
+
+## Where you can donate:
+
+* Donate to the [Official George Floyd Memorial Fund]("https://www.gofundme.com/f/georgefloyd").
+* Donate to the [I Run With Maud](https://www.gofundme.com/f/i-run-with-maud) fundraiser for Ahmaud Arbery.
+* Donate to the [Justice for Mike Ramos](https://www.gofundme.com/f/justice-for-mike-ramos) fundraiser.
+* Find and donate to bail funds via the [National Bail Fund Network]("https://www.communityjusticeexchange.org/nbfn-directory").
+* [Reclaim the Block](https://www.facebook.com/reclaimtheblock/) has published a [Google Doc of organizations to donate to]("https://docs.google.com/document/d/1yLWGTQIe3967hdc9RSxBq5s6KKZHe-3_mWp5oemd7OA/preview?pru=AAABcpUiX3k*Y6Q4I6UBtkH3lLz9GVLg0A").
+
+<section id="update">
+
+*We will update this list as appropriate*
+
 </section>
 
-<section id="our-support">
-  <p>
-    It would be wrong for us to ignore the unearned privilege that exists in
-    Node.js. Much of the project leadership is white, and a majority are men.
-    We are and have been systematically complicit in perpetuating the issues
-    that led us to where we are. We can't change how we've built out the
-    project's leadership to date, but we can change how we build it moving
-    forward.
-  </p>
-  <p>
-    We are dedicated to being a part of the solution. We will actively center
-    the Black community and uplift Black voices. We will share projects
-    founded and built by Black community members. We will hold ourselves
-    accountable, fulfill our promises, and make changes as needed. While it is
-    our responsibility to hold ourselves accountable, we welcome your help. We
-    invite you to share ways that we can do better. Email <a href="mailto:blacklivesmatter@nodejs.org">blacklivesmatter@nodejs.org</a>
-    or reach out to any of our project leaders.
-  </p>
-  <p>
-    The responsibility to dismantle white supremacy does not fall on the Black
-    community. It falls on the rest of us.
-  </p>
-  <p>
-    To Black folks looking for access: We're here for you.
-  </p>
-  <p>
-    To Black people looking for amplification: We're here for you.
-  </p>
-  <p>
-    To Black members of our community seeking collaboration: We're here for
-    you.
-  </p>
-  <p>
-    We will work with any Black community member who wishes to contribute to
-    Node.js. Please contact us at
-    <a href="mailto:blacklivesmatter@nodejs.org">blacklivesmatter@nodejs.org</a>
-    or <a href="https://twitter.com/nodejs">@nodejs</a> on Twitter. This effort
-    will begin during or before our Collaborator Summit later this month. We will
-    post more information soon.
-  </p>
+## Our Commitment
+
+It would be wrong for us to ignore the unearned privilege that exists in
+Node.js. Much of the project leadership is white, and a majority are men.
+We are and have been systematically complicit in perpetuating the issues
+that led us to where we are. We can't change how we've built out the
+project's leadership to date, but we can change how we build it moving
+forward.
+
+We are dedicated to being a part of the solution. We will actively center
+the Black community and uplift Black voices. We will share projects
+founded and built by Black community members. We will hold ourselves
+accountable, fulfill our promises, and make changes as needed. While it is
+our responsibility to hold ourselves accountable, we welcome your help. We
+invite you to share ways that we can do better. Email
+[blacklivesmatter@nodejs.org](mailto:blacklivesmatter@nodejs.org)
+or reach out to any of our project leaders.
+
+<section id="here-for-you">
+
+To Black folks looking for access: We're here for you.
+
+To Black people looking for amplification: We're here for you.
+
+To Black members of our community seeking collaboration: We're here for
+you.
+
 </section>
+
+The responsibility to dismantle white supremacy does not fall on the Black
+community. It falls on the rest of us.
+
+## Taking Action
+
+We will work with any Black community member who wishes to contribute to
+Node.js. Please contact us at [blacklivesmatter@nodejs.org](mailto:blacklivesmatter@nodejs.org)
+or [@nodejs](https://twitter.com/nodejs) on Twitter. This effort
+will begin during or before our Collaborator Summit later this month. We will
+post more information soon.
+
+Please feel welcome to contact
+[Technical Steering Committee](https://github.com/nodejs/node#tsc-technical-steering-committee)
+and [Community Committee](https://github.com/nodejs/community-committee#community-committee-members)
+members. The preceding links contain email addresses for all members. If
+you prefer, you can contact any of the following members on Twitter:
 
 <section id="we-are-here-for-you">
-  <p>
-    Please feel welcome to contact
-    <a href="https://github.com/nodejs/node#tsc-technical-steering-committee">Technical Steering Committee</a>
-    and <a href="https://github.com/nodejs/community-committee#community-committee-members">Community Committee</a>
-    members. The preceding links contain email addresses for all members. If
-    you prefer, you can contact any of the following members on Twitter:
-  </p>
-  <ul>
-    <li><a href='https://twitter.com/codeekage'>Abraham Jr. Agiri</a></li>
-    <li><a href='https://twitter.com/obensource'>Ben Michel</a></li>
-    <li><a href='https://twitter.com/jasnell'>James M Snell</a></li>
-    <li><a href='https://twitter.com/joe_sepi'>Joe Sepi</a></li>
-    <li><a href='https://twitter.com/mmarkini'>Matheus Marchini</a></li>
-    <li><a href='https://twitter.com/MylesBorins'>Myles Borins</a></li>
-    <li><a href='https://twitter.com/codebytere'>Shelley Vohr</a></li>
-    <li><a href='https://twitter.com/bitandbang'>Tierney Cyren</a></li>
-    <li><a href='https://twitter.com/Trott'>Rich Trott</a></li>
-  </ul>
+
+* [Abraham Jr. Agiri]('https://twitter.com/codeekage')
+* [Ben Michel]('https://twitter.com/obensource')
+* [James M Snell]('https://twitter.com/jasnell')
+* [Joe Sepi]('https://twitter.com/joe_sepi')
+* [Matheus Marchini]('https://twitter.com/mmarkini')
+* [Myles Borins]('https://twitter.com/MylesBorins')
+* [Shelley Vohr]('https://twitter.com/codebytere')
+* [Tierney Cyren]('https://twitter.com/bitandbang')
+* [Rich Trott]('https://twitter.com/Trott')
+
 </section>
 
-<section id="temporary">
-  <p>
-    If you're looking for docs, see
-    <a href="https://nodejs.org/en/docs/">https://nodejs.org/en/docs/</a>.
-  </p>
-  <p>
-    To download Node.js, see <a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a>.
-  </p>
-  <p>
-    For information on the recent security release, see
-    <a href="https://nodejs.org/en/blog/vulnerability/june-2020-security-releases/">the security release blog post</a>.
-  </p>
+<section id="it-is-temporary">
+
+If you're looking for docs, see https://nodejs.org/en/docs/.
+
+To download Node.js, see https://nodejs.org/en/download/.
+
+For information on the recent security release, see
+[the security release blog post](https://nodejs.org/en/blog/vulnerability/june-2020-security-releases/).
+
 </section>
