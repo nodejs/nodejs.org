@@ -112,7 +112,7 @@ Matter movement and currently the heart of the resistance.
 * Find and donate to bail funds via the [National Bail Fund Network](https://www.communityjusticeexchange.org/nbfn-directory).
 * [Reclaim the Block](https://www.facebook.com/reclaimtheblock/) has published a [Google Doc of organizations to donate to](https://docs.google.com/document/d/1yLWGTQIe3967hdc9RSxBq5s6KKZHe-3_mWp5oemd7OA/preview?pru=AAABcpUiX3k*Y6Q4I6UBtkH3lLz9GVLg0A).
 
-<section id="update">
+<section id="update" class="center">
 
 *We will update this list as appropriate*
 
