@@ -2,12 +2,6 @@
 layout: black-lives-matter.hbs
 ---
 
-<h1 class="space">
-  <span>Black</span>
-  <span>Lives</span>
-  <span>Matter</span>
-</h1>
-
 <section id="lives">
   
   * Ahmaud Arbery
