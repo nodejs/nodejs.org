@@ -178,6 +178,8 @@ you prefer, you can contact any of the following members on Twitter:
 
 </section>
 
+<hr id="break">
+
 <section id="it-is-temporary">
 
 If you're looking for docs, see https://nodejs.org/en/docs/.
