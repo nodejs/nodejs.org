@@ -172,9 +172,10 @@ you prefer, you can contact any of the following members on Twitter:
 * [Joe Sepi](https://twitter.com/joe_sepi)
 * [Matheus Marchini](https://twitter.com/mmarkini)
 * [Myles Borins](https://twitter.com/MylesBorins)
+* [Rich Trott](https://twitter.com/Trott)
 * [Shelley Vohr](https://twitter.com/codebytere)
 * [Tierney Cyren](https://twitter.com/bitandbang)
-* [Rich Trott](https://twitter.com/Trott)
+
 
 </section>
 
