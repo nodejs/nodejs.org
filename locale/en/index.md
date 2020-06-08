@@ -176,7 +176,6 @@ you prefer, you can contact any of the following members on Twitter:
 * [Shelley Vohr](https://twitter.com/codebytere)
 * [Tierney Cyren](https://twitter.com/bitandbang)
 
-
 </section>
 
 <hr id="break">
