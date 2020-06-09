@@ -10,11 +10,12 @@
     padding-right: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    box-sizing: border-box;
     max-width: 50ch;
     margin: 0 auto;
     width: 100%;
   }
-  
+
   ul {
     list-style-position: inside;
   }
@@ -28,7 +29,7 @@
   h1 {
     font-size: 5rem;
     line-height: 0.8;
-    font-weight: lighter;
+    font-weight: 900;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -38,8 +39,9 @@
 
   h1 > span:first-child::before {
     content: '#';
+    font-weight: 200;
   }
-  
+
   h2 {
     font-size: 2rem;
     line-height: 0.5;
@@ -55,12 +57,12 @@
   section#update {
     padding-top: 0rem;
   }
-  
+
   section#here-for-you {
     padding: 1rem;
     padding-top: 0rem;
   }
-  
+
   section#here-for-you > p {
     padding-bottom: 1rem;
   }
@@ -77,13 +79,13 @@
   section#we-are-here-for-you > ul > li:not(:last-child)::after {
     content: ', '
   }
-  
+
   hr#break {
     width: 33%;
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
-  
+
   section#it-is-temporary > p {
     padding-bottom: 0rem;
   }
