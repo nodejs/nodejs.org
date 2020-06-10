@@ -152,11 +152,17 @@ community. It falls on the rest of us.
 
 ## Taking Action
 
-We will work with any Black community member who wishes to contribute to
-Node.js. Please contact us at [blacklivesmatter@nodejs.org](mailto:blacklivesmatter@nodejs.org)
-or [@nodejs](https://twitter.com/nodejs) on Twitter. This effort
-will begin during or before our Collaborator Summit later this month. We will
-post more information soon.
+We have an upcoming free online [collaboration summit](https://github.com/openjs-foundation/summit#upcoming-events).
+There are [many different sessions](https://github.com/openjs-foundation/summit/issues?q=is%3Aissue+is%3Aopen+label%3A%22Session+Proposal%22)
+across various [OpenJS projects](https://openjsf.org/projects/), including Node.js.
+We have an [orientation guide](https://github.com/openjs-foundation/summit/blob/master/2020-06-23-Austin/orientation.md)
+to help you figure out how you might want to take part. If you have any questions or
+want to talk about anything, please reach out to [blacklivesmatter@nodejs.org](mailto:blacklivesmatter@nodejs.org).
+
+Beyond our upcoming summit we will work with any Black community member who wishes to contribute to
+Node.js core or our various Working Groups and projects.
+Please contact us at [blacklivesmatter@nodejs.org](mailto:blacklivesmatter@nodejs.org)
+or [@nodejs](https://twitter.com/nodejs) on Twitter.
 
 Please feel welcome to contact
 [Technical Steering Committee](https://github.com/nodejs/node#tsc-technical-steering-committee)
