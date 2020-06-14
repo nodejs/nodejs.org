@@ -164,7 +164,7 @@ to help you figure out how you might want to take part. If you have any question
 want to talk about anything, please reach out to [blacklivesmatter@nodejs.org](mailto:blacklivesmatter@nodejs.org).
 
 Moving forward we plan to offer ongoing support, mentorship, and sponsorship to
-help those from the Black community get involved in our project.
+help those from the Black community get involved in our project. We will
 also be analyzing our existing processes and governance to see what changes
 we can make to make sure our project is the kind of environment that the
 Black community wants to participate in.
