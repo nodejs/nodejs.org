@@ -139,7 +139,7 @@
     "text": "Security"
   },
   "getcertified": {
-    "link": "certification",
+    "link": "https://openjsf.org/certification",
     "text": "Certification"
   },
   "blog": {
