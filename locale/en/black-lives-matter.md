@@ -69,6 +69,7 @@ layout: black-lives-matter.hbs
   * Philando Castile
   * Quintonio LeGrier
   * Ramarley Graham
+  * Renisha McBride
   * Robert Lawrence White
   * Rumain Brisbon
   * Ryan Twyman
