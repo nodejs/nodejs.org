@@ -15,9 +15,6 @@ labels:
   api: Документация
   version-schedule-prompt: Или смотрите на
   version-schedule-prompt-link-text: график LTS.
-  newsletter: true
-  newsletter-prefix: Подпишитесь на
-  newsletter-postfix: ", официальный ежемесячный информационный бюллетень Node.js."
 ---
 
 Node.js® — это JavaScript-окружение построенное на движке [Chrome V8](https://v8.dev/).

@@ -11,7 +11,6 @@ layout: contribute.hbs
 * Per xatejar en temps real sobre el desenvolupament de Node.js vagi a `irc.freenode.net` al canal `#node.js` fent servir un [client d'IRC](https://es.wikipedia.org/wiki/Anexo:Clientes_IRC) o connecti's amb el seu navegador al canal usant [WebChat de freenode](https://webchat.freenode.net/#node.js).
 * El compte de Twitter oficial de Node.js és [nodejs](https://twitter.com/nodejs).
 * The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
-* [Node.js Everywhere](https://newsletter.nodejs.org) és el Butlletí oficial mensual de Node.js.
 * [Node.js Collection](https://medium.com/the-node-js-collection) és una col·lecció de contingut comissat per la comunitat a Medium.
 * La [Community Committee](https://github.com/nodejs/community-committee) és una comissió de primer nivell a la Fundació Node.js centrada en els esforços que afronta la comunitat.
 

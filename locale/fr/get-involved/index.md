@@ -11,7 +11,6 @@ layout: contribute.hbs
 * For real-time chat about Node.js development go to `irc.freenode.net` in the `#node.js` channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [freenode's WebChat](https://webchat.freenode.net/#node.js).
 * The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
 * The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
-* [Node.js Everywhere](https://newsletter.nodejs.org) is the official Node.js Monthly Newsletter.
 * [Node.js Collection](https://medium.com/the-node-js-collection) is a collection of community-curated content on Medium.
 * The [Community Committee](https://github.com/nodejs/community-committee) is a top-level committee in the Node.js Foundation focused on community-facing efforts.
 * [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
