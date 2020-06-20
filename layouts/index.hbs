@@ -12,6 +12,12 @@
 
         {{{ contents }}}
 
+        {{#if project.blacklivesmatter.visible}}
+          <p class="home-blacklivesmatter home-blacklivesmatter-banner">
+            <a href="{{ project.blacklivesmatter.link }}">{{ project.blacklivesmatter.text }}</a>
+          </p>
+        {{/if}}
+
         {{#if project.banner.visible}}
           <p class="home-version home-version-banner">
             <a href="{{ project.banner.link }}">{{ project.banner.text }}</a>

@@ -271,8 +271,13 @@ function getSource (callback) {
           current: latestVersion.current(versions),
           lts: latestVersion.lts(versions)
         },
-        banner: {
+        blacklivesmatter: {
           visible: true,
+          text: '#BlackLivesMatter',
+          link: '/en/black-lives-matter/'
+        },
+        banner: {
+          visible: false,
           text: 'New security releases are available',
           link: '/en/blog/vulnerability/june-2020-security-releases/'
         }
