@@ -66,6 +66,6 @@ HTTP є об'єктом першого роду в Node.js, розроблени
 [Blocking vs Non-Blocking]: /en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[event loop]: /en/docs/guides/event-loop-timers-and-nexttick/
+[цикл подій (event loop)]: /en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: https://github.com/eventmachine/eventmachine
 [Twisted]: https://twistedmatrix.com/trac/

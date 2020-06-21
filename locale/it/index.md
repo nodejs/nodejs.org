@@ -15,9 +15,6 @@ labels:
   api: Documentazione API
   version-schedule-prompt: Dai un'occhiata alla
   version-schedule-prompt-link-text: tabella di marcia LTS.
-  newsletter: true
-  newsletter-prefix: Iscriviti a
-  newsletter-postfix: ", la newsletter mensile di Node.js"
 ---
 
 Node.js® è un runtime JavaScript costruito sul [motore JavaScript V8 di Chrome](https://v8.dev/).

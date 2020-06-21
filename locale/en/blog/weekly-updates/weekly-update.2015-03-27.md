@@ -28,13 +28,13 @@ This week we had one io.js releases [v1.6.2](https://iojs.org/dist/v1.6.2/), com
 * `process.send()` is not synchronous as the docs suggest, a regression introduced in 1.0.2, see [#760](https://github.com/nodejs/node/issues/760) and fix in [#774](https://github.com/nodejs/node/issues/774)
 * Calling `dns.setServers()` while a DNS query is in progress can cause the process to crash on a failed assertion [#894](https://github.com/nodejs/node/issues/894)
 
-# Community Updates
+## Community Updates
 
 * Node.js Technical Governance Draft is proposed, you can check the draft [here](https://github.com/joyent/nodejs-advisory-board/pull/30)
 * Microsoft Visual Studio team releases Node.js Tools 1.0 for Visual Studio, the release includes rich editor, code completions, interactive window, advanced debugging and profiling. Check [the announcement](http://blogs.msdn.com/b/visualstudio/archive/2015/03/25/node-js-tools-1-0-for-visual-studio.aspx).
 * [SPM monitor supports Node.js and io.js](http://blog.sematext.com/2015/03/30/nodejs-iojs-monitoring/), the monitor adds performance monitoring, alerting, and anomaly detection.
 
-# Upcoming Events
+## Upcoming Events
 
 * [NodeConf](http://nodeconf.com/) tickets are on sale, June 8th and 9th at Oakland, CA and NodeConf Adventure for June 11th - 14th at Walker Creek Ranch, CA
 * [CascadiaJS](http://2015.cascadiajs.com/) tickets are on sale, July 8th - 10th at Washington State

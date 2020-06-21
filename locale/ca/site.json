@@ -12,7 +12,6 @@
   "by": "per",
   "all-downloads": "Totes les opcions de descàrrega",
   "nightly": "Versions Nightly",
-  "chakracore-nightly": "Versions Node-ChakraCore Nightly",
   "previous": "Anterior",
   "next": "Següent",
   "feeds": [
@@ -126,7 +125,7 @@
       "text": "Contribueix"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "Codi de Conducta"
     }
   },

@@ -1,10 +1,10 @@
 {
   "title": "Node.js",
   "author": "Node.js",
-  "url": "https://nodejs.org/en/",
-  "locale": "en",
-  "language": "English",
-  "languageEnglishVersion": "English",
+  "url": "https://nodejs.org/ro/",
+  "locale": "ro",
+  "language": "limba română",
+  "languageEnglishVersion": "Romanian",
   "scrollToTop": "Scroll to top",
   "reportNodeIssue": "Report Node.js issue",
   "reportWebsiteIssue": "Report website issue",
@@ -12,7 +12,6 @@
   "by": "by",
   "all-downloads": "All download options",
   "nightly": "Nightly builds",
-  "chakracore-nightly": "Node-ChakraCore Nightly builds",
   "unofficial-builds": "Unofficial builds",
   "previous": "Previous",
   "next": "Next",
@@ -127,7 +126,7 @@
       "text": "Contribute"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "Code of Conduct"
     },
     "node-meetups": {
