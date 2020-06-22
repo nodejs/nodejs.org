@@ -315,7 +315,7 @@ up by language. First, we look at the summary section and see:
 This tells us that 97% of all samples gathered occurred in C++ code and that
 when viewing other sections of the processed output we should pay most attention
 to work being done in C++ (as opposed to JavaScript). With this in mind, we next
-find the [C++] section which contains information about which C++ functions are
+find the \[C++\] section which contains information about which C++ functions are
 taking the most CPU time and see:
 
 ```
@@ -329,7 +329,7 @@ taking the most CPU time and see:
 
 이 부분을 보면 C++ 코드에서 수집된 샘플이 97%를 차지하는 것을 볼 수 있으므로 처리된 결과에서
 다른 부분을 볼 때 C++에서 이뤄진 작업에 대부분의 관심을 기울여야 합니다.(JavaScript 대비)
-그래서 C++ 함수가 대부분의 CPU 시간을 차지한 정보를 담고 있는 [C++] 부분을 찾아볼 것입니다.
+그래서 C++ 함수가 대부분의 CPU 시간을 차지한 정보를 담고 있는 \[C++\] 부분을 찾아볼 것입니다.
 
 ```
  [C++]:
@@ -346,7 +346,7 @@ taken up by a function called PBKDF2 which corresponds to our hash generation
 from a user's password. However, it may not be immediately obvious how the lower
 two entries factor into our application (or if it is we will pretend otherwise
 for the sake of example). To better understand the relationship between these
-functions, we will next look at the [Bottom up (heavy) profile] section which
+functions, we will next look at the \[Bottom up (heavy) profile\] section which
 provides information about the primary callers of each function. Examining this
 section, we find:
 
@@ -370,7 +370,7 @@ section, we find:
 해시를 생성하는 PBKDF2 함수 호출이 최소 51.8%의 CPU 시간을 차지한 것을 바로 눈치챌 수 있습니다.
 하지만 더 낮은 비율을 가진 두 부분은 애플리케이션의 어떤 부분인지 바로 알 수 없습니다.(아니면
 예제를 위해서 그런 척 할 것입니다.) 이러한 함수 간의 관계를 더 이해하려면 각 함수의 주요 호출자 정보를
-제공하는 [Bottom up (heavy) profile] 부분을 봐야 합니다.
+제공하는 \[Bottom up (heavy) profile\] 부분을 봐야 합니다.
 이 부분을 찾아보면 다음과 같이 나와 있습니다.
 
 ```

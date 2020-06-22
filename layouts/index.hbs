@@ -12,6 +12,12 @@
 
         {{{ contents }}}
 
+        {{#if project.blacklivesmatter.visible}}
+          <p class="home-blacklivesmatter home-blacklivesmatter-banner">
+            <a href="{{ project.blacklivesmatter.link }}">{{ project.blacklivesmatter.text }}</a>
+          </p>
+        {{/if}}
+
         {{#if project.banner.visible}}
           <p class="home-version home-version-banner">
             <a href="{{ project.banner.link }}">{{ project.banner.text }}</a>
@@ -68,11 +74,6 @@
         <p>
           {{{ labels.version-schedule-prompt }}} <a href="/{{site.locale}}/about/releases/">{{ labels.version-schedule-prompt-link-text }}</a>
         </p>
-        {{#if labels.newsletter }}
-        <p>
-          {{{ labels.newsletter-prefix }}} <a href="https://newsletter.nodejs.org/">Node.js Everywhere</a>{{{ labels.newsletter-postfix }}}
-        </p>
-        {{/if}}
       </div>
 
     </div>

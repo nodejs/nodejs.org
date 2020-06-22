@@ -1,12 +1,12 @@
 ---
-title: Collab Summit
+title: Colabora en el Summit
 layout: contribute.hbs
 ---
 
-# Collab Summit
+# Colabora en el Summit
 Collaboration Summit is an un-conference for bringing current and potential contributors together to discuss Node.js with lively collaboration, education, and knowledge sharing. Committees and working groups come together twice per year to make important decisions while also being able to work on some exciting efforts they want to push forward in-person.
 
-## Who attends?
+## ¿Quién asiste?
 
 Anyone is welcome to attend Collab Summit. During the summit, leaders will help onboard new contributors to groups they'd love to help prior to integrating them into the working sessions.
 

@@ -55,7 +55,7 @@ console.log("Without parameter:");
 example();
 betterExample();
 
-console.log("\nWith paramater:");
+console.log("\nWith parameter:");
 example("parameter was passed");
 betterExample("parameter was passed");
 
