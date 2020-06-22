@@ -1,11 +1,11 @@
 ---
-title: Participa
+title: Participe
 layout: contribute.hbs
 ---
 
-# Participa
+# Participe
 
-## Discusión de la comunidad
+## Discusión de la Comunidad
 
 * La [lista de errores](https://github.com/nodejs/node/issues) es el lugar para discutir las características del núcleo de Node.js.
 * Para chatear en tiempo real sobre el desarrollo de Node vaya a `irc.freenode.net` en el canal `#node.js` usando un [cliente de IRC](https://es.wikipedia.org/wiki/Anexo:Clientes_IRC) o conéctese con su navegador al canal usando [WebChat de freenode](https://webchat.freenode.net/#node.js).
@@ -23,7 +23,7 @@ layout: contribute.hbs
 * [La etiqueta DEV Community Node.js](https://dev.to/t/node) es un lugar para compartir proyectos, artículos y tutoriales de Node.js, así como para iniciar debates y pedir información sobre temas relacionados con Node.js. Desarrolladores de todos los niveles son bienvenidos a participar.
 * [Nodeiflux](https://discordapp.com/invite/vUsrbjd) es una comunidad amigable de desarrolladores back-end de Node.js que se apoyan mutuamente en Discord.
 
-## Sitios de la comunidad internacional y proyectos
+## Sitios de comunidades internacionales y proyectos
 
 * [Comunidad China](https://cnodejs.org/)
 * [Comunidad de Hungría (Magyar)](https://nodehun.blogspot.com/)
