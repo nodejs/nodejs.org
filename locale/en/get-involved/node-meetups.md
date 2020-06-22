@@ -110,7 +110,15 @@ REQUIREMENTS
 * Organizer names - [Erick Wendel](https://github.com/erickwendel), [Alan Hoffmeister](https://github.com/alanhoff), [Igor França](https://github.com/horaddrim), [Icaro Caldeira](https://github.com/icarcal), [Marcus Bergamo](https://github.com/thebergamo), [Igor Halfeld](https://github.com/igorHalfeld), [Lucas Santos](https://github.com/khaosdoctor).
 * Organizer contact info - [@erickwendel_](https://twitter.com/erickwendel_), [@_StaticVoid](https://twitter.com/_staticvoid)
 
-##### Campinas
+#### Rio de Janeiro
+
+* [Meetup](https://meetup.com/node-js-rio)
+* Frequency of meetups - monthly
+* How to submit a talk? Contact organizers directly or [Call4Papers](https://nodejs-rio.github.io/call-4-papers) page.
+* Organizer names - [Eduardo Chaves](https://github.com/educostachaves).
+* Organizer contact info - [@educostachaves](https://twitter.com/educostachaves) / [educostachaves@gmail.com](mailto:educostachaves@gmail.com)
+
+#### Campinas
 
 * [Meetup](https://www.meetup.com/Nodeschool-Campinas/)
 * Frequency of meetups - monthly
@@ -126,9 +134,7 @@ REQUIREMENTS
 * Organizer name - Hugo Iuri
 * Organizer contact info -
 
-#### Rio Grande do Sul
-
-##### Porto Alegre
+#### Porto Alegre
 
 * [Meetup](https://www.meetup.com/Node-js-Porto-Alegre-Meetup/)
 * Frequency of meetups - monthly
