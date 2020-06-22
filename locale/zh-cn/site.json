@@ -139,6 +139,10 @@
     "link": "security",
     "text": "安全"
   },
+  "getcertified": {
+    "link": "https://openjsf.org/certification",
+    "text": "相关认证"
+  },
   "blog": {
     "link": "blog",
     "text": "新闻"

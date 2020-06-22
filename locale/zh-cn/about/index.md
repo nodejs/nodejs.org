@@ -6,7 +6,7 @@ trademark: Trademark
 
 # 关于 Node.js®
 
-作为异步驱动的 JavaScript 运行时，Node.js 被设计成可升级的网络应用。在下面的“Hello World”示例中，许多连接可以并行处理。每一个连接都会触发一个回调，但是如果没有可做的事情，Node.js 就进入睡眠状态。
+作为一个异步事件驱动的 JavaScript 运行时，Node.js 被设计用来构建可扩展的网络应用。在下面的 “Hello World” 示例中，可以并发处理许多连接，每一个连接都会触发一个回调，而当没有可做的事情时，Node.js 就会进入休眠状态。
 
 ```javascript
 const http = require('http');
@@ -25,23 +25,20 @@ server.listen(port, hostname, () => {
 });
 ```
 
-这与今天使用 OS 线程的更常见并发模型形成了对比。基于线程的网络效率相对低下，使用起来非常困难。此外，Node.js 的用户不必担心死锁过程，因为没有锁。Node 中几乎没有函数直接执行 I/O 操作，因此进程从不阻塞。由于没有任何阻塞，可伸缩系统在 Node 中开发是非常合理的。
+这与当今比较常见的采用操作系统线程的并发模型形成了鲜明对比。基于线程的网络效率相对较低且更难以使用。此外，由于没有锁，Node.js 的用户不用担心进程死锁的问题。Node.js 中几乎没有函数直接执行 I/O 操作，其进程从不会被阻塞，因此用 Node.js 来开发可扩展系统是非常合理的。
 
-如果你对这门语言其中的一部分尚未熟悉理解，这里有一篇专门关于[阻塞对比非阻塞][]的文章供你参考。
+如果你对上面的描述有一些不理解地方，这里有一篇专门关于[阻塞对比非阻塞][]的文章供你参考。
 
 ---
-Node.js 在设计上类似于 Ruby 的[事件机][]或 Python 的 [Twisted][]之类的系统。Node.js 更深入地考虑事件模型。它呈现一个[事件轮询][]作为运行时构造而不是库。在其它系统中，总是有一个阻止调用来启动事件循环。
+Node.js 在设计上类似于 Ruby 的 [Event Machine][] 或 Python 的 [Twisted][] 之类的系统。但 Node.js 更深入地考虑了事件模型，它将[事件循环][]作为一个运行时结构而不是作为一个库来呈现。在其他系统中，总是有一个阻塞调用来启动事件循环。通常情况下，要执行的行为是通过脚本开始时的回调来定义的，然后通过 `EventMachine::run()` 这样的阻塞调用来启动服务器。而在 Node.js 中，没有这种启动事件循环的调用。Node.js 在执行输入脚本后直接进入事件循环，当没有更多的回调要执行时，Node.js 就会退出事件循环。这种行为就像浏览器的 JavaScript 一样 —— 事件循环对用户是隐藏的。
 
-通常 Node.js 的行为是通过在脚本开头的回调定义的，在结束时通过阻塞调用（如 `EventMachine::run()` ）启动服务器。在 Node.js 中没有这样的启动-事件循环调用。Node.js 在执行输入脚本后只需输入事件循环即可。
-当没有更多要执行的回调时，Node.js 退出事件循环。此行为类似于浏览器中的 JavaScript ——事件循环总是对用户不可见的。
+HTTP 是 Node.js 中的一等公民，设计时考虑到了流式和低延迟，这使得 Node.js 非常适合作为网络库或框架的基础。
 
-HTTP 是 Node.js 中的一等公民。它设计的是流式和低延迟。这使得 Node.js 非常适合于 web 库或框架的基础。
-
-仅仅因为 Node.js 是在没有线程的情况下设计的，这并不意味着您无法利用环境中的多个内核。子进程可以通过使用我们的 [`child_process.fork()`][] API 来生成，并且被设计为易于沟通。建立在同一接口上的是 [`cluster`][] 模块，它允许您在进程之间共享套接字，以便在核心上启用负载平衡。
+Node.js 被设计成单线程运行，但这并不意味着你无法利用到 CPU 的多个核心。你可以通过 [`child_process.fork()`][] API 来生成子进程，并且它被设计成非常易于通信。而建立在同一个接口之上的 [`cluster`][] 模块允许你在进程之间共享套接字（sockets），以实现核心的负载均衡。
 
 [阻塞对比非阻塞]: /zh-cn/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[事件轮询]: /zh-cn/docs/guides/event-loop-timers-and-nexttick/
-[事件机]: https://github.com/eventmachine/eventmachine
+[事件循环]: /zh-cn/docs/guides/event-loop-timers-and-nexttick/
+[Event Machine]: https://github.com/eventmachine/eventmachine
 [Twisted]: https://twistedmatrix.com/trac/
