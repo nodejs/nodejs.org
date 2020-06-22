@@ -27,7 +27,7 @@ layout: contribute.hbs
 
 * [Comunidad China](https://cnodejs.org/)
 * [Comunidad de Hungría (Magyar)](https://nodehun.blogspot.com/)
-* [Comunidad en Facebook de usuarios Israelí de Node.js](https://www.facebook.com/groups/node.il/)
+* [Comunidad en Facebook de usuarios Israelíes de Node.js](https://www.facebook.com/groups/node.il/)
 * [Grupo de usuarios de Japón](https://nodejs.jp/)
 * [Comunidad en Facebook de Español/Castellano](https://www.facebook.com/groups/node.es/)
 * [Comunidad Vietnamita Node.js](https://www.facebook.com/nodejs.vn/)
