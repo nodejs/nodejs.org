@@ -1,0 +1,32 @@
+.contributor-card {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+  width: 300px;
+  padding: 1.5em 1em;
+  margin: 1em auto;
+  border: 1px solid $white;
+  border-radius: 3px;
+
+  > a {
+    height: 40px;
+    width: 40px;
+    flex: 0 0 auto;
+  }
+
+  p {
+    padding-left: 1em;
+    margin: 0;
+    flex: 1 1 1px;
+  }
+
+  .spinner-border {
+    margin: 5px;
+  }
+}
+
+@media (max-width: 350px) {
+  .contributor-card {
+    width: auto;
+  }
+}

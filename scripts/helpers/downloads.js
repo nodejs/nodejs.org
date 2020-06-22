@@ -160,6 +160,12 @@ const resolveDownloads = (version) => {
     )
   }
 
+  if (semver.satisfies(version, '>= 14.0.0')) {
+    downloads = downloads.filter(ver =>
+      ver.title !== 'SmartOS 64-bit Binary'
+    )
+  }
+
   return downloads
 }
 

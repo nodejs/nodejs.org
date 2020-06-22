@@ -13,7 +13,6 @@
   "by": "by",
   "all-downloads": "所有下載選項",
   "nightly": "每日建置版本",
-  "chakracore-nightly": "Node-ChakraCore 每日建置版本",
   "unofficial-builds": "非官方建置版本",
   "previous": "上一個",
   "next": "下一個",
@@ -118,7 +117,7 @@
       "text": "貢獻"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "管理"
     },
     "node-meetups": {
@@ -129,6 +128,10 @@
   "security": {
     "link": "security",
     "text": "安全"
+  },
+  "getcertified": {
+    "link": "https://openjsf.org/certification",
+    "text": "相關認證"
   },
   "blog": {
     "link": "blog",

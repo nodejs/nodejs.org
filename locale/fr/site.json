@@ -12,7 +12,9 @@
   "by": "par",
   "all-downloads": "Toutes les options de téléchargement",
   "nightly": "Versions quotidiennes",
-  "chakracore-nightly": "Versions quotidiennes de Node-ChakraCore",
+  "unofficial-builds": "Unofficial builds",
+  "previous": "Previous",
+  "next": "Next",
   "feeds": [
     {
       "link": "feed/blog.xml",
@@ -36,6 +38,10 @@
     "governance": {
       "link": "about/governance",
       "text": "Gouvernance"
+    },
+    "community": {
+      "link": "about/community",
+      "text": "Community"
     },
     "workinggroups": {
       "link": "about/working-groups",
@@ -71,7 +77,9 @@
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "SHASUMS signés pour les fichiers des versions"
+      "text": "SHASUMS signés pour les fichiers des versions",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "How to verify"
     },
     "install-on-linux": {
       "text": "Installing Node.js via binary archive"
@@ -96,6 +104,10 @@
     "guides": {
       "link": "docs/guides",
       "text": "Guides"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "Dependencies"
     }
   },
   "getinvolved": {
@@ -105,13 +117,21 @@
       "link": "get-involved/code-and-learn",
       "text": "Coder + Apprendre"
     },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "Collab Summit"
+    },
     "contribute": {
       "link": "get-involved/contribute",
       "text": "Contribuer"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "Code de conduite"
+    },
+    "node-meetups": {
+      "link": "get-involved/node-meetups",
+      "text": "Node.js Meetups"
     }
   },
   "security": {

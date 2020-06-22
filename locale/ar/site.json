@@ -14,7 +14,6 @@
   "all-downloads": "تحميل جميع النسخ",
   "nightly": "إصدارات ليلية",
   "unofficial-builds": "بُنْيَات غير رسمية",
-  "chakracore-nightly": "Node-ChakraCore إصدارات ليلية خاصة بـ",
   "previous": "السابق",
   "next": "التالي",
   "feeds": [
@@ -126,7 +125,7 @@
       "text": "مساهمة"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "القواعد السلوكية"
     },
     "node-meetups": {
@@ -137,6 +136,10 @@
   "security": {
     "link": "security",
     "text": "أمن"
+  },
+  "getcertified": {
+    "link": "https://openjsf.org/certification",
+    "text": "شهادة"
   },
   "blog": {
     "link": "blog",

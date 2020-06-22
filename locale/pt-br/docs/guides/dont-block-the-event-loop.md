@@ -102,7 +102,7 @@ Você nunca deve bloquear o Event Loop.
 Em outras palavras, cada um de seus callbacks JavaScript devem ser concluídos rapidamente.
 Isto, obviamente, também se aplica aos seus `wait`'s , seus `Promise.then`'s, e assim por diante.
 
-Uma boa maneira de garantir isso é estudar sobre a ["complexidade computacional"] (https://en.wikipedia.org/wiki/Time_complexity) de seus callbacks.
+Uma boa maneira de garantir isso é estudar sobre a ["complexidade computacional"](https://en.wikipedia.org/wiki/Time_complexity) de seus callbacks.
 Se o seu callback executar um número constante de etapas, independentemente de seus argumentos, você sempre dará a cada cliente pendente uma chance justa.
 Se seu callback executa um número considerável de etapas, dependendo de seus argumentos, pense em quanto tempo os argumentos podem demorar.
 
@@ -241,7 +241,7 @@ Em um servidor, *você não deve usar as seguintes APIs síncronas desses módul
   * `zlib.inflateSync`
   * `zlib.deflateSync`
 * Sistema de arquivo:
-  * Não use as APIs do sistema de arquivos síncronas. Por exemplo, se o arquivo que você acessar estiver em um [sistema de arquivos distribuído](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems) como [NFS](https://en.wikipedia.org/wiki/ Network_File_System), os tempos de acesso podem variar bastante.
+  * Não use as APIs do sistema de arquivos síncronas. Por exemplo, se o arquivo que você acessar estiver em um [sistema de arquivos distribuído](https://en.wikipedia.org/wiki/Clustered_file_system#Distributed_file_systems) como [NFS](https://en.wikipedia.org/wiki/Network_File_System), os tempos de acesso podem variar bastante.
 * Child process:
   * `child_process.spawnSync`
   * `child_process.execSync`
@@ -348,7 +348,7 @@ Para uma tarefa complicada, mova o trabalho do Event Loop para uma Worker Pool.
 ##### Como fazer offload
 Você tem duas opções para uma Work Pool de destino no qual descarregar o trabalho.
 
-1. Você pode usar a Worker Pool built-in do Node desenvolvendo um [addon C++](https://nodejs.org/api/addons.html). Nas versões mais antigas do Node, crie seu complemento C++ usando [NAN](https://github.com/nodejs/nan) e nas versões mais recentes use [N-API](https://nodejs.org/api/n -api.html). [node-webworker-threads](https://www.npmjs.com/package/webworker-threads) oferece uma maneira JavaScript-only para acessar a Worker Pool do Node.
+1. Você pode usar a Worker Pool built-in do Node desenvolvendo um [addon C++](https://nodejs.org/api/addons.html). Nas versões mais antigas do Node, crie seu complemento C++ usando [NAN](https://github.com/nodejs/nan) e nas versões mais recentes use [N-API](https://nodejs.org/api/n-api.html). [node-webworker-threads](https://www.npmjs.com/package/webworker-threads) oferece uma maneira JavaScript-only para acessar a Worker Pool do Node.
 2. Você pode criar e gerenciar sua própria Worker Pool dedicada à computação, em vez da Worker Pool de I/O do Node. As maneiras mais simples de fazer isso são usando [Child Process](https://nodejs.org/api/child_process.html) ou [Cluster](https://nodejs.org/api/cluster.html).
 
 Você *não* deve simplesmente criar um [Child Process](https://nodejs.org/api/child_process.html) para cada cliente.

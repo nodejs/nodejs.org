@@ -12,7 +12,6 @@
   "by": "tarafından",
   "all-downloads": "Tüm indirme seçenekleri",
   "nightly": "Gecelik Sürümler",
-  "chakracore-nightly": "Node-ChakraCore Gecelik sürümler",
   "unofficial-builds": "Resmi Olmayan Sürümler",
   "previous": "Önceki",
   "next": "Sonraki",
@@ -127,7 +126,7 @@
       "text": "Katkıda bulunmak"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "Davranış Kuralları"
     },
     "node-meetups": {

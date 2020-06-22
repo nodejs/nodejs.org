@@ -24,7 +24,7 @@ http.createServer(function (req, res) {
 
 > To test this code run `node app.js` (app.js is name of the file) on the terminal and then go to your browser and type `http://localhost:8080/app.js?foo=bad&baz=foo` on the URL bar
 
-The key part of this whole script is this line: `const queryObject = url.parse(req.url,true).query;`. Let's take a look at things from the inside-out. First off, `req.url` will look like `/app.js?foo=bad&baz=foo`. This is the part that is in the URL bar of the browser. Next, it gets passed to `url.parse` which parses out the various elements of the URL (NOTE: the second paramater is a boolean stating whether the method should parse the query string, so we set it to true). Finally, we access the `.query` property, which returns us a nice, friendly JavaScript object with our query string data.
+The key part of this whole script is this line: `const queryObject = url.parse(req.url,true).query;`. Let's take a look at things from the inside-out. First off, `req.url` will look like `/app.js?foo=bad&baz=foo`. This is the part that is in the URL bar of the browser. Next, it gets passed to `url.parse` which parses out the various elements of the URL (NOTE: the second parameter is a boolean stating whether the method should parse the query string, so we set it to true). Finally, we access the `.query` property, which returns us a nice, friendly JavaScript object with our query string data.
 
 The `url.parse()` method returns an object which have many key value pairs one of which is the `query` object. Some other handy information returned by the method include `host`, `pathname`, `search` keys.
 
@@ -37,7 +37,7 @@ In the above code:
 
 ### Parsing with querystring
 
-Another way to access query string parameters is parsing them using the `querystring` builtin Node module.
+Another way to access query string parameters is parsing them using the `querystring` builtin Node.js module.
 
 This method, however, must be passed just a querystring portion of a url. Passing it the whole url, like you did in the `url.parse` example, won't parse the querystrings.
 

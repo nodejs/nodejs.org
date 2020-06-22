@@ -12,7 +12,6 @@
   "by": "by",
   "all-downloads": "All download options",
   "nightly": "Nightly builds",
-  "chakracore-nightly": "Node-ChakraCore Nightly builds",
   "unofficial-builds": "Unofficial builds",
   "previous": "Previous",
   "next": "Next",
@@ -127,7 +126,7 @@
       "text": "Contribute"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "Code of Conduct"
     },
     "node-meetups": {
@@ -138,6 +137,10 @@
   "security": {
     "link": "security",
     "text": "Security"
+  },
+  "getcertified": {
+    "link": "https://openjsf.org/certification",
+    "text": "Certification"
   },
   "blog": {
     "link": "blog",

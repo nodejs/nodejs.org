@@ -10,7 +10,7 @@ layout: knowledge-post.hbs
 
 The [crypto](https://nodejs.org/api/crypto.html) module is a wrapper for [OpenSSL](https://en.wikipedia.org/wiki/Openssl) cryptographic functions. It supports calculating hashes, authentication with HMAC, ciphers, and more!
 
-The crypto module is mostly useful as a tool for implementing [cryptographic protocols](https://en.wikipedia.org/wiki/Cryptographic_protocol) such as [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) and [https](https://en.wikipedia.org/wiki/Https). For most users, Node's built-in [tls module](https://nodejs.org/api/tls.html) and [https module](https://nodejs.org/api/https.html) should more than suffice. However, for the user that only wants to use small parts of what's needed for full-scale cryptography or is crazy/desperate enough to implement a protocol using OpenSSL and Node: Read on.
+The crypto module is mostly useful as a tool for implementing [cryptographic protocols](https://en.wikipedia.org/wiki/Cryptographic_protocol) such as [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) and [https](https://en.wikipedia.org/wiki/Https). For most users, the built-in [tls module](https://nodejs.org/api/tls.html) and [https module](https://nodejs.org/api/https.html) should more than suffice. However, for the user that only wants to use small parts of what's needed for full-scale cryptography or is crazy/desperate enough to implement a protocol using OpenSSL and Node.js: Read on.
 
 ## Hashes
 

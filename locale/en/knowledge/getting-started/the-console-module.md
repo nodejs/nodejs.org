@@ -11,7 +11,7 @@ layout: knowledge-post.hbs
 
 Anyone familiar with browser-side development has probably used `console.log` for debugging purposes - Node.js has implemented a built-in `console` object to mimic much of this experience. Since we're working server-side, however, it wraps `stdout`, `stdin`, and `stderr` instead of the browser's debugging console.
 
-Because of this browser parallel, the `console` module has become home to quite a bit of Node's standard output functionality. The simplest is `console.log()`.
+Because of this browser parallel, the `console` module has become home to quite a bit of standard output functionality of Node.js. The simplest is `console.log()`.
 
 ```javascript
 console.log('Hi, everybody!');
