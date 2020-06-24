@@ -92,7 +92,7 @@ layout: black-lives-matter.hbs
   * Willie McCoy
   * Yassin Mohamed
   * &hellip;[and](https://mappingpoliceviolence.org/) [countless](https://twitter.com/samswey/status/1259254114606886913) 
-    [more](https://apps.npr.org/documents/document.html?id=6933593-NPR-CodeSwitch-Saytheirnameslistv3) 
+    [more](https://en.wikipedia.org/wiki/Lists_of_killings_by_law_enforcement_officers_in_the_United_States#Lists_of_killings) 
     [lives](https://ebwiki.org/) 
     not listed  here, taken by violence and brutality.
 
@@ -106,15 +106,15 @@ Matter movement and currently the heart of the resistance.
 
 ## Where you can donate:
 
-* Donate to the [Official George Floyd Memorial Fund](https://www.gofundme.com/f/georgefloyd).
-* Donate to the [I Run With Maud](https://www.gofundme.com/f/i-run-with-maud) fundraiser for Ahmaud Arbery.
-* Donate to the [Justice for Mike Ramos](https://www.gofundme.com/f/justice-for-mike-ramos) fundraiser.
-* Find and donate to bail funds via the [National Bail Fund Network](https://www.communityjusticeexchange.org/nbfn-directory).
-* [Reclaim the Block](https://www.facebook.com/reclaimtheblock/) has published a [Google Doc of organizations to donate to](https://docs.google.com/document/d/1yLWGTQIe3967hdc9RSxBq5s6KKZHe-3_mWp5oemd7OA/preview?pru=AAABcpUiX3k*Y6Q4I6UBtkH3lLz9GVLg0A).
+- Donate to the [Official George Floyd Memorial Fund](https://www.gofundme.com/f/georgefloyd).
+- Donate to the [I Run With Maud](https://www.gofundme.com/f/i-run-with-maud) fundraiser for Ahmaud Arbery.
+- Donate to the [Justice for Mike Ramos](https://www.gofundme.com/f/justice-for-mike-ramos) fundraiser.
+- Find and donate to bail funds via the [National Bail Fund Network](https://www.communityjusticeexchange.org/nbfn-directory).
+- [Reclaim the Block](https://www.facebook.com/reclaimtheblock/) has published a [Google Doc of organizations to donate to](https://docs.google.com/document/d/1yLWGTQIe3967hdc9RSxBq5s6KKZHe-3_mWp5oemd7OA/preview?pru=AAABcpUiX3k*Y6Q4I6UBtkH3lLz9GVLg0A).
 
 <section id="update" class="center">
 
-*We will update this list as appropriate*
+_We will update this list as appropriate_
 
 </section>
 
@@ -177,15 +177,15 @@ you prefer, you can contact any of the following members on Twitter:
 
 <section id="we-are-here-for-you">
 
-* [Abraham Jr. Agiri](https://twitter.com/codeekage)
-* [Ben Michel](https://twitter.com/obensource)
-* [James M Snell](https://twitter.com/jasnell)
-* [Joe Sepi](https://twitter.com/joe_sepi)
-* [Matheus Marchini](https://twitter.com/mmarkini)
-* [Myles Borins](https://twitter.com/MylesBorins)
-* [Rich Trott](https://twitter.com/Trott)
-* [Shelley Vohr](https://twitter.com/codebytere)
-* [Tierney Cyren](https://twitter.com/bitandbang)
+- [Abraham Jr. Agiri](https://twitter.com/codeekage)
+- [Ben Michel](https://twitter.com/obensource)
+- [James M Snell](https://twitter.com/jasnell)
+- [Joe Sepi](https://twitter.com/joe_sepi)
+- [Matheus Marchini](https://twitter.com/mmarkini)
+- [Myles Borins](https://twitter.com/MylesBorins)
+- [Rich Trott](https://twitter.com/Trott)
+- [Shelley Vohr](https://twitter.com/codebytere)
+- [Tierney Cyren](https://twitter.com/bitandbang)
 
 </section>
 
