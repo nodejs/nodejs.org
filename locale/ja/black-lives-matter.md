@@ -198,7 +198,7 @@ community. It falls on the rest of us.
 ## Taking Action
 -->
 
-## 行動を起こす
+## 行動を起こそう
 
 <!--
 We will work with any Black community member who wishes to contribute to
