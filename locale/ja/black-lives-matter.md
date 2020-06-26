@@ -142,7 +142,7 @@ Matter movement and currently the heart of the resistance.
 ## Our Commitment
 -->
 
-## 私達の宣言
+## 私たちの宣言
 
 <!--
 It would be wrong for us to ignore the unearned privilege that exists in
@@ -153,7 +153,7 @@ project's leadership to date, but we can change how we build it moving
 forward.
 -->
 
-Node.jsに存在する前例のない特権を無視するのは間違っているでしょう。プロジェクトのリーダーは白人で、大多数は男性です。私達はこの問題を永続させることに組織的に加担してきました。これまでのプロジェクトのリーダーシップの築き方を変えることはできませんが、今後のプロジェクトの築き方を変えることはできます。
+Node.jsに存在する前例のない特権を無視するのは間違っているでしょう。プロジェクトのリーダーは白人で、大多数は男性です。私たちはこの問題を永続させることに組織的に加担してきました。これまでのプロジェクトのリーダーシップの築き方を変えることはできませんが、今後のプロジェクトの築き方を変えることはできます。
 
 <!--
 We are dedicated to being a part of the solution. We will actively center
@@ -166,7 +166,7 @@ invite you to share ways that we can do better. Email
 or reach out to any of our project leaders.
 -->
 
-私達は解決の一翼を担うことにこだわります。私達は積極的に非白人コミュニティを中心にして、非白人の声を高揚させます。私達は非白人コミュニティのメンバーによって設立されたプロジェクトを共有します。私達は自分たちに責任を持ち、約束を果たし、必要に応じて変化を起こします。自分自身に責任を持つことは私達の義務ですが、私達はあなたの協力を歓迎します。私達がより良くできる方法を共有してください。[blacklivesmatter@nodejs.org](mailto:blacklivesmatter@nodejs.org)にメールするか私達のプロジェクトのリーダーに連絡してください。
+私たちは解決の一翼を担うことにこだわります。私たちは積極的に非白人コミュニティを中心にして、非白人の声を高揚させます。私たちは非白人コミュニティのメンバーによって設立されたプロジェクトを共有します。私たちは自分たちに責任を持ち、約束を果たし、必要に応じて変化を起こします。自分自身に責任を持つことは私たちの義務ですが、私たちはあなたの協力を歓迎します。私たちがより良くできる方法を共有してください。[blacklivesmatter@nodejs.org](mailto:blacklivesmatter@nodejs.org)にメールするか私たちのプロジェクトのリーダーに連絡してください。
 
 <section id="here-for-you">
 
@@ -179,11 +179,11 @@ To Black members of our community seeking collaboration: We're here for
 you.
 -->
 
-アクセスを必要としている非白人の皆さん、私達はあなたのためにここにいます。
+アクセスを必要としている非白人の皆さん、私たちはあなたのためにここにいます。
 
-運動を増幅したい非白人の皆さん、私達はあなたのためにここにいます。
+運動を増幅したい非白人の皆さん、私たちはあなたのためにここにいます。
 
-連帯を求めている非白人の皆さん、私達はあなたのためにここにいます。
+連帯を求めている非白人の皆さん、私たちはあなたのためにここにいます。
 
 </section>
 
@@ -192,7 +192,7 @@ The responsibility to dismantle white supremacy does not fall on the Black
 community. It falls on the rest of us.
 -->
 
-白人至上主義を解体する責任は非白人社会にあるわけではありません。それは私達にあります。
+白人至上主義を解体する責任は非白人社会にあるわけではありません。それは私たちにあります。
 
 <!--
 ## Taking Action
@@ -206,7 +206,7 @@ Node.js. Please contact us at [blacklivesmatter@nodejs.org](mailto:blacklivesmat
 or [@nodejs](https://twitter.com/nodejs) on Twitter with any questions.
 -->
 
-私達はNode.jsに貢献したいと願う全ての非白人コミュニティの方と協力していきます。[blacklivesmatter@nodejs.org](mailto:blacklivesmatter@nodejs.org)にメールするか、Twitter上で[@nodejs](https://twitter.com/nodejs)に連絡してください。
+私はNode.jsに貢献したいと願う全ての非白人コミュニティの方と協力していきます。[blacklivesmatter@nodejs.org](mailto:blacklivesmatter@nodejs.org)にメールするか、Twitter上で[@nodejs](https://twitter.com/nodejs)に連絡してください。
 
 <!--
 We have an upcoming free online [collaboration summit](https://github.com/openjs-foundation/summit#upcoming-events).
@@ -217,7 +217,7 @@ to help you figure out how you might want to take part. If you have any question
 want to talk about anything, please reach out to [blacklivesmatter@nodejs.org](mailto:blacklivesmatter@nodejs.org).
 -->
 
-私達は[コラボレーションサミット](https://github.com/openjs-foundation/summit#upcoming-events)をオンラインで開催します。そこではNode.jsも含まれる[OpenJSプロジェクト](https://openjsf.org/projects/)の[多くのセッション](https://github.com/openjs-foundation/summit/issues?q=is%3Aissue+is%3Aopen+label%3A%22Session+Proposal%22)があります。私達はこれらに参加するための[オリエンテーションガイド](https://github.com/openjs-foundation/summit/blob/master/2020-06-23-Austin/orientation.md)を用意しています。質問したいことや、話したいことがある場合は[blacklivesmatter@nodejs.org](mailto:blacklivesmatter@nodejs.org)までメールしてください。
+私たちは[コラボレーションサミット](https://github.com/openjs-foundation/summit#upcoming-events)をオンラインで開催します。そこではNode.jsも含まれる[OpenJSプロジェクト](https://openjsf.org/projects/)の[多くのセッション](https://github.com/openjs-foundation/summit/issues?q=is%3Aissue+is%3Aopen+label%3A%22Session+Proposal%22)があります。私たちはこれらに参加するための[オリエンテーションガイド](https://github.com/openjs-foundation/summit/blob/master/2020-06-23-Austin/orientation.md)を用意しています。質問したいことや、話したいことがある場合は[blacklivesmatter@nodejs.org](mailto:blacklivesmatter@nodejs.org)までメールしてください。
 
 <!--
 Moving forward we plan to offer ongoing support, mentorship, and sponsorship to
