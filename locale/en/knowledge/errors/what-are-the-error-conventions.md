@@ -49,4 +49,4 @@ As you can see from the example, the callback is called with null as its first a
 
 The `callback` function shows the reason for this: it allows a user to easily know whether or not an error occurred. If `null` was not the first argument passed on success, the user would need to check the object being returned and determine themselves whether or not the object constituted an error - a much more complex and less user-friendly approach.
 
-So to wrap it all up, when using callbacks, if an error comes up, then pass it as the first argument. Otherwise, pass `null` first, and then your return arguments. On the receiving end, inside the callback function, check if the first parameter is non-null; if it is, handle it as an error.
+So to wrap it all up, when using callbacks, if an error comes up, then pass it as the first argument. Otherwise, pass `null` first, and then your return arguments. On the receiving end, inside the callback function, check if the first parameter is non-null. If it is non-null, then handle it as an error.
