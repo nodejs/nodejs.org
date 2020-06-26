@@ -179,7 +179,7 @@ To Black members of our community seeking collaboration: We're here for
 you.
 -->
 
-入り口を探している非白人の皆さん、私達はあなたのためにここにいます。
+アクセスを必要としている非白人の皆さん、私達はあなたのためにここにいます。
 
 運動を増幅したい非白人の皆さん、私達はあなたのためにここにいます。
 
