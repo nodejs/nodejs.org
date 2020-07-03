@@ -217,7 +217,7 @@ to help you figure out how you might want to take part. If you have any question
 want to talk about anything, please reach out to [blacklivesmatter@nodejs.org](mailto:blacklivesmatter@nodejs.org).
 -->
 
-私たちは[コラボレーションサミット](https://github.com/openjs-foundation/summit#upcoming-events)をオンラインで開催します。そこではNode.jsも含まれる[OpenJSプロジェクト](https://openjsf.org/projects/)の[多くのセッション](https://github.com/openjs-foundation/summit/issues?q=is%3Aissue+is%3Aopen+label%3A%22Session+Proposal%22)があります。私たちはこれらに参加するための[オリエンテーションガイド](https://github.com/openjs-foundation/summit/blob/master/2020-06-23-Austin/orientation.md)を用意しています。質問したいことや、話したいことがある場合は[blacklivesmatter@nodejs.org](mailto:blacklivesmatter@nodejs.org)までメールしてください。
+私たちは[コラボレーションサミット](https://github.com/openjs-foundation/summit#upcoming-events)をオンラインで開催します。Node.jsを含む[OpenJSプロジェクト](https://openjsf.org/projects/)の[多くのセッション](https://github.com/openjs-foundation/summit/issues?q=is%3Aissue+is%3Aopen+label%3A%22Session+Proposal%22)が行われます。私たちはこれらに参加するための[オリエンテーションガイド](https://github.com/openjs-foundation/summit/blob/master/2020-06-23-Austin/orientation.md)を用意しています。質問したいことや、話したいことがある場合は[blacklivesmatter@nodejs.org](mailto:blacklivesmatter@nodejs.org)までメールしてください。
 
 <!--
 Moving forward we plan to offer ongoing support, mentorship, and sponsorship to
