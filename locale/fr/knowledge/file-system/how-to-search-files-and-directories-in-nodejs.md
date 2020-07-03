@@ -21,7 +21,31 @@ fs.readdir(process.cwd(), function (err, files) {
 });
 ```
 
-Unfortunately, if you want to do a recursive list of files, then things get much more complicated very quickly. To avoid all of this scary complexity, this is one of the places where a Node.js user-land library can save the day. [Node-findit](https://github.com/substack/node-findit), by SubStack, is a helper module to make searching for files easier. It has interfaces to let you work with callbacks, events, or just plain old synchronously (not a good idea most of the time).
+Unfortunately, if you want to do a recursive list of files, then things get much more complicated very quickly. To avoid all of this scary complexity, this is one of the places where a Node.js user-land library can save the day. [node-glob](https://github.com/isaacs/node-glob) or [node-findit](https://github.com/substack/node-findit), by SubStack.
+
+## [node-glob](https://github.com/isaacs/node-glob)
+
+Install [node-glob](https://github.com/isaacs/node-glob) with npm
+
+```
+npm i glob
+```
+
+```javascript
+var glob = require("glob")
+
+// options is optional
+glob("**/*.js", options, function (er, files) {
+  // files is an array of filenames.
+  // If the `nonull` option is set, and nothing
+  // was found, then files is ["**/*.js"]
+  // er is an error object or null.
+})
+```
+
+## [node-findit](https://github.com/substack/node-findit)
+
+[node-findit](https://github.com/substack/node-findit) is a helper module to make searching for files easier. It has interfaces to let you work with callbacks, events, or just plain old synchronously (not a good idea most of the time).
 
 To install `node-findit`, simply use npm:
 
