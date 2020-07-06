@@ -18,6 +18,7 @@ title: Installing Node.js via package manager
 * [Gentoo](#gentoo)
 * [IBM i](#ibm-i)
 * [macOS](#macos)
+* [n](#n)
 * [NetBSD](#netbsd)
 * [Nodenv](#nodenv)
 * [nvm](#nvm)
@@ -172,6 +173,19 @@ Or build manually from pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
+```
+
+## n
+
+`n` is a simple to use node version manager for Mac and Linux. Specify the target version to install using a rich syntax, or select from a menu of previously downloaded versions. 
+
+See the [homepage](https://github.com/tj/n) for install methods (boostrap, npm, Homebrew, third-party), and all the usage details.
+
+If you already have `npm` then installing `n` and then the newest LTS `node` version is as simple as:
+
+```
+npm install -g n
+n lts
 ```
 
 ## NetBSD
