@@ -58,7 +58,7 @@ To help with localization, please read the [TRANSLATION](TRANSLATION.md) guide.
 
 ## Serve/Build Options
 
-* `DEFAULT_LOCALE={{locale}} npm run serve` builds only the files present in the specified locale folder (will display 404 if file is not present)
+* `DEFAULT_LOCALE={{locale}} npm run serve` builds only the files present in the specified locale folder (will display 404 status code if file is not present)
 * `DEFAULT_LOCALE={{locale}} npm run serve -- --preserveLocale` builds the files present in the specified locale folder and adds the pages present in the English locale that are missing.
 * `npm run serve` builds all languages and returns 404 when a file is not present in the current locale
 * `npm run serve -- --preserveLocale` builds all languages and adds the pages present in the English locale that are missing.
@@ -66,7 +66,7 @@ To help with localization, please read the [TRANSLATION](TRANSLATION.md) guide.
 
 ## Deployment
 
-Full set up is in <https://github.com/nodejs/build/tree/master/setup/www> minus secrets and certificates. The webhook is setup on GitHub for this project and talks to a small Node server on the host which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
+Full setup is in <https://github.com/nodejs/build/tree/master/setup/www> minus secrets and certificates. The webhook is setup on GitHub for this project and talks to a small Node server on the host which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
 
 ## Content vs. Code
 
