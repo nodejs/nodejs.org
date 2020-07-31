@@ -181,7 +181,7 @@ you prefer, you can contact any of the following members on Twitter:
 * [Ben Michel](https://twitter.com/obensource)
 * [James M Snell](https://twitter.com/jasnell)
 * [Joe Sepi](https://twitter.com/joe_sepi)
-* [Matheus Marchini](https://twitter.com/mmarkini)
+* [Mary Marchini](https://twitter.com/mmarkini)
 * [Myles Borins](https://twitter.com/MylesBorins)
 * [Rich Trott](https://twitter.com/Trott)
 * [Shelley Vohr](https://twitter.com/codebytere)
