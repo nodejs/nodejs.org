@@ -50,7 +50,7 @@ article a {
 }
 
 .has-side-nav {
-  aside {
+  nav {
     width: 200px;
     float: left;
     margin-top: 1.5em;
@@ -95,7 +95,7 @@ article a {
 
 @media screen and (max-width: 480px) {
   .has-side-nav {
-    aside {
+    nav {
       width: 100%;
       float: none;
     }
@@ -139,7 +139,7 @@ a:hover .color-lightgray {
 
 html[dir="rtl"] {
   .has-side-nav {
-    aside {
+    nav {
       float: right;
     }
 
