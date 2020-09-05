@@ -25,7 +25,7 @@
       </ul>
 
       {{#if pagination}}
-      <nav class="pagination">
+      <nav aria-label="pagination" class="pagination">
         {{#if pagination.prev.path}}
         <a href="/{{ site.locale }}/{{ pagination.prev.path }}/">&lt; Newer</a>
         {{/if}}
