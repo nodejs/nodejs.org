@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/nodejs/nodejs.org)
+
 # [nodejs.org](https://nodejs.org/)
 
 [![Build Status](https://github.com/nodejs/nodejs.org/workflows/Tests/badge.svg)](https://github.com/nodejs/nodejs.org/actions?workflow=Tests)
