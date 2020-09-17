@@ -38,7 +38,7 @@ article a {
     font-size: inherit;
     margin-bottom: 15px;
 
-    & + p {
+    + p {
       margin-top: 0;
     }
   }
@@ -132,7 +132,7 @@ a:hover .color-lightgray {
   border-radius: 2px;
   margin-top: 1em;
 
-  & *:first-child {
+  *:first-child {
     margin-top: .5rem;
   }
 }
