@@ -26,7 +26,7 @@ Ha surgido la demanda de equipar Node.js con una API que dé como resultado una 
 
 * Node.js puede contener un motor de JavaScript diferente en el futuro. Esto significa que, externamente, todas las interfaces de Node.js permanecerían iguales, pero el archivo de encabezado V8 estaría ausente. Tal paso causaría la interrupción del ecosistema de Node.js en general, y el de los complementos nativos en particular, si una API que es independiente del motor de JavaScript no es proporcionada primero por Node.js y adoptada por complementos nativos.
 
-Con estos fines, Node.js ha introducido N-API en la versión 8.6.0 y lo ha marcado como un componente estable del proyecto a partir de Node.js 8.12.0. La API se define en los encabezados [`node_api.h`] [] y [` node_api_types.h`] [], y proporciona una garantía de compatibilidad con versiones posteriores que cruza el límite de la versión principal de Node.js. La garantía puede expresarse de la siguiente manera:
+Con estos fines, Node.js ha introducido N-API en la versión 8.6.0 y lo ha marcado como un componente estable del proyecto a partir de Node.js 8.12.0. La API se define en los encabezados [`node_api.h`][] y [` node_api_types.h`][], y proporciona una garantía de compatibilidad con versiones posteriores que cruza el límite de la versión principal de Node.js. La garantía puede expresarse de la siguiente manera:
 
 ** Una versión * n * dada de N-API estará disponible en la versión principal de Node.js en la que se publicó y en todas las versiones posteriores de Node.js, incluidas las versiones principales posteriores. **
 
