@@ -3,30 +3,30 @@ title: Guides
 layout: docs.hbs
 ---
 
-# Guides
+# Guías
 
 ## General
 
-* [Getting Started Guide](/en/docs/guides/getting-started-guide/)
-* [Debugging - Getting Started](/en/docs/guides/debugging-getting-started/)
-* [Easy profiling for Node.js Applications](/en/docs/guides/simple-profiling/)
-* [Diagnostics - Flame Graphs](/en/docs/guides/diagnostics-flamegraph/)
-* [Dockerizing a Node.js web app](/en/docs/guides/nodejs-docker-webapp/)
-* [Migrating to safe Buffer constructors](/en/docs/guides/buffer-constructor-deprecation/)
+* [Guía de Inicio](/es/docs/guides/getting-started-guide/)
+* [Empezar a Depurar](/es/docs/guides/debugging-getting-started/)
+* [Creación de perfiles sencilla para aplicaciones Node.js](/es/docs/guides/simple-profiling/)
+* [Diagnóstico - gráficos de llama](/es/docs/guides/diagnostics-flamegraph/)
+* [Dockerizar una aplicación web Node.js](/es/docs/guides/nodejs-docker-webapp/)
+* [Migrar a constructores de búfer seguros](/es/docs/guides/buffer-constructor-deprecation/)
 
-## Node.js core concepts
+## Conceptos básicos de Node.js
 
-* [Introduction to Node.js](https://nodejs.dev/)
-* [Overview of Blocking vs Non-Blocking](/en/docs/guides/blocking-vs-non-blocking/)
-* [The Node.js Event Loop, Timers, and `process.nextTick()`](/en/docs/guides/event-loop-timers-and-nexttick/)
-* [Don't Block the Event Loop (or the Worker Pool)](/en/docs/guides/dont-block-the-event-loop/)
-* [Timers in Node.js](/en/docs/guides/timers-in-node/)
+* [Introducción a Node.js](https://nodejs.dev/)
+* [Descripción general de Blocking vs Non-Blocking](/es/docs/guides/blocking-vs-non-blocking/)
+* [El ciclo de eventos de Node.js, temporizadores, y `process.nextTick()`](/es/docs/guides/event-loop-timers-and-nexttick/)
+* [No bloquee el bucle de eventos (o el grupo de trabajadores)](/es/docs/guides/dont-block-the-event-loop/)
+* [Temporizadores en Node.js](/es/docs/guides/timers-in-node/)
 
-## Module-related guides
+## Guías relacionadas con el módulo
 
-* [Anatomy of an HTTP Transaction](/en/docs/guides/anatomy-of-an-http-transaction/)
-* [Working with Different Filesystems](/en/docs/guides/working-with-different-filesystems/)
-* [Backpressuring in Streams](/en/docs/guides/backpressuring-in-streams/)
-* [Domain Module Postmortem](/en/docs/guides/domain-postmortem/)
-* [How to publish N-API package](/en/docs/guides/publishing-napi-modules/)
-* [ABI Stability](/en/docs/guides/abi-stability/)
+* [Anatomía de una transacción HTTP](/es/docs/guides/anatomy-of-an-http-transaction/)
+* [Trabajar con diferentes sistemas de archivos](/es/docs/guides/working-with-different-filesystems/)
+* [Contrapresión en Streams](/es/docs/guides/backpressuring-in-streams/)
+* [Módulo de dominio Postmortem](/es/docs/guides/domain-postmortem/)
+* [Cómo publicar el paquete N-API](/es/docs/guides/publishing-napi-modules/)
+* [Estabilidad ABI](/es/docs/guides/abi-stability/)
