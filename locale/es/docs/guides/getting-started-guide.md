@@ -1,11 +1,11 @@
 ---
-title: Getting Started Guide
+title: Guía de Inicio
 layout: docs.hbs
 ---
 
-# How do I start with Node.js after I installed it?
+# ¿Cómo empiezo con Node.js después de instalarlo?
 
-Once we have installed Node.js, let's build our first web server. Create a file named `app.js` containing the following contents:
+Una vez que hayamos instalado Node.js, construyamos nuestro primer servidor web. Cree un archivo llamado `app.js` que contenga el siguiente contenido:
 
 ```javascript
 const http = require('http');
@@ -24,6 +24,6 @@ server.listen(port, hostname, () => {
 });
 ```
 
-Now, run your web server using `node app.js`. Visit `http://localhost:3000` and you will see a message saying "Hello World".
+Ahora, ejecute su servidor web usando `node app.js`. Visite `http://localhost:3000` y verá un mensaje que dice" Hola mundo ".
 
-Refer to the [Introduction to Node.js](https://nodejs.dev/) for a more comprehensive guide to getting started with Node.js.
+Consulte la [Introducción a Node.js](https://nodejs.dev/) para obtener una guía más completa para comenzar con Node.js.
