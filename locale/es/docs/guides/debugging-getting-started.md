@@ -173,7 +173,7 @@ Esto inicia una sesión de túnel ssh donde una conexión al puerto 9221 en su m
 ## Depurador heredado
 
 **El depurador heredado ha quedado obsoleto a partir de Node.js 7.7.0. En su lugar, utilice 
-`--inspect` e Inspector. **
+`--inspect` e Inspector.**
 
 Cuando se inicia con los conmutadores **--debug** o **-- debug-brk** en la versión 7 y anteriores, Node.js escucha los comandos de depuración definidos por el protocolo de depuración V8 descontinuado en un puerto TCP, por defecto `5858`. Cualquier cliente depurador que habla este protocolo puede conectarse y depurar el proceso en ejecución; a continuación se enumeran un par de populares.
 
