@@ -28,7 +28,7 @@ Ha surgido la demanda de equipar Node.js con una API que dé como resultado una 
 
 Con estos fines, Node.js ha introducido N-API en la versión 8.6.0 y lo ha marcado como un componente estable del proyecto a partir de Node.js 8.12.0. La API se define en los encabezados [`node_api.h`][] y [` node_api_types.h`][], y proporciona una garantía de compatibilidad con versiones posteriores que cruza el límite de la versión principal de Node.js. La garantía puede expresarse de la siguiente manera:
 
-** Una versión * n * dada de N-API estará disponible en la versión principal de Node.js en la que se publicó y en todas las versiones posteriores de Node.js, incluidas las versiones principales posteriores. **
+**Una versión *n* dada de N-API estará disponible en la versión principal de Node.js en la que se publicó y en todas las versiones posteriores de Node.js, incluidas las versiones principales posteriores.**
 
 El autor de un complemento nativo puede aprovechar la garantía de compatibilidad hacia adelante de N-API asegurándose de que el complemento solo utilice las API definidas en `node_api.h` y las estructuras de datos y constantes definidas en` node_api_types.h`. Al hacerlo, el autor facilita la adopción de su complemento al indicar a los usuarios de producción que la carga de mantenimiento de su aplicación no aumentará más con la adición del complemento nativo a su proyecto de lo que lo haría con la adición de un paquete escrito exclusivamente en JavaScript.
 
