@@ -277,9 +277,9 @@ function getSource (callback) {
           link: '/en/black-lives-matter/'
         },
         banner: {
-          visible: false,
-          text: 'Help us decide the future of Unhandled Rejections',
-          link: 'https://www.surveymonkey.com/r/FTJM7YD'
+          visible: true,
+          text: 'New security releases are available',
+          link: '/en/blog/vulnerability/september-2020-security-releases/'
         }
       }
     }
