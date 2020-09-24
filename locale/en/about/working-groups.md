@@ -21,6 +21,7 @@ Core Working Groups are created by the
 * [Release](#release)
 * [Security](#security)
 * [Streams](#streams)
+* [Package Maintenance](#package-maintenance)
 
 ### [Addon API](https://github.com/nodejs/nan)
 
@@ -239,3 +240,27 @@ Responsibilities include:
 * Assisting in the implementation of stream providers within Node.js.
 * Recommending versions of `readable-stream` to be included in Node.js.
 * Messaging about the future of streams to give the community advance notice of changes.
+
+### [Package Mainentance](https://github.com/nodejs/package-maintenance)
+
+The Package Maintenance Working Group working group brings together
+Node.js collaborators, package maintainers, and package consumers to
+work together with the goal of ensuring the health of the package ecosystem.
+
+Our goals are:
+
+* Define and document how to prioritize which packages are key to
+  the Node.js ecosystem, and how/what assistance can/should be provided.
+  One key aspect is understanding what communication channels are
+  needed in order to identify when specific issues are slowing
+  migration from one Node.js version to another,  or causing friction in the ecosystem.
+* Building and documenting guidance, tools and processes so businesses
+  can identify the packages they depend on. Businesses can use the information
+  to build a business case which supports both the organization and developers
+  helping to maintain those packages.
+* Documenting a backlog and providing resources to help businesses identify
+  how their developers can contribute, and get engaged. Developers can test
+  and validate a workflow to help with issues slowing migration to Node.js 10.x.
+* Building, documenting and evangelizing guidance, tools and processes
+  (for example LTS for modules) can make it easier for maintainers to manage multiple streams,
+  and accept help from those who depend on their module.
