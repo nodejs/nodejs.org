@@ -37,7 +37,7 @@
     ]
   },
   "dependencies": {
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^10.0.0",
     "cheerio": "^0.22.0",
     "fibers": "^5.0.0",
     "handlebars": "^4.7.6",
@@ -60,7 +60,7 @@
     "node-version-data": "^1.1.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.0.9",
-    "sass": "^1.26.10",
+    "sass": "^1.26.11",
     "semver": "^7.3.2",
     "strftime": "^0.10.0"
   },
@@ -69,7 +69,7 @@
     "cross-env": "^7.0.2",
     "delay-cli": "^1.1.0",
     "faucet": "0.0.1",
-    "linkinator": "^2.1.1",
+    "linkinator": "^2.1.2",
     "lockfile-lint": "^4.3.7",
     "nock": "^13.0.4",
     "node-fetch": "^2.6.1",
@@ -79,7 +79,7 @@
     "remark-preset-lint-node": "^1.16.0",
     "st": "^2.0.0",
     "standard": "^14.3.4",
-    "stylelint": "^13.7.1",
+    "stylelint": "^13.7.2",
     "stylelint-config-twbs-bootstrap": "^2.1.0",
     "tape": "^5.0.1",
     "vnu-jar": "20.6.30"
