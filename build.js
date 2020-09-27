@@ -278,8 +278,8 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'Help us decide the future of Unhandled Rejections',
-          link: 'https://www.surveymonkey.com/r/FTJM7YD'
+          text: 'New security releases are available',
+          link: '/en/blog/vulnerability/september-2020-security-releases/'
         }
       }
     }
