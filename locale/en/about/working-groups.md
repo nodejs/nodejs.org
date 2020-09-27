@@ -18,10 +18,10 @@ Core Working Groups are created by the
 * [Docker](#docker)
 * [Evangelism](#evangelism)
 * [i18n](#i18n)
+* [Package Maintenance](#package-maintenance)
 * [Release](#release)
 * [Security](#security)
 * [Streams](#streams)
-* [Package Maintenance](#package-maintenance)
 
 ### [Addon API](https://github.com/nodejs/nan)
 
@@ -178,6 +178,29 @@ Each language community maintains its own membership.
 * [nodejs-uk - Ukrainian (Українська)](https://github.com/nodejs/nodejs-uk)
 * [nodejs-vi - Vietnamese (Tiếng Việt)](https://github.com/nodejs/nodejs-vi)
 
+### [Package Maintenance](https://github.com/nodejs/package-maintenance)
+
+Responsibilities include:
+* Building, documenting and evangelizing guidance, tools and processes that make it easier for maintainers to
+  maintain packages and accept help from those who depend on their packages.
+* Management of repositories within the [pkgjs](https://github.com/pkgjs)
+  GitHub organization including but not limited to:
+  * Managing the list of organization owners which supplement the standard
+    Node.js organization owners as outlined in:
+[https://github.com/nodejs/admin/blob/master/GITHUB_ORG_MANAGEMENT_POLICY.md#owners](https://github.com/nodejs/admin/blob/master/GITHUB_ORG_MANAGEMENT_POLICY.md#owners)
+  * Overseeing new repositories (creating, moving, removing)
+  * Managing the maintainer teams for all of the repositories.
+  * Contribution policy for repositories
+* Technical direction for the projects within
+  the [pkgjs](https://github.com/pkgjs)  organization
+* Project governance and process (including this policy)
+* Managing the maintainer teams and contribution policies for the
+  following repositories
+  * nodejs/ci-config-travis
+  * nodejs/ci-config-github-actions
+  * nodejs/package-maintenance repository.
+
+
 ### [Release](https://github.com/nodejs/Release)
 
 The Release Working Group manages the release process for Node.js.
@@ -240,27 +263,3 @@ Responsibilities include:
 * Assisting in the implementation of stream providers within Node.js.
 * Recommending versions of `readable-stream` to be included in Node.js.
 * Messaging about the future of streams to give the community advance notice of changes.
-
-### [Package Mainentance](https://github.com/nodejs/package-maintenance)
-
-The Package Maintenance Working Group working group brings together
-Node.js collaborators, package maintainers, and package consumers to
-work together with the goal of ensuring the health of the package ecosystem.
-
-Our goals are:
-
-* Define and document how to prioritize which packages are key to
-  the Node.js ecosystem, and how/what assistance can/should be provided.
-  One key aspect is understanding what communication channels are
-  needed in order to identify when specific issues are slowing
-  migration from one Node.js version to another,  or causing friction in the ecosystem.
-* Building and documenting guidance, tools and processes so businesses
-  can identify the packages they depend on. Businesses can use the information
-  to build a business case which supports both the organization and developers
-  helping to maintain those packages.
-* Documenting a backlog and providing resources to help businesses identify
-  how their developers can contribute, and get engaged. Developers can test
-  and validate a workflow to help with issues slowing migration to Node.js 10.x.
-* Building, documenting and evangelizing guidance, tools and processes
-  (for example LTS for modules) can make it easier for maintainers to manage multiple streams,
-  and accept help from those who depend on their module.
