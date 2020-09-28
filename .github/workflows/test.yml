@@ -8,7 +8,6 @@ on:
   pull_request:
 
 env:
-  CI: true
   NODE: 12.x
 
 jobs:
