@@ -276,5 +276,8 @@ Hopefully, through the performance investigation of this (admittedly contrived)
 example, you've seen how the V8 tick processor can help you gain a better
 understanding of the performance of your Node.js applications.
 
+You may also find [how to create a flame graph][diagnostics flamegraph] helpful.
+
 [profiler inside V8]: https://v8.dev/docs/profile
 [benefits of asynchronous programming]: https://nodesource.com/blog/why-asynchronous
+[diagnostics flamegraph]: https://nodejs.org/en/docs/guides/diagnostics-flamegraph/
