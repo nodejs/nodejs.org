@@ -7,9 +7,9 @@
 
 ## What is this repo?
 
-[nodejs.org](https://nodejs.org/) by the [OpenJS Foundation](https://openjsf.org/) builds on the merged community's past website projects to form a self-publishing, community-managed version of the previous site.
+[nodejs.org](https://nodejs.org/) by the [OpenJS Foundation](https://openjsf.org/) builds on the merged community's past website projects to form a self-publishing and community-managed version of the previous site.
 
-On a technical level, inspiration has been taken from the `iojs.org` repo while design and content has been migrated from the old [nodejs.org repo](https://github.com/nodejs/nodejs.org-archive). These technical changes have helped to facilitate community involvement and empower the foundation's internationalization communities to provide alternative website content in other languages.
+On a technical level, inspiration has been taken from the `iojs.org` repo while design and content has been migrated from the old [nodejs.org repo](https://github.com/nodejs/nodejs.org-archive). These technical changes have helped to facilitate community involvement and empower the foundation's internationalization communities to provide alternative website content in other available languages.
 
 This repo's issues section has become the primary home for the Website WG's coordination efforts (meeting planning, minute approval, etc).
 
@@ -38,7 +38,7 @@ If you want to submit a new feature or a bugfix, the best way is to create the c
 
 If you want to help translate to other languages or improve existing translations, it isn't necessary to work from Github. You can and should do it through Crowdin, this is the correct workflow.
 
-Crowdin is an online tool that facilitates the user experience for the translator, here is more information:
+Crowdin is an online tool that facilitates the user experience for the translator, here is more information about it:
 
 Website translations are handled via [Crowdin](https://crowdin.com/project/nodejs-website).
 
@@ -66,7 +66,7 @@ To help with localization, please read the [TRANSLATION](TRANSLATION.md) guide.
 
 ## Deployment
 
-Full setup is in <https://github.com/nodejs/build/tree/master/setup/www> minus secrets and certificates. The webhook is setup on GitHub for this project and talks to a small Node server on the host which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
+Full setup is in <https://github.com/nodejs/build/tree/master/setup/www> minus secrets and certificates. The webhook is setup on GitHub for this project and talks to a small Node server on the host which does the work. For reference, see the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
 
 ## Content vs. Code
 
