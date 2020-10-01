@@ -5,7 +5,7 @@
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Crowdin](https://badges.crowdin.net/nodejs-website/localized.svg)](https://crowdin.com/project/nodejs-website)
 
-## What is this repo?
+## What is This  repo?
 
 [nodejs.org](https://nodejs.org/) by the [OpenJS Foundation](https://openjsf.org/) builds on the merged community's past website projects to form a self-publishing, community-managed version of the previous site.
 
@@ -23,14 +23,14 @@ In both cases the workflow is different, please check how it is done in each cas
 
 Please contribute! There are plenty of [good first issues](https://github.com/nodejs/nodejs.org/labels/good%20first%20issue) to work on. To get started, you have to [fork](https://github.com/nodejs/nodejs.org/fork) this repo to your own GitHub account first. Then open up a terminal on your machine and enter the following commands:
 
-```bash
+```bashing
 git clone https://github.com/<your user name>/nodejs.org.git
 cd nodejs.org
 npm install
 npm start
 ```
 
-This will start the development server on `http://localhost:8080/en/`. This should reload automatically when you make changes to the code, but no code is perfect, so sometimes you may need to restart it. :)
+This will start from the development server on `http://localhost:8080/en/`. This should reload automatically when you make changes to the code, but no code is perfect, so sometimes you may need to restart it. :)
 
 If you want to submit a new feature or a bugfix, the best way is to create the changes in a separate branch, e.g.: `git checkout -b feature/mycoolfeature`. This will make it easier for you to submit a pull request and get your feature merged.
 
