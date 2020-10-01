@@ -19,7 +19,7 @@ There are two ways to contribute to this project. The first is **submitting new 
 
 In both cases the workflow is different, please check how it is done in each case.
 
-### To submit a new feature or a bugfix
+### To submit a new feature or a bugfix on-demand
 
 Please contribute! There are plenty of [good first issues](https://github.com/nodejs/nodejs.org/labels/good%20first%20issue) to work on. To get started, you have to [fork](https://github.com/nodejs/nodejs.org/fork) this repo to your own GitHub account first. Then open up a terminal on your machine and enter the following commands:
 
