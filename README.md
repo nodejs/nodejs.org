@@ -5,7 +5,7 @@
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Crowdin](https://badges.crowdin.net/nodejs-website/localized.svg)](https://crowdin.com/project/nodejs-website)
 
-## What is this repo?
+## What is repo?
 
 [nodejs.org](https://nodejs.org/) by the [OpenJS Foundation](https://openjsf.org/) builds on the merged community's past website projects to form a self-publishing, community-managed version of the previous site.
 
@@ -13,9 +13,9 @@ On a technical level, inspiration has been taken from the `iojs.org` repo while 
 
 This repo's issues section has become the primary home for the Website WG's coordination efforts (meeting planning, minute approval, etc).
 
-## Contributing
+## Contributing here
 
-There are two ways to contribute to this project. The first is **submitting new features or fixing bugs** and the second is **translating content to other languages**.
+There are two ways to contribute to this project. The first is **submitting new features or fixing bugs** and the second is **translating content to other languages and make it fast**.
 
 In both cases the workflow is different, please check how it is done in each case.
 
