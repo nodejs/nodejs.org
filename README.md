@@ -18,6 +18,16 @@ This repo's issues section has become the primary home for the Website WG's coor
 ```bash
 pacman -S nodejs npm
 ```
+2 For Debian and Ubuntu
+```bash
+pkg install node
+cd /usr/ports/www/node && make install
+```
+3 For MacOS
+```bash
+curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
+```
+
 ## Contributing
 
 There are two ways to contribute to this project. The first is **submitting new features or fixing bugs** and the second is **translating content to other languages**.
