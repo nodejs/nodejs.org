@@ -13,6 +13,10 @@ On a technical level, inspiration has been taken from the `iojs.org` repo while 
 
 This repo's issues section has become the primary home for the Website WG's coordination efforts (meeting planning, minute approval, etc).
 
+## Nodejs Installation
+1 For Arch Linux
+  pacman -S nodejs npm
+
 ## Contributing
 
 There are two ways to contribute to this project. The first is **submitting new features or fixing bugs** and the second is **translating content to other languages**.
