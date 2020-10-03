@@ -165,7 +165,7 @@ Unfortunately, in some cases the regexp match might require an exponential numbe
 An exponential number of trips means that if the engine requires `x` trips to determine a match, it will need `2*x` trips if we add only one more character to the input string.
 Since the number of trips is linearly related to the time required, the effect of this evaluation will be to block the Event Loop.
 
-A *vulnerable regular expression* is one on which your regular expression engine might take exponential time, exposing you to [REDOS](https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS) on "evil input".
+A *vulnerable regular expression* is one on which your regular expression engine might take exponential time, exposing you to [REDOS](https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS) on "evil input".
 Whether or not your regular expression pattern is vulnerable (i.e. the regexp engine might take exponential time on it) is actually a difficult question to answer, and varies depending on whether you're using Perl, Python, Ruby, Java, JavaScript, etc., but here are some rules of thumb that apply across all of these languages:
 
 1. Avoid nested quantifiers like `(a+)*`. V8's regexp engine can handle some of these quickly, but others are vulnerable.
