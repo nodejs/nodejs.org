@@ -75,7 +75,7 @@
     "node-fetch": "^2.6.1",
     "proxyquire": "^2.1.3",
     "remark-cli": "^8.0.1",
-    "remark-frontmatter": "^2.0.0",
+    "remark-frontmatter": "^3.0.0",
     "remark-preset-lint-node": "^1.16.0",
     "st": "^2.0.0",
     "standard": "^14.3.4",
