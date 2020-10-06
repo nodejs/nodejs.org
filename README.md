@@ -76,4 +76,4 @@ The content of the website comes from a variety of working groups (Evangelism, C
 The Website WG defers to these WGs on matters of content and routinely adds collaborators from these
 working groups as they add and improve content on the website. In other words, the Website WG is not
 an *editorial* Working Group except when no other Working Group has taken responsibility for a
-content area.
+content area. 
