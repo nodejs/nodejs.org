@@ -12,7 +12,7 @@ connections can be handled concurrently. Upon each connection, the callback is
 fired, but if there is no work to be done, Node.js will sleep.
 
 ```javascript
-const http = require('http');
+const http = require('http');//import 'http' module
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -20,7 +20,7 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+  res.end('Hello World'); //it will print on created server
 });
 
 server.listen(port, hostname, () => {
