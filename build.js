@@ -279,7 +279,7 @@ function getSource (callback) {
         banner: {
           visible: false,
           text: 'New security releases are available',
-          link: '/en/blog/vulnerability/june-2020-security-releases/'
+          link: '/en/blog/vulnerability/september-2020-security-releases/'
         }
       }
     }
