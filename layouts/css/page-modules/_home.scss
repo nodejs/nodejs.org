@@ -55,7 +55,7 @@
     opacity: .85;
   }
 
-  & > img {
+  > img {
     border-radius: 2px;
   }
 }
@@ -88,7 +88,6 @@
 
 /**
  * BLM CTA button styles.
- * TODO: Remove at conclusion of natural course (days to weeks).
  */
 
 .home-blacklivesmatterblock {
