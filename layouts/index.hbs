@@ -13,9 +13,9 @@
         {{{ contents }}}
 
         {{#if project.blacklivesmatter.visible}}
-          <p class="home-blacklivesmatter home-blacklivesmatter-banner">
-            <a href="{{ project.blacklivesmatter.link }}">{{ project.blacklivesmatter.text }}</a>
-          </p>
+          <div class="home-blacklivesmatterblock">
+            <a tabindex="0" role="button" aria-pressed="false" class="home-blacklivesmatterbutton" href="{{ project.blacklivesmatter.link }}">{{ project.blacklivesmatter.text }}</a>
+          </div>
         {{/if}}
 
         {{#if project.banner.visible}}
