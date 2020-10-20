@@ -5,23 +5,23 @@ labels:
   lts: LTS
 ---
 
-# About Docs
+# À propos de Docs
 
-There are several types of documentation available on this website:
+Il existe plusieurs types de documentation disponibles sur ce site web:
 
-* API reference documentation
-* ES6 features
+* Documentation de référence sur l'API
+* Fonctionnalités ES6
 * Guides
 
-## API Reference Documentation
+## Documentation de référence sur l'API
 
-The [API reference documentation](https://nodejs.org/api/) provides detailed information about a function or object in Node.js. This documentation indicates what arguments a method accepts, the return value of that method, and what errors may be related to that method. It also indicates which methods are available for different versions of Node.js.
+La [documentation de référence sur l'API](https://nodejs.org/api/) fournit des informations détaillées sur une fonction ou un objet dans Node.js. Cette documentation indique quels arguments une méthode accepte, la valeur de retour de cette méthode et quelles erreurs peuvent être liées à cette méthode. Elle indique aussi quelles méthodes sont disponibles pour différentes versions de Node.js.
 
-This documentation describes the built-in modules provided by Node.js. It does not document modules provided by the community.
+Cette documentation décrit les modules intégrés fournis par Node.js. Il ne documente pas les modules fournis par la communauté.
 
 <div class="highlight-box">
 
-### Looking for API docs of previous releases?
+### Vous recherchez des documents sur l'API des versions précédentes?
 
 * [Node.js 13.x](https://nodejs.org/docs/latest-v13.x/api/)
 * [Node.js 12.x](https://nodejs.org/docs/latest-v12.x/api/)
@@ -35,14 +35,14 @@ This documentation describes the built-in modules provided by Node.js. It does n
 * [Node.js 4.x](https://nodejs.org/docs/latest-v4.x/api/)
 * [Node.js 0.12.x](https://nodejs.org/docs/latest-v0.12.x/api/)
 * [Node.js 0.10.x](https://nodejs.org/docs/latest-v0.10.x/api/)
-* [All versions](https://nodejs.org/docs/)
+* [Toutes les versions](https://nodejs.org/docs/)
 
 </div>
 
-## ES6 Features
+## Fonctionnalités ES6
 
-The [ES6 section](/en/docs/es6/) describes the three ES6 feature groups, and details which features are enabled by default in Node.js, alongside explanatory links. It also shows how to find which version of V8 shipped with a particular Node.js release.
+La [section ES6](/fr/docs/es6/) décrit les trois groupes de fonctionnalités ES6 et détaille les fonctionnalités activées par défaut dans Node.js, ainsi que des liens explicatifs. Il montre aussi comment trouver la version de V8 livrée avec une version particulière de Node.js.
 
 ## Guides
 
-The [Guides section](/en/docs/guides/) has long-form, in-depth articles about Node.js technical features and capabilities.
+La [section Guides](/fr/docs/guides/) contient des articles longs et détaillés sur les fonctionnalités et capacités techniques de Node.js.
