@@ -18,7 +18,7 @@ any additional policies about what to include will be provided in the responses.
 exception is security disclosures which should be sent privately.
 
 Collaborators may direct you to another repository, ask for additional clarifications, and
-add appropriate metadata before the issue is addressed.
+a metadata before the issue is addressed.
 
 Please be courteous, respectful, and every participant is expected to follow the
 project's Code of Conduct.
@@ -28,6 +28,17 @@ project's Code of Conduct.
 Any change to resources in this repository must be through pull requests. This applies to all changes
 to documentation, code, binary files, etc. Even long term collaborators must use
 pull requests.
+Log an issue for any question or problem you might have. When in doubt, log an issue,
+any additional policies about what to include will be provided in the responses. The only
+exception is security disclosures which should be sent privately.
+
+Collaborators may direct you to another repository, ask for additional clarifications, and
+add appropriate metadata before the issue is addressed.
+
+Please be courteous, respectful, and every participant is expected to follow the
+project's Code of Conduct.
+
+
 
 No pull request can be merged without being reviewed.
 
