@@ -77,3 +77,12 @@ The Website WG defers to these WGs on matters of content and routinely adds coll
 working groups as they add and improve content on the website. In other words, the Website WG is not
 an *editorial* Working Group except when no other Working Group has taken responsibility for a
 content area.
+
+
+Please contribute! There are plenty of [good first issues](https://github.com/nodejs/nodejs.org/labels/good%20first%20issue) to work on. To get started, you have to [fork](https://github.com/nodejs/nodejs.org/fork) this repo to your own GitHub account first. Then open up a terminal on your machine and enter the following commands:
+
+```bash
+git clone https://github.com/<your user name>/nodejs.org.git
+cd nodejs.org
+npm install
+npm start
