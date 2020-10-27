@@ -78,7 +78,7 @@
     "remark-frontmatter": "^2.0.0",
     "remark-preset-lint-node": "^1.17.1",
     "st": "^2.0.0",
-    "standard": "^14.3.4",
+    "standard": "^15.0.0",
     "stylelint": "^13.7.2",
     "stylelint-config-twbs-bootstrap": "^2.1.0",
     "tape": "^5.0.1",
