@@ -78,12 +78,12 @@ emerge nodejs
 
 ## IBM i
 
-LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](https://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs8`, `nodejs10`, `nodejs12`, etc)
+LTS versions of Node.js are available from IBM, and are available via [the 'yum' package manager](https://ibm.biz/ibmi-rpms). The package name is `nodejs` followed by the major version number (for instance, `nodejs12`, `nodejs14` etc)
 
-To install Node.js 12.x from the command line, run the following as a user with \*ALLOBJ special authority:
+To install Node.js 14.x from the command line, run the following as a user with \*ALLOBJ special authority:
 
 ```bash
-yum install nodejs12
+yum install nodejs14
 ```
 
 Node.js can also be installed with the IBM i Access Client Solutions product. See [this support document](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) for more details
