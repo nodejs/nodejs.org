@@ -31,7 +31,6 @@
   },
   "standard": {
     "ignore": [
-      "static/js/modernizr.custom.js",
       "static/legacy/*",
       "external"
     ]
