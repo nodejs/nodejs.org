@@ -23,3 +23,10 @@ Major Node.js versions enter _Current_ release status for six months, which give
 After six months, odd-numbered releases (9, 11, etc.) become unsupported, and even-numbered releases (10, 12, etc.) move to _Active LTS_ status and are ready for general use.
 _LTS_ release status is "long-term support", which typically guarantees that critical bugs will be fixed for a total of 30 months.
 Production applications should only use _Active LTS_ or _Maintenance LTS_ releases.
+package.json file, run npm uninstall mdn-browser-compat-data.
+
+Add @mdn/browser-compat-data to your package dependencies.
+
+In the same directory as your package.json file, run npm install @mdn/browser-compat-data.
+
+In your code, replace any require("mdn-browser-compat-data") calls with require("@mdn/browser-compat-data").
