@@ -27,7 +27,7 @@ server.listen(port, hostname, () => {
 
 Esto contrasta con el modelo de concurrencia más común de hoy en día, en el que se emplean hilos del Sistema Operativo. Las redes basadas en hilos son relativamente ineficientes y muy difíciles de usar. Además, los usuarios de Node.js están libres de preocuparse por el bloqueo del proceso, ya que no existe. Casi ninguna función en Node.js realiza I/O directamente, por lo que el proceso nunca se bloquea. Por ello, es muy propicio desarrollar sistemas escalables en Node.js.
 
-Si alguno de estos términos no le es familiar, hay un artículo completo en [Blocking vs Non-Blocking](https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/).
+Si alguno de estos términos no le es familiar, hay un artículo completo en [Blocking vs Non-Blocking](https://nodejs.org/es/docs/guides/blocking-vs-non-blocking/).
 
 ---
 
