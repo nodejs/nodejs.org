@@ -1,5 +1,6 @@
 {
   "plugins": [
+    "remark-gfm",
     "remark-frontmatter",
     "remark-preset-lint-node",
     ["remark-lint-fenced-code-flag", false],

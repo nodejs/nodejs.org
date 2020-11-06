@@ -1,4 +1,4 @@
-﻿---
+---
 layout: security.hbs
 title: الأمن
 ---
