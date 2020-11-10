@@ -36,7 +36,7 @@ There is a good static file server called [node-static](https://github.com/cloud
 var static = require('node-static');
 var http = require('http');
 
-var file = new(static.Server)();
+var file = new(static.Server)(__dirname);
 
 http.createServer(function (req, res) {
   file.serve(req, res);
