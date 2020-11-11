@@ -11,6 +11,7 @@ title: Installing Node.js via package manager
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
+* [CentOS, Fedora and Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
 * [Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora and Snap packages](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
 * [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
@@ -47,6 +48,29 @@ Node.js and npm packages are available in the Community Repository.
 ```bash
 pacman -S nodejs npm
 ```
+
+## CentOS, Fedora and Red Hat Enterprise Linux
+
+Node.js is available as a module called `nodejs` in CentOS/RHEL 8 and Fedora.
+
+```bash
+dnf module install nodejs:<stream>
+```
+
+where `<stream>` corresponds to the major version of Node.js.
+To see a list of available streams:
+
+```bash
+dnf module list nodejs
+```
+
+For example, to install Node.js 12:
+
+```bash
+dnf module install nodejs:12
+```
+
+For CentOS/RHEL 7 Node.js is available via [Software Collections](https://www.softwarecollections.org/en/scls/?search=NodeJS).
 
 ## Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora and Snap packages
 
