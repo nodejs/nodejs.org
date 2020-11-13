@@ -277,9 +277,9 @@ function getSource (callback) {
           link: '/en/black-lives-matter/'
         },
         banner: {
-          visible: false,
-          text: 'New security releases are available',
-          link: '/en/blog/vulnerability/september-2020-security-releases/'
+          visible: true,
+          text: 'New security releases to be made available Nov 16, 2020',
+          link: '/en/blog/vulnerability/november-2020-security-releases/'
         }
       }
     }
