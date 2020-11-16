@@ -91,7 +91,7 @@ executing immediate: so immediate
 `setImmediate()` returns an `Immediate` object, which can be used to cancel
 the scheduled immediate (see `clearImmediate()` below).
 
-> **Note:** Don't get `setImmediate()` confused with `process.nextTick()`. There are
+> Don't get `setImmediate()` confused with `process.nextTick()`. There are
 > some major ways they differ. The first is that `process.nextTick()` will run
 > *before* any `Immediate`s that are set as well as before any scheduled I/O.
 > The second is that `process.nextTick()` is non-clearable, meaning once

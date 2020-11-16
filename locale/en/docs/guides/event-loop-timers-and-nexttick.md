@@ -48,7 +48,7 @@ order of operations.
    └───────────────────────────┘
 ```
 
-> **Note:** Each box will be referred to as a "phase" of the event loop.
+> Each box will be referred to as a "phase" of the event loop.
 
 Each phase has a FIFO queue of callbacks to execute. While each phase is
 special in its own way, generally, when the event loop enters a given
@@ -65,7 +65,7 @@ result, long running callbacks can allow the poll phase to run much
 longer than a timer's threshold. See the [**timers**](#timers) and
 [**poll**](#poll) sections for more details.
 
-> **Note:** There is a slight discrepancy between the Windows and the
+> There is a slight discrepancy between the Windows and the
 > Unix/Linux implementation, but that's not important for this
 > demonstration. The most important parts are here. There are actually
 > seven or eight steps, but the ones we care about — ones that Node.js
@@ -99,8 +99,7 @@ scheduled after the specified amount of time has passed; however,
 Operating System scheduling or the running of other callbacks may delay
 them.
 
-> **Note:** Technically, the [**poll** phase](#poll) controls when timers
-> are executed.
+> Technically, the [**poll** phase](#poll) controls when timers are executed.
 
 For example, say you schedule a timeout to execute after a 100 ms
 threshold, then your script starts asynchronously reading a file which
@@ -145,8 +144,8 @@ the timer's callback. In this example, you will see that the total delay
 between the timer being scheduled and its callback being executed will
 be 105ms.
 
-> **Note:** To prevent the **poll** phase from starving the event loop,
-> [libuv][] (the C library that implements the Node.js
+> To prevent the **poll** phase from starving the event loop, [libuv][]
+> (the C library that implements the Node.js
 > event loop and all of the asynchronous behaviors of the platform)
 > also has a hard maximum (system dependent) before it stops polling for
 > more events.

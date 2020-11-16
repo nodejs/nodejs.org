@@ -39,7 +39,7 @@ will look like this:
 }
 ```
 
-> **Note:** As explained in
+> As explained in
 > ["Using dist-tags"][], unlike regular versions, tagged versions cannot be
 > addressed by version ranges such as `"^2.0.0"` inside `package.json`. The
 > reason for this is that the tag refers to exactly one version. So, if the
