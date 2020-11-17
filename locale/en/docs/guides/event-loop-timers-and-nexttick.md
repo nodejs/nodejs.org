@@ -410,8 +410,8 @@ percentage of the packages on npm. Every day more new modules are being
 added, which means every day we wait, more potential breakages occur.
 While they are confusing, the names themselves won't change.
 
-*We recommend developers use `setImmediate()` in all cases because it's
-easier to reason about.*
+> We recommend developers use `setImmediate()` in all cases because it's
+> easier to reason about.
 
 ## Why use `process.nextTick()`?
 
