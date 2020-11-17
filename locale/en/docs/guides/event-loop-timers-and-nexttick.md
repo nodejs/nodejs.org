@@ -1,9 +1,9 @@
 ---
-title: The Node.js Event Loop, Timers, and process.nextTick()
+title: The Node.js Event Loop, Timers, process.nextTick() and Microtasks
 layout: docs.hbs
 ---
 
-# The Node.js Event Loop, Timers, and `process.nextTick()`
+# The Node.js Event Loop, Timers, `process.nextTick()` and Microtasks
 
 ## What is the Event Loop?
 
@@ -283,25 +283,56 @@ The main advantage to using `setImmediate()` over `setTimeout()` is
 `setImmediate()` will always be executed before any timers if scheduled
 within an I/O cycle, independently of how many timers are present.
 
-## `process.nextTick()`
+## `process.nextTick()` and microtasks
 
-### Understanding `process.nextTick()`
+### Understanding `process.nextTick()` an microtasks
 
-You may have noticed that `process.nextTick()` was not displayed in the
-diagram, even though it's a part of the asynchronous API. This is because
-`process.nextTick()` is not technically part of the event loop. Instead,
-the `nextTickQueue` will be processed after the current operation is
-completed, regardless of the current phase of the event loop. Here,
-an *operation* is defined as a transition from the
-underlying C/C++ handler, and handling the JavaScript that needs to be
-executed.
+You may have noticed that `process.nextTick()` and microtasks were not
+displayed in the event loop diagram, even though they are a part of the
+asynchronous API. This is because they are not technically part of the
+event loop. Instead, the `nextTick` and the microtask queues will be
+processed after the current operation is completed, regardless of the
+current phase of the event loop, before returning control to it.
 
-Looking back at our diagram, any time you call `process.nextTick()` in a
-given phase, all callbacks passed to `process.nextTick()` will be
-resolved before the event loop continues. This can create some bad
-situations because **it allows you to "starve" your I/O by making
-recursive `process.nextTick()` calls**, which prevents the event loop
-from reaching the **poll** phase.
+> Here, an _operation_ is defined as a transition from the underlying
+> C/C++ handler to handling the JavaScript that needs to be executed.
+
+Looking back at the event loop diagram, any time you call
+`process.nextTick()` or `queueMicrotask()` in a given phase, all
+callbacks passed to them will be resolved before the event loop
+continues.
+
+The following diagram shows a simplified overview of the `nextTick` and
+the microtask queue loop:
+
+```
+                    │
+      ┌─────────────┴─────────────┐
+      │       JS operation        │
+      └─────────────┬─────────────┘
+      ┏━━━━━━━━━━━━━┷━━━━━━━━━━━━━┓
+┌────>┃   Drain nextTick queue    ┃
+│     ┗━━━━━━━━━━━━━┳━━━━━━━━━━━━━┛
+│     ┏━━━━━━━━━━━━━┻━━━━━━━━━━━━━┓
+│     ┃   Drain microtask queue   ┃
+│     ┗━━━━━━━━━━━━━┳━━━━━━━━━━━━━┛
+│ yes ╭─────────────┸─────────────╮
+└─────┤   New items in queues?    │
+      ╰─────────────┬─────────────╯
+                    │ no, return to the event loop
+```
+
+First the `nextTick` queue and then the microtask queue are fully
+drained. If new items are enqueued in either of them during the
+execution of `process.nextTick()` or `queueMicrotask()` callbacks, the
+loop restarts.
+
+> This can create a bad situation because **it allows you to "starve"
+> your I/O by making recursive `process.nextTick()` or
+> `queueMicrotask()` calls**, which prevents the event loop from
+> reaching the **poll** phase.
+
+[Promises](#promises) use the microtask queue to run their callbacks.
 
 ### Why would that be allowed?
 
@@ -414,7 +445,7 @@ While they are confusing, the names themselves won't change.
 *We recommend developers use `setImmediate()` in all cases because it's
 easier to reason about.*
 
-## Why use `process.nextTick()`?
+## Why use `process.nextTick()` or `queueMicrotask`?
 
 There are two main reasons:
 
@@ -423,6 +454,8 @@ perhaps try the request again before the event loop continues.
 
 2. At times it's necessary to allow a callback to run after the call
 stack has unwound but before the event loop continues.
+
+Other scenarios are outlined in [Microtask Guide][] on MDN.
 
 One example is to match the user's expectations. Simple example:
 
@@ -464,8 +497,9 @@ myEmitter.on('event', () => {
 You can't emit an event from the constructor immediately
 because the script will not have processed to the point where the user
 assigns a callback to that event. So, within the constructor itself,
-you can use `process.nextTick()` to set a callback to emit the event
-after the constructor has finished, which provides the expected results:
+you can use `process.nextTick()` or `queueMicrotask()` to set a
+callback to emit the event after the constructor has finished, which
+provides the expected results:
 
 ```js
 const EventEmitter = require('events');
@@ -487,5 +521,14 @@ myEmitter.on('event', () => {
 });
 ```
 
+## Promises
+
+Just like `process.nextTick()` and microtasks, promises were not
+displayed in the event loop diagram, because they are not technically
+part of the event loop either. Promises are _executed synchronously_
+i.e. immediately, but will always _resolve asynchronously_ using the
+microtask queue.
+
 [libuv]: https://libuv.org/
+[Microtask Guide]: https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide
 [REPL]: https://nodejs.org/api/repl.html#repl_repl
