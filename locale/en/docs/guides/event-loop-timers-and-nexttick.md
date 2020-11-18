@@ -285,7 +285,7 @@ within an I/O cycle, independently of how many timers are present.
 
 ## `process.nextTick()` and microtasks
 
-### Understanding `process.nextTick()` an microtasks
+### Understanding `process.nextTick()` and microtasks
 
 You may have noticed that `process.nextTick()` and microtasks were not
 displayed in the event loop diagram, even though they are a part of the
