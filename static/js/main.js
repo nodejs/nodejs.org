@@ -1,7 +1,7 @@
 /* eslint-disable no-var */
 // Notice: IE 10 and below is still supported, so disable eslint for the file
 // when checking the "var"
-(function () {
+;(function () {
   var langPickerTogglerElement = document.querySelector('.lang-picker-toggler')
   var langPickerElement = document.querySelector('.lang-picker')
   var langElements = langPickerElement.querySelectorAll('button')
@@ -12,8 +12,11 @@
   Array.prototype.forEach.call(langElements, function (el) {
     if (el.getAttribute('data-lang') !== currentLang) {
       el.addEventListener('click', function (e) {
-        var newLocale = (e.target && e.target.dataset && e.target.dataset.lang) || 'en'
-        window.location.assign(window.location.pathname.replace(/\/[a-zA-Z-]+/, '/' + newLocale))
+        var newLocale =
+          (e.target && e.target.dataset && e.target.dataset.lang) || 'en'
+        window.location.assign(
+          window.location.pathname.replace(/\/[a-zA-Z-]+/, '/' + newLocale)
+        )
       })
     } else {
       currentLangElement = el
@@ -21,7 +24,10 @@
   })
 
   if (currentLangElement) {
-    langPickerTogglerElement.setAttribute('title', currentLangElement.textContent)
+    langPickerTogglerElement.setAttribute(
+      'title',
+      currentLangElement.textContent
+    )
 
     // Remove the current selected language item, because we don't need to choose it
     // any more unless we want to switch to a new language
@@ -30,7 +36,8 @@
 
   const toggleFunction = function () {
     langPickerElement.classList.toggle('hidden')
-    const isAriaExpanded = langPickerTogglerElement.getAttribute('aria-expanded') === 'true'
+    const isAriaExpanded =
+      langPickerTogglerElement.getAttribute('aria-expanded') === 'true'
     langPickerTogglerElement.setAttribute('aria-expanded', !isAriaExpanded)
   }
 
@@ -39,12 +46,14 @@
   })
 
   document.body.addEventListener('click', function (event) {
-    if (!langPickerElement.classList.contains('hidden') && !langPickerTogglerElement.contains(event.target)) {
+    if (
+      !langPickerElement.classList.contains('hidden') &&
+      !langPickerTogglerElement.contains(event.target)
+    ) {
       toggleFunction()
     }
   })
 })()
-
 ;(function () {
   const themeAttr = 'data-theme'
   var darkThemeSwitcherElement = document.querySelector('.dark-theme-switcher')
@@ -58,22 +67,22 @@
     }
   })
 
-  function setTheme (theme) {
+  function setTheme(theme) {
     document.querySelector('html').setAttribute(themeAttr, theme)
     window.localStorage.setItem('theme', theme)
   }
 
-  function getTheme () {
+  function getTheme() {
     return window.localStorage.getItem('theme')
   }
 })()
-
 ;(function () {
-  var scrollToTop = document.querySelector('#scroll-to-top');
+  var scrollToTop = document.querySelector('#scroll-to-top')
 
-  (window.onscroll = function () {
+  ;(window.onscroll = function () {
     window.requestAnimationFrame(function () {
-      scrollToTop.style.display = window.pageYOffset > window.innerHeight ? 'block' : 'none'
+      scrollToTop.style.display =
+        window.pageYOffset > window.innerHeight ? 'block' : 'none'
     })
   })()
 
@@ -82,7 +91,6 @@
     window.scrollTo(0, 0)
   })
 })()
-
 ;(function () {
   var contributorCard = document.querySelector('.contributor-card')
 
@@ -91,22 +99,27 @@
   }
 
   var contributorAvatar = contributorCard.querySelector('#contributor-avatar')
-  var contributorUsername = contributorCard.querySelector('#contributor-username')
-  var contributorContributions = contributorCard.querySelector('#contributor-contributions')
+  var contributorUsername = contributorCard.querySelector(
+    '#contributor-username'
+  )
+  var contributorContributions = contributorCard.querySelector(
+    '#contributor-contributions'
+  )
   var loadingSpinner = contributorCard.querySelector('.spinner-border')
 
   if (window.IntersectionObserver) {
-    var observer = new window.IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.intersectionRatio > 0.5) {
-          // In viewport, fetch a random contributor
-          fetchRandomContributor()
+    var observer = new window.IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.intersectionRatio > 0.5) {
+            // In viewport, fetch a random contributor
+            fetchRandomContributor()
 
-          observer.unobserve(entry.target)
-        }
-      })
-    },
-    { threshold: 0.5 }
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.5 }
     )
 
     observer.observe(document.querySelector('footer'))
@@ -115,7 +128,7 @@
     fetchRandomContributor()
   }
 
-  function fetchRandomContributor () {
+  function fetchRandomContributor() {
     var maxContributors
     var fetchDate
     var needToRefetch = false
@@ -132,7 +145,9 @@
 
     // If localStorage and data is less than 1 month old, fetch 1 time
     if (maxContributors && !needToRefetch) {
-      getContributor(Math.floor(Math.random() * Math.floor(parseInt(maxContributors))) + 1)
+      getContributor(
+        Math.floor(Math.random() * Math.floor(parseInt(maxContributors))) + 1
+      )
     } else {
       getMaxContributors(function (randomPage, lastPage) {
         getContributor(randomPage)
@@ -144,16 +159,23 @@
     }
   }
 
-  function getMaxContributors (callback) {
+  function getMaxContributors(callback) {
     var xhr = new window.XMLHttpRequest()
-    xhr.open('GET', 'https://api.github.com/repos/nodejs/node/contributors?per_page=1', true)
+    xhr.open(
+      'GET',
+      'https://api.github.com/repos/nodejs/node/contributors?per_page=1',
+      true
+    )
 
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
           // Get Headers Links last page to generate a random contributor
           var links = linkParser(xhr.getResponseHeader('Link'))
-          var randomPage = Math.floor(Math.random() * Math.floor(parseInt(links.last.page, 10))) + 1
+          var randomPage =
+            Math.floor(
+              Math.random() * Math.floor(parseInt(links.last.page, 10))
+            ) + 1
 
           if (window.localStorage) {
             window.localStorage.setItem('fetch_date', Date.now())
@@ -168,9 +190,14 @@
     xhr.send()
   }
 
-  function getContributor (randomPage) {
+  function getContributor(randomPage) {
     var xhr = new window.XMLHttpRequest()
-    xhr.open('GET', 'https://api.github.com/repos/nodejs/node/contributors?per_page=1&page=' + randomPage, true)
+    xhr.open(
+      'GET',
+      'https://api.github.com/repos/nodejs/node/contributors?per_page=1&page=' +
+        randomPage,
+      true
+    )
 
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
@@ -185,8 +212,10 @@
           contributorAvatar.parentElement.href = contributor.html_url
           contributorUsername.textContent = contributor.login
           contributorUsername.href = contributor.html_url
-          contributorContributions.textContent = contributor.contributions + ' contributions'
-          contributorContributions.parentElement.href = 'https://github.com/nodejs/node/commits?author=' + contributor.login
+          contributorContributions.textContent =
+            contributor.contributions + ' contributions'
+          contributorContributions.parentElement.href =
+            'https://github.com/nodejs/node/commits?author=' + contributor.login
         } else {
           return contributorCard.parentNode.removeChild(contributorCard)
         }
@@ -196,7 +225,7 @@
     xhr.send()
   }
 
-  function linkParser (linkHeader) {
+  function linkParser(linkHeader) {
     var regex = /<([^?]+\?per_page=1&[a-z]+=([\d]+))>;[\s]*rel="([a-z]+)"/g
     var array = []
     var object = {}
@@ -211,21 +240,21 @@
     return object
   }
 })()
-
 ;(function () {
   'use strict'
 
   var osMatch = navigator.platform.match(/(Win|Mac|Linux)/)
   var os = (osMatch && osMatch[1]) || ''
-  var arch = navigator.userAgent.match(/x86_64|Win64|WOW64/) ||
+  var arch =
+    navigator.userAgent.match(/x86_64|Win64|WOW64/) ||
     navigator.cpuClass === 'x64'
-    ? 'x64'
-    : 'x86'
+      ? 'x64'
+      : 'x86'
   var buttons = document.querySelectorAll('.home-downloadbutton')
   var downloadHead = document.querySelector('#home-downloadhead')
   var dlLocal
 
-  function versionIntoHref (nodeList, filename) {
+  function versionIntoHref(nodeList, filename) {
     var linkEls = Array.prototype.slice.call(nodeList)
     var version
     var el
@@ -235,7 +264,7 @@
       el = linkEls[i]
 
       // Windows 64-bit files for 0.x.x need to be prefixed with 'x64/'
-      if (os === 'Win' && (version[1] === '0' && arch === 'x64')) {
+      if (os === 'Win' && version[1] === '0' && arch === 'x64') {
         el.href += arch + '/'
       }
 
@@ -269,7 +298,6 @@
     winText.textContent = winText.textContent.replace(/x(86|64)/, arch)
   }
 })()
-
 ;(function () {
   // This function is used to replace the anchor
   // link of Edit on GitHub
@@ -280,6 +308,8 @@
   if (editOnGitHubUrlElement) {
     editOnGitHubElement.setAttribute('href', editOnGitHubUrlElement.value)
   } else {
-    editOnGitHubElement.parentNode.parentNode.removeChild(editOnGitHubElement.parentNode)
+    editOnGitHubElement.parentNode.parentNode.removeChild(
+      editOnGitHubElement.parentNode
+    )
   }
 })()

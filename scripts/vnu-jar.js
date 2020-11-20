@@ -46,6 +46,5 @@ execFile('java', ['-version'], (error, stdout, stderr) => {
   return spawn('java', args, {
     shell: true,
     stdio: 'inherit'
-  })
-    .on('exit', process.exit)
+  }).on('exit', process.exit)
 })
