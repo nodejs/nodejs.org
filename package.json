@@ -15,7 +15,7 @@
     "test": "npm-run-all test:lint test:unit",
     "linkinator": "wait-on http://localhost:8080/en/ && linkinator http://localhost:8080/en/ --recurse --skip \"^(?!http://localhost)\" --verbosity error",
     "test:lint": "npm-run-all --parallel --aggregate-output test:lint:*",
-    "test:lint:js": "standard",
+    "test:lint:js": "eslint .",
     "test:lint:md": "remark -qf .",
     "test:lint:stylelint": "stylelint \"layouts/css/**/*.{css,scss}\"",
     "test:lint:lockfile": "lockfile-lint --allowed-hosts npm github.com --allowed-schemes https: --empty-hostname false --type npm --path package-lock.json",
@@ -28,12 +28,6 @@
   "license": "MIT",
   "engines": {
     "node": ">=12"
-  },
-  "standard": {
-    "ignore": [
-      "static/legacy/*",
-      "external"
-    ]
   },
   "dependencies": {
     "@metalsmith/permalinks": "^2.3.0",
@@ -66,6 +60,11 @@
   "devDependencies": {
     "chokidar": "^3.5.2",
     "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.1",
     "faucet": "0.0.1",
     "linkinator": "^2.16.0",
     "lockfile-lint": "^4.6.2",

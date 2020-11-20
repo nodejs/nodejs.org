@@ -1,4 +1,4 @@
-;(function () {
+(function () {
   const themeAttr = 'data-theme'
   const isInDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
 

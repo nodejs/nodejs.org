@@ -1,7 +1,7 @@
 /* eslint-disable no-var */
 // Notice: IE 10 and below is still supported, so disable eslint for the file
 // when checking the "var"
-;(function () {
+(function () {
   var langPickerTogglerElement = document.querySelector('.lang-picker-toggler')
   var langPickerElement = document.querySelector('.lang-picker')
   var langElements = langPickerElement.querySelectorAll('button')
