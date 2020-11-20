@@ -60,12 +60,7 @@ function fetchDocs (version) {
     fetchShasums(version),
     verifyDownloads(version)
   ]).then((results) => {
-    const changelog = results[0]
-    const author = results[1]
-    const versionPolicy = results[2]
-    const shasums = results[3]
-    const files = results[4]
-
+    const [changelog, author, versionPolicy, shasums, files] = results
     return {
       version,
       changelog,
