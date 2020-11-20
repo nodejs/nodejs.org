@@ -3,7 +3,14 @@
 const cheerio = require('cheerio')
 
 const SUMMARY_MAX_LENGTH = 300
-const IGNORE_SELECTORS = ['.blogpost-header', '.anchor', 'h1', 'h2', 'h3', 'blockquote']
+const IGNORE_SELECTORS = [
+  '.blogpost-header',
+  '.anchor',
+  'h1',
+  'h2',
+  'h3',
+  'blockquote'
+]
 
 /**
  * Due to the nature of metalsmith and

@@ -1,6 +1,13 @@
 {
   "extends": [
     "eslint:recommended",
-    "standard"
-  ]
+    "standard",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error"
+  }
 }

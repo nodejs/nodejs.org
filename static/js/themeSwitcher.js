@@ -1,6 +1,8 @@
-(function () {
+;(function () {
   const themeAttr = 'data-theme'
-  const isInDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+  const isInDarkMode =
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches
 
   if (getTheme() == null) {
     setTheme(isInDarkMode ? 'dark' : 'light')
@@ -8,12 +10,12 @@
     setTheme(getTheme())
   }
 
-  function setTheme (theme) {
+  function setTheme(theme) {
     document.querySelector('html').setAttribute(themeAttr, theme)
     window.localStorage.setItem('theme', theme)
   }
 
-  function getTheme () {
+  function getTheme() {
     return window.localStorage.getItem('theme')
   }
 })()
