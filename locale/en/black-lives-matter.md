@@ -3,98 +3,98 @@ layout: black-lives-matter.hbs
 ---
 
 <section id="lives">
-  
-  * Ahmaud Arbery
-  * Akai Gurley
-  * Akiel Denkins
-  * Alfred Olango
-  * Alton Sterling
-  * Anthony Hill
-  * Anthony Lamar Smith
-  * Antwon Rose II
-  * Ariane McCree
-  * Botham Jean
-  * Brandon Webber
-  * Brendon Glenn
-  * Breonna Taylor
-  * Charly Keunang
-  * Christian Taylor
-  * Christopher Whitfield
-  * Danny Ray Thomas
-  * Dante Parker
-  * Darius Tarver
-  * DeAndre Ballard
-  * DeJuan Guillory
-  * Delrawn Small
-  * De’Von Bailey
-  * Dontre Hamilton
-  * D’ettrick Griffin
-  * Emantic Fitzgerald Bradford Jr
-  * Eric Garner
-  * Eric Logan
-  * Ezell Ford
-  * Finan H. Berhe
-  * Freddie Gray
-  * George Floyd
-  * Gregory Gunn
-  * Gregory Hill Jr
-  * JaQuavion Slaton
-  * Jamar Clark
-  * Jamarion Robinson
-  * Jamee Johnson
-  * Jemel Roberson
-  * Jerame Reid
-  * Jimmy Atchison
-  * John Crawford III
-  * Jonathan Ferrell
-  * Jonathan Hart
-  * Jordan Baker
-  * Jordan Edwards
-  * Julius Johnson
-  * Kajieme Powell
-  * Keith Childress
-  * Keith Lamont Scott
-  * Kendrec McDade
-  * Kwame Jones
-  * Laquan McDonald
-  * Larry Jackson Jr
-  * Manuel Loggins Jr
-  * Mario Woods
-  * Maurice Granton
-  * Michael Brown
-  * Michael Dean
-  * Mike Ramos
-  * Miles Hall
-  * Patrick Harmon
-  * Philando Castile
-  * Quintonio LeGrier
-  * Ramarley Graham
-  * Robert Lawrence White
-  * Rumain Brisbon
-  * Ryan Twyman
-  * Samuel David Mallard
-  * Samuel DuBose
-  * Sandra Bland
-  * Sean Reed
-  * Stephon Clark
-  * Steven Demarco Taylor
-  * Tamir Rice
-  * Terence Crutcher
-  * Terrance Franklin
-  * Terrence Sterling
-  * Tony McDade
-  * Tony Robinson
-  * Trayvon Martin
-  * Victor White III
-  * Walter Scott
-  * Wendell Allen
-  * William Green
-  * Willie McCoy
-  * Yassin Mohamed
-  * &hellip;[and](https://mappingpoliceviolence.org/) [countless](https://twitter.com/samswey/status/1259254114606886913) 
-    [more](https://en.wikipedia.org/wiki/Lists_of_killings_by_law_enforcement_officers_in_the_United_States#Lists_of_killings) 
-    [lives](https://ebwiki.org/) 
-    not listed  here, taken by violence and brutality.
+
+* Ahmaud Arbery
+* Akai Gurley
+* Akiel Denkins
+* Alfred Olango
+* Alton Sterling
+* Anthony Hill
+* Anthony Lamar Smith
+* Antwon Rose II
+* Ariane McCree
+* Botham Jean
+* Brandon Webber
+* Brendon Glenn
+* Breonna Taylor
+* Charly Keunang
+* Christian Taylor
+* Christopher Whitfield
+* Danny Ray Thomas
+* Dante Parker
+* Darius Tarver
+* DeAndre Ballard
+* DeJuan Guillory
+* Delrawn Small
+* De’Von Bailey
+* Dontre Hamilton
+* D’ettrick Griffin
+* Emantic Fitzgerald Bradford Jr
+* Eric Garner
+* Eric Logan
+* Ezell Ford
+* Finan H. Berhe
+* Freddie Gray
+* George Floyd
+* Gregory Gunn
+* Gregory Hill Jr
+* JaQuavion Slaton
+* Jamar Clark
+* Jamarion Robinson
+* Jamee Johnson
+* Jemel Roberson
+* Jerame Reid
+* Jimmy Atchison
+* John Crawford III
+* Jonathan Ferrell
+* Jonathan Hart
+* Jordan Baker
+* Jordan Edwards
+* Julius Johnson
+* Kajieme Powell
+* Keith Childress
+* Keith Lamont Scott
+* Kendrec McDade
+* Kwame Jones
+* Laquan McDonald
+* Larry Jackson Jr
+* Manuel Loggins Jr
+* Mario Woods
+* Maurice Granton
+* Michael Brown
+* Michael Dean
+* Mike Ramos
+* Miles Hall
+* Patrick Harmon
+* Philando Castile
+* Quintonio LeGrier
+* Ramarley Graham
+* Robert Lawrence White
+* Rumain Brisbon
+* Ryan Twyman
+* Samuel David Mallard
+* Samuel DuBose
+* Sandra Bland
+* Sean Reed
+* Stephon Clark
+* Steven Demarco Taylor
+* Tamir Rice
+* Terence Crutcher
+* Terrance Franklin
+* Terrence Sterling
+* Tony McDade
+* Tony Robinson
+* Trayvon Martin
+* Victor White III
+* Walter Scott
+* Wendell Allen
+* William Green
+* Willie McCoy
+* Yassin Mohamed
+* &hellip;[and](https://mappingpoliceviolence.org/) [countless](https://twitter.com/samswey/status/1259254114606886913) 
+  [more](https://en.wikipedia.org/wiki/Lists_of_killings_by_law_enforcement_officers_in_the_United_States#Lists_of_killings) 
+  [lives](https://ebwiki.org/) 
+  not listed  here, taken by violence and brutality.
 
 </section>
 
