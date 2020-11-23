@@ -211,6 +211,23 @@ If a socket or handle is closed abruptly (e.g. `socket.destroy()`), the
 `'close'` event will be emitted in this phase. Otherwise it will be
 emitted via `process.nextTick()`.
 
+## When does the even loop start?
+
+There are two major scenarios when the event loop starts in Node.js:
+
+* CommonJS modules
+* ECMAScript modules (ESM)
+
+In the former case, the event loop is started _after_ the main script
+is executed as part of Node.js's bootstrap process. So any callbacks
+are scheduled before the event loop starts, i.e. timers, immediates,
+etc. In the ESM case, the event loop is already running before the main
+script is executed. This happens because ESMs are loaded asynchronously
+within a promise.
+
+> This difference between CommonJS and ESM affects the order in which
+> the initial callbacks will be executed during the start of a script.
+
 ## `setImmediate()` vs `setTimeout()`
 
 `setImmediate()` and `setTimeout()` are similar, but behave in different
@@ -292,7 +309,7 @@ displayed in the event loop diagram, even though they are a part of the
 asynchronous API. This is because they are not technically part of the
 event loop. Instead, the `nextTick` and the microtask queues will be
 processed after the current operation is completed, regardless of the
-current phase of the event loop, before returning control to it.
+current phase of the event loop, _before_ returning control to it.
 
 > Here, an _operation_ is defined as a transition from the underlying
 > C/C++ handler to handling the JavaScript that needs to be executed.
