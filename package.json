@@ -36,7 +36,7 @@
     ]
   },
   "dependencies": {
-    "autoprefixer": "^10.0.3",
+    "autoprefixer": "^10.0.4",
     "cheerio": "^0.22.0",
     "fibers": "^5.0.0",
     "handlebars": "^4.7.6",
