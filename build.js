@@ -278,8 +278,8 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'New security releases now available for 15.x, 14.x and 12.x release lines',
-          link: '/en/blog/vulnerability/november-2020-security-releases/'
+          text: 'Node.js Certifications and Trainings are on sale, now until Dec. 8',
+          link: 'https://nodejs.medium.com/cyber-monday-sale-save-up-to-65-on-node-js-certifications-and-training-810a20bad64e'
         }
       }
     }
