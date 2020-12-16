@@ -17,6 +17,9 @@ Node.js 4.0.0에서 io.js의 이전 릴리스 라인과 Node.js 0.12.x가 합쳐
 
 #### 버전별 최신 릴리스를 찾고 있나요?
 
+* [Node.js 13.x](https://nodejs.org/dist/latest-v13.x/)
+* [Node.js 12.x](https://nodejs.org/dist/latest-v12.x/)
+* [Node.js 11.x](https://nodejs.org/dist/latest-v11.x/)
 * [Node.js 10.x](https://nodejs.org/dist/latest-v10.x/)
 * [Node.js 8.x](https://nodejs.org/dist/latest-v8.x/)
 * [Node.js 6.x](https://nodejs.org/dist/latest-v6.x/)
