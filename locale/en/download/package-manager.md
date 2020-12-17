@@ -12,7 +12,7 @@ title: Installing Node.js via package manager
 * [Android](#android)
 * [Arch Linux](#arch-linux)
 * [CentOS, Fedora and Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
-* [Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora and Snap packages](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
+* [Debian and Ubuntu based Linux distributions](#debian-and-ubuntu-based-linux-distributions)
 * [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
 * [IBM i](#ibm-i)
@@ -23,6 +23,7 @@ title: Installing Node.js via package manager
 * [OpenBSD](#openbsd)
 * [openSUSE and SLE](#opensuse-and-sle)
 * [SmartOS and illumos](#smartos-and-illumos)
+* [Snap](#snap)
 * [Solus](#solus)
 * [Void Linux](#void-linux)
 * [Windows](#windows)
@@ -72,9 +73,19 @@ dnf module install nodejs:12
 
 For CentOS/RHEL 7 Node.js is available via [Software Collections](https://www.softwarecollections.org/en/scls/?search=NodeJS).
 
-## Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora and Snap packages
+### Alternatives
+
+These resources provide packages compatible with CentOS, Fedora, and RHEL.
+* [Node.js snaps](#snap) maintained and supported at https://github.com/nodejs/snap
+* [Node.js binary distributions](#debian-and-ubuntu-based-linux-distributions) maintained and supported by [NodeSource](https://github.com/nodesource/distributions)
+
+## Debian and Ubuntu based Linux distributions
 
 [Node.js binary distributions](https://github.com/nodesource/distributions/blob/master/README.md) are available from NodeSource.
+
+### Alternatives
+
+Packages compatible with Debian and Ubuntu based Linux distributions are available via [Node.js snaps](#snap).
 
 ## FreeBSD
 
@@ -243,6 +254,10 @@ Or build manually from pkgsrc:
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
 ```
+
+## Snap
+
+[Node.js snaps](https://github.com/nodejs/snap) are available as [`node`](https://snapcraft.io/node) on the Snap store.
 
 ## Solus
 

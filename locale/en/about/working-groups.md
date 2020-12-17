@@ -12,7 +12,6 @@ Core Working Groups are created by the
 ## Current Working Groups
 
 * [Addon API](#addon-api)
-* [Benchmarking](#benchmarking)
 * [Build](#build)
 * [Diagnostics](#diagnostics)
 * [Docker](#docker)
@@ -47,23 +46,6 @@ Responsibilities include:
 
 The current members can be found in their
 [README](https://github.com/nodejs/nan#collaborators).
-
-### [Benchmarking](https://github.com/nodejs/benchmarking)
-
-The purpose of the Benchmark Working Group is to gain consensus
-on an agreed set of benchmarks that can be used to:
-
-* track and evangelize performance gains made between Node.js releases
-* avoid performance regressions between releases
-
-Responsibilities include:
-
-* Identifying 1 or more benchmarks that reflect customer usage.
-  Likely will need more than one to cover typical Node.js use cases
-  including low-latency and high concurrency
-* Working to get community consensus on the list chosen
-* Adding regular execution of chosen benchmarks to Node.js builds
-* Tracking/publicizing performance between builds/releases
 
 ### [Build](https://github.com/nodejs/build)
 

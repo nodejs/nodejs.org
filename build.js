@@ -278,8 +278,8 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'New security releases now available for 15.x, 14.x and 12.x release lines',
-          link: '/en/blog/vulnerability/november-2020-security-releases/'
+          text: 'New security releases to be made available January 4, 2021',
+          link: '/en/blog/vulnerability/january-2021-security-releases/'
         }
       }
     }
