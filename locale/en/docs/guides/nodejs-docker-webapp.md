@@ -80,11 +80,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `12` of `node`
-available from the [Docker Hub](https://hub.docker.com/):
+Here we will use the latest LTS (long term support) version `14` of `node`
+available from the [Docker Hub](https://hub.docker.com/_/node):
 
 ```docker
-FROM node:12
+FROM node:14
 ```
 
 Next we create a directory to hold the application code inside the image, this
@@ -143,7 +143,7 @@ CMD [ "node", "server.js" ]
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:12
+FROM node:14
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -194,7 +194,7 @@ $ docker images
 
 # Example
 REPOSITORY                      TAG        ID              CREATED
-node                            12         1934b0b038d1    5 days ago
+node                            14         1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
@@ -268,6 +268,6 @@ following places:
 
 * [Official Node.js Docker Image](https://hub.docker.com/_/node/)
 * [Node.js Docker Best Practices Guide](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
-* [Official Docker documentation](https://docs.docker.com/)
+* [Official Docker documentation](https://docs.docker.com/get-started/nodejs/build-images/)
 * [Docker Tag on Stack Overflow](https://stackoverflow.com/questions/tagged/docker)
 * [Docker Subreddit](https://reddit.com/r/docker)
