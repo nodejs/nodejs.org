@@ -1,5 +1,5 @@
 ---
-title: База знань
+title: База знаний
 layout: knowledge-base-index.hbs
 ---
 
