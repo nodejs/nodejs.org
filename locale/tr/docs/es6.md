@@ -29,7 +29,7 @@ node --v8-options | grep "in progress"
 
 ## --harmony işaretini kullanarak altyapımı oluşturdum. Kaldırmalı mıyım?
 
-Node.js üzerindeki `--harmony` bayrağının şu anki davranışı yalnızca **staged** özellikleri etkinleştirmektir. Sonuçta, artık `--es_staging` ile eş anlamlıdır. Yukarıda bahsedildiği gibi, bunlar henüz kararlı olduğu düşünülmeyen tamamlanmış özelliklerdir. Eğer güvenli oynamak istiyorsanız, özellikle üretim ortamlarında, V8'de ve dolayısıyla Node.js'de varsayılan olarak gönderilinceye kadar bu çalışma zamanı işaretini kaldırmayı düşünün. Bunu etkin tutarsanız, gelecekteki Node.js yükseltmelerinde, V8 standartı yakından takip etmek için onların anlamlarını değiştirirse kodunuzun bozulmasına hazır olmalısınız.
+Node.js üzerindeki `--harmony` işaretinin şu anki davranışı yalnızca **staged** özellikleri etkinleştirmektir. Sonuçta, artık `--es_staging` ile eş anlamlıdır. Yukarıda bahsedildiği gibi, bunlar henüz kararlı olduğu düşünülmeyen tamamlanmış özelliklerdir. Eğer güvenli oynamak istiyorsanız, özellikle üretim ortamlarında, V8'de ve dolayısıyla Node.js'de varsayılan olarak gönderilinceye kadar bu çalışma zamanı işaretini kaldırmayı düşünün. Bunu etkin tutarsanız, gelecekteki Node.js yükseltmelerinde, V8 standartı yakından takip etmek için onların anlamlarını değiştirirse kodunuzun bozulmasına hazır olmalısınız.
 
 ## Hangi V8 sürümünün belirli bir Node.js sürümüyle birlikte geldiğini nasıl öğrenebilirim?
 
