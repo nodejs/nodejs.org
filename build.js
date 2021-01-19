@@ -278,8 +278,8 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'New security releases now available for 15.x, 14.x, 12.x and 10.x release lines',
-          link: '/en/blog/vulnerability/january-2021-security-releases/'
+          text: 'The 2021 Node.js User Survey is open now',
+          link: 'https://www.surveymonkey.com/r/nodesurvey21'
         }
       }
     }
