@@ -13,6 +13,7 @@ title: Installing Node.js via package manager
 * [Arch Linux](#arch-linux)
 * [CentOS, Fedora and Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
 * [Debian and Ubuntu based Linux distributions](#debian-and-ubuntu-based-linux-distributions)
+* [fnm](#fnm)
 * [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
 * [IBM i](#ibm-i)
@@ -20,7 +21,6 @@ title: Installing Node.js via package manager
 * [NetBSD](#netbsd)
 * [Nodenv](#nodenv)
 * [nvm](#nvm)
-* [fnm](#fnm)
 * [OpenBSD](#openbsd)
 * [openSUSE and SLE](#opensuse-and-sle)
 * [SmartOS and illumos](#smartos-and-illumos)
@@ -87,6 +87,14 @@ These resources provide packages compatible with CentOS, Fedora, and RHEL.
 ### Alternatives
 
 Packages compatible with Debian and Ubuntu based Linux distributions are available via [Node.js snaps](#snap).
+
+## fnm
+
+Fast and simple Node.js version manager built-in Rust used to manage multiple released Node.js versions. It allows you to perform operations like install, uninstall, switch Node versions automatically based on the current directory, etc.
+To install fnm, use this [install script](https://github.com/Schniz/fnm#using-a-script-macoslinux).
+
+fnm has cross-platform support (macOS, Windows, Linux) & all poplar shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt)
+it's built with speed in mind and compatibility support for `.node-version` and `.nvmrc` files.
 
 ## FreeBSD
 
@@ -211,14 +219,6 @@ from source:
 ```bash
 nvm uninstall 8
 ```
-
-## fnm
-
-Fast and simple Node.js version manager built-in Rust used to manage multiple released Node.js versions. It allows you to perform operations like install, uninstall, switch Node versions automatically based on the current directory, etc.
-To install fnm, use this [install script](https://github.com/Schniz/fnm#using-a-script-macoslinux).
-
-fnm has cross-platform support (macOS, Windows, Linux) & all poplar shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt)
-it's built with speed in mind and compatibility support for `.node-version` and `.nvmrc` files.
 
 ## OpenBSD
 
