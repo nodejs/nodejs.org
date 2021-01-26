@@ -1,4 +1,4 @@
----
+<---
 layout: about-release-schedule.hbs
 title: Releases
 statuses:
@@ -15,7 +15,7 @@ columns:
   - 'Maintenance LTS Start'
   - 'End-of-life'
 schedule-footer: Dates are subject to change.
----
+--->
 
 # Releases
 
