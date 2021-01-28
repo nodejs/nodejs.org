@@ -34,7 +34,7 @@ One of the most common hash algorithms is [SHA-256](https://en.wikipedia.org/wik
 
 ### How To Calculate Hashes with Crypto
 
-Crypto has a method called `createHash` which allows you to calculate a hash. Its only argument is a string representing the hash This example finds the SHA-256 hash for the string, "Man oh man do I love node!":
+Crypto has a method called `createHash` which allows you to calculate a hash. Its only argument is a string representing the hash. This example finds the SHA-256 hash for the string, "Man oh man do I love node!":
 
 ```js
 require("crypto")

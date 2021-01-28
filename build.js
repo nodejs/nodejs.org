@@ -278,8 +278,8 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'New security releases to be made available January 4, 2021',
-          link: '/en/blog/vulnerability/january-2021-security-releases/'
+          text: 'The 2021 Node.js User Survey is open now',
+          link: 'https://www.surveymonkey.com/r/nodesurvey21'
         }
       }
     }
