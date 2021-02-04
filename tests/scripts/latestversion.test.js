@@ -45,7 +45,7 @@ test('latestversion.lts()', (t) => {
       { version: 'v0.12.7', lts: false }
     ])
 
-    t.equal(ltsVersion.node, 'v4.2.17')
+    t.equal(ltsVersion.node, 'v4.2.1')
     t.end()
   })
 
