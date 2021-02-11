@@ -179,7 +179,7 @@ brew install node
 ```bash
 port install nodejs<major version>
 
-# Example
+# على سبيل المثال
 port install nodejs7
 ```
 
