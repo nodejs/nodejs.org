@@ -278,8 +278,8 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'New security releases now available for 15.x, 14.x and 12.x release lines',
-          link: '/en/blog/vulnerability/november-2020-security-releases/'
+          text: 'The OpenJS World CFP is open until Feb 15 - submit your talk ideas!',
+          link: 'https://openjsworld.com/'
         }
       }
     }
