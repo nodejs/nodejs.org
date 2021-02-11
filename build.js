@@ -278,8 +278,8 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'The 2021 Node.js User Survey is open now',
-          link: 'https://www.surveymonkey.com/r/nodesurvey21'
+          text: 'The OpenJS World CFP is open until Feb 15 - submit your talk ideas!',
+          link: 'https://openjsworld.com/'
         }
       }
     }
