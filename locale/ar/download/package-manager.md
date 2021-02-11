@@ -1,6 +1,6 @@
 ---
 layout: page.hbs
-title: Installing Node.js via package manager
+title: تحميل Node.js عن طريق نظام إدارة الحزم الافتراضي
 ---
 
 # تثبيت النود جي اس عبر مدير حزم
@@ -237,7 +237,7 @@ xbps-install -Sy nodejs
 
 ```bash
 cinst nodejs
-# or for full install with npm
+# أو للتحميل الكامل بواسطة npm
 cinst nodejs.install
 ```
 
