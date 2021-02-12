@@ -177,7 +177,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## n
 
-`n` is a simple to use node version manager for Mac and Linux. Specify the target version to install using a rich syntax, or select from a menu of previously downloaded versions. 
+`n` is a simple to use Node.js version manager for Mac and Linux. Specify the target version to install using a rich syntax, or select from a menu of previously downloaded versions. 
 
 See the [homepage](https://github.com/tj/n) for install methods (boostrap, npm, Homebrew, third-party), and all the usage details.
 
