@@ -52,6 +52,6 @@ Currently the Node.js Foundation is working with the community to determine spec
 contribute to the Node.js Foundation Certification Development Item Writing
 Workshop Sessions, fill out this [application](https://docs.google.com/a/linuxfoundation.org/forms/d/10X9RJ4oLu2IU7cXppnXmwDMdJTetq3i9focw-R7GB8s/viewform?edit_requested=true).
 
-Exam topics will be published publically as will resources to help prepare for the
+Exam topics will be published publicly as will resources to help prepare for the
 certification, allowing others to leverage the source materials for their own
 Node.js learning.
