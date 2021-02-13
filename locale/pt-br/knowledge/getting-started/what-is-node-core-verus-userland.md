@@ -18,7 +18,7 @@ Porém, no contexto do NodeJS, "core" se refere aos módulos e bindings que são
 
 Existem algumas coisas no "node-core" que são simplesmente essenciais demais para se viver sem em um ambiente JavaScript, ou que foram criadas para implementar alguns construtores do BOM (Browser Object Model) que não são parte da linguagem JavaScript, mas que poderiam muito bem ser (por exemplo, setTimeout, setInterval e o console).
 
-Todo o restate é "userland". Isso incluí: npm, express, request, coffee-script, mysql clients, redis clients e assim por diante. Na maioria das vezes você pode instalar estes módulos usando o [npm](http://npmjs.org/).
+Todo o restate é "userland". Isso incluí: npm, express, request, coffee-script, mysql clients, redis clients e assim por diante. Na maioria das vezes você pode instalar estes módulos usando o [npm](https://www.npmjs.com/).
 
 A pergunta sobre o que é propriamente dito "node-core" e o que deve ser "userland" é uma batalha constante. Em geral, node é baseado na filosofia que ele *não* deve vir com as "baterias incluídas". É mais fácil mover coisas para fora do "node-core" do que para dentro, o que significa que módulos do core precisam continuamente "se provar" em questão de prover a funcionalidade necessária que praticamente todas as pessoas achem valiosas.
 
