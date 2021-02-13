@@ -237,7 +237,7 @@ xbps-install -Sy nodejs
 
 ```bash
 cinst nodejs
-# أو للتحميل الكامل بواسطة npm
+# أو للتثبيت الكامل بواسطة npm
 cinst nodejs.install
 ```
 
