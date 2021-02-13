@@ -28,6 +28,7 @@ title: Installing Node.js via package manager
 * [Solus](#solus)
 * [Void Linux](#void-linux)
 * [Windows](#windows)
+* [z/OS](#zos)
 
 ---
 
@@ -303,3 +304,11 @@ Using **[Scoop](https://scoop.sh/)**:
 ```bash
 scoop install nodejs
 ```
+
+## z/OS
+
+IBM&reg; SDK for Node.js - z/OS&reg; is available in two installation formats,
+SMP/E and PAX. Select the installation format that applies to you:
+* [Installing and configuring SMP/E edition of Node.js on z/OS](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/smpe.htm)
+* [Installing and configuring PAX edition of Node.js on z/OS](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/paxz.htm)
+ 
