@@ -11,6 +11,9 @@ As versões 1.x até 3.x foram chamadas de "io.js", pois faziam parte do fork do
 
 #### Procurando pelo último lançamento de uma versão?
 
+* [Node.js 13.x](https://nodejs.org/dist/latest-v13.x/)
+* [Node.js 12.x](https://nodejs.org/dist/latest-v12.x/)
+* [Node.js 11.x](https://nodejs.org/dist/latest-v11.x/)
 * [Node.js 10.x](https://nodejs.org/dist/latest-v10.x/)
 * [Node.js 8.x](https://nodejs.org/dist/latest-v8.x/)
 * [Node.js 6.x](https://nodejs.org/dist/latest-v6.x/)

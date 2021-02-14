@@ -16,9 +16,9 @@ layout: docs.hbs
 
 ## Node.js 核心概念
 
-* [Node.js 的介绍](https://nodejs.dev/)
+* [Node.js 的介绍](https://nodejs.dev/learn)
 * [阻塞对比非阻塞一览](/zh-cn/docs/guides/blocking-vs-non-blocking/)
-* [Node.js 事件轮询，定时器和 process.nextTick()](/zh-cn/docs/guides/event-loop-timers-and-nexttick/)
+* [Node.js 事件轮询，定时器和 `process.nextTick()`](/zh-cn/docs/guides/event-loop-timers-and-nexttick/)
 * [不要阻塞你的事件轮询（或是工作池）](/zh-cn/docs/guides/dont-block-the-event-loop/)
 * [Node.js 中的定时器](/zh-cn/docs/guides/timers-in-node/)
 
@@ -30,3 +30,7 @@ layout: docs.hbs
 * [Postmortem 中的主要模块](/zh-cn/docs/guides/domain-postmortem/)
 * [如何发布 N-API 包](/zh-cn/docs/guides/publishing-napi-modules/)
 * [ABI 的稳定性](/zh-cn/docs/guides/abi-stability/)
+
+## 已知的问题
+
+* [macOS Catalina (v10.15) 的原生依赖](https://github.com/nodejs/node-gyp/blob/master/macOS_Catalina.md)
