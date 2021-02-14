@@ -81,12 +81,12 @@ To test the results, try opening each compressed file. The file compressed by
 the [`zip(1)`][] tool will notify you the file is corrupt, whereas the
 compression finished by [`Stream`][] will decompress without error.
 
-Note: In this example, we use `.pipe()` to get the data source from one end
-to the other. However, notice there are no proper error handlers attached. If
-a chunk of data were to fail to be properly received, the `Readable` source or
-`gzip` stream will not be destroyed. [`pump`][] is a utility tool that would
-properly destroy all the streams in a pipeline if one of them fails or closes,
-and is a must have in this case!
+> In this example, we use `.pipe()` to get the data source from one end
+> to the other. However, notice there are no proper error handlers attached. If
+> a chunk of data were to fail to be properly received, the `Readable` source or
+> `gzip` stream will not be destroyed. [`pump`][] is a utility tool that would
+> properly destroy all the streams in a pipeline if one of them fails or closes,
+> and is a must have in this case!
 
 [`pump`][] is only necessary for Node.js 8.x or earlier, as for Node.js 10.x
 or later version, [`pipeline`][] is introduced to replace for [`pump`][].
@@ -354,11 +354,11 @@ Well the answer is simple: Node.js does all of this automatically for you.
 That's so great! But also not so great when we are trying to understand how to
 implement our own custom streams.
 
-Note: In most machines, there is a byte size that determines when a buffer
-is full (which will vary across different machines). Node.js allows you to set
-your own custom [`highWaterMark`][], but commonly, the default is set to 16kb
-(16384, or 16 for objectMode streams). In instances where you might
-want to raise that value, go for it, but do so with caution!
+> In most machines, there is a byte size that determines when a buffer
+> is full (which will vary across different machines). Node.js allows you to set
+> your own custom [`highWaterMark`][], but commonly, the default is set to 16kb
+> (16384, or 16 for objectMode streams). In instances where you might
+> want to raise that value, go for it, but do so with caution!
 
 ## Lifecycle of `.pipe()`
 
@@ -410,9 +410,9 @@ stream:
                                        +============+
 ```
 
-Note: If you are setting up a pipeline to chain together a few streams to
-manipulate your data, you will most likely be implementing [`Transform`][]
-stream.
+> If you are setting up a pipeline to chain together a few streams to
+> manipulate your data, you will most likely be implementing [`Transform`][]
+> stream.
 
 In this case, your output from your [`Readable`][] stream will enter in the
 [`Transform`][] and will pipe into the [`Writable`][].
@@ -450,11 +450,11 @@ In general,
 3. Streams changes between different Node.js versions, and the library you use.
 Be careful and test things.
 
-Note: In regards to point 3, an incredibly useful package for building
-browser streams is [`readable-stream`][]. Rodd Vagg has written a
-[great blog post][] describing the utility of this library. In short, it
-provides a type of automated graceful degradation for [`Readable`][] streams,
-and supports older versions of browsers and Node.js.
+> In regards to point 3, an incredibly useful package for building
+> browser streams is [`readable-stream`][]. Rodd Vagg has written a
+> [great blog post][] describing the utility of this library. In short, it
+> provides a type of automated graceful degradation for [`Readable`][] streams,
+> and supports older versions of browsers and Node.js.
 
 ## Rules specific to Readable Streams
 

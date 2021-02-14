@@ -1,4 +1,4 @@
-﻿---
+---
 layout: about.hbs
 title: مجموعات العمل
 ---
