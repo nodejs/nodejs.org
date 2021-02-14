@@ -1,6 +1,6 @@
 ---
 layout: page.hbs
-title: Installing Node.js via package manager
+title: تثبيت Node.js عن طريق مدير الحزم
 ---
 
 # تثبيت النود جي اس عبر مدير حزم
@@ -179,7 +179,7 @@ brew install node
 ```bash
 port install nodejs<major version>
 
-# Example
+# على سبيل المثال
 port install nodejs7
 ```
 
@@ -237,7 +237,7 @@ xbps-install -Sy nodejs
 
 ```bash
 cinst nodejs
-# or for full install with npm
+# أو للتثبيت الكامل بواسطة npm
 cinst nodejs.install
 ```
 
