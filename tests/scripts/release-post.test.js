@@ -162,9 +162,9 @@ test('fetchChangelog(<version>)', (t) => {
 test('fetchChangelogBody(<version>)', (t) => {
   const releasePost = require('../../scripts/release-post')
 
-  const changelogFixture = path.resolve(__dirname, 'CHANGELOG.fixture.md')
-
   t.test('does not include `## header` in matched version section', (t) => {
+    const changelogFixture = path.resolve(__dirname, 'CHANGELOG.fixture.md')
+
     const github = nock('https://raw.githubusercontent.com')
       .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V4.md')
       .replyWithFile(200, changelogFixture)
@@ -173,6 +173,20 @@ test('fetchChangelogBody(<version>)', (t) => {
       t.true(body.startsWith('### Notable changes'))
       t.true(github.isDone(), 'githubusercontent.com was requested')
 
+      t.end()
+    }, t.fail)
+  })
+
+  t.test('does not include "```console', (t) => {
+    const changelogFixture = path.resolve(__dirname, 'CHANGELOG.fixture.withconsole.md')
+
+    const githubWithConsole = nock('https://raw.githubusercontent.com')
+      .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V15.md')
+      .replyWithFile(200, changelogFixture)
+
+    releasePost.fetchChangelogBody('15.1.0').then((body) => {
+      t.false(body.includes('```console'))
+      t.true(githubWithConsole.isDone(), 'githubusercontent.com was requested')
       t.end()
     }, t.fail)
   })
