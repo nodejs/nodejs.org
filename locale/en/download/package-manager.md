@@ -18,6 +18,7 @@ title: Installing Node.js via package manager
 * [Gentoo](#gentoo)
 * [IBM i](#ibm-i)
 * [macOS](#macos)
+* [n](#n)
 * [NetBSD](#netbsd)
 * [Nodenv](#nodenv)
 * [nvm](#nvm)
@@ -28,6 +29,7 @@ title: Installing Node.js via package manager
 * [Solus](#solus)
 * [Void Linux](#void-linux)
 * [Windows](#windows)
+* [z/OS](#zos)
 
 ---
 
@@ -173,6 +175,21 @@ Or build manually from pkgsrc:
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
+## n
+
+`n` is a simple to use Node.js version manager for Mac and Linux. Specify the target version to install using a rich syntax,
+or select from a menu of previously downloaded versions. The versions are installed system-wide or user-wide, and for more
+targeted use you can run a version directly from the cached downloads.
+
+See the [homepage](https://github.com/tj/n) for install methods (boostrap, npm, Homebrew, third-party), and all the usage details.
+
+If you already have `npm` then installing `n` and then the newest LTS `node` version is as simple as:
+
+```
+npm install -g n
+n lts
+```
+
 ## NetBSD
 
 Node.js is available in the pkgsrc tree:
@@ -303,3 +320,11 @@ Using **[Scoop](https://scoop.sh/)**:
 ```bash
 scoop install nodejs
 ```
+
+## z/OS
+
+IBM&reg; SDK for Node.js - z/OS&reg; is available in two installation formats,
+SMP/E and PAX. Select the installation format that applies to you:
+* [Installing and configuring SMP/E edition of Node.js on z/OS](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/smpe.htm)
+* [Installing and configuring PAX edition of Node.js on z/OS](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/paxz.htm)
+ 
