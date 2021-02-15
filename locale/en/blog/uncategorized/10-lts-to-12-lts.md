@@ -172,7 +172,7 @@ Fixes for the following CVEs are included in this release:
 * **dgram,net**:
   * Added ipv6Only option for `net` and `dgram`. https://github.com/nodejs/node/pull/23798
 * **http**:
-  * Chosing between the http parser is now possible per runtime flag. https://github.com/nodejs/node/pull/24739
+  * Choosing between the http parser is now possible per runtime flag. https://github.com/nodejs/node/pull/24739
 * **readline**:
   * The `readline` module now supports async iterators. https://github.com/nodejs/node/pull/23916
 * **repl**:
