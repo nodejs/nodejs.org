@@ -75,7 +75,7 @@ This section is a highlight of the most notable changes, as selected from all "[
 * **worker**:
   * The `worker_thread` module is now stable [#29512](https://github.com/nodejs/node/pull/29512)
 
-Addtionally, addtions to collaborators and TSC:
+Additionally, additions to collaborators and TSC:
 
 * **meta**:
 
