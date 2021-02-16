@@ -105,7 +105,7 @@ function fetchChangelogBody (version) {
     const rxSectionBody = /(### Notable [\s\S]*)/
 
     // Make sure that all the console has been replaced
-    // by "```shell-session" for metal-prism's check to pass
+    // by "```shell-session" for metalsmith-prism's check to pass
     const rxSectionConsole = /```console/igm
     const matches = rxSectionBody.exec(section)
     return matches
