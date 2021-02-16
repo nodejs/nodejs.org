@@ -13,6 +13,7 @@
 /locale/ja/ @nodejs/nodejs-ja
 /locale/ko/ @nodejs/nodejs-ko
 /locale/pt-br/ @nodejs/nodejs-pt
+/locale/ro/ @nodejs/nodejs-ro
 /locale/ru/ @nodejs/nodejs-ru
 /locale/tr/ @nodejs/nodejs-tr
 /locale/uk/ @nodejs/nodejs-uk
