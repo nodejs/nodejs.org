@@ -325,13 +325,13 @@ Backpressure will be automatically applied, but note that both the incoming and 
 
 ## Backpressure Guidelines
 
-Since [Node.js v0.10](https://nodejs.org/docs/v0.10.0/), the [`Stream`][] class has offered the ability to modify the behaviour of the [`.read()`][] or [`.write()`][] by using the underscore version of these respective functions ([`._read()`][] and [`._write()`][]).
+Since [Node.js v0.10](https://nodejs.org/docs/v0.10.0/), the [`Stream`][] class has offered the ability to modify the behavior of the [`.read()`][] or [`.write()`][] by using the underscore version of these respective functions ([`._read()`][] and [`._write()`][]).
 
 There are guidelines documented for [implementing Readable streams](https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_readable_stream) and [implementing Writable streams](https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_writable_stream). We will assume you've read these over, and the next section will go a little bit more in-depth.
 
 ## Rules to Abide By When Implementing Custom Streams
 
-The golden rule of streams is **to always respect backpressure**. What constitutes as best practice is non-contradictory practice. So long as you are careful to avoid behaviours that conflict with internal backpressure support, you can be sure you're following good practice.
+The golden rule of streams is **to always respect backpressure**. What constitutes as best practice is non-contradictory practice. So long as you are careful to avoid behaviors that conflict with internal backpressure support, you can be sure you're following good practice.
 
 In general,
 
