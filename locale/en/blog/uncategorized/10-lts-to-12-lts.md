@@ -75,7 +75,7 @@ This section is a highlight of the most notable changes, as selected from all "[
 * **worker**:
   * The `worker_thread` module is now stable [#29512](https://github.com/nodejs/node/pull/29512)
 
-Addtionally, addtions to collaborators and TSC:
+Additionally, additions to collaborators and TSC:
 
 * **meta**:
 
@@ -172,7 +172,7 @@ Fixes for the following CVEs are included in this release:
 * **dgram,net**:
   * Added ipv6Only option for `net` and `dgram`. https://github.com/nodejs/node/pull/23798
 * **http**:
-  * Chosing between the http parser is now possible per runtime flag. https://github.com/nodejs/node/pull/24739
+  * Choosing between the http parser is now possible per runtime flag. https://github.com/nodejs/node/pull/24739
 * **readline**:
   * The `readline` module now supports async iterators. https://github.com/nodejs/node/pull/23916
 * **repl**:

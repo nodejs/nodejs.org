@@ -39,7 +39,7 @@
     "autoprefixer": "^10.2.4",
     "cheerio": "^0.22.0",
     "fibers": "^5.0.0",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "jstransformer-handlebars": "^1.1.0",
     "junk": "^3.1.0",
     "lodash.defaultsdeep": "^4.6.1",
