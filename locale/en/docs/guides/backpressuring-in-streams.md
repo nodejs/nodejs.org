@@ -428,7 +428,7 @@ will effect the backpressure system.
 ## Backpressure Guidelines
 
 Since [Node.js v0.10][], the [`Stream`][] class has offered the ability to
-modify the behaviour of the [`.read()`][] or [`.write()`][] by using the
+modify the behavior of the [`.read()`][] or [`.write()`][] by using the
 underscore version of these respective functions ([`._read()`][] and
 [`._write()`][]).
 
@@ -440,7 +440,7 @@ the next section will go a little bit more in-depth.
 
 The golden rule of streams is **to always respect backpressure**. What
 constitutes as best practice is non-contradictory practice. So long as you are
-careful to avoid behaviours that conflict with internal backpressure support,
+careful to avoid behaviors that conflict with internal backpressure support,
 you can be sure you're following good practice.
 
 In general,
