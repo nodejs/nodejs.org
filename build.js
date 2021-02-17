@@ -277,9 +277,9 @@ function getSource (callback) {
           link: '/en/black-lives-matter/'
         },
         banner: {
-          visible: false,
-          text: 'New security releases are available',
-          link: '/en/blog/vulnerability/september-2020-security-releases/'
+          visible: true,
+          text: 'The OpenJS World CFP is open until Feb 15 - submit your talk ideas!',
+          link: 'https://openjsworld.com/'
         }
       }
     }
