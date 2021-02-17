@@ -271,11 +271,6 @@ function getSource (callback) {
           current: latestVersion.current(versions),
           lts: latestVersion.lts(versions)
         },
-        blacklivesmatter: {
-          visible: true,
-          text: '#BlackLivesMatter',
-          link: '/en/black-lives-matter/'
-        },
         banner: {
           visible: true,
           text: 'The OpenJS World CFP is open until Feb 15 - submit your talk ideas!',
