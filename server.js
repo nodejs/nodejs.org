@@ -19,7 +19,9 @@ const mount = st({
 })
 
 const port = process.env.PORT || 8080
-const selectedLocales = process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE.toLowerCase().split(',') : process.env.DEFAULT_LOCALE
+const selectedLocales = process.env.DEFAULT_LOCALE
+  ? process.env.DEFAULT_LOCALE.toLowerCase().split(',')
+  : process.env.DEFAULT_LOCALE
 const preserveLocale = process.argv.includes('--preserveLocale')
 const serveOnly = process.argv.includes('--serve-only')
 
@@ -35,22 +37,25 @@ const layouts = chokidar.watch(path.join(__dirname, 'layouts/**/*.hbs'), opts)
 const staticFiles = chokidar.watch(path.join(__dirname, 'static'), opts)
 
 // Gets the locale name by path.
-function getLocale (filePath) {
+function getLocale(filePath) {
   const pre = path.join(__dirname, 'locale')
-  return filePath.slice(pre.length + 1, filePath.indexOf(path.sep, pre.length + 1))
+  return filePath.slice(
+    pre.length + 1,
+    filePath.indexOf(path.sep, pre.length + 1)
+  )
 }
 
 // This function has two meanings:
 // 1. Build for the specific language.
 // 2. Choose what languages for the menu.
-function dynamicallyBuildOnLanguages (source, locale) {
+function dynamicallyBuildOnLanguages(source, locale) {
   if (!selectedLocales || selectedLocales.length === 0) {
     fs.readdir(path.join(__dirname, 'locale'), (err, locales) => {
       if (err) {
         throw err
       }
 
-      const filteredLocales = locales.filter(file => junk.not(file))
+      const filteredLocales = locales.filter((file) => junk.not(file))
       const localesData = build.generateLocalesData(filteredLocales)
       build.buildLocale(source, locale, { preserveLocale, localesData })
     })
@@ -69,7 +74,9 @@ build.getSource((err, source) => {
     const locale = getLocale(filePath)
 
     if (!selectedLocales || selectedLocales.includes(locale)) {
-      console.log(`The language ${locale} is changed, '${filePath}' is modified.`)
+      console.log(
+        `The language ${locale} is changed, '${filePath}' is modified.`
+      )
       dynamicallyBuildOnLanguages(source, locale)
     }
   })
@@ -106,17 +113,21 @@ staticFiles.on('add', (filePath) => {
 const mainLocale = (selectedLocales && selectedLocales[0]) || 'en'
 
 // Initializes the server and mounts it in the generated build directory.
-http.createServer((req, res) => {
-  // If we are accessing the root, it should be redirected to the default language,
-  // We shouldn't get a 404 page.
+http
+  .createServer((req, res) => {
+    // If we are accessing the root, it should be redirected to the default language,
+    // We shouldn't get a 404 page.
 
-  if (req.url === '/') {
-    req.url = `/${mainLocale}`
-  }
-  mount(req, res)
-}).listen(port, () => {
-  console.log(`\x1B[32mServer running at http://localhost:${port}/${mainLocale}/\x1B[39m`)
-})
+    if (req.url === '/') {
+      req.url = `/${mainLocale}`
+    }
+    mount(req, res)
+  })
+  .listen(port, () => {
+    console.log(
+      `\x1B[32mServer running at http://localhost:${port}/${mainLocale}/\x1B[39m`
+    )
+  })
 
 if (!serveOnly) {
   // Start the initial build of static HTML pages

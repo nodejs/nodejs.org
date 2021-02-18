@@ -24,7 +24,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex#Description
 const ANCHOR_COMMENTREG = /<!--\x20?([\w\x20-]+)\x20?-->/
 
-module.exports = function anchorMarkdownHeadings (text, level, raw, slugger) {
+module.exports = function anchorMarkdownHeadings(text, level, raw, slugger) {
   let anchorTitle = null
 
   // If we've checked the title has a comment symbol,
@@ -37,7 +37,8 @@ module.exports = function anchorMarkdownHeadings (text, level, raw, slugger) {
     anchorTitle = raw
   }
 
-  anchorTitle = anchorTitle.replace(/(\[([^\]]+)]\([^)]+\))/g, '$2')
+  anchorTitle = anchorTitle
+    .replace(/(\[([^\]]+)]\([^)]+\))/g, '$2')
     .replace(/[^\w]+/g, '-')
     .replace(/[\x20]+/g, '-')
     .replace(/-{2,}/g, '-')

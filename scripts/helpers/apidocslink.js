@@ -3,7 +3,9 @@
 const semver = require('semver')
 
 module.exports = (version) => {
-  if (!version) { return '' }
+  if (!version) {
+    return ''
+  }
 
   if (semver.satisfies(version, '>=0.3.1 <0.5.1')) {
     return `https://nodejs.org/docs/${version}/api/`

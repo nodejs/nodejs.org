@@ -3,7 +3,14 @@
 const cheerio = require('cheerio')
 
 const SUMMARY_MAX_LENGTH = 300
-const IGNORE_SELECTORS = ['.blogpost-header', '.anchor', 'h1', 'h2', 'h3', 'blockquote']
+const IGNORE_SELECTORS = [
+  '.blogpost-header',
+  '.anchor',
+  'h1',
+  'h2',
+  'h3',
+  'blockquote'
+]
 
 /**
  * Due to the nature of metalsmith and
@@ -30,7 +37,10 @@ module.exports = (contents, locale, path) => {
     .not((i, elem) => IGNORE_SELECTORS.some((selector) => $(elem).is(selector)))
     .each((i, elem) => {
       if (summary.length > SUMMARY_MAX_LENGTH) {
-        summary += `<p><a href="/${locale}/${path.replace(/\\/g, '/')}/">Read more...</a></p>`
+        summary += `<p><a href="/${locale}/${path.replace(
+          /\\/g,
+          '/'
+        )}/">Read more...</a></p>`
         return false
       }
 

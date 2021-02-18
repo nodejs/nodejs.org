@@ -52,27 +52,33 @@ test('verifyDownloads(<version>)', (t) => {
     releasePost.verifyDownloads('4.1.1').then((results) => {
       const sourceDownload = results[0]
 
-      t.equal(sourceDownload, 'Source Code: https://nodejs.org/dist/v4.1.1/node-v4.1.1.tar.gz')
+      t.equal(
+        sourceDownload,
+        'Source Code: https://nodejs.org/dist/v4.1.1/node-v4.1.1.tar.gz'
+      )
       t.true(nodejsorg.isDone(), 'nodejs.org was requested')
 
       t.end()
     })
   })
 
-  t.test('resolves to "<binary title>: *Coming soon*" when HEAD request fails', (t) => {
-    const nodejsorg = nock('https://nodejs.org')
-      .head('/dist/v4.1.1/node-v4.1.1-linux-armv6l.tar.gz')
-      .reply(404, 'Not found')
+  t.test(
+    'resolves to "<binary title>: *Coming soon*" when HEAD request fails',
+    (t) => {
+      const nodejsorg = nock('https://nodejs.org')
+        .head('/dist/v4.1.1/node-v4.1.1-linux-armv6l.tar.gz')
+        .reply(404, 'Not found')
 
-    releasePost.verifyDownloads('4.1.1').then((results) => {
-      const armDownload = results[1]
+      releasePost.verifyDownloads('4.1.1').then((results) => {
+        const armDownload = results[1]
 
-      t.equal(armDownload, 'ARMv6 32-bit Binary: *Coming soon*')
-      t.true(nodejsorg.isDone(), 'nodejs.org was requested')
+        t.equal(armDownload, 'ARMv6 32-bit Binary: *Coming soon*')
+        t.true(nodejsorg.isDone(), 'nodejs.org was requested')
 
-      t.end()
-    })
-  })
+        t.end()
+      })
+    }
+  )
 
   t.end()
 })
@@ -113,22 +119,28 @@ test('fetchChangelog(<version>)', (t) => {
   const releasePost = require('../../scripts/release-post')
 
   const changelogFixture = path.resolve(__dirname, 'CHANGELOG.fixture.md')
-  const changelogLegacyFixture = path.resolve(__dirname, 'CHANGELOG.fixture.legacy.md')
+  const changelogLegacyFixture = path.resolve(
+    __dirname,
+    'CHANGELOG.fixture.legacy.md'
+  )
 
-  t.test('resolves with section of changelog related to specified version', (t) => {
-    const github = nock('https://raw.githubusercontent.com')
-      .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V4.md')
-      .replyWithFile(200, changelogFixture)
+  t.test(
+    'resolves with section of changelog related to specified version',
+    (t) => {
+      const github = nock('https://raw.githubusercontent.com')
+        .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V4.md')
+        .replyWithFile(200, changelogFixture)
 
-    releasePost.fetchChangelog('4.1.1').then((changelog) => {
-      t.true(changelog.charAt(changelog.length - 1) !== '\n')
-      t.true(changelog.charAt(0) !== '\n')
-      t.true(changelog.includes('Fixed a bug introduced in v4.1.0'))
-      t.true(github.isDone(), 'githubusercontent.com was requested')
+      releasePost.fetchChangelog('4.1.1').then((changelog) => {
+        t.true(changelog.charAt(changelog.length - 1) !== '\n')
+        t.true(changelog.charAt(0) !== '\n')
+        t.true(changelog.includes('Fixed a bug introduced in v4.1.0'))
+        t.true(github.isDone(), 'githubusercontent.com was requested')
 
-      t.end()
-    }, t.fail)
-  })
+        t.end()
+      }, t.fail)
+    }
+  )
 
   t.test('can fetch changelog of legacy versions of Node.js', (t) => {
     const github = nock('https://raw.githubusercontent.com')
@@ -143,18 +155,21 @@ test('fetchChangelog(<version>)', (t) => {
     }, t.fail)
   })
 
-  t.test('rejects when a matching version section could not be found in changelog', (t) => {
-    const github = nock('https://raw.githubusercontent.com')
-      .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V012.md')
-      .reply(200, changelogLegacyFixture)
+  t.test(
+    'rejects when a matching version section could not be found in changelog',
+    (t) => {
+      const github = nock('https://raw.githubusercontent.com')
+        .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V012.md')
+        .reply(200, changelogLegacyFixture)
 
-    releasePost.fetchChangelog('0.12.1000').then(t.fail, (err) => {
-      t.equal(err.message, "Couldn't find matching changelog for 0.12.1000")
-      t.true(github.isDone(), 'githubusercontent.com was requested')
+      releasePost.fetchChangelog('0.12.1000').then(t.fail, (err) => {
+        t.equal(err.message, "Couldn't find matching changelog for 0.12.1000")
+        t.true(github.isDone(), 'githubusercontent.com was requested')
 
-      t.end()
-    })
-  })
+        t.end()
+      })
+    }
+  )
 
   t.end()
 })
@@ -184,7 +199,10 @@ test('fetchVersionPolicy(<version>)', (t) => {
   const releasePost = require('../../scripts/release-post')
 
   const changelogFixture = path.resolve(__dirname, 'CHANGELOG.fixture.md')
-  const changelogLegacyFixture = path.resolve(__dirname, 'CHANGELOG.fixture.legacy.md')
+  const changelogLegacyFixture = path.resolve(
+    __dirname,
+    'CHANGELOG.fixture.legacy.md'
+  )
 
   t.test('finds "Current" version policy', (t) => {
     const github = nock('https://raw.githubusercontent.com')
@@ -238,12 +256,10 @@ test('fetchAuthor(<version>)', (t) => {
       .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V4.md')
       .replyWithFile(200, changelogFixture)
 
-    const api = nock('https://api.github.com')
-      .get('/users/rvagg')
-      .reply(200, {
-        login: 'rvagg',
-        name: 'Rod Vagg'
-      })
+    const api = nock('https://api.github.com').get('/users/rvagg').reply(200, {
+      login: 'rvagg',
+      name: 'Rod Vagg'
+    })
 
     releasePost.fetchAuthor('4.1.1').then((author) => {
       t.equal(author, 'Rod Vagg')
@@ -254,18 +270,21 @@ test('fetchAuthor(<version>)', (t) => {
     }, t.fail)
   })
 
-  t.test('rejects when a matching version section could not be found in changelog', (t) => {
-    const github = nock('https://raw.githubusercontent.com')
-      .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V4.md')
-      .reply(200, 'A changelog without version sections...')
+  t.test(
+    'rejects when a matching version section could not be found in changelog',
+    (t) => {
+      const github = nock('https://raw.githubusercontent.com')
+        .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V4.md')
+        .reply(200, 'A changelog without version sections...')
 
-    releasePost.fetchAuthor('4.1.1').then(null, (err) => {
-      t.equal(err.message, "Couldn't find matching changelog for 4.1.1")
-      t.true(github.isDone(), 'githubusercontent.com was requested')
+      releasePost.fetchAuthor('4.1.1').then(null, (err) => {
+        t.equal(err.message, "Couldn't find matching changelog for 4.1.1")
+        t.true(github.isDone(), 'githubusercontent.com was requested')
 
-      t.end()
-    })
-  })
+        t.end()
+      })
+    }
+  )
 
   t.end()
 })
@@ -276,10 +295,7 @@ test('findLatestVersion<version>', (t) => {
   t.test('fetches the latest version from nodejs.org', (t) => {
     nock('https://nodejs.org')
       .get('/dist/index.json')
-      .reply(200, [
-        { version: 'v4.1.1' },
-        { version: 'v4.1.0' }
-      ])
+      .reply(200, [{ version: 'v4.1.1' }, { version: 'v4.1.0' }])
 
     releasePost.findLatestVersion().then((version) => {
       t.equal(version, '4.1.1')
@@ -318,7 +334,16 @@ test('writeToFile<object>', (t) => {
     fileExists = false
 
     releasePost.writeToFile(results).then((filepath) => {
-      const expectedPath = path.resolve(__dirname, '..', '..', 'locale', 'en', 'blog', 'release', `v${results.version}.md`)
+      const expectedPath = path.resolve(
+        __dirname,
+        '..',
+        '..',
+        'locale',
+        'en',
+        'blog',
+        'release',
+        `v${results.version}.md`
+      )
       t.equal(filepath, expectedPath)
       t.end()
     }, t.fail)

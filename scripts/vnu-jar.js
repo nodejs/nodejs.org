@@ -43,9 +43,10 @@ childProcess.exec('java -version', (error, stdout, stderr) => {
     args.splice(0, 0, '-Xss512k')
   }
 
-  return childProcess.spawn('java', args, {
-    shell: true,
-    stdio: 'inherit'
-  })
+  return childProcess
+    .spawn('java', args, {
+      shell: true,
+      stdio: 'inherit'
+    })
     .on('exit', process.exit)
 })

@@ -5,26 +5,27 @@ const schedule = require('../../source/schedule.json')
 const today = new Date()
 const datify = (release, key) => new Date(schedule[release][key])
 
-module.exports = context => {
+module.exports = (context) => {
   const statuses = context.data.root.statuses
 
   const header = context.data.root.columns
-    .map(column => `<th>${column}</th>\n`)
+    .map((column) => `<th>${column}</th>\n`)
     .join('')
 
   let content = ''
 
   Object.keys(schedule)
-    .filter(release => datify(release, 'end') > today)
-    .forEach(release => {
+    .filter((release) => datify(release, 'end') > today)
+    .forEach((release) => {
       const codename = schedule[release].codename
       const codenameLink = codename
         ? `<a href="https://nodejs.org/download/release/latest-${codename.toLowerCase()}/">${codename}</a>`
         : ''
 
-      const releaseLink = datify(release, 'start') < today
-        ? `<a href="https://nodejs.org/download/release/latest-${release}.x/">${release}</a>`
-        : release
+      const releaseLink =
+        datify(release, 'start') < today
+          ? `<a href="https://nodejs.org/download/release/latest-${release}.x/">${release}</a>`
+          : release
 
       let status
 
