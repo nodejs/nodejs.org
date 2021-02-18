@@ -68,7 +68,7 @@
     "cross-env": "^7.0.3",
     "delay-cli": "^1.1.0",
     "faucet": "0.0.1",
-    "linkinator": "^2.13.4",
+    "linkinator": "^2.13.5",
     "lockfile-lint": "^4.3.7",
     "nock": "^13.0.7",
     "node-fetch": "^2.6.1",
