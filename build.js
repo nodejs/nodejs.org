@@ -278,8 +278,8 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'The OpenJS World CFP is open until Feb 22 - submit your talk ideas!',
-          link: 'https://openjsworld.com/'
+          text: 'New security releases to be made available February 23, 2021',
+          link: '/en/blog/vulnerability/february-2021-security-releases/'
         }
       }
     }
