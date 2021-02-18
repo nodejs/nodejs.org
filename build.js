@@ -278,7 +278,7 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'The OpenJS World CFP is open until Feb 15 - submit your talk ideas!',
+          text: 'The OpenJS World CFP is open until Feb 22 - submit your talk ideas!',
           link: 'https://openjsworld.com/'
         }
       }
