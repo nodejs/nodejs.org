@@ -93,7 +93,7 @@ something I'm actually happy with. Today Isaac packaged up npm 1.2.10 into
 [Node.js 0.8.19](http://blog.nodejs.org/2013/02/06/node-v0-8-19-stable/), so if you've installed the latest version of
 Node, you should be ready to use peer dependencies!
 
-As proof, I present you the results of trying to install [`jitsu`](https://npmjs.org/package/jitsu) 0.11.6 with npm
+As proof, I present you the results of trying to install [`jitsu`](https://www.npmjs.com/package/jitsu) 0.11.6 with npm
 1.2.10:
 
 ```
