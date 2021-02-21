@@ -79,7 +79,7 @@ Before submitting, you must pass all the unit tests and syntax checks by running
 
 ## Deployment
 
-Full setup is in <https://github.com/nodejs/build/tree/master/setup/www> minus secrets and certificates. The webhook is setup on GitHub for this project and talks to a small Node server on the host which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
+Full setup is in <https://github.com/nodejs/build/tree/master/ansible/www-standalone> minus secrets and certificates. The webhook is setup on GitHub for this project and talks to a small Node server on the host which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
 
 ## Content vs. Code
 
