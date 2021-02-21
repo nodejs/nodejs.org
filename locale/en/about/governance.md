@@ -36,3 +36,4 @@ extending the Node.js community.
 [Technical Steering Committee (TSC)]: https://github.com/nodejs/TSC/blob/master/TSC-Charter.md
 [TSC]: https://github.com/nodejs/TSC
 [nodejs/node]: https://github.com/nodejs/node
+Jessie Becker
