@@ -58,11 +58,24 @@ To help with localization, please read the [TRANSLATION](TRANSLATION.md) guide.
 
 ## Serve/Build Options
 
-* `DEFAULT_LOCALE={{locale}} npm run serve` builds only the files present in the specified locale folder (will display 404 status code if file is not present)
-* `DEFAULT_LOCALE={{locale}} npm run serve -- --preserveLocale` builds the files present in the specified locale folder and adds the pages present in the English locale that are missing.
-* `npm run serve` builds all languages and returns 404 when a file is not present in the current locale
-* `npm run serve -- --preserveLocale` builds all languages and adds the pages present in the English locale that are missing.
-* Multiple locales can be built by using comma separated values in the `DEFAULT_LOCALE` variable. i.e: `DEFAULT_LOCALE=en,es,it`
+* `DEFAULT_LOCALE={{locale}} node build.js` builds all the translated files present in the locale folder (will display 404 status code if file is not present), the static/css folder for all the Sass files, as well as copy the rest of the static assets to their subfolder in the build directory.
+* `DEFAULT_LOCALE={{locale}} node build.js --preserveLocale` the same as `node build.js` but it will add the pages present in the English locale that are missing instead of throwing 404 status code.
+* `DEFAULT_LOCALE={{locale}} npm run serve` builds only the files present in the specified locale folder (will display 404 status code if file is not present), then start the default website (http://localhost:${port}/${mainLocale}). Here `{port}` is 8080, `{mainLocale}` is `en` or the first specified language.
+* `DEFAULT_LOCALE={{locale}} npm run serve -- --preserveLocale` the same as `npm run serve ` but it will add the pages present in the English locale that are missing.
+* `npm run serve` builds all the current languages and returns 404 when a file is not present in the current locale, then start the default website (http://localhost:${port}/${mainLocale}). Here `{port}` is 8080, `{mainLocale}` is `en` in default.
+* `npm run serve -- --preserveLocale` the same as `npm run serve` but it will add the pages present in the English locale that are missing instead of throwing 404 status code.
+
+## Test Options
+
+Before submitting, you must pass all the unit tests and syntax checks by running the two commands below:
+
+* `npm-run-all test:lint test:unit` run all the unit test cases in `tests` folder, as well as check syntax with eslint.
+* `npm-run-all --parallel test:lint:*` run all the syntax checks for `js`, `md` and other related files.
+
+## Notice
+
+* Multiple locales can be built by using comma separated values in the `DEFAULT_LOCALE` variable. i.e: `DEFAULT_LOCALE=en,es,it`.
+* For other 'Serve/Build Options' and 'Test Options', plese see `package.json` in details.
 
 ## Deployment
 
