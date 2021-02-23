@@ -103,9 +103,13 @@ function fetchChangelog (version) {
 function fetchChangelogBody (version) {
   return fetchChangelog(version).then((section) => {
     const rxSectionBody = /(### Notable [\s\S]*)/
+
+    // Make sure that all the console has been replaced
+    // by "```shell-session" for metalsmith-prism's check to pass
+    const rxSectionConsole = /```console/igm
     const matches = rxSectionBody.exec(section)
     return matches
-      ? matches[1]
+      ? matches[1].trim().replace(rxSectionConsole, '```shell-session')
       : Promise.reject(new Error(`Could not find changelog body of ${version} release`))
   })
 }
