@@ -278,7 +278,7 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'New security releases to be made available February 23, 2021',
+          text: 'New security releases now available for 15.x, 14.x, 12.x and 10.x release lines',
           link: '/en/blog/vulnerability/february-2021-security-releases/'
         }
       }
