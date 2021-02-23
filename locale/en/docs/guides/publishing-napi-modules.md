@@ -39,15 +39,15 @@ will look like this:
 }
 ```
 
-**Note:** As explained in
-["Using dist-tags"][], unlike regular versions, tagged versions cannot be
-addressed by version ranges such as `"^2.0.0"` inside `package.json`. The
-reason for this is that the tag refers to exactly one version. So, if the
-package maintainer chooses to tag a later version of the package using the
-same tag, `npm update` will receive the later version. This should be acceptable
-given the currently experimental nature of N-API. To depend on an N-API-enabled
-version other than the latest published, the `package.json` dependency will
-have to refer to the exact version like the following:
+> As explained in
+> ["Using dist-tags"][], unlike regular versions, tagged versions cannot be
+> addressed by version ranges such as `"^2.0.0"` inside `package.json`. The
+> reason for this is that the tag refers to exactly one version. So, if the
+> package maintainer chooses to tag a later version of the package using the
+> same tag, `npm update` will receive the later version. This should be acceptable
+> given the currently experimental nature of N-API. To depend on an N-API-enabled
+> version other than the latest published, the `package.json` dependency will
+> have to refer to the exact version like the following:
 
 ```json
 "dependencies": {

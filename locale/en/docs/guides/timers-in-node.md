@@ -91,13 +91,13 @@ executing immediate: so immediate
 `setImmediate()` returns an `Immediate` object, which can be used to cancel
 the scheduled immediate (see `clearImmediate()` below).
 
-Note: Don't get `setImmediate()` confused with `process.nextTick()`. There are
-some major ways they differ. The first is that `process.nextTick()` will run
-*before* any `Immediate`s that are set as well as before any scheduled I/O.
-The second is that `process.nextTick()` is non-clearable, meaning once
-code has been scheduled to execute with `process.nextTick()`, the execution
-cannot be stopped, just like with a normal function. Refer to [this guide](/en/docs/guides/event-loop-timers-and-nexttick/#process-nexttick)
-to better understand the operation of `process.nextTick()`.
+> Don't get `setImmediate()` confused with `process.nextTick()`. There are
+> some major ways they differ. The first is that `process.nextTick()` will run
+> *before* any `Immediate`s that are set as well as before any scheduled I/O.
+> The second is that `process.nextTick()` is non-clearable, meaning once
+> code has been scheduled to execute with `process.nextTick()`, the execution
+> cannot be stopped, just like with a normal function. Refer to [this guide](/en/docs/guides/event-loop-timers-and-nexttick/#process-nexttick)
+> to better understand the operation of `process.nextTick()`.
 
 ### "Infinite Loop" Execution ~ *`setInterval()`*
 
