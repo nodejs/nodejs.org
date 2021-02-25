@@ -30,4 +30,5 @@ layout: contribute.hbs
 * [المجتمع المجري (المجرية)](https://nodehun.blogspot.com/)
 * [مجموعة المستخدمين اليابانية](https://nodejs.jp/)
 * [مجموعة الفيسبوك باللغة الأسبانية للـ Node.js](https://www.facebook.com/groups/node.es/)
-* [Vietnamese Node.js community](https://www.facebook.com/nodejs.vn/)
+* [مجتمع Node.js الفيتنامي](https://www.facebook.com/nodejs.vn/)
+* [المجموعة الأوزبكستانية لـ Node.js](https://t.me/nodejs_uz)
