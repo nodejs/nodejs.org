@@ -34,3 +34,4 @@ layout: contribute.hbs
 * [日本语用户组](https://nodejs.jp/)
 * [Facebook 上西班牙 Node.js 用户组](https://www.facebook.com/groups/node.es/)
 * [越南语 Node.js 社团](https://www.facebook.com/nodejs.vn/)
+* [乌兹别克斯坦 Node.js 用户组](https://t.me/nodejs_uz)
