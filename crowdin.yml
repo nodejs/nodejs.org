@@ -9,12 +9,7 @@ files:
         pt-BR: pt-br
         zh-CN: zh-cn
         zh-TW: zh-tw
-  - source: /locale/en/**/*.json
-    translation: /locale/%two_letters_code%/**/%original_file_name%
-    ignore:
-      - /locale/en/blog/**/*.json
-    languages_mapping:
-      two_letters_code:
-        pt-BR: pt-br
-        zh-CN: zh-cn
-        zh-TW: zh-tw
+  - source: /locale/en/security.md
+    translation: /localized/%two_letters_code%/%original_file_name%
+  - source: /locale/en/security.md
+    translation: localized/%two_letters_code%/%original_file_name%
