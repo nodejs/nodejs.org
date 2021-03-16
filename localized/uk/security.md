@@ -3,9 +3,9 @@ layout: security.hb
 title: Безпека
 ---
 
-# Безпека
+# Безпека 1
 
-## Повідомлення про помилку в Node.js
+## Меседж про помилку в Node.js
 
 Повідомити про помилки безпеки в Node.js через [HackerOne](https://hackerone.com/nodejs).
 
