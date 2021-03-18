@@ -22,7 +22,7 @@ const github = new GithubGraphQLApi({
 const queryCommits = variables => github.query(`
   query ($repositoryOwner: String!, $repositoryName: String!, $since: GitTimestamp, $historyAfter: String) {
     repository(owner: $repositoryOwner, name: $repositoryName) {
-      ref(qualifiedName: "master") {
+      ref(qualifiedName: "main") {
         target {
           ... on Commit {
             history(first: 100, since: $since, after: $historyAfter) {
