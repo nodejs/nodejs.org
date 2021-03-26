@@ -675,6 +675,14 @@ REQUIREMENTS
 * Organizer names - Michael Antczak
 * Organizers contact info - [AntczakMichael](https://twitter.com/AntczakMichael)
 
+#### Manchester
+
+* [Manchester Node.js Meetup](https://www.meetup.com/manchester-node-workshop/)
+* Frequency of meetups - every few months
+* How to submit a talk? Contact organizers in the meetup page
+* Organizer names - Giorgos Bamparopoulos
+* Organizers contact info - [@bamparopoulos](https://twitter.com/bamparopoulos)
+
 ### Ukraine
 
 #### Kiev
