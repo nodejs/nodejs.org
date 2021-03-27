@@ -30,3 +30,4 @@ layout: contribute.hbs
 * [Grup d'usuaris de Japó](https://nodejs.jp/)
 * [Grup de Facebook en espanyol de Node.js](https://www.facebook.com/groups/node.es/)
 * [Vietnamese Node.js community](https://www.facebook.com/nodejs.vn/)
+* [Uzbekistan group for Node.js](https://t.me/nodejs_uz)
