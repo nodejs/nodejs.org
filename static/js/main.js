@@ -152,6 +152,8 @@
           contributorUsername.href = contributor.html_url
           contributorContributions.textContent = contributor.contributions + ' contributions'
           contributorContributions.parentElement.href = 'https://github.com/nodejs/node/commits?author=' + contributor.login
+          // Make sure that the whole Contributor can be seen
+          contributorCard.removeAttribute('style')
         } else {
           return contributorCard.parentNode.removeChild(contributorCard)
         }
