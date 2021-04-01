@@ -278,8 +278,8 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'Deep discounts on Node.js certifications and training available through April 9',
-          link: 'https://openjsf.org/certification/'
+          text: 'New security releases to be made available April 6, 2021',
+          link: '/en/blog/vulnerability/april-2021-security-releases/'
         }
       }
     }
