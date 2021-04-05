@@ -1,5 +1,3 @@
 files:
-  - source: /locale/en/security.md
-    translation: /localized/%two_letters_code%/%original_file_name%
-  - source: /locale/en/security.md
-    translation: patl/%two_letters_code%/%original_file_name%
+  - source: /locale/en/site.json
+    translation: /patl/%two_letters_code%/%original_file_name%
