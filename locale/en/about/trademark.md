@@ -10,7 +10,7 @@ quality, performance, and ease of use that people have come to associate with
 the Node.js software and project. To ensure that the Node.js marks continue to
 symbolize these qualities, we must ensure that the marks are only used in ways
 that do not mislead people or cause them to confuse Node.js with other software
-of lower quality. If we don’t ensure the marks are used in this way, it cannot
+of lower quality. If we don’t ensure the marks are used in this way, it can not
 only confuse users, it can make it impossible to use the mark to protect
 against people who maliciously exploit the mark in the future. The primary goal
 of this policy is to make sure that this doesn’t happen to the Node.js mark, so
