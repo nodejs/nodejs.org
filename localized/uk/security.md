@@ -15,7 +15,7 @@ title: Безпека
 
 ### Програма винагороди Node.js
 
-The Node.js project engages in an official bug bounty program for security researchers and responsible public disclosures. The program is managed through the HackerOne platform. See <https://hackerone.com/nodejs> for further details.
+Проект Node.js використовує офіційну програму винагороди для безпеки дослідників та відповідальні публічні розголоси. Управління програмою здійснюється через платформу HackerOne. Дивіться <https://hackerone.com/nodejs> для отримання додаткової інформації.
 
 ## Повідомити про помилку в модулі третьої сторони
 
@@ -23,21 +23,21 @@ The Node.js project engages in an official bug bounty program for security resea
 
 Детальну інформацію про цей процес можна знайти в [Робочій Груповому репозиторії](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md).
 
-Thank you for improving the security of Node.js and its ecosystem. Your efforts and responsible disclosure are greatly appreciated and will be acknowledged.
+Дякуємо за поліпшення безпеки Node.js і його екосистеми. Ваші зусилля та відповідальне розкриття значно ціновані і будуть визнані засвідчені.
 
 ## Політика розкриття інформації
 
 Ось політика розкриття безпеки для Node.js
 
-* The security report is received and is assigned a primary handler. This person will coordinate the fix and release process. The problem is confirmed and a list of all affected versions is determined. Code is audited to find any potential similar problems. Fixes are prepared for all releases which are still under maintenance. These fixes are not committed to the public repository but rather held locally pending the announcement.
+* Звіт про безпеку отримано та призначено для первинного обробника. Цей людина координує координацію і процес випуску. Проблему підтверджено і визначено список всіх пов'язаних версій. Код контролюється для пошуку будь-яких потенційних проблем. Виправлення готові до всіх релізів, які все ще знаходяться в стані технічного обслуговування. Ці виправлення не додаються до громадського репозиторію , а скоріше тримаються локально на розгляді оголошення.
 
 * Пропонована дата ембарго на цю вразливість обрана, а також умовна неймовірна (Common Vulnerabilities і Exposures (CVE®)) запитана на вразливість.
 
-* On the embargo date, the Node.js security mailing list is sent a copy of the announcement. The changes are pushed to the public repository and new builds are deployed to nodejs.org. Within 6 hours of the mailing list being notified, a copy of the advisory will be published on the Node.js blog.
+* На дату ембарго список розсилки безпеки Node.js надіслав копію оголошень. Зміни розміщуються у публічний репозиторій і нові збірки , розгорнуті до nodejs.org. Протягом 6 годин зі списку розсилки повідомлено, копія дорадника буде опублікована в блозі Node.js.
 
-* Typically the embargo date will be set 72 hours from the time the CVE is issued. However, this may vary depending on the severity of the bug or difficulty in applying a fix.
+* Зазвичай дата ембарго буде встановлена 72 години від моменту випуску CVE . Однак це може відрізнятися в залежності від тяжкості помилки або складності в застосуванні виправлень.
 
-* This process can take some time, especially when coordination is required with maintainers of other projects. Every effort will be made to handle the bug in as timely a manner as possible; however, it’s important that we follow the release process above to ensure that the disclosure is handled in a consistent manner.
+* Процес може зайняти деякий час, особливо коли координація потрібна за допомогою супроводжувачів інших проектів. Кожен зусилля буде здійснюватися для обробки помилки як можна вчасно; однак, важливо, щоб ми слідкували за процесом випуску вище, щоб зробити розкриття виконувалося на послідовно.
 
 ## Отримання оновлень безпеки
 
