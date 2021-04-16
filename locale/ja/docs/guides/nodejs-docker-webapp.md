@@ -368,7 +368,7 @@ build the Docker image. The `-t` flag lets you tag your image so it's easier to
 find later using the `docker images` command:
 
 ```bash
-docker build -t <your username>/node-web-app .
+docker build . -t <your username>/node-web-app
 ```
 
 Your image will now be listed by Docker:
@@ -390,7 +390,7 @@ node                            12         1934b0b038d1    5 days ago
 後で `docker images` コマンドを使って見つけやすくなります。
 
 ```bash
-docker build -t <your username>/node-web-app .
+docker build . -t <your username>/node-web-app
 ```
 
 あなたのイメージは Docker によって表示されます。
