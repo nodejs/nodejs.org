@@ -594,8 +594,8 @@ REQUIREMENTS
 * [Meetup](https://www.meetup.com/DallasNode/)
 * Frequency of meetups - monthly
 * How to submit a talk? Contact organizers in the meetup page.
-* Organizer name - [Cameron Steele](https://github.com/ATechAdventurer)
-* Organizer contact info - [Cam.steeleis@gmail.com](mailto:Cam.steeleis@gmail.com)
+* Organizer name - [Ryan Key](https://github.com/realryankey)
+* Organizer contact info - [realryankey@gmail.com](mailto:realryankey@gmail.com)
 
 #### Utah
 
