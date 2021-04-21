@@ -13,10 +13,12 @@ title: Installing Node.js via package manager
 * [Arch Linux](#arch-linux)
 * [CentOS, Fedora and Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
 * [Debian and Ubuntu based Linux distributions](#debian-and-ubuntu-based-linux-distributions)
+* [fnm](#fnm)
 * [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
 * [IBM i](#ibm-i)
 * [macOS](#macos)
+* [n](#n)
 * [NetBSD](#netbsd)
 * [Nodenv](#nodenv)
 * [nvm](#nvm)
@@ -27,6 +29,7 @@ title: Installing Node.js via package manager
 * [Solus](#solus)
 * [Void Linux](#void-linux)
 * [Windows](#windows)
+* [z/OS](#zos)
 
 ---
 
@@ -86,6 +89,14 @@ These resources provide packages compatible with CentOS, Fedora, and RHEL.
 ### Alternatives
 
 Packages compatible with Debian and Ubuntu based Linux distributions are available via [Node.js snaps](#snap).
+
+## fnm
+
+Fast and simple Node.js version manager built in Rust used to manage multiple released Node.js versions. It allows you to perform operations like install, uninstall, switch Node versions automatically based on the current directory, etc.
+To install fnm, use this [install script](https://github.com/Schniz/fnm#using-a-script-macoslinux).
+
+fnm has cross-platform support (macOS, Windows, Linux) & all poplar shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt)
+it's built with speed in mind and compatibility support for `.node-version` and `.nvmrc` files.
 
 ## FreeBSD
 
@@ -162,6 +173,21 @@ Or build manually from pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
+```
+
+## n
+
+`n` is a simple to use Node.js version manager for Mac and Linux. Specify the target version to install using a rich syntax,
+or select from a menu of previously downloaded versions. The versions are installed system-wide or user-wide, and for more
+targeted use you can run a version directly from the cached downloads.
+
+See the [homepage](https://github.com/tj/n) for install methods (boostrap, npm, Homebrew, third-party), and all the usage details.
+
+If you already have `npm` then installing `n` and then the newest LTS `node` version is as simple as:
+
+```
+npm install -g n
+n lts
 ```
 
 ## NetBSD
@@ -294,3 +320,11 @@ Using **[Scoop](https://scoop.sh/)**:
 ```bash
 scoop install nodejs
 ```
+
+## z/OS
+
+IBM&reg; SDK for Node.js - z/OS&reg; is available in two installation formats,
+SMP/E and PAX. Select the installation format that applies to you:
+* [Installing and configuring SMP/E edition of Node.js on z/OS](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/smpe.htm)
+* [Installing and configuring PAX edition of Node.js on z/OS](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/paxz.htm)
+ 

@@ -594,8 +594,8 @@ REQUIREMENTS
 * [Meetup](https://www.meetup.com/DallasNode/)
 * Frequency of meetups - monthly
 * How to submit a talk? Contact organizers in the meetup page.
-* Organizer name - [Cameron Steele](https://github.com/ATechAdventurer)
-* Organizer contact info - [Cam.steeleis@gmail.com](mailto:Cam.steeleis@gmail.com)
+* Organizer name - [Ryan Key](https://github.com/realryankey)
+* Organizer contact info - [realryankey@gmail.com](mailto:realryankey@gmail.com)
 
 #### Utah
 
@@ -674,6 +674,14 @@ REQUIREMENTS
 * How to submit a talk? [Submit Talk](mailto:michael@biggles.io?subject=Node.js%20Talk%20Proposal)
 * Organizer names - Michael Antczak
 * Organizers contact info - [AntczakMichael](https://twitter.com/AntczakMichael)
+
+#### Manchester
+
+* [Manchester Node.js Meetup](https://www.meetup.com/manchester-node-workshop/)
+* Frequency of meetups - every few months
+* How to submit a talk? Contact organizers in the meetup page
+* Organizer names - Giorgos Bamparopoulos
+* Organizers contact info - [@bamparopoulos](https://twitter.com/bamparopoulos)
 
 ### Ukraine
 
