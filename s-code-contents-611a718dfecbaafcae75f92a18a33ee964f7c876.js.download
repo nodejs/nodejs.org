@@ -1,0 +1,1887 @@
+if(typeof P !== 'undefined') {
+  P.when('A').register('ac-analytics', function(A){
+
+  // Temporary - Remove this once we make the 15th deployment
+  if(location.hostname === "affiliate-program.amazon.com"){
+    P.when('ac-string-utils','3p-jquery-validate').register('ac-analytics-temp', function(stringUtils){
+      A.$.validator.addMethod('titletext', function(value, element) {
+        var re = new RegExp("^[-'0-9a-zA-Z ]*$");
+        return this.optional(element) || re.test(value);
+      }, stringUtils.getString('validation-msg-text'));
+    });  
+  }
+
+
+   A.$("head").append('<style>.ac-promo-carousel-card{min-height: 250px;} .ac-carousel .ac-carousel-nav.simple .a-icon {width: 18px;height: 50px;background-size: 50px 46px;}</style>');
+   
+  /** Adobe Analytics implementation for AC home page **/
+  /* FixMe:
+      1. Currently the tracking code for analytics is having hard coded declarative action events and data mapped to concrete handler functions.
+      Need to develop the wrapper for using s-code.js file where the specific handlers will get replaced by a generic handler function.
+
+    /****** DEFINE ADOBE ANALYTICS SPECIFIC CONSTANTS,VARIABLES,FUNCTIONS HERE ***
+    
+    eVar1 - store-id of user
+    eVar2 - webLab enabled Navigation type: a or b
+    eVar3 - ac-ms-src
+    eVar4 - most popular asin
+    eVar5 - report download Type
+    eVar6 - highlight HTML,Highlight Ad code clicks
+    ******/
+    // Initialize AppMeasurement "s" object 
+    var s = new AppMeasurement();
+    function getAnalyticsAccount() {
+      var acc = "amazdistaging";
+      try {
+        acc = Associates.WebAnalyticsConfig.omnitureReportSuite;
+      } catch(e) {}
+      return acc;
+    }
+
+    /* -----------CONFIG SECTION ---------------------/
+    /* You may add or alter any code config here. */
+
+    /* Link Tracking Config */
+    s.account = getAnalyticsAccount();
+    s.trackDownloadLinks=true
+    s.trackExternalLinks=true
+    s.linkDownloadFileTypes="exe,zip,wav,mp3,mov,mpg,avi,doc,pdf,xls"
+    s.linkInternalFilters="javascript:,affiliate-program.amazon.com,affiliate-program.amazon.co.uk,partnernet.amazon.de,partenaires.amazon.fr,affiliate.amazon.co.jp,associates.amazon.ca,associates.amazon.cn,programma-affiliazione.amazon.it,afiliados.amazon.es,affiliate-program.amazon.in,associados.amazon.com.br,afiliados.amazon.com.mx"
+    s.linkLeaveQueryString=true
+    //s.linkTrackVars="prop1,eVar1,eVar2,eVar3,eVar4"
+    s.linkTrackVars="None"
+    s.trackInlineStats=true
+
+    /* Plugin Config */
+    // s.usePlugins=true
+
+    // function trackCampaigns(){
+
+      if(!s.campaign) { /* External Campaign Tracking */ 
+        if(getQueryParam('cid') != "") { 
+          s.campaign = getQueryParam('cid');
+        }
+      }
+
+      /* De-dupe custom campaign clickthorugh event but not campaign instance */
+      // if(s.campaign){
+      //   s.campaign = s.getValOnce(s.campaign,'s_v0',0);
+      // }
+    // }
+
+    function s_getLoadTime(){if(!window.s_loadT){var b=new Date().getTime(),o=window.performance?performance.timing:0,a=o?o.requestStart:window.inHeadTS||0;s_loadT=a?Math.round((b-a)/100):''}return s_loadT}
+
+    s_getLoadTime();
+
+    // s.doPlugins = trackCampaigns
+       /*
+     * Plugin: getValOnce 0.2 - get a value once per session or number of days
+     */
+    // s.getValOnce=new Function("v","c","e",""
+    // +"var s=this,k=s.c_r(c),a=new Date;e=e?e:0;if(v){a.setTime(a.getTime("
+    // +")+e*86400000);s.c_w(c,v,e?a:0);}return v==k?'':v");
+
+    /* ------- *****  FixMe  *** : 
+    Needs to be done on the analytics wrapper. 
+    MAPPING OF wrapper variables to eVars,props and events
+    */ 
+
+
+    A.$(document).ajaxSend(function(options) {
+      try{
+        arguments[2].__start_time__ = new Date().getTime();
+      }catch(e){
+
+      }
+    });
+
+    A.$(document).ajaxComplete(function() {
+      try{
+        var ajaxTime = (arguments[0].timeStamp - arguments[2].__start_time__)/1000;
+        var ajaxUrl =  arguments[2].url;
+
+        setTrackVars('eVar1,eVar2,eVar19,eVar18,eVar17,events,prop10');
+        s.linkTrackEvents = "event3,event4,event5,event6,event7,event8,event20";
+        s.eVar19 = ajaxTime;
+        s.eVar17 = ajaxUrl;
+        s.eVar18 = arguments[1].status;
+        s.events ="event20";
+        s.tl(true,'o',"Ajax Completed");
+      }catch(e){
+
+      }
+    }); 
+
+
+    /****************************** MODULES *****************************/
+    /* Define AC specific constants here -->FixMe: move it to some config */
+
+    var dataActionToAttrMap = {
+      // AC config
+      "ac-simple-popover-reports-feedback" : "event.data.name",
+      "ac-report-download-show" : "event.action",
+      "ac-report-tab-select-main" : "event.data.type",
+      "ac-widget-daterange-select-option" : "event.data.type",
+      "ac-report-download-program-action" : "event.data.type",
+      "ac-reports-download-action" : "event.data.action",
+      "ac-tab-switch": "event.data.type",
+      "ac-ads-adcode-copy-action" : "event.data.type", 
+      //NSA config
+      "ac-ads-top-nav" : "event.data.name",
+      "ac-ads-slider-select" : "event.data.name",
+      "ac-ads-banner-action" : "event.data.type",
+      "ac-ads-recommendation-tab-link" : "event.data.name",
+      "ac-ads-search-tab-link" : "event.data.name",
+      "ac-ads-custom-tab-link" : "event.data.name",
+      "ac-ads-create-button-top" : "event.data.name",
+      "ac-ads-create-button-bottom" : "event.data.name",
+      "ac-ads-adcode-settings-action" : "event.data.name"
+      
+    };
+
+    /* Fix Me as the attributes may not be unique */  
+    var attrToLinkNameMap = {
+      "earning"   : "Report Summary",
+      "commission": "Fees",
+      "bounty"    : "Bounties",
+      "ac-simple-popover-reports-feedback" : "Reports Feedback",
+      "ac-report-download-show" : "Download Reports",
+      "ac-widget-daterange-select-option" : "Report RangeInterval",
+      "tracking" :  "Tracking ID Summary",
+      "earnings" : "Earnings",
+      "linktype" : "Link Type Performance",
+      "trends" : "Daily Trends",
+      "orders" : "Orders",
+      "generate" : "Generate Report",
+      "daily" : "Daily Trends",
+      "earnings":  "Earnings",
+      "links": "Link Type Performance",
+      "tags": "Tracking ID Summary",
+      "highlight": "HighLight Ad Code",
+
+      //NSA config
+      "home" : "NSA Landing Page - Top Nav Home Link",
+      "recommendation" : "NSA Landing Page - Top Nav Recommendation Link",
+      "search" : "NSA Landing Page - Top Nav Search Link",
+      "custom" : "NSA Landing Page - Top Nav Custom Link",
+      "overview" : "NSA Landing Page - Overview Tab",
+      "recommended_ads" : "NSA Landing Page - Recommendation Ads Tab",
+      "search_ads" : "NSA Landing Page - Search Ads Tab",
+      "custom_ads" : "NSA Landing Page - Custom Ads Tab",
+      "video" : "NSA Landing Page - Video Play",
+      "video_maximize" : "NSA Landing Page - Video Maximize",
+      "video_pause" : "NSA Landing Page - Video Close",
+      "create_recommendation_ad" : "NSA Landing Page - Recommendation Tab Create Ad Link",
+      "recommendation_demo" : "NSA Landing Page - Recommendation Tab Demo Link",
+      "recommendation_faq" : "NSA Landing Page - Recommendation Tab FAQ Link",
+      "create_search_ad" : "NSA Landing Page - Search Tab Create Ad Link",
+      "search_demo" : "NSA Landing Page - Search Tab Demo Link",
+      "search_faq" : "NSA Landing Page - Search Tab FAQ Link",
+      "create_custom_ad" : "NSA Landing Page - Custom Tab Create Ad Link",
+      "custom_demo" : "NSA Landing Page - Custom Tab Demo Link",
+      "custom_faq" : "NSA Landing Page - Custom Tab FAQ Link",
+      "ad-code-button-recommendation-top" : "NSA Landing Page - Top Create Button Recommendation Link",
+      "ad-code-button-search-top" : "NSA Landing Page - Top Create Button Search Link",
+      "ad-code-button-custom-top" : "NSA Landing Page - Top Create Button Custom Link",
+      "ad-code-button-recommendation-bottom" : "NSA Landing Page - Bottom Create Button Recommendation Link",
+      "ad-code-button-search-bottom" : "NSA Landing Page - Bottom Create Button Search Link",
+      "ad-code-button-custom-bottom" : "NSA Landing Page - Bottom Create Button Custom Link",
+      "recommendation_advanced" : "NSA Recommendation Ad Page - Advanced Settings",
+      "search_advanced" : "NSA Search Ad Page - Advanced Settings",
+      "custom_advanced" : "NSA Custom Ad Page - Advanced Settings"
+    };
+
+    var buttonIdTitleMap = {
+      "served_html_box-img" : "Product Links HighLight HTML: Text and Image",
+      "static_txt_html_box-img" : "Product Links HighLight HTML: Text Only",
+      "static_img_html_box-img" : "Product Links HighLight HTML: Image Only"
+    };
+    
+    var hrefToMarketTagMap = {
+      "/gp/associates/network/your-account/main.html" : "accountSettings",
+      "/gp/associates/network/your-account/payment-history.html" : "paymenthistory",
+      "/gp/associates/network/your-account/manage-tracking-ids.html" : "managetrackingiddropdown",
+      "/logout" : "signout",
+      "/" : "amazonlogo",
+      "http://affiliate-program.amazon.com/gp/associates/network/your-account/manage-tracking-ids.html" : "managetrackingidbody",
+      "home/productlinks/search" : "advancedsearchquicklinks",
+      "/gp/associates/network/build-links/individual/main.html" : "advancedsearchquicklinks",
+      "/gp/associates/contact?ie=UTF8&amp;feedbackSource=%5BLoggedInHome%2FHome%2Fview%5D" : "letusknowbottom"
+    }
+
+    function trackHighlightHTMLClick(buttonId)
+    {
+      setTrackVars('eVar1,eVar2,prop6,events')
+      if (A.$("#"+buttonId).size()!=0)
+      {
+        A.$("#"+buttonId).on("click",function(e){
+          try
+          { s.prop6 =  buttonIdTitleMap[buttonId];}
+          catch (err)
+          {
+            s.prop6 = "Banner Highlight HTML"
+          }
+          customTrackLink(s.prop6,'o');
+        });
+      }
+    }
+    /*;Util functions */
+    /* All the util functions defined here at the beginning */ 
+    function getEventActionAttribute(event){ 
+      return dataActionToAttrMap[event.action];
+    }
+
+    function getLinkName(attr){
+      return attrToLinkNameMap[attr];
+    }
+
+    function getCustomLinkName(event) {
+      var data_action = '';
+      var linkName = '';
+      if (event.action == "a-popover"){ // Use ===
+        data_action = event.data.name;
+      }
+      else {
+        data_action = event.action;
+      }
+      try {  
+        linkName = getLinkName(eval(dataActionToAttrMap[data_action])); // Use JSON.parse
+      }
+      catch(err) {
+        /*FixMe  need to use logging API of JS*/
+        //console.log(err);
+        linkName = '';  
+      }
+      return linkName;
+    }
+
+    function customTrackLink(linkName,type) {
+
+      if(s.prop6){
+        s.linkTrackEvents = "event10";
+        s.events = "event10";
+      }
+      
+      s.tl(true,type,linkName);
+      clearTrackVars();      
+    }
+
+    function customTrackLinkHref(element, linkName, type) {
+        // null.navigate params here for href link tracking --> nambooths@
+        s.tl(element, type, linkName, null, function() {
+          window.parent.location = element.getAttribute("href");
+        });
+        clearTrackVars();
+      }
+
+    function customTrackParams() {
+      s.t();
+      clearTrackVars();
+    }
+
+    function clearTrackVars() {
+      //persist eVar after clearing the Tracking variables
+      /* this will clear all the custom variables including s.eVar1 */
+      s.clearVars();
+      //setTrackVars('eVar1,eVar2');
+      s.eVar1 = getStoreId();
+      s.eVar2 = "AC-Nav : "+getWeblabNav();
+      s.eVar10 = s.campaign;      
+      //typeCount = 1;
+    }
+
+    function setTrackVars(varListStr) {
+      s.linkTrackVars = varListStr;
+    }
+
+    //Resource Center Custom Events
+
+    // Track Filter change in Resource Center page
+    function trackRCFilterChange(data){
+      setTrackVars('prop21');
+      var filter = Object.keys(data)[0];
+      var value = data[filter];
+      s.prop21 = 'Resource-Center-Filter-'+ filter + ':' + value;
+      customTrackLink(s.prop21,'o');
+    }
+
+    //Track Load More Button Change in Resource Center
+    function trackRCLoadMore(data){
+      setTrackVars('prop22');
+      s.prop22 = 'Resource-Center-Load-More';
+      customTrackLink(s.prop22,'o');
+    }
+
+    // Track Search Terms in Resource Center
+    if(location.pathname === "/resource-center/search") {
+      setTrackVars('prop40');
+      s.prop40 = getQueryParam('q');
+      customTrackLink(s.prop40,'o');
+    }
+
+    function trackReportIntervalDownload(event) {
+      setTrackVars('eVar1,eVar2,eVar5');
+      customTrackLink(s.eVar5,'o'); 
+    }
+
+    /* track reportInterval */
+    function trackReportInterval(event) {
+      setTrackVars('eVar1,eVar2,eVar5');
+      // track the report interval
+      s.eVar5 = "Report Interval: "+eval(getEventActionAttribute(event));
+    }
+
+    function trackDownloadReportVisit(event) {
+      setTrackVars('eVar1,eVar2,prop1');
+      s.prop1 = getCustomLinkName(event);
+      customTrackLink(s.prop1,'d');
+    }
+
+    /*
+    var typeCount = 1;
+    function  trackDownloadReportType(event) {
+          //setTrackVars('eVar1,eVar2,eVar3,eVar4,eVar5,eVar6');
+        typeCount = typeCount + 1;
+        typeCount = typeCount % 7
+        eval("s.eVar"+typeCount+" = getCustomLinkName(event)");
+    }*/
+
+    function trackDownloadReport(event) {
+      //setTrackVars('eVar1,eVar2,eVar3,eVar4,eVar5,eVar6');
+      setTrackVars('eVar1,eVar2,prop1');
+      /*
+      count = 2;
+      A.$(".ac-report-download-programs-options .ac-widget-sub-view fieldset span").each(function() { 
+        if(A.$(this).find("input").checked) {
+           var a = A.$(this).attr("data-ac-report-download-program-action");
+           eVal("s.eVar"+count+" = attrToLinkNameMap[a.type]");
+        }
+      });
+      */
+      s.prop1 = getCustomLinkName(event);
+      customTrackLink(s.prop1,'d');
+    }
+
+    function trackReportSummary(event){
+      setTrackVars('eVar1,eVar2,prop1');
+      s.prop1 = getCustomLinkName(event);
+      customTrackLink(s.prop1,'o');
+    }
+
+    function trackReportFeedback(event){
+      if(event.data.name == 'ac-simple-popover-reports-feedback')
+      {
+        setTrackVars('eVar1,eVar2,prop1');
+        s.prop1 = getCustomLinkName(event);
+        customTrackLink(s.prop1,'o');
+      }
+    }
+
+    function trackTabClick(event){
+      setTrackVars('events,prop1,eVar14');
+      s.prop1 = getCustomLinkName(event) || "UNKNOWN";
+      s.linkTrackEvents = "event13";
+      s.events = "event13";
+      s.eVar14 = s.prop1;
+      customTrackLink("Tab Selection",'o');
+    }
+
+    //NSA Landing page analytics Starts
+    function trackNSATopNav(event) {
+      setTrackVars('eVar1,eVar2,prop1');
+      s.prop1 = getCustomLinkName(event);
+      customTrackLinkHref(event.$target[0], s.prop1,'o');
+      clearTrackVars();
+    }
+
+    function trackNSACreateButtonTop(event) {
+      setTrackVars('eVar1,eVar2,prop1');
+      s.prop1 = getCustomLinkName(event);
+      customTrackLinkHref(event.$target[0], s.prop1,'o');
+      clearTrackVars();
+    }
+
+    function trackNSALandingTabs(event) {
+      setTrackVars('eVar1,eVar2,prop1');
+      s.prop1 = getCustomLinkName(event);
+      customTrackLink(s.prop1,'o');
+      clearTrackVars();
+    }
+
+    function trackNSAVideoClick(event) {
+        setTrackVars('eVar1,eVar2,prop1');
+        s.prop1 = getCustomLinkName(event);
+        customTrackLink(s.prop1,'o');
+        clearTrackVars();
+      }
+
+    function trackNSACreateButtonBottom(event) {
+      setTrackVars('eVar1,eVar2,prop1');
+      s.prop1 = getCustomLinkName(event);
+      customTrackLinkHref(event.$target[0], s.prop1,'o');
+      clearTrackVars();
+    }
+
+    function trackNSARecommendationTabLinks(event) {
+      setTrackVars('eVar1,eVar2,prop1');
+      s.prop1 = getCustomLinkName(event);
+      customTrackLinkHref(event.$target[0], s.prop1,'o');
+      clearTrackVars();
+    }
+
+    function trackNSASearchTabLinks(event) {
+      setTrackVars('eVar1,eVar2,prop1');
+      s.prop1 = getCustomLinkName(event);
+      customTrackLinkHref(event.$target[0], s.prop1,'o');
+      clearTrackVars();
+    }
+
+    function trackNSACustomTabLinks(event) {
+      setTrackVars('eVar1,eVar2,prop1');
+      s.prop1 = getCustomLinkName(event);
+      customTrackLinkHref(event.$target[0], s.prop1,'o');
+      clearTrackVars();
+    }
+
+    function trackNSAAdVendingAdvanced(event) {
+        setTrackVars('eVar1,eVar2,prop1');
+        s.prop1 = getCustomLinkName(event);
+        customTrackLink(s.prop1,'o');
+        clearTrackVars();
+      }
+
+    function trackNSARecommendationCategory(event) {
+        if(event.data.type === "move-to-selected") {
+          A.$('.ac-widget-agtr-type-all ul.ac-widget-agtr-items li').each(function() {
+            if(A.$(this).hasClass("selected")) {
+              setTrackVars('eVar1, prop1');
+              s.prop1 = "NSA Recommendation Ad Page - Category Added - " + A.$(this).attr("data-ac-alias");
+              customTrackLink(s.prop1, 'o');
+              clearTrackVars();
+            }
+          });
+        } else if(event.data.type === "move-to-available") {
+          A.$('.ac-widget-agtr-type-custom ul.ac-widget-agtr-items li').each(function() {
+            if(A.$(this).hasClass("selected")) {
+              setTrackVars('eVar1, prop1');
+              s.prop1 = "NSA Recommendation Ad Page - Category Removed - " + A.$(this).attr("data-ac-alias");
+              customTrackLink(s.prop1, 'o');
+              clearTrackVars();
+            }
+          });
+        }
+      }
+
+      function trackNSASearchCategory(event) {
+        setTrackVars('eVar1,eVar2,prop1');
+        s.prop1 = "NSA Search Ad Page - Category Selected - " + A.$(event.$target).find(":selected").text();
+        customTrackLink(s.prop1, 'o');
+        clearTrackVars();
+      }
+
+      function getWeblabNav(){
+        return A.$('meta[name=assoc-nav]').attr("content") || '';
+      }
+
+      function getStoreId(){
+        return A.$('meta[name=auth-store-id]').attr("content") || '';
+      }
+
+      function getCutstomerId(){
+        return A.$('meta[name=customer_id]').attr("content") || '';
+      }
+
+      function isMobileRequest(){
+        return A.$('meta[name=mobile-request]').attr("content") === "true" || '';
+      }
+      //NSA Landing page analytics Ends
+      
+      function getQueryParam(param) {
+        return s.Util.getQueryParam(param);
+      }
+
+      function checkAcMsSrcQueryParam(){
+        if (getQueryParam('ac-ms-src')!== ""){
+          s.linkTrackVars += ',eVar3';
+          s.eVar3 = getQueryParam('ac-ms-src'); 
+        }
+      }
+    
+      function checkAsinQueryParam(){
+        if (getQueryParam('asin')!==""){
+          s.linkTrackVars += ',eVar4';
+          s.eVar4 = getQueryParam('asin'); 
+        }
+      }
+    
+      function trackHighlightAdCode(event) {
+        setTrackVars('eVar1,eVar2,prop6,events');
+        s.prop6 = getCustomLinkName(event);
+        customTrackLink(s.prop6,'o');
+      }
+
+
+
+      var promohub_string_map = {
+        'featured' : "Featured Promotions",
+        'all-promotions' : "All Promotions",
+        'set-forget' : "Set and Forget",
+        'bounties' : "Special  Promotions",
+        'recommendations' : "Recommendation Promotions"
+      }
+
+      var promohub_adcode_id_map = {
+        'ac-promohub-link-ad-code-container' : 'Get Link : Highlight HTML',
+        'ac-promohub-get-banner-ad-code' : 'Get Banner : Highlight HTML'
+      }
+
+
+      function getPromoHighlightComponentName(refId){
+        var name;
+        try{
+          var type = A.$('#ac-promohub-tabs .ac-tab-content:visible').data('type');
+           name = promohub_string_map[type] + " : " + promohub_adcode_id_map[refId];
+        }catch(e){
+          //Ignore silently
+        }
+        return name;
+      }
+
+
+    //Browse for Product : Category : Highlight HTML
+    //Quick Links : Search Results : Highlight HTML
+    //Quick Links : Product : Highlight HTML
+    //Browse for Product : Product : Highlight HTML
+
+      var quicklinks_string_map = {
+        'search_for_product' : "Quick Links",
+        'browse_for_product' : "Browse for Product",
+        'product_search' : 'Product Search'
+      }
+
+      var quicklinks_adcode_id_map = {
+        'ac-quicklink-ad-textlink' : 'Product : Highlight HTML'
+      }
+
+
+      function getQuicklinksHighlightComponentName(refId){
+        var name;
+        try{
+          var type = A.$('#ac-produclinks-quicklink-tabs-container .ac-tab-content:visible').data('type');
+          if(!type){
+            type = 'product_search';
+          }
+           name = quicklinks_string_map[type] + " : " + quicklinks_adcode_id_map[refId];
+        }catch(e){
+          //Ignore silently
+        }
+        return name;
+      }
+
+
+      function trackHighlightAdCodeComponent(event){
+        setTrackVars('eVar1,eVar2,prop6,events');
+
+
+        if(event.data.refId){
+          var refId = event.data.refId;
+          var name;
+
+          if(refId.startsWith('ac-bannerlinks')){
+            name = "Banner HighLight HTML";
+          }
+
+          if(refId.startsWith('ac-promohub')){
+            name = getPromoHighlightComponentName(refId)
+          }
+
+          if(refId.startsWith('ac-quicklink')){
+            name = getQuicklinksHighlightComponentName(refId)
+          }
+
+          s.prop6 = name ? name : refId + " : Highlight HTML";
+
+        }else{
+          s.prop6 = name ? name : document.title + " : Highlight HTML";
+        }
+
+        customTrackLink(s.prop6,'o');
+      }
+
+    
+      function trackHighlightHTMLClicks(){
+        for (var id in buttonIdTitleMap) {          
+          trackHighlightHTMLClick(id);
+        }    
+      }
+    
+      function trackBannerEditHTMLClicks() {
+        var dates = A.$('*[id^="iframe_copy"]');
+        for (var i=0;i<dates.length;i++) {
+          buttonIdTitleMap[dates[i].id] = "Banner HighLight HTML"; 
+          trackHighlightHTMLClick(dates[i].id);
+        }
+      }
+
+      function checkforReportType(){
+        var reportPage = A.$("#ac-tab-content-earning") || [];
+        var groupbyElm = A.$(".ac-report-toggle-main-detail-container") || [];
+        
+        if(reportPage.length){
+          s.linkTrackVars += ',eVar12';
+          if(groupbyElm.length){
+            s.eVar12 = "Report V3 - GroupBY";
+          }else{
+            s.eVar12 = "Report V2 - Non Groupby";
+          }
+        }
+      }
+      
+      function initialize(){
+        // initialize store id for every activity of a user so 
+        // that every captured metrices are correlated
+        
+        trackHighlightHTMLClicks();
+        trackBannerEditHTMLClicks();
+        trackSignupPipeline();
+        trackFooterGlobalLinks();
+        trackAdvancedSearch();
+        //trackManageTrackingID();
+        trackAssociatesSettingTop();
+        trackStoreIdChange();
+        trackAmazonLogoClick();
+        trackLetUsKNowClick();
+        //trackCountrySelect()
+
+        var trackVars = 'eVar1,eVar2,eVar8,eVar20,prop20,events';
+        setTrackVars(trackVars);
+        s.eVar1 = getStoreId();
+        s.eVar8 = getCutstomerId();
+        s.eVar2 = "AC-Nav : "+getWeblabNav();
+      
+        s.eVar20=s.prop20=s_getLoadTime(); 
+
+        s.linkTrackEvents = "event19";
+        s.events = "event19";
+        s.tl(true,'o',"Page loaded");
+
+        if(s.campaign){
+          s.linkTrackVars += ',eVar10';
+          s.eVar10 = s.campaign;
+          s.linkTrackEvents = "event9";
+          s.events = "event9";
+          s.tl(true,'o',"Campaign entry to AC");
+        }
+
+        if(isMobileRequest()){
+          s.linkTrackVars += ',eVar60';
+          s.eVar60 = "Mobile Page";
+          s.linkTrackEvents = "event60";
+          s.events = "event60";
+          s.tl(true,'o',"Mobile Page Load");
+        }
+
+        handleGeoLocaleAndStoreVerification();
+
+        checkforReportType();
+        checkAsinQueryParam();
+        checkAcMsSrcQueryParam();
+        trackSignOutPage();
+        trackManageTrackingIDBody();
+        customTrackParams();
+      }  
+
+    function addAcMsSrcParam(e){
+      href = e.target.getAttribute('href')
+      if (href in hrefToMarketTagMap){
+        e.preventDefault();
+        //window.location = e.srcElement.attributes.href.textContent+'?ac-ms-src='+hrefToMarketTagMap[href];
+        window.location = appendQueryParam(e.target.attributes.href.textContent,
+          'ac-ms-src='+hrefToMarketTagMap[href])
+      }
+    }
+    
+    function trackStoreIdChange() {
+
+      storeDropDownBox=document.getElementById("revamp_idbox_store_id")
+      if (storeDropDownBox) {
+          storeDropDownBox.addEventListener("change",
+            function(e){
+              setTrackVars('eVar1,eVar2,eVar3');
+              s.eVar3 = 'storechanged';
+              customTrackLink(s.eVar3,'o');},
+            false);
+      }
+    }
+
+    function trackAmazonLogoClick() {
+      logo = document.getElementsByClassName('ac-logo');
+      if(logo && logo.length > 0){
+       logo[0].addEventListener("click",
+          function (event) {
+            s.linkTrackVars = 'eVar1,eVar2,eVar3';
+            s.eVar3 = "amazonlogo"
+            //customTrackLinkHref( s.eVar3,'o');
+            s.tl(event.target,'o', s.eVar3);
+          },
+          false);
+        }
+    }
+
+    function trackAssociatesSettingTop() {
+      links = document.querySelectorAll('.ac-header-item > div >ul >li> [href]');
+      if (links && links.length > 0) {
+        for (var i=links.length;i>0;i--) {
+          links[i-1].addEventListener("click",addAcMsSrcParam,false);
+        }
+      }
+    }
+
+    function trackManageTrackingID() {
+      setTrackVars('eVar1,eVar2,eVar3');
+      links=document.querySelectorAll(".manage > a")
+      if (links && links.length > 0) { 
+        links[0].addEventListener("click",addAcMsSrcParam,false);
+      }
+    } 
+    function trackAdvancedSearch() {
+      var links = document.querySelectorAll(".ac-home-search-advancedsearch > a,#ac-quicklink-search-product-user-input a")
+      if (links && links.length>0){
+        links[0].addEventListener("click",addAcMsSrcParam,false);
+      }
+    }
+
+    function findRefTagValue(href) {
+      start=href.indexOf('ref=');
+      if (start!=-1){
+        start=start+4;
+        end=href.indexOf('?');
+        ref_tag_value = href.substring(start,end);
+        return ref_tag_value;
+      }    
+    }
+
+    function appendQueryParam(href,queryParamStr){
+      var separator = (href.indexOf("?")===-1)?"?":"&";
+      href = href + separator + queryParamStr;
+      return href;
+    }
+    
+    /*
+    function updateQueryStringParameter(uri, key, value) {
+      var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+      var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+      if (uri.match(re)) {
+        return uri.replace(re, '$1' + key + "=" + value + '$2');
+      }
+      else {
+        return uri + separator + key + "=" + value;
+      }
+    }    
+    */
+   
+    function trackFooterGlobalLinks(){
+    f=document.getElementById("footer");
+    if (f) {
+        f.addEventListener("click",function(e){
+        e.preventDefault();
+        href = e.target.getAttribute("href")
+        tag = findRefTagValue(href)
+        window.location=appendQueryParam(href,'ac-ms-src='+tag);
+        },
+        false);
+      }
+    }
+
+    function trackLetUsKNowClick() {
+      links=document.querySelectorAll(".feedback >p > a");
+      if (links && links.length > 0){
+        links[0].addEventListener("click",addAcMsSrcParam,false);
+      }
+    }
+    
+    
+    function trackPopOver(event) {
+        trackLinkFromEvent(event);
+    }
+
+    var signupProcessSteps = {
+      "contact_info" : "event3",
+      "site_list" : "event4",
+      "site_profile" : "event5",
+      "identity_verification" : "event6",
+      "postprocess" : "event7",
+      "single_signup" : "event8"
+    };
+
+    function trackSignupPipeline(){
+      setTrackVars('eVar1,eVar2,events,prop10');
+      s.linkTrackEvents = "event3,event4,event5,event6,event7,event8";
+      var p_name;
+
+      var currentStep = A.$('#ac-signup-container .ac-wizard-step-current').data('step');
+
+      if(currentStep){
+        trackSignupPipelineEvents(currentStep)
+      }
+
+      A.on('ac:wizard:step-init:ac-wizard-signup',function(){ 
+        if (p_name === undefined) 
+        { 
+          p_name = s.pageURL;} 
+          s.pageURL += '/'+arguments[0].name;
+          s.t();
+          //customTrackParams();
+          s.pageURL = p_name;
+
+          trackSignupPipelineEvents(arguments[0].name)
+      });
+    }
+
+    function trackSignupPipelineEvents(name){
+      setTrackVars('eVar1,eVar2,events,prop10');
+      s.linkTrackEvents = "event3,event4,event5,event6,event7,event8";
+      s.prop10 = name
+      s.events = signupProcessSteps[name] || "signup_step";
+      s.tl(true,'o',"signup step initialized");
+    }
+
+    function trackSignOutPage(){
+      if (s.Util.getQueryParam('openid.mode')=='logout')
+      {
+        s.linkTrackVars += ',eVar3';
+        s.eVar3='signout';
+      }
+    }
+
+    function trackManageTrackingIDBody() {
+      manage_class = document.getElementsByClassName("manage");
+      if (manage_class && manage_class.length > 0)
+      manage_class[0].addEventListener("click",
+        function(e){
+          e.preventDefault();
+          //window.location = e.target.getAttribute('href')+'?ac-ms-src=managetrackingidbody'
+          window.location = appendQueryParam(e.target.getAttribute('href'),
+            'ac-ms-src=managetrackingidbody')
+        }
+        ,false);
+    }
+
+    function handleSiteStripeToggleAction(event){
+      var status = event.switchState.isOn ? 'SiteStripe enabled' : 'SiteStripe disabled';
+      setTrackVars("prop2,events,eVar7");
+      s.linkTrackEvents = "event1,event2";
+      s.prop2 = status;
+      s.eVar7 = location.pathname;
+      if(event.switchState.isOn){
+        s.events = "event1";
+      }else{
+        s.events = "event2";
+      }
+      s.tl(true,'o',status);
+    };
+
+    function handleGroupByChanges(event){
+      try{
+        var data = event.data;
+        var selectedGroup = event.$target.val();
+        setTrackVars("prop3,events,eVar11,eVar13");
+        s.linkTrackEvents = "event11";
+        s.prop3 = selectedGroup;
+        s.eVar11 = selectedGroup;
+        s.eVar13 = data.name;
+        s.events = "event11";
+        s.tl(true,'o', "Groupby selection");
+      }catch(err){
+        // DO NOTHING.
+      }
+
+    };
+    //Assumning every row click is a detail view click.
+    //In case of different behaviour need to introduce a "action" logic to differentiate
+    function handleGroupByDetailView(event){
+      setTrackVars("events");
+      s.linkTrackEvents = "event12";
+      s.events = "event12";
+      s.tl(true,'o', "Groupby detailed report view");
+    };
+
+
+   function handleRowLimitChange(event) {
+      var $target = event.$target;
+      try{
+        var newRowLimit = parseInt(event.$target.val(), 10);
+        setTrackVars("events,eVar15");
+        s.linkTrackEvents = "event14";
+        s.events = "event14";
+        s.eVar15 = newRowLimit;
+        s.tl(true,'o', "Table row limit changed");
+      }catch(e){
+        //NOTHING
+      }
+    };
+
+
+    initialize();
+
+    //AC Mobile Events 
+
+    //switch back to mobile,
+    // Handling device switch
+    function handleViewSwitch(event){
+      var data = A.$(event.currentTarget).data();
+      var type = data.type; // Desktop/MObile
+      setTrackVars("prop62,events,eVar57");
+      s.linkTrackEvents = "event56";
+      s.prop62 = type;
+      s.events = "event56";
+      s.eVar57 = type;
+      customTrackLink("Mobile AC - View Switch Desktop/Mobile", 'o');
+    };
+
+    function handleNotificationClick(event){
+      setTrackVars("prop61,events,eVar56");
+      s.linkTrackEvents = "event55";
+      s.prop61 = "Notification Click";
+      s.events = "event55";
+      s.eVar56 = "Notification Click";
+      customTrackLink("Mobile AC - Notification Click", 'o');
+    };
+
+
+    function onViewSwitchConfirm(){
+      setTrackVars("prop56");
+      s.prop56 = "On View Switch Popup confirm";
+      customTrackLink("Mobile AC - On View Switch Popup confirm", "o");
+    };
+
+    //clicks on summary / fees / bounty on dashboard,
+    function trackDashboardTabs(event){
+      if(isMobileRequest()){
+        var data = event.data;type = data.type; // Earning/ commision/ bounty
+        setTrackVars("prop60,events,eVar55");
+        s.linkTrackEvents = "event54";
+        s.prop60 = type;
+        s.events = "event54";
+        s.eVar55 = type;
+        customTrackLink("Mobile AC - Dashboard Tab selection", 'o');
+      }
+    };
+
+    //clicks on filters for date ranges and tracking IDs on dashboard, 
+    function handleTimeIntervalSelect(event, val){
+      var dataType = val || event.$target.val(); //Today, Yesterday, 30days etc
+      setTrackVars("prop59,events,eVar54");
+      s.linkTrackEvents = "event53";
+      s.prop59 = dataType;
+      s.events = "event53";
+      s.eVar54 = dataType;
+      customTrackLink("Mobile AC - Time Interval Select", 'o');
+    };
+
+    function handleDropDownSelect(event){
+      var data = event.data;
+      setTrackVars("prop58,events,eVar52,evar53");
+      s.linkTrackEvents = "event52";
+      s.prop58 = event.$target.val();
+      s.events = "event52";
+      s.eVar52 = data.arg_name || "Dropdown Select"
+      s.eVar53 = event.$target.val();
+      customTrackLink("Mobile AC - dropdown selected", 'o');
+    };
+
+    function handleNavToggle(event){
+      var data = event.data,type = data.type;
+      setTrackVars("prop57");
+      s.prop57 = type
+      customTrackLink("Mobile AC - Header menu icons toggle", "o");
+    };
+
+    function handleDetailedReportSwitch(){
+      setTrackVars("prop64");
+      s.prop64 = "Mobile AC- Detailed Report Switch";
+      customTrackLink("Mobile AC- Detailed Report Switch", "o");
+    };
+
+    function onSwitchViewNotice(){
+      setTrackVars("prop65");
+      s.prop65 = "Mobile AC- Switch View Notice open";
+      customTrackLink("Mobile AC- Switch View Notice open", "o");
+    };
+
+    function handleSwitchStoreClick(){
+      setTrackVars("prop55");
+      s.prop55 = "On Switch Store";
+      customTrackLink("Mobile AC - Switch Store", "o");
+    };
+
+    function handleNavClick(event){
+      var data = A.$(event.currentTarget).data();
+      var selectedMenu = data.assocId;
+
+      setTrackVars("prop54,events,eVar51");
+      s.linkTrackEvents = "event51";
+      s.prop54 = selectedMenu;
+      s.events = "event51";
+      s.eVar50 = selectedMenu;
+      customTrackLink("Mobile AC - Menu selected", 'o')
+    };
+
+    function onMobileBodySwipe(){
+      setTrackVars("prop53");
+      s.prop53 = "OnSwipe";
+      customTrackLink("Mobile AC - On Swipe", "o");
+    };
+
+    function handleShowmore(){
+      setTrackVars("prop52");
+      s.prop52 = "show more clicks";
+      customTrackLink("Mobile AC - Show More", "o");
+    };
+
+    
+    function onNotificationIconClick(event){
+      setTrackVars("prop51");
+      s.prop51 = "notification click";
+      customTrackLink("Mobile AC - Notification Icon Click", "o");
+    };
+
+
+    function openSelectedLocale(event){
+      var url =  event.$target.closest(".ac-locale").data('url');
+      setTrackVars("prop50,events,eVar50");
+      s.linkTrackEvents = "event50";
+      s.prop50 = url;
+      s.events = "event50";
+      s.eVar50 = url;
+      customTrackLink("Mobile AC - Country Selection", 'o')
+    };
+
+
+    function handleMobileDropdownTabSelect(event, val){
+      setTrackVars("prop63,events,eVar58");
+      s.linkTrackEvents = "event57";
+      s.prop63 = val || event.$target.val();
+      s.events = "event57";
+      s.eVar58 = val || event.$target.val();
+      customTrackLink("Mobile AC - Mobile Tab Select", 'o');
+    };
+
+
+
+    var mobileBody = A.$("#ac-mobile-body");
+
+    if(A.$("#ac-graph-container-data").length && isMobileRequest()){
+      var data = A.$("#ac-graph-container-data").data();
+      var tabSelected =  mobileBody.find("select[name='reports-commission-orders']").val();
+      if(tabSelected){
+        handleMobileDropdownTabSelect(null, tabSelected);
+      }
+      if(data.acReportRangeType){
+        handleTimeIntervalSelect(null, data.acReportRangeType);
+      }
+    }
+
+    A.$(document).delegate('.ac-view-switch-link', 'click', handleViewSwitch);
+    A.$(document).delegate('.detailed-report-switch', 'click',handleDetailedReportSwitch);
+    mobileBody.delegate('.ac-notification-link', 'click', handleNotificationClick);
+    mobileBody.delegate('.change-store-button', 'click', handleSwitchStoreClick);
+    mobileBody.delegate('.ac-nav-item ', 'click', handleNavClick);
+    mobileBody.delegate('.ac-notifications-icon ', 'click', onNotificationIconClick);
+    A.$("#main").bind('swipe-horizontal',onMobileBodySwipe);
+    
+    A.declarative("ac-mobile-widget-tab-select", "change", handleMobileDropdownTabSelect);
+
+    A.on('a:popover:beforeShow:ac-mobile-switch-view-notice', onSwitchViewNotice);
+
+    A.declarative("ac-locale-selection", "change", openSelectedLocale);
+    A.declarative("ac-mobile-show-more-action", "click", handleShowmore);
+    A.declarative('ac-report-tab-select-main','click', trackDashboardTabs);
+    A.declarative('ac-mobile-widget-timeinterval-select','change', handleTimeIntervalSelect);
+    A.declarative('ac-mobile-widget-dropdown-select','change', handleDropDownSelect);
+    A.declarative('ac-mobile-nav-toggle','click', handleNavToggle);
+    A.declarative('ac-mobile-switch-view-confirm', 'click', onViewSwitchConfirm);
+
+    
+    /* register all declaratives of interest.
+    Fix Me: Move all declarative actionsto some config file an iterate over it to get
+    all the names and use a generic handler to register for all events.
+    */
+    A.declarative('ac-report-tab-select-main','click',trackReportSummary);
+    A.declarative('a-popover','click',trackReportFeedback);
+    A.declarative('ac-widget-daterange-select-option','click',trackReportInterval);
+    A.declarative('ac-widget-daterange-select-action', 'click',trackReportIntervalDownload);
+    A.declarative('ac-report-download-show','click',trackDownloadReportVisit);
+    //A.declarative('ac-report-download-program-action','change',trackDownloadReportType);
+    A.declarative('ac-reports-download-action','click',trackDownloadReport);
+    A.declarative('ac-tab-switch','click',trackTabClick);
+    //NSA Event listeners
+    A.declarative('ac-ads-top-nav', 'click', trackNSATopNav);
+    A.declarative('ac-ads-create-button-top', 'click', trackNSACreateButtonTop);
+    A.declarative('ac-ads-slider-select', 'click', trackNSALandingTabs);
+    A.declarative('ac-ads-banner-action', 'click', trackNSAVideoClick);
+    A.declarative('ac-ads-create-button-bottom', 'click', trackNSACreateButtonBottom);
+    A.declarative('ac-ads-recommendation-tab-link', 'click', trackNSARecommendationTabLinks);
+    A.declarative('ac-ads-search-tab-link', 'click', trackNSASearchTabLinks);
+    A.declarative('ac-ads-custom-tab-link', 'click', trackNSACustomTabLinks);
+    A.declarative('ac-ads-adcode-settings-action', 'click', trackNSAAdVendingAdvanced);
+    A.declarative('ac-ads-adcode-agtr-action', 'click', trackNSARecommendationCategory);
+    A.declarative('ac-ads-adcode-settings-category', 'change', trackNSASearchCategory);
+    A.declarative('ac-ads-adcode-copy-action', 'click', trackHighlightAdCode);
+
+      //Highlight button click action
+    A.declarative('ac-ad-code-button-click', 'click', trackHighlightAdCodeComponent);
+    A.declarative('ac-ad-code-container-click','click',trackHighlightAdCodeComponent);
+
+
+    A.on("a:switch:sitestripe-toggle:on",handleSiteStripeToggleAction);
+    A.on("a:switch:sitestripe-toggle:off",handleSiteStripeToggleAction);
+
+
+    A.declarative('ac-widget-groupby-select-option', 'change', handleGroupByChanges);
+
+
+    A.declarative('a-dtt-row-clicked', ['click'], handleGroupByDetailView);
+    A.declarative('a-dtt-row-limit-changed', ['change'],handleRowLimitChange);
+
+
+    function onGeoLinkPreferenceUpdateSuccess(prefObj){
+      var prefs = prefObj.extras;
+      if(prefs){
+        setTrackVars("prop31,events,eVar34");
+        s.linkTrackEvents = "event32";
+        s.prop31 = prefs.key;
+        s.events = "event32";
+        s.eVar34 = prefs.value;
+        s.tl(true,'o', "Preference Saved Successfully");
+      }
+    }
+
+  
+    function onGeoLinkFeedbackSuccess(resObj){
+      if(resObj){
+        setTrackVars("prop32,events,eVar35,eVar36");
+        
+        s.linkTrackEvents = "event33,event34";
+        s.prop32 = resObj.type;
+
+        s.eVar35 = resObj.geo_link;
+        s.eVar36 = resObj.source_link;
+        var eventName = "Feedback";
+
+        if(resObj.type === "NEGATIVE"){
+          s.events = "event34";
+          eventName = "Geo Link - Thumbs Down"
+        }else{
+          s.events = "event33";
+          eventName = "Geo Link - Thumbs Up"
+        }
+        s.tl(true,'o', eventName);
+      }
+    }
+
+    function onGeoLinkRefreshSuccess(){
+      setTrackVars("prop34,events");
+      s.linkTrackEvents = "event35";
+      s.prop34 = "Geo Search refresh";
+      s.events = "event35";
+      s.tl(true,'o', "Geo Link refresh");
+    }
+    
+    function onGeoLinkSuccess(resObj){
+      if(resObj){
+        setTrackVars("prop33,events,eVar36");
+        s.linkTrackEvents = "event35";
+        s.prop33 = "Geo Search";
+        s.events = "event35";
+        s.eVar36 = resObj.source_link;
+        s.tl(true,'o', "Geo Link Search Success");
+      }
+    }
+
+    function onGeoLocaleChange(resObj){
+      if(resObj){
+        setTrackVars("prop35,events");
+        s.linkTrackEvents = "event36";
+        s.prop35 = "Geo locale select for tag map";
+        s.events = "event36";
+        s.tl(true,'o', "Tag map geo locale selection");
+      }
+    }
+
+    function onGeoStoreStatusRefresh(resObj){
+      if(resObj){
+        setTrackVars("prop36,events");
+        s.linkTrackEvents = "event37";
+        s.prop35 = "Geo store status refresh";
+        s.events = "event37";
+        s.tl(true,'o', "Geo store status refresh");
+      }
+    }
+
+    function onGeoStoreTagMapSuccess(resObj){
+      setTrackVars("prop37,events,eVar32,eVar37");
+      s.linkTrackEvents = "event38";
+      var eventName = "Store Tagmap Success"
+      if(resObj && resObj.params){
+        if(resObj.params.default_tracking_id){
+          s.eVar37 = resObj.params.default_tracking_id;
+          eventName = "Default Tag Selection"
+        }else{
+          s.eVar32 = resObj.params.dst_store;
+          eventName = "Link Store"
+        }
+      }
+      s.prop37 = eventName;
+      s.events = "event38";
+      s.tl(true,'o', eventName);
+    }
+
+
+    function handleGeoLocaleAndStoreVerification(){
+      if(A.$("#ac-ghome-container")){
+        var geoContainerData = A.$("#ac-ghome-container").data() || {};
+
+        if(geoContainerData.geoLocale){
+          s.linkTrackVars += ',eVar31';
+          s.eVar31 = geoContainerData.geoLocale;
+        }
+
+        if(geoContainerData.pageType === "link_verification"){
+          setTrackVars("prop30,events,eVar32,eVar31");
+          s.linkTrackEvents = "event31,event32";
+          if(geoContainerData.linkValidated){
+            s.prop30 = "Link Store Verification Success";
+            s.events = "event30";
+          }else{
+            s.prop30 = "Link Store Verification Failed";
+            s.events = "event31";
+          } 
+          s.eVar32 = geoContainerData.geoStore;
+          s.eVar33 = geoContainerData.errors;
+          s.eVar31 = geoContainerData.geoLocale;
+          s.tl(true,'o', s.prop30);
+        }
+      }
+    }
+
+    function trackCustomLink(data) {
+      if(data.linkName) {
+        var isInternalLink = data.hasOwnProperty('isInternalLink') ? data.isInternalLink : true,
+          linkType = data.hasOwnProperty('linkType') ? data.linkType : 'o', // 'e' for exit link, 'd' for download link, 'o' for everything else
+          linkName = data.linkName,
+          eVars,
+          eVar,
+          length
+
+        try {
+
+          if(data.events) {
+            s.events = data.events;
+            s.linkTrackEvents = data.events;
+          }
+
+          if(data.vars) {  // , supported list of variables
+            eVars = data.vars.split(',');
+            length = eVars.length;
+            for(var i=0; i < length; i++) {
+              eVar = eVars[i];
+              if(data.hasOwnProperty(eVar)) {
+                s[eVar] = data[eVar];
+              }
+            }
+            setTrackVars(data.vars);
+          }
+
+          s.tl(isInternalLink, linkType, linkName);
+          clearTrackVars();
+        } catch(e) {
+          // Not sure what to do. should get back to this.
+        }
+      }
+    }
+
+    A.on('ac-geo-link-preference-update-success', onGeoLinkPreferenceUpdateSuccess);
+    A.on('ac-geo-link-feedback-success', onGeoLinkFeedbackSuccess);
+    A.on('ac-geo-link-refresh-success', onGeoLinkRefreshSuccess);
+    A.on('ac-geo-link-success', onGeoLinkSuccess);
+
+    A.on('ac-geo-locale-change',onGeoLocaleChange);
+    A.on('ac-geo-store-tag-map-success', onGeoStoreTagMapSuccess);
+    A.on('ac-geo-store-status-refresh', onGeoStoreStatusRefresh);
+
+    //Resource Center Events
+    A.on('ac-rc-filter-change', trackRCFilterChange);
+    A.on('ac-rc-load-more', trackRCLoadMore);
+
+    // Custom Link Tracker
+    A.on('ac-analytics-track-custom-link', trackCustomLink);
+    
+    return {
+       s: s,
+       setTrackVars: setTrackVars,
+       customTrackLink: customTrackLink,
+       clearTrackVars: clearTrackVars
+    };
+  });
+}
+else
+{
+  (function(){
+    var s = new AppMeasurement();
+    function getAnalyticsAccount() {
+      var acc = "amazdistaging";
+      try {
+        acc = Associates.WebAnalyticsConfig.omnitureReportSuite;
+      } catch(e) {}
+      return acc;
+    }
+    s.account = getAnalyticsAccount();
+    s.trackDownloadLinks=true
+    s.trackExternalLinks=true
+    s.linkDownloadFileTypes="exe,zip,wav,mp3,mov,mpg,avi,doc,pdf,xls"
+    //s.linkInternalFilters="javascript:,www.affiliate-program.amazon.com"
+    s.linkInternalFilters="javascript:,affiliate-program.amazon.com,affiliate-program.amazon.co.uk,partnernet.amazon.de,partenaires.amazon.fr,affiliate.amazon.co.jp,associates.amazon.ca,associates.amazon.cn,programma-affiliazione.amazon.it,afiliados.amazon.es,affiliate-program.amazon.in,associados.amazon.com.br,afiliados.amazon.com.mx"
+    s.linkLeaveQueryString=true
+    s.linkTrackVars="None"
+
+
+    function s_getLoadTime(){if(!window.s_loadT){var b=new Date().getTime(),o=window.performance?performance.timing:0,a=o?o.requestStart:window.inHeadTS||0;s_loadT=a?Math.round((b-a)/100):''}return s_loadT}
+
+    s_getLoadTime();
+
+
+    if(!s.campaign) { /* External Campaign Tracking */ 
+      if(getQueryParam('cid') != "") { 
+        s.campaign = getQueryParam('cid');
+      }
+    }
+
+    var buttonIdTitleMap = {
+      "served_html_box-img" : "Product Links HighLight HTML: Text and Image",
+      "static_txt_html_box-img" : "Product Links HighLight HTML: Text Only",
+      "static_img_html_box-img" : "Product Links HighLight HTML: Image Only"
+    };
+
+    var hrefToMarketTagMap = {
+      "/gp/associates/network/your-account/main.html" : "accountSettings",
+      "/gp/associates/network/your-account/payment-history.html" : "paymenthistory",
+      "/gp/associates/network/your-account/manage-tracking-ids.html" : "managetrackingiddropdown",
+      "/logout" : "signout",
+      "/" : "amazonlogo",
+      "http://affiliate-program.amazon.com/gp/associates/network/your-account/manage-tracking-ids.html" : "managetrackingidbody",
+      "/gp/associates/network/build-links/individual/main.html" : "advancedsearchquicklinks",
+      "/gp/associates/contact?ie=UTF8&amp;feedbackSource=%5BLoggedInHome%2FHome%2Fview%5D" : "letusknowbottom"
+    }
+
+    //document.getElementById('served_html_box-img').addEventListener("click",function(e){alert(e.target);});
+    function trackHighlightHTMLClick(buttonId)
+    {
+      setTrackVars('eVar1,eVar2,prop6,events')
+      if (document.getElementById(buttonId))
+      {
+          document.getElementById(buttonId).addEventListener("click",function(e){
+          try
+          { s.prop6 =  buttonIdTitleMap[buttonId];}
+          catch (err)
+          {
+            s.prop6 = "Banner Highlight HTML"
+          }
+          customTrackLink(s.prop6,'o');
+        });
+      }
+    }
+    
+    function customTrackLink(linkName,type) {
+
+      if(s.prop6){
+        s.linkTrackEvents = "event10";
+        s.events = "event10";
+      }
+
+      s.tl(true,type,linkName);
+      clearTrackVars();
+      
+    }
+
+    function customTrackParams() {
+      s.t();
+      clearTrackVars();
+    }
+
+    function clearTrackVars() {
+      //persist eVar after clearing the Tracking variables
+      /* this will clear all the custom variables including s.eVar1 */
+      s.clearVars();
+      s.eVar1 = getStoreId();
+      s.eVar2 = "AC-Nav : "+getWeblabNav();
+      s.eVar10 = s.campaign;
+      //typeCount = 1;
+    }
+
+    function setTrackVars(varListStr) {
+      s.linkTrackVars = varListStr;
+    }
+
+    function getWeblabNav(){
+      var nav = ''; 
+      if (document.getElementsByName('auth-store-id').length != 0)
+      {
+        nav = document.getElementsByName('assoc-nav')[0].getAttribute('content');
+      }
+      return nav;
+    }
+
+    function getStoreId(){
+      var store_id=''; 
+      if (document.getElementsByName('auth-store-id').length != 0)
+      {
+        store_id = document.getElementsByName('auth-store-id')[0].getAttribute('content');
+      }
+      return store_id;
+    }
+    //NSA Landing page analytics Ends
+    
+    function getQueryParam(param) {
+      return s.Util.getQueryParam(param);
+    }
+    
+    function checkAcMsSrcQueryParam(){
+        if (getQueryParam('ac-ms-src')!== ""){
+          s.linkTrackVars += ',eVar3';
+          s.eVar3 = getQueryParam('ac-ms-src'); 
+        }
+      }
+    
+      function checkAsinQueryParam(){
+        if (getQueryParam('asin')!==""){
+          s.linkTrackVars += ',eVar4';
+          s.eVar4 = getQueryParam('asin'); 
+        }
+      }
+    
+    function trackHighlightHTMLClicks(){
+      for (var id in buttonIdTitleMap) {          
+          trackHighlightHTMLClick(id);
+      }    
+    }
+    
+    var idPrefixToTitleMap = {
+      'text_promotions_featued_textarea' : "Featured Promotions : Get Link : Highlight HTML",
+      'iframe_banner_promotions_textarea' : "Featured Promotions : Get Banner : Highlight HTML",
+      'text_bounty_bounty_promotions_textarea_' : "Special Promotions : Get Link : Highlight HTML",
+      'iframe_all_bounty_bounty_banner_promotions_textarea_' : "Special  Promotions : Get Banner : Highlight HTML",
+      'text_promotions_textarea_' : " All Promotions : Get Link : Highlight HTML",
+      'iframe_all_banner_promotions_textarea' : "All Promotions: Get Banner: Highlight HTML",
+      'iframe_all_setandforget_setandforget_banner_promotions_textarea_': "Set and Forget : Get Banner : Highlight HTML",
+      'copy_paste-img' : 'Link To Any Page'
+      // TBD --> Set and Forget:Get Links and
+      //  My Recommendations --. Content Symphony change url??
+    }
+    // child_type is like tr,tb,a.div etc.
+    
+    function trackHighlightHTMLClickId(parent_id) {
+      if(document.getElementById(parent_id))
+      {
+        document.getElementById(parent_id).addEventListener("click",function(e){
+        for (var prefix in idPrefixToTitleMap) {        
+          if (e.target.getAttribute('id')){
+            if (e.target.id.startsWith(prefix)) { 
+            s.prop6 =  idPrefixToTitleMap[prefix];
+            customTrackLink(s.prop6,'o');          
+            }
+          }
+         }
+       });
+      }
+    }
+
+    function trackHighlightHTMLClickClass(parent_id) {
+      if(document.getElementsByClassName(parent_id).length > 0) {
+        document.getElementsByClassName(parent_id)[0].addEventListener("click",function(e){
+        for (var prefix in idPrefixToTitleMap) {        
+          var id = e.target.getAttribute('id');
+          if (id)
+          {
+            if (id.startsWith(prefix)) { 
+              s.prop6 =  idPrefixToTitleMap[prefix];
+              customTrackLink(s.prop6,'o');          
+             }
+          }
+        }
+      });
+     }
+    }
+    
+    function trackBannerEditHTMLClicks() {
+      var eles = document.querySelectorAll('*[id^="iframe_"]');
+      if (eles.length > 0)
+      {
+        for (var i=0;i<eles.length;i++) { 
+          buttonIdTitleMap[eles[i].id] = "Banner HighLight HTML";
+          trackHighlightHTMLClick(eles[i].id);
+        }
+      }
+    }
+    
+    function trackHighlightHTMLClickBody(element_id) {
+      document.body.addEventListener("click",function(e){
+        if (e.target.id==element_id){
+          s.prop6 =  idPrefixToTitleMap[element_id];
+          customTrackLink(s.prop6,'o');
+        }
+      });
+    }
+    //x[0].addEventListener("click",function(e){e.preventDefault();console.log(this.getAttribute('href'));window.location = e.srcElement.attributes.href.textContent+'ac-ms-src=test';});
+    function addAcMsSrcParam(e){
+      href = e.target.getAttribute('href')
+      if (href in hrefToMarketTagMap){
+        e.preventDefault();
+        //window.location = e.srcElement.attributes.href.textContent+'?ac-ms-src='+hrefToMarketTagMap[href];
+        window.location = appendQueryParam(e.target.attributes.href.textContent,
+          'ac-ms-src='+hrefToMarketTagMap[href])
+      }
+    }
+    
+    function trackStoreIdChange() {
+      storeDropDownBox=document.getElementById("revamp_idbox_store_id")
+      if (storeDropDownBox) {
+          storeDropDownBox.addEventListener("change",
+            function(e){
+              setTrackVars('eVar1,eVar2,eVar3,events');
+              s.eVar3 = 'storechanged';
+              customTrackLink(s.eVar3,'o');},
+            false);
+      }
+    }
+
+    function trackAmazonLogoClick() {
+      logo = document.getElementsByClassName('ac-logo');
+      if(logo && logo.length > 0){
+       logo[0].addEventListener("click",
+          function (event) {
+            s.linkTrackVars = 'eVar1,eVar2,eVar3,events';
+            s.eVar3 = "amazonlogo"
+            //customTrackLinkHref( s.eVar3,'o');
+            s.tl(event.target,'o', s.eVar3);
+          },
+          false);
+        }
+    }
+
+    function trackAssociatesSettingTop() {
+      links = document.querySelectorAll('.ac-header-item > div >ul >li> [href]');
+      for (var i=links.length;i>0;i--) {
+          links[i-1].addEventListener("click",addAcMsSrcParam,false);
+      }
+    }
+
+    function trackManageTrackingID() {
+      setTrackVars('eVar1,eVar2,eVar3,events');
+      links=document.querySelectorAll(".manage > a")
+      if(links && links.length > 0){
+       links[0].addEventListener("click",addAcMsSrcParam,false);
+      }
+    }
+
+    function trackAdvancedSearch() {
+      links=document.querySelectorAll(".ac-home-search-advancedsearch > a")
+      if (links && links.length > 0){
+        links[0].addEventListener("click",addAcMsSrcParam,false);
+      }
+    }
+
+    function findRefTagValue(href) {
+      if (href) {
+        start=href.indexOf('ref=');
+        if (start!=-1){
+          start=start+4;
+          end=href.indexOf('?');
+          ref_tag_value = href.substring(start,end);
+          return ref_tag_value;
+        }    
+      }
+    }
+      
+    function appendQueryParam(href,queryParamStr){
+      if (href) {
+        var separator = (href.indexOf("?")===-1)?"?":"&";
+        href = href + separator + queryParamStr;
+        return href;
+      }
+    }
+      
+    function trackFooterGlobalLinks(){
+      f=document.getElementById("footer");
+      if (f){
+        f.addEventListener("click",
+          function(e){
+            e.preventDefault();
+            href = e.target.getAttribute("href")
+            tag = findRefTagValue(href)
+            if (tag!== undefined)
+            {  window.location=appendQueryParam(href,'ac-ms-src='+tag);
+            }
+          },
+          false);
+      }
+    }
+
+    function trackLetUsKNowClick() {
+      links=document.querySelectorAll(".feedback >p > a");
+      if (links && links.length > 0){
+        links[0].addEventListener("click",addAcMsSrcParam,false);
+      }
+    }
+
+    function trackSignOutPage(){
+      if (s.Util.getQueryParam('openid.mode')=='logout')
+      {
+        setTrackVars('eVar3')
+        s.eVar3='signout';
+      }
+    }
+
+    function trackManageTrackingIDBody() {
+      manage_class = document.getElementsByClassName("manage");
+      if (manage_class && manage_class.length > 0)
+      manage_class[0].addEventListener("click",
+        function(e){
+          e.preventDefault();
+          window.location = appendQueryParam(e.target.getAttribute('href'),
+            'ac-ms-src=managetrackingidbody')
+        }
+        ,false);
+    }
+
+    function initialize(){
+      // initialize store id for every activity of a user so 
+      // that every captured metrices are correlated
+      
+      trackHighlightHTMLClicks();
+      trackBannerEditHTMLClicks();
+      trackHighlightHTMLClickId('featured');
+      trackHighlightHTMLClickId('bountyPromotions');
+      trackHighlightHTMLClickId('setAndForgetPromotions');
+      trackHighlightHTMLClickId('recommendations');
+      trackHighlightHTMLClickId('allPromotions');
+      trackHighlightHTMLClickBody('copy_paste-img');
+      trackFooterGlobalLinks();
+      trackAdvancedSearch();
+      //trackManageTrackingID();
+      trackAssociatesSettingTop();
+      trackStoreIdChange();
+      trackAmazonLogoClick();
+      trackLetUsKNowClick();
+      //trackCountrySelect()
+      var trackVars = 'eVar1,eVar2,eVar10,eVar20,prop20,events';
+      setTrackVars(trackVars);
+      s.eVar1 = getStoreId();
+      s.eVar2 = "AC-Nav : "+getWeblabNav();
+
+      s.eVar20=s.prop20=s_getLoadTime();
+
+      s.linkTrackEvents = "event19";
+      s.events = "event19"
+      s.tl(true,'o',"Page loaded");
+
+      if(s.campaign){
+        s.eVar10 = s.campaign;
+        s.linkTrackEvents = "event9";
+        s.events = "event9"
+        s.tl(true,'o',"Campaign entry to AC");
+      }
+
+      checkAsinQueryParam();
+      checkAcMsSrcQueryParam(); 
+      trackSignOutPage();
+      trackManageTrackingIDBody();  
+      customTrackParams();
+    }
+    initialize();   
+  }
+  ) ()
+}
+if (document.getElementsByClassName("ac-revamp-home-search").length>0)
+{
+  try {         
+        var s = new AppMeasurement();
+          function getAnalyticsAccount() {
+            var acc = "amazdistaging";
+            try {
+              acc = Associates.WebAnalyticsConfig.omnitureReportSuite;
+            } catch(e) {}
+            return acc;
+          }
+
+          /* -----------CONFIG SECTION ---------------------/
+          /* You may add or alter any code config here. */
+
+          /* Link Tracking Config */
+
+          s.account = getAnalyticsAccount();
+          s.linkTrackVars="eVar1,eVar2,prop6,events"
+          var isSearchClicked=false;
+          if (document.getElementsByName('linktosearch').length > 0)
+          {
+            document.getElementsByName('linktosearch')[0].click(function(){isSearchClicked = true;});
+          }
+
+          function customTrackLink(linkName,type) {
+
+          if(s.prop6){
+            s.linkTrackEvents = "event10";
+            s.events = "event10";
+           }
+                
+            s.tl(true,type,linkName);
+            //clearTrackVars();
+            s.clearVars();
+            s.eVar1 = getStoreId();
+            s.eVar2 = "AC-Nav : "+getWeblabNav();
+            s.eVar10 = s.campaign;
+          }
+
+          function getWeblabNav(){
+            var nav = ''; 
+            if (document.getElementsByName('auth-store-id').length != 0)
+            {
+              nav = document.getElementsByName('assoc-nav')[0].getAttribute('content');
+            }
+            return nav;
+          }
+
+          function getStoreId(){
+            var store_id=''; 
+            if (document.getElementsByName('auth-store-id').length != 0)
+            {
+              store_id = document.getElementsByName('auth-store-id')[0].getAttribute('content');
+            }
+            return store_id;
+          }
+          s.eVar1 = getStoreId();
+          s.eVar2 = "AC-Nav : "+getWeblabNav();
+          //if div class=== "ac-revamp-home-search" then only apply this logic
+          function onAjaxPopoverSuccess() {
+            setTimeout(function() {
+            jQuery('#highlight').click(function(event) {
+             //console.log(jQuery('.tab-active').attr('id'));
+             var tab = jQuery('.tab-active').attr('id');
+             var trackingParam = jQuery(event.currentTarget).attr('data-analytic-params');
+             // if data-analytic-params= "Browse for Product: Highlight HTML" then send "Browse for Product : Category : Highlight HTML"
+             if (trackingParam == "Browse for Product: Highlight HTML"){
+                s.prop6 = "Browse for Product : Category : Highlight HTML";
+                customTrackLink(s.prop6,'o');
+             }
+             else if (tab =='tab-1'){ 
+                // else if tab-1 and parent = linktosearch and data-analytic-params="Quick Links : Browse for Product : Highlight HTML" then "Quick Links : Search Results : Highlight HTML"      
+                if (trackingParam == "Quick Links : Browse for Product : Highlight HTML"){
+                  if (isSearchClicked){
+                    s.prop6 = "Quick Links : Search Results : Highlight HTML";            
+                  }
+                  // else if tab-1 and parent!= linktosearch and data-analytic-params="Quick Links : Browse for Product : Highlight HTML" then "Quick Links : Product : Highlight HTML"
+                  else{
+                    s.prop6 = "Quick Links : Product : Highlight HTML";
+                  }
+                  customTrackLink(s.prop6,'o');
+                }     
+             }
+             // else if tab-2 and data-analytic-params="Quick Links : Browse for Product : Highlight HTML" then send "Browse for Product : Product : Highlight HTML"
+             else if (tab == 'tab-2' && trackingParam == "Quick Links : Browse for Product : Highlight HTML" )
+             {
+                s.prop6 = "Browse for Product : Product : Highlight HTML";
+                customTrackLink(s.prop6,'o');  
+             }
+            });
+           }, 1000);
+          }
+
+          function onGetLinkClick(link, params) {
+           var queryString = jQuery.param(params);
+            amznJQ.available('popover', function() { // We need the timeout or the popup will dissapear as
+            //soon as it opens
+            window.setTimeout(function() {
+             amznJQ.jQuery.AmazonPopover.displayPopover({
+              width: 500,
+              locationElement: link,
+              group: "amz-popover",
+              loading: "Loading",
+              location: 'left',
+              cacheable: false,
+              modal: false,
+              closeEventInclude: "CLICK_OUTSIDE",
+              destination: '/gp/associates/network/build-links/quicklinks/popover.html?' + queryString,
+              onAjaxSuccess: onAjaxPopoverSuccess
+             });
+            }, 10);
+           });
+           return false;
+          }
+  } catch (e) {
+     console.log("error in the getLinkClickCode"); 
+  } 
+          //do cleanup, etc
+}
+/*
+ ============== DO NOT ALTER ANYTHING BELOW THIS LINE ! ===============
+
+AppMeasurement for JavaScript version: 1.5.3
+Copyright 1996-2016 Adobe, Inc. All Rights Reserved
+More info available at http://www.omniture.com
+*/
+function AppMeasurement(){var a=this;a.version="1.5.3";var k=window;k.s_c_in||(k.s_c_il=[],k.s_c_in=0);a._il=k.s_c_il;a._in=k.s_c_in;a._il[a._in]=a;k.s_c_in++;a._c="s_c";var q=k.AppMeasurement.zb;q||(q=null);var r=k,n,t;try{for(n=r.parent,t=r.location;n&&n.location&&t&&""+n.location!=""+t&&r.location&&""+n.location!=""+r.location&&n.location.host==t.host;)r=n,n=r.parent}catch(u){}a.ob=function(a){try{console.log(a)}catch(b){}};a.za=function(a){return""+parseInt(a)==""+a};a.replace=function(a,b,d){return!a||
+0>a.indexOf(b)?a:a.split(b).join(d)};a.escape=function(c){var b,d;if(!c)return c;c=encodeURIComponent(c);for(b=0;7>b;b++)d="+~!*()'".substring(b,b+1),0<=c.indexOf(d)&&(c=a.replace(c,d,"%"+d.charCodeAt(0).toString(16).toUpperCase()));return c};a.unescape=function(c){if(!c)return c;c=0<=c.indexOf("+")?a.replace(c,"+"," "):c;try{return decodeURIComponent(c)}catch(b){}return unescape(c)};a.gb=function(){var c=k.location.hostname,b=a.fpCookieDomainPeriods,d;b||(b=a.cookieDomainPeriods);if(c&&!a.cookieDomain&&
+!/^[0-9.]+$/.test(c)&&(b=b?parseInt(b):2,b=2<b?b:2,d=c.lastIndexOf("."),0<=d)){for(;0<=d&&1<b;)d=c.lastIndexOf(".",d-1),b--;a.cookieDomain=0<d?c.substring(d):c}return a.cookieDomain};a.c_r=a.cookieRead=function(c){c=a.escape(c);var b=" "+a.d.cookie,d=b.indexOf(" "+c+"="),f=0>d?d:b.indexOf(";",d);c=0>d?"":a.unescape(b.substring(d+2+c.length,0>f?b.length:f));return"[[B]]"!=c?c:""};a.c_w=a.cookieWrite=function(c,b,d){var f=a.gb(),e=a.cookieLifetime,g;b=""+b;e=e?(""+e).toUpperCase():"";d&&"SESSION"!=
+e&&"NONE"!=e&&((g=""!=b?parseInt(e?e:0):-60)?(d=new Date,d.setTime(d.getTime()+1E3*g)):1==d&&(d=new Date,g=d.getYear(),d.setYear(g+5+(1900>g?1900:0))));return c&&"NONE"!=e?(a.d.cookie=c+"="+a.escape(""!=b?b:"[[B]]")+"; path=/;"+(d&&"SESSION"!=e?" expires="+d.toGMTString()+";":"")+(f?" domain="+f+";":""),a.cookieRead(c)==b):0};a.G=[];a.ba=function(c,b,d){if(a.ta)return 0;a.maxDelay||(a.maxDelay=250);var f=0,e=(new Date).getTime()+a.maxDelay,g=a.d.visibilityState,m=["webkitvisibilitychange","visibilitychange"];
+g||(g=a.d.webkitVisibilityState);if(g&&"prerender"==g){if(!a.ca)for(a.ca=1,d=0;d<m.length;d++)a.d.addEventListener(m[d],function(){var c=a.d.visibilityState;c||(c=a.d.webkitVisibilityState);"visible"==c&&(a.ca=0,a.delayReady())});f=1;e=0}else d||a.l("_d")&&(f=1);f&&(a.G.push({m:c,a:b,t:e}),a.ca||setTimeout(a.delayReady,a.maxDelay));return f};a.delayReady=function(){var c=(new Date).getTime(),b=0,d;for(a.l("_d")?b=1:a.na();0<a.G.length;){d=a.G.shift();if(b&&!d.t&&d.t>c){a.G.unshift(d);setTimeout(a.delayReady,
+parseInt(a.maxDelay/2));break}a.ta=1;a[d.m].apply(a,d.a);a.ta=0}};a.setAccount=a.sa=function(c){var b,d;if(!a.ba("setAccount",arguments))if(a.account=c,a.allAccounts)for(b=a.allAccounts.concat(c.split(",")),a.allAccounts=[],b.sort(),d=0;d<b.length;d++)0!=d&&b[d-1]==b[d]||a.allAccounts.push(b[d]);else a.allAccounts=c.split(",")};a.foreachVar=function(c,b){var d,f,e,g,m="";e=f="";if(a.lightProfileID)d=a.K,(m=a.lightTrackVars)&&(m=","+m+","+a.ga.join(",")+",");else{d=a.c;if(a.pe||a.linkType)m=a.linkTrackVars,
+f=a.linkTrackEvents,a.pe&&(e=a.pe.substring(0,1).toUpperCase()+a.pe.substring(1),a[e]&&(m=a[e].yb,f=a[e].xb));m&&(m=","+m+","+a.A.join(",")+",");f&&m&&(m+=",events,")}b&&(b=","+b+",");for(f=0;f<d.length;f++)e=d[f],(g=a[e])&&(!m||0<=m.indexOf(","+e+","))&&(!b||0<=b.indexOf(","+e+","))&&c(e,g)};a.B=function(c,b,d,f,e){var g="",m,p,k,w,n=0;"contextData"==c&&(c="c");if(b){for(m in b)if(!(Object.prototype[m]||e&&m.substring(0,e.length)!=e)&&b[m]&&(!d||0<=d.indexOf(","+(f?f+".":"")+m+","))){k=!1;if(n)for(p=
+0;p<n.length;p++)m.substring(0,n[p].length)==n[p]&&(k=!0);if(!k&&(""==g&&(g+="&"+c+"."),p=b[m],e&&(m=m.substring(e.length)),0<m.length))if(k=m.indexOf("."),0<k)p=m.substring(0,k),k=(e?e:"")+p+".",n||(n=[]),n.push(k),g+=a.B(p,b,d,f,k);else if("boolean"==typeof p&&(p=p?"true":"false"),p){if("retrieveLightData"==f&&0>e.indexOf(".contextData."))switch(k=m.substring(0,4),w=m.substring(4),m){case "transactionID":m="xact";break;case "channel":m="ch";break;case "campaign":m="v0";break;default:a.za(w)&&("prop"==
+k?m="c"+w:"eVar"==k?m="v"+w:"list"==k?m="l"+w:"hier"==k&&(m="h"+w,p=p.substring(0,255)))}g+="&"+a.escape(m)+"="+a.escape(p)}}""!=g&&(g+="&."+c)}return g};a.ib=function(){var c="",b,d,f,e,g,m,p,k,n="",r="",s=e="";if(a.lightProfileID)b=a.K,(n=a.lightTrackVars)&&(n=","+n+","+a.ga.join(",")+",");else{b=a.c;if(a.pe||a.linkType)n=a.linkTrackVars,r=a.linkTrackEvents,a.pe&&(e=a.pe.substring(0,1).toUpperCase()+a.pe.substring(1),a[e]&&(n=a[e].yb,r=a[e].xb));n&&(n=","+n+","+a.A.join(",")+",");r&&(r=","+r+",",
+n&&(n+=",events,"));a.events2&&(s+=(""!=s?",":"")+a.events2)}if(a.visitor&&1.5<=parseFloat(a.visitor.version)&&a.visitor.getCustomerIDs){e=q;if(g=a.visitor.getCustomerIDs())for(d in g)Object.prototype[d]||(f=g[d],e||(e={}),f.id&&(e[d+".id"]=f.id),f.authState&&(e[d+".as"]=f.authState));e&&(c+=a.B("cid",e))}a.AudienceManagement&&a.AudienceManagement.isReady()&&(c+=a.B("d",a.AudienceManagement.getEventCallConfigParams()));for(d=0;d<b.length;d++){e=b[d];g=a[e];f=e.substring(0,4);m=e.substring(4);!g&&
+"events"==e&&s&&(g=s,s="");if(g&&(!n||0<=n.indexOf(","+e+","))){switch(e){case "supplementalDataID":e="sdid";break;case "timestamp":e="ts";break;case "dynamicVariablePrefix":e="D";break;case "visitorID":e="vid";break;case "marketingCloudVisitorID":e="mid";break;case "analyticsVisitorID":e="aid";break;case "audienceManagerLocationHint":e="aamlh";break;case "audienceManagerBlob":e="aamb";break;case "authState":e="as";break;case "pageURL":e="g";255<g.length&&(a.pageURLRest=g.substring(255),g=g.substring(0,
+255));break;case "pageURLRest":e="-g";break;case "referrer":e="r";break;case "vmk":case "visitorMigrationKey":e="vmt";break;case "visitorMigrationServer":e="vmf";a.ssl&&a.visitorMigrationServerSecure&&(g="");break;case "visitorMigrationServerSecure":e="vmf";!a.ssl&&a.visitorMigrationServer&&(g="");break;case "charSet":e="ce";break;case "visitorNamespace":e="ns";break;case "cookieDomainPeriods":e="cdp";break;case "cookieLifetime":e="cl";break;case "variableProvider":e="vvp";break;case "currencyCode":e=
+"cc";break;case "channel":e="ch";break;case "transactionID":e="xact";break;case "campaign":e="v0";break;case "latitude":e="lat";break;case "longitude":e="lon";break;case "resolution":e="s";break;case "colorDepth":e="c";break;case "javascriptVersion":e="j";break;case "javaEnabled":e="v";break;case "cookiesEnabled":e="k";break;case "browserWidth":e="bw";break;case "browserHeight":e="bh";break;case "connectionType":e="ct";break;case "homepage":e="hp";break;case "events":s&&(g+=(""!=g?",":"")+s);if(r)for(m=
+g.split(","),g="",f=0;f<m.length;f++)p=m[f],k=p.indexOf("="),0<=k&&(p=p.substring(0,k)),k=p.indexOf(":"),0<=k&&(p=p.substring(0,k)),0<=r.indexOf(","+p+",")&&(g+=(g?",":"")+m[f]);break;case "events2":g="";break;case "contextData":c+=a.B("c",a[e],n,e);g="";break;case "lightProfileID":e="mtp";break;case "lightStoreForSeconds":e="mtss";a.lightProfileID||(g="");break;case "lightIncrementBy":e="mti";a.lightProfileID||(g="");break;case "retrieveLightProfiles":e="mtsr";break;case "deleteLightProfiles":e=
+"mtsd";break;case "retrieveLightData":a.retrieveLightProfiles&&(c+=a.B("mts",a[e],n,e));g="";break;default:a.za(m)&&("prop"==f?e="c"+m:"eVar"==f?e="v"+m:"list"==f?e="l"+m:"hier"==f&&(e="h"+m,g=g.substring(0,255)))}g&&(c+="&"+e+"="+("pev"!=e.substring(0,3)?a.escape(g):g))}"pev3"==e&&a.e&&(c+=a.e)}return c};a.u=function(a){var b=a.tagName;if("undefined"!=""+a.Cb||"undefined"!=""+a.sb&&"HTML"!=(""+a.sb).toUpperCase())return"";b=b&&b.toUpperCase?b.toUpperCase():"";"SHAPE"==b&&(b="");b&&(("INPUT"==b||
+"BUTTON"==b)&&a.type&&a.type.toUpperCase?b=a.type.toUpperCase():!b&&a.href&&(b="A"));return b};a.va=function(a){var b=a.href?a.href:"",d,f,e;d=b.indexOf(":");f=b.indexOf("?");e=b.indexOf("/");b&&(0>d||0<=f&&d>f||0<=e&&d>e)&&(f=a.protocol&&1<a.protocol.length?a.protocol:l.protocol?l.protocol:"",d=l.pathname.lastIndexOf("/"),b=(f?f+"//":"")+(a.host?a.host:l.host?l.host:"")+("/"!=h.substring(0,1)?l.pathname.substring(0,0>d?0:d)+"/":"")+b);return b};a.H=function(c){var b=a.u(c),d,f,e="",g=0;return b&&
+(d=c.protocol,f=c.onclick,!c.href||"A"!=b&&"AREA"!=b||f&&d&&!(0>d.toLowerCase().indexOf("javascript"))?f?(e=a.replace(a.replace(a.replace(a.replace(""+f,"\r",""),"\n",""),"\t","")," ",""),g=2):"INPUT"==b||"SUBMIT"==b?(c.value?e=c.value:c.innerText?e=c.innerText:c.textContent&&(e=c.textContent),g=3):c.src&&"IMAGE"==b&&(e=c.src):e=a.va(c),e)?{id:e.substring(0,100),type:g}:0};a.Ab=function(c){for(var b=a.u(c),d=a.H(c);c&&!d&&"BODY"!=b;)if(c=c.parentElement?c.parentElement:c.parentNode)b=a.u(c),d=a.H(c);
+d&&"BODY"!=b||(c=0);c&&(b=c.onclick?""+c.onclick:"",0<=b.indexOf(".tl(")||0<=b.indexOf(".trackLink("))&&(c=0);return c};a.rb=function(){var c,b,d=a.linkObject,f=a.linkType,e=a.linkURL,g,m;a.ha=1;d||(a.ha=0,d=a.clickObject);if(d){c=a.u(d);for(b=a.H(d);d&&!b&&"BODY"!=c;)if(d=d.parentElement?d.parentElement:d.parentNode)c=a.u(d),b=a.H(d);b&&"BODY"!=c||(d=0);if(d&&!a.linkObject){var p=d.onclick?""+d.onclick:"";if(0<=p.indexOf(".tl(")||0<=p.indexOf(".trackLink("))d=0}}else a.ha=1;!e&&d&&(e=a.va(d));e&&
+!a.linkLeaveQueryString&&(g=e.indexOf("?"),0<=g&&(e=e.substring(0,g)));if(!f&&e){var n=0,r=0,q;if(a.trackDownloadLinks&&a.linkDownloadFileTypes)for(p=e.toLowerCase(),g=p.indexOf("?"),m=p.indexOf("#"),0<=g?0<=m&&m<g&&(g=m):g=m,0<=g&&(p=p.substring(0,g)),g=a.linkDownloadFileTypes.toLowerCase().split(","),m=0;m<g.length;m++)(q=g[m])&&p.substring(p.length-(q.length+1))=="."+q&&(f="d");if(a.trackExternalLinks&&!f&&(p=e.toLowerCase(),a.ya(p)&&(a.linkInternalFilters||(a.linkInternalFilters=k.location.hostname),
+g=0,a.linkExternalFilters?(g=a.linkExternalFilters.toLowerCase().split(","),n=1):a.linkInternalFilters&&(g=a.linkInternalFilters.toLowerCase().split(",")),g))){for(m=0;m<g.length;m++)q=g[m],0<=p.indexOf(q)&&(r=1);r?n&&(f="e"):n||(f="e")}}a.linkObject=d;a.linkURL=e;a.linkType=f;if(a.trackClickMap||a.trackInlineStats)a.e="",d&&(f=a.pageName,e=1,d=d.sourceIndex,f||(f=a.pageURL,e=0),k.s_objectID&&(b.id=k.s_objectID,d=b.type=1),f&&b&&b.id&&c&&(a.e="&pid="+a.escape(f.substring(0,255))+(e?"&pidt="+e:"")+
+"&oid="+a.escape(b.id.substring(0,100))+(b.type?"&oidt="+b.type:"")+"&ot="+c+(d?"&oi="+d:"")))};a.jb=function(){var c=a.ha,b=a.linkType,d=a.linkURL,f=a.linkName;b&&(d||f)&&(b=b.toLowerCase(),"d"!=b&&"e"!=b&&(b="o"),a.pe="lnk_"+b,a.pev1=d?a.escape(d):"",a.pev2=f?a.escape(f):"",c=1);a.abort&&(c=0);if(a.trackClickMap||a.trackInlineStats){var b={},d=0,e=a.cookieRead("s_sq"),g=e?e.split("&"):0,m,p,k,e=0;if(g)for(m=0;m<g.length;m++)p=g[m].split("="),f=a.unescape(p[0]).split(","),p=a.unescape(p[1]),b[p]=
+f;f=a.account.split(",");if(c||a.e){c&&!a.e&&(e=1);for(p in b)if(!Object.prototype[p])for(m=0;m<f.length;m++)for(e&&(k=b[p].join(","),k==a.account&&(a.e+=("&"!=p.charAt(0)?"&":"")+p,b[p]=[],d=1)),g=0;g<b[p].length;g++)k=b[p][g],k==f[m]&&(e&&(a.e+="&u="+a.escape(k)+("&"!=p.charAt(0)?"&":"")+p+"&u=0"),b[p].splice(g,1),d=1);c||(d=1);if(d){e="";m=2;!c&&a.e&&(e=a.escape(f.join(","))+"="+a.escape(a.e),m=1);for(p in b)!Object.prototype[p]&&0<m&&0<b[p].length&&(e+=(e?"&":"")+a.escape(b[p].join(","))+"="+
+a.escape(p),m--);a.cookieWrite("s_sq",e)}}}return c};a.kb=function(){if(!a.wb){var c=new Date,b=r.location,d,f,e=f=d="",g="",m="",k="1.2",n=a.cookieWrite("s_cc","true",0)?"Y":"N",q="",s="";if(c.setUTCDate&&(k="1.3",(0).toPrecision&&(k="1.5",c=[],c.forEach))){k="1.6";f=0;d={};try{f=new Iterator(d),f.next&&(k="1.7",c.reduce&&(k="1.8",k.trim&&(k="1.8.1",Date.parse&&(k="1.8.2",Object.create&&(k="1.8.5")))))}catch(t){}}d=screen.width+"x"+screen.height;e=navigator.javaEnabled()?"Y":"N";f=screen.pixelDepth?
+screen.pixelDepth:screen.colorDepth;g=a.w.innerWidth?a.w.innerWidth:a.d.documentElement.offsetWidth;m=a.w.innerHeight?a.w.innerHeight:a.d.documentElement.offsetHeight;try{a.b.addBehavior("#default#homePage"),q=a.b.Bb(b)?"Y":"N"}catch(u){}try{a.b.addBehavior("#default#clientCaps"),s=a.b.connectionType}catch(x){}a.resolution=d;a.colorDepth=f;a.javascriptVersion=k;a.javaEnabled=e;a.cookiesEnabled=n;a.browserWidth=g;a.browserHeight=m;a.connectionType=s;a.homepage=q;a.wb=1}};a.L={};a.loadModule=function(c,
+b){var d=a.L[c];if(!d){d=k["AppMeasurement_Module_"+c]?new k["AppMeasurement_Module_"+c](a):{};a.L[c]=a[c]=d;d.Oa=function(){return d.Sa};d.Ta=function(b){if(d.Sa=b)a[c+"_onLoad"]=b,a.ba(c+"_onLoad",[a,d],1)||b(a,d)};try{Object.defineProperty?Object.defineProperty(d,"onLoad",{get:d.Oa,set:d.Ta}):d._olc=1}catch(f){d._olc=1}}b&&(a[c+"_onLoad"]=b,a.ba(c+"_onLoad",[a,d],1)||b(a,d))};a.l=function(c){var b,d;for(b in a.L)if(!Object.prototype[b]&&(d=a.L[b])&&(d._olc&&d.onLoad&&(d._olc=0,d.onLoad(a,d)),d[c]&&
+d[c]()))return 1;return 0};a.mb=function(){var c=Math.floor(1E13*Math.random()),b=a.visitorSampling,d=a.visitorSamplingGroup,d="s_vsn_"+(a.visitorNamespace?a.visitorNamespace:a.account)+(d?"_"+d:""),f=a.cookieRead(d);if(b){f&&(f=parseInt(f));if(!f){if(!a.cookieWrite(d,c))return 0;f=c}if(f%1E4>v)return 0}return 1};a.M=function(c,b){var d,f,e,g,m,k;for(d=0;2>d;d++)for(f=0<d?a.oa:a.c,e=0;e<f.length;e++)if(g=f[e],(m=c[g])||c["!"+g]){if(!b&&("contextData"==g||"retrieveLightData"==g)&&a[g])for(k in a[g])m[k]||
+(m[k]=a[g][k]);a[g]=m}};a.Ha=function(c,b){var d,f,e,g;for(d=0;2>d;d++)for(f=0<d?a.oa:a.c,e=0;e<f.length;e++)g=f[e],c[g]=a[g],b||c[g]||(c["!"+g]=1)};a.eb=function(a){var b,d,f,e,g,m=0,k,n="",q="";if(a&&255<a.length&&(b=""+a,d=b.indexOf("?"),0<d&&(k=b.substring(d+1),b=b.substring(0,d),e=b.toLowerCase(),f=0,"http://"==e.substring(0,7)?f+=7:"https://"==e.substring(0,8)&&(f+=8),d=e.indexOf("/",f),0<d&&(e=e.substring(f,d),g=b.substring(d),b=b.substring(0,d),0<=e.indexOf("google")?m=",q,ie,start,search_key,word,kw,cd,":
+0<=e.indexOf("yahoo.co")&&(m=",p,ei,"),m&&k)))){if((a=k.split("&"))&&1<a.length){for(f=0;f<a.length;f++)e=a[f],d=e.indexOf("="),0<d&&0<=m.indexOf(","+e.substring(0,d)+",")?n+=(n?"&":"")+e:q+=(q?"&":"")+e;n&&q?k=n+"&"+q:q=""}d=253-(k.length-q.length)-b.length;a=b+(0<d?g.substring(0,d):"")+"?"+k}return a};a.Na=function(c){var b=a.d.visibilityState,d=["webkitvisibilitychange","visibilitychange"];b||(b=a.d.webkitVisibilityState);if(b&&"prerender"==b){if(c)for(b=0;b<d.length;b++)a.d.addEventListener(d[b],
+function(){var b=a.d.visibilityState;b||(b=a.d.webkitVisibilityState);"visible"==b&&c()});return!1}return!0};a.Y=!1;a.D=!1;a.Ua=function(){a.D=!0;a.i()};a.W=!1;a.Q=!1;a.Ra=function(c){a.marketingCloudVisitorID=c;a.Q=!0;a.i()};a.T=!1;a.N=!1;a.Ja=function(c){a.analyticsVisitorID=c;a.N=!0;a.i()};a.V=!1;a.P=!1;a.La=function(c){a.audienceManagerLocationHint=c;a.P=!0;a.i()};a.U=!1;a.O=!1;a.Ka=function(c){a.audienceManagerBlob=c;a.O=!0;a.i()};a.Ma=function(c){a.maxDelay||(a.maxDelay=250);return a.l("_d")?
+(c&&setTimeout(function(){c()},a.maxDelay),!1):!0};a.X=!1;a.C=!1;a.na=function(){a.C=!0;a.i()};a.isReadyToTrack=function(){var c=!0,b=a.visitor;a.Y||a.D||(a.Na(a.Ua)?a.D=!0:a.Y=!0);if(a.Y&&!a.D)return!1;b&&b.isAllowed()&&(a.W||a.marketingCloudVisitorID||!b.getMarketingCloudVisitorID||(a.W=!0,a.marketingCloudVisitorID=b.getMarketingCloudVisitorID([a,a.Ra]),a.marketingCloudVisitorID&&(a.Q=!0)),a.T||a.analyticsVisitorID||!b.getAnalyticsVisitorID||(a.T=!0,a.analyticsVisitorID=b.getAnalyticsVisitorID([a,
+a.Ja]),a.analyticsVisitorID&&(a.N=!0)),a.V||a.audienceManagerLocationHint||!b.getAudienceManagerLocationHint||(a.V=!0,a.audienceManagerLocationHint=b.getAudienceManagerLocationHint([a,a.La]),a.audienceManagerLocationHint&&(a.P=!0)),a.U||a.audienceManagerBlob||!b.getAudienceManagerBlob||(a.U=!0,a.audienceManagerBlob=b.getAudienceManagerBlob([a,a.Ka]),a.audienceManagerBlob&&(a.O=!0)),a.W&&!a.Q&&!a.marketingCloudVisitorID||a.T&&!a.N&&!a.analyticsVisitorID||a.V&&!a.P&&!a.audienceManagerLocationHint||
+a.U&&!a.O&&!a.audienceManagerBlob)&&(c=!1);a.X||a.C||(a.Ma(a.na)?a.C=!0:a.X=!0);a.X&&!a.C&&(c=!1);return c};a.k=q;a.o=0;a.callbackWhenReadyToTrack=function(c,b,d){var f;f={};f.Ya=c;f.Xa=b;f.Va=d;a.k==q&&(a.k=[]);a.k.push(f);0==a.o&&(a.o=setInterval(a.i,100))};a.i=function(){var c;if(a.isReadyToTrack()&&(a.o&&(clearInterval(a.o),a.o=0),a.k!=q))for(;0<a.k.length;)c=a.k.shift(),c.Xa.apply(c.Ya,c.Va)};a.Pa=function(c){var b,d,f=q,e=q;if(!a.isReadyToTrack()){b=[];if(c!=q)for(d in f={},c)f[d]=c[d];e={};
+a.Ha(e,!0);b.push(f);b.push(e);a.callbackWhenReadyToTrack(a,a.track,b);return!0}return!1};a.hb=function(){var c=a.cookieRead("s_fid"),b="",d="",f;f=8;var e=4;if(!c||0>c.indexOf("-")){for(c=0;16>c;c++)f=Math.floor(Math.random()*f),b+="0123456789ABCDEF".substring(f,f+1),f=Math.floor(Math.random()*e),d+="0123456789ABCDEF".substring(f,f+1),f=e=16;c=b+"-"+d}a.cookieWrite("s_fid",c,1)||(c=0);return c};a.t=a.track=function(c,b){var d,f=new Date,e="s"+Math.floor(f.getTime()/108E5)%10+Math.floor(1E13*Math.random()),
+g=f.getYear(),g="t="+a.escape(f.getDate()+"/"+f.getMonth()+"/"+(1900>g?g+1900:g)+" "+f.getHours()+":"+f.getMinutes()+":"+f.getSeconds()+" "+f.getDay()+" "+f.getTimezoneOffset());a.visitor&&(a.visitor.fb&&(a.authState=a.visitor.fb()),!a.supplementalDataID&&a.visitor.getSupplementalDataID&&(a.supplementalDataID=a.visitor.getSupplementalDataID("AppMeasurement:"+a._in,a.expectSupplementalData?!1:!0)));a.l("_s");a.Pa(c)||(b&&a.M(b),c&&(d={},a.Ha(d,0),a.M(c)),a.mb()&&(a.analyticsVisitorID||a.marketingCloudVisitorID||
+(a.fid=a.hb()),a.rb(),a.usePlugins&&a.doPlugins&&a.doPlugins(a),a.account&&(a.abort||(a.trackOffline&&!a.timestamp&&(a.timestamp=Math.floor(f.getTime()/1E3)),f=k.location,a.pageURL||(a.pageURL=f.href?f.href:f),a.referrer||a.Ia||(a.referrer=r.document.referrer),a.Ia=1,a.referrer=a.eb(a.referrer),a.l("_g")),a.jb()&&!a.abort&&(a.kb(),g+=a.ib(),a.qb(e,g),a.l("_t"),a.referrer=""))),c&&a.M(d,1));a.abort=a.supplementalDataID=a.timestamp=a.pageURLRest=a.linkObject=a.clickObject=a.linkURL=a.linkName=a.linkType=
+k.s_objectID=a.pe=a.pev1=a.pev2=a.pev3=a.e=a.lightProfileID=0};a.tl=a.trackLink=function(c,b,d,f,e){a.linkObject=c;a.linkType=b;a.linkName=d;e&&(a.j=c,a.q=e);return a.track(f)};a.trackLight=function(c,b,d,f){a.lightProfileID=c;a.lightStoreForSeconds=b;a.lightIncrementBy=d;return a.track(f)};a.clearVars=function(){var c,b;for(c=0;c<a.c.length;c++)if(b=a.c[c],"prop"==b.substring(0,4)||"eVar"==b.substring(0,4)||"hier"==b.substring(0,4)||"list"==b.substring(0,4)||"channel"==b||"events"==b||"eventList"==
+b||"products"==b||"productList"==b||"purchaseID"==b||"transactionID"==b||"state"==b||"zip"==b||"campaign"==b)a[b]=void 0};a.tagContainerMarker="";a.qb=function(c,b){var d,f=a.trackingServer;d="";var e=a.dc,g="sc.",k=a.visitorNamespace;f?a.trackingServerSecure&&a.ssl&&(f=a.trackingServerSecure):(k||(k=a.account,f=k.indexOf(","),0<=f&&(k=k.substring(0,f)),k=k.replace(/[^A-Za-z0-9]/g,"")),d||(d="2o7.net"),e=e?(""+e).toLowerCase():"d1","2o7.net"==d&&("d1"==e?e="112":"d2"==e&&(e="122"),g=""),f=k+"."+e+
+"."+g+d);d=a.ssl?"https://":"http://";e=a.AudienceManagement&&a.AudienceManagement.isReady();d+=f+"/b/ss/"+a.account+"/"+(a.mobile?"5.":"")+(e?"10":"1")+"/JS-"+a.version+(a.vb?"T":"")+(a.tagContainerMarker?"-"+a.tagContainerMarker:"")+"/"+c+"?AQB=1&ndh=1&pf=1&"+(e?"callback=s_c_il["+a._in+"].AudienceManagement.passData&":"")+b+"&AQE=1";a.bb(d);a.da()};a.bb=function(c){a.g||a.lb();a.g.push(c);a.fa=a.r();a.Fa()};a.lb=function(){a.g=a.nb();a.g||(a.g=[])};a.nb=function(){var c,b;if(a.ka()){try{(b=k.localStorage.getItem(a.ia()))&&
+(c=k.JSON.parse(b))}catch(d){}return c}};a.ka=function(){var c=!0;a.trackOffline&&a.offlineFilename&&k.localStorage&&k.JSON||(c=!1);return c};a.wa=function(){var c=0;a.g&&(c=a.g.length);a.v&&c++;return c};a.da=function(){if(!a.v)if(a.xa=q,a.ja)a.fa>a.J&&a.Da(a.g),a.ma(500);else{var c=a.Wa();if(0<c)a.ma(c);else if(c=a.ua())a.v=1,a.pb(c),a.tb(c)}};a.ma=function(c){a.xa||(c||(c=0),a.xa=setTimeout(a.da,c))};a.Wa=function(){var c;if(!a.trackOffline||0>=a.offlineThrottleDelay)return 0;c=a.r()-a.Ca;return a.offlineThrottleDelay<
+c?0:a.offlineThrottleDelay-c};a.ua=function(){if(0<a.g.length)return a.g.shift()};a.pb=function(c){if(a.debugTracking){var b="AppMeasurement Debug: "+c;c=c.split("&");var d;for(d=0;d<c.length;d++)b+="\n\t"+a.unescape(c[d]);a.ob(b)}};a.Qa=function(){return a.marketingCloudVisitorID||a.analyticsVisitorID};a.S=!1;var s;try{s=JSON.parse('{"x":"y"}')}catch(x){s=null}s&&"y"==s.x?(a.S=!0,a.R=function(a){return JSON.parse(a)}):k.$&&k.$.parseJSON?(a.R=function(a){return k.$.parseJSON(a)},a.S=!0):a.R=function(){return null};
+a.tb=function(c){var b,d,f;a.Qa()&&2047<c.length&&("undefined"!=typeof XMLHttpRequest&&(b=new XMLHttpRequest,"withCredentials"in b?d=1:b=0),b||"undefined"==typeof XDomainRequest||(b=new XDomainRequest,d=2),b&&a.AudienceManagement&&a.AudienceManagement.isReady()&&(a.S?b.pa=!0:b=0));!b&&a.Ga&&(c=c.substring(0,2047));!b&&a.d.createElement&&a.AudienceManagement&&a.AudienceManagement.isReady()&&(b=a.d.createElement("SCRIPT"))&&"async"in b&&((f=(f=a.d.getElementsByTagName("HEAD"))&&f[0]?f[0]:a.d.body)?
+(b.type="text/javascript",b.setAttribute("async","async"),d=3):b=0);b||(b=new Image,b.alt="");b.ra=function(){try{a.la&&(clearTimeout(a.la),a.la=0),b.timeout&&(clearTimeout(b.timeout),b.timeout=0)}catch(c){}};b.onload=b.ub=function(){b.ra();a.ab();a.Z();a.v=0;a.da();if(b.pa){b.pa=!1;try{var c=a.R(b.responseText);a.AudienceManagement.passData(c)}catch(d){}}};b.onabort=b.onerror=b.cb=function(){b.ra();(a.trackOffline||a.ja)&&a.v&&a.g.unshift(a.$a);a.v=0;a.fa>a.J&&a.Da(a.g);a.Z();a.ma(500)};b.onreadystatechange=
+function(){4==b.readyState&&(200==b.status?b.ub():b.cb())};a.Ca=a.r();if(1==d||2==d){var e=c.indexOf("?");f=c.substring(0,e);e=c.substring(e+1);e=e.replace(/&callback=[a-zA-Z0-9_.\[\]]+/,"");1==d?(b.open("POST",f,!0),b.send(e)):2==d&&(b.open("POST",f),b.send(e))}else if(b.src=c,3==d){if(a.Aa)try{f.removeChild(a.Aa)}catch(g){}f.firstChild?f.insertBefore(b,f.firstChild):f.appendChild(b);a.Aa=a.Za}b.abort&&(a.la=setTimeout(b.abort,5E3));a.$a=c;a.Za=k["s_i_"+a.replace(a.account,",","_")]=b;if(a.useForcedLinkTracking&&
+a.F||a.q)a.forcedLinkTrackingTimeout||(a.forcedLinkTrackingTimeout=250),a.aa=setTimeout(a.Z,a.forcedLinkTrackingTimeout)};a.ab=function(){if(a.ka()&&!(a.Ba>a.J))try{k.localStorage.removeItem(a.ia()),a.Ba=a.r()}catch(c){}};a.Da=function(c){if(a.ka()){a.Fa();try{k.localStorage.setItem(a.ia(),k.JSON.stringify(c)),a.J=a.r()}catch(b){}}};a.Fa=function(){if(a.trackOffline){if(!a.offlineLimit||0>=a.offlineLimit)a.offlineLimit=10;for(;a.g.length>a.offlineLimit;)a.ua()}};a.forceOffline=function(){a.ja=!0};
+a.forceOnline=function(){a.ja=!1};a.ia=function(){return a.offlineFilename+"-"+a.visitorNamespace+a.account};a.r=function(){return(new Date).getTime()};a.ya=function(a){a=a.toLowerCase();return 0!=a.indexOf("#")&&0!=a.indexOf("about:")&&0!=a.indexOf("opera:")&&0!=a.indexOf("javascript:")?!0:!1};a.setTagContainer=function(c){var b,d,f;a.vb=c;for(b=0;b<a._il.length;b++)if((d=a._il[b])&&"s_l"==d._c&&d.tagContainerName==c){a.M(d);if(d.lmq)for(b=0;b<d.lmq.length;b++)f=d.lmq[b],a.loadModule(f.n);if(d.ml)for(f in d.ml)if(a[f])for(b in c=
+a[f],f=d.ml[f],f)!Object.prototype[b]&&("function"!=typeof f[b]||0>(""+f[b]).indexOf("s_c_il"))&&(c[b]=f[b]);if(d.mmq)for(b=0;b<d.mmq.length;b++)f=d.mmq[b],a[f.m]&&(c=a[f.m],c[f.f]&&"function"==typeof c[f.f]&&(f.a?c[f.f].apply(c,f.a):c[f.f].apply(c)));if(d.tq)for(b=0;b<d.tq.length;b++)a.track(d.tq[b]);d.s=a;break}};a.Util={urlEncode:a.escape,urlDecode:a.unescape,cookieRead:a.cookieRead,cookieWrite:a.cookieWrite,getQueryParam:function(c,b,d){var f;b||(b=a.pageURL?a.pageURL:k.location);d||(d="&");return c&&
+b&&(b=""+b,f=b.indexOf("?"),0<=f&&(b=d+b.substring(f+1)+d,f=b.indexOf(d+c+"="),0<=f&&(b=b.substring(f+d.length+c.length+1),f=b.indexOf(d),0<=f&&(b=b.substring(0,f)),0<b.length)))?a.unescape(b):""}};a.A="supplementalDataID timestamp dynamicVariablePrefix visitorID marketingCloudVisitorID analyticsVisitorID audienceManagerLocationHint authState fid vmk visitorMigrationKey visitorMigrationServer visitorMigrationServerSecure charSet visitorNamespace cookieDomainPeriods fpCookieDomainPeriods cookieLifetime pageName pageURL referrer contextData currencyCode lightProfileID lightStoreForSeconds lightIncrementBy retrieveLightProfiles deleteLightProfiles retrieveLightData".split(" ");
+a.c=a.A.concat("purchaseID variableProvider channel server pageType transactionID campaign state zip events events2 products audienceManagerBlob tnt".split(" "));a.ga="timestamp charSet visitorNamespace cookieDomainPeriods cookieLifetime contextData lightProfileID lightStoreForSeconds lightIncrementBy".split(" ");a.K=a.ga.slice(0);a.oa="account allAccounts debugTracking visitor trackOffline offlineLimit offlineThrottleDelay offlineFilename usePlugins doPlugins configURL visitorSampling visitorSamplingGroup linkObject clickObject linkURL linkName linkType trackDownloadLinks trackExternalLinks trackClickMap trackInlineStats linkLeaveQueryString linkTrackVars linkTrackEvents linkDownloadFileTypes linkExternalFilters linkInternalFilters useForcedLinkTracking forcedLinkTrackingTimeout trackingServer trackingServerSecure ssl abort mobile dc lightTrackVars maxDelay expectSupplementalData AudienceManagement".split(" ");
+for(n=0;250>=n;n++)76>n&&(a.c.push("prop"+n),a.K.push("prop"+n)),a.c.push("eVar"+n),a.K.push("eVar"+n),6>n&&a.c.push("hier"+n),4>n&&a.c.push("list"+n);n="pe pev1 pev2 pev3 latitude longitude resolution colorDepth javascriptVersion javaEnabled cookiesEnabled browserWidth browserHeight connectionType homepage pageURLRest".split(" ");a.c=a.c.concat(n);a.A=a.A.concat(n);a.ssl=0<=k.location.protocol.toLowerCase().indexOf("https");a.charSet="UTF-8";a.contextData={};a.offlineThrottleDelay=0;a.offlineFilename=
+"AppMeasurement.offline";a.Ca=0;a.fa=0;a.J=0;a.Ba=0;a.linkDownloadFileTypes="exe,zip,wav,mp3,mov,mpg,avi,wmv,pdf,doc,docx,xls,xlsx,ppt,pptx";a.w=k;a.d=k.document;try{if(a.Ga=!1,navigator){var y=navigator.userAgent;if("Microsoft Internet Explorer"==navigator.appName||0<=y.indexOf("MSIE ")||0<=y.indexOf("Trident/")&&0<=y.indexOf("Windows NT 6"))a.Ga=!0}}catch(z){}a.Z=function(){a.aa&&(k.clearTimeout(a.aa),a.aa=q);a.j&&a.F&&a.j.dispatchEvent(a.F);a.q&&("function"==typeof a.q?a.q():a.j&&a.j.href&&(a.d.location=
+a.j.href));a.j=a.F=a.q=0};a.Ea=function(){a.b=a.d.body;a.b?(a.p=function(c){var b,d,f,e,g;if(!(a.d&&a.d.getElementById("cppXYctnr")||c&&c["s_fe_"+a._in])){if(a.qa)if(a.useForcedLinkTracking)a.b.removeEventListener("click",a.p,!1);else{a.b.removeEventListener("click",a.p,!0);a.qa=a.useForcedLinkTracking=0;return}else a.useForcedLinkTracking=0;a.clickObject=c.srcElement?c.srcElement:c.target;try{if(!a.clickObject||a.I&&a.I==a.clickObject||!(a.clickObject.tagName||a.clickObject.parentElement||a.clickObject.parentNode))a.clickObject=
+0;else{var m=a.I=a.clickObject;a.ea&&(clearTimeout(a.ea),a.ea=0);a.ea=setTimeout(function(){a.I==m&&(a.I=0)},1E4);f=a.wa();a.track();if(f<a.wa()&&a.useForcedLinkTracking&&c.target){for(e=c.target;e&&e!=a.b&&"A"!=e.tagName.toUpperCase()&&"AREA"!=e.tagName.toUpperCase();)e=e.parentNode;if(e&&(g=e.href,a.ya(g)||(g=0),d=e.target,c.target.dispatchEvent&&g&&(!d||"_self"==d||"_top"==d||"_parent"==d||k.name&&d==k.name))){try{b=a.d.createEvent("MouseEvents")}catch(n){b=new k.MouseEvent}if(b){try{b.initMouseEvent("click",
+c.bubbles,c.cancelable,c.view,c.detail,c.screenX,c.screenY,c.clientX,c.clientY,c.ctrlKey,c.altKey,c.shiftKey,c.metaKey,c.button,c.relatedTarget)}catch(q){b=0}b&&(b["s_fe_"+a._in]=b.s_fe=1,c.stopPropagation(),c.stopImmediatePropagation&&c.stopImmediatePropagation(),c.preventDefault(),a.j=c.target,a.F=b)}}}}}catch(r){a.clickObject=0}}},a.b&&a.b.attachEvent?a.b.attachEvent("onclick",a.p):a.b&&a.b.addEventListener&&(navigator&&(0<=navigator.userAgent.indexOf("WebKit")&&a.d.createEvent||0<=navigator.userAgent.indexOf("Firefox/2")&&
+k.MouseEvent)&&(a.qa=1,a.useForcedLinkTracking=1,a.b.addEventListener("click",a.p,!0)),a.b.addEventListener("click",a.p,!1))):setTimeout(a.Ea,30)};a.Ea()}
+function s_gi(a){var k,q=window.s_c_il,r,n,t=a.split(","),u,s,x=0;if(q)for(r=0;!x&&r<q.length;){k=q[r];if("s_c"==k._c&&(k.account||k.oun))if(k.account&&k.account==a)x=1;else for(n=k.account?k.account:k.oun,n=k.allAccounts?k.allAccounts:n.split(","),u=0;u<t.length;u++)for(s=0;s<n.length;s++)t[u]==n[s]&&(x=1);r++}x||(k=new AppMeasurement);k.setAccount?k.setAccount(a):k.sa&&k.sa(a);return k}AppMeasurement.getInstance=s_gi;window.s_objectID||(window.s_objectID=0);
+function s_pgicq(){var a=window,k=a.s_giq,q,r,n;if(k)for(q=0;q<k.length;q++)r=k[q],n=s_gi(r.oun),n.setAccount(r.un),n.setTagContainer(r.tagContainerName);a.s_giq=0}s_pgicq();
