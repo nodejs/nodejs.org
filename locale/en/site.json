@@ -84,6 +84,10 @@
     },
     "install-on-linux": {
       "text": "Installing Node.js via binary archive on Linux"
+    },
+    "install-on-wsl": {
+      "link": "https://docs.microsoft.com/windows/dev-environment/javascript/nodejs-on-wsl",
+      "text": "Install on Windows Subsystem for Linux (WSL)",
     }
   },
   "docs": {
