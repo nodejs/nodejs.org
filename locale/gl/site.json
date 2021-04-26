@@ -1,6 +1,6 @@
 {
   "title": "Node.js",
-  "author": "Fundación de Node.js",
+  "author": "Node.js",
   "url": "https://nodejs.org/gl/",
   "locale": "gl",
   "language": "Galego",
@@ -12,7 +12,6 @@
   "by": "por",
   "all-downloads": "Todas as opcións de descarga",
   "nightly": "Versións Nightly",
-  "chakracore-nightly": "Versións Node-ChakraCore Nightly",
   "previous": "Anterior",
   "next": "Seguinte",
   "feeds": [
@@ -76,7 +75,7 @@
       "text": "Firmas SHASUMS para os arquivos de versións"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "Installing Node.js via binary archive"
     }
   },
   "docs": {
@@ -112,7 +111,7 @@
       "text": "Contribúe"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "Comportamento"
     }
   },
@@ -123,10 +122,6 @@
   "blog": {
     "link": "blog",
     "text": "Noticias"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "Fundación"
   },
   "releases": {
     "title": "Histórico de versións",

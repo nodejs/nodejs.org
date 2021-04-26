@@ -20,9 +20,11 @@ const defaultsDeep = require('lodash.defaultsdeep')
 const autoprefixer = require('autoprefixer')
 const marked = require('marked')
 const postcss = require('postcss')
-const sass = require('node-sass')
+const fibers = require('fibers')
+const sass = require('sass')
 const ncp = require('ncp')
 const junk = require('junk')
+const semver = require('semver')
 
 const githubLinks = require('./scripts/plugins/githubLinks')
 const navigation = require('./scripts/plugins/navigation')
@@ -96,12 +98,6 @@ function buildLocale (source, locale, opts) {
         reverse: true,
         refer: false
       },
-      blogAnnounce: {
-        pattern: 'blog/announcements/*.md',
-        sortBy: 'date',
-        reverse: true,
-        refer: false
-      },
       blogReleases: {
         pattern: 'blog/release/*.md',
         sortBy: 'date',
@@ -113,13 +109,6 @@ function buildLocale (source, locale, opts) {
         sortBy: 'date',
         reverse: true,
         refer: false
-      },
-      lastWeekly: {
-        pattern: 'blog/weekly-updates/*.md',
-        sortBy: 'date',
-        reverse: true,
-        refer: false,
-        limit: 1
       },
       knowledgeBase: {
         pattern: 'knowledge/**/*.md',
@@ -149,11 +138,6 @@ function buildLocale (source, locale, opts) {
       collection: 'blog',
       destination: 'feed/blog.xml',
       title: 'Node.js Blog'
-    }))
-    .use(feed({
-      collection: 'blogAnnounce',
-      destination: 'feed/announce.xml',
-      title: 'Node.js Announcements'
     }))
     .use(feed({
       collection: 'blogReleases',
@@ -225,9 +209,9 @@ function buildCSS () {
 
   const sassOpts = {
     file: src,
+    fiber: fibers,
     outFile: dest,
-    outputStyle: process.env.NODE_ENV !== 'development' ? 'compressed' : 'expanded',
-    precision: 6
+    outputStyle: process.env.NODE_ENV !== 'development' ? 'compressed' : 'expanded'
   }
 
   fs.mkdir(path.join(__dirname, 'build/static/css'), { recursive: true }, (err) => {
@@ -287,12 +271,21 @@ function getSource (callback) {
           current: latestVersion.current(versions),
           lts: latestVersion.lts(versions)
         },
+        blacklivesmatter: {
+          visible: true,
+          text: '#BlackLivesMatter',
+          link: '/en/black-lives-matter/'
+        },
         banner: {
-          visible: false,
-          text: 'New security releases now available for all release lines',
-          link: '/en/blog/vulnerability/february-2019-security-releases/'
+          visible: true,
+          text: 'New security releases now available for 15.x, 14.x, 12.x and 10.x release lines',
+          link: '/en/blog/vulnerability/april-2021-security-releases/'
         }
       }
+    }
+    if (semver.gt(source.project.latestVersions.lts.node, source.project.latestVersions.current.node)) {
+      // If LTS is higher than Current hide it from the main page
+      source.project.latestVersions.hideCurrent = true
     }
 
     callback(err, source)

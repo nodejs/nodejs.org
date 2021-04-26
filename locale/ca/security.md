@@ -7,8 +7,7 @@ title: Seguretat
 
 ## Informe d'errors
 
-Tots els problemes de seguretat en Node.js es tracten seriosament i han de ser reportats enviant un correu a [security@nodejs.org]
-(mailto: security@nodejs.org).
+Tots els problemes de seguretat en Node.js es tracten seriosament i han de ser reportats enviant un correu a [security@nodejs.org](mailto:security@nodejs.org).
 Aquest serà rebut per un subgrup de l'equip central encarregat dels problemes de seguretat.
 
 El seu correu serà revisat en 24 hores, i vostè rebrà una resposta detallada al seu missatge en les següents 48 hores indicant els passos a seguir en el procés del seu informe.

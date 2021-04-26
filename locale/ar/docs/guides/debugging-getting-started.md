@@ -214,5 +214,5 @@ ssh -L 9221:localhost:9229 user@remote.example.com
 
 <!-- refs -->
 
-[بروتوكول المدقق]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/
+[Inspector Protocol]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/
 [UUID]: https://tools.ietf.org/html/rfc4122

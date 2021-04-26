@@ -8,8 +8,7 @@ slug: transitions
 layout: blog-post.hbs
 ---
 
-Em Fevereiro, nós anunciamos a [Fundação Node.js]
-(https://www.joyent.com/blog/introducing-the-nodejs-foundation),
+Em Fevereiro, nós anunciamos a [Fundação Node.js](https://www.joyent.com/blog/introducing-the-nodejs-foundation),
 que irá administrar o futuro do Node.js e abri-lo para a
 comunidade de uma maneira que não estava disponível antes. Organizações como
 IBM, SAP, Apigee, F5, Fidelity, Microsoft, PayPal, Red Hat, e outras estão
@@ -24,7 +23,7 @@ Em vez disso, a direção técnica do projeto será estabelecida por um
 comitê técnico de direção executado com um modelo de governança aberto. Houve muita
 discussão nas políticas de desenvolvimento e [modelo de
 governança](https://github.com/joyent/nodejs-advisory-board/tree/master/governance-proposal)
-no Github. Conforme avançamos em direção ao modelo da Fundação, o time principal do Node.js já
+no GitHub. Conforme avançamos em direção ao modelo da Fundação, o time principal do Node.js já
 está adotando algumas dessas políticas [como é mostrado
 aqui](https://github.com/joyent/node-website/pull/111).
 

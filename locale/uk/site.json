@@ -1,6 +1,6 @@
 {
   "title": "Node.js",
-  "author": "Node.js Foundation",
+  "author": "Node.js",
   "url": "https://nodejs.org/uk/",
   "locale": "uk",
   "language": "Українська",
@@ -12,7 +12,6 @@
   "by": "від",
   "all-downloads": "Всі варіанти завантажень",
   "nightly": "Нічні збірки",
-  "chakracore-nightly": "Нічні збірки Node-ChakraCore",
   "previous": "Попередній",
   "next": "Далі",
   "feeds": [
@@ -82,7 +81,7 @@
       "verify-text": "Як перевірити"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "Installing Node.js via binary archive"
     }
   },
   "docs": {
@@ -126,7 +125,7 @@
       "text": "Сприяння"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
       "text": "Правила"
     }
   },
@@ -137,10 +136,6 @@
   "blog": {
     "link": "blog",
     "text": "Новини"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "Фундація"
   },
   "releases": {
     "title": "Історія релізів",

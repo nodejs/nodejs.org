@@ -329,7 +329,7 @@ layout: contribute.hbs
 
 ##### إرفين
 
-* [اللقاء]https://www.meetup.com/Node-JS-OC/)
+* [اللقاء](https://www.meetup.com/Node-JS-OC/)
 * تردد اللقاء - شهريا
 * كيف تقدم طلب محاضرة ؟ اتصل بالمنظمين في صفحة اللقاءات.
 * المنظم - فرشيد عاطف

@@ -32,9 +32,9 @@ server.on('request', (request, response) => {
 
 实际上，为了处理请求，[`listen`][] 方法需要在 `server` 对象上被显式调用。在大多数情况下，你只要把端口号作为参数传入 `listen` 方法中，作为监听端口即可。当然也有一些其它选项，具体可以参考 [API 参考文档][]。
 
-## 方法, 访问地址以及请求头
+## 方法、访问地址以及请求头
 
-当处理一个请求时，第一件事你需要做的是看一下这个方法和其访问地址，以此决定你到底采取何种合理的行为。Node 通过把这些行为属性附加到 `request` 对象上，使得我们处理起来相对而言可以轻松一些。
+当处理一个请求时，第一件事你需要做的是看一下这个方法和其访问地址，以此决定你到底采取何种合理的行为。Node.js 通过把这些行为属性附加到 `request` 对象上，使得我们处理起来相对而言可以轻松一些。
 
 ```javascript
 const { method, url } = request;
@@ -55,8 +55,7 @@ const userAgent = headers['user-agent'];
 非常重要的一点是：所有的请求头全是小写字母，而不管实际上它们是怎么进行传输的。所以在无论任何
 情况下，解析请求头就得到了简化。
 
-如果一些请求头出现重复，它们的值不是被覆盖，就是通过英文分号进行分割。究竟哪种方式取决于
-具体的信息头。在某些情况下这可能出现问题，所以我们还可以直接使用 [`rawHeaders`][]。
+如果一些请求头出现重复，它们的值不是被覆盖，就是通过英文分号进行分割。究竟哪种方式取决于具体的信息头。在某些情况下这可能出现问题，所以我们还可以直接使用 [`rawHeaders`][]。
 
 ## 请求体
 
@@ -92,7 +91,7 @@ request.on('error', (err) => {
 });
 ```
 
-当然还有一些其它的方法来 [处理错误][]，诸如其它的抽象化概念和工具等。但是你总是要意识到错误的确会发生，所以你应当处理它们。
+当然还有一些其它的方法来[处理错误][]，诸如其它的抽象化概念和工具等。但是你总是要意识到错误的确会发生，所以你应当处理它们。
 
 ## 我们已经聊得那么多了
 
@@ -118,7 +117,7 @@ http.createServer((request, response) => {
 
 如果我们运行这个示例代码，我们只能 *接收* 到请求但得不到 *回应*。实际上，如果你在浏览器内运行这个示例，你的请求只会超时，因为服务器那边根本没有返回给客户端任何东西。
 
-谈了那么就，我们都还没有说到 `response` 对象。它是一个 [`ServerResponse`][] 实例，而 ServerRespose 又是 [`WritableStream`][]。它包含了很多方法可以用以把数据返回给客户端。我们下面就将涉及到此议题。
+谈了那么久，我们都还没有说到 `response` 对象。它是一个 [`ServerResponse`][] 实例，而 ServerRespose 又是 [`WritableStream`][]。它包含了很多方法可以用以把数据返回给客户端。我们下面就将涉及到此议题。
 
 ## HTTP 状态码
 
@@ -338,7 +337,6 @@ http.createServer((request, response) => {
 [`npm`]: https://www.npmjs.com
 [`EventEmitter`]: https://nodejs.org/api/events.html#events_class_eventemitter
 [处理错误]: https://nodejs.org/api/errors.html
-[`domains`]: https://nodejs.org/api/domain.html
 [`ServerResponse`]: https://nodejs.org/api/http.html#http_class_http_serverresponse
 [`setHeader`]: https://nodejs.org/api/http.html#http_response_setheader_name_value
 [`WritableStream`]: https://nodejs.org/api/stream.html#stream_class_stream_writable

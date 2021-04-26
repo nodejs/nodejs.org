@@ -233,7 +233,7 @@ up by language. First, we look at the summary section and see:
 This tells us that 97% of all samples gathered occurred in C++ code and that
 when viewing other sections of the processed output we should pay most attention
 to work being done in C++ (as opposed to JavaScript). With this in mind, we next
-find the [C++] section which contains information about which C++ functions are
+find the \[C++\] section which contains information about which C++ functions are
 taking the most CPU time and see:
 
 -->
@@ -241,7 +241,7 @@ taking the most CPU time and see:
 処理された出力の他のセクションを見るときは
 (JavaScript ではなく) C++ で行われている作業に最も注意する必要があることを示しています。
 これを念頭に置いて、次にどの C++ 関数が最も CPU 時間を消費しているかについての情報を含む
-[C++] セクションを見てみます。
+\[C++\] セクションを見てみます。
 
 ```
  [C++]:
@@ -258,7 +258,7 @@ taken up by a function called PBKDF2 which corresponds to our hash generation
 from a user's password. However, it may not be immediately obvious how the lower
 two entries factor into our application (or if it is we will pretend otherwise
 for the sake of example). To better understand the relationship between these
-functions, we will next look at the [Bottom up (heavy) profile] section which
+functions, we will next look at the \[Bottom up (heavy) profile\] section which
 provides information about the primary callers of each function. Examining this
 section, we find:
 
@@ -270,7 +270,7 @@ CPU 時間の少なくとも 51.8％ が占められていることが分かり�
 (またはそうである場合は例のために別のふりをすることになる)、
 すぐには明らかにならないかもしれません。
 これらの関数間の関係をよりよく理解するために、
-次に各関数の主な呼び出し元に関する情報を提供する [Bottom up (heavy) profile] セクションを見ていきます。
+次に各関数の主な呼び出し元に関する情報を提供する \[Bottom up (heavy) profile\] セクションを見ていきます。
 このセクションを調べると、次のことがわかります。
 
 ```

@@ -29,7 +29,7 @@ additional:
     SmartOSBinaries: SmartOS 二进制文件
     DockerImage: Docker 镜像
     officialDockerImage: 官方 Node.js Docker 镜像
-    LinuxPowerSystems: Power Systems 上的 Linux
+    LinuxPowerSystems: Power LE Systems 上的 Linux
     LinuxSystemZ: System z 上的 Linux
     AIXPowerSystems: Power Systems 上的 AIX
 ---

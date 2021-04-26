@@ -51,10 +51,7 @@ header {
     list-style-type: none;
     margin: 0;
     padding: 0;
-
-    &.hidden {
-      display: none;
-    }
+    z-index: 1;
 
     a {
       color: $light-gray2;
@@ -84,19 +81,6 @@ header {
         }
       }
     }
-  }
-}
-
-// Special format for external "Foundation" link in main navigation
-.nav-foundation {
-  background-color: $active-green;
-
-  &::before {
-    content: none !important;
-  }
-
-  a {
-    padding: 0 16px !important;
   }
 }
 
@@ -131,10 +115,6 @@ header {
     a:active {
       padding: 0 8px;
     }
-  }
-
-  .nav-foundation {
-    margin-left: 8px;
   }
 }
 

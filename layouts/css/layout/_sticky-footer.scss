@@ -1,15 +1,13 @@
+html,
+body {
+  height: 100%;
+}
+
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
-}
-
-// Modernizr test for IE10 and IE11
-// see: http://thatemil.com/blog/2013/11/03/sticky-footers-flexbox-and-ie10/
-.flexboxtweener,
-.flexboxtweener body {
-  height: 100%;
 }
 
 #main {

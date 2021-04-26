@@ -105,7 +105,7 @@ For the current list of Collaborators, see the project
 [README.md](https://github.com/nodejs/node/blob/master/README.md#current-project-team-members).
 
 A guide for Collaborators is maintained in
-[COLLABORATOR_GUIDE.md](https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md).
+[collaborator-guide.md](https://github.com/nodejs/node/blob/master/doc/guides/collaborator-guide.md).
 -->
 협업자는 TSC에서 논의하려고 풀 리퀘스트나 이슈에 ***tsc-agenda*** 태그를 할당함으로써 중요하거나
 논쟁이 되는 수정사항이나 합의점을 찾지 못한 수정사항을 개선하려고 할 수도 있습니다.
@@ -116,7 +116,7 @@ TSC는 필요한 경우 최종 중재자가 되어야 합니다.
 볼 수 있습니다.
 
 협업자 가이드는
-[COLLABORATOR_GUIDE.md](https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md)에서
+[collaborator-guide.md](https://github.com/nodejs/node/blob/master/doc/guides/collaborator-guide.md)에서
 관리되어 있습니다.
 
 <!--

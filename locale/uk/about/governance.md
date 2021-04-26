@@ -61,7 +61,7 @@ _Процес пошуку консенсусу_ нижче для додатк�
 [README.md](https://github.com/nodejs/node/blob/master/README.md#current-project-team-members) проекту.
 
 Керівництво для співавторів знаходиться у
-[COLLABORATOR_GUIDE.md](https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md).
+[collaborator-guide.md](https://github.com/nodejs/node/blob/master/doc/guides/collaborator-guide.md).
 
 ## Членство в TSC
 

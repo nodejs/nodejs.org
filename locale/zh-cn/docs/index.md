@@ -13,7 +13,7 @@ labels:
 * ES6 特性
 * 指南
 
-## API函数接口文档
+## API 函数接口文档
 
 [API 函数接口文档](https://nodejs.org/api/) 提供了在 Node.js 中的函数或者对象的详细信息。这个文档告诉你什么方法该用什么参数，方法返回值是什么以及使用那个方法会有什么错误异常。它同时也告知你不同版本中的 Node.js 有哪些方法是可用的。
 
@@ -23,6 +23,8 @@ labels:
 
 ### 在寻找先前发布的 API 函数接口文档吗？
 
+* [Node.js 13.x](https://nodejs.org/docs/latest-v13.x/api/)
+* [Node.js 12.x](https://nodejs.org/docs/latest-v12.x/api/)
 * [Node.js 11.x](https://nodejs.org/docs/latest-v11.x/api/)
 * [Node.js 10.x](https://nodejs.org/docs/latest-v10.x/api/)
 * [Node.js 9.x](https://nodejs.org/docs/latest-v9.x/api/)
@@ -43,4 +45,4 @@ labels:
 
 ## 指南
 
-[指南篇](/zh-cn/docs/guides/) 是关于 Node.js 技术特性和性能的长篇具有深度的文章。
+[指南篇](/zh-cn/docs/guides/)是关于 Node.js 技术特性和性能的长篇具有深度的文章。

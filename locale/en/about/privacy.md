@@ -5,91 +5,344 @@ layout: about.hbs
 
 # Privacy Policy
 
-NODE.JS FOUNDATION (the "Foundation”) is committed to protecting the privacy of its users. This Privacy Policy (or the “Policy”) applies to its websites (whether currently or in the future supported, hosted or maintained, including without limitation nodejs.org, the “Sites”) and describes the information the Foundation collects about users of the Sites (“users”) and how that information may be used.
+Effective Date: November 21, 2019
 
-Read the Privacy Policy carefully. By using any Site, you will be deemed to have accepted the terms of the Policy. If you do not agree to accept the terms of the Privacy Policy, you are directed to discontinue accessing or otherwise using the Sites or any materials obtained from the Sites.
+The OpenJS Foundation’s core purpose is to foster an ecosystem that supports the collaborative and public development of free and open source software projects (each, a “Project”).  This privacy policy (“Privacy Policy”) describes our policies and procedures about the collection, use, disclosure and sharing, or other processing of your personal information when you use OpenJS Foundation websites (e.g., openjsf.org) ), or participate in or use our Project sites (collectively, the “Sites”), as well as when you interact with or participate in our events, programs, trainings and our other services and offerings (collectively, the “Services”).
 
-## Changes to the Privacy Policy
-The Foundation reserves the right to update and change this Privacy Policy from time to time. Each time a user uses the Sites, the current version of the Privacy Policy applies. Accordingly, a user should check the date of this Privacy Policy (which appears at the top) and review for any changes since the last version. If a user does not agree to the Privacy Policy, the user should not use any of the Sites. Continued use any of the Sites following any revision of this Privacy Policy constitutes an acceptance of any change.
+For purposes of the GDPR, the OpenJS Foundation (sometimes referred to by “we” or “our” below) is the controller of your personal information. Where processing of personal information is undertaken on our behalf by The Linux Foundation, they are a joint controller with the OpenJS Foundation for your personal information
 
-## What Does this Privacy Policy Cover?
-This Privacy Policy covers the Foundation’s treatment of aggregate information collected by the Sites and personal information that you provide in connection with your use of the Sites. This Policy does not apply to the practices of third parties that the Foundation does not own or control, including but not limited to third party services you access through the Foundation, or to individuals that the Foundation does not employ or manage.
+Capitalized terms that are not defined in this Privacy Policy have the meaning given them in our Terms of Use (as applicable, the “Terms”), available at [https://terms-of-use.openjsf.org](https://terms-of-use.openjsf.org).  In this Privacy Policy, “personal information” includes references to “personal data” as defined under applicable laws. Your use of our Sites and Services, and any dispute over privacy, is subject to this Policy and the relevant Terms, including the applicable limitations on damages and the resolution of disputes.  The Terms are incorporated by reference into this Policy.
 
-## Children Under 13 Years of Age
-Unless specifically indicated within a Site, the Sites are not intended for minor children not of age (including without limitation those under 13), and they should not use the Sites. If you are under 18, you may use the Site only with involvement of a parent or guardian or if you are an emancipated minor. Except as specifically indicated within a Site, we do not knowingly collect or solicit information from, market to or accept services from children. If we become aware that a child under 13 has provided us with personal information without parental consent, we will take reasonable steps to remove such information and terminate the child’s account. If you become aware that a child has provided us with personally identifiable information without parental consent, please contact us at privacy@nodejs.org so we may remove the information.
+The most recent version of this document can be found at [https://privacy-policy.openjsf.org](https://privacy-policy.openjsf.org).
 
-## Information About Users that the Foundation Collects
-On the Sites, users may order products or services, and register to receive materials. Information collected on the Sites includes community forum content, diaries, profiles, photographs, names, unique identifiers (e.g., social media handles or usernames), contact and billing information (e.g., email address, postal address, telephone, fax), and transaction information. In order to access certain personalized services on the Sites, you may be asked to also create and store a username and password for an account from the Foundation.
+## Personal Information That OpenJS Foundation Collects
 
-In order to tailor the Foundation’s subsequent communications to users and continuously improve the Sites’ products and services, the Foundation may also ask users to provide information regarding their interests, demographics, experience and detailed contact preferences. The Foundation and third party advertising companies may track information concerning a user’s use of the Sites, such as a user’s IP address.
+We collect personal information directly from individuals, from third parties, and automatically through the Sites and Services. You do not have to provide us your personal information. However, if you choose not to disclose certain information, we will not be able to provide you with access to certain services or features, including account registration, event registration, training and certification programs, or participation in certain aspects of our open source projects.
 
-## How the Foundation Uses the Information Collected
-The Foundation may use collected information for any lawful purpose related to the Foundation’s business, including, but not limited to:
+### Registration Information.
 
-* To understand a user’s needs and create content that is relevant to the user;
-* To generate statistical studies;
-* To conduct market research and planning by sending user surveys;
-* To notify user referrals of services, information, or products when a user requests that the Foundation send such information to referrals;
-* To improve services, information, and products;
-* To help a user complete a transaction, or provide services or customer support;
-* To communicate back to the user;
-* To update the user on services, information, and products;
-* To personalize a Site for the user;
-* To notify the user of any changes with a Site that may affect the user;
-* To enforce terms of use on a Site; and
-* To allow the user to purchase products, access services, or otherwise engage in activities the user selects.
+We collect personal information when you register for an account, a conference or other events or programs:
 
-User names, identifications ("IDs"), and email addresses (as well as any additional information that a user may choose to post) may be publicly available on a Site when users voluntarily and publicly disclose personal information, such as when a user posts information in conjunction with content subject to an Open Source license, or as part of a message posted to a public forum or a publicly released software application. The personal information you may provide to the Foundation may reveal or allow others to discern aspects of your life that are not expressly stated in your profile (for example, your picture or your name may reveal your hair color, race or approximate age). By providing personal information to us when you create or update your account and profile or post a photograph, you are expressly and voluntarily accepting our Terms of Use and freely accepting and agreeing to our processing of your personal information in ways set out by this Privacy Policy. Supplying information to us, including any information deemed “sensitive” by applicable law, is entirely voluntary on your part. You may withdraw your consent to the Foundation’s collection and processing of your information by closing your account. You should be aware that your information may continue to be viewable to others after you close your account, such as on cached pages on Internet search engines. Users may not be able to change or remove public postings once posted. Such information may be used by visitors of these pages to send unsolicited messages. The Foundation is not responsible for any consequences which may occur from the third-party use of information that a user chooses to submit to public pages.
+#### System ID, Account and Profile Information.
 
-## Opt Out
-A user will always be able to make the decision whether to proceed with any activity that requests personal information including personally identifiable information. If a user does not provide requested information, the user may not be able to complete certain transactions.
+Users may sign up for, request, or order our Services and may register to receive materials on our Sites. Users may also be asked to create a “Linux Foundation ID”, which is a single sign-on account which is used for common access to many of our Services. Personal information collected on the Sites includes community forum content, profiles, photographs, names, unique identifiers (e.g., social media handles or usernames), contact and billing information (e.g., email address, postal address, telephone, fax), and transaction information. In order to access certain personalized services on the Sites, you may be asked to also create and store a username and password for an account from The Linux Foundation.  Also, in order to tailor subsequent communications to users and continuously improve the Sites’ operations and services, OpenJS Foundation may also ask users to provide additional optional information regarding their interests, demographics, experience and detailed contact preferences.
 
-Users are not licensed to add other users to a Site (even users who entered into transactions with them) or to their mailing lists without written consent.
-The Foundation encourages users to evaluate privacy and security policies of any of the Sites’ transaction partners before entering into transactions or choosing to disclose information.
+#### Events Registration.
 
-## Email
-The Foundation may use (or provide to The Linux Foundation or other third party contractors to use) contact information received by the Foundation to email any user with respect to any Foundation or project of The Linux Foundation (a “Project”) opportunity, event or other matter.
+When you register for one of our events (e.g., conferences and summits) to participate as an attendee, a speaker or a sponsor, we collect personal information that includes name, company, contact information, and other information. We may also collect other optional personal information such as likes, interests, dietary restriction, size preferences for conference attire gifts and other background information.  In addition, if you provide it, we may collect (1) personal information about disabilities, medical conditions and allergies in order to provide appropriate accommodations for attendees, and (2) personal information about your citizenship, date of birth, and passport details if you request assistance from us with obtaining a visa letter to travel to one of our events.
 
-If a user no longer wishes to receive emails from the Foundation or any Project or any Site, the Foundation will (or, if applicable, have The Linux Foundation) provide instructions in each of its emails on how to be removed from any lists. The Foundation will make commercially reasonable efforts to honor such requests.
+#### Training and Certification Exam Registration.
 
-## Photographs
-Users may have the opportunity to submit photographs to the Sites for product promotions, contests, and other purposes to be disclosed at the time of request. In these circumstances, the Sites are designed to allow the public to view, download, save, and otherwise access the photographs posted. By submitting a photograph, users waive any privacy expectations users have with respect to the security of such photographs, and the Foundation’s use or exploitation of users’ likeness. You may submit a photograph only if you are the copyright holder or if you are authorized to do so under license by the copyright holder, and by submitting a photograph you agree to indemnify and hold the Foundation, its directors, officers, employees and agents harmless from any claims arising out of your submission. By submitting a photograph, you grant the Foundation a perpetual, worldwide, royalty-free license to use the photograph in any media now known of hereinafter invented for any business purpose that the Foundation, at its sole discretion, may decide.
+When you participate in one of our training or certification programs, we collect registration-related personal information that includes name, company, certifications, contact information, and other information depending on the circumstances.
 
-## Links to Third-Party Sites and Services
-The Sites may permit you to access or link to third party websites and information on the Internet, and other websites may contain links to the Sites. When a user uses these links, the user leaves the Sites. The Foundation has not reviewed these third party sites, does not control, and is not responsible for, any of the third party sites, their content or privacy practices. The privacy and security practices of websites accessed from the Sites are not covered by this Privacy Policy, and the Foundation is not responsible for the privacy or security practices or the content of such websites, including but not limited to the third party services you access through the Foundation. If a user decides to access any of the linked sites, the Foundation encourages the user to read the privacy statements of those sites. The user accesses such sites at user’s own risk.
+#### Registration for Project Resources and OpenJS Foundation Resources.
 
-We may receive information when you use your account to log into a third-party site or application in order to recommend tailored content or advertising to you and to improve your user experience on our site. We may provide reports containing aggregated impression information to third parties to measure Internet traffic and usage patterns.
+You can register to receive access to various resources provided by OpenJS Foundation and its Projects regarding the open source ecosystem, open source project development, collaboration and best practices. This includes providing us with personal information such as your email address and name to receive newsletters, mailing list postings and social media postings, to view webinars, and to access other resources made available by OpenJS Foundation and its Projects.
 
-## Service Orders
-To purchase services, users may be asked to be directed to a third party site, such as PayPal, to pay for their purchases. If applicable, the third party site may collect payment information directly to facilitate a transaction. The Foundation will only record the result of the transaction and any references to the transaction record provided by the third party site. The Foundation is not responsible for the services provided or information collected on such third party sites.
+### Your Contributions to Open Source Projects.
 
-## Sharing of Information
-The Foundation may disclose personal or aggregate information that is associated with your profile as described in this Privacy Policy, as permitted by law or as reasonably necessary to: (1) comply with a legal requirement or process, including, but not limited to, civil and criminal subpoenas, court orders or other compulsory disclosures; (2) investigate and enforce this Privacy Policy or our then-current Terms of Use, if any; (3) respond to claims of a violation of the rights of third parties; (4) respond to customer service inquiries; (5) protect the rights, property, or safety of the Foundation, our users, or the public; or (6) as part of the sale of all or a portion of the assets of the Foundation or as a change in control of the organization or one of its affiliates or in preparation for any of these events. The Foundation reserves the right to supply any such information to any organization into which the Foundation may merge in the future or to which it may make any transfer. Any third party to which the Foundation transfers or sells all or any of its assets will have the right to use the personal and other information that you provide in the manner set out in this Privacy Policy.
+Attribution, Provenance and Integrity. When you contribute source code, documentation or other content to one of our Projects (whether on your own behalf or through contributions made as part of your employment services to your employer), we collect and store the information and content that you contribute. This includes the contents of those contributions, as well as information required to confirm the provenance of intellectual property contained in those contributions, and personal information that you make publicly available in the record of the contribution pursuant to sign-offs under the Developer Certificate of Origin ([https://developercertificate.org/](https://developercertificate.org/)). Some Projects require additional agreements or information pursuant to their intellectual property policies; in such cases we collect and store information related to your acceptance of those agreements. We may also collect information relating to your participation in technical, governance or other Project-related meetings.
 
-## Is Information About Me Secure?
-To keep your information safe, prevent unauthorized access or disclosure, maintain data accuracy, and ensure the appropriate use of information, the Foundation implements industry-standard physical, electronic, and managerial procedures to safeguard and secure the information the Foundation collects. However, the Foundation does not guarantee that unauthorized third parties will never defeat measures taken to prevent improper use of personally identifiable information.
+Other Project-related Content. The content you provide in relation to Projects also includes materials that you make publicly available in connection with Project development, collaboration and communication, such as on mailing lists, blogs, Project wiki pages and issue trackers, and related services.
 
-Access to users’ nonpublic personally identifiable information is restricted to the Foundation and Linux Foundation personnel, including contractors for each such organization on a need-to-know basis.
+Applicants for OpenJS Foundation Internships or Employment. We collect and store personal information relating to individuals who apply to participate in one or more of our Project-related internships. The personal information collected and stored for Project-related internships, may include your name, address, or other contact information. In addition, if you choose to provide it, we may collect personal information regarding your membership in a diverse or underrepresented group.
 
-User passwords are keys to accounts. Use unique numbers, letters, and special characters for passwords and do not disclose passwords to other people in order to prevent loss of account control. Users are responsible for all actions taken in their accounts. Notify the Foundation of any password compromises, and change passwords periodically to maintain account protection.
+Your Content. We collect and store the information and content that you post to the Sites, including your questions, answers, comments, forum postings, and responses to surveys. Please see the section on Publicly Available Information for how the information you post will be viewed on our Sites.
 
-In the event the Foundation becomes aware that the security of a Site has been compromised or user’s personally identifiable information has been disclosed to unrelated third parties as a result of external activity, including but not limited to security attacks or fraud, the Foundation reserves the right to take reasonable appropriate measures, including but not limited to, investigation and reporting, and notification to and cooperation with law enforcement authorities.
+Communications. When you communicate with us (via email, phone, through the Sites or otherwise), we may maintain a record of your communication.
 
-While our aim is to keep data from unauthorized or unsafe access, modification or destruction, no method of transmission on the Internet, or method of electronic storage, is 100% secure and we cannot guarantee its absolute security.
+Payment Information. To purchase Services (including registering for events, training and certification exams), users may be asked to be directed to a third-party site, such as Stripe, to pay for their purchases. If applicable, the third-party site may collect payment information directly to facilitate a transaction. OpenJS Foundation generally only records the result of the transaction and any references to the transaction record provided by the third-party site.
 
-## Data Protection
-Given the international scope of the Foundation, personal information may be visible to persons outside your country of residence, including to persons in countries that your own country’s privacy laws and regulations deem deficient in ensuring an adequate level of protection for such information. If you are unsure whether this privacy statement is in conflict with applicable local rules, you should not submit your information. If you are located within the European Union, you should note that your information will be transferred to the United States, which is deemed by the European Union to have inadequate data protection. Nevertheless, in accordance with local laws implementing the European Union Privacy Directive on the protection of individuals with regard to the processing of personal data and on the free movement of such data, individuals located in countries outside of the United States of America who submit personal information do thereby consent to the general use of such information as provided in this Privacy Policy and to its transfer to and/or storage in the United States of America. By utilizing any Site and/or directly providing personal information to us, you hereby agree to and acknowledge your understanding of the terms of this Privacy Policy, and consent to have your personal data transferred to and processed in the United States and/or in other jurisdictions as determined by the Foundation, notwithstanding your country of origin, or country, state and/or province of residence. If you do not want your personal information collected and used by the Foundation, please do not visit or use the Sites.
+Automatically Collected Information. In addition, OpenJS Foundation may automatically collect the following information about users’ use of the Sites or Services through cookies, web beacons, and other technologies: your domain name; your browser type and operating system; web pages you view; links you click; your IP address; the length of time you visit our Sites and or use our Services; and the referring URL, or the webpage that led you to our Sites.  We may combine this information with other information that we have collected about you, including, where applicable, your user name, name, and other personal information. Please see our [Cookie Policy](https://www.linuxfoundation.org/cookies/) for more information about our use of cookies.
 
-## Governing Law
-This Privacy Policy is governed by the laws of the State of California, United States of America without giving any effect to the principles of conflicts of law.
+De-identified Information. We may de-identify and aggregate certain personal information we collect such that the information no longer identifies or can be linked to a particular user or an individual data subject (“De-identified Information”), subject to the terms of any applicable user agreements. We may use this information to improve our Services, analyze trends, publish market research, and for other marketing, research or statistical purposes, and may disclose such information to third parties for these specific purposes.
+
+## Purposes and Legal Bases for Our Using of Your Personal Information
+
+### Purposes and Legitimate Interests
+
+OpenJS Foundation and the Linux Foundation use the personal information we collect for our legitimate business interests, which include the following purposes:
+
+* Providing our Sites and Services. To provide the Services and our Sites (including Project Sites), to communicate with you about your use of our Sites and Services, to respond to your inquiries, provide troubleshooting of the Sites and for other purposes to support users and the community.
+* Operating our Open Source Projects. To enable communication between and among open source developers in the community; to facilitate and document Project governance and technical decision-making; to maintain, and make publicly available on a perpetual basis, records regarding intellectual property provenance and license compliance for Project contributions; and for related activities to further our core purpose of fostering an ecosystem that supports the collaborative and public development of free and open source software projects. See the “Attribution, Provenance and Integrity” section above for more information.
+* Maintain our Training and Certification Programs. To maintain records about who has attended or registered to attend training programs, take certification exams and received certain certifications.
+* Event Administration. To plan, organize, and facilitate access to events and related services and activities, and to carry out informative and safe events for participants, including attendees, speakers and sponsors.  If you provide us information about disabilities, medical conditions and allergies, we will use this information in order to provide appropriate accommodations for attendees and to ensure their health and safety; we will not use this information for other purposes, unless required by law or as necessary to defend our legal rights. If you request assistance from us for obtaining a visa letter to travel to one of our events and provide us with information required for such assistance (such as your citizenship, date of birth, and passport details), we will use this information in order to assist with providing you a visa letter; we will not use this information for other purposes, unless required by law or as necessary to defend our legal rights.
+* Internship Applications. To select participants for our Project-related internship programs, including the evaluation and selection of interns and employees from among applicants. If you choose to provide information regarding your membership in a diverse or underrepresented group, we will use this information in connection with internship diversity programs we may operate; we will not use this information for other purposes, unless required by law or as necessary to defend our legal rights.
+* Personalization. To tailor the content and information that we may send or display to you on our Sites and in our Services, to offer location customization and personalized help and instructions and to otherwise personalize your experiences.
+* Marketing and Promotions. For marketing and promotional purposes, such as to send you news and newsletters, special offers, and promotions, or to otherwise contact you about Projects, Services, events, trainings or other information we think may interest you related to OpenJS Foundation, and, subject to applicable law, our service providers.
+* Advertising.  For targeting advertising to you on our Sites and third-party sites and measuring the effectiveness and reach of ads and services (through third-party ad networks and services).
+* Analytics.  To gather metrics to better understand how users access and use our Sites and Services and participate in our Projects; to evaluate and improve the Sites, including personalization, to develop new services; and to understand metrics regarding the community health of our Projects. If a user voluntary provides and explicitly consents to our processing of personal information regarding their demographics and socioeconomics, we process such personal information for the specific purposes for which you have consented, which may include for the purpose of compiling, analyzing and disclosing aggregate statistics regarding diversity of participation in open source projects and communities, to help track progress towards meeting OpenJS Foundation’s commitment to diversity initiatives and subject to your consent.
+* Compliance. To comply with legal obligations and requests. For example, to comply with laws that compel us to disclose information to public authorities, courts, law enforcement or regulators, maintain records for a certain period, or maintain records demonstrating enforcement and sublicensing of our trademarks and those of our Projects.
+* Business and Legal Operations. As part of our general business and legal operations (e.g., accounting, record keeping, and for other business administration purposes), and as necessary to establish, exercise and defend (actual and potential) legal claims.
+* Prevent Misuse. Where we believe necessary to investigate, prevent or take action regarding illegal activities, suspected fraud, situations involving potential threats to the safety of any person or violations of the relevant Terms or this Privacy Policy.
+
+### Purposes and Legal Bases
+
+<table>
+  <tr>
+   <td>Purposes of Processing
+<p>
+(see above)
+   </td>
+   <td>Legal Bases of Processing (EU Users)
+   </td>
+  </tr>
+  <tr>
+   <td>Providing our Sites and Services
+   </td>
+   <td>
+<ul>
+
+<li>Our Legitimate Business Interests
+
+<li>Where Necessary to Enter into or Perform a Contract with You (upon your request, or as necessary to make the Services available)
+
+<li>Compliance with Law
+
+<li>Where permitted, with Your Consent (where we process any sensitive personal information you voluntarily provide – e.g., for diversity-related purposes)
+</li>
+</ul>
+   </td>
+  </tr>
+  <tr>
+   <td>Operating our Open Source Projects
+   </td>
+   <td>
+<ul>
+
+<li>Our Legitimate Business Interests
+
+<li>Where Necessary to Enter into or Perform a Contract with You (upon your request, or as necessary to enable your participation in the Projects or to make the Services available)
+
+<li>Compliance with Law
+
+<li>As Necessary to Establish, Exercise and Defend Legal Claims
+</li>
+</ul>
+   </td>
+  </tr>
+  <tr>
+   <td>Internship and Employment Applications
+   </td>
+   <td>
+<ul>
+
+<li>Our Legitimate Business Interests
+
+<li>Where Necessary to Enter into or Perform a Contract with You (upon your request, or as necessary relating to Your application for an internship)
+
+<li>Compliance with Law
+
+<li>Where permitted, with Your Consent (where we process any sensitive personal information you voluntarily provide – e.g., for diversity-related purposes)
+</li>
+</ul>
+   </td>
+  </tr>
+  <tr>
+   <td>Event Administration
+   </td>
+   <td>
+<ul>
+
+<li>Our Legitimate Business Interests
+
+<li>Where Necessary to Enter into or Perform a Contract with You (upon your request, or as necessary to make the Services available)
+
+<li>Compliance with Law
+
+<li>With Your Consent (in particular regarding your sensitive personal information – e.g., disability and medical conditions and information related to a visa letter request)
+</li>
+</ul>
+   </td>
+  </tr>
+  <tr>
+   <td>Offer Training and Certification Programs
+   </td>
+   <td>
+<ul>
+
+<li>Our Legitimate Business Interests
+
+<li>Where Necessary to Enter into or Perform a Contract with You (upon your request, or as necessary to make the Services available)
+</li>
+</ul>
+   </td>
+  </tr>
+  <tr>
+   <td>Personalization
+   </td>
+   <td>
+<ul>
+
+<li> Our Legitimate Business Interests
+</li>
+</ul>
+   </td>
+  </tr>
+  <tr>
+   <td>Marketing and Promotions
+   </td>
+   <td>
+<ul>
+
+<li>Our Legitimate Business Interests, and those of the Linux Foundation
+
+<li>With Your Consent
+</li>
+</ul>
+   </td>
+  </tr>
+  <tr>
+   <td>Advertising
+   </td>
+   <td>
+<ul>
+
+<li>Our Legitimate Business Interests
+
+<li>With Your Consent
+</li>
+</ul>
+   </td>
+  </tr>
+  <tr>
+   <td>Analytics
+   </td>
+   <td>
+<ul>
+
+<li> Our Legitimate Business Interests
+
+<li>Where permitted, with Your Consent (where we process any sensitive personal information you voluntarily provide – e.g., for diversity-related purposes)
+</li>
+</ul>
+   </td>
+  </tr>
+  <tr>
+   <td>Compliance
+   </td>
+   <td>
+<ul>
+
+<li>Our Legitimate Business Interests
+
+<li>Compliance with Law
+
+<li>As Necessary to Establish, Exercise and Defend Legal Claims
+</li>
+</ul>
+   </td>
+  </tr>
+  <tr>
+   <td>Business and Legal Operations
+   </td>
+   <td>
+<ul>
+
+<li>Our Legitimate Business Interests
+
+<li>Compliance with Law
+
+<li>As Necessary to Establish, Exercise and Defend Legal Claims
+</li>
+</ul>
+   </td>
+  </tr>
+  <tr>
+   <td>Prevent Misuse
+   </td>
+   <td>
+<ul>
+
+<li>Our Legitimate Business Interests
+
+<li>Compliance with Law
+
+<li>As Necessary to Establish, Exercise and Defend Legal Claims
+</li>
+</ul>
+   </td>
+  </tr>
+</table>
+
+## Sharing of Personal Information
+
+We disclose personal information as set forth below, and where individuals have otherwise consented:
+
+* Publicly Available Information, including Your Contributions to Open Source Projects. User names, other user ids, email addresses and other attribution information related to the information and contributions that a User posts in conjunction with or subject to an Open Source license are publicly available in the relevant Project source code repositories. Your contributions to Open Source Projects, and certain of your other Content such as comments and messages posted to public forums, are available to other participants and users of our Projects and of our Services, and may be viewed publicly. In some cases you may be able to provide Project or contribution-related information directly to third-party sites and services; these third parties are independent data controllers and their use of your personal information is subject to their own policies.
+* Service Providers. We may share your information with third party service providers who use this information to perform services for us, such as payment processors, hosting providers, auditors, advisors, contractors and consultants. In addition, The Linux Foundation performs services for OPenJS Foundation as a managed services provider with regards to our Projects. In such cases, we may share with The Linux Foundation the same types of data as described above, doing so in the furtherance of performing Services for those Projects. The Linux Foundation’s privacy policy is available at [https://www.linuxfoundation.org/privacy/](https://www.linuxfoundation.org/privacy/).
+* Organizational Events. We may disclose or transfer information, including personal information, as part of any merger, sale, and transfer of our assets, or restructuring of all or part of our business operations, bankruptcy, or similar event, including in negotiations, due diligence, and integrations related to such transactions.
+* Event Participants. If you register for an event, we may ask for your consent to share your personal information with third party sponsors and other participants; for example, to facilitate your ability to swipe your badge to easily sign up for or participate in activities, events and gifts offered by third parties participating in the event, or to give you the option to be listed on the attendee list that is available to other attendee, sponsors and participants.  We will not share your event information with third parties without your consent, and in particular you have the choice whether or not to permit your badge to be swiped by any third party participating in the event.
+* Training and Program Sponsors. If you participate in one of our certification or training programs that a third party has sponsored or engaged us to provide to you and others (e.g., your employers), we may receive attendee list information from them and may share information about your completion of the program, including confirmation of your participation and your certification exam results, as applicable; these third parties are independent data controllers and their use of your personal information is subject to their own policies. You may also elect to provide third parties (e.g., your employers or your prospective employers) with information that will enable them to look up your certification exam status; if you do so, we may share your certification exam status with such third parties.
+* Legally Required. We may disclose your information if we are required to do so by law (including to law enforcement in the U.S. and other jurisdictions).
+* Protection of Rights. We may disclose information where we believe it necessary to respond to claims asserted against us or, comply with legal process (e.g., subpoenas or warrants), enforce or administer our agreements and terms, for fraud prevention, risk assessment, investigation, and protect the rights, property or safety of OpenJS Foundation, its Users, participants in its events or Projects, or others.
+* Anonymized and Aggregated Information. We may share aggregate or De-identified information with third parties for research, marketing, analytics and other purposes, provided such information does not identify a particular individual.
+
+## Cookies, Tracking, and Interest-Based Ads
+
+We and our third-party providers use cookies, clear GIFs/pixel tags, JavaScript, local storage, log files, and other mechanisms to automatically collect and record information about your usage and browsing activities on our Site and across third party sites or online services. We may combine this information with other information we collect about users. Below, we provide a brief summary of these activities. For more detailed information about these mechanisms and how we collect activity information, see our [Cookie Policy](https://www.linuxfoundation.org/cookies/).
+
+* Cookies. These are small files with a unique identifier that are transferred to your browser through our websites. They allow us to remember users who are logged in, to understand how users navigate through and use the Sites, and to display personalized content and targeted ads (including on third party sites and applications).
+* Pixels, web beacons, clear GIFs. These are tiny graphics with a unique identifier, similar in function to cookies, which we track browsing activities. We use these as part of our Training Affiliate Program. We also use these in our emails to let us know when they have been opened or forwarded, so we can gauge the effectiveness of our communications.
+* Analytics Tools. We may use internal and third-party analytics tools, including [Google Analytics](https://support.google.com/analytics/answer/6004245?hl=en). The third-party analytics companies we work with may combine the information collected with other information they have independently collected from other websites and/or other online products and services. Their collection and use of information is subject to their own privacy policies.
+
+Please note that OpenJS Foundation does not respond to browser “do not track” signals or other similar mechanisms intended.
+
+Targeted Ads.  As discussed in our Cookie Policy, we may work with third party advertisers to display more relevant ads on our website and on third party sites; these third parties may display ads to you based on your visit to our Sites and other third party sites.  For more information about this and how you can opt out of such ads, please see our [Cookie Policy](https://www.linuxfoundation.org/cookies/).
+
+## Data Security
+
+We have implemented commercially reasonable precautions designed to protect the information we collect from loss, misuse, and unauthorized access, disclosure, alteration, and destruction. Please be aware that despite our best efforts, no data security measures can guarantee 100% security.
+
+You should take steps to protect against unauthorized access to your passwords, phone, and computer by, among other things, signing off after using a shared computer, choosing robust passwords that nobody else knows or can easily guess, not using a password for more than one site or service, and keeping your log-ins and passwords private. We are not responsible for any lost, stolen, or compromised passwords or for any activity on your account via unauthorized password activity.  We ask you to promptly notify us if you become aware that any information provided by or submitted to our Sites or through our Services is lost, stolen, or used without permission at privacy@openjsf.org.
+
+## Marketing Choices
+
+You may opt out of or withdraw your consent to receive direct marketing emails from us by using the unsubscribe or opt out mechanisms included in our marketing emails or by emailing privacy@openjsf.org. You may also unsubscribe from mailing lists via the applicable mailing list’s subscription website or, in some cases, by using the unsubscribe mechanisms included in such emails.
+
+## Retention of Your Personal Information
+
+We generally keep personal information only for as long as required to fulfill the purposes for which it was collected. However, in some circumstances, we may retain personal information for other periods of time, for instance where we are required to do so in accordance with legal, tax and accounting requirements, or if required to do so by a legal process, legal authority, or other governmental entity having authority to make the request, for so long as required.  In specific circumstances, we may also retain your personal information for longer periods of time corresponding to a statute of limitation, so that we have an accurate record of your dealings with us in the event of any complaints or challenges.
+
+## International Transfers
+
+If you are located within the European Economic Area, the United Kingdom or Switzerland, you should note that your personal information will be transferred to countries outside these jurisdictions, including the United States where OpenJS Foundation is located.  The U.S. is deemed by the European Union to provide inadequate data protection.  However, we have put in place European Commission approved Standard Contractual Clauses to provide for adequate safeguards to protect personal information transferred outside these jurisdictions, including between OpenJS Foundation and service providers.  In addition, if personal information is transferred to third party service providers located outside these jurisdictions, we will take steps to ensure that your personal information receives the same level of protection as if it remained within these jurisdictions, including by entering into data transfer agreements, using the European Commission approved Standard Contractual Clauses or other safeguards as approved by the European Commission. You have a right to obtain details of the mechanism under which your personal information is transferred outside of the EU by emailing gdpr@openjsf.org.
+
+## Children’s Privacy
+
+Except as specifically indicated within a Site, we do not knowingly collect or solicit personal information from anyone under the age of sixteen (16), or knowingly allow such persons to register. If we become aware that we have collected personal information from a child under the relevant age without parental consent, we take steps to delete that information. Where we specifically indicate that we collect personal information from children under 16, we will obtain the parent or guardian’s consent and provide adequate notice.
+
+## Links to Third Party Sites and Services
+
+The Sites may contain links to third party sites or online services. Please refer to the privacy policies of the relevant third party websites or services to find out more about how they process and handle personal information.
+
+## Your Rights
+
+Access and Amendment. You may contact our privacy coordinator, as set forth below, to access or amend your personal information.
+
+Additional Rights. Individuals in the European Economic Area (and other jurisdictions where applicable) have additional rights under applicable law:
+
+* to obtain a copy of your personal information together with information about how and on what legal basis that personal information is processed;
+* to rectify inaccurate personal information (including to have incomplete personal information completed);
+* to erase your personal information (in limited circumstances, such as where it is no longer necessary in relation to the purposes for which it was collected or processed);
+* to restrict processing of your personal information under certain circumstances;
+* to export certain personal information in machine-readable format to a third party (or to you) when we justify our processing on the basis of your consent or the performance of a contract with you and the processing is carried out by automated means;
+* to withdraw your consent to our processing of your personal information (where that processing is based on your consent, without affecting the lawfulness of processing based on consent before its withdrawal);
+* to obtain, or see a copy of the appropriate safeguards under which your personal information is transferred to a third country or international organization; and
+* to object to our use and processing of your personal information that is conducted on the basis of our legitimate interest. You also have the right to object at any time to any processing of your personal information for direct marketing purposes, including profiling for marketing purposes.
+
+Lodging a Complaint. You also have the right to lodge a complaint with your local supervisory authority for data protection, or privacy regulator. A list of data protection supervisory authorities is available [here](http://ec.europa.eu/newsroom/article29/item-detail.cfm?item_id=612080).
+
+Submitting a Request. To exercise the above rights or contact us with questions or complaints regarding our treatment of your personal information, contact us at gdpr@openjsf.org. Please note that we may request proof of identity, and we reserve the right to charge a fee where permitted by law, especially if your request is manifestly unfounded or excessive. We will respond to your request within the applicable timeframes set out by law.
 
 ## California Privacy Rights
-The California Online Privacy Protection Action (“CalOPPA”) permits customers who are California residents and who have provided the Foundation with “personal information” as defined in CalOPPA to request certain information about the disclosure of information to third parties for their direct marketing purposes. If you are a California resident with a question regarding this provision, please contact privacy@nodejs.org.
 
-Please note that the Foundation does not respond to “do not track” signals or other similar mechanisms intended to allow California residents to opt-out of Internet tracking under CalOPPA. The Foundation may track and/or disclose your online activities over time and across different websites to third parties when you use our services.
+California law permits users who are California residents to request and obtain from us once a year, free of charge, a list of the third parties to whom we have disclosed their personal information (if any) for their direct marketing purposes in the prior calendar year, as well as the types of personal information disclosed to those parties. If you are a California resident and would like to request this information, please submit your request in an email to privacy@openjsf.org. We may ask you to verify your California residency.
 
-## What to Do in the Event of Lost or Stolen Information
-You must promptly notify us if you become aware that any information provided by or submitted to our Site or through our Product is lost, stolen, or used without permission at privacy@nodejs.org.
+## Contact Us
 
-## Questions or Concerns
-If you have any questions or concerns regarding privacy at the Foundation, please send us a detailed message to [privacy@nodejs.org](mailto:privacy@nodejs.org).
+If you have any questions about our practices or this Privacy Policy, please contact us at privacy@openjsf.org, or write to us at: OpenJS Foundation, Attn: Legal Department, 1 Letterman Drive, Building D, Suite D4700, San Francisco, CA 94129.
+
+## Changes to the Privacy Policy
+
+This Policy is current as of the effective date set forth above. If we change our privacy policies and procedures, we will post those changes on this page and/or continue to provide access to a copy of the prior version. If we make any changes to this Privacy Policy that materially change how we treat your personal information, we will endeavor to provide you with reasonable notice of such changes, such as via prominent notice on our Sites or to your email address of record, and where required by law, we will obtain your consent or give you the opportunity to opt out of such changes.

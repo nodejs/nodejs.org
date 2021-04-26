@@ -9,19 +9,20 @@
 @import "layout/grid";
 @import "layout/main";
 @import "layout/lists";
-@import "page-modules/linuxfoundation";
+@import "page-modules/jsfoundation";
 @import "page-modules/header";
 @import "page-modules/footer";
 @import "page-modules/home";
 @import "page-modules/blog-index";
 @import "page-modules/blog-post";
-@import "page-modules/in-the-news";
 @import "page-modules/download";
 @import "page-modules/scrollToTop";
 @import "page-modules/anchorLinks";
 @import "page-modules/prev-next-navigation";
 @import "page-modules/release-schedule";
 @import "page-modules/resources";
+@import "page-modules/contributor-card";
+@import "page-modules/spinner";
 @import "vendor/prism-tomorrow";
 
 article a {
@@ -37,7 +38,7 @@ article a {
     font-size: inherit;
     margin-bottom: 15px;
 
-    & + p {
+    + p {
       margin-top: 0;
     }
   }
@@ -49,7 +50,7 @@ article a {
 }
 
 .has-side-nav {
-  aside {
+  nav {
     width: 200px;
     float: left;
     margin-top: 1.5em;
@@ -94,7 +95,7 @@ article a {
 
 @media screen and (max-width: 480px) {
   .has-side-nav {
-    aside {
+    nav {
       width: 100%;
       float: none;
     }
@@ -103,14 +104,6 @@ article a {
       margin-left: 0;
     }
   }
-}
-
-.full-width {
-  width: 100%;
-}
-
-.small {
-  font-size: 10px;
 }
 
 .color-lightgray {
@@ -131,14 +124,14 @@ a:hover .color-lightgray {
   border-radius: 2px;
   margin-top: 1em;
 
-  & *:first-child {
+  *:first-child {
     margin-top: .5rem;
   }
 }
 
 html[dir="rtl"] {
   .has-side-nav {
-    aside {
+    nav {
       float: right;
     }
 

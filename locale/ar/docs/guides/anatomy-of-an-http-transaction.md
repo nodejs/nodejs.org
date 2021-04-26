@@ -164,7 +164,7 @@ response.statusCode = 404; // أخبر العميل أنه لم يتم العث�
 
 ## إعداد جواب رؤوس
 
-يتم تعيين الرؤوس من خلال طريقة مناسبة تسمى [`setHeader`] [].
+يتم تعيين الرؤوس من خلال طريقة مناسبة تسمى [`setHeader`][].
 
 ```javascript
 response.setHeader('Content-Type', 'application/json');
@@ -314,7 +314,7 @@ http.createServer((request, response) => {
 
 رائع! الآن نستقر على تبسيط هذا وتذكر كائنات الطلب `request` هي تدقف قابل للقراءة
 [`ReadableStream`][] و كائنات الجواب `response` هي تدفق قابل للكتابة [`WritableStream`][].
-وهذا يعني أنه يمكننا إستخدام مَجْرىً لتوجيه البيانات من واحدة لأخرى. وهذا تماما مانريده
+وهذا يعني أنه يمكننا إستخدام [`pipe`][] لتوجيه البيانات من واحدة لأخرى. وهذا تماما مانريده
 من خادم إرتدادي!
 
 ```javascript
@@ -391,7 +391,6 @@ http.createServer((request, response) => {
 [`npm`]: https://www.npmjs.com
 [`EventEmitter`]: https://nodejs.org/api/events.html#events_class_eventemitter
 [handling these errors]: https://nodejs.org/api/errors.html
-[`domains`]: https://nodejs.org/api/domain.html
 [`ServerResponse`]: https://nodejs.org/api/http.html#http_class_http_serverresponse
 [`setHeader`]: https://nodejs.org/api/http.html#http_response_setheader_name_value
 [`WritableStream`]: https://nodejs.org/api/stream.html#stream_class_stream_writable

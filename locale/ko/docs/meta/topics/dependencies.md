@@ -11,7 +11,7 @@ There are several dependencies that Node.js relies on to work the way it does.
 * [Libraries](#Libraries)
   * [V8](#V8)
   * [libuv](#libuv)
-  * [http-parser](#http-parser)
+  * [llhttp](#llhttp)
   * [c-ares](#c-ares)
   * [OpenSSL](#OpenSSL)
   * [zlib](#zlib)
@@ -28,7 +28,7 @@ Node.js가 의존하고 있는 여러 의존성
 * [라이브러리](#libraries)
   * [V8](#v8)
   * [libuv](#libuv)
-  * [http-parser](#http-parser)
+  * [llhttp](#llhttp)
   * [c-ares](#c-ares)
   * [OpenSSL](#openssl)
   * [zlib](#zlib)
@@ -45,7 +45,7 @@ Node.js가 의존하고 있는 여러 의존성
 The V8 library provides Node.js with a JavaScript engine, which Node.js
 controls via the V8 C++ API. V8 is maintained by Google, for use in Chrome.
 
-* [Documentation](https://v8docs.nodesource.com/)
+* [Documentation](https://v8.dev/docs/)
 -->
 
 ## <!--libraries-->라이브러리
@@ -55,7 +55,7 @@ controls via the V8 C++ API. V8 is maintained by Google, for use in Chrome.
 V8 라이브러리는 Node.js가 V8 C++ API로 제어하는 JavaScript 엔진을 제공합니다.
 V8은 구글이 관리하고 크롬에서 사용 중인 엔진입니다.
 
-* [문서](https://v8docs.nodesource.com/)
+* [문서](https://v8.dev/docs/)
 
 <!--
 ### libuv
@@ -80,21 +80,21 @@ asynchronously at the operating system level.
 * [문서](http://docs.libuv.org/)
 
 <!--
-### http-parser
+### llhttp
 
-HTTP parsing is handled by a lightweight C library called http-parser. It is
+HTTP parsing is handled by a lightweight C library called llhttp. It is
 designed to not make any syscalls or allocations, so it has a very small
 per-request memory footprint.
 
-* [Documentation](https://github.com/joyent/http-parser/)
+* [Documentation](https://github.com/nodejs/llhttp)
 -->
 
-### http-parser
+### llhttp
 
-HTTP 파싱은 http-parser라는 경량 C 라이브러리가 처리합니다. 이는 시스템 호출이나 할당을 하려고
+HTTP 파싱은 llhttp라는 경량 C 라이브러리가 처리합니다. 이는 시스템 호출이나 할당을 하려고
 만들어진 것이 아니므로 요청당 아주 작은 메모리 공간만 차지합니다.
 
-* [문서](https://github.com/joyent/http-parser/)
+* [문서](https://github.com/nodejs/llhttp)
 
 <!--
 ### c-ares

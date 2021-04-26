@@ -23,26 +23,21 @@
 const fs = require('fs')
 const path = require('path')
 const Handlebars = require('handlebars')
-const request = require('request')
+const fetch = require('node-fetch')
 
 const downloads = require('./helpers/downloads')
 
 function sendRequest (opts) {
-  return new Promise((resolve, reject) => {
-    const options = Object.assign({
-      headers: { 'User-Agent': 'nodejs.org release blog post script' }
-    }, opts)
+  const options = {
+    headers: { 'User-Agent': 'nodejs.org release blog post script' },
+    ...opts
+  }
 
-    request(options, (err, res, body) => {
-      if (err) {
-        return reject(new Error(`Error requesting URL ${options.url}: ${err.message}`))
-      }
-      if (res.statusCode !== 200) {
-        return reject(new Error(`Invalid status code (!= 200) while retrieving ${options.url}: ${res.statusCode}`))
-      }
-
-      resolve(body)
-    })
+  return fetch(options.url, options).then(resp => {
+    if (resp.status !== 200) {
+      throw new Error(`Invalid status code (!= 200) while retrieving ${options.url}: ${resp.status}`)
+    }
+    return options.json ? resp.json() : resp.text()
   })
 }
 
@@ -65,12 +60,7 @@ function fetchDocs (version) {
     fetchShasums(version),
     verifyDownloads(version)
   ]).then((results) => {
-    const changelog = results[0]
-    const author = results[1]
-    const versionPolicy = results[2]
-    const shasums = results[3]
-    const files = results[4]
-
+    const [changelog, author, versionPolicy, shasums, files] = results
     return {
       version,
       changelog,
@@ -113,9 +103,13 @@ function fetchChangelog (version) {
 function fetchChangelogBody (version) {
   return fetchChangelog(version).then((section) => {
     const rxSectionBody = /(### Notable [\s\S]*)/
+
+    // Make sure that all the console has been replaced
+    // by "```shell-session" for metalsmith-prism's check to pass
+    const rxSectionConsole = /```console/igm
     const matches = rxSectionBody.exec(section)
     return matches
-      ? matches[1]
+      ? matches[1].trim().replace(rxSectionConsole, '```shell-session')
       : Promise.reject(new Error(`Could not find changelog body of ${version} release`))
   })
 }

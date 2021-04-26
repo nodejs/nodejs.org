@@ -110,7 +110,15 @@ REQUIREMENTS
 * Organizer names - [Erick Wendel](https://github.com/erickwendel), [Alan Hoffmeister](https://github.com/alanhoff), [Igor França](https://github.com/horaddrim), [Icaro Caldeira](https://github.com/icarcal), [Marcus Bergamo](https://github.com/thebergamo), [Igor Halfeld](https://github.com/igorHalfeld), [Lucas Santos](https://github.com/khaosdoctor).
 * Organizer contact info - [@erickwendel_](https://twitter.com/erickwendel_), [@_StaticVoid](https://twitter.com/_staticvoid)
 
-##### Campinas
+#### Rio de Janeiro
+
+* [Meetup](https://meetup.com/node-js-rio)
+* Frequency of meetups - monthly
+* How to submit a talk? Contact organizers directly or [Call4Papers](https://nodejs-rio.github.io/call-4-papers) page.
+* Organizer names - [Eduardo Chaves](https://github.com/educostachaves).
+* Organizer contact info - [@educostachaves](https://twitter.com/educostachaves) / [educostachaves@gmail.com](mailto:educostachaves@gmail.com)
+
+#### Campinas
 
 * [Meetup](https://www.meetup.com/Nodeschool-Campinas/)
 * Frequency of meetups - monthly
@@ -126,9 +134,7 @@ REQUIREMENTS
 * Organizer name - Hugo Iuri
 * Organizer contact info -
 
-#### Rio Grande do Sul
-
-##### Porto Alegre
+#### Porto Alegre
 
 * [Meetup](https://www.meetup.com/Node-js-Porto-Alegre-Meetup/)
 * Frequency of meetups - monthly
@@ -296,10 +302,10 @@ REQUIREMENTS
 #### Jakarta
 
 * [Meetup](https://www.meetup.com/Node-js-Workshop/)
-* Frequency of meetups - monthly
-* How to submit a talk? Contact organizers in the meetup page.
+* Frequency of meetups - monthly - online
+* How to submit a talk? [telegram group](https://t.me/nodejsid)
 * Organizer name - Lukluk Luhuring Santoso
-* Organizer contact info -
+* Organizer contact info - [Email](mailto:luklukaha@gmail.com)
 
 ### Ireland
 
@@ -347,6 +353,16 @@ REQUIREMENTS
 * How to submit a talk? Contact organizers in the meetup page.
 * Organizer name - George Czabania
 * Organizer contact info -
+
+### Russia
+
+#### Moscow
+
+* [Meetup](https://www.meetup.com/Moscow-NodeJS-Meetup/)
+* Frequency of meetups - every 6-9 month
+* How to submit a talk? Contact organizers in the meetup page or use contacts information below
+* Organizer name - Denis Izmaylov
+* Organizer contact info - [Telegram](https://t.me/DenisIzmaylov) [Twitter](https://twitter.com/DenisIzmaylov) [Facebook](https://facebook.com/denis.izmaylov)
 
 ### South Africa
 
@@ -578,8 +594,8 @@ REQUIREMENTS
 * [Meetup](https://www.meetup.com/DallasNode/)
 * Frequency of meetups - monthly
 * How to submit a talk? Contact organizers in the meetup page.
-* Organizer name - [Cameron Steele](https://github.com/ATechAdventurer)
-* Organizer contact info - [Cam.steeleis@gmail.com](mailto:Cam.steeleis@gmail.com)
+* Organizer name - [Ryan Key](https://github.com/realryankey)
+* Organizer contact info - [realryankey@gmail.com](mailto:realryankey@gmail.com)
 
 #### Utah
 
@@ -627,7 +643,7 @@ REQUIREMENTS
 * Organizer name - Adam Davis
 * Organizer contact info - contact@lnug.org, [@lnugOrg](https://twitter.com/lnugorg)
 
-##### Node Workshops
+##### Node.js Workshops
 
 * [Meetup](https://www.meetup.com/NodeWorkshops//)
 * Frequency of meetups - monthly
@@ -658,6 +674,14 @@ REQUIREMENTS
 * How to submit a talk? [Submit Talk](mailto:michael@biggles.io?subject=Node.js%20Talk%20Proposal)
 * Organizer names - Michael Antczak
 * Organizers contact info - [AntczakMichael](https://twitter.com/AntczakMichael)
+
+#### Manchester
+
+* [Manchester Node.js Meetup](https://www.meetup.com/manchester-node-workshop/)
+* Frequency of meetups - every few months
+* How to submit a talk? Contact organizers in the meetup page
+* Organizer names - Giorgos Bamparopoulos
+* Organizers contact info - [@bamparopoulos](https://twitter.com/bamparopoulos)
 
 ### Ukraine
 

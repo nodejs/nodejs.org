@@ -11,7 +11,7 @@ childProcess.exec('java -version', (error, stdout, stderr) => {
     return
   }
 
-  const is32bitJava = !stderr.match(/64-Bit/)
+  const is32bitJava = !/64-Bit/.test(stderr)
 
   // vnu-jar accepts multiple ignores joined with a `|`.
   // Also note that the ignores are regular expressions.
@@ -20,9 +20,6 @@ childProcess.exec('java -version', (error, stdout, stderr) => {
     'Section lacks heading.*',
     // This seems to happen due to some Unicode characters
     'Text run is not in Unicode Normalization Form C.',
-    // These are real errors but hard to tackle.
-    // We should fix them eventually
-    'Table column.*',
     // These happen due to the commented out English HTML code some translations have...
     // They should be removed at some point
     'The document is not mappable to XML 1.0 due to two consecutive hyphens in a comment.'
@@ -30,7 +27,7 @@ childProcess.exec('java -version', (error, stdout, stderr) => {
 
   const args = [
     '-jar',
-    vnu,
+    `"${vnu}"`,
     '--asciiquotes',
     '--skip-non-html',
     // Ignore the language code warnings

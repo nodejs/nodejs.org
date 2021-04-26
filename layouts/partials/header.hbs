@@ -5,14 +5,14 @@
       <img src="/static/images/logo.svg" alt="Node.js" width="122" height="75">
     </a>
 
-    <nav>
+    <nav aria-label="primary">
       <ul class="list-divider-pipe">
         <li {{#equals path ''}} class="active" {{/equals}}>
           <a href="/{{site.locale}}/">{{site.home.text}}</a>
         </li>
 
         {{#each nav.main}}
-          <li {{#startswith ../path link}}class="active"{{/startswith}}{{#startswith link 'https://foundation.nodejs.org'}} class="nav-foundation"{{/startswith}}>
+          <li {{#startswith ../path link}}class="active"{{/startswith}}>
             {{#startswith link 'http'}}
               <a href="{{link}}">{{text}}</a>
             {{else}}

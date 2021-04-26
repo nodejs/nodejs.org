@@ -1,3 +1,6 @@
+/* eslint-disable no-var */
+// Notice: IE 10 and below is still supported, so disable eslint for the file
+// when checking the "var"
 ;(function () {
   var langPickerTogglerElement = document.querySelector('.lang-picker-toggler')
   var langPickerElement = document.querySelector('.lang-picker')
@@ -10,7 +13,7 @@
     if (el.getAttribute('data-lang') !== currentLang) {
       el.addEventListener('click', function (e) {
         var newLocale = (e.target && e.target.dataset && e.target.dataset.lang) || 'en'
-        window.location.replace(window.location.pathname.replace(/\/[a-zA-Z-]+/, '/' + newLocale))
+        window.location.assign(window.location.pathname.replace(/\/[a-zA-Z-]+/, '/' + newLocale))
       })
     } else {
       currentLangElement = el
@@ -25,12 +28,8 @@
 
   langPickerTogglerElement.addEventListener('click', function () {
     langPickerElement.classList.toggle('hidden')
-
-    if (langPickerTogglerElement.getAttribute('aria-expanded') === 'true') {
-      langPickerTogglerElement.setAttribute('aria-expanded', 'false')
-    } else {
-      langPickerTogglerElement.setAttribute('aria-expanded', 'true')
-    }
+    const isAriaExpanded = langPickerTogglerElement.getAttribute('aria-expanded') === 'true'
+    langPickerTogglerElement.setAttribute('aria-expanded', !isAriaExpanded)
   })
 })()
 
@@ -49,13 +48,144 @@
   })
 })()
 
+;(function () {
+  var contributorCard = document.querySelector('.contributor-card')
+
+  if (!contributorCard) {
+    return
+  }
+
+  var contributorAvatar = contributorCard.querySelector('#contributor-avatar')
+  var contributorUsername = contributorCard.querySelector('#contributor-username')
+  var contributorContributions = contributorCard.querySelector('#contributor-contributions')
+  var loadingSpinner = contributorCard.querySelector('.spinner-border')
+
+  if (window.IntersectionObserver) {
+    var observer = new window.IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.intersectionRatio > 0.5) {
+          // In viewport, fetch a random contributor
+          fetchRandomContributor()
+
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    { threshold: 0.5 }
+    )
+
+    observer.observe(document.querySelector('footer'))
+  } else {
+    // Does not support IntersectionObserver
+    fetchRandomContributor()
+  }
+
+  function fetchRandomContributor () {
+    var maxContributors
+    var fetchDate
+    var needToRefetch = false
+
+    if (window.localStorage) {
+      maxContributors = window.localStorage.getItem('max_contributors')
+      fetchDate = parseInt(window.localStorage.getItem('fetch_date'), 10)
+    }
+
+    // If fetch date is a month old (2592000000 ms === 30 days)
+    if (Date.now() - fetchDate >= 2592000000) {
+      needToRefetch = true
+    }
+
+    // If localStorage and data is less than 1 month old, fetch 1 time
+    if (maxContributors && !needToRefetch) {
+      getContributor(Math.floor(Math.random() * Math.floor(parseInt(maxContributors))) + 1)
+    } else {
+      getMaxContributors(function (randomPage, lastPage) {
+        getContributor(randomPage)
+
+        if (window.localStorage) {
+          window.localStorage.setItem('max_contributors', lastPage)
+        }
+      })
+    }
+  }
+
+  function getMaxContributors (callback) {
+    var xhr = new window.XMLHttpRequest()
+    xhr.open('GET', 'https://api.github.com/repos/nodejs/node/contributors?per_page=1', true)
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          // Get Headers Links last page to generate a random contributor
+          var links = linkParser(xhr.getResponseHeader('Link'))
+          var randomPage = Math.floor(Math.random() * Math.floor(parseInt(links.last.page, 10))) + 1
+
+          if (window.localStorage) {
+            window.localStorage.setItem('fetch_date', Date.now())
+          }
+          callback(randomPage, links.last.page)
+        } else {
+          return contributorCard.parentNode.removeChild(contributorCard)
+        }
+      }
+    }
+
+    xhr.send()
+  }
+
+  function getContributor (randomPage) {
+    var xhr = new window.XMLHttpRequest()
+    xhr.open('GET', 'https://api.github.com/repos/nodejs/node/contributors?per_page=1&page=' + randomPage, true)
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          var contributor = JSON.parse(xhr.responseText)[0]
+
+          // Remove loading spinner and show avatar
+          loadingSpinner.parentNode.removeChild(loadingSpinner)
+          contributorAvatar.classList.remove('hidden')
+          // Set new values
+          contributorAvatar.src = contributor.avatar_url + '&s=80'
+          contributorAvatar.parentElement.href = contributor.html_url
+          contributorUsername.textContent = contributor.login
+          contributorUsername.href = contributor.html_url
+          contributorContributions.textContent = contributor.contributions + ' contributions'
+          contributorContributions.parentElement.href = 'https://github.com/nodejs/node/commits?author=' + contributor.login
+        } else {
+          return contributorCard.parentNode.removeChild(contributorCard)
+        }
+      }
+    }
+
+    xhr.send()
+  }
+
+  function linkParser (linkHeader) {
+    var regex = /<([^?]+\?per_page=1&[a-z]+=([\d]+))>;[\s]*rel="([a-z]+)"/g
+    var array = []
+    var object = {}
+
+    while ((array = regex.exec(linkHeader)) !== null) {
+      object[array[3]] = {
+        url: array[1],
+        page: array[2]
+      }
+    }
+
+    return object
+  }
+})()
+
 ;(function (d, n) {
   'use strict'
 
   var osMatch = n.platform.match(/(Win|Mac|Linux)/)
   var os = (osMatch && osMatch[1]) || ''
   var arch = n.userAgent.match(/x86_64|Win64|WOW64/) ||
-    n.cpuClass === 'x64' ? 'x64' : 'x86'
+    n.cpuClass === 'x64'
+    ? 'x64'
+    : 'x86'
   var text = 'textContent' in d ? 'textContent' : 'innerText'
   var buttons = d.querySelectorAll('.home-downloadbutton')
   var downloadHead = d.getElementById('home-downloadhead')
@@ -105,13 +235,3 @@
     winText[text] = winText[text].replace(/x(86|64)/, arch)
   }
 })(document, navigator)
-
-/* eslint-disable */
-/* Load Modernizr dynamically for IE10/11 and add test classes for sticky footer with flexbox */
-;(function(d,e,m,s){
-  if (!/(MSIE|Trident)/.test(navigator.userAgent)){return;}
-  m=d.createElement(e);
-  s=d.getElementsByTagName(e)[0];m.async=1;m.src='/static/js/modernizr.custom.js';
-  m.onload=function(){Modernizr.addTest('flexboxtweener', Modernizr.testAllProps('flexAlign'));};
-  s.parentNode.insertBefore(m,s);
-})(document,'script');

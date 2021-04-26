@@ -39,7 +39,7 @@ Now let's get to work.
     ```
 
 4. disregard warnings unless they're saying you can't run perf due to missing packages; you may get some warnings about not being able to access kernel module samples which you're not after anyway.
-5. Run `perf script > perfs.out` to generate the data file you'll visualize in a moment. It's useful to [apply some cleanup](#filtering-out-node-internal-functions) for a more readable graph
+5. Run `perf script > perfs.out` to generate the data file you'll visualize in a moment. It's useful to [apply some cleanup](#filtering-out-node-js-internal-functions) for a more readable graph
 6. install stackvis if not yet installed `npm i -g stackvis`
 7. run `stackvis perf < perfs.out > flamegraph.htm`
 

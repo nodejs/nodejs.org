@@ -1,7 +1,5 @@
 # Node.js Collaborator Guide
 
-**Contents**
-
 * [Issues and Pull Requests](#issues-and-pull-requests)
 * [Accepting Modifications](#accepting-modifications)
   * [Involving the Website Group](#involving-the-website-group)
@@ -61,7 +59,7 @@ from other Collaborators. Leave at least 48 hours during the week and
 and work schedules. Trivial changes (e.g. those which fix minor bugs
 or improve performance without affecting API or causing other
 wide-reaching impact) may be landed after a shorter delay. Any press
-release can land with no time contstraints as long as the copy is
+release can land with no time constraints as long as the copy is
 properly formatted, it is not the responsibility of the website group
 to review the copy itself.
 
@@ -135,7 +133,7 @@ CoC](https://github.com/rust-lang/rust/wiki/Note-development-policy#conduct).
 * Please keep unstructured critique to a minimum. If you have solid
   ideas you want to experiment with, make a fork and see how it works.
 * We will exclude you from interaction if you insult, demean or harass
-  anyone. That is not welcome behaviour. We interpret the term
+  anyone. That is not welcome behavior. We interpret the term
   "harassment" as including the definition in the [Citizen Code of
   Conduct](http://citizencodeofconduct.org/); if you have any lack of
   clarity about what might be included in that concept, please read
@@ -149,7 +147,7 @@ CoC](https://github.com/rust-lang/rust/wiki/Note-development-policy#conduct).
   a newcomer, we care about making this community a safe place for you
   and we've got your back.
 * Likewise any spamming, trolling, flaming, baiting or other
-  attention-stealing behaviour is not welcome.
+  attention-stealing behavior is not welcome.
 * Avoid the use of personal pronouns in code comments or
   documentation. There is no need to address persons when explaining
   code (e.g. "When the developer")
@@ -159,17 +157,17 @@ CoC](https://github.com/rust-lang/rust/wiki/Note-development-policy#conduct).
 ### Adding new pages
 
 1. Create new page content including the layout, title and copy.
-2. Update ```/locale/en/site.json``` to provide page link attributes.
-3. Update the relevant ```/layout``` to add a link to the new page.
+2. Update `/locale/en/site.json` to provide page link attributes.
+3. Update the relevant `/layout` to add a link to the new page.
 
 #### Create the page content
 
-Create a new markdown file in ```/local/en```. As specified in the
+Create a new markdown file in `/local/en`. As specified in the
 [README.md](./README.md#layout), initial development happens in English.
 
 At the top of the markdown file, set a page the title and layout.
 
-```
+```markdown
 ---
 title: Events
 layout: contribute.hbs
@@ -180,10 +178,10 @@ layout: contribute.hbs
 
 #### Update locale site.json to add link attributes
 
-Open ```local/en/site.json``` and find the appropriate page structure.
+Open `local/en/site.json` and find the appropriate page structure.
 Add a new object defining the link attributes.
 
-```
+```json
 "event": {
   "link": "get-involved/events",
   "text": "Events"
@@ -192,10 +190,10 @@ Add a new object defining the link attributes.
 
 #### Update the layout to add a link
 
-Using the example layout, open ```/layouts/contribute.hbs``` and add your new
+Using the example layout, open `/layouts/contribute.hbs` and add your new
 link to the markup. It's essential to update the handlebars paths to site.json.
 
-```
+```handlebars
 {{site.locale}}/{{site.getinvolved.events.link}}
 ```
 

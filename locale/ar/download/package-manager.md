@@ -1,6 +1,6 @@
 ---
 layout: page.hbs
-title: Installing Node.js via package manager
+title: تثبيت Node.js عن طريق مدير الحزم
 ---
 
 # تثبيت النود جي اس عبر مدير حزم
@@ -105,7 +105,7 @@ pkgin -y install nodejs
 ## nvm
 
 مدير نسخ النود هو عبارة عن سكريبت خاص بالباش يستخدم لإدارة عدة نسخ من النود جي اس، حيث يسمح لك بالقيام بعمليات مختلفة كتثبيت و إلغاء تثبيت و تبديل نسخة معينة و اكثر من ذلك.
-لتثبيت مدير نسخ النود استعمل [سكريبت التثبيت](https://github.com/creationix/nvm#install-script).
+لتثبيت مدير نسخ النود استعمل [سكريبت التثبيت](https://github.com/nvm-sh/nvm#install--update-script).
 
 على انظمة يونيكس و OS X، يمكن تثبيت نسخة من النود جي اس تم بنائها من المصدر عبر [مدير نسخ النود (nvm)](https://github.com/creationix/nvm) عبر تثبيتها في المسار الذي يتوقعه مدير نسخ النود:
 
@@ -179,7 +179,7 @@ brew install node
 ```bash
 port install nodejs<major version>
 
-# Example
+# على سبيل المثال
 port install nodejs7
 ```
 
@@ -237,7 +237,7 @@ xbps-install -Sy nodejs
 
 ```bash
 cinst nodejs
-# or for full install with npm
+# أو للتثبيت الكامل بواسطة npm
 cinst nodejs.install
 ```
 

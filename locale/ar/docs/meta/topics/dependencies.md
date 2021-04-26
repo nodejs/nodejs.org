@@ -10,7 +10,7 @@ layout: docs.hbs
 * [المكتبات](#libraries)
   * [V8](#v8)
   * [libuv](#libuv)
-  * [http-parser](#http-parser)
+  * [llhttp](#llhttp)
   * [c-ares](#c-ares)
   * [OpenSSL](#openssl)
   * [zlib](#zlib)
@@ -25,7 +25,7 @@ layout: docs.hbs
 
 تزود مكتبة V8 <span dir='ltr'> Node.js </span> بمحرك جافاسكريبت ،الذي يتحكم به Node.js عبر واجهة برمجة التطبيقات V8 C++. يتم الإشراف على V8 بواسطة غوغل ، للاستخدام في متصفح كروم.
 
-* [التوثيق](https://v8docs.nodesource.com/)
+* [التوثيق](https://v8.dev/docs/)
 
 ### libuv
 
@@ -33,11 +33,11 @@ layout: docs.hbs
 
 * [التوثيق](http://docs.libuv.org/)
 
-### http-parser
+### llhttp
 
-تتم معالجة تحليلات بروتوكول الـ HTTP بواسطة مكتبة C خفيفة الوزن تسمى http-parser. تم تصميمه بحيث لا يقوم بإجراء أي نداءات نظام (syscalls) أو عمليات تخصيص ( allocations ) ، لذلك لا يأخذ الطلب سوى مساحة صغيرة جدا من الذاكرة.
+تتم معالجة تحليلات بروتوكول الـ HTTP بواسطة مكتبة C خفيفة الوزن تسمى llhttp. تم تصميمه بحيث لا يقوم بإجراء أي نداءات نظام (syscalls) أو عمليات تخصيص ( allocations ) ، لذلك لا يأخذ الطلب سوى مساحة صغيرة جدا من الذاكرة.
 
-* [التوثيق](https://github.com/joyent/http-parser/)
+* [التوثيق](https://github.com/nodejs/llhttp)
 
 ### c-ares
 

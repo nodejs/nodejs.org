@@ -17,13 +17,13 @@ layout: about.hbs
 
 للاطلاع على قائمة المساهمين الحالية، انظر ملف [README.md][] الخاص بالمشروع
 
-يجدر الإشارة أيضا إلى أن هناك دليلا يخص المساهمين و تتم مراجعته دوريا في ملف [COLLABORATOR_GUIDE.md][]
+يجدر الإشارة أيضا إلى أن هناك دليلا يخص المساهمين و تتم مراجعته دوريا في ملف [collaborator-guide.md][]
 
 ## اللجان العليا
 
 يتم قيادة المشروع بشكل مشترك من قبل كل من [لجنة التوجيه التقني (TSC)][] المسؤولة عن القيادة العليا للمشروع و [لجنة المجتمع (CommComm)][] المسؤولة عن توسيع مجتمع النود جي اس.
 
-[COLLABORATOR_GUIDE.md]: https://github.com/nodejs/node/blob/master/COLLABORATOR_GUIDE.md
+[collaborator-guide.md]: https://github.com/nodejs/node/blob/master/doc/guides/collaborator-guide.md
 [لجنة المجتمع (CommComm)]: https://github.com/nodejs/community-committee/blob/master/Community-Committee-Charter.md
 [منهج الإجماع في إتخاذ القرارات]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [README.md]: https://github.com/nodejs/node/blob/master/README.md#current-project-team-members

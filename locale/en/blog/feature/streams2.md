@@ -196,7 +196,7 @@ Note that `stream.Readable` is an abstract class designed to be
 extended with an underlying implementation of the `_read(size)`
 method. (See below.)
 
-### new stream.Readable([options])
+### new stream.Readable(\[options\])
 
 * `options` {Object}
   * `highWaterMark` {Number} The maximum number of bytes to store in
@@ -458,7 +458,7 @@ can be `'utf8'`, `'utf16le'` (`'ucs2'`), `'ascii'`, or `'hex'`.
 The encoding can also be set by specifying an `encoding` field to the
 constructor.
 
-### readable.read([size])
+### readable.read(\[size\])
 
 * `size` {Number | null} Optional number of bytes to read.
 * Return: {Buffer | String | null}
@@ -479,7 +479,7 @@ a future `'readable'` event will be emitted when more is available.
 Calling `stream.read(0)` will always return `null`, and will trigger a
 refresh of the internal buffer, but otherwise be a no-op.
 
-### readable.pipe(destination, [options])
+### readable.pipe(destination, \[options\])
 
 * `destination` {Writable Stream}
 * `options` {Object} Optional
@@ -515,7 +515,7 @@ reader.on("end", function() {
 Note that `process.stderr` and `process.stdout` are never closed until
 the process exits, regardless of the specified options.
 
-### readable.unpipe([destination])
+### readable.unpipe(\[destination\])
 
 * `destination` {Writable Stream} Optional
 
@@ -549,7 +549,7 @@ Note that `stream.Writable` is an abstract class designed to be
 extended with an underlying implementation of the
 `_write(chunk, encoding, cb)` method. (See below.)
 
-### new stream.Writable([options])
+### new stream.Writable(\[options\])
 
 * `options` {Object}
   * `highWaterMark` {Number} Buffer level when `write()` starts
@@ -595,7 +595,7 @@ the class that defines it, and should not be called directly by user
 programs. However, you **are** expected to override this method in
 your own extension classes.
 
-### writable.write(chunk, [encoding], [callback])
+### writable.write(chunk, \[encoding\], \[callback\])
 
 * `chunk` {Buffer | String} Data to be written
 * `encoding` {String} Optional. If `chunk` is a string, then encoding
@@ -612,7 +612,7 @@ the buffer is full, and the data will be sent out in the future. The
 The specifics of when `write()` will return false, is determined by
 the `highWaterMark` option provided to the constructor.
 
-### writable.end([chunk], [encoding], [callback])
+### writable.end(\[chunk\], \[encoding\], \[callback\])
 
 * `chunk` {Buffer | String} Optional final data to be written
 * `encoding` {String} Optional. If `chunk` is a string, then encoding
@@ -698,7 +698,7 @@ Rather than implement the `_read()` and `_write()` methods, Transform
 classes must implement the `_transform()` method, and may optionally
 also implement the `_flush()` method. (See below.)
 
-### new stream.Transform([options])
+### new stream.Transform(\[options\])
 
 * `options` {Object} Passed to both Writable and Readable
   constructors.

@@ -11,7 +11,9 @@ title: 通过包管理器安装 Node.js
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
+* [CentOS，Fedora 和 Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
 * [基于 Linux 的 Debian 和 Ubuntu 发行版，Enterprise Linux/Fedora 和 Snap packages](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
+* [fnm](#fnm)
 * [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
 * [IBM i](#ibm-i)
@@ -24,6 +26,7 @@ title: 通过包管理器安装 Node.js
 * [Solus](#solus)
 * [Void Linux](#void-linux)
 * [Windows](#windows)
+* [z/OS](#zos)
 
 ---
 
@@ -31,7 +34,7 @@ title: 通过包管理器安装 Node.js
 
 因为 Android 版的 Node.js 目前处于实验阶段，所以当下不提供预编译版本。
 
-但是你有一些第三方的解决方案可供选择：拿 [Termux](https://termux.com/) 来说，它为安卓提供了终端模拟器和 Linux 环境，以及内置的包管理器和 [可扩展应用集](https://github.com/termux/termux-packages)，其中包含了大量预编译的应用。在 Termux 中，以下的命令将会安装最新版 Node.js：
+但是你有一些第三方的解决方案可供选择：拿 [Termux](https://termux.com/) 来说，它为安卓提供了终端模拟器和 Linux 环境，以及内置的包管理器和[可扩展应用集](https://github.com/termux/termux-packages)，其中包含了大量预编译的应用。在 Termux 中，以下的命令将会安装最新版 Node.js：
 
 ```bash
 pkg install nodejs
@@ -48,6 +51,35 @@ Node.js 以及 npm 包管理器在社区库中可如下方式使用：
 pacman -S nodejs npm
 ```
 
+## <!--centos-fedora-and-red-hat-enterprise-linux-->CentOS，Fedora 和 Red Hat Enterprise Linux
+
+在 CentOS/RHEL 8 和 Fedora 系统中，Node.js 作为 `nodejs` 模块而变得可用。
+
+```bash
+dnf module install nodejs:<stream>
+```
+
+这里的 `<stream>` 对应了 Node.js 的主版本。
+可以使用如下命令查看可用流的列表：
+
+```bash
+dnf module list nodejs
+```
+
+举个例子，安装 Node.js 12：
+
+```bash
+dnf module install nodejs:12
+```
+
+对于 CentOS/RHEL 7，Node.js 可以通过 [软件合集](https://www.softwarecollections.org/en/scls/?search=NodeJS) 获得。
+
+### 可替换项
+
+以下是提供了 CentOS，Fedora，和 RHEL 系统相兼容安装包的资源：
+* [Node.js 快照](#snap) 在 https://github.com/nodejs/snap 得到支持和维护。
+* [Node.js 二进制发布版](#debian-and-ubuntu-based-linux-distributions) 通过 [NodeSource](https://github.com/nodesource/distributions) 得到维护支持。
+
 <!--
 If your title has non-English characters, please
 put your anchor name into the comment symbol before
@@ -56,6 +88,17 @@ your real title.
 ## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages--> 基于 Linux 的 Debian 和 Ubuntu 发行版，Enterprise Linux/Fedora 和 Snap packages
 
 [Node.js 官方二进制发行版](https://github.com/nodesource/distributions/blob/master/README.md) 由 NodeSource 提供。
+
+### 可替换项
+
+与 Debian 以及 Ubuntu 发布版本的兼容安装包可以通过 [Node.js 快照](#snap) 获得。
+
+## fnm
+
+这是一个内置了 Rust，用于 Node.js 多发布版本的快速便捷管理工具。它可以让你处理诸如安装、卸载，以及根据当前目录自动切换 Node.js 版本的行为操作。
+安装 fnm，请使用此[安装脚本](https://github.com/Schniz/fnm#using-a-script-macoslinux)。
+
+fnm 有跨版本的支持（macOS、Windows 以及 Linux），以及一系列衍生命令（Bash, Zsh, Fish, PowerShell, Windows 命令行），它以“脑速”编译，并兼容性支持 `.node-version` 和 `.nvmrc` 文件。
 
 ## FreeBSD
 
@@ -91,7 +134,7 @@ Node.js 长期支持版（LTS）各类版本可以通过 IBM 处获得，使用 
 yum install nodejs12
 ```
 
-Node.js 也可以通过客户端访问解决方案产品（IBM i Access Client Solutions）安装。具体参考 [支持文档](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619)。
+Node.js 也可以通过客户端访问解决方案产品（IBM i Access Client Solutions）安装。具体参考[支持文档](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619)。
 
 ## NetBSD
 
@@ -109,7 +152,7 @@ pkgin -y install nodejs
 
 ## nvm
 Node 版本管理器是一个用于管理多个已发布的 Node.js 不同版本的 bash 脚本。它允许你执行诸如“安装”、“卸载”以及“版本切换”等诸多功能。
-使用 [安装脚本](https://github.com/creationix/nvm#install-script) 安装 nvm。
+使用[安装脚本](https://github.com/nvm-sh/nvm#install--update-script)安装 nvm。
 
 对于 Unix / OS X 系统，Node.js 从源代码构建，并通过 [nvm](https://github.com/creationix/nvm) 安装到你所期望的地方。
 
@@ -147,7 +190,7 @@ pkg_add node
 
 ## <!--opensuse-and-sle-->openSUSE 和 SLE
 
-在以下安装包中，Node.js在以下主版本库中可用：
+在以下安装包中，Node.js 在以下主版本库中可用：
 
 * **openSUSE Leap 42.2**: `nodejs4`
 * **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
@@ -216,6 +259,10 @@ pkgin -y install nodejs
 cd pkgsrc/lang/nodejs && bmake install
 ```
 
+## Snap
+
+[Node.js 快照](https://github.com/nodejs/snap)在 [`node`](https://snapcraft.io/node) 快照商店可以获得。
+
 ## Solus
 
 在主版本库中，Solus 提供了 Node.js。
@@ -251,3 +298,10 @@ cinst nodejs.install
 ```bash
 scoop install nodejs
 ```
+
+## z/OS
+
+IBM&reg; 提供给 Node.js 的 SDK - z/OS&reg; 它有两种可用的安装方式：
+SMP/E and PAX。 你可选择一种合适的方式安装：
+* [在 z/OS 上安装配置 Node.js 的 SMP/E 版本](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/smpe.htm)
+* [在 z/OS 上安装配置 Node.js 的 PAX 版本](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/paxz.htm)

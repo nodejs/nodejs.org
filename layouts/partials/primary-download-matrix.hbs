@@ -45,44 +45,38 @@
     <tbody>
       <tr>
         <th>{{downloads.WindowsInstaller}} (.msi)</th>
-        <td colspan="3"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-x86.msi">32-bit</a></td>
-        <td colspan="3"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-x64.msi">64-bit</a></td>
+        <td><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-x86.msi">32-bit</a></td>
+        <td><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-x64.msi">64-bit</a></td>
       </tr>
 
       <tr>
         <th>{{downloads.WindowsBinary}} (.zip)</th>
-        <td colspan="3"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-win-x86.zip">32-bit</a></td>
-        <td colspan="3"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-win-x64.zip">64-bit</a></td>
+        <td><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-win-x86.zip">32-bit</a></td>
+        <td><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-win-x64.zip">64-bit</a></td>
       </tr>
 
       <tr>
         <th>{{downloads.MacOSInstaller}} (.pkg)</th>
-        <td colspan="6"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}.pkg">64-bit</a></td>
+        <td colspan="2"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}.pkg">64-bit</a></td>
       </tr>
 
       <tr>
         <th>{{downloads.MacOSBinary}} (.tar.gz)</th>
-        <td colspan="6"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-darwin-x64.tar.gz">64-bit</a></td>
+        <td colspan="2"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-darwin-x64.tar.gz">64-bit</a></td>
       </tr>
       <tr>
         <th>{{downloads.LinuxBinaries}} (x64)</th>
-        <td colspan="6"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-x64.tar.xz">64-bit</a></td>
+        <td colspan="2"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-x64.tar.xz">64-bit</a></td>
       </tr>
       <tr>
         <th>{{downloads.LinuxBinaries}} (ARM)</th>
-        {{#semver-gte version.node "12.0.0"}}
-          <td colspan="3"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-armv7l.tar.xz">ARMv7</a></td>
-          <td colspan="3"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-arm64.tar.xz">ARMv8</a></td>
-        {{else}}
-          <td colspan="2"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-armv6l.tar.xz">ARMv6</a></td>
-          <td colspan="2"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-armv7l.tar.xz">ARMv7</a></td>
-          <td colspan="2"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-arm64.tar.xz">ARMv8</a></td>
-        {{/semver-gte}}
+          <td><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-armv7l.tar.xz">ARMv7</a></td>
+          <td><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-arm64.tar.xz">ARMv8</a></td>
       </tr>
 
       <tr>
         <th>{{downloads.SourceCode}}</th>
-        <td colspan="6">
+        <td colspan="2">
           <a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}.tar.gz">node-{{version.node}}.tar.gz</a>
         </td>
       </tr>

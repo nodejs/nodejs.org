@@ -16,8 +16,7 @@ handling your submission.
 After the initial reply to your report, the security team will endeavor to keep
 you informed of the progress being made towards a fix and full announcement,
 and may ask for additional information or guidance surrounding the reported
-issue. These updates will be sent at least every five days; in practice, this
-is more likely to be every 24-48 hours.
+issue.
 
 ### Node.js Bug Bounty Program
 
@@ -28,8 +27,8 @@ the HackerOne platform. See <https://hackerone.com/nodejs> for further details.
 ## Reporting a Bug in a third party module
 
 Security bugs in third party modules should be reported to their respective
-maintainers and should also be coordinated through the Node Ecosystem Security
-Team via [HackerOne](https://hackerone.com/nodejs-ecosystem).
+maintainers and should also be coordinated through the Node.js Ecosystem
+Security Team via [HackerOne](https://hackerone.com/nodejs-ecosystem).
 
 Details regarding this process can be found in the
 [Security Working Group repository](https://github.com/nodejs/security-wg/blob/master/processes/third_party_vuln_process.md).

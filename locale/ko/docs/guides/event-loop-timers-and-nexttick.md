@@ -803,7 +803,7 @@ wider variety of environments, like browser JS.)*
 이 둘은 혼란스럽지만 이름이 바뀌진 않을 것입니다.
 
 *`setImmediate()`가 예상하기 더 쉬우므로 모든 경우에 `setImmediate()`를 사용하기를
-권장합니다.(이 방법이 브라우저 자바스크립트 등 더 넓은 범위의 환경과 호환될 것입니다.)*
+권장합니다.*
 
 <!--
 ## Why use `process.nextTick()`?

@@ -80,7 +80,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello world\n');
+  res.send('Hello World');
 });
 
 app.listen(PORT, HOST);
@@ -132,7 +132,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello world\n');
+  res.send('Hello World');
 });
 
 app.listen(PORT, HOST);
@@ -155,11 +155,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `10` of `node`
+Here we will use the latest LTS (long term support) version `12` of `node`
 available from the [Docker Hub](https://hub.docker.com/):
 
 ```docker
-FROM node:10
+FROM node:12
 ```
 
 Next we create a directory to hold the application code inside the image, this
@@ -216,7 +216,7 @@ CMD [ "node", "server.js" ]
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:10
+FROM node:12
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -250,10 +250,10 @@ touch Dockerfile
 
 最初にしなければならないことは、どのイメージから構築したいかを定義することです。
 ここでは[Docker Hub](https://hub.docker.com/)から入手できる
-`node` の最新の LTS (long term support) バージョン `10` を使います。
+`node` の最新の LTS (long term support) バージョン `12` を使います。
 
 ```docker
-FROM node:10
+FROM node:12
 ```
 
 次に、イメージ内にアプリケーションコードを入れるディレクトリを作成します。
@@ -311,7 +311,7 @@ CMD [ "node", "server.js" ]
 `Dockerfile` はこのようになっているはずです。
 
 ```docker
-FROM node:10
+FROM node:12
 
 # アプリケーションディレクトリを作成する
 WORKDIR /usr/src/app
@@ -368,7 +368,7 @@ build the Docker image. The `-t` flag lets you tag your image so it's easier to
 find later using the `docker images` command:
 
 ```bash
-docker build -t <your username>/node-web-app .
+docker build . -t <your username>/node-web-app
 ```
 
 Your image will now be listed by Docker:
@@ -378,7 +378,7 @@ $ docker images
 
 # Example
 REPOSITORY                      TAG        ID              CREATED
-node                            8          1934b0b038d1    5 days ago
+node                            12         1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
@@ -390,7 +390,7 @@ node                            8          1934b0b038d1    5 days ago
 後で `docker images` コマンドを使って見つけやすくなります。
 
 ```bash
-docker build -t <your username>/node-web-app .
+docker build . -t <your username>/node-web-app
 ```
 
 あなたのイメージは Docker によって表示されます。
@@ -400,7 +400,7 @@ $ docker images
 
 # 例
 REPOSITORY                      TAG        ID              CREATED
-node                            8          1934b0b038d1    5 days ago
+node                            12         1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 

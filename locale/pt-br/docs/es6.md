@@ -27,12 +27,6 @@ Você pode listar todas as funcionalidades *em progresso* disponíveis em cada v
 node --v8-options | grep "in progress"
 ```
 
-## E sobre a performance de uma funcionalidade em particular?
-
-O time do V8 está constantemente trabalhando para melhorar a performance de novas funcionalidades da linguagem, para eventualmente encontrar uma paridade com a sua contraparte transpilada ou nativa no EcmaScript 5 ou anterior. O progresso atual é registrado no site [six-speed](https://fhinkel.github.io/six-speed), que mostra a performance das funcionalidades do ES2015 e do ESNext comparadas com as suas respectivas contrapartes nativas do ES5.
-
-O trabalho de otimizar as funcionalidades introduzidas com o ES2015 e além são coordenadas via um [plano de performance](https://docs.google.com/document/d/1EA9EbfnydAmmU_lM8R_uEMQ-U_v4l9zulePSBkeYWmY), onde o time do V8 encontra e coordena áreas que necessitam de melhorias, além de criar documentos para atacar esses problemas.
-
 ## Eu tenho a minha infraestrutura configurada para suportar a flag --harmony. Eu devo remove-la?
 
 O comportamento atual da flag `--harmony` é habilitar somente funcionalidades **em homologação**. Além disso, ela agora é um sinônimo da flag `--es_staging`. Como mencionado anteriormente, estas funcionalidades estão completas, mas não foram consideradas estáveis ainda. Se você deseja rodar sua aplicação de forma segura, especialmente em ambientes de produção, considere remover esta flag até que ela seja lançada por padrão no V8 e, consequentemente, no Node.js. Se você deseja a manter habilitada, você deve estar preparado para atualizações futuras do Node.js que podem quebrar o seu código caso o V8 mude a sua semântica para seguir o padrão de maneira mais fiel.

@@ -20,7 +20,7 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hola Món\n');
+  res.end('Hola Món');
 });
 
 server.listen(port, hostname, () => {
@@ -56,13 +56,13 @@ en ment. Això no fa a Node candidat per ser la base d'una llibrería o un frame
 
 Solament perquè Node està dissenyat sense fils, no significa que vostè no pot aprofitar els
 múltiples cores del seu sistema. Processos fills poden ser llençats usant la nostra API
-[`child_*process.fork()`][], la qual està dissenyada per comunicar-se fàcilment amb el procés
+[`child_process.fork()`][], la qual està dissenyada per comunicar-se fàcilment amb el procés
 principal. Construïda sobre la mateixa interfície està el mòdul [`cluster`][], el qual permet
 compartir sockets entre processos per activar el balanceig de càrregues en els seus múltiples cores.
 
 [Blocking vs Non-Blocking]: https://github.com/nodejs/node/blob/master/doc/topics/blocking-vs-non-blocking.md
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[bucle de eventos]: https://github.com/nodejs/node/blob/master/doc/topics/event-loop-timers-and-nexttick.md
+[bucle d'esdeveniments]: https://github.com/nodejs/node/blob/master/doc/topics/event-loop-timers-and-nexttick.md
 [Event Machine]: https://github.com/eventmachine/eventmachine
 [Twisted]: https://twistedmatrix.com/trac/

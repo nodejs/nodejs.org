@@ -21,7 +21,7 @@ Ci sono quattro tipi di coinvolgimenti con il Comitato della Community:
 * Un **Osservatore** è un individuo che ha richiesto o a cui è stato richiesto di assistere ad un incontro del CommComm. È anche il primo step per diventare un Membro.
 * Un **Membro** è un collaboratore con diritti di voto che ha soddisfatto i requisiti di partecipazione ed è stato eletto dalla procedura di votazione del CommComm.
 
-Per la lista attuale dei membri del Comitato della Community, vedere il [README.md] del progetto (https://github.com/nodejs/community-committee).
+Per la lista attuale dei membri del Comitato della Community, vedere il [README.md del progetto](https://github.com/nodejs/community-committee).
 
 ## Contributors and Collaborators (Contributori e Collaboratori)
 
