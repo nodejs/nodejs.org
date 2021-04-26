@@ -82,7 +82,7 @@
       "verify-text": "How to verify"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "Installing Node.js via binary archive"
     },
     "install-on-wsl": {
       "link": "https://docs.microsoft.com/windows/dev-environment/javascript/nodejs-on-wsl",
