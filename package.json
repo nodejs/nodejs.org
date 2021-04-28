@@ -21,7 +21,8 @@
     "test:lint:lockfile": "lockfile-lint --allowed-hosts npm github.com --allowed-schemes https: --empty-hostname false --type npm --path package-lock.json",
     "test:lint": "npm-run-all --parallel test:lint:*",
     "test:html": "node scripts/vnu-jar.js",
-    "test:unit": "tape tests/**/*.test.js | faucet"
+    "test:unit": "tape tests/**/*.test.js | faucet",
+    "prepare": "husky install"
   },
   "repository": "nodejs/nodejs.org",
   "author": "Node.js Website Working Group",
@@ -68,6 +69,7 @@
     "cross-env": "^7.0.3",
     "delay-cli": "^1.1.0",
     "faucet": "0.0.1",
+    "husky": "^6.0.0",
     "linkinator": "^2.13.6",
     "lockfile-lint": "^4.6.2",
     "nock": "^13.0.11",

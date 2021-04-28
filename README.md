@@ -67,10 +67,13 @@ To help with localization, please read the [TRANSLATION](TRANSLATION.md) guide.
 
 ## Test Options
 
-Before submitting, you must pass all the unit tests and syntax checks by running the two commands below:
+Before submitting, you must pass all the unit tests and syntax checks.
 
+The `pre-commit` hook will run the unit tests and syntax checks automatically when you commit your changes.
+
+Also, you can trigger it manually by running the two commands below:
 * `npm-run-all test:lint test:unit` run all the unit test cases in `tests` folder, as well as check syntax with eslint.
-* `npm-run-all --parallel test:lint:*` run all the syntax checks for `js`, `md` and other related files.
+* `npm-run-all --parallel test:lint:*` run all the syntax checks for `js`, `md` and other related files. 
 
 ## Notice
 
