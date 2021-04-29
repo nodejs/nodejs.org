@@ -190,7 +190,7 @@ npm-debug.log
 `docker images`:
 
 ```bash
-docker build -t <your username>/node-web-app .
+docker build . -t <your username>/node-web-app
 ```
 
 Созданный образ теперь будет отображаться в списке всех образов:

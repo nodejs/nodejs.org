@@ -24,7 +24,11 @@ const allDownloads = [
     templateUrl: 'https://nodejs.org/dist/v%version%/node-v%version%.pkg'
   },
   {
-    title: 'macOS 64-bit Binary',
+    title: 'macOS Apple Silicon 64-bit Binary',
+    templateUrl: 'https://nodejs.org/dist/v%version%/node-v%version%-darwin-arm64.tar.gz'
+  },
+  {
+    title: 'macOS Intel 64-bit Binary',
     templateUrl: 'https://nodejs.org/dist/v%version%/node-v%version%-darwin-x64.tar.gz'
   },
   {
@@ -163,6 +167,12 @@ const resolveDownloads = (version) => {
   if (semver.satisfies(version, '>= 14.0.0')) {
     downloads = downloads.filter(ver =>
       ver.title !== 'SmartOS 64-bit Binary'
+    )
+  }
+
+  if (semver.satisfies(version, '< 16.0.0')) {
+    downloads = downloads.filter(ver =>
+      ver.title !== 'macOS Apple Silicon 64-bit Binary'
     )
   }
 
