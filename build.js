@@ -272,7 +272,7 @@ function getSource (callback) {
           lts: latestVersion.lts(versions)
         },
         blacklivesmatter: {
-          visible: true,
+          visible: false,
           text: '#BlackLivesMatter',
           link: '/en/black-lives-matter/'
         },
