@@ -93,7 +93,7 @@ something I'm actually happy with. Today Isaac packaged up npm 1.2.10 into
 [Node.js 0.8.19](http://blog.nodejs.org/2013/02/06/node-v0-8-19-stable/), so if you've installed the latest version of
 Node, you should be ready to use peer dependencies!
 
-As proof, I present you the results of trying to install [`jitsu`](https://npmjs.org/package/jitsu) 0.11.6 with npm
+As proof, I present you the results of trying to install [`jitsu`](https://www.npmjs.com/package/jitsu) 0.11.6 with npm
 1.2.10:
 
 ```
@@ -123,7 +123,7 @@ Now, when installing `chai-as-promised`, the `chai` package will come along with
 another Chai plugin that only works with 0.x versions of Chai, you'll get an error. Nice!
 
 <div class="highlight-box">
-  <strong>UPDATE:</strong> npm versions 1 and 2 will automatically install peerDependencies if they are not explicitly depended upon higher in the dependency tree. For all following versions of npm (starting with npm@3), this will no longer be the case. You will receive a warning that the peerDependency is not installed instead.
+  <strong>UPDATE:</strong> npm versions 1, 2, and 7 will automatically install peerDependencies if they are not explicitly depended upon higher in the dependency tree. For npm versions 3 through 6, you will receive a warning that the peerDependency is not installed instead.
 </div>
 
 One piece of advice: peer dependency requirements, unlike those for regular dependencies, *should be lenient*. You

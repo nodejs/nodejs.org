@@ -11,6 +11,9 @@ modules: "<code>NODE_MODULE_VERSION</code> 是 Node.js ABI (application binary i
 
 #### 在找某個主要版本的最新版嗎？
 
+* [Node.js 13.x](https://nodejs.org/dist/latest-v13.x/)
+* [Node.js 12.x](https://nodejs.org/dist/latest-v12.x/)
+* [Node.js 11.x](https://nodejs.org/dist/latest-v11.x/)
 * [Node.js 10.x](https://nodejs.org/dist/latest-v10.x/)
 * [Node.js 8.x](https://nodejs.org/dist/latest-v8.x/)
 * [Node.js 6.x](https://nodejs.org/dist/latest-v6.x/)

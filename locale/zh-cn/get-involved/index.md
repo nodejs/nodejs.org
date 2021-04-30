@@ -8,7 +8,11 @@ layout: contribute.hbs
 ## 社区讨论
 
 * [GitHub 议题清单](https://github.com/nodejs/node/issues)是讨论 Node.js 核心功能的好地方。
-* 关于 Node.js 开发的实时对话，请使用 [IRC 客户端](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) 或 [freenode 网页聊天室](https://webchat.freenode.net/#node.js)转到 `irc.freenode.net` 中的 `#node.js` 頻道。
+* 想实时聊聊关于 Node.js 开发方面的内容，可以使用以下之一的平台：
+  * 使用 IRC，请使用 [IRC 客户端](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients)，转到 `irc.freenode.net` 中的 `#node.js` 頻道，或者在您的浏览器中使用 [freenode 网页版聊天](https://webchat.freenode.net/#node.js) 直接连接即可。
+  * 使用 Slack，有两种选项：
+    * [Node Slackers](https://www.nodeslackers.com/) 是一个针对 Node.js 开发的社区，一些工作组在那边有相关的讨论频道。
+    * [OpenJSF Slack](https://slack-invite.openjsf.org/) 包含多个 Node.js 频道（带有 `#nodejs-` 前缀的都是与此项目相关），一些工作组在那边也有讨论频道。
 * Node.js 官方的 Twitter 账号：[nodejs](https://twitter.com/nodejs).
 * [Node.js Foundation calendar](https://nodejs.org/calendar) 是有关于所有 Node.js 团队会议的相关日程安排。
 * [Node.js Collection](https://medium.com/the-node-js-collection) 是一堆在媒体上的社区策划内容集合。
@@ -30,3 +34,4 @@ layout: contribute.hbs
 * [日本语用户组](https://nodejs.jp/)
 * [Facebook 上西班牙 Node.js 用户组](https://www.facebook.com/groups/node.es/)
 * [越南语 Node.js 社团](https://www.facebook.com/nodejs.vn/)
+* [乌兹别克斯坦 Node.js 用户组](https://t.me/nodejs_uz)

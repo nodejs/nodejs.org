@@ -1,3 +1,6 @@
+/* eslint-disable no-var */
+// Notice: IE 10 and below is still supported, so disable eslint for the file
+// when checking the "var"
 ;(function () {
   var langPickerTogglerElement = document.querySelector('.lang-picker-toggler')
   var langPickerElement = document.querySelector('.lang-picker')
@@ -180,7 +183,9 @@
   var osMatch = n.platform.match(/(Win|Mac|Linux)/)
   var os = (osMatch && osMatch[1]) || ''
   var arch = n.userAgent.match(/x86_64|Win64|WOW64/) ||
-    n.cpuClass === 'x64' ? 'x64' : 'x86'
+    n.cpuClass === 'x64'
+    ? 'x64'
+    : 'x86'
   var text = 'textContent' in d ? 'textContent' : 'innerText'
   var buttons = d.querySelectorAll('.home-downloadbutton')
   var downloadHead = d.getElementById('home-downloadhead')

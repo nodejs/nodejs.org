@@ -5,6 +5,11 @@
 // BUILD.JS: This file is responsible for building static HTML pages
 
 const fs = require('fs')
+const gracefulFs = require('graceful-fs')
+// This is needed at least on Windows to prevent the `EMFILE: too many open files` error
+// https://github.com/isaacs/node-graceful-fs#global-patching
+gracefulFs.gracefulify(fs)
+
 const path = require('path')
 const Metalsmith = require('metalsmith')
 const collections = require('metalsmith-collections')
@@ -20,7 +25,6 @@ const defaultsDeep = require('lodash.defaultsdeep')
 const autoprefixer = require('autoprefixer')
 const marked = require('marked')
 const postcss = require('postcss')
-const fibers = require('fibers')
 const sass = require('sass')
 const ncp = require('ncp')
 const junk = require('junk')
@@ -209,12 +213,11 @@ function buildCSS () {
 
   const sassOpts = {
     file: src,
-    fiber: fibers,
     outFile: dest,
     outputStyle: process.env.NODE_ENV !== 'development' ? 'compressed' : 'expanded'
   }
 
-  fs.mkdir(path.join(__dirname, 'build/static/css'), { recursive: true }, (err) => {
+  gracefulFs.mkdir(path.join(__dirname, 'build/static/css'), { recursive: true }, (err) => {
     if (err) {
       throw err
     }
@@ -229,7 +232,7 @@ function buildCSS () {
           console.warn(warn.toString())
         })
 
-        fs.writeFile(dest, res.css, (err) => {
+        gracefulFs.writeFile(dest, res.css, (err) => {
           if (err) {
             throw err
           }
@@ -247,7 +250,7 @@ function copyStatic () {
   console.log('[ncp] build/static started')
   const labelForBuild = '[ncp] build/static finished'
   console.time(labelForBuild)
-  fs.mkdir(path.join(__dirname, 'build/static'), { recursive: true }, (err) => {
+  gracefulFs.mkdir(path.join(__dirname, 'build/static'), { recursive: true }, (err) => {
     if (err) {
       throw err
     }
@@ -272,14 +275,14 @@ function getSource (callback) {
           lts: latestVersion.lts(versions)
         },
         blacklivesmatter: {
-          visible: true,
+          visible: false,
           text: '#BlackLivesMatter',
           link: '/en/black-lives-matter/'
         },
         banner: {
-          visible: false,
-          text: 'New security releases are available',
-          link: '/en/blog/vulnerability/september-2020-security-releases/'
+          visible: true,
+          text: 'New security releases now available for 15.x, 14.x, 12.x and 10.x release lines',
+          link: '/en/blog/vulnerability/april-2021-security-releases/'
         }
       }
     }
@@ -300,7 +303,7 @@ function fullBuild (opts) {
     if (err) { throw err }
 
     // Executes the build cycle for every locale.
-    fs.readdir(path.join(__dirname, 'locale'), (e, locales) => {
+    gracefulFs.readdir(path.join(__dirname, 'locale'), (e, locales) => {
       if (e) {
         throw e
       }
