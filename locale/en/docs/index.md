@@ -15,9 +15,9 @@ There are several types of documentation available on this website:
 
 ## API reference documentation
 
-The [API reference documentation](https://nodejs.org/api/) provides detailed information about a function or object in Node.js. This documentation indicates what arguments a method accepts, the return value of that method, and what errors may be related to that method. It also indicates which methods are available for different versions of Node.js.
+The [API reference documentation](https://nodejs.org/api/) provides detailed information about a function or object in Node.js such as: what arguments a method accepts, the return value of that method, and what errors may be related to that method. It also describes the difference in available methods provided by each version  of Node.js
 
-This documentation describes the built-in modules provided by Node.js. It does not document modules provided by the community.
+This documentation describes built-in modules which are provided by Node.js but does not document community-provided ones.
 
 <div class="highlight-box">
 
@@ -42,8 +42,9 @@ This documentation describes the built-in modules provided by Node.js. It does n
 
 ## ES6 features
 
-The [ES6 section](/en/docs/es6/) describes the three ES6 feature groups, and details which features are enabled by default in Node.js, alongside explanatory links. It also shows how to find which version of V8 shipped with a particular Node.js release.
+The [ES6 section](/en/docs/es6/) describes the three ES6 feature groups, and details which features are enabled by default in Node.js, alongside explanatory links. It also shows how to determine the version of  V8 which shipped with a particular Node.js release.
 
 ## Guides
 
 The [Guides section](/en/docs/guides/) has long-form, in-depth articles about Node.js technical features and capabilities.
+eof: index.md
