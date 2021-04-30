@@ -75,7 +75,7 @@ Before submitting, you must pass all the unit tests and syntax checks by running
 ## Notice
 
 * Multiple locales can be built by using comma separated values in the `DEFAULT_LOCALE` variable. i.e: `DEFAULT_LOCALE=en,es,it`.
-* For other 'Serve/Build Options' and 'Test Options', plese see `package.json` in details.
+* For other 'Serve/Build Options' and 'Test Options', please see `package.json` in details.
 
 ## Deployment
 
