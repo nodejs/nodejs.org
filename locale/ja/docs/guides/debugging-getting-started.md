@@ -469,7 +469,7 @@ Node.js は TCP ポートで廃止された V8 デバッグプロトコルで定
 V8 デバッグプロトコルは、もはや保守もドキュメンテーションもされていません。
 
 <!--
-#### [Built-in Debugger](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
+#### [Built-in Debugger](https://nodejs.org/docs/latest-v14.x/api/debugger.html)
 
 Start `node debug script_name.js` to start your script under Node's builtin
 command-line debugger. Your script starts in another Node process started with
@@ -477,7 +477,7 @@ the `--debug-brk` option, and the initial Node process runs the `_debugger.js`
 script and connects to your target.
 
 -->
-### [組み込みデバッガ](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
+### [組み込みデバッガ](https://nodejs.org/docs/latest-v14.x/api/debugger.html)
 
 Node の組み込みコマンドラインデバッガの下でスクリプトを起動するには、
 `node debug script_name.js` を起動します。
