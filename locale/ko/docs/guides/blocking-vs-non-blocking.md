@@ -152,7 +152,7 @@ fs.readFile('/file.md', (err, data) => {
   if (err) throw err;
   console.log(data);
 });
-moreWork(); // moreWork();는 console.log 이전에 실행될 것입니다.
+moreWork(); // 는 console.log 이전에 실행될 것입니다.
 ```
 
 <!--
