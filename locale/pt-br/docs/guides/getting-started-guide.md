@@ -28,5 +28,4 @@ server.listen(port, hostname, () => {
 
 Agora execute seu web server usando o comando `node app.js`. Visite o endereço `http://localhost:3000`, então você verá a mensagem "Olá mundo!".
 
-
 Consulte [Introduction to Node.js](https://nodejs.dev/) para um guia mais claro sobre como começar com Node.js
