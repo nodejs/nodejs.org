@@ -34,7 +34,7 @@
 })()
 
 ;(function () {
-  var scrollToTop = document.getElementById('scroll-to-top');
+  var scrollToTop = document.querySelector('#scroll-to-top');
 
   (window.onscroll = function () {
     window.requestAnimationFrame(function () {
@@ -177,17 +177,17 @@
   }
 })()
 
-;(function (d, n) {
+;(function () {
   'use strict'
 
-  var osMatch = n.platform.match(/(Win|Mac|Linux)/)
+  var osMatch = navigator.platform.match(/(Win|Mac|Linux)/)
   var os = (osMatch && osMatch[1]) || ''
-  var arch = n.userAgent.match(/x86_64|Win64|WOW64/) ||
-    n.cpuClass === 'x64'
+  var arch = navigator.userAgent.match(/x86_64|Win64|WOW64/) ||
+    navigator.cpuClass === 'x64'
     ? 'x64'
     : 'x86'
-  var buttons = d.querySelectorAll('.home-downloadbutton')
-  var downloadHead = d.getElementById('home-downloadhead')
+  var buttons = document.querySelectorAll('.home-downloadbutton')
+  var downloadHead = document.querySelector('#home-downloadhead')
   var dlLocal
 
   function versionIntoHref (nodeList, filename) {
@@ -227,10 +227,10 @@
   }
 
   // Windows button on download page
-  var winButton = d.getElementById('windows-downloadbutton')
+  var winButton = document.querySelector('#windows-downloadbutton')
   if (winButton && os === 'Win') {
-    var winText = winButton.getElementsByTagName('p')[0]
+    var winText = winButton.querySelector('p')
     winButton.href = winButton.href.replace(/x(86|64)/, arch)
     winText.textContent = winText.textContent.replace(/x(86|64)/, arch)
   }
-})(document, navigator)
+})()
