@@ -186,7 +186,6 @@
     n.cpuClass === 'x64'
     ? 'x64'
     : 'x86'
-  var text = 'textContent' in d ? 'textContent' : 'innerText'
   var buttons = d.querySelectorAll('.home-downloadbutton')
   var downloadHead = d.getElementById('home-downloadhead')
   var dlLocal
@@ -214,15 +213,15 @@
     switch (os) {
       case 'Mac':
         versionIntoHref(buttons, 'node-%version%.pkg')
-        downloadHead[text] = dlLocal + ' macOS (x64)'
+        downloadHead.textContent = dlLocal + ' macOS (x64)'
         break
       case 'Win':
         versionIntoHref(buttons, 'node-%version%-' + arch + '.msi')
-        downloadHead[text] = dlLocal + ' Windows (' + arch + ')'
+        downloadHead.textContent = dlLocal + ' Windows (' + arch + ')'
         break
       case 'Linux':
         versionIntoHref(buttons, 'node-%version%-linux-x64.tar.xz')
-        downloadHead[text] = dlLocal + ' Linux (x64)'
+        downloadHead.textContent = dlLocal + ' Linux (x64)'
         break
     }
   }
@@ -232,6 +231,6 @@
   if (winButton && os === 'Win') {
     var winText = winButton.getElementsByTagName('p')[0]
     winButton.href = winButton.href.replace(/x(86|64)/, arch)
-    winText[text] = winText[text].replace(/x(86|64)/, arch)
+    winText.textContent = winText.textContent.replace(/x(86|64)/, arch)
   }
 })(document, navigator)
