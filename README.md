@@ -30,7 +30,7 @@ npm install
 npm start
 ```
 
-This will start the development server on `http://localhost:8080/en/`. This should reload automatically when you make changes to the code, but no code is perfect, so sometimes you may need to restart it. :)
+This will start the development server on `http://localhost:8080/en/`. This page should reload automatically when you make changes to the code, but no code is perfect, so sometimes you may need to restart it. :)
 
 If you want to submit a new feature or a bugfix, the best way is to create the changes in a separate branch, e.g.: `git checkout -b feature/mycoolfeature`. This will make it easier for you to submit a pull request and get your feature merged.
 
