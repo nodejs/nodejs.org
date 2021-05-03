@@ -6,6 +6,10 @@
 
 const fs = require('fs')
 const gracefulFs = require('graceful-fs')
+// This is needed at least on Windows to prevent the `EMFILE: too many open files` error
+// https://github.com/isaacs/node-graceful-fs#global-patching
+gracefulFs.gracefulify(fs)
+
 const path = require('path')
 const Metalsmith = require('metalsmith')
 const collections = require('metalsmith-collections')
@@ -21,7 +25,6 @@ const defaultsDeep = require('lodash.defaultsdeep')
 const autoprefixer = require('autoprefixer')
 const marked = require('marked')
 const postcss = require('postcss')
-const fibers = require('fibers')
 const sass = require('sass')
 const ncp = require('ncp')
 const junk = require('junk')
@@ -32,10 +35,6 @@ const navigation = require('./scripts/plugins/navigation')
 const anchorMarkdownHeadings = require('./scripts/plugins/anchor-markdown-headings')
 const loadVersions = require('./scripts/load-versions')
 const latestVersion = require('./scripts/helpers/latestversion')
-
-// This is needed at least on Windows to prevent the `EMFILE: too many open files` error
-// https://github.com/isaacs/node-graceful-fs#global-patching
-gracefulFs.gracefulify(fs)
 
 // Set the default language, also functions as a fallback for properties which
 // are not defined in the given language.
@@ -214,7 +213,6 @@ function buildCSS () {
 
   const sassOpts = {
     file: src,
-    fiber: fibers,
     outFile: dest,
     outputStyle: process.env.NODE_ENV !== 'development' ? 'compressed' : 'expanded'
   }
