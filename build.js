@@ -29,6 +29,7 @@ const sass = require('sass')
 const ncp = require('ncp')
 const junk = require('junk')
 const semver = require('semver')
+const replace = require('metalsmith-one-replace')
 
 const githubLinks = require('./scripts/plugins/githubLinks')
 const navigation = require('./scripts/plugins/navigation')
@@ -49,6 +50,10 @@ const markedOptions = {
   langPrefix: 'language-',
   renderer
 }
+
+// We are setting the output from `latestVersion` module here for future use.
+// available props `latestVersionInfo` are `current` and `lts`
+let latestVersionInfo = {}
 
 // This function imports a given language file and uses the default language set
 // in DEFAULT_LANG as a fallback to prevent any strings that aren't filled out
@@ -128,6 +133,14 @@ function buildLocale (source, locale, opts) {
         post,
         displaySummary: idx < 10
       })
+    }))
+    .use(replace({
+      actions: [{
+        type: 'var',
+        varValues: {
+          currentVersion: `latest-${latestVersionInfo.lts.nodeMajor}`
+        }
+      }]
     }))
     .use(markdown(markedOptions))
     .use(githubLinks({ locale, site: i18nJSON(locale) }))
@@ -267,13 +280,14 @@ function copyStatic () {
 function getSource (callback) {
   // Loads all node/io.js versions.
   loadVersions((err, versions) => {
+    latestVersionInfo = {
+      current: latestVersion.current(versions),
+      lts: latestVersion.lts(versions)
+    }
     const source = {
       project: {
         versions,
-        latestVersions: {
-          current: latestVersion.current(versions),
-          lts: latestVersion.lts(versions)
-        },
+        latestVersions: latestVersionInfo,
         blacklivesmatter: {
           visible: false,
           text: '#BlackLivesMatter',
