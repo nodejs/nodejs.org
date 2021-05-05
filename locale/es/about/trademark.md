@@ -9,6 +9,6 @@ Las marcas registradas, las marcas de servicio y las marcas gráficas de Node.js
 
 De igual modo, nos gustaría que los miembros de la Comunidad se sientan cómodos difundiendo sobre Node.js y participando en la Comunidad Node.js. Con ese objetivo en mente, hemos tratado de hacer que la política sea tan flexible y fácil de entender como sea legalmente posible.
 
-Por favor lea la [política al completo](/static/documents/trademark-policy.pdf). Si tiene alguna pregunta, no dude en [enviarnos un correo electrónico](mailto:trademark@nodejs.org).
+La Fundación OpenJS tiene una licencia perpetua para utilizar las [marcas Node.js](https://ip-policy.openjsf.org). Para más detalles sobre el uso de la marca Node.js, por favor lea la [política completa](https://trademark-policy.openjsf.org). Si tiene alguna pregunta no dude en [enviarnos un email](mailto:trademark@openjsf.org).
 
-Las pautas para la visualización de la marca Node.js se describen en las [Directrices visuales](/static/documents/foundation-visual-guidelines.pdf).
+Las pautas para la visualización de la marca Node.js se describen en las [Pautas Visuales](/static/documents/foundation-visual-guidelines.pdf).
