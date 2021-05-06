@@ -20,11 +20,13 @@
     }
   })
 
-  langPickerTogglerElement.setAttribute('title', currentLangElement.textContent)
+  if (currentLangElement) {
+    langPickerTogglerElement.setAttribute('title', currentLangElement.textContent)
 
-  // Remove the current selected language item, because we don't need to choose it
-  // any more unless we want to switch to a new language
-  langPickerElement.removeChild(currentLangElement.parentNode)
+    // Remove the current selected language item, because we don't need to choose it
+    // any more unless we want to switch to a new language
+    langPickerElement.removeChild(currentLangElement.parentNode)
+  }
 
   langPickerTogglerElement.addEventListener('click', function () {
     langPickerElement.classList.toggle('hidden')
