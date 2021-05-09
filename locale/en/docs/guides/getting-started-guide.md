@@ -28,5 +28,5 @@ server.listen(port, hostname, () => {
 Now, run your web server using `node app.js`. Visit `http://localhost:3000` and
 you will see a message saying "Hello World".
 
-Refer to the [Introduction to Node.js](https://nodejs.dev/) for a more
+Refer to the [Introduction to Node.js](https://nodejs.dev/learn) for a more
 comprehensive guide to getting started with Node.js.
