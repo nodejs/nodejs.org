@@ -83,6 +83,9 @@
     },
     "install-on-linux": {
       "text": "Installing Node.js via binary archive"
+    },
+    "install-on-wsl": {
+      "text": "Install on Windows Subsystem for Linux (WSL)"
     }
   },
   "docs": {
