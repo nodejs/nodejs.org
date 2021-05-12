@@ -280,7 +280,7 @@ function getSource (callback) {
           link: '/en/black-lives-matter/'
         },
         banner: {
-          visible: true,
+          visible: false,
           text: 'New security releases now available for 15.x, 14.x, 12.x and 10.x release lines',
           link: '/en/blog/vulnerability/april-2021-security-releases/'
         }
