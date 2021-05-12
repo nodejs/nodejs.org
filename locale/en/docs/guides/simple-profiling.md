@@ -6,8 +6,8 @@ layout: docs.hbs
 # Easy profiling for Node.js Applications
 
 There are many third party tools available for profiling Node.js applications
-but, in many cases, the easiest option is to use the Node.js built in profiler.
-The built in profiler uses the [profiler inside V8][] which samples the stack at
+but, in many cases, the easiest option is to use the Node.js built-in profiler.
+The built-in profiler uses the [profiler inside V8][] which samples the stack at
 regular intervals during program execution. It records the results of these
 samples, along with important optimization events such as jit compiles, as a
 series of ticks:
@@ -80,7 +80,7 @@ should not be trying to design your own cryptographic authentication mechanisms
 in general. It is much better to use existing, proven authentication solutions.*
 
 Now assume that we've deployed our application and users are complaining about
-high latency on requests. We can easily run the app with the built in profiler:
+high latency on requests. We can easily run the app with the built-in profiler:
 
 ```
 NODE_ENV=production node --prof app.js
@@ -124,7 +124,7 @@ Percentage of the requests served within a certain time (ms)
 
 From this output, we see that we're only managing to serve about 5 requests per
 second and that the average request takes just under 4 seconds round trip. In a
-real world example, we could be doing lots of work in many functions on behalf
+real-world example, we could be doing lots of work in many functions on behalf
 of a user request but even in our simple example, time could be lost compiling
 regular expressions, generating random salts, generating unique hashes from user
 passwords, or inside the Express framework itself.
@@ -207,7 +207,7 @@ accounts not only for the 51.8% from above but also for all CPU time in the top
 3 most sampled functions since the calls to `_sha1_block_data_order` and
 `_malloc_zone_malloc` were made on behalf of the pbkdf2 function.
 
-At this point, it is very clear that the password based hash generation should
+At this point, it is very clear that the password-based hash generation should
 be the target of our optimization. Thankfully, you've fully internalized the
 [benefits of asynchronous programming][] and you realize that the work to
 generate a hash from the user's password is being done in a synchronous way and
@@ -276,5 +276,8 @@ Hopefully, through the performance investigation of this (admittedly contrived)
 example, you've seen how the V8 tick processor can help you gain a better
 understanding of the performance of your Node.js applications.
 
+You may also find [how to create a flame graph][diagnostics flamegraph] helpful.
+
 [profiler inside V8]: https://v8.dev/docs/profile
 [benefits of asynchronous programming]: https://nodesource.com/blog/why-asynchronous
+[diagnostics flamegraph]: ../diagnostics-flamegraph/

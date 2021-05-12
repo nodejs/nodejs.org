@@ -55,6 +55,7 @@ layout: contribute.hbs
 * [Japanese user group](https://nodejs.jp/)
 * [Spanish language Facebook group for Node.js](https://www.facebook.com/groups/node.es/)
 * [Vietnamese Node.js community](https://www.facebook.com/nodejs.vn/)
+* [Uzbekistan group for Node.js](https://t.me/nodejs_uz)
 
 -->
 ## インターナショナルコミュニティサイトとプロジェクト
@@ -65,3 +66,4 @@ layout: contribute.hbs
 * [日本のユーザグループ](https://nodejs.jp/)
 * [Node.js のスペイン語 Facebook グループ](https://www.facebook.com/groups/node.es/)
 * [ベトナム Node.js コミュニティ](https://www.facebook.com/nodejs.vn/)
+* [Uzbekistan group for Node.js](https://t.me/nodejs_uz)

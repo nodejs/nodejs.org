@@ -57,7 +57,7 @@ relatively painless by putting handy properties onto the `request` object.
 const { method, url } = request;
 ```
 
-> **Note:** The `request` object is an instance of [`IncomingMessage`][].
+> The `request` object is an instance of [`IncomingMessage`][].
 
 The `method` here will always be a normal HTTP method/verb. The `url` is the
 full URL without the server, protocol or port. For a typical URL, this means
@@ -102,7 +102,7 @@ request.on('data', (chunk) => {
 });
 ```
 
-> **Note:** This may seem a tad tedious, and in many cases, it is. Luckily,
+> This may seem a tad tedious, and in many cases, it is. Luckily,
 > there are modules like [`concat-stream`][] and [`body`][] on [`npm`][] which can
 > help hide away some of this logic. It's important to have a good understanding
 > of what's going on before going down that road, and that's why you're here!
@@ -230,7 +230,7 @@ last bit of data on the stream, so we can simplify the example above as follows.
 response.end('<html><body><h1>Hello, World!</h1></body></html>');
 ```
 
-> **Note:** It's important to set the status and headers *before* you start
+> It's important to set the status and headers *before* you start
 > writing chunks of data to the body. This makes sense, since headers come before
 > the body in HTTP responses.
 
@@ -330,7 +330,7 @@ http.createServer((request, response) => {
 }).listen(8080);
 ```
 
-> **Note:** By checking the URL in this way, we're doing a form of "routing".
+> By checking the URL in this way, we're doing a form of "routing".
 > Other forms of routing can be as simple as `switch` statements or as complex as
 > whole frameworks like [`express`][]. If you're looking for something that does
 > routing and nothing else, try [`router`][].
