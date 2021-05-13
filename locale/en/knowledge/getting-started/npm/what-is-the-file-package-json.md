@@ -11,7 +11,7 @@ layout: knowledge-post.hbs
 
 All npm packages contain a file, usually in the project root, called `package.json` - this file holds various metadata relevant to the project. This file is used to give information to `npm` that allows it to identify the project as well as handle the project's dependencies. It can also contain other metadata such as a project description, the version of the project in a particular distribution, license information, even configuration data - all of which can be vital to both `npm` and to the end users of the package. The `package.json` file is normally located at the root directory of a Node.js project.
 
-Node.js itself is only aware of two fields in the `package.json`:
+Here is a minimal `package.json`:
 
 ```json
 {
