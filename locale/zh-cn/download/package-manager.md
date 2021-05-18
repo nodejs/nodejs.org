@@ -178,35 +178,35 @@ nvm uninstall 8
 ## nvs
 
 #### Windows
-The `nvs` version manager is cross-platform and can be used on Windows, macOS, and Unix-like systems
+`nvs`版本管理器是一个跨平台，可用于 Windows、macOS 以及形如 Unix 的操作系统。
 
-To install `nvs` on Windows go to the [release page](https://github.com/jasongin/nvs/releases) here and download the MSI installer file of the latest release.
+在 Windows 上安装 `nvs`，请到此 [发布页](https://github.com/jasongin/nvs/releases) 下载最新发布的 MSI 安装源。
 
-You can also use `chocolatey` to install it:
+你也可以使用 `chocolatey` 进行安装：
 
 ```bash
 choco install nvs
 ```
 
-#### macOS,UnixLike
-You can find the documentation regarding the instaltion steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
+#### macOS，UnixLike
+你可以在 [此处](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux) 找到关于在 macOS / 形如 Unix 操作系统的安装步骤文档。
 
-#### Usage
-After this you can use `nvs` to switch between different versions of node.
+#### 使用方法
+安装完成后，你可以使用 `nvs` 在不同版本的 node 中来回切换。
 
-To add the latest version of node:
+添加最新版本的 node：
 
 ```bash
 nvs add latest
 ```
 
-Or to add the latest LTS version of node:
+添加最新 LTS 版本的 node：
 
 ```bash
 nvs add lts
 ```
 
-Then run the `nvs use` command to add a version of node to your `PATH` for the current shell:
+然后运行 `nvs use` ，为当前脚本的 `PATH` 路径下添加一个 node 版本：
 
 ```bash
 $ nvs use lts
@@ -214,7 +214,7 @@ PATH -= %LOCALAPPDATA%\nvs\default
 PATH += %LOCALAPPDATA%\nvs\node\14.17.0\x64
 ```
 
-To add it to `PATH` permanently, use `nvs link`:
+如果需要永久在 `PATH` 里添加，使用 `nvs link`：
 
 ```bash
 nvs link lts
