@@ -137,7 +137,7 @@ choco install nvs
 ```
 
 #### macOS,UnixLike
-You can find the documentation regarding the installtion steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
+You can find the documentation regarding the installation steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
 
 #### Usage
 After this you can use `nvs` to switch between different versions of node.
