@@ -19,6 +19,7 @@ title: 通过包管理器安装 Node.js
 * [IBM i](#ibm-i)
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
+* [nvs](#nvs)
 * [OpenBSD](#openbsd)
 * [openSUSE 和 SLE](#opensuse-and-sle)
 * [macOS](#macos)
@@ -172,6 +173,51 @@ nvm use 8
 
 ```bash
 nvm uninstall 8
+```
+
+## nvs
+
+#### Windows
+`nvs`版本管理器是一个跨平台，可用于 Windows、macOS 以及形如 Unix 的操作系统。
+
+在 Windows 上安装 `nvs`，请到此 [发布页](https://github.com/jasongin/nvs/releases) 下载最新发布的 MSI 安装源。
+
+你也可以使用 `chocolatey` 进行安装：
+
+```bash
+choco install nvs
+```
+
+#### macOS，UnixLike
+你可以在 [此处](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux) 找到关于在 macOS / 形如 Unix 操作系统的安装步骤文档。
+
+#### 使用方法
+安装完成后，你可以使用 `nvs` 在不同版本的 node 中来回切换。
+
+添加最新版本的 node：
+
+```bash
+nvs add latest
+```
+
+添加最新 LTS 版本的 node：
+
+```bash
+nvs add lts
+```
+
+然后运行 `nvs use` ，为当前脚本的 `PATH` 路径下添加一个 node 版本：
+
+```bash
+$ nvs use lts
+PATH -= %LOCALAPPDATA%\nvs\default
+PATH += %LOCALAPPDATA%\nvs\node\14.17.0\x64
+```
+
+如果需要永久在 `PATH` 里添加，使用 `nvs link`：
+
+```bash
+nvs link lts
 ```
 
 ## OpenBSD
