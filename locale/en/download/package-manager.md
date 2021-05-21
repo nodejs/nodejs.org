@@ -301,17 +301,20 @@ pkg_add node
 
 Node.js is available in the main repositories under the following packages:
 
-* **openSUSE Leap 42.2**: `nodejs4`
-* **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
-* **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
-* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`
-  (The "Web and Scripting Module" must be [added before installing](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).)
+* **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14` 
+* **openSUSE Tumbleweed**: `nodejs16`
+* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, and `nodejs14`
+  (The "Web and Scripting Module" must be [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
+* **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, and `nodejs14`
+  (The "Web and Scripting Module" must be [enabled](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module).)
 
-For example, to install Node.js 4.x on openSUSE Leap 42.2, run the following as root:
+For example, to install Node.js 14.x on openSUSE Leap 15.2, run the following as root:
 
 ```bash
-zypper install nodejs4
+zypper install nodejs14
 ```
+
+Different major versions of Node can be installed and used concurrently.
 
 ## SmartOS and illumos
 
