@@ -76,7 +76,7 @@
     "remark-frontmatter": "^3.0.0",
     "remark-gfm": "^1.0.0",
     "remark-preset-lint-node": "^2.2.0",
-    "st": "^2.0.0",
+    "st": "^3.0.0",
     "standard": "^16.0.3",
     "stylelint": "^13.13.1",
     "stylelint-config-twbs-bootstrap": "^2.2.0",
