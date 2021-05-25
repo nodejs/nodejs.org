@@ -6,7 +6,7 @@ const fs = require('fs')
 const nodeVersionData = require('node-version-data')
 const path = require('path')
 
-module.exports = nodeVersionData
+module.exports = { nodeVersionData }
 
 if (require.main === module) {
   nodeVersionData((err, versions) => {
