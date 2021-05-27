@@ -280,9 +280,9 @@ function getSource (callback) {
           link: '/en/black-lives-matter/'
         },
         banner: {
-          visible: false,
-          text: 'New security releases now available for 15.x, 14.x, 12.x and 10.x release lines',
-          link: '/en/blog/vulnerability/april-2021-security-releases/'
+          visible: true,
+          text: 'Join us at OpenJS World, a free virtual event on June 2-3, 2021',
+          link: 'https://openjs-world.com'
         }
       }
     }
