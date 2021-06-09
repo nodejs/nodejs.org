@@ -19,7 +19,7 @@ const discoverPartials = require('metalsmith-discover-partials')
 const layouts = require('metalsmith-layouts')
 const markdown = require('metalsmith-markdown')
 const prism = require('metalsmith-prism')
-const permalinks = require('metalsmith-permalinks')
+const permalinks = require('@metalsmith/permalinks')
 const pagination = require('metalsmith-yearly-pagination')
 const defaultsDeep = require('lodash.defaultsdeep')
 const autoprefixer = require('autoprefixer')
@@ -280,9 +280,9 @@ function getSource (callback) {
           link: '/en/black-lives-matter/'
         },
         banner: {
-          visible: true,
-          text: 'New security releases now available for 15.x, 14.x, 12.x and 10.x release lines',
-          link: '/en/blog/vulnerability/april-2021-security-releases/'
+          visible: false,
+          text: 'Join us at OpenJS World, a free virtual event on June 2-3, 2021',
+          link: 'https://openjs-world.com'
         }
       }
     }
