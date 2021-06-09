@@ -182,20 +182,15 @@
 ;(function () {
   'use strict'
 
-  var buttons = document.querySelectorAll('.home-downloadbutton')
-  var downloadHead = document.querySelector('#home-downloadhead')
-
-  if (!downloadHead || !buttons) {
-    return
-  }
-
   var osMatch = navigator.platform.match(/(Win|Mac|Linux)/)
   var os = (osMatch && osMatch[1]) || ''
   var arch = navigator.userAgent.match(/x86_64|Win64|WOW64/) ||
     navigator.cpuClass === 'x64'
     ? 'x64'
     : 'x86'
-  var dlLocal = downloadHead.getAttribute('data-dl-local')
+  var buttons = document.querySelectorAll('.home-downloadbutton')
+  var downloadHead = document.querySelector('#home-downloadhead')
+  var dlLocal
 
   function versionIntoHref (nodeList, filename) {
     var linkEls = Array.prototype.slice.call(nodeList)
@@ -215,19 +210,22 @@
     }
   }
 
-  switch (os) {
-    case 'Mac':
-      versionIntoHref(buttons, 'node-%version%.pkg')
-      downloadHead.textContent = dlLocal + ' macOS (x64)'
-      break
-    case 'Win':
-      versionIntoHref(buttons, 'node-%version%-' + arch + '.msi')
-      downloadHead.textContent = dlLocal + ' Windows (' + arch + ')'
-      break
-    case 'Linux':
-      versionIntoHref(buttons, 'node-%version%-linux-x64.tar.xz')
-      downloadHead.textContent = dlLocal + ' Linux (x64)'
-      break
+  if (downloadHead && buttons) {
+    dlLocal = downloadHead.getAttribute('data-dl-local')
+    switch (os) {
+      case 'Mac':
+        versionIntoHref(buttons, 'node-%version%.pkg')
+        downloadHead.textContent = dlLocal + ' macOS (x64)'
+        break
+      case 'Win':
+        versionIntoHref(buttons, 'node-%version%-' + arch + '.msi')
+        downloadHead.textContent = dlLocal + ' Windows (' + arch + ')'
+        break
+      case 'Linux':
+        versionIntoHref(buttons, 'node-%version%-linux-x64.tar.xz')
+        downloadHead.textContent = dlLocal + ' Linux (x64)'
+        break
+    }
   }
 
   // Windows button on download page
