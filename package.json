@@ -63,7 +63,7 @@
     "strftime": "^0.10.0"
   },
   "devDependencies": {
-    "chokidar": "^3.5.1",
+    "chokidar": "^3.5.2",
     "cross-env": "^7.0.3",
     "delay-cli": "^1.1.0",
     "faucet": "0.0.1",
