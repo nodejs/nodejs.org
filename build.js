@@ -19,7 +19,7 @@ const discoverPartials = require('metalsmith-discover-partials')
 const layouts = require('metalsmith-layouts')
 const markdown = require('metalsmith-markdown')
 const prism = require('metalsmith-prism')
-const permalinks = require('metalsmith-permalinks')
+const permalinks = require('@metalsmith/permalinks')
 const pagination = require('metalsmith-yearly-pagination')
 const defaultsDeep = require('lodash.defaultsdeep')
 const autoprefixer = require('autoprefixer')
@@ -281,8 +281,8 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'Join us at OpenJS World, a free virtual event on June 2-3, 2021',
-          link: 'https://openjs-world.com'
+          text: 'New security releases to be made available July 1st, 2021',
+          link: '/en/blog/vulnerability/july-2021-security-releases/'
         }
       }
     }
