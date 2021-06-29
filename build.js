@@ -280,9 +280,9 @@ function getSource (callback) {
           link: '/en/black-lives-matter/'
         },
         banner: {
-          visible: false,
-          text: 'Join us at OpenJS World, a free virtual event on June 2-3, 2021',
-          link: 'https://openjs-world.com'
+          visible: true,
+          text: 'New security releases to be made available July 1st, 2021',
+          link: '/en/blog/vulnerability/july-2021-security-releases/'
         }
       }
     }
