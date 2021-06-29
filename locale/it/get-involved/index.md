@@ -8,7 +8,6 @@ layout: contribute.hbs
 ## Comunità
 
 * La [lista delle issues di GitHub](https://github.com/nodejs/node/issues) è il luogo in cui discutere delle funzionalità del core di Node.js.
-* La chat relativa allo sviluppo di Node.js è disponibile su `irc.freenode.net` nel canale `#node.js` usando il [client IRC](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) o connettendosi tramite web browser usando [freenode's WebChat](https://webchat.freenode.net/#node.js).
 * L'account Twitter ufficiale di Node.js é [nodejs](https://twitter.com/nodejs).
 * Il [calendario della Node.js Foundation](https://nodejs.org/calendar) con tutti i meeting pubblici del team.
 * [Node.js Collection](https://medium.com/the-node-js-collection) é una collezione di contenuti curati dalla comunità e presenti su Medium.
