@@ -281,7 +281,7 @@ function getSource (callback) {
         },
         banner: {
           visible: true,
-          text: 'New security releases to be made available July 1st, 2021',
+          text: 'New security releases now available for 16.x, 14.x, and 12.x release lines',
           link: '/en/blog/vulnerability/july-2021-security-releases/'
         }
       }
