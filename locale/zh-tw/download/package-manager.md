@@ -158,7 +158,7 @@ nvs add latest
 nvs add lts
 ```
 
-然後執行 `nvs use` ，為當前腳本的 `PATH` 路徑下新增一個 node 版本：
+然後執行 `nvs use` ，為目前 shell 的 `PATH` 路徑下新增一個 node 版本：
 
 ```bash
 $ nvs use lts
