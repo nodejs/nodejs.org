@@ -141,7 +141,7 @@ choco install nvs
 ```
 
 #### macOS，UnixLike
-你可以在 [此處](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux) 找到關於在 macOS / 形如 Unix-like 作業系統的安裝步驟文件。
+你可以在 [此處](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux) 找到關於在 macOS / Unix-like 作業系統的安裝步驟文件。
 
 #### 使用方法
 安裝完成後，你可以使用 `nvs` 在不同版本的 node 中來回切換。
