@@ -287,12 +287,7 @@ function getSource (callback) {
     const source = {
       project: {
         versions,
-        latestVersions: latestVersionInfo,
-        blacklivesmatter: {
-          visible: false,
-          text: '#BlackLivesMatter',
-          link: '/en/black-lives-matter/'
-        }
+        latestVersions: latestVersionInfo
       }
     }
     if (semver.gt(source.project.latestVersions.lts.node, source.project.latestVersions.current.node)) {
