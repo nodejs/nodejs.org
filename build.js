@@ -37,7 +37,7 @@ const anchorMarkdownHeadings = require('./scripts/plugins/anchor-markdown-headin
 const loadVersions = require('./scripts/load-versions')
 const latestVersion = require('./scripts/helpers/latestversion')
 
-const banner = require('./source/banner.json')
+const banner = require('./locale/en/site.json').banner
 
 // Set the default language, also functions as a fallback for properties which
 // are not defined in the given language.
