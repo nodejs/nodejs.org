@@ -37,7 +37,7 @@ const anchorMarkdownHeadings = require('./scripts/plugins/anchor-markdown-headin
 const loadVersions = require('./scripts/load-versions')
 const latestVersion = require('./scripts/helpers/latestversion')
 
-const banner = require('./source/banner.json');
+const banner = require('./source/banner.json')
 
 // Set the default language, also functions as a fallback for properties which
 // are not defined in the given language.
@@ -295,7 +295,7 @@ function getSource (callback) {
           text: '#BlackLivesMatter',
           link: '/en/black-lives-matter/'
         },
-        banner,
+        banner
       }
     }
     if (semver.gt(source.project.latestVersions.lts.node, source.project.latestVersions.current.node)) {
