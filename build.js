@@ -292,8 +292,7 @@ function getSource (callback) {
           visible: false,
           text: '#BlackLivesMatter',
           link: '/en/black-lives-matter/'
-        },
-        banner: i18nJSON().banner
+        }
       }
     }
     if (semver.gt(source.project.latestVersions.lts.node, source.project.latestVersions.current.node)) {
