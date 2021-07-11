@@ -17,4 +17,4 @@ labels:
   version-schedule-prompt-link-text: LTS 日程。
 ---
 
-Node.js® 是一个基于 [Chrome V8 引擎](https://v8.dev/) 的 JavaScript 运行时。
+Node.js® 是一个基于 [Chrome V8 引擎](https://v8.dev/) 的 JavaScript 运行时环境。

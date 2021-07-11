@@ -72,6 +72,10 @@ Before submitting, you must pass all the unit tests and syntax checks by running
 * `npm-run-all test:lint test:unit` run all the unit test cases in `tests` folder, as well as check syntax with eslint.
 * `npm-run-all --parallel test:lint:*` run all the syntax checks for `js`, `md` and other related files.
 
+There're also two syntax check commands for you:
+* `npm run test:lint:js -- --fix` try to automatically fix some formations for all the js files.
+* `npm run test:lint:stylelint -- --fix` try to automatically fix some formations for all the css/scss files.
+
 ## Notice
 
 * Multiple locales can be built by using comma-separated values in the `DEFAULT_LOCALE` variable: `DEFAULT_LOCALE=en,es,it`.
