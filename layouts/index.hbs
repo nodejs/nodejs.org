@@ -18,7 +18,7 @@
           </div>
         {{/if}}
 
-        {{#if site.banners.index.visible}}
+        {{#if ( betweenDate site.banners.index.startDate site.banners.index.endDate ) }}
           <p class="home-version home-version-banner">
             <a href="{{ site.banners.index.link }}">{{ site.banners.index.text }}</a>
           </p>
