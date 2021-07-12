@@ -157,5 +157,18 @@
     "pages": {
       "changelog": "Changelog"
     }
+  },
+  "banners": {
+    "index": {
+      "startDate": "2021-07-01T16:00:00.000Z",
+      "endDate": "2021-07-30T16:00:00.000Z",
+      "text": "New security releases now available for 16.x, 14.x, and 12.x release lines",
+      "link": "blog/vulnerability/july-2021-security-releases/"
+    },
+    "blacklivesmatter": {
+      "visible": false,
+      "text": "#BlackLivesMatter",
+      "link": "black-lives-matter/"
+    }
   }
 }

@@ -28,10 +28,20 @@
     langPickerElement.removeChild(currentLangElement.parentNode)
   }
 
-  langPickerTogglerElement.addEventListener('click', function () {
+  const toggleFunction = function () {
     langPickerElement.classList.toggle('hidden')
     const isAriaExpanded = langPickerTogglerElement.getAttribute('aria-expanded') === 'true'
     langPickerTogglerElement.setAttribute('aria-expanded', !isAriaExpanded)
+  }
+
+  langPickerTogglerElement.addEventListener('click', function () {
+    toggleFunction()
+  })
+
+  document.body.addEventListener('click', function (event) {
+    if (!langPickerElement.classList.contains('hidden') && !langPickerTogglerElement.contains(event.target)) {
+      toggleFunction()
+    }
   })
 })()
 
