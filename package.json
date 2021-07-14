@@ -76,7 +76,7 @@
     "remark-cli": "^9.0.0",
     "remark-frontmatter": "^3.0.0",
     "remark-gfm": "^1.0.0",
-    "remark-preset-lint-node": "^2.3.0",
+    "remark-preset-lint-node": "^2.4.1",
     "st": "^3.0.0",
     "standard": "^16.0.3",
     "stylelint": "^13.13.1",
