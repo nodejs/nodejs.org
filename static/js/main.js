@@ -246,3 +246,17 @@
     winText.textContent = winText.textContent.replace(/x(86|64)/, arch)
   }
 })()
+
+;(function () {
+  // This function is used to replace the anchor
+  // link of Edit on GitHub
+
+  var editOnGitHubElement = document.getElementById('editOnGitHubLink')
+  var editOnGitHubUrlElement = document.getElementById('editOnGitHubUrl')
+
+  if (editOnGitHubUrlElement) {
+    editOnGitHubElement.setAttribute('href', editOnGitHubUrlElement.value)
+  } else {
+    editOnGitHubElement.parentNode.parentNode.removeChild(editOnGitHubElement.parentNode)
+  }
+})()
