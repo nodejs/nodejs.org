@@ -2,10 +2,10 @@
 
 'use strict'
 
-const childProcess = require('child_process')
+const { execFile, spawn } = require('child_process')
 const vnu = require('vnu-jar')
 
-childProcess.exec('java -version', (error, stdout, stderr) => {
+execFile('java', ['-version'], (error, stdout, stderr) => {
   if (error) {
     console.error('Skipping vnu-jar test; Java is missing.')
     return
@@ -43,7 +43,7 @@ childProcess.exec('java -version', (error, stdout, stderr) => {
     args.splice(0, 0, '-Xss512k')
   }
 
-  return childProcess.spawn('java', args, {
+  return spawn('java', args, {
     shell: true,
     stdio: 'inherit'
   })
