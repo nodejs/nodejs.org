@@ -50,7 +50,7 @@ Las reuniones regulares de CommComm se llevan a cabo cada dos meses en una video
 
 Los meeting y la agenda de las reuniones se publican antes de que comience la reunión en los [issues de GitHub](https://github.com/nodejs/community-committee/issues) de la organización. También puede encontrar reuniones programadas regularmente en el [Calendario de Node.js](https://nodejs.org/calendar). Para seguir las transmisiones en vivo de la reunión de Node.js en YouTube, suscríbase al [canal de YouTube](https://www.youtube.com/channel/UCQPYJluYC_sn_Qz_XE-YbTQ) de la Fundación Node.js. ¡Asegúrese de hacer clic en la campana para recibir notificaciones de nuevos videos!
 
-## Proceso de Búsqueda de Consenso
+## Proceso de búsqueda de consenso
 
 El CommComm sigue un [modelo de toma de decisiones](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making) para la búsqueda de consenso.
 
