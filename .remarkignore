@@ -1,0 +1,4 @@
+# We don't need to check all the md files under 'test/scripts'
+# Because they are for test ONLY
+
+tests/scripts/

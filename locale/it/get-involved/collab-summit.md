@@ -26,5 +26,5 @@ immergersi nelle sessioni di lavoro successivamente.
 Ci piacerebbe vederti al Summit! Dai un'occhiata al
 [repository del Summit](https://github.com/nodejs/summit)
 per vedere gli eventi in arrivo e quelli passati e guarda anche le
-[issue archiviate]((https://github.com/nodejs/summit/issues)) che mostrano di cosa
+[issue archiviate](https://github.com/nodejs/summit/issues) che mostrano di cosa
 parlano i gruppi di lavoro individuali e i comitati.
