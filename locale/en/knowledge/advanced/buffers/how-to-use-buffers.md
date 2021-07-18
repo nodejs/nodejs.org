@@ -156,7 +156,7 @@ In this example, the contents written to the buffer only consist of three groups
 
 #### buffer.copy(target, targetStart=0, sourceStart=0, sourceEnd=buffer.length)
 
-`buffer.copy` allows one to copy the contents of one buffer onto another. The first argument is the target buffer on which to copy the contents of `buffer`, and the rest of the arguments allow for copying only a subsection of the source buffer to somewhere in the middle of the target buffer. For example:
+`buffer.copy` allows one to copy the contents of one buffer onto another. The first argument is the target buffer on which to copy the contents of `buffer` into, and the rest of the arguments allow for copying only a subsection of the source buffer to somewhere in the middle of the target buffer. For example:
 
 ```
 > var frosty = Buffer.alloc(24)
