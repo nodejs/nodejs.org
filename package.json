@@ -80,7 +80,7 @@
     "st": "^3.0.0",
     "standard": "^16.0.3",
     "stylelint": "^13.13.1",
-    "stylelint-config-twbs-bootstrap": "^2.2.1",
+    "stylelint-config-twbs-bootstrap": "^2.2.3",
     "tape": "^5.2.2",
     "vnu-jar": "21.6.11"
   }
