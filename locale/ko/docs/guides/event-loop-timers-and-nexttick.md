@@ -213,7 +213,7 @@ function someAsyncOperation(callback) {
 
 const timeoutScheduled = Date.now();
 
-// write timerCallback 
+// write timerCallback
 const timerCallback = () => {
   const delay = Date.now() - timeoutScheduled;
 
@@ -232,7 +232,7 @@ const someAsyncOpertaionCallback = () => {
 setTimeout(timerCallback, 100);
 
 // do someAsyncOperation which takes 95 ms to complete
-someAsyncOperation(someAsyncOpertaionCallback); 
+someAsyncOperation(someAsyncOpertaionCallback);
 ```
 
 When the event loop enters the **poll** phase, it has an empty queue
@@ -264,7 +264,7 @@ function someAsyncOperation(callback) {
 
 const timeoutScheduled = Date.now();
 
-// write timerCallback 
+// write timerCallback
 const timerCallback = () => {
   const delay = Date.now() - timeoutScheduled;
 
@@ -283,7 +283,7 @@ const someAsyncOpertaionCallback = () => {
 setTimeout(timerCallback, 100);
 
 // 완료하는데 95ms가 걸리는 someAsyncOperation를 실행합니다.
-someAsyncOperation(someAsyncOpertaionCallback); 
+someAsyncOperation(someAsyncOpertaionCallback);
 ```
 
 이벤트 루프가 **poll** 단계에 진입했을 때 빈 큐를 가지고 있으므로(`fs.readFile()`이
