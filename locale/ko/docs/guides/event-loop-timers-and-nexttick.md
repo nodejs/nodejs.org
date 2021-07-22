@@ -213,7 +213,7 @@ function someAsyncOperation(callback) {
 
 const timeoutScheduled = Date.now();
 
-// write timerCallback 
+// write timerCallback
 const timerCallback = () => {
   const delay = Date.now() - timeoutScheduled;
 
@@ -223,7 +223,7 @@ const timerCallback = () => {
 const someAsyncOpertaionCallback = () => {
   const startCallback = Date.now();
 
-  // do something that will take 10ms..
+  // do something that will take 10ms...
   while (Date.now() - startCallback < 10) {
     // do nothing
   }
@@ -232,7 +232,7 @@ const someAsyncOpertaionCallback = () => {
 setTimeout(timerCallback, 100);
 
 // do someAsyncOperation which takes 95 ms to complete
-someAsyncOperation(someAsyncOpertaionCallback); 
+someAsyncOperation(someAsyncOpertaionCallback);
 ```
 
 When the event loop enters the **poll** phase, it has an empty queue
@@ -264,13 +264,14 @@ function someAsyncOperation(callback) {
 
 const timeoutScheduled = Date.now();
 
+// write timerCallback
 const timerCallback = () => {
   const delay = Date.now() - timeoutScheduled;
 
   console.log(`${delay}ms have passed since I was scheduled`);
 };
 
-const someAsyncCallback = () => {
+const someAsyncOpertaionCallback = () => {
   const startCallback = Date.now();
 
   // 10ms가 걸릴 어떤 작업을 합니다.
@@ -279,11 +280,10 @@ const someAsyncCallback = () => {
   }
 }
 
-setTimeout(timerCallback, 100); // TimeOut Event!!!!😃
+setTimeout(timerCallback, 100);
 
 // 완료하는데 95ms가 걸리는 someAsyncOperation를 실행합니다.
-
-someAsyncOperation(someAsyncCallback);
+someAsyncOperation(someAsyncOpertaionCallback);
 ```
 
 이벤트 루프가 **poll** 단계에 진입했을 때 빈 큐를 가지고 있으므로(`fs.readFile()`이
