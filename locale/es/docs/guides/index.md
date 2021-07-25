@@ -1,32 +1,36 @@
 ---
-title: Guides
+title: Guías
 layout: docs.hbs
 ---
 
-# Guides
+# Guías
 
 ## General
 
-* [Getting Started Guide](/en/docs/guides/getting-started-guide/)
-* [Debugging - Getting Started](/en/docs/guides/debugging-getting-started/)
-* [Easy profiling for Node.js Applications](/en/docs/guides/simple-profiling/)
-* [Diagnostics - Flame Graphs](/en/docs/guides/diagnostics-flamegraph/)
-* [Dockerizing a Node.js web app](/en/docs/guides/nodejs-docker-webapp/)
-* [Migrating to safe Buffer constructors](/en/docs/guides/buffer-constructor-deprecation/)
+* [Guía de inicio](/en/docs/guides/getting-started-guide/)
+* [Depuración - Inicio](/en/docs/guides/debugging-getting-started/)
+* [Fácil elaboración de perfiles para Aplicaciones Node.js](/en/docs/guides/simple-profiling/)
+* [Diagnósticos - Gráfico de llama](/en/docs/guides/diagnostics-flamegraph/)
+* [Dockerizando una aplicación web Node.js](/en/docs/guides/nodejs-docker-webapp/)
+* [Migrando a constructores Buffer seguros](/en/docs/guides/buffer-constructor-deprecation/)
 
-## Node.js core concepts
+## Conceptos básicos de Node.js
 
-* [Introduction to Node.js](https://nodejs.dev/)
-* [Overview of Blocking vs Non-Blocking](/en/docs/guides/blocking-vs-non-blocking/)
-* [The Node.js Event Loop, Timers, and `process.nextTick()`](/en/docs/guides/event-loop-timers-and-nexttick/)
-* [Don't Block the Event Loop (or the Worker Pool)](/en/docs/guides/dont-block-the-event-loop/)
-* [Timers in Node.js](/en/docs/guides/timers-in-node/)
+* [Introducción a Node.js](https://nodejs.dev/learn)
+* [Resumen de Bloqueo vs No Bloqueo](/en/docs/guides/blocking-vs-non-blocking/)
+* [El bucle de eventos de Node.js, temporizadores y `process.nextTick()`](/en/docs/guides/event-loop-timers-and-nexttick/)
+* [No bloqueo del bucle de eventos (o del grupo de trabajadores)](/en/docs/guides/dont-block-the-event-loop/)
+* [Temporizadores en Node.js](/en/docs/guides/timers-in-node/)
 
-## Module-related guides
+## Guías relacionadas al módulo
 
-* [Anatomy of an HTTP Transaction](/en/docs/guides/anatomy-of-an-http-transaction/)
-* [Working with Different Filesystems](/en/docs/guides/working-with-different-filesystems/)
-* [Backpressuring in Streams](/en/docs/guides/backpressuring-in-streams/)
-* [Domain Module Postmortem](/en/docs/guides/domain-postmortem/)
-* [How to publish N-API package](/en/docs/guides/publishing-napi-modules/)
-* [ABI Stability](/en/docs/guides/abi-stability/)
+* [Anatomía de una transacción HTTP](/en/docs/guides/anatomy-of-an-http-transaction/)
+* [Trabajando con sistemas de archivo diferentes](/en/docs/guides/working-with-different-filesystems/)
+* [Contrapresión en Streams](/en/docs/guides/backpressuring-in-streams/)
+* [Módulo de Dominio Postmortem](/en/docs/guides/domain-postmortem/)
+* [Cómo publicar un paquete N-API](/en/docs/guides/publishing-napi-modules/)
+* [Estabilidad de la ABI](/en/docs/guides/abi-stability/)
+
+## Problemas conocidos
+
+* [Dependencias nativas en macOS Catalina (v10.15)](https://github.com/nodejs/node-gyp/blob/master/macOS_Catalina.md)
