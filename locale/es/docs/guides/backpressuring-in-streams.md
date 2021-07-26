@@ -1,21 +1,21 @@
 ---
-title: Backpressuring in Streams
+title: Backpressuring en Streams
 layout: docs.hbs
 ---
 
-# Backpressuring in Streams
+# Backpressuring en Streams
 
-There is a general problem that occurs during data handling called [`backpressure`][] and describes a buildup of data behind a buffer during data transfer. When the receiving end of the transfer has complex operations, or is slower for whatever reason, there is a tendency for data from the incoming source to accumulate, like a clog.
+Hay un problema general que ocurre durante el manejo de datos llamado [ `backpressure` ][] y describe la acumulación de datos en un buffer durante la transferencia de datos. Cuando el receptor de la transferencia tiene operaciones complejas, o es lento por cualquier motivo, existe una tendencia en la que los datos de la fuente se acumulan, como un bloqueo.
 
-To solve this problem, there must be a delegation system in place to ensure a smooth flow of data from one source to another. Different communities have resolved this issue uniquely to their programs, Unix pipes and TCP sockets are good examples of this, and is often times referred to as _flow control_. In Node.js, streams have been the adopted solution.
+Para resolver el problema, debe existir un sistema de delegación para garantizar un flujo fluido de datos desde una fuente a otra. Diferentes comunidades han resuelto este problema únicamente en sus programas, los pipes o tuberías Unix y los sockets TCP son buenos ejemplos de ello, y a menudo se lo conoce como _flow control_ o _control de flujo_. En Node.js, los streams han sido la solución adoptada.
 
-The purpose of this guide is to further detail what backpressure is, and how exactly streams address this in Node.js' source code. The second part of the guide will introduce suggested best practices to ensure your application's code is safe and optimized when implementing streams.
+El propósito de esta guía es la de explicar cómo exactamente estas transmisiones se abordan en el código fuente de Node.js. La segunda parte de la guía muestra las mejores prácticas sugeridas para garantizar que el código de su aplicación sea seguro y esté optimizado al implementar streams.
 
-We assume a little familiarity with the general definition of [`backpressure`][], [`Buffer`][], and [`EventEmitters`][] in Node.js, as well as some experience with [`Stream`][]. If you haven't read through those docs, it's not a bad idea to take a look at the API documentation first, as it will help expand your understanding while reading this guide.
+Suponemos que está familiarizado con la definición general de [ ` backpressure ` ][], [`Buffer`][] y [`EventEmitters`][] en Node.js, así como algo de experiencia con [`Stream`][]. Si no ha leído esos documentos, no es una mala idea echarle un vistazo a la documentación de la API primero, ya que le ayudará a entender mucho mejor esta guía.
 
-## The Problem with Data Handling
+## El Problema con Data Handling o Manejo de Datos
 
-In a computer system, data is transferred from one process to another through pipes, sockets, and signals. In Node.js, we find a similar mechanism called [`Stream`][]. Streams are great! They do so much for Node.js and almost every part of the internal codebase utilizes that module. As a developer, you are more than encouraged to use them too!
+En un sistema informático, los datos se transfieren de un proceso a otro a través de pipes, sockets y signals. En Node.js, encontramos un mecanismo similar llamado [`Stream`][]. ¡Las transmisiones son geniales! Hacen mucho por Node.js y casi todas las partes del código base interno utilizan ese módulo. Como desarrollador, ¡se le anima a utilizarlos también!
 
 ```javascript
 const readline = require('readline');
@@ -33,15 +33,15 @@ rl.question('Why should you use streams? ', (answer) => {
 });
 ```
 
-A good example of why the backpressure mechanism implemented through streams is a great optimization can be demonstrated by comparing the internal system tools from Node.js' [`Stream`][] implementation.
+Un buen ejemplo de por qué el mecanismo backpressure implementado a través de streams es una gran optimización se puede demostrar comparando las herramientas internas del sistema [ Implementación de `Stream`][] de Node.js.
 
-In one scenario, we will take a large file (approximately ~9gb) and compress it using the familiar [`zip(1)`][] tool.
+En un escenario, tomaremos un archivo grande (de unos 9gb) y lo comprimiremos utilizando la conocida herramienta [`zip (1)`][].
 
 ```
 zip The.Matrix.1080p.mkv
 ```
 
-While that will take a few minutes to complete, in another shell we may run a script that takes Node.js' module [`zlib`][], that wraps around another compression tool, [`gzip(1)`][].
+Si bien eso se demora unos minutos en completarse, en otro shell podemos ejecutar un script que utilice el módulo de Node.js [`zlib`][], que envuelve otra herramienta de compresión, [`gzip (1)`][].
 
 ```javascript
 const gzip = require('zlib').createGzip();
@@ -53,22 +53,24 @@ const out = fs.createWriteStream('The.Matrix.1080p.mkv.gz');
 inp.pipe(gzip).pipe(out);
 ```
 
-To test the results, try opening each compressed file. The file compressed by the [`zip(1)`][] tool will notify you the file is corrupt, whereas the compression finished by [`Stream`][] will decompress without error.
+Para probar los resultados, intente abrir cada archivo comprimido. El archivo comprimido por la herramienta [`zip (1)`][] mostrará si el archivo está dañado, mientras que la compresión finalizó con [`Stream` ][] se descomprimirá sin errores.
 
-Note: In this example, we use `.pipe()` to get the data source from one end to the other. However, notice there are no proper error handlers attached. If a chunk of data were to fail to be properly received, the `Readable` source or `gzip` stream will not be destroyed. [`pump`][] is a utility tool that would properly destroy all the streams in a pipeline if one of them fails or closes, and is a must have in this case!
+> En este ejemplo, usamos `.pipe()` para obtener la fuente de datos de un extremo al otro. Sin embargo, tenga en cuenta que no se adjuntan controladores de errores adecuados. Si una parte de los datos no se recibe correctamente, la fuente `Readable` o el flujo de `gzip` no se destruirá. [ `pump` ][] es una herramienta de utilidad que destruiría correctamente todas las corrientes en una tubería si uno de ellos falla o se cierra, ¡y es imprescindible en este caso!
 
-[`pump`][] is only necessary for Node.js 8.x or earlier, as for Node.js 10.x or later version, [`pipeline`][] is introduced to replace for [`pump`][]. This is a module method to pipe between streams forwarding errors and properly cleaning up and provide a callback when the pipeline is complete.
+[`pump`][] solo es necesario para Node.js 8.xo anterior, como para Node.js 10.xo una versión posterior, [`pipeline`][] es introducido para reemplazar [`pump`][]. Este es un método de módulo para utilizar pipe entre streams, reenviar errores, limpiar adecuadamente y proporcionar un callback cuando se completa el pipeline.
 
-Here is an example of using pipeline:
+A continuación, se muestra un ejemplo del uso de pipeline:
 
 ```javascript
 const { pipeline } = require('stream');
 const fs = require('fs');
 const zlib = require('zlib');
 
-// Use the pipeline API to easily pipe a series of streams
-// together and get notified when the pipeline is fully done.
-// A pipeline to gzip a potentially huge video file efficiently:
+// Utilice la API de pipeline para canalizar fácilmente una serie
+// de transmisiones juntas y recibir una notificación cuando la
+// pipeline esté completamente terminada.
+// Una pipeline para gzip de un archivo de video potencialmente
+// enorme de manera eficiente:
 
 pipeline(
   fs.createReadStream('The.Matrix.1080p.mkv'),
@@ -84,7 +86,7 @@ pipeline(
 );
 ```
 
-You can also call [`promisify`][] on pipeline to use it with `async` / `await`:
+También puede llamar a [`promisify`][] en canalización para usarlo con `async`/`await`:
 
 ```javascript
 const stream = require('stream');
@@ -108,34 +110,35 @@ async function run() {
 }
 ```
 
-## Too Much Data, Too Quickly
+## Demasiados Datos, Demasiado Rápido
 
-There are instances where a [`Readable`][] stream might give data to the [`Writable`][] much too quickly — much more than the consumer can handle!
+Hay casos en los que una secuencia [`Readable`][] puede proporcionar datos al [`Writable`][] demasiado rápido, mucho más de lo que el consumidor puede manejar!
 
-When that occurs, the consumer will begin to queue all the chunks of data for later consumption. The write queue will get longer and longer, and because of this more data must be kept in memory until the entire process has completed.
+Cuando eso ocurre, el consumidor comenzará a poner en cola todos los fragmentos de datos para su consumo posterior. La cola de escritura se hará cada vez más larga y, debido a esto, se deben mantener más datos en la memoria hasta que se complete todo el proceso.
 
-Writing to a disk is a lot slower than reading from a disk, thus, when we are trying to compress a file and write it to our hard disk, backpressure will occur because the write disk will not be able to keep up with the speed from the read.
+Escribir en un disco es mucho más lento que leer desde un disco, por lo tanto, cuando intentamos comprimir un archivo y escribirlo en nuestro disco duro, se producirá una contrapresión porque el disco de escritura no podrá mantener la velocidad de la lectura.
 
 ```javascript
-// Secretly the stream is saying: "whoa, whoa! hang on, this is way too much!"
-// Data will begin to build up on the read-side of the data buffer as
-// `write` tries to keep up with the incoming data flow.
+// En secreto, la transmisión dice: "¡Espera, espera! ¡Esto es demasiado!"
+// Los datos comenzarán a acumularse en el lado de lectura del buffer de 
+// datos a medida que "write" intente mantenerse al día con el flujo de 
+// datos entrantes.
 inp.pipe(gzip).pipe(outputFile);
 ```
 
-This is why a backpressure mechanism is important. If a backpressure system was not present, the process would use up your system's memory, effectively slowing down other processes, and monopolizing a large part of your system until completion.
+Por eso es importante un mecanismo de contrapresión. Si no hubiera un sistema de contrapresión, el proceso consumiría la memoria de su sistema, ralentizando efectivamente otros procesos y monopolizando una gran parte de su sistema hasta su finalización.
 
-This results in a few things:
+Esto da como resultado algunas cosas:
 
-* Slowing down all other current processes
-* A very overworked garbage collector
-* Memory exhaustion
+* Ralentizar todos los demás procesos actuales
+* Un recolector de basura con exceso de trabajo
+* Agotamiento de la memoria
 
-In the following examples we will take out the [return value](https://github.com/nodejs/node/blob/55c42bc6e5602e5a47fb774009cfe9289cb88e71/lib/_stream_writable.js#L239) of the `.write()` function and change it to `true`, which effectively disables backpressure support in Node.js core. In any reference to 'modified' binary, we are talking about running the `node` binary without the `return ret;` line, and instead with the replaced `return true;`.
+En los siguientes ejemplos, sacaremos el [valor de retorno][] de la función `.write()` para cambiarla a `true`, lo que efectivamente deshabilita el soporte de backpressure en el núcleo de Node.js. En cualquier referencia al binario 'modificado', estamos hablando de ejecutar el binario `node` sin la línea `return ret;`, y en su lugar con el `return true;`.
 
-## Excess Drag on Garbage Collection
+## Exceso de arrastre al Garbage Collection
 
-Let's take a look at a quick benchmark. Using the same example from above, we ran a few time trials to get a median time for both binaries.
+Echemos un vistazo a la siguiente referencia. Usando el mismo ejemplo de arriba, ejecutó algunas pruebas de tiempo para obtener un tiempo medio para ambos binarios.
 
 ```
    trial (#)  | `node` binary (ms) | modified `node` binary (ms)
@@ -149,9 +152,9 @@ Let's take a look at a quick benchmark. Using the same example from above, we ra
 average time: |      55299         |           55975
 ```
 
-Both take around a minute to run, so there's not much of a difference at all, but let's take a closer look to confirm whether our suspicions are correct. We use the Linux tool [`dtrace`][] to evaluate what's happening with the V8 garbage collector.
+Ambos tardan alrededor de un minuto en ejecutarse, por lo que no hay mucha diferencia, pero echemos un vistazo más de cerca para confirmar si nuestras sospechas son correctas. Utilizamos la herramienta de Linux [`dtrace`][] para evaluar lo que está sucediendo con el garbage del V8.
 
-The GC (garbage collector) measured time indicates the intervals of a full cycle of a single sweep done by the garbage collector:
+El tiempo medido por GC (recolector de basura) indica los intervalos de un ciclo completo de un solo barrido realizado por el recolector de basura:
 
 ```
 approx. time (ms) | GC (ms) | modified GC (ms)
@@ -173,19 +176,19 @@ approx. time (ms) | GC (ms) | modified GC (ms)
       54000       |    6    |     35
 ```
 
-While the two processes start off the same and seem to work the GC at the same rate, it becomes evident that after a few seconds with a properly working backpressure system in place, it spreads the GC load across consistent intervals of 4-8 milliseconds until the end of the data transfer.
+Si bien los dos procesos comienzan igual y parecen hacer funcionar el GC a la misma velocidad, se hace evidente que después de unos segundos distribuye la carga del GC en intervalos consistentes de 4-8 milisegundos hasta que el final de la transferencia de datos.
 
-However, when a backpressure system is not in place, the V8 garbage collection starts to drag out. The normal binary called the GC approximately **75** times in a minute, whereas, the modified binary fires only **36** times.
+Sin embargo, cuando no existe un sistema de contrapresión, la recolección de basura V8 comienza a moverse más lento. El binario normal llamó al GC aproximadamente **75** veces en un minuto, mientras que el binario modificado solo se dispara **36** veces.
 
-This is the slow and gradual debt accumulating from growing memory usage. As data gets transferred, without a backpressure system in place, more memory is being used for each chunk transfer.
+Esta es la acumulación lenta y gradual por el uso creciente de la memoria. A medida que se transfieren los datos, sin un sistema de contrapresión en su lugar, se utiliza más memoria para cada transferencia de fragmentos.
 
-The more memory that is being allocated, the more the GC has to take care of in one sweep. The bigger the sweep, the more the GC needs to decide what can be freed up, and scanning for detached pointers in a larger memory space will consume more computing power.
+Cuanta más memoria se está asignando, más trabajo tiene el GC. Cuanto mayor sea el barrido, más necesita el GC para decidir qué se puede liberar, y la búsqueda de punteros separados en un espacio de memoria más grande consumirá más potencia de cálculo.
 
-## Memory Exhaustion
+## Agotamiento de la memoria
 
-To determine the memory consumption of each binary, we've clocked each process with `/usr/bin/time -lp sudo ./node ./backpressure-example/zlib.js` individually.
+Para determinar el consumo de memoria de cada binario, hemos cronometrado cada proceso con `/usr/bin/time -lp sudo ./node ./backpressure-example/zlib.js` individualmente.
 
-This is the output on the normal binary:
+Esta es la salida en el binario normal:
 
 ```
 Respecting the return value of .write()
@@ -209,9 +212,9 @@ sys          8.79
     666037  involuntary context switches
 ```
 
-The maximum byte size occupied by virtual memory turns out to be approximately 87.81 mb.
+El tamaño máximo de bytes que ocupa la memoria virtual resulta ser de aproximadamente 87,81 mb.
 
-And now changing the [return value](https://github.com/nodejs/node/blob/55c42bc6e5602e5a47fb774009cfe9289cb88e71/lib/_stream_writable.js#L239) of the [`.write()`][] function, we get:
+Y ahora cambiando el [valor de retorn ][] de la función [ `.write ()` ][], obtenemos:
 
 ```
 Without respecting the return value of .write():
@@ -235,39 +238,39 @@ sys          7.43
     629566  involuntary context switches
 ```
 
-The maximum byte size occupied by virtual memory turns out to be approximately 1.52 gb.
+El tamaño máximo de bytes que ocupa la memoria virtual resulta ser de aproximadamente 1,52 gb.
 
-Without streams in place to delegate the backpressure, there is an order of magnitude greater of memory space being allocated - a huge margin of difference between the same process!
+Sin streams en su lugar para delegar el backpressure, hay un orden de magnitud mayor de espacio de memoria que se está asignando: ¡un gran margen de diferencia entre el mismo proceso!
 
-This experiment shows how optimized and cost-effective Node.js' backpressure mechanism is for your computing system. Now, let's do a break down on how it works!
+Este experimento muestra cuán optimizado y rentable es el mecanismo backpressure de Node.js para su sistema informático. ¡Ahora, analicemos cómo funciona!
 
-## How Does Backpressure Resolve These Issues?
+## ¿Cómo resuelve el Backpressure estos problemas?
 
-There are different functions to transfer data from one process to another. In Node.js, there is an internal built-in function called [`.pipe()`][]. There are [other packages](https://github.com/sindresorhus/awesome-nodejs#streams) out there you can use too! Ultimately though, at the basic level of this process, we have two separate components: the _source_ of the data and the _consumer_.
+Existen diferentes funciones para transferir datos de un proceso a otro. En Node.js, hay una función incorporada interna llamada [`.pipe()`][]. ¡Hay [otros paquetes][] que también puedes usar! Sin embargo, en última instancia, en el nivel básico de este proceso, tenemos dos componentes separados: la _fuente_ de los datos y el _consumidor_.
 
-When [`.pipe()`][] is called from the source, it signals to the consumer that there is data to be transferred. The pipe function helps to set up the appropriate backpressure closures for the event triggers.
+Cuando [`.pipe()`][] se llama desde la fuente, le indica al consumidor que hay datos para transferir. La función de tubería ayuda a configurar el cierres de backpressures adecuados para los desencadenantes del evento.
 
-In Node.js the source is a [`Readable`][] stream and the consumer is the [`Writable`][] stream (both of these may be interchanged with a [`Duplex`][] or a [`Transform`][] stream, but that is out-of-scope for this guide).
+En Node.js, la fuente es una secuencia [`Readable`][] y la el consumidor es el [`Writable`][] stream (ambos pueden intercambiarse con un [`Duplex`][] o una secuencia de [`Transform`][], pero eso está fuera del alcance para esta guía).
 
-The moment that backpressure is triggered can be narrowed exactly to the return value of a [`Writable`][]'s [`.write()`][] function. This return value is determined by a few conditions, of course.
+El momento en que se activa el backpressure se puede reducir exactamente al valor de retorno del método función [ `.write()` ][] de un [`Writable`][]. Este valor de retorno está determinado por algunas condiciones, por supuesto.
 
-In any scenario where the data buffer has exceeded the [`highWaterMark`][] or the write queue is currently busy, [`.write()`][] will return `false`.
+En cualquier escenario donde el búfer de datos haya excedido el [`highWaterMark`][] o que la cola de escritura esté ocupada en ese momento, [ `.write()`][] devuelve `false`.
 
-When a `false` value is returned, the backpressure system kicks in. It will pause the incoming [`Readable`][] stream from sending any data and wait until the consumer is ready again. Once the data buffer is emptied, a [`'drain'`][] event will be emitted and resume the incoming data flow.
+Cuando se devuelve un valor `false`, el sistema backpressure se activa. Pausará la transmisión de cualquier dato desde [ `Readable`][] y espera hasta que el consumidor esté listo nuevamente. Una vez que se vacía el búfer de datos, un evento [`'drenaje'`][] se emitirá y reanudará el flujo de datos entrantes.
 
-Once the queue is finished, backpressure will allow data to be sent again. The space in memory that was being used will free itself up and prepare for the next batch of data.
+Una vez finalizada la cola, el backpressure permitirá que los datos se envíen nuevamente. El espacio en la memoria que se estaba utilizando se liberará y se preparará para el siguiente lote de datos.
 
-This effectively allows a fixed amount of memory to be used at any given time for a [`.pipe()`][] function. There will be no memory leakage, no infinite buffering, and the garbage collector will only have to deal with one area in memory!
+Esto permite utilizar una cantidad fija de memoria en un momento dado para la función [`.pipe()`][]. No habrá pérdida de memoria, ni almacenamiento en búfer infinito, ¡y el recolector de basura solo tendrá que lidiar con un área de la memoria!
 
-So, if backpressure is so important, why have you (probably) not heard of it? Well the answer is simple: Node.js does all of this automatically for you.
+Entonces, si el backpressure es tan importante, ¿por qué (probablemente) no ha oído hablar de ella? Bueno, la respuesta es simple: Node.js hace todo esto automáticamente por usted.
 
-That's so great! But also not so great when we are trying to understand how to implement our own custom streams.
+¡Eso es muy genial! Pero tampoco es tan bueno cuando intentamos comprender cómo implementar nuestras propios streams.
 
-Note: In most machines, there is a byte size that determines when a buffer is full (which will vary across different machines). Node.js allows you to set your own custom [`highWaterMark`][], but commonly, the default is set to 16kb (16384, or 16 for objectMode streams). In instances where you might want to raise that value, go for it, but do so with caution!
+> En la mayoría de las máquinas, hay un tamaño de byte que determina cuando un búfer está lleno (que variará entre diferentes máquinas). Node.js te permite configurar tu propio [`highWaterMark`][], pero, por lo general, el valor predeterminado se establece en 16 kb (16384, o 16 para flujos de ObjectMode). En los casos en los que desee aumentar ese valor, hágalo, ¡pero hágalo con precaución!
 
-## Lifecycle of `.pipe()`
+## Ciclo de vida de `.pipe()`
 
-To achieve a better understanding of backpressure, here is a flow-chart on the lifecycle of a [`Readable`][] stream being [piped](https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options) into a [`Writable`][] stream:
+Para lograr una mejor comprensión sobre backpressure, aquí hay un diagrama de flujo con el ciclo de vida de un [`Readable`][] stream siendo [piped][] dentro de un [`Writable`][] stream:
 
 ```
                                                      +===================+
@@ -313,43 +316,43 @@ To achieve a better understanding of backpressure, here is a flow-chart on the l
                                        +============+
 ```
 
-Note: If you are setting up a pipeline to chain together a few streams to manipulate your data, you will most likely be implementing [`Transform`][] stream.
+> Si está configurando un pipeline para encadenar algunos streams para manipular sus datos, lo más probable es que implemente un [ `Transform`][] stream.
 
-In this case, your output from your [`Readable`][] stream will enter in the [`Transform`][] and will pipe into the [`Writable`][].
+En este caso, su salida del stream [`Readable`][] ingresará en el [`Transform`][] y se conectará al [`Writable`][].
 
 ```javascript
 Readable.pipe(Transformable).pipe(Writable);
 ```
 
-Backpressure will be automatically applied, but note that both the incoming and outgoing `highWaterMark` of the [`Transform`][] stream may be manipulated and will effect the backpressure system.
+Backpressure se aplicará de forma automática, pero tenga en cuenta que tanto el `highWaterMark` entrante como saliente del stream [`Transform`][] puede manipularse y afectará al sistema de backpressure.
 
-## Backpressure Guidelines
+## Guías de Backpressure
 
-Since [Node.js v0.10](https://nodejs.org/docs/v0.10.0/), the [`Stream`][] class has offered the ability to modify the behavior of the [`.read()`][] or [`.write()`][] by using the underscore version of these respective functions ([`._read()`][] and [`._write()`][]).
+Desde [Node.js v0.10][], la clase [`Stream`][] ha ofrecido la capacidad de modificar el comportamiento de [ `.read()`][] o [`.write()`][] mediante la versión de subrayado de estas funciones respectivas ([ `._read()`][] y [`._write()`][]).
 
-There are guidelines documented for [implementing Readable streams](https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_readable_stream) and [implementing Writable streams](https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_writable_stream). We will assume you've read these over, and the next section will go a little bit more in-depth.
+Existen guías documentadas para [implementar streams Readable][] e [implementar streams Writable][]. Asumiremos que los ha leído y la siguiente sección profundizará un poco más.
 
-## Rules to Abide By When Implementing Custom Streams
+## Reglas a seguir al Implementar Streams Personalizadas
 
-The golden rule of streams is **to always respect backpressure**. What constitutes as best practice is non-contradictory practice. So long as you are careful to avoid behaviors that conflict with internal backpressure support, you can be sure you're following good practice.
+La regla de oro de las transmisiones es **respetar siempre la backpressure **. Lo que constituye una buena práctica es una práctica no contradictoria. Siempre que tenga cuidado de evitar comportamientos que entren en conflicto con el soporte de contrapresión interno, puede estar seguro de que está siguiendo las buenas prácticas.
 
-In general,
+En general,
 
-1. Never `.push()` if you are not asked.
-2. Never call `.write()` after it returns false but wait for 'drain' instead.
-3. Streams changes between different Node.js versions, and the library you use. Be careful and test things.
+1. Nunca `.push()` si no se le pregunta.
+2. Nunca llame a `.write()` después de que devuelva falso, sino espere a que se descargue.
+3. Streams cambia entre las diferentes versiones de Node.js y la biblioteca que usa. Tenga cuidado y pruebe las cosas.
 
-Note: In regards to point 3, an incredibly useful package for building browser streams is [`readable-stream`][]. Rodd Vagg has written a [great blog post](https://r.va.gg/2014/06/why-i-dont-use-nodes-core-stream-module.html) describing the utility of this library. In short, it provides a type of automated graceful degradation for [`Readable`][] streams, and supports older versions of browsers and Node.js.
+> Con respecto al punto 3, un paquete increíblemente útil para crear streams de navegador es [`legible-stream`][]. Rodd Vagg ha escrito una [excelente publicación][] que describe la utilidad de esta biblioteca. En resumen, proporciona un tipo de degradación elegante y automatizada para [` Readable`][] streams y admite versiones anteriores de navegadores y Node.js.
 
-## Rules specific to Readable Streams
+## Reglas específicas para Readable Streams
 
-So far, we have taken a look at how [`.write()`][] affects backpressure and have focused much on the [`Writable`][] stream. Because of Node.js' functionality, data is technically flowing downstream from [`Readable`][] to [`Writable`][]. However, as we can observe in any transmission of data, matter, or energy, the source is just as important as the destination and the [`Readable`][] stream is vital to how backpressure is handled.
+Hasta ahora, hemos echado un vistazo a cómo [ `.write()`][] afecta al backpressure y se ha centrado mucho en el stream [ `Writable`][]. Debido a la funcionalidad de Node.js, los datos fluyen técnicamente desde [`Readable`][] a [`Writable `][]. Sin embargo, como podemos observar en cualquier transmisión de datos, materia o energía, la fuente es tan importante como el destino y el stream [La secuencia`Readable`][] es vital para cómo se maneja la backpressure.
 
-Both these processes rely on one another to communicate effectively, if the [`Readable`][] ignores when the [`Writable`][] stream asks for it to stop sending in data, it can be just as problematic to when the [`.write()`][]'s return value is incorrect.
+Ambos procesos dependen el uno del otro para comunicarse de manera eficiente, si el [`Readable `][] ignora cuando la secuencia [`Writable `][] solicita que detenga el envío de datos, puede ser tan problemático cuando que [`.write()`][] retorne un valor es incorrecto.
 
-So, as well with respecting the [`.write()`][] return, we must also respect the return value of [`.push()`][] used in the [`._read()`][] method. If [`.push()`][] returns a `false` value, the stream will stop reading from the source. Otherwise, it will continue without pause.
+Por lo tanto, respetemos también el retorno [`.write()`][], también debemos respetar el valor de retorno de [`.push()` ][] utilizado en el método [ `._read()` ][]. Si [`.push()`][] devuelve un valor `falso`, la secuencia dejará de leer desde la fuente. De lo contrario, continuará sin pausa.
 
-Here is an example of bad practice using [`.push()`][]:
+A continuación se muestra un ejemplo de mala práctica al utilizar [`.push()`][]:
 
 ```javascript
 // This is problematic as it completely ignores return value from push
@@ -364,7 +367,7 @@ class MyReadable extends Readable {
 }
 ```
 
-Additionally, from outside the custom stream, there are pratfalls for ignoring backpressure. In this counter-example of good practice, the application's code forces data through whenever it is available (signaled by the [`'data'` event][]):
+Además, desde fuera del stream personalizado, hay errores por ignorar el backpressure. En este contraejemplo de buena práctica, el código de la aplicación fuerza los datos siempre que están disponibles (señalado por [`evento 'data'`][]):
 
 ```javascript
 // This ignores the backpressure mechanisms Node.js has set in place,
@@ -375,14 +378,16 @@ readable.on('data', (data) =>
 );
 ```
 
-## Rules specific to Writable Streams
+## Reglas específicas para Writable Streams
 
-Recall that a [`.write()`][] may return true or false dependent on some conditions. Luckily for us, when building our own [`Writable`][] stream, the [`stream state machine`][] will handle our callbacks and determine when to handle backpressure and optimize the flow of data for us.
+Recuerde que un [`.write()`][] puede devolver verdadero o falso dependiendo de algunas condiciones. Afortunadamente para nosotros, cuando construimos nuestro propio flujo [`Writable`][], la [`máquina de estado del stream`][] manejará nuestras devoluciones de llamada y determinará cuándo manejar el backpressure y optimizar el flujo de datos para nosotros.
 
-However, when we want to use a [`Writable`][] directly, we must respect the [`.write()`][] return value and pay close attention to these conditions:
+Sin embargo, cuando queremos utilizar un [`Writable `][] directamente, se debe respetar el valor que devuelva [`.write()`][] y preste mucha atención a estos condiciones:
 
-* If the write queue is busy, [`.write()`][] will return false.
-* If the data chunk is too large, [`.write()`][] will return false (the limit is indicated by the variable, [`highWaterMark`][]).
+* Si la cola de escritura está ocupada, [`.write()`][] retornará falso.
+* Si el chunk de datos es demasiado grande, [`.write()`][] retornará falso (el límite lo indica la variable, [`highWaterMark`][]).
+
+<!-- eslint-disable indent -->
 ```javascript
 // This writable is invalid because of the async nature of JavaScript callbacks.
 // Without a return statement for each callback prior to the last,
@@ -405,7 +410,7 @@ class MyWritable extends Writable {
     callback();
 ```
 
-There are also some things to look out for when implementing [`._writev()`][]. The function is coupled with [`.cork()`][], but there is a common mistake when writing:
+También hay otros temas a tener en cuenta al implementar [ `._writev()`][]. La función se combina con [`.cork()` ][], pero en estos casos es un error común al escribir:
 
 ```javascript
 // Using .uncork() twice here makes two calls on the C++ layer, rendering the
@@ -438,12 +443,76 @@ function doUncork(stream) {
 }
 ```
 
-[`.cork()`][] can be called as many times we want, we just need to be careful to call [`.uncork()`][] the same amount of times to make it flow again.
+[`.cork()` ][] se puede llamar tantas veces como queramos, solo debemos tener cuidado de llamar a [`.uncork()`][] la misma cantidad de veces para que fluya de nuevo.
 
-## Conclusion
+## Conclusión
 
-Streams are an often used module in Node.js. They are important to the internal structure, and for developers, to expand and connect across the Node.js modules ecosystem.
+Los Streams son un módulo de uso frecuente en Node.js. Son importantes para la estructura interna y para los desarrolladores, para expandirse y conectarse a través del ecosistema de módulos de Node.js.
 
-Hopefully, you will now be able to troubleshoot, safely code your own [`Writable`][] and [`Readable`][] streams with backpressure in mind, and share your knowledge with colleagues and friends.
+Con suerte, ahora podrá solucionar problemas y codificar sus [`Writable`][] y [`Readable`][] de forma segura teniendo en cuenta el backpressure. Comparta sus conocimientos con colegas y amigos.
 
-Be sure to read up more on [`Stream`][] for other API functions to help improve and unleash your streaming capabilities when building an application with Node.js.
+Asegúrese de leer más sobre [`Stream`][] para otras funcionalidades y la API para ayudarle a mejorar y dar rienda suelta a sus capacidades de transmisión al crear una aplicación con Node.js.
+
+[`Stream`]: https://nodejs.org/api/stream.html
+
+[ Implementación de `Stream`]: https://nodejs.org/api/stream.html
+
+[`Stream` ]: https://nodejs.org/api/stream.html
+[`Buffer`]: https://nodejs.org /api/buffer.html
+[`EventEmitters`]: https://nodejs.org/api/events.html
+[`Writable `]: https://nodejs.org/api/stream.html#stream_writable_streams
+[ `Writable`]: https://nodejs.org/api/stream.html#stream_writable_streams
+[`Writable`]: https://nodejs.org/api/stream.html#stream_writable_streams
+[`Readable`]: https://nodejs.org/api/stream.html #stream_readable_streams
+[`Readable`]: https://nodejs.org/api/stream.html#stream_readable_streams
+[`Readable `]: https://nodejs.org/api/stream.html#stream_readable_streams
+[La secuencia`Readable`]: https://nodejs.org/api/stream.html#stream_readable_streams
+[` Readable`]: https://nodejs.org/api/stream.html#stream_readable_streams
+[ `Readable`]: https://nodejs.org/api/stream.html#stream_readable_streams
+[`Duplex`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
+[ `Transform`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
+[`Transform`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
+[`zlib`]: https://nodejs.org/api/zlib.html
+[`'drenaje'`]: https://nodejs.org/api/stream.html#stream_event_drain
+[`evento 'data'`]: https://nodejs.org/api/stream.html#stream_event_data
+[ `.read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size
+[`.write()`]: https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback
+[ `.write ()` ]: https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback
+[ `.write()` ]: https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback
+[ `.write()`]: https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback
+[ `._read()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size_1
+[ `._read()` ]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_read_size_1
+[`._write()`]: https://nodejs.org/docs/latest/api/stream.html#stream_writable_write_chunk_encoding_callback_1
+[ `._writev()`]: https://nodejs.org/api/stream.html#stream_writable_writev_chunks_callback
+[`.cork()` ]: https://nodejs.org/api/stream.html#stream_writable_cork
+[`.uncork()`]: https://nodejs.org/api/stream.html#stream_writable_uncork
+
+[`.push()` ]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_push_chunk_encoding
+
+[`.push()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_push_chunk_encoding
+
+[implementar streams Writable]: https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_writable_stream
+[implementar streams Readable]: https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_readable_stream
+
+[otros paquetes]: https://github.com/sindresorhus/awesome-nodejs#streams
+[ `backpressure` ]: https://en.wikipedia.org/wiki/Backpressure_routing
+[ ` backpressure ` ]: https://en.wikipedia.org/wiki/Backpressure_routing
+[Node.js v0.10]: https://nodejs.org/docs/v0.10.0/
+[`highWaterMark`]: https://nodejs.org/api/stream.html#stream_buffering
+[valor de retorno]: https://github.com/nodejs/node/blob/55c42bc6e5602e5a47fb774009cfe9289cb88e71/lib/_stream_writable.js#L239
+[valor de retorn ]: https://github.com/nodejs/node/blob/55c42bc6e5602e5a47fb774009cfe9289cb88e71/lib/_stream_writable.js#L239
+
+[`legible-stream`]: https://github.com/nodejs/readable-stream
+[excelente publicación]: https://r.va.gg/2014/06/why-i-dont-use-nodes-core-stream-module.html
+
+[`dtrace`]: http://dtrace.org/blogs/about/
+[`zip (1)`]: https://linux.die.net/man/1/zip
+[`gzip (1)`]: https://linux.die.net/man/1/gzip
+[`máquina de estado del stream`]: https://en.wikipedia.org/wiki/Finite-state_machine
+
+[`.pipe()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
+[piped]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
+[`pump`]: https://github.com/mafintosh/pump
+[ `pump` ]: https://github.com/mafintosh/pump
+[`pipeline`]: https://nodejs.org/api/stream.html#stream_stream_pipeline_streams_callback
+[`promisify`]: https://nodejs.org/api/util.html#util_util_promisify_original
