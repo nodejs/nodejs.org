@@ -287,7 +287,12 @@ function getSource (callback) {
     const source = {
       project: {
         versions,
-        latestVersions: latestVersionInfo
+        latestVersions: latestVersionInfo,
+        banner: {
+          visible: true,
+          text: 'New security releases now available for 16.x, 14.x, and 12.x release lines',
+          link: '/en/blog/vulnerability/july-2021-security-releases-2/'
+        }
       }
     }
     if (semver.gt(source.project.latestVersions.lts.node, source.project.latestVersions.current.node)) {
