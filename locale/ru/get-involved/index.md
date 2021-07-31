@@ -8,7 +8,6 @@ layout: contribute.hbs
 ## Обсуждение сообщества
 
 * [Список проблем на GitHub](https://github.com/nodejs/node/issues) это место для обсуждения возможностей ядра Node.js.
-* Для чата в реальном времени о разработке Node.js перейдите на `irc.freenode.net` в канале`#node.js` с [IRC-клиентом](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) или подключитесь в своем веб-браузере к каналу с помощью [веб-чата freenode](https://webchat.freenode.net/#node.js).
 * Официальный аккаунт Node.js в Твиттере ― [nodejs](https://twitter.com/nodejs).
 * [Календарь Фонда Node.js](https://nodejs.org/calendar) со всеми общественными встречами.
 * [Node.js](https://medium.com/the-node-js-collection) контент, создаваемый сообществом Medium.
@@ -33,3 +32,4 @@ layout: contribute.hbs
 * [Японская группа пользователей](https://nodejs.jp/)
 * [Испанская языковая группа Facebook для Node.js](https://www.facebook.com/groups/node.es/)
 * [Вьетнамское сообщество Node.js](https://www.facebook.com/nodejs.vn/)
+* [Узбекская группа Node.js](https://t.me/nodejs_uz)

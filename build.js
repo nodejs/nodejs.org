@@ -5,6 +5,11 @@
 // BUILD.JS: This file is responsible for building static HTML pages
 
 const fs = require('fs')
+const gracefulFs = require('graceful-fs')
+// This is needed at least on Windows to prevent the `EMFILE: too many open files` error
+// https://github.com/isaacs/node-graceful-fs#global-patching
+gracefulFs.gracefulify(fs)
+
 const path = require('path')
 const Metalsmith = require('metalsmith')
 const collections = require('metalsmith-collections')
@@ -14,17 +19,17 @@ const discoverPartials = require('metalsmith-discover-partials')
 const layouts = require('metalsmith-layouts')
 const markdown = require('metalsmith-markdown')
 const prism = require('metalsmith-prism')
-const permalinks = require('metalsmith-permalinks')
+const permalinks = require('@metalsmith/permalinks')
 const pagination = require('metalsmith-yearly-pagination')
 const defaultsDeep = require('lodash.defaultsdeep')
 const autoprefixer = require('autoprefixer')
 const marked = require('marked')
 const postcss = require('postcss')
-const fibers = require('fibers')
 const sass = require('sass')
 const ncp = require('ncp')
 const junk = require('junk')
 const semver = require('semver')
+const replace = require('metalsmith-one-replace')
 
 const githubLinks = require('./scripts/plugins/githubLinks')
 const navigation = require('./scripts/plugins/navigation')
@@ -45,6 +50,10 @@ const markedOptions = {
   langPrefix: 'language-',
   renderer
 }
+
+// We are setting the output from `latestVersion` module here for future use.
+// available props `latestVersionInfo` are `current` and `lts`
+let latestVersionInfo = {}
 
 // This function imports a given language file and uses the default language set
 // in DEFAULT_LANG as a fallback to prevent any strings that aren't filled out
@@ -124,6 +133,14 @@ function buildLocale (source, locale, opts) {
         post,
         displaySummary: idx < 10
       })
+    }))
+    .use(replace({
+      actions: [{
+        type: 'var',
+        varValues: {
+          currentVersion: `latest-${latestVersionInfo.lts.nodeMajor}`
+        }
+      }]
     }))
     .use(markdown(markedOptions))
     .use(githubLinks({ locale, site: i18nJSON(locale) }))
@@ -209,12 +226,11 @@ function buildCSS () {
 
   const sassOpts = {
     file: src,
-    fiber: fibers,
     outFile: dest,
     outputStyle: process.env.NODE_ENV !== 'development' ? 'compressed' : 'expanded'
   }
 
-  fs.mkdir(path.join(__dirname, 'build/static/css'), { recursive: true }, (err) => {
+  gracefulFs.mkdir(path.join(__dirname, 'build/static/css'), { recursive: true }, (err) => {
     if (err) {
       throw err
     }
@@ -229,7 +245,7 @@ function buildCSS () {
           console.warn(warn.toString())
         })
 
-        fs.writeFile(dest, res.css, (err) => {
+        gracefulFs.writeFile(dest, res.css, (err) => {
           if (err) {
             throw err
           }
@@ -247,7 +263,7 @@ function copyStatic () {
   console.log('[ncp] build/static started')
   const labelForBuild = '[ncp] build/static finished'
   console.time(labelForBuild)
-  fs.mkdir(path.join(__dirname, 'build/static'), { recursive: true }, (err) => {
+  gracefulFs.mkdir(path.join(__dirname, 'build/static'), { recursive: true }, (err) => {
     if (err) {
       throw err
     }
@@ -264,23 +280,14 @@ function copyStatic () {
 function getSource (callback) {
   // Loads all node/io.js versions.
   loadVersions((err, versions) => {
+    latestVersionInfo = {
+      current: latestVersion.current(versions),
+      lts: latestVersion.lts(versions)
+    }
     const source = {
       project: {
         versions,
-        latestVersions: {
-          current: latestVersion.current(versions),
-          lts: latestVersion.lts(versions)
-        },
-        blacklivesmatter: {
-          visible: true,
-          text: '#BlackLivesMatter',
-          link: '/en/black-lives-matter/'
-        },
-        banner: {
-          visible: false,
-          text: 'New security releases are available',
-          link: '/en/blog/vulnerability/june-2020-security-releases/'
-        }
+        latestVersions: latestVersionInfo
       }
     }
     if (semver.gt(source.project.latestVersions.lts.node, source.project.latestVersions.current.node)) {
@@ -300,7 +307,7 @@ function fullBuild (opts) {
     if (err) { throw err }
 
     // Executes the build cycle for every locale.
-    fs.readdir(path.join(__dirname, 'locale'), (e, locales) => {
+    gracefulFs.readdir(path.join(__dirname, 'locale'), (e, locales) => {
       if (e) {
         throw e
       }

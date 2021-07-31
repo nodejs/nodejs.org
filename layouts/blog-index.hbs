@@ -5,7 +5,7 @@
 <body>
   {{> header }}
 
-  <div id="main">
+  <main id="main">
     <div class="container">
       <h2>News from {{ pagination.year }}</h2>
 
@@ -13,7 +13,7 @@
         {{#each pagination.posts}}
           <li>
             <time datetime="{{ strftime post.date '%FT%T%z' }}">{{ strftime post.date "%d %b" }}</time>
-            <a href="/{{ ../site.locale }}/{{ slashes post.path }}/">{{ post.title }}</a>
+            <a href="/{{ ../site.locale }}/{{ post.path }}/">{{ post.title }}</a>
 
             {{#if displaySummary}}
               <div class="summary">
@@ -25,7 +25,7 @@
       </ul>
 
       {{#if pagination}}
-      <nav class="pagination">
+      <nav aria-label="pagination" class="pagination">
         {{#if pagination.prev.path}}
         <a href="/{{ site.locale }}/{{ pagination.prev.path }}/">&lt; Newer</a>
         {{/if}}
@@ -40,7 +40,7 @@
       </nav>
       {{/if}}
     </div>
-  </div>
+  </main>
 
   {{> footer }}
 </body>

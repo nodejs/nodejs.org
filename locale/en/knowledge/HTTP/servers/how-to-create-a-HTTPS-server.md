@@ -7,14 +7,9 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-*If you're using [Nodejitsu](http://nodejitsu.com)*, we handle HTTPS for you. Free SSL on jit.su and nodejitsu.com subdomains, and SSL on custom domains for business customers.
-*It's never necessary to create an HTTPS server yourself.*
-
----
-
 To create an HTTPS server, you need two things: an SSL certificate, and built-in `https` Node.js module.
 
-We need to start out with a word about SSL certificates. Speaking generally, there are two kinds of certificates: those signed by a 'Certificate Authority', or CA, and 'self-signed certificates'. A Certificate Authority is a trusted source for an SSL certificate, and using a certificate from a CA allows your users to be trust the identity of your website. In most cases, you would want to use a CA-signed certificate in a production environment - for testing purposes, however, a self-signed certicate will do just fine.
+We need to start out with a word about SSL certificates. Speaking generally, there are two kinds of certificates: those signed by a 'Certificate Authority', or CA, and 'self-signed certificates'. A Certificate Authority is a trusted source for an SSL certificate, and using a certificate from a CA allows your users to be trust the identity of your website. In most cases, you would want to use a CA-signed certificate in a production environment - for testing purposes, however, a self-signed certificate will do just fine.
 
 To generate a self-signed certificate, run the following in your shell:
 

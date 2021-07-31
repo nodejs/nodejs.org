@@ -108,7 +108,7 @@ COPY . .
 EXPOSE 8080
 ```
 
-最后但同样重要的事是，使用定义运行时的 `CMD` 定义命令来运行应用程序。这里我们使用最简单的 `npm start` 命令，它将运行 `node server.js` 启动你的服务器：
+最后但同样重要的事是，使用定义运行时的 `CMD` 定义命令来运行应用程序。这里我们使用 `node server.js` 来启动你的服务器：
 
 ```docker
 CMD [ "node", "server.js" ]
@@ -154,7 +154,7 @@ npm-debug.log
 进入到 `Dockerfile` 所在的那个目录中，运行以下命令构建 Docker 镜像。开关符 `-t` 让你标记你的镜像，以至于让你以后很容易地用 `docker images` 找到它。
 
 ```bash
-docker build -t <your username>/node-web-app .
+docker build . -t <your username>/node-web-app
 ```
 
 Docker 现在将给出你的镜像列表：

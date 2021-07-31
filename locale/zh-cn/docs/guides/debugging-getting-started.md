@@ -20,7 +20,7 @@ layout: docs.hbs
 
 由于调试器对 Node.js 执行环境具有完全访问权限，能够连接到此端口的恶意行为者能够代替 Node.js 进程执行任意代码。理解将调试器端口暴露在公共和专用网络上所受影响的安全性是很重要的。
 
-### 把调试端口暴漏在公共网络是不安全的
+### 把调试端口暴露在公共网络是不安全的
 
 如果调试器与一个公共的 IP 地址绑定，或者与 0.0.0.0 绑定，任何可以访问你 IP 地址的客户端都可以在不受限的情况下连接调试器，然后随意运行代码。
 
@@ -176,7 +176,7 @@ ssh 管道启动，在你机器上连接到 9221 端口将被重定向到 9229 �
 
 V8 调试协议再也不维护或是归档了。
 
-### [内置调试器](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
+### [内置调试器](https://nodejs.org/dist/{#var currentVersion}/docs/api/debugger.html)
 
 在 Node.js 内置命令行调试器中用 `node debug script_name.js` 启动你的脚本。你的脚本就在 Node 另外一个进程中随着 `--debug-brk` 启动了起来，并且初始化的 Node 进程运行 `_debugger.js` 脚本连接上你的目标。
 

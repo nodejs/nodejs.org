@@ -57,13 +57,14 @@
 
       <tr>
         <th>{{downloads.MacOSInstaller}} (.pkg)</th>
-        <td colspan="2"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}.pkg">64-bit</a></td>
+        <td colspan="2"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}.pkg">64-bit{{#if versionTypeCurrent}} / ARM64{{/if}}</a></td>
       </tr>
-
       <tr>
         <th>{{downloads.MacOSBinary}} (.tar.gz)</th>
-        <td colspan="2"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-darwin-x64.tar.gz">64-bit</a></td>
+        <td{{#unless versionTypeCurrent}} colspan="2"{{/unless}}><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-darwin-x64.tar.gz">64-bit</a></td>
+        {{#if versionTypeCurrent}}<td><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-darwin-arm64.tar.gz">ARM64</a></td>{{/if}}
       </tr>
+
       <tr>
         <th>{{downloads.LinuxBinaries}} (x64)</th>
         <td colspan="2"><a href="https://nodejs.org/dist/{{version.node}}/node-{{version.node}}-linux-x64.tar.xz">64-bit</a></td>
