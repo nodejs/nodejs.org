@@ -1,15 +1,19 @@
-'use strict'
+import { isNotJunk } from 'junk'
 
 // The server where the site is exposed through a static file server
 // while developing locally.
 
-const fs = require('fs')
-const http = require('http')
-const path = require('path')
-const chokidar = require('chokidar')
-const junk = require('junk')
-const st = require('st')
-const build = require('./build')
+import fs from 'fs'
+import http from 'http'
+import path, { dirname } from 'path'
+import chokidar from 'chokidar'
+import st from 'st'
+import build from './build.mjs'
+
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 const mount = st({
   path: path.join(__dirname, 'build'),
@@ -50,7 +54,7 @@ function dynamicallyBuildOnLanguages (source, locale) {
         throw err
       }
 
-      const filteredLocales = locales.filter(file => junk.not(file))
+      const filteredLocales = locales.filter(file => isNotJunk(file))
       const localesData = build.generateLocalesData(filteredLocales)
       build.buildLocale(source, locale, { preserveLocale, localesData })
     })

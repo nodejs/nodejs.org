@@ -1,41 +1,51 @@
 #! /usr/bin/env node
 
-'use strict'
+import { isNotJunk } from 'junk'
 
 // BUILD.JS: This file is responsible for building static HTML pages
 
-const fs = require('fs')
-const gracefulFs = require('graceful-fs')
+import fs from 'fs'
+import gracefulFs from 'graceful-fs'
+
+import path from 'path'
+import Metalsmith from 'metalsmith'
+import collections from 'metalsmith-collections'
+import feed from 'metalsmith-feed'
+import discoverHelpers from 'metalsmith-discover-helpers'
+import discoverPartials from 'metalsmith-discover-partials'
+import layouts from 'metalsmith-layouts'
+import markdown from 'metalsmith-markdown'
+import prism from 'metalsmith-prism'
+import permalinks from '@metalsmith/permalinks'
+import pagination from 'metalsmith-yearly-pagination'
+import defaultsDeep from 'lodash.defaultsdeep'
+import autoprefixer from 'autoprefixer'
+import marked from 'marked'
+import postcss from 'postcss'
+import sass from 'sass'
+import ncp from 'ncp'
+import semver from 'semver'
+import replace from 'metalsmith-one-replace'
+
+import githubLinks from './scripts/plugins/githubLinks.js'
+import navigation from './scripts/plugins/navigation.js'
+import anchorMarkdownHeadings from './scripts/plugins/anchor-markdown-headings.js'
+import loadVersions from './scripts/load-versions.js'
+import latestVersion from './scripts/helpers/latestversion.js'
+
+import { fileURLToPath } from 'url'
+import { createRequire } from 'module'
 // This is needed at least on Windows to prevent the `EMFILE: too many open files` error
 // https://github.com/isaacs/node-graceful-fs#global-patching
 gracefulFs.gracefulify(fs)
 
-const path = require('path')
-const Metalsmith = require('metalsmith')
-const collections = require('metalsmith-collections')
-const feed = require('metalsmith-feed')
-const discoverHelpers = require('metalsmith-discover-helpers')
-const discoverPartials = require('metalsmith-discover-partials')
-const layouts = require('metalsmith-layouts')
-const markdown = require('metalsmith-markdown')
-const prism = require('metalsmith-prism')
-const permalinks = require('@metalsmith/permalinks')
-const pagination = require('metalsmith-yearly-pagination')
-const defaultsDeep = require('lodash.defaultsdeep')
-const autoprefixer = require('autoprefixer')
-const marked = require('marked')
-const postcss = require('postcss')
-const sass = require('sass')
-const ncp = require('ncp')
-const junk = require('junk')
-const semver = require('semver')
-const replace = require('metalsmith-one-replace')
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
-const githubLinks = require('./scripts/plugins/githubLinks')
-const navigation = require('./scripts/plugins/navigation')
-const anchorMarkdownHeadings = require('./scripts/plugins/anchor-markdown-headings')
-const loadVersions = require('./scripts/load-versions')
-const latestVersion = require('./scripts/helpers/latestversion')
+// We cannot use 'require' directly, so we MUST
+// import a new require function through 'module'
+// related the current url path
+const require = createRequire(import.meta.url)
 
 // Set the default language, also functions as a fallback for properties which
 // are not defined in the given language.
@@ -181,13 +191,10 @@ function buildLocale (source, locale, opts) {
     // Pipes the generated files into their respective subdirectory in the build
     // directory.
     .destination(path.join(__dirname, 'build', locale))
-
-  // This actually executes the build and stops the internal timer after
-  // completion.
-  metalsmith.build((err) => {
-    if (err) { throw err }
-    console.timeEnd(labelForBuild)
-  })
+    .build((err) => {
+      if (err) { throw err }
+      console.timeEnd(labelForBuild)
+    })
 }
 
 // This plugin reads the files present in the english locale that are missing
@@ -311,7 +318,7 @@ function fullBuild (opts) {
       if (e) {
         throw e
       }
-      const filteredLocales = locales.filter(file => junk.not(file) && (selectedLocales ? selectedLocales.includes(file) : true))
+      const filteredLocales = locales.filter(file => isNotJunk(file) && (selectedLocales ? selectedLocales.includes(file) : true))
       const localesData = generateLocalesData(filteredLocales)
       filteredLocales.forEach((locale) => {
         buildLocale(source, locale, { preserveLocale, localesData })
@@ -321,7 +328,7 @@ function fullBuild (opts) {
 }
 
 // Starts the build if the file was executed from the command line
-if (require.main === module) {
+if (process.argv[1] === __filename) {
   const preserveLocale = process.argv.includes('--preserveLocale')
   const selectedLocales = process.env.DEFAULT_LOCALE ? process.env.DEFAULT_LOCALE.toLowerCase().split(',') : process.env.DEFAULT_LOCALE
   // Copy static files
@@ -331,9 +338,4 @@ if (require.main === module) {
   fullBuild({ selectedLocales, preserveLocale })
 }
 
-exports.getSource = getSource
-exports.fullBuild = fullBuild
-exports.buildCSS = buildCSS
-exports.buildLocale = buildLocale
-exports.copyStatic = copyStatic
-exports.generateLocalesData = generateLocalesData
+export default { getSource, fullBuild, buildCSS, buildLocale, copyStatic, generateLocalesData }
