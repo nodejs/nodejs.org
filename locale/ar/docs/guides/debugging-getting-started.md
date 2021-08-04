@@ -201,7 +201,7 @@ ssh -L 9221:localhost:9229 user@remote.example.com
 
 إن بروتوكول التصحيح الخاص بالـ V8 لم تعد يتم صيانته أو توثيقه دوريا.
 
-### [مصحح الأخطاء المبني ضمنيا](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
+### [مصحح الأخطاء المبني ضمنيا](https://nodejs.org/dist/{#var currentVersion}/docs/api/debugger.html)
 
 قم بتنفيذ الأمر <span dir="ltr">`node debug script_name.js`</span> لبدء النص البرمجي الخاص بك عن طريق مصحح الأخطاء المبني ضمنيا في Node.
 يمكن للنص البرمجي الخاص بك أن يبدأ في عملية Node اخرى باستعمال <span dir="ltr">`--debug-brk`</span> كما تشغل عملية Node

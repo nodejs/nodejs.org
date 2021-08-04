@@ -19,6 +19,7 @@ title: 通过包管理器安装 Node.js
 * [IBM i](#ibm-i)
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
+* [nvs](#nvs)
 * [OpenBSD](#openbsd)
 * [openSUSE 和 SLE](#opensuse-and-sle)
 * [macOS](#macos)
@@ -93,10 +94,10 @@ your real title.
 
 与 Debian 以及 Ubuntu 发布版本的兼容安装包可以通过 [Node.js 快照](#snap) 获得。
 
-## frm
+## fnm
 
 这是一个内置了 Rust，用于 Node.js 多发布版本的快速便捷管理工具。它可以让你处理诸如安装、卸载，以及根据当前目录自动切换 Node.js 版本的行为操作。
-安装 frm，请使用此[安装脚本](https://github.com/Schniz/fnm#using-a-script-macoslinux)。
+安装 fnm，请使用此[安装脚本](https://github.com/Schniz/fnm#using-a-script-macoslinux)。
 
 fnm 有跨版本的支持（macOS、Windows 以及 Linux），以及一系列衍生命令（Bash, Zsh, Fish, PowerShell, Windows 命令行），它以“脑速”编译，并兼容性支持 `.node-version` 和 `.nvmrc` 文件。
 
@@ -172,6 +173,51 @@ nvm use 8
 
 ```bash
 nvm uninstall 8
+```
+
+## nvs
+
+#### Windows
+`nvs`版本管理器是一个跨平台，可用于 Windows、macOS 以及形如 Unix 的操作系统。
+
+在 Windows 上安装 `nvs`，请到此 [发布页](https://github.com/jasongin/nvs/releases) 下载最新发布的 MSI 安装源。
+
+你也可以使用 `chocolatey` 进行安装：
+
+```bash
+choco install nvs
+```
+
+#### macOS，UnixLike
+你可以在 [此处](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux) 找到关于在 macOS / 形如 Unix 操作系统的安装步骤文档。
+
+#### 使用方法
+安装完成后，你可以使用 `nvs` 在不同版本的 node 中来回切换。
+
+添加最新版本的 node：
+
+```bash
+nvs add latest
+```
+
+添加最新 LTS 版本的 node：
+
+```bash
+nvs add lts
+```
+
+然后运行 `nvs use` ，为当前脚本的 `PATH` 路径下添加一个 node 版本：
+
+```bash
+$ nvs use lts
+PATH -= %LOCALAPPDATA%\nvs\default
+PATH += %LOCALAPPDATA%\nvs\node\14.17.0\x64
+```
+
+如果需要永久在 `PATH` 里添加，使用 `nvs link`：
+
+```bash
+nvs link lts
 ```
 
 ## OpenBSD

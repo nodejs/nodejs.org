@@ -153,7 +153,7 @@ This will prevent your local modules and debug logs from being copied onto your 
 Go to the directory that has your `Dockerfile` and run the following command to build the Docker image. The `-t` flag lets you tag your image so it's easier to find later using the `docker images` command:
 
 ```bash
-docker build -t <your username>/node-web-app .
+docker build . -t <your username>/node-web-app
 ```
 
 Your image will now be listed by Docker:

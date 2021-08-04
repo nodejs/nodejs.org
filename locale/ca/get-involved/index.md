@@ -8,7 +8,6 @@ layout: contribute.hbs
 ## Discussió de la comunitat
 
 * La [llista d'incidències de GitHub](https://github.com/nodejs/node/issues) és el lloc per discutir les característiques del nucli de Node.js.
-* Per xatejar en temps real sobre el desenvolupament de Node.js vagi a `irc.freenode.net` al canal `#node.js` fent servir un [client d'IRC](https://es.wikipedia.org/wiki/Anexo:Clientes_IRC) o connecti's amb el seu navegador al canal usant [WebChat de freenode](https://webchat.freenode.net/#node.js).
 * El compte de Twitter oficial de Node.js és [nodejs](https://twitter.com/nodejs).
 * The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
 * [Node.js Collection](https://medium.com/the-node-js-collection) és una col·lecció de contingut comissat per la comunitat a Medium.

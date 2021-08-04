@@ -11,15 +11,21 @@ env:
   NODE: 14.x
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  run:
+    name: Node on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
 
     steps:
       - name: Clone repository
         uses: actions/checkout@v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2.1.5
+        uses: actions/setup-node@v2
         with:
           node-version: "${{ env.NODE }}"
 

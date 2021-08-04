@@ -1,5 +1,6 @@
 {
   "title": "Node.js",
+  "editOnGithub":"Edit On GitHub",
   "author": "Node.js",
   "url": "https://nodejs.org/en/",
   "locale": "en",
@@ -83,6 +84,9 @@
     },
     "install-on-linux": {
       "text": "Installing Node.js via binary archive"
+    },
+    "install-on-wsl": {
+      "text": "Install on Windows Subsystem for Linux (WSL)"
     }
   },
   "docs": {
@@ -153,6 +157,19 @@
   "links": {
     "pages": {
       "changelog": "Changelog"
+    }
+  },
+  "banners": {
+    "index": {
+      "startDate": "2021-07-28T16:00:00.000Z",
+      "endDate": "2021-08-13T16:00:00.000Z",
+      "text": "New security releases now available for 16.x, 14.x, and 12.x release lines",
+      "link": "blog/vulnerability/july-2021-security-releases-2/"
+    },
+    "blacklivesmatter": {
+      "visible": false,
+      "text": "#BlackLivesMatter",
+      "link": "black-lives-matter/"
     }
   }
 }
