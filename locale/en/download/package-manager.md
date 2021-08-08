@@ -356,6 +356,14 @@ Download the [Windows Installer](https://nodejs.org/en/#home-downloadhead) direc
 
 ### Alternatives
 
+Using **[Winget](https://aka.ms/winget-cli)**:
+
+```bash
+winget install OpenJS.NodeJS
+# or for LTS
+winget install OpenJS.NodeJSLTS
+```
+
 Using **[Chocolatey](https://chocolatey.org/)**:
 
 ```bash
