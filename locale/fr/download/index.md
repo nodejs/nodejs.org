@@ -23,13 +23,13 @@ additional:
   headline: Autres plate-formes
   intro: >
     Les membres de la communauté Node.js maintiennent des installateurs de Node.js pour d'autres plate-formes. Veuillez noter que ces téléchargements ne sont pas maintenus par l'équipe principale de Node.js et n'offrent pas forcément le même niveau de support que les téléchargements officiels.
-  platform: Image Docker de Node.js
-  provider: Plate-forme
-  SmartOSBinaries: Fournisseur
-  DockerImage: Binaires SmartOS
-  officialDockerImage: Image Docker
-  LinuxPowerSystems: Image officielle de Node.js pour Docker
-  LinuxSystemZ: Linux sur Power LE Systems
-  AIXPowerSystems: Linux sur System z
+  platform: Plate-forme
+  provider: Fournisseur
+  SmartOSBinaries: Binaires SmartOS
+  DockerImage: Image Docker
+  officialDockerImage: Image officielle de Node.js pour Docker
+  LinuxPowerSystems: Linux sur les systèmes Power LE
+  LinuxSystemZ: Linux sur SystemZ
+  AIXPowerSystems: AIX sur les systèmes Power
 ---
 
