@@ -12,9 +12,9 @@
   "by": "par",
   "all-downloads": "Toutes les options de téléchargement",
   "nightly": "Versions quotidiennes",
-  "unofficial-builds": "Unofficial builds",
-  "previous": "Previous",
-  "next": "Next",
+  "unofficial-builds": "Builds non officiels",
+  "previous": "Précédant",
+  "next": "Suivant",
   "feeds": [
     {
       "link": "feed/blog.xml",
@@ -41,7 +41,7 @@
     },
     "community": {
       "link": "about/community",
-      "text": "Community"
+      "text": "Communauté"
     },
     "workinggroups": {
       "link": "about/working-groups",
@@ -79,10 +79,10 @@
       "link": "SHASUMS256.txt.asc",
       "text": "SHASUMS signés pour les fichiers des versions",
       "verify-link": "https://github.com/nodejs/node#verifying-binaries",
-      "verify-text": "How to verify"
+      "verify-text": "Comment vérifier"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive"
+      "text": "Installation de Node.js via une archive binaire"
     }
   },
   "docs": {
@@ -107,7 +107,7 @@
     },
     "dependencies": {
       "link": "docs/meta/topics/dependencies",
-      "text": "Dependencies"
+      "text": "Dépendances"
     }
   },
   "getinvolved": {
@@ -119,7 +119,7 @@
     },
     "collab-summit": {
       "link": "get-involved/collab-summit",
-      "text": "Collab Summit"
+      "text": "Collaboration"
     },
     "contribute": {
       "link": "get-involved/contribute",
@@ -131,7 +131,7 @@
     },
     "node-meetups": {
       "link": "get-involved/node-meetups",
-      "text": "Node.js Meetups"
+      "text": "Meetups Node.js"
     }
   },
   "security": {
