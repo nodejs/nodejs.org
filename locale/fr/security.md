@@ -11,7 +11,7 @@ Signalez une faille de sécurité Node.js via [HackerOne](https://hackerone.com/
 
 Votre signalement sera confirmé sous 24 heures, et vous recevrez une réponse détaillée à ce signalement dans un délai de 48 heures avec des indications sur les détails de la marche à suivre.
 
-Après sa réponse initiale à votre signalement, l'équipe de sécurité s'efforcera de vous tenir informé·e de ses avancées en direction d'un correctif et d'une annonce publique ; elle pourrait vous recontacter pour demander des informations complémentaires ou des conseils à propos de la faille. Les progrès seront notifiés au moins tous les cinq jours ; en pratique, ce délai est plutôt toutes les 24 à 48 heures.
+Après sa réponse initiale à votre signalement, l'équipe de sécurité s'efforcera de vous tenir informé de ses avancées en direction d'un correctif et d'une annonce publique ; elle pourrait vous recontacter pour demander des informations complémentaires ou des conseils à propos de la faille. Les progrès seront notifiés au moins tous les cinq jours ; en pratique, ce délai est plutôt toutes les 24 à 48 heures.
 
 ### Le programme « Bug Bounty » de Node.js
 
@@ -19,7 +19,7 @@ Le projet Node.js s'engage dans un programme officiel de récompense de signalem
 
 ## Signaler une faille dans un module tiers
 
-Ce programme est géré au travers de la plate-forme HackerOne, où vous trouverez des informations complémentaires : [https://hackerone.com/nodejs](https://hackerone.com/nodejs).
+Ce programme est géré avec la plate-forme HackerOne, où vous trouverez des informations complémentaires : [https://hackerone.com/nodejs](https://hackerone.com/nodejs).
 
 Les failles de sécurité de modules tiers sont à signaler auprès des personnes qui en assurent la maintenance, ainsi qu'à l'[équipe _Node Ecosystem Security_](https://hackerone.com/nodejs-ecosystem) ou en écrivant un e-mail à [security-ecosystem@nodejs.org](mailto:security-ecosystem@nodejs.org).
 
@@ -29,7 +29,7 @@ Les détails de fonctionnement de ce processus se trouvent dans le [dépôt du _
 
 Merci de participer à l'amélioration de la sécurité de Node.js et de son écosystème. Vos efforts et un signalement responsable sont fortement appréciés et seront reconnus.
 
-* Le signalement est reçu et assigné à un·e responsable. Cette personne va coordonner la production et la livraison du correctif. Le problème est confirmé et une liste des versions affectées est déterminée. Le code est audité afin de repérer d'éventuels problèmes similaires. Les correctifs sont préparés pour chaque branche de Node.js encore en maintenance. Ces correctifs ne sont pas directement inclus dans le dépôt public et sont mis de côté en attendant une annonce publique.
+* Le signalement est reçu et assigné à un responsable. Cette personne va coordonner la production et la livraison du correctif. Le problème est confirmé et une liste des versions affectées est déterminée. Le code est audité afin de repérer d'éventuels problèmes similaires. Les correctifs sont préparés pour chaque branche de Node.js encore en maintenance. Ces correctifs ne sont pas directement inclus dans le dépôt public et sont mis de côté en attendant une annonce publique.
 
 * Une date d'embargo est choisie pour cette faille et un identifiant CVE (_Common Vulnerabilities and Exposures_ (CVE®)) est demandé.
 
