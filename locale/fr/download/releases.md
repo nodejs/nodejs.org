@@ -1,11 +1,11 @@
 ---
 layout: download-releases.hbs
-title: Version précédentes
-modules: "<code>NODE_MODULE_VERSION</code> réfère au nombre de la version de Node.JS, utilisé pour déterminer dans quelles versions des binaires complémentaires C++ compilés avec Node.js peuvent être chargées sans avoir besoin d'être recompilées. Auparavant, il était stocké sous forme de valeur hexadécimale dans les versions précédentes, mais est maintenant représenté sous forme d'entier."
+title: Versions précédentes
+modules: "<code>NODE_MODULE_VERSION</code> réfère au numéro de la version de l'ABI de Node.JS, utilisé pour déterminer dans quelles versions des binaires complémentaires C++ compilés avec Node.js peuvent être chargés sans avoir besoin d'être recompilés. Auparavant, il était stocké sous forme de valeur hexadécimale dans les versions précédentes, mais est maintenant représenté sous forme d'entier."
 ---
 
 ### io.js & Node.js
-Des versions 1.x à 3.x, elles étaient appelée "io.js" puisqu'elle faisaient partie d'un fork de io.js. A partir de Node 4.0.0, les anciennes versions de io.js on été convergées dans Node.js.
+Des versions 1.x à 3.x, elles étaient appelée "io.js" puisqu'elle faisaient partie d'un fork de io.js. A partir de Node 4.0.0, les anciennes versions de io.js on été fusionnées dans Node.js.
 
 <div class="highlight-box">
 
