@@ -14,7 +14,7 @@ labels:
   changelog: 更新日志
   api: API 文档
   version-schedule-prompt: 可参考
-  version-schedule-prompt-link-text: LTS 日程。
+  version-schedule-prompt-link-text: LTS 日程
 ---
 
 Node.js® 是一个基于 [Chrome V8 引擎](https://v8.dev/) 的 JavaScript 运行时环境。
