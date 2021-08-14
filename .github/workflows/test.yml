@@ -1,4 +1,5 @@
 name: Tests
+
 on:
   push:
     branches-ignore:
@@ -6,21 +7,28 @@ on:
       - "dependabot/**"
   pull_request:
 
+env:
+  NODE: 14.x
+
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  run:
+    name: Node on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
 
     steps:
       - name: Clone repository
         uses: actions/checkout@v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
-          node-version: "12"
+          node-version: "${{ env.NODE }}"
 
-      - run: node --version
-      - run: npm --version
       - run: java -version
 
       - name: Install npm dependencies

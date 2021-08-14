@@ -10,7 +10,7 @@ layout: knowledge-post.hbs
 
 If you've been using Node.js for a while, you've definitely run into streams. HTTP connections are streams, open files are streams; stdin, stdout, and stderr are all streams as well. A 'stream' is node's I/O abstraction - if you feel like you still need to understand them better, you can read more about them [here](https://nodejs.org/api/stream.html#stream_stream).
 
-Streams make for quite a handy abstraction, and there's a lot you can do with them - as an example, let's take a look at `stream.pipe()`, the method used to take a readable stream and connect it to a writeable steam. Suppose we want to spawn a `node` child process and pipe our stdout and stdin to its corresponding stdout and stdin.
+Streams make for quite a handy abstraction, and there's a lot you can do with them - as an example, let's take a look at `stream.pipe()`, the method used to take a readable stream and connect it to a writeable stream. Suppose we want to spawn a `node` child process and pipe our stdout and stdin to its corresponding stdout and stdin.
 
 ```javascript
 #!/usr/bin/env node

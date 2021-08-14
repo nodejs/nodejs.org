@@ -281,7 +281,7 @@ que já foi descontinuado, em uma porta TCP que, por padrão, é a `5858`. Qualq
 que conversa com esse protocolo pode conectar a ele e debugar um processo sendo executado; abaixo temos
 alguns dos mais populares.
 
-### [Debugger nativo](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
+### [Debugger nativo](https://nodejs.org/dist/{#var currentVersion}/docs/api/debugger.html)
 
 <!-- Start `node debug script_name.js` to start your script under Node's builtin
 command-line debugger. Your script starts in another Node process started with
