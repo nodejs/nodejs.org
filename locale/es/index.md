@@ -14,7 +14,7 @@ labels:
   changelog: Cambios
   api: Documentación del API
   version-schedule-prompt: O eche un vistazo a la
-  version-schedule-prompt-link-text: Programa de soporte a largo plazo (LTS).
+  version-schedule-prompt-link-text: Programa de soporte a largo plazo (LTS)
 ---
 
 Node.js® es un entorno de ejecución para JavaScript construido con el [motor de JavaScript V8 de Chrome](https://v8.dev/).

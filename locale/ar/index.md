@@ -14,7 +14,7 @@ labels:
   changelog: سجل التغييرات
   api: API Docs
   version-schedule-prompt: أو انظر إلى
-  version-schedule-prompt-link-text: أجندة LTS.
+  version-schedule-prompt-link-text: أجندة LTS
 ---
 
 Node.js® هو إطار عمل مبني على محرك [Chrome V8](https://v8.dev/).
