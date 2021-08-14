@@ -91,9 +91,9 @@ layout: black-lives-matter.hbs
 * William Green
 * Willie McCoy
 * Yassin Mohamed
-* &hellip;[and](https://mappingpoliceviolence.org/) [countless](https://twitter.com/samswey/status/1259254114606886913) 
-  [more](https://en.wikipedia.org/wiki/Lists_of_killings_by_law_enforcement_officers_in_the_United_States#Lists_of_killings) 
-  [lives](https://ebwiki.org/) 
+* &hellip;[and](https://mappingpoliceviolence.org/) [countless](https://twitter.com/samswey/status/1259254114606886913)
+  [more](https://en.wikipedia.org/wiki/Lists_of_killings_by_law_enforcement_officers_in_the_United_States#Lists_of_killings)
+  [lives](https://ebwiki.org/)
   not listed  here, taken by violence and brutality.
 
 </section>

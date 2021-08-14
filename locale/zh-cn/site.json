@@ -84,6 +84,9 @@
     },
     "install-on-linux": {
       "text": "在 Linux 上，通过二进制文件安装 Node.js"
+    },
+    "install-on-wsl": {
+      "text": "在适用于 Linux 的 Windows 子系统（WSL）上安装 Node.js"
     }
   },
   "docs": {
@@ -154,6 +157,11 @@
   "links": {
     "pages": {
       "changelog": "更新日志"
+    }
+  },
+  "banners": {
+    "index": {
+      "text": "对 16.x，14.x 和 12.x 的安全更新版本已发布"
     }
   }
 }

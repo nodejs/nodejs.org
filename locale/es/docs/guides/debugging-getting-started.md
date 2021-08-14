@@ -178,7 +178,7 @@ When started with the **--debug** or **--debug-brk** switches in version 7 and e
 
 The V8 Debugging Protocol is no longer maintained or documented.
 
-### [Built-in Debugger](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
+### [Built-in Debugger](https://nodejs.org/dist/{#var currentVersion}/docs/api/debugger.html)
 
 Start `node debug script_name.js` to start your script under the builtin command-line debugger. Your script starts in another Node.js process started with the `--debug-brk` option, and the initial Node.js process runs the `_debugger.js` script and connects to your target.
 

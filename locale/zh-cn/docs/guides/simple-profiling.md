@@ -26,7 +26,7 @@ app.get('/newUser', (req, res) => {
 
   username = username.replace(/[!@#$%^&*]/g, '');
 
-  if (!username || !password || users.username) {
+  if (!username || !password || !users[username]) {
     return res.sendStatus(400);
   }
 
@@ -221,4 +221,4 @@ Percentage of the requests served within a certain time (ms)
 
 [V8 内探测器]: https://v8.dev/docs/profile
 [异步编程的好处]: https://nodesource.com/blog/why-asynchronous
-[如何创建火焰图]: ../diagnostics-flamegraph/
+[如何创建火焰图]: /zh-cn/docs/guides/diagnostics-flamegraph/

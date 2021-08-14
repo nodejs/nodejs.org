@@ -8,7 +8,11 @@ layout: contribute.hbs
 ## 社群討論
 
 * [GitHub issues 清單](https://github.com/nodejs/node/issues)是討論 Node.js 核心功能的好地方。
-* 關於 Node.js 開發的即時對話請使用 [IRC 用戶端](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) 或 [freenode 網頁聊天室](https://webchat.freenode.net/#node.js) 連線至 `irc.freenode.net` 中的 `#node.js` 頻道。
+* 想即時聊聊關於 Node.js 開發方面的內容，可以使用以下平臺：
+  * 使用 IRC，請使用 [IRC 用戶端](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients)，轉到 `irc.libera.chat` 中的 `#node.js` 頻道，或者在您的瀏覽器中使用 [Web 用戶端](https://kiwiirc.com/nextclient/) 直接連接即可。
+  * 使用 Slack，有兩種選項：
+    * [Node Slackers](https://www.nodeslackers.com/) 是一個針對 Node.js 開發的社群，一些工作小組在那邊有相關的討論頻道。
+    * [OpenJSF Slack](https://slack-invite.openjsf.org/) 包含多個 Node.js 頻道（帶有 `#nodejs-` 前綴的都是與此專案相關），一些工作小組在那邊也有討論頻道。
 * Node.js 官方的 Twitter 帳號是 [nodejs](https://twitter.com/nodejs)。
 * [Node.js Foundation 行事曆](https://nodejs.org/calendar) 中列出了所有的公開團隊會議。
 * [Node.js Collection](https://medium.com/the-node-js-collection) 是個由社群策劃的 Medium 文章合集。
