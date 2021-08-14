@@ -61,4 +61,4 @@ requests and go through proper review.
 
 ## How to contribute
 
-Please read more at [How to contribute](/README.md)
+Please read more at [How to contribute](/README.md#contributing)
