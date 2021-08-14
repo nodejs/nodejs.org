@@ -173,9 +173,7 @@ _Note that the same applies to `new Buffer()` usage without zero-filling, depend
 
 ## FAQ
 
-### <!--design-flaws-->What is wrong with the 
-
-`Buffer` constructor?
+### <!--design-flaws-->What is wrong with the `Buffer` constructor?
 
 The `Buffer` constructor could be used to create a buffer in many different ways:
 
@@ -213,8 +211,6 @@ Both of these scenarios are considered serious security issues in a real-world w
 
 When using `Buffer.from(req.body.string)` instead, passing a number will always throw an exception instead, giving a controlled behavior that can always be handled by the program.
 
-### <!--ecosystem-usage-->The 
-
-`Buffer()` constructor has been deprecated for a while. Is this really an issue?
+### <!--ecosystem-usage-->The `Buffer()` constructor has been deprecated for a while. Is this really an issue?
 
 Surveys of code in the `npm` ecosystem have shown that the `Buffer()` constructor is still widely used. This includes new code, and overall usage of such code has actually been *increasing*.

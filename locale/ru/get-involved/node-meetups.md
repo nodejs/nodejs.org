@@ -15,7 +15,7 @@ layout: contribute.hbs
 
 ФОРМАТ
 
-* [Встреча](https://www.Встреча.com/pdxnode/)
+* [Встреча](https://www.meetup.com/pdxnode/)
 * Частота встреч
 * Как стать докладчиком? ― «здесь»
 * Имена организаторов (если вы хотите предоставить)
@@ -44,7 +44,7 @@ layout: contribute.hbs
 
 ##### Buenos Aires
 
-* [Встреча](https://www.Встреча.com/banodejs/)
+* [Встреча](https://www.meetup.com/banodejs/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Write a message in the Встреча page
 * Организаторы ― Alejandro Oviedo
@@ -56,7 +56,7 @@ layout: contribute.hbs
 
 ##### Melbourne
 
-* [Встреча](https://www.Встреча.com/NodeMelbourne/)
+* [Встреча](https://www.meetup.com/NodeMelbourne/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Andrey Sidorov
@@ -64,7 +64,7 @@ layout: contribute.hbs
 
 ##### Sydney
 
-* [Встреча](https://www.Встреча.com/node-sydney/)
+* [Встреча](https://www.meetup.com/node-sydney/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― James Richardson. Co-organizer: Jessica Claire
@@ -76,7 +76,7 @@ layout: contribute.hbs
 
 ##### Brussels
 
-* [Встреча](https://www.Встреча.com/Belgian-node-js-User-Group/)
+* [Встреча](https://www.meetup.com/Belgian-node-js-User-Group/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Steven Beeckman
@@ -86,7 +86,7 @@ layout: contribute.hbs
 
 #### São Paulo
 
-* [Встреча](https://Встреча.com/nodebr)
+* [Встреча](https://meetup.com/nodebr)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― [Erick Wendel](https://github.com/erickwendel), [Alan Hoffmeister](https://github.com/alanhoff), [Igor França](https://github.com/horaddrim), [Icaro Caldeira](https://github.com/icarcal), [Marcus Bergamo](https://github.com/thebergamo), [Igor Halfeld](https://github.com/igorHalfeld).
@@ -94,7 +94,7 @@ layout: contribute.hbs
 
 ##### Campinas
 
-* [Встреча](https://www.Встреча.com/Nodeschool-Campinas/)
+* [Встреча](https://www.meetup.com/Nodeschool-Campinas/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Filipe Oliveira
@@ -102,7 +102,7 @@ layout: contribute.hbs
 
 #### Chile
 
-* [Встреча](https://www.Встреча.com/es-ES/NodersJS/)
+* [Встреча](https://www.meetup.com/es-ES/NodersJS/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Issue on GitHub [here](https://github.com/Noders/Встречаs/issues/new)
 * Организаторы ― Rodrigo Adones and Ender Bonnet
@@ -110,7 +110,7 @@ layout: contribute.hbs
 
 #### Minas Gerais
 
-* [Встреча](https://www.Встреча.com/nodebr/)
+* [Встреча](https://www.meetup.com/nodebr/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Hugo Iuri
@@ -120,7 +120,7 @@ layout: contribute.hbs
 
 ##### Porto Alegre
 
-* [Встреча](https://www.Встреча.com/Node-js-Porto-Alegre-Встреча/)
+* [Встреча](https://www.meetup.com/Node-js-Porto-Alegre-Встреча/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Henrique Schreiner
@@ -132,7 +132,7 @@ layout: contribute.hbs
 
 ##### Vancouver
 
-* [Встреча](https://www.Встреча.com/Node-JS-Community-Hangouts)
+* [Встреча](https://www.meetup.com/Node-JS-Community-Hangouts)
 * Частота встреч ― quarterly
 * Как стать докладчиком? ― DM @keywordnew on twitter
 * Организаторы ― Manil Chowdhury
@@ -154,7 +154,7 @@ layout: contribute.hbs
 
 ##### Medellín
 
-* [Встреча](https://www.Встреча.com/node_co/)
+* [Встреча](https://www.meetup.com/node_co/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Camilo Montoya
@@ -166,7 +166,7 @@ layout: contribute.hbs
 
 ##### Helsinski
 
-* [Встреча](https://www.Встреча.com/Helsinki-Node-js/)
+* [Встреча](https://www.meetup.com/Helsinki-Node-js/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page
 * Организаторы ― Juha Lehtomaki
@@ -178,7 +178,7 @@ layout: contribute.hbs
 
 ##### Paris
 
-* [Встреча](https://www.Встреча.com/Nodejs-Paris/)
+* [Встреча](https://www.meetup.com/Nodejs-Paris/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page or submit your talk on [nodejs.paris website](http://nodejs.paris/Встречаs)
 * Организаторы ― [Etienne Folio](https://twitter.com/Ornthalas), [Stanislas Ormières](https://twitter.com/laruiss), [Nicolas KOKLA](https://twitter.com/nkokla), Quentin Raynaud
@@ -190,7 +190,7 @@ layout: contribute.hbs
 
 ##### Passau
 
-* [Встреча](https://www.Встреча.com/de-DE/Nodeschool-Passau/)
+* [Встреча](https://www.meetup.com/de-DE/Nodeschool-Passau/)
 * Частота встреч ― quarterly
 * Как стать докладчиком? ― Email [Valentin](mailto:valentin.huber@msg.group)
 * Организаторы ― Valentin Huber
@@ -198,7 +198,7 @@ layout: contribute.hbs
 
 ##### Hamburg
 
-* [Встреча](https://www.Встреча.com/node-HH/)
+* [Встреча](https://www.meetup.com/node-HH/)
 * Частота встреч ― monthly and on demand
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Gregor Elke, Oliver Lorenz
@@ -208,7 +208,7 @@ layout: contribute.hbs
 
 #### Athens
 
-* [Встреча](https://www.Встреча.com/nodejsathens/)
+* [Встреча](https://www.meetup.com/nodejsathens/)
 * Частота встреч ― every two months
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― [Ioannis Nikolaou](https://www.linkedin.com/in/ioannis-nikolaou/) Co-organizers ― Stratoula Kalafateli, [Kostas Siabanis](https://github.com/ksiabani), Megaklis Vasilakis
@@ -218,7 +218,7 @@ layout: contribute.hbs
 
 #### Budapest
 
-* [Встреча](https://www.Встреча.com/nodebp/)
+* [Встреча](https://www.meetup.com/nodebp/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Oroszi Róbert
@@ -228,7 +228,7 @@ layout: contribute.hbs
 
 #### Delhi
 
-* [Встреча](https://www.Встреча.com/nodeJS-Devs/)
+* [Встреча](https://www.meetup.com/nodeJS-Devs/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Gaurav Gandhi.
@@ -238,7 +238,7 @@ layout: contribute.hbs
 
 ##### Ahmedabad
 
-* [Встреча](https://www.Встреча.com/Встреча-group-iAIoTVuS/)
+* [Встреча](https://www.meetup.com/Встреча-group-iAIoTVuS/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page or write to dipesh@rapidops.com
 * Организаторы ― Dipesh Patel
@@ -248,7 +248,7 @@ layout: contribute.hbs
 
 #### Jakarta
 
-* [Встреча](https://www.Встреча.com/Node-js-Workshop/)
+* [Встреча](https://www.meetup.com/Node-js-Workshop/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Lukluk Luhuring Santoso
@@ -258,13 +258,13 @@ layout: contribute.hbs
 
 #### Dublin
 
-* [Встреча](https://www.Встреча.com/Dublin-Node-js-Встреча/)
+* [Встреча](https://www.meetup.com/Dublin-Node-js-Встреча/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Sean Walsh. Co-organizer: Leanne Vaughey
 * Контакты организаторов ―
 
-* [Встреча](https://www.Встреча.com/Nodeschool-Dublin-Встреча/)
+* [Встреча](https://www.meetup.com/Nodeschool-Dublin-Встреча/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Anton Whalley
@@ -274,7 +274,7 @@ layout: contribute.hbs
 
 #### Tel Aviv
 
-* [Встреча](https://www.Встреча.com/NodeJS-Israel/)
+* [Встреча](https://www.meetup.com/NodeJS-Israel/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page or submit your talk on [Node.js-IL website](http://www.nodejsil.com/).
 * Организаторы ― [Idan Dagan](https://github.com/idandagan1), [Guy Segev](https://github.com/guyguyon), [Tomer Omri](https://github.com/TomerOmri)
@@ -285,7 +285,7 @@ layout: contribute.hbs
 
 #### Mexico City
 
-* [Встреча](https://www.Встреча.com/NodeBotsMX/)
+* [Встреча](https://www.meetup.com/NodeBotsMX/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Saúl Buentello
@@ -295,7 +295,7 @@ layout: contribute.hbs
 
 #### Auckland
 
-* [Встреча](https://www.Встреча.com/AucklandNodeJs/)
+* [Встреча](https://www.meetup.com/AucklandNodeJs/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― George Czabania
@@ -305,7 +305,7 @@ layout: contribute.hbs
 
 #### Cape Town
 
-* [Встреча](https://www.Встреча.com/nodecpt/)
+* [Встреча](https://www.meetup.com/nodecpt/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Guy Bedford
@@ -315,7 +315,7 @@ layout: contribute.hbs
 
 #### Madrid
 
-* [Встреча](https://www.Встреча.com/Node-js-Madrid/)
+* [Встреча](https://www.meetup.com/Node-js-Madrid/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Alex Fernández
@@ -325,7 +325,7 @@ layout: contribute.hbs
 
 #### Bangkok
 
-* [Встреча](https://www.Встреча.com/Bangkok-Node-js/)
+* [Встреча](https://www.meetup.com/Bangkok-Node-js/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Dylan Jay
@@ -335,7 +335,7 @@ layout: contribute.hbs
 
 #### Istanbul
 
-* [Встреча](https://www.Встреча.com/nodeschool-istanbul/)
+* [Встреча](https://www.meetup.com/nodeschool-istanbul/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Arif Çakıroğlu
@@ -347,7 +347,7 @@ layout: contribute.hbs
 
 ##### Mesa
 
-* [Встреча](https://www.Встреча.com/NodeAZ/)
+* [Встреча](https://www.meetup.com/NodeAZ/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Chris Matthieu
@@ -365,7 +365,7 @@ layout: contribute.hbs
 
 ##### Irvine
 
-* [Встреча](https://www.Встреча.com/Node-JS-OC/)
+* [Встреча](https://www.meetup.com/Node-JS-OC/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Farsheed Atef
@@ -373,13 +373,13 @@ layout: contribute.hbs
 
 ##### San Francisco
 
-* [Встреча](https://www.Встреча.com/sfnode/)
+* [Встреча](https://www.meetup.com/sfnode/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ―
 * Организаторы ― Dan Shaw
 * Контакты организаторов ―
 
-* [Встреча](https://www.Встреча.com/Node-js-Serverside-Javascripters-Club-SF/)
+* [Встреча](https://www.meetup.com/Node-js-Serverside-Javascripters-Club-SF/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ―
 * Организаторы ― Matt Pardee
@@ -389,7 +389,7 @@ layout: contribute.hbs
 
 ##### Denver
 
-* [Встреча](https://www.Встреча.com/Node-js-Denver-Boulder/)
+* [Встреча](https://www.meetup.com/Node-js-Denver-Boulder/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page
 * Организаторы ― Brooks Patton
@@ -399,7 +399,7 @@ layout: contribute.hbs
 
 ##### Jacksonville
 
-* [Встреча](https://www.Встреча.com/Jax-Node-js-UG/)
+* [Встреча](https://www.meetup.com/Jax-Node-js-UG/)
 * [Website](https://www.jaxnode.com)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
@@ -410,7 +410,7 @@ layout: contribute.hbs
 
 ##### Atlanta
 
-* [Встреча](https://www.Встреча.com/Atlanta-Nodejs-Developers/)
+* [Встреча](https://www.meetup.com/Atlanta-Nodejs-Developers/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Ryan Connelly
@@ -420,7 +420,7 @@ layout: contribute.hbs
 
 ##### Chicago
 
-* [Встреча](https://www.Встреча.com/Chicago-Nodejs/)
+* [Встреча](https://www.meetup.com/Chicago-Nodejs/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page or (https://airtable.com/shrTDwmMH3zsnsWOE)
 * Организаторы ― Mike Hostetler, Zeke Nierenberg, & Ben Neiswander
@@ -430,7 +430,7 @@ layout: contribute.hbs
 
 ##### Indianapolis
 
-* [Встреча](https://www.Встреча.com/Node-indy/)
+* [Встреча](https://www.meetup.com/Node-indy/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Mike Seidle
@@ -440,7 +440,7 @@ layout: contribute.hbs
 
 ##### Boston
 
-* [Встреча](https://www.Встреча.com/Boston-Node/)
+* [Встреча](https://www.meetup.com/Boston-Node/)
 * Частота встреч ― ~monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page or post in slack workspace #\_node\_Встреча (see below).
 * Организаторы ― [Brian Sodano](https://github.com/codemouse)
@@ -450,7 +450,7 @@ layout: contribute.hbs
 
 ##### Detroit
 
-* [Встреча](https://www.Встреча.com/DetNode/)
+* [Встреча](https://www.meetup.com/DetNode/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Steve Marsh, Norman Witte and Israel V
@@ -459,7 +459,7 @@ layout: contribute.hbs
 
 ##### Minneapolis
 
-* [Встреча](https://www.Встреча.com/NodeMN/)
+* [Встреча](https://www.meetup.com/NodeMN/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Mike Frey
@@ -469,7 +469,7 @@ layout: contribute.hbs
 
 ##### New York
 
-* [Встреча](https://www.Встреча.com/nodejs/)
+* [Встреча](https://www.meetup.com/nodejs/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ―
 * Организаторы ― Patrick Scott Co-organizer: Matt Walters.
@@ -479,7 +479,7 @@ layout: contribute.hbs
 
 ##### Raleigh Durham
 
-* [Встреча](https://www.Встреча.com/triangle-nodejs/)
+* [Встреча](https://www.meetup.com/triangle-nodejs/)
 * Частота встреч ― quarterly
 * Как стать докладчиком? ― Email ladyleet@nodejs.org
 * Организаторы ― Tracy Lee
@@ -499,9 +499,9 @@ layout: contribute.hbs
 
 ##### Philadelphia
 
-* [Встреча](https://www.Встреча.com/nodejs-philly/)
+* [Встреча](https://www.meetup.com/nodejs-philly/)
 * Частота встреч ― monthly
-* Как стать докладчиком? ― Contact organizers in the Встреча page: https://www.Встреча.com/nodejs-philly/members/14283814/
+* Как стать докладчиком? ― Contact organizers in the Встреча page: https://www.meetup.com/nodejs-philly/members/14283814/
 * Организаторы ― Leomar Durán
 * Контакты организаторов ―
 
@@ -509,13 +509,13 @@ layout: contribute.hbs
 
 ##### Austin
 
-* [Встреча](https://www.Встреча.com/ATXNodeSchool/)
+* [Встреча](https://www.meetup.com/ATXNodeSchool/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Stefan von Ellenrieder
 * Контакты организаторов -
 
-* [Встреча](https://www.Встреча.com/austinnodejs/)
+* [Встреча](https://www.meetup.com/austinnodejs/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Matt Walters
@@ -523,7 +523,7 @@ layout: contribute.hbs
 
 ##### Dallas
 
-* [Встреча](https://www.Встреча.com/DallasNode/)
+* [Встреча](https://www.meetup.com/DallasNode/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― [Cameron Steele](https://github.com/ATechAdventurer)
@@ -533,7 +533,7 @@ layout: contribute.hbs
 
 ##### Salt Lake City
 
-* [Встреча](https://www.Встреча.com/utahnodejs/)
+* [Встреча](https://www.meetup.com/utahnodejs/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page.
 * Организаторы ― Aaron Seth Madsen
@@ -543,13 +543,13 @@ layout: contribute.hbs
 
 ##### Seattle
 
-* [Встреча](https://www.Встреча.com/Seattle-Node-js/)
+* [Встреча](https://www.meetup.com/Seattle-Node-js/)
 * Частота встреч ― monthly
 * Как стать докладчиком?
 * Организаторы ― Ryan Roemer
 * Контакты организаторов -
 
-* [Встреча](https://www.Встреча.com/Seattle-NodeSchool/)
+* [Встреча](https://www.meetup.com/Seattle-NodeSchool/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Contact organizers in the Встреча page
 * Организаторы ― Wil Alvarez
@@ -557,7 +557,7 @@ layout: contribute.hbs
 
 #### Washington, DC.
 
-* [Встреча](https://www.Встреча.com/node-dc/)
+* [Встреча](https://www.meetup.com/node-dc/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Write to Andrew Dunkman adunkman@gmail.com
 * Организаторы ― Andrew Dunkman
@@ -568,7 +568,7 @@ layout: contribute.hbs
 #### London
 ##### LNUG
 
-* [Встреча](https://www.Встреча.com/london-nodejs/)
+* [Встреча](https://www.meetup.com/london-nodejs/)
 * [GitHub/lnug](https://github.com/lnug/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ― Visit our [speakers repos](https://github.com/lnug/speakers), read the guidelines, and [submit a talk proposal as a new issue](https://github.com/lnug/speakers/issues).
@@ -577,7 +577,7 @@ layout: contribute.hbs
 
 ##### Node Workshops
 
-* [Встреча](https://www.Встреча.com/NodeWorkshops//)
+* [Встреча](https://www.meetup.com/NodeWorkshops//)
 * Частота встреч ― monthly
 * Как стать докладчиком?
 * Организаторы ― Daryn Holmes
@@ -585,7 +585,7 @@ layout: contribute.hbs
 
 #### Cambridge
 
-* [Встреча](https://www.Встреча.com/JavaScript-Cambridge/)
+* [Встреча](https://www.meetup.com/JavaScript-Cambridge/)
 * Частота встреч ― monthly
 * Как стать докладчиком? ―
 * Организаторы ― Joe Parry, co-organizer Rob Moran
@@ -593,7 +593,7 @@ layout: contribute.hbs
 
 #### Oxford
 
-* [JSOxford](https://www.Встреча.com/jsoxford/)
+* [JSOxford](https://www.meetup.com/jsoxford/)
 * Частота встреч ― every 2 months
 * Как стать докладчиком? ― [Submit Form](https://docs.google.com/forms/d/e/1FAIpQLSflx7LU44PuwlyCJj-WwlP_SlrUvxAd8uaXlY7_O65c7RLpGQ/viewform?usp=sf_link)
 * Организаторы ― Marcus Noble, Seren Davies
@@ -603,7 +603,7 @@ layout: contribute.hbs
 
 #### Kiev
 
-* [Встреча](https://www.Встреча.com/NodeUA/), [Old group](https://www.Встреча.com/KievNodeJS/)
+* [Встреча](https://www.meetup.com/NodeUA/), [Old group](https://www.meetup.com/KievNodeJS/)
 * Частота встреч ― 1-8 times a month
 * Как стать докладчиком? ― Contact organizer by email.
 * Организаторы ― Timur Shemsedinov

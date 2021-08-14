@@ -8,7 +8,6 @@ layout: contribute.hbs
 ## Громадське обговорення
 
 * [Список іш’ю на GitHub](https://github.com/nodejs/node/issues) — це місце, де обговорюють ключовий функціонал Node.js.
-* Для живого чату про розробку на Node перейдіть на `irc.freenode.net` у канал `#node.js` через [IRC клієнт](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) або підключіться до каналу через веб–браузер з допомогою [WebChat від freenode](https://webchat.freenode.net/#node.js).
 * Офіційний аккаунт Node.js у Twitter [nodejs](https://twitter.com/nodejs).
 * The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
 * [Node Weekly](https://nodeweekly.com/) це поштове розсилання, що збирає найсвіжіші події та новини довкола спільноти Node.js.
@@ -28,3 +27,4 @@ layout: contribute.hbs
 * [Japanese user group](https://nodejs.jp/)
 * [Spanish language Facebook group for Node.js](https://www.facebook.com/groups/node.es/)
 * [Vietnamese Node.js community](https://www.facebook.com/nodejs.vn/)
+* [Uzbekistan group for Node.js](https://t.me/nodejs_uz)

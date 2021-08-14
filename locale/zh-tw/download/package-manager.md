@@ -17,6 +17,7 @@ title: 使用套件管理器安裝 Node.js
 * [IBM i](#ibm-i)
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
+* [nvs](#nvs)
 * [OpenBSD](#openbsd)
 * [openSUSE 及 SLE](#opensuse-and-sle)
 * [macOS](#macos)
@@ -40,7 +41,7 @@ pkg install nodejs
 pkg install nodejs-current
 ```
 
-目前，Termux 的 Node.js 二進位套裝程式與 `system-icu`（依賴于 `libicu` 包）相關聯。
+目前，Termux 的 Node.js 二進位套裝程式與 `system-icu`（相依於 `libicu` 套件）相關聯。
 
 ## Arch Linux
 
@@ -108,7 +109,7 @@ pkgin -y install nodejs
 Node 版本管理器（Node Version Manager, nvm）是款用來管理 Node.js 多重版本的 bash 指令稿，它可讓你執行安裝、移除及切換版本等操作。
 若要安裝 NVM 可以使用此[安裝指令稿](https://github.com/nvm-sh/nvm#install--update-script)。
 
-在 Unix / OS X 系統上從源碼編譯的 Node.js 可以透過 [nvm](https://github.com/creationix/nvm) 安裝至其指定位置：
+在 Unix / OS X 系統上從原始碼編譯的 Node.js 可以透過 [nvm](https://github.com/creationix/nvm) 安裝至其指定位置：
 
 ```bash
 env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
@@ -120,10 +121,55 @@ env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_p
 nvm use 8
 ```
 
-官方版本釋出後你將會需要移除從源碼編譯的版本：
+官方版本釋出後你將會需要移除從原始碼編譯的版本：
 
 ```bash
 nvm uninstall 8
+```
+
+## nvs
+
+#### Windows
+`nvs` 是一個跨平台版本管理工具，可用於 Windows、macOS 以及 Unix-like 的作業系統。
+
+在 Windows 上安裝 `nvs`，請到此 [發布頁](https://github.com/jasongin/nvs/releases) 下載最新發布的 MSI 安裝程式。
+
+你也可以使用 `chocolatey` 進行安裝：
+
+```bash
+choco install nvs
+```
+
+#### macOS，UnixLike
+你可以在 [此處](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux) 找到關於在 macOS / Unix-like 作業系統的安裝步驟文件。
+
+#### 使用方法
+安裝完成後，你可以使用 `nvs` 在不同版本的 node 中來回切換。
+
+新增最新版本的 node：
+
+```bash
+nvs add latest
+```
+
+新增最新 LTS 版本的 node：
+
+```bash
+nvs add lts
+```
+
+然後執行 `nvs use` ，為目前 shell 的 `PATH` 路徑下新增一個 node 版本：
+
+```bash
+$ nvs use lts
+PATH -= %LOCALAPPDATA%\nvs\default
+PATH += %LOCALAPPDATA%\nvs\node\14.17.0\x64
+```
+
+如果需要永久在 `PATH` 裡新增，使用 `nvs link`：
+
+```bash
+nvs link lts
 ```
 
 ## OpenBSD

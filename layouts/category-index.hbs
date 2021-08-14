@@ -14,11 +14,11 @@
       <ul class="blog-index">
         {{#each collections.blog}}
           {{#unless listing}}
-            {{#startswith path (slashes ../path)}}
+            {{#startswith path ../path}}
               {{#if title}}
                 <li>
                   <time datetime="{{ strftime date '%FT%T%z' }}">{{ strftime date "%d %b %y" }}</time>
-                  <a href="/{{../site.locale}}/{{ slashes path }}/">{{ title }}</a>
+                  <a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a>
                 </li>
               {{/if}}
             {{/startswith}}
