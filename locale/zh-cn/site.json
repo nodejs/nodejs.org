@@ -10,6 +10,7 @@
   "reportNodeIssue": "报告 Node.js 问题 ",
   "reportWebsiteIssue": "报告网站问题",
   "getHelpIssue": "获取帮助",
+  "Contributing": "为 Nodejs.org 做贡献",
   "by": "by",
   "all-downloads": "所有下载选项",
   "nightly": "每日构建",
