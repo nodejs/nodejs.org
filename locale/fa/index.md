@@ -5,8 +5,6 @@ labels:
   download: دانلود
   download-for: دانلود برای
   other-downloads: سایر دانلود‌ها
-  other-lts-downloads: سایر دانلود‌های با پشتیبانی طولانی
-  other-current-downloads: سایر دانلودهای جاری
   current: جاری
   lts: پشتیبانی طولانی مدت
   tagline-current: آخرین ویژگی‌ها
