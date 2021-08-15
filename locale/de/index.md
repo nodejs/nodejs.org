@@ -5,8 +5,6 @@ labels:
   download: Download
   download-for: Herunterladen für
   other-downloads: Andere Downloads
-  other-lts-downloads: Andere LTS Downloads
-  other-current-downloads: Andere aktuelle Downloads
   current: Aktuell
   lts: LTS
   tagline-current: Neueste Funktionalitäten

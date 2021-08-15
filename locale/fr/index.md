@@ -4,8 +4,6 @@ labels:
   current-version: Version actuelle
   download: Téléchargements
   download-for: Téléchargements pour
-  other-downloads: Autres téléchargements
-  other-lts-downloads: Autres téléchargements LTS
   other-current-downloads: Autres téléchargements actuels
   current: Actuel
   lts: LTS

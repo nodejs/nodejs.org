@@ -5,8 +5,6 @@ labels:
   download: Завантажити
   download-for: Завантажити для
   other-downloads: Інші завантаження
-  other-lts-downloads: Інші LTS завантаження
-  other-current-downloads: Інші поточні завантаження
   current: Поточна
   lts: LTS
   tagline-current: Найновіші можливості

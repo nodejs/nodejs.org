@@ -5,8 +5,6 @@ labels:
   download: İndir
   download-for: İndirin
   other-downloads: Diğer indirmeler
-  other-lts-downloads: Diğer LTS(Uzun Süreli Destek) İndirmeleri
-  other-current-downloads: Diğer Güncel İndirmeler
   current: Güncel
   lts: LTS
   tagline-current: Son Özellikler

@@ -7,7 +7,7 @@ downloads:
     lts: 长期维护版
     current: 最新尝鲜版
     tagline-current: 含最新功能
-    tagline-lts: 推荐多数用户使用 (LTS)
+    tagline-lts: 推荐多数用户使用
     display-hint: 下载版本：
     intro: >
         在你的平台上下载 Node.js 源码或预编译安装包，然后即可马上进行开发。
