@@ -5,8 +5,6 @@ labels:
   download: Загрузить
   download-for: Загрузить для
   other-downloads: Другие загрузки
-  other-lts-downloads: Другие LTS загрузки
-  other-current-downloads: Другие текущие загрузки
   current: Текущая
   lts: LTS
   tagline-current: Последние возможности
