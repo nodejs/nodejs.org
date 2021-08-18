@@ -58,3 +58,7 @@ resolution mechanism.
 Individuals with non-trivial contributions may be added as Collaborators.
 Collaborators are expected to follow this policy and continue to send pull
 requests and go through proper review.
+
+## How to contribute
+
+Please read more at [How to contribute](/README.md#contributing)
