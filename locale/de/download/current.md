@@ -11,7 +11,7 @@ downloads:
     display-hint: Downloads anzeigen für
     intro: >
         Lade den Node.js-Quellcode oder ein bestehendes Installationsprogramm für deine Plattform herunter und beginne gleich mit der Entwicklung.
-    currentVersion: Aktuellste LTS-Version
+    currentVersion: Aktuellste Version
     buildInstructions: Building Node.js from source on supported platforms
     WindowsInstaller: Windows Installer
     WindowsBinary: Windows Binary
