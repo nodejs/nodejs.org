@@ -1,9 +1,5 @@
 # Node.js 15 ChangeLog
 
-<!--lint disable prohibited-strings-->
-<!--lint disable maximum-line-length-->
-<!--lint disable no-literal-urls-->
-
 <table>
 <tr>
 <th>Current</th>
