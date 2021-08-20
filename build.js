@@ -41,6 +41,10 @@ const latestVersion = require('./scripts/helpers/latestversion')
 // are not defined in the given language.
 const DEFAULT_LANG = 'en'
 
+// The history links of nodejs versions at doc/index.md
+const nodejsVersionsContent =
+require('fs').readFileSync('./source/nodejsVersions.md').toString()
+
 // Set up the Markdown renderer that we'll use for our Metalsmith build process,
 // with the necessary adjustments that we need to make in order to have Prism
 // work.
@@ -138,7 +142,8 @@ function buildLocale (source, locale, opts) {
       actions: [{
         type: 'var',
         varValues: {
-          currentVersion: `latest-${latestVersionInfo.lts.nodeMajor}`
+          currentVersion: `latest-${latestVersionInfo.lts.nodeMajor}`,
+          nodeVersionLinks: nodejsVersionsContent
         }
       }]
     }))
