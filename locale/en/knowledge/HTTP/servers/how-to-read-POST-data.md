@@ -19,7 +19,7 @@ var postHTML =
   '<form method="post">' +
   'Input 1: <input name="input1"><br>' +
   'Input 2: <input name="input2"><br>' +
-  '<input type="submit">' +
+  '<button type="submit">submit</button>' +
   '</form>' +
   '</body></html>';
 
