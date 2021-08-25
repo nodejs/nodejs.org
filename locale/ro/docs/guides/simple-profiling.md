@@ -48,7 +48,7 @@ app.get('/auth', (req, res) => {
 
   username = username.replace(/[!@#$%^&*]/g, '');
 
-  if (!username || !password || !users[username]) {
+  if (!username || !password || users[username]) {
     return res.sendStatus(400);
   }
 
@@ -169,7 +169,7 @@ app.get('/auth', (req, res) => {
 
   username = username.replace(/[!@#$%^&*]/g, '');
 
-  if (!username || !password || !users[username]) {
+  if (!username || !password || users[username]) {
     return res.sendStatus(400);
   }
 

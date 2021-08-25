@@ -5,8 +5,6 @@ labels:
   download: 下載
   download-for: 目前版本：
   other-downloads: 其它版本
-  other-lts-downloads: 其它長期維護版下載
-  other-current-downloads: 其它最新版本下載
   current: 最新版本
   lts: 長期維護版
   tagline-current: 包含最新功能

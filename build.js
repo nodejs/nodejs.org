@@ -19,7 +19,7 @@ const discoverPartials = require('metalsmith-discover-partials')
 const layouts = require('metalsmith-layouts')
 const markdown = require('metalsmith-markdown')
 const prism = require('metalsmith-prism')
-const permalinks = require('metalsmith-permalinks')
+const permalinks = require('@metalsmith/permalinks')
 const pagination = require('metalsmith-yearly-pagination')
 const defaultsDeep = require('lodash.defaultsdeep')
 const autoprefixer = require('autoprefixer')
@@ -29,6 +29,7 @@ const sass = require('sass')
 const ncp = require('ncp')
 const junk = require('junk')
 const semver = require('semver')
+const replace = require('metalsmith-one-replace')
 
 const githubLinks = require('./scripts/plugins/githubLinks')
 const navigation = require('./scripts/plugins/navigation')
@@ -40,6 +41,10 @@ const latestVersion = require('./scripts/helpers/latestversion')
 // are not defined in the given language.
 const DEFAULT_LANG = 'en'
 
+// The history links of nodejs versions at doc/index.md
+const nodejsVersionsContent =
+require('fs').readFileSync('./source/nodejsVersions.md').toString()
+
 // Set up the Markdown renderer that we'll use for our Metalsmith build process,
 // with the necessary adjustments that we need to make in order to have Prism
 // work.
@@ -49,6 +54,10 @@ const markedOptions = {
   langPrefix: 'language-',
   renderer
 }
+
+// We are setting the output from `latestVersion` module here for future use.
+// available props `latestVersionInfo` are `current` and `lts`
+let latestVersionInfo = {}
 
 // This function imports a given language file and uses the default language set
 // in DEFAULT_LANG as a fallback to prevent any strings that aren't filled out
@@ -128,6 +137,15 @@ function buildLocale (source, locale, opts) {
         post,
         displaySummary: idx < 10
       })
+    }))
+    .use(replace({
+      actions: [{
+        type: 'var',
+        varValues: {
+          currentVersion: `latest-${latestVersionInfo.lts.nodeMajor}`,
+          nodeVersionLinks: nodejsVersionsContent
+        }
+      }]
     }))
     .use(markdown(markedOptions))
     .use(githubLinks({ locale, site: i18nJSON(locale) }))
@@ -267,23 +285,14 @@ function copyStatic () {
 function getSource (callback) {
   // Loads all node/io.js versions.
   loadVersions((err, versions) => {
+    latestVersionInfo = {
+      current: latestVersion.current(versions),
+      lts: latestVersion.lts(versions)
+    }
     const source = {
       project: {
         versions,
-        latestVersions: {
-          current: latestVersion.current(versions),
-          lts: latestVersion.lts(versions)
-        },
-        blacklivesmatter: {
-          visible: false,
-          text: '#BlackLivesMatter',
-          link: '/en/black-lives-matter/'
-        },
-        banner: {
-          visible: false,
-          text: 'New security releases now available for 15.x, 14.x, 12.x and 10.x release lines',
-          link: '/en/blog/vulnerability/april-2021-security-releases/'
-        }
+        latestVersions: latestVersionInfo
       }
     }
     if (semver.gt(source.project.latestVersions.lts.node, source.project.latestVersions.current.node)) {

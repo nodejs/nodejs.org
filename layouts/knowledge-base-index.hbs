@@ -16,7 +16,7 @@
         <ul class="no-padding">
         {{#each collections.knowledgeBase}}
           {{#startswith path 'knowledge/'}}
-            <li><a href="/{{../site.locale}}/{{ slashes path }}/">{{ title }}</a></li>
+            <li><a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a></li>
           {{/startswith}}
         {{/each}}
         </ul>

@@ -1,5 +1,6 @@
 {
   "title": "Node.js",
+  "editOnGithub":"Edit On GitHub",
   "author": "Node.js",
   "url": "https://nodejs.org/en/",
   "locale": "en",
@@ -9,6 +10,7 @@
   "reportNodeIssue": "Report Node.js issue",
   "reportWebsiteIssue": "Report website issue",
   "getHelpIssue": "Get Help",
+  "Contributing": "Contributing For Nodejs.org",
   "by": "by",
   "all-downloads": "All download options",
   "nightly": "Nightly builds",
@@ -156,6 +158,19 @@
   "links": {
     "pages": {
       "changelog": "Changelog"
+    }
+  },
+  "banners": {
+    "index": {
+      "startDate": "2021-08-05T13:00:00.000Z",
+      "endDate": "2021-08-25T13:00:00.000Z",
+      "text": "New security releases now available for 16.x, 14.x, and 12.x release lines",
+      "link": "blog/vulnerability/aug-2021-security-releases/"
+    },
+    "blacklivesmatter": {
+      "visible": false,
+      "text": "#BlackLivesMatter",
+      "link": "black-lives-matter/"
     }
   }
 }

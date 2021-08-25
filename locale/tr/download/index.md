@@ -11,7 +11,7 @@ downloads:
     display-hint: "İndirmeleri göster:"
     includes: "dahili"
     intro: >
-        Node.js kaynak kodunu ya da platformunuz için inşa edilmiş yükleyiciyi indirin, geliştirmeye bugün başlayın. 
+        Node.js kaynak kodunu ya da platformunuz için inşa edilmiş yükleyiciyi indirin, geliştirmeye bugün başlayın.
     currentVersion: Son Uzun Süreli Destek(LTS) Versiyonu
     buildInstructions: Node.js'yi desteklenen platformlarda oluşturmak
     WindowsInstaller: Windows Yükleyici
