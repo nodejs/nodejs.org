@@ -10,6 +10,6 @@
     ["remark-lint-no-literal-urls", false],
     ["remark-lint-no-undefined-references", false],
     ["remark-lint-prohibited-strings", false],
-    ["remark-preset-lint-node/remark-lint-nodejs-links", false]
+    ["remark-preset-lint-node/remark-lint-nodejs-links.js", false]
   ]
 }
