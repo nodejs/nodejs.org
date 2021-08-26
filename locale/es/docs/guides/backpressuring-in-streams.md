@@ -364,7 +364,7 @@ class MyReadable extends Readable {
 }
 ```
 
-Additionally, from outside the custom stream, there are pratfalls for ignoring backpressure. In this counter-example of good practice, the application's code forces data through whenever it is available (signaled by the [`'data'` event][]):
+Additionally, from outside the custom stream, there are pitfalls for ignoring backpressure. In this counter-example of good practice, the application's code forces data through whenever it is available (signaled by the [`'data'` event][]):
 
 ```javascript
 // This ignores the backpressure mechanisms Node.js has set in place,
