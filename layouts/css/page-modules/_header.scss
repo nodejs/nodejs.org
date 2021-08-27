@@ -102,7 +102,7 @@ header {
         pointer-events: none;
         border-top-color: $node-gray;
         border-width: $border-width;
-        margin-left: -$border-width / 2;
+        margin-left: -$border-width * .5;
       }
 
       &.active:first-child::after {
@@ -146,7 +146,7 @@ header {
 }
 
 #logo {
-  display: block;
+  display: inline-block;
 
   &:hover {
     background-color: transparent;

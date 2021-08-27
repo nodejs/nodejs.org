@@ -5,8 +5,6 @@ labels:
   download: Download
   download-for: Herunterladen für
   other-downloads: Andere Downloads
-  other-lts-downloads: Andere LTS Downloads
-  other-current-downloads: Andere aktuelle Downloads
   current: Aktuell
   lts: LTS
   tagline-current: Neueste Funktionalitäten
@@ -14,7 +12,7 @@ labels:
   changelog: Änderungshistorie
   api: API Doku
   version-schedule-prompt: Oder wirf einen Blick auf den
-  version-schedule-prompt-link-text: LTS Release Plan.
+  version-schedule-prompt-link-text: LTS Release Plan
 ---
 
 Node.js® ist eine JavaScript-Laufzeitumgebung, die auf [Chromes V8 JavaScript-Engine](https://v8.dev/) basiert.

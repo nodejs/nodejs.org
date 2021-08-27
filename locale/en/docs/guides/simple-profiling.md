@@ -59,7 +59,7 @@ app.get('/auth', (req, res) => {
 
   username = username.replace(/[!@#$%^&*]/g, '');
 
-  if (!username || !password || !users[username]) {
+  if (!username || !password || users[username]) {
     return res.sendStatus(400);
   }
 
@@ -224,7 +224,7 @@ app.get('/auth', (req, res) => {
 
   username = username.replace(/[!@#$%^&*]/g, '');
 
-  if (!username || !password || !users[username]) {
+  if (!username || !password || users[username]) {
     return res.sendStatus(400);
   }
 
@@ -280,4 +280,4 @@ You may also find [how to create a flame graph][diagnostics flamegraph] helpful.
 
 [profiler inside V8]: https://v8.dev/docs/profile
 [benefits of asynchronous programming]: https://nodesource.com/blog/why-asynchronous
-[diagnostics flamegraph]: ../diagnostics-flamegraph/
+[diagnostics flamegraph]: /en/docs/guides/diagnostics-flamegraph/

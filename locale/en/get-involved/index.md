@@ -9,7 +9,7 @@ layout: contribute.hbs
 
 * The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
 * For real-time chat about Node.js development use one of the platforms below
-  * For IRC, go to `irc.freenode.net` in the `#node.js` channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [freenode's WebChat](https://webchat.freenode.net/#node.js).
+  * For IRC, go to `irc.libera.chat` in the `#node.js` channel with an [IRC client](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) or connect in your web browser to the channel using [a web client](https://kiwiirc.com/nextclient/)
   * For Slack, there are two options:
     * [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community. Some Working Groups have discussion channels there.
     * The [OpenJSF Slack](https://slack-invite.openjsf.org/) is a Foundation run Slack with several Node.js channels (channels prefixed by `#nodejs-` are related to the project). Some Working Groups have discussion channels there.

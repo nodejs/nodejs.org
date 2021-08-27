@@ -12,15 +12,15 @@
 
         {{{ contents }}}
 
-        {{#if project.blacklivesmatter.visible}}
+        {{#if site.banners.blacklivesmatter.visible}}
           <div class="home-blacklivesmatterblock">
-            <a tabindex="0" role="button" aria-pressed="false" class="home-blacklivesmatterbutton" href="{{ project.blacklivesmatter.link }}">{{ project.blacklivesmatter.text }}</a>
+            <a tabindex="0" role="button" aria-pressed="false" class="home-blacklivesmatterbutton" href="{{ site.banners.blacklivesmatter.link }}">{{ site.banners.blacklivesmatter.text }}</a>
           </div>
         {{/if}}
 
-        {{#if project.banner.visible}}
+        {{#if ( betweenDate site.banners.index.startDate site.banners.index.endDate ) }}
           <p class="home-version home-version-banner">
-            <a href="{{ project.banner.link }}">{{ project.banner.text }}</a>
+            <a href="{{ site.banners.index.link }}">{{ site.banners.index.text }}</a>
           </p>
         {{/if}}
 

@@ -28,10 +28,20 @@
     langPickerElement.removeChild(currentLangElement.parentNode)
   }
 
-  langPickerTogglerElement.addEventListener('click', function () {
+  const toggleFunction = function () {
     langPickerElement.classList.toggle('hidden')
     const isAriaExpanded = langPickerTogglerElement.getAttribute('aria-expanded') === 'true'
     langPickerTogglerElement.setAttribute('aria-expanded', !isAriaExpanded)
+  }
+
+  langPickerTogglerElement.addEventListener('click', function () {
+    toggleFunction()
+  })
+
+  document.body.addEventListener('click', function (event) {
+    if (!langPickerElement.classList.contains('hidden') && !langPickerTogglerElement.contains(event.target)) {
+      toggleFunction()
+    }
   })
 })()
 
@@ -182,20 +192,15 @@
 ;(function () {
   'use strict'
 
-  var buttons = document.querySelectorAll('.home-downloadbutton')
-  var downloadHead = document.querySelector('#home-downloadhead')
-
-  if (!downloadHead || !buttons) {
-    return
-  }
-
   var osMatch = navigator.platform.match(/(Win|Mac|Linux)/)
   var os = (osMatch && osMatch[1]) || ''
   var arch = navigator.userAgent.match(/x86_64|Win64|WOW64/) ||
     navigator.cpuClass === 'x64'
     ? 'x64'
     : 'x86'
-  var dlLocal = downloadHead.getAttribute('data-dl-local')
+  var buttons = document.querySelectorAll('.home-downloadbutton')
+  var downloadHead = document.querySelector('#home-downloadhead')
+  var dlLocal
 
   function versionIntoHref (nodeList, filename) {
     var linkEls = Array.prototype.slice.call(nodeList)
@@ -215,19 +220,22 @@
     }
   }
 
-  switch (os) {
-    case 'Mac':
-      versionIntoHref(buttons, 'node-%version%.pkg')
-      downloadHead.textContent = dlLocal + ' macOS (x64)'
-      break
-    case 'Win':
-      versionIntoHref(buttons, 'node-%version%-' + arch + '.msi')
-      downloadHead.textContent = dlLocal + ' Windows (' + arch + ')'
-      break
-    case 'Linux':
-      versionIntoHref(buttons, 'node-%version%-linux-x64.tar.xz')
-      downloadHead.textContent = dlLocal + ' Linux (x64)'
-      break
+  if (downloadHead && buttons) {
+    dlLocal = downloadHead.getAttribute('data-dl-local')
+    switch (os) {
+      case 'Mac':
+        versionIntoHref(buttons, 'node-%version%.pkg')
+        downloadHead.textContent = dlLocal + ' macOS (x64)'
+        break
+      case 'Win':
+        versionIntoHref(buttons, 'node-%version%-' + arch + '.msi')
+        downloadHead.textContent = dlLocal + ' Windows (' + arch + ')'
+        break
+      case 'Linux':
+        versionIntoHref(buttons, 'node-%version%-linux-x64.tar.xz')
+        downloadHead.textContent = dlLocal + ' Linux (x64)'
+        break
+    }
   }
 
   // Windows button on download page
@@ -236,5 +244,19 @@
     var winText = winButton.querySelector('p')
     winButton.href = winButton.href.replace(/x(86|64)/, arch)
     winText.textContent = winText.textContent.replace(/x(86|64)/, arch)
+  }
+})()
+
+;(function () {
+  // This function is used to replace the anchor
+  // link of Edit on GitHub
+
+  var editOnGitHubElement = document.getElementById('editOnGitHubLink')
+  var editOnGitHubUrlElement = document.getElementById('editOnGitHubUrl')
+
+  if (editOnGitHubUrlElement) {
+    editOnGitHubElement.setAttribute('href', editOnGitHubUrlElement.value)
+  } else {
+    editOnGitHubElement.parentNode.parentNode.removeChild(editOnGitHubElement.parentNode)
   }
 })()
