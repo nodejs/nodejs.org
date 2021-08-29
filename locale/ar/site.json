@@ -1,5 +1,6 @@
 ﻿{
   "title": "Node.js",
+  "editOnGithub":"تحرير في GitHub",
   "author": "Node.js",
   "url": "https://nodejs.org/ar/",
   "locale": "ar",
@@ -10,6 +11,7 @@
   "reportNodeIssue": "Node.js أبلغ عن عطل في",
   "reportWebsiteIssue": "أبلغ عن عطل في الموقع",
   "getHelpIssue": "الحصول على مساعدة",
+  "Contributing": "المساهمة في Nodejs.org",
   "by": "من طرف",
   "all-downloads": "تحميل جميع النسخ",
   "nightly": "إصدارات ليلية",
@@ -17,7 +19,7 @@
   "previous": "السابق",
   "next": "التالي",
   "feeds": [
-    {
+    { 
       "link": "feed/blog.xml",
       "text": "Node.js مدونة"
     },
@@ -78,10 +80,15 @@
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "وثائق الاصدارات مختومة SHASUMS"
+      "text": "وثائق الاصدارات مختومة SHASUMS",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "كيفية التحقق"
     },
     "install-on-linux": {
       "text": "تثبيت Node.js باستعمال أرشيف ثنائي على لينكس"
+    },
+    "install-on-wsl": {
+      "text": "التثبيت على ويندوز النظام الفرعي لينكس (WSL)"
     }
   },
   "docs": {
@@ -152,6 +159,19 @@
   "links": {
     "pages": {
       "changelog": "سجل التغييرات"
+    }
+  },
+  "banners": {
+    "index": {
+      "startDate": "2021-08-25T16:00:00.000Z",
+      "endDate": "2021-09-08T16:00:00.000Z",
+      "text": "ستتوفر الإصدارات الأمنية الجديدة في 31 أوت 2021",
+      "link": "blog/vulnerability/aug-2021-security-releases2/"
+    },
+    "blacklivesmatter": {
+      "visible": false,
+      "text": "#BlackLivesMatter",
+      "link": "black-lives-matter/"
     }
   }
 }
