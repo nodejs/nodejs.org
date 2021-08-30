@@ -19,7 +19,7 @@
   "previous": "السابق",
   "next": "التالي",
   "feeds": [
-    { 
+    {
       "link": "feed/blog.xml",
       "text": "Node.js مدونة"
     },
