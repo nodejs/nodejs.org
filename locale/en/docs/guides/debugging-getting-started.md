@@ -85,6 +85,8 @@ Basic info on these follows:
 * **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
   (see above) or the --inspect hint text and paste into Chrome.
 
+> Note that the Node.js and the Chrome need to be run on the same platform.
+
 ### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
 
 * In the Debug panel, click the settings icon to open `.vscode/launch.json`.
