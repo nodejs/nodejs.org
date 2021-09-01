@@ -163,10 +163,7 @@
   },
   "banners": {
     "index": {
-      "startDate": "2021-08-25T16:00:00.000Z",
-      "endDate": "2021-09-08T16:00:00.000Z",
-      "text": "ستتوفر الإصدارات الأمنية الجديدة في 31 أوت 2021",
-      "link": "blog/vulnerability/aug-2021-security-releases2/"
+      "text": "إصدارات الأمانة الجديدة متوفرة الآن لإصدارات 14.x و 12.x."
     },
     "blacklivesmatter": {
       "visible": false,
