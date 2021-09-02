@@ -92,7 +92,7 @@ Basic info on these follows:
 * In the Debug panel, click the settings icon to open `.vscode/launch.json`.
   Select "Node.js" for initial setup.
 
-### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
+### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017+
 
 * Choose "Debug > Start Debugging" from the menu or hit F5.
 * [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging).

@@ -59,7 +59,7 @@ layout: docs.hbs
 
 * 在 Debug 面板中，点击设置按钮打开 `.vscode/launch.json`，选择 "Node.js" 进行初始化构建。
 
-### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
+### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017+
 
 * 从菜单中或者单击 F5， "Debug > Start Debugging"。
 * [详细指导](https://github.com/Microsoft/nodejstools/wiki/Debugging)
