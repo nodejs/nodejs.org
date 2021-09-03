@@ -12,12 +12,12 @@ Core Working Groups are created by the
 ## Current Working Groups
 
 * [Addon API](#addon-api)
-* [Benchmarking](#benchmarking)
 * [Build](#build)
 * [Diagnostics](#diagnostics)
 * [Docker](#docker)
 * [Evangelism](#evangelism)
 * [i18n](#i18n)
+* [Package Maintenance](#package-maintenance)
 * [Release](#release)
 * [Security](#security)
 * [Streams](#streams)
@@ -46,23 +46,6 @@ Responsibilities include:
 
 The current members can be found in their
 [README](https://github.com/nodejs/nan#collaborators).
-
-### [Benchmarking](https://github.com/nodejs/benchmarking)
-
-The purpose of the Benchmark Working Group is to gain consensus
-on an agreed set of benchmarks that can be used to:
-
-* track and evangelize performance gains made between Node.js releases
-* avoid performance regressions between releases
-
-Responsibilities include:
-
-* Identifying 1 or more benchmarks that reflect customer usage.
-  Likely will need more than one to cover typical Node.js use cases
-  including low-latency and high concurrency
-* Working to get community consensus on the list chosen
-* Adding regular execution of chosen benchmarks to Node.js builds
-* Tracking/publicizing performance between builds/releases
 
 ### [Build](https://github.com/nodejs/build)
 
@@ -176,6 +159,27 @@ Each language community maintains its own membership.
 * [nodejs-zh-TW - Taiwanese (繁體中文（台灣）)](https://github.com/nodejs/nodejs-zh-TW)
 * [nodejs-uk - Ukrainian (Українська)](https://github.com/nodejs/nodejs-uk)
 * [nodejs-vi - Vietnamese (Tiếng Việt)](https://github.com/nodejs/nodejs-vi)
+
+### [Package Maintenance](https://github.com/nodejs/package-maintenance)
+
+Responsibilities include:
+
+* Building, documenting and evangelizing guidance, tools and processes that make it easier for maintainers to
+  maintain packages and accept help from those who depend on their packages.
+* Management of repositories within the [pkgjs](https://github.com/pkgjs)
+  GitHub organization including but not limited to:
+  * Managing the list of organization owners which supplement the standard
+    Node.js organization owners as outlined in: <https://github.com/nodejs/admin/blob/master/GITHUB_ORG_MANAGEMENT_POLICY.md#owners>
+  * Overseeing new repositories (creating, moving, removing)
+  * Managing the maintainer teams for all of the repositories.
+  * Contribution policy for repositories
+* Technical direction for the projects within
+  the [pkgjs](https://github.com/pkgjs) organization
+* Managing the maintainer teams and contribution policies for the
+  following repositories
+  * nodejs/ci-config-travis
+  * nodejs/ci-config-github-actions
+  * nodejs/package-maintenance repository.
 
 ### [Release](https://github.com/nodejs/Release)
 

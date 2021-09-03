@@ -1,10 +1,5 @@
 # Node.js v0.12 ChangeLog
 
-<!--lint disable prohibited-strings-->
-<!--lint disable maximum-line-length-->
-<!--lint disable no-literal-urls-->
-<!--lint disable no-shortcut-reference-link-->
-
 <table>
 <tr>
 <th>Stable</th>

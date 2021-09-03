@@ -3,98 +3,98 @@ layout: black-lives-matter.hbs
 ---
 
 <section id="lives">
-  
-  * Ahmaud Arbery
-  * Akai Gurley
-  * Akiel Denkins
-  * Alfred Olango
-  * Alton Sterling
-  * Anthony Hill
-  * Anthony Lamar Smith
-  * Antwon Rose II
-  * Ariane McCree
-  * Botham Jean
-  * Brandon Webber
-  * Brendon Glenn
-  * Breonna Taylor
-  * Charly Keunang
-  * Christian Taylor
-  * Christopher Whitfield
-  * Danny Ray Thomas
-  * Dante Parker
-  * Darius Tarver
-  * DeAndre Ballard
-  * DeJuan Guillory
-  * Delrawn Small
-  * De’Von Bailey
-  * Dontre Hamilton
-  * D’ettrick Griffin
-  * Emantic Fitzgerald Bradford Jr
-  * Eric Garner
-  * Eric Logan
-  * Ezell Ford
-  * Finan H. Berhe
-  * Freddie Gray
-  * George Floyd
-  * Gregory Gunn
-  * Gregory Hill Jr
-  * JaQuavion Slaton
-  * Jamar Clark
-  * Jamarion Robinson
-  * Jamee Johnson
-  * Jemel Roberson
-  * Jerame Reid
-  * Jimmy Atchison
-  * John Crawford III
-  * Jonathan Ferrell
-  * Jonathan Hart
-  * Jordan Baker
-  * Jordan Edwards
-  * Julius Johnson
-  * Kajieme Powell
-  * Keith Childress
-  * Keith Lamont Scott
-  * Kendrec McDade
-  * Kwame Jones
-  * Laquan McDonald
-  * Larry Jackson Jr
-  * Manuel Loggins Jr
-  * Mario Woods
-  * Maurice Granton
-  * Michael Brown
-  * Michael Dean
-  * Mike Ramos
-  * Miles Hall
-  * Patrick Harmon
-  * Philando Castile
-  * Quintonio LeGrier
-  * Ramarley Graham
-  * Robert Lawrence White
-  * Rumain Brisbon
-  * Ryan Twyman
-  * Samuel David Mallard
-  * Samuel DuBose
-  * Sandra Bland
-  * Sean Reed
-  * Stephon Clark
-  * Steven Demarco Taylor
-  * Tamir Rice
-  * Terence Crutcher
-  * Terrance Franklin
-  * Terrence Sterling
-  * Tony McDade
-  * Tony Robinson
-  * Trayvon Martin
-  * Victor White III
-  * Walter Scott
-  * Wendell Allen
-  * William Green
-  * Willie McCoy
-  * Yassin Mohamed
-  * &hellip;[and](https://mappingpoliceviolence.org/) [countless](https://twitter.com/samswey/status/1259254114606886913) 
-    [more](https://en.wikipedia.org/wiki/Lists_of_killings_by_law_enforcement_officers_in_the_United_States#Lists_of_killings) 
-    [lives](https://ebwiki.org/) 
-    not listed  here, taken by violence and brutality.
+
+* Ahmaud Arbery
+* Akai Gurley
+* Akiel Denkins
+* Alfred Olango
+* Alton Sterling
+* Anthony Hill
+* Anthony Lamar Smith
+* Antwon Rose II
+* Ariane McCree
+* Botham Jean
+* Brandon Webber
+* Brendon Glenn
+* Breonna Taylor
+* Charly Keunang
+* Christian Taylor
+* Christopher Whitfield
+* Danny Ray Thomas
+* Dante Parker
+* Darius Tarver
+* DeAndre Ballard
+* DeJuan Guillory
+* Delrawn Small
+* De’Von Bailey
+* Dontre Hamilton
+* D’ettrick Griffin
+* Emantic Fitzgerald Bradford Jr
+* Eric Garner
+* Eric Logan
+* Ezell Ford
+* Finan H. Berhe
+* Freddie Gray
+* George Floyd
+* Gregory Gunn
+* Gregory Hill Jr
+* JaQuavion Slaton
+* Jamar Clark
+* Jamarion Robinson
+* Jamee Johnson
+* Jemel Roberson
+* Jerame Reid
+* Jimmy Atchison
+* John Crawford III
+* Jonathan Ferrell
+* Jonathan Hart
+* Jordan Baker
+* Jordan Edwards
+* Julius Johnson
+* Kajieme Powell
+* Keith Childress
+* Keith Lamont Scott
+* Kendrec McDade
+* Kwame Jones
+* Laquan McDonald
+* Larry Jackson Jr
+* Manuel Loggins Jr
+* Mario Woods
+* Maurice Granton
+* Michael Brown
+* Michael Dean
+* Mike Ramos
+* Miles Hall
+* Patrick Harmon
+* Philando Castile
+* Quintonio LeGrier
+* Ramarley Graham
+* Robert Lawrence White
+* Rumain Brisbon
+* Ryan Twyman
+* Samuel David Mallard
+* Samuel DuBose
+* Sandra Bland
+* Sean Reed
+* Stephon Clark
+* Steven Demarco Taylor
+* Tamir Rice
+* Terence Crutcher
+* Terrance Franklin
+* Terrence Sterling
+* Tony McDade
+* Tony Robinson
+* Trayvon Martin
+* Victor White III
+* Walter Scott
+* Wendell Allen
+* William Green
+* Willie McCoy
+* Yassin Mohamed
+* &hellip;[and](https://mappingpoliceviolence.org/) [countless](https://twitter.com/samswey/status/1259254114606886913)
+  [more](https://en.wikipedia.org/wiki/Lists_of_killings_by_law_enforcement_officers_in_the_United_States#Lists_of_killings)
+  [lives](https://ebwiki.org/)
+  not listed  here, taken by violence and brutality.
 
 </section>
 
@@ -156,13 +156,6 @@ We will work with any Black community member who wishes to contribute to
 Node.js. Please contact us at [blacklivesmatter@nodejs.org](mailto:blacklivesmatter@nodejs.org)
 or [@nodejs](https://twitter.com/nodejs) on Twitter with any questions.
 
-We have an upcoming free online [collaboration summit](https://github.com/openjs-foundation/summit#upcoming-events).
-There are [many different sessions](https://github.com/openjs-foundation/summit/issues?q=is%3Aissue+is%3Aopen+label%3A%22Session+Proposal%22)
-across various [OpenJS projects](https://openjsf.org/projects/), including Node.js.
-We have an [orientation guide](https://github.com/openjs-foundation/summit/blob/master/2020-06-23-Austin/orientation.md)
-to help you figure out how you might want to take part. If you have any questions or
-want to talk about anything, please reach out to [blacklivesmatter@nodejs.org](mailto:blacklivesmatter@nodejs.org).
-
 Moving forward we plan to offer ongoing support, mentorship, and sponsorship to
 help those from the Black community get involved in our project. We will
 also be analyzing our existing processes and governance to see what changes
@@ -181,7 +174,7 @@ you prefer, you can contact any of the following members on Twitter:
 * [Ben Michel](https://twitter.com/obensource)
 * [James M Snell](https://twitter.com/jasnell)
 * [Joe Sepi](https://twitter.com/joe_sepi)
-* [Matheus Marchini](https://twitter.com/mmarkini)
+* [Mary Marchini](https://twitter.com/mmarkini)
 * [Myles Borins](https://twitter.com/MylesBorins)
 * [Rich Trott](https://twitter.com/Trott)
 * [Shelley Vohr](https://twitter.com/codebytere)

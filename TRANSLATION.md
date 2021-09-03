@@ -17,7 +17,7 @@ Original source can be found in [/locale/en](https://github.com/nodejs/nodejs.or
 
 ### Can't find my locale on Crowdin
 
-Please create a [new issue](https://github.com/nodejs/nodejs.org/issues/new?template=03-i18n.md) in this repo. Crowdin managers team would be happy to add new languages. 
+Please create a [new issue](https://github.com/nodejs/nodejs.org/issues/new?template=03-i18n.md) in this repo. Crowdin managers team would be happy to add new languages.
 
 ## Localization groups
 

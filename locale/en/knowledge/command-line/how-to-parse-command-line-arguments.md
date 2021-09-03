@@ -40,8 +40,8 @@ console.log('myArgs: ', myArgs);
 This yields:
 
 ```bash
-$ node argv.js one two three four
-myArgs:  [ 'one', 'two', 'three', 'four' ]
+$ node argv.js one two three four five
+myArgs:  [ 'one', 'two', 'three', 'four', 'five' ]
 ```
 
 Now let's actually do something with the args:

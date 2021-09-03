@@ -11,8 +11,14 @@ downloads:
     display-hint: Downloads anzeigen für
     intro: >
         Lade den Node.js-Quellcode oder ein bestehendes Installationsprogramm für deine Plattform herunter und beginne gleich mit der Entwicklung.
-    currentVersion: Aktuellste LTS-Version
+    currentVersion: Aktuellste Version
     buildInstructions: Building Node.js from source on supported platforms
+    WindowsInstaller: Windows Installer
+    WindowsBinary: Windows Binary
+    MacOSInstaller: macOS Installer
+    MacOSBinary: macOS Binary
+    LinuxBinaries: Linux Binaries
+    SourceCode: Source Code
 additional:
     headline: Weitere Plattformen
     intro: >
@@ -21,4 +27,10 @@ additional:
         aktuelle Node.js-Version sind.
     platform: Plattform
     provider: Anbieter
+    SmartOSBinaries: SmartOS Binaries
+    DockerImage: Docker Image
+    officialDockerImage: Official Node.js Docker Image
+    LinuxPowerSystems: Linux on Power LE Systems
+    LinuxSystemZ: Linux on System z
+    AIXPowerSystems: AIX on Power Systems
 ---
