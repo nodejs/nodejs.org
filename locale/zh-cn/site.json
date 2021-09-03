@@ -10,6 +10,7 @@
   "reportNodeIssue": "报告 Node.js 问题 ",
   "reportWebsiteIssue": "报告网站问题",
   "getHelpIssue": "获取帮助",
+  "Contributing": "为 Nodejs.org 做贡献",
   "by": "by",
   "all-downloads": "所有下载选项",
   "nightly": "每日构建",
@@ -161,10 +162,7 @@
   },
   "banners": {
     "index": {
-      "startDate": "2021-07-01T16:00:00.000Z",
-      "endDate": "2021-07-13T16:00:00.000Z",
-      "text": "对 16.x, 14.x, and 12.x 版本的最新安全修复可下载",
-      "link": "blog/vulnerability/july-2021-security-releases"
+      "text": "针对 14.x 和 12.x 的安全更新补丁已可用"
     }
   }
 }

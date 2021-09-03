@@ -4,6 +4,8 @@
   color: $white;
   background: $node-gray;
   direction: ltr;
+  width: 60%;
+  float: left;
 
   p + p {
     margin-top: 0;
@@ -17,7 +19,7 @@
 }
 
 .issue-link {
-  text-align: right;
+  text-align: left;
   min-width: 330px;
   margin-left: auto;
 }
@@ -35,6 +37,14 @@
     border-radius: 50%;
     margin-right: 1em;
   }
+}
+
+.help {
+  margin-top: 3em;
+  width: 40%;
+  margin-left: 50em;
+  font-size: 14px;
+  color: $white;
 }
 
 @media screen and (max-width: 700px) {
