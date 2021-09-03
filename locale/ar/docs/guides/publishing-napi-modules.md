@@ -1,4 +1,4 @@
-﻿---
+---
 title: كيفية نشر حزمة N-API
 layout: docs.hbs
 ---

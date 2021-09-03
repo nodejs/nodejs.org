@@ -1,3 +1,6 @@
+/* eslint-disable no-var */
+// Notice: IE 10 and below is still supported, so disable eslint for the file
+// when checking the "var"
 ;(function () {
   var langPickerTogglerElement = document.querySelector('.lang-picker-toggler')
   var langPickerElement = document.querySelector('.lang-picker')
@@ -17,21 +20,33 @@
     }
   })
 
-  langPickerTogglerElement.setAttribute('title', currentLangElement.textContent)
+  if (currentLangElement) {
+    langPickerTogglerElement.setAttribute('title', currentLangElement.textContent)
 
-  // Remove the current selected language item, because we don't need to choose it
-  // any more unless we want to switch to a new language
-  langPickerElement.removeChild(currentLangElement.parentNode)
+    // Remove the current selected language item, because we don't need to choose it
+    // any more unless we want to switch to a new language
+    langPickerElement.removeChild(currentLangElement.parentNode)
+  }
 
-  langPickerTogglerElement.addEventListener('click', function () {
+  const toggleFunction = function () {
     langPickerElement.classList.toggle('hidden')
     const isAriaExpanded = langPickerTogglerElement.getAttribute('aria-expanded') === 'true'
     langPickerTogglerElement.setAttribute('aria-expanded', !isAriaExpanded)
+  }
+
+  langPickerTogglerElement.addEventListener('click', function () {
+    toggleFunction()
+  })
+
+  document.body.addEventListener('click', function (event) {
+    if (!langPickerElement.classList.contains('hidden') && !langPickerTogglerElement.contains(event.target)) {
+      toggleFunction()
+    }
   })
 })()
 
 ;(function () {
-  var scrollToTop = document.getElementById('scroll-to-top');
+  var scrollToTop = document.querySelector('#scroll-to-top');
 
   (window.onscroll = function () {
     window.requestAnimationFrame(function () {
@@ -174,16 +189,17 @@
   }
 })()
 
-;(function (d, n) {
+;(function () {
   'use strict'
 
-  var osMatch = n.platform.match(/(Win|Mac|Linux)/)
+  var osMatch = navigator.platform.match(/(Win|Mac|Linux)/)
   var os = (osMatch && osMatch[1]) || ''
-  var arch = n.userAgent.match(/x86_64|Win64|WOW64/) ||
-    n.cpuClass === 'x64' ? 'x64' : 'x86'
-  var text = 'textContent' in d ? 'textContent' : 'innerText'
-  var buttons = d.querySelectorAll('.home-downloadbutton')
-  var downloadHead = d.getElementById('home-downloadhead')
+  var arch = navigator.userAgent.match(/x86_64|Win64|WOW64/) ||
+    navigator.cpuClass === 'x64'
+    ? 'x64'
+    : 'x86'
+  var buttons = document.querySelectorAll('.home-downloadbutton')
+  var downloadHead = document.querySelector('#home-downloadhead')
   var dlLocal
 
   function versionIntoHref (nodeList, filename) {
@@ -209,24 +225,38 @@
     switch (os) {
       case 'Mac':
         versionIntoHref(buttons, 'node-%version%.pkg')
-        downloadHead[text] = dlLocal + ' macOS (x64)'
+        downloadHead.textContent = dlLocal + ' macOS (x64)'
         break
       case 'Win':
         versionIntoHref(buttons, 'node-%version%-' + arch + '.msi')
-        downloadHead[text] = dlLocal + ' Windows (' + arch + ')'
+        downloadHead.textContent = dlLocal + ' Windows (' + arch + ')'
         break
       case 'Linux':
         versionIntoHref(buttons, 'node-%version%-linux-x64.tar.xz')
-        downloadHead[text] = dlLocal + ' Linux (x64)'
+        downloadHead.textContent = dlLocal + ' Linux (x64)'
         break
     }
   }
 
   // Windows button on download page
-  var winButton = d.getElementById('windows-downloadbutton')
+  var winButton = document.querySelector('#windows-downloadbutton')
   if (winButton && os === 'Win') {
-    var winText = winButton.getElementsByTagName('p')[0]
+    var winText = winButton.querySelector('p')
     winButton.href = winButton.href.replace(/x(86|64)/, arch)
-    winText[text] = winText[text].replace(/x(86|64)/, arch)
+    winText.textContent = winText.textContent.replace(/x(86|64)/, arch)
   }
-})(document, navigator)
+})()
+
+;(function () {
+  // This function is used to replace the anchor
+  // link of Edit on GitHub
+
+  var editOnGitHubElement = document.getElementById('editOnGitHubLink')
+  var editOnGitHubUrlElement = document.getElementById('editOnGitHubUrl')
+
+  if (editOnGitHubUrlElement) {
+    editOnGitHubElement.setAttribute('href', editOnGitHubUrlElement.value)
+  } else {
+    editOnGitHubElement.parentNode.parentNode.removeChild(editOnGitHubElement.parentNode)
+  }
+})()

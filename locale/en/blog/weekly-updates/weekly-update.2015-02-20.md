@@ -30,7 +30,7 @@ Notable changes include:
 * [The Native Web](http://www.thenativeweb.io/) now has a [io.js Docker container](https://registry.hub.docker.com/u/thenativeweb/iojs/)
 * [DNSChain](https://github.com/okTurtles/dnschain) by [okTurtles](https://okturtles.com/) added support for io.js.
 * [TDPAHACLPlugin](https://github.com/neilstuartcraig/TDPAHACLPlugin) and [TDPAHAuthPlugin](https://github.com/neilstuartcraig/TDPAHAuthPlugin) for [actionHero](http://www.actionherojs.com/) now support io.js.
-* [node-sass](https://npmjs.org/package/node-sass) added support for io.js 1.2 in node-sass [v. 2.0.1](https://github.com/sass/node-sass/issues/655)
+* [node-sass](https://www.npmjs.com/package/node-sass) added support for io.js 1.2 in node-sass [v. 2.0.1](https://github.com/sass/node-sass/issues/655)
 * [total.js](https://www.totaljs.com/) added support for io.js in [v. 1.7.1](https://github.com/totaljs/framework/releases/tag/v1.7.1)
 * [Clever Cloud](https://www.clever-cloud.com/) added [support for io.js](https://www.clever-cloud.com/blog/features/2015/01/23/introducing-io.js/)
 
