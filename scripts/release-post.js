@@ -27,7 +27,7 @@ const fetch = require('node-fetch')
 
 const downloads = require('./helpers/downloads')
 
-function sendRequest (opts) {
+const sendRequest = (opts) => {
   const options = {
     headers: { 'User-Agent': 'nodejs.org release blog post script' },
     ...opts
@@ -41,18 +41,18 @@ function sendRequest (opts) {
   })
 }
 
-function explicitVersion (version) {
+const explicitVersion = (version) => {
   return version
     ? Promise.resolve(version)
     : Promise.reject(new Error('Invalid "version" argument'))
 }
 
-function findLatestVersion () {
+const findLatestVersion = () => {
   return sendRequest({ url: 'https://nodejs.org/dist/index.json', json: true })
     .then((versions) => versions[0].version.substr(1))
 }
 
-function fetchDocs (version) {
+const fetchDocs = (version) => {
   return Promise.all([
     fetchChangelogBody(version),
     fetchAuthor(version),
@@ -72,7 +72,7 @@ function fetchDocs (version) {
   })
 }
 
-function fetchAuthor (version) {
+const fetchAuthor = (version) => {
   return fetchChangelog(version)
     .then((section) => findAuthorLogin(version, section))
     .then((author) => sendRequest({
@@ -82,7 +82,7 @@ function fetchAuthor (version) {
     .then((githubRes) => githubRes.name)
 }
 
-function fetchChangelog (version) {
+const fetchChangelog = (version) => {
   const parts = version.split('.')
   const releaseLine = parts[0] === '0'
     ? parts.slice(0, 2).join('')
@@ -100,7 +100,7 @@ function fetchChangelog (version) {
   })
 }
 
-function fetchChangelogBody (version) {
+const fetchChangelogBody = (version) => {
   return fetchChangelog(version).then((section) => {
     const rxSectionBody = /(### Notable [\s\S]*)/
 
@@ -114,7 +114,7 @@ function fetchChangelogBody (version) {
   })
 }
 
-function fetchVersionPolicy (version) {
+const fetchVersionPolicy = (version) => {
   return fetchChangelog(version).then((section) => {
     // matches the policy for a given version (Stable, LTS etc) in the changelog
     // ## 2015-10-07, Version 4.2.0 'Argon' (LTS), @jasnell
@@ -127,18 +127,18 @@ function fetchVersionPolicy (version) {
   })
 }
 
-function fetchShasums (version) {
+const fetchShasums = (version) => {
   return sendRequest({ url: `https://nodejs.org/dist/v${version}/SHASUMS256.txt.asc` })
     .then(null, () => '[INSERT SHASUMS HERE]')
 }
 
-function verifyDownloads (version) {
+const verifyDownloads = (version) => {
   const allDownloads = downloads(version)
   const reqs = allDownloads.map(urlOrComingSoon)
   return Promise.all(reqs)
 }
 
-function findAuthorLogin (version, section) {
+const findAuthorLogin = (version, section) => {
   // looking for the @author part of the release header, eg:
   // ## 2016-03-08, Version 5.8.0 (Stable). @Fishrock123
   // ## 2015-10-13, Version 4.2.1 'Argon' (LTS), @jasnell
@@ -150,14 +150,14 @@ function findAuthorLogin (version, section) {
     : Promise.reject(new Error(`Couldn't find @author of ${version} release :(`))
 }
 
-function urlOrComingSoon (binary) {
+const urlOrComingSoon = (binary) => {
   return sendRequest({ url: binary.url, method: 'HEAD' }).then(
     () => `${binary.title}: ${binary.url}`,
     () => `${binary.title}: *Coming soon*`
   )
 }
 
-function renderPost (results) {
+const renderPost = (results) => {
   const templateStr = fs.readFileSync(path.resolve(__dirname, 'release.hbs')).toString('utf8')
   const template = Handlebars.compile(templateStr, { noEscape: true })
   const view = Object.assign({
@@ -170,7 +170,7 @@ function renderPost (results) {
   }, results)
 }
 
-function writeToFile (results) {
+const writeToFile = (results) => {
   const filepath = path.resolve(__dirname, '..', 'locale', 'en', 'blog', 'release', `v${results.version}.md`)
 
   return new Promise((resolve, reject) => {
@@ -190,7 +190,7 @@ function writeToFile (results) {
   })
 }
 
-function slugify (str) {
+const slugify = (str) => {
   return str.replace(/\./g, '-')
 }
 

@@ -7,7 +7,7 @@ const isEditable = `(security|index).html|(about|download|docs|foundation|get-in
 const isEditableReg = new RegExp(isEditable)
 
 // This middleware adds "Edit on GitHub" links to every editable page
-function githubLinks (options) {
+const githubLinks = (options) => {
   return (files, m, next) => {
     Object.keys(files).forEach((path) => {
       if (!isEditableReg.test(path)) {
