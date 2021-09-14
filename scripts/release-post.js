@@ -153,7 +153,10 @@ function findAuthorLogin (version, section) {
 function urlOrComingSoon (binary) {
   return sendRequest({ url: binary.url, method: 'HEAD' }).then(
     () => `${binary.title}: ${binary.url}`,
-    () => `${binary.title}: *Coming soon*`
+    () => {
+      console.log(`\x1B[32m "${binary.title}" is Coming soon...\x1B[39m`)
+      return `${binary.title}: *Coming soon*`
+    }
   )
 }
 
