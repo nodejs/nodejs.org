@@ -154,7 +154,7 @@ function urlOrComingSoon (binary) {
   return sendRequest({ url: binary.url, method: 'HEAD' }).then(
     () => `${binary.title}: ${binary.url}`,
     () => {
-      console.log(`\x1B[32m "${binary.title}" is Coming Soon...\x1B[39m`)
+      console.log(`\x1B[32m "${binary.title}" is Coming soon...\x1B[39m`)
       return `${binary.title}: *Coming soon*`
     }
   )
