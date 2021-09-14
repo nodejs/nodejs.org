@@ -42,9 +42,29 @@
 .help {
   margin-top: 3em;
   width: 40%;
-  margin-left: 50em;
   font-size: 14px;
   color: $white;
+}
+
+@media (min-width: 280px) {
+  .help {
+    margin-left: 10%;
+  }
+}
+@media (min-width: 320px) {
+  .help {
+    margin-left: 58%;
+  }
+}
+@media (min-width: 500px) {
+  .help {
+    margin-left: 65%;
+  }
+}
+@media (min-width: 768px) {
+  .help {
+    margin-left: 70%;
+  }
 }
 
 @media screen and (max-width: 700px) {
