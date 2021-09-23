@@ -11,7 +11,7 @@ labels:
   tagline-lts: Recomendado para la mayoría
   changelog: Cambios
   api: Documentación del API
-  version-schedule-prompt: O eche un vistazo a la
+  version-schedule-prompt: O eche un vistazo al
   version-schedule-prompt-link-text: Programa de soporte a largo plazo (LTS)
 ---
 
