@@ -96,7 +96,7 @@ Packages compatible with Debian and Ubuntu based Linux distributions are availab
 Fast and simple Node.js version manager built in Rust used to manage multiple released Node.js versions. It allows you to perform operations like install, uninstall, switch Node versions automatically based on the current directory, etc.
 To install fnm, use this [install script](https://github.com/Schniz/fnm#using-a-script-macoslinux).
 
-fnm has cross-platform support (macOS, Windows, Linux) & all poplar shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt)
+fnm has cross-platform support (macOS, Windows, Linux) & all popular shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt)
 it's built with speed in mind and compatibility support for `.node-version` and `.nvmrc` files.
 
 ## FreeBSD
