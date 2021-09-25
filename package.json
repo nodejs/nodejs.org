@@ -13,7 +13,7 @@
     "load-schedule": "curl -sS https://raw.githubusercontent.com/nodejs/Release/master/schedule.json -o source/schedule.json",
     "start": "npm run serve",
     "test": "npm-run-all test:lint test:unit",
-    "linkinator": "delay 3 && linkinator http://localhost:8080/en/ --recurse --skip \"^(?!http://localhost)\" --verbosity error",
+    "linkinator": "wait-on http://localhost:8080/en/ && linkinator http://localhost:8080/en/ --recurse --skip \"^(?!http://localhost)\" --verbosity error",
     "test:lint": "npm-run-all --parallel --aggregate-output test:lint:*",
     "test:lint:js": "standard",
     "test:lint:md": "remark -qf .",
@@ -66,7 +66,6 @@
   "devDependencies": {
     "chokidar": "^3.5.2",
     "cross-env": "^7.0.3",
-    "delay-cli": "^1.1.0",
     "faucet": "0.0.1",
     "linkinator": "^2.14.0",
     "lockfile-lint": "^4.6.2",
@@ -82,6 +81,7 @@
     "stylelint": "^13.13.1",
     "stylelint-config-twbs-bootstrap": "^2.2.3",
     "tape": "^5.3.1",
-    "vnu-jar": "21.9.2"
+    "vnu-jar": "21.9.2",
+    "wait-on": "^6.0.0"
   }
 }
