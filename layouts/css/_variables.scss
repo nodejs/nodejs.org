@@ -15,6 +15,9 @@ $gray: #666;
 $node-gray: #333;
 $home-secondary-links-color: #51744e;
 
+// for dark-theme
+$dark-gray: #242424;
+
 @mixin padded-link($padding) {
   padding-right: $padding;
   padding-left: $padding;
