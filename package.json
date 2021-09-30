@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@metalsmith/permalinks": "^2.3.0",
-    "autoprefixer": "^10.3.5",
+    "autoprefixer": "^10.3.6",
     "cheerio": "^0.22.0",
     "graceful-fs": "^4.2.8",
     "handlebars": "^4.7.7",
