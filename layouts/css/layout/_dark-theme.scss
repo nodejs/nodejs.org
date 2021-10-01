@@ -1,42 +1,45 @@
-@media(prefers-color-scheme: dark) {
-    #main {
-        background-color: $dark-gray;
-        padding-bottom: 2em;
-        p, h1, h2, h3 {
-            color: $white;
-        }
+@media (prefers-color-scheme: dark) {
+  #main {
+    background-color: $dark-gray;
+    padding-bottom: 2em;
+    p,
+    h1,
+    h2,
+    h3 {
+      color: $white;
+    }
+  }
+
+  article {
+    p {
+      color: $light-gray3 !important;
     }
 
-    article {
-        p {
-            color: $light-gray3 !important;
-        }
-
-        li {
-            color: $light-gray3;
-        }
-
-        code {
-            background-color: $node-gray;
-            color: $light-gray2;
-        }
-
-        table {
-            th {
-                color: $white;
-            }
-            tr:nth-child(odd) {
-                background-color: $node-gray !important;
-                color: $light-gray3;
-            }
-        }
-
-        .highlight-box {
-            background-color: $node-gray;
-        }
+    li {
+      color: $light-gray3;
     }
 
-    footer {
-        margin-top: 0 !important;
+    code {
+      background-color: $node-gray;
+      color: $light-gray2;
     }
+
+    table {
+      th {
+        color: $white;
+      }
+      tr:nth-child(odd) {
+        background-color: $node-gray !important;
+        color: $light-gray3;
+      }
+    }
+
+    .highlight-box {
+      background-color: $node-gray;
+    }
+  }
+
+  footer {
+    margin-top: 0 !important;
+  }
 }
