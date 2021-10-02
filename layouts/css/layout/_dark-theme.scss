@@ -1,7 +1,10 @@
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
+  .dark-theme-switcher {
+    background-image: url("/static/images/light-mode.svg");
+  }
+
   #main {
     background-color: $dark-gray;
-    padding-bottom: 2em;
     p,
     h1,
     h2,
@@ -41,5 +44,14 @@
 
   footer {
     margin-top: 0 !important;
+  }
+
+  .download-hero a {
+    background-color: $dark-green;
+    color: #0aa007;
+  }
+
+  .download-matrix td {
+    border-color: $light-gray;
   }
 }
