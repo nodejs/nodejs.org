@@ -45,7 +45,7 @@ test('verifyDownloads(<version>)', (t) => {
   })
 
   t.test('resolves to "<binary title>: url" when HEAD request succeed', (t) => {
-    const nodejsorg = nock('https://nodejs.org')
+    const nodejsorg = nock('https://direct.nodejs.org')
       .head('/dist/v4.1.1/node-v4.1.1.tar.gz')
       .reply(200, 'OK')
 
@@ -60,7 +60,7 @@ test('verifyDownloads(<version>)', (t) => {
   })
 
   t.test('resolves to "<binary title>: *Coming soon*" when HEAD request fails', (t) => {
-    const nodejsorg = nock('https://nodejs.org')
+    const nodejsorg = nock('https://direct.nodejs.org')
       .head('/dist/v4.1.1/node-v4.1.1-linux-armv6l.tar.gz')
       .reply(404, 'Not found')
 
