@@ -77,7 +77,7 @@
     "remark-gfm": "^2.0.0",
     "remark-preset-lint-node": "^3.1.0",
     "st": "^3.0.0",
-    "standard": "^16.0.3",
+    "standard": "^16.0.4",
     "stylelint": "^13.13.1",
     "stylelint-config-twbs-bootstrap": "^2.2.3",
     "tape": "^5.3.1",
