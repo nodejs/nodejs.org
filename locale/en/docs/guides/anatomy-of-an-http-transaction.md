@@ -82,7 +82,7 @@ this can be problematic, so [`rawHeaders`][] is also available.
 ## Request Body
 
 When receiving a `POST` or `PUT` request, the request body might be important to
-your application. Getting at the body data is a little more involved than
+your application. Getting  the body data is a little more involved than
 accessing request headers. The `request` object that's passed in to a handler
 implements the [`ReadableStream`][] interface. This stream can be listened to or
 piped elsewhere just like any other stream. We can grab the data right out of
