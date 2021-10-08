@@ -9,7 +9,7 @@ author: Tierney Cyren
 
 # Retiring the Node.js Community Committee
 
-**tl;dr:** we're going to be retiring the Node.js Community Committee, moving our existing Initiatives to exist under the Node.js TSC.
+**tl;dr:** we're going to be retiring the Node.js Community Committee, moving our existing Initiatives to exist under the Node.js Technical Steering Committee (TSC).
 
 From the Community Committee's side, we've seen a convergence of our initiatives' goals with the goals of the work that is generally under the TSC. Further, we've seen a decline in the number of people who can consistently dedicate the necessary amount of time/energy. As such, separation between the TSC and Community Committee has become more of a barrier to accomplishing our collective goals rather than the helpful and necessary construct it once was.
 
