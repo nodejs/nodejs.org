@@ -1,0 +1,104 @@
+[data-theme="dark"] {
+  .dark-theme-switcher {
+    background-image: url("/static/images/light-mode.svg");
+  }
+
+  #main {
+    background-color: $dark-black;
+    p,
+    h1,
+    h2,
+    h3 {
+      color: $white;
+    }
+
+    a {
+      color: $dark-green2;
+      &:hover {
+        color: $white;
+      }
+    }
+
+    .active > a {
+      background-color: $active-green;
+      color: $white;
+    }
+  }
+
+  header {
+    background-color: $dark-black2;
+    li {
+      &::after {
+        border-top-color: $dark-black2 !important;
+      }
+    }
+  }
+
+  article {
+    p {
+      color: $light-gray3 !important;
+    }
+
+    a {
+      color: $dark-green2;
+      &:hover {
+        color: $white;
+        background-color: $dark-green2;
+      }
+    }
+
+    li {
+      color: $light-gray3;
+    }
+
+    code {
+      background-color: #2c3437;
+      color: $dark-green3;
+    }
+
+    pre,
+    pre code {
+      background-color: $dark-black2;
+    }
+
+    table {
+      th {
+        color: $white;
+      }
+      tr:nth-child(odd) {
+        background-color: $dark-black2 !important;
+        color: $light-gray3;
+      }
+    }
+
+    .highlight-box {
+      background-color: $dark-black2;
+    }
+  }
+
+  footer {
+    margin-top: 0 !important;
+    background-color: $dark-black2;
+    .openjsfoundation-footer {
+      background-color: $dark-black2;
+    }
+  }
+
+  .download-hero {
+    a {
+      background-color: $dark-green;
+      color: #0aa007;
+      &:hover {
+        background-color: #438542;
+      }
+    }
+
+    a.is-version * {
+      color: $white;
+    }
+  }
+
+  .download-matrix td {
+    border-color: $light-gray;
+  }
+}
