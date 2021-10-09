@@ -32,6 +32,9 @@
         border-top-color: $dark-black2 !important;
       }
     }
+    .lang-picker {
+      background-color: $dark-black2;
+    }
   }
 
   article {
@@ -52,13 +55,13 @@
     }
 
     code {
-      background-color: #2c3437;
+      background-color: $dark-code-background;
       color: $dark-green3;
     }
 
     pre,
     pre code {
-      background-color: $dark-black2;
+      background-color: $dark-code-background;
     }
 
     table {
@@ -72,7 +75,7 @@
     }
 
     .highlight-box {
-      background-color: $dark-black2;
+      background-color: $dark-code-background;
     }
   }
 
@@ -82,6 +85,10 @@
     .openjsfoundation-footer {
       background-color: $dark-black2;
     }
+  }
+
+  .home-version-banner {
+    background-color: #1f2f2b;
   }
 
   .download-hero {
@@ -100,5 +107,16 @@
 
   .download-matrix td {
     border-color: $light-gray;
+  }
+
+  .blog-index {
+    .summary {
+      margin-left: 1em;
+      font-size: 75%;
+      color: $light-gray;
+    }
+    code {
+      background-color: $dark-code-background;
+    }
   }
 }
