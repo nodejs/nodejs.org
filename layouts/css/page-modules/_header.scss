@@ -29,6 +29,18 @@ header {
     }
   }
 
+  .dark-theme-switcher {
+    position: absolute;
+    right: 50px;
+    bottom: 17px;
+    background-color: transparent;
+    border: none;
+    color: $light-gray2;
+    cursor: pointer;
+    padding: 12px;
+    background-image: url("/static/images/dark-mode.svg");
+  }
+
   .lang-picker-toggler {
     position: absolute;
     right: 0;
