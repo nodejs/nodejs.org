@@ -17,6 +17,7 @@
   "unofficial-builds": "非官方构建版",
   "previous": "以前",
   "next": "下一个",
+  "toggleText":"明亮/暗黑模式切换",
   "feeds": [
     {
       "link": "feed/blog.xml",

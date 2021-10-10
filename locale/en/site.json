@@ -17,6 +17,7 @@
   "unofficial-builds": "Unofficial builds",
   "previous": "Previous",
   "next": "Next",
+  "toggleText":"Toggle dark/light mode",
   "feeds": [
     {
       "link": "feed/blog.xml",
