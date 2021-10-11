@@ -52,7 +52,7 @@ const filename = path.join(rootDirectory, userSuppliedFilename);
 Now `filename` contains an absolute path and doesn't contain `..` sequences anymore - `path.join` takes care of that. However, it might be something like `/etc/passwd` now, so you have to check whether it starts with the `rootDirectory`:
 
 ```javascript
-if (filename.indexOf(rootDirectory) !== 0) {
+if (!filename.startsWith(rootDirectory)) {
   return respond('trying to sneak out of the web root?');
 }
 ```
