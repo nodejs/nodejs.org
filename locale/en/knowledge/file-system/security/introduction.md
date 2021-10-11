@@ -39,14 +39,14 @@ Directory traversal means that an attacker tries to access files outside of the 
 This example assumes that you already checked the `userSuppliedFilename` variable as described in the "Poison Null Bytes" section above.
 
 ```javascript
-var rootDirectory = '/var/www/';
+const rootDirectory = '/var/www/';
 ```
 
 Make sure that you have a slash at the end of the allowed folders name - you don't want people to be able to access `/var/www-secret/`, do you?.
 
 ```javascript
-var path = require('path');
-var filename = path.join(rootDirectory, userSuppliedFilename);
+const path = require('path');
+const filename = path.join(rootDirectory, userSuppliedFilename);
 ```
 
 Now `filename` contains an absolute path and doesn't contain `..` sequences anymore - `path.join` takes care of that. However, it might be something like `/etc/passwd` now, so you have to check whether it starts with the `rootDirectory`:
