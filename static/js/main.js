@@ -48,13 +48,6 @@
 ;(function () {
   const themeAttr = 'data-theme'
   var darkThemeSwitcherElement = document.querySelector('.dark-theme-switcher')
-  var isInDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-
-  if (getTheme() == null) {
-    setTheme(isInDarkMode ? 'dark' : 'light')
-  } else {
-    setTheme(getTheme())
-  }
 
   darkThemeSwitcherElement.addEventListener('click', function () {
     var currentTheme = getTheme()
