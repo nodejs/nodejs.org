@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+
+<!--[if let IE 9]>
+  <h2>{{ site.browserOutdatedTitle }}</h2>
+  <p>{{ site.browserOutdatedText }}</p>
+<![endif]-->
+
+<!--[if (gt IE 9)|!(IE)]><!-->
+
 <html lang="{{site.locale}}"{{#if site.rtl}} dir="rtl"{{/if}}>
 {{> html-head }}
 

@@ -18,6 +18,8 @@
   "previous": "Previous",
   "next": "Next",
   "toggleText":"Toggle dark/light mode",
+  "browserOutdatedTitle": "Your browser is outdated!",
+  "browserOutdatedText": "Please use Chrome or Edge browser instead.",
   "feeds": [
     {
       "link": "feed/blog.xml",
