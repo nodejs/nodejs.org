@@ -129,6 +129,25 @@ a:hover .color-lightgray {
   }
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  padding: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eeeeeea3;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00000099; 
+}
+
 html[dir="rtl"] {
   .has-side-nav {
     nav {
