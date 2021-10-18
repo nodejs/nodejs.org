@@ -12,3 +12,6 @@ npm-debug.log
 
 # Netlify
 .netlify
+
+# Ignore Environment Variables
+.env
