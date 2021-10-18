@@ -10,7 +10,7 @@ const chokidar = require('chokidar')
 const junk = require('junk')
 const st = require('st')
 const build = require('./build')
-require('dotenv')
+require('dotenv').config()
 
 const mount = st({
   path: path.join(__dirname, 'build'),
