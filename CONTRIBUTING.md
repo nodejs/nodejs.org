@@ -2,7 +2,7 @@
 
 ## Code of Conduct
 
-The Code of Conduct explains the *bare minimum* behavior
+The Code of Conduct explains the _bare minimum_ behavior
 expectations the Node Foundation requires of its contributors.
 [Please read it before participating](https://github.com/nodejs/admin/blob/HEAD/CODE_OF_CONDUCT.md).
 
@@ -13,8 +13,8 @@ expectations the Node Foundation requires of its contributors.
 
 ## Logging Issues
 
-Log an issue for any question or problem you might have. When in doubt, log an issue,
-any additional policies about what to include will be provided in the responses. The only
+Log an issue for any question or problem you might have. When in doubt, log an issue.
+Any additional policies about what to include will be provided in the responses. The only
 exception is security disclosures which should be sent privately.
 
 Collaborators may direct you to another repository, ask for additional clarifications, and
@@ -25,9 +25,7 @@ project's Code of Conduct.
 
 ## Contributions
 
-Any change to resources in this repository must be through pull requests. This applies to all changes
-to documentation, code, binary files, etc. Even long term collaborators must use
-pull requests.
+Any change to resources in this repository must be through pull requests.
 
 No pull request can be merged without being reviewed.
 
