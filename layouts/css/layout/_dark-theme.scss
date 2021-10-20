@@ -65,12 +65,16 @@
     }
 
     table {
+      background-color: $dark-black3;
       th {
+        color: $white-alpha-b3;
+      }
+      td {
         color: $white;
       }
-      tr:nth-child(odd) {
+      tr:only-child,
+      tr:nth-child(even) {
         background-color: $dark-black2 !important;
-        color: $light-gray3;
       }
     }
 
