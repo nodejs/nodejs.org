@@ -17,6 +17,7 @@
   "unofficial-builds": "Unofficial builds",
   "previous": "Previous",
   "next": "Next",
+  "toggleText":"Toggle dark/light mode",
   "feeds": [
     {
       "link": "feed/blog.xml",
@@ -162,10 +163,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2021-08-05T13:00:00.000Z",
-      "endDate": "2021-08-25T13:00:00.000Z",
-      "text": "New security releases now available for 16.x, 14.x, and 12.x release lines",
-      "link": "blog/vulnerability/aug-2021-security-releases/"
+      "startDate": "2021-10-05T16:00:00.000Z",
+      "endDate": "2021-11-05T16:00:00.000Z",
+      "text": "New security releases now available October 12th, 2021",
+      "link": "blog/vulnerability/oct-2021-security-releases/"
     },
     "blacklivesmatter": {
       "visible": false,
