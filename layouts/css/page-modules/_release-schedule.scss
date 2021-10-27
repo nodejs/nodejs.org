@@ -1,26 +1,26 @@
 table.release-schedule {
   width: 100%;
   font-size: 1rem;
-  border-radius: 4px;
-  box-shadow: 0 4px 3px $black-alpha-12, 0 2px 2px $black-alpha-0f;
-  border-collapse: separate;
-  border-spacing: 0;
-  overflow: hidden;
+  border: 1px solid $light-gray2;
 
-
-  td,
-  th {
-    padding: 10px 6px;
+  td {
+    padding: 5px;
   }
 
-  > thead tr {
-    color: $black-alpha-80;
-    text-transform: uppercase;
-    font-size: smaller;
-    font-weight: 700;
+  > thead {
+    font-weight: 600;
+    text-align: left;
   }
-  tr:only-child,
-  tr:nth-child(even) {
-    background-color: $light-gray3;
+
+  > tbody {
+    border-top: 1px solid $light-gray2;
+
+    tr:nth-child(odd) {
+      background-color: $light-gray3;
+    }
+
+    tr:nth-child(even) {
+      background-color: $white;
+    }
   }
 }
