@@ -76,6 +76,9 @@
       tr:nth-child(even) {
         background-color: $dark-black2 !important;
       }
+      tr:nth-child(odd) {
+        background-color: $black;
+      }
     }
 
     .highlight-box {
