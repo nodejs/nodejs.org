@@ -3,6 +3,11 @@
     background-image: url("/static/images/light-mode.svg");
   }
 
+  body,
+  .blogpost-meta {
+    color: $white;
+  }
+
   #main {
     background-color: $dark-black;
     p,
