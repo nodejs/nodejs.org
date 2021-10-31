@@ -3,6 +3,11 @@
     background-image: url("/static/images/light-mode.svg");
   }
 
+  body,
+  .blogpost-meta {
+    color: $white;
+  }
+
   #main {
     background-color: $dark-black;
     p,
@@ -65,16 +70,24 @@
     }
 
     table {
+      background-color: $dark-black3;
       th {
+        color: $white-alpha-b3;
+      }
+      td {
         color: $white;
       }
-      tr:nth-child(odd) {
+      tr:only-child,
+      tr:nth-child(even) {
         background-color: $dark-black2 !important;
-        color: $light-gray3;
+      }
+      tr:nth-child(odd) {
+        background-color: $black;
       }
     }
 
     .highlight-box {
+      color: $light-gray3;
       background-color: $dark-code-background;
     }
   }
