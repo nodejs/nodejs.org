@@ -8,6 +8,12 @@
     color: $white;
   }
 
+  *{
+    code {
+      background-color: $dark-code-background;
+    }
+  }
+
   #main {
     background-color: $dark-black;
     p,
@@ -130,7 +136,6 @@
     }
     code {
       background-color: $dark-code-background;
-      color: $light-gray;
     }
   }
 }
