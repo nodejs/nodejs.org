@@ -12,3 +12,6 @@ npm-debug.log
 
 # Netlify
 .netlify
+
+#VSCode settings; makes life easier for some, tougher for most
+.vscode/
