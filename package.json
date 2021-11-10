@@ -67,7 +67,7 @@
     "chokidar": "^3.5.2",
     "cross-env": "^7.0.3",
     "faucet": "0.0.1",
-    "linkinator": "^2.14.4",
+    "linkinator": "^2.14.5",
     "lockfile-lint": "^4.6.2",
     "nock": "^13.2.0",
     "node-fetch": "^2.6.6",
