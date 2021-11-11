@@ -29,8 +29,8 @@ Bu belgede, Node.js. tarafından sağlanan yerleşik modüller açıklanmaktadı
 
 ## ES6 Özellikleri
 
-[ES6 bölümü](/en/docs/es6/), üç ES6 özellik grubunu ve açıklayıcı bağlantıların yanı sıra Node.js'de varsayılan olarak hangi özelliklerin etkin olduğunu açıklar. Ayrıca, belirli bir Node.js sürümüyle birlikte gönderilen V8 sürümünün nasıl bulunacağını da gösterir.
+[ES6 bölümü](/tr/docs/es6/), üç ES6 özellik grubunu ve açıklayıcı bağlantıların yanı sıra Node.js'de varsayılan olarak hangi özelliklerin etkin olduğunu açıklar. Ayrıca, belirli bir Node.js sürümüyle birlikte gönderilen V8 sürümünün nasıl bulunacağını da gösterir.
 
 ## Rehberler
 
-[Rehber bölümü](/en/docs/guides/)'nde Node.js teknik özellikleri ve yetenekleriyle ilgili uzun ve derinlemesine makaleler bulunmaktadır.
+[Rehber bölümü](/tr/docs/guides/)'nde Node.js teknik özellikleri ve yetenekleriyle ilgili uzun ve derinlemesine makaleler bulunmaktadır.
