@@ -91,7 +91,7 @@ localhost или localhost6.
 * На панели "Отладка" (Debug) щелкните значок настроек, чтобы открыть файл `.vscode/launch.json`.
   Выберите "Node.js" для первоначальной настройки.
 
-### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
+### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017+
 
 * В меню выберите "Debug > Start Debugging" или нажмите `F5`.
 * [Детальные инструкции](https://github.com/Microsoft/nodejstools/wiki/Debugging).

@@ -10,7 +10,7 @@ Before submitting, please have a look at the existing issues if there's already
 something related to your suggestion.
 
 We are also working on a relaunch at the moment, so it might be a good idea to
-check out our plans there as well: https://github.com/nodejs/website-redesign/issues/
+check out our plans there as well: https://github.com/nodejs/nodejs.dev/issues/
 
 Help is always welcome!
 -->

@@ -1,6 +1,6 @@
 <a href="#" id="scroll-to-top">&uarr; <span>{{site.scrollToTop}}</span></a>
 
-<footer {{#if className}} class="{{className}}"{{/if}}>
+<footer {{#if className}} class="{{className}}" {{/if}}>
 
   <div class="container">
     <div class="openjsfoundation-footer">
@@ -8,22 +8,28 @@
         <a class="openjsfoundation-logo" href="https://openjsf.org/">
           <img src="/static/images/openjs_foundation-logo.svg" alt="OpenJS Foundation" width="120" height="38">
         </a>
-        <ul class="list-divider-pipe issue-link">
-          <li><a id="editOnGitHubLink" href="#">{{site.editOnGithub}}</a></li>
-          <li><a href="https://github.com/nodejs/node/issues">{{site.reportNodeIssue}}</a></li>
-          <li><a href="https://github.com/nodejs/nodejs.org/issues">{{site.reportWebsiteIssue}}</a></li>
-          <li><a href="https://github.com/nodejs/help/issues">{{site.getHelpIssue}}</a></li>
-        </ul>
       </div>
+    <p>© OpenJS Foundation. All Rights Reserved. Portions of this site originally © Joyent.</p>
+    <p>Node.js is a trademark of Joyent, Inc. and is used with its permission. Please review the <a
+        href="https://trademark-list.openjsf.org">Trademark List</a> and <a
+        href="https://trademark-policy.openjsf.org">Trademark Guidelines</a> of the <a href="https://openjsf.org">OpenJS
+        Foundation</a>.</p>
+    <p>
+      <a href="https://raw.githubusercontent.com/nodejs/node/master/LICENSE">Node.js Project Licensing
+        Information</a>.
+    </p>
+    </div>
 
-      <p>© OpenJS Foundation. All Rights Reserved. Portions of this site originally © Joyent.</p>
-      <p>Node.js is a trademark of Joyent, Inc. and is used with its permission. Please review the <a href="https://trademark-list.openjsf.org">Trademark List</a> and <a href="https://trademark-policy.openjsf.org">Trademark Guidelines</a> of the <a href="https://openjsf.org">OpenJS Foundation</a>.</p>
-      <p>
-        <a href="https://raw.githubusercontent.com/nodejs/node/master/LICENSE">Node.js Project Licensing Information</a>.
-      </p>
-
-      {{> contributor-card }}
-
+    <div class="help">
+      <ul>
+        <li><a id="editOnGitHubLink" href="#">{{site.editOnGithub}}</a></li>
+        <li><a href="https://github.com/nodejs/node/issues">{{site.reportNodeIssue}}</a></li>
+        <li><a href="https://github.com/nodejs/nodejs.org/issues">{{site.reportWebsiteIssue}}</a></li>
+        <li><a href="https://github.com/nodejs/help/issues">{{site.getHelpIssue}}</a></li>
+        <li>
+          <a href="https://github.com/nodejs/nodejs.org/blob/master/CONTRIBUTING.md">{{site.Contributing}}</a>
+        </li>
+      </ul>
     </div>
   </div>
 

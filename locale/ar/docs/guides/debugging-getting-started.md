@@ -74,7 +74,7 @@ layout: docs.hbs
 * في قائمة تصحيح الأخطاء، إضغط على ايقونة الإعدادات لفتح `.vscode/launch.json`.
  قم باختيار "Node.js" للتثبيت الأولي.
 
-### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
+### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017+
 
 * قم باختيار "Debug > Start Debugging" من القائمة أو قم بالضغط على F5.
 * [خطوات تفصيلية بالإنجليزية](https://github.com/Microsoft/nodejstools/wiki/Debugging)

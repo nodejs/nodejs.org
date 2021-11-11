@@ -16,7 +16,7 @@ function githubLinks (options) {
 
       const file = files[path]
       path = path.replace('.html', '.md').replace(/\\/g, '/')
-      const url = `https://github.com/nodejs/nodejs.org/edit/master/locale/${options.locale}/${path}`
+      const url = `https://github.com/nodejs/nodejs.org/edit/main/locale/${options.locale}/${path}`
 
       const contents = file.contents.toString() +
       ` <input type = "hidden" id = "editOnGitHubUrl" value="${url}"/> `
