@@ -1,6 +1,6 @@
 'use strict'
 
-const marked = require('marked')
+const { marked } = require('marked')
 const test = require('tape')
 const anchorMarkdownHeadings = require('../../scripts/plugins/anchor-markdown-headings')
 
