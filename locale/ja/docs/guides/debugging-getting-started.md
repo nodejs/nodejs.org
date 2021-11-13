@@ -193,13 +193,13 @@ info on these follows:
 * デバッグパネルで、設定アイコンをクリックして `.vscode/launch.json` を開きます。初期設定は "Node.js" を選択してください
 
 <!--
-#### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
+#### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017+
 
 * Choose "Debug > Start Debugging" from the menu or hit F5.
 * [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging).
 
 -->
-### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
+### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017+
 
 * メニューから "デバッグ > デバッグの開始" を選択するか、F5 を押します
 * [詳しい説明](https://github.com/Microsoft/nodejstools/wiki/Debugging)
@@ -469,7 +469,7 @@ Node.js は TCP ポートで廃止された V8 デバッグプロトコルで定
 V8 デバッグプロトコルは、もはや保守もドキュメンテーションもされていません。
 
 <!--
-#### [Built-in Debugger](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
+#### [Built-in Debugger](https://nodejs.org/dist/{#var currentVersion}/docs/api/debugger.html)
 
 Start `node debug script_name.js` to start your script under Node's builtin
 command-line debugger. Your script starts in another Node process started with
@@ -477,7 +477,7 @@ the `--debug-brk` option, and the initial Node process runs the `_debugger.js`
 script and connects to your target.
 
 -->
-### [組み込みデバッガ](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
+### [組み込みデバッガ](https://nodejs.org/dist/{#var currentVersion}/docs/api/debugger.html)
 
 Node の組み込みコマンドラインデバッガの下でスクリプトを起動するには、
 `node debug script_name.js` を起動します。

@@ -40,7 +40,7 @@ Reunification of the Node.js developer community remains an important goal of
 the Foundation. But to have a successful project, we must also maintain focus
 on addressing the concerns of Node.js users and the ecosystem of vendors. If
 we succeed, Node.js will continue its meteoric rise as the defacto server side
-JavaScript platform, and everyone wins. If we get it wrong, we jeapordize the
+JavaScript platform, and everyone wins. If we get it wrong, we jeopardize the
 momentum and critical mass that's driven that growth, and everyone loses.
 
 In the user community, enterprise adoption of Node.js has skyrocketed with an

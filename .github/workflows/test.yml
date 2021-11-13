@@ -7,21 +7,25 @@ on:
       - "dependabot/**"
   pull_request:
 
-env:
-  NODE: 14.x
-
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  run:
+    name: Node on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
 
     steps:
       - name: Clone repository
         uses: actions/checkout@v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2.1.4
+        uses: actions/setup-node@v2
         with:
-          node-version: "${{ env.NODE }}"
+          node-version: lts/*
+          cache: npm
 
       - run: java -version
 
@@ -32,7 +36,9 @@ jobs:
         run: npm run build
 
       - name: Run tests
-        run: npm test
+        run: |
+          echo "::add-matcher::.github/workflows/remark-lint-problem-matcher.json"
+          npm test
 
       - name: Run HTML validator
         run: npm run test:html

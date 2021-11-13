@@ -5,7 +5,7 @@
 <body>
   {{> header }}
 
-  <div id="main">
+  <main id="main">
     <div class="container has-side-nav">
 
       {{!-- {{> navigation key='docs'}} --}}
@@ -16,14 +16,14 @@
         <ul class="no-padding">
         {{#each collections.knowledgeBase}}
           {{#startswith path 'knowledge/'}}
-            <li><a href="/{{../site.locale}}/{{ slashes path }}/">{{ title }}</a></li>
+            <li><a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a></li>
           {{/startswith}}
         {{/each}}
         </ul>
       </article>
 
     </div>
-  </div>
+  </main>
 
   {{> footer }}
 </body>

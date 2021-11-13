@@ -14,7 +14,7 @@ fs = require('fs');
 fs.writeFile(filename, data, [encoding], [callback])
 ```
 
-`file = (string)` filepath of the file to read
+`file = (string)` filepath of the file to write
 
 `data = (string or buffer)` the data you want to write to the file
 

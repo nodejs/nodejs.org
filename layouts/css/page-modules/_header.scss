@@ -29,6 +29,18 @@ header {
     }
   }
 
+  .dark-theme-switcher {
+    position: absolute;
+    right: 50px;
+    bottom: 17px;
+    background-color: transparent;
+    border: none;
+    color: $light-gray2;
+    cursor: pointer;
+    padding: 12px;
+    background-image: url("/static/images/dark-mode.svg");
+  }
+
   .lang-picker-toggler {
     position: absolute;
     right: 0;
@@ -102,7 +114,7 @@ header {
         pointer-events: none;
         border-top-color: $node-gray;
         border-width: $border-width;
-        margin-left: -$border-width / 2;
+        margin-left: -$border-width * .5;
       }
 
       &.active:first-child::after {
@@ -146,7 +158,7 @@ header {
 }
 
 #logo {
-  display: block;
+  display: inline-block;
 
   &:hover {
     background-color: transparent;

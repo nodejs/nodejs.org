@@ -32,7 +32,9 @@ This is in contrast to today's more common concurrency model, in which OS thread
 are employed. Thread-based networking is relatively inefficient and very
 difficult to use. Furthermore, users of Node.js are free from worries of
 dead-locking the process, since there are no locks. Almost no function in
-Node.js directly performs I/O, so the process never blocks. Because nothing blocks, scalable systems are very reasonable to develop in Node.js.
+Node.js directly performs I/O, so the process never blocks except when the I/O is performed using
+synchronous methods of Node.js standard library. Because nothing blocks, scalable systems are very
+reasonable to develop in Node.js.
 
 If some of this language is unfamiliar, there is a full article on
 [Blocking vs. Non-Blocking][].
@@ -41,12 +43,11 @@ If some of this language is unfamiliar, there is a full article on
 
 Node.js is similar in design to, and influenced by, systems like Ruby's
 [Event Machine][] and Python's [Twisted][]. Node.js takes the event model a bit
-further. It presents an [event loop][] as a runtime construct instead of as a library. In other systems, there is always a blocking call to start the
-event-loop.
+further. It presents an [event loop][] as a runtime construct instead of as a library. In other systems,
+there is always a blocking call to start the event-loop.
 Typically, behavior is defined through callbacks at the beginning of a script, and
-at the end a server is started through a blocking call like
-`EventMachine::run()`. In Node.js, there is no such start-the-event-loop call.
-Node.js simply enters the event loop after executing the input script. Node.js
+at the end a server is started through a blocking call like `EventMachine::run()`.
+In Node.js, there is no such start-the-event-loop call. Node.js simply enters the event loop after executing the input script. Node.js
 exits the event loop when there are no more callbacks to perform. This behavior
 is like browser JavaScript — the event loop is hidden from the user.
 

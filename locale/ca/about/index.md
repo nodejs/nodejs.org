@@ -60,7 +60,7 @@ múltiples cores del seu sistema. Processos fills poden ser llençats usant la n
 principal. Construïda sobre la mateixa interfície està el mòdul [`cluster`][], el qual permet
 compartir sockets entre processos per activar el balanceig de càrregues en els seus múltiples cores.
 
-[Blocking vs Non-Blocking]: https://github.com/nodejs/node/blob/master/doc/topics/blocking-vs-non-blocking.md
+[Blocking vs Non-Blocking]: https://nodejs.org/ca/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
 [bucle d'esdeveniments]: https://github.com/nodejs/node/blob/master/doc/topics/event-loop-timers-and-nexttick.md

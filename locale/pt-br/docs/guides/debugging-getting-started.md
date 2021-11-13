@@ -128,7 +128,7 @@ estão as informações básicas sobre eles:
 * No painel "Debug", clique no icone de configurações para abrir `./vscode/launch.json`
   Seleciona "Node.js" para o setup inicial
 
-#### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
+#### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017+
 
 * Escolha "Debug > Start Debugging" no menu ou aperte F5
 * [Mais detalhes](https://github.com/Microsoft/nodejstools/wiki/Debugging).
@@ -281,7 +281,7 @@ que já foi descontinuado, em uma porta TCP que, por padrão, é a `5858`. Qualq
 que conversa com esse protocolo pode conectar a ele e debugar um processo sendo executado; abaixo temos
 alguns dos mais populares.
 
-### [Debugger nativo](https://nodejs.org/dist/latest-v6.x/docs/api/debugger.html)
+### [Debugger nativo](https://nodejs.org/dist/{#var currentVersion}/docs/api/debugger.html)
 
 <!-- Start `node debug script_name.js` to start your script under Node's builtin
 command-line debugger. Your script starts in another Node process started with

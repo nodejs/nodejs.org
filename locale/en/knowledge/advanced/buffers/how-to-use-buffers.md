@@ -173,7 +173,7 @@ In this example, I copied the "snowman" buffer, which contains a 3 byte long cha
 
 #### buffer.slice(start, end=buffer.length)
 
-This method's API is generally the same as that of `Array.prototype.slice`, but with one very import difference: The slice is **not** a new buffer and merely references a subset of the memory space. *Modifying the slice will also modify the original buffer*! For example:
+This method's API is generally the same as that of `Array.prototype.slice`, but with one very important difference: The slice is **not** a new buffer and merely references a subset of the memory space. *Modifying the slice will also modify the original buffer*! For example:
 
 ```
 > var puddle = frosty.slice(16, 19)

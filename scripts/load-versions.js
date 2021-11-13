@@ -17,8 +17,8 @@ if (require.main === module) {
     }
 
     fs.writeFileSync(
-      path.join(__dirname, '..', 'source', 'versions.json')
-      , JSON.stringify(versions, null, 2)
+      path.join(__dirname, '..', 'source', 'versions.json'),
+      JSON.stringify(versions, null, 2)
     )
   })
 }

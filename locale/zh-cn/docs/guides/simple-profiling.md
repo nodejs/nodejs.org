@@ -26,7 +26,7 @@ app.get('/newUser', (req, res) => {
 
   username = username.replace(/[!@#$%^&*]/g, '');
 
-  if (!username || !password || users.username) {
+  if (!username || !password || users[username]) {
     return res.sendStatus(400);
   }
 
@@ -170,7 +170,7 @@ app.get('/auth', (req, res) => {
 
   username = username.replace(/[!@#$%^&*]/g, '');
 
-  if (!username || !password || !users[username]) {
+  if (!username || !password || users[username]) {
     return res.sendStatus(400);
   }
 
@@ -217,5 +217,8 @@ Percentage of the requests served within a certain time (ms)
 
 希望通过对此（诚然是做作的）示例的性能调查，您已经看到了 V8 刻度处理器如何帮助您更好地了解 Node.js 应用程序的性能。
 
+你也会发现[如何创建火焰图][]对你是有帮助的。
+
 [V8 内探测器]: https://v8.dev/docs/profile
 [异步编程的好处]: https://nodesource.com/blog/why-asynchronous
+[如何创建火焰图]: /zh-cn/docs/guides/diagnostics-flamegraph/
