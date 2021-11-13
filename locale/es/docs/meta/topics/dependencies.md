@@ -1,78 +1,79 @@
 ---
-title: Dependencies
+title: Dependencias
 layout: docs.hbs
 ---
 
-# Dependencies
+# Dependencias
 
-There are several dependencies that Node.js relies on to work the way it does.
+Hay varias dependencias en las que se basa Node.js para funcionar como lo hace.
 
-* [Libraries](#libraries)
-  * [V8](#v8)
-  * [libuv](#libuv)
-  * [llhttp](#llhttp)
-  * [c-ares](#c-ares)
-  * [OpenSSL](#openssl)
-  * [zlib](#zlib)
-* [Tools](#tools)
-  * [npm](#npm)
-  * [gyp](#gyp)
-  * [gtest](#gtest)
+* [Dependencias](#dependencias)
+  * [Librerías](#librerías)
+    * [V8](#v8)
+    * [libuv](#libuv)
+    * [llhttp](#llhttp)
+    * [c-ares](#c-ares)
+    * [OpenSSL](#openssl)
+    * [zlib](#zlib)
+  * [Herramientas](#herramientas)
+    * [npm](#npm)
+    * [gyp](#gyp)
+    * [gtest](#gtest)
 
-## Libraries
+## Librerías
 
 ### V8
 
-The V8 library provides Node.js with a JavaScript engine, which Node.js controls via the V8 C++ API. V8 is maintained by Google, for use in Chrome.
+La librería V8 proporciona a Node.js un motor de JavaScript, que Node.js controla a través de la API V8 C++. V8 es mantenido por Google para su uso en Chrome.
 
-* [Documentation](https://v8.dev/docs)
+* [Documentación](https://v8.dev/docs)
 
 ### libuv
 
-Another important dependency is libuv, a C library that is used to abstract non-blocking I/O operations to a consistent interface across all supported platforms. It provides mechanisms to handle file system, DNS, network, child processes, pipes, signal handling, polling and streaming. It also includes a thread pool for offloading work for some things that can't be done asynchronously at the operating system level.
+Otra dependencia importante es libuv, una librería en C que se utiliza para abstraer operaciones I/O sin bloqueo en una interfaz coherente en todas las plataformas compatibles. Proporciona mecanismos para manejar sistema de archivos, DNS, red, child processes, pipes, signal handling, polling y streaming. También incluye un thread pool para descargar el trabajo de algunas cosas que no se pueden hacer de forma asíncrona a nivel del sistema operativo.
 
-* [Documentation](http://docs.libuv.org/)
+* [Documentación](http://docs.libuv.org/)
 
 ### llhttp
 
-HTTP parsing is handled by a lightweight TypeScript and C library called llhttp. It is designed to not make any syscalls or allocations, so it has a very small per-request memory footprint.
+El análisis sintáctico de HTTP es manejado por una biblioteca ligera de TypeScript y C llamada llhttp. Está diseñada para no hacer ninguna llamada al sistema (syscalls) o asignación (allocations), por lo que tiene una cuota de memoria por solicitud muy pequeña.
 
-* [Documentation](https://github.com/nodejs/llhttp)
+* [Documentación](https://github.com/nodejs/llhttp)
 
 ### c-ares
 
-For some asynchronous DNS requests, Node.js uses a C library called c-ares. It is exposed through the DNS module in JavaScript as the `resolve()` family of functions. The `lookup()` function, which is what the rest of core uses, makes use of threaded `getaddrinfo(3)` calls in libuv. The reason for this is that c-ares supports /etc/hosts, /etc/resolv.conf and /etc/svc.conf, but not things like mDNS.
+Para algunas peticiones DNS asíncronas, Node.js utiliza una librería en C llamada c-ares. Se expone a través del módulo DNS en JavaScript como la familia de funciones `resolve()`. La función `lookup()`, que es la que utiliza el resto del núcleo, hace uso de las llamadas `getaddrinfo(3)` en libuv. La razón de esto es que c-ares soporta /etc/hosts, /etc/resolv.conf y /etc/svc.conf pero no cosas como mDNS.
 
-* [Documentation](https://c-ares.haxx.se/docs.html)
+* [Documentación](https://c-ares.haxx.se/docs.html)
 
 ### OpenSSL
 
-OpenSSL is used extensively in both the `tls` and `crypto` modules. It provides battle-tested implementations of many cryptographic functions that the modern web relies on for security.
+OpenSSL se utiliza ampliamente en los módulos `tls` y `crypto`. Proporciona implementaciones ampliamente probadas de muchas funciones criptográficas en las que la web moderna confía para su seguridad.
 
-* [Documentation](https://www.openssl.org/docs/)
+* [Documentación](https://www.openssl.org/docs/)
 
 ### zlib
 
-For fast compression and decompression, Node.js relies on the industry-standard zlib library, also known for its use in gzip and libpng. Node.js uses zlib to create sync, async and streaming compression and decompression interfaces.
+Para una rápida compresión y descompresión, Node.js se basa en la librería zlib, un estándar de la industria conocida también por su uso en gzip y libpng. Node.js utiliza zlib para crear interfaces de compresión y descompresión síncronas, asíncronas y de streaming.
 
-* [Documentation](https://www.zlib.net/manual.html)
+* [Documentación](https://www.zlib.net/manual.html)
 
-## Tools
+## Herramientas
 
 ### npm
 
-Node.js is all about modularity, and with that comes the need for a quality package manager; for this purpose, npm was made. With npm comes the largest selection of community-created packages of any programming ecosystem, which makes building Node.js apps quick and easy.
+Node.js se basa en la modularidad, y con ello viene la necesidad de un gestor de paquetes de calidad; para este propósito, se creó npm. Con npm viene la mayor selección de paquetes creados por la comunidad de cualquier ecosistema de programación, lo que hace que la construcción de aplicaciones Node.js sea rápida y fácil.
 
-* [Documentation](https://docs.npmjs.com/)
+* [Documentación](https://docs.npmjs.com/)
 
 ### gyp
 
-The build system is handled by gyp, a python-based project generator copied from V8. It can generate project files for use with build systems across many platforms. Node.js requires a build system because large parts of it — and its dependencies — are written in languages that require compilation.
+El sistema de construcción (build system) es manejado por gyp, un generador de proyectos basado en python copiado de V8. Puede generar archivos de proyecto para utilizarlos con sistemas de compilación en muchas plataformas. Node.js requiere un sistema de compilación porque gran parte de él — y sus dependencias — están escritas en lenguajes que requieren compilación.
 
-* [Documentation](https://gyp.gsrc.io/docs/UserDocumentation.md)
+* [Documentación](https://gyp.gsrc.io/docs/UserDocumentation.md)
 
 ### gtest
 
-Native code can be tested using gtest, which is taken from Chromium. It allows testing C/C++ without needing an existing node executable to bootstrap from.
+El código nativo puede ser probado usando gtest, que está tomado de Chromium. Permite probar C/C++ sin necesidad de un ejecutable de node existente desde el que arrancar.
 
-* [Documentation](https://code.google.com/p/googletest/wiki/V1_7_Documentation)
+* [Documentación](https://code.google.com/p/googletest/wiki/V1_7_Documentation)

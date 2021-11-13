@@ -7,7 +7,7 @@ const isEditable = `(security|index).html|(about|download|docs|foundation|get-in
 const isEditableReg = new RegExp(isEditable)
 
 // This middleware adds "Edit on GitHub" links to every editable page
-function githubLinks (options) {
+function githubLinks(options) {
   return (files, m, next) => {
     Object.keys(files).forEach((path) => {
       if (!isEditableReg.test(path)) {
@@ -18,8 +18,9 @@ function githubLinks (options) {
       path = path.replace('.html', '.md').replace(/\\/g, '/')
       const url = `https://github.com/nodejs/nodejs.org/edit/main/locale/${options.locale}/${path}`
 
-      const contents = file.contents.toString() +
-      ` <input type = "hidden" id = "editOnGitHubUrl" value="${url}"/> `
+      const contents =
+        file.contents.toString() +
+        ` <input type = "hidden" id = "editOnGitHubUrl" value="${url}"/> `
 
       file.contents = Buffer.from(contents)
     })
