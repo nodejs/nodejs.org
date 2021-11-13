@@ -13,5 +13,8 @@ module.exports = (date, format) => {
     return date
   }
 
-  return strftime(typeof format === 'string' && format ? format : '%F', parsedDate)
+  return strftime(
+    typeof format === 'string' && format ? format : '%F',
+    parsedDate
+  )
 }
