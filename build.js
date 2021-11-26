@@ -318,7 +318,30 @@ function copyStatic() {
           if (error) {
             return console.error(error)
           }
-          console.timeEnd(labelForBuild)
+
+          ncp(
+            path.join(__dirname, 'node_modules/jquery/dist/jquery.min.js'),
+            path.join(__dirname, 'build/static/js/jquery.min.js'),
+            (error) => {
+              if (error) {
+                return console.error(error)
+              }
+
+              ncp(
+                path.join(
+                  __dirname,
+                  'node_modules/jquery.fancytable/dist/fancyTable.min.js'
+                ),
+                path.join(__dirname, 'build/static/js/fancyTable.min.js'),
+                (error) => {
+                  if (error) {
+                    return console.error(error)
+                  }
+                  console.timeEnd(labelForBuild)
+                }
+              )
+            }
+          )
         }
       )
     }
