@@ -21,7 +21,7 @@
     "test:lint:lockfile": "lockfile-lint --allowed-hosts npm github.com --allowed-schemes https: --empty-hostname false --type npm --path package-lock.json",
     "test:html": "node scripts/vnu-jar.js",
     "test:linkinator": "npm-run-all --parallel --race \"serve -- --serve-only\" linkinator",
-    "test:unit": "tape tests/**/*.test.js | faucet"
+    "test:unit": "tape tests/**/*.test.js"
   },
   "repository": "nodejs/nodejs.org",
   "author": "Node.js Website Working Group",
@@ -69,7 +69,6 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^5.1.1",
-    "faucet": "0.0.1",
     "linkinator": "^2.16.2",
     "lockfile-lint": "^4.6.2",
     "nock": "^13.2.1",
