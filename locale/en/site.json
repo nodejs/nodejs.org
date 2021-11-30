@@ -163,10 +163,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2021-10-05T16:00:00.000Z",
-      "endDate": "2021-10-19T16:00:00.000Z",
-      "text": "New security releases now available October 12th, 2021",
-      "link": "blog/vulnerability/oct-2021-security-releases/"
+      "startDate": "2021-11-30T00:00:00.000Z",
+      "endDate": "2021-12-07T00:00:00.000Z",
+      "text": "Node.js training and exams discounted through Dec. 6th",
+      "link": "https://openjsf.org/blog/2021/11/29/test-your-skills-how-good-are-you-with-node-js/"
     },
     "blacklivesmatter": {
       "visible": false,
