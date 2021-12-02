@@ -67,15 +67,8 @@ either the IP address or by using ssh tunnels as described below.
 
 ## Inspector Clients
 
-Several commercial and open source tools can connect to the Node.js Inspector.
-Basic info on these follows:
-
-### [node-inspect](https://github.com/nodejs/node-inspect)
-
-* CLI Debugger supported by the Node.js Foundation which uses the [Inspector Protocol][].
-* A version is bundled with Node.js and can be used with `node inspect myscript.js`.
-* The latest version can also be installed independently (e.g. `npm install -g node-inspect`)
-  and used with `node-inspect myscript.js`.
+A minimal CLI debugger is available with `node inspect myscript.js`.
+Several commercial and open source tools can also connect to the Node.js Inspector.
 
 ### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+, [Microsoft Edge](https://www.microsoftedgeinsider.com)
 
