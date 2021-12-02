@@ -98,7 +98,7 @@ Several commercial and open source tools can also connect to the Node.js Inspect
 
 ### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 
-* Library to ease connections to Inspector Protocol endpoints.
+* Library to ease connections to [Inspector Protocol][] endpoints.
 
 ### [Gitpod](https://www.gitpod.io)
 
@@ -233,7 +233,7 @@ script and connects to your target.
 ### [node-inspector](https://github.com/node-inspector/node-inspector)
 
 Debug your Node.js app with Chrome DevTools by using an intermediary process
-which translates the Inspector Protocol used in Chromium to the V8 Debugger
+which translates the [Inspector Protocol][] used in Chromium to the V8 Debugger
 protocol used in Node.js.
 
 <!-- refs -->
