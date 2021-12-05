@@ -361,7 +361,7 @@ Using **[Winget](https://aka.ms/winget-cli)**:
 ```bash
 winget install OpenJS.NodeJS
 # or for LTS
-winget install OpenJS.NodeJSLTS
+winget install OpenJS.NodeJS.LTS
 ```
 
 Using **[Chocolatey](https://chocolatey.org/)**:
