@@ -1,3 +1,3 @@
-'use strict'
+'use strict';
 
-module.exports = (context) => JSON.stringify(context)
+module.exports = (context) => JSON.stringify(context);

@@ -1,42 +1,42 @@
-'use strict'
+'use strict';
 
-const schedule = require('../../source/schedule.json')
+const schedule = require('../../source/schedule.json');
 
-const today = new Date()
-const datify = (release, key) => new Date(schedule[release][key])
+const today = new Date();
+const datify = (release, key) => new Date(schedule[release][key]);
 
 module.exports = (context) => {
-  const statuses = context.data.root.statuses
+  const statuses = context.data.root.statuses;
 
   const header = context.data.root.columns
     .map((column) => `<th>${column}</th>\n`)
-    .join('')
+    .join('');
 
-  let content = ''
+  let content = '';
 
   Object.keys(schedule)
     .filter((release) => datify(release, 'end') > today)
     .forEach((release) => {
-      const codename = schedule[release].codename
+      const codename = schedule[release].codename;
       const codenameLink = codename
         ? `<a href="https://nodejs.org/download/release/latest-${codename.toLowerCase()}/">${codename}</a>`
-        : ''
+        : '';
 
       const releaseLink =
         datify(release, 'start') < today
           ? `<a href="https://nodejs.org/download/release/latest-${release}.x/">${release}</a>`
-          : release
+          : release;
 
-      let status
+      let status;
 
       if (datify(release, 'start') > today) {
-        status = statuses.pending
+        status = statuses.pending;
       } else if (!schedule[release].lts || datify(release, 'lts') > today) {
-        status = statuses.current
+        status = statuses.current;
       } else if (datify(release, 'maintenance') < today) {
-        status = statuses.maintenance
+        status = statuses.maintenance;
       } else if (datify(release, 'lts') < today) {
-        status = statuses.active
+        status = statuses.active;
       }
 
       content += `<tr>
@@ -47,8 +47,8 @@ module.exports = (context) => {
         <td>${schedule[release].lts || ''}</td>
         <td>${schedule[release].maintenance || ''}</td>
         <td>${schedule[release].end || ''}</td>
-      </tr>`
-    })
+      </tr>`;
+    });
 
   return `
     <table class="release-schedule">
@@ -59,5 +59,5 @@ module.exports = (context) => {
         ${content}
       </tbody>
     </table>
-  `
-}
+  `;
+};

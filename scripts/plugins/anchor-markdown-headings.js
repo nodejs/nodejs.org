@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 /**
  * This module will automatically replace the header style words
@@ -22,19 +22,19 @@
 // our current situation.
 // For more, you can see:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex#Description
-const ANCHOR_COMMENTREG = /<!--\x20?([\w\x20-]+)\x20?-->/
+const ANCHOR_COMMENTREG = /<!--\x20?([\w\x20-]+)\x20?-->/;
 
 module.exports = function anchorMarkdownHeadings(text, level, raw, slugger) {
-  let anchorTitle = null
+  let anchorTitle = null;
 
   // If we've checked the title has a comment symbol,
   // we reguard it as the forcely-assigned anchor link name
   // for titles with non-English characters
-  const anchorTitleArray = ANCHOR_COMMENTREG.exec(raw)
+  const anchorTitleArray = ANCHOR_COMMENTREG.exec(raw);
   if (anchorTitleArray !== null) {
-    anchorTitle = anchorTitleArray[1]
+    anchorTitle = anchorTitleArray[1];
   } else {
-    anchorTitle = raw
+    anchorTitle = raw;
   }
 
   anchorTitle = anchorTitle
@@ -42,16 +42,16 @@ module.exports = function anchorMarkdownHeadings(text, level, raw, slugger) {
     .replace(/[^\w]+/g, '-')
     .replace(/[\x20]+/g, '-')
     .replace(/-{2,}/g, '-')
-    .replace(/(^-|-$)/g, '')
+    .replace(/(^-|-$)/g, '');
 
   if (!anchorTitle) {
-    return `<h${level}>${text}</h${level}>`
+    return `<h${level}>${text}</h${level}>`;
   }
 
-  anchorTitle = anchorTitle.toLowerCase()
+  anchorTitle = anchorTitle.toLowerCase();
 
-  const anchorId = `${slugger ? slugger.slug(anchorTitle) : anchorTitle}`
-  const headerId = `header-${anchorId}`
+  const anchorId = `${slugger ? slugger.slug(anchorTitle) : anchorTitle}`;
+  const headerId = `header-${anchorId}`;
 
-  return `<h${level} id="${headerId}">${text}<a id="${anchorId}" class="anchor" href="#${anchorId}" aria-labelledby="${headerId}"></a></h${level}>`
-}
+  return `<h${level} id="${headerId}">${text}<a id="${anchorId}" class="anchor" href="#${anchorId}" aria-labelledby="${headerId}"></a></h${level}>`;
+};

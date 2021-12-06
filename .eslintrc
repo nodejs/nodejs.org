@@ -1,7 +1,7 @@
 {
   "extends": [
     "eslint:recommended",
-    "standard",
+    "semistandard",
     "prettier"
   ],
   "plugins": [

@@ -1,15 +1,15 @@
-'use strict'
+'use strict';
 
-const Util = require('util')
+const Util = require('util');
 
 module.exports = function debug() {
   return (files, metalsmith, done) => {
-    console.log('\n\n')
+    console.log('\n\n');
     console.log(
       Util.inspect(metalsmith.metadata(), { showHidden: false, depth: null })
-    )
-    console.log(Util.inspect(files, { showHidden: false, depth: null }))
-    console.log('\n\n')
-    done()
-  }
-}
+    );
+    console.log(Util.inspect(files, { showHidden: false, depth: null }));
+    console.log('\n\n');
+    done();
+  };
+};
