@@ -9,5 +9,38 @@
   ],
   "rules": {
     "prettier/prettier": "error"
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.md"
+      ],
+      "plugins": [
+        "markdown"
+      ],
+      "processor": "markdown/markdown"
+    },
+    {
+      "files": [
+        "**/*.md/*.js"
+      ],
+      "rules": {
+        "eqeqeq": "off",
+        "no-const-assign": "off",
+        "no-undef": "off",
+        "no-unused-expressions": "off",
+        "no-unused-vars": "off",
+        "node/handle-callback-err": "off",
+        "node/no-deprecated-api": "off",
+        "prefer-const": "off",
+        "prettier/prettier": [
+          "error",
+          {
+            "singleQuote": true,
+            "trailingComma": "none"
+          }
+        ]
+      }
+    }
+  ]
 }
