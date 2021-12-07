@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-const semver = require('semver')
+const semver = require('semver');
 
 const map = (release) =>
   release && {
@@ -9,20 +9,20 @@ const map = (release) =>
     npm: release.npm,
     v8: release.v8,
     openssl: release.openssl
-  }
+  };
 
 exports.current = (releases) => {
   const match =
     releases &&
     releases.find(
       (release) => !release.lts && semver.gte(release.version, '5.0.0')
-    )
-  return map(match)
-}
+    );
+  return map(match);
+};
 
 exports.lts = (releases) =>
-  map(releases && releases.find((release) => release.lts))
+  map(releases && releases.find((release) => release.lts));
 
 function majorStr(release) {
-  return `v${semver.major(release.version)}.x`
+  return `v${semver.major(release.version)}.x`;
 }
