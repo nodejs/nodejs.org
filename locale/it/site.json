@@ -108,7 +108,7 @@
     }
   },
   "security": {
-    "link": "security",
+    "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
     "text": "Sicurezza"
   },
   "blog": {
