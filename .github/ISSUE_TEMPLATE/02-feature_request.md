@@ -1,8 +1,8 @@
 ---
 name: 🚀 Feature Request
 about: I have a suggestion (and may want to implement it 🙂)!
-
 ---
+
 <!--
 You have an idea how to improve the site? That's awesome!
 
