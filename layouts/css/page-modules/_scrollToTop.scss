@@ -22,9 +22,9 @@ html {
 
   // Prevent button from flashing on page load
   opacity: 0;
-  animation: buttonFade .5s 1s 1 forwards;
+  animation: button-fade .5s 1s 1 forwards;
 
-  @keyframes buttonFade {
+  @keyframes button-fade {
     0% {
       opacity: 0;
     }
