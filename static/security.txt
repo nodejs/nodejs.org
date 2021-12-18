@@ -1,2 +1,2 @@
-Contact: security@nodejs.org
-Policy: https://nodejs.org/en/security/
+Contact: https://hackerone.com/nodejs
+Policy: https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security
