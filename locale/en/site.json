@@ -17,6 +17,7 @@
   "unofficial-builds": "Unofficial builds",
   "previous": "Previous",
   "next": "Next",
+  "toggleText":"Toggle dark/light mode",
   "feeds": [
     {
       "link": "feed/blog.xml",
@@ -140,7 +141,7 @@
     }
   },
   "security": {
-    "link": "security",
+    "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
     "text": "Security"
   },
   "getcertified": {
@@ -162,10 +163,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2021-08-05T13:00:00.000Z",
-      "endDate": "2021-08-25T13:00:00.000Z",
-      "text": "New security releases now available for 16.x, 14.x, and 12.x release lines",
-      "link": "blog/vulnerability/aug-2021-security-releases/"
+      "startDate": "2021-11-30T00:00:00.000Z",
+      "endDate": "2021-12-07T00:00:00.000Z",
+      "text": "Node.js training and exams discounted through Dec. 6th",
+      "link": "https://openjsf.org/blog/2021/11/29/test-your-skills-how-good-are-you-with-node-js/"
     },
     "blacklivesmatter": {
       "visible": false,

@@ -13,7 +13,7 @@ would like to contribute to the translation of nodejs.org, please refer to the f
 
 All translated and approved content will be pushed to this repo automatically. You don't need to create any PRs with translation. Just keep localization process on Crowdin.
 
-Original source can be found in [/locale/en](https://github.com/nodejs/nodejs.org/tree/master/locale/en). If you find any problem with original source, please create a PR with changes directly to `/locale/en`. Crowdin automatically pull all updates within 24 hours.
+Original source can be found in [/locale/en](https://github.com/nodejs/nodejs.org/tree/main/locale/en). If you find any problem with original source, please create a PR with changes directly to `/locale/en`. Crowdin automatically pull all updates within 24 hours.
 
 ### Can't find my locale on Crowdin
 

@@ -367,7 +367,7 @@ class MyReadable extends Readable {
 }
 ```
 
-Además, desde fuera del stream personalizado, hay errores por ignorar el backpressure. En este contraejemplo de buena práctica, el código de la aplicación fuerza los datos siempre que están disponibles (señalado por [`evento 'data'`][]):
+Además, desde fuera del stream personalizado, hay errores por ignorar el backpressure. En este contraejemplo de buena práctica, el código de la aplicación fuerza los datos siempre que están disponibles (señalado por [evento `'data'`][]):
 
 ```javascript
 // This ignores the backpressure mechanisms Node.js has set in place,
