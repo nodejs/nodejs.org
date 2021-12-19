@@ -13,14 +13,12 @@
     "load-schedule": "curl -sS https://raw.githubusercontent.com/nodejs/Release/master/schedule.json -o source/schedule.json",
     "start": "npm run serve",
     "test": "npm-run-all test:lint test:unit",
-    "linkinator": "wait-on http://localhost:8080/en/ && linkinator http://localhost:8080/en/ --recurse --skip \"^(?!http://localhost)\" --verbosity error",
     "test:lint": "npm-run-all --parallel --aggregate-output test:lint:*",
     "test:lint:js": "eslint .",
     "test:lint:md": "remark -qf .",
     "test:lint:stylelint": "stylelint \"layouts/css/**/*.{css,scss}\" --report-needless-disables",
     "test:lint:lockfile": "lockfile-lint --allowed-hosts npm github.com --allowed-schemes https: --empty-hostname false --type npm --path package-lock.json",
     "test:html": "node scripts/vnu-jar.js",
-    "test:linkinator": "npm-run-all --parallel --race \"serve -- --serve-only\" linkinator",
     "test:unit": "tape tests/**/*.test.js"
   },
   "repository": "nodejs/nodejs.org",
@@ -70,7 +68,6 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^6.0.0",
-    "linkinator": "^3.0.2",
     "lockfile-lint": "^4.6.2",
     "nock": "^13.2.1",
     "node-fetch": "^2.6.6",
@@ -83,7 +80,6 @@
     "stylelint": "^14.1.0",
     "stylelint-config-twbs-bootstrap": "^3.0.0",
     "tape": "^5.3.2",
-    "vnu-jar": "21.10.12",
-    "wait-on": "^6.0.0"
+    "vnu-jar": "21.10.12"
   }
 }
