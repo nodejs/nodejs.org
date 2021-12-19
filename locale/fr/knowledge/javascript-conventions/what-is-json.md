@@ -27,10 +27,10 @@ JavaScript provides 2 methods for encoding data structures to json and encoding 
 
 ```js
 const data = {
-  name: "John Doe",
+  name: 'John Doe',
   age: 32,
-  title: "Vice President of JavaScript"
-}
+  title: 'Vice President of JavaScript'
+};
 
 const jsonStr = JSON.stringify(data);
 
@@ -42,7 +42,8 @@ console.log(jsonStr);
 `JSON.parse` takes a JSON string and decodes it to a JavaScript data structure.
 
 ```js
-const jsonStr = '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}';
+const jsonStr =
+  '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}';
 
 const data = JSON.parse(jsonStr);
 

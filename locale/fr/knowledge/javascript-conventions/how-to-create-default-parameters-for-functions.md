@@ -13,10 +13,10 @@ Usually a function will take a set number of parameters, and require that all of
 ```js
 const pow = (base, power = 2) => {
   return Math.pow(base, power);
-}
+};
 
 console.log(pow(2)); // 4
-console.log(pow(2,10)); // 1024
+console.log(pow(2, 10)); // 1024
 ```
 
 In the above code The function `pow` return square of a number or any other power specified in the function call because the argument `power` is given a default value of 2 so whenever no second argument is provided or the provided value is `undefined` the function `pow` will use 2 as the value of argument `power`. But there is a small gotcha in it:
@@ -24,7 +24,7 @@ In the above code The function `pow` return square of a number or any other powe
 ```js
 const pow = (base, power = 2) => {
   return Math.pow(base, power);
-}
+};
 
 console.log(pow(2, undefined)); // 4
 console.log(pow(2, null)); // 1
@@ -40,28 +40,28 @@ The first idiom is giving a default value for the last parameter. This is done b
 
 ```js
 const example = function (optionalArg) {
-  optionalArg = optionalArg || "No parameter was passed";
+  optionalArg = optionalArg || 'No parameter was passed';
   console.log(optionalArg);
-}
+};
 
 const betterExample = function (optionalArg) {
   if (optionalArg === undefined) {
-    optionalArg = "No parameter was passed";
+    optionalArg = 'No parameter was passed';
   }
   console.log(optionalArg);
-}
+};
 
-console.log("Without parameter:");
+console.log('Without parameter:');
 example();
 betterExample();
 
-console.log("\nWith paramater:");
-example("parameter was passed");
-betterExample("parameter was passed");
+console.log('\nWith paramater:');
+example('parameter was passed');
+betterExample('parameter was passed');
 
-console.log("\nEmpty String:");
-example("");
-betterExample("");
+console.log('\nEmpty String:');
+example('');
+betterExample('');
 ```
 
 The second idiom is when the optional value is in the middle it can cause some undesired effects since all the parameters are shifted over. The optional parameter is not the `undefined` value in this case - the last parameter is the `undefined` one. So you have to check if the last parameter is `undefined` and then manually fix all the other parameters before continuing in the code. This case is also valid for modern JavaScript(ES6/ES2015). The example shows you how to do that:
@@ -72,12 +72,16 @@ const example = function (param1, optParam, callback) {
     // only two parameters were passed, so the callback is actually in `optParam`
     callback = optParam;
 
-    //give `optParam` a default value
-    optParam = "and a default parameter";
+    // give `optParam` a default value
+    optParam = 'and a default parameter';
   }
   callback(param1, optParam);
-}
+};
 
-example("This is a necessary parameter", console.log);
-example("This is a necessary parameter", "and an optional parameter", console.log);
+example('This is a necessary parameter', console.log);
+example(
+  'This is a necessary parameter',
+  'and an optional parameter',
+  console.log
+);
 ```
