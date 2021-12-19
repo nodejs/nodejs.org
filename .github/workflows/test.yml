@@ -2,9 +2,8 @@ name: Tests
 
 on:
   push:
-    branches-ignore:
-      - "translations"
-      - "dependabot/**"
+    branches:
+      - main
   pull_request:
   workflow_dispatch:
 
