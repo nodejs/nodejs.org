@@ -1,4 +1,4 @@
-name: Tests
+name: CI
 
 on:
   push:
@@ -11,7 +11,29 @@ env:
   FORCE_COLOR: 2
 
 jobs:
-  run:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: lts/*
+          cache: npm
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Lint
+        run: |
+          echo "::add-matcher::.github/workflows/remark-lint-problem-matcher.json"
+          npm run test:lint
+
+  test:
     name: Node on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
 
@@ -38,10 +60,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Run tests
-        run: |
-          echo "::add-matcher::.github/workflows/remark-lint-problem-matcher.json"
-          npm test
+      - name: Run unit tests
+        run: npm run test:unit
 
       - name: Run HTML validator
         run: npm run test:html
