@@ -1,6 +1,6 @@
+/* eslint-disable no-var */
 (function () {
-  const themeAttr = 'data-theme';
-  const isInDarkMode =
+  var isInDarkMode =
     window.matchMedia &&
     window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -11,7 +11,7 @@
   }
 
   function setTheme(theme) {
-    document.querySelector('html').setAttribute(themeAttr, theme);
+    document.documentElement.setAttribute('data-theme', theme);
   }
 
   function getTheme() {

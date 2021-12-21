@@ -34,9 +34,9 @@
     langPickerElement.removeChild(currentLangElement.parentNode);
   }
 
-  const toggleFunction = function () {
+  var toggleFunction = function () {
     langPickerElement.classList.toggle('hidden');
-    const isAriaExpanded =
+    var isAriaExpanded =
       langPickerTogglerElement.getAttribute('aria-expanded') === 'true';
     langPickerTogglerElement.setAttribute('aria-expanded', !isAriaExpanded);
   };
@@ -54,11 +54,11 @@
     }
   });
 })();
+
 (function () {
-  const themeAttr = 'data-theme';
   var darkThemeSwitcherElement = document.querySelector('.dark-theme-switcher');
 
-  let preferredColorScheme = window.matchMedia('(prefers-color-scheme: dark)')
+  var preferredColorScheme = window.matchMedia('(prefers-color-scheme: dark)')
     .matches
     ? 'dark'
     : 'light';
@@ -68,9 +68,10 @@
     .addEventListener('change', function (event) {
       if (!getTheme()) {
         preferredColorScheme = event.matches ? 'dark' : 'light';
-        document
-          .querySelector('html')
-          .setAttribute(themeAttr, preferredColorScheme);
+        document.documentElement.setAttribute(
+          'data-theme',
+          preferredColorScheme
+        );
       }
     });
 
@@ -84,7 +85,7 @@
   });
 
   function setTheme(theme) {
-    document.querySelector('html').setAttribute(themeAttr, theme);
+    document.documentElement.setAttribute('data-theme', theme);
     window.localStorage.setItem('theme', theme);
   }
 
@@ -92,6 +93,7 @@
     return window.localStorage.getItem('theme');
   }
 })();
+
 (function () {
   var scrollToTop = document.querySelector('#scroll-to-top');
 
@@ -110,6 +112,7 @@
 
 (function () {
   'use strict';
+
   var userAgent = navigator.userAgent;
   var osMatch = userAgent.match(/(Win|Mac|Linux)/);
   var os = (osMatch && osMatch[1]) || '';
@@ -165,10 +168,9 @@
     winText.textContent = winText.textContent.replace(/x(86|64)/, arch);
   }
 })();
-(function () {
-  // This function is used to replace the anchor
-  // link of Edit on GitHub
 
+// This function is used to replace the anchor link of Edit on GitHub
+(function () {
   var editOnGitHubElement = document.getElementById('editOnGitHubLink');
   var editOnGitHubUrlElement = document.getElementById('editOnGitHubUrl');
 
