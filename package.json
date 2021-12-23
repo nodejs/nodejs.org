@@ -67,7 +67,7 @@
     "eslint-plugin-markdown": "^2.2.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-promise": "^5.2.0",
     "lockfile-lint": "^4.6.2",
     "nock": "^13.2.1",
     "node-fetch": "^2.6.6",
