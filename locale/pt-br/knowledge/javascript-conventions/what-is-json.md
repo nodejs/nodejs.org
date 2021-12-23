@@ -34,9 +34,9 @@ serializada no formato JSON.
 
 ```js
 const dados = {
-  nome: "John Doe",
+  nome: 'John Doe',
   idade: 32,
-  titulo: "Vice Presidente do JavaScript"
+  titulo: 'Vice Presidente do JavaScript'
 };
 
 const jsonStr = JSON.stringify(dados);

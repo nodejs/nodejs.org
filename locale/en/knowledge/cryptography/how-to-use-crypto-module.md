@@ -37,10 +37,10 @@ One of the most common hash algorithms is [SHA-256](https://en.wikipedia.org/wik
 Crypto has a method called `createHash` which allows you to calculate a hash. Its only argument is a string representing the hash. This example finds the SHA-256 hash for the string, "Man oh man do I love node!":
 
 ```js
-require("crypto")
-  .createHash("sha256")
-  .update("Man oh man do I love node!")
-  .digest("hex");
+require('crypto')
+  .createHash('sha256')
+  .update('Man oh man do I love node!')
+  .digest('hex');
 ```
 
 The `update` method is used to push data to later be turned into a hash with the `digest` method. `update` can be invoked multiple times to ingest streaming data, such as buffers from a file read stream. The argument for `digest` represents the output format, and may either be "binary", "hex" or "base64". It defaults to binary.
@@ -52,9 +52,10 @@ HMAC stands for Hash-based Message Authentication Code, and is a process for app
 The API for hmacs is very similar to that of `createHash`, except that the method is called `createHmac` and it takes a key as a second argument:
 
 ```js
-require("crypto").createHmac("sha256", "password")
+require('crypto')
+  .createHmac('sha256', 'password')
   .update("If you love node so much why don't you marry it?")
-  .digest("hex");
+  .digest('hex');
 ```
 
 The resulting SHA-256 hash is unique to both the input data and the key.
@@ -83,45 +84,35 @@ Here's an example, slightly less trivial than previous examples, that uses crypt
 ```js
 #!/usr/bin/env node
 
-const crypto = require('crypto'),
-    argv = require("yargs").argv,
-    resizedIV = Buffer.allocUnsafe(16),
-    iv = crypto
-      .createHash("sha256")
-      .update("myHashedIV")
-      .digest();
+const crypto = require('crypto');
+const argv = require('yargs').argv;
+const resizedIV = Buffer.allocUnsafe(16);
+const iv = crypto.createHash('sha256').update('myHashedIV').digest();
 
 iv.copy(resizedIV);
 
 if (argv.e && argv.key) {
-    const key = crypto
-        .createHash("sha256")
-        .update(argv.key)
-        .digest(),
-        cipher = crypto.createCipheriv("aes256", key, resizedIV),
-        msg = [];
+  const key = crypto.createHash('sha256').update(argv.key).digest();
+  const cipher = crypto.createCipheriv('aes256', key, resizedIV);
+  const msg = [];
 
-    argv._.forEach( function (phrase) {
-        msg.push(cipher.update(phrase, "binary", "hex"));
-    });
+  argv._.forEach(function (phrase) {
+    msg.push(cipher.update(phrase, 'binary', 'hex'));
+  });
 
-    msg.push(cipher.final("hex"));
-    console.log(msg.join(""));
-
+  msg.push(cipher.final('hex'));
+  console.log(msg.join(''));
 } else if (argv.d && argv.key) {
-    const key = crypto
-        .createHash("sha256")
-        .update(argv.key)
-        .digest(),
-        decipher = crypto.createDecipheriv("aes256", key, resizedIV),
-        msg = [];
+  const key = crypto.createHash('sha256').update(argv.key).digest();
+  const decipher = crypto.createDecipheriv('aes256', key, resizedIV);
+  const msg = [];
 
-    argv._.forEach( function (phrase) {
-        msg.push(decipher.update(phrase, "hex", "binary"));
-    });
+  argv._.forEach(function (phrase) {
+    msg.push(decipher.update(phrase, 'hex', 'binary'));
+  });
 
-    msg.push(decipher.final("binary"));
-    console.log(msg.join(""));
+  msg.push(decipher.final('binary'));
+  console.log(msg.join(''));
 }
 ```
 

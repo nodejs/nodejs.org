@@ -612,8 +612,10 @@ function apiCall(arg, callback) {
 ```js
 function apiCall(arg, callback) {
   if (typeof arg !== 'string')
-    return process.nextTick(callback,
-                            new TypeError('argument should be string'));
+    return process.nextTick(
+      callback,
+      new TypeError('argument should be string')
+    );
 }
 ```
 
@@ -686,7 +688,9 @@ allowed to continue. Here is the previous example using `process.nextTick()`:
 let bar;
 
 // 비동기 시그니처를 갖지만, 동기로 콜백을 호출합니다.
-function someAsyncApiCall(callback) { callback(); }
+function someAsyncApiCall(callback) {
+  callback();
+}
 
 // `someAsyncApiCall`이 완료되면 콜백을 호출한다.
 someAsyncApiCall(() => {
@@ -840,10 +844,10 @@ server.on('listening', () => { });
 
 ```js
 const server = net.createServer();
-server.on('connection', (conn) => { });
+server.on('connection', (conn) => {});
 
 server.listen(8080);
-server.on('listening', () => { });
+server.on('listening', () => {});
 ```
 
 <!--
