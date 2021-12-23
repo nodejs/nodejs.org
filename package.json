@@ -1,6 +1,7 @@
 {
   "name": "nodejs.org",
   "private": true,
+  "version": "1.0.0",
   "description": "Nodejs.org website",
   "homepage": "https://nodejs.org",
   "scripts": {
@@ -22,6 +23,7 @@
     "test:unit": "tape \"tests/**/*.test.js\""
   },
   "repository": "nodejs/nodejs.org",
+  "keywords": [],
   "author": "Node.js Website Working Group",
   "license": "MIT",
   "engines": {
