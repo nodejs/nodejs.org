@@ -1,6 +1,3 @@
-# Default match to website team
-*       @nodejs/website
-
 # Localization teams
 /locale/ar/ @nodejs/nodejs-ar
 /locale/ca/ # No Catalan team
