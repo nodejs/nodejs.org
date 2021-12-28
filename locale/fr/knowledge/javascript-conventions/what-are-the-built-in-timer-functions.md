@@ -12,8 +12,12 @@ layout: knowledge-post.hbs
 There are two most common built-in timer functions, `setTimeout` and `setInterval`, which can be used to call a function at a later time. For an example usage:
 
 ```js
-setTimeout(function() { console.log("setTimeout: It's been one second!"); }, 1000);
-setInterval(function() { console.log("setInterval: It's been one second!"); }, 1000);
+setTimeout(function () {
+  console.log("setTimeout: It's been one second!");
+}, 1000);
+setInterval(function () {
+  console.log("setInterval: It's been one second!");
+}, 1000);
 ```
 
 An example output is:
@@ -39,9 +43,9 @@ This can cause problems, however, if your server is slow and it takes, for examp
 
 ```js
 const recursive = function () {
-    console.log("It has been one second!");
-    setTimeout(recursive,1000);
-}
+  console.log('It has been one second!');
+  setTimeout(recursive, 1000);
+};
 recursive();
 ```
 
@@ -50,12 +54,12 @@ As you can see, it makes a call to the `recursive` function which, as it complet
 You can clear the timers you set with `clearTimeout` and `clearInterval`. Their usages are very simple:
 
 ```js
-function never_call () {
-  console.log("You should never call this function");
+function neverCall() {
+  console.log('You should never call this function');
 }
 
-const id1 = setTimeout(never_call,1000);
-const id2 = setInterval(never_call,1000);
+const id1 = setTimeout(neverCall, 1000);
+const id2 = setInterval(neverCall, 1000);
 
 clearTimeout(id1);
 clearInterval(id2);
@@ -66,8 +70,8 @@ So if you keep track of the return values of the timers, you can easily unhook t
 The final trick for the timer objects is you can pass parameters to the callback by passing more parameters to setTimeout and setInterval:
 
 ```js
-setTimeout(console.log, 1000, "This", "has", 4, "parameters");
-setInterval(console.log, 1000, "This only has one");
+setTimeout(console.log, 1000, 'This', 'has', 4, 'parameters');
+setInterval(console.log, 1000, 'This only has one');
 ```
 
 The output is:
@@ -87,9 +91,9 @@ This only has one
 `setImmediate()` is another built-in timer function which as the name suggest, runs immediately after the first iteration of the event loop is completed. In other words, `setImmediate()` is similar to a `setTimeout()` function with a `0ms` delay. The `setImmediate()` function can also take extra parameters that are passed when the callback is called:
 
 ```js
-console.log("This will be printed first");
-setImmediate(console.log, "This is an extra parameter");
-console.log("This will be printed second");
+console.log('This will be printed first');
+setImmediate(console.log, 'This is an extra parameter');
+console.log('This will be printed second');
 ```
 
 The output is:

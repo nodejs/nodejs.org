@@ -2,10 +2,13 @@ name: Tests
 
 on:
   push:
-    branches-ignore:
-      - "translations"
-      - "dependabot/**"
+    branches:
+      - main
   pull_request:
+  workflow_dispatch:
+
+env:
+  FORCE_COLOR: 2
 
 jobs:
   run:
@@ -44,4 +47,10 @@ jobs:
         run: npm run test:html
 
       - name: Run linkinator
-        run: npm run test:linkinator
+        uses: JustinBeckwith/linkinator-action@v1
+        with:
+          linksToSkip: "^(?!http://localhost)"
+          paths: en
+          recurse: true
+          serverRoot: build
+          verbosity: error

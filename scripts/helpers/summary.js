@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
-const cheerio = require('cheerio')
+const cheerio = require('cheerio');
 
-const SUMMARY_MAX_LENGTH = 300
+const SUMMARY_MAX_LENGTH = 300;
 const IGNORE_SELECTORS = [
   '.blogpost-header',
   '.anchor',
@@ -10,7 +10,7 @@ const IGNORE_SELECTORS = [
   'h2',
   'h3',
   'blockquote'
-]
+];
 
 /**
  * Due to the nature of metalsmith and
@@ -26,29 +26,29 @@ const IGNORE_SELECTORS = [
  */
 
 module.exports = (contents, locale, path) => {
-  const $ = cheerio.load(contents)
-  const $body = $('body')
-  const hasBody = $body.length > 0
-  const $elements = hasBody ? $body.find('article > *') : $('*')
+  const $ = cheerio.load(contents);
+  const $body = $('body');
+  const hasBody = $body.length > 0;
+  const $elements = hasBody ? $body.find('article > *') : $('*');
 
-  let summary = ''
+  let summary = '';
 
   $elements
     .not((i, elem) => IGNORE_SELECTORS.some((selector) => $(elem).is(selector)))
     .each((i, elem) => {
       if (summary.length > SUMMARY_MAX_LENGTH) {
-        summary += `<p><a href="/${locale}/${path}/">Read more...</a></p>`
-        return false
+        summary += `<p><a href="/${locale}/${path}/">Read more...</a></p>`;
+        return false;
       }
 
       // Don't re-add nested elements when extracting summary
       // from blog posts not contained in a complete HTML document
       if (!hasBody && elem.parent) {
-        return
+        return;
       }
 
-      summary += $.html(elem)
-    })
+      summary += $.html(elem);
+    });
 
-  return summary
-}
+  return summary;
+};
