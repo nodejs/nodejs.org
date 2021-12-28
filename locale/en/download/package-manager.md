@@ -9,6 +9,7 @@ title: Installing Node.js via package manager
 
 ---
 
+* [Alpine Linux](#alpine-linux)
 * [Android](#android)
 * [Arch Linux](#arch-linux)
 * [CentOS, Fedora and Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
@@ -33,6 +34,20 @@ title: Installing Node.js via package manager
 * [z/OS](#zos)
 
 ---
+
+## Alpine Linux
+
+Node.js LTS and npm packages are available in the Main Repository.
+
+```bash
+apk add nodejs npm
+```
+
+Node.js Current can be installed from the Community Repository.
+
+```bash
+apk add nodejs-current
+```
 
 ## Android
 
@@ -96,8 +111,8 @@ Packages compatible with Debian and Ubuntu based Linux distributions are availab
 Fast and simple Node.js version manager built in Rust used to manage multiple released Node.js versions. It allows you to perform operations like install, uninstall, switch Node versions automatically based on the current directory, etc.
 To install fnm, use this [install script](https://github.com/Schniz/fnm#using-a-script-macoslinux).
 
-fnm has cross-platform support (macOS, Windows, Linux) & all poplar shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt)
-it's built with speed in mind and compatibility support for `.node-version` and `.nvmrc` files.
+fnm has cross-platform support (macOS, Windows, Linux) & all popular shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
+fnm is built with speed in mind and compatibility support for `.node-version` and `.nvmrc` files.
 
 ## FreeBSD
 
@@ -355,6 +370,17 @@ xbps-install -Sy nodejs
 Download the [Windows Installer](https://nodejs.org/en/#home-downloadhead) directly from the [nodejs.org](https://nodejs.org/) web site.
 
 ### Alternatives
+
+Using **[Winget](https://aka.ms/winget-cli)**:
+
+```bash
+winget install OpenJS.NodeJS
+# or for LTS
+winget install OpenJS.NodeJS.LTS
+```
+
+After running one of the two commands above, it may be necessary to restart the
+terminal emulator before the `node` CLI command becomes available.
 
 Using **[Chocolatey](https://chocolatey.org/)**:
 

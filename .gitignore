@@ -13,5 +13,7 @@ npm-debug.log
 # Netlify
 .netlify
 
+.cache/
+
 # Commonly ignored IDE files
 .idea

@@ -278,7 +278,7 @@ TS がコンパイルする実際の JS コードには存在しません。
 Node.js 0.10.x (およびそれ以下) をサポートする場合
 
 ```js
-var buf;
+let buf;
 if (Buffer.alloc) {
   buf = Buffer.alloc(number);
 } else {

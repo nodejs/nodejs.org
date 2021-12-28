@@ -157,7 +157,7 @@ Node 인스펙터에 접속할 수 있는 여러 상용 도구와 오픈소스 �
 * In the Debug panel, click the settings icon to open `.vscode/launch.json`.
   Select "Node.js" for initial setup.
 
-#### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
+#### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017+
 
 * Choose "Debug > Start Debugging" from the menu or hit F5.
 * [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging).
@@ -189,7 +189,7 @@ Node 인스펙터에 접속할 수 있는 여러 상용 도구와 오픈소스 �
 * Debug 패널에서 설정 아이콘을 클릭해서 `.vscode/launch.json`을 엽니다.
   초기 설정으로 "Node.js"를 선택하세요.
 
-### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017
+### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017+
 
 * 메뉴에서 "Debug > Start Debugging"을 선택하거나 F5를 누르세요.
 * [상세한 설명](https://github.com/Microsoft/nodejstools/wiki/Debugging)

@@ -34,7 +34,7 @@ In the wild, buffers are usually seen in the context of binary data coming from 
 There are a few ways to create new buffers:
 
 ```js
-var buffer = Buffer.alloc(8);
+const buffer = Buffer.alloc(8);
 // This will print out 8 bytes of zero:
 // <Buffer 00 00 00 00 00 00 00 00>
 ```
@@ -42,7 +42,7 @@ var buffer = Buffer.alloc(8);
 This buffer is initialized and contains 8 bytes of zero.
 
 ```js
-var buffer = Buffer.from([ 8, 6, 7, 5, 3, 0, 9]);
+const buffer = Buffer.from([8, 6, 7, 5, 3, 0, 9]);
 // This will print out 8 bytes of certain values:
 // <Buffer 08 06 07 05 03 00 09>
 ```
@@ -50,7 +50,7 @@ var buffer = Buffer.from([ 8, 6, 7, 5, 3, 0, 9]);
 This initializes the buffer to the contents of this array. Keep in mind that the contents of the array are integers representing bytes.
 
 ```js
-var buffer = Buffer.from("I'm a string!", "utf-8");
+const buffer = Buffer.from("I'm a string!", 'utf-8');
 // This will print out a chain of values in utf-8:
 // <Buffer 49 27 6d 20 61 20 73 74 72 69 6e 67 21>
 ```
@@ -173,7 +173,7 @@ In this example, I copied the "snowman" buffer, which contains a 3 byte long cha
 
 #### buffer.slice(start, end=buffer.length)
 
-This method's API is generally the same as that of `Array.prototype.slice`, but with one very import difference: The slice is **not** a new buffer and merely references a subset of the memory space. *Modifying the slice will also modify the original buffer*! For example:
+This method's API is generally the same as that of `Array.prototype.slice`, but with one very important difference: The slice is **not** a new buffer and merely references a subset of the memory space. *Modifying the slice will also modify the original buffer*! For example:
 
 ```
 > var puddle = frosty.slice(16, 19)

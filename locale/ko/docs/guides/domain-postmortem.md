@@ -63,7 +63,9 @@ const c = require('./c');
 
 // 모듈 b.js
 const d = require('domain').create();
-d.on('error', () => { /* 모든 것을 무시합니다. */ });
+d.on('error', () => {
+  /* 모든 것을 무시합니다. */
+});
 d.enter();
 
 // 모듈 c.js
@@ -117,10 +119,14 @@ const net = require('net');
 const d = domain.create();
 d.on('error', (err) => console.error(err.message));
 
-d.run(() => net.createServer((c) => {
-  c.end();
-  c.write('bye');
-}).listen(8000));
+d.run(() =>
+  net
+    .createServer((c) => {
+      c.end();
+      c.write('bye');
+    })
+    .listen(8000)
+);
 ```
 
 <!--
@@ -172,17 +178,19 @@ const d = domain.create();
 d.on('error', () => console.error('d intercepted an error'));
 
 d.run(() => {
-  const server = net.createServer((c) => {
-    const e = domain.create(); // 'error' 핸들러가 설정되지 않았습니다.
-    e.run(() => {
-      // 이 오류는 d의 오류 핸들러가 잡지 못합니다.
-      setImmediate(() => {
-        throw new Error('thrown from setImmediate');
+  const server = net
+    .createServer((c) => {
+      const e = domain.create(); // 'error' 핸들러가 설정되지 않았습니다.
+      e.run(() => {
+        // 이 오류는 d의 오류 핸들러가 잡지 못합니다.
+        setImmediate(() => {
+          throw new Error('thrown from setImmediate');
+        });
+        // 그런데도 이 오류는 d의 오류 핸들러에 버블링 될 것입니다.
+        throw new Error('immediately thrown');
       });
-      // 그런데도 이 오류는 d의 오류 핸들러에 버블링 될 것입니다.
-      throw new Error('immediately thrown');
-    });
-  }).listen(8080);
+    })
+    .listen(8080);
 });
 ```
 
@@ -250,21 +258,25 @@ d1.run(() => setTimeout(() => {
 ```js
 const d1 = domain.create();
 d1.foo = true; // 콘솔에서 더 가시적으로 만드는 커스텀 멤버
-d1.on('error', (er) => { /* 오류 처리 */ });
+d1.on('error', (er) => {
+  /* 오류 처리 */
+});
 
-d1.run(() => setTimeout(() => {
-  const d2 = domain.create();
-  d2.bar = 43;
-  d2.on('error', (er) => console.error(er.message, domain._stack));
-  d2.run(() => {
-    setTimeout(() => {
+d1.run(() =>
+  setTimeout(() => {
+    const d2 = domain.create();
+    d2.bar = 43;
+    d2.on('error', (er) => console.error(er.message, domain._stack));
+    d2.run(() => {
       setTimeout(() => {
-        throw new Error('outer');
+        setTimeout(() => {
+          throw new Error('outer');
+        });
+        throw new Error('inner');
       });
-      throw new Error('inner');
     });
-  });
-}));
+  })
+);
 ```
 
 <!--
@@ -468,8 +480,7 @@ let uid = 0;
 
 // 임시 자원을 설정합니다
 const buf = Buffer.alloc(FILESIZE);
-for (let i = 0; i < buf.length; i++)
-  buf[i] = ((Math.random() * 1e3) % 78) + 48; // Basic ASCII
+for (let i = 0; i < buf.length; i++) buf[i] = ((Math.random() * 1e3) % 78) + 48; // Basic ASCII
 fs.writeFileSync(FILENAME, buf);
 
 function ConnectionResource(c) {
@@ -477,7 +488,7 @@ function ConnectionResource(c) {
   this._connection = c;
   this._alive = true;
   this._domain = domain.create();
-  this._id = Math.random().toString(32).substr(2).substr(0, 8) + (++uid);
+  this._id = Math.random().toString(32).substr(2).substr(0, 8) + ++uid;
 
   this._domain.add(c);
   this._domain.on('error', () => {
@@ -506,18 +517,24 @@ ConnectionResource.prototype.write = function write(chunk) {
 };
 
 // 예제 시작
-net.createServer((c) => {
-  const cr = new ConnectionResource(c);
+net
+  .createServer((c) => {
+    const cr = new ConnectionResource(c);
 
-  const d1 = domain.create();
-  fs.open(FILENAME, 'r', d1.intercept((fd) => {
-    streamInParts(fd, cr, 0);
-  }));
+    const d1 = domain.create();
+    fs.open(
+      FILENAME,
+      'r',
+      d1.intercept((fd) => {
+        streamInParts(fd, cr, 0);
+      })
+    );
 
-  pipeData(cr);
+    pipeData(cr);
 
-  c.on('close', () => cr.end());
-}).listen(8080);
+    c.on('close', () => cr.end());
+  })
+  .listen(8080);
 
 function streamInParts(fd, cr, pos) {
   const d2 = domain.create();
@@ -526,24 +543,33 @@ function streamInParts(fd, cr, pos) {
     print('d2 error:', er.message);
     cr.end();
   });
-  fs.read(fd, Buffer.alloc(10), 0, 10, pos, d2.intercept((bRead, buf) => {
-    if (!cr.isAlive()) {
-      return fs.close(fd);
-    }
-    if (cr._connection.bytesWritten < FILESIZE) {
-      // 문서에는 콜백이 선택사항으로 나와 있지만
-      // 작성이 실패하면 예외가 던져진다고는 얘기하지 않았습니다.
-      const goodtogo = cr.write(buf);
-      if (goodtogo) {
-        setTimeout(() => streamInParts(fd, cr, pos + bRead), 1000);
-      } else {
-        cr._connection.once('drain', () => streamInParts(fd, cr, pos + bRead));
+  fs.read(
+    fd,
+    Buffer.alloc(10),
+    0,
+    10,
+    pos,
+    d2.intercept((bRead, buf) => {
+      if (!cr.isAlive()) {
+        return fs.close(fd);
       }
-      return;
-    }
-    cr.end(buf);
-    fs.close(fd);
-  }));
+      if (cr._connection.bytesWritten < FILESIZE) {
+        // 문서에는 콜백이 선택사항으로 나와 있지만
+        // 작성이 실패하면 예외가 던져진다고는 얘기하지 않았습니다.
+        const goodtogo = cr.write(buf);
+        if (goodtogo) {
+          setTimeout(() => streamInParts(fd, cr, pos + bRead), 1000);
+        } else {
+          cr._connection.once('drain', () =>
+            streamInParts(fd, cr, pos + bRead)
+          );
+        }
+        return;
+      }
+      cr.end(buf);
+      fs.close(fd);
+    })
+  );
 }
 
 function pipeData(cr) {
@@ -585,9 +611,8 @@ process.on('exit', () => {
       fs.unlinkSync(pipeList[i]);
     }
     fs.unlinkSync(FILENAME);
-  } catch (e) { }
+  } catch (e) {}
 });
-
 ```
 
 <!--
@@ -726,16 +751,18 @@ DataStream.prototype.data = function data(chunk) {
 const domain = require('domain');
 const net = require('net');
 
-const server = net.createServer((c) => {
-  // 모든 곳에서 인자를 전달할 수 없으므로
-  // 연결 내에서 이벤트 간에 데이터를 전파하려고 도메인을 사용합니다.
-  const d = domain.create();
-  d.data = { connection: c };
-  d.add(c);
-  // 데모용으로 쓸모없는 비동기 데이터 변환을 하는 Mock 클래스
-  const ds = new DataStream(dataTransformed);
-  c.on('data', (chunk) => ds.data(chunk));
-}).listen(8080, () => console.log('listening on 8080'));
+const server = net
+  .createServer((c) => {
+    // 모든 곳에서 인자를 전달할 수 없으므로
+    // 연결 내에서 이벤트 간에 데이터를 전파하려고 도메인을 사용합니다.
+    const d = domain.create();
+    d.data = { connection: c };
+    d.add(c);
+    // 데모용으로 쓸모없는 비동기 데이터 변환을 하는 Mock 클래스
+    const ds = new DataStream(dataTransformed);
+    c.on('data', (chunk) => ds.data(chunk));
+  })
+  .listen(8080, () => console.log('listening on 8080'));
 
 function dataTransformed(chunk) {
   // 실패! DataStream 인스턴스도 도메인을 생성했으므로

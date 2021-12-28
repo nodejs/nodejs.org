@@ -13,19 +13,4 @@ Releases 1.x through 3.x were called "io.js" as they were part of the io.js fork
 Node.js 4.0.0에서 io.js의 이전 릴리스 라인과 Node.js 0.12.x가 합쳐져서
 하나의 Node.js 릴리스가 되었습니다.
 
-<div class="highlight-box">
-
-#### 버전별 최신 릴리스를 찾고 있나요?
-
-* [Node.js 13.x](https://nodejs.org/dist/latest-v13.x/)
-* [Node.js 12.x](https://nodejs.org/dist/latest-v12.x/)
-* [Node.js 11.x](https://nodejs.org/dist/latest-v11.x/)
-* [Node.js 10.x](https://nodejs.org/dist/latest-v10.x/)
-* [Node.js 8.x](https://nodejs.org/dist/latest-v8.x/)
-* [Node.js 6.x](https://nodejs.org/dist/latest-v6.x/)
-* [Node.js 4.x](https://nodejs.org/dist/latest-v4.x/)
-* [Node.js 0.12.x](https://nodejs.org/dist/latest-v0.12.x/)
-* [Node.js 0.10.x](https://nodejs.org/dist/latest-v0.10.x/)
-* [모든 버전](https://nodejs.org/dist/)
-
-</div>
+### 버전별 최신 릴리스를 찾고 있나요？

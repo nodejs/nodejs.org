@@ -2,13 +2,13 @@ name: Tests
 
 on:
   push:
-    branches-ignore:
-      - "translations"
-      - "dependabot/**"
+    branches:
+      - main
   pull_request:
+  workflow_dispatch:
 
 env:
-  NODE: 14.x
+  FORCE_COLOR: 2
 
 jobs:
   run:
@@ -27,7 +27,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "${{ env.NODE }}"
+          node-version: lts/*
+          cache: npm
 
       - run: java -version
 
@@ -38,10 +39,18 @@ jobs:
         run: npm run build
 
       - name: Run tests
-        run: npm test
+        run: |
+          echo "::add-matcher::.github/workflows/remark-lint-problem-matcher.json"
+          npm test
 
       - name: Run HTML validator
         run: npm run test:html
 
       - name: Run linkinator
-        run: npm run test:linkinator
+        uses: JustinBeckwith/linkinator-action@v1
+        with:
+          linksToSkip: "^(?!http://localhost)"
+          paths: en
+          recurse: true
+          serverRoot: build
+          verbosity: error
