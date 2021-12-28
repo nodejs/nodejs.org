@@ -22,7 +22,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: lts/*
+          node-version: "lts/*"
           cache: npm
 
       - name: Install npm dependencies
@@ -49,7 +49,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: lts/*
+          node-version: "lts/*"
           cache: npm
 
       - run: java -version
