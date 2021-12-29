@@ -144,7 +144,7 @@ if (Buffer.from && Buffer.from !== Uint8Array.from) {
 对于 Node.js 0.10.x （和之后的版本）支持：
 
 ```js
-var buf;
+let buf;
 if (Buffer.alloc) {
   buf = Buffer.alloc(number);
 } else {

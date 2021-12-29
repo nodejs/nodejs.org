@@ -16,11 +16,11 @@ O objeto `arguments` é um array-like, seu tamanho corresponde a quantidade de a
 Veja mais exemplos sobre as propriedades de `arguments`.
 
 ```js
-const myfunc = function(one) {
+const myfunc = function (one) {
   arguments[0] === one;
   arguments[1] === 2;
   arguments.length === 3;
-}
+};
 
 myfunc(1, 2, 3);
 ```
@@ -29,10 +29,10 @@ Essa construção é muito útil e fornece muitas funções ao JavaScript. Mas h
 Com o advento do ES6 o método `Array.from()` torna isso bastante simples.
 
 ```js
-const myfunc = function(a, b, c) {
+const myfunc = function (a, b, c) {
   const args = Array.from(arguments);
-  console.log(args) // [1, 2, 3]
-}
+  console.log(args); // [1, 2, 3]
+};
 
 myfunc(1, 2, 3);
 ```
@@ -42,10 +42,10 @@ NOTA: Para ES5 e anteriores, um loop `for` normal pode fazer o truque
 Em alguns casos você ainda pode tratar o `arguments` como um Array, você pode usar o `arguments` através de invocações de funções dinâmicas. E a maioria dos métodos nativos Array (Ex. Array.prototype.concat) aceitarão `arguments` quando invocados dinamicamente utilizando `call` ou `apply`. Essa técnica também oferece outros modos de conversão dos `arguments` para um tipo Array utilizando método `Array.slice`.
 
 ```js
-myfunc.apply(obj, arguments).
-
-// concat arguments onto the
-Array.prototype.concat.apply([1,2,3], arguments);
+myfunc
+  .apply(obj, arguments)
+  // concat arguments onto the
+  .Array.prototype.concat.apply([1, 2, 3], arguments);
 
 // turn arguments into a true array
 const args = Array.prototype.slice.call(arguments);
@@ -61,7 +61,7 @@ As `arrow functions` foram adicionadas na especificação do ECMAScript 2015 (ES
 ```js
 const myfunc = (...args) => {
   console.log('first parameter is ', args[0]);
-}
+};
 
 myfunc(1, 2, 3);
 ```

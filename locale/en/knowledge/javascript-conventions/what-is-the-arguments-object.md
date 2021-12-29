@@ -24,11 +24,11 @@ property of `arguments` is callee, which ES5 forbids to use in `strict mode` mor
 properties of `arguments`.
 
 ```js
-const myfunc = function(one) {
+const myfunc = function (one) {
   arguments[0] === one;
   arguments[1] === 2;
   arguments.length === 3;
-}
+};
 
 myfunc(1, 2, 3);
 ```
@@ -41,10 +41,10 @@ methods, e.g. `arguments.sort()` raises a TypeError. Instead, you need to
 copy the values into a true array first. With the advent of ES6 `Array.from()` method this is quite straightforward.
 
 ```js
-const myfunc = function(a, b, c) {
+const myfunc = function (a, b, c) {
   const args = Array.from(arguments);
-  console.log(args) // [1, 2, 3]
-}
+  console.log(args); // [1, 2, 3]
+};
 
 myfunc(1, 2, 3);
 ```
@@ -58,10 +58,10 @@ invoked using call or apply. This technique also suggests another way
 to convert `arguments` into a true array using the `Array.slice` method.
 
 ```js
-myfunc.apply(obj, arguments).
-
-// concat arguments onto the
-Array.prototype.concat.apply([1,2,3], arguments);
+myfunc
+  .apply(obj, arguments)
+  // concat arguments onto the
+  .Array.prototype.concat.apply([1, 2, 3], arguments);
 
 // turn arguments into a true array
 const args = Array.prototype.slice.call(arguments);
@@ -77,7 +77,7 @@ The `arrow functions` were added in the ECMAScript 2015 (ES6) specification as a
 ```js
 const myfunc = (...args) => {
   console.log('first parameter is ', args[0]);
-}
+};
 
 myfunc(1, 2, 3);
 ```

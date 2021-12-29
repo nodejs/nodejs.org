@@ -33,10 +33,10 @@ serialized string in the JSON format.
 
 ```js
 const data = {
-  name: "John Doe",
+  name: 'John Doe',
   age: 32,
-  title: "Vice President of JavaScript"
-}
+  title: 'Vice President of JavaScript'
+};
 
 const jsonStr = JSON.stringify(data);
 
@@ -49,7 +49,8 @@ console.log(jsonStr);
 structure.
 
 ```js
-const jsonStr = '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}';
+const jsonStr =
+  '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}';
 
 const data = JSON.parse(jsonStr);
 

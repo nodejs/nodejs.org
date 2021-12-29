@@ -45,7 +45,7 @@ The last pair of `console.log` statements are probably the most important. Becau
 Let's look at a more explicit example. If you set the following properties with `colors.js`:
 
 ```js
-myString.red.blue.green
+myString.red.blue.green;
 ```
 
 You can think of your terminal saying to itself, "Make this green. No, make this blue. No, make this red. No more color codes now? Red it is, then." The codes are read in the reverse order, and the last/'innermost' is applied. This can be extremely useful if you're using a library that sets its own default colors that you don't like - if you set a color code yourself on the string you pass in to the library, it will supersede the other author's color code(s).
@@ -79,7 +79,7 @@ Unlike the `String.prototype` approach, the chained methods on the `colors` inst
 With the latest version of `colors.js` you can also define **[Custom Themes](https://www.npmjs.com/package/colors#custom-themes)** in `color.js`, which makes our code more Robust and allows better Encapsulation of data. A nice use case of this maybe:
 
 ```js
-var colors = require('colors');
+const colors = require('colors');
 
 colors.setTheme({
   info: 'bgGreen',
@@ -90,10 +90,10 @@ colors.setTheme({
 });
 
 // outputs red text
-console.log("this is an error".error);
+console.log('this is an error'.error);
 
 // outputs text on blue background
-console.log("this is a success message".success);
+console.log('this is a success message'.success);
 ```
 
 One last thing: the colors can look quite different in different terminals - sometimes, `bold` is bold, sometimes it's just a different color. Try it out and see for yourself!
