@@ -33,7 +33,7 @@ There you have it - an array containing any arguments you passed in. Notice the 
 Where everyday CLI arguments are concerned, you'll want to skip the first two. Now try this in `argv.js`:
 
 ```js
-var myArgs = process.argv.slice(2);
+const myArgs = process.argv.slice(2);
 console.log('myArgs: ', myArgs);
 ```
 
@@ -47,17 +47,17 @@ myArgs:  [ 'one', 'two', 'three', 'four' ]
 Now let's actually do something with the args:
 
 ```js
-var myArgs = process.argv.slice(2);
+const myArgs = process.argv.slice(2);
 console.log('myArgs: ', myArgs);
 
 switch (myArgs[0]) {
-case 'insult':
+  case 'insult':
     console.log(myArgs[1], 'smells quite badly.');
     break;
-case 'compliment':
+  case 'compliment':
     console.log(myArgs[1], 'is really cool.');
     break;
-default:
+  default:
     console.log('Sorry, that is not something I know how to do.');
 }
 ```
@@ -78,33 +78,32 @@ Once you have it, give it a try - it can really be a life-saver. Lets test it wi
 const yargs = require('yargs');
 
 const argv = yargs
-    .command('lyr', 'Tells whether an year is leap year or not', {
-        year: {
-            description: 'the year to check for',
-            alias: 'y',
-            type: 'number',
-        }
-    })
-    .option('time', {
-        alias: 't',
-        description: 'Tell the present Time',
-        type: 'boolean',
-    })
-    .help()
-    .alias('help', 'h')
-    .argv;
+  .command('lyr', 'Tells whether an year is leap year or not', {
+    year: {
+      description: 'the year to check for',
+      alias: 'y',
+      type: 'number'
+    }
+  })
+  .option('time', {
+    alias: 't',
+    description: 'Tell the present Time',
+    type: 'boolean'
+  })
+  .help()
+  .alias('help', 'h').argv;
 
 if (argv.time) {
-    console.log('The current time is: ', new Date().toLocaleTimeString());
+  console.log('The current time is: ', new Date().toLocaleTimeString());
 }
 
 if (argv._.includes('lyr')) {
-    const year = argv.year || new Date().getFullYear();
-    if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
-        console.log(`${year} is a Leap Year`);
-    } else {
-        console.log(`${year} is NOT a Leap Year`);
-    }
+  const year = argv.year || new Date().getFullYear();
+  if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+    console.log(`${year} is a Leap Year`);
+  } else {
+    console.log(`${year} is NOT a Leap Year`);
+  }
 }
 
 console.log(argv);

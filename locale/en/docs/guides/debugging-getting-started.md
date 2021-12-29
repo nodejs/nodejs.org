@@ -67,15 +67,8 @@ either the IP address or by using ssh tunnels as described below.
 
 ## Inspector Clients
 
-Several commercial and open source tools can connect to the Node.js Inspector.
-Basic info on these follows:
-
-### [node-inspect](https://github.com/nodejs/node-inspect)
-
-* CLI Debugger supported by the Node.js Foundation which uses the [Inspector Protocol][].
-* A version is bundled with Node.js and can be used with `node inspect myscript.js`.
-* The latest version can also be installed independently (e.g. `npm install -g node-inspect`)
-  and used with `node-inspect myscript.js`.
+A minimal CLI debugger is available with `node inspect myscript.js`.
+Several commercial and open source tools can also connect to the Node.js Inspector.
 
 ### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+, [Microsoft Edge](https://www.microsoftedgeinsider.com)
 
@@ -97,15 +90,16 @@ Basic info on these follows:
 * Choose "Debug > Start Debugging" from the menu or hit F5.
 * [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging).
 
-### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ and other JetBrains IDEs
+### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) and other JetBrains IDEs
 
 * Create a new Node.js debug configuration and hit Debug. `--inspect` will be used
   by default for Node.js 7+. To disable uncheck `js.debugger.node.use.inspect` in
-  the IDE Registry.
+  the IDE Registry. To learn more about running and debugging Node.js in WebStorm and other JetBrains IDEs,
+  check out [WebStorm online help](https://www.jetbrains.com/help/webstorm/running-and-debugging-node-js.html).
 
 ### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 
-* Library to ease connections to Inspector Protocol endpoints.
+* Library to ease connections to [Inspector Protocol][] endpoints.
 
 ### [Gitpod](https://www.gitpod.io)
 
@@ -240,7 +234,7 @@ script and connects to your target.
 ### [node-inspector](https://github.com/node-inspector/node-inspector)
 
 Debug your Node.js app with Chrome DevTools by using an intermediary process
-which translates the Inspector Protocol used in Chromium to the V8 Debugger
+which translates the [Inspector Protocol][] used in Chromium to the V8 Debugger
 protocol used in Node.js.
 
 <!-- refs -->

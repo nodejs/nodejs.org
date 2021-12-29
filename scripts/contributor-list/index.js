@@ -1,23 +1,23 @@
-'use strict'
+'use strict';
 
-const path = require('path')
+const path = require('path');
 
-const _ = require('lodash')
-const GithubGraphQLApi = require('node-github-graphql')
+const _ = require('lodash');
+const GithubGraphQLApi = require('node-github-graphql');
 
-const args = process.argv.splice(2)
-const since = new Date(args[0])
+const args = process.argv.splice(2);
+const since = new Date(args[0]);
 
 if (Number.isNaN(since.getTime())) {
-  console.error(`usage: ${path.basename(process.argv[1])} YYYY-MM-DD`)
-  process.exit(1)
+  console.error(`usage: ${path.basename(process.argv[1])} YYYY-MM-DD`);
+  process.exit(1);
 }
 
 const github = new GithubGraphQLApi({
   Promise,
   token: process.env.GITHUB_API_TOKEN,
   userAgent: 'nodejs.org-contributor'
-})
+});
 
 const queryCommits = (variables) =>
   github
@@ -56,23 +56,23 @@ const queryCommits = (variables) =>
         'ref',
         'target',
         'history'
-      ])
+      ]);
       if (_.isEmpty(data)) {
-        return []
+        return [];
       }
 
-      const commits = data.nodes
+      const commits = data.nodes;
 
-      const page = data.pageInfo
+      const page = data.pageInfo;
       if (page.hasNextPage === false) {
-        return commits
+        return commits;
       }
 
-      const historyAfter = page.endCursor
+      const historyAfter = page.endCursor;
       return queryCommits(_.defaults({ historyAfter }, variables)).then(
         (others) => _.concat(commits, others)
-      )
-    })
+      );
+    });
 
 const queryCollaborators = (variables) =>
   github
@@ -95,47 +95,47 @@ const queryCollaborators = (variables) =>
       variables
     )
     .then((res) => {
-      const data = _.get(res, ['data', 'repository', 'collaborators'])
+      const data = _.get(res, ['data', 'repository', 'collaborators']);
       if (_.isEmpty(data)) {
-        return []
+        return [];
       }
 
-      const collaborators = data.nodes
+      const collaborators = data.nodes;
 
-      const page = data.pageInfo
+      const page = data.pageInfo;
       if (page.hasNextPage === false) {
-        return collaborators
+        return collaborators;
       }
 
-      const collaboratorsAfter = page.endCursor
+      const collaboratorsAfter = page.endCursor;
       return queryCollaborators(
         _.defaults({ collaboratorsAfter }, variables)
-      ).then((others) => _.concat(collaborators, others))
-    })
+      ).then((others) => _.concat(collaborators, others));
+    });
 
-const repositoryOwner = 'nodejs'
-const repositoryName = 'nodejs.org'
+const repositoryOwner = 'nodejs';
+const repositoryName = 'nodejs.org';
 
 const formatOutput = (users) => {
   console.log(
     `${repositoryOwner}/${repositoryName} committers since ${args[0]}, which aren't contributors yet:\n`
-  )
+  );
   console.log(
     users
       .map((user) => {
-        const name = user.name ? `(${user.name})` : ''
-        return `* ${user.login} ${name}`
+        const name = user.name ? `(${user.name})` : '';
+        return `* ${user.login} ${name}`;
       })
       .join('\n')
-  )
-}
+  );
+};
 
 Promise.all([
   queryCollaborators({ repositoryOwner, repositoryName }),
   queryCommits({ repositoryOwner, repositoryName, since })
 ])
   .then((results) => {
-    const collaborators = _.keyBy(results[0], 'login')
+    const collaborators = _.keyBy(results[0], 'login');
 
     return _.chain(results[1])
       .map('author.user')
@@ -143,7 +143,7 @@ Promise.all([
       .groupBy('login')
       .map((group) => _.defaults({ commits: _.size(group) }, _.head(group)))
       .filter((user) => _.isEmpty(collaborators[user.login]))
-      .value()
+      .value();
   })
   .then((res) => formatOutput(res))
-  .catch((err) => console.log(err))
+  .catch((err) => console.log(err));

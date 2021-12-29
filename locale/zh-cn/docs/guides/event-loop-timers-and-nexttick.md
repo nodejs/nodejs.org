@@ -209,8 +209,10 @@ timeout
 ```js
 function apiCall(arg, callback) {
   if (typeof arg !== 'string')
-    return process.nextTick(callback,
-                            new TypeError('argument should be string'));
+    return process.nextTick(
+      callback,
+      new TypeError('argument should be string')
+    );
 }
 ```
 
@@ -225,7 +227,9 @@ function apiCall(arg, callback) {
 let bar;
 
 // this has an asynchronous signature, but calls callback synchronously
-function someAsyncApiCall(callback) { callback(); }
+function someAsyncApiCall(callback) {
+  callback();
+}
 
 // the callback is called before `someAsyncApiCall` completes.
 someAsyncApiCall(() => {
@@ -289,10 +293,10 @@ server.on('listening', () => {});
 
 ```js
 const server = net.createServer();
-server.on('connection', (conn) => { });
+server.on('connection', (conn) => {});
 
 server.listen(8080);
-server.on('listening', () => { });
+server.on('listening', () => {});
 ```
 
 假设 `listen()` 在事件循环开始时运行，但 listening 的回调被放置在 `setImmediate()` 中。除非传递过主机名，才会立即绑定到端口。为使事件循环继续进行，它必须命中 **轮询** 阶段，这意味着有可能已经接收了一个连接，并在侦听事件之前触发了连接事件。

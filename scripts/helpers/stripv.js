@@ -1,3 +1,3 @@
-'use strict'
+'use strict';
 
-module.exports = (version) => version.replace(/^v/, '')
+module.exports = (version) => version.replace(/^v/, '');
