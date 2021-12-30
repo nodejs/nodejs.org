@@ -116,23 +116,23 @@ function buildLocale(source, locale, opts) {
           pattern: 'blog/**/*.md',
           sortBy: 'date',
           reverse: true,
-          refer: false
+          refer: true
         },
         blogReleases: {
           pattern: 'blog/release/*.md',
           sortBy: 'date',
           reverse: true,
-          refer: false
+          refer: true
         },
         blogVulnerability: {
           pattern: 'blog/vulnerability/*.md',
           sortBy: 'date',
           reverse: true,
-          refer: false
+          refer: true
         },
         knowledgeBase: {
           pattern: 'knowledge/**/*.md',
-          refer: false
+          refer: true
         },
         guides: {
           pattern: 'docs/guides/!(index).md'
@@ -167,7 +167,7 @@ function buildLocale(source, locale, opts) {
     // Set pretty permalinks, we don't want .html suffixes everywhere.
     .use(
       permalinks({
-        relative: false
+        relative: true
       })
     )
     // Generates the feed XML files from their respective collections which were
