@@ -1,0 +1,1 @@
+az group create --name myResourceGroup --location eastus
