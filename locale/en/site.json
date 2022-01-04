@@ -164,7 +164,7 @@
   "banners": {
     "index": {
       "startDate": "2022-01-04T16:00:00.000Z",
-      "endDate": "2022-02-04T16:00:00.000Z",
+      "endDate": "2022-01-25T16:00:00.000Z",
       "text": "New security releases to be made available January 10th, 2022",
       "link": "blog/vulnerability/jan-2022-security-releases/"
     },
