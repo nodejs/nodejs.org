@@ -163,10 +163,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2021-11-30T00:00:00.000Z",
-      "endDate": "2021-12-07T00:00:00.000Z",
-      "text": "Node.js training and exams discounted through Dec. 6th",
-      "link": "https://openjsf.org/blog/2021/11/29/test-your-skills-how-good-are-you-with-node-js/"
+      "startDate": "2022-01-04T16:00:00.000Z",
+      "endDate": "2022-01-25T16:00:00.000Z",
+      "text": "New security releases to be made available January 10th, 2022",
+      "link": "https://nodejs.org/en/blog/vulnerability/jan-2022-security-releases/"
     },
     "blacklivesmatter": {
       "visible": false,
