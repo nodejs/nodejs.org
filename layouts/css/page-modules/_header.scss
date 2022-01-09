@@ -29,25 +29,22 @@ header {
     }
   }
 
-  .switchers {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-  }
-
   .dark-theme-switcher {
+    position: absolute;
+    right: 50px;
+    bottom: 17px;
     background-color: transparent;
     border: none;
     color: $light-gray2;
     cursor: pointer;
     padding: 12px;
     background-image: url("/static/images/dark-mode.svg");
-    background-repeat: no-repeat;
   }
 
   .lang-picker-toggler {
+    position: absolute;
+    right: 0;
+    bottom: 0;
     background-color: transparent;
     border: none;
     color: $light-gray2;
@@ -99,25 +96,6 @@ header {
   }
 }
 
-@media screen and (max-width: 1024px) and (min-width: 880px), screen and (max-width: 584px) {
-  header {
-    .switchers {
-      position: unset;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-
-    .lang-picker {
-      li {
-        width: 50%;
-        float: left;
-        padding: 0;
-        margin: 0;
-      }
-    }
-  }
-}
-
 @media screen and (min-width: 481px) {
   header {
     li {
@@ -154,10 +132,6 @@ header {
 
 @media screen and (max-width: 480px) {
   header {
-    .switchers {
-      justify-content: space-evenly;
-    }
-
     li {
       width: 50%;
       float: left;
