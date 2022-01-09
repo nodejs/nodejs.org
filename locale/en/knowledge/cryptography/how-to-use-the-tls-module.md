@@ -33,13 +33,14 @@ In most ways, the tls module's server api is similar to that of the net module. 
 ```javascript
 var tls = require('tls'),
     fs = require('fs'),
+    colors = require('colors'),
     msg = [
             ".-..-..-.  .-.   .-. .--. .---. .-.   .---. .-.",
             ": :; :: :  : :.-.: :: ,. :: .; :: :   : .  :: :",
             ":    :: :  : :: :: :: :: ::   .': :   : :: :: :",
             ": :: :: :  : `' `' ;: :; :: :.`.: :__ : :; ::_;",
             ":_;:_;:_;   `.,`.,' `.__.':_;:_;:___.':___.':_;"
-          ].join("\n");
+          ].join("\n").cyan;
 
 var options = {
   key: fs.readFileSync('private-key.pem'),
