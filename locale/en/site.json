@@ -165,7 +165,7 @@
     "index": {
       "startDate": "2022-01-04T16:00:00.000Z",
       "endDate": "2022-01-25T16:00:00.000Z",
-      "text": "New security releases to be made available January 10th, 2022",
+      "text": "New security releases now available for Node.js 12, 14, 16, and 17 release lines",
       "link": "https://nodejs.org/en/blog/vulnerability/jan-2022-security-releases/"
     },
     "blacklivesmatter": {
