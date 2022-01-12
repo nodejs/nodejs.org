@@ -16,6 +16,8 @@ layout: blog-post.hbs
 Photo by Luc Viatour (flickr)
 </p>
 
+**This post is outdated:** Please refer to official npm documentation on [shrinkwrap](https://docs.npmjs.com/cli/v8/configuring-npm/npm-shrinkwrap-json) and/or [lockfiles](https://docs.npmjs.com/cli/v8/configuring-npm/package-lock-json) going forward.
+
 Managing dependencies is a fundamental problem in building complex software. The terrific success of github and [npm](https://npmjs.com/) have made code reuse especially easy in the Node world, where packages don't exist in isolation but rather as nodes in a large graph. The software is constantly changing (releasing new versions), and each package has its own constraints about what other packages it requires to run (dependencies). npm keeps track of these constraints, and authors express what kind of changes are compatible using [semantic versioning](https://npmjs.com/doc/semver.html), allowing authors to specify that their package will work with even future versions of its dependencies as long as the semantic versions are assigned properly.
 
 This does mean that when you "npm install" a package with dependencies, there's no guarantee that you'll get the same set of code now that you would have gotten an hour ago, or that you would get if you were to run it again an hour later. You may get a bunch of bug fixes now that weren't available an hour ago. This is great during development, where you want to keep up with changes upstream. It's not necessarily what you want for deployment, though, where you want to validate whatever bits you're actually shipping.
