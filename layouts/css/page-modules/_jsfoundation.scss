@@ -63,3 +63,15 @@
     min-width: 0;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .openjsfoundation-footer {
+    padding: 3em 20px;
+    width: auto;
+  }
+
+  .help {
+    width: auto;
+    margin-left: auto;
+  }
+}
