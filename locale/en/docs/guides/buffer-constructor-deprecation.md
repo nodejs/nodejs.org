@@ -186,7 +186,7 @@ compiles to.
 For Node.js 0.10.x (and below) support:
 
 ```js
-var buf;
+let buf;
 if (Buffer.alloc) {
   buf = Buffer.alloc(number);
 } else {
