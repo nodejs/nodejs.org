@@ -132,7 +132,7 @@
       "text": "贡献"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
+      "link": "https://github.com/nodejs/node/blob/master/doc/contributing/code-of-conduct.md",
       "text": "管理"
     },
     "node-meetups": {
