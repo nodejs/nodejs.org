@@ -38,7 +38,7 @@
     "handlebars": "^4.7.7",
     "jquery": "^3.6.0",
     "jquery.fancytable": "^1.0.26",
-    "jstransformer-handlebars": "^1.1.0",
+    "jstransformer-handlebars": "^1.2.0",
     "junk": "^3.1.0",
     "lodash.defaultsdeep": "^4.6.1",
     "marked": "^4.0.10",
