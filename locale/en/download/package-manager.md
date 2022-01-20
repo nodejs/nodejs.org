@@ -394,6 +394,8 @@ Using **[Scoop](https://scoop.sh/)**:
 
 ```bash
 scoop install nodejs
+# or for LTS
+scoop install nodejs-lts
 ```
 
 ## z/OS
