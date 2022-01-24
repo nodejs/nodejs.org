@@ -60,7 +60,7 @@
     "strftime": "^0.10.1"
   },
   "devDependencies": {
-    "chokidar": "^3.5.2",
+    "chokidar": "^3.5.3",
     "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
