@@ -10,6 +10,12 @@ difficulty: 4
 layout: knowledge-post.hbs
 ---
 
+This page is not actively maintained and may be outdated. Please refer to [MDN's `arguments` page](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments) instead.
+
+<details>
+<summary>Original contents</summary>
+
+<details>
 The `arguments` object is a special construct available inside all
 function calls. It represents the list of arguments that were passed
 in when invoking the function. Since JavaScript allows functions to be
@@ -58,16 +64,8 @@ invoked using call or apply. This technique also suggests another way
 to convert `arguments` into a true array using the `Array.slice` method.
 
 ```js
-myfunc
-  .apply(obj, arguments)
-  // concat arguments onto the
-  .Array.prototype.concat.apply([1, 2, 3], arguments);
-
 // turn arguments into a true array
 const args = Array.prototype.slice.call(arguments);
-
-// cut out first argument
-args = Array.prototype.slice.call(arguments, 1);
 ```
 
 ### Arguments object in arrow function
@@ -81,3 +79,5 @@ const myfunc = (...args) => {
 
 myfunc(1, 2, 3);
 ```
+
+</details>
