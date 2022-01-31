@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@metalsmith/markdown": "^1.4.0",
-    "@metalsmith/permalinks": "^2.3.0",
+    "@metalsmith/permalinks": "^2.4.0",
     "autoprefixer": "^10.4.2",
     "cheerio": "^0.22.0",
     "graceful-fs": "^4.2.9",
