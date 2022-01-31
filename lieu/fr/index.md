@@ -1,4 +1,4 @@
----
+index.md
 layout: index.hbs
 labels:
   current-version: Current Version
