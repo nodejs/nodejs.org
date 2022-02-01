@@ -1,0 +1,177 @@
+{
+  "title": "Node.js",
+  "editOnGithub":"Edit On GitHub",
+  "author": "Node.js",
+  "url": "https://nodejs.org/sr/",
+  "locale": "sr",
+  "language": "Srpski",
+  "languageEnglishVersion": "Serbian",
+  "scrollToTop": "Skroluj ka vrhu",
+  "reportNodeIssue": "Prijavi Node.js problem",
+  "reportWebsiteIssue": "Prijavi website problem",
+  "getHelpIssue": "Potraži pomoć",
+  "Contributing": "Doprinosi Za Nodejs.org",
+  "by": "od",
+  "all-downloads": "Sve opcije preuzimanja",
+  "nightly": "Noćni buildovi",
+  "unofficial-builds": "Neoficijelni buildovi",
+  "previous": "Prethodno",
+  "next": "Naredno",
+  "toggleText":"Prebacivanje tamnog/svetlog moda",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Node.js Blog"
+    },
+    {
+      "link": "feed/releases.xml",
+      "text": "Node.js Blog: Izdanja"
+    },
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "Node.js Blog: Izveštaji o ranjivosti"
+    }
+  ],
+  "home": {
+    "text": "Naslovna"
+  },
+  "about": {
+    "link": "about",
+    "text": "O Projektu",
+    "governance": {
+      "link": "about/governance",
+      "text": "Upravljanje"
+    },
+    "community": {
+      "link": "about/community",
+      "text": "Zajednica"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "Radne Grupe"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "Izdanja"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "Resursi"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "Zaštitni znak"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "Politika Privatnosti"
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "Preuzimanja",
+    "releases": {
+      "link": "download/releases",
+      "text": "Prethodna Izdanja"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "Instaliranje Node.js putem package managera"
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "Potpisani SHASUMS za fajlove izdanja",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "Kako verifikovati"
+    },
+    "install-on-linux": {
+      "text": "Instaliranje Node.js putem binarne arhive"
+    },
+    "install-on-wsl": {
+      "text": "Instaliranje na Windows Subsistemu za Linux (WSL)"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "Dokumenti",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 i dalje"
+    },
+    "api-lts": {
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "Uputstva"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "Zavisnosti"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "Uključite se",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "Kodiraj + Nauči"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "Samit Saradnje"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "Doprinosite"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/doc/contributing/code-of-conduct.md",
+      "text": "Kodeks Ponašanja"
+    },
+    "node-meetups": {
+      "link": "get-involved/node-meetups",
+      "text": "Node.js Meetup-ovi"
+    }
+  },
+  "security": {
+    "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
+    "text": "Sigurnost"
+  },
+  "getcertified": {
+    "link": "https://openjsf.org/certification",
+    "text": "Sertifikacija"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "Novosti"
+  },
+  "releases": {
+    "title": "Spisak Izdanja",
+    "downloads": "Preuzimanja"
+  },
+  "links": {
+    "pages": {
+      "changelog": "Dnevnik Izmena"
+    }
+  },
+  "banners": {
+    "index": {
+      "startDate": "2022-01-04T16:00:00.000Z",
+      "endDate": "2022-01-25T16:00:00.000Z",
+      "text": "Nova sigurnosna izdanja sada su dostupna za Node.js 12, 14, 16, and 17 linija izdanja",
+      "link": "https://nodejs.org/en/blog/vulnerability/jan-2022-security-releases/"
+    },
+    "blacklivesmatter": {
+      "visible": false,
+      "text": "#BlackLivesMatter",
+      "link": "black-lives-matter/"
+    }
+  }
+}
