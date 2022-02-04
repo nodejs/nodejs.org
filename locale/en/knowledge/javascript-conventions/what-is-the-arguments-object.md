@@ -15,7 +15,6 @@ This page is not actively maintained and may be outdated. Please refer to [MDN's
 <details>
 <summary>Original contents</summary>
 
-<details>
 The `arguments` object is a special construct available inside all
 function calls. It represents the list of arguments that were passed
 in when invoking the function. Since JavaScript allows functions to be
