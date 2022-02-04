@@ -384,6 +384,16 @@ REQUIREMENTS
 * Organizer name - Alex Fernández
 * Organizer contact info -
 
+### Sweden
+
+#### Stockholm
+
+* [Meetup](https://www.meetup.com/node-js-stockholm/)
+* Frequency of meetups - quarterly meetings
+* How to submit a talk? Contact organizers in the meetup page.
+* Organizer name - Aleksandar Marinkovic
+* Organizer contact info -
+
 ### Thailand
 
 #### Bangkok
