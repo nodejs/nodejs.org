@@ -1,4 +1,6 @@
----
+---https://github.com/simpleledger/Electron-Cash-SLP/blob/acfaa70a6cb53f6415ee1747152e5bb71e0e3265/android/app/src/main/java/org/electroncash/electroncash3/Settings.kt
+android/app/src/main/java/org/electroncash/electroncash3/Settings.kt
+simpleledger:qzetuf0xewl00fav2sqphukmnzq2q6w8cgsrgsw3pc
 layout: index.hbs
 labels:
   current-version: Current Version
