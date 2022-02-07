@@ -71,7 +71,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^5.2.0",
     "lockfile-lint": "^4.6.2",
-    "nock": "^13.2.2",
+    "nock": "^13.2.4",
     "node-fetch": "^2.6.7",
     "prettier": "^2.5.1",
     "proxyquire": "^2.1.3",
