@@ -42,7 +42,7 @@
     "junk": "^3.1.0",
     "lodash.defaultsdeep": "^4.6.1",
     "marked": "^4.0.12",
-    "metalsmith": "^2.4.1",
+    "metalsmith": "^2.4.2",
     "metalsmith-collections": "^0.9.0",
     "metalsmith-discover-helpers": "^0.1.1",
     "metalsmith-discover-partials": "^0.1.2",
