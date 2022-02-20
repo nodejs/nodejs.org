@@ -87,6 +87,20 @@ available from the [Docker Hub](https://hub.docker.com/_/node):
 FROM node:16
 ```
 
+The NODE_ENV environment variable specifies the environment in which an application is running (usually, development or production). 
+Some Node.js libraries and frameworks will only enable production-related optimization if they detect that the NODE_ENV env var set to production:
+
+```docker
+ENV NODE_ENV=production
+```
+
+Docker defaults to running the process in the container as the root user, which is a precarious security practice. 
+Use a low privileged user :
+
+```docker
+USER node
+```
+
 Next we create a directory to hold the application code inside the image, this
 will be the working directory for your application:
 
@@ -144,6 +158,11 @@ Your `Dockerfile` should now look like this:
 
 ```docker
 FROM node:16
+
+ENV NODE_ENV=production
+
+# Run as non-root user 
+USER node
 
 # Create app directory
 WORKDIR /usr/src/app
