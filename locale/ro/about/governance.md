@@ -17,7 +17,7 @@ Individuals making significant and valuable contributions are made Collaborators
 
 For the current list of Collaborators, see the project's [README.md](https://github.com/nodejs/node/blob/master/README.md#current-project-team-members).
 
-A guide for Collaborators is maintained at [collaborator-guide.md](https://github.com/nodejs/node/blob/master/doc/guides/collaborator-guide.md).
+A guide for Collaborators is maintained at [collaborator-guide.md](https://github.com/nodejs/node/blob/master/doc/contributing/collaborator-guide.md).
 
 ## Top Level Committees
 

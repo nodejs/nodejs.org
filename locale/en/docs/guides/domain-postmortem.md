@@ -24,7 +24,9 @@ const c = require('./c');
 
 // module b.js
 const d = require('domain').create();
-d.on('error', () => { /* silence everything */ });
+d.on('error', () => {
+  /* silence everything */
+});
 d.enter();
 
 // module c.js
@@ -57,10 +59,14 @@ const net = require('net');
 const d = domain.create();
 d.on('error', (err) => console.error(err.message));
 
-d.run(() => net.createServer((c) => {
-  c.end();
-  c.write('bye');
-}).listen(8000));
+d.run(() =>
+  net
+    .createServer((c) => {
+      c.end();
+      c.write('bye');
+    })
+    .listen(8000)
+);
 ```
 
 Even manually removing the connection via `d.remove(c)` does not prevent the
@@ -77,17 +83,19 @@ const d = domain.create();
 d.on('error', () => console.error('d intercepted an error'));
 
 d.run(() => {
-  const server = net.createServer((c) => {
-    const e = domain.create(); // No 'error' handler being set.
-    e.run(() => {
-      // This will not be caught by d's error handler.
-      setImmediate(() => {
-        throw new Error('thrown from setImmediate');
+  const server = net
+    .createServer((c) => {
+      const e = domain.create(); // No 'error' handler being set.
+      e.run(() => {
+        // This will not be caught by d's error handler.
+        setImmediate(() => {
+          throw new Error('thrown from setImmediate');
+        });
+        // Though this one will bubble to d's error handler.
+        throw new Error('immediately thrown');
       });
-      // Though this one will bubble to d's error handler.
-      throw new Error('immediately thrown');
-    });
-  }).listen(8080);
+    })
+    .listen(8080);
 });
 ```
 
@@ -118,21 +126,25 @@ example of the failing of error propagation:
 ```js
 const d1 = domain.create();
 d1.foo = true; // custom member to make more visible in console
-d1.on('error', (er) => { /* handle error */ });
+d1.on('error', (er) => {
+  /* handle error */
+});
 
-d1.run(() => setTimeout(() => {
-  const d2 = domain.create();
-  d2.bar = 43;
-  d2.on('error', (er) => console.error(er.message, domain._stack));
-  d2.run(() => {
-    setTimeout(() => {
+d1.run(() =>
+  setTimeout(() => {
+    const d2 = domain.create();
+    d2.bar = 43;
+    d2.on('error', (er) => console.error(er.message, domain._stack));
+    d2.run(() => {
       setTimeout(() => {
-        throw new Error('outer');
+        setTimeout(() => {
+          throw new Error('outer');
+        });
+        throw new Error('inner');
       });
-      throw new Error('inner');
     });
-  });
-}));
+  })
+);
 ```
 
 Even in the case that the domain instances are being used for local storage so
@@ -176,8 +188,7 @@ let uid = 0;
 
 // Setting up temporary resources
 const buf = Buffer.alloc(FILESIZE);
-for (let i = 0; i < buf.length; i++)
-  buf[i] = ((Math.random() * 1e3) % 78) + 48; // Basic ASCII
+for (let i = 0; i < buf.length; i++) buf[i] = ((Math.random() * 1e3) % 78) + 48; // Basic ASCII
 fs.writeFileSync(FILENAME, buf);
 
 function ConnectionResource(c) {
@@ -185,7 +196,7 @@ function ConnectionResource(c) {
   this._connection = c;
   this._alive = true;
   this._domain = domain.create();
-  this._id = Math.random().toString(32).substr(2).substr(0, 8) + (++uid);
+  this._id = Math.random().toString(32).substr(2).substr(0, 8) + ++uid;
 
   this._domain.add(c);
   this._domain.on('error', () => {
@@ -214,18 +225,24 @@ ConnectionResource.prototype.write = function write(chunk) {
 };
 
 // Example begin
-net.createServer((c) => {
-  const cr = new ConnectionResource(c);
+net
+  .createServer((c) => {
+    const cr = new ConnectionResource(c);
 
-  const d1 = domain.create();
-  fs.open(FILENAME, 'r', d1.intercept((fd) => {
-    streamInParts(fd, cr, 0);
-  }));
+    const d1 = domain.create();
+    fs.open(
+      FILENAME,
+      'r',
+      d1.intercept((fd) => {
+        streamInParts(fd, cr, 0);
+      })
+    );
 
-  pipeData(cr);
+    pipeData(cr);
 
-  c.on('close', () => cr.end());
-}).listen(8080);
+    c.on('close', () => cr.end());
+  })
+  .listen(8080);
 
 function streamInParts(fd, cr, pos) {
   const d2 = domain.create();
@@ -234,24 +251,33 @@ function streamInParts(fd, cr, pos) {
     print('d2 error:', er.message);
     cr.end();
   });
-  fs.read(fd, Buffer.alloc(10), 0, 10, pos, d2.intercept((bRead, buf) => {
-    if (!cr.isAlive()) {
-      return fs.close(fd);
-    }
-    if (cr._connection.bytesWritten < FILESIZE) {
-      // Documentation says callback is optional, but doesn't mention that if
-      // the write fails an exception will be thrown.
-      const goodtogo = cr.write(buf);
-      if (goodtogo) {
-        setTimeout(() => streamInParts(fd, cr, pos + bRead), 1000);
-      } else {
-        cr._connection.once('drain', () => streamInParts(fd, cr, pos + bRead));
+  fs.read(
+    fd,
+    Buffer.alloc(10),
+    0,
+    10,
+    pos,
+    d2.intercept((bRead, buf) => {
+      if (!cr.isAlive()) {
+        return fs.close(fd);
       }
-      return;
-    }
-    cr.end(buf);
-    fs.close(fd);
-  }));
+      if (cr._connection.bytesWritten < FILESIZE) {
+        // Documentation says callback is optional, but doesn't mention that if
+        // the write fails an exception will be thrown.
+        const goodtogo = cr.write(buf);
+        if (goodtogo) {
+          setTimeout(() => streamInParts(fd, cr, pos + bRead), 1000);
+        } else {
+          cr._connection.once('drain', () =>
+            streamInParts(fd, cr, pos + bRead)
+          );
+        }
+        return;
+      }
+      cr.end(buf);
+      fs.close(fd);
+    })
+  );
 }
 
 function pipeData(cr) {
@@ -293,9 +319,8 @@ process.on('exit', () => {
       fs.unlinkSync(pipeList[i]);
     }
     fs.unlinkSync(FILENAME);
-  } catch (e) { }
+  } catch (e) {}
 });
-
 ```
 
 * When a new connection happens, concurrently:
@@ -344,18 +369,20 @@ propagate data along asynchronous stacks:
 const domain = require('domain');
 const net = require('net');
 
-const server = net.createServer((c) => {
-  // Use a domain to propagate data across events within the
-  // connection so that we don't have to pass arguments
-  // everywhere.
-  const d = domain.create();
-  d.data = { connection: c };
-  d.add(c);
-  // Mock class that does some useless async data transformation
-  // for demonstration purposes.
-  const ds = new DataStream(dataTransformed);
-  c.on('data', (chunk) => ds.data(chunk));
-}).listen(8080, () => console.log('listening on 8080'));
+const server = net
+  .createServer((c) => {
+    // Use a domain to propagate data across events within the
+    // connection so that we don't have to pass arguments
+    // everywhere.
+    const d = domain.create();
+    d.data = { connection: c };
+    d.add(c);
+    // Mock class that does some useless async data transformation
+    // for demonstration purposes.
+    const ds = new DataStream(dataTransformed);
+    c.on('data', (chunk) => ds.data(chunk));
+  })
+  .listen(8080, () => console.log('listening on 8080'));
 
 function dataTransformed(chunk) {
   // FAIL! Because the DataStream instance also created a

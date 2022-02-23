@@ -13,13 +13,15 @@ In Node.js, functionality to aid in the accessing of URL query string parameters
 const http = require('http');
 const url = require('url');
 
-http.createServer(function (req, res) {
-  const queryObject = url.parse(req.url,true).query;
-  console.log(queryObject);
+http
+  .createServer(function (req, res) {
+    const queryObject = url.parse(req.url, true).query;
+    console.log(queryObject);
 
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.end('Feel free to add query parameters to the end of the url');
-}).listen(8080);
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end('Feel free to add query parameters to the end of the url');
+  })
+  .listen(8080);
 ```
 
 > To test this code run `node app.js` (app.js is name of the file) on the terminal and then go to your browser and type `http://localhost:8080/app.js?foo=bad&baz=foo` on the URL bar
@@ -43,8 +45,8 @@ This method, however, must be passed just a querystring portion of a url. Passin
 
 ```js
 const querystring = require('querystring');
-const url = "http://example.com/index.html?code=string&key=12&id=false";
-const qs = "code=string&key=12&id=false";
+const url = 'http://example.com/index.html?code=string&key=12&id=false';
+const qs = 'code=string&key=12&id=false';
 
 console.log(querystring.parse(qs));
 // > { code: 'string', key: '12', id: 'false' }
