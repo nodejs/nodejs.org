@@ -11,5 +11,5 @@ At very same moment you're watching this page, Russia attacks Ukrainian cities a
 ## Donate
 
 - [Red Cross in Ukraine](https://donate.redcrossredcrescent.org/ua/donate)
-- [Chartity Foundation "COME BACK ALIVE"](https://savelife.in.ua/en/donate)
+- [Charitable Foundation "COME BACK ALIVE"](https://savelife.in.ua/en/donate)
 - [Ukrainian army donate](https://uahelp.monobank.ua)
