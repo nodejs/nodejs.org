@@ -162,11 +162,6 @@
     }
   },
   "banners": {
-    "saveukraine": {
-      "visible": true,
-      "text": "#SupportUkraine",
-      "link": "https://twitter.com/ua_parliament/status/1498266783173824517"
-    },
     "index": {
       "text": "针对 Node.js 12、14、16 和 17 各版本的安全补丁现已发布"
     }
