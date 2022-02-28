@@ -14,6 +14,7 @@ io.js v3.0 and the new goodness, breaking changes, and our ongoing call for an L
 ### io.js v3.0 Release
 
 This week, io.js [v3.0.0](https://iojs.org/dist/v3.0.0/) is released! Since this is a major version bump, new features have been introduced to io.js. These are:
+
 * V8 upgrade from v4.2 to v4.4. Rod Vagg ([@rvagg](http://twitter.com/rvagg)) has [a Gist containing the changelogs of v4.3 and v4.4](https://gist.github.com/rvagg/1f115074cb3c890985bf).
 * Computed property names (`{['foo'+'bar']:'bam'}`) is now shipped without the need for any `harmony-` flag.
 * Unicode escape sequence (`\u{xxxxx}`) is also shipped. There is no need for the `--harmony` option anymore.
@@ -25,6 +26,7 @@ This week, io.js [v3.0.0](https://iojs.org/dist/v3.0.0/) is released! Since this
 * The `smalloc` module has been removed, and the `freelist` module has now been deprecated.
 
 With a major version bump, there are also breaking changes. These include:
+
 * Changes on `Buffer.concat`, `dgram send()` error and `http` server timing behaviors.
 * The upgrade on V8, which gives the need for recompiling of all native add-ons and the new `Maybe<>` and `MaybeLocal<>` types for add-on authors to transition to these new APIs as soon as possible.
 * HTTP status codes. The code mappings conform to the [IANA standard](http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) now and will be a backwards incompatible change to consumers that depend on the text value of a header.
@@ -75,9 +77,9 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 ### Community Updates
 
 * We *still* need a V8 maintainer for our LTS build! Head on over [to GitHub](https://github.com/nodejs/LTS/issues/28) to see if the requirements match your capabilities.
-* [webkid.io](http://webkid.io) co-founder [Moritz Klack](http://twitter.com/moklick) has written about [creating a REST API with Hapi, Dogwater and Bedwetter](http://blog.webkid.io/how-to-create-a-rest-api-with-hapi/?utm_source=io.js+and+Node.js+News&utm_medium=article).
-* [RisingStack](http://risingstack.com) CEO [Gergely Nemeth](http://twitter.com/nthgergo) has a post in the company blog about [using GraphQL with Graffiti](https://blog.risingstack.com/start-using-graphql-with-graffiti/?utm_source=io.js+and+Node.js+News&utm_medium=article).
-* [Samsung banks on JavaScript, Node.js for IoT](http://www.infoworld.com/article/2953719/javascript/samsung-banks-on-javascript-node-js-for-iot.html?utm_source=io.js+and+Node.js+News&utm_medium=article), as reported by [Paul Krill](https://twitter.com/pjkrill), editor at large at [InfoWorld](http://www.infoworld.com/).
+* [webkid.io](http://webkid.io) co-founder [Moritz Klack](http://twitter.com/moklick) has written about [creating a REST API with Hapi, Dogwater and Bedwetter](http://blog.webkid.io/how-to-create-a-rest-api-with-hapi/).
+* [RisingStack](http://risingstack.com) CEO [Gergely Nemeth](http://twitter.com/nthgergo) has a post in the company blog about [using GraphQL with Graffiti](https://blog.risingstack.com/start-using-graphql-with-graffiti/).
+* [Samsung banks on JavaScript, Node.js for IoT](http://www.infoworld.com/article/2953719/javascript/samsung-banks-on-javascript-node-js-for-iot.html), as reported by [Paul Krill](https://twitter.com/pjkrill), editor at large at [InfoWorld](http://www.infoworld.com/).
 
 If you have spotted or written something about Node.js and io.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.
 

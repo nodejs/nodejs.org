@@ -1,6 +1,6 @@
 ---
 title: Weekly Update - Apr 3rd, 2015
-author:  Giovanny Gioyik (@Gioyik)
+author: Giovanny Gioyik (@Gioyik)
 date: 2015-04-03T12:00:00.000Z
 status: publish
 category: weekly
@@ -35,7 +35,7 @@ This week we had one io.js release [v1.6.3](https://iojs.org/dist/v1.6.3/), comp
 ## Community Updates
 
 * [Scaleway](https://www.scaleway.com/) provides some ARM resources for the iojs test/build infrastructure.
-* New post on Medium about Node.js reconciliation: [Help us reconcile node.js and io.js](https://medium.com/node-js-javascript/help-us-reconcile-node-js-and-io-js-c060a9ec1bd4)
+* New post on Medium about Node.js reconciliation: [Help us reconcile Node.js and io.js](https://medium.com/node-js-javascript/help-us-reconcile-node-js-and-io-js-c060a9ec1bd4)
 * Added support for iojs in [Reactive-Extensions/RxJS](https://travis-ci.org/Reactive-Extensions/RxJS/builds/56671837)
 * [joyent/nodejs-advisory-board#30](https://github.com/joyent/nodejs-advisory-board/pull/30) merged
 * Mikeal Rogers working on reconciling Project Lifecycle and WG [joyent/nodejs-advisory-board#33](https://github.com/joyent/nodejs-advisory-board/pull/33)

@@ -1,5 +1,5 @@
 ---
-title: Como solicitar entrada do usuário a partir de um script de linha de comando? 
+title: Como solicitar entrada do usuário a partir de um script de linha de comando?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - javascript
@@ -9,7 +9,7 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-<!-- So you've got a little CLI tool, but you want to be able to prompt a user for additional data after the script has started, rather than passing it in as a command line argument or putting it in a file.  To do this, you'll need to listen to STDIN ("standard input", i.e. your keyboard), which Node.js exposes for you as `process.stdin`, a readable stream. -->
+<!-- So you've got a little CLI tool, but you want to be able to prompt a user for additional data after the script has started, rather than passing it in as a command line argument or putting it in a file. To do this, you'll need to listen to STDIN ("standard input", i.e. your keyboard), which Node.js exposes for you as `process.stdin`, a readable stream. -->
 
 Então você possui uma pequena ferramenta CLI, mas deseja habilitar uma opção onde o usuário possa inserir dados adicionais após o start do mesmo ao invés de passar esses dados como argumento de linha de comando ou inserindo dentro do arquivo. Para fazer isso, será necessário escutar ao STDIN ("standard input", ex: seu teclado), no qual o Node.js exporta para você como `process.stdin`, uma stream de leitura.
 
@@ -17,27 +17,27 @@ Então você possui uma pequena ferramenta CLI, mas deseja habilitar uma opção
 
 Streams são a forma do Node.js lidar com tipos de E/S - é um tópico importante, e você pode ler mais sobre isso [aqui](https://nodejs.org/api/stream.html). No momento, nós vamos usar o módulo `readline` do Node.js que é um wrapper envolvendo o padrão de E/S, adequado para receber a entrada do usuário a partir da linha de comando (terminal).
 
-<!-- Here's a simple example.  Try the following in a new file: -->
+<!-- Here's a simple example. Try the following in a new file: -->
 
 Segue um exemplo simples. Tente o seguinte um novo arquivo:
 
 ```js
-const readline = require("readline");
+const readline = require('readline');
 const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
+  input: process.stdin,
+  output: process.stdout
 });
 
-rl.question("What is your name ? ", function(name) {
-    rl.question("Where do you live ? ", function(country) {
-        console.log(`${name}, is a citizen of ${country}`);
-        rl.close();
-    });
+rl.question('What is your name ? ', function (name) {
+  rl.question('Where do you live ? ', function (country) {
+    console.log(`${name}, is a citizen of ${country}`);
+    rl.close();
+  });
 });
 
-rl.on("close", function() {
-    console.log("\nBYE BYE !!!");
-    process.exit(0);
+rl.on('close', function () {
+  console.log('\nBYE BYE !!!');
+  process.exit(0);
 });
 ```
 
@@ -58,7 +58,7 @@ DICA PRO NODE: Lembre-se de usar `rl.close()` para fechar a transmissão caso co
 A última parte do código utiliza o método `rl.on()` para adicionar um evento listener ao evento `close`que realiza um simples `console.log` na saída da stream e encerra o processo. Esta parte é completamente opcional e pode ser removida a vontade. Para maiores informações e detalhes de uso consulte a documentação [aqui](https://nodejs.org/api/readline.html).
 
 <!--
-If all of this sounds complicated, or if you want a higher-level interface to this sort of thing, don't worry - as usual, the Node.js community has come to the rescue.  One particularly friendly module to use for this is `prompt`, available on `npm`: -->
+If all of this sounds complicated, or if you want a higher-level interface to this sort of thing, don't worry - as usual, the Node.js community has come to the rescue. One particularly friendly module to use for this is `prompt`, available on `npm`: -->
 
 Se tudo isso parece um pouco complicado, ou se você deseja uma interface de alto nível, não se preocupe - como sempre, a comunidade Node.js veio ao resgate. Existe um módulo amigável para isto, o `prompt` disponível no `npm`:
 
@@ -66,7 +66,7 @@ Se tudo isso parece um pouco complicado, ou se você deseja uma interface de alt
 npm install prompt
 ```
 
-<!-- Prompt is built to be easy - if your eyes started to glaze over as soon as you saw `Readable Stream`, then this is the section for you.  Compare the following to the example above: -->
+<!-- Prompt is built to be easy - if your eyes started to glaze over as soon as you saw `Readable Stream`, then this is the section for you. Compare the following to the example above: -->
 
 O prompt foi criado para ser fácil - se seus olhos começaram a brilhar assim que você leu `Readable Stream`, então essa é uma seção para você. Compare os seguintes exemplos abaixo:
 
@@ -76,15 +76,17 @@ const prompt = require('prompt');
 prompt.start();
 
 prompt.get(['username', 'email'], function (err, result) {
-    if (err) { return onErr(err); }
-    console.log('Command-line input received:');
-    console.log('  Username: ' + result.username);
-    console.log('  Email: ' + result.email);
+  if (err) {
+    return onErr(err);
+  }
+  console.log('Command-line input received:');
+  console.log('  Username: ' + result.username);
+  console.log('  Email: ' + result.email);
 });
 
 function onErr(err) {
-    console.log(err);
-    return 1;
+  console.log(err);
+  return 1;
 }
 ```
 
@@ -100,29 +102,31 @@ Usar o prompt também torna trivial lidar com um determinado conjunto de proprie
 const prompt = require('prompt');
 
 const properties = [
-    {
-        name: 'username',
-        validator: /^[a-zA-Z\s\-]+$/,
-        warning: 'Username must be only letters, spaces, or dashes'
-    },
-    {
-        name: 'password',
-        hidden: true
-    }
+  {
+    name: 'username',
+    validator: /^[a-zA-Z\s-]+$/,
+    warning: 'Username must be only letters, spaces, or dashes'
+  },
+  {
+    name: 'password',
+    hidden: true
+  }
 ];
 
 prompt.start();
 
 prompt.get(properties, function (err, result) {
-    if (err) { return onErr(err); }
-    console.log('Command-line input received:');
-    console.log('  Username: ' + result.username);
-    console.log('  Password: ' + result.password);
+  if (err) {
+    return onErr(err);
+  }
+  console.log('Command-line input received:');
+  console.log('  Username: ' + result.username);
+  console.log('  Password: ' + result.password);
 });
 
 function onErr(err) {
-    console.log(err);
-    return 1;
+  console.log(err);
+  return 1;
 }
 ```
 

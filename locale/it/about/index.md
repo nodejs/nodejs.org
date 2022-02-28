@@ -4,7 +4,7 @@ title: A propos
 trademark: Trademark
 ---
 
-# Informazioni su Node.js&reg;
+# Informazioni su Node.js®
 
 Come runtime JavaScript guidato da eventi asincroni, Node.js è progettato per
 creare applicazioni di rete scalabili. Nel seguente esempio "Hello World",
@@ -20,7 +20,7 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
+  res.end('Hello World');
 });
 
 server.listen(port, hostname, () => {
@@ -58,6 +58,6 @@ Solo perché Node.js è progettato senza thread, non significa che non è possib
 [Bloccante vs Non Bloccante]: /en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[loop di eventi]: /en/docs/guides/event-loop-timers-and-nexttick/
+[event loop]: /en/docs/guides/event-loop-timers-and-nexttick/
 [Event Machine]: http://rubyeventmachine.com/
 [Twisted]: https://twistedmatrix.com/trac/

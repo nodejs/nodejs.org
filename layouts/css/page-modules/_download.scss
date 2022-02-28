@@ -1,0 +1,295 @@
+.download-header {
+  h1 {
+    width: 40%;
+    float: left;
+    margin-bottom: -1rem;
+  }
+
+  ul {
+    margin-top: 2rem;
+    width: 40%;
+    float: right;
+    text-align: right;
+  }
+}
+
+.download-header::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.download-hero {
+  margin-bottom: 1em;
+
+  ul {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+  }
+
+  li {
+    display: flex;
+    flex-basis: 200px;
+    flex-grow: 1;
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    padding-top: 1em;
+    color: $active-green;
+    background: $light-green;
+  }
+
+  .download-logo {
+    display: block;
+    margin: 0 auto;
+    fill: $node-green;
+  }
+
+  p {
+    padding-bottom: 1em;
+    margin: 1em 0 0;
+  }
+
+  a:hover {
+    background: $node-green;
+    color: $white;
+
+    .download-logo {
+      fill: $white;
+    }
+  }
+
+  a:active {
+    background: $active-green;
+    color: $white;
+  }
+
+  .download-version-toggle {
+    display: flex;
+    flex-wrap: nowrap;
+
+    a {
+      border-radius: 0;
+      padding: 5px 2px;
+    }
+
+    a:hover,
+    a:active,
+    a.is-version {
+      color: $white;
+      background: $node-green;
+    }
+
+    a.is-version {
+      color: $light-green;
+      background: $active-green;
+    }
+
+    .title {
+      font-size: 1.5em;
+      line-height: 1;
+    }
+
+    .tag {
+      font-size: .8em;
+    }
+  }
+
+  .download-platform {
+    border-top: 2px solid $node-green;
+  }
+}
+
+.download-matrix {
+  margin-bottom: 1.5rem;
+
+  th {
+    text-align: left;
+    width: 33%;
+  }
+
+  td {
+    border: 1px solid $light-gray2;
+
+    a,
+    span {
+      background: none;
+      display: block;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      font-size: .8em;
+    }
+
+    a:hover,
+    a:active {
+      background: $node-green;
+      color: $white;
+    }
+  }
+}
+
+h5.download-table-previous-releases-header {
+  margin-bottom: 5px;
+}
+
+.download-table {
+  font-size: small;
+  border: 1px solid $light-gray2;
+  border-spacing: 0;
+
+  td {
+    padding: 5px;
+  }
+
+  > thead {
+    font-weight: 600;
+  }
+
+  > tbody {
+    td {
+      border-top: 1px solid $light-gray2;
+    }
+
+    tr:nth-child(odd) {
+      background-color: $light-gray3;
+    }
+
+    tr:nth-child(even) {
+      background-color: $white;
+    }
+  }
+}
+
+td.download-table-last {
+  text-align: right;
+
+  > a {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .download-hero {
+    ul {
+      display: block;
+      text-align: left;
+    }
+
+    li {
+      text-align: center;
+      display: block;
+    }
+
+    .download-version-toggle {
+      padding-right: 4px;
+      display: flex;
+
+      li {
+        display: inline-block;
+        flex-basis: 160px;
+      }
+
+      .tag {
+        font-size: .6em;
+      }
+    }
+  }
+
+  .download-matrix {
+    display: block;
+
+    th {
+      display: block;
+      width: 100%;
+    }
+
+    tr {
+      display: block;
+      margin-bottom: 1em;
+    }
+
+    td {
+      display: block;
+      border: none;
+
+      a {
+        text-align: left;
+      }
+    }
+  }
+
+  .download-table {
+    border: none;
+
+    > thead {
+      display: none;
+    }
+
+    tr {
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    td {
+      display: block;
+      text-align: right;
+    }
+
+    td:last-child {
+      border-bottom: 0;
+    }
+
+    td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: 600;
+    }
+
+    > thead > tr > th,
+    > tbody > tr > th,
+    > tfoot > tr > th,
+    > thead > tr > td,
+    > tbody > tr > td,
+    > tfoot > tr > td,
+    > tbody td {
+      border: none;
+    }
+  }
+
+  .download-table > tbody td {
+    border: none;
+  }
+
+  td.download-table-last {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .download-matrix {
+    display: revert;
+  }
+
+  .download-matrix ~ section ul {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .download-hero {
+    .download-version-toggle {
+      li {
+        font-size: 1em;
+      }
+
+      .tag {
+        font-size: .4em;
+      }
+    }
+  }
+}

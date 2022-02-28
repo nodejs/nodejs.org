@@ -61,7 +61,7 @@ If you have spotted or written something about Node.js, do come over to our [Eva
 * [JSConf CO](http://www.jsconf.co/), October 16th - 17th at Ruta N, Medellin, Colombia
 * [EmpireNode](http://2015.empirenode.org/), October 23rd at New York, US.
 * [NodeFest](http://nodefest.jp/2015/), November 7th at Tokyo, Japan
-* [Nodevember](http://nodevember.org/?utm_source=io.js+and+Node.js+News&utm_medium=article), November 14th - 15th at Nashville, Tennessee, US.
+* [Nodevember](http://nodevember.org/), November 14th - 15th at Nashville, Tennessee, US.
 * [NodeConf Barcelona](https://ti.to/barcelonajs/nodeconf-barcelona-2015), November 21st at Barcelona, Spain
 * [CampJS VI](http://vi.campjs.com), November 20 – 23th at Queensland, Australia
 * [Playnode](https://playnode.io), call-for-proposals, November, Korea

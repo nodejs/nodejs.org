@@ -1,6 +1,6 @@
 ---
 title: Weekly Update - Apr 10th, 2015
-author:  Giovanny Gioyik (@Gioyik) & Julian Duque (@julianduque)
+author: Giovanny Gioyik (@Gioyik) & Julian Duque (@julianduque)
 date: 2015-04-10T12:00:00.000Z
 status: publish
 category: weekly
@@ -30,7 +30,7 @@ This week we had one io.js release [v1.6.4](https://iojs.org/dist/v1.6.4/), comp
 
 * Node Foundation dev policy draft is [here](https://github.com/jasnell/dev-policy)
 * ARMv8 / ARM64 [support](https://twitter.com/rvagg/status/586050873349939201) on io.js
-* Continued work on a new dev policy for [node.js/io.js](https://github.com/jasnell/dev-policy)
+* Continued work on a new dev policy for [Node.js/io.js](https://github.com/jasnell/dev-policy)
 * TC call from [Wednesday](https://www.youtube.com/watch?v=OjlK8k10oyo)
 
 ## Upcoming Events

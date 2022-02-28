@@ -36,13 +36,13 @@ or entity can change or dictate.
 
 It's important to note that while critical, an open governance model does not
 guarantee success or growth. The io.js project has a strong developer
-community, for example, but to grow further needs a  model to enable funding
+community, for example, but to grow further needs a model to enable funding
 and investments in the project. If you haven't already, please [take a look
 at Mikeal Rogers blog post](https://medium.com/node-js-javascript/growing-up-27d6cc8b7c53).
 The Node.js community has needed an avenue for other companies
 to participate as equals in a neutral field. rowing a community and widening
 the adoption of a technology all takes resources and a governance model that
-serves everyone involved.  A foundation becomes the  place where participants
+serves everyone involved. A foundation becomes the place where participants
 can meet, agree on paths forward, ensure a neutral playing field in the
 community and invest resources to grow the community even more. It can also
 allow for broad community engagement through liberal contribution policies,

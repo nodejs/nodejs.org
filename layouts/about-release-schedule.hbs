@@ -5,16 +5,16 @@
 <body>
   {{> header }}
 
-  <div id="main">
+  <main id="main">
     <div class="container has-side-nav">
 
       {{> navigation key='about'}}
 
-      <article>
+      <article dir="auto">
         {{{ contents }}}
 
         <p>
-          <img alt="{{ title }}" src="https://raw.githubusercontent.com/nodejs/Release/master/schedule.svg?sanitize=true">
+          <img src="https://raw.githubusercontent.com/nodejs/Release/master/schedule.svg?sanitize=true" alt="{{ title }}" width="760" height="396">
         </p>
 
         {{{ release-schedule }}}
@@ -26,7 +26,7 @@
       </article>
 
     </div>
-  </div>
+  </main>
 
   {{> footer }}
 </body>

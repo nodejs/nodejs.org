@@ -21,7 +21,7 @@ standardized unit, called a container, for software development. A container is
 a stripped-to-basics version of a Linux operating system. An image is software
 you load into a container.
 
- -->
+-->
 # Node.js Web アプリケーションを Docker 化する
 
 この例の目的は、Node.js アプリケーションを Docker コンテナに取り込む方法を説明することです。
@@ -80,7 +80,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello world\n');
+  res.send('Hello World');
 });
 
 app.listen(PORT, HOST);
@@ -91,7 +91,7 @@ In the next steps, we'll look at how you can run this app inside a Docker
 container using the official Docker image. First, you'll need to build a Docker
 image of your app.
 
- -->
+-->
 ## Node.js アプリケーションを作成する
 
 まず、すべてのファイルを配置する新しいディレクトリを作成します。
@@ -132,7 +132,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello world\n');
+  res.send('Hello World');
 });
 
 app.listen(PORT, HOST);
@@ -155,11 +155,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `10` of `node`
+Here we will use the latest LTS (long term support) version `12` of `node`
 available from the [Docker Hub](https://hub.docker.com/):
 
 ```docker
-FROM node:10
+FROM node:12
 ```
 
 Next we create a directory to hold the application code inside the image, this
@@ -216,7 +216,7 @@ CMD [ "node", "server.js" ]
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:10
+FROM node:12
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -237,7 +237,7 @@ EXPOSE 8080
 CMD [ "node", "server.js" ]
 ```
 
- -->
+-->
 ## Dockerfile を作成する
 
 `Dockerfile` という名前の空のファイルを作ります。
@@ -250,10 +250,10 @@ touch Dockerfile
 
 最初にしなければならないことは、どのイメージから構築したいかを定義することです。
 ここでは[Docker Hub](https://hub.docker.com/)から入手できる
-`node` の最新の LTS (long term support) バージョン `10` を使います。
+`node` の最新の LTS (long term support) バージョン `12` を使います。
 
 ```docker
-FROM node:10
+FROM node:12
 ```
 
 次に、イメージ内にアプリケーションコードを入れるディレクトリを作成します。
@@ -311,7 +311,7 @@ CMD [ "node", "server.js" ]
 `Dockerfile` はこのようになっているはずです。
 
 ```docker
-FROM node:10
+FROM node:12
 
 # アプリケーションディレクトリを作成する
 WORKDIR /usr/src/app
@@ -346,7 +346,7 @@ npm-debug.log
 This will prevent your local modules and debug logs from being copied onto your
 Docker image and possibly overwriting modules installed within your image.
 
- -->
+-->
 ## .dockerignore ファイル
 
 以下の内容で `Dockerfile` と同じディレクトリに `.dockerignore` ファイルを
@@ -368,7 +368,7 @@ build the Docker image. The `-t` flag lets you tag your image so it's easier to
 find later using the `docker images` command:
 
 ```bash
-docker build -t <your username>/node-web-app .
+docker build . -t <your username>/node-web-app
 ```
 
 Your image will now be listed by Docker:
@@ -378,11 +378,11 @@ $ docker images
 
 # Example
 REPOSITORY                      TAG        ID              CREATED
-node                            8          1934b0b038d1    5 days ago
+node                            12         1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
- -->
+-->
 ## 自分のイメージを構築する
 
 `Dockerfile` があるディレクトリに行き、次のコマンドを実行して Docker イメージを構築してください。
@@ -390,7 +390,7 @@ node                            8          1934b0b038d1    5 days ago
 後で `docker images` コマンドを使って見つけやすくなります。
 
 ```bash
-docker build -t <your username>/node-web-app .
+docker build . -t <your username>/node-web-app
 ```
 
 あなたのイメージは Docker によって表示されます。
@@ -400,7 +400,7 @@ $ docker images
 
 # 例
 REPOSITORY                      TAG        ID              CREATED
-node                            8          1934b0b038d1    5 days ago
+node                            12         1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
@@ -435,7 +435,7 @@ If you need to go inside the container you can use the `exec` command:
 $ docker exec -it <container id> /bin/bash
 ```
 
- -->
+-->
 ## イメージの実行
 
 イメージを `-d` で実行するとコンテナは分離モードで実行され、バックグラウンドで実行されたままになります。
@@ -511,7 +511,7 @@ following places:
 * [Docker Tag on Stack Overflow](https://stackoverflow.com/questions/tagged/docker)
 * [Docker Subreddit](https://reddit.com/r/docker)
 
- -->
+-->
 ## テスト
 
 アプリケーションをテストするには、Docker がマッピングしたアプリケーションのポートを取得します。

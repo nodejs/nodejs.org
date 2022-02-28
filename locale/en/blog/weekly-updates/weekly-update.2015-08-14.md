@@ -31,9 +31,9 @@ Jump on the conversation on the [nodejs/node issue page](https://github.com/node
 * The Node.js Collaborator Summit was hosted on 6th – 7th August in San Fransisco. You can see the notes in the [nodejs/summit](https://github.com/nodejs/summit) repository, [the GitHub issue](https://github.com/nodejs/summit/issues/11), or on [the Google Docs folder](https://drive.google.com/folderview?id=0B4tYrG9tjAW0fk9VOG52R2VQMmZHNWdpYnpqWU5MYUlfamNycktmeEl3UkNhdk1PS1Rid3c&usp=sharing).
 * [nodejs/collaboration](https://github.com/nodejs/collaboration) was made along with [the team](https://github.com/orgs/nodejs/teams/collaboration) to help with communication between Working Groups, as well as getting better ways to have evangelism, website, documentation and the 30+ i18n groups work together.
 * The new [Intl WG](https://github.com/nodejs/Intl) had [a meeting](https://github.com/nodejs/Intl/issues/8) on August 11th.
-* [David Walsh](https://twitter.com/davidwalshblog) has written about [using yargs to get Node.js command line arguments](http://davidwalsh.name/nodejs-arguments-yargs/?utm_source=io.js+and+Node.js+News&utm_medium=article).
-* [Reindex](https://www.reindex.io/?utm_source=io.js+and+Node.js+News&utm_medium=article) has a post about [building a GraphQL server with Node.js and SQL](https://www.reindex.io/blog/building-a-graphql-server-with-node-js-and-sql/?utm_source=io.js+and+Node.js+News&utm_medium=article)
-* [Amine Kabab](https://twitter.com/aminekabab) made [a QR code generator library for Node.js](https://github.com/kabab/qr-cairo/?utm_source=io.js+and+Node.js+News&utm_medium=article)
+* [David Walsh](https://twitter.com/davidwalshblog) has written about [using yargs to get Node.js command line arguments](http://davidwalsh.name/nodejs-arguments-yargs/).
+* [Reindex](https://www.reindex.io/) has a post about [building a GraphQL server with Node.js and SQL](https://www.reindex.io/blog/building-a-graphql-server-with-node-js-and-sql/)
+* [Amine Kabab](https://twitter.com/aminekabab) made [a QR code generator library for Node.js](https://github.com/kabab/qr-cairo/)
 
 If you have spotted or written something about Node.js and io.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.
 
@@ -43,6 +43,6 @@ If you have spotted or written something about Node.js and io.js, do come over t
 * [NodeConf EU](http://nodeconf.eu/) tickets are on sale, September 6th - 9th at Waterford, Ireland
 * [Node.js Italian Conference](http://nodejsconf.it/) tickets are on sale, October 10th at Desenzano - Brescia, Italy
 * [JSConf CO](http://www.jsconf.co/), October 16th - 17th at Ruta N, Medellin
-* [Nodevember](http://nodevember.org/?utm_source=io.js+and+Node.js+News&utm_medium=article), November 14th - 15th at Nashville, Tennessee, US.
+* [Nodevember](http://nodevember.org/), November 14th - 15th at Nashville, Tennessee, US.
 
 Have an event about Node.js and io.js coming up? You can put your events here through the [Evangelism team repo](https://github.com/nodejs/evangelism) and announce it in the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.

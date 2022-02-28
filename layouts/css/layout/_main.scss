@@ -1,0 +1,19 @@
+#main {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #main {
+    .container {
+      padding: 1em 20px;
+    }
+
+    article {
+      ul:not(.no-padding) {
+        padding: 0 20px;
+      }
+    }
+  }
+}

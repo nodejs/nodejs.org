@@ -16,6 +16,7 @@ Dear `Boss Name`,
 I’d like to attend **[Node.js Interactive 2015](http://events.linuxfoundation.org/events/node-interactive)** taking place December 8-9, 2015, in Portland, OR. There are a lot of Node.js conferences during the year, but this is the premier conference put on by the Node.js Foundation. Vendor-neutral by design, it is focused on everything from fine-tuning my skills in Node.js to the future of the platform. Node.js is penetrating almost every single aspect of technology from powering robots to enterprise, and is downloaded 2 million times per month. It’s a pretty big deal.
 
 They are anticipating more than 700 individuals will attend the event. The conference welcomes experienced developers as well as those interested in learning how to implement Node.js into their business, and everyone between. The tracks focus on IoT, frontend and backend technologies. Here are just a few advantages of me going to the conference.
+
 * One of the great features about the technology is how diverse it is. It can be used to build mobile apps or enterprise apps, and almost every single big named company is using it from LinkedIn to IBM to Netflix. If we decide to build out our product strategy or offering, it is likely that Node.js will be the technology that I use across the board.
 
 * There will be more than 50 sessions in the two day conference. These sessions include visionary keynotes, hands-on tutorials, deep-dive technical lectures, and presentations.

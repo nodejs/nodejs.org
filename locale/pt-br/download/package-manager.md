@@ -16,6 +16,7 @@ title: Instalando Node.js via gerenciador pacotes
 * [Gentoo](#gentoo)
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
+* [nvs](#nvs)
 * [OpenBSD](#openbsd)
 * [openSUSE e SLE](#opensuse-and-sle)
 * [macOS](#macos)
@@ -90,7 +91,7 @@ pkgin -y install nodejs
 
 ## nvm
 
-Node Version Manager é um script bash utilizado para gerenciar múltiplas versões do Node.js. Ele Permite que você instale, desinstale, mude de versão e etc. Para instalar o nvm, use esse [script de instalação](https://github.com/creationix/nvm#install-script).
+Node Version Manager é um script bash utilizado para gerenciar múltiplas versões do Node.js. Ele Permite que você instale, desinstale, mude de versão e etc. Para instalar o nvm, use esse [script de instalação](https://github.com/nvm-sh/nvm#install--update-script).
 
 Em sistemas Unix / OS X o Node.js compilado a partir do código fonte pode ser instalado usando [nvm](https://github.com/creationix/nvm), instalando-o no
 local em que o nvm espera:
@@ -112,6 +113,51 @@ a partir do código fonte:
 
 ```bash
 nvm uninstall 8
+```
+
+## nvs
+
+#### Windows
+The `nvs` version manager is cross-platform and can be used on Windows, macOS, and Unix-like systems
+
+To install `nvs` on Windows go to the [release page](https://github.com/jasongin/nvs/releases) here and download the MSI installer file of the latest release.
+
+You can also use `chocolatey` to install it:
+
+```bash
+choco install nvs
+```
+
+#### macOS,UnixLike
+You can find the documentation regarding the installation steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
+
+#### Usage
+After this you can use `nvs` to switch between different versions of node.
+
+To add the latest version of node:
+
+```bash
+nvs add latest
+```
+
+Or to add the latest LTS version of node:
+
+```bash
+nvs add lts
+```
+
+Then run the `nvs use` command to add a version of node to your `PATH` for the current shell:
+
+```bash
+$ nvs use lts
+PATH -= %LOCALAPPDATA%\nvs\default
+PATH += %LOCALAPPDATA%\nvs\node\14.17.0\x64
+```
+
+To add it to `PATH` permanently, use `nvs link`:
+
+```bash
+nvs link lts
 ```
 
 ## OpenBSD

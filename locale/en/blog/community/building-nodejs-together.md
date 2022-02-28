@@ -161,10 +161,10 @@ working full time on Node.js he says (and I couldn't have said it better
 myself):
 
 > I will not automatically get commit access to these repositories — like any
-other community member, I will have to continually submit work of consistent
-quality and put in the time to earn the commit bit. The existing core team will
-have final say on whether or not I get the commit bit — which is as it should
-be!
+> other community member, I will have to continually submit work of consistent
+> quality and put in the time to earn the commit bit. The existing core team will
+> have final say on whether or not I get the commit bit — which is as it should
+> be!
 
 Exactly. And not only does he understand how mechanism works, but he's [already
 started](http://neversaw.us/2014/07/13/june-recap/) getting feedback from

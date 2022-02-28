@@ -1,0 +1,77 @@
+.openjsfoundation-footer {
+  padding: 1em 20px;
+  font-size: 14px;
+  color: $white;
+  background: $node-gray;
+  direction: ltr;
+  width: 60%;
+  float: left;
+
+  p + p {
+    margin-top: 0;
+    margin-bottom: .25em;
+  }
+}
+
+.issue-link-container {
+  display: flex;
+  align-items: center;
+}
+
+.issue-link {
+  text-align: left;
+  min-width: 330px;
+  margin-left: auto;
+}
+
+.help {
+  margin-top: 3em;
+  width: 40%;
+  font-size: 14px;
+  color: $white;
+}
+
+@media (min-width: 280px) {
+  .help {
+    margin-left: 10%;
+  }
+}
+@media (min-width: 320px) {
+  .help {
+    margin-left: 58%;
+  }
+}
+@media (min-width: 500px) {
+  .help {
+    margin-left: 65%;
+  }
+}
+@media (min-width: 768px) {
+  .help {
+    margin-left: 70%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .issue-link-container {
+    flex-wrap: wrap;
+  }
+
+  .issue-link {
+    text-align: start;
+    margin: 1em 0 0;
+    min-width: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .openjsfoundation-footer {
+    padding: 3em 20px;
+    width: auto;
+  }
+
+  .help {
+    width: auto;
+    margin-left: auto;
+  }
+}

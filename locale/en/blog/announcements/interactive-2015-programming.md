@@ -16,6 +16,7 @@ Node.js has become ubiquitous in almost every ecosystem in technology and is con
 Node.js Interactive will also focus on three tracks: Frontend, Backend and the Internet of Things (IoT); talks for each track were selected in collaboration with track chairs [Jessica Lord](https://github.com/jlord/) (Frontend), [C J Silvero](https://github.com/ceejbot) (Backend) and [Kassandra Perch](https://github.com/nodebotanist) (IoT). A few highlights include:
 
 Frontend Session Highlights:
+
 * JavaScript, For Science! *with* Max Ogden, Computer Programmer for Dat Project
 * Making Your Node.js Applications Debuggable *with* Patrick Mueller, Senior Node Engineer at NodeSource
 * Node Intl: Where We Are, What's Next *with* Steven Loomis, Senior Software Engineer at IBM
@@ -24,6 +25,7 @@ Frontend Session Highlights:
 * Rebuilding the Ship as It Sails: Making Large Legacy Sites Responsive *with* Philip James, Senior Software Engineer at Eventbrite
 
 Backend Session Highlights:
+
 * Building and Engaging High-Performance Teams in the Node.js Ecosystem *with* Chanda Dharap, Director of Engineering at StrongLoop, an IBM company
 * Microservice Developer Experience *with* Peter Elger, Director of Engineering at nearForm
 * Modernizing Winston for Node.js v4 *with* Charlie Robbins, Director of Engineering UX Platform at GoDaddy
@@ -32,6 +34,7 @@ Backend Session Highlights:
 * Resource Management in Node.js *with* Bradley Meck, Software Engineer at NodeSource
 
 IoT Session Highlights:
+
 * Contributing to Node Core *with* Jeremiah Senkpiel, Node Core Contributor at NodeSource
 * Hands on Hardware Workshop *with* Tessel with Kelsey Breseman, Engineering Project Manager at 3D Robotics and Steering Committee Member and Board Co-Creator of Tessel Project
 * Internet of Cats *with* Rachel White, Front-End Engineer for IBM Watson
@@ -40,7 +43,7 @@ IoT Session Highlights:
 * Node.js Development for the Next Generation of IoT *with* Melissa Evers-Hood, Software Product Line Manager at Intel Corporation
 * Node.js While Crafting: Make Textile to Compute! *with* Mariko Kosaka, JavaScript Engineer at Scripto
 
-“Node.js has become pervasive within the last few years, with so many community accomplishments to highlight, including forming the new Node.js Foundation and the convergence of io.js and node.js,” said Mikeal Rogers, Community Manager, Node.js Foundation. “We created this conference to help showcase this growth, to accommodate the Node.js community’s many different needs, and to help accelerate adoption as it expands into enterprises.”
+“Node.js has become pervasive within the last few years, with so many community accomplishments to highlight, including forming the new Node.js Foundation and the convergence of io.js and Node.js,” said Mikeal Rogers, Community Manager, Node.js Foundation. “We created this conference to help showcase this growth, to accommodate the Node.js community’s many different needs, and to help accelerate adoption as it expands into enterprises.”
 
 Early bird registration ends October 23, 2015. Standard registration closes November 21, 2015, after which the conference price will increase from $425 to $525. Discounted hotel rates are also available until Wednesday, November 11, 2015. To register visit [https://www.regonline.com/Register/Checkin.aspx?EventID=1753707](https://www.regonline.com/Register/Checkin.aspx?EventID=1753707).
 

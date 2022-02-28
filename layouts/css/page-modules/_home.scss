@@ -1,0 +1,191 @@
+.home-version {
+  padding-top: 10px;
+  font-size: 16px;
+  color: $gray;
+}
+
+.home-version-banner {
+  color: $node-gray;
+  font-size: 130%;
+  background-color: $light-green;
+  padding: 5px 15px;
+  border-radius: 2px;
+  margin-top: 1em;
+
+  a {
+    color: $active-green;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.home-secondary-links {
+  color: $home-secondary-links-color;
+  font-size: .9rem;
+
+  a {
+    color: $home-secondary-links-color;
+
+    &:hover {
+      background-color: transparent;
+      border-bottom: 1px solid $home-secondary-links-color;
+      border-radius: 0;
+    }
+  }
+}
+
+#home-intro {
+  max-width: $body-max-width * .75;
+  margin: 0 auto;
+  padding: 30px 0;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.home-banner {
+  opacity: 1;
+  transition: opacity .2s ease-in-out;
+
+  &:hover {
+    opacity: .85;
+  }
+
+  > img {
+    border-radius: 2px;
+  }
+}
+
+.home-downloadblock {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.home-downloadbutton {
+  display: block;
+  margin: 10px 4px;
+  padding: .2em .6em;
+  background-color: $active-green;
+  color: $white !important;
+  border-radius: 2px;
+  font-size: 30px;
+  font-weight: 400;
+  transition: background-color .2s ease-in-out;
+
+  &:hover {
+    background-color: $node-green;
+  }
+
+  small {
+    display: block;
+    font-size: 1rem;
+  }
+}
+
+/**
+ * BLM CTA button styles.
+ */
+
+.home-blacklivesmatterblock {
+  display: block;
+  font-size: 16px;
+  height: 4rem;
+  position: relative;
+}
+
+.home-blacklivesmatterbutton {
+  color: $white !important;
+  display: block;
+  font-size: 130%;
+  font-weight: 400;
+  left: 50%;
+  top: 50%;
+  max-width: 100%;
+  padding: .5em 20%;
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  transition: padding .2s ease-in-out;
+
+  &:active,
+  &:focus,
+  &:hover {
+    padding: calc(.5em * 1.2) calc(20% * 1.2);
+  }
+
+  small {
+    display: block;
+    font-size: 1rem;
+  }
+}
+
+/**
+ * Accessible button role styles (copypasta) integrated into site color scheme.
+ * @author W3C
+ * @see https://www.w3.org/TR/wai-aria-practices/examples/button/button.html
+ */
+
+[role="button"] {
+  border: 1px solid hsl(0deg, 0%, 39%);
+  border-radius: 5px;
+  box-shadow: 0 1px 2px hsl(0deg, 0%, 45%);
+  color: #fff;
+  text-shadow: 0 -1px 1px hsl(0deg, 0%, 15%);
+  background-color: hsl(0deg, 0%, 31%);
+  background-image: linear-gradient(to bottom, hsl(0deg, 0%, 33%), hsl(0deg, 0%, 27%));
+}
+
+[role="button"]:hover {
+  border-color: hsl(0deg, 0%, 19%);
+  background-color: hsl(0deg, 0%, 21%);
+  background-image: linear-gradient(to bottom, hsl(0deg, 0%, 23%), hsl(0deg, 0%, 17%));
+  cursor: pointer;
+}
+
+[role="button"]:focus {
+  outline: none;
+}
+
+[role="button"]:focus::before {
+  position: absolute;
+  z-index: -1;
+
+  /* button border width - outline width - offset */
+  top: calc(-1px - 3px - 3px);
+  right: calc(-1px - 3px - 3px);
+  bottom: calc(-1px - 3px - 3px);
+  left: calc(-1px - 3px - 3px);
+  border: 3px solid hsl(0deg, 0%, 39%);
+
+  /* button border radius + outline width + offset */
+  border-radius: calc(5px + 3px + 3px);
+  content: "";
+}
+
+[role="button"]:active {
+  border-color: hsl(0deg, 0%, 29%);
+  background-color: hsl(0deg, 0%, 11%);
+  background-image: linear-gradient(to bottom, hsl(0deg, 0%, 33%), hsl(0deg, 0%, 27%));
+  box-shadow: inset 0 3px 5px 1px hsl(0deg, 0%, 10%);
+}
+
+[role="button"][aria-pressed] {
+  border-color: hsl(0deg, 0%, 29%);
+  box-shadow: 0 1px 2px hsl(0deg, 0%, 35%);
+  text-shadow: 0 -1px 1px hsl(0deg, 0%, 5%);
+  background-color: hsl(0deg, 0%, 31%);
+  background-image: linear-gradient(to bottom, hsl(0deg, 0%, 33%), hsl(0deg, 0%, 27%));
+}
+
+[role="button"][aria-pressed]:hover {
+  border-color: hsl(0deg, 0%, 9%);
+  background-color: hsl(0deg, 0%, 31%);
+  background-image: linear-gradient(to bottom, hsl(0deg, 0%, 13%), hsl(0deg, 0%, 7%));
+}
+
+[role="button"][aria-pressed]:focus::before {
+  border-color: hsl(0deg, 0%, 29%);
+}

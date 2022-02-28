@@ -1,0 +1,130 @@
+<style>
+  body {
+    background: #333;
+    color: #fff;
+    font-family: system-ui, sans-serif;
+  }
+  
+  a, a:link {
+    color: #72ba55;
+  }
+
+  p, ul {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-sizing: border-box;
+    max-width: 50ch;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  ul {
+    list-style-position: inside;
+  }
+
+  section#lives > ul > li {
+    list-style: none;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 5rem;
+    line-height: 0.8;
+    font-weight: 900;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1 > span:first-child::before {
+    content: '#';
+    font-weight: 200;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 0.5;
+    font-weight: lighter;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  section#update {
+    padding-top: 0rem;
+  }
+
+  section#here-for-you {
+    padding: 1rem;
+    padding-top: 0rem;
+  }
+
+  section#here-for-you > p {
+    padding-bottom: 1rem;
+  }
+
+  section#we-are-here-for-you > ul {
+    padding-left: 4rem;
+  }
+
+  section#we-are-here-for-you > ul > li {
+    display: inline;
+    padding-right: 5px;
+  }
+
+  section#we-are-here-for-you > ul > li:not(:last-child)::after {
+    content: ', '
+  }
+
+  hr#break {
+    width: 33%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  section#it-is-temporary > p {
+    padding-bottom: 0rem;
+  }
+
+  footer {
+    margin-bottom: 2rem;
+  }
+
+  .center {
+    margin: 0 auto
+  }
+
+  .space {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+
+  @media (max-width: 640px) {
+    h1 {
+      flex-direction: column;
+      place-content: center;
+    }
+
+    h1 > span:first-child::before {
+      position: absolute;
+      transform: translateX(-110%);
+    }
+  }
+
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) and (-webkit-text-stroke-color: transparent) {
+      h1 {
+        flex-wrap: nowrap;
+        align-items: center;
+      }
+    }
+  }
+</style>

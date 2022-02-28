@@ -15,7 +15,7 @@ basic understanding of the JavaScript language and Node.js [callback pattern](/e
 > network supported by [libuv](http://libuv.org/). -->
 Esta visão geral cobre as **diferenças** entre chamadas **bloqueantes** e **não-bloqueantes** no Node.js.
 Vamos nos referir ao event loop e à libuv, mas não é necessário nenhum conhecimento prévio sobre
-estes tópicos. É esperado que o leitor tenha um conhecimento básico de [padrões de callback](/en/knowledge/getting-started/control-flow/what-are-callbacks/) no Javascript e Node.js.
+estes tópicos. É esperado que o leitor tenha um conhecimento básico de [padrões de callback](/en/knowledge/getting-started/control-flow/what-are-callbacks/) no JavaScript e Node.js.
 
 > "I/O" se refere, principalmente, à interação com o disco do sistema
 > e a rede suportada pela [libuv](http://libuv.org).
@@ -27,9 +27,9 @@ estes tópicos. É esperado que o leitor tenha um conhecimento básico de [padr�
 process must wait until a non-JavaScript operation completes. This happens
 because the event loop is unable to continue running JavaScript while a
 **blocking** operation is occurring. -->
-Ser **bloqueante** é quando a execução do código do resto do código Javascript no processo
-do Node.js precisa esperar até que uma operação não-Javascript seja completada. Isso acontece
-porque o event loop é incapaz de continuar executando Javascript enquanto uma operação
+Ser **bloqueante** é quando a execução do código do resto do código JavaScript no processo
+do Node.js precisa esperar até que uma operação não-JavaScript seja completada. Isso acontece
+porque o event loop é incapaz de continuar executando JavaScript enquanto uma operação
 **bloqueante** está sendo executada.
 
 <!-- In Node.js, JavaScript that exhibits poor performance due to being CPU intensive
@@ -37,8 +37,8 @@ rather than waiting on a non-JavaScript operation, such as I/O, isn't typically
 referred to as **blocking**. Synchronous methods in the Node.js standard library
 that use libuv are the most commonly used **blocking** operations. Native
 modules may also have **blocking** methods. -->
-No Node.js, Javascript que mostra uma performance ruim devido ao fato de que é um
-processo que usa CPU intensivamente ao invés de esperar uma operação não-Javascript,
+No Node.js, JavaScript que mostra uma performance ruim devido ao fato de que é um
+processo que usa CPU intensivamente ao invés de esperar uma operação não-JavaScript,
 como I/O, não é geralmente identificada como uma operação **bloqueante**. Métodos
 síncronos na biblioteca padrão do Node.js que usam a libuv são as operações **bloqueantes**
 mais utilizadas. Módulos nativos também podem conter métodos **bloqueantes**.
@@ -197,5 +197,5 @@ de `fs.readFile()`, o que garante a ordem correta das operações.
 
 ## Additional Resources
 
-- [libuv](http://libuv.org/)
-- [About Node.js](/en/about/)
+* [libuv](http://libuv.org/)
+* [About Node.js](/en/about/)

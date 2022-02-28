@@ -1,6 +1,6 @@
 ---
 layout: page.hbs
-title: Installing Node.js via package manager
+title: تثبيت Node.js عن طريق مدير الحزم
 ---
 
 # تثبيت النود جي اس عبر مدير حزم
@@ -17,6 +17,7 @@ title: Installing Node.js via package manager
 * [IBM i](#ibm-i)
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
+* [nvs](#nvs)
 * [OpenBSD](#openbsd)
 * [openSUSE و SLE](#opensuse-and-sle)
 * [macOS](#macos)
@@ -105,7 +106,7 @@ pkgin -y install nodejs
 ## nvm
 
 مدير نسخ النود هو عبارة عن سكريبت خاص بالباش يستخدم لإدارة عدة نسخ من النود جي اس، حيث يسمح لك بالقيام بعمليات مختلفة كتثبيت و إلغاء تثبيت و تبديل نسخة معينة و اكثر من ذلك.
-لتثبيت مدير نسخ النود استعمل [سكريبت التثبيت](https://github.com/creationix/nvm#install-script).
+لتثبيت مدير نسخ النود استعمل [سكريبت التثبيت](https://github.com/nvm-sh/nvm#install--update-script).
 
 على انظمة يونيكس و OS X، يمكن تثبيت نسخة من النود جي اس تم بنائها من المصدر عبر [مدير نسخ النود (nvm)](https://github.com/creationix/nvm) عبر تثبيتها في المسار الذي يتوقعه مدير نسخ النود:
 
@@ -124,6 +125,51 @@ nvm use 8
 
 ```bash
 nvm uninstall 8
+```
+
+## nvs
+
+#### Windows
+The `nvs` version manager is cross-platform and can be used on Windows, macOS, and Unix-like systems
+
+To install `nvs` on Windows go to the [release page](https://github.com/jasongin/nvs/releases) here and download the MSI installer file of the latest release.
+
+You can also use `chocolatey` to install it:
+
+```bash
+choco install nvs
+```
+
+#### macOS,UnixLike
+You can find the documentation regarding the installation steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
+
+#### Usage
+After this you can use `nvs` to switch between different versions of node.
+
+To add the latest version of node:
+
+```bash
+nvs add latest
+```
+
+Or to add the latest LTS version of node:
+
+```bash
+nvs add lts
+```
+
+Then run the `nvs use` command to add a version of node to your `PATH` for the current shell:
+
+```bash
+$ nvs use lts
+PATH -= %LOCALAPPDATA%\nvs\default
+PATH += %LOCALAPPDATA%\nvs\node\14.17.0\x64
+```
+
+To add it to `PATH` permanently, use `nvs link`:
+
+```bash
+nvs link lts
 ```
 
 ## OpenBSD
@@ -179,7 +225,7 @@ brew install node
 ```bash
 port install nodejs<major version>
 
-# Example
+# على سبيل المثال
 port install nodejs7
 ```
 
@@ -191,7 +237,7 @@ port install nodejs7
 pkgin -y install nodejs
 ```
 
- من أو قم ببنائها يدويا من pkgsrc:
+من أو قم ببنائها يدويا من pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
@@ -237,7 +283,7 @@ xbps-install -Sy nodejs
 
 ```bash
 cinst nodejs
-# or for full install with npm
+# أو للتثبيت الكامل بواسطة npm
 cinst nodejs.install
 ```
 

@@ -11,7 +11,7 @@ layout: blog-post.hbs
 **SAN FRANCISCO, Nov. 30, 2016** — [The Node.js Foundation](https://foundation.nodejs.org/), a community-led and industry-backed consortium to advance the development of the Node.js platform, today announced that the Node.js Security Project will become a part of the Node.js Foundation. Under the Node.js Foundation, the Node.js Security Project will provide a unified
 process for discovering and disclosing security vulnerabilities found in the Node.js module ecosystem.
 
-Last year Node.js Foundation worked with The Linux Foundation’s Core Infrastructure Initiative to form the Node.js Core Security Group to encourage security best practices. By overseeing datasets of vulnerability disclosures, which will be publically available and openly licensed, the Foundation is building on this work and expanding its role in fortifying Node.js through strong security governance. It will also allow the Foundation to drive standardization around security data and encourage a broader ecosystem of open source and vendor based tools on top of it.
+Last year Node.js Foundation worked with The Linux Foundation’s Core Infrastructure Initiative to form the Node.js Core Security Group to encourage security best practices. By overseeing datasets of vulnerability disclosures, which will be publicly available and openly licensed, the Foundation is building on this work and expanding its role in fortifying Node.js through strong security governance. It will also allow the Foundation to drive standardization around security data and encourage a broader ecosystem of open source and vendor based tools on top of it.
 
 All security vendors are encouraged to contribute to the common vulnerability repository. Once it is openly licensed, the Foundation expects the repository to grow quickly as other vendors add to it.
 
@@ -29,7 +29,7 @@ The Node.js Security Project, founded by Adam Baldwin and previously managed by 
 * Vetting participants in the private security disclosure group;
 * Facilitating ongoing research and testing of security data;
 * Owning and publishing the base dataset of disclosures, and
-* Defining a standard for the data, which tool vendors can build on top of, and security and vendors can add data and    value to as well.
+* Defining a standard for the data, which tool vendors can build on top of, and security and vendors can add data and value to as well.
 
 “We are very excited about the opportunity to donate this project to the Node.js Foundation” said Adam Baldwin, team lead at ^[Lift](https://liftsecurity.io/)[Security](https://liftsecurity.io/) and founder of the Node.js Security Project. “The Foundation will be able to funnel contributions from numerous vendors, developers and end users to create an incredibly useful baseline of data sets that will be available to anyone. This ensures broader reach and long-lasting viability of the project to encourage availability of more security tools, which is increasingly in demand among Node.js enterprise developers and users.”
 

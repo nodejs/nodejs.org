@@ -2,12 +2,12 @@
 title: The Node.js Foundation Partners with The Linux Foundation on New Node.js Certification Program
 date: 2017-1-26T12:00:00.000Z
 category: Announcements
-slug: nodejs-certified-developer-program.md
+slug: nodejs-certified-developer-program
 layout: blog-post.hbs
 ---
 
 _Node.js Foundation to launch
-vendor-neutral certification program for fastest growing platform _
+vendor-neutral certification program for fastest growing platform_
 
 **SAN FRANCISCO, Jan. 26, 2017** — [The Node.js Foundation](https://foundation.nodejs.org/), a community-led and
 industry-backed consortium to advance the development of the Node.js platform,
@@ -52,6 +52,6 @@ Currently the Node.js Foundation is working with the community to determine spec
 contribute to the Node.js Foundation Certification Development Item Writing
 Workshop Sessions, fill out this [application](https://docs.google.com/a/linuxfoundation.org/forms/d/10X9RJ4oLu2IU7cXppnXmwDMdJTetq3i9focw-R7GB8s/viewform?edit_requested=true).
 
-Exam topics will be published publically as will resources to help prepare for the
+Exam topics will be published publicly as will resources to help prepare for the
 certification, allowing others to leverage the source materials for their own
 Node.js learning.

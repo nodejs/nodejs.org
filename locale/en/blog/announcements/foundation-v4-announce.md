@@ -29,6 +29,7 @@ Additional updates include:
 The technical steering committee for the Node.js Foundation is now 15 members strong with 40 plus core committers and 350+ GitHub organization members contributing to the community. The development process and release cycles are much faster due to the large, active community united under the Node.js Foundation umbrella. The next release is planned before the end of 2015. In parallel, the project will be branching a new stable line of releases every six months, with one planned in October and another for spring of 2016.
 
 Additional Resources
+
 * Technical Blog - [Node v4.0.0 (Stable)](https://nodejs.org/en/blog/release/v4.0.0/)
 * New GitHub [home](https://github.com/nodejs/node)
 

@@ -5,22 +5,21 @@
 <body>
   {{> header }}
 
-  <div id="main">
+  <main id="main">
     <div class="container">
-      <article>
+      <article dir="auto">
         <div class="download-header">
           <h1>{{downloads.headline}}</h1>
         </div>
-
+        {{{contents}}}
         {{> primary-download-matrix version=project.latestVersions.lts versionTypeLts="true"}}
         {{> secondary-download-matrix version=project.latestVersions.lts versionTypeLts="true"}}
 
       </article>
 
     </div>
-  </div>
+  </main>
 
   {{> footer }}
-  <script src="/static/js/download.js" async defer></script>
 </body>
 </html>

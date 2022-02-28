@@ -212,8 +212,8 @@ request.on('data', (chunk) => {
 ```
 
 > **주의:** 이 코드가 약간 장황할 수도 있고 대부분은 실제로 그렇습니다. 다행히 [`npm`][]에
-[`concat-stream`][]나 [`body`][] 같은 모듈로 이 로직을 감출 수 있습니다. 이어서 읽기 전에
-어떤 작업이 이뤄지는지 잘 이해하는 것이 중요합니다. 그래서 이 글을 읽고 있는 것입니다.
+> [`concat-stream`][]나 [`body`][] 같은 모듈로 이 로직을 감출 수 있습니다. 이어서 읽기 전에
+> 어떤 작업이 이뤄지는지 잘 이해하는 것이 중요합니다. 그래서 이 글을 읽고 있는 것입니다.
 
 <!--
 ## A Quick Thing About Errors
@@ -470,7 +470,7 @@ response.end('<html><body><h1>Hello, World!</h1></body></html>');
 ```
 
 > **주의:** 바디에 데이터 청크를 *작성하기 전에* 상태 코드와 헤더를 설정해야 합니다.
-HTTP 응답에서 바디 전에 헤더가 있으므로 이는 이치에 맞습니다.
+> HTTP 응답에서 바디 전에 헤더가 있으므로 이는 이치에 맞습니다.
 
 <!--
 ## Another Quick Thing About Errors
@@ -695,8 +695,8 @@ http.createServer((request, response) => {
 -->
 
 > **주의:** 이 방법으로 URL을 검사함으로써 "라우팅"을 하고 있습니다. `switch` 문으로 간단히
-라우팅할 수도 있고 [`express`][]같은 프레임워크로 복잡한 라우팅을 할 수도 있습니다.
-라우팅 처리를 하는 무언가를 찾고 있다면 [`router`][]를 사용해 보길 바랍니다.
+> 라우팅할 수도 있고 [`express`][]같은 프레임워크로 복잡한 라우팅을 할 수도 있습니다.
+> 라우팅 처리를 하는 무언가를 찾고 있다면 [`router`][]를 사용해 보길 바랍니다.
 
 좋습니다! 이제 이를 간략화 해보겠습니다. `request` 객체는 [`ReadableStream`][]이고
 `response` 객체는 [`WritableStream`][]임을 명심하세요. 이 말은 데이터를 한 스트림에서
@@ -830,7 +830,6 @@ API가 제공하는 그 외 많은 기능이 있으므로 [`EventEmitters`][], [
 [`npm`]: https://www.npmjs.com
 [`EventEmitter`]: https://nodejs.org/api/events.html#events_class_eventemitter
 [handling these errors]: https://nodejs.org/api/errors.html
-[`domains`]: https://nodejs.org/api/domain.html
 [`ServerResponse`]: https://nodejs.org/api/http.html#http_class_http_serverresponse
 [`setHeader`]: https://nodejs.org/api/http.html#http_response_setheader_name_value
 [`WritableStream`]: https://nodejs.org/api/stream.html#stream_class_stream_writable
@@ -857,7 +856,6 @@ API가 제공하는 그 외 많은 기능이 있으므로 [`EventEmitters`][], [
 [`npm`]: https://www.npmjs.com
 [`EventEmitter`]: https://nodejs.org/api/events.html#events_class_eventemitter
 [오류를 처리하는]: https://nodejs.org/api/errors.html
-[`domains`]: https://nodejs.org/api/domain.html
 [`ServerResponse`]: https://nodejs.org/api/http.html#http_class_http_serverresponse
 [`setHeader`]: https://nodejs.org/api/http.html#http_response_setheader_name_value
 [`WritableStream`]: https://nodejs.org/api/stream.html#stream_class_stream_writable

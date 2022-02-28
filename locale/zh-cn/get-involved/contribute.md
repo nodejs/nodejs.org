@@ -17,7 +17,7 @@ layout: contribute.hbs
 
 汇报问题时我们也需要一些关于执行环境的信息，我们不知道确切哪些信息是我们要的，所以请至少提供下列几项信息：
 
-* Node 的版本号
+* Node.js 的版本号
 * 当前运行的操作系统（macOS、SmartOS、Linux、Windows）
 * 计算机架构体系（32 位还是 64 位；x86 或 ARM）
 
@@ -44,4 +44,4 @@ layout: contribute.hbs
 * 参与工作组
 * 参与其它 Node.js 社区群
 
-若你自己认为已经做出重大贡献，却没有被授予提交权限，你可以尝试 [开启 TSC 议题](https://github.com/nodejs/TSC/issues) 或 [直接联系 TSC 成员](https://github.com/nodejs/TSC#current-members) 以获得相应权限。
+若你自己认为已经做出重大贡献，却没有被授予提交权限，你可以尝试[开启 TSC 议题](https://github.com/nodejs/TSC/issues)或[直接联系 TSC 成员](https://github.com/nodejs/TSC#current-members)以获得相应权限。

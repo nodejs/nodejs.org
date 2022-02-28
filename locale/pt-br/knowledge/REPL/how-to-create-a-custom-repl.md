@@ -11,7 +11,7 @@ layout: knowledge-post.hbs
 O Node permite aos usuários criarem seus próprios REPLs com o [módulo `repl`](https://nodejs.org/dist/latest/docs/api/repl.html). A forma de uso mais básica se parece com isso:
 
 ```js
-var repl = require('repl')
+const repl = require('repl');
 
 repl.start(prompt, stream);
 ```
@@ -23,32 +23,34 @@ Entretanto, o repl é bem flexível. Abaixo segue um exemplo que demonstra isso:
 ```js
 #!/usr/bin/env node
 
-var net = require("net"),
-    repl = require("repl");
+const net = require('net');
+const repl = require('repl');
 
-var mood = function () {
-    var m = [ "^__^", "-___-;", ">.<", "<_>" ];
-    return m[Math.floor(Math.random()*m.length)];
+const mood = function () {
+  const m = ['^__^', '-___-;', '>.<', '<_>'];
+  return m[Math.floor(Math.random() * m.length)];
 };
 
 // Aqui um exemplo de um repl remoto que você pode fazer uma conexão telnet!
-net.createServer(function (socket) {
-  var remote = repl.start("node::remote> ", socket);
-  // Adicionando "mood" e "bonus" para o contexto remoto do REPL.
-  remote.context.mood = mood;
-  remote.context.bonus = "DESBLOQUEADO";
-}).listen(5001);
+net
+  .createServer(function (socket) {
+    const remote = repl.start('node::remote> ', socket);
+    // Adicionando "mood" e "bonus" para o contexto remoto do REPL.
+    remote.context.mood = mood;
+    remote.context.bonus = 'DESBLOQUEADO';
+  })
+  .listen(5001);
 
-console.log("REPL remoto iniciou na porta 5001.");
+console.log('REPL remoto iniciou na porta 5001.');
 
 // Aqui temos um nó do repl "local" com um prompt customizado
-var local = repl.start("node::local> ");
+const local = repl.start('node::local> ');
 
 // Expondo a função "mood" para o contexto local do REPL.
 local.context.mood = mood;
 ```
 
-Este script cria *dois* REPLs: Um é normal, exceto pelo prompt customizado. Porém o  *outro* é exposto através do módulo net de forma que se possa fazer a conexão telnet para ele! Além disso, ele usa a propriedade `context` para expor a função "mood" para os dois REPLs, e a string "bonus" apenas para o REPL remoto. Como você verá, essa forma de tentar expor objetos em um REPL e não no outro *não funciona*.
+Este script cria *dois* REPLs: Um é normal, exceto pelo prompt customizado. Porém o *outro* é exposto através do módulo net de forma que se possa fazer a conexão telnet para ele! Além disso, ele usa a propriedade `context` para expor a função "mood" para os dois REPLs, e a string "bonus" apenas para o REPL remoto. Como você verá, essa forma de tentar expor objetos em um REPL e não no outro *não funciona*.
 
 Além disso, todos os objetos no escopo global também serão acessíveis para os seus REPLs.
 

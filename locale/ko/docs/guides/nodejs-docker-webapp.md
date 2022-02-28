@@ -100,7 +100,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello world\n');
+  res.send('Hello World');
 });
 
 app.listen(PORT, HOST);
@@ -129,7 +129,7 @@ const HOST = '0.0.0.0';
 // 앱
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello world\n');
+  res.send('Hello World');
 });
 
 app.listen(PORT, HOST);
@@ -151,11 +151,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `10` of `node`
+Here we will use the latest LTS (long term support) version `12` of `node`
 available from the [Docker Hub](https://hub.docker.com/):
 
 ```docker
-FROM node:10
+FROM node:12
 ```
 -->
 
@@ -171,10 +171,10 @@ touch Dockerfile
 
 가장 먼저 해야 할 것은 어떤 이미지를 사용해서 빌드할 것인지를 정의하는 것입니다. 여기서는
 [Docker Hub](https://hub.docker.com/)에 있는
-`node`의 최신 LTS(장기 지원) 버전인 `10`을 사용할 것입니다.
+`node`의 최신 LTS(장기 지원) 버전인 `12`을 사용할 것입니다.
 
 ```docker
-FROM node:10
+FROM node:12
 ```
 
 <!--
@@ -282,7 +282,7 @@ CMD [ "node", "server.js" ]
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:10
+FROM node:12
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -314,7 +314,7 @@ CMD [ "node", "server.js" ]
 `Dockerfile`은 다음과 같아야 합니다.
 
 ```docker
-FROM node:10
+FROM node:12
 
 # 앱 디렉터리 생성
 WORKDIR /usr/src/app
@@ -370,7 +370,7 @@ build the Docker image. The `-t` flag lets you tag your image so it's easier to
 find later using the `docker images` command:
 
 ```bash
-docker build -t <your username>/node-web-app .
+docker build . -t <your username>/node-web-app
 ```
 
 Your image will now be listed by Docker:
@@ -392,7 +392,7 @@ node                            8          1934b0b038d1    5 days ago
 쉽게 찾을 수 있습니다.
 
 ```bash
-docker build -t <your username>/node-web-app .
+docker build . -t <your username>/node-web-app
 ```
 
 Docker가 당신이 빌드한 이미지를 보여줄 것입니다.
@@ -402,7 +402,7 @@ $ docker images
 
 # 예시
 REPOSITORY                      TAG        ID              CREATED
-node                            8          1934b0b038d1    5 days ago
+node                            12         1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 

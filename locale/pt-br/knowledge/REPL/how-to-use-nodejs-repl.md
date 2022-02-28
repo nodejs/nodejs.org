@@ -10,7 +10,7 @@ layout: knowledge-post.hbs
 
 # Aprenda a usar o REPL
 
-O Node.js vem com seu próprio REPL, que é uma abreviação para 'Read-Eval-Print Loop'. É o shell interativo do Node.js. Qualquer JavaScript válido que pode ser escrito em um script, pode ser passado para o REPL. Pode ser extremamente útil para experimentos com o node.js, depurar código e entender alguns comportamentos excêntricos do JavaScript.
+O Node.js vem com seu próprio REPL, que é uma abreviação para 'Read-Eval-Print Loop'. É o shell interativo do Node.js. Qualquer JavaScript válido que pode ser escrito em um script, pode ser passado para o REPL. Pode ser extremamente útil para experimentos com o Node.js, depurar código e entender alguns comportamentos excêntricos do JavaScript.
 
 Node.js tem um REPL independente, acessível a partir da linha de comando, e um módulo REPL integrado que você pode usar para
 [criar seu próprio REPL customizado](https://nodejs.org/api/repl.html#repl_repl). Nós vamos aprender o básico do REPL indepente.

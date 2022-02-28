@@ -28,7 +28,7 @@ Experts from the world’s leading companies and most important open source proj
 ## Cloud and Back End
 
 * Node.js and Containers go together like Peanut Butter and Jelly from **Ross Kukulinski of NodeSource**
-* Building the Node.JS Global Distribution Network from **Guillermo Rauch creator of Socket.io**
+* Building the Node.js Global Distribution Network from **Guillermo Rauch creator of Socket.io**
 * SWIMming in the microservices Ocean from **Luca Maraschi of Sporti and nearForm**
 
 ## Diagnosing, Debugging, and DevOps

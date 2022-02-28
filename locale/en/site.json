@@ -1,6 +1,7 @@
 {
   "title": "Node.js",
-  "author": "Node.js Foundation",
+  "editOnGithub":"Edit On GitHub",
+  "author": "Node.js",
   "url": "https://nodejs.org/en/",
   "locale": "en",
   "language": "English",
@@ -9,13 +10,14 @@
   "reportNodeIssue": "Report Node.js issue",
   "reportWebsiteIssue": "Report website issue",
   "getHelpIssue": "Get Help",
+  "Contributing": "Contributing For Nodejs.org",
   "by": "by",
   "all-downloads": "All download options",
   "nightly": "Nightly builds",
-  "chakracore-nightly": "Node-ChakraCore Nightly builds",
   "unofficial-builds": "Unofficial builds",
   "previous": "Previous",
   "next": "Next",
+  "toggleText":"Toggle dark/light mode",
   "feeds": [
     {
       "link": "feed/blog.xml",
@@ -83,7 +85,10 @@
       "verify-text": "How to verify"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive on Linux"
+      "text": "Installing Node.js via binary archive"
+    },
+    "install-on-wsl": {
+      "text": "Install on Windows Subsystem for Linux (WSL)"
     }
   },
   "docs": {
@@ -127,7 +132,7 @@
       "text": "Contribute"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/contributing/code-of-conduct.md",
       "text": "Code of Conduct"
     },
     "node-meetups": {
@@ -136,16 +141,16 @@
     }
   },
   "security": {
-    "link": "security",
+    "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
     "text": "Security"
+  },
+  "getcertified": {
+    "link": "https://openjsf.org/certification",
+    "text": "Certification"
   },
   "blog": {
     "link": "blog",
     "text": "News"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "Foundation"
   },
   "releases": {
     "title": "Release History",
@@ -154,6 +159,19 @@
   "links": {
     "pages": {
       "changelog": "Changelog"
+    }
+  },
+  "banners": {
+    "index": {
+      "startDate": "2022-01-04T16:00:00.000Z",
+      "endDate": "2022-01-25T16:00:00.000Z",
+      "text": "New security releases now available for Node.js 12, 14, 16, and 17 release lines",
+      "link": "https://nodejs.org/en/blog/vulnerability/jan-2022-security-releases/"
+    },
+    "blacklivesmatter": {
+      "visible": false,
+      "text": "#BlackLivesMatter",
+      "link": "black-lives-matter/"
     }
   }
 }

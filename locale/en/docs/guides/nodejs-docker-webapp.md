@@ -58,7 +58,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello world\n');
+  res.send('Hello World');
 });
 
 app.listen(PORT, HOST);
@@ -80,11 +80,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `10` of `node`
-available from the [Docker Hub](https://hub.docker.com/):
+Here we will use the latest LTS (long term support) version `16` of `node`
+available from the [Docker Hub](https://hub.docker.com/_/node):
 
 ```docker
-FROM node:10
+FROM node:16
 ```
 
 Next we create a directory to hold the application code inside the image, this
@@ -143,7 +143,7 @@ CMD [ "node", "server.js" ]
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:10
+FROM node:16
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -184,7 +184,7 @@ build the Docker image. The `-t` flag lets you tag your image so it's easier to
 find later using the `docker images` command:
 
 ```bash
-docker build -t <your username>/node-web-app .
+docker build . -t <your username>/node-web-app
 ```
 
 Your image will now be listed by Docker:
@@ -194,7 +194,7 @@ $ docker images
 
 # Example
 REPOSITORY                      TAG        ID              CREATED
-node                            10         1934b0b038d1    5 days ago
+node                            16         3b66eb585643    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
@@ -268,6 +268,6 @@ following places:
 
 * [Official Node.js Docker Image](https://hub.docker.com/_/node/)
 * [Node.js Docker Best Practices Guide](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
-* [Official Docker documentation](https://docs.docker.com/)
+* [Official Docker documentation](https://docs.docker.com/get-started/nodejs/build-images/)
 * [Docker Tag on Stack Overflow](https://stackoverflow.com/questions/tagged/docker)
 * [Docker Subreddit](https://reddit.com/r/docker)

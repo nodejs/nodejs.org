@@ -10,7 +10,7 @@ layout: knowledge-post.hbs
 
 The [crypto](https://nodejs.org/api/crypto.html) module is a wrapper for [OpenSSL](https://en.wikipedia.org/wiki/Openssl) cryptographic functions. It supports calculating hashes, authentication with HMAC, ciphers, and more!
 
-The crypto module is mostly useful as a tool for implementing [cryptographic protocols](https://en.wikipedia.org/wiki/Cryptographic_protocol) such as [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) and [https](https://en.wikipedia.org/wiki/Https). For most users, Node's built-in [tls module](https://nodejs.org/api/tls.html) and [https module](https://nodejs.org/api/https.html) should more than suffice. However, for the user that only wants to use small parts of what's needed for full-scale cryptography or is crazy/desperate enough to implement a protocol using OpenSSL and Node: Read on.
+The crypto module is mostly useful as a tool for implementing [cryptographic protocols](https://en.wikipedia.org/wiki/Cryptographic_protocol) such as [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) and [https](https://en.wikipedia.org/wiki/Https). For most users, the built-in [tls module](https://nodejs.org/api/tls.html) and [https module](https://nodejs.org/api/https.html) should more than suffice. However, for the user that only wants to use small parts of what's needed for full-scale cryptography or is crazy/desperate enough to implement a protocol using OpenSSL and Node.js: Read on.
 
 ## Hashes
 
@@ -34,13 +34,13 @@ One of the most common hash algorithms is [SHA-256](https://en.wikipedia.org/wik
 
 ### How To Calculate Hashes with Crypto
 
-Crypto has a method called `createHash` which allows you to calculate a hash. Its only argument is a string representing the hash This example finds the SHA-256 hash for the string, "Man oh man do I love node!":
+Crypto has a method called `createHash` which allows you to calculate a hash. Its only argument is a string representing the hash. This example finds the SHA-256 hash for the string, "Man oh man do I love node!":
 
 ```js
-require("crypto")
-  .createHash("sha256")
-  .update("Man oh man do I love node!")
-  .digest("hex");
+require('crypto')
+  .createHash('sha256')
+  .update('Man oh man do I love node!')
+  .digest('hex');
 ```
 
 The `update` method is used to push data to later be turned into a hash with the `digest` method. `update` can be invoked multiple times to ingest streaming data, such as buffers from a file read stream. The argument for `digest` represents the output format, and may either be "binary", "hex" or "base64". It defaults to binary.
@@ -52,9 +52,10 @@ HMAC stands for Hash-based Message Authentication Code, and is a process for app
 The API for hmacs is very similar to that of `createHash`, except that the method is called `createHmac` and it takes a key as a second argument:
 
 ```js
-require("crypto").createHmac("sha256", "password")
+require('crypto')
+  .createHmac('sha256', 'password')
   .update("If you love node so much why don't you marry it?")
-  .digest("hex");
+  .digest('hex');
 ```
 
 The resulting SHA-256 hash is unique to both the input data and the key.
@@ -83,56 +84,46 @@ Here's an example, slightly less trivial than previous examples, that uses crypt
 ```js
 #!/usr/bin/env node
 
-const crypto = require('crypto'),
-    argv = require("yargs").argv,
-    resizedIV = Buffer.allocUnsafe(16),
-    iv = crypto
-      .createHash("sha256")
-      .update("myHashedIV")
-      .digest();
+const crypto = require('crypto');
+const argv = require('yargs').argv;
+const resizedIV = Buffer.allocUnsafe(16);
+const iv = crypto.createHash('sha256').update('myHashedIV').digest();
 
 iv.copy(resizedIV);
 
 if (argv.e && argv.key) {
-    const key = crypto
-        .createHash("sha256")
-        .update(argv.key)
-        .digest(),
-        cipher = crypto.createCipheriv("aes256", key, resizedIV),
-        msg = [];
+  const key = crypto.createHash('sha256').update(argv.key).digest();
+  const cipher = crypto.createCipheriv('aes256', key, resizedIV);
+  const msg = [];
 
-    argv._.forEach( function (phrase) {
-        msg.push(cipher.update(phrase, "binary", "hex"));
-    });
+  argv._.forEach(function (phrase) {
+    msg.push(cipher.update(phrase, 'binary', 'hex'));
+  });
 
-    msg.push(cipher.final("hex"));
-    console.log(msg.join(""));
-
+  msg.push(cipher.final('hex'));
+  console.log(msg.join(''));
 } else if (argv.d && argv.key) {
-    const key = crypto
-        .createHash("sha256")
-        .update(argv.key)
-        .digest(),
-        decipher = crypto.createDecipheriv("aes256", key, resizedIV),
-        msg = [];
+  const key = crypto.createHash('sha256').update(argv.key).digest();
+  const decipher = crypto.createDecipheriv('aes256', key, resizedIV);
+  const msg = [];
 
-    argv._.forEach( function (phrase) {
-        msg.push(decipher.update(phrase, "hex", "binary"));
-    });
+  argv._.forEach(function (phrase) {
+    msg.push(decipher.update(phrase, 'hex', 'binary'));
+  });
 
-    msg.push(decipher.final("binary"));
-    console.log(msg.join(""));
+  msg.push(decipher.final('binary'));
+  console.log(msg.join(''));
 }
 ```
 
 NODE PRO TIP: The `crypto.createCipheriv()` and `crypto.createDecipheriv()` methods do not take a password, rather a `key` and an `iv` which are combined together to form a random password. The size of the `key` and `iv` depends on the chosen algorithm. A reference to common algorithms and their `key` and `iv` size is given below:
 
-| Algorithm     | Key                | iv                 |
-| ------------- | ------------------ | ------------------ |
-| aes128        | 16 byte (128 bits) | 16 byte (128 bits) |
-| aes-128-cbc   | 16 byte (128 bits) | 16 byte (128 bits) |
-| aes192        | 24 byte (192 bits) | 16 byte (128 bits) |
-| aes256        | 32 byte (256 bits) | 16 byte (128 bits) |
+| Algorithm   | Key                | iv                 |
+|-------------|--------------------|--------------------|
+| aes128      | 16 byte (128 bits) | 16 byte (128 bits) |
+| aes-128-cbc | 16 byte (128 bits) | 16 byte (128 bits) |
+| aes192      | 24 byte (192 bits) | 16 byte (128 bits) |
+| aes256      | 32 byte (256 bits) | 16 byte (128 bits) |
 
 In the code above The user entered `key` is hashed using `SHA-256 encryption` which produces a 32 byte buffer by default, this buffered key is then used as the [cryptographic key](https://en.wikipedia.org/wiki/Key_(cryptography)) in the `crypto.createCipheriv()` and `crypto.createDecipheriv()` methods. The `iv` is also hashed with `SHA-256 encryption` and is 32 byte in size but all AES (CBC mode and CFB mode) take `iv` of exactly 16 byte (128 bits) therefor another Buffer `resizedIV` is used which contains the first 16 byte of original 32 byte `iv`.
 

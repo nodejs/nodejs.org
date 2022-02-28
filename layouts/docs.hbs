@@ -5,19 +5,19 @@
 <body>
   {{> header }}
 
-  <div id="main">
+  <main id="main">
     <div class="container has-side-nav">
 
       {{> navigation key='docs'}}
 
-      <article>
+      <article dir="auto">
         {{{ contents }}}
 
         {{!> prev-next-navigation }}
       </article>
 
     </div>
-  </div>
+  </main>
 
   {{> footer }}
 </body>

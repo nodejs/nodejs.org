@@ -1,0 +1,109 @@
+// Base styles
+body {
+  box-sizing: border-box;
+  font: 400 20px/1.5 "Source Sans Pro", "Open Sans", Roboto, "San Francisco", Helvetica, Arial, sans-serif;
+  color: $node-gray;
+  margin: 0;
+  background-color: $white;
+}
+
+header,
+#main,
+footer {
+  display: flex;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 400;
+}
+
+a,
+a:link,
+a:active {
+  color: $node-green;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+a:hover {
+  color: $white;
+  background-color: $node-green;
+
+  code {
+    background-color: transparent;
+    color: $white;
+  }
+}
+
+a.imagelink {
+  display: inline-block;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+p {
+  a {
+    @include padded-link(2px);
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: none;
+}
+
+code {
+  background-color: $light-gray3;
+  font-size: 85%;
+  padding: .2em;
+}
+
+pre {
+  background-color: $node-gray;
+  border-radius: 3px;
+  padding: .75em 1.2em;
+  font-size: .8em;
+  white-space: pre;
+  color: $light-gray3;
+  overflow-x: auto;
+
+  code {
+    color: $light-gray3;
+    background-color: inherit;
+    padding: 0;
+  }
+}
+
+blockquote {
+  position: relative;
+  margin: 0;
+  padding: 0 1em;
+
+  &::before {
+    width: 6px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .14);
+    content: "";
+    display: block;
+  }
+}
+
+iframe {
+  border: none;
+}

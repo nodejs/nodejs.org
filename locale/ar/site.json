@@ -1,6 +1,7 @@
 ﻿{
   "title": "Node.js",
-  "author": "Node.js Foundation",
+  "editOnGithub":"تحرير في GitHub",
+  "author": "Node.js",
   "url": "https://nodejs.org/ar/",
   "locale": "ar",
   "language": "العربية",
@@ -10,11 +11,11 @@
   "reportNodeIssue": "Node.js أبلغ عن عطل في",
   "reportWebsiteIssue": "أبلغ عن عطل في الموقع",
   "getHelpIssue": "الحصول على مساعدة",
+  "Contributing": "المساهمة في Nodejs.org",
   "by": "من طرف",
   "all-downloads": "تحميل جميع النسخ",
   "nightly": "إصدارات ليلية",
   "unofficial-builds": "بُنْيَات غير رسمية",
-  "chakracore-nightly": "Node-ChakraCore إصدارات ليلية خاصة بـ",
   "previous": "السابق",
   "next": "التالي",
   "feeds": [
@@ -79,10 +80,15 @@
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "وثائق الاصدارات مختومة SHASUMS"
+      "text": "وثائق الاصدارات مختومة SHASUMS",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "كيفية التحقق"
     },
     "install-on-linux": {
       "text": "تثبيت Node.js باستعمال أرشيف ثنائي على لينكس"
+    },
+    "install-on-wsl": {
+      "text": "التثبيت على ويندوز في النظام الفرعي لينكس (WSL)"
     }
   },
   "docs": {
@@ -126,7 +132,7 @@
       "text": "مساهمة"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/coc.md#code-of-conduct",
+      "link": "https://github.com/nodejs/node/blob/master/doc/contributing/code-of-conduct.md",
       "text": "القواعد السلوكية"
     },
     "node-meetups": {
@@ -135,16 +141,16 @@
     }
   },
   "security": {
-    "link": "security",
+    "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
     "text": "أمن"
+  },
+  "getcertified": {
+    "link": "https://openjsf.org/certification",
+    "text": "شهادة"
   },
   "blog": {
     "link": "blog",
     "text": "المدونة"
-  },
-  "foundation": {
-    "link": "https://foundation.nodejs.org/",
-    "text": "المؤسسة"
   },
   "releases": {
     "title": "أرشيف الاصدارات",
@@ -153,6 +159,16 @@
   "links": {
     "pages": {
       "changelog": "سجل التغييرات"
+    }
+  },
+  "banners": {
+    "index": {
+      "text": "إصدارات الأمانة الجديدة متوفرة الآن لإصدارات 14.x و 12.x."
+    },
+    "blacklivesmatter": {
+      "visible": false,
+      "text": "#BlackLivesMatter",
+      "link": "black-lives-matter/"
     }
   }
 }

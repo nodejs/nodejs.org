@@ -44,6 +44,7 @@ title: 패키지 매니저로 Node.js 설치하기
 * [IBM i](#ibm-i)
 * [NetBSD](#netbsd)
 * [nvm](#nvm)
+* [nvs](#nvs)
 * [OpenBSD](#openbsd)
 * [openSUSE 와 SLE](#opensuse-and-sle)
 * [macOS](#macos)
@@ -216,7 +217,7 @@ pkgin -y install nodejs
 ## nvm
 Node Version Manager is a bash script used to manage multiple released Node.js versions. It allows
 you to perform operations like install, uninstall, switch version, etc.
-To install nvm, use this [install script](https://github.com/creationix/nvm#install-script).
+To install nvm, use this [install script](https://github.com/nvm-sh/nvm#install--update-script).
 
 On Unix / OS X systems Node.js built from source can be installed using
 [nvm](https://github.com/creationix/nvm) by installing into the location that nvm expects:
@@ -244,7 +245,7 @@ nvm uninstall 8
 ## nvm
 Node Version Manager는 Node.js의 다양한 릴리스 버전을 관리하는 bash 스크립트입니다. nvm으로
 설치, 제거, 버전 변경 같은 작업을 할 수 있습니다. nvm을 설치하려면
-[설치 스크립트](https://github.com/creationix/nvm#install-script)를 사용하세요.
+[설치 스크립트](https://github.com/nvm-sh/nvm#install--update-script)를 사용하세요.
 
 Unix / OS X 시스템에서는 소스로 빌드된 Node.js를
 [nvm](https://github.com/creationix/nvm)으로 설치할 수 있습니다.
@@ -265,6 +266,51 @@ nvm use 8
 
 ```bash
 nvm uninstall 8
+```
+
+## nvs
+
+#### Windows
+The `nvs` version manager is cross-platform and can be used on Windows, macOS, and Unix-like systems
+
+To install `nvs` on Windows go to the [release page](https://github.com/jasongin/nvs/releases) here and download the MSI installer file of the latest release.
+
+You can also use `chocolatey` to install it:
+
+```bash
+choco install nvs
+```
+
+#### macOS,UnixLike
+You can find the documentation regarding the installation steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
+
+#### Usage
+After this you can use `nvs` to switch between different versions of node.
+
+To add the latest version of node:
+
+```bash
+nvs add latest
+```
+
+Or to add the latest LTS version of node:
+
+```bash
+nvs add lts
+```
+
+Then run the `nvs use` command to add a version of node to your `PATH` for the current shell:
+
+```bash
+$ nvs use lts
+PATH -= %LOCALAPPDATA%\nvs\default
+PATH += %LOCALAPPDATA%\nvs\node\14.17.0\x64
+```
+
+To add it to `PATH` permanently, use `nvs link`:
+
+```bash
+nvs link lts
 ```
 
 <!--
@@ -416,7 +462,7 @@ cd pkgsrc/lang/nodejs && bmake install
 <!--
 ## SmartOS and illumos
 
-SmartOS images come with pkgsrc pre-installed.  On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal:
+SmartOS images come with pkgsrc pre-installed. On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal:
 
 ```bash
 pkgin -y install nodejs
@@ -447,7 +493,7 @@ cd pkgsrc/lang/nodejs && bmake install
 <!--
 ## Solus
 
-Solus provides node.js in its main repository.
+Solus provides Node.js in its main repository.
 
 ```bash
 sudo eopkg install nodejs
@@ -455,7 +501,7 @@ sudo eopkg install nodejs
 -->
 ## Solus
 
-Solus는 메인 저장소에서 node.js를 제공합니다.
+Solus는 메인 저장소에서 Node.js를 제공합니다.
 
 ```bash
 sudo eopkg install nodejs
@@ -464,7 +510,7 @@ sudo eopkg install nodejs
 <!--
 ## Void Linux
 
-Void Linux ships node.js stable in the main repository.
+Void Linux ships Node.js stable in the main repository.
 
 ```bash
 xbps-install -Sy nodejs
@@ -472,7 +518,7 @@ xbps-install -Sy nodejs
 -->
 ## Void Linux
 
-Void Linux는 메인 저장소에서 node.js 안정 버전을 제공합니다.
+Void Linux는 메인 저장소에서 Node.js 안정 버전을 제공합니다.
 
 ```bash
 xbps-install -Sy nodejs

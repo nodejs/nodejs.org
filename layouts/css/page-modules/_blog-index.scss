@@ -1,0 +1,33 @@
+.blog-index {
+  list-style: none;
+  padding: 0;
+
+  time {
+    margin-right: 1em;
+    color: $light-gray;
+  }
+
+  .summary {
+    margin-left: 1em;
+    font-size: 75%;
+  }
+}
+
+nav.pagination {
+  a {
+    @include padded-link(2px);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .blog-index,
+  [data-theme="dark"] .blog-index {
+    .summary {
+      margin-left: 0;
+      p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

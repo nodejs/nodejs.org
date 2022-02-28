@@ -33,7 +33,7 @@ See https://github.com/nodejs/node/labels/confirmed-bug for complete and current
 
 * Slide deck: [Bluemix Webinar: Deploying a Full Stack Node.js Application to IBM Bluemix](https://speakerdeck.com/bradleyholt/bluemix-webinar-deploying-a-full-stack-node-dot-js-application-to-ibm-bluemix)
 * Article by RisingStack: [How to Use Rust with Node.js When Performance Matters](http://blog.risingstack.com/how-to-use-rust-with-node-when-performance-matters/)
-* Device Atlas API now [supports Node.js](https://deviceatlas.com/blog/deviceatlas-api-node-js?utm_source=twitter&utm_medium=update&utm_campaign=node%20js%20support)
+* Device Atlas API now [supports Node.js](https://deviceatlas.com/blog/deviceatlas-api-node-js)
 * [On Maintaining a Native Node Module](http://www.voodootikigod.com/on-maintaining-a-native-node-module/) by Chris Williams
 * [nodei.co](http://twitter.com/rvagg/status/613688739030679552) is running with io.js
 * npm [3.0.0 pre-release](https://github.com/npm/npm/releases/tag/v3.0.0)

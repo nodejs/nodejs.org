@@ -25,18 +25,18 @@ values, e.g. an Object.
 ## Encoding and Decoding
 
 JavaScript provides 2 methods for encoding data structures to json and
-encoding json back to javascript objects and arrays. They are both
+encoding json back to JavaScript objects and arrays. They are both
 available on the `JSON` object that is available in the global scope.
 
-`JSON.stringify` takes a javascript object or array and returns a
+`JSON.stringify` takes a JavaScript object or array and returns a
 serialized string in the JSON format.
 
 ```js
 const data = {
-  name: "John Doe",
+  name: 'John Doe',
   age: 32,
-  title: "Vice President of JavaScript"
-}
+  title: 'Vice President of JavaScript'
+};
 
 const jsonStr = JSON.stringify(data);
 
@@ -45,11 +45,12 @@ console.log(jsonStr);
 // prints '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}'
 ```
 
-`JSON.parse` takes a JSON string and decodes it to a javascript data
+`JSON.parse` takes a JSON string and decodes it to a JavaScript data
 structure.
 
 ```js
-const jsonStr = '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}';
+const jsonStr =
+  '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}';
 
 const data = JSON.parse(jsonStr);
 
@@ -118,7 +119,7 @@ try/catch block.
 Notice that the only complex values allowed in JSON are objects and
 arrays. Functions, dates and other types are excluded. This may not
 seem to make sense at first. But remember that JSON is a data format,
-not a format for transferring complex javascript objects along with
+not a format for transferring complex JavaScript objects along with
 their functionality.
 
 ## JSON Validators
@@ -131,8 +132,8 @@ As JSON has become the most widely used data formate with well-defined rules to 
 
 ## JSON in other languages
 
-Although JSON was inspired by the simplicity of javascript data
-structures, it's use is not limited to the javascript language. Many
+Although JSON was inspired by the simplicity of JavaScript data
+structures, it's use is not limited to the JavaScript language. Many
 other languages have methods of transferring native hashes and lists
 into stringified JSON objects. Here's a quick example in ruby.
 

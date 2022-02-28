@@ -1,0 +1,26 @@
+table.release-schedule {
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 3px $black-alpha-12, 0 2px 2px $black-alpha-0f;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+
+
+  td,
+  th {
+    padding: 10px 6px;
+  }
+
+  > thead tr {
+    color: $black-alpha-80;
+    text-transform: uppercase;
+    font-size: smaller;
+    font-weight: 700;
+  }
+  tr:only-child,
+  tr:nth-child(even) {
+    background-color: $light-gray3;
+  }
+}

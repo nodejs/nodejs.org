@@ -1,0 +1,18 @@
+# Localization teams
+/locale/ar/ @nodejs/nodejs-ar
+/locale/ca/ # No Catalan team
+/locale/de/ @nodejs/nodejs-de
+/locale/es/ @nodejs/nodejs-es
+/locale/fa/ @nodejs/nodejs-fa
+/locale/fr/ @nodejs/nodejs-fr
+/locale/gl/ # No Galacian team
+/locale/it/ @nodejs/nodejs-it
+/locale/ja/ @nodejs/nodejs-ja
+/locale/ko/ @nodejs/nodejs-ko
+/locale/pt-br/ @nodejs/nodejs-pt
+/locale/ro/ @nodejs/nodejs-ro
+/locale/ru/ @nodejs/nodejs-ru
+/locale/tr/ @nodejs/nodejs-tr
+/locale/uk/ @nodejs/nodejs-uk
+/locale/zh-cn/ @nodejs/nodejs-cn
+/locale/zh-tw/ @nodejs/nodejs-tw

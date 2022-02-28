@@ -44,7 +44,7 @@ d.enter();
 
 // module c.js
 const dep = require('some-dep');
-dep.method();  // Uh-oh! This method doesn't actually exist.
+dep.method(); // Uh-oh! This method doesn't actually exist.
 ```
 
 Since module `b` enters the domain but never exits any uncaught exception will
@@ -63,12 +63,14 @@ const c = require('./c');
 
 // 모듈 b.js
 const d = require('domain').create();
-d.on('error', () => { /* 모든 것을 무시합니다. */ });
+d.on('error', () => {
+  /* 모든 것을 무시합니다. */
+});
 d.enter();
 
 // 모듈 c.js
 const dep = require('some-dep');
-dep.method();  // 앗! 이 메서드는 실제로 존재하지 않습니다.
+dep.method(); // 앗! 이 메서드는 실제로 존재하지 않습니다.
 ```
 
 모듈 `b`가 도메인에 들어갔지만 나오지는 않았으므로 잡지 않은 모든 예외가 무시될 것입니다. 이는
@@ -117,10 +119,14 @@ const net = require('net');
 const d = domain.create();
 d.on('error', (err) => console.error(err.message));
 
-d.run(() => net.createServer((c) => {
-  c.end();
-  c.write('bye');
-}).listen(8000));
+d.run(() =>
+  net
+    .createServer((c) => {
+      c.end();
+      c.write('bye');
+    })
+    .listen(8000)
+);
 ```
 
 <!--
@@ -139,7 +145,7 @@ d.on('error', () => console.error('d intercepted an error'));
 
 d.run(() => {
   const server = net.createServer((c) => {
-    const e = domain.create();  // No 'error' handler being set.
+    const e = domain.create(); // No 'error' handler being set.
     e.run(() => {
       // This will not be caught by d's error handler.
       setImmediate(() => {
@@ -172,17 +178,19 @@ const d = domain.create();
 d.on('error', () => console.error('d intercepted an error'));
 
 d.run(() => {
-  const server = net.createServer((c) => {
-    const e = domain.create();  // 'error' 핸들러가 설정되지 않았습니다.
-    e.run(() => {
-      // 이 오류는 d의 오류 핸들러가 잡지 못합니다.
-      setImmediate(() => {
-        throw new Error('thrown from setImmediate');
+  const server = net
+    .createServer((c) => {
+      const e = domain.create(); // 'error' 핸들러가 설정되지 않았습니다.
+      e.run(() => {
+        // 이 오류는 d의 오류 핸들러가 잡지 못합니다.
+        setImmediate(() => {
+          throw new Error('thrown from setImmediate');
+        });
+        // 그런데도 이 오류는 d의 오류 핸들러에 버블링 될 것입니다.
+        throw new Error('immediately thrown');
       });
-      // 그런데도 이 오류는 d의 오류 핸들러에 버블링 될 것입니다.
-      throw new Error('immediately thrown');
-    });
-  }).listen(8080);
+    })
+    .listen(8080);
 });
 ```
 
@@ -221,7 +229,7 @@ example of the failing of error propagation:
 
 ```js
 const d1 = domain.create();
-d1.foo = true;  // custom member to make more visible in console
+d1.foo = true; // custom member to make more visible in console
 d1.on('error', (er) => { /* handle error */ });
 
 d1.run(() => setTimeout(() => {
@@ -249,22 +257,26 @@ d1.run(() => setTimeout(() => {
 
 ```js
 const d1 = domain.create();
-d1.foo = true;  // 콘솔에서 더 가시적으로 만드는 커스텀 멤버
-d1.on('error', (er) => { /* 오류 처리 */ });
+d1.foo = true; // 콘솔에서 더 가시적으로 만드는 커스텀 멤버
+d1.on('error', (er) => {
+  /* 오류 처리 */
+});
 
-d1.run(() => setTimeout(() => {
-  const d2 = domain.create();
-  d2.bar = 43;
-  d2.on('error', (er) => console.error(er.message, domain._stack));
-  d2.run(() => {
-    setTimeout(() => {
+d1.run(() =>
+  setTimeout(() => {
+    const d2 = domain.create();
+    d2.bar = 43;
+    d2.on('error', (er) => console.error(er.message, domain._stack));
+    d2.run(() => {
       setTimeout(() => {
-        throw new Error('outer');
+        setTimeout(() => {
+          throw new Error('outer');
+        });
+        throw new Error('inner');
       });
-      throw new Error('inner');
     });
-  });
-}));
+  })
+);
 ```
 
 <!--
@@ -323,7 +335,7 @@ let uid = 0;
 // Setting up temporary resources
 const buf = Buffer.alloc(FILESIZE);
 for (let i = 0; i < buf.length; i++)
-  buf[i] = ((Math.random() * 1e3) % 78) + 48;  // Basic ASCII
+  buf[i] = ((Math.random() * 1e3) % 78) + 48; // Basic ASCII
 fs.writeFileSync(FILENAME, buf);
 
 function ConnectionResource(c) {
@@ -412,7 +424,7 @@ function pipeData(cr) {
   d3.add(ps);
   ps.on('connection', (conn) => {
     connectionList.push(conn);
-    conn.on('data', () => {});  // don't care about incoming data.
+    conn.on('data', () => {}); // don't care about incoming data.
     conn.on('close', () => {
       connectionList.splice(connectionList.indexOf(conn), 1);
     });
@@ -468,8 +480,7 @@ let uid = 0;
 
 // 임시 자원을 설정합니다
 const buf = Buffer.alloc(FILESIZE);
-for (let i = 0; i < buf.length; i++)
-  buf[i] = ((Math.random() * 1e3) % 78) + 48;  // Basic ASCII
+for (let i = 0; i < buf.length; i++) buf[i] = ((Math.random() * 1e3) % 78) + 48; // Basic ASCII
 fs.writeFileSync(FILENAME, buf);
 
 function ConnectionResource(c) {
@@ -477,7 +488,7 @@ function ConnectionResource(c) {
   this._connection = c;
   this._alive = true;
   this._domain = domain.create();
-  this._id = Math.random().toString(32).substr(2).substr(0, 8) + (++uid);
+  this._id = Math.random().toString(32).substr(2).substr(0, 8) + ++uid;
 
   this._domain.add(c);
   this._domain.on('error', () => {
@@ -506,18 +517,24 @@ ConnectionResource.prototype.write = function write(chunk) {
 };
 
 // 예제 시작
-net.createServer((c) => {
-  const cr = new ConnectionResource(c);
+net
+  .createServer((c) => {
+    const cr = new ConnectionResource(c);
 
-  const d1 = domain.create();
-  fs.open(FILENAME, 'r', d1.intercept((fd) => {
-    streamInParts(fd, cr, 0);
-  }));
+    const d1 = domain.create();
+    fs.open(
+      FILENAME,
+      'r',
+      d1.intercept((fd) => {
+        streamInParts(fd, cr, 0);
+      })
+    );
 
-  pipeData(cr);
+    pipeData(cr);
 
-  c.on('close', () => cr.end());
-}).listen(8080);
+    c.on('close', () => cr.end());
+  })
+  .listen(8080);
 
 function streamInParts(fd, cr, pos) {
   const d2 = domain.create();
@@ -526,24 +543,33 @@ function streamInParts(fd, cr, pos) {
     print('d2 error:', er.message);
     cr.end();
   });
-  fs.read(fd, Buffer.alloc(10), 0, 10, pos, d2.intercept((bRead, buf) => {
-    if (!cr.isAlive()) {
-      return fs.close(fd);
-    }
-    if (cr._connection.bytesWritten < FILESIZE) {
-      // 문서에는 콜백이 선택사항으로 나와 있지만
-      // 작성이 실패하면 예외가 던져진다고는 얘기하지 않았습니다.
-      const goodtogo = cr.write(buf);
-      if (goodtogo) {
-        setTimeout(() => streamInParts(fd, cr, pos + bRead), 1000);
-      } else {
-        cr._connection.once('drain', () => streamInParts(fd, cr, pos + bRead));
+  fs.read(
+    fd,
+    Buffer.alloc(10),
+    0,
+    10,
+    pos,
+    d2.intercept((bRead, buf) => {
+      if (!cr.isAlive()) {
+        return fs.close(fd);
       }
-      return;
-    }
-    cr.end(buf);
-    fs.close(fd);
-  }));
+      if (cr._connection.bytesWritten < FILESIZE) {
+        // 문서에는 콜백이 선택사항으로 나와 있지만
+        // 작성이 실패하면 예외가 던져진다고는 얘기하지 않았습니다.
+        const goodtogo = cr.write(buf);
+        if (goodtogo) {
+          setTimeout(() => streamInParts(fd, cr, pos + bRead), 1000);
+        } else {
+          cr._connection.once('drain', () =>
+            streamInParts(fd, cr, pos + bRead)
+          );
+        }
+        return;
+      }
+      cr.end(buf);
+      fs.close(fd);
+    })
+  );
 }
 
 function pipeData(cr) {
@@ -558,7 +584,7 @@ function pipeData(cr) {
   d3.add(ps);
   ps.on('connection', (conn) => {
     connectionList.push(conn);
-    conn.on('data', () => {});  // 들어오는 데이터는 무시합니다.
+    conn.on('data', () => {}); // 들어오는 데이터는 무시합니다.
     conn.on('close', () => {
       connectionList.splice(connectionList.indexOf(conn), 1);
     });
@@ -585,18 +611,17 @@ process.on('exit', () => {
       fs.unlinkSync(pipeList[i]);
     }
     fs.unlinkSync(FILENAME);
-  } catch (e) { }
+  } catch (e) {}
 });
-
 ```
 
 <!--
-- When a new connection happens, concurrently:
-  - Open a file on the file system
-  - Open Pipe to unique socket
-- Read a chunk of the file asynchronously
-- Write chunk to both the TCP connection and any listening sockets
-- If any of these resources error, notify all other attached resources that
+* When a new connection happens, concurrently:
+  * Open a file on the file system
+  * Open Pipe to unique socket
+* Read a chunk of the file asynchronously
+* Write chunk to both the TCP connection and any listening sockets
+* If any of these resources error, notify all other attached resources that
   they need to clean up and shutdown
 
 As we can see from this example a lot more must be done to properly clean up
@@ -612,12 +637,12 @@ application despite an unexpected exception. This example demonstrates the
 fallacy behind that idea.
 -->
 
-- 새로운 연결이 이뤄지면 동시에
-  - 파일시스템에서 파일을 엽니다.
-  - 유일한 소켓과 파이프를 연결합니다.
-- 파일의 청크를 비동기로 읽습니다.
-- TCP 연결과 리스닝 중인 모든 소켓에 청크를 작성합니다.
-- 이러한 자원에서 오류가 발생하면 정리하고 종료해야 하는 모든 연결된 자원에 알립니다.
+* 새로운 연결이 이뤄지면 동시에
+  * 파일시스템에서 파일을 엽니다.
+  * 유일한 소켓과 파이프를 연결합니다.
+* 파일의 청크를 비동기로 읽습니다.
+* TCP 연결과 리스닝 중인 모든 소켓에 청크를 작성합니다.
+* 이러한 자원에서 오류가 발생하면 정리하고 종료해야 하는 모든 연결된 자원에 알립니다.
 
 이 예제에서 알 수 있듯이 도메인 API로 엄격하게 수행할 수 있는 것보다 실패했을 때 자원을 적절하게
 정리하려면 더 많은 작업을 해야 합니다. 도메인이 제공하는 모든 것은 예외를 수집하는 메커니즘입니다.
@@ -726,16 +751,18 @@ DataStream.prototype.data = function data(chunk) {
 const domain = require('domain');
 const net = require('net');
 
-const server = net.createServer((c) => {
-  // 모든 곳에서 인자를 전달할 수 없으므로
-  // 연결 내에서 이벤트 간에 데이터를 전파하려고 도메인을 사용합니다.
-  const d = domain.create();
-  d.data = { connection: c };
-  d.add(c);
-  // 데모용으로 쓸모없는 비동기 데이터 변환을 하는 Mock 클래스
-  const ds = new DataStream(dataTransformed);
-  c.on('data', (chunk) => ds.data(chunk));
-}).listen(8080, () => console.log('listening on 8080'));
+const server = net
+  .createServer((c) => {
+    // 모든 곳에서 인자를 전달할 수 없으므로
+    // 연결 내에서 이벤트 간에 데이터를 전파하려고 도메인을 사용합니다.
+    const d = domain.create();
+    d.data = { connection: c };
+    d.add(c);
+    // 데모용으로 쓸모없는 비동기 데이터 변환을 하는 Mock 클래스
+    const ds = new DataStream(dataTransformed);
+    c.on('data', (chunk) => ds.data(chunk));
+  })
+  .listen(8080, () => console.log('listening on 8080'));
 
 function dataTransformed(chunk) {
   // 실패! DataStream 인스턴스도 도메인을 생성했으므로
@@ -770,7 +797,7 @@ DataStream.prototype.data = function data(chunk) {
 <!--
 The above shows that it is difficult to have more than one asynchronous API
 attempt to use domains to propagate data. This example could possibly be fixed
-by assigning `parent: domain.active` in the `DataStream` constructor.  Then
+by assigning `parent: domain.active` in the `DataStream` constructor. Then
 restoring it via `domain.active = domain.active.data.parent` just before the
 user's callback is called. Also the instantiation of `DataStream` in the
 `'connection'` callback must be run inside `d.run()`, instead of simply using

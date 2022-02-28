@@ -200,7 +200,7 @@ cd pkgsrc/lang/nodejs && bmake install
 <!-- ## SmartOS and illumos -->
 ## <!--smartos-and-illumos-->SmartOS と illumos
 
-<!-- SmartOS images come with pkgsrc pre-installed.  On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal: -->
+<!-- SmartOS images come with pkgsrc pre-installed. On other illumos distributions, first install **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, then you may install the binary package as normal: -->
 SmartOS のイメージには pkgsrc が付属しています。一方、illumos ディストリビューションの場合は、まず **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)** をインストールし、それから、通常通りバイナリパッケージをインストールすることが出来ます:
 
 ```bash
@@ -216,7 +216,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## Solus
 
-Solus provides node.js in its main repository.
+Solus provides Node.js in its main repository.
 
 ```bash
 sudo eopkg install nodejs
@@ -224,8 +224,8 @@ sudo eopkg install nodejs
 
 ## Void Linux
 
-<!-- Void Linux ships node.js stable in the main repository. -->
-Void Linux にはメインリポジトリに node.js の安定版があります。
+<!-- Void Linux ships Node.js stable in the main repository. -->
+Void Linux にはメインリポジトリに Node.js の安定版があります。
 
 ```bash
 xbps-install -Sy nodejs

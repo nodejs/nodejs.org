@@ -20,7 +20,7 @@ We have three releases: [Node v4.3.1 (LTS)](https://nodejs.org/en/blog/release/v
 
 As a result of an iteration on the official logo, we are proud to introduce and unveil our new logo
 
-<img src="https://cloud.githubusercontent.com/assets/43438/13207731/d7c62f3e-d94c-11e5-8ff8-f32c74b13cc3.png" alt="Node.js Logo" width="200">
+<img src="/static/images/blog/weekly-update/d7c62f3e-d94c-11e5-8ff8-f32c74b13cc3.png" alt="Node.js Logo" width="200">
 
 ### Upcoming Events
 

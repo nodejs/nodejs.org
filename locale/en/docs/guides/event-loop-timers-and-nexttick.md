@@ -48,7 +48,7 @@ order of operations.
    └───────────────────────────┘
 ```
 
-*note: each box will be referred to as a "phase" of the event loop.*
+> Each box will be referred to as a "phase" of the event loop.
 
 Each phase has a FIFO queue of callbacks to execute. While each phase is
 special in its own way, generally, when the event loop enters a given
@@ -65,11 +65,11 @@ result, long running callbacks can allow the poll phase to run much
 longer than a timer's threshold. See the [**timers**](#timers) and
 [**poll**](#poll) sections for more details.
 
-_**NOTE:** There is a slight discrepancy between the Windows and the
-Unix/Linux implementation, but that's not important for this
-demonstration. The most important parts are here. There are actually
-seven or eight steps, but the ones we care about — ones that Node.js
-actually uses - are those above._
+> There is a slight discrepancy between the Windows and the
+> Unix/Linux implementation, but that's not important for this
+> demonstration. The most important parts are here. There are actually
+> seven or eight steps, but the ones we care about — ones that Node.js
+> actually uses - are those above.
 
 ## Phases Overview
 
@@ -99,8 +99,7 @@ scheduled after the specified amount of time has passed; however,
 Operating System scheduling or the running of other callbacks may delay
 them.
 
-_**Note**: Technically, the [**poll** phase](#poll) controls when timers
-are executed._
+> Technically, the [**poll** phase](#poll) controls when timers are executed.
 
 For example, say you schedule a timeout to execute after a 100 ms
 threshold, then your script starts asynchronously reading a file which
@@ -145,11 +144,11 @@ the timer's callback. In this example, you will see that the total delay
 between the timer being scheduled and its callback being executed will
 be 105ms.
 
-Note: To prevent the **poll** phase from starving the event loop, [libuv][]
-(the C library that implements the Node.js
-event loop and all of the asynchronous behaviors of the platform)
-also has a hard maximum (system dependent) before it stops polling for
-more events.
+> To prevent the **poll** phase from starving the event loop, [libuv][]
+> (the C library that implements the Node.js
+> event loop and all of the asynchronous behaviors of the platform)
+> also has a hard maximum (system dependent) before it stops polling for
+> more events.
 
 ### pending callbacks
 
@@ -174,7 +173,7 @@ either the queue has been exhausted, or the system-dependent hard limit
 is reached.
 
 * _If the **poll** queue **is empty**_, one of two more things will
-happen:
+  happen:
   * If scripts have been scheduled by `setImmediate()`, the event loop
   will end the **poll** phase and continue to the **check** phase to
   execute those scheduled scripts.
@@ -312,8 +311,10 @@ it doesn't have to be. Take this code snippet for example:
 ```js
 function apiCall(arg, callback) {
   if (typeof arg !== 'string')
-    return process.nextTick(callback,
-                            new TypeError('argument should be string'));
+    return process.nextTick(
+      callback,
+      new TypeError('argument should be string')
+    );
 }
 ```
 
@@ -339,11 +340,13 @@ Take this snippet for example:
 let bar;
 
 // this has an asynchronous signature, but calls callback synchronously
-function someAsyncApiCall(callback) { callback(); }
+function someAsyncApiCall(callback) {
+  callback();
+}
 
 // the callback is called before `someAsyncApiCall` completes.
 someAsyncApiCall(() => {
-  // since someAsyncApiCall has completed, bar hasn't been assigned any value
+  // since someAsyncApiCall hasn't completed, bar hasn't been assigned any value
   console.log('bar', bar); // undefined
 });
 
@@ -411,9 +414,8 @@ percentage of the packages on npm. Every day more new modules are being
 added, which means every day we wait, more potential breakages occur.
 While they are confusing, the names themselves won't change.
 
-*We recommend developers use `setImmediate()` in all cases because it's
-easier to reason about (and it leads to code that's compatible with a
-wider variety of environments, like browser JS.)*
+> We recommend developers use `setImmediate()` in all cases because it's
+> easier to reason about.
 
 ## Why use `process.nextTick()`?
 
@@ -429,10 +431,10 @@ One example is to match the user's expectations. Simple example:
 
 ```js
 const server = net.createServer();
-server.on('connection', (conn) => { });
+server.on('connection', (conn) => {});
 
 server.listen(8080);
-server.on('listening', () => { });
+server.on('listening', () => {});
 ```
 
 Say that `listen()` is run at the beginning of the event loop, but the
