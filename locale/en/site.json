@@ -168,11 +168,6 @@
       "text": "New security releases now available for Node.js 12, 14, 16, and 17 release lines",
       "link": "https://nodejs.org/en/blog/vulnerability/jan-2022-security-releases/"
     },
-    "saveukraine": {
-      "visible": true,
-      "text": "#SupportUkraine",
-      "link": "https://twitter.com/ua_parliament/status/1498266783173824517"
-    },
     "blacklivesmatter": {
       "visible": false,
       "text": "#BlackLivesMatter",
