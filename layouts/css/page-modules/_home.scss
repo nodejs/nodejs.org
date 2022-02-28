@@ -47,18 +47,18 @@
   }
 }
 
-.home-banner {
-  opacity: 1;
-  transition: opacity .2s ease-in-out;
+// .home-banner {
+//   opacity: 1;
+//   transition: opacity .2s ease-in-out;
 
-  &:hover {
-    opacity: .85;
-  }
+//   &:hover {
+//     opacity: .85;
+//   }
 
-  > img {
-    border-radius: 2px;
-  }
-}
+//   > img {
+//     border-radius: 2px;
+//   }
+// }
 
 .home-downloadblock {
   display: inline-block;
@@ -90,14 +90,14 @@
  * BLM CTA button styles.
  */
 
-.home-blacklivesmatterblock {
+.home-banner {
   display: block;
   font-size: 16px;
   height: 4rem;
   position: relative;
 }
 
-.home-blacklivesmatterbutton {
+.home-banner-button {
   color: $white !important;
   display: block;
   font-size: 130%;

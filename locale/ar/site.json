@@ -165,6 +165,11 @@
     "index": {
       "text": "إصدارات الأمانة الجديدة متوفرة الآن لإصدارات 14.x و 12.x."
     },
+    "saveukraine": {
+      "visible": true,
+      "text": "#SupportUkraine",
+      "link": "https://twitter.com/ua_parliament/status/1498266783173824517"
+    },
     "blacklivesmatter": {
       "visible": false,
       "text": "#BlackLivesMatter",
