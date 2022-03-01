@@ -2,7 +2,7 @@
 layout: support-ukraine.hbs
 ---
 
-<iframe width="100%" height="400" src="https://www.youtube.com/embed/SDJHUMzIlLo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="400" src="https://www.youtube-nocookie.com/embed/SDJHUMzIlLo" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # 🇺🇦 Support Ukraine
 
