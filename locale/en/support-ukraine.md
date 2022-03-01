@@ -6,10 +6,7 @@ layout: support-ukraine.hbs
 
 # 🇺🇦 Support Ukraine
 
-At very same moment you're watching this page, Russia attacks Ukrainian cities and kills Ukrainian civil people. It's violence that not acceptable by any war conflict, but it's real.
-
-## Donate
-
 * [Red Cross in Ukraine](https://donate.redcrossredcrescent.org/ua/donate)
 * [Charitable Foundation "COME BACK ALIVE"](https://savelife.in.ua/en/donate)
 * [Ukrainian army donate](https://uahelp.monobank.ua)
+* [Ukrainian army donate (crypto)](https://cashmost.com/army)
