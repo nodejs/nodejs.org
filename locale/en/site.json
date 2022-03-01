@@ -163,20 +163,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2022-01-04T16:00:00.000Z",
-      "endDate": "2022-01-25T16:00:00.000Z",
-      "text": "New security releases now available for Node.js 12, 14, 16, and 17 release lines",
-      "link": "https://nodejs.org/en/blog/vulnerability/jan-2022-security-releases/"
-    },
-    "saveukraine": {
-      "visible": true,
+      "startDate": "2022-02-24T16:00:00.000Z",
+      "endDate": "2022-03-24T16:00:00.000Z",
       "text": "#SupportUkraine",
-      "link": "support-ukraine/"
-    },
-    "blacklivesmatter": {
-      "visible": false,
-      "text": "#BlackLivesMatter",
-      "link": "black-lives-matter/"
+      "link": "en/support-ukraine/"
     }
   }
 }

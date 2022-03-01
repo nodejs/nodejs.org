@@ -12,18 +12,6 @@
 
         {{{ contents }}}
 
-        {{#if site.banners.saveukraine.visible}}
-          <div class="home-banner">
-            <a tabindex="0" role="button" aria-pressed="false" class="home-banner-button" href="{{ site.banners.saveukraine.link }}">{{ site.banners.saveukraine.text }}</a>
-          </div>
-        {{/if}}
-
-        {{#if site.banners.blacklivesmatter.visible}}
-          <div class="home-banner">
-            <a tabindex="0" role="button" aria-pressed="false" class="home-banner-button" href="{{ site.banners.blacklivesmatter.link }}">{{ site.banners.blacklivesmatter.text }}</a>
-          </div>
-        {{/if}}
-
         {{#if ( betweenDate site.banners.index.startDate site.banners.index.endDate ) }}
           <p class="home-version home-version-banner">
             <a href="{{ site.banners.index.link }}">{{ site.banners.index.text }}</a>
