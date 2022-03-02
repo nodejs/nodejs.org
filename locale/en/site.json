@@ -163,15 +163,11 @@
   },
   "banners": {
     "index": {
-      "startDate": "2022-01-04T16:00:00.000Z",
-      "endDate": "2022-01-25T16:00:00.000Z",
-      "text": "New security releases now available for Node.js 12, 14, 16, and 17 release lines",
-      "link": "https://nodejs.org/en/blog/vulnerability/jan-2022-security-releases/"
-    },
-    "blacklivesmatter": {
-      "visible": false,
-      "text": "#BlackLivesMatter",
-      "link": "black-lives-matter/"
+      "startDate": "2022-02-28T16:00:00.000Z",
+      "endDate": "2022-03-21T16:00:00.000Z",
+      "rawHTML": "<p class=\"home-version home-version-banner\" style=\"font-size: large; text-align: left; line-height: 1.25; \">We stand with the people of Ukraine. We encourage compassion and hope for peace. Please support humanitarian efforts for the Ukraine crisis through the <a href=\"https://www.icrc.org/en/donate/ukraine\">International Committee of the Red Cross</a>. #StandWithUkraine</p>",
+      "text": "Delete the rawHTML above and use this text entry for most things.",
+      "link": "/destination-for-when-using-text-and-not-rawHTML"
     }
   }
 }
