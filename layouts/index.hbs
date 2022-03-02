@@ -12,16 +12,14 @@
 
         {{{ contents }}}
 
-        {{#if site.banners.blacklivesmatter.visible}}
-          <div class="home-blacklivesmatterblock">
-            <a tabindex="0" role="button" aria-pressed="false" class="home-blacklivesmatterbutton" href="{{ site.banners.blacklivesmatter.link }}">{{ site.banners.blacklivesmatter.text }}</a>
-          </div>
-        {{/if}}
-
-        {{#if ( betweenDate site.banners.index.startDate site.banners.index.endDate ) }}
-          <p class="home-version home-version-banner">
-            <a href="{{ site.banners.index.link }}">{{ site.banners.index.text }}</a>
-          </p>
+        {{#if ( betweenDate site.banners.index.startDate site.banners.index.endDate )}}
+            {{#if site.banners.index.rawHTML}}
+              {{{ site.banners.index.rawHTML }}}
+            {{else}}}
+              <p class="home-version home-version-banner">
+                <a href="{{ site.banners.index.link }}">{{ site.banners.index.text }}</a>
+              </p>
+            {{/if}}
         {{/if}}
 
         <h2 id="home-downloadhead" data-dl-local="{{ labels.download-for }}">{{ labels.download }}</h2>
