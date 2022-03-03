@@ -47,6 +47,19 @@
   }
 }
 
+.home-banner {
+  opacity: 1;
+  transition: opacity .2s ease-in-out;
+
+  &:hover {
+    opacity: .85;
+  }
+
+  > img {
+    border-radius: 2px;
+  }
+}
+
 .home-downloadblock {
   display: inline-block;
   margin: 0 8px;
@@ -77,14 +90,14 @@
  * BLM CTA button styles.
  */
 
-.home-banner {
+.home-blacklivesmatterblock {
   display: block;
   font-size: 16px;
   height: 4rem;
   position: relative;
 }
 
-.home-banner-button {
+.home-blacklivesmatterbutton {
   color: $white !important;
   display: block;
   font-size: 130%;
