@@ -81,6 +81,6 @@
     "stylelint-config-twbs-bootstrap": "^3.0.1",
     "tape": "^5.5.2",
     "vnu-jar": "21.10.12",
-    "wait-on": "^6.0.0"
+    "wait-on": "^6.0.1"
   }
 }
