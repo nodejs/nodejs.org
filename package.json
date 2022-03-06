@@ -33,7 +33,6 @@
     "@metalsmith/markdown": "^1.4.0",
     "@metalsmith/permalinks": "^2.4.0",
     "autoprefixer": "^10.4.2",
-    "cheerio": "^0.22.0",
     "graceful-fs": "^4.2.9",
     "handlebars": "^4.7.7",
     "jquery": "^3.6.0",
