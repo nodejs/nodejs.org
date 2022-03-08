@@ -143,8 +143,7 @@ function buildLocale(source, locale, opts) {
       pagination({
         path: 'blog/year',
         iteratee: (post, idx) => ({
-          post,
-          displaySummary: idx < 10
+          post
         })
       })
     )
