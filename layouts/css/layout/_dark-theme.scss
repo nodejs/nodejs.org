@@ -3,6 +3,10 @@
     background-image: url("/static/images/light-mode.svg");
   }
 
+  body {
+    background-color: #090c14;
+  }
+
   body,
   .blogpost-meta {
     color: $white;
@@ -99,7 +103,7 @@
   }
 
   footer {
-    margin-top: 0 !important;
+    // margin-top: 0 !important;
     background-color: $dark-black2;
     .openjsfoundation-footer {
       background-color: $dark-black2;
