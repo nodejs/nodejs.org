@@ -24,11 +24,8 @@
 @import "page-modules/resources";
 @import "vendor/prism-tomorrow";
 
-$transitionTime: .24s;
 * {
-  transition: background-color $transitionTime ease;
-  -moz-transition: background-color $transitionTime ease;
-  -webkit-transition: background-color $transitionTime ease;
+  transition: background-color .24s ease;
 }
 
 article a {
