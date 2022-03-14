@@ -4,7 +4,7 @@
   }
 
   body {
-    background-color: #090c14;
+    background-color: $dark-black;
   }
 
   body,
@@ -103,6 +103,11 @@
   }
 
   footer {
+
+    @media (max-width: 481px) {
+      margin-top: 0 !important;
+    }
+
     background-color: $dark-black2;
     .openjsfoundation-footer {
       background-color: $dark-black2;
