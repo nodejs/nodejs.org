@@ -24,6 +24,10 @@
 @import "page-modules/resources";
 @import "vendor/prism-tomorrow";
 
+* {
+  transition: background-color .24s ease;
+}
+
 article a {
   word-break: break-word;
 }
