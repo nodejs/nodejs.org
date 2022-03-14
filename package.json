@@ -61,7 +61,7 @@
   "devDependencies": {
     "chokidar": "^3.5.3",
     "cross-env": "^7.0.3",
-    "eslint": "^8.10.0",
+    "eslint": "^8.11.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-semistandard": "^16.0.0",
     "eslint-plugin-import": "^2.25.4",
