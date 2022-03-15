@@ -41,7 +41,7 @@ Here's the notable changes as an example for test
 $ npm run serve
 ```
 ```js
-console.log("Hello World");
+console.log('Hello World');
 ```
 
 <a id="15.0.0"></a>

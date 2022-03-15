@@ -9,6 +9,7 @@
 @import "layout/grid";
 @import "layout/main";
 @import "layout/lists";
+@import "layout/dark-theme";
 @import "page-modules/jsfoundation";
 @import "page-modules/header";
 @import "page-modules/footer";
@@ -21,8 +22,11 @@
 @import "page-modules/prev-next-navigation";
 @import "page-modules/release-schedule";
 @import "page-modules/resources";
-@import "page-modules/spinner";
 @import "vendor/prism-tomorrow";
+
+* {
+  transition: background-color .24s ease;
+}
 
 article a {
   word-break: break-word;

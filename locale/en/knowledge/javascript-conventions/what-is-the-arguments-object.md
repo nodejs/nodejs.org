@@ -10,6 +10,11 @@ difficulty: 4
 layout: knowledge-post.hbs
 ---
 
+This page is not actively maintained and may be outdated. Please refer to [MDN's `arguments` page](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments) instead.
+
+<details>
+<summary>Original contents</summary>
+
 The `arguments` object is a special construct available inside all
 function calls. It represents the list of arguments that were passed
 in when invoking the function. Since JavaScript allows functions to be
@@ -24,11 +29,11 @@ property of `arguments` is callee, which ES5 forbids to use in `strict mode` mor
 properties of `arguments`.
 
 ```js
-const myfunc = function(one) {
+const myfunc = function (one) {
   arguments[0] === one;
   arguments[1] === 2;
   arguments.length === 3;
-}
+};
 
 myfunc(1, 2, 3);
 ```
@@ -41,10 +46,10 @@ methods, e.g. `arguments.sort()` raises a TypeError. Instead, you need to
 copy the values into a true array first. With the advent of ES6 `Array.from()` method this is quite straightforward.
 
 ```js
-const myfunc = function(a, b, c) {
+const myfunc = function (a, b, c) {
   const args = Array.from(arguments);
-  console.log(args) // [1, 2, 3]
-}
+  console.log(args); // [1, 2, 3]
+};
 
 myfunc(1, 2, 3);
 ```
@@ -58,16 +63,8 @@ invoked using call or apply. This technique also suggests another way
 to convert `arguments` into a true array using the `Array.slice` method.
 
 ```js
-myfunc.apply(obj, arguments).
-
-// concat arguments onto the
-Array.prototype.concat.apply([1,2,3], arguments);
-
 // turn arguments into a true array
 const args = Array.prototype.slice.call(arguments);
-
-// cut out first argument
-args = Array.prototype.slice.call(arguments, 1);
 ```
 
 ### Arguments object in arrow function
@@ -77,7 +74,9 @@ The `arrow functions` were added in the ECMAScript 2015 (ES6) specification as a
 ```js
 const myfunc = (...args) => {
   console.log('first parameter is ', args[0]);
-}
+};
 
 myfunc(1, 2, 3);
 ```
+
+</details>
