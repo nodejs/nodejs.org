@@ -166,7 +166,7 @@
       "startDate": "2022-03-14T12:00:00.000Z",
       "endDate": "2022-03-28T12:00:00.000Z",
       "text": "OpenSSL security releases may require Node.js security releases",
-      "link": "https://nodejs.org/en/blog/vulnerability/openssl-and-high-severity-fixes-mar-2022/"
+      "link": "https://nodejs.org/en/blog/vulnerability/mar-2022-security-releases/"
     },
     "blacklivesmatter": {
       "visible": false,
