@@ -163,10 +163,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2022-01-04T16:00:00.000Z",
-      "endDate": "2022-01-25T16:00:00.000Z",
-      "text": "New security releases now available for Node.js 12, 14, 16, and 17 release lines",
-      "link": "https://nodejs.org/en/blog/vulnerability/jan-2022-security-releases/"
+      "startDate": "2022-03-14T12:00:00.000Z",
+      "endDate": "2022-03-28T12:00:00.000Z",
+      "text": "OpenSSL security releases may require Node.js security releases",
+      "link": "https://nodejs.org/en/blog/vulnerability/openssl-and-high-severity-fixes-mar-2022/"
     },
     "blacklivesmatter": {
       "visible": false,
