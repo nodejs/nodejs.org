@@ -17,7 +17,7 @@ layout: about.hbs
 
 Текущий список Коллабораторов можно найти в [README.md](https://github.com/nodejs/node/blob/master/README.md#current-project-team-members) проекта.
 
-Руководство для Коллабораторов находится по адресу [collaborator-guide.md](https://github.com/nodejs/node/blob/master/doc/guides/collaborator-guide.md).
+Руководство для Коллабораторов находится по адресу [collaborator-guide.md](https://github.com/nodejs/node/blob/master/doc/contributing/collaborator-guide.md).
 
 ## Комитеты высшего уровня
 

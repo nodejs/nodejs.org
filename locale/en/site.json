@@ -132,7 +132,7 @@
       "text": "Contribute"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
+      "link": "https://github.com/nodejs/node/blob/master/doc/contributing/code-of-conduct.md",
       "text": "Code of Conduct"
     },
     "node-meetups": {
@@ -163,10 +163,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2021-11-30T00:00:00.000Z",
-      "endDate": "2021-12-07T00:00:00.000Z",
-      "text": "Node.js training and exams discounted through Dec. 6th",
-      "link": "https://openjsf.org/blog/2021/11/29/test-your-skills-how-good-are-you-with-node-js/"
+      "startDate": "2022-03-14T12:00:00.000Z",
+      "endDate": "2022-03-28T12:00:00.000Z",
+      "text": "OpenSSL security releases may require Node.js security releases",
+      "link": "https://nodejs.org/en/blog/vulnerability/mar-2022-security-releases/"
     },
     "blacklivesmatter": {
       "visible": false,

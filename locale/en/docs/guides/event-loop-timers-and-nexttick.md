@@ -311,8 +311,10 @@ it doesn't have to be. Take this code snippet for example:
 ```js
 function apiCall(arg, callback) {
   if (typeof arg !== 'string')
-    return process.nextTick(callback,
-                            new TypeError('argument should be string'));
+    return process.nextTick(
+      callback,
+      new TypeError('argument should be string')
+    );
 }
 ```
 
@@ -338,7 +340,9 @@ Take this snippet for example:
 let bar;
 
 // this has an asynchronous signature, but calls callback synchronously
-function someAsyncApiCall(callback) { callback(); }
+function someAsyncApiCall(callback) {
+  callback();
+}
 
 // the callback is called before `someAsyncApiCall` completes.
 someAsyncApiCall(() => {
@@ -427,10 +431,10 @@ One example is to match the user's expectations. Simple example:
 
 ```js
 const server = net.createServer();
-server.on('connection', (conn) => { });
+server.on('connection', (conn) => {});
 
 server.listen(8080);
-server.on('listening', () => { });
+server.on('listening', () => {});
 ```
 
 Say that `listen()` is run at the beginning of the event loop, but the

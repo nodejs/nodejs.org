@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: ⁉️ Need help with Node.js?
+    url: https://github.com/nodejs/help/issues/
+    about: File an issue in our help repo.
+  - name: 📗 Node.js API Docs
+    url: https://github.com/nodejs/nodejs.org/issues/new/choose
+    about: Please open an issue in the main Node.js repo, prefixed with "doc".

@@ -9,6 +9,7 @@ title: Installing Node.js via package manager
 
 ---
 
+* [Alpine Linux](#alpine-linux)
 * [Android](#android)
 * [Arch Linux](#arch-linux)
 * [CentOS, Fedora and Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
@@ -33,6 +34,20 @@ title: Installing Node.js via package manager
 * [z/OS](#zos)
 
 ---
+
+## Alpine Linux
+
+Node.js LTS and npm packages are available in the Main Repository.
+
+```bash
+apk add nodejs npm
+```
+
+Node.js Current can be installed from the Community Repository.
+
+```bash
+apk add nodejs-current
+```
 
 ## Android
 
@@ -358,7 +373,7 @@ Download the [Windows Installer](https://nodejs.org/en/#home-downloadhead) direc
 
 Using **[Winget](https://aka.ms/winget-cli)**:
 
-```console
+```bash
 winget install OpenJS.NodeJS
 # or for LTS
 winget install OpenJS.NodeJS.LTS
