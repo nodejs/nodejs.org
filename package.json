@@ -48,7 +48,6 @@
     "metalsmith-feed": "^1.0.0",
     "metalsmith-layouts": "^2.3.1",
     "metalsmith-one-replace": "^0.1.7",
-    "metalsmith-prism": "^3.1.1",
     "metalsmith-yearly-pagination": "^4.0.2",
     "ncp": "^2.0.0",
     "node-version-data": "^1.1.0",
