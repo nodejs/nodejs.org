@@ -18,7 +18,6 @@ const discoverHelpers = require('metalsmith-discover-helpers');
 const discoverPartials = require('metalsmith-discover-partials');
 const layouts = require('metalsmith-layouts');
 const markdown = require('@metalsmith/markdown');
-const prism = require('metalsmith-prism');
 const permalinks = require('@metalsmith/permalinks');
 const pagination = require('metalsmith-yearly-pagination');
 const defaultsDeep = require('lodash.defaultsdeep');
@@ -46,13 +45,10 @@ const nodejsVersionsContent = require('fs')
   .readFileSync('./source/nodejsVersions.md')
   .toString();
 
-// Set up the Markdown renderer that we'll use for our Metalsmith build process,
-// with the necessary adjustments that we need to make in order to have Prism
-// work.
+// Set up the Markdown renderer that we'll use for our Metalsmith build process.
 const renderer = new marked.Renderer();
 renderer.heading = anchorMarkdownHeadings;
 const markedOptions = {
-  langPrefix: 'language-',
   renderer
 };
 
@@ -162,7 +158,6 @@ function buildLocale(source, locale, opts) {
     )
     .use(markdown(markedOptions))
     .use(githubLinks({ locale, site: i18nJSON(locale) }))
-    .use(prism())
     // Set pretty permalinks, we don't want .html suffixes everywhere.
     .use(
       permalinks({
