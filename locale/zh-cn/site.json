@@ -163,7 +163,7 @@
   },
   "banners": {
     "index": {
-      "text": "关于 OpenSSL 安全更新：须在 Node.js 安全补丁之后发布"
+      "text": "OpenSSL 安全更新已可用"
     }
   }
 }
