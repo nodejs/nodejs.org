@@ -29,16 +29,9 @@ header {
     }
   }
 
-  .lang-picker-icon {
-    height: 25px;
-  }
-
-  .light-icon {
-    display: inline;
-  }
-
-  .dark-icon {
-    display: none;
+  .header-background-fill {
+    transition: fill .24s ease;
+    fill: $node-gray;
   }
 
   .switchers {
