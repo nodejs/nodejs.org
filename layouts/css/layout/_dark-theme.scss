@@ -146,4 +146,11 @@
       background-color: $dark-code-background;
     }
   }
+
+  .light-icon {
+    display: none;
+  }
+  .dark-icon{
+    display: inline;
+  }
 }

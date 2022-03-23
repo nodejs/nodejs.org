@@ -3,7 +3,7 @@ header {
   text-align: center;
   position: relative;
 
-  > .container {
+  >.container {
     overflow: visible;
   }
 
@@ -29,8 +29,16 @@ header {
     }
   }
 
-  #lang-picker-icon {
+  .lang-picker-icon {
     height: 25px;
+  }
+
+  .light-icon {
+    display: inline;
+  }
+
+  .dark-icon {
+    display: none;
   }
 
   .switchers {
