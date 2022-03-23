@@ -30,7 +30,7 @@ header {
   }
 
   .header-background-fill {
-    transition: fill .24s ease;
+    transition: fill $dark-transition-time ease;
     fill: $node-gray;
   }
 
