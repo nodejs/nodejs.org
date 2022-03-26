@@ -65,7 +65,7 @@ There are a few rules to remember when dealing with data in JSON
 format. There are several gotchas that can produce invalid JSON as well.
 
 * Empty objects and arrays are okay
-* Strings can contain any unicode character, this includes object properties
+* Strings can contain any unicode character (this also applies to object properties)
 * `null` is a valid JSON value on it's own
 * All object properties should always be double quoted
 * Object property values must be one of the following: String, Number, Boolean, Object, Array, null
