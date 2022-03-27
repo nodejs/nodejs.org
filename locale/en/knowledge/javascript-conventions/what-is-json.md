@@ -124,7 +124,7 @@ their functionality.
 
 ## JSON Validators
 
-As JSON has become the most widely used data formate with well-defined rules to abide by, there are many validators available to assist your workflow:
+As JSON has become the most widely used data format with well-defined rules to abide by, there are many validators available to assist your workflow:
 
 * **Online Validators**: If you are just playing around with JSON or checking someone's JSON (without IDEs/editors) then online validators could be of great help. For instance: [jsonlint.com](https://jsonlint.com) is a good online JSON validator and reformatter.
 * **npm Packages**: If you are working with a team and want JSON Validation baked into your project or simply like to automate validation in your workflow then the large collection of npm packages are at your disposal. For instance: [jsonlint](https://www.npmjs.com/package/jsonlint) is a pure JavaScript version of the service provided at `jsonlint.com`.
