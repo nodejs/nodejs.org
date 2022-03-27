@@ -9,6 +9,11 @@ difficulty: 5
 layout: knowledge-post.hbs
 ---
 
+This page is not actively maintained and may be outdated. Please refer to [MDN's JSON page](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) instead.
+
+<details>
+<summary>Original contents</summary>
+
 JavaScript Object Notation ou JSON, é um formato de dados leve que tornou-se
 o padrão para a web. JSON pode ser representado como uma lista de
 valores, por exemplo, um Array, ou um hash de propriedades e valores, por exemplo, um
@@ -155,3 +160,5 @@ puts dado.to_json
 
 # imprime "{ \"um\": 1 }"
 ```
+
+</details>
