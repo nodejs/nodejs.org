@@ -25,7 +25,7 @@
 @import "vendor/prism-tomorrow";
 
 * {
-  transition: background-color .24s ease;
+  transition: background-color $dark-transition-time ease;
 }
 
 article a {
