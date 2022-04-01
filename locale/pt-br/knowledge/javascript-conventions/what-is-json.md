@@ -9,10 +9,10 @@ difficulty: 5
 layout: knowledge-post.hbs
 ---
 
-This page is not actively maintained and may be outdated. Please refer to [MDN's JSON page](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) instead.
+Esta página não é mantida ativamente e talvez esteja desatualizada. Consulte a [página do MDN sobre JSON](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Objects/JSON) em vez disso.
 
 <details>
-<summary>Original contents</summary>
+<summary>Conteúdo original</summary>
 
 JavaScript Object Notation ou JSON, é um formato de dados leve que tornou-se
 o padrão para a web. JSON pode ser representado como uma lista de
