@@ -5,7 +5,7 @@ $(function () {
     pagination: true,
     perPage: 10,
     globalSearch: true,
-    exactMatch: "auto",
+    exactMatch: 'auto',
     globalSearchExcludeColumns: [3, 4, 6, 7],
     sortable: false, // We don't allow sorting because it will make orders at mass
     inputPlaceholder:
