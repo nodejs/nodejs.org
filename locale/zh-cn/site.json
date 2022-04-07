@@ -163,7 +163,7 @@
   },
   "banners": {
     "index": {
-      "text": "针对 Node.js 12、14、16 和 17 各版本的安全补丁现已发布"
+      "text": "OpenSSL 安全更新已可用"
     }
   }
 }

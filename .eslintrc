@@ -24,6 +24,9 @@
       "files": [
         "**/*.md/*.js"
       ],
+      "parserOptions": {
+        "ecmaVersion": "latest"
+      },
       "rules": {
         "eqeqeq": "off",
         "no-const-assign": "off",
