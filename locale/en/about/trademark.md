@@ -21,12 +21,10 @@ word about Node.js and participating in the Node.js community. Keeping that
 goal in mind, we’ve tried to make the policy as flexible and easy to understand
 as legally possible.
 
-The OpenJS Foundation has a perpetual license to use the
-[Node.js marks](https://ip-policy.openjsf.org).
-For more details on using the Node.js mark, please read the
-[full policy](https://trademark-policy.openjsf.org).
-If you have any questions don't hesitate to
-[email us](mailto:trademark@openjsf.org).
+Node.js is a [registered trademark](https://trademark-list.openjsf.org) of the
+OpenJS Foundation. Its use is governed by the [OpenJS Foundation trademark
+policy](https://trademark-policy.openjsf.org). If you have any questions don't
+hesitate to [email us](mailto:trademark@openjsf.org).
 
 Guidelines for the visual display of the Node.js mark are described in
 the [Visual Guidelines](/static/documents/foundation-visual-guidelines.pdf).
