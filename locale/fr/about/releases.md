@@ -1,22 +1,22 @@
 ---
 layout: about-release-schedule.hbs
-title: Releases
+title: Versions
 statuses:
   maintenance: 'Maintenance LTS'
   active: 'Active LTS'
-  current: 'Current'
-  pending: 'Pending'
+  current: 'Actuel'
+  pending: 'En attente'
 columns:
-  - 'Release'
-  - 'Status'
-  - 'Codename'
-  - 'Initial Release'
-  - 'Active LTS Start'
-  - 'Maintenance LTS Start'
-  - 'End-of-life'
-schedule-footer: Dates are subject to change.
+  - 'Version'
+  - 'Statut'
+  - 'Nom de code'
+  - 'Version initiale'
+  - 'Démarrage LTS actif'
+  - 'Démarrage LTS maintenance'
+  - 'Fin de vie'
+schedule-footer: Les dates sont sujettes à changement.
 ---
 
-# Releases
+# Versions
 
-Major Node.js versions enter _Current_ release status for six months, which gives library authors time to add support for them. After six months, odd-numbered releases (9, 11, etc.) become unsupported, and even-numbered releases (10, 12, etc.) move to _Active LTS_ status and are ready for general use. _LTS_ release status is "long-term support", which typically guarantees that critical bugs will be fixed for a total of 30 months. Production applications should only use _Active LTS_ or _Maintenance LTS_ releases.
+Les versions majeures de Node.js entrent dans le statut de version _Current_ pour six mois, ce qui laisse le temps aux auteurs des librairies d'ajouter le support nécessaire. Après six mois les versions impaires (9, 11, etc.) ne sont plus supportées, les versions paires (10, 12, etc.) passent au statut _Active LTS_ et sont prêtes pour utilisation. Le statut de version _LTS_ signifie "long-term support", ce qui garantit généralement que tous les bugs critiques seront fixés pendant 30 mois. Les applications utilisées en prodution doivent utiliser uniquement les versions _Active LTS_ ou _Maintenance LTS_.
