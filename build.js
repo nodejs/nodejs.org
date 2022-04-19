@@ -14,8 +14,6 @@ const path = require('path');
 const Metalsmith = require('metalsmith');
 const collections = require('metalsmith-collections');
 const feed = require('metalsmith-feed');
-const discoverHelpers = require('metalsmith-discover-helpers');
-const discoverPartials = require('metalsmith-discover-partials');
 const layouts = require('metalsmith-layouts');
 const markdown = require('@metalsmith/markdown');
 const permalinks = require('@metalsmith/permalinks');
@@ -29,6 +27,8 @@ const ncp = require('ncp');
 const junk = require('junk');
 const semver = require('semver');
 const replace = require('metalsmith-one-replace');
+const glob = require('glob');
+const Handlebars = require('handlebars');
 
 const githubLinks = require('./scripts/plugins/githubLinks');
 const navigation = require('./scripts/plugins/navigation');
@@ -41,7 +41,7 @@ const latestVersion = require('./scripts/helpers/latestversion');
 const DEFAULT_LANG = 'en';
 
 // The history links of nodejs versions at doc/index.md
-const nodejsVersionsContent = require('fs')
+const nodejsVersionsContent = fs
   .readFileSync('./source/nodejsVersions.md')
   .toString();
 
@@ -190,18 +190,43 @@ function buildLocale(source, locale, opts) {
     // Finally, this compiles the rest of the layouts present in ./layouts.
     // They're language-agnostic, but have to be regenerated for every locale
     // anyways.
-    .use(
-      discoverPartials({
-        directory: 'layouts/partials',
-        pattern: /\.hbs$/
-      })
-    )
-    .use(
-      discoverHelpers({
-        directory: 'scripts/helpers',
-        pattern: /\.js$/
-      })
-    )
+    .use((files, metalsmith, done) => {
+      const fsPromises = require('fs/promises');
+      glob(
+        `${metalsmith.path('layouts/partials')}/**/*.hbs`,
+        {},
+        async (err, matches) => {
+          if (err) {
+            throw err;
+          }
+          await Promise.all(
+            matches.map(async (file) => {
+              const contents = await fsPromises.readFile(file, 'utf8');
+              const id = path.basename(file, path.extname(file));
+              return Handlebars.registerPartial(id, contents);
+            })
+          );
+          done();
+        }
+      );
+    })
+    .use((files, metalsmith, done) => {
+      glob(
+        `${metalsmith.path('scripts/helpers')}/**/*.js`,
+        {},
+        (err, matches) => {
+          if (err) {
+            throw err;
+          }
+          matches.forEach((file) => {
+            const fn = require(path.resolve(file));
+            const id = path.basename(file, path.extname(file));
+            return Handlebars.registerHelper(id, fn);
+          });
+          done();
+        }
+      );
+    })
     .use(layouts())
     // Pipes the generated files into their respective subdirectory in the build
     // directory.
