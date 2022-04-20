@@ -12,7 +12,7 @@ node {
          * docker build on the command line */
         sh 'ls'
         def dockerfile = 'build.dockerfile'
-        app = docker.build("build-image", "-f ${dockerfile} ./CI/")
+        app = docker.build("build-image", "./CI -f ${dockerfile}")
     }
 
     stage('Test image') {
