@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        sh 'ls'
+        sh 'ls -al CI'
         //def dockerfile = 'build.dockerfile'
         app = docker.build("build-image", "./CI/build")
     }
