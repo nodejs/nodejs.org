@@ -1,4 +1,4 @@
-FROM ndbuild:latest
+FROM build-image:latest
 
 WORKDIR /nodejs.org/
 RUN npm test
