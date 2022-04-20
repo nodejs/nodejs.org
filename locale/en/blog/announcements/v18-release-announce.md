@@ -148,7 +148,7 @@ to the version included in Node.js 17.9.0, the following new features are includ
 * The [`findLast()` and `findLastIndex()` array methods](https://v8.dev/features/finding-in-arrays).
 * Improvements to the [`Intl.Locale` API](https://v8.dev/blog/v8-release-99#intl.locale-extensions).
 * The [`Intl.supportedValuesOf` function](https://v8.dev/blog/v8-release-99#intl-enumeration).
-* Improved performance of [class fields](https://bugs.chromium.org/p/v8/issues/detail?id=9888) and [private class methods](https://bugs.chromium.org/p/v8/issues/detail?id=10793) (the initialization of them is now as fast as ordinary property stores).
+* Improved performance of [class fields and private class methods](https://v8.dev/blog/faster-class-features) (the initialization of them is now as fast as ordinary property stores).
 
 Contributed by Michaël Zasso in [#42657](https://github.com/nodejs/node/pull/42657).
 
