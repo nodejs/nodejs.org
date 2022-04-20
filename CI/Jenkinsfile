@@ -11,8 +11,8 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
         sh 'ls'
-        def dockerfile = 'build.dockerfile'
-        app = docker.build("build-image", "./CI -f ${dockerfile}")
+        //def dockerfile = 'build.dockerfile'
+        app = docker.build("build-image", "./CI/build")
     }
 
     stage('Test image') {
