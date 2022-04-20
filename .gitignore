@@ -1,5 +1,6 @@
 # Generated HTML and other static files
 build/
+! CI/build
 # Commonly ignored Node.js files
 node_modules/
 npm-debug.log
