@@ -26,7 +26,7 @@ title: 通过包管理器安装 Node.js
 * [SmartOS 和 illumos](#smartos-and-illumos)
 * [Solus](#solus)
 * [Void Linux](#void-linux)
-* [Windows](#windows)
+* [Windows](#windows-1)
 * [z/OS](#zos)
 
 ---
