@@ -3,7 +3,7 @@ header {
   text-align: center;
   position: relative;
 
-  > .container {
+  >.container {
     overflow: visible;
   }
 
@@ -27,6 +27,11 @@ header {
       background-color: transparent;
       text-decoration: underline;
     }
+  }
+
+  .header-background-fill {
+    transition: fill $dark-transition-time ease;
+    fill: $node-gray;
   }
 
   .switchers {

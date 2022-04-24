@@ -163,10 +163,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2022-01-04T16:00:00.000Z",
-      "endDate": "2022-01-25T16:00:00.000Z",
-      "text": "New security releases now available for Node.js 12, 14, 16, and 17 release lines",
-      "link": "https://nodejs.org/en/blog/vulnerability/jan-2022-security-releases/"
+      "startDate": "2022-04-19T15:45:00.000Z",
+      "endDate": "2022-04-26T16:00:00.000Z",
+      "text": "Node.js 18 is now available!",
+      "link": "https://nodejs.org/en/blog/announcements/v18-release-announce"
     },
     "blacklivesmatter": {
       "visible": false,

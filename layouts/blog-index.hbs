@@ -14,12 +14,6 @@
           <li>
             <time datetime="{{ strftime post.date '%FT%T%z' }}">{{ strftime post.date "%d %b" }}</time>
             <a href="/{{ ../site.locale }}/{{ post.path }}/">{{ post.title }}</a>
-
-            {{#if displaySummary}}
-              <div class="summary">
-                {{{ summary post.contents ../site.locale post.path }}}
-              </div>
-            {{/if}}
           </li>
         {{/each}}
       </ul>
