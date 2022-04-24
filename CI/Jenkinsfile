@@ -5,6 +5,11 @@ node {
         /* Let's make sure we have the repository cloned to our workspace */
 
         checkout scm
+
+        sh 'docker volume create vol-in'
+        sh 'docker volume create vol-out'
+        sh 'docker volume ls'
+        sh 'docker volume inspect vol-in'
     }
 
     stage('Build image') {
