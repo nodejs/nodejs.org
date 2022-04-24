@@ -9,14 +9,10 @@ node {
         sh 'docker volume create vol-in'
         sh 'docker volume create vol-out'
         sh 'docker volume ls'
-        // sh 'docker volume inspect vol-in'
-        // sh 'ls $HOME'
 
-        docker.image('node').inside {
-            sh 'make test'
-        }
-        // sh 'touch /var/lib/docker/volumes/vol-in/_data/test.txt'
-        // sh 'ls /var/lib/docker/volumes/vol-in/_data'
+        sh 'docker run -d --rm --name dummy -v vol-in:/vi alpine tail -f /dev/null'
+        sh 'docker cp . dummy:/vi'
+        sh 'docker stop dummy'
     }
 
     stage('Build image') {
