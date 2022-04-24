@@ -4,15 +4,19 @@ node {
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
-        checkout scm
+        checkout scm CI
 
         sh 'docker volume create vol-in'
         sh 'docker volume create vol-out'
         sh 'docker volume ls'
-        sh 'docker volume inspect vol-in'
-        sh 'ls /var/lib/docker/volumes/vol-in/_data'
-        sh 'touch /var/lib/docker/volumes/vol-in/_data/test.txt'
-        sh 'ls /var/lib/docker/volumes/vol-in/_data'
+        // sh 'docker volume inspect vol-in'
+        // sh 'ls $HOME'
+
+        docker.image('node').inside {
+            sh 'make test'
+        }
+        // sh 'touch /var/lib/docker/volumes/vol-in/_data/test.txt'
+        // sh 'ls /var/lib/docker/volumes/vol-in/_data'
     }
 
     stage('Build image') {
