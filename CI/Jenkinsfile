@@ -31,7 +31,10 @@ node {
     }
 
     stage('Deploy image') {
-        docker.build("deploy-image", "./CI/deploy")
+        sh './jenkins/scripts/deliver.sh' 
+        input message: 'Finished using the web site? (Click "Proceed" to continue)' 
+        sh './jenkins/scripts/kill.sh' 
+        //docker.build("deploy-image", "./CI/deploy")
     }
 
     stage('Publish image') {
