@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:slim
 
 RUN git clone https://github.com/PWilkosz99/nodejs.org.git
 WORKDIR /nodejs.org/
