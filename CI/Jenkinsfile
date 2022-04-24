@@ -10,6 +10,9 @@ node {
         sh 'docker volume create vol-out'
         sh 'docker volume ls'
         sh 'docker volume inspect vol-in'
+        sh 'ls /var/lib/docker/volumes/vol-in/_data'
+        sh 'touch /var/lib/docker/volumes/vol-in/_data/test.txt'
+        sh 'ls /var/lib/docker/volumes/vol-in/_data'
     }
 
     stage('Build image') {
