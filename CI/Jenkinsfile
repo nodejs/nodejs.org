@@ -31,7 +31,7 @@ node {
     }
 
     stage('Deploy image') {
-        docker.build("deploy-image", "./CI/test")
+        docker.build("deploy-image", "./CI/deploy")
     }
 
     stage('Publish image') {
