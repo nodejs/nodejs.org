@@ -51,7 +51,7 @@ title: 패키지 매니저로 Node.js 설치하기
 * [SmartOS 와 illumos](#smartos-and-illumos)
 * [Solus](#solus)
 * [Void Linux](#void-linux)
-* [Windows](#windows)
+* [Windows](#windows-1)
 
 ---
 

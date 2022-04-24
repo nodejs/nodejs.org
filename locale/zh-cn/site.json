@@ -163,7 +163,7 @@
   },
   "banners": {
     "index": {
-      "text": "OpenSSL 安全更新已可用"
+      "text": "Node.js 18 现已可用！"
     }
   }
 }

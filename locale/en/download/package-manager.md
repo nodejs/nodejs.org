@@ -30,7 +30,7 @@ title: Installing Node.js via package manager
 * [Snap](#snap)
 * [Solus](#solus)
 * [Void Linux](#void-linux)
-* [Windows](#windows)
+* [Windows](#windows-1)
 * [z/OS](#zos)
 
 ---

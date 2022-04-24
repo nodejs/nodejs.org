@@ -6,6 +6,7 @@
 
 const fs = require('fs');
 const gracefulFs = require('graceful-fs');
+
 // This is needed at least on Windows to prevent the `EMFILE: too many open files` error
 // https://github.com/isaacs/node-graceful-fs#global-patching
 gracefulFs.gracefulify(fs);
@@ -14,8 +15,6 @@ const path = require('path');
 const Metalsmith = require('metalsmith');
 const collections = require('metalsmith-collections');
 const feed = require('metalsmith-feed');
-const discoverHelpers = require('metalsmith-discover-helpers');
-const discoverPartials = require('metalsmith-discover-partials');
 const layouts = require('metalsmith-layouts');
 const markdown = require('@metalsmith/markdown');
 const permalinks = require('@metalsmith/permalinks');
@@ -29,6 +28,8 @@ const ncp = require('ncp');
 const junk = require('junk');
 const semver = require('semver');
 const replace = require('metalsmith-one-replace');
+const glob = require('glob');
+const Handlebars = require('handlebars');
 
 const githubLinks = require('./scripts/plugins/githubLinks');
 const navigation = require('./scripts/plugins/navigation');
@@ -41,7 +42,7 @@ const latestVersion = require('./scripts/helpers/latestversion');
 const DEFAULT_LANG = 'en';
 
 // The history links of nodejs versions at doc/index.md
-const nodejsVersionsContent = require('fs')
+const nodejsVersionsContent = fs
   .readFileSync('./source/nodejsVersions.md')
   .toString();
 
@@ -190,18 +191,43 @@ function buildLocale(source, locale, opts) {
     // Finally, this compiles the rest of the layouts present in ./layouts.
     // They're language-agnostic, but have to be regenerated for every locale
     // anyways.
-    .use(
-      discoverPartials({
-        directory: 'layouts/partials',
-        pattern: /\.hbs$/
-      })
-    )
-    .use(
-      discoverHelpers({
-        directory: 'scripts/helpers',
-        pattern: /\.js$/
-      })
-    )
+    .use((files, metalsmith, done) => {
+      const fsPromises = require('fs/promises');
+      glob(
+        `${metalsmith.path('layouts/partials')}/**/*.hbs`,
+        {},
+        async (err, matches) => {
+          if (err) {
+            throw err;
+          }
+          await Promise.all(
+            matches.map(async (file) => {
+              const contents = await fsPromises.readFile(file, 'utf8');
+              const id = path.basename(file, path.extname(file));
+              return Handlebars.registerPartial(id, contents);
+            })
+          );
+          done();
+        }
+      );
+    })
+    .use((files, metalsmith, done) => {
+      glob(
+        `${metalsmith.path('scripts/helpers')}/**/*.js`,
+        {},
+        (err, matches) => {
+          if (err) {
+            throw err;
+          }
+          matches.forEach((file) => {
+            const fn = require(path.resolve(file));
+            const id = path.basename(file, path.extname(file));
+            return Handlebars.registerHelper(id, fn);
+          });
+          done();
+        }
+      );
+    })
     .use(layouts())
     // Pipes the generated files into their respective subdirectory in the build
     // directory.
@@ -243,7 +269,7 @@ function withPreserveLocale(preserveLocale) {
 }
 
 // This function builds the static/css folder for all the Sass files.
-function buildCSS() {
+async function buildCSS() {
   console.log('[sass] static/css started');
   const labelForBuild = '[sass] static/css finished';
   console.time(labelForBuild);
@@ -252,88 +278,70 @@ function buildCSS() {
   const dest = path.join(__dirname, 'build/static/css/styles.css');
 
   const sassOpts = {
-    file: src,
-    outFile: dest,
     outputStyle:
       process.env.NODE_ENV !== 'development' ? 'compressed' : 'expanded'
   };
 
-  gracefulFs.mkdir(
-    path.join(__dirname, 'build/static/css'),
-    { recursive: true },
-    (err) => {
-      if (err) {
-        throw err;
-      }
+  const graceFulFsPromise = gracefulFs.promises;
 
-      sass.render(sassOpts, (error, result) => {
-        if (error) {
-          throw error;
-        }
+  await graceFulFsPromise.mkdir(path.join(__dirname, 'build/static/css'), {
+    recursive: true
+  });
 
-        postcss([autoprefixer])
-          .process(result.css, { from: src })
-          .then((res) => {
-            res.warnings().forEach((warn) => {
-              console.warn(warn.toString());
-            });
+  const result = await sass.compileAsync(src, sassOpts);
 
-            gracefulFs.writeFile(dest, res.css, (err) => {
-              if (err) {
-                throw err;
-              }
-
-              console.timeEnd(labelForBuild);
-            });
-          });
+  postcss([autoprefixer])
+    .process(result.css, { from: src })
+    .then(async (res) => {
+      res.warnings().forEach((warn) => {
+        console.warn(warn.toString());
       });
-    }
-  );
+
+      await graceFulFsPromise.writeFile(dest, res.css);
+      console.timeEnd(labelForBuild);
+    });
 }
 
 // This function copies the rest of the static assets to their subfolder in the
 // build directory.
-function copyStatic() {
+async function copyStatic() {
   console.log('[ncp] build/static started');
   const labelForBuild = '[ncp] build/static finished';
   console.time(labelForBuild);
-  gracefulFs.mkdir(
+
+  const graceFulFsPromise = gracefulFs.promises;
+
+  await graceFulFsPromise.mkdir(path.join(__dirname, 'build/static'), {
+    recursive: true
+  });
+
+  ncp(
+    path.join(__dirname, 'static'),
     path.join(__dirname, 'build/static'),
-    { recursive: true },
-    (err) => {
-      if (err) {
-        throw err;
+    (error) => {
+      if (error) {
+        return console.error(error);
       }
 
       ncp(
-        path.join(__dirname, 'static'),
-        path.join(__dirname, 'build/static'),
+        path.join(__dirname, 'node_modules/jquery/dist/jquery.min.js'),
+        path.join(__dirname, 'build/static/js/jquery.min.js'),
         (error) => {
           if (error) {
             return console.error(error);
           }
 
           ncp(
-            path.join(__dirname, 'node_modules/jquery/dist/jquery.min.js'),
-            path.join(__dirname, 'build/static/js/jquery.min.js'),
+            path.join(
+              __dirname,
+              'node_modules/jquery.fancytable/dist/fancyTable.min.js'
+            ),
+            path.join(__dirname, 'build/static/js/fancyTable.min.js'),
             (error) => {
               if (error) {
                 return console.error(error);
               }
-
-              ncp(
-                path.join(
-                  __dirname,
-                  'node_modules/jquery.fancytable/dist/fancyTable.min.js'
-                ),
-                path.join(__dirname, 'build/static/js/fancyTable.min.js'),
-                (error) => {
-                  if (error) {
-                    return console.error(error);
-                  }
-                  console.timeEnd(labelForBuild);
-                }
-              );
+              console.timeEnd(labelForBuild);
             }
           );
         }
@@ -373,25 +381,24 @@ function getSource(callback) {
 // name. It brings together all build steps and dependencies and executes them.
 function fullBuild(opts) {
   const { selectedLocales, preserveLocale } = opts;
-  getSource((err, source) => {
+  getSource(async (err, source) => {
     if (err) {
       throw err;
     }
 
-    // Executes the build cycle for every locale.
-    gracefulFs.readdir(path.join(__dirname, 'locale'), (e, locales) => {
-      if (e) {
-        throw e;
-      }
-      const filteredLocales = locales.filter(
-        (file) =>
-          junk.not(file) &&
-          (selectedLocales ? selectedLocales.includes(file) : true)
-      );
-      const localesData = generateLocalesData(filteredLocales);
-      filteredLocales.forEach((locale) => {
-        buildLocale(source, locale, { preserveLocale, localesData });
-      });
+    const graceFulFsPromise = gracefulFs.promises;
+    const locales = await graceFulFsPromise.readdir(
+      path.join(__dirname, 'locale')
+    );
+
+    const filteredLocales = locales.filter(
+      (file) =>
+        junk.not(file) &&
+        (selectedLocales ? selectedLocales.includes(file) : true)
+    );
+    const localesData = generateLocalesData(filteredLocales);
+    filteredLocales.forEach((locale) => {
+      buildLocale(source, locale, { preserveLocale, localesData });
     });
   });
 }
