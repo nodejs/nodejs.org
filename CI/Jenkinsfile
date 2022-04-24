@@ -1,9 +1,8 @@
 node {
     def app
+    def dep
 
     stage('Clone repository') {
-        /* Let's make sure we have the repository cloned to our workspace */
-
         checkout scm CI
 
         sh 'docker volume create vol-in'
@@ -13,6 +12,12 @@ node {
         sh 'docker run -d --rm --name dummy -v vol-in:/vi alpine tail -f /dev/null'
         sh 'docker cp . dummy:/vi'
         sh 'docker stop dummy'
+    }
+
+    stage('Dependencies') {
+        checkout scm CI
+
+    dep = docker.build("dependency-image", "./CI/dependency -v vol-in:/vi -v vol-out:/vo")
     }
 
     stage('Build image') {
