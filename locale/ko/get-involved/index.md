@@ -40,7 +40,7 @@ layout: contribute.hbs
 * [NodeSchool.io](https://nodeschool.io/)는 대화형 명령행 게임을 통해 Node.js 개념에 대해 알려줍니다.
 * [Stack Overflow Node.js 태그](https://stackoverflow.com/questions/tagged/node.js)에는 매일 새로운 정보가 쌓입니다.
 * [The DEV Community Node.js 태그](https://dev.to/t/node)는 Node.js와 관련된 주제에 대해 논의하거나 의견을 묻기에도 좋고, Node.js 프로젝트, 글, 튜토리얼을 공유하기에도 좋은 장소입니다. 개발자라면 모두 환영합니다.
-* [Nodeiflux](https://discordapp.com/invide/vUsrbjd)는 Discord에서 서로를 지원하는 Node.js 백엔드 개발자 커뮤니티입니다.
+* [Nodeiflux](https://discord.com/invite/vUsrbjd)는 Discord에서 서로를 지원하는 Node.js 백엔드 개발자 커뮤니티입니다.
 
 <!--
 ## International community sites and projects
