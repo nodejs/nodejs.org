@@ -1,4 +1,4 @@
 FROM build-image:latest
 
 WORKDIR /nodejs.org/
-RUN npm test
+RUN npm run test:lint
