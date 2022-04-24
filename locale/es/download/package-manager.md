@@ -24,7 +24,7 @@ title: Instalando Node.js utilizando un gestor de paquetes
 * [SmartOS y illumos](#smartos-and-illumos)
 * [Solus](#solus)
 * [Void Linux](#void-linux)
-* [Windows](#windows)
+* [Windows](#windows-1)
 
 ---
 

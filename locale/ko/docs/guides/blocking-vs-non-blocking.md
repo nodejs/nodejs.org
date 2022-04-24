@@ -141,7 +141,7 @@ moreWork(); // will run before console.log
 const fs = require('fs');
 const data = fs.readFileSync('/file.md'); // 파일을 읽을 때까지 여기서 블로킹됩니다.
 console.log(data);
-// moreWork();는 console.log 이후 실행될 것입니다.
+moreWork(); // console.log 이후 실행될 것입니다.
 ```
 
 이를 비동기로 작성한 예제를 보겠습니다.
@@ -152,7 +152,7 @@ fs.readFile('/file.md', (err, data) => {
   if (err) throw err;
   console.log(data);
 });
-// moreWork();는 console.log 이전에 실행될 것입니다.
+moreWork(); // console.log 이전에 실행될 것입니다.
 ```
 
 <!--

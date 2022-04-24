@@ -12,7 +12,6 @@
 
   function setTheme(theme) {
     document.querySelector('html').setAttribute(themeAttr, theme);
-    window.localStorage.setItem('theme', theme);
   }
 
   function getTheme() {
