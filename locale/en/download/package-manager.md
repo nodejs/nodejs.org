@@ -92,6 +92,8 @@ dnf module install nodejs:12
 
 For CentOS/RHEL 7 Node.js is available via [Software Collections](https://www.softwarecollections.org/en/scls/?search=NodeJS).
 
+For Node.js > 12 is not available by this way because [this](https://bugzilla.redhat.com/show_bug.cgi?id=1728643) bug.
+
 ### Alternatives
 
 These resources provide packages compatible with CentOS, Fedora, and RHEL.
