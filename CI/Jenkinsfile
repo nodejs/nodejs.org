@@ -31,13 +31,14 @@ node {
     }
 
     stage('Deploy image') {
-        sh './jenkins/scripts/deliver.sh' 
+        //sh './jenkins/scripts/deliver.sh' 
         input message: 'Finished using the web site? (Click "Proceed" to continue)' 
-        sh './jenkins/scripts/kill.sh' 
+        //sh './jenkins/scripts/kill.sh' 
         //docker.build("deploy-image", "./CI/deploy")
     }
 
     stage('Publish image') {
-        
+        echo bimg.id
+        //sh "docker cp ${bimg.id}:/. ./artifact/"
     }
 }
