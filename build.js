@@ -6,6 +6,7 @@
 
 const fs = require('fs');
 const gracefulFs = require('graceful-fs');
+
 // This is needed at least on Windows to prevent the `EMFILE: too many open files` error
 // https://github.com/isaacs/node-graceful-fs#global-patching
 gracefulFs.gracefulify(fs);
@@ -268,7 +269,7 @@ function withPreserveLocale(preserveLocale) {
 }
 
 // This function builds the static/css folder for all the Sass files.
-function buildCSS() {
+async function buildCSS() {
   console.log('[sass] static/css started');
   const labelForBuild = '[sass] static/css finished';
   console.time(labelForBuild);
@@ -277,88 +278,70 @@ function buildCSS() {
   const dest = path.join(__dirname, 'build/static/css/styles.css');
 
   const sassOpts = {
-    file: src,
-    outFile: dest,
     outputStyle:
       process.env.NODE_ENV !== 'development' ? 'compressed' : 'expanded'
   };
 
-  gracefulFs.mkdir(
-    path.join(__dirname, 'build/static/css'),
-    { recursive: true },
-    (err) => {
-      if (err) {
-        throw err;
-      }
+  const graceFulFsPromise = gracefulFs.promises;
 
-      sass.render(sassOpts, (error, result) => {
-        if (error) {
-          throw error;
-        }
+  await graceFulFsPromise.mkdir(path.join(__dirname, 'build/static/css'), {
+    recursive: true
+  });
 
-        postcss([autoprefixer])
-          .process(result.css, { from: src })
-          .then((res) => {
-            res.warnings().forEach((warn) => {
-              console.warn(warn.toString());
-            });
+  const result = await sass.compileAsync(src, sassOpts);
 
-            gracefulFs.writeFile(dest, res.css, (err) => {
-              if (err) {
-                throw err;
-              }
-
-              console.timeEnd(labelForBuild);
-            });
-          });
+  postcss([autoprefixer])
+    .process(result.css, { from: src })
+    .then(async (res) => {
+      res.warnings().forEach((warn) => {
+        console.warn(warn.toString());
       });
-    }
-  );
+
+      await graceFulFsPromise.writeFile(dest, res.css);
+      console.timeEnd(labelForBuild);
+    });
 }
 
 // This function copies the rest of the static assets to their subfolder in the
 // build directory.
-function copyStatic() {
+async function copyStatic() {
   console.log('[ncp] build/static started');
   const labelForBuild = '[ncp] build/static finished';
   console.time(labelForBuild);
-  gracefulFs.mkdir(
+
+  const graceFulFsPromise = gracefulFs.promises;
+
+  await graceFulFsPromise.mkdir(path.join(__dirname, 'build/static'), {
+    recursive: true
+  });
+
+  ncp(
+    path.join(__dirname, 'static'),
     path.join(__dirname, 'build/static'),
-    { recursive: true },
-    (err) => {
-      if (err) {
-        throw err;
+    (error) => {
+      if (error) {
+        return console.error(error);
       }
 
       ncp(
-        path.join(__dirname, 'static'),
-        path.join(__dirname, 'build/static'),
+        path.join(__dirname, 'node_modules/jquery/dist/jquery.min.js'),
+        path.join(__dirname, 'build/static/js/jquery.min.js'),
         (error) => {
           if (error) {
             return console.error(error);
           }
 
           ncp(
-            path.join(__dirname, 'node_modules/jquery/dist/jquery.min.js'),
-            path.join(__dirname, 'build/static/js/jquery.min.js'),
+            path.join(
+              __dirname,
+              'node_modules/jquery.fancytable/dist/fancyTable.min.js'
+            ),
+            path.join(__dirname, 'build/static/js/fancyTable.min.js'),
             (error) => {
               if (error) {
                 return console.error(error);
               }
-
-              ncp(
-                path.join(
-                  __dirname,
-                  'node_modules/jquery.fancytable/dist/fancyTable.min.js'
-                ),
-                path.join(__dirname, 'build/static/js/fancyTable.min.js'),
-                (error) => {
-                  if (error) {
-                    return console.error(error);
-                  }
-                  console.timeEnd(labelForBuild);
-                }
-              );
+              console.timeEnd(labelForBuild);
             }
           );
         }
@@ -398,25 +381,24 @@ function getSource(callback) {
 // name. It brings together all build steps and dependencies and executes them.
 function fullBuild(opts) {
   const { selectedLocales, preserveLocale } = opts;
-  getSource((err, source) => {
+  getSource(async (err, source) => {
     if (err) {
       throw err;
     }
 
-    // Executes the build cycle for every locale.
-    gracefulFs.readdir(path.join(__dirname, 'locale'), (e, locales) => {
-      if (e) {
-        throw e;
-      }
-      const filteredLocales = locales.filter(
-        (file) =>
-          junk.not(file) &&
-          (selectedLocales ? selectedLocales.includes(file) : true)
-      );
-      const localesData = generateLocalesData(filteredLocales);
-      filteredLocales.forEach((locale) => {
-        buildLocale(source, locale, { preserveLocale, localesData });
-      });
+    const graceFulFsPromise = gracefulFs.promises;
+    const locales = await graceFulFsPromise.readdir(
+      path.join(__dirname, 'locale')
+    );
+
+    const filteredLocales = locales.filter(
+      (file) =>
+        junk.not(file) &&
+        (selectedLocales ? selectedLocales.includes(file) : true)
+    );
+    const localesData = generateLocalesData(filteredLocales);
+    filteredLocales.forEach((locale) => {
+      buildLocale(source, locale, { preserveLocale, localesData });
     });
   });
 }
