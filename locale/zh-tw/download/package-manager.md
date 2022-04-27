@@ -24,7 +24,7 @@ title: 使用套件管理器安裝 Node.js
 * [SmartOS 及 illumos](#smartos-and-illumos)
 * [Solus](#solus)
 * [Void Linux](#void-linux)
-* [Windows](#windows)
+* [Windows](#windows-1)
 
 ---
 

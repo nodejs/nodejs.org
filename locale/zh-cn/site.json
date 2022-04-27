@@ -134,10 +134,6 @@
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/contributing/code-of-conduct.md",
       "text": "管理"
-    },
-    "node-meetups": {
-      "link": "get-involved/node-meetups",
-      "text": "Node.js 开发者大会"
     }
   },
   "security": {
@@ -163,7 +159,7 @@
   },
   "banners": {
     "index": {
-      "text": "关于 OpenSSL 安全更新：须在 Node.js 安全补丁之后发布"
+      "text": "Node.js 18 现已可用！"
     }
   }
 }

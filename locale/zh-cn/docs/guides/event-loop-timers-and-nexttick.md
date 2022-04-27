@@ -301,17 +301,17 @@ server.on('listening', () => {});
 
 假设 `listen()` 在事件循环开始时运行，但 listening 的回调被放置在 `setImmediate()` 中。除非传递过主机名，才会立即绑定到端口。为使事件循环继续进行，它必须命中 **轮询** 阶段，这意味着有可能已经接收了一个连接，并在侦听事件之前触发了连接事件。
 
-另一个示例运行的函数构造函数是从 `EventEmitter` 继承的，它想调用构造函数：
+另外一个示例直接从 `EventEmitter` 继承，并且在构造函数内部触发一个事件：
 
 ```js
 const EventEmitter = require('events');
-const util = require('util');
 
-function MyEmitter() {
-  EventEmitter.call(this);
-  this.emit('event');
+class MyEmitter extends EventEmitter {
+  constructor() {
+    super();
+    this.emit('event');
+  }
 }
-util.inherits(MyEmitter, EventEmitter);
 
 const myEmitter = new MyEmitter();
 myEmitter.on('event', () => {
@@ -323,17 +323,17 @@ myEmitter.on('event', () => {
 
 ```js
 const EventEmitter = require('events');
-const util = require('util');
 
-function MyEmitter() {
-  EventEmitter.call(this);
+class MyEmitter extends EventEmitter {
+  constructor() {
+    super();
 
-  // use nextTick to emit the event once a handler is assigned
-  process.nextTick(() => {
-    this.emit('event');
-  });
+    // use nextTick to emit the event once a handler is assigned
+    process.nextTick(() => {
+      this.emit('event');
+    });
+  }
 }
-util.inherits(MyEmitter, EventEmitter);
 
 const myEmitter = new MyEmitter();
 myEmitter.on('event', () => {
