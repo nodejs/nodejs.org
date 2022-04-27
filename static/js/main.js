@@ -58,8 +58,24 @@
   const themeAttr = 'data-theme';
   var darkThemeSwitcherElement = document.querySelector('.dark-theme-switcher');
 
+  let preferredColorScheme = window.matchMedia('(prefers-color-scheme: dark)')
+    .matches
+    ? 'dark'
+    : 'light';
+
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', function (event) {
+      if (!getTheme()) {
+        preferredColorScheme = event.matches ? 'dark' : 'light';
+        document
+          .querySelector('html')
+          .setAttribute(themeAttr, preferredColorScheme);
+      }
+    });
+
   darkThemeSwitcherElement.addEventListener('click', function () {
-    var currentTheme = getTheme();
+    var currentTheme = getTheme() ?? preferredColorScheme;
     if (currentTheme === 'light') {
       setTheme('dark');
     } else if (currentTheme === 'dark') {
