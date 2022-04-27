@@ -23,7 +23,7 @@ Node.js 專案遵循 [Consensus Seeking][]（尋求共識）的決策模式。
 
 此專案由 [TSC][] 及 [CommComm][]（Community Committee）聯合治理，前者負責此專案較高層級的指導，後者則負責一般指導及擴展 Node.js 社群。
 
-[collaborator-guide.md]: https://github.com/nodejs/node/blob/master/doc/guides/collaborator-guide.md
+[collaborator-guide.md]: https://github.com/nodejs/node/blob/master/doc/contributing/collaborator-guide.md
 [CommComm]: https://github.com/nodejs/community-committee/blob/master/Community-Committee-Charter.md
 [Consensus Seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [README.md]: https://github.com/nodejs/node/blob/master/README.md#current-project-team-members

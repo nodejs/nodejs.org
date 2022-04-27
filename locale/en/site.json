@@ -132,16 +132,12 @@
       "text": "Contribute"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
+      "link": "https://github.com/nodejs/node/blob/master/doc/contributing/code-of-conduct.md",
       "text": "Code of Conduct"
-    },
-    "node-meetups": {
-      "link": "get-involved/node-meetups",
-      "text": "Node.js Meetups"
     }
   },
   "security": {
-    "link": "security",
+    "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
     "text": "Security"
   },
   "getcertified": {
@@ -163,10 +159,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2021-11-30T00:00:00.000Z",
-      "endDate": "2021-12-07T00:00:00.000Z",
-      "text": "Node.js training and exams discounted through Dec. 6th",
-      "link": "https://openjsf.org/blog/2021/11/29/test-your-skills-how-good-are-you-with-node-js/"
+      "startDate": "2022-04-19T15:45:00.000Z",
+      "endDate": "2022-04-26T16:00:00.000Z",
+      "text": "Node.js 18 is now available!",
+      "link": "https://nodejs.org/en/blog/announcements/v18-release-announce"
     },
     "blacklivesmatter": {
       "visible": false,

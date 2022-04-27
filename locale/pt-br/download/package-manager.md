@@ -23,7 +23,7 @@ title: Instalando Node.js via gerenciador pacotes
 * [SmartOS e illumos](#smartos-and-illumos)
 * [Solus](#solus)
 * [Void Linux](#void-linux)
-* [Windows](#windows)
+* [Windows](#windows-1)
 
 ---
 

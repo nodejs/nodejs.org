@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-const semver = require('semver')
+const semver = require('semver');
 
 const allDownloads = [
   {
@@ -92,7 +92,7 @@ const allDownloads = [
     title: 'Source Code',
     templateUrl: 'https://nodejs.org/dist/v%version%/node-v%version%.tar.gz'
   }
-]
+];
 
 // v0.x of Node.js
 const legacyDownloads = [
@@ -151,24 +151,24 @@ const legacyDownloads = [
     title: 'Source Code',
     templateUrl: 'https://nodejs.org/dist/v%version%/node-v%version%.tar.gz'
   }
-]
+];
 
 const resolveUrl = (item, version) => {
-  const url = item.templateUrl.replace(/%version%/g, version)
-  return Object.assign({ url }, item)
-}
+  const url = item.templateUrl.replace(/%version%/g, version);
+  return Object.assign({ url }, item);
+};
 
 const resolveDownloads = (version) => {
-  let downloads = allDownloads
+  let downloads = allDownloads;
 
   if (semver.satisfies(version, '< 1.0.0')) {
-    return legacyDownloads
+    return legacyDownloads;
   }
 
   if (semver.satisfies(version, '>= 8.0.0')) {
     downloads = downloads.filter(
       (ver) => ver.title !== 'Linux PPC BE 64-bit Binary'
-    )
+    );
   }
 
   if (semver.satisfies(version, '>= 10.0.0')) {
@@ -176,25 +176,27 @@ const resolveDownloads = (version) => {
       (ver) =>
         ver.title !== 'Linux 32-bit Binary' &&
         ver.title !== 'SmartOS 32-bit Binary'
-    )
+    );
   }
 
   if (semver.satisfies(version, '>= 12.0.0')) {
-    downloads = downloads.filter((ver) => ver.title !== 'ARMv6 32-bit Binary')
+    downloads = downloads.filter((ver) => ver.title !== 'ARMv6 32-bit Binary');
   }
 
   if (semver.satisfies(version, '>= 14.0.0')) {
-    downloads = downloads.filter((ver) => ver.title !== 'SmartOS 64-bit Binary')
+    downloads = downloads.filter(
+      (ver) => ver.title !== 'SmartOS 64-bit Binary'
+    );
   }
 
   if (semver.satisfies(version, '< 16.0.0')) {
     downloads = downloads.filter(
       (ver) => ver.title !== 'macOS Apple Silicon 64-bit Binary'
-    )
+    );
   }
 
-  return downloads
-}
+  return downloads;
+};
 
 module.exports = (version) =>
-  resolveDownloads(version).map((item) => resolveUrl(item, version))
+  resolveDownloads(version).map((item) => resolveUrl(item, version));

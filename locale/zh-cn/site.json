@@ -132,16 +132,12 @@
       "text": "贡献"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
+      "link": "https://github.com/nodejs/node/blob/master/doc/contributing/code-of-conduct.md",
       "text": "管理"
-    },
-    "node-meetups": {
-      "link": "get-involved/node-meetups",
-      "text": "Node.js 开发者大会"
     }
   },
   "security": {
-    "link": "security",
+    "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
     "text": "安全"
   },
   "getcertified": {
@@ -163,7 +159,7 @@
   },
   "banners": {
     "index": {
-      "text": "新安全更新补丁已于 2021 年 10 月 12 日发布"
+      "text": "Node.js 18 现已可用！"
     }
   }
 }

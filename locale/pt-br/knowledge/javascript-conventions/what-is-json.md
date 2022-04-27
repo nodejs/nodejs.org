@@ -9,6 +9,11 @@ difficulty: 5
 layout: knowledge-post.hbs
 ---
 
+Esta página não é mantida ativamente e talvez esteja desatualizada. Consulte a [página do MDN sobre JSON](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Objects/JSON) em vez disso.
+
+<details>
+<summary>Conteúdo original</summary>
+
 JavaScript Object Notation ou JSON, é um formato de dados leve que tornou-se
 o padrão para a web. JSON pode ser representado como uma lista de
 valores, por exemplo, um Array, ou um hash de propriedades e valores, por exemplo, um
@@ -34,9 +39,9 @@ serializada no formato JSON.
 
 ```js
 const dados = {
-  nome: "John Doe",
+  nome: 'John Doe',
   idade: 32,
-  titulo: "Vice Presidente do JavaScript"
+  titulo: 'Vice Presidente do JavaScript'
 };
 
 const jsonStr = JSON.stringify(dados);
@@ -155,3 +160,5 @@ puts dado.to_json
 
 # imprime "{ \"um\": 1 }"
 ```
+
+</details>

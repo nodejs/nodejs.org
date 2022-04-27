@@ -9,6 +9,11 @@ difficulty: 5
 layout: knowledge-post.hbs
 ---
 
+This page is not actively maintained and may be outdated. Please refer to [MDN's JSON page](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON) instead.
+
+<details>
+<summary>Original contents</summary>
+
 JavaScript Object Notation, or JSON, is a lightweight data format that
 has become the defacto standard for the web. JSON can be represented
 as either a list of values, e.g. an Array, or a hash of properties and
@@ -33,10 +38,10 @@ serialized string in the JSON format.
 
 ```js
 const data = {
-  name: "John Doe",
+  name: 'John Doe',
   age: 32,
-  title: "Vice President of JavaScript"
-}
+  title: 'Vice President of JavaScript'
+};
 
 const jsonStr = JSON.stringify(data);
 
@@ -49,7 +54,8 @@ console.log(jsonStr);
 structure.
 
 ```js
-const jsonStr = '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}';
+const jsonStr =
+  '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}';
 
 const data = JSON.parse(jsonStr);
 
@@ -64,7 +70,7 @@ There are a few rules to remember when dealing with data in JSON
 format. There are several gotchas that can produce invalid JSON as well.
 
 * Empty objects and arrays are okay
-* Strings can contain any unicode character, this includes object properties
+* Strings can contain any unicode character (this also applies to object properties)
 * `null` is a valid JSON value on it's own
 * All object properties should always be double quoted
 * Object property values must be one of the following: String, Number, Boolean, Object, Array, null
@@ -123,7 +129,7 @@ their functionality.
 
 ## JSON Validators
 
-As JSON has become the most widely used data formate with well-defined rules to abide by, there are many validators available to assist your workflow:
+As JSON has become the most widely used data format with well-defined rules to abide by, there are many validators available to assist your workflow:
 
 * **Online Validators**: If you are just playing around with JSON or checking someone's JSON (without IDEs/editors) then online validators could be of great help. For instance: [jsonlint.com](https://jsonlint.com) is a good online JSON validator and reformatter.
 * **npm Packages**: If you are working with a team and want JSON Validation baked into your project or simply like to automate validation in your workflow then the large collection of npm packages are at your disposal. For instance: [jsonlint](https://www.npmjs.com/package/jsonlint) is a pure JavaScript version of the service provided at `jsonlint.com`.
@@ -144,3 +150,5 @@ puts data.to_json
 
 # prints "{ \"one\": 1 }"
 ```
+
+</details>
