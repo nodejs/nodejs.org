@@ -24,7 +24,7 @@ title: تثبيت Node.js عن طريق مدير الحزم
 * [SmartOS و illumos](#smartos-and-illumos)
 * [Solus](#solus)
 * [Void Linux](#void-linux)
-* [ويندوز](#windows)
+* [Windows](#windows1)
 
 ---
 
@@ -273,7 +273,7 @@ sudo eopkg install nodejs
 xbps-install -Sy nodejs
 ```
 
-## <!--windows-->ويندوز
+## <!--windows1-->ويندوز
 
 قم بتحميل [المثبت الخاص بويندوز](https://nodejs.org/ar/#home-downloadhead) مباشرة من موقع [nodejs.org](https://nodejs.org/).
 
