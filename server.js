@@ -3,7 +3,7 @@
 // The server where the site is exposed through a static file server
 // while developing locally.
 
-const fs = require('fs');
+const fs = require('fs/promises');
 const http = require('http');
 const path = require('path');
 const chokidar = require('chokidar');
@@ -48,21 +48,18 @@ function getLocale(filePath) {
 // This function has two meanings:
 // 1. Build for the specific language.
 // 2. Choose what languages for the menu.
-function dynamicallyBuildOnLanguages(source, locale) {
-  if (!selectedLocales || selectedLocales.length === 0) {
-    fs.readdir(path.join(__dirname, 'locale'), (err, locales) => {
-      if (err) {
-        throw err;
-      }
+async function dynamicallyBuildOnLanguages(source, locale) {
+  let localesData = null;
 
-      const filteredLocales = locales.filter((file) => junk.not(file));
-      const localesData = build.generateLocalesData(filteredLocales);
-      build.buildLocale(source, locale, { preserveLocale, localesData });
-    });
+  if (!selectedLocales || selectedLocales.length === 0) {
+    const localesPath = path.join(__dirname, 'locale');
+    const locales = await fs.readdir(localesPath);
+    const filteredLocales = locales.filter((file) => junk.not(file));
+    localesData = build.generateLocalesData(filteredLocales);
   } else {
-    const localesData = build.generateLocalesData(selectedLocales);
-    build.buildLocale(source, locale, { preserveLocale, localesData });
+    localesData = build.generateLocalesData(selectedLocales);
   }
+  build.buildLocale(source, locale, { preserveLocale, localesData });
 }
 
 build.getSource((err, source) => {
@@ -70,23 +67,23 @@ build.getSource((err, source) => {
     throw err;
   }
 
-  locales.on('change', (filePath) => {
+  locales.on('change', async (filePath) => {
     const locale = getLocale(filePath);
 
     if (!selectedLocales || selectedLocales.includes(locale)) {
       console.log(
         `The language ${locale} is changed, '${filePath}' is modified.`
       );
-      dynamicallyBuildOnLanguages(source, locale);
+      await dynamicallyBuildOnLanguages(source, locale);
     }
   });
 
-  locales.on('add', (filePath) => {
+  locales.on('add', async (filePath) => {
     const locale = getLocale(filePath);
 
     if (!selectedLocales || selectedLocales.includes(locale)) {
       console.log(`The language ${locale} is changed, '${filePath}' is added.`);
-      dynamicallyBuildOnLanguages(source, locale);
+      await dynamicallyBuildOnLanguages(source, locale);
       locales.add(filePath);
     }
   });

@@ -45,7 +45,7 @@ In the `print` event, note that we pass an extra parameter - all the extra param
 
 If you use the method `once` instead of `on`, after the callback is fired, it is removed from the list of callbacks. A handy little function if you want to detect only the first time an event has been emitted.
 
-If you want remove a specific callback, you can use `removeListener`. If you want to remove all callbacks to a specific event, you can use `removeAllListeners`.
+If you want to remove a specific callback, you can use `removeListener`. If you want to remove all callbacks to a specific event, you can use `removeAllListeners`.
 
 ```javascript
 var EventEmitter = require('events').EventEmitter,
@@ -106,4 +106,4 @@ true
 false
 ```
 
-NOTE: If you want create more than 10 listeners on a single event, you will have to make a call to `ee.setMaxListeners(n)` where n is the max numbers of listeners (with zero being unlimited number of listeners). This is used to make sure you aren't accidentally leaking event listeners.
+NOTE: If you want to create more than 10 listeners on a single event, you will have to make a call to `ee.setMaxListeners(n)` where n is the max numbers of listeners (with zero being unlimited number of listeners). This is used to make sure you aren't accidentally leaking event listeners.
