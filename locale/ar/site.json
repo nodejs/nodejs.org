@@ -137,7 +137,7 @@
     }
   },
   "security": {
-    "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
+    "link": "https://github.com/nodejs/node/blob/master/SECURITY.md#security",
     "text": "أمن"
   },
   "getcertified": {
