@@ -1,44 +1,36 @@
 node {
-    def app
+    
+    currentBuild.result = "SUCCESS"
 
-    stage('Clone repository') {
-        checkout scm CI
+    try {
 
-    //    sh 'docker volume create vol-in'
-    //    sh 'docker volume create vol-out'
-    //    sh 'docker volume ls'
+       stage('Checkout'){
 
-    //    sh 'docker run -d --rm --name dummy -v vol-in:/vi alpine tail -f /dev/null'
-    //    sh 'docker cp . dummy:/vi'
-    //    sh 'docker stop dummy'
+            checkout scm
+       }
+       
+       stage('Volumines'){
+            sh 'docker volume create vol-in'
+            sh 'docker volume create vol-out'
+            sh 'docker volume ls'
+
+            sh 'docker run -d --rm --name dummy -v vol-in:/vi alpine tail -f /dev/null'
+            sh 'docker cp . dummy:/vi'
+            sh 'docker stop dummy'
+       }
+
+    }
+    catch (err) {
+
+        currentBuild.result = "FAILURE"
+
+            mail body: "project build error is here: ${env.BUILD_URL}" ,
+            from: 'xxxx@yyyy.com',
+            replyTo: 'yyyy@yyyy.com',
+            subject: 'project build failed',
+            to: 'zzzz@yyyyy.com'
+
+        throw err
     }
 
-    stage('Dependency image') {
-    checkout scm CI
-
-    docker.build("dependency-image", "./CI/dependencies")
-    }
-
-    stage('Build image') {
-       app = docker.build("build-image", "./CI/build")
-    }
-
-    stage('Test image') {
-        docker.build("test-image", "./CI/test")
-        // app.inside {
-        //     sh 'echo "Tests passed"'
-        // }
-    }
-
-    stage('Deploy image') {
-        //sh './jenkins/scripts/deliver.sh' 
-        input message: 'Finished using the web site? (Click "Proceed" to continue)' 
-        //sh './jenkins/scripts/kill.sh' 
-        //docker.build("deploy-image", "./CI/deploy")
-    }
-
-    stage('Publish image') {
-        echo bimg.id
-        //sh "docker cp ${bimg.id}:/. ./artifact/"
-    }
 }
