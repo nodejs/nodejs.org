@@ -1,36 +1,40 @@
-node {
+pipeline {
+    agent none
+
+    stages {
+        stage('Hello') {
+            agent any
+            steps {
+                //sh 'docker volume rm vol-in'
+                sh 'docker volume create vol-in'
+                sh 'docker volume create vol-out' //wrzucac do katalogu oznacznego tagiem
+                sh 'rm * -r'
+                sh 'docker volume ls'
     
-    currentBuild.result = "SUCCESS"
-
-    try {
-
-       stage('Checkout'){
-
-            checkout scm
-       }
-       
-       stage('Volumines'){
-            sh 'docker volume create vol-in'
-            sh 'docker volume create vol-out'
-            sh 'docker volume ls'
-
-            sh 'docker run -d --rm --name dummy -v vol-in:/vi alpine tail -f /dev/null'
-            sh 'docker cp . dummy:/vi'
-            sh 'docker stop dummy'
-       }
-
+                sh 'docker run -d --rm --name dummy -v vol-in:/va alpine tail -f /dev/null'
+                sh 'docker cp . dummy:/vi'
+                sh 'docker stop dummy'
+            }
+            
+        }
+        
+        stage('Build') {
+            agent {
+                docker { 
+                    image 'node' 
+                    args '-v vol-in:/va -v vol-out:/vo'
+                    
+                }
+            }
+            steps {
+                sh 'cp /va/* . -r'
+                sh 'ls'
+                sh 'npm install --save --legacy-peer-deps'
+                sh 'npm run build'
+                sh 'touch aaa'
+                sh 'cp aaa /va'
+            }
+        }
+        
     }
-    catch (err) {
-
-        currentBuild.result = "FAILURE"
-
-            mail body: "project build error is here: ${env.BUILD_URL}" ,
-            from: 'xxxx@yyyy.com',
-            replyTo: 'yyyy@yyyy.com',
-            subject: 'project build failed',
-            to: 'zzzz@yyyyy.com'
-
-        throw err
-    }
-
 }
