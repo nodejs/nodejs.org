@@ -129,12 +129,6 @@
     for (var i = 0; i < linkEls.length; i++) {
       version = linkEls[i].getAttribute('data-version');
       el = linkEls[i];
-
-      // Windows 64-bit files for 0.x.x need to be prefixed with 'x64/'
-      if (os === 'Win' && version[1] === '0' && arch === 'x64') {
-        el.href += arch + '/';
-      }
-
       el.href += filename.replace('%version%', version);
     }
   }
