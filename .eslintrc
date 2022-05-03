@@ -1,7 +1,7 @@
 {
   "extends": [
     "eslint:recommended",
-    "semistandard",
+    "standard",
     "prettier"
   ],
   "plugins": [
@@ -29,6 +29,8 @@
       },
       "rules": {
         "eqeqeq": "off",
+        "n/no-deprecated-api": "off",
+        "n/handle-callback-err": "off",
         "no-const-assign": "off",
         "no-undef": "off",
         "no-unused-expressions": "off",
@@ -42,7 +44,8 @@
             "singleQuote": true,
             "trailingComma": "none"
           }
-        ]
+        ],
+        "semi": ["error", "always"]
       }
     }
   ]
