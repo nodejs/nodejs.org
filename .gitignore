@@ -12,5 +12,8 @@ npm-debug.log
 
 # Netlify
 .netlify
-
 .cache/
+
+# we don't need to modify the json files below for building only.
+source/schedule.json
+source/versions.json
