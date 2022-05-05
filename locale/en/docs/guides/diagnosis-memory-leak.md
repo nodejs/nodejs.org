@@ -13,13 +13,13 @@ For the proposal of this guide, we will use a simple web server empowered with [
 1 - Create a new project
 
 ```bash
-$ npm init -y
+npm init -y
 ```
 
 2 - Install dependencies
 
 ```bash
-$ npm i fastify
+npm i fastify
 ```
 
 3 - Create a simple server (server.js)
@@ -34,7 +34,12 @@ server.get('/write', () => {
   const date = new Date().toString();
 
   // don't do this at home
-  entries.add({ date, arch: os.arch(), platform: os.platform(), cpus: os.cpus() });
+  entries.add({
+    date,
+    arch: os.arch(),
+    platform: os.platform(),
+    cpus: os.cpus()
+  });
 
   return true;
 });
@@ -58,7 +63,7 @@ server.listen(9999, (err, address) => {
 4 - Run the application server
 
 ```bash
-$ node --trace-gc server.js
+node --trace-gc server.js
 ```
 
 It should output something like:
@@ -131,8 +136,8 @@ The `--trace-gc` flag outputs all garbage collection events in the console. Firs
 </table>
 
 We'll only focus on two events here:
-- Scavenge
-- Mark-sweep
+* Scavenge
+* Mark-sweep
 
 The heap is divided into "spaces." Amongst these, we have a space called the "new" space and another one called the "old" space.
 
@@ -183,19 +188,19 @@ This algorithm is composed of two phases:
 
 Now we can come back to the output of the `--trace-gc` flag and see how we could interpret the console's output.
 
-- First, install (`autocannon`)[https://www.npmjs.com/package/autocannon]:
+* First, install (`autocannon`)[https://www.npmjs.com/package/autocannon]:
 ```bash
-$ npm i -g autocannon
+npm i -g autocannon
 ```
 
-- Then, restart the server:
+* Then, restart the server:
 ```bash
-$ node --trace-gc server.js
+node --trace-gc server.js
 ```
 
-- Open a new terminal and run the following command:
+* Open a new terminal and run the following command:
 ```bash
-$ autocannon http://localhost:9999/write
+autocannon http://localhost:9999/write
 ```
 
 Now, if you come back quickly to the previous terminal window: you'll see that there are a lot of `Mark-sweep` events in the console. We also see that the amount of memory collected after the event is insignificant.
@@ -213,7 +218,7 @@ An excellent way to inspect memory is to make heap dumps and compare them. So le
 import v8 from 'v8';
 
 // then add:
-server.get('/heap-dump/:id',  (req) => {
+server.get('/heap-dump/:id', (req) => {
   const id = req.params.id;
   return v8.writeHeapSnapshot(`heap-dump-${id}.heapsnapshot`);
 });
@@ -224,13 +229,13 @@ We exposed an endpoint that will perform a heap dump for us. We'll use it to gen
 1. It's time to rerun our server (without any flag this time):
 
 ```bash
-$ node server.js
+node server.js
 ```
 
 2. Open a new terminal, and generate a first dump:
 
 ```bash
-$ curl http://localhost:9999/heap-dump/start
+curl http://localhost:9999/heap-dump/start
 ```
 
 You should see a `heap-dump-first.heapsnapshot` file in your current directory.
@@ -238,13 +243,13 @@ You should see a `heap-dump-first.heapsnapshot` file in your current directory.
 3. Now run the test command:
 
 ```bash
-$ autocannon http://localhost:9999/write
+autocannon http://localhost:9999/write
 ```
 
 4. Once it is finished, generate a second dump:
 
 ```bash
-$ curl http://localhost:9999/heap-dump/end
+curl http://localhost:9999/heap-dump/end
 ```
 
 You should see a `heap-dump-end.heapsnapshot` file in your current directory.
@@ -271,11 +276,11 @@ You should see a `heap-dump-end.heapsnapshot` file in your current directory.
   <img style="text-align:center" src="../../../../static/guides/diagnosis-memory-leak/setup-cdt-3.png" alt="setup-cdt-3" width="400" />
 </div>
 
-*  Click on the "end" snapshot and compare them:
-    - Click on "Objects allocated between heap-dump-start and heap-dump-end - It will help us see what's happened between our states (start and end).
-    - Sort object by "Retained size" (size freed if the object and dependents ones are deleted)
-    - Then you can expand the first line recursively until you find the most significant object
-    - Once you find it, click on it, and you'll be able to find the name in the description below
+* Click on the "end" snapshot and compare them:
+    * Click on "Objects allocated between heap-dump-start and heap-dump-end - It will help us see what's happened between our states (start and end).
+    * Sort object by "Retained size" (size freed if the object and dependents ones are deleted)
+    * Then you can expand the first line recursively until you find the most significant object
+    * Once you find it, click on it, and you'll be able to find the name in the description below
 
 <div align="center">
   <img style="text-align:center" src="../../../../static/guides/diagnosis-memory-leak/setup-cdt-4.gif" alt="setup-cdt-4" />
@@ -295,6 +300,6 @@ What do you think about fixing this leak, making a new snapshot, and observing t
 Hope you appreciate playing with diagnostic tools. In case, did you know that Node.Js documentation contains a list of tools for diagnostics purposes? Feel free to [check it](https://github.com/nodejs/node/blob/master/doc/contributing/diagnostic-tooling-support-tiers.md) out.
 
 ## References:
-- https://v8.dev/blog/trash-talk
-- https://github.com/thlorenz/v8-perf/blob/master/gc.md
-- https://developer.chrome.com/docs/devtools/memory-problems/memory-101/
+* https://v8.dev/blog/trash-talk
+* https://github.com/thlorenz/v8-perf/blob/master/gc.md
+* https://developer.chrome.com/docs/devtools/memory-problems/memory-101/
