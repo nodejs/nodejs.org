@@ -24,7 +24,7 @@ title: Installing Node.js via package manager
 * [SmartOS and illumos](#smartos-and-illumos)
 * [Solus](#solus)
 * [Void Linux](#void-linux)
-* [Windows](#windows)
+* [Windows](#windows-1)
 
 ---
 

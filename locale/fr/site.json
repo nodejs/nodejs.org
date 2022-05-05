@@ -128,10 +128,6 @@
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/master/doc/contributing/code-of-conduct.md",
       "text": "Code de conduite"
-    },
-    "node-meetups": {
-      "link": "get-involved/node-meetups",
-      "text": "Node.js Meetups"
     }
   },
   "security": {
