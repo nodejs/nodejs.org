@@ -10,7 +10,6 @@ layout: docs.hbs
 * [Getting Started Guide](/en/docs/guides/getting-started-guide/)
 * [Debugging - Getting Started](/en/docs/guides/debugging-getting-started/)
 * [Easy profiling for Node.js Applications](/en/docs/guides/simple-profiling/)
-* [Diagnostics - Flame Graphs](/en/docs/guides/diagnostics-flamegraph/)
 * [Dockerizing a Node.js web app](/en/docs/guides/nodejs-docker-webapp/)
 * [Migrating to safe Buffer constructors](/en/docs/guides/buffer-constructor-deprecation/)
 
@@ -34,3 +33,7 @@ layout: docs.hbs
 ## Known issues
 
 * [Native dependencies on macOS Catalina (v10.15)](https://github.com/nodejs/node-gyp/blob/master/macOS_Catalina.md)
+
+## Diagnosis
+* [Flame Graphs](/en/docs/guides/diagnostics-flamegraph/)
+* [Diagnosis Memory Leak](/en/docs/guides/diagnosis-memory-leak/)
