@@ -159,10 +159,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2022-04-19T15:45:00.000Z",
-      "endDate": "2022-04-26T16:00:00.000Z",
-      "text": "Node.js 18 is now available!",
-      "link": "https://nodejs.org/en/blog/announcements/v18-release-announce"
+      "startDate": "2022-05-05T17:00:00.000Z",
+      "endDate": "2022-05-19T16:00:00.000Z",
+      "text": "Node.js assessment of OpenSSL 3 May 2022 security releases",
+      "link": "https://nodejs.org/en/blog/vulnerability/openssl-fixes-in-regular-releases-may2022"
     },
     "blacklivesmatter": {
       "visible": false,
