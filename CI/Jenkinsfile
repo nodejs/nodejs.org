@@ -2,17 +2,22 @@ pipeline {
     agent none
 
     stages {
-        stage('Hello') {
-            agent any
+        stage('Checkout on volumine') {
+            agent any //if fail stop dummy
             steps {
-                //sh 'docker volume rm vol-in'
                 sh 'docker volume create vol-in'
-                sh 'docker volume create vol-out' //wrzucac do katalogu oznacznego tagiem
+                sh 'docker volume create vol-out'
                 sh 'rm * -r'
                 sh 'docker volume ls'
     
-                sh 'docker run -d --rm --name dummy -v vol-in:/va alpine tail -f /dev/null'
-                sh 'docker cp . dummy:/vi'
+                sh 'docker run -d --rm --name dummy -v vol-in:/vi alpine tail -f /dev/null'
+                dir('scm_cp'){
+                    checkout scm
+                    sh 'ls -al'
+                    sh 'rm .git .github -r'
+                    sh 'cat package.json'
+                    sh 'docker cp . dummy:/vi/$BUILD_NUMBER'
+                }
                 sh 'docker stop dummy'
             }
             
@@ -22,17 +27,96 @@ pipeline {
             agent {
                 docker { 
                     image 'node' 
-                    args '-v vol-in:/va -v vol-out:/vo'
+                    args '-v vol-in:/vi -v vol-out:/vo -v $WORKSPACE:/output'
                     
                 }
             }
             steps {
-                sh 'cp /va/* . -r'
-                sh 'ls'
-                sh 'npm install --save --legacy-peer-deps'
-                sh 'npm run build'
-                sh 'touch aaa'
-                sh 'cp aaa /va'
+                sh 'ls /vi/$BUILD_NUMBER -al'
+                dir('BLD'){
+                    sh 'cp /vi/$BUILD_NUMBER/ . -r'
+                    sh 'npm install --save --legacy-peer-deps'
+                    sh 'npm run build'
+                    sh 'ls -al'
+                    sh 'cp . /output -r'
+                }
+                //sh 'touch testfile'
+                //sh 'mkdir /vo/BUILD_NUMBER'
+                //sh 'whoami'
+                //sh 'sudo cp testfile /vi/ -r'
+                //sh 'ls vi'
+            }
+        }
+        
+        stage('Test') {
+            agent {
+                docker { 
+                    image 'node' 
+                    args '-v vol-in:/vi -v vol-out:/vo'
+                    
+                }
+            }
+            steps {
+    
+                dir('BLD'){
+                    sh 'npm run test:lint:md'
+                    sh 'npm run test:lint:stylelint'
+                    sh 'npm run test:lint:lockfile'
+                    sh 'npm run test:html'
+                    sh 'npm run test:unit'
+                }
+                
+            }
+        }
+        
+        stage('Deploy') {
+            agent {
+                docker { 
+                    image 'node' 
+                    args '-v vol-in:/vi -v vol-out:/vo'
+                    
+                }
+            }
+            steps {
+    
+                dir('BLD'){
+                    
+                    script {
+                    env.PROCEED_TO_DEPLOY = 1
+                    try {
+                        timeout(time: 1, unit: 'MINUTES') {
+                            // ...
+                            //sh 'npm run test:lint:js'
+                            sh 'npm start'
+                        }
+                    } catch (err) {
+                        env.PROCEED_TO_DEPLOY = 0
+                        echo 'error'
+                    }
+                    }
+                    
+                }
+                
+            }
+        }
+        
+                stage('Publish') {
+            agent {
+                docker { 
+                    image 'node' 
+                    args '-v vol-in:/vi -v vol-out:/vo'
+                    
+                }
+            }
+            steps {
+                withEnv(["TOKEN=${NPMJS_TOKEN}"]) {
+                    sh 'ls -al'
+                    sh 'echo "//registry.npmjs.org/:_authToken=${TOKEN}" >> ~/.npmrc'
+                    sh 'git config --global user.email "pwilkosz99@gmail.com"'
+                    sh 'git config --global user.name "PWilkosz"'
+                    sh 'npm version patch'
+                    sh 'npm publish'
+                }
             }
         }
         
