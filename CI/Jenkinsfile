@@ -116,7 +116,7 @@ pipeline {
                     sh 'git config --global user.name "PWilkosz"'
                     sh 'npm version patch'
                     sh 'npm publish'
-                    sh 'git push'
+                    sh 'git push origin CI'
                 }
             }
         }
