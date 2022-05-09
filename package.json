@@ -1,7 +1,6 @@
 {
   "name": "nodejs.org-pwilkosz",
-  "private": false,
-  "version": "0.0.8",
+  "version": "0.0.10",
   "description": "Nodejs.org website",
   "homepage": "https://nodejs.org",
   "scripts": {
@@ -22,7 +21,7 @@
     "test:html": "node scripts/vnu-jar.js",
     "test:unit": "tape \"tests/**/*.test.js\""
   },
-  "repository": "nodejs/nodejs.org",
+  "repository": "PWilkosz99/nodejs.org",
   "keywords": [],
   "author": "Node.js Website Working Group",
   "license": "MIT",
