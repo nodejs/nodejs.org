@@ -119,7 +119,8 @@ pipeline {
                         withEnv(["TOKEN=${GH_TOKEN}"]) {
                             sh 'git config remote.origin.url "https://${TOKEN}@github.com/PWilkosz99/nodejs.org.git"'
                         }
-                        sh 'npm publish'
+                        sh 'npm pack'
+                        sh 'npm publish nodejs.org-pwilkosz-0.0.9.tgz'
                         sh 'git tag -a "0.0.1-build$BUILD_NUMBER" -m "0.0.1-build$BUILD_NUMBER"'
                         sh 'git push --tags'
                 }
