@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-05-10T18:50:10.397Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36" etag="654IGLx8u2wuWiMHttNI" version="18.0.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-05-10T18:54:44.269Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36" etag="lNm-m4kSbddrOznuoe9V" version="18.0.2" type="github">
   <diagram id="_6jzjjmLw6SJjfZyqRxt" name="Page-1">
     <mxGraphModel dx="1422" dy="754" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -20,7 +20,7 @@
           <mxGeometry x="240" y="150" width="160" height="100" as="geometry" />
         </mxCell>
         <mxCell id="8yKd8Ax_CTTsXosJWTvP-11" value="Jenkinsfile" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" vertex="1" parent="1">
-          <mxGeometry x="440" y="150" width="170" height="100" as="geometry" />
+          <mxGeometry x="430" y="150" width="170" height="100" as="geometry" />
         </mxCell>
         <mxCell id="8yKd8Ax_CTTsXosJWTvP-12" value="Pobranie konfiguracji pipeline" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="320" y="480" width="230" height="120" as="geometry" />
@@ -32,7 +32,7 @@
           <mxGeometry x="140" y="470" width="100" height="40" as="geometry" />
         </mxCell>
         <mxCell id="8yKd8Ax_CTTsXosJWTvP-15" value="Pobranie konfiguracji" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e51400;fontColor=#ffffff;strokeColor=#B20000;" vertex="1" parent="1">
-          <mxGeometry x="440" y="480" width="180" height="90" as="geometry" />
+          <mxGeometry x="430" y="470" width="170" height="90" as="geometry" />
         </mxCell>
         <mxCell id="8yKd8Ax_CTTsXosJWTvP-17" value="Pobranie zawartości repozytorium" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffcd28;strokeColor=#d79b00;gradientColor=#ffa500;" vertex="1" parent="1">
           <mxGeometry x="345" y="610" width="180" height="90" as="geometry" />
