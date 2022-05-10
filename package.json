@@ -1,6 +1,6 @@
 {
   "name": "pwilkosz-nodejs.org",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Nodejs.org website",
   "homepage": "https://nodejs.org",
   "scripts": {
@@ -19,7 +19,8 @@
     "test:lint:stylelint": "stylelint \"layouts/css/**/*.{css,scss}\" --cache --cache-location .cache/.stylelintcache --report-needless-disables",
     "test:lint:lockfile": "lockfile-lint --allowed-hosts npm github.com --allowed-schemes https: --empty-hostname false --type npm --path package-lock.json",
     "test:html": "node scripts/vnu-jar.js",
-    "test:unit": "tape \"tests/**/*.test.js\""
+    "test:unit": "tape \"tests/**/*.test.js\"",
+    "version": "echo $npm_package_version"
   },
   "repository": "PWilkosz99/nodejs.org",
   "keywords": [],
