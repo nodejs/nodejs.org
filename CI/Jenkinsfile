@@ -5,19 +5,27 @@ pipeline {
         stage('Checkout on volumine') {
             agent any //if fail stop dummy
             steps {
-                                sh 'docker stop dummy'
-                sh 'docker volume create vol-in'
-                sh 'docker volume create vol-out'
-                sh 'rm * -r'
-                sh 'docker volume ls'
+                script{
+                    try{
+                        sh 'docker volume create vol-in'
+                        sh 'docker volume create vol-out'
+                        sh 'rm * -r'
+                        sh 'docker volume ls'
 
-                sh 'docker run -d --rm --name dummy -v vol-in:/vi alpine tail -f /dev/null'
-                dir('scm_cp') {
-                    checkout scm
-                    sh 'ls -al'
-                    sh 'rm .git .github -r'
-                    sh 'cat package.json'
-                    sh 'docker cp . dummy:/vi/$BUILD_NUMBER'
+                        sh 'docker run -d --rm --name dummy -v vol-in:/vi alpine tail -f /dev/null'
+                        dir('scm_cp') {
+                            checkout scm
+                            sh 'ls -al'
+                            sh 'rm .git .github -r'
+                            sh 'cat package.json'
+                            sh 'docker cp . dummy:/vi/$BUILD_NUMBER'
+                        }
+                    }
+                    catch (Exception e) {
+                        sh 'docker stop dummy'
+                        echo 'Stopping dummy container...'
+                        throw new Exception(e.toString())
+                    }
                 }
             }
 
@@ -75,9 +83,7 @@ pipeline {
             steps {
 
                 dir('BLD') {
-
                     script {
-                        env.PROCEED_TO_DEPLOY = 1
                         try {
                             timeout(time: 1, unit: 'MINUTES') {
                                 sh 'npm start'
@@ -86,10 +92,8 @@ pipeline {
                             echo e.toString()
                             if(e.toString()=="org.jenkinsci.plugins.workflow.steps.FlowInterruptedException")
                             {
-                                env.PROCEED_TO_DEPLOY = 1
                                 echo 'Deployed successfully!'
                             }else{
-                                env.PROCEED_TO_DEPLOY = 0
                                 throw new Exception(e.toString())
                             }
                         }
@@ -124,7 +128,9 @@ pipeline {
                             sh 'git config remote.origin.url "https://${TOKEN}@github.com/PWilkosz99/nodejs.org.git"'
                         }
                         sh 'npm publish'
-                        sh 'git tag -a "${env.VERSION}-build$BUILD_NUMBER" -m "${env.VERSION}-build$BUILD_NUMBER"'
+                        withEnv(["VER=${VERSION}"]){
+                            sh 'git tag -a "${VER}-build$BUILD_NUMBER" -m "${VER}-build$BUILD_NUMBER"'
+                        }
                         sh 'git push --tags'
                 }
             }
