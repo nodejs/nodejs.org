@@ -10,19 +10,19 @@ In this guide, you'll go through the fundamentals of memory leak diagnosis. And 
 
 For the proposal of this guide, we will use a simple web server empowered with [Fastify](https://www.fastify.io/).
 
-1 - Create a new project
+1. Create a new project
 
 ```bash
 npm init -y
 ```
 
-2 - Install dependencies
+2. Install dependencies
 
 ```bash
 npm i fastify
 ```
 
-3 - Create a simple server (server.js)
+3. Create a simple server (server.js)
 
 ```js
 import Fastify from 'fastify';
@@ -60,7 +60,7 @@ server.listen(9999, (err, address) => {
 
 > Even if the leak is evident here, we'll explore two different tools that could help us to spot the leak. However, in the context of a real-world application finding the source of a leak could be cumbersome.
 
-4 - Run the application server
+4. Run the application server
 
 ```bash
 node --trace-gc server.js
