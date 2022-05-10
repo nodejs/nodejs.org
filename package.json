@@ -20,7 +20,7 @@
     "test:lint:lockfile": "lockfile-lint --allowed-hosts npm github.com --allowed-schemes https: --empty-hostname false --type npm --path package-lock.json",
     "test:html": "node scripts/vnu-jar.js",
     "test:unit": "tape \"tests/**/*.test.js\"",
-    "version": "echo $npm_package_version"
+    "version": "echo npm_package_version"
   },
   "repository": "PWilkosz99/nodejs.org",
   "keywords": [],

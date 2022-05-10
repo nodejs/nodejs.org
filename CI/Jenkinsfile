@@ -63,11 +63,11 @@ pipeline {
             steps {
 
                 dir('BLD') {
-                    sh 'npm run test:lint:md'
-                    sh 'npm run test:lint:stylelint'
-                    sh 'npm run test:lint:lockfile'
-                    sh 'npm run test:html'
-                    sh 'npm run test:unit'
+                    //sh 'npm run test:lint:md'
+                    //sh 'npm run test:lint:stylelint'
+                    //sh 'npm run test:lint:lockfile'
+                    //sh 'npm run test:html'
+                    //sh 'npm run test:unit'
                 }
 
             }
