@@ -1,6 +1,6 @@
 {
   "name": "pwilkosz-nodejs.org",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Nodejs.org website",
   "homepage": "https://nodejs.org",
   "scripts": {

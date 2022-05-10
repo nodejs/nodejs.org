@@ -87,7 +87,7 @@ pipeline {
                             if(e.toString()=="org.jenkinsci.plugins.workflow.steps.FlowInterruptedException")
                             {
                                 env.PROCEED_TO_DEPLOY = 1
-                                echo 'aaaaa'
+                                echo 'Deployed successfully!'
                             }else{
                                 env.PROCEED_TO_DEPLOY = 0
                                 throw new Exception(e.toString())
@@ -110,6 +110,10 @@ pipeline {
             }
             steps {
                 dir('pckg/$BUILD_NUMBER') {
+                        script{
+                            env.VERSION = sh( script: "npm view . version",returnStdout: true).trim()
+                            echo "VERSION: ${env.VERSION}"
+                        }
                         sh 'ls . -al'                    
                         withEnv(["TOKEN=${NPMJS_TOKEN}"]) {
                             sh 'echo "//registry.npmjs.org/:_authToken=${TOKEN}" >> ~/.npmrc'
@@ -120,7 +124,7 @@ pipeline {
                             sh 'git config remote.origin.url "https://${TOKEN}@github.com/PWilkosz99/nodejs.org.git"'
                         }
                         sh 'npm publish'
-                        sh 'git tag -a "0.0.1-build$BUILD_NUMBER" -m "0.0.1-build$BUILD_NUMBER"'
+                        sh 'git tag -a "${env.VERSION}-build$BUILD_NUMBER" -m "${env.VERSION}-build$BUILD_NUMBER"'
                         sh 'git push --tags'
                 }
             }
