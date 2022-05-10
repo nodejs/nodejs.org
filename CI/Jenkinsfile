@@ -116,7 +116,7 @@ pipeline {
             steps {
                 dir('pckg/$BUILD_NUMBER') {
                         script{
-                            env.VERSION = sh( script: "npm view . version",returnStdout: true).trim()
+                            env.VERSION = sh( script: "awk '/version/{gsub(/("|",)/,"",$2);print $2}' package.json",returnStdout: true).trim()
                             echo "VERSION: ${env.VERSION}"
                         }
                         sh 'ls . -al'                    
