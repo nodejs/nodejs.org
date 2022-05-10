@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         stage('Checkout on volumine') {
-            agent any //if fail stop dummy
+            agent any
             steps {
                 script{
                     try{
@@ -19,6 +19,7 @@ pipeline {
                             sh 'rm .git .github -r'
                             sh 'cat package.json'
                             sh 'docker cp . dummy:/vi/$BUILD_NUMBER'
+                            sh 'docker stop dummy'
                         }
                     }
                     catch (Exception e) {
@@ -62,11 +63,11 @@ pipeline {
             steps {
 
                 dir('BLD') {
-                    //sh 'npm run test:lint:md'
-                    //sh 'npm run test:lint:stylelint'
-                    //sh 'npm run test:lint:lockfile'
-                    //sh 'npm run test:html'
-                    //sh 'npm run test:unit'
+                    sh 'npm run test:lint:md'
+                    sh 'npm run test:lint:stylelint'
+                    sh 'npm run test:lint:lockfile'
+                    sh 'npm run test:html'
+                    sh 'npm run test:unit'
                 }
 
             }
@@ -109,9 +110,9 @@ pipeline {
                 docker {
                     image 'node'
                     args '-v vol-in:/vi -v vol-out:/vo'
-
                 }
             }
+            when { branch "CI" }
             steps {
                 dir('pckg/$BUILD_NUMBER') {
                         script{
@@ -127,14 +128,23 @@ pipeline {
                         withEnv(["TOKEN=${GH_TOKEN}"]) {
                             sh 'git config remote.origin.url "https://${TOKEN}@github.com/PWilkosz99/nodejs.org.git"'
                         }
-                        sh 'npm publish'
                         withEnv(["VER=${VERSION}"]){
+                            sh 'npm version ${VER}-build$BUILD_NUMBER'
                             sh 'git tag -a "${VER}-build$BUILD_NUMBER" -m "${VER}-build$BUILD_NUMBER"'
                         }
+                        sh 'npm publish'
                         sh 'git push --tags'
                 }
+                sh 'ls'
             }
         }
 
+    }
+    post{
+        failure{
+                emailext subject: "Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' failed",
+                body: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':\n Check console output at ${env.BUILD_URL}",
+                to: 'pwilkosz99@gmail.com'
+        }
     }
 }
