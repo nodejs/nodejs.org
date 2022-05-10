@@ -63,11 +63,11 @@ pipeline {
             steps {
 
                 dir('BLD') {
-                    //sh 'npm run test:lint:md'
-                    //sh 'npm run test:lint:stylelint'
-                    //sh 'npm run test:lint:lockfile'
-                    //sh 'npm run test:html'
-                    //sh 'npm run test:unit'
+                    sh 'npm run test:lint:md'
+                    sh 'npm run test:lint:stylelint'
+                    sh 'npm run test:lint:lockfile'
+                    sh 'npm run test:html'
+                    sh 'npm run test:unit'
                 }
 
             }
@@ -116,7 +116,7 @@ pipeline {
             steps {
                 dir('pckg/$BUILD_NUMBER') {
                         script{
-                            env.VERSION = sh(script: "grep \"version\" package.json | cut -d '\"' -f4 | tr -d '[[:space:]]'", returnStdout: true)
+                            env.VERSION = sh( script: "npm view . version",returnStdout: true).trim()
                             echo "VERSION: ${env.VERSION}"
                         }
                         sh 'ls . -al'                    
