@@ -24,7 +24,7 @@ Hay cuatro tipos de participación en el Comité de la Comunidad:
 
 Para ver la lista actual de miembros del Comité de la Comunidad, acceda al archivo [README.md](https://github.com/nodejs/community-committee) del proyecto.
 
-## Contribuidores and Colaboradores
+## Contribuidores y Colaboradores
 
 La misión de CommComm es desarrollar aún más la comunidad Node.js. Si estás leyendo esto, ya eres parte de esta comunidad, y como parte de la Comunidad Node.js, ¡nos encantaría contar con tu ayuda!
 
@@ -40,7 +40,7 @@ Si está interesado en participar en el Comité de la Comunidad como miembro del
 
 Si está interesado en involucrarse más profundamente con el Comité de la Comunidad y sus proyectos, le animamos a que se convierta en un observador activo y trabaje para lograr el estatus de miembro. Para hacerse miembro debe:
 
-1. Asistir a las reuniones quincenales, investigar los issues etiquetados como "good first issue", archivar issues y spull requests, y aportar información a través de GitHub como contribuidor o colaborador.
+1. Asistir a las reuniones quincenales, investigar los issues etiquetados como "good first issue", archivar issues y pull requests, y aportar información a través de GitHub como contribuidor o colaborador.
 2. Solicite convertirse en Observador presentando una issue. Una vez sea añadido como observador a las reuniones, realizaremos un seguimiento de la asistencia y participación durante 3 meses, de acuerdo a las pautas de la dirección. Puede encontrar un gran ejemplo de este issue [aquí](https://github.com/nodejs/community-committee/issues/142).
 3. Cuando cumpla con las expectativas mínimas de asistencia y participación de 3 meses, el CommComm votará para añadirlo como miembro.
 
