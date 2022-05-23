@@ -40,7 +40,7 @@
     "jstransformer-handlebars": "^1.2.0",
     "junk": "^3.1.0",
     "lodash.defaultsdeep": "^4.6.1",
-    "marked": "^4.0.15",
+    "marked": "^4.0.16",
     "metalsmith": "^2.4.2",
     "metalsmith-collections": "^0.9.0",
     "metalsmith-feed": "^1.0.0",
