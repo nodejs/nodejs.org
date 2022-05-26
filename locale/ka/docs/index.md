@@ -21,7 +21,7 @@ labels:
 
 <div class="highlight-box">
 
-### ეძებთ API-დოკუმენტაციას უწინდელი ვერსიებისთვის?
+### ეძებთ უწინდელი ვერსიებისათვის განკუთვნილ API-დოკუმენტაციას?
 
 {#var nodeVersionLinks}* [ყველა ვერსია](https://nodejs.org/docs/)
 
