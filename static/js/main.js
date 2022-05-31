@@ -129,7 +129,7 @@
     for (var i = 0; i < linkEls.length; i++) {
       version = linkEls[i].getAttribute('data-version');
       el = linkEls[i];
-      !isAnotherOS 
+      !isAnotherOS
         ? (el.href += filename.replace('%version%', version))
         : (el.href = filename);
     }
