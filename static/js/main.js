@@ -111,7 +111,7 @@
 (function () {
   'use strict';
   var userAgent = navigator.userAgent;
-  var osMatch = userAgent.match(/(Win|Mac|Linux)/);
+  var osMatch = userAgent.match(/(Win|Mac|Linux)(?!(iPhone|iPad|Android))*$/);
   var os = (osMatch && osMatch[1]) || '';
   var arch =
     userAgent.match(/x86_64|Win64|WOW64/) || navigator.cpuClass === 'x64'
@@ -121,7 +121,7 @@
   var downloadHead = document.querySelector('#home-downloadhead');
   var dlLocal;
 
-  function versionIntoHref(nodeList, filename) {
+  function versionIntoHref(nodeList, filename, isAnotherOS = false) {
     var linkEls = Array.prototype.slice.call(nodeList);
     var version;
     var el;
@@ -129,7 +129,9 @@
     for (var i = 0; i < linkEls.length; i++) {
       version = linkEls[i].getAttribute('data-version');
       el = linkEls[i];
-      el.href += filename.replace('%version%', version);
+      !isAnotherOS 
+        ? (el.href += filename.replace('%version%', version))
+        : (el.href = filename);
     }
   }
 
@@ -148,6 +150,9 @@
         versionIntoHref(buttons, 'node-%version%-linux-x64.tar.xz');
         downloadHead.textContent = dlLocal + ' Linux (x64)';
         break;
+      default:
+        versionIntoHref(buttons, '/en/download/package-manager', true);
+        downloadHead.textContent = dlLocal + ' another OS';
     }
   }
 
