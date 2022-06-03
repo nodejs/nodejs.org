@@ -32,7 +32,6 @@ Chacun de ces problèmes peut être résolu individuellement sans grande difficu
 
 Il existe un bon serveur de fichiers statiques appelé [node-static](https://github.com/cloudhead/node-static) écrit par Alexis Sellier dont vous pouvez tirer parti. Voici un script qui fonctionne de manière similaire au précédent :
 
-
 ```javascript
 var static = require('node-static');
 var http = require('http');
