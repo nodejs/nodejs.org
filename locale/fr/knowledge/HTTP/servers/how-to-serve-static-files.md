@@ -7,7 +7,7 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-Une nécessité de base pour la plupart des [serveurs http](/fr/knowledge/HTTP/servers/how-to-create-a-HTTPS-server/) est d'être capable de servir des fichiers statiques. Heureusement, ce n'est pas si difficile à faire avec Node.js. D'abord, vous [lisez le fichier] (/fr/connaissance/file-system/how-to-read-files-in-nodejs/), puis vous servez le fichier. Voici un exemple de script qui servira les fichiers dans le répertoire actuel :
+Une nécessité de base pour la plupart des [serveurs http](/fr/knowledge/HTTP/servers/how-to-create-a-HTTPS-server/) est d'être capable de servir des fichiers statiques. Heureusement, ce n'est pas si difficile à faire avec Node.js. D'abord, vous [lisez le fichier](/fr/connaissance/file-system/how-to-read-files-in-nodejs/), puis vous servez le fichier. Voici un exemple de script qui servira les fichiers dans le répertoire actuel :
 
 ```javascript
 var fs = require('fs'),
