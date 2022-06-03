@@ -26,7 +26,7 @@ http.createServer(function (req, res) {
 }).listen(8080);
 ```
 
-Cet exemple prend le chemin demandé et sert ce chemin, relatif au répertoire local. Cela fonctionne bien comme solution rapide, mais cette approche pose quelques problèmes. Tout d'abord, ce code ne gère pas correctement les types mime. De plus, un serveur de fichiers statiques correct devrait vraiment tirer parti de la mise en cache côté client et envoyer une réponse "Not Modified" si rien n'a été modifié. De plus, il existe des bogues de sécurité qui peuvent permettre à un utilisateur malveillant de sortir du répertoire courant. (par exemple, `GET /../../../`).
+Cet exemple prend le chemin demandé et sert ce chemin, relatif au répertoire local. Cela fonctionne bien comme solution rapide, mais cette approche pose quelques problèmes. Tout d'abord, ce code ne gère pas correctement les types MIME. De plus, un serveur de fichiers statiques correct devrait vraiment tirer parti de la mise en cache côté client et envoyer une réponse "Not Modified" si rien n'a été modifié. De plus, il existe des bogues de sécurité qui peuvent permettre à un utilisateur malveillant de sortir du répertoire courant. (par exemple, `GET /../../../`).
 
 Chacun de ces problèmes peut être résolu individuellement sans grande difficulté. Vous pouvez envoyer le bon en-tête de type mime. Vous pouvez comprendre comment utiliser les caches des clients. Vous pouvez tirer parti de `path.normalize` pour vous assurer que les requêtes ne sortent pas du répertoire courant. Mais pourquoi écrire tout ce code quand vous pouvez simplement utiliser la bibliothèque de quelqu'un d'autre ?
 
