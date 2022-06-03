@@ -10,7 +10,7 @@ difficulty: 3
 layout: knowledge-post.hbs
 ---
 
-La gestion correcte des données de formulaire et des téléchargements de fichiers est un problème important et complexe pour les serveurs HTTP. Le faire à la main impliquerait d'analyser des données binaires en continu, de les écrire sur le système de fichiers, d'analyser d'autres données de formulaire, et plusieurs autres problèmes complexes - heureusement, seules quelques personnes auront besoin de s'en préoccuper à ce niveau. Felix Geisendorfer, l'un des principaux committers de Node.js, a écrit une bibliothèque appelée `node-formidable` qui gère toutes les parties difficiles pour vous. Grâce à son API conviviale, vous pouvez analyser des formulaires et recevoir des téléchargements de fichiers en un rien de temps.
+La gestion correcte des données de formulaire et des téléchargements de fichiers est un problème important et complexe pour les serveurs HTTP. Le faire à la main impliquerait d'analyser des données binaires en continu, de les écrire sur le système de fichiers, d'analyser d'autres données de formulaire, et plusieurs autres problèmes complexes - heureusement, seules quelques personnes auront besoin de s'en préoccuper à ce niveau. Felix Geisendorfer, l'un des committers de Node.js core, a écrit une bibliothèque appelée `node-formidable` qui gère toutes les parties difficiles pour vous. Grâce à son API conviviale, vous pouvez analyser des formulaires et recevoir des téléchargements de fichiers en un rien de temps.
 
 Cet exemple est pris directement de la page GitHub de `node-formidable`, avec quelques explications supplémentaires ajoutées.
 
