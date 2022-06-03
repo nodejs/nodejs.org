@@ -9,7 +9,7 @@ layout: knowledge-post.hbs
 
 Pour créer un serveur HTTPS, vous avez besoin de deux choses : un certificat SSL, et le module intégré `https` de Node.js.
 
-Nous devons commencer par un mot sur les certificats SSL. D'une manière générale, il existe deux types de certificats : ceux signés par une " autorité de certification ", ou CA, et les " certificats auto-signés ". Une autorité de certification est une source de confiance pour un certificat SSL, et l'utilisation d'un certificat d'une AC permet à vos utilisateurs de faire confiance à l'identité de votre site Web. Dans la plupart des cas, il est préférable d'utiliser un certificat signé par une autorité de certification dans un environnement de production. Toutefois, à des fins de test, un certificat auto-signé fera parfaitement l'affaire.
+Nous devons commencer par un mot sur les certificats SSL. D'une manière générale, il existe deux types de certificats : ceux signés par une "autorité de certification", ou CA, et les "certificats auto-signés". Une autorité de certification est une source de confiance pour un certificat SSL, et l'utilisation d'un certificat d'une CA permet à vos utilisateurs de faire confiance à l'identité de votre site Web. Dans la plupart des cas, il est préférable d'utiliser un certificat signé par une autorité de certification dans un environnement de production. Toutefois, à des fins de test, un certificat auto-signé fera parfaitement l'affaire.
 
 Pour générer un certificat auto-signé, exécutez ce qui suit dans votre shell :
 
