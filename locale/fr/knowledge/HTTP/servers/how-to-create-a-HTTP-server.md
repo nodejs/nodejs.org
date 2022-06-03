@@ -23,7 +23,7 @@ const server = http.createServer(requestListener);
 server.listen(8080);
 ```
 
-Enregistrez ceci dans un fichier appelé `server.js` - lancez `node server.js`, et votre programme s'arrêtera là... il attend des connexions auxquelles répondre, donc vous devrez lui en donner une si vous voulez le voir faire quelque chose. Essayez d'ouvrir un navigateur, et tapez `localhost:8080` dans la barre d'adresse. Si tout a été configuré correctement, vous devriez voir votre serveur vous dire bonjour !
+Enregistrez ceci dans un fichier appelé `server.js` - lancez `node server.js`, et votre programme se figera là... il attend des connexions auxquelles répondre, donc vous devrez lui en donner une si vous voulez le voir faire quelque chose. Essayez d'ouvrir un navigateur, et tapez `localhost:8080` dans la barre d'adresse. Si tout a été configuré correctement, vous devriez voir votre serveur vous dire bonjour !
 
 De plus, à partir de votre terminal, vous devriez être capable d'obtenir la réponse en utilisant curl :
 
