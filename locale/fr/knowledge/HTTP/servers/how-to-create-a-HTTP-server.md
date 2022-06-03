@@ -7,7 +7,7 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-La réalisation d'un simple serveur HTTP en Node.js est devenue de facto le "hello world" de la plateforme. D'une part, Node.js fournit des API HTTP extrêmement faciles à utiliser ; d'autre part, un simple serveur web sert également d'excellente démonstration des forces asynchrones de Node.js.
+La mise en place d'un simple serveur HTTP avec Node.js est devenue de facto le "hello world" de la plateforme. D'une part, Node.js fournit des API HTTP extrêmement faciles à utiliser ; d'autre part, un simple serveur web sert également d'excellente démonstration des atouts asynchrones de Node.js.
 
 Jetons un coup d'œil à un exemple très simple :
 
