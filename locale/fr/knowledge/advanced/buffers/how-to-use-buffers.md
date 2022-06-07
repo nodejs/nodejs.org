@@ -33,8 +33,6 @@ Dans la nature, les tampons sont généralement vus dans le contexte de données
 
 Il y a plusieurs façons de créer de nouveaux tampons :
 
-Traduit avec www.DeepL.com/Translator (version gratuite)
-
 ```js
 const buffer = Buffer.alloc(8);
 // Cela imprimera 8 octets de zéro :
