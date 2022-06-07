@@ -184,4 +184,5 @@ L'API de cette méthode est généralement la même que celle de `Array.prototyp
 > frosty.toString("utf-8", 0, 19)
 'Happy birthday! ___'
 ```
+
 Maintenant Frosty a été transformé en une flaque d'underscores. C'est dommage.
