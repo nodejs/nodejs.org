@@ -1,5 +1,5 @@
 ---
-title: What is the file `package.json`?
+title: Qu'est-ce que le fichier `package.json` ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - npm
@@ -9,9 +9,9 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-All npm packages contain a file, usually in the project root, called `package.json` - this file holds various metadata relevant to the project. This file is used to give information to `npm` that allows it to identify the project as well as handle the project's dependencies. It can also contain other metadata such as a project description, the version of the project in a particular distribution, license information, even configuration data - all of which can be vital to both `npm` and to the end users of the package. The `package.json` file is normally located at the root directory of a Node.js project.
+Tous les paquets npm contiennent un fichier, généralement à la racine du projet, appelé `package.json` - ce fichier contient diverses métadonnées relatives au projet. Ce fichier est utilisé pour donner des informations à `npm` qui lui permettent d'identifier le projet ainsi que de gérer les dépendances du projet. Il peut également contenir d'autres métadonnées telles qu'une description du projet, la version du projet dans une distribution particulière, des informations sur la licence, voire des données de configuration - toutes ces informations peuvent être vitales à la fois pour `npm` et pour les utilisateurs finaux du paquet. Le fichier `package.json` est normalement situé dans le répertoire racine d'un projet Node.js.
 
-Node.js itself is only aware of two fields in the `package.json`:
+Node.js lui-même n'est conscient que de deux champs dans le `package.json` :
 
 ```json
 {
@@ -20,9 +20,9 @@ Node.js itself is only aware of two fields in the `package.json`:
 }
 ```
 
-The `name` field should explain itself: this is the name of your project. The `version` field is used by npm to make sure the right version of the package is being installed. Generally, it takes the form of `major.minor.patch` where `major`, `minor`, and `patch` are integers which increase after each new release. For more details, look at this spec: http://semver.org .
+Le champ `name` devrait s'expliquer de lui-même : c'est le nom de votre projet. Le champ `version` est utilisé par npm pour s'assurer que la bonne version du paquet est installée. Généralement, il prend la forme de `major.minor.patch` où `major`, `minor`, et `patch` sont des entiers qui augmentent après chaque nouvelle version. Pour plus de détails, consultez cette spécification : http://semver.org .
 
-For a more complete package.json, we can check out `underscore`:
+Pour un package.json plus complet, nous pouvons consulter `underscore` :
 
 ```json
 {
@@ -39,12 +39,12 @@ For a more complete package.json, we can check out `underscore`:
 }
 ```
 
-As you can see, there are fields for the `description` and `keywords` of your projects. This allows people who find your project understand what it is in just a few words. The `author`, `contributors`, `homepage` and `repository` fields can all be used to credit the people who contributed to the project, show how to contact the author/maintainer, and give links for additional references.
+Comme vous pouvez le voir, il y a des champs pour la "description" et les "mots-clés" de vos projets. Cela permet aux personnes qui trouvent votre projet de comprendre ce qu'il est en quelques mots. Les champs `auteur`, `contributeurs`, `homepage` et `repository` peuvent tous être utilisés pour créditer les personnes qui ont contribué au projet, montrer comment contacter l'auteur/le mainteneur, et donner des liens pour des références supplémentaires.
 
-The file listed in the `main` field is the main entry point for the library; when someone runs `require(<library name>)`, require resolves this call to `require(<package.json:main>)`.
+Le fichier listé dans le champ `main` est le point d'entrée principal de la bibliothèque ; lorsque quelqu'un exécute `require(<nom de la bibliothèque>)`, require résout cet appel en `require(<package.json:main>)`.
 
-Finally, the `dependencies` field is used to list all the dependencies of your project that are available on `npm`. When someone installs your project through `npm`, all the dependencies listed will be installed as well. Additionally, if someone runs `npm install` in the root directory of your project, it will install all the dependencies to `./node_modules`.
+Enfin, le champ `dependencies` est utilisé pour lister toutes les dépendances de votre projet qui sont disponibles sur `npm`. Lorsque quelqu'un installe votre projet via `npm`, toutes les dépendances listées seront également installées. De plus, si quelqu'un exécute `npm install` dans le répertoire racine de votre projet, il installera toutes les dépendances dans `./node_modules`.
 
-It is also possible to add a `devDependencies` field to your `package.json` - these are dependencies not required for normal operation, but required/recommended if you want to patch or modify the project. If you built your unit tests using a testing framework, for example, it would be appropriate to put the testing framework you used in your `devDependencies` field. To install a project's `devDependencies`, simply pass the `--dev` option when you use `npm install`.
+Il est également possible d'ajouter un champ `devDependencies` à votre `package.json` - ce sont des dépendances qui ne sont pas nécessaires pour le fonctionnement normal, mais qui sont requises/recommandées si vous voulez patcher ou modifier le projet. Si vous avez construit vos tests unitaires en utilisant un framework de test, par exemple, il serait approprié de mettre le framework de test que vous avez utilisé dans votre champ `devDependencies`. Pour installer les `devDependencies` d'un projet, passez simplement l'option `--dev` lorsque vous utilisez `npm install`.
 
-For even more options, you can look through the [online docs](https://docs.npmjs.com/files/package.json) or run `npm help json`.
+Pour encore plus d'options, vous pouvez consulter la [docs en ligne] (https://docs.npmjs.com/files/package.json) ou lancer `npm help json`.
