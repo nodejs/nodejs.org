@@ -1,5 +1,5 @@
 ---
-title: How do I search files and directories?
+title: Comment rechercher des fichiers et des répertoires ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - filesystem
@@ -7,7 +7,7 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-Suppose you want to list all the files in the current directory. One approach is to use the builtin `fs.readdir` [method](/en/knowledge/file-system/how-to-read-files-in-nodejs/). This will get you an array of all the files and directories on the specified path:
+Supposons que vous vouliez lister tous les fichiers dans le répertoire courant. Une approche consiste à utiliser la méthode `fs.readdir` intégrée (/fr/knowledge/file-system/how-to-read-files-in-nodejs/). Cela vous donnera un tableau de tous les fichiers et répertoires du chemin spécifié :
 
 ```javascript
 fs = require('fs');
@@ -21,21 +21,21 @@ fs.readdir(process.cwd(), function (err, files) {
 });
 ```
 
-Unfortunately, if you want to do a recursive list of files, then things get much more complicated very quickly. To avoid all of this scary complexity, this is one of the places where a Node.js user-land library can save the day. [Node-findit](https://github.com/substack/node-findit), by SubStack, is a helper module to make searching for files easier. It has interfaces to let you work with callbacks, events, or just plain old synchronously (not a good idea most of the time).
+Malheureusement, si vous voulez faire une liste récursive de fichiers, alors les choses deviennent très vite beaucoup plus compliquées. Pour éviter toute cette complexité effrayante, c'est l'un des endroits où une bibliothèque Node.js user-land peut sauver la journée. [Node-findit](https://github.com/substack/node-findit), par SubStack, est un module d'aide pour faciliter la recherche de fichiers. Il possède des interfaces pour vous permettre de travailler avec des callbacks, des événements, ou tout simplement de manière synchrone (ce qui n'est pas une bonne idée la plupart du temps).
 
-To install `node-findit`, simply use npm:
+Pour installer `node-findit`, utilisez simplement npm :
 
 ```
 npm install findit
 ```
 
-In the same folder, create a file called `example.js`, and then add this code. Run it with `node example.js`. This example uses the `node-findit` event-based interface.
+Dans le même dossier, créez un fichier appelé `example.js`, puis ajoutez ce code. Exécutez-le avec `node example.js`. Cet exemple utilise l'interface événementielle `node-findit`.
 
 ```javascript
-//This sets up the file finder
+//Ceci configure le chercheur de fichiers
 var finder = require('findit').find(__dirname);
 
-//This listens for directories found
+//Ceci écoute les répertoires trouvés
 finder.on('directory', function (dir) {
   console.log('Directory: ' + dir + '/');
 });
