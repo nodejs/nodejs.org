@@ -60,8 +60,6 @@ L'utilisation des méthodes `JSON` intégrées peut vous mener loin, mais comme 
 
 Voyons maintenant comment nous pouvons accéder à la configuration locale avec `nconf`. Tout d'abord, vous devez l'installer dans le répertoire de travail de votre projet :
 
-Traduit avec www.DeepL.com/Translator (version gratuite)
-
 ```
 npm install nconf
 ```
