@@ -31,7 +31,7 @@ const mood = function () {
   return m[Math.floor(Math.random() * m.length)];
 };
 
-//Un nœud distant repl auquel vous pouvez vous connecter par telnet !
+// Un nœud distant repl auquel vous pouvez vous connecter par telnet !
 net
   .createServer(function (socket) {
     const remote = repl.start('node::remote> ', socket);
@@ -43,10 +43,10 @@ net
 
 console.log('Remote REPL started on port 5001.');
 
-//Un noeud "local" repl avec une invite personnalisée
+// Un noeud "local" repl avec une invite personnalisée
 const local = repl.start('node::local> ');
 
-//Exposition de la fonction "mood" au contexte local du REPL.
+// Exposition de la fonction "mood" au contexte local du REPL.
 local.context.mood = mood;
 ```
 
