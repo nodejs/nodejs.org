@@ -1,5 +1,5 @@
 ---
-title: How can I read POST data?
+title: Comment puis-je lire des données POST ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - http
@@ -7,9 +7,9 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-Reading the data from a POST request (i.e. a form submission) can be a little bit of a pitfall in Node.js, so we're going to go through an example of how to do it properly. The first step, obviously, is to listen for incoming data - the trick is to wait for the data to finish, so that you can process all the form data without losing anything.
+La lecture des données d'une requête POST (c'est-à-dire une soumission de formulaire) peut être un peu un piège dans Node.js, nous allons donc passer en revue un exemple de la façon de le faire correctement. La première étape, évidemment, est d'écouter les données entrantes - l'astuce est d'attendre que les données se terminent, de sorte que vous puissiez traiter toutes les données du formulaire sans rien perdre.
 
-Here is a quick script that shows you how to do exactly that:
+Voici un script rapide qui vous montre comment faire exactement cela :
 
 ```javascript
 var http = require('http');
@@ -36,10 +36,10 @@ http.createServer(function (req, res) {
 }).listen(8080);
 ```
 
-The variable `postHTML` is a static string containing the HTML for two input boxes and a submit box - this HTML is provided so that you can `POST` example data. This is NOT the right way to serve static HTML - please see [How to Serve Static Files](/en/knowledge/HTTP/servers/how-to-serve-static-files/) for a more proper example.
+La variable `postHTML` est une chaîne statique contenant le HTML de deux boîtes de saisie et d'une boîte d'envoi - ce HTML est fourni pour que vous puissiez `POST` des données d'exemple. Ce n'est PAS la bonne façon de servir du HTML statique - veuillez consulter [How to Serve Static Files](/fr/knowledge/HTTP/servers/how-to-serve-static-files/) pour un exemple plus approprié.
 
-With the HTML out of the way, we [create a server](/en/knowledge/HTTP/servers/how-to-create-a-HTTP-server/) to listen for requests. It is important to note, when listening for POST data, that the `req` object is also an [Event Emitter](/en/knowledge/getting-started/control-flow/what-are-event-emitters/). `req`, therefore, will emit a `data` event whenever a 'chunk' of incoming data is received; when there is no more incoming data, the `end` event is emitted. So, in our case, we listen for `data` events. Once all the data is received, we log the data to the console and send the response.
+Une fois le HTML éliminé, nous [créons un serveur](/fr/knowledge/HTTP/servers/how-to-create-a-HTTP-server/) pour écouter les requêtes. Il est important de noter, lorsqu'on écoute des données POST, que l'objet `req` est aussi un [Event Emitter](/fr/savoir-faire/démarrer/control-flow/what-are-event-emitters/). Par conséquent, `req` émettra un événement `data` à chaque fois qu'un 'chunk' de données entrantes sera reçu ; lorsqu'il n'y aura plus de données entrantes, l'événement `end` sera émis. Donc, dans notre cas, nous écoutons les événements `data`. Une fois que toutes les données sont reçues, nous les enregistrons dans la console et envoyons la réponse.
 
-Something important to note is that the event listeners are being added immediately after the request object is received. If you don't immediately set them, then there is a possibility of missing some of the events. If, for example, an event listener was attached from inside a callback, then the `data` and `end` events might be fired in the meantime with no listeners attached!
+Il est important de noter que les écouteurs d'événements sont ajoutés immédiatement après la réception de l'objet de requête. Si vous ne les configurez pas immédiatement, vous risquez de manquer certains événements. Si, par exemple, un écouteur d'événement a été attaché à l'intérieur d'un callback, alors les événements `data` et `end` pourraient être déclenchés entre-temps sans qu'aucun écouteur ne soit attaché !
 
-You can save this script to `server.js` and run it with `node server.js`. Once you run it you will notice that occasionally you will see lines with no data, e.g. `POSTed:`. This happens because regular `GET` requests go through the same codepath. In a more 'real-world' application, it would be proper practice to check the type of request and handle the different request types differently.
+Vous pouvez enregistrer ce script dans le fichier `server.js` et le lancer avec `node server.js`. Une fois que vous l'aurez exécuté, vous remarquerez qu'occasionnellement vous verrez des lignes sans données, par exemple `POSTed:`. Cela se produit parce que les requêtes régulières `GET` passent par le même chemin de code. Dans une application plus "réelle", il serait bon de vérifier le type de demande et de traiter différemment les différents types de demande.
