@@ -54,4 +54,4 @@ Les annonces et les ordres du jour des réunions sont publiés avant le début d
 
 Le CommComm suit un modèle de prise de décision basé sur la [recherche de consensus](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making).
 
-Lorsqu'un point de l'ordre du jour semble ne pas pouvoir faire l'objet d'un consensus, le modérateur demande "Est-ce que quelqu'un s'oppose ?" en guise d'appel final. 
+Lorsqu'un point de l'ordre du jour semble ne pas pouvoir faire l'objet d'un consensus, le modérateur demande "Est-ce que quelqu'un s'oppose ?" en guise d'appel final.
