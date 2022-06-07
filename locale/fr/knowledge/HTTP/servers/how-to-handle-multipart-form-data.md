@@ -1,5 +1,5 @@
 ---
-title: How to handle multipart form data
+title: Comment gérer les données de formulaires multipartites ?
 date: '2011-09-09T10:08:50.000Z'
 tags:
   - http
@@ -10,9 +10,9 @@ difficulty: 3
 layout: knowledge-post.hbs
 ---
 
-Handling form data and file uploads properly is an important and complex problem in HTTP servers. Doing it by hand would involve parsing streaming binary data, writing it to the file system, parsing out other form data, and several other complex concerns - luckily, only a very few people will need to worry about it on that deep level. Felix Geisendorfer, one of the Node.js core committers, wrote a library called `node-formidable` that handles all the hard parts for you. With its friendly API, you can be parsing forms and receiving file uploads in no time.
+La gestion correcte des données de formulaire et des téléchargements de fichiers est un problème important et complexe pour les serveurs HTTP. Le faire à la main impliquerait d'analyser des données binaires en continu, de les écrire sur le système de fichiers, d'analyser d'autres données de formulaire, et plusieurs autres problèmes complexes - heureusement, seules quelques personnes auront besoin de s'en préoccuper à ce niveau. Felix Geisendorfer, l'un des committers de Node.js core, a écrit une bibliothèque appelée `node-formidable` qui gère toutes les parties difficiles pour vous. Grâce à son API conviviale, vous pouvez analyser des formulaires et recevoir des téléchargements de fichiers en un rien de temps.
 
-This example is taken directly from the `node-formidable` GitHub page, with some additional explanation added.
+Cet exemple est pris directement de la page GitHub de `node-formidable`, avec quelques explications supplémentaires ajoutées.
 
 ```javascript
 var formidable = require('formidable'),
@@ -21,7 +21,7 @@ var formidable = require('formidable'),
 
 http.createServer(function(req, res) {
 
-  // This if statement is here to catch form submissions, and initiate multipart form data parsing.
+  // Cette instruction if est là pour capter les soumissions de formulaires et lancer l'analyse des données des formulaires multipartites.
 
   if (req.url == '/upload' && req.method.toLowerCase() == 'post') {
 
@@ -29,12 +29,12 @@ http.createServer(function(req, res) {
 
     var form = new formidable.IncomingForm();
 
-    // form.parse analyzes the incoming stream data, picking apart the different fields and files for you.
+    // form.parse analyse les données du flux entrant, en distinguant les différents champs et fichiers pour vous.
 
     form.parse(req, function(err, fields, files) {
       if (err) {
 
-        // Check for and handle any errors here.
+        //Vérifiez et traitez les erreurs éventuelles ici.
 
         console.error(err.message);
         return;
@@ -42,14 +42,14 @@ http.createServer(function(req, res) {
       res.writeHead(200, {'content-type': 'text/plain'});
       res.write('received upload:\n\n');
 
-      // This last line responds to the form submission with a list of the parsed data and files.
+      // Cette dernière ligne répond à la soumission du formulaire avec une liste des données et des fichiers analysés.
 
       res.end(util.inspect({fields: fields, files: files}));
     });
     return;
   }
 
-  // If this is a regular request, and not a form submission, then send the form.
+  // S'il s'agit d'une demande normale, et non d'une soumission de formulaire, envoyez le formulaire.
 
   res.writeHead(200, {'content-type': 'text/html'});
   res.end(
@@ -62,4 +62,4 @@ http.createServer(function(req, res) {
 }).listen(8080);
 ```
 
-Try it out for yourself - it's definitely the simpler solution, and `node-formidable` is a battle-hardened, production-ready library. Let userland solve problems like this for you, so that you can get back to writing the rest of your code!
+Essayez-le par vous-même - c'est définitivement la solution la plus simple, et `node-formidable` est une bibliothèque aguerrie, prête pour la production. Laissez userland résoudre des problèmes comme celui-ci pour vous, afin que vous puissiez vous remettre à écrire le reste de votre code !
