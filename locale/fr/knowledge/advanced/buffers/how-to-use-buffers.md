@@ -1,5 +1,5 @@
 ---
-title: How to Use Buffers in Node.js
+title: Comment utiliser les tampons dans Node.js ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - core
@@ -11,31 +11,31 @@ difficulty: 3
 layout: knowledge-post.hbs
 ---
 
-## Why Buffers?
+## Pourquoi Les tampons ?
 
-Pure JavaScript, while great with unicode-encoded strings, does not handle straight binary data very well. This is fine on the browser, where most data is in the form of strings. However, Node.js servers have to also deal with TCP streams and reading and writing to the filesystem, both of which make it necessary to deal with purely binary streams of data.
+Pure JavaScript, bien qu'excellent avec les chaînes codées en unicode, ne gère pas très bien les données binaires. C'est très bien sur le navigateur, où la plupart des données sont sous forme de chaînes de caractères. Cependant, les serveurs Node.js doivent également gérer des flux TCP et lire et écrire dans le système de fichiers, ce qui nécessite de traiter des flux de données purement binaires.
 
-One way to handle this problem is to just use strings *anyway*, which is exactly what Node.js did at first. However, this approach is extremely problematic to work with; It's slow, makes you work with an API designed for strings and not binary data, and has a tendency to break in strange and mysterious ways.
+Une façon de gérer ce problème est d'utiliser des chaînes de caractères *de toute façon*, ce qui est exactement ce que Node.js a fait au début. Cependant, cette approche est extrêmement problématique : elle est lente, vous oblige à travailler avec une API conçue pour les chaînes de caractères et non pour les données binaires, et a tendance à se briser de manière étrange et mystérieuse.
 
-Don't use binary strings. Use *buffers* instead!
+N'utilisez pas de chaînes binaires. Utilisez plutôt des *buffers* !
 
-## What Are Buffers?
+## Que sont les tampons ?
 
-The `Buffer` class in Node.js is designed to handle raw binary data. Each buffer corresponds to some raw memory allocated outside V8. Buffers act somewhat like arrays of integers, but aren't resizable and have a whole bunch of methods specifically for binary data. The integers in a buffer each represent a byte and so are limited to values from 0 to 255 inclusive. When using `console.log()` to print the `Buffer` instance, you'll get a chain of values in hexadecimal values.
+La classe `Buffer` de Node.js est conçue pour gérer des données binaires brutes. Chaque tampon correspond à de la mémoire brute allouée en dehors de V8. Les tampons agissent un peu comme des tableaux d'entiers, mais ne sont pas redimensionnables et ont tout un tas de méthodes spécifiques aux données binaires. Les entiers d'un tampon représentent chacun un octet et sont donc limités aux valeurs de 0 à 255 inclus. En utilisant `console.log()` pour imprimer l'instance `Buffer`, vous obtiendrez une chaîne de valeurs en valeurs hexadécimales.
 
-## Where You See Buffers:
+## Où vous voyez des tampons :
 
-In the wild, buffers are usually seen in the context of binary data coming from streams, such as `fs.createReadStream`.
+Dans la nature, les tampons sont généralement vus dans le contexte de données binaires provenant de flux, comme `fs.createReadStream`.
 
-## Usage:
+## Utilisation :
 
-### Creating Buffers:
+### Créer des tampons :
 
-There are a few ways to create new buffers:
+Il y a plusieurs façons de créer de nouveaux tampons :
 
 ```js
 const buffer = Buffer.alloc(8);
-// This will print out 8 bytes of zero:
+// Cela imprimera 8 octets de zéro :
 // <Buffer 00 00 00 00 00 00 00 00>
 ```
 
@@ -43,7 +43,7 @@ This buffer is initialized and contains 8 bytes of zero.
 
 ```js
 const buffer = Buffer.from([8, 6, 7, 5, 3, 0, 9]);
-// This will print out 8 bytes of certain values:
+// Cela va imprimer 8 octets de certaines valeurs :
 // <Buffer 08 06 07 05 03 00 09>
 ```
 
@@ -51,59 +51,59 @@ This initializes the buffer to the contents of this array. Keep in mind that the
 
 ```js
 const buffer = Buffer.from("I'm a string!", 'utf-8');
-// This will print out a chain of values in utf-8:
+// Cela va imprimer une chaîne de valeurs en utf-8 :
 // <Buffer 49 27 6d 20 61 20 73 74 72 69 6e 67 21>
 ```
 
-This initializes the buffer to a binary encoding of the first string as specified by the second argument (in this case, `'utf-8'`). `'utf-8'` is by far the most common encoding used with Node.js, but `Buffer` also supports others. See [Supported Encodings](https://nodejs.org/dist/latest/docs/api/buffer.html#buffer_buffers_and_character_encodings) for more details.
+Ceci initialise le tampon à un encodage binaire de la première chaîne comme spécifié par le second argument (dans ce cas, `'utf-8'`). `'utf-8'` est de loin l'encodage le plus commun utilisé avec Node.js, mais `Buffer` en supporte d'autres. Voir [Supported Encodings](https://nodejs.org/dist/latest/docs/api/buffer.html#buffer_buffers_and_character_encodings) pour plus de détails.
 
-### Writing to Buffers
+### Écriture dans les tampons
 
-Given that there is already a buffer created:
+Étant donné qu'il y a déjà un tampon créé :
 
 ```
 > var buffer = Buffer.alloc(16)
 ```
 
-we can start writing strings to it:
+Nous pouvons commencer à y écrire des chaînes de caractères :
 
 ```
 > buffer.write("Hello", "utf-8")
 5
 ```
 
-The first argument to `buffer.write` is the string to write to the buffer, and the second argument is the string encoding. It happens to default to utf-8 so this argument is extraneous.
+Le premier argument de `buffer.write` est la chaîne à écrire dans le tampon, et le second argument est l'encodage de la chaîne. Il se trouve que la valeur par défaut est utf-8, donc cet argument n'est pas nécessaire.
 
-`buffer.write` returned 5. This means that we wrote to five bytes of the buffer. The fact that the string "Hello" is also 5 characters long is coincidental, since each character *just happened* to be 8 bits apiece. This is useful if you want to complete the message:
+`buffer.write` renvoie 5. Cela signifie que nous avons écrit dans cinq octets du tampon. Le fait que la chaîne de caractères "Hello" fasse aussi 5 caractères est une coïncidence, puisque chaque caractère est de 8 bits chacun. Ceci est utile si vous voulez compléter le message :
 
 ```
 > buffer.write(" world!", 5, "utf-8")
 7
 ```
 
-When `buffer.write` has 3 arguments, the second argument indicates an offset, or the index of the buffer to start writing at.
+Quand `buffer.write` a 3 arguments, le deuxième argument indique un offset, ou l'index du tampon pour commencer à écrire.
 
-### Reading from Buffers:
+#### Lecture de tampons :
 
-#### toString:
+#### toString :
 
-Probably the most common way to read buffers is to use the `toString` method, since many buffers contain text:
+La façon la plus courante de lire des tampons est probablement d'utiliser la méthode `toString`, puisque de nombreux tampons contiennent du texte :
 
 ```
 > buffer.toString('utf-8')
 'Hello world!\u0000�k\t'
 ```
 
-Again, the first argument is the encoding. In this case, it can be seen that not the entire buffer was used! Luckily, because we know how many bytes we've written to the buffer, we can simply add more arguments to "stringify" the slice that's actually interesting:
+Encore une fois, le premier argument est l'encodage. Dans ce cas, on peut voir que la totalité du tampon n'a pas été utilisée ! Heureusement, comme nous savons combien d'octets nous avons écrit dans le tampon, nous pouvons simplement ajouter d'autres arguments pour "stringifier" la tranche qui est réellement intéressante :
 
 ```
 > buffer.toString("utf-8", 0, 12)
 'Hello world!'
 ```
 
-#### Individual octets:
+#### Octets individuels :
 
-You can also set individual bytes by using an array-like syntax:
+Vous pouvez également définir des octets individuels en utilisant une syntaxe de type tableau :
 
 ```
 > buffer[12] = buffer[11];
@@ -118,17 +118,17 @@ You can also set individual bytes by using an array-like syntax:
 'Hello world!!11!'
 ```
 
-In this example, I set the remaining bytes, by hand, such that they represent utf-8 encoded "!" and "1" characters.
+Dans cet exemple, j'ai défini les octets restants, à la main, de manière à ce qu'ils représentent les caractères " !" et "1" codés en utf-8.
 
-### More Fun With Buffers
+### Plus de plaisir avec les tampons
 
-#### Buffer.isBuffer(object)
+#### Buffer.isBuffer(objet)
 
-This method checks to see if `object` is a buffer, similar to `Array.isArray`.
+Cette méthode vérifie si `objet` est un tampon, de façon similaire à `Array.isArray`.
 
-#### Buffer.byteLength(string, encoding)
+#### Buffer.byteLength(string, encodage)
 
-With this function, you can check the number of bytes required to encode a string with a given encoding (which defaults to utf-8). This length is *not* the same as string length, since many characters require more bytes to encode. For example:
+Avec cette fonction, vous pouvez vérifier le nombre d'octets nécessaires pour encoder une chaîne de caractères avec un encodage donné (qui est par défaut utf-8). Cette longueur n'est *pas* la même que la longueur de la chaîne, car de nombreux caractères nécessitent plus d'octets pour être encodés. Par exemple :
 
 ```
 > var snowman = "☃";
@@ -138,11 +138,11 @@ With this function, you can check the number of bytes required to encode a strin
 3
 ```
 
-The unicode snowman is only one character, but takes 3 entire bytes to encode!
+Le bonhomme de neige unicode n'est qu'un caractère, mais il faut 3 octets entiers pour le coder !
 
 #### buffer.length
 
-This is the length of your buffer, and represents how much memory is allocated. It is not the same as the size of the buffer's contents, since a buffer may be half-filled. For example:
+Il s'agit de la longueur de votre tampon, et représente la quantité de mémoire allouée. Ce n'est pas la même chose que la taille du contenu du tampon, car un tampon peut être à moitié rempli. Par exemple :
 
 ```
 > var buffer = Buffer.alloc(16)
@@ -152,11 +152,11 @@ This is the length of your buffer, and represents how much memory is allocated. 
 16
 ```
 
-In this example, the contents written to the buffer only consist of three groups (since they represent the single-character snowman), but the buffer's length is still 16, as it was initialized.
+Dans cet exemple, le contenu écrit dans le tampon ne comprend que trois groupes (puisqu'ils représentent le bonhomme de neige à un seul caractère), mais la longueur du tampon est toujours de 16, comme il a été initialisé.
 
 #### buffer.copy(target, targetStart=0, sourceStart=0, sourceEnd=buffer.length)
 
-`buffer.copy` allows one to copy the contents of one buffer onto another. The first argument is the target buffer on which to copy the contents of `buffer`, and the rest of the arguments allow for copying only a subsection of the source buffer to somewhere in the middle of the target buffer. For example:
+`buffer.copy` permet de copier le contenu d'un tampon sur un autre. Le premier argument est le tampon cible sur lequel copier le contenu de `buffer`, et le reste des arguments permet de copier seulement une sous-section du tampon source vers quelque part au milieu du tampon cible. Par exemple :
 
 ```
 > var frosty = Buffer.alloc(24)
@@ -169,11 +169,11 @@ In this example, the contents written to the buffer only consist of three groups
 'Happy birthday! ☃'
 ```
 
-In this example, I copied the "snowman" buffer, which contains a 3 byte long character, to the "frosty" buffer, to which I had written to the first 16 bytes. Because the snowman character is 3 bytes long, the result takes up 19 bytes of the buffer.
+Dans cet exemple, j'ai copié le tampon "snowman", qui contient un caractère de 3 octets de long, dans le tampon "frosty", dans lequel j'avais écrit sur les 16 premiers octets. Comme le caractère "snowman" a une longueur de 3 octets, le résultat occupe 19 octets du tampon.
 
 #### buffer.slice(start, end=buffer.length)
 
-This method's API is generally the same as that of `Array.prototype.slice`, but with one very import difference: The slice is **not** a new buffer and merely references a subset of the memory space. *Modifying the slice will also modify the original buffer*! For example:
+L'API de cette méthode est généralement la même que celle de `Array.prototype.slice`, mais avec une différence très importante : La tranche n'est **pas** un nouveau tampon et référence simplement un sous-ensemble de l'espace mémoire. *Modifier la tranche modifiera également le tampon original* ! Par exemple :
 
 ```
 > var puddle = frosty.slice(16, 19)
@@ -185,4 +185,4 @@ This method's API is generally the same as that of `Array.prototype.slice`, but 
 'Happy birthday! ___'
 ```
 
-Now Frosty has been turned into a puddle of underscores. Bummer.
+Maintenant Frosty a été transformé en une flaque d'underscores. C'est dommage.

@@ -1,5 +1,5 @@
 ---
-title: How to use the path module?
+title: Comment utiliser le module de  ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - core
@@ -8,9 +8,9 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-The path module contains several helper functions to help make path manipulation easier.
+Le module path contient plusieurs fonctions d'aide pour faciliter la manipulation des chemins.
 
-The first function worth mentioning is `path.normalize`. This function takes a path (in the form of a string) and strips it of duplicate slashes and normalizes directory abbreviations, like '.' for 'this directory' and '..' for 'one level up'. For example:
+La première fonction qui mérite d'être mentionnée est `path.normalize`. Cette fonction prend un chemin (sous la forme d'une chaîne de caractères) et le débarrasse des slashs en double et normalise les abréviations de répertoire, comme '.' pour 'ce répertoire' et '..' pour 'un niveau au-dessus'. Par exemple :
 
 ```
 > var path = require('path');
@@ -18,7 +18,7 @@ The first function worth mentioning is `path.normalize`. This function takes a p
 '/a/b/c/'
 ```
 
-A closely related function to `normalize` is `join`. This function takes a variable number of arguments, joins them together, and normalizes the path.
+Une fonction étroitement liée à `normalize` est `join`. Cette fonction prend un nombre variable d'arguments, les joint ensemble, et normalise le chemin.
 
 ```
 > var path = require('path');
@@ -26,7 +26,7 @@ A closely related function to `normalize` is `join`. This function takes a varia
 '/a/b/c'
 ```
 
-A possible use of `join` is to manipulate paths when serving urls:
+Une utilisation possible de `join` est de manipuler les chemins lors du service des urls :
 
 ```
 > var path = require('path');
@@ -35,13 +35,13 @@ A possible use of `join` is to manipulate paths when serving urls:
 '/home/nico/static/index.html'
 ```
 
-There are three functions which are used to extract the various parts of the path name: `basename`, `extname`, and `dirname`.
+Il y a trois fonctions qui sont utilisées pour extraire les différentes parties du nom du chemin : `basename`, `extname`, et `dirname`.
 
-* `basename` returns the last portion of the path passed in.
-* `extname` returns the extension of the last portion. Generally for directories, `extname` just returns ''.
-* Finally, `dirname` returns everything that `basename` does not return.
+* `basename` retourne la dernière portion du chemin passé.
+* `extname` renvoie l'extension de la dernière portion. Généralement, pour les répertoires, `extname` renvoie juste ''.
+* Enfin, `dirname` retourne tout ce que `basename` ne retourne pas.
 
-For example:
+Par exemple :
 
 ```
 > var path = require('path')
@@ -54,7 +54,7 @@ For example:
 '/a/b'
 ```
 
-Note that `basename` has an optional second parameter that will strip out the extension if you pass the correct extension.
+Notez que `basename` a un deuxième paramètre optionnel qui enlèvera l'extension si vous passez l'extension correcte.
 
 ```
 > var path = require('path')
@@ -63,13 +63,13 @@ Note that `basename` has an optional second parameter that will strip out the ex
 'c'
 ```
 
-Lastly, the `path` module provides methods to check whether or not a given path exists: `exists` and `existsSync` They both take the path of a file for the first parameter.
+Enfin, le module `path` fournit des méthodes pour vérifier si un chemin donné existe ou non : `exists` et `existsSync` Elles prennent toutes deux le chemin d'un fichier pour premier paramètre.
 
-`exists` takes a callback as its second parameter, to which is returned a boolean representing the existence of the file.
+`exists` prend une callback comme second paramètre, à laquelle est retournée un booléen représentant l'existence du fichier.
 
-`existsSync`, on the other hand, checks the given path synchronously, returning the boolean directly. In Node.js, you will typically want to use the asynchronous functions for most file system I/O - the synchronous versions will block your entire process until they finish.
+`existsSync`, d'autre part, vérifie le chemin donné de manière synchrone, en retournant directement le booléen. Dans Node.js, vous voudrez typiquement utiliser les fonctions asynchrones pour la plupart des entrées/sorties du système de fichiers - les versions synchrones bloqueront votre processus entier jusqu'à ce qu'elles se terminent.
 
-Blocking isn't always a bad thing. Checking the existence of a vital configuration file synchronously makes sense, for example - it doesn't matter much if your process is blocking for something it can't run without! Conversely, though, in a busy HTTP server, any per-request file I/O **MUST** be asynchronous, or else you'll be responding to requests one by one. See the article on [asynchronous operations](/en/knowledge/getting-started/control-flow/how-to-write-asynchronous-code/) for more details.
+Le blocage n'est pas toujours une mauvaise chose. Vérifier l'existence d'un fichier de configuration vital de manière synchrone est logique, par exemple - cela n'a pas beaucoup d'importance si votre processus bloque pour quelque chose dont il ne peut se passer ! À l'inverse, dans un serveur HTTP très actif, toute entrée/sortie de fichier par requête **Doit** être asynchrone, sinon vous devrez répondre aux requêtes une par une. Voir l'article sur les [opérations asynchrones] (/fr/knowledge/getting-started/control-flow/how-to-write-asynchronous-code/) pour plus de détails.
 
 ```
 > var path = require('path')

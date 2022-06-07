@@ -1,5 +1,5 @@
 ---
-title: What is the error object?
+title: Quel est l'objet de l'erreur ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - errors
@@ -8,9 +8,9 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-The error object is a built-in object that provides a standard set of useful information when an error occurs, such as a stack trace and the error message. For example:
+L'objet erreur est un objet intégré qui fournit un ensemble standard d'informations utiles lorsqu'une erreur se produit, comme une trace de la pile et le message d'erreur. Par exemple :
 
-Code:
+Code :
 
 ```javascript
 var error = new Error("The error message");
@@ -18,7 +18,7 @@ console.log(error);
 console.log(error.stack);
 ```
 
-Result:
+Résultat:
 
 ```
 { stack: [Getter/Setter],
@@ -35,9 +35,9 @@ Error: The error message
     at EventEmitter._tickCallback (node.js:126:26)
 ```
 
-`error.stack` shows you where an error came from, as well as a list of the function calls that preceded it - for your convenience, `error.stack` always prints `error.message` as the first line of its output, making `error.stack` a convenient single property to log during debugging.
+`error.stack` vous montre d'où vient une erreur, ainsi qu'une liste des appels de fonction qui l'ont précédée - pour votre confort, `error.stack` imprime toujours `error.message` comme première ligne de sa sortie, ce qui fait de `error.stack` une propriété unique pratique à enregistrer pendant le débogage.
 
-If you want to add more information to the Error object, you can always add properties, just as with any other JavaScript object:
+Si vous voulez ajouter plus d'informations à l'objet Error, vous pouvez toujours ajouter des propriétés, comme pour tout autre objet JavaScript :
 
 ```javascript
 var error = new Error("The error message");
@@ -45,4 +45,4 @@ error.http_code = 404;
 console.log(error);
 ```
 
-For more details how to use the Error object, check out the [article on error conventions](/en/knowledge/errors/what-are-the-error-conventions/)
+Pour plus de détails sur l'utilisation de l'objet Error, consultez l'[article sur les conventions d'erreur](/fr/knowledge/errors/what-are-the-error-conventions/).

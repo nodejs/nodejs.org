@@ -1,5 +1,5 @@
 ---
-title: What are callbacks?
+title: Qu'est-ce que les callbacks ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - javascript
@@ -10,7 +10,7 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-In a synchronous program, you would write something along the lines of:
+Dans un programme synchrone, vous écrirez quelque chose du genre :
 
 ```javascript
 function processData () {
@@ -20,9 +20,9 @@ function processData () {
 }
 ```
 
-This works just fine and is very typical in other development environments. However, if fetchData takes a long time to load the data (maybe it is streaming it off the drive or the internet), then this causes the whole program to 'block' - otherwise known as sitting still and waiting - until it loads the data. Node.js, being an asynchronous platform, doesn't wait around for things like file I/O to finish - Node.js uses callbacks. A callback is a function called at the completion of a given task; this prevents any blocking, and allows other code to be run in the meantime.
+Cela fonctionne très bien et est très typique dans d'autres environnements de développement. Cependant, si fetchData prend beaucoup de temps pour charger les données (peut-être qu'il les diffuse à partir du disque dur ou d'Internet), le programme entier se " bloque " - autrement dit, il reste immobile et attend - jusqu'à ce qu'il charge les données. Node.js, étant une plateforme asynchrone, n'attend pas que des choses comme les E/S de fichiers se terminent - Node.js utilise des callbacks. Un callback est une fonction appelée à la fin d'une tâche donnée ; cela évite tout blocage et permet d'exécuter d'autres codes pendant ce temps.
 
-The Node.js way to deal with the above would look a bit more like this:
+La façon dont Node.js gère ce qui précède ressemblerait un peu plus à ceci :
 
 ```javascript
 function processData (callback) {
@@ -37,23 +37,23 @@ function processData (callback) {
 }
 ```
 
-At first glance, it may look unnecessarily complicated, but callbacks are the foundation of Node.js. Callbacks give you an interface with which to say, "and when you're done doing that, do all this." This allows you to have as many IO operations as your OS can handle happening at the same time. For example, in a web server with hundreds or thousands of pending requests with multiple blocking queries, performing the blocking queries asynchronously gives you the ability to be able to continue working and not just sit still and wait until the blocking operations come back. This is a major improvement.
+À première vue, cela peut sembler inutilement compliqué, mais les callbacks sont la base de Node.js. Les callbacks vous donnent une interface avec laquelle vous pouvez dire "et quand vous avez fini de faire ça, faites tout ça". Cela vous permet d'avoir autant d'opérations d'entrée/sortie que votre système d'exploitation peut en gérer en même temps. même moment. Par exemple, dans un serveur web avec des centaines ou des milliers de requêtes en attente et plusieurs requêtes bloquantes, l'exécution asynchrone des requêtes bloquantes vous permet de continuer à travailler et de ne pas rester assis à attendre que les opérations bloquantes reviennent. Il s'agit d'une amélioration majeure.
 
-The typical convention with asynchronous functions (which almost all of your functions should be):
+La convention typique avec les fonctions asynchrones (ce que presque toutes vos fonctions devraient être) :
 
 ```javascript
 function asyncOperation ( a, b, c, callback ) {
-  // ... lots of hard work ...
-  if ( /* an error occurs */ ) {
+  // ... Beaucoup de travail...
+  if ( /* Une erreur survient */ ) {
     return callback(new Error("An error has occurred"));
   }
-  // ... more work ...
+  // ... Plus de travail ...
   callback(null, d, e, f);
 }
 
 asyncOperation ( params.., function ( err, returnValues.. ) {
-  //This code gets run after the async operation gets run
+  //Ce code est exécuté après l'exécution de l'opération asynchrone.
 });
 ```
 
-You will almost always want to follow the [error callback convention](/en/knowledge/errors/what-are-the-error-conventions/), since most Node.js users will expect your project to follow them. The general idea is that the callback is the last parameter. The callback gets called after the function is done with all of its operations. Traditionally, the first parameter of the callback is the `error` value. If the function hits an error, then they typically call the callback with the first parameter being an Error object. If it cleanly exits, then they will call the callback with the first parameter being null and the rest being the return value(s).
+Vous voudrez presque toujours suivre la [convention de rappel d'erreur](/fr/knowledge/errors/what-are-the-error-conventions/), puisque la plupart des utilisateurs de Node.js s'attendront à ce que votre projet les suive. L'idée générale est que le callback est le dernier paramètre. Le callback est appelé après que la fonction ait terminé toutes ses opérations. Traditionnellement, le premier paramètre du callback est la valeur `error`. Si la fonction rencontre une erreur, alors elle appelle généralement la callback avec comme premier paramètre un objet Error. Si elle se termine proprement, alors elle appellera la callback avec le premier paramètre étant null et le reste étant la ou les valeurs de retour.

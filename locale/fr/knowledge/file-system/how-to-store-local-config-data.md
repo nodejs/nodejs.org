@@ -1,5 +1,5 @@
 ---
-title: How to store local configuration data
+title: Comment stocker les données de configuration locales ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - conventions
@@ -8,9 +8,9 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-Storing your Node.js application's configuration data is quite simple - every object in JavaScript can be easily rendered as [JSON](/en/knowledge/javascript-conventions/what-is-json/), which in turn is just string data that can be sent or saved any way you'd like. The simplest way to do this involves the built-in `JSON.parse()` and `JSON.stringify()` methods.
+Stocker les données de configuration de votre application Node.js est assez simple - chaque objet en JavaScript peut être facilement rendu comme [JSON](/fr/knowledge/javascript-conventions/what-is-json/), qui à son tour est juste une chaîne de données qui peut être envoyée ou sauvegardée comme vous le souhaitez. La façon la plus simple de le faire est d'utiliser les méthodes intégrées `JSON.parse()` et `JSON.stringify()`.
 
-Let's take a look at a very simple (and contrived) example. First, to save some very simple data:
+Prenons un exemple très simple (et artificiel). Tout d'abord, nous allons sauvegarder des données très simples :
 
 ```javascript
 var fs = require('fs');
@@ -34,9 +34,9 @@ fs.writeFile('./config.json', data, function (err) {
 });
 ```
 
-It's really that simple - just `JSON.stringify()` and then save it however you'd like.
+C'est vraiment aussi simple que cela - il suffit de `JSON.stringify()` et de l'enregistrer comme vous le souhaitez.
 
-Now let's load some configuration data:
+Maintenant, chargeons quelques données de configuration :
 
 ```javascript
 var fs = require('fs');
@@ -54,17 +54,17 @@ catch (err) {
 }
 ```
 
-NODE PRO TIP: Even if you don't like using `try/catch`, this is a place to use it. `JSON.parse` is a very strict JSON parser, and errors are common - most importantly, though, `JSON.parse` uses the `throw` statement rather than giving a callback, so `try/catch` is the only way to guard against the error.
+CONSEIL DU PRO NODE : Même si vous n'aimez pas utiliser `try/catch`, c'est un endroit où l'utiliser. `JSON.parse` est un parseur JSON très strict, et les erreurs sont courantes - le plus important, cependant, `JSON.parse` utilise l'instruction `throw` plutôt que de donner un callback, donc `try/catch` est le seul moyen de se prémunir contre l'erreur.
 
-Using the built-in `JSON` methods can take you far, but as with so many other problems you might be looking to solve with Node.js, there is already a solution in Userland that can take you much further. The solution, in this case, is `nconf`. Written by Charlie Robbins, it's a configuration manager for Node.js, supporting in-memory storage, local file storage, as well as support for a `redis` backend, provided in a separate module.
+L'utilisation des méthodes `JSON` intégrées peut vous mener loin, mais comme pour beaucoup d'autres problèmes que vous pourriez chercher à résoudre avec Node.js, il existe déjà une solution dans Userland qui peut vous mener bien plus loin. La solution, dans ce cas, est `nconf`. Ecrit par Charlie Robbins, c'est un gestionnaire de configuration pour Node.js, supportant le stockage en mémoire, le stockage de fichiers locaux, ainsi que le support d'un backend `redis`, fourni dans un module séparé.
 
-Let's take a look now at how we'd perform some local configuration access with `nconf`. First, you'll need to install it to your project's working directory:
+Voyons maintenant comment nous pouvons accéder à la configuration locale avec `nconf`. Tout d'abord, vous devez l'installer dans le répertoire de travail de votre projet :
 
 ```
 npm install nconf
 ```
 
-After that, the syntax is a breeze. Have a look at an example:
+Après cela, la syntaxe est un jeu d'enfant. Jetez un coup d'œil à un exemple :
 
 ```javascript
 var nconf = require('nconf');
@@ -86,6 +86,6 @@ nconf.save(function (err) {
 });
 ```
 
-The only tricky thing to notice here is the delimiter - ':'. When accessing nested properties with `nconf`, a colon is used to delimit the namespaces of key names. If a specific sub-key is not provided, the whole object is set or returned.
+La seule chose délicate à noter ici est le délimiteur - ':'. Lors de l'accès à des propriétés imbriquées avec nconf, un deux-points est utilisé pour délimiter les espaces de noms des clés. Si une sous-clé spécifique n'est pas fournie, l'objet entier est défini ou retourné.
 
-When using `nconf` to store your configuration data to a file, `nconf.save()` and `nconf.load()` are the only times that any actual file interaction will happen. All other access is performed on an in-memory copy of your data, which will not persist without a call to `nconf.save()`. Similarly, if you're trying to bring back configuration data from the last time your application ran, it will not exist in memory without a call to `nconf.load()`, as shown above.
+Lorsque vous utilisez nconf pour stocker vos données de configuration dans un fichier, nconf.save() et nconf.load() sont les seuls moments où une interaction réelle avec le fichier aura lieu. Tout autre accès est effectué sur une copie en mémoire de vos données, qui ne persistera pas sans un appel à nconf.save(). De même, si vous essayez de ramener les données de configuration de la dernière fois que votre application a été exécutée, elles n'existeront pas en mémoire sans un appel à nconf.load(), comme indiqué ci-dessus.

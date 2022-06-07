@@ -8,21 +8,21 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-# Learn to use the REPL
+# Apprendre à utiliser le REPL
 
-Node.js ships with a Read-Eval-Print Loop, also known as a REPL. It is the Node.js interactive shell; any valid JavaScript which can be written in a script can be passed to the REPL. It can be extremely useful for experimenting with Node.js, debugging code, and figuring out some of JavaScript's more eccentric behaviors.
+Node.js est livré avec une boucle de lecture-évaluation-impression, également connue sous le nom de REPL. C'est le shell interactif de Node.js ; tout JavaScript valide qui peut être écrit dans un script peut être passé au REPL. Il peut être extrêmement utile pour expérimenter avec Node.js, déboguer du code et comprendre certains des comportements les plus excentriques de JavaScript.
 
-Node.js has a standalone REPL accessible from the command line, and a built in REPL module you can use to [create your own custom REPLs](https://nodejs.org/api/repl.html#repl_repl). We are going to learn about the basics of the standalone REPL.
+Node.js dispose d'un REPL autonome accessible depuis la ligne de commande, et d'un module REPL intégré que vous pouvez utiliser pour [créer vos propres REPL personnalisés] (https://nodejs.org/api/repl.html#repl_repl). Nous allons apprendre les bases du REPL autonome.
 
-## How to Start the REPL
+## Comment démarrer le REPL
 
-Starting the REPL is simple - just run node on the command line without a filename.
+Le démarrage du REPL est simple - il suffit d'exécuter node sur la ligne de commande sans nom de fichier.
 
 ```shell
 node
 ```
 
-It then drops you into a simple prompt ('>') where you can type any JavaScript command you wish. As in most shells, you can press the up and down arrow keys to scroll through your command history and modify previous commands.
+Il vous place ensuite dans une simple invite ('>') où vous pouvez taper n'importe quelle commande JavaScript que vous souhaitez. Comme dans la plupart des shells, vous pouvez appuyer sur les touches fléchées haut et bas pour faire défiler l'historique de vos commandes et modifier les commandes précédentes.
 
 ```shell
 $ node
@@ -33,23 +33,23 @@ undefined
 > .exit
 ```
 
-You can also use the `Tab` key to autocomplete some commands. When multiple autocomplete options are available, hit `Tab` again to cycle through them.
+Vous pouvez également utiliser la touche `Tab` pour autocompléter certaines commandes. Lorsque Vous pouvez également utiliser la touche `Tab` pour compléter automatiquement certaines commandes. Lorsque plusieurs options de complétion automatique sont disponibles, appuyez à nouveau sur la touche `Tab` pour les faire défiler.
 
-## Special Commands and Exiting the REPL
+## Commandes spéciales et sortie du REPL
 
-The following special commands are supported by all REPL instances (from [Node.js REPL docs](https://nodejs.org/api/repl.html#repl_commands_and_special_keys):
+Les commandes spéciales suivantes sont supportées par toutes les instances REPL (de [Node.js REPL docs](https://nodejs.org/api/repl.html#repl_commands_and_special_keys) :
 
-* `.exit` - Close the I/O stream, causing the REPL to exit.
-* `.break` - When in the process of inputting a multi-line expression, entering the `.break` command (or pressing the `<ctrl>-C` key combination) will abort further input or processing of that expression.
-* `.clear` - Resets the REPL `context` to an empty object and clears any multi-line expression currently being input.
-* `.help` - Show this list of special commands.
-* `.save` - Save the current REPL session to a file: `> .save ./file/to/save.js`
-* `.load` - Load a file into the current REPL session. `> .load ./file/to/load.js`
-* `.editor` - Enter editor mode (`<ctrl>-D` to finish, `<ctrl>-C` to cancel).
+* `.exit` - Ferme le flux d'E/S, provoquant la sortie du REPL.
+* `.break` - Lors de la saisie d'une expression multi-ligne, la commande `.break` (ou la combinaison de touches `<ctrl>-C`) interrompt la saisie ou le traitement de cette expression.
+* `.clear` - Remet le `contexte` du REPL à un objet vide et efface toute expression multi-ligne en cours de saisie.
+* `.help` - Afficher cette liste de commandes spéciales.
+* `.save` - Enregistre la session REPL actuelle dans un fichier : `> .save ./file/to/save.js`
+* `.load` - Charge un fichier dans la session REPL en cours. `> .load ./file/to/load.js`
+* `.editor` - Entrer en mode éditeur (`<ctrl>-D` pour terminer, `<ctrl>-C` pour annuler).
 
 ```shell
 > .editor
-# Entering editor mode (<ctrl>-D to finish, <ctrl>-C to cancel)
+# Entrer en mode éditeur (<ctrl>-D pour terminer, <ctrl>-C pour annuler).
 function welcome(name) {
   return `Hello ${name}!`;
 }
@@ -61,17 +61,17 @@ welcome('Node.js User');
 >
 ```
 
-The following key combinations in the REPL have these special effects:
+Les combinaisons de touches suivantes dans le REPL ont ces effets spéciaux :
 
-* `<ctrl>-C` - When pressed once, has the same effect as the `.break` command. When pressed twice on a blank line, has the same effect as the `.exit` command.
-* `<ctrl>-D` - Has the same effect as the `.exit` command.
-* `<tab>` - When pressed on a blank line, displays global and local (scope) variables. When pressed while entering other input, displays relevant autocompletion options.
+* `<ctrl>-C` - Lorsqu'il est pressé une fois, a le même effet que la commande `.break`. Lorsqu'il est appuyé deux fois sur une ligne blanche, il a le même effet que la commande `.exit`.
+* `<ctrl>-D` - A le même effet que la commande `.exit`.
+* `<tab>` - Lorsqu'il est appuyé sur une ligne blanche, affiche les variables globales et locales (portée). Lorsqu'il est pressé pendant la saisie d'une autre entrée, affiche les options d'autocomplétion pertinentes.
 
-## Return Values
+## Valeurs de retour
 
-Whenever you type a command, it will print the return value of the command. If you want to reuse the previous return value, you can use the special `_` variable.
+Chaque fois que vous tapez une commande, la valeur de retour de la commande est imprimée. Si vous voulez réutiliser la valeur de retour précédente, vous pouvez utiliser la variable spéciale `_`.
 
-For example:
+Par exemple :
 
 ```shell
 $ node
@@ -81,7 +81,7 @@ $ node
 3
 ```
 
-One thing worth noting where REPL return values are concerned:
+Une chose à noter concernant les valeurs de retour REPL :
 
 ```shell
 > x = 10
@@ -93,13 +93,13 @@ One thing worth noting where REPL return values are concerned:
 5
 ```
 
-When the `var` keyword is used, the value of the expression is stored, but *NOT* returned. When a bare identifier is used, the value is also returned, as well as stored.
+Lorsque le mot-clé `var` est utilisé, la valeur de l'expression est stockée, mais *NON* retournée. Lorsqu'un identificateur nu est utilisé, la valeur est également retournée, ainsi que stockée.
 
-## Accessing Modules
+## Accès aux modules
 
-If you need to access any of the builtin modules, or any third party modules, they can be accessed with `require`, just like in the rest of Node.
+Si vous avez besoin d'accéder à l'un des modules intégrés, ou à tout autre module tiers, vous pouvez y accéder avec `require`, comme dans le reste de Node.
 
-For example:
+Par exemple :
 
 ```shell
 $ node
@@ -116,4 +116,4 @@ $ node
 'c.txt'
 ```
 
-Note once again that without the `var` keyword, the contents of the object are returned immediately and displayed to `stdout`.
+Notez une fois de plus que sans le mot-clé `var`, le contenu de l'objet est retourné immédiatement et affiché sur `stdout`.
