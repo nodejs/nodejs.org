@@ -3,7 +3,7 @@ layout: about.hbs
 title: Groupes de travail
 ---
 
-Groupes de travail principaux
+#Groupes de travail principaux
 <!-- L'information ici devrait surtout être un miroir : https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 
 Les groupes de travail principaux sont créés par le [Comité de pilotage technique (TSC)] (https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).
@@ -187,6 +187,7 @@ Les responsabilités incluent :
 ### [Streams](https://github.com/nodejs/readable-stream)
 
 Le groupe de travail Streams se consacre au soutien et à l'amélioration de l'API Streams telle qu'elle est utilisée dans Node.js et dans l'écosystème npm. Nous cherchons à créer une API composable qui résout le problème de la représentation de multiples occurrences d'un événement dans le temps de manière humaine et sans frais supplémentaires. Les améliorations apportées à l'API seront déterminées par les besoins de l'écosystème ; l'interopérabilité et la rétrocompatibilité avec d'autres solutions seront assurées.
+
 Responsibilities include:
 
 Les responsabilités comprennent :
