@@ -34,7 +34,7 @@
     "@metalsmith/permalinks": "^2.4.0",
     "autoprefixer": "^10.4.7",
     "graceful-fs": "^4.2.10",
-    "fs-extra": "^10.1.0"
+    "fs-extra": "^10.1.0",
     "handlebars": "^4.7.7",
     "jquery": "^3.6.0",
     "jquery.fancytable": "^1.0.30",
