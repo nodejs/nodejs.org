@@ -1,5 +1,5 @@
 ---
-title: What are Event Emitters?
+title: Que sont les émetteurs d'événements ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - core
@@ -9,7 +9,7 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-In Node.js an event can be described simply as a string with a corresponding callback. An event can be "emitted" (or in other words, the corresponding callback be called) multiple times or you can choose to only listen for the first time it is emitted. So a simple example ran on the node [REPL](/en/knowledge/REPL/how-to-use-nodejs-repl/):
+En Node.js, un événement peut être décrit simplement comme une chaîne de caractères avec un callback correspondant. Un événement peut être "émis" (ou en d'autres termes, le callback correspondant peut être appelé) plusieurs fois ou vous pouvez choisir de n'écouter que la première fois qu'il est émis. Voici un exemple simple exécuté sur le nœud [REPL](/fr/knowledge/REPL/how-to-use-nodejs-repl/) :
 
 ```javascript
 var example_emitter = new (require('events').EventEmitter);
@@ -37,15 +37,15 @@ true    //return value
 false   //return value
 ```
 
-This demonstrates all the basic functionality of an EventEmitter. The `on` or `addListener` method (basically the subscription method) allows you to choose the event to watch for and the callback to be called. The `emit` method (the publish method), on the other hand, allows you to "emit" an event, which causes all callbacks registered to the event to 'fire', (get called).
+Ceci démontre toutes les fonctionnalités de base d'un EventEmitter. La méthode `on` ou `addListener` (en fait, la méthode d'abonnement) vous permet de choisir l'événement à surveiller et le callback à appeler. La méthode `emit` (la méthode de publication), d'autre part, vous permet d'"émettre" un événement, ce qui provoque l'appel de tous les callbacks enregistrés pour cet événement.
 
-So in the example, we first subscribe to both the `test` and `print` events. Then we emit the `test`, `print`, and `unhandled` events. Since `unhandled` has no callback, it just returns false; the other two run all the attached callbacks and return true.
+Ainsi, dans l'exemple, nous nous abonnons d'abord aux événements `test` et `print`. Puis nous émettons les événements `test`, `print`, et `unhandled`. Puisque `unhandled` n'a pas de callback, il renvoie juste false ; les deux autres exécutent tous les callbacks attachés et renvoient true.
 
-In the `print` event, note that we pass an extra parameter - all the extra parameters passed to 'emit' get passed to the callback function as arguments.
+Dans l'événement `print`, notez que nous passons un paramètre supplémentaire - tous les paramètres supplémentaires passés à 'emit' sont passés à la fonction de rappel comme arguments.
 
-If you use the method `once` instead of `on`, after the callback is fired, it is removed from the list of callbacks. A handy little function if you want to detect only the first time an event has been emitted.
+Si vous utilisez la méthode `once` au lieu de `on`, une fois que le callback est déclenché, il est retiré de la liste des callbacks. Une petite fonction bien pratique si vous voulez détecter seulement la première fois qu'un événement a été émis.
 
-If you want remove a specific callback, you can use `removeListener`. If you want to remove all callbacks to a specific event, you can use `removeAllListeners`.
+Si vous voulez supprimer un callback spécifique, vous pouvez utiliser `removeListener`. Si vous voulez supprimer tous les callbacks d'un événement spécifique, vous pouvez utiliser `removeAllListeners`.
 
 ```javascript
 var EventEmitter = require('events').EventEmitter,
@@ -106,4 +106,4 @@ true
 false
 ```
 
-NOTE: If you want create more than 10 listeners on a single event, you will have to make a call to `ee.setMaxListeners(n)` where n is the max numbers of listeners (with zero being unlimited number of listeners). This is used to make sure you aren't accidentally leaking event listeners.
+NOTE : Si vous voulez créer plus de 10 écouteurs sur un seul événement, vous devrez faire un appel à `ee.setMaxListeners(n)` où n est le nombre maximum d'écouteurs (avec zéro étant un nombre illimité d'écouteurs). Ceci est utilisé pour s'assurer que vous ne perdez pas accidentellement des écouteurs d'événements.
