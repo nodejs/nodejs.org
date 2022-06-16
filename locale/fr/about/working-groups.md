@@ -1,199 +1,201 @@
 ---
 layout: about.hbs
-title: Working Groups
+title: Groupes de travail
 ---
 
-# Core Working Groups
-<!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
+#Groupes de travail principaux
+<!-- L'information ici devrait surtout être un miroir : https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 
-Core Working Groups are created by the [Technical Steering Committee (TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).
+Les groupes de travail principaux sont créés par le [Comité de pilotage technique (TSC)] (https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).
 
-## Current Working Groups
+## Groupes de travail actuels
 
 * [Addon API](#addon-api)
-* [Benchmarking](#benchmarking)
+* Benchmarking](#benchmarking)
 * [Build](#build)
 * [Diagnostics](#diagnostics)
 * [Docker](#docker)
-* [Evangelism](#evangelism)
+* [Evangélisation](#évangélisation)
 * [i18n](#i18n)
 * [Release](#release)
-* [Security](#security)
+* [Sécurité](#security)
 * [Streams](#streams)
 
 ### [Addon API](https://github.com/nodejs/nan)
 
-The Addon API Working Group is responsible for maintaining the NAN project and corresponding _nan_ package in npm. The NAN project makes available an abstraction layer for native add-on authors for Node.js, assisting in the writing of code that is compatible with many actively used versions of Node.js, V8 and libuv.
+Le groupe de travail Addon API est responsable de la maintenance du projet NAN et du paquet _nan_ correspondant dans npm. Le projet NAN met à disposition une couche d'abstraction pour les auteurs de modules complémentaires natifs pour Node.js, en aidant à l'écriture de code compatible avec de nombreuses versions activement utilisées de Node.js, V8 et libuv.
 
-Responsibilities include:
+Les responsabilités comprennent :
 
-* Maintaining the [NAN](https://github.com/nodejs/nan) GitHub repository, including code, issues and documentation.
-* Maintaining the [addon-examples](https://github.com/nodejs/node-addon-examples) GitHub repository, including code, issues and documentation.
-* Maintaining the C++ Addon API within the Node.js project, in subordination to the Node.js TSC.
-* Maintaining the Addon documentation within the Node.js project, in subordination to the Node.js TSC.
-* Maintaining the _nan_ package in npm, releasing new versions as appropriate.
-* Messaging about the future of the Node.js and NAN interface to give the community advance notice of changes.
+* Maintenir le dépôt GitHub de [NAN](https://github.com/nodejs/nan), y compris le code, les problèmes et la documentation.
+* Maintenir le dépôt GitHub [addon-examples](https://github.com/nodejs/node-addon-examples), y compris le code, les problèmes et la documentation.
+* Maintenir l'API de l'addon C++ au sein du projet Node.js, en subordination avec le TSC Node.js.
+* Maintenir la documentation de l'addon au sein du projet Node.js, en subordination avec le TSC Node.js.
+* Maintenir le paquet _nan_ dans npm, en publiant de nouvelles versions comme il convient.
+* Communiquer sur l'avenir de l'interface Node.js et NAN afin de prévenir la communauté des changements.
 
-The current members can be found in their [README](https://github.com/nodejs/nan#collaborators).
+Les membres actuels peuvent être trouvés dans leur [README](https://github.com/nodejs/nan#collaborators).
 
 ### [Benchmarking](https://github.com/nodejs/benchmarking)
 
-The purpose of the Benchmark Working Group is to gain consensus on an agreed set of benchmarks that can be used to:
+L'objectif du groupe de travail sur les repères est d'obtenir un consensus sur un ensemble de repères pouvant être utilisés pour :
 
-* track and evangelize performance gains made between Node.js releases
-* avoid performance regressions between releases
+* suivre et faire connaître les gains de performance réalisés entre les versions de Node.js
+* éviter les régressions de performances entre les versions
 
-Responsibilities include:
+Les responsabilités incluent :
 
-* Identifying 1 or more benchmarks that reflect customer usage. Likely will need more than one to cover typical Node.js use cases including low-latency and high concurrency
-* Working to get community consensus on the list chosen
-* Adding regular execution of chosen benchmarks to Node.js builds
-* Tracking/publicizing performance between builds/releases
+* Identifier un ou plusieurs points de référence qui reflètent l'usage des clients. Il en faudra probablement plus d'un pour couvrir les cas d'utilisation typiques de Node.js, y compris les cas de faible latence et de forte concurrence.
+* Travailler pour obtenir un consensus de la communauté sur la liste choisie
+* Ajouter l'exécution régulière des benchmarks choisis dans les builds de Node.js.
+* Suivi et publication des performances entre les builds/release.
 
 ### [Build](https://github.com/nodejs/build)
 
-The Build Working Group's purpose is to create and maintain a distributed automation infrastructure.
+L'objectif du groupe de travail Build est de créer et de maintenir une infrastructure d'automatisation distribuée.
 
-Responsibilities include:
+Les responsabilités comprennent :
 
-* Producing packages for all target platforms.
-* Running tests.
-* Running performance testing and comparisons.
-* Creating and managing build-containers.
+* Produire des paquets pour toutes les plateformes cibles.
+* Exécution des tests.
+* Exécution de tests de performance et de comparaisons.
+* Création et gestion des conteneurs de construction.
 
 ### [Diagnostics](https://github.com/nodejs/diagnostics)
 
-The Diagnostics Working Group's purpose is to surface a set of comprehensive, documented, and extensible diagnostic interfaces for use by Node.js tools and JavaScript VMs.
+L'objectif du groupe de travail Diagnostics est de présenter un ensemble d'interfaces de diagnostic complètes, documentées et extensibles à utiliser par les outils Node.js et les VM JavaScript.
 
-Responsibilities include:
+Les responsabilités incluent :
 
-* Collaborating with V8 to integrate `v8_inspector` into Node.js.
-* Collaborating with V8 to integrate `trace_event` into Node.js.
-* Collaborating with Core to refine `async_wrap` and `async_hooks`.
-* Maintaining and improving OS trace system integration (e.g. ETW, LTTNG, dtrace).
-* Documenting diagnostic capabilities and APIs in Node.js and its components.
-* Exploring opportunities and gaps, discussing feature requests, and addressing conflicts in Node.js diagnostics.
-* Fostering an ecosystem of diagnostics tools for Node.js.
-* Defining and adding interfaces/APIs in order to allow dumps to be generated when needed.
-* Defining and adding common structures to the dumps generated in order to support tools that want to introspect those dumps.
+* Collaborer avec V8 pour intégrer `v8_inspector` dans Node.js.
+* Collaborer avec V8 pour intégrer `trace_event` dans Node.js.
+* Collaboration avec Core pour affiner `async_wrap` et `async_hooks`.
+* Maintenir et améliorer l'intégration du système de trace OS (par exemple ETW, LTTNG, dtrace).
+* Documenter les capacités de diagnostic et les API de Node.js et de ses composants.
+* Explorer les opportunités et les lacunes, discuter des demandes de fonctionnalités, et traiter les conflits dans les diagnostics Node.js.
+* Encourager un écosystème d'outils de diagnostic pour Node.js.
+* Définir et ajouter des interfaces/API afin de permettre la génération de dumps lorsque cela est nécessaire.
+* Définir et ajouter des structures communes aux dumps générés afin de supporter les outils qui veulent introspecter ces dumps.
 
 ### [Docker](https://github.com/nodejs/docker-node)
 
-The Docker Working Group's purpose is to build, maintain, and improve official Docker images for the Node.js project.
+L'objectif du groupe de travail Docker est de construire, maintenir et améliorer les images Docker officielles pour le projet Node.js.
 
-Responsibilities include:
+Les responsabilités incluent :
 
-* Keeping the official Docker images updated in line with new Node.js releases.
-* Decide and implement image improvements and/or fixes.
-* Maintain and improve the images' documentation.
+* Maintenir à jour les images Docker officielles en fonction des nouvelles versions de Node.js.
+* Décider et mettre en œuvre des améliorations et/ou des corrections de l'image.
+* Maintenir et améliorer la documentation des images.
 
-### [Evangelism](https://github.com/nodejs/evangelism)
+### [Evangélisation](https://github.com/nodejs/evangelism)
 
-The Evangelism Working Group promotes the accomplishments of Node.js and lets the community know how they can get involved.
+Le groupe de travail Evangelism promeut les réalisations de Node.js et fait savoir à la communauté comment elle peut s'impliquer.
 
-Responsibilities include:
+Les responsabilités incluent :
 
-* Facilitating project messaging.
-* Managing official project social media.
-* Handling the promotion of speakers for meetups and conferences.
-* Handling the promotion of community events.
-* Publishing regular update summaries and other promotional content.
+* Faciliter la messagerie du projet.
+* Gérer les médias sociaux officiels du projet.
+* Gérer la promotion des orateurs pour les réunions et les conférences.
+* Gérer la promotion des événements de la communauté.
+* Publier régulièrement des résumés de mise à jour et d'autres contenus promotionnels.
 
 ### [i18n](https://github.com/nodejs/i18n)
 
-The i18n Working Groups handle more than just translations. They are endpoints for community members to collaborate with each other in their language of choice.
+Les groupes de travail i18n ne se limitent pas aux traductions. Ils permettent aux membres de la communauté de collaborer les uns avec les autres dans la langue de leur choix.
 
-Each team is organized around a common spoken language. Each language community might then produce multiple localizations for various project resources.
+Chaque équipe est organisée autour d'une langue parlée commune. Chaque communauté linguistique peut ensuite produire plusieurs localisations pour diverses ressources du projet.
 
-Responsibilities include:
+Les responsabilités comprennent :
 
-* Translating any Node.js materials they believe are relevant to their community.
-* Reviewing processes for keeping translations up to date and of high quality.
-* Managing and monitoring social media channels in their language.
-* Promoting Node.js speakers for meetups and conferences in their language.
+* Traduire tout matériel Node.js qu'ils estiment pertinent pour leur communauté.
+* Réviser les processus pour maintenir les traductions à jour et de haute qualité.
+* Gestion et suivi des médias sociaux
+* Promouvoir les intervenants Node.js pour les rencontres et les conférences dans leur langue.
 
-Each language community maintains its own membership.
+Chaque communauté linguistique a ses propres membres.
 
-* [nodejs-ar - Arabic (العَرَبِيَّة)](https://github.com/nodejs/nodejs-ar)
-* [nodejs-bg - Bulgarian (български)](https://github.com/nodejs/nodejs-bg)
+* [nodejs-ar - arabe (العَرَبِيَّة)](https://github.com/nodejs/nodejs-ar)
+* [nodejs-bg - Bulgare (български)](https://github.com/nodejs/nodejs-bg)
 * [nodejs-bn - Bengali (বাংলা)](https://github.com/nodejs/nodejs-bn)
-* [nodejs-zh-CN - Chinese (简体中文)](https://github.com/nodejs/nodejs-zh-CN)
-* [nodejs-cs - Czech (Čeština)](https://github.com/nodejs/nodejs-cs)
-* [nodejs-da - Danish (Dansk)](https://github.com/nodejs/nodejs-da)
-* [nodejs-de - German (Deutsch)](https://github.com/nodejs/nodejs-de)
-* [nodejs-el - Greek (Ελληνικά)](https://github.com/nodejs/nodejs-el)
-* [nodejs-es - Spanish (Español)](https://github.com/nodejs/nodejs-es)
-* [nodejs-fa - Persian (فارسی)](https://github.com/nodejs/nodejs-fa)
-* [nodejs-fi - Finnish (Suomi)](https://github.com/nodejs/nodejs-fi)
-* [nodejs-fr - French (Français)](https://github.com/nodejs/nodejs-fr)
-* [nodejs-he - Hebrew (עברית)](https://github.com/nodejs/nodejs-he)
+* [nodejs-zh-CN - Chinois (简体中文)](https://github.com/nodejs/nodejs-zh-CN)
+* [nodejs-cs - Tchèque (Čeština)](https://github.com/nodejs/nodejs-cs)
+* [nodejs-da - Danois (Dansk)](https://github.com/nodejs/nodejs-da)
+* [nodejs-de - Allemand (Deutsch)](https://github.com/nodejs/nodejs-de)
+* [nodejs-el - Grec (Ελληνικά)](https://github.com/nodejs/nodejs-el)
+* [nodejs-es - Espagnol (Español)](https://github.com/nodejs/nodejs-es)
+* [nodejs-fa - Persan (فارسی)](https://github.com/nodejs/nodejs-fa)
+* [nodejs-fi - Finnois (Suomi)](https://github.com/nodejs/nodejs-fi)
+* [nodejs-fr - Français (Français)](https://github.com/nodejs/nodejs-fr)
+* [nodejs-he - Hébreu (עברית)](https://github.com/nodejs/nodejs-he)
 * [nodejs-hi - Hindi (हिन्दी)](https://github.com/nodejs/nodejs-hi)
-* [nodejs-hu - Hungarian (Magyar)](https://github.com/nodejs/nodejs-hu)
-* [nodejs-id - Indonesian (Bahasa Indonesia)](https://github.com/nodejs/nodejs-id)
-* [nodejs-it - Italian (Italiano)](https://github.com/nodejs/nodejs-it)
-* [nodejs-ja - Japanese (日本語)](https://github.com/nodejs/nodejs-ja)
-* [nodejs-ka - Georgian (ქართული)](https://github.com/nodejs/nodejs-ka)
-* [nodejs-ko - Korean (한국어)](https://github.com/nodejs/nodejs-ko)
-* [nodejs-mk - Macedonian (Македонски)](https://github.com/nodejs/nodejs-mk)
-* [nodejs-ms - Malay (بهاس ملايو‎)](https://github.com/nodejs/nodejs-ms)
-* [nodejs-nl - Dutch (Nederlands)](https://github.com/nodejs/nodejs-nl)
-* [nodejs-no - Norwegian (Norsk)](https://github.com/nodejs/nodejs-no)
-* [nodejs-pl - Polish (Język Polski)](https://github.com/nodejs/nodejs-pl)
-* [nodejs-pt - Portuguese (Português)](https://github.com/nodejs/nodejs-pt)
-* [nodejs-ro - Romanian (Română)](https://github.com/nodejs/nodejs-ro)
-* [nodejs-ru - Russian (Русский)](https://github.com/nodejs/nodejs-ru)
-* [nodejs-sv - Swedish (Svenska)](https://github.com/nodejs/nodejs-sv)
-* [nodejs-ta - Tamil (தமிழ்)](https://github.com/nodejs/nodejs-ta)
-* [nodejs-tr - Turkish (Türkçe)](https://github.com/nodejs/nodejs-tr)
-* [nodejs-zh-TW - Taiwanese (繁體中文（台灣）)](https://github.com/nodejs/nodejs-zh-TW)
-* [nodejs-uk - Ukrainian (Українська)](https://github.com/nodejs/nodejs-uk)
-* [nodejs-vi - Vietnamese (Tiếng Việt)](https://github.com/nodejs/nodejs-vi)
+* [nodejs-hu - Hongrois (Magyar)](https://github.com/nodejs/nodejs-hu)
+* [nodejs-id - Indonésien (Bahasa Indonesia)](https://github.com/nodejs/nodejs-id)
+* [nodejs-it - Italien (Italiano)](https://github.com/nodejs/nodejs-it)
+* [nodejs-ja - Japonais (日本語)](https://github.com/nodejs/nodejs-ja)
+* [nodejs-ka - Géorgien (ქართული)](https://github.com/nodejs/nodejs-ka)
+* [nodejs-ko - Coréen (한국어)](https://github.com/nodejs/nodejs-ko)
+* [nodejs-mk - Macédonien (Македонски)](https://github.com/nodejs/nodejs-mk)
+* [nodejs-ms - malais (بهاس ملايو)](https://github.com/nodejs/nodejs-ms)
+* [nodejs-nl - Néerlandais (Nederlands)](https://github.com/nodejs/nodejs-nl)
+* [nodejs-no - Norvégien (Norsk)](https://github.com/nodejs/nodejs-no)
+* [nodejs-pl - Polonais (Język Polski)](https://github.com/nodejs/nodejs-pl)
+* [nodejs-pt - Portugais (Português)](https://github.com/nodejs/nodejs-pt)
+* [nodejs-ro - Roumain (Română)](https://github.com/nodejs/nodejs-ro)
+* [nodejs-ru - Russe (Русский)](https://github.com/nodejs/nodejs-ru)
+* [nodejs-sv - Suédois (Svenska)](https://github.com/nodejs/nodejs-sv)
+* [nodejs-ta - Tamoul (தமிழ்)](https://github.com/nodejs/nodejs-ta)
+* [nodejs-tr - Turc (Türkçe)](https://github.com/nodejs/nodejs-tr)
+* [nodejs-zh-TW - Taïwanais (繁體中文（台灣）)](https://github.com/nodejs/nodejs-zh-TW)
+* [nodejs-uk - Ukrainien (Українська)](https://github.com/nodejs/nodejs-uk)
+* [nodejs-vi - Vietnamien (Tiếng Việt)](https://github.com/nodejs/nodejs-vi)
 
 ### [Release](https://github.com/nodejs/Release)
 
-The Release Working Group manages the release process for Node.js.
+Le groupe de travail Release gère le processus de publication de Node.js.
 
-Responsibilities include:
+Les responsabilités incluent :
 
-* Define the release process.
-* Define the content of releases.
-* Generate and create releases.
-* Test Releases.
-* Manage the Long Term Support and Current branches including backporting changes to these branches.
-* Define the policy for what gets backported to release streams
+* Définir le processus de libération.
+* Définir le contenu des versions.
+* Générer et créer des versions.
+* Tester les versions.
+* Gérer le support à long terme et les branches actuelles, y compris les changements de backporting à ces branches.
+* Définir la politique pour ce qui est rétroporté dans les flux de versions.
 
-### [Security](https://github.com/nodejs/security-wg)
+### [Sécurité] (https://github.com/nodejs/security-wg)
 
-The Security Working Group manages all aspects and processes linked to Node.js security.
+Le groupe de travail sur la sécurité gère tous les aspects et processus liés à la sécurité de Node.js.
 
-Responsibilities include:
+Les responsabilités incluent :
 
-* Define and maintain security policies and procedures for:
-  * the core Node.js project
-  * other projects maintained by the Node.js Technical Steering Committee (TSC).
-* Work with the Node Security Platform to bring community vulnerability data into the foundation as a shared asset.
-* Ensure the vulnerability data is updated in an efficient and timely manner. For example, ensuring there are well-documented processes for reporting vulnerabilities in community modules.
-* Review and recommend processes for handling of security reports (but not the actual administration of security reports, which are reviewed by a group of people directly delegated to by the TSC).
-* Define and maintain policies and procedures for the coordination of security concerns within the external Node.js open source ecosystem.
-* Offer help to npm package maintainers to fix high-impact security bugs.
-* Maintain and make available data on disclosed security vulnerabilities in:
-  * the core Node.js project
-  * other projects maintained by the Node.js Foundation technical group
-  * the external Node.js open source ecosystem
-* Promote the improvement of security practices within the Node.js ecosystem.
-* Recommend security improvements for the core Node.js project.
-* Facilitate and promote the expansion of a healthy security service and product provider ecosystem.
+* Définir et maintenir les politiques et procédures de sécurité pour :
+  * le projet Node.js de base
+  * d'autres projets maintenus par le comité de pilotage technique (TSC) de Node.js.
+* Travailler avec la plate-forme de sécurité Node pour apporter les données de vulnérabilité de la communauté dans la fondation comme un actif partagé.
+* S'assurer que les données de vulnérabilité sont mises à jour d'une manière efficace et opportune. Par exemple, en s'assurant qu'il existe des processus bien documentés pour signaler les vulnérabilités dans les modules communautaires.
+* Examiner et recommander des processus pour le traitement des rapports de sécurité (mais pas l'administration proprement dite des rapports de sécurité, qui sont examinés par un groupe de personnes directement déléguées par le TSC).
+* Définir et maintenir des politiques et des procédures pour la coordination des préoccupations de sécurité au sein de l'écosystème externe de Node.js open source.
+* Offrir de l'aide aux mainteneurs de paquets npm pour corriger les bogues de sécurité à fort impact.
+* Maintenir et mettre à disposition des données sur les vulnérabilités de sécurité divulguées dans :
+  * le noyau du projet Node.js
+  * d'autres projets maintenus par le groupe technique de la Fondation Node.js
+  * l'écosystème open source externe de Node.js.
+* Promouvoir l'amélioration des pratiques de sécurité au sein de l'écosystème Node.js.
+* Recommander des améliorations de sécurité pour le projet Node.js de base.
+* Faciliter et promouvoir l'expansion d'un écosystème sain de fournisseurs de services et de produits de sécurité.
 
 ### [Streams](https://github.com/nodejs/readable-stream)
 
-The Streams Working Group is dedicated to the support and improvement of the Streams API as used in Node.js and the npm ecosystem. We seek to create a composable API that solves the problem of representing multiple occurrences of an event over time in a humane, low-overhead fashion. Improvements to the API will be driven by the needs of the ecosystem; interoperability and backwards compatibility with other solutions and prior versions are paramount in importance.
+Le groupe de travail Streams se consacre au soutien et à l'amélioration de l'API Streams telle qu'elle est utilisée dans Node.js et dans l'écosystème npm. Nous cherchons à créer une API composable qui résout le problème de la représentation de multiples occurrences d'un événement dans le temps de manière humaine et sans frais supplémentaires. Les améliorations apportées à l'API seront déterminées par les besoins de l'écosystème ; l'interopérabilité et la rétrocompatibilité avec d'autres solutions seront assurées.
 
 Responsibilities include:
 
-* Addressing stream issues on the Node.js issue tracker.
-* Authoring and editing stream documentation within the Node.js project.
-* Reviewing changes to stream subclasses within the Node.js project.
-* Redirecting changes to streams from the Node.js project to this project.
-* Assisting in the implementation of stream providers within Node.js.
-* Recommending versions of `readable-stream` to be included in Node.js.
-* Messaging about the future of streams to give the community advance notice of changes.
+Les responsabilités comprennent :
+
+* Résoudre les problèmes liés aux flux sur le gestionnaire de problèmes de Node.js.
+* Rédiger et éditer la documentation sur les flux au sein du projet Node.js.
+* Vérifier les modifications apportées aux sous-classes de flux au sein du projet Node.js.
+* Rediriger les modifications apportées aux flux du projet Node.js vers ce projet.
+* Aide à l'implémentation des fournisseurs de flux dans Node.js.
+* Recommander des versions de `readable-stream` à inclure dans Node.js.
+* Messagerie sur le futur des flux pour donner à la communauté un préavis sur les changements.
