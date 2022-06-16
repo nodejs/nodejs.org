@@ -1,5 +1,5 @@
 ---
-title: How to create and use a custom REPL
+title: Comment créer et utiliser un REPL personnalisé ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - core
@@ -8,7 +8,7 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-Node.js allows users to create their own REPLs with the [repl module](https://nodejs.org/api/repl.html). Its basic use looks like this:
+Node.js permet aux utilisateurs de créer leurs propres REPLs avec le module [repl] (https://nodejs.org/api/repl.html). Son utilisation de base ressemble à ceci :
 
 ```js
 const repl = require('repl');
@@ -16,9 +16,9 @@ const repl = require('repl');
 repl.start(prompt, stream);
 ```
 
-Above, `prompt` is a string that's used for the prompt of your REPL (which defaults to "> ") and `stream` is the stream that the repl listens on, defaulting to `process.stdin`. When you run the standalone `node` REPL from the command prompt, what it's doing in the background is running `repl.start()` to give you the standard REPL.
+Ci-dessus, `prompt` est une chaîne qui est utilisée pour l'invite de votre REPL (qui par défaut est "> ") et `stream` est le flux sur lequel le repl écoute, par défaut `process.stdin`. Quand vous lancez le REPL autonome `node` à partir de l'invite de commande, ce qu'il fait en arrière-plan est de lancer `repl.start()` pour vous donner le REPL standard.
 
-However, the repl is pretty flexible. Here's an example that shows this off:
+Cependant, le repl est assez flexible. Voici un exemple qui le montre :
 
 ```js
 #!/usr/bin/env node
@@ -31,11 +31,11 @@ const mood = function () {
   return m[Math.floor(Math.random() * m.length)];
 };
 
-// A remote node repl that you can telnet to!
+// Un nœud distant repl auquel vous pouvez vous connecter par telnet !
 net
   .createServer(function (socket) {
     const remote = repl.start('node::remote> ', socket);
-    // Adding "mood" and "bonus" to the remote REPL's context.
+    // Ajout de "mood" et "bonus" au contexte du REPL distant.
     remote.context.mood = mood;
     remote.context.bonus = 'UNLOCKED';
   })
@@ -43,18 +43,18 @@ net
 
 console.log('Remote REPL started on port 5001.');
 
-// A "local" node repl with a custom prompt
+// Un noeud "local" repl avec une invite personnalisée
 const local = repl.start('node::local> ');
 
-// Exposing the function "mood" to the local REPL's context.
+// Exposition de la fonction "mood" au contexte local du REPL.
 local.context.mood = mood;
 ```
 
-This script creates *two* REPLs: One is normal excepting for its custom prompt, but the *other* is exposed via the net module so you can telnet to it! In addition, it uses the `context` property to expose the function "mood" to both REPLs, and the "bonus" string to the remote REPL only. As you will see, this approach of trying to expose objects to one REPL and not the other *doesn't really work*.
+Ce script crée *deux* REPLs : L'un est normal à l'exception de son invite personnalisée, mais l'autre est exposé via le module net pour que vous puissiez y accéder par telnet ! De plus, il utilise la propriété `context` pour exposer la fonction "mood" aux deux REPLs, et la chaîne "bonus" au REPL distant seulement. Comme vous le verrez, cette approche consistant à exposer des objets à un REPL et pas à l'autre *ne fonctionne pas vraiment*.
 
-In addition, all objects in the global scope will also be accessible to your REPLs.
+De plus, tous les objets de la portée globale seront également accessibles à vos REPLs.
 
-Here's what happens when you run the script:
+Voici ce qui se passe lorsque vous exécutez le script :
 
 ```shell
 $ node repl.js
@@ -70,9 +70,9 @@ node::local> bonus
 ReferenceError: bonus is not defined
 ```
 
-As may be seen, the `mood` function is usable within the local REPL, but the `bonus` string is not. This is as expected.
+Comme on peut le voir, la fonction `mood` est utilisable dans le REPL local, mais la chaîne `bonus` ne l'est pas. C'est comme prévu.
 
-Now, here's what happens when you try to telnet to port 5001:
+Maintenant, voici ce qui se passe lorsque vous essayez de vous connecter au port 5001 :
 
 ```shell
 $ telnet localhost 5001
@@ -86,16 +86,16 @@ node::remote> bonus
 'UNLOCKED'
 ```
 
-As you can see, the `mood` function is *also* available over telnet! In addition, so is "bonus".
+Comme vous pouvez le voir, la fonction `mood` est *aussi* disponible sur telnet ! De plus, "bonus" l'est aussi.
 
-As an interesting consequence of my actions, bonus is now also defined on the local REPL:
+Comme une conséquence intéressante de mes actions, bonus est maintenant aussi défini sur le REPL local :
 
 ```shell
 node::local> bonus
 'UNLOCKED'
 ```
 
-It seems we "unlocked" the `bonus` string on the local REPL as well. As it turns out, any variables created in one REPL are also available to the other:
+Il semble que nous ayons "débloqué" la chaîne `bonus` sur le REPL local également. Il s'avère que toutes les variables créées dans un REPL sont également disponibles dans l'autre :
 
 ```shell
 node::local> var node = "AWESOME!"
@@ -104,4 +104,4 @@ node::remote> node
 'AWESOME!'
 ```
 
-As you can see, the node REPL is powerful and flexible.
+Comme vous pouvez le constater, le REPL de node est puissant et flexible.
