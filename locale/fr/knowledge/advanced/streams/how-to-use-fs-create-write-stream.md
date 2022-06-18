@@ -1,5 +1,5 @@
 ---
-title: How to use fs.createWriteStream?
+title: Comment utiliser fs.createWriteStream ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - core
@@ -9,26 +9,26 @@ difficulty: 3
 layout: knowledge-post.hbs
 ---
 
-The function `fs.createWriteStream()` creates a writable stream in a very simple manner. After a call to `fs.createWriteStream()` with the filepath, you have a writeable stream to work with. It turns out that the response (as well as the request) objects are streams. So we will stream the `POST` data to the file `output`. Since the code is simple enough, it is pretty easy just to read through it and comment why each line is necessary.
+La fonction `fs.createWriteStream()` crée un flux inscriptible d'une manière très simple. Après un appel à `fs.createWriteStream()` avec le chemin du fichier, vous avez un flux inscriptible avec lequel travailler. Il s'avère que les objets réponses (ainsi que les objets requêtes) sont des flux. Nous allons donc envoyer les données `POST` vers le fichier `output`. Comme le code est assez simple, il est assez facile de le lire et de commenter pourquoi chaque ligne est nécessaire.
 
 ```javascript
 var http = require('http');
 var fs = require('fs');
 
 http.createServer(function(req, res) {
-  // This opens up the writeable stream to `output`
+  // Cela ouvre le flux d'écriture vers `output`.
   var writeStream = fs.createWriteStream('./output');
 
-  // This pipes the POST data to the file
+  // Ceci achemine les données POST vers le fichier.
   req.pipe(writeStream);
 
-  // After all the data is saved, respond with a simple html form so they can post more data
+  // Après la sauvegarde de toutes les données, répondez par un simple formulaire html pour qu'ils puissent envoyer d'autres données.
   req.on('end', function () {
     res.writeHead(200, {"content-type":"text/html"});
     res.end('<form method="POST"><input name="test" /><input type="submit"></form>');
   });
 
-  // This is here incase any errors occur
+  // Ceci est ici au cas où des erreurs se produiraient
   writeStream.on('error', function (err) {
     console.log(err);
   });

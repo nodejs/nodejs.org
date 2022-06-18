@@ -1,5 +1,5 @@
 ---
-title: How do I prompt users for input from a command-line script?
+title: Comment demander aux utilisateurs de saisir des données à partir d'un script de ligne de commande ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - javascript
@@ -9,11 +9,11 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-So you've got a little CLI tool, but you want to be able to prompt a user for additional data after the script has started, rather than passing it in as a command line argument or putting it in a file. To do this, you'll need to listen to STDIN ("standard input", i.e. your keyboard), which Node.js exposes for you as `process.stdin`, a readable stream.
+Vous avez donc un petit outil CLI, mais vous voulez pouvoir demander à un utilisateur des données supplémentaires après le démarrage du script, plutôt que de les passer en argument de ligne de commande ou de les mettre dans un fichier. Pour ce faire, vous aurez besoin d'écouter STDIN ("entrée standard", c'est-à-dire votre clavier), que Node.js expose pour vous comme `process.stdin`, un flux lisible.
 
-Streams are the Node.js way of dealing with evented I/O - it's a big topic, and you can read more about them [here](https://nodejs.org/api/stream.html). For now, we're going to use the built-in `readline` module which is a wrapper around Standard I/O, suitable for taking user input from command line(terminal).
+Les flux sont la façon dont Node.js traite les E/S événementielles - c'est un sujet important, et vous pouvez en lire plus à leur sujet [ici](https://nodejs.org/api/stream.html). Pour l'instant, nous allons utiliser le module intégré `readline` qui est une enveloppe autour de l'entrée/sortie standard, appropriée pour prendre l'entrée de l'utilisateur à partir de la ligne de commande (terminal).
 
-Here's a simple example. Try the following in a new file:
+Voici un exemple simple. Essayez ce qui suit dans un nouveau fichier :
 
 ```js
 const readline = require('readline');
@@ -35,21 +35,21 @@ rl.on('close', function () {
 });
 ```
 
-In the above code `readline.createInterface()` is used for creating an instance of `readline` by configuring the readable and the writable streams. The `input` key takes a readable stream like `process.stdin` or `fs.createReadStream('file.txt')` and the `output` key takes a writable stream like `process.stdout` or `process.stderr`.
+Dans le code ci-dessus, `readline.createInterface()` est utilisé pour créer une instance de `readline` en configurant les flux de lecture et d'écriture. La clé `input` prend un flux lisible comme `process.stdin` ou `fs.createReadStream('file.txt')` et la clé `output` prend un flux inscriptible comme `process.stdout` ou `process.stderr`.
 
-The `rl.question()` method displays the query by writing it to the `output`, waits for user input to be provided on `input`, then invokes the `callback` function passing the provided input as the first argument.
+La méthode `rl.question()` affiche la requête en l'écrivant sur la `output`, attend que l'utilisateur fournisse une entrée sur `input`, puis invoque la fonction `callback` en passant l'entrée fournie comme premier argument.
 
-NODE PRO TIP: Do remember to use `rl.close()` to close the transmitting otherwise the process will be left in the `idle` state.
+CONSEIL DU PRO NODE : N'oubliez pas d'utiliser `rl.close()` pour fermer la transmission, sinon le processus sera laissé dans l'état `idle`.
 
-The last part of the code uses `rl.on()` method to add an event listener to the `close` event which simply `console.log` to the output stream and exits the process. This part is completely optional and can be removed at will. For more in-depth details and usage refer to the docs [here](https://nodejs.org/api/readline.html).
+La dernière partie du code utilise la méthode `rl.on()` pour ajouter un écouteur d'événement à l'événement `close` qui envoie simplement `console.log` dans le flux de sortie et quitte le processus. Cette partie est complètement facultative et peut être supprimée à volonté. Pour plus de détails et d'utilisation, consultez la documentation [ici] (https://nodejs.org/api/readline.html).
 
-If all of this sounds complicated, or if you want a higher-level interface to this sort of thing, don't worry - as usual, the Node.js community has come to the rescue. One particularly friendly module to use for this is `prompt`, available on `npm`:
+Si tout cela vous semble compliqué, ou si vous voulez une interface de plus haut niveau pour ce genre de choses, ne vous inquiétez pas - comme d'habitude, la communauté Node.js est venue à la rescousse. Un module particulièrement convivial à utiliser pour cela est `prompt`, disponible sur `npm` :
 
 ```bash
 npm install prompt
 ```
 
-Prompt is built to be easy - if your eyes started to glaze over as soon as you saw `Readable Stream`, then this is the section for you. Compare the following to the example above:
+Prompt est conçu pour être facile - si vos yeux ont commencé à se dessiller dès que vous avez vu `Readable Stream`, alors cette section est faite pour vous. Comparez ce qui suit avec l'exemple ci-dessus :
 
 ```js
 const prompt = require('prompt');
@@ -71,9 +71,9 @@ function onErr(err) {
 }
 ```
 
-NODE PRO TIP: This short script also demonstrates proper error handling in node - errors are a callback's first argument, and `return` is used with the error handler so that the rest of the function doesn't execute when errors happen.
+CONSEIL DE PRO NODE : Ce court script démontre également la gestion correcte des erreurs dans node - les erreurs sont le premier argument d'un callback, et `return` est utilisé avec le gestionnaire d'erreur afin que le reste de la fonction ne s'exécute pas lorsque des erreurs se produisent.
 
-Prompt also makes it trivial to handle a certain set of recurring properties that one might want to attach.
+Prompt rend également trivial le traitement d'un certain ensemble de propriétés récurrentes que l'on pourrait vouloir attacher.
 
 ```js
 const prompt = require('prompt');
@@ -107,4 +107,4 @@ function onErr(err) {
 }
 ```
 
-For more information on Prompt, please see [the project's GitHub page](https://github.com/flatiron/prompt).
+Pour plus d'informations sur Prompt, veuillez consulter [la page GitHub du projet] (https://github.com/flatiron/prompt).
