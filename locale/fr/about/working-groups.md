@@ -6,12 +6,12 @@ title: Groupes de travail
 #Groupes de travail principaux
 <!-- L'information ici devrait surtout être un miroir : https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
 
-Les groupes de travail principaux sont créés par le [Comité de pilotage technique (TSC)] (https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).
+Les groupes de travail principaux sont créés par le [Comité de pilotage technique (TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).
 
 ## Groupes de travail actuels
 
 * [Addon API](#addon-api)
-* Benchmarking](#benchmarking)
+* [Benchmarking](#benchmarking)
 * [Build](#build)
 * [Diagnostics](#diagnostics)
 * [Docker](#docker)
@@ -162,7 +162,7 @@ Les responsabilités incluent :
 * Gérer le support à long terme et les branches actuelles, y compris les changements de backporting à ces branches.
 * Définir la politique pour ce qui est rétroporté dans les flux de versions.
 
-### [Sécurité] (https://github.com/nodejs/security-wg)
+### [Sécurité](https://github.com/nodejs/security-wg)
 
 Le groupe de travail sur la sécurité gère tous les aspects et processus liés à la sécurité de Node.js.
 
