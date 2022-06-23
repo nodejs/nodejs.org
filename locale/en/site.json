@@ -159,10 +159,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2022-06-08T16:00:00.000Z",
-      "endDate": "2022-06-22T16:00:00.000Z",
-      "text": "Changing the End-of-Life Date for Node.js 16 to September 11th, 2023",
-      "link": "https://nodejs.org/en/blog/announcements/nodejs16-eol"
+      "startDate": "2022-06-21T17:00:00.000Z",
+      "endDate": "2022-07-05T16:00:00.000Z",
+      "text": "Node.js assessment of OpenSSL 21 Jun 2022 security releases",
+      "link": "https://nodejs.org/en/blog/vulnerability/openssl-fixes-in-regular-releases-jun2022"
     },
     "blacklivesmatter": {
       "visible": false,
