@@ -11,7 +11,7 @@ title: Installation de Node.js via le gestionnaire de paquets
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
-* [Debian et Ubuntu baser sur des distributions Linux, Enterprise Linux/Fedora et Snap packages](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
+* [Distributions Linux dérivées de Debian et Ubuntu, Linux/Fedora Entreprise, et paquets Snap](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
 * [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
 * [IBM i](#ibm-i)
@@ -56,7 +56,7 @@ pacman -S nodejs npm
 
 La version la plus récente de Node.js est disponible via le port [www/node](https://www.freshports.org/www/node).
 
-Installez un paquetage binaire via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg) :
+Installez un paquet binaire via [pkg](https://www.freebsd.org/cgi/man.cgi?pkg) :
 
 ```bash
 pkg install node
@@ -96,7 +96,7 @@ Node.js est disponible dans l'arbre pkgsrc :
 cd /usr/pkgsrc/lang/nodejs && make install
 ```
 
-Ou installez un paquetage binaire (si disponible pour votre plateforme) en utilisant pkgin :
+Ou installez un  paquet binaire (si disponible pour votre plateforme) en utilisant pkgin :
 
 ```bash
 pkgin -y install nodejs
@@ -226,7 +226,7 @@ port install nodejs7
 
 Utilisation de **[pkgsrc](https://pkgsrc.joyent.com/install-on-osx/)**:
 
-Installez le paquetage binaire :
+Installez le  paquet binaire :
 
 ```bash
 pkgin -y install nodejs
@@ -240,7 +240,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## SmartOS et illumos
 
-Les images SmartOS sont livrées avec pkgsrc pré-installé. Sur les autres distributions illumos, installez d'abord **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, puis vous pouvez installer le paquetage binaire normalement :
+Les images SmartOS sont livrées avec pkgsrc pré-installé. Sur les autres distributions illumos, installez d'abord **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, puis vous pouvez installer le  paquet binaire normalement :
 
 ```bash
 pkgin -y install nodejs
@@ -270,7 +270,7 @@ xbps-install -Sy nodejs
 
 ## Windows
 
-Impliquez-vous pour télécharger le [Windows Installer](https://nodejs.org/en/#home-downloadhead) directement depuis le site web [nodejs.org](https://nodejs.org/).
+Téléchargez simplement le [Windows Installer](https://nodejs.org/en/#home-downloadhead) directement depuis le site web [nodejs.org](https://nodejs.org/).
 
 ### Alternatives
 
