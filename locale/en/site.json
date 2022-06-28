@@ -159,10 +159,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2022-06-21T17:00:00.000Z",
-      "endDate": "2022-07-05T16:00:00.000Z",
-      "text": "Node.js assessment of OpenSSL 21 Jun 2022 security releases",
-      "link": "https://nodejs.org/en/blog/vulnerability/openssl-fixes-in-regular-releases-jun2022"
+      "startDate": "2022-06-27T16:00:00.000Z",
+      "endDate": "2021-07-13T16:00:00.000Z",
+      "text": "New security releases to be made available July 5th, 2022",
+      "link": "blog/vulnerability/july-2022-security-releases/"
     },
     "blacklivesmatter": {
       "visible": false,
