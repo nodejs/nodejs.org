@@ -260,6 +260,21 @@ Connection: keep-alive
 Hello world
 ```
 
+## Shut down the image
+
+In order to shut down the app we started, we run the `kill` command. This uses
+the container's ID, which in this example was `ecce33b30ebf`.
+
+```bash
+# Kill our running container
+$ docker kill <container id>
+<container id>
+
+# Confirm that the app has stopped
+$ curl -i localhost:49160
+curl: (7) Failed to connect to localhost port 49160: Connection refused
+```
+
 We hope this tutorial helped you get up and running a simple Node.js application
 on Docker.
 
