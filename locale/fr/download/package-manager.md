@@ -5,7 +5,7 @@ title: Installation de Node.js via le gestionnaire de paquets
 
 # Installation de Node.js via le gestionnaire de paquets
 
-***Note:*** Les paquets sur cette page sont maintenus et supportés par leurs mainteneurs respectifs, **non** par l'équipe centrale de Node.js. Veuillez signaler tout problème que vous rencontrez au mainteneur du paquet. S'il s'avère que votre problème est un bogue dans Node.js lui-même, le mainteneur signalera le problème en amont.
+***Note:*** Les paquets sur cette page sont maintenus et supportés par leurs mainteneurs respectifs, **non pas** par l'équipe centrale de Node.js. Veuillez signaler tout problème que vous rencontrez au mainteneur du paquet. S'il s'avère que votre problème est un bogue dans Node.js lui-même, le mainteneur signalera le problème en amont.
 
 ---
 
