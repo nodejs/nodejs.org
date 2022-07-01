@@ -1,0 +1,160 @@
+{
+  "title": "Node.js",
+  "editOnGithub":"რედაქტირება GitHub-ზე",
+  "author": "Node.js",
+  "url": "https://nodejs.org/ka/",
+  "locale": "ka",
+  "language": "ქართული",
+  "languageEnglishVersion": "Georgian",
+  "scrollToTop": "ზემოთ",
+  "reportNodeIssue": "Node.js-ის პრობლემის შეტყობინება",
+  "reportWebsiteIssue": "ვებსაიტის პრობლემის შეტყობინება",
+  "getHelpIssue": "დახმარების მიღება",
+  "Contributing": "შეიტანეთ წვლილი Nodejs.org-ში",
+  "by": "მიერ",
+  "all-downloads": "ჩამოტვირთვის ყველა ვარიანტი",
+  "nightly": "ღამის ვერსიები",
+  "unofficial-builds": "არაოფიციალური ვერსიები",
+  "previous": "წინა",
+  "next": "შემდეგი",
+  "toggleText":"გადართვა მუქ/ნათელ რეჟიმზე",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Node.js ბლოგი"
+    },
+    {
+      "link": "feed/releases.xml",
+      "text": "Node.js ბლოგი: ვერსიები"
+    },
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "Node.js ბლოგი: ცნობები სისუსტეების შესახებ"
+    }
+  ],
+  "home": {
+    "text": "მთავარი"
+  },
+  "about": {
+    "link": "about",
+    "text": "შესახებ",
+    "governance": {
+      "link": "about/governance",
+      "text": "მმართველობა"
+    },
+    "community": {
+      "link": "about/community",
+      "text": "საზოგადოება"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "მომუშავე ჯგუფები"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "ვერსიები"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "წყაროები"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "სავაჭრო ნიშანი"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "კონფიდენციალ. პოლიტიკა"
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "ჩამოტვირთვა",
+    "releases": {
+      "link": "download/releases",
+      "text": "უწინდელი ვერსიები"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "Node.js-ის ინსტალაცია პაკეტის მენეჯერის გამოყენებით"
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "ხელმოწერილი SHASUMS გამოშვების (release) ფაილებისათვის",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "როგორ გადავამოწმოთ"
+    },
+    "install-on-linux": {
+      "text": "Node.js-ის ინსტალაცია ბინარული (binary) არქივის გამოყენებით"
+    },
+    "install-on-wsl": {
+      "text": "ინსტალაცია Windows-ის Linux-ქვესისტემისათვის (WSL)"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "დოკუმენტაცია",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 და მის ფარგლებს მიღმა"
+    },
+    "api-lts": {
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "სახელმძღვანელოები"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "დაქვემდებარებულები (Dependencies)"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "შემოგვიერთდით",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "კოდი + სწავლა"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "თანამშრომლობის სამიტი"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "ხელშეწყობა"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/master/doc/contributing/code-of-conduct.md",
+      "text": "ყოფაქცევის კოდექსი"
+    }
+  },
+  "security": {
+    "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
+    "text": "უსაფრთხოება"
+  },
+  "getcertified": {
+    "link": "https://openjsf.org/certification",
+    "text": "სერტიფიკაცია"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "სიახლეები"
+  },
+  "releases": {
+    "title": "ვერსიების ისტორია",
+    "downloads": "ჩამოტვირთვები"
+  },
+  "links": {
+    "pages": {
+      "changelog": "ცვლილებათა ჩამონათვალი"
+    }
+  }
+}

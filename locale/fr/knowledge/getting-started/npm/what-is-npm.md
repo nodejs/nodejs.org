@@ -1,5 +1,5 @@
 ---
-title: What is npm?
+title: Qu'est-ce que NPM ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - npm
@@ -7,15 +7,15 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-`npm`, short for Node Package Manager, is two things: first and foremost, it is an online repository for the publishing of open-source Node.js projects; second, it is a command-line utility for interacting with said repository that aids in package installation, version management, and dependency management. A plethora of Node.js libraries and applications are published on npm, and many more are added every day. These applications can be searched for on https://www.npmjs.com/. Once you have a package you want to install, it can be installed with a single command-line command.
+`npm`, abréviation de Node Package Manager, est deux choses : d'abord et avant tout, c'est un dépôt en ligne pour la publication de projets Node.js open-source ; ensuite, c'est un utilitaire en ligne de commande pour interagir avec ledit dépôt qui aide à l'installation des paquets, à la gestion des versions et à la gestion des dépendances. Une pléthore de bibliothèques et d'applications Node.js sont publiées sur npm, et beaucoup d'autres sont ajoutées chaque jour. Ces applications peuvent être recherchées sur https://www.npmjs.com/. Une fois que vous avez un paquet que vous voulez installer, il peut être installé avec une seule commande en ligne de commande.
 
-Let's say you're hard at work one day, developing the Next Great Application. You come across a problem, and you decide that it's time to use that cool library you keep hearing about - let's use Caolan McMahon's [async](http://github.com/caolan/async) as an example. Thankfully, `npm` is very simple to use: you only have to run `npm install async`, and the specified module will be installed in the current directory under `./node_modules/`. Once installed to your `node_modules` folder, you'll be able to use `require()` on them just like they were built-ins.
+Imaginons que vous travaillez dur un jour, en développant la prochaine grande application. Vous rencontrez un problème et vous décidez qu'il est temps d'utiliser la bibliothèque dont vous entendez parler - prenons l'exemple de [async](http://github.com/caolan/async) de Caolan McMahon. Heureusement, `npm` est très simple à utiliser : vous n'avez qu'à lancer `npm install async`, et le module spécifié sera installé dans le répertoire courant sous `./node_modules/`. Une fois installé dans votre dossier `node_modules`, vous pourrez utiliser `require()` sur eux comme s'ils étaient des modules intégrés.
 
-Let's look at an example of a global install - let's say `coffee-script`. The npm command is simple: `npm install coffee-script -g`. This will typically install the program and put a symlink to it in `/usr/local/bin/`. This will then allow you to run the program from the console just like any other CLI tool. In this case, running `coffee` will now allow you to use the coffee-script REPL.
+Regardons un exemple d'installation globale - disons `coffee-script`. La commande npm est simple : `npm install coffee-script -g`. Cela va installer le programme et mettre un lien symbolique dans `/usr/local/bin/`. Cela vous permettra ensuite d'exécuter le programme depuis la console comme n'importe quel autre outil CLI. Dans ce cas, exécuter `coffee` vous permettra d'utiliser le REPL de coffee-script.
 
-Another important use for npm is dependency management. When you have a node project with a [package.json](/en/knowledge/getting-started/npm/what-is-the-file-package-json/) file, you can run `npm install` from the project root and npm will install all the dependencies listed in the package.json. This makes installing a Node.js project from a git repo much easier! For example, `vows`, a Node.js testing framework, can be installed from git, and its single dependency, `eyes`, can be automatically handled:
+Une autre utilisation importante de npm est la gestion des dépendances. Lorsque vous avez un projet Node avec un fichier [package.json](/fr/connaissance/getting-started/npm/what-is-the-file-package-json/), vous pouvez exécuter `npm install` depuis la racine du projet et npm installera toutes les dépendances listées dans le package.json. Cela rend l'installation d'un projet Node.js depuis un dépôt git beaucoup plus facile ! Par exemple, `vows`, un framework de test Node.js, peut être installé depuis git, et sa seule dépendance, `eyes`, peut être automatiquement gérée :
 
-Example:
+Exemple :
 
 ```
 git clone https://github.com/cloudhead/vows.git
@@ -23,4 +23,4 @@ cd vows
 npm install
 ```
 
-After running those commands, you will see a `node_modules` folder containing all of the project dependencies specified in the package.json.
+Après avoir exécuté ces commandes, vous verrez un dossier `node_modules` contenant toutes les dépendances du projet spécifiées dans le package.json.

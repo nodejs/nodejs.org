@@ -24,18 +24,19 @@ const autoprefixer = require('autoprefixer');
 const { marked } = require('marked');
 const postcss = require('postcss');
 const sass = require('sass');
-const ncp = require('ncp');
 const junk = require('junk');
 const semver = require('semver');
 const replace = require('metalsmith-one-replace');
-const glob = require('glob');
-const Handlebars = require('handlebars');
+const fsExtra = require('fs-extra');
 
 const githubLinks = require('./scripts/plugins/githubLinks');
 const navigation = require('./scripts/plugins/navigation');
 const anchorMarkdownHeadings = require('./scripts/plugins/anchor-markdown-headings');
 const loadVersions = require('./scripts/load-versions');
 const latestVersion = require('./scripts/helpers/latestversion');
+const withPreserveLocale = require('./scripts/plugins/withPreserveLocale');
+const scriptReg = require('./scripts/plugins/scriptReg');
+const hbsReg = require('./scripts/plugins/hbsReg');
 
 // Set the default language, also functions as a fallback for properties which
 // are not defined in the given language.
@@ -191,81 +192,20 @@ function buildLocale(source, locale, opts) {
     // Finally, this compiles the rest of the layouts present in ./layouts.
     // They're language-agnostic, but have to be regenerated for every locale
     // anyways.
-    .use((files, metalsmith, done) => {
-      const fsPromises = require('fs/promises');
-      glob(
-        `${metalsmith.path('layouts/partials')}/**/*.hbs`,
-        {},
-        async (err, matches) => {
-          if (err) {
-            throw err;
-          }
-          await Promise.all(
-            matches.map(async (file) => {
-              const contents = await fsPromises.readFile(file, 'utf8');
-              const id = path.basename(file, path.extname(file));
-              return Handlebars.registerPartial(id, contents);
-            })
-          );
-          done();
-        }
-      );
-    })
-    .use((files, metalsmith, done) => {
-      glob(
-        `${metalsmith.path('scripts/helpers')}/**/*.js`,
-        {},
-        (err, matches) => {
-          if (err) {
-            throw err;
-          }
-          matches.forEach((file) => {
-            const fn = require(path.resolve(file));
-            const id = path.basename(file, path.extname(file));
-            return Handlebars.registerHelper(id, fn);
-          });
-          done();
-        }
-      );
-    })
+    .use(hbsReg())
+    .use(scriptReg())
     .use(layouts())
     // Pipes the generated files into their respective subdirectory in the build
     // directory.
-    .destination(path.join(__dirname, 'build', locale));
-
-  // This actually executes the build and stops the internal timer after
-  // completion.
-  metalsmith.build((err) => {
-    if (err) {
-      throw err;
-    }
-    console.timeEnd(labelForBuild);
-  });
-}
-
-// This plugin reads the files present in the english locale that are missing
-// in the current locale being built (requires preserveLocale flag)
-function withPreserveLocale(preserveLocale) {
-  return (files, m, next) => {
-    if (preserveLocale) {
-      const path = m.path('locale/en');
-      m.read(path, (err, newfiles) => {
-        if (err) {
-          console.error(err);
-          return next(err);
-        }
-
-        Object.keys(newfiles).forEach((key) => {
-          if (!files[key]) {
-            files[key] = newfiles[key];
-          }
-        });
-        next();
-      });
-    } else {
-      next();
-    }
-  };
+    .destination(path.join(__dirname, 'build', locale))
+    // This actually executes the build and stops the internal timer after
+    // completion.
+    .build((err) => {
+      if (err) {
+        throw err;
+      }
+      console.timeEnd(labelForBuild);
+    });
 }
 
 // This function builds the static/css folder for all the Sass files.
@@ -275,20 +215,20 @@ async function buildCSS() {
   console.time(labelForBuild);
 
   const src = path.join(__dirname, 'layouts/css/styles.scss');
-  const dest = path.join(__dirname, 'build/static/css/styles.css');
-
   const sassOpts = {
     outputStyle:
       process.env.NODE_ENV !== 'development' ? 'compressed' : 'expanded'
   };
 
-  const graceFulFsPromise = gracefulFs.promises;
+  const resultPromise = sass.compileAsync(src, sassOpts);
 
-  await graceFulFsPromise.mkdir(path.join(__dirname, 'build/static/css'), {
+  const dest = path.join(__dirname, 'build/static/css/styles.css');
+
+  await fsExtra.promises.mkdir(path.join(__dirname, 'build/static/css'), {
     recursive: true
   });
 
-  const result = await sass.compileAsync(src, sassOpts);
+  const result = await resultPromise;
 
   postcss([autoprefixer])
     .process(result.css, { from: src })
@@ -297,7 +237,7 @@ async function buildCSS() {
         console.warn(warn.toString());
       });
 
-      await graceFulFsPromise.writeFile(dest, res.css);
+      await fsExtra.writeFile(dest, res.css);
       console.timeEnd(labelForBuild);
     });
 }
@@ -305,49 +245,38 @@ async function buildCSS() {
 // This function copies the rest of the static assets to their subfolder in the
 // build directory.
 async function copyStatic() {
-  console.log('[ncp] build/static started');
-  const labelForBuild = '[ncp] build/static finished';
+  console.log('[fsExtra] copy/static started');
+  const labelForBuild = '[fsExtra] copy/static finished';
   console.time(labelForBuild);
 
-  const graceFulFsPromise = gracefulFs.promises;
-
-  await graceFulFsPromise.mkdir(path.join(__dirname, 'build/static'), {
+  await fsExtra.promises.mkdir(path.join(__dirname, 'build/static/js'), {
     recursive: true
   });
 
-  ncp(
-    path.join(__dirname, 'static'),
-    path.join(__dirname, 'build/static'),
-    (error) => {
-      if (error) {
-        return console.error(error);
-      }
+  await Promise.all([
+    fsExtra.copy(
+      path.join(__dirname, 'static'),
+      path.join(__dirname, 'build/static'),
+      { overwrite: false, recursive: true }
+    ),
 
-      ncp(
-        path.join(__dirname, 'node_modules/jquery/dist/jquery.min.js'),
-        path.join(__dirname, 'build/static/js/jquery.min.js'),
-        (error) => {
-          if (error) {
-            return console.error(error);
-          }
+    fsExtra.copyFile(
+      path.join(
+        __dirname,
+        'node_modules/jquery.fancytable/dist/fancyTable.min.js'
+      ),
+      path.join(__dirname, 'build/static/js/fancyTable.min.js'),
+      fs.constants.COPYFILE_EXCL | fs.constants.COPYFILE_FICLONE
+    ),
 
-          ncp(
-            path.join(
-              __dirname,
-              'node_modules/jquery.fancytable/dist/fancyTable.min.js'
-            ),
-            path.join(__dirname, 'build/static/js/fancyTable.min.js'),
-            (error) => {
-              if (error) {
-                return console.error(error);
-              }
-              console.timeEnd(labelForBuild);
-            }
-          );
-        }
-      );
-    }
-  );
+    fsExtra.copyFile(
+      path.join(__dirname, 'node_modules/jquery/dist/jquery.min.js'),
+      path.join(__dirname, 'build/static/js/jquery.min.js'),
+      fs.constants.COPYFILE_EXCL | fs.constants.COPYFILE_FICLONE
+    )
+  ]);
+
+  console.timeEnd(labelForBuild);
 }
 
 function getSource(callback) {
@@ -379,15 +308,13 @@ function getSource(callback) {
 
 // This is where the build is orchestrated from, as indicated by the function
 // name. It brings together all build steps and dependencies and executes them.
-function fullBuild(opts) {
+async function fullBuild(opts) {
   const { selectedLocales, preserveLocale } = opts;
   getSource(async (err, source) => {
     if (err) {
       throw err;
     }
-
-    const graceFulFsPromise = gracefulFs.promises;
-    const locales = await graceFulFsPromise.readdir(
+    const locales = await fsExtra.promises.readdir(
       path.join(__dirname, 'locale')
     );
 

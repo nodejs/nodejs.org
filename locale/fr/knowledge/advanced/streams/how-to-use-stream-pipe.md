@@ -1,5 +1,5 @@
 ---
-title: How to use stream.pipe
+title: Comment utiliser stream.pipe ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - core
@@ -8,9 +8,9 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-If you've been using Node.js for a while, you've definitely run into streams. HTTP connections are streams, open files are streams; stdin, stdout, and stderr are all streams as well. A 'stream' is node's I/O abstraction - if you feel like you still need to understand them better, you can read more about them [here](https://nodejs.org/api/stream.html#stream_stream).
+Si vous utilisez Node.js depuis un certain temps, vous avez certainement rencontré des flux. Les connexions HTTP sont des flux, les fichiers ouverts sont des flux ; stdin, stdout et stderr sont tous des flux également. Un " stream " est l'abstraction d'E/S de node - si vous avez besoin de mieux les comprendre, vous pouvez en savoir plus à leur sujet [ici] (https://nodejs.org/api/stream.html#stream_stream).
 
-Streams make for quite a handy abstraction, and there's a lot you can do with them - as an example, let's take a look at `stream.pipe()`, the method used to take a readable stream and connect it to a writeable steam. Suppose we want to spawn a `node` child process and pipe our stdout and stdin to its corresponding stdout and stdin.
+Les flux sont une abstraction très pratique, et il y a beaucoup de choses que vous pouvez faire avec eux - par exemple, regardons `stream.pipe()`, la méthode utilisée pour prendre un flux lisible et le connecter à un flux écrivable. Supposons que nous voulions créer un processus enfant `node` et envoyer notre stdout et stdin vers son stdout et stdin correspondant.
 
 ```javascript
 #!/usr/bin/env node
@@ -34,9 +34,9 @@ myREPL.on('exit', function (code) {
 });
 ```
 
-There you have it - spawn the Node.js REPL as a child process, and pipe your stdin and stdout to its stdin and stdout. Make sure to listen for the child's 'exit' event, too, or else your program will just hang there when the REPL exits.
+Voilà, vous avez créé le REPL de Node.js en tant que processus enfant, et vous avez canalisé votre stdin et votre stdout vers son stdin et son stdout. Assurez-vous d'écouter l'évènement "exit" du processus enfant, ou sinon votre programme restera bloqué lorsque le REPL sortira.
 
-Another use for `stream.pipe()` is file streams. In Node.js, `fs.createReadStream()` and `fs.createWriteStream()` are used to create a stream to an open file descriptor. Now let's look at how one might use `stream.pipe()` to write to a file. You'll probably recognize most of the code:
+Une autre utilisation de `stream.pipe()` concerne les flux de fichiers. Dans Node.js, `fs.createReadStream()` et `fs.createWriteStream()` sont utilisés pour créer un flux vers un descripteur de fichier ouvert. Voyons maintenant comment on peut utiliser `stream.pipe()` pour écrire dans un fichier. Vous reconnaîtrez probablement la plupart du code :
 
 ```javascript
 #!/usr/bin/env node
@@ -64,9 +64,9 @@ myREPL.on('exit', function (code) {
 });
 ```
 
-With those small additions, your stdin and the stdout from your REPL will both be piped to the writeable file stream you opened to 'myOutput.txt'. It's that simple - you can pipe streams to as many places as you want.
+Avec ces petits ajouts, votre stdin et le stdout de votre REPL seront tous deux dirigés vers le flux de fichier inscriptible que vous avez ouvert vers 'myOutput.txt'. C'est aussi simple que cela - vous pouvez envoyer des flux vers autant d'endroits que vous le souhaitez.
 
-Another very important use case for `stream.pipe()` is with HTTP request and response objects. Here we have the very simplest kind of proxy:
+Un autre cas d'utilisation très important de `stream.pipe()` est celui des objets de requête et de réponse HTTP. Ici, nous avons le type de proxy le plus simple :
 
 ```javascript
 #!/usr/bin/env node
@@ -89,6 +89,6 @@ http.createServer(function (req, res) {
 }).listen(9000);
 ```
 
-One could also use `stream.pipe()` to send incoming requests to a file for logging, or to a child process, or any one of a number of other things.
+On peut aussi utiliser `stream.pipe()` pour envoyer des requêtes entrantes vers un fichier pour l'enregistrement, ou vers un processus enfant, ou n'importe laquelle des nombreuses autres choses.
 
-Hopefully this has shown you the basics of using `stream.pipe()` to easily pass your data streams around. It's truly a powerful little trick in Node.js, and its uses are yours to explore. Happy coding, and try not to cross your streams!
+Nous espérons vous avoir montré les bases de l'utilisation de `stream.pipe()` pour faire circuler facilement vos flux de données. C'est vraiment un petit truc puissant dans Node.js, et ses utilisations sont à explorer. Bon codage, et essayez de ne pas croiser vos flux !

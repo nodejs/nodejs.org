@@ -84,7 +84,7 @@ El propósito del Grupo de Trabajo Docker es construir, mantener y mejorar las i
 Responsabilidades que incluye:
 
 * Mantener las imágenes oficiales de Docker actualizadas en línea con los nuevos lanzamientos de Node.js.
-* Decidir e impolementar mejoras y/o correcciones en las imágenes.
+* Decidir e implementar mejoras y/o correcciones en las imágenes.
 * Mantener y mejorar la documentación de las imágenes.
 
 ### [Evangelism](https://github.com/nodejs/evangelism)
