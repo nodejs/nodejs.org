@@ -4,7 +4,7 @@ title: Groupes de travail
 ---
 
 #Groupes de travail principaux
-<!-- L'information ici devrait surtout être un miroir : https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
+<!-- L'information ici devrait surtout être un miroir : https://github.com/nodejs/node/blob/main/WORKING_GROUPS.md -->
 
 Les groupes de travail principaux sont créés par le [Comité de pilotage technique (TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).
 

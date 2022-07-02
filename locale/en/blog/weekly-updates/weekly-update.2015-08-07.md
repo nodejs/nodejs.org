@@ -32,7 +32,7 @@ With a major version bump, there are also breaking changes. These include:
 * HTTP status codes. The code mappings conform to the [IANA standard](http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) now and will be a backwards incompatible change to consumers that depend on the text value of a header.
 * The HTTP agent `.getName()`, which fixes the unnecessary extra colon at the end of the return values.
 
-You can find out more information about this release in the [complete changelog](https://github.com/nodejs/node/blob/master/CHANGELOG.md), the [Breaking Changes document](https://github.com/nodejs/node/wiki/Breaking-Changes#300-from-2x) and the [pull request for the release proposal](https://github.com/nodejs/node/pull/2299). In addition, [Yosuke Furukawa](https://twitter.com/yosuke_furukawa) has made a [repo with details about the new features](https://github.com/yosuke-furukawa/iojs-new-features).
+You can find out more information about this release in the [complete changelog](https://github.com/nodejs/node/blob/main/CHANGELOG.md), the [Breaking Changes document](https://github.com/nodejs/node/wiki/Breaking-Changes#300-from-2x) and the [pull request for the release proposal](https://github.com/nodejs/node/pull/2299). In addition, [Yosuke Furukawa](https://twitter.com/yosuke_furukawa) has made a [repo with details about the new features](https://github.com/yosuke-furukawa/iojs-new-features).
 
 #### Notable changes
 
