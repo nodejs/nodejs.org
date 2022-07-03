@@ -10,7 +10,7 @@ layout: blog-post.hbs
 
 ### Node v7.1.0 proposal
 
-* [Node v7.1.0 proposal](https://github.com/nodejs/node/pull/9438). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+* [Node v7.1.0 proposal](https://github.com/nodejs/node/pull/9438). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Community Updates
 

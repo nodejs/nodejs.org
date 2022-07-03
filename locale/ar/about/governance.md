@@ -23,10 +23,10 @@ layout: about.hbs
 
 يتم قيادة المشروع بشكل مشترك من قبل كل من [لجنة التوجيه التقني (TSC)][] المسؤولة عن القيادة العليا للمشروع و [لجنة المجتمع (CommComm)][] المسؤولة عن توسيع مجتمع النود جي اس.
 
-[collaborator-guide.md]: https://github.com/nodejs/node/blob/master/doc/contributing/collaborator-guide.md
+[collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
 [لجنة المجتمع (CommComm)]: https://github.com/nodejs/community-committee/blob/master/Community-Committee-Charter.md
 [منهج الإجماع في إتخاذ القرارات]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
-[README.md]: https://github.com/nodejs/node/blob/master/README.md#current-project-team-members
+[README.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
 [لجنة التوجيه التقني (TSC)]: https://github.com/nodejs/TSC/blob/master/TSC-Charter.md
 [لجنة التوجيه التقني]: https://github.com/nodejs/TSC
 [nodejs/node]: https://github.com/nodejs/node

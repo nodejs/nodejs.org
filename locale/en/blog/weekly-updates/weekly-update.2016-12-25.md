@@ -10,11 +10,11 @@ layout: blog-post.hbs
 
 ### Node v0.12.18 (Maintenance)
 
-* [Node v0.12.18 (Maintenance)](https://nodejs.org/en/blog/release/v0.12.18/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+* [Node v0.12.18 (Maintenance)](https://nodejs.org/en/blog/release/v0.12.18/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Node v7.3.0 (Current)
 
-* [Node v7.3.0 (Current)](https://nodejs.org/en/blog/release/v7.3.0/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+* [Node v7.3.0 (Current)](https://nodejs.org/en/blog/release/v7.3.0/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Help in Promoting our Node.js Foundation survey
 

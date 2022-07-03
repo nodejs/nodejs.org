@@ -10,7 +10,7 @@ layout: blog-post.hbs
 
 ### Node v6.2.1 (Current) Release
 
-[Node v6.2.1 (Current)](https://nodejs.org/en/blog/release/v6.2.1/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+[Node v6.2.1 (Current)](https://nodejs.org/en/blog/release/v6.2.1/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Binaries for Linux on Power Systems
 

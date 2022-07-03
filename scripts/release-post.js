@@ -93,7 +93,7 @@ function fetchChangelog(version) {
   const releaseLine = parts[0] === '0' ? parts.slice(0, 2).join('') : parts[0];
 
   return sendRequest({
-    url: `https://raw.githubusercontent.com/nodejs/node/master/doc/changelogs/CHANGELOG_V${releaseLine}.md`
+    url: `https://raw.githubusercontent.com/nodejs/node/main/doc/changelogs/CHANGELOG_V${releaseLine}.md`
   }).then((data) => {
     // matches a complete release section
     const rxSection = new RegExp(
