@@ -13,7 +13,7 @@ Node.js v4.1.0 / io.js v3.3.1 are released
 
 ### Node.js v4.1.0 and io.js v3.3.1 Releases
 
-This week we have two releases: [Node.js v4.1.0](https://nodejs.org/dist/v4.1.0/) and [io.js v3.3.1](https://iojs.org/dist/v3.3.1/), complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+This week we have two releases: [Node.js v4.1.0](https://nodejs.org/dist/v4.1.0/) and [io.js v3.3.1](https://iojs.org/dist/v3.3.1/), complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Node.js v4.1.0 Notable changes
 

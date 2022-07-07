@@ -38,13 +38,13 @@ experience with the management of the project. Membership is
 expected to evolve over time according to the needs of the project.
 
 For the current list of TSC members, see the project
-[README.md](https://github.com/nodejs/node/blob/master/README.md#tsc-technical-steering-committee).
+[README.md](https://github.com/nodejs/node/blob/main/README.md#tsc-technical-steering-committee).
 -->
 최초의 TSC 멤버십 초대는 활발한 기여자나 프로젝트 관리에 충분한 경험을 가진 사람들에게 주어졌습니다.
 멤버십은 프로젝트의 요구사항에 따라 발전될 것입니다.
 
 현재 TSC 회원 목록은 프로젝트
-[README.md](https://github.com/nodejs/node/blob/master/README.md#tsc-technical-steering-committee)에서
+[README.md](https://github.com/nodejs/node/blob/main/README.md#tsc-technical-steering-committee)에서
 볼 수 있습니다.
 
 <!--
@@ -102,21 +102,21 @@ request or issue. The TSC should serve as the final arbiter where
 required.
 
 For the current list of Collaborators, see the project
-[README.md](https://github.com/nodejs/node/blob/master/README.md#current-project-team-members).
+[README.md](https://github.com/nodejs/node/blob/main/README.md#current-project-team-members).
 
 A guide for Collaborators is maintained in
-[collaborator-guide.md](https://github.com/nodejs/node/blob/master/doc/contributing/collaborator-guide.md).
+[collaborator-guide.md](https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md).
 -->
 협업자는 TSC에서 논의하려고 풀 리퀘스트나 이슈에 ***tsc-agenda*** 태그를 할당함으로써 중요하거나
 논쟁이 되는 수정사항이나 합의점을 찾지 못한 수정사항을 개선하려고 할 수도 있습니다.
 TSC는 필요한 경우 최종 중재자가 되어야 합니다.
 
 현재 협업자 목록은 프로젝트
-[README.md](https://github.com/nodejs/node/blob/master/README.md#current-project-team-members)에서
+[README.md](https://github.com/nodejs/node/blob/main/README.md#current-project-team-members)에서
 볼 수 있습니다.
 
 협업자 가이드는
-[collaborator-guide.md](https://github.com/nodejs/node/blob/master/doc/contributing/collaborator-guide.md)에서
+[collaborator-guide.md](https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md)에서
 관리되어 있습니다.
 
 <!--

@@ -10,7 +10,7 @@ layout: blog-post.hbs
 
 ### Node v7.2.0 (Current)
 
-* [Node v7.2.0 (Current)](https://nodejs.org/en/blog/release/v7.2.0/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+* [Node v7.2.0 (Current)](https://nodejs.org/en/blog/release/v7.2.0/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Node.js Benchmarks Results for v7.x
 
