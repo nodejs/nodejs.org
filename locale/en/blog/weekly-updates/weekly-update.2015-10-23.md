@@ -13,7 +13,7 @@ Node.js v5.0.0 release proposal
 
 ### Node.js v5.0.0 release proposal
 
-This week we have one release proposal: [Node.js v5.0.0](https://github.com/nodejs/node/pull/3466). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+This week we have one release proposal: [Node.js v5.0.0](https://github.com/nodejs/node/pull/3466). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Notable changes
 

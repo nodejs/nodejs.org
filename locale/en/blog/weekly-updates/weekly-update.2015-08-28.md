@@ -13,7 +13,7 @@ io.js v3.2.0/v3.3.0 and Node v4 evangelism, nodejs.org, nodefest/empirenode even
 
 ### io.js 3.2 and 3.3 Releases
 
-This week we have two io.js releases: [v3.2.0](https://iojs.org/dist/v3.2.0/) and [v3.3.0](https://iojs.org/dist/v3.3.0/), complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+This week we have two io.js releases: [v3.2.0](https://iojs.org/dist/v3.2.0/) and [v3.3.0](https://iojs.org/dist/v3.3.0/), complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### io.js v3.3.0 Notable changes
 
