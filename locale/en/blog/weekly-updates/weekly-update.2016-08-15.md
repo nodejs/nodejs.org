@@ -10,7 +10,7 @@ layout: blog-post.hbs
 
 ### Node v6.4.0 Proposal
 
-* [Node v6.4.0 Proposal](https://github.com/nodejs/node/pull/8070). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+* [Node v6.4.0 Proposal](https://github.com/nodejs/node/pull/8070). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Implement HTTP/2 in Node.js core
 

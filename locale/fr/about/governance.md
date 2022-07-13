@@ -15,7 +15,7 @@ Le TSC a toute autorité sur ce projet, y compris:
 
 Les invitations originelles à siéger au TSC ont été proposées à des contributeurs actifs qui avaient une expérience significative avec la gestion du projet. La participation à ce comité est susceptible d'évoluer dans le temps en rapport avec les besoins du projet.
 
-Pour trouver la liste des membres actuels du TSC, voir le \[README.md\] (https://github.com/nodejs/node/blob/master/README.md#tsc-technical-steering-committee) du projet.
+Pour trouver la liste des membres actuels du TSC, voir le \[README.md\] (https://github.com/nodejs/node/blob/main/README.md#tsc-technical-steering-committee) du projet.
 
 Le dépôt GitHub [nodejs/node](https://github.com/nodejs/node) est maintenu par le TSC et un groupe de Collaborateurs additionnels qui sont ajoutés par le TSC de manière continue.
 

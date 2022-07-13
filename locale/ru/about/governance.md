@@ -15,9 +15,9 @@ layout: about.hbs
 
 Люди, которые вносят значительный и ценный вклад, становятся Коллабораторами и получают постоянный доступ к проекту. Эти лица идентифицируются TSC, и их назначение обсуждается с существующими сотрудниками.
 
-Текущий список Коллабораторов можно найти в [README.md](https://github.com/nodejs/node/blob/master/README.md#current-project-team-members) проекта.
+Текущий список Коллабораторов можно найти в [README.md](https://github.com/nodejs/node/blob/main/README.md#current-project-team-members) проекта.
 
-Руководство для Коллабораторов находится по адресу [collaborator-guide.md](https://github.com/nodejs/node/blob/master/doc/contributing/collaborator-guide.md).
+Руководство для Коллабораторов находится по адресу [collaborator-guide.md](https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md).
 
 ## Комитеты высшего уровня
 

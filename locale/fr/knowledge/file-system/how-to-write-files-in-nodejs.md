@@ -1,5 +1,5 @@
 ---
-title: How do I write files in Node.js?
+title: Comment écrire des fichiers avec Node.js ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - filesystem
@@ -7,22 +7,22 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-Writing to a file is another of the basic programming tasks that one usually needs to know about - luckily, this task is very simple in Node.js. We can use the handy `writeFile` method inside the standard library's `fs` module, which can save all sorts of time and trouble.
+L'écriture dans un fichier est une autre des tâches de programmation de base que l'on doit généralement connaître - heureusement, cette tâche est très simple dans Node.js. Heureusement, cette tâche est très simple dans Node.js. Nous pouvons utiliser la méthode pratique `writeFile` à l'intérieur du module `fs` de la bibliothèque standard, qui peut économiser toutes sortes de temps et de problèmes.
 
 ```javascript
 fs = require('fs');
 fs.writeFile(filename, data, [encoding], [callback])
 ```
 
-`file = (string)` filepath of the file to read
+`file = (string)` chemin du fichier à lire
 
-`data = (string or buffer)` the data you want to write to the file
+`data = (string ou buffer)` les données que vous voulez écrire dans le fichier
 
-`encoding = (optional string)` the encoding of the `data`. Possible encodings are 'ascii', 'utf8', and 'base64'. If no encoding provided, then 'utf8' is assumed.
+`encoding = (chaîne optionnelle)` l'encodage des `data`. Les encodages possibles sont 'ascii', 'utf8', et 'base64'. Si aucun encodage n'est fourni, alors 'utf8' est supposé.
 
-`callback = (optional function (err) {})` If there is no error, `err === null`, otherwise `err` contains the error message.
+`callback = (optional function (err) {})` S'il n'y a pas d'erreur, `err === null`, sinon `err` contient le message d'erreur.
 
-So if we wanted to write "Hello World" to `helloworld.txt`:
+Donc si nous voulons écrire "Hello World" dans `helloworld.txt` :
 
 ```javascript
 fs = require('fs');
@@ -37,7 +37,7 @@ fs.writeFile('helloworld.txt', 'Hello World!', function (err) {
 Hello World!
 ```
 
-If we purposely want to cause an error, we can try to write to a file that we don't have permission to access:
+Si nous voulons délibérément provoquer une erreur, nous pouvons essayer d'écrire dans un fichier auquel nous n'avons pas le droit d'accéder :
 
 ```javascript
 fs = require('fs')

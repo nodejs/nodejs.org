@@ -226,6 +226,20 @@ Connection: keep-alive
 Hello world
 ```
 
+## 关闭镜像
+
+我们可以通过使用  `kill` 命令来关闭我们已经开启的镜像。这里使用到了容器的 ID，
+在本示例代码中是 `ecce33b30ebf`。
+
+```bash
+# Kill our running container
+$ docker kill <container id>
+<container id>
+# Confirm that the app has stopped
+$ curl -i localhost:49160
+curl: (7) Failed to connect to localhost port 49160: Connection refused
+```
+
 我们希望本教程能够帮助你起步，在 Docker 中运行一个简单的 Node.js 应用程序。
 
 你也可以在以下一些地方寻觅到更多有关于 Docker 和基于 Docker 的 Node.js 相关内容：

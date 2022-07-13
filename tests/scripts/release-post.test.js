@@ -128,7 +128,7 @@ test('fetchChangelog(<version>)', (t) => {
     'resolves with section of changelog related to specified version',
     (t) => {
       const github = nock('https://raw.githubusercontent.com')
-        .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V4.md')
+        .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V4.md')
         .replyWithFile(200, changelogFixture);
 
       releasePost.fetchChangelog('4.1.1').then((changelog) => {
@@ -144,7 +144,7 @@ test('fetchChangelog(<version>)', (t) => {
 
   t.test('can fetch changelog of legacy versions of Node.js', (t) => {
     const github = nock('https://raw.githubusercontent.com')
-      .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V012.md')
+      .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V012.md')
       .replyWithFile(200, changelogLegacyFixture);
 
     releasePost.fetchChangelog('0.12.9').then((changelog) => {
@@ -159,7 +159,7 @@ test('fetchChangelog(<version>)', (t) => {
     'rejects when a matching version section could not be found in changelog',
     (t) => {
       const github = nock('https://raw.githubusercontent.com')
-        .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V012.md')
+        .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V012.md')
         .reply(200, changelogLegacyFixture);
 
       releasePost.fetchChangelog('0.12.1000').then(t.fail, (err) => {
@@ -181,7 +181,7 @@ test('fetchChangelogBody(<version>)', (t) => {
     const changelogFixture = path.resolve(__dirname, 'CHANGELOG.fixture.md');
 
     const github = nock('https://raw.githubusercontent.com')
-      .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V4.md')
+      .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V4.md')
       .replyWithFile(200, changelogFixture);
 
     releasePost.fetchChangelogBody('4.1.0').then((body) => {
@@ -199,7 +199,7 @@ test('fetchChangelogBody(<version>)', (t) => {
     );
 
     const githubWithConsole = nock('https://raw.githubusercontent.com')
-      .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V15.md')
+      .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V15.md')
       .replyWithFile(200, changelogFixture);
 
     releasePost.fetchChangelogBody('15.1.0').then((body) => {
@@ -223,7 +223,7 @@ test('fetchVersionPolicy(<version>)', (t) => {
 
   t.test('finds "Current" version policy', (t) => {
     const github = nock('https://raw.githubusercontent.com')
-      .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V4.md')
+      .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V4.md')
       .replyWithFile(200, changelogFixture);
 
     releasePost.fetchVersionPolicy('4.1.0').then((policy) => {
@@ -236,7 +236,7 @@ test('fetchVersionPolicy(<version>)', (t) => {
 
   t.test('finds "LTS" version policy', (t) => {
     const github = nock('https://raw.githubusercontent.com')
-      .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V4.md')
+      .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V4.md')
       .replyWithFile(200, changelogFixture);
 
     releasePost.fetchVersionPolicy('4.2.0').then((policy) => {
@@ -249,7 +249,7 @@ test('fetchVersionPolicy(<version>)', (t) => {
 
   t.test('finds "LTS" version policy in legacy changelogs', (t) => {
     const github = nock('https://raw.githubusercontent.com')
-      .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V012.md')
+      .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V012.md')
       .replyWithFile(200, changelogLegacyFixture);
 
     releasePost.fetchVersionPolicy('0.12.9').then((policy) => {
@@ -270,7 +270,7 @@ test('fetchAuthor(<version>)', (t) => {
 
   t.test('resolves with full name of release author via github.com', (t) => {
     const github = nock('https://raw.githubusercontent.com')
-      .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V4.md')
+      .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V4.md')
       .replyWithFile(200, changelogFixture);
 
     const api = nock('https://api.github.com').get('/users/rvagg').reply(200, {
@@ -291,7 +291,7 @@ test('fetchAuthor(<version>)', (t) => {
     'rejects when a matching version section could not be found in changelog',
     (t) => {
       const github = nock('https://raw.githubusercontent.com')
-        .get('/nodejs/node/master/doc/changelogs/CHANGELOG_V4.md')
+        .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V4.md')
         .reply(200, 'A changelog without version sections...');
 
       releasePost.fetchAuthor('4.1.1').then(null, (err) => {
