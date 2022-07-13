@@ -1,5 +1,5 @@
 ---
-title: How to use the global process module
+title: Comment utiliser le module de processus global ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - core
@@ -8,13 +8,13 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-Each Node.js process has a set of built-in functionality, accessible through the global `process` module. The `process` module doesn't need to be required - it is somewhat literally a wrapper around the currently executing process, and many of the methods it exposes are actually wrappers around calls into core C libraries.
+Chaque processus Node.js possède un ensemble de fonctionnalités intégrées, accessibles par le module global `process`. Le module `process` n'a pas besoin d'être obligatoire - il est littéralement une enveloppe autour du processus en cours d'exécution, et beaucoup des méthodes qu'il expose sont en fait des enveloppes autour des appels dans les bibliothèques C de base.
 
-## Events
+## Événements
 
-There are two built-in events worth noting in the `process` module, `exit` and `uncaughtException`.
+Il y a deux événements intégrés à noter dans le module `process`, `exit` et `uncaughtException`.
 
-The `exit` event fires whenever the process is about to exit.
+L'événement `exit` se déclenche lorsque le processus est sur le point de se terminer.
 
 ```javascript
 process.on('exit', function () {
@@ -22,9 +22,9 @@ process.on('exit', function () {
 });
 ```
 
-Code like the above can occasionally be useful for saving some kind of final report before you exit. Note the use of a synchronous file system call - this is to make sure the I/O finishes before the process actually exits.
+Un code comme celui ci-dessus peut parfois être utile pour sauvegarder une sorte de rapport final avant de quitter. Notez l'utilisation d'un appel synchrone au système de fichiers - c'est pour s'assurer que les E/S se terminent avant que le processus ne se termine réellement.
 
-The other built-in event is called `uncaughtException`. It fires, as you might guess, whenever an exception has occurred that hasn't been caught or dealt with somewhere else in your program. It's not the ideal way to handle errors, but it can be very useful as a last line of defense if a program needs to stay running indefinitely.
+L'autre événement intégré est appelé `uncaughtException`. Il se déclenche, comme vous pouvez le deviner, chaque fois qu'une exception se produit qui n'a pas été attrapée ou traitée ailleurs dans votre programme. Ce n'est pas la façon idéale de gérer les erreurs, mais cela peut être très utile comme dernière ligne de défense si un programme doit rester en marche indéfiniment.
 
 ```javascript
 process.on('uncaughtException', function (err) {
@@ -33,13 +33,13 @@ process.on('uncaughtException', function (err) {
 });
 ```
 
-The default behavior on `uncaughtException` is to print a stack trace and exit - using the above, your program will display the message provided and the stack trace, but will **not** exit.
+Le comportement par défaut de `uncaughtException` est d'imprimer une trace de la pile et de sortir - en utilisant ce qui précède, votre programme affichera le message fourni et la trace de la pile, mais ne sortira **pas**.
 
 ## Streams
 
-The `process` object also provides wrappings for the three `STDIO` streams, `stdin`, `stdout`, and `stderr`. Put briefly, `stdin` is a readable stream (where one would read input from the user), `stdout` is a non-blocking writeable stream (writes to `stdout` are asynchronous, in other words), and `stderr` is a blocking (synchronous) writeable stream.
+L'objet `process` fournit également des enveloppes pour les trois flux `STDIO`, `stdin`, `stdout`, et `stderr`. En bref, `stdin` est un flux lisible (où l'on lirait les entrées de l'utilisateur), `stdout` est un flux inscriptible non-bloquant (les écritures dans `stdout` sont asynchrones, en d'autres termes), et `stderr` est un flux inscriptible bloquant (synchrone).
 
-The simplest one to describe is `process.stdout`. Technically, most output in Node.js is accomplished by using `process.stdout.write()` - though most people would never know it. The following is from `console.js` in Node.js core:
+Le plus simple à décrire est `process.stdout`. Techniquement, la plupart des sorties dans Node.js sont accomplies en utilisant `process.stdout.write()` - bien que la plupart des gens ne le sauraient jamais. Ce qui suit est tiré de `console.js` dans le noyau de Node.js :
 
 ```javascript
 exports.log = function() {
@@ -47,19 +47,19 @@ exports.log = function() {
 };
 ```
 
-Since most people are used to the `console.log` syntax from browser development, it was provided as a convenient wrapper.
+Comme la plupart des gens sont habitués à la syntaxe `console.log` dans le cadre du développement d'un navigateur, elle a été fournie comme une enveloppe pratique.
 
-Next we have `process.stderr`, which is very similar to `process.stdout` with one key exception - it blocks. When you write to `stderr`, your process blocks until the write is completed. Node.js provides a number of alias functions for output, most of which either end up using `stdout` or `stderr` under the hood. Here's a quick reference list:
+Ensuite, nous avons `process.stderr`, qui est très similaire à `process.stdout` avec une exception clé - il se bloque. Lorsque vous écrivez sur `stderr`, votre processus se bloque jusqu'à ce que l'écriture soit terminée. Node.js fournit un certain nombre d'alias pour la sortie, dont la plupart finissent par utiliser `stdout` ou `stderr` sous le capot. Voici une liste de référence rapide :
 
-STDOUT, or non-blocking functions: `console.log`, `console.info`, `util.puts`, `util.print`
+STDOUT, ou des fonctions non-bloquantes : `console.log`, `console.info`, `util.puts`, `util.print`.
 
-STDERR, or blocking functions: `console.warn`, `console.error`, `util.debug`
+STDERR, ou des fonctions bloquantes : `console.warn`, `console.error`, `util.debug`.
 
-Lastly, `process.stdin` is a readable stream for getting user input. See [more on cli input](/en/knowledge/command-line/how-to-prompt-for-command-line-input/).
+Enfin, `process.stdin` est un flux lisible pour recevoir les entrées de l'utilisateur. Voir [plus d'informations sur les entrées cli](/fr/command-line/how-to-prompt-for-command-line-input/).
 
-## Other Properties
+## Autres propriétés
 
-The `process` object additionally contains a variety of properties that allow you to access information about the running process. Let's run through a few quick examples with the help of the REPL:
+L'objet `process` contient en plus une variété de propriétés qui vous permettent d'accéder à des informations sur le processus en cours. Prenons quelques exemples rapides avec l'aide du REPL :
 
 ```
 > process.pid
@@ -72,23 +72,23 @@ The `process` object additionally contains a variety of properties that allow yo
 'node'
 ```
 
-The `pid` is the OS Process ID, `platform` is something general like 'linux' or 'darwin', and `version` refers to your Node.js version. `process.title` is a little bit different - while set to `node` by default, it can be set to anything you want, and will be what gets displayed in lists of running processes.
+Le `pid` est l'ID du processus du système d'exploitation, `platform` est quelque chose de général comme 'linux' ou 'darwin', et `version` fait référence à votre version de Node.js. `process.title` est un peu différent - bien que défini à `node` par défaut, il peut être défini à ce que vous voulez, et sera ce qui est affiché dans les listes de processus en cours d'exécution.
 
-The `process` module also exposes `process.argv`, an array containing the command-line arguments to the current process, and `process.argc`, an integer representing the number of arguments passed in. Read more on [how to parse command line arguments](/en/knowledge/command-line/how-to-parse-command-line-arguments/)
+Le module `process` expose également `process.argv`, un tableau contenant les arguments de la ligne de commande du processus en cours, et `process.argc`, un entier représentant le nombre d'arguments passés. En savoir plus sur [comment analyser les arguments de la ligne de commande](/fr/knowledge/command-line/how-to-parse-command-line-arguments/)
 
-`process.execPath` will return the absolute path of the executable that started this process.
+`process.execPath` retournera le chemin absolu de l'exécutable qui a démarré ce processus.
 
-`process.env` contains your environment variables. Try `process.env.HOME`, for example.
+`process.env` contient vos variables d'environnement. Essayez `process.env.HOME`, par exemple.
 
-## Methods
+## Méthodes
 
-There are also a variety of methods attached to the `process` object, many of which deal with quite advanced aspects of a program. We'll take a look at a few of the more commonly useful ones, while leaving the more advanced parts for another article.
+Il y a aussi une variété de méthodes attachées à l'objet `process`, dont beaucoup traitent des aspects assez avancés d'un programme. Nous allons jeter un coup d'oeil à quelques-unes des méthodes les plus couramment utilisées, tout en laissant les parties plus avancées pour un autre article.
 
-`process.exit` exits the process. If you call an asynchronous function and then call `process.exit()` immediately afterwards, you will be in a race condition - the asynchronous call may or may not complete before the process is exited. `process.exit` accepts one optional argument - an integer exit code. `0`, by convention, is an exit with no errors.
+`process.exit` quitte le processus. Si vous appelez une fonction asynchrone et que vous appelez `process.exit()` immédiatement après, vous serez dans une situation de course - l'appel asynchrone peut ou non se terminer avant que le processus ne soit quitté. `process.exit` accepte un argument optionnel - un code de sortie entier. `0`, par convention, est une sortie sans erreur.
 
-`process.cwd` returns the 'current working directory' of the process - this is often the directory from which the command to start the process was issued.
+`process.cwd` renvoie le "répertoire de travail actuel" du processus - c'est souvent le répertoire à partir duquel la commande de démarrage du processus a été lancée.
 
-`process.chdir` is used to change the current working directory. For example:
+`process.chdir` est utilisé pour changer le répertoire de travail actuel. Par exemple :
 
 ```
 > process.cwd()
@@ -98,15 +98,15 @@ There are also a variety of methods attached to the `process` object, many of wh
 '/home/avian'
 ```
 
-Finally, on a more advanced note, we have `process.nextTick`. This method accepts one argument - a callback - and places it at the top of the next iteration of the event loop. Some people do something like this:
+Enfin, sur une note plus avancée, nous avons `process.nextTick`. Cette méthode accepte un argument - un callback - et le place au début de la prochaine itération de la boucle d'événement. Certaines personnes font quelque chose comme ça :
 
 ```javascript
 setTimeout(function () {
-  // code here
+  // Votre code ici
 }, 0)
 ```
 
-This, however, is not ideal. In Node.js, this should be used instead:
+Cependant, ce n'est pas idéal. En Node.js, il faut plutôt utiliser ceci :
 
 ```javascript
 process.nextTick(function () {
@@ -114,4 +114,4 @@ process.nextTick(function () {
 });
 ```
 
-It is much more efficient, and much more accurate.
+Il est beaucoup plus efficace, et beaucoup plus précis.

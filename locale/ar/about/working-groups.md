@@ -4,7 +4,7 @@ title: مجموعات العمل
 ---
 
 # مجموعات العمل الأساسية
-<!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
+<!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/main/WORKING_GROUPS.md -->
 
 يتم إنشاء مجموعات العمل الأساسية من قبل لجنة التوجيه التقني
 [لجنة التوجيه التقني (TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).

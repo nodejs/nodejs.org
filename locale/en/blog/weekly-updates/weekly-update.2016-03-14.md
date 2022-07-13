@@ -13,7 +13,7 @@ Node.js Node v4.4.0 (LTS), Node v5.8.0 (Current) and Node v0.12.12 (LTS) are rel
 
 ### Node.js Node v4.4.0 (LTS), Node v5.8.0 (Current) and Node v0.12.12 (LTS) Releases
 
-We have three releases: [Node v4.4.0 (LTS)](https://nodejs.org/en/blog/release/v4.4.0/), [Node v5.8.0 (Current)](https://nodejs.org/en/blog/release/v5.8.0/) and [Node v0.12.12 (LTS)](https://nodejs.org/en/blog/release/v0.12.12/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+We have three releases: [Node v4.4.0 (LTS)](https://nodejs.org/en/blog/release/v4.4.0/), [Node v5.8.0 (Current)](https://nodejs.org/en/blog/release/v5.8.0/) and [Node v0.12.12 (LTS)](https://nodejs.org/en/blog/release/v0.12.12/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### AppDynamics, New Relic, Opbeat and Sphinx Join the Node.js Foundation as Silver Members
 

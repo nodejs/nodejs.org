@@ -135,7 +135,7 @@ layout: docs.hbs
     </td>
   </tr>
   <tr>
-    <td><span dir="ltr">--inspect-brk=<em>[host:port]</em><span></td>
+    <td><span dir="ltr">--inspect-brk=<em>[host:port]</em></span></td>
     <td>
       <ul>
         <li>يقوم بتمكين عميل التدقيق</li>
@@ -154,7 +154,7 @@ layout: docs.hbs
     </td>
   </tr>
   <tr>
-    <td><span dir="ltr"><code>node inspect --port=xxxx <em>script.js</em></code><span></td>
+    <td><span dir="ltr"><code>node inspect --port=xxxx <em>script.js</em></code></span></td>
     <td>
       <ul>
         <li>يخبر العمليات الفرعية بتنفيذ السكربت الخاص بالمستخدم تحت علم <span dir="ltr">--inspect</span> مع استعمال العملية الرئيسية لتشغيل مصحح الأخطاء من سطر الأوامر.</li>

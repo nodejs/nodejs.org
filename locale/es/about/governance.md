@@ -15,9 +15,9 @@ El repositorio GitHub del core de [nodejs/node](https://github.com/nodejs/node) 
 
 Las personas que hacen contribuciones significativas y valiosas se convierten en Colaboradores y se les otorga permisos de escritura al proyecto. Estas personas son identificadas por el TSC y su nominación se discute con los Colaboradores existentes.
 
-Para ver la lista actual de Colaboradores, consulte el [README.md](https://github.com/nodejs/node/blob/master/README.md#current-project-team-members) del proyecto.
+Para ver la lista actual de Colaboradores, consulte el [README.md](https://github.com/nodejs/node/blob/main/README.md#current-project-team-members) del proyecto.
 
-Se mantiene una guía para Colaboradores en [collaborator-guide.md](https://github.com/nodejs/node/blob/master/doc/contributing/collaborator-guide.md).
+Se mantiene una guía para Colaboradores en [collaborator-guide.md](https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md).
 
 ## Comités de nivel superior
 

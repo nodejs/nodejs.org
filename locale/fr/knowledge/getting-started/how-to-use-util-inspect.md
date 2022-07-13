@@ -1,5 +1,5 @@
 ---
-title: How to use util.inspect
+title: Comment utiliser util.inspect ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - core
@@ -8,38 +8,38 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-Node.js provides a utility function, for debugging purposes, that returns a string representation of an object. `util.inspect()` can be a true lifesaver while working with properties of large, complex objects.
+Node.js fournit une fonction utilitaire, à des fins de débogage, qui renvoie une représentation en chaîne d'un objet. `util.inspect()` peut être une véritable bouée de sauvetage lorsqu'on travaille avec les propriétés d'objets complexes et volumineux.
 
-Let's provide a basic example. `util.inspect()` can be used on any object - a good demonstration will be one of the built-in objects of Node.js. Try this in the REPL (type `node` at your command line with no arguments):
+Prenons un exemple de base. `util.inspect()` peut être utilisé sur n'importe quel objet - une bonne démonstration sera l'un des objets intégrés de Node.js. Essayez ceci dans le REPL (tapez `node` dans votre ligne de commande sans arguments) :
 
 ```javascript
 var util = require('util');
 util.inspect(console);
 ```
 
-The output will be:
+La sortie sera :
 
 ```
 '{ log: [Function], info: [Function], warn: [Function], error: [Function], dir: [Function], time: [Function], timeEnd: [Function], trace: [Function], assert: [Function] }'
 ```
 
-This is a listing of all the enumerable properties of the `console` object. It is also worth noting that `console.dir` is a wrapper around `util.inspect` that uses its default arguments.
+Ceci est une liste de toutes les propriétés énumérables de l'objet `console`. Il est également intéressant de noter que `console.dir` est une enveloppe autour de `util.inspect` qui utilise ses arguments par défaut.
 
-In the REPL, `util.inspect` will immediately return its output - this is not usually the case. In the context of normal Node.js code in a file, something must be done with the output. The simplest thing to do:
+Dans le REPL, `util.inspect` retournera immédiatement sa sortie - ce qui n'est généralement pas le cas. Dans le contexte d'un code Node.js normal dans un fichier, quelque chose doit être fait avec la sortie. La chose la plus simple à faire :
 
 ```javascript
 console.log(util.inspect(myObj));
 ```
 
-`util.inspect` can also be passed several optional arguments, shown here with their defaults:
+On peut aussi passer à `util.inspect` plusieurs arguments optionnels, montrés ici avec leurs valeurs par défaut :
 
 ```javascript
 util.inspect(object, showHidden=false, depth=2, colorize=true);
 ```
 
-For example, `util.inspect(myObj, true, 7, true)` would inspect `myObj`, showing all the hidden and non-hidden properties up to a depth of `7` and colorize the output. Let's go over the arguments individually.
+Par exemple, `util.inspect(myObj, true, 7, true)` inspectera `myObj`, en montrant toutes les propriétés cachées et non cachées jusqu'à une profondeur de `7` et colorera la sortie. Passons en revue les arguments individuellement.
 
-The `depth` argument is the number of levels deep into a nested object to recurse - it defaults to 2. Setting it to `null` will cause it to recurse 'all the way', showing every level. Compare the (size of) the outputs of these two `util.inspect` statements in the REPL:
+L'argument `depth` est le nombre de niveaux de profondeur dans un objet imbriqué à récuser - il est de 2 par défaut. En le mettant à `null`, la récursion sera complète, montrant chaque niveau. Comparez la (taille de) la sortie de ces deux instructions `util.inspect` dans le REPL :
 
 ```javascript
 var http = require('http');
@@ -47,14 +47,14 @@ util.inspect(http, true, 1);
 util.inspect(http, true, 3);
 ```
 
-The optional argument `showHidden` is a boolean that determines whether or not the 'non-enumerable' properties of an object will be displayed - it defaults to `false`, which tends to result in vastly more readable output. This isn't something a beginner needs to worry about most of the time, but it's worth demonstrating briefly. Once more, try the following in the REPL:
+L'argument optionnel `showHidden` est un booléen qui détermine si oui ou non les propriétés 'non-énumérables' d'un objet seront affichées - il prend par défaut la valeur `false`, ce qui tend à donner une sortie beaucoup plus lisible. Ce n'est pas quelque chose dont un débutant a besoin de s'inquiéter la plupart du temps, mais cela vaut la peine de le démontrer brièvement. Une fois de plus, essayez ce qui suit dans le REPL :
 
 ```javascript
 var util = require('util');
 util.inspect(console, true);
 ```
 
-Finally, the optional argument `colorize` is a boolean that adds ANSI escape codes to the string output. When logged to a terminal window, it should be pretty printed with colors.
+Enfin, l'argument optionnel `colorize` est un booléen qui ajoute les codes d'échappement ANSI à la sortie de la chaîne. Lorsqu'elle est enregistrée dans une fenêtre de terminal, elle devrait être joliment imprimée avec des couleurs.
 
 ```javascript
 var util = require('util');

@@ -13,7 +13,7 @@ Important patches for io.js 1.8 and 2.3 and upcoming events.
 
 ### io.js 1.8 and 2.3 Releases
 
-This week we have three io.js releases: [v2.3.2](https://iojs.org/dist/v2.3.2/) and two following important security patches [v1.8.3](https://iojs.org/dist/v1.8.3/) and [v2.3.3](https://iojs.org/dist/v2.3.3/), complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md) with the [v1.x changelog here](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
+This week we have three io.js releases: [v2.3.2](https://iojs.org/dist/v2.3.2/) and two following important security patches [v1.8.3](https://iojs.org/dist/v1.8.3/) and [v2.3.3](https://iojs.org/dist/v2.3.3/), complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md) with the [v1.x changelog here](https://github.com/nodejs/node/blob/v1.x/CHANGELOG.md).
 
 ### Notable Changes
 
