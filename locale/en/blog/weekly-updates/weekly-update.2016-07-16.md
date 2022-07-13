@@ -10,7 +10,7 @@ layout: blog-post.hbs
 
 ### Node v4.5.0 proposal
 
-* [Node Version 4.5.0 'Argon' (LTS)](https://github.com/nodejs/node/pull/7688). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+* [Node Version 4.5.0 'Argon' (LTS)](https://github.com/nodejs/node/pull/7688). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Node.js Foundation Announces Keynotes and Programming for Node.js Interactive Europe
 

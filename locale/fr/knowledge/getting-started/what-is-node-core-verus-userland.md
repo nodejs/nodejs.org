@@ -1,5 +1,5 @@
 ---
-title: What is node core versus userland
+title: Qu'est-ce que node core par rapport à userland
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - npm
@@ -10,30 +10,30 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-Occasionally, in the discussions in the NodeJS mailing lists and IRC channels, you may hear things referred to as "node-core" and "userland".
+De temps en temps, dans les discussions sur les listes de diffusion NodeJS et les canaux IRC, vous pouvez entendre parler de "node-core" et de "userland".
 
-Of course, traditionally, "userland" or "userspace" refer to everything outside the operating system kernel. In that sense, Node.js itself is a "userland" program.
+Bien sûr, traditionnellement, "userland" ou "userspace" se réfèrent à tout ce qui est en dehors du noyau du système d'exploitation. Dans ce sens, Node.js lui-même est un programme "userland".
 
-However, in the context of NodeJS, "core" refers to the modules and bindings that are compiled into NodeJS. In general, they provide a hook into very well-understood low-level functionality which almost all networking programs are going to require: TCP, HTTP, DNS, the File System, child processes, and a few other things. If something is fancy enough to argue about, there's a good chance it won't be part of node-core. HTTP is about as big as it gets, and if it wasn't so popular, it'd certainly not be a part of node.
+Cependant, dans le contexte de NodeJS, le "noyau" fait référence aux modules et aux liaisons qui sont compilés dans NodeJS. En général, ils fournissent un accès à une fonctionnalité de bas niveau très bien comprise, dont presque tous les programmes de mise en réseau auront besoin : TCP, HTTP, DNS, le système de fichiers, les processus enfants, et quelques autres choses. Si quelque chose est suffisamment sophistiqué pour être discuté, il y a de fortes chances qu'il ne fasse pas partie du node-core. HTTP est à peu près aussi gros que possible, et s'il n'était pas aussi populaire, il ne ferait certainement pas partie de node.
 
-There are also some things in node-core that are simply too painful to do without in a JavaScript environment, or which have been created to implement some BOM constructs which are not part of the JavaScript language, but may as well be (eg, setTimeout, setInterval, and console).
+Il y a également certaines choses dans node-core qui sont simplement trop douloureuses pour s'en passer dans un environnement JavaScript, ou qui ont été créées pour implémenter certaines constructions BOM qui ne font pas partie du langage JavaScript, mais qui pourraient tout aussi bien en faire partie (par exemple, setTimeout, setInterval et console).
 
-Everything else is "userland". This includes: npm, express, request, coffee-script, mysql clients, redis clients, and so on. You can often install these programs using [npm](https://www.npmjs.com/).
+Tout le reste est "userland". Cela inclut : npm, express, request, coffee-script, les clients mysql, les clients redis, et ainsi de suite. Vous pouvez souvent installer ces programmes en utilisant [npm](https://www.npmjs.com/).
 
-The question of what is properly "node-core" and what belongs in "userland" is a constant battleground. In general, node is based on the philosophy that it should *not* come with "batteries included". It is easier to move things out of node-core than it is to move them in, which means that core modules must continually "pay rent" in terms of providing necessary functionality that nearly everyone finds valuable.
+La question de savoir ce qui est proprement "node-core" et ce qui appartient au "userland" est un champ de bataille constant. En général, node est basé sur la philosophie selon laquelle il ne devrait *pas* être livré avec des " piles incluses ". Il est plus facile de déplacer des choses hors de node-core que de les déplacer dedans, ce qui signifie que les modules de base doivent continuellement "payer un loyer" en termes de fourniture de fonctionnalités nécessaires que presque tout le monde trouve précieuses.
 
-## This is a Good Thing.
+## C'est une bonne chose.
 
-One goal of node's minimal core library is to encourage people to implement things in creative ways, without forcing their ideas onto everyone. With a tiny core and a vibrant user space, we can all flourish and experiment without the onerous burden of having to always agree all the time.
+L'un des objectifs de la bibliothèque centrale minimale de node est d'encourager les gens à implémenter des choses de manière créative, sans imposer leurs idées à tout le monde. Avec un noyau minuscule et un espace utilisateur dynamique, nous pouvons tous nous épanouir et expérimenter sans le fardeau onéreux de devoir être toujours d'accord, tout le temps.
 
-## Userland isn't Less
+## Userland n'est pas moins
 
-If anything, it's more. Building functionality in userland rather than in node-core means:
+Au contraire, c'est plus. Construire des fonctionnalités dans userland plutôt que dans node-core signifie :
 
-* You have a lot more freedom to iterate on the idea.
-* Everyone who wants your module can install it easily enough (if you publish it with npm).
-* You have freedom to break node conventions if that makes sense for your use-case.
+* Vous avez beaucoup plus de liberté pour itérer sur l'idée.
+* Tous ceux qui veulent votre module peuvent l'installer assez facilement (si vous le publiez avec npm).
+* Vous avez la liberté de briser les conventions de node si cela a du sens pour votre cas d'utilisation.
 
-If you believe that something *really* just *needs* to be part of node's core library set, you should *still* build it as a module! It's much more likely to be pulled into node-core if people have a chance to see your great ideas in action, and if its core principles are iterated and polished and tested with real-world use.
+Si vous pensez que quelque chose a *vraiment* besoin de faire partie de l'ensemble des bibliothèques de base de node, vous devez *encore* le construire en tant que module ! Il y a beaucoup plus de chances qu'il soit intégré à node-core si les gens ont la possibilité de voir vos grandes idées en action, et si ses principes de base sont itérés, polis et testés dans le monde réel.
 
-Changing functionality that is included in node-core is very costly. We do it sometimes, but it's not easy, and carries a high risk of regressions. Better to experiment outside, and then pull it into node-core once it's stable. Once it's usable as a userland package, you may even find that it's less essential to node-core than you first thought.
+Modifier une fonctionnalité incluse dans node-core est très coûteux. Nous le faisons parfois, mais ce n'est pas facile et cela comporte un risque élevé de régressions. Il est préférable d'expérimenter à l'extérieur, puis de l'intégrer à node-core une fois qu'elle est stable. Une fois qu'il est utilisable en tant que paquet userland, vous pouvez même trouver qu'il est moins essentiel à node-core que vous ne le pensiez au départ.

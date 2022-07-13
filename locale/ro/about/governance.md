@@ -15,9 +15,9 @@ The [nodejs/node](https://github.com/nodejs/node) core GitHub repository is main
 
 Individuals making significant and valuable contributions are made Collaborators and given commit-access to the project. These individuals are identified by the TSC and their nomination is discussed with the existing Collaborators.
 
-For the current list of Collaborators, see the project's [README.md](https://github.com/nodejs/node/blob/master/README.md#current-project-team-members).
+For the current list of Collaborators, see the project's [README.md](https://github.com/nodejs/node/blob/main/README.md#current-project-team-members).
 
-A guide for Collaborators is maintained at [collaborator-guide.md](https://github.com/nodejs/node/blob/master/doc/contributing/collaborator-guide.md).
+A guide for Collaborators is maintained at [collaborator-guide.md](https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md).
 
 ## Top Level Committees
 

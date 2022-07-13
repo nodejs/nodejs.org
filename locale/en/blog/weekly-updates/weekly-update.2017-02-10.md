@@ -10,15 +10,15 @@ layout: blog-post.hbs
 
 ### Node v7.5.0 (Current)
 
-* [Node v7.5.0 (Current)](https://nodejs.org/en/blog/release/v7.5.0/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V7.md#7.5.0).
+* [Node v7.5.0 (Current)](https://nodejs.org/en/blog/release/v7.5.0/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V7.md#7.5.0).
 
 ### Node v4.7.3 (LTS)
 
-* [Node v4.7.3 (LTS)](https://nodejs.org/en/blog/release/v4.7.3/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V4.md#4.7.3).
+* [Node v4.7.3 (LTS)](https://nodejs.org/en/blog/release/v4.7.3/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V4.md#4.7.3).
 
 ### Node v6.9.5 (LTS)
 
-* [Node v6.9.5 (LTS)](https://nodejs.org/en/blog/release/v6.9.5/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V6.md#6.9.5).
+* [Node v6.9.5 (LTS)](https://nodejs.org/en/blog/release/v6.9.5/). The complete changelog can be found [on GitHub](https://github.com/nodejs/node/blob/main/doc/changelogs/CHANGELOG_V6.md#6.9.5).
 
 ### Notable Updates
 

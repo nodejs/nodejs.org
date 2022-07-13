@@ -1,5 +1,5 @@
 ---
-title: How to spawn a child process - the basics
+title: Comment générer un processus simple - les bases
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - core
@@ -8,13 +8,13 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-If you find yourself wishing you could have your Node.js process start another program for you, then look no further than the `child_process` module.
+Si vous souhaitez que votre processus Node.js lance un autre programme pour vous, ne cherchez pas plus loin que le module `child_process`.
 
-The simplest way is the "fire, forget, and buffer" method using `child_process.exec`. It runs your process, buffers its output (up to a default maximum of 200kb), and lets you access it from a callback when it is finished.
+La méthode la plus simple est la méthode "fire, forget, and buffer" en utilisant `child_process.exec`. Il exécute votre processus, met en mémoire tampon sa sortie (jusqu'à un maximum par défaut de 200kb), et vous permet d'y accéder à partir d'un callback quand il est terminé.
 
-The examples you will see in this article are all Linux-based. On Windows, you need to switch these commands with their Windows alternatives.
+Les exemples que vous verrez dans cet article sont tous basés sur Linux. Sous Windows, vous devez remplacer ces commandes par leurs alternatives Windows.
 
-Take a look at an example:
+Jetez un coup d'oeil à un exemple :
 
 ```js
 const { exec } = require('child_process');
@@ -34,27 +34,27 @@ ls.on('exit', function (code) {
 });
 ```
 
-`error.stack` is a stack trace to the point that the [Error object](/en/knowledge/errors/what-is-the-error-object/) was created.
+`error.stack` est une trace de la pile jusqu'au moment où l'objet [Error object](/fr/knowledge/errors/what-is-the-error-object/) a été créé.
 
-The `stderr` of a given process is not exclusively reserved for error messages. Many programs use it as a channel for secondary data instead. As such, when trying to work with a program that you have not previously spawned as a child process, it can be helpful to start out dumping both `stdout` and `stderr`, as shown above, to avoid any surprises.
+La `stderr` d'un processus donné n'est pas exclusivement réservée aux messages d'erreur. De nombreux programmes l'utilisent plutôt comme canal pour des données secondaires. En tant que tel, lorsque vous essayez de travailler avec un programme que vous n'avez pas encore créé en tant que processus enfant, il peut être utile de commencer par vider à la fois `stdout` et `stderr`, comme indiqué ci-dessus, pour éviter toute surprise.
 
-While `child_process.exec` buffers the output of the child process for you, it also returns a `ChildProcess` object, which wraps a still-running process. In the example above, since we are using `ls`, a program that will exit immediately regardless, the only part of the `ChildProcess` object worth worrying about is the `on exit` handler. It is not necessary here - the process will still exit and the error code will still be shown on errors.
+Alors que `child_process.exec` met en mémoire tampon la sortie du processus enfant pour vous, il retourne également un objet `ChildProcess`, qui englobe un processus en cours d'exécution. Dans l'exemple ci-dessus, puisque nous utilisons `ls`, un programme qui se termine immédiatement, la seule partie de l'objet `ChildProcess` dont il faut se soucier est le gestionnaire `on exit`. Il n'est pas nécessaire ici - le processus se terminera quand même et le code d'erreur sera toujours affiché sur les erreurs.
 
-**Buffering the Output** means that the output of the command is loaded into the memory before sending to `stdout` or `stderr` and as mentioned above a default of 200KB can be buffered into the memory. This feature has both pros and cons:
+**Buffering the Output** signifie que la sortie de la commande est chargée dans la mémoire avant d'être envoyée à `stdout` ou `stderr` et comme mentionné ci-dessus, une valeur par défaut de 200KB peut être mise en mémoire tampon. Cette fonctionnalité a des avantages et des inconvénients :
 
-Pros:
+Avantages :
 
-* You can pipe the output of one command as the input to another (just like you could in Linux). Example `ls -al | grep '^package'` will show the list of all the sub-directories in the current directory that begin with the word `'package'`.
+* Vous pouvez utiliser la sortie d'une commande comme entrée d'une autre (comme vous le faites sous Linux). Exemple : `ls -al | grep '^package'` affichera la liste de tous les sous-répertoires du répertoire courant qui commencent par le mot `'package'`.
 
-Cons:
+Contre :
 
-* Buffering the entire data into memory will affect the process performance.
-* Only a set maximum size of data can be buffered.
+* La mise en mémoire tampon de l'ensemble des données dans la mémoire affectera les performances du processus.
+* Seule une taille maximale de données peut être mise en mémoire tampon.
 
-There are other very useful spawning functions like: `.spawn()`, `.fork()`, `.execFile()`.
+Il y a d'autres fonctions très utiles comme : `.spawn()`, `.fork()`, `.execFile()`.
 
-* `child_process.spawn()`: The spawn function launches a command in a new process and you can use it to pass that command any arguments. It's the most generic spawning function and all other functions are built over it [[docs]](https://nodejs.org/api/child_process.html#child_process_child_process).
-* `child_process.execFile()`: The execFile function is similar to `child_process.exec(`) except that it spawns the command directly without first spawning a shell by default [[docs]](https://nodejs.org/api/child_process.html#child_process_child_process_execfile_file_args_options_callback).
-* `child_process.fork()`: The fork function spawns a new Node.js process and invokes a specified module with an IPC communication channel established that allows sending messages between parent and child [[docs]](https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options).
+* `child_process.spawn()` : La fonction spawn lance une commande dans un nouveau processus et vous pouvez l'utiliser pour passer des arguments à cette commande. C'est la fonction de création de processus la plus générique et toutes les autres fonctions sont construites à partir d'elle [[docs]](https://nodejs.org/api/child_process.html#child_process_child_process).
+* `child_process.execFile()` : La fonction execFile est similaire à `child_process.exec(`) sauf qu'elle génère directement la commande sans générer d'abord un shell par défaut [[docs]](https://nodejs.org/api/child_process.html#child_process_child_process_execfile_file_args_options_callback).
+* `child_process.fork()` : La fonction fork génère un nouveau processus Node.js et invoque un module spécifié avec un canal de communication IPC établi qui permet d'envoyer des messages entre le parent et l'enfant [[docs]](https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options).
 
-The functions `.exec()`, `.spawn()` and `.execFile()` do have their synchronous blocking versions that will wait until the child process exits namely `.execSync()`, `.spawnSync()` and `.execFileSync()` respectively. These blocking versions are particularly useful for one time startup processing tasks
+Les fonctions `.exec()`, `.spawn()` et `.execFile()` ont leurs versions synchrones bloquantes qui attendront que le processus enfant sorte, à savoir `.execSync()`, `.spawnSync()` et `.execFileSync()` respectivement. Ces versions bloquantes sont particulièrement utiles pour les tâches ponctuelles de traitement au démarrage

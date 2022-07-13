@@ -1,57 +1,57 @@
 ---
-title: Community Committee
+title: Comité communautaire
 layout: about.hbs
 ---
 
-# Community Committee
+# Comité communautaire
 
-The Community Committee (CommComm) is a top-level committee in the Node.js Foundation. The CommComm has authority over outward-facing community outreach efforts, including:
+Le Comité communautaire (CommComm) est un comité de haut niveau de la Fondation Node.js. Le CommComm a l'autorité sur les efforts de sensibilisation de la communauté orientés vers l'extérieur, y compris :
 
-* Community [Evangelism](https://github.com/nodejs/evangelism)
-* Education Initiatives
-* Cultural Direction of Node.js Foundation
-* Community Organization Outreach
-* Translation and Internationalization
-* Project Moderation/Mediation
-* Public Outreach and [Publications](https://medium.com/the-node-js-collection)
+* L'évangélisation communautaire (https://github.com/nodejs/evangelism)
+* Initiatives d'éducation
+* Direction culturelle de la Fondation Node.js
+* La sensibilisation des organisations communautaires
+* Traduction et internationalisation
+* Modération/médiation de projet
+* Sensibilisation du public et [publications] (https://medium.com/the-node-js-collection)
 
-There are four types of involvement with the Community Committee:
+Il existe quatre types de participation au comité communautaire :
 
-* A **Contributor** is any individual creating or commenting on an issue or pull request.
-* A **Collaborator** is a contributor who has been given write access to the repository
-* An **Observer** is any individual who has requested or been requested to attend a CommComm meeting. It is also the first step to becoming a Member.
-* A **Member** is a collaborator with voting rights who has met the requirements of participation and voted in by the CommComm voting process.
+* Un **Contributeur** est une personne qui crée ou commente un problème ou une demande de retrait.
+* Un **Collaborateur** est un contributeur qui a reçu un accès en écriture au référentiel.
+* Un **Observateur** est toute personne qui a demandé ou qui a été invitée à assister à une réunion du CommComm. C'est aussi la première étape pour devenir membre.
+* Un **Membre** est un collaborateur avec droit de vote qui a satisfait aux exigences de participation et a été élu par le processus de vote du CommComm.
 
-For the current list of Community Committee members, see the project's [README.md](https://github.com/nodejs/community-committee).
+Pour obtenir la liste actuelle des membres du comité communautaire, consultez le [README.md] du projet (https://github.com/nodejs/community-committee).
 
-## Contributors and Collaborators
+## Contributeurs et collaborateurs
 
-It is the mission of CommComm to further build out the Node.js Community. If you're reading this, you're already a part of that community – and as a part of the Node.js Community, we'd love to have your help!
+La mission de CommComm est de développer la communauté Node.js. Si vous lisez ceci, vous faites déjà partie de cette communauté - et en tant que membre de la communauté Node.js, nous aimerions avoir votre aide !
 
-The [nodejs/community-committee](https://github.com/nodejs/community-committee) GitHub repository is a great place to start. Check out the [issues labeled "Good first issue"](https://github.com/nodejs/community-committee/labels/good%20first%20issue) to see where we're looking for help. If you have your own ideas on how we can engage and build the community, feel free to open your own issues, create pull requests with improvements to our existing work, or help us by sharing your thoughts and ideas in the ongoing discussions we're having in GitHub.
+Le dépôt GitHub [nodejs/community-committee](https://github.com/nodejs/community-committee) est un excellent point de départ. Consultez les [issues labellisées "Good first issue"](https://github.com/nodejs/community-committee/labels/good%20first%20issue) pour voir où nous recherchons de l'aide. Si vous avez vos propres idées sur la façon dont nous pouvons engager et construire la communauté, n'hésitez pas à ouvrir vos propres problèmes, à créer des demandes d'amélioration de notre travail existant, ou à nous aider en partageant vos pensées et vos idées dans les discussions en cours sur GitHub.
 
-You can further participate in our ongoing efforts around community building - like localization, evangelism, the Node.js Collection, and others - by digging into their respective repositories and getting involved!
+Vous pouvez également participer à nos efforts continus de développement de la communauté - comme la localisation, l'évangélisation, la collection Node.js, et d'autres - en fouillant dans leurs dépôts respectifs et en vous impliquant !
 
-Before diving in, please be sure to read the [Collaborator Guide](https://github.com/nodejs/community-committee/blob/master/governance/COLLABORATOR_GUIDE.md).
+Avant de vous lancer, assurez-vous de lire le [Guide du collaborateur] (https://github.com/nodejs/community-committee/blob/master/governance/COLLABORATOR_GUIDE.md).
 
-If you're interested in participating in the Community Committee as a committee member, you should read the section below on **Observers and Membership**, and create an issue asking to be an Observer in our next Community Committee meeting. You can find a great example of such an issue [here](https://github.com/nodejs/community-committee/issues/142).
+Si vous souhaitez participer au comité communautaire en tant que membre du comité, vous devez lire la section ci-dessous sur les **Observateurs et l'adhésion**, et créer une question demandant à être un observateur lors de notre prochaine réunion du comité communautaire. Vous pouvez trouver un excellent exemple d'une telle question [ici] (https://github.com/nodejs/community-committee/issues/142).
 
-## Observers and Membership
+## Observateurs et membres
 
-If you're interested in becoming more deeply involved with the Community Committee and its projects, we encourage you to become an active observer, and work toward achieving member status. To become a member you must:
+Si vous souhaitez vous impliquer plus profondément dans le comité communautaire et ses projets, nous vous encourageons à devenir un observateur actif et à travailler pour obtenir le statut de membre. Pour devenir membre, vous devez
 
-1. Attend the bi-weekly meetings, investigate issues tagged as good first issue, file issues and pull requests, and provide insight via GitHub as a contributor or collaborator.
-2. Request to become an Observer by filing an issue. Once added as an Observer to meetings, we will track attendance and participation for 3 months, in accordance with our governance guidelines. You can find a great example of such an issue [here](https://github.com/nodejs/community-committee/issues/142).
-3. When you meet the 3 month minimum attendance, and participation expectations, the CommComm will vote to add you as a member.
+1. Assister aux réunions bihebdomadaires, enquêter sur les problèmes marqués comme good first issue, déposer des problèmes et des pull requests, et fournir des informations via GitHub en tant que contributeur ou collaborateur.
+2. Demander à devenir un observateur en déposant un problème. Une fois ajouté en tant qu'observateur aux réunions, nous suivrons la présence et la participation pendant 3 mois, conformément à nos directives de gouvernance. Vous pouvez trouver un excellent exemple d'un tel problème [ici] (https://github.com/nodejs/community-committee/issues/142).
+3. Lorsque vous aurez répondu aux attentes en matière de présence et de participation pendant 3 mois, le CommComm votera pour vous ajouter en tant que membre.
 
-Membership is for 6 months. The group will ask on a regular basis if the expiring members would like to stay on. A member just needs to reply to renew. There is no fixed size of the CommComm. However, the expected target is between 9 and 12. You can read more about membership, and other administrative details, in our [Governance Guide](https://github.com/nodejs/community-committee/blob/master/GOVERNANCE.md).
+La durée de l'adhésion est de 6 mois. Le groupe demandera régulièrement aux membres en fin de mandat s'ils souhaitent rester. Un membre n'a qu'à répondre pour renouveler son adhésion. Il n'y a pas de taille fixe pour le CommComm. Cependant, l'objectif attendu se situe entre 9 et 12 membres. Vous pouvez en savoir plus sur l'adhésion et les autres détails administratifs dans notre [Guide de gouvernance] (https://github.com/nodejs/community-committee/blob/master/GOVERNANCE.md).
 
-Regular CommComm meetings are held bi-monthly in a Zoom video conference, and broadcast live to the public on YouTube. Any community member or contributor can ask that something be added to the next meeting's agenda by logging a GitHub Issue.
+Les réunions régulières du CommComm ont lieu tous les deux mois en vidéoconférence Zoom et sont diffusées en direct au public sur YouTube. Tout membre de la communauté ou contributeur peut demander l'ajout d'une question à l'ordre du jour de la prochaine réunion en enregistrant une question GitHub.
 
-Meeting announcements and agendas are posted before the meeting begins in the organization's [GitHub issues](https://github.com/nodejs/community-committee/issues). You can also find the regularly scheduled meetings on the [Node.js Calendar](https://nodejs.org/calendar). To follow Node.js meeting livestreams on YouTube, subscribe to the Node.js Foundation [YouTube channel](https://www.youtube.com/channel/UCQPYJluYC_sn_Qz_XE-YbTQ). Be sure to click the bell to be notified of new videos!
+Les annonces et les ordres du jour des réunions sont publiés avant le début de la réunion dans les [GitHub issues] de l'organisation (https://github.com/nodejs/community-committee/issues). Vous pouvez également trouver les réunions régulièrement programmées sur le [calendrier Node.js] (https://nodejs.org/calendar). Pour suivre les diffusions en direct des réunions de Node.js sur YouTube, abonnez-vous à la [chaîne YouTube] de la Fondation Node.js (https://www.youtube.com/channel/UCQPYJluYC_sn_Qz_XE-YbTQ). N'oubliez pas de cliquer sur la cloche pour être informé des nouvelles vidéos !
 
-## Consensus Seeking Process
+## Processus de recherche de consensus
 
-The CommComm follows a [Consensus Seeking](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making) decision making model.
+Le CommComm suit un modèle de prise de décision basé sur la [recherche de consensus](https://en.wikipedia.org/wiki/Consensus-seeking_decision-making).
 
-When an agenda item has appeared to reach a consensus, the moderator will ask "Does anyone object?" as a final call for dissent from the consensus. If a consensus cannot be reached that has no objections then a majority wins vote is called. It is expected that the majority of decisions made by the CommComm are via a consensus seeking process and that voting is only used as a last-resort.
+Lorsqu'un point de l'ordre du jour semble ne pas pouvoir faire l'objet d'un consensus, le modérateur demande "Est-ce que quelqu'un s'oppose ?" en guise d'appel final.
