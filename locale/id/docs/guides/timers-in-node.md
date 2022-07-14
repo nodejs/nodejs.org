@@ -147,8 +147,8 @@ const intervalObj = setInterval(() => {
   console.log('mewawancarai interval');
 }, 500);
 
-clearTimeout(batas waktuObj);
-clearImmediate(langsungObj);
+clearTimeout(timeoutObj);
+clearImmediate(immediateObj);
 clearInterval(intervalObj);
 ```
 
