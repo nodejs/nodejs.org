@@ -1,0 +1,168 @@
+{
+  "title": "Node.js",
+  "editOnGithub":"Edit Di GitHub",
+  "author": "Node.js",
+  "url": "https://nodejs.org/id/",
+  "locale": "id",
+  "language": "Bahasa Indonesia",
+  "languageEnglishVersion": "Indonesian",
+  "scrollToTop": "Gulir ke atas",
+  "reportNodeIssue": "Laporkan masalah Node.js",
+  "reportWebsiteIssue": "Laporkan masalah situs web",
+  "getHelpIssue": "Dapatkan Dantuan",
+  "Contributing": "Berkontribusi untuk Nodejs.org",
+  "by": "oleh",
+  "all-downloads": "Semua opsi unduhan",
+  "nightly": "Nightly build",
+  "unofficial-builds": "Build tak resmi",
+  "previous": "Sebelumnya",
+  "next": "Berikutnya",
+  "toggleText":"Alihkan mode gelap/terang",
+  "feeds": [
+    {
+      "link": "feed/blog.xml",
+      "text": "Node.js Blog"
+    },
+    {
+      "link": "feed/releases.xml",
+      "text": "Node.js Blog: Rilisan"
+    },
+    {
+      "link": "feed/vulnerability.xml",
+      "text": "Node.js Blog: Laporan Kerentanan"
+    }
+  ],
+  "home": {
+    "text": "Beranda"
+  },
+  "about": {
+    "link": "about",
+    "text": "Tentang",
+    "governance": {
+      "link": "about/governance",
+      "text": "Tata kerja"
+    },
+    "community": {
+      "link": "about/community",
+      "text": "Komunitas"
+    },
+    "workinggroups": {
+      "link": "about/working-groups",
+      "text": "Grup kerja"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "Rilisan"
+    },
+    "resources": {
+      "link": "about/resources",
+      "text": "Sumber daya"
+    },
+    "trademark": {
+      "link": "about/trademark",
+      "text": "Merek dagang"
+    },
+    "privacy": {
+      "link": "about/privacy",
+      "text": "Kebijakan privasi"
+    }
+  },
+  "download": {
+    "link": "download",
+    "text": "Unduh",
+    "releases": {
+      "link": "download/releases",
+      "text": "Versi Sebelumnya"
+    },
+    "package-manager": {
+      "link": "download/package-manager",
+      "text": "Menginstal Node.js melalui manajer paket"
+    },
+    "shasums": {
+      "link": "SHASUMS256.txt.asc",
+      "text": "SHASUMS yang ditandatangani untuk file rilisan",
+      "verify-link": "https://github.com/nodejs/node#verifying-binaries",
+      "verify-text": "Bagaimana cara Verifikasi"
+    },
+    "install-on-linux": {
+      "text": "Menginstal Node.js melalui arsip biner"
+    },
+    "install-on-wsl": {
+      "text": "Menginstal melalui Windows Subsystem for Linux (WSL)"
+    }
+  },
+  "docs": {
+    "link": "docs",
+    "text": "Dokumentasi",
+    "es6": {
+      "link": "docs/es6",
+      "text": "ES6 dan seterusnya"
+    },
+    "api-lts": {
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
+      "subtext": "LTS",
+      "text": "%ver% API"
+    },
+    "api-current": {
+      "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
+      "text": "%ver% API"
+    },
+    "guides": {
+      "link": "docs/guides",
+      "text": "Panduan"
+    },
+    "dependencies": {
+      "link": "docs/meta/topics/dependencies",
+      "text": "Dependensi"
+    }
+  },
+  "getinvolved": {
+    "link": "get-involved",
+    "text": "Berkontribusi",
+    "code-and-learn": {
+      "link": "get-involved/code-and-learn",
+      "text": "Code + Learn"
+    },
+    "collab-summit": {
+      "link": "get-involved/collab-summit",
+      "text": "KKT Kolaborasi"
+    },
+    "contribute": {
+      "link": "get-involved/contribute",
+      "text": "Kontribusi"
+    },
+    "conduct": {
+      "link": "https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md",
+      "text": "Kode etik"
+    }
+  },
+  "security": {
+    "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
+    "text": "Keamanan"
+  },
+  "getcertified": {
+    "link": "https://openjsf.org/certification",
+    "text": "Dapatkan Sertifikat"
+  },
+  "blog": {
+    "link": "blog",
+    "text": "Berita"
+  },
+  "releases": {
+    "title": "Riwayat Rilisan",
+    "downloads": "Unduhan"
+  },
+  "links": {
+    "pages": {
+      "changelog": "Log Perubahan"
+    }
+  },
+  "banners": {
+    "index": {
+      "startDate": "2022-06-27T16:00:00.000Z",
+      "endDate": "2022-07-13T16:00:00.000Z",
+      "text": "Rilis keamanan baru sekarang tersedia untuk jalur rilis Node.js 14, 16, dan 18",
+      "link": "https://nodejs.org/en/blog/vulnerability/july-2022-security-releases/"
+    }
+  }
+}
