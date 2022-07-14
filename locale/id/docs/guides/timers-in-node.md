@@ -35,7 +35,7 @@ argumen juga dapat disertakan dan ini akan diteruskan ke fungsi. Di Sini
 adalah contohnya:
 
 ```js
-fungsi myFunc(arg) {
+function myFunc(arg) {
   console.log(`arg was => ${arg}`);
 }
 
@@ -111,8 +111,8 @@ yang mungkin berpegang pada loop acara, dan karena itu harus diperlakukan sebaga
 perkiraan penundaan. Lihat contoh di bawah ini:
 
 ```js
-fungsi intervalFunc() {
-  console.log('Tidak bisa menghentikan saya sekarang!');
+function intervalFunc() {
+  console.log('Cant stop me now!');
 }
 
 setInterval(intervalFunc, 1500);
