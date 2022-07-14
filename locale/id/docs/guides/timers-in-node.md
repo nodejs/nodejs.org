@@ -136,15 +136,15 @@ di bawah ini untuk contoh masing-masing:
 
 ```js
 const timeoutObj = setTimeout(() => {
-  console.log('batas waktu melampaui waktu');
+  console.log('Batas waktu melampaui waktu');
 }, 1500);
 
-const langsungObj = setImmediate(() => {
-  console.log('segera mengeksekusi segera');
+const immediateObj  = setImmediate(() => {
+  console.log('Segera mengeksekusi segera');
 });
 
 const intervalObj = setInterval(() => {
-  console.log('mewawancarai interval');
+  console.log('Mewawancarai interval');
 }, 500);
 
 clearTimeout(timeoutObj);
