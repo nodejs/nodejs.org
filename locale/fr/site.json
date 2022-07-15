@@ -1,5 +1,6 @@
 {
   "title": "Node.js",
+  "editOnGithub":"Editer sur GitHub",
   "author": "Node.js",
   "url": "https://nodejs.org/fr/",
   "locale": "fr",
@@ -9,12 +10,14 @@
   "reportNodeIssue": "Rapporter un problème Node.js",
   "reportWebsiteIssue": "Rapporter un problème sur le site web",
   "getHelpIssue": "Obtenir de l’aide",
+  "Contributing": "Contribuer pour Nodejs.org",
   "by": "par",
   "all-downloads": "Toutes les options de téléchargement",
   "nightly": "Versions quotidiennes",
   "unofficial-builds": "Builds non officiels",
   "previous": "Précédent",
   "next": "Suivant",
+  "toggleText":"Basculer en mode sombre/clair",
   "feeds": [
     {
       "link": "feed/blog.xml",
@@ -83,6 +86,9 @@
     },
     "install-on-linux": {
       "text": "Installer Node.js via l'archive binaire"
+    },
+      "install-on-wsl": {
+      "text": "Installer sur 'Windows Subsystem for Linux' (WSL)"
     }
   },
   "docs": {
@@ -138,6 +144,10 @@
     "link": "blog",
     "text": "Actualités"
   },
+  "getcertified": {
+    "link": "https://openjsf.org/certification",
+    "text": "Certification"
+  },
   "releases": {
     "title": "Historique des versions",
     "downloads": "Téléchargements"
@@ -145,6 +155,19 @@
   "links": {
     "pages": {
       "changelog": "Journal des modifications"
+    }
+  },
+  "banners": {
+    "index": {
+      "startDate": "2022-06-27T16:00:00.000Z",
+      "endDate": "2022-07-13T16:00:00.000Z",
+      "text": "Nouvelles versions de sécurité disponibles maintenant pour Node.js 14, 16, et 18",
+      "link": "https://nodejs.org/en/blog/vulnerability/july-2022-security-releases/"
+    },
+    "blacklivesmatter": {
+      "visible": false,
+      "text": "#BlackLivesMatter",
+      "link": "black-lives-matter/"
     }
   }
 }
