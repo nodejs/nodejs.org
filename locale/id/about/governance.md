@@ -31,7 +31,7 @@ memperluas komunitas Node.js.
 
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
 [Komite Komunitas (CommComm)]: https://github.com/nodejs/community-committee/blob/master/Community-Committee-Charter.md
-[Consensus Seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
+[Pencarian Kesepakatan]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [README.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
 [Technical Steering Committee (TSC)]: https://github.com/nodejs/TSC/blob/master/TSC-Charter.md
 [TSC]: https://github.com/nodejs/TSC

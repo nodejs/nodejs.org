@@ -5,7 +5,7 @@ title: Menginstal Node.js melalui manajer paket
 
 # Menginstal Node.js melalui manajer paket
 
-***Catatan:*** Paket-paket di halaman ini dikelola dan didukung oleh pembuat paketnya masing-masing, **bukan** tim inti Node.js. Harap laporkan masalah apa pun yang Anda temui ke pengelola paket. Jika ternyata masalah Anda adalah bug di Node.js itu sendiri, pengelola akan melaporkan masalah tersebut ke upstream. 
+***Catatan:*** Paket-paket di halaman ini dikelola dan didukung oleh pembuat paketnya masing-masing, **bukan** tim inti Node.js. Harap laporkan masalah apa pun yang Anda temui ke pengelola paket. Jika ternyata masalah Anda adalah bug di Node.js itu sendiri, pengelola akan melaporkan masalah tersebut ke upstream.
 
 ---
 
@@ -140,7 +140,7 @@ emerge nodejs
 
 ## IBM i
 
-Versi LTS dari Node.js tersedia dari IBM, dan tersedia melalui [pengelola paket 'yum'](https://ibm.biz/ibmi-rpms). 
+Versi LTS dari Node.js tersedia dari IBM, dan tersedia melalui [pengelola paket 'yum'](https://ibm.biz/ibmi-rpms).
 Nama paketnya adalah `nodejs` diikuti dengan nomor versi utama (misalnya, `nodejs12`, `nodejs14` dll)
 
 Untuk menginstal Node.js 14.x dari baris perintah, jalankan perintah berikut sebagai pengguna dengan otoritas khusus \*ALLOBJ:
@@ -401,4 +401,4 @@ scoop install nodejs
 IBM&reg; SDK untuk Node.js - z/OS&reg; tersedia dalam dua format instalasi,
 SMP/E dan PAX. Pilih format instalasi yang sesuai untuk Anda:
 * [Memasang dan mengonfigurasi Node.js edisi SMP/E di z/OS](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/smpe.htm)
-* [Memasang dan mengonfigurasi Node.js edisi PAX di z/OS](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/paxz.htm )
+* [Memasang dan mengonfigurasi Node.js edisi PAX di z/OS](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/paxz.htm)

@@ -276,7 +276,7 @@ Semoga melalui investigasi kinerja ini (diakui dibikin)
 contoh, Anda telah melihat bagaimana prosesor tick V8 dapat membantu Anda mendapatkan yang lebih baik
 pemahaman tentang kinerja aplikasi Node.js Anda.
 
-Anda juga dapat menemukan [cara membuat grafik nyala][flamegraph diagnostik]. 
+Anda juga dapat menemukan [cara membuat grafik nyala][flamegraph diagnostik].
 
 Semogah bermanfaat.
 

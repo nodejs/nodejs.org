@@ -5,8 +5,8 @@ layout: docs.hbs
 
 # Meng-docker aplikasi web Node.js
 
-Tujuan dari contoh ini adalah untuk menunjukkan kepada Anda cara memasukkan aplikasi Node.js ke dalam container 
-Docker. Panduan ini ditujukan untuk pengembangan, dan *bukan* untuk 
+Tujuan dari contoh ini adalah untuk menunjukkan kepada Anda cara memasukkan aplikasi Node.js ke dalam Docker
+Container. Panduan ini ditujukan untuk pengembangan, dan *bukan* untuk
 penerapan produksi. Panduan ini juga mengasumsikan Anda memiliki Panduan ini juga mengasumsikan Anda memiliki
 [Instalasi Docker](https://docs.docker.com/engine/installation/) yang berfungsi dan dasar
 pemahaman tentang bagaimana aplikasi Node.js terstruktur.
@@ -200,7 +200,7 @@ node                            16         3b66eb585643    5 days ago
 ## Jalankan image
 
 Menjalankan image Anda dengan `-d` akan menjalankan container dalam mode terpisah, meninggalkan
-container berjalan di latar belakang. Penanda`-p` mengalihkan port publik ke 
+container berjalan di latar belakang. Penanda`-p` mengalihkan port publik ke
 port pribadi di dalam container. Jalankan image yang Anda buat sebelumnya:
 
 ```bash

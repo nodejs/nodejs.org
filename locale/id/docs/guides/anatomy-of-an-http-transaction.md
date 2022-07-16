@@ -282,7 +282,7 @@ http.createServer((request, response) => {
 }).listen(8080);
 ```
 
-## Contoh Server Echo 
+## Contoh Server Echo
 
 Mari kita sederhanakan contoh sebelumnya untuk membuat server echo sederhana, yang hanya
 mengirimkan data apa pun yang diterima dalam permintaan segera sebagai tanggapan. Semua

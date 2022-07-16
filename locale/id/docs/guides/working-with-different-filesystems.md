@@ -3,7 +3,6 @@ title: Bekerja dengan Sistem File Berbeda
 layout: docs.hbs
 ---
 
-
 # Bekerja dengan Sistem File Berbeda
 
 Node.js memperlihatkan banyak fitur dari sistem file. Tetapi tidak semua sistem file sama.
@@ -183,7 +182,7 @@ untuk beberapa sistem file FAT.
 Nama file dan stempel waktu adalah data pengguna. Sama seperti Anda tidak akan pernah secara otomatis
 menulis ulang data file pengguna menjadi huruf besar data atau menormalkan `CRLF` menjadi `LF`
 akhir baris, jadi Anda tidak boleh mengubah, mengganggu, atau merusak nama file atau
-cap waktu melalui kasus / bentuk Unicode / normalisasi cap waktu. Normalisasi 
+cap waktu melalui kasus / bentuk Unicode / normalisasi cap waktu. Normalisasi
 seharusnya hanya digunakan untuk perbandingan, tidak pernah untuk mengubah data.
 
 Normalisasi secara efektif merupakan kode hash lossy. Anda dapat menggunakannya untuk menguji

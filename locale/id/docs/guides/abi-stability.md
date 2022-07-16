@@ -8,7 +8,7 @@ layout: docs.hbs
 ## Pengantar
 Application Binary Interface (ABI) adalah cara bagi program untuk memanggil fungsi
 dan menggunakan struktur data dari program terkompilasi lainnya. Ini adalah versi yang dikompilasi
-dari Antarmuka Pemrograman Aplikasi (Inggris: Application Programming Interface disingkat API). 
+dari Antarmuka Pemrograman Aplikasi (Inggris: Application Programming Interface disingkat API).
 Dengan kata lain, file header menggambarkan kelas, fungsi, struktur data, enumerasi,
 dan konstanta yang memungkinkan aplikasi untuk melakukan tugas yang diinginkan sesuai dengan cara
 kompilasi ke satu set alamat dan nilai parameter dan memori yang diharapkan
