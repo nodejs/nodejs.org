@@ -80,7 +80,7 @@ This is how to interpret the trace data (for the second line):
     <td>Total heap after GC in MB</td>
   </tr>
   <tr>
-    <td>0.15 / 0.0 </br>
+    <td>0.15 / 0.0 <br/>
         (average mu = 0.132, current mu = 0.137)</td>
     <td>Time spent in GC in ms</td>
   </tr>
