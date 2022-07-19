@@ -36,7 +36,8 @@ restarts make certain requests to fail _(load balancer responds with 502)_.
 * Process restarts due to the memory exhaustion and request are dropped on the
   floor
 * Increased GC activity leads to higher CPU usage and slower response time
-* Increased memory swapping slows down the process
+  * GC blocking the Event Loop causing slowness
+* Increased memory swapping slows down the process (GC activity)
 * May not have enough available memory to get a Heap Snapshot
 
 ### Debugging

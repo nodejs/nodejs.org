@@ -38,7 +38,7 @@ node --inspect index.js
 
 > `--inspect-brk` is an better choice for scripts.
 
-Connect to the dev-tools instance and then:
+Connect to the dev-tools instance in chrome and then:
 
 * Select `memory` tab
 * Select `Allocation instrumentation timeline`

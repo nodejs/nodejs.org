@@ -8,7 +8,8 @@ layout: docs.hbs
 There's a lot to learn about how the garbage collector works, but if you learn
 one thing it's that when GC is running, your code is not.
 
-You may want to know how often and how long the garbage collection is running.
+You may want to know how often and how long the garbage collection is running,
+and what is the outcome.
 
 ## Runnig with garbage collection traces
 
@@ -20,7 +21,8 @@ $ node --trace_gc app.js
 ```
 
 You might want to avoid getting traces from the entire lifetime of your
-process running on a server. In that case, set the flag from within the process.
+process running on a server. In that case, set the flag from within the process,
+and switch it off once the need for tracing is over.
 
 Here's how to print GC events to stdout for one minute.
 
@@ -92,7 +94,7 @@ This is how to interpret the trace data (for the second line):
 
 ## Using performance hooks to trace garbage collection
 
-For Node.js v8.5.0 or later, you can use [performance hooks][] to trace
+In Node.js, you can use [performance hooks][] to trace
 garbage collection.
 
 ```js
@@ -177,7 +179,7 @@ For more information, you can refer to
 
 A. How to get context of bad allocations
 1. Suppose we observe that the old space is continously increasing.
-2. But due to heavy gc, the heap roof is not hit, but the process is slow.
+2. But due to heavy gc, the heap maximum is not hit, but the process is slow.
 3. Review the trace data and figure out how much is the total heap before and
 after the gc.
 4. Reduce `--max-old-space-size` such that the total heap is closer to the
@@ -187,7 +189,7 @@ limit.
 
 B. How to assert whether there is a memory leak when heap growth is observed
 1. Suppose we observe that the old space is continously increasing.
-2. Due to heavy gc, the heap roof is not hit, but the process is slow.
+2. Due to heavy gc, the heap maximum is not hit, but the process is slow.
 3. Review the trace data and figure out how much is the total heap before and
 after the gc.
 4. Reduce `--max-old-space-size` such that the total heap is closer to the
@@ -196,7 +198,7 @@ limit.
 6. If it hits OOM, increment the heap size by ~10% or so and repeat few times.
 If the same pattern is observed, it is indicative of a memory leak.
 7. If there is no OOM, then freeze the heap size to that value - A packed heap
-reduces memory footprint and compation latency.
+reduces memory footprint and compaction latency.
 
 C. How to assert whether too many gcs are happening or too many gcs are causing
 an overhead

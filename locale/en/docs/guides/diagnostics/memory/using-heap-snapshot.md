@@ -6,12 +6,12 @@ layout: docs.hbs
 # Using Heap Snapshot
 
 You can take a Heap Snapshot from your running application and load it into
-Chrome Developer Tools to inspect certain variables or check retainer size.
+[Chrome Developer Tools][] to inspect certain variables or check retainer size.
 You can also compare multiple snapshots to see differences over time.
 
 ## Warning
 
-To create a snapshot, all other work in your main thread is stopped.
+When creating a snapshot, all other work in your main thread is stopped.
 Depending on the heap contents it could even take more than a minute.
 The snapshot is built in memory, so it can double the heap size, resulting
 in filling up entire memory and then crashing the app.
@@ -158,3 +158,4 @@ Practice capturing heap snapshots and finding memory leaks with
 [load button image]: /static/images/docs/guides/diagnostics/load-snapshot.png
 [comparison image]: /static/images/docs/guides/diagnostics/compare.png
 [heapsnapshot exercise]: https://github.com/naugtur/node-example-heapdump
+[Chrome Developer Tools]: https://developer.chrome.com/docs/devtools/
