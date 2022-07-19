@@ -1,15 +1,15 @@
 .openjsfoundation-footer {
   padding: 1em 20px;
-  font-size: 14px;
+  font-size: small;
   color: $white;
   background: $node-gray;
   direction: ltr;
-  width: 60%;
+  text-align: center;
+  width: 100%;
   float: left;
 
   p + p {
-    margin-top: 0;
-    margin-bottom: .25em;
+    font-size: medium;
   }
 }
 
