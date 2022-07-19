@@ -59,11 +59,11 @@
   "devDependencies": {
     "chokidar": "^3.5.3",
     "cross-env": "^7.0.3",
-    "eslint": "^8.19.0",
+    "eslint": "^8.20.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-markdown": "^2.2.1",
+    "eslint-plugin-markdown": "^3.0.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.0",
@@ -78,7 +78,7 @@
     "remark-preset-lint-node": "^3.3.1",
     "st": "^3.0.0",
     "stylelint": "^14.9.1",
-    "stylelint-config-twbs-bootstrap": "^4.0.0",
+    "stylelint-config-twbs-bootstrap": "^5.0.0",
     "tape": "^5.5.3",
     "vnu-jar": "21.10.12"
   }
