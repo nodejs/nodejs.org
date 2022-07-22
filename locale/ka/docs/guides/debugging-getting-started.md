@@ -32,38 +32,38 @@ Node.js ასევე დაიწყებს გამართვის შ
 
 ### გამართვის (debug) პორტის გასაჯაროება სახიფათოა
 
-If the debugger is bound to a public IP address, or to 0.0.0.0, any clients that
-can reach your IP address will be able to connect to the debugger without any
-restriction and will be able to run arbitrary code.
+თუ გამმართველი მიბმულია საჯარო IP-მისამართთან ან 0.0.0.0-თან, ნებისმიერ კლიენტს,
+რომელსაც წვდომა აქვს თქვენს IP-მისამართთან, ყოველგვარი შეზღუდის გარეშე შეძლებს
+გამმართველთან დაკავშირებას და თვითნებური კოდის გაშვებას.
 
-By default `node --inspect` binds to 127.0.0.1. You explicitly need to provide a
-public IP address or 0.0.0.0, etc., if you intend to allow external connections
-to the debugger. Doing so may expose you to a potentially significant security
-threat. We suggest you ensure appropriate firewalls and access controls in place
-to prevent a security exposure.
+ნაგულისხმევად, `node --inspect` ებმის 127.0.0.1-ს. გამმართველთან გარე კავშირების
+დასაშვებად, თქვენ ცალსახად დაგჭირდებათ, უზრუნველყოთ საჯარო IP-მისამართი ან 0.0.0.0
+და ა.შ. [თუმცა,] ამის გაკეთებამ, შესაძლოა პოტენციურად საყურადღებო უსაფრთხოების რისკების
+წინაშე დაგაყენოთ. ჩვენ გირჩევთ, უზრუნველყოთ სათანადო firewall-ებისა და წვდომის კონტროლის
+არსებობა, რათა თავიდან აიცილოთ მსგავსი საფრთხეები.
 
 See the section on '[Enabling remote debugging scenarios](#enabling-remote-debugging-scenarios)' on some advice on how
 to safely allow remote debugger clients to connect.
 
-### Local applications have full access to the inspector
+### ლოკალურ აპლიკაციებს აქვთ სრული წვდომა ინსპექტორზე
 
-Even if you bind the inspector port to 127.0.0.1 (the default), any applications
-running locally on your machine will have unrestricted access. This is by design
-to allow local debuggers to be able to attach conveniently.
+მაშინაც კი, თუ თქვენ ინსპექტორის პორტს მიაბამთ 127.0.0.1-ს (ნაგულისხმევი), ლოკალურად, თქვენს
+მოწყობილობაზე გაშვებულ ნებისმიერ აპლიკაციას ექნება შეუზღუდავი წვდომა. ეს იმისათვის კეთდება,
+რომ ლოკალურ გამმართველებს მიეცეთ ადვილად მიმაგრების საშუალება.
 
-### Browsers, WebSockets and same-origin policy
+### ბრაუზერები, WebSocket-ები და იგივე წარმოშობის (same-origin) პოლიტიკა
 
-Websites open in a web-browser can make WebSocket and HTTP requests under the
-browser security model. An initial HTTP connection is necessary to obtain a
-unique debugger session id. The same-origin-policy prevents websites from being
-able to make this HTTP connection. For additional security against
-[DNS rebinding attacks](https://en.wikipedia.org/wiki/DNS_rebinding), Node.js
-verifies that the 'Host' headers for the connection either
-specify an IP address or `localhost` or `localhost6` precisely.
+ვებ ბრაუზერში გახსნილ ვებსაიტებს შეუძლიათ განახორციელონ WebSocket- და HTTP-მოთხოვნები
+ბრაუზერის უსაფრთხოების მოდელის მიხედვით. საწყისი HTTP კავშირი აუცილებელია გამმართველის
+სესიის უნიკალური id-ის მისაღებად. იგივე წარმოშობის პოლიტიკა (same-origin-policy) ხელს უშლის
+ვებსაიტებს ამ HTTP კავშირის დამყარებაში. დამატებითი დაცვისათვის
+[DNS rebinding შეტევების](https://en.wikipedia.org/wiki/DNS_rebinding)
+წინააღმდეგ, Node.js ამოწმებს, ზუსტად არის თუ არა მითითებული
+კავშირის 'Host' სათაურებში (headers) IP-მისამართი, `localhost` ან `localhost6`.
 
-These security policies disallow connecting to a remote debug server by
-specifying the hostname. You can work-around this restriction by specifying
-either the IP address or by using ssh tunnels as described below.
+ეს უსაფრთხოების წესები კრძალავს დისტანციურ გამართვის სერვერთან დაკავშირებას
+ჰოსტის სახელის (hostname) მითითებით. ამ შეზღუდვისათვის გვერდის ავლა შეგიძლიათ
+IP-მისამართის მითითებით ან ssh-გვირაბების (tunnels) გამოყენებით, როგორც ეს ქვემოთ არის აღწერილი.
 
 ## Inspector Clients
 
@@ -181,7 +181,7 @@ The following table lists the impact of various runtime flags on debugging:
 
 ---
 
-## Enabling remote debugging scenarios
+## Enabling remote debugging scenarios (შენიშვნა)
 
 We recommend that you never have the debugger listen on a public IP address. If
 you need to allow remote debugging connections we recommend the use of ssh
