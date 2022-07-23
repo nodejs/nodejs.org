@@ -40,7 +40,7 @@ node --inspect index.js
 ![堆剖析器步骤 1][heap profiler tutorial 1]
 
 堆剖析一旦开始运行，我们强烈建议您运行示例，这样便于确认内存相关的问题。
-举个例子：如果我们对一个 Web 应用程序进行堆剖析，`Apache Benchmark` 
+举个例子：如果我们对一个 Web 应用程序进行堆剖析，`Apache Benchmark`
 可以用来产出（模拟）应用程序中的负载。
 
 > 在这个示例中，我们假定堆剖析基于 Web 应用程序。
