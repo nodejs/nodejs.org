@@ -24,20 +24,22 @@ availability.
 
 ### Get the Heap Snapshot
 
-1. via inspector
-2. via external signal and commandline flag
-3. via writeHeapSnapshot call withing the process
-4. via inspector protocol
+There are multiple ways to obtain a heap snapshot:
+
+1. via the inspector,
+2. via an external signal and command-line flag,
+3. via a `writeHeapSnapshot` call within the process,
+4. via the inspector protocol.
 
 #### 1. Use memory profiling in inspector
 
 > Works in all actively maintained versions of Node.js
 
-Run node with `--inspect` flag. Open inspector.
+Run node with `--inspect` flag and open the inspector.
 ![open inspector][open inspector image]
 
 The simplest way to get a Heap Snapshot is to connect a inspector to your
-process running locally and go to Memory tab, choose to take a heap snapshot.
+process running locally. Then go to Memory tab and take a heap snapshot.
 
 ![take a heap snapshot][take a heap snapshot image]
 
@@ -45,7 +47,7 @@ process running locally and go to Memory tab, choose to take a heap snapshot.
 
 > Works in v12.0.0 or later
 
-You can start node with a commandline flag enabling reacting to a signal to
+You can start node with a command-line flag enabling reacting to a signal to
 create a heap snapshot.
 
 ```
@@ -61,7 +63,7 @@ $ ls
 Heap.20190718.133405.15554.0.001.heapsnapshot
 ```
 
-For details, see the latest documentation of [heapsnapshot-signal flag][]
+For details, see the latest documentation of [heapsnapshot-signal flag][].
 
 #### 3. Use `writeHeapSnapshot` function
 
@@ -75,14 +77,14 @@ server, you can implement getting it using:
 require('v8').writeHeapSnapshot();
 ```
 
-Check [writeHeapSnapshot docs][] for file name options
+Check [`writeHeapSnapshot` docs][] for file name options.
 
 You need to have a way to invoke it without stopping the process, so calling it
-in a http handler or as a reaction to a signal from the operating system
-is advised. Be careful not to expose the http endpoint triggering a snapshot.
+in a HTTP handler or as a reaction to a signal from the operating system
+is advised. Be careful not to expose the HTTP endpoint triggering a snapshot.
 It should not be possible for anybody else to access it.
 
-For versions of Node.js before v11.13.0 you can use the [heapdump package][]
+For versions of Node.js before v11.13.0 you can use the [heapdump package][].
 
 #### 4. Trigger Heap Snapshot using inspector protocol
 
@@ -91,7 +93,7 @@ process.
 
 It's not necessary to run the actual inspector from Chromium to use the API.
 
-Here's an example snapshot trigger in bash, using `websocat` and `jq`
+Here's an example snapshot trigger in bash, using `websocat` and `jq`:
 
 ```bash
 #!/bin/bash
@@ -119,41 +121,42 @@ done < <(cat out | tail -n +2 | head -n -1)
 exec 3>&-
 ```
 
-Not exhaustive list of memory profiling tools usable with inspector protocol:
+Here is a non-exhaustive list of memory profiling tools usable with the
+inspector protocol:
 
 * [OpenProfiling for Node.js][openprofiling]
 
 ## How to find a memory leak with Heap Snapshots
 
-To find a memory leak one compares two snapshots. It's important to make sure
-the snapshots diff doesn't contain unnecessary information.
+You can find a memory leak by compaing too snapshots. It's important to make
+sure the snapshots difference does not contain unnecessary information.
 Following steps should produce a clean diff between snapshots.
 
 1. Let the process load all sources and finish bootstrapping. It should take a
-few seconds at most.
+   few seconds at most.
 2. Start using the functionality you suspect of leaking memory. It's likely it
-makes some initial allocations that are not the leaking ones.
+   makes some initial allocations that are not the leaking ones.
 3. Take one heap snapshot.
 4. Continue using the functionality for a while, preferably without running
-anything else in between.
+   anything else in between.
 5. Take another heap snapshot. The difference between the two should mostly
-contain what was leaking.
+   contain what was leaking.
 6. Open Chromium/Chrome dev tools and go to *Memory* tab
-7. Load the older snapshot file first, newer one second
-![Load button in tools][load button image]
-8. Select the newer snapshot and switch mode in a dropdown at the top from
-*Summary* to *Comparison*. ![Comparison dropdown][comparison image]
+7. Load the older snapshot file first, and the newer one second.
+   ![Load button in tools][load button image]
+8. Select the newer snapshot and switch mode in the dropdown at the top from
+   *Summary* to *Comparison*. ![Comparison dropdown][comparison image]
 9. Look for large positive deltas and explore the references that caused
-them in the bottom panel.
+   them in the bottom panel.
 
-Practice capturing heap snapshots and finding memory leaks with
-[a heap snapshot exercise][heapsnapshot exercise]
+You can practice capturing heap snapshots and finding memory leaks with [this
+heap snapshot exercise][heapsnapshot exercise].
 
 [open inspector image]: /static/images/docs/guides/diagnostics/tools.png
 [take a heap snapshot image]: /static/images/docs/guides/diagnostics/snapshot.png
 [heapsnapshot-signal flag]: https://nodejs.org/api/cli.html#--heapsnapshot-signalsignal
 [heapdump package]: https://www.npmjs.com/package/heapdump
-[writeHeapSnapshot docs]: https://nodejs.org/api/v8.html#v8_v8_writeheapsnapshot_filename
+[`writeHeapSnapshot` docs]: https://nodejs.org/api/v8.html#v8_v8_writeheapsnapshot_filename
 [openprofiling]: https://github.com/vmarchaud/openprofiling-node
 [load button image]: /static/images/docs/guides/diagnostics/load-snapshot.png
 [comparison image]: /static/images/docs/guides/diagnostics/compare.png
