@@ -17,4 +17,4 @@ This is the available set of diagnostics guides:
 
 * [Memory](/en/docs/guides/diagnostics/memory)
 
-[Diagnostics Working Group]: https://github.com/nodejs/diagnostics)
+[Diagnostics Working Group]: https://github.com/nodejs/diagnostics
