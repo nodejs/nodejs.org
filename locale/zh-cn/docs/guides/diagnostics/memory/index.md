@@ -14,7 +14,7 @@ layout: docs.hbs
   * [低效率内存使用](#my-process-utilizes-memory-inefficiently)
     * [相关症状](#symptoms-1)
     * [副作用](#side-effects-1)
-* [调试](#debugging)
+  * [调试](#debugging)
 
 ## <!--my-process-runs-out-of-memory-->内存耗尽
 
