@@ -39,7 +39,7 @@ setTimeout(() => { v8.setFlagsFromString('--notrace_gc'); }, 60e3);
 [23521:0x10268b000]  120 ms: Mark-sweep 100.7 (122.7) -> 100.6 (122.7) MB, 0.15 / 0.0 ms  (average mu = 0.132, current mu = 0.137) deserialize GC in old space requested
 ```
 
-这里给出如何解析这些信息（以第二行数据举例）：
+以上面第二行数据举例，这里给出如何解析这些信息：
 
 <table>
   <tr>
@@ -48,7 +48,7 @@ setTimeout(() => { v8.setFlagsFromString('--notrace_gc'); }, 60e3);
   </tr>
   <tr>
     <td>23521</td>
-    <td>正在运行的进程号</td>
+    <td>正在运行的线程号</td>
   </tr>
   <tr>
     <td>0x10268db0</td>
@@ -64,24 +64,31 @@ setTimeout(() => { v8.setFlagsFromString('--notrace_gc'); }, 60e3);
   </tr>
   <tr>
     <td>100.7</td>
-    <td>GC 运行前占有内存（MB）</td>
+    <td>GC 运行前占有内存（MiB）</td>
   </tr>
   <tr>
     <td>122.7</td>
-    <td>GC 运行前总占有内存（MB）</td>
+    <td>GC 运行前总占有内存（MiB）</td>
   </tr>
   <tr>
     <td>100.6</td>
-    <td>GC 运行后占有内存（MB）</td>
+    <td>GC 运行后占有内存（MiB）</td>
   </tr>
   <tr>
     <td>122.7</td>
-    <td>GC 运行后总占有内存（MB）</td>
+    <td>GC 运行后总占有内存（MiB）</td>
   </tr>
   <tr>
-    <td>0.15 / 0.0 <br/>
-        (average mu = 0.132, current mu = 0.137)</td>
+    <td>0.15</td>
     <td>GC 所耗费时间（毫秒）</td>
+  </tr>
+  <tr>
+    <td>0.0</td>
+    <td>GC 垃圾回收回调所话费的时间（毫秒）</td>
+  </tr>
+  <tr>
+    <td>(average mu = 0.132, current mu = 0.137)</td>
+    <td>增变因子利用率（0 —— 1 之间）</td>
   </tr>
   <tr>
     <td>deserialize GC in old space requested</td>
@@ -100,8 +107,8 @@ const { PerformanceObserver } = require('perf_hooks');
 const obs = new PerformanceObserver((list) => {
   const entry = list.getEntries()[0];
   /*
-  The entry would be an instance of PerformanceEntry containing
-  metrics of garbage collection.
+  The entry is an instance of PerformanceEntry containing
+  metrics of a single garbage collection event.
   For example:
   PerformanceEntry {
     name: 'gc',
@@ -113,7 +120,7 @@ const obs = new PerformanceObserver((list) => {
   */
 });
 
-// Subscribe notifications of GCs
+// Subscribe to notifications of GCs
 obs.observe({ entryTypes: ['gc'] });
 
 // Stop subscription
@@ -175,15 +182,15 @@ A. 如何获取糟糕的内存分配的上下文信息？
 1. 假定我们观察到旧内存持续增长。
 2. 但根据 GC 的负重来看，堆的最大值并未达到，但进程慢。
 3. 回看跟踪的数据，找出在 GC 前后总的堆占用量。
-4. 使用 `--max-old-space-size` 降低内存，使得总的内存堆更接近于极限值。
-5. 再次运行程序，达到内存耗尽。
+4. 使用 [`--max-old-space-size`][] 降低内存，使得总的内存堆更接近于极限值。
+5. 再次不断地运行程序，直到内存耗尽。
 6. 该过程的日志将显示失败的上下文信息。
 
 B. 如何确定在堆增长之时，存在内存泄露现象？
 1. 假定我们观察到旧内存持续增长。
 2. 但根据 GC 的负重来看，堆的最大值并未达到，但进程慢。
 3. 回看跟踪的数据，找出在 GC 前后总的堆占用量。
-4. 使用 `--max-old-space-size` 降低内存，使得总的内存堆更接近于极限值。
+4. 使用 [`--max-old-space-size`][] 降低内存，使得总的内存堆更接近于极限值。
 5. 再次运行程序，观察是否内存耗尽。
 6. 如果发生内存耗尽，尝试每次提升 10% 的堆内存，反复数次。
 如果之前的现象复现被观察到，这就能证明存在内存泄露。
@@ -196,6 +203,7 @@ C. 如何断定是否存在太多次的垃圾回收，或者因为太多次垃�
 4. 如果两次 GC 间隙时间和所话费的时间都非常高，证明该程序应该用一个更小点的堆。
 5. 如果两次 GC 的时间远大于 GC 运行的时间，应用程序则相对比较健康。
 
-[performance hooks]: https://nodejs.org/api/perf_hooks.html
 [PerformanceEntry]: https://nodejs.org/api/perf_hooks.html#perf_hooks_class_performanceentry
 [PerformanceObserver]: https://nodejs.org/api/perf_hooks.html#perf_hooks_class_performanceobserver
+[`--max-old-space-size`]: https://nodejs.org/api/cli.html#--max-old-space-sizesize-in-megabytes
+[performance hooks]: https://nodejs.org/api/perf_hooks.html
