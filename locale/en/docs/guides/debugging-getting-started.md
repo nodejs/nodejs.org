@@ -59,7 +59,7 @@ unique debugger session id. The same-origin-policy prevents websites from being
 able to make this HTTP connection. For additional security against
 [DNS rebinding attacks](https://en.wikipedia.org/wiki/DNS_rebinding), Node.js
 verifies that the 'Host' headers for the connection either
-specify an IP address or `localhost` or `localhost6` precisely.
+specify an IP address or `localhost` precisely.
 
 These security policies disallow connecting to a remote debug server by
 specifying the hostname. You can work-around this restriction by specifying
