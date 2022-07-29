@@ -89,13 +89,13 @@ unique debugger session id. The same-origin-policy prevents websites from being
 able to make this HTTP connection. For additional security against
 [DNS rebinding attacks](https://en.wikipedia.org/wiki/DNS_rebinding), Node.js
 verifies that the 'Host' headers for the connection either
-specify an IP address or `localhost` or `localhost6` precisely. -->
+specify an IP address or `localhost` precisely. -->
 Sites abertos em um navegador podem fazer requisições via websockets e HTTP
 desde que estejam dentro do modelo de segurança do browser. Uma conexão HTTP inicial
 é necessária para obter um ID único para uma sessão de debugging. Para mais segurança
 contra [ataques de rebinding de DNS](https://en.wikipedia.org/wiki/DNS_rebinding),
 o Node.js verifica se o header `Host` para a conexão especificam ou um endereço de IP
-que seja exatamente `localhost` ou `localhost6`.
+que seja exatamente `localhost`.
 
 <!-- These security policies disallow connecting to a remote debug server by
 specifying the hostname. You can work-around this restriction by specifying
