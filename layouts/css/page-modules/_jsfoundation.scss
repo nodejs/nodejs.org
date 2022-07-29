@@ -5,12 +5,20 @@
   background: $node-gray;
   direction: ltr;
   text-align: center;
-  width: 100%;
   float: left;
 
   p + p {
-    font-size: medium;
+    font-size: 15px;
   }
+}
+
+.openjsfoundation-footer-edit {
+  display: inline;
+  font-size: 15px;
+}
+
+.openjsfoundation-footer-links {
+  display: inline;
 }
 
 .issue-link-container {
