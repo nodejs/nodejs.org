@@ -110,6 +110,7 @@ staticFiles.on('add', (filePath) => {
 });
 
 const mainLocale = (selectedLocales && selectedLocales[0]) || 'en';
+let all404NotFoundPageContent = null;
 
 // Initializes the server and mounts it in the generated build directory.
 http
@@ -120,7 +121,43 @@ http
     if (req.url === '/') {
       req.url = `/${mainLocale}`;
     }
-    mount(req, res);
+
+    mount(req, res, async () => {
+      // Here we should handle the 404 page when the route is not found.
+      // 1. Check whether the language is supported or not.
+      // 2. If not, redirect to the default language.
+      // 3. If yes, Save the content and return directly for the next time.
+
+      if (all404NotFoundPageContent === null) {
+        const allSupportedLangs = await fs.readdir(
+          path.join(__dirname, 'locale')
+        );
+        all404NotFoundPageContent = new Map();
+        for (const lng of allSupportedLangs) {
+          all404NotFoundPageContent.set(lng, '');
+        }
+      }
+
+      let currentLng = req.url.split('/')[1];
+
+      if (!all404NotFoundPageContent.has(currentLng)) {
+        currentLng = mainLocale;
+      }
+
+      if (all404NotFoundPageContent.get(currentLng) === '') {
+        const notFoundPagePath = path.join(
+          __dirname,
+          'build',
+          `${currentLng}/404.html`
+        );
+        all404NotFoundPageContent.set(
+          currentLng,
+          await fs.readFile(notFoundPagePath, 'utf8')
+        );
+      }
+
+      res.end(all404NotFoundPageContent.get(currentLng));
+    });
   })
   .listen(port, () => {
     console.log(
