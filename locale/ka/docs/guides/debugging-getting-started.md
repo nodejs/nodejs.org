@@ -53,7 +53,7 @@ to safely allow remote debugger clients to connect.
 
 ### ბრაუზერები, WebSocket-ები და იგივე წარმოშობის (same-origin) პოლიტიკა
 
-ვებ ბრაუზერში გახსნილ ვებსაიტებს შეუძლიათ განახორციელონ WebSocket- და HTTP-მოთხოვნები
+ვებბრაუზერში გახსნილ ვებსაიტებს შეუძლიათ განახორციელონ WebSocket- და HTTP-მოთხოვნები
 ბრაუზერის უსაფრთხოების მოდელის მიხედვით. საწყისი HTTP კავშირი აუცილებელია გამმართველის
 სესიის უნიკალური id-ის მისაღებად. იგივე წარმოშობის პოლიტიკა (same-origin-policy) ხელს უშლის
 ვებსაიტებს ამ HTTP კავშირის დამყარებაში. დამატებითი დაცვისათვის
@@ -65,50 +65,50 @@ to safely allow remote debugger clients to connect.
 ჰოსტის სახელის (hostname) მითითებით. ამ შეზღუდვისათვის გვერდის ავლა შეგიძლიათ
 IP-მისამართის მითითებით ან ssh-გვირაბების (tunnels) გამოყენებით, როგორც ეს ქვემოთ არის აღწერილი.
 
-## Inspector Clients
+## ინსპექტორი კლიენტები
 
-A minimal CLI debugger is available with `node inspect myscript.js`.
-Several commercial and open source tools can also connect to the Node.js Inspector.
+მინიმალისტური CLI-გამმართველი ხელმისაწვდომია ბრძანებით `node inspect myscript.js`.
+Node.js ინსპექტორთან დაკავშირება ასევე შეუძლია რამდენიმე კომერციულ და ღიად ხელმისაწვდომ ინსტრუმენტს.
 
-### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+, [Microsoft Edge](https://www.microsoftedgeinsider.com)
+### [Chrome დეველოპერის ინსტრუმენტები](https://github.com/ChromeDevTools/devtools-frontend) 55+, [Microsoft Edge](https://www.microsoftedgeinsider.com)
 
-* **Option 1**: Open `chrome://inspect` in a Chromium-based
-  browser or `edge://inspect` in Edge. Click the Configure button and ensure your target host and port
-  are listed.
-* **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
-  (see above) or the --inspect hint text and paste into Chrome.
+* **ვარიანტი 1**: გახსენით `chrome://inspect` Chromium-ზე დაფუძნებულ
+  ბრაუზერში ან `edge://inspect` — Edge-ში. დააწკაპუნეთ Configure ღილაკზე და დარწმუნდით, რომ სასურველი ჰოსტი და პორტი
+  არის ჩამონათვალში.
+* **ვარიანტი 2**: დააკოპირეთ `devtoolsFrontendUrl` მნიშვნელობა `/json/list`-დან
+  (იხილეთ ზემოთ) ან --inspect მიმნიშნებელი ტექსტი და ჩასვით Chrome-ში.
 
-> Note that the Node.js and the Chrome need to be run on the same platform.
+> გაითვალისწინეთ, რომ Node.js და Chrome ერთსა და იმავე პლატფორმაზე უნდა გაეშვას.
 
 ### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
 
-* In the Debug panel, click the settings icon to open `.vscode/launch.json`.
-  Select "Node.js" for initial setup.
+* „გამართვის“ (Debug) პანელში დააწკაპუნეთ პარამეტრების ხატულაზე, რათა გახსნათ `.vscode/launch.json` [ფაილი].
+  აირჩიეთ „Node.js“ საწყისი მოწყობისათვის.
 
 ### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017+
 
-* Choose "Debug > Start Debugging" from the menu or hit F5.
-* [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging).
+* მენიუდან აირჩიეთ „Debug > Start Debugging“ ან დააჭირეთ `F5`-ს.
+* [დეტალური ინსტრუქციები](https://github.com/Microsoft/nodejstools/wiki/Debugging).
 
-### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) and other JetBrains IDEs
+### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) და სხვა JetBrains IDE-ები
 
-* Create a new Node.js debug configuration and hit Debug. `--inspect` will be used
-  by default for Node.js 7+. To disable uncheck `js.debugger.node.use.inspect` in
-  the IDE Registry. To learn more about running and debugging Node.js in WebStorm and other JetBrains IDEs,
-  check out [WebStorm online help](https://www.jetbrains.com/help/webstorm/running-and-debugging-node-js.html).
+* შექმენით ახალი Node.js გამართვის კონფიგურაცია და დააჭირეთ „Debug“ ღილაკს. `--inspect` ნაგულისხმევად იქნება
+  გამოყენებული `Node.js 7+`-ისთვის. გამოსართავად IDE რეესტრში მოხსენით მონიშვნა (uncheck)
+  `js.debugger.node.use.inspect`-ს. WebStorm-ში და სხვა JetBrains IDE-ებში Node.js-ის გაშვებასა და გამართვასთან დაკავშირებით
+  დეტალური ინფორმაციისათვის იხილეთ [WebStorm ონლაინ დახმარება](https://www.jetbrains.com/help/webstorm/running-and-debugging-node-js.html).
 
 ### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 
-* Library to ease connections to [Inspector Protocol][] endpoints.
+* ბიბლიოთეკა, რომელიც ამარტივებს კავშირს [Inspector Protocol][] endpoint-ებთან.
 
 ### [Gitpod](https://www.gitpod.io)
 
-* Start a Node.js debug configuration from the `Debug` view or hit `F5`. [Detailed instructions](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
+* გაუშვით Node.js გამართვის კონფიგურაცია `Debug` ხედიდან (view) ან დააჭირეთ `F5`-ს. [დეტალური ინსტრუქციები](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
 
-### [Eclipse IDE](https://eclipse.org/eclipseide) with Eclipse Wild Web Developer extension
+### [Eclipse IDE](https://eclipse.org/eclipseide) Eclipse Wild Web Developer დამატებით (*extension-ით*)
 
-* From a .js file, choose "Debug As... > Node program", or
-* Create a Debug Configuration to attach debugger to running Node.js application (already started with `--inspect`).
+* გახსენით .js [გაფართოების მქონე] ფაილი, აირჩიეთ „Debug As... > Node program“, ან
+* შექმენით გამართვის კონფიგურაცია, რათა მიამაგროთ გამმართველი გაშვებულ Node.js-აპლიკაციას (უკვე დაიწყო `--inspect`-ით).
 
 ---
 
