@@ -1,5 +1,5 @@
 name: 🔡 Internationalization and translations For Nodejs Website
-description: Hello. Hola. Salut. Ciao. Здравствуйте. こんにちは.
+description: Hello. Hola. Salut. Ciao. Здравствуйте. こんにちは. مرحباً
 labels: [i18n]
 body:
   - type: markdown
