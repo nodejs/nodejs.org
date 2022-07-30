@@ -13,8 +13,6 @@ For purposes of the GDPR, the OpenJS Foundation (sometimes referred to by “we�
 
 Capitalized terms that are not defined in this Privacy Policy have the meaning given them in our Terms of Use (as applicable, the “Terms”), available at [https://terms-of-use.openjsf.org](https://terms-of-use.openjsf.org).  In this Privacy Policy, “personal information” includes references to “personal data” as defined under applicable laws. Your use of our Sites and Services, and any dispute over privacy, is subject to this Policy and the relevant Terms, including the applicable limitations on damages and the resolution of disputes.  The Terms are incorporated by reference into this Policy.
 
-The most recent version of this document can be found at [https://privacy-policy.openjsf.org](https://privacy-policy.openjsf.org).
-
 ## Personal Information That OpenJS Foundation Collects
 
 We collect personal information directly from individuals, from third parties, and automatically through the Sites and Services. You do not have to provide us your personal information. However, if you choose not to disclose certain information, we will not be able to provide you with access to certain services or features, including account registration, event registration, training and certification programs, or participation in certain aspects of our open source projects.
