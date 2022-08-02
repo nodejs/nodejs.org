@@ -260,19 +260,17 @@ async function copyStatic() {
       { overwrite: false, recursive: true }
     ),
 
-    fsExtra.copyFile(
+    fsExtra.copy(
       path.join(
         __dirname,
         'node_modules/jquery.fancytable/dist/fancyTable.min.js'
       ),
-      path.join(__dirname, 'build/static/js/fancyTable.min.js'),
-      fs.constants.COPYFILE_EXCL | fs.constants.COPYFILE_FICLONE
+      path.join(__dirname, 'build/static/js/fancyTable.min.js')
     ),
 
-    fsExtra.copyFile(
+    fsExtra.copy(
       path.join(__dirname, 'node_modules/jquery/dist/jquery.min.js'),
-      path.join(__dirname, 'build/static/js/jquery.min.js'),
-      fs.constants.COPYFILE_EXCL | fs.constants.COPYFILE_FICLONE
+      path.join(__dirname, 'build/static/js/jquery.min.js')
     )
   ]);
 
