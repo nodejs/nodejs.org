@@ -1,3 +1,8 @@
+.download-table-currentpage {
+  background-color: $node-green;
+  color: $white;
+}
+
 .download-header {
   h1 {
     width: 40%;
@@ -141,6 +146,7 @@ h5.download-table-previous-releases-header {
   font-size: small;
   border: 1px solid $light-gray2;
   border-spacing: 0;
+  text-align: center;
 
   td {
     padding: 5px;
