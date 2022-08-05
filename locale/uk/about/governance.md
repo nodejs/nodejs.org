@@ -25,7 +25,7 @@ TSC має остаточне авторство над цим проектом,
 Членство передбачає повну зайнятість, відповідно до потреб проекту.
 
 Поточний список учасників TSC можна знайти в
-[README.md](https://github.com/nodejs/node/blob/master/README.md#tsc-technical-steering-committee) проекту.
+[README.md](https://github.com/nodejs/node/blob/main/README.md#tsc-technical-steering-committee) проекту.
 
 ## Співавтори
 
@@ -58,10 +58,10 @@ _Процес пошуку консенсусу_ нижче для додатк�
 за потреби.
 
 Щоб побачити поточний список співавторів перегляньте
-[README.md](https://github.com/nodejs/node/blob/master/README.md#current-project-team-members) проекту.
+[README.md](https://github.com/nodejs/node/blob/main/README.md#current-project-team-members) проекту.
 
 Керівництво для співавторів знаходиться у
-[collaborator-guide.md](https://github.com/nodejs/node/blob/master/doc/contributing/collaborator-guide.md).
+[collaborator-guide.md](https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md).
 
 ## Членство в TSC
 

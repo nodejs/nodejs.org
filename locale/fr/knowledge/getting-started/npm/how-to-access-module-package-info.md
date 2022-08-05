@@ -1,5 +1,5 @@
 ---
-title: How to access module package info
+title: Comment accéder aux informations sur les paquets de modules ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - core
@@ -8,15 +8,15 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-There are many situations in the world of software development where using the wrong version of a dependency or submodule can cause all sorts of pain and anguish - luckily for you, Node.js has a module available called pkginfo that can help keep these sorts of troubles at bay.
+Il existe de nombreuses situations dans le monde du développement logiciel où l'utilisation d'une mauvaise version d'une dépendance ou d'un sous-module peut causer toutes sortes de douleurs et d'angoisses - heureusement pour vous, Node.js dispose d'un module appelé pkginfo qui peut aider à tenir ce genre de problèmes à distance.
 
-Let's take a look at pkginfo - first, install via npm:
+Jetons un coup d'oeil à pkginfo - d'abord, installez-le via npm :
 
 ```
 npm install pkginfo
 ```
 
-Now all we need to do is require it, and invoke it.
+Maintenant, tout ce que nous devons faire est de le demander et de l'invoquer.
 
 ```javascript
 var pkginfo = require('pkginfo')(module);
@@ -24,7 +24,7 @@ var pkginfo = require('pkginfo')(module);
 console.dir(module.exports);
 ```
 
-That would show us the entire contents of the package.json, neatly displayed to our console. If we only wanted certain pieces of information, we just specify them like so:
+Cela nous montrerait le contenu complet du package.json, proprement affiché dans notre console. Si nous ne voulons que certains éléments d'information, il suffit de les spécifier comme suit :
 
 ```javascript
 var pkginfo = require('pkginfo')(module, 'version', 'author');
@@ -32,6 +32,6 @@ var pkginfo = require('pkginfo')(module, 'version', 'author');
 console.dir(module.exports);
 ```
 
-And only the fields we specify will be shown to us.
+Et seuls les champs que nous spécifions nous seront montrés.
 
-For more information, see http://github.com/indexzero/ .
+Pour plus d'informations, voir http://github.com/indexzero/ .

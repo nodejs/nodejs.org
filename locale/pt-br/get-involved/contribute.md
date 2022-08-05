@@ -39,11 +39,11 @@ contribuidores ficará mais do que contente em fornecer a ajuda necessária e ap
 ## Contribuições de códigos
 
 <!--
-If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the [Node.js Contribution Guidelines](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#pull-requests). The review process by existing collaborators for all contributions to the project is explained there as well.
+If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the [Node.js Contribution Guidelines](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md#pull-requests). The review process by existing collaborators for all contributions to the project is explained there as well.
 -->
 
 Se você gostaria de corrigir _bugs_ ou adicionar novas funcionalidades ao Node.js, por favor consulte
-o [Guia de Contribuições do Node.js](https://github.com/nodejs/node/blob/master/CONTRIBUTING.md#pull-requests).
+o [Guia de Contribuições do Node.js](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md#pull-requests).
 O processo de revisão realizado pelo colaboradores para todas as contribuições ao projeto é explicado
 neste documento também.
 

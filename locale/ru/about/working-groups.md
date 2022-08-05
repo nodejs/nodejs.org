@@ -4,7 +4,7 @@ title: Рабочие группы
 ---
 
 # Основные рабочие группы
-<!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
+<!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/main/WORKING_GROUPS.md -->
 
 Основные рабочие группы создаются [Техническим руководящим комитетом (TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).
 

@@ -1,5 +1,5 @@
 ---
-title: How do I read files in Node.js?
+title: Comment lire des fichiers dans Node.js ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - filesystem
@@ -7,20 +7,20 @@ difficulty: 2
 layout: knowledge-post.hbs
 ---
 
-Reading the contents of a file into memory is a very common programming task, and, as with many other things, the Node.js core API provides methods to make this trivial. There are a variety of file system methods, all contained in the `fs` module. The easiest way to read the entire contents of a file is with `fs.readFile`, as follows:
+Lire le contenu d'un fichier en mémoire est une tâche de programmation très courante, et, comme pour beaucoup d'autres choses, l'API de base de Node.js fournit des méthodes pour rendre cela trivial. Il y a une variété de méthodes de système de fichiers, toutes contenues dans le module `fs`. La façon la plus simple de lire le contenu entier d'un fichier est avec `fs.readFile`, comme suit :
 
 ```javascript
 fs = require('fs');
 fs.readFile(file, [encoding], [callback]);
 
-// file = (string) filepath of the file to read
+// file = (string) chemin du fichier à lire
 ```
 
-`encoding` is an optional parameter that specifies the type of encoding to read the file. Possible encodings are 'ascii', 'utf8', and 'base64'. If no encoding is provided, the default is `null`.
+`encoding` est un paramètre optionnel qui spécifie le type d'encodage pour lire le fichier. Les encodages possibles sont 'ascii', 'utf8', et 'base64'. Si aucun encodage n'est fourni, la valeur par défaut est `null`.
 
-`callback` is a function to call when the file has been read and the contents are ready - it is passed two arguments, `error` and `data`. If there is no error, `error` will be `null` and `data` will contain the file contents; otherwise `err` contains the error message.
+`callback` est une fonction à appeler lorsque le fichier a été lu et que son contenu est prêt - on lui passe deux arguments, `error` et `data`. S'il n'y a pas d'erreur, `error` sera `null` et `data` contiendra le contenu du fichier ; sinon `err` contient le message d'erreur.
 
-So if we wanted to read `/etc/hosts` and print it to stdout (just like Unix `cat`):
+Donc, si nous voulons lire `/etc/hosts` et l'imprimer sur stdout (comme Unix `cat`) :
 
 ```javascript
 fs = require('fs')
@@ -32,9 +32,9 @@ fs.readFile('/etc/hosts', 'utf8', function (err,data) {
 });
 ```
 
-The contents of `/etc/hosts` should now be visible to you, provided you have permission to read the file in the first place.
+Le contenu de `/etc/hosts` devrait maintenant être visible pour vous, à condition que vous ayez la permission de lire le fichier en premier lieu.
 
-Let's now take a look at an example of what happens when you try to read an invalid file - the easiest example is one that doesn't exist.
+Voyons maintenant un exemple de ce qui se passe lorsque vous essayez de lire un fichier invalide - l'exemple le plus simple est un fichier qui n'existe pas.
 
 ```javascript
 fs = require('fs');
@@ -46,7 +46,7 @@ fs.readFile('/doesnt/exist', 'utf8', function (err,data) {
 });
 ```
 
-This is the output:
+Voici la sortie :
 
 ```
 { stack: [Getter/Setter],
@@ -58,4 +58,4 @@ This is the output:
   path: '/doesnt/exist' }
 ```
 
-This is a basic Node.js [Error object](/en/knowledge/errors/what-is-the-error-object/) - it can often be useful to log `err.stack` directly, since this contains a stack trace to the location in code at which the Error object was created.
+Il s'agit d'un [objet d'erreur] de base de Node.js (/fr/knowledge/errors/what-is-the-error-object/) - il peut souvent être utile d'enregistrer directement `err.stack`, car il contient une trace de la pile à l'endroit du code où l'objet d'erreur a été créé.

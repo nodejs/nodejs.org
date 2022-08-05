@@ -4,5 +4,5 @@ contact_links:
     url: https://github.com/nodejs/help/issues/
     about: File an issue in our help repo.
   - name: 📗 Node.js API Docs
-    url: https://github.com/nodejs/nodejs.org/issues/new/choose
-    about: Please open an issue in the main Node.js repo, prefixed with "doc".
+    url: https://github.com/nodejs/node/issues/new?assignees=&labels=doc&template=3-api-ref-docs-problem.yml
+    about: Please open an issue in the main Node.js repo.
