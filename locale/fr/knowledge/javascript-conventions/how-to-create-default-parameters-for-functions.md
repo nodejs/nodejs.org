@@ -1,5 +1,5 @@
 ---
-title: How To Create Default Parameters for Functions
+title: Comment créer des paramètres par défaut pour les fonctions
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - javascript
@@ -8,7 +8,7 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-Usually a function will take a set number of parameters, and require that all of them be present before it can be executed successfully. However, you will sometimes run into situations where you want to provide a default value for a parameter or take a variable number of parameters. Fortunately, from ES6/ES2015 **default parameters** is in the language specification:
+En général, une fonction prend un nombre déterminé de paramètres et exige que tous soient présents avant de pouvoir être exécutée avec succès. Cependant, vous rencontrerez parfois des situations où vous voudrez fournir une valeur par défaut pour un paramètre ou prendre un nombre variable de paramètres. Heureusement, à partir de ES6/ES2015, la fonction **paramètres par défaut** figure dans les spécifications du langage :
 
 ```js
 const pow = (base, power = 2) => {
@@ -19,7 +19,7 @@ console.log(pow(2)); // 4
 console.log(pow(2, 10)); // 1024
 ```
 
-In the above code The function `pow` return square of a number or any other power specified in the function call because the argument `power` is given a default value of 2 so whenever no second argument is provided or the provided value is `undefined` the function `pow` will use 2 as the value of argument `power`. But there is a small gotcha in it:
+Dans le code ci-dessus, la fonction `pow` renvoie le carré d'un nombre ou toute autre puissance spécifiée dans l'appel de la fonction parce que l'argument `power` a une valeur par défaut de 2. Ainsi, si aucun second argument n'est fourni ou si la valeur fournie est `undefined`, la fonction `pow` utilisera 2 comme valeur de l'argument `power`. Mais il y a un petit problème :
 
 ```js
 const pow = (base, power = 2) => {
@@ -30,13 +30,13 @@ console.log(pow(2, undefined)); // 4
 console.log(pow(2, null)); // 1
 ```
 
-In JavaScript there are many ways of indicating ["falsy"(false values)](/en/knowledge/javascript-conventions/what-are-truthy-and-falsy-values/) but out of them, only `undefined` will trigger the default parameter. This is the reason why `pow(2, undefined)` returns 4 and `pow(2, null)` returns 1.
+En JavaScript, il existe de nombreuses façons d'indiquer ["falsy"(fausses valeurs)](/fr/knowledge/javascript-conventions/what-are-truthy-and-falsy-values/) mais parmi elles, seule `undefined` déclenchera le paramètre par défaut. C'est la raison pour laquelle `pow(2, undefined)` renvoie 4 et `pow(2, null)` renvoie 1.
 
-JS PRO TIP: In `Math.pow(base, power)` if `power` is 0 or any other "falsy" value (except NaN) the result will always be 1.
+ASTUCE DE JS : Dans `Math.pow(base, puissance)`, si `puissance` est 0 ou toute autre valeur "faussée" (sauf NaN), le résultat sera toujours 1.
 
-Unfortunately, previous versions of JavaScript (ES5 and below) does not support **default parameters** out of the box but over time, however, people have developed idioms to compensate.
+Malheureusement, les versions précédentes de JavaScript (ES5 et inférieures) ne prennent pas en charge les **paramètres par défaut**, mais au fil du temps, les gens ont développé des idiomes pour compenser.
 
-The first idiom is giving a default value for the last parameter. This is done by checking if the last parameter is `undefined` and setting it to a default value if it is. Sometimes people use the idiom: `optionalParameter = optionalParameter || defaultValue`. This can have some undesirable behavior when they pass values that are equal to false such as `false`, `0`, and `""`. So a better way to do this is by explicitly checking that the optional parameter is `undefined`. Here is some code showing the two styles and the differing behavior:
+Le premier idiome consiste à donner une valeur par défaut au dernier paramètre. Ceci est fait en vérifiant si le dernier paramètre est `undefined` et en lui donnant une valeur par défaut si c'est le cas. Parfois, les gens utilisent l'idiome : `optionalParameter = optionalParameter || defaultValue`. Cela peut avoir un comportement indésirable lorsqu'ils passent des valeurs qui sont égales à false comme `false`, `0`, et `""`. Une meilleure façon de procéder est donc de vérifier explicitement que le paramètre optionnel est `undefined`. Voici un peu de code montrant les deux styles et les différences de comportement :
 
 ```js
 const example = function (optionalArg) {
@@ -64,15 +64,15 @@ example('');
 betterExample('');
 ```
 
-The second idiom is when the optional value is in the middle it can cause some undesired effects since all the parameters are shifted over. The optional parameter is not the `undefined` value in this case - the last parameter is the `undefined` one. So you have to check if the last parameter is `undefined` and then manually fix all the other parameters before continuing in the code. This case is also valid for modern JavaScript(ES6/ES2015). The example shows you how to do that:
+Le deuxième cas de figure est celui où la valeur optionnelle se trouve au milieu, ce qui peut provoquer des effets indésirables puisque tous les paramètres sont déplacés. Le paramètre optionnel n'est pas la valeur `undefined` dans ce cas - le dernier paramètre est la valeur `undefined`. Vous devez donc vérifier si le dernier paramètre est `undefined` et ensuite corriger manuellement tous les autres paramètres avant de continuer dans le code. Ce cas est également valable pour le JavaScript moderne (ES6/ES2015). L'exemple vous montre comment faire :
 
 ```js
 const example = function (param1, optParam, callback) {
   if (callback === undefined) {
-    // only two parameters were passed, so the callback is actually in `optParam`
+    // seuls deux paramètres ont été passés, donc le callback est en fait dans `optParam`.
     callback = optParam;
 
-    // give `optParam` a default value
+    // donnez à `optParam` une valeur par défaut
     optParam = 'and a default parameter';
   }
   callback(param1, optParam);

@@ -1,5 +1,5 @@
 ---
-title: What are streams?
+title: Quesqu'un streams ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - core
@@ -8,13 +8,13 @@ difficulty: 3
 layout: knowledge-post.hbs
 ---
 
-Streams are another basic construct in Node.js that encourages asynchronous coding. Streams allow you to process the data as it is generated or retrieved. Streams can be readable, writeable, or both.
+Les flux sont une autre construction de base dans Node.js qui encourage le codage asynchrone. Les flux vous permettent de traiter les données au fur et à mesure qu'elles sont générées ou récupérées. Les flux peuvent être lisibles, inscriptibles ou les deux.
 
-In other words, Streams use events to deal with data as it happens, rather than only with a callback at the end. Readable streams emit the event `data` for each chunk of data that comes in, and an `end` event, which is emitted when there is no more data. Writeable streams can be written to with the `write()` function, and closed with the `end()` function. All types of streams emit `error` events when errors arise.
+En d'autres termes, les flux utilisent des événements pour traiter les données au fur et à mesure qu'elles se produisent, et non pas seulement avec un callback à la fin. Les flux lisibles émettent l'événement `data` pour chaque morceau de données qui arrive, et un événement `end`, qui est émis quand il n'y a plus de données. Les flux inscriptibles peuvent être écrits avec la fonction `write()`, et fermés avec la fonction `end()`. Tous les types de flux émettent des événements `error` lorsque des erreurs surviennent.
 
-As a quick example, we can write a simple version of `cp` (the Unix utility that copies files). We could do that by reading the whole file with standard filesystem calls and then writing it out to a file. Unfortunately, that requires that the whole file be read in before it can be written. In this case, writing the file isn't faster, but if we were streaming over a network or doing CPU processing on the data, then there could be measurable performance improvements.
+Comme exemple rapide, nous pouvons écrire une version simple de `cp` (l'utilitaire Unix qui copie les fichiers). Nous pourrions le faire en lisant le fichier entier avec les appels standards du système de fichiers et ensuite l'écrire dans un fichier. Malheureusement, cela nécessite que le fichier entier soit lu avant de pouvoir être écrit. Dans ce cas, écrire le fichier n'est pas plus rapide, mais si nous faisions du streaming sur un réseau ou si nous faisions du traitement CPU sur les données, alors il pourrait y avoir des améliorations de performance mesurables.
 
-Run this script with arguments like `node cp.js src.txt dest.txt`. This would mean, in the code below, that `process.argv[2]` is `src.txt` and `process.argv[3]` is `desc.txt`.
+Exécutez ce script avec des arguments comme `node cp.js src.txt dest.txt`. Cela signifie, dans le code ci-dessous, que `process.argv[2]` est `src.txt` et `process.argv[3]` est `desc.txt`.
 
 ```javascript
 var fs = require('fs');
@@ -41,6 +41,6 @@ writeStream.on('error', function (err) {
 });
 ```
 
-This sets up a readable stream from the source file and a writable stream to the destination file. Then whenever the readable stream gets data, it gets written to the writeable stream. Then finally it closes the writable stream when the readable stream is finished.
+Cela met en place un flux lisible à partir du fichier source et un flux inscriptible vers le fichier de destination. Ensuite, chaque fois que le flux lisible reçoit des données, elles sont écrites dans le flux inscriptible. Enfin, elle ferme le flux d'écriture lorsque le flux de lecture est terminé.
 
-It would have been better to use [pipe](/en/knowledge/advanced/streams/how-to-use-stream-pipe/) like `readStream.pipe(writeStream);`, however, to show how streams work, we have done things the long way.
+Il aurait été préférable d'utiliser [pipe](/fr/knowledge/advanced/streams/how-to-use-stream-pipe/) comme `readStream.pipe(writeStream);`, cependant, pour montrer comment les flux fonctionnent, nous avons fait les choses à la manière longue.

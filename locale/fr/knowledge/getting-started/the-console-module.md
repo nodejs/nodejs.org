@@ -1,5 +1,5 @@
 ---
-title: The built-in console module
+title: Le module de console intégré à node.JS
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - core
@@ -9,9 +9,9 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-Anyone familiar with browser-side development has probably used `console.log` for debugging purposes - Node.js has implemented a built-in `console` object to mimic much of this experience. Since we're working server-side, however, it wraps `stdout`, `stdin`, and `stderr` instead of the browser's debugging console.
+Toute personne familière avec le développement côté navigateur a probablement utilisé `console.log` à des fins de débogage - Node.js a implémenté un objet `console` intégré pour imiter une grande partie de cette expérience. Cependant, puisque nous travaillons côté serveur, il englobe `stdout`, `stdin`, et `stderr` au lieu de la console de débogage du navigateur.
 
-Because of this browser parallel, the `console` module has become home to quite a bit of standard output functionality of Node.js. The simplest is `console.log()`.
+A cause de ce parallèle avec le navigateur, le module `console` est devenu le foyer d'une bonne partie des fonctionnalités de sortie standard de Node.js. La plus simple est `console.log()`.
 
 ```javascript
 console.log('Hi, everybody!');
@@ -19,9 +19,9 @@ console.log('This script is:', __filename);
 console.log(__filename, process.title, process.argv);
 ```
 
-The first, simplest example just prints the provided string to `stdout`. It can also be used to output the contents of variables, as evidenced in #2; furthermore, `console.dir()` is called on any objects passed in as arguments, enumerating their properties.
+Le premier exemple, le plus simple, imprime juste la chaîne de caractères fournie dans `stdout`. Il peut également être utilisé pour afficher le contenu des variables, comme le montre le #2 ; de plus, `console.dir()` est appelé sur tous les objets passés en argument, énumérant leurs propriétés.
 
-NODE.JS PRO TIP: `console.log()` accepts three format characters, `%s`, `%d`, and `%j`. These format characters can be used to insert string, integer, or JSON data into your output - the order of format characters must match the order of arguments.
+CONSEIL DE NODE.JS : `console.log()` accepte trois caractères de format, `%s`, `%d`, et `%j`. Ces caractères de format peuvent être utilisés pour insérer des chaînes de caractères, des entiers ou des données JSON dans votre sortie - l'ordre des caractères de format doit correspondre à l'ordre des arguments.
 
 ```javascript
 var name = 'Harry',
@@ -33,13 +33,13 @@ var name = 'Harry',
 console.log('My name is %s, my number is %d, my object is %j', name, number, myObj);
 ```
 
-A gotcha with `console.log`, and all functions that depend on it, is that it buffers the output. So if your process ends suddenly, whether it be from an exception or from `process.exit()`, it is entirely possible that the buffered output will never reach the screen. This can cause a great deal of frustration, so watch out for this unfortunate situation.
+Un problème avec `console.log`, et toutes les fonctions qui en dépendent, est qu'il met en mémoire tampon la sortie. Donc si votre processus se termine soudainement, que ce soit à cause d'une exception ou de `process.exit()`, il est tout à fait possible que la sortie mise en mémoire tampon n'atteigne jamais l'écran. Cela peut causer beaucoup de frustration, alors faites attention à cette situation malheureuse.
 
-`console.error()` works the same as `console.log`, except that the output is sent to `stderr` instead of `stdout`. This is actually an extremely important difference, as `stderr` is always written to synchronously. Any use of `console.error`, or any of the other functions in Node.js core that write to `stderr`, will block your process until the output has all been written. This is useful for error messages - you get them exactly when they occur - but if used everywhere, can greatly slow down your process.
+`console.error()` fonctionne de la même manière que `console.log`, sauf que la sortie est envoyée vers `stderr` au lieu de `stdout`. C'est en fait une différence extrêmement importante, car `stderr` est toujours écrit de manière synchrone. Toute utilisation de `console.error`, ou de toute autre fonction de Node.js core qui écrit dans `stderr`, bloquera votre processus jusqu'à ce que la sortie ait été écrite. Ceci est utile pour les messages d'erreur - vous les obtenez exactement au moment où ils se produisent - mais s'il est utilisé partout, il peut considérablement ralentir votre processus.
 
-`console.dir()`, as mentioned above, is an alias for `util.inspect()` - it is used to enumerate object properties. [Read More](/en/knowledge/getting-started/how-to-use-util-inspect/)
+`console.dir()`, comme mentionné ci-dessus, est un alias de `util.inspect()` - il est utilisé pour énumérer les propriétés des objets. [Lire la suite](/fr/knowledge/getting-started/how-to-use-util-inspect/)
 
-That covers the basic `console` module functionality, but there are a few other methods worth mentioning as well. First, the `console` module allows for the marking of time via `console.time()` and `console.timeEnd()`. Here is an example:
+Cela couvre les fonctionnalités de base du module `console`, mais il y a quelques autres méthodes qui méritent d'être mentionnées. Premièrement, le module `console` permet de marquer le temps via `console.time()` et `console.timeEnd()`. Voici un exemple :
 
 ```javascript
 console.time('myTimer');
@@ -52,6 +52,6 @@ for (var i = 0; i < 300; i++) {
 console.timeEnd('myTimer');
 ```
 
-This would determine the amount of time taken to perform the actions in between the `console.time` and `console.timeEnd` calls.
+Cela permet de déterminer le temps nécessaire pour effectuer les actions entre les appels `console.time` et `console.timeEnd`.
 
-One last function worth mentioning is `console.trace()`, which prints a stack trace to its location in your code without throwing an error. This can occasionally be useful if you'd like to figure out where a particular failing function was called from.
+Une dernière fonction qui mérite d'être mentionnée est `console.trace()`, qui imprime une trace de pile à son emplacement dans votre code sans lancer une erreur. Cela peut parfois être utile si vous voulez savoir d'où une fonction défaillante particulière a été appelée.

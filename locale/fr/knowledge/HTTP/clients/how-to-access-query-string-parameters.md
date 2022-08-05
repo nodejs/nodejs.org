@@ -1,5 +1,5 @@
 ---
-title: How to access query string parameters
+title: Comment accéder aux paramètres de la chaîne de requête ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - http
@@ -7,7 +7,7 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-In Node.js, functionality to aid in the accessing of URL query string parameters is built into the standard library. The built-in `url.parse` method takes care of most of the heavy lifting for us. Here is an example script using this handy function and an explanation on how it works:
+Dans Node.js, la fonctionnalité d'aide à l'accès aux paramètres de la chaîne de requête de l'URL est intégrée dans la bibliothèque standard. La méthode intégrée `url.parse` s'occupe de la plupart des tâches difficiles pour nous. Voici un exemple de script utilisant cette fonction pratique et une explication de son fonctionnement :
 
 ```js
 const http = require('http');
@@ -24,13 +24,13 @@ http
   .listen(8080);
 ```
 
-> To test this code run `node app.js` (app.js is name of the file) on the terminal and then go to your browser and type `http://localhost:8080/app.js?foo=bad&baz=foo` on the URL bar
+> Dans Node.js, la fonctionnalité d'aide à l'accès aux paramètres de la chaîne de requête de l'URL est intégrée dans la bibliothèque standard. La méthode intégrée `url.parse` s'occupe de la plupart des tâches difficiles pour nous. Voici un exemple de script utilisant cette fonction pratique et une explication de son fonctionnement :
 
-The key part of this whole script is this line: `const queryObject = url.parse(req.url,true).query;`. Let's take a look at things from the inside-out. First off, `req.url` will look like `/app.js?foo=bad&baz=foo`. This is the part that is in the URL bar of the browser. Next, it gets passed to `url.parse` which parses out the various elements of the URL (NOTE: the second paramater is a boolean stating whether the method should parse the query string, so we set it to true). Finally, we access the `.query` property, which returns us a nice, friendly JavaScript object with our query string data.
+L'élément clé de tout ce script est cette ligne : `const queryObject = url.parse(req.url,true).query;`. Regardons les choses de l'intérieur vers l'extérieur. Tout d'abord, `req.url` ressemblera à `/app.js?foo=bad&baz=foo`. C'est la partie qui se trouve dans la barre d'URL du navigateur. Ensuite, elle est transmise à `url.parse` qui analyse les différents éléments de l'URL (NOTE : le deuxième paramètre est un booléen qui indique si la méthode doit analyser la chaîne de requête, nous le mettons donc à true). Enfin, nous accédons à la propriété `.query`, qui nous renvoie un bel objet JavaScript convivial contenant les données de notre chaîne de requête.
 
-The `url.parse()` method returns an object which have many key value pairs one of which is the `query` object. Some other handy information returned by the method include `host`, `pathname`, `search` keys.
+La méthode `url.parse()` renvoie un objet qui contient plusieurs paires clé-valeur, dont l'objet `query`. D'autres informations pratiques sont retournées par la méthode, notamment les clés `host`, `pathname`, `search`.
 
-In the above code:
+Dans le code ci-dessus :
 
 * `url.parse(req.url,true).query` returns `{ foo: 'bad', baz: 'foo' }`.
 * `url.parse(req.url,true).host` returns `'localhost:8080'`.
@@ -39,9 +39,9 @@ In the above code:
 
 ### Parsing with querystring
 
-Another way to access query string parameters is parsing them using the `querystring` builtin Node.js module.
+Une autre façon d'accéder aux paramètres de la chaîne de requête est de les analyser en utilisant le module intégré `querystring` de Node.js.
 
-This method, however, must be passed just a querystring portion of a url. Passing it the whole url, like you did in the `url.parse` example, won't parse the querystrings.
+Cette méthode, cependant, doit être passée juste une portion de querystring d'une url. En lui passant l'url entière, comme vous l'avez fait dans l'exemple `url.parse`, les querystrings ne seront pas analysés.
 
 ```js
 const querystring = require('querystring');
