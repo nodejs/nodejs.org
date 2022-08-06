@@ -3,7 +3,6 @@ title: 이벤트 루프와 워커 풀을 막지 마세요!
 layout: docs.hbs
 ---
 
-# Don't Block the Event Loop (or the Worker Pool)
 # 이벤트 루프와 워커 풀을 막지 마세요!
 
 ## 제가 이 문서를 읽어야 할까요?
