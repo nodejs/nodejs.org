@@ -159,10 +159,11 @@
   },
   "banners": {
     "index": {
-      "startDate": "2022-06-27T16:00:00.000Z",
-      "endDate": "2022-07-13T16:00:00.000Z",
-      "text": "New security releases now available for Node.js 14, 16, and 18 release lines",
-      "link": "https://nodejs.org/en/blog/vulnerability/july-2022-security-releases/"
+      "startDate": "2022-07-29T16:00:00.000Z",
+      "endDate": "2022-08-11T16:00:00.000Z",
+      "text": null,
+      "html": "<img alt='Grace Hopper Celebration' src='/static/images/ghc-banner.png' />",
+      "link": "https://anitab-org.github.io/open-source-day/open-source-day/"
     },
     "blacklivesmatter": {
       "visible": false,
