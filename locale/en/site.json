@@ -162,7 +162,7 @@
       "startDate": "2022-07-29T16:00:00.000Z",
       "endDate": "2022-08-11T16:00:00.000Z",
       "text": null,
-      "html": "<img alt='Grace Hopper Celebration' src='/static/images/ghc-banner.png' />",
+      "html": "<img alt='Grace Hopper Celebration' src='https://nodejs.org/static/images/ghc-banner.png' />",
       "link": "https://anitab-org.github.io/open-source-day/open-source-day/"
     },
     "blacklivesmatter": {
