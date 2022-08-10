@@ -159,7 +159,7 @@
   },
   "banners": {
     "index": {
-      "text": "Node.js 14，16 和 18 版本的安全补丁已发布"
+      "text": null
     }
   }
 }
