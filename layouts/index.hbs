@@ -19,9 +19,13 @@
         {{/if}}
 
         {{#if ( betweenDate site.banners.index.startDate site.banners.index.endDate ) }}
+          {{#if site.banners.index.text}}
           <p class="home-version home-version-banner">
             <a href="{{ site.banners.index.link }}">{{ site.banners.index.text }}</a>
           </p>
+          {{ else }}
+            <a href="{{ site.banners.index.link }}">{{{ site.banners.index.html }}}</a>
+          {{/if}}
         {{/if}}
 
         <h2 id="home-downloadhead" data-dl-local="{{ labels.download-for }}">{{ labels.download }}</h2>
