@@ -29,10 +29,10 @@ which is responsible for high-level guidance of the project, and the
 [Community Committee (CommComm)][] which is responsible for guiding and
 extending the Node.js community.
 
-[collaborator-guide.md]: https://github.com/nodejs/node/blob/master/doc/contributing/collaborator-guide.md
+[collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
 [Community Committee (CommComm)]: https://github.com/nodejs/community-committee/blob/master/Community-Committee-Charter.md
 [Consensus Seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
-[README.md]: https://github.com/nodejs/node/blob/master/README.md#current-project-team-members
+[README.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
 [Technical Steering Committee (TSC)]: https://github.com/nodejs/TSC/blob/master/TSC-Charter.md
 [TSC]: https://github.com/nodejs/TSC
 [nodejs/node]: https://github.com/nodejs/node

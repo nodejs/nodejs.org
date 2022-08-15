@@ -6,7 +6,7 @@ title: 워킹 그룹
 <!--
 # Core Working Groups
 -->
-<!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
+<!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/main/WORKING_GROUPS.md -->
 
 # 핵심 워킹 그룹
 

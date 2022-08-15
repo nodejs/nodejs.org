@@ -10,7 +10,7 @@ layout: blog-post.hbs
 
 ### Node v5.11.0 (Stable) Release
 
-[Node v5.11.0 (Stable)](https://nodejs.org/en/blog/release/v5.11.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+[Node v5.11.0 (Stable)](https://nodejs.org/en/blog/release/v5.11.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Community Updates
 

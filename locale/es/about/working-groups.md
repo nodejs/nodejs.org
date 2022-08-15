@@ -4,7 +4,7 @@ title: Grupos de Trabajo
 ---
 
 # Grupos de Trabajo Centrales
-<!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/master/WORKING_GROUPS.md -->
+<!-- Information here should mostly mirror: https://github.com/nodejs/node/blob/main/WORKING_GROUPS.md -->
 
 Los Grupos de trabajo centrales son creados por el [Comité de Dirección Técnica (TSC)](https://github.com/nodejs/TSC/blob/master/TSC-Charter.md).
 

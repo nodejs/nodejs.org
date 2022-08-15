@@ -132,7 +132,7 @@
       "text": "贡献"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/contributing/code-of-conduct.md",
+      "link": "https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md",
       "text": "管理"
     }
   },
@@ -159,7 +159,7 @@
   },
   "banners": {
     "index": {
-      "text": "Node.js 16 版本终止服务日期已变更延长至 2023 年 9 月 11 日"
+      "text": null
     }
   }
 }

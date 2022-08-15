@@ -10,7 +10,7 @@ layout: blog-post.hbs
 
 ### Node v6.0.0 (Current) Release
 
-[Node v6.0.0 (Current)](https://nodejs.org/en/blog/release/v6.0.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+[Node v6.0.0 (Current)](https://nodejs.org/en/blog/release/v6.0.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 See [Breaking changes between v5 and v6](https://github.com/nodejs/node/wiki/Breaking-changes-between-v5-and-v6) for more information.
 

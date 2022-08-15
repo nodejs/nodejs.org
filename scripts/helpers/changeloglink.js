@@ -5,8 +5,7 @@ const semver = require('semver');
 module.exports = (version) => {
   if (!semver.valid(version)) return '';
 
-  const changelogs =
-    'https://github.com/nodejs/node/blob/master/doc/changelogs';
+  const changelogs = 'https://github.com/nodejs/node/blob/main/doc/changelogs';
   const clean = semver.clean(version);
   const major = semver.major(clean);
   const minor = semver.minor(clean);
