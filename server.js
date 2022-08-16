@@ -3,7 +3,7 @@
 // The server where the site is exposed through a static file server
 // while developing locally.
 
-const fs = require('fs');
+const fs = require('fs/promises');
 const http = require('http');
 const path = require('path');
 const chokidar = require('chokidar');
@@ -48,21 +48,18 @@ function getLocale(filePath) {
 // This function has two meanings:
 // 1. Build for the specific language.
 // 2. Choose what languages for the menu.
-function dynamicallyBuildOnLanguages(source, locale) {
-  if (!selectedLocales || selectedLocales.length === 0) {
-    fs.readdir(path.join(__dirname, 'locale'), (err, locales) => {
-      if (err) {
-        throw err;
-      }
+async function dynamicallyBuildOnLanguages(source, locale) {
+  let localesData = null;
 
-      const filteredLocales = locales.filter((file) => junk.not(file));
-      const localesData = build.generateLocalesData(filteredLocales);
-      build.buildLocale(source, locale, { preserveLocale, localesData });
-    });
+  if (!selectedLocales || selectedLocales.length === 0) {
+    const localesPath = path.join(__dirname, 'locale');
+    const locales = await fs.readdir(localesPath);
+    const filteredLocales = locales.filter((file) => junk.not(file));
+    localesData = build.generateLocalesData(filteredLocales);
   } else {
-    const localesData = build.generateLocalesData(selectedLocales);
-    build.buildLocale(source, locale, { preserveLocale, localesData });
+    localesData = build.generateLocalesData(selectedLocales);
   }
+  build.buildLocale(source, locale, { preserveLocale, localesData });
 }
 
 build.getSource((err, source) => {
@@ -70,23 +67,23 @@ build.getSource((err, source) => {
     throw err;
   }
 
-  locales.on('change', (filePath) => {
+  locales.on('change', async (filePath) => {
     const locale = getLocale(filePath);
 
     if (!selectedLocales || selectedLocales.includes(locale)) {
       console.log(
         `The language ${locale} is changed, '${filePath}' is modified.`
       );
-      dynamicallyBuildOnLanguages(source, locale);
+      await dynamicallyBuildOnLanguages(source, locale);
     }
   });
 
-  locales.on('add', (filePath) => {
+  locales.on('add', async (filePath) => {
     const locale = getLocale(filePath);
 
     if (!selectedLocales || selectedLocales.includes(locale)) {
       console.log(`The language ${locale} is changed, '${filePath}' is added.`);
-      dynamicallyBuildOnLanguages(source, locale);
+      await dynamicallyBuildOnLanguages(source, locale);
       locales.add(filePath);
     }
   });
@@ -113,6 +110,7 @@ staticFiles.on('add', (filePath) => {
 });
 
 const mainLocale = (selectedLocales && selectedLocales[0]) || 'en';
+let all404NotFoundPageContent = null;
 
 // Initializes the server and mounts it in the generated build directory.
 http
@@ -123,7 +121,43 @@ http
     if (req.url === '/') {
       req.url = `/${mainLocale}`;
     }
-    mount(req, res);
+
+    mount(req, res, async () => {
+      // Here we should handle the 404 page when the route is not found.
+      // 1. Check whether the language is supported or not.
+      // 2. If not, redirect to the default language.
+      // 3. If yes, Save the content and return directly for the next time.
+
+      if (all404NotFoundPageContent === null) {
+        const allSupportedLangs = await fs.readdir(
+          path.join(__dirname, 'locale')
+        );
+        all404NotFoundPageContent = new Map();
+        for (const lng of allSupportedLangs) {
+          all404NotFoundPageContent.set(lng, '');
+        }
+      }
+
+      let currentLng = req.url.split('/')[1];
+
+      if (!all404NotFoundPageContent.has(currentLng)) {
+        currentLng = mainLocale;
+      }
+
+      if (all404NotFoundPageContent.get(currentLng) === '') {
+        const notFoundPagePath = path.join(
+          __dirname,
+          'build',
+          `${currentLng}/404.html`
+        );
+        all404NotFoundPageContent.set(
+          currentLng,
+          await fs.readFile(notFoundPagePath, 'utf8')
+        );
+      }
+
+      res.end(all404NotFoundPageContent.get(currentLng));
+    });
   })
   .listen(port, () => {
     console.log(

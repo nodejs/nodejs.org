@@ -1,5 +1,5 @@
 ---
-title: How to debug a node application
+title: Comment déboguer une application node ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - debug
@@ -7,19 +7,19 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-Often times, not just in the Node.js community but in software at large, people debug simply with a liberal sprinkle of standard output statements. This allows you to track down where unexpected values are being generated. However, this method can be tedious, or worse yet, not robust enough to detect the real problem.
+Souvent, pas seulement dans la communauté Node.js mais aussi dans les logiciels en général, les gens déboguent simplement avec un généreux saupoudrage d'instructions de sortie standard. Cela vous permet de repérer les endroits où des valeurs inattendues sont générées. Cependant, cette méthode peut être fastidieuse, ou pire encore, pas assez robuste pour détecter le vrai problème.
 
-### Set up
+### Mise en place
 
-Thankfully, through the use of `node-inspector`, we can harness to power of the webkit-debuggers to work with our Node.js code. The process itself is simple.
+Heureusement, grâce à l'utilisation de `node-inspector`, nous pouvons exploiter la puissance des webkit-debuggers pour travailler avec notre code Node.js. Le processus en lui-même est simple.
 
-First, ensure that node-inspector is installed:
+Tout d'abord, assurez-vous que node-inspector est installé :
 
 ```
 npm install node-inspector -g
 ```
 
-A good example application to experiment with is a basically 'hello world' server with a counter (copied from the `node-inspector` repo):
+Un bon exemple d'application pour expérimenter est un serveur de type 'hello world' avec un compteur (copié depuis le dépôt `node-inspector`) :
 
 ```javascript
 var http = require('http');
@@ -33,59 +33,59 @@ http.createServer(function (req, res) {
 console.log('Server running at http://127.0.0.1:8124/');
 ```
 
-First, we start your node program with debugging enabled.
+Tout d'abord, nous démarrons votre programme node avec le débogage activé.
 
 ```
 node --debug app.js
 ```
 
-which should print something along the lines of `debugger listening on port 5858` to stderr. Take note of the port number, it is the port that the debugger is running on.
+Ce qui devrait afficher quelque chose du genre `debugger listening on port 5858` sur stderr. Prenez note du numéro de port, c'est le port sur lequel tourne le débogueur.
 
-Next, start up `node-inspector`. If your program uses port 8080, then you may have to pass it a custom port.
+Ensuite, démarrez `node-inspector`. Si votre programme utilise le port 8080, alors vous devrez lui passer un port personnalisé.
 
 ```
 node-inspector [--web-port=<custom port number>]
 ```
 
-Finally you fire up a webkit browser such as chrome or safari. and go to `127.0.0.1:8080/debug?port=5858`. Note, if the debugger is listening on a port other than `5858`, you will need to change it. Also, if you passed a custom webport to node-inspector, then you will have to modify the `8080`.
+Enfin, vous lancez un navigateur webkit tel que chrome ou safari. et allez sur `127.0.0.1:8080/debug?port=5858`. Notez que si le débogueur écoute sur un autre port que `5858`, vous devrez le changer. Aussi, si vous avez passé un port web personnalisé à node-inspector, alors vous devrez modifier le `8080`.
 
-At this point, you will be met with a fairly empty screen with the `scripts`, `profiles`, and `console` tabs.
+A ce stade, vous serez confrontés à un écran assez vide avec les onglets `scripts`, `profiles`, et `console`.
 
-### Scripts tab
+### Onglet Scripts
 
-This is just like most webkit/firebug debuggers. It has a list of all the JavaScript files (including Node.js core and third party libraries) which you can select and dive into. To stop the interpreter on a specific line, you set a breakpoint by clicking on the number of the desired line. When the execution is frozen, by a breakpoint or by manually pausing interpretation by pressing the pause button, you can check the callstack and examine all the local, closure, and global variables. You can also modify the code to try and fix behavior. Note that when you modify the code through the script tab, it does not get saved to the file, so you will need to transfer the modifications back by hand.
+C'est comme la plupart des débogueurs webkit/firebug. Il a une liste de tous les fichiers JavaScript (y compris le noyau de Node.js et les bibliothèques tierces) que vous pouvez sélectionner et plonger dedans. Pour arrêter l'interpréteur sur une ligne spécifique, vous définissez un point d'arrêt en cliquant sur le numéro de la ligne souhaitée. Lorsque l'exécution est gelée, par un point d'arrêt ou en interrompant manuellement l'interprétation en appuyant sur le bouton pause, vous pouvez vérifier la pile d'appels et examiner toutes les variables locales, de fermeture et globales. Vous pouvez également modifier le code pour essayer de corriger le comportement. Notez que lorsque vous modifiez le code via l'onglet script, il n'est pas enregistré dans le fichier, vous devrez donc transférer les modifications à la main.
 
-### Profiles tab
+### Onglet Profils
 
-To use the profile tab, you need a library called `v8-profiler`:
+Pour utiliser l'onglet profil, vous avez besoin d'une bibliothèque appelée `v8-profiler` :
 
 ```
 npm install v8-profiler
 ```
 
-Next, you have to require it inside the file you are debugging:
+Ensuite, vous devez le demander dans le fichier que vous déboguez :
 
 ```javascript
 var profiler = require('v8-profiler');
 ```
 
-Now you can finally enable the `profiles` tab, unfortunately, all you can do from this screen is a heap snapshot. So from the code, you need to select where you want to start to cpu profiler and can select more precise location for heap snapshots.
+Maintenant vous pouvez enfin activer l'onglet `profiles`, malheureusement, tout ce que vous pouvez faire à partir de cet écran est un heap snapshot. Donc, à partir du code, vous devez sélectionner l'endroit où vous voulez commencer le cpu profiler et vous pouvez sélectionner un emplacement plus précis pour les heap snapshots.
 
-To take a heap snapshot, just insert this line in the desired location and optionally pass it a name.
+Pour prendre un instantané du tas, il suffit d'insérer cette ligne à l'endroit désiré et éventuellement de lui donner un nom.
 
 ```javascript
 var snapshot = profiler.takeSnapshot(name);
 ```
 
-To take a cpu profile, just surround the code that you are profiling with the two lines shown below. Optionally, a name can be included to indentify the cpu profile.
+Pour prendre un profil cpu, il suffit d'entourer le code que vous voulez profiler avec les deux lignes montrées ci-dessous. Optionnellement, un nom peut être inclus pour identifier le profil cpu.
 
 ```javascript
 profiler.startProfiling(name);
-//..lots and lots of methods and code called..//
+//..beaucoup et beaucoup de méthodes et de code appelé...//
 var cpuProfile = profiler.stopProfiling([name]);
 ```
 
-As an example how to use these, here is the code given earlier modified to take a cpu profile on every request and take a heap snapshot: after the server is created.
+Comme exemple d'utilisation, voici le code donné précédemment modifié pour prendre un profil cpu à chaque requête et prendre un instantané du tas : après la création du serveur.
 
 ```javascript
 var http = require('http');
@@ -103,8 +103,8 @@ profiler.takeSnapshot('Post-Server Snapshot');
 console.log('Server running at http://127.0.0.1:8124/');
 ```
 
-Note that despite these apis returning objects, it is much easier to sort through the data through the node-inspector interface. Hopefully with these tools, you can make more informed decisions about memory leaks and bottlenecks.
+Notez que malgré le fait que ces apis retournent des objets, il est beaucoup plus facile de trier les données à travers l'interface node-inspector. Espérons qu'avec ces outils, vous pourrez prendre des décisions plus éclairées sur les fuites de mémoire et les goulots d'étranglement.
 
-### Console tab
+### Onglet Console
 
-Finally, the console tab allows you to use node's REPL in your program's global scope. This has a few gotchas since that means you can not access in local variables. Thus the variables you can read or write are variables that were defined without a `var` statement. The other gotcha is when you use `console.log` refers to node's `console.log` and not webkit's console.log. This means the output goes to stdout and not to your console tab. Otherwise it is a very straightforward node REPL.
+Enfin, l'onglet console vous permet d'utiliser le REPL de node dans la portée globale de votre programme. Cela a quelques inconvénients puisque cela signifie que vous ne pouvez pas accéder aux variables locales. Ainsi, les variables que vous pouvez lire ou écrire sont des variables qui ont été définies sans instruction `var`. L'autre problème est que lorsque vous utilisez `console.log`, cela fait référence à la `console.log` de node et non à la console.log de webkit. Cela signifie que la sortie va vers stdout et non vers votre onglet de console. Sinon, c'est un REPL node très simple.

@@ -8,6 +8,11 @@ difficulty: 3
 layout: knowledge-post.hbs
 ---
 
+This page is not actively maintained and may be outdated. Please refer to [OWASP's NodeJS Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Nodejs_Security_Cheat_Sheet.html) instead.
+
+<details>
+<summary>Original contents</summary>
+
 Sometimes, you might want to let users read or write files on your server. For example, maybe you want to write a forum software without using an actual database. The problem is that you do not want your users to be able to modify or to read arbitrary files on your server, and there sometimes are ways to get around restrictions that should prevent it. Read on to see how you can secure your code against evil attackers trying to mess with your files.
 
 ## Poison Null Bytes
@@ -58,3 +63,5 @@ if (filename.indexOf(rootDirectory) !== 0) {
 ```
 
 Now the `filename` variable should contain the name of a file or directory that's inside the allowed directory (unless it doesn't exist).
+
+</details>

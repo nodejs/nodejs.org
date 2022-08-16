@@ -17,10 +17,10 @@ jobs:
 
     steps:
       - name: Clone repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: "lts/*"
           cache: npm
@@ -44,10 +44,10 @@ jobs:
 
     steps:
       - name: Clone repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: "lts/*"
           cache: npm
@@ -62,6 +62,9 @@ jobs:
 
       - name: Run unit tests
         run: npm run test:unit
+
+      - name: Run HTML validator
+        run: npm run test:html
 
       - name: Run linkinator
         uses: JustinBeckwith/linkinator-action@v1

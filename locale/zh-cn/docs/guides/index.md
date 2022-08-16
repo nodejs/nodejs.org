@@ -13,6 +13,7 @@ layout: docs.hbs
 * [诊断 - 火焰图](/zh-cn/docs/guides/diagnostics-flamegraph/)
 * [将 Node.js 网络应用安装到 Docker 中](/zh-cn/docs/guides/nodejs-docker-webapp/)
 * [迁移到安全的 Buffer 构造函数中](/zh-cn/docs/guides/buffer-constructor-deprecation/)
+* [诊断 —— 用户亲历](/zh-cn/docs/guides/diagnostics/)
 
 ## Node.js 核心概念
 

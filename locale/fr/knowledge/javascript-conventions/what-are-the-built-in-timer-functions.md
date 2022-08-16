@@ -1,5 +1,5 @@
 ---
-title: What are the built-in timer functions?
+title: Quelles sont les fonctions de la minuterie intégrée ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - core
@@ -9,7 +9,7 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-There are two most common built-in timer functions, `setTimeout` and `setInterval`, which can be used to call a function at a later time. For an example usage:
+Il existe deux fonctions de temporisation intégrées les plus courantes, `setTimeout` et `setInterval`, qui peuvent être utilisées pour appeler une fonction à un moment ultérieur. Voici un exemple d'utilisation :
 
 ```js
 setTimeout(function () {
@@ -20,7 +20,7 @@ setInterval(function () {
 }, 1000);
 ```
 
-An example output is:
+Voici un exemple de sortie :
 
 ```bash
 setTimeout: It's been one second!
@@ -31,15 +31,15 @@ setInterval: It's been one second!
 ...
 ```
 
-As you can see the parameters to both are the same. The number second parameter says how long in milliseconds to wait before calling the function passed into the first parameter. The difference between the two functions is that `setTimeout` calls the callback only once while `setInterval` will call it over and over again.
+Comme vous pouvez le constater, les paramètres sont identiques dans les deux cas. Le deuxième paramètre indique combien de temps en millisecondes il faut attendre avant d'appeler la fonction passée dans le premier paramètre. La différence entre les deux fonctions est que `setTimeout` n'appelle le callback qu'une seule fois alors que `setInterval` l'appellera encore et encore.
 
-Typically you want to be careful with `setInterval` because it can cause some undesirable effects. If, for example, you wanted to make sure your server was up by pinging it every second, you might think to try something like this:
+En général, il faut être prudent avec `setInterval` car il peut provoquer des effets indésirables. Si, par exemple, vous vouliez vous assurer que votre serveur est opérationnel en lui envoyant un ping toutes les secondes, vous pourriez essayer quelque chose comme ceci :
 
 ```js
 setInterval(ping, 1000);
 ```
 
-This can cause problems, however, if your server is slow and it takes, for example, 3 seconds to respond to the first request. In the time it takes to get back the response, you would have sent off 3 more requests - not exactly desirable! Overall, this doesn't have a large impact when serving small static files. But if you're doing an expensive operation, such as a database query or any complex computation, this can have undesirable results. A common solution looks like this:
+Cela peut toutefois poser des problèmes si votre serveur est lent et qu'il met, par exemple, 3 secondes à répondre à la première demande. Pendant le temps nécessaire à l'obtention de la réponse, vous auriez envoyé 3 autres demandes - ce qui n'est pas vraiment souhaitable ! Dans l'ensemble, cela n'a pas un grand impact lorsque vous servez de petits fichiers statiques. Mais si vous effectuez une opération coûteuse, comme une requête de base de données ou un calcul complexe, cela peut avoir des résultats indésirables. Une solution courante ressemble à ceci :
 
 ```js
 const recursive = function () {
@@ -49,9 +49,9 @@ const recursive = function () {
 recursive();
 ```
 
-As you can see, it makes a call to the `recursive` function which, as it completes, makes a call to `setTimeout(recursive, 1000)` which makes it call `recursive` again in 1 second - thus having near the same effect as setInterval while being resilient to the unintended errors that can pile up.
+Comme vous pouvez le voir, elle fait un appel à la fonction `recursive` qui, lorsqu'elle se termine, fait un appel à `setTimeout(recursive, 1000)` qui lui fait appeler `recursive` à nouveau dans 1 seconde - ayant ainsi presque le même effet que setInterval tout en étant résilient aux erreurs involontaires qui peuvent s'accumuler.
 
-You can clear the timers you set with `clearTimeout` and `clearInterval`. Their usages are very simple:
+Vous pouvez effacer les temporisations que vous avez définies avec `clearTimeout` et `clearInterval`. Leur utilisation est très simple :
 
 ```js
 function neverCall() {
@@ -65,16 +65,16 @@ clearTimeout(id1);
 clearInterval(id2);
 ```
 
-So if you keep track of the return values of the timers, you can easily unhook the timers.
+Ainsi, si vous gardez une trace des valeurs de retour des timers, vous pouvez facilement décrocher les timers.
 
-The final trick for the timer objects is you can pass parameters to the callback by passing more parameters to setTimeout and setInterval:
+L'astuce finale pour les objets minuteurs est que vous pouvez passer des paramètres au rappel en passant plus de paramètres à setTimeout et setInterval :
 
 ```js
 setTimeout(console.log, 1000, 'This', 'has', 4, 'parameters');
 setInterval(console.log, 1000, 'This only has one');
 ```
 
-The output is:
+La sortie est :
 
 ```bash
 This has 4 parameters
@@ -88,7 +88,7 @@ This only has one
 
 #### setImmediate()
 
-`setImmediate()` is another built-in timer function which as the name suggest, runs immediately after the first iteration of the event loop is completed. In other words, `setImmediate()` is similar to a `setTimeout()` function with a `0ms` delay. The `setImmediate()` function can also take extra parameters that are passed when the callback is called:
+`setImmediate()` est une autre fonction de temporisation intégrée qui, comme son nom l'indique, s'exécute immédiatement après la fin de la première itération de la boucle d'événement. En d'autres termes, `setImmediate()` est similaire à une fonction `setTimeout()` avec un délai de `0ms`. La fonction `setImmediate()` peut également prendre des paramètres supplémentaires qui sont passés lorsque le callback est appelé :
 
 ```js
 console.log('This will be printed first');
@@ -96,7 +96,7 @@ setImmediate(console.log, 'This is an extra parameter');
 console.log('This will be printed second');
 ```
 
-The output is:
+La sortie est :
 
 ```bash
 This will be printed first
@@ -104,4 +104,4 @@ This will be printed second
 This is an extra parameter
 ```
 
-Remember that though `setImmediate()` has no delay (i.e, 0ms) this doesn't mean that the code will run synchronously. It simply means that there will be no delay (i.e, 0ms) after the first iteration of the event loop is completed i.e, all synchronous commands have been executed.
+Rappelez-vous que si `setImmediate()` n'a pas de délai (c'est-à-dire 0ms), cela ne signifie pas que le code s'exécutera de manière synchrone. Cela signifie simplement qu'il n'y aura pas de délai (i.e. 0ms) après que la première itération de la boucle d'événement soit terminée, c'est-à-dire que toutes les commandes synchrones aient été exécutées.

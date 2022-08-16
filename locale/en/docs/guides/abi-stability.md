@@ -115,5 +115,5 @@ such, may undergo ABI-incompatible changes before it is finally incorporated
 into a forthcoming version of N-API. That is, an experimental N-API is not yet
 covered by the forward compatibility guarantee.
 
-[`node_api.h`]: https://github.com/nodejs/node/blob/master/src/node_api.h
-[`node_api_types.h`]: https://github.com/nodejs/node/blob/master/src/node_api_types.h
+[`node_api.h`]: https://github.com/nodejs/node/blob/main/src/node_api.h
+[`node_api_types.h`]: https://github.com/nodejs/node/blob/main/src/node_api_types.h
