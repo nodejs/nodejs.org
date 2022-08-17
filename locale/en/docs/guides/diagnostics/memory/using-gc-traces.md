@@ -164,7 +164,7 @@ This algorithm is composed of two phases:
 > 👉 In fact, the Mark and Sweep steps are a bit more elaborate.
 > Please read this [document][] for more details.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Animation_of_the_Naive_Mark_and_Sweep_Garbage_Collector_Algorithm.gif" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Animation_of_the_Naive_Mark_and_Sweep_Garbage_Collector_Algorithm.gif" alt="mark and sweep algorithm" />
 
 ## `--trace-gc` in action
 
