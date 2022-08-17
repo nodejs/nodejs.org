@@ -1,3 +1,8 @@
+---
+title: Using Inspector
+layout: docs.hbs
+---
+
 # Using Inspector
 
 In a local environment, we usually speak about live debugging where we attach a
