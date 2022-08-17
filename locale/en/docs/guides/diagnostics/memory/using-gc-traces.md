@@ -184,7 +184,7 @@ But how could we spot the context?
 
 ### How to get the context of bad allocations
 1. Suppose we observe that the old space is continously increasing.
-2. Reduce `--max-old-space-size` such that the total heap is closer to the limit
+2. Reduce [`--max-old-space-size`][] such that the total heap is closer to the limit
 3. Run the program until you hit the out of memory.
 4. The produced log shows the failing context.
 6. If it hits OOM, increment the heap size by ~10% and repeat a few times. If the same pattern is observed, it indicates a memory leak.
@@ -299,7 +299,7 @@ You probably see that the new version of the script is slow.
 What if we use a `Set` again and write its content into a
 file only when the memory reaches a specific size?
 
-> [getheapstatistics][] API could help you.
+> [`getheapstatistics`][] API could help you.
 
 ## Bonus: Trace garbage collection programmatically
 
@@ -389,4 +389,4 @@ For more information, you can refer to
 [document]: https://github.com/thlorenz/v8-perf/blob/master/gc.md#marking-state
 [Scavenge scenario]: https://github.com/thlorenz/v8-perf/blob/master/gc.md#sample-scavenge-scenario
 [talk of Peter Marshall]: https://v8.dev/blog/trash-talk
-[getheapstatistics]: https://nodejs.org/dist/latest-v16.x/docs/api/v8.html#v8getheapstatistics
+[`getheapstatistics`]: https://nodejs.org/dist/latest-v16.x/docs/api/v8.html#v8getheapstatistics
