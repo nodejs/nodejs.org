@@ -52,7 +52,7 @@ function summary () {
     process.stdout.write(`~~> ${len} entries to record\r`);
     len--;
   };
-  
+
   summary();
 })();
 ```
@@ -69,7 +69,7 @@ using the `--trace_gc` flag.
 $ node --trace_gc script.mjs
 ```
 
-> Note: you can find the source code of this [exercise][] 
+> Note: you can find the source code of this [exercise][]
 > in the Node.js Diagnostics repository.
 
 It should output something like:
@@ -85,9 +85,8 @@ It should output something like:
 Total: 1000000 entries
 ```
 
-Hard to read? Maybe we should pass in review a few concepts 
+Hard to read? Maybe we should pass in review a few concepts
 and explain the outputs of the `--trace-gc` flag.
-
 
 ### Examining a trace with `--trace_gc`
 
@@ -98,27 +97,27 @@ The composition of each line can be described as:
 [13973:0x110008000]       44 ms: Scavenge 2.4 (3.2) -> 2.0 (4.2) MB, 0.5 / 0.0 ms  (average mu = 1.000, current mu = 1.000) allocation failure
 ```
 
-| Token value                                                 | Interpretation                           |
-|-------------------------------------------------------------|------------------------------------------|
-| 13973                                                       | PID of the running process               |
-| 0x110008000                                                 | Isolate (JS heap instance)               |
-| 44 ms                                                       | The time since the process started in ms |
-| Scavenge                                                    | Type / Phase of GC                       |
-| 2.4                                                         | Heap used before GC in MB                |
-| (3.2)                                                       | Total heap before GC in MB               |
-| 2.0                                                         | Heap used after GC in MB                 |
-| (4.2)                                                       | Total heap after GC in MB                |
-| 0.5 / 0.0 ms (average mu = 1.000, current mu = 1.000)       | Time spent in GC in ms                   |
-| allocation failure                                          | Reason for GC                            |
+| Token value                                           | Interpretation                           |
+|-------------------------------------------------------|------------------------------------------|
+| 13973                                                 | PID of the running process               |
+| 0x110008000                                           | Isolate (JS heap instance)               |
+| 44 ms                                                 | The time since the process started in ms |
+| Scavenge                                              | Type / Phase of GC                       |
+| 2.4                                                   | Heap used before GC in MB                |
+| (3.2)                                                 | Total heap before GC in MB               |
+| 2.0                                                   | Heap used after GC in MB                 |
+| (4.2)                                                 | Total heap after GC in MB                |
+| 0.5 / 0.0 ms (average mu = 1.000, current mu = 1.000) | Time spent in GC in ms                   |
+| allocation failure                                    | Reason for GC                            |
 
 We'll only focus on two events here:
 * Scavenge
 * Mark-sweep
 
-The heap is divided into _spaces_. Amongst these, we have a space called 
+The heap is divided into _spaces_. Amongst these, we have a space called
 the "new" space and another one called the "old" space.
 
-> 👉 In reality, the heap structure is a bit different, but we'll stick 
+> 👉 In reality, the heap structure is a bit different, but we'll stick
 > to a simpler version for this article. If you want more details
 > we encourage you to look at this [talk of Peter Marshall][] about Orinoco.
 
@@ -164,14 +163,14 @@ This algorithm is composed of two phases:
 > 👉 In fact, the Mark and Sweep steps are a bit more elaborate.
 > Please read this [document][] for more details.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Animation_of_the_Naive_Mark_and_Sweep_Garbage_Collector_Algorithm.gif" alt="mark and sweep algorithm" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Animation_of_the_Naive_Mark_and_Sweep_Garbage_Collector_Algorithm.gif" alt="mark and sweep algorithm"/>
 
 ## `--trace-gc` in action
 
 ### Memory leak
 
-Now, if you return quickly to the previous terminal window: 
-you will see many `Mark-sweep` events in the console. 
+Now, if you return quickly to the previous terminal window:
+you will see many `Mark-sweep` events in the console.
 We also see that the amount of memory collected after
 the event is insignificant.
 
@@ -184,12 +183,12 @@ but what about a real-world application?)
 But how could we spot the context?
 
 ### How to get the context of bad allocations
-  1. Suppose we observe that the old space is continously increasing.
-  2. Reduce `--max-old-space-size` such that the total heap is closer to the limit 
-  3. Run the program until you hit the out of memory.
-  4. The produced log shows the failing context.
-  6. If it hits OOM, increment the heap size by ~10% and repeat a few times. If the same pattern is observed, it indicates a memory leak.
-  7. If there is no OOM, then freeze the heap size to that value - A packed heap reduces memory footprint and computation latency.
+1. Suppose we observe that the old space is continously increasing.
+2. Reduce `--max-old-space-size` such that the total heap is closer to the limit
+3. Run the program until you hit the out of memory.
+4. The produced log shows the failing context.
+6. If it hits OOM, increment the heap size by ~10% and repeat a few times. If the same pattern is observed, it indicates a memory leak.
+7. If there is no OOM, then freeze the heap size to that value - A packed heap reduces memory footprint and computation latency.
 
 For example, try to run `script.mjs` with the following command:
 
@@ -227,12 +226,11 @@ should be that the last GC trace will contain a bigger heap size.
 
 How do you assert whether too many garbage collections
 are happening or causing an overhead?
-
-  1. Review the trace data, precisely the time between consecutive collections.
-  2. Review the trace data, specifically around time spent in GC.
-  3. If the time between two GC is less than the time spent in GC, the application is severely starving.
-  4. If the time between two GCS and the time spent in GC are very high, probably the application can use a smaller heap.
-  5. If the time between two GCS is much greater than the time spent in GC, the application is relatively healthy.
+1. Review the trace data, precisely the time between consecutive collections.
+2. Review the trace data, specifically around time spent in GC.
+3. If the time between two GC is less than the time spent in GC, the application is severely starving.
+4. If the time between two GCS and the time spent in GC are very high, probably the application can use a smaller heap.
+5. If the time between two GCS is much greater than the time spent in GC, the application is relatively healthy.
 
 ## Fix the leak
 
@@ -280,7 +278,7 @@ async function summary () {
 Using a `Set` to store data is not a bad practice at all;
 you should just care about the memory footprint of your program.
 
-> Note: you can find the source code of this [exercise][] 
+> Note: you can find the source code of this [exercise][]
 > in the Node.js Diagnostics repository.
 
 Now, let's execute this script.
@@ -370,14 +368,14 @@ PerformanceEntry {
 }
 ```
 
-| Property   | Interpretation                                                                                  |
-|------------|-------------------------------------------------------------------------------------------------|
-| name       | The name of the performance entry.                                                              |
-| entryType  | The type of the performance entry.                                                              |
-| startTime  | The high-resolution millisecond timestamp is marking the starting time of the Performance Entry.|
-| duration   | The total number of milliseconds elapsed for this entry.                                        |
-| kind       | The type of garbage collection operation that occurred.                                         |
-| flags      | The high-resolution millisecond timestamp is marking the starting time of the Performance Entry.|
+| Property  | Interpretation                                                                                   |
+|-----------|--------------------------------------------------------------------------------------------------|
+| name      | The name of the performance entry.                                                               |
+| entryType | The type of the performance entry.                                                               |
+| startTime | The high-resolution millisecond timestamp is marking the starting time of the Performance Entry. |
+| duration  | The total number of milliseconds elapsed for this entry.                                         |
+| kind      | The type of garbage collection operation that occurred.                                          |
+| flags     | The high-resolution millisecond timestamp is marking the starting time of the Performance Entry. |
 
 For more information, you can refer to
 [the documentation about performance hooks][performance hooks].
@@ -386,7 +384,7 @@ For more information, you can refer to
 [PerformanceObserver]: https://nodejs.org/api/perf_hooks.html#perf_hooks_class_performanceobserver
 [`--max-old-space-size`]: https://nodejs.org/api/cli.html#--max-old-space-sizesize-in-megabytes
 [performance hooks]: https://nodejs.org/api/perf_hooks.html
-[exercise]: https://github.com/nodejs/diagnostics/tree/main/documentation/memory/step3/exercise 
+[exercise]: https://github.com/nodejs/diagnostics/tree/main/documentation/memory/step3/exercise
 [guide dedicated to heap snapshot]: https://github.com/nodejs/nodejs.org/blob/main/locale/en/docs/guides/diagnostics/memory/using-heap-snapshot.md#how-to-find-a-memory-leak-with-heap-snapshots
 [document]: https://github.com/thlorenz/v8-perf/blob/master/gc.md#marking-state
 [Scavenge scenario]: https://github.com/thlorenz/v8-perf/blob/master/gc.md#sample-scavenge-scenario
