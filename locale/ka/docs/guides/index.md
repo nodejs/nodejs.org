@@ -7,8 +7,8 @@ layout: docs.hbs
 
 ## ზოგადი
 
-* [პირველი ნაბიჯები](/en/docs/guides/getting-started-guide/)
-* [გამართვა - პირველი ნაბიჯები](/en/docs/guides/debugging-getting-started/)
+* [პირველი ნაბიჯები](/ka/docs/guides/getting-started-guide/)
+* [გამართვა - პირველი ნაბიჯები](/ka/docs/guides/debugging-getting-started/)
 * [Easy profiling for Node.js Applications](/en/docs/guides/simple-profiling/)
 * [Diagnostics - Flame Graphs](/en/docs/guides/diagnostics-flamegraph/)
 * [Dockerizing a Node.js web app](/en/docs/guides/nodejs-docker-webapp/)
