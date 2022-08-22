@@ -3,6 +3,7 @@
 $(function () {
   $('#tbVersions').fancyTable({
     pagination: true,
+    paginationClassActive: 'download-table-currentpage',
     perPage: 10,
     globalSearch: true,
     exactMatch: 'auto',

@@ -166,6 +166,10 @@
   var editOnGitHubElement = document.getElementById('editOnGitHubLink');
   var editOnGitHubUrlElement = document.getElementById('editOnGitHubUrl');
 
+  if (!editOnGitHubElement) {
+    return;
+  }
+
   if (editOnGitHubUrlElement) {
     editOnGitHubElement.setAttribute('href', editOnGitHubUrlElement.value);
   } else {
