@@ -8,7 +8,7 @@ layout: docs.hbs
 This overview covers the difference between **blocking** and **non-blocking**
 calls in Node.js. This overview will refer to the event loop and libuv but no
 prior knowledge of those topics is required. Readers are assumed to have a
-basic understanding of the JavaScript language and Node.js [callback pattern](/en/knowledge/getting-started/control-flow/what-are-callbacks/).
+basic understanding of the JavaScript language and Node.js.
 
 > "I/O" refers primarily to interaction with the system's disk and
 > network supported by [libuv](https://libuv.org/).
