@@ -56,7 +56,7 @@
   }
 
   > img {
-    border-radius: 2px;
+    border-radius: 10px;
   }
 }
 
@@ -71,7 +71,7 @@
   padding: .2em .6em;
   background-color: $active-green;
   color: $white !important;
-  border-radius: 2px;
+  border-radius: 10px;
   font-size: 30px;
   font-weight: 400;
   transition: background-color .2s ease-in-out;
