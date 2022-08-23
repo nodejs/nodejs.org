@@ -54,10 +54,10 @@ function summary () {
 
 ## 如何运行垃圾回收追踪
 
-你可以借助 `--trace_gc` 在控制台输出中看到垃圾回收追踪的信息情况。
+你可以借助 `--trace-gc` 在控制台输出中看到垃圾回收追踪的信息情况。
 
 ```console
-$ node --trace_gc script.mjs
+$ node --trace-gc script.mjs
 ```
 
 > 注意：你可以在 Node.js 症状分析的[练习][]中找到相关源码。
@@ -78,9 +78,9 @@ Total: 1000000 entries
 是否感到不太容易读？我们应该对一些基本的概念有所了解，并使用 `--trace-gc` 进
 行解析。
 
-### 使用 `--trace_gc` 检查追踪
+### 使用 `--trace-gc` 检查追踪
 
-`--trace-gc` 将把所有和垃圾回收事件相关的信息在控制台上如数输出。
+`--trace-gc`（ `--trace_gc` 也可） 将把所有和垃圾回收事件相关的信息在控制台上如数输出。
 每一行的构成部分可作如下解释：
 
 ```bash
@@ -272,10 +272,10 @@ node --trace-gc script-fix.mjs
 
 ```js
 import v8 from 'v8';
-// enabling trace_gc
-v8.setFlagsFromString('--trace_gc');
-// disabling trace_gc
-v8.setFlagsFromString('--notrace_gc');
+// enabling trace-gc
+v8.setFlagsFromString('--trace-gc');
+// disabling trace-gc
+v8.setFlagsFromString('--notrace-gc');
 ```
 
 ### 使用“性能钩子”
