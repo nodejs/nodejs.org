@@ -1,13 +1,12 @@
 'use strict';
 
 const { marked } = require('marked');
-const test = require('tape');
+const test = require('node:test');
+const assert = require('node:assert/strict');
 const anchorMarkdownHeadings = require('../../scripts/plugins/anchor-markdown-headings');
 
-test('anchorMarkdownHeadings', (t) => {
-  t.plan(8);
-
-  t.test('correctly parses markdown heading without links', (t) => {
+test('anchorMarkdownHeadings', async (t) => {
+  await t.test('correctly parses markdown heading without links', () => {
     const text = 'Simple title';
     const level = 1;
     const raw = 'Simple title';
@@ -17,11 +16,10 @@ test('anchorMarkdownHeadings', (t) => {
       '<a id="simple-title" class="anchor" href="#simple-title" ' +
       'aria-labelledby="header-simple-title"></a></h1>';
 
-    t.plan(1);
-    t.equal(output, expected);
+    assert.equal(output, expected);
   });
 
-  t.test('correctly parses markdown heading with a single link', (t) => {
+  await t.test('correctly parses markdown heading with a single link', () => {
     const text = 'Title with <a href="#">link</a>';
     const level = 3;
     const raw = 'Title with [link](#)';
@@ -32,11 +30,10 @@ test('anchorMarkdownHeadings', (t) => {
       '<a id="title-with-link" class="anchor" href="#title-with-link" ' +
       'aria-labelledby="header-title-with-link"></a></h3>';
 
-    t.plan(1);
-    t.equal(output, expected);
+    assert.equal(output, expected);
   });
 
-  t.test('correctly parses markdown heading with multiple links', (t) => {
+  await t.test('correctly parses markdown heading with multiple links', () => {
     const text = 'a <a href="b">b</a> c<a href="d">d</a>e';
     const level = 2;
     const raw = 'a [b](b) c[d](d)e';
@@ -47,11 +44,10 @@ test('anchorMarkdownHeadings', (t) => {
       '<a id="a-b-cde" class="anchor" href="#a-b-cde" ' +
       'aria-labelledby="header-a-b-cde"></a></h2>';
 
-    t.plan(1);
-    t.equal(output, expected);
+    assert.equal(output, expected);
   });
 
-  t.test('makes pretty slugs', (t) => {
+  await t.test('makes pretty slugs', () => {
     const text = '$$$ WIN BIG! $$$';
     const level = 4;
     const raw = '$$$ WIN BIG! $$$';
@@ -61,13 +57,12 @@ test('anchorMarkdownHeadings', (t) => {
       '<a id="win-big" class="anchor" href="#win-big" ' +
       'aria-labelledby="header-win-big"></a></h4>';
 
-    t.plan(1);
-    t.equal(output, expected);
+    assert.equal(output, expected);
   });
 
-  t.test(
+  await t.test(
     'correctly parses markdown heading with non-English characters',
-    (t) => {
+    () => {
       const text = '这是<a href="b">链接</a>的<a href="d">测试！</a>';
       const level = 2;
       const raw =
@@ -80,12 +75,11 @@ test('anchorMarkdownHeadings', (t) => {
         'href="#anchor-with-non-english-characters" ' +
         'aria-labelledby="header-anchor-with-non-english-characters"></a></h2>';
 
-      t.plan(1);
-      t.equal(output, expected);
+      assert.equal(output, expected);
     }
   );
 
-  t.test('correctly parses markdown heading with empty spaces', (t) => {
+  await t.test('correctly parses markdown heading with empty spaces', () => {
     const text = '这是<a href="b">链接</a>的<a href="d">测试！</a>';
     const level = 2;
     const raw = '<!-- empty  spaces - id -->这是[链接](b)c[测试！](d)';
@@ -97,22 +91,20 @@ test('anchorMarkdownHeadings', (t) => {
       'href="#empty-spaces-id" ' +
       'aria-labelledby="header-empty-spaces-id"></a></h2>';
 
-    t.plan(1);
-    t.equal(output, expected);
+    assert.equal(output, expected);
   });
 
-  t.test('does not generate empty anchors', (t) => {
+  await t.test('does not generate empty anchors', () => {
     const text = 'إنضم إلينا';
     const level = 2;
     const raw = 'إنضم إلينا';
     const output = anchorMarkdownHeadings(text, level, raw);
     const expected = '<h2>إنضم إلينا</h2>';
 
-    t.plan(1);
-    t.equal(output, expected);
+    assert.equal(output, expected);
   });
 
-  t.test('does not generate duplicate IDs', (t) => {
+  await t.test('does not generate duplicate IDs', () => {
     const renderer = new marked.Renderer();
     renderer.heading = anchorMarkdownHeadings;
 
@@ -126,7 +118,6 @@ test('anchorMarkdownHeadings', (t) => {
       '<a id="title-1" class="anchor" ' +
       'href="#title-1" aria-labelledby="header-title-1"></a></h1>';
 
-    t.plan(1);
-    t.equal(output, expected);
+    assert.equal(output, expected);
   });
 });

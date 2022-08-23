@@ -20,14 +20,14 @@
     "test:lint:stylelint": "stylelint \"layouts/css/**/*.{css,scss}\" --cache --cache-location .cache/.stylelintcache --report-needless-disables",
     "test:lint:lockfile": "lockfile-lint --allowed-hosts npm github.com --allowed-schemes https: --empty-hostname false --type npm --path package-lock.json",
     "test:html": "node scripts/vnu-jar.js",
-    "test:unit": "tape \"tests/**/*.test.js\""
+    "test:unit": "node --test"
   },
   "repository": "nodejs/nodejs.org",
   "keywords": [],
   "author": "Node.js Website Working Group",
   "license": "MIT",
   "engines": {
-    "node": ">=12"
+    "node": ">=16"
   },
   "dependencies": {
     "@metalsmith/markdown": "^1.6.0",
@@ -79,7 +79,6 @@
     "st": "^3.0.0",
     "stylelint": "^14.11.0",
     "stylelint-config-twbs-bootstrap": "^5.0.0",
-    "tape": "^5.6.0",
     "vnu-jar": "21.10.12"
   }
 }

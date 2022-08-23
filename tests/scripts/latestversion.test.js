@@ -1,55 +1,50 @@
 'use strict';
 
-const test = require('tape');
+const test = require('node:test');
+const assert = require('node:assert/strict');
 
 const latestversion = require('../../scripts/helpers/latestversion');
 
-test('latestversion.current()', (t) => {
-  t.test('should be equal/greater than v5.0.0', (t) => {
+test('latestversion.current()', async (t) => {
+  await t.test('should be equal/greater than v5.0.0', () => {
     const currentVersion = latestversion.current([
       { version: 'v4.2.1', lts: true },
       { version: 'v0.12.7', lts: false }
     ]);
 
-    t.equal(currentVersion, undefined);
-    t.end();
+    assert.equal(currentVersion, undefined);
   });
 
-  t.test('should not be an LTS release', (t) => {
+  await t.test('should not be an LTS release', () => {
     const currentVersion = latestversion.current([
       { version: 'v5.0.0', lts: false },
       { version: 'v4.2.1', lts: true },
       { version: 'v0.12.7', lts: false }
     ]);
 
-    t.equal(currentVersion.node, 'v5.0.0');
-    t.end();
+    assert.equal(currentVersion.node, 'v5.0.0');
   });
 
-  t.test('should generate major version string', (t) => {
+  await t.test('should generate major version string', () => {
     const currentVersion = latestversion.current([
       { version: 'v7.0.0', lts: false }
     ]);
 
-    t.equal(currentVersion.nodeMajor, 'v7.x');
-    t.end();
+    assert.equal(currentVersion.nodeMajor, 'v7.x');
   });
-
-  t.end();
 });
 
-test('latestversion.lts()', (t) => {
-  t.test('should be an LTS release', (t) => {
+test('latestversion.lts()', async (t) => {
+  await t.test('should be an LTS release', () => {
     const ltsVersion = latestversion.lts([
       { version: 'v4.2.1', lts: true },
       { version: 'v0.12.7', lts: false }
     ]);
 
-    t.equal(ltsVersion.node, 'v4.2.1');
-    t.end();
+    assert.equal(ltsVersion.node, 'v4.2.1');
   });
 
-  t.test('should pick latest LTS release', (t) => {
+  await t.test('should pick latest LTS release', () => {
     const ltsVersion = latestversion.lts([
       { version: 'v5.0.0', lts: false },
       { version: 'v4.2.1', lts: true },
@@ -57,9 +52,6 @@ test('latestversion.lts()', (t) => {
       { version: 'v0.12.7', lts: false }
     ]);
 
-    t.equal(ltsVersion.node, 'v4.2.1');
-    t.end();
+    assert.equal(ltsVersion.node, 'v4.2.1');
   });
-
-  t.end();
 });
