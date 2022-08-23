@@ -63,10 +63,10 @@ function summary () {
 ## Running with garbage collection traces
 
 You can see traces for garbage collection in console output of your process
-using the `--trace_gc` flag.
+using the `--trace-gc` flag.
 
 ```console
-$ node --trace_gc script.mjs
+$ node --trace-gc script.mjs
 ```
 
 > Note: you can find the source code of this [exercise][]
@@ -88,9 +88,10 @@ Total: 1000000 entries
 Hard to read? Maybe we should pass in review a few concepts
 and explain the outputs of the `--trace-gc` flag.
 
-### Examining a trace with `--trace_gc`
+### Examining a trace with `--trace-gc`
 
-The `--trace-gc` flag outputs all garbage collection events in the console.
+The `--trace-gc` (or `--trace_gc`, either is fine) flag outputs all garbage collection
+events in the console.
 The composition of each line can be described as:
 
 ```bash
@@ -312,11 +313,11 @@ The `v8` module exposes an API to put flags on the fly.
 ```js
 import v8 from 'v8';
 
-// enabling trace_gc
-v8.setFlagsFromString('--trace_gc');
+// enabling trace-gc
+v8.setFlagsFromString('--trace-gc');
 
-// disabling trace_gc
-v8.setFlagsFromString('--notrace_gc');
+// disabling trace-gc
+v8.setFlagsFromString('--notrace-gc');
 ```
 
 ### Using performance hooks
@@ -375,7 +376,7 @@ PerformanceEntry {
 | startTime | The high-resolution millisecond timestamp is marking the starting time of the Performance Entry. |
 | duration  | The total number of milliseconds elapsed for this entry.                                         |
 | kind      | The type of garbage collection operation that occurred.                                          |
-| flags     | The high-resolution millisecond timestamp is marking the starting time of the Performance Entry. |
+| flags     | The additional information about GC.                                                             |
 
 For more information, you can refer to
 [the documentation about performance hooks][performance hooks].
