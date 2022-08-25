@@ -51,10 +51,6 @@
     "resources": {
       "link": "about/resources",
       "text": "資源"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "商標"
     }
   },
   "download": {

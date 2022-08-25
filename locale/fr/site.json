@@ -54,10 +54,6 @@
     "resources": {
       "link": "about/resources",
       "text": "Ressources"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "Marque déposée"
     }
   },
   "download": {

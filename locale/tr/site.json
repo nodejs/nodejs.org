@@ -54,10 +54,6 @@
     "resources": {
       "link": "about/resources",
       "text": "Kaynaklar"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "Marka"
     }
   },
   "download": {

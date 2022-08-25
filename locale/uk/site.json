@@ -53,10 +53,6 @@
     "resources": {
       "link": "about/resources",
       "text": "Ресурси"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "Товарний знак"
     }
   },
   "download": {
