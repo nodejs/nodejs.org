@@ -1,5 +1,6 @@
 {
   "title": "Node.js",
+  "editOnGithub":"Editer sur GitHub",
   "author": "Node.js",
   "url": "https://nodejs.org/fr/",
   "locale": "fr",
@@ -9,12 +10,14 @@
   "reportNodeIssue": "Rapporter un problème Node.js",
   "reportWebsiteIssue": "Rapporter un problème sur le site web",
   "getHelpIssue": "Obtenir de l’aide",
+  "Contributing": "Contribuer pour Nodejs.org",
   "by": "par",
   "all-downloads": "Toutes les options de téléchargement",
   "nightly": "Versions quotidiennes",
-  "unofficial-builds": "Unofficial builds",
-  "previous": "Previous",
-  "next": "Next",
+  "unofficial-builds": "Builds non officiels",
+  "previous": "Précédent",
+  "next": "Suivant",
+  "toggleText":"Basculer en mode sombre/clair",
   "feeds": [
     {
       "link": "feed/blog.xml",
@@ -41,7 +44,7 @@
     },
     "community": {
       "link": "about/community",
-      "text": "Community"
+      "text": "Communauté"
     },
     "workinggroups": {
       "link": "about/working-groups",
@@ -75,15 +78,18 @@
       "link": "SHASUMS256.txt.asc",
       "text": "SHASUMS signés pour les fichiers des versions",
       "verify-link": "https://github.com/nodejs/node#verifying-binaries",
-      "verify-text": "How to verify"
+      "verify-text": "Comment vérifier"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive"
+      "text": "Installer Node.js via l'archive binaire"
+    },
+      "install-on-wsl": {
+      "text": "Installer sur 'Windows Subsystem for Linux' (WSL)"
     }
   },
   "docs": {
     "link": "docs",
-    "text": "Docs",
+    "text": "Documentation",
     "es6": {
       "link": "docs/es6",
       "text": "ES6 et au-delà"
@@ -103,7 +109,7 @@
     },
     "dependencies": {
       "link": "docs/meta/topics/dependencies",
-      "text": "Dependencies"
+      "text": "Dépendances"
     }
   },
   "getinvolved": {
@@ -111,11 +117,11 @@
     "text": "S’impliquer",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
-      "text": "Coder + Apprendre"
+      "text": "Coder et Apprendre"
     },
     "collab-summit": {
       "link": "get-involved/collab-summit",
-      "text": "Collab Summit"
+      "text": "Sommet de collaboration"
     },
     "contribute": {
       "link": "get-involved/contribute",
@@ -134,6 +140,10 @@
     "link": "blog",
     "text": "Actualités"
   },
+  "getcertified": {
+    "link": "https://openjsf.org/certification",
+    "text": "Certification"
+  },
   "releases": {
     "title": "Historique des versions",
     "downloads": "Téléchargements"
@@ -141,6 +151,19 @@
   "links": {
     "pages": {
       "changelog": "Journal des modifications"
+    }
+  },
+  "banners": {
+    "index": {
+      "startDate": "2022-06-27T16:00:00.000Z",
+      "endDate": "2022-07-13T16:00:00.000Z",
+      "text": "Nouvelles versions de sécurité disponibles maintenant pour Node.js 14, 16, et 18",
+      "link": "https://nodejs.org/en/blog/vulnerability/july-2022-security-releases/"
+    },
+    "blacklivesmatter": {
+      "visible": false,
+      "text": "#BlackLivesMatter",
+      "link": "black-lives-matter/"
     }
   }
 }

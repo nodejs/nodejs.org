@@ -1,6 +1,6 @@
 ---
-title: Les connaisence de base
+title: Les connaissances de base
 layout: knowledge-base-index.hbs
 ---
 
-# Les connaisence de base
+# Les connaissances de base
