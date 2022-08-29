@@ -1,5 +1,5 @@
 ---
-title: ECMAScript 2015 (ES6) and beyond
+title: ECMAScript 2015 (ES6) და მის ფარგლებს მიღმა
 layout: docs.hbs
 ---
 
