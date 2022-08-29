@@ -7,7 +7,7 @@ title: Logos and Graphics
 
 ## Logo Downloads
 
-Si prega di leggere il [trademark policy](/en/about/trademark/) per informazioni su come utilizzare i loghi
+Si prega di leggere il [trademark policy](https://trademark-policy.openjsf.org/) per informazioni su come utilizzare i loghi
 e il marchio Node.js® loghi e marchi.
 
 Le linee guida visive sono descritte nelle
