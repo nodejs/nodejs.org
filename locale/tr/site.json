@@ -50,10 +50,6 @@
     "releases": {
       "link": "about/releases",
       "text": "Sürümler"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "Kaynaklar"
     }
   },
   "download": {

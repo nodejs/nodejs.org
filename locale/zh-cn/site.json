@@ -53,10 +53,6 @@
     "releases": {
       "link": "about/releases",
       "text": "发布"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "资源"
     }
   },
   "download": {

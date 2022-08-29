@@ -50,10 +50,6 @@
     "releases": {
       "link": "about/releases",
       "text": "Releases"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "Resources"
     }
   },
   "download": {

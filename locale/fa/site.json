@@ -50,10 +50,6 @@
     "releases": {
       "link": "about/releases",
       "text": "انتشارها"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "منابع"
     }
   },
   "download": {
