@@ -7,7 +7,7 @@ title: 商標及圖像
 
 ## 商標下載
 
-關於 Node.js® 商標的使用許可請參閱[商標政策](/en/about/trademark/)。
+關於 Node.js® 商標的使用許可請參閱[商標政策](https://trademark-policy.openjsf.org/)。
 
 Node.js 標誌的視覺規範請參閱[視覺規範](/static/documents/foundation-visual-guidelines.pdf)。
 

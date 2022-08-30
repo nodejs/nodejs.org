@@ -7,7 +7,7 @@ title: Logolar ve Grafikler
 
 ## Logo İndirmeleri
 
-Lütfen Node.js® logolarının ve işaretlerinin izin verilen kullanımı hakkında bilgi için [ticari marka politikasını](/en/about/trademark/) inceleyin.
+Lütfen Node.js® logolarının ve işaretlerinin izin verilen kullanımı hakkında bilgi için [ticari marka politikasını](https://trademark-policy.openjsf.org/) inceleyin.
 
 Node.js markasının görsel gösterimi [Görsel Yönergeler](/static/documents/foundation-visual-guidelines.pdf) içerisinde açıklanmıştır.
 
