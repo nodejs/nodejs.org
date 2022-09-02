@@ -49,10 +49,6 @@
     "releases": {
       "link": "about/releases",
       "text": "Versions"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "Recursos"
     }
   },
   "download": {

@@ -47,10 +47,6 @@
     "releases": {
       "link": "about/releases",
       "text": "發佈版"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "資源"
     }
   },
   "download": {

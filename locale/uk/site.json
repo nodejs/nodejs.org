@@ -49,10 +49,6 @@
     "releases": {
       "link": "about/releases",
       "text": "Релізи"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "Ресурси"
     }
   },
   "download": {

@@ -53,10 +53,6 @@
     "releases": {
       "link": "about/releases",
       "text": "ვერსიები"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "წყაროები"
     }
   },
   "download": {
