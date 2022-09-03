@@ -39,10 +39,6 @@
       "link": "about/governance",
       "text": "Dirección"
     },
-    "community": {
-      "link": "about/community",
-      "text": "Comunidad"
-    },
     "workinggroups": {
       "link": "about/working-groups",
       "text": "Grupos de Trabajo"
@@ -50,10 +46,6 @@
     "releases": {
       "link": "about/releases",
       "text": "Versiones"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "Recursos"
     }
   },
   "download": {
