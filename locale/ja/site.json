@@ -47,14 +47,6 @@
     "releases": {
       "link": "about/releases",
       "text": "リリース"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "リソース"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "トレードマーク"
     }
   },
   "download": {

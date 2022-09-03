@@ -39,10 +39,6 @@
       "link": "about/governance",
       "text": "مدیریت"
     },
-    "community": {
-      "link": "about/community",
-      "text": "جامعه"
-    },
     "workinggroups": {
       "link": "about/working-groups",
       "text": "گروه‌های کاری"
@@ -50,18 +46,6 @@
     "releases": {
       "link": "about/releases",
       "text": "انتشارها"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "منابع"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "نشان تجاری"
-    },
-    "privacy": {
-      "link": "about/privacy",
-      "text": "سیاست‌های حریم شخصی"
     }
   },
   "download": {

@@ -38,10 +38,6 @@
       "link": "about/governance",
       "text": "Управління"
     },
-    "community": {
-      "link": "about/community",
-      "text": "Спільнота"
-    },
     "workinggroups": {
       "link": "about/working-groups",
       "text": "Робочі групи"
@@ -49,18 +45,6 @@
     "releases": {
       "link": "about/releases",
       "text": "Релізи"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "Ресурси"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "Товарний знак"
-    },
-    "privacy": {
-      "link": "about/privacy",
-      "text": "Політика приватності"
     }
   },
   "download": {

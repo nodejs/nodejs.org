@@ -39,10 +39,6 @@
       "link": "about/governance",
       "text": "Управление"
     },
-    "community": {
-      "link": "about/community",
-      "text": "Сообщество"
-    },
     "workinggroups": {
       "link": "about/working-groups",
       "text": "Рабочие группы"
@@ -50,18 +46,6 @@
     "releases": {
       "link": "about/releases",
       "text": "Релизы"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "Ресурсы"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "Товарный знак"
-    },
-    "privacy": {
-      "link": "about/privacy",
-      "text": "Политика приватности"
     }
   },
   "download": {

@@ -39,10 +39,6 @@
       "link": "about/governance",
       "text": "Governance"
     },
-    "community": {
-      "link": "about/community",
-      "text": "Community"
-    },
     "workinggroups": {
       "link": "about/working-groups",
       "text": "Working Groups"
@@ -50,18 +46,6 @@
     "releases": {
       "link": "about/releases",
       "text": "Releases"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "Resources"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "Trademark"
-    },
-    "privacy": {
-      "link": "about/privacy",
-      "text": "Privacy Policy"
     }
   },
   "download": {
