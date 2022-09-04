@@ -46,14 +46,6 @@
     "releases": {
       "link": "about/releases",
       "text": "Versionen"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "Ressourcen"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "Trademark"
     }
   },
   "download": {

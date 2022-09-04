@@ -45,14 +45,6 @@
     "releases": {
       "link": "about/releases",
       "text": "Rilasci"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "Risorse"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "Marchio Registrato"
     }
   },
   "download": {

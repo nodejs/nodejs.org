@@ -47,18 +47,6 @@
     "releases": {
       "link": "about/releases",
       "text": "發佈版"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "資源"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "商標"
-    },
-    "privacy": {
-      "link": "about/privacy",
-      "text": "隱私權政策"
     }
   },
   "download": {

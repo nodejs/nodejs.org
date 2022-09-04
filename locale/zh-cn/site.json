@@ -42,10 +42,6 @@
       "link": "about/governance",
       "text": "管理规则"
     },
-    "community": {
-      "link": "about/community",
-      "text": "社区"
-    },
     "workinggroups": {
       "link": "about/working-groups",
       "text": "工作组"
@@ -53,18 +49,6 @@
     "releases": {
       "link": "about/releases",
       "text": "发布"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "资源"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "商标"
-    },
-    "privacy": {
-      "link": "about/privacy",
-      "text": "隐私政策"
     }
   },
   "download": {
