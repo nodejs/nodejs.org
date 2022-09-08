@@ -42,29 +42,9 @@
       "link": "about/governance",
       "text": "Governance"
     },
-    "community": {
-      "link": "about/community",
-      "text": "Community"
-    },
-    "workinggroups": {
-      "link": "about/working-groups",
-      "text": "Working Groups"
-    },
     "releases": {
       "link": "about/releases",
       "text": "Releases"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "Resources"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "Trademark"
-    },
-    "privacy": {
-      "link": "about/privacy",
-      "text": "Privacy Policy"
     }
   },
   "download": {
@@ -159,10 +139,11 @@
   },
   "banners": {
     "index": {
-      "startDate": "2022-06-27T16:00:00.000Z",
-      "endDate": "2022-07-13T16:00:00.000Z",
-      "text": "New security releases now available for Node.js 14, 16, and 18 release lines",
-      "link": "https://nodejs.org/en/blog/vulnerability/july-2022-security-releases/"
+      "startDate": "2022-07-29T16:00:00.000Z",
+      "endDate": "2022-08-11T16:00:00.000Z",
+      "text": null,
+      "html": "<img alt='Grace Hopper Celebration' src='https://nodejs.org/static/images/ghc-banner.png' />",
+      "link": "https://anitab-org.github.io/open-source-day/open-source-day/"
     },
     "blacklivesmatter": {
       "visible": false,

@@ -15,9 +15,9 @@ Streams make for quite a handy abstraction, and there's a lot you can do with th
 ```javascript
 #!/usr/bin/env node
 
-var child = require('child_process');
+const child = require('node:child_process');
 
-var myREPL = child.spawn('node');
+const myREPL = child.spawn('node');
 
 myREPL.stdout.pipe(process.stdout, { end: false });
 
@@ -25,13 +25,11 @@ process.stdin.resume();
 
 process.stdin.pipe(myREPL.stdin, { end: false });
 
-myREPL.stdin.on('end', function() {
+myREPL.stdin.on('end', () => {
   process.stdout.write('REPL stream ended.');
 });
 
-myREPL.on('exit', function (code) {
-  process.exit(code);
-});
+myREPL.once('exit', code => process.exit(code));
 ```
 
 There you have it - spawn the Node.js REPL as a child process, and pipe your stdin and stdout to its stdin and stdout. Make sure to listen for the child's 'exit' event, too, or else your program will just hang there when the REPL exits.
@@ -41,10 +39,10 @@ Another use for `stream.pipe()` is file streams. In Node.js, `fs.createReadStrea
 ```javascript
 #!/usr/bin/env node
 
-var child = require('child_process'),
-    fs = require('fs');
+const child = require('node:child_process'),
+    fs = require('node:fs');
 
-var myREPL = child.spawn('node'),
+const myREPL = child.spawn('node'),
     myFile = fs.createWriteStream('myOutput.txt');
 
 myREPL.stdout.pipe(process.stdout, { end: false });
@@ -55,13 +53,11 @@ process.stdin.resume();
 process.stdin.pipe(myREPL.stdin, { end: false });
 process.stdin.pipe(myFile);
 
-myREPL.stdin.on("end", function() {
+myREPL.stdin.on("end", () => {
   process.stdout.write("REPL stream ended.");
 });
 
-myREPL.on('exit', function (code) {
-  process.exit(code);
-});
+myREPL.once('exit', code => process.exit(code));
 ```
 
 With those small additions, your stdin and the stdout from your REPL will both be piped to the writeable file stream you opened to 'myOutput.txt'. It's that simple - you can pipe streams to as many places as you want.
@@ -71,18 +67,17 @@ Another very important use case for `stream.pipe()` is with HTTP request and res
 ```javascript
 #!/usr/bin/env node
 
-var http = require('http');
+const http = require('node:http');
 
-http.createServer(function(request, response) {
-  var proxy = http.createClient(9000, 'localhost')
-  var proxyRequest = proxy.request(request.method, request.url, request.headers);
-  proxyRequest.on('response', function (proxyResponse) {
+http.createServer((request, response) => {
+  const proxy = http.request(request.url, { hostname: "localhost", port: 9000, headers: request.headers, method: request.method });
+  proxy.once('response', proxyResponse => {
     proxyResponse.pipe(response);
   });
-  request.pipe(proxyRequest);
+  request.pipe(proxy);
 }).listen(8080);
 
-http.createServer(function (req, res) {
+http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   res.write('request successfully proxied to port 9000!' + '\n' + JSON.stringify(req.headers, true, 2));
   res.end();

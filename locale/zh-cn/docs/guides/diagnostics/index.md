@@ -13,3 +13,4 @@ layout: docs.hbs
 以下即是相关的系列诊断指南：
 
 * [内存诊断相关](/zh-cn/docs/guides/diagnostics/memory)
+* [在线调试](/zh-cn/docs/guides/diagnostics/live-debugging)

@@ -42,29 +42,9 @@
       "link": "about/governance",
       "text": "მმართველობა"
     },
-    "community": {
-      "link": "about/community",
-      "text": "საზოგადოება"
-    },
-    "workinggroups": {
-      "link": "about/working-groups",
-      "text": "მომუშავე ჯგუფები"
-    },
     "releases": {
       "link": "about/releases",
       "text": "ვერსიები"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "წყაროები"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "სავაჭრო ნიშანი"
-    },
-    "privacy": {
-      "link": "about/privacy",
-      "text": "კონფიდენციალ. პოლიტიკა"
     }
   },
   "download": {

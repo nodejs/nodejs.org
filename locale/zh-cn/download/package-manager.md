@@ -349,5 +349,5 @@ scoop install nodejs
 
 IBM&reg; 提供给 Node.js 的 SDK - z/OS&reg; 它有两种可用的安装方式：
 SMP/E and PAX。 你可选择一种合适的方式安装：
-* [在 z/OS 上安装配置 Node.js 的 SMP/E 版本](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/smpe.htm)
-* [在 z/OS 上安装配置 Node.js 的 PAX 版本](https://www.ibm.com/support/knowledgecenter/SSTRRS_14.0.0/com.ibm.nodejs.zos.v14.doc/paxz.htm)
+* [在 z/OS 上安装配置 Node.js 的 SMP/E 版本](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
+* [在 z/OS 上安装配置 Node.js 的 PAX 版本](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)
