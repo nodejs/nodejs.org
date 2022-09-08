@@ -41,7 +41,7 @@
     "jstransformer-handlebars": "^1.2.0",
     "junk": "^3.1.0",
     "lodash.defaultsdeep": "^4.6.1",
-    "marked": "^4.0.19",
+    "marked": "^4.1.0",
     "metalsmith": "^2.5.0",
     "metalsmith-collections": "^0.9.0",
     "metalsmith-feed": "^1.0.0",
@@ -52,7 +52,7 @@
     "node-version-data": "^1.1.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.16",
-    "sass": "^1.54.5",
+    "sass": "^1.54.8",
     "semver": "^7.3.7",
     "strftime": "^0.10.1"
   },
@@ -78,7 +78,8 @@
     "remark-preset-lint-node": "^3.3.1",
     "st": "^3.0.0",
     "stylelint": "^14.11.0",
-    "stylelint-config-twbs-bootstrap": "^5.0.0",
+    "stylelint-config-twbs-bootstrap": "^6.0.0",
+    "tape": "^5.6.0",
     "vnu-jar": "21.10.12"
   }
 }
