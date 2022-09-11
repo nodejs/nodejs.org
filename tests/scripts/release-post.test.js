@@ -9,19 +9,18 @@ const path = require('path');
 test('explicitVersion(<version>)', async (t) => {
   const releasePost = require('../../scripts/release-post');
 
-  await t.test('resolves when given a string argument', (_, done) => {
-    releasePost.explicitVersion('4.1.1').then((version) => {
-      assert.equal(version, '4.1.1');
-      done();
-    });
+  await t.test('resolves when given a string argument', async () => {
+    const actualVersion = await releasePost.explicitVersion('4.1.1');
+    assert.equal(actualVersion, '4.1.1');
   });
 
-  await t.test('rejects when given an falsy argument', (_, done) => {
-    releasePost.explicitVersion().then(null, (err) => {
+  await t.test('rejects when given an falsy argument', async () => {
+    try {
+      await releasePost.explicitVersion();
+    } catch (err) {
       assert.equal(err.constructor, Error);
       assert.equal(err.message, 'Invalid "version" argument');
-      done();
-    });
+    }
   });
 });
 
@@ -45,39 +44,34 @@ test('verifyDownloads(<version>)', async (t) => {
 
   await t.test(
     'resolves to "<binary title>: url" when HEAD request succeed',
-    (_, done) => {
+    async () => {
       const nodejsorg = nock('https://direct.nodejs.org')
         .head('/dist/v4.1.1/node-v4.1.1.tar.gz')
         .reply(200, 'OK');
 
-      releasePost.verifyDownloads('4.1.1').then((results) => {
-        const sourceDownload = results[0];
+      const results = await releasePost.verifyDownloads('4.1.1');
+      const sourceDownload = results[0];
 
-        assert.equal(
-          sourceDownload,
-          'Source Code: https://nodejs.org/dist/v4.1.1/node-v4.1.1.tar.gz'
-        );
-        assert.ok(nodejsorg.isDone(), 'nodejs.org was requested');
-
-        done();
-      });
+      assert.equal(
+        sourceDownload,
+        'Source Code: https://nodejs.org/dist/v4.1.1/node-v4.1.1.tar.gz'
+      );
+      assert.ok(nodejsorg.isDone(), 'nodejs.org was requested');
     }
   );
 
   await t.test(
     'resolves to "<binary title>: *Coming soon*" when HEAD request fails',
-    (_, done) => {
+    async () => {
       const nodejsorg = nock('https://direct.nodejs.org')
         .head('/dist/v4.1.1/node-v4.1.1-linux-armv6l.tar.gz')
         .reply(404, 'Not found');
 
-      releasePost.verifyDownloads('4.1.1').then((results) => {
-        const armDownload = results[1];
+      const results = await releasePost.verifyDownloads('4.1.1');
+      const armDownload = results[1];
 
-        assert.equal(armDownload, 'ARMv6 32-bit Binary: *Coming soon*');
-        assert.ok(nodejsorg.isDone(), 'nodejs.org was requested');
-        done();
-      });
+      assert.equal(armDownload, 'ARMv6 32-bit Binary: *Coming soon*');
+      assert.ok(nodejsorg.isDone(), 'nodejs.org was requested');
     }
   );
 });
@@ -87,31 +81,27 @@ test('fetchShasums(<version>)', async (t) => {
 
   await t.test(
     'resolves with content from response when succeeded',
-    (_, done) => {
+    async () => {
       const nodejsorg = nock('https://nodejs.org')
         .get('/dist/v4.1.1/SHASUMS256.txt.asc')
         .reply(200, 'LIST OF SHASUMS HERE');
 
-      releasePost.fetchShasums('4.1.1').then((result) => {
-        assert.equal(result, 'LIST OF SHASUMS HERE');
-        assert.ok(nodejsorg.isDone());
-        done();
-      });
+      const result = await releasePost.fetchShasums('4.1.1');
+      assert.equal(result, 'LIST OF SHASUMS HERE');
+      assert.ok(nodejsorg.isDone());
     }
   );
 
   await t.test(
     'rejects with [INSERT SHASUMS HERE] when response fails',
-    (_, done) => {
+    async () => {
       const nodejsorg = nock('https://nodejs.org')
         .get('/dist/v4.1.1/SHASUMS256.txt.asc')
         .reply(404, 'Not found');
 
-      releasePost.fetchShasums('4.1.1').then((result) => {
-        assert.equal(result, '[INSERT SHASUMS HERE]');
-        assert.ok(nodejsorg.isDone());
-        done();
-      });
+      const result = await releasePost.fetchShasums('4.1.1');
+      assert.equal(result, '[INSERT SHASUMS HERE]');
+      assert.ok(nodejsorg.isDone());
     }
   );
 });
@@ -127,51 +117,49 @@ test('fetchChangelog(<version>)', async (t) => {
 
   await t.test(
     'resolves with section of changelog related to specified version',
-    (_, done) => {
+    async () => {
       const github = nock('https://raw.githubusercontent.com')
         .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V4.md')
         .replyWithFile(200, changelogFixture);
 
-      releasePost.fetchChangelog('4.1.1').then((changelog) => {
-        assert.ok(changelog.charAt(changelog.length - 1) !== '\n');
-        assert.ok(changelog.charAt(0) !== '\n');
-        assert.ok(changelog.includes('Fixed a bug introduced in v4.1.0'));
-        assert.ok(github.isDone());
-        done();
-      });
+      const changelog = await releasePost.fetchChangelog('4.1.1');
+      assert.ok(changelog.charAt(changelog.length - 1) !== '\n');
+      assert.ok(changelog.charAt(0) !== '\n');
+      assert.ok(changelog.includes('Fixed a bug introduced in v4.1.0'));
+      assert.ok(github.isDone());
     }
   );
 
   await t.test(
     'can fetch changelog of legacy versions of Node.js',
-    (_, done) => {
+    async () => {
       const github = nock('https://raw.githubusercontent.com')
         .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V012.md')
         .replyWithFile(200, changelogLegacyFixture);
 
-      releasePost.fetchChangelog('0.12.9').then((changelog) => {
-        assert.ok(changelog.includes('Security Update'));
-        assert.ok(github.isDone());
-        done();
-      });
+      const changelog = await releasePost.fetchChangelog('0.12.9');
+      assert.ok(changelog.includes('Security Update'));
+      assert.ok(github.isDone());
     }
   );
 
   await t.test(
     'rejects when a matching version section could not be found in changelog',
-    (_, done) => {
+    async () => {
       const github = nock('https://raw.githubusercontent.com')
         .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V012.md')
         .reply(200, changelogLegacyFixture);
 
-      releasePost.fetchChangelog('0.12.1000').then(t.fail, (err) => {
+      try {
+        await releasePost.fetchChangelog('0.12.1000');
+      } catch (err) {
+        assert.equal(err.constructor, Error);
         assert.equal(
           err.message,
           "Couldn't find matching changelog for 0.12.1000"
         );
         assert.ok(github.isDone());
-        done();
-      });
+      }
     }
   );
 });
@@ -181,22 +169,20 @@ test('fetchChangelogBody(<version>)', async (t) => {
 
   await t.test(
     'does not include `## header` in matched version section',
-    (_, done) => {
+    async () => {
       const changelogFixture = path.resolve(__dirname, 'CHANGELOG.fixture.md');
 
       const github = nock('https://raw.githubusercontent.com')
         .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V4.md')
         .replyWithFile(200, changelogFixture);
 
-      releasePost.fetchChangelogBody('4.1.0').then((body) => {
-        assert.ok(body.startsWith('### Notable changes'));
-        assert.ok(github.isDone(), 'githubusercontent.com was requested');
-        done();
-      }, t.fail);
+      const body = await releasePost.fetchChangelogBody('4.1.0');
+      assert.ok(body.startsWith('### Notable changes'));
+      assert.ok(github.isDone(), 'githubusercontent.com was requested');
     }
   );
 
-  await t.test('does not include "```console', (_, done) => {
+  await t.test('does not include "```console', async () => {
     const changelogFixture = path.resolve(
       __dirname,
       'CHANGELOG.fixture.withconsole.md'
@@ -206,14 +192,12 @@ test('fetchChangelogBody(<version>)', async (t) => {
       .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V15.md')
       .replyWithFile(200, changelogFixture);
 
-    releasePost.fetchChangelogBody('15.1.0').then((body) => {
-      assert.ok(!body.includes('```console'));
-      assert.ok(
-        githubWithConsole.isDone(),
-        'githubusercontent.com was requested'
-      );
-      done();
-    });
+    const body = await releasePost.fetchChangelogBody('15.1.0');
+    assert.ok(!body.includes('```console'));
+    assert.ok(
+      githubWithConsole.isDone(),
+      'githubusercontent.com was requested'
+    );
   });
 });
 
@@ -226,40 +210,34 @@ test('fetchVersionPolicy(<version>)', async (t) => {
     'CHANGELOG.fixture.legacy.md'
   );
 
-  await t.test('finds "Current" version policy', (_, done) => {
+  await t.test('finds "Current" version policy', async () => {
     const github = nock('https://raw.githubusercontent.com')
       .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V4.md')
       .replyWithFile(200, changelogFixture);
 
-    releasePost.fetchVersionPolicy('4.1.0').then((policy) => {
-      assert.equal(policy, 'Stable');
-      assert.ok(github.isDone(), 'githubusercontent.com was requested');
-      done();
-    }, t.fail);
+    const policy = await releasePost.fetchVersionPolicy('4.1.0');
+    assert.equal(policy, 'Stable');
+    assert.ok(github.isDone(), 'githubusercontent.com was requested');
   });
 
-  await t.test('finds "LTS" version policy', (_, done) => {
+  await t.test('finds "LTS" version policy', async () => {
     const github = nock('https://raw.githubusercontent.com')
       .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V4.md')
       .replyWithFile(200, changelogFixture);
 
-    releasePost.fetchVersionPolicy('4.2.0').then((policy) => {
-      assert.equal(policy, 'LTS');
-      assert.ok(github.isDone(), 'githubusercontent.com was requested');
-      done();
-    });
+    const policy = await releasePost.fetchVersionPolicy('4.2.0');
+    assert.equal(policy, 'LTS');
+    assert.ok(github.isDone(), 'githubusercontent.com was requested');
   });
 
-  await t.test('finds "LTS" version policy in legacy changelogs', (_, done) => {
+  await t.test('finds "LTS" version policy in legacy changelogs', async () => {
     const github = nock('https://raw.githubusercontent.com')
       .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V012.md')
       .replyWithFile(200, changelogLegacyFixture);
 
-    releasePost.fetchVersionPolicy('0.12.9').then((policy) => {
-      assert.equal(policy, 'LTS');
-      assert.ok(github.isDone(), 'githubusercontent.com was requested');
-      done();
-    });
+    const policy = await releasePost.fetchVersionPolicy('0.12.9');
+    assert.equal(policy, 'LTS');
+    assert.ok(github.isDone(), 'githubusercontent.com was requested');
   });
 });
 
@@ -270,7 +248,7 @@ test('fetchAuthor(<version>)', async (t) => {
 
   await t.test(
     'resolves with full name of release author via github.com',
-    (_, done) => {
+    async () => {
       const github = nock('https://raw.githubusercontent.com')
         .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V4.md')
         .replyWithFile(200, changelogFixture);
@@ -282,27 +260,26 @@ test('fetchAuthor(<version>)', async (t) => {
           name: 'Rod Vagg'
         });
 
-      releasePost.fetchAuthor('4.1.1').then((author) => {
-        assert.equal(author, 'Rod Vagg');
-        assert.ok(github.isDone(), 'githubusercontent.com was requested');
-        assert.ok(api.isDone(), 'api.github.com was requested');
-        done();
-      });
+      const author = await releasePost.fetchAuthor('4.1.1');
+      assert.equal(author, 'Rod Vagg');
+      assert.ok(github.isDone(), 'githubusercontent.com was requested');
+      assert.ok(api.isDone(), 'api.github.com was requested');
     }
   );
 
   await t.test(
     'rejects when a matching version section could not be found in changelog',
-    (_, done) => {
+    async () => {
       const github = nock('https://raw.githubusercontent.com')
         .get('/nodejs/node/main/doc/changelogs/CHANGELOG_V4.md')
         .reply(200, 'A changelog without version sections...');
 
-      releasePost.fetchAuthor('4.1.1').then(null, (err) => {
+      try {
+        await releasePost.fetchAuthor('4.1.1');
+      } catch (err) {
         assert.equal(err.message, "Couldn't find matching changelog for 4.1.1");
         assert.ok(github.isDone(), 'githubusercontent.com was requested');
-        done();
-      });
+      }
     }
   );
 });
@@ -310,15 +287,13 @@ test('fetchAuthor(<version>)', async (t) => {
 test('findLatestVersion<version>', async (t) => {
   const releasePost = require('../../scripts/release-post');
 
-  await t.test('fetches the latest version from nodejs.org', (_, done) => {
+  await t.test('fetches the latest version from nodejs.org', async () => {
     nock('https://nodejs.org')
       .get('/dist/index.json')
       .reply(200, [{ version: 'v4.1.1' }, { version: 'v4.1.0' }]);
 
-    releasePost.findLatestVersion().then((version) => {
-      assert.equal(version, '4.1.1');
-      done();
-    });
+    const version = await releasePost.findLatestVersion();
+    assert.equal(version, '4.1.1');
   });
 });
 
@@ -337,34 +312,33 @@ test('writeToFile<object>', async (t) => {
     content: 'Lets pretend this is a changelog'
   };
 
-  await t.test('rejects when blog post already exists', (_, done) => {
+  await t.test('rejects when blog post already exists', async () => {
     fileExists = true;
 
-    releasePost.writeToFile(results).then(t.fail, (err) => {
+    try {
+      await releasePost.writeToFile(results);
+    } catch (err) {
       assert.equal(err.message, 'Release post for 4.1.1 already exists!');
-      done();
-    });
+    }
   });
 
   await t.test(
     'writes content to locale/en/blog/release/v<VERSION>.md',
-    (_, done) => {
+    async () => {
       fileExists = false;
 
-      releasePost.writeToFile(results).then((filepath) => {
-        const expectedPath = path.resolve(
-          __dirname,
-          '..',
-          '..',
-          'locale',
-          'en',
-          'blog',
-          'release',
-          `v${results.version}.md`
-        );
-        assert.equal(filepath, expectedPath);
-        done();
-      });
+      const filepath = await releasePost.writeToFile(results);
+      const expectedPath = path.resolve(
+        __dirname,
+        '..',
+        '..',
+        'locale',
+        'en',
+        'blog',
+        'release',
+        `v${results.version}.md`
+      );
+      assert.equal(filepath, expectedPath);
     }
   );
 });
