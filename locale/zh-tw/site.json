@@ -39,10 +39,6 @@
     "governance": {
       "link": "about/governance",
       "text": "管理規則"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "發佈版"
     }
   },
   "download": {

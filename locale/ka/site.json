@@ -41,10 +41,6 @@
     "governance": {
       "link": "about/governance",
       "text": "მმართველობა"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "ვერსიები"
     }
   },
   "download": {

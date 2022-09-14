@@ -39,10 +39,6 @@
     "governance": {
       "link": "about/governance",
       "text": "委員会"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "リリース"
     }
   },
   "download": {

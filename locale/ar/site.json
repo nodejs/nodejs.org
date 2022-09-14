@@ -41,10 +41,6 @@
     "governance": {
       "link": "about/governance",
       "text": "الحوكمة"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "الاصدارات"
     }
   },
   "download": {
