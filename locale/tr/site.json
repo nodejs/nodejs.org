@@ -38,10 +38,6 @@
     "governance": {
       "link": "about/governance",
       "text": "Yönetim"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "Sürümler"
     }
   },
   "download": {
