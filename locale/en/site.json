@@ -139,11 +139,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2022-07-29T16:00:00.000Z",
-      "endDate": "2022-08-11T16:00:00.000Z",
-      "text": null,
-      "html": "<img alt='Grace Hopper Celebration' src='https://nodejs.org/static/images/ghc-banner.png' />",
-      "link": "https://anitab-org.github.io/open-source-day/open-source-day/"
+      "startDate": "2021-09-15T16:00:00.000Z",
+      "endDate": "2021-09-22T16:00:00.000Z",
+      "text": "New security releases to be made available September 22nd, 2022",
+      "link": "blog/vulnerability/september-2022-security-releases/"
     },
     "blacklivesmatter": {
       "visible": false,
