@@ -1,18 +1,18 @@
 ---
 layout: index.hbs
 labels:
-current-version: Current Version
+current-version: Huidige Versie
 download: Download
-download-for: Download for
-other-downloads: Other Downloads
-current: Current
+download-for: Download voor
+other-downloads: Andere Downloads
+current: Huidig
 lts: LTS
-tagline-current: Latest Features
-tagline-lts: Recommended For Most Users
+tagline-current: Laatste Features
+tagline-lts: Aanbevolen Voor Meeste Gebruikers
 changelog: Changelog
-api: API Docs
-version-schedule-prompt: Or have a look at the
+api: API Documentatie
+version-schedule-prompt: Of bekijk de
 version-schedule-prompt-link-text: Long Term Support (LTS) schedule
 ---
 
-Node.js® is a JavaScript runtime built on [Chrome's V8 JavaScript engine](https://v8.dev/).
+Node.js® is een JavaScript runtime gebouwd op [Chrome's V8 JavaScript engine](https://v8.dev/).
