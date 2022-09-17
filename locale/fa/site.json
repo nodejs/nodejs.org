@@ -38,10 +38,6 @@
     "governance": {
       "link": "about/governance",
       "text": "مدیریت"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "انتشارها"
     }
   },
   "download": {
