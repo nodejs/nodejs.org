@@ -41,6 +41,10 @@
     "governance": {
       "link": "about/governance",
       "text": "管理规则"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "发布"
     }
   },
   "download": {
