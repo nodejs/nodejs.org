@@ -37,6 +37,10 @@
     "governance": {
       "link": "about/governance",
       "text": "Governança do Projeto"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "Versões"
     }
   },
   "download": {

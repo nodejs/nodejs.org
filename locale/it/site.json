@@ -37,6 +37,10 @@
     "governance": {
       "link": "about/governance",
       "text": "Gestione"
+    },
+    "releases": {
+      "link": "about/releases",
+      "text": "Rilasci"
     }
   },
   "download": {
