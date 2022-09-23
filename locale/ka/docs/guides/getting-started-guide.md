@@ -29,4 +29,4 @@ server.listen(port, hostname, () => {
 მისამართი `http://localhost:3000` და თქვენ იხილავთ შეტყობინებას „Hello World“.
 
 Node.js-ის საწყისებთან დაკავშირებით მეტად ამომწურავი ინფორმაციისათვის იხილეთ
-შემდეგი გზამკვლევი: [შესავალი Node.js-ში](https://nodejs.dev/learn).
+შემდეგი გზამკვლევი: [შესავალი Node.js-ში](https://nodejs.dev/en/learn/).
