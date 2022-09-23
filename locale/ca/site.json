@@ -37,30 +37,6 @@
     "governance": {
       "link": "about/governance",
       "text": "Govern"
-    },
-    "community": {
-      "link": "about/community",
-      "text": "Comunitat"
-    },
-    "workinggroups": {
-      "link": "about/working-groups",
-      "text": "Grups de Treball"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "Versions"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "Recursos"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "Marca"
-    },
-    "privacy": {
-      "link": "about/privacy",
-      "text": "Política de Privacitat"
     }
   },
   "download": {

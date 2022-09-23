@@ -37,26 +37,6 @@
     "governance": {
       "link": "about/governance",
       "text": "Goberno"
-    },
-    "workinggroups": {
-      "link": "about/working-groups",
-      "text": "Grupos de traballo"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "Versións"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "Recursos"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "Marca"
-    },
-    "privacy": {
-      "link": "about/privacy",
-      "text": "Política de Privacidade"
     }
   },
   "download": {

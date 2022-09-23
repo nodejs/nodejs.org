@@ -41,30 +41,6 @@
     "governance": {
       "link": "about/governance",
       "text": "Governance"
-    },
-    "community": {
-      "link": "about/community",
-      "text": "Community"
-    },
-    "workinggroups": {
-      "link": "about/working-groups",
-      "text": "Working Groups"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "Releases"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "Resources"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "Trademark"
-    },
-    "privacy": {
-      "link": "about/privacy",
-      "text": "Privacy Policy"
     }
   },
   "download": {
@@ -159,11 +135,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2022-07-29T16:00:00.000Z",
-      "endDate": "2022-08-11T16:00:00.000Z",
-      "text": null,
-      "html": "<img alt='Grace Hopper Celebration' src='https://nodejs.org/static/images/ghc-banner.png' />",
-      "link": "https://anitab-org.github.io/open-source-day/open-source-day/"
+      "startDate": "2022-09-15T16:00:00.000Z",
+      "endDate": "2022-09-23T23:00:00.000Z",
+      "text": "New security releases to be made available September 23rd, 2022",
+      "link": "https://nodejs.org/en/blog/vulnerability/september-2022-security-releases/"
     },
     "blacklivesmatter": {
       "visible": false,
