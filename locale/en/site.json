@@ -136,8 +136,8 @@
   "banners": {
     "index": {
       "startDate": "2022-09-15T16:00:00.000Z",
-      "endDate": "2022-09-23T23:00:00.000Z",
-      "text": "New security releases to be made available September 23rd, 2022",
+      "endDate": "2022-09-30T23:00:00.000Z",
+      "text": "New security releases now available for 18.x, 16.x, and 14.x release lines",
       "link": "https://nodejs.org/en/blog/vulnerability/september-2022-security-releases/"
     },
     "blacklivesmatter": {
