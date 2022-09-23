@@ -136,7 +136,7 @@
   "banners": {
     "index": {
       "startDate": "2022-09-15T16:00:00.000Z",
-      "endDate": "2022-09-22T16:00:00.000Z",
+      "endDate": "2022-09-23T23:00:00.000Z",
       "text": "New security releases to be made available September 23rd, 2022",
       "link": "https://nodejs.org/en/blog/vulnerability/september-2022-security-releases/"
     },
