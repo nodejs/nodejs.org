@@ -50,8 +50,9 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Running on http://${HOST}:${PORT}`);
+});
 ```
 
 在稍后的步骤中我们将看一下借助使用官方的 Docker 镜像，你如何在 Docker 镜像中运行这个应用。首先，你需要一个构建一个应用程序的 Docker 应用。

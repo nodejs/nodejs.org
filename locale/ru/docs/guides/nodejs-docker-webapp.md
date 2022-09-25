@@ -61,8 +61,9 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-app.listen(port, host);
-console.log(`running on http://${host}:${port}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Running on http://${HOST}:${PORT}`);
+});
 ```
 
 Далее мы рассмотрим, как можно запускать это приложение внутри Docker-контейнера,
