@@ -8,4 +8,4 @@ modules: "<code>NODE_MODULE_VERSION</code> refers to the ABI (application binary
 Releases van 1.x tot en met 3.x werden "io.js" genoemd, omdat ze deel uitmaakten van de io.js-fork.
 Vanaf Node.js 4.0.0 zijn de vormalige releases van io.js geconvergeerd met Node.js 0.12.x in uniforme Node.js-releases.
 
-### Op zoek naar de laatste release van een versie branch?
+### Op zoek naar de laatste release van een version branch?
