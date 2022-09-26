@@ -20,7 +20,7 @@ downloads:
   LinuxBinaries: Linux Binaries
   SourceCode: Source Code
 additional:
-  headline: Aanvullende Platforms
+  headline: Aanvullende Platformen
   intro: >
     Leden van de Node.js-community onderhouden onofficiële builds van Node.js voor aanvullende platformen. Houd er rekening mee dat deze builds niet worden ondersteund doot het Node.js-kernteam en mogelijk niet op hetzelfde buildniveau zijn als de huidige Node.js-release.
   platform: Platform
