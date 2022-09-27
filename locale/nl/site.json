@@ -1,22 +1,22 @@
 {
   "title": "Node.js",
-  "editOnGithub":"Edit On GitHub",
+  "editOnGithub":"Bewerk Op GitHub",
   "author": "Node.js",
-  "url": "https://nodejs.org/en/",
-  "locale": "en",
-  "language": "English",
-  "languageEnglishVersion": "English",
-  "scrollToTop": "Scroll to top",
-  "reportNodeIssue": "Report Node.js issue",
-  "reportWebsiteIssue": "Report website issue",
-  "getHelpIssue": "Get Help",
-  "Contributing": "Contributing For Nodejs.org",
-  "by": "by",
-  "all-downloads": "All download options",
+  "url": "https://nodejs.org/nl/",
+  "locale": "nl",
+  "language": "Nederlands",
+  "languageEnglishVersion": "Dutch",
+  "scrollToTop": "Scroll naar boven",
+  "reportNodeIssue": "Node.js probleem melden",
+  "reportWebsiteIssue": "Website probleem melden",
+  "getHelpIssue": "Hulp",
+  "Contributing": "Bijdragen Aan Nodejs.org",
+  "by": "door",
+  "all-downloads": "Alle download opties",
   "nightly": "Nightly builds",
-  "unofficial-builds": "Unofficial builds",
-  "previous": "Previous",
-  "next": "Next",
+  "unofficial-builds": "Onofficiële builds",
+  "previous": "Vorige",
+  "next": "Volgende",
   "toggleText":"Toggle dark/light mode",
   "feeds": [
     {
@@ -25,11 +25,11 @@
     },
     {
       "link": "feed/releases.xml",
-      "text": "Node.js Blog: Releases"
+      "text": "Node.js Blog: Versies"
     },
     {
       "link": "feed/vulnerability.xml",
-      "text": "Node.js Blog: Vulnerability Reports"
+      "text": "Node.js Blog: kwetsbaarheidsrapporten"
     }
   ],
   "home": {
@@ -37,10 +37,10 @@
   },
   "about": {
     "link": "about",
-    "text": "About",
+    "text": "Over Node.js",
     "governance": {
       "link": "about/governance",
-      "text": "Governance"
+      "text": "Bestuur"
     }
   },
   "download": {
@@ -48,31 +48,31 @@
     "text": "Downloads",
     "releases": {
       "link": "download/releases",
-      "text": "Previous Releases"
+      "text": "Vorige Versies"
     },
     "package-manager": {
       "link": "download/package-manager",
-      "text": "Installing Node.js via package manager"
+      "text": "Installeer Node.js via package manager"
     },
     "shasums": {
       "link": "SHASUMS256.txt.asc",
-      "text": "Signed SHASUMS for release files",
+      "text": "Ondertekende SHASUMS voor release bestanden",
       "verify-link": "https://github.com/nodejs/node#verifying-binaries",
-      "verify-text": "How to verify"
+      "verify-text": "Hoe verifiëren?"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive"
+      "text": "Installeer Node.js via binary archive"
     },
     "install-on-wsl": {
-      "text": "Install on Windows Subsystem for Linux (WSL)"
+      "text": "Installeer op Windows Subsystem voor Linux (WSL)"
     }
   },
   "docs": {
     "link": "docs",
-    "text": "Docs",
+    "text": "Documentatie",
     "es6": {
       "link": "docs/es6",
-      "text": "ES6 and beyond"
+      "text": "ES6 en meer"
     },
     "api-lts": {
       "link": "https://nodejs.org/dist/latest-%ver-major%/docs/api/",
@@ -85,7 +85,7 @@
     },
     "guides": {
       "link": "docs/guides",
-      "text": "Guides"
+      "text": "Handleidingen"
     },
     "dependencies": {
       "link": "docs/meta/topics/dependencies",
@@ -94,7 +94,7 @@
   },
   "getinvolved": {
     "link": "get-involved",
-    "text": "Get Involved",
+    "text": "Raak Betrokken",
     "code-and-learn": {
       "link": "get-involved/code-and-learn",
       "text": "Code + Learn"
@@ -105,7 +105,7 @@
     },
     "contribute": {
       "link": "get-involved/contribute",
-      "text": "Contribute"
+      "text": "Bijdragen"
     },
     "conduct": {
       "link": "https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md",
@@ -118,14 +118,14 @@
   },
   "getcertified": {
     "link": "https://openjsf.org/certification",
-    "text": "Certification"
+    "text": "Certificering"
   },
   "blog": {
     "link": "blog",
-    "text": "News"
+    "text": "Nieuws"
   },
   "releases": {
-    "title": "Release History",
+    "title": "Release Geschiedenis",
     "downloads": "Downloads"
   },
   "links": {
@@ -135,10 +135,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2022-09-15T16:00:00.000Z",
-      "endDate": "2022-09-30T23:00:00.000Z",
-      "text": "New security releases now available for 18.x, 16.x, and 14.x release lines",
-      "link": "https://nodejs.org/en/blog/vulnerability/september-2022-security-releases/"
+      "startDate": "2021-09-15T16:00:00.000Z",
+      "endDate": "2021-09-22T16:00:00.000Z",
+      "text": "Nieuwe security releases beschikbaar op 22 september 2022",
+      "link": "blog/vulnerability/september-2022-security-releases/"
     },
     "blacklivesmatter": {
       "visible": false,

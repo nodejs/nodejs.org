@@ -37,10 +37,6 @@
     "governance": {
       "link": "about/governance",
       "text": "Govern"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "Versions"
     }
   },
   "download": {

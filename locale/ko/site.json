@@ -38,10 +38,6 @@
     "governance": {
       "link": "about/governance",
       "text": "거버넌스"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "릴리스"
     }
   },
   "download": {

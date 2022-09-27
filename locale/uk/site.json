@@ -37,10 +37,6 @@
     "governance": {
       "link": "about/governance",
       "text": "Управління"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "Релізи"
     }
   },
   "download": {
