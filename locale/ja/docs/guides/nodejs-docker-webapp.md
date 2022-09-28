@@ -83,8 +83,9 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Running on http://${HOST}:${PORT}`);
+});
 ```
 
 In the next steps, we'll look at how you can run this app inside a Docker
@@ -135,8 +136,9 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Running on http://${HOST}:${PORT}`);
+});
 ```
 
 次のステップでは、公式の Docker イメージを使用して
