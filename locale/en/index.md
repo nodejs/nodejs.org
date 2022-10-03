@@ -15,4 +15,4 @@ labels:
   version-schedule-prompt-link-text: Long Term Support (LTS) schedule
 ---
 
-Node.js® is a JavaScript runtime built on [Chrome's V8 JavaScript engine](https://v8.dev/).
+Node.js® is an open-source, cross-platform JavaScript runtime environment.
