@@ -11,8 +11,8 @@ labels:
   tagline-lts: Recommended For Most Users
   changelog: Changelog
   api: API Docs
-  version-schedule-prompt: Or have a look at the
-  version-schedule-prompt-link-text: Long Term Support (LTS) schedule
+  version-schedule-prompt: For information about supported releases, see the
+  version-schedule-prompt-link-text: release schedule
 ---
 
 Node.js® is an open-source, cross-platform JavaScript runtime environment.
