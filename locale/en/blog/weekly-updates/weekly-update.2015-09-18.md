@@ -13,7 +13,7 @@ Node.js v4.1.1 is released
 
 ### Node.js v4.1.1 Releases
 
-This week we have one release: [Node.js v4.1.1](https://nodejs.org/dist/v4.1.1/), complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+This week we have one release: [Node.js v4.1.1](https://nodejs.org/dist/v4.1.1/), complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Node.js v4.1.1 Notable changes
 

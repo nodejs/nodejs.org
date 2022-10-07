@@ -10,7 +10,7 @@ layout: blog-post.hbs
 
 ### Node v6.3.0 (Current) Release
 
-* [Node v6.3.0 (Current)](https://nodejs.org/en/blog/release/v6.3.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+* [Node v6.3.0 (Current)](https://nodejs.org/en/blog/release/v6.3.0/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Node.js Foundation Announces Keynotes and Programming for Node.js Interactive Europe
 

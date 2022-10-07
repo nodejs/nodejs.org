@@ -58,8 +58,24 @@
   const themeAttr = 'data-theme';
   var darkThemeSwitcherElement = document.querySelector('.dark-theme-switcher');
 
+  let preferredColorScheme = window.matchMedia('(prefers-color-scheme: dark)')
+    .matches
+    ? 'dark'
+    : 'light';
+
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', function (event) {
+      if (!getTheme()) {
+        preferredColorScheme = event.matches ? 'dark' : 'light';
+        document
+          .querySelector('html')
+          .setAttribute(themeAttr, preferredColorScheme);
+      }
+    });
+
   darkThemeSwitcherElement.addEventListener('click', function () {
-    var currentTheme = getTheme();
+    var currentTheme = getTheme() ?? preferredColorScheme;
     if (currentTheme === 'light') {
       setTheme('dark');
     } else if (currentTheme === 'dark') {
@@ -113,12 +129,6 @@
     for (var i = 0; i < linkEls.length; i++) {
       version = linkEls[i].getAttribute('data-version');
       el = linkEls[i];
-
-      // Windows 64-bit files for 0.x.x need to be prefixed with 'x64/'
-      if (os === 'Win' && version[1] === '0' && arch === 'x64') {
-        el.href += arch + '/';
-      }
-
       el.href += filename.replace('%version%', version);
     }
   }
@@ -155,6 +165,10 @@
 
   var editOnGitHubElement = document.getElementById('editOnGitHubLink');
   var editOnGitHubUrlElement = document.getElementById('editOnGitHubUrl');
+
+  if (!editOnGitHubElement) {
+    return;
+  }
 
   if (editOnGitHubUrlElement) {
     editOnGitHubElement.setAttribute('href', editOnGitHubUrlElement.value);

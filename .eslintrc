@@ -1,7 +1,7 @@
 {
   "extends": [
     "eslint:recommended",
-    "semistandard",
+    "standard",
     "prettier"
   ],
   "plugins": [
@@ -24,8 +24,13 @@
       "files": [
         "**/*.md/*.js"
       ],
+      "parserOptions": {
+        "ecmaVersion": "latest"
+      },
       "rules": {
         "eqeqeq": "off",
+        "n/no-deprecated-api": "off",
+        "n/handle-callback-err": "off",
         "no-const-assign": "off",
         "no-undef": "off",
         "no-unused-expressions": "off",
@@ -39,7 +44,8 @@
             "singleQuote": true,
             "trailingComma": "none"
           }
-        ]
+        ],
+        "semi": ["error", "always"]
       }
     }
   ]

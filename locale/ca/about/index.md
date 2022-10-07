@@ -63,6 +63,6 @@ compartir sockets entre processos per activar el balanceig de càrregues en els 
 [Blocking vs Non-Blocking]: https://nodejs.org/ca/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[bucle d'esdeveniments]: https://github.com/nodejs/node/blob/master/doc/topics/event-loop-timers-and-nexttick.md
+[bucle d'esdeveniments]: https://github.com/nodejs/node/blob/main/doc/topics/event-loop-timers-and-nexttick.md
 [Event Machine]: https://github.com/eventmachine/eventmachine
 [Twisted]: https://twistedmatrix.com/trac/

@@ -13,7 +13,7 @@ io.js v2.5.0 and our call for an LTS build V8 maintainer.
 
 ### io.js 2.5 Release
 
-This week we have released io.js [v2.5.0](https://iojs.org/dist/v2.5.0/). The complete changelog for this version and previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+This week we have released io.js [v2.5.0](https://iojs.org/dist/v2.5.0/). The complete changelog for this version and previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Notable changes
 

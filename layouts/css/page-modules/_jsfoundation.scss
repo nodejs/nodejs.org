@@ -1,16 +1,24 @@
 .openjsfoundation-footer {
   padding: 1em 20px;
-  font-size: 14px;
+  font-size: small;
   color: $white;
   background: $node-gray;
   direction: ltr;
-  width: 60%;
+  text-align: center;
   float: left;
 
   p + p {
-    margin-top: 0;
-    margin-bottom: .25em;
+    font-size: 15px;
   }
+}
+
+.openjsfoundation-footer-edit {
+  display: inline;
+  font-size: 15px;
+}
+
+.openjsfoundation-footer-links {
+  display: inline;
 }
 
 .issue-link-container {
@@ -61,5 +69,17 @@
     text-align: start;
     margin: 1em 0 0;
     min-width: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .openjsfoundation-footer {
+    padding: 3em 20px;
+    width: auto;
+  }
+
+  .help {
+    width: auto;
+    margin-left: auto;
   }
 }

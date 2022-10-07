@@ -444,19 +444,18 @@ the event loop to proceed, it must hit the **poll** phase, which means
 there is a non-zero chance that a connection could have been received
 allowing the connection event to be fired before the listening event.
 
-Another example is running a function constructor that was to, say,
-inherit from `EventEmitter` and it wanted to call an event within the
-constructor:
+Another example is inheriting from `EventEmitter` and emitting an
+event from within the constructor:
 
 ```js
 const EventEmitter = require('events');
-const util = require('util');
 
-function MyEmitter() {
-  EventEmitter.call(this);
-  this.emit('event');
+class MyEmitter extends EventEmitter {
+  constructor() {
+    super();
+    this.emit('event');
+  }
 }
-util.inherits(MyEmitter, EventEmitter);
 
 const myEmitter = new MyEmitter();
 myEmitter.on('event', () => {
@@ -472,17 +471,17 @@ after the constructor has finished, which provides the expected results:
 
 ```js
 const EventEmitter = require('events');
-const util = require('util');
 
-function MyEmitter() {
-  EventEmitter.call(this);
+class MyEmitter extends EventEmitter {
+  constructor() {
+    super();
 
-  // use nextTick to emit the event once a handler is assigned
-  process.nextTick(() => {
-    this.emit('event');
-  });
+    // use nextTick to emit the event once a handler is assigned
+    process.nextTick(() => {
+      this.emit('event');
+    });
+  }
 }
-util.inherits(MyEmitter, EventEmitter);
 
 const myEmitter = new MyEmitter();
 myEmitter.on('event', () => {

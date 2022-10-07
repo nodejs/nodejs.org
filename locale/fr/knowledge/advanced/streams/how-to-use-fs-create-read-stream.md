@@ -1,5 +1,5 @@
 ---
-title: How to use fs.createReadStream?
+title: Comment utilsier fs.createReadStream ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - core
@@ -9,26 +9,26 @@ difficulty: 3
 layout: knowledge-post.hbs
 ---
 
-The function `fs.createReadStream()` allows you to open up a readable stream in a very simple manner. All you have to do is pass the path of the file to start streaming in. It turns out that the response (as well as the request) objects are streams. So we will use this fact to create a http server that streams the files to the client. Since the code is simple enough, it is pretty easy just to read through it and comment why each line is necessary.
+La fonction `fs.createReadStream()` vous permet d'ouvrir un flux lisible d'une manière très simple. Tout ce que vous avez à faire, c'est de passer le chemin du fichier à lire en continu. Il s'avère que les objets réponse (ainsi que les objets requête) sont des flux. Nous allons donc utiliser ce fait pour créer un serveur http qui transmet les fichiers en continu au client. Comme le code est assez simple, il est assez facile de le lire et de commenter pourquoi chaque ligne est nécessaire.
 
 ```javascript
 var http = require('http');
 var fs = require('fs');
 
 http.createServer(function(req, res) {
-  // The filename is simple the local directory and tacks on the requested url
+  // Le nom du fichier est un simple répertoire local et ajoute l'url demandée.
   var filename = __dirname+req.url;
 
-  // This line opens the file as a readable stream
+  // Cette ligne ouvre le fichier en tant que flux lisible.
   var readStream = fs.createReadStream(filename);
 
-  // This will wait until we know the readable stream is actually valid before piping
+  // Ceci attendra que nous sachions que le flux lisible est réellement valide avant de le transmettre.
   readStream.on('open', function () {
-    // This just pipes the read stream to the response object (which goes to the client)
+    // Cela permet simplement de transmettre le flux de lecture à l'objet de réponse (qui est envoyé au client).
     readStream.pipe(res);
   });
 
-  // This catches any errors that happen while creating the readable stream (usually invalid names)
+  // Cela permet de détecter toute erreur survenue lors de la création du flux lisible (généralement des noms invalides).
   readStream.on('error', function(err) {
     res.end(err);
   });

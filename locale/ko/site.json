@@ -38,30 +38,6 @@
     "governance": {
       "link": "about/governance",
       "text": "거버넌스"
-    },
-    "community": {
-      "link": "about/community",
-      "text": "커뮤니티"
-    },
-    "workinggroups": {
-      "link": "about/working-groups",
-      "text": "워킹 그룹"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "릴리스"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "관련 자료"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "트레이드마크"
-    },
-    "privacy": {
-      "link": "about/privacy",
-      "text": "개인정보 보호정책"
     }
   },
   "download": {
@@ -126,12 +102,8 @@
       "text": "기여하기"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
+      "link": "https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md",
       "text": "행동강령"
-    },
-    "node-meetups": {
-      "link": "get-involved/node-meetups",
-      "text": "Node.js 미트업"
     }
   },
   "security": {

@@ -1,5 +1,5 @@
 ---
-title: What is require?
+title: Qu'est-ce qui est nécessaire ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - npm
@@ -10,7 +10,7 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-Node.js follows the CommonJS module system, and the builtin `require` function is the easiest way to include modules that exist in separate files. The basic functionality of `require` is that it reads a JavaScript file, executes the file, and then proceeds to return the `exports` object. An example module:
+Node.js suit le système de modules CommonJS, et la fonction intégrée `require` est le moyen le plus simple d'inclure des modules qui existent dans des fichiers séparés. La fonctionnalité de base de `require` est qu'elle lit un fichier JavaScript, exécute le fichier, et ensuite retourne l'objet `exports`. Un exemple de module :
 
 ```javascript
 console.log("evaluating example.js");
@@ -26,7 +26,7 @@ exports.say = function () {
 }
 ```
 
-So if you run `var example = require('./example.js')`, then `example.js` will get evaluated and then `example` be an object equal to:
+Ainsi, si vous lancez `var exemple = require('./example.js')`, alors `example.js` sera évalué et `example` sera un objet égal à :
 
 ```
 {
@@ -35,7 +35,7 @@ So if you run `var example = require('./example.js')`, then `example.js` will ge
 }
 ```
 
-If you want to set the exports object to a function or a new object, you have to use the `module.exports` object. So for an example:
+Si vous voulez définir l'objet exports à une fonction ou un nouvel objet, vous devez utiliser l'objet `module.exports`. Donc pour un exemple :
 
 ```javascript
 module.exports = function () {
@@ -45,7 +45,7 @@ module.exports = function () {
 require('./example2.js')() //require itself and run the exports object
 ```
 
-It is worth noting that each time you subsequently require an already-required file, the `exports` object is cached and reused. To illustrate this point:
+Si vous voulez définir l'objet exports à une fonction ou un nouvel objet, vous devez utiliser l'objet `module.exports`. Donc pour un exemple :
 
 ```
 node> require('./example.js')
@@ -59,8 +59,8 @@ node> require('./example.js') //One might think that this "reloads" the file...
 { message: 'hey', say: [Function] } //...but the message is still "hey" because of the module cache.
 ```
 
-As you can see from the above, `example.js` is evaluated the first time, but all subsequent calls to `require()` only invoke the module cache, rather than reading the file again. As seen above, this can occasionally produce side effects.
+Comme vous pouvez le voir ci-dessus, `example.js` est évalué la première fois, mais tous les appels ultérieurs à `require()` invoquent seulement le cache du module, plutôt que de relire le fichier. Comme nous l'avons vu plus haut, cela peut occasionnellement produire des effets secondaires.
 
-The rules of where `require` finds the files can be a little complex, but a simple rule of thumb is that if the file doesn't start with "./" or "/", then it is either considered a core module (and the local Node.js path is checked), or a dependency in the local `node_modules` folder. If the file starts with "./" it is considered a relative file to the file that called `require`. If the file starts with "/", it is considered an absolute path. NOTE: you can omit ".js" and `require` will automatically append it if needed. For more detailed information, see [the official docs](https://nodejs.org/docs/v0.4.2/api/modules.html#all_Together...)
+Les règles d'où `require` trouve les fichiers peuvent être un peu complexes, mais une règle simple est que si le fichier ne commence pas par "./" ou "/", alors il est soit considéré comme un module de base (et le chemin local de Node.js est vérifié), ou une dépendance dans le dossier local `node_modules`. Si le fichier commence par "./", il est considéré comme un fichier relatif au fichier qui a appelé `require`. Si le fichier commence par "/", il est considéré comme un chemin absolu. NOTE : vous pouvez omettre ".js" et `require` l'ajoutera automatiquement si nécessaire. Pour des informations plus détaillées, voir [la doc officielle](https://nodejs.org/docs/v0.4.2/api/modules.html#all_Together...)
 
-An extra note: if the filename passed to `require` is actually a directory, it will first look for `package.json` in the directory and load the file referenced in the `main` property. Otherwise, it will look for an `index.js`.
+Une note supplémentaire : si le nom de fichier passé à `require` est en fait un répertoire, il cherchera d'abord `package.json` dans le répertoire et chargera le fichier référencé dans la propriété `main`. Sinon, il cherchera un `index.js`.

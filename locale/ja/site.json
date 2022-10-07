@@ -39,22 +39,6 @@
     "governance": {
       "link": "about/governance",
       "text": "委員会"
-    },
-    "workinggroups": {
-      "link": "about/working-groups",
-      "text": "ワーキンググループ"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "リリース"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "リソース"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "トレードマーク"
     }
   },
   "download": {
@@ -113,7 +97,7 @@
       "text": "貢献する"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
+      "link": "https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md",
       "text": "行動規範"
     }
   },
