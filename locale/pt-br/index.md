@@ -11,8 +11,8 @@ labels:
   tagline-lts: Recomendado Para Maioria dos Usuários
   changelog: Changelog
   api: Documentação da API
-  version-schedule-prompt: Ou verifique o
-  version-schedule-prompt-link-text: Cronograma de versões LTS
+  version-schedule-prompt: For information about supported releases, see the
+  version-schedule-prompt-link-text: release schedule
 ---
 
 Node.js® é um runtime JavaScript desenvolvido com o [Chrome's V8 JavaScript engine](https://v8.dev/).

@@ -11,8 +11,8 @@ labels:
   tagline-lts: Рекомендовано для більшості
   changelog: Список змін
   api: Документація
-  version-schedule-prompt: Або подивіться на
-  version-schedule-prompt-link-text: графік LTS
+  version-schedule-prompt: For information about supported releases, see the
+  version-schedule-prompt-link-text: release schedule
 ---
 
 Node.js® — це JavaScript–оточення побудоване на JavaScript–рушієві [Chrome V8](https://v8.dev/).

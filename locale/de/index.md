@@ -11,8 +11,8 @@ labels:
   tagline-lts: Für die meisten Nutzer empfohlen
   changelog: Änderungshistorie
   api: API Doku
-  version-schedule-prompt: Oder wirf einen Blick auf den
-  version-schedule-prompt-link-text: LTS Release Plan
+  version-schedule-prompt: For information about supported releases, see the
+  version-schedule-prompt-link-text: release schedule
 ---
 
 Node.js® ist eine JavaScript-Laufzeitumgebung, die auf [Chromes V8 JavaScript-Engine](https://v8.dev/) basiert.

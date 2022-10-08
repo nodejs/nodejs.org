@@ -11,8 +11,8 @@ labels:
   tagline-lts: 推奨版
   changelog: 変更履歴
   api: API ドキュメント
-  version-schedule-prompt: または、
-  version-schedule-prompt-link-text: LTSのリリーススケジュールをご覧ください
+  version-schedule-prompt: For information about supported releases, see the
+  version-schedule-prompt-link-text: release schedule
 ---
 
 Node.js® は、[Chrome の V8 JavaScript エンジン](https://v8.dev/) で動作する JavaScript 環境です。

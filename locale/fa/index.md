@@ -11,8 +11,8 @@ labels:
   tagline-lts: پیشنهاد شده برای بیشتر کاربران
   changelog: گزارش تغییرات
   api: مستندات API
-  version-schedule-prompt: یا نگاهی بیاندازید به
-  version-schedule-prompt-link-text: زمان بندی پشتیبانی طولانی مدت
+  version-schedule-prompt: For information about supported releases, see the
+  version-schedule-prompt-link-text: release schedule
 ---
 
 Node.js® چارچوبی است برای اجرای جاوااسکریپت ساخته شده بر روی [موتور جاوااسکریپت کروم](https://v8.dev/).

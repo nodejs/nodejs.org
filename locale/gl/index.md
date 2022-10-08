@@ -11,8 +11,8 @@ labels:
   tagline-lts: Recomendado para a maioría
   changelog: Cambios
   api: Documentación do API
-  version-schedule-prompt: Ou revise á
-  version-schedule-prompt-link-text: Axenda de LTS
+  version-schedule-prompt: For information about supported releases, see the
+  version-schedule-prompt-link-text: release schedule
 ---
 
 Node.js® é un entorno de execución para JavaScript construído co [motor de JavaScript V8 de Chrome](https://v8.dev/).

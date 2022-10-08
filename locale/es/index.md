@@ -11,8 +11,8 @@ labels:
   tagline-lts: Recomendado para la mayoría
   changelog: Cambios
   api: Documentación de la API
-  version-schedule-prompt: O eche un vistazo al
-  version-schedule-prompt-link-text: Programa de soporte a largo plazo (LTS)
+  version-schedule-prompt: For information about supported releases, see the
+  version-schedule-prompt-link-text: release schedule
 ---
 
 Node.js® es un entorno de ejecución para JavaScript construido con [V8, motor

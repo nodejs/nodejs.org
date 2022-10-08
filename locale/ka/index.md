@@ -11,8 +11,8 @@ labels:
   tagline-lts: რეკომენდებულ­ია მომხმარებელთა უმეტესობისათვის
   changelog: ცვლილებათა ჩამონათვალი
   api: API-დოკუმენტაცია
-  version-schedule-prompt: ან გადახედეთ
-  version-schedule-prompt-link-text: გრძელვადიანი მხარდაჭერის (LTS) განრიგს
+  version-schedule-prompt: For information about supported releases, see the
+  version-schedule-prompt-link-text: release schedule
 ---
 
 Node.js® არის [Chrome-ის V8 ძრავზე](https://v8.dev/) დაფუძნებული JavaScript-ის გამშვები გარემო.
