@@ -159,7 +159,6 @@ function buildLocale(source, locale, opts) {
       })
     )
     .use(markdown(markedOptions))
-    .use(githubLinks({ locale, site: i18nJSON(locale) }))
     // Set pretty permalinks, we don't want .html suffixes everywhere.
     .use(
       permalinks({
@@ -195,6 +194,7 @@ function buildLocale(source, locale, opts) {
     .use(hbsReg())
     .use(scriptReg())
     .use(layouts())
+    .use(githubLinks({ locale, site: i18nJSON(locale) }))
     // Pipes the generated files into their respective subdirectory in the build
     // directory.
     .destination(path.join(__dirname, 'build', locale))
