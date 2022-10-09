@@ -37,30 +37,6 @@
     "governance": {
       "link": "about/governance",
       "text": "Управління"
-    },
-    "community": {
-      "link": "about/community",
-      "text": "Спільнота"
-    },
-    "workinggroups": {
-      "link": "about/working-groups",
-      "text": "Робочі групи"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "Релізи"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "Ресурси"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "Товарний знак"
-    },
-    "privacy": {
-      "link": "about/privacy",
-      "text": "Політика приватності"
     }
   },
   "download": {
@@ -125,7 +101,7 @@
       "text": "Сприяння"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
+      "link": "https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md",
       "text": "Правила"
     }
   },

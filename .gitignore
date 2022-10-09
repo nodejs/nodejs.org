@@ -12,3 +12,5 @@ npm-debug.log
 
 # Netlify
 .netlify
+
+.cache/

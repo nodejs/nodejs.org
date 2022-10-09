@@ -1,6 +1,12 @@
 [data-theme="dark"] {
+  color-scheme: dark;
+
   .dark-theme-switcher {
     background-image: url("/static/images/light-mode.svg");
+  }
+
+  body {
+    background-color: $dark-black;
   }
 
   body,
@@ -99,7 +105,11 @@
   }
 
   footer {
-    margin-top: 0 !important;
+
+    @media (max-width: 481px) {
+      margin-top: 0 !important;
+    }
+
     background-color: $dark-black2;
     .openjsfoundation-footer {
       background-color: $dark-black2;
@@ -137,5 +147,9 @@
     code {
       background-color: $dark-code-background;
     }
+  }
+
+  .header-background-fill {
+    fill: $dark-black2;
   }
 }

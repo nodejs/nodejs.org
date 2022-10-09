@@ -59,7 +59,7 @@ unique debugger session id. The same-origin-policy prevents websites from being
 able to make this HTTP connection. For additional security against
 [DNS rebinding attacks](https://en.wikipedia.org/wiki/DNS_rebinding), Node.js
 verifies that the 'Host' headers for the connection either
-specify an IP address or `localhost` or `localhost6` precisely.
+specify an IP address or `localhost` precisely.
 
 These security policies disallow connecting to a remote debug server by
 specifying the hostname. You can work-around this restriction by specifying
@@ -90,11 +90,12 @@ Several commercial and open source tools can also connect to the Node.js Inspect
 * Choose "Debug > Start Debugging" from the menu or hit F5.
 * [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging).
 
-### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ and other JetBrains IDEs
+### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) and other JetBrains IDEs
 
 * Create a new Node.js debug configuration and hit Debug. `--inspect` will be used
   by default for Node.js 7+. To disable uncheck `js.debugger.node.use.inspect` in
-  the IDE Registry.
+  the IDE Registry. To learn more about running and debugging Node.js in WebStorm and other JetBrains IDEs,
+  check out [WebStorm online help](https://www.jetbrains.com/help/webstorm/running-and-debugging-node-js.html).
 
 ### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 

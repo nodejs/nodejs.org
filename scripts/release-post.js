@@ -93,7 +93,7 @@ function fetchChangelog(version) {
   const releaseLine = parts[0] === '0' ? parts.slice(0, 2).join('') : parts[0];
 
   return sendRequest({
-    url: `https://raw.githubusercontent.com/nodejs/node/master/doc/changelogs/CHANGELOG_V${releaseLine}.md`
+    url: `https://raw.githubusercontent.com/nodejs/node/main/doc/changelogs/CHANGELOG_V${releaseLine}.md`
   }).then((data) => {
     // matches a complete release section
     const rxSection = new RegExp(
@@ -169,7 +169,7 @@ function findAuthorLogin(version, section) {
 
 function urlOrComingSoon(binary) {
   const url = binary.url.replace('nodejs.org', 'direct.nodejs.org');
-  return sendRequest({ url: url, method: 'HEAD' }).then(
+  return sendRequest({ url, method: 'HEAD' }).then(
     () => `${binary.title}: ${binary.url}`,
     () => {
       console.log(`\x1B[32m "${binary.title}" is Coming soon...\x1B[39m`);

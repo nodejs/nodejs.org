@@ -23,7 +23,7 @@ title: Установка Node.js через пакетный менеджер
 * [SmartOS и illumos](#smartos-and-illumos)
 * [Solus](#solus)
 * [Void Linux](#void-linux)
-* [Windows](#windows)
+* [Windows](#windows-1)
 
 ---
 

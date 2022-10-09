@@ -50,8 +50,9 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Running on http://${HOST}:${PORT}`);
+});
 ```
 
 在稍后的步骤中我们将看一下借助使用官方的 Docker 镜像，你如何在 Docker 镜像中运行这个应用。首先，你需要一个构建一个应用程序的 Docker 应用。
@@ -224,6 +225,20 @@ Date: Mon, 13 Nov 2017 20:53:59 GMT
 Connection: keep-alive
 
 Hello world
+```
+
+## 关闭镜像
+
+我们可以通过使用  `kill` 命令来关闭我们已经开启的镜像。这里使用到了容器的 ID，
+在本示例代码中是 `ecce33b30ebf`。
+
+```bash
+# Kill our running container
+$ docker kill <container id>
+<container id>
+# Confirm that the app has stopped
+$ curl -i localhost:49160
+curl: (7) Failed to connect to localhost port 49160: Connection refused
 ```
 
 我们希望本教程能够帮助你起步，在 Docker 中运行一个简单的 Node.js 应用程序。

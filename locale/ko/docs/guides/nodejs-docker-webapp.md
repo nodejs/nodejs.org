@@ -103,8 +103,9 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Running on http://${HOST}:${PORT}`);
+});
 ```
 
 In the next steps, we'll look at how you can run this app inside a Docker
@@ -132,8 +133,9 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Running on http://${HOST}:${PORT}`);
+});
 ```
 
 다음 단계에서 공식 Docker 이미지를 사용해서 Docker 컨테이너 안에서 이 앱을 실행하는 방법을
@@ -151,11 +153,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `12` of `node`
+Here we will use the latest LTS (long term support) version `16` of `node`
 available from the [Docker Hub](https://hub.docker.com/):
 
 ```docker
-FROM node:12
+FROM node:16
 ```
 -->
 
@@ -171,10 +173,10 @@ touch Dockerfile
 
 가장 먼저 해야 할 것은 어떤 이미지를 사용해서 빌드할 것인지를 정의하는 것입니다. 여기서는
 [Docker Hub](https://hub.docker.com/)에 있는
-`node`의 최신 LTS(장기 지원) 버전인 `12`을 사용할 것입니다.
+`node`의 최신 LTS(장기 지원) 버전인 `16`을 사용할 것입니다.
 
 ```docker
-FROM node:12
+FROM node:16
 ```
 
 <!--
@@ -282,7 +284,7 @@ CMD [ "node", "server.js" ]
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:12
+FROM node:16
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -314,7 +316,7 @@ CMD [ "node", "server.js" ]
 `Dockerfile`은 다음과 같아야 합니다.
 
 ```docker
-FROM node:12
+FROM node:16
 
 # 앱 디렉터리 생성
 WORKDIR /usr/src/app
@@ -380,7 +382,7 @@ $ docker images
 
 # Example
 REPOSITORY                      TAG        ID              CREATED
-node                            8          1934b0b038d1    5 days ago
+node                            16          1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 -->
@@ -402,7 +404,7 @@ $ docker images
 
 # 예시
 REPOSITORY                      TAG        ID              CREATED
-node                            12         1934b0b038d1    5 days ago
+node                            16         1934b0b038d1    5 days ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 

@@ -1,5 +1,5 @@
 ---
-title: What is try-catch?
+title: Qu'est-ce que try-catch ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - errors
@@ -8,7 +8,7 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-Example:
+Exemple :
 
 ```javascript
 console.log("entering try-catch statement");
@@ -30,7 +30,7 @@ finally {
 console.log("leaving try-catch statement");
 ```
 
-Results:
+Résultat:
 
 ```
 entering try-catch statement
@@ -42,12 +42,12 @@ entering and leaving the finally block
 leaving try-catch statement
 ```
 
-JavaScript's `try-catch-finally` statement works very similarly to the `try-catch-finally` encountered in C++ and Java. First, the try block is executed until and unless the code in it throws an exception (whether it is an explicit `throw` statement, the code has an uncaught native exception, or if the code calls a function that uses `throw`).
+L'instruction `try-catch-finally` de JavaScript fonctionne de manière très similaire à l'instruction `try-catch-finally` rencontrée en C++ et Java. Tout d'abord, le bloc d'essai est exécuté jusqu'à ce que et à moins que le code qu'il contient ne lève une exception (qu'il s'agisse d'une instruction explicite `throw`, que le code ait une exception native non capturée ou que le code appelle une fonction qui utilise `throw`).
 
-If the code doesn't throw an exception, then the whole try block is executed. If the code threw an exception inside the try block, then the catch block is executed. Last of all, the finally block is always executed, subsequent to the other blocks but prior to any subsequent code located outside of the `try-catch-finally` blocks. The `finally` block will just about always execute, no matter what kind of throwing, catching, or returning one might be trying to do inside the `try` or `catch` blocks.
+Si le code ne lève pas d'exception, alors tout le bloc d'essai est exécuté. Si le code lève une exception à l'intérieur du bloc try, alors le bloc catch est exécuté. Enfin, le bloc finally est toujours exécuté, après les autres blocs mais avant tout autre code situé en dehors des blocs `try-catch-finally`. Le bloc `finally` s'exécutera presque toujours, quel que soit le type de lancer, d'attraper ou de retourner que l'on essaie de faire dans les blocs `try` ou `catch`.
 
-Note that you can omit the `catch` or `finally` block, but one of them must be present.
+Notez que vous pouvez omettre le bloc `catch` ou `finally`, mais l'un des deux doit être présent.
 
-## But wait, isn't it Node.js convention to not use try-catch?
+## Mais attendez, n'est-ce pas une convention Node.js de ne pas utiliser try-catch ?
 
-In the core Node.js libraries, the only place that one really *needs* to use a try-catch is around `JSON.parse()`. All of the other methods use either the standard Error object through the first parameter of the callback or emit an `error` event. Because of this, it is generally considered [standard](/en/knowledge/errors/what-are-the-error-conventions/) to return errors through the callback rather than to use the `throw` statement.
+Dans les bibliothèques Node.js de base, le seul endroit où l'on a vraiment *besoin* d'utiliser un try-catch est autour de `JSON.parse()`. Toutes les autres méthodes utilisent soit l'objet standard Error comme premier paramètre du callback, soit émettent un événement `error`. Pour cette raison, il est généralement considéré comme [standard](/fr/knowledge/errors/what-are-the-error-conventions/) de retourner les erreurs via le callback plutôt que d'utiliser l'instruction `throw`.

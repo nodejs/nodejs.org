@@ -2,5 +2,3 @@
 static/legacy/
 external/
 build/
-# Top level await isn't supported till ESLint 8
-locale/en/blog/release/v17.0.0.md

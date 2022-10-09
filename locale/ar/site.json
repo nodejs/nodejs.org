@@ -41,30 +41,6 @@
     "governance": {
       "link": "about/governance",
       "text": "الحوكمة"
-    },
-    "community": {
-      "link": "about/community",
-      "text": "المجتمع"
-    },
-    "workinggroups": {
-      "link": "about/working-groups",
-      "text": "مجموعات العمل"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "الاصدارات"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "المصادر"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "العلامة التجارية"
-    },
-    "privacy": {
-      "link": "about/privacy",
-      "text": "سياسة الخصوصية"
     }
   },
   "download": {
@@ -132,12 +108,8 @@
       "text": "مساهمة"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
+      "link": "https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md",
       "text": "القواعد السلوكية"
-    },
-    "node-meetups": {
-      "link": "get-involved/node-meetups",
-      "text": "Node.js مُلْتَقَيات"
     }
   },
   "security": {

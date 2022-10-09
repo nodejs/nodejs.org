@@ -41,30 +41,6 @@
     "governance": {
       "link": "about/governance",
       "text": "Governance"
-    },
-    "community": {
-      "link": "about/community",
-      "text": "Community"
-    },
-    "workinggroups": {
-      "link": "about/working-groups",
-      "text": "Working Groups"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "Releases"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "Resources"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "Trademark"
-    },
-    "privacy": {
-      "link": "about/privacy",
-      "text": "Privacy Policy"
     }
   },
   "download": {
@@ -132,12 +108,8 @@
       "text": "Contribute"
     },
     "conduct": {
-      "link": "https://github.com/nodejs/node/blob/master/doc/guides/contributing/code-of-conduct.md",
+      "link": "https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md",
       "text": "Code of Conduct"
-    },
-    "node-meetups": {
-      "link": "get-involved/node-meetups",
-      "text": "Node.js Meetups"
     }
   },
   "security": {
@@ -163,10 +135,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2021-11-30T00:00:00.000Z",
-      "endDate": "2021-12-07T00:00:00.000Z",
-      "text": "Node.js training and exams discounted through Dec. 6th",
-      "link": "https://openjsf.org/blog/2021/11/29/test-your-skills-how-good-are-you-with-node-js/"
+      "startDate": "2022-09-15T16:00:00.000Z",
+      "endDate": "2022-09-30T23:00:00.000Z",
+      "text": "New security releases now available for 18.x, 16.x, and 14.x release lines",
+      "link": "https://nodejs.org/en/blog/vulnerability/september-2022-security-releases/"
     },
     "blacklivesmatter": {
       "visible": false,

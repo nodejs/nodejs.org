@@ -13,7 +13,7 @@ Node v0.12.8 (LTS) is released
 
 ### Node v0.12.8 (LTS) Releases
 
-This week we have one release: [Node v0.12.8 (LTS)](https://nodejs.org/en/blog/release/v0.12.8/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+This week we have one release: [Node v0.12.8 (LTS)](https://nodejs.org/en/blog/release/v0.12.8/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Notable changes
 

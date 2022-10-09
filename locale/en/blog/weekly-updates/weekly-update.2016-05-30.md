@@ -10,7 +10,7 @@ layout: blog-post.hbs
 
 ### Node v4.4.5 (LTS) Release
 
-[Node v4.4.5 (LTS)](https://nodejs.org/en/blog/release/v4.4.5/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/master/CHANGELOG.md).
+[Node v4.4.5 (LTS)](https://nodejs.org/en/blog/release/v4.4.5/). Complete changelog from previous releases can be found [on GitHub](https://github.com/nodejs/node/blob/main/CHANGELOG.md).
 
 ### Community Updates
 

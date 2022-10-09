@@ -1,5 +1,5 @@
 ---
-title: How to write asynchronous code
+title: Comment écrire du code asynchrone ?
 date: '2011-08-26T10:08:50.000Z'
 tags:
   - asynchronous
@@ -9,13 +9,13 @@ difficulty: 1
 layout: knowledge-post.hbs
 ---
 
-Node.js promotes an asynchronous coding style from the ground up, in contrast to many of the most popular web frameworks. There are a number of important things to be aware of when learning to write asynchronous code - otherwise, you will often find your code executing in extremely unexpected ways. Take this (general) rule to heart:
+Node.js encourage un style de codage asynchrone dès le départ, contrairement à la plupart des frameworks web les plus populaires. Il y a un certain nombre de choses importantes dont il faut être conscient lorsqu'on apprend à écrire du code asynchrone - sinon, vous trouverez souvent votre code s'exécutant de manière extrêmement inattendue. Prenez cette règle (générale) à cœur :
 
-### Use the asynchronous functions, avoid the synchronous ones!
+### Utilisez les fonctions asynchrones, évitez les fonctions synchrones !
 
-Many of the functions in Node.js core have both synchronous and asynchronous versions. Under most circumstances, it will be far better for you to use the asynchronous functions - otherwise, why are you using Node.js?
+De nombreuses fonctions du noyau de Node.js ont des versions synchrones et asynchrones. Dans la plupart des cas, il est préférable pour vous d'utiliser les fonctions asynchrones - sinon, pourquoi utiliser Node.js ?
 
-As a quick example comparing and contrasting the two, using `fs.readFile`:
+Comme un exemple rapide comparant et contrastant les deux, en utilisant `fs.readFile` :
 
 ```javascript
 var fs = require('fs');
@@ -33,20 +33,20 @@ var data = fs.readFileSync('example.file','utf8');
 console.log(data);
 ```
 
-Just looking at these two blocks of code, the synchronous version appears to be more concise. However, the asynchronous version is more complicated for a very good reason. In the synchronous version, the world is paused until the file is finished reading - your process will just sit there, waiting for the OS (which handles all file system tasks).
+En regardant simplement ces deux blocs de code, la version synchrone semble être plus concise. Cependant, la version asynchrone est plus compliquée pour une très bonne raison. Dans la version synchrone, le monde est mis en pause jusqu'à ce que la lecture du fichier soit terminée - votre processus restera là, à attendre l'OS (qui gère toutes les tâches du système de fichiers).
 
-The asynchronous version, on the other hand, does not stop time - instead, the callback function gets called when the file is finished reading. This leaves your process free to execute other code in the meantime.
+La version asynchrone, en revanche, n'arrête pas le temps. Au lieu de cela, la fonction de rappel est appelée lorsque la lecture du fichier est terminée. Cela laisse votre processus libre d'exécuter d'autres codes pendant ce temps.
 
-When only reading a file or two, or saving something quickly, the difference between synchronous and asynchronous file I/O can be quite small. On the other hand, though, when you have multiple requests coming in per second that require file or database IO, trying to do that IO synchronously would be quite thoroughly disastrous for performance.
+Lorsque vous ne lisez qu'un ou deux fichiers ou que vous enregistrez rapidement quelque chose, la différence entre les E/S de fichiers synchrones et asynchrones peut être assez faible. D'un autre côté, si vous recevez plusieurs requêtes par seconde qui nécessitent des entrées/sorties de fichiers ou de bases de données, essayer d'effectuer ces entrées/sorties de manière synchrone serait tout à fait désastreux pour les performances.
 
 ### Callbacks
-Callbacks are a basic idiom in Node.js for asynchronous operations. When most people talk about callbacks, they mean the function that is passed as the last parameter to an asynchronous function. The callback is then later called with any return value or error message that the function produced. For more details, see the article on [callbacks](/en/knowledge/getting-started/control-flow/what-are-callbacks/)
+Les callbacks sont un idiome de base dans Node.js pour les opérations asynchrones. Quand la plupart des gens parlent de callbacks, ils veulent dire la fonction qui est passée comme dernier paramètre à une fonction asynchrone. Le callback est ensuite appelé plus tard avec toute valeur de retour ou message d'erreur que la fonction a produit. Pour plus de détails, voir l'article sur les [callbacks](/fr/connaissance/démarrage/control-flow/what-are-callbacks/).
 
-### Event Emitters
-Event Emitters are another basic idiom in Node.js. A constructor is provided in Node.js core: `require('events').EventEmitter`. An Event Emitter is typically used when there will be multiple parts to the response (since usually you only want to call a callback once). For more details, see the article on [EventEmitters](/en/knowledge/getting-started/control-flow/what-are-event-emitters/)
+### Emetteurs d'événements
+Les émetteurs d'événements sont un autre idiome de base dans Node.js. Un constructeur est fourni dans le noyau de Node.js : `require('events').EventEmitter`. Un Event Emitter est typiquement utilisé quand il y aura plusieurs parties à la réponse (puisque généralement vous voulez seulement appeler un callback une fois). Pour plus de détails, voir l'article sur les [EventEmitters](/fr/knowledge/getting-started/control-flow/what-are-event-emitters/)
 
-### A gotcha with asynchronous code
-A common mistake in asynchronous code with JavaScript is to write code that does something like this:
+#### Une erreur avec le code asynchrone
+Une erreur courante dans le code asynchrone avec JavaScript est d'écrire du code qui fait quelque chose comme ceci :
 
 ```javascript
 for (var i = 0; i < 5; i++) {
@@ -56,7 +56,7 @@ for (var i = 0; i < 5; i++) {
 }
 ```
 
-The unexpected output is then:
+La sortie inattendue est alors :
 
 ```
 5
@@ -66,7 +66,7 @@ The unexpected output is then:
 5
 ```
 
-The reason this happens is because each timeout is created and then `i` is incremented. Then when the callback is called, it looks for the value of `i` and it is 5. The solution is to create a closure so that the current value of `i` is stored. For example:
+La raison pour laquelle cela se produit est que chaque timeout est créé et que `i` est incrémenté. Ensuite, lorsque le callback est appelé, il cherche la valeur de `i` et c'est 5. La solution est de créer une fermeture pour que la valeur actuelle de `i` soit stockée. Par exemple :
 
 ```javascript
 for (var i = 0; i < 5; i++) {
@@ -78,7 +78,7 @@ for (var i = 0; i < 5; i++) {
 }
 ```
 
-This gives the proper output:
+Cela donne la bonne sortie :
 
 ```
 0
