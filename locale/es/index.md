@@ -12,7 +12,7 @@ labels:
   changelog: Cambios
   api: Documentación de la API
   version-schedule-prompt: Para información acerca de los releases soportados, mira
-  version-schedule-prompt-link-text: release schedule
+  version-schedule-prompt-link-text: el calendario de lanzamientos
 ---
 
 Node.js® es un entorno de ejecución para JavaScript construido con [V8, motor
