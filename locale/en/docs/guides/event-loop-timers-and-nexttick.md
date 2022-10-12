@@ -444,7 +444,7 @@ the event loop to proceed, it must hit the **poll** phase, which means
 there is a non-zero chance that a connection could have been received
 allowing the connection event to be fired before the listening event.
 
-Another example is inheriting from `EventEmitter` and emitting an
+Another example is extending an `EventEmitter` and emitting an
 event from within the constructor:
 
 ```js
