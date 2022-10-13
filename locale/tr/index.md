@@ -12,7 +12,7 @@ labels:
   changelog: Değişiklikler
   api: API Belgeleri
   version-schedule-prompt: Desteklenen sürümler hakkında daha fazla bilgi için
-  version-schedule-prompt-link-text: sürüm planına bakıniz
+  version-schedule-prompt-link-text: sürüm yayınlanma planına bakınız
 ---
 
 Node.js® [Chrome'un V8 JavaScript motoru](https://v8.dev/) üzerine inşa edilmiş bir JavaScript çalışma ortamıdır.
