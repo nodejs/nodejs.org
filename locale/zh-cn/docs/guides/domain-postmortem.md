@@ -125,10 +125,9 @@ d1.run(() =>
 'use strict';
 
 const domain = require('domain');
-const EE = require('events');
+const EventEmitter = require('events');
 const fs = require('fs');
 const net = require('net');
-const util = require('util');
 const print = process._rawDebug;
 
 const pipeList = [];
@@ -142,38 +141,40 @@ const buf = Buffer.alloc(FILESIZE);
 for (let i = 0; i < buf.length; i++) buf[i] = ((Math.random() * 1e3) % 78) + 48; // Basic ASCII
 fs.writeFileSync(FILENAME, buf);
 
-function ConnectionResource(c) {
-  EE.call(this);
-  this._connection = c;
-  this._alive = true;
-  this._domain = domain.create();
-  this._id = Math.random().toString(32).substr(2).substr(0, 8) + ++uid;
+class ConnectionResource extends EventEmitter {
+  constructor(c) {
+    super();
 
-  this._domain.add(c);
-  this._domain.on('error', () => {
+    this._connection = c;
+    this._alive = true;
+    this._domain = domain.create();
+    this._id = Math.random().toString(32).substr(2).substr(0, 8) + ++uid;
+
+    this._domain.add(c);
+    this._domain.on('error', () => {
+      this._alive = false;
+    });
+  }
+
+  end(chunk) {
     this._alive = false;
-  });
+    this._connection.end(chunk);
+    this.emit('end');
+  }
+
+  isAlive() {
+    return this._alive;
+  }
+
+  id() {
+    return this._id;
+  }
+
+  write(chunk) {
+    this.emit('data', chunk);
+    return this._connection.write(chunk);
+  }
 }
-util.inherits(ConnectionResource, EE);
-
-ConnectionResource.prototype.end = function end(chunk) {
-  this._alive = false;
-  this._connection.end(chunk);
-  this.emit('end');
-};
-
-ConnectionResource.prototype.isAlive = function isAlive() {
-  return this._alive;
-};
-
-ConnectionResource.prototype.id = function id() {
-  return this._id;
-};
-
-ConnectionResource.prototype.write = function write(chunk) {
-  this.emit('data', chunk);
-  return this._connection.write(chunk);
-};
 
 // Example begin
 net
@@ -321,31 +322,33 @@ function dataTransformed(chunk) {
   domain.active.data.connection.write(chunk);
 }
 
-function DataStream(cb) {
-  this.cb = cb;
-  // DataStream wants to use domains for data propagation too!
-  // Unfortunately this will conflict with any domain that
-  // already exists.
-  this.domain = domain.create();
-  this.domain.data = { inst: this };
-}
+class DataStream {
+  constructor(cb) {
+    this.cb = cb;
+    // DataStream wants to use domains for data propagation too!
+    // Unfortunately this will conflict with any domain that
+    // already exists.
+    this.domain = domain.create();
+    this.domain.data = { inst: this };
+  }
 
-DataStream.prototype.data = function data(chunk) {
-  // This code is self contained, but pretend it's a complex
-  // operation that crosses at least one other module. So
-  // passing along "this", etc., is not easy.
-  this.domain.run(() => {
-    // Simulate an async operation that does the data transform.
-    setImmediate(() => {
-      for (let i = 0; i < chunk.length; i++)
-        chunk[i] = ((chunk[i] + Math.random() * 100) % 96) + 33;
-      // Grab the instance from the active domain and use that
-      // to call the user's callback.
-      const self = domain.active.data.inst;
-      self.cb(chunk);
+  data(chunk) {
+    // This code is self contained, but pretend it's a complex
+    // operation that crosses at least one other module. So
+    // passing along "this", etc., is not easy.
+    this.domain.run(() => {
+      // Simulate an async operation that does the data transform.
+      setImmediate(() => {
+        for (let i = 0; i < chunk.length; i++)
+          chunk[i] = ((chunk[i] + Math.random() * 100) % 96) + 33;
+        // Grab the instance from the active domain and use that
+        // to call the user's callback.
+        const self = domain.active.data.inst;
+        self.cb(chunk);
+      });
     });
-  });
-};
+  }
+}
 ```
 
 以上表明，尝试使用一个以上的异步 API 借助域来传播数据是困难的。这个例子是固定假设通过在 `DataStream` 构造函数中赋值 `parent: domain.active`。然后通过 `domain.active = domain.active.data.parent` 在用户的回调函数被调用前恢复它。 `DataStream` 的实例化`'连接'`回调必须在 `d.run()` 中运行，而不是简单地使用 `d.add(c)`，否则将没有活动域。
