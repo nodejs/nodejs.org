@@ -159,12 +159,6 @@ function buildLocale(source, locale, opts) {
       })
     )
     .use(markdown(markedOptions))
-    // Set pretty permalinks, we don't want .html suffixes everywhere.
-    .use(
-      permalinks({
-        relative: false
-      })
-    )
     // Generates the feed XML files from their respective collections which were
     // defined earlier on.
     .use(
@@ -195,6 +189,12 @@ function buildLocale(source, locale, opts) {
     .use(scriptReg())
     .use(layouts())
     .use(githubLinks({ locale, site: i18nJSON(locale) }))
+    // Set pretty permalinks, we don't want .html suffixes everywhere.
+    .use(
+      permalinks({
+        relative: false
+      })
+    )
     // Pipes the generated files into their respective subdirectory in the build
     // directory.
     .destination(path.join(__dirname, 'build', locale))
