@@ -15,7 +15,7 @@ Because the level of activity in the `nodejs/node` repository is so high, questi
 
 If you have found what you believe to be an issue with Node.js please do not hesitate to file an issue on the GitHub project. When filing your issue please make sure you can express the issue with a reproducible test case, and that test case should not include any external dependencies. That is to say, the test case can be executed without anything more than Node.js itself.
 
-When reporting an issue we also need as much information about your environment that you can include. We never know what information will be pertinent when trying narrow down the issue. Please include at least the following information:
+When reporting an issue we also need as much information about your environment that you can include. We never know what information will be pertinent when trying to narrow down the issue. Please include at least the following information:
 
 * Version of Node.js
 * Platform you're running on (macOS, SmartOS, Linux, Windows)
