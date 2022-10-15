@@ -90,7 +90,6 @@ function buildLocale(source, locale, opts) {
   const labelForBuild = `[metalsmith] build/${locale} finished`;
   console.time(labelForBuild);
   const metalsmith = Metalsmith(__dirname);
-
   metalsmith
     // Sets global metadata imported from the locale's respective site.json.
     .metadata({
@@ -158,7 +157,14 @@ function buildLocale(source, locale, opts) {
         ]
       })
     )
+    .use(githubLinks({ locale, site: i18nJSON(locale) }))
     .use(markdown(markedOptions))
+    // Set pretty permalinks, we don't want .html suffixes everywhere.
+    .use(
+      permalinks({
+        relative: false
+      })
+    )
     // Generates the feed XML files from their respective collections which were
     // defined earlier on.
     .use(
@@ -188,13 +194,6 @@ function buildLocale(source, locale, opts) {
     .use(hbsReg())
     .use(scriptReg())
     .use(layouts())
-    .use(githubLinks({ locale, site: i18nJSON(locale) }))
-    // Set pretty permalinks, we don't want .html suffixes everywhere.
-    .use(
-      permalinks({
-        relative: false
-      })
-    )
     // Pipes the generated files into their respective subdirectory in the build
     // directory.
     .destination(path.join(__dirname, 'build', locale))

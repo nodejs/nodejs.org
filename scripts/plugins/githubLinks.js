@@ -1,6 +1,6 @@
 'use strict';
 
-const sep = require('path').sep;
+const { sep } = require('path');
 // add suffix (".html" or sep for windows test) to each part of regex
 // to ignore possible occurrences in titles (e.g. blog posts)
 const isEditable = `(security|index).html|(about|download|docs|foundation|get-involved|knowledge)\\${sep}`;
@@ -15,20 +15,13 @@ function githubLinks(options) {
       }
 
       const file = files[path];
-      path = path.replace('.html', '.md').replace(/\\/g, '/');
+      path = path.replace(/\\/g, '/');
+
+      console.log(path);
       const url = `https://github.com/nodejs/nodejs.org/edit/main/locale/${options.locale}/${path}`;
-      const editOnGitHubTrans = options.site.editOnGithub || 'Edit on GitHub';
-      const replCallBack = (match, $1, $2) => {
-        return `<div class="openjsfoundation-footer-edit">
-            | <a href="${url}">${editOnGitHubTrans}</a>
-            </div>`;
-      };
-      const contents = file.contents
-        .toString()
-        .replace(
-          /<div class="openjsfoundation-footer-edit"><\/div>/,
-          replCallBack
-        );
+      const contents =
+        file.contents.toString() +
+        ` <input type = "hidden" id = "editOnGitHubUrl" value="${url}"/> `;
 
       file.contents = Buffer.from(contents);
     });
