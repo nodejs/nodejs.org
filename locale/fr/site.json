@@ -89,10 +89,6 @@
   "getinvolved": {
     "link": "get-involved",
     "text": "S’impliquer",
-    "code-and-learn": {
-      "link": "get-involved/code-and-learn",
-      "text": "Coder + Apprendre"
-    },
     "collab-summit": {
       "link": "get-involved/collab-summit",
       "text": "Collab Summit"

@@ -83,10 +83,6 @@
   "getinvolved": {
     "link": "get-involved",
     "text": "Mitmachen",
-    "code-and-learn": {
-      "link": "get-involved/code-and-learn",
-      "text": "Programmiere + Lerne"
-    },
     "contribute": {
       "link": "get-involved/contribute",
       "text": "Mitwirken"
