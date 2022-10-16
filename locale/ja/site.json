@@ -88,10 +88,6 @@
   "getinvolved": {
     "link": "get-involved",
     "text": "参加する",
-    "code-and-learn": {
-      "link": "get-involved/code-and-learn",
-      "text": "Code + Learn"
-    },
     "contribute": {
       "link": "get-involved/contribute",
       "text": "貢献する"

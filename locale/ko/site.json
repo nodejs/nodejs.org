@@ -89,10 +89,6 @@
   "getinvolved": {
     "link": "get-involved",
     "text": "참여하기",
-    "code-and-learn": {
-      "link": "get-involved/code-and-learn",
-      "text": "코딩 + 배우기"
-    },
     "collab-summit": {
       "link": "get-involved/collab-summit",
       "text": "협업자 서밋"

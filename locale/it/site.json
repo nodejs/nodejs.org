@@ -78,10 +78,6 @@
   "getinvolved": {
     "link": "get-involved",
     "text": "Come partecipare",
-    "code-and-learn": {
-      "link": "get-involved/code-and-learn",
-      "text": "Programma + Impara"
-    },
     "contribute": {
       "link": "get-involved/contribute",
       "text": "Contribuire"

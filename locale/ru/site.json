@@ -89,10 +89,6 @@
   "getinvolved": {
     "link": "get-involved",
     "text": "Присоединиться",
-    "code-and-learn": {
-      "link": "get-involved/code-and-learn",
-      "text": "Разрабатывай + Учись"
-    },
     "collab-summit": {
       "link": "get-involved/collab-summit",
       "text": "Саммит сотрудников"
