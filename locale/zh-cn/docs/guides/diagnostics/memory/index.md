@@ -11,11 +11,10 @@ layout: docs.hbs
   * [内存溢出](#my-process-runs-out-of-memory)
     * [相关症状](#symptoms)
     * [副作用](#side-effects)
-    * [Debugging](#debugging)
-  * [My process utilizes memory inefficiently](#my-process-utilizes-memory-inefficiently)
-    * [Symptoms](#symptoms-1)
-    * [Side Effects](#side-effects-1)
-    * [Debugging](#debugging-1)
+  * [低效率内存使用](#my-process-utilizes-memory-inefficiently)
+    * [相关症状](#symptoms-1)
+    * [副作用](#side-effects-1)
+  * [调试](#debugging)
 
 ## <!--my-process-runs-out-of-memory-->内存耗尽
 
@@ -37,15 +36,6 @@ _（负载均衡返回 502）_。
 * 增长的内存交换（由 GC 活动引起）使得进程变慢。
 * 没有足够的内存空间来存储一个堆快照。
 
-### <!--debugging-->调试
-
-调试一个内存泄露的问题，我们需要看特定的对象占用了多少内存空间，以及什么变量占有了
-他们从而使得垃圾回收。为了使我们有效地调试，我们同时也需要了解变量随时间的分配模式。
-
-* [使用堆剖析器](/en/docs/guides/diagnostics/memory/using-heap-profiler/)
-* [使用堆快照](/en/docs/guides/diagnostics/memory/using-heap-snapshot/)
-* [GC 跟踪](/en/docs/guides/diagnostics/memory/using-gc-traces)
-
 ## <!--my-process-utilizes-memory-inefficiently-->低效率内存使用
 
 ### <!--symptoms-1-->相关症状
@@ -57,11 +47,11 @@ _（负载均衡返回 502）_。
 * 分页错误数持续增长。
 * 较高的 GC 活动以及 CPU 使用率。
 
-### <!--debugging-1-->调试
+## <!--debugging-->调试
 
 调试一个内存泄露的问题，我们需要看特定的对象占用了多少内存空间，以及什么变量占有了
 他们从而使得垃圾回收。为了使我们有效地调试，我们同时也需要了解变量随时间的分配模式。
 
-* [使用堆剖析器](/en/docs/guides/diagnostics/memory/using-heap-profiler/)
-* [使用堆快照](/en/docs/guides/diagnostics/memory/using-heap-snapshot/)
-* [GC 跟踪](/en/docs/guides/diagnostics/memory/using-gc-traces)
+* [使用堆剖析器](/zh-cn/docs/guides/diagnostics/memory/using-heap-profiler/)
+* [使用堆快照](/zh-cn/docs/guides/diagnostics/memory/using-heap-snapshot/)
+* [GC 跟踪](/zh-cn/docs/guides/diagnostics/memory/using-gc-traces)

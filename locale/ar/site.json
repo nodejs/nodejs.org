@@ -41,30 +41,6 @@
     "governance": {
       "link": "about/governance",
       "text": "الحوكمة"
-    },
-    "community": {
-      "link": "about/community",
-      "text": "المجتمع"
-    },
-    "workinggroups": {
-      "link": "about/working-groups",
-      "text": "مجموعات العمل"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "الاصدارات"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "المصادر"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "العلامة التجارية"
-    },
-    "privacy": {
-      "link": "about/privacy",
-      "text": "سياسة الخصوصية"
     }
   },
   "download": {

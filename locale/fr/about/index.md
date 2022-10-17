@@ -6,7 +6,7 @@ trademark: Trademark
 
 # A propos de Node.js®
 
-En tant qu'environnement d'exécution JavaScript asynchrone et orienté événement, Node.js est conçu pour générer des applications extensibles. Dans cet exemple ("hello world"), plusieures connexions peuvent être gérées de manière concurrente. À chaque connexion, la fonction de rappel (_callback function_) est déclenchée, mais si il n'y a rien à faire, Node.js restera inactif.
+En tant qu'environnement d'exécution JavaScript asynchrone et orienté événement, Node.js est conçu pour générer des applications extensibles. Dans cet exemple ("hello world"), plusieurs connexions peuvent être gérées de manière concurrente. À chaque connexion, la fonction de rappel (_callback function_) est déclenchée, mais si il n'y a rien à faire, Node.js restera inactif.
 
 ```javascript
 const http = require('http');

@@ -38,30 +38,6 @@
     "governance": {
       "link": "about/governance",
       "text": "Yönetim"
-    },
-    "community": {
-      "link": "about/community",
-      "text": "Topluluk"
-    },
-    "workinggroups": {
-      "link": "about/working-groups",
-      "text": "Çalışma Grupları"
-    },
-    "releases": {
-      "link": "about/releases",
-      "text": "Sürümler"
-    },
-    "resources": {
-      "link": "about/resources",
-      "text": "Kaynaklar"
-    },
-    "trademark": {
-      "link": "about/trademark",
-      "text": "Marka"
-    },
-    "privacy": {
-      "link": "about/privacy",
-      "text": "Gizlilik Politikası"
     }
   },
   "download": {

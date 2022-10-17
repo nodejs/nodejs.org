@@ -90,7 +90,6 @@ function buildLocale(source, locale, opts) {
   const labelForBuild = `[metalsmith] build/${locale} finished`;
   console.time(labelForBuild);
   const metalsmith = Metalsmith(__dirname);
-
   metalsmith
     // Sets global metadata imported from the locale's respective site.json.
     .metadata({
@@ -159,7 +158,6 @@ function buildLocale(source, locale, opts) {
       })
     )
     .use(markdown(markedOptions))
-    .use(githubLinks({ locale, site: i18nJSON(locale) }))
     // Set pretty permalinks, we don't want .html suffixes everywhere.
     .use(
       permalinks({
@@ -195,6 +193,7 @@ function buildLocale(source, locale, opts) {
     .use(hbsReg())
     .use(scriptReg())
     .use(layouts())
+    .use(githubLinks({ locale, site: i18nJSON(locale) }))
     // Pipes the generated files into their respective subdirectory in the build
     // directory.
     .destination(path.join(__dirname, 'build', locale))
@@ -257,22 +256,22 @@ async function copyStatic() {
     fsExtra.copy(
       path.join(__dirname, 'static'),
       path.join(__dirname, 'build/static'),
-      { overwrite: false, recursive: true }
+      { overwrite: true, recursive: true }
     ),
 
-    fsExtra.copyFile(
+    fsExtra.copy(
       path.join(
         __dirname,
         'node_modules/jquery.fancytable/dist/fancyTable.min.js'
       ),
       path.join(__dirname, 'build/static/js/fancyTable.min.js'),
-      fs.constants.COPYFILE_EXCL | fs.constants.COPYFILE_FICLONE
+      { overwrite: true }
     ),
 
-    fsExtra.copyFile(
+    fsExtra.copy(
       path.join(__dirname, 'node_modules/jquery/dist/jquery.min.js'),
       path.join(__dirname, 'build/static/js/jquery.min.js'),
-      fs.constants.COPYFILE_EXCL | fs.constants.COPYFILE_FICLONE
+      { overwrite: true }
     )
   ]);
 

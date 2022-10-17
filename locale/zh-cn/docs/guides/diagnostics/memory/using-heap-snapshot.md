@@ -69,10 +69,10 @@ Heap.20190718.133405.15554.0.001.heapsnapshot
 require('v8').writeHeapSnapshot();
 ```
 
-请查阅 [writeHeapSnapshot 文档][] 了解文件名的可用选项。
+请查阅 [`writeHeapSnapshot` 文档][] 了解文件名的可用选项。
 
-在不停掉进程的前提下你需要有一个方式来生成快照，建议在 http handler 里调用，亦或是从操作
-系统中对某个信号量做出反应。但你需小心一点：不要暴漏触发生成快照的 http 终端地址，它不应该
+在不停掉进程的前提下你需要有一个方式来生成快照，建议在 HTTP Handler 里调用，亦或是从操作
+系统中对某个信号量做出反应。但你需小心一点：不要暴漏触发生成快照的 Http 终端地址，它不应该
 被其他人直接访问。
 
 对于 v11.13.0 之前的 Node.js 版本，请借助 [heapdump 包][]来实现。
@@ -111,7 +111,7 @@ done < <(cat out | tail -n +2 | head -n -1)
 exec 3>&-
 ```
 
-以下是与检查器协议一起使用的内存分析工具的详尽列表：
+这里提供一份与检查器协议一起使用的内存分析工具的详尽列表：
 
 * [适用于 Node.js 的 OpenProfiling][openprofiling]
 
@@ -136,7 +136,7 @@ exec 3>&-
 [take a heap snapshot image]: /static/images/docs/guides/diagnostics/snapshot.png
 [内存快照信号量标志符]: https://nodejs.org/api/cli.html#--heapsnapshot-signalsignal
 [heapdump 包]: https://www.npmjs.com/package/heapdump
-[writeHeapSnapshot 文档]: https://nodejs.org/api/v8.html#v8_v8_writeheapsnapshot_filename
+[`writeHeapSnapshot` 文档]: https://nodejs.org/api/v8.html#v8_v8_writeheapsnapshot_filename
 [openprofiling]: https://github.com/vmarchaud/openprofiling-node
 [load button image]: /static/images/docs/guides/diagnostics/load-snapshot.png
 [comparison image]: /static/images/docs/guides/diagnostics/compare.png

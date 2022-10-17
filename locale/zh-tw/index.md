@@ -15,4 +15,4 @@ labels:
   version-schedule-prompt-link-text: LTS（長期維護版）時程
 ---
 
-Node.js® 是款基於 [Chrome V8 引擎](https://v8.dev/)的 JavaScript 執行環境。
+Node.js® 是一個開源、跨平台的 JavaScript 執行環境。
