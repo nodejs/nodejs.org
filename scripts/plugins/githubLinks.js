@@ -42,7 +42,7 @@ function githubLinks(options) {
         `../../locale/${options.locale}/${path}`
       );
       if (!fs.existsSync(currentFilePath)) {
-        url = `https://github.com/nodejs/nodejs.org/new/main/locale/${options.locale}/locale?filename=${path}&value=Contribute%20Your%20Translation%20Here.`;
+        url = `https://github.com/nodejs/nodejs.org/new/main/locale/${options.locale}/locale?filename=${path}&value=contribute%20your%20translation%20here,for%20more%20you%20can%20see:%20https://github.com/nodejs/nodejs.org/blob/main/TRANSLATION.md`;
       }
 
       const editOnGitHubTrans = options.site.editOnGithub || 'Edit on GitHub';
