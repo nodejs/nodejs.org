@@ -90,7 +90,6 @@ function buildLocale(source, locale, opts) {
   const labelForBuild = `[metalsmith] build/${locale} finished`;
   console.time(labelForBuild);
   const metalsmith = Metalsmith(__dirname);
-
   metalsmith
     // Sets global metadata imported from the locale's respective site.json.
     .metadata({
