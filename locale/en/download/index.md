@@ -16,6 +16,7 @@ downloads:
     WindowsInstaller: Windows Installer
     WindowsBinary: Windows Binary
     MacOSInstaller: macOS Installer
+    Android Mobile: Mobile Installer
     MacOSBinary: macOS Binary
     LinuxBinaries: Linux Binaries
     SourceCode: Source Code
