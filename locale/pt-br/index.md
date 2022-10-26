@@ -11,7 +11,7 @@ labels:
   tagline-lts: Recomendado Para Maioria dos Usuários
   changelog: Changelog
   api: Documentação da API
-  version-schedule-prompt: Para mais informações sobre o suporte das versões, consulte o 
+  version-schedule-prompt: Para mais informações sobre o suporte das versões, consulte o
   version-schedule-prompt-link-text: cronograma de lançamentos
   version-schedule-prompt-link-text: release schedule
 ---
