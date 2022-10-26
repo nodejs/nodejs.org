@@ -13,7 +13,6 @@ labels:
   api: Documentação da API
   version-schedule-prompt: Para mais informações sobre o suporte das versões, consulte o
   version-schedule-prompt-link-text: cronograma de lançamentos
-  version-schedule-prompt-link-text: release schedule
 ---
 
 Node.js® é um runtime JavaScript desenvolvido com o [Chrome's V8 JavaScript engine](https://v8.dev/).
