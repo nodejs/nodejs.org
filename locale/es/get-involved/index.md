@@ -11,7 +11,6 @@ layout: contribute.hbs
 * La cuenta de Twitter oficial de Node.js es [nodejs](https://twitter.com/nodejs).
 * El [calendario de la Fundación Node.js](https://nodejs.org/calendar) con todas las reuniones del equipo público.
 * [Node Weekly](https://nodeweekly.com/) es una lista de correo que recopila los últimos eventos y noticias alrededor de la comunidad de Node.js.
-* La [Community Committee](https://github.com/nodejs/community-committee) es un comité de alto nivel de la Fundación Node.js centrado en los esfuerzos de la comunidad.
 * [Node Slackers](https://www.nodeslackers.com/) es una comunidad de Slack enfocada en Node.js.
 
 ## Aprendizaje

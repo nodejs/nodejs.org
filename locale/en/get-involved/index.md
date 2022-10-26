@@ -15,8 +15,6 @@ layout: contribute.hbs
     * The [OpenJSF Slack](https://slack-invite.openjsf.org/) is a Foundation run Slack with several Node.js channels (channels prefixed by `#nodejs-` are related to the project). Some Working Groups have discussion channels there.
 * The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
 * The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
-* [Node.js Collection](https://medium.com/the-node-js-collection) is a collection of community-curated content on Medium.
-* The [Community Committee](https://github.com/nodejs/community-committee) is a top-level committee in the Node.js Foundation focused on community-facing efforts.
 
 ## Learning
 

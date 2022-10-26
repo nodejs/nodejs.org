@@ -15,8 +15,6 @@ layout: contribute.hbs
     * [OpenJSF Slack](https://slack-invite.openjsf.org/) 包含多個 Node.js 頻道（帶有 `#nodejs-` 前綴的都是與此專案相關），一些工作小組在那邊也有討論頻道。
 * Node.js 官方的 Twitter 帳號是 [nodejs](https://twitter.com/nodejs)。
 * [Node.js Foundation 行事曆](https://nodejs.org/calendar) 中列出了所有的公開團隊會議。
-* [Node.js Collection](https://medium.com/the-node-js-collection) 是個由社群策劃的 Medium 文章合集。
-* [Community Committee](https://github.com/nodejs/community-committee) 是 Node.js 基金會中的高級委員會，專責社群事務。
 
 ## 學習資源
 
