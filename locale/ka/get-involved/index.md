@@ -15,8 +15,6 @@ layout: contribute.hbs
     * [OpenJSF Slack](https://slack-invite.openjsf.org/)-ში არის რამდენიმე არხი Node.js-ის გარშემო სასაუბროდ (არხები, რომელთა დასახელებაც იწყება `#nodejs-`-ით). ზოგიერთ ჯგუფს აქ აქვს სადისკუსიო არხები.
 * Node.js-ის ოფიციალური ანგარიში Twitter-ზე: [nodejs](https://twitter.com/nodejs).
 * [Node.js ფონდის კალენდარი](https://nodejs.org/calendar) ყველა საჯარო შეხვედრით.
-* [Node.js კოლექცია](https://medium.com/the-node-js-collection) Medium-ზე, რომელსაც საზოგადოება (community) კურირებს.
-* [საზოგადოების კომიტეტი](https://github.com/nodejs/community-committee) არის Node.js-ის ფონდის უმაღლესი კომიტეტი, ორიენტირებული საზოგადოების ძალისხმევაზე.
 
 ## სწავლა
 

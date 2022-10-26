@@ -15,8 +15,6 @@ layout: contribute.hbs
     * [OpenJSF Slack](https://slack-invite.openjsf.org/) 包含多个 Node.js 频道（带有 `#nodejs-` 前缀的都是与此项目相关），一些工作组在那边也有讨论频道。
 * Node.js 官方的 Twitter 账号：[nodejs](https://twitter.com/nodejs).
 * [Node.js Foundation calendar](https://nodejs.org/calendar) 是有关于所有 Node.js 团队会议的相关日程安排。
-* [Node.js Collection](https://medium.com/the-node-js-collection) 是一堆在媒体上的社区策划内容集合。
-* [Community Committee](https://github.com/nodejs/community-committee) 是 Node.js 基金会中的高级委员会，专注于社区事务。
 
 ## 学习资源
 

@@ -11,8 +11,6 @@ layout: contribute.hbs
 * The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
 * The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
 * The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
-* [Node.js Collection](https://medium.com/the-node-js-collection) is a collection of community-curated content on Medium.
-* The [Community Committee](https://github.com/nodejs/community-committee) is a top-level committee in the Node.js Foundation focused on community-facing efforts.
 
 -->
 # 参加する
@@ -22,8 +20,6 @@ layout: contribute.hbs
 * [GitHub issues リスト](https://github.com/nodejs/node/issues) は、Node.js のコア機能に関する議論の場です。
 * Node.js 公式 Twitter アカウントは [nodejs](https://twitter.com/nodejs) です。
 * [Node.js Foundation calendar](https://nodejs.org/calendar) とすべての公開チームミーティング。
-* [Node.js Collection](https://medium.com/the-node-js-collection) は、Medium 上のコミュニティキュレーションコンテンツのコレクションです。
-* [Community Committee](https://github.com/nodejs/community-committee) は、Node.js Foundation のトップレベルの委員会で、コミュニティに向けた取り組みに焦点を当てています。
 
 <!--
 ## Learning

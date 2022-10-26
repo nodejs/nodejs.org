@@ -10,8 +10,6 @@ layout: contribute.hbs
 * La [llista d'incidències de GitHub](https://github.com/nodejs/node/issues) és el lloc per discutir les característiques del nucli de Node.js.
 * El compte de Twitter oficial de Node.js és [nodejs](https://twitter.com/nodejs).
 * The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
-* [Node.js Collection](https://medium.com/the-node-js-collection) és una col·lecció de contingut comissat per la comunitat a Medium.
-* La [Community Committee](https://github.com/nodejs/community-committee) és una comissió de primer nivell a la Fundació Node.js centrada en els esforços que afronta la comunitat.
 
 ## Aprenentatge
 

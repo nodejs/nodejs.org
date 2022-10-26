@@ -10,8 +10,6 @@ layout: contribute.hbs
 * La [lista delle issues di GitHub](https://github.com/nodejs/node/issues) è il luogo in cui discutere delle funzionalità del core di Node.js.
 * L'account Twitter ufficiale di Node.js é [nodejs](https://twitter.com/nodejs).
 * Il [calendario della Node.js Foundation](https://nodejs.org/calendar) con tutti i meeting pubblici del team.
-* [Node.js Collection](https://medium.com/the-node-js-collection) é una collezione di contenuti curati dalla comunità e presenti su Medium.
-* Il [Comitato della Comunità](https://github.com/nodejs/community-committee) é un comitato di livello più alto della Node.js Foundation concentrato sugli sforzi della comunità.
 * [Node Slackers](https://www.nodeslackers.com/) è la comunità Slack di Node.js.
 
 ## Impara
