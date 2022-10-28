@@ -4,6 +4,7 @@
  in order to avoid missing adding Node.js links.
 -->
 * [Node.js 17.x](https://nodejs.org/docs/latest-v17.x/api/)
+* [Node.js 16.x](https://nodejs.org/docs/latest-v16.x/api/)
 * [Node.js 15.x](https://nodejs.org/docs/latest-v15.x/api/)
 * [Node.js 14.x](https://nodejs.org/docs/latest-v14.x/api/)
 * [Node.js 13.x](https://nodejs.org/docs/latest-v13.x/api/)
