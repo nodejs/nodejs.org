@@ -116,7 +116,7 @@ There are some mechanism to control this behavior by defining a blocklist with
 
 **Mitigations**
 
-* Using `npm publish –dry-run` list all the files to publish. Ensure to review the
+* Using `npm publish --dry-run` list all the files to publish. Ensure to review the
 content before publishing the package.
 * It’s also important to create and maintain ignore files such as `.gitignore` and
 `.npmignore`.
@@ -229,8 +229,10 @@ Possible vector attacks:
 
 **Mitigations**
 
-* Prevent npm from executing arbitrary scripts / Disabling npm postinstall
-* Pin dependency versions
+* Prevent npm from executing arbitrary scripts with `--ignore-scripts`
+  * Additionally, you can disable it globally with `npm config set ignore-scripts true`
+* Pin dependency versions to a specific immutable version,
+  not a version that is a range or from a mutable source.
 * Use lockfiles, which pin every dependency (direct and transitive).
   * Use [Mitigations for lockfile poisoning][].
 * Automate checks for new vulnerabilities using CI, with tools like [`npm-audit`][].
@@ -311,7 +313,8 @@ be replaced.
 
 Prototype pollution refers to the possibility to modify or inject properties
 into Javascript language items by abusing the usage of _\_proto\__,
-_constructor_, and _prototype_.
+_constructor_, _prototype_, and other properties inherited from built-in
+prototypes.
 
 Example:
 
@@ -321,6 +324,11 @@ const data = JSON.parse('{"__proto__": { "polluted": true}}');
 
 const c = Object.assign({}, a, data);
 console.log(c.polluted); // true
+
+// Potential DoS
+const data2 = JSON.parse('{"__proto__": null}');
+const d = Object.assign(a, data2);
+d.hasOwnProperty('b'); // Uncaught TypeError: d.hasOwnProperty is not a function
 ```
 
 This is considered a potential vulnerability inherited from the JavaScript
@@ -338,6 +346,9 @@ language.
 * Create Objects without prototype by using `Object.create(null)`.
 * Freezing the prototype: `Object.freeze(MyObject.prototype)`.
 * Disable the `Object.prototype.__proto__` property using `--disable-proto` flag.
+* Check that the property exists directly on the object, not from the prototype
+using `Object.hasOwn(obj, keyFromObj)`.
+* Avoid using methods from `Object.prototype`.
 
 ### Uncontrolled Search Path Element (CWE-427)
 
@@ -370,7 +381,7 @@ For the directory described above, one can use the following `policy.json`
     },
     "./app/server.js": {
       "dependencies": {
-        "./auth" : true
+        "./auth" : "./app/auth.js"
       },
       "integrity": "sha256-NPtLCQ0ntPPWgfVEgX46ryTNpdvTWdQPoZO3kHo0bKI="
     }
