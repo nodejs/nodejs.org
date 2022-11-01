@@ -131,10 +131,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2022-10-18T16:00:00.000Z",
-      "endDate": "2022-10-25T16:00:00.000Z",
-      "html": "<img alt='Node.js 19 is now live!' src='https://nodejs.org/static/images/NodeJS19_Banner.png'>",
-      "link": "https://nodejs.org/en/blog/announcements/v19-release-announce/"
+      "startDate": "2022-11-01T16:00:00.000Z",
+      "endDate": "2022-11-14T16:00:00.000Z",
+      "text": "New security releases to be made available November 3rd, 2022",
+      "link": "https://nodejs.org/en/blog/vulnerability/november-2022-security-releases/"
     },
     "blacklivesmatter": {
       "visible": false,
