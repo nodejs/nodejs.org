@@ -183,7 +183,7 @@ Furthermore, because they also have access to the file system, they can send
 any data to anywhere.
 
 All code running into a node process has the ability to load and run additional
-arbitrary code using /p;=(or its equivalents).
+arbitrary code by using `eval()`(or its equivalents).
 All code with file system write access may achieve the same thing by writing to
 new or existing files which are loaded.
 
