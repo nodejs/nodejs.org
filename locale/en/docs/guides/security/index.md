@@ -95,11 +95,6 @@ for their requests so that they seem to originate from a local IP address.
 This is done by controlling both a website and the DNS server used to resolve
 its IP address, see [DNS Rebinding wiki][] for more details.
 
-This is not considered a vulnerability in Node.js itself, unless the request has
-an invalid origin (such as an invalid IP, or any domain other than localhost)
-and Node tries to resolve it via the malicious DNS server.
-The expected behavior is that those requests are ignored instead of processed.
-
 **Mitigations**
 
 * Disable inspector on _SIGUSR1_ signal by attaching a `process.on(‘SIGUSR1’, …)`
