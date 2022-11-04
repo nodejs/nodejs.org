@@ -318,6 +318,8 @@ prototypes.
 
 Example:
 
+<!-- eslint-skip -->
+
 ```js
 const a = {"a": 1, "b": 2};
 const data = JSON.parse('{"__proto__": { "polluted": true}}');
