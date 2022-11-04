@@ -93,7 +93,7 @@ browsers, which forbids scripts from reaching resources from different origins
 However, through DNS rebinding, an attacker can temporarily control the origin
 for their requests so that they seem to originate from a local IP address.
 This is done by controlling both a website and the DNS server used to resolve
-its IP address, see [DNS Rebinding wiki][] for more details.
+its IP address. See [DNS Rebinding wiki][] for more details.
 
 **Mitigations**
 
@@ -182,10 +182,6 @@ arbitrary code by using `eval()`(or its equivalents).
 All code with file system write access may achieve the same thing by writing to
 new or existing files which are loaded.
 
-**This kind of attack is not considered a vulnerability in Node.js, rather it
-is the responsibility of the application to ensure its dependencies are safe
-and correct.**
-
 Node.js has an experimental[¹][experimental-features]
 [policy mechanism][] to declare the loaded resource as untrusted or trusted.
 However, this policy is not enabled by default.
@@ -270,9 +266,6 @@ Array.prototype.push = function (item) {
 };
 ```
 
-This is **not** considered a vulnerability, it falls under the following
-statement: _“Node.js trusts the code being run”_.
-
 **Mitigations**
 
 The `--frozen-intrinsics` flag enables experimental[¹][experimental-features]
@@ -311,8 +304,6 @@ into Javascript language items by abusing the usage of _\_proto\__,
 _constructor_, _prototype_, and other properties inherited from built-in
 prototypes.
 
-Example:
-
 <!-- eslint-skip -->
 
 ```js
@@ -328,7 +319,7 @@ const d = Object.assign(a, data2);
 d.hasOwnProperty('b'); // Uncaught TypeError: d.hasOwnProperty is not a function
 ```
 
-This is considered a potential vulnerability inherited from the JavaScript
+This is a potential vulnerability inherited from the JavaScript
 language.
 
 **Examples**:
