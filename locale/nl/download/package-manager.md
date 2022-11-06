@@ -270,7 +270,7 @@ choco install nvs
 
 [Hier](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux) kunt de documentatie over de installatiestappen van `nvs` in macOS/Unix-like systemen terugvinden
 
-#### Usage
+#### Gebruik
 
 Hierna kan `nvs` gebruiken om te wisselen tussen verschillende versies van node.
 
@@ -294,7 +294,7 @@ PATH -= %LOCALAPPDATA%\nvs\default
 PATH += %LOCALAPPDATA%\nvs\node\14.17.0\x64
 ```
 
-Gebruik `nvs link`, om het permanent aan `PATH` toe te voegen: 
+Gebruik `nvs link`, om het permanent aan `PATH` toe te voegen:
 
 ```bash
 nvs link lts
@@ -324,7 +324,7 @@ Node.js is beschikbaar in de main-repositories onder de volgende packages:
   (De module "Web and Scripting" moet [ingeschakeld](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated) zijn.)
 * **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, and `nodejs14`
   (De module "Web and Scripting" moet [ingeschakeld](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module) zijn.)
-  
+
 Om bijvoorbeeld Node.js 14.x op openSUSE Leap 15.2 te installeren, voert u het volgende commando uit als root:
 
 ```bash
@@ -382,7 +382,7 @@ winget install OpenJS.NodeJS.LTS
 ```
 
 Na het uitvoeren van een van de bovenstaande commando's kan het nodig zijn om uw
-terminal-emulator te herstarten voordat het `node` CLI commando beschikbaar wordt. 
+terminal-emulator te herstarten voordat het `node` CLI commando beschikbaar wordt.
 
 Met **[Chocolatey](https://chocolatey.org/)**:
 
