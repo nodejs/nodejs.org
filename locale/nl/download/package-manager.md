@@ -51,7 +51,7 @@ apk add nodejs-current
 
 ## Android
 
-Android-ondersteuning is nog steeds experimenteel binnen Node.js, dus precompiled-binaries zijn momenteel nog niet beschikbaar.
+Android-ondersteuning is nog steeds experimenteel binnen Node.js, dus precompiled binaries zijn momenteel nog niet beschikbaar.
 
 Er zijn wel enkele third-party-oplossingen beschikbaar. Bijvoorbeeld: de [Termux](https://termux.com/) community, deze bieden een terminal-emulator en Linux-omgeving aan voor Android, daarnaast hebben ze ook een eigen package-manager en een [uitgebreide collectie](https://github.com/termux/termux-packages) van precompiled applicaties. Dit commando in de Termux-app installeert de laatst beschikbare Node.js-versie:
 
@@ -111,8 +111,8 @@ Packages die compatibel zijn met op Debian en Ubuntu gebaseerde Linux-distributi
 Snelle en eenvoudige Node.js version-manager geschreven in Rust, wordt gebruikt om meerdere uitgebrachte Node.js versies te beheren. Hiermee kunt u bewerkingen uitvoeren zoals: install, uninstall, switch Node versions, enz.
 Om fnm te installeren, kunt u dit [script](https://github.com/Schniz/fnm#using-a-script-macoslinux) gebruiken.
 
-fnm heeft cross-platform ondersteuning (macOs, Windows, Linux) & wordt ook ondersteund door alle populaire shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
-fnm is gebouwd met snelheid in het achterhoofd en met compatibility-support voor `.node-version` en `.nvmrc` bestanden.
+fnm heeft cross-platform ondersteuning (macOS, Windows, Linux) & wordt ook ondersteund door alle populaire shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
+fnm is gebouwd met snelheid in het achterhoofd en met compatibiliteit voor `.node-version` en `.nvmrc` bestanden.
 
 ## FreeBSD
 
@@ -193,11 +193,11 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## n
 
-`n` is een eenvoudig te gebruiken Node.js version-manager voor Mac en Linux. Met `n` kan u een doelversie specifieren (met gebruik van een rich-syntax) om te download,
+`n` is een eenvoudig te gebruiken Node.js version-manager voor Mac en Linux. Met `n` kunt u een doelversie specifieren (met gebruik van een rich-syntax) om te downloaden,
 of kiezen uit een lijst van eerder gedownloade versies. De versies worden system-wide of user-wide geïnstalleerd, en voor meer
 gericht gebruik kunt u een versie direct vanuit de cached-downloads uitvoeren.
 
-Bezoek de [homepage](https://github.com/tj/n) voor installatiemethoden (boostrap, npm, Homebrew, third-party), en alle gebruiksdetails.
+Bezoek de [homepage](https://github.com/tj/n) voor installatiemethoden (bootstrap, npm, Homebrew, third-party), en alle gebruiksdetails.
 
 Als je `npm` al hebt geïnstalleerd dan is het installeren van `n` en de nieuwste LTS `node` versie zo simpel als:
 
@@ -222,7 +222,7 @@ pkgin -y install nodejs
 
 ## Nodenv
 
-`nodenv` is een lightweight node version-manager, vergelijkbaar met `nvm`. Het is simpel, voorspelbaar en heeft een rijk ecosysteem aan plugin's die u kunt aanpassen aan uw behoeften. Gebruik `nodenv` om een Node-versie te kiezen voor uw applicatie en garandeer dat uw ontwikkel- en productieomgeving overeenkomen.
+`nodenv` is een lightweight node version-manager, vergelijkbaar met `nvm`. Het is simpel, voorspelbaar en heeft een rijk ecosysteem aan plugins die u kunt aanpassen aan uw behoeften. Gebruik `nodenv` om een Node-versie te kiezen voor uw applicatie en te garanderen dat uw ontwikkel- en productieomgeving overeenkomen.
 
 Nodenv installatie-instructies zijn beschikbaar op [Github](https://github.com/nodenv/nodenv#installation). Bezoek a.u.b. de GitHub-pagina om er zeker van te zijn dat u de correcte installatiestappen volgt.
 
@@ -246,7 +246,7 @@ Bijvoorbeeld, als de versie van Node.js v8.0.0-pre is:
 nvm use 8
 ```
 
-Zodra de officiële versie uitgebracht is, kan u de versie gebouwd vanuit de source verwijderen:
+Zodra de officiële versie uitgebracht is, kunt u de versie gebouwd vanuit de source verwijderen:
 
 ```bash
 nvm uninstall 8
@@ -335,7 +335,7 @@ Het is mogelijk om verschillende versies van Node te installeren en deze tegelij
 
 ## SmartOS en illumos
 
-SmartOS-images komen voorgeïnstalleerd met pkgsrc. Op andere illumos-distributies moet u eerst **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)** installeren, hierna kan u de binary-package installeren.
+SmartOS-images komen voorgeïnstalleerd met pkgsrc. Op andere illumos-distributies dient u eerst **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)** installeren, hierna kunt u de binary-package installeren.
 
 ```bash
 pkgin -y install nodejs
