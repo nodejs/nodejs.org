@@ -108,7 +108,7 @@ Packages die compatibel zijn met op Debian en Ubuntu gebaseerde Linux-distributi
 
 ## fnm
 
-Snelle en eenvoudige Node.js version-manager geschreven in Rust, wordt gebruikt om meerdere uitgebrachte Node.js versies te beheren. Hiermee kunt u bewerkingen uitvoeren zoals: install, uninstall, switch Node versions, enz.
+Snelle en eenvoudige Node.js versiebeheerder geschreven in Rust, wordt gebruikt om meerdere uitgebrachte Node.js versies te beheren. Hiermee kunt u bewerkingen uitvoeren zoals: install, uninstall, switch Node versions, enz.
 Om fnm te installeren, kunt u dit [script](https://github.com/Schniz/fnm#using-a-script-macoslinux) gebruiken.
 
 fnm heeft cross-platform ondersteuning (macOS, Windows, Linux) & wordt ook ondersteund door alle populaire shells (Bash, Zsh, Fish, PowerShell, Windows Command Line Prompt).
@@ -154,7 +154,7 @@ Node.js kan ook worden geïnstalleerd met IBM i Access Client Solutions. Zie [di
 
 Download de [macOS-installer](https://nodejs.org/en/#home-downloadhead) op de [nodejs.org](https://nodejs.org/) website.
 
-_Als je de package met bash wilt downloaden:_
+_Als je het package met bash wilt downloaden:_
 
 ```bash
 curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
@@ -185,7 +185,7 @@ Installeer de binary-package:
 pkgin -y install nodejs
 ```
 
-Of build manueel vanuit pkgsrc:
+Of bouw handmatig vanuit pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
@@ -193,7 +193,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## n
 
-`n` is een eenvoudig te gebruiken Node.js version-manager voor Mac en Linux. Met `n` kunt u een doelversie specifieren (met gebruik van een rich-syntax) om te downloaden,
+`n` is een eenvoudig te gebruiken Node.js versiebeheerder voor Mac en Linux. Met `n` kunt u een doelversie specifieren (met gebruik van een rich-syntax) om te downloaden,
 of kiezen uit een lijst van eerder gedownloade versies. De versies worden system-wide of user-wide geïnstalleerd, en voor meer
 gericht gebruik kunt u een versie direct vanuit de cached-downloads uitvoeren.
 
@@ -222,7 +222,7 @@ pkgin -y install nodejs
 
 ## Nodenv
 
-`nodenv` is een lightweight node version-manager, vergelijkbaar met `nvm`. Het is simpel, voorspelbaar en heeft een rijk ecosysteem aan plugins die u kunt aanpassen aan uw behoeften. Gebruik `nodenv` om een Node-versie te kiezen voor uw applicatie en te garanderen dat uw ontwikkel- en productieomgeving overeenkomen.
+`nodenv` is een lightweight node versiebeheerder, vergelijkbaar met `nvm`. Het is simpel, voorspelbaar en heeft een rijk ecosysteem aan plugins die u kunt aanpassen aan uw behoeften. Gebruik `nodenv` om een Node-versie te kiezen voor uw applicatie en te garanderen dat uw ontwikkel- en productieomgeving overeenkomen.
 
 Nodenv installatie-instructies zijn beschikbaar op [Github](https://github.com/nodenv/nodenv#installation). Bezoek a.u.b. de GitHub-pagina om er zeker van te zijn dat u de correcte installatiestappen volgt.
 
@@ -232,21 +232,21 @@ Node Version Manager is een bash script dat gebruikt wordt om verschillende Node
 Het laat u handelingen uitvoeren zoals: install, uninstall, switch version, enz.
 Gebruik dit [installatiescript](https://github.com/nvm-sh/nvm#install--update-script) om nvm te installeren.
 
-Op Unix / OS X systemen kan Node.js (vanuit source) geïnstalleerd worden met behulp van
+Op Unix / OS X systemen kan Node.js (vanuit broncode) geïnstalleerd worden met behulp van
 [nvm](https://github.com/creationix/nvm) door het te installeren op de locatie waar nvm dit verwacht:
 
 ```bash
 env VERSION=`python tools/getnodeversion.py` make install DESTDIR=`nvm_version_path v$VERSION` PREFIX=""
 ```
 
-Hierna kan `nvm` gebruikt worden om te switchen tussen uitgebrachte versies en versies gebouwd vanuit source.
+Hierna kan `nvm` gebruikt worden om te schakelen tussen uitgebrachte versies en versies gebouwd vanuit broncode.
 Bijvoorbeeld, als de versie van Node.js v8.0.0-pre is:
 
 ```bash
 nvm use 8
 ```
 
-Zodra de officiële versie uitgebracht is, kunt u de versie gebouwd vanuit de source verwijderen:
+Zodra de officiële versie uitgebracht is, kunt u de versie gebouwd vanuit broncode verwijderen:
 
 ```bash
 nvm uninstall 8
@@ -256,7 +256,7 @@ nvm uninstall 8
 
 #### Windows
 
-De `nvs` version-manager is cross-platform en kan gebruikt worden op Windows, macOS en Unix-like systemen.
+De `nvs` versiebeheerder is cross-platform en kan gebruikt worden op Windows, macOS en Unix-like systemen.
 
 Ga naar de [release-pagina](https://github.com/jasongin/nvs/releases) en download de MSI-installer van de laatste release.
 
@@ -341,7 +341,7 @@ SmartOS-images komen voorgeïnstalleerd met pkgsrc. Op andere illumos-distributi
 pkgin -y install nodejs
 ```
 
-Of build manueel vanuit pkgsrc:
+Of bouw handmatig vanuit pkgsrc:
 
 ```bash
 cd pkgsrc/lang/nodejs && bmake install
