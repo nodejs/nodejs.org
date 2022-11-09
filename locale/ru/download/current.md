@@ -15,10 +15,10 @@ downloads:
     includes: Содержит
     buildInstructions: Сборка Node.js из исходного кода на поддерживаемых платформах
     WindowsInstaller: Установщик Windows
-    WindowsBinary: Исходный код для Windows
+    WindowsBinary: Бинарный Windows
     MacOSInstaller: Установщик macOS
-    MacOSBinary: Исходный код для macOS
-    LinuxBinaries: Исходный код для Linux
+    MacOSBinary: Бинарный macOS
+    LinuxBinaries: Бинарный Linux
     SourceCode: Исходный код
 additional:
     headline: Дополнительные платформы
