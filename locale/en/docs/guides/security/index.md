@@ -149,14 +149,14 @@ Node.js and the front-end server of choice.
 
 ### Information Exposure through Timing Attacks (CWE-208)
 
-This is an attack type applicable to not Node.js but to all runtimes, and might
-lead to information disclosure vulnerabilities.
+This is an attack that allows the attacker to learn potentially sensitive information by, for example, measuring how long
+it takes for the application to respond to a request. This attack is not specific to Node.js and can target almost all runtimes.
 
-A basic authentication method includes email and password as credentials.
+The attack is possible whenever the application uses a secret in a timing-sensitive operation (e.g., branch). Consider handling authentication in typical application. Here, a basic authentication method includes email and password as credentials.
 User information is retrieved from the input user has supplied from ideally a
 DBMS.
 Upon retrieving user information, the password is compared within the user
-information retrieved from the database. This string comparison takes a longer
+information retrieved from the database. Using the built-in string comparison takes a longer
 time for the same length values.
 This comparison, when run for an acceptable amount unwillingly increases the
 response time of the request. By comparing the request response times, an
@@ -170,6 +170,7 @@ expected sensitive values using a constant-time algorithm.
 * For password comparison, you can use the [scrypt][] available also on the
 native crypto module.
 
+* More generally, avoid using secrets in variable-time operations. This includes branching on secrets and, when the attacker could be co-located on the same infrastructure (e.g., same cloud machine), using a secret as an index into memory. Writing constant-time code in JavaScript is hard (partly because of the JIT). For crypto applications, use the built-in crypto APIs or WebAssembly (for algorithms not implemented in natively).
 ### Malicious Third-Party Modules (CWE-1357)
 
 Currently, in Node.js, any package can access powerful resources such as
