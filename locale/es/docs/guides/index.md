@@ -13,6 +13,8 @@ layout: docs.hbs
 * [Diagnostics - Flame Graphs](/en/docs/guides/diagnostics-flamegraph/)
 * [Dockerizing a Node.js web app](/en/docs/guides/nodejs-docker-webapp/)
 * [Migrating to safe Buffer constructors](/en/docs/guides/buffer-constructor-deprecation/)
+* [Diagnostics - User Journey](/en/docs/guides/diagnostics/)
+* [Security Best Practices](/en/docs/guides/security/)
 
 ## Node.js core concepts
 
@@ -30,3 +32,7 @@ layout: docs.hbs
 * [Domain Module Postmortem](/en/docs/guides/domain-postmortem/)
 * [How to publish N-API package](/en/docs/guides/publishing-napi-modules/)
 * [ABI Stability](/en/docs/guides/abi-stability/)
+
+## Known issues
+
+* [Native dependencies on macOS Catalina (v10.15)](https://github.com/nodejs/node-gyp/blob/master/macOS_Catalina.md)
