@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+      - "!dependabot/**"
   pull_request:
     branches:
       - main
+      - "!dependabot/**"
   schedule:
     - cron: "0 0 * * 0"
   workflow_dispatch:
@@ -21,13 +23,21 @@ jobs:
       security-events: write
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Clone repository
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v1
+        uses: github/codeql-action/init@v2
         with:
           languages: "javascript"
+          queries: +security-and-quality
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v2
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v1
+        uses: github/codeql-action/analyze@v2
+        with:
+          category: "/language:javascript"
