@@ -98,7 +98,7 @@ IP 黑名单等方式尽可能减少服务式拒绝攻击发生的可能性。
 * 创建和维护诸如 `.gitignore` 和 `.npmignore` 之类的文件，避免发布不必要的文件。
 在这些文件中你可以指定哪些文件（文件夹）不应该被发布。`package.json` 中的[文件属性][]
 允许你进行反操作（哪些文件是可以发布的）。
-* 万一发布了不应该发布的内容，请参考 [unpublish the package][] 撤消你的发布。
+* 万一发布了不应该发布的内容，请参考 [如何撤消已有的发布][] 撤消你的发布。
 
 ### HTTP 请求夹带私货（CWE-444）
 
@@ -363,7 +363,7 @@ SyntaxError [ERR_SRI_PARSE]: Subresource Integrity string "sha256-iuGZ6SFVFpMuHU
 [同源协议]: https://nodejs.org/en/docs/guides/debugging-getting-started/
 [DNS 重绑定维基百科]: https://en.wikipedia.org/wiki/DNS_rebinding
 [文件属性]: https://docs.npmjs.com/cli/v8/configuring-npm/package-json#files
-[unpublish the package]: https://docs.npmjs.com/unpublishing-packages-from-the-registry
+[如何撤消已有的发布]: https://docs.npmjs.com/unpublishing-packages-from-the-registry
 [CWE-444]: https://cwe.mitre.org/data/definitions/444.html
 [RFC7230]: https://datatracker.ietf.org/doc/html/rfc7230#section-3
 [规则机制]: https://nodejs.org/api/permissions.html#policies
