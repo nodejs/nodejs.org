@@ -36,3 +36,10 @@ Node.js est conçu de manière similaire et influencé par des librairies comme 
 HTTP a une place prépondérante dans Node.js, qui a été conçu pour le streaming et une faible latence. Ceci fait de Node.js une base toute désignée pour une librairie web ou un framework.
 
 Et si Node.js a été conçu sans processus multiples, vous pouvez tout de même profiter d'un environnement multi-coeur. Vous pouvez générer des processus enfant par le biais de l'API [`child_process.fork()`][] (en), avec lesquels vous pourrez communiquer facilement. Basé sur la même interface, le module [`cluster`][] (en) vous permettra de partager les sockets entre vos processus pour faire de la répartition de charge entre vos coeurs.
+
+[Blocking vs. Non-Blocking]: /en/docs/guides/blocking-vs-non-blocking/
+[`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
+[`cluster`]: https://nodejs.org/api/cluster.html
+[event loop]: /en/docs/guides/event-loop-timers-and-nexttick/
+[Event Machine]: https://github.com/eventmachine/eventmachine
+[Twisted]: https://twistedmatrix.com/trac/

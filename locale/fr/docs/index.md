@@ -15,7 +15,7 @@ Plusieurs types de documentation sont disponibles sur ce site web :
 
 ## Documentation de référence de l'API
 
-La [documentation de référence de l'API] (https://nodejs.org/api/) fournit des informations détaillées sur une fonction ou un objet dans Node.js. Cette documentation indique quels arguments une méthode accepte, la valeur de retour de cette méthode et les erreurs qui peuvent être liées à cette méthode. Elle indique également quelles méthodes sont disponibles pour les différentes versions de Node.js.
+La [documentation de référence de l'API](https://nodejs.org/api/) fournit des informations détaillées sur une fonction ou un objet dans Node.js. Cette documentation indique quels arguments une méthode accepte, la valeur de retour de cette méthode et les erreurs qui peuvent être liées à cette méthode. Elle indique également quelles méthodes sont disponibles pour les différentes versions de Node.js.
 
 Cette documentation décrit les modules intégrés fournis par Node.js. Elle ne documente pas les modules fournis par la communauté.
 

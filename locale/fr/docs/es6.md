@@ -3,37 +3,37 @@ title: ECMAScript 2015 (ES6) and beyond
 layout: docs.hbs
 ---
 
-# ECMAScript 2015 (ES6) and beyond
+# ECMAScript 2015 (ES6) et au-delà
 
-Node.js is built against modern versions of [V8](https://v8.dev/). By keeping up-to-date with the latest releases of this engine, we ensure new features from the [JavaScript ECMA-262 specification](http://www.ecma-international.org/publications/standards/Ecma-262.htm) are brought to Node.js developers in a timely manner, as well as continued performance and stability improvements.
+Node.js est construit avec des versions modernes de [V8](https://v8.dev/). En restant à jour avec les dernières versions de ce moteur, nous nous assurons que les nouvelles fonctionnalités de la [spécification JavaScript ECMA-262] (http://www.ecma-international.org/publications/standards/Ecma-262.htm) sont apportées aux développeurs de Node.js en temps voulu, ainsi que des améliorations continues de la performance et de la stabilité.
 
-All ECMAScript 2015 (ES6) features are split into three groups for **shipping**, **staged**, and **in progress** features:
+Toutes les fonctionnalités ECMAScript 2015 (ES6) sont réparties en trois groupes : les fonctionnalités **shipping**, **staged** et **in progress** :
 
-* All **shipping** features, which V8 considers stable, are turned **on by default on Node.js** and do **NOT** require any kind of runtime flag.
-* **Staged** features, which are almost-completed features that are not considered stable by the V8 team, require a runtime flag: `--harmony`.
-* **In progress** features can be activated individually by their respective harmony flag, although this is highly discouraged unless for testing purposes. Note: these flags are exposed by V8 and will potentially change without any deprecation notice.
+* Toutes les fonctionnalités **shipping**, que V8 considère comme stables, sont activées **par défaut sur Node.js** et ne nécessitent **PAS** d'indicateur d'exécution.
+* Les fonctionnalités **Staged**, qui sont des fonctionnalités presque achevées et qui ne sont pas considérées comme stables par l'équipe V8, nécessitent un indicateur d'exécution : `--harmony`.
+* Les fonctionnalités **en cours** peuvent être activées individuellement par leur drapeau d'harmonie respectif, bien que cela soit fortement déconseillé, sauf à des fins de test. Note : ces drapeaux sont exposés par V8 et seront potentiellement modifiés sans aucune notification de dépréciation.
 
-## Which features ship with which Node.js version by default?
+## Quelles fonctionnalités sont livrées avec quelle version de Node.js par défaut ?
 
-The website [node.green](https://node.green/) provides an excellent overview over supported ECMAScript features in various versions of Node.js, based on kangax's compat-table.
+Le site web [node.green](https://node.green/) fournit une excellente vue d'ensemble des fonctionnalités ECMAScript supportées dans les différentes versions de Node.js, basée sur le compat-table de kangax.
 
-## Which features are in progress?
+## Quelles fonctionnalités sont en cours de développement ?
 
-New features are constantly being added to the V8 engine. Generally speaking, expect them to land on a future Node.js release, although timing is unknown.
+De nouvelles fonctionnalités sont constamment ajoutées au moteur V8. D'une manière générale, attendez-vous à ce qu'elles soient intégrées dans une future version de Node.js, bien que la date soit inconnue.
 
-You may list all the *in progress* features available on each Node.js release by grepping through the `--v8-options` argument. Please note that these are incomplete and possibly broken features of V8, so use them at your own risk:
+Vous pouvez lister toutes les fonctionnalités *en cours* disponibles sur chaque version de Node.js en parcourant l'argument `--v8-options`. Veuillez noter qu'il s'agit de fonctionnalités incomplètes et peut-être cassées de V8, donc utilisez-les à vos risques et périls :
 
-```bash
-node --v8-options | grep "in progress"
+``bash
+node --v8-options | grep "in progress" (en cours)
 ```
 
-## I have my infrastructure set up to leverage the --harmony flag. Should I remove it?
+## J'ai configuré mon infrastructure pour tirer parti du drapeau --harmony. Dois-je le supprimer ?
 
-The current behavior of the `--harmony` flag on Node.js is to enable **staged** features only. After all, it is now a synonym of `--es_staging`. As mentioned above, these are completed features that have not been considered stable yet. If you want to play safe, especially on production environments, consider removing this runtime flag until it ships by default on V8 and, consequently, on Node.js. If you keep this enabled, you should be prepared for further Node.js upgrades to break your code if V8 changes their semantics to more closely follow the standard.
+Le comportement actuel de l'option `--harmony` sur Node.js est d'activer uniquement les fonctionnalités **staged**. Après tout, c'est maintenant un synonyme de `--es_staging`. Comme mentionné ci-dessus, ce sont des fonctionnalités terminées qui n'ont pas encore été considérées comme stables. Si vous voulez jouer la sécurité, en particulier dans les environnements de production, envisagez de supprimer ce drapeau d'exécution jusqu'à ce qu'il soit livré par défaut sur V8 et, par conséquent, sur Node.js. Si vous gardez cette option activée, vous devez vous préparer à ce que d'autres mises à jour de Node.js brisent votre code si V8 modifie leur sémantique pour suivre de plus près la norme.
 
-## How do I find which version of V8 ships with a particular version of Node.js?
+## Comment puis-je trouver quelle version de V8 est livrée avec une version particulière de Node.js ?
 
-Node.js provides a simple way to list all dependencies and respective versions that ship with a specific binary through the `process` global object. In case of the V8 engine, type the following in your terminal to retrieve its version:
+Node.js fournit un moyen simple de lister toutes les dépendances et les versions respectives qui sont livrées avec un binaire spécifique à travers l'objet global `process`. Dans le cas du moteur V8, tapez ce qui suit dans votre terminal pour récupérer sa version :
 
 ```bash
 node -p process.versions.v8

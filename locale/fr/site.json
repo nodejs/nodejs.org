@@ -55,10 +55,10 @@
       "link": "SHASUMS256.txt.asc",
       "text": "SHASUMS signés pour les fichiers des versions",
       "verify-link": "https://github.com/nodejs/node#verifying-binaries",
-      "verify-text": "How to verify"
+      "verify-text": "Comment vérifier"
     },
     "install-on-linux": {
-      "text": "Installing Node.js via binary archive"
+      "text": "Installation de Node.js via une archive binaire"
     }
   },
   "docs": {
@@ -83,7 +83,7 @@
     },
     "dependencies": {
       "link": "docs/meta/topics/dependencies",
-      "text": "Dependencies"
+      "text": "Dépendances"
     }
   },
   "getinvolved": {
@@ -104,7 +104,7 @@
   },
   "security": {
     "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
-    "text": "Securité"
+    "text": "Sécurité"
   },
   "blog": {
     "link": "blog",
@@ -117,6 +117,19 @@
   "links": {
     "pages": {
       "changelog": "Journal des modifications"
+    }
+  },
+  "banners": {
+    "index": {
+      "startDate": "2022-11-01T16:00:00.000Z",
+      "endDate": "2022-11-14T16:00:00.000Z",
+      "text": "De nouvelles versions de sécurité sont désormais disponibles pour les versions 14, 16, 18 et 19 de Node.js.",
+      "link": "https://nodejs.org/fr/blog/vulnerability/november-2022-security-releases/"
+    },
+    "blacklivesmatter": {
+      "visible": false,
+      "text": "#BlackLivesMatter",
+      "link": "black-lives-matter/"
     }
   }
 }

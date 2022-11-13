@@ -1,18 +1,18 @@
 ---
 layout: index.hbs
 labels:
-  current-version: Version actuelle
-  download: Téléchargements
-  download-for: Téléchargements pour
+  current-version: Current Version
+  download: Télécharger
+  download-for: Télécharger pour
   other-downloads: Autres téléchargements
-  current: Actuel
+  current: Current
   lts: LTS
-  tagline-current: Dernières fonctionnalités
+  tagline-current: Dernières caractéristiques
   tagline-lts: Recommandé pour la plupart des utilisateurs
-  changelog: Journal des modifications
-  api: Documentation API
-  version-schedule-prompt: Ou regardez le
-  version-schedule-prompt-link-text: Planning LTS
+  changelog: Historique des modifications
+  api: Docs API
+  version-schedule-prompt: Pour plus d'informations sur les versions prises en charge, consultez le
+  version-schedule-prompt-link-text: calendrier de publication
 ---
 
-Node.js® est un environnement d’exécution JavaScript construit sur le [moteur JavaScript V8 de Chrome](https://v8.dev/).
+Node.js® est un environnement d'exécution JavaScript à source ouverte et multiplateforme.

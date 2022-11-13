@@ -11,14 +11,28 @@ Le projet est co-dirigé par un Comité de Pilotage Technique (Technical Steerin
 
 ## Collaborateurs
 
-Le TSC a toute autorité sur ce projet, y compris:
+Le dépôt GitHub de base [nodejs/node][] est maintenu par les collaborateurs.
+qui sont ajoutés par le comité directeur technique ([TSC][]) sur une base continue.
 
-Les invitations originelles à siéger au TSC ont été proposées à des contributeurs actifs qui avaient une expérience significative avec la gestion du projet. La participation à ce comité est susceptible d'évoluer dans le temps en rapport avec les besoins du projet.
+Les personnes apportant des contributions significatives et précieuses sont nommées Collaborateurs
+et reçoivent un accès commit au projet. Ces personnes sont identifiées par le
+TSC et leur nomination est discutée avec les collaborateurs existants.
 
-Pour trouver la liste des membres actuels du TSC, voir le \[README.md\] (https://github.com/nodejs/node/blob/main/README.md#tsc-technical-steering-committee) du projet.
+Pour la liste actuelle des collaborateurs, voir le [README.md][] du projet.
 
-Le dépôt GitHub [nodejs/node](https://github.com/nodejs/node) est maintenu par le TSC et un groupe de Collaborateurs additionnels qui sont ajoutés par le TSC de manière continue.
+Un guide pour les collaborateurs est maintenu à [collaborator-guide.md][].
 
-## Siéger au TSC
+## Comités de haut niveau
 
-Les personnes proposant des contributions significatives sont faites Collaborateurs et se voient accorder les droits d'écriture sur le projet. Ces personnes sont identifiées par le TSC et leur ajout aux Collaborateurs est discuté lors des réunions hebdomadaires du TSC
+Le projet est dirigé conjointement par le [Comité directeur technique (CDT)][]
+qui est responsable de l'orientation de haut niveau du projet, et le
+[Comité de la communauté (CommComm)][] qui est responsable de l'orientation et de l'extension de la communauté Node.js.
+l'extension de la communauté Node.js.
+
+[collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
+[Community Committee (CommComm)]: https://github.com/nodejs/community-committee/blob/master/Community-Committee-Charter.md
+[Consensus Seeking]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
+[README.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
+[Technical Steering Committee (TSC)]: https://github.com/nodejs/TSC/blob/master/TSC-Charter.md
+[TSC]: https://github.com/nodejs/TSC
+[nodejs/node]: https://github.com/nodejs/node

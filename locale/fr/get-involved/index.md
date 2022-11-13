@@ -7,17 +7,17 @@ layout: contribute.hbs
 
 ## Discussions de la communauté
 
-* The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
-* The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
-* [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
+* La [liste des problèmes GitHub](https://github.com/nodejs/node/issues) est le lieu de discussion des fonctionnalités de base de Node.js.
+* Le [calendrier de la Fondation Node.js](https://nodejs.org/calendar) avec toutes les réunions publiques de l'équipe.
+* [Node Slackers](https://www.nodeslackers.com/) est une communauté Slack axée sur Node.js.
 
 ## Apprentissage
 
-* [Official API reference documentation](https://nodejs.org/api/) details the Node.js API.
-* [NodeSchool.io](https://nodeschool.io/) will teach you Node.js concepts via interactive command-line games.
-* [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) collects new information every day.
-* [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
-* [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
+* [Official API reference documentation](https://nodejs.org/api/) détaille l'API de Node.js.
+* [NodeSchool.io](https://nodeschool.io/) vous enseignera les concepts de Node.js via des jeux interactifs en ligne de commande.
+* [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) recueille de nouvelles informations chaque jour.
+* [The DEV Community Node.js tag](https://dev.to/t/node) est un endroit pour partager des projets, des articles et des tutoriels Node.js, ainsi que pour lancer des discussions et demander des commentaires sur des sujets liés à Node.js. Les développeurs de tous niveaux sont invités à participer.
+* [Nodeiflux](https://discordapp.com/invite/vUsrbjd) est une communauté amicale de développeurs de backend Node.js qui se soutiennent mutuellement sur Discord.
 
 ## Site et projets des commuanutés internationales
 
