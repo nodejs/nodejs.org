@@ -11,8 +11,8 @@ Este documento tiene la intención de extender el [modelo de amenazas][] actual 
 
 ## Contenido del documento
 * Mejores prácticas: Mostramos una forma simplificada y resumida de ver las mejores prácticas. Podemos usar [este issue][issue sobre la guía de seguridad] o [esta guía][nodejs guideline] como punto de partida. Es importante señalar que este documento es específico a Node.js, si está buscando algo amplio, considere [OSSF Best Practices][].
-* Ataques explicados: ilustrar y documentar con lenguaje sencillo con algunos ejemplos código
-  (cuando sea posible) los ataques que estamos mencionando en el modelo de amenazas.
+* Ataques explicados: ilustrar y documentar en lenguaje sencillo con algunos ejemplos código
+  (cuando sea posible) los ataques mencionandos en el modelo de amenazas.
 * Librerías de terceros: definir amenazas (ataques typo-squirting, paquetes maliciosos...) y las mejores prácticas con respecto a las dependencias, etc...
 
 ## Lista de amenazas
@@ -123,7 +123,7 @@ Antes de instalar un paquete asegúrese de que éste esta mantenido y que incluy
 
 #### Ataques a la cadena de suministro
 
-Un ataque a la cadena de suministro en una aplicación Node.js, ocurre cuando una de sus dependencias (ya sea directa o transitiva) está comprometida. Esto puede ocurrir debido a que la aplicación es demasiado laxa en la especificación de las dependencias (permitiendo actualizaciones no deseadas) y/o errores comunes en la especificación (vulnerable a [typosquatting][]).
+Un ataque a la cadena de suministro en una aplicación Node.js, ocurre cuando una de sus dependencias (ya sea directa o transitiva) está comprometida. Esto puede ocurrir debido a que la aplicación no es estricta en la especificación de las dependencias (permitiendo actualizaciones no deseadas) y/o errores comunes en la especificación (vulnerable a [typosquatting][]).
 
 Si un atacante toma el control de un paquete, puede publicar una nueva versión con código malicioso. Si una aplicación Node.js depende de ese paquete sin ser estricta en cuanto a qué versión es segura de usar, compromete la aplicación una vez que el paquete use la última versión diposible (maliciosa).
 
