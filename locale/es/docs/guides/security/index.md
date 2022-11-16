@@ -319,7 +319,7 @@ funcionalidad no es estable de forma segura. Sin embargo, el feedback es muy apr
 [RFC7230]: https://datatracker.ietf.org/doc/html/rfc7230#section-3
 [policy mechanism]: https://nodejs.org/api/permissions.html#policies
 [typosquatting]: https://en.wikipedia.org/wiki/Typosquatting
-[Mitigaciones para el Lockfile poisoning]: https://securenodejsguidelines.ulisesgascon.com/attacks/lockfile-posioned#mitigation
+[Mitigaciones para el Lockfile poisoning]: https://blog.ulisesgascon.com/lockfile-posioned
 [`npm ci`]: https://docs.npmjs.com/cli/v8/commands/npm-ci
 [secure-heap documentation]: https://nodejs.org/dist/latest-v18.x/docs/api/cli.html#--secure-heapn
 [CVE-2022-21824]: https://www.cvedetails.com/cve/CVE-2022-21824/
