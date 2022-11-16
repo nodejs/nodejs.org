@@ -368,7 +368,7 @@ SyntaxError [ERR_SRI_PARSE]: Subresource Integrity string "sha256-iuGZ6SFVFpMuHU
 [RFC7230]: https://datatracker.ietf.org/doc/html/rfc7230#section-3
 [规则机制]: https://nodejs.org/api/permissions.html#policies
 [typosquatting]: https://en.wikipedia.org/wiki/Typosquatting
-[对 lockfile 恶意篡改的缓解措施]: https://securenodejsguidelines.ulisesgascon.com/attacks/lockfile-posioned#mitigation
+[对 lockfile 恶意篡改的缓解措施]: https://blog.ulisesgascon.com/lockfile-posioned
 [`npm ci`]: https://docs.npmjs.com/cli/v8/commands/npm-ci
 [安全堆栈文档]: https://nodejs.org/dist/latest-v18.x/docs/api/cli.html#--secure-heapn
 [CVE-2022-21824]: https://www.cvedetails.com/cve/CVE-2022-21824/
