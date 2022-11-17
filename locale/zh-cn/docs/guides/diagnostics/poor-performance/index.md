@@ -9,8 +9,8 @@ layout: docs.hbs
 
 * [低性能和效率](#poor-performance)
   * [我的程序执行效率太低了！](#my-application-has-a-poor-performance)
-    * [Symptoms](#symptoms)
-    * [Debugging](#debugging)
+    * [症状](#symptoms)
+    * [调试](#debugging)
 
 ## <!--my-application-has-a-poor-performance-->我的程序执行效率太低了！
 
