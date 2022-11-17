@@ -14,3 +14,4 @@ layout: docs.hbs
 
 * [内存诊断相关](/zh-cn/docs/guides/diagnostics/memory)
 * [在线调试](/zh-cn/docs/guides/diagnostics/live-debugging)
+* [低效率运行](/en/docs/guides/diagnostics/poor-performance)
