@@ -347,7 +347,7 @@ SyntaxError [ERR_SRI_PARSE]: Subresource Integrity string "sha256-iuGZ6SFVFpMuHU
 
 请注意，我们总是推荐你使用 `--policy-integrity` 以避免路径发生变化时遇到问题。
 
-## 生产环境中使用尝鲜版功能
+## <!--experimental-features-in-production-->生产环境中使用尝鲜版功能
 
 在生产环境中直接使用尝鲜版功能绝不推荐！因为尝鲜功能有可能随时发生重大
 变更，而且他们实际的功能不一定稳定。虽然如此，我们还是非常乐于接受用户的反馈。
