@@ -26,7 +26,7 @@ exports.say = function () {
 }
 ```
 
-So if you run `var example = require('./example.js')`, then `example.js` will get evaluated and then `example` be an object equal to:
+So if you run `var example = require('./example.js')`, then `example.js` will get evaluated and then `example` becomes an object equal to:
 
 ```
 {
