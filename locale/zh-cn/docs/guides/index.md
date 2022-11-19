@@ -14,6 +14,7 @@ layout: docs.hbs
 * [将 Node.js 网络应用安装到 Docker 中](/zh-cn/docs/guides/nodejs-docker-webapp/)
 * [迁移到安全的 Buffer 构造函数中](/zh-cn/docs/guides/buffer-constructor-deprecation/)
 * [诊断 —— 用户亲历](/zh-cn/docs/guides/diagnostics/)
+* [处理安全性问题的最佳实践做法](/zh-cn/docs/guides/security/)
 
 ## Node.js 核心概念
 

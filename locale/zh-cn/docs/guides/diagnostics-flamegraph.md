@@ -21,7 +21,7 @@ layout: docs.hbs
 
 如果你想诊断发布的生产环境，请阅读[在生产环境中的 0x](https://github.com/davidmarkclements/0x/blob/master/docs/production-servers.md)
 
-### 用系统工具 `pref` 创建火焰图
+### <!--create-a-flame-graph-with-system-perf-tools-->用系统工具 `pref` 创建火焰图
 
 本教程的目的在于给你展示如何创建火焰图的具体步骤，这样让你可以对每一步都有掌控。
 
@@ -83,7 +83,7 @@ sed -i \
 
 当然，如果没有这些参数的话，你照样可以得到火焰图。不过大部分的条状都将被标记为 `v8::Function::Call`。
 
-## `perf` 输出的一些问题
+## <!--perf-output-issues-->`perf` 输出的一些问题
 
 ### Node.js 8.x V8 管道上的变化
 
