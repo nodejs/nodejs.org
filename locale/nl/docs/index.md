@@ -15,9 +15,9 @@ Er zijn verschillende soorten documentatie beschikbaar op onze website:
 
 ## API-referentiedocumentatie
 
-De [API-referentiedocumentatie](https://nodejs.org/api/) biedt gedetailleerde informatie over functies en objecten in Node.js. Het geeft aan welke argumenten geaccepteerd kunnen worden door een methode, de return-waarde van een methode en informatie over errors die gekoppeld zijn met deze methode. Het geeft ook aan welke methoden beschikbaar zijn binnen de verschillende versies van Node.js.
+De [API-referentiedocumentatie](https://nodejs.org/api/) biedt gedetailleerde informatie over functies en objecten in Node.js. Zij geeft aan welke argumenten geaccepteerd kunnen worden door een methode, de return-waarde van een methode en informatie over errors die gekoppeld zijn met deze methode. Ze geeft ook aan welke methoden beschikbaar zijn binnen de verschillende versies van Node.js.
 
-Deze documentatie behandelt enkel de ingebouwde modules van Node.js. Het behandelt geen community-modules.
+Deze documentatie behandelt enkel de ingebouwde modules van Node.js. Ze behandelt geen community-modules.
 
 <div class="highlight-box">
 
