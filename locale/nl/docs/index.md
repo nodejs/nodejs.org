@@ -29,7 +29,7 @@ Deze documentatie behandelt enkel de ingebouwde modules van Node.js. Het behande
 
 ## ES6-features
 
-De [ES6-sectie](/en/docs/es6/) beschrijft de drie ES6-feature groepen en de standaard features binnen Node.js. Het toont u ook welke versie van V8 bij een bepaalde Node.js-versie hoort.
+De [ES6-sectie](/en/docs/es6/) beschrijft de drie ES6-feature groepen en de standaard features binnen Node.js. Ze toont ook welke versie van V8 bij een bepaalde Node.js-versie hoort.
 
 ## Handleiding
 
