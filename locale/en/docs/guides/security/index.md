@@ -410,7 +410,7 @@ The use of experimental features in production isn't recommended.
 Experimental features can suffer breaking changes if needed, and their
 functionality isn't securely stable. Although, feedback is highly appreciated.
 
-[threat model]: https://github.com/nodejs/security-wg/issues/799
+[threat model]: https://github.com/nodejs/node/blob/main/SECURITY.md#the-nodejs-threat-model
 [security guidance issue]: https://github.com/nodejs/security-wg/issues/488
 [nodejs guideline]: https://github.com/goldbergyoni/nodebestpractices
 [OSSF Best Practices]: https://github.com/ossf/wg-best-practices-os-developers
