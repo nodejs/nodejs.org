@@ -303,7 +303,7 @@ No se recomienda el uso de funciones experimentales en producción.
 Las características experimentales pueden sufrir cambios de ruptura si se necesitan, y su
 funcionalidad no es estable de forma segura. Sin embargo, el feedback es muy apreciado.
 
-[modelo de amenazas]: https://github.com/nodejs/security-wg/issues/799
+[modelo de amenazas]: https://github.com/nodejs/node/blob/main/SECURITY.md#the-nodejs-threat-model
 [issue sobre la guía de seguridad]: https://github.com/nodejs/security-wg/issues/488
 [nodejs guideline]: https://github.com/goldbergyoni/nodebestpractices
 [OSSF Best Practices]: https://github.com/ossf/wg-best-practices-os-developers
