@@ -84,10 +84,10 @@ To see a list of available streams:
 dnf module list nodejs
 ```
 
-For example, to install Node.js 12:
+For example, to install Node.js 18:
 
 ```bash
-dnf module install nodejs:12
+dnf module install nodejs:18/common
 ```
 
 For CentOS/RHEL 7 Node.js is available via [Software Collections](https://www.softwarecollections.org/en/scls/?search=NodeJS).
