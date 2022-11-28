@@ -5,9 +5,9 @@ layout: about.hbs
 
 # Gouvernance du Projet
 
-## Comité de Pilotage Technique
+## Processus de recherche d'un consensus
 
-Le projet est co-dirigé par un Comité de Pilotage Technique (Technical Steering Committee - TSC) qui est responsable de la gouvernance de haut-niveau du projet.
+Le projet Node.js suit un modèle de prise de décision de type [recherche de consensus][].
 
 ## Collaborateurs
 
@@ -24,9 +24,9 @@ Un guide pour les collaborateurs est maintenu à [collaborator-guide.md][].
 
 ## Comités de haut niveau
 
-Le projet est dirigé conjointement par le [Comité directeur technique (CDT)][]
+Le projet est dirigé conjointement par le [Technical Steering Committee (TSC)][]
 qui est responsable de l'orientation de haut niveau du projet, et le
-[Comité de la communauté (CommComm)][] qui est responsable de l'orientation et de l'extension de la communauté Node.js.
+[Community Committee (CommComm)][] qui est responsable de l'orientation et de l'extension de la communauté Node.js.
 l'extension de la communauté Node.js.
 
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
