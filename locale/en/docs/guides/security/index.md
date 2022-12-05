@@ -410,7 +410,7 @@ The use of experimental features in production isn't recommended.
 Experimental features can suffer breaking changes if needed, and their
 functionality isn't securely stable. Although, feedback is highly appreciated.
 
-[threat model]: https://github.com/nodejs/security-wg/issues/799
+[threat model]: https://github.com/nodejs/node/blob/main/SECURITY.md#the-nodejs-threat-model
 [security guidance issue]: https://github.com/nodejs/security-wg/issues/488
 [nodejs guideline]: https://github.com/goldbergyoni/nodebestpractices
 [OSSF Best Practices]: https://github.com/ossf/wg-best-practices-os-developers
@@ -426,7 +426,7 @@ functionality isn't securely stable. Although, feedback is highly appreciated.
 [RFC7230]: https://datatracker.ietf.org/doc/html/rfc7230#section-3
 [policy mechanism]: https://nodejs.org/api/permissions.html#policies
 [typosquatting]: https://en.wikipedia.org/wiki/Typosquatting
-[Mitigations for lockfile poisoning]: https://securenodejsguidelines.ulisesgascon.com/attacks/lockfile-posioned#mitigation
+[Mitigations for lockfile poisoning]: https://blog.ulisesgascon.com/lockfile-posioned
 [`npm ci`]: https://docs.npmjs.com/cli/v8/commands/npm-ci
 [secure-heap documentation]: https://nodejs.org/dist/latest-v18.x/docs/api/cli.html#--secure-heapn
 [CVE-2022-21824]: https://www.cvedetails.com/cve/CVE-2022-21824/
