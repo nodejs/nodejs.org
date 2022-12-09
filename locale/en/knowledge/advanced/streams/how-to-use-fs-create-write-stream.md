@@ -17,7 +17,7 @@ var fs = require('fs');
 
 http.createServer(function(req, res) {
   // This opens up the writeable stream to `output`
-  var writeStream = fs.createWriteStream('./output');
+  var writeStream = fs.createWriteStream('./output', {flags:'a'});
 
   // This pipes the POST data to the file
   req.pipe(writeStream);
