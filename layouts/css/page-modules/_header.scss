@@ -189,15 +189,13 @@ header {
   }
 }
 
-#logo {
-  display: inline-block;
-
+.logo {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 10px;
   &:hover {
     background-color: transparent;
     text-decoration: underline;
-  }
-
-  img {
-    margin: .5em auto 0;
   }
 }
