@@ -102,6 +102,18 @@ header {
       }
     }
   }
+  .logo {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 10px;
+    &:hover {
+      background-color: transparent;
+      text-decoration: underline;
+    }
+  }
 }
 
 @media screen and (min-width: 481px) {
@@ -143,7 +155,7 @@ header {
   header {
     .switchers {
       position: unset;
-      justify-content: center;
+      justify-content: right;
       margin-bottom: 16px;
     }
 
@@ -154,6 +166,11 @@ header {
         padding: 0;
         margin: 0;
       }
+    }
+    .logo{
+      position: unset;
+      justify-content: left;
+      margin-bottom: 16px;
     }
   }
 }
@@ -186,16 +203,8 @@ header {
       height: 1.5em;
       padding: 0;
     }
-  }
-}
-
-.logo {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  margin: 10px;
-  &:hover {
-    background-color: transparent;
-    text-decoration: underline;
+    .logo{
+      justify-content: space-evenly;
+    }
   }
 }
