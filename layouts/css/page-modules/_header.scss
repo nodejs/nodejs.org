@@ -106,6 +106,7 @@ header {
     display: flex;
     align-items: center;
     position: absolute;
+    justify-content: space-evenly;
     left: 0;
     bottom: 0;
     margin: 10px;
@@ -202,9 +203,6 @@ header {
       position: relative;
       height: 1.5em;
       padding: 0;
-    }
-    .logo{
-      justify-content: space-evenly;
     }
   }
 }
