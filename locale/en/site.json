@@ -131,10 +131,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2022-11-27T16:00:00.000Z",
-      "endDate": "2022-12-06T16:00:00.000Z",
-      "html": "<img alt=\"Save up to 65% on Node.js training from OpenJS Foundation\" src=\"/static/images/nodejs-training.png\" />",
-      "link": "https://training.linuxfoundation.org/cyber-monday-js2022/"
+      "startDate": "2022-12-16T17:00:00.000Z",
+      "endDate": "2022-12-30T16:00:00.000Z",
+      "text": "Node.js assessment of OpenSSL 3.0.7 security advisory",
+      "link": "https://nodejs.org/en/blog/vulnerability/openssl-fixes-in-regular-releases-dec2022/"
     },
     "blacklivesmatter": {
       "visible": false,
