@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{site.locale}}"{{#if site.rtl}} dir="rtl"{{/if}}>
+{{> html-head }}
+
+<body>
+  {{> header }}
+
+  <main id="main">
+    <div class="container">
+
+      <article dir="auto">
+        <div class="blogpost-header">
+          <h1>{{title}}</h1>
+          <span class="blogpost-meta">{{#if author}}{{site.by}} {{author}}, {{/if}}<time datetime="{{ strftime date "%FT%T%z" }}">{{ strftime date }}</time></span>
+        </div>
+
+        {{{ contents }}}
+      </article>
+
+    </div>
+  </main>
+
+  {{> footer }}
+</body>
+</html>

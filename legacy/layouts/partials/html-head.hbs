@@ -1,0 +1,39 @@
+<head>
+  <meta charset="utf-8">
+  <title>{{#if title}}{{ title }} | {{/if}}{{ site.title }}</title>
+
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=fallback">
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/a11y-dark.min.css" integrity="sha512-Vj6gPCk8EZlqnoveEyuGyYaWZ1+jyjMPg8g4shwyyNlRQl6d3L9At02ZHQr5K6s5duZl/+YKMnM3/8pDhoUphg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <meta name="author" content="{{ site.author }}">
+  <meta name="robots" content="{{#if robots}}{{ robots }}{{else}}index, follow{{/if}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.">
+
+  {{> favicons }}
+
+  <meta property="og:site_name" content="Node.js">
+  <meta property="og:title" content="{{#if title}}{{ title }} | {{/if}}{{ site.title }}">
+  <meta property="og:image" content="https://nodejs.org/static/images/logo-hexagon-card.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="224">
+  <meta property="og:image:height" content="256">
+  <meta property="og:description" content="Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@nodejs">
+  <meta name="twitter:title" content="{{#if title}}{{ title }} | {{/if}}{{ site.title }}">
+  <meta name="twitter:image" content="https://nodejs.org/static/images/logo-hexagon-card.png">
+  <meta name="twitter:image:alt" content="The Node.js Hexagon Logo">
+
+  <link rel="canonical" href="{{ site.url }}{{#if path}}{{ path }}/{{/if}}">
+  {{#each site.feeds}}
+  <link rel="alternate" href="/{{ ../site.locale }}/{{ link }}" title="{{ text }}" type="application/rss+xml">
+  {{/each}}
+
+  <script src="/static/js/themeSwitcher.js"></script>
+</head>

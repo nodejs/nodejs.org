@@ -1,0 +1,11 @@
+{{#if previous }}
+  <a class="btn-navigation btn-prev" href="/{{ site.locale }}/{{ previous.path }}/">
+    &#9668; {{ site.previous }}
+  </a>
+{{/if}}
+
+{{#if next }}
+  <a class="btn-navigation btn-next" href="/{{ site.locale }}/{{ next.path }}/">
+    {{ site.next }} &#9658;
+  </a>
+{{/if}}

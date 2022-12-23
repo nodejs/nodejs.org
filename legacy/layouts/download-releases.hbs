@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="{{site.locale}}"{{#if site.rtl}} dir="rtl"{{/if}}>
+{{> html-head }}
+
+<body>
+  {{> header }}
+
+  <main id="main">
+    <div class="container">
+      <article dir="auto">
+        <h1>{{title}}</h1>
+
+        <section>
+          {{{ contents }}}
+        </section>
+
+        <section>
+          <table id="tbVersions" class="download-table full-width">
+            <thead>
+              <tr>
+                <td>Version</td>
+                <td>LTS</td>
+                <td>Date</td>
+                <td>V8</td>
+                <td>npm</td>
+                <td>NODE_MODULE_VERSION<a href="#ref-1">[1]</a><span id="backref-1"></span></td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each project.versions}}
+              <tr>
+                <td data-label="Version">{{name}} {{stripv version}}</td>
+                <td data-label="LTS">{{#if lts}}{{lts}}{{/if}}</td>
+                <td data-label="Date"><time>{{date}}</time></td>
+                <td data-label="V8">{{v8}}</td>
+                <td data-label="npm">{{npm}}</td>
+                <td data-label="NODE_MODULE_VERSION">{{modules}}</td>
+                <td class="download-table-last">
+                  <a href="{{url}}">
+                    {{../site.releases.downloads}}
+                  </a>
+                  <a href="{{changeloglink version}}">
+                    {{../site.links.pages.changelog}}
+                  </a>
+                  <a href="{{apidocslink version}}">
+                    {{../site.docs.text}}
+                  </a>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+          <p><small id="ref-1">[<a href="#backref-1">1</a>]: {{{modules}}}</small></p>
+        </section>
+      </article>
+
+    </div>
+  </main>
+
+  {{> footer }}
+
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/fancyTable.min.js"></script>
+<script src="/static/js/previousVersion.js"></script>
+
+</body>
+
+</html>

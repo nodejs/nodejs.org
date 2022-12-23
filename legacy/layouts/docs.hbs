@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{site.locale}}"{{#if site.rtl}} dir="rtl"{{/if}}>
+{{> html-head }}
+
+<body>
+  {{> header }}
+
+  <main id="main">
+    <div class="container has-side-nav">
+
+      {{> navigation key='docs'}}
+
+      <article dir="auto">
+        {{{ contents }}}
+
+        {{!> prev-next-navigation }}
+      </article>
+
+    </div>
+  </main>
+
+  {{> footer }}
+</body>
+</html>

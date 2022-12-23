@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{site.locale}}"{{#if site.rtl}} dir="rtl"{{/if}}>
+{{> html-head }}
+
+<body>
+  {{> header }}
+
+  <main id="main">
+    <div class="container">
+      {{#if title}}
+        <h2>{{ title }}</h2>
+      {{/if}}
+
+      <ul class="blog-index">
+        {{#each collections.blog}}
+          {{#unless listing}}
+            {{#startswith path ../path}}
+              {{#if title}}
+                <li>
+                  <time datetime="{{ strftime date '%FT%T%z' }}">{{ strftime date "%d %b %y" }}</time>
+                  <a href="/{{../site.locale}}/{{ path }}/">{{ title }}</a>
+                </li>
+              {{/if}}
+            {{/startswith}}
+          {{/unless}}
+        {{/each}}
+      </ul>
+
+    </div>
+  </main>
+
+  {{> footer }}
+</body>
+</html>
