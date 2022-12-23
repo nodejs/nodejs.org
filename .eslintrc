@@ -50,23 +50,23 @@
       }
     },
     {
-      "files": ["content/**/*.{md,mdx}"],
+      "files": ["pages/**/*.{md,mdx}"],
       "extends": ["plugin:mdx/recommended"],
       "settings": { "mdx/code-blocks": false },
       "rules": { "react/jsx-no-undef": "off" }
     },
     {
       "files": [
-        "content/about/*.{md,mdx}",
-        "content/download/*.{md,mdx}",
-        "content/get-involved/*.{md,mdx}",
-        "content/homepage/*.{md,mdx}",
-        "content/learn/*.m{md,mdx}"
+        "pages/about/*.{md,mdx}",
+        "pages/download/*.{md,mdx}",
+        "pages/get-involved/*.{md,mdx}",
+        "pages/homepage/*.{md,mdx}",
+        "pages/learn/*.m{md,mdx}"
       ],
       "settings": { "mdx/code-blocks": true }
     },
     {
-      "files": ["content/**/*.{md,mdx}/*.{js,jsx,cjs,mjs,ts,tsx}"],
+      "files": ["pages/**/*.{md,mdx}/*.{js,jsx,cjs,mjs,ts,tsx}"],
       "rules": {
         "camelcase": "off",
         "@typescript-eslint/no-unused-vars": "off",
