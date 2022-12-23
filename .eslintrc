@@ -6,13 +6,31 @@
       "env": { "node": true }
     },
     {
-      "files": ["**/*.jsx"],
+      "files": ["**/*.{ts,tsx}"],
+      "extends": [
+        "airbnb",
+        "prettier",
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "plugins": ["@typescript-eslint"],
+      "env": { "browser": true, "node": true },
+      "parser": "@typescript-eslint/parser",
+      "settings": { "import/resolver": { "typescript": {} } },
+      "rules": {
+        "no-use-before-define": "off",
+        "@typescript-eslint/no-use-before-define": "warn",
+        "import/prefer-default-export": "off",
+        "import/extensions": "off"
+      }
+    },
+    {
+      "files": ["**/*.tsx"],
       "extends": [
         "airbnb/hooks",
         "plugin:react/recommended",
         "plugin:jsx-a11y/recommended"
       ],
-      "plugins": ["react-hooks"],
+      "plugins": ["@typescript-eslint", "react-hooks"],
       "parserOptions": { "ecmaFeatures": { "jsx": true } },
       "settings": { "react": { "version": "detect" } },
       "rules": {
