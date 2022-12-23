@@ -1,0 +1,14 @@
+{
+  "homepage-current-version": "Current Version",
+  "homepage-download-button": "Download",
+  "homepage-download-for-button": "Download for",
+  "homepage-other-downloads": "Other Downloads",
+  "homepage-current": "Current",
+  "homepage-lts": "LTS",
+  "homepage-tagline-current": "Latest Features",
+  "homepage-tagline-lts": "Recommended For Most Users",
+  "homepage-changelog": "Changelog",
+  "homepage-api": "API Docs",
+  "homepage-version-schedule-prompt": "For information about supported releases, see the",
+  "homepage-version-schedule-prompt-link-text": "release schedule"
+}

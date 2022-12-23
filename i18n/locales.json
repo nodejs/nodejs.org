@@ -1,0 +1,173 @@
+[
+  {
+    "code": "ar",
+    "localName": "العربية",
+    "name": "Arabic",
+    "langDir": "rtl",
+    "dateFormat": "YYYY.MM.DD",
+    "hrefLang": "ar",
+    "enabled": false
+  },
+  {
+    "code": "ca",
+    "localName": "Catalan",
+    "name": "Catalan",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "ca",
+    "enabled": false
+  },
+  {
+    "code": "de",
+    "localName": "Deutsch",
+    "name": "German",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "de",
+    "enabled": false
+  },
+  {
+    "code": "he",
+    "localName": "עברית",
+    "name": "Hebrew",
+    "langDir": "rtl",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "he-IL",
+    "enabled": false
+  },
+  {
+    "code": "en",
+    "localName": "English",
+    "name": "English",
+    "langDir": "ltr",
+    "dateFormat": "MM.DD.YYYY",
+    "hrefLang": "en-US",
+    "enabled": true
+  },
+  {
+    "code": "es",
+    "localName": "Español",
+    "name": "Spanish",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "es-ES",
+    "enabled": false
+  },
+  {
+    "code": "fa",
+    "localName": "زبان فارسی",
+    "name": "Persian",
+    "langDir": "rtl",
+    "dateFormat": "YYYY.MM.DD",
+    "hrefLang": "fa",
+    "enabled": false
+  },
+  {
+    "code": "fr",
+    "localName": "Français",
+    "name": "French",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "fr",
+    "enabled": true
+  },
+  {
+    "code": "it",
+    "localName": "Italiano",
+    "name": "Italian",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "it",
+    "enabled": false
+  },
+  {
+    "code": "ja",
+    "localName": "日本語",
+    "name": "Japanese",
+    "langDir": "ltr",
+    "dateFormat": "YYYY.MM.DD",
+    "hrefLang": "ja",
+    "enabled": false
+  },
+  {
+    "code": "ka",
+    "localName": "ქართული",
+    "name": "Georgian",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "ka",
+    "enabled": false
+  },
+  {
+    "code": "ko",
+    "localName": "한국어",
+    "name": "Korean",
+    "langDir": "ltr",
+    "dateFormat": "YYYY.MM.DD",
+    "hrefLang": "ko",
+    "enabled": false
+  },
+  {
+    "code": "pt-br",
+    "localName": "Português do Brasil",
+    "name": "Brazilian Portuguese",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "",
+    "enabled": false
+  },
+  {
+    "code": "ro",
+    "localName": "limba română",
+    "name": "Romanian",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "ro",
+    "enabled": false
+  },
+  {
+    "code": "ru",
+    "localName": "Русский",
+    "name": "Russian",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "ru",
+    "enabled": false
+  },
+  {
+    "code": "tr",
+    "localName": "Türkçe",
+    "name": "Turkish",
+    "langDir": "rtl",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "tr",
+    "enabled": false
+  },
+  {
+    "code": "uk",
+    "localName": "Українська",
+    "name": "Ukrainian",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "uk",
+    "enabled": false
+  },
+  {
+    "code": "zh-cn",
+    "localName": "简体中文",
+    "name": "Simplified Chinese",
+    "langDir": "ltr",
+    "dateFormat": "YYYY/MM/DD",
+    "hrefLang": "zh-Hans",
+    "enabled": true
+  },
+  {
+    "code": "zh-tw",
+    "localName": "繁體中文",
+    "name": "Traditional Chinese",
+    "langDir": "ltr",
+    "dateFormat": "YYYY/MM/DD",
+    "hrefLang": "zh-Hant",
+    "enabled": false
+  }
+]
