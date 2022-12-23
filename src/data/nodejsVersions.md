@@ -1,4 +1,6 @@
 <!--
+ TODO: Make this a JSON file
+
  This file is used for all the translation files in
  'locale' folder at 'docs/index.md' to replace the variable
  in order to avoid missing adding Node.js links.
