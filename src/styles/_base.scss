@@ -1,7 +1,7 @@
-// Base styles
 body {
   box-sizing: border-box;
-  font: 400 20px/1.5 "Source Sans Pro", "Open Sans", Roboto, "San Francisco", Helvetica, Arial, sans-serif;
+  font: 400 20px/1.5 'Source Sans Pro', 'Open Sans', Roboto, 'San Francisco',
+    Helvetica, Arial, sans-serif;
   color: $node-gray;
   margin: 0;
   background-color: $white;
@@ -68,14 +68,14 @@ img {
 code {
   background-color: $light-gray3;
   font-size: 85%;
-  padding: .2em;
+  padding: 0.2em;
 }
 
 pre {
   background-color: $node-gray;
   border-radius: 3px;
-  padding: .75em 1.2em;
-  font-size: .8em;
+  padding: 0.75em 1.2em;
+  font-size: 0.8em;
   white-space: pre;
   color: $light-gray3;
   overflow-x: auto;
@@ -98,8 +98,8 @@ blockquote {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, .14);
-    content: "";
+    background-color: rgba(0, 0, 0, 0.14);
+    content: '';
     display: block;
   }
 }

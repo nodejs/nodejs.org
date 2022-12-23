@@ -23,7 +23,7 @@ html {
 
   // Prevent button from flashing on page load
   opacity: 0;
-  animation: button-fade .5s 1s 1 forwards;
+  animation: button-fade 0.5s 1s 1 forwards;
 
   span {
     display: flex;

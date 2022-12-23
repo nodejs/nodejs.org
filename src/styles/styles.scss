@@ -1,27 +1,27 @@
 @charset "utf-8";
 
-@import "variables";
-@import "base";
-@import "utils";
+@import 'variables';
+@import 'base';
+@import 'utils';
 
 // Import specific page sections and layout parts
-@import "layout/sticky-footer";
-@import "layout/grid";
-@import "layout/main";
-@import "layout/lists";
-@import "layout/dark-theme";
-@import "page-modules/jsfoundation";
-@import "page-modules/header";
-@import "page-modules/footer";
-@import "page-modules/home";
-@import "page-modules/blog-index";
-@import "page-modules/blog-post";
-@import "page-modules/download";
-@import "page-modules/scrollToTop";
-@import "page-modules/anchorLinks";
-@import "page-modules/prev-next-navigation";
-@import "page-modules/release-schedule";
-@import "vendor/prism-tomorrow";
+@import 'layout/sticky-footer';
+@import 'layout/grid';
+@import 'layout/main';
+@import 'layout/lists';
+@import 'layout/dark-theme';
+@import 'page-modules/jsfoundation';
+@import 'page-modules/header';
+@import 'page-modules/footer';
+@import 'page-modules/home';
+@import 'page-modules/blog-index';
+@import 'page-modules/blog-post';
+@import 'page-modules/download';
+@import 'page-modules/scrollToTop';
+@import 'page-modules/anchorLinks';
+@import 'page-modules/prev-next-navigation';
+@import 'page-modules/release-schedule';
+@import 'vendor/prism-tomorrow';
 
 * {
   transition: background-color $dark-transition-time ease;
@@ -64,7 +64,7 @@ article a {
     }
 
     li {
-      padding: .1em .5em;
+      padding: 0.1em 0.5em;
     }
 
     a {
@@ -91,8 +91,8 @@ article a {
 
 .edit-link {
   float: right;
-  font-size: .9em;
-  margin: .5em 0;
+  font-size: 0.9em;
+  margin: 0.5em 0;
 }
 
 @media screen and (max-width: 480px) {
@@ -127,11 +127,11 @@ a:hover .color-lightgray {
   margin-top: 1em;
 
   *:first-child {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
   }
 }
 
-html[dir="rtl"] {
+html[dir='rtl'] {
   .has-side-nav {
     nav {
       float: right;

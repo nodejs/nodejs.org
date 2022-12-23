@@ -2,7 +2,7 @@
 .anchor {
   color: $light-gray2;
   background: none;
-  padding: 0 .25em;
+  padding: 0 0.25em;
 
   &:link,
   &:active,
@@ -12,7 +12,7 @@
   }
 
   &:focus::before {
-    content: "#";
+    content: '#';
   }
 }
 
@@ -23,6 +23,6 @@ h4,
 h5,
 h6 {
   &:hover > .anchor::before {
-    content: "#";
+    content: '#';
   }
 }

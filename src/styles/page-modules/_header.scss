@@ -3,7 +3,7 @@ header {
   text-align: center;
   position: relative;
 
-  >.container {
+  > .container {
     overflow: visible;
   }
 
@@ -48,7 +48,7 @@ header {
     color: $light-gray2;
     cursor: pointer;
     padding: 12px;
-    background-image: url("/static/images/dark-mode.svg");
+    background-image: url('../../../public/images/dark-mode.svg');
     background-repeat: no-repeat;
   }
 
@@ -90,7 +90,7 @@ header {
         font-size: 14px;
         line-height: 1.5;
         margin: 0 auto;
-        padding: .5em 1em;
+        padding: 0.5em 1em;
         text-transform: uppercase;
         width: 100%;
 
@@ -128,14 +128,14 @@ header {
         top: 100%;
         left: 50%;
         border: solid transparent;
-        content: " ";
+        content: ' ';
         height: 0;
         width: 0;
         position: absolute;
         pointer-events: none;
         border-top-color: $node-gray;
         border-width: $border-width;
-        margin-left: -$border-width * .5;
+        margin-left: -$border-width * 0.5;
       }
 
       &.active:first-child::after {
