@@ -23,7 +23,6 @@
 const fs = require('fs');
 const path = require('path');
 const Handlebars = require('handlebars');
-const fetch = require('node-fetch');
 
 const downloads = require('./helpers/downloads');
 
