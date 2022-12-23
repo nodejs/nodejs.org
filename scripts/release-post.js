@@ -29,10 +29,10 @@ const downloads = require('./helpers/downloads');
 function sendRequest(opts) {
   const options = {
     headers: { 'User-Agent': 'nodejs.org release blog post script' },
-    ...opts
+    ...opts,
   };
 
-  return fetch(options.url, options).then((resp) => {
+  return fetch(options.url, options).then(resp => {
     if (resp.status !== 200) {
       throw new Error(
         `Invalid status code (!= 200) while retrieving ${options.url}: ${resp.status}`
@@ -51,8 +51,8 @@ function explicitVersion(version) {
 function findLatestVersion() {
   return sendRequest({
     url: 'https://nodejs.org/dist/index.json',
-    json: true
-  }).then((versions) => versions[0].version.substr(1));
+    json: true,
+  }).then(versions => versions[0].version.substr(1));
 }
 
 function fetchDocs(version) {
@@ -61,8 +61,8 @@ function fetchDocs(version) {
     fetchAuthor(version),
     fetchVersionPolicy(version),
     fetchShasums(version),
-    verifyDownloads(version)
-  ]).then((results) => {
+    verifyDownloads(version),
+  ]).then(results => {
     const [changelog, author, versionPolicy, shasums, files] = results;
     return {
       version,
@@ -70,21 +70,21 @@ function fetchDocs(version) {
       author,
       versionPolicy,
       shasums,
-      files
+      files,
     };
   });
 }
 
 function fetchAuthor(version) {
   return fetchChangelog(version)
-    .then((section) => findAuthorLogin(version, section))
-    .then((author) =>
+    .then(section => findAuthorLogin(version, section))
+    .then(author =>
       sendRequest({
         url: `https://api.github.com/users/${author}`,
-        json: true
+        json: true,
       })
     )
-    .then((githubRes) => githubRes.name);
+    .then(githubRes => githubRes.name);
 }
 
 function fetchChangelog(version) {
@@ -92,8 +92,8 @@ function fetchChangelog(version) {
   const releaseLine = parts[0] === '0' ? parts.slice(0, 2).join('') : parts[0];
 
   return sendRequest({
-    url: `https://raw.githubusercontent.com/nodejs/node/main/doc/changelogs/CHANGELOG_V${releaseLine}.md`
-  }).then((data) => {
+    url: `https://raw.githubusercontent.com/nodejs/node/main/doc/changelogs/CHANGELOG_V${releaseLine}.md`,
+  }).then(data => {
     // matches a complete release section
     const rxSection = new RegExp(
       `<a id="${version}"></a>\\n([\\s\\S]+?)(?:\\n<a id="|$)`
@@ -108,7 +108,7 @@ function fetchChangelog(version) {
 }
 
 function fetchChangelogBody(version) {
-  return fetchChangelog(version).then((section) => {
+  return fetchChangelog(version).then(section => {
     const rxSectionBody = /(### Notable [\s\S]*)/;
 
     // Make sure that all the console has been replaced
@@ -124,7 +124,7 @@ function fetchChangelogBody(version) {
 }
 
 function fetchVersionPolicy(version) {
-  return fetchChangelog(version).then((section) => {
+  return fetchChangelog(version).then(section => {
     // matches the policy for a given version (Stable, LTS etc) in the changelog
     // ## 2015-10-07, Version 4.2.0 'Argon' (LTS), @jasnell
     // ## 2015-12-04, Version 0.12.9 (LTS), @rvagg
@@ -142,7 +142,7 @@ function fetchVersionPolicy(version) {
 
 function fetchShasums(version) {
   return sendRequest({
-    url: `https://nodejs.org/dist/v${version}/SHASUMS256.txt.asc`
+    url: `https://nodejs.org/dist/v${version}/SHASUMS256.txt.asc`,
   }).then(null, () => '[INSERT SHASUMS HERE]');
 }
 
@@ -185,14 +185,14 @@ function renderPost(results) {
   const view = Object.assign(
     {
       date: new Date().toISOString(),
-      versionSlug: slugify(results.version)
+      versionSlug: slugify(results.version),
     },
     results
   );
 
   return Object.assign(
     {
-      content: template(view)
+      content: template(view),
     },
     results
   );
@@ -210,14 +210,14 @@ function writeToFile(results) {
   );
 
   return new Promise((resolve, reject) => {
-    fs.access(filepath, fs.F_OK, (err) => {
+    fs.access(filepath, fs.F_OK, err => {
       if (!err && process.argv[3] !== '--force') {
         return reject(
           new Error(`Release post for ${results.version} already exists!`)
         );
       }
 
-      fs.writeFile(filepath, results.content, (err1) => {
+      fs.writeFile(filepath, results.content, err1 => {
         if (err1) {
           return reject(
             new Error(`Failed to write Release post: Reason: ${err1.message}`)
@@ -254,10 +254,10 @@ if (require.main === module) {
     .then(renderPost)
     .then(writeToFile)
     .then(
-      (filepath) => {
+      filepath => {
         console.log('Release post created:', filepath);
       },
-      (err) => {
+      err => {
         console.error('Some error occurred here!', err.stack);
         process.exit(1);
       }

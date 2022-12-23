@@ -2,7 +2,7 @@
 
 const semver = require('semver');
 
-module.exports = (version) => {
+module.exports = version => {
   if (!semver.valid(version)) return '';
 
   const changelogs = 'https://github.com/nodejs/node/blob/main/doc/changelogs';

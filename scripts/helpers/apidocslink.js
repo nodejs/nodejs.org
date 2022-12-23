@@ -2,7 +2,7 @@
 
 const semver = require('semver');
 
-module.exports = (version) => {
+module.exports = version => {
   if (!version) {
     return '';
   }
