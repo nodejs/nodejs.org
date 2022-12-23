@@ -3,4 +3,12 @@ const withNextra = require('nextra')({
   themeConfig: './theme.config.tsx',
 });
 
-module.exports = withNextra();
+// @TODO: Does this support any Next.js config option?
+// @TODO: Enable Automatic Language Detection and Trailing Default Language
+module.exports = withNextra({
+  i18n: {
+    locales: ['en', 'zh', 'de'], // @TODO: Get i18n configuration from i18n file
+    defaultLocale: 'en',
+  },
+  trailingSlash: true,
+});
