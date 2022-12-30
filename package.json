@@ -8,7 +8,6 @@
     "build": "node build.js",
     "build:deploy": "node build.js --preserveLocale",
     "serve": "cross-env NODE_ENV=development node server.js",
-    "external:survey": "rsync -avz --exclude \"node_modules*\" --exclude \"package*\" external/survey-2018/ build/en/user-survey-report",
     "deploy": "npm-run-all load-schedule build:deploy external:survey",
     "load-versions": "node scripts/load-versions.js",
     "load-schedule": "curl -sS https://raw.githubusercontent.com/nodejs/Release/master/schedule.json -o source/schedule.json",
