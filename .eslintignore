@@ -1,4 +1,2 @@
-**/*.min.js
-static/legacy/
-external/
-build/
+build
+public
