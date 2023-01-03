@@ -55,11 +55,12 @@
     },
     {
       "files": [
-        "pages/about/*.{md,mdx}",
-        "pages/download/*.{md,mdx}",
-        "pages/get-involved/*.{md,mdx}",
-        "pages/homepage/*.{md,mdx}",
-        "pages/learn/*.m{md,mdx}"
+        "pages/*/about/*.{md,mdx}",
+        "pages/*/download/*.{md,mdx}",
+        "pages/*/get-involved/*.{md,mdx}",
+        "pages/*/docs/*.{md,mdx}",
+        "pages/*/knowledge/*.{md,mdx}",
+        "pages/*/*.{md,mdx}"
       ],
       "settings": { "mdx/code-blocks": true }
     },
