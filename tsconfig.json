@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "ESNext",
+    "declaration": false,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "resolveJsonModule": true
+  }
+}

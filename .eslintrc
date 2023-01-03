@@ -1,27 +1,19 @@
 {
   "overrides": [
     {
-      "files": ["**/*.{js,jsx}"],
+      "files": ["**/*.{js,jsx,ts,tsx}"],
       "extends": ["airbnb", "prettier"],
       "env": { "node": true }
     },
     {
       "files": ["**/*.{ts,tsx}"],
       "extends": [
-        "airbnb",
-        "prettier",
+        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended"
       ],
       "plugins": ["@typescript-eslint"],
       "env": { "browser": true, "node": true },
-      "parser": "@typescript-eslint/parser",
-      "settings": { "import/resolver": { "typescript": {} } },
-      "rules": {
-        "no-use-before-define": "off",
-        "@typescript-eslint/no-use-before-define": "warn",
-        "import/prefer-default-export": "off",
-        "import/extensions": "off"
-      }
+      "parser": "@typescript-eslint/parser"
     },
     {
       "files": ["**/*.tsx"],
@@ -36,7 +28,7 @@
       "rules": {
         "react/no-unused-prop-types": "off",
         "react/require-default-props": "off",
-        "react/jsx-filename-extension": "off",
+        "react/jsx-props-no-spreading": "off",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "consistent-return": "off",
@@ -45,6 +37,12 @@
           {
             "namedComponents": "arrow-function",
             "unnamedComponents": "arrow-function"
+          }
+        ],
+        "react/jsx-filename-extension": [
+          1,
+          {
+            "extensions": [".tsx"]
           }
         ]
       }
