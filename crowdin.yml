@@ -4,6 +4,7 @@ files:
     content_segmentation: 0
     ignore:
       - /locale/en/blog/**/*.md
+      - /locale/en/knowledge/**/*.md
     languages_mapping:
       two_letters_code:
         pt-BR: pt-br
