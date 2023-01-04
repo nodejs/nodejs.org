@@ -10,6 +10,7 @@ files:
         pt-BR: pt-br
         zh-CN: zh-cn
         zh-TW: zh-tw
+        es-ES: es
   - source: /locale/en/**/*.json
     translation: /locale/%two_letters_code%/**/%original_file_name%
     ignore:
@@ -19,3 +20,4 @@ files:
         pt-BR: pt-br
         zh-CN: zh-cn
         zh-TW: zh-tw
+        es-ES: es
