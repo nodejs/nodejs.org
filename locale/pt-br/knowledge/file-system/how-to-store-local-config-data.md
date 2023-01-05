@@ -17,7 +17,7 @@ var fs = require('fs');
 
 var myOptions = {
   name: 'Avian',
-  dessert: 'cake'
+  dessert: 'cake',
   flavor: 'chocolate',
   beverage: 'coffee'
 };
