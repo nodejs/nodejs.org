@@ -11,3 +11,7 @@ npm-debug.log
 # Next.js files
 .next
 build
+
+# ESLint Cache Files
+.eslintjscache
+.eslintmdcache
