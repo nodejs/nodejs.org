@@ -138,4 +138,4 @@ The above places a **non-blocking** call to `fs.unlink()` within the callback of
 
 ## Additional Resources
 
-- [libuv](https://libuv.org/)
+* [libuv](https://libuv.org/)
