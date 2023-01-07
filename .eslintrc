@@ -1,8 +1,9 @@
 {
+  "extends": ["eslint:recommended", "next"],
   "overrides": [
     {
       "files": ["**/*.{js,jsx,ts,tsx}"],
-      "extends": ["eslint:recommended", "next", "plugin:prettier/recommended"],
+      "extends": ["plugin:prettier/recommended"],
       "env": { "node": true }
     },
     {
