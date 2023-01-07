@@ -2,16 +2,15 @@
   "overrides": [
     {
       "files": ["**/*.{js,jsx,ts,tsx}"],
-      "extends": ["airbnb", "plugin:prettier/recommended"],
+      "extends": ["eslint:recommended", "next", "plugin:prettier/recommended"],
       "env": { "node": true }
     },
     {
       "files": ["**/*.{ts,tsx}"],
-      "extends": ["plugin:@next/next/recommended"]
+      "globals": { "globalThis": false }
     },
     {
       "files": ["**/*.tsx"],
-      "extends": ["plugin:@next/next/recommended"],
       "rules": {
         "react/no-unused-prop-types": "off",
         "react/require-default-props": "off",
@@ -25,11 +24,15 @@
             "namedComponents": "arrow-function",
             "unnamedComponents": "arrow-function"
           }
+        ],
+        "react/jsx-filename-extension": [
+          2,
+          { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
         ]
       }
     },
     {
-      "files": ["pages/**/*.{md,mdx}"],
+      "files": ["**/*.{md,mdx}"],
       "extends": ["plugin:mdx/recommended"],
       "settings": { "mdx/code-blocks": false },
       "rules": { "react/jsx-no-undef": "off" }

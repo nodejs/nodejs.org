@@ -19,11 +19,14 @@
     "load-versions": "node scripts/load-versions.js",
     "load-schedule": "curl -sS https://raw.githubusercontent.com/nodejs/Release/master/schedule.json -o source/schedule.json",
     "external:survey": "rsync -avz --exclude \"node_modules*\" --exclude \"package*\" external/survey-2018/ build/en/user-survey-report",
+    "lint:js": "eslint \"**/*.{js,jsx,ts,tsx}\" --cache --cache-file .eslintjscache --report-unused-disable-directives",
+    "lint:md": "eslint \"**/*.{md,mdx}\" --cache --cache-file .eslintmdcache",
+    "lint:scss": "stylelint --config .stylelintrc \"styles/**/*.{css,sass,scss}\"",
     "lint": "npm run lint:js && npm run lint:md && npm run lint:scss",
-    "lint:js": "eslint \"**/*.{js,jsx}\" --cache --cache-file .eslintjscache --report-unused-disable-directives",
-    "lint:md": "eslint \"content/**/*.{md,mdx}\" --cache --cache-file .eslintmdcache",
-    "lint:scss": "stylelint --config ./.stylelintrc.json \"styles/**/*.{css,sass,scss}\"",
-    "lint:fix": "npm run lint:js --fix && npm run lint:md --fix && npm run lint:scss --fix"
+    "lint:fix": "npm run lint:js -- --fix && npm run lint:md -- --fix && npm run lint:scss -- --fix",
+    "prettier": "prettier \"**/*.{ts,tsx,js,scss,yml}\" --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npm run lint:fix"
   },
   "dependencies": {
     "@mdx-js/react": "^2.2.1",
@@ -46,6 +49,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.30.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-next": "^13.1.1",
     "eslint-config-prettier": "^8.6.0",
     "eslint-mdx": "^2.0.5",
     "eslint-plugin-mdx": "^2.0.5",
