@@ -12,7 +12,7 @@ body:
         so it might be a good idea to check out our plans there as well: https://github.com/nodejs/nodejs.dev/issues/.
   - type: textarea
     attributes:
-      label: "Enter your suggestions in details:"
+      label: 'Enter your suggestions in details:'
       placeholder: |
         1. What I expected to happen.
         2. Your reason (if possible, images or videos are welcome).

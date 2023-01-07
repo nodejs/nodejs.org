@@ -1,18 +1,18 @@
 // Anchor links for page headings
 .anchor {
-  color: $light-gray2;
   background: none;
-  padding: 0 .25em;
+  color: $light-gray2;
+  padding: 0 0.25em;
 
   &:link,
   &:active,
   &:hover {
-    color: $light-gray2;
     background: inherit;
+    color: $light-gray2;
   }
 
   &:focus::before {
-    content: "#";
+    content: '#';
   }
 }
 
@@ -23,6 +23,6 @@ h4,
 h5,
 h6 {
   &:hover > .anchor::before {
-    content: "#";
+    content: '#';
   }
 }

@@ -1,8 +1,8 @@
-[data-theme="dark"] {
+[data-theme='dark'] {
   color-scheme: dark;
 
   .dark-theme-switcher {
-    background-image: url("/static/images/light-mode.svg");
+    background-image: url('/static/images/light-mode.svg');
   }
 
   body {
@@ -62,8 +62,8 @@
     a {
       color: $dark-green2;
       &:hover {
-        color: $white;
         background-color: $dark-green2;
+        color: $white;
       }
     }
 
@@ -99,13 +99,12 @@
     }
 
     .highlight-box {
-      color: $light-gray3;
       background-color: $dark-code-background;
+      color: $light-gray3;
     }
   }
 
   footer {
-
     @media (max-width: 481px) {
       margin-top: 0 !important;
     }
@@ -140,9 +139,9 @@
 
   .blog-index {
     .summary {
-      margin-left: 1em;
-      font-size: 75%;
       color: $light-gray;
+      font-size: 75%;
+      margin-left: 1em;
     }
     code {
       background-color: $dark-code-background;

@@ -1,27 +1,27 @@
 @charset "utf-8";
 
-@import "variables";
-@import "base";
-@import "utils";
+@import 'variables';
+@import 'base';
+@import 'utils';
 
 // Import specific page sections and layout parts
-@import "layout/sticky-footer";
-@import "layout/grid";
-@import "layout/main";
-@import "layout/lists";
-@import "layout/dark-theme";
-@import "page-modules/jsfoundation";
-@import "page-modules/header";
-@import "page-modules/footer";
-@import "page-modules/home";
-@import "page-modules/blog-index";
-@import "page-modules/blog-post";
-@import "page-modules/download";
-@import "page-modules/scrollToTop";
-@import "page-modules/anchorLinks";
-@import "page-modules/prev-next-navigation";
-@import "page-modules/release-schedule";
-@import "vendor/prism-tomorrow";
+@import 'layout/sticky-footer';
+@import 'layout/grid';
+@import 'layout/main';
+@import 'layout/lists';
+@import 'layout/dark-theme';
+@import 'page-modules/jsfoundation';
+@import 'page-modules/header';
+@import 'page-modules/footer';
+@import 'page-modules/home';
+@import 'page-modules/blog-index';
+@import 'page-modules/blog-post';
+@import 'page-modules/download';
+@import 'page-modules/scrollToTop';
+@import 'page-modules/anchorLinks';
+@import 'page-modules/prev-next-navigation';
+@import 'page-modules/release-schedule';
+@import 'vendor/prism-tomorrow';
 
 * {
   transition: background-color $dark-transition-time ease;
@@ -32,9 +32,9 @@ article a {
 }
 
 .intro {
-  margin-top: 140px;
   font-size: 38px;
   line-height: 1.2;
+  margin-top: 140px;
 
   h1 {
     font-size: inherit;
@@ -53,9 +53,9 @@ article a {
 
 .has-side-nav {
   nav {
-    width: 200px;
     float: left;
     margin-top: 1.5em;
+    width: 200px;
 
     ul {
       list-style-type: none;
@@ -64,22 +64,22 @@ article a {
     }
 
     li {
-      padding: .1em .5em;
+      padding: 0.1em 0.5em;
     }
 
     a {
       display: block;
-      padding: 5px 10px;
-      margin-right: -10px;
-      margin-left: -10px;
       line-height: 1;
+      margin-left: -10px;
+      margin-right: -10px;
+      padding: 5px 10px;
     }
 
     .active {
       > a,
       > a:hover {
-        color: $white;
         background-color: $active-green;
+        color: $white;
       }
     }
   }
@@ -91,15 +91,15 @@ article a {
 
 .edit-link {
   float: right;
-  font-size: .9em;
-  margin: .5em 0;
+  font-size: 0.9em;
+  margin: 0.5em 0;
 }
 
 @media screen and (max-width: 480px) {
   .has-side-nav {
     nav {
-      width: 100%;
       float: none;
+      width: 100%;
     }
 
     article {
@@ -122,24 +122,24 @@ a:hover .color-lightgray {
 
 .highlight-box {
   background-color: $light-gray3;
-  padding: 5px 15px;
   border-radius: 2px;
   margin-top: 1em;
+  padding: 5px 15px;
 
   *:first-child {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
   }
 }
 
-html[dir="rtl"] {
+html[dir='rtl'] {
   .has-side-nav {
     nav {
       float: right;
     }
 
     article {
-      margin-right: 220px;
       margin-left: 0;
+      margin-right: 220px;
 
       @media screen and (max-width: 480px) {
         margin-right: 0;

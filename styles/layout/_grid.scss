@@ -1,8 +1,8 @@
 .container {
-  width: 100%;
-  max-width: $body-max-width;
   margin: 0 auto;
+  max-width: $body-max-width;
   overflow: hidden;
+  width: 100%;
 }
 
 .row {

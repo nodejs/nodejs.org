@@ -5,23 +5,23 @@
 
 .download-header {
   h1 {
-    width: 40%;
     float: left;
     margin-bottom: -1rem;
+    width: 40%;
   }
 
   ul {
-    margin-top: 2rem;
-    width: 40%;
     float: right;
+    margin-top: 2rem;
     text-align: right;
+    width: 40%;
   }
 }
 
 .download-header::after {
-  display: block;
   clear: both;
-  content: "";
+  content: '';
+  display: block;
 }
 
 .download-hero {
@@ -30,8 +30,8 @@
   ul {
     display: flex;
     list-style: none;
-    text-align: center;
     margin: 0;
+    text-align: center;
   }
 
   li {
@@ -41,22 +41,22 @@
   }
 
   a {
-    display: block;
-    width: 100%;
-    padding-top: 1em;
-    color: $active-green;
     background: $light-green;
+    color: $active-green;
+    display: block;
+    padding-top: 1em;
+    width: 100%;
   }
 
   .download-logo {
     display: block;
-    margin: 0 auto;
     fill: $node-green;
+    margin: 0 auto;
   }
 
   p {
-    padding-bottom: 1em;
     margin: 1em 0 0;
+    padding-bottom: 1em;
   }
 
   a:hover {
@@ -85,13 +85,13 @@
     a:hover,
     a:active,
     a.is-version {
-      color: $white;
       background: $node-green;
+      color: $white;
     }
 
     a.is-version {
-      color: $light-green;
       background: $active-green;
+      color: $light-green;
     }
 
     .title {
@@ -100,7 +100,7 @@
     }
 
     .tag {
-      font-size: .8em;
+      font-size: 0.8em;
     }
   }
 
@@ -124,10 +124,10 @@
     span {
       background: none;
       display: block;
+      font-size: 0.8em;
       height: 100%;
-      width: 100%;
       text-align: center;
-      font-size: .8em;
+      width: 100%;
     }
 
     a:hover,
@@ -143,9 +143,9 @@ h5.download-table-previous-releases-header {
 }
 
 .download-table {
-  font-size: small;
   border: 1px solid $light-gray2;
   border-spacing: 0;
+  font-size: small;
   text-align: center;
 
   td {
@@ -187,13 +187,13 @@ td.download-table-last {
     }
 
     li {
-      text-align: center;
       display: block;
+      text-align: center;
     }
 
     .download-version-toggle {
-      padding-right: 4px;
       display: flex;
+      padding-right: 4px;
 
       li {
         display: inline-block;
@@ -201,7 +201,7 @@ td.download-table-last {
       }
 
       .tag {
-        font-size: .6em;
+        font-size: 0.6em;
       }
     }
   }
@@ -220,8 +220,8 @@ td.download-table-last {
     }
 
     td {
-      display: block;
       border: none;
+      display: block;
 
       a {
         text-align: left;
@@ -237,8 +237,8 @@ td.download-table-last {
     }
 
     tr {
-      margin-bottom: 10px;
       display: block;
+      margin-bottom: 10px;
     }
 
     td {
@@ -294,7 +294,7 @@ td.download-table-last {
       }
 
       .tag {
-        font-size: .4em;
+        font-size: 0.4em;
       }
     }
   }

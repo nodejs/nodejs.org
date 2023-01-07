@@ -19,7 +19,7 @@ $black-alpha-12: #00000012;
 $black-alpha-0f: #0000000f;
 
 // for dark-theme
-$dark-transition-time: .24s;
+$dark-transition-time: 0.24s;
 $dark-black: #090c15;
 $dark-black2: #233056;
 $dark-black3: #23305671;
@@ -30,8 +30,8 @@ $dark-green3: #64de64;
 $dark-code-background: #2c3437;
 
 @mixin padded-link($padding) {
-  padding-right: $padding;
-  padding-left: $padding;
-  margin-right: $padding * -1;
   margin-left: $padding * -1;
+  margin-right: $padding * -1;
+  padding-left: $padding;
+  padding-right: $padding;
 }

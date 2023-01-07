@@ -1,16 +1,16 @@
 # Node.js Collaborator Guide
 
-* [Issues and Pull Requests](#issues-and-pull-requests)
-* [Accepting Modifications](#accepting-modifications)
-  * [Involving the Website Group](#involving-the-website-group)
-* [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin-11)
-* [Code of Conduct](#code-of-conduct)
-* [Code editing](#code-editing)
-  * [Adding new pages](#adding-new-pages)
-    * [Create the page content](#create-the-page-content)
-    * [Update locale site.json to add link attributes](#update-locale-sitejson-to-add-link-attributes)
-    * [Update the layout to add a link](#update-the-layout-to-add-a-link)
-  * [Translating pages](#translating-pages)
+- [Issues and Pull Requests](#issues-and-pull-requests)
+- [Accepting Modifications](#accepting-modifications)
+  - [Involving the Website Group](#involving-the-website-group)
+- [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin-11)
+- [Code of Conduct](#code-of-conduct)
+- [Code editing](#code-editing)
+  - [Adding new pages](#adding-new-pages)
+    - [Create the page content](#create-the-page-content)
+    - [Update locale site.json to add link attributes](#update-locale-sitejson-to-add-link-attributes)
+    - [Update the layout to add a link](#update-the-layout-to-add-a-link)
+  - [Translating pages](#translating-pages)
 
 This document contains information for Collaborators of the Node.js
 website project regarding maintaining the code, documentation and issues.
@@ -70,7 +70,7 @@ lack of consensus may indicate the need to elevate discussion to the
 Website Group for resolution (see below).
 
 All bugfixes require a test case which demonstrates the defect. The
-test should *fail* before the change, and *pass* after the change.
+test should _fail_ before the change, and _pass_ after the change.
 
 All pull requests that modify executable code should be subjected to
 continuous integration tests on the
@@ -82,9 +82,9 @@ Collaborators may opt to elevate pull requests or issues to the group for
 discussion by mentioning `@nodejs/website`. This should be done
 where a pull request:
 
-* has a significant impact on the codebase,
-* is inherently controversial; or
-* has failed to reach consensus amongst the Collaborators who are
+- has a significant impact on the codebase,
+- is inherently controversial; or
+- has failed to reach consensus amongst the Collaborators who are
   actively participating in the discussion.
 
 The Website group should serve as the final arbiter where required.
@@ -93,11 +93,11 @@ The Website group should serve as the final arbiter where required.
 
 By making a contribution to this project, I certify that:
 
-* (a) The contribution was created in whole or in part by me and I
+- (a) The contribution was created in whole or in part by me and I
   have the right to submit it under the open source license
   indicated in the file; or
 
-* (b) The contribution is based upon previous work that, to the best
+- (b) The contribution is based upon previous work that, to the best
   of my knowledge, is covered under an appropriate open source
   license and I have the right under that license to submit that
   work with modifications, whether created in whole or in part
@@ -105,11 +105,11 @@ By making a contribution to this project, I certify that:
   permitted to submit under a different license), as indicated
   in the file; or
 
-* (c) The contribution was provided directly to me by some other
+- (c) The contribution was provided directly to me by some other
   person who certified (a), (b) or (c) and I have not modified
   it.
 
-* (d) I understand and agree that this project and the contribution
+- (d) I understand and agree that this project and the contribution
   are public and that a record of the contribution (including all
   personal information I submit with it, including my sign-off) is
   maintained indefinitely and may be redistributed consistent with
@@ -120,35 +120,35 @@ By making a contribution to this project, I certify that:
 This Code of Conduct is adapted from [Rust's wonderful
 CoC](https://github.com/rust-lang/rust/wiki/Note-development-policy#conduct).
 
-* We are committed to providing a friendly, safe and welcoming
+- We are committed to providing a friendly, safe and welcoming
   environment for all, regardless of gender, sexual orientation,
   disability, ethnicity, religion, or similar personal characteristic.
-* Please avoid using overtly sexual nicknames or other nicknames that
+- Please avoid using overtly sexual nicknames or other nicknames that
   might detract from a friendly, safe and welcoming environment for
   all.
-* Please be kind and courteous. There's no need to be mean or rude.
-* Respect that people have differences of opinion and that every
+- Please be kind and courteous. There's no need to be mean or rude.
+- Respect that people have differences of opinion and that every
   design or implementation choice carries a trade-off and numerous
   costs. There is seldom a right answer.
-* Please keep unstructured critique to a minimum. If you have solid
+- Please keep unstructured critique to a minimum. If you have solid
   ideas you want to experiment with, make a fork and see how it works.
-* We will exclude you from interaction if you insult, demean or harass
+- We will exclude you from interaction if you insult, demean or harass
   anyone. That is not welcome behavior. We interpret the term
   "harassment" as including the definition in the [Citizen Code of
   Conduct](http://citizencodeofconduct.org/); if you have any lack of
   clarity about what might be included in that concept, please read
   their definition. In particular, we don't tolerate behavior that
   excludes people in socially marginalized groups.
-* Private harassment is also unacceptable. No matter who you are, if
+- Private harassment is also unacceptable. No matter who you are, if
   you feel you have been or are being harassed or made uncomfortable
   by a community member, please contact one of the channel ops or any
   of the TC members immediately with a capture (log, photo, email) of
   the harassment if possible. Whether you're a regular contributor or
   a newcomer, we care about making this community a safe place for you
   and we've got your back.
-* Likewise any spamming, trolling, flaming, baiting or other
+- Likewise any spamming, trolling, flaming, baiting or other
   attention-stealing behavior is not welcome.
-* Avoid the use of personal pronouns in code comments or
+- Avoid the use of personal pronouns in code comments or
   documentation. There is no need to address persons when explaining
   code (e.g. "When the developer")
 

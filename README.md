@@ -45,40 +45,41 @@ To help with localization, please read the [TRANSLATION](TRANSLATION.md) guide.
 
 ## Layout
 
-* Page templates are in `/layouts`
-* Global styles are in `/layouts/css`
-* Global static files are in `/static`
-* All content is in `/locale`
-  * Initial development usually happens in English: `/locale/en`
-  * `/locale/{{locale}}/site.json` is where global localization information lives.
-  * All content is in Markdown and is per locale.
-  * The top of each Markdown file is a block of YAML for page specific localization information that is passed to various templates.
-  * The bulk of the Markdown content for each page is referenced as `{{{content}}}` in the corresponding template.
+- Page templates are in `/layouts`
+- Global styles are in `/layouts/css`
+- Global static files are in `/static`
+- All content is in `/locale`
+  - Initial development usually happens in English: `/locale/en`
+  - `/locale/{{locale}}/site.json` is where global localization information lives.
+  - All content is in Markdown and is per locale.
+  - The top of each Markdown file is a block of YAML for page specific localization information that is passed to various templates.
+  - The bulk of the Markdown content for each page is referenced as `{{{content}}}` in the corresponding template.
 
 ## Serve/Build Options
 
-* `DEFAULT_LOCALE={{locale}} node build.js` builds all the translated files present in the locale folder (will display 404 status code if file is not present), the static/css folder for all the Sass files, as well as copy the rest of the static assets to their subfolder in the build directory.
-* `DEFAULT_LOCALE={{locale}} node build.js --preserveLocale` the same as `node build.js` but it will add the pages present in the English locale that are missing instead of throwing 404 status code.
-* `DEFAULT_LOCALE={{locale}} npm run serve` builds only the files present in the specified locale folder (will display 404 status code if file is not present), then start the default website (`http://localhost:${port}/${mainLocale}`). Here `{port}` is 8080, `{mainLocale}` is `en` or the first specified language.
-* `DEFAULT_LOCALE={{locale}} npm run serve -- --preserveLocale` the same as `npm run serve ` but it will add the pages present in the English locale that are missing.
-* `npm run serve` builds all the current languages and returns 404 when a file is not present in the current locale, then start the default website (`http://localhost:${port}/${mainLocale}`). Here `{port}` is 8080, `{mainLocale}` is `en` in default.
-* `npm run serve -- --preserveLocale` the same as `npm run serve` but it will add the pages present in the English locale that are missing instead of throwing 404 status code.
+- `DEFAULT_LOCALE={{locale}} node build.js` builds all the translated files present in the locale folder (will display 404 status code if file is not present), the static/css folder for all the Sass files, as well as copy the rest of the static assets to their subfolder in the build directory.
+- `DEFAULT_LOCALE={{locale}} node build.js --preserveLocale` the same as `node build.js` but it will add the pages present in the English locale that are missing instead of throwing 404 status code.
+- `DEFAULT_LOCALE={{locale}} npm run serve` builds only the files present in the specified locale folder (will display 404 status code if file is not present), then start the default website (`http://localhost:${port}/${mainLocale}`). Here `{port}` is 8080, `{mainLocale}` is `en` or the first specified language.
+- `DEFAULT_LOCALE={{locale}} npm run serve -- --preserveLocale` the same as `npm run serve ` but it will add the pages present in the English locale that are missing.
+- `npm run serve` builds all the current languages and returns 404 when a file is not present in the current locale, then start the default website (`http://localhost:${port}/${mainLocale}`). Here `{port}` is 8080, `{mainLocale}` is `en` in default.
+- `npm run serve -- --preserveLocale` the same as `npm run serve` but it will add the pages present in the English locale that are missing instead of throwing 404 status code.
 
 ## Test Options
 
 Before submitting, you must pass all the unit tests and syntax checks by running the two commands below:
 
-* `npm-run-all test:lint test:unit` run all the unit test cases in `tests` folder, as well as check syntax with eslint.
-* `npm-run-all --parallel test:lint:*` run all the syntax checks for `js`, `md` and other related files.
+- `npm-run-all test:lint test:unit` run all the unit test cases in `tests` folder, as well as check syntax with eslint.
+- `npm-run-all --parallel test:lint:*` run all the syntax checks for `js`, `md` and other related files.
 
 There're also two syntax check commands for you:
-* `npm run test:lint:js -- --fix` try to automatically fix some formations for all the js files.
-* `npm run test:lint:stylelint -- --fix` try to automatically fix some formations for all the css/scss files.
+
+- `npm run test:lint:js -- --fix` try to automatically fix some formations for all the js files.
+- `npm run test:lint:stylelint -- --fix` try to automatically fix some formations for all the css/scss files.
 
 ## Notice
 
-* Multiple locales can be built by using comma-separated values in the `DEFAULT_LOCALE` variable: `DEFAULT_LOCALE=en,es,it`.
-* For other options, see `package.json`.
+- Multiple locales can be built by using comma-separated values in the `DEFAULT_LOCALE` variable: `DEFAULT_LOCALE=en,es,it`.
+- For other options, see `package.json`.
 
 ## Deployment
 
@@ -91,5 +92,5 @@ The Website Working Group is primarily concerned with the code and overall struc
 The content of the website comes from a variety of working groups (Evangelism, Core, i18n, etc).
 The Website WG defers to these WGs on matters of content and routinely adds collaborators from these
 working groups as they add and improve content on the website. In other words, the Website WG is not
-an *editorial* Working Group except when no other Working Group has taken responsibility for a
+an _editorial_ Working Group except when no other Working Group has taken responsibility for a
 content area.
