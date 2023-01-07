@@ -7,7 +7,7 @@ import { MDXProvider } from '@mdx-js/react';
 type LayoutProps = React.PropsWithChildren<{ pageOpts: unknown }>;
 
 // @TODO: Update the Correct Types
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line no-unused-vars
 const Layout = ({ pageOpts, children }: LayoutProps) => {
   // Front matter of the current page:
   // pageOpts.frontMatter
@@ -56,7 +56,6 @@ const Theme = (props: object) => {
   const { route } = useRouter();
 
   // @TODO: Get the correct type for this
-  // eslint-disable-next-line no-underscore-dangle
   const context = globalThis.__nextra_pageContext__[route];
 
   if (!context) {
