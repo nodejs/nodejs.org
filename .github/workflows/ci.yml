@@ -52,11 +52,14 @@ jobs:
           node-version: 'lts/hydrogen'
           cache: npm
 
-      - name: Install npm dependencies
+      - name: Install NPM dependencies
         run: npm ci
 
-      - name: Build
-        run: npm run build
+      # - name: Build Next.js
+      #   run: npm run build
+
+      # - name: Export Next.js
+      #   run: npm run export
 
       # - name: Run unit tests
       #   run: npm run test:unit

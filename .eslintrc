@@ -2,29 +2,16 @@
   "overrides": [
     {
       "files": ["**/*.{js,jsx,ts,tsx}"],
-      "extends": ["airbnb", "prettier"],
+      "extends": ["airbnb", "plugin:prettier/recommended"],
       "env": { "node": true }
     },
     {
       "files": ["**/*.{ts,tsx}"],
-      "extends": [
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended"
-      ],
-      "plugins": ["@typescript-eslint"],
-      "env": { "browser": true, "node": true },
-      "parser": "@typescript-eslint/parser"
+      "extends": ["plugin:@next/next/recommended"]
     },
     {
       "files": ["**/*.tsx"],
-      "extends": [
-        "airbnb/hooks",
-        "plugin:react/recommended",
-        "plugin:jsx-a11y/recommended"
-      ],
-      "plugins": ["@typescript-eslint", "react-hooks"],
-      "parserOptions": { "ecmaFeatures": { "jsx": true } },
-      "settings": { "react": { "version": "detect" } },
+      "extends": ["plugin:@next/next/recommended"],
       "rules": {
         "react/no-unused-prop-types": "off",
         "react/require-default-props": "off",
@@ -37,12 +24,6 @@
           {
             "namedComponents": "arrow-function",
             "unnamedComponents": "arrow-function"
-          }
-        ],
-        "react/jsx-filename-extension": [
-          1,
-          {
-            "extensions": [".tsx"]
           }
         ]
       }
