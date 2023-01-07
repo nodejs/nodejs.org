@@ -5,7 +5,7 @@ layout: docs.hbs
 
 # Overview of Blocking vs Non-Blocking
 
-This overview covers the difference between **blocking** and **non-blocking** calls in Node.js. This overview will refer to the event loop and libuv but no prior knowledge of those topics is required. Readers are assumed to have a basic understanding of the JavaScript language and Node.js [callback pattern](/en/knowledge/getting-started/control-flow/what-are-callbacks/).
+This overview covers the difference between **blocking** and **non-blocking** calls in Node.js. This overview will refer to the event loop and libuv but no prior knowledge of those topics is required. Readers are assumed to have a basic understanding of the JavaScript language and Node.js callback pattern.
 
 > "I/O" refers primarily to interaction with the system's disk and network supported by [libuv](https://libuv.org/).
 
@@ -24,15 +24,15 @@ All of the I/O methods in the Node.js standard library provide asynchronous vers
 Using the File System module as an example, this is a **synchronous** file read:
 
 ```js
-const fs = require('fs');
-const data = fs.readFileSync('/file.md'); // blocks here until file is read
+const fs = require("fs");
+const data = fs.readFileSync("/file.md"); // blocks here until file is read
 ```
 
 And here is an equivalent **asynchronous** example:
 
 ```js
-const fs = require('fs');
-fs.readFile('/file.md', (err, data) => {
+const fs = require("fs");
+fs.readFile("/file.md", (err, data) => {
   if (err) throw err;
 });
 ```
@@ -42,8 +42,8 @@ The first example appears simpler than the second but has the disadvantage of th
 Let's expand our example a little bit:
 
 ```js
-const fs = require('fs');
-const data = fs.readFileSync('/file.md'); // blocks here until file is read
+const fs = require("fs");
+const data = fs.readFileSync("/file.md"); // blocks here until file is read
 console.log(data);
 moreWork(); // will run after console.log
 ```
@@ -51,8 +51,8 @@ moreWork(); // will run after console.log
 And here is a similar, but not equivalent asynchronous example:
 
 ```js
-const fs = require('fs');
-fs.readFile('/file.md', (err, data) => {
+const fs = require("fs");
+fs.readFile("/file.md", (err, data) => {
   if (err) throw err;
   console.log(data);
 });
@@ -74,22 +74,22 @@ The event loop is different than models in many other languages where additional
 There are some patterns that should be avoided when dealing with I/O. Let's look at an example:
 
 ```js
-const fs = require('fs');
-fs.readFile('/file.md', (err, data) => {
+const fs = require("fs");
+fs.readFile("/file.md", (err, data) => {
   if (err) throw err;
   console.log(data);
 });
-fs.unlinkSync('/file.md');
+fs.unlinkSync("/file.md");
 ```
 
 In the above example, `fs.unlinkSync()` is likely to be run before `fs.readFile()`, which would delete `file.md` before it is actually read. A better way to write this, which is completely **non-blocking** and guaranteed to execute in the correct order is:
 
 ```js
-const fs = require('fs');
-fs.readFile('/file.md', (readFileErr, data) => {
+const fs = require("fs");
+fs.readFile("/file.md", (readFileErr, data) => {
   if (readFileErr) throw readFileErr;
   console.log(data);
-  fs.unlink('/file.md', (unlinkErr) => {
+  fs.unlink("/file.md", (unlinkErr) => {
     if (unlinkErr) throw unlinkErr;
   });
 });
@@ -99,4 +99,4 @@ The above places a **non-blocking** call to `fs.unlink()` within the callback of
 
 ## Additional Resources
 
-* [libuv](https://libuv.org/)
+- [libuv](https://libuv.org/)
