@@ -10,7 +10,6 @@ type PageOpts = { frontMatter: LegacyFrontMatter };
 type LayoutProps = React.PropsWithChildren<{ pageOpts: PageOpts }>;
 
 // @TODO: Update the Correct Types
-// eslint-disable-next-line no-unused-vars
 const Layout = ({ pageOpts, children }: LayoutProps) => {
   // Front matter of the current page:
   // pageOpts.frontMatter
