@@ -10,8 +10,6 @@ layout: contribute.hbs
 * [Список проблем на GitHub](https://github.com/nodejs/node/issues) это место для обсуждения возможностей ядра Node.js.
 * Официальный аккаунт Node.js в Твиттере ― [nodejs](https://twitter.com/nodejs).
 * [Календарь Фонда Node.js](https://nodejs.org/calendar) со всеми общественными встречами.
-* [Node.js](https://medium.com/the-node-js-collection) контент, создаваемый сообществом Medium.
-* [Community Committee](https://github.com/nodejs/community-committee) является комитетом высшего уровня в Фонде Node.js, ориентированным на развитие сообщества.
 
 ## Обучение
 

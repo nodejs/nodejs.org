@@ -95,10 +95,6 @@
   "getinvolved": {
     "link": "get-involved",
     "text": "Get Involved",
-    "code-and-learn": {
-      "link": "get-involved/code-and-learn",
-      "text": "Code + Learn"
-    },
     "collab-summit": {
       "link": "get-involved/collab-summit",
       "text": "Collab Summit"
@@ -135,10 +131,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2022-09-15T16:00:00.000Z",
-      "endDate": "2022-09-30T23:00:00.000Z",
-      "text": "New security releases now available for 18.x, 16.x, and 14.x release lines",
-      "link": "https://nodejs.org/en/blog/vulnerability/september-2022-security-releases/"
+      "startDate": "2022-12-16T17:00:00.000Z",
+      "endDate": "2022-12-30T16:00:00.000Z",
+      "text": "Node.js assessment of OpenSSL 3.0.7 security advisory",
+      "link": "https://nodejs.org/en/blog/vulnerability/openssl-fixes-in-regular-releases-dec2022/"
     },
     "blacklivesmatter": {
       "visible": false,

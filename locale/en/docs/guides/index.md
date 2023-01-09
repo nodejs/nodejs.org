@@ -14,6 +14,7 @@ layout: docs.hbs
 * [Dockerizing a Node.js web app](/en/docs/guides/nodejs-docker-webapp/)
 * [Migrating to safe Buffer constructors](/en/docs/guides/buffer-constructor-deprecation/)
 * [Diagnostics - User Journey](/en/docs/guides/diagnostics/)
+* [Security Best Practices](/en/docs/guides/security/)
 
 ## Node.js core concepts
 

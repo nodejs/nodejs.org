@@ -10,8 +10,6 @@ layout: contribute.hbs
 * تعتبر [قائمة المشكلات على GitHub](https://github.com/nodejs/node/issues) المكان المخصص للنقاشات حول المميزات الأساسية للـ Node.js.
 * الحساب الرسمي للـ Node.js على تويتر هو [nodejs](https://twitter.com/nodejs)
 * [رزنامة مؤسسة الـ Node.js](https://nodejs.org/calendar) تحتوي على تواريخ لقاءات جميع الفرق العامة.
-* [Node.js Collection](https://medium.com/the-node-js-collection) وهي مجموعة من المحتوى المكتوب من طرف مجتمعنا على موقع medium.
-* The [Community Committee](https://github.com/nodejs/community-committee) و هي تمثل لجنة ذات مستوى عالٍ في مؤسسة الـ Node.js و تركز على الجهود الخاصة بالمجتمع.
 
 ## التعلم
 
