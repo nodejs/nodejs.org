@@ -4,15 +4,17 @@
   "featuredImage": "/static/images/logo-hexagon-card.png",
   "favicon": "/static/images/favicon.png",
   "accentColor": "#333",
-  "display": "browser",
-  "ogType": "website",
-  "ogImgType": "image/png",
-  "ogImgWidth": "224",
-  "ogImgHeight": "256",
-  "twitter": "@nodejs",
-  "twitterCard": "summary",
-  "twitterImg": "/static/images/logo-hexagon-card.png",
-  "twitterImgAlt": "The Node.js Hexagon Logo",
+  "og": {
+    "imgType": "image/png",
+    "imgWidth": "224",
+    "imgHeight": "256"
+  },
+  "twitter": {
+    "username": "@nodejs",
+    "card": "summary",
+    "img": "/static/images/logo-hexagon-card.png",
+    "imgAlt": "The Node.js Hexagon Logo"
+  },
   "rssFeeds": [
     {
       "title": "Node.js Blog",

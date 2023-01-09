@@ -14,21 +14,27 @@ export interface WebsiteBanner {
   link: string;
 }
 
+export interface TwitterConfig {
+  username: string;
+  card: string;
+  img: string;
+  imgAlt: string;
+}
+
+export interface OGConfig {
+  imgType: string;
+  imgWidth: string;
+  imgHeight: string;
+}
+
 export interface SiteConfig {
   title: string;
   description: string;
   featuredImage: string;
   favicon: string;
   accentColor: string;
-  display: string;
-  ogType: string;
-  ogImgType: string;
-  ogImgWidth: string;
-  ogImgHeight: string;
-  twitter: string;
-  twitterCard: string;
-  twitterImg: string;
-  twitterImgAlt: string;
+  og: OGConfig;
+  twitter: TwitterConfig;
   rssFeeds: Array<RSSFeed>;
   websiteBanners: Record<string, WebsiteBanner>;
 }
@@ -50,15 +56,15 @@ export type LegacyLayouts =
 // @TODO: This is the legacy frontmatter configuration going to be replaced in the future with the `ndoejs/nodejs.dev` one
 // this is going to be done via a script that replaces layouts
 // Note.: The current legacy pages have other frontmatter entries but they're irrelevant
-export interface LegacyFrontmatter {
-  title: string;
+export interface LegacyFrontMatter {
   layout: LegacyLayouts;
+  title?: string;
   robots?: string;
 }
 
 // @TODO: This is the legacy frontmatter configuration going to be replaced in the future with the `ndoejs/nodejs.dev` one
 // this is going to be done via a script that replaces layouts
-export interface LegacyBlogFrontmatter extends LegacyFrontmatter {
+export interface LegacyBlogFrontMatter extends LegacyFrontMatter {
   author: string;
   date: string;
 }
