@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { SiteConfigContext } from '../providers/SiteConfigProvider';
+import { SiteContext } from '../providers/siteProvider';
 
 export const useSiteConfig = () => {
-  const siteConfigContext = useContext(SiteConfigContext);
+  const siteConfigContext = useContext(SiteContext);
 
   return siteConfigContext;
 };
