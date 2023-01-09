@@ -22,11 +22,11 @@
     "lint:js": "eslint \"**/*.{js,jsx,ts,tsx}\" --cache --cache-file .eslintjscache --report-unused-disable-directives",
     "lint:md": "eslint \"**/*.{md,mdx}\" --cache --cache-file .eslintmdcache",
     "lint:scss": "stylelint --config .stylelintrc \"styles/**/*.{css,sass,scss}\"",
-    "lint": "npm run lint:js && npm run lint:md && npm run lint:scss",
-    "lint:fix": "npm run lint:js -- --fix && npm run lint:md -- --fix && npm run lint:scss -- --fix",
+    "lint": "npm-run-all lint:js lint:md lint:scss --parallel",
+    "lint:fix": "npm-run-all \"lint:js -- --fix\" \"lint:md -- --fix\" \"lint:scss -- --fix\" --parallel",
     "prettier": "prettier \"**/*.{ts,tsx,js,scss,yml}\" --check",
     "prettier:fix": "npm run prettier -- --write",
-    "format": "npm run prettier:fix && npm run lint:fix"
+    "format": "npm-run-all prettier:fix lint:fix"
   },
   "dependencies": {
     "@mdx-js/react": "^2.2.1",
