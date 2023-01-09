@@ -2,7 +2,7 @@
   "title": "Node.js",
   "description": "Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
   "featuredImage": "/static/images/logo-hexagon-card.png",
-  "favicon": "/static/images/favicon.png",
+  "favicon": "/static/images/favicons/favicon.png",
   "accentColor": "#333",
   "og": {
     "imgType": "image/png",

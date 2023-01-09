@@ -18,6 +18,7 @@ const Header = ({ frontMatter }: HeaderProps) => {
 
   return (
     <Head>
+      {/* @TODO: This is a temporary solution. We might want to adopt Emotion/StyledComponents here */}
       <style jsx global>
         {`
           body {
@@ -33,6 +34,11 @@ const Header = ({ frontMatter }: HeaderProps) => {
       />
 
       <title>{siteConfig.title}</title>
+
+      <meta name="theme-color" content={siteConfig.accentColor}></meta>
+
+      {/* @TODO: This should be generated during build with the site config */}
+      <link rel="manifest" href="/static/manifest.json" />
 
       <link rel="icon" href={siteConfig.favicon} type="image/png" />
 
