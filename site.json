@@ -15,18 +15,18 @@
   "twitterImgAlt": "The Node.js Hexagon Logo",
   "rssFeeds": [
     {
-      "link": "/en/feed/blog.xml",
-      "title": "Node.js Blog"
+      "title": "Node.js Blog",
+      "link": "/en/feed/blog.xml"
     },
     {
-      "category": "release",
+      "title": "Node.js Blog: Releases",
       "link": "/en/feed/releases.xml",
-      "title": "Node.js Blog: Releases"
+      "blogCategory": "release"
     },
     {
-      "category": "vulnerability",
+      "title": "Node.js Blog: Vulnerability Reports",
       "link": "/en/feed/vulnerability.xml",
-      "title": "Node.js Blog: Vulnerability Reports"
+      "blogCategory": "vulnerability"
     }
   ],
   "websiteBanners": {
