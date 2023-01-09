@@ -4,8 +4,10 @@ import Link from 'next/link';
 import { MDXProvider } from '@mdx-js/react';
 
 import Header from './components/Header';
+import type { LegacyFrontMatter } from './types';
 
-type LayoutProps = React.PropsWithChildren<{ pageOpts: unknown }>;
+type PageOpts = { frontMatter: LegacyFrontMatter };
+type LayoutProps = React.PropsWithChildren<{ pageOpts: PageOpts }>;
 
 // @TODO: Update the Correct Types
 // eslint-disable-next-line no-unused-vars
@@ -22,7 +24,7 @@ const Layout = ({ pageOpts, children }: LayoutProps) => {
   // NOTE: This hierarchy/tree is temporary. Things are going to change
   return (
     <>
-      <Header />
+      <Header frontMatter={pageOpts.frontMatter} />
       <div>
         <nav>
           {/* implement navigation */}
