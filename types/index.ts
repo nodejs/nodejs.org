@@ -68,3 +68,13 @@ export interface LegacyBlogFrontMatter extends LegacyFrontMatter {
   author: string;
   date: string;
 }
+
+export interface LocaleConfig {
+  code: string;
+  localName: string;
+  name: string;
+  langDir: 'rtl' | 'ltr';
+  dateFormat: string;
+  hrefLang: string;
+  enabled: boolean;
+}
