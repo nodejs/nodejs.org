@@ -11,7 +11,10 @@ const Document = (props: DocumentProps) => (
       <Main />
       <NextScript />
       {/* @TODO: This should be removed in the future when switching over `nodejs/nodejs.dev` codebase */}
+      <Script src="/static/js/main.js"></Script>
       <Script src="/static/js/themeSwitcher.js"></Script>
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></Script>
+      <Script id="highlight-js-highlight">hljs.highlightAll();</Script>
     </body>
   </Html>
 );
