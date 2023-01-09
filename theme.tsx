@@ -2,6 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { MDXProvider } from '@mdx-js/react';
+import type { NextraThemeLayoutProps } from 'nextra';
 
 import Header from './components/Header';
 import type { LegacyFrontMatter } from './types';
@@ -42,25 +43,10 @@ const Layout = ({ pageOpts, children }: LayoutProps) => {
 };
 
 // @TODO: Update the Correct Types
-const Theme = (props: object) => {
-  // These are just initial setup for Nextra themes
-  const { route } = useRouter();
-
-  // @TODO: Get the correct type for this
-  const context = globalThis.__nextra_pageContext__[route];
-
-  if (!context) {
-    // @TODO: Better handling when there is no context?
-    throw new Error(`No content found for ${route}.`);
-  }
-
-  const { pageOpts, Content } = context;
-
+const Theme = ({ children, pageOpts }: NextraThemeLayoutProps) => {
   return (
     // @TODO: Implement a Layout Factory/Switcher
-    <Layout pageOpts={pageOpts}>
-      <Content {...props} />
-    </Layout>
+    <Layout pageOpts={pageOpts as any}>{children}</Layout>
   );
 };
 
