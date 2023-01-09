@@ -1,53 +1,38 @@
 import React from 'react';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
 import { MDXProvider } from '@mdx-js/react';
 import type { NextraThemeLayoutProps } from 'nextra';
 
 import Header from './components/Header';
 import type { LegacyFrontMatter } from './types';
+import { LayoutProvider } from './providers/layoutProvider';
 
-type PageOpts = { frontMatter: LegacyFrontMatter };
-type LayoutProps = React.PropsWithChildren<{ pageOpts: PageOpts }>;
+type LayoutProps = React.PropsWithChildren<{
+  pageOpts: NextraThemeLayoutProps['pageOpts'];
+}>;
 
-// @TODO: Update the Correct Types
-const Layout = ({ pageOpts, children }: LayoutProps) => {
-  // Front matter of the current page:
-  // pageOpts.frontMatter
+const Content = ({ children }: LayoutProps) => (
+  <main id="main">
+    {/* implement the different kind of layouts */}
+    <article>
+      <MDXProvider>{children}</MDXProvider>
+    </article>
+  </main>
+);
 
-  // You can build the sidebar based on the structure data from `pageMap`:
-  // console.log(pageOpts.pageMap)
+// @TODO: Nextra should provide better customization to FrontMatter Props
+interface ThemeProps extends NextraThemeLayoutProps {
+  pageOpts: Omit<NextraThemeLayoutProps['pageOpts'], 'frontMatter'> & {
+    frontMatter: LegacyFrontMatter;
+  };
+}
 
-  const { route } = useRouter();
-  const localePrefix = `/${route.split('/')[1]}`;
-
-  // NOTE: This hierarchy/tree is temporary. Things are going to change
-  return (
-    <>
-      <Header frontMatter={pageOpts.frontMatter} />
-      <div>
-        <nav>
-          {/* implement navigation */}
-          <Link href={localePrefix}>Home</Link>
-        </nav>
-        <main>
-          {/* implement the different kind of layouts */}
-          <article>
-            <MDXProvider>{children}</MDXProvider>
-          </article>
-        </main>
-        <footer>{/* implement footer */}</footer>
-      </div>
-    </>
-  );
-};
-
-// @TODO: Update the Correct Types
-const Theme = ({ children, pageOpts }: NextraThemeLayoutProps) => {
-  return (
-    // @TODO: Implement a Layout Factory/Switcher
-    <Layout pageOpts={pageOpts as any}>{children}</Layout>
-  );
-};
+const Theme = ({ children, pageOpts }: ThemeProps) => (
+  <>
+    <Header frontMatter={pageOpts.frontMatter} />
+    <LayoutProvider layout={pageOpts.frontMatter.layout}>
+      <Content pageOpts={pageOpts}>{children}</Content>
+    </LayoutProvider>
+  </>
+);
 
 export default Theme;
