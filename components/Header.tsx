@@ -9,9 +9,7 @@ const sourceSansPro = Source_Sans_Pro({
   display: 'fallback',
 });
 
-interface HeaderProps {
-  frontMatter: LegacyFrontMatter;
-}
+type HeaderProps = { frontMatter: LegacyFrontMatter };
 
 const Header = ({ frontMatter }: HeaderProps) => {
   const siteConfig = useSiteConfig();
@@ -29,7 +27,14 @@ const Header = ({ frontMatter }: HeaderProps) => {
         `}
       </style>
 
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/a11y-dark.min.css"
+      />
+
       <title>{siteConfig.title}</title>
+
+      <link rel="icon" href={siteConfig.favicon} type="image/png" />
 
       <meta name="robots" content={frontMatter.robots || 'index, follow'} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
