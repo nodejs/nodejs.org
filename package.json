@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@mdx-js/react": "^2.2.1",
+    "feed": "^4.2.2",
     "next": "^13.1.1",
     "nextra": "^2.0.1",
     "node-version-data": "^1.1.0",
