@@ -1,8 +1,9 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import Head from 'next/head';
 import Link from 'next/link';
 import { MDXProvider } from '@mdx-js/react';
+
+import Header from './components/Header';
 
 type LayoutProps = React.PropsWithChildren<{ pageOpts: unknown }>;
 
@@ -18,33 +19,22 @@ const Layout = ({ pageOpts, children }: LayoutProps) => {
   const { route } = useRouter();
   const localePrefix = `/${route.split('/')[1]}`;
 
+  // NOTE: This hierarchy/tree is temporary. Things are going to change
   return (
     <>
-      <Head>
-        <title>Nodejs.org</title>
-      </Head>
+      <Header />
       <div>
         <nav>
-          <h2>This is the navbar</h2>
-          <Link href="/en">EN</Link>
-          {' | '}
-          <Link href="/de">DE</Link>
+          {/* implement navigation */}
+          <Link href={localePrefix}>Home</Link>
         </nav>
         <main>
-          <aside>
-            <h3>Navigation</h3>
-            <div>
-              <Link href={localePrefix}>Home</Link>
-            </div>
-            <div>
-              <Link href={`${localePrefix}/docs/globals`}>Globals</Link>
-            </div>
-          </aside>
+          {/* implement the different kind of layouts */}
           <article>
             <MDXProvider>{children}</MDXProvider>
           </article>
         </main>
-        <footer>This is the footer</footer>
+        <footer>{/* implement footer */}</footer>
       </div>
     </>
   );
@@ -66,6 +56,7 @@ const Theme = (props: object) => {
   const { pageOpts, Content } = context;
 
   return (
+    // @TODO: Implement a Layout Factory/Switcher
     <Layout pageOpts={pageOpts}>
       <Content {...props} />
     </Layout>
