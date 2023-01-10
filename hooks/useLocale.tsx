@@ -10,7 +10,10 @@ const getLocaleConfig = (locale: string) =>
 export const useLocale = () => {
   const { route } = useRouter();
 
-  const currentLocale = useMemo(() => route.split('/')[1], [route]);
+  const currentLocale = useMemo(
+    () => getLocaleConfig(route.split('/')[1]) || getLocaleConfig('en'),
+    [route]
+  );
 
-  return { currentLocale, getLocaleConfig };
+  return { currentLocale, availableLocales: i18nConfig };
 };

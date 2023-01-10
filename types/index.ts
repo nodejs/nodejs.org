@@ -78,3 +78,8 @@ export interface LocaleConfig {
   hrefLang: string;
   enabled: boolean;
 }
+
+export interface LocaleData {
+  locale: LocaleConfig;
+  messages: Record<string, string>;
+}
