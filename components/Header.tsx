@@ -1,23 +1,17 @@
-import { FormattedMessage } from 'react-intl';
-import { useRouter } from 'next/router';
 import Image from 'next/image';
 import classNames from 'classnames';
 
 import LocalisedLink from './LocalisedLink';
-import { useLocale } from '../hooks/useLocale';
-import { linkWithLocale } from '../util/linkWithLocale';
-
-import navigation from '../navigation.json';
 import LanguagePickerSvg from './LanguagePickerSvg';
+import { useLocale } from '../hooks/useLocale';
+import { useNavigation } from '../hooks/useNavigation';
 
 const Header = () => {
-  const { currentLocale, availableLocales } = useLocale();
-  const { asPath } = useRouter();
-
-  const localisedLink = linkWithLocale(currentLocale.code);
+  const { availableLocales, isCurrentLocaleRoute } = useLocale();
+  const { navigationItems } = useNavigation();
 
   const getLinkClassName = (href: string) =>
-    classNames({ active: asPath === localisedLink(href) });
+    classNames({ active: isCurrentLocaleRoute(href) });
 
   return (
     <header aria-label="Primary">
@@ -34,14 +28,9 @@ const Header = () => {
 
         <nav aria-label="primary">
           <ul className="list-divider-pipe">
-            {navigation.map(item => (
-              <li
-                key={item.translationId}
-                className={getLinkClassName(item.link)}
-              >
-                <LocalisedLink href={item.link}>
-                  <FormattedMessage id={item.translationId} />
-                </LocalisedLink>
+            {navigationItems.map((item, key) => (
+              <li key={key} className={getLinkClassName(item.link)}>
+                <LocalisedLink href={item.link}>{item.text}</LocalisedLink>
               </li>
             ))}
           </ul>
