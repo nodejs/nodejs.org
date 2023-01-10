@@ -13,7 +13,8 @@ export interface RSSFeed {
 export interface WebsiteBanner {
   startDate: string;
   endDate: string;
-  text: string;
+  text?: string;
+  html?: string;
   link: string;
 }
 
