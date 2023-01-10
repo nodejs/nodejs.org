@@ -31,7 +31,9 @@
   "dependencies": {
     "@mdx-js/react": "^2.2.1",
     "@next/font": "^13.1.1",
+    "classnames": "^2.3.2",
     "feed": "^4.2.2",
+    "highlight.js": "^11.7.0",
     "next": "^13.1.1",
     "nextra": "^2.1.0",
     "node-version-data": "^1.1.0",
