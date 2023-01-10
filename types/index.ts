@@ -1,4 +1,7 @@
 // @TODO: These types will be splitted on individual files for better organisation in the future
+import type navigation from '../navigation.json';
+
+export type NavigationKeys = keyof typeof navigation;
 
 export interface RSSFeed {
   link: string;
@@ -83,4 +86,25 @@ export interface LocaleConfig {
 export interface LocaleData {
   locale: LocaleConfig;
   messages: Record<string, string>;
+}
+
+export interface NavigationEntry {
+  translationId: string;
+  link: string;
+  items?: Record<string, NavigationEntry>;
+}
+
+export interface NodeReleaseSchedule {
+  start: string;
+  end: string;
+}
+
+export interface NodeVersionData {
+  node: string;
+  nodeMajor: string;
+  npm: string;
+  v8: string;
+  openssl: string;
+  isLts: boolean;
+  schedule?: NodeReleaseSchedule;
 }
