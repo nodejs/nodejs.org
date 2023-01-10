@@ -39,6 +39,7 @@ export const NodeDataProvider = ({ children }: PropsWithChildren) => {
   const [nodeData, setNodeData] = useState<NodeVersionData[]>([]);
 
   useEffect(() => {
+    // @TODO: This is a temporary approach until we get Nextra.js with `getStaticProps` for `theme.jsx`
     Promise.all([nodeScheduleDataPromise, nodeVersionDataPromise])
       .then(([schedule, versions]) =>
         versions.map(version => ({

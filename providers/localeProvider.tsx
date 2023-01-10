@@ -14,6 +14,7 @@ export const LocalProvider = ({ children }: PropsWithChildren) => {
   const { currentLocale } = useLocale();
 
   useEffect(() => {
+    // @TODO: This is a temporary approach until we get Nextra.js with `getStaticProps` for `theme.jsx`
     import(`../i18n/locales/${currentLocale.code}.json`).then(
       setCurrentLocaleMessages
     );
