@@ -5,6 +5,8 @@ labels:
   lts: LTS
 ---
 
+import NodeApiVersionLinks from '../../../components/NodeApiVersionLinks.mdx';
+
 <!--
 # About Docs
 
@@ -20,9 +22,9 @@ There are several types of documentation available on this website:
 
 이 웹사이트에는 여러 종류의 문서가 있습니다.
 
-* API 레퍼런스 문서
-* ES6 기능
-* 안내
+- API 레퍼런스 문서
+- ES6 기능
+- 안내
 
 <!--
 ### API Reference Documentation
@@ -40,11 +42,13 @@ This documentation describes the built-in modules provided by Node.js. It does n
 
 이 문서는 Node.js가 제공하는 내장 모듈을 설명합니다. 커뮤니티에서 제공하는 모듈은 문서화하지 않습니다.
 
-<div class="highlight-box">
+<div className="highlight-box">
 
 ### 이전 버전에 대한 API 문서가 필요한가요?
 
-{#var nodeVersionLinks}* [모든 버전](https://nodejs.org/docs/)
+<NodeApiVersionLinks />
+
+[모든 버전](https://nodejs.org/docs/)
 
 </div>
 
