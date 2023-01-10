@@ -4,6 +4,7 @@ import type { PropsWithChildren } from 'react';
 import type { LegacyLayouts } from '../types';
 
 import DefaultLayout from '../layouts/DefaultLayout';
+import DocsLayout from '../layouts/DocsLayout';
 
 type LayoutProviderProps = PropsWithChildren<{ layout: LegacyLayouts }>;
 
@@ -11,6 +12,8 @@ export const LayoutContext = createContext<LegacyLayouts>('page.hbs');
 
 const getLegacyLayout = (layout: LegacyLayouts) => {
   switch (layout) {
+    case 'docs.hbs':
+      return DocsLayout;
     default:
       return DefaultLayout;
   }
