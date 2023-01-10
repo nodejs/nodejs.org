@@ -4,17 +4,24 @@ import type { NextraThemeLayoutProps } from 'nextra';
 import highlightJs from 'highlight.js/lib/common';
 
 import HtmlHead from './components/HtmlHead';
-import type { LegacyFrontMatter } from './types';
+import NodeApiVersionLinks from './components/NodeApiVersionLinks';
 import { LayoutProvider } from './providers/layoutProvider';
+import type { LegacyFrontMatter } from './types';
 
 type LayoutProps = React.PropsWithChildren<{
   pageOpts: NextraThemeLayoutProps['pageOpts'];
 }>;
 
+const mdxComponents = { NodeApiVersionLinks: NodeApiVersionLinks };
+
 const Content = ({ children }: LayoutProps) => {
   useEffect(() => highlightJs.highlightAll(), []);
 
-  return <MDXProvider disableParentContext>{children}</MDXProvider>;
+  return (
+    <MDXProvider components={mdxComponents} disableParentContext>
+      {children}
+    </MDXProvider>
+  );
 };
 
 // @TODO: Nextra should provide better customization to FrontMatter Props
