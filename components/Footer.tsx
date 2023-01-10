@@ -30,13 +30,18 @@ const Footer = ({ className }: FooterProps) => (
             or endorsement by them.
           </p>
           <p className="openjsfoundation-footer-links">
-            <a href="https://openjsf.org">The OpenJS Foundation</a> |
-            <a href="https://terms-of-use.openjsf.org">Terms of Use</a> |
-            <a href="https://privacy-policy.openjsf.org">Privacy Policy</a> |
-            <a href="https://bylaws.openjsf.org">Bylaws</a> |
-            <a href="https://code-of-conduct.openjsf.org">Code of Conduct</a> |
-            <a href="https://trademark-policy.openjsf.org">Trademark Policy</a>{' '}
-            |<a href="https://trademark-list.openjsf.org">Trademark List</a> |
+            <a href="https://openjsf.org">The OpenJS Foundation</a>&nbsp;|&nbsp;
+            <a href="https://terms-of-use.openjsf.org">Terms of Use</a>
+            &nbsp;|&nbsp;
+            <a href="https://privacy-policy.openjsf.org">Privacy Policy</a>
+            &nbsp;|&nbsp;
+            <a href="https://bylaws.openjsf.org">Bylaws</a>&nbsp;|&nbsp;
+            <a href="https://code-of-conduct.openjsf.org">Code of Conduct</a>
+            &nbsp;|&nbsp;
+            <a href="https://trademark-policy.openjsf.org">Trademark Policy</a>
+            &nbsp;|&nbsp;
+            <a href="https://trademark-list.openjsf.org">Trademark List</a>
+            &nbsp;|&nbsp;
             <a href="https://www.linuxfoundation.org/cookies">Cookie Policy</a>
           </p>
           <div className="openjsfoundation-footer-edit"></div>
