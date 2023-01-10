@@ -28,6 +28,10 @@ export const useNavigation = () => {
   return {
     navigationItems: mapNavigationEntries(navigation),
     getSideNavigation: (section: NavigationKeys, context?: Context) =>
-      mapNavigationEntries(navigation[section].items, context),
+      mapNavigationEntries(
+        // We need the parent and their items when making a side navigation
+        { [section]: navigation[section], ...navigation[section].items },
+        context
+      ),
   };
 };

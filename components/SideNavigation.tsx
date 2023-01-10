@@ -15,7 +15,7 @@ const SideNavigation = ({ navigationKey, context }: SideNavigationProps) => {
   const { getSideNavigation } = useNavigation();
   const { isCurrentLocaleRoute } = useLocale();
 
-  const navigationItems = getSideNavigation(navigationKey, context);
+  const sideNavigationItems = getSideNavigation(navigationKey, context);
 
   const getLinkClassName = (href: string) =>
     classNames({ active: isCurrentLocaleRoute(href) });
@@ -23,7 +23,7 @@ const SideNavigation = ({ navigationKey, context }: SideNavigationProps) => {
   return (
     <nav aria-label="secondary">
       <ul>
-        {navigationItems.map((item, key) => (
+        {sideNavigationItems.map((item, key) => (
           <li key={key} className={getLinkClassName(item.link)}>
             <LocalisedLink href={item.link}>{item.text}</LocalisedLink>
           </li>
