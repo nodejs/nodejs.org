@@ -1,3 +1,11 @@
 {
-  "site.scrollToTop": "Scroll to top"
+  "components.footer.scrollToTop.button": "Scroll to top",
+  "components.header.links.home": "Home",
+  "components.header.links.about": "About",
+  "components.header.links.download": "Downloads",
+  "components.header.links.docs": "Docs",
+  "components.header.links.getInvolved": "Get Involved",
+  "components.header.links.security": "Security",
+  "components.header.links.certification": "Certification",
+  "components.header.links.blog": "News"
 }

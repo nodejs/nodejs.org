@@ -1,0 +1,34 @@
+[
+  {
+    "link": "/",
+    "translationId": "components.header.links.home"
+  },
+  {
+    "link": "/about/",
+    "translationId": "components.header.links.about"
+  },
+  {
+    "link": "/download/",
+    "translationId": "components.header.links.download"
+  },
+  {
+    "link": "/docs/",
+    "translationId": "components.header.links.docs"
+  },
+  {
+    "link": "/get-involved/",
+    "translationId": "components.header.links.getInvolved"
+  },
+  {
+    "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
+    "translationId": "components.header.links.security"
+  },
+  {
+    "link": "https://openjsf.org/certification",
+    "translationId": "components.header.links.certification"
+  },
+  {
+    "link": "/blog/",
+    "translationId": "components.header.links.blog"
+  }
+]
