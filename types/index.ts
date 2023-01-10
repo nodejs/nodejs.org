@@ -60,6 +60,7 @@ export interface LegacyFrontMatter {
   layout: LegacyLayouts;
   title?: string;
   robots?: string;
+  labels?: Record<string, string>;
 }
 
 // @TODO: This is the legacy frontmatter configuration going to be replaced in the future with the `ndoejs/nodejs.dev` one
