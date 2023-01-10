@@ -1,0 +1,30 @@
+import type { PropsWithChildren } from 'react';
+
+import Footer from '../components/Footer';
+import Header from '../components/Header';
+import SideNavigation from '../components/SideNavigation';
+import { useNodeData } from '../hooks/useNodeData';
+
+const DocsLayout = ({ children }: PropsWithChildren) => {
+  const { currentLtsVersion, currentNodeVersion } = useNodeData();
+
+  const translationContext = {
+    apiLts: { fullLtsNodeVersion: currentLtsVersion?.node || '...' },
+    apiCurrent: { fullCurrentNodeVersion: currentNodeVersion?.node || '...' },
+  };
+
+  return (
+    <>
+      <Header />
+      <main id="main">
+        <div className="container has-side-nav">
+          <SideNavigation navigationKey="docs" context={translationContext} />
+          <article dir="auto">{children}</article>
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
+};
+
+export default DocsLayout;
