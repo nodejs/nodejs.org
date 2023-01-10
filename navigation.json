@@ -1,34 +1,94 @@
-[
-  {
-    "link": "/",
-    "translationId": "components.header.links.home"
+{
+  "home": {
+    "link": "",
+    "translationId": "components.header.links.home",
+    "items": {}
   },
-  {
-    "link": "/about/",
-    "translationId": "components.header.links.about"
+  "about": {
+    "link": "/about",
+    "translationId": "components.header.links.about",
+    "items": {
+      "governance": {
+        "link": "/about/governance",
+        "translationId": "components.navigation.about.links.governance"
+      }
+    }
   },
-  {
-    "link": "/download/",
-    "translationId": "components.header.links.download"
+  "download": {
+    "link": "/download",
+    "translationId": "components.header.links.download",
+    "items": {
+      "previousReleases": {
+        "link": "/download/releases",
+        "translationId": "components.navigation.download.links.previousReleases"
+      },
+      "packageManager": {
+        "link": "/download/package-manager",
+        "translationId": "components.navigation.download.links.packageManager"
+      },
+      "shaSums": {
+        "link": "https://nodejs.org/dist/{currentNodeVersion}/SHASUMS256.txt.asc",
+        "translationId": "components.navigation.download.links.shaSums"
+      }
+    }
   },
-  {
-    "link": "/docs/",
-    "translationId": "components.header.links.docs"
+  "docs": {
+    "link": "/docs",
+    "translationId": "components.header.links.docs",
+    "items": {
+      "es6": {
+        "link": "/docs/es6",
+        "translationId": "components.navigation.docs.links.es6"
+      },
+      "apiLts": {
+        "link": "https://nodejs.org/dist/{ltsNodeVersion}/docs/api",
+        "translationId": "components.navigation.docs.links.apiLts"
+      },
+      "apiCurrent": {
+        "link": "https://nodejs.org/dist/{currentNodeVersion}/docs/api",
+        "translationId": "components.navigation.docs.links.apiCurrent"
+      },
+      "guides": {
+        "link": "/docs/guides",
+        "translationId": "components.navigation.docs.links.guides"
+      },
+      "dependencies": {
+        "link": "/docs/meta/topics/dependencies",
+        "translationId": "components.navigation.docs.links.dependencies"
+      }
+    }
   },
-  {
-    "link": "/get-involved/",
-    "translationId": "components.header.links.getInvolved"
+  "getInvolved": {
+    "link": "/get-involved",
+    "translationId": "components.header.links.getInvolved",
+    "items": {
+      "collabSummit": {
+        "link": "/get-involved/collab-summit",
+        "translationId": "components.navigation.getInvolved.links.collabSummit"
+      },
+      "contribute": {
+        "link": "/get-involved/contribute",
+        "translationId": "components.navigation.getInvolved.links.contribute"
+      },
+      "codeOfConduct": {
+        "link": "https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md",
+        "translationId": "components.navigation.getInvolved.links.codeOfConduct"
+      }
+    }
   },
-  {
+  "security": {
     "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
-    "translationId": "components.header.links.security"
+    "translationId": "components.header.links.security",
+    "items": {}
   },
-  {
+  "certification": {
     "link": "https://openjsf.org/certification",
-    "translationId": "components.header.links.certification"
+    "translationId": "components.header.links.certification",
+    "items": {}
   },
-  {
-    "link": "/blog/",
-    "translationId": "components.header.links.blog"
+  "blog": {
+    "link": "/blog",
+    "translationId": "components.header.links.blog",
+    "items": {}
   }
-]
+}
