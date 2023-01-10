@@ -15,7 +15,7 @@ Bu web sitesinde çeşitli dokümantasyon türleri bulunmaktadır:
 
 ## API Referans Dokümantasyonu
 
-[API Referans Dokümantasyonu](https://nodejs.org/api/) Node.js içerisindeki fonksiyon ve nesneler hakkında detaylı bilgi sağlar. Bu dokümantasyon, bir metodun hangi argümanları kabul ettiğini o metodun dönüş değerini ve bu metotla ilgili hangi hataların olabileceğini gösterir. Ayrıca, Node.js'nin farklı sürümleri için hangi yöntemlerin kullanılabileceğini gösterir.
+[API Referans Dokümantasyonu](https://nodejs.org/api/) Node.js içerisindeki fonksiyon ve nesneler hakkında detaylı bilgi sağlar. Bu dokümantasyon, bir metodun hangi argümanları kabul ettiğini o metodun dönüş değerini ve bu metotla ilgili hangi hataların olabileceğini gösterir. Ayrıca, Node.js'in farklı sürümleri için hangi yöntemlerin kullanılabileceğini gösterir.
 
 Bu belgede, Node.js. tarafından sağlanan yerleşik modüller açıklanmaktadır. Topluluk tarafından sağlanan modülleri belgelendirmez.
 
