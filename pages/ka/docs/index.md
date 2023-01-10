@@ -5,8 +5,6 @@ labels:
   lts: LTS
 ---
 
-import NodeApiVersionLinks from '../../../components/NodeApiVersionLinks.mdx';
-
 # დოკუმენტაციის შესახებ
 
 წინამდებარე ვებსაიტზე ხელმისაწვდომია რამდენიმე ტიპის დოკუმენტაცია:
@@ -21,7 +19,7 @@ import NodeApiVersionLinks from '../../../components/NodeApiVersionLinks.mdx';
 
 აღნიშნული დოკუმენტაცია აღწერს Node.js-ის მიერ უზრუნველყოფილ, ჩაშენებულ მოდულებს. მასში არ შედის საზოგადოების (community) მიერ უზრუნველყოფილი მოდულები.
 
-<div className="highlight-box">
+<div class="highlight-box">
 
 ### ეძებთ უწინდელი ვერსიებისათვის განკუთვნილ API-დოკუმენტაციას?
 

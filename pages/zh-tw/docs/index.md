@@ -5,8 +5,6 @@ labels:
   lts: LTS
 ---
 
-import NodeApiVersionLinks from '../../../components/NodeApiVersionLinks.mdx';
-
 # 關於文件
 
 本站提供下列幾種類型的文件：
@@ -21,7 +19,7 @@ import NodeApiVersionLinks from '../../../components/NodeApiVersionLinks.mdx';
 
 此文件僅會介紹由 Node.js 官方內建的模組，社群提供的模組則不在此列。
 
-<div className="highlight-box">
+<div class="highlight-box">
 
 ### 在找舊版的 API 文件嗎？
 

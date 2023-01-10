@@ -3,9 +3,7 @@ title: Docs
 layout: docs.hbs
 labels:
   lts: LTS
----
 
-import NodeApiVersionLinks from '../../../components/NodeApiVersionLinks.mdx';
 
 # About Docs
 
@@ -21,7 +19,7 @@ The [API reference documentation](https://nodejs.org/api/) provides detailed inf
 
 This documentation describes the built-in modules provided by Node.js. It does not document modules provided by the community.
 
-<div className="highlight-box">
+<div class="highlight-box">
 
 ### Looking for API docs of previous releases?
 

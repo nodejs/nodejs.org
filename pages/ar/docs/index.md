@@ -5,8 +5,6 @@ labels:
   lts: LTS
 ---
 
-import NodeApiVersionLinks from '../../../components/NodeApiVersionLinks.mdx';
-
 # عن التوثيق
 
 تتوفر عدة توثيقات على هذا الموقع:
@@ -21,7 +19,7 @@ import NodeApiVersionLinks from '../../../components/NodeApiVersionLinks.mdx';
 
 يصف هذا التوثيق الوحدات المضمنة في الـ Node.js، وهو لا يوثق للوحدات المتوفرة عن طريق المجتمع.
 
-<div className="highlight-box">
+<div class="highlight-box">
 
 ### تبحث عن توثيق لنسخة سابقة؟
 

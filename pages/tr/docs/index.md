@@ -5,8 +5,6 @@ labels:
   lts: LTS
 ---
 
-import NodeApiVersionLinks from '../../../components/NodeApiVersionLinks.mdx';
-
 # Belgeler Hakkında
 
 Bu web sitesinde çeşitli dokümantasyon türleri bulunmaktadır:
@@ -21,7 +19,7 @@ Bu web sitesinde çeşitli dokümantasyon türleri bulunmaktadır:
 
 Bu belgede, Node.js. tarafından sağlanan yerleşik modüller açıklanmaktadır. Topluluk tarafından sağlanan modülleri belgelendirmez.
 
-<div className="highlight-box">
+<div class="highlight-box">
 
 ### Önceki sürümler için API dokümanlarını mı arıyorsunuz?
 

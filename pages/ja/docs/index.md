@@ -5,8 +5,6 @@ labels:
   lts: LTS
 ---
 
-import NodeApiVersionLinks from '../../../components/NodeApiVersionLinks.mdx';
-
 <!-- # About Docs -->
 # ドキュメント
 
@@ -28,7 +26,7 @@ import NodeApiVersionLinks from '../../../components/NodeApiVersionLinks.mdx';
 <!-- This documentation describes the built-in modules provided by Node.js. It does not document modules provided by the community. -->
 このドキュメントでは Node.js によって提供された組み込みのモジュールについて説明しています。コアに組み込まれていないモジュールは含みません。
 
-<div className="highlight-box">
+<div class="highlight-box">
 
 ### 以前のバージョンの API リファレンスをお探しですか？
 

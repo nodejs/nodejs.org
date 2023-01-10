@@ -5,8 +5,6 @@ labels:
   lts: LTS
 ---
 
-import NodeApiVersionLinks from '../../../components/NodeApiVersionLinks.mdx';
-
 # Про документацію
 
 Є три типи документації, що доступні на цьому сайті:
@@ -21,7 +19,7 @@ import NodeApiVersionLinks from '../../../components/NodeApiVersionLinks.mdx';
 
 Ця документація описує вбудовані модулі, які надаються Node.js. Вона не документує модулі, що надаються спільнотою.
 
-<div className="highlight-box">
+<div class="highlight-box">
 
 ### Шукаєте документацію про API для попередніх релізів?
 

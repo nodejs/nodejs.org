@@ -5,8 +5,6 @@ labels:
   lts: LTS
 ---
 
-import NodeApiVersionLinks from '../../../components/NodeApiVersionLinks.mdx';
-
 # Sobre la documentació
 
 Existeixen tres tipus de documentació a l'abast en aquest lloc:
@@ -23,7 +21,7 @@ relacionats al mateix. També indica quins mètodes són a l'abast per les difer
 
 També descriu els mòduls inclosos que proporciona Node.js, mes no documenta els mòduls que proporciona la comunitat.
 
-<div className="highlight-box">
+<div class="highlight-box">
 
 ### Buscant la referència de l'API per a una versió anterior?
 

@@ -5,8 +5,6 @@ labels:
   lts: LTS
 ---
 
-import NodeApiVersionLinks from '../../../components/NodeApiVersionLinks.mdx';
-
 # 关于文档说明
 
 本网站上有以下几类文档类型：
@@ -21,7 +19,7 @@ import NodeApiVersionLinks from '../../../components/NodeApiVersionLinks.mdx';
 
 此文档描述了 Node.js 内建的模块，社区提供的模块并不记载在内。
 
-<div className="highlight-box">
+<div class="highlight-box">
 
 ### 在寻找先前发布的 API 函数接口文档吗？
 

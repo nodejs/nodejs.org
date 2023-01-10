@@ -5,8 +5,6 @@ labels:
   lts: LTS
 ---
 
-import NodeApiVersionLinks from '../../../components/NodeApiVersionLinks.mdx';
-
 # Über die Dokumentationen
 
 Auf dieser Webseite gibt es verschiedene Arten von Dokumentationen:
@@ -26,7 +24,7 @@ Methoden in den verschiedenen Node.js-Versionen verfügbar sind.
 Die API-Referenz beschreibt Module, die in Node.js integriert sind. Module, die
 von der Community zur Verfügung gestellt werden, sind dort nicht dokumentiert.
 
-<div className="highlight-box">
+<div class="highlight-box">
 
 ### Du suchst nach API Referenzen für ältere Versionen?
 
