@@ -7,7 +7,7 @@ const Footer = ({ className }: FooterProps) => (
   <>
     <a href="#" id="scroll-to-top">
       <span>
-        &uarr; <FormattedMessage id="site.scrollToTop" />
+        &uarr; <FormattedMessage id="components.footer.scrollToTop.button" />
       </span>
     </a>
     <footer className={className}>
