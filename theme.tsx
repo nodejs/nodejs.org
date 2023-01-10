@@ -14,7 +14,7 @@ type LayoutProps = React.PropsWithChildren<{
 const Content = ({ children }: LayoutProps) => {
   useEffect(() => highlightJs.highlightAll(), []);
 
-  return <MDXProvider>{children}</MDXProvider>;
+  return <MDXProvider disableParentContext>{children}</MDXProvider>;
 };
 
 // @TODO: Nextra should provide better customization to FrontMatter Props
