@@ -73,4 +73,4 @@ If you can't find group for your locale:
 If you find the group for your locale is archived:
 
 1. Try to contact members of the group by creating a [new issue](https://github.com/nodejs/nodejs.org/issues/new?template=03-i18n.md) in this repo. Include a mention of the group so members get notified of the issue.
-2. If there is no response from members in 7 days and if you have already done 1000 strings or more on Crowdin for your locale, open an issue in https://github.com/nodejs/admin requesting the repository be unarchived.
+2. If there is no response from members in 7 days and if you have already done 1000 strings or more on Crowdin for your locale, open an issue in <https://github.com/nodejs/admin> requesting the repository be unarchived.
