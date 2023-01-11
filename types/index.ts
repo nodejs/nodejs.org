@@ -98,6 +98,7 @@ export interface NodeReleaseSchedule {
 export interface NodeVersionData {
   node: string;
   nodeMajor: string;
+  nodeNumeric: string;
   npm: string;
   v8: string;
   openssl: string;
