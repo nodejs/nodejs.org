@@ -9,8 +9,11 @@ const DocsLayout = ({ children }: PropsWithChildren) => {
   const { currentLtsVersion, currentNodeVersion } = useNodeData();
 
   const translationContext = {
-    apiLts: { fullLtsNodeVersion: currentLtsVersion?.node || '...' },
-    apiCurrent: { fullCurrentNodeVersion: currentNodeVersion?.node || '...' },
+    apiLts: {
+      fullLtsNodeVersion: currentLtsVersion?.node,
+      spanLts: <span className="small color-lightgray">LTS</span>,
+    },
+    apiCurrent: { fullCurrentNodeVersion: currentNodeVersion?.node },
   };
 
   return (

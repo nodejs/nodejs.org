@@ -13,7 +13,7 @@
   "components.navigation.download.links.packageManager": "Installing Node.js via package manager",
   "components.navigation.download.links.shaSums": "Signed SHASUMS for release files",
   "components.navigation.docs.links.es6": "ES6 and beyond",
-  "components.navigation.docs.links.apiLts": "{fullLtsNodeVersion} API",
+  "components.navigation.docs.links.apiLts": "{fullLtsNodeVersion} API {spanLts}",
   "components.navigation.docs.links.apiCurrent": "{fullCurrentNodeVersion} API",
   "components.navigation.docs.links.guides": "Guides",
   "components.navigation.docs.links.dependencies": "Dependencies",
