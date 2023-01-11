@@ -2,9 +2,9 @@
   "extends": ["eslint:recommended", "next"],
   "overrides": [
     {
-      "files": ["**/*.{js,jsx,ts,tsx}"],
+      "files": ["**/*.{mjs,js,jsx,ts,tsx}"],
       "extends": ["plugin:prettier/recommended"],
-      "env": { "node": true }
+      "env": { "node": true, "es6": true }
     },
     {
       "files": ["**/*.{ts,tsx}"],
