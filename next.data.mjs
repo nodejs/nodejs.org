@@ -33,6 +33,7 @@ const getNodeVersionData = () => {
         ([schedule, versions]) =>
           versions.map(v => ({
             node: v.version,
+            nodeNumeric: v.version.replace(/^v/, ''),
             nodeMajor: \`v\${semVer.major(v.version)}.x\`,
             npm: v.npm || null,
             v8: v.v8 || null,
@@ -54,6 +55,8 @@ const getNextData = (content, { route }) => {
     ${content}
 
     export const getStaticProps = async () => {
+      const memoryCache = require('memory-cache');
+
       // eval'd the function content
       ${localisationData}
 
@@ -61,7 +64,16 @@ const getNextData = (content, { route }) => {
       ${nodeVersionData}
 
       const i18nProps = getLocalisationData();
-      const nodeVersionData = await getNodeVersionData();
+
+      let nodeVersionData = memoryCache.get('nodeVersionData');
+
+      // as the getStaticProps is called on every page we want to ensure
+      // that this request is done only once (as the data should not change)
+      if (!nodeVersionData) {
+        nodeVersionData = await getNodeVersionData();
+
+        memoryCache.put('nodeVersionData', nodeVersionData);
+      }
 
       return { props: { ...i18nProps, nodeVersionData } };
     }
