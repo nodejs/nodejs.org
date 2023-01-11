@@ -6,8 +6,7 @@ const getLocalisationData = (route, defaultLocale = 'en') => {
       const localeConfig = require('i18n/config.json');
 
       const currentLocale =
-        localeConfig.find(c => c.code === '${localeCode}') ||
-        localeConfig.find(c => c.code === 'en');
+        localeConfig.find(c => c.code === '${localeCode}' || c.code === '${defaultLocale}');
 
       const localeMessages = require(\`i18n/locales/\${currentLocale.code}.json\`);
 

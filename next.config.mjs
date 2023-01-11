@@ -10,8 +10,9 @@ const withNextra = nextra({
 });
 
 export default withNextra({
-  images: { unoptimized: true },
+  trailingSlash: true,
   experimental: {
+    optimizeCss: true,
     fontLoaders: [
       { loader: '@next/font/google', options: { subsets: ['latin'] } },
     ],
