@@ -3,14 +3,23 @@ import type { ReactNode } from 'react';
 import { Source_Sans_Pro } from '@next/font/google';
 
 import { NodeDataProvider } from '../providers/nodeDataProvider';
-import { LocalProvider } from '../providers/localeProvider';
+import { LocaleProvider } from '../providers/localeProvider';
 import { SiteProvider } from '../providers/siteProvider';
+
+import type { NodeVersionData, LocaleConfig } from '../types';
 
 // TODO: These styles are temporary as we're going to move towards the CSS modules from `nodejs/nodejs.dev`
 import '../styles/styles.scss';
 
-type NextraAppProps = AppProps & {
-  Component: AppProps['Component'] & {
+type NextraAppProps = AppProps<{
+  localeMessages: Record<string, string>;
+  nodeVersionData: NodeVersionData[];
+  availableLocales: LocaleConfig[];
+  currentLocale: LocaleConfig;
+}>;
+
+type NextraProps = NextraAppProps & {
+  Component: NextraAppProps['Component'] & {
     // eslint-disable-next-line no-unused-vars
     getLayout: (page: ReactNode) => ReactNode;
   };
@@ -21,11 +30,17 @@ const sourceSansPro = Source_Sans_Pro({
   display: 'fallback',
 });
 
-const Nextra = ({ Component, pageProps }: NextraAppProps) => {
+const Nextra = ({ Component, pageProps }: NextraProps) => {
+  const localeProviderProps = {
+    currentLocale: pageProps.currentLocale,
+    localeMessages: pageProps.localeMessages,
+    availableLocales: pageProps.availableLocales,
+  };
+
   return (
     <SiteProvider>
-      <LocalProvider localeMessages={pageProps.localeMessages}>
-        <NodeDataProvider>
+      <LocaleProvider {...localeProviderProps}>
+        <NodeDataProvider nodeVersionData={pageProps.nodeVersionData}>
           {/* @TODO: This is a temporary solution. We might want to adopt Emotion/StyledComponents here */}
           <style jsx global>
             {`
@@ -38,7 +53,7 @@ const Nextra = ({ Component, pageProps }: NextraAppProps) => {
           </style>
           <Component {...pageProps} />
         </NodeDataProvider>
-      </LocalProvider>
+      </LocaleProvider>
     </SiteProvider>
   );
 };

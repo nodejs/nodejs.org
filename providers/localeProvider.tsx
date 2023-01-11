@@ -1,24 +1,33 @@
+import { createContext, PropsWithChildren } from 'react';
 import { IntlProvider } from 'react-intl';
-import { PropsWithChildren } from 'react';
 
-import { useLocale } from '../hooks/useLocale';
-import type { LocaleData } from '../types';
+import type { LocaleConfig } from '../types';
 
-import defaultLocaleMessages from '../i18n/locales/en.json';
+type LocaleProviderContext = {
+  localeMessages: Record<string, string>;
+  availableLocales: LocaleConfig[];
+  currentLocale?: LocaleConfig;
+};
 
-export const LocalProvider = ({
-  children,
-  localeMessages,
-}: PropsWithChildren<{
-  localeMessages?: LocaleData['messages'];
-}>) => {
-  const currentLocaleMessages = Object.assign(
-    {},
-    localeMessages,
-    defaultLocaleMessages
+type LocaleProviderProps = PropsWithChildren<{
+  localeMessages: Record<string, string>;
+  availableLocales: LocaleConfig[];
+  currentLocale: LocaleConfig;
+}>;
+
+export const LocaleContext = createContext<LocaleProviderContext>({
+  localeMessages: {},
+  availableLocales: [],
+});
+
+export const LocaleProvider = ({ children, ...props }: LocaleProviderProps) => {
+  const { currentLocale, localeMessages } = props;
+
+  const intlProps = { locale: currentLocale.code, messages: localeMessages };
+
+  return (
+    <LocaleContext.Provider value={props}>
+      <IntlProvider {...intlProps}>{children}</IntlProvider>
+    </LocaleContext.Provider>
   );
-  const { currentLocale } = useLocale();
-  const props = { locale: currentLocale.code, messages: currentLocaleMessages };
-
-  return <IntlProvider {...props}>{children}</IntlProvider>;
 };

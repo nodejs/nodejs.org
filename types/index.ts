@@ -84,11 +84,6 @@ export interface LocaleConfig {
   enabled: boolean;
 }
 
-export interface LocaleData {
-  locale: LocaleConfig;
-  messages: Record<string, string>;
-}
-
 export interface NavigationEntry {
   translationId: string;
   link: string;
