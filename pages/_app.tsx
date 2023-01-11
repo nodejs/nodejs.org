@@ -21,23 +21,26 @@ const sourceSansPro = Source_Sans_Pro({
   display: 'fallback',
 });
 
-const Nextra = ({ Component, pageProps }: NextraAppProps) => (
-  <SiteProvider>
-    <LocalProvider>
-      <NodeDataProvider>
-        {/* @TODO: This is a temporary solution. We might want to adopt Emotion/StyledComponents here */}
-        <style jsx global>
-          {`
-            body {
-              font: 400 20px/1.5 ${sourceSansPro.style.fontFamily}, 'Open Sans',
-                Roboto, 'San Francisco', Helvetica, Arial, sans-serif;
-            }
-          `}
-        </style>
-        <Component {...pageProps} />
-      </NodeDataProvider>
-    </LocalProvider>
-  </SiteProvider>
-);
+const Nextra = ({ Component, pageProps }: NextraAppProps) => {
+  return (
+    <SiteProvider>
+      <LocalProvider localeMessages={pageProps.localeMessages}>
+        <NodeDataProvider>
+          {/* @TODO: This is a temporary solution. We might want to adopt Emotion/StyledComponents here */}
+          <style jsx global>
+            {`
+              body {
+                font: 400 20px/1.5 ${sourceSansPro.style.fontFamily},
+                  'Open Sans', Roboto, 'San Francisco', Helvetica, Arial,
+                  sans-serif;
+              }
+            `}
+          </style>
+          <Component {...pageProps} />
+        </NodeDataProvider>
+      </LocalProvider>
+    </SiteProvider>
+  );
+};
 
 export default Nextra;
