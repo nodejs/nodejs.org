@@ -1,21 +1,11 @@
 import { createContext, PropsWithChildren } from 'react';
 import { IntlProvider } from 'react-intl';
 
-import type { LocaleConfig } from '../types';
+import type { LocaleContext as LocaleContextType } from '../types';
 
-type LocaleProviderContext = {
-  localeMessages: Record<string, string>;
-  availableLocales: LocaleConfig[];
-  currentLocale?: LocaleConfig;
-};
+type LocaleProviderProps = PropsWithChildren<LocaleContextType>;
 
-type LocaleProviderProps = PropsWithChildren<{
-  localeMessages: Record<string, string>;
-  availableLocales: LocaleConfig[];
-  currentLocale: LocaleConfig;
-}>;
-
-export const LocaleContext = createContext<LocaleProviderContext>({
+export const LocaleContext = createContext<Partial<LocaleContextType>>({
   localeMessages: {},
   availableLocales: [],
 });

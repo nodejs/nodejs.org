@@ -1,22 +1,17 @@
-import type { AppProps } from 'next/app';
-import type { ReactNode } from 'react';
 import { Source_Sans_Pro } from '@next/font/google';
+import type { AppProps as DefaultAppProps } from 'next/app';
+import type { ReactNode } from 'react';
 
 import { NodeDataProvider } from '../providers/nodeDataProvider';
 import { LocaleProvider } from '../providers/localeProvider';
 import { SiteProvider } from '../providers/siteProvider';
 
-import type { NodeVersionData, LocaleConfig } from '../types';
+import type { AppProps } from '../types';
 
 // TODO: These styles are temporary as we're going to move towards the CSS modules from `nodejs/nodejs.dev`
 import '../styles/styles.scss';
 
-type NextraAppProps = AppProps<{
-  localeMessages: Record<string, string>;
-  nodeVersionData: NodeVersionData[];
-  availableLocales: LocaleConfig[];
-  currentLocale: LocaleConfig;
-}>;
+type NextraAppProps = DefaultAppProps<AppProps>;
 
 type NextraProps = NextraAppProps & {
   Component: NextraAppProps['Component'] & {

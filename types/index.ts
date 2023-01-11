@@ -104,3 +104,13 @@ export interface NodeVersionData {
   isLts: boolean;
   schedule?: NodeReleaseSchedule;
 }
+
+export interface LocaleContext {
+  localeMessages: Record<string, string>;
+  availableLocales: LocaleConfig[];
+  currentLocale: LocaleConfig;
+}
+
+export interface AppProps extends LocaleContext {
+  nodeVersionData: NodeVersionData[];
+}

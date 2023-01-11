@@ -11,7 +11,7 @@ export const useLocale = () => {
   const localisedLink = linkWithLocale(currentLocale!.code);
 
   return {
-    availableLocales,
+    availableLocales: availableLocales!,
     currentLocale: currentLocale!,
     isCurrentLocaleRoute: (route: string) => localisedLink(route) === asPath,
   };
