@@ -34,7 +34,7 @@ interface ThemeProps extends NextraThemeLayoutProps {
 const Theme = ({ children, pageOpts }: ThemeProps) => (
   <>
     <HtmlHead frontMatter={pageOpts.frontMatter} />
-    <LayoutProvider layout={pageOpts.frontMatter.layout}>
+    <LayoutProvider layout={pageOpts.frontMatter.layout} pageOpts={pageOpts}>
       <Content pageOpts={pageOpts}>{children}</Content>
     </LayoutProvider>
   </>

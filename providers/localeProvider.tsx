@@ -5,10 +5,7 @@ import type { LocaleContext as LocaleContextType } from '../types';
 
 type LocaleProviderProps = PropsWithChildren<LocaleContextType>;
 
-export const LocaleContext = createContext<Partial<LocaleContextType>>({
-  localeMessages: {},
-  availableLocales: [],
-});
+export const LocaleContext = createContext<LocaleContextType>(undefined as any);
 
 export const LocaleProvider = ({ children, ...props }: LocaleProviderProps) => {
   const { currentLocale, localeMessages } = props;
