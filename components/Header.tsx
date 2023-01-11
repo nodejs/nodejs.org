@@ -11,7 +11,7 @@ const Header = () => {
   const { navigationItems } = useNavigation();
 
   const getLinkClassName = (href: string) =>
-    classNames({ active: isCurrentLocaleRoute(href) });
+    classNames({ active: isCurrentLocaleRoute(href, true) });
 
   return (
     <header aria-label="Primary">

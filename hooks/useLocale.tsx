@@ -13,6 +13,9 @@ export const useLocale = () => {
   return {
     availableLocales: availableLocales!,
     currentLocale: currentLocale!,
-    isCurrentLocaleRoute: (route: string) => localisedLink(route) === asPath,
+    isCurrentLocaleRoute: (route: string, allowSubPath?: boolean) =>
+      allowSubPath
+        ? asPath.startsWith(localisedLink(route))
+        : localisedLink(route) === asPath,
   };
 };
