@@ -9,6 +9,8 @@ import AboutLayout from '../layouts/AboutLayout';
 import ContributeLayout from '../layouts/ContributeLayout';
 import DocsLayout from '../layouts/DocsLayout';
 import IndexLayout from '../layouts/IndexLayout';
+import DownloadLayout from '../layouts/DownloadLayout';
+import DownloadCurrentLayout from '../layouts/DownloadCurrentLayout';
 
 type LayoutProviderProps = PropsWithChildren<{
   layout: LegacyLayouts;
@@ -28,6 +30,10 @@ const getLegacyLayout = (layout: LegacyLayouts) => {
       return ContributeLayout;
     case 'docs.hbs':
       return DocsLayout;
+    case 'download.hbs':
+      return DownloadLayout;
+    case 'download-current.hbs':
+      return DownloadCurrentLayout;
     case 'index.hbs':
       return IndexLayout;
     default:
