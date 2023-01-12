@@ -8,7 +8,6 @@ node_modules
 # These should be fixed in the future as the
 # tests and scripts will be updated in this PR
 tests
-scripts
 
 # For now also ignoring blog posts from linting
 pages/en/blog/**/*.md
