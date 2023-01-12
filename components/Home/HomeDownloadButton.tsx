@@ -1,8 +1,8 @@
-import LocalisedLink from '../components/LocalisedLink';
-import { useNextraContext } from '../hooks/useNextraContext';
-import { getNodejsChangelog } from '../util/getNodeJsChangelog';
+import LocalisedLink from '../LocalisedLink';
+import { useNextraContext } from '../../hooks/useNextraContext';
+import { getNodejsChangelog } from '../../util/getNodeJsChangelog';
 
-import type { NodeVersionData } from '../types';
+import type { NodeVersionData } from '../../types';
 
 type HomeDownloadButtonProps = Pick<
   NodeVersionData,

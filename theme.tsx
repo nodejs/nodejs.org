@@ -4,7 +4,7 @@ import type { NextraThemeLayoutProps } from 'nextra';
 import highlightJs from 'highlight.js/lib/common';
 
 import HtmlHead from './components/HtmlHead';
-import NodeApiVersionLinks from './components/NodeApiVersionLinks';
+import NodeApiVersionLinks from './components/Docs/NodeApiVersionLinks';
 import { LayoutProvider } from './providers/layoutProvider';
 import type { LegacyFrontMatter } from './types';
 
