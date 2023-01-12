@@ -10,7 +10,7 @@ const getLocalisationData = (route, defaultLocale = 'en') => {
 
       const localeMessages = require(\`i18n/locales/\${currentLocale.code}.json\`);
 
-      return { currentLocale, localeMessages, availableLocales: localeConfig };
+      return { currentLocale, localeMessages };
     }
   `;
 };

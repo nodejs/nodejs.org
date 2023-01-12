@@ -5,7 +5,7 @@ import type { NavigationEntry, NavigationKeys } from '../types';
 import navigation from '../navigation.json';
 
 // Translation Context for FormattedMessage
-type Context = Record<string, Record<string, string>>;
+type Context = Record<string, Record<string, any>>;
 
 export const useNavigation = () => {
   const mapNavigationEntries = (
@@ -22,6 +22,7 @@ export const useNavigation = () => {
     return Object.entries(entries).map(([key, item]) => ({
       text: getFormattedMessage(item.translationId, key),
       link: item.link,
+      key: key,
     }));
   };
 

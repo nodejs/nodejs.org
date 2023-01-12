@@ -9,7 +9,7 @@ export const useNodeData = () => {
 
   return {
     availableNodeVersions: nodeDataContext,
-    currentLtsVersion,
+    currentLtsVersion: currentLtsVersion || currentNodeVersion,
     currentNodeVersion,
   };
 };

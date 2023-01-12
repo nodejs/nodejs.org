@@ -74,6 +74,11 @@ export interface LegacyBlogFrontMatter extends LegacyFrontMatter {
   date: string;
 }
 
+export interface LegacyDownloadsFrontMatter extends LegacyFrontMatter {
+  downloads: Record<string, string>;
+  additional: Record<string, string>;
+}
+
 export interface LocaleConfig {
   code: string;
   localName: string;
@@ -112,6 +117,8 @@ export interface LocaleContext {
   currentLocale: LocaleConfig;
 }
 
-export interface AppProps extends LocaleContext {
+export interface AppProps {
   nodeVersionData: NodeVersionData[];
+  localeMessages: Record<string, string>;
+  currentLocale: LocaleConfig;
 }
