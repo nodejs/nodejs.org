@@ -7,21 +7,28 @@ import navigation from '../navigation.json';
 // Translation Context for FormattedMessage
 type Context = Record<string, Record<string, any>>;
 
+// Provides Context replacement for variables within the Link. This is also something that is not going
+// to happen in the future with `nodejs/nodejs.dev` codebase
+const replaceLinkWithContext = (link: string, context: Record<string, any>) =>
+  Object.entries(context).reduce(
+    (finalLink, [find, replace]) => finalLink.replace(`{${find}}`, replace),
+    link
+  );
+
 export const useNavigation = () => {
   const mapNavigationEntries = (
     entries: Record<string, NavigationEntry>,
     context?: Context
   ) => {
+    const getContext = (key: string) => (context && context[key]) || {};
+
     const getFormattedMessage = (translationId: string, key: string) => (
-      <FormattedMessage
-        id={translationId}
-        values={(context && context[key]) || {}}
-      />
+      <FormattedMessage id={translationId} values={getContext(key)} />
     );
 
     return Object.entries(entries).map(([key, item]) => ({
       text: getFormattedMessage(item.translationId, key),
-      link: item.link,
+      link: replaceLinkWithContext(item.link, getContext(key)),
       key: key,
     }));
   };
