@@ -327,8 +327,14 @@ test('writeToFile<object>', (t) => {
   let fileExists;
 
   const fs = {
-    existsSync: (filepath) => fileExists,
-    openSync: (fd, flags, mode) => 1,
+    constants: { O_CREAT: 1, O_EXCL: 2 },
+    openSync: (fd, flags, mode) => {
+      if (fileExists) {
+        const err = new Error();
+        err.code = 'EEXIST';
+        throw err;
+      }
+    },
     writeFileSync: (fd, contents) => {},
     closeSync: (fd) => {}
   };
