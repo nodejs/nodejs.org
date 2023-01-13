@@ -217,12 +217,17 @@ function writeToFile(results) {
       );
     }
 
+    let fd = null;
+
     try {
-      fs.writeFileSync(filepath, results.content);
+      fd = fs.openSync(filepath, 'w', 0o666);
+      fs.writeFileSync(fd, results.content);
     } catch (error) {
       return reject(
         new Error(`Failed to write Release post: Reason: ${error.message}`)
       );
+    } finally {
+      fs.closeSync(fd);
     }
 
     resolve(filepath);

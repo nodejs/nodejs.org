@@ -328,7 +328,9 @@ test('writeToFile<object>', (t) => {
 
   const fs = {
     existsSync: (filepath) => fileExists,
-    writeFileSync: (filepath, contents) => {}
+    openSync: (fd, flags, mode) => 1,
+    writeFileSync: (fd, contents) => {},
+    closeSync: (fd) => {}
   };
 
   const releasePost = proxyquire('../../scripts/release-post', { fs });
