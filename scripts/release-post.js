@@ -211,13 +211,19 @@ function writeToFile(results) {
   );
 
   return new Promise((resolve, reject) => {
-    if (fs.existsSync(filepath) && process.argv[3] !== '--force') {
-      return reject(
-        new Error(`Release post for ${results.version} already exists!`)
-      );
-    }
-
     let fd = null;
+
+    if (process.argv[3] !== '--force') {
+      try {
+        fd = fs.openSync(filepath, fs.constants.O_CREAT | fs.constants.O_EXCL);
+      } catch (error) {
+        return reject(
+          new Error(`Release post for ${results.version} already exists!`)
+        );
+      } finally {
+        fs.closeSync(fd);
+      }
+    }
 
     try {
       fd = fs.openSync(filepath, 'w', 0o666);
