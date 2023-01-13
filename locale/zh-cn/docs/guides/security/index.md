@@ -49,7 +49,7 @@ const server = net.createServer(function(socket) {
 server.listen(5000, '0.0.0.0');
 ```
 
-此处如果接受一个 _非法请求_，服务器就可能崩溃了。
+此处如果接受一个 _非法请求_ ，服务器就可能崩溃了。
 
 另一个案例 [Slowloris][] 并非是通过请求的内容发动拒绝式服务攻击。
 在这个攻击中，HTTP请求发送既慢又散，每次就发送一点点内容，这样就会导致服务器为等待完整
@@ -352,7 +352,7 @@ SyntaxError [ERR_SRI_PARSE]: Subresource Integrity string "sha256-iuGZ6SFVFpMuHU
 在生产环境中直接使用尝鲜版功能绝不推荐！因为尝鲜功能有可能随时发生重大
 变更，而且他们实际的功能不一定稳定。虽然如此，我们还是非常乐于接受用户的反馈。
 
-[威胁示例]: https://github.com/nodejs/security-wg/issues/799
+[威胁示例]: https://github.com/nodejs/node/blob/main/SECURITY.md#the-nodejs-threat-model
 [安全指南讨论议题]: https://github.com/nodejs/security-wg/issues/488
 [nodejs 使用指南]: https://github.com/goldbergyoni/nodebestpractices
 [OSSF 最佳实践做法]: https://github.com/ossf/wg-best-practices-os-developers

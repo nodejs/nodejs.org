@@ -138,7 +138,7 @@
     switch (os) {
       case 'Mac':
         versionIntoHref(buttons, 'node-%version%.pkg');
-        downloadHead.textContent = dlLocal + ' macOS (x64)';
+        downloadHead.textContent = dlLocal + ' macOS';
         break;
       case 'Win':
         versionIntoHref(buttons, 'node-%version%-' + arch + '.msi');
