@@ -327,8 +327,16 @@ test('writeToFile<object>', (t) => {
   let fileExists;
 
   const fs = {
-    access: (filename, flags, cb) => cb(!fileExists && new Error('ENOENT')),
-    writeFile: (filename, contents, cb) => cb()
+    constants: { O_CREAT: 1, O_EXCL: 2 },
+    openSync: (fd, flags, mode) => {
+      if (fileExists) {
+        const err = new Error();
+        err.code = 'EEXIST';
+        throw err;
+      }
+    },
+    writeFileSync: (fd, contents) => {},
+    closeSync: (fd) => {}
   };
 
   const releasePost = proxyquire('../../scripts/release-post', { fs });

@@ -211,23 +211,32 @@ function writeToFile(results) {
   );
 
   return new Promise((resolve, reject) => {
-    fs.access(filepath, fs.F_OK, (err) => {
-      if (!err && process.argv[3] !== '--force') {
+    let fd = null;
+
+    if (process.argv[3] !== '--force') {
+      try {
+        fd = fs.openSync(filepath, fs.constants.O_CREAT | fs.constants.O_EXCL);
+      } catch (error) {
         return reject(
           new Error(`Release post for ${results.version} already exists!`)
         );
+      } finally {
+        fs.closeSync(fd);
       }
+    }
 
-      fs.writeFile(filepath, results.content, (err1) => {
-        if (err1) {
-          return reject(
-            new Error(`Failed to write Release post: Reason: ${err1.message}`)
-          );
-        }
+    try {
+      fd = fs.openSync(filepath, 'w', 0o666);
+      fs.writeFileSync(fd, results.content);
+    } catch (error) {
+      return reject(
+        new Error(`Failed to write Release post: Reason: ${error.message}`)
+      );
+    } finally {
+      fs.closeSync(fd);
+    }
 
-        resolve(filepath);
-      });
-    });
+    resolve(filepath);
   });
 }
 
