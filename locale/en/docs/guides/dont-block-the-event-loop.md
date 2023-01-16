@@ -102,7 +102,7 @@ You should make sure you never block the Event Loop.
 In other words, each of your JavaScript callbacks should complete quickly.
 This of course also applies to your `await`'s, your `Promise.then`'s, and so on.
 
-A good way to ensure this is to reason about the ["computational complexity"](https://en.wikipedia.org/wiki/Time_complexity) of your callbacks.
+A good way to ensure this is to reason about the ["computational complexity"](https://en.wikipedia.org/wiki/Computational_complexity) of your callbacks.
 If your callback takes a constant number of steps no matter what its arguments are, then you'll always give every pending client a fair turn.
 If your callback takes a different number of steps depending on its arguments, then you should think about how long the arguments might be.
 
