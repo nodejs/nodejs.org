@@ -7,7 +7,7 @@ function scriptReg() {
   return (_, metalsmith, done) => {
     glob(
       `${metalsmith.path('scripts/helpers')}/**/*.js`,
-      {},
+      { windowsPathsNoEscape: true },
       (err, matches) => {
         if (err) {
           throw err;
