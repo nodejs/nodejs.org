@@ -8,7 +8,7 @@ function hbsReg() {
   return (_, metalsmith, done) => {
     glob(
       `${metalsmith.path('layouts/partials')}/**/*.hbs`,
-      {},
+      { windowsPathsNoEscape: true },
       async (err, matches) => {
         if (err) {
           throw err;
