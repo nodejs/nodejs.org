@@ -26,5 +26,8 @@
   "components.downloadList.links.unofficialBuilds": "Unofficial builds",
   "components.downloadList.links.buildingFromSource": "Building Node.js from source on supported platforms",
   "components.downloadList.links.installingOnLinux": "Installing Node.js via binary archive",
-  "components.downloadList.links.installingOnWsl": "Install on Windows Subsystem for Linux (WSL)"
+  "components.downloadList.links.installingOnWsl": "Install on Windows Subsystem for Linux (WSL)",
+  "components.downloadReleasesTable.changelog": "Changelog",
+  "components.downloadReleasesTable.releases": "Releases",
+  "components.downloadReleasesTable.docs": "Docs"
 }
