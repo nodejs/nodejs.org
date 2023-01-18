@@ -34,6 +34,7 @@
     "feed": "^4.2.2",
     "handlebars": "^4.7.7",
     "highlight.js": "^11.7.0",
+    "isomorphic-dompurify": "^0.26.0",
     "memory-cache": "^0.2.0",
     "next": "^13.1.1",
     "nextra": "^2.2.0",

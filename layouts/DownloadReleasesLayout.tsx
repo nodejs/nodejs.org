@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import Script from 'next/script';
+import { sanitize } from 'isomorphic-dompurify';
 import type { PropsWithChildren } from 'react';
 
 import Footer from '../components/Footer';
@@ -10,12 +10,19 @@ import { useNodeData } from '../hooks/useNodeData';
 
 import type { LegacyDownloadsReleasesFrontMatter } from '../types';
 
+// @TODO: Remove the `Script` once we migrate to `nodejs/nodejs.dev` codebase as this is unsafe
 const DownloadReleasesLayout = ({ children }: PropsWithChildren) => {
   const nextraContext = useNextraContext();
   const { availableNodeVersions } = useNodeData();
 
   const { modules, title } =
     nextraContext.frontMatter as LegacyDownloadsReleasesFrontMatter;
+
+  // @TODO: Remove this once we migrate to `nodejs/nodejs.dev` codebase as this is unsafe
+  // And completely not recommended
+  const extraModulesContent = sanitize(
+    `[<a href="#backref-1">1</a>]: ${modules}`
+  );
 
   return (
     <>
@@ -30,9 +37,10 @@ const DownloadReleasesLayout = ({ children }: PropsWithChildren) => {
             <section>
               <DownloadReleasesTable releases={availableNodeVersions} />
               <p>
-                <small id="ref-1">
-                  [<Link href="#backref-1">1</Link>]: {modules}
-                </small>
+                <small
+                  id="ref-1"
+                  dangerouslySetInnerHTML={{ __html: extraModulesContent }}
+                />
               </p>
             </section>
           </article>
