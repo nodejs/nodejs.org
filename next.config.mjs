@@ -14,6 +14,7 @@ export default withNextra({
   trailingSlash: true,
   experimental: {
     optimizeCss: true,
+    nextScriptWorkers: true,
     fontLoaders: [
       { loader: '@next/font/google', options: { subsets: ['latin'] } },
     ],
