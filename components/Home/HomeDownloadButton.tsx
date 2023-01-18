@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import LocalisedLink from '../LocalisedLink';
 import { useNextraContext } from '../../hooks/useNextraContext';
 import { getNodejsChangelog } from '../../util/getNodeJsChangelog';
@@ -23,7 +25,7 @@ const HomeDownloadButton = (props: HomeDownloadButtonProps) => {
 
   return (
     <div className="home-downloadblock">
-      <a
+      <Link
         href={nodeDownloadLink}
         className="home-downloadbutton"
         title={nodeDownloadTitle}
@@ -31,7 +33,7 @@ const HomeDownloadButton = (props: HomeDownloadButtonProps) => {
       >
         {props.nodeNumeric} {labels?.[props.isLts ? 'lts' : 'current']}
         <small>{labels?.[`tagline-${props.isLts ? 'lts' : 'current'}`]}</small>
-      </a>
+      </Link>
 
       <ul className="list-divider-pipe home-secondary-links">
         <li>

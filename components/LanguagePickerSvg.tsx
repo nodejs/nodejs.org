@@ -1,3 +1,4 @@
+// @TODO: This is a temporary component as Icons such as a Language Picker are coming from libraries such as FontAwesome in the future
 const LanguagePickerSvg = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

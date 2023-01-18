@@ -1,7 +1,9 @@
+import Link from 'next/link';
+
+import DownloadList from './DownloadList';
 import { useNextraContext } from '../../hooks/useNextraContext';
 
 import type { NodeVersionData, LegacyDownloadsFrontMatter } from '../../types';
-import DownloadList from './DownloadList';
 
 type SecondaryDownloadMatrixProps = Pick<NodeVersionData, 'node'>;
 
@@ -19,41 +21,41 @@ const SecondaryDownloadMatrix = (props: SecondaryDownloadMatrixProps) => {
           <tr>
             <th>{additional.DockerImage}</th>
             <td>
-              <a href="https://hub.docker.com/_/node/">
+              <Link href="https://hub.docker.com/_/node/">
                 {additional.officialDockerImage}
-              </a>
+              </Link>
             </td>
           </tr>
 
           <tr>
             <th>{additional.LinuxPowerSystems}</th>
             <td>
-              <a
+              <Link
                 href={`https://nodejs.org/dist/${props.node}/node-${props.node}-linux-ppc64le.tar.xz`}
               >
                 64-bit
-              </a>
+              </Link>
             </td>
           </tr>
 
           <tr>
             <th>{additional.LinuxSystemZ}</th>
             <td>
-              <a
+              <Link
                 href={`https://nodejs.org/dist/${props.node}/node-${props.node}-linux-s390x.tar.xz`}
               >
                 64-bit
-              </a>
+              </Link>
             </td>
           </tr>
           <tr>
             <th>{additional.AIXPowerSystems}</th>
             <td>
-              <a
+              <Link
                 href={`https://nodejs.org/dist/${props.node}/node-${props.node}-aix-ppc64.tar.gz`}
               >
                 64-bit
-              </a>
+              </Link>
             </td>
           </tr>
         </tbody>

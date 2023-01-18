@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { useSiteConfig } from '../../hooks/useSiteConfig';
 import { dateIsBetween } from '../../util/dateIsBetween';
 
@@ -16,13 +18,18 @@ const Banner = () => {
     if (showBanner && indexBanner.text) {
       return (
         <p className="home-version home-version-banner">
-          <a href={indexBanner.link}>{indexBanner.text}</a>
+          <Link href={indexBanner.link}>{indexBanner.text}</Link>
         </p>
       );
     }
 
     if (showBanner && indexBanner.html) {
-      return <a dangerouslySetInnerHTML={{ __html: indexBanner.html }} />;
+      return (
+        <Link
+          href={indexBanner.link}
+          dangerouslySetInnerHTML={{ __html: indexBanner.html }}
+        />
+      );
     }
   }
 

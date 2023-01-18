@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { getNodejsChangelog } from '../../util/getNodeJsChangelog';
 import { getNodeApiLink } from '../../util/getNodeApiLink';
+
 import type { NodeVersionData } from '../../types';
 
 type DownloadReleasesTableProps = { releases: NodeVersionData[] };

@@ -1,9 +1,9 @@
 import type { PropsWithChildren } from 'react';
-import PrimaryDownloadMatrix from '../components/Downloads/PrimaryDownloadMatrix';
-import SecondaryDownloadMatrix from '../components/Downloads/SecondaryDownloadMatrix';
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import PrimaryDownloadMatrix from '../components/Downloads/PrimaryDownloadMatrix';
+import SecondaryDownloadMatrix from '../components/Downloads/SecondaryDownloadMatrix';
 import { useNextraContext } from '../hooks/useNextraContext';
 import { useNodeData } from '../hooks/useNodeData';
 

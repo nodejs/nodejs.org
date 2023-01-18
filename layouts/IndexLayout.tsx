@@ -1,8 +1,9 @@
 import type { PropsWithChildren } from 'react';
-import Banner from '../components/Home/Banner';
+import Link from 'next/link';
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import Banner from '../components/Home/Banner';
 import HomeDownloadButton from '../components/Home/HomeDownloadButton';
 import { useNextraContext } from '../hooks/useNextraContext';
 import { useNodeData } from '../hooks/useNodeData';
@@ -33,9 +34,9 @@ const IndexLayout = ({ children }: PropsWithChildren) => {
 
             <p>
               {labels?.['version-schedule-prompt']}{' '}
-              <a href="https://github.com/nodejs/release#release-schedule">
+              <Link href="https://github.com/nodejs/release#release-schedule">
                 {labels?.['version-schedule-prompt-link-text']}
-              </a>
+              </Link>
               .
             </p>
           </div>

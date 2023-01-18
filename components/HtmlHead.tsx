@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 import { useSiteConfig } from '../hooks/useSiteConfig';
 import { useLocale } from '../hooks/useLocale';
+
 import type { LegacyFrontMatter } from '../types';
 
 type HeaderProps = { frontMatter: LegacyFrontMatter };
