@@ -48,6 +48,7 @@
     "strftime": "^0.10.1"
   },
   "devDependencies": {
+    "@builder.io/partytown": "^0.7.4",
     "@next/eslint-plugin-next": "^13.1.1",
     "@types/node": "^18.11.17",
     "@types/react": "^18.0.26",
