@@ -65,11 +65,11 @@
         "translationId": "components.navigation.docs.links.es6"
       },
       "apiLts": {
-        "link": "https://nodejs.org/dist/{ltsNodeVersion}/docs/api",
+        "link": "https://nodejs.org/dist/latest-{ltsNodeVersion}/docs/api",
         "translationId": "components.navigation.docs.links.apiLts"
       },
       "apiCurrent": {
-        "link": "https://nodejs.org/dist/{currentNodeVersion}/docs/api",
+        "link": "https://nodejs.org/dist/latest-{currentNodeVersion}/docs/api",
         "translationId": "components.navigation.docs.links.apiCurrent"
       },
       "guides": {
