@@ -11,12 +11,11 @@
     "node": "v18"
   },
   "scripts": {
-    "dev": "NODE_OPTIONS=\"--max_old_space_size=4096\" next dev",
+    "serve": "NODE_OPTIONS=\"--max_old_space_size=4096\" next dev",
     "build": "NODE_OPTIONS=\"--max_old_space_size=4096\" next build",
     "start": "next start",
     "export": "next export -o build",
     "deploy": "npm-run-all build export external:survey",
-    "external:survey": "rsync -avz --exclude \"node_modules*\" --exclude \"package*\" external/survey-2018/ build/en/user-survey-report",
     "lint:js": "eslint \"**/*.{js,jsx,ts,tsx}\" --cache --cache-file .eslintjscache --report-unused-disable-directives",
     "lint:md": "eslint \"**/*.{md,mdx}\" --cache --cache-file .eslintmdcache",
     "lint:scss": "stylelint --config .stylelintrc \"styles/**/*.{css,sass,scss}\"",
@@ -24,13 +23,16 @@
     "lint:fix": "npm-run-all \"lint:js -- --fix\" \"lint:md -- --fix\" \"lint:scss -- --fix\" --parallel",
     "prettier": "prettier \"**/*.{ts,tsx,js,scss,yml}\" --check",
     "prettier:fix": "npm run prettier -- --write",
-    "format": "npm-run-all prettier:fix lint:fix"
+    "format": "npm-run-all prettier:fix lint:fix",
+    "external:survey": "rsync -az --exclude \"node_modules*\" --exclude \"package*\" external/survey-2018/ build/en/user-survey-report",
+    "scripts:release-post": "node scripts/release-post/index.js"
   },
   "dependencies": {
     "@mdx-js/react": "^2.2.1",
     "@next/font": "^13.1.1",
     "classnames": "^2.3.2",
     "feed": "^4.2.2",
+    "handlebars": "^4.7.7",
     "highlight.js": "^11.7.0",
     "memory-cache": "^0.2.0",
     "next": "^13.1.1",
