@@ -9,13 +9,19 @@ export const useLocale = () => {
   const { asPath } = useRouter();
 
   const localisedLink = linkWithLocale(currentLocale!.code);
+  const localisedPath = (route: string) =>
+    localisedLink(route).replace(/[#|?].*$/, '');
 
   return {
     availableLocales: availableLocales!,
     currentLocale: currentLocale!,
-    isCurrentLocaleRoute: (route: string, allowSubPath?: boolean) =>
-      allowSubPath
-        ? asPath.startsWith(localisedLink(route))
-        : localisedLink(route) === asPath,
+    isCurrentLocaleRoute: (route: string, allowSubPath?: boolean) => {
+      const localisedRoute = localisedPath(route);
+      const asPathJustPath = asPath.replace(/[#|?].*$/, '');
+
+      return allowSubPath
+        ? asPathJustPath.startsWith(localisedRoute)
+        : localisedRoute === asPathJustPath;
+    },
   };
 };
