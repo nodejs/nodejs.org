@@ -10,14 +10,17 @@ type AnchorHeadingProps = PropsWithChildren<{
 const AnchoredHeading = ({ children, level, id }: AnchorHeadingProps) => {
   const HeadingLevelTag = `h${level}` as any;
 
+  // This regex replacement is used for <!-- --> comments within the heading
+  const sanitizedId = id?.replace(/---(.+)---(.*)/, (_, f) => f);
+
   return (
-    <HeadingLevelTag id={id}>
+    <HeadingLevelTag id={sanitizedId}>
       {children}
       <a
-        id={`header-${id}`}
+        id={`header-${sanitizedId}`}
         className="anchor"
-        href={`#${id}`}
-        aria-labelledby={id}
+        href={`#${sanitizedId}`}
+        aria-labelledby={sanitizedId}
       />
     </HeadingLevelTag>
   );
