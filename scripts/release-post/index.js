@@ -6,13 +6,13 @@
  * of stitching together data from changelog, shasums etc,
  * but get a more or less complete release blog ready to go.
  *
- * Usage: $ node release-post.js [version]
+ * Usage: $ node index.js [version]
  *
  * If the version argument is omitted, the latest version number
  * will be picked from https://nodejs.org/dist/index.json.
  *
  * It'll create a file with the blog post content
- * into ../pages/en/blog/release/vX.md ready for you to commit
+ * into ../../pages/en/blog/release/vX.md ready for you to commit
  * or possibly edit by hand before committing.
  *
  * Happy releasing!
