@@ -22,10 +22,9 @@
 
 const fs = require('fs');
 const path = require('path');
-const Handlebars = require('handlebars');
-const fetch = require('node-fetch');
+const handlebars = require('handlebars');
 
-const downloads = require('./helpers/downloads');
+const downloads = require('./downloadsTable');
 
 function sendRequest(opts) {
   const options = {
@@ -180,9 +179,9 @@ function urlOrComingSoon(binary) {
 
 function renderPost(results) {
   const templateStr = fs
-    .readFileSync(path.resolve(__dirname, 'release.hbs'))
+    .readFileSync(path.resolve(__dirname, 'template.hbs'))
     .toString('utf8');
-  const template = Handlebars.compile(templateStr, { noEscape: true });
+  const template = handlebars.compile(templateStr, { noEscape: true });
   const view = Object.assign(
     {
       date: new Date().toISOString(),
@@ -202,6 +201,7 @@ function renderPost(results) {
 function writeToFile(results) {
   const filepath = path.resolve(
     __dirname,
+    '..',
     '..',
     'pages',
     'en',
