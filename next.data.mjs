@@ -35,10 +35,13 @@ const getNodeVersionData = () => {
             node: v.version,
             nodeNumeric: v.version.replace(/^v/, ''),
             nodeMajor: \`v\${semVer.major(v.version)}.x\`,
-            npm: v.npm || null,
-            v8: v.v8 || null,
-            openssl: v.openssl || null,
+            npm: v.npm || 'N/A',
+            v8: v.v8 || 'N/A',
+            openssl: v.openssl || 'N/A',
             isLts: Boolean(v.lts),
+            releaseDate: v.date,
+            ltsName: v.lts || null,
+            modules: v.modules || '0',
             schedule: schedule[semVer.major(v.version)] || null,
           }))
       );

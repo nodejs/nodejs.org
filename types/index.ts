@@ -79,6 +79,10 @@ export interface LegacyDownloadsFrontMatter extends LegacyFrontMatter {
   additional: Record<string, string>;
 }
 
+export interface LegacyDownloadsReleasesFrontMatter extends LegacyFrontMatter {
+  modules: string;
+}
+
 export interface LocaleConfig {
   code: string;
   localName: string;
@@ -108,6 +112,9 @@ export interface NodeVersionData {
   v8: string;
   openssl: string;
   isLts: boolean;
+  ltsName: string | null;
+  releaseDate: string;
+  modules: string;
   schedule?: NodeReleaseSchedule;
 }
 
