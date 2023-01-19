@@ -9,11 +9,7 @@ layout: docs.hbs
 
 This guide explains how to migrate to safe `Buffer` constructor methods. The migration fixes the following deprecation warning:
 
-<div className="highlight-box">
-  The Buffer() and new Buffer() constructors are not recommended for use due to
-  security and usability concerns. Please use the new Buffer.alloc(),
-  Buffer.allocUnsafe(), or Buffer.from() construction methods instead.
-</div>
+> The Buffer() and new Buffer() constructors are not recommended for use due to security and usability concerns. Please use the new Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() construction methods instead.
 
 - [Variant 1: Drop support for Node.js ≤ 4.4.x and 5.0.0 — 5.9.x](#variant-1) (_recommended_)
 - [Variant 2: Use a polyfill](#variant-2)

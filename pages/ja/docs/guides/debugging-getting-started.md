@@ -3,12 +3,6 @@ title: デバッグ - 入門
 layout: docs.hbs
 ---
 
-<!--
-# Debugging Guide
-
-This guide will help you get started debugging your Node.js apps and scripts.
-
--->
 # デバッグガイド
 
 このガイドは、Node.js アプリケーションとスクリプトのデバッグを開始するのに役立ちます。

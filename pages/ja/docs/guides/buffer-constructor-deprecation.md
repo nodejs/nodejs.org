@@ -9,11 +9,7 @@ layout: docs.hbs
 
 このガイドは安全な `Buffer` コンストラクタメソッドに移行する方法を説明します。マイグレーションにより、以下の非推奨警告が修正されました。
 
-<div className="highlight-box">
-  The Buffer() and new Buffer() constructors are not recommended for use due to
-  security and usability concerns. Please use the new Buffer.alloc(),
-  Buffer.allocUnsafe(), or Buffer.from() construction methods instead.
-</div>
+> The Buffer() and new Buffer() constructors are not recommended for use due to security and usability concerns. Please use the new Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() construction methods instead.
 
 - [Variant 1: Node.js ≤ 4.4.x および 5.0.0 — 5.9.x のサポートを終了](#variant-1) (_推奨_)
 - [Variant 2: ポリフィルの使用](#variant-2)

@@ -9,11 +9,7 @@ layout: docs.hbs
 
 本教程将向你介绍如果迁移到安全的 `Buffer` 构造函数方法。此合并将消除以下已废除的警告：
 
-<div className="highlight-box">
-  Buffer() 和 new Buffer()
-  构造函数对于有安全顾虑的人而言是不推荐使用的。请使用新的方法
-  Buffer.alloc()，Buffer.allocUnsafe() 或者是 Buffer.from() 构造函数。
-</div>
+> Buffer() 和 new Buffer() 构造函数对于有安全顾虑的人而言是不推荐使用的。请使用新的方法 Buffer.alloc()，Buffer.allocUnsafe() 或者是 Buffer.from() 构造函数。
 
 - [变化 1： 在 Node.js ≤ 4.4.x 和 5.0.0 — 5.9.x 版本中不支持](#variant-1) (_推荐_)
 - [变化 2： 使用 polyfill 库](#variant-2)
