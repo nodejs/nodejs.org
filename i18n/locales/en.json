@@ -29,5 +29,6 @@
   "components.downloadList.links.installingOnWsl": "Install on Windows Subsystem for Linux (WSL)",
   "components.downloadReleasesTable.changelog": "Changelog",
   "components.downloadReleasesTable.releases": "Releases",
-  "components.downloadReleasesTable.docs": "Docs"
+  "components.downloadReleasesTable.docs": "Docs",
+  "layouts.blogPost.author.byLine": "{author, select, true {By {author}, } other {}}"
 }

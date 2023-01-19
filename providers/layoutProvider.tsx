@@ -6,6 +6,7 @@ import type { LegacyLayouts } from '../types';
 
 import DefaultLayout from '../layouts/DefaultLayout';
 import AboutLayout from '../layouts/AboutLayout';
+import BlogPostLayout from '../layouts/BlogPostLayout';
 import ContributeLayout from '../layouts/ContributeLayout';
 import DocsLayout from '../layouts/DocsLayout';
 import IndexLayout from '../layouts/IndexLayout';
@@ -27,6 +28,8 @@ const getLegacyLayout = (layout: LegacyLayouts) => {
   switch (layout) {
     case 'about.hbs':
       return AboutLayout;
+    case 'blog-post.hbs':
+      return BlogPostLayout;
     case 'contribute.hbs':
       return ContributeLayout;
     case 'docs.hbs':
