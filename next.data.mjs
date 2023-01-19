@@ -29,29 +29,60 @@ const getNodeVersionData = async () => {
     nodeVersionData((_, versions) => resolve(versions))
   );
 
-  return Promise.all([nodeScheduleDataPromise, nodeVersionDataPromise]).then(
-    ([schedule, versions]) =>
-      versions.map(v => ({
-        node: v.version,
-        nodeNumeric: v.version.replace(/^v/, ''),
-        nodeMajor: `v${semVer.major(v.version)}.x`,
-        npm: v.npm || 'N/A',
-        v8: v.v8 || 'N/A',
-        openssl: v.openssl || 'N/A',
-        isLts: Boolean(v.lts),
-        releaseDate: v.date,
-        ltsName: v.lts || null,
-        modules: v.modules || '0',
-        schedule: schedule[semVer.major(v.version)] || null,
-      }))
+  const data = await Promise.all([
+    nodeScheduleDataPromise,
+    nodeVersionDataPromise,
+  ]).then(([schedule, versions]) =>
+    versions.map(v => ({
+      node: v.version,
+      nodeNumeric: v.version.replace(/^v/, ''),
+      nodeMajor: `v${semVer.major(v.version)}.x`,
+      npm: v.npm || 'N/A',
+      v8: v.v8 || 'N/A',
+      openssl: v.openssl || 'N/A',
+      isLts: Boolean(v.lts),
+      releaseDate: v.date,
+      ltsName: v.lts || null,
+      modules: v.modules || '0',
+      schedule: schedule[semVer.major(v.version)] || null,
+    }))
   );
+
+  const currentNodeVersion = data[0];
+  const currentLtsVersion = data.find(version => version.isLts);
+
+  return {
+    allVersions: data,
+    currentNodeVersion,
+    currentLtsVersion,
+  };
 };
 
+// Do the request in the global level and cache the result in memory to avoid
+// double requests.
 const cachedNodeVersionData = getNodeVersionData();
 
 const getNextData = async (content, { route }) => {
   const localisationData = getLocalisationData(route);
   const nodeVersionData = await cachedNodeVersionData;
+
+  // Only /download needs the data for all releases
+  const needAllReleasesData = /\/[^/]+\/download$/.test(route);
+  let minimalNodeVersionData;
+
+  if (needAllReleasesData) {
+    minimalNodeVersionData = nodeVersionData.allVersions;
+  } else {
+    // We only need the current version and the current LTS version.
+    // They can be the same and in that case we can just pass one.
+    minimalNodeVersionData =
+      nodeVersionData.currentNodeVersion === nodeVersionData.currentLtsVersion
+        ? [nodeVersionData.currentNodeVersion]
+        : [
+            nodeVersionData.currentNodeVersion,
+            nodeVersionData.currentLtsVersion,
+          ];
+  }
 
   return `
     // add the mdx file content
@@ -64,7 +95,7 @@ const getNextData = async (content, { route }) => {
       ${localisationData}
 
       const i18nProps = getLocalisationData();
-      const nodeVersionData = ${JSON.stringify(nodeVersionData)};
+      const nodeVersionData = ${JSON.stringify(minimalNodeVersionData)};
 
       return { props: { ...i18nProps, nodeVersionData } };
     }
