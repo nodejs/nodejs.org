@@ -113,10 +113,6 @@
   var userAgent = navigator.userAgent;
   var osMatch = userAgent.match(/(Win|Mac|Linux)/);
   var os = (osMatch && osMatch[1]) || '';
-  var arch =
-    userAgent.match(/x86_64|Win64|WOW64/) || navigator.cpuClass === 'x64'
-      ? 'x64'
-      : 'x86';
   var buttons = document.querySelectorAll('.home-downloadbutton');
   var downloadHead = document.querySelector('#home-downloadhead');
   var dlLocal;
@@ -141,21 +137,13 @@
         downloadHead.textContent = dlLocal + ' macOS';
         break;
       case 'Win':
-        versionIntoHref(buttons, 'node-%version%-' + arch + '.msi');
-        downloadHead.textContent = dlLocal + ' Windows (' + arch + ')';
+        versionIntoHref(buttons, 'node-%version%-x64.msi');
+        downloadHead.textContent = dlLocal + ' Windows (x64)';
         break;
       case 'Linux':
         versionIntoHref(buttons, 'node-%version%-linux-x64.tar.xz');
         downloadHead.textContent = dlLocal + ' Linux (x64)';
         break;
     }
-  }
-
-  // Windows button on download page
-  var winButton = document.querySelector('#windows-downloadbutton');
-  if (winButton && os === 'Win') {
-    var winText = winButton.querySelector('p');
-    winButton.href = winButton.href.replace(/x(86|64)/, arch);
-    winText.textContent = winText.textContent.replace(/x(86|64)/, arch);
   }
 })();
