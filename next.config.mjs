@@ -6,7 +6,7 @@ import getNextData from './next.data.mjs';
 const withNextra = nextra({
   theme: './theme.tsx',
   flexsearch: false,
-  mdxOptions: { format: 'md', remarkPlugins: [remarkMdxDisableExplicitJsx] },
+  mdxOptions: { remarkPlugins: [remarkMdxDisableExplicitJsx] },
   transform: getNextData,
 });
 
