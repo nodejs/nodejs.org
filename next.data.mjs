@@ -11,7 +11,6 @@ const getLocalisationData = (route, defaultLocale = 'en') => {
 
   return `
     const getLocalisationData = () => {
-      const localeConfig = require('i18n/config.json');
       const currentLocale = ${JSON.stringify(currentLocale)};
       const localeMessages = require('i18n/locales/${currentLocale.code}.json');
 
@@ -89,8 +88,6 @@ const getNextData = async (content, { route }) => {
     ${content}
 
     export const getStaticProps = async () => {
-      const memoryCache = require('memory-cache');
-
       // eval'd the function content
       ${localisationData}
 

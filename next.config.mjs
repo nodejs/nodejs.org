@@ -11,6 +11,13 @@ const withNextra = nextra({
     format: 'detect',
   },
   transform: getNextData,
+  transformPageOpts: pageOpts => {
+    // Remove unused data from the page options.
+    delete pageOpts.pageMap;
+    delete pageOpts.headings;
+    delete pageOpts.timestamp;
+    return pageOpts;
+  },
 });
 
 export default withNextra({
