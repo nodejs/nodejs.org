@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import Script from 'next/script';
 import { sanitize } from 'isomorphic-dompurify';
 import type { PropsWithChildren } from 'react';
@@ -20,8 +21,9 @@ const DownloadReleasesLayout = ({ children }: PropsWithChildren) => {
 
   // @TODO: Remove this once we migrate to `nodejs/nodejs.dev` codebase as this is unsafe
   // And completely not recommended
-  const extraModulesContent = sanitize(
-    `[<a href="#backref-1">1</a>]: ${modules}`
+  const extraModulesContent = useMemo(
+    () => sanitize(`[<a href="#backref-1">1</a>]: ${modules}`),
+    [modules]
   );
 
   return (
