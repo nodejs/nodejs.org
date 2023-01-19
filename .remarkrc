@@ -1,6 +1,7 @@
 {
   "plugins": [
     "remark-preset-lint-node",
+    "preset-prettier",
     [
       "remark-lint-fenced-code-flag",
       false
@@ -31,10 +32,6 @@
     ],
     [
       "remark-preset-lint-node/remark-lint-nodejs-links.js",
-      false
-    ],
-    [
-      "remark-lint-unordered-list-marker-style",
       false
     ]
   ]
