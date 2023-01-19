@@ -23,6 +23,7 @@ const mdxComponents: MDXComponents = {
   h4: props => <AnchoredHeading level={4} {...props} />,
   h5: props => <AnchoredHeading level={5} {...props} />,
   h6: props => <AnchoredHeading level={6} {...props} />,
+  blockquote: ({ children }) => <div className="highlight-box">{children}</div>,
 };
 
 const Content = ({ children }: LayoutProps) => {
