@@ -5,9 +5,10 @@ import localeConfig from './i18n/config.json' assert { type: 'json' };
 
 const getLocalisationData = (route, defaultLocale = 'en') => {
   const localeCode = route.split('/')[1] || defaultLocale;
-  const currentLocale =
-    localeConfig.find(c => c.code === localeCode) ||
-    localeConfig.find(c => c.code === defaultLocale);
+
+  const currentLocale = localeConfig.find(
+    c => c.code === localeCode || c.code === defaultLocale
+  );
 
   return `
     const getLocalisationData = () => {
