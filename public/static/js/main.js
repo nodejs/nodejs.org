@@ -1,59 +1,60 @@
-/* eslint-disable no-var */
-// Notice: IE 10 and below is still supported, so disable eslint for the file
-// when checking the "var"
 (function () {
   var langPickerTogglerElement = document.querySelector('.lang-picker-toggler');
   var langPickerElement = document.querySelector('.lang-picker');
-  var langElements = langPickerElement.querySelectorAll('button');
-  // Get the current URL language
-  var currentLang = window.location.pathname.split('/')[1] || 'en';
-  var currentLangElement = null;
 
-  Array.prototype.forEach.call(langElements, function (el) {
-    if (el.getAttribute('data-lang') !== currentLang) {
-      el.addEventListener('click', function (e) {
-        var newLocale =
-          (e.target && e.target.dataset && e.target.dataset.lang) || 'en';
-        window.location.assign(
-          window.location.pathname.replace(/\/[a-zA-Z-]+/, '/' + newLocale)
-        );
-      });
-    } else {
-      currentLangElement = el;
+  if (langPickerElement) {
+    var langElements = langPickerElement.querySelectorAll('button');
+    // Get the current URL language
+    var currentLang = window.location.pathname.split('/')[1] || 'en';
+    var currentLangElement = null;
+
+    Array.prototype.forEach.call(langElements, function (el) {
+      if (el.getAttribute('data-lang') !== currentLang) {
+        el.addEventListener('click', function (e) {
+          var newLocale =
+            (e.target && e.target.dataset && e.target.dataset.lang) || 'en';
+          window.location.assign(
+            window.location.pathname.replace(/\/[a-zA-Z-]+/, '/' + newLocale)
+          );
+        });
+      } else {
+        currentLangElement = el;
+      }
+    });
+
+    if (currentLangElement) {
+      langPickerTogglerElement.setAttribute(
+        'title',
+        currentLangElement.textContent
+      );
+
+      // Remove the current selected language item, because we don't need to choose it
+      // any more unless we want to switch to a new language
+      langPickerElement.removeChild(currentLangElement.parentNode);
     }
-  });
 
-  if (currentLangElement) {
-    langPickerTogglerElement.setAttribute(
-      'title',
-      currentLangElement.textContent
-    );
+    const toggleFunction = function () {
+      langPickerElement.classList.toggle('hidden');
+      const isAriaExpanded =
+        langPickerTogglerElement.getAttribute('aria-expanded') === 'true';
+      langPickerTogglerElement.setAttribute('aria-expanded', !isAriaExpanded);
+    };
 
-    // Remove the current selected language item, because we don't need to choose it
-    // any more unless we want to switch to a new language
-    langPickerElement.removeChild(currentLangElement.parentNode);
-  }
-
-  const toggleFunction = function () {
-    langPickerElement.classList.toggle('hidden');
-    const isAriaExpanded =
-      langPickerTogglerElement.getAttribute('aria-expanded') === 'true';
-    langPickerTogglerElement.setAttribute('aria-expanded', !isAriaExpanded);
-  };
-
-  langPickerTogglerElement.addEventListener('click', function () {
-    toggleFunction();
-  });
-
-  document.body.addEventListener('click', function (event) {
-    if (
-      !langPickerElement.classList.contains('hidden') &&
-      !langPickerTogglerElement.contains(event.target)
-    ) {
+    langPickerTogglerElement.addEventListener('click', function () {
       toggleFunction();
-    }
-  });
+    });
+
+    document.body.addEventListener('click', function (event) {
+      if (
+        !langPickerElement.classList.contains('hidden') &&
+        !langPickerTogglerElement.contains(event.target)
+      ) {
+        toggleFunction();
+      }
+    });
+  }
 })();
+
 (function () {
   const themeAttr = 'data-theme';
   var darkThemeSwitcherElement = document.querySelector('.dark-theme-switcher');
@@ -74,14 +75,16 @@
       }
     });
 
-  darkThemeSwitcherElement.addEventListener('click', function () {
-    var currentTheme = getTheme() ?? preferredColorScheme;
-    if (currentTheme === 'light') {
-      setTheme('dark');
-    } else if (currentTheme === 'dark') {
-      setTheme('light');
-    }
-  });
+  if (darkThemeSwitcherElement) {
+    darkThemeSwitcherElement.addEventListener('click', function () {
+      var currentTheme = getTheme() ?? preferredColorScheme;
+      if (currentTheme === 'light') {
+        setTheme('dark');
+      } else if (currentTheme === 'dark') {
+        setTheme('light');
+      }
+    });
+  }
 
   function setTheme(theme) {
     document.querySelector('html').setAttribute(themeAttr, theme);
@@ -92,20 +95,23 @@
     return window.localStorage.getItem('theme');
   }
 })();
+
 (function () {
   var scrollToTop = document.querySelector('#scroll-to-top');
 
-  (window.onscroll = function () {
-    window.requestAnimationFrame(function () {
-      scrollToTop.style.display =
-        window.pageYOffset > window.innerHeight ? 'block' : 'none';
-    });
-  })();
+  if (scrollToTop) {
+    (window.onscroll = function () {
+      window.requestAnimationFrame(function () {
+        scrollToTop.style.display =
+          window.pageYOffset > window.innerHeight ? 'block' : 'none';
+      });
+    })();
 
-  scrollToTop.addEventListener('click', function (e) {
-    e.preventDefault();
-    window.scrollTo(0, 0);
-  });
+    scrollToTop.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo(0, 0);
+    });
+  }
 })();
 
 (function () {
