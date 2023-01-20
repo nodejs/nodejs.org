@@ -18,14 +18,6 @@ const Document = (props: DocumentProps) => (
       <Main />
       <NextScript />
       <Script strategy="beforeInteractive" src="/static/js/themeSwitcher.js" />
-      <Script
-        strategy="beforeInteractive"
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.slim.min.js"
-      />
-      <Script
-        strategy="beforeInteractive"
-        src="https://cdn.jsdelivr.net/npm/jquery.fancytable@1.0.33/dist/fancyTable.min.js"
-      />
       <Script strategy="lazyOnload" src="/static/js/main.js" />
     </body>
   </Html>

@@ -1,20 +1,48 @@
 import { useMemo } from 'react';
-import Script from 'next/script';
+import useSWR from 'swr';
 import { sanitize } from 'isomorphic-dompurify';
+import semVer from 'semver';
 import type { PropsWithChildren } from 'react';
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import DownloadReleasesTable from '../components/Downloads/DownloadReleasesTable';
 import { useNextraContext } from '../hooks/useNextraContext';
-import { useNodeData } from '../hooks/useNodeData';
 
 import type { LegacyDownloadsReleasesFrontMatter } from '../types';
+
+const fetcher = (...args: Parameters<typeof fetch>) =>
+  fetch(...args).then(res => res.json());
 
 // @TODO: Remove the `Script` once we migrate to `nodejs/nodejs.dev` codebase as this is unsafe
 const DownloadReleasesLayout = ({ children }: PropsWithChildren) => {
   const nextraContext = useNextraContext();
-  const { availableNodeVersions } = useNodeData();
+
+  const { data = [] } = useSWR<any[]>(
+    'https://nodejs.org/dist/index.json',
+    fetcher
+  );
+
+  const availableNodeVersions = useMemo(() => {
+    const majorVersions = new Map();
+
+    data.reverse().forEach(v =>
+      majorVersions.set(semVer.major(v.version), {
+        node: v.version,
+        nodeNumeric: v.version.replace(/^v/, ''),
+        nodeMajor: `v${semVer.major(v.version)}.x`,
+        npm: v.npm || 'N/A',
+        v8: v.v8 || 'N/A',
+        openssl: v.openssl || 'N/A',
+        isLts: Boolean(v.lts),
+        releaseDate: v.date,
+        ltsName: v.lts || null,
+        modules: v.modules || '0',
+      })
+    );
+
+    return [...majorVersions.values()].reverse();
+  }, [data]);
 
   const { modules, title } =
     nextraContext.frontMatter as LegacyDownloadsReleasesFrontMatter;
@@ -49,7 +77,6 @@ const DownloadReleasesLayout = ({ children }: PropsWithChildren) => {
         </div>
       </main>
       <Footer />
-      <Script strategy="lazyOnload" src="/static/js/previousVersion.js" />
     </>
   );
 };
