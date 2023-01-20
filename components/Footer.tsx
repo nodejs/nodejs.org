@@ -6,11 +6,11 @@ type FooterProps = { className?: string };
 // Note.: We don't expect to translate these items as we're going to replace with `nodejs/nodejs.dev` footer
 const Footer = ({ className }: FooterProps) => (
   <>
-    <Link href="#" id="scroll-to-top">
+    <a href="#" id="scroll-to-top">
       <span>
         &uarr; <FormattedMessage id="components.footer.scrollToTop.button" />
       </span>
-    </Link>
+    </a>
     <footer className={className}>
       <div className="container">
         <div className="openjsfoundation-footer">
