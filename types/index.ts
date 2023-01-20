@@ -1,4 +1,5 @@
 // @TODO: These types will be splitted on individual files for better organisation in the future
+import type { AppProps as DefaultAppProps } from 'next/app';
 import type navigation from '../navigation.json';
 
 export type NavigationKeys = keyof typeof navigation;
@@ -144,3 +145,5 @@ export interface AppProps {
   blogData: BlogData[];
   statusCode?: number;
 }
+
+export type NextraAppProps = DefaultAppProps<AppProps>;

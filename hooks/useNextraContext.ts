@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { LayoutContext } from '../providers/layoutProvider';
 
 export const useNextraContext = () => {
-  const { pageOpts } = useContext(LayoutContext);
+  const { pageOpts, pageProps } = useContext(LayoutContext);
 
-  return pageOpts;
+  return { ...pageOpts, ...pageProps };
 };

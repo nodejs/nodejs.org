@@ -2,32 +2,36 @@ import { createContext } from 'react';
 import type { PropsWithChildren } from 'react';
 import type { PageOpts } from 'nextra';
 
-import type { LegacyLayouts } from '../types';
-
-import DefaultLayout from '../layouts/DefaultLayout';
 import AboutLayout from '../layouts/AboutLayout';
+import BlogIndexLayout from '../layouts/BlogIndexLayout';
 import BlogPostLayout from '../layouts/BlogPostLayout';
 import ContributeLayout from '../layouts/ContributeLayout';
+import DefaultLayout from '../layouts/DefaultLayout';
 import DocsLayout from '../layouts/DocsLayout';
-import IndexLayout from '../layouts/IndexLayout';
 import DownloadLayout from '../layouts/DownloadLayout';
 import DownloadCurrentLayout from '../layouts/DownloadCurrentLayout';
 import DownloadReleasesLayout from '../layouts/DownloadReleasesLayout';
+import IndexLayout from '../layouts/IndexLayout';
+
+import type { LegacyLayouts, NextraAppProps } from '../types';
 
 type LayoutProviderProps = PropsWithChildren<{
-  layout: LegacyLayouts;
   pageOpts: PageOpts;
+  pageProps: NextraAppProps['pageProps'];
 }>;
 
 export const LayoutContext = createContext<{
   layout: LegacyLayouts;
   pageOpts: PageOpts;
+  pageProps: NextraAppProps['pageProps'];
 }>(undefined as any);
 
 const getLegacyLayout = (layout: LegacyLayouts) => {
   switch (layout) {
     case 'about.hbs':
       return AboutLayout;
+    case 'blog-index.hbs':
+      return BlogIndexLayout;
     case 'blog-post.hbs':
       return BlogPostLayout;
     case 'contribute.hbs':
@@ -48,10 +52,12 @@ const getLegacyLayout = (layout: LegacyLayouts) => {
 };
 
 export const LayoutProvider = ({ children, ...props }: LayoutProviderProps) => {
-  const LayoutComponent = getLegacyLayout(props.layout);
+  const layout = props.pageOpts.frontMatter.layout;
+
+  const LayoutComponent = getLegacyLayout(layout);
 
   return (
-    <LayoutContext.Provider value={props}>
+    <LayoutContext.Provider value={{ layout, ...props }}>
       <LayoutComponent>{children}</LayoutComponent>
     </LayoutContext.Provider>
   );
