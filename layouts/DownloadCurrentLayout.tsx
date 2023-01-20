@@ -7,11 +7,11 @@ import SecondaryDownloadMatrix from '../components/Downloads/SecondaryDownloadMa
 import { useNextraContext } from '../hooks/useNextraContext';
 import { useNodeData } from '../hooks/useNodeData';
 
-import type { LegacyDownloadsFrontMatter } from '../types';
+import type { LegacyDownloadsFrontMatter, NodeVersionData } from '../types';
 
 const DownloadCurrentLayout = ({ children }: PropsWithChildren) => {
   const nextraContext = useNextraContext();
-  const { currentNodeVersion } = useNodeData();
+  const { currentNodeVersion = {} as NodeVersionData } = useNodeData();
 
   const { downloads } = nextraContext.frontMatter as LegacyDownloadsFrontMatter;
 
