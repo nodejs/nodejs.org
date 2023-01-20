@@ -1,5 +1,4 @@
 import nextra from 'nextra';
-import remarkMdxDisableExplicitJsx from 'remark-mdx-disable-explicit-jsx';
 
 import getNextData from './next.data.mjs';
 
@@ -7,10 +6,7 @@ const withNextra = nextra({
   theme: './theme.tsx',
   flexsearch: false,
   codeHighlight: false,
-  mdxOptions: {
-    remarkPlugins: [remarkMdxDisableExplicitJsx],
-    format: 'detect',
-  },
+  mdxOptions: { format: 'detect' },
   transform: getNextData,
   transformPageOpts: pageOpts => {
     delete pageOpts.pageMap;
