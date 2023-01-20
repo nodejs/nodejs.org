@@ -6,6 +6,7 @@ import getNextData from './next.data.mjs';
 const withNextra = nextra({
   theme: './theme.tsx',
   flexsearch: false,
+  codeHighlight: false,
   mdxOptions: {
     remarkPlugins: [remarkMdxDisableExplicitJsx],
     format: 'detect',
@@ -28,5 +29,6 @@ export default withNextra({
     fontLoaders: [
       { loader: '@next/font/google', options: { subsets: ['latin'] } },
     ],
+    sharedPool: true,
   },
 });

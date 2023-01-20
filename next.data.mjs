@@ -87,7 +87,7 @@ const getNextData = async (content, { route }) => {
     // add the mdx file content
     ${content}
 
-    export const getStaticProps = async () => {
+    export const getStaticProps = () => {
       // eval'd the function content
       ${localisationData}
 
