@@ -11,6 +11,7 @@ npm-debug.log
 # Next.js files
 .next
 build
+public/sitemap.xml
 
 # ESLint Cache Files
 .eslintjscache
