@@ -108,13 +108,15 @@
   });
 })();
 
-(function () {
+function initDownloadHyperlink(bitness) {
   'use strict';
   var userAgent = navigator.userAgent;
   var osMatch = userAgent.match(/(Win|Mac|Linux)/);
   var os = (osMatch && osMatch[1]) || '';
   var arch =
-    userAgent.match(/x86_64|Win64|WOW64/) || navigator.cpuClass === 'x64'
+    bitness === '64' ||
+    userAgent.match(/x86_64|Win64|WOW64/) ||
+    navigator.cpuClass === 'x64'
       ? 'x64'
       : 'x86';
   var buttons = document.querySelectorAll('.home-downloadbutton');
@@ -157,5 +159,24 @@
     var winText = winButton.querySelector('p');
     winButton.href = winButton.href.replace(/x(86|64)/, arch);
     winText.textContent = winText.textContent.replace(/x(86|64)/, arch);
+  }
+}
+
+(function () {
+  'use strict';
+  if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
+    // This is necessary to detect Windows 11 on Edge.
+    // [MDN](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/getHighEntropyValues)
+    // [MSFT](https://learn.microsoft.com/en-us/microsoft-edge/web-platform/how-to-detect-win11)
+    navigator.userAgentData
+      .getHighEntropyValues(['bitness'])
+      .then(function (ua) {
+        initDownloadHyperlink(ua.bitness);
+      })
+      .catch(function () {
+        // Ignore errors since not every browser supports this API
+      });
+  } else {
+    initDownloadHyperlink('unknown');
   }
 })();
