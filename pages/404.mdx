@@ -3,10 +3,10 @@ import { useLocale } from '../hooks/useLocale';
 
 export const NotFoundPage = () => {
   const { currentLocale } = useLocale();
-  const LocalisedNotFoundComponent = dynamic(
-    () => import(`../pages/${currentLocale.code}/404.md`)
+  const LocalisedNotFoundComponent = dynamic(() =>
+    import(`../pages/${currentLocale.code}/404.md`)
   );
   return <LocalisedNotFoundComponent />;
 };
 
-<NotFoundPage/>
+<NotFoundPage />
