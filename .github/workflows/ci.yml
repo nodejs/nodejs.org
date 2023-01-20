@@ -55,14 +55,11 @@ jobs:
       - name: Install NPM dependencies
         run: npm ci
 
-      # TODO: THE JOBS ABOVE ARE DISABLED UNTIL THE PR IS READY
-      # BUILD JOBS NEED TO BE DISABLED FOR NOW
+      - name: Build Next.js
+        run: npm run build
 
-      # - name: Build Next.js
-      #   run: npm run build
-
-      # - name: Export Next.js
-      #   run: npm run export
+      - name: Export Next.js
+        run: npm run export
 
       # - name: Run unit tests
       #   run: npm run test:unit
@@ -70,11 +67,11 @@ jobs:
       # - name: Run HTML validator
       #   run: npm run test:html
 
-      # - name: Run linkinator
-      #   uses: JustinBeckwith/linkinator-action@v1
-      #   with:
-      #     linksToSkip: '^(?!http://localhost)'
-      #     paths: en
-      #     recurse: true
-      #     serverRoot: build
-      #     verbosity: error
+      - name: Run linkinator
+        uses: JustinBeckwith/linkinator-action@v1
+        with:
+          linksToSkip: '^(?!http://localhost)'
+          paths: en
+          recurse: true
+          serverRoot: build
+          verbosity: error
