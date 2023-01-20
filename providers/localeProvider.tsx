@@ -14,7 +14,9 @@ export const LocaleProvider = ({ children, ...props }: LocaleProviderProps) => {
 
   return (
     <LocaleContext.Provider value={props}>
-      <IntlProvider {...intlProps}>{children}</IntlProvider>
+      <IntlProvider {...intlProps} onError={() => null} fallbackOnEmptyString>
+        {children}
+      </IntlProvider>
     </LocaleContext.Provider>
   );
 };
