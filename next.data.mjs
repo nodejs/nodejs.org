@@ -6,7 +6,7 @@ const cachedLocalisationData = getLocalisationData();
 
 const getNextData = async (content, { route }) => {
   const localisationData = await cachedLocalisationData(route);
-  const nodeVersionData = await cachedNodeVersionData();
+  const nodeVersionData = await cachedNodeVersionData(route);
 
   return `
     // add the mdx file content

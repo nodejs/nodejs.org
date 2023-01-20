@@ -1,7 +1,13 @@
 import { useContext } from 'react';
 import { NodeDataContext } from '../providers/nodeDataProvider';
+import { NodeVersionData } from '../types';
 
-export const useNodeData = () => {
+type UseNodeDataReturnType = {
+  currentNodeVersion?: NodeVersionData;
+  currentLtsVersion?: NodeVersionData;
+};
+
+export const useNodeData = (): UseNodeDataReturnType => {
   const [currentNodeVersion, currentLtsVersion] = useContext(NodeDataContext);
 
   return {
