@@ -109,13 +109,15 @@ export interface NodeVersionData {
   nodeMajor: string;
   nodeNumeric: string;
   npm: string;
+  isLts: boolean;
+}
+
+export interface ExtendedNodeVersionData extends NodeVersionData {
   v8: string;
   openssl: string;
-  isLts: boolean;
   ltsName: string | null;
   releaseDate: string;
   modules: string;
-  schedule?: NodeReleaseSchedule;
 }
 
 export interface LocaleContext {

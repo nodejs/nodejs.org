@@ -20,41 +20,19 @@ const getLocalisationData = (route, defaultLocale = 'en') => {
 };
 
 const getNodeVersionData = async () => {
-  const nodeScheduleDataPromise = fetch(
-    'https://raw.githubusercontent.com/nodejs/Release/master/schedule.json'
-  ).then(response => response.json());
-
   const nodeVersionDataPromise = new Promise(resolve =>
     nodeVersionData((_, versions) => resolve(versions))
   );
 
-  const data = await Promise.all([
-    nodeScheduleDataPromise,
-    nodeVersionDataPromise,
-  ]).then(([schedule, versions]) =>
-    versions.map(v => ({
+  return nodeVersionDataPromise.then(data => {
+    return [data[0], data.find(version => !!version.lts)].map(v => ({
       node: v.version,
       nodeNumeric: v.version.replace(/^v/, ''),
       nodeMajor: `v${semVer.major(v.version)}.x`,
       npm: v.npm || 'N/A',
-      v8: v.v8 || 'N/A',
-      openssl: v.openssl || 'N/A',
       isLts: Boolean(v.lts),
-      releaseDate: v.date,
-      ltsName: v.lts || null,
-      modules: v.modules || '0',
-      schedule: schedule[semVer.major(v.version)] || null,
-    }))
-  );
-
-  const currentNodeVersion = data[0];
-  const currentLtsVersion = data.find(version => version.isLts);
-
-  return {
-    allVersions: data,
-    currentNodeVersion,
-    currentLtsVersion,
-  };
+    }));
+  });
 };
 
 // Do the request in the global level and cache the result in memory to avoid
@@ -65,24 +43,6 @@ const getNextData = async (content, { route }) => {
   const localisationData = getLocalisationData(route);
   const nodeVersionData = await cachedNodeVersionData;
 
-  // Only /download needs the data for all releases
-  const needAllReleasesData = /\/[^/]+\/download$/.test(route);
-  let minimalNodeVersionData;
-
-  if (needAllReleasesData) {
-    minimalNodeVersionData = nodeVersionData.allVersions;
-  } else {
-    // We only need the current version and the current LTS version.
-    // They can be the same and in that case we can just pass one.
-    minimalNodeVersionData =
-      nodeVersionData.currentNodeVersion === nodeVersionData.currentLtsVersion
-        ? [nodeVersionData.currentNodeVersion]
-        : [
-            nodeVersionData.currentNodeVersion,
-            nodeVersionData.currentLtsVersion,
-          ];
-  }
-
   return `
     // add the mdx file content
     ${content}
@@ -92,7 +52,7 @@ const getNextData = async (content, { route }) => {
       ${localisationData}
 
       const i18nProps = getLocalisationData();
-      const nodeVersionData = ${JSON.stringify(minimalNodeVersionData)};
+      const nodeVersionData = ${JSON.stringify(nodeVersionData)};
 
       return { props: { ...i18nProps, nodeVersionData } };
     }
