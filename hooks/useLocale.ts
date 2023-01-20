@@ -9,6 +9,7 @@ export const useLocale = () => {
   const { asPath } = useRouter();
 
   const localisedLink = linkWithLocale(currentLocale!.code);
+
   const localisedPath = (route: string) =>
     localisedLink(route).replace(/[#|?].*$/, '');
 

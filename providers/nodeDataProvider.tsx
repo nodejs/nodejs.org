@@ -10,7 +10,7 @@ type NodeDataProviderProps = PropsWithChildren<{
 export const NodeDataContext = createContext<NodeVersionData[]>([]);
 
 export const NodeDataProvider = (props: NodeDataProviderProps) => (
-  <NodeDataContext.Provider value={props.nodeVersionData}>
+  <NodeDataContext.Provider value={props.nodeVersionData || []}>
     {props.children}
   </NodeDataContext.Provider>
 );
