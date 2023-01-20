@@ -22,7 +22,6 @@ export default withNextra({
   images: { unoptimized: true },
   swcMinify: true,
   experimental: {
-    optimizeCss: true,
     nextScriptWorkers: true,
     sharedPool: true,
     enableUndici: true,
