@@ -44,9 +44,15 @@ const getBlogData = () => {
     c.map(([s, f]) => [s, getPosts(s, f)])
   );
 
-  return (route = '/') => {
+  return (route = '/', getAllAvailablePosts = false) => {
     const [, , subDirectory, category = `year-${currentYear}`] =
       route.split('/');
+
+    const generatedBlogData = (posts, hasNext, hasPrev) => ({
+      posts: posts.sort((a, b) => b.date - a.date),
+      currentCategory: category,
+      pagination: { next: hasNext || null, prev: hasPrev || null },
+    });
 
     if (getMatchingRoutes(subDirectory, ['blog'])) {
       return categoriesPosts.then(categories => {
@@ -57,10 +63,19 @@ const getBlogData = () => {
           // get only the post ingredient from the category array
           const allPosts = categories.map(([, f]) => f);
 
+          const generatedBlog = posts =>
+            generatedBlogData(
+              posts.filter(p => p.date.getFullYear() === selectedYear),
+              posts.some(p => p.date.getFullYear() === selectedYear + 1) &&
+                `/blog/year-${selectedYear + 1}`,
+              posts.some(p => p.date.getFullYear() === selectedYear - 1) &&
+                `/blog/year-${selectedYear - 1}`
+            );
+
           return Promise.all(allPosts)
             .then(s => Promise.all(s.flat()))
             .then(s => s.filter(p => p.date && p.file !== 'index.md'))
-            .then(s => s.filter(p => p.date.getFullYear() === selectedYear));
+            .then(generatedBlog);
         }
 
         // attempts to find a category that matches the current route category
@@ -70,18 +85,35 @@ const getBlogData = () => {
           // extract the posts part of the current category
           const [, categoryPosts] = currentCategory;
 
+          const generatedBlog = posts => generatedBlogData(posts);
+
           // get all posts from current category instead of traversing all categories
           return categoryPosts
             .then(posts => posts.flat())
-            .then(posts => posts.filter(p => p.file !== 'index.md'));
+            .then(posts => posts.filter(p => p.file !== 'index.md'))
+            .then(generatedBlog);
         }
 
         // this should not happen or means the category is non-existent
-        return [];
+        return generatedBlogData([]);
       });
     }
 
-    return [];
+    if (getAllAvailablePosts) {
+      return categoriesPosts.then(categories => {
+        // get only the post ingredient from the category array
+        const allPosts = categories.map(([, f]) => f);
+
+        const generatedBlog = posts => generatedBlogData(posts);
+
+        return Promise.all(allPosts)
+          .then(s => Promise.all(s.flat()))
+          .then(s => s.filter(p => p.date && p.file !== 'index.md'))
+          .then(generatedBlog);
+      });
+    }
+
+    return generatedBlogData([]);
   };
 };
 

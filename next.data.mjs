@@ -1,3 +1,4 @@
+import { generateBlogYearPages } from './scripts/next-data/generatePreBuildFiles.mjs';
 import getLocalisationData from './scripts/next-data/getLocalisationData.mjs';
 import getNodeVersionData from './scripts/next-data/getNodeVersionData.mjs';
 import getBlogData from './scripts/next-data/getBlogData.mjs';
@@ -5,6 +6,9 @@ import getBlogData from './scripts/next-data/getBlogData.mjs';
 const cachedNodeVersionData = getNodeVersionData();
 const cachedLocalisationData = getLocalisationData();
 const cachedBlogData = getBlogData();
+
+// generates pre-build files for blog year pages (pagination)
+generateBlogYearPages(cachedBlogData);
 
 const getNextData = async (content, { route }) => {
   const localisationData = await cachedLocalisationData(route);
