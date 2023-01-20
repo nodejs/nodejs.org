@@ -18,7 +18,7 @@ const getLocalisationData = () => {
   // loads each locale message file and get a tuple of [locale, messages (string)]
   const mapLocaleMessages = f => [
     basename(f, extname(f)),
-    readFile(join(i18nPath, 'locales', f), 'utf8'),
+    readFile(join(i18nPath, 'locales', f), 'utf8').then(JSON.parse),
   ];
 
   // dynamically load all locale files into json data and converts into an object
@@ -41,18 +41,10 @@ const getLocalisationData = () => {
         allLocaleMessages[currentLocale.code] ||
         allLocaleMessages[defaultLocale];
 
-      return getLocaleMessages.then(
-        localeMessages => `
-          const getLocalisationData = () => {
-            // defines the current locale information in a string fashion
-            const currentLocale = ${JSON.stringify(currentLocale)};
-
-            // defines the current react-intl message object
-            const localeMessages = ${localeMessages};
-
-            return { currentLocale, localeMessages };
-          }`
-      );
+      return getLocaleMessages.then(localeMessages => ({
+        currentLocale,
+        localeMessages,
+      }));
     });
   };
 };

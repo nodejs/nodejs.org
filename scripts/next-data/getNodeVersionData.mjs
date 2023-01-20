@@ -1,8 +1,7 @@
 import semVer from 'semver';
 import nodeVersionData from 'node-version-data';
 
-const getMatchingRoutes = (route = '', matches = []) =>
-  matches.some(match => route === match);
+import { getMatchingRoutes } from './_helpers.mjs';
 
 const getNodeVersionData = () => {
   const nodeVersionDataPromise = new Promise(resolve =>
