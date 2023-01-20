@@ -5,6 +5,7 @@ import type { PageOpts } from 'nextra';
 import AboutLayout from '../layouts/AboutLayout';
 import BlogIndexLayout from '../layouts/BlogIndexLayout';
 import BlogPostLayout from '../layouts/BlogPostLayout';
+import CategoryIndexLayout from '../layouts/CategoryIndexLayout';
 import ContributeLayout from '../layouts/ContributeLayout';
 import DefaultLayout from '../layouts/DefaultLayout';
 import DocsLayout from '../layouts/DocsLayout';
@@ -34,6 +35,8 @@ const getLegacyLayout = (layout: LegacyLayouts) => {
       return BlogIndexLayout;
     case 'blog-post.hbs':
       return BlogPostLayout;
+    case 'category-index.hbs':
+      return CategoryIndexLayout;
     case 'contribute.hbs':
       return ContributeLayout;
     case 'docs.hbs':
