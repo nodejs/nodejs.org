@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 
 import { useSiteConfig } from '../hooks/useSiteConfig';
@@ -11,8 +12,10 @@ type HeaderProps = { frontMatter: LegacyFrontMatter };
 const HtmlHead = ({ frontMatter }: HeaderProps) => {
   const siteConfig = useSiteConfig();
   const { currentLocale } = useLocale();
+  const { route } = useRouter();
 
   const pageTitle = frontMatter.title || siteConfig.title;
+  const canonicalLink = `https://nodejs.org/${currentLocale.code}${route}`;
 
   return (
     <Head>
@@ -44,6 +47,8 @@ const HtmlHead = ({ frontMatter }: HeaderProps) => {
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:image" content={siteConfig.twitter.img} />
       <meta name="twitter:image:alt" content={siteConfig.twitter.imgAlt} />
+
+      <link rel="canonical" href={canonicalLink} />
     </Head>
   );
 };
