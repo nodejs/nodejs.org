@@ -1,17 +1,26 @@
+import { useIntl } from 'react-intl';
 import Image from 'next/image';
 import classNames from 'classnames';
 
 import LocalisedLink from './LocalisedLink';
-import LanguagePickerSvg from './LanguagePickerSvg';
 import { useLocale } from '../hooks/useLocale';
 import { useNavigation } from '../hooks/useNavigation';
 
 const Header = () => {
   const { availableLocales, isCurrentLocaleRoute } = useLocale();
   const { navigationItems } = useNavigation();
+  const { formatMessage } = useIntl();
 
   const getLinkClassName = (href: string) =>
     classNames({ active: isCurrentLocaleRoute(href, href !== '/') });
+
+  const toggleLanguage = formatMessage({
+    id: 'componets.header.buttons.toggleLanguage',
+  });
+
+  const toggleDarkMode = formatMessage({
+    id: 'components.header.buttons.toggleDarkMode',
+  });
 
   return (
     <header aria-label="Primary">
@@ -40,18 +49,17 @@ const Header = () => {
           <button
             className="dark-theme-switcher"
             type="button"
-            title="{{site.toggleText}}"
-            aria-label="Toggle dark/light mode"
+            title={toggleDarkMode}
+            aria-label={toggleDarkMode}
           />
           <button
             className="lang-picker-toggler"
             type="button"
+            title={toggleLanguage}
+            aria-label={toggleLanguage}
             aria-controls="lang-picker"
             aria-expanded="false"
-          >
-            <LanguagePickerSvg />
-            <span className="sr-only">Toggle Language</span>
-          </button>
+          />
         </div>
 
         <ul id="lang-picker" className="lang-picker hidden">

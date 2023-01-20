@@ -49,15 +49,19 @@ header {
     border: none;
     color: $light-gray2;
     cursor: pointer;
-    padding: 12px;
+    margin: 10px 12px 6px 0;
+    padding: 14px;
   }
 
   .lang-picker-toggler {
     background-color: transparent;
+    background-image: url('/static/images/language-picker.svg');
+    background-repeat: no-repeat;
     border: none;
     color: $light-gray2;
     cursor: pointer;
-    padding: 12px;
+    margin: 10px 12px 6px 0;
+    padding: 14px;
   }
 
   .lang-picker {
@@ -110,6 +114,11 @@ header {
     left: 0;
     margin: 10px;
     position: absolute;
+
+    img {
+      margin-bottom: -4px;
+    }
+
     &:hover {
       background-color: transparent;
       text-decoration: underline;
@@ -155,7 +164,7 @@ header {
   screen and (max-width: 584px) {
   header {
     .switchers {
-      justify-content: right;
+      justify-content: center;
       margin-bottom: 16px;
       position: unset;
     }
@@ -169,7 +178,7 @@ header {
       }
     }
     .logo {
-      justify-content: left;
+      justify-content: center;
       margin-bottom: 16px;
       position: unset;
     }
