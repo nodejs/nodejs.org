@@ -1,6 +1,6 @@
 'use strict';
 
-const semver = require('semver');
+import semVer from 'semver';
 
 const allDownloads = [
   {
@@ -161,17 +161,17 @@ const resolveUrl = (item, version) => {
 const resolveDownloads = version => {
   let downloads = allDownloads;
 
-  if (semver.satisfies(version, '< 1.0.0')) {
+  if (semVer.satisfies(version, '< 1.0.0')) {
     return legacyDownloads;
   }
 
-  if (semver.satisfies(version, '>= 8.0.0')) {
+  if (semVer.satisfies(version, '>= 8.0.0')) {
     downloads = downloads.filter(
       ver => ver.title !== 'Linux PPC BE 64-bit Binary'
     );
   }
 
-  if (semver.satisfies(version, '>= 10.0.0')) {
+  if (semVer.satisfies(version, '>= 10.0.0')) {
     downloads = downloads.filter(
       ver =>
         ver.title !== 'Linux 32-bit Binary' &&
@@ -179,15 +179,15 @@ const resolveDownloads = version => {
     );
   }
 
-  if (semver.satisfies(version, '>= 12.0.0')) {
+  if (semVer.satisfies(version, '>= 12.0.0')) {
     downloads = downloads.filter(ver => ver.title !== 'ARMv6 32-bit Binary');
   }
 
-  if (semver.satisfies(version, '>= 14.0.0')) {
+  if (semVer.satisfies(version, '>= 14.0.0')) {
     downloads = downloads.filter(ver => ver.title !== 'SmartOS 64-bit Binary');
   }
 
-  if (semver.satisfies(version, '< 16.0.0')) {
+  if (semVer.satisfies(version, '< 16.0.0')) {
     downloads = downloads.filter(
       ver => ver.title !== 'macOS Apple Silicon 64-bit Binary'
     );
@@ -196,5 +196,7 @@ const resolveDownloads = version => {
   return downloads;
 };
 
-module.exports = version =>
+const downloadsTable = version =>
   resolveDownloads(version).map(item => resolveUrl(item, version));
+
+export default downloadsTable;

@@ -26,7 +26,7 @@
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm-run-all prettier:fix lint:fix",
     "external:survey": "rsync -az --exclude \"node_modules*\" --exclude \"package*\" external/survey-2018/ build/en/user-survey-report",
-    "scripts:release-post": "node scripts/release-post/index.js"
+    "scripts:release-post": "node scripts/release-post/index.mjs"
   },
   "dependencies": {
     "@mdx-js/react": "^2.2.1",

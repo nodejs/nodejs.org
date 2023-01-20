@@ -20,13 +20,16 @@
 
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
-const handlebars = require('handlebars');
+import fs from 'fs';
+import path from 'path';
+import handlebars from 'handlebars';
+import * as url from 'node:url';
 
-const downloads = require('./downloadsTable');
+import downloadsTable from './downloadsTable.mjs';
 
-function sendRequest(opts) {
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+
+const sendRequest = opts => {
   const options = {
     headers: { 'User-Agent': 'nodejs.org release blog post script' },
     ...opts,
@@ -38,24 +41,25 @@ function sendRequest(opts) {
         `Invalid status code (!= 200) while retrieving ${options.url}: ${resp.status}`
       );
     }
+
     return options.json ? resp.json() : resp.text();
   });
-}
+};
 
-function explicitVersion(version) {
+const explicitVersion = version => {
   return version
     ? Promise.resolve(version)
     : Promise.reject(new Error('Invalid "version" argument'));
-}
+};
 
-function findLatestVersion() {
+const findLatestVersion = () => {
   return sendRequest({
     url: 'https://nodejs.org/dist/index.json',
     json: true,
   }).then(versions => versions[0].version.substr(1));
-}
+};
 
-function fetchDocs(version) {
+const fetchDocs = version => {
   return Promise.all([
     fetchChangelogBody(version),
     fetchAuthor(version),
@@ -64,6 +68,7 @@ function fetchDocs(version) {
     verifyDownloads(version),
   ]).then(results => {
     const [changelog, author, versionPolicy, shasums, files] = results;
+
     return {
       version,
       changelog,
@@ -73,21 +78,18 @@ function fetchDocs(version) {
       files,
     };
   });
-}
+};
 
-function fetchAuthor(version) {
+const fetchAuthor = version => {
   return fetchChangelog(version)
     .then(section => findAuthorLogin(version, section))
     .then(author =>
-      sendRequest({
-        url: `https://api.github.com/users/${author}`,
-        json: true,
-      })
+      sendRequest({ url: `https://api.github.com/users/${author}`, json: true })
     )
     .then(githubRes => githubRes.name);
-}
+};
 
-function fetchChangelog(version) {
+const fetchChangelog = version => {
   const parts = version.split('.');
   const releaseLine = parts[0] === '0' ? parts.slice(0, 2).join('') : parts[0];
 
@@ -98,16 +100,18 @@ function fetchChangelog(version) {
     const rxSection = new RegExp(
       `<a id="${version}"></a>\\n([\\s\\S]+?)(?:\\n<a id="|$)`
     );
+
     const matches = rxSection.exec(data);
+
     return matches
       ? matches[1].trim()
       : Promise.reject(
           new Error(`Couldn't find matching changelog for ${version}`)
         );
   });
-}
+};
 
-function fetchChangelogBody(version) {
+const fetchChangelogBody = version => {
   return fetchChangelog(version).then(section => {
     const rxSectionBody = /(### Notable [\s\S]*)/;
 
@@ -115,15 +119,16 @@ function fetchChangelogBody(version) {
     // by "```shell-session" for metalsmith-prism's check to pass
     const rxSectionConsole = /```console/gim;
     const matches = rxSectionBody.exec(section);
+
     return matches
       ? matches[1].trim().replace(rxSectionConsole, '```shell-session')
       : Promise.reject(
           new Error(`Could not find changelog body of ${version} release`)
         );
   });
-}
+};
 
-function fetchVersionPolicy(version) {
+const fetchVersionPolicy = version => {
   return fetchChangelog(version).then(section => {
     // matches the policy for a given version (Stable, LTS etc) in the changelog
     // ## 2015-10-07, Version 4.2.0 'Argon' (LTS), @jasnell
@@ -138,36 +143,39 @@ function fetchVersionPolicy(version) {
           )
         );
   });
-}
+};
 
-function fetchShasums(version) {
+const fetchShasums = version => {
   return sendRequest({
     url: `https://nodejs.org/dist/v${version}/SHASUMS256.txt.asc`,
   }).then(null, () => '[INSERT SHASUMS HERE]');
-}
+};
 
-function verifyDownloads(version) {
-  const allDownloads = downloads(version);
+const verifyDownloads = version => {
+  const allDownloads = downloadsTable(version);
   const reqs = allDownloads.map(urlOrComingSoon);
-  return Promise.all(reqs);
-}
 
-function findAuthorLogin(version, section) {
+  return Promise.all(reqs);
+};
+
+const findAuthorLogin = (version, section) => {
   // looking for the @author part of the release header, eg:
   // ## 2016-03-08, Version 5.8.0 (Stable). @Fishrock123
   // ## 2015-10-13, Version 4.2.1 'Argon' (LTS), @jasnell
   // ## 2015-09-08, Version 4.0.0 (Stable), @rvagg
   const rxReleaseAuthor = /^## .*? \([^)]+\)[,.] @(\S+)/;
   const matches = rxReleaseAuthor.exec(section);
+
   return matches
     ? matches[1]
     : Promise.reject(
         new Error(`Couldn't find @author of ${version} release :(`)
       );
-}
+};
 
-function urlOrComingSoon(binary) {
+const urlOrComingSoon = binary => {
   const url = binary.url.replace('nodejs.org', 'direct.nodejs.org');
+
   return sendRequest({ url, method: 'HEAD' }).then(
     () => `${binary.title}: ${binary.url}`,
     () => {
@@ -175,13 +183,15 @@ function urlOrComingSoon(binary) {
       return `${binary.title}: *Coming soon*`;
     }
   );
-}
+};
 
-function renderPost(results) {
+const renderPost = results => {
   const templateStr = fs
     .readFileSync(path.resolve(__dirname, 'template.hbs'))
     .toString('utf8');
+
   const template = handlebars.compile(templateStr, { noEscape: true });
+
   const view = Object.assign(
     {
       date: new Date().toISOString(),
@@ -196,9 +206,9 @@ function renderPost(results) {
     },
     results
   );
-}
+};
 
-function writeToFile(results) {
+const writeToFile = results => {
   const filepath = path.resolve(
     __dirname,
     '..',
@@ -227,38 +237,41 @@ function writeToFile(results) {
 
     resolve(filepath);
   });
-}
+};
 
-function slugify(str) {
+const slugify = str => {
   return str.replace(/\./g, '-');
-}
+};
 
-exports.explicitVersion = explicitVersion;
-exports.fetchShasums = fetchShasums;
-exports.writeToFile = writeToFile;
-exports.findLatestVersion = findLatestVersion;
-exports.verifyDownloads = verifyDownloads;
-exports.fetchChangelog = fetchChangelog;
-exports.fetchChangelogBody = fetchChangelogBody;
-exports.fetchAuthor = fetchAuthor;
-exports.fetchVersionPolicy = fetchVersionPolicy;
+export {
+  explicitVersion,
+  fetchShasums,
+  writeToFile,
+  findLatestVersion,
+  verifyDownloads,
+  fetchChangelog,
+  fetchChangelogBody,
+  fetchAuthor,
+  fetchVersionPolicy,
+};
 
-// when script is executed directly,
-// not required by another module, e.g:
-// $ node scripts/release-post.js
-if (require.main === module) {
-  explicitVersion(process.argv[2])
-    .then(null, findLatestVersion)
-    .then(fetchDocs)
-    .then(renderPost)
-    .then(writeToFile)
-    .then(
-      filepath => {
-        console.log('Release post created:', filepath);
-      },
-      err => {
-        console.error('Some error occurred here!', err.stack);
-        process.exit(1);
-      }
-    );
+if (import.meta.url.startsWith('file:')) {
+  const modulePath = url.fileURLToPath(import.meta.url);
+
+  if (process.argv[1] === modulePath) {
+    explicitVersion(process.argv[2])
+      .then(null, findLatestVersion)
+      .then(fetchDocs)
+      .then(renderPost)
+      .then(writeToFile)
+      .then(
+        filepath => {
+          console.log('Release post created:', filepath);
+        },
+        err => {
+          console.error('Some error occurred here!', err.stack);
+          process.exit(1);
+        }
+      );
+  }
 }
