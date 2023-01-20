@@ -1,11 +1,10 @@
-import { useMemo } from 'react';
 import { FormattedMessage } from 'react-intl';
-import strftime from 'strftime';
 import type { PropsWithChildren } from 'react';
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { useNextraContext } from '../hooks/useNextraContext';
+import { getTimeComponent } from '../util/getTimeComponent';
 
 import type { LegacyBlogFrontMatter } from '../types';
 
@@ -14,15 +13,6 @@ const BlogPostLayout = ({ children }: PropsWithChildren) => {
 
   const { title, author, date } =
     nextraContext.frontMatter as LegacyBlogFrontMatter;
-
-  const { dateTime, formatedDate } = useMemo(() => {
-    const dateObject = new Date(date);
-
-    return {
-      dateTime: strftime('%FT%T%z', dateObject),
-      formatedDate: strftime('%F', dateObject),
-    };
-  }, [date]);
 
   return (
     <>
@@ -35,9 +25,9 @@ const BlogPostLayout = ({ children }: PropsWithChildren) => {
               <span className="blogpost-meta">
                 <FormattedMessage
                   id="layouts.blogPost.author.byLine"
-                  values={{ author }}
+                  values={{ author: author || null }}
                 />
-                <time dateTime={dateTime}>{formatedDate}</time>
+                {getTimeComponent(date)}
               </span>
             </div>
 
