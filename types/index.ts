@@ -122,12 +122,25 @@ export interface ExtendedNodeVersionData extends NodeVersionData {
 
 export interface LocaleContext {
   localeMessages: Record<string, string>;
-  availableLocales: LocaleConfig[];
+  availableLocales: Pick<LocaleConfig, 'code' | 'localName' | 'name'>[];
   currentLocale: LocaleConfig;
 }
 
+export interface BlogData {
+  title: string;
+  author?: string;
+  date: string;
+  category: string;
+  slug: string;
+  file: string;
+}
+
 export interface AppProps {
+  i18nData: {
+    localeMessages: Record<string, string>;
+    currentLocale: LocaleConfig;
+  };
   nodeVersionData: NodeVersionData[];
-  localeMessages: Record<string, string>;
-  currentLocale: LocaleConfig;
+  blogData: BlogData[];
+  statusCode?: number;
 }
