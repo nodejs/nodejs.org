@@ -23,11 +23,12 @@
 import fs from 'fs';
 import path from 'path';
 import handlebars from 'handlebars';
-import * as url from 'node:url';
+import { fileURLToPath } from 'node:url';
 
 import downloadsTable from './downloadsTable.mjs';
 
-const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+// this allows us to get the current module working directory
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const sendRequest = opts => {
   const options = {
@@ -255,8 +256,9 @@ export {
   fetchVersionPolicy,
 };
 
+// This allows us to verify that the script is being run directly from node.js/cli
 if (import.meta.url.startsWith('file:')) {
-  const modulePath = url.fileURLToPath(import.meta.url);
+  const modulePath = fileURLToPath(import.meta.url);
 
   if (process.argv[1] === modulePath) {
     explicitVersion(process.argv[2])
