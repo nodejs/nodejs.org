@@ -26,9 +26,10 @@ import handlebars from 'handlebars';
 import { fileURLToPath } from 'node:url';
 
 import downloadsTable from './downloadsTable.mjs';
+import { getRelativePath } from '../next-data/_helpers.mjs';
 
 // this allows us to get the current module working directory
-const __dirname = fileURLToPath(new URL('.', import.meta.url));
+const __dirname = getRelativePath(import.meta.url);
 
 const sendRequest = opts => {
   const options = {
