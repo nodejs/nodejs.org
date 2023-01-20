@@ -1,7 +1,24 @@
+import fs from 'fs';
+import path from 'path';
 import semVer from 'semver';
 import nodeVersionData from 'node-version-data';
 
-import localeConfig from './i18n/config.json' assert { type: 'json' };
+// read the locale config file as a JSON object without using imports
+const localeConfig = JSON.parse(fs.readFileSync('./i18n/config.json', 'utf8'));
+
+// loads each locale message file and get a tuple of [locale, messages (string)]
+const mapLocaleMessages = f => [
+  path.basename(f, path.extname(f)),
+  fs.readFileSync(path.join('./i18n/locales', f), 'utf8'),
+];
+
+// dynamically load all locale files into json data and converts into an object
+const allLocaleMessages = Object.fromEntries(
+  fs
+    .readdirSync('./i18n/locales')
+    .filter(f => path.extname(f) === '.json')
+    .map(mapLocaleMessages)
+);
 
 const getLocalisationData = (route, defaultLocale = 'en') => {
   const localeCode = route.split('/')[1] || defaultLocale;
@@ -10,10 +27,16 @@ const getLocalisationData = (route, defaultLocale = 'en') => {
     localeConfig.find(c => c.code === localeCode) ||
     localeConfig.find(c => c.code === defaultLocale);
 
+  const localeMessages =
+    allLocaleMessages[currentLocale.code] || allLocaleMessages[defaultLocale];
+
   return `
     const getLocalisationData = () => {
+      // defines the current locale information in a string fashion
       const currentLocale = ${JSON.stringify(currentLocale)};
-      const localeMessages = require('i18n/locales/${currentLocale.code}.json');
+
+      // defines the current react-intl message object
+      const localeMessages = ${localeMessages};
 
       return { currentLocale, localeMessages };
     }
