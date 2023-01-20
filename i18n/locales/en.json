@@ -30,5 +30,7 @@
   "components.downloadReleasesTable.changelog": "Changelog",
   "components.downloadReleasesTable.releases": "Releases",
   "components.downloadReleasesTable.docs": "Docs",
-  "layouts.blogPost.author.byLine": "{author, select, true {By {author}, } other {}}"
+  "layouts.blogPost.author.byLine": "{author, select, true {By {author}, } other {}}",
+  "pages.404.title": "404: Page could not be found",
+  "pages.404.subtitle": "ENOENT: no such file or directory"
 }
