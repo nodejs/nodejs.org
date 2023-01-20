@@ -23,12 +23,13 @@ const withNextra = nextra({
 
 export default withNextra({
   trailingSlash: true,
+  images: { unoptimized: true },
   experimental: {
     optimizeCss: true,
     nextScriptWorkers: true,
+    sharedPool: true,
     fontLoaders: [
       { loader: '@next/font/google', options: { subsets: ['latin'] } },
     ],
-    sharedPool: true,
   },
 });
