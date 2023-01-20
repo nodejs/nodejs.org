@@ -13,6 +13,7 @@
   "scripts": {
     "serve": "NODE_OPTIONS=\"--max_old_space_size=4096\" next dev",
     "build": "NODE_OPTIONS=\"--max_old_space_size=4096\" next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "export": "next export -o build",
     "deploy": "npm-run-all build export external:survey",
@@ -36,6 +37,7 @@
     "highlight.js": "^11.7.0",
     "isomorphic-dompurify": "^0.26.0",
     "next": "^13.1.1",
+    "next-sitemap": "^3.1.45",
     "nextra": "^2.2.9",
     "node-version-data": "^1.1.0",
     "npm-run-all": "^4.1.5",
@@ -45,7 +47,8 @@
     "remark-mdx-disable-explicit-jsx": "^0.1.0",
     "sass": "^1.57.1",
     "semver": "^7.3.8",
-    "strftime": "^0.10.1"
+    "strftime": "^0.10.1",
+    "swr": "^2.0.1"
   },
   "devDependencies": {
     "@builder.io/partytown": "^0.7.4",
