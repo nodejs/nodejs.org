@@ -1,7 +1,7 @@
 {
   "plugins": [
-    "remark-preset-lint-node",
     "preset-prettier",
+    "remark-preset-lint-node",
     [
       "remark-lint-fenced-code-flag",
       false
