@@ -2,7 +2,7 @@
 module.exports = {
   siteUrl: process.env.SITE_URL || 'https://nodejs.org',
   generateRobotsTxt: true,
-  trailingSlash: false,
+  trailingSlash: true,
   generateIndexSitemap: false,
   robotsTxtOptions: {
     policies: [

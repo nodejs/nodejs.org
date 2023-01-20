@@ -13,10 +13,10 @@ const withNextra = nextra({
   },
   transform: getNextData,
   transformPageOpts: pageOpts => {
-    // Remove unused data from the page options.
     delete pageOpts.pageMap;
     delete pageOpts.headings;
     delete pageOpts.timestamp;
+
     return pageOpts;
   },
 });
@@ -24,12 +24,12 @@ const withNextra = nextra({
 export default withNextra({
   trailingSlash: true,
   images: { unoptimized: true },
+  swcMinify: true,
   experimental: {
     optimizeCss: true,
     nextScriptWorkers: true,
     sharedPool: true,
-    fontLoaders: [
-      { loader: '@next/font/google', options: { subsets: ['latin'] } },
-    ],
+    enableUndici: true,
+    newNextLinkBehavior: true,
   },
 });

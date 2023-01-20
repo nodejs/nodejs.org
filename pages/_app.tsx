@@ -28,6 +28,7 @@ type NextraProps = NextraAppProps & {
 const sourceSansPro = Source_Sans_Pro({
   weight: ['400', '600'],
   display: 'fallback',
+  subsets: ['latin'],
 });
 
 const defaultLanguage = i18nConfig.find(c => c.code === 'en');
