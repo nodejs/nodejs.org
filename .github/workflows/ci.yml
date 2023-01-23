@@ -61,12 +61,6 @@ jobs:
       - name: Export Next.js
         run: npm run export
 
-      # - name: Run unit tests
-      #   run: npm run test:unit
-
-      # - name: Run HTML validator
-      #   run: npm run test:html
-
       - name: Run linkinator
         uses: JustinBeckwith/linkinator-action@v1
         with:
