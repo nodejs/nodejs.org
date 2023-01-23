@@ -157,12 +157,11 @@ CoC](https://github.com/rust-lang/rust/wiki/Note-development-policy#conduct).
 ### Adding new pages
 
 1. Create new page content including the layout, title and copy.
-2. Update `/locale/en/site.json` to provide page link attributes.
-3. Update the relevant `/layout` to add a link to the new page.
+2. Update the relevant `/layout` to add a link to the new page.
 
 #### Create the page content
 
-Create a new markdown file in `/local/en`. As specified in the
+Create a new markdown file in `/pages/en`. As specified in the
 [README.md](./README.md#layout), initial development happens in English.
 
 At the top of the markdown file, set a page the title and layout.
@@ -174,27 +173,6 @@ layout: contribute.hbs
 ---
 
 [Event copy goes here]
-```
-
-#### Update locale site.json to add link attributes
-
-Open `local/en/site.json` and find the appropriate page structure.
-Add a new object defining the link attributes.
-
-```json
-"event": {
-  "link": "get-involved/events",
-  "text": "Events"
-}
-```
-
-#### Update the layout to add a link
-
-Using the example layout, open `/layouts/contribute.hbs` and add your new
-link to the markup. It's essential to update the handlebars paths to site.json.
-
-```handlebars
-{{site.locale}}/{{site.getinvolved.events.link}}
 ```
 
 ### Translating pages

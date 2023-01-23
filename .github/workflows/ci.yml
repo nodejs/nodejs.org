@@ -63,11 +63,19 @@ jobs:
       - name: Export Next.js
         run: npm run export
 
-      - name: Run linkinator
-        uses: JustinBeckwith/linkinator-action@v1
-        with:
-          linksToSkip: '^(?!http://localhost)'
-          paths: en
-          recurse: true
-          serverRoot: build
-          verbosity: error
+      # We don't generate non-translated pages. So if a certain page on /en/ exists
+      # but not on /de/ or any other language, it will 404. This is handled on nginx level
+      # Prior to this migration Metalsmith would copy the English version of a page to all
+      # the non-translated pages. "Fooling" the 404 by basically adding i18n context with
+      # an untranslated page. This would be very exhaustive with Next.js on SCG mode
+      # but it's something we want to do once we decide upon using Next.js on SSR mode or
+      # if we decide upon using Vercel's infrastructure as generating a copy of every English page
+      # on the file system is very resource exhaustive.
+      # - name: Run linkinator
+      #   uses: JustinBeckwith/linkinator-action@v1
+      #   with:
+      #     linksToSkip: '^(?!http://localhost)'
+      #     paths: en
+      #     recurse: true
+      #     serverRoot: build
+      #     verbosity: error
