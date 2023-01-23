@@ -23,13 +23,13 @@ In both cases the workflow is different, please check how it is done in each cas
 Please contribute! There are plenty of [good first issues](https://github.com/nodejs/nodejs.org/labels/good%20first%20issue) to work on. To get started, you have to [fork](https://github.com/nodejs/nodejs.org/fork) this repo to your own GitHub account first. Then open up a terminal on your machine and enter the following commands:
 
 ```bash
-git clone https://github.com/<your user name>/nodejs.org.git
+git clone https://github.com/nodejs/nodejs.org
 cd nodejs.org
-npm install
-npm start
+npm ci
+npm run serve
 ```
 
-This will start the development server on `http://localhost:8080/en/`. This page should reload automatically when you make changes to the code, but no code is perfect, so sometimes you may need to restart it. :)
+This will start the development server on `http://localhost:3000/en/`. This page should reload automatically when you make changes to the code, but no code is perfect, so sometimes you may need to restart it. :)
 
 If you want to submit a new feature or a bugfix, the best way is to create the changes in a separate branch, e.g.: `git checkout -b feature/mycoolfeature`. This will make it easier for you to submit a pull request and get your feature merged.
 
@@ -48,38 +48,32 @@ To help with localization, please read the [TRANSLATION](TRANSLATION.md) guide.
 - Page templates are in `/layouts`
 - Global styles are in `/layouts/css`
 - Global static files are in `/static`
-- All content is in `/locale`
-  - Initial development usually happens in English: `/locale/en`
-  - `/locale/{{locale}}/site.json` is where global localization information lives.
+- All content is in `/pages`
+  - Initial development usually happens in English: `/pages/en`
+  - `/i18n/locales/{{locale}}.json` is where global localization information lives.
   - All content is in Markdown and is per locale.
   - The top of each Markdown file is a block of YAML for page specific localization information that is passed to various templates.
   - The bulk of the Markdown content for each page is referenced as `{{{content}}}` in the corresponding template.
 
 ## Serve/Build Options
 
-- `DEFAULT_LOCALE={{locale}} node build.js` builds all the translated files present in the locale folder (will display 404 status code if file is not present), the static/css folder for all the Sass files, as well as copy the rest of the static assets to their subfolder in the build directory.
-- `DEFAULT_LOCALE={{locale}} node build.js --preserveLocale` the same as `node build.js` but it will add the pages present in the English locale that are missing instead of throwing 404 status code.
-- `DEFAULT_LOCALE={{locale}} npm run serve` builds only the files present in the specified locale folder (will display 404 status code if file is not present), then start the default website (`http://localhost:${port}/${mainLocale}`). Here `{port}` is 8080, `{mainLocale}` is `en` or the first specified language.
-- `DEFAULT_LOCALE={{locale}} npm run serve -- --preserveLocale` the same as `npm run serve ` but it will add the pages present in the English locale that are missing.
-- `npm run serve` builds all the current languages and returns 404 when a file is not present in the current locale, then start the default website (`http://localhost:${port}/${mainLocale}`). Here `{port}` is 8080, `{mainLocale}` is `en` in default.
-- `npm run serve -- --preserveLocale` the same as `npm run serve` but it will add the pages present in the English locale that are missing instead of throwing 404 status code.
+- `npm run serve` runs Next.js's Local Development Server, listening by default on `http://localhost:3000/`.
+- `npm run build` builds the Application on Production mode. The output is by default within `.next` folder.
+- `npm run export` exports the website from the `.next` into a fully static website. The output is by default within `build` folder.
+  - This is what it's used to deploy the website on our current Node.js servers.
+- `npm run start` starts a web server running serving the built content from `npm run build`
 
-## Test Options
+## Other CLI options
 
-Before submitting, you must pass all the unit tests and syntax checks by running the two commands below:
+We also offer other commands that offer you assistance during your local development
 
-- `npm-run-all test:lint test:unit` run all the unit test cases in `tests` folder, as well as check syntax with eslint.
-- `npm-run-all --parallel test:lint:*` run all the syntax checks for `js`, `md` and other related files.
-
-There're also two syntax check commands for you:
-
-- `npm run test:lint:js -- --fix` try to automatically fix some formations for all the js files.
-- `npm run test:lint:stylelint -- --fix` try to automatically fix some formations for all the css/scss files.
-
-## Notice
-
-- Multiple locales can be built by using comma-separated values in the `DEFAULT_LOCALE` variable: `DEFAULT_LOCALE=en,es,it`.
-- For other options, see `package.json`.
+- `npm run lint` runs the linter for all the js files.
+  - `npm run lint:fix` attempts to fix any linting errors
+- `npm run prettier` runs the prettier for all the js files.
+  - `npm run prretier:fix` attempts to fix any style errors
+- `npm run format` formats and fixes the whole codebase
+- `npm run scripts:release-post` generates a release post for the current release
+  - **Usage:** `npm run scripts:release-post -- --version=vXX.X.X --force`
 
 ## Deployment
 
