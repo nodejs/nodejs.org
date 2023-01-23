@@ -29,6 +29,8 @@ const mdxComponents: MDXComponents = {
 const Content = ({ children }: LayoutProps) => {
   useEffect(() => highlightJs.highlightAll(), []);
 
+  useEffect(() => window.startLegacyApp(), []);
+
   return (
     <MDXProvider components={mdxComponents} disableParentContext>
       {children}

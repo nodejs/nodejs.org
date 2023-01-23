@@ -23,12 +23,7 @@ const HtmlHead = ({ frontMatter }: HeaderProps) => {
 
       <meta name="theme-color" content={siteConfig.accentColor}></meta>
 
-      {/* @TODO: This should be generated during build with the site config */}
-      <link rel="manifest" href="/manifest.json" />
-
       <link rel="icon" href={siteConfig.favicon} type="image/png" />
-
-      <html lang={currentLocale.code} dir={currentLocale.langDir} />
 
       <meta name="robots" content={frontMatter.robots || 'index, follow'} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />

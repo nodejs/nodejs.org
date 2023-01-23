@@ -5,11 +5,13 @@ import classNames from 'classnames';
 import LocalisedLink from './LocalisedLink';
 import { useLocale } from '../hooks/useLocale';
 import { useNavigation } from '../hooks/useNavigation';
+import { useRouter } from 'next/router';
 
 const Header = () => {
   const { availableLocales, isCurrentLocaleRoute } = useLocale();
   const { navigationItems } = useNavigation();
   const { formatMessage } = useIntl();
+  const { asPath } = useRouter();
 
   const getLinkClassName = (href: string) =>
     classNames({ active: isCurrentLocaleRoute(href, href !== '/') });
@@ -21,6 +23,9 @@ const Header = () => {
   const toggleDarkMode = formatMessage({
     id: 'components.header.buttons.toggleDarkMode',
   });
+
+  const currentRouteLocalized = (locale: string) =>
+    asPath.replace(/^\/[a-zA-Z-]+/, `/${locale}`);
 
   return (
     <header aria-label="Primary">
@@ -52,6 +57,7 @@ const Header = () => {
             title={toggleDarkMode}
             aria-label={toggleDarkMode}
           />
+
           <button
             className="lang-picker-toggler"
             type="button"
@@ -65,9 +71,13 @@ const Header = () => {
         <ul id="lang-picker" className="lang-picker hidden">
           {availableLocales.map(locale => (
             <li key={locale.code}>
-              <button data-lang={locale.code} title={locale.name}>
+              <a
+                data-lang={locale.code}
+                title={locale.name}
+                href={currentRouteLocalized(locale.code)}
+              >
                 {locale.localName}
-              </button>
+              </a>
             </li>
           ))}
         </ul>

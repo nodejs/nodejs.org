@@ -24,7 +24,6 @@ export default withNextra({
   experimental: {
     nextScriptWorkers: true,
     sharedPool: true,
-    enableUndici: true,
     newNextLinkBehavior: true,
   },
 });

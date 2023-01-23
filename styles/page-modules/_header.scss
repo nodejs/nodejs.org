@@ -68,8 +68,8 @@ header {
     background: $node-gray;
     list-style-type: none;
     margin: 0;
-    max-height: 200%;
-    min-height: 100%;
+    max-height: 400px;
+    min-height: 100px;
     overflow: auto;
     padding: 0;
     position: absolute;
@@ -84,7 +84,7 @@ header {
     li {
       padding-bottom: 0;
 
-      button {
+      a {
         background-color: transparent;
         border: none;
         color: $light-gray2 !important;
@@ -96,7 +96,6 @@ header {
         margin: 0 auto;
         padding: 0.5em 1em;
         text-transform: uppercase;
-        width: 100%;
 
         &:focus,
         &:hover {

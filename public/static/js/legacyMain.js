@@ -1,63 +1,27 @@
-(function () {
-  var langPickerTogglerElement = document.querySelector('.lang-picker-toggler');
-  var langPickerElement = document.querySelector('.lang-picker');
+const startLegacyApp = () => {
+  const langPickerTogglerElement = document.querySelector(
+    '.lang-picker-toggler'
+  );
+
+  const langPickerElement = document.querySelector('.lang-picker');
 
   if (langPickerElement) {
-    var langElements = langPickerElement.querySelectorAll('button');
-    // Get the current URL language
-    var currentLang = window.location.pathname.split('/')[1] || 'en';
-    var currentLangElement = null;
-
-    Array.prototype.forEach.call(langElements, function (el) {
-      if (el.getAttribute('data-lang') !== currentLang) {
-        el.addEventListener('click', function (e) {
-          var newLocale =
-            (e.target && e.target.dataset && e.target.dataset.lang) || 'en';
-          window.location.assign(
-            window.location.pathname.replace(/\/[a-zA-Z-]+/, '/' + newLocale)
-          );
-        });
-      } else {
-        currentLangElement = el;
-      }
-    });
-
-    if (currentLangElement) {
-      langPickerTogglerElement.setAttribute(
-        'title',
-        currentLangElement.textContent
-      );
-
-      // Remove the current selected language item, because we don't need to choose it
-      // any more unless we want to switch to a new language
-      langPickerElement.removeChild(currentLangElement.parentNode);
-    }
-
     const toggleFunction = function () {
       langPickerElement.classList.toggle('hidden');
+
       const isAriaExpanded =
         langPickerTogglerElement.getAttribute('aria-expanded') === 'true';
+
       langPickerTogglerElement.setAttribute('aria-expanded', !isAriaExpanded);
     };
 
-    langPickerTogglerElement.addEventListener('click', function () {
-      toggleFunction();
-    });
-
-    document.body.addEventListener('click', function (event) {
-      if (
-        !langPickerElement.classList.contains('hidden') &&
-        !langPickerTogglerElement.contains(event.target)
-      ) {
-        toggleFunction();
-      }
-    });
+    langPickerTogglerElement.addEventListener('click', toggleFunction);
   }
-})();
 
-(function () {
   const themeAttr = 'data-theme';
-  var darkThemeSwitcherElement = document.querySelector('.dark-theme-switcher');
+  const darkThemeSwitcherElement = document.querySelector(
+    '.dark-theme-switcher'
+  );
 
   let preferredColorScheme = window.matchMedia('(prefers-color-scheme: dark)')
     .matches
@@ -77,7 +41,7 @@
 
   if (darkThemeSwitcherElement) {
     darkThemeSwitcherElement.addEventListener('click', function () {
-      var currentTheme = getTheme() ?? preferredColorScheme;
+      const currentTheme = getTheme() ?? preferredColorScheme;
       if (currentTheme === 'light') {
         setTheme('dark');
       } else if (currentTheme === 'dark') {
@@ -94,10 +58,8 @@
   function getTheme() {
     return window.localStorage.getItem('theme');
   }
-})();
 
-(function () {
-  var scrollToTop = document.querySelector('#scroll-to-top');
+  const scrollToTop = document.querySelector('#scroll-to-top');
 
   if (scrollToTop) {
     (window.onscroll = function () {
@@ -112,27 +74,24 @@
       window.scrollTo(0, 0);
     });
   }
-})();
 
-(function () {
-  'use strict';
-  var userAgent = navigator.userAgent;
-  var osMatch = userAgent.match(/(Win|Mac|Linux)/);
-  var os = (osMatch && osMatch[1]) || '';
-  var arch =
+  const userAgent = navigator.userAgent;
+  const osMatch = userAgent.match(/(Win|Mac|Linux)/);
+  const os = (osMatch && osMatch[1]) || '';
+  const arch =
     userAgent.match(/x86_64|Win64|WOW64/) || navigator.cpuClass === 'x64'
       ? 'x64'
       : 'x86';
-  var buttons = document.querySelectorAll('.home-downloadbutton');
-  var downloadHead = document.querySelector('#home-downloadhead');
-  var dlLocal;
+  const buttons = document.querySelectorAll('.home-downloadbutton');
+  const downloadHead = document.querySelector('#home-downloadhead');
+  let dlLocal;
 
   function versionIntoHref(nodeList, filename) {
-    var linkEls = Array.prototype.slice.call(nodeList);
-    var version;
-    var el;
+    const linkEls = Array.prototype.slice.call(nodeList);
+    let version;
+    let el;
 
-    for (var i = 0; i < linkEls.length; i++) {
+    for (let i = 0; i < linkEls.length; i++) {
       version = linkEls[i].getAttribute('data-version');
       el = linkEls[i];
       el.href += filename.replace('%version%', version);
@@ -158,10 +117,13 @@
   }
 
   // Windows button on download page
-  var winButton = document.querySelector('#windows-downloadbutton');
+  const winButton = document.querySelector('#windows-downloadbutton');
+
   if (winButton && os === 'Win') {
-    var winText = winButton.querySelector('p');
+    const winText = winButton.querySelector('p');
     winButton.href = winButton.href.replace(/x(86|64)/, arch);
     winText.textContent = winText.textContent.replace(/x(86|64)/, arch);
   }
-})();
+};
+
+window.startLegacyApp = startLegacyApp;
