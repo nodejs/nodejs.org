@@ -12,11 +12,6 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        <Script
-          strategy="beforeInteractive"
-          src="/static/js/themeSwitcher.js"
-        />
-
         <Script strategy="beforeInteractive" src="/static/js/legacyMain.js" />
       </body>
     </Html>
