@@ -1,5 +1,5 @@
 export interface RSSFeed {
-  link: string;
+  file: string;
   title: string;
   description?: string;
   blogCategory?: string;

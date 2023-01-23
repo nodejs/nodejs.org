@@ -18,16 +18,16 @@
   "rssFeeds": [
     {
       "title": "Node.js Blog",
-      "link": "/en/feed/blog.xml"
+      "file": "blog.xml"
     },
     {
       "title": "Node.js Blog: Releases",
-      "link": "/en/feed/releases.xml",
+      "file": "releases.xml",
       "blogCategory": "release"
     },
     {
       "title": "Node.js Blog: Vulnerability Reports",
-      "link": "/en/feed/vulnerability.xml",
+      "file": "vulnerability.xml",
       "blogCategory": "vulnerability"
     }
   ],

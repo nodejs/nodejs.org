@@ -16,7 +16,7 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "export": "next export -o build",
-    "deploy": "npm-run-all build export external:survey",
+    "deploy": "npm-run-all build export",
     "lint:js": "eslint \"**/*.{js,jsx,ts,tsx}\" --cache --cache-file .eslintjscache --report-unused-disable-directives",
     "lint:md": "eslint \"**/*.{md,mdx}\" --cache --cache-file .eslintmdcache",
     "lint:scss": "stylelint --config .stylelintrc \"styles/**/*.{css,sass,scss}\"",
@@ -25,7 +25,6 @@
     "prettier": "prettier \"**/*.{ts,tsx,js,scss,yml}\" --check",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm-run-all prettier:fix lint:fix",
-    "external:survey": "rsync -az --exclude \"node_modules*\" --exclude \"package*\" external/survey-2018/ build/en/user-survey-report",
     "scripts:release-post": "node scripts/release-post/index.mjs"
   },
   "dependencies": {

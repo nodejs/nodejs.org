@@ -8,7 +8,6 @@ import type { LegacyFrontMatter } from '../types';
 
 type HeaderProps = { frontMatter: LegacyFrontMatter };
 
-// @TODO: Generate RSS feeds and include them here
 const HtmlHead = ({ frontMatter }: HeaderProps) => {
   const siteConfig = useSiteConfig();
   const { currentLocale } = useLocale();
@@ -44,6 +43,16 @@ const HtmlHead = ({ frontMatter }: HeaderProps) => {
       <meta name="twitter:image:alt" content={siteConfig.twitter.imgAlt} />
 
       <link rel="canonical" href={canonicalLink} />
+
+      {siteConfig.rssFeeds.map(feed => (
+        <link
+          key={feed.file}
+          rel="alternate"
+          href={`/en/feed/${feed.file}`}
+          title={feed.title}
+          type="application/rss+xml"
+        />
+      ))}
     </Head>
   );
 };

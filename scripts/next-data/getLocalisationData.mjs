@@ -9,12 +9,10 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url));
 // gets the current i18n path based on local module path
 const i18nPath = join(__dirname, '../../i18n');
 
-const getLocalisationData = () => {
-  // read the locale config file as a JSON object without using imports
-  const localePromise = readFile(join(i18nPath, 'config.json')).then(
-    JSON.parse
-  );
+// imports the global i18n config as a static import
+import localeConfig from '../../i18n/config.json' assert { type: 'json' };
 
+const getLocalisationData = () => {
   // loads each locale message file and get a tuple of [locale, messages (string)]
   const mapLocaleMessages = f => [
     basename(f, extname(f)),
@@ -32,20 +30,17 @@ const getLocalisationData = () => {
   return (route = '/', defaultLocale = 'en') => {
     const localeCode = route.split('/')[1] || defaultLocale;
 
-    return localePromise.then(localeConfig => {
-      const currentLocale =
-        localeConfig.find(c => c.code === localeCode) ||
-        localeConfig.find(c => c.code === defaultLocale);
+    const currentLocale =
+      localeConfig.find(c => c.code === localeCode) ||
+      localeConfig.find(c => c.code === defaultLocale);
 
-      const getLocaleMessages =
-        allLocaleMessages[currentLocale.code] ||
-        allLocaleMessages[defaultLocale];
+    const getLocaleMessages =
+      allLocaleMessages[currentLocale.code] || allLocaleMessages[defaultLocale];
 
-      return getLocaleMessages.then(localeMessages => ({
-        currentLocale,
-        localeMessages,
-      }));
-    });
+    return getLocaleMessages.then(localeMessages => ({
+      currentLocale,
+      localeMessages,
+    }));
   };
 };
 
