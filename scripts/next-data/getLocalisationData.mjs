@@ -37,10 +37,11 @@ const getLocalisationData = () => {
     const getLocaleMessages =
       allLocaleMessages[currentLocale.code] || allLocaleMessages[defaultLocale];
 
-    return getLocaleMessages.then(localeMessages => ({
-      currentLocale,
-      localeMessages,
-    }));
+    return getLocaleMessages.then(localeMessages => {
+      const result = { currentLocale, localeMessages };
+
+      return { i18nData: result };
+    });
   };
 };
 

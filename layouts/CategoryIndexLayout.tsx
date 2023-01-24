@@ -14,7 +14,7 @@ const CategoryIndexLayout = ({ children }: PropsWithChildren) => {
         <h2>{frontMatter.title}</h2>
 
         <ul className="blog-index">
-          {blogData.posts.map(post => (
+          {blogData?.posts.map(post => (
             <li key={post.slug}>
               {getTimeComponent(post.date, '%d %b %y')}
               <LocalisedLink href={post.slug}>{post.title}</LocalisedLink>

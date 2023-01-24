@@ -13,17 +13,21 @@ const getNodeVersionData = () => {
 
     if (getMatchingRoutes(subDirectory, ['download', '', 'docs'])) {
       return nodeVersionDataPromise.then(data => {
-        return [data[0], data.find(version => !!version.lts)].map(v => ({
-          node: v.version,
-          nodeNumeric: v.version.replace(/^v/, ''),
-          nodeMajor: `v${semVer.major(v.version)}.x`,
-          npm: v.npm || 'N/A',
-          isLts: Boolean(v.lts),
-        }));
+        const result = [data[0], data.find(version => !!version.lts)].map(
+          v => ({
+            node: v.version,
+            nodeNumeric: v.version.replace(/^v/, ''),
+            nodeMajor: `v${semVer.major(v.version)}.x`,
+            npm: v.npm || 'N/A',
+            isLts: Boolean(v.lts),
+          })
+        );
+
+        return { nodeVersionData: result };
       });
     }
 
-    return [];
+    return {};
   };
 };
 

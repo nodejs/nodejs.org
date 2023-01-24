@@ -20,16 +20,14 @@ const getNextData = async (content, { route }) => {
   const nodeVersionData = await cachedNodeVersionData(route);
   const blogData = await cachedBlogData(route);
 
+  const props = { ...localisationData, ...nodeVersionData, ...blogData };
+
   return `
     // add the mdx file content
     ${content}
 
     export const getStaticProps = () => {
-      const i18nData = ${JSON.stringify(localisationData)};
-      const nodeVersionData = ${JSON.stringify(nodeVersionData)};
-      const blogData = ${JSON.stringify(blogData)};
-
-      return { props: { i18nData, nodeVersionData, blogData } };
+      return { props: ${JSON.stringify(props)} };
     }
   `;
 };

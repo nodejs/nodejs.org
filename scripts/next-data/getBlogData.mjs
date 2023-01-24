@@ -45,14 +45,21 @@ const getBlogData = () => {
   );
 
   return (route = '/', getAllAvailablePosts = false) => {
-    const [, , subDirectory, category = `year-${currentYear}`] =
+    const [, , subDirectory, category = `year-${currentYear}`, blogPostSlug] =
       route.split('/');
 
     const generatedBlogData = (posts, hasNext, hasPrev) => ({
-      posts: posts.sort((a, b) => b.date - a.date),
-      currentCategory: category,
-      pagination: { next: hasNext || null, prev: hasPrev || null },
+      blogData: {
+        posts: posts.sort((a, b) => b.date - a.date),
+        currentCategory: category,
+        pagination: { next: hasNext || null, prev: hasPrev || null },
+      },
     });
+
+    // we don't want to generate blog data within a blog post
+    if (blogPostSlug && blogPostSlug.length > 0) {
+      return {};
+    }
 
     if (getMatchingRoutes(subDirectory, ['blog'])) {
       return categoriesPosts.then(categories => {
@@ -95,7 +102,7 @@ const getBlogData = () => {
         }
 
         // this should not happen or means the category is non-existent
-        return generatedBlogData([]);
+        return {};
       });
     }
 
@@ -113,7 +120,7 @@ const getBlogData = () => {
       });
     }
 
-    return generatedBlogData([]);
+    return {};
   };
 };
 

@@ -25,7 +25,7 @@ const createBlogYearFile = year =>
 
 export const generateBlogYearPages = cachedBlogData =>
   cachedBlogData('', true)
-    .then(data => data.posts.map(p => p.date.getFullYear()))
+    .then(({ blogData }) => blogData.posts.map(p => p.date.getFullYear()))
     .then(data => [...new Set(data)])
     .then(data => data.forEach(createBlogYearFile));
 
@@ -53,6 +53,6 @@ export const generateWebsiteFeeds = cachedBlogData =>
       });
 
     cachedBlogData(blogCategoryOrAll)
-      .then(data => data.posts.forEach(mapBlogPostToFeed))
+      .then(({ blogData }) => blogData.posts.forEach(mapBlogPostToFeed))
       .then(() => writeFile(join(publicFeedPath, metadata.file), feed.rss2()));
   });

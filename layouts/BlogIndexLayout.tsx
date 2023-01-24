@@ -10,7 +10,7 @@ import { getTimeComponent } from '../util/getTimeComponent';
 const BlogIndexLayout = ({ children }: PropsWithChildren) => {
   const { blogData } = useNextraContext();
 
-  const currentYear = blogData.currentCategory.replace('year-', '');
+  const currentYear = blogData?.currentCategory.replace('year-', '');
 
   return (
     <BaseLayout>
@@ -22,7 +22,7 @@ const BlogIndexLayout = ({ children }: PropsWithChildren) => {
         />
 
         <ul className="blog-index">
-          {blogData.posts.map(post => (
+          {blogData?.posts.map(post => (
             <li key={post.slug}>
               {getTimeComponent(post.date, '%d %b')}
               <LocalisedLink href={post.slug}>{post.title}</LocalisedLink>
@@ -31,8 +31,8 @@ const BlogIndexLayout = ({ children }: PropsWithChildren) => {
         </ul>
 
         <Pagination
-          prevSlug={blogData.pagination.prev}
-          nextSlug={blogData.pagination.next}
+          prevSlug={blogData?.pagination.prev}
+          nextSlug={blogData?.pagination.next}
         />
 
         {children}

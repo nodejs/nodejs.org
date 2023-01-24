@@ -17,7 +17,7 @@ export * from './i18n';
 export interface AppProps {
   i18nData: Pick<LocaleContext, 'localeMessages' | 'currentLocale'>;
   nodeVersionData: Array<NodeVersionData>;
-  blogData: BlogData;
+  blogData?: BlogData;
   statusCode?: number;
 }
 
