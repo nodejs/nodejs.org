@@ -23,7 +23,7 @@ In both cases the workflow is different, please check how it is done in each cas
 Please contribute! There are plenty of [good first issues](https://github.com/nodejs/nodejs.org/labels/good%20first%20issue) to work on. To get started, you have to [fork](https://github.com/nodejs/nodejs.org/fork) this repo to your own GitHub account first. Then open up a terminal on your machine and enter the following commands:
 
 ```bash
-git clone https://github.com/nodejs/nodejs.org
+git clone https://github.com/{your username}/nodejs.org
 cd nodejs.org
 npm ci
 npm run serve
@@ -70,7 +70,7 @@ We also offer other commands that offer you assistance during your local develop
 - `npm run lint` runs the linter for all the js files.
   - `npm run lint:fix` attempts to fix any linting errors
 - `npm run prettier` runs the prettier for all the js files.
-  - `npm run prretier:fix` attempts to fix any style errors
+  - `npm run prettier:fix` attempts to fix any style errors
 - `npm run format` formats and fixes the whole codebase
 - `npm run scripts:release-post` generates a release post for the current release
   - **Usage:** `npm run scripts:release-post -- --version=vXX.X.X --force`
