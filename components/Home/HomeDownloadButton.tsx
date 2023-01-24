@@ -20,8 +20,8 @@ const HomeDownloadButton = (props: HomeDownloadButtonProps) => {
   const nodeApiLink = `https://nodejs.org/dist/latest-${props.nodeMajor}/docs/api/`;
 
   const nodeDownloadTitle =
-    `${labels?.download} ${props.nodeNumeric}` +
-    ` ${labels?.[props.isLts ? 'lts' : 'current']}`;
+    `${labels.download} ${props.nodeNumeric}` +
+    ` ${labels[props.isLts ? 'lts' : 'current']}`;
 
   return (
     <div className="home-downloadblock">
@@ -31,23 +31,23 @@ const HomeDownloadButton = (props: HomeDownloadButtonProps) => {
         title={nodeDownloadTitle}
         data-version={props.node}
       >
-        {props.nodeNumeric} {labels?.[props.isLts ? 'lts' : 'current']}
-        <small>{labels?.[`tagline-${props.isLts ? 'lts' : 'current'}`]}</small>
+        {props.nodeNumeric} {labels[props.isLts ? 'lts' : 'current']}
+        <small>{labels[`tagline-${props.isLts ? 'lts' : 'current'}`]}</small>
       </Link>
 
       <ul className="list-divider-pipe home-secondary-links">
         <li>
           <LocalisedLink href="/download/">
-            {labels?.['other-downloads']}
+            {labels['other-downloads']}
           </LocalisedLink>
         </li>
         <li>
           <LocalisedLink href={getNodejsChangelog(props.node)}>
-            {labels?.changelog}
+            {labels.changelog}
           </LocalisedLink>
         </li>
         <li>
-          <LocalisedLink href={nodeApiLink}>{labels?.api}</LocalisedLink>
+          <LocalisedLink href={nodeApiLink}>{labels.api}</LocalisedLink>
         </li>
       </ul>
     </div>

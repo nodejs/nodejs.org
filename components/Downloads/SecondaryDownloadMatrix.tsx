@@ -7,6 +7,8 @@ import type { NodeVersionData, LegacyDownloadsFrontMatter } from '../../types';
 
 type SecondaryDownloadMatrixProps = Pick<NodeVersionData, 'node'>;
 
+// @TODO: Instead of using a static list it should be created dynamically. This is done on `nodejs.dev`
+// since this is a temporary solution and going to be fixed in the future.
 const SecondaryDownloadMatrix = (props: SecondaryDownloadMatrixProps) => {
   const nextraContext = useNextraContext();
 

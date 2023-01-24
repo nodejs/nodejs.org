@@ -1,7 +1,6 @@
 import type { PropsWithChildren } from 'react';
 
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import BaseLayout from './BaseLayout';
 import PrimaryDownloadMatrix from '../components/Downloads/PrimaryDownloadMatrix';
 import SecondaryDownloadMatrix from '../components/Downloads/SecondaryDownloadMatrix';
 import { useNextraContext } from '../hooks/useNextraContext';
@@ -16,24 +15,20 @@ const DownloadLayout = ({ children }: PropsWithChildren) => {
   const { downloads } = nextraContext.frontMatter as LegacyDownloadsFrontMatter;
 
   return (
-    <>
-      <Header />
-      <main id="main">
-        <div className="container">
-          <article dir="auto">
-            <div className="download-header">
-              <h1>{downloads.headline}</h1>
-            </div>
+    <BaseLayout>
+      <div className="container">
+        <article dir="auto">
+          <div className="download-header">
+            <h1>{downloads.headline}</h1>
+          </div>
 
-            {children}
+          {children}
 
-            <PrimaryDownloadMatrix {...currentLtsVersion} />
-            <SecondaryDownloadMatrix {...currentLtsVersion} />
-          </article>
-        </div>
-      </main>
-      <Footer />
-    </>
+          <PrimaryDownloadMatrix {...currentLtsVersion} />
+          <SecondaryDownloadMatrix {...currentLtsVersion} />
+        </article>
+      </div>
+    </BaseLayout>
   );
 };
 

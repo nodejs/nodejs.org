@@ -1,7 +1,6 @@
 import type { PropsWithChildren } from 'react';
 
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import BaseLayout from './BaseLayout';
 import SideNavigation from '../components/SideNavigation';
 import { useNodeData } from '../hooks/useNodeData';
 
@@ -21,16 +20,12 @@ const DocsLayout = ({ children }: PropsWithChildren) => {
   };
 
   return (
-    <>
-      <Header />
-      <main id="main">
-        <div className="container has-side-nav">
-          <SideNavigation navigationKey="docs" context={translationContext} />
-          <article dir="auto">{children}</article>
-        </div>
-      </main>
-      <Footer />
-    </>
+    <BaseLayout>
+      <div className="container has-side-nav">
+        <SideNavigation navigationKey="docs" context={translationContext} />
+        <article dir="auto">{children}</article>
+      </div>
+    </BaseLayout>
   );
 };
 

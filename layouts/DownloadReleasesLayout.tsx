@@ -4,8 +4,7 @@ import { sanitize } from 'isomorphic-dompurify';
 import semVer from 'semver';
 import type { PropsWithChildren } from 'react';
 
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import BaseLayout from './BaseLayout';
 import DownloadReleasesTable from '../components/Downloads/DownloadReleasesTable';
 import { useNextraContext } from '../hooks/useNextraContext';
 
@@ -14,7 +13,6 @@ import type { LegacyDownloadsReleasesFrontMatter } from '../types';
 const fetcher = (...args: Parameters<typeof fetch>) =>
   fetch(...args).then(res => res.json());
 
-// @TODO: Remove the `Script` once we migrate to `nodejs/nodejs.dev` codebase as this is unsafe
 const DownloadReleasesLayout = ({ children }: PropsWithChildren) => {
   const nextraContext = useNextraContext();
 
@@ -55,29 +53,25 @@ const DownloadReleasesLayout = ({ children }: PropsWithChildren) => {
   );
 
   return (
-    <>
-      <Header />
-      <main id="main">
-        <div className="container">
-          <article dir="auto">
-            <h1>{title}</h1>
+    <BaseLayout>
+      <div className="container">
+        <article dir="auto">
+          <h1>{title}</h1>
 
-            <section>{children}</section>
+          <section>{children}</section>
 
-            <section>
-              <DownloadReleasesTable releases={availableNodeVersions} />
-              <p>
-                <small
-                  id="ref-1"
-                  dangerouslySetInnerHTML={{ __html: extraModulesContent }}
-                />
-              </p>
-            </section>
-          </article>
-        </div>
-      </main>
-      <Footer />
-    </>
+          <section>
+            <DownloadReleasesTable releases={availableNodeVersions} />
+            <p>
+              <small
+                id="ref-1"
+                dangerouslySetInnerHTML={{ __html: extraModulesContent }}
+              />
+            </p>
+          </section>
+        </article>
+      </div>
+    </BaseLayout>
   );
 };
 

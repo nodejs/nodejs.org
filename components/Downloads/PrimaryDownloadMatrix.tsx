@@ -11,6 +11,8 @@ type PrimaryDownloadMatrixProps = Pick<
   'isLts' | 'node' | 'nodeNumeric' | 'npm'
 >;
 
+// @TODO: Instead of using a static list it should be created dynamically. This is done on `nodejs.dev`
+// since this is a temporary solution and going to be fixed in the future.
 const PrimaryDownloadMatrix = (props: PrimaryDownloadMatrixProps) => {
   const nextraContext = useNextraContext();
 
