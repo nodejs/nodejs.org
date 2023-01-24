@@ -22,7 +22,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 'lts/hydrogen'
+          node-version-file: '.nvmrc'
           cache: npm
 
       - name: Install npm dependencies
@@ -33,7 +33,7 @@ jobs:
           echo "::add-matcher::.github/workflows/remark-lint-problem-matcher.json"
           npm run lint
 
-  test:
+  build:
     name: Node on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
 
@@ -49,11 +49,21 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 'lts/hydrogen'
+          node-version-file: '.nvmrc'
           cache: npm
 
       - name: Install NPM dependencies
         run: npm ci
+
+      - name: Restore Build cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
       - name: Build Next.js
         run: npm run build
