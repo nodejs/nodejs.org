@@ -3,7 +3,7 @@ import nextra from 'nextra';
 import getNextData from './next.data.mjs';
 
 const withNextra = nextra({
-  theme: './theme.tsx',
+  theme: 'theme.tsx',
   flexsearch: false,
   codeHighlight: false,
   mdxOptions: { format: 'detect' },
