@@ -44,7 +44,6 @@
         "pages/*/download/*.{md,mdx}",
         "pages/*/get-involved/*.{md,mdx}",
         "pages/*/docs/*.{md,mdx}",
-        "pages/*/knowledge/*.{md,mdx}",
         "pages/*/*.{md,mdx}"
       ],
       "settings": { "mdx/code-blocks": true }

@@ -22,5 +22,10 @@ export default withNextra({
   images: { unoptimized: true },
   swcMinify: true,
   outputFileTracing: false,
-  experimental: { sharedPool: true, newNextLinkBehavior: true },
+  experimental: {
+    fetchCache: true,
+    sharedPool: true,
+    scrollRestoration: true,
+    newNextLinkBehavior: true,
+  },
 });
