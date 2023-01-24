@@ -66,7 +66,7 @@ const listenScrollToTopButton = () => {
     window.requestAnimationFrame(
       () =>
         (scrollToTop.style.display =
-          window.pageYOffset > window.innerHeight ? 'block' : 'none')
+          window.pageYOffset * 2 > window.innerHeight ? 'block' : 'none')
     );
 
   document.addEventListener('scroll', showScrollToTopIfOutOfBounds, {
