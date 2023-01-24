@@ -5,10 +5,7 @@ const setTheme = theme => {
   window.localStorage.setItem('theme', theme);
 };
 
-const preferredColorScheme = window.matchMedia('(prefers-color-scheme: dark)')
-  .matches
-  ? 'dark'
-  : 'light';
+const preferredColorScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
 const getTheme = () => window.localStorage.getItem('theme');
 
@@ -44,50 +41,42 @@ const listenLanguagePickerButton = () => {
 };
 
 const watchThemeChanges = () =>
-  window
-    .matchMedia('(prefers-color-scheme: dark)')
-    .addEventListener(
-      'change',
-      event =>
-        !getTheme() &&
-        document
-          .querySelector('html')
-          .setAttribute(themeAttr, event.matches ? 'dark' : 'light')
-    );
+  preferredColorScheme.addEventListener(
+    'change',
+    event => getTheme() || setTheme(event.matches ? 'dark' : 'light')
+  );
 
 const listenThemeToggleButton = () => {
   const darkThemeSwitcherElement = document.querySelector(
     '.dark-theme-switcher'
   );
 
-  if (darkThemeSwitcherElement) {
-    darkThemeSwitcherElement.addEventListener('click', function () {
-      const currentTheme = getTheme() ?? preferredColorScheme;
-      if (currentTheme === 'light') {
-        setTheme('dark');
-      } else if (currentTheme === 'dark') {
-        setTheme('light');
-      }
-    });
-  }
+  darkThemeSwitcherElement.addEventListener('click', () => {
+    const currentTheme =
+      getTheme() || (preferredColorScheme.matches ? 'dark' : 'light');
+
+    setTheme(currentTheme === 'light' ? 'dark' : 'light');
+  });
 };
 
 const listenScrollToTopButton = () => {
   const scrollToTop = document.querySelector('#scroll-to-top');
 
-  if (scrollToTop) {
-    (window.onscroll = function () {
-      window.requestAnimationFrame(function () {
-        scrollToTop.style.display =
-          window.pageYOffset > window.innerHeight ? 'block' : 'none';
-      });
-    })();
+  const showScrollToTopIfOutOfBounds = () =>
+    window.requestAnimationFrame(
+      () =>
+        (scrollToTop.style.display =
+          window.pageYOffset > window.innerHeight ? 'block' : 'none')
+    );
 
-    scrollToTop.addEventListener('click', function (e) {
-      e.preventDefault();
-      window.scrollTo(0, 0);
-    });
-  }
+  document.addEventListener('scroll', showScrollToTopIfOutOfBounds, {
+    passive: true,
+  });
+
+  scrollToTop.addEventListener('click', e => {
+    e.preventDefault();
+    window.scrollTo(0, 0);
+  });
 };
 
 const detectEnviromentAndSetDownloadOptions = () => {
@@ -136,14 +125,13 @@ const detectEnviromentAndSetDownloadOptions = () => {
   }
 };
 
-const bootstrapLegacyApp = () => {
-  setTheme(preferredColorScheme);
-
-  watchThemeChanges();
-};
+const setCurrentTheme = () =>
+  setTheme(getTheme() || (preferredColorScheme.matches ? 'dark' : 'light'));
 
 const startLegacyApp = () => {
-  bootstrapLegacyApp();
+  setCurrentTheme();
+
+  watchThemeChanges();
 
   listenLanguagePickerButton();
   listenThemeToggleButton();
@@ -152,6 +140,6 @@ const startLegacyApp = () => {
   detectEnviromentAndSetDownloadOptions();
 };
 
-bootstrapLegacyApp();
+setCurrentTheme();
 
 window.startLegacyApp = startLegacyApp;
