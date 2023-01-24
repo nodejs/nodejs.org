@@ -8,8 +8,6 @@
 - [Code editing](#code-editing)
   - [Adding new pages](#adding-new-pages)
     - [Create the page content](#create-the-page-content)
-    - [Update locale site.json to add link attributes](#update-locale-sitejson-to-add-link-attributes)
-    - [Update the layout to add a link](#update-the-layout-to-add-a-link)
   - [Translating pages](#translating-pages)
 
 This document contains information for Collaborators of the Node.js
