@@ -21,5 +21,6 @@ export default withNextra({
   trailingSlash: true,
   images: { unoptimized: true },
   swcMinify: true,
+  outputFileTracing: false,
   experimental: { sharedPool: true, newNextLinkBehavior: true },
 });
