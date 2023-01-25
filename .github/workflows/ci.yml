@@ -59,7 +59,6 @@ jobs:
         uses: actions/cache/restore@v3
         with:
           path: |
-            ~/.npm
             ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
@@ -72,7 +71,6 @@ jobs:
         uses: actions/cache/save@v3
         with:
           path: |
-            ~/.npm
             ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('.next/cache/eslint') }}
 
