@@ -4,7 +4,7 @@ header {
   position: relative;
 
   >.container {
-    padding-top: 0.5em;
+    padding-top: .5em;
     overflow: visible;
   }
 
@@ -41,6 +41,10 @@ header {
     position: absolute;
     right: 0;
     bottom: 0;
+    top: 0;
+    >button {
+      margin-right: .5em;
+    }
   }
 
   .dark-theme-switcher {
@@ -48,7 +52,6 @@ header {
     border: none;
     color: $light-gray2;
     cursor: pointer;
-    padding: 12px;
     background-image: url("/static/images/dark-mode.svg");
     background-repeat: no-repeat;
   }
@@ -58,7 +61,6 @@ header {
     border: none;
     color: $light-gray2;
     cursor: pointer;
-    padding: 12px;
   }
 
   .lang-picker {
