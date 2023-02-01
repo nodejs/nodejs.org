@@ -170,12 +170,8 @@ function initDownloadHyperlink(bitness) {
     // [MSFT](https://learn.microsoft.com/en-us/microsoft-edge/web-platform/how-to-detect-win11)
     navigator.userAgentData
       .getHighEntropyValues(['bitness'])
-      .then(function (ua) {
-        initDownloadHyperlink(ua.bitness);
-      })
-      .catch(function () {
-        // Ignore errors since not every browser supports this API
-      });
+      .then((ua) => initDownloadHyperlink(ua.bitness))
+      .catch();
   } else {
     initDownloadHyperlink('unknown');
   }
