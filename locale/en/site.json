@@ -131,7 +131,7 @@
   },
   "banners": {
     "index": {
-      "startDate": "2023-02-14T16:00:00.000Z",
+      "startDate": "2023-02-07T16:00:00.000Z",
       "endDate": "2023-03-07T23:00:00.000Z",
       "text": "New security releases to be made available February 14th, 2023",
       "link": "https://nodejs.org/en/blog/vulnerability/february-2023-security-releases/"
