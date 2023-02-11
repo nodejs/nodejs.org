@@ -20,7 +20,7 @@ to Node.js, if you are looking for something broad, consider
 * Attacks explained: illustrate and document in plain English with some code
 example (if possible) the attacks that we are mentioning in the threat model.
 * Third-Party Libraries: define threats
-(typo-squirting attacks, malicious packages...) and best practices regarding
+(typosquatting attacks, malicious packages...) and best practices regarding
 node modules dependencies, etc...
 
 ## Threat List
