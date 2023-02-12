@@ -7,12 +7,12 @@ labels:
   other-downloads: Другие загрузки
   current: Текущая
   lts: LTS
-  tagline-current: Последние возможности
+  tagline-current: Свежие возможности
   tagline-lts: Рекомендовано для большинства
   changelog: Список изменений
   api: Документация
-  version-schedule-prompt: Или смотрите на
-  version-schedule-prompt-link-text: график LTS
+  version-schedule-prompt: Информацию о поддерживаемых выпусках можно найти на
+  version-schedule-prompt-link-text: графике выпуска
 ---
 
-Node.js® — это JavaScript-окружение построенное на движке [Chrome V8](https://v8.dev/).
+Node.js® — это кросс-платформенная среда выполнения JavaScript с открытым исходным кодом.
