@@ -7,7 +7,7 @@ labels:
   other-downloads: Другие загрузки
   current: Текущая
   lts: LTS
-  tagline-current: Свежие возможности
+  tagline-current: Новые возможности
   tagline-lts: Рекомендовано для большинства
   changelog: Список изменений
   api: Документация
