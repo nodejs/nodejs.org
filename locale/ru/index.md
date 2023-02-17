@@ -11,8 +11,8 @@ labels:
   tagline-lts: Рекомендовано для большинства
   changelog: Список изменений
   api: Документация
-  version-schedule-prompt: Или смотрите на
-  version-schedule-prompt-link-text: график LTS
+  version-schedule-prompt: For information about supported releases, see the
+  version-schedule-prompt-link-text: release schedule
 ---
 
 Node.js® — это JavaScript-окружение построенное на движке [Chrome V8](https://v8.dev/).

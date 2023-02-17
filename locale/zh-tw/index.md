@@ -11,8 +11,8 @@ labels:
   tagline-lts: 適合給大部分使用者
   changelog: 更新紀錄
   api: API 文件
-  version-schedule-prompt: 或參考
-  version-schedule-prompt-link-text: LTS（長期維護版）時程
+  version-schedule-prompt: For information about supported releases, see the
+  version-schedule-prompt-link-text: release schedule
 ---
 
 Node.js® 是一個開源、跨平台的 JavaScript 執行環境。

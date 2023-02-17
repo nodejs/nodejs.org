@@ -11,8 +11,8 @@ labels:
   tagline-lts: Aanbevolen Voor Meeste Gebruikers
   changelog: Changelog
   api: API Documentatie
-  version-schedule-prompt: Of bekijk de
-  version-schedule-prompt-link-text: Long Term Support (LTS) schedule
+  version-schedule-prompt: Voor meer informatie over ondersteunde releases, zie
+  version-schedule-prompt-link-text: releaseschema
 ---
 
 Node.js® is een JavaScript runtime gebouwd op [Chrome's V8 JavaScript engine](https://v8.dev/).

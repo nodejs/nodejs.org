@@ -11,8 +11,8 @@ labels:
   tagline-lts: Çoğu kullanıcı için önerilir
   changelog: Değişiklikler
   api: API Belgeleri
-  version-schedule-prompt: Ya da
-  version-schedule-prompt-link-text: Uzun Süreli Destek (LTS) takvimine bakın
+  version-schedule-prompt: Desteklenen sürümler hakkında daha fazla bilgi için
+  version-schedule-prompt-link-text: sürüm yayınlanma planına bakınız
 ---
 
 Node.js® [Chrome'un V8 JavaScript motoru](https://v8.dev/) üzerine inşa edilmiş bir JavaScript çalışma ortamıdır.

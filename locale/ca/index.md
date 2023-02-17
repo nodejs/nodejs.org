@@ -11,8 +11,8 @@ labels:
   tagline-lts: Recomanat per a la majoria
   changelog: Canvis
   api: Documentació de l'API
-  version-schedule-prompt: O revisi la
-  version-schedule-prompt-link-text: Agenda de LTS
+  version-schedule-prompt: For information about supported releases, see the
+  version-schedule-prompt-link-text: release schedule
 ---
 
 Node.js® és un entorn d'execució per a JavaScript construït amb el [motor de JavaScript V8 de Chrome](https://v8.dev/).
