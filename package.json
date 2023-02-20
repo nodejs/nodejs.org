@@ -30,7 +30,7 @@
     "node": ">=12"
   },
   "dependencies": {
-    "@metalsmith/markdown": "^1.6.0",
+    "@metalsmith/markdown": "^1.9.0",
     "@metalsmith/permalinks": "^2.4.1",
     "autoprefixer": "^10.4.13",
     "fs-extra": "^11.1.0",
