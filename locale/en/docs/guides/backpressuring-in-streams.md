@@ -504,6 +504,40 @@ readable.on('data', (data) =>
 );
 ```
 
+Here's an example of using [`.push()`][] with a Readable stream.
+
+```javascript
+const { Readable } = require('stream');
+
+// Create a custom Readable stream
+const myReadableStream = new Readable({
+  objectMode: true,
+  read(size) {
+    // Push some data onto the stream
+    this.push({ message: 'Hello, world!' });
+    this.push(null); // Mark the end of the stream
+  }
+});
+
+// Consume the stream
+myReadableStream.on('data', (chunk) => {
+  console.log(chunk);
+});
+
+// Output:
+// { message: 'Hello, world!' }
+```
+In this example, we create a custom Readable stream that pushes a single object
+onto the stream using [`.push()`][]. The [`._read()`][] method is called when the stream is ready 
+to consume data, and in this case, we immediately push some data onto the stream and
+mark the end of the stream by pushing null.
+
+We then consume the stream by listening for the 'data' event and logging each chunk of
+data that is pushed onto the stream. In this case, we only push a single chunk of data
+onto the stream, so we only see one log message.
+
+
+
 ## Rules specific to Writable Streams
 
 Recall that a [`.write()`][] may return true or false dependent on some
