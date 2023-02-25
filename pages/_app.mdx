@@ -1,29 +1,10 @@
-import { Source_Sans_Pro } from '@next/font/google';
-import type { ReactNode } from 'react';
-
 import { NodeDataProvider } from '../providers/nodeDataProvider';
 import { LocaleProvider } from '../providers/localeProvider';
 import { SiteProvider } from '../providers/siteProvider';
-
-import type { NextraAppProps } from '../types';
-
-// TODO: These styles are temporary as we're going to move towards the CSS modules from `nodejs/nodejs.dev`
+import sourceSansPro from '../util/sourceSansPro';
 import '../styles/styles.scss';
 
-type NextraProps = NextraAppProps & {
-  Component: NextraAppProps['Component'] & {
-    // eslint-disable-next-line no-unused-vars
-    getLayout: (page: ReactNode) => ReactNode;
-  };
-};
-
-const sourceSansPro = Source_Sans_Pro({
-  weight: ['400', '600'],
-  display: 'fallback',
-  subsets: ['latin'],
-});
-
-const Nextra = ({ Component, pageProps }: NextraProps) => (
+export default ({ Component, pageProps }) => (
   <SiteProvider>
     <LocaleProvider i18nData={pageProps.i18nData}>
       <NodeDataProvider nodeVersionData={pageProps.nodeVersionData}>
@@ -41,5 +22,3 @@ const Nextra = ({ Component, pageProps }: NextraProps) => (
     </LocaleProvider>
   </SiteProvider>
 );
-
-export default Nextra;

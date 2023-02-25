@@ -23,7 +23,6 @@ export default withNextra({
   swcMinify: true,
   outputFileTracing: false,
   experimental: {
-    fetchCache: true,
     sharedPool: true,
     scrollRestoration: true,
     newNextLinkBehavior: true,
