@@ -128,7 +128,7 @@ inspector protocol:
 
 ## How to find a memory leak with Heap Snapshots
 
-You can find a memory leak by compaing too snapshots. It's important to make
+You can find a memory leak by comparing two snapshots. It's important to make
 sure the snapshots difference does not contain unnecessary information.
 Following steps should produce a clean diff between snapshots.
 

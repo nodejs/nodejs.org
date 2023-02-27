@@ -131,10 +131,10 @@
   },
   "banners": {
     "index": {
-      "startDate": "2022-12-16T17:00:00.000Z",
-      "endDate": "2022-12-30T16:00:00.000Z",
-      "text": "Node.js assessment of OpenSSL 3.0.7 security advisory",
-      "link": "https://nodejs.org/en/blog/vulnerability/openssl-fixes-in-regular-releases-dec2022/"
+      "startDate": "2023-02-07T16:00:00.000Z",
+      "endDate": "2023-03-07T23:00:00.000Z",
+      "text": "Security releases now available",
+      "link": "https://nodejs.org/en/blog/vulnerability/february-2023-security-releases/"
     },
     "blacklivesmatter": {
       "visible": false,
