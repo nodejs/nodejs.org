@@ -528,15 +528,13 @@ myReadableStream.on('data', (chunk) => {
 // { message: 'Hello, world!' }
 ```
 In this example, we create a custom Readable stream that pushes a single object
-onto the stream using [`.push()`][]. The [`._read()`][] method is called when the stream is ready 
+onto the stream using [`.push()`][]. The [`._read()`][] method is called when the stream is ready
 to consume data, and in this case, we immediately push some data onto the stream and
 mark the end of the stream by pushing null.
 
 We then consume the stream by listening for the 'data' event and logging each chunk of
 data that is pushed onto the stream. In this case, we only push a single chunk of data
 onto the stream, so we only see one log message.
-
-
 
 ## Rules specific to Writable Streams
 
