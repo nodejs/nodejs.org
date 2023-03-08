@@ -10,11 +10,11 @@ env:
 
 jobs:
   lint:
-    name: Linting
+    name: Lint on ${{ matrix.os }}
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clone repository
+      - name: Git Checkout
         uses: actions/checkout@v3
 
       - name: Set up Node.js
@@ -23,10 +23,10 @@ jobs:
           node-version-file: '.nvmrc'
           cache: npm
 
-      - name: Install npm dependencies
+      - name: Install NPM packages
         run: npm ci
 
-      - name: Lint
+      - name: Run Linting
         run: npm run lint
 
   build:
