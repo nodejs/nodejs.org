@@ -1,4 +1,9 @@
-# [nodejs.org](https://nodejs.org/)
+<p align="center">
+  <br />
+  <a href="https://nodejs.dev">
+    <img src="./public/static/images/logo-light.svg" width="200"/>
+  </a>
+</p>
 
 [![CI Status](https://github.com/nodejs/nodejs.org/actions/workflows/ci.yml/badge.svg)](https://github.com/nodejs/nodejs.org/actions/workflows/ci.yml?query=branch%3Amain)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
