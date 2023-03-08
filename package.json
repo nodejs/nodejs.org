@@ -12,7 +12,7 @@
   },
   "scripts": {
     "serve": "next dev",
-    "build": "NODE_OPTIONS=--max-old-space-size=8096 next build",
+    "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
     "export": "next export -o build",
