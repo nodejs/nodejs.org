@@ -12,7 +12,7 @@
   },
   "scripts": {
     "serve": "next dev",
-    "build": "next build",
+    "build": "NODE_OPTIONS=--max-old-space-size=8096 next build",
     "postbuild": "next-sitemap",
     "start": "next start",
     "export": "next export -o build",
@@ -52,6 +52,7 @@
   },
   "devDependencies": {
     "@builder.io/partytown": "^0.7.5",
+    "@next/bundle-analyzer": "^13.2.3",
     "@next/eslint-plugin-next": "^13.2.3",
     "@types/node": "^18.14.6",
     "@types/react": "^18.0.28",
@@ -72,6 +73,7 @@
     "sharp": "^0.31.3",
     "stylelint": "^15.2.0",
     "stylelint-config-recommended-scss": "^9.0.1",
+    "stylelint-order": "^6.0.3",
     "stylelint-selector-bem-pattern": "^2.1.1",
     "typescript": "^4.9.5"
   }
