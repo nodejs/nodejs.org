@@ -14,7 +14,7 @@ const HtmlHead = ({ frontMatter }: HeaderProps) => {
   const { route } = useRouter();
 
   const pageTitle = frontMatter.title || siteConfig.title;
-  const canonicalLink = `https://nodejs.org/${currentLocale.code}${route}`;
+  const canonicalLink = `https://nodejs.org${route}`;
 
   return (
     <Head>
