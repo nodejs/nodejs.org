@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 
 import { useSiteConfig } from '../hooks/useSiteConfig';
-import { useLocale } from '../hooks/useLocale';
 
 import type { LegacyFrontMatter } from '../types';
 
@@ -10,7 +9,6 @@ type HeaderProps = { frontMatter: LegacyFrontMatter };
 
 const HtmlHead = ({ frontMatter }: HeaderProps) => {
   const siteConfig = useSiteConfig();
-  const { currentLocale } = useLocale();
   const { route } = useRouter();
 
   const pageTitle = frontMatter.title || siteConfig.title;
