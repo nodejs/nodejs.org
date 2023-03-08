@@ -1,0 +1,11 @@
+.btn-navigation {
+  padding: 0.1em 0.5em;
+
+  &.btn-prev {
+    float: left;
+  }
+
+  &.btn-next {
+    float: right;
+  }
+}

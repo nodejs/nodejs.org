@@ -1,5 +1,3 @@
-# Generated HTML and other static files
-build/
 # Commonly ignored Node.js files
 node_modules/
 npm-debug.log
@@ -10,7 +8,13 @@ npm-debug.log
 .AppleDouble
 .LSOverride
 
-# Netlify
-.netlify
+# Next.js files
+.next
+build
+public/sitemap.xml
+public/en/feed/*.xml
+pages/en/blog/year-[0-9][0-9][0-9][0-9].md
 
-.cache/
+# ESLint Cache Files
+.eslintjscache
+.eslintmdcache

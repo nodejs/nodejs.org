@@ -1,51 +1,72 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "standard",
-    "prettier"
-  ],
-  "plugins": [
-    "prettier"
-  ],
-  "rules": {
-    "prettier/prettier": "error"
-  },
+  "extends": ["eslint:recommended", "next"],
   "overrides": [
     {
-      "files": [
-        "**/*.md"
-      ],
-      "plugins": [
-        "markdown"
-      ],
-      "processor": "markdown/markdown"
+      "files": ["**/*.{mjs,js,jsx,ts,tsx}"],
+      "extends": ["plugin:prettier/recommended"],
+      "env": { "node": true, "es6": true }
+    },
+    {
+      "files": ["**/*.{ts,tsx}"],
+      "globals": { "globalThis": false }
+    },
+    {
+      "files": ["**/*.tsx"],
+      "rules": {
+        "react/no-unused-prop-types": "off",
+        "react/require-default-props": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "consistent-return": "off",
+        "react/function-component-definition": [
+          "error",
+          {
+            "namedComponents": "arrow-function",
+            "unnamedComponents": "arrow-function"
+          }
+        ],
+        "react/jsx-filename-extension": [
+          2,
+          { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+        ]
+      }
+    },
+    {
+      "files": ["**/*.{md,mdx}"],
+      "extends": ["plugin:mdx/recommended"],
+      "settings": { "mdx/code-blocks": false },
+      "rules": { "react/jsx-no-undef": "off", "no-useless-escape": "off" }
     },
     {
       "files": [
-        "**/*.md/*.js"
+        "pages/*/about/*.{md,mdx}",
+        "pages/*/download/*.{md,mdx}",
+        "pages/*/get-involved/*.{md,mdx}",
+        "pages/*/docs/*.{md,mdx}",
+        "pages/*/*.{md,mdx}"
       ],
-      "parserOptions": {
-        "ecmaVersion": "latest"
-      },
+      "settings": { "mdx/code-blocks": true }
+    },
+    {
+      "files": ["pages/**/*.{md,mdx}/*.{js,jsx,cjs,mjs,ts,tsx}"],
       "rules": {
-        "eqeqeq": "off",
-        "n/no-deprecated-api": "off",
-        "n/handle-callback-err": "off",
-        "no-const-assign": "off",
+        "camelcase": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "consistent-return": "off",
+        "func-names": "off",
+        "import/extensions": "off",
+        "import/no-extraneous-dependencies": "off",
+        "import/no-unresolved": "off",
+        "no-console": "off",
+        "no-empty": "off",
+        "no-restricted-globals": "off",
+        "no-restricted-syntax": "off",
         "no-undef": "off",
+        "no-underscore-dangle": "off",
         "no-unused-expressions": "off",
         "no-unused-vars": "off",
-        "node/handle-callback-err": "off",
-        "node/no-deprecated-api": "off",
-        "prefer-const": "off",
-        "prettier/prettier": [
-          "error",
-          {
-            "singleQuote": true,
-            "trailingComma": "none"
-          }
-        ],
-        "semi": ["error", "always"]
+        "prefer-promise-reject-errors": "off"
       }
     }
   ]

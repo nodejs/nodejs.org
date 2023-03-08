@@ -1,0 +1,42 @@
+{
+  "title": "Node.js",
+  "description": "Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+  "featuredImage": "/static/images/logo-hexagon-card.png",
+  "favicon": "/static/images/favicons/favicon.png",
+  "accentColor": "#333",
+  "og": {
+    "imgType": "image/png",
+    "imgWidth": "224",
+    "imgHeight": "256"
+  },
+  "twitter": {
+    "username": "@nodejs",
+    "card": "summary",
+    "img": "/static/images/logo-hexagon-card.png",
+    "imgAlt": "The Node.js Hexagon Logo"
+  },
+  "rssFeeds": [
+    {
+      "title": "Node.js Blog",
+      "file": "blog.xml"
+    },
+    {
+      "title": "Node.js Blog: Releases",
+      "file": "releases.xml",
+      "blogCategory": "release"
+    },
+    {
+      "title": "Node.js Blog: Vulnerability Reports",
+      "file": "vulnerability.xml",
+      "blogCategory": "vulnerability"
+    }
+  ],
+  "websiteBanners": {
+    "index": {
+      "startDate": "2022-12-16T17:00:00.000Z",
+      "endDate": "2022-12-30T16:00:00.000Z",
+      "text": "Node.js assessment of OpenSSL 3.0.7 security advisory",
+      "link": "https://nodejs.org/en/blog/vulnerability/openssl-fixes-in-regular-releases-dec2022/"
+    }
+  }
+}

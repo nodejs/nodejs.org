@@ -1,0 +1,150 @@
+@charset "utf-8";
+
+@import "~highlight.js/scss/a11y-dark";
+
+@import 'variables';
+@import 'base';
+@import 'utils';
+
+// Import specific page sections and layout parts
+@import 'layout/sticky-footer';
+@import 'layout/grid';
+@import 'layout/main';
+@import 'layout/lists';
+@import 'layout/dark-theme';
+@import 'page-modules/jsfoundation';
+@import 'page-modules/header';
+@import 'page-modules/footer';
+@import 'page-modules/home';
+@import 'page-modules/blog-index';
+@import 'page-modules/blog-post';
+@import 'page-modules/download';
+@import 'page-modules/scrollToTop';
+@import 'page-modules/anchorLinks';
+@import 'page-modules/prev-next-navigation';
+@import 'vendor/prism-tomorrow';
+
+* {
+  transition: background-color $dark-transition-time ease;
+}
+
+article a {
+  word-break: break-word;
+}
+
+.intro {
+  font-size: 38px;
+  line-height: 1.2;
+  margin-top: 140px;
+
+  h1 {
+    font-size: inherit;
+    margin-bottom: 15px;
+
+    + p {
+      margin-top: 0;
+    }
+  }
+
+  span {
+    color: $light-gray;
+    display: block;
+  }
+}
+
+.has-side-nav {
+  nav {
+    float: left;
+    margin-top: 1.5em;
+    width: 200px;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      padding: 0.1em 0.5em;
+    }
+
+    a {
+      display: block;
+      line-height: 1;
+      margin-left: -10px;
+      margin-right: -10px;
+      padding: 5px 10px;
+    }
+
+    .active {
+      > a,
+      > a:hover {
+        background-color: $active-green;
+        color: $white;
+      }
+    }
+  }
+
+  article {
+    margin-left: 220px;
+  }
+}
+
+.edit-link {
+  float: right;
+  font-size: 0.9em;
+  margin: 0.5em 0;
+}
+
+@media screen and (max-width: 480px) {
+  .has-side-nav {
+    nav {
+      float: none;
+      width: 100%;
+    }
+
+    article {
+      margin-left: 0;
+    }
+  }
+}
+
+.color-lightgray {
+  color: $light-gray;
+}
+
+a:hover .color-lightgray {
+  color: $white;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.highlight-box {
+  background-color: $light-gray3;
+  border-radius: 2px;
+  margin-top: 1em;
+  padding: 5px 15px;
+
+  *:first-child {
+    margin-top: 0.5rem;
+  }
+}
+
+html[dir='rtl'] {
+  .has-side-nav {
+    nav {
+      float: right;
+    }
+
+    article {
+      margin-left: 0;
+      margin-right: 220px;
+
+      @media screen and (max-width: 480px) {
+        margin-right: 0;
+      }
+    }
+  }
+}

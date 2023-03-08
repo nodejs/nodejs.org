@@ -1,12 +1,13 @@
 {
-  "extends": [
-    "stylelint-config-twbs-bootstrap"
-  ],
+  "extends": ["stylelint-config-recommended-scss"],
+  "plugins": ["stylelint-order", "stylelint-selector-bem-pattern"],
   "rules": {
-    "declaration-no-important": null,
-    "order/properties-order": null,
-    "selector-max-id": 1,
-    "selector-max-type": null,
-    "selector-no-qualifying-type": null
+    "order/properties-alphabetical-order": true,
+    "no-descending-specificity": null,
+    "scss/at-extend-no-missing-placeholder": null,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      { "ignorePseudoClasses": ["global"] }
+    ]
   }
 }

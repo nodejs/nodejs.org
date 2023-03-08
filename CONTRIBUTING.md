@@ -8,8 +8,8 @@ expectations the Node Foundation requires of its contributors.
 
 ## Vocabulary
 
-* A **Contributor** is any individual creating or commenting on an issue or pull request.
-* A **Collaborator** is a subset of contributors who have been given write access to the repository.
+- A **Contributor** is any individual creating or commenting on an issue or pull request.
+- A **Collaborator** is a subset of contributors who have been given write access to the repository.
 
 ## Logging Issues
 

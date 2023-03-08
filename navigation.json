@@ -1,0 +1,118 @@
+{
+  "home": {
+    "link": "/",
+    "translationId": "components.header.links.home",
+    "items": {}
+  },
+  "about": {
+    "link": "/about/",
+    "translationId": "components.header.links.about",
+    "items": {
+      "governance": {
+        "link": "/about/governance/",
+        "translationId": "components.navigation.about.links.governance"
+      }
+    }
+  },
+  "download": {
+    "link": "/download/",
+    "translationId": "components.header.links.download",
+    "items": {
+      "shaSums": {
+        "link": "https://nodejs.org/dist/{nodeVersion}/SHASUMS256.txt.asc",
+        "translationId": "components.downloadList.links.shaSums"
+      },
+      "allDownloads": {
+        "link": "https://nodejs.org/dist/{nodeVersion}/",
+        "translationId": "components.downloadList.links.allDownloads"
+      },
+      "packageManager": {
+        "link": "/download/package-manager/",
+        "translationId": "components.downloadList.links.packageManager"
+      },
+      "previousReleases": {
+        "link": "/download/releases/",
+        "translationId": "components.downloadList.links.previousReleases"
+      },
+      "nightlyReleases": {
+        "link": "https://nodejs.org/download/nightly/",
+        "translationId": "components.downloadList.links.nightlyReleases"
+      },
+      "unofficialBuilds": {
+        "link": "https://unofficial-builds.nodejs.org/download/",
+        "translationId": "components.downloadList.links.unofficialBuilds"
+      },
+      "buildingFromSource": {
+        "link": "https://github.com/nodejs/node/blob/main/BUILDING.md#building-nodejs-on-supported-platforms",
+        "translationId": "components.downloadList.links.buildingFromSource"
+      },
+      "installingOnLinux": {
+        "link": "https://github.com/nodejs/help/wiki/Installation",
+        "translationId": "components.downloadList.links.installingOnLinux"
+      },
+      "installingOnWsl": {
+        "link": "https://github.com/nodejs/node/blob/main/BUILDING.md#building-nodejs-on-supported-platforms",
+        "translationId": "components.downloadList.links.installingOnWsl"
+      }
+    }
+  },
+  "docs": {
+    "link": "/docs/",
+    "translationId": "components.header.links.docs",
+    "items": {
+      "es6": {
+        "link": "/docs/es6/",
+        "translationId": "components.navigation.docs.links.es6"
+      },
+      "apiLts": {
+        "link": "https://nodejs.org/dist/latest-{ltsNodeVersion}/docs/api",
+        "translationId": "components.navigation.docs.links.apiLts"
+      },
+      "apiCurrent": {
+        "link": "https://nodejs.org/dist/latest-{currentNodeVersion}/docs/api",
+        "translationId": "components.navigation.docs.links.apiCurrent"
+      },
+      "guides": {
+        "link": "/docs/guides/",
+        "translationId": "components.navigation.docs.links.guides"
+      },
+      "dependencies": {
+        "link": "/docs/meta/topics/dependencies/",
+        "translationId": "components.navigation.docs.links.dependencies"
+      }
+    }
+  },
+  "getInvolved": {
+    "link": "/get-involved/",
+    "translationId": "components.header.links.getInvolved",
+    "items": {
+      "collabSummit": {
+        "link": "/get-involved/collab-summit/",
+        "translationId": "components.navigation.getInvolved.links.collabSummit"
+      },
+      "contribute": {
+        "link": "/get-involved/contribute/",
+        "translationId": "components.navigation.getInvolved.links.contribute"
+      },
+      "codeOfConduct": {
+        "link": "https://github.com/nodejs/node/blob/main/doc/contributing/code-of-conduct.md",
+        "translationId": "components.navigation.getInvolved.links.codeOfConduct"
+      }
+    }
+  },
+  "security": {
+    "link": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security",
+    "translationId": "components.header.links.security",
+    "items": {}
+  },
+  "certification": {
+    "link": "https://openjsf.org/certification",
+    "translationId": "components.header.links.certification",
+    "items": {}
+  },
+  "blog": {
+    "link": "/blog/",
+    "translationId": "components.header.links.blog",
+    "items": {}
+  }
+}

@@ -1,2 +1,2 @@
-/build/
-**/vendor/
+build
+public

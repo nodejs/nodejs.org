@@ -22,7 +22,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "lts/*"
+          node-version-file: '.nvmrc'
           cache: npm
 
       - name: Install npm dependencies
@@ -31,9 +31,9 @@ jobs:
       - name: Lint
         run: |
           echo "::add-matcher::.github/workflows/remark-lint-problem-matcher.json"
-          npm run test:lint
+          npm run lint
 
-  test:
+  build:
     name: Node on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
 
@@ -49,28 +49,47 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "lts/*"
+          node-version-file: '.nvmrc'
           cache: npm
 
-      - run: java -version
-
-      - name: Install npm dependencies
+      - name: Install NPM dependencies
         run: npm ci
 
-      - name: Build
-        run: npm run build
-
-      - name: Run unit tests
-        run: npm run test:unit
-
-      - name: Run HTML validator
-        run: npm run test:html
-
-      - name: Run linkinator
-        uses: JustinBeckwith/linkinator-action@v1
+      - name: Restore Next.js cache
+        uses: actions/cache/restore@v3
         with:
-          linksToSkip: "^(?!http://localhost)"
-          paths: en
-          recurse: true
-          serverRoot: build
-          verbosity: error
+          path: |
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
+      - name: Build Next.js
+        run: npm run build
+        env:
+          NODE_OPTIONS: '--max_old_space_size=4096'
+
+      - name: Save Next.js cache
+        uses: actions/cache/save@v3
+        with:
+          path: |
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('.next/cache/eslint') }}
+
+      - name: Export Next.js
+        run: npm run export
+
+      # We don't generate non-translated pages. So if a certain page on /en/ exists
+      # but not on /de/ or any other language, it will 404. This is handled on nginx level
+      # Prior to this migration Metalsmith would copy the English version of a page to all
+      # the non-translated pages. "Fooling" the 404 by basically adding i18n context with
+      # an untranslated page. This would be very exhaustive with Next.js on SCG mode
+      # but it's something we want to do once we decide upon using Next.js on SSR mode or
+      # if we decide upon using Vercel's infrastructure as generating a copy of every English page
+      # on the file system is very resource exhaustive.
+      # - name: Run linkinator
+      #   uses: JustinBeckwith/linkinator-action@v1
+      #   with:
+      #     linksToSkip: '^(?!http://localhost)'
+      #     paths: en
+      #     recurse: true
+      #     serverRoot: build
+      #     verbosity: error

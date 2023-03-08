@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /dist/latest/
+Allow: /dist/latest/docs/api/
+Allow: /api/
+Disallow: /dist/
+Disallow: /docs/
+
+# Host
+Host: https://nodejs.org
+
+# Sitemaps
+Sitemap: https://nodejs.org/sitemap.xml
