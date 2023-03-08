@@ -24,7 +24,6 @@ export default withNextra({
   outputFileTracing: false,
   experimental: {
     sharedPool: true,
-    scrollRestoration: true,
     newNextLinkBehavior: true,
   },
 });

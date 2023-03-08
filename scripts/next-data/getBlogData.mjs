@@ -19,7 +19,7 @@ const getMatter = name => content => {
   const { title, author, date, category } = graymatter(content).data;
 
   // we only want the actual name of the file without the extension
-  // and then preppend the category name to it
+  // and then prepend the category name to it
   const slug = `/blog/${category}/${basename(name, extname(name))}`;
 
   return { title, author, date, category, slug, file: basename(name) };
