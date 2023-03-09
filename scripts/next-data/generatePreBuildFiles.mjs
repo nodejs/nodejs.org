@@ -46,8 +46,8 @@ export const generateWebsiteFeeds = cachedBlogData =>
     const mapBlogPostToFeed = post =>
       feed.addItem({
         title: post.title,
-        id: `https://nodejs.org${post.slug}`,
-        link: `https://nodejs.org${post.slug}`,
+        id: `https://nodejs.org/en${post.slug}`,
+        link: `https://nodejs.org/en${post.slug}`,
         author: post.author,
         date: new Date(post.date),
       });
