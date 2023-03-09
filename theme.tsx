@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import highlightJs from 'highlight.js/lib/common';
+import { useRouter } from 'next/router';
 import type { NextraThemeLayoutProps } from 'nextra';
 import type { MDXComponents } from 'mdx/types';
 
@@ -27,7 +28,10 @@ const mdxComponents: MDXComponents = {
 };
 
 const Content = ({ children }: LayoutProps) => {
-  useEffect(() => highlightJs.highlightAll(), []);
+  const { asPath } = useRouter();
+
+  // Re-highlights the pages on route change
+  useEffect(() => highlightJs.highlightAll(), [asPath]);
 
   useEffect(() => window.startLegacyApp(), []);
 
