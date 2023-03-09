@@ -8,7 +8,9 @@ npm-debug.log
 .AppleDouble
 .LSOverride
 
-# JetBrains IDE
+# IDE's Files
+.idea/
+.vscode/
 .idea/
 
 # Next.js files
