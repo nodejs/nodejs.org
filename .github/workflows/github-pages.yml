@@ -17,8 +17,9 @@ concurrency:
 
 jobs:
   build:
-    name: Build on ${{ matrix.os }}
+    name: Build for GitHub Pages
     runs-on: ubuntu-latest
+
     steps:
       - name: Git Checkout
         uses: actions/checkout@v3
