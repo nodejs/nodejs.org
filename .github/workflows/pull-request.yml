@@ -11,7 +11,12 @@ env:
 jobs:
   lint:
     name: Lint on ${{ matrix.os }}
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
 
     steps:
       - name: Git Checkout
@@ -55,7 +60,7 @@ jobs:
         uses: actions/cache/restore@v3
         with:
           path: |
-            ${{ github.workspace }}/.next/cache
+            .next/cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
       - name: Build Next.js
@@ -67,5 +72,5 @@ jobs:
         uses: actions/cache/save@v3
         with:
           path: |
-            ${{ github.workspace }}/.next/cache
+            .next/cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('.next/cache/eslint') }}
