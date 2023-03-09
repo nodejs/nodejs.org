@@ -12,6 +12,7 @@
   },
   "scripts": {
     "serve": "next dev",
+    "dev": "next dev",
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
