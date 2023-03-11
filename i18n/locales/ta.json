@@ -8,7 +8,7 @@
   "components.header.links.security": "பாதுகாப்பு",
   "components.header.links.certification": "சான்றிதழ்",
   "components.header.links.blog": "செய்தி",
-  "components.navigation.about.links.governance": "ஆளுகை",
+  "components.navigation.about.links.governance": "Governance",
   "components.navigation.docs.links.es6": "ES6 and beyond",
   "components.navigation.docs.links.apiLts": "{fullLtsNodeVersion} API {spanLts}",
   "components.navigation.docs.links.apiCurrent": "{fullCurrentNodeVersion} API",
