@@ -35,8 +35,6 @@ jobs:
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v3
-        with:
-          static_site_generator: next
 
       - name: Restore Next.js cache
         uses: actions/cache/restore@v3
