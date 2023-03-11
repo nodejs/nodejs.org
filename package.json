@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "description": "Nodejs.org Website",
-  "homepage": "https://nodejs.org",
+  "homepage": "http://localhost:3000/",
   "repository": "https://github.com/nodejs/nodejs.org",
   "author": "Node.js Website Working Group",
   "license": "MIT",

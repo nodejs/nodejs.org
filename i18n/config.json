@@ -160,5 +160,14 @@
     "dateFormat": "YYYY/MM/DD",
     "hrefLang": "zh-Hant",
     "enabled": true
+  },
+  {
+    "code": "ta",
+    "localName": "தமிழ்",
+    "name": "Tamil",
+    "langDir": "ltr",
+    "dateFormat": "DD/MM/YYYY",
+    "hrefLang": "ta",
+    "enabled": true
   }
 ]
