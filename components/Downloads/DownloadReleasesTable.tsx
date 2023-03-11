@@ -36,7 +36,7 @@ const DownloadReleasesTable = ({ releases }: DownloadReleasesTableProps) => (
           <td data-label="npm">{release.npm}</td>
           <td data-label="NODE_MODULE_VERSION">{release.modules}</td>
           <td className="download-table-last">
-            <Link href={`https://iojs.org/download/release/${release.node}`}>
+            <Link href={`https://nodejs.org/download/release/${release.node}`}>
               <FormattedMessage id="components.downloadReleasesTable.releases" />
             </Link>
             <Link href={getNodejsChangelog(release.node)}>
