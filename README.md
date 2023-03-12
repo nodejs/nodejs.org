@@ -28,9 +28,7 @@
 
 ## What is this repo?
 
-[Nodejs.org](https://nodejs.org/) by the [OpenJS Foundation](https://openjsf.org/) builds on the merged community's past website projects to form a self-publishing, community-managed version of the previous site.
-
-This repo's issues section has become the primary home for the Website WG's coordination efforts (meeting planning, minute approval, etc).
+[Nodejs.org](https://nodejs.org/) by the [OpenJS Foundation](https://openjsf.org/) is the official website for the Node.js® JavaScript runtime. This repo is the source code for the website. It is build using [Nextra](https://nextra.site), a Next.js based static site generator.
 
 ### Quick-Start Locally
 

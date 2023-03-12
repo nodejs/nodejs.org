@@ -2,17 +2,16 @@
 
 Thank you for your interest in contributing to the Node.js Website. Before you proceed, briefly go through the following:
 
-* [Code of Conduct](https://github.com/nodejs/node/blob/HEAD/CODE_OF_CONDUCT.md)
-* [Getting started](#getting-started)
-  * [Vocabulary](#vocabulary)
-  * [Commit message guidelines](#commit-guidelines)
-  * [Pull Request Policy](#pull-request-policy)
-    * [Before merging](#before-merging)
-    * [When merging](#when-merging)
-  * [Becoming a collaborator](#becoming-a-collaborator)
-  * [Debugging failing checks](#debugging-failing-checks)
-  * [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin-11)
-  * [Remarks](#remarks)
+- [Code of Conduct](https://github.com/nodejs/node/blob/HEAD/CODE_OF_CONDUCT.md)
+- [Getting started](#getting-started)
+  - [Vocabulary](#vocabulary)
+  - [Commit message guidelines](#commit-guidelines)
+  - [Pull Request Policy](#pull-request-policy)
+    - [Before merging](#before-merging)
+    - [When merging](#when-merging)
+  - [Becoming a collaborator](#becoming-a-collaborator)
+  - [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin-11)
+  - [Remarks](#remarks)
 
 ## Getting started
 
@@ -20,63 +19,63 @@ Thank you for your interest in contributing to the Node.js Website. Before you p
 
 2. Clone your fork using SSH, GitHub CLI, or HTTPS.
 
-  ```bash
-  git clone git@github.com:<GITHUB_ID>/nodejs.org.git # SSH
-  gh repo clone <GITHUB_ID>/nodejs.org # GitHub CLI
-  git clone https://github.com/<GITHUB_ID>/nodejs.org.git # HTTPS
-  ```
+```bash
+git clone git@github.com:<GITHUB_ID>/nodejs.org.git # SSH
+gh repo clone <GITHUB_ID>/nodejs.org # GitHub CLI
+git clone https://github.com/<GITHUB_ID>/nodejs.org.git # HTTPS
+```
 
 3. Change into the nodejs.org directory.
 
-  ```bash
-  cd nodejs.org
-  ```
+```bash
+cd nodejs.org
+```
 
 4. Create a remote for keeping your fork as well as your local clone up-to-date.
 
-  ```bash
-  git remote add upstream git@github.com:nodejs/nodejs.org.git
-  ```
+```bash
+git remote add upstream git@github.com:nodejs/nodejs.org.git
+```
 
 5. Create a new branch for your work.
 
-  ```bash
-  git checkout -b name-of-your-branch
-  ```
+```bash
+git checkout -b name-of-your-branch
+```
 
 6. Run the following to install the dependencies and start a local preview of your work.
 
-  ```bash
-  npm install # installs this project's dependencies
-  npm start # starts a preview of your local changes
-  ```
+```bash
+npm ci # installs this project's dependencies
+npm run serve # starts a preview of your local changes
+```
 
 7. Perform a merge to sync your current branch with the upstream branch.
 
- ```bash
+```bash
 git fetch upstream
 git merge upstream/main
 ```
 
-8. Run `npm test` to confirm that tests, linting, and formatting are passing. See [here](#-debugging-failing-checks) to fix failures. Ensure that your tests are passing before making a PR.
+8. Run `npm run format` to confirm that linting, and formatting are passing.
 
 ```bash
-npm test
+npm run format
 ```
 
-9. Once you're happy with your changes, add and commit them to your branch,
-then push the branch to your fork.
+9.  Once you're happy with your changes, add and commit them to your branch,
+    then push the branch to your fork.
 
-    ```bash
-    cd ~/nodejs.org
-    git add .
-    git commit -m "some message"
-    git push -u origin name-of-your-branch
-    ```
+        ```bash
+        cd ~/nodejs.org
+        git add .
+        git commit -m "some message"
+        git push -u origin name-of-your-branch
+        ```
 
-10. Create a Pull Request. See [PR Policy](#-pull-request-policy)
+10. Create a Pull Request. See [PR Policy](#pull-request-policy)
 
-> **Note**: Go through our [Commit](#-commit-guidelines) and [Pull Request](#-pull-request-policy) guidelines outlined below.
+> **Note**: Go through our [Commit](#commit-guidelines) and [Pull Request](#pull-request-policy) guidelines outlined below.
 
 ### CLI Options
 
@@ -108,20 +107,20 @@ Commits should be signed. You can read more about [Commit Signing][] here.
 
 ### Commit Message guidelines
 
-* Commit messages must include a "type"
+- Commit messages must include a "type"
   > build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test
-* Commit messages **must** start with a capital letter
-* Commit messages **must not** end with a period `.`
+- Commit messages **must** start with a capital letter
+- Commit messages **must not** end with a period `.`
 
 ## Pull Request Policy
 
 ### Before merging
 
-* Pull Requests must be open for at least 48 hours.
-  * Pull reuqests might be immediately merged if they contain critical bug fixes, short erratas (e.g. typos from previous PRs) or any critical change that is considered a "showstopper" for the operation of the website.
-    * These kind of PRs should only be done by existing collaborators that have write-access and/or signed-off by administrators/maintainers.
-* There must be no objections after a 48 hour period
-* Tests must be included in Pull Requests for new features or bug fixes. If any test(s) are failing, you are responsible for fixing them.
+- Pull Requests must be open for at least 48 hours.
+  - Pull requests might be immediately merged if they contain critical bug fixes, short erratas (e.g. typos from previous PRs) or any critical change that is considered a "showstopper" for the operation of the website.
+    - These kind of PRs should only be done by existing collaborators that have write-access and/or signed-off by administrators/maintainers.
+- There must be no objections after a 48 hour period
+- Tests must be included in Pull Requests for new features or bug fixes. If any test(s) are failing, you are responsible for fixing them.
 
 Each contribution is accepted only if there is no objection to it by a collaborator. During the review, collaborators may request that a specific contributor who is an expert in a particular area give an "LGTM" before the PR can be merged.
 
@@ -129,28 +128,20 @@ In the case that an objection is raised in a pull request by another collaborato
 
 ### When merging
 
-* [`squash`][] pull requests made up of multiple commits
+- [`squash`][] pull requests made up of multiple commits
 
 ## Vocabulary
 
-* A **Contributor** is any individual who creates an issue/PR, comments on an issue/PR
+- A **Contributor** is any individual who creates an issue/PR, comments on an issue/PR
   or contributes in some other way.
-* A **Collaborator** is a contributor with write access to the repository. See [here](#becoming-a-collaborator) on how to become a collaborator.
+- A **Collaborator** is a contributor with write access to the repository. See [here](#becoming-a-collaborator) on how to become a collaborator.
 
 ## Becoming a collaborator
 
-* Collaborators must be actively contributing to the project
-* A Pull Request must be opened on the @nodejs/nodejs.org README file adding the new collaborator to the list (note the order of names)
-* The Pull Request must be approved by at least two members of @nodejs/website or @nodejs/tsc
-* The Pull Request must remain open for 72 hours without any objections
-
-## Debugging failing checks
-
-* For failing formatting or linting, try running:
-
-  ```bash
-  npm run format
-  ```
+- Collaborators must be actively contributing to the project
+- A Pull Request must be opened on the @nodejs/nodejs.org README file adding the new collaborator to the list (note the order of names)
+- The Pull Request must be approved by at least two members of @nodejs/website or @nodejs/tsc
+- The Pull Request must remain open for 72 hours without any objections
 
 ## Developer's Certificate of Origin 1.1
 
