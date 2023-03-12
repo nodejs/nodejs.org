@@ -1,5 +1,4 @@
 import { FormattedMessage } from 'react-intl';
-import Link from 'next/link';
 
 import LocalisedLink from '../LocalisedLink';
 import { useNavigation } from '../../hooks/useNavigation';
@@ -23,9 +22,9 @@ const DownloadList = (props: DownloadListProps) => {
           <li key={key}>
             <LocalisedLink href={item.link}>{item.text}</LocalisedLink>
             {item.key === 'shaSums' && (
-              <Link href="https://github.com/nodejs/node#verifying-binaries">
+              <a href="https://github.com/nodejs/node#verifying-binaries">
                 <FormattedMessage id="components.downaloadList.links.shaSums.howToVerify" />
-              </Link>
+              </a>
             )}
           </li>
         ))}
