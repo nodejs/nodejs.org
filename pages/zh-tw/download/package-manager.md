@@ -53,7 +53,7 @@ pacman -S nodejs npm
 
 ## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages-->Debian 及 Ubuntu 系列發行版，企業版 Linux/Fedora 和 Snap packages
 
-[官方 Node.js 二進位發行版](https://github.com/nodesource/distributions/blob/master/README.md) 透過 NodeSource 提供.
+[官方 Node.js 二進位發行版](https://github.com/nodesource/distributions) 透過 NodeSource 提供.
 
 ## FreeBSD
 

@@ -20,7 +20,7 @@ layout: blog-post.hbs
 
 * Results for v7.x added to [https://benchmarking.nodejs.org/](https://benchmarking.nodejs.org/)
 * Benchmarks are curently run daily and the updated results published on this page in order to provide visibility and to encourage contributors to look for possible regressions after their commits go in.
-* This page/data is maintained by the [benchmarking working group](https://github.com/nodejs/benchmarking/blob/master/README.md).
+* This page/data is maintained by the [benchmarking working group](https://github.com/nodejs/benchmarking).
 
 ### Daily Code Coverage Results
 
