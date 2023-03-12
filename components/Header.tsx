@@ -17,7 +17,7 @@ const Header = () => {
     classNames({ active: isCurrentLocaleRoute(href, href !== '/') });
 
   const toggleLanguage = formatMessage({
-    id: 'componets.header.buttons.toggleLanguage',
+    id: 'components.header.buttons.toggleLanguage',
   });
 
   const toggleDarkMode = formatMessage({
