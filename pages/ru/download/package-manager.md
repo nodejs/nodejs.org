@@ -50,7 +50,7 @@ pacman -S nodejs npm
 
 ## Дистрибутивы Linux на основе Debian и Ubuntu, пакеты Enterprise Linux/Fedora и Snap
 
-[Официальный Node.js бинарный дистрибутив](https://github.com/nodesource/distributions/blob/master/README.md) предоставляемый NodeSource.
+[Официальный Node.js бинарный дистрибутив](https://github.com/nodesource/distributions) предоставляемый NodeSource.
 
 ## FreeBSD
 

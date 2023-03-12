@@ -51,7 +51,7 @@ pacman -S nodejs npm
 
 ## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages-->التوزيعات المبنية على ديبيان أو اوبنتو، لينكس للمؤسسات / فيدورا و حزم سناب
 
-يتم توفير [الملف الثنائي الرسمي للنود جي اس](https://github.com/nodesource/distributions/blob/master/README.md) من قبل NodeSource.
+يتم توفير [الملف الثنائي الرسمي للنود جي اس](https://github.com/nodesource/distributions) من قبل NodeSource.
 
 ## FreeBSD
 

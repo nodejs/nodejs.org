@@ -49,8 +49,8 @@ pacman -S nodejs npm
 
 ## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages-->Debian と Ubuntu ベースの Linux ディストリビューション、エンタープライズ Linux/Fedora と Snap パッケージ
 
-<!-- [Official Node.js binary distributions](https://github.com/nodesource/distributions/blob/master/README.md) are provided by NodeSource. -->
-[Node.js 公式のバイナリディストリビューション](https://github.com/nodesource/distributions/blob/master/README.md)が NodeSource によって提供されています。
+<!-- [Official Node.js binary distributions](https://github.com/nodesource/distributions) are provided by NodeSource. -->
+[Node.js 公式のバイナリディストリビューション](https://github.com/nodesource/distributions)が NodeSource によって提供されています。
 
 <!-- ## FreeBSD and OpenBSD -->
 ## FreeBSD と OpenBSD
