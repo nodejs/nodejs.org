@@ -1,5 +1,4 @@
 import React from 'react';
-import Script from 'next/script';
 import { Html, Head, Main, NextScript } from 'next/document';
 import Link from 'next/link';
 
@@ -13,7 +12,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        <Script strategy="beforeInteractive" src="/static/js/legacyMain.js" />
+        <script src="/static/js/legacyMain.js" defer async />
         <Link rel="me" href="https://social.lfx.dev/@nodejs" />
       </body>
     </Html>
