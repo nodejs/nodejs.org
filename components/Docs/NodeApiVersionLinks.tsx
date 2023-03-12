@@ -4,6 +4,9 @@ import Link from 'next/link';
 const NodeApiVersionLinks = () => (
   <ul>
     <li>
+      <Link href="https://nodejs.org/docs/latest-v19.x/api/">Node.js 19.x</Link>
+    </li>
+    <li>
       <Link href="https://nodejs.org/docs/latest-v18.x/api/">Node.js 18.x</Link>
     </li>
     <li>
