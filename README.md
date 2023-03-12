@@ -76,11 +76,14 @@ Full setup is in <https://github.com/nodejs/build/tree/master/ansible/www-standa
 
 [Contributing Guidelines][]
 
+[Collaborator Guide][]
+
 [Figma Design][]
 
 [Content vs Code][]
 
 [code of conduct]: https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md
 [contributing guidelines]: ./CONTRIBUTING.md
-[figma design]: https://www.figma.com/file/lOxAGGg5KXb6nwie7zXkz6/NJ---Design-System?node-id=22%3A6086
 [content vs code]: ./CONTENT_VS_CODE.md
+[collaborator guide]: ./COLLABORATOR_GUIDE.md
+[figma design]: https://www.figma.com/file/lOxAGGg5KXb6nwie7zXkz6/NJ---Design-System?node-id=22%3A6086

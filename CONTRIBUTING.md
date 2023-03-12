@@ -143,6 +143,8 @@ In the case that an objection is raised in a pull request by another collaborato
 - The Pull Request must be approved by at least two members of @nodejs/website or @nodejs/tsc
 - The Pull Request must remain open for 72 hours without any objections
 
+More details about Collaboration can be found in the [COLLABORATOR_GUIDE.md](./COLLABORATOR_GUIDE.md).
+
 ## Developer's Certificate of Origin 1.1
 
 ```
