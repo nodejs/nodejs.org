@@ -88,7 +88,7 @@ your real title.
 -->
 ## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages--> 基于 Linux 的 Debian 和 Ubuntu 发行版，Enterprise Linux/Fedora 和 Snap packages
 
-[Node.js 官方二进制发行版](https://github.com/nodesource/distributions/blob/master/README.md) 由 NodeSource 提供。
+[Node.js 官方二进制发行版](https://github.com/nodesource/distributions) 由 NodeSource 提供。
 
 ### 可替换项
 
