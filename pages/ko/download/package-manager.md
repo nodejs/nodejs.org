@@ -100,11 +100,11 @@ pacman -S nodejs npm
 <!--
 ## Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora and Snap packages
 
-[Official Node.js binary distributions](https://github.com/nodesource/distributions/blob/master/README.md) are provided by NodeSource.
+[Official Node.js binary distributions](https://github.com/nodesource/distributions) are provided by NodeSource.
 -->
 ## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages-->데비안과 우분투 기반 리눅스 배포판. 엔터프라이즈 리눅스/페도라와 Snap 패키지
 
-[공식 Node.js 바이너리 배포판](https://github.com/nodesource/distributions/blob/master/README.md)은 NodeSource가 제공합니다.
+[공식 Node.js 바이너리 배포판](https://github.com/nodesource/distributions)은 NodeSource가 제공합니다.
 
 <!--
 ## FreeBSD

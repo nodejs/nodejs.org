@@ -100,7 +100,7 @@ Deze bronnen bieden packages aan die compatibel zijn met CentOS, Fedora en RHEL.
 
 ## Debian en Ubuntu gebaseerde Linux-distributies
 
-[Node.js binary-distributies](https://github.com/nodesource/distributions/blob/master/README.md) zijn beschikbaar bij NodeSource.
+[Node.js binary-distributies](https://github.com/nodesource/distributions) zijn beschikbaar bij NodeSource.
 
 ### Alternatieven
 
