@@ -35,7 +35,7 @@
     "handlebars": "^4.7.7",
     "highlight.js": "^11.7.0",
     "isomorphic-dompurify": "^1.1.0",
-    "next": "^13.2.3",
+    "next": "^13.2.4",
     "next-sitemap": "^4.0.5",
     "nextra": "^2.2.19",
     "node-version-data": "^1.1.0",
