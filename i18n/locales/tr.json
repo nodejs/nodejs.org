@@ -20,7 +20,7 @@
     "components.downloadList.links.previousReleases": "Önceki Sürümler",
     "components.downloadList.links.packageManager": "Node.js'i paket yöneticisi ile kurmak",
     "components.downloadList.links.shaSums": "Sürüm dosyaları için İmzalı SHASUMS",
-    "components.downaloadList.links.shaSums.howToVerify": " (Doğrulama nasıl yapılır)",
+    "components.downloadList.links.shaSums.howToVerify": " (Doğrulama nasıl yapılır)",
     "components.downloadList.links.allDownloads": "Tüm indirme seçenekleri",
     "components.downloadList.links.nightlyReleases": "Gecelik Sürümler",
     "components.downloadList.links.unofficialBuilds": "Resmi Olmayan Sürümler",
@@ -30,11 +30,10 @@
     "components.downloadReleasesTable.changelog": "Değişiklikler",
     "components.downloadReleasesTable.releases": "Releases",
     "components.downloadReleasesTable.docs": "Belgeler",
-    "componets.header.buttons.toggleLanguage": "Toggle Language",
+    "components.header.buttons.toggleLanguage": "Toggle Language",
     "components.header.buttons.toggleDarkMode": "Toggle dark/light mode",
     "components.pagination.next": "Sonraki | ",
     "components.pagination.previous": "Önceki",
     "layouts.blogPost.author.byLine": "{author, select, null {} other {By {author}, }}",
     "layouts.blogIndex.currentYear": "News from {year}"
   }
-  
