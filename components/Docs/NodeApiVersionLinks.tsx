@@ -2,6 +2,9 @@
 const NodeApiVersionLinks = () => (
   <ul>
     <li>
+      <a href="https://nodejs.org/docs/latest-v19.x/api/">Node.js 19.x</a>
+    </li>
+    <li>
       <a href="https://nodejs.org/docs/latest-v18.x/api/">Node.js 18.x</a>
     </li>
     <li>
