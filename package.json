@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@builder.io/partytown": "^0.7.5",
-    "@next/eslint-plugin-next": "^13.2.3",
+    "@next/eslint-plugin-next": "^13.2.4",
     "@types/node": "^18.14.6",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
