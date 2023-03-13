@@ -3,7 +3,6 @@ name: Pull Request Checks
 on:
   pull_request:
   workflow_dispatch:
-  merge_group:
 
 env:
   FORCE_COLOR: 2
