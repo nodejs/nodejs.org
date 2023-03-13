@@ -1,3 +1,8 @@
+body.dark {
+  background-color: $dark-black;
+  color: $white;
+}
+
 .dark {
   color-scheme: dark;
 
@@ -5,11 +10,6 @@
     background-image: url('/static/images/light-mode.svg');
   }
 
-  body {
-    background-color: $dark-black;
-  }
-
-  body,
   .blogpost-meta {
     color: $white;
   }
