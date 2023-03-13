@@ -1,4 +1,4 @@
-import LocalisedLink from '../LocalisedLink';
+import LocalizedLink from '../LocalizedLink';
 import { useNextraContext } from '../../hooks/useNextraContext';
 import { getNodejsChangelog } from '../../util/getNodeJsChangelog';
 
@@ -35,17 +35,17 @@ const HomeDownloadButton = (props: HomeDownloadButtonProps) => {
 
       <ul className="list-divider-pipe home-secondary-links">
         <li>
-          <LocalisedLink href="/download/">
+          <LocalizedLink href="/download/">
             {labels['other-downloads']}
-          </LocalisedLink>
+          </LocalizedLink>
         </li>
         <li>
-          <LocalisedLink href={getNodejsChangelog(props.node)}>
+          <LocalizedLink href={getNodejsChangelog(props.node)}>
             {labels.changelog}
-          </LocalisedLink>
+          </LocalizedLink>
         </li>
         <li>
-          <LocalisedLink href={nodeApiLink}>{labels.api}</LocalisedLink>
+          <LocalizedLink href={nodeApiLink}>{labels.api}</LocalizedLink>
         </li>
       </ul>
     </div>
