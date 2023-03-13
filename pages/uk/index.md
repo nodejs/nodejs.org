@@ -2,7 +2,6 @@
 layout: index.hbs
 labels:
   current-version: Поточна версія
-  download: Завантажити
   download-for: Завантажити для
   other-downloads: Інші завантаження
   current: Поточна

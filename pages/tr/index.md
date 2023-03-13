@@ -2,7 +2,6 @@
 layout: index.hbs
 labels:
   current-version: Güncel Versiyon
-  download: İndir
   download-for: İndirin
   other-downloads: Diğer indirmeler
   current: Güncel

@@ -2,7 +2,6 @@
 layout: index.hbs
 labels:
   current-version: نگارش کنونی
-  download: دانلود
   download-for: دانلود برای
   other-downloads: سایر دانلود‌ها
   current: جاری

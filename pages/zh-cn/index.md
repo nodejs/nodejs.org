@@ -2,7 +2,6 @@
 layout: index.hbs
 labels:
   current-version: 最新尝鲜版
-  download: 下载
   download-for: 下载平台为：
   other-downloads: 其它下载
   current: 最新尝鲜版

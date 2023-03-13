@@ -23,7 +23,7 @@ const IndexLayout = ({ children }: PropsWithChildren) => {
           <Banner />
 
           <h2 id="home-downloadhead" data-dl-local={labels['download-for']}>
-            {labels['download']}
+            {labels['download-for']}
           </h2>
 
           <HomeDownloadButton {...currentLtsVersion!} />

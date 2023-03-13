@@ -2,7 +2,6 @@
 layout: index.hbs
 labels:
   current-version: Version actuelle
-  download: Téléchargements
   download-for: Téléchargements pour
   other-downloads: Autres téléchargements
   current: Actuel

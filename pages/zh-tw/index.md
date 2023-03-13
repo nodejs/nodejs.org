@@ -2,7 +2,6 @@
 layout: index.hbs
 labels:
   current-version: 目前版本
-  download: 下載
   download-for: 目前版本：
   other-downloads: 其它版本
   current: 最新版本

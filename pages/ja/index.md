@@ -2,7 +2,6 @@
 layout: index.hbs
 labels:
   current-version: 最新のバージョン
-  download: ダウンロード
   download-for: ダウンロード
   other-downloads: 他のバージョン
   current: 最新版
