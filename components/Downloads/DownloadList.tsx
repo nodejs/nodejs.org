@@ -23,7 +23,7 @@ const DownloadList = (props: DownloadListProps) => {
             <LocalisedLink href={item.link}>{item.text}</LocalisedLink>
             {item.key === 'shaSums' && (
               <a href="https://github.com/nodejs/node#verifying-binaries">
-                <FormattedMessage id="components.downaloadList.links.shaSums.howToVerify" />
+                <FormattedMessage id="components.downloadList.links.shaSums.howToVerify" />
               </a>
             )}
           </li>
