@@ -1,0 +1,28 @@
+name: GitHub Merge Queue Checks
+
+on:
+  merge_group:
+
+env:
+  FORCE_COLOR: 2
+
+jobs:
+  queue:
+    name: GitHub Merge Queue
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install NPM packages
+        run: npm ci
+
+      - name: Run Linting
+        run: npm run lint
