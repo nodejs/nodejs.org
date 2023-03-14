@@ -12,7 +12,7 @@ body:
     attributes:
       label: 'Enter your issue on localizations here:'
       placeholder: |
-        1. The name of the team (e.g.: nodejs/node-cn).
+        1. The name of the team (e.g. nodejs/node-cn).
         2. Any problems to report or you want to create it?
     validations:
       required: true
