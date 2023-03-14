@@ -45,7 +45,7 @@ For diagnosing production deployments, read these notes: [0x production servers]
 
 部分的にフレームグラフを作成する単一のステップが必要な場合は、[0x](https://www.npmjs.com/package/0x) を試してください。
 
-運用環境のデプロイメントを診断するために、[0x 運用サーバ](https://github.com/davidmarkclements/0x/blob/master/docs/production-servers.md) という注意書きを読みましょう。
+運用環境のデプロイメントを診断するために、[0x 運用サーバ][]という注意書きを読みましょう。
 
 <!--
 ### Create a flame graph with system perf tools
@@ -264,3 +264,5 @@ Practice capturing flame graphs yourself with [a flame graph exercise](https://g
 ## 例
 
 [フレームグラフ演習](https://github.com/naugtur/node-example-flamegraph)を使用してフレームグラフを自分でキャプチャする練習をしてください!
+
+[0x 運用サーバ]: https://github.com/davidmarkclements/0x/blob/master/docs/production-servers.md
