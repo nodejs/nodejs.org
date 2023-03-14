@@ -56,7 +56,24 @@ const Header = () => {
             type="button"
             title={toggleDarkMode}
             aria-label={toggleDarkMode}
-          />
+          >
+            <Image
+              priority
+              width="28"
+              height="28"
+              className="dark-image"
+              src="/static/images/light-mode.svg"
+              alt="Dark Theme Switcher"
+            />
+            <Image
+              priority
+              width="28"
+              height="28"
+              className="light-image"
+              src="/static/images/dark-mode.svg"
+              alt="Dark Theme Switcher"
+            />
+          </button>
 
           <button
             className="lang-picker-toggler"
@@ -65,7 +82,15 @@ const Header = () => {
             aria-label={toggleLanguage}
             aria-controls="lang-picker"
             aria-expanded="false"
-          />
+          >
+            <Image
+              priority
+              width="25"
+              height="28"
+              src="/static/images/language-picker.svg"
+              alt="Language Switcher"
+            />
+          </button>
         </div>
 
         <ul id="lang-picker" className="lang-picker hidden">
