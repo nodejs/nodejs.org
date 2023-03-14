@@ -1,5 +1,4 @@
 import { FormattedMessage } from 'react-intl';
-import Link from 'next/link';
 
 type FooterProps = { className?: string };
 
@@ -15,52 +14,36 @@ const Footer = ({ className }: FooterProps) => (
       <div className="container">
         <div className="openjsfoundation-footer">
           <p>
-            Copyright <Link href="https://openjsf.org">OpenJS Foundation</Link>{' '}
-            and Node.js contributors. All rights reserved. The{' '}
-            <Link href="https://openjsf.org">OpenJS Foundation</Link> has
-            registered trademarks and uses trademarks. For a list of trademarks
-            of the <Link href="https://openjsf.org">OpenJS Foundation</Link>,
-            please see our{' '}
-            <Link href="https://trademark-policy.openjsf.org">
-              Trademark Policy
-            </Link>{' '}
-            and{' '}
-            <Link href="https://trademark-list.openjsf.org">
-              Trademark List
-            </Link>
-            . Trademarks and logos not indicated on the{' '}
-            <Link href="https://trademark-list.openjsf.org">
+            Copyright <a href="https://openjsf.org">OpenJS Foundation</a> and
+            Node.js contributors. All rights reserved. The{' '}
+            <a href="https://openjsf.org">OpenJS Foundation</a> has registered
+            trademarks and uses trademarks. For a list of trademarks of the{' '}
+            <a href="https://openjsf.org">OpenJS Foundation</a>, please see our{' '}
+            <a href="https://trademark-policy.openjsf.org">Trademark Policy</a>{' '}
+            and <a href="https://trademark-list.openjsf.org">Trademark List</a>.
+            Trademarks and logos not indicated on the{' '}
+            <a href="https://trademark-list.openjsf.org">
               list of OpenJS Foundation trademarks
-            </Link>{' '}
+            </a>{' '}
             are trademarks&trade; or registered&reg; trademarks of their
             respective holders. Use of them does not imply any affiliation with
             or endorsement by them.
           </p>
           <p className="openjsfoundation-footer-links">
-            <Link href="https://openjsf.org">The OpenJS Foundation</Link>
+            <a href="https://openjsf.org">The OpenJS Foundation</a>
             &nbsp;|&nbsp;
-            <Link href="https://terms-of-use.openjsf.org">Terms of Use</Link>
+            <a href="https://terms-of-use.openjsf.org">Terms of Use</a>
             &nbsp;|&nbsp;
-            <Link href="https://privacy-policy.openjsf.org">
-              Privacy Policy
-            </Link>
+            <a href="https://privacy-policy.openjsf.org">Privacy Policy</a>
             &nbsp;|&nbsp;
-            <Link href="https://bylaws.openjsf.org">Bylaws</Link>&nbsp;|&nbsp;
-            <Link href="https://code-of-conduct.openjsf.org">
-              Code of Conduct
-            </Link>
+            <a href="https://bylaws.openjsf.org">Bylaws</a>&nbsp;|&nbsp;
+            <a href="https://code-of-conduct.openjsf.org">Code of Conduct</a>
             &nbsp;|&nbsp;
-            <Link href="https://trademark-policy.openjsf.org">
-              Trademark Policy
-            </Link>
+            <a href="https://trademark-policy.openjsf.org">Trademark Policy</a>
             &nbsp;|&nbsp;
-            <Link href="https://trademark-list.openjsf.org">
-              Trademark List
-            </Link>
+            <a href="https://trademark-list.openjsf.org">Trademark List</a>
             &nbsp;|&nbsp;
-            <Link href="https://www.linuxfoundation.org/cookies">
-              Cookie Policy
-            </Link>
+            <a href="https://www.linuxfoundation.org/cookies">Cookie Policy</a>
           </p>
           <div className="openjsfoundation-footer-edit"></div>
         </div>

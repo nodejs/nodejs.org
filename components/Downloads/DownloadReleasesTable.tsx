@@ -36,15 +36,15 @@ const DownloadReleasesTable = ({ releases }: DownloadReleasesTableProps) => (
           <td data-label="npm">{release.npm}</td>
           <td data-label="NODE_MODULE_VERSION">{release.modules}</td>
           <td className="download-table-last">
-            <Link href={`https://nodejs.org/download/release/${release.node}`}>
+            <a href={`https://nodejs.org/download/release/${release.node}`}>
               <FormattedMessage id="components.downloadReleasesTable.releases" />
-            </Link>
-            <Link href={getNodejsChangelog(release.node)}>
+            </a>
+            <a href={getNodejsChangelog(release.node)}>
               <FormattedMessage id="components.downloadReleasesTable.changelog" />
-            </Link>
-            <Link href={getNodeApiLink(release.node)}>
+            </a>
+            <a href={getNodeApiLink(release.node)}>
               <FormattedMessage id="components.downloadReleasesTable.docs" />
-            </Link>
+            </a>
           </td>
         </tr>
       ))}
