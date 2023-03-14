@@ -26,7 +26,7 @@ Flame Graphs são gerados a partir da saída do `perf`, que não é uma ferramen
 Se você quiser uma ferramenta simples, de um único passo, que produz um Flame Graph rápido localmente, tente o [0x](https://www.npmjs.com/package/0x)
 
 <!-- For diagnosing production deployments, read these notes: [0x production servers](https://github.com/davidmarkclements/0x/blob/master/docs/production-servers.md) -->
-Para diagnosticar problemas em produção, leia estas notas: [0x em servidores de produção](https://github.com/davidmarkclements/0x/blob/master/docs/production-servers.md)
+Para diagnosticar problemas em produção, leia estas notas: [0x em servidores de produção][]
 
 ### Criando um Flame Graph com as ferramentas `perf` do sistema
 
@@ -154,3 +154,5 @@ Significa que a versão do perf que voc6e está usando no Linux não foi compila
 
 <!-- Practice capturing flame graphs yourself with [a flame graph exercise](https://github.com/naugtur/node-example-flamegraph)! -->
 Pratique capturando amostras e gerando flame graphs você mesmo com [este exercício](https://github.com/naugtur/node-example-flamegraph)!
+
+[0x em servidores de produção]: https://github.com/davidmarkclements/0x/blob/master/docs/production-servers.md
