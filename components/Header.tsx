@@ -2,7 +2,7 @@ import { useIntl } from 'react-intl';
 import Image from 'next/image';
 import classNames from 'classnames';
 
-import LocalisedLink from './LocalisedLink';
+import LocalizedLink from './LocalizedLink';
 import { useLocale } from '../hooks/useLocale';
 import { useNavigation } from '../hooks/useNavigation';
 import { useRouter } from 'next/router';
@@ -30,7 +30,7 @@ const Header = () => {
   return (
     <header aria-label="Primary">
       <div className="container">
-        <LocalisedLink href="/" className="logo">
+        <LocalizedLink href="/" className="logo">
           <Image
             priority
             width="111"
@@ -38,13 +38,13 @@ const Header = () => {
             src="/static/images/logo.svg"
             alt="Node.js"
           />
-        </LocalisedLink>
+        </LocalizedLink>
 
         <nav aria-label="primary">
           <ul className="list-divider-pipe">
             {navigationItems.map((item, key) => (
               <li key={key} className={getLinkClassName(item.link)}>
-                <LocalisedLink href={item.link}>{item.text}</LocalisedLink>
+                <LocalizedLink href={item.link}>{item.text}</LocalizedLink>
               </li>
             ))}
           </ul>
