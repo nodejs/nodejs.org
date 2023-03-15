@@ -68,9 +68,9 @@ perf record -F99 -p `pgrep -n node` -g -- sleep 3
 Обычно вы просто хотите увидеть производительность ваших собственных функций, поэтому фильтрация внутренних функций Node.js и V8 может значительно облегчить чтение графика. Вы можете почистить свой `perf` файл с помощью команды:
 
 ```bash
-sed -i \
+sed -i -r \
   -e "/( __libc_start| LazyCompile | v8::internal::| Builtin:| Stub:| LoadIC:|\[unknown\]| LoadPolymorphicIC:)/d" \
-  -e 's/ LazyCompile:[*~]\?/ /' \
+  -e 's/ LazyCompile:[*~]?/ /' \
   perfs.out
 ```
 
