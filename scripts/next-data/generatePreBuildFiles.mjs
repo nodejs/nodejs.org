@@ -1,8 +1,13 @@
 // @TODO: This is a temporary hack until we migrate to the `nodejs/nodejs.dev` codebase
-import { writeFile } from 'fs/promises';
+import { writeFile, readFile} from 'fs/promises';
 import { join } from 'path';
 import { Feed } from 'feed';
-
+import { evaluate } from '@mdx-js/mdx'
+import { createElement } from 'react'
+import { renderToString } from 'react-dom/server'
+import remarkGfm from 'remark-gfm'
+import remarkFrontmatter from 'remark-frontmatter'
+import * as runtime from 'react/jsx-runtime'
 import { getRelativePath } from './_helpers.mjs';
 
 // imports the global site config
@@ -29,6 +34,25 @@ export const generateBlogYearPages = cachedBlogData =>
     .then(data => [...new Set(data)])
     .then(data => data.forEach(createBlogYearFile));
 
+/**
+ * Render markdown to html via mdx
+ * @param {string} body
+ * @returns {Promise<string>}
+ * @see {https://github.com/mdx-js/mdx/discussions/1985}
+ */
+export const renderMarkdown = async body => {
+  const { default: mdx } = await evaluate(body, {
+    ...runtime,
+    format: "md",
+    development: false,
+    // format: 'md' — treat file as plain vanilla markdown
+    // Need to add the following remark plugins to support GFM and frontmatter
+    // https://github.com/remarkjs/remark-gfm
+    // https://github.com/remarkjs/remark-frontmatter
+    remarkPlugins: [remarkGfm, remarkFrontmatter],
+  })
+  return renderToString(createElement(mdx))
+}
 export const generateWebsiteFeeds = cachedBlogData =>
   siteConfig.rssFeeds.forEach(metadata => {
     const feed = new Feed({
@@ -43,16 +67,20 @@ export const generateWebsiteFeeds = cachedBlogData =>
       ? `/en/blog/${metadata.blogCategory}`
       : '/en/blog';
 
-    const mapBlogPostToFeed = post =>
+    const mapBlogPostToFeed = async post => {
+      const markdownContent = await readFile(join(blogPath, post.category, post.file), 'utf8');
+      const htmlContent = await renderMarkdown(markdownContent)
       feed.addItem({
         title: post.title,
+        content: htmlContent,
         id: `https://nodejs.org/en${post.slug}`,
         link: `https://nodejs.org/en${post.slug}`,
         author: post.author,
         date: new Date(post.date),
-      });
+      })
+    };
 
     cachedBlogData(blogCategoryOrAll)
-      .then(({ blogData }) => blogData.posts.forEach(mapBlogPostToFeed))
+      .then(({ blogData }) => Promise.all(blogData.posts.map(mapBlogPostToFeed)))
       .then(() => writeFile(join(publicFeedPath, metadata.file), feed.rss2()));
   });

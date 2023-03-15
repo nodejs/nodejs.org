@@ -28,6 +28,7 @@
     "scripts:release-post": "node scripts/release-post/index.mjs"
   },
   "dependencies": {
+    "@mdx-js/mdx": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "classnames": "^2.3.2",
     "feed": "^4.2.2",
@@ -43,6 +44,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intl": "^6.2.10",
+    "remark-frontmatter": "^4.0.1",
+    "remark-gfm": "^3.0.1",
     "sass": "^1.59.2",
     "semver": "^7.3.8",
     "strftime": "^0.10.1",
