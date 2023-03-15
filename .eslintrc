@@ -4,7 +4,7 @@
     {
       "files": ["**/*.{mjs,js,jsx,ts,tsx}"],
       "extends": ["plugin:prettier/recommended"],
-      "env": { "node": true, "es6": true }
+      "env": { "jest": true, "node": true, "es6": true }
     },
     {
       "files": ["**/*.{ts,tsx}"],

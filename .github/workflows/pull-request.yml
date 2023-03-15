@@ -33,6 +33,9 @@ jobs:
       - name: Run Linting
         run: npm run lint
 
+      - name: Run Unit Tests
+        run: npm run test:ci
+
   build:
     name: Build on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
