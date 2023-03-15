@@ -70,17 +70,18 @@ export const generateWebsiteFeeds = cachedBlogData =>
     const mapBlogPostToFeed = async post => {
       const markdownContent = await readFile(join(blogPath, post.category, post.file), 'utf8');
       const htmlContent = await renderMarkdown(markdownContent)
-      feed.addItem({
+      return {
         title: post.title,
         content: htmlContent,
         id: `https://nodejs.org/en${post.slug}`,
         link: `https://nodejs.org/en${post.slug}`,
         author: post.author,
         date: new Date(post.date),
-      })
+      };
     };
 
     cachedBlogData(blogCategoryOrAll)
       .then(({ blogData }) => Promise.all(blogData.posts.map(mapBlogPostToFeed)))
+      .then((feedItems) => feedItems.forEach(feedItem => feed.addItem(feedItem)))
       .then(() => writeFile(join(publicFeedPath, metadata.file), feed.rss2()));
   });
