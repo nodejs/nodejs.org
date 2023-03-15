@@ -3,7 +3,7 @@ import type { PropsWithChildren } from 'react';
 
 import BaseLayout from './BaseLayout';
 import Pagination from '../components/Pagination';
-import LocalisedLink from '../components/LocalisedLink';
+import LocalizedLink from '../components/LocalizedLink';
 import { useNextraContext } from '../hooks/useNextraContext';
 import { getTimeComponent } from '../util/getTimeComponent';
 
@@ -25,7 +25,7 @@ const BlogIndexLayout = ({ children }: PropsWithChildren) => {
           {blogData?.posts.map(post => (
             <li key={post.slug}>
               {getTimeComponent(post.date, '%d %b')}
-              <LocalisedLink href={post.slug}>{post.title}</LocalisedLink>
+              <LocalizedLink href={post.slug}>{post.title}</LocalizedLink>
             </li>
           ))}
         </ul>
