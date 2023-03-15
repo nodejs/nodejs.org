@@ -1,12 +1,13 @@
 import nextra from 'nextra';
 
+import remarkGfm from 'remark-gfm';
 import getNextData from './next.data.mjs';
 
 const withNextra = nextra({
   theme: 'theme.tsx',
   flexsearch: false,
   codeHighlight: false,
-  mdxOptions: { format: 'detect' },
+  mdxOptions: { format: 'detect', remarkPlugins: [remarkGfm] },
   transform: getNextData,
   transformPageOpts: pageOpts => {
     delete pageOpts.pageMap;
