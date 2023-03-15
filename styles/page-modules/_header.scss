@@ -39,11 +39,11 @@ header {
 
   .switchers {
     align-items: center;
+    bottom: 0;
     display: flex;
     position: absolute;
     right: 0;
     top: 0;
-    bottom: 0;
   }
 
   .dark-theme-switcher {
@@ -114,12 +114,12 @@ header {
   .logo {
     align-items: center;
     bottom: 0;
-    top: 0;
-    left: 0;
     display: flex;
     justify-content: space-evenly;
+    left: 0;
     margin: 0 10px 8px 10px;
     position: absolute;
+    top: 0;
 
     img {
       margin-bottom: -4px;
