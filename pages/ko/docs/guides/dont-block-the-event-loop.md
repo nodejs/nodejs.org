@@ -207,8 +207,8 @@ app.get('/redos-me', (req, res) =&gt; {
 #### REDOS를 방어하는 방법
 다음과 같은 당신의 정규 표현식이 안전한지 검사해주는 도구들이 있습니다.
 
-* [safe-regex](https://github.com/substack/safe-regex)
-* [rxxr2](http://www.cs.bham.ac.uk/~hxt/research/rxxr2/).
+* [safe-regex](https://github.com/davisjam/safe-regex)
+* [rxxr2](https://github.com/superhuman/rxxr2).
 하지만 이러한 도구가 모든 취약한 정규 표현식을 막아주는 것은 아닙니다.
 
 또다른 방법으로는 다른 정규 표현식 엔진을 사용하는 것이 있습니다.

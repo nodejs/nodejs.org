@@ -207,8 +207,8 @@ Por esse motivo, você deve desconfiar do uso de expressões regulares complexas
 #### Recursos anti-REDOS
 Existem algumas ferramentas para verificar a segurança de seus regexps, como
 
-* [safe-regex](https://github.com/substack/safe-regex)
-* [rxxr2](http://www.cs.bham.ac.uk/~hxt/research/rxxr2/).
+* [safe-regex](https://github.com/davisjam/safe-regex)
+* [rxxr2](https://github.com/superhuman/rxxr2).
 
 No entanto, nenhum deles capturará todos os regexps vulneráveis.
 
