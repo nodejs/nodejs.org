@@ -14,9 +14,15 @@ const HtmlHead = ({ frontMatter }: HeaderProps) => {
   const pageTitle = frontMatter.title || siteConfig.title;
   const canonicalLink = `https://nodejs.org${route}`;
 
+  // "{pageTitle} | {siteConfig.title}" if pageTitle is defined
+  const title =
+    // avoid "Node.js | Node.js" title
+    pageTitle && pageTitle !== siteConfig.title
+      ? `${pageTitle} | ${siteConfig.title}`
+      : siteConfig.title;
   return (
     <Head>
-      <title>{siteConfig.title}</title>
+      <title>{title}</title>
 
       <meta name="theme-color" content={siteConfig.accentColor}></meta>
 
