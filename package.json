@@ -27,7 +27,9 @@
     "format": "npm-run-all prettier:fix lint:fix",
     "scripts:release-post": "node scripts/release-post/index.mjs",
     "test": "jest",
-    "test:ci": "jest --ci"
+    "test-watch": "jest --watch",
+    "test-ci": "npm run test -- --coverage",
+    "update-snapshot": "npm run test -- --updateSnapshot"
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",

@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AnchoredHeading should render correctly level 1 1`] = `
+<div>
+  <h1
+    id="hello"
+  >
+    Hello
+    <a
+      aria-labelledby="hello"
+      class="anchor"
+      href="#hello"
+      id="header-hello"
+    />
+  </h1>
+</div>
+`;
+
+exports[`AnchoredHeading should render correctly level 2 1`] = `
+<div>
+  <h2
+    id="hello"
+  >
+    Hello
+    <a
+      aria-labelledby="hello"
+      class="anchor"
+      href="#hello"
+      id="header-hello"
+    />
+  </h2>
+</div>
+`;
+
+exports[`AnchoredHeading should render correctly level 3 1`] = `
+<div>
+  <h3
+    id="hello"
+  >
+    Hello
+    <a
+      aria-labelledby="hello"
+      class="anchor"
+      href="#hello"
+      id="header-hello"
+    />
+  </h3>
+</div>
+`;
+
+exports[`AnchoredHeading should render correctly level 4 1`] = `
+<div>
+  <h4
+    id="hello"
+  >
+    Hello
+    <a
+      aria-labelledby="hello"
+      class="anchor"
+      href="#hello"
+      id="header-hello"
+    />
+  </h4>
+</div>
+`;
+
+exports[`AnchoredHeading should render correctly level 5 1`] = `
+<div>
+  <h5
+    id="hello"
+  >
+    Hello
+    <a
+      aria-labelledby="hello"
+      class="anchor"
+      href="#hello"
+      id="header-hello"
+    />
+  </h5>
+</div>
+`;
+
+exports[`AnchoredHeading should render correctly level 6 1`] = `
+<div>
+  <h6
+    id="hello"
+  >
+    Hello
+    <a
+      aria-labelledby="hello"
+      class="anchor"
+      href="#hello"
+      id="header-hello"
+    />
+  </h6>
+</div>
+`;
