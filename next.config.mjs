@@ -21,4 +21,5 @@ export default withNextra({
   trailingSlash: true,
   images: { unoptimized: true },
   outputFileTracing: false,
+  basePath: process.env.NEXT_BASE_PATH || '',
 });

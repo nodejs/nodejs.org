@@ -7,7 +7,13 @@ body.dark {
   color-scheme: dark;
 
   .dark-theme-switcher {
-    background-image: url('/static/images/light-mode.svg');
+    img.light-image {
+      display: none;
+    }
+
+    img.dark-image {
+      display: block;
+    }
   }
 
   .blogpost-meta {
@@ -42,13 +48,17 @@ body.dark {
     }
   }
 
-  header {
+  header, .dark-theme-switcher img, .lang-picker-toggler img {
     background-color: $dark-black2;
+  }
+
+  header {
     li {
       &::after {
         border-top-color: $dark-black2 !important;
       }
     }
+
     .lang-picker {
       background-color: $dark-black2;
     }

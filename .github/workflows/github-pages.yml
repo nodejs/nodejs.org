@@ -47,6 +47,7 @@ jobs:
         run: npm run build
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
+          NEXT_BASE_PATH: /nodejs.org
 
       - name: Save Next.js cache
         uses: actions/cache/save@v3
