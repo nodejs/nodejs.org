@@ -65,9 +65,9 @@ perf record -F99 -p `pgrep -n node` -g -- sleep 3
 通常你只希望看到你自定义函数的调用性能如何，因此把 Node.js 和 V8 内置函数过滤掉，可以让你的图变得简单又容易看懂。你可以这样做：
 
 ```bash
-sed -i \
+sed -i -r \
   -e "/( __libc_start| LazyCompile | v8::internal::| Builtin:| Stub:| LoadIC:|\[unknown\]| LoadPolymorphicIC:)/d" \
-  -e 's/ LazyCompile:[*~]\?/ /' \
+  -e 's/ LazyCompile:[*~]?/ /' \
   perfs.out
 ```
 

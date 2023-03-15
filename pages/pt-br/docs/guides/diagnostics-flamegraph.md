@@ -86,9 +86,9 @@ Depois de 3 segundos de gravação do perf, gere o flame graph com os últimos d
 Geralmente só queremos olhar a performance do nosso próprio código, então é muito importante filtrarmos as funções internas do Node e do V8 para que o gráfico fique mais simples de ler. Você pode limpar o arquivo com o seguinte comando:
 
 ```bash
-sed -i \
+sed -i -r \
   -e "/( __libc_start| LazyCompile | v8::internal::| Builtin:| Stub:| LoadIC:|\[unknown\]| LoadPolymorphicIC:)/d" \
-  -e 's/ LazyCompile:[*~]\?/ /' \
+  -e 's/ LazyCompile:[*~]?/ /' \
   perfs.out
 ```
 

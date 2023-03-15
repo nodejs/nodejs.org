@@ -140,9 +140,9 @@ perf record -F99 -p `pgrep -n node` -g -- sleep 3
 Usually you just want to look at the performance of your own calls, so filtering out Node.js and V8 internal functions can make the graph much easier to read. You can clean up your perf file with:
 
 ```bash
-sed -i \
+sed -i -r \
   -e "/( __libc_start| LazyCompile | v8::internal::| Builtin:| Stub:| LoadIC:|\[unknown\]| LoadPolymorphicIC:)/d" \
-  -e 's/ LazyCompile:[*~]\?/ /' \
+  -e 's/ LazyCompile:[*~]?/ /' \
   perfs.out
 ```
 
@@ -154,9 +154,9 @@ If you read your flame graph and it seems odd, as if something is missing in the
 通常、自身の呼び出しのパフォーマンスを見たいだけなので、Node.js と V8 の内部関数を除外することでグラフをもっと読みやすくすることができます。次のようにして perf ファイルをクリーンアップできます。
 
 ```bash
-sed -i \
+sed -i -r \
   -e "/( __libc_start| LazyCompile | v8::internal::| Builtin:| Stub:| LoadIC:|\[unknown\]| LoadPolymorphicIC:)/d" \
-  -e 's/ LazyCompile:[*~]\?/ /' \
+  -e 's/ LazyCompile:[*~]?/ /' \
   perfs.out
 ```
 
