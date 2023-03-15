@@ -2,6 +2,7 @@ const themeAttr = 'data-theme';
 
 const setTheme = theme => {
   document.querySelector('html').setAttribute(themeAttr, theme);
+  document.body.className = theme;
   window.localStorage.setItem('theme', theme);
 };
 

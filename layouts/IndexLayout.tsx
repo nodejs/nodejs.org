@@ -1,5 +1,4 @@
 import type { PropsWithChildren } from 'react';
-import Link from 'next/link';
 
 import BaseLayout from './BaseLayout';
 import Banner from '../components/Home/Banner';
@@ -31,9 +30,9 @@ const IndexLayout = ({ children }: PropsWithChildren) => {
 
           <p>
             {labels['version-schedule-prompt']}{' '}
-            <Link href="https://github.com/nodejs/release#release-schedule">
+            <a href="https://github.com/nodejs/release#release-schedule">
               {labels['version-schedule-prompt-link-text']}
-            </Link>
+            </a>
             .
           </p>
         </div>

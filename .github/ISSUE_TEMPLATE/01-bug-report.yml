@@ -1,4 +1,4 @@
-name: 🐛 Bug Report For Nodejs Website
+name: 🐛 Bug Report For Node.js Website
 description: Report an issue if something isn't working as expected 🤔.
 labels: [bug]
 body:
@@ -32,7 +32,7 @@ body:
       required: true
   - type: input
     attributes:
-      label: 'Operation System:'
+      label: 'Operating System:'
       description: What kind of operation system are you using
         (Write it in full, with version number)?
       placeholder: 'Windows 10, 21H2, 19044.1826'

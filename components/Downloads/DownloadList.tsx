@@ -1,7 +1,6 @@
 import { FormattedMessage } from 'react-intl';
-import Link from 'next/link';
 
-import LocalisedLink from '../LocalisedLink';
+import LocalizedLink from '../LocalizedLink';
 import { useNavigation } from '../../hooks/useNavigation';
 
 import type { NodeVersionData } from '../../types';
@@ -21,11 +20,11 @@ const DownloadList = (props: DownloadListProps) => {
       <ul>
         {downloadNavigation.map((item, key) => (
           <li key={key}>
-            <LocalisedLink href={item.link}>{item.text}</LocalisedLink>
+            <LocalizedLink href={item.link}>{item.text}</LocalizedLink>
             {item.key === 'shaSums' && (
-              <Link href="https://github.com/nodejs/node#verifying-binaries">
+              <a href="https://github.com/nodejs/node#verifying-binaries">
                 <FormattedMessage id="components.downloadList.links.shaSums.howToVerify" />
-              </Link>
+              </a>
             )}
           </li>
         ))}

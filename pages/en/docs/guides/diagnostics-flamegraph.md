@@ -20,7 +20,7 @@ Flame graphs are generated from `perf` output, which is not a node-specific tool
 
 If you want a single step that produces a flame graph locally, try [0x](https://www.npmjs.com/package/0x)
 
-For diagnosing production deployments, read these notes: [0x production servers](https://github.com/davidmarkclements/0x/blob/master/docs/production-servers.md)
+For diagnosing production deployments, read these notes: [0x production servers][].
 
 ### Create a flame graph with system perf tools
 
@@ -68,9 +68,9 @@ After you get that 3 second perf record, proceed with generating the flame graph
 Usually you just want to look at the performance of your own calls, so filtering out Node.js and V8 internal functions can make the graph much easier to read. You can clean up your perf file with:
 
 ```bash
-sed -i \
+sed -i -r \
   -e "/( __libc_start| LazyCompile | v8::internal::| Builtin:| Stub:| LoadIC:|\[unknown\]| LoadPolymorphicIC:)/d" \
-  -e 's/ LazyCompile:[*~]\?/ /' \
+  -e 's/ LazyCompile:[*~]?/ /' \
   perfs.out
 ```
 
@@ -122,3 +122,5 @@ it means the Linux perf you're using was not compiled with demangle support, see
 ## Examples
 
 Practice capturing flame graphs yourself with [a flame graph exercise](https://github.com/naugtur/node-example-flamegraph)!
+
+[0x production servers]: https://github.com/davidmarkclements/0x/blob/master/docs/production-servers.md

@@ -1,7 +1,6 @@
-import Link from 'next/link';
 import classNames from 'classnames';
 
-import LocalisedLink from '../LocalisedLink';
+import LocalizedLink from '../LocalizedLink';
 import { useNextraContext } from '../../hooks/useNextraContext';
 
 import type { NodeVersionData, LegacyDownloadsFrontMatter } from '../../types';
@@ -32,29 +31,29 @@ const PrimaryDownloadMatrix = (props: PrimaryDownloadMatrixProps) => {
       <div className="download-hero full-width">
         <ul className="no-padding download-version-toggle">
           <li>
-            <LocalisedLink
+            <LocalizedLink
               className={getIsVersionClassName(props.isLts)}
               href="/download/"
               title={`${downloads['display-hint']} ${downloads.lts}`}
             >
               <div className="title">{downloads.lts}</div>
               <div className="tag">{downloads['tagline-lts']}</div>
-            </LocalisedLink>
+            </LocalizedLink>
           </li>
           <li>
-            <LocalisedLink
+            <LocalizedLink
               className={getIsVersionClassName(!props.isLts)}
               href="/download/current/"
               title={`${downloads['display-hint']} ${downloads.current}`}
             >
               <div className="title">{downloads.current}</div>
               <div className="tag">{downloads['tagline-current']}</div>
-            </LocalisedLink>
+            </LocalizedLink>
           </li>
         </ul>
         <ul className="no-padding download-platform">
           <li>
-            <Link
+            <a
               href={`https://nodejs.org/dist/${props.node}/node-${props.node}-x86.msi`}
               id="windows-downloadbutton"
               data-version={props.node}
@@ -70,10 +69,10 @@ const PrimaryDownloadMatrix = (props: PrimaryDownloadMatrixProps) => {
               </svg>
               {downloads.WindowsInstaller}
               <p className="small color-lightgray">node-{props.node}-x86.msi</p>
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
+            <a
               href={`https://nodejs.org/dist/${props.node}/node-${props.node}.pkg`}
             >
               <svg
@@ -87,10 +86,10 @@ const PrimaryDownloadMatrix = (props: PrimaryDownloadMatrixProps) => {
               </svg>
               {downloads.MacOSInstaller}
               <p className="small color-lightgray">node-{props.node}.pkg</p>
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
+            <a
               href={`https://nodejs.org/dist/${props.node}/node-${props.node}.tar.gz`}
             >
               <svg
@@ -104,7 +103,7 @@ const PrimaryDownloadMatrix = (props: PrimaryDownloadMatrixProps) => {
               </svg>
               {downloads.SourceCode}
               <p className="small color-lightgray">node-{props.node}.tar.gz</p>
-            </Link>
+            </a>
           </li>
         </ul>
       </div>
@@ -114,103 +113,103 @@ const PrimaryDownloadMatrix = (props: PrimaryDownloadMatrixProps) => {
           <tr>
             <th>{downloads.WindowsInstaller} (.msi)</th>
             <td>
-              <Link
+              <a
                 href={`https://nodejs.org/dist/${props.node}/node-${props.node}-x86.msi`}
               >
                 32-bit
-              </Link>
+              </a>
             </td>
             <td>
-              <Link
+              <a
                 href={`https://nodejs.org/dist/${props.node}/node-${props.node}-x64.msi`}
               >
                 64-bit
-              </Link>
+              </a>
             </td>
           </tr>
 
           <tr>
             <th>{downloads.WindowsBinary} (.zip)</th>
             <td>
-              <Link
+              <a
                 href={`https://nodejs.org/dist/${props.node}/node-${props.node}-win-x86.zip`}
               >
                 32-bit
-              </Link>
+              </a>
             </td>
             <td>
-              <Link
+              <a
                 href={`https://nodejs.org/dist/${props.node}/node-${props.node}-win-x64.zip`}
               >
                 64-bit
-              </Link>
+              </a>
             </td>
           </tr>
 
           <tr>
             <th>{downloads.MacOSInstaller} (.pkg)</th>
             <td colSpan={2}>
-              <Link
+              <a
                 href={`https://nodejs.org/dist/${props.node}/node-${props.node}.pkg`}
               >
                 64-bit / ARM64
-              </Link>
+              </a>
             </td>
           </tr>
           <tr>
             <th>{downloads.MacOSBinary} (.tar.gz)</th>
             <td>
-              <Link
+              <a
                 href={`https://nodejs.org/dist/${props.node}/node-${props.node}-darwin-x64.tar.gz`}
               >
                 64-bit
-              </Link>
+              </a>
             </td>
             <td>
-              <Link
+              <a
                 href={`https://nodejs.org/dist/${props.node}/node-${props.node}-darwin-arm64.tar.gz`}
               >
                 ARM64
-              </Link>
+              </a>
             </td>
           </tr>
 
           <tr>
             <th>{downloads.LinuxBinaries} (x64)</th>
             <td colSpan={2}>
-              <Link
+              <a
                 href={`https://nodejs.org/dist/${props.node}/node-${props.node}-linux-x64.tar.xz`}
               >
                 64-bit
-              </Link>
+              </a>
             </td>
           </tr>
           <tr>
             <th>{downloads.LinuxBinaries} (ARM)</th>
             <td>
-              <Link
+              <a
                 href={`https://nodejs.org/dist/${props.node}/node-${props.node}-linux-armv7l.tar.xz`}
               >
                 ARMv7
-              </Link>
+              </a>
             </td>
             <td>
-              <Link
+              <a
                 href={`https://nodejs.org/dist/${props.node}/node-${props.node}-linux-arm64.tar.xz`}
               >
                 ARMv8
-              </Link>
+              </a>
             </td>
           </tr>
 
           <tr>
             <th>{downloads.SourceCode}</th>
             <td colSpan={2}>
-              <Link
+              <a
                 href={`https://nodejs.org/dist/${props.node}/node-${props.node}.tar.gz`}
               >
                 node-{props.node}.tar.gz
-              </Link>
+              </a>
             </td>
           </tr>
         </tbody>

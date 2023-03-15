@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-import LocalisedLink from './LocalisedLink';
+import LocalizedLink from './LocalizedLink';
 import { useLocale } from '../hooks/useLocale';
 import { useNavigation } from '../hooks/useNavigation';
 
@@ -25,7 +25,7 @@ const SideNavigation = ({ navigationKey, context }: SideNavigationProps) => {
       <ul>
         {sideNavigationItems.map((item, key) => (
           <li key={key} className={getLinkClassName(item.link)}>
-            <LocalisedLink href={item.link}>{item.text}</LocalisedLink>
+            <LocalizedLink href={item.link}>{item.text}</LocalizedLink>
           </li>
         ))}
       </ul>
