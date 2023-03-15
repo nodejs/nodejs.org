@@ -49,7 +49,7 @@ header {
   .dark-theme-switcher {
     border: none;
     cursor: pointer;
-    margin: 0 8px 4px 0;
+    margin: 0 8px 0 0;
     padding: 0;
 
     img.light-image {
@@ -65,7 +65,7 @@ header {
     border: none;
     color: $light-gray2;
     cursor: pointer;
-    margin: 0 8px 4px 0;
+    margin: 0 8px 0 0;
     padding: 0;
   }
 
@@ -110,13 +110,15 @@ header {
       }
     }
   }
+
   .logo {
     align-items: center;
     bottom: 0;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-evenly;
-    left: 0;
-    margin: 10px;
+    margin: 0 10px 8px 10px;
     position: absolute;
 
     img {
@@ -132,27 +134,31 @@ header {
 
 @media screen and (min-width: 481px) {
   header {
-    li {
-      $border-width: 14px;
+    ul {
+      height: 42px;
 
-      padding-bottom: 12px;
+      li {
+        margin-top: 4px;
 
-      &.active::after {
-        border: solid transparent;
-        border-top-color: $node-gray;
-        border-width: $border-width;
-        content: ' ';
-        height: 0;
-        left: 50%;
-        margin-left: -$border-width * 0.5;
-        pointer-events: none;
-        position: absolute;
-        top: 100%;
-        width: 0;
-      }
+        $border-width: 14px;
 
-      &.active:first-child::after {
-        margin-left: -$border-width;
+        &.active::after {
+          border: solid transparent;
+          border-top-color: $node-gray;
+          border-width: $border-width;
+          content: ' ';
+          height: 0;
+          left: 50%;
+          margin-left: -$border-width * 0.5;
+          pointer-events: none;
+          position: absolute;
+          top: 100%;
+          width: 0;
+        }
+
+        &.active:first-child::after {
+          margin-left: -$border-width;
+        }
       }
     }
 
@@ -181,9 +187,10 @@ header {
         width: 50%;
       }
     }
+
     .logo {
       justify-content: center;
-      margin-bottom: 16px;
+      margin: 10px 0 16px 0;
       position: unset;
     }
   }

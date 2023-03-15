@@ -11,7 +11,7 @@ const Header = () => {
   const { availableLocales, isCurrentLocaleRoute } = useLocale();
   const { navigationItems } = useNavigation();
   const { formatMessage } = useIntl();
-  const { asPath } = useRouter();
+  const { asPath, basePath } = useRouter();
 
   const getLinkClassName = (href: string) =>
     classNames({ active: isCurrentLocaleRoute(href, href !== '/') });
@@ -35,7 +35,7 @@ const Header = () => {
             priority
             width="111"
             height="33"
-            src="/static/images/logo.svg"
+            src={`${basePath}/static/images/logo.svg`}
             alt="Node.js"
           />
         </LocalizedLink>
@@ -62,7 +62,7 @@ const Header = () => {
               width="28"
               height="28"
               className="dark-image"
-              src="/static/images/light-mode.svg"
+              src={`${basePath}/static/images/light-mode.svg`}
               alt="Dark Theme Switcher"
             />
             <Image
@@ -70,7 +70,7 @@ const Header = () => {
               width="28"
               height="28"
               className="light-image"
-              src="/static/images/dark-mode.svg"
+              src={`${basePath}/static/images/dark-mode.svg`}
               alt="Dark Theme Switcher"
             />
           </button>
@@ -87,7 +87,7 @@ const Header = () => {
               priority
               width="25"
               height="28"
-              src="/static/images/language-picker.svg"
+              src={`${basePath}/static/images/language-picker.svg`}
               alt="Language Switcher"
             />
           </button>
