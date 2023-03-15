@@ -20,7 +20,7 @@ const publicFeedPath = join(__dirname, '../../public/en/feed');
 const createBlogYearFile = year =>
   writeFile(
     join(blogPath, `year-${year}.md`),
-    `---\nlayout: blog-index.hbs\npaginate: blog\n---\n`
+    `---\nlayout: blog-index.hbs\ntitle: News from ${year}\npaginate: blog\n---\n`
   );
 
 export const generateBlogYearPages = cachedBlogData =>

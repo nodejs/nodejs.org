@@ -11,12 +11,15 @@ const HtmlHead = ({ frontMatter }: HeaderProps) => {
   const siteConfig = useSiteConfig();
   const { route, basePath } = useRouter();
 
-  const pageTitle = frontMatter.title || siteConfig.title;
   const canonicalLink = `https://nodejs.org${route}`;
+
+  const pageTitle = frontMatter.title
+    ? `${frontMatter.title} | ${siteConfig.title}`
+    : siteConfig.title;
 
   return (
     <Head>
-      <title>{siteConfig.title}</title>
+      <title>{pageTitle}</title>
 
       <meta name="theme-color" content={siteConfig.accentColor}></meta>
 
