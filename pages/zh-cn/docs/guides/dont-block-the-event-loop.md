@@ -206,8 +206,8 @@ app.get('/redos-me', (req, res) => {
 #### 关于如何抵制 REDOS 的资源
 这里提供了你一些工具帮助你检查你的正则表达式是否安全，像：
 
-* [safe-regex](https://github.com/substack/safe-regex)
-* [rxxr2](http://www.cs.bham.ac.uk/~hxt/research/rxxr2/)
+* [safe-regex](https://github.com/davisjam/safe-regex)
+* [rxxr2](https://github.com/superhuman/rxxr2)
 
 但是上述模块都无法保证能够捕获全部的正则表达式漏洞。
 

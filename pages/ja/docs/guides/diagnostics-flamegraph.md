@@ -45,7 +45,7 @@ For diagnosing production deployments, read these notes: [0x production servers]
 
 部分的にフレームグラフを作成する単一のステップが必要な場合は、[0x](https://www.npmjs.com/package/0x) を試してください。
 
-運用環境のデプロイメントを診断するために、[0x 運用サーバ](https://github.com/davidmarkclements/0x/blob/master/docs/production-servers.md) という注意書きを読みましょう。
+運用環境のデプロイメントを診断するために、[0x 運用サーバ][]という注意書きを読みましょう。
 
 <!--
 ### Create a flame graph with system perf tools
@@ -140,9 +140,9 @@ perf record -F99 -p `pgrep -n node` -g -- sleep 3
 Usually you just want to look at the performance of your own calls, so filtering out Node.js and V8 internal functions can make the graph much easier to read. You can clean up your perf file with:
 
 ```bash
-sed -i \
+sed -i -r \
   -e "/( __libc_start| LazyCompile | v8::internal::| Builtin:| Stub:| LoadIC:|\[unknown\]| LoadPolymorphicIC:)/d" \
-  -e 's/ LazyCompile:[*~]\?/ /' \
+  -e 's/ LazyCompile:[*~]?/ /' \
   perfs.out
 ```
 
@@ -154,9 +154,9 @@ If you read your flame graph and it seems odd, as if something is missing in the
 通常、自身の呼び出しのパフォーマンスを見たいだけなので、Node.js と V8 の内部関数を除外することでグラフをもっと読みやすくすることができます。次のようにして perf ファイルをクリーンアップできます。
 
 ```bash
-sed -i \
+sed -i -r \
   -e "/( __libc_start| LazyCompile | v8::internal::| Builtin:| Stub:| LoadIC:|\[unknown\]| LoadPolymorphicIC:)/d" \
-  -e 's/ LazyCompile:[*~]\?/ /' \
+  -e 's/ LazyCompile:[*~]?/ /' \
   perfs.out
 ```
 
@@ -264,3 +264,5 @@ Practice capturing flame graphs yourself with [a flame graph exercise](https://g
 ## 例
 
 [フレームグラフ演習](https://github.com/naugtur/node-example-flamegraph)を使用してフレームグラフを自分でキャプチャする練習をしてください!
+
+[0x 運用サーバ]: https://github.com/davidmarkclements/0x/blob/master/docs/production-servers.md

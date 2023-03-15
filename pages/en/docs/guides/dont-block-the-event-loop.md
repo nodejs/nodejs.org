@@ -207,8 +207,8 @@ For this reason, you should be leery of using complex regular expressions to val
 #### Anti-REDOS Resources
 There are some tools to check your regexps for safety, like
 
-* [safe-regex](https://github.com/substack/safe-regex)
-* [rxxr2](http://www.cs.bham.ac.uk/~hxt/research/rxxr2/).
+* [safe-regex](https://github.com/davisjam/safe-regex)
+* [rxxr2](https://github.com/superhuman/rxxr2).
 However, neither of these will catch all vulnerable regexps.
 
 Another approach is to use a different regexp engine.

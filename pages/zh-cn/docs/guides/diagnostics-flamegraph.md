@@ -19,7 +19,7 @@ layout: docs.hbs
 
 如果你想在本地开始单一输出火焰图，请尝试 [0x](https://www.npmjs.com/package/0x)
 
-如果你想诊断发布的生产环境，请阅读[在生产环境中的 0x](https://github.com/davidmarkclements/0x/blob/master/docs/production-servers.md)
+如果你想诊断发布的生产环境，请阅读[在生产环境中的 0x][]。
 
 ### <!--create-a-flame-graph-with-system-perf-tools-->用系统工具 `pref` 创建火焰图
 
@@ -65,9 +65,9 @@ perf record -F99 -p `pgrep -n node` -g -- sleep 3
 通常你只希望看到你自定义函数的调用性能如何，因此把 Node.js 和 V8 内置函数过滤掉，可以让你的图变得简单又容易看懂。你可以这样做：
 
 ```bash
-sed -i \
+sed -i -r \
   -e "/( __libc_start| LazyCompile | v8::internal::| Builtin:| Stub:| LoadIC:|\[unknown\]| LoadPolymorphicIC:)/d" \
-  -e 's/ LazyCompile:[*~]\?/ /' \
+  -e 's/ LazyCompile:[*~]?/ /' \
   perfs.out
 ```
 
@@ -119,3 +119,5 @@ node`_ZN2v88internal11interpreter17BytecodeGenerator15VisitStatementsEPNS0_8Zone
 ## 示例部分
 
 请通过[火焰图练习](https://github.com/naugtur/node-example-flamegraph)来练习捕获你的火焰图吧！
+
+[在生产环境中的 0x]: https://github.com/davidmarkclements/0x/blob/master/docs/production-servers.md
