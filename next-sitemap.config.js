@@ -2,7 +2,7 @@
 module.exports = {
   siteUrl: 'https://nodejs.org',
   generateRobotsTxt: true,
-  trailingSlash: true,
+  trailingSlash: false,
   generateIndexSitemap: false,
   robotsTxtOptions: {
     policies: [
