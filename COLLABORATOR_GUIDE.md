@@ -2,7 +2,7 @@
 
 - [Issues and Pull Requests](#issues-and-pull-requests)
 - [Accepting Modifications](#accepting-modifications)
-  - [Involving the Website Group](#involving-the-website-group)
+  - [Involving the Website Team](#involving-the-website-team)
 - [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin-11)
 - [Code of Conduct](#code-of-conduct)
 - [Code editing](#code-editing)
@@ -74,7 +74,7 @@ All pull requests that modify executable code should be subjected to
 continuous integration tests on the
 [project CI server](https://ci.nodejs.org/).
 
-### Involving the Website Group
+### Involving the Website Team
 
 Collaborators may opt to elevate pull requests or issues to the group for
 discussion by mentioning `@nodejs/website`. This should be done
@@ -160,7 +160,7 @@ CoC](https://github.com/rust-lang/rust/wiki/Note-development-policy#conduct).
 #### Create the page content
 
 Create a new markdown file in `/pages/en`. As specified in the
-[README.md](./README.md#layout), initial development happens in English.
+[README.md](./README.md#structure-of-this-repository), initial development happens in English.
 
 At the top of the markdown file, set a page the title and layout.
 
