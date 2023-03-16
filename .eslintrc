@@ -4,7 +4,14 @@
     {
       "files": ["**/*.{mjs,js,jsx,ts,tsx}"],
       "extends": ["plugin:prettier/recommended"],
-      "env": { "jest": true, "node": true, "es6": true }
+      "env": { "node": true, "es6": true }
+    },
+    {
+      "files": [
+        "**/**.test.{js,jsx,ts,tsx}"
+      ],
+      "extends": ["plugin:testing-library/react"],
+      "env": { "jest": true, "node": true, "browser": true }
     },
     {
       "files": ["**/*.{ts,tsx}"],
