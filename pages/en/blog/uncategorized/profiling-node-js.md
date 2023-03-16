@@ -3,7 +3,7 @@ title: Profiling Node.js
 author: Dave Pacheco
 date: 2012-04-25T20:48:58.000Z
 status: publish
-category: Uncategorized
+category: uncategorized
 slug: profiling-node-js
 layout: blog-post.hbs
 ---

@@ -1,6 +1,6 @@
 ---
 date: 2022-02-14T17:00:00Z
-category: Announcements
+category: announcements
 title: Node.js Trademarks Transferred to OpenJS Foundation
 slug: nodejs-trademarks-transferred-to-openjs-foundation
 layout: blog-post.hbs

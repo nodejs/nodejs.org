@@ -3,7 +3,7 @@ title: An Easy Way to Build Scalable Network Programs
 author: ryandahl
 date: 2011-10-04T22:39:56.000Z
 status: publish
-category: Uncategorized
+category: uncategorized
 slug: an-easy-way-to-build-scalable-network-programs
 layout: blog-post.hbs
 ---

@@ -2,7 +2,7 @@
 title: Node.js Foundation Advances Platform with More Than Three Million Users
 date: 2015-12-08T12:00:00.000Z
 status: publish
-category: Announcements
+category: announcements
 slug: foundation-advances-growth
 layout: blog-post.hbs
 ---

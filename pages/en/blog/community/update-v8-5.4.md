@@ -2,7 +2,7 @@
 title: Node.js v7 has updated V8 to 5.4
 date: 2016-12-03T14:41:04.442Z
 status: publish
-category: Announcements
+category: announcements
 slug: node-v7-v8-54
 layout: blog-post.hbs
 author: Michaël Zasso

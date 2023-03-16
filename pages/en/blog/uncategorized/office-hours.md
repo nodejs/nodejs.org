@@ -3,7 +3,7 @@ title: Office Hours
 author: ryandahl
 date: 2011-03-24T04:42:47.000Z
 status: publish
-category: Uncategorized
+category: uncategorized
 slug: office-hours
 layout: blog-post.hbs
 ---

@@ -3,7 +3,7 @@ title: Development Environment
 author: ryandahl
 date: 2011-04-05T03:16:27.000Z
 status: publish
-category: Uncategorized
+category: uncategorized
 slug: development-environment
 layout: blog-post.hbs
 ---
