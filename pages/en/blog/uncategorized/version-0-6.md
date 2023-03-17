@@ -3,7 +3,7 @@ title: Version 0.6 Coming Soon
 author: ryandahl
 date: 2011-10-25T22:26:23.000Z
 status: publish
-category: Uncategorized
+category: uncategorized
 slug: version-0-6
 layout: blog-post.hbs
 ---

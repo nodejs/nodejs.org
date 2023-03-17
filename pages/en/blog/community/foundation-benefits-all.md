@@ -3,7 +3,7 @@ title: The Node.js Foundation benefits all
 author: Scott Hammond
 date: 2015-05-15T22:50:46.000Z
 status: publish
-category: Community
+category: community
 slug: the-nodejs-foundation-benefits-all
 layout: blog-post.hbs
 ---

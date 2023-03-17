@@ -3,7 +3,7 @@ title: Node Meetup this Thursday
 author: ryandahl
 date: 2011-08-03T04:37:02.000Z
 status: publish
-category: Uncategorized
+category: uncategorized
 slug: node-meetup-this-thursday
 layout: blog-post.hbs
 ---

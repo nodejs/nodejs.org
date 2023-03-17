@@ -3,7 +3,7 @@ title: Notes from the Road
 author: tjfontaine
 date: 2014-06-11T16:00:00.000Z
 status: publish
-category: Uncategorized
+category: uncategorized
 slug: notes-from-the-road
 layout: blog-post.hbs
 ---

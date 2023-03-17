@@ -3,7 +3,7 @@ title: Growing up
 author: ryandahl
 date: 2011-12-15T19:59:15.000Z
 status: publish
-category: Uncategorized
+category: uncategorized
 slug: growing-up
 layout: blog-post.hbs
 ---

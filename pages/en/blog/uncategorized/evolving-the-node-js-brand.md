@@ -3,7 +3,7 @@ title: Evolving the Node.js Brand
 author: Emily Tanaka-Delgado
 date: 2011-07-11T19:02:45.000Z
 status: publish
-category: Uncategorized
+category: uncategorized
 slug: evolving-the-node-js-brand
 layout: blog-post.hbs
 ---

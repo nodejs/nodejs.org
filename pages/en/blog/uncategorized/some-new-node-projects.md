@@ -3,7 +3,7 @@ title: Some New Node Projects
 author: ryandahl
 date: 2011-08-29T15:30:41.000Z
 status: publish
-category: Uncategorized
+category: uncategorized
 slug: some-new-node-projects
 layout: blog-post.hbs
 ---

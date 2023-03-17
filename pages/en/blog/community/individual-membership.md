@@ -2,7 +2,7 @@
 title: Node.js Foundation Individual Membership Now Open
 date: 2015-11-04T12:00:00.000Z
 status: publish
-category: Community
+category: community
 slug: individual-membership-nodejs-foundation
 layout: blog-post.hbs
 author: mikeal
