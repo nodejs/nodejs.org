@@ -41,7 +41,7 @@ article a {
     font-size: inherit;
     margin-bottom: 15px;
 
-    + p {
+    +p {
       margin-top: 0;
     }
   }
@@ -66,6 +66,11 @@ article a {
 
     li {
       padding: 0.1em 0.5em;
+
+      a:focus {
+        background-color: $active-green;
+        color: $white;
+      }
     }
 
     a {
@@ -77,8 +82,9 @@ article a {
     }
 
     .active {
-      > a,
-      > a:hover {
+
+      >a,
+      >a:hover {
         background-color: $active-green;
         color: $white;
       }

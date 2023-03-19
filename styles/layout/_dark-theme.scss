@@ -42,6 +42,16 @@ body.dark {
       }
     }
 
+    // For Navigation Menu in dark mode
+    .container.has-side-nav {
+      nav > ul > li{
+        a:focus {
+        background-color: $dark-green2;
+        color: $white;
+        }
+      }
+    }
+
     .active > a {
       background-color: $active-green;
       color: $white;
