@@ -5,17 +5,17 @@
     "items": {}
   },
   "about": {
-    "link": "/about/",
+    "link": "/about",
     "translationId": "components.header.links.about",
     "items": {
       "governance": {
-        "link": "/about/governance/",
+        "link": "/about/governance",
         "translationId": "components.navigation.about.links.governance"
       }
     }
   },
   "download": {
-    "link": "/download/",
+    "link": "/download",
     "translationId": "components.header.links.download",
     "items": {
       "shaSums": {
@@ -27,11 +27,11 @@
         "translationId": "components.downloadList.links.allDownloads"
       },
       "packageManager": {
-        "link": "/download/package-manager/",
+        "link": "/download/package-manager",
         "translationId": "components.downloadList.links.packageManager"
       },
       "previousReleases": {
-        "link": "/download/releases/",
+        "link": "/download/releases",
         "translationId": "components.downloadList.links.previousReleases"
       },
       "nightlyReleases": {
@@ -57,11 +57,11 @@
     }
   },
   "docs": {
-    "link": "/docs/",
+    "link": "/docs",
     "translationId": "components.header.links.docs",
     "items": {
       "es6": {
-        "link": "/docs/es6/",
+        "link": "/docs/es6",
         "translationId": "components.navigation.docs.links.es6"
       },
       "apiLts": {
@@ -73,25 +73,25 @@
         "translationId": "components.navigation.docs.links.apiCurrent"
       },
       "guides": {
-        "link": "/docs/guides/",
+        "link": "/docs/guides",
         "translationId": "components.navigation.docs.links.guides"
       },
       "dependencies": {
-        "link": "/docs/meta/topics/dependencies/",
+        "link": "/docs/meta/topics/dependencies",
         "translationId": "components.navigation.docs.links.dependencies"
       }
     }
   },
   "getInvolved": {
-    "link": "/get-involved/",
+    "link": "/get-involved",
     "translationId": "components.header.links.getInvolved",
     "items": {
       "collabSummit": {
-        "link": "/get-involved/collab-summit/",
+        "link": "/get-involved/collab-summit",
         "translationId": "components.navigation.getInvolved.links.collabSummit"
       },
       "contribute": {
-        "link": "/get-involved/contribute/",
+        "link": "/get-involved/contribute",
         "translationId": "components.navigation.getInvolved.links.contribute"
       },
       "codeOfConduct": {
@@ -111,7 +111,7 @@
     "items": {}
   },
   "blog": {
-    "link": "/blog/",
+    "link": "/blog",
     "translationId": "components.header.links.blog",
     "items": {}
   }
