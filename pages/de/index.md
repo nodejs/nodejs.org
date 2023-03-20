@@ -2,7 +2,7 @@
 layout: index.hbs
 labels:
   current-version: Aktuelle Version
-  download: Download
+  download: Herunterladen
   download-for: Herunterladen für
   other-downloads: Andere Downloads
   current: Aktuell
@@ -10,7 +10,7 @@ labels:
   tagline-current: Neueste Funktionalitäten
   tagline-lts: Für die meisten Nutzer empfohlen
   changelog: Änderungshistorie
-  api: API Doku
+  api: API Dokumentation
   version-schedule-prompt: Oder wirf einen Blick auf den
   version-schedule-prompt-link-text: LTS Release Plan
 ---
