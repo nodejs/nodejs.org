@@ -50,8 +50,8 @@ npm run serve
   - Initial development usually happens in English: `/pages/en`
   - `/i18n/locales/{{locale}}.json` is where global localization information lives.
   - All content is in Markdown and is per locale.
-  - The top of each Markdown file is a block of YAML for page specific localization information that is passed to various templates.
-  - The bulk of the Markdown content for each page is referenced as `{{{content}}}` in the corresponding template.
+  - The top of each Markdown file is a block of YAML (Frontmatter) for page specific localization information that is passed to various templates.
+  - The bulk of the Markdown content for each page is referenced as `{children}` on their respective JSX Layout (`layouts/`)
 
 ## Contributing
 
@@ -67,7 +67,7 @@ Crowdin is an online tool that facilitates the user experience for the translato
 
 Website translations are handled via [Crowdin](https://crowdin.com/project/nodejs-website).
 
-To help with localization, please read the [TRANSLATION](TRANSLATION.md) guide.
+To help with localization, please read the [Translation](TRANSLATION.md) guide.
 
 ### Deployment
 
