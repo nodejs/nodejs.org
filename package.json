@@ -36,7 +36,7 @@
     "highlight.js": "^11.7.0",
     "isomorphic-dompurify": "^1.1.0",
     "next": "^13.2.4",
-    "next-sitemap": "^4.0.5",
+    "next-sitemap": "^4.0.6",
     "nextra": "^2.2.19",
     "node-version-data": "^1.1.0",
     "npm-run-all": "^4.1.5",
