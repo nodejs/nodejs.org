@@ -1,7 +1,10 @@
 <p align="center">
   <br />
   <a href="https://nodejs.org">
-    <img src="./public/static/images/logos/nodejs-new-pantone-black.svg" width="200"/>
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./public/static/images/logos/nodejs-new-pantone-white.svg">
+      <img src="./public/static/images/logos/nodejs-new-pantone-black.svg" width="200px">
+    </picture>
   </a>
 </p>
 
