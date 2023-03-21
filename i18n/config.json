@@ -63,6 +63,15 @@
     "enabled": true
   },
   {
+    "code": "id",
+    "localName": "Bahasa Indonesia,
+    "name": "Indonesian",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "id",
+    "enabled": true
+  },
+  {
     "code": "it",
     "localName": "Italiano",
     "name": "Italian",
