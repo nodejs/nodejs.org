@@ -1,4 +1,8 @@
 import { UrlObject } from 'url';
 
-export const linkWithLocale = (locale: string) => (path: string | UrlObject) =>
-  `/${locale}${path.toString()}`;
+export const linkWithLocale = (locale: string) => {
+  return (path: string | UrlObject) => {
+    path = path.toString();
+    return path === '/' ? `/${locale}` : `/${locale}${path}`;
+  };
+};
