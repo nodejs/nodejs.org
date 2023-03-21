@@ -1,6 +1,6 @@
 ---
 date: 2022-06-08T16:00:00Z
-category: Announcements
+category: announcements
 title: Bringing forward the End-of-Life Date for Node.js 16
 slug: nodejs16-eol
 layout: blog-post.hbs

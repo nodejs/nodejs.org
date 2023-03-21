@@ -3,7 +3,7 @@ title: Next Chapter
 author: tjfontaine
 date: 2015-05-08T19:00:00.000Z
 status: publish
-category: Community
+category: community
 slug: next-chapter
 layout: blog-post.hbs
 ---

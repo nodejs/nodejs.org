@@ -3,7 +3,7 @@ title: "ldapjs: A reprise of LDAP"
 author: mcavage
 date: 2011-09-08T21:25:43.000Z
 status: publish
-category: Uncategorized
+category: uncategorized
 slug: ldapjs-a-reprise-of-ldap
 layout: blog-post.hbs
 ---

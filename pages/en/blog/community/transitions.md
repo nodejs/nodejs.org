@@ -3,7 +3,7 @@ title: Transitions
 author: Scott Hammond
 date: 2015-05-08T18:00:00.000Z
 status: publish
-category: Community
+category: community
 slug: transitions
 layout: blog-post.hbs
 ---

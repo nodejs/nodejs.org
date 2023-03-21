@@ -3,7 +3,7 @@ title: Building Node.js Together
 author: tjfontaine
 date: 2014-07-29T21:00:00.000Z
 status: publish
-category: Community
+category: community
 slug: building-nodejs-together
 layout: blog-post.hbs
 ---

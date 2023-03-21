@@ -3,7 +3,7 @@ title: jobs.nodejs.org
 author: ryandahl
 date: 2011-03-25T06:05:22.000Z
 status: publish
-category: Uncategorized
+category: uncategorized
 slug: jobs-nodejs-org
 layout: blog-post.hbs
 ---

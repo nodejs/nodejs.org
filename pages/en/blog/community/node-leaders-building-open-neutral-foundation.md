@@ -3,7 +3,7 @@ title: Node.js and io.js leaders are building an open, neutral Node.js Foundatio
 author: Mike Dolan
 date: 2015-05-15T23:50:46.000Z
 status: publish
-category: Community
+category: community
 slug: node-leaders-are-building-an-open-foundation
 layout: blog-post.hbs
 ---

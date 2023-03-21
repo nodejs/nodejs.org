@@ -3,7 +3,7 @@ title: Trademark
 author: ryandahl
 date: 2011-04-29T08:54:18.000Z
 status: publish
-category: Uncategorized
+category: uncategorized
 slug: trademark
 layout: blog-post.hbs
 ---

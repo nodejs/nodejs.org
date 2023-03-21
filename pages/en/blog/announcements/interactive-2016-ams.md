@@ -2,7 +2,7 @@
 title: Node.js Foundation Announces Keynotes and Programming for Node.js Interactive Europe
 date: 2016-06-29T12:00:00.000Z
 status: publish
-category: Announcements
+category: announcements
 slug: interactive-2016-ams-programming
 layout: blog-post.hbs
 ---

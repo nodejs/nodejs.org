@@ -3,7 +3,7 @@ title: Porting Node to Windows With Microsoft’s Help
 author: ryandahl
 date: 2011-06-23T22:22:58.000Z
 status: publish
-category: Uncategorized
+category: uncategorized
 slug: porting-node-to-windows-with-microsofts-help
 layout: blog-post.hbs
 ---

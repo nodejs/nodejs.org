@@ -3,7 +3,7 @@ title: The Videos from the Meetup
 author: ryandahl
 date: 2011-08-12T07:14:34.000Z
 status: publish
-category: Uncategorized
+category: uncategorized
 slug: the-videos-from-node-meetup
 layout: blog-post.hbs
 ---

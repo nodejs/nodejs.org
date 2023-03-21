@@ -3,7 +3,7 @@ title: Node Office Hours Cut Short
 author: ryandahl
 date: 2011-04-28T16:04:35.000Z
 status: publish
-category: Uncategorized
+category: uncategorized
 slug: node-office-hours-cut-short
 layout: blog-post.hbs
 ---

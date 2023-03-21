@@ -3,7 +3,7 @@ title: libuv status report
 author: ryandahl
 date: 2011-09-23T19:45:50.000Z
 status: publish
-category: Uncategorized
+category: uncategorized
 slug: libuv-status-report
 layout: blog-post.hbs
 ---

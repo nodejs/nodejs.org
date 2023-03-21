@@ -1,6 +1,6 @@
 ---
 date: 2020-04-03T20:26:28Z
-category: Announcements
+category: announcements
 title: Changes to Release Schedule
 slug: adjusted-release-schedule-covid
 layout: blog-post.hbs
