@@ -5,7 +5,7 @@ layout: docs.hbs
 
 # Anatomi Transaksi HTTP
 
-Tujuan dari panduan ini adalah untuk memberikan pemahaman yang kuat tentang proses Penanganan HTTP Node.js. Kami akan asumsikan bahwa Anda tahu, secara umum, bagaimana HTTP permintaan bekerja, terlepas dari bahasa atau lingkungan pemrograman. Kami juga akan mengasumsikan sedikit keakraban dengan Node.js [`EventEmitters`][] dan [`Streams`][]. Jika Anda tidak cukup akrab dengan mereka, ada baiknya membaca cepat dokumen API untuk masing-masingnya.
+Tujuan dari panduan ini adalah untuk memberikan pemahaman yang kuat tentang proses Penanganan HTTP Node.js. Kami akan berasumsi bahwa Anda tahu, secara umum, bagaimana HTTP permintaan bekerja, terlepas dari bahasa atau lingkungan pemrograman. Kami juga akan mengasumsikan sedikit keakraban dengan Node.js [`EventEmitters`][] dan [`Streams`][]. Jika Anda tidak cukup akrab dengan mereka, ada baiknya membaca cepat dokumen API untuk masing-masingnya.
 
 ## Buat Server
 
@@ -15,7 +15,7 @@ Setiap aplikasi server web node pada titik tertentu harus membuat server web oby
 const http = require('http');
 
 const server = http.createServer((request, response) => {
-  // magic terjadi disini!
+  // magic happens here!
 });
 ```
 
@@ -24,7 +24,7 @@ Fungsi yang diteruskan ke [`createServer`][] dipanggil sekali untuk setiap Permi
 ```javascript
 const server = http.createServer();
 server.on('request', (request, response) => {
-  // keajaiban yang sama terjadi di sini!
+  // the same kind of magic happens here!
 });
 ```
 
