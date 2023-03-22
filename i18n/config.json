@@ -138,7 +138,7 @@
     "code": "tr",
     "localName": "Türkçe",
     "name": "Turkish",
-    "langDir": "rtl",
+    "langDir": "ltr",
     "dateFormat": "DD.MM.YYYY",
     "hrefLang": "tr",
     "enabled": true
