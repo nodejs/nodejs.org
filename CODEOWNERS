@@ -1,19 +1,39 @@
 # Localization teams
 
-/pages/ar/ @nodejs/nodejs-ar
-/pages/ca/ # No Catalan team
-/pages/de/ @nodejs/nodejs-de
-/pages/es/ @nodejs/nodejs-es
-/pages/fa/ @nodejs/nodejs-fa
-/pages/fr/ @nodejs/nodejs-fr
-/pages/gl/ # No Galacian team
-/pages/it/ @nodejs/nodejs-it
-/pages/ja/ @nodejs/nodejs-ja
-/pages/ko/ @nodejs/nodejs-ko
-/pages/pt-br/ @nodejs/nodejs-pt
-/pages/ro/ @nodejs/nodejs-ro
-/pages/ru/ @nodejs/nodejs-ru
-/pages/tr/ @nodejs/nodejs-tr
-/pages/uk/ @nodejs/nodejs-uk
-/pages/zh-cn/ @nodejs/nodejs-cn
-/pages/zh-tw/ @nodejs/nodejs-tw
+# Node.js Release Blog Posts
+/pages/en/blog/release @nodejs/releasers
+
+# Security Blog posts
+/pages/en/blog/vulnerability @nodejs/security
+
+# Node.js general guides and Docs
+/pages/en/docs @nodejs/tsc @nodejs/collaborators
+
+# About Node.js
+/pages/en/about @nodejs/tsc
+
+# Getting Involved with Node.js
+/pages/en/get-involved @nodejs/tsc
+
+# GitHub Metadata and Actions
+/.github @nodejs/actions
+
+# Crowdin Configuration File
+/crowdin.yml @nodejs/i18n
+
+# Localisation Sources
+/i18n @nodejs/i18n
+
+# TypeScript types
+/types @nodejs/typescript
+
+# Scripts that might affect Performance and things
+/scripts @nodejs/website @nodejs/security @nodejs/performance @nodejs/releasers
+
+# Actually owned by the Website Team
+/util @nodejs/website
+/styles @nodejs/website
+/providers @nodejs/website
+/layouts @nodejs/website
+/hooks @nodejs/website
+/components @nodejs/website
