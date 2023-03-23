@@ -6,10 +6,8 @@ node_modules
 public/en/user-survey-report
 public/static/documents
 public/static/legacy
-
-# These should be fixed in the future as the
-# tests and scripts will be updated in this PR
 tests
+coverage
 
 # MDX Plugin enforces Prettier formatting which should
 # be done in the future as we don't want to update the Markdown file

@@ -7,6 +7,13 @@
       "env": { "node": true, "es6": true }
     },
     {
+      "files": [
+        "**/**.test.{js,jsx,ts,tsx}"
+      ],
+      "extends": ["plugin:testing-library/react"],
+      "env": { "jest": true, "node": true, "browser": true }
+    },
+    {
       "files": ["**/*.{ts,tsx}"],
       "globals": { "globalThis": false }
     },

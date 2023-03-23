@@ -25,7 +25,11 @@
     "prettier": "prettier . --check",
     "prettier:fix": "prettier . --write",
     "format": "npm-run-all prettier:fix lint:fix",
-    "scripts:release-post": "node scripts/release-post/index.mjs"
+    "scripts:release-post": "node scripts/release-post/index.mjs",
+    "test": "jest --passWithNoTests",
+    "test-watch": "jest --watch --passWithNoTests",
+    "test-ci": "npm run test -- --coverage --passWithNoTests",
+    "update-snapshot": "npm run test -- --updateSnapshot"
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
@@ -53,6 +57,8 @@
   "devDependencies": {
     "@builder.io/partytown": "^0.7.6",
     "@next/eslint-plugin-next": "^13.2.3",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.31",
     "@types/react-dom": "^18.0.11",
@@ -66,6 +72,9 @@
     "eslint-mdx": "^2.0.5",
     "eslint-plugin-mdx": "^2.0.5",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-testing-library": "^5.10.2",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
     "prettier": "^2.8.7",
     "remark-preset-lint-node": "^3.4.0",
     "remark-preset-prettier": "^2.0.1",
