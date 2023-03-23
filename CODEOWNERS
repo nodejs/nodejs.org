@@ -27,6 +27,7 @@
 
 # TypeScript types
 /types @nodejs/typescript
+tsconfig.json @nodejs/typescript
 
 # Scripts that might affect Performance and things
 /scripts @nodejs/website @nodejs/security @nodejs/performance @nodejs/releasers
