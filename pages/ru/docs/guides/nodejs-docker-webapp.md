@@ -111,7 +111,7 @@ COPY package*.json ./
 
 RUN npm install
 # Если вы создаете сборку для продакшн
-# RUN npm ci --only=production
+# RUN npm ci --omit=dev
 ```
 
 Обратите внимание, что вместо того, чтобы копировать весь рабочий каталог,
@@ -161,7 +161,7 @@ COPY package*.json ./
 
 RUN npm install
 # Если вы создаете сборку для продакшн
-# RUN npm ci --only=production
+# RUN npm ci --omit=dev
 
 # копируем исходный код
 COPY . .

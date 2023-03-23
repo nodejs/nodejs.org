@@ -201,7 +201,7 @@ COPY package*.json ./
 
 RUN npm install
 # If you are building your code for production
-# RUN npm ci --only=production
+# RUN npm ci --omit=dev
 ```
 -->
 
@@ -225,7 +225,7 @@ COPY package*.json ./
 
 RUN npm install
 # 프로덕션을 위한 코드를 빌드하는 경우
-# RUN npm ci --only=production
+# RUN npm ci --omit=dev
 ```
 
 <!--
@@ -296,7 +296,7 @@ COPY package*.json ./
 
 RUN npm install
 # If you are building your code for production
-# RUN npm ci --only=production
+# RUN npm ci --omit=dev
 
 # Bundle app source
 COPY . .
@@ -328,7 +328,7 @@ COPY package*.json ./
 
 RUN npm install
 # 프로덕션을 위한 코드를 빌드하는 경우
-# RUN npm ci --only=production
+# RUN npm ci --omit=dev
 
 # 앱 소스 추가
 COPY . .

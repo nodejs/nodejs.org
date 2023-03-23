@@ -89,7 +89,7 @@ COPY package*.json ./
 
 RUN npm install
 # If you are building your code for production
-# RUN npm ci --only=production
+# RUN npm ci --omit=dev
 ```
 
 Perhatikan bahwa, daripada menyalin seluruh direktori kerja, kami hanya menyalin berkas `package.json`. Ini memungkinkan kami untuk memanfaatkan Docker yang di-cache lapisan. bitJudo memiliki penjelasan yang bagus tentang ini [di sini](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/). Selanjutnya, perintah `npm ci`, yang ditentukan dalam komentar, membantu menyediakan build yang lebih cepat, andal, dan dapat direproduksi untuk lingkungan produksi. Anda dapat membaca lebih lanjut tentang ini [di sini](https://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable).
@@ -128,7 +128,7 @@ COPY package*.json ./
 
 RUN npm install
 # If you are building your code for production
-# RUN npm ci --only=production
+# RUN npm ci --omit=dev
 
 # Bundle app source
 COPY . .

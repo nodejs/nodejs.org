@@ -90,7 +90,7 @@ COPY package*.json ./
 
 RUN npm install
 # If you are building your code for production
-# RUN npm ci --only=production
+# RUN npm ci --omit=dev
 ```
 
 请注意，我们只是拷贝了 `package.json` 文件而非整个工作目录。这允许我们利用缓存 Docker 层的优势。bitJudo 对此有一个很好的解释，请[见此](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/)。
@@ -130,7 +130,7 @@ COPY package*.json ./
 
 RUN npm install
 # If you are building your code for production
-# RUN npm ci --only=production
+# RUN npm ci --omit=dev
 
 # Bundle app source
 COPY . .
