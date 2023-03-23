@@ -1,4 +1,5 @@
-# Localization teams
+# Default rules
+* @nodejs/website
 
 # Node.js Release Blog Posts
 /pages/en/blog/release @nodejs/releasers
