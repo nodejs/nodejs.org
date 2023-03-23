@@ -8,11 +8,11 @@ labels:
   current: Saat ini
   lts: LTS
   tagline-current: Fitur Terbaru
-  tagline-lts: Direkomendasikan Untuk Sebagian Besar Pengguna
+  tagline-lts: Disarankan untuk Banyak Orang
   changelog: Log Perubahan
   api: Dokumentasi API
   version-schedule-prompt: Untuk informasi tentang rilis yang didukung, lihat
-  version-schedule-prompt-link-text: jadwal Dukungan Jangka Panjang (LTS)
+  version-schedule-prompt-link-text: jadwal rilis (LTS)
 ---
 
 Node.js® adalah lingkungan runtime JavaScript lintas platform sumber terbuka.
