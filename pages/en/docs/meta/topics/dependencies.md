@@ -14,6 +14,7 @@ There are several dependencies that Node.js relies on to work the way it does.
   * [c-ares](#c-ares)
   * [OpenSSL](#openssl)
   * [zlib](#zlib)
+  * [Ada](#ada)
 * [Tools](#tools)
   * [npm](#npm)
   * [gyp](#gyp)
@@ -73,6 +74,14 @@ zlib library, also known for its use in gzip and libpng. Node.js uses zlib to
 create sync, async and streaming compression and decompression interfaces.
 
 * [Documentation](https://www.zlib.net/manual.html)
+
+### Ada
+
+For fast URL parsing, Node.js relies on [WHATWG Spec](https://url.spec.whatwg.org)
+compliant URL parser called Ada. Ada is used in all areas of Node.js including
+but not limited to module resolution, network requests and filesystem.
+
+* [Documentation](http://github.com/ada-url/ada)
 
 ## Tools
 
