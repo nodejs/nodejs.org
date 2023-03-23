@@ -38,3 +38,6 @@
 /layouts @nodejs/website
 /hooks @nodejs/website
 /components @nodejs/website
+
+# Translation Folders
+/pages/{ar,ca,de,es,fa,fr,gl,id,it,ja,ka,ko,nl,pt-br,ro,ru,tr,uk,zh-cn,zh-tw}/ @nodejs/i18n
