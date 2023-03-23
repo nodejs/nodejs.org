@@ -41,7 +41,7 @@ Example of a language:
 
 To become a proofreader, you need to contact the [Node.js Crowdin Manager](https://crowdin.com/profile/ovflowd) and ask to be promoted. The manager will check your request and promote you if you are eligible.
 
-## For old translators
+### For old translators
 
 Our I18n sub team was disbanded.
 Thanks to all the translators who helped us in the past.
