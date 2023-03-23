@@ -23,10 +23,3 @@ Follow the table below to fill the array:
 | `dateFormat` | The date format. It must be a valid [moment.js format](https://momentjs.com/docs/#/displaying/format/) | `DD.MM.YYYY` |
 | `hrefLang`   | The language code in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format         | `fr`         |
 | `enabled`    | If the language is enabled or not                                                                      | `true`       |
-
-## How to become Proofreader
-
-- Have translated at least 1000 strings
-- Have 200 strings approved
-
-To become a proofreader, you need to contact any Crowdin Manager and ask to be promoted. The manager will check your request and promote you if you are eligible.
