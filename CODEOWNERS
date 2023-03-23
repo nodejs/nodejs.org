@@ -1,19 +1,5 @@
-# Localization teams
+# Default rules
+* @nodejs/website
 
-/pages/ar/ @nodejs/nodejs-ar
-/pages/ca/ # No Catalan team
-/pages/de/ @nodejs/nodejs-de
-/pages/es/ @nodejs/nodejs-es
-/pages/fa/ @nodejs/nodejs-fa
-/pages/fr/ @nodejs/nodejs-fr
-/pages/gl/ # No Galacian team
-/pages/it/ @nodejs/nodejs-it
-/pages/ja/ @nodejs/nodejs-ja
-/pages/ko/ @nodejs/nodejs-ko
-/pages/pt-br/ @nodejs/nodejs-pt
-/pages/ro/ @nodejs/nodejs-ro
-/pages/ru/ @nodejs/nodejs-ru
-/pages/tr/ @nodejs/nodejs-tr
-/pages/uk/ @nodejs/nodejs-uk
-/pages/zh-cn/ @nodejs/nodejs-cn
-/pages/zh-tw/ @nodejs/nodejs-tw
+# Node.js Release Blog Posts
+/pages/en/blog/release @nodejs/releasers

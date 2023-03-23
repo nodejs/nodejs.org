@@ -26,10 +26,10 @@ additional:
   platform: Image Docker de Node.js
   provider: Plate-forme
   SmartOSBinaries: Fournisseur
-  DockerImage: Binaires SmartOS
-  officialDockerImage: Image Docker
-  LinuxPowerSystems: Image officielle de Node.js pour Docker
-  LinuxSystemZ: Linux sur Power LE Systems
-  AIXPowerSystems: Linux sur System z
+  DockerImage: Image Docker
+  officialDockerImage: Image Docker officielle de Node.js
+  LinuxPowerSystems: Linux sur Power LE Systems
+  LinuxSystemZ: Linux sur System z
+  AIXPowerSystems: AIX sur les systèmes de puissance
 ---
 

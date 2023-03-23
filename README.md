@@ -44,8 +44,11 @@ npm run serve
 ### Structure of this Repository
 
 - Page templates are in `/layouts`
-- Global styles are in `/layouts/css`
-- Global static files are in `/static`
+- Global styles are in `/styles`
+- Public files are in `/public`
+- i18n configuration is on `i18n/config.json`
+- Global static files are in `/public/static`
+  - Legacy static files are in `/public/static/legacy`
 - All content is in `/pages`
   - Initial development usually happens in English: `/pages/en`
   - `/i18n/locales/{{locale}}.json` is where global localization information lives.
