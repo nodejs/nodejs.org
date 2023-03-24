@@ -1,6 +1,6 @@
 # Node.js Website Translation Policy
 
-We use Crowdin to manage translations. You can join the Node.js project on [Crowdin](https://crowdin.com/project/nodejs-website).
+Node.js is a global platform and so this site has many translations. The translation of the site into languages other than English is handled by Crowdin translators.
 
 ## How to translate
 
@@ -12,7 +12,19 @@ We use Crowdin to manage translations. You can join the Node.js project on [Crow
 
 Go on `/i18n/config.json` and add the new language to the `locales` array.
 
-Follow the table below to fill the array:
+Fill the language object with the following fields:
+
+```js
+{
+  "code": "fr",
+  "localName": "Français",
+  "name": "French",
+  "langDir": "ltr",
+  "dateFormat": "DD.MM.YYYY",
+  "hrefLang": "fr",
+  "enabled": true
+}
+```
 
 | Field Name   | Description                                                                                            | Examples     |
 | ------------ | ------------------------------------------------------------------------------------------------------ | ------------ |
