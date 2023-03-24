@@ -77,7 +77,7 @@ create sync, async and streaming compression and decompression interfaces.
 
 ### Ada
 
-For fast URL parsing, Node.js relies on [WHATWG Spec](https://url.spec.whatwg.org)
+For fast URL parsing, Node.js relies on a [WHATWG Spec](https://url.spec.whatwg.org)
 compliant URL parser called Ada. Ada is used in all areas of Node.js including
 but not limited to module resolution, network requests and filesystem.
 
