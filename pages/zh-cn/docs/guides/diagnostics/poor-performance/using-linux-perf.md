@@ -1,5 +1,5 @@
 ---
-title: 低性能和效率 — 如何使用 Linux 的 Perf 工具
+title: 低性能和效率—如何使用 Linux 的 Perf 工具
 layout: docs.hbs
 ---
 
@@ -26,7 +26,7 @@ $ node --perf-basic-prof-only-functions index.js &
 然后根据预想的采集频率记录所有发生过的事件：
 
 ```console
-$ sudo perf record-F 99 -p 3870 -g
+$ sudo perf record -F 99 -p 3870 -g
 ```
 
 在本阶段你还可以加载一个负载测试，以便于生成更多的可靠的信息便于诊断和分析。当完成这一切之后，使用 SIGINT（Ctrl-C） 强制关闭性能分析工具即可。
@@ -57,11 +57,12 @@ node 3870 25147.878454:          1 cycles:
         ffffffffb5b35abe __x64_sys_epoll_wait+0x1e ([kernel.kallsyms])
         ffffffffb58044c7 do_syscall_64+0x57 ([kernel.kallsyms])
         ffffffffb640008c entry_SYSCALL_64_after_hwframe+0x44 ([kernel.kallsyms])
+....
 ```
 
 原始的输出有一些难以理解，所以通常而言，该文件被用于生成火焰图以方便查看。
 
-![节点标示示例](https://user-images.githubusercontent.com/26234614/129488674-8fc80fd5-549e-4a80-8ce2-2ba6be20f8e8.png)
+![Example nodejs flamegraph](https://user-images.githubusercontent.com/26234614/129488674-8fc80fd5-549e-4a80-8ce2-2ba6be20f8e8.png)
 
 为了生成火焰图，请参考[生成火焰图教程](https://nodejs.org/zh-cn/docs/guides/diagnostics-flamegraph/#create-a-flame-graph-with-system-perf-tools)，从第六步开始。
 
