@@ -14,7 +14,7 @@ Go on `/i18n/config.json` and add the new language to the `locales` array.
 
 Fill the language object with the following fields:
 
-```js
+```json
 {
   "code": "fr",
   "localName": "Français",
