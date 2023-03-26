@@ -82,14 +82,14 @@ WORKDIR /usr/src/app
 Image ini dilengkapi dengan Node.js dan NPM yang sudah terpasang, jadi hal berikutnya yang kami lakukan yang perlu dilakukan adalah menginstal dependensi aplikasi Anda menggunakan biner `npm`. Silahkan perhatikan bahwa jika Anda menggunakan `npm` versi 4 atau sebelumnya, `package-lock.json` file *tidak* akan dihasilkan.
 
 ```docker
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
+# Menginstal dependensi aplikasi
+# Wildcard digunakan untuk memastikan package.json DAN package-lock.json disalin
+# jika tersedia (npm@5+)
+SALIN package*.json ./
 
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --omit=dev
+JALANKAN npm install
+# Jika Anda membangun kode untuk produksi
+# Jalankan npm ci --omit=dev
 ```
 
 Perhatikan bahwa, daripada menyalin seluruh direktori kerja, kami hanya menyalin berkas `package.json`. Ini memungkinkan kami untuk memanfaatkan Docker yang di-cache lapisan. bitJudo memiliki penjelasan yang bagus tentang ini [di sini](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/). Selanjutnya, perintah `npm ci`, yang ditentukan dalam komentar, membantu menyediakan build yang lebih cepat, andal, dan dapat direproduksi untuk lingkungan produksi. Anda dapat membaca lebih lanjut tentang ini [di sini](https://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable).
@@ -116,22 +116,22 @@ CMD [ "node", "server.js" ]
 `Dockerfile` Anda sekarang akan terlihat seperti ini:
 
 ```docker
-FROM node:16
+DARI node:16
 
-# Create app directory
+# Buat direktori aplikasi
 WORKDIR /usr/src/app
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
+# Instal dependensi aplikasi
+# Wildcard digunakan untuk memastikan package.json DAN package-lock.json disalin
+# jika tersedia (npm@5+)
+Salin package*.json ./
 
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --omit=dev
+JALANKAN npm install
+# Jika Anda membangun kode untuk produksi
+# JALANKAN npm ci --omit=dev
 
-# Bundle app source
-COPY . .
+# Bundle source aplikasi
+SALIN..
 
 EXPOSE 8080
 CMD [ "node", "server.js" ]
