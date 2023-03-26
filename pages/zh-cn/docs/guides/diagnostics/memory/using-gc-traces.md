@@ -86,7 +86,7 @@ Total: 1000000 entries
 | 值                                                     | 解析说明             |
 | ----------------------------------------------------- | ---------------- |
 | 13973                                                 | 运行中进程的编号         |
-| 0x11000800000                                         | 独立内存地址 （JS 堆实例）  |
+| 0x110008000                                           | 独立内存地址 （JS 堆实例）  |
 | 44 ms                                                 | 自开始运行的时间（毫秒）     |
 | Scavenge                                              | 类型 / GC 阶段       |
 | 2.4                                                   | GC 运行前占有内存（MiB）  |
@@ -94,7 +94,7 @@ Total: 1000000 entries
 | 2.0                                                   | GC 运行后占有内存（MiB）  |
 | (4.2)                                                 | GC 运行后总占有内存（MiB） |
 | 0.5 / 0.0 ms (average mu = 1.000, current mu = 1.000) | GC 花费的时间（ms）     |
-| allocation failure                                    | GC 内存分配失败的具体原因   |
+| allocation failure                                    | GC 具体原因          |
 
 在此我们只需关注两件事：
 * Scavenge
@@ -112,7 +112,7 @@ Total: 1000000 entries
 
 * 我们分配了 `A`, `B`, `C` 和 `D` 四块内存变量
   ```bash
-  | A | B | C | D | <unallocated>|
+  | A | B | C | D | <unallocated> |
   ```
 * 我们继续想要分配 `E`
 * 可用空间不够，内存耗尽了
@@ -121,11 +121,11 @@ Total: 1000000 entries
 * 可用对象仍然得到保留
 * 假设 `B` 和 `D` 是无用对象，那么回收后如下所示
   ```bash
-  | A | C | <unallocated>|
+  | A | C | <unallocated> |
   ```
 * 现在我们可以分配 `E`
   ```bash
-  | A | C | E | <unallocated>|
+  | A | C | E | <unallocated> |
   ```
 
 v8 会提升对象，因此对无用空间进行两次 Scavenge 操作之后不再进行垃圾收集。
@@ -312,7 +312,7 @@ obs.disconnect();
 预知更多详情，请参考[性能钩子的相关文档][性能钩子]。
 
 ```ts
-Performance EnterprisanceEnter
+PerformanceEntry {
   name: 'gc',
   entryType: 'gc',
   startTime: 2820.567669,
