@@ -1,5 +1,5 @@
 ---
-title: 内存诊断——使用Heap 快照
+title: 内存诊断——使用 Heap 快照
 layout: docs.hbs
 ---
 
@@ -111,7 +111,7 @@ exec 3>&-
 
 ## 如何借助内存堆快照发现内存泄露？
 
-你可以通过[内存堆快照练习][heapsnapshot exercise]来锻炼你捕获快照以及寻找内存泄露的能力。
+为找到内存泄露，必须先对比两个快照。但必须先确保这些快照之间的区别未包含不需要的信息。 遵循下列步骤，你就可以创建一个干净的快照。
 
 1. 让进程加载所有资源并完成引导。最多需要几秒即可完成。
 2. 开始使用您怀疑会泄漏内存的功能。它很可能是进行一些初始分配，而不是泄漏的分配。
@@ -119,11 +119,11 @@ exec 3>&-
 4. 继续使用该功能一段时间，最好不要运行 其他内容。
 5. 再拍一张堆快照。两者之间的差额大多应该包含 泄漏的内容。
 6. 打开 Chromium/Chrome 开发工具并转到 *Memory* 标签
-7. 首先加载旧的快照文件，紧接着再加载新的。 ![在工具中加载按钮][9]
-8. 在顶部下拉菜单中选择较新的快照，并切换模式从 *Summary* 到 *Comparison* ![比较下拉列表][10]
+7. 首先加载旧的快照文件，紧接着再加载新的。 ![在工具中加载按钮][8]
+8. 在顶部下拉菜单中选择较新的快照，并切换模式从 *Summary* 到 *Comparison* ![比较下拉列表][9]
 9. 在最底部的面板中寻找他们之间较大的差异部分，浏览那些导致形成这些原因的相关引用。
 
-您可以使用 [捕捉堆快照并查找内存泄漏。 堆快照练习][heapsnapshot exercise]
+你可以通过[内存堆快照练习][heapsnapshot exercise]来锻炼你捕获快照以及寻找内存泄露的能力。
 
 [Chrome 开发工具]: https://developer.chrome.com/docs/devtools/
 [2]: /static/images/docs/guides/diagnostics/tools.png
@@ -132,7 +132,6 @@ exec 3>&-
 [heapdump 包]: https://www.npmjs.com/package/heapdump
 [`writeHeapSnapshot` 文档]: https://nodejs.org/api/v8.html#v8_v8_writeheapsnapshot_filename
 [openprofiling]: https://github.com/vmarchaud/openprofiling-node
-[heapsnapshot exercise]: https://github.com/naugtur/node-example-heapdump
-[9]: /static/images/docs/guides/diagnostics/load-snapshot.png
-[10]: /static/images/docs/guides/diagnostics/compare.png
-[heapsnapshot exercise]: https://github.com/naugtur/node-example-heapdump
+[8]: /static/images/docs/guides/diagnostics/load-snapshot.png
+[9]: /static/images/docs/guides/diagnostics/compare.png
+[heapsnapshot exercise]: https://github. com/naugtur/node-example-heapdump
