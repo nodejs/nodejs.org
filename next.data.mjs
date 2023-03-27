@@ -13,6 +13,8 @@ preBuild.generateWebsiteFeeds(cachedBlogData);
 const cachedNodeVersionData = getNodeVersionData();
 const cachedLocalisationData = getLocalisationData();
 
+console.info('info  - Pre-build files generated successfully!');
+
 const getNextData = async (content, { route }) => {
   const localisationData = await cachedLocalisationData(route);
   const nodeVersionData = await cachedNodeVersionData(route);
