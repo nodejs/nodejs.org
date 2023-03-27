@@ -7,7 +7,7 @@ layout: docs.hbs
 
 [Linux Perf](https://perf.wiki.kernel.org/index.php/Main_Page) 借助 JavaScript 提供您低级别程度的 CPU 分析， 本地分析以及操作系统级别的帧分析。
 
-**注意：**此教程仅针对 Linux 操作系统。
+**重要**：此教程仅在 Linux 上可用。
 
 ## 我该怎么做？
 
