@@ -42,8 +42,7 @@ const { method, url } = request;
 
 > **注意：** `request` 对象是 [`IncomingMessage`][] 的一个实例。
 
-这里的 `method` 总是一个普通的 HTTP 方法动作行为 (verb)，`url` 是指没有服务器协议和
-端口号的完整访问地址。一个典型的访问地址通常意味着包括第三个斜杠以及后面的所有内容。
+这里的 `method` 总是一个普通的 HTTP 方法动作行为 (verb)，`url` 是指没有服务器协议和 端口号的完整访问地址。一个典型的访问地址通常意味着包括第三个斜杠以及后面的所有内容。
 
 请求头也不是很难得到，它们也在 `request` 对象里，称为 `headers`。
 
@@ -52,20 +51,15 @@ const { headers } = request;
 const userAgent = headers['user-agent'];
 ```
 
-非常重要的一点是：所有的请求头全是小写字母，而不管实际上它们是怎么进行传输的。所以在无论任何
-情况下，解析请求头就得到了简化。
+非常重要的一点是：所有的请求头全是小写字母，而不管实际上它们是怎么进行传输的。所以在无论任何 情况下，解析请求头就得到了简化。
 
 如果一些请求头出现重复，它们的值不是被覆盖，就是通过英文分号进行分割。究竟哪种方式取决于具体的信息头。在某些情况下这可能出现问题，所以我们还可以直接使用 [`rawHeaders`][]。
 
 ## 请求体
 
-当接受到了一个 `POST` 或者 `PUT` 请求时，请求体对于你的应用程序非常重要。相对于访问请求
-头而言，获取请求体有些麻烦。传入请求对象的 `request` 其实实现了 [`ReadableStream`][] 接口，
-这个信息流可以被监听，或者与其它流进行对接。我们可以通过监听 `'data'` 和 `'end'` 事件从而把
-数据给取出来。
+当接受到了一个 `POST` 或者 `PUT` 请求时，请求体对于你的应用程序非常重要。相对于访问请求 头而言，获取请求体有些麻烦。传入请求对象的 `request` 其实实现了 [`ReadableStream`][] 接口， 这个信息流可以被监听，或者与其它流进行对接。我们可以通过监听 `'data'` 和 `'end'` 事件从而把 数据给取出来。
 
-每次在 `'data'` 事件中触发抓获的数据块是一个 [`Buffer`][]。如果你已知是一个字符串对象，那么
-最好的方案就是把这些数据收集到一个数组中，然后在 `'end'` 事件中拼接并且把它转化为字符串。
+每次在 `'data'` 事件中触发抓获的数据块是一个 [`Buffer`][]。如果你已知是一个字符串对象，那么 最好的方案就是把这些数据收集到一个数组中，然后在 `'end'` 事件中拼接并且把它转化为字符串。
 
 ```javascript
 let body = [];
@@ -77,12 +71,13 @@ request.on('data', (chunk) => {
 });
 ```
 
-> **注意：** 这看起来有些单调乏味，大多数情况下也确实是这样。
-> 不过庆幸的是因为 [`npm`][] 上实在有太多的诸如 [`concat-stream`][] 和 [`body`][] 一类类库屏蔽了部分细节逻辑而替你做了这些事情。当然，对于你而言在使用这些类库前知道它们到底干了什么非常重要，这就是你为什么需要读这篇文章！
+> **注意：** 这看起来有些单调乏味，大多数情况下也确实是这样。 不过庆幸的是因为 [`npm`][] 上实在有太多的诸如 [`concat-stream`][] 和 [`body`][] 一类类库屏蔽了部分细节逻辑而替你做了这些事情。当然，对于你而言在使用这些类库前知道它们到底干了什么非常重要，这就是你为什么需要读这篇文章！
 
 ## 一笔带过关于错误的一些信息
 
 因为 `request` 是一个 [`ReadableStream`][] 对象，它同样也是 [`EventEmitter`][] 对象。所以当有错误发生时，表现的行为是很相像的。当有错误在 `request` 流上发生时，它会自动激发自身的 `'error'` 事件。**如果你不去处理监听这个事件，此错误将被*抛出*，这导致你的程序崩溃。** 你应该无论如何都要添加 `'error'` 事件去监听你的请求对象，哪怕你只是做一个日志或者用你自己的独有方式去处理（当然，最佳的处理方式是返回一些出错的信息，这已是后话了）。
+
+在 `request`流中错误的表现便是通过激发（捕获）`'error'`事件。如果你不捕获处理的话，程序一旦出错会让你的 Node.js 程序立马崩溃。因此你务必要这样做——即便你啥都不处理，只是做一个日志也行（当然，最佳实践方法实发送某种 HTTP 出错消息给客（比如出错码等），这是后话）。
 
 ```javascript
 request.on('error', (err) => {
@@ -91,7 +86,7 @@ request.on('error', (err) => {
 });
 ```
 
-当然还有一些其它的方法来[处理错误][]，诸如其它的抽象化概念和工具等。但是你总是要意识到错误的确会发生，所以你应当处理它们。
+当然还有一些其它的方法来 [处理错误][]：诸如其它的抽象化概念和工具等。但是你总是要意识到错误的确会发生，所以你应当处理它们。
 
 ## 我们已经聊得那么多了
 
@@ -115,9 +110,9 @@ http.createServer((request, response) => {
 }).listen(8080); // Activates this server, listening on port 8080.
 ```
 
-如果我们运行这个示例代码，我们只能 *接收* 到请求但得不到 *回应*。实际上，如果你在浏览器内运行这个示例，你的请求只会超时，因为服务器那边根本没有返回给客户端任何东西。
+如果我们运行这个示例代码，我们只能*接收*到请求但得不到*回应*。实际上，如果你在浏览器内运行这个示例，你的请求只会超时，因为服务器那边根本没有返回给客户端任何东西。
 
-谈了那么久，我们都还没有说到 `response` 对象。它是一个 [`ServerResponse`][] 实例，而 ServerRespose 又是 [`WritableStream`][]。它包含了很多方法可以用以把数据返回给客户端。我们下面就将涉及到此议题。
+谈了那么久，我们都还没有说到 `response` 对象。它是一个[`ServerResponse`][],实例，而 ServerRespose 又是 [`WritableStream`][]。它包含了很多方法可以用以把数据返回给客户端。我们下面就将涉及到此议题。
 
 ## HTTP 状态码
 
@@ -131,7 +126,7 @@ response.statusCode = 404; // Tell the client that the resource wasn't found.
 
 ## 设置响应头
 
-响应头通过一个 [`setHeader`][] 的属性很方便的设置。
+响应头通过一个[`setHeader`][]的属性很方便地设置。
 
 ```javascript
 response.setHeader('Content-Type', 'application/json');
@@ -144,7 +139,7 @@ response.setHeader('X-Powered-By', 'bacon');
 
 我们之前讨论的设置响应头以及状态码的方法建立在你使用“隐式设置”的方式，这意味着你在发送消息体之前依赖于 node 发送请求头。
 
-如果你愿意，你可以为返回流重写响应头。为做到这点，你可以使用 [`writeHead`][] 方法向消息流重写状态码和响应头。
+如果你愿意，你可以为返回流重写响应头。为做到这点，你可以使用 [`writeHead`][],方法向消息流重写状态码和响应头。
 
 ```javascript
 response.writeHead(200, {
@@ -157,7 +152,7 @@ response.writeHead(200, {
 
 ## 发送返回体
 
-既然 `response` 对象是一个 [`WritableStream`][]，向客户端写入返回体只是一个普通的流方法的问题。
+既然 `response` 对象是一个[`WritableStream`][]，所以向客户端写入返回体只是一个普通的流方法的问题。
 
 ```javascript
 response.write('<html>');
@@ -168,22 +163,21 @@ response.write('</html>');
 response.end();
 ```
 
-消息流上的 `end` 方法同时还可以带入一些可选数据作为流上最后需要发送的一些数据，所以我们可以简单地把以上的代码做如下形式的简化：
+消息流上的 `end`方法同时还可以带入一些可选数据作为流上最后需要发送的一些数据，所以我们可以简单地把以上的代码做如下形式的简化：
 
 ```javascript
 response.end('<html><body><h1>Hello, World!</h1></body></html>');
 ```
 
-> **注意：** 你只有在开始向返回体写数据 *之前* 设置状态和响应头，这点很重要。
-> 因为响应头信息总是在消息体前到达。
+> **注意：** 你只有在开始向返回体写数据 *之前*设置状态和响应头，这点很重要。因为响应头信息总是在消息体前到达。
 
 ## 另一件一笔带过关于错误的事
 
-`response` 返回流同样也会触发 `'error'` 事件，某种程度上说你不得不自己去处理它。之前全部关于 `request` 消息流出错的处理方法在这里也同样适用。
+`response`返回流同样也会触发 `'error'`事件，某种程度上说你不得不自己去处理它。之前全部关于`request`消息流出错的处理方法在这里也同样适用。
 
 ## 把之前所学的全部整合到一起
 
-现在既然我们已经学了如何处理 HTTP 返回信息，现在让我们把这些零碎东西组合到一起。基于先前的示例代码，我们将作出一个服务端，使它可以将从用户接受到的全部信息返回给用户。我们将通过 `JSON.stringify` 对消息数据进行格式化。
+现在既然我们已经学了如何处理 HTTP 返回信息，现在让我们把这些零碎东西组合到一起。基于先前的示例代码，我们将作出一个服务端，使它可以将从用户接受到的全部信息返回给用户。我们将通过`JSON.stringify`对消息数据进行格式化。
 
 ```javascript
 const http = require('http');
@@ -264,10 +258,9 @@ http.createServer((request, response) => {
 }).listen(8080);
 ```
 
-> **注意：** 为了检查请求路径，我们设计了一个路由格式。
-> 其它形式的路由 `switch`，简单的可以通过 `switch` 的形式检查，复杂的诸如 [`express`][] 框架，如果你正在寻找路由而不需要做其它事情，简单用 [`router`][]。
+> **注意：** 为了检查请求路径，我们设计了一个路由格式。 其它形式的路由 `switch`，简单的可以通过 `switch` 的形式检查，复杂的诸如 [`express`][] 框架，如果你正在寻找路由而不需要做其它事情，简单用 [`router`][]。
 
-太棒了！现在我们进一步简化它。记住，`request` 是一个 [`ReadableStream`][]对象，`response`对象是一个 [`WritableStream`][]。那意味着我们可以使用 [`pipe`][]直接从一个流转到另外一个流。那的确是我们需要的：
+太棒了！现在我们进一步简化它。记住，`request`是一个[`ReadableStream`][]对象，`response`对象是一个[`WritableStream`][]对象。那意味着我们可以使用 [`pipe`][]直接从一个流转到另外一个流。那的确是我们需要的：
 
 ```javascript
 const http = require('http');
@@ -286,9 +279,9 @@ http.createServer((request, response) => {
 
 我们还尚未完全完成，如之前多次谈到，错误随时可能发生，所以我们需要处理它们。
 
-为了处理请求流上的错误，我们把错误记录到 `stderr` 对象中，然后回发一个 400 的代码表示 `错误请求`。在现实生活中，我们想检查分析错误，了解它们正确的状态码以及具体出错信息。具体可以参考 [`Error` 文档信息][]
+为了处理请求流上的错误，我们把错误记录到`stderr`对象中，然后回发一个 400 的代码表示`Bad Request`。在现实生活中，我们想检查分析错误，了解它们正确的状态码以及具体出错信息。具体可以参考[`Error` documentation][]。
 
-对于返回，我们把错误日志记录到 `stderr` 中。
+对于返回，我们把错误日志记录到 `stderr`中。
 
 ```javascript
 const http = require('http');
@@ -313,14 +306,14 @@ http.createServer((request, response) => {
 
 我们现在已经涉及到了大部分基本的 HTTP 请求知识，此时此刻，你应该已经具备了：
 
-* 实例化一个 HTTP 服务，它有一个处理请求的函数，并对某个特定端口进行监听。
-* 从 `request` 中获取请求头，访问路径，方法以及消息体。
+* 实例化带有请求处理函数的 HTTP 服务器，并让它在端口上监听。
+* 从 `request` 对象中获取请求头部、URL、方法和请求体等数据。
 * 让路由决定依赖于访问路径，或者在 `request` 对象其它数据中。
 * 通过 `response` 对象发送响应头，HTTP 状态码以及消息体。
 * 通过 `request` 对象与 `response` 对象对接，传输数据。
 * 在 `request` 和 `response` 流中处理错误。
 
-从这些基础知识中，关于 Node.js 的 HTTP 服务一些实用案例已经逐步被构建起来，API 文档还提供了大量其它的说明，所以请详细阅读 [`EventEmitters`][]，[`Streams`][] 以及 [`HTTP`][]。
+从这些简单示例中，我们已经可以构建针对众多特定情况下的 Node.js HTTP 服务器。这些 API 实际上还提供了其它的功能，故建议你最好通读 API 文档以便于更彻底地了解[`EventEmitters`][]、[`Streams`][]以及[`HTTP`][]。
 
 [`EventEmitters`]: https://nodejs.org/api/events.html
 [`Streams`]: https://nodejs.org/api/stream.html
@@ -344,5 +337,5 @@ http.createServer((request, response) => {
 [`express`]: https://www.npmjs.com/package/express
 [`router`]: https://www.npmjs.com/package/router
 [`pipe`]: https://nodejs.org/api/stream.html#stream_readable_pipe_destination_options
-[`Error` 文档信息]: https://nodejs.org/api/errors.html
+[`Error` documentation]: https://nodejs.org/api/errors.html
 [`HTTP`]: https://nodejs.org/api/http.html

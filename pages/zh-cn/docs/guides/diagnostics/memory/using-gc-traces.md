@@ -86,7 +86,7 @@ Total: 1000000 entries
 | 值                                                     | 解析说明             |
 | ----------------------------------------------------- | ---------------- |
 | 13973                                                 | 运行中进程的编号         |
-| 0x11000800000                                         | 独立内存地址 （JS 堆实例）  |
+| 0x110008000                                           | 独立内存地址 （JS 堆实例）  |
 | 44 ms                                                 | 自开始运行的时间（毫秒）     |
 | Scavenge                                              | 类型 / GC 阶段       |
 | 2.4                                                   | GC 运行前占有内存（MiB）  |
@@ -112,7 +112,7 @@ Total: 1000000 entries
 
 * 我们分配了 `A`, `B`, `C` 和 `D` 四块内存变量
   ```bash
-  | A | B | C | D | <unallocated>|
+  | A | B | C | D | <unallocated> |
   ```
 * 我们继续想要分配 `E`
 * 可用空间不够，内存耗尽了
@@ -121,11 +121,11 @@ Total: 1000000 entries
 * 可用对象仍然得到保留
 * 假设 `B` 和 `D` 是无用对象，那么回收后如下所示
   ```bash
-  | A | C | <unallocated>|
+  | A | C | <unallocated> |
   ```
 * 现在我们可以分配 `E`
   ```bash
-  | A | C | E | <unallocated>|
+  | A | C | E | <unallocated> |
   ```
 
 v8 会提升对象，因此对无用空间进行两次 Scavenge 操作之后不再进行垃圾收集。
@@ -276,7 +276,7 @@ v8.setFlagsFromString('--notrace-gc');
 
 ### 使用“性能钩子”
 
-你可以通过 [PerformanceObserver][]，从回调函数中得到一个诸如 [PerformanceEntry][] 一样的信息。
+在 Node.js 中，你可以使用[性能钩子][]来跟踪垃圾回收的具体情况。
 
 ```js
 const { PerformanceObserver } = require('perf_hooks');
@@ -307,12 +307,12 @@ obs.disconnect();
 
 ### 使用“性能钩子”检查一个跟踪信息
 
+你可以通过[PerformanceObserver][]，从回调函数中得到一个诸如[PerformanceEntry][]一样的 GC 静态数据信息
+
 举个例子：
 
-预知更多详情，请参考[性能钩子的相关文档][性能钩子]。
-
 ```ts
-Performance EnterprisanceEnter
+PerformanceEntry {
   name: 'gc',
   entryType: 'gc',
   startTime: 2820.567669,
@@ -335,7 +335,6 @@ Performance EnterprisanceEnter
 [PerformanceEntry]: https://nodejs.org/api/perf_hooks.html#perf_hooks_class_performanceentry
 [PerformanceObserver]: https://nodejs.org/api/perf_hooks.html#perf_hooks_class_performanceobserver
 [`--max-old-space-size`]: https://nodejs.org/api/cli.html#--max-old-space-sizesize-in-megabytes
-[性能钩子]: https://nodejs.org/api/perf_hooks.html
 [性能钩子]: https://nodejs.org/api/perf_hooks.html
 [performance hooks]: https://nodejs.org/api/perf_hooks.html
 [练习]: https://github.com/nodejs/diagnostics/tree/main/documentation/memory/step3/exercise
