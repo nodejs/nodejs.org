@@ -126,6 +126,7 @@ Commits should be signed. You can read more about [Commit Signing][] here.
     - Fast-tracking is only allowed for small bug fixes, small feature changes, localisation changes, or other sort of non-critical/highly-impacting changes that are not covered by the previous rule that allows PRs to be merged immediately.
     - Fast-tracking cannot be used for updates on the COLLABORATOR_GUIDE, CONTRIBUTING guide, CODEOWNERS, GitHub Actions or any security-impacting file or document that changes the governing policies of this repository.
 - There must be no objections after a 48 hour period
+- At least two approvals are required if the target branch is `main`
 - Tests must be included in Pull Requests for new features or bug fixes. If any test(s) are failing, you are responsible for fixing them.
 
 Each contribution is accepted only if there is no objection to it by a collaborator. During the review, collaborators may request that a specific contributor who is an expert in a particular area give an "LGTM" before the PR can be merged.
