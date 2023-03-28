@@ -135,7 +135,7 @@ header {
 @media screen and (min-width: 481px) {
   header {
     ul {
-      height: 42px;
+      min-height: 42px;
 
       li {
         margin-top: 4px;
@@ -175,7 +175,7 @@ header {
   header {
     .switchers {
       justify-content: center;
-      margin-bottom: 16px;
+      margin: 10px 0 16px;
       position: unset;
     }
 
