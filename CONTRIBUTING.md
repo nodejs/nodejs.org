@@ -119,6 +119,12 @@ Commits should be signed. You can read more about [Commit Signing][] here.
 - Pull Requests must be open for at least 48 hours.
   - Pull requests might be immediately merged if they contain critical bug fixes, short erratas (e.g. typos from previous PRs) or any critical change that is considered a "showstopper" for the operation of the website.
     - These kind of PRs should only be done by existing collaborators that have write-access and/or signed-off by administrators/maintainers.
+    - This rule cannot be used for updates on the COLLABORATOR_GUIDE, CONTRIBUTING guide, CODEOWNERS, GitHub Actions or any security-impacting file or document that changes the governing policies of this repository.
+  - Pull requests might be "fast-tracked", which means, they can be merged before the usual 48 hours notice if a "fast-track" label is added.
+    - The person that is fast-tracking the PR (adding the label) must also comment on the PR that they're requesting the PR to be fast-tracked
+    - The comment must mention `@nodejs/website` and must have at least one 👍 (or any other sort of approval reaction) if the person fast-tracking the PR is the author of the PR.
+    - Fast-tracking is only allowed for small bug fixes, small feature changes, localisation changes, or other sort of non-critical/highly-impacting changes that are not covered by the previous rule that allows PRs to be merged immediately.
+    - Fast-tracking cannot be used for updates on the COLLABORATOR_GUIDE, CONTRIBUTING guide, CODEOWNERS, GitHub Actions or any security-impacting file or document that changes the governing policies of this repository.
 - There must be no objections after a 48 hour period
 - Tests must be included in Pull Requests for new features or bug fixes. If any test(s) are failing, you are responsible for fixing them.
 
