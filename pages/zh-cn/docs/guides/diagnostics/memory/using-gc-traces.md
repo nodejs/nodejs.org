@@ -94,7 +94,7 @@ Total: 1000000 entries
 | 2.0                                                   | GC 运行后占有内存（MiB）  |
 | (4.2)                                                 | GC 运行后总占有内存（MiB） |
 | 0.5 / 0.0 ms (average mu = 1.000, current mu = 1.000) | GC 花费的时间（ms）     |
-| allocation failure                                    | GC 具体原因          |
+| allocation failure                                    | GC 内存分配失败的具体原因   |
 
 在此我们只需关注两件事：
 * Scavenge
@@ -276,7 +276,7 @@ v8.setFlagsFromString('--notrace-gc');
 
 ### 使用“性能钩子”
 
-你可以通过 [PerformanceObserver][]，从回调函数中得到一个诸如 [PerformanceEntry][] 一样的信息。
+在 Node.js 中，你可以使用[性能钩子][]来跟踪垃圾回收的具体情况。
 
 ```js
 const { PerformanceObserver } = require('perf_hooks');
@@ -307,9 +307,9 @@ obs.disconnect();
 
 ### 使用“性能钩子”检查一个跟踪信息
 
-举个例子：
+你可以通过[PerformanceObserver][]，从回调函数中得到一个诸如[PerformanceEntry][]一样的 GC 静态数据信息
 
-预知更多详情，请参考[性能钩子的相关文档][性能钩子]。
+举个例子：
 
 ```ts
 PerformanceEntry {
@@ -335,7 +335,6 @@ PerformanceEntry {
 [PerformanceEntry]: https://nodejs.org/api/perf_hooks.html#perf_hooks_class_performanceentry
 [PerformanceObserver]: https://nodejs.org/api/perf_hooks.html#perf_hooks_class_performanceobserver
 [`--max-old-space-size`]: https://nodejs.org/api/cli.html#--max-old-space-sizesize-in-megabytes
-[性能钩子]: https://nodejs.org/api/perf_hooks.html
 [性能钩子]: https://nodejs.org/api/perf_hooks.html
 [performance hooks]: https://nodejs.org/api/perf_hooks.html
 [练习]: https://github.com/nodejs/diagnostics/tree/main/documentation/memory/step3/exercise
