@@ -48,7 +48,7 @@
     "semver": "^7.3.8",
     "strftime": "^0.10.1",
     "stylelint-config-standard": "^31.0.0",
-    "swr": "^2.1.0"
+    "swr": "^2.1.1"
   },
   "devDependencies": {
     "@builder.io/partytown": "^0.7.6",
