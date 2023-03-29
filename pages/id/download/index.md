@@ -15,7 +15,7 @@ downloads:
   buildInstructions: Membangun Node.js dari sumber pada platform yang didukung
   WindowsInstaller: Instalasi Windows
   WindowsBinary: Windows Binary
-  MacOSInstaller: macOS Installer
+  MacOSInstaller: Instalasi macOS
   MacOSBinary: macOS Binary
   LinuxBinaries: Linux Binaries
   SourceCode: Kode Sumber
