@@ -69,7 +69,7 @@
     "prettier": "^2.8.6",
     "remark-preset-lint-node": "^3.4.0",
     "remark-preset-prettier": "^2.0.1",
-    "sharp": "^0.31.3",
+    "sharp": "^0.32.0",
     "stylelint": "^15.3.0",
     "stylelint-config-recommended-scss": "^9.0.1",
     "stylelint-order": "^6.0.3",
