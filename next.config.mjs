@@ -23,4 +23,5 @@ export default withNextra({
   images: { unoptimized: true },
   outputFileTracing: false,
   basePath: process.env.NEXT_BASE_PATH || '',
+  experimental: { webpackBuildWorker: true },
 });
