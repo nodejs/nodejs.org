@@ -23,13 +23,3 @@ layout: contribute.hbs
 * [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) 每日收集最新资讯。
 * [The DEV Community Node.js tag](https://dev.to/t/node) 是一个共享 Node.js 项目、文章和教程，以及开始讨论并接受与 Node.js 相关的主题，我们欢迎任何级别的开发人员加入其中。
 * [Nodeiflux](https://discordapp.com/invite/vUsrbjd) 是一个 Node.js 后端开发者在 Discord 上互相支援的友好社区。
-
-## 国际化社区站点及项目
-
-* [汉语社团](https://cnodejs.org/)
-* [匈牙利（马札尔人）语社团](https://nodehun.blogspot.com/)
-* [Facebook 上以色列语 Node.js 用户组](https://www.facebook.com/groups/node.il/)
-* [日本语用户组](https://nodejs.jp/)
-* [Facebook 上西班牙 Node.js 用户组](https://www.facebook.com/groups/node.es/)
-* [越南语 Node.js 社团](https://www.facebook.com/nodejs.vn/)
-* [乌兹别克斯坦 Node.js 用户组](https://t.me/nodejs_uz)
