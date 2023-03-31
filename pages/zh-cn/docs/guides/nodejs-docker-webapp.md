@@ -67,10 +67,10 @@ touch Dockerfile
 
 用你最喜欢的文本编辑器打开这个 `Dockerfile`。
 
-我们要做的第一件事是定义我们需要从哪个镜像进行构建。这里我们将使用最新的 LTS（长期服务器支持版），`Node` 的版本号为 `12`。你可以从 [Docker 站点](https://hub.docker.com/) 获取相关镜像：
+我们要做的第一件事是定义我们需要从哪个镜像进行构建。这里我们将使用最新的 LTS（长期服务器支持版），`Node` 的版本号为 `16`。你可以从 [Docker 站点](https://hub.docker.com/) 获取相关镜像：
 
 ```docker
-FROM node:12
+FROM node:16
 ```
 
 下一步在镜像中创建一个文件夹存放应用程序代码，这将是你的应用程序工作目录：
@@ -93,8 +93,7 @@ RUN npm install
 # RUN npm ci --omit=dev
 ```
 
-请注意，我们只是拷贝了 `package.json` 文件而非整个工作目录。这允许我们利用缓存 Docker 层的优势。bitJudo 对此有一个很好的解释，请[见此](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/)。
-进一步说，对于生产环境而言，注释中提及的 `npm ci` 命令协助提供了一个更快、可靠、可再生的构建环境。欲知详情，可以参考[此处](https://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable)。
+请注意，我们只是拷贝了 `package.json` 文件而非整个工作目录。这允许我们利用缓存 Docker 层的优势。bitJudo 对此有一个很好的解释，请[见此](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/)。 进一步说，对于生产环境而言，注释中提及的 `npm ci` 命令协助提供了一个更快、可靠、可再生的构建环境。欲知详情，可以参考[此处](https://blog.npmjs.org/post/171556855892/introducing-npm-ci-for-faster-more-reliable)。
 
 在 Docker 镜像中使用 `COPY` 命令绑定你的应用程序：
 
@@ -229,8 +228,7 @@ Hello world
 
 ## 关闭镜像
 
-我们可以通过使用  `kill` 命令来关闭我们已经开启的镜像。这里使用到了容器的 ID，
-在本示例代码中是 `ecce33b30ebf`。
+我们可以通过使用  `kill` 命令来关闭我们已经开启的镜像。这里使用到了容器的 ID， 在本示例代码中是 `ecce33b30ebf`。
 
 ```bash
 # Kill our running container
@@ -247,6 +245,6 @@ curl: (7) Failed to connect to localhost port 49160: Connection refused
 
 * [官方 Node.js 的 Docker 镜像](https://hub.docker.com/_/node/)
 * [Node.js 基于 Docker 使用的最佳经验](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
-* [官方 Docker 文档](https://docs.docker.com/)
+* [官方 Docker 文档](https://docs.docker.com/get-started/nodejs/build-images/)
 * [在 StackOverFlow 上有关 Docker 标记内容](https://stackoverflow.com/questions/tagged/docker)
-* [Docker Subreddit](https://reddit.com/r/docker)
+* [Docker 版块](https://reddit.com/r/docker)
