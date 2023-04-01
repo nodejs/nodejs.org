@@ -3,8 +3,6 @@
 - [Issues and Pull Requests](#issues-and-pull-requests)
 - [Accepting Modifications](#accepting-modifications)
   - [Involving the Website Team](#involving-the-website-team)
-- [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin-11)
-- [Code of Conduct](#code-of-conduct)
 - [Code editing](#code-editing)
   - [Adding new pages](#adding-new-pages)
     - [Create the page content](#create-the-page-content)
