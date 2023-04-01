@@ -29,7 +29,9 @@
     "test": "jest --passWithNoTests",
     "test-watch": "jest --watch --passWithNoTests",
     "test-ci": "npm run test -- --coverage --passWithNoTests",
-    "update-snapshot": "npm run test -- --updateSnapshot"
+    "update-snapshot": "npm run test -- --updateSnapshot",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
@@ -57,6 +59,13 @@
   "devDependencies": {
     "@builder.io/partytown": "^0.7.6",
     "@next/eslint-plugin-next": "^13.2.3",
+    "@storybook/addon-essentials": "^7.0.0-rc.8",
+    "@storybook/addon-interactions": "^7.0.0-rc.8",
+    "@storybook/addon-links": "^7.0.0-rc.8",
+    "@storybook/blocks": "^7.0.0-rc.8",
+    "@storybook/nextjs": "^7.0.0-rc.8",
+    "@storybook/react": "^7.0.0-rc.8",
+    "@storybook/testing-library": "^0.0.14-next.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/node": "^18.15.11",
@@ -79,6 +88,7 @@
     "remark-preset-lint-node": "^3.4.0",
     "remark-preset-prettier": "^2.0.1",
     "sharp": "^0.32.0",
+    "storybook": "^7.0.0-rc.8",
     "stylelint": "^15.3.0",
     "stylelint-config-recommended-scss": "^9.0.1",
     "stylelint-order": "^6.0.3",

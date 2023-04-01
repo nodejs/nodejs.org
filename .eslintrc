@@ -7,9 +7,7 @@
       "env": { "node": true, "es6": true }
     },
     {
-      "files": [
-        "**/**.test.{js,jsx,ts,tsx}"
-      ],
+      "files": ["**/**.test.{js,jsx,ts,tsx}"],
       "extends": ["plugin:testing-library/react"],
       "env": { "jest": true, "node": true, "browser": true }
     },
@@ -74,6 +72,12 @@
         "no-unused-expressions": "off",
         "no-unused-vars": "off",
         "prefer-promise-reject-errors": "off"
+      }
+    },
+    {
+      "files": ["**/*.stories.{ts,tsx}"],
+      "rules": {
+        "import/no-anonymous-default-export": "off"
       }
     }
   ]

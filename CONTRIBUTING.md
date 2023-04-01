@@ -98,6 +98,8 @@ We also offer other commands that offer you assistance during your local develop
 - `npm run format` formats and fixes the whole codebase
 - `npm run scripts:release-post` generates a release post for the current release
   - **Usage:** `npm run scripts:release-post -- --version=vXX.X.X --force`
+- `npm run storybook` starts Storybook's local server
+- `npm run build-storybook` builds Storybook as a static web application for publishing
 
 ## Commit Guidelines
 
