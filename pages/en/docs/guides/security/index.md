@@ -412,7 +412,7 @@ functionality isn't securely stable. Although, feedback is highly appreciated.
 
 ## OpenSSF Tools
 
-The [OpenSSF][] is leading several initiatives that can be very useful, especially if you plan to publish an Npm package. These initiatives include:
+The [OpenSSF][] is leading several initiatives that can be very useful, especially if you plan to publish an npm package. These initiatives include:
 
 - [OpenSSF Scorecard][] Scorecard evaluates open source projects using a series of automated security risk checks. You can use it to proactively assess vulnerabilities and dependencies in your code base and make informed decisions about accepting vulnerabilities.
 - [OpenSSF Best Practices Badge Program][] Projects can voluntarily self-certify by describing how they comply with each best practice. This will generate a badge that can be added to the project.
