@@ -1,6 +1,6 @@
-commit_message: "chore(i18n): added new translations from crowdin"
-pull_request_title: "chore(i18n): crowdin sync"
-pull_request_labels: 
+commit_message: 'chore(i18n): added new translations from crowdin'
+pull_request_title: 'chore(i18n): crowdin sync'
+pull_request_labels:
   - i18n
   - crowdin
 files:
