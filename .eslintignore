@@ -13,3 +13,7 @@ coverage
 # be done in the future as we don't want to update the Markdown file
 # contents right now
 pages/**/*.md
+
+# Storybook
+.storybook
+storybook-static
