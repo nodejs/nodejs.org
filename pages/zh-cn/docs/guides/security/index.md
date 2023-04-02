@@ -280,6 +280,13 @@ SyntaxError [ERR_SRI_PARSE]: Subresource Integrity string "sha256-iuGZ6SFVFpMuHU
 
 在生产环境中直接使用尝鲜版功能绝不推荐！因为尝鲜功能有可能随时发生重大变更，而且他们实际的功能不一定稳定。虽然如此，我们还是非常乐于接受用户的反馈。
 
+## OpenSSF 工具
+
+[OpenSSF][] 正在引导一些可能非常有用的倡议，特别是如果您计划发布一个 npm 软件包。这些倡议包括：
+
+- [OpenSSF 计分卡][] 计分卡使用一系列自动安全风险检查来评估开源项目。 你可以使用它来主动评估你的代码基础中的脆弱性和依赖性，并就接受脆弱性做出明智的决定。
+- [OpenSSF 最佳做法徽章方案][] 项目可以通过描述它们如何遵守每个最佳做法而自愿自我认证。 这将生成一个可以添加到项目的徽章。
+
 [威胁示例]: https://github.com/nodejs/node/blob/main/SECURITY.md#the-nodejs-threat-model
 [安全指南讨论议题]: https://github.com/nodejs/security-wg/issues/488
 [nodejs 使用指南]: https://github.com/goldbergyoni/nodebestpractices
@@ -308,3 +315,6 @@ SyntaxError [ERR_SRI_PARSE]: Subresource Integrity string "sha256-iuGZ6SFVFpMuHU
 [完整检查路径的规则机制]: https://nodejs.org/api/permissions.html#integrity-checks
 [experimental-features]: #experimental-features-in-production
 [`Socket`]: https://socket.dev/
+[OpenSSF]: https://openssf.org/
+[OpenSSF 计分卡]: https://securityscorecards.dev/
+[OpenSSF 最佳做法徽章方案]: https://bestpractices.coreinfrastructure.org/en
