@@ -280,6 +280,13 @@ Perhatikan, selalu disarankan penggunaan `--policy-integrity` untuk menghindari 
 
 Penggunaan fitur eksperimental dalam produksi tidak disarankan. Fitur eksperimental dapat mengalami perubahan besar jika diperlukan, dan fungsinya tidak stabil dengan aman. Meskipun, umpan balik sangat dihargai.
 
+## Alat OpenSSF
+
+[OpenSSF][] memimpin beberapa inisiatif yang bisa sangat berguna, terutama jika Anda berencana memublikasikan paket npm. Inisiatif tersebut meliputi:
+
+- [OpenSSF Scorecard][] Scorecard mengevaluasi project open source menggunakan serangkaian pemeriksaan risiko keamanan otomatis. Anda dapat menggunakannya untuk secara proaktif menilai kerentanan dan ketergantungan dalam basis kode Anda dan membuat keputusan yang matang tentang menerima kerentanan.
+- [Program Badge Praktik Terbaik OpenSSF][] Project dapat secara sukarela melakukan sertifikasi mandiri dengan menjelaskan cara mereka mematuhi setiap praktik terbaik. Ini akan menghasilkan lencana yang dapat ditambahkan ke proyek.
+
 [model ancaman]: https://github.com/nodejs/node/blob/main/SECURITY.md#the-nodejs-threat-model
 [security guidance issue]: https://github.com/nodejs/security-wg/issues/488
 [nodejs guideline]: https://github.com/goldbergyoni/nodebestpractices
@@ -308,3 +315,6 @@ Penggunaan fitur eksperimental dalam produksi tidak disarankan. Fitur eksperimen
 [mekanisme kebijakan dengan pemeriksaan integritas]: https://nodejs.org/api/permissions.html#integrity-checks
 [experimental-features]: #experimental-features-in-production
 [`Socket`]: https://socket.dev/
+[OpenSSF]: https://openssf.org/
+[OpenSSF Scorecard]: https://securityscorecards.dev/
+[Program Badge Praktik Terbaik OpenSSF]: https://bestpractices.coreinfrastructure.org/en
