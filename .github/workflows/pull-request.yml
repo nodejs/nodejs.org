@@ -9,7 +9,27 @@ env:
 
 jobs:
   lint:
-    name: Lint on ${{ matrix.os }}
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install NPM packages
+        run: npm ci
+
+      - name: Run Linting
+        run: npm run lint
+
+  unit-tests:
+    name: Tests on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -30,8 +50,8 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: Run Linting
-        run: npm run lint
+      - name: Run Unit Tests
+        run: npm run test-ci
 
   unit-tests:
     name: Tests on ${{ matrix.os }}

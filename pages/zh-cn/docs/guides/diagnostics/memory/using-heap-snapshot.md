@@ -123,7 +123,7 @@ exec 3>&-
 8. 在顶部下拉菜单中选择较新的快照，并切换模式从 *Summary* 到 *Comparison* ![比较下拉列表][9]
 9. 在最底部的面板中寻找他们之间较大的差异部分，浏览那些导致形成这些原因的相关引用。
 
-你可以通过[内存堆快照练习][heapsnapshot exercise]来锻炼你捕获快照以及寻找内存泄露的能力。
+你可以通过[此内存堆快照练习][heapsnapshot exercise]来锻炼你捕获快照以及寻找内存泄露的能力。
 
 [Chrome 开发工具]: https://developer.chrome.com/docs/devtools/
 [2]: /static/images/docs/guides/diagnostics/tools.png
@@ -134,4 +134,4 @@ exec 3>&-
 [openprofiling]: https://github.com/vmarchaud/openprofiling-node
 [8]: /static/images/docs/guides/diagnostics/load-snapshot.png
 [9]: /static/images/docs/guides/diagnostics/compare.png
-[heapsnapshot exercise]: https://github. com/naugtur/node-example-heapdump
+[heapsnapshot exercise]: https://github.com/naugtur/node-example-heapdump
