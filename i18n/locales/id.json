@@ -35,5 +35,6 @@
   "components.pagination.next": "Terbaru | ",
   "components.pagination.previous": "Lama",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {Oleh {author}, }}",
-  "layouts.blogIndex.currentYear": "Berita dari {year}"
+  "layouts.blogIndex.currentYear": "Berita dari {year}",
+  "components.codeBox.copy": "{copied, select, true {copied}other {copy}}"
 }
