@@ -6,6 +6,8 @@ node_modules
 public/en/user-survey-report
 public/static/documents
 public/static/legacy
+
+# Test files
 tests
 coverage
 
@@ -13,3 +15,6 @@ coverage
 # be done in the future as we don't want to update the Markdown file
 # contents right now
 pages/**/*.md
+
+# Storybook
+storybook-static
