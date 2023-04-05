@@ -11,4 +11,5 @@ export interface WebsiteBanner {
   text?: string;
   html?: string;
   link: string;
+  bannerBtnText?: string;
 }
