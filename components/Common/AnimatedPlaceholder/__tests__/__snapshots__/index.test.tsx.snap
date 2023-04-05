@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AnimatedPlaceholder component should render correctly with default skeleton 1`] = `
+<div>
+  <div
+    class="placeholder"
+    style="width: 400px; height: 50px;"
+  >
+    <div
+      class="placeholderImage"
+    />
+    <div
+      class="placeholderText"
+    >
+      <div
+        class="placeholderTextLine"
+      />
+      <div
+        class="placeholderTextLine"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AnimatedPlaceholder component should support passing loader skeleton from outside 1`] = `
+<div>
+  <div
+    class="placeholder"
+    style="width: 400px; height: 50px;"
+  >
+    <div
+      class="animated-placeholder__image"
+    />
+  </div>
+</div>
+`;
