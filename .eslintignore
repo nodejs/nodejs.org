@@ -6,10 +6,14 @@ node_modules
 public/en/user-survey-report
 public/static/documents
 public/static/legacy
-tests
+
+# We don't want to lint/prettify the Coverage Results
 coverage
 
 # MDX Plugin enforces Prettier formatting which should
 # be done in the future as we don't want to update the Markdown file
 # contents right now
 pages/**/*.md
+
+# We shouldn't lint statically generated Storybook files
+storybook-static

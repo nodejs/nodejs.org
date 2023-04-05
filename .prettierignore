@@ -18,3 +18,6 @@ pages/**/*.md
 # Prettier's Handlebar parser is limited and chokes on some syntax features
 # https://github.com/prettier/prettier/issues/11834
 scripts/release-post/template.hbs
+
+# We shouldn't lint statically generated Storybook files
+storybook-static
