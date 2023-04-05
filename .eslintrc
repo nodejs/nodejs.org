@@ -13,7 +13,7 @@
     },
     {
       "files": ["**/*.{ts,tsx}"],
-      "globals": { "globalThis": false }
+      "globals": { "globalThis": false, "JSX": true }
     },
     {
       "files": ["**/*.tsx"],
