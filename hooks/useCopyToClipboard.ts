@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const copyToClipboard = (value: string) => {
-  if (typeof window === 'undefined') {
+  if (typeof navigator === 'undefined') {
     return Promise.resolve(false);
   }
 
