@@ -14,8 +14,13 @@ const useTextContent = ({ text, link, bannerBtnText }: WebsiteBanner) =>
     if (text) {
       return (
         <p>
-          <a href={link} target="_blank" rel="noopener noreferrer">
-            <button type="button">{bannerBtnText || 'Read More'}</button>
+          <a
+            href={link}
+            className={styles.bannerBtn}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {bannerBtnText || 'Read More'}
           </a>
           {text}
         </p>

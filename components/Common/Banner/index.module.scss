@@ -22,6 +22,7 @@
     &:hover {
       background-color: transparent !important;
       color: $node-green;
+      text-decoration: underline;
     }
 
     img {
@@ -30,7 +31,7 @@
       object-fit: cover;
     }
 
-    button {
+    &.bannerBtn {
       background: var(--purple5);
       padding: 0 var(--space-16);
       border: 1px solid transparent;
@@ -44,10 +45,11 @@
       position: relative;
       text-decoration: none;
       white-space: nowrap;
+      font-size: 1rem;
 
       &:hover {
         cursor: pointer;
-        background-color: $node-green;
+        background-color: $node-green !important;
       }
     }
   }
@@ -64,6 +66,7 @@
 
     a {
       &:hover {
+        text-decoration: underline;
         background-color: transparent !important;
       }
     }
