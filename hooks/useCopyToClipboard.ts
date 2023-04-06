@@ -18,13 +18,11 @@ export const useCopyToClipboard = (): [boolean, (text: string) => void] => {
   const copyText = (text: string) => copyToClipboard(text).then(setCopied);
 
   useEffect(() => {
-    if (!copied) {
-      return undefined;
+    if (copied) {
+      const timerId = setTimeout(() => setCopied(false), 3000);
+      return () => clearTimeout(timerId);
     }
-
-    const timerId = setTimeout(() => setCopied(false), 3000);
-
-    return () => clearTimeout(timerId);
+    return undefined;
   }, [copied]);
 
   return [copied, copyText];
