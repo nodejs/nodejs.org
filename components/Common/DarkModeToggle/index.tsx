@@ -13,9 +13,7 @@ const DarkModeToggle = () => {
     <button
       type="button"
       className={styles.darkModeToggle}
-      onClick={() => {
-        toggleTheme?.();
-      }}
+      onClick={() => toggleTheme?.()}
       onKeyPress={() => toggleTheme?.(true)}
       aria-pressed={isDark}
     >

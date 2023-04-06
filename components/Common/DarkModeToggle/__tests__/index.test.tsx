@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 import DarkModeToggle from '../index';
 
 let mockCurrentTheme = '';
+
 const mockToggleTheme = jest.fn().mockImplementation(() => {
   mockCurrentTheme = mockCurrentTheme === 'dark' ? 'light' : 'dark';
 });

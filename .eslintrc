@@ -13,10 +13,13 @@
     },
     {
       "files": ["**/*.{ts,tsx}"],
-      "globals": { "globalThis": false, "JSX": true }
+      "globals": { "globalThis": false }
     },
     {
       "files": ["**/*.tsx"],
+      "globals": {
+        "JSX": true
+      },
       "rules": {
         "react/no-unused-prop-types": "off",
         "react/require-default-props": "off",

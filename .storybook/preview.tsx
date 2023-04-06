@@ -5,6 +5,7 @@ import { pageProps } from './constants';
 
 import '../styles/styles.scss';
 import '../styles/tokens.scss';
+import { ThemeProvider } from '../providers/themeprovider';
 
 const preview: Preview = {
   parameters: {
@@ -24,7 +25,11 @@ const preview: Preview = {
 };
 
 export const decorators = [
-  Story => <App Component={Story} pageProps={pageProps} />,
+  Story => (
+    <ThemeProvider>
+      <App Component={Story} pageProps={pageProps} />
+    </ThemeProvider>
+  ),
 ];
 
 Object.defineProperty(NextImage, 'default', {
