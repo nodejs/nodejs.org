@@ -10,7 +10,7 @@ Node.js is a global platform and so this site has many translations. The transla
 
 ## Any questions or feedbacks on Translations
 
-If you have any questions or feedbacks on current translations, you can start a discussion [here](https://crowdin.com/project/nodejs-website/discussions) by clicking the "New Topic" and choosing your language from the right dropdown, or a [conversation](https://support.crowdin.com/enterprise/messages/#creating-a-new-conversation) by adding your translators.
+If you have any questions or feedbacks on current translations, you can [start a discussion](https://crowdin.com/project/nodejs-website/discussions) by choosing the "New Topic" and your language from the right dropdown, or a [conversation](https://support.crowdin.com/enterprise/messages/#creating-a-new-conversation) by adding your translators.
 
 ## How to add a new language
 
