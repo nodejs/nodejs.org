@@ -5,7 +5,6 @@ const config = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    'storybook-addon-sass-postcss',
   ],
   framework: {
     name: '@storybook/nextjs',
