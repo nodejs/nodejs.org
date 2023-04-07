@@ -36,8 +36,7 @@
       "startDate": "2022-12-16T17:00:00.000Z",
       "endDate": "2022-12-30T16:00:00.000Z",
       "text": "Node.js assessment of OpenSSL 3.0.7 security advisory",
-      "link": "https://nodejs.org/en/blog/vulnerability/openssl-fixes-in-regular-releases-dec2022/",
-      "bannerBtnText": "Read more"
+      "link": "https://nodejs.org/en/blog/vulnerability/openssl-fixes-in-regular-releases-dec2022/"
     }
   }
 }

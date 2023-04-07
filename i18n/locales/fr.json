@@ -34,6 +34,7 @@
   "components.header.buttons.toggleDarkMode": "Basculer le mode sombre/clair",
   "components.pagination.next": "Plus récent ",
   "components.pagination.previous": "Plus anciens",
+  "components.common.banner.button.text": "Read More",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {Par {author}, }}",
   "layouts.blogIndex.currentYear": "Actualités de {year}"
 }

@@ -34,6 +34,7 @@
   "components.header.buttons.toggleDarkMode": "Karanlık/aydınlık modunu değiştir",
   "components.pagination.next": "Daha Yeni | ",
   "components.pagination.previous": "Daha Eski",
+  "components.common.banner.button.text": "Read More",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {{author} tarafından }}",
   "layouts.blogIndex.currentYear": "{year} yılından haberler"
 }

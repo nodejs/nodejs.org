@@ -34,6 +34,7 @@
   "components.header.buttons.toggleDarkMode": "გადართვა მუქ/ნათელ რეჟიმზე",
   "components.pagination.next": "შემდეგი | ",
   "components.pagination.previous": "წინა",
+  "components.common.banner.button.text": "Read More",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {By {author}, }}",
   "layouts.blogIndex.currentYear": "News from {year}"
 }

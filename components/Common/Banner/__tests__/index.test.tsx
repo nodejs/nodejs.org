@@ -1,8 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Banner from '..';
-import { WebsiteBanner } from '../../../../types';
+import { AppProps, WebsiteBanner } from '../../../../types';
 import '@testing-library/jest-dom';
+import { LocaleProvider } from '../../../../providers/localeProvider';
 
 jest.mock('isomorphic-dompurify', () => ({
   sanitize: jest.fn((html: string) => html),
@@ -15,6 +16,8 @@ const bannersIndex: WebsiteBanner = {
   startDate: '',
 };
 
+const i18nData = { currentLocale: { code: 'en' } } as AppProps['i18nData'];
+
 describe('Tests for Header component', () => {
   it('renders when today between startDate and endDate', () => {
     const beforeToday = new Date();
@@ -25,7 +28,11 @@ describe('Tests for Header component', () => {
     bannersIndex.startDate = beforeToday.toISOString();
     bannersIndex.endDate = afterToday.toISOString();
 
-    render(<Banner bannersIndex={bannersIndex} />);
+    render(
+      <LocaleProvider i18nData={i18nData}>
+        <Banner bannersIndex={bannersIndex} />
+      </LocaleProvider>
+    );
 
     const bannerText = screen.getByText(bannersIndex.text || '');
     expect(bannerText).toBeInTheDocument();
@@ -40,7 +47,11 @@ describe('Tests for Header component', () => {
     bannersIndex.startDate = beforeToday.toISOString();
     bannersIndex.endDate = afterToday.toISOString();
 
-    render(<Banner bannersIndex={bannersIndex} />);
+    render(
+      <LocaleProvider i18nData={i18nData}>
+        <Banner bannersIndex={bannersIndex} />
+      </LocaleProvider>
+    );
 
     const bannerText = screen.queryByText(bannersIndex.text || '');
     expect(bannerText).not.toBeInTheDocument();
@@ -55,7 +66,11 @@ describe('Tests for Header component', () => {
     bannersIndex.startDate = beforeToday.toISOString();
     bannersIndex.endDate = afterToday.toISOString();
 
-    render(<Banner bannersIndex={bannersIndex} />);
+    render(
+      <LocaleProvider i18nData={i18nData}>
+        <Banner bannersIndex={bannersIndex} />
+      </LocaleProvider>
+    );
 
     const bannerText = screen.queryByText(bannersIndex.text || '');
     expect(bannerText).not.toBeInTheDocument();
@@ -71,7 +86,11 @@ describe('Tests for Header component', () => {
     bannersIndex.endDate = afterToday.toISOString();
     bannersIndex.link = 'foo/bar';
 
-    render(<Banner bannersIndex={bannersIndex} />);
+    render(
+      <LocaleProvider i18nData={i18nData}>
+        <Banner bannersIndex={bannersIndex} />
+      </LocaleProvider>
+    );
 
     const bannerText = screen.getByText(bannersIndex.text || '');
     expect(bannerText).toBeInTheDocument();
@@ -90,7 +109,11 @@ describe('Tests for Header component', () => {
     bannersIndex.endDate = afterToday.toISOString();
     bannersIndex.link = 'https://nodejs.org/en/an-absolute-content';
 
-    render(<Banner bannersIndex={bannersIndex} />);
+    render(
+      <LocaleProvider i18nData={i18nData}>
+        <Banner bannersIndex={bannersIndex} />
+      </LocaleProvider>
+    );
 
     const bannerText = screen.getByText(bannersIndex.text || '');
     expect(bannerText).toBeInTheDocument();
@@ -112,7 +135,11 @@ describe('Tests for Header component', () => {
     bannersIndex.html =
       '<img src="https://nodejs.org/static/images/logo.svg" alt="Node.js" data-testid="test-image" />';
 
-    render(<Banner bannersIndex={bannersIndex} />);
+    render(
+      <LocaleProvider i18nData={i18nData}>
+        <Banner bannersIndex={bannersIndex} />
+      </LocaleProvider>
+    );
 
     const bannerImage = screen.getByTestId('test-image');
     expect(bannerImage).toBeInTheDocument();
