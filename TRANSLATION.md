@@ -1,12 +1,16 @@
 # Node.js Website Translation Policy
 
-Node.js is a global platform and so this site has many translations. The translation of the site into languages other than English is handled by Crowdin translators.
+Node.js is a global platform and so this site has many translations. The translation of the site into languages other than English is handled by [Crowdin translators](https://support.crowdin.com/translation-process-overview/).
 
 ## How to translate
 
-1. Request to join the [Crowdin](https://crowdin.com/project/nodejs-website)
-2. Select the language you want to translate
-3. Start translating
+1. Request to join the [Nodejs-Website in Crowdin](https://crowdin.com/project/nodejs-website)
+2. [Select the language you want to translate](https://support.crowdin.com/joining-translation-project/#starting-translation)
+3. [Start translating](https://support.crowdin.com/online-editor/)
+
+## Any questions or feedbacks on Translations
+
+If you have any questions or feedbacks on current translations, you can [start a discussion](https://crowdin.com/project/nodejs-website/discussions) by choosing the "New Topic" and your language from the right dropdown, or a [conversation](https://support.crowdin.com/conversations/) by adding your translators.
 
 ## How to add a new language
 
