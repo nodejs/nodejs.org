@@ -20,7 +20,6 @@ export const WithText: Story = {
       endDate: endDate.toISOString(),
       text: 'Banner Text',
       link: 'https://nodejs.org/en/',
-      bannerBtnText: 'Read more',
     },
   },
 };
