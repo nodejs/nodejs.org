@@ -89,7 +89,6 @@
     "remark-preset-prettier": "^2.0.1",
     "sharp": "^0.32.0",
     "storybook": "^7.0.0-rc.8",
-    "storybook-addon-sass-postcss": "^0.1.3",
     "stylelint": "^15.3.0",
     "stylelint-config-recommended-scss": "^9.0.1",
     "stylelint-order": "^6.0.3",
