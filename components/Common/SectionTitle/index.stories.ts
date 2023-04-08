@@ -1,13 +1,9 @@
 import SectionTitle from './index';
-import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-type Story = StoryObj<typeof SectionTitle>;
-type Meta = MetaObj<typeof SectionTitle>;
+export default { component: SectionTitle };
 
-export const Default: Story = {
+export const Default = {
   args: {
     path: ['home', 'previous', 'current'],
   },
 };
-
-export default { component: SectionTitle } as Meta;
