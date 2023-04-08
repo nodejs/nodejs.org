@@ -1,17 +1,18 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 import Banner from './';
 
-const meta: Meta<typeof Banner> = {
-  title: 'Banner',
-  component: Banner,
-};
-
-export default meta;
 type Story = StoryObj<typeof Banner>;
 
+const addDaysToDate = (numDays: number, date: Date) => {
+  const newDate = new Date(date);
+  newDate.setDate(date.getDate() + numDays);
+  return date;
+};
+
+// Create mock start and end dates as Banner Component renders
+// only if end date is on or after today's date
 const startDate = new Date();
-const endDate = new Date();
-endDate.setDate(endDate.getDate() + 3);
+const endDate = addDaysToDate(3, startDate);
 
 export const WithText: Story = {
   args: {
@@ -33,4 +34,9 @@ export const WithHTML: Story = {
       link: 'https://nodejs.org/en/',
     },
   },
+};
+
+export default {
+  title: 'Banner',
+  component: Banner,
 };

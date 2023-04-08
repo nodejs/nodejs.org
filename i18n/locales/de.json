@@ -34,7 +34,6 @@
   "components.header.buttons.toggleDarkMode": "Dunkel-/Hell Modus umschalten",
   "components.pagination.next": "Neuere | ",
   "components.pagination.previous": "Ältere",
-  "components.common.banner.button.text": "Read More",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {Von {author}, }}",
   "layouts.blogIndex.currentYear": "Neuigkeiten von {year}"
 }

@@ -34,7 +34,6 @@
   "components.header.buttons.toggleDarkMode": "Alihkan mode gelap/terang",
   "components.pagination.next": "Terbaru | ",
   "components.pagination.previous": "Lama",
-  "components.common.banner.button.text": "Read More",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {Oleh {author}, }}",
   "layouts.blogIndex.currentYear": "Berita dari {year}"
 }
