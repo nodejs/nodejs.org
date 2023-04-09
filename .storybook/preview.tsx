@@ -5,7 +5,7 @@ import { pageProps } from './constants';
 
 import '../styles/styles.scss';
 import '../styles/tokens.scss';
-import { ThemeProvider } from '../providers/themeprovider';
+import { ThemeProvider } from 'next-themes';
 
 const preview: Preview = {
   parameters: {
