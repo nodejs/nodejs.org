@@ -13,6 +13,7 @@ export * from './navigation';
 export * from './nodeVersions';
 export * from './blog';
 export * from './i18n';
+export * from './dropdown';
 
 export interface AppProps {
   i18nData: Pick<LocaleContext, 'localeMessages' | 'currentLocale'>;

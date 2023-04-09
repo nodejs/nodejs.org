@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown component renders correctly 1`] = `
+<div>
+  <ul
+    class="dropdownList"
+    style="left: -10px; top: -15px; visibility: visible;"
+  >
+    <li>
+      <button
+        style="font-weight: normal;"
+        type="button"
+      >
+        English
+      </button>
+    </li>
+    <li>
+      <button
+        style="font-weight: normal;"
+        type="button"
+      >
+        Kazakh
+      </button>
+    </li>
+  </ul>
+</div>
+`;
