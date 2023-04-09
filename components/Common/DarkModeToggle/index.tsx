@@ -26,6 +26,7 @@ const DarkModeToggle = () => {
 
   useEffect(() => {
     if (theme) updateBodyClass(theme);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function toggleTheme(isKeyPress?: boolean) {
