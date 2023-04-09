@@ -7,6 +7,7 @@ const {
   screen,
   fireEvent,
   waitFor,
+  // eslint-disable-next-line no-undef
 } = jest.requireActual('@testing-library/react');
 
 const render = (
