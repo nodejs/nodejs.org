@@ -34,14 +34,13 @@ const useTextContent = ({ text, link }: WebsiteBanner, bannerBtnText: string) =>
 const useHtmlContent = ({ html, link }: WebsiteBanner) =>
   useMemo(() => {
     if (html) {
-      const sanitizedHtml = sanitize(html);
-
+ 
       return (
         <a
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
+          dangerouslySetInnerHTML={{ __html: sanitize(html) }}
         />
       );
     }
