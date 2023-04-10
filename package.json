@@ -61,7 +61,7 @@
     "critters": "^0.0.16",
     "cross-env": "^7.0.3",
     "eslint": "^8.36.0",
-    "eslint-config-next": "^13.2.4",
+    "eslint-config-next": "^13.3.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-mdx": "^2.0.5",
     "eslint-plugin-mdx": "^2.0.5",
