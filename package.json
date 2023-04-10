@@ -71,7 +71,7 @@
     "remark-preset-prettier": "^2.0.1",
     "sharp": "^0.32.0",
     "stylelint": "^15.3.0",
-    "stylelint-config-recommended-scss": "^9.0.1",
+    "stylelint-config-recommended-scss": "^10.0.0",
     "stylelint-order": "^6.0.3",
     "stylelint-selector-bem-pattern": "^2.1.1",
     "typescript": "^4.9.5"
