@@ -1,0 +1,16 @@
+.alert {
+  background: var(--purple5);
+  border-radius: 5px;
+  color: var(--color-fill-top-nav);
+  font-size: var(--font-size-body1);
+  font-weight: var(--font-weight-bold);
+  margin: var(--space-16) auto;
+  max-width: 90vw;
+  padding: var(--space-12);
+  position: relative;
+
+  a,
+  a:hover {
+    color: white;
+  }
+}
