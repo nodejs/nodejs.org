@@ -17,7 +17,7 @@ afterEach(() => {
 });
 
 describe('ShellBox component', (): void => {
-  it('renders correctly', (): void => {
+  it('renders content correctly', (): void => {
     const textToCopy = 'text to be copy';
     const { container } = render(
       <ShellBox textToCopy={textToCopy}>mock-children-code</ShellBox>
@@ -25,7 +25,7 @@ describe('ShellBox component', (): void => {
     expect(container).toMatchSnapshot();
   });
 
-  it('renders correctly', async () => {
+  it('renders copy button correctly', async () => {
     const textToCopy = 'text to be copy';
 
     render(<ShellBox textToCopy={textToCopy}>mock-children-code</ShellBox>);
