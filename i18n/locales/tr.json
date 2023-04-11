@@ -35,6 +35,5 @@
   "components.pagination.next": "Daha Yeni | ",
   "components.pagination.previous": "Daha Eski",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {{author} tarafından }}",
-  "layouts.blogIndex.currentYear": "{year} yılından haberler",
-  "components.codeBox.copy": "{copied, select, true {copied}other {copy}}"
+  "layouts.blogIndex.currentYear": "{year} yılından haberler"
 }

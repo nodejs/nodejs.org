@@ -20,7 +20,10 @@ const ShellBox = ({ children, textToCopy }: React.PropsWithChildren<Props>) => {
       <div className={styles.top}>
         <span>SHELL</span>
         <button type="button" onClick={handleCopyCode}>
-          <FormattedMessage id="components.codeBox.copy" values={{ copied }} />
+          <FormattedMessage
+            id="components.common.shellBox.copy"
+            values={{ copied }}
+          />
         </button>
       </div>
       <code>{children}</code>
