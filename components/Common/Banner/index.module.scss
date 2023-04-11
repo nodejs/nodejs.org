@@ -1,5 +1,7 @@
+@import 'styles/_variables';
+
 .banner {
-  color: var(--color-text-primary);
+  color: $node-gray;
   margin: 0 auto;
   max-width: 90vw;
   padding-top: var(--space-08);
@@ -13,12 +15,13 @@
 
   a {
     align-items: center;
-    color: var(--color-text-primary);
     display: flex;
     flex-direction: column;
     text-decoration: none;
 
     &:hover {
+      background-color: transparent !important;
+      color: $node-green;
       text-decoration: underline;
     }
 
@@ -30,23 +33,23 @@
 
     &.bannerBtn {
       background: var(--purple5);
+      padding: 0 var(--space-16);
       border: 1px solid transparent;
       border-radius: 5.6rem;
       color: var(--color-fill-top-nav);
       font-family: var(--sans);
-      font-size: 1rem;
       font-style: normal;
       font-weight: var(--font-weight-semibold);
       line-height: var(--line-height-subheading);
       margin-right: var(--space-32);
-      padding: 0 var(--space-16);
       position: relative;
       text-decoration: none;
       white-space: nowrap;
+      font-size: 1rem;
 
       &:hover {
-        background-color: var(--color-text-primary);
         cursor: pointer;
+        background-color: $node-green !important;
       }
     }
   }
@@ -64,6 +67,7 @@
     a {
       &:hover {
         text-decoration: underline;
+        background-color: transparent !important;
       }
     }
   }
