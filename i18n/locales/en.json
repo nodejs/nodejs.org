@@ -35,5 +35,6 @@
   "components.pagination.next": "Newer | ",
   "components.pagination.previous": "Older",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {By {author}, }}",
-  "layouts.blogIndex.currentYear": "News from {year}"
+  "layouts.blogIndex.currentYear": "News from {year}",
+  "components.common.banner.button.text": "Read More"
 }
