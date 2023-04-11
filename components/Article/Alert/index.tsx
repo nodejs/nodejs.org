@@ -1,7 +1,7 @@
+import React from 'react';
 import styles from './index.module.scss';
-import type { FC, PropsWithChildren } from 'react';
 
-const Alert: FC<PropsWithChildren> = ({ children }) => (
+const Alert = ({ children }: React.PropsWithChildren) => (
   <div className={styles.alert}>{children}</div>
 );
 
