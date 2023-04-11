@@ -4,6 +4,7 @@ exports[`AnimatedPlaceholder component should render correctly with default skel
 <div>
   <div
     class="placeholder"
+    style="width: 400px; height: 50px;"
   >
     <div
       class="placeholderImage"
@@ -26,6 +27,7 @@ exports[`AnimatedPlaceholder component should support passing loader skeleton fr
 <div>
   <div
     class="placeholder"
+    style="width: 400px; height: 50px;"
   >
     <div
       class="animated-placeholder__image"
