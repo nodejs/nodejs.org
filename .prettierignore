@@ -7,11 +7,11 @@ public/en/user-survey-report
 public/static/documents
 public/static/legacy
 
-# These should be fixed in the future as the
-# tests and scripts will be updated in this PR
-tests
-
 # MDX Plugin enforces Prettier formatting which should
 # be done in the future as we don't want to update the Markdown file
 # contents right now
 pages/**/*.md
+
+# Prettier's Handlebar parser is limited and chokes on some syntax features
+# https://github.com/prettier/prettier/issues/11834
+scripts/release-post/template.hbs
