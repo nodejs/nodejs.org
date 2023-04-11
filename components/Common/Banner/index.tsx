@@ -34,7 +34,6 @@ const useTextContent = ({ text, link }: WebsiteBanner, bannerBtnText: string) =>
 const useHtmlContent = ({ html, link }: WebsiteBanner) =>
   useMemo(() => {
     if (html) {
- 
       return (
         <a
           href={link}
