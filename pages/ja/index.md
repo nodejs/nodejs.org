@@ -10,9 +10,9 @@ labels:
   tagline-current: 最新の機能
   tagline-lts: 推奨版
   changelog: 変更履歴
-  api: API ドキュメント
-  version-schedule-prompt: または、
-  version-schedule-prompt-link-text: LTSのリリーススケジュールをご覧ください
+  api: APIドキュメント
+  version-schedule-prompt: サポートされているバージョンに関する詳しい情報：
+  version-schedule-prompt-link-text: リリーススケジュール
 ---
 
-Node.js® は、[Chrome の V8 JavaScript エンジン](https://v8.dev/) で動作する JavaScript 環境です。
+Node.js®はクロスプラットフォームに対応したオープンソースのJavaScript実行環境です。
