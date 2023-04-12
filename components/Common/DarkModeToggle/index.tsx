@@ -3,24 +3,11 @@ import ModeNightIcon from '@mui/icons-material/ModeNight';
 import BrightnessMediumIcon from '@mui/icons-material/BrightnessMedium';
 import styles from './index.module.scss';
 import { useTheme } from 'next-themes';
-
-const THEME = {
-  DARK: 'dark',
-  LIGHT: 'light',
-} as const;
-
-const updateBodyClass = (theme: string) => {
-  if (typeof document === 'undefined' || !theme) return;
-  const checkTheme = theme === THEME.DARK ? THEME.LIGHT : THEME.DARK;
-  // Remove the previous theme classname before adding
-  if (document.body.classList.contains(checkTheme)) {
-    document.body.classList.remove(checkTheme);
-  }
-  document.body.classList.add(theme);
-};
+import { useUpdateBodyClass } from '../../../hooks/useUpdateBodyClass';
 
 const DarkModeToggle = () => {
   const { theme, setTheme } = useTheme();
+  const updateBodyClass = useUpdateBodyClass();
 
   const isDark = theme === 'dark';
 
@@ -34,7 +21,7 @@ const DarkModeToggle = () => {
       return;
     }
 
-    const newTheme = theme === THEME.DARK ? THEME.LIGHT : THEME.DARK;
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
 
     setTheme(newTheme);
     updateBodyClass(newTheme);
