@@ -20,6 +20,7 @@ export const useCopyToClipboard = (): [boolean, (text: string) => void] => {
   useEffect(() => {
     if (copied) {
       const timerId = setTimeout(() => setCopied(false), 3000);
+
       return () => clearTimeout(timerId);
     }
     return undefined;
