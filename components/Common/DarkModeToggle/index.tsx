@@ -9,7 +9,7 @@ const THEME = {
   LIGHT: 'light',
 } as const;
 
-function updateBodyClass(theme: string) {
+const updateBodyClass = (theme: string) => {
   if (typeof document === 'undefined' || !theme) return;
   const checkTheme = theme === THEME.DARK ? THEME.LIGHT : THEME.DARK;
   // Remove the previous theme classname before adding
@@ -17,7 +17,7 @@ function updateBodyClass(theme: string) {
     document.body.classList.remove(checkTheme);
   }
   document.body.classList.add(theme);
-}
+};
 
 const DarkModeToggle = () => {
   const { theme, setTheme } = useTheme();
@@ -29,7 +29,7 @@ const DarkModeToggle = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  function toggleTheme(isKeyPress?: boolean) {
+  const toggleTheme = (isKeyPress?: boolean) => {
     if (isKeyPress) {
       return;
     }
@@ -38,7 +38,7 @@ const DarkModeToggle = () => {
 
     setTheme(newTheme);
     updateBodyClass(newTheme);
-  }
+  };
 
   return (
     <button
