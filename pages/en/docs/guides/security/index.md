@@ -211,7 +211,7 @@ or a range. However, when pinning a dependency to an exact version, its
 transitive dependencies are not themselves pinned.
 This still leaves the application vulnerable to unwanted/unexpected updates.
 
-Possible vector attacks:
+Possible attack vectors:
 
 * Typosquatting attacks
 * Lockfile poisoning
