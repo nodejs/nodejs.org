@@ -35,6 +35,7 @@ const DarkModeToggle = () => {
     }
 
     const newTheme = theme === THEME.DARK ? THEME.LIGHT : THEME.DARK;
+
     setTheme(newTheme);
     updateBodyClass(newTheme);
   }
