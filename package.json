@@ -20,10 +20,10 @@
     "lint:js": "eslint \"**/*.{js,jsx,ts,tsx}\" --cache --cache-file .eslintjscache --report-unused-disable-directives",
     "lint:md": "eslint \"**/*.{md,mdx}\" --cache --cache-file .eslintmdcache",
     "lint:scss": "stylelint --config .stylelintrc \"styles/**/*.{css,sass,scss}\"",
-    "lint": "npm-run-all lint:js lint:md lint:scss --parallel",
+    "lint": "npm-run-all lint:js lint:md lint:scss prettier --parallel",
     "lint:fix": "npm-run-all \"lint:js -- --fix\" \"lint:md -- --fix\" \"lint:scss -- --fix\" --parallel",
-    "prettier": "prettier \"**/*.{ts,tsx,js,scss,yml}\" --check",
-    "prettier:fix": "npm run prettier -- --write",
+    "prettier": "prettier . --check",
+    "prettier:fix": "prettier . --write",
     "format": "npm-run-all prettier:fix lint:fix",
     "scripts:release-post": "node scripts/release-post/index.mjs"
   },
