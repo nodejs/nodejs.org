@@ -23,6 +23,7 @@ export const useCopyToClipboard = (): [boolean, (text: string) => void] => {
 
       return () => clearTimeout(timerId);
     }
+
     return undefined;
   }, [copied]);
 
