@@ -11,8 +11,7 @@ const copyToClipboard = (value: string) => {
     .catch(() => false);
 };
 
-// eslint-disable-next-line no-unused-vars
-export const useCopyToClipboard = (): [boolean, (text: string) => void] => {
+export const useCopyToClipboard = () => {
   const [copied, setCopied] = useState(false);
 
   const copyText = (text: string) => copyToClipboard(text).then(setCopied);
@@ -27,5 +26,5 @@ export const useCopyToClipboard = (): [boolean, (text: string) => void] => {
     return undefined;
   }, [copied]);
 
-  return [copied, copyText];
+  return [copied, copyText] as const;
 };

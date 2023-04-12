@@ -10,13 +10,13 @@ Object.assign(navigator, {
   },
 });
 
-const navigatorClipboardSpy = jest.spyOn(navigator.clipboard, 'writeText');
-
 afterEach(() => {
   jest.clearAllMocks();
 });
 
 describe('ShellBox component', (): void => {
+  const navigatorClipboardSpy = jest.spyOn(navigator.clipboard, 'writeText');
+
   it('renders content correctly', (): void => {
     const textToCopy = 'text to be copy';
     const { container } = render(
