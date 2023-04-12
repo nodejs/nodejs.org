@@ -1,11 +1,11 @@
 import type { Preview } from '@storybook/react';
 import NextImage from 'next/image';
+import { ThemeProvider } from 'next-themes';
 import App from '../pages/_app.mdx';
 import { pageProps } from './constants';
 
 import '../styles/styles.scss';
 import '../styles/tokens.scss';
-import { ThemeProvider } from 'next-themes';
 
 const preview: Preview = {
   parameters: {
