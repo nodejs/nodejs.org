@@ -16,24 +16,36 @@ type LayoutProps = React.PropsWithChildren<{
   pageOpts: NextraThemeLayoutProps['pageOpts'];
 }>;
 
+type HProps = React.PropsWithChildren<{
+  level: number;
+}>;
+
+const H = ({ level, children }: HProps) => {
+  const Component = `h${level}` as keyof JSX.IntrinsicElements;
+  return <AnchoredHeading level={level} as={Component}>{children}</AnchoredHeading>;
+};
+
 const mdxComponents: MDXComponents = {
-  NodeApiVersionLinks: NodeApiVersionLinks,
-  h1: props => <AnchoredHeading level={1} {...props} />,
-  h2: props => <AnchoredHeading level={2} {...props} />,
-  h3: props => <AnchoredHeading level={3} {...props} />,
-  h4: props => <AnchoredHeading level={4} {...props} />,
-  h5: props => <AnchoredHeading level={5} {...props} />,
-  h6: props => <AnchoredHeading level={6} {...props} />,
+  NodeApiVersionLinks,
+  h1: (props) => <H level={1} {...props} />,
+  h2: (props) => <H level={2} {...props} />,
+  h3: (props) => <H level={3} {...props} />,
+  h4: (props) => <H level={4} {...props} />,
+  h5: (props) => <H level={5} {...props} />,
+  h6: (props) => <H level={6} {...props} />,
   blockquote: ({ children }) => <div className="highlight-box">{children}</div>,
 };
 
 const Content = ({ children }: LayoutProps) => {
   const { asPath } = useRouter();
 
-  // Re-highlights the pages on route change
-  useEffect(() => highlightJs.highlightAll(), [asPath]);
+  useEffect(() => {
+    highlightJs.highlightAll();
+  }, [asPath]);
 
-  useEffect(() => window.startLegacyApp(), []);
+  useEffect(() => {
+    window.startLegacyApp();
+  }, []);
 
   return (
     <MDXProvider components={mdxComponents} disableParentContext>
@@ -42,7 +54,6 @@ const Content = ({ children }: LayoutProps) => {
   );
 };
 
-// @TODO: Nextra should provide better customization to FrontMatter Props
 interface ThemeProps extends NextraThemeLayoutProps {
   pageOpts: Omit<NextraThemeLayoutProps['pageOpts'], 'frontMatter'> & {
     frontMatter: LegacyFrontMatter;
