@@ -4,33 +4,49 @@ import { getNodejsChangelog } from '../../util/getNodeJsChangelog';
 
 import type { NodeVersionData } from '../../types';
 
-type HomeDownloadButtonProps = Pick<
-  NodeVersionData,
-  'isLts' | 'node' | 'nodeMajor' | 'nodeNumeric'
->;
+const DOWNLOAD_LABELS = {
+  download: 'Download',
+  'other-downloads': 'Other Downloads',
+  changelog: 'Changelog',
+  api: 'API',
+  current: 'Current',
+  lts: 'LTS',
+  'tagline-current': 'Latest Features',
+  'tagline-lts': 'Recommended For Most Users',
+};
 
-const HomeDownloadButton = (props: HomeDownloadButtonProps) => {
+const HomeDownloadButton = ({
+  isLatestLtsVersion,
+  nodeVersion,
+  nodeMajorVersion,
+  nodeNumericVersion,
+}: {
+  isLatestLtsVersion: boolean;
+  nodeVersion: string;
+  nodeMajorVersion: number;
+  nodeNumericVersion: string;
+}) => {
   const {
     frontMatter: { labels },
   } = useNextraContext();
 
-  const nodeDownloadLink = `https://nodejs.org/dist/${props.node}/`;
-  const nodeApiLink = `https://nodejs.org/dist/latest-${props.nodeMajor}/docs/api/`;
+  const NODE_DOWNLOAD_URL = `https://nodejs.org/dist/${nodeVersion}/`;
+  const NODE_API_URL = `https://nodejs.org/dist/latest-${nodeMajorVersion}/docs/api/`;
 
   const nodeDownloadTitle =
-    `${labels.download} ${props.nodeNumeric}` +
-    ` ${labels[props.isLts ? 'lts' : 'current']}`;
+    `${DOWNLOAD_LABELS.download} ${nodeNumericVersion}` +
+    ` ${labels[isLatestLtsVersion ? 'lts' : 'current']}`;
 
   return (
     <div className="home-downloadblock">
       <a
-        href={nodeDownloadLink}
+        href={NODE_DOWNLOAD_URL}
         className="home-downloadbutton"
         title={nodeDownloadTitle}
-        data-version={props.node}
+        data-version={nodeVersion}
       >
-        {props.nodeNumeric} {labels[props.isLts ? 'lts' : 'current']}
-        <small>{labels[`tagline-${props.isLts ? 'lts' : 'current'}`]}</small>
+        {nodeNumericVersion} {labels[isLatestLtsVersion ? 'lts' : 'current']}
+        <small>{labels[`tagline-${isLatestLtsVersion ? 'lts' : 'current'}`]}</small>
       </a>
 
       <ul className="list-divider-pipe home-secondary-links">
@@ -40,12 +56,12 @@ const HomeDownloadButton = (props: HomeDownloadButtonProps) => {
           </LocalizedLink>
         </li>
         <li>
-          <LocalizedLink href={getNodejsChangelog(props.node)}>
+          <LocalizedLink href={getNodejsChangelog(nodeVersion)}>
             {labels.changelog}
           </LocalizedLink>
         </li>
         <li>
-          <LocalizedLink href={nodeApiLink}>{labels.api}</LocalizedLink>
+          <LocalizedLink href={NODE_API_URL}>{labels.api}</LocalizedLink>
         </li>
       </ul>
     </div>
