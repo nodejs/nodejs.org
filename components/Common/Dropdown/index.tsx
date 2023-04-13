@@ -1,22 +1,18 @@
+import React from 'react';
 import { DropdownItem } from '../../../types';
 import css from './index.module.scss';
 
-interface Props<T> {
+interface Props {
   items: Array<DropdownItem>;
   shouldShow: boolean;
   styles: Object;
 }
 
-const Dropdown = <T extends HTMLElement>({
-  items,
-  shouldShow,
-  styles,
-}: Props<T>): JSX.Element | null => {
+const Dropdown = ({ items, shouldShow, styles }: Props) => {
   const mappedElements = items.map(item => {
     const extraStyles = {
       fontWeight: item.active ? 'bold' : 'normal',
     };
-
     const handleKeyPress = (e: React.KeyboardEvent<HTMLButtonElement>) => {
       if (e.key === 'Enter' || e.key === ' ') {
         item.onClick();

@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import LanguageSelector from '..';
 
 jest.mock('../../../../hooks/useLocale', () => ({
@@ -13,20 +13,21 @@ jest.mock('../../../../hooks/useLocale', () => ({
 
 describe('LanguageSelector', () => {
   test('clicking the language switch button toggles the dropdown display', () => {
-    const { getByRole, queryByText } = render(<LanguageSelector />);
-    const button = getByRole('button');
-    expect(queryByText('English')).not.toBeVisible();
+    render(<LanguageSelector />);
+    const button = screen.getByRole('button');
+    expect(screen.queryByText('English')).not.toBeVisible();
     fireEvent.click(button);
-    expect(queryByText('English')).toBeVisible();
+    expect(screen.queryByText('English')).toBeVisible();
     fireEvent.click(button);
-    expect(queryByText('English')).not.toBeVisible();
+    expect(screen.queryByText('English')).not.toBeVisible();
   });
 
   test('renders the Dropdown component with correct style', () => {
-    const { container }: { container: HTMLElement } = render(
-      <LanguageSelector />
-    );
-    expect(container?.firstChild?.lastChild).toHaveStyle(
+    render(<LanguageSelector />);
+    const button = screen.getByRole('button');
+    fireEvent.click(button);
+    const dropdown = screen.getByRole('list');
+    expect(dropdown).toHaveStyle(
       'position: absolute; top: 60%; right: 0; margin: 0;'
     );
   });
