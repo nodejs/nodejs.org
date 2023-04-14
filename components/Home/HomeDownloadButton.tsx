@@ -15,7 +15,7 @@ const HomeDownloadButton = (props: HomeDownloadButtonProps) => {
   } = useNextraContext();
 
   const nodeDownloadLink = `https://nodejs.org/dist/${props.node}/`;
-  const nodeApiLink = `/latest-${props.nodeMajor}/docs/api/`;
+  const nodeApiLink = `https://nodejs.org/dist/latest-${props.nodeMajor}/docs/api/`;
   const nodeAllDownloadsLink = `/download${props.isLts ? '/' : '/current'}`;
   const nodeDownloadTitle =
     `${labels.download} ${props.nodeNumeric}` +
