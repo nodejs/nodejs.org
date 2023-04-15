@@ -115,7 +115,7 @@ Penyerang yang mengendalikan paket upstream dapat menerbitkan versi baru dengan 
 
 Ketergantungan yang ditentukan dalam file `package.json` dapat memiliki nomor versi atau rentang yang tepat. Namun, saat menyematkan dependensi ke versi yang tepat, dependensi transitifnya tidak disematkan sendiri. Ini masih membuat aplikasi rentan terhadap pembaruan yang tidak diinginkan / tidak terduga.
 
-Kemungkinan serangan vektor:
+Vektor serangan yang mungkin terjadi:
 
 * Serangan salah ketik
 * Keracunan Lockfile
