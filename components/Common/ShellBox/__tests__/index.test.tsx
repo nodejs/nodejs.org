@@ -18,12 +18,12 @@ Object.defineProperty(window, 'navigator', {
 
 describe('ShellBox', () => {
   it('should render', () => {
-    render(
+    const { container } = render(
       <LocaleProvider i18nData={i18nData}>
-        <ShellBox textToCopy="test">test</ShellBox>
+        <ShellBox>test</ShellBox>
       </LocaleProvider>
     );
-    expect(screen.getByText('test')).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   it('should call clipboard API with `test` once', () => {

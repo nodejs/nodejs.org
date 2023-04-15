@@ -2,9 +2,11 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 import styles from './index.module.scss';
+import ReactDomServer from 'react-dom/server';
 
 interface Props {
-  textToCopy: string;
+  children: React.ReactNode;
+  textToCopy?: string;
 }
 
 const ShellBox = ({ children, textToCopy }: React.PropsWithChildren<Props>) => {
@@ -12,7 +14,8 @@ const ShellBox = ({ children, textToCopy }: React.PropsWithChildren<Props>) => {
 
   const handleCopyCode = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    copyText(textToCopy);
+    const text = textToCopy? textToCopy : ReactDomServer.renderToString(children);
+    await copyText(text);
   };
 
   return (
