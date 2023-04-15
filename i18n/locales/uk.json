@@ -35,5 +35,6 @@
   "components.pagination.next": "Далі | ",
   "components.pagination.previous": "Попередній",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {By {author}, }}",
-  "layouts.blogIndex.currentYear": "News from {year}"
+  "layouts.blogIndex.currentYear": "News from {year}",
+  "containers.authorList.title": "Article Authors"
 }
