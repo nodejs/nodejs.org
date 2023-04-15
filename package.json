@@ -34,11 +34,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
     "@mdx-js/react": "^2.3.0",
-    "@mui/icons-material": "^5.11.11",
-    "@mui/material": "^5.11.16",
     "classnames": "^2.3.2",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
