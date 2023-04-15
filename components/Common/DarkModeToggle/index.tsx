@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
-import ModeNightIcon from '@mui/icons-material/ModeNight';
-import BrightnessMediumIcon from '@mui/icons-material/BrightnessMedium';
 import styles from './index.module.scss';
 import { useTheme } from 'next-themes';
 import { useUpdateBodyClass } from '../../../hooks/useUpdateBodyClass';
+import {
+  MdLightMode as IconLightMode,
+  MdNightlight as IconDarkMode,
+} from 'react-icons/md';
 
 const DarkModeToggle = () => {
   const { theme, setTheme } = useTheme();
@@ -36,8 +38,8 @@ const DarkModeToggle = () => {
       aria-pressed={isDark}
     >
       <span className="sr-only">Toggle Dark Mode</span>
-      <ModeNightIcon className="light-mode-only" />
-      <BrightnessMediumIcon className="dark-mode-only" />
+      <IconDarkMode className="light-mode-only" />
+      <IconLightMode className="dark-mode-only" />
     </button>
   );
 };
