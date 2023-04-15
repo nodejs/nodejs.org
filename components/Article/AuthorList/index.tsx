@@ -7,7 +7,7 @@ interface Props {
   authors: string[];
 }
 
-const AuthorList = ({ authors }: Props): JSX.Element => {
+const AuthorList = ({ authors }: Props): JSX.Element | null => {
   if (authors.length) {
     return (
       <div className={styles.authorList}>
@@ -23,7 +23,7 @@ const AuthorList = ({ authors }: Props): JSX.Element => {
     );
   }
 
-  return <div />;
+  return null;
 };
 
 export default AuthorList;
