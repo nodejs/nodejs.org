@@ -1,7 +1,7 @@
+import type { PropsWithChildren } from 'react';
 import styles from './index.module.scss';
-import type { FC, PropsWithChildren } from 'react';
 
-const BlockQuote: FC<PropsWithChildren> = ({ children }) => (
+const BlockQuote = ({ children }: PropsWithChildren) => (
   <div className={styles.blockQuote}>{children}</div>
 );
 
