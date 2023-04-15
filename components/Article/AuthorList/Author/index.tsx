@@ -19,7 +19,7 @@ const Author = ({
   const githubImgLink = `https://github.com/${githubUserName}.png?size=${size}`;
 
   const authorImg = {
-    backgroundImage: `url(${githubImgLink}), url(${authorPlaceholderImg})`,
+    backgroundImage: `url(${githubImgLink}), url(${authorPlaceholderImg.src})`,
   };
 
   const translation = intl.formatMessage(
