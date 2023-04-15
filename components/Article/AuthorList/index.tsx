@@ -7,17 +7,15 @@ interface Props {
   authors: string[];
 }
 
-const AuthorList = ({ authors }: Props): JSX.Element | null => {
+const AuthorList = ({ authors }: Props) => {
   if (authors.length) {
     return (
       <div className={styles.authorList}>
         <FormattedMessage id="containers.authorList.title" />
         <ul>
-          {authors.map(
-            (author): JSX.Element => (
-              <Author username={author} key={author} size="60" />
-            )
-          )}
+          {authors.map(author => (
+            <Author username={author} key={author} size="60" />
+          ))}
         </ul>
       </div>
     );
