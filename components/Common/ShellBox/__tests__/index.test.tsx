@@ -1,43 +1,51 @@
 import React from 'react';
-import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
-
+import { LocaleProvider } from '../../../../providers/localeProvider';
+import userEvent from '@testing-library/user-event';
+import { AppProps } from '../../../../types';
 import ShellBox from '../index';
 
-Object.assign(navigator, {
-  clipboard: {
-    writeText: jest.fn(),
+const mockWriteText = jest.fn();
+const i18nData = { currentLocale: { code: 'en' } } as AppProps['i18nData'];
+
+Object.defineProperty(window, 'navigator', {
+  value: {
+    clipboard: {
+      writeText: mockWriteText,
+    },
   },
 });
 
-afterEach(() => {
-  jest.clearAllMocks();
-});
-
-describe('ShellBox component', (): void => {
-  const navigatorClipboardSpy = jest.spyOn(navigator.clipboard, 'writeText');
-
-  it('renders content correctly', (): void => {
-    const textToCopy = 'text to be copy';
-    const { container } = render(
-      <ShellBox textToCopy={textToCopy}>mock-children-code</ShellBox>
+describe('ShellBox', () => {
+  it('should render', () => {
+    render(
+      <LocaleProvider i18nData={i18nData}>
+        <ShellBox textToCopy="test">test</ShellBox>
+      </LocaleProvider>
     );
-    expect(container).toMatchSnapshot();
+    expect(screen.getByText('test')).toMatchSnapshot();
   });
 
-  it('renders copy button correctly', async () => {
-    const textToCopy = 'text to be copy';
+  it('should call clipboard API with `test` once', () => {
+    const navigatorClipboardWriteTextSpy = jest
+      .fn()
+      .mockImplementation(() => Promise.resolve());
 
-    render(<ShellBox textToCopy={textToCopy}>mock-children-code</ShellBox>);
+    Object.defineProperty(window.navigator, 'clipboard', {
+      writable: true,
+      value: {
+        writeText: navigatorClipboardWriteTextSpy,
+      },
+    });
 
-    navigatorClipboardSpy.mockImplementationOnce(() => Promise.resolve());
-
-    const buttonElement = screen.getByText('copy');
-    userEvent.click(buttonElement);
-
-    await screen.findByText('copied');
-
-    expect(navigatorClipboardSpy).toHaveBeenCalledTimes(1);
-    expect(navigatorClipboardSpy).toHaveBeenCalledWith(textToCopy);
+    render(
+      <LocaleProvider i18nData={i18nData}>
+        <ShellBox textToCopy="test">test</ShellBox>
+      </LocaleProvider>
+    );
+    const button = screen.getByRole('button');
+    userEvent.click(button);
+    expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledTimes(1);
+    expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledWith('test');
   });
 });

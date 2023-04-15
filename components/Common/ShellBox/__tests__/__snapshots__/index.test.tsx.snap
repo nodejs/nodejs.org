@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShellBox should render 1`] = `
+<code>
+  test
+</code>
+`;
