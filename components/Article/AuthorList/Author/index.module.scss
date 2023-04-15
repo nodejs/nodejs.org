@@ -1,0 +1,16 @@
+.link {
+  &:hover span {
+    transform: scale(1.1);
+  }
+
+  span {
+    background-size: contain;
+    border: 2px solid var(--brand-light);
+    border-radius: 100%;
+    display: block;
+    height: 30px;
+    margin-top: 5px;
+    transition: all 0.2s ease-in-out;
+    width: 30px;
+  }
+}
