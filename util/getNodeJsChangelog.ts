@@ -7,7 +7,8 @@ import semVer from 'semver';
  * @returns The URL of the Node.js changelog for the specified version.
  */
 export const getNodejsChangelog = (version: string): string => {
-  const changelogsUrl = 'https://github.com/nodejs/node/blob/main/doc/changelogs';
+  const changelogsUrl =
+    'https://github.com/nodejs/node/blob/main/doc/changelogs';
 
   // Parse the version string and get the major and minor versions
   const cleanVersion = semVer.clean(version);
