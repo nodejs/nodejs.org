@@ -12,12 +12,20 @@ const allDownloads = [
     templateUrl: 'https://nodejs.org/dist/v%version%/node-v%version%-x64.msi',
   },
   {
+    title: 'Windows ARM 64-bit Installer',
+    templateUrl: 'https://nodejs.org/dist/v%version%/node-v%version%-arm64.msi',
+  },
+  {
     title: 'Windows 32-bit Binary',
     templateUrl: 'https://nodejs.org/dist/v%version%/win-x86/node.exe',
   },
   {
     title: 'Windows 64-bit Binary',
     templateUrl: 'https://nodejs.org/dist/v%version%/win-x64/node.exe',
+  },
+  {
+    title: 'Windows ARM 64-bit Binary',
+    templateUrl: 'https://nodejs.org/dist/v%version%/win-arm64/node.exe',
   },
   {
     title: 'macOS 64-bit Installer',
@@ -190,6 +198,14 @@ const resolveDownloads = version => {
   if (semVer.satisfies(version, '< 16.0.0')) {
     downloads = downloads.filter(
       ver => ver.title !== 'macOS Apple Silicon 64-bit Binary'
+    );
+  }
+
+  if (semVer.satisfies(version, '< 19.9.0')) {
+    downloads = downloads.filter(
+      ver =>
+        ver.title !== 'Windows ARM 64-bit Installer' &&
+        ver.title !== 'Windows ARM 64-bit Binary'
     );
   }
 
