@@ -38,5 +38,4 @@
   "layouts.blogPost.author.byLine": "{author, select, null {} other {Von {author}, }}",
   "layouts.blogIndex.currentYear": "Neuigkeiten von {year}",
   "containers.authorList.title": "Article Authors"
-
 }
