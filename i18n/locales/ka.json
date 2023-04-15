@@ -34,6 +34,7 @@
   "components.header.buttons.toggleDarkMode": "გადართვა მუქ/ნათელ რეჟიმზე",
   "components.pagination.next": "შემდეგი | ",
   "components.pagination.previous": "წინა",
+  "components.author.githubLinkLabel": "{username} Github - opens in new tab",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {By {author}, }}",
   "layouts.blogIndex.currentYear": "News from {year}",
   "containers.authorList.title": "Article Authors"

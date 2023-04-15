@@ -34,6 +34,7 @@
   "components.header.buttons.toggleDarkMode": "Dunkel-/Hell Modus umschalten",
   "components.pagination.next": "Neuere | ",
   "components.pagination.previous": "Ältere",
+  "components.author.githubLinkLabel": "{username} Github - opens in new tab",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {Von {author}, }}",
   "layouts.blogIndex.currentYear": "Neuigkeiten von {year}",
   "containers.authorList.title": "Article Authors"
