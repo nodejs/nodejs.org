@@ -14,7 +14,7 @@ const Dropdown = <T extends HTMLElement>({
   items,
   shouldShow,
   elementRef,
-}: Props<T>): JSX.Element | null => {
+}: Props<T>) => {
   const outerElementPosition = useElementPositionAndSize(elementRef);
 
   const dropdownRef = useRef<HTMLUListElement>(null);

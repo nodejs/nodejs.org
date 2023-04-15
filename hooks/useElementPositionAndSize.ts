@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export interface ElementPositionAndSize {
   x: number;
@@ -28,12 +28,14 @@ export const useElementPositionAndSize = <T extends HTMLElement>(
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => getPosition(), [elementRef.current]);
 
   useEffect(() => {
     window.addEventListener('resize', getPosition, { passive: true });
 
     return () => window.removeEventListener('resize', getPosition);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return position;
