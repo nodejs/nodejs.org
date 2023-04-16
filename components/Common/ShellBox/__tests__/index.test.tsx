@@ -1,27 +1,34 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { LocaleProvider } from '../../../../providers/localeProvider';
 import userEvent from '@testing-library/user-event';
-import { AppProps } from '../../../../types';
+import { IntlProvider } from 'react-intl';
 import ShellBox from '../index';
 
 const mockWriteText = jest.fn();
-const i18nData = { currentLocale: { code: 'en' } } as AppProps['i18nData'];
-
-Object.defineProperty(window, 'navigator', {
-  value: {
-    clipboard: {
-      writeText: mockWriteText,
-    },
-  },
-});
+const originalNavigator = { ...window.navigator };
 
 describe('ShellBox', () => {
+  beforeEach(() => {
+    Object.defineProperty(window, 'navigator', {
+      value: {
+        clipboard: {
+          writeText: mockWriteText,
+        },
+      },
+    });
+  });
+
+  afterEach(() => {
+    Object.defineProperty(window, 'navigator', {
+      value: originalNavigator,
+    });
+  });
+
   it('should render', () => {
     const { container } = render(
-      <LocaleProvider i18nData={i18nData}>
+      <IntlProvider locale="en">
         <ShellBox>test</ShellBox>
-      </LocaleProvider>
+      </IntlProvider>
     );
     expect(container).toMatchSnapshot();
   });
@@ -39,9 +46,9 @@ describe('ShellBox', () => {
     });
 
     render(
-      <LocaleProvider i18nData={i18nData}>
+      <IntlProvider locale="en">
         <ShellBox textToCopy="test">test</ShellBox>
-      </LocaleProvider>
+      </IntlProvider>
     );
     const button = screen.getByRole('button');
     userEvent.click(button);

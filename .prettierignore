@@ -8,7 +8,6 @@ public/static/documents
 public/static/legacy
 
 # We don't want to lint/prettify the Coverage Results
-tests
 coverage
 
 # MDX Plugin enforces Prettier formatting which should

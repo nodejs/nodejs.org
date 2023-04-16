@@ -2,11 +2,9 @@ import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { FormattedMessage } from 'react-intl';
 import { useCopyToClipboard } from '../useCopyToClipboard';
-import { LocaleProvider } from '../../providers/localeProvider';
-import { AppProps } from '../../types';
+import { IntlProvider } from 'react-intl';
 
 const mockWriteText = jest.fn();
-const i18nData = { currentLocale: { code: 'en' } } as AppProps['i18nData'];
 
 Object.defineProperty(window, 'navigator', {
   value: {
@@ -21,11 +19,11 @@ describe('useCopyToClipboard', () => {
     const [copied, copyText] = useCopyToClipboard();
 
     return (
-      <LocaleProvider i18nData={i18nData}>
+      <IntlProvider locale="en">
         <button onClick={() => copyText(textToCopy)} type="button">
           <FormattedMessage id="components.codeBox.copy" values={{ copied }} />
         </button>
-      </LocaleProvider>
+      </IntlProvider>
     );
   };
 
