@@ -1,0 +1,26 @@
+.dataTag {
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 1.4rem;
+  font-weight: var(--font-weight-light);
+  height: 2.4rem;
+  line-height: 2.4rem;
+  margin-right: 0.8rem;
+  min-width: 2.4rem;
+  text-align: center;
+  width: 2.4rem;
+
+  &[data-tag='C'] {
+    background-color: var(--warning4);
+  }
+
+  &[data-tag='E'] {
+    background-color: var(--danger6);
+  }
+
+  &[data-tag='M'] {
+    background-color: var(--info6);
+  }
+}
