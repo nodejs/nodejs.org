@@ -112,8 +112,9 @@ body:not(.dark) .dark-mode-only,
   display: none;
 }
 
-.light-mode-only,.dark-mode-only{
-height: 18px;
-padding: 9px;
-width: 18px;
+.light-mode-only,
+.dark-mode-only {
+  height: 18px;
+  padding: 9px;
+  width: 18px;
 }
