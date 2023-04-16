@@ -2,14 +2,12 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { LocaleProvider } from '../../../../providers/localeProvider';
-import messages from '../../../../i18n/locales/en.json';
 import DarkModeToggle from '../index';
 import { AppProps } from '../../../../types';
 
 const i18nData = {
   currentLocale: { code: 'en' },
-  localeMessages: messages,
-} as unknown as AppProps['i18nData'];
+} as AppProps['i18nData'];
 
 let mockCurrentTheme = '';
 

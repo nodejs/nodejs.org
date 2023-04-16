@@ -10,7 +10,7 @@ exports[`DarkModeToggle Component render dark mode toggle 1`] = `
     <span
       class="sr-only"
     >
-      Toggle dark/light mode
+      components.header.buttons.toggleDarkMode
     </span>
     <svg
       class="light-mode-only"
