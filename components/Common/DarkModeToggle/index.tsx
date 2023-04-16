@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import styles from './index.module.scss';
 import { useTheme } from 'next-themes';
+import { FormattedMessage } from 'react-intl';
 import { useUpdateBodyClass } from '../../../hooks/useUpdateBodyClass';
 import {
   MdLightMode as IconLightMode,
   MdNightlight as IconDarkMode,
 } from 'react-icons/md';
+import styles from './index.module.scss';
 
 const DarkModeToggle = () => {
   const { theme, setTheme } = useTheme();
@@ -37,7 +38,9 @@ const DarkModeToggle = () => {
       onKeyPress={() => toggleTheme(true)}
       aria-pressed={isDark}
     >
-      <span className="sr-only">Toggle Dark Mode</span>
+      <span className="sr-only">
+        <FormattedMessage id="components.header.buttons.toggleDarkMode" />
+      </span>
       <IconDarkMode className="light-mode-only" />
       <IconLightMode className="dark-mode-only" />
     </button>
