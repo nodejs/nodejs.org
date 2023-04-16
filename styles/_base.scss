@@ -107,8 +107,8 @@ iframe {
   border: none;
 }
 
-body:not(.dark) .dark-mode-only,
-.dark .light-mode-only {
+[data-theme='light'] .dark-mode-only,
+[data-theme='dark'] .light-mode-only {
   display: none;
 }
 

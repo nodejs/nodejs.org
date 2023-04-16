@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTheme } from 'next-themes';
 import { FormattedMessage } from 'react-intl';
-import { useUpdateBodyClass } from '../../../hooks/useUpdateBodyClass';
 import {
   MdLightMode as IconLightMode,
   MdNightlight as IconDarkMode,
@@ -10,24 +9,15 @@ import styles from './index.module.scss';
 
 const DarkModeToggle = () => {
   const { theme, setTheme } = useTheme();
-  const updateBodyClass = useUpdateBodyClass();
 
   const isDark = theme === 'dark';
-
-  useEffect(() => {
-    if (theme) updateBodyClass(theme);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const toggleTheme = (isKeyPress?: boolean) => {
     if (isKeyPress) {
       return;
     }
 
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-
-    setTheme(newTheme);
-    updateBodyClass(newTheme);
+    setTheme(isDark ? 'light' : 'dark');
   };
 
   return (
