@@ -10,7 +10,7 @@ exports[`DarkModeToggle Component render dark mode toggle 1`] = `
     <span
       class="sr-only"
     >
-      Toggle Dark Mode
+      Toggle dark/light mode
     </span>
     <svg
       class="light-mode-only"
