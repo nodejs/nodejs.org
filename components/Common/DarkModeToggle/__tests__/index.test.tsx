@@ -34,7 +34,7 @@ describe('DarkModeToggle Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('switches dark theme to light theme', async () => {
+  it('switches dark theme to light theme', () => {
     mockCurrentTheme = 'dark';
     render(
       <LocaleProvider i18nData={i18nData}>
@@ -42,21 +42,19 @@ describe('DarkModeToggle Component', () => {
       </LocaleProvider>
     );
     const toggle = screen.getByRole('button');
-    // const toggle = await screen.findByText('Toggle Dark Mode');
-    await userEvent.click(toggle);
+    userEvent.click(toggle);
     expect(mockCurrentTheme).toBe('light');
   });
 
-  it('switches light theme to dark theme', async () => {
+  it('switches light theme to dark theme', () => {
     mockCurrentTheme = 'light';
     render(
       <LocaleProvider i18nData={i18nData}>
         <DarkModeToggle />
       </LocaleProvider>
     );
-    // const toggle = await screen.findByText('Toggle Dark Mode');
     const toggle = screen.getByRole('button');
-    await userEvent.click(toggle);
+    userEvent.click(toggle);
     expect(mockCurrentTheme).toBe('dark');
   });
 });
