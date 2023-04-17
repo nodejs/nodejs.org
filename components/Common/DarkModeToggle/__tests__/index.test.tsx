@@ -1,13 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { LocaleProvider } from '../../../../providers/localeProvider';
 import DarkModeToggle from '../index';
-import { AppProps } from '../../../../types';
-
-const i18nData = {
-  currentLocale: { code: 'en' },
-} as AppProps['i18nData'];
+import { IntlProvider } from 'react-intl';
 
 let mockCurrentTheme = '';
 
@@ -25,9 +20,9 @@ jest.mock('next-themes', () => ({
 describe('DarkModeToggle Component', () => {
   it('render dark mode toggle', () => {
     const { container } = render(
-      <LocaleProvider i18nData={i18nData}>
+      <IntlProvider locale="en">
         <DarkModeToggle />
-      </LocaleProvider>
+      </IntlProvider>
     );
     expect(container).toMatchSnapshot();
   });
@@ -35,9 +30,9 @@ describe('DarkModeToggle Component', () => {
   it('switches dark theme to light theme', () => {
     mockCurrentTheme = 'dark';
     render(
-      <LocaleProvider i18nData={i18nData}>
+      <IntlProvider locale="en">
         <DarkModeToggle />
-      </LocaleProvider>
+      </IntlProvider>
     );
     const toggle = screen.getByRole('button');
     userEvent.click(toggle);
@@ -47,9 +42,9 @@ describe('DarkModeToggle Component', () => {
   it('switches light theme to dark theme', () => {
     mockCurrentTheme = 'light';
     render(
-      <LocaleProvider i18nData={i18nData}>
+      <IntlProvider locale="en">
         <DarkModeToggle />
-      </LocaleProvider>
+      </IntlProvider>
     );
     const toggle = screen.getByRole('button');
     userEvent.click(toggle);
