@@ -1,9 +1,9 @@
 .link {
-  &:hover span {
+  &:hover img {
     transform: scale(1.1);
   }
 
-  span {
+  img {
     background-size: contain;
     border: 2px solid var(--brand-light);
     border-radius: 100%;

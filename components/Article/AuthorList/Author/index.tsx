@@ -1,7 +1,7 @@
 import React from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import styles from './index.module.scss';
-import authorPlaceholderImg from './placeholder-img.png';
+import Image from 'next/image';
 
 interface Props {
   username: string;
@@ -18,10 +18,6 @@ const Author = ({
   const githubLink = `https://github.com/${githubUserName}`;
   const githubImgLink = `https://github.com/${githubUserName}.png?size=${size}`;
 
-  const authorImg = {
-    backgroundImage: `url(${githubImgLink}), url(${authorPlaceholderImg.src})`,
-  };
-
   const translation = intl.formatMessage(
     { id: 'components.author.githubLinkLabel' },
     { username }
@@ -37,7 +33,14 @@ const Author = ({
         target="_blank"
         rel="noopener noreferrer"
       >
-        <span style={authorImg} />
+        <Image
+          alt=""
+          src={githubImgLink}
+          placeholder="blur"
+          blurDataURL="/placeholder-img.png"
+          width={Number(size)}
+          height={Number(size)}
+        />
       </a>
     </li>
   );
