@@ -1,10 +1,7 @@
 import React from 'react';
 import { useTheme } from 'next-themes';
 import { FormattedMessage } from 'react-intl';
-import {
-  MdLightMode as IconLightMode,
-  MdNightlight as IconDarkMode,
-} from 'react-icons/md';
+import { MdLightMode, MdNightlight } from 'react-icons/md';
 import styles from './index.module.scss';
 
 const DarkModeToggle = () => {
@@ -31,8 +28,8 @@ const DarkModeToggle = () => {
       <span className="sr-only">
         <FormattedMessage id="components.header.buttons.toggleDarkMode" />
       </span>
-      <IconDarkMode className="light-mode-only" />
-      <IconLightMode className="dark-mode-only" />
+      <MdNightlight className="light-mode-only" />
+      <MdLightMode className="dark-mode-only" />
     </button>
   );
 };
