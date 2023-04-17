@@ -24,8 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "next.config.mjs",
-    "next.data.mjs",
-    ".storybook/constants.ts"
+    "next.data.mjs"
   ],
   "exclude": ["node_modules"]
 }
