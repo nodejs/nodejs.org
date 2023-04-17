@@ -45,7 +45,7 @@
     "react-intl": "^6.3.2",
     "remark-gfm": "^3.0.1",
     "sass": "^1.60.0",
-    "semver": "^7.3.8",
+    "semver": "^7.5.0",
     "strftime": "^0.10.1",
     "stylelint-config-standard": "^31.0.0",
     "swr": "^2.1.1"
