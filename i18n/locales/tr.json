@@ -34,7 +34,6 @@
   "components.header.buttons.toggleDarkMode": "Karanlık/aydınlık modunu değiştir",
   "components.pagination.next": "Daha Yeni | ",
   "components.pagination.previous": "Daha Eski",
-  "components.author.githubLinkLabel": "{username} Github - opens in new tab",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {{author} tarafından }}",
   "layouts.blogIndex.currentYear": "{year} yılından haberler",
   "containers.authorList.title": "Article Authors"

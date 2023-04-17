@@ -34,7 +34,6 @@
   "components.header.buttons.toggleDarkMode": "Toggle dark/light mode",
   "components.pagination.next": "下一個 | ",
   "components.pagination.previous": "上一個",
-  "components.author.githubLinkLabel": "{username} Github - opens in new tab",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {By {author}, }}",
   "layouts.blogIndex.currentYear": "News from {year}",
   "containers.authorList.title": "Article Authors"

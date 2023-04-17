@@ -34,7 +34,6 @@
   "components.header.buttons.toggleDarkMode": "明亮/暗黑模式切换",
   "components.pagination.next": "较新的新闻事件 | ",
   "components.pagination.previous": "更早的新闻事件",
-  "components.author.githubLinkLabel": "Github 的用户“{username}”以新窗口方式打开",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {由 {author} }}",
   "layouts.blogIndex.currentYear": "{year} 年的所有新闻事件",
   "containers.authorList.title": "贡献者"
