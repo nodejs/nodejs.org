@@ -15,7 +15,8 @@
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
     "isolatedModules": true,
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "rootDir": "."
   },
   "include": [
     "next-env.d.ts",
@@ -23,7 +24,8 @@
     "**/*.ts",
     "**/*.tsx",
     "next.config.mjs",
-    "next.data.mjs"
+    "next.data.mjs",
+    ".storybook/constants.ts"
   ],
   "exclude": ["node_modules"]
 }
