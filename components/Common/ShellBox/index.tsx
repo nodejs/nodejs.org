@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 import ReactDomServer from 'react-dom/server';
 
 interface Props {
-  children: React.ReactNode;
+  children: React.ReactNode | undefined;
   textToCopy?: string;
 }
 
@@ -17,9 +17,10 @@ const ShellBox = ({ children, textToCopy }: React.PropsWithChildren<Props>) => {
       event.preventDefault();
       const text = textToCopy
         ? textToCopy
-        : ReactDomServer.renderToString(children);
+        : ReactDomServer.renderToString(<>children</>);
       await copyText(text);
     },
+    //eslint-disable-next-line react-hooks/exhaustive-deps
     [textToCopy, children, copyText]
   );
 

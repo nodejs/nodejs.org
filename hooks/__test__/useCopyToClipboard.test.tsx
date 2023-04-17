@@ -3,6 +3,7 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import { FormattedMessage } from 'react-intl';
 import { useCopyToClipboard } from '../useCopyToClipboard';
 import { IntlProvider } from 'react-intl';
+import messages from '../../i18n/locales/en.json';
 
 const mockWriteText = jest.fn();
 
@@ -19,9 +20,12 @@ describe('useCopyToClipboard', () => {
     const [copied, copyText] = useCopyToClipboard();
 
     return (
-      <IntlProvider locale="en">
+      <IntlProvider locale="en" messages={messages}>
         <button onClick={() => copyText(textToCopy)} type="button">
-          <FormattedMessage id="components.codeBox.copy" values={{ copied }} />
+          <FormattedMessage
+            id="components.common.shellBox.copy"
+            values={{ copied }}
+          />
         </button>
       </IntlProvider>
     );
