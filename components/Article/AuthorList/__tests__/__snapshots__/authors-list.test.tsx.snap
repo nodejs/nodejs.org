@@ -5,28 +5,48 @@ exports[`AuthorsList component renders correctly 1`] = `
   <div
     class="authorList"
   >
-    containers.authorList.title
+    components.article.authorList.title
     <ul>
       <li>
         <a
-          aria-label="components.author.githubLinkLabel"
+          aria-label="components.article.author.githubLinkLabel"
           class="link"
           href="https://github.com/test-author"
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span />
+          <img
+            alt=""
+            data-nimg="1"
+            decoding="async"
+            height="60"
+            loading="lazy"
+            src="/_next/image?url=https%3A%2F%2Fgithub.com%2Ftest-author.png%3Fsize%3D60&w=128&q=75"
+            srcset="/_next/image?url=https%3A%2F%2Fgithub.com%2Ftest-author.png%3Fsize%3D60&w=64&q=75 1x, /_next/image?url=https%3A%2F%2Fgithub.com%2Ftest-author.png%3Fsize%3D60&w=128&q=75 2x"
+            style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+            width="60"
+          />
         </a>
       </li>
       <li>
         <a
-          aria-label="components.author.githubLinkLabel"
+          aria-label="components.article.author.githubLinkLabel"
           class="link"
           href="https://github.com/another-test-author"
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span />
+          <img
+            alt=""
+            data-nimg="1"
+            decoding="async"
+            height="60"
+            loading="lazy"
+            src="/_next/image?url=https%3A%2F%2Fgithub.com%2Fanother-test-author.png%3Fsize%3D60&w=128&q=75"
+            srcset="/_next/image?url=https%3A%2F%2Fgithub.com%2Fanother-test-author.png%3Fsize%3D60&w=64&q=75 1x, /_next/image?url=https%3A%2F%2Fgithub.com%2Fanother-test-author.png%3Fsize%3D60&w=128&q=75 2x"
+            style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+            width="60"
+          />
         </a>
       </li>
     </ul>
