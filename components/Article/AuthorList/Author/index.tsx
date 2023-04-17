@@ -19,7 +19,7 @@ const Author = ({
   const githubImgLink = `https://github.com/${githubUserName}.png?size=${size}`;
 
   const translation = intl.formatMessage(
-    { id: 'components.author.githubLinkLabel' },
+    { id: 'components.article.author.githubLinkLabel' },
     { username }
   );
 
