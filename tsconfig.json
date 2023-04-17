@@ -15,8 +15,7 @@
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
     "isolatedModules": true,
-    "downlevelIteration": true,
-    "rootDir": "."
+    "downlevelIteration": true
   },
   "include": [
     "next-env.d.ts",
