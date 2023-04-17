@@ -35,6 +35,5 @@
   "components.pagination.next": "Daha Yeni | ",
   "components.pagination.previous": "Daha Eski",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {{author} tarafından }}",
-  "layouts.blogIndex.currentYear": "{year} yılından haberler",
-  "containers.authorList.title": "Article Authors"
+  "layouts.blogIndex.currentYear": "{year} yılından haberler"
 }
