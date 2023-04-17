@@ -56,6 +56,6 @@ If you're making a new Component and adding Translation Keys for your Component,
 Translation Keys should not be translated during Unit Testing. If your Component uses, for example `FormattedMessage`, you should provide the `<IntlProvider>` surrounding your `testing-library` render logic. Or, you can create a wrapper for your test. Note that you should not import the English messages to your Unit Test as:
 
 - Unit Testing should test a Component functionality.
-- Unit Tests should not rely on text, title's or string bags as these texts will change aritrarily and make the test suite fail.
+- Unit Tests should not rely on text, titles, or string bags, as these texts will change arbitrarily and make the test suite fail.
   - In this case, you should test your component by aria-text, or other `aria-*` attributes or even by class names or other artifacts.
 - If you want to test how different languages and text appear within a Component, Visual Regression Testing is recommended.
