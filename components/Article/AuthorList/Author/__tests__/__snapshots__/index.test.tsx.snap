@@ -4,7 +4,7 @@ exports[`Author component does not render without a username 1`] = `
 <div>
   <li>
     <a
-      aria-label=" Github - opens in new tab"
+      aria-label="components.author.githubLinkLabel"
       class="link"
       href="https://github.com/"
       rel="noopener noreferrer"
@@ -20,7 +20,7 @@ exports[`Author component renders correctly 1`] = `
 <div>
   <li>
     <a
-      aria-label="test-author Github - opens in new tab"
+      aria-label="components.author.githubLinkLabel"
       class="link"
       href="https://github.com/test-author"
       rel="noopener noreferrer"

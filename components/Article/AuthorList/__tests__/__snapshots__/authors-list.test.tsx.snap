@@ -5,11 +5,11 @@ exports[`AuthorsList component renders correctly 1`] = `
   <div
     class="authorList"
   >
-    Article Authors
+    containers.authorList.title
     <ul>
       <li>
         <a
-          aria-label="test-author Github - opens in new tab"
+          aria-label="components.author.githubLinkLabel"
           class="link"
           href="https://github.com/test-author"
           rel="noopener noreferrer"
@@ -20,7 +20,7 @@ exports[`AuthorsList component renders correctly 1`] = `
       </li>
       <li>
         <a
-          aria-label="another-test-author Github - opens in new tab"
+          aria-label="components.author.githubLinkLabel"
           class="link"
           href="https://github.com/another-test-author"
           rel="noopener noreferrer"
