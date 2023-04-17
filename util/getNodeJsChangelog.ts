@@ -1,23 +1,31 @@
 import semVer from 'semver';
 
-export const getNodejsChangelog = (version: string) => {
-  const changelogs = 'https://github.com/nodejs/node/blob/main/doc/changelogs';
+/**
+ * Returns the URL of the Node.js changelog for the specified version.
+ *
+ * @param version The version of Node.js to get the changelog for.
+ * @returns The URL of the Node.js changelog for the specified version.
+ */
+export const getNodejsChangelog = (version: string): string => {
+  const changelogsUrl =
+    'https://github.com/nodejs/node/blob/main/doc/changelogs';
 
-  const clean = semVer.clean(version);
+  // Parse the version string and get the major and minor versions
+  const cleanVersion = semVer.clean(version);
+  const majorVersion = semVer.major(cleanVersion!);
+  const minorVersion = semVer.minor(cleanVersion!);
 
-  const major = semVer.major(clean!);
-  const minor = semVer.minor(clean!);
-
-  if (major >= 4) {
-    return `${changelogs}/CHANGELOG_V${major}.md#${clean}`;
+  // Determine the URL of the changelog based on the version
+  if (majorVersion >= 4) {
+    return `${changelogsUrl}/CHANGELOG_V${majorVersion}.md#${cleanVersion}`;
   }
 
-  if (major >= 1) {
-    return `${changelogs}/CHANGELOG_IOJS.md#${clean}`;
+  if (majorVersion >= 1) {
+    return `${changelogsUrl}/CHANGELOG_IOJS.md#${cleanVersion}`;
   }
 
-  if (minor === 12 || minor === 10) {
-    return `${changelogs}/CHANGELOG_V${major}${minor}.md#${clean}`;
+  if (minorVersion === 12 || minorVersion === 10) {
+    return `${changelogsUrl}/CHANGELOG_V${majorVersion}${minorVersion}.md#${cleanVersion}`;
   }
 
   return `https://github.com/nodejs/node-v0.x-archive/blob/${version}/ChangeLog`;
