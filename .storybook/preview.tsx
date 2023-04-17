@@ -1,6 +1,6 @@
+import type { Preview } from '@storybook/react';
 import NextImage from 'next/image';
 import App from '../pages/_app.mdx';
-import type { Preview } from '@storybook/react';
 import { pageProps } from './constants';
 
 import '../styles/styles.scss';
