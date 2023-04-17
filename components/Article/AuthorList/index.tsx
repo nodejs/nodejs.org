@@ -11,7 +11,7 @@ const AuthorList = ({ authors }: Props) => {
   if (authors.length) {
     return (
       <div className={styles.authorList}>
-        <FormattedMessage id="containers.authorList.title" />
+        <FormattedMessage id="components.article.authorList.title" />
         <ul>
           {authors.map(author => (
             <Author username={author} key={author} size="60" />
