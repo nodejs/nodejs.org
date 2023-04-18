@@ -7,7 +7,7 @@ describe('Author component', () => {
   it('renders correctly', () => {
     const username = 'test-author';
     const { container } = render(
-      <IntlProvider locale="en">
+      <IntlProvider locale="en" onError={() => {}}>
         <Author username={username} size="60" />
       </IntlProvider>
     );
@@ -16,7 +16,7 @@ describe('Author component', () => {
 
   it('does not render without a username', () => {
     const { container } = render(
-      <IntlProvider locale="en">
+      <IntlProvider locale="en" onError={() => {}}>
         <Author username="" size="" />
       </IntlProvider>
     );

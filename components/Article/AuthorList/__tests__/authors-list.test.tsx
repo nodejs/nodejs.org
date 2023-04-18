@@ -7,7 +7,7 @@ describe('AuthorsList component', () => {
   it('renders correctly', () => {
     const authors = ['test-author', 'another-test-author'];
     const { container } = render(
-      <IntlProvider locale="en">
+      <IntlProvider locale="en" onError={() => {}}>
         <AuthorsList authors={authors} />
       </IntlProvider>
     );
