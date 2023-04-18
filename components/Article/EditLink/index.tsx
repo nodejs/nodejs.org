@@ -11,28 +11,41 @@ interface Props {
   absolutePath?: string;
 }
 
-// TODO(HinataKah0): Change this
-const baseURL =
+// TODO(HinataKah0): Change branch from major/website-redesign to main
+
+const baseEditURL =
   'https://github.com/nodejs/nodejs.org/edit/major/website-redesign';
+
+const translationReadmeURL =
+  'https://github.com/nodejs/nodejs.org/blob/major/website-redesign/TRANSLATION.md';
 
 const EditLink = ({ relativePath, editPath, absolutePath }: Props) => {
   const { currentLocale } = useLocale();
 
   if (!relativePath && !editPath && !absolutePath) return null;
 
-  const href =
-    absolutePath ||
-    (relativePath
-      ? `${baseURL}/pages/${currentLocale.code}/${relativePath}`
-      : `${baseURL}/${editPath}`);
+  let href;
+  let translationKey = 'components.article.editLink.title.';
+
+  // Initial content development is done on GitHub in English
+  switch (currentLocale.code) {
+    case 'en':
+      href =
+        absolutePath ||
+        (relativePath
+          ? `${baseEditURL}/pages/en/${relativePath}`
+          : `${baseEditURL}/${editPath}`);
+      translationKey += 'edit';
+      break;
+    default:
+      href = translationReadmeURL;
+      translationKey += 'translate';
+  }
 
   return (
     <div className={styles.edit}>
       <a href={href}>
-        <FormattedMessage
-          id="components.article.editLink.title"
-          tagName="span"
-        />
+        <FormattedMessage id={translationKey} tagName="span" />
         <FontAwesomeIcon icon={faPencil} />
       </a>
     </div>
