@@ -5,7 +5,6 @@ import styles from './index.module.scss';
 import ReactDomServer from 'react-dom/server';
 
 interface Props {
-  children: React.ReactNode | undefined;
   textToCopy?: string;
 }
 
