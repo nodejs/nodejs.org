@@ -32,7 +32,4 @@ const nodeVersionData = {
   ],
 };
 
-export const pageProps = {
-  i18nData,
-  nodeVersionData,
-};
+export const pageProps = { i18nData, nodeVersionData };
