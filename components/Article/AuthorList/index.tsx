@@ -14,7 +14,7 @@ const AuthorList = ({ authors }: Props) => {
         <FormattedMessage id="components.article.authorList.title" />
         <ul>
           {authors.map(author => (
-            <Author username={author} key={author} size="60" />
+            <Author username={author} key={author} size={60} />
           ))}
         </ul>
       </div>

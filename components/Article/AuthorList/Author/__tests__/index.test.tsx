@@ -8,7 +8,7 @@ describe('Author component', () => {
     const username = 'test-author';
     const { container } = render(
       <IntlProvider locale="en" onError={() => {}}>
-        <Author username={username} size="60" />
+        <Author username={username} size={60} />
       </IntlProvider>
     );
     expect(container).toMatchSnapshot();
@@ -17,7 +17,7 @@ describe('Author component', () => {
   it('does not render without a username', () => {
     const { container } = render(
       <IntlProvider locale="en" onError={() => {}}>
-        <Author username="" size="" />
+        <Author username="" />
       </IntlProvider>
     );
     expect(container).toMatchSnapshot();

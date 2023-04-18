@@ -5,12 +5,12 @@ import Image from 'next/image';
 
 interface Props {
   username: string;
-  size: string;
+  size?: number;
 }
 
 const Author = ({
   username,
-  size = '64',
+  size = 64,
   intl,
 }: Props & WrappedComponentProps) => {
   // Clean up username and build links.
@@ -40,8 +40,8 @@ const Author = ({
           src={authorImg}
           placeholder="blur"
           blurDataURL="/placeholder-img.png"
-          width={Number(size)}
-          height={Number(size)}
+          width={size}
+          height={size}
           onError={() => setAuthorImg('/placeholder-img.png')}
         />
       </a>
