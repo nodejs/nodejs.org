@@ -132,7 +132,7 @@ The cost of initializing `EventTarget` has been cut by half, providing faster ac
 
 Node.js 20 includes specific changes, such as the updated version 2.0 of Ada, a fast and spec-compliant URL parser written in C++.
 
-Looking forward to new ways to improve performance we are currently working on reducing the cost of being specification compliant by refactoring to get rid of brand validations checks on streams, `URL`, `URLSearchParams`, and String Decoder. This helps support our general goal of being specificaiton compliant where it makes sense.
+Looking forward to new ways to improve performance we are currently working on reducing the cost of being specification compliant by refactoring to get rid of brand validations checks on streams, `URL`, `URLSearchParams`, and String Decoder. This helps support our general goal of being specification compliant where it makes sense.
 
 If you have a passion for performance and Node.js, we are actively looking for contributors for our [performance team](https://github.com/nodejs/performance).
 
@@ -169,7 +169,7 @@ This change was made by Filip Skokan in [#46067](https://github.com/nodejs/node/
 
 ### Official support for ARM64 Windows
 
-Node.js has broard platform and architecture support and people seem to want it to run everywhere. We are happy to share that Node.js now includes binaries for ARM64 Windows, allowing for native execution on the platform.
+Node.js has broad platform and architecture support and people seem to want it to run everywhere. We are happy to share that Node.js now includes binaries for ARM64 Windows, allowing for native execution on the platform.
 The MSI, zip/7z packages, and executable are available from the Node.js download site along with all other platforms.
 The CI system was updated and all changes are now fully tested on ARM64 Windows, to prevent regressions and ensure compatibility.
 
