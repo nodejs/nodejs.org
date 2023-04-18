@@ -16,8 +16,8 @@ exports[`Author component does not render without a username 1`] = `
         decoding="async"
         height="0"
         loading="lazy"
-        src="http://localhost/_next/image?url=https%3A%2F%2Fgithub.com%2F.png%3Fsize%3D&w=16&q=75"
-        srcset="/_next/image?url=https%3A%2F%2Fgithub.com%2F.png%3Fsize%3D&w=16&q=75 1x"
+        src="http://localhost/_next/image?url=https%3A%2F%2Fgithub.com%2F.png%3Fsize%3D0&w=16&q=75"
+        srcset="/_next/image?url=https%3A%2F%2Fgithub.com%2F.png%3Fsize%3D0&w=16&q=75 1x"
         style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
         width="0"
       />
