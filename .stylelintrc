@@ -5,6 +5,7 @@
     "order/properties-alphabetical-order": true,
     "no-descending-specificity": null,
     "scss/at-extend-no-missing-placeholder": null,
+    "scss/at-import-no-partial-leading-underscore": null,
     "selector-pseudo-class-no-unknown": [
       true,
       { "ignorePseudoClasses": ["global"] }
