@@ -1,5 +1,7 @@
+@import 'styles/_variables';
+
 .banner {
-  color: var(--color-text-primary);
+  color: $node-gray;
   margin: 0 auto;
   max-width: 90vw;
   padding-top: var(--space-08);
@@ -13,12 +15,13 @@
 
   a {
     align-items: center;
-    color: var(--color-text-primary);
     display: flex;
     flex-direction: column;
     text-decoration: none;
 
     &:hover {
+      background-color: transparent !important;
+      color: $node-green;
       text-decoration: underline;
     }
 
@@ -45,7 +48,7 @@
       white-space: nowrap;
 
       &:hover {
-        background-color: var(--color-text-primary);
+        background-color: $node-green !important;
         cursor: pointer;
       }
     }
@@ -63,6 +66,7 @@
 
     a {
       &:hover {
+        background-color: transparent !important;
         text-decoration: underline;
       }
     }

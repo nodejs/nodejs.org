@@ -11,9 +11,6 @@ const config: StorybookConfig = {
     name: '@storybook/nextjs',
     options: {},
   },
-  features: {
-    storyStoreV7: true,
-  },
   docs: {
     autodocs: 'tag',
   },

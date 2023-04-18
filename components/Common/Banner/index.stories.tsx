@@ -1,8 +1,7 @@
+import type { StoryObj } from '@storybook/react';
 import Banner from './index';
-import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 type Story = StoryObj<typeof Banner>;
-type Meta = MetaObj<typeof Banner>;
 
 const addDaysToDate = (numDays: number, date: Date) => {
   const newDate = new Date(date);
@@ -37,15 +36,4 @@ export const WithHTML: Story = {
   },
 };
 
-export const WithHTMLImage: Story = {
-  args: {
-    bannersIndex: {
-      startDate: startDate.toISOString(),
-      endDate: endDate.toISOString(),
-      html: '<img src="/static/images/nodejs-training.png" alt="Banner Image" />',
-      link: 'https://nodejs.org/en/',
-    },
-  },
-};
-
-export default { component: Banner } as Meta;
+export default { component: Banner };
