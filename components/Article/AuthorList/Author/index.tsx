@@ -36,7 +36,7 @@ const Author = ({
         rel="noopener noreferrer"
       >
         <Image
-          alt=""
+          alt={githubUserName}
           src={authorImg}
           placeholder="blur"
           blurDataURL="/placeholder-img.png"
