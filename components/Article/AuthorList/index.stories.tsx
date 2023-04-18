@@ -4,6 +4,6 @@ export default { component: AuthorList };
 
 export const Default = {
   args: {
-    authors: ['shanpriyan', 'ovflowd', 'manishprivet', 'unavailable-author'],
+    authors: ['flaviocopes', 'MarkPieszak', 'mcollina', 'unavailable-author'],
   },
 };

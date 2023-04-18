@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import styles from './index.module.scss';
 import Image from 'next/image';
@@ -18,6 +18,8 @@ const Author = ({
   const githubLink = `https://github.com/${githubUserName}`;
   const githubImgLink = `https://github.com/${githubUserName}.png?size=${size}`;
 
+  const [authorImg, setAuthorImg] = useState(githubImgLink);
+
   const translation = intl.formatMessage(
     { id: 'components.article.author.githubLinkLabel' },
     { username }
@@ -35,11 +37,12 @@ const Author = ({
       >
         <Image
           alt=""
-          src={githubImgLink}
+          src={authorImg}
           placeholder="blur"
           blurDataURL="/placeholder-img.png"
           width={Number(size)}
           height={Number(size)}
+          onError={() => setAuthorImg('/placeholder-img.png')}
         />
       </a>
     </li>
