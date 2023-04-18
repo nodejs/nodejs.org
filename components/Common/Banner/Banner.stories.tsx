@@ -1,12 +1,12 @@
 import type { StoryObj } from '@storybook/react';
-import Banner from './';
+import Banner from './index';
 
 type Story = StoryObj<typeof Banner>;
 
 const addDaysToDate = (numDays: number, date: Date) => {
   const newDate = new Date(date);
   newDate.setDate(date.getDate() + numDays);
-  return date;
+  return newDate;
 };
 
 // Create mock start and end dates as Banner Component renders
@@ -36,7 +36,4 @@ export const WithHTML: Story = {
   },
 };
 
-export default {
-  title: 'Banner',
-  component: Banner,
-};
+export default { component: Banner };
