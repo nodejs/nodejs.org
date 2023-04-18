@@ -177,7 +177,7 @@ ARM64 Windows was upgraded to tier 2 support by Stefan Stojanovic in [#47233](ht
 
 ### Progress on Web Assembly System Interface (WASI)
 
-The project continues to work on the WASI implemenation within Node.js. Some notable progress is that although it is experimental a command line option is no longer required to enable WASI. This should make it easier to consume. As the [team](https://github.com/nodejs/uvwasi) working on WASI looks forward to `preview1` a few changes were also made to plan for the future. That included adding a `version`
+The project continues to work on the WASI implemenation within Node.js. Some notable progress is that although it is experimental a command line option is no longer required to enable WASI. This should make it easier to consume. As the [team](https://github.com/nodejs/uvwasi) working on WASI looks forward to `preview2` a few changes were also made to plan for the future. That included adding a `version`
 option when `new WASI()` is called. In the 20.x release the `version` is required and has no default value. This is important to that as new versions are supported applications don't default to what may be an obsolete version. This does mean, however, that any code that relied on the default for the version will need to be updated to request a specific version.
 
 If you have a interest in using WASI in Node.js or [uvwasi](https://github.com/nodejs/uvwasi) which is used outside of Node.js itself, the team would love additional contributors. 
