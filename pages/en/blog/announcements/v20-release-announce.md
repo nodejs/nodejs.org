@@ -1,6 +1,6 @@
 ---
 title: Node.js 20 is now available!
-date: 2022-04-18T15:45:00.000Z
+date: 2023-04-18T15:45:00.000Z
 status: publish
 category: announcements
 slug: nodejs-20-release-announcement
