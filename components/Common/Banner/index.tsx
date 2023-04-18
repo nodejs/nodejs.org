@@ -1,14 +1,11 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
+import { useIntl } from 'react-intl';
 import { sanitize } from 'isomorphic-dompurify';
+import styles from './index.module.scss';
 import { dateIsBetween } from '../../../util/dateIsBetween';
 import { isAbsoluteUrl } from '../../../util/isAbsoluteUrl';
-import styles from './index.module.scss';
-import { WebsiteBanner } from '../../../types';
-import { useIntl } from 'react-intl';
-
-export interface BannerProps {
-  bannersIndex: WebsiteBanner;
-}
+import type { FC } from 'react';
+import type { WebsiteBanner } from '../../../types';
 
 const useTextContent = ({ text, link }: WebsiteBanner, bannerBtnText: string) =>
   useMemo(() => {
@@ -47,29 +44,31 @@ const useHtmlContent = ({ html, link }: WebsiteBanner) =>
     return null;
   }, [html, link]);
 
-const Banner = ({ bannersIndex }: BannerProps) => {
+type BannerProps = { bannersIndex: WebsiteBanner };
+
+const Banner: FC<BannerProps> = props => {
   const { formatMessage } = useIntl();
 
-  const bannerBtnText = formatMessage({
-    id: 'components.common.banner.button.text',
-  });
-
   const showBanner = dateIsBetween(
-    bannersIndex.startDate,
-    bannersIndex.endDate
+    props.bannersIndex.startDate,
+    props.bannersIndex.endDate
   );
 
-  const link = !isAbsoluteUrl(bannersIndex.link)
-    ? `http://nodejs.org/${bannersIndex.link}`
-    : bannersIndex.link;
+  const link = !isAbsoluteUrl(props.bannersIndex.link)
+    ? `http://nodejs.org/${props.bannersIndex.link}`
+    : props.bannersIndex.link;
 
-  const textContent = useTextContent({ ...bannersIndex, link }, bannerBtnText);
-  const htmlContent = useHtmlContent({ ...bannersIndex, link });
+  const textContent = useTextContent(
+    { ...props.bannersIndex, link },
+    formatMessage({ id: 'components.common.banner.button.text' })
+  );
+
+  const htmlContent = useHtmlContent({ ...props.bannersIndex, link });
 
   if (showBanner) {
     return (
       <div className={styles.banner}>
-        {bannersIndex.text ? textContent : htmlContent}
+        {props.bannersIndex.text ? textContent : htmlContent}
       </div>
     );
   }

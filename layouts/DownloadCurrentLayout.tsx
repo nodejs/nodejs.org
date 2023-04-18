@@ -1,14 +1,13 @@
-import type { PropsWithChildren } from 'react';
-
 import BaseLayout from './BaseLayout';
 import PrimaryDownloadMatrix from '../components/Downloads/PrimaryDownloadMatrix';
 import SecondaryDownloadMatrix from '../components/Downloads/SecondaryDownloadMatrix';
 import { useNextraContext } from '../hooks/useNextraContext';
 import { useNodeData } from '../hooks/useNodeData';
+import type { PropsWithChildren } from 'react';
 
 import type { LegacyDownloadsFrontMatter, NodeVersionData } from '../types';
 
-const DownloadCurrentLayout = ({ children }: PropsWithChildren) => {
+const DownloadCurrentLayout = (props: PropsWithChildren) => {
   const nextraContext = useNextraContext();
   const { currentNodeVersion = {} as NodeVersionData } = useNodeData();
 
@@ -22,7 +21,7 @@ const DownloadCurrentLayout = ({ children }: PropsWithChildren) => {
             <h1>{downloads.headline}</h1>
           </div>
 
-          {children}
+          {props.children}
 
           <PrimaryDownloadMatrix {...currentNodeVersion} />
           <SecondaryDownloadMatrix {...currentNodeVersion} />

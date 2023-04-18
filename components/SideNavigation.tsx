@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-
 import LocalizedLink from './LocalizedLink';
 import { useLocale } from '../hooks/useLocale';
 import { useNavigation } from '../hooks/useNavigation';
@@ -11,11 +10,14 @@ type SideNavigationProps = {
   context?: Record<string, Record<string, any>>;
 };
 
-const SideNavigation = ({ navigationKey, context }: SideNavigationProps) => {
+const SideNavigation = (props: SideNavigationProps) => {
   const { getSideNavigation } = useNavigation();
   const { isCurrentLocaleRoute } = useLocale();
 
-  const sideNavigationItems = getSideNavigation(navigationKey, context);
+  const sideNavigationItems = getSideNavigation(
+    props.navigationKey,
+    props.context
+  );
 
   const getLinkClassName = (href: string) =>
     classNames({ active: isCurrentLocaleRoute(href) });

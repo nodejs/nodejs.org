@@ -1,13 +1,12 @@
 import { FormattedMessage } from 'react-intl';
-import type { PropsWithChildren } from 'react';
-
 import BaseLayout from './BaseLayout';
 import Pagination from '../components/Pagination';
 import LocalizedLink from '../components/LocalizedLink';
 import { useNextraContext } from '../hooks/useNextraContext';
 import { getTimeComponent } from '../util/getTimeComponent';
+import type { PropsWithChildren } from 'react';
 
-const BlogIndexLayout = ({ children }: PropsWithChildren) => {
+const BlogIndexLayout = (props: PropsWithChildren) => {
   const { blogData } = useNextraContext();
 
   const currentYear = blogData?.currentCategory.replace('year-', '');
@@ -35,7 +34,7 @@ const BlogIndexLayout = ({ children }: PropsWithChildren) => {
           nextSlug={blogData?.pagination.next}
         />
 
-        {children}
+        {props.children}
       </div>
     </BaseLayout>
   );

@@ -1,13 +1,12 @@
 import { FormattedMessage } from 'react-intl';
-import type { PropsWithChildren } from 'react';
-
 import BaseLayout from './BaseLayout';
 import { useNextraContext } from '../hooks/useNextraContext';
 import { getTimeComponent } from '../util/getTimeComponent';
+import type { PropsWithChildren } from 'react';
 
 import type { LegacyBlogFrontMatter } from '../types';
 
-const BlogPostLayout = ({ children }: PropsWithChildren) => {
+const BlogPostLayout = (props: PropsWithChildren) => {
   const nextraContext = useNextraContext();
 
   const { title, author, date } =
@@ -28,7 +27,7 @@ const BlogPostLayout = ({ children }: PropsWithChildren) => {
             </span>
           </div>
 
-          {children}
+          {props.children}
         </article>
       </div>
     </BaseLayout>

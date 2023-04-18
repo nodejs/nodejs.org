@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
 import Link from 'next/link';
-import type { ComponentProps } from 'react';
-
 import { useLocale } from '../hooks/useLocale';
 import { linkWithLocale } from '../util/linkWithLocale';
+import type { ComponentProps } from 'react';
 
 const LocalizedLink = (props: ComponentProps<typeof Link>) => {
+  // eslint-disable-next-line react/destructuring-assignment
   const { href, children, ...extra } = props;
 
   const { currentLocale } = useLocale();

@@ -1,18 +1,18 @@
-import React from 'react';
 import styles from './index.module.scss';
+import type { FC, ReactNode } from 'react';
 
-interface Props {
-  children?: React.ReactNode;
+type AnimatedPlaceholderProps = {
+  children?: ReactNode;
   width?: number;
   height?: number;
-}
+};
 
-const AnimatedPlaceholder = ({ children, width = 400, height = 50 }: Props) => (
+const AnimatedPlaceholder: FC<AnimatedPlaceholderProps> = props => (
   <div
     className={styles.placeholder}
-    style={{ width: `${width}px`, height: `${height}px` }}
+    style={{ width: `${props.width}px`, height: `${props.height}px` }}
   >
-    {children || (
+    {props.children || (
       <>
         <div className={styles.placeholderImage} />
         <div className={styles.placeholderText}>

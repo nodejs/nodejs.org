@@ -1,5 +1,4 @@
 import { FormattedMessage } from 'react-intl';
-
 import LocalizedLink from './LocalizedLink';
 
 type PaginationProps = { prevSlug?: string; nextSlug?: string };

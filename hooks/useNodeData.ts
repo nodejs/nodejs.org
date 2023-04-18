@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { NodeDataContext } from '../providers/nodeDataProvider';
-import { NodeVersionData } from '../types';
+import type { NodeVersionData } from '../types';
 
 type UseNodeDataReturnType = {
   currentNodeVersion?: NodeVersionData;

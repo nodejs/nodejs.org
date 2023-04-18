@@ -1,18 +1,17 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import highlightJs from 'highlight.js/lib/common';
 import { useRouter } from 'next/router';
-import type { NextraThemeLayoutProps } from 'nextra';
-import type { MDXComponents } from 'mdx/types';
-
 import HtmlHead from './components/HtmlHead';
 import AnchoredHeading from './components/AnchoredHeading';
 import NodeApiVersionLinks from './components/Docs/NodeApiVersionLinks';
 import { LayoutProvider } from './providers/layoutProvider';
-
+import type { PropsWithChildren } from 'react';
+import type { NextraThemeLayoutProps } from 'nextra';
+import type { MDXComponents } from 'mdx/types';
 import type { LegacyFrontMatter } from './types';
 
-type LayoutProps = React.PropsWithChildren<{
+type LayoutProps = PropsWithChildren<{
   pageOpts: NextraThemeLayoutProps['pageOpts'];
 }>;
 
@@ -27,7 +26,7 @@ const mdxComponents: MDXComponents = {
   blockquote: ({ children }) => <div className="highlight-box">{children}</div>,
 };
 
-const Content = ({ children }: LayoutProps) => {
+const Content = (props: LayoutProps) => {
   const { asPath } = useRouter();
 
   // Re-highlights the pages on route change
@@ -37,7 +36,7 @@ const Content = ({ children }: LayoutProps) => {
 
   return (
     <MDXProvider components={mdxComponents} disableParentContext>
-      {children}
+      {props.children}
     </MDXProvider>
   );
 };
@@ -49,11 +48,11 @@ interface ThemeProps extends NextraThemeLayoutProps {
   };
 }
 
-const Theme = ({ children, pageOpts, pageProps }: ThemeProps) => (
+const Theme = (props: ThemeProps) => (
   <>
-    <HtmlHead frontMatter={pageOpts.frontMatter} />
-    <LayoutProvider pageOpts={pageOpts} pageProps={pageProps}>
-      <Content pageOpts={pageOpts}>{children}</Content>
+    <HtmlHead frontMatter={props.pageOpts.frontMatter} />
+    <LayoutProvider pageOpts={props.pageOpts} pageProps={props.pageProps}>
+      <Content pageOpts={props.pageOpts}>{props.children}</Content>
     </LayoutProvider>
   </>
 );

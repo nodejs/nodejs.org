@@ -25,11 +25,12 @@ type AnchorHeadingProps = PropsWithChildren<{
 // so we can just use '-- --' to quote the anchor name inside it.
 const COMMENT_FOR_HEADANCHOR = /--\x20?([\w\x20-]+)\x20?--/;
 
-const AnchoredHeading = ({ children, level, id }: AnchorHeadingProps) => {
-  const HeadingLevelTag = `h${level}` as any;
+const AnchoredHeading = (props: AnchorHeadingProps) => {
+  const HeadingLevelTag = `h${props.level}` as any;
 
   let sanitizedId =
-    id ?? children?.toLocaleString().toLocaleLowerCase().replace(/\x20/g, '-');
+    props.id ??
+    props.children?.toLocaleString().toLocaleLowerCase().replace(/\x20/g, '-');
 
   if (sanitizedId) {
     const foundAnchorAndTitle = COMMENT_FOR_HEADANCHOR.exec(sanitizedId);
@@ -46,7 +47,7 @@ const AnchoredHeading = ({ children, level, id }: AnchorHeadingProps) => {
 
   return (
     <HeadingLevelTag id={sanitizedId}>
-      {children}
+      {props.children}
       <a
         id={`header-${sanitizedId}`}
         className="anchor"

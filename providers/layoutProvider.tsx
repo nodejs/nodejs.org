@@ -1,7 +1,4 @@
 import { createContext } from 'react';
-import type { PropsWithChildren } from 'react';
-import type { PageOpts } from 'nextra';
-
 import AboutLayout from '../layouts/AboutLayout';
 import BlogIndexLayout from '../layouts/BlogIndexLayout';
 import BlogPostLayout from '../layouts/BlogPostLayout';
@@ -13,6 +10,8 @@ import DownloadLayout from '../layouts/DownloadLayout';
 import DownloadCurrentLayout from '../layouts/DownloadCurrentLayout';
 import DownloadReleasesLayout from '../layouts/DownloadReleasesLayout';
 import IndexLayout from '../layouts/IndexLayout';
+import type { PageOpts } from 'nextra';
+import type { PropsWithChildren } from 'react';
 
 import type { LegacyLayouts, NextraAppProps } from '../types';
 
@@ -54,6 +53,8 @@ const getLegacyLayout = (layout: LegacyLayouts) => {
   }
 };
 
+// In this case we want to separate the children prop from the remaining ones
+// eslint-disable-next-line react/destructuring-assignment
 export const LayoutProvider = ({ children, ...props }: LayoutProviderProps) => {
   const layout = props.pageOpts.frontMatter.layout;
 

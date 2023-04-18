@@ -1,6 +1,5 @@
 import classNames from 'classnames';
 import semVer from 'semver';
-
 import LocalizedLink from '../LocalizedLink';
 import { useNextraContext } from '../../hooks/useNextraContext';
 

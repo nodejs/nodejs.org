@@ -2,18 +2,17 @@ import { useMemo } from 'react';
 import useSWR from 'swr';
 import { sanitize } from 'isomorphic-dompurify';
 import semVer from 'semver';
-import type { PropsWithChildren } from 'react';
-
 import BaseLayout from './BaseLayout';
-import DownloadReleasesTable from '../components/Downloads/DownloadReleasesTable';
 import { useNextraContext } from '../hooks/useNextraContext';
+import DownloadReleasesTable from '../components/Downloads/DownloadReleasesTable';
+import type { PropsWithChildren } from 'react';
 
 import type { LegacyDownloadsReleasesFrontMatter } from '../types';
 
 const fetcher = (...args: Parameters<typeof fetch>) =>
   fetch(...args).then(res => res.json());
 
-const DownloadReleasesLayout = ({ children }: PropsWithChildren) => {
+const DownloadReleasesLayout = (props: PropsWithChildren) => {
   const nextraContext = useNextraContext();
 
   const { data = [] } = useSWR<any[]>(
@@ -58,7 +57,7 @@ const DownloadReleasesLayout = ({ children }: PropsWithChildren) => {
         <article dir="auto">
           <h1>{title}</h1>
 
-          <section>{children}</section>
+          <section>{props.children}</section>
 
           <section>
             <DownloadReleasesTable releases={availableNodeVersions} />
