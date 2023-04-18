@@ -33,23 +33,23 @@
 
     &.bannerBtn {
       background: var(--purple5);
-      padding: 0 var(--space-16);
       border: 1px solid transparent;
       border-radius: 5.6rem;
       color: var(--color-fill-top-nav);
       font-family: var(--sans);
+      font-size: 1rem;
       font-style: normal;
       font-weight: var(--font-weight-semibold);
       line-height: var(--line-height-subheading);
       margin-right: var(--space-32);
+      padding: 0 var(--space-16);
       position: relative;
       text-decoration: none;
       white-space: nowrap;
-      font-size: 1rem;
 
       &:hover {
-        cursor: pointer;
         background-color: $node-green !important;
+        cursor: pointer;
       }
     }
   }
@@ -66,8 +66,8 @@
 
     a {
       &:hover {
-        text-decoration: underline;
         background-color: transparent !important;
+        text-decoration: underline;
       }
     }
   }
