@@ -1,11 +1,13 @@
+import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import Author from './Author';
 import styles from './index.module.scss';
-import type { FC } from 'react';
 
-type AuthorListProps = { authors: string[] };
+interface Props {
+  authors: string[];
+}
 
-const AuthorList: FC<AuthorListProps> = ({ authors }) => {
+const AuthorList = ({ authors }: Props) => {
   if (authors.length) {
     return (
       <div className={styles.authorList}>
