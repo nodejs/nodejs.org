@@ -11,7 +11,7 @@ export interface DropdownProps {
 const Dropdown = ({ items, shouldShow, styles: css }: DropdownProps) => {
   const mappedElements = items.map(item => {
     const extraStyles = { fontWeight: item.active ? 'bold' : 'normal' };
-    const dropdownStyles = { display: shouldShow ? 'block' : 'none', ...css };
+
     const handleKeyPress = (e: React.KeyboardEvent<HTMLButtonElement>) => {
       if (e.key === 'Enter' || e.key === ' ') {
         item.onClick();
@@ -31,6 +31,8 @@ const Dropdown = ({ items, shouldShow, styles: css }: DropdownProps) => {
       </li>
     );
   });
+
+  const dropdownStyles = { display: shouldShow ? 'block' : 'none', ...css };
 
   return (
     <ul className={styles.dropdownList} style={dropdownStyles}>
