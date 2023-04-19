@@ -1,13 +1,9 @@
-import AuthorList from './index';
-import type { Meta as MetaObj, StoryObj } from '@storybook/react';
+import AuthorList from '.';
 
-type Story = StoryObj<typeof AuthorList>;
-type Meta = MetaObj<typeof AuthorList>;
+export default { component: AuthorList };
 
-export const Default: Story = {
+export const Default = {
   args: {
     authors: ['flaviocopes', 'MarkPieszak', 'mcollina', 'unavailable-author'],
   },
 };
-
-export default { component: AuthorList } as Meta;

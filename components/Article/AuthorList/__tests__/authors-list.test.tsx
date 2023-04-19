@@ -1,6 +1,7 @@
+import React from 'react';
 import { render } from '@testing-library/react';
-import { IntlProvider } from 'react-intl';
 import AuthorsList from '..';
+import { IntlProvider } from 'react-intl';
 
 describe('AuthorsList component', () => {
   it('renders correctly', () => {
