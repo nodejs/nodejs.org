@@ -1,5 +1,5 @@
 import React from 'react';
-import { DropdownItem } from '../../../types';
+import type { DropdownItem } from '../../../types';
 import css from './index.module.scss';
 
 interface Props {
