@@ -1,28 +1,24 @@
-import React, { useState } from 'react';
-import { injectIntl, WrappedComponentProps } from 'react-intl';
-import styles from './index.module.scss';
+import { useState } from 'react';
+import { useIntl } from 'react-intl';
 import Image from 'next/image';
+import styles from './index.module.scss';
+import type { FC } from 'react';
 
-interface Props {
-  username: string;
-  size?: number;
-}
+type AuthorProps = { username: string; size?: number };
 
-const Author = ({
-  username,
-  size = 64,
-  intl,
-}: Props & WrappedComponentProps) => {
+const Author: FC<AuthorProps> = props => {
   // Clean up username and build links.
-  const githubUserName = username.trim();
+  const githubUserName = props.username.trim();
   const githubLink = `https://github.com/${githubUserName}`;
-  const githubImgLink = `https://github.com/${githubUserName}.png?size=${size}`;
+  const githubImgLink = `https://github.com/${githubUserName}.png?size=${props.size}`;
+
+  const intl = useIntl();
 
   const [authorImg, setAuthorImg] = useState(githubImgLink);
 
   const translation = intl.formatMessage(
     { id: 'components.article.author.githubLinkLabel' },
-    { username }
+    { username: props.username }
   );
 
   return (
@@ -31,7 +27,7 @@ const Author = ({
         className={styles.link}
         href={githubLink}
         aria-label={translation}
-        key={username}
+        key={props.username}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -40,8 +36,8 @@ const Author = ({
           src={authorImg}
           placeholder="blur"
           blurDataURL="/placeholder-img.png"
-          width={size}
-          height={size}
+          width={props.size}
+          height={props.size}
           onError={() => setAuthorImg('/placeholder-img.png')}
         />
       </a>
@@ -49,4 +45,4 @@ const Author = ({
   );
 };
 
-export default injectIntl(Author);
+export default Author;
