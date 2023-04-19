@@ -5,7 +5,6 @@ import styles from './index.module.scss';
 import { createRoot } from 'react-dom/client';
 
 interface Props {
-  children: React.ReactNode | undefined;
   textToCopy?: string;
 }
 
