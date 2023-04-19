@@ -105,7 +105,7 @@ We also offer other commands that offer you assistance during your local develop
 
 ## Creating Components
 
-The Node.js Website uses **React.js** as a Frontend Framework for the development of the Website. React allows us to create user interfaces with a modern take on Web Development.
+The Node.js Website uses **React.js** as a Frontend Library for the development of the Website. React allows us to create user interfaces with a modern take on Web Development.
 
 If you're unfamiliar with React or Web Development in general, we encourage a read before taking on complex issues and tasks as this repository is **not for educational purposes** and we expect you to have a basic understanding of the technologies used.
 
@@ -122,7 +122,7 @@ We also recommend getting familiar with technologies such as [Next.js][], [MDX][
   ```text
   - ComponentName
     - index.tsx // the component itself
-    - index.module.css // all styles of the component are placed there
+    - index.module.scss // all styles of the component are placed there
     - index.stories.tsx // component Storybook stories
     - __tests__ // component tests (such as unit tests, etc)
       - index.test.tsx
