@@ -10,6 +10,4 @@ export default meta;
 
 type Story = StoryObj<typeof DarkModeToggle>;
 
-export const Toggle: Story = {
-  render: () => <DarkModeToggle />,
-};
+export const Default: Story = {};
