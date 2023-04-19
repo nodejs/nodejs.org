@@ -207,11 +207,9 @@ import NameOfComponent from './index';
 type Story = StoryObj<typeof NameOfComponent>;
 type Meta = MetaObj<typeof NameOfComponent>;
 
-export const Default: Story = {
-  // If the component has any props that are interactable, they should be passed here
-  // We recommend reading Storybook docs for args: https://storybook.js.org/docs/react/writing-stories/args
-  args: {},
-};
+// If the component has any props that are interactable, they should be passed here
+// We recommend reading Storybook docs for args: https://storybook.js.org/docs/react/writing-stories/args
+export const Default: Story = {};
 
 // If the Component has more than one State/Layout/Variant, there should be one Story for each variant
 export const AnotherStory: Story = {
