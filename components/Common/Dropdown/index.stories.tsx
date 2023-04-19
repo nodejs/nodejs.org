@@ -1,4 +1,7 @@
+import type { StoryObj } from '@storybook/react';
 import Dropdown from '.';
+
+type Story = StoryObj<typeof Dropdown>;
 
 export default {
   component: Dropdown,
@@ -13,6 +16,9 @@ const items = [...Array(10).keys()].map(item => ({
 
 items[2].active = true;
 
-export const Default = () => (
-  <Dropdown items={items} shouldShow={true} styles={{}} />
-);
+export const withItems: Story = {
+  args: {
+    items: items,
+    shouldShow: true,
+  },
+};

@@ -1,5 +1,5 @@
-import { Translate } from '@mui/icons-material';
 import { useMemo, useState } from 'react';
+import { MdOutlineTranslate } from 'react-icons/md';
 import { useLocale } from '../../../hooks/useLocale';
 import Dropdown from '../Dropdown';
 import styles from './index.module.scss';
@@ -38,7 +38,7 @@ const LanguageSelector = () => {
         aria-expanded={showDropdown}
       >
         <span className="sr-only">Switch Language</span>
-        <Translate />
+        <MdOutlineTranslate />
       </button>
       <Dropdown
         items={dropdownItems}
