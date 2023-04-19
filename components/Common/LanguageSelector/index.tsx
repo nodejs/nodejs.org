@@ -34,9 +34,7 @@ const LanguageSelector = () => {
       <button
         type="button"
         className={styles.languageSwitch}
-        onClick={() => {
-          setShowDropdown(!showDropdown);
-        }}
+        onClick={() => setShowDropdown(!showDropdown)}
         aria-expanded={showDropdown}
       >
         <span className="sr-only">Switch Language</span>
