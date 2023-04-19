@@ -1,0 +1,26 @@
+.authorList {
+  color: var(--color-text-secondary);
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size-body2);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-24);
+  max-width: 600px;
+  text-transform: uppercase;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0.5rem 0.5rem 0.5rem 0;
+
+      &:first-of-type a {
+        margin-left: 0;
+      }
+    }
+  }
+}
