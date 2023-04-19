@@ -21,7 +21,9 @@ const LanguageSelector = () => {
       availableLocales.map(locale => ({
         title: locale.localName,
         label: locale.name,
-        onClick: () => {},
+        onClick: () => {
+          // TODO: "locale changing logic yet to be implemented"
+        },
         active: currentLocale.code === locale.code,
       })),
     [availableLocales, currentLocale]
