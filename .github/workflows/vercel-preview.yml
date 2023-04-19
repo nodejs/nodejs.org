@@ -17,7 +17,7 @@ jobs:
 
     environment:
       name: vercel-preview
-      url: ${{ steps.deploy.outputs.url }}
+      url: ${{ steps.deploy.outputs.deploy_url }}
 
     steps:
       - name: Git Checkout
@@ -40,4 +40,4 @@ jobs:
 
       - id: deploy
         name: Deploy Project Artifacts to Vercel
-        run: echo "::set-output name=url::$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})"
+        run: echo "deploy_url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})" >> "$GITHUB_OUTPUT"
