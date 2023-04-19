@@ -86,7 +86,7 @@ Contributed by Anna Henningsen, Antoine du Hamel, Geoffrey Booth, Guy Bedford, J
 
 ### V8 11.3
 
-As per usual a new version of the V8 engine is included in Node.js (updated to version 11.3, which is part of Chromium 113) brining improved performance and new language features including:
+As per usual a new version of the V8 engine is included in Node.js (updated to version 11.3, which is part of Chromium 113) bringing improved performance and new language features including:
 
 * [String.prototype.isWellFormed and toWellFormed](https://chromestatus.com/feature/5200195346759680)
 * [Methods that change Array and TypedArray by copy](https://chromestatus.com/feature/5068609911521280)
@@ -106,8 +106,8 @@ The stable test runner includes the building blocks for authoring and running te
  * watch mode
  * `node --test` for running multiple test files in parallel
 
-The test runner also includes some parts that are not yet stable, including reporters and code coverage
- 
+The test runner also includes some parts that are not yet stable, including reporters and code coverage.
+
 This is a simple example of using the test runner:
 
 ```mjs
@@ -177,10 +177,10 @@ ARM64 Windows was upgraded to tier 2 support by Stefan Stojanovic in [#47233](ht
 
 ### Progress on Web Assembly System Interface (WASI)
 
-The project continues to work on the WASI implemenation within Node.js. Some notable progress is that although it is experimental a command line option is no longer required to enable WASI. This should make it easier to consume. As the [team](https://github.com/nodejs/uvwasi) working on WASI looks forward to `preview2` a few changes were also made to plan for the future. That included adding a `version`
+The project continues to work on the WASI implementation within Node.js. Some notable progress is that although it is experimental a command line option is no longer required to enable WASI. This should make it easier to consume. As the [team](https://github.com/nodejs/uvwasi) working on WASI looks forward to `preview2` a few changes were also made to plan for the future. That included adding a `version`
 option when `new WASI()` is called. In the 20.x release the `version` is required and has no default value. This is important to that as new versions are supported applications don't default to what may be an obsolete version. This does mean, however, that any code that relied on the default for the version will need to be updated to request a specific version.
 
-If you have a interest in using WASI in Node.js or [uvwasi](https://github.com/nodejs/uvwasi) which is used outside of Node.js itself, the team would love additional contributors. 
+If you have a interest in using WASI in Node.js or [uvwasi](https://github.com/nodejs/uvwasi) which is used outside of Node.js itself, the team would love additional contributors.
 
 ## Call to action!
 
