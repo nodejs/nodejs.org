@@ -10,7 +10,7 @@ const mockToggleTheme = jest.fn().mockImplementation(() => {
   mockCurrentTheme = mockCurrentTheme === 'dark' ? 'light' : 'dark';
 });
 
-// // mock dark mode module for controlling dark mode HOC behavior
+// Mock dark mode module for controlling dark mode HOC behaviour
 jest.mock('next-themes', () => ({
   useTheme: () => {
     return { theme: mockCurrentTheme, setTheme: mockToggleTheme };
