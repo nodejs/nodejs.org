@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 import styles from './index.module.scss';
-import ReactDomServer from 'react-dom/server';
+import { createRoot } from 'react-dom/client';
 
 interface Props {
   children: React.ReactNode | undefined;
@@ -17,7 +17,8 @@ const ShellBox = ({ children, textToCopy }: React.PropsWithChildren<Props>) => {
       event.preventDefault();
       const text = textToCopy
         ? textToCopy
-        : ReactDomServer.renderToString(<>children</>);
+        : createRoot(document.body).render(children) as string;
+
       await copyText(text);
     },
     //eslint-disable-next-line react-hooks/exhaustive-deps

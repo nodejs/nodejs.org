@@ -14,7 +14,7 @@ exports[`ShellBox should render 1`] = `
       <button
         type="button"
       >
-        copy
+        components.common.shellBox.copy
       </button>
     </div>
     <code>

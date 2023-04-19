@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { IntlProvider } from 'react-intl';
-import messages from '../../../../i18n/locales/en.json';
 import ShellBox from '../index';
 
 const mockWriteText = jest.fn();
@@ -27,7 +26,7 @@ describe('ShellBox', () => {
 
   it('should render', () => {
     const { container } = render(
-      <IntlProvider locale="en" messages={messages}>
+      <IntlProvider locale="en" onError={() => {}}>
         <ShellBox>test</ShellBox>
       </IntlProvider>
     );
@@ -47,7 +46,7 @@ describe('ShellBox', () => {
     });
 
     render(
-      <IntlProvider locale="en" messages={messages}>
+      <IntlProvider locale="en" onError={() => {}}>
         <ShellBox textToCopy="test">test</ShellBox>
       </IntlProvider>
     );
