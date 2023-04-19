@@ -16,11 +16,12 @@ const ShellBox = ({ children, textToCopy }: React.PropsWithChildren<Props>) => {
       event.preventDefault();
       const text = textToCopy
         ? textToCopy
-        : createRoot(document.body).render(children) as string;
+        : // @ts-ignore - createRoot is not in the type definition
+          (createRoot(document.body).render(children) as string);
 
       await copyText(text);
     },
-    //eslint-disable-next-line react-hooks/exhaustive-deps
+
     [textToCopy, children, copyText]
   );
 
