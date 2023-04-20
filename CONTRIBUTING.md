@@ -158,7 +158,7 @@ export default MyComponent;
 - Each Props type should be prefixed by the name of the Component
 - Components should always be the `default` export of a React Component file
 - Avoid using DOM/Web APIs/`document`/`window` API access within a React Component. Use utilities or Hooks when you need a Reactive state
-- Avoid making your Component too big. Desconstruct i into smaller Components/Hooks whenever possible
+- Avoid making your Component too big. Deconstruct it into smaller Components/Hooks whenever possible
 
 ## Commit Guidelines
 
@@ -183,7 +183,7 @@ We also use [Storybook][] to document our components. Each component should have
 
 Unit Tests are fundamental to ensure that code changes do not disrupt the functionalities of the Node.js Website:
 
-- We recommend that unit tests are added for content covering `util`, `scripts` and `components` whenever possible.
+- We recommend that unit tests are added for content covering `util`, `scripts`, `hooks` and `components` whenever possible.
 - Unit Tests should cover that the functionality of a given change is working as expected.
 - When creating unit tests for React components, we recommend that the tests cover all the possible states of the component.
 - We also recommend mocking external dependencies, if unsure about how to mock a certain dependency, raise the question on your Pull Request.
