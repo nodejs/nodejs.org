@@ -47,7 +47,7 @@
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "consistent-return": "off",
-        "react/destructuring-assignment": ["warn", "never"],
+        "react/destructuring-assignment": ["warn", "always"],
         "react/function-component-definition": [
           "error",
           {
@@ -69,7 +69,8 @@
             "selector": "ImportDeclaration[source.value='react'] :matches(ImportNamespaceSpecifier)",
             "message": "Named * React import is not allowed. Please import what you need from React with Named Imports"
           }
-        ]
+        ],
+        "@typescript-eslint/consistent-type-definitions": ["error", "type"]
       }
     },
     {

@@ -1,8 +1,7 @@
 import { createContext } from 'react';
 import { IntlProvider } from 'react-intl';
 import i18nConfig from '../i18n/config.json';
-import type { PropsWithChildren } from 'react';
-
+import type { FC, PropsWithChildren } from 'react';
 import type { AppProps, LocaleContext as LocaleContextType } from '../types';
 
 // TODO: We already import on the `getStaticProps` side, but some routes do not get the `getStaticProps` hence we need to fallback data here
@@ -17,8 +16,11 @@ const fallbackData = { currentLocale: { code: 'en' } } as AppProps['i18nData'];
 
 export const LocaleContext = createContext<LocaleContextType>(undefined as any);
 
-export const LocaleProvider = (props: LocaleProviderProps) => {
-  const { currentLocale, localeMessages } = props.i18nData || fallbackData;
+export const LocaleProvider: FC<LocaleProviderProps> = ({
+  i18nData,
+  children,
+}) => {
+  const { currentLocale, localeMessages } = i18nData || fallbackData;
 
   const intlProps = { locale: currentLocale.code, messages: localeMessages };
 
@@ -29,9 +31,9 @@ export const LocaleProvider = (props: LocaleProviderProps) => {
   }));
 
   return (
-    <LocaleContext.Provider value={{ ...props.i18nData, availableLocales }}>
+    <LocaleContext.Provider value={{ ...i18nData, availableLocales }}>
       <IntlProvider {...intlProps} onError={() => null}>
-        {props.children}
+        {children}
       </IntlProvider>
     </LocaleContext.Provider>
   );

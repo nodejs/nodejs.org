@@ -1,16 +1,17 @@
 import { FormattedMessage } from 'react-intl';
+import type { FC } from 'react';
 
 type FooterProps = { className?: string };
 
 // Note.: We don't expect to translate these items as we're going to replace with `nodejs/nodejs.dev` footer
-const Footer = (props: FooterProps) => (
+const Footer: FC<FooterProps> = ({ className }) => (
   <>
     <a href="#" id="scroll-to-top">
       <span>
         &uarr; <FormattedMessage id="components.footer.scrollToTop.button" />
       </span>
     </a>
-    <footer className={props.className}>
+    <footer className={className}>
       <div className="container">
         <div className="openjsfoundation-footer">
           <p>

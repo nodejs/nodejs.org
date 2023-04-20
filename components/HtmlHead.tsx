@@ -1,19 +1,19 @@
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { useSiteConfig } from '../hooks/useSiteConfig';
-
 import type { LegacyFrontMatter } from '../types';
+import type { FC } from 'react';
 
 type HeaderProps = { frontMatter: LegacyFrontMatter };
 
-const HtmlHead = (props: HeaderProps) => {
+const HtmlHead: FC<HeaderProps> = ({ frontMatter }) => {
   const siteConfig = useSiteConfig();
   const { route, basePath } = useRouter();
 
   const canonicalLink = `https://nodejs.org${route}`;
 
-  const pageTitle = props.frontMatter.title
-    ? `${props.frontMatter.title} | ${siteConfig.title}`
+  const pageTitle = frontMatter.title
+    ? `${frontMatter.title} | ${siteConfig.title}`
     : siteConfig.title;
 
   return (
@@ -28,10 +28,7 @@ const HtmlHead = (props: HeaderProps) => {
         type="image/png"
       />
 
-      <meta
-        name="robots"
-        content={props.frontMatter.robots || 'index, follow'}
-      />
+      <meta name="robots" content={frontMatter.robots || 'index, follow'} />
 
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="description" content={siteConfig.description} />

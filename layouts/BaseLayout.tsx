@@ -1,11 +1,11 @@
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import type { PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
-const BaseLayout = (props: PropsWithChildren) => (
+const BaseLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <Header />
-    <main id="main">{props.children}</main>
+    <main id="main">{children}</main>
     <Footer />
   </>
 );

@@ -46,29 +46,29 @@ const useHtmlContent = ({ html, link }: WebsiteBanner) =>
 
 type BannerProps = { bannersIndex: WebsiteBanner };
 
-const Banner: FC<BannerProps> = props => {
+const Banner: FC<BannerProps> = ({ bannersIndex }) => {
   const { formatMessage } = useIntl();
 
   const showBanner = dateIsBetween(
-    props.bannersIndex.startDate,
-    props.bannersIndex.endDate
+    bannersIndex.startDate,
+    bannersIndex.endDate
   );
 
-  const link = !isAbsoluteUrl(props.bannersIndex.link)
-    ? `http://nodejs.org/${props.bannersIndex.link}`
-    : props.bannersIndex.link;
+  const link = !isAbsoluteUrl(bannersIndex.link)
+    ? `http://nodejs.org/${bannersIndex.link}`
+    : bannersIndex.link;
 
   const textContent = useTextContent(
-    { ...props.bannersIndex, link },
+    { ...bannersIndex, link },
     formatMessage({ id: 'components.common.banner.button.text' })
   );
 
-  const htmlContent = useHtmlContent({ ...props.bannersIndex, link });
+  const htmlContent = useHtmlContent({ ...bannersIndex, link });
 
   if (showBanner) {
     return (
       <div className={styles.banner}>
-        {props.bannersIndex.text ? textContent : htmlContent}
+        {bannersIndex.text ? textContent : htmlContent}
       </div>
     );
   }

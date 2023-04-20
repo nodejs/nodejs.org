@@ -2,22 +2,22 @@ import classNames from 'classnames';
 import LocalizedLink from './LocalizedLink';
 import { useLocale } from '../hooks/useLocale';
 import { useNavigation } from '../hooks/useNavigation';
-
 import type { NavigationKeys } from '../types';
+import type { FC } from 'react';
 
 type SideNavigationProps = {
   navigationKey: NavigationKeys;
   context?: Record<string, Record<string, any>>;
 };
 
-const SideNavigation = (props: SideNavigationProps) => {
+const SideNavigation: FC<SideNavigationProps> = ({
+  navigationKey,
+  context,
+}) => {
   const { getSideNavigation } = useNavigation();
   const { isCurrentLocaleRoute } = useLocale();
 
-  const sideNavigationItems = getSideNavigation(
-    props.navigationKey,
-    props.context
-  );
+  const sideNavigationItems = getSideNavigation(navigationKey, context);
 
   const getLinkClassName = (href: string) =>
     classNames({ active: isCurrentLocaleRoute(href) });

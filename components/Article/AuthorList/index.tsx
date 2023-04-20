@@ -5,13 +5,13 @@ import type { FC } from 'react';
 
 type AuthorListProps = { authors: string[] };
 
-const AuthorList: FC<AuthorListProps> = props => {
-  if (props.authors.length) {
+const AuthorList: FC<AuthorListProps> = ({ authors }) => {
+  if (authors.length) {
     return (
       <div className={styles.authorList}>
         <FormattedMessage id="components.article.authorList.title" />
         <ul>
-          {props.authors.map(author => (
+          {authors.map(author => (
             <Author username={author} key={author} size={60} />
           ))}
         </ul>

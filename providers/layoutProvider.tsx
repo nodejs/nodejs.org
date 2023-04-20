@@ -54,7 +54,7 @@ const getLegacyLayout = (layout: LegacyLayouts) => {
 };
 
 // In this case we want to separate the children prop from the remaining ones
-// eslint-disable-next-line react/destructuring-assignment
+
 export const LayoutProvider = ({ children, ...props }: LayoutProviderProps) => {
   const layout = props.pageOpts.frontMatter.layout;
 

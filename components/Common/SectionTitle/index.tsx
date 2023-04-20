@@ -3,10 +3,10 @@ import type { FC } from 'react';
 
 type SectionTitleProps = { path: string[] };
 
-const SectionTitle: FC<SectionTitleProps> = props => (
+const SectionTitle: FC<SectionTitleProps> = ({ path }) => (
   <div className={styles.sectionTitle}>
-    {props.path.map((item, index) => {
-      const isLast = index === props.path.length - 1;
+    {path.map((item, index) => {
+      const isLast = index === path.length - 1;
 
       if (isLast) {
         return (

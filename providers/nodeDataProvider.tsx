@@ -1,6 +1,5 @@
 import { createContext } from 'react';
-import type { PropsWithChildren } from 'react';
-
+import type { FC, PropsWithChildren } from 'react';
 import type { NodeVersionData } from '../types';
 
 type NodeDataProviderProps = PropsWithChildren<{
@@ -9,8 +8,11 @@ type NodeDataProviderProps = PropsWithChildren<{
 
 export const NodeDataContext = createContext<NodeVersionData[]>([]);
 
-export const NodeDataProvider = (props: NodeDataProviderProps) => (
-  <NodeDataContext.Provider value={props.nodeVersionData || []}>
-    {props.children}
+export const NodeDataProvider: FC<NodeDataProviderProps> = ({
+  children,
+  nodeVersionData,
+}) => (
+  <NodeDataContext.Provider value={nodeVersionData || []}>
+    {children}
   </NodeDataContext.Provider>
 );

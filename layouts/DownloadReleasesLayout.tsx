@@ -5,14 +5,13 @@ import semVer from 'semver';
 import BaseLayout from './BaseLayout';
 import { useNextraContext } from '../hooks/useNextraContext';
 import DownloadReleasesTable from '../components/Downloads/DownloadReleasesTable';
-import type { PropsWithChildren } from 'react';
-
+import type { FC, PropsWithChildren } from 'react';
 import type { LegacyDownloadsReleasesFrontMatter } from '../types';
 
 const fetcher = (...args: Parameters<typeof fetch>) =>
   fetch(...args).then(res => res.json());
 
-const DownloadReleasesLayout = (props: PropsWithChildren) => {
+const DownloadReleasesLayout: FC<PropsWithChildren> = ({ children }) => {
   const nextraContext = useNextraContext();
 
   const { data = [] } = useSWR<any[]>(
@@ -57,7 +56,7 @@ const DownloadReleasesLayout = (props: PropsWithChildren) => {
         <article dir="auto">
           <h1>{title}</h1>
 
-          <section>{props.children}</section>
+          <section>{children}</section>
 
           <section>
             <DownloadReleasesTable releases={availableNodeVersions} />

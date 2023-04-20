@@ -3,9 +3,9 @@ import type { FC } from 'react';
 
 type DataTagProps = { tag: 'E' | 'C' | 'M' };
 
-const DataTag: FC<DataTagProps> = props => (
-  <span className={styles.dataTag} data-tag={props.tag}>
-    {props.tag}
+const DataTag: FC<DataTagProps> = ({ tag }) => (
+  <span className={styles.dataTag} data-tag={tag}>
+    {tag}
   </span>
 );
 

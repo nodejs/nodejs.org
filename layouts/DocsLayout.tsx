@@ -1,9 +1,9 @@
 import BaseLayout from './BaseLayout';
 import SideNavigation from '../components/SideNavigation';
 import { useNodeData } from '../hooks/useNodeData';
-import type { PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
-const DocsLayout = (props: PropsWithChildren) => {
+const DocsLayout: FC<PropsWithChildren> = ({ children }) => {
   const { currentLtsVersion, currentNodeVersion } = useNodeData();
 
   const translationContext = {
@@ -22,7 +22,7 @@ const DocsLayout = (props: PropsWithChildren) => {
     <BaseLayout>
       <div className="container has-side-nav">
         <SideNavigation navigationKey="docs" context={translationContext} />
-        <article dir="auto">{props.children}</article>
+        <article dir="auto">{children}</article>
       </div>
     </BaseLayout>
   );

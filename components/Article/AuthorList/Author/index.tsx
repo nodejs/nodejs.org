@@ -6,11 +6,11 @@ import type { FC } from 'react';
 
 type AuthorProps = { username: string; size?: number };
 
-const Author: FC<AuthorProps> = props => {
+const Author: FC<AuthorProps> = ({ username, size }) => {
   // Clean up username and build links.
-  const githubUserName = props.username.trim();
+  const githubUserName = username.trim();
   const githubLink = `https://github.com/${githubUserName}`;
-  const githubImgLink = `https://github.com/${githubUserName}.png?size=${props.size}`;
+  const githubImgLink = `https://github.com/${githubUserName}.png?size=${size}`;
 
   const intl = useIntl();
 
@@ -18,7 +18,7 @@ const Author: FC<AuthorProps> = props => {
 
   const translation = intl.formatMessage(
     { id: 'components.article.author.githubLinkLabel' },
-    { username: props.username }
+    { username }
   );
 
   return (
@@ -27,7 +27,7 @@ const Author: FC<AuthorProps> = props => {
         className={styles.link}
         href={githubLink}
         aria-label={translation}
-        key={props.username}
+        key={username}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -36,8 +36,8 @@ const Author: FC<AuthorProps> = props => {
           src={authorImg}
           placeholder="blur"
           blurDataURL="/placeholder-img.png"
-          width={props.size}
-          height={props.size}
+          width={size}
+          height={size}
           onError={() => setAuthorImg('/placeholder-img.png')}
         />
       </a>

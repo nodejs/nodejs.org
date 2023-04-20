@@ -3,9 +3,9 @@ import Banner from '../components/Home/Banner';
 import HomeDownloadButton from '../components/Home/HomeDownloadButton';
 import { useNextraContext } from '../hooks/useNextraContext';
 import { useNodeData } from '../hooks/useNodeData';
-import type { PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
-const IndexLayout = (props: PropsWithChildren) => {
+const IndexLayout: FC<PropsWithChildren> = ({ children }) => {
   const { currentLtsVersion, currentNodeVersion } = useNodeData();
 
   const {
@@ -16,7 +16,7 @@ const IndexLayout = (props: PropsWithChildren) => {
     <BaseLayout>
       <div className="container">
         <div id="home-intro">
-          {props.children}
+          {children}
 
           <Banner />
 

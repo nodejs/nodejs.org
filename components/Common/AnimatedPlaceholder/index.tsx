@@ -7,12 +7,16 @@ type AnimatedPlaceholderProps = {
   height?: number;
 };
 
-const AnimatedPlaceholder: FC<AnimatedPlaceholderProps> = props => (
+const AnimatedPlaceholder: FC<AnimatedPlaceholderProps> = ({
+  children,
+  width,
+  height,
+}) => (
   <div
     className={styles.placeholder}
-    style={{ width: `${props.width}px`, height: `${props.height}px` }}
+    style={{ width: `${width}px`, height: `${height}px` }}
   >
-    {props.children || (
+    {children || (
       <>
         <div className={styles.placeholderImage} />
         <div className={styles.placeholderText}>

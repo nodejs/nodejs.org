@@ -8,8 +8,12 @@ type DropdownProps = {
   styles: CSSProperties;
 };
 
-const Dropdown: FC<DropdownProps> = props => {
-  const mappedElements = props.items.map(item => {
+const Dropdown: FC<DropdownProps> = ({
+  items,
+  shouldShow,
+  styles: extraStyles,
+}) => {
+  const mappedElements = items.map(item => {
     const extraStyles = { fontWeight: item.active ? 'bold' : 'normal' };
 
     const handleKeyPress = (e: KeyboardEvent<HTMLButtonElement>) => {
@@ -33,8 +37,8 @@ const Dropdown: FC<DropdownProps> = props => {
   });
 
   const dropdownStyles = {
-    display: props.shouldShow ? 'block' : 'none',
-    ...props.styles,
+    display: shouldShow ? 'block' : 'none',
+    ...extraStyles,
   };
 
   return (

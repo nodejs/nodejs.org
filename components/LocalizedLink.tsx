@@ -2,12 +2,13 @@ import { useMemo } from 'react';
 import Link from 'next/link';
 import { useLocale } from '../hooks/useLocale';
 import { linkWithLocale } from '../util/linkWithLocale';
-import type { ComponentProps } from 'react';
+import type { FC, ComponentProps } from 'react';
 
-const LocalizedLink = (props: ComponentProps<typeof Link>) => {
-  // eslint-disable-next-line react/destructuring-assignment
-  const { href, children, ...extra } = props;
-
+const LocalizedLink: FC<ComponentProps<typeof Link>> = ({
+  href,
+  children,
+  ...extra
+}) => {
   const { currentLocale } = useLocale();
 
   const localizedUrl = linkWithLocale(currentLocale.code);
