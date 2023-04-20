@@ -1,24 +1,21 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 import styles from './index.module.scss';
-import { createRoot } from 'react-dom/client';
+import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 
-interface Props {
+type Props = {
   textToCopy?: string;
-}
+};
 
 const ShellBox = ({ children, textToCopy }: React.PropsWithChildren<Props>) => {
   const [copied, copyText] = useCopyToClipboard();
 
+  const shellBoxRef = useRef<HTMLElement>(null);
+
   const handleCopyCode = useCallback(
     async (event: React.MouseEvent<HTMLButtonElement>) => {
       event.preventDefault();
-      const text = textToCopy
-        ? textToCopy
-        : // @ts-ignore - createRoot is not in the type definition
-          (createRoot(document.body).render(children) as string);
-
+      const text = textToCopy || shellBoxRef.current?.innerHTML;
       await copyText(text);
     },
 
@@ -36,7 +33,7 @@ const ShellBox = ({ children, textToCopy }: React.PropsWithChildren<Props>) => {
           />
         </button>
       </div>
-      <code>{children}</code>
+      <code ref={shellBoxRef}>{children}</code>
     </pre>
   );
 };

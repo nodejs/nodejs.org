@@ -1,20 +1,29 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import { FormattedMessage } from 'react-intl';
-import { useCopyToClipboard } from '../useCopyToClipboard';
 import { IntlProvider } from 'react-intl';
+import { useCopyToClipboard } from '../useCopyToClipboard';
 
 const mockWriteText = jest.fn();
-
-Object.defineProperty(window, 'navigator', {
-  value: {
-    clipboard: {
-      writeText: mockWriteText,
-    },
-  },
-});
+const originalNavigator = { ...window.navigator };
 
 describe('useCopyToClipboard', () => {
+  beforeEach(() => {
+    Object.defineProperty(window, 'navigator', {
+      value: {
+        clipboard: {
+          writeText: mockWriteText,
+        },
+      },
+    });
+  });
+
+  afterEach(() => {
+    Object.defineProperty(window, 'navigator', {
+      value: originalNavigator,
+    });
+  });
+
   const TestComponent = ({ textToCopy }: { textToCopy: string }) => {
     const [copied, copyText] = useCopyToClipboard();
 

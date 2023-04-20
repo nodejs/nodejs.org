@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 
-const copyToClipboard = (value: string) => {
+const copyToClipboard = (value: string | undefined) => {
+  if (!value) {
+    return Promise.resolve(false);
+  }
   if (typeof navigator === 'undefined') {
     return Promise.resolve(false);
   }
@@ -14,7 +17,8 @@ const copyToClipboard = (value: string) => {
 export const useCopyToClipboard = () => {
   const [copied, setCopied] = useState(false);
 
-  const copyText = (text: string) => copyToClipboard(text).then(setCopied);
+  const copyText = (text: string | undefined) =>
+    copyToClipboard(text).then(setCopied);
 
   useEffect(() => {
     if (copied) {
