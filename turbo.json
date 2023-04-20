@@ -78,6 +78,26 @@
       ],
       "outputs": [".next/**", "!.next/cache/**"]
     },
+    "deploy": {
+      "inputs": [
+        "components/**",
+        "hooks/**",
+        "i18n/**",
+        "layouts/**",
+        "pages/**",
+        "providers/**",
+        "scripts/**",
+        "styles/**",
+        "types/**",
+        "util/**",
+        "tsconfig.json",
+        "next.config.mjs",
+        "next.data.mjs",
+        "next-sitemap.config.js",
+        "theme.tsx"
+      ],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
     "storybook": {
       "cache": false
     },
