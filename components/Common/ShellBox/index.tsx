@@ -1,24 +1,29 @@
-import React, { useCallback, useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import { FormattedMessage } from 'react-intl';
 import styles from './index.module.scss';
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
+import type { FC, PropsWithChildren, MouseEvent, ReactNode } from 'react';
 
-type Props = {
+type ShellBoxProps = {
+  children: string | ReactNode;
   textToCopy?: string;
 };
 
-const ShellBox = ({ children, textToCopy }: React.PropsWithChildren<Props>) => {
+const ShellBox: FC<ShellBoxProps> = ({
+  children,
+  textToCopy,
+}: PropsWithChildren<ShellBoxProps>) => {
   const [copied, copyText] = useCopyToClipboard();
 
   const shellBoxRef = useRef<HTMLElement>(null);
 
   const handleCopyCode = useCallback(
-    async (event: React.MouseEvent<HTMLButtonElement>) => {
+    async (event: MouseEvent<HTMLButtonElement>) => {
       event.preventDefault();
       const text = textToCopy || shellBoxRef.current?.innerHTML;
       await copyText(text);
     },
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [textToCopy, children, copyText]
   );
 
