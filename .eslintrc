@@ -30,11 +30,6 @@
       "env": { "jest": true, "node": true, "browser": true }
     },
     {
-      "files": ["**/**.test.{js,jsx,ts,tsx}"],
-      "extends": ["plugin:testing-library/react"],
-      "env": { "jest": true, "node": true, "browser": true }
-    },
-    {
       "files": ["**/*.{ts,tsx}"],
       "parser": "@typescript-eslint/parser",
       "plugins": ["@typescript-eslint"],
