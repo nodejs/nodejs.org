@@ -1,15 +1,15 @@
 import { useMemo, useState } from 'react';
 import { MdOutlineTranslate } from 'react-icons/md';
-import { useLocale } from '../../../hooks/useLocale';
-import Dropdown from '../Dropdown';
 import styles from './index.module.scss';
+import Dropdown from '../Dropdown';
+import { useLocale } from '../../../hooks/useLocale';
 
 const dropdownStyle = {
   position: 'absolute',
   top: '60%',
   right: '0',
   margin: 0,
-};
+} as const;
 
 const LanguageSelector = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -38,8 +38,10 @@ const LanguageSelector = () => {
         aria-expanded={showDropdown}
       >
         <span className="sr-only">Switch Language</span>
+
         <MdOutlineTranslate />
       </button>
+
       <Dropdown
         items={dropdownItems}
         shouldShow={showDropdown}

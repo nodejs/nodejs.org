@@ -1,14 +1,20 @@
-import LanguageSelector from '.';
-export default { component: LanguageSelector };
+import LanguageSelector from './index';
+import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-export const Default = () => (
-  <div
-    style={{
-      backgroundColor: 'FloralWhite',
-      textAlign: 'right',
-      padding: '20px',
-    }}
-  >
-    <LanguageSelector />
-  </div>
-);
+type Story = StoryObj<typeof LanguageSelector>;
+type Meta = MetaObj<typeof LanguageSelector>;
+
+export const Default: Story = {};
+
+const containerStyles = { textAlign: 'right' } as const;
+
+export default {
+  component: LanguageSelector,
+  decorators: [
+    Story => (
+      <div style={containerStyles}>
+        <Story />
+      </div>
+    ),
+  ],
+} as Meta;

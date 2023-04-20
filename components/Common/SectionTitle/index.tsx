@@ -1,10 +1,9 @@
 import styles from './index.module.scss';
+import type { FC } from 'react';
 
-interface Props {
-  path: string[];
-}
+type SectionTitleProps = { path: string[] };
 
-const SectionTitle = ({ path }: Props) => (
+const SectionTitle: FC<SectionTitleProps> = ({ path }) => (
   <div className={styles.sectionTitle}>
     {path.map((item, index) => {
       const isLast = index === path.length - 1;

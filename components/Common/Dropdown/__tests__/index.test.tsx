@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import React from 'react';
 import Dropdown from '..';
 import type { DropdownItem } from '../../../../types';
 
@@ -49,11 +48,12 @@ describe('Dropdown component', () => {
   });
 
   it('should apply styles passed in the styles prop', () => {
-    const customStyles: React.CSSProperties = {
+    const customStyles = {
       backgroundColor: 'green',
       padding: '10px',
       borderRadius: '5px',
     };
+
     render(<Dropdown items={items} shouldShow={true} styles={customStyles} />);
 
     const dropdownList = screen.getByRole('list');

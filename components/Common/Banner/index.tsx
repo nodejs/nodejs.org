@@ -1,14 +1,11 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
+import { useIntl } from 'react-intl';
 import { sanitize } from 'isomorphic-dompurify';
+import styles from './index.module.scss';
 import { dateIsBetween } from '../../../util/dateIsBetween';
 import { isAbsoluteUrl } from '../../../util/isAbsoluteUrl';
-import styles from './index.module.scss';
-import { WebsiteBanner } from '../../../types';
-import { useIntl } from 'react-intl';
-
-export interface BannerProps {
-  bannersIndex: WebsiteBanner;
-}
+import type { FC } from 'react';
+import type { WebsiteBanner } from '../../../types';
 
 const useTextContent = ({ text, link }: WebsiteBanner, bannerBtnText: string) =>
   useMemo(() => {
@@ -47,12 +44,10 @@ const useHtmlContent = ({ html, link }: WebsiteBanner) =>
     return null;
   }, [html, link]);
 
-const Banner = ({ bannersIndex }: BannerProps) => {
-  const { formatMessage } = useIntl();
+type BannerProps = { bannersIndex: WebsiteBanner };
 
-  const bannerBtnText = formatMessage({
-    id: 'components.common.banner.button.text',
-  });
+const Banner: FC<BannerProps> = ({ bannersIndex }) => {
+  const { formatMessage } = useIntl();
 
   const showBanner = dateIsBetween(
     bannersIndex.startDate,
@@ -63,7 +58,11 @@ const Banner = ({ bannersIndex }: BannerProps) => {
     ? `http://nodejs.org/${bannersIndex.link}`
     : bannersIndex.link;
 
-  const textContent = useTextContent({ ...bannersIndex, link }, bannerBtnText);
+  const textContent = useTextContent(
+    { ...bannersIndex, link },
+    formatMessage({ id: 'components.common.banner.button.text' })
+  );
+
   const htmlContent = useHtmlContent({ ...bannersIndex, link });
 
   if (showBanner) {
