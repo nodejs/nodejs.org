@@ -11,8 +11,8 @@ layout: contribute.hbs
 * Untuk obrolan waktu nyata tentang pengembangan Node.js, gunakan salah satu platform di bawah ini
   * Untuk IRC, buka `irc.libera.chat` di saluran `#node.js` dengan [klien IRC](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) atau sambungkan di browser web Anda ke saluran menggunakan [klien web](https://kiwiirc.com/nextclient/)
   * Untuk Slack, ada dua opsi:
-    * [Node Slackers](https://www.nodeslackers.com/) adalah komunitas Slack yang berfokus pada Node.js. Beberapa Kelompok Kerja memiliki saluran diskusi di sana.
-    * [OpenJSF Slack](https://slack-invite.openjsf.org/) adalah Foundation run Slack dengan beberapa saluran Node.js (saluran yang diawali dengan `#nodejs-` terkait dengan proyek). Beberapa Kelompok Kerja memiliki saluran diskusi di sana.
+    * [OpenJSF Slack](https://slack-invite.openjsf.org/) adalah Foundation run Slack dengan beberapa saluran Node.js (saluran yang diawali dengan `#nodejs-` terkait dengan proyek).
+    * [Node Slackers](https://www.nodeslackers.com/) adalah komunitas Slack yang berfokus pada Node.js.
 * Akun Twitter resmi Node.js adalah [nodejs](https://twitter.com/nodejs).
 * [Kalender Node.js Foundation](https://nodejs.org/calendar) dengan semua rapat tim publik.
 
