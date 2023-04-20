@@ -14,23 +14,26 @@ export const Edit: Story = {
   args: {
     relativePath: exampleRelativePath,
   },
-  render: (args: any) => {
-    return (
+  decorators: [
+    Story => (
       <LocaleProvider i18nData={i18nMockDataEnglish}>
-        <EditLink {...args} />
+        <Story />
       </LocaleProvider>
-    );
-  },
+    ),
+  ],
 };
 
 export const Translate: Story = {
-  render: () => {
-    return (
-      <LocaleProvider i18nData={i18nMockDataNonEnglish}>
-        <EditLink relativePath={exampleRelativePath} />
-      </LocaleProvider>
-    );
+  args: {
+    relativePath: exampleRelativePath,
   },
+  decorators: [
+    Story => (
+      <LocaleProvider i18nData={i18nMockDataNonEnglish}>
+        <Story />
+      </LocaleProvider>
+    ),
+  ],
 };
 
 export const Empty: Story = {};
