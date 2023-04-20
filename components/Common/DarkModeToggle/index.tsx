@@ -1,12 +1,11 @@
+import React from 'react';
 import { useTheme } from 'next-themes';
-import { useIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { MdLightMode, MdNightlight } from 'react-icons/md';
 import styles from './index.module.scss';
 
 const DarkModeToggle = () => {
   const { theme, setTheme } = useTheme();
-
-  const intl = useIntl();
 
   const isDark = theme === 'dark';
 
@@ -18,19 +17,17 @@ const DarkModeToggle = () => {
     setTheme(isDark ? 'light' : 'dark');
   };
 
-  const ariaLabelText = intl.formatMessage({
-    id: 'components.header.buttons.toggleDarkMode',
-  });
-
   return (
     <button
       type="button"
       className={styles.darkModeToggle}
       onClick={() => toggleTheme()}
-      onKeyDown={() => toggleTheme(true)}
+      onKeyPress={() => toggleTheme(true)}
       aria-pressed={isDark}
-      aria-label={ariaLabelText}
     >
+      <span className="sr-only">
+        <FormattedMessage id="components.header.buttons.toggleDarkMode" />
+      </span>
       <MdNightlight className="light-mode-only" />
       <MdLightMode className="dark-mode-only" />
     </button>

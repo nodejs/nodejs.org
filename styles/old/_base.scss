@@ -111,3 +111,10 @@ iframe {
 [data-theme='dark'] .light-mode-only {
   display: none;
 }
+
+.light-mode-only,
+.dark-mode-only {
+  height: 18px;
+  padding: 9px;
+  width: 18px;
+}
