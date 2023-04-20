@@ -1,7 +1,6 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPencil } from '@fortawesome/free-solid-svg-icons';
+import { FaPencilAlt } from 'react-icons/fa';
 import styles from './index.module.scss';
 import { useLocale } from './../../../hooks/useLocale';
 
@@ -46,7 +45,7 @@ const EditLink = ({ relativePath, editPath, absolutePath }: Props) => {
     <div className={styles.edit}>
       <a href={href}>
         <FormattedMessage id={translationKey} tagName="span" />
-        <FontAwesomeIcon icon={faPencil} />
+        <FaPencilAlt />
       </a>
     </div>
   );
