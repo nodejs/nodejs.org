@@ -41,7 +41,7 @@ By becoming a collaborator, contributors can have even more impact on the projec
 * comments on issues and pull requests
 * contributions to the Node.js website
 * assistance provided to end users and novice contributors
-* participation in Working Groups
+* participation in working groups
 * other participation in the wider Node.js community
 
 If individuals making valuable contributions do not believe they have been considered for commit access, they may [log an issue](https://github.com/nodejs/TSC/issues) or [contact a TSC member](https://github.com/nodejs/node#tsc-technical-steering-committee) directly.
