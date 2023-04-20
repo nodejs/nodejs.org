@@ -1,0 +1,119 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "test": {
+      "inputs": [
+        "components/**",
+        "i18n/**",
+        "hooks/**",
+        "util/**",
+        "types/**",
+        "providers/**",
+        "layouts/**",
+        "jest.config.mjs",
+        "jest.setup.mjs"
+      ],
+      "outputs": ["coverage/**"],
+      "outputMode": "full"
+    },
+    "test-ci": {
+      "inputs": [
+        "components/**",
+        "i18n/**",
+        "hooks/**",
+        "util/**",
+        "types/**",
+        "providers/**",
+        "layouts/**",
+        "jest.config.mjs",
+        "jest.setup.mjs"
+      ],
+      "outputs": ["coverage/**"],
+      "outputMode": "full"
+    },
+    "lint": {
+      "outputs": [".eslintjscache", ".eslintmdcache"],
+      "outputMode": "full"
+    },
+    "lint:fix": {
+      "outputs": [".eslintjscache", ".eslintmdcache"],
+      "outputMode": "full"
+    },
+    "prettier": {
+      "outputs": ["mode_modules/.cache/prettier/**"],
+      "outputMode": "full"
+    },
+    "prettier:fix": {
+      "outputs": ["mode_modules/.cache/prettier/**"],
+      "outputMode": "full"
+    },
+    "format": {
+      "outputs": [
+        ".eslintjscache",
+        ".eslintmdcache",
+        "mode_modules/.cache/prettier/**"
+      ],
+      "outputMode": "full"
+    },
+    "serve": {
+      "cache": false
+    },
+    "build": {
+      "inputs": [
+        "components/**",
+        "hooks/**",
+        "i18n/**",
+        "layouts/**",
+        "pages/**",
+        "providers/**",
+        "scripts/**",
+        "styles/**",
+        "types/**",
+        "util/**",
+        "tsconfig.json",
+        "next.config.mjs",
+        "next.data.mjs",
+        "next-sitemap.config.js",
+        "theme.tsx"
+      ],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "deploy": {
+      "inputs": [
+        "components/**",
+        "hooks/**",
+        "i18n/**",
+        "layouts/**",
+        "pages/**",
+        "providers/**",
+        "scripts/**",
+        "styles/**",
+        "types/**",
+        "util/**",
+        "tsconfig.json",
+        "next.config.mjs",
+        "next.data.mjs",
+        "next-sitemap.config.js",
+        "theme.tsx"
+      ],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "storybook": {
+      "cache": false
+    },
+    "build-storybook": {
+      "inputs": [
+        "components/**",
+        "hooks/**",
+        "i18n/**",
+        "layouts/**",
+        "providers/**",
+        "styles/**",
+        "types/**",
+        "util/**",
+        "tsconfig.json"
+      ],
+      "outputs": ["storybook-static/**"]
+    }
+  }
+}
