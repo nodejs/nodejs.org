@@ -21,7 +21,7 @@ export const WithTextToCopyJsx: Story = {
   args: {
     children: (
       <span>
-        <strong>$</strong>echo hello worl
+        <strong>$</strong>echo hello world
       </span>
     ),
     textToCopy: '$echo hello world',
