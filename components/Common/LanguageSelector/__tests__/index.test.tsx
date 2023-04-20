@@ -1,5 +1,4 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { IntlProvider } from 'react-intl';
 import LanguageSelector from '..';
 
 jest.mock('../../../../hooks/useLocale', () => ({
@@ -14,11 +13,7 @@ jest.mock('../../../../hooks/useLocale', () => ({
 
 describe('LanguageSelector', () => {
   test('clicking the language switch button toggles the dropdown display', () => {
-    render(
-      <IntlProvider locale="en" onError={() => {}}>
-        <LanguageSelector />
-      </IntlProvider>
-    );
+    render(<LanguageSelector />);
     const button = screen.getByRole('button');
     expect(screen.queryByText('English')).not.toBeVisible();
     fireEvent.click(button);
@@ -28,11 +23,7 @@ describe('LanguageSelector', () => {
   });
 
   test('renders the Dropdown component with correct style', () => {
-    render(
-      <IntlProvider locale="en" onError={() => {}}>
-        <LanguageSelector />
-      </IntlProvider>
-    );
+    render(<LanguageSelector />);
     const button = screen.getByRole('button');
     fireEvent.click(button);
     const dropdown = screen.getByRole('list');
