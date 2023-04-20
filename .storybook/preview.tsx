@@ -4,7 +4,6 @@ import { ThemeProvider } from 'next-themes';
 import App from '../pages/_app.mdx';
 import { pageProps } from './constants';
 
-import '../styles/styles.scss';
 import '../styles/tokens.scss';
 
 const preview: Preview = {
