@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react';
 import NextImage from 'next/image';
+import { ThemeProvider } from 'next-themes';
 import App from '../pages/_app.mdx';
 import { pageProps } from './constants';
 
@@ -24,7 +25,11 @@ const preview: Preview = {
 };
 
 export const decorators = [
-  Story => <App Component={Story} pageProps={pageProps} />,
+  Story => (
+    <ThemeProvider>
+      <App Component={Story} pageProps={pageProps} />
+    </ThemeProvider>
+  ),
 ];
 
 Object.defineProperty(NextImage, 'default', {
