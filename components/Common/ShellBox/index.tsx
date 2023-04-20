@@ -9,7 +9,7 @@ type ShellBoxProps = {
   textToCopy?: string;
 };
 
-const ShellBox: FC<ShellBoxProps> = ({
+const ShellBox: FC<PropsWithChildren<ShellBoxProps>> = ({
   children,
   textToCopy,
 }: PropsWithChildren<ShellBoxProps>) => {

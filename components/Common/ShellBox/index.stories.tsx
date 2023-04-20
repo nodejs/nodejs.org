@@ -34,10 +34,8 @@ export const WithoutTextToCopyJsx: Story = {
       <span>
         <strong>$</strong>hello world
       </span>
-    )
+    ),
   },
 };
 
-export default {
-  component: ShellBox,
-} as Meta;
+export default { component: ShellBox } as Meta;
