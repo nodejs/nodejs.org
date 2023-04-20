@@ -82,6 +82,17 @@
       "cache": false
     },
     "build-storybook": {
+      "inputs": [
+        "components/**",
+        "hooks/**",
+        "i18n/**",
+        "layouts/**",
+        "providers/**",
+        "styles/**",
+        "types/**",
+        "util/**",
+        "tsconfig.json"
+      ],
       "outputs": ["storybook-static/**"]
     }
   }
