@@ -1,9 +1,7 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Banner from '..';
-import { AppProps, WebsiteBanner } from '../../../../types';
-import '@testing-library/jest-dom';
 import { LocaleProvider } from '../../../../providers/localeProvider';
+import Banner from '../index';
+import type { AppProps, WebsiteBanner } from '../../../../types';
 
 jest.mock('isomorphic-dompurify', () => ({
   sanitize: jest.fn((html: string) => html),
