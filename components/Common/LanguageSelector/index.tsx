@@ -1,23 +1,20 @@
 import { useMemo, useState } from 'react';
 import { MdOutlineTranslate } from 'react-icons/md';
-import { useIntl } from 'react-intl';
-import styles from './index.module.scss';
-import Dropdown from '../Dropdown';
 import { useLocale } from '../../../hooks/useLocale';
+import Dropdown from '../Dropdown';
+import styles from './index.module.scss';
 
 const dropdownStyle = {
   position: 'absolute',
   top: '60%',
   right: '0',
   margin: 0,
-} as const;
+};
 
 const LanguageSelector = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const { availableLocales, currentLocale } = useLocale();
-
-  const intl = useIntl();
 
   const dropdownItems = useMemo(
     () =>
@@ -32,10 +29,6 @@ const LanguageSelector = () => {
     [availableLocales, currentLocale]
   );
 
-  const ariaLabelText = intl.formatMessage({
-    id: 'components.common.languageSelector.button.title',
-  });
-
   return (
     <div className={styles.container}>
       <button
@@ -43,11 +36,10 @@ const LanguageSelector = () => {
         className={styles.languageSwitch}
         onClick={() => setShowDropdown(!showDropdown)}
         aria-expanded={showDropdown}
-        aria-label={ariaLabelText}
       >
+        <span className="sr-only">Switch Language</span>
         <MdOutlineTranslate />
       </button>
-
       <Dropdown
         items={dropdownItems}
         shouldShow={showDropdown}

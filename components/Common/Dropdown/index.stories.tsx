@@ -1,8 +1,11 @@
-import Dropdown from './index';
-import type { Meta as MetaObj, StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
+import Dropdown from '.';
 
 type Story = StoryObj<typeof Dropdown>;
-type Meta = MetaObj<typeof Dropdown>;
+
+export default {
+  component: Dropdown,
+};
 
 const items = [...Array(10).keys()].map(item => ({
   title: `Item ${item + 1}`,
@@ -19,5 +22,3 @@ export const withItems: Story = {
     shouldShow: true,
   },
 };
-
-export default { component: Dropdown } as Meta;
