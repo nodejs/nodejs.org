@@ -37,6 +37,8 @@
   "layouts.blogPost.author.byLine": "{author, select, null {} other {By {author}, }}",
   "layouts.blogIndex.currentYear": "News from {year}",
   "components.common.banner.button.text": "Read More",
+  "components.article.author.githubLinkLabel": "{username} Github - opens in new tab",
+  "components.article.authorList.title": "Article Authors",
   "components.article.editLink.title.edit": "Edit this page on GitHub",
   "components.article.editLink.title.translate": "Interested to help with translations?"
 }
