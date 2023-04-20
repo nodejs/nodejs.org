@@ -1,5 +1,4 @@
 import Link from 'next/link';
-
 import { useSiteConfig } from '../../hooks/useSiteConfig';
 import { dateIsBetween } from '../../util/dateIsBetween';
 

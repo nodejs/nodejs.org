@@ -1,7 +1,5 @@
 import { render } from '@testing-library/react';
-import React from 'react';
-
-import DataTag from '..';
+import DataTag from '../index';
 
 describe('Data Tag component', () => {
   it(`renders with red background color when tag is 'E'`, () => {

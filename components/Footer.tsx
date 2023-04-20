@@ -1,9 +1,10 @@
 import { FormattedMessage } from 'react-intl';
+import type { FC } from 'react';
 
 type FooterProps = { className?: string };
 
 // Note.: We don't expect to translate these items as we're going to replace with `nodejs/nodejs.dev` footer
-const Footer = ({ className }: FooterProps) => (
+const Footer: FC<FooterProps> = ({ className }) => (
   <>
     <a href="#" id="scroll-to-top">
       <span>

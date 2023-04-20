@@ -1,8 +1,7 @@
 import { FormattedMessage } from 'react-intl';
+import navigation from '../navigation.json';
 
 import type { NavigationEntry, NavigationKeys } from '../types';
-
-import navigation from '../navigation.json';
 
 // Translation Context for FormattedMessage
 type Context = Record<string, Record<string, any>>;

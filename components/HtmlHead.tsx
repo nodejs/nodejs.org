@@ -1,13 +1,12 @@
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-
 import { useSiteConfig } from '../hooks/useSiteConfig';
-
 import type { LegacyFrontMatter } from '../types';
+import type { FC } from 'react';
 
 type HeaderProps = { frontMatter: LegacyFrontMatter };
 
-const HtmlHead = ({ frontMatter }: HeaderProps) => {
+const HtmlHead: FC<HeaderProps> = ({ frontMatter }) => {
   const siteConfig = useSiteConfig();
   const { route, basePath } = useRouter();
 
@@ -30,6 +29,7 @@ const HtmlHead = ({ frontMatter }: HeaderProps) => {
       />
 
       <meta name="robots" content={frontMatter.robots || 'index, follow'} />
+
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="description" content={siteConfig.description} />
 

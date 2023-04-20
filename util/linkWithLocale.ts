@@ -1,4 +1,4 @@
-import { UrlObject } from 'url';
+import type { UrlObject } from 'url';
 
 export const linkWithLocale = (locale: string) => {
   return (path: string | UrlObject) => {
