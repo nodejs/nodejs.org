@@ -34,8 +34,7 @@ export const WithoutTextToCopyJsx: Story = {
       <span>
         <strong>$</strong>hello world
       </span>
-    ),
-    textToCopy: 'hello world',
+    )
   },
 };
 
