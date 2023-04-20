@@ -1,7 +1,5 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import EditLink from './../index';
-import { LocaleProvider } from './../../../../providers/localeProvider';
 import {
   exampleAbsolutePath,
   exampleEditPath,
@@ -9,6 +7,7 @@ import {
   i18nMockDataEnglish,
   i18nMockDataNonEnglish,
 } from './../mockDataConstants';
+import { LocaleProvider } from './../../../../providers/localeProvider';
 
 jest.mock('next/router', () => ({
   useRouter: jest.fn().mockImplementation(() => ({

@@ -1,4 +1,4 @@
-import { AppProps } from '../../../types';
+import type { AppProps } from '../../../types';
 
 export const exampleAbsolutePath =
   'https://github.com/nodejs/nodejs.org/edit/major/website-redesign/pages/en/get-involved/contribute.md';

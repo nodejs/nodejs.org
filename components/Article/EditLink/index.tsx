@@ -1,14 +1,14 @@
-import React from 'react';
-import { FormattedMessage } from 'react-intl';
 import { FaPencilAlt } from 'react-icons/fa';
+import { FormattedMessage } from 'react-intl';
 import styles from './index.module.scss';
 import { useLocale } from './../../../hooks/useLocale';
+import type { FC } from 'react';
 
-interface Props {
+type EditLinkProps = {
+  absolutePath?: string;
   relativePath?: string;
   editPath?: string;
-  absolutePath?: string;
-}
+};
 
 // TODO(HinataKah0): Change branch from major/website-redesign to main
 
@@ -18,7 +18,11 @@ const baseEditURL =
 const translationReadmeURL =
   'https://github.com/nodejs/nodejs.org/blob/major/website-redesign/TRANSLATION.md';
 
-const EditLink = ({ relativePath, editPath, absolutePath }: Props) => {
+const EditLink: FC<EditLinkProps> = ({
+  absolutePath,
+  relativePath,
+  editPath,
+}) => {
   const { currentLocale } = useLocale();
 
   if (!relativePath && !editPath && !absolutePath) return null;
