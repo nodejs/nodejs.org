@@ -25,3 +25,6 @@ coverage
 
 # Storybook
 storybook-static
+
+# Vercel Config
+.vercel

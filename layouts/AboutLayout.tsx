@@ -1,9 +1,8 @@
-import type { PropsWithChildren } from 'react';
-
 import BaseLayout from './BaseLayout';
 import SideNavigation from '../components/SideNavigation';
+import type { FC, PropsWithChildren } from 'react';
 
-const AboutLayout = ({ children }: PropsWithChildren) => (
+const AboutLayout: FC<PropsWithChildren> = ({ children }) => (
   <BaseLayout>
     <div className="container has-side-nav">
       <SideNavigation navigationKey="about" />

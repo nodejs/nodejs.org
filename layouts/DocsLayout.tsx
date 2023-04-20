@@ -1,10 +1,9 @@
-import type { PropsWithChildren } from 'react';
-
 import BaseLayout from './BaseLayout';
 import SideNavigation from '../components/SideNavigation';
 import { useNodeData } from '../hooks/useNodeData';
+import type { FC, PropsWithChildren } from 'react';
 
-const DocsLayout = ({ children }: PropsWithChildren) => {
+const DocsLayout: FC<PropsWithChildren> = ({ children }) => {
   const { currentLtsVersion, currentNodeVersion } = useNodeData();
 
   const translationContext = {

@@ -1,19 +1,19 @@
 import { FormattedMessage } from 'react-intl';
-
 import LocalizedLink from './LocalizedLink';
+import type { FC } from 'react';
 
 type PaginationProps = { prevSlug?: string; nextSlug?: string };
 
-const Pagination = (props: PaginationProps) => (
+const Pagination: FC<PaginationProps> = ({ nextSlug, prevSlug }) => (
   <nav aria-label="pagination" className="pagination">
-    {props.nextSlug && (
-      <LocalizedLink href={props.nextSlug}>
+    {nextSlug && (
+      <LocalizedLink href={nextSlug}>
         &lt; <FormattedMessage id="components.pagination.next" />
       </LocalizedLink>
     )}
 
-    {props.prevSlug && (
-      <LocalizedLink href={props.prevSlug}>
+    {prevSlug && (
+      <LocalizedLink href={prevSlug}>
         <FormattedMessage id="components.pagination.previous" /> &gt;
       </LocalizedLink>
     )}

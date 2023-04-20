@@ -1,5 +1,8 @@
 # Default rules
-* @nodejs/website
+
+- @nodejs/website
 
 # Node.js Release Blog Posts
+
 /pages/en/blog/release @nodejs/releasers
+/pages/en/blog/announcements @nodejs/releasers
