@@ -140,7 +140,7 @@ import type { FC } from 'react';
 
 type MyComponentProps = {}; // The types of the Props of your Component
 
-const MyComponent: FC<MyComponentProps> = props => (
+const MyComponent: FC<MyComponentProps> = ({ prop1, prop2... }) => (
   // Actual code of my Component
 );
 
