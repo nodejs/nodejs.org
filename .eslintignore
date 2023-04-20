@@ -17,3 +17,6 @@ pages/**/*.md
 
 # We shouldn't lint statically generated Storybook files
 storybook-static
+
+# We don't want to lint PNPM Lockfile
+pnpm-lock.yaml

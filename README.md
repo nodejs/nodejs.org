@@ -36,8 +36,8 @@
 ### Quick-Start Locally
 
 ```bash
-npm ci
-npm run serve
+pnpm i --frozen-lockfile
+npx turbo serve
 # listening at localhost:3000
 ```
 
