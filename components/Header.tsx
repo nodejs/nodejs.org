@@ -2,10 +2,10 @@ import { useIntl } from 'react-intl';
 import Image from 'next/image';
 import classNames from 'classnames';
 
-import LocalizedLink from './LocalizedLink';
-import { useLocale } from '../hooks/useLocale';
-import { useNavigation } from '../hooks/useNavigation';
 import { useRouter } from 'next/router';
+import LocalizedLink from './LocalizedLink';
+import { useNavigation } from '../hooks/useNavigation';
+import { useLocale } from '../hooks/useLocale';
 
 const Header = () => {
   const { availableLocales, isCurrentLocaleRoute } = useLocale();

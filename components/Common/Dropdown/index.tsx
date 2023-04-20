@@ -1,18 +1,22 @@
-import React from 'react';
-import type { DropdownItem } from '../../../types';
 import styles from './index.module.scss';
+import type { DropdownItem } from '../../../types';
+import type { CSSProperties, FC, KeyboardEvent } from 'react';
 
-export interface DropdownProps {
+type DropdownProps = {
   items: Array<DropdownItem>;
   shouldShow: boolean;
-  styles: Object;
-}
+  styles: CSSProperties;
+};
 
-const Dropdown = ({ items, shouldShow, styles: css }: DropdownProps) => {
+const Dropdown: FC<DropdownProps> = ({
+  items,
+  shouldShow,
+  styles: extraStyles,
+}) => {
   const mappedElements = items.map(item => {
     const extraStyles = { fontWeight: item.active ? 'bold' : 'normal' };
 
-    const handleKeyPress = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    const handleKeyPress = (e: KeyboardEvent<HTMLButtonElement>) => {
       if (e.key === 'Enter' || e.key === ' ') {
         item.onClick();
       }
@@ -32,7 +36,10 @@ const Dropdown = ({ items, shouldShow, styles: css }: DropdownProps) => {
     );
   });
 
-  const dropdownStyles = { display: shouldShow ? 'block' : 'none', ...css };
+  const dropdownStyles = {
+    display: shouldShow ? 'block' : 'none',
+    ...extraStyles,
+  };
 
   return (
     <ul className={styles.dropdownList} style={dropdownStyles}>
