@@ -20,13 +20,27 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-          cache: npm
+          cache: pnpm
 
       - name: Install NPM packages
-        run: npm ci
+        run: pnpm install --frozen-lockfile
+
+      - name: Restore Cache
+        uses: actions/cache/restore@v3
+        with:
+          paths:
+            - node_modules/.cache
+          key: ${{ runner.os }}-lint-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
       - name: Run Linting
-        run: npm run lint
+        run: npx turbo lint
+
+      - name: Save Cache
+        uses: actions/cache/save@v3
+        with:
+          paths:
+            - node_modules/.cache
+          key: ${{ runner.os }}-lint-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('node_modules/.cache/turbo') }}
 
   unit-tests:
     name: Tests on ${{ matrix.os }}
@@ -45,13 +59,27 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-          cache: npm
+          cache: pnpm
 
       - name: Install NPM packages
-        run: npm ci
+        run: pnpm install --frozen-lockfile
+
+      - name: Restore Cache
+        uses: actions/cache/restore@v3
+        with:
+          paths:
+            - node_modules/.cache
+          key: ${{ runner.os }}-tests-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
       - name: Run Unit Tests
-        run: npm run test-ci
+        run: npx turbo test-ci
+
+      - name: Save Cache
+        uses: actions/cache/save@v3
+        with:
+          paths:
+            - node_modules/.cache
+          key: ${{ runner.os }}-tests-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('node_modules/.cache/turbo') }}
 
   build:
     name: Build on ${{ matrix.os }}
@@ -70,26 +98,28 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-          cache: npm
+          cache: pnpm
 
       - name: Install NPM packages
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
-      - name: Restore Next.js cache
+      - name: Restore Cache
         uses: actions/cache/restore@v3
         with:
-          path: |
-            .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+          paths:
+            - .next/cache
+            - node_modules/.cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
       - name: Build Next.js
-        run: npm run build
+        run: npx turbo build
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
 
-      - name: Save Next.js cache
+      - name: Save Cache
         uses: actions/cache/save@v3
         with:
-          path: |
-            .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('.next/cache/eslint') }}
+          paths:
+            - .next/cache
+            - node_modules/.cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('node_modules/.cache/turbo') }}
