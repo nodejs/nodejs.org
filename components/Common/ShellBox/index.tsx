@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react';
+import { useRef } from 'react';
 import { FormattedMessage } from 'react-intl';
 import styles from './index.module.scss';
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
@@ -17,15 +17,10 @@ const ShellBox: FC<ShellBoxProps> = ({
 
   const shellBoxRef = useRef<HTMLElement>(null);
 
-  const handleCopyCode = useCallback(
-    async (event: MouseEvent<HTMLButtonElement>) => {
-      event.preventDefault();
-      const text = textToCopy || shellBoxRef.current?.innerHTML;
-      await copyText(text);
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [textToCopy, children, copyText]
-  );
+  const handleCopyCode = async (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    await copyText(textToCopy || shellBoxRef.current?.innerHTML);
+  };
 
   return (
     <pre className={styles.shellBox}>
