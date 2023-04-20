@@ -1,22 +1,18 @@
-import React, { useState } from 'react';
-import { injectIntl, WrappedComponentProps } from 'react-intl';
-import styles from './index.module.scss';
+import { useState } from 'react';
+import { useIntl } from 'react-intl';
 import Image from 'next/image';
+import styles from './index.module.scss';
+import type { FC } from 'react';
 
-interface Props {
-  username: string;
-  size?: number;
-}
+type AuthorProps = { username: string; size?: number };
 
-const Author = ({
-  username,
-  size = 64,
-  intl,
-}: Props & WrappedComponentProps) => {
+const Author: FC<AuthorProps> = ({ username, size }) => {
   // Clean up username and build links.
   const githubUserName = username.trim();
   const githubLink = `https://github.com/${githubUserName}`;
   const githubImgLink = `https://github.com/${githubUserName}.png?size=${size}`;
+
+  const intl = useIntl();
 
   const [authorImg, setAuthorImg] = useState(githubImgLink);
 
@@ -49,4 +45,4 @@ const Author = ({
   );
 };
 
-export default injectIntl(Author);
+export default Author;

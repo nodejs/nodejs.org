@@ -1,25 +1,30 @@
 import LocalizedLink from '../LocalizedLink';
 import { useNextraContext } from '../../hooks/useNextraContext';
 import { getNodejsChangelog } from '../../util/getNodeJsChangelog';
-
 import type { NodeVersionData } from '../../types';
+import type { FC } from 'react';
 
 type HomeDownloadButtonProps = Pick<
   NodeVersionData,
   'isLts' | 'node' | 'nodeMajor' | 'nodeNumeric'
 >;
 
-const HomeDownloadButton = (props: HomeDownloadButtonProps) => {
+const HomeDownloadButton: FC<HomeDownloadButtonProps> = ({
+  node,
+  nodeMajor,
+  nodeNumeric,
+  isLts,
+}) => {
   const {
     frontMatter: { labels },
   } = useNextraContext();
 
-  const nodeDownloadLink = `https://nodejs.org/dist/${props.node}/`;
-  const nodeApiLink = `https://nodejs.org/dist/latest-${props.nodeMajor}/docs/api/`;
-  const nodeAllDownloadsLink = `/download${props.isLts ? '/' : '/current'}`;
+  const nodeDownloadLink = `https://nodejs.org/dist/${node}/`;
+  const nodeApiLink = `https://nodejs.org/dist/latest-${nodeMajor}/docs/api/`;
+  const nodeAllDownloadsLink = `/download${isLts ? '/' : '/current'}`;
   const nodeDownloadTitle =
-    `${labels.download} ${props.nodeNumeric}` +
-    ` ${labels[props.isLts ? 'lts' : 'current']}`;
+    `${labels.download} ${nodeNumeric}` +
+    ` ${labels[isLts ? 'lts' : 'current']}`;
 
   return (
     <div className="home-downloadblock">
@@ -27,10 +32,10 @@ const HomeDownloadButton = (props: HomeDownloadButtonProps) => {
         href={nodeDownloadLink}
         className="home-downloadbutton"
         title={nodeDownloadTitle}
-        data-version={props.node}
+        data-version={node}
       >
-        {props.nodeNumeric} {labels[props.isLts ? 'lts' : 'current']}
-        <small>{labels[`tagline-${props.isLts ? 'lts' : 'current'}`]}</small>
+        {nodeNumeric} {labels[isLts ? 'lts' : 'current']}
+        <small>{labels[`tagline-${isLts ? 'lts' : 'current'}`]}</small>
       </a>
 
       <ul className="list-divider-pipe home-secondary-links">
@@ -40,7 +45,7 @@ const HomeDownloadButton = (props: HomeDownloadButtonProps) => {
           </LocalizedLink>
         </li>
         <li>
-          <LocalizedLink href={getNodejsChangelog(props.node)}>
+          <LocalizedLink href={getNodejsChangelog(node)}>
             {labels.changelog}
           </LocalizedLink>
         </li>

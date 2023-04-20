@@ -1,14 +1,16 @@
 import BlockQuote from './index';
+import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-export default { component: BlockQuote };
+type Story = StoryObj<typeof BlockQuote>;
+type Meta = MetaObj<typeof BlockQuote>;
 
-export const Default = {
+export const Default: Story = {
   args: {
     children: 'This is a block quote',
   },
 };
 
-export const MultipleParagraph = {
+export const MultipleParagraph: Story = {
   args: {
     children: [
       <p key={1}>This is a block quote 1</p>,
@@ -16,3 +18,5 @@ export const MultipleParagraph = {
     ],
   },
 };
+
+export default { component: BlockQuote } as Meta;

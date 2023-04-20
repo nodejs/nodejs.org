@@ -1,9 +1,8 @@
-import { StoryObj } from '@storybook/react';
-import DataTag from '.';
-
-export default { component: DataTag };
+import DataTag from './index';
+import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 type Story = StoryObj<typeof DataTag>;
+type Meta = MetaObj<typeof DataTag>;
 
 export const Red: Story = {
   args: {
@@ -22,3 +21,5 @@ export const Blue: Story = {
     tag: 'M',
   },
 };
+
+export default { component: DataTag } as Meta;

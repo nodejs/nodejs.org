@@ -1,11 +1,9 @@
-import React from 'react';
 import styles from './index.module.scss';
+import type { FC } from 'react';
 
-interface Props {
-  tag: 'E' | 'C' | 'M';
-}
+type DataTagProps = { tag: 'E' | 'C' | 'M' };
 
-const DataTag = ({ tag }: Props) => (
+const DataTag: FC<DataTagProps> = ({ tag }) => (
   <span className={styles.dataTag} data-tag={tag}>
     {tag}
   </span>

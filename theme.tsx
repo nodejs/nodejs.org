@@ -1,18 +1,17 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import highlightJs from 'highlight.js/lib/common';
 import { useRouter } from 'next/router';
-import type { NextraThemeLayoutProps } from 'nextra';
-import type { MDXComponents } from 'mdx/types';
-
 import HtmlHead from './components/HtmlHead';
 import AnchoredHeading from './components/AnchoredHeading';
 import NodeApiVersionLinks from './components/Docs/NodeApiVersionLinks';
 import { LayoutProvider } from './providers/layoutProvider';
-
+import type { FC, PropsWithChildren } from 'react';
+import type { NextraThemeLayoutProps } from 'nextra';
+import type { MDXComponents } from 'mdx/types';
 import type { LegacyFrontMatter } from './types';
 
-type LayoutProps = React.PropsWithChildren<{
+type LayoutProps = PropsWithChildren<{
   pageOpts: NextraThemeLayoutProps['pageOpts'];
 }>;
 
@@ -27,7 +26,7 @@ const mdxComponents: MDXComponents = {
   blockquote: ({ children }) => <div className="highlight-box">{children}</div>,
 };
 
-const Content = ({ children }: LayoutProps) => {
+const Content: FC<LayoutProps> = ({ children }) => {
   const { asPath } = useRouter();
 
   // Re-highlights the pages on route change
@@ -43,13 +42,13 @@ const Content = ({ children }: LayoutProps) => {
 };
 
 // @TODO: Nextra should provide better customization to FrontMatter Props
-interface ThemeProps extends NextraThemeLayoutProps {
+type ThemeProps = {
   pageOpts: Omit<NextraThemeLayoutProps['pageOpts'], 'frontMatter'> & {
     frontMatter: LegacyFrontMatter;
   };
-}
+} & NextraThemeLayoutProps;
 
-const Theme = ({ children, pageOpts, pageProps }: ThemeProps) => (
+const Theme: FC<ThemeProps> = ({ pageOpts, pageProps, children }) => (
   <>
     <HtmlHead frontMatter={pageOpts.frontMatter} />
     <LayoutProvider pageOpts={pageOpts} pageProps={pageProps}>

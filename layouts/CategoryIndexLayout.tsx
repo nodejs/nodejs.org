@@ -1,11 +1,10 @@
-import type { PropsWithChildren } from 'react';
-
 import BaseLayout from './BaseLayout';
 import LocalizedLink from '../components/LocalizedLink';
 import { useNextraContext } from '../hooks/useNextraContext';
 import { getTimeComponent } from '../util/getTimeComponent';
+import type { FC, PropsWithChildren } from 'react';
 
-const CategoryIndexLayout = ({ children }: PropsWithChildren) => {
+const CategoryIndexLayout: FC<PropsWithChildren> = ({ children }) => {
   const { blogData, frontMatter } = useNextraContext();
 
   return (

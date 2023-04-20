@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
@@ -25,7 +25,7 @@ type AnchorHeadingProps = PropsWithChildren<{
 // so we can just use '-- --' to quote the anchor name inside it.
 const COMMENT_FOR_HEADANCHOR = /--\x20?([\w\x20-]+)\x20?--/;
 
-const AnchoredHeading = ({ children, level, id }: AnchorHeadingProps) => {
+const AnchoredHeading: FC<AnchorHeadingProps> = ({ level, id, children }) => {
   const HeadingLevelTag = `h${level}` as any;
 
   let sanitizedId =
