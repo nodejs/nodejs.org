@@ -5,7 +5,9 @@ Thank you for your interest in contributing to the Node.js Website. Before you p
 - [Code of Conduct](https://github.com/nodejs/node/blob/HEAD/CODE_OF_CONDUCT.md)
 - [Getting started](#getting-started)
   - [Vocabulary](#vocabulary)
+  - [Creating Components](#creating-components)
   - [Commit message guidelines](#commit-guidelines)
+  - [Unit Tests and Storybooks](#unit-tests-and-storybooks)
   - [Pull Request Policy](#pull-request-policy)
     - [Before merging](#before-merging)
     - [When merging](#when-merging)
@@ -101,6 +103,63 @@ We also offer other commands that offer you assistance during your local develop
 - `npm run storybook` starts Storybook's local server
 - `npm run build-storybook` builds Storybook as a static web application for publishing
 
+## Creating Components
+
+The Node.js Website uses **React.js** as a Frontend Library for the development of the Website. React allows us to create user interfaces with a modern take on Web Development.
+
+If you're unfamiliar with React or Web Development in general, we encourage a read before taking on complex issues and tasks as this repository is **not for educational purposes** and we expect you to have a basic understanding of the technologies used.
+
+We also recommend getting familiar with technologies such as [Next.js][], [MDX][], [SCSS][] and "concepts" such as "CSS Modules" and "CSS-in-JS".
+
+### Best Practices when creating a Component
+
+- All React Components should be placed within the `components` folder.
+- Each Component should be placed whenever possible within a sub-folder, which we call the "Domain" of the Component
+  - The domain is the representation of where these Components belong to or where will be used.
+  - For example, Components used within Article Pages or that are part of the structure of an Article or the Article Layouts, should be placed within `components/Article`
+- Each component should have its own folder with the name of the Component
+- The structure of each component folder follows the following template:
+  ```text
+  - ComponentName
+    - index.tsx // the component itself
+    - index.module.scss // all styles of the component are placed there
+    - index.stories.tsx // component Storybook stories
+    - __tests__ // component tests (such as unit tests, etc)
+      - index.test.tsx
+  ```
+- React Hooks belonging to a single Component should be placed within the Component's folder
+  - If the Hook as a wider usability or can be used by other Components, then it should be placed at the root `hooks` folder.
+- If the Component has "sub-components" they should follow the same philosophy as the Component itself.
+  - For example, if the Component `ComponentName` has a sub-component called `SubComponentName`, then it should be placed within `ComponentName/SubComponentName`
+
+#### How a new Component should look like when freshly created
+
+```tsx
+import styles from './index.module.scss';
+import type { FC } from 'react';
+
+type MyComponentProps = {}; // The types of the Props of your Component
+
+const MyComponent: FC<MyComponentProps> = props => (
+  // Actual code of my Component
+);
+
+export default MyComponent;
+```
+
+### Best practices for Component development in general
+
+- Avoid spreading props `{ ... }` on the definition of the Component
+- Avoid importing `React`, only import the modules from React that you need
+- When importing types use `import type { NameOfImport } from 'module'`
+- When defining a Component use the `FC` type from React to define the type of the Component
+  - When using `children` as a prop, use the `FC<PropsWithChildren<MyComponentProps>>` type instead
+  - Alterenatively you can define your type as `type MyComponentProps = PropsWithChildren<{ my other props}>`
+- Each Props type should be prefixed by the name of the Component
+- Components should always be the `default` export of a React Component file
+- Avoid using DOM/Web APIs/`document`/`window` API access within a React Component. Use utilities or Hooks when you need a Reactive state
+- Avoid making your Component too big. Deconstruct it into smaller Components/Hooks whenever possible
+
 ## Commit Guidelines
 
 This project follows the [Conventional Commits][] specification.
@@ -113,6 +172,56 @@ Commits should be signed. You can read more about [Commit Signing][] here.
   > build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test
 - Commit messages **must** start with a capital letter
 - Commit messages **must not** end with a period `.`
+
+## Unit Tests and Storybooks
+
+Each new feature or bug fix should be accompanied by a unit test (when deemed valuable). We use [Jest][] as our test runner and [React Testing Library][] for our React unit tests.
+
+We also use [Storybook][] to document our components. Each component should have a storybook story that documents the component's usage.
+
+### General Guidelines for Unit Tests
+
+Unit Tests are fundamental to ensure that code changes do not disrupt the functionalities of the Node.js Website:
+
+- We recommend that unit tests are added for content covering `util`, `scripts`, `hooks` and `components` whenever possible.
+- Unit Tests should cover that the functionality of a given change is working as expected.
+- When creating unit tests for React components, we recommend that the tests cover all the possible states of the component.
+- We also recommend mocking external dependencies, if unsure about how to mock a certain dependency, raise the question on your Pull Request.
+  - We recommend using [Jest's Mock Functions](https://jestjs.io/docs/en/mock-functions) for mocking dependencies.
+  - We recommend using [Jest's Mock Modules](https://jestjs.io/docs/en/manual-mocks) for mocking dependencies that are not available on the Node.js runtime.
+  - Common Providers and Contexts from the lifecycle of our App, such as [`react-intl`][] should not be mocked but given an empty or fake context whenever possible.
+- We recommend reading previous unit tests from the codebase for inspiration and code guidelines.
+
+### General Guidelines for Storybooks
+
+Storybooks are an essential part of our development process. They help us to document our components and to ensure that the components are working as expected.
+
+They also allow Developers to preview Components and be able to test them manually/individually to the smallest unit of the Application. (The individual Component itself).
+
+**Storybooks should be fully typed and follow the following template:**
+
+```tsx
+import type { Meta as MetaObj, StoryObj } from '@storybook/react';
+import NameOfComponent from './index';
+
+type Story = StoryObj<typeof NameOfComponent>;
+type Meta = MetaObj<typeof NameOfComponent>;
+
+// If the component has any props that are interactable, they should be passed here
+// We recommend reading Storybook docs for args: https://storybook.js.org/docs/react/writing-stories/args
+export const Default: Story = {};
+
+// If the Component has more than one State/Layout/Variant, there should be one Story for each variant
+export const AnotherStory: Story = {
+  args: {},
+};
+
+export default { component: NameOfComponent } as Meta;
+```
+
+- Stories should have `args` whenever possible, we want to be able to test the different aspects of a Component
+- Please follow the template above to keep the Storybooks as consistent as possible
+- We recommend reading previous Storybooks from the codebase for inspiration and code guidelines.
 
 ## Pull Request Policy
 
@@ -159,21 +268,23 @@ More details about Collaboration can be found in the [COLLABORATOR_GUIDE.md](./C
 ## Developer's Certificate of Origin 1.1
 
 ```
+
 By contributing to this project, I certify that:
 
-* (a) The contribution was created in whole or in part by me and I have the right to
+- (a) The contribution was created in whole or in part by me and I have the right to
   submit it under the open source license indicated in the file; or
-* (b) The contribution is based upon previous work that, to the best of my knowledge,
+- (b) The contribution is based upon previous work that, to the best of my knowledge,
   is covered under an appropriate open source license and I have the right under that
   license to submit that work with modifications, whether created in whole or in part
   by me, under the same open source license (unless I am permitted to submit under a
   different license), as indicated in the file; or
-* (c) The contribution was provided directly to me by some other person who certified
+- (c) The contribution was provided directly to me by some other person who certified
   (a), (b) or (c) and I have not modified it.
-* (d) I understand and agree that this project and the contribution are public and that
+- (d) I understand and agree that this project and the contribution are public and that
   a record of the contribution (including all personal information I submit with it,
   including my sign-off) is maintained indefinitely and may be redistributed consistent
   with this project or the open source license(s) involved.
+
 ```
 
 ## Remarks
@@ -183,3 +294,10 @@ If something is missing here, or you feel something is not well described, feel 
 [`squash`]: https://help.github.com/en/articles/about-pull-request-merges#squash-and-merge-your-pull-request-commits
 [Conventional Commits]: https://www.conventionalcommits.org/
 [Commit Signing]: https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits
+[Jest]: https://jestjs.io/
+[React Testing Library]: https://testing-library.com/docs/react-testing-library/intro/
+[Storybook]: https://storybook.js.org/
+[`react-intl`]: https://formatjs.io/docs/react-intl/
+[Next.js]: https://nextjs.org/
+[MDX]: https://mdxjs.com/
+[SCSS]: https://sass-lang.com/
