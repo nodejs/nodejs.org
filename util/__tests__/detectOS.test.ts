@@ -1,11 +1,6 @@
-// Test the function detectOsInString for multiple userAgents and appVersions
-
 import { detectOsInUserAgent } from '../detectOS';
 
-// and check that the correct UserOS is returned
-describe('detectOsInString', () => {
-  // Test the function detectOsInString for multiple userAgents and appVersions
-  // and check that the correct UserOS is returned
+describe('detectOsInUserAgent', () => {
   it.each([
     [
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246',
@@ -16,7 +11,6 @@ describe('detectOsInString', () => {
       'MAC',
     ],
     [
-      // Chromebook
       'Mozilla/5.0 (X11; CrOS x86_64 8172.45.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.64 Safari/537.36',
       'UNKNOWN',
     ],
@@ -30,7 +24,7 @@ describe('detectOsInString', () => {
     ],
     ['', 'UNKNOWN'],
     ['UnknownAgent/1.0', 'UNKNOWN'],
-  ])('detectOsInString(%s) returns %s', (os, expected) => {
+  ])('detectOsInUserAgent(%s) returns %s', (os, expected) => {
     expect(detectOsInUserAgent(os)).toBe(expected);
   });
 });
