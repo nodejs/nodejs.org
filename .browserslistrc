@@ -1,3 +1,14 @@
 # https://github.com/browserslist/browserslist#readme
 
-defaults
+defaults and supports es6-module
+maintained node versions
+
+[production]
+
+cover 95%
+not dead
+
+[development]
+
+defaults and supports es6-module
+maintained node versions
