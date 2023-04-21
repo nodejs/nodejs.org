@@ -44,16 +44,11 @@ jobs:
           path: |
             .next/cache
             node_modules/.cache
-          key: build-${{ hashFiles('**/package-lock.json') }}-
-          restore-keys: |
-            build-${{ hashFiles('**/package-lock.json') }}-
-          enableCrossOsArchive: true
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
       - name: Build Next.js
         run: npx turbo build
         env:
-          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           NODE_OPTIONS: '--max_old_space_size=4096'
           NEXT_BASE_PATH: /nodejs.org
 
@@ -63,8 +58,7 @@ jobs:
           path: |
             .next/cache
             node_modules/.cache
-          key: build-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
-          enableCrossOsArchive: true
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache/turbo') }}
 
       - name: Export Next.js static files
         run: npx turbo export
