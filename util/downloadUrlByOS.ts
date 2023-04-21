@@ -1,5 +1,7 @@
 import type { UserOS } from '../types/userOS';
 
+const X64_BITNESS = '64';
+
 export const downloadUrlByOS = (
   userAgent: string,
   userOS: UserOS,
@@ -31,7 +33,7 @@ const getWinUrl = (
   bitness?: string
 ): string => {
   if (
-    bitness === '64' ||
+    bitness === X64_BITNESS ||
     userAgent.includes('WOW64') ||
     userAgent.includes('Win64')
   ) {
