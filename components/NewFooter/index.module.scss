@@ -93,4 +93,11 @@
   .link {
     text-decoration: none;
   }
+
+  svg {
+    fill: var(--color-text-accent);
+    height: 2rem;
+    padding: 1rem;
+    width: 2rem;
+  }
 }
