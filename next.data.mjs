@@ -20,8 +20,6 @@ const getNextData = async (content, { route }) => {
 
   const props = { ...localisationData, ...nodeVersionData, ...blogData };
 
-  console.info('info  - Pre-build files generated successfully!');
-
   return `
     // add the mdx file content
     ${content}
