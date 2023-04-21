@@ -13,7 +13,6 @@
         "jest.config.mjs",
         "jest.setup.mjs"
       ],
-      "outputs": ["coverage/**"],
       "outputMode": "full"
     },
     "test:ci": {
@@ -28,7 +27,6 @@
         "jest.config.mjs",
         "jest.setup.mjs"
       ],
-      "outputs": ["coverage/**"],
       "outputMode": "full"
     },
     "lint": {

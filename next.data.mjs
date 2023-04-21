@@ -13,14 +13,14 @@ preBuild.generateWebsiteFeeds(cachedBlogData);
 const cachedNodeVersionData = getNodeVersionData();
 const cachedLocalisationData = getLocalisationData();
 
-console.info('info  - Pre-build files generated successfully!');
-
 const getNextData = async (content, { route }) => {
   const localisationData = await cachedLocalisationData(route);
   const nodeVersionData = await cachedNodeVersionData(route);
   const blogData = await cachedBlogData(route);
 
   const props = { ...localisationData, ...nodeVersionData, ...blogData };
+
+  console.info('info  - Pre-build files generated successfully!');
 
   return `
     // add the mdx file content
