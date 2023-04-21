@@ -1,4 +1,4 @@
-import { UserOS } from '../types/userOS';
+import type { UserOS } from '../types/userOS';
 
 export const detectOS = (): UserOS => {
   return (

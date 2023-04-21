@@ -1,31 +1,46 @@
-import { UserOS } from '../types/userOS';
+import type { UserOS } from '../types/userOS';
 
 export const downloadUrlByOS = (
+  userAgent: string,
   userOS: UserOS,
   version: string,
   bitness?: string
 ): string => {
-  const baseURL = `https://nodejs.org/dist/${version}`;
+  const baseURL = getBaseURL(version);
+  switch (userOS) {
+    case 'MAC':
+      return getMacUrl(baseURL, version);
+    case 'WIN':
+      return getWinUrl(baseURL, version, userAgent, bitness);
+    default:
+      return getDefaultUrl(baseURL, version);
+  }
+};
 
-  if (userOS === UserOS.MOBILE) {
-    return baseURL;
+const getBaseURL = (version: string): string =>
+  `https://nodejs.org/dist/${version}`;
+
+const getMacUrl = (baseURL: string, version: string): string => {
+  return `${baseURL}/node-${version}.pkg`;
+};
+
+const getWinUrl = (
+  baseURL: string,
+  version: string,
+  userAgent: string,
+  bitness?: string
+): string => {
+  if (
+    bitness === '64' ||
+    userAgent.includes('WOW64') ||
+    userAgent.includes('Win64')
+  ) {
+    return `${baseURL}/node-${version}-x64.msi`;
   }
 
-  if (userOS === UserOS.MAC) {
-    return `${baseURL}/node-${version}.pkg`;
-  }
+  return `${baseURL}/node-${version}-x86.msi`;
+};
 
-  if (userOS === UserOS.WIN) {
-    if (
-      bitness === '64' ||
-      navigator.appVersion.includes('WOW64') ||
-      navigator.appVersion.includes('Win64')
-    ) {
-      return `${baseURL}/node-${version}-x64.msi`;
-    }
-
-    return `${baseURL}/node-${version}-x86.msi`;
-  }
-
+const getDefaultUrl = (baseURL: string, version: string): string => {
   return `${baseURL}/node-${version}.tar.gz`;
 };

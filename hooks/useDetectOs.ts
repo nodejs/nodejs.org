@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { UserOS } from '../types/userOS';
 import { detectOS } from '../util/detectOS';
 import { downloadUrlByOS } from '../util/downloadUrlByOS';
+
+import type { UserOS } from '../types/userOS';
 
 export const useDetectOs = () => {
   const [userOS, setUserOS] = useState<UserOS>('UNKNOWN');
@@ -26,6 +27,6 @@ export const useDetectOs = () => {
   return {
     userOS,
     getDownloadLink: (version: string) =>
-      downloadUrlByOS(userOS, version, bitness),
+      downloadUrlByOS(navigator.userAgent, userOS, version, bitness),
   };
 };
