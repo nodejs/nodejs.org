@@ -2,27 +2,27 @@
 
 @import "~highlight.js/scss/a11y-dark";
 
-@import 'variables';
-@import 'base';
-@import 'utils';
+@import 'old/variables';
+@import 'old/base';
+@import 'old/utils';
 
 // Import specific page sections and layout parts
-@import 'layout/sticky-footer';
-@import 'layout/grid';
-@import 'layout/main';
-@import 'layout/lists';
-@import 'layout/dark-theme';
-@import 'page-modules/jsfoundation';
-@import 'page-modules/header';
-@import 'page-modules/footer';
-@import 'page-modules/home';
-@import 'page-modules/blog-index';
-@import 'page-modules/blog-post';
-@import 'page-modules/download';
-@import 'page-modules/scrollToTop';
-@import 'page-modules/anchorLinks';
-@import 'page-modules/prev-next-navigation';
-@import 'vendor/prism-tomorrow';
+@import 'old/layout/sticky-footer';
+@import 'old/layout/grid';
+@import 'old/layout/main';
+@import 'old/layout/lists';
+@import 'old/layout/dark-theme';
+@import 'old/page-modules/jsfoundation';
+@import 'old/page-modules/header';
+@import 'old/page-modules/footer';
+@import 'old/page-modules/home';
+@import 'old/page-modules/blog-index';
+@import 'old/page-modules/blog-post';
+@import 'old/page-modules/download';
+@import 'old/page-modules/scrollToTop';
+@import 'old/page-modules/anchorLinks';
+@import 'old/page-modules/prev-next-navigation';
+@import 'old/vendor/prism-tomorrow';
 
 * {
   transition: background-color $dark-transition-time ease;
