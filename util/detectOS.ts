@@ -1,17 +1,10 @@
-// From https://github.com/nodejs/nodejs.dev/blob/main/src/util/detectOS.ts
-// eslint-disable-next-line no-shadow
-export enum UserOS {
-  MAC = 'MAC',
-  WIN = 'WIN',
-  LINUX = 'LINUX',
-  UNKNOWN = 'UNKNOWN',
-}
+import { UserOS } from '../types/userOS';
 
 export const detectOS = (): UserOS => {
   return (
     // Since `navigator.appVersion` is deprecated, we use the `userAgent``
     // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/appVersion
-    detectOsInUserAgent(navigator.userAgent) || UserOS.UNKNOWN
+    detectOsInUserAgent(navigator.userAgent) || 'UNKNOWN'
   );
 };
 
@@ -20,12 +13,12 @@ export const detectOsInUserAgent = (userAgent: string): UserOS => {
   const os = (osMatch && osMatch[1]) || '';
   switch (os) {
     case 'Win':
-      return UserOS.WIN;
+      return 'WIN';
     case 'Mac':
-      return UserOS.MAC;
+      return 'MAC';
     case 'Linux':
-      return UserOS.LINUX;
+      return 'LINUX';
     default:
-      return UserOS.UNKNOWN;
+      return 'UNKNOWN';
   }
 };

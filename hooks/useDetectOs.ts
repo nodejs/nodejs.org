@@ -1,10 +1,10 @@
-// Copied from https://github.com/nodejs/nodejs.dev/blob/main/src/hooks/useDetectOs.ts
 import { useEffect, useState } from 'react';
-import { UserOS, detectOS } from '../util/detectOS';
+import { UserOS } from '../types/userOS';
+import { detectOS } from '../util/detectOS';
 import { downloadUrlByOS } from '../util/downloadUrlByOS';
 
 export const useDetectOs = () => {
-  const [userOS, setUserOS] = useState<UserOS>(UserOS.UNKNOWN);
+  const [userOS, setUserOS] = useState<UserOS>('UNKNOWN');
   const [bitness, setBitness] = useState('');
 
   useEffect(() => {

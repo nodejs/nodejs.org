@@ -1,5 +1,4 @@
-// Copied From https://github.com/nodejs/nodejs.dev/blob/main/src/util/downloadUrlByOS.ts
-import { UserOS } from './detectOS';
+import { UserOS } from '../types/userOS';
 
 export const downloadUrlByOS = (
   userOS: UserOS,
