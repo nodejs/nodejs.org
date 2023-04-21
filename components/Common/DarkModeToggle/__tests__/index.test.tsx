@@ -26,7 +26,8 @@ describe('DarkModeToggle Component', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('switches dark theme to light theme', () => {
+  it('switches dark theme to light theme', async () => {
+    const user = userEvent.setup();
     mockCurrentTheme = 'dark';
     render(
       <IntlProvider locale="en" onError={() => {}}>
@@ -34,11 +35,12 @@ describe('DarkModeToggle Component', () => {
       </IntlProvider>
     );
     const toggle = screen.getByRole('button');
-    userEvent.click(toggle);
+    await user.click(toggle);
     expect(mockCurrentTheme).toBe('light');
   });
 
-  it('switches light theme to dark theme', () => {
+  it('switches light theme to dark theme', async () => {
+    const user = userEvent.setup();
     mockCurrentTheme = 'light';
     render(
       <IntlProvider locale="en" onError={() => {}}>
@@ -46,7 +48,7 @@ describe('DarkModeToggle Component', () => {
       </IntlProvider>
     );
     const toggle = screen.getByRole('button');
-    userEvent.click(toggle);
+    await user.click(toggle);
     expect(mockCurrentTheme).toBe('dark');
   });
 });

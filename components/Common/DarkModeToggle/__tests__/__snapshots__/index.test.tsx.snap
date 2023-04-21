@@ -3,15 +3,11 @@
 exports[`DarkModeToggle Component render dark mode toggle 1`] = `
 <div>
   <button
+    aria-label="components.header.buttons.toggleDarkMode"
     aria-pressed="false"
     class="darkModeToggle"
     type="button"
   >
-    <span
-      class="sr-only"
-    >
-      components.header.buttons.toggleDarkMode
-    </span>
     <svg
       class="light-mode-only"
       fill="currentColor"
