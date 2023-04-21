@@ -16,7 +16,7 @@
       "outputs": ["coverage/**"],
       "outputMode": "full"
     },
-    "test-ci": {
+    "test:ci": {
       "inputs": [
         "components/**",
         "i18n/**",
@@ -101,7 +101,7 @@
     "storybook": {
       "cache": false
     },
-    "build-storybook": {
+    "storybook:build": {
       "inputs": [
         "components/**",
         "hooks/**",
