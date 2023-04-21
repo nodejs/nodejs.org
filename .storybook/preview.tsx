@@ -1,10 +1,13 @@
 import type { Preview } from '@storybook/react';
 import NextImage from 'next/image';
 import { ThemeProvider } from 'next-themes';
-import App from '../pages/_app.mdx';
+import { NodeDataProvider } from '../providers/nodeDataProvider';
+import { LocaleProvider } from '../providers/localeProvider';
+import { SiteProvider } from '../providers/siteProvider';
+import openSans from '../util/openSans';
 import { pageProps } from './constants';
 
-import '../styles/tokens.scss';
+import '../styles/index.scss';
 
 const preview: Preview = {
   parameters: {
@@ -26,7 +29,20 @@ const preview: Preview = {
 export const decorators = [
   Story => (
     <ThemeProvider>
-      <App Component={Story} pageProps={pageProps} />
+      <SiteProvider>
+        <LocaleProvider i18nData={pageProps.i18nData}>
+          <NodeDataProvider nodeVersionData={pageProps.nodeVersionData}>
+            <style>
+              {`
+                body {
+                  font-family: ${openSans.style.fontFamily}, var(--base-type-face);
+                }
+              `}
+            </style>
+            <Story />
+          </NodeDataProvider>
+        </LocaleProvider>
+      </SiteProvider>
     </ThemeProvider>
   ),
 ];

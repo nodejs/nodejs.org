@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "styles/*": ["./styles/*"],
-      "i18n/*": ["./i18n/*"]
-    }
-  }
-}
