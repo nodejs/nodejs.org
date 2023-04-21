@@ -11,11 +11,11 @@
     "node": "v18"
   },
   "scripts": {
-    "serve": "NODE_ENV=production NODE_NO_WARNINGS=1 next dev",
-    "build": "NODE_ENV=production NODE_NO_WARNINGS=1 next build",
+    "serve": "cross-env NODE_ENV=production NODE_NO_WARNINGS=1 next dev",
+    "build": "cross-env NODE_ENV=production NODE_NO_WARNINGS=1 next build",
     "postbuild": "next-sitemap",
-    "start": "NODE_ENV=development NODE_NO_WARNINGS=1 next start",
-    "export": "NODE_NO_WARNINGS=1 next export -o build",
+    "start": "cross-env NODE_ENV=development NODE_NO_WARNINGS=1 next start",
+    "export": "cross-env NODE_NO_WARNINGS=1 next export -o build",
     "deploy": "npm run build && npm run export",
     "lint:js": "eslint \"**/*.{js,jsx,ts,tsx}\" --cache --cache-file .eslintjscache --report-unused-disable-directives",
     "lint:md": "eslint \"**/*.{md,mdx}\" --cache --cache-file .eslintmdcache",
@@ -26,12 +26,12 @@
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix && npm run lint:fix",
     "scripts:release-post": "NODE_NO_WARNINGS=1 node scripts/release-post/index.mjs",
-    "test": "NODE_NO_WARNINGS=1 jest --passWithNoTests",
+    "test": "cross-env NODE_NO_WARNINGS=1 jest --passWithNoTests",
     "test:watch": "npm run test -- --watch",
     "test:ci": "npm run test -- --coverage",
     "test:snapshot": "npm run test -- --updateSnapshot",
-    "storybook": "NODE_ENV=development NODE_NO_WARNINGS=1 storybook dev -p 6006",
-    "storybook:build": "NODE_ENV=production NODE_NO_WARNINGS=1 storybook build"
+    "storybook": "cross-env NODE_ENV=development NODE_NO_WARNINGS=1 storybook dev -p 6006",
+    "storybook:build": "cross-env NODE_ENV=production NODE_NO_WARNINGS=1 storybook build"
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
