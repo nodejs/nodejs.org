@@ -7,8 +7,7 @@ import { SiteProvider } from '../providers/siteProvider';
 import openSans from '../util/openSans';
 import { pageProps } from './constants';
 
-import '../styles/tokens.scss';
-import '../styles/base.scss';
+import '../styles/index.scss';
 
 const preview: Preview = {
   parameters: {
@@ -36,9 +35,7 @@ export const decorators = [
             <style>
               {`
                 body {
-                  font: 400 20px/1.5 ${openSans.style.fontFamily},
-                    'Open Sans', Roboto, 'San Francisco', Helvetica, Arial,
-                    sans-serif;
+                  font-family: ${openSans.style.fontFamily}, var(--base-type-face);
                 }
               `}
             </style>

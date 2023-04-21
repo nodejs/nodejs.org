@@ -12,8 +12,7 @@ html {
 body {
   background: var(--color-fill-app);
   color: var(--color-text-primary);
-  font-family: var(--base-type-face);
-  font-size: 1.6rem;
+  font-size: var(--font-size-body1);
   height: 100%;
   margin: 0 0;
   overflow-x: hidden;
