@@ -43,7 +43,7 @@ jobs:
             node_modules/.cache
             .eslintmdcache
             .eslintjscache
-          key: ${{ runner.os }}-lint-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          key: ${{ runner.os }}-lint-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache/turbo') }}
 
   unit-tests:
     name: Tests on ${{ matrix.os }}
@@ -84,7 +84,7 @@ jobs:
         with:
           path: |
             node_modules/.cache
-          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache/turbo') }}
 
   build:
     name: Build on ${{ matrix.os }}
@@ -116,8 +116,6 @@ jobs:
           path: |
             .next/cache
             node_modules/.cache
-            .eslintmdcache
-            .eslintjscache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
       - name: Build Next.js
@@ -131,6 +129,4 @@ jobs:
           path: |
             .next/cache
             node_modules/.cache
-            .eslintmdcache
-            .eslintjscache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache/turbo') }}

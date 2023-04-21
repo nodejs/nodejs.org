@@ -58,7 +58,7 @@ jobs:
           path: |
             .next/cache
             node_modules/.cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache/turbo') }}
 
       - name: Export Next.js static files
         run: npx turbo export
