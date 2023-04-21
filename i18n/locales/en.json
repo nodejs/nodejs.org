@@ -38,5 +38,6 @@
   "layouts.blogIndex.currentYear": "News from {year}",
   "components.common.banner.button.text": "Read More",
   "components.article.author.githubLinkLabel": "{username} Github - opens in new tab",
-  "components.article.authorList.title": "Article Authors"
+  "components.article.authorList.title": "Article Authors",
+  "components.common.languageSelector.button.title": "Switch Language"
 }
