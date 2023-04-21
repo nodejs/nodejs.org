@@ -18,6 +18,35 @@ const baseEditURL =
 const translationReadmeURL =
   'https://github.com/nodejs/nodejs.org/blob/major/website-redesign/TRANSLATION.md';
 
+const translationKeyPrefix = 'components.article.editLink.title';
+
+type EditLinkParams = {
+  translationKey: string;
+  href: string;
+};
+
+const getEditLinkParams = (
+  { absolutePath, relativePath, editPath }: EditLinkProps,
+  lang: string
+): EditLinkParams => {
+  if (lang === 'en') {
+    // Initial content development is done on GitHub in English
+    return {
+      translationKey: `${translationKeyPrefix}.edit`,
+      href:
+        absolutePath ||
+        (relativePath
+          ? `${baseEditURL}/pages/en/${relativePath}`
+          : `${baseEditURL}/${editPath}`),
+    };
+  }
+
+  return {
+    translationKey: `${translationKeyPrefix}.translate`,
+    href: translationReadmeURL,
+  };
+};
+
 const EditLink: FC<EditLinkProps> = ({
   absolutePath,
   relativePath,
@@ -27,28 +56,15 @@ const EditLink: FC<EditLinkProps> = ({
 
   if (!relativePath && !editPath && !absolutePath) return null;
 
-  let href;
-  let translationKey = 'components.article.editLink.title.';
-
-  // Initial content development is done on GitHub in English
-  switch (currentLocale.code) {
-    case 'en':
-      href =
-        absolutePath ||
-        (relativePath
-          ? `${baseEditURL}/pages/en/${relativePath}`
-          : `${baseEditURL}/${editPath}`);
-      translationKey += 'edit';
-      break;
-    default:
-      href = translationReadmeURL;
-      translationKey += 'translate';
-  }
+  const editLinkParams = getEditLinkParams(
+    { absolutePath, relativePath, editPath },
+    currentLocale.code
+  );
 
   return (
     <div className={styles.edit}>
-      <a href={href}>
-        <FormattedMessage id={translationKey} tagName="span" />
+      <a href={editLinkParams.href}>
+        <FormattedMessage id={editLinkParams.translationKey} tagName="span" />
         <FaPencilAlt />
       </a>
     </div>
