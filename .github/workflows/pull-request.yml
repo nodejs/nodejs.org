@@ -29,24 +29,17 @@ jobs:
         with:
           path: |
             node_modules/.cache
-          key: tests-${{ hashFiles('**/package-lock.json') }}-
-          restore-keys: |
-            tests-${{ hashFiles('**/package-lock.json') }}-
-          enableCrossOsArchive: true
+          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-
 
       - name: Run Linting
         run: npx turbo lint
-        env:
-          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
       - name: Save Cache
         uses: actions/cache/save@v3
         with:
           path: |
             node_modules/.cache
-          key: tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
-          enableCrossOsArchive: true
+          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
 
   unit-tests:
     name: Tests on ${{ matrix.os }}
@@ -77,49 +70,17 @@ jobs:
         with:
           path: |
             node_modules/.cache
-          key: tests-${{ hashFiles('**/package-lock.json') }}-
-          restore-keys: |
-            tests-${{ hashFiles('**/package-lock.json') }}-
-          enableCrossOsArchive: true
+          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-
 
       - name: Run Unit Tests
         run: npx turbo test:ci
-        env:
-          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
       - name: Save Cache
         uses: actions/cache/save@v3
         with:
           path: |
             node_modules/.cache
-          key: tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
-          enableCrossOsArchive: true
-
-  unit-tests:
-    name: Tests on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-
-    steps:
-      - name: Git Checkout
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: npm
-
-      - name: Install NPM packages
-        run: npm ci
-
-      - name: Run Unit Tests
-        run: npm run test-ci
+          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
 
   build:
     name: Build on ${{ matrix.os }}
@@ -151,16 +112,11 @@ jobs:
           path: |
             .next/cache
             node_modules/.cache
-          key: build-${{ hashFiles('**/package-lock.json') }}-
-          restore-keys: |
-            build-${{ hashFiles('**/package-lock.json') }}-
-          enableCrossOsArchive: true
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
       - name: Build Next.js
         run: npx turbo build
         env:
-          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           NODE_OPTIONS: '--max_old_space_size=4096'
 
       - name: Save Cache
@@ -169,5 +125,4 @@ jobs:
           path: |
             .next/cache
             node_modules/.cache
-          key: build-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
-          enableCrossOsArchive: true
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache/turbo') }}

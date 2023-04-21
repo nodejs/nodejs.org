@@ -49,7 +49,7 @@ git checkout -b name-of-your-branch
 
 ```bash
 npm ci # installs this project's dependencies
-npm run serve # starts a preview of your local changes
+npx turbo serve # starts a preview of your local changes
 ```
 
 7. Perform a merge to sync your current branch with the upstream branch.
@@ -59,10 +59,10 @@ git fetch upstream
 git merge upstream/main
 ```
 
-8. Run `npm run format` to confirm that linting, and formatting are passing.
+8. Run `npx turbo format` to confirm that linting, and formatting are passing.
 
 ```bash
-npm run format
+npx turbo format
 ```
 
 9.  Once you're happy with your changes, add and commit them to your branch,
@@ -83,25 +83,26 @@ npm run format
 
 #### Serve/Build Options
 
-- `npm run serve` runs Next.js's Local Development Server, listening by default on `http://localhost:3000/`.
-- `npm run build` builds the Application on Production mode. The output is by default within `.next` folder.
-- `npm run export` exports the website from the `.next` into a fully static website. The output is by default within `build` folder.
+- `npx turbo serve` runs Next.js's Local Development Server, listening by default on `http://localhost:3000/`.
+- `npx turbo build` builds the Application on Production mode. The output is by default within `.next` folder.
+- `npx turbo export` exports the website from the `.next` into a fully static website. The output is by default within `build` folder.
   - This is what it's used to deploy the website on our current Node.js servers.
-- `npm run start` starts a web server running serving the built content from `npm run build`
+- `npx turbo start` starts a web server running serving the built content from `npx turbo build`
 
 #### Other CLI options
 
 We also offer other commands that offer you assistance during your local development
 
-- `npm run lint` runs the linter for all the js files.
-  - `npm run lint:fix` attempts to fix any linting errors
-- `npm run prettier` runs the prettier for all the js files.
-  - `npm run prettier:fix` attempts to fix any style errors
-- `npm run format` formats and fixes the whole codebase
-- `npm run scripts:release-post` generates a release post for the current release
-  - **Usage:** `npm run scripts:release-post -- --version=vXX.X.X --force`
-- `npm run storybook` starts Storybook's local server
-- `npm run build-storybook` builds Storybook as a static web application for publishing
+- `npx turbo lint` runs the linter for all the js files.
+  - `npx turbo lint:fix` attempts to fix any linting errors
+- `npx turbo prettier` runs the prettier for all the js files.
+  - `npx turbo prettier:fix` attempts to fix any style errors
+- `npx turbo format` formats and fixes the whole codebase
+- `npx turbo scripts:release-post` generates a release post for the current release
+  - **Usage:** `npx turbo scripts:release-post -- --version=vXX.X.X --force`
+- `npx turbo storybook` starts Storybook's local server
+- `npx turbo storybook:build` builds Storybook as a static web application for publishing
+- `npx turbo test` runs jest (unit-tests) locally
 
 ## Creating Components
 
