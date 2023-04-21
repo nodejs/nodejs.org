@@ -3,7 +3,7 @@ import {
   i18nMockDataEnglish,
   i18nMockDataNonEnglish,
 } from './mockDataConstants';
-import { LocaleProvider } from './../../../providers/localeProvider';
+import { LocaleProvider } from '../../../providers/localeProvider';
 import EditLink from './index';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
