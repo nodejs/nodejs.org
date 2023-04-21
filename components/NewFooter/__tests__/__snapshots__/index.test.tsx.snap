@@ -34,6 +34,8 @@ exports[`Tests for Footer component renders correctly 1`] = `
         <a
           class="link"
           href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
+          rel="noopener noreferrer"
+          target="_blank"
         >
           components.footer.links.codeOfConduct
         </a>

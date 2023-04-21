@@ -31,7 +31,9 @@ const Footer = () => (
       <li>
         <a
           className={styles.link}
+          target="_blank"
           href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
+          rel="noopener noreferrer"
         >
           <FormattedMessage id="components.footer.links.codeOfConduct" />
         </a>
