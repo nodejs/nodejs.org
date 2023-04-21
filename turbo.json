@@ -3,13 +3,7 @@
   "pipeline": {
     "test": {
       "inputs": [
-        "components/**",
-        "i18n/**",
-        "hooks/**",
-        "util/**",
-        "types/**",
-        "providers/**",
-        "layouts/**",
+        "{components,hooks,layouts,providers,types,util}/**/*.{ts,tsx}",
         "jest.config.mjs",
         "jest.setup.mjs"
       ],
@@ -17,13 +11,7 @@
     },
     "test:ci": {
       "inputs": [
-        "components/**",
-        "i18n/**",
-        "hooks/**",
-        "util/**",
-        "types/**",
-        "providers/**",
-        "layouts/**",
+        "{components,hooks,layouts,providers,types,util}/**/*.{ts,tsx}",
         "jest.config.mjs",
         "jest.setup.mjs"
       ],
@@ -63,16 +51,10 @@
     },
     "build": {
       "inputs": [
-        "components/**",
-        "hooks/**",
-        "i18n/**",
-        "layouts/**",
-        "pages/**",
-        "providers/**",
-        "scripts/**",
-        "styles/**",
-        "types/**",
-        "util/**",
+        "{components,hooks,layouts,providers,types,util}/**/*.{ts,tsx}",
+        "{components,layouts,pages,styles}/**/*.{css,sass,scss}",
+        "pages/**/*.{tsx,ts,mdx,md}",
+        "scripts/**/*.{js,mjs}",
         "tsconfig.json",
         "next.config.mjs",
         "next.data.mjs",
@@ -83,16 +65,10 @@
     },
     "deploy": {
       "inputs": [
-        "components/**",
-        "hooks/**",
-        "i18n/**",
-        "layouts/**",
-        "pages/**",
-        "providers/**",
-        "scripts/**",
-        "styles/**",
-        "types/**",
-        "util/**",
+        "{components,hooks,layouts,providers,types,util}/**/*.{ts,tsx}",
+        "{components,layouts,pages,styles}/**/*.{css,sass,scss}",
+        "pages/**/*.{tsx,ts,mdx,md}",
+        "scripts/**/*.{js,mjs}",
         "tsconfig.json",
         "next.config.mjs",
         "next.data.mjs",
@@ -106,15 +82,8 @@
     },
     "storybook:build": {
       "inputs": [
-        "components/**",
-        "hooks/**",
-        "i18n/**",
-        "layouts/**",
-        "providers/**",
-        "styles/**",
-        "types/**",
-        "util/**",
-        "tsconfig.json"
+        "{components,hooks,layouts,providers,types,util}/**/*.{ts,tsx}",
+        "{components,layouts,pages,styles}/**/*.{css,sass,scss}"
       ],
       "outputs": ["storybook-static/**"]
     }
