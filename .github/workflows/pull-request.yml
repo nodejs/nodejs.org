@@ -29,9 +29,7 @@ jobs:
         with:
           path: |
             node_modules/.cache
-            .eslintmdcache
-            .eslintjscache
-          key: ${{ runner.os }}-lint-${{ hashFiles('**/package-lock.json') }}-
+          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-
 
       - name: Run Linting
         run: npx turbo lint
@@ -41,9 +39,7 @@ jobs:
         with:
           path: |
             node_modules/.cache
-            .eslintmdcache
-            .eslintjscache
-          key: ${{ runner.os }}-lint-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache/turbo') }}
+          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
 
   unit-tests:
     name: Tests on ${{ matrix.os }}
@@ -84,7 +80,7 @@ jobs:
         with:
           path: |
             node_modules/.cache
-          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache/turbo') }}
+          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
 
   build:
     name: Build on ${{ matrix.os }}

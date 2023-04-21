@@ -31,42 +31,20 @@
     },
     "lint": {
       "inputs": [
-        "{components,hooks,layouts,providers,types,util}/*.{ts,tsx}",
-        "{components,layouts,pages,styles}/*.{css,sass,scss}",
-        "pages/*.{tsx,ts,mdx,md}",
-        "scripts/.{js,mjs}",
-        "jest.config.mjs",
-        "jest.setup.mjs",
-        "next-sitemap.config.js",
-        "next.config.mjs",
-        "next.data.mjs",
-        "theme.tsx",
+        "{components,hooks,layouts,providers,types,util}/**/*.{ts,tsx}",
+        "{components,layouts,pages,styles}/**/*.{css,sass,scss}",
+        "*.{md,mdx,json,ts,tsx,mjs,js}",
+        "pages/**/*.{tsx,ts,mdx,md}",
+        "scripts/**/*.{js,mjs}",
+        "i18n/**/.json",
         ".eslintrc",
         ".eslintignore",
         ".stylelintrc",
-        ".stylelintrc",
-        "global.d.ts"
+        ".stylelintrc"
       ],
       "outputMode": "full"
     },
     "lint:fix": {
-      "inputs": [
-        "{components,hooks,layouts,providers,types,util}/*.{ts,tsx}",
-        "{components,layouts,pages,styles}/*.{css,sass,scss}",
-        "pages/*.{tsx,ts,mdx,md}",
-        "scripts/.{js,mjs}",
-        "jest.config.mjs",
-        "jest.setup.mjs",
-        "next-sitemap.config.js",
-        "next.config.mjs",
-        "next.data.mjs",
-        "theme.tsx",
-        ".eslintrc",
-        ".eslintignore",
-        ".stylelintrc",
-        ".stylelintrc",
-        "global.d.ts"
-      ],
       "outputMode": "full"
     },
     "prettier": {
