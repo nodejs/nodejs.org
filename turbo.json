@@ -40,7 +40,9 @@
         ".eslintrc",
         ".eslintignore",
         ".stylelintrc",
-        ".stylelintrc"
+        ".stylelintrc",
+        ".prettierrc",
+        ".prettierignore"
       ],
       "outputMode": "full"
     },
