@@ -1,11 +1,11 @@
 import Footer from './index';
-import type { Meta as MetaObj } from '@storybook/react';
+import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
+type Story = StoryObj<typeof Footer>;
 type Meta = MetaObj<typeof Footer>;
 
-export const Default = () => <Footer />;
+export const Default: Story = {};
 
 export default {
-  title: 'New Layout/Footer',
   component: Footer,
 } as Meta;

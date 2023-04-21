@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react';
-import { LocaleProvider } from '../../../providers/localeProvider';
+import { IntlProvider } from 'react-intl';
 import Footer from '..';
-import type { AppProps } from '../../../types';
 
 // mock useRouter
 jest.mock('next/router', () => ({
@@ -12,14 +11,18 @@ jest.mock('next/router', () => ({
   },
 }));
 
-const i18nData = { currentLocale: { code: 'en' } } as AppProps['i18nData'];
+jest.mock('../../../hooks/useLocale', () => ({
+  useLocale: () => ({
+    currentLocale: { code: 'en', name: 'English', localName: 'English' },
+  }),
+}));
 
 describe('Tests for Footer component', () => {
   it('renders correctly', () => {
     const { container } = render(
-      <LocaleProvider i18nData={i18nData}>
+      <IntlProvider locale="en" onError={() => {}}>
         <Footer />
-      </LocaleProvider>
+      </IntlProvider>
     );
     expect(container).toMatchSnapshot();
   });
