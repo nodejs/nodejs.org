@@ -53,9 +53,7 @@ const Footer = () => (
       </li>
     </ul>
     <ul className={styles.right}>
-      <li>
-        <FormattedMessage id="components.footer.links.openJsFoundation" />
-      </li>
+      <li>© OpenJS Foundation</li>
       <li>
         <a
           target="_blank"

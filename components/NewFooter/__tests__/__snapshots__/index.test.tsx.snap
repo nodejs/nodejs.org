@@ -67,7 +67,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
       class="right"
     >
       <li>
-        components.footer.links.openJsFoundation
+        © OpenJS Foundation
       </li>
       <li>
         <a
