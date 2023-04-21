@@ -7,15 +7,15 @@ export enum UserOS {
   UNKNOWN = 'UNKNOWN',
 }
 
-export function detectOS(): UserOS {
+export const detectOS = (): UserOS => {
   return (
     // Since `navigator.appVersion` is deprecated, we use the `userAgent``
     // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/appVersion
     detectOsInUserAgent(navigator.userAgent) || UserOS.UNKNOWN
   );
-}
+};
 
-export function detectOsInUserAgent(userAgent: string): UserOS {
+export const detectOsInUserAgent = (userAgent: string): UserOS => {
   const osMatch = userAgent.match(/(Win|Mac|Linux)/);
   const os = (osMatch && osMatch[1]) || '';
   switch (os) {
@@ -28,4 +28,4 @@ export function detectOsInUserAgent(userAgent: string): UserOS {
     default:
       return UserOS.UNKNOWN;
   }
-}
+};
