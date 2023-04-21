@@ -28,3 +28,6 @@ storybook-static
 
 # Vercel Config
 .vercel
+
+# TurboRepo
+.turbo

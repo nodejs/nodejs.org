@@ -4,9 +4,6 @@ on:
   pull_request:
   workflow_dispatch:
 
-env:
-  FORCE_COLOR: 2
-
 jobs:
   lint:
     name: Lint
@@ -15,6 +12,8 @@ jobs:
     steps:
       - name: Git Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -25,8 +24,22 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
+      - name: Restore Cache
+        uses: actions/cache/restore@v3
+        with:
+          path: |
+            node_modules/.cache
+          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-
+
       - name: Run Linting
-        run: npm run lint
+        run: npx turbo lint
+
+      - name: Save Cache
+        uses: actions/cache/save@v3
+        with:
+          path: |
+            node_modules/.cache
+          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
 
   unit-tests:
     name: Tests on ${{ matrix.os }}
@@ -40,6 +53,8 @@ jobs:
     steps:
       - name: Git Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -50,8 +65,22 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
+      - name: Restore Cache
+        uses: actions/cache/restore@v3
+        with:
+          path: |
+            node_modules/.cache
+          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-
+
       - name: Run Unit Tests
-        run: npm run test-ci
+        run: npx turbo test:ci
+
+      - name: Save Cache
+        uses: actions/cache/save@v3
+        with:
+          path: |
+            node_modules/.cache
+          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
 
   build:
     name: Build on ${{ matrix.os }}
@@ -65,6 +94,8 @@ jobs:
     steps:
       - name: Git Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -75,21 +106,23 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: Restore Next.js cache
+      - name: Restore Cache
         uses: actions/cache/restore@v3
         with:
           path: |
             .next/cache
+            node_modules/.cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
       - name: Build Next.js
-        run: npm run build
+        run: npx turbo build
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
 
-      - name: Save Next.js cache
+      - name: Save Cache
         uses: actions/cache/save@v3
         with:
           path: |
             .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('.next/cache/eslint') }}
+            node_modules/.cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache/turbo') }}
