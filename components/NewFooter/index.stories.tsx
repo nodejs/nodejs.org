@@ -6,6 +6,4 @@ type Meta = MetaObj<typeof Footer>;
 
 export const Default: Story = {};
 
-export default {
-  component: Footer,
-} as Meta;
+export default { component: Footer } as Meta;
