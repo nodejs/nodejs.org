@@ -24,6 +24,7 @@ describe('detectOsInUserAgent', () => {
     ],
     ['', 'OTHER'],
     ['OTHERAgent/1.0', 'OTHER'],
+    [undefined, 'OTHER'],
   ])('detectOsInUserAgent(%s) returns %s', (os, expected) => {
     expect(detectOsInUserAgent(os)).toBe(expected);
   });
