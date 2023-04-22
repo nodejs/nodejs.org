@@ -1,5 +1,5 @@
 import { renderHook, waitFor } from '@testing-library/react';
-import { useDetectOs } from '../useDetectOS';
+import { useDetectOS } from '../useDetectOS';
 
 const mockNavigator = {
   userAgent:
@@ -9,14 +9,14 @@ const mockNavigator = {
   },
 };
 
-describe('useDetectOs', () => {
+describe('useDetectOS', () => {
   it('should detect the user OS and bitness', async () => {
     Object.defineProperty(global, 'navigator', {
       value: mockNavigator,
       writable: true,
     });
 
-    const { result } = renderHook(() => useDetectOs());
+    const { result } = renderHook(() => useDetectOS());
 
     await waitFor(() => {
       expect(result.current.userOS).toBe('WIN');
