@@ -1,17 +1,8 @@
 import type { UserOS } from '../types/userOS';
 
-export const detectOS = (): UserOS => {
-  return (
-    // Since `navigator.appVersion` is deprecated, we use the `userAgent``
-    // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/appVersion
-    detectOsInUserAgent(navigator.userAgent) || 'UNKNOWN'
-  );
-};
-
 export const detectOsInUserAgent = (userAgent: string): UserOS => {
   const osMatch = userAgent.match(/(Win|Mac|Linux)/);
-  const os = (osMatch && osMatch[1]) || '';
-  switch (os) {
+  switch (osMatch && osMatch[1]) {
     case 'Win':
       return 'WIN';
     case 'Mac':
@@ -22,3 +13,8 @@ export const detectOsInUserAgent = (userAgent: string): UserOS => {
       return 'UNKNOWN';
   }
 };
+
+// Since `navigator.appVersion` is deprecated, we use the `userAgent``
+// https://developer.mozilla.org/en-US/docs/Web/API/Navigator/appVersion
+export const detectOS = (): UserOS =>
+  detectOsInUserAgent(navigator.userAgent) || 'UNKNOWN';

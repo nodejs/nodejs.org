@@ -8,7 +8,7 @@ describe('downloadUrlByOS', () => {
     const userOS = 'MAC';
     const expectedUrl = 'https://nodejs.org/dist/v18.16.0/node-v18.16.0.pkg';
 
-    expect(downloadUrlByOS(userAgent, userOS, version)).toBe(expectedUrl);
+    expect(downloadUrlByOS({ userAgent, userOS, version })).toBe(expectedUrl);
   });
 
   it('returns the correct download URL for Windows (32-bit)', () => {
@@ -19,7 +19,7 @@ describe('downloadUrlByOS', () => {
     const expectedUrl =
       'https://nodejs.org/dist/v18.16.0/node-v18.16.0-x86.msi';
 
-    expect(downloadUrlByOS(userAgent, userOS, version, bitness)).toBe(
+    expect(downloadUrlByOS({ userAgent, userOS, version, bitness })).toBe(
       expectedUrl
     );
   });
@@ -32,7 +32,7 @@ describe('downloadUrlByOS', () => {
     const expectedUrl =
       'https://nodejs.org/dist/v18.16.0/node-v18.16.0-x64.msi';
 
-    expect(downloadUrlByOS(userAgent, userOS, version, bitness)).toBe(
+    expect(downloadUrlByOS({ userAgent, userOS, version, bitness })).toBe(
       expectedUrl
     );
   });
@@ -45,7 +45,7 @@ describe('downloadUrlByOS', () => {
     const expectedUrl =
       'https://nodejs.org/dist/v18.16.0/node-v18.16.0-x64.msi';
 
-    expect(downloadUrlByOS(userAgent, userOS, version, bitness)).toBe(
+    expect(downloadUrlByOS({ userAgent, userOS, version, bitness })).toBe(
       expectedUrl
     );
   });
@@ -57,7 +57,7 @@ describe('downloadUrlByOS', () => {
     const expectedUrl =
       'https://nodejs.org/dist/v18.16.0/node-v18.16.0-x64.msi';
 
-    expect(downloadUrlByOS(userAgent, userOS, version, bitness)).toBe(
+    expect(downloadUrlByOS({ userAgent, userOS, version, bitness })).toBe(
       expectedUrl
     );
   });
@@ -67,6 +67,6 @@ describe('downloadUrlByOS', () => {
     const userOS = 'UNKNOWN';
     const expectedUrl = 'https://nodejs.org/dist/v18.16.0/node-v18.16.0.tar.gz';
 
-    expect(downloadUrlByOS(userAgent, userOS, version)).toBe(expectedUrl);
+    expect(downloadUrlByOS({ userAgent, userOS, version })).toBe(expectedUrl);
   });
 });

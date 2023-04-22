@@ -13,7 +13,6 @@ describe('useDetectOS', () => {
   it('should detect the user OS and bitness', async () => {
     Object.defineProperty(global, 'navigator', {
       value: mockNavigator,
-      writable: true,
     });
 
     const { result } = renderHook(() => useDetectOS());

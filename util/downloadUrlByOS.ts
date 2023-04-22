@@ -1,48 +1,28 @@
 import type { UserOS } from '../types/userOS';
 
-const X64_BITNESS = '64';
+export const downloadUrlByOS = ({
+  userAgent,
+  userOS,
+  version,
+  bitness,
+}: {
+  userAgent?: string | undefined;
+  userOS: UserOS;
+  version: string;
+  bitness?: string;
+}): string => {
+  const baseURL = `https://nodejs.org/dist/${version}`;
+  const is64Bit =
+    bitness === '64' ||
+    userAgent?.includes('WOW64') ||
+    userAgent?.includes('Win64');
 
-export const downloadUrlByOS = (
-  userAgent: string,
-  userOS: UserOS,
-  version: string,
-  bitness?: string
-): string => {
-  const baseURL = getBaseURL(version);
   switch (userOS) {
     case 'MAC':
-      return getMacUrl(baseURL, version);
+      return `${baseURL}/node-${version}.pkg`;
     case 'WIN':
-      return getWinUrl(baseURL, version, userAgent, bitness);
+      return `${baseURL}/node-${version}-x${is64Bit ? 64 : 86}.msi`;
     default:
-      return getDefaultUrl(baseURL, version);
+      return `${baseURL}/node-${version}.tar.gz`;
   }
-};
-
-const getBaseURL = (version: string): string =>
-  `https://nodejs.org/dist/${version}`;
-
-const getMacUrl = (baseURL: string, version: string): string => {
-  return `${baseURL}/node-${version}.pkg`;
-};
-
-const getWinUrl = (
-  baseURL: string,
-  version: string,
-  userAgent: string,
-  bitness?: string
-): string => {
-  if (
-    bitness === X64_BITNESS ||
-    userAgent.includes('WOW64') ||
-    userAgent.includes('Win64')
-  ) {
-    return `${baseURL}/node-${version}-x64.msi`;
-  }
-
-  return `${baseURL}/node-${version}-x86.msi`;
-};
-
-const getDefaultUrl = (baseURL: string, version: string): string => {
-  return `${baseURL}/node-${version}.tar.gz`;
 };
