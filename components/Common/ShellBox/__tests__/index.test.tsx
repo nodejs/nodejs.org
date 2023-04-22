@@ -5,6 +5,7 @@ import ShellBox from '../index';
 
 const mockWriteText = jest.fn();
 const originalNavigator = { ...window.navigator };
+const user = userEvent.setup();
 
 describe('ShellBox', () => {
   beforeEach(() => {
@@ -32,7 +33,7 @@ describe('ShellBox', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('should call clipboard API with `test` once', () => {
+  it('should call clipboard API with `test` once', async () => {
     const navigatorClipboardWriteTextSpy = jest
       .fn()
       .mockImplementation(() => Promise.resolve());
@@ -50,7 +51,7 @@ describe('ShellBox', () => {
       </IntlProvider>
     );
     const button = screen.getByRole('button');
-    userEvent.click(button);
+    await user.click(button);
     expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledTimes(1);
     expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledWith('test');
   });
