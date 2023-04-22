@@ -1,1 +1,1 @@
-export type UserOS = 'MAC' | 'WIN' | 'LINUX' | 'UNKNOWN';
+export type UserOS = 'MAC' | 'WIN' | 'LINUX' | 'OTHER';

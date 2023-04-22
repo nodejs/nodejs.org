@@ -5,7 +5,7 @@ import { downloadUrlByOS } from '../util/downloadUrlByOS';
 import type { UserOS } from '../types/userOS';
 
 export const useDetectOS = () => {
-  const [userOS, setUserOS] = useState<UserOS>('UNKNOWN');
+  const [userOS, setUserOS] = useState<UserOS>('OTHER');
   const [bitness, setBitness] = useState('');
 
   useEffect(() => {
