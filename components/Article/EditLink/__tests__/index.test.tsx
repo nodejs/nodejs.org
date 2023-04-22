@@ -1,13 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import EditLink from './../index';
-import {
-  exampleAbsolutePath,
-  exampleEditPath,
-  exampleRelativePath,
-  i18nMockDataEnglish,
-  i18nMockDataNonEnglish,
-} from './../mockDataConstants';
-import { LocaleProvider } from './../../../../providers/localeProvider';
+import { LocaleProvider } from '../../../../providers/localeProvider';
+import type { AppProps } from '../../../../types';
 
 jest.mock('next/router', () => ({
   useRouter: jest.fn().mockImplementation(() => ({
@@ -15,20 +9,44 @@ jest.mock('next/router', () => ({
   })),
 }));
 
+const absolutePath =
+  'https://github.com/nodejs/nodejs.org/edit/major/website-redesign/pages/en/get-involved/contribute.md';
+const relativePath = 'get-involved/contribute.md';
+const editPath = 'pages/en/get-involved/contribute.md';
+
+const i18nDataEditMode = {
+  currentLocale: {
+    code: 'en',
+  },
+  localeMessages: {
+    'components.article.editLink.title.edit': 'Edit this page on GitHub',
+  },
+} as unknown as AppProps['i18nData'];
+
+const i18nDataTranslateMode = {
+  currentLocale: {
+    code: 'xx',
+  },
+  localeMessages: {
+    'components.article.editLink.title.translate':
+      'Interested to help with translations?',
+  },
+} as unknown as AppProps['i18nData'];
+
 describe('EditLink component', () => {
-  it('Edit renders correctly', () => {
+  it('edit mode renders correctly', () => {
     const { container } = render(
-      <LocaleProvider i18nData={i18nMockDataEnglish}>
-        <EditLink relativePath={exampleRelativePath} />
+      <LocaleProvider i18nData={i18nDataEditMode}>
+        <EditLink relativePath={relativePath} />
       </LocaleProvider>
     );
     expect(container).toMatchSnapshot();
   });
 
-  it('Translate renders correctly', () => {
+  it('translate mode renders correctly', () => {
     const { container } = render(
-      <LocaleProvider i18nData={i18nMockDataNonEnglish}>
-        <EditLink relativePath={exampleRelativePath} />
+      <LocaleProvider i18nData={i18nDataTranslateMode}>
+        <EditLink relativePath={relativePath} />
       </LocaleProvider>
     );
     expect(container).toMatchSnapshot();
@@ -36,7 +54,7 @@ describe('EditLink component', () => {
 
   it('renders without a relative path', () => {
     const { container } = render(
-      <LocaleProvider i18nData={i18nMockDataEnglish}>
+      <LocaleProvider i18nData={i18nDataEditMode}>
         <EditLink relativePath={undefined} />
       </LocaleProvider>
     );
@@ -45,25 +63,19 @@ describe('EditLink component', () => {
 
   it('produces correct relative path', () => {
     render(
-      <LocaleProvider i18nData={i18nMockDataEnglish}>
-        <EditLink relativePath={exampleRelativePath} />
+      <LocaleProvider i18nData={i18nDataEditMode}>
+        <EditLink relativePath={relativePath} />
       </LocaleProvider>
     );
-    expect(screen.getByRole('link')).toHaveAttribute(
-      'href',
-      exampleAbsolutePath
-    );
+    expect(screen.getByRole('link')).toHaveAttribute('href', absolutePath);
   });
 
   it('produces correct edit path', () => {
     render(
-      <LocaleProvider i18nData={i18nMockDataEnglish}>
-        <EditLink editPath={exampleEditPath} />
+      <LocaleProvider i18nData={i18nDataEditMode}>
+        <EditLink editPath={editPath} />
       </LocaleProvider>
     );
-    expect(screen.getByRole('link')).toHaveAttribute(
-      'href',
-      exampleAbsolutePath
-    );
+    expect(screen.getByRole('link')).toHaveAttribute('href', absolutePath);
   });
 });
