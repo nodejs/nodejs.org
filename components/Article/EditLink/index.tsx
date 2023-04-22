@@ -54,7 +54,9 @@ const EditLink: FC<EditLinkProps> = ({
 }) => {
   const { currentLocale } = useLocale();
 
-  if (!relativePath && !editPath && !absolutePath) return null;
+  if (!relativePath && !editPath && !absolutePath) {
+    return null;
+  }
 
   const editLinkParams = getEditLinkParams(
     { absolutePath, relativePath, editPath },
