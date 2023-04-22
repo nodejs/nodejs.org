@@ -35,5 +35,6 @@
   "components.pagination.next": "Plus récent ",
   "components.pagination.previous": "Plus anciens",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {Par {author}, }}",
-  "layouts.blogIndex.currentYear": "Actualités de {year}"
+  "layouts.blogIndex.currentYear": "Actualités de {year}",
+  "components.blog.blogCard.author.by": "par"
 }
