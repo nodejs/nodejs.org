@@ -21,7 +21,7 @@
     "lint:md": "eslint \"**/*.{md,mdx}\" --cache --cache-file .eslintmdcache",
     "lint:scss": "stylelint --config .stylelintrc \"**/*.{css,sass,scss}\"",
     "lint": "npm run lint:js && npm run lint:md && npm run lint:scss && npm run prettier",
-    "lint:fix": "npm run lint:js --fix && npm run lint:md --fix && npm run lint:scss --fix",
+    "lint:fix": "npm run lint:js -- --fix && npm run lint:md -- --fix && npm run lint:scss -- --fix",
     "prettier": "prettier . --check --cache --cache-strategy metadata",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix && npm run lint:fix",
