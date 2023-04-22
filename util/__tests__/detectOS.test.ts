@@ -12,7 +12,7 @@ describe('detectOsInUserAgent', () => {
     ],
     [
       'Mozilla/5.0 (X11; CrOS x86_64 8172.45.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.64 Safari/537.36',
-      'UNKNOWN',
+      'OTHER',
     ],
     [
       'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:15.0) Gecko/20100101 Firefox/15.0.1',
@@ -22,8 +22,8 @@ describe('detectOsInUserAgent', () => {
       'Mozilla/5.0 (iPhone; CPU iPhone OS 13_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.3 Mobile/15E148 Safari/604.1',
       'MAC',
     ],
-    ['', 'UNKNOWN'],
-    ['UnknownAgent/1.0', 'UNKNOWN'],
+    ['', 'OTHER'],
+    ['OTHERAgent/1.0', 'OTHER'],
   ])('detectOsInUserAgent(%s) returns %s', (os, expected) => {
     expect(detectOsInUserAgent(os)).toBe(expected);
   });

@@ -10,11 +10,11 @@ export const detectOsInUserAgent = (userAgent: string): UserOS => {
     case 'Linux':
       return 'LINUX';
     default:
-      return 'UNKNOWN';
+      return 'OTHER';
   }
 };
 
 // Since `navigator.appVersion` is deprecated, we use the `userAgent``
 // https://developer.mozilla.org/en-US/docs/Web/API/Navigator/appVersion
 export const detectOS = (): UserOS =>
-  detectOsInUserAgent(navigator.userAgent) || 'UNKNOWN';
+  detectOsInUserAgent(navigator.userAgent) || 'OTHER';

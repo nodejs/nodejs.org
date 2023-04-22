@@ -64,7 +64,7 @@ describe('downloadUrlByOS', () => {
 
   it('returns the default download URL for other operating systems', () => {
     const userAgent = 'Mozilla/5.0 (Linux; Android 11; SM-G975U1)';
-    const userOS = 'UNKNOWN';
+    const userOS = 'OTHER';
     const expectedUrl = 'https://nodejs.org/dist/v18.16.0/node-v18.16.0.tar.gz';
 
     expect(downloadUrlByOS({ userAgent, userOS, version })).toBe(expectedUrl);
