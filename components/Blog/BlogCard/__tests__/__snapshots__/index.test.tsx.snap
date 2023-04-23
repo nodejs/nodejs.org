@@ -22,13 +22,16 @@ exports[`BlogCard component renders correctly 1`] = `
         >
           category-mock
         </a>
+        <span>
+          1 min read
+        </span>
       </div>
     </div>
     <div
       class="content"
     >
       <h4>
-        4/21/2023
+        April 21, 2023
       </h4>
       <p>
         by
