@@ -1,29 +1,22 @@
 import { render } from '@testing-library/react';
-import { LocaleProvider } from '../../../../providers/localeProvider';
-import englishMessages from '../../../../i18n/locales/en.json';
+import { IntlProvider } from 'react-intl';
+
 import BlogCard from '..';
 
 jest.mock('next/router', () => ({
   useRouter: jest.fn().mockReturnValue({}),
 }));
 
+jest.mock('../../../../hooks/useLocale', () => ({
+  useLocale: jest.fn().mockReturnValue({
+    currentLocale: {},
+  }),
+}));
+
 describe('BlogCard component', () => {
   it('renders correctly', () => {
     const { container } = render(
-      <LocaleProvider
-        i18nData={{
-          currentLocale: {
-            code: 'en',
-            localName: 'English',
-            name: 'English',
-            langDir: 'ltr',
-            dateFormat: 'MM.DD.YYYY',
-            hrefLang: 'en-US',
-            enabled: true,
-          },
-          localeMessages: englishMessages,
-        }}
-      >
+      <IntlProvider locale="en" onError={() => {}}>
         <BlogCard
           author="Bat Man"
           category="category-mock"
@@ -32,7 +25,7 @@ describe('BlogCard component', () => {
           title="Sample Test Blog"
           readingTime="1 min read"
         />
-      </LocaleProvider>
+      </IntlProvider>
     );
     expect(container).toMatchSnapshot();
   });

@@ -9,7 +9,7 @@ exports[`BlogCard component renders correctly 1`] = `
       class="title"
     >
       <a
-        href="/en/blog/category-mock/sample-blog"
+        href="/undefined/blog/category-mock/sample-blog"
       >
         Sample Test Blog
       </a>
@@ -18,7 +18,7 @@ exports[`BlogCard component renders correctly 1`] = `
       >
         <a
           class="category"
-          href="/en/blog/category-mock"
+          href="/undefined/blog/category-mock"
         >
           category-mock
         </a>
@@ -34,7 +34,7 @@ exports[`BlogCard component renders correctly 1`] = `
         April 21, 2023
       </h4>
       <p>
-        by
+        components.blog.blogCard.author.by
          
         <span>
           Bat Man
