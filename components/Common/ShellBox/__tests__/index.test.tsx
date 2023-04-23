@@ -5,9 +5,9 @@ import ShellBox from '../index';
 
 const mockWriteText = jest.fn();
 const originalNavigator = { ...window.navigator };
-const user = userEvent.setup();
-
 describe('ShellBox', () => {
+  const user = userEvent.setup();
+
   beforeEach(() => {
     Object.defineProperty(window, 'navigator', {
       value: {
