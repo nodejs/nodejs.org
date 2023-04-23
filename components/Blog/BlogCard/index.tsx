@@ -1,4 +1,4 @@
-import { FormattedMessage } from 'react-intl';
+import { FormattedDate, FormattedMessage } from 'react-intl';
 import styles from './index.module.scss';
 import LocalizedLink from '../../LocalizedLink';
 import navigation from '../../../navigation.json';
@@ -29,7 +29,9 @@ const BlogCard: FC<Props> = ({ title, author, date, category, slug }) => {
         </div>
       </div>
       <div className={styles.content}>
-        <h4>{date}</h4>
+        <h4>
+          <FormattedDate value={date} />
+        </h4>
         {author && (
           <p>
             <FormattedMessage id="components.blog.blogCard.author.by" />{' '}
