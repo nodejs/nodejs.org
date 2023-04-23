@@ -30,6 +30,7 @@ describe('BlogCard component', () => {
           date="2023-04-21 23:40:56.77"
           slug="/blog/category-mock/sample-blog"
           title="Sample Test Blog"
+          readingTime="1 min read"
         />
       </LocaleProvider>
     );

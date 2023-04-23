@@ -35,6 +35,5 @@
   "components.pagination.next": "较新的新闻事件 | ",
   "components.pagination.previous": "更早的新闻事件",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {由 {author} }}",
-  "layouts.blogIndex.currentYear": "{year} 年的所有新闻事件",
-  "components.blog.blogCard.author.by": "作者"
+  "layouts.blogIndex.currentYear": "{year} 年的所有新闻事件"
 }
