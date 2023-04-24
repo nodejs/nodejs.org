@@ -25,7 +25,11 @@ jobs:
         run: npm ci
 
       - name: Run Linting
-        run: npx turbo lint --token=${{ secrets.TURBO_TOKEN }} --team=${{ secrets.TURBO_TEAM }} --remote-only
+        run: npx turbo lint
+        env:
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_REMOTE_ONLY: true
 
   unit-tests:
     name: Tests on ${{ matrix.os }}
@@ -52,7 +56,11 @@ jobs:
         run: npm ci
 
       - name: Run Unit Tests
-        run: npx turbo test:ci --token=${{ secrets.TURBO_TOKEN }} --team=${{ secrets.TURBO_TEAM }} --remote-only
+        run: npx turbo test:ci
+        env:
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_REMOTE_ONLY: true
 
   build:
     name: Build on ${{ matrix.os }}
@@ -79,6 +87,9 @@ jobs:
         run: npm ci
 
       - name: Build Next.js
-        run: npx turbo build --token=${{ secrets.TURBO_TOKEN }} --team=${{ secrets.TURBO_TEAM }} --remote-only
+        run: npx turbo build
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_REMOTE_ONLY: true
