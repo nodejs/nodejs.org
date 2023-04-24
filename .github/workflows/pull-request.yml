@@ -7,7 +7,6 @@ on:
 env:
   TURBO_TOKEN: ${{ secrets.VERCEL_TOKEN }}
   TURBO_TEAM: ${{ secrets.VERCEL_TEAM_ID }}
-  TURBO_REMOTE_ONLY: true
 
 jobs:
   lint:
