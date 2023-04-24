@@ -20,10 +20,6 @@ jobs:
     name: Build for GitHub Pages
     runs-on: ubuntu-latest
 
-    env:
-      TURBO_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-      TURBO_TEAM: ${{ secrets.VERCEL_TEAM_ID }}
-
     steps:
       - name: Git Checkout
         uses: actions/checkout@v3
@@ -47,6 +43,9 @@ jobs:
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
           NEXT_BASE_PATH: /nodejs.org
+          NODE_OPTIONS: '--max_old_space_size=4096'
+          TURBO_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          TURBO_TEAM: ${{ secrets.VERCEL_TEAM_ID }}
 
       - name: Export Next.js static files
         run: npx turbo export
