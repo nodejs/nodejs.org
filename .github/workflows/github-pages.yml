@@ -44,8 +44,10 @@ jobs:
           path: |
             .next/cache
             node_modules/.cache
+          key: build-${{ hashFiles('**/package-lock.json') }}-
           restore-keys: |
-            ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}-
+            build-${{ hashFiles('**/package-lock.json') }}-
+          enableCrossOsArchive: true
 
       - name: Build Next.js
         run: npx turbo build
@@ -61,7 +63,8 @@ jobs:
           path: |
             .next/cache
             node_modules/.cache
-          key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          key: build-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          enableCrossOsArchive: true
 
       - name: Export Next.js static files
         run: npx turbo export

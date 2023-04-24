@@ -29,8 +29,10 @@ jobs:
         with:
           path: |
             node_modules/.cache
+          key: tests-${{ hashFiles('**/package-lock.json') }}-
           restore-keys: |
-            ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-
+            tests-${{ hashFiles('**/package-lock.json') }}-
+          enableCrossOsArchive: true
 
       - name: Run Linting
         run: npx turbo lint
@@ -43,7 +45,8 @@ jobs:
         with:
           path: |
             node_modules/.cache
-          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          key: tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          enableCrossOsArchive: true
 
   unit-tests:
     name: Tests on ${{ matrix.os }}
@@ -74,8 +77,10 @@ jobs:
         with:
           path: |
             node_modules/.cache
+          key: tests-${{ hashFiles('**/package-lock.json') }}-
           restore-keys: |
-            ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-
+            tests-${{ hashFiles('**/package-lock.json') }}-
+          enableCrossOsArchive: true
 
       - name: Run Unit Tests
         run: npx turbo test:ci
@@ -88,7 +93,8 @@ jobs:
         with:
           path: |
             node_modules/.cache
-          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          key: tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          enableCrossOsArchive: true
 
   build:
     name: Build on ${{ matrix.os }}
@@ -120,8 +126,10 @@ jobs:
           path: |
             .next/cache
             node_modules/.cache
+          key: build-${{ hashFiles('**/package-lock.json') }}-
           restore-keys: |
-            ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}-
+            build-${{ hashFiles('**/package-lock.json') }}-
+          enableCrossOsArchive: true
 
       - name: Build Next.js
         run: npx turbo build
@@ -136,4 +144,5 @@ jobs:
           path: |
             .next/cache
             node_modules/.cache
-          key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          key: build-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          enableCrossOsArchive: true
