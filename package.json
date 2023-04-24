@@ -11,10 +11,10 @@
     "node": "v18"
   },
   "scripts": {
-    "serve": "cross-env NODE_ENV=production NODE_NO_WARNINGS=1 next dev",
+    "serve": "cross-env NODE_ENV=development NODE_NO_WARNINGS=1 next dev",
     "build": "cross-env NODE_ENV=production NODE_NO_WARNINGS=1 next build",
     "postbuild": "next-sitemap",
-    "start": "cross-env NODE_ENV=development NODE_NO_WARNINGS=1 next start",
+    "start": "cross-env NODE_ENV=production NODE_NO_WARNINGS=1 next start",
     "export": "cross-env NODE_NO_WARNINGS=1 next export -o build",
     "deploy": "npm run build && npm run export",
     "lint:js": "eslint \"**/*.{js,jsx,ts,tsx}\" --cache --cache-file .eslintjscache --report-unused-disable-directives",
@@ -42,7 +42,7 @@
     "handlebars": "^4.7.7",
     "highlight.js": "^11.7.0",
     "isomorphic-dompurify": "^1.1.0",
-    "next": "13.2.0",
+    "next": "13.3.0",
     "next-sitemap": "^4.0.6",
     "next-themes": "^0.2.1",
     "nextra": "^2.2.20",
