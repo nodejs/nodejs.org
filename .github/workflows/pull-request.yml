@@ -27,8 +27,8 @@ jobs:
       - name: Run Linting
         run: npx turbo lint
         env:
-          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_TOKEN: '${{ secrets.TURBO_TOKEN }}'
+          TURBO_TEAM: '${{ secrets.TURBO_TEAM }}'
           TURBO_REMOTE_ONLY: true
 
   unit-tests:
@@ -58,8 +58,8 @@ jobs:
       - name: Run Unit Tests
         run: npx turbo test:ci
         env:
-          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_TOKEN: '${{ secrets.TURBO_TOKEN }}'
+          TURBO_TEAM: '${{ secrets.TURBO_TEAM }}'
           TURBO_REMOTE_ONLY: true
 
   build:
@@ -90,6 +90,6 @@ jobs:
         run: npx turbo build
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
-          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_TOKEN: '${{ secrets.TURBO_TOKEN }}'
+          TURBO_TEAM: '${{ secrets.TURBO_TEAM }}'
           TURBO_REMOTE_ONLY: true
