@@ -1,5 +1,5 @@
 import Footer from '../components/Footer';
-import Header from '../components/Header';
+import Header from '../components/NewHeader';
 import type { FC, PropsWithChildren } from 'react';
 
 const BaseLayout: FC<PropsWithChildren> = ({ children }) => (
