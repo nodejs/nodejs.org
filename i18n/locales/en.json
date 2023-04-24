@@ -41,5 +41,12 @@
   "components.article.authorList.title": "Article Authors",
   "components.article.editLink.title.edit": "Edit this page on GitHub",
   "components.article.editLink.title.translate": "Interested to help with translations?",
-  "components.common.languageSelector.button.title": "Switch Language"
+  "components.common.languageSelector.button.title": "Switch Language",
+  "components.footer.links.trademark": "Trademark Policy",
+  "components.footer.links.privacy": "Privacy Policy",
+  "components.footer.links.codeOfConduct": "Code of Conduct",
+  "components.footer.links.security": "Security",
+  "components.footer.links.about": "About",
+  "components.footer.links.blog": "Blog",
+  "components.footer.links.github": "GitHub"
 }
