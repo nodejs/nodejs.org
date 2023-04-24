@@ -4,6 +4,11 @@ on:
   pull_request:
   workflow_dispatch:
 
+env:
+  TURBO_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+  TURBO_TEAM: ${{ secrets.VERCEL_TEAM_ID }}
+  TURBO_REMOTE_ONLY: true
+
 jobs:
   lint:
     name: Lint
@@ -24,22 +29,8 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: Restore Cache
-        uses: actions/cache/restore@v3
-        with:
-          path: |
-            node_modules/.cache
-          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-
-
       - name: Run Linting
         run: npx turbo lint
-
-      - name: Save Cache
-        uses: actions/cache/save@v3
-        with:
-          path: |
-            node_modules/.cache
-          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
 
   unit-tests:
     name: Tests on ${{ matrix.os }}
@@ -65,22 +56,8 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: Restore Cache
-        uses: actions/cache/restore@v3
-        with:
-          path: |
-            node_modules/.cache
-          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-
-
       - name: Run Unit Tests
         run: npx turbo test:ci
-
-      - name: Save Cache
-        uses: actions/cache/save@v3
-        with:
-          path: |
-            node_modules/.cache
-          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
 
   build:
     name: Build on ${{ matrix.os }}
@@ -106,23 +83,7 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: Restore Cache
-        uses: actions/cache/restore@v3
-        with:
-          path: |
-            .next/cache
-            node_modules/.cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
-
       - name: Build Next.js
         run: npx turbo build
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
-
-      - name: Save Cache
-        uses: actions/cache/save@v3
-        with:
-          path: |
-            .next/cache
-            node_modules/.cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache/turbo') }}
