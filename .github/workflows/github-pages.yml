@@ -15,14 +15,14 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
-env:
-  TURBO_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-  TURBO_TEAM: ${{ secrets.VERCEL_TEAM_ID }}
-
 jobs:
   build:
     name: Build for GitHub Pages
     runs-on: ubuntu-latest
+
+    env:
+      TURBO_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      TURBO_TEAM: ${{ secrets.VERCEL_TEAM_ID }}
 
     steps:
       - name: Git Checkout
