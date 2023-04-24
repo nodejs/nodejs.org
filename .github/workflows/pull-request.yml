@@ -24,12 +24,11 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: GitHub Actions Cache
-        uses: actions/cache@v3
+      - name: Restore Cache
+        uses: actions/cache/restore@v3
         with:
           path: |
             node_modules/.cache
-          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
           restore-keys: |
             ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-
 
@@ -38,6 +37,13 @@ jobs:
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+
+      - name: Save Cache
+        uses: actions/cache/save@v3
+        with:
+          path: |
+            node_modules/.cache
+          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
 
   unit-tests:
     name: Tests on ${{ matrix.os }}
@@ -63,12 +69,11 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: GitHub Actions Cache
-        uses: actions/cache@v3
+      - name: Restore Cache
+        uses: actions/cache/restore@v3
         with:
           path: |
             node_modules/.cache
-          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
           restore-keys: |
             ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-
 
@@ -77,6 +82,13 @@ jobs:
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+
+      - name: Save Cache
+        uses: actions/cache/save@v3
+        with:
+          path: |
+            node_modules/.cache
+          key: ${{ runner.os }}-tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
 
   build:
     name: Build on ${{ matrix.os }}
@@ -102,13 +114,12 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: GitHub Actions Cache
-        uses: actions/cache@v3
+      - name: Restore Cache
+        uses: actions/cache/restore@v3
         with:
           path: |
             .next/cache
             node_modules/.cache
-          key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}-
 
@@ -118,3 +129,11 @@ jobs:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           NODE_OPTIONS: '--max_old_space_size=4096'
+
+      - name: Save Cache
+        uses: actions/cache/save@v3
+        with:
+          path: |
+            .next/cache
+            node_modules/.cache
+          key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
