@@ -43,9 +43,9 @@ jobs:
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
           NEXT_BASE_PATH: /nodejs.org
-          NODE_OPTIONS: '--max_old_space_size=4096'
-          TURBO_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          TURBO_TEAM: ${{ secrets.VERCEL_TEAM_ID }}
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          TURBO_REMOTE_ONLY: true
 
       - name: Export Next.js static files
         run: npx turbo export
