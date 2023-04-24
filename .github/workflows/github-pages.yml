@@ -38,27 +38,23 @@ jobs:
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v3
 
-      - name: Restore Cache
-        uses: actions/cache/restore@v3
+      - name: GitHub Actions Cache
+        uses: actions/cache@v3
         with:
           path: |
             .next/cache
             node_modules/.cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+          key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}-
 
       - name: Build Next.js
         run: npx turbo build
         env:
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           NODE_OPTIONS: '--max_old_space_size=4096'
           NEXT_BASE_PATH: /nodejs.org
-
-      - name: Save Cache
-        uses: actions/cache/save@v3
-        with:
-          path: |
-            .next/cache
-            node_modules/.cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache/turbo') }}
 
       - name: Export Next.js static files
         run: npx turbo export
