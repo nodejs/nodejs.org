@@ -63,6 +63,9 @@
       ],
       "outputs": [".next/**", "!.next/cache/**"]
     },
+    "start": {
+      "cache": false
+    },
     "deploy": {
       "inputs": [
         "{components,hooks,layouts,providers,types,util}/**/*.{ts,tsx}",
