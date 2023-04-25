@@ -1,0 +1,341 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Codebox component (multiple langs) renders correctly 1`] = `
+<div>
+  <pre
+    class="pre language-js|language-js"
+  >
+    <div
+      class="top"
+    >
+      <div
+        class="langBox"
+      >
+        <button
+          class="lang"
+          type="button"
+        >
+          js
+        </button>
+        <button
+          class="lang"
+          type="button"
+        >
+          language-js
+        </button>
+      </div>
+      <button
+        class="copy"
+        type="button"
+      >
+        components.codeBox.copy
+      </button>
+    </div>
+    <div
+      class="content"
+    >
+      <span
+        class="token keyword"
+      >
+        const
+      </span>
+       http 
+      <span
+        class="token operator"
+      >
+        =
+      </span>
+       
+      <span
+        class="token function"
+      >
+        require
+      </span>
+      <span
+        class="token punctuation"
+      >
+        (
+      </span>
+      <span
+        class="token string"
+      >
+        'http'
+      </span>
+      <span
+        class="token punctuation"
+      >
+        )
+      </span>
+      <span
+        class="token punctuation"
+      >
+        ;
+      </span>
+      
+  
+      <span
+        class="token operator"
+      >
+        --
+      </span>
+      <span
+        class="token operator"
+      >
+        --
+      </span>
+      <span
+        class="token operator"
+      >
+        --
+      </span>
+      <span
+        class="token operator"
+      >
+        -
+      </span>
+      
+  
+      <span
+        class="token keyword"
+      >
+        import
+      </span>
+       http 
+      <span
+        class="token keyword"
+      >
+        from
+      </span>
+       
+      <span
+        class="token string"
+      >
+        'http'
+      </span>
+      <span
+        class="token punctuation"
+      >
+        ;
+      </span>
+    </div>
+  </pre>
+</div>
+`;
+
+exports[`Codebox component (one lang) renders correctly 1`] = `
+<div>
+  <pre
+    class="pre language-js"
+  >
+    <div
+      class="top"
+    >
+      <div
+        class="langBox"
+      >
+        <button
+          class="lang"
+          type="button"
+        >
+          js
+        </button>
+      </div>
+      <button
+        class="copy"
+        type="button"
+      >
+        components.codeBox.copy
+      </button>
+    </div>
+    <div
+      class="content"
+    >
+      <span
+        class="token operator"
+      >
+        &lt;
+      </span>
+      span 
+      <span
+        class="token keyword"
+      >
+        class
+      </span>
+      <span
+        class="token operator"
+      >
+        =
+      </span>
+      <span
+        class="token string"
+      >
+        "token keyword"
+      </span>
+      <span
+        class="token operator"
+      >
+        &gt;
+      </span>
+      <span
+        class="token keyword"
+      >
+        const
+      </span>
+      <span
+        class="token operator"
+      >
+        &lt;
+      </span>
+      <span
+        class="token operator"
+      >
+        /
+      </span>
+      span
+      <span
+        class="token operator"
+      >
+        &gt;
+      </span>
+       a 
+      <span
+        class="token operator"
+      >
+        &lt;
+      </span>
+      span 
+      <span
+        class="token keyword"
+      >
+        class
+      </span>
+      <span
+        class="token operator"
+      >
+        =
+      </span>
+      <span
+        class="token string"
+      >
+        "token operator"
+      </span>
+      <span
+        class="token operator"
+      >
+        &gt;=
+      </span>
+      <span
+        class="token operator"
+      >
+        &lt;
+      </span>
+      <span
+        class="token operator"
+      >
+        /
+      </span>
+      span
+      <span
+        class="token operator"
+      >
+        &gt;
+      </span>
+       
+      <span
+        class="token operator"
+      >
+        &lt;
+      </span>
+      span 
+      <span
+        class="token keyword"
+      >
+        class
+      </span>
+      <span
+        class="token operator"
+      >
+        =
+      </span>
+      <span
+        class="token string"
+      >
+        "token number"
+      </span>
+      <span
+        class="token operator"
+      >
+        &gt;
+      </span>
+      <span
+        class="token number"
+      >
+        1
+      </span>
+      <span
+        class="token operator"
+      >
+        &lt;
+      </span>
+      <span
+        class="token operator"
+      >
+        /
+      </span>
+      span
+      <span
+        class="token operator"
+      >
+        &gt;
+      </span>
+      <span
+        class="token operator"
+      >
+        &lt;
+      </span>
+      span 
+      <span
+        class="token keyword"
+      >
+        class
+      </span>
+      <span
+        class="token operator"
+      >
+        =
+      </span>
+      <span
+        class="token string"
+      >
+        "token punctuation"
+      </span>
+      <span
+        class="token operator"
+      >
+        &gt;
+      </span>
+      <span
+        class="token punctuation"
+      >
+        ;
+      </span>
+      <span
+        class="token operator"
+      >
+        &lt;
+      </span>
+      <span
+        class="token operator"
+      >
+        /
+      </span>
+      span
+      <span
+        class="token operator"
+      >
+        &gt;
+      </span>
+    </div>
+  </pre>
+</div>
+`;

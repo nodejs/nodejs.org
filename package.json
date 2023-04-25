@@ -50,6 +50,7 @@
     "next-themes": "^0.2.1",
     "nextra": "^2.4.2",
     "node-version-data": "^1.1.0",
+    "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
