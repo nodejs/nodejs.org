@@ -1,16 +1,15 @@
-// TODO(HinataKah0): Remove this, see https://github.com/nodejs/nodejs.org/issues/5303#issuecomment-1518947513
-/* eslint-disable no-unused-vars */
+export const ReleaseTypes = {
+  current: 'Current',
+  lts: 'LTS',
+  maintenance: 'Maintenance',
+  endOfLife: 'End-of-life',
+} as const;
 
-export enum ReleaseTypes {
-  current = 'Current',
-  lts = 'LTS',
-  maintenance = 'Maintenance',
-  endoflife = 'End-of-life',
-}
+type ReleaseType = (typeof ReleaseTypes)[keyof typeof ReleaseTypes];
 
 export interface UpcomingReleaseData {
   releaseDate: string;
-  releaseType: ReleaseTypes;
+  releaseType: ReleaseType;
   alreadyReleased: boolean;
 }
 
