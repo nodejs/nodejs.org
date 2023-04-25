@@ -1,5 +1,5 @@
-@import './light.module.scss';
-@import './dark.module.scss';
+@import './light.module';
+@import './dark.module';
 
 %baseStyles {
   border-radius: 0.3rem;
@@ -44,11 +44,11 @@
     .lang,
     .copy {
       align-items: center;
+      cursor: pointer;
       display: inherit;
       font-size: var(--font-size-code);
       height: 23px;
       justify-content: center;
-      cursor: pointer;
       width: 86px;
     }
     .langBox {

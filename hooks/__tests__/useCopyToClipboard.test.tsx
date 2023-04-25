@@ -2,7 +2,7 @@ import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import { FormattedMessage } from 'react-intl';
 import { useCopyToClipboard } from '../useCopyToClipboard';
 import { LocaleProvider } from '../../providers/localeProvider';
-import { AppProps } from '../../types';
+import type { AppProps } from '../../types';
 
 const i18nData = { currentLocale: { code: 'en' } } as AppProps['i18nData'];
 

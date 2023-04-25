@@ -1,7 +1,7 @@
-import React from 'react';
 import styles from './index.module.scss';
+import type { PropsWithChildren } from 'react';
 
-const InlineCode = ({ children }: React.PropsWithChildren) => (
+const InlineCode = ({ children }: PropsWithChildren) => (
   <code className={styles.code}>{children}</code>
 );
 
