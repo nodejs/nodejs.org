@@ -43,7 +43,7 @@ describe('Codebox component (one lang)', (): void => {
     const { container } = render(
       <IntlProvider locale="en" onError={() => {}}>
         <Codebox>
-          <pre className="language-js">{textToCopy}</pre>
+          <code className="language-js">{textToCopy}</code>
         </Codebox>
       </IntlProvider>
     );
@@ -54,7 +54,7 @@ describe('Codebox component (one lang)', (): void => {
     render(
       <IntlProvider locale="en" onError={() => {}}>
         <Codebox>
-          <pre className="language-js">{textToCopy}</pre>
+          <code className="language-js">{textToCopy}</code>
         </Codebox>
       </IntlProvider>
     );
@@ -78,7 +78,7 @@ describe('Codebox component (multiple langs)', (): void => {
     const { container } = render(
       <IntlProvider locale="en" onError={() => {}}>
         <Codebox>
-          <pre className="language-js|language-js">{code}</pre>
+          <code className="language-js|language-js">{code}</code>
         </Codebox>
       </IntlProvider>
     );
@@ -89,7 +89,7 @@ describe('Codebox component (multiple langs)', (): void => {
     render(
       <IntlProvider locale="en" onError={() => {}}>
         <Codebox>
-          <pre className="language-cjs|language-mjs">{code}</pre>
+          <code className="language-cjs|language-mjs">{code}</code>
         </Codebox>
       </IntlProvider>
     );
@@ -106,7 +106,7 @@ describe('Codebox component (multiple langs)', (): void => {
     render(
       <IntlProvider locale="en" onError={() => {}}>
         <Codebox>
-          <pre className="language-async|language-sync">{code}</pre>
+          <code className="language-async|language-sync">{code}</code>
         </Codebox>
       </IntlProvider>
     );
