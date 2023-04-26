@@ -11,4 +11,16 @@ export const Default: Story = {
   },
 };
 
+export const WithoutNext: Story = {
+  args: {
+    previous: { slug: '/previous' },
+  },
+};
+
+export const WithoutPrevious: Story = {
+  args: {
+    next: { slug: '/next' },
+  },
+};
+
 export default { component: PrevNextLink } as Meta;

@@ -2,15 +2,18 @@ import Link from 'next/link';
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
 import { FormattedMessage } from 'react-intl';
 import styles from './index.module.scss';
+import type { FC } from 'react';
 import type { LinkInfo } from '../../../types';
 
-type Props = {
+type PreviousNextLinkProps = {
   previous?: LinkInfo;
   next?: LinkInfo;
 };
 
-const PrevNextLink = ({ previous, next }: Props) => {
-  if (!previous && !next) return null;
+const PrevNextLink: FC<PreviousNextLinkProps> = ({ previous, next }) => {
+  if (!previous && !next) {
+    return null;
+  }
 
   return (
     <ul className={styles.prevNextLink}>
