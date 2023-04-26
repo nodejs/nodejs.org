@@ -1,16 +1,16 @@
 import Link from 'next/link';
+import type { FC } from 'react';
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
 import { FormattedMessage } from 'react-intl';
-import styles from './index.module.scss';
-import type { FC } from 'react';
 import type { LinkInfo } from '../../../types';
+import styles from './index.module.scss';
 
 type PreviousNextLinkProps = {
   previous?: LinkInfo;
   next?: LinkInfo;
 };
 
-const PrevNextLink: FC<PreviousNextLinkProps> = ({ previous, next }) => {
+const PreviousNextLink: FC<PreviousNextLinkProps> = ({ previous, next }) => {
   if (!previous && !next) {
     return null;
   }
@@ -37,4 +37,4 @@ const PrevNextLink: FC<PreviousNextLinkProps> = ({ previous, next }) => {
   );
 };
 
-export default PrevNextLink;
+export default PreviousNextLink;
