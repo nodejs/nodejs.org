@@ -49,5 +49,7 @@
   "components.footer.links.security": "Security",
   "components.footer.links.about": "About",
   "components.footer.links.blog": "Blog",
-  "components.footer.links.github": "GitHub"
+  "components.footer.links.github": "GitHub",
+  "components.prevnextlink.next": "NEXT",
+  "components.prevnextlink.previous": "PREV"
 }
