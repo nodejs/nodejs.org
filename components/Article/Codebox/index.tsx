@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { highlight, languages } from 'prismjs';
-import 'prismjs/components/prism-bash';
 import { sanitize } from 'isomorphic-dompurify';
 import classnames from 'classnames';
 import styles from './index.module.scss';
