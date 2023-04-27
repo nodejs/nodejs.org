@@ -59,7 +59,9 @@ const Codebox: FC<CodeBoxProps> = ({ children: { props } }) => {
             <button
               type="button"
               key={lang}
-              className={styles.lang}
+              className={classnames(styles.lang, {
+                [styles.selected]: index === langIndex,
+              })}
               onClick={() => setLangIndex(index)}
             >
               {replaceLabelLanguages(lang.toLowerCase())}

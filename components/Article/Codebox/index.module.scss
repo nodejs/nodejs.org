@@ -66,6 +66,10 @@
         color: var(--black9);
         width: max-content;
       }
+
+      .lang.selected {
+        font-weight: 600;
+      }
     }
 
     .copy {
