@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article/BlockQuote Default smoke-test 1`] = `
+<div class="BlockQuote_blockQuote___32dx">
+  This is a block quote
+</div>
+`;
+
+exports[`Article/BlockQuote MultipleParagraph smoke-test 1`] = `
+<div class="BlockQuote_blockQuote___32dx">
+  <p>
+    This is a block quote 1
+  </p>
+  <p>
+    This is a block quote 2
+  </p>
+</div>
+`;

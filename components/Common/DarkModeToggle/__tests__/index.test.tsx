@@ -17,15 +17,6 @@ jest.mock('next-themes', () => ({
 }));
 
 describe('DarkModeToggle Component', () => {
-  it('render dark mode toggle', () => {
-    const { container } = render(
-      <IntlProvider locale="en" onError={() => {}}>
-        <DarkModeToggle />
-      </IntlProvider>
-    );
-    expect(container).toMatchSnapshot();
-  });
-
   it('switches dark theme to light theme', async () => {
     const user = userEvent.setup();
     mockCurrentTheme = 'dark';

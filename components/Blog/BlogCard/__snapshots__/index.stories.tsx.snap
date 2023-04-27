@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Blog/BlogCard Default smoke-test 1`] = `
+<div class="BlogCard_blogCard__BP5FM">
+  <div class="BlogCard_title__eA5iq">
+    <a href="/en/blog/category-mock/sample-blog">
+      Sample Test Blog
+    </a>
+    <div class="BlogCard_metadata__dWJWM">
+      <a class="BlogCard_category__yR5u3"
+         href="/en/blog/category-mock"
+      >
+        category-mock
+      </a>
+      <span>
+        1 min read
+      </span>
+    </div>
+  </div>
+  <div class="BlogCard_content__jnh1D">
+    <h4>
+      April 21, 2023
+    </h4>
+    <p>
+      by
+      <span>
+        Bat Man
+      </span>
+    </p>
+  </div>
+</div>
+`;

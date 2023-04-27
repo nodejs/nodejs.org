@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Common/AnimatedPlaceholder Default smoke-test 1`] = `
+<div class="AnimatedPlaceholder_placeholder__2tJoS">
+  <div class="AnimatedPlaceholder_placeholderImage__pCSdr">
+  </div>
+  <div class="AnimatedPlaceholder_placeholderText___AwWu">
+    <div class="AnimatedPlaceholder_placeholderTextLine__DG6zw">
+    </div>
+    <div class="AnimatedPlaceholder_placeholderTextLine__DG6zw">
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Common/AnimatedPlaceholder WithLoaderSkeleton smoke-test 1`] = `
+<div class="AnimatedPlaceholder_placeholder__2tJoS">
+  <div class="animated-placeholder__image">
+  </div>
+</div>
+`;
