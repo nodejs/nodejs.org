@@ -35,7 +35,7 @@ const Codebox: FC<CodeBoxProps> = ({ children: { props } }) => {
     ? props.children.toString().split('--------------\n')
     : [''];
 
-  const handleCopyCode = async (event: MouseEvent<HTMLButtonElement>) => {
+  const handleCopyCode = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     copyText(codeArray[langIndex]);
   };
