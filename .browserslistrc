@@ -10,4 +10,5 @@ not dead
 
 [development]
 
-defaults
+defaults and supports es6-module
+maintained node versions
