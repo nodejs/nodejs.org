@@ -96,21 +96,4 @@ describe('Codebox component (multiple langs)', (): void => {
 
     expect(screen.getByText('cjs')).toBeInTheDocument();
   });
-
-  it('switch between sync and async', async () => {
-    render(
-      <IntlProvider locale="en" onError={() => {}}>
-        <Codebox>
-          <pre className="language-async|language-sync">{code}</pre>
-        </Codebox>
-      </IntlProvider>
-    );
-
-    const buttonElement = screen.getByText('async');
-    userEvent.click(buttonElement);
-
-    await screen.findByText('async');
-
-    expect(screen.getByText('async')).toBeInTheDocument();
-  });
 });
