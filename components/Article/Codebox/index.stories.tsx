@@ -14,7 +14,9 @@ export const Default: Story = {
   },
 };
 
-export const Inline: Story = {
+type InlineCodeStory = StoryObj<typeof InlineCode>;
+
+export const Inline: InlineCodeStory = {
   render: ({ children }) => <InlineCode>{children}</InlineCode>,
   args: {
     children: <code>{code}</code>,
