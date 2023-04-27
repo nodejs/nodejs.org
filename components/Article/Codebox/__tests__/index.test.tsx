@@ -4,6 +4,12 @@ import { IntlProvider } from 'react-intl';
 
 import Codebox, { replaceLabelLanguages, replaceLanguages } from '../index';
 
+jest.mock('isomorphic-dompurify', () => {
+  return {
+    sanitize: jest.fn().mockImplementation(source => source),
+  };
+});
+
 describe('Replacer tests', (): void => {
   it('replaceLabelLanguages', (): void => {
     expect(replaceLabelLanguages('language-console')).toBe('language-bash');

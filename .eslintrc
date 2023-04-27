@@ -25,7 +25,7 @@
       }
     },
     {
-      "files": ["**/**.test.{js,jsx,ts,tsx}", "__mocks__/**/*.{js,jsx,ts,tsx}"],
+      "files": ["**/**.test.{js,jsx,ts,tsx}"],
       "extends": ["plugin:testing-library/react"],
       "env": { "jest": true, "node": true, "browser": true }
     },
