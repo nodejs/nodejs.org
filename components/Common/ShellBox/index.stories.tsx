@@ -6,14 +6,14 @@ type Meta = MetaObj<typeof ShellBox>;
 
 export const Default: Story = {
   args: {
-    children: 'Hello World',
-    textToCopy: 'Hello World',
+    children: 'echo hello world',
+    textToCopy: 'echo hello world',
   },
 };
 
 export const WithoutTextToCopy: Story = {
   args: {
-    children: 'Hello World',
+    children: 'echo hello world',
   },
 };
 
@@ -24,7 +24,7 @@ export const WithTextToCopyJsx: Story = {
         <strong>$</strong>echo hello world
       </span>
     ),
-    textToCopy: '$echo hello world',
+    textToCopy: 'echo hello world',
   },
 };
 
