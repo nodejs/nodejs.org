@@ -1,7 +1,5 @@
 import userEvent from '@testing-library/user-event';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { highlight, languages } from 'prismjs';
-import { sanitize } from 'isomorphic-dompurify';
 import { IntlProvider } from 'react-intl';
 
 import Codebox, { replaceLabelLanguages, replaceLanguages } from '../index';
@@ -37,13 +35,12 @@ describe('Replacer tests', (): void => {
 
 describe('Codebox component (one lang)', (): void => {
   const code = 'const a = 1;';
-  const textToCopy = sanitize(highlight(code, languages.js, 'js'));
 
   it('renders correctly', (): void => {
     const { container } = render(
       <IntlProvider locale="en" onError={() => {}}>
         <Codebox>
-          <code className="language-js">{textToCopy}</code>
+          <code className="language-js">{code}</code>
         </Codebox>
       </IntlProvider>
     );
@@ -54,7 +51,7 @@ describe('Codebox component (one lang)', (): void => {
     render(
       <IntlProvider locale="en" onError={() => {}}>
         <Codebox>
-          <code className="language-js">{textToCopy}</code>
+          <code className="language-js">{code}</code>
         </Codebox>
       </IntlProvider>
     );
@@ -63,9 +60,7 @@ describe('Codebox component (one lang)', (): void => {
     fireEvent.click(buttonElement);
 
     expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledTimes(1);
-    expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledWith(
-      textToCopy.toString()
-    );
+    expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledWith(code);
   });
 });
 

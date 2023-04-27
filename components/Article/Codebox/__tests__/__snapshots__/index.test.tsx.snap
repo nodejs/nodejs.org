@@ -151,189 +151,26 @@ exports[`Codebox component (one lang) renders correctly 1`] = `
       class="content"
     >
       <span
-        class="token operator"
-      >
-        &lt;
-      </span>
-      span 
-      <span
-        class="token keyword"
-      >
-        class
-      </span>
-      <span
-        class="token operator"
-      >
-        =
-      </span>
-      <span
-        class="token string"
-      >
-        "token keyword"
-      </span>
-      <span
-        class="token operator"
-      >
-        &gt;
-      </span>
-      <span
         class="token keyword"
       >
         const
-      </span>
-      <span
-        class="token operator"
-      >
-        &lt;
-      </span>
-      <span
-        class="token operator"
-      >
-        /
-      </span>
-      span
-      <span
-        class="token operator"
-      >
-        &gt;
       </span>
        a 
       <span
         class="token operator"
       >
-        &lt;
-      </span>
-      span 
-      <span
-        class="token keyword"
-      >
-        class
-      </span>
-      <span
-        class="token operator"
-      >
         =
-      </span>
-      <span
-        class="token string"
-      >
-        "token operator"
-      </span>
-      <span
-        class="token operator"
-      >
-        &gt;=
-      </span>
-      <span
-        class="token operator"
-      >
-        &lt;
-      </span>
-      <span
-        class="token operator"
-      >
-        /
-      </span>
-      span
-      <span
-        class="token operator"
-      >
-        &gt;
       </span>
        
-      <span
-        class="token operator"
-      >
-        &lt;
-      </span>
-      span 
-      <span
-        class="token keyword"
-      >
-        class
-      </span>
-      <span
-        class="token operator"
-      >
-        =
-      </span>
-      <span
-        class="token string"
-      >
-        "token number"
-      </span>
-      <span
-        class="token operator"
-      >
-        &gt;
-      </span>
       <span
         class="token number"
       >
         1
       </span>
       <span
-        class="token operator"
-      >
-        &lt;
-      </span>
-      <span
-        class="token operator"
-      >
-        /
-      </span>
-      span
-      <span
-        class="token operator"
-      >
-        &gt;
-      </span>
-      <span
-        class="token operator"
-      >
-        &lt;
-      </span>
-      span 
-      <span
-        class="token keyword"
-      >
-        class
-      </span>
-      <span
-        class="token operator"
-      >
-        =
-      </span>
-      <span
-        class="token string"
-      >
-        "token punctuation"
-      </span>
-      <span
-        class="token operator"
-      >
-        &gt;
-      </span>
-      <span
         class="token punctuation"
       >
         ;
-      </span>
-      <span
-        class="token operator"
-      >
-        &lt;
-      </span>
-      <span
-        class="token operator"
-      >
-        /
-      </span>
-      span
-      <span
-        class="token operator"
-      >
-        &gt;
       </span>
     </div>
   </pre>
