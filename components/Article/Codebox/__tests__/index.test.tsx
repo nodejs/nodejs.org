@@ -58,7 +58,7 @@ describe('Codebox component (one lang)', (): void => {
 
 describe('Codebox component (multiple langs)', (): void => {
   const code = `const http = require('http');
--------
+--------------
 import http from 'http';`;
 
   it('renders correctly', (): void => {
@@ -86,8 +86,8 @@ import http from 'http';`;
     const buttonElement = screen.getByText('cjs');
     await user.click(buttonElement);
 
-    await screen.findByText('cjs');
+    await screen.findByText('mjs');
 
-    expect(screen.getByText('cjs')).toBeInTheDocument();
+    expect(screen.getByText('mjs')).toBeInTheDocument();
   });
 });
