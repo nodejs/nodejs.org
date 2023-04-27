@@ -12,7 +12,7 @@ exports[`Codebox component (multiple langs) renders correctly 1`] = `
         class="langBox"
       >
         <button
-          class="lang"
+          class="lang selected"
           type="button"
         >
           js
@@ -90,7 +90,7 @@ exports[`Codebox component (multiple langs) switch between languages 1`] = `
         class="langBox"
       >
         <button
-          class="lang"
+          class="lang selected"
           type="button"
         >
           cjs
@@ -174,7 +174,7 @@ exports[`Codebox component (multiple langs) switch between languages 2`] = `
           cjs
         </button>
         <button
-          class="lang"
+          class="lang selected"
           type="button"
         >
           mjs
@@ -229,7 +229,7 @@ exports[`Codebox component (one lang) renders correctly 1`] = `
         class="langBox"
       >
         <button
-          class="lang"
+          class="lang selected"
           type="button"
         >
           js

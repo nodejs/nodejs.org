@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InlineCode component should render correctly 1`] = `
+<div>
+  <code
+    class="code"
+  >
+    <code>
+      const a = 1;
+    </code>
+  </code>
+</div>
+`;
