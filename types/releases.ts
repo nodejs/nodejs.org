@@ -1,8 +1,6 @@
-type ReleaseType = 'Current' | 'LTS' | 'Maintenance' | 'End-of-life';
-
 export interface UpcomingReleaseData {
   releaseDate: string;
-  releaseType: ReleaseType;
+  releaseType: 'Current' | 'LTS' | 'Maintenance' | 'End-of-life';
   alreadyReleased: boolean;
 }
 
