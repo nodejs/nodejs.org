@@ -25,15 +25,6 @@
   word-wrap: normal;
 }
 
-.code {
-  @extend %baseStyles;
-
-  font-weight: var(--font-weight-light);
-  padding: 0 6px;
-
-  white-space: break-spaces;
-}
-
 .pre {
   @extend %baseStyles;
 
@@ -93,17 +84,6 @@
   .pre {
     @include lightStyles;
   }
-
-  .code {
-    background-color: var(--black2);
-    color: var(--black9);
-  }
-
-  a .code {
-    background-color: transparent;
-    color: var(--color-text-accent);
-    padding: 0;
-  }
 }
 
 [data-theme='dark'] {
@@ -121,16 +101,5 @@
         color: white;
       }
     }
-  }
-
-  .code {
-    background-color: var(--black9);
-    color: var(--black2);
-  }
-
-  a .code {
-    background-color: transparent;
-    color: var(--color-text-accent);
-    padding: 0;
   }
 }
