@@ -72,7 +72,7 @@ exports[`Codebox component (multiple langs) renders correctly 1`] = `
         ;
       </span>
       
-  
+
       <span
         class="token operator"
       >
@@ -94,7 +94,7 @@ exports[`Codebox component (multiple langs) renders correctly 1`] = `
         -
       </span>
       
-  
+
       <span
         class="token keyword"
       >

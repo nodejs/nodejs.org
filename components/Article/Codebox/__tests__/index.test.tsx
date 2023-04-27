@@ -66,8 +66,8 @@ describe('Codebox component (one lang)', (): void => {
 
 describe('Codebox component (multiple langs)', (): void => {
   const code = `const http = require('http');
-  -------
-  import http from 'http';`;
+-------
+import http from 'http';`;
 
   it('renders correctly', (): void => {
     const { container } = render(
