@@ -1,34 +1,48 @@
-import InlineCode from './InlineCode';
 import Codebox from './index';
-import type { StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
+import type { FC } from 'react';
 
-export default { component: Codebox };
+type CodeBoxProps = {
+  language: string[];
+  code: string[];
+};
 
-type Story = StoryObj<typeof Codebox>;
+type ICodebox = FC<CodeBoxProps>;
 
-const singleLangCode = 'const a = 1;';
+const meta: Meta<ICodebox> = {
+  title: 'Codebox',
+  decorators: [
+    (_Story, context) => (
+      <Codebox>
+        <pre className={context.args.language.join('|')}>
+          {context.args.code.join('--------------\n')}
+        </pre>
+      </Codebox>
+    ),
+  ],
+};
+
+type Story = StoryObj<ICodebox>;
+
+const singleLangCode = ['const a = 1;'];
 
 export const Default: Story = {
   args: {
-    children: <pre className="language-js">{singleLangCode}</pre>,
+    language: ['language-js'],
+    code: singleLangCode,
   },
 };
 
-const multiLangCode = `const http = require('http');
---------------
-import http from 'http';`;
+const multiLangCode = [
+  "const http = require('http');",
+  "import http from 'http';",
+];
 
 export const MultiLang: Story = {
   args: {
-    children: <pre className="language-cjs|language-mjs">{multiLangCode}</pre>,
+    language: ['language-cjs', 'language-mjs'],
+    code: multiLangCode,
   },
 };
 
-type InlineCodeStory = StoryObj<typeof InlineCode>;
-
-export const Inline: InlineCodeStory = {
-  render: ({ children }) => <InlineCode>{children}</InlineCode>,
-  args: {
-    children: <code>{singleLangCode}</code>,
-  },
-};
+export default meta;
