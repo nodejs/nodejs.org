@@ -25,10 +25,12 @@ const Codebox: FC<CodeBoxProps> = ({ children: { props } }) => {
   const [langIndex, setLangIndex] = useState(0);
 
   const className = props.className || 'text';
+
   // Language Matches in class
   const matches = className.match(/language-(?<lang>.*)/);
   const languageOptions = (matches?.groups?.lang || 'text').split('|');
   const language = languageOptions[langIndex];
+
   const codeArray = props.children
     ? props.children.toString().split('--------------\n')
     : [''];
