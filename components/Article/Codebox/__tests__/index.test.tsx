@@ -1,23 +1,8 @@
 import userEvent from '@testing-library/user-event';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 
 import Codebox, { replaceLabelLanguages, replaceLanguages } from '../index';
-
-const navigatorClipboardWriteTextSpy = jest
-  .fn()
-  .mockImplementation(() => Promise.resolve());
-
-Object.defineProperty(window.navigator, 'clipboard', {
-  writable: true,
-  value: {
-    writeText: navigatorClipboardWriteTextSpy,
-  },
-});
-
-afterEach(() => {
-  jest.clearAllMocks();
-});
 
 describe('Replacer tests', (): void => {
   it('replaceLabelLanguages', (): void => {
@@ -48,6 +33,8 @@ describe('Codebox component (one lang)', (): void => {
   });
 
   it('should copy content', async () => {
+    const user = userEvent.setup();
+
     render(
       <IntlProvider locale="en" onError={() => {}}>
         <Codebox>
@@ -56,8 +43,13 @@ describe('Codebox component (one lang)', (): void => {
       </IntlProvider>
     );
 
+    const navigatorClipboardWriteTextSpy = jest.spyOn(
+      navigator.clipboard,
+      'writeText'
+    );
+
     const buttonElement = screen.getByText('components.codeBox.copy');
-    fireEvent.click(buttonElement);
+    await user.click(buttonElement);
 
     expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledTimes(1);
     expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledWith(code);
@@ -81,6 +73,8 @@ import http from 'http';`;
   });
 
   it('switch between languages', async () => {
+    const user = userEvent.setup();
+
     render(
       <IntlProvider locale="en" onError={() => {}}>
         <Codebox>
@@ -90,7 +84,7 @@ import http from 'http';`;
     );
 
     const buttonElement = screen.getByText('cjs');
-    userEvent.click(buttonElement);
+    await user.click(buttonElement);
 
     await screen.findByText('cjs');
 
