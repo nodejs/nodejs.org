@@ -75,7 +75,7 @@ import http from 'http';`;
   it('switch between languages', async () => {
     const user = userEvent.setup();
 
-    render(
+    const { container } = render(
       <IntlProvider locale="en" onError={() => {}}>
         <Codebox>
           <pre className="language-cjs|language-mjs">{code}</pre>
@@ -83,11 +83,11 @@ import http from 'http';`;
       </IntlProvider>
     );
 
-    const buttonElement = screen.getByText('cjs');
+    expect(container).toMatchSnapshot();
+
+    const buttonElement = await screen.findByText('mjs');
     await user.click(buttonElement);
 
-    await screen.findByText('mjs');
-
-    expect(screen.getByText('mjs')).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
   });
 });
