@@ -1,11 +1,4 @@
-export const ReleaseTypes = {
-  current: 'Current',
-  lts: 'LTS',
-  maintenance: 'Maintenance',
-  endOfLife: 'End-of-life',
-} as const;
-
-type ReleaseType = (typeof ReleaseTypes)[keyof typeof ReleaseTypes];
+type ReleaseType = 'Current' | 'LTS' | 'Maintenance' | 'End-of-life';
 
 export interface UpcomingReleaseData {
   releaseDate: string;
