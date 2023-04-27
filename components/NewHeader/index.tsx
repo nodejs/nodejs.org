@@ -1,18 +1,9 @@
 import { FormattedMessage } from 'react-intl';
-import Link from 'next/link';
-// import { LocalizedLink as Link } from 'gatsby-theme-i18n';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faGithub } from '@fortawesome/free-brands-svg-icons';
-// import { ReactComponent as LogoLight } from '../../images/logos/nodejs-logo-light-mode.svg';
-// import { ReactComponent as LogoDark } from '../../images/logos/nodejs-logo-dark-mode.svg';
-// import { CommonComponents } from '../../components';
-// import lightLogo from 'public/static/images/logo.svg';
-// import darkLogo from 'public/static/images/logo-dark.svg';
 import Image from 'next/image';
 import { MdSearch } from 'react-icons/md';
-import { FaGithub } from 'react-icons/fa';
+import Link from 'next/link';
 import styles from './index.module.scss';
-import LanguageSelector from '../Common/LanguageSelector';
+import ActiveLocalizedLink from '../ActiveLocalizedLink';
 import DarkModeToggle from '../Common/DarkModeToggle';
 
 const Header = () => (
@@ -23,7 +14,7 @@ const Header = () => (
           <div className={styles.logo}>
             <div>
               <Image
-                src={'static/images/logo.svg'}
+                src={'static/images/logo-light.svg'}
                 alt="light-logo"
                 className="light-mode-only"
                 width="111"
@@ -32,7 +23,7 @@ const Header = () => (
             </div>
             <div>
               <Image
-                src={'static/images/logo-dark.svg'}
+                src={'static/images/logo.svg'}
                 alt="dark-logo"
                 className="dark-mode-only"
                 width="111"
@@ -44,46 +35,20 @@ const Header = () => (
       </div>
 
       <ul className={styles.tabs}>
-        {/* <li>
-          <Link
-            href="/learn/"
-          // activeClassName={styles.active}
-          // partiallyActive
-          >
-            <FormattedMessage id="components.header.links.learn" />
-          </Link>
-        </li> */}
         <li>
-          <Link
-            href="/about/"
-          // activeClassName={styles.active}
-          // partiallyActive
-          >
-            <FormattedMessage id="components.header.links.about" />
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/api/"
-          // activeClassName={styles.active}
-          // partiallyActive
-          >
+          <ActiveLocalizedLink href="/docs" activeClassName={styles.active}>
             <FormattedMessage id="components.header.links.docs" />
-          </Link>
+          </ActiveLocalizedLink>
         </li>
         <li>
-          <Link
-            href="/download/"
-          // activeClassName={styles.active}
-          // partiallyActive
-          >
+          <ActiveLocalizedLink href="/learn" activeClassName={styles.active}>
+            <FormattedMessage id="components.header.links.learn" />
+          </ActiveLocalizedLink>
+        </li>
+        <li>
+          <ActiveLocalizedLink href="/download" activeClassName={styles.active}>
             <FormattedMessage id="components.header.links.download" />
-          </Link>
-        </li>
-        <li>
-          <a href="https://openjsf.org/certification/">
-            <FormattedMessage id="components.header.links.certification" />
-          </a>
+          </ActiveLocalizedLink>
         </li>
       </ul>
 
@@ -93,30 +58,10 @@ const Header = () => (
             <span className="sr-only">Search Bar</span>
             {/* <CommonComponents.SearchBar /> */}
             <MdSearch />
+            <span>Search</span>
           </li>
-
           <li>
             <DarkModeToggle />
-          </li>
-
-          <li>
-            <LanguageSelector />
-          </li>
-
-          <li>
-            <a
-              target="_blank"
-              href="https://github.com/nodejs/nodejs.dev"
-              rel="noopener noreferrer"
-            >
-              <span className="sr-only">GitHub</span>
-              <FaGithub />
-              {/* <FontAwesomeIcon
-                icon={faGithub}
-                color="var(--color-text-accent)"
-                style={{ padding: '1rem', width: '2rem', height: '2rem' }}
-              /> */}
-            </a>
           </li>
         </ul>
       </div>
