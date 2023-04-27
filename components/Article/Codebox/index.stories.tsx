@@ -6,6 +6,6 @@ const code = 'const a = 1;';
 
 export const Default = {
   args: {
-    children: <code className="language-js">{code}</code>,
+    children: <pre className="language-js">{code}</pre>,
   },
 };
