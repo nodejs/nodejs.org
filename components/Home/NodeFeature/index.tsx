@@ -2,7 +2,7 @@ import { cloneElement } from 'react';
 import { IoLogoNodejs, IoMdGitPullRequest, IoMdRocket } from 'react-icons/io';
 import { FormattedMessage } from 'react-intl';
 import styles from './index.module.scss';
-import type { ReactElement } from 'react';
+import type { ReactElement, FC } from 'react';
 
 type NodeFeatureProps = {
   icon: ReactElement;
@@ -34,7 +34,7 @@ const features = [
   },
 ];
 
-const NodeFeature: React.FC<NodeFeatureProps> = ({ icon, heading, description }) => (
+const NodeFeature: FC<NodeFeatureProps> = ({ icon, heading, description }) => (
   <div className={styles.text}>
     {icon}
     <h2 className="t-subheading2">{heading}</h2>
@@ -42,7 +42,7 @@ const NodeFeature: React.FC<NodeFeatureProps> = ({ icon, heading, description })
   </div>
 );
 
-const NodeFeatures: React.FC = () => {
+const NodeFeatures: FC = () => {
   return (
     <section className={styles.nodeFeatures}>
       {features.map(feature => (
