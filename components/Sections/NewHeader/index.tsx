@@ -3,8 +3,8 @@ import Image from 'next/image';
 import { MdSearch } from 'react-icons/md';
 import Link from 'next/link';
 import styles from './index.module.scss';
-import ActiveLocalizedLink from '../ActiveLocalizedLink';
-import DarkModeToggle from '../Common/DarkModeToggle';
+import ActiveLocalizedLink from '../../ActiveLocalizedLink';
+import DarkModeToggle from '../../Common/DarkModeToggle';
 
 const Header = () => (
   <nav aria-label="Primary" className={styles.header}>
