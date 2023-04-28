@@ -59,5 +59,14 @@
   "components.home.nodeFeatures.everywhere.title": "Everywhere",
   "components.home.nodeFeatures.everywhere.description": "Node.js has been adapted to work in a wide variety of places",
   "components.common.shellBox.copy": "{copied, select, true {copied}other {copy}}",
-  "components.codeBox.copy": "{copied, select, true {copied}other {copy}}"
+  "components.codeBox.copy": "{copied, select, true {copied}other {copy}}",
+  "components.footer.links.trademark": "Trademark Policy",
+  "components.footer.links.privacy": "Privacy Policy",
+  "components.footer.links.codeOfConduct": "Code of Conduct",
+  "components.footer.links.security": "Security",
+  "components.footer.links.about": "About",
+  "components.footer.links.blog": "Blog",
+  "components.footer.links.github": "GitHub",
+  "components.prevnextlink.next": "NEXT",
+  "components.prevnextlink.previous": "PREV"
 }
