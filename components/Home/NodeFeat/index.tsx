@@ -42,7 +42,7 @@ const NodeFeature: React.FC<NodeFeatureProps> = ({ icon, heading, description })
   </div>
 );
 
-const NodeFeatures = () => {
+const NodeFeatures: React.FC = () => {
   return (
     <section className={styles.nodeFeatures}>
       {features.map(feature => (
