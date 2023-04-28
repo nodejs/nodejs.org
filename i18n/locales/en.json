@@ -50,6 +50,8 @@
   "components.footer.links.about": "About",
   "components.footer.links.blog": "Blog",
   "components.footer.links.github": "GitHub",
+  "components.prevnextlink.next": "NEXT",
+  "components.prevnextlink.previous": "PREV",
   "pages.index.features.javascript.title": "JavaScript",
   "pages.index.features.javascript.description": "Node.js provides support for the JavaScript programming language",
   "pages.index.features.openSource.title": "Open Source",
