@@ -1,21 +1,14 @@
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
-import { FormattedMessage } from 'react-intl';
 import { useCopyToClipboard } from '../useCopyToClipboard';
-import { LocaleProvider } from '../../providers/localeProvider';
-import type { AppProps } from '../../types';
-
-const i18nData = { currentLocale: { code: 'en' } } as AppProps['i18nData'];
 
 describe('useCopyToClipboard', () => {
   const HookRenderer = ({ text }: { text: string }) => {
     const [copied, copyText] = useCopyToClipboard();
 
     return (
-      <LocaleProvider i18nData={i18nData}>
-        <button onClick={() => copyText(text)} type="button">
-          <FormattedMessage id="components.codeBox.copy" values={{ copied }} />
-        </button>
-      </LocaleProvider>
+      <button onClick={() => copyText(text)} type="button">
+        {copied ? 'copied' : 'copy'}
+      </button>
     );
   };
 
@@ -34,7 +27,7 @@ describe('useCopyToClipboard', () => {
     render(<HookRenderer text="test copy" />);
     const button = screen.getByRole('button');
     fireEvent.click(button);
-    expect(button).toHaveTextContent('components.codeBox.copy');
+    expect(button).toHaveTextContent('copy');
   });
 
   it('should change to `copied` when copy succeeded', async () => {
@@ -54,11 +47,11 @@ describe('useCopyToClipboard', () => {
     const button = screen.getByRole('button');
     fireEvent.click(button);
     await waitFor(() => {
-      expect(button).toHaveTextContent('components.codeBox.copy');
+      expect(button).toHaveTextContent('copied');
     });
     jest.advanceTimersByTime(3000);
     await waitFor(() => {
-      expect(button).toHaveTextContent('components.codeBox.copy');
+      expect(button).toHaveTextContent('copy');
     });
   });
 
