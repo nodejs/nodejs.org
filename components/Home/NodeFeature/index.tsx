@@ -42,19 +42,17 @@ const NodeFeature: FC<NodeFeatureProps> = ({ icon, heading, description }) => (
   </div>
 );
 
-const NodeFeatures: FC = () => {
-  return (
-    <section className={styles.nodeFeatures}>
-      {features.map(feature => (
-        <NodeFeature
-          key={feature.heading}
-          icon={feature.icon}
-          heading={<FormattedMessage id={feature.heading} />}
-          description={<FormattedMessage id={feature.description} />}
-        />
-      ))}
-    </section>
-  );
-};
+const NodeFeatures: FC = () => (
+  <section className={styles.nodeFeatures}>
+    {features.map(feature => (
+      <NodeFeature
+        key={feature.heading}
+        icon={feature.icon}
+        heading={<FormattedMessage id={feature.heading} />}
+        description={<FormattedMessage id={feature.description} />}
+      />
+    ))}
+  </section>
+);
 
 export default NodeFeatures;
