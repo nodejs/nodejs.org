@@ -34,7 +34,7 @@ const features = [
   },
 ];
 
-const NodeFeature = ({ icon, heading, description }: NodeFeatureProps) => (
+const NodeFeature: React.FC<NodeFeatureProps> = ({ icon, heading, description }) => (
   <div className={styles.text}>
     {icon}
     <h2 className="t-subheading2">{heading}</h2>
