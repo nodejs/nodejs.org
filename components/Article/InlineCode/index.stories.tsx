@@ -7,9 +7,9 @@ type InlineCodeArgs = {
 };
 
 const meta: Meta<FC<InlineCodeArgs>> = {
-  title: 'InlineCode',
+  component: InlineCode as FC<InlineCodeArgs>,
   decorators: [
-    (_Story, context) => (
+    (Story, context) => (
       <InlineCode>
         <code>{context.args.code}</code>
       </InlineCode>

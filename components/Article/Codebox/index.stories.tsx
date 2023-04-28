@@ -10,7 +10,7 @@ type CodeBoxProps = {
 type ICodebox = FC<CodeBoxProps>;
 
 const meta: Meta<ICodebox> = {
-  title: 'Codebox',
+  component: Codebox as unknown as ICodebox,
   decorators: [
     (_Story, context) => (
       <Codebox>
