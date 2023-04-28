@@ -39,5 +39,18 @@
   "components.common.banner.button.text": "Read More",
   "components.article.author.githubLinkLabel": "{username} Github - opens in new tab",
   "components.article.authorList.title": "Article Authors",
-  "components.common.languageSelector.button.title": "Switch Language"
+  "components.article.editLink.title.edit": "Edit this page on GitHub",
+  "components.article.editLink.title.translate": "Interested to help with translations?",
+  "components.common.languageSelector.button.title": "Switch Language",
+  "components.blog.blogCard.author.by": "by",
+  "components.footer.links.trademark": "Trademark Policy",
+  "components.footer.links.privacy": "Privacy Policy",
+  "components.footer.links.codeOfConduct": "Code of Conduct",
+  "components.footer.links.security": "Security",
+  "components.footer.links.about": "About",
+  "components.footer.links.blog": "Blog",
+  "components.footer.links.github": "GitHub",
+  "components.prevnextlink.next": "NEXT",
+  "components.prevnextlink.previous": "PREV",
+  "docs.api.stability": "Stability: {level} - "
 }
