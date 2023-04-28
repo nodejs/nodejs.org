@@ -6,7 +6,7 @@ exports[`NodeFeatures should render 1`] = `
     class="nodeFeatures"
   >
     <div
-      class="text"
+      class="container"
     >
       <svg
         alt="Node Feature"
@@ -36,7 +36,7 @@ exports[`NodeFeatures should render 1`] = `
       </p>
     </div>
     <div
-      class="text"
+      class="container"
     >
       <svg
         alt="Node Feature"
@@ -63,7 +63,7 @@ exports[`NodeFeatures should render 1`] = `
       </p>
     </div>
     <div
-      class="text"
+      class="container"
     >
       <svg
         alt="Node Feature"

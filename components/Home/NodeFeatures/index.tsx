@@ -1,14 +1,9 @@
 import { cloneElement } from 'react';
 import { IoLogoNodejs, IoMdGitPullRequest, IoMdRocket } from 'react-icons/io';
 import { FormattedMessage } from 'react-intl';
+import NodeFeature from './NodeFeature';
 import styles from './index.module.scss';
 import type { ReactElement, FC } from 'react';
-
-type NodeFeatureProps = {
-  icon: ReactElement;
-  heading: ReactElement;
-  description: ReactElement;
-};
 
 const styled = (icon: ReactElement): ReactElement =>
   cloneElement(icon, {
@@ -33,14 +28,6 @@ const features = [
     description: 'pages.index.features.everywhere.description',
   },
 ];
-
-const NodeFeature: FC<NodeFeatureProps> = ({ icon, heading, description }) => (
-  <div className={styles.text}>
-    {icon}
-    <h2 className="t-subheading2">{heading}</h2>
-    <p>{description}</p>
-  </div>
-);
 
 const NodeFeatures: FC = () => (
   <section className={styles.nodeFeatures}>
