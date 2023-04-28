@@ -1,5 +1,5 @@
 import Codebox from './index';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 import type { FC } from 'react';
 
 type CodeBoxProps = {
@@ -7,22 +7,10 @@ type CodeBoxProps = {
   code: string[];
 };
 
-type ICodebox = FC<CodeBoxProps>;
+type CodeboxFC = FC<CodeBoxProps>;
 
-const meta: Meta<ICodebox> = {
-  component: Codebox as unknown as ICodebox,
-  decorators: [
-    (_Story, context) => (
-      <Codebox>
-        <pre className={context.args.language.join('|')}>
-          {context.args.code.join('--------------\n')}
-        </pre>
-      </Codebox>
-    ),
-  ],
-};
-
-type Story = StoryObj<ICodebox>;
+type Story = StoryObj<CodeboxFC>;
+type Meta = MetaObj<CodeboxFC>;
 
 const singleLangCode = ['const a = 1;'];
 
@@ -45,4 +33,15 @@ export const MultiLang: Story = {
   },
 };
 
-export default meta;
+export default {
+  component: Codebox as unknown as CodeboxFC,
+  decorators: [
+    (_Story, context) => (
+      <Codebox>
+        <pre className={context.args.language.join('|')}>
+          {context.args.code.join('--------------\n')}
+        </pre>
+      </Codebox>
+    ),
+  ],
+} as Meta;

@@ -1,28 +1,29 @@
 import InlineCode from './index';
 import type { FC } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-type InlineCodeArgs = {
+type InlineCodeProps = {
   code: string;
 };
 
-const meta: Meta<FC<InlineCodeArgs>> = {
-  component: InlineCode as FC<InlineCodeArgs>,
-  decorators: [
-    (Story, context) => (
-      <InlineCode>
-        <code>{context.args.code}</code>
-      </InlineCode>
-    ),
-  ],
-};
+type InlineCodeFC = FC<InlineCodeProps>;
 
-export default meta;
-
-type Story = StoryObj<FC<InlineCodeArgs>>;
+type Story = StoryObj<InlineCodeFC>;
+type Meta = MetaObj<InlineCodeFC>;
 
 const code = 'const a = 1;';
 
 export const Default: Story = {
   args: { code },
 };
+
+export default {
+  component: InlineCode as InlineCodeFC,
+  decorators: [
+    (_Story, context) => (
+      <InlineCode>
+        <code>{context.args.code}</code>
+      </InlineCode>
+    ),
+  ],
+} as Meta;
