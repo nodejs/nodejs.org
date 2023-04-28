@@ -24,7 +24,5 @@ type Story = StoryObj<FC<InlineCodeArgs>>;
 const code = 'const a = 1;';
 
 export const Default: Story = {
-  args: {
-    code,
-  },
+  args: { code },
 };
