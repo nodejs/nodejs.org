@@ -5,7 +5,7 @@ export interface UpcomingReleaseData {
 }
 
 export interface UpcomingRelease {
-  title: string;
+  name: string;
   releases: UpcomingReleaseData[];
 }
 
