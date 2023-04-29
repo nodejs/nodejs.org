@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
-import NodeFeatures from '.';
+import NodeFeatures from '../index';
 
 describe('NodeFeatures', () => {
   it('should render', () => {
