@@ -39,5 +39,3 @@ exports[`Stability should render correctly 4`] = `
   </div>
 </div>
 `;
-
-exports[`Stability should throw an error 1`] = `"Unknown stability level: 4"`;
