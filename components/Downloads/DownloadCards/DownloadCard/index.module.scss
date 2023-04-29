@@ -1,0 +1,76 @@
+.downloadCard {
+  background-color: var(--color-fill-app);
+  border: 1px solid var(--color-border-secondary);
+  border-radius: 4px;
+  box-shadow: 5px 10px 50px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  outline-offset: 8px;
+  padding: 16px;
+  width: 179px;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .link {
+    align-items: center;
+    color: var(--black5);
+    display: grid;
+    text-decoration: none;
+    width: auto;
+  }
+
+  .label {
+    font-weight: var(--font-weight-semibold);
+    margin-top: 16px;
+
+    @media (max-width: 620px) {
+      font-size: var(--font-size-caption);
+      margin-top: 16px;
+    }
+  }
+
+  .filename {
+    font-size: var(--font-size-body3);
+    font-weight: var(--font-weight-regular);
+    line-height: 18px;
+
+    @media (max-width: 620px) {
+      font-size: var(--font-size-caption);
+      line-height: 12px;
+    }
+  }
+
+  &Active {
+    border-radius: 4px 4px 0px 0px;
+    border-top: 4px solid var(--brand5);
+
+    .label {
+      margin-top: 24px;
+
+      @media (max-width: 620px) {
+        font-size: var(--font-size-caption);
+        margin-top: 12px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      width: 130px;
+    }
+
+    @media (max-width: 460px) {
+      width: 160px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    margin-top: 16px;
+    padding: 8px;
+    width: 130px;
+  }
+}
