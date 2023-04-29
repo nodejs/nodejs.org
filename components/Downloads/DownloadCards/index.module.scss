@@ -1,0 +1,26 @@
+.downloadCardsWrapper {
+  list-style: none;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+
+  .downloadCards {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 40px auto 0 auto;
+    margin-block-end: 0px;
+    margin-block-start: 0px;
+    max-width: 615px;
+    padding: 0px;
+    width: 100%;
+
+    @media (max-width: 460px) {
+      flex-direction: column;
+      margin-top: 10px;
+    }
+  }
+}
