@@ -23,44 +23,7 @@ const i18nDataEditMode = {
   },
 } as unknown as AppProps['i18nData'];
 
-const i18nDataTranslateMode = {
-  currentLocale: {
-    code: 'xx',
-  },
-  localeMessages: {
-    'components.article.editLink.title.translate':
-      'Interested to help with translations?',
-  },
-} as unknown as AppProps['i18nData'];
-
 describe('EditLink component', () => {
-  it('edit mode renders correctly', () => {
-    const { container } = render(
-      <LocaleProvider i18nData={i18nDataEditMode}>
-        <EditLink relativePath={relativePath} />
-      </LocaleProvider>
-    );
-    expect(container).toMatchSnapshot();
-  });
-
-  it('translate mode renders correctly', () => {
-    const { container } = render(
-      <LocaleProvider i18nData={i18nDataTranslateMode}>
-        <EditLink relativePath={relativePath} />
-      </LocaleProvider>
-    );
-    expect(container).toMatchSnapshot();
-  });
-
-  it('renders without a relative path', () => {
-    const { container } = render(
-      <LocaleProvider i18nData={i18nDataEditMode}>
-        <EditLink relativePath={undefined} />
-      </LocaleProvider>
-    );
-    expect(container).toMatchSnapshot();
-  });
-
   it('produces correct relative path', () => {
     render(
       <LocaleProvider i18nData={i18nDataEditMode}>

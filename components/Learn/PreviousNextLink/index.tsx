@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import type { FC } from 'react';
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
 import { FormattedMessage } from 'react-intl';
-import type { LinkInfo } from '../../../types';
 import styles from './index.module.scss';
+import type { LinkInfo } from '../../../types';
+import type { FC } from 'react';
 
 type PreviousNextLinkProps = {
   previous?: LinkInfo;
