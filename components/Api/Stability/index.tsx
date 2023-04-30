@@ -2,7 +2,7 @@ import { FormattedMessage } from 'react-intl';
 import styles from './index.module.scss';
 import type { PropsWithChildren } from 'react';
 
-type Props = PropsWithChildren<{ stability: number }>;
+type StabilityProps = PropsWithChildren<{ stability: number }>;
 
 const getStabilityClass = (stability: number) => {
   switch (stability) {
