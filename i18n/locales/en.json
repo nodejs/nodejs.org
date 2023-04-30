@@ -50,5 +50,7 @@
   "components.footer.links.about": "About",
   "components.footer.links.blog": "Blog",
   "components.footer.links.github": "GitHub",
+  "components.prevnextlink.next": "NEXT",
+  "components.prevnextlink.previous": "PREV",
   "components.common.shellBox.copy": "{copied, select, true {copied}other {copy}}"
 }
