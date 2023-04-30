@@ -3,12 +3,12 @@
 
 const config = {
   async postRender(page, _context) {
-    const elem = await page.locator('[data-test-id="story-root"]');
-    if (!elem) {
-      throw new Error('Story Root element missing!');
-    }
-    const html = await elem.innerHTML();
-    expect(html).toMatchSnapshot();
+    const rootElementId = '[data-test-id="story-root"]';
+    const rootElement = await page.locator(rootElementId);
+    expect(rootElement).toBeDefined();
+
+    const content = await rootElement.innerHTML();
+    expect(content).toMatchSnapshot();
   },
 };
 
