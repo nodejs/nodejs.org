@@ -19,7 +19,7 @@ const getStabilityClass = (stability: number) => {
   }
 };
 
-const Stability: React.FC<StabilityProps> = ({ stability, children }) => (
+const Stability: FC<StabilityProps> = ({ stability, children }) => (
   <div className={`${styles.stability} ${getStabilityClass(stability)}`}>
     <FormattedMessage id="docs.api.stability" values={{ level: stability }} />
     {children}
