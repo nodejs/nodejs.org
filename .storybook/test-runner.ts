@@ -5,7 +5,7 @@ const config = {
   async postRender(page, _context) {
     const elem = await page.locator('[data-test-id="story-root"]');
     if (!elem) {
-      throw new Error('Story Root element missing!')
+      throw new Error('Story Root element missing!');
     }
     const html = await elem.innerHTML();
     expect(html).toMatchSnapshot();
