@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DownloadCards component renders correctly 1`] = `
+<div>
+  <div
+    class="downloadCardsWrapper"
+    data-rttabs="true"
+    tabindex="-1"
+  >
+    <ul
+      class="downloadCards"
+      role="tablist"
+    >
+      <li
+        aria-controls="paneldownload-card-WIN"
+        aria-disabled="false"
+        aria-selected="false"
+        class="downloadCard"
+        data-rttab="true"
+        id="tabdownload-card-WIN"
+        role="tab"
+        tabindex="0"
+      >
+        <div
+          class="top"
+        >
+          <img
+            alt="Windows Installer"
+            data-nimg="1"
+            decoding="async"
+            height="48"
+            loading="lazy"
+            src="/static/images/logos/windows-download-logo.svg"
+            style="color: transparent;"
+            width="48"
+          />
+        </div>
+        <p
+          class="label"
+        >
+          Windows Installer
+        </p>
+        <p
+          class="filename"
+          data-testid="lts"
+        >
+          node-v18.15.0-x86.msi
+        </p>
+      </li>
+      <li
+        aria-controls="paneldownload-card-MAC"
+        aria-disabled="false"
+        aria-selected="false"
+        class="downloadCard downloadCardActive"
+        data-rttab="true"
+        id="tabdownload-card-MAC"
+        role="tab"
+        tabindex="0"
+      >
+        <div
+          class="top"
+        >
+          <img
+            alt="MAC Installer"
+            data-nimg="1"
+            decoding="async"
+            height="56"
+            loading="lazy"
+            src="/static/images/logos/mac-download-logo.svg"
+            style="color: transparent;"
+            width="56"
+          />
+          <a
+            class="link"
+            href="https://nodejs.org/dist/v18.15.0/node-v18.15.0.pkg"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"
+              />
+            </svg>
+          </a>
+        </div>
+        <p
+          class="label"
+        >
+          MAC Installer
+        </p>
+        <p
+          class="filename"
+          data-testid="lts"
+        >
+          node-v18.15.0.pkg
+        </p>
+      </li>
+      <li
+        aria-controls="paneldownload-card-SOURCECODE"
+        aria-disabled="false"
+        aria-selected="false"
+        class="downloadCard"
+        data-rttab="true"
+        id="tabdownload-card-SOURCECODE"
+        role="tab"
+        tabindex="0"
+      >
+        <div
+          class="top"
+        >
+          <img
+            alt="Source Code"
+            data-nimg="1"
+            decoding="async"
+            height="48"
+            loading="lazy"
+            src="/static/images/logos/source-code-download-logo.svg"
+            style="color: transparent;"
+            width="48"
+          />
+        </div>
+        <p
+          class="label"
+        >
+          Source Code
+        </p>
+        <p
+          class="filename"
+          data-testid="lts"
+        >
+          node-v18.15.0.tar.gz
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
