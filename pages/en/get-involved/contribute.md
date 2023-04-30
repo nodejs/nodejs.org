@@ -28,7 +28,7 @@ The Node.js project is currently managed across a number of separate GitHub repo
 
 ## Code contributions
 
-If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the [Node.js Contribution Guidelines](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md#pull-requests). The review process by existing collaborators for all contributions to the project is explained there as well.
+If you'd like to fix bugs or add a new feature to Node.js, please make sure you consult the [Node.js Contribution Guidelines](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). The review process by existing collaborators for all contributions to the project is explained there as well.
 
 If you are wondering how to start, you can check [Node Todo](https://www.nodetodo.org/) which may guide you towards your first contribution.
 
@@ -41,7 +41,7 @@ By becoming a collaborator, contributors can have even more impact on the projec
 * comments on issues and pull requests
 * contributions to the Node.js website
 * assistance provided to end users and novice contributors
-* participation in Working Groups
+* participation in working groups
 * other participation in the wider Node.js community
 
 If individuals making valuable contributions do not believe they have been considered for commit access, they may [log an issue](https://github.com/nodejs/TSC/issues) or [contact a TSC member](https://github.com/nodejs/node#tsc-technical-steering-committee) directly.

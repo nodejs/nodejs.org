@@ -19,13 +19,13 @@ Node.js 依赖于以下一些依赖项，这样它才能正常工作。
   * [gyp](#gyp)
   * [gtest](#gtest)
 
-## <!--libraries-->类库
+## 类库
 
 ### V8
 
 V8 类库为 Node.js 提供了 JavaScript 引擎，Node.js 通过 V8 C++ 的 API 函数接口进行操控， V8 由谷歌公司维护，用于谷歌浏览器中。
 
-* [相关文档](https://v8.dev/docs/)
+* [相关文档](https://v8.dev/docs)
 
 ### libuv
 
@@ -57,7 +57,7 @@ OpenSSL 广泛地在 `tls` 和 `crypto` 模块中使用。它提供了战争环�
 
 * [相关文档](https://www.zlib.net/manual.html)
 
-## <!--tools-->工具
+## 工具
 
 ### npm
 

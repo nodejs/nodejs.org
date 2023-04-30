@@ -33,10 +33,10 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2022-12-16T17:00:00.000Z",
-      "endDate": "2022-12-30T16:00:00.000Z",
-      "text": "Node.js assessment of OpenSSL 3.0.7 security advisory",
-      "link": "https://nodejs.org/en/blog/vulnerability/openssl-fixes-in-regular-releases-dec2022/"
+      "startDate": "2023-04-18T15:45:00.000Z",
+      "endDate": "2023-05-02:00:00.000Z",
+      "text": "Node.js v20 is now available!",
+      "link": "https://nodejs.org/en/blog/announcements/v20-release-announce/"
     }
   }
 }

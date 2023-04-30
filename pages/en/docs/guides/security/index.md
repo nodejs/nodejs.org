@@ -211,7 +211,7 @@ or a range. However, when pinning a dependency to an exact version, its
 transitive dependencies are not themselves pinned.
 This still leaves the application vulnerable to unwanted/unexpected updates.
 
-Possible vector attacks:
+Possible attack vectors:
 
 * Typosquatting attacks
 * Lockfile poisoning
@@ -410,6 +410,13 @@ The use of experimental features in production isn't recommended.
 Experimental features can suffer breaking changes if needed, and their
 functionality isn't securely stable. Although, feedback is highly appreciated.
 
+## OpenSSF Tools
+
+The [OpenSSF][] is leading several initiatives that can be very useful, especially if you plan to publish an npm package. These initiatives include:
+
+- [OpenSSF Scorecard][] Scorecard evaluates open source projects using a series of automated security risk checks. You can use it to proactively assess vulnerabilities and dependencies in your code base and make informed decisions about accepting vulnerabilities.
+- [OpenSSF Best Practices Badge Program][] Projects can voluntarily self-certify by describing how they comply with each best practice. This will generate a badge that can be added to the project.
+
 [threat model]: https://github.com/nodejs/node/blob/main/SECURITY.md#the-nodejs-threat-model
 [security guidance issue]: https://github.com/nodejs/security-wg/issues/488
 [nodejs guideline]: https://github.com/goldbergyoni/nodebestpractices
@@ -438,3 +445,6 @@ functionality isn't securely stable. Although, feedback is highly appreciated.
 [policy mechanism with integrity checking]: https://nodejs.org/api/permissions.html#integrity-checks
 [experimental-features]: #experimental-features-in-production
 [`Socket`]: https://socket.dev/
+[OpenSSF]: https://openssf.org/
+[OpenSSF Scorecard]: https://securityscorecards.dev/
+[OpenSSF Best Practices Badge Program]: https://bestpractices.coreinfrastructure.org/en

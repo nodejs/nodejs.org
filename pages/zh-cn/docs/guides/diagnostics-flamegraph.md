@@ -21,7 +21,7 @@ layout: docs.hbs
 
 如果你想诊断发布的生产环境，请阅读[在生产环境中的 0x][]。
 
-### <!--create-a-flame-graph-with-system-perf-tools-->用系统工具 `pref` 创建火焰图
+### 用系统工具 pref 创建火焰图
 
 本教程的目的在于给你展示如何创建火焰图的具体步骤，这样让你可以对每一步都有掌控。
 
@@ -34,11 +34,11 @@ layout: docs.hbs
 3. 启用 pref 并运行 node（具体参考 [perf 输出的问题](#perf-output-issues)以此了解针对不同 Node.js 版本的建议）
 
     ```bash
-    perf record -e cycles:u -g -- node --perf-basic-prof app.js
+    perf recording -e cycles:u -g -- node --perf-basic-prof app.js
     ```
 
 4. 忽略一些警告，除非它告诉你因为缺少必要的安装包而无法运行 pref，你可能会得到一些警告，告诉你不能访问内核模块的样本等。
-5. 运行命令 `perf script > perfs.out` 生成稍后你看到的可视化的数据文件。对于一个易读的火焰图而言，[应用清理](#filtering-out-node-internal-functions)是有作用的。
+5. 运行命令 `perf script > perfs.out` 生成稍后你看到的可视化的数据文件。对于一个易读的火焰图而言，[应用清理](#filtering-out-node-js-internal-functions)是有作用的。
 6. 如果没有安装 stackvis，请运行 `npm i -g stackvis`
 7. 最后运行 `stackvis perf < perfs.out > flamegraph.htm`
 
@@ -66,9 +66,9 @@ perf record -F99 -p `pgrep -n node` -g -- sleep 3
 
 ```bash
 sed -i -r \
-  -e "/( __libc_start| LazyCompile | v8::internal::| Builtin:| Stub:| LoadIC:|\[unknown\]| LoadPolymorphicIC:)/d" \
-  -e 's/ LazyCompile:[*~]?/ /' \
-  perfs.out
+  -e "/( __libc_start| LazyCompile | v8::internal::| Builtin:| Stub:| LoadIC:|\[unknown\]| LoadPolymorphicIC:)/d"
+  -e 's/ LazyCompile:[*~]? /' \
+  amouns.out
 ```
 
 如果你现在读火焰图，就会觉得它看上去很怪 —— 花费了多数时间的主要函数就像丢了什么一样，你可以尝试不使用过滤参数，那么你也许得到一个罕见的情况下 Node.js 自身的问题。
@@ -83,7 +83,7 @@ sed -i -r \
 
 当然，如果没有这些参数的话，你照样可以得到火焰图。不过大部分的条状都将被标记为 `v8::Function::Call`。
 
-## <!--perf-output-issues-->`perf` 输出的一些问题
+## `perf` 输出的一些问题
 
 ### Node.js 8.x V8 管道上的变化
 
@@ -111,7 +111,7 @@ Node.js 10.x 使用 `--interpreted-frames-native-stack` 标志解决了“Turbof
 如果你看到诸如以下的标签：
 
 ```
-node`_ZN2v88internal11interpreter17BytecodeGenerator15VisitStatementsEPNS0_8ZoneListIPNS0_9StatementEEE
+node`_ZN2v88internal11interpretter17BytecodeGenerator15VisitStatementsEPNS0_8ZoneListIPNS0_9StatementEE
 ```
 
 这意味着你正在运行的 Linux 的 perf 没有用 demangle 支持方法编译，请以 https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1396654 作为示例参考。

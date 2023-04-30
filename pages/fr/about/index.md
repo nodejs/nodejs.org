@@ -1,12 +1,12 @@
 ---
 layout: about.hbs
-title: A propos
-trademark: Trademark
+title: À propos
+trademark: Marque déposée
 ---
 
-# A propos de Node.js®
+# À propos de Node.js®
 
-En tant qu'environnement d'exécution JavaScript asynchrone et orienté événement, Node.js est conçu pour générer des applications extensibles. Dans cet exemple ("hello world"), plusieurs connexions peuvent être gérées de manière concurrente. À chaque connexion, la fonction de rappel (_callback function_) est déclenchée, mais si il n'y a rien à faire, Node.js restera inactif.
+En tant que moteur d'exécution JavaScript asynchrone piloté par les événements, Node.js est conçu pour construire des applications réseau évolutives. des applications réseau évolutives. Dans l'exemple suivant, "hello world", de nombreuses peuvent être gérées simultanément. À chaque connexion, le rappel est mais s'il n'y a pas de travail à faire, Node.js se met en veille.
 
 ```javascript
 const http = require('http');
@@ -17,7 +17,7 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+  res.end('Bonjour touts le mondes'');
 });
 
 server.listen(port, hostname, () => {

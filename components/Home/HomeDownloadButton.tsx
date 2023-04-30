@@ -16,7 +16,7 @@ const HomeDownloadButton = (props: HomeDownloadButtonProps) => {
 
   const nodeDownloadLink = `https://nodejs.org/dist/${props.node}/`;
   const nodeApiLink = `https://nodejs.org/dist/latest-${props.nodeMajor}/docs/api/`;
-
+  const nodeAllDownloadsLink = `/download${props.isLts ? '/' : '/current'}`;
   const nodeDownloadTitle =
     `${labels.download} ${props.nodeNumeric}` +
     ` ${labels[props.isLts ? 'lts' : 'current']}`;
@@ -35,7 +35,7 @@ const HomeDownloadButton = (props: HomeDownloadButtonProps) => {
 
       <ul className="list-divider-pipe home-secondary-links">
         <li>
-          <LocalizedLink href="/download/">
+          <LocalizedLink href={nodeAllDownloadsLink}>
             {labels['other-downloads']}
           </LocalizedLink>
         </li>

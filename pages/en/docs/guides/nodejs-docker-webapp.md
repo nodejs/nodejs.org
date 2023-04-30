@@ -109,7 +109,7 @@ COPY package*.json ./
 
 RUN npm install
 # If you are building your code for production
-# RUN npm ci --only=production
+# RUN npm ci --omit=dev
 ```
 
 Note that, rather than copying the entire working directory, we are only copying
@@ -156,7 +156,7 @@ COPY package*.json ./
 
 RUN npm install
 # If you are building your code for production
-# RUN npm ci --only=production
+# RUN npm ci --omit=dev
 
 # Bundle app source
 COPY . .
