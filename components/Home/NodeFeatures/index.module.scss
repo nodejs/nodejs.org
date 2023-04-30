@@ -1,0 +1,21 @@
+.nodeFeatures {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  margin: 0 auto 5em auto;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+
+  .featureIcon {
+    height: auto;
+    min-width: 120px;
+    opacity: 0.75;
+
+    @media (max-width: 900px) {
+      min-width: 60px;
+    }
+  }
+}
