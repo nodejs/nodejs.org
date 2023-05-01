@@ -19,7 +19,11 @@ const ShellBox: FC<PropsWithChildren<ShellBoxProps>> = ({
 
   const handleCopyCode = async (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    await copyText(textToCopy || shellBoxRef.current?.innerHTML);
+    // By default we want to use the textToCopy props but if it's absent
+    // we allow the user to copy by getting the inner HTML content of the Element
+    const _textToCopy = textToCopy || shellBoxRef.current?.innerHTML || '';
+
+    await copyText(_textToCopy.replace('$', '');
   };
 
   return (
