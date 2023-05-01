@@ -57,5 +57,10 @@
   "pages.index.features.openSource.title": "Open Source",
   "pages.index.features.openSource.description": "Node.js is open source and actively maintained by contributors all over the world",
   "pages.index.features.everywhere.title": "Everywhere",
-  "pages.index.features.everywhere.description": "Node.js has been adapted to work in a wide variety of places"
+  "pages.index.features.everywhere.description": "Node.js has been adapted to work in a wide variety of places",
+  "components.downloadHeader.navigation.activeSection": "downloads",
+  "components.downloadHeader.navigation.title": "Downloads",
+  "components.downloadHeader.navigation.nodeVersion": "{lts, select, true {LATEST LTS}other {CURRENT}} VERSION {nodeVersion}",
+  "components.downloadHeader.navigation.npmVersion": "(includes npm)",
+  "components.downloadTable.header.release": "Release"
 }
