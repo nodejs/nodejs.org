@@ -70,7 +70,8 @@
             "message": "Named * React import is not allowed. Please import what you need from React with Named Imports"
           }
         ],
-        "@typescript-eslint/consistent-type-definitions": ["error", "type"]
+        "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
       }
     },
     {

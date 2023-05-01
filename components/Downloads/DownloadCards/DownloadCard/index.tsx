@@ -13,7 +13,7 @@ type DownloadCardProps = {
   download: string;
   filename: string;
   selected: boolean;
-  onSelect: (name: string) => void;
+  onSelect: (_name: string) => void;
 };
 
 const DownloadCard: FC<DownloadCardProps> = ({
