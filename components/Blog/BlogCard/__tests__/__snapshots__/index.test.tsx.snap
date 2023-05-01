@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlogCard component renders correctly 1`] = `
+<div>
+  <div
+    class="blogCard"
+  >
+    <div
+      class="title"
+    >
+      <a
+        href="/undefined/blog/category-mock/sample-blog"
+      >
+        Sample Test Blog
+      </a>
+      <div
+        class="metadata"
+      >
+        <a
+          class="category"
+          href="/undefined/blog/category-mock"
+        >
+          category-mock
+        </a>
+        <span>
+          1 min read
+        </span>
+      </div>
+    </div>
+    <div
+      class="content"
+    >
+      <h4>
+        April 21, 2023
+      </h4>
+      <p>
+        components.blog.blogCard.author.by
+         
+        <span>
+          Bat Man
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+`;
