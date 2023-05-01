@@ -28,14 +28,4 @@ export const WithTextToCopyJsx: Story = {
   },
 };
 
-export const WithoutTextToCopyJsx: Story = {
-  args: {
-    children: (
-      <span>
-        <strong>$</strong>hello world
-      </span>
-    ),
-  },
-};
-
 export default { component: ShellBox } as Meta;

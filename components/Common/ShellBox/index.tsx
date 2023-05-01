@@ -23,7 +23,7 @@ const ShellBox: FC<PropsWithChildren<ShellBoxProps>> = ({
     // we allow the user to copy by getting the inner HTML content of the Element
     const _textToCopy = textToCopy || shellBoxRef.current?.innerHTML || '';
 
-    await copyText(_textToCopy.replace('$', '');
+    await copyText(_textToCopy.replace('$', ''));
   };
 
   return (

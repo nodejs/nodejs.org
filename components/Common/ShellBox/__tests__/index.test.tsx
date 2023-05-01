@@ -5,9 +5,8 @@ import ShellBox from '../index';
 
 const mockWriteText = jest.fn();
 const originalNavigator = { ...window.navigator };
-describe('ShellBox', () => {
-  const user = userEvent.setup();
 
+describe('ShellBox', () => {
   beforeEach(() => {
     Object.defineProperty(window, 'navigator', {
       value: {
@@ -34,6 +33,7 @@ describe('ShellBox', () => {
   });
 
   it('should call clipboard API with `test` once', async () => {
+    const user = userEvent.setup();
     const navigatorClipboardWriteTextSpy = jest
       .fn()
       .mockImplementation(() => Promise.resolve());
