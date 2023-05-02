@@ -2,15 +2,16 @@ import Codebox from './index';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 import type { FC } from 'react';
 
-type CodeBoxProps = {
-  language: string[];
-  code: string[];
-};
+type DecoratedCodeBoxProps = { language: string[]; code: string[] };
 
-type CodeboxFC = FC<CodeBoxProps>;
+const DecoratedCodeBox: FC<DecoratedCodeBoxProps> = ({ language, code }) => (
+  <Codebox>
+    <pre className={language.join('|')}>{code.join('--------------\n')}</pre>
+  </Codebox>
+);
 
-type Story = StoryObj<CodeboxFC>;
-type Meta = MetaObj<CodeboxFC>;
+type Story = StoryObj<typeof DecoratedCodeBox>;
+type Meta = MetaObj<typeof DecoratedCodeBox>;
 
 const singleLangCode = ['const a = 1;'];
 
@@ -33,15 +34,4 @@ export const MultiLang: Story = {
   },
 };
 
-export default {
-  component: Codebox as unknown as CodeboxFC,
-  decorators: [
-    (_Story, context) => (
-      <Codebox>
-        <pre className={context.args.language.join('|')}>
-          {context.args.code.join('--------------\n')}
-        </pre>
-      </Codebox>
-    ),
-  ],
-} as Meta;
+export default { component: DecoratedCodeBox } as Meta;
