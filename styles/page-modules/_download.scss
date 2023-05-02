@@ -32,6 +32,7 @@
     list-style: none;
     margin: 0;
     text-align: center;
+    overflow: hidden;
   }
 
   li {
@@ -46,6 +47,7 @@
     display: block;
     padding-top: 1em;
     width: 100%;
+    border-radius: 0 !important;
   }
 
   .download-logo {
@@ -76,6 +78,8 @@
   .download-version-toggle {
     display: flex;
     flex-wrap: nowrap;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 
     a {
       border-radius: 0;
@@ -106,6 +110,8 @@
 
   .download-platform {
     border-top: 2px solid $node-green;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 }
 
