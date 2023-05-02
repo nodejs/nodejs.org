@@ -41,7 +41,7 @@ Dengan menjadi kolaborator, kontributor dapat memberikan dampak yang lebih besar
 * komentar tentang masalah dan permintaan tarik
 * kontribusi ke situs web Node.js
 * bantuan yang diberikan kepada pengguna akhir dan kontributor pemula
-* partisipasi dalam Kelompok Kerja
+* partisipasi dalam kelompok kerja
 * partisipasi lain dalam komunitas Node.js yang lebih luas
 
 Jika individu yang memberikan kontribusi berharga tidak yakin bahwa mereka telah dipertimbangkan untuk akses komit, mereka dapat [mencatat masalah](https://github.com/nodejs/TSC/issues) atau [menghubungi anggota TSC](https://github.com/nodejs/node#tsc-technical-steering-committee) secara langsung.
