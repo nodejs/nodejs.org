@@ -136,25 +136,13 @@
 
         > li {
           @extend %navItemLi;
-
-          &.searchBar {
-            align-items: flex-start;
-            flex-grow: 1;
-            height: 40px;
-            justify-content: flex-end;
-            position: relative;
-
-            @media (max-width: 1100px) {
-              display: none;
-            }
-          }
         }
       }
     }
   }
 }
 
-:global(.dark) {
+[data-theme='dark'] {
   .header {
     border-bottom: 1px solid transparent;
   }
