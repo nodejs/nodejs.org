@@ -51,5 +51,11 @@
   "components.footer.links.blog": "Blog",
   "components.footer.links.github": "GitHub",
   "components.prevnextlink.next": "NEXT",
-  "components.prevnextlink.previous": "PREV"
+  "components.prevnextlink.previous": "PREV",
+  "pages.index.features.javascript.title": "JavaScript",
+  "pages.index.features.javascript.description": "Node.js provides support for the JavaScript programming language",
+  "pages.index.features.openSource.title": "Open Source",
+  "pages.index.features.openSource.description": "Node.js is open source and actively maintained by contributors all over the world",
+  "pages.index.features.everywhere.title": "Everywhere",
+  "pages.index.features.everywhere.description": "Node.js has been adapted to work in a wide variety of places"
 }
