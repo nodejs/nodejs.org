@@ -181,7 +181,7 @@ Commits should be signed. You can read more about [Commit Signing][] here.
 
 Each new feature or bug fix should be accompanied by a unit test (when deemed valuable). We use [Jest][] as our test runner and [React Testing Library][] for our React unit tests.
 
-We also use [Storybook][] to document our components. Each component should have a storybook story that documents the component's usage.
+We also use [Storybook][] to document our components. Each component should have a storybook story that documents the component's usage. Snapshot testing of our components is directly done by taking snapshot of all Storybook stories, using [Storybook Test Runner][] and [Playwright][].
 
 ### General Guidelines for Unit Tests
 
@@ -302,6 +302,8 @@ If something is missing here, or you feel something is not well described, feel 
 [Jest]: https://jestjs.io/
 [React Testing Library]: https://testing-library.com/docs/react-testing-library/intro/
 [Storybook]: https://storybook.js.org/
+[Storybook Test Runner]: https://storybook.js.org/addons/@storybook/test-runner#dom-snapshot-recipe
+[Playwright]: https://playwright.dev/
 [`react-intl`]: https://formatjs.io/docs/react-intl/
 [Next.js]: https://nextjs.org/
 [MDX]: https://mdxjs.com/
