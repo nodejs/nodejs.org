@@ -12,11 +12,11 @@ exports[`DownloadHeader component renders correctly 1`] = `
       <span
         class="active"
       >
-        components.downloadHeader.navigation.activeSection
+        components.Downloads.downloadHeader.activeSection
       </span>
     </div>
     <div>
-      components.downloadHeader.navigation.nodeVersion
+      components.Downloads.downloadHeader.nodeVersion
     </div>
   </div>
   <div
@@ -25,12 +25,12 @@ exports[`DownloadHeader component renders correctly 1`] = `
     <div
       class="title"
     >
-      components.downloadHeader.navigation.title
+      components.Downloads.downloadHeader.title
     </div>
     <div
       class="npm"
     >
-      components.downloadHeader.navigation.npmVersion
+      components.Downloads.downloadHeader.npmVersion
     </div>
   </div>
 </div>

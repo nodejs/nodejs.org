@@ -1,6 +1,6 @@
 import type { NodeReleaseData } from '../types';
 
-export const createNodeReleasesData = (): NodeReleaseData[] =>
+export const createNodeReleasesData = () =>
   [
     {
       endOfLife: '2022-04-30',
