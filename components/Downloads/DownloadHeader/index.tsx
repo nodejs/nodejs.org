@@ -4,7 +4,7 @@ import SectionTitle from '../../Common/SectionTitle';
 import type { WrappedComponentProps } from 'react-intl';
 import type { NodeReleaseData } from '../../../types';
 
-type Props = {
+type DownloadHeaderProps = { release: NodeReleaseData }
   release?: NodeReleaseData;
 };
 
