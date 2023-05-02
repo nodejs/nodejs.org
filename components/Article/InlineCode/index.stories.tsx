@@ -2,14 +2,16 @@ import InlineCode from './index';
 import type { FC } from 'react';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-type InlineCodeProps = {
-  code: string;
-};
+type DecoratedInlineCodeProps = { code: string };
 
-type InlineCodeFC = FC<InlineCodeProps>;
+const DecoratedInlineCode: FC<DecoratedInlineCodeProps> = ({ code }) => (
+  <InlineCode>
+    <code>{code}</code>
+  </InlineCode>
+);
 
-type Story = StoryObj<InlineCodeFC>;
-type Meta = MetaObj<InlineCodeFC>;
+type Story = StoryObj<typeof DecoratedInlineCode>;
+type Meta = MetaObj<typeof DecoratedInlineCode>;
 
 const code = 'const a = 1;';
 
@@ -18,12 +20,5 @@ export const Default: Story = {
 };
 
 export default {
-  component: InlineCode as InlineCodeFC,
-  decorators: [
-    (_Story, context) => (
-      <InlineCode>
-        <code>{context.args.code}</code>
-      </InlineCode>
-    ),
-  ],
+  component: DecoratedInlineCode,
 } as Meta;
