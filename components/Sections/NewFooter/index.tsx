@@ -14,7 +14,7 @@ const Footer = () => (
           rel="noopener noreferrer"
           aria-label="Node.js Trademark Policy - PDF (Opens in new tab)"
         >
-          <FormattedMessage id="components.section.newfooter.trademark" />
+          <FormattedMessage id="components.section.newFooter.trademark" />
         </a>
       </li>
       <li>
@@ -25,7 +25,7 @@ const Footer = () => (
           rel="noopener noreferrer"
           aria-label="Node.js Privacy Policy - PDF (Opens in new tab)"
         >
-          <FormattedMessage id="components.section.newfooter.privacy" />
+          <FormattedMessage id="components.section.newFooter.privacy" />
         </a>
       </li>
       <li>
@@ -35,22 +35,22 @@ const Footer = () => (
           href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
           rel="noopener noreferrer"
         >
-          <FormattedMessage id="components.section.newfooter.codeOfConduct" />
+          <FormattedMessage id="components.section.newFooter.codeOfConduct" />
         </a>
       </li>
       <li>
         <LocalizedLink className={styles.link} href="/about/security">
-          <FormattedMessage id="components.section.newfooter.security" />
+          <FormattedMessage id="components.section.newFooter.security" />
         </LocalizedLink>
       </li>
       <li>
         <LocalizedLink className={styles.link} href="/about">
-          <FormattedMessage id="components.section.newfooter.about" />
+          <FormattedMessage id="components.section.newFooter.about" />
         </LocalizedLink>
       </li>
       <li>
         <LocalizedLink className={styles.link} href="/blog">
-          <FormattedMessage id="components.section.newfooter.blog" />
+          <FormattedMessage id="components.section.newFooter.blog" />
         </LocalizedLink>
       </li>
     </ul>
