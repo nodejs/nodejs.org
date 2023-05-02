@@ -29,10 +29,10 @@ exports[`NodeFeatures should render 1`] = `
       <h2
         class="t-subheading2"
       >
-        pages.index.features.javascript.title
+        components.home.nodeFeatures.javascript.title
       </h2>
       <p>
-        pages.index.features.javascript.description
+        components.home.nodeFeatures.javascript.description
       </p>
     </div>
     <div
@@ -56,10 +56,10 @@ exports[`NodeFeatures should render 1`] = `
       <h2
         class="t-subheading2"
       >
-        pages.index.features.openSource.title
+        components.home.nodeFeatures.openSource.title
       </h2>
       <p>
-        pages.index.features.openSource.description
+        components.home.nodeFeatures.openSource.description
       </p>
     </div>
     <div
@@ -86,10 +86,10 @@ exports[`NodeFeatures should render 1`] = `
       <h2
         class="t-subheading2"
       >
-        pages.index.features.everywhere.title
+        components.home.nodeFeatures.everywhere.title
       </h2>
       <p>
-        pages.index.features.everywhere.description
+        components.home.nodeFeatures.everywhere.description
       </p>
     </div>
   </section>
