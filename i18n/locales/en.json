@@ -43,7 +43,7 @@
   "components.article.editLink.title.translate": "Interested to help with translations?",
   "components.common.languageSelector.button.title": "Switch Language",
   "components.blog.blogCard.author.by": "by",
-  "components.section.newFooter.trademark": "Trademark Policy",
+  "components.sections.newFooter.trademark": "Trademark Policy",
   "components.sections.newFooter.privacy": "Privacy Policy",
   "components.sections.newFooter.codeOfConduct": "Code of Conduct",
   "components.sections.newFooter.security": "Security",
