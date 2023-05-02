@@ -136,6 +136,15 @@
 
         > li {
           @extend %navItemLi;
+          padding: 10px;
+
+          > a {
+            color: var(--color-text-accent);
+
+            > svg {
+              font-size: 2rem;
+            }
+          }
         }
       }
     }
