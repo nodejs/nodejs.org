@@ -2,10 +2,10 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import styles from './index.module.scss';
 import SectionTitle from '../../Common/SectionTitle';
 import type { WrappedComponentProps } from 'react-intl';
+import type { NodeReleaseData } from '../../../types';
 
 type Props = {
-  // release?: NodeReleaseData;
-  release?: any;
+  release?: NodeReleaseData;
 };
 
 const DownloadHeader = ({ release, intl }: Props & WrappedComponentProps) => (

@@ -1,5 +1,6 @@
-// export const createNodeReleasesData = (): NodeReleaseData[]
-export const createNodeReleasesData = () =>
+import type { NodeReleaseData } from '../types';
+
+export const createNodeReleasesData = (): NodeReleaseData[] =>
   [
     {
       endOfLife: '2022-04-30',
@@ -45,5 +46,4 @@ export const createNodeReleasesData = () =>
       status: 'Current',
       isLts: false,
     },
-  ].reverse();
-//  ].reverse() as NodeReleaseData[]
+  ].reverse() as NodeReleaseData[];
