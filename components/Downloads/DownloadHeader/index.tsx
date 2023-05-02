@@ -5,38 +5,41 @@ import type { NodeReleaseData } from '../../../types';
 import type { FC } from 'react';
 
 type DownloadHeaderProps = {
-  release?: NodeReleaseData;
+  release: NodeReleaseData;
 };
 
 const DownloadHeader: FC<DownloadHeaderProps> = ({
   release,
-}: DownloadHeaderProps) => (
-  <>
-    <div className={styles.downloadHeader}>
-      <SectionTitle
-        path={[
-          'home',
-          useIntl().formatMessage({
-            id: 'components.Downloads.downloadHeader.activeSection',
-          }),
-        ]}
-      />
-      <div>
-        <FormattedMessage
-          id="components.Downloads.downloadHeader.nodeVersion"
-          values={{ lts: release?.isLts, nodeVersion: release?.fullVersion }}
+}: DownloadHeaderProps) => {
+  const intl = useIntl();
+  return (
+    <>
+      <div className={styles.downloadHeader}>
+        <SectionTitle
+          path={[
+            'home',
+            intl.formatMessage({
+              id: 'components.downloads.downloadHeader.activeSection',
+            }),
+          ]}
         />
+        <div>
+          <FormattedMessage
+            id="components.downloads.downloadHeader.nodeVersion"
+            values={{ lts: release.isLts, nodeVersion: release.fullVersion }}
+          />
+        </div>
       </div>
-    </div>
-    <div className={styles.downloadHeader}>
-      <div className={styles.title}>
-        <FormattedMessage id="components.Downloads.downloadHeader.title" />
+      <div className={styles.downloadHeader}>
+        <div className={styles.title}>
+          <FormattedMessage id="components.downloads.downloadHeader.title" />
+        </div>
+        <div className={styles.npm}>
+          <FormattedMessage id="components.downloads.downloadHeader.npmVersion" />
+        </div>
       </div>
-      <div className={styles.npm}>
-        <FormattedMessage id="components.Downloads.downloadHeader.npmVersion" />
-      </div>
-    </div>
-  </>
-);
+    </>
+  );
+};
 
 export default DownloadHeader;
