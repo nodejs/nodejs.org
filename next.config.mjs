@@ -18,9 +18,12 @@ const withNextra = nextra({
   },
 });
 
+const enableImageOptimization =
+  process.env.NEXT_ENABLE_IMAGE_OPTIMIZATION === 'true';
+
 export default withNextra({
   trailingSlash: false,
-  images: { unoptimized: true },
+  images: { unoptimized: !enableImageOptimization },
   outputFileTracing: false,
-  basePath: process.env.NEXT_BASE_PATH || '',
+  basePath: String(process.env.NEXT_BASE_PATH || ''),
 });
