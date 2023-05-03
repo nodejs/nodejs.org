@@ -1,4 +1,8 @@
 {
+  "components.api.apiChanges.addedIn": "Added in: {version}",
+  "components.api.apiChanges.history": "History",
+  "components.api.apiChanges.history.version": "Version",
+  "components.api.apiChanges.history.changes": "Changes",
   "components.footer.scrollToTop.button": "Scroll to top",
   "components.header.links.home": "Home",
   "components.header.links.about": "About",
