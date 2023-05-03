@@ -23,6 +23,15 @@ describe('ShellBox', () => {
     });
   });
 
+  it('should render', () => {
+    const { container } = render(
+      <IntlProvider locale="en" onError={() => {}}>
+        <ShellBox>test</ShellBox>
+      </IntlProvider>
+    );
+    expect(container).toMatchSnapshot();
+  });
+
   it('should call clipboard API with `test` once', async () => {
     const user = userEvent.setup();
     const navigatorClipboardWriteTextSpy = jest
