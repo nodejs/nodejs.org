@@ -16,7 +16,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          components.footer.links.trademark
+          components.sections.newFooter.trademark
         </a>
       </li>
       <li>
@@ -27,7 +27,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          components.footer.links.privacy
+          components.sections.newFooter.privacy
         </a>
       </li>
       <li>
@@ -37,7 +37,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
           rel="noopener noreferrer"
           target="_blank"
         >
-          components.footer.links.codeOfConduct
+          components.sections.newFooter.codeOfConduct
         </a>
       </li>
       <li>
@@ -45,7 +45,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
           class="link"
           href="/en/about/security"
         >
-          components.footer.links.security
+          components.sections.newFooter.security
         </a>
       </li>
       <li>
@@ -53,7 +53,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
           class="link"
           href="/en/about"
         >
-          components.footer.links.about
+          components.sections.newFooter.about
         </a>
       </li>
       <li>
@@ -61,7 +61,7 @@ exports[`Tests for Footer component renders correctly 1`] = `
           class="link"
           href="/en/blog"
         >
-          components.footer.links.blog
+          components.sections.newFooter.blog
         </a>
       </li>
     </ul>
