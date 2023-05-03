@@ -14,18 +14,18 @@ const styled = (icon: ReactElement): ReactElement =>
 const features = [
   {
     icon: styled(<IoLogoNodejs />),
-    heading: 'pages.index.features.javascript.title',
-    description: 'pages.index.features.javascript.description',
+    heading: 'components.home.nodeFeatures.javascript.title',
+    description: 'components.home.nodeFeatures.javascript.description',
   },
   {
     icon: styled(<IoMdGitPullRequest />),
-    heading: 'pages.index.features.openSource.title',
-    description: 'pages.index.features.openSource.description',
+    heading: 'components.home.nodeFeatures.openSource.title',
+    description: 'components.home.nodeFeatures.openSource.description',
   },
   {
     icon: styled(<IoMdRocket />),
-    heading: 'pages.index.features.everywhere.title',
-    description: 'pages.index.features.everywhere.description',
+    heading: 'components.home.nodeFeatures.everywhere.title',
+    description: 'components.home.nodeFeatures.everywhere.description',
   },
 ];
 
