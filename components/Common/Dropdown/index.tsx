@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import styles from './index.module.scss';
 import type { DropdownItem } from '../../../types';
 import type { CSSProperties, FC, KeyboardEvent } from 'react';
@@ -14,8 +13,6 @@ const Dropdown: FC<DropdownProps> = ({
   shouldShow,
   styles: extraStyles,
 }) => {
-  const clickRef = useRef<HTMLLIElement>(null);
-
   const mappedElements = items.map(item => {
     const extraStyles = { fontWeight: item.active ? 'bold' : 'normal' };
 
@@ -26,7 +23,7 @@ const Dropdown: FC<DropdownProps> = ({
     };
 
     return (
-      <li key={`dropdown-item-${item.label}`} ref={clickRef}>
+      <li key={`dropdown-item-${item.label}`}>
         <button
           style={extraStyles}
           onClick={item.onClick}
