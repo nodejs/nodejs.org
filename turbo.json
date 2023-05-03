@@ -9,11 +9,9 @@
       ],
       "outputMode": "full"
     },
-    "test:unit:ci": {
+    "test:storybook": {
       "inputs": [
-        "{components,hooks,layouts,providers,types,util}/**/*.{ts,tsx}",
-        "jest.config.mjs",
-        "jest.setup.mjs"
+        "{components,hooks,layouts,providers,types,util}/**/*.{ts,tsx}"
       ],
       "outputMode": "full"
     },

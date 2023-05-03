@@ -29,11 +29,9 @@
     "test": "npm run test:unit && npm run test:storybook",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 jest --passWithNoTests",
     "test:unit:watch": "npm run test:unit -- --watch",
-    "test:unit:ci": "npm run test:unit -- --coverage",
     "test:storybook": "npx concurrently -P -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run storybook -- --ci\" \"npx wait-on http://localhost:6006 && npx test-storybook {@}\"",
     "test:storybook:snapshot": "npm run test:storybook -- -- --updateSnapshot",
     "test:storybook:watch": "npm run test:storybook -- -- --watch",
-    "test:storybook:ci": "npm run test:storybook",
     "storybook": "cross-env NODE_ENV=development NODE_NO_WARNINGS=1 storybook dev -p 6006",
     "storybook:build": "cross-env NODE_ENV=production NODE_NO_WARNINGS=1 storybook build"
   },
