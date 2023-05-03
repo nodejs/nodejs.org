@@ -27,13 +27,21 @@
       display: flex;
       flex-direction: row;
       justify-content: center;
-      width: 100px;
 
       .lang {
         background-color: var(--black4);
         border-width: 0;
         color: var(--black9);
+        padding: 0 16px;
         width: max-content;
+
+        &:last-of-type {
+          border-radius: 0 0 0.3rem 0;
+        }
+
+        &:hover {
+          background-color: var(--black5);
+        }
       }
 
       .lang.selected {
@@ -46,6 +54,10 @@
       border-radius: 0 0 0 0.3rem;
       border-width: 0;
       color: white;
+
+      &:hover {
+        background-color: var(--black8);
+      }
 
       i {
         padding: 0;
@@ -74,9 +86,13 @@
         color: var(--black9);
       }
 
-      button {
+      .copy {
         background-color: var(--brand8);
         color: white;
+
+        &:hover {
+          background-color: var(--brand6);
+        }
       }
     }
   }
