@@ -141,7 +141,7 @@ import type { FC } from 'react';
 
 type MyComponentProps = {}; // The types of the Props of your Component
 
-const MyComponent: FC<MyComponentProps> = props => (
+const MyComponent: FC<MyComponentProps> = ({ prop1, prop2... }) => (
   // Actual code of my Component
 );
 
@@ -150,7 +150,7 @@ export default MyComponent;
 
 ### Best practices for Component development in general
 
-- Avoid spreading props `{ ... }` on the definition of the Component
+- Only spread props `{ ... }` on the definition of the Component (Avoid having a variable named `props`)
 - Avoid importing `React`, only import the modules from React that you need
 - When importing types use `import type { NameOfImport } from 'module'`
 - When defining a Component use the `FC` type from React to define the type of the Component
@@ -223,6 +223,7 @@ export default { component: NameOfComponent } as Meta;
 - Stories should have `args` whenever possible, we want to be able to test the different aspects of a Component
 - Please follow the template above to keep the Storybooks as consistent as possible
 - We recommend reading previous Storybooks from the codebase for inspiration and code guidelines.
+- If you need to decorate/wrap your Component/Story with a Container/Provider, please use [Storybook Decorators](https://storybook.js.org/docs/react/writing-stories/decorators)
 
 ## Pull Request Policy
 

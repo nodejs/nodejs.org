@@ -5,7 +5,7 @@ exports[`Stability should render correctly 1`] = `
   <div
     class="stability stabilityLevel0"
   >
-    docs.api.stability
+    components.api.stability
   </div>
 </div>
 `;
@@ -15,7 +15,7 @@ exports[`Stability should render correctly 2`] = `
   <div
     class="stability stabilityLevel1"
   >
-    docs.api.stability
+    components.api.stability
   </div>
 </div>
 `;
@@ -25,7 +25,7 @@ exports[`Stability should render correctly 3`] = `
   <div
     class="stability stabilityLevel2"
   >
-    docs.api.stability
+    components.api.stability
   </div>
 </div>
 `;
@@ -35,7 +35,7 @@ exports[`Stability should render correctly 4`] = `
   <div
     class="stability stabilityLevel3"
   >
-    docs.api.stability
+    components.api.stability
   </div>
 </div>
 `;
