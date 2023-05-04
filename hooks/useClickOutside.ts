@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import type { RefObject } from 'react';
 
 // eslint-disable-next-line no-unused-vars
-type TypeHandler = (event: MouseEvent | TouchEvent) => void;
+type TypeHandler = (_event: MouseEvent | TouchEvent) => void;
 
 type UseClickOutsideProps = {
   ref: RefObject<HTMLElement>;
