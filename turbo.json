@@ -59,7 +59,8 @@
         "next.config.mjs",
         "next.data.mjs",
         "next-sitemap.config.js",
-        "theme.tsx"
+        "theme.tsx",
+        "middleware.ts"
       ],
       "outputs": [".next/**", "!.next/cache/**"]
     },
@@ -76,7 +77,8 @@
         "next.config.mjs",
         "next.data.mjs",
         "next-sitemap.config.js",
-        "theme.tsx"
+        "theme.tsx",
+        "middleware.ts"
       ],
       "outputs": [".next/**", "!.next/cache/**"]
     },
