@@ -1,8 +1,12 @@
+//TODO: Remove `body.dark`/.dark once DarkModeToggle from nodejs.dev has been integrated into nodejs.org 
+
+[data-theme='dark'] body,
 body.dark {
   background-color: $dark-black;
   color: $white;
 }
 
+[data-theme='dark'] body,
 .dark {
   color-scheme: dark;
 
@@ -28,6 +32,7 @@ body.dark {
 
   #main {
     background-color: $dark-black;
+
     p,
     h1,
     h2,
@@ -37,18 +42,21 @@ body.dark {
 
     a {
       color: $dark-green2;
+
       &:hover {
         color: $white;
       }
     }
 
-    .active > a {
+    .active>a {
       background-color: $active-green;
       color: $white;
     }
   }
 
-  header, .dark-theme-switcher img, .lang-picker-toggler img {
+  header,
+  .dark-theme-switcher img,
+  .lang-picker-toggler img {
     background-color: $dark-black2;
   }
 
@@ -71,6 +79,7 @@ body.dark {
 
     a {
       color: $dark-green2;
+
       &:hover {
         background-color: $dark-green2;
         color: $white;
@@ -93,16 +102,20 @@ body.dark {
 
     table {
       background-color: $dark-black3;
+
       th {
         color: $white-alpha-b3;
       }
+
       td {
         color: $white;
       }
+
       tr:only-child,
       tr:nth-child(even) {
         background-color: $dark-black2 !important;
       }
+
       tr:nth-child(odd) {
         background-color: $black;
       }
@@ -120,6 +133,7 @@ body.dark {
     }
 
     background-color: $dark-black2;
+
     .openjsfoundation-footer {
       background-color: $dark-black2;
     }
@@ -133,6 +147,7 @@ body.dark {
     a {
       background-color: $dark-green;
       color: #0aa007;
+
       &:hover {
         background-color: #438542;
       }
@@ -153,6 +168,7 @@ body.dark {
       font-size: 75%;
       margin-left: 1em;
     }
+
     code {
       background-color: $dark-code-background;
     }

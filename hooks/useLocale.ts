@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { useRouter } from 'next/router';
-
 import { LocaleContext } from '../providers/localeProvider';
 import { linkWithLocale } from '../util/linkWithLocale';
 

@@ -4,6 +4,7 @@ export interface BlogPost {
   date: string;
   category: string;
   slug: string;
+  readingTime?: string; // TODO: verify this works when implementing blog
   file: string;
 }
 

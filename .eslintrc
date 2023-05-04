@@ -1,14 +1,42 @@
 {
   "extends": ["eslint:recommended", "next"],
+  "root": true,
   "overrides": [
     {
       "files": ["**/*.{mjs,js,jsx,ts,tsx}"],
       "extends": ["plugin:prettier/recommended"],
-      "env": { "node": true, "es6": true }
+      "plugins": ["import"],
+      "env": { "node": true, "es6": true },
+      "rules": {
+        "import/order": [
+          "warn",
+          {
+            "groups": [
+              "builtin",
+              "external",
+              "internal",
+              "sibling",
+              "parent",
+              "index",
+              "type"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["**/**.test.{js,jsx,ts,tsx}"],
+      "extends": ["plugin:testing-library/react"],
+      "env": { "jest": true, "node": true, "browser": true }
     },
     {
       "files": ["**/*.{ts,tsx}"],
-      "globals": { "globalThis": false }
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint"],
+      "globals": { "globalThis": false },
+      "rules": {
+        "@typescript-eslint/consistent-type-imports": "error"
+      }
     },
     {
       "files": ["**/*.tsx"],
@@ -19,6 +47,7 @@
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
         "consistent-return": "off",
+        "react/destructuring-assignment": ["warn", "always"],
         "react/function-component-definition": [
           "error",
           {
@@ -29,7 +58,19 @@
         "react/jsx-filename-extension": [
           2,
           { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
-        ]
+        ],
+        "no-restricted-syntax": [
+          "error",
+          {
+            "selector": "ImportDeclaration[source.value='react'][specifiers.0.type='ImportDefaultSpecifier']",
+            "message": "Default React import not allowed since we use the TypeScript jsx-transform. If you need a global type that collides with a React named export (such as `MouseEvent`), try using `globalThis.MouseHandler`"
+          },
+          {
+            "selector": "ImportDeclaration[source.value='react'] :matches(ImportNamespaceSpecifier)",
+            "message": "Named * React import is not allowed. Please import what you need from React with Named Imports"
+          }
+        ],
+        "@typescript-eslint/consistent-type-definitions": ["error", "type"]
       }
     },
     {
@@ -67,6 +108,12 @@
         "no-unused-expressions": "off",
         "no-unused-vars": "off",
         "prefer-promise-reject-errors": "off"
+      }
+    },
+    {
+      "files": ["**/*.stories.{ts,tsx}"],
+      "rules": {
+        "import/no-anonymous-default-export": "off"
       }
     }
   ]

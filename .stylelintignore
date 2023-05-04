@@ -1,2 +1,11 @@
+# Next.js files
 build
+
+# Public Folder
 public
+
+# Jest
+coverage
+
+# Storybook
+storybook-static

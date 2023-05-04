@@ -106,3 +106,8 @@ blockquote {
 iframe {
   border: none;
 }
+
+[data-theme='light'] .dark-mode-only,
+[data-theme='dark'] .light-mode-only {
+  display: none;
+}
