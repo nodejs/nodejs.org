@@ -17,7 +17,10 @@ const LanguageSelector = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  useClickOutside(ref, () => setShowDropdown(false));
+  useClickOutside({
+    ref,
+    handler: () => setShowDropdown(false),
+  });
 
   const { availableLocales, currentLocale } = useLocale();
 

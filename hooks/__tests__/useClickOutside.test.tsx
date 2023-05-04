@@ -7,7 +7,7 @@ describe('useClickOutside', () => {
     const handler = jest.fn();
     const Component = () => {
       const ref = useRef(null);
-      useClickOutside(ref, handler);
+      useClickOutside({ ref, handler });
       return (
         <>
           <div ref={ref}>inside</div>
@@ -26,7 +26,7 @@ describe('useClickOutside', () => {
     const handler = jest.fn();
     const Component = () => {
       const ref = useRef(null);
-      useClickOutside(ref, handler);
+      useClickOutside({ ref, handler });
       return <div ref={ref}>inside</div>;
     };
     render(<Component />);
