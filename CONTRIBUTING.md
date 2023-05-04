@@ -106,7 +106,6 @@ We also offer other commands that offer you assistance during your local develop
   - `npx turbo test:unit` runs jest (unit-tests) locally
   - `npx turbo test:storybook` runs storybook test-runner tests
     - `npx turbo test:storybook:snapshot` generates and updates snapshots for all storybook components.
-- `npx turbo test` runs jest (unit-tests) locally
 
 ## Creating Components
 
