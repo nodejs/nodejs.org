@@ -2,7 +2,12 @@ import { NextResponse } from 'next/server';
 import localeConfig from './i18n/config.json';
 import type { NextRequest } from 'next/server';
 
-const LOCALE_CODES = localeConfig.map(locale => locale.code);
+// As set of available and enabled locales for the website
+// This is used for allowing us to redirect the user to any
+// of the available locales that we have enabled on the website
+const localeCodes = localeConfig
+  .filter(locale => locale.enabled)
+  .map(locale => locale.code);
 
 export async function middleware(req: NextRequest) {
   const { pathname, search } = req.nextUrl;
@@ -36,7 +41,7 @@ export async function middleware(req: NextRequest) {
   // We check if we have any matching Language in the order of preference given
   // And if yes, we return that Locale Code
   const matchedLocaleCode = acceptedLanguages.find(acceptedLocale =>
-    LOCALE_CODES.some(supportedLocale => supportedLocale === acceptedLocale)
+    localeCodes.some(supportedLocale => supportedLocale === acceptedLocale)
   );
 
   // We create a new Response Object containing the Locale Match or the default Language
