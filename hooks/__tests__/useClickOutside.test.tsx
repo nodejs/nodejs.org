@@ -1,30 +1,38 @@
 import { useRef } from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import { useClickOutside } from '../useClickOutside';
 
 describe('useClickOutside', () => {
-  const mockFn = jest.fn(() => console.log('click outside'));
-  const SubComponent = ({ onClickOutside }: { onClickOutside: () => void }) => {
-    const ref = useRef(null);
-    useClickOutside(ref, onClickOutside);
-    return <div ref={ref}>inside</div>;
-  };
-  const Component = () => (
-    <div>
-      outside
-      <SubComponent onClickOutside={mockFn} />
-    </div>
-  );
-
-  it('should call onClickOutside when click outside', () => {
+  it('should call the handler function when clicking outside of the element', () => {
+    const handler = jest.fn();
+    const Component = () => {
+      const ref = useRef(null);
+      useClickOutside(ref, handler);
+      return (
+        <>
+          <div ref={ref}>inside</div>
+          <div>outside</div>
+        </>
+      );
+    };
     render(<Component />);
+
     fireEvent.click(screen.getByText('outside'));
-    expect(mockFn).toHaveBeenCalled();
+
+    expect(handler).toHaveBeenCalled();
   });
 
-  it('should not call onClickOutside when click inside', () => {
+  it('should not call the handler function when clicking inside of the element', () => {
+    const handler = jest.fn();
+    const Component = () => {
+      const ref = useRef(null);
+      useClickOutside(ref, handler);
+      return <div ref={ref}>inside</div>;
+    };
     render(<Component />);
+
     fireEvent.click(screen.getByText('inside'));
-    expect(mockFn).not.toHaveBeenCalled();
+
+    expect(handler).not.toHaveBeenCalled();
   });
 });
