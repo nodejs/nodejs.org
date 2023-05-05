@@ -12,10 +12,8 @@ type UseClickOutsideProps = {
 export const useClickOutside = (props: UseClickOutsideProps) => {
   useEffect(() => {
     const listener = (event: MouseEvent | TouchEvent) => {
-      if (
-        !props.ref.current ||
-        props.ref.current.contains(event.target as Node)
-      ) {
+      const el = props.ref?.current;
+      if (!el || el.contains(event.target as Node)) {
         return;
       }
       props.handler(event);
