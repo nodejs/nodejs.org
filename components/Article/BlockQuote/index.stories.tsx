@@ -10,6 +10,8 @@ export const Default: Story = {
   },
 };
 
+export const Empty: Story = {};
+
 export const MultipleParagraph: Story = {
   args: {
     children: [
