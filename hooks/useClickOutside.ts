@@ -1,31 +1,29 @@
-import { useEffect } from 'react';
-import type { RefObject } from 'react';
+import { useEffect, useRef } from 'react';
 
-// eslint-disable-next-line no-unused-vars
-type TypeHandler = (_event: MouseEvent | TouchEvent) => void;
+type useClickOutsideType = (
+  // eslint-disable-next-line no-unused-vars
+  event: MouseEvent | TouchEvent
+) => void;
 
-type UseClickOutsideProps = {
-  ref: RefObject<HTMLElement>;
-  handler: TypeHandler;
-};
-
-export const useClickOutside = (props: UseClickOutsideProps) => {
+export const useClickOutside = <T extends HTMLElement>(
+  handler: useClickOutsideType
+) => {
+  const ref = useRef<T>();
+  const clickEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
   useEffect(() => {
     const listener = (event: MouseEvent | TouchEvent) => {
-      const el = props.ref?.current;
+      const el = ref?.current;
       if (!el || el.contains(event.target as Node)) {
         return;
       }
-      props.handler(event);
+      handler(event);
     };
 
-    document.addEventListener('mousedown', listener, true);
-    document.addEventListener('touchstart', listener, true);
-
+    document.addEventListener(clickEvent, listener, true);
     return () => {
-      document.removeEventListener('mousedown', listener);
-      document.removeEventListener('touchstart', listener);
+      document.removeEventListener(clickEvent, listener);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.ref, props.handler]);
+  }, [ref, handler]);
+  return ref;
 };
