@@ -1,0 +1,13 @@
+.sectionTitle,
+%section-title {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-overline);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--space-02);
+  line-height: var(--line-height-overline);
+  text-transform: uppercase;
+
+  .active {
+    color: var(--brand4);
+  }
+}

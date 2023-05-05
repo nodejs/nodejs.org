@@ -18,3 +18,16 @@ pages/en/blog/year-[0-9][0-9][0-9][0-9].md
 # ESLint Cache Files
 .eslintjscache
 .eslintmdcache
+
+# Jest
+coverage
+.swc
+
+# Storybook
+storybook-static
+
+# Vercel Config
+.vercel
+
+# TurboRepo
+.turbo

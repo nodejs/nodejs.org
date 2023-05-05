@@ -1,9 +1,8 @@
-import type { PropsWithChildren } from 'react';
-
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import type { FC, PropsWithChildren } from 'react';
 
-const BaseLayout = ({ children }: PropsWithChildren) => (
+const BaseLayout: FC<PropsWithChildren> = ({ children }) => (
   <>
     <Header />
     <main id="main">{children}</main>

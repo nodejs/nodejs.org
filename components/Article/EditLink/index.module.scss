@@ -1,0 +1,30 @@
+.edit {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: var(--space-48);
+
+  a {
+    color: var(--color-text-secondary);
+    font-family: var(--sans-serif);
+    font-size: var(--font-size-body2);
+    font-weight: var(--font-weight-regular);
+    margin-left: 0;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    vertical-align: middle;
+
+    span {
+      font-weight: var(--font-weight-regular);
+      vertical-align: middle;
+    }
+
+    &:hover {
+      color: var(--brand-light);
+    }
+
+    svg {
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+  }
+}

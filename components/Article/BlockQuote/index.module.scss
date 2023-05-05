@@ -1,0 +1,22 @@
+.blockQuote {
+  background-color: var(--color-fill-banner);
+  border-radius: 5px;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-body1);
+  margin: var(--space-16) auto;
+  max-width: 90vw;
+  padding: var(--space-12);
+  position: relative;
+
+  @media (max-width: 900px) {
+    margin: var(--space-08) auto;
+  }
+
+  p:first-child {
+    margin-top: 0;
+  }
+
+  p:last-child {
+    margin: 0;
+  }
+}

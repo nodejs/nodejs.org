@@ -1,0 +1,24 @@
+.prevNextLink {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 5rem 0 0 0;
+
+  a {
+    align-items: center;
+    color: var(--black7) !important;
+    display: flex;
+    font-family: var(--sans-serif);
+    font-size: 1.4rem;
+    font-weight: var(--font-weight-regular);
+    text-decoration: none !important;
+    text-transform: uppercase;
+    vertical-align: middle;
+
+    &:hover {
+      color: var(--brand-light) !important;
+    }
+  }
+}

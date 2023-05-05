@@ -1,14 +1,15 @@
 import { FormattedMessage } from 'react-intl';
 import Link from 'next/link';
-
 import { getNodejsChangelog } from '../../util/getNodeJsChangelog';
 import { getNodeApiLink } from '../../util/getNodeApiLink';
-
 import type { ExtendedNodeVersionData } from '../../types';
+import type { FC } from 'react';
 
 type DownloadReleasesTableProps = { releases: ExtendedNodeVersionData[] };
 
-const DownloadReleasesTable = ({ releases }: DownloadReleasesTableProps) => (
+const DownloadReleasesTable: FC<DownloadReleasesTableProps> = ({
+  releases,
+}) => (
   <table id="tbVersions" className="download-table full-width">
     <thead>
       <tr>

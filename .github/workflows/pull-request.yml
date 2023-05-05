@@ -4,9 +4,6 @@ on:
   pull_request:
   workflow_dispatch:
 
-env:
-  FORCE_COLOR: 2
-
 jobs:
   lint:
     name: Lint
@@ -15,6 +12,8 @@ jobs:
     steps:
       - name: Git Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -25,8 +24,77 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
+      - name: Restore Cache
+        uses: actions/cache/restore@v3
+        with:
+          path: |
+            node_modules/.cache
+          key: tests-${{ hashFiles('**/package-lock.json') }}-
+          restore-keys: |
+            tests-${{ hashFiles('**/package-lock.json') }}-
+          enableCrossOsArchive: true
+
       - name: Run Linting
-        run: npm run lint
+        run: npx turbo lint
+        env:
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+
+      - name: Save Cache
+        uses: actions/cache/save@v3
+        with:
+          path: |
+            node_modules/.cache
+          key: tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          enableCrossOsArchive: true
+
+  unit-tests:
+    name: Tests on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install NPM packages
+        run: npm ci
+
+      - name: Restore Cache
+        uses: actions/cache/restore@v3
+        with:
+          path: |
+            node_modules/.cache
+          key: tests-${{ hashFiles('**/package-lock.json') }}-
+          restore-keys: |
+            tests-${{ hashFiles('**/package-lock.json') }}-
+          enableCrossOsArchive: true
+
+      - name: Run Unit Tests
+        run: npx turbo test:ci
+        env:
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+
+      - name: Save Cache
+        uses: actions/cache/save@v3
+        with:
+          path: |
+            node_modules/.cache
+          key: tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          enableCrossOsArchive: true
 
   build:
     name: Build on ${{ matrix.os }}
@@ -40,6 +108,8 @@ jobs:
     steps:
       - name: Git Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -50,21 +120,29 @@ jobs:
       - name: Install NPM packages
         run: npm ci
 
-      - name: Restore Next.js cache
+      - name: Restore Cache
         uses: actions/cache/restore@v3
         with:
           path: |
             .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+            node_modules/.cache
+          key: build-${{ hashFiles('**/package-lock.json') }}-
+          restore-keys: |
+            build-${{ hashFiles('**/package-lock.json') }}-
+          enableCrossOsArchive: true
 
       - name: Build Next.js
-        run: npm run build
+        run: npx turbo build
         env:
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           NODE_OPTIONS: '--max_old_space_size=4096'
 
-      - name: Save Next.js cache
+      - name: Save Cache
         uses: actions/cache/save@v3
         with:
           path: |
             .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('.next/cache/eslint') }}
+            node_modules/.cache
+          key: build-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          enableCrossOsArchive: true
