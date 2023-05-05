@@ -153,6 +153,15 @@
     "enabled": true
   },
   {
+    "code": "vn",
+    "localName": "Tiếng Việt",
+    "name": "Vietnamese",
+    "langDir": "ltr",
+    "dateFormat": "DD.MM.YYYY",
+    "hrefLang": "vn",
+    "enabled": true
+  }
+  {
     "code": "zh-cn",
     "localName": "简体中文",
     "name": "Simplified Chinese",
