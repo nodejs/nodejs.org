@@ -83,7 +83,13 @@ jobs:
           enableCrossOsArchive: true
 
       - name: Run Unit Tests
-        run: npx turbo test:ci
+        run: npx turbo test:unit -- --coverage
+        env:
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+
+      - name: Run Storybook Tests
+        run: npx turbo test:storybook
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
