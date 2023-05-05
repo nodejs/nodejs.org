@@ -8,7 +8,7 @@ type useClickOutsideType = (
 export const useClickOutside = <T extends HTMLElement>(
   handler: useClickOutsideType
 ) => {
-  const ref = useRef<T>();
+  const ref = useRef<T>(null);
   const clickEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
   useEffect(() => {
     const listener = (event: MouseEvent | TouchEvent) => {
