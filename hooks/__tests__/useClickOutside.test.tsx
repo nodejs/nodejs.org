@@ -25,12 +25,14 @@ describe('useClickOutside', () => {
       </div>
     );
   };
+
   it('should call handler when click outside', () => {
     render(<Component />);
     fireEvent.click(screen.getByText('Open'));
     fireEvent.click(screen.getByText('Page'));
     expect(screen.queryByText('Modal')).not.toBeInTheDocument();
   });
+
   it('should not call handler when click inside', () => {
     render(<Component />);
     fireEvent.click(screen.getByText('Open'));

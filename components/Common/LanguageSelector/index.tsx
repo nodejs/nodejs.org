@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useCallback } from 'react';
 import { MdOutlineTranslate } from 'react-icons/md';
 import { useIntl } from 'react-intl';
 import styles from './index.module.scss';
@@ -16,7 +16,8 @@ const dropdownStyle = {
 const LanguageSelector = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
-  const ref = useClickOutside<HTMLDivElement>(() => setShowDropdown(false));
+  const dropdownHandler = useCallback(() => setShowDropdown(false), []);
+  const ref = useClickOutside<HTMLDivElement>(dropdownHandler);
 
   const { availableLocales, currentLocale } = useLocale();
 

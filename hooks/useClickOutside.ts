@@ -9,8 +9,8 @@ export const useClickOutside = <T extends HTMLElement>(
   handler: useClickOutsideType
 ) => {
   const ref = useRef<T>(null);
-  const clickEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
   useEffect(() => {
+    const clickEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
     const listener = (event: MouseEvent | TouchEvent) => {
       const el = ref?.current;
       if (!el || el.contains(event.target as Node)) {
@@ -23,7 +23,6 @@ export const useClickOutside = <T extends HTMLElement>(
     return () => {
       document.removeEventListener(clickEvent, listener);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref, handler]);
   return ref;
 };
