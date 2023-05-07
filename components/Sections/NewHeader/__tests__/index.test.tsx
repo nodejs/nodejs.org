@@ -29,6 +29,10 @@ jest.mock('next/router', () => ({
 jest.mock('../../../../hooks/useLocale', () => ({
   useLocale: () => ({
     currentLocale: { code: 'en', name: 'English', localName: 'English' },
+    availableLocales: [
+      { code: 'en', name: 'English', localName: 'English' },
+      { code: 'es', name: 'Spanish', localName: 'Español' },
+    ],
   }),
 }));
 
