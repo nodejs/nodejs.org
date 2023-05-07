@@ -37,7 +37,7 @@ layout: contribute.hbs
 ## Написание кода
 
 Если вы хотите исправить ошибки или добавить новую функциональность в Node.js, обязательно ознакомьтесь с
-[правилами участия для Node.js](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md#pull-requests). Там
+[правилами участия для Node.js](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). Там
 же объясняется процесс проверки существующими сотрудниками всех вкладов в проект.
 
 Если вам интересно, как начать, вы можете проверить [Node Todo](https://www.nodetodo.org/), который поможет найти ваш первый шаг в развитии Node.js сообщества.

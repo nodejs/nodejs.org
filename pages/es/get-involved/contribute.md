@@ -28,7 +28,7 @@ El proyecto Node.js se gestiona actualmente en varios repositorios de GitHub sep
 
 ## Aportaciones de Código
 
-Si desea corregir bugs fix o agregar una nueva funcionalidad a Node.js, asegúrese de consultar las [Pautas de contribución de Node.js](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md#pull-requests). El proceso de revisión por parte de los colaboradores actuales para todas las aportaciones al proyecto se explica también en ese enlace.
+Si desea corregir bugs fix o agregar una nueva funcionalidad a Node.js, asegúrese de consultar las [Pautas de contribución de Node.js](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). El proceso de revisión por parte de los colaboradores actuales para todas las aportaciones al proyecto se explica también en ese enlace.
 
 Si se pregunta cómo comenzar, consulte [Node Todo](https://www.nodetodo.org/), puede guiarle con su primera aportación.
 
