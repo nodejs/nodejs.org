@@ -3,13 +3,9 @@ import { useState } from 'react';
 import { useClickOutside } from '../useClickOutside';
 
 describe('useClickOutside', () => {
-  const handler = jest.fn();
   const Component = () => {
     const [state, setState] = useState(false);
-    const ref = useClickOutside<HTMLDivElement>(() => {
-      setState(false);
-      handler();
-    });
+    const ref = useClickOutside<HTMLDivElement>(() => setState(false));
 
     return (
       <div>
