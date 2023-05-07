@@ -20,6 +20,6 @@ export const useClickOutside = <T extends HTMLElement>(
 
     document.addEventListener(clickEvent, listener, true);
     return () => document.removeEventListener(clickEvent, listener);
-  }, [ref, handler]);
+  }, [ref.current handler]);
   return ref;
 };
