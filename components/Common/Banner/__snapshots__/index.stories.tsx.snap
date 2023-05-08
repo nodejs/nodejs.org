@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Common/Banner WithHTML smoke-test 1`] = `
+<div class="Banner_banner__GAFb9">
+  <a href="https://nodejs.org/en/"
+     target="_blank"
+     rel="noopener noreferrer"
+  >
+    <p>
+      Banner HTML
+    </p>
+  </a>
+</div>
+`;
+
+exports[`Common/Banner WithHTMLImage smoke-test 1`] = `
+<div class="Banner_banner__GAFb9">
+  <a href="https://nodejs.org/en/"
+     target="_blank"
+     rel="noopener noreferrer"
+  >
+    <img alt="Banner Image"
+         src="/static/images/nodejs-training.png"
+    >
+  </a>
+</div>
+`;
+
+exports[`Common/Banner WithText smoke-test 1`] = `
+<div class="Banner_banner__GAFb9">
+  <p>
+    <a href="https://nodejs.org/en/"
+       class="Banner_bannerBtn__FqghI"
+       target="_blank"
+       rel="noopener noreferrer"
+    >
+      Read More
+    </a>
+    Banner Text
+  </p>
+</div>
+`;
