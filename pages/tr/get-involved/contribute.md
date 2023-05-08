@@ -28,7 +28,7 @@ Node.js projesi şu anda her birinin kendi ayrı sorunlar veri tabanı ile bir d
 
 ## Kod katkıları
 
-Eğer hataları düzeltmek veya Node.js'e yeni bir özellik eklemek istiyorsanız, lütfen [Node.js Katkı Yönergeleri](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md#pull-requests)'ne başvurduğunuzdan emin olun. Projeye yapılan tüm katkıların mevcut katılımcılar tarafından gözden geçirme süreçleri burada açıklanmıştır.
+Eğer hataları düzeltmek veya Node.js'e yeni bir özellik eklemek istiyorsanız, lütfen [Node.js Katkı Yönergeleri](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests)'ne başvurduğunuzdan emin olun. Projeye yapılan tüm katkıların mevcut katılımcılar tarafından gözden geçirme süreçleri burada açıklanmıştır.
 
 Nasıl başlayacağınızı merak ediyorsanız, ilk adımlarınızda size rehberlik edebilecek [Node Todo](https://www.nodetodo.org/) sayfasına göz atabilirsiniz.
 

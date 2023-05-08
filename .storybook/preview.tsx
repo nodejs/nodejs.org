@@ -39,7 +39,9 @@ export const decorators = [
                 }
               `}
             </style>
-            <Story />
+            <div data-test-id="story-root">
+              <Story />
+            </div>
           </NodeDataProvider>
         </LocaleProvider>
       </SiteProvider>

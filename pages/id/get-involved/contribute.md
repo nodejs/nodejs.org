@@ -28,7 +28,7 @@ Proyek Node.js saat ini dikelola di sejumlah repositori GitHub yang terpisah, ma
 
 ## Kontribusi kode
 
-Jika Anda ingin memperbaiki bug atau menambahkan fitur baru ke Node.js, pastikan Anda membaca [Pedoman Kontribusi Node.js](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md#pull-requests). Proses peninjauan oleh kolaborator yang ada untuk semua kontribusi pada proyek juga dijelaskan di sana.
+Jika Anda ingin memperbaiki bug atau menambahkan fitur baru ke Node.js, pastikan Anda membaca [Pedoman Kontribusi Node.js](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests). Proses peninjauan oleh kolaborator yang ada untuk semua kontribusi pada proyek juga dijelaskan di sana.
 
 Jika kamu bertanya-tanya bagaimana memulainya, kamu dapat memeriksa [Node Todo](https://www.nodetodo.org/) yang dapat memandu mu menuju kontribusi pertama Anda.
 
@@ -41,7 +41,7 @@ Dengan menjadi kolaborator, kontributor dapat memberikan dampak yang lebih besar
 * komentar tentang masalah dan permintaan tarik
 * kontribusi ke situs web Node.js
 * bantuan yang diberikan kepada pengguna akhir dan kontributor pemula
-* partisipasi dalam Kelompok Kerja
+* partisipasi dalam kelompok kerja
 * partisipasi lain dalam komunitas Node.js yang lebih luas
 
 Jika individu yang memberikan kontribusi berharga tidak yakin bahwa mereka telah dipertimbangkan untuk akses komit, mereka dapat [mencatat masalah](https://github.com/nodejs/TSC/issues) atau [menghubungi anggota TSC](https://github.com/nodejs/node#tsc-technical-steering-committee) secara langsung.
