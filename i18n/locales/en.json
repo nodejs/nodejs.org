@@ -58,5 +58,9 @@
   "components.home.nodeFeatures.openSource.description": "Node.js is open source and actively maintained by contributors all over the world",
   "components.home.nodeFeatures.everywhere.title": "Everywhere",
   "components.home.nodeFeatures.everywhere.description": "Node.js has been adapted to work in a wide variety of places",
-  "components.common.shellBox.copy": "{copied, select, true {copied}other {copy}}"
+  "components.common.shellBox.copy": "{copied, select, true {copied}other {copy}}",
+  "components.hero.downloadLts": "Download Node (LTS)",
+  "components.hero.currentVersion": "Version {version}",
+  "components.hero.getCurrent": "Download Latest ({version})",
+  "components.hero.learn": "Learn Node"
 }
