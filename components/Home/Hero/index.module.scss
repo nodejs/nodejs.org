@@ -1,0 +1,110 @@
+@use '../../../styles/typography.scss';
+
+.hero {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-96) 0 var(--space-128) 0;
+  text-align: center;
+
+  h1,
+  p {
+    margin: 0;
+  }
+
+  h1 {
+    max-width: 840px;
+
+    @media (max-width: 900px) {
+      font-size: var(--font-size-display2);
+      line-height: 48px;
+      max-width: 90vw;
+    }
+  }
+
+  .subTitle {
+    @extend .t-subheading;
+
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-light);
+    margin: var(--space-32) 0 var(--space-32) 0;
+    max-width: 780px;
+
+    @media (max-width: 900px) {
+      max-width: 90vw;
+    }
+  }
+
+  .buttonsContainer {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .downloadLtsContainer {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      & > p {
+        margin-top: var(--space-08);
+      }
+
+      @media (max-width: 640px) {
+        margin-bottom: var(--space-20);
+      }
+    }
+  }
+}
+
+.downloadButton {
+  align-items: center;
+  background-color: var(--brand6);
+  border-radius: 5rem;
+  box-sizing: border-box;
+  color: var(--black0);
+  display: flex;
+  flex-direction: column;
+  font-weight: var(--font-weight-semibold);
+  height: 5.6rem;
+  justify-content: center;
+  margin: 0 var(--space-16);
+  padding: 2.4rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease-out;
+
+  span {
+    color: var(--black4);
+    font-size: var(--font-size-body3);
+  }
+
+  &:hover {
+    background-color: var(--brand7);
+    color: var(--black0);
+  }
+
+  &:focus {
+    @extend .downloadButton;
+  }
+
+  &Inverse {
+    @extend .downloadButton;
+
+    background-color: transparent;
+    border: var(--brand6) var(--space-02) solid;
+    color: var(--brand6);
+    transition: background-color 0.2s ease-out;
+
+    &:hover {
+      background-color: var(--brand7);
+      border: var(--brand7) var(--space-02) solid;
+    }
+  }
+}
+
+[data-theme='dark'] .downloadButtonInverse {
+  color: var(--black0);
+}
