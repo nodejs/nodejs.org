@@ -1,5 +1,4 @@
 {
-  "components.api.sourceLink": "Source Code:",
   "components.footer.scrollToTop.button": "Scroll to top",
   "components.header.links.home": "Home",
   "components.header.links.about": "About",
@@ -59,5 +58,6 @@
   "components.home.nodeFeatures.openSource.description": "Node.js is open source and actively maintained by contributors all over the world",
   "components.home.nodeFeatures.everywhere.title": "Everywhere",
   "components.home.nodeFeatures.everywhere.description": "Node.js has been adapted to work in a wide variety of places",
-  "components.common.shellBox.copy": "{copied, select, true {copied}other {copy}}"
+  "components.common.shellBox.copy": "{copied, select, true {copied}other {copy}}",
+  "components.api.sourceLink": "Source Code:"
 }
