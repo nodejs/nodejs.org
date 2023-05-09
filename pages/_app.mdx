@@ -3,26 +3,40 @@ import { NodeDataProvider } from '../providers/nodeDataProvider';
 import { LocaleProvider } from '../providers/localeProvider';
 import { SiteProvider } from '../providers/siteProvider';
 import sourceSansPro from '../util/sourceSansPro';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { blue } from '@material-ui/core/colors';
 
 import '../styles/old/index.scss';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: blue[500],
+    },
+  },
+  typography: {
+    fontFamily: [
+      sourceSansPro.style.fontFamily,
+      'Open Sans',
+      'Roboto',
+      'San Francisco',
+      'Helvetica',
+      'Arial',
+      'sans-serif',
+    ].join(','),
+  },
+});
 
 export default function App({ Component, pageProps }) {
   return (
     <SiteProvider>
       <LocaleProvider i18nData={pageProps.i18nData}>
         <NodeDataProvider nodeVersionData={pageProps.nodeVersionData}>
-          <MotionConfig reducedMotion="user">
-            {/* @TODO: This is a temporary solution. We might want to adopt Emotion/StyledComponents here */}
-            <style jsx global>
-              {`
-                body {
-                  font: 400 20px/1.5 ${sourceSansPro.style.fontFamily}, 'Open Sans',
-                    Roboto, 'San Francisco', Helvetica, Arial, sans-serif;
-                }
-              `}
-            </style>
-            <Component {...pageProps} />
-          </MotionConfig>
+          <ThemeProvider theme={theme}>
+            <MotionConfig reducedMotion="user">
+              <Component {...pageProps} />
+            </MotionConfig>
+          </ThemeProvider>
         </NodeDataProvider>
       </LocaleProvider>
     </SiteProvider>
