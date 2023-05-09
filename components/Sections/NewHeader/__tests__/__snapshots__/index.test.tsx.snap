@@ -55,35 +55,35 @@ exports[`Tests for Header component Theme color switcher skips rendering in case
           <a
             href="/en/learn"
           >
-            components.header.links.learn
+            components.section.header.links.learn
           </a>
         </li>
         <li>
           <a
             href="/en/download"
           >
-            components.header.links.download
+            components.section.header.links.download
           </a>
         </li>
         <li>
           <a
             href="/en/docs"
           >
-            components.header.links.apiDocs
+            components.section.header.links.apiDocs
           </a>
         </li>
         <li>
           <a
             href="/en/about"
           >
-            components.header.links.about
+            components.section.header.links.about
           </a>
         </li>
         <li>
           <a
             href="https://openjsf.org/certification/"
           >
-            components.header.links.certification
+            components.section.header.links.certification
           </a>
         </li>
       </ul>
@@ -273,35 +273,35 @@ exports[`Tests for Header component renders correctly 1`] = `
           <a
             href="/en/learn"
           >
-            components.header.links.learn
+            components.section.header.links.learn
           </a>
         </li>
         <li>
           <a
             href="/en/download"
           >
-            components.header.links.download
+            components.section.header.links.download
           </a>
         </li>
         <li>
           <a
             href="/en/docs"
           >
-            components.header.links.apiDocs
+            components.section.header.links.apiDocs
           </a>
         </li>
         <li>
           <a
             href="/en/about"
           >
-            components.header.links.about
+            components.section.header.links.about
           </a>
         </li>
         <li>
           <a
             href="https://openjsf.org/certification/"
           >
-            components.header.links.certification
+            components.section.header.links.certification
           </a>
         </li>
       </ul>
@@ -491,35 +491,35 @@ exports[`Tests for Header component renders shorter menu items for mobile 1`] = 
           <a
             href="/en/learn"
           >
-            components.header.links.learn
+            components.section.header.links.learn
           </a>
         </li>
         <li>
           <a
             href="/en/download"
           >
-            components.header.links.download
+            components.section.header.links.download
           </a>
         </li>
         <li>
           <a
             href="/en/docs"
           >
-            components.header.links.apiDocs
+            components.section.header.links.apiDocs
           </a>
         </li>
         <li>
           <a
             href="/en/about"
           >
-            components.header.links.about
+            components.section.header.links.about
           </a>
         </li>
         <li>
           <a
             href="https://openjsf.org/certification/"
           >
-            components.header.links.certification
+            components.section.header.links.certification
           </a>
         </li>
       </ul>
