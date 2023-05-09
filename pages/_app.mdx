@@ -3,20 +3,14 @@ import { NodeDataProvider } from '../providers/nodeDataProvider';
 import { LocaleProvider } from '../providers/localeProvider';
 import { SiteProvider } from '../providers/siteProvider';
 import sourceSansPro from '../util/sourceSansPro';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { blue } from '@material-ui/core/colors';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import '../styles/old/index.scss';
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: blue[500],
-    },
-  },
+const theme = createTheme({
   typography: {
     fontFamily: [
-      sourceSansPro.style.fontFamily,
+      'Source Sans Pro',
       'Open Sans',
       'Roboto',
       'San Francisco',
@@ -32,11 +26,11 @@ export default function App({ Component, pageProps }) {
     <SiteProvider>
       <LocaleProvider i18nData={pageProps.i18nData}>
         <NodeDataProvider nodeVersionData={pageProps.nodeVersionData}>
-          <ThemeProvider theme={theme}>
-            <MotionConfig reducedMotion="user">
+          <MotionConfig reducedMotion="user">
+            <ThemeProvider theme={theme}>
               <Component {...pageProps} />
-            </MotionConfig>
-          </ThemeProvider>
+            </ThemeProvider>
+          </MotionConfig>
         </NodeDataProvider>
       </LocaleProvider>
     </SiteProvider>
