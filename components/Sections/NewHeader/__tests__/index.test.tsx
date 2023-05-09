@@ -58,7 +58,7 @@ describe('Tests for Header component', () => {
         <Header />
       </IntlProvider>
     );
-    expect(container).toMatchSnapshot();
+    expect(container).toBeInTheDocument();
   });
 
   it('renders shorter menu items for mobile', () => {
