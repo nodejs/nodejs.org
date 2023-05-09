@@ -2,10 +2,8 @@
   "components.footer.scrollToTop.button": "Scroll to top",
   "components.header.links.home": "Home",
   "components.header.links.about": "About",
-  "components.header.links.learn": "Learn",
   "components.header.links.download": "Downloads",
   "components.header.links.docs": "Docs",
-  "components.header.links.apiDocs": "API Docs",
   "components.header.links.getInvolved": "Get Involved",
   "components.header.links.security": "Security",
   "components.header.links.certification": "Certification",
@@ -60,5 +58,7 @@
   "components.home.nodeFeatures.openSource.description": "Node.js is open source and actively maintained by contributors all over the world",
   "components.home.nodeFeatures.everywhere.title": "Everywhere",
   "components.home.nodeFeatures.everywhere.description": "Node.js has been adapted to work in a wide variety of places",
-  "components.common.shellBox.copy": "{copied, select, true {copied}other {copy}}"
+  "components.common.shellBox.copy": "{copied, select, true {copied}other {copy}}",
+  "components.header.links.learn": "Learn",
+  "components.header.links.apiDocs": "API Docs"
 }
