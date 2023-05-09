@@ -39,27 +39,27 @@ const Header: FC = () => (
       <ul className={styles.tabs}>
         <li>
           <ActiveLocalizedLink href="/learn" activeClassName={styles.active}>
-            <FormattedMessage id="components.header.links.learn" />
+            <FormattedMessage id="components.section.header.links.learn" />
           </ActiveLocalizedLink>
         </li>
         <li>
           <ActiveLocalizedLink href="/download" activeClassName={styles.active}>
-            <FormattedMessage id="components.header.links.download" />
+            <FormattedMessage id="components.section.header.links.download" />
           </ActiveLocalizedLink>
         </li>
         <li>
           <ActiveLocalizedLink href="/docs" activeClassName={styles.active}>
-            <FormattedMessage id="components.header.links.apiDocs" />
+            <FormattedMessage id="components.section.header.links.apiDocs" />
           </ActiveLocalizedLink>
         </li>
         <li>
           <ActiveLocalizedLink href="/about" activeClassName={styles.active}>
-            <FormattedMessage id="components.header.links.about" />
+            <FormattedMessage id="components.section.header.links.about" />
           </ActiveLocalizedLink>
         </li>
         <li>
           <a href="https://openjsf.org/certification/">
-            <FormattedMessage id="components.header.links.certification" />
+            <FormattedMessage id="components.section.header.links.certification" />
           </a>
         </li>
       </ul>
