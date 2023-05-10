@@ -28,7 +28,7 @@ layout: contribute.hbs
 
 ## 代码贡献者
 
-若你想要协助 Node.js 修复缺陷或是增加新功能，请确保你已仔细阅读 [Node.js 贡献指南](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md#pull-requests)，里面也解释了贡献至本项目并等待协作者审核的详细过程。
+若你想要协助 Node.js 修复缺陷或是增加新功能，请确保你已仔细阅读 [Node.js 贡献指南](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests)，里面也解释了贡献至本项目并等待协作者审核的详细过程。
 
 如果你想知道该从何开始，你可以参考 [Node 该做什么列表](https://www.nodetodo.org/)，它可以引导你迈向你的第一个贡献。
 

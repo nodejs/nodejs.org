@@ -65,7 +65,7 @@ If you are wondering how to start, you can check [Node Todo](https://www.nodetod
 -->
 ## コードの貢献
 
-Node.js にバグを修正したり、新しい機能を追加したい場合は、必ず [Node.js コントリビューションガイドライン](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md#pull-requests) を参照してください。 プロジェクトへのすべての貢献に対する既存のコラボレータによるレビュープロセスもここで説明されています。
+Node.js にバグを修正したり、新しい機能を追加したい場合は、必ず [Node.js コントリビューションガイドライン](https://github.com/nodejs/node/blob/main/CONTRIBUTING.md/#pull-requests) を参照してください。 プロジェクトへのすべての貢献に対する既存のコラボレータによるレビュープロセスもここで説明されています。
 
 どのように始めるべきか疑問に思っているなら、最初の貢献に向かってあなたを導くかもしれない [Node Todo](https://www.nodetodo.org/) をチェックすることができます。
 
