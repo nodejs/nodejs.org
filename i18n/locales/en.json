@@ -1,8 +1,4 @@
 {
-  "components.api.apiChanges.addedIn": "Added in: {version}",
-  "components.api.apiChanges.history": "History",
-  "components.api.apiChanges.history.version": "Version",
-  "components.api.apiChanges.history.changes": "Changes",
   "components.footer.scrollToTop.button": "Scroll to top",
   "components.header.links.home": "Home",
   "components.header.links.about": "About",
@@ -62,5 +58,9 @@
   "components.home.nodeFeatures.openSource.description": "Node.js is open source and actively maintained by contributors all over the world",
   "components.home.nodeFeatures.everywhere.title": "Everywhere",
   "components.home.nodeFeatures.everywhere.description": "Node.js has been adapted to work in a wide variety of places",
-  "components.common.shellBox.copy": "{copied, select, true {copied}other {copy}}"
+  "components.common.shellBox.copy": "{copied, select, true {copied}other {copy}}",
+  "components.api.apiChanges.addedIn": "Added in: {version}",
+  "components.api.apiChanges.history": "History",
+  "components.api.apiChanges.history.version": "Version",
+  "components.api.apiChanges.history.changes": "Changes"
 }
