@@ -77,29 +77,8 @@
       float: left;
       height: 100%;
 
-      // @TODO: simplify this
-      &Red {
-        background: var(--black8);
-        border-radius: 50%;
-        display: inline-block;
-        height: 10px;
-        margin: 10px 5px;
-        width: 10px;
-        &:hover {
-          background: var(--danger5);
-        }
-      }
-      &Yellow {
-        background: var(--black8);
-        border-radius: 50%;
-        display: inline-block;
-        height: 10px;
-        margin: 10px 5px;
-        width: 10px;
-        &:hover {
-          background: var(--warning3);
-        }
-      }
+      &Red,
+      &Yellow,
       &Green {
         background: var(--black8);
         border-radius: 50%;
@@ -107,9 +86,16 @@
         height: 10px;
         margin: 10px 5px;
         width: 10px;
-        &:hover {
-          background: var(--brand5);
-        }
+      }
+
+      &Red:hover {
+        background: var(--danger5);
+      }
+      &Yellow:hover {
+        background: var(--warning3);
+      }
+      &Green:hover {
+        background: var(--brand5);
       }
     }
 

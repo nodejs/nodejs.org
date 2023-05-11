@@ -75,7 +75,7 @@ exports[`Home/InstallTabs Default smoke-test 1`] = `
             <span class="InstallTabs_installTextCommand__OPlTv">
               curl -o-
             </span>
-            https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh
+            https://raw.githubusercontent.com/nvm-sh/nvm//install.sh
             <span class="InstallTabs_installTextCommand__OPlTv">
               | bash
             </span>
