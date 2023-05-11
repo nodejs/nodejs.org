@@ -18,6 +18,7 @@ const ActiveLocalizedLink: FC<ActiveLocalizedLinkProps> = ({
   ...props
 }) => {
   const { asPath, isReady } = useRouter();
+
   const [computedClassName, setComputedClassName] = useState(className);
 
   useEffect(() => {
@@ -34,7 +35,7 @@ const ActiveLocalizedLink: FC<ActiveLocalizedLinkProps> = ({
       const currentPathName = new URL(asPath, location.href).pathname;
 
       const newClassName = classNames(className, {
-        activeClassName: linkPathName === currentPathName,
+        [activeClassName]: linkPathName === currentPathName,
       });
 
       if (newClassName !== computedClassName) {
