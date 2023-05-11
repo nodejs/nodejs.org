@@ -16,12 +16,6 @@ const withNextra = nextra({
 
     return pageOpts;
   },
-  webpack: config => ({
-    ...config,
-    cache: {
-      type: 'filesystem',
-    },
-  }),
 });
 
 const enableImageOptimization =
