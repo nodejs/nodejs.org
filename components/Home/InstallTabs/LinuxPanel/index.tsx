@@ -1,7 +1,9 @@
+import { useEffect, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import LocalizedLink from '../../../LocalizedLink';
 import { ShellBox } from '../../../Common';
 import styles from '../index.module.scss';
+import { getNvmLatestVersion } from '../../../../util/getNvmData';
 import type { FC } from 'react';
 
 type Props = {
@@ -34,8 +36,11 @@ export const PureLinuxPanel: FC<Props> = ({ nvmVersion }) => {
 };
 
 const LinuxPanel: FC = () => {
-  // @TODO: use hook to get latest version
-  const nvmVersion = 'v0.38.0';
+  const [nvmVersion, setNvmVersion] = useState('');
+
+  useEffect(() => {
+    getNvmLatestVersion().then(version => setNvmVersion(version));
+  }, []);
 
   return <PureLinuxPanel nvmVersion={nvmVersion} />;
 };
