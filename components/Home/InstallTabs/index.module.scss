@@ -1,0 +1,154 @@
+.install {
+  background: var(--black10);
+  border-radius: var(--space-04);
+  box-shadow: 5px 10px 50px rgba(0, 0, 0, 0.25);
+  color: var(--black0);
+  height: 450px;
+  margin: 0 auto;
+  margin-bottom: 240px;
+  max-width: 832px;
+  position: relative;
+  width: 90vw;
+  z-index: 2;
+  .reactTabs {
+    -webkit-tap-highlight-color: transparent;
+
+    &TabList {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    &Tab {
+      background: var(--black11);
+      border: 1px solid transparent;
+      border-bottom: none;
+      bottom: -1px;
+      color: var(--black4);
+      cursor: pointer;
+      display: inline-block;
+      list-style: none;
+      padding: 10px 12px;
+      position: relative;
+      text-align: center;
+      width: 100%;
+
+      &Selected {
+        background: var(--black10);
+        border-radius: 5px 5px 0 0;
+        color: #fff;
+      }
+
+      &:focus {
+        border-bottom: none;
+        border-color: var(--pink5);
+        box-shadow: 0 0 5px var(--pink5);
+        outline: none;
+
+        &:after {
+          background: var(--black10);
+          bottom: -5px;
+          content: '';
+          height: 5px;
+          left: 0;
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+
+    &TabPanel {
+      display: none;
+      padding: 20px;
+
+      &Selected {
+        display: block;
+      }
+    }
+  }
+
+  &Header {
+    font-weight: var(--font-weight-semibold);
+    height: 30px;
+    margin: 0 5px;
+
+    &Circles {
+      float: left;
+      height: 100%;
+
+      // @TODO: simplify this
+      &Red {
+        background: var(--black8);
+        border-radius: 50%;
+        display: inline-block;
+        height: 10px;
+        margin: 10px 5px;
+        width: 10px;
+        &:hover {
+          background: var(--danger5);
+        }
+      }
+      &Yellow {
+        background: var(--black8);
+        border-radius: 50%;
+        display: inline-block;
+        height: 10px;
+        margin: 10px 5px;
+        width: 10px;
+        &:hover {
+          background: var(--warning3);
+        }
+      }
+      &Green {
+        background: var(--black8);
+        border-radius: 50%;
+        display: inline-block;
+        height: 10px;
+        margin: 10px 5px;
+        width: 10px;
+        &:hover {
+          background: var(--brand5);
+        }
+      }
+    }
+
+    &Text {
+      line-height: 30px;
+      text-align: center;
+      width: calc(100% - 60px);
+    }
+  }
+
+  &Text {
+    color: var(--pink5);
+
+    &Line {
+      margin: var(--space-12) 0;
+    }
+
+    &NoSelect {
+      margin-right: var(--space-12);
+      user-select: none;
+    }
+
+    &Command {
+      color: var(--black0);
+    }
+  }
+
+  &DocsButton,
+  &DocsButton:hover {
+    border: 1px solid var(--black3);
+    border-radius: var(--space-04);
+    bottom: 2rem;
+    box-sizing: border-box;
+    color: var(--black3);
+    font-weight: var(--font-weight-semibold);
+    height: 4rem;
+    padding: var(--space-08) var(--space-16);
+    position: absolute;
+    right: 2rem;
+    text-decoration: none;
+  }
+}

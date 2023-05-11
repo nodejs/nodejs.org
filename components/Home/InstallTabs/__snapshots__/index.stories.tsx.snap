@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home/InstallTabs Default smoke-test 1`] = `
+<div class="InstallTabs_install__AmVIK">
+  <div class="InstallTabs_reactTabs__bJat9"
+       data-rttabs="true"
+  >
+    <div class="InstallTabs_installHeader__dlshy">
+      <div class="InstallTabs_installHeaderCircles__Ib171">
+        <div class="InstallTabs_installHeaderCirclesRed___evUB">
+        </div>
+        <div class="InstallTabs_installHeaderCirclesYellow__HfGea">
+        </div>
+        <div class="InstallTabs_installHeaderCirclesGreen__9I2jB">
+        </div>
+      </div>
+      <div class="InstallTabs_installHeaderText__nl2HE">
+        zsh
+      </div>
+    </div>
+    <ul class="InstallTabs_reactTabsTabList__44kO4"
+        role="tablist"
+    >
+      <li class="InstallTabs_reactTabsTab__bpQEH InstallTabs_reactTabsTabSelected__w3_IO"
+          role="tab"
+          id="tab:r0:0"
+          aria-selected="true"
+          aria-disabled="false"
+          aria-controls="panel:r0:0"
+          tabindex="0"
+          data-rttab="true"
+      >
+        macOS (nvm)
+      </li>
+      <li class="InstallTabs_reactTabsTab__bpQEH"
+          role="tab"
+          id="tab:r0:1"
+          aria-selected="false"
+          aria-disabled="false"
+          aria-controls="panel:r0:1"
+          data-rttab="true"
+      >
+        Windows (Chocolatey)
+      </li>
+      <li class="InstallTabs_reactTabsTab__bpQEH"
+          role="tab"
+          id="tab:r0:2"
+          aria-selected="false"
+          aria-disabled="false"
+          aria-controls="panel:r0:2"
+          data-rttab="true"
+      >
+        Linux (nvm)
+      </li>
+    </ul>
+    <div class="InstallTabs_reactTabsTabPanel__Hq7es InstallTabs_reactTabsTabPanelSelected__zS6go"
+         role="tabpanel"
+         id="panel:r0:0"
+         aria-labelledby="tab:r0:0"
+    >
+      <div>
+        <pre class="ShellBox_shellBox__n5v7E">
+          <div class="ShellBox_top__SxRc6">
+            <span>
+              SHELL
+            </span>
+            <button type="button">
+              copy
+            </button>
+          </div>
+          <code>
+            <span class="InstallTabs_installTextNoSelect__SWhsj">
+              $
+            </span>
+            <span class="InstallTabs_installTextCommand__OPlTv">
+              curl -o-
+            </span>
+            https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh
+            <span class="InstallTabs_installTextCommand__OPlTv">
+              | bash
+            </span>
+          </code>
+        </pre>
+        <pre class="ShellBox_shellBox__n5v7E">
+          <div class="ShellBox_top__SxRc6">
+            <span>
+              SHELL
+            </span>
+            <button type="button">
+              copy
+            </button>
+          </div>
+          <code>
+            <span class="InstallTabs_installTextNoSelect__SWhsj">
+              $
+            </span>
+            <span class="InstallTabs_installTextCommand__OPlTv">
+              nvm
+            </span>
+            install --lts
+          </code>
+        </pre>
+        <br>
+        <br>
+        <a class="InstallTabs_installDocsButton__upRsr"
+           href="/en/download/package-manager#nvm"
+        >
+          Read documentation
+        </a>
+      </div>
+    </div>
+    <div class="InstallTabs_reactTabsTabPanel__Hq7es"
+         role="tabpanel"
+         id="panel:r0:1"
+         aria-labelledby="tab:r0:1"
+    >
+    </div>
+    <div class="InstallTabs_reactTabsTabPanel__Hq7es"
+         role="tabpanel"
+         id="panel:r0:2"
+         aria-labelledby="tab:r0:2"
+    >
+    </div>
+  </div>
+</div>
+`;

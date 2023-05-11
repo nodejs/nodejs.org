@@ -16,6 +16,7 @@ export * from './navigation';
 export * from './nodeVersions';
 export * from './prevNextLink';
 export * from './releases';
+export * from './userOS';
 
 export interface AppProps {
   i18nData: Pick<LocaleContext, 'localeMessages' | 'currentLocale'>;
