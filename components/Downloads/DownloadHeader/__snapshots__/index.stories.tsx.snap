@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Downloads/DownloadHeader Default smoke-test 1`] = `
+<div class="DownloadHeader_downloadHeader__Dp85U">
+  <div class="SectionTitle_sectionTitle__mNok7">
+    home /
+    <span class="SectionTitle_active__XRLOn">
+      downloads
+    </span>
+  </div>
+  <div>
+    CURRENT VERSION v18.0.0
+  </div>
+</div>
+<div class="DownloadHeader_downloadHeader__Dp85U">
+  <div class="DownloadHeader_title__KKyS9">
+    Downloads
+  </div>
+  <div class="DownloadHeader_npm__3bjKz">
+    (includes npm)
+  </div>
+</div>
+`;
