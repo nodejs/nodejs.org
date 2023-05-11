@@ -27,6 +27,7 @@ export const PureMacOSPanel: FC<Props> = ({ nvmVersion }) => {
       </ShellBox>
       <br />
       <br />
+      {/* @TODO: Verify this link when we implement content */}
       <LocalizedLink
         className={styles.installDocsButton}
         href="/download/package-manager/#nvm"

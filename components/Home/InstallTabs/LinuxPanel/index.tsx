@@ -25,6 +25,7 @@ export const PureLinuxPanel: FC<Props> = ({ nvmVersion }) => {
         <span className={styles.installTextNoSelect}>$</span>
         <span className={styles.installTextCommand}>nvm</span> install --lts
       </ShellBox>
+      {/* @TODO: Verify this link when we implement content */}
       <LocalizedLink
         className={styles.installDocsButton}
         href="/download/package-manager/#nvm"

@@ -20,6 +20,7 @@ const WindowsPanel: FC = () => (
     </ShellBox>
     <br />
     <br />
+    {/* @TODO: Verify this link when we implement content */}
     <LocalizedLink
       className={styles.installDocsButton}
       href="/download/package-manager/#nvs"
