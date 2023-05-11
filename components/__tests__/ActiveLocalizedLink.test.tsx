@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import ActiveLocalizedLink from '../ActiveLocalizedLink';
 import { IntlProvider } from 'react-intl';
+import ActiveLocalizedLink from '../ActiveLocalizedLink';
 import { LocaleProvider } from '../../providers/localeProvider';
 import type { AppProps } from '../../types';
 

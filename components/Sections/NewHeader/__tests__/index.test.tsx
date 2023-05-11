@@ -4,7 +4,7 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import Header from '..';
 import { useMediaQuery } from '../../../../hooks/useMediaQuery';
 
-let mockCurrentTheme = '';
+let mockCurrentTheme = 'light';
 
 const mockToggleTheme = jest.fn().mockImplementation(() => {
   mockCurrentTheme = mockCurrentTheme === 'dark' ? 'light' : 'dark';
@@ -52,16 +52,8 @@ describe('Tests for Header component', () => {
     mockCurrentTheme = 'dark';
   });
 
-  it('renders correctly', () => {
-    const { container } = render(
-      <IntlProvider locale="en" onError={() => {}}>
-        <Header />
-      </IntlProvider>
-    );
-    expect(container).toBeInTheDocument();
-  });
-
   it('renders shorter menu items for mobile', () => {
+    mockCurrentTheme = 'dark'
     // @ts-ignore
     useMediaQuery.mockReturnValue(true);
     const { container } = render(
@@ -77,28 +69,24 @@ describe('Tests for Header component', () => {
   });
 
   describe('Theme color switcher', () => {
-    it('switches color theme to dark', async () => {
+    it('switches logo between light & dark', async () => {
+      mockCurrentTheme = 'light';
       render(
         <IntlProvider locale="en" onError={() => {}}>
           <Header />
         </IntlProvider>
       );
-      const toggle = screen.getByLabelText(
-        'components.header.buttons.toggleDarkMode'
-      );
-      await userEvent.click(toggle);
-    });
 
-    it('switches color theme to light', async () => {
-      render(
-        <IntlProvider locale="en" onError={() => {}}>
-          <Header />
-        </IntlProvider>
-      );
+      const lightLogo = screen.getByAltText('light-logo');
+      expect(lightLogo).toBeInTheDocument();
+
       const toggle = screen.getByLabelText(
         'components.header.buttons.toggleDarkMode'
       );
       await userEvent.click(toggle);
+
+      const darkLogo = screen.getByAltText('dark-logo');
+      expect(darkLogo).toBeInTheDocument();
     });
 
     it('ignore key presses on color switcher', async () => {
