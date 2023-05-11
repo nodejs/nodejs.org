@@ -1,9 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-type useClickOutsideType = (
-  // eslint-disable-next-line no-unused-vars
-  event: MouseEvent | TouchEvent
-) => void;
+type useClickOutsideType = (_event: MouseEvent | TouchEvent) => void;
 
 export const useClickOutside = <T extends HTMLElement>(
   handler: useClickOutsideType
@@ -19,6 +16,7 @@ export const useClickOutside = <T extends HTMLElement>(
 
     document.addEventListener(clickEvent, listener, true);
     return () => document.removeEventListener(clickEvent, listener);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref.current, handler]);
   return ref;
 };
