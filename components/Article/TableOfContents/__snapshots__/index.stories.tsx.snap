@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article/TableOfContents Default smoke-test 1`] = `
+<details class="TableOfContents_tableOfContents__mQhnM">
+  <summary>
+    <strong>
+      Table of Contents
+    </strong>
+  </summary>
+  <ul>
+    <li>
+      <a href="/#mock-title">
+        mock-title
+      </a>
+    </li>
+    <li>
+      <a href="/#mock-title-2">
+        mock-title-2
+      </a>
+    </li>
+  </ul>
+</details>
+`;
+
+exports[`Article/TableOfContents Empty smoke-test 1`] = `
+<div>
+</div>
+`;
