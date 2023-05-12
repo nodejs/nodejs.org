@@ -25,7 +25,7 @@ const traverseTableOfContents = (tableOfContents: PropsTableOfContents) => {
 const TableOfContents: FC<{ tableOfContents: PropsTableOfContents }> = ({
   tableOfContents,
 }) => {
-  if (!tableOfContents.length) {
+  if (tableOfContents.length === 0) {
     return null;
   }
   return (
