@@ -1,66 +1,59 @@
-import { type FC } from 'react';
-import { render } from '@testing-library/react';
+import { renderHook } from '@testing-library/react';
 import { useMediaQuery } from '../useMediaQuery';
 
 describe('useMediaQuery', () => {
-  const MediaQueryRenderer: FC = () => {
-    const mediaQueryResult = useMediaQuery('media-query-mock');
-
-    if (typeof mediaQueryResult === 'undefined') {
-      return <>undefined</>;
-    }
-
-    return mediaQueryResult ? <>true</> : <>false</>;
-  };
-
   it('should check for matchMedia support', () => {
-    const { container } = render(<MediaQueryRenderer />);
-    expect(container).toMatchSnapshot();
+    const { result } = renderHook(() => useMediaQuery('media-query-mock'));
+
+    expect(result.current).toBe(undefined);
   });
 
   it('should return true for matched query', () => {
     Object.defineProperty(window, 'matchMedia', {
       writable: true,
-      value: jest.fn().mockImplementation(() => ({
+      value: () => ({
         matches: true,
         addEventListener: jest.fn(),
         removeEventListener: jest.fn(),
-      })),
+      }),
     });
 
-    const { container } = render(<MediaQueryRenderer />);
-    expect(container).toMatchSnapshot();
+    const { result } = renderHook(() => useMediaQuery('media-query-mock'));
+
+    expect(result.current).toBe(true);
   });
 
   it('should return false for not-matched query', () => {
     Object.defineProperty(window, 'matchMedia', {
       writable: true,
-      value: jest.fn().mockImplementation(() => ({
+      value: () => ({
         matches: false,
         addEventListener: jest.fn(),
         removeEventListener: jest.fn(),
-      })),
+      }),
     });
 
-    const { container } = render(<MediaQueryRenderer />);
-    expect(container).toMatchSnapshot();
+    const { result } = renderHook(() => useMediaQuery('media-query-mock'));
+
+    expect(result.current).toBe(false);
   });
 
   it('should subscribe for media changes', () => {
-    const listenerMock = jest.fn().mockImplementation((event, handler) => {
+    const listenerMock = jest.fn().mockImplementation((_, handler) => {
       handler();
     });
 
     Object.defineProperty(window, 'matchMedia', {
       writable: true,
-      value: jest.fn().mockImplementation(() => ({
+      value: () => ({
         matches: false,
         addEventListener: listenerMock,
         removeEventListener: jest.fn(),
-      })),
+      }),
     });
 
-    render(<MediaQueryRenderer />);
+    renderHook(() => useMediaQuery('media-query-mock'));
+
     expect(listenerMock).toHaveBeenCalledTimes(1);
   });
 
@@ -71,14 +64,14 @@ describe('useMediaQuery', () => {
 
     Object.defineProperty(window, 'matchMedia', {
       writable: true,
-      value: jest.fn().mockImplementation(() => ({
+      value: () => ({
         matches: false,
         addListener: listenerMock,
         removeListener: jest.fn(),
-      })),
+      }),
     });
 
-    render(<MediaQueryRenderer />);
+    renderHook(() => useMediaQuery('media-query-mock'));
     expect(listenerMock).toHaveBeenCalledTimes(1);
   });
 });

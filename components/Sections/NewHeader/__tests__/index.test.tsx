@@ -53,7 +53,7 @@ describe('Tests for Header component', () => {
   });
 
   it('renders shorter menu items for mobile', () => {
-    mockCurrentTheme = 'dark'
+    mockCurrentTheme = 'dark';
     // @ts-ignore
     useMediaQuery.mockReturnValue(true);
     const { container } = render(
