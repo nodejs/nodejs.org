@@ -67,5 +67,6 @@
   "components.sections.newHeader.links.apiDocs": "API Docs",
   "components.sections.newHeader.links.about": "About",
   "components.sections.newHeader.links.download": "Downloads",
-  "components.sections.newHeader.links.certification": "Certification"
+  "components.sections.newHeader.links.certification": "Certification",
+  "components.article.tableOfContents": "Table of Contents"
 }

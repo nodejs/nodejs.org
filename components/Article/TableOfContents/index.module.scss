@@ -1,0 +1,42 @@
+.tableOfContents {
+  background-color: var(--color-fill-banner);
+  border-radius: 5px;
+  cursor: pointer;
+  padding: var(--space-12);
+
+  strong {
+    color: var(--color-text-secondary);
+    display: inline-block;
+    font-size: var(--font-size-body2);
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  > ul {
+    margin-left: var(--space-08);
+  }
+
+  ul {
+    margin: var(--space-04) 0 0 0;
+    padding: var(--space-08) 0 0 var(--space-24);
+
+    li {
+      p {
+        margin: 0;
+      }
+
+      a {
+        font-family: var(--sans-serif);
+        text-decoration: underline;
+        text-decoration: none;
+        text-decoration-color: var(--black4);
+        transition: all ease-out 0.2s;
+
+        &:hover {
+          color: var(--brand-light);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
