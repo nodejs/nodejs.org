@@ -10,8 +10,8 @@ export interface UpcomingRelease {
 }
 
 export interface NodeReleaseData {
+  major: number;
   version: string;
-  fullVersion: string;
   codename: string;
   isLts: boolean;
   status:
@@ -20,8 +20,8 @@ export interface NodeReleaseData {
     | 'Current'
     | 'End-of-life'
     | 'Pending';
-  initialRelease: string;
-  ltsStart: string | null;
-  maintenanceStart: string | null;
+  currentStart: string;
+  ltsStart?: string;
+  maintenanceStart?: string;
   endOfLife: string;
 }
