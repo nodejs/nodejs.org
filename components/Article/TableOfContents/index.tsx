@@ -3,61 +3,41 @@ import Link from 'next/link';
 import styles from './index.module.scss';
 import type { FC } from 'react';
 
-// @TODO: Update this type with generated json from the API
-type TableOfContentsItem = {
-  title: string;
-  url: string;
-  items?: TableOfContentsItem[];
-};
+type PropsTableOfContents = {
+  depth: number;
+  value: string;
+  id: string;
+}[];
 
-const traverseTableOfContents = (
-  items: TableOfContentsItem[],
-  depth: number
-) => {
-  const filterItems = (subItems: TableOfContentsItem[]) =>
-    subItems.filter(item => item && item.title && item.url);
-
-  const currentItems = filterItems(items);
-
-  if (currentItems) {
-    return (
-      <ul>
-        {currentItems.map(item => (
-          <li key={item.url}>
-            {item.url && item.title && (
-              <Link href={item.url}>{item.title}</Link>
-            )}
-            {item.items && depth < 2 && filterItems(item.items).length > 0
-              ? traverseTableOfContents(item.items, depth + 1)
-              : null}
+const traverseTableOfContents = (tableOfContents: PropsTableOfContents) => {
+  return (
+    <ul>
+      {tableOfContents.map(item => {
+        return (
+          <li key={item.id}>
+            <Link href={`#${item.id}`}>{item.value}</Link>
           </li>
-        ))}
-      </ul>
-    );
-  }
-
-  return null;
+        );
+      })}
+    </ul>
+  );
 };
-
-type Props = {
-  tableOfContents: TableOfContentsItem[];
-};
-
-const TableOfContents: FC<Props> = ({ tableOfContents }) => {
-  if (tableOfContents.length) {
-    return (
-      <details className={styles.tableOfContents}>
-        <summary>
-          <strong>
-            <FormattedMessage id="components.article.tableOfContents" />
-          </strong>
-        </summary>
-        {traverseTableOfContents(tableOfContents, 1)}
-      </details>
-    );
+const TableOfContents: FC<{ tableOfContents: PropsTableOfContents }> = ({
+  tableOfContents,
+}) => {
+  if (!tableOfContents.length) {
+    return null;
   }
-
-  return <div />;
+  return (
+    <details className={styles.tableOfContents}>
+      <summary>
+        <strong>
+          <FormattedMessage id="components.article.tableOfContents" />
+        </strong>
+      </summary>
+      {traverseTableOfContents(tableOfContents)}
+    </details>
+  );
 };
 
 export default TableOfContents;

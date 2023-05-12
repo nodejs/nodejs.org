@@ -11,6 +11,7 @@ const withNextra = nextra({
   transform: getNextData,
   transformPageOpts: pageOpts => {
     delete pageOpts.pageMap;
+    // remove this tu implement TOC
     delete pageOpts.headings;
     delete pageOpts.timestamp;
 
