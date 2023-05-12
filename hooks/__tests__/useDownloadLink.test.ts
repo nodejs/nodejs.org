@@ -1,5 +1,5 @@
 import { renderHook, waitFor } from '@testing-library/react';
-import { useDetectOS } from '../useDetectOS';
+import { useDownloadLink } from '../useDownloadLink';
 
 const mockNavigator = {
   userAgent:
@@ -11,7 +11,7 @@ const mockNavigator = {
 
 const originalNavigator = global.navigator;
 
-describe('useDetectOS', () => {
+describe('useDownloadLink', () => {
   afterEach(() => {
     // Reset the navigator global to the original value
     Object.defineProperty(global, 'navigator', {
@@ -27,14 +27,12 @@ describe('useDetectOS', () => {
       writable: true,
     });
 
-    const { result } = renderHook(() => useDetectOS());
+    const { result } = renderHook(() =>
+      useDownloadLink({ version: 'v18.16.0' })
+    );
 
     await waitFor(() => {
-      expect(result.current.userOS).toBe('WIN');
-    });
-
-    await waitFor(() => {
-      expect(result.current.getDownloadLink('v18.16.0')).toBe(
+      expect(result.current).toBe(
         'https://nodejs.org/dist/v18.16.0/node-v18.16.0-x64.msi'
       );
     });
@@ -51,15 +49,13 @@ describe('useDetectOS', () => {
       writable: true,
     });
 
-    const { result } = renderHook(() => useDetectOS());
+    const { result } = renderHook(() =>
+      useDownloadLink({ version: 'v20.1.0' })
+    );
 
     await waitFor(() => {
-      expect(result.current.userOS).toBe('OTHER');
-    });
-
-    await waitFor(() => {
-      expect(result.current.getDownloadLink('v18.16.0')).toBe(
-        'https://nodejs.org/dist/v18.16.0/node-v18.16.0.tar.gz'
+      expect(result.current).toBe(
+        'https://nodejs.org/dist/v20.1.0/node-v20.1.0.tar.gz'
       );
     });
   });
