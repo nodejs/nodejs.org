@@ -1,4 +1,4 @@
-import type { AppProps, NodeVersionData } from '../types';
+import type { AppProps, NodeReleaseData } from '../types';
 import englishMessages from '../i18n/locales/en.json';
 
 const i18nData: AppProps['i18nData'] = {
@@ -14,21 +14,8 @@ const i18nData: AppProps['i18nData'] = {
   localeMessages: englishMessages,
 };
 
-const nodeVersionData: NodeVersionData[] = [
-  {
-    node: 'v19.8.1',
-    nodeNumeric: '19.8.1',
-    nodeMajor: 'v19.x',
-    npm: '9.5.1',
-    isLts: false,
-  },
-  {
-    node: 'v18.15.0',
-    nodeNumeric: '18.15.0',
-    nodeMajor: 'v18.x',
-    npm: '9.5.0',
-    isLts: true,
-  },
-];
+// TODO: Add fixture
+// See https://github.com/nodejs/nodejs.org/blob/f0c376bf4404ca2751b24a96681f6ed5edf65b37/__fixtures__/page.tsx
+const nodeReleasesData: NodeReleaseData[] = [];
 
-export const pageProps = { i18nData, nodeVersionData };
+export const pageProps = { i18nData, nodeReleasesData };

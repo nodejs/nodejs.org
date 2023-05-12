@@ -25,3 +25,9 @@ export interface NodeReleaseData {
   maintenanceStart?: string;
   endOfLife: string;
 }
+
+export interface NodeReleasesDataContext {
+  nodeReleasesData: NodeReleaseData[];
+  lts?: NodeReleaseData;
+  current?: NodeReleaseData;
+}
