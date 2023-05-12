@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Article/TableOfContents Blank smoke-test 1`] = `""`;
+
 exports[`Article/TableOfContents Default smoke-test 1`] = `
 <details class="TableOfContents_tableOfContents__mQhnM">
   <summary>
@@ -9,20 +11,30 @@ exports[`Article/TableOfContents Default smoke-test 1`] = `
   </summary>
   <ul>
     <li>
-      <a href="/#mock-title">
-        mock-title
+      <a href="/#ecmascript-2015-es6-and-beyond">
+        ECMAScript 2015 (ES6) and beyond
       </a>
     </li>
     <li>
-      <a href="/#mock-title-2">
-        mock-title-2
+      <a href="/#which-features-ship-with-which-nodejs-version-by-default">
+        Which features ship with which Node.js version by default?
+      </a>
+    </li>
+    <li>
+      <a href="/#which-features-are-in-progress">
+        Which features are in progress?
+      </a>
+    </li>
+    <li>
+      <a href="/#i-have-my-infrastructure-set-up-to-leverage-the---harmony-flag-should-i-remove-it">
+        I have my infrastructure set up to leverage the --harmony flag. Should I remove it?
+      </a>
+    </li>
+    <li>
+      <a href="/#how-do-i-find-which-version-of-v8-ships-with-a-particular-version-of-nodejs">
+        How do I find which version of V8 ships with a particular version of Node.js?
       </a>
     </li>
   </ul>
 </details>
-`;
-
-exports[`Article/TableOfContents Empty smoke-test 1`] = `
-<div>
-</div>
 `;
