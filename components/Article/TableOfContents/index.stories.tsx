@@ -7,11 +7,12 @@ type Meta = MetaObj<typeof TableOfContents>;
 
 export const Default: Story = {
   args: {
-    tableOfContents: mockTableOfContents.items,
+    tableOfContents: mockTableOfContents,
   },
 };
 
-export const Empty: Story = {
+// @TODO: Add blank story for TableOfContents
+export const Blank: Story = {
   args: {
     tableOfContents: [],
   },
