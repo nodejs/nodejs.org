@@ -9,25 +9,30 @@ type PropsTableOfContents = {
   id: string;
 }[];
 
-type parsedTableOfContents = {
+type ParsedTableOfContents = {
   depth: number;
   value: string;
   id: string;
-  children: parsedTableOfContents[];
+  parent?: ParsedTableOfContents | null;
+  children?: ParsedTableOfContents;
 }[];
 
-// @TODO: Add types
-function parseTableOfContents(tableOfContents) {
-  const parsedTableOfContents = [];
+function parseTableOfContents(
+  tableOfContents: PropsTableOfContents
+): ParsedTableOfContents {
+  const parsedTableOfContents: ParsedTableOfContents = [];
 
-  function addChildNode(parent, node) {
-    if (!parent.childrena) {
+  function addChildNode(
+    parent: ParsedTableOfContents,
+    node: ParsedTableOfContents
+  ) {
+    if (!parent.children) {
       parent.children = [];
     }
     parent.children.push(node);
   }
 
-  tableOfContents.forEach((node) => {
+  tableOfContents.forEach(node => {
     const { depth, value, id } = node;
     const parsedNode = { depth, value, id };
 
@@ -45,7 +50,7 @@ function parseTableOfContents(tableOfContents) {
     parsedNode.parent = parentNode || null;
   });
 
-  return parsedTableOfContents;
+  return parsedTableOfContents as ParsedTableOfContents;
 }
 
 const traverseTableOfContents = (tableOfContents: PropsTableOfContents) => {
