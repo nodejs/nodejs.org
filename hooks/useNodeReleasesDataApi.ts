@@ -74,6 +74,10 @@ export const useNodeReleasesDataApi = (): NodeReleaseData[] => {
         ltsStart: raw.ltsStart,
         maintenanceStart: raw.maintenanceStart,
         endOfLife: raw.endOfLife,
+        npm: raw.npm || '',
+        v8: raw.v8 || '',
+        releaseDate: raw.releaseDate || '',
+        modules: raw.modules || '',
       } as NodeReleaseData;
     });
   }, [data]);
