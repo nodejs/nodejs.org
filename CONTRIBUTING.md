@@ -23,8 +23,8 @@ Thank you for your interest in contributing to the Node.js Website. Before you p
 
 ```bash
 git clone git@github.com:<GITHUB_ID>/nodejs.org.git # SSH
-gh repo clone <GITHUB_ID>/nodejs.org # GitHub CLI
 git clone https://github.com/<GITHUB_ID>/nodejs.org.git # HTTPS
+gh repo clone <GITHUB_ID>/nodejs.org # GitHub CLI
 ```
 
 3. Change into the nodejs.org directory.
@@ -36,7 +36,9 @@ cd nodejs.org
 4. Create a remote for keeping your fork as well as your local clone up-to-date.
 
 ```bash
-git remote add upstream git@github.com:nodejs/nodejs.org.git
+git remote add upstream git@github.com:nodejs/nodejs.org.git # SSH
+git remote add upstream https://github.com/nodejs/nodejs.org.git # HTTPS
+gh repo sync nodejs/nodejs.org # GitHub CLI
 ```
 
 5. Create a new branch for your work.
