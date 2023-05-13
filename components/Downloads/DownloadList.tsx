@@ -1,17 +1,21 @@
 import { FormattedMessage } from 'react-intl';
 import LocalizedLink from '../LocalizedLink';
 import { useNavigation } from '../../hooks/useNavigation';
-import type { NodeVersionData } from '../../types';
+import type { NodeReleaseData } from '../../types';
 import type { FC } from 'react';
 
-type DownloadListProps = Pick<NodeVersionData, 'node'>;
+type DownloadListProps = {
+  nodeReleaseData: NodeReleaseData;
+};
 
-const DownloadList: FC<DownloadListProps> = ({ node }) => {
+const DownloadList: FC<DownloadListProps> = ({ nodeReleaseData }) => {
   const { getSideNavigation } = useNavigation();
 
+  if (!nodeReleaseData) return null;
+
   const [, ...downloadNavigation] = getSideNavigation('download', {
-    shaSums: { nodeVersion: node },
-    allDownloads: { nodeVersion: node },
+    shaSums: { nodeVersion: `v${nodeReleaseData.version}` },
+    allDownloads: { nodeVersion: `v${nodeReleaseData.version}` },
   });
 
   return (

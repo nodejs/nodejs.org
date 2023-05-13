@@ -2,11 +2,11 @@ import BaseLayout from './BaseLayout';
 import Banner from '../components/Home/Banner';
 import HomeDownloadButton from '../components/Home/HomeDownloadButton';
 import { useNextraContext } from '../hooks/useNextraContext';
-import { useNodeData } from '../hooks/useNodeData';
+import { useNodeReleasesData } from '../hooks/useNodeReleasesData';
 import type { FC, PropsWithChildren } from 'react';
 
 const IndexLayout: FC<PropsWithChildren> = ({ children }) => {
-  const { currentLtsVersion, currentNodeVersion } = useNodeData();
+  const { lts, current } = useNodeReleasesData();
 
   const {
     frontMatter: { labels },
@@ -24,8 +24,8 @@ const IndexLayout: FC<PropsWithChildren> = ({ children }) => {
             {labels['download']}
           </h2>
 
-          <HomeDownloadButton {...currentLtsVersion!} />
-          <HomeDownloadButton {...currentNodeVersion!} />
+          <HomeDownloadButton nodeReleaseData={lts} />
+          <HomeDownloadButton nodeReleaseData={current} />
 
           <p>
             {labels['version-schedule-prompt']}{' '}

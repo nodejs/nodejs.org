@@ -1,30 +1,30 @@
 import LocalizedLink from '../LocalizedLink';
 import { useNextraContext } from '../../hooks/useNextraContext';
 import { getNodejsChangelog } from '../../util/getNodeJsChangelog';
-import type { NodeVersionData } from '../../types';
+import type { NodeReleaseData } from '../../types';
 import type { FC } from 'react';
 
-type HomeDownloadButtonProps = Pick<
-  NodeVersionData,
-  'isLts' | 'node' | 'nodeMajor' | 'nodeNumeric'
->;
+type HomeDownloadButtonProps = {
+  nodeReleaseData?: NodeReleaseData;
+};
 
 const HomeDownloadButton: FC<HomeDownloadButtonProps> = ({
-  node,
-  nodeMajor,
-  nodeNumeric,
-  isLts,
+  nodeReleaseData,
 }) => {
   const {
     frontMatter: { labels },
   } = useNextraContext();
 
-  const nodeDownloadLink = `https://nodejs.org/dist/${node}/`;
-  const nodeApiLink = `https://nodejs.org/dist/latest-${nodeMajor}/docs/api/`;
-  const nodeAllDownloadsLink = `/download${isLts ? '/' : '/current'}`;
+  if (!nodeReleaseData) return null;
+
+  const nodeDownloadLink = `https://nodejs.org/dist/v${nodeReleaseData.version}/`;
+  const nodeApiLink = `https://nodejs.org/dist/latest-v${nodeReleaseData.major}.x/docs/api/`;
+  const nodeAllDownloadsLink = `/download${
+    nodeReleaseData.isLts ? '/' : '/current'
+  }`;
   const nodeDownloadTitle =
-    `${labels.download} ${nodeNumeric}` +
-    ` ${labels[isLts ? 'lts' : 'current']}`;
+    `${labels.download} ${nodeReleaseData.version}` +
+    ` ${labels[nodeReleaseData.isLts ? 'lts' : 'current']}`;
 
   return (
     <div className="home-downloadblock">
@@ -32,10 +32,13 @@ const HomeDownloadButton: FC<HomeDownloadButtonProps> = ({
         href={nodeDownloadLink}
         className="home-downloadbutton"
         title={nodeDownloadTitle}
-        data-version={node}
+        data-version={`v${nodeReleaseData.version}`}
       >
-        {nodeNumeric} {labels[isLts ? 'lts' : 'current']}
-        <small>{labels[`tagline-${isLts ? 'lts' : 'current'}`]}</small>
+        {nodeReleaseData.version}{' '}
+        {labels[nodeReleaseData.isLts ? 'lts' : 'current']}
+        <small>
+          {labels[`tagline-${nodeReleaseData.isLts ? 'lts' : 'current'}`]}
+        </small>
       </a>
 
       <ul className="list-divider-pipe home-secondary-links">
@@ -45,7 +48,9 @@ const HomeDownloadButton: FC<HomeDownloadButtonProps> = ({
           </LocalizedLink>
         </li>
         <li>
-          <LocalizedLink href={getNodejsChangelog(node)}>
+          <LocalizedLink
+            href={getNodejsChangelog(`v${nodeReleaseData.version}`)}
+          >
             {labels.changelog}
           </LocalizedLink>
         </li>

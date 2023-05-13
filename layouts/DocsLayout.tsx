@@ -1,20 +1,20 @@
 import BaseLayout from './BaseLayout';
 import SideNavigation from '../components/SideNavigation';
-import { useNodeData } from '../hooks/useNodeData';
+import { useNodeReleasesData } from '../hooks/useNodeReleasesData';
 import type { FC, PropsWithChildren } from 'react';
 
 const DocsLayout: FC<PropsWithChildren> = ({ children }) => {
-  const { currentLtsVersion, currentNodeVersion } = useNodeData();
+  const { lts, current } = useNodeReleasesData();
 
   const translationContext = {
     apiLts: {
-      ltsNodeVersion: currentLtsVersion?.nodeMajor,
-      fullLtsNodeVersion: currentLtsVersion?.node,
+      ltsNodeVersion: `v${lts?.major}.x`,
+      fullLtsNodeVersion: `v${lts?.version}`,
       spanLts: <span className="small color-lightgray">LTS</span>,
     },
     apiCurrent: {
-      fullCurrentNodeVersion: currentNodeVersion?.node,
-      currentNodeVersion: currentNodeVersion?.nodeMajor,
+      fullCurrentNodeVersion: `v${current?.version}`,
+      currentNodeVersion: `v${current?.major}.x`,
     },
   };
 
