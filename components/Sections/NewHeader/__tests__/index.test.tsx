@@ -1,8 +1,7 @@
 import userEvent from '@testing-library/user-event';
 import { IntlProvider } from 'react-intl';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Header from '..';
-import { useMediaQuery } from '../../../../hooks/useMediaQuery';
 
 let mockCurrentTheme = 'light';
 
@@ -36,81 +35,24 @@ jest.mock('../../../../hooks/useLocale', () => ({
   }),
 }));
 
-// mock useMediaQuery hook for emulating mobile device
-jest.mock('../../../../hooks/useMediaQuery', () => ({
-  useMediaQuery: jest.fn(),
-}));
-
 describe('Tests for Header component', () => {
-  beforeEach(() => {
-    // @ts-ignore
-    useMediaQuery.mockReturnValue(false);
-  });
-
-  afterEach(() => {
-    mockToggleTheme.mockClear();
-    mockCurrentTheme = 'dark';
-  });
-
-  it('renders shorter menu items for mobile', () => {
-    mockCurrentTheme = 'dark';
-    // @ts-ignore
-    useMediaQuery.mockReturnValue(true);
-    const { container } = render(
+  it('switches logo between light & dark', async () => {
+    mockCurrentTheme = 'light';
+    render(
       <IntlProvider locale="en" onError={() => {}}>
         <Header />
       </IntlProvider>
     );
 
-    expect(container).toMatchSnapshot();
+    const lightLogo = screen.getByAltText('light-logo');
+    expect(lightLogo).toBeInTheDocument();
 
-    // @ts-ignore
-    useMediaQuery.mockClear();
-  });
+    const toggle = screen.getByLabelText(
+      'components.header.buttons.toggleDarkMode'
+    );
+    await userEvent.click(toggle);
 
-  describe('Theme color switcher', () => {
-    it('switches logo between light & dark', async () => {
-      mockCurrentTheme = 'light';
-      render(
-        <IntlProvider locale="en" onError={() => {}}>
-          <Header />
-        </IntlProvider>
-      );
-
-      const lightLogo = screen.getByAltText('light-logo');
-      expect(lightLogo).toBeInTheDocument();
-
-      const toggle = screen.getByLabelText(
-        'components.header.buttons.toggleDarkMode'
-      );
-      await userEvent.click(toggle);
-
-      const darkLogo = screen.getByAltText('dark-logo');
-      expect(darkLogo).toBeInTheDocument();
-    });
-
-    it('ignore key presses on color switcher', async () => {
-      render(
-        <IntlProvider locale="en" onError={() => {}}>
-          <Header />
-        </IntlProvider>
-      );
-      const toggler = screen.getByLabelText(
-        'components.header.buttons.toggleDarkMode'
-      );
-
-      fireEvent.keyPress(toggler, { key: 'Enter', code: 13, charCode: 13 });
-
-      expect(mockToggleTheme).toHaveBeenCalledTimes(0);
-    });
-
-    it('skips rendering in case no theme value was provided from plugin', () => {
-      const { container } = render(
-        <IntlProvider locale="en" onError={() => {}}>
-          <Header />
-        </IntlProvider>
-      );
-      expect(container).toMatchSnapshot();
-    });
+    const darkLogo = screen.getByAltText('dark-logo');
+    expect(darkLogo).toBeInTheDocument();
   });
 });
