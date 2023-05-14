@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-type useClickOutsideType = (_event: MouseEvent | TouchEvent) => void;
+type UseClickOutsideHandler = (_event: MouseEvent | TouchEvent) => void;
 
 export const useClickOutside = <T extends HTMLElement>(
   handler: useClickOutsideType
