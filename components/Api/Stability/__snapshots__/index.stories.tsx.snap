@@ -2,6 +2,6 @@
 
 exports[`Api/Stability Default smoke-test 1`] = `
 <div class="Stability_stability__U0Zm0 Stability_stabilityLevel0__ygvXd">
-  Stability: 0 - This is an stability index example
+  Stability: 0 - Insert the text of your Alert here
 </div>
 `;
