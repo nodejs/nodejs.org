@@ -1,0 +1,36 @@
+.stability {
+  border-radius: 4px;
+  color: #fff;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+  padding: 1rem;
+
+  p {
+    display: inline;
+    margin: 0;
+  }
+
+  a {
+    color: #fff;
+
+    code {
+      color: #fff !important;
+    }
+  }
+
+  &Level0 {
+    background-color: var(--danger5);
+  }
+
+  &Level1 {
+    background-color: var(--warning4);
+  }
+
+  &Level2 {
+    background-color: var(--brand5);
+  }
+
+  &Level3 {
+    background-color: var(--info5);
+  }
+}
