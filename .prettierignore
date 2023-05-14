@@ -6,6 +6,7 @@ node_modules
 public/en/user-survey-report
 public/static/documents
 public/static/legacy
+public/static/node-releases-data.json
 
 # We don't want to lint/prettify the Coverage Results
 coverage
@@ -14,6 +15,7 @@ coverage
 # be done in the future as we don't want to update the Markdown file
 # contents right now
 pages/**/*.md
+pages/_app.mdx
 
 # Prettier's Handlebar parser is limited and chokes on some syntax features
 # https://github.com/prettier/prettier/issues/11834
