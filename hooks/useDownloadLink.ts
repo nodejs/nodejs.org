@@ -12,6 +12,7 @@ type UseDownloadLinkArgs = {
 
 export const useDownloadLink = ({ version }: UseDownloadLinkArgs) => {
   const { data: bitness } = useSWR(UserAgentBitness, getBitness);
+
   const downloadLink = useMemo(
     () =>
       downloadUrlByOS({

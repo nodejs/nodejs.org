@@ -9,5 +9,6 @@ export const getBitness = async () => {
       .getHighEntropyValues(['bitness'])
       .then(ua => ua.bitness);
   }
+
   return undefined;
 };
