@@ -6,6 +6,7 @@ export const useClickOutside = <T extends HTMLElement>(
   handler: useClickOutsideType
 ) => {
   const ref = useRef<T>(null);
+
   useEffect(() => {
     const listener = (event: MouseEvent | TouchEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
@@ -14,6 +15,7 @@ export const useClickOutside = <T extends HTMLElement>(
     };
 
     document.addEventListener('click', listener, true);
+
     return () => document.removeEventListener('click', listener);
   }, [ref, handler]);
   return ref;
