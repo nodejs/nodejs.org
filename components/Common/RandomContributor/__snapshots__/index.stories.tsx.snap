@@ -27,3 +27,8 @@ exports[`Common/RandomContributor Default smoke-test 1`] = `
   </a>
 </div>
 `;
+
+exports[`Common/RandomContributor Loading smoke-test 1`] = `
+<div>
+</div>
+`;

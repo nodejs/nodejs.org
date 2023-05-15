@@ -24,4 +24,14 @@ export const Default: Story = {
   },
 };
 
+export const Loading: Story = {
+  parameters: {
+    moduleMock: {
+      mock: () => {
+        const mock = createMock(hooks, 'useNodeJsContributorsApi');
+        mock.mockReturnValue(null);
+      },
+    },
+  },
+};
 export default { component: RandomContributor } as Meta;
