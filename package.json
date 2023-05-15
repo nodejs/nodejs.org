@@ -34,7 +34,10 @@
     "storybook:build": "cross-env NODE_ENV=production NODE_NO_WARNINGS=1 storybook build"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
     "@mdx-js/react": "^2.3.0",
+    "@mui/material": "^5.10.16",
     "@nodevu/core": "^0.0.4",
     "classnames": "^2.3.2",
     "cross-env": "^7.0.3",
