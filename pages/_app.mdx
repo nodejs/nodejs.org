@@ -7,9 +7,17 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import '../styles/old/index.scss';
 
-const theme = createTheme({
+export const theme = createTheme({
   typography: {
-    fontFamily: [sourceSansPro.style.fontFamily, 'Open Sans', 'Roboto', 'San Francisco', 'Helvetica', 'Arial', 'sans-serif'],
+    fontFamily: [
+      sourceSansPro.style.fontFamily,
+      'Open Sans',
+      'Roboto',
+      'San Francisco',
+      'Helvetica',
+      'Arial',
+      'sans-serif'
+    ],
   },
 });
 
@@ -27,4 +35,5 @@ export default function App({ Component, pageProps }) {
       </LocaleProvider>
     </SiteProvider>
   );
+
 }
