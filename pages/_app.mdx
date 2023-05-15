@@ -1,21 +1,39 @@
-import { Analytics } from '@vercel/analytics/react';
+import { MotionConfig } from 'framer-motion';
 import { NodeDataProvider } from '../providers/nodeDataProvider';
 import { LocaleProvider } from '../providers/localeProvider';
-import { sourceSansPro } from '../util/nextFonts';
-import BaseApp, { setAppFont } from '../next.app';
+import { SiteProvider } from '../providers/siteProvider';
+import sourceSansPro from '../util/sourceSansPro';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import '../styles/old/index.scss';
 
+export const theme = createTheme({
+  typography: {
+    fontFamily: [
+      sourceSansPro.style.fontFamily,
+      'Open Sans',
+      'Roboto',
+      'San Francisco',
+      'Helvetica',
+      'Arial',
+      'sans-serif'
+    ],
+  },
+});
+
 export default function App({ Component, pageProps }) {
-  setAppFont(sourceSansPro.style.fontFamily);
   return (
-    <BaseApp>
+    <SiteProvider>
       <LocaleProvider i18nData={pageProps.i18nData}>
         <NodeDataProvider nodeVersionData={pageProps.nodeVersionData}>
-          <Component {...pageProps} />
-          <Analytics />
+          <MotionConfig reducedMotion="user">
+            <ThemeProvider theme={theme}>
+              <Component {...pageProps} />
+            </ThemeProvider>
+          </MotionConfig>
         </NodeDataProvider>
       </LocaleProvider>
-    </BaseApp>
+    </SiteProvider>
   );
+
 }
