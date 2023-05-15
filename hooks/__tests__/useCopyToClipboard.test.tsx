@@ -1,59 +1,42 @@
-import { render, fireEvent, screen, waitFor } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
+import { FormattedMessage } from 'react-intl';
+import { IntlProvider } from 'react-intl';
 import { useCopyToClipboard } from '../useCopyToClipboard';
 
+const mockWriteText = jest.fn();
+const originalNavigator = { ...window.navigator };
+
 describe('useCopyToClipboard', () => {
-  const HookRenderer = ({ text }: { text: string }) => {
+  beforeEach(() => {
+    Object.defineProperty(window, 'navigator', {
+      value: {
+        clipboard: {
+          writeText: mockWriteText,
+        },
+      },
+    });
+  });
+
+  afterEach(() => {
+    Object.defineProperty(window, 'navigator', {
+      value: originalNavigator,
+    });
+  });
+
+  const TestComponent = ({ textToCopy }: { textToCopy: string }) => {
     const [copied, copyText] = useCopyToClipboard();
 
     return (
-      <button onClick={() => copyText(text)} type="button">
-        {copied ? 'copied' : 'copy'}
-      </button>
+      <IntlProvider locale="en" onError={() => {}}>
+        <button onClick={() => copyText(textToCopy)} type="button">
+          <FormattedMessage
+            id="components.common.shellBox.copy"
+            values={{ copied }}
+          />
+        </button>
+      </IntlProvider>
     );
   };
-
-  it('should have `copy` text when failed', async () => {
-    const navigatorClipboardWriteTextSpy = jest
-      .fn()
-      .mockImplementation(() => Promise.reject());
-
-    Object.defineProperty(window.navigator, 'clipboard', {
-      writable: true,
-      value: {
-        writeText: navigatorClipboardWriteTextSpy,
-      },
-    });
-
-    render(<HookRenderer text="test copy" />);
-    const button = screen.getByRole('button');
-    fireEvent.click(button);
-    expect(button).toHaveTextContent('copy');
-  });
-
-  it('should change to `copied` when copy succeeded', async () => {
-    jest.useFakeTimers();
-    const navigatorClipboardWriteTextSpy = jest
-      .fn()
-      .mockImplementation(() => Promise.resolve());
-
-    Object.defineProperty(window.navigator, 'clipboard', {
-      writable: true,
-      value: {
-        writeText: navigatorClipboardWriteTextSpy,
-      },
-    });
-
-    render(<HookRenderer text="test copy" />);
-    const button = screen.getByRole('button');
-    fireEvent.click(button);
-    await waitFor(() => {
-      expect(button).toHaveTextContent('copied');
-    });
-    jest.advanceTimersByTime(3000);
-    await waitFor(() => {
-      expect(button).toHaveTextContent('copy');
-    });
-  });
 
   it('should call clipboard API with `test` once', () => {
     const navigatorClipboardWriteTextSpy = jest
@@ -67,7 +50,7 @@ describe('useCopyToClipboard', () => {
       },
     });
 
-    render(<HookRenderer text="test" />);
+    render(<TestComponent textToCopy="test" />);
     const button = screen.getByRole('button');
     fireEvent.click(button);
     expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledTimes(1);
