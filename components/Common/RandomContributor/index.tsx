@@ -6,6 +6,8 @@ import AnimatedPlaceholder from '../AnimatedPlaceholder';
 import { useOnScreen } from '../../../hooks/useOnScreen';
 import { useNodeJsContributorsApi } from '../../../hooks/useNodeJsContributorsApi';
 
+const DefaultImageSize = 75;
+
 const RandomContributor = () => {
   const ref = useRef<HTMLDivElement | null>(null);
   const isVisible = useOnScreen(ref as MutableRefObject<Element>, true);
@@ -25,8 +27,8 @@ const RandomContributor = () => {
               <Image
                 src={contributor.avatarUri}
                 alt="Avatar of a Node.js contributor"
-                width={75}
-                height={75}
+                width={DefaultImageSize}
+                height={DefaultImageSize}
               />
             </a>
           </div>
