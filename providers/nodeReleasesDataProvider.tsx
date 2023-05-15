@@ -16,13 +16,12 @@ export const NodeReleasesDataProvider: FC<NodeReleasesDataProviderProps> = ({
   children,
   nodeReleasesData,
 }) => {
+  const lts = nodeReleasesData.find(
+    nodeReleaseData => nodeReleaseData.status === 'Active LTS'
+  );
   const current = nodeReleasesData.find(
     nodeReleaseData => nodeReleaseData.status === 'Current'
   );
-  const lts =
-    nodeReleasesData.find(
-      nodeReleaseData => nodeReleaseData.status === 'Active LTS'
-    ) || current;
 
   return (
     <NodeReleasesDataContext.Provider
