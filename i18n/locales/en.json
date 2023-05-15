@@ -52,6 +52,7 @@
   "components.sections.newFooter.github": "GitHub",
   "components.learn.previousNextLink.next": "NEXT",
   "components.learn.previousNextLink.previous": "PREV",
+  "components.randomContributor.thankYou": "Thank you {contributor} for being a Node.js contributor with {amount} contributions",
   "components.home.nodeFeatures.javascript.title": "JavaScript",
   "components.home.nodeFeatures.javascript.description": "Node.js provides support for the JavaScript programming language",
   "components.home.nodeFeatures.openSource.title": "Open Source",
