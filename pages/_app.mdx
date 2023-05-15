@@ -3,8 +3,23 @@ import { NodeDataProvider } from '../providers/nodeDataProvider';
 import { LocaleProvider } from '../providers/localeProvider';
 import { SiteProvider } from '../providers/siteProvider';
 import sourceSansPro from '../util/sourceSansPro';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import '../styles/old/index.scss';
+
+export const theme = createTheme({
+  typography: {
+    fontFamily: [
+      sourceSansPro.style.fontFamily,
+      'Open Sans',
+      'Roboto',
+      'San Francisco',
+      'Helvetica',
+      'Arial',
+      'sans-serif'
+    ],
+  },
+});
 
 export default function App({ Component, pageProps }) {
   return (
@@ -12,19 +27,13 @@ export default function App({ Component, pageProps }) {
       <LocaleProvider i18nData={pageProps.i18nData}>
         <NodeDataProvider nodeVersionData={pageProps.nodeVersionData}>
           <MotionConfig reducedMotion="user">
-            {/* @TODO: This is a temporary solution. We might want to adopt Emotion/StyledComponents here */}
-            <style jsx global>
-              {`
-                body {
-                  font: 400 20px/1.5 ${sourceSansPro.style.fontFamily}, 'Open Sans',
-                    Roboto, 'San Francisco', Helvetica, Arial, sans-serif;
-                }
-              `}
-            </style>
-            <Component {...pageProps} />
+            <ThemeProvider theme={theme}>
+              <Component {...pageProps} />
+            </ThemeProvider>
           </MotionConfig>
         </NodeDataProvider>
       </LocaleProvider>
     </SiteProvider>
   );
+
 }
