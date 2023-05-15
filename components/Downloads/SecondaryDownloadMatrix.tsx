@@ -4,7 +4,7 @@ import type { LegacyDownloadsFrontMatter, NodeReleaseData } from '../../types';
 import type { FC } from 'react';
 
 type SecondaryDownloadMatrixProps = {
-  nodeReleaseData?: NodeReleaseData;
+  nodeReleaseData: NodeReleaseData;
 };
 
 // @TODO: Instead of using a static list it should be created dynamically. This is done on `nodejs.dev`
@@ -13,8 +13,6 @@ const SecondaryDownloadMatrix: FC<SecondaryDownloadMatrixProps> = ({
   nodeReleaseData,
 }) => {
   const nextraContext = useNextraContext();
-
-  if (!nodeReleaseData) return null;
 
   const { additional } =
     nextraContext.frontMatter as LegacyDownloadsFrontMatter;

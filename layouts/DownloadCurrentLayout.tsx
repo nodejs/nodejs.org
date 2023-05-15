@@ -22,8 +22,8 @@ const DownloadCurrentLayout: FC<PropsWithChildren> = ({ children }) => {
 
           {children}
 
-          <PrimaryDownloadMatrix nodeReleaseData={current} />
-          <SecondaryDownloadMatrix nodeReleaseData={current} />
+          {current && <PrimaryDownloadMatrix nodeReleaseData={current} />}
+          {current && <SecondaryDownloadMatrix nodeReleaseData={current} />}
         </article>
       </div>
     </BaseLayout>

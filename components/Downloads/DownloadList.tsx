@@ -11,8 +11,6 @@ type DownloadListProps = {
 const DownloadList: FC<DownloadListProps> = ({ nodeReleaseData }) => {
   const { getSideNavigation } = useNavigation();
 
-  if (!nodeReleaseData) return null;
-
   const [, ...downloadNavigation] = getSideNavigation('download', {
     shaSums: { nodeVersion: `v${nodeReleaseData.version}` },
     allDownloads: { nodeVersion: `v${nodeReleaseData.version}` },

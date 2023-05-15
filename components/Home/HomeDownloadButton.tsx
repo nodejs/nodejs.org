@@ -5,7 +5,7 @@ import type { NodeReleaseData } from '../../types';
 import type { FC } from 'react';
 
 type HomeDownloadButtonProps = {
-  nodeReleaseData?: NodeReleaseData;
+  nodeReleaseData: NodeReleaseData;
 };
 
 const HomeDownloadButton: FC<HomeDownloadButtonProps> = ({
@@ -14,8 +14,6 @@ const HomeDownloadButton: FC<HomeDownloadButtonProps> = ({
   const {
     frontMatter: { labels },
   } = useNextraContext();
-
-  if (!nodeReleaseData) return null;
 
   const nodeDownloadLink = `https://nodejs.org/dist/v${nodeReleaseData.version}/`;
   const nodeApiLink = `https://nodejs.org/dist/latest-v${nodeReleaseData.major}.x/docs/api/`;
