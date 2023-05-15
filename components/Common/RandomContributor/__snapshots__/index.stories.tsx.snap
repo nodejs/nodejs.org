@@ -13,8 +13,8 @@ exports[`Common/RandomContributor Default smoke-test 1`] = `
            height="75"
            decoding="async"
            data-nimg="1"
-           srcset="https://avatars.githubusercontent.com/u/9950313?s=200&amp;v=4?w=96&amp;q=75 1x, https://avatars.githubusercontent.com/u/9950313?s=200&amp;v=4?w=256&amp;q=75 2x"
-           src="https://avatars.githubusercontent.com/u/9950313?s=200&amp;v=4?w=256&amp;q=75"
+           srcset="https://avatars.githubusercontent.com/u/9950313?s=75&amp;v=4?w=96&amp;q=75 1x, https://avatars.githubusercontent.com/u/9950313?s=75&amp;v=4?w=256&amp;q=75 2x"
+           src="https://avatars.githubusercontent.com/u/9950313?s=75&amp;v=4?w=256&amp;q=75"
            style="color: transparent;"
       >
     </a>

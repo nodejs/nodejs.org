@@ -13,8 +13,7 @@ export const Default: Story = {
         const mock = createMock(hooks, 'useNodeJsContributorsApi');
         mock.mockReturnValue({
           profileUri: 'https://github.com/nodejs',
-          avatarUri:
-            'https://avatars.githubusercontent.com/u/9950313?s=200&v=4',
+          avatarUri: 'https://avatars.githubusercontent.com/u/9950313?s=75&v=4',
           login: 'nodejs',
           contributionsCount: 20,
           commitsListUri:
