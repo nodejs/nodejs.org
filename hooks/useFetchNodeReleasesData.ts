@@ -44,7 +44,7 @@ const getNodeReleaseStatus = (
   return 'Pending';
 };
 
-export const useNodeReleasesDataApi = (): NodeReleaseData[] => {
+export const useFetchNodeReleasesData = (): NodeReleaseData[] => {
   const { basePath } = useRouter();
 
   const { data = [] } = useSWR<any[]>(

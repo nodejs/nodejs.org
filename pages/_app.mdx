@@ -3,12 +3,12 @@ import { NodeReleasesDataProvider } from '../providers/nodeReleasesDataProvider'
 import { LocaleProvider } from '../providers/localeProvider';
 import { SiteProvider } from '../providers/siteProvider';
 import sourceSansPro from '../util/sourceSansPro';
-import { useNodeReleasesDataApi } from '../hooks/useNodeReleasesDataApi';
+import { useFetchNodeReleasesData } from '../hooks/useFetchNodeReleasesData';
 
 import '../styles/old/index.scss';
 
 export default function App({ Component, pageProps }) {
-  const nodeReleasesData = useNodeReleasesDataApi();
+  const nodeReleasesData = useFetchNodeReleasesData();
 
   return (
     <SiteProvider>
