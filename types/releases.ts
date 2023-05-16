@@ -31,7 +31,7 @@ export interface NodeReleaseData {
 }
 
 export interface NodeReleasesDataContext {
-  nodeReleasesData: NodeReleaseData[];
+  releases: NodeReleaseData[];
   lts?: NodeReleaseData;
   current?: NodeReleaseData;
 }

@@ -6,7 +6,7 @@ import type {
 } from '../types';
 
 type NodeReleasesDataProviderProps = PropsWithChildren<{
-  nodeReleasesData: NodeReleaseData[];
+  releases: NodeReleaseData[];
 }>;
 
 export const NodeReleasesDataContext =
@@ -14,19 +14,13 @@ export const NodeReleasesDataContext =
 
 export const NodeReleasesDataProvider: FC<NodeReleasesDataProviderProps> = ({
   children,
-  nodeReleasesData,
+  releases,
 }) => {
-  const lts = nodeReleasesData.find(
-    nodeReleaseData => nodeReleaseData.status === 'Active LTS'
-  );
-  const current = nodeReleasesData.find(
-    nodeReleaseData => nodeReleaseData.status === 'Current'
-  );
+  const lts = releases.find(release => release.status === 'Active LTS');
+  const current = releases.find(release => release.status === 'Current');
 
   return (
-    <NodeReleasesDataContext.Provider
-      value={{ nodeReleasesData, lts, current }}
-    >
+    <NodeReleasesDataContext.Provider value={{ releases, lts, current }}>
       {children}
     </NodeReleasesDataContext.Provider>
   );

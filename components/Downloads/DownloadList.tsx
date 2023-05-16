@@ -5,15 +5,15 @@ import type { NodeReleaseData } from '../../types';
 import type { FC } from 'react';
 
 type DownloadListProps = {
-  nodeReleaseData: NodeReleaseData;
+  release: NodeReleaseData;
 };
 
-const DownloadList: FC<DownloadListProps> = ({ nodeReleaseData }) => {
+const DownloadList: FC<DownloadListProps> = ({ release }) => {
   const { getSideNavigation } = useNavigation();
 
   const [, ...downloadNavigation] = getSideNavigation('download', {
-    shaSums: { nodeVersion: `v${nodeReleaseData.version}` },
-    allDownloads: { nodeVersion: `v${nodeReleaseData.version}` },
+    shaSums: { nodeVersion: `v${release.version}` },
+    allDownloads: { nodeVersion: `v${release.version}` },
   });
 
   return (

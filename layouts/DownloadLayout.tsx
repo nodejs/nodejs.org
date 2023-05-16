@@ -22,8 +22,8 @@ const DownloadLayout: FC<PropsWithChildren> = ({ children }) => {
 
           {children}
 
-          {lts && <PrimaryDownloadMatrix nodeReleaseData={lts} />}
-          {lts && <SecondaryDownloadMatrix nodeReleaseData={lts} />}
+          {lts && <PrimaryDownloadMatrix release={lts} />}
+          {lts && <SecondaryDownloadMatrix release={lts} />}
         </article>
       </div>
     </BaseLayout>

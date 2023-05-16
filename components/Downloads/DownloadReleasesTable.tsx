@@ -8,7 +8,7 @@ import type { FC } from 'react';
 type DownloadReleasesTableProps = {};
 
 const DownloadReleasesTable: FC<DownloadReleasesTableProps> = () => {
-  const { nodeReleasesData } = useNodeReleasesData();
+  const { releases } = useNodeReleasesData();
 
   return (
     <table id="tbVersions" className="download-table full-width">
@@ -27,7 +27,7 @@ const DownloadReleasesTable: FC<DownloadReleasesTableProps> = () => {
         </tr>
       </thead>
       <tbody>
-        {nodeReleasesData.map(release => (
+        {releases.map(release => (
           <tr key={release.major}>
             <td data-label="Version">Node.js {release.version}</td>
             <td data-label="LTS">{release.codename}</td>

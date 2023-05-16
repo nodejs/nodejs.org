@@ -2,12 +2,10 @@ import { useContext } from 'react';
 import { NodeReleasesDataContext } from '../providers/nodeReleasesDataProvider';
 
 export const useNodeReleasesData = () => {
-  const { nodeReleasesData, lts, current } = useContext(
-    NodeReleasesDataContext
-  );
+  const { releases, lts, current } = useContext(NodeReleasesDataContext);
 
   return {
-    nodeReleasesData: nodeReleasesData,
+    releases: releases,
     lts: lts,
     current: current,
   };

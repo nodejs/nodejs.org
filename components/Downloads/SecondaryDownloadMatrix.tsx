@@ -4,13 +4,13 @@ import type { LegacyDownloadsFrontMatter, NodeReleaseData } from '../../types';
 import type { FC } from 'react';
 
 type SecondaryDownloadMatrixProps = {
-  nodeReleaseData: NodeReleaseData;
+  release: NodeReleaseData;
 };
 
 // @TODO: Instead of using a static list it should be created dynamically. This is done on `nodejs.dev`
 // since this is a temporary solution and going to be fixed in the future.
 const SecondaryDownloadMatrix: FC<SecondaryDownloadMatrixProps> = ({
-  nodeReleaseData,
+  release,
 }) => {
   const nextraContext = useNextraContext();
 
@@ -35,7 +35,7 @@ const SecondaryDownloadMatrix: FC<SecondaryDownloadMatrixProps> = ({
             <th>{additional.LinuxPowerSystems}</th>
             <td>
               <a
-                href={`https://nodejs.org/dist/v${nodeReleaseData.version}/node-v${nodeReleaseData.version}-linux-ppc64le.tar.xz`}
+                href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}-linux-ppc64le.tar.xz`}
               >
                 64-bit
               </a>
@@ -46,7 +46,7 @@ const SecondaryDownloadMatrix: FC<SecondaryDownloadMatrixProps> = ({
             <th>{additional.LinuxSystemZ}</th>
             <td>
               <a
-                href={`https://nodejs.org/dist/v${nodeReleaseData.version}/node-v${nodeReleaseData.version}-linux-s390x.tar.xz`}
+                href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}-linux-s390x.tar.xz`}
               >
                 64-bit
               </a>
@@ -56,7 +56,7 @@ const SecondaryDownloadMatrix: FC<SecondaryDownloadMatrixProps> = ({
             <th>{additional.AIXPowerSystems}</th>
             <td>
               <a
-                href={`https://nodejs.org/dist/v${nodeReleaseData.version}/node-v${nodeReleaseData.version}-aix-ppc64.tar.gz`}
+                href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}-aix-ppc64.tar.gz`}
               >
                 64-bit
               </a>
@@ -65,7 +65,7 @@ const SecondaryDownloadMatrix: FC<SecondaryDownloadMatrixProps> = ({
         </tbody>
       </table>
 
-      <DownloadList nodeReleaseData={nodeReleaseData} />
+      <DownloadList release={release} />
     </section>
   );
 };

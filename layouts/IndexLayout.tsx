@@ -24,8 +24,8 @@ const IndexLayout: FC<PropsWithChildren> = ({ children }) => {
             {labels['download']}
           </h2>
 
-          {lts && <HomeDownloadButton nodeReleaseData={lts} />}
-          {current && <HomeDownloadButton nodeReleaseData={current} />}
+          {lts && <HomeDownloadButton release={lts} />}
+          {current && <HomeDownloadButton release={current} />}
 
           <p>
             {labels['version-schedule-prompt']}{' '}

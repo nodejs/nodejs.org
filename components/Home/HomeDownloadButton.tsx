@@ -5,24 +5,20 @@ import type { NodeReleaseData } from '../../types';
 import type { FC } from 'react';
 
 type HomeDownloadButtonProps = {
-  nodeReleaseData: NodeReleaseData;
+  release: NodeReleaseData;
 };
 
-const HomeDownloadButton: FC<HomeDownloadButtonProps> = ({
-  nodeReleaseData,
-}) => {
+const HomeDownloadButton: FC<HomeDownloadButtonProps> = ({ release }) => {
   const {
     frontMatter: { labels },
   } = useNextraContext();
 
-  const nodeDownloadLink = `https://nodejs.org/dist/v${nodeReleaseData.version}/`;
-  const nodeApiLink = `https://nodejs.org/dist/latest-v${nodeReleaseData.major}.x/docs/api/`;
-  const nodeAllDownloadsLink = `/download${
-    nodeReleaseData.isLts ? '/' : '/current'
-  }`;
+  const nodeDownloadLink = `https://nodejs.org/dist/v${release.version}/`;
+  const nodeApiLink = `https://nodejs.org/dist/latest-v${release.major}.x/docs/api/`;
+  const nodeAllDownloadsLink = `/download${release.isLts ? '/' : '/current'}`;
   const nodeDownloadTitle =
-    `${labels.download} ${nodeReleaseData.version}` +
-    ` ${labels[nodeReleaseData.isLts ? 'lts' : 'current']}`;
+    `${labels.download} ${release.version}` +
+    ` ${labels[release.isLts ? 'lts' : 'current']}`;
 
   return (
     <div className="home-downloadblock">
@@ -30,13 +26,10 @@ const HomeDownloadButton: FC<HomeDownloadButtonProps> = ({
         href={nodeDownloadLink}
         className="home-downloadbutton"
         title={nodeDownloadTitle}
-        data-version={`v${nodeReleaseData.version}`}
+        data-version={`v${release.version}`}
       >
-        {nodeReleaseData.version}{' '}
-        {labels[nodeReleaseData.isLts ? 'lts' : 'current']}
-        <small>
-          {labels[`tagline-${nodeReleaseData.isLts ? 'lts' : 'current'}`]}
-        </small>
+        {release.version} {labels[release.isLts ? 'lts' : 'current']}
+        <small>{labels[`tagline-${release.isLts ? 'lts' : 'current'}`]}</small>
       </a>
 
       <ul className="list-divider-pipe home-secondary-links">
@@ -46,9 +39,7 @@ const HomeDownloadButton: FC<HomeDownloadButtonProps> = ({
           </LocalizedLink>
         </li>
         <li>
-          <LocalizedLink
-            href={getNodejsChangelog(`v${nodeReleaseData.version}`)}
-          >
+          <LocalizedLink href={getNodejsChangelog(`v${release.version}`)}>
             {labels.changelog}
           </LocalizedLink>
         </li>
