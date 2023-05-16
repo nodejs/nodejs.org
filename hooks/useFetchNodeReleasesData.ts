@@ -52,7 +52,7 @@ export const useFetchNodeReleasesData = (): NodeReleaseData[] => {
     fetcher
   );
 
-  const nodeReleasesData = useMemo(() => {
+  return useMemo(() => {
     const now = new Date();
 
     return data.map(raw => {
@@ -81,6 +81,4 @@ export const useFetchNodeReleasesData = (): NodeReleaseData[] => {
       } as NodeReleaseData;
     });
   }, [data]);
-
-  return nodeReleasesData;
 };
