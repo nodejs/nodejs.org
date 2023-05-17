@@ -67,6 +67,7 @@ const traverseTableOfContents = (tableOfContents: PropsTableOfContents) => {
     </ul>
   );
 };
+
 const TableOfContents: FC<{ tableOfContents: PropsTableOfContents }> = ({
   tableOfContents,
 }) => {
