@@ -32,7 +32,7 @@ function parseTableOfContents(
     parent.children.push(node);
   }
 
-  tableOfContents.forEach(node => {
+  tableOfContents.map(node => {
     const { depth, value, id } = node;
     const parsedNode = { depth, value, id };
 
@@ -53,20 +53,16 @@ function parseTableOfContents(
   return parsedTableOfContents as ParsedTableOfContents;
 }
 
-const traverseTableOfContents = (tableOfContents: PropsTableOfContents) => {
-  const MappedTableOfContents = parseTableOfContents(tableOfContents);
-
-  return (
-    <ul>
-      {MappedTableOfContents.map(item => (
-        <li key={item.id}>
-          <Link href={`#${item.id}`}>{item.value}</Link>
-          {item.children && traverseTableOfContents(item.children)}
-        </li>
-      ))}
-    </ul>
-  );
-};
+const traverseTableOfContents: FC<PropsTableOfContents> = tableOfContents => (
+  <ul>
+    {parseTableOfContents(tableOfContents).map(item => (
+      <li key={item.id}>
+        <Link href={`#${item.id}`}>{item.value}</Link>
+        {item.children && traverseTableOfContents(item.children)}
+      </li>
+    ))}
+  </ul>
+);
 const TableOfContents: FC<{ tableOfContents: PropsTableOfContents }> = ({
   tableOfContents,
 }) => {
