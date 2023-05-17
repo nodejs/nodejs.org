@@ -24,4 +24,9 @@ export const mockTableOfContents = [
     value: 'test',
     id: 'test',
   },
+  {
+    depth: 6,
+    value: 'test',
+    id: 'test',
+  },
 ];
