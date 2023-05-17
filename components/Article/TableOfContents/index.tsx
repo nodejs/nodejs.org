@@ -3,28 +3,26 @@ import Link from 'next/link';
 import styles from './index.module.scss';
 import type { FC } from 'react';
 
-type PropsTableOfContents = {
+type TableOfContentsNode = {
   depth: number;
   value: string;
   id: string;
-}[];
+  children?: TableOfContentsNode[];
+  parent?: TableOfContentsNode | null;
+};
 
-type ParsedTableOfContents = {
-  depth: number;
-  value: string;
-  id: string;
-  parent?: ParsedTableOfContents | null;
-  children?: ParsedTableOfContents;
-}[];
+type TableOfContentsProps = {
+  tableOfContents: TableOfContentsNode[];
+};
 
 function parseTableOfContents(
-  tableOfContents: PropsTableOfContents
-): ParsedTableOfContents {
-  const parsedTableOfContents: ParsedTableOfContents = [];
+  tableOfContents: TableOfContentsNode[]
+): TableOfContentsNode[] {
+  const parsedTableOfContents: TableOfContentsNode[] = [];
 
   function addChildNode(
-    parent: ParsedTableOfContents,
-    node: ParsedTableOfContents
+    parent: TableOfContentsNode,
+    node: TableOfContentsNode
   ) {
     if (!parent.children) {
       parent.children = [];
@@ -32,13 +30,13 @@ function parseTableOfContents(
     parent.children.push(node);
   }
 
-  tableOfContents.map(node => {
+  tableOfContents.forEach(node => {
     const { depth, value, id } = node;
-    const parsedNode = { depth, value, id };
+    const parsedNode: TableOfContentsNode = { depth, value, id };
 
     let parentNode = parsedTableOfContents[parsedTableOfContents.length - 1];
     while (parentNode && parentNode.depth >= depth) {
-      parentNode = parentNode.parent;
+      parentNode = parentNode.parent!;
     }
 
     if (parentNode) {
@@ -50,10 +48,10 @@ function parseTableOfContents(
     parsedNode.parent = parentNode || null;
   });
 
-  return parsedTableOfContents as ParsedTableOfContents;
+  return parsedTableOfContents;
 }
 
-const traverseTableOfContents: FC<PropsTableOfContents> = tableOfContents => (
+const traverseTableOfContents: FC<TableOfContentsNode[]> = tableOfContents => (
   <ul>
     {parseTableOfContents(tableOfContents).map(item => (
       <li key={item.id}>
@@ -63,9 +61,8 @@ const traverseTableOfContents: FC<PropsTableOfContents> = tableOfContents => (
     ))}
   </ul>
 );
-const TableOfContents: FC<{ tableOfContents: PropsTableOfContents }> = ({
-  tableOfContents,
-}) => {
+
+const TableOfContents: FC<TableOfContentsProps> = ({ tableOfContents }) => {
   if (tableOfContents.length === 0) {
     return null;
   }
