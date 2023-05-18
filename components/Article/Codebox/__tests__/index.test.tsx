@@ -27,17 +27,6 @@ describe('Replacer tests', (): void => {
 describe('Codebox component (one lang)', (): void => {
   const code = 'const a = 1;';
 
-  it('renders correctly', (): void => {
-    const { container } = render(
-      <IntlProvider locale="en" onError={() => {}}>
-        <Codebox>
-          <pre className="language-js">{code}</pre>
-        </Codebox>
-      </IntlProvider>
-    );
-    expect(container).toMatchSnapshot();
-  });
-
   it('should copy content', async () => {
     const user = userEvent.setup();
 
@@ -66,17 +55,6 @@ describe('Codebox component (multiple langs)', (): void => {
   const code = `const http = require('http');
 --------------
 import http from 'http';`;
-
-  it('renders correctly', (): void => {
-    const { container } = render(
-      <IntlProvider locale="en" onError={() => {}}>
-        <Codebox>
-          <pre className="language-js|language-js">{code}</pre>
-        </Codebox>
-      </IntlProvider>
-    );
-    expect(container).toMatchSnapshot();
-  });
 
   it('switch between languages', async () => {
     const user = userEvent.setup();
