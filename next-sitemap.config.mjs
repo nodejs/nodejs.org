@@ -9,7 +9,7 @@ const sitemapConfig = {
   trailingSlash: false,
   generateRobotsTxt: true,
   generateIndexSitemap: false,
-  outDir: enableStaticExport ? 'build' : 'public',
+  output: enableStaticExport ? 'export' : undefined,
   robotsTxtOptions: {
     policies: [
       {
