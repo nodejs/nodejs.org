@@ -11,12 +11,10 @@
     "node": "v18"
   },
   "scripts": {
-    "serve": "cross-env NODE_ENV=development NODE_NO_WARNINGS=1 next dev",
-    "build": "cross-env NODE_ENV=production NODE_NO_WARNINGS=1 next build",
-    "postbuild": "next-sitemap",
-    "start": "cross-env NODE_ENV=production NODE_NO_WARNINGS=1 next start",
-    "export": "cross-env NODE_NO_WARNINGS=1 next export -o build",
-    "deploy": "npm run build && npm run export",
+    "serve": "cross-env NODE_NO_WARNINGS=1 next dev",
+    "build": "cross-env NODE_NO_WARNINGS=1 next build",
+    "start": "cross-env NODE_NO_WARNINGS=1 next start",
+    "deploy": "cross-env NEXT_STATIC_EXPORT=true npm run build && cross-env NEXT_STATIC_EXPORT=true npm run scripts:sitemap",
     "lint:js": "eslint \"**/*.{js,jsx,ts,tsx}\" --cache --cache-file .eslintjscache --report-unused-disable-directives",
     "lint:md": "eslint \"**/*.{md,mdx}\" --cache --cache-file .eslintmdcache",
     "lint:scss": "stylelint --config .stylelintrc \"**/*.{css,sass,scss}\"",
@@ -25,13 +23,14 @@
     "prettier": "prettier . --check --cache --cache-strategy metadata",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix && npm run lint:fix",
-    "scripts:release-post": "NODE_NO_WARNINGS=1 node scripts/release-post/index.mjs",
     "test": "cross-env NODE_NO_WARNINGS=1 jest --passWithNoTests",
-    "test:watch": "npm run test -- --watch",
     "test:ci": "npm run test -- --coverage",
+    "test:watch": "npm run test -- --watch",
     "test:snapshot": "npm run test -- --updateSnapshot",
-    "storybook": "cross-env NODE_ENV=development NODE_NO_WARNINGS=1 storybook dev -p 6006",
-    "storybook:build": "cross-env NODE_ENV=production NODE_NO_WARNINGS=1 storybook build"
+    "storybook": "cross-env NODE_NO_WARNINGS=1 storybook dev -p 6006",
+    "storybook:build": "cross-env NODE_NO_WARNINGS=1 storybook build",
+    "scripts:release-post": "cross-env NODE_NO_WARNINGS=1 node scripts/release-post/index.mjs",
+    "scripts:sitemap": "cross-env NODE_NO_WARNINGS=1 next-sitemap --config next-sitemap.config.mjs"
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
@@ -103,7 +102,7 @@
     "stylelint-config-recommended-scss": "^11.0.0",
     "stylelint-order": "^6.0.3",
     "stylelint-selector-bem-pattern": "^2.1.1",
-    "turbo": "^1.9.3",
+    "turbo": "^1.9.8",
     "typescript": "^5.0.4"
   }
 }
