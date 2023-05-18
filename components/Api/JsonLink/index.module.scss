@@ -1,0 +1,29 @@
+.json {
+  display: flex;
+  flex-wrap: wrap;
+
+  a {
+    color: var(--color-text-secondary);
+    font-family: var(--sans-serif);
+    font-size: 1.4rem;
+    font-weight: var(--font-weight-regular);
+    margin-left: 0;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    vertical-align: middle;
+
+    span {
+      font-weight: var(--font-weight-regular);
+      vertical-align: middle;
+    }
+
+    &:hover {
+      color: var(--brand-light);
+    }
+
+    .FaRobotIcon {
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+  }
+}

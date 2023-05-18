@@ -1,22 +1,12 @@
 ---
 layout: about.hbs
 title: Sobre
-trademark: Trademark
+trademark: Marca registrada
 ---
 
 # Sobre Node.js®
-<!--
-As an asynchronous event driven JavaScript runtime, Node is designed to build
-scalable network applications. In the following "hello world" example, many
-connections can be handled concurrently. Upon each connection the callback is
-fired, but if there is no work to be done, Node will sleep.
--->
 
-Como um ambiente de execução JavaScript assíncrono orientado a eventos, o Node.js
-é projetado para desenvolvimento de aplicações escaláveis de rede. No exemplo a
-seguir, diversas conexões podem ser controladas ao mesmo tempo. Em cada conexão
-a função de _callback_ é chamada. Mas, se não houver trabalho a ser realizado,
-o Node.js ficará inativo.
+Como um tempo de execução assíncrono conduzido por eventos de JavaScript, Node.js é projetado para construir aplicativos escaláveis e de rede. No exemplo "hello world" seguinte, muitas conexões podem ser tratadas simultaneamente. Em cada conexão, o callback é acionado, mas se não houver trabalho a ser feito, o Node.js ficará inativo.
 
 ```javascript
 const http = require('http');
@@ -27,84 +17,29 @@ const port = 3000;
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
+  res.end('Olá Mundo');
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+  console.log(`Servidor executando em http://${hostname}:${port}/`);
 });
 ```
 
-<!--
-This is in contrast to today's more common concurrency model where OS threads
-are employed. Thread-based networking is relatively inefficient and very
-difficult to use. Furthermore, users of Node are free from worries of
-dead-locking the process, since there are no locks. Almost no function in Node
-directly performs I/O, so the process never blocks. Because nothing blocks,
-scalable systems are very reasonable to develop in Node.
+Observe que isso contrasta com o modelo de concorrência, muito comúm hoje em dia, no qual são usadas as threads do Sistema Operacional. Entretanto, uma rede baseada em threads se torna relativamente ineficiente e muito difícil de usar. Além disso, os usuários do Node.js não precisam se preocupar em bloquear processos, já que não existem bloqueios. Quase nenhuma função no Node.js executa diretamente operações I/O, e por isso, o processo nunca se bloqueia, exceto quando o I/O é realizado usando métodos síncronos de Node.js da biblioteca padrão. Como nada se bloqueia, é razóavel usar Node.js para desenvolver sistemas escaláveis.
 
-If some of this language is unfamiliar, there is a full article on
-[Blocking vs Non-Blocking][].
--->
-
-Essa é uma alternativa que contrasta com o modelo de concorrência mais comum, onde são
-utilizadas _threads_ do SO. Aplicações de rede baseadas em _threads_ são relativamente
-ineficientes e difíceis de usar. Além disso, os usuários do Node.js não precisam
-se preocupar com _deadlock_ de processos, pois não existem _locks_. Quase nenhuma função
-no Node.js realiza diretamente operações de E/S, por essa razão o processo nunca bloqueia.
-Por não existirem operações bloqueantes, sistemas escaláveis são razoavelmente fáceis
-de serem desenvolvidos em Node.js.
-
-Se algum desses conceitos não é familiar, dê uma olhada no artigo [Blocking vs Non-Blocking][].
+Se alguns destes termos não são familiares, há um artigo completo ao respeito: [Bloqueando vs. Não Bloqueando][].
 
 ---
 
-<!--
-Node is similar in design to, and influenced by, systems like Ruby's
-[Event Machine][] or Python's [Twisted][]. Node takes the event model a bit
-further. It presents an [event loop][] as a runtime construct instead of as a library.
-In other systems there is always a blocking call to start the event-loop.
-Typically behavior is defined through callbacks at the beginning of a script
-and at the end starts a server through a blocking call like
-`EventMachine::run()`. In Node there is no such start-the-event-loop call. Node
-simply enters the event loop after executing the input script. Node exits the
-event loop when there are no more callbacks to perform. This behavior is like
-browser JavaScript — the event loop is hidden from the user.
--->
-Node.js é semelhante no projeto, e influenciado por sistemas como [Event Machine][] do Ruby
-ou [Twisted][] do Python. Porém, leva o modelo de eventos um pouco mais além. No Node.js o _[event loop][]_
-é exposto como uma parte do ambiente de execução ao invés de uma biblioteca. Em outros sistemas há
-sempre uma chamada bloqueante para iniciar o _event-loop_. Tipicamente o comportamento esperado é
-definido através de _callbacks_ no início do _script_, e no final um servidor é iniciado por uma
-chamada bloqueante como por exemplo `EventMachine::run()`.
+Node.js é semelhante no design, e bastante influenciado, por sistemas como os de [Máquina de Eventos][] do Ruby ou como o [Twisted][]do Python. Porém, Node.js leva o modelo de eventos para um pouco mais além. De fato, o Node.js apresenta um [laço de eventos][] como uma construção de tempo de execução em vez de como uma biblioteca. Já em outros sistemas, sempre há uma chamada de bloqueio para iniciar o laço de eventos. Normalmente, o comportamento é definido através de callbacks no início de um script e, no final, um servidor é iniciado através de uma chamada de bloqueio como `EventMachine::run()`. Entretanto, em Node.js não existe essa chamada-inicial-para-o-começo-do-laço. De fato, o Node.js simplesmente entra no laço de eventos após executar o script de entrada. E, posteriormente, o Node.js sai do laço de eventos quando não há mais callbacks para executar. Esse comportamento é como o JavaScript do navegador: o laço de eventos é oculto para o usuário.
 
-<!--
-HTTP is a first class citizen in Node, designed with streaming and low latency
-in mind. This makes Node well suited for the foundation of a web library or
-framework.
--->
-Em Node.js, HTTP é um cidadão de primeira classe, projetado para que tenha um alta
-taxa de fluxo e baixa latência. Isso torna o Node.js uma ótima escolha para servir como base para
-uma biblioteca web ou para um _framework_.
+O HTTP é um cidadão de primeira classe no Node.js, pois ele é desenhado com fluxo e baixa latência. Isso torna o Node.js bem adequado para a criação de uma biblioteca ‘web’ ou qualquer framework.
 
-<!--
-Just because Node is designed without threads, doesn't mean you cannot take
-advantage of multiple cores in your environment. Child processes can be spawned
-by using our [`child_process.fork()`][] API, and are designed to be easy to
-communicate with. Built upon that same interface is the [`cluster`][] module,
-which allows you to share sockets between processes to enable load balancing
-over your cores.
--->
-Embora Node.js seja projetado sem a utilização de _threads_, isso não quer dizer que
-você não possa tirar vantagens de múltiplos núcleos de processamento em seu ambiente.
-Processos filhos podem ser criados utilizando a API [`child_process.fork()`][], e foram
-desenvolvidos para que a comunicação entre eles seja fácil. Da mesma maneira foi o módulo
-[`cluster`][], que permite o compartilhamento de _sockets_ entre os processos, a fim de
-permitir o balanceamento de carga entre os núcleos.
+O fato do Node.js ser desenhado sem threads não quer dizer que não podamos tirar proveito de um ambiente com múltiplos núcleos. Por exemplo, processos filho podem ser gerados usando nossa API [`child_process.fork()`][], pois foi desenhada para uma fácil comunicação. Por outro lado, o módulo [`cluster`][] foi construido com a mesma interfase. Este módulo permite compartilhar soquetes entre processos para abilitar o equilibro da carga entre os núcleos.
 
-[Blocking vs Non-Blocking]: /en/docs/guides/blocking-vs-non-blocking/
+[Bloqueando vs. Não Bloqueando]: /en/docs/guides/blocking-vs-non-blocking/
 [`child_process.fork()`]: https://nodejs.org/api/child_process.html#child_process_child_process_fork_modulepath_args_options
 [`cluster`]: https://nodejs.org/api/cluster.html
-[event loop]: /en/docs/guides/event-loop-timers-and-nexttick/
-[Event Machine]: https://github.com/eventmachine/eventmachine
+[laço de eventos]: /en/docs/guides/event-loop-timers-and-nexttick/
+[Máquina de Eventos]: https://github.com/eventmachine/eventmachine
 [Twisted]: https://twistedmatrix.com/trac/
