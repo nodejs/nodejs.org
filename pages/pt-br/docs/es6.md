@@ -5,23 +5,23 @@ layout: docs.hbs
 
 # ECMAScript 2015 (ES6) e além
 
-O Node.js é construído com as novas versões do [V8](https://v8.dev/). Mantendo-se em dia com as últimas atualizações desta engine, nós garantimos que as novas funcionalidades da [especificação JavaScript ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm) são trazidas para os desenvolvedores Node.js em tempo hábil, assim como as melhorias contínuas de performance e estabilidade.
+Node.js é construído contra novas versões do [V8](https://v8.dev/). Mantendo-se em dia com as últimas atualizações desse motor, nós garantimos que as novas funcionalidades da [especificação JavaScript ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm) são trazidas para os desenvolvedores de Node.js em tempo hábil, assim como as melhorias contínuas de performance e estabilidade.
 
-Todas as funcionalidades do ECMAScript 2015 (ES6) são divididas em três grupos:
+Todas as funcionalidades ECMAScript 2015 (ES6) são divididas em três grupos: **em produção**, em **homologação** e em **andamento**:
 
-* Todas as funcionalidades em **lançamento** (shipping), que o V8 considera estáveis, são **ativadas por padrão no Node.js** e **NÃO** necessitam de nenhum tipo de flag de tempo de execução.
-* As funcionalidades **em homologação**, que estão quase completas, mas não são consideradas estáveis pelo time do V8 necessitam da flag `--harmony`.
-* As funcionalidades **em progresso** podem ser ativadas individualmente por sua respectiva flag "harmony", entretanto isto é altamente desencorajado a menos que seja para propósito de teste. Nota: estas flags são expostas pelo V8 e podem mudar sem aviso.
+* Todas as funcionalidades **em produção**, consideras estáveis pelo V8, tornam-se **ativadas por padrão em Node.js** e **NÃO** necessitam de nenhuma opção de tempo de execução.
+* As funcionalidades em **homologação**, cujo são recursos quase concluídos, mas não são considerados estáveis pela equipe V8, requerem uma opção de tempo de execução: `--harmony`.
+* Em **andamento**, seriam as funcionalidades que podem ser ativadas individualmente pela sua respectiva opção harmony, embora isso seja muito desencorajado a menos que seja para fins de teste. Nota: essas opções são expostas pelo V8 e potencialmente podem mudar sem qualquer aviso de descontinuidade.
 
-## Quais funcionalidades são embarcadas com cada versão do Node.js por padrão?
+## Quais funcionalidades são enviadas com cada versão do Node.js por padrão?
 
-O site [node.green](https://node.green/) oferece uma excelente visão sobre quais são as funcionalidades do ECMAScript suportadas em diversas versões do Node.js, baseadas na [tabela de compatibilidade](https://github.com/kangax/compat-table) de kangax.
+O site [node.green](https://node.green/) fornece uma excelente visão geral sobre funcionalidades ECMAScript suportados em várias versões de Node.js, baseadas na tabela de compatibilidades do kangax.
 
-## Quais funcionalidades estão em progresso?
+## Quais funcionalidades estão em andamento?
 
-Novas funcionalidades estão constantemente sendo adicionadas na engine do V8. É esperado que elas apareçam em alguma versão futura do Node.js, porém sem uma previsão precisa de quando isso pode acontecer.
+Novas funcionalidades estão sendo constantemente adicionadas ao motor do V8. É esperado que elas apareçam em alguma versão futura do Node.js, porém sem uma previsão precisa de quando isso irá acontecer.
 
-Você pode listar todas as funcionalidades *em progresso* disponíveis em cada versão do Node.js utilizando o `grep` em conjunto com o argumento `--v8-options`. É importante notar que essas funcionalidades podem estar incompletas ou quebradas no V8, portanto use-as por sua conta e risco:
+Você pode listar todas as funcionalidades *em andamento* disponíveis em cada versão do Node.js utilizando o `grep` em conjunto com a opção `--v8-options`. É importante notar que essas funcionalidades podem estar incompletas ou quebradas no V8, portanto use-as por sua conta e risco:
 
 ```bash
 node --v8-options | grep "in progress"
