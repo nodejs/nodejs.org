@@ -18,8 +18,6 @@ const WindowsPanel: FC = () => (
       <span className={styles.installTextNoSelect}>$</span>
       <span className={styles.installTextCommand}>nvs </span>use lts
     </ShellBox>
-    <br />
-    <br />
     {/* @TODO: Verify this link when we implement content */}
     <LocalizedLink
       className={styles.installDocsButton}

@@ -5,17 +5,13 @@
   display: flex;
   flex-direction: column;
   font-family: var(--mono);
-  padding: 0 0 var(--space-48) var(--space-16);
   position: relative;
 
   code {
     color: var(--pink5);
     font-family: inherit;
-    line-height: 30px;
+    margin: 1em;
     overflow-x: hidden;
-    position: absolute;
-    top: 30px;
-    width: calc(100% - 20px);
 
     &:hover {
       overflow-x: auto;
@@ -41,10 +37,9 @@
   }
 
   .top {
-    display: inherit;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: var(--space-08);
 
     span,
     button {
@@ -60,13 +55,13 @@
       background-color: var(--black3);
       border-radius: 0 0 0.3rem 0.3rem;
       color: var(--black9);
-      margin-left: 1.6rem;
     }
 
     button {
       background-color: var(--brand);
       border-radius: 0 0.3rem 0.3rem 0.3rem;
       border-width: 0;
+      cursor: pointer;
       i {
         padding: 0;
       }

@@ -58,6 +58,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-intl": "^6.4.2",
+    "react-tabs": "^6.0.1",
     "remark-gfm": "^3.0.1",
     "sass": "^1.62.1",
     "semver": "^7.5.0",

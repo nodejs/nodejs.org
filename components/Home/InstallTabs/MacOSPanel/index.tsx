@@ -25,8 +25,6 @@ export const PureMacOSPanel: FC<Props> = ({ nvmVersion }) => {
         <span className={styles.installTextNoSelect}>$</span>
         <span className={styles.installTextCommand}>nvm </span>install --lts
       </ShellBox>
-      <br />
-      <br />
       {/* @TODO: Verify this link when we implement content */}
       <LocalizedLink
         className={styles.installDocsButton}

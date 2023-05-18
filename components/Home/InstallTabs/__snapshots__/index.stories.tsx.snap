@@ -100,8 +100,6 @@ exports[`Home/InstallTabs Default smoke-test 1`] = `
             install --lts
           </code>
         </pre>
-        <br>
-        <br>
         <a class="InstallTabs_installDocsButton__upRsr"
            href="/en/download/package-manager#nvm"
         >
