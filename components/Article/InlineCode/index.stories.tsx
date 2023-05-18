@@ -15,10 +15,6 @@ type Meta = MetaObj<typeof DecoratedInlineCode>;
 
 const code = 'const a = 1;';
 
-export const Default: Story = {
-  args: { code },
-};
+export const Default: Story = { args: { code } };
 
-export default {
-  component: DecoratedInlineCode,
-} as Meta;
+export default { component: DecoratedInlineCode } as Meta;
