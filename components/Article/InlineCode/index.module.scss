@@ -1,0 +1,36 @@
+@import '../../../styles/code';
+
+.code {
+  @extend %codeBaseStyles;
+
+  font-weight: var(--font-weight-light);
+  padding: 0 6px;
+
+  white-space: break-spaces;
+}
+
+[data-theme='light'] {
+  .code {
+    background-color: var(--black2);
+    color: var(--black9);
+  }
+
+  a .code {
+    background-color: transparent;
+    color: var(--color-text-accent);
+    padding: 0;
+  }
+}
+
+[data-theme='dark'] {
+  .code {
+    background-color: var(--black9);
+    color: var(--black2);
+  }
+
+  a .code {
+    background-color: transparent;
+    color: var(--color-text-accent);
+    padding: 0;
+  }
+}

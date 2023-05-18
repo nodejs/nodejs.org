@@ -1,67 +1,31 @@
 ---
-title: Governança do Projeto
+title: Governança do projeto
 layout: about.hbs
 ---
 
-<!--
-# Project Governance
--->
-# Governança do Projeto
+# Governança do projeto
 
-<!--
-## Consensus Seeking Process
+## Processo de busca por consenso
 
-The Node.js project follows a [Consensus Seeking][] decision making model.
--->
-## Processo de Busca por Consenso
+O projeto Node.js segue um modelo de [Busca por Consenso][] para a tomada de decisões.
 
-O projeto Node.js segue o modelo de [Busca por Consenso][] para tomada de decisão.
-
-<!--
-## Collaborators
-
-The [nodejs/node][] core GitHub repository is maintained by the Collaborators
-who are added by the Technical Steering Committee ([TSC][]) on an ongoing basis.
-
-Individuals making significant and valuable contributions are made Collaborators
-and given commit-access to the project. These individuals are identified by the
-TSC and their nomination is discussed with the existing Collaborators.
-
-For the current list of Collaborators, see the project's [README.md][].
-
-A guide for Collaborators is maintained at [collaborator-guide.md][].
--->
 ## Colaboradores
 
-O repositório principal [nodejs/node][] no GitHub é mantido por Colaboradores
-que são nomeados continuamente pelo _Technical Steering Committee_ ([TSC][]).
+O repositório principal [nodejs/node][] no GitHub é mantido por Colaboradores nomeados continuamente pelo Comitê Técnico de Direção ([TSC][]).
 
-Pessoas que fazem contribuições significantes e valiosas são nomeadas Colaboradores
-e tem permissão para realizar _commits_ no projeto. Essas pessoas são identificadas
-pelo TSC e sua nomeação é debatida com os demais Colaboradores.
+Indivíduos que fazem contribuições significativas e valiosas se tornam Colaboradores e ganham acesso para realizar commits ao projeto. Essas pessoas são identificadas pelo Comitê e suas nomeações são discutidas com os colaboradores já existentes.
 
-Para ver a lista atual de Colaboradores, acesse o [README.md][] do projeto.
+Para conhecer a lista atual de Colaboradores, consulte o [README.md][] do projeto.
 
 Um guia para Colaboradores é mantido em [collaborator-guide.md][].
 
-<!--
-## Top Level Committees
+## Comitê Técnico de Direção
 
-The project is governed jointly by the [Technical Steering Committee (TSC)][]
-which is responsible for high-level guidance of the project, and the
-[Community Committee (CommComm)][] which is responsible for guiding and
-extending the Node.js community.
--->
-## Comitês Superiores
-
-O projeto é governado de forma conjunta pelo _[Technical Steering Committee (TSC)][]_
-responsável pelas diretrizes do projeto, e pelo _[Community Committee (CommComm)][]_
-responsável por orientar e ampliar a comunidade Node.js.
+O projeto é regido pelo [Comitê Técnico de Direção (TSC em inglês)][], responsável pela orientação de alto nível do projeto.
 
 [collaborator-guide.md]: https://github.com/nodejs/node/blob/main/doc/contributing/collaborator-guide.md
-[Community Committee (CommComm)]: https://github.com/nodejs/community-committee/blob/master/Community-Committee-Charter.md
 [Busca por Consenso]: https://en.wikipedia.org/wiki/Consensus-seeking_decision-making
 [README.md]: https://github.com/nodejs/node/blob/main/README.md#current-project-team-members
-[Technical Steering Committee (TSC)]: https://github.com/nodejs/TSC/blob/master/TSC-Charter.md
+[Comitê Técnico de Direção (TSC em inglês)]: https://github.com/nodejs/TSC/blob/main/TSC-Charter.md
 [TSC]: https://github.com/nodejs/TSC
 [nodejs/node]: https://github.com/nodejs/node

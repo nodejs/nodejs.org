@@ -23,6 +23,7 @@ const preview: Preview = {
         basePath: '',
       },
     },
+    backgrounds: { disable: true },
   },
 };
 
