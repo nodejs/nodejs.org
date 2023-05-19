@@ -11,6 +11,8 @@
     "node": "v18"
   },
   "scripts": {
+    "scripts:release-post": "cross-env NODE_NO_WARNINGS=1 node scripts/release-post/index.mjs",
+    "scripts:sitemap": "cross-env NODE_NO_WARNINGS=1 next-sitemap --config next-sitemap.config.mjs",
     "serve": "cross-env NODE_NO_WARNINGS=1 next dev",
     "build": "cross-env NODE_NO_WARNINGS=1 next build",
     "start": "cross-env NODE_NO_WARNINGS=1 next start",
@@ -23,15 +25,14 @@
     "prettier": "prettier . --check --cache --cache-strategy metadata",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix && npm run lint:fix",
-    "scripts:release-post": "NODE_NO_WARNINGS=1 node scripts/release-post/index.mjs",
-    "test": "npm run test:unit && npm run test:storybook",
+    "storybook": "cross-env NODE_NO_WARNINGS=1 storybook dev -p 6006",
+    "storybook:build": "cross-env NODE_NO_WARNINGS=1 storybook build",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 jest --passWithNoTests",
     "test:unit:watch": "npm run test:unit -- --watch",
     "test:storybook": "npx concurrently -P -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run storybook -- --ci\" \"npx wait-on http://localhost:6006 && npx test-storybook {@}\"",
     "test:storybook:snapshot": "npm run test:storybook -- -- --updateSnapshot",
     "test:storybook:watch": "npm run test:storybook -- -- --watch",
-    "storybook": "cross-env NODE_ENV=development NODE_NO_WARNINGS=1 storybook dev -p 6006",
-    "storybook:build": "cross-env NODE_ENV=production NODE_NO_WARNINGS=1 storybook build"
+    "test": "npm run test:unit && npm run test:storybook"
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",

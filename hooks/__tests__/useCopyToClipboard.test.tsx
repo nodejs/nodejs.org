@@ -1,4 +1,4 @@
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen, act } from '@testing-library/react';
 import { FormattedMessage } from 'react-intl';
 import { IntlProvider } from 'react-intl';
 import { useCopyToClipboard } from '../useCopyToClipboard';
@@ -6,8 +6,15 @@ import { useCopyToClipboard } from '../useCopyToClipboard';
 const mockWriteText = jest.fn();
 const originalNavigator = { ...window.navigator };
 
+const testMessages = {
+  'components.common.shellBox.copy':
+    '{copied, select, true {copied}other {copy}}',
+};
+
 describe('useCopyToClipboard', () => {
   beforeEach(() => {
+    jest.useFakeTimers();
+
     Object.defineProperty(window, 'navigator', {
       value: {
         clipboard: {
@@ -23,22 +30,7 @@ describe('useCopyToClipboard', () => {
     });
   });
 
-  const TestComponent = ({ textToCopy }: { textToCopy: string }) => {
-    const [copied, copyText] = useCopyToClipboard();
-
-    return (
-      <IntlProvider locale="en" onError={() => {}}>
-        <button onClick={() => copyText(textToCopy)} type="button">
-          <FormattedMessage
-            id="components.common.shellBox.copy"
-            values={{ copied }}
-          />
-        </button>
-      </IntlProvider>
-    );
-  };
-
-  it('should call clipboard API with `test` once', () => {
+  it('should call clipboard API with `test` once', async () => {
     const navigatorClipboardWriteTextSpy = jest
       .fn()
       .mockImplementation(() => Promise.resolve());
@@ -50,9 +42,33 @@ describe('useCopyToClipboard', () => {
       },
     });
 
+    const TestComponent = ({ textToCopy }: { textToCopy: string }) => {
+      const [copied, copyText] = useCopyToClipboard();
+
+      return (
+        <IntlProvider locale="en" messages={testMessages} onError={() => {}}>
+          <button onClick={() => copyText(textToCopy)} type="button">
+            <FormattedMessage
+              id="components.common.shellBox.copy"
+              values={{ copied }}
+            />
+          </button>
+        </IntlProvider>
+      );
+    };
+
     render(<TestComponent textToCopy="test" />);
+
     const button = screen.getByRole('button');
-    fireEvent.click(button);
+
+    await fireEvent.click(button);
+
+    expect(await screen.findByText(/copied/i)).toBeInTheDocument();
+
+    act(() => jest.advanceTimersByTime(3000));
+
+    expect(await screen.findByText(/copy/i)).toBeInTheDocument();
+
     expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledTimes(1);
     expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledWith('test');
   });
