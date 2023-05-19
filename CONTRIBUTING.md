@@ -87,8 +87,9 @@ npx turbo format
 
 - `npx turbo serve` runs Next.js's Local Development Server, listening by default on `http://localhost:3000/`.
 - `npx turbo build` builds the Application on Production mode. The output is by default within `.next` folder.
-- `npx turbo export` exports the website from the `.next` into a fully static website. The output is by default within `build` folder.
-  - This is what it's used to deploy the website on our current Node.js servers.
+  - This is used for the Node.js Vercel Deployments (Preview & Production)
+- `npx turbo deploy` builds the Application on Export Production Mode. The output is by default within `build` folder.
+  - This is used for the Node.js Legacy Website Server (DigitalOcean)
 - `npx turbo start` starts a web server running serving the built content from `npx turbo build`
 
 #### Other CLI options
