@@ -1,7 +1,7 @@
-import { readdirSync } from 'fs';
-import { readFile } from 'fs/promises';
-import { basename, extname, join } from 'path';
-import { fileURLToPath } from 'url';
+import { readdirSync } from 'node:fs';
+import { readFile } from 'node:fs/promises';
+import { basename, extname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 // this allows us to get the current module working directory
 const __dirname = fileURLToPath(new URL('.', import.meta.url));

@@ -50,7 +50,7 @@ jobs:
           enableCrossOsArchive: true
 
       - name: Build Next.js
-        run: npx turbo build
+        run: npx turbo deploy
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
@@ -65,9 +65,6 @@ jobs:
             node_modules/.cache
           key: build-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
           enableCrossOsArchive: true
-
-      - name: Export Next.js static files
-        run: npx turbo export
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v1
