@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { highlight, languages } from 'prismjs';
+import 'prismjs/components/prism-bash';
 import { sanitize } from 'isomorphic-dompurify';
 import classnames from 'classnames';
 import styles from './index.module.scss';
@@ -9,6 +10,7 @@ import type { FC, PropsWithChildren, ReactElement, MouseEvent } from 'react';
 
 type CodeBoxProps = {
   children: ReactElement<PropsWithChildren<{ className?: string }>>;
+  textToCopy?: string[];
 };
 
 export const replaceLabelLanguages = (language: string) =>
@@ -19,7 +21,7 @@ export const replaceLanguages = (language: string) =>
     .replace(/mjs|cjs|javascript/i, 'js')
     .replace(/console|shell/i, 'bash');
 
-const Codebox: FC<CodeBoxProps> = ({ children: { props } }) => {
+const Codebox: FC<CodeBoxProps> = ({ children: { props }, textToCopy }) => {
   const [parsedCode, setParsedCode] = useState('');
   const [copied, copyText] = useCopyToClipboard();
   const [langIndex, setLangIndex] = useState(0);
@@ -38,8 +40,15 @@ const Codebox: FC<CodeBoxProps> = ({ children: { props } }) => {
 
   const handleCopyCode = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    copyText(codeArray[langIndex]);
+
+    const _textToCopy = textToCopy
+      ? textToCopy[langIndex]
+      : codeArray[langIndex];
+
+    copyText(_textToCopy);
   };
+
+  console.log(languages);
 
   useEffect(() => {
     const parsedLanguage = replaceLanguages(language);

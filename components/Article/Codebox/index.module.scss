@@ -15,7 +15,7 @@
       align-items: center;
       cursor: pointer;
       display: inherit;
-      font-size: var(--font-size-code);
+      font-size: var(--font-size-body2);
       height: 23px;
       justify-content: center;
       width: 86px;
@@ -23,10 +23,12 @@
 
     .langBox {
       background-color: var(--black4);
-      border-radius: 0 0 0.3rem 0;
+      border-radius: 0 0 0.3rem 0.3rem;
+      overflow: hidden;
       display: flex;
       flex-direction: row;
       justify-content: center;
+      margin-left: 1.6rem;
 
       .lang {
         background-color: var(--black4);
@@ -34,10 +36,7 @@
         color: var(--black9);
         padding: 0 16px;
         width: max-content;
-
-        &:last-of-type {
-          border-radius: 0 0 0.3rem 0;
-        }
+        text-transform: uppercase;
 
         &:hover {
           background-color: var(--black5);
@@ -50,13 +49,13 @@
     }
 
     .copy {
-      background-color: var(--black9);
-      border-radius: 0 0 0 0.3rem;
+      background-color: var(--brand);
+      border-radius: 0 0.3rem 0.3rem 0.3rem;
       border-width: 0;
       color: white;
 
       &:hover {
-        background-color: var(--black8);
+        background-color: var(--brand7);
       }
 
       i {
@@ -79,21 +78,5 @@
 [data-theme='dark'] {
   .pre {
     @include darkStyles;
-
-    .top {
-      span {
-        background-color: var(--black3);
-        color: var(--black9);
-      }
-
-      .copy {
-        background-color: var(--brand8);
-        color: white;
-
-        &:hover {
-          background-color: var(--brand6);
-        }
-      }
-    }
   }
 }
