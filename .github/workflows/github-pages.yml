@@ -50,8 +50,10 @@ jobs:
           enableCrossOsArchive: true
 
       - name: Build Next.js
-        run: npm run deploy
+        run: npx turbo deploy
         env:
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           NODE_OPTIONS: '--max_old_space_size=4096'
           NEXT_BASE_PATH: /nodejs.org
 
