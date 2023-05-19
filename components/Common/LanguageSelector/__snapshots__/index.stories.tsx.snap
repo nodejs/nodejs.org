@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Common/LanguageSelector Default smoke-test 1`] = `
-<div style="text-align: right;">
+<div style="margin-left: 200px;">
   <div class="LanguageSelector_container__Yi8Nm">
     <button type="button"
             class="LanguageSelector_languageSwitch__zCGbC"

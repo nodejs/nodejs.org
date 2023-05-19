@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Article/EditLink Edit smoke-test 1`] = `
+exports[`Article/EditLink Default smoke-test 1`] = `
 <div class="EditLink_edit__M4XIL">
   <a href="https://github.com/nodejs/nodejs.org/edit/major/website-redesign/pages/en/get-involved/contribute.md">
     <span>
@@ -20,5 +20,3 @@ exports[`Article/EditLink Edit smoke-test 1`] = `
   </a>
 </div>
 `;
-
-exports[`Article/EditLink Empty smoke-test 1`] = `""`;
