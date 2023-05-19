@@ -13,7 +13,7 @@ const items = [...Array(10).keys()].map(item => ({
 
 items[2].active = true;
 
-export const withItems: Story = {
+export const Default: Story = {
   args: {
     items: items,
     shouldShow: true,
