@@ -6,7 +6,7 @@ type Meta = MetaObj<typeof LanguageSelector>;
 
 export const Default: Story = {};
 
-const containerStyles = { textAlign: 'right' } as const;
+const containerStyles = { marginLeft: '200px' } as const;
 
 export default {
   component: LanguageSelector,

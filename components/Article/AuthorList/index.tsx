@@ -12,7 +12,9 @@ const AuthorList: FC<AuthorListProps> = ({ authors }) => {
         <FormattedMessage id="components.article.authorList.title" />
         <ul>
           {authors.map(author => (
-            <Author username={author} key={author} size={60} />
+            <li key={author}>
+              <Author username={author} key={author} size={60} />
+            </li>
           ))}
         </ul>
       </div>

@@ -16,7 +16,7 @@ exports[`Common/ShellBox Default smoke-test 1`] = `
 </pre>
 `;
 
-exports[`Common/ShellBox WithTextToCopyJsx smoke-test 1`] = `
+exports[`Common/ShellBox WithTextToCopyJSX smoke-test 1`] = `
 <pre class="ShellBox_shellBox__n5v7E">
   <div class="ShellBox_top__SxRc6">
     <span>
