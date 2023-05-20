@@ -14,7 +14,7 @@ export const Default: Story = {
     changes: [
       {
         version: version,
-        'pr-url': 'https://test.com',
+        'pr-url': 'https://github.com/nodejs/node/pulls',
         description: 'test',
       },
     ],
