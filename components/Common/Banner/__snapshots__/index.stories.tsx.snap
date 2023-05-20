@@ -13,19 +13,6 @@ exports[`Common/Banner WithHTML smoke-test 1`] = `
 </div>
 `;
 
-exports[`Common/Banner WithHTML smoke-test 2`] = `
-<div class="Banner_banner__GAFb9">
-  <a href="https://nodejs.org/en/"
-     target="_blank"
-     rel="noopener noreferrer"
-  >
-    <p>
-      Banner HTML
-    </p>
-  </a>
-</div>
-`;
-
 exports[`Common/Banner WithHTMLImage smoke-test 1`] = `
 <div class="Banner_banner__GAFb9">
   <a href="https://nodejs.org/en/"
