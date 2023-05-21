@@ -177,7 +177,7 @@ port install nodejs<major version>
 port install nodejs7
 ```
 
-Using **[pkgsrc](https://pkgsrc.joyent.com/install-on-osx/)**:
+Using **[pkgsrc](https://pkgsrc.joyent.com/install-on-macos/)**:
 
 Install the binary package:
 
