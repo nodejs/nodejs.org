@@ -7,7 +7,7 @@ type Meta = MetaObj<typeof Stability>;
 export const Default: Story = {
   args: {
     stability: 0,
-    children: 'Insert the text of your Alert here',
+    children: 'This is an stability index example',
   },
   argTypes: {
     stability: {

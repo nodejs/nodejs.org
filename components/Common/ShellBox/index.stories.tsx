@@ -17,7 +17,7 @@ export const WithoutTextToCopy: Story = {
   },
 };
 
-export const WithTextToCopyJsx: Story = {
+export const WithTextToCopyJSX: Story = {
   args: {
     children: (
       <span>

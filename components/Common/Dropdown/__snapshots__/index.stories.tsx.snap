@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Common/Dropdown withItems smoke-test 1`] = `
+exports[`Common/Dropdown Default smoke-test 1`] = `
 <ul class="Dropdown_dropdownList__hrw_7"
     style="display: block;"
 >
