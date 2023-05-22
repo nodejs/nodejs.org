@@ -9,18 +9,20 @@ export interface UpcomingRelease {
   releases: UpcomingReleaseData[];
 }
 
+export type NodeReleaseStatus =
+  | 'Maintenance LTS'
+  | 'Active LTS'
+  | 'Current'
+  | 'End-of-life'
+  | 'Pending';
+
 export interface NodeReleaseData {
   major: number;
   version: string;
   versionWithPrefix: string;
   codename: string;
   isLts: boolean;
-  status:
-    | 'Maintenance LTS'
-    | 'Active LTS'
-    | 'Current'
-    | 'End-of-life'
-    | 'Pending';
+  status: NodeReleaseStatus;
   currentStart: string;
   ltsStart?: string;
   maintenanceStart?: string;

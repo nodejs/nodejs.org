@@ -1,10 +1,12 @@
+import type { NodeReleaseStatus } from '../types/releases';
+
 export const getNodeReleaseStatus = (
   now: Date,
   currentStart?: string,
   ltsStart?: string,
   maintenanceStart?: string,
   endOfLife?: string
-) => {
+): NodeReleaseStatus => {
   if (endOfLife) {
     if (now > new Date(endOfLife)) {
       return 'End-of-life';
