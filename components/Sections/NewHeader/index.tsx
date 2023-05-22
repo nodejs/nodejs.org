@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
 import styles from './index.module.scss';
-import ActiveLocalizedLink from '../../ActiveLocalizedLink';
+import ActiveLocalizedLink from '../../Common/ActiveLocalizedLink';
 import DarkModeToggle from '../../Common/DarkModeToggle';
 import LanguageSelector from '../../Common/LanguageSelector';
 import type { FC } from 'react';

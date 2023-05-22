@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect, type FC } from 'react';
 import classNames from 'classnames';
-import LocalizedLink from './LocalizedLink';
+import LocalizedLink from '../../LocalizedLink';
 import type { LinkProps } from 'next/link';
 import type { PropsWithChildren } from 'react';
 

@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
-import ActiveLocalizedLink from '../ActiveLocalizedLink';
-import { LocaleProvider } from '../../providers/localeProvider';
-import type { AppProps } from '../../types';
+import ActiveLocalizedLink from '..';
+import { LocaleProvider } from '../../../../providers/localeProvider';
+import type { AppProps } from '../../../../types';
 
 const i18nData = { currentLocale: { code: 'en' } } as AppProps['i18nData'];
 
