@@ -5,9 +5,7 @@ import { getNodeApiLink } from '../../util/getNodeApiLink';
 import { useNodeReleasesData } from '../../hooks/useNodeReleasesData';
 import type { FC } from 'react';
 
-type DownloadReleasesTableProps = {};
-
-const DownloadReleasesTable: FC<DownloadReleasesTableProps> = () => {
+const DownloadReleasesTable: FC<{}> = () => {
   const { releases } = useNodeReleasesData();
 
   return (
