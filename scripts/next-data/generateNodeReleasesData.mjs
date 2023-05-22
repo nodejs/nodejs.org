@@ -4,6 +4,12 @@ import { join } from 'path';
 
 import { getRelativePath } from './_helpers.mjs';
 
+const __dirname = getRelativePath(import.meta.url);
+const jsonFilePath = join(
+  __dirname,
+  '../../public/static/node-releases-data.json'
+);
+
 const generateNodeReleasesData = async () => {
   const [nodevuOutput, indexJsonOutput] = await Promise.all([
     nodevu(),
@@ -44,10 +50,7 @@ const generateNodeReleasesData = async () => {
     };
   });
 
-  const __dirname = getRelativePath(import.meta.url);
-  const path = join(__dirname, '../../public/static/node-releases-data.json');
-
-  return writeFile(path, JSON.stringify(nodeReleases));
+  return writeFile(jsonFilePath, JSON.stringify(nodeReleases));
 };
 
 export default generateNodeReleasesData;
