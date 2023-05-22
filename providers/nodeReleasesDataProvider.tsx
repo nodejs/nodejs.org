@@ -1,10 +1,13 @@
 import { createContext } from 'react';
 import { useFetchNodeReleasesData } from '../hooks/useFetchNodeReleasesData';
 import type { FC, PropsWithChildren } from 'react';
-import type { NodeReleasesDataContext as NodeReleasesDataContextType } from '../types';
+import type { NodeReleaseData } from '../types';
 
-export const NodeReleasesDataContext =
-  createContext<NodeReleasesDataContextType>(undefined as any);
+export const NodeReleasesDataContext = createContext<{
+  releases: NodeReleaseData[];
+  lts?: NodeReleaseData;
+  current?: NodeReleaseData;
+}>(undefined as any);
 
 export const NodeReleasesDataProvider: FC<PropsWithChildren> = ({
   children,

@@ -30,9 +30,3 @@ export interface NodeReleaseData {
   releaseDate: string;
   modules: string;
 }
-
-export interface NodeReleasesDataContext {
-  releases: NodeReleaseData[];
-  lts?: NodeReleaseData;
-  current?: NodeReleaseData;
-}
