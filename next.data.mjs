@@ -6,7 +6,7 @@ import generateNodeReleasesData from './scripts/next-data/generateNodeReleasesDa
 
 const cachedBlogData = getBlogData();
 
-await generateNodeReleasesData();
+generateNodeReleasesData();
 
 // generates pre-build files for blog year pages (pagination)
 preBuild.generateBlogYearPages(cachedBlogData);
