@@ -20,6 +20,30 @@ exports[`Article/TableOfContents Default smoke-test 1`] = `
             test
           </a>
         </li>
+        <li>
+          <a href="/#test">
+            test
+          </a>
+          <ul>
+            <li>
+              <a href="/#test">
+                test
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/#test">
+            test
+          </a>
+          <ul>
+            <li>
+              <a href="/#test">
+                test
+              </a>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
