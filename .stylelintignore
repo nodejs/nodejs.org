@@ -1,4 +1,7 @@
 # Next.js files
+.next
+.turbo
+.swc
 build
 
 # Public Folder
