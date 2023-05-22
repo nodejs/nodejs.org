@@ -6,29 +6,25 @@ export const getNodeReleaseStatus = (
   endOfLife?: string
 ) => {
   if (endOfLife) {
-    const endOfLifeDate = new Date(endOfLife);
-    if (now > endOfLifeDate) {
+    if (now > new Date(endOfLife)) {
       return 'End-of-life';
     }
   }
 
   if (maintenanceStart) {
-    const maintenanceStartDate = new Date(maintenanceStart);
-    if (now > maintenanceStartDate) {
+    if (now > new Date(maintenanceStart)) {
       return 'Maintenance LTS';
     }
   }
 
   if (ltsStart) {
-    const ltsStartDate = new Date(ltsStart);
-    if (now > ltsStartDate) {
+    if (now > new Date(ltsStart)) {
       return 'Active LTS';
     }
   }
 
   if (currentStart) {
-    const currentStartDate = new Date(currentStart);
-    if (now >= currentStartDate) {
+    if (now >= new Date(currentStart)) {
       return 'Current';
     }
   }
