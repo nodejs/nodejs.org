@@ -8,13 +8,13 @@ const DocsLayout: FC<PropsWithChildren> = ({ children }) => {
 
   const translationContext = {
     apiLts: {
-      ltsNodeVersion: `v${lts?.major}.x`,
-      fullLtsNodeVersion: lts?.versionWithPrefix,
+      ltsNodeVersion: lts ? `v${lts.major}.x` : undefined,
+      fullLtsNodeVersion: lts ? lts.versionWithPrefix : undefined,
       spanLts: <span className="small color-lightgray">LTS</span>,
     },
     apiCurrent: {
-      fullCurrentNodeVersion: current?.versionWithPrefix,
-      currentNodeVersion: `v${current?.major}.x`,
+      fullCurrentNodeVersion: current ? current.versionWithPrefix : undefined,
+      currentNodeVersion: current ? `v${current.major}.x` : undefined,
     },
   };
 
