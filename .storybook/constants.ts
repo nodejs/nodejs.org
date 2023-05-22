@@ -1,6 +1,5 @@
 import type { AppProps, NodeReleaseData } from '../types';
 import englishMessages from '../i18n/locales/en.json';
-import { createNodeReleasesData } from '../__fixtures__/nodeReleasesData';
 
 const i18nData: AppProps['i18nData'] = {
   currentLocale: {
@@ -17,5 +16,4 @@ const i18nData: AppProps['i18nData'] = {
 
 export const pageProps = {
   i18nData,
-  nodeReleasesData: createNodeReleasesData(),
 };

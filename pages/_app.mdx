@@ -3,17 +3,14 @@ import { NodeReleasesDataProvider } from '../providers/nodeReleasesDataProvider'
 import { LocaleProvider } from '../providers/localeProvider';
 import { SiteProvider } from '../providers/siteProvider';
 import sourceSansPro from '../util/sourceSansPro';
-import { useFetchNodeReleasesData } from '../hooks/useFetchNodeReleasesData';
 
 import '../styles/old/index.scss';
 
 export default function App({ Component, pageProps }) {
-  const releases = useFetchNodeReleasesData();
-
   return (
     <SiteProvider>
       <LocaleProvider i18nData={pageProps.i18nData}>
-        <NodeReleasesDataProvider releases={releases}>
+        <NodeReleasesDataProvider>
           <MotionConfig reducedMotion="user">
             {/* @TODO: This is a temporary solution. We might want to adopt Emotion/StyledComponents here */}
             <style jsx global>

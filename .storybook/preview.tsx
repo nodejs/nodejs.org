@@ -31,7 +31,7 @@ export const decorators = [
     <ThemeProvider>
       <SiteProvider>
         <LocaleProvider i18nData={pageProps.i18nData}>
-          <NodeReleasesDataProvider releases={pageProps.nodeReleasesData}>
+          <NodeReleasesDataProvider>
             <style>
               {`
                 body {

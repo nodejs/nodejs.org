@@ -1,21 +1,16 @@
 import { createContext } from 'react';
+import { useFetchNodeReleasesData } from '../hooks/useFetchNodeReleasesData';
 import type { FC, PropsWithChildren } from 'react';
-import type {
-  NodeReleaseData,
-  NodeReleasesDataContext as NodeReleasesDataContextType,
-} from '../types';
-
-type NodeReleasesDataProviderProps = PropsWithChildren<{
-  releases: NodeReleaseData[];
-}>;
+import type { NodeReleasesDataContext as NodeReleasesDataContextType } from '../types';
 
 export const NodeReleasesDataContext =
   createContext<NodeReleasesDataContextType>(undefined as any);
 
-export const NodeReleasesDataProvider: FC<NodeReleasesDataProviderProps> = ({
+export const NodeReleasesDataProvider: FC<PropsWithChildren> = ({
   children,
-  releases,
 }) => {
+  const releases = useFetchNodeReleasesData();
+
   const lts = releases.find(release => release.status === 'Active LTS');
   const current = releases.find(release => release.status === 'Current');
 
