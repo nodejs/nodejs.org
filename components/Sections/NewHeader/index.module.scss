@@ -1,3 +1,19 @@
+@mixin forPhoneDown {
+  @media (max-width: 599px) { @content; }
+}
+
+@mixin forTabletPortraitDown {
+  @media (max-width: 899px) { @content; }
+}
+
+@mixin forTabletLandscapeDown {
+  @media (max-width: 1199px) { @content; }
+}
+
+@mixin forDesktopDown {
+  @media (max-width: 1799px) { @content; }
+}
+
 %navItemLi {
   align-items: center;
   cursor: pointer;
@@ -5,7 +21,7 @@
   margin-left: var(--space-16);
   white-space: nowrap;
 
-  @media (max-width: 900px) {
+  @include forTabletPortraitDown {
     display: flex;
     height: 42px;
     margin-left: 0;
@@ -38,7 +54,7 @@
     justify-content: space-between;
     padding: 0 var(--space-08) 0 var(--space-24);
 
-    @media (max-width: 900px) {
+    @include forTabletPortraitDown {
       align-items: start;
       flex-flow: wrap;
       min-height: calc(1 * var(--nav-height));
@@ -51,7 +67,7 @@
       justify-content: flex-start;
 
       .logo {
-        @media (max-width: 900px) {
+        @include forTabletPortraitDown {
           align-items: center;
           display: flex;
           height: var(--nav-height);
@@ -60,7 +76,7 @@
         svg {
           height: var(--space-32);
 
-          @media (max-width: 900px) {
+          @include forTabletPortraitDown {
             height: 2.4rem;
           }
         }
@@ -79,7 +95,7 @@
         margin: 0;
       }
 
-      @media (max-width: 900px) {
+      @include forTabletPortraitDown {
         background: var(--color-fill-app);
         flex-flow: row wrap;
         justify-content: center;
@@ -96,7 +112,7 @@
           padding: calc(var(--space-32) + var(--space-04)) var(--space-16);
           text-decoration: none;
 
-          @media (max-width: 900px) {
+          @include forTabletPortraitDown {
             padding: var(--space-08);
           }
 
@@ -129,7 +145,7 @@
         margin: 0;
         padding-left: 0;
 
-        @media (max-width: 900px) {
+        @include forTabletPortraitDown {
           padding: 0;
           width: 100%;
         }
