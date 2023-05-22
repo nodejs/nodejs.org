@@ -35,7 +35,7 @@ const SecondaryDownloadMatrix: FC<SecondaryDownloadMatrixProps> = ({
             <th>{additional.LinuxPowerSystems}</th>
             <td>
               <a
-                href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}-linux-ppc64le.tar.xz`}
+                href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}-linux-ppc64le.tar.xz`}
               >
                 64-bit
               </a>
@@ -46,7 +46,7 @@ const SecondaryDownloadMatrix: FC<SecondaryDownloadMatrixProps> = ({
             <th>{additional.LinuxSystemZ}</th>
             <td>
               <a
-                href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}-linux-s390x.tar.xz`}
+                href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}-linux-s390x.tar.xz`}
               >
                 64-bit
               </a>
@@ -56,7 +56,7 @@ const SecondaryDownloadMatrix: FC<SecondaryDownloadMatrixProps> = ({
             <th>{additional.AIXPowerSystems}</th>
             <td>
               <a
-                href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}-aix-ppc64.tar.gz`}
+                href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}-aix-ppc64.tar.gz`}
               >
                 64-bit
               </a>

@@ -30,6 +30,7 @@ export const useFetchNodeReleasesData = (): NodeReleaseData[] => {
       return {
         major: raw.major,
         version: raw.version,
+        versionWithPrefix: `v${raw.version}`,
         codename: raw.codename || '',
         isLts: status === 'Active LTS' || status === 'Maintenance LTS',
         status: status,

@@ -54,9 +54,9 @@ const PrimaryDownloadMatrix: FC<PrimaryDownloadMatrixProps> = ({ release }) => {
         <ul className="no-padding download-platform">
           <li>
             <a
-              href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}-x86.msi`}
+              href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}-x86.msi`}
               id="windows-downloadbutton"
-              data-version={`v${release.version}`}
+              data-version={release.versionWithPrefix}
             >
               <svg
                 className="download-logo"
@@ -69,13 +69,13 @@ const PrimaryDownloadMatrix: FC<PrimaryDownloadMatrixProps> = ({ release }) => {
               </svg>
               {downloads.WindowsInstaller}
               <p className="small color-lightgray">
-                node-v{release.version}-x86.msi
+                node-{release.versionWithPrefix}-x86.msi
               </p>
             </a>
           </li>
           <li>
             <a
-              href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}.pkg`}
+              href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}.pkg`}
             >
               <svg
                 className="download-logo"
@@ -88,13 +88,13 @@ const PrimaryDownloadMatrix: FC<PrimaryDownloadMatrixProps> = ({ release }) => {
               </svg>
               {downloads.MacOSInstaller}
               <p className="small color-lightgray">
-                node-v{release.version}.pkg
+                node-{release.versionWithPrefix}.pkg
               </p>
             </a>
           </li>
           <li>
             <a
-              href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}.tar.gz`}
+              href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}.tar.gz`}
             >
               <svg
                 className="download-logo"
@@ -107,7 +107,7 @@ const PrimaryDownloadMatrix: FC<PrimaryDownloadMatrixProps> = ({ release }) => {
               </svg>
               {downloads.SourceCode}
               <p className="small color-lightgray">
-                node-v{release.version}.tar.gz
+                node-{release.versionWithPrefix}.tar.gz
               </p>
             </a>
           </li>
@@ -120,14 +120,14 @@ const PrimaryDownloadMatrix: FC<PrimaryDownloadMatrixProps> = ({ release }) => {
             <th>{downloads.WindowsInstaller} (.msi)</th>
             <td colSpan={hasWindowsArm64 ? 1 : 2}>
               <a
-                href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}-x86.msi`}
+                href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}-x86.msi`}
               >
                 32-bit
               </a>
             </td>
             <td colSpan={2}>
               <a
-                href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}-x64.msi`}
+                href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}-x64.msi`}
               >
                 64-bit
               </a>
@@ -135,7 +135,7 @@ const PrimaryDownloadMatrix: FC<PrimaryDownloadMatrixProps> = ({ release }) => {
             {hasWindowsArm64 && (
               <td colSpan={1}>
                 <a
-                  href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}-arm64.msi`}
+                  href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}-arm64.msi`}
                 >
                   ARM64
                 </a>
@@ -147,14 +147,14 @@ const PrimaryDownloadMatrix: FC<PrimaryDownloadMatrixProps> = ({ release }) => {
             <th>{downloads.WindowsBinary} (.zip)</th>
             <td colSpan={hasWindowsArm64 ? 1 : 2}>
               <a
-                href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}-win-x86.zip`}
+                href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}-win-x86.zip`}
               >
                 32-bit
               </a>
             </td>
             <td colSpan={2}>
               <a
-                href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}-win-x64.zip`}
+                href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}-win-x64.zip`}
               >
                 64-bit
               </a>
@@ -162,7 +162,7 @@ const PrimaryDownloadMatrix: FC<PrimaryDownloadMatrixProps> = ({ release }) => {
             {hasWindowsArm64 && (
               <td colSpan={1}>
                 <a
-                  href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}-win-arm64.zip`}
+                  href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}-win-arm64.zip`}
                 >
                   ARM64
                 </a>
@@ -174,7 +174,7 @@ const PrimaryDownloadMatrix: FC<PrimaryDownloadMatrixProps> = ({ release }) => {
             <th>{downloads.MacOSInstaller} (.pkg)</th>
             <td colSpan={4}>
               <a
-                href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}.pkg`}
+                href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}.pkg`}
               >
                 64-bit / ARM64
               </a>
@@ -184,14 +184,14 @@ const PrimaryDownloadMatrix: FC<PrimaryDownloadMatrixProps> = ({ release }) => {
             <th>{downloads.MacOSBinary} (.tar.gz)</th>
             <td colSpan={2}>
               <a
-                href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}-darwin-x64.tar.gz`}
+                href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}-darwin-x64.tar.gz`}
               >
                 64-bit
               </a>
             </td>
             <td colSpan={2}>
               <a
-                href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}-darwin-arm64.tar.gz`}
+                href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}-darwin-arm64.tar.gz`}
               >
                 ARM64
               </a>
@@ -202,7 +202,7 @@ const PrimaryDownloadMatrix: FC<PrimaryDownloadMatrixProps> = ({ release }) => {
             <th>{downloads.LinuxBinaries} (x64)</th>
             <td colSpan={4}>
               <a
-                href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}-linux-x64.tar.xz`}
+                href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}-linux-x64.tar.xz`}
               >
                 64-bit
               </a>
@@ -212,14 +212,14 @@ const PrimaryDownloadMatrix: FC<PrimaryDownloadMatrixProps> = ({ release }) => {
             <th>{downloads.LinuxBinaries} (ARM)</th>
             <td colSpan={2}>
               <a
-                href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}-linux-armv7l.tar.xz`}
+                href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}-linux-armv7l.tar.xz`}
               >
                 ARMv7
               </a>
             </td>
             <td colSpan={2}>
               <a
-                href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}-linux-arm64.tar.xz`}
+                href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}-linux-arm64.tar.xz`}
               >
                 ARMv8
               </a>
@@ -230,9 +230,9 @@ const PrimaryDownloadMatrix: FC<PrimaryDownloadMatrixProps> = ({ release }) => {
             <th>{downloads.SourceCode}</th>
             <td colSpan={4}>
               <a
-                href={`https://nodejs.org/dist/v${release.version}/node-v${release.version}.tar.gz`}
+                href={`https://nodejs.org/dist/${release.versionWithPrefix}/node-${release.versionWithPrefix}.tar.gz`}
               >
-                node-v{release.version}.tar.gz
+                node-{release.versionWithPrefix}.tar.gz
               </a>
             </td>
           </tr>

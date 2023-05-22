@@ -12,6 +12,7 @@ export interface UpcomingRelease {
 export interface NodeReleaseData {
   major: number;
   version: string;
+  versionWithPrefix: string;
   codename: string;
   isLts: boolean;
   status:

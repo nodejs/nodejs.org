@@ -39,14 +39,14 @@ const DownloadReleasesTable: FC<DownloadReleasesTableProps> = () => {
             <td data-label="NODE_MODULE_VERSION">{release.modules}</td>
             <td className="download-table-last">
               <a
-                href={`https://nodejs.org/download/release/v${release.version}`}
+                href={`https://nodejs.org/download/release/${release.versionWithPrefix}`}
               >
                 <FormattedMessage id="components.downloadReleasesTable.releases" />
               </a>
-              <a href={getNodejsChangelog(`v${release.version}`)}>
+              <a href={getNodejsChangelog(release.versionWithPrefix)}>
                 <FormattedMessage id="components.downloadReleasesTable.changelog" />
               </a>
-              <a href={getNodeApiLink(`v${release.version}`)}>
+              <a href={getNodeApiLink(release.versionWithPrefix)}>
                 <FormattedMessage id="components.downloadReleasesTable.docs" />
               </a>
             </td>

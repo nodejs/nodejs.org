@@ -4,12 +4,17 @@ import { getNodejsChangelog } from '../../util/getNodeJsChangelog';
 import type { NodeReleaseData } from '../../types';
 import type { FC } from 'react';
 
-const HomeDownloadButton: FC<NodeReleaseData> = ({ version, major, isLts }) => {
+const HomeDownloadButton: FC<NodeReleaseData> = ({
+  version,
+  versionWithPrefix,
+  major,
+  isLts,
+}) => {
   const {
     frontMatter: { labels },
   } = useNextraContext();
 
-  const nodeDownloadLink = `https://nodejs.org/dist/v${version}/`;
+  const nodeDownloadLink = `https://nodejs.org/dist/${versionWithPrefix}/`;
   const nodeApiLink = `https://nodejs.org/dist/latest-v${major}.x/docs/api/`;
   const nodeAllDownloadsLink = `/download${isLts ? '/' : '/current'}`;
   const nodeDownloadTitle =
@@ -21,7 +26,7 @@ const HomeDownloadButton: FC<NodeReleaseData> = ({ version, major, isLts }) => {
         href={nodeDownloadLink}
         className="home-downloadbutton"
         title={nodeDownloadTitle}
-        data-version={`v${version}`}
+        data-version={versionWithPrefix}
       >
         {version} {labels[isLts ? 'lts' : 'current']}
         <small>{labels[`tagline-${isLts ? 'lts' : 'current'}`]}</small>
@@ -34,7 +39,7 @@ const HomeDownloadButton: FC<NodeReleaseData> = ({ version, major, isLts }) => {
           </LocalizedLink>
         </li>
         <li>
-          <LocalizedLink href={getNodejsChangelog(`v${version}`)}>
+          <LocalizedLink href={getNodejsChangelog(versionWithPrefix)}>
             {labels.changelog}
           </LocalizedLink>
         </li>
