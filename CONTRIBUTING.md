@@ -105,6 +105,12 @@ We also offer other commands that offer you assistance during your local develop
 - `npx turbo storybook:build` builds Storybook as a static web application for publishing
 - `npx turbo test` runs jest (unit-tests) locally
 
+## Vocabulary
+
+- A **Contributor** is any individual who creates an issue/PR, comments on an issue/PR
+  or contributes in some other way.
+- A **Collaborator** is a contributor with write access to the repository. See [here](#becoming-a-collaborator) on how to become a collaborator.
+
 ## Creating Components
 
 The Node.js Website uses **React.js** as a Frontend Library for the development of the Website. React allows us to create user interfaces with a modern take on Web Development.
@@ -252,12 +258,6 @@ In the case that an objection is raised in a pull request by another collaborato
 ### When merging
 
 - [`squash`][] pull requests made up of multiple commits
-
-## Vocabulary
-
-- A **Contributor** is any individual who creates an issue/PR, comments on an issue/PR
-  or contributes in some other way.
-- A **Collaborator** is a contributor with write access to the repository. See [here](#becoming-a-collaborator) on how to become a collaborator.
 
 ## Becoming a collaborator
 
