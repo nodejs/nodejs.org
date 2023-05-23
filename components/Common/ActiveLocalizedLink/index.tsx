@@ -5,11 +5,9 @@ import LocalizedLink from '../../LocalizedLink';
 import type { LinkProps } from 'next/link';
 import type { PropsWithChildren } from 'react';
 
-type ActiveLocalizedLinkProps = PropsWithChildren &
-  LinkProps & {
-    className?: string;
-    activeClassName: string;
-  };
+type ActiveLocalizedLinkProps = PropsWithChildren<
+  LinkProps & { className?: string; activeClassName: string }
+>;
 
 const ActiveLocalizedLink: FC<ActiveLocalizedLinkProps> = ({
   children,
@@ -24,18 +22,17 @@ const ActiveLocalizedLink: FC<ActiveLocalizedLinkProps> = ({
   useEffect(() => {
     // Check if the router fields are updated client-side
     if (isReady) {
+      const currentHref = (props.as || props.href).toString();
+
       // Dynamic route will be matched via props.as
       // Static route will be matched via props.href
-      const linkPathName = new URL(
-        (props.as || props.href) as string,
-        location.href
-      ).pathname;
+      const linkURL = new URL(currentHref, location.href);
 
       // Using URL().pathname to get rid of query and hash
       const currentPathName = new URL(asPath, location.href).pathname;
 
       const newClassName = classNames(className, {
-        [activeClassName]: linkPathName === currentPathName,
+        [activeClassName]: linkURL.pathname === currentPathName,
       });
 
       if (newClassName !== computedClassName) {
