@@ -1,4 +1,4 @@
-@import '../../../styles/mixins';
+@use 'styles/mixins/screen';
 
 %navItemLi {
   align-items: center;
@@ -7,7 +7,7 @@
   margin-left: var(--space-16);
   white-space: nowrap;
 
-  @include forTabletPortraitDown {
+  @include screen.forTabletPortraitDown {
     display: flex;
     height: 42px;
     margin-left: 0;
@@ -40,7 +40,7 @@
     justify-content: space-between;
     padding: 0 var(--space-08) 0 var(--space-24);
 
-    @include forTabletPortraitDown {
+    @include screen.forTabletPortraitDown {
       align-items: start;
       flex-flow: wrap;
       min-height: calc(1 * var(--nav-height));
@@ -53,7 +53,7 @@
       justify-content: flex-start;
 
       .logo {
-        @include forTabletPortraitDown {
+        @include screen.forTabletPortraitDown {
           align-items: center;
           display: flex;
           height: var(--nav-height);
@@ -62,7 +62,7 @@
         svg {
           height: var(--space-32);
 
-          @include forTabletPortraitDown {
+          @include screen.forTabletPortraitDown {
             height: 2.4rem;
           }
         }
@@ -81,7 +81,7 @@
         margin: 0;
       }
 
-      @include forTabletPortraitDown {
+      @include screen.forTabletPortraitDown {
         background: var(--color-fill-app);
         flex-flow: row wrap;
         justify-content: center;
@@ -98,7 +98,7 @@
           padding: calc(var(--space-32) + var(--space-04)) var(--space-16);
           text-decoration: none;
 
-          @include forTabletPortraitDown {
+          @include screen.forTabletPortraitDown {
             padding: var(--space-08);
           }
 
@@ -131,13 +131,14 @@
         margin: 0;
         padding-left: 0;
 
-        @include forTabletPortraitDown {
+        @include screen.forTabletPortraitDown {
           padding: 0;
           width: 100%;
         }
 
         > li {
           @extend %navItemLi;
+
           padding: 10px;
 
           > a {

@@ -1,7 +1,7 @@
-@import '../../../styles/code';
+@use 'styles/mixins/components';
 
 .code {
-  @extend %codeBaseStyles;
+  @include components.code;
 
   font-weight: var(--font-weight-light);
   padding: 0 6px;
