@@ -62,5 +62,10 @@
   "components.codeBox.copy": "{copied, select, true {copied}other {copy}}",
   "components.api.stability": "Stability: {level} - ",
   "components.api.jsonLink.title": "View as JSON",
-  "components.api.sourceLink": "Source Code:"
+  "components.api.sourceLink": "Source Code:",
+  "components.sections.newHeader.links.learn": "Learn",
+  "components.sections.newHeader.links.apiDocs": "API Docs",
+  "components.sections.newHeader.links.about": "About",
+  "components.sections.newHeader.links.download": "Downloads",
+  "components.sections.newHeader.links.certification": "Certification"
 }

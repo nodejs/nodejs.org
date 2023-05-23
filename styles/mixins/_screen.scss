@@ -1,0 +1,23 @@
+@mixin forPhoneDown {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin forTabletPortraitDown {
+  @media (max-width: 899px) {
+    @content;
+  }
+}
+
+@mixin forTabletLandscapeDown {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin forDesktopDown {
+  @media (max-width: 1799px) {
+    @content;
+  }
+}
