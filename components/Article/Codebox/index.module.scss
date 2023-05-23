@@ -1,9 +1,9 @@
-@import './light.module';
-@import './dark.module';
-@import '../../../styles/code';
+@use 'themes/light';
+@use 'themes/dark';
+@use 'styles/mixins/components';
 
 .pre {
-  @extend %codeBaseStyles;
+  @include components.code;
 
   .top {
     display: flex;
@@ -72,13 +72,13 @@
 
 [data-theme='light'] {
   .pre {
-    @include lightStyles;
+    @include light.theme;
   }
 }
 
 [data-theme='dark'] {
   .pre {
-    @include darkStyles;
+    @include dark.theme;
 
     .top {
       span {
