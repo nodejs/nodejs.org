@@ -6,80 +6,39 @@ import LinuxPanel from './LinuxPanel';
 import styles from './index.module.scss';
 import { detectOS } from '../../../util/detectOS';
 import type { UserOS } from '../../../types';
-import type { FC, ReactNode } from 'react';
+import type { FC, ReactNode, ReactElement } from 'react';
+
+const tabPanelStyles = {
+  className: styles.reactTabsTabPanel,
+  selectedClassName: styles.reactTabsTabPanelSelected,
+};
 
 const getOSPanel: FC<UserOS> = userOS => {
+  const panels: ReactElement[] = [];
+
+  const addPanel = (component: ReactNode) => {
+    panels.push(<TabPanel {...tabPanelStyles}>{component}</TabPanel>);
+  };
+
   switch (userOS) {
     case 'MAC':
-      return (
-        <>
-          <TabPanel
-            className={styles.reactTabsTabPanel}
-            selectedClassName={styles.reactTabsTabPanelSelected}
-          >
-            <MacOSPanel />
-          </TabPanel>
-          <TabPanel
-            className={styles.reactTabsTabPanel}
-            selectedClassName={styles.reactTabsTabPanelSelected}
-          >
-            <WindowsPanel />
-          </TabPanel>
-          <TabPanel
-            className={styles.reactTabsTabPanel}
-            selectedClassName={styles.reactTabsTabPanelSelected}
-          >
-            <LinuxPanel />
-          </TabPanel>
-        </>
-      );
+      addPanel(<MacOSPanel />);
+      addPanel(<WindowsPanel />);
+      addPanel(<LinuxPanel />);
+      break;
     case 'LINUX':
-      return (
-        <>
-          <TabPanel
-            className={styles.reactTabsTabPanel}
-            selectedClassName={styles.reactTabsTabPanelSelected}
-          >
-            <LinuxPanel />
-          </TabPanel>
-          <TabPanel
-            className={styles.reactTabsTabPanel}
-            selectedClassName={styles.reactTabsTabPanelSelected}
-          >
-            <MacOSPanel />
-          </TabPanel>
-          <TabPanel
-            className={styles.reactTabsTabPanel}
-            selectedClassName={styles.reactTabsTabPanelSelected}
-          >
-            <WindowsPanel />
-          </TabPanel>
-        </>
-      );
+      addPanel(<LinuxPanel />);
+      addPanel(<MacOSPanel />);
+      addPanel(<WindowsPanel />);
+      break;
     default:
-      return (
-        <>
-          <TabPanel
-            className={styles.reactTabsTabPanel}
-            selectedClassName={styles.reactTabsTabPanelSelected}
-          >
-            <WindowsPanel />
-          </TabPanel>
-          <TabPanel
-            className={styles.reactTabsTabPanel}
-            selectedClassName={styles.reactTabsTabPanelSelected}
-          >
-            <MacOSPanel />
-          </TabPanel>
-          <TabPanel
-            className={styles.reactTabsTabPanel}
-            selectedClassName={styles.reactTabsTabPanelSelected}
-          >
-            <LinuxPanel />
-          </TabPanel>
-        </>
-      );
+      addPanel(<WindowsPanel />);
+      addPanel(<MacOSPanel />);
+      addPanel(<LinuxPanel />);
+      break;
   }
+
+  return <>{panels}</>;
 };
 
 const os = {
