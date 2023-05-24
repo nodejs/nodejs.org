@@ -11,12 +11,7 @@ const jsonFilePath = join(
 );
 
 const generateNodeReleasesData = async () => {
-  const [nodevuOutput, indexJsonOutput] = await Promise.all([
-    nodevu(),
-    // nodevu doesn't return release date and modules
-    // So it is a temporary workaround
-    (await fetch('https://nodejs.org/dist/index.json')).json(),
-  ]);
+  const nodevuOutput = await nodevu();
 
   // Filter out those without documented support
   // Basically those not in schedule.json
@@ -24,16 +19,8 @@ const generateNodeReleasesData = async () => {
     return major?.support;
   });
 
-  let i = 0;
   const nodeReleases = majors.map(major => {
     const latestVersion = Object.values(major.releases)[0];
-
-    while (
-      i < indexJsonOutput.length &&
-      indexJsonOutput[i].version !== `v${latestVersion.semver.raw}`
-    ) {
-      i++;
-    }
 
     return {
       major: latestVersion.semver.major,
@@ -45,8 +32,8 @@ const generateNodeReleasesData = async () => {
       endOfLife: major.support.phases?.dates?.end,
       npm: latestVersion.dependencies?.npm,
       v8: latestVersion.dependencies?.v8,
-      releaseDate: indexJsonOutput[i]?.date,
-      modules: indexJsonOutput[i]?.modules,
+      releaseDate: latestVersion.releaseDate,
+      modules: latestVersion.modules?.version,
     };
   });
 
