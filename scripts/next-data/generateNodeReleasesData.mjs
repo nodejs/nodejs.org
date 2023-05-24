@@ -15,9 +15,7 @@ const generateNodeReleasesData = async () => {
 
   // Filter out those without documented support
   // Basically those not in schedule.json
-  const majors = Object.values(nodevuOutput).filter(major => {
-    return major?.support;
-  });
+  const majors = Object.values(nodevuOutput).filter(major => major?.support);
 
   const nodeReleases = majors.map(major => {
     const latestVersion = Object.values(major.releases)[0];
