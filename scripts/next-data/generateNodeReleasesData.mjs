@@ -13,29 +13,35 @@ const jsonFilePath = join(
 const generateNodeReleasesData = async () => {
   const nodevuOutput = await nodevu();
 
-  // Filter out those without documented support
-  // Basically those not in schedule.json
-  const majors = Object.values(nodevuOutput).filter(major => major?.support);
+  const nodeReleases = new Map();
+  Object.values(nodevuOutput)
+    .reverse()
+    .forEach(major => {
+      const latestVersion = Object.values(major.releases)[0];
 
-  const nodeReleases = majors.map(major => {
-    const latestVersion = Object.values(major.releases)[0];
+      // Filter out those without documented support
+      // Basically those not in schedule.json
+      if (!major.support) return;
 
-    return {
-      major: latestVersion.semver.major,
-      version: latestVersion.semver.raw,
-      codename: major.support.codename,
-      currentStart: major.support.phases?.dates?.start,
-      ltsStart: major.support.phases?.dates?.lts,
-      maintenanceStart: major.support.phases?.dates?.maintenance,
-      endOfLife: major.support.phases?.dates?.end,
-      npm: latestVersion.dependencies?.npm,
-      v8: latestVersion.dependencies?.v8,
-      releaseDate: latestVersion.releaseDate,
-      modules: latestVersion.modules?.version,
-    };
-  });
+      nodeReleases.set(latestVersion.semver.major, {
+        major: latestVersion.semver.major,
+        version: latestVersion.semver.raw,
+        codename: major.support.codename,
+        currentStart: major.support.phases?.dates?.start,
+        ltsStart: major.support.phases?.dates?.lts,
+        maintenanceStart: major.support.phases?.dates?.maintenance,
+        endOfLife: major.support.phases?.dates?.end,
+        npm: latestVersion.dependencies?.npm,
+        v8: latestVersion.dependencies?.v8,
+        releaseDate: latestVersion.releaseDate,
+        modules: latestVersion.modules?.version,
+      });
+    });
 
-  return writeFile(jsonFilePath, JSON.stringify(nodeReleases));
+  return writeFile(
+    jsonFilePath,
+    JSON.stringify([...nodeReleases.values()].reverse())
+  );
 };
 
 export default generateNodeReleasesData;
