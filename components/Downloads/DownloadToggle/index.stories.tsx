@@ -3,7 +3,7 @@ import DownloadToggle from './index';
 import type { Props } from './index';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-const Template = ({ selected }: Props) => {
+const Template = ({ selected, showDescription }: Props) => {
   const [selectedTypeRelease, setSelectedTypeRelease] = useState(selected);
 
   const handleTypeReleaseToggle = (value: string) => {
@@ -14,6 +14,7 @@ const Template = ({ selected }: Props) => {
     <DownloadToggle
       selected={selectedTypeRelease}
       handleClick={handleTypeReleaseToggle}
+      showDescription={showDescription}
     />
   );
 };
