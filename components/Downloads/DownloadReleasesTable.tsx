@@ -2,11 +2,11 @@ import { FormattedMessage } from 'react-intl';
 import Link from 'next/link';
 import { getNodejsChangelog } from '../../util/getNodeJsChangelog';
 import { getNodeApiLink } from '../../util/getNodeApiLink';
-import { useNodeReleasesData } from '../../hooks/useNodeReleasesData';
+import { useNodeReleases } from '../../hooks/useNodeReleases';
 import type { FC } from 'react';
 
 const DownloadReleasesTable: FC<{}> = () => {
-  const { releases } = useNodeReleasesData();
+  const { releases } = useNodeReleases();
 
   return (
     <table id="tbVersions" className="download-table full-width">

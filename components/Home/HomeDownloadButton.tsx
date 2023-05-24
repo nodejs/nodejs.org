@@ -1,10 +1,10 @@
 import LocalizedLink from '../LocalizedLink';
 import { useNextraContext } from '../../hooks/useNextraContext';
 import { getNodejsChangelog } from '../../util/getNodeJsChangelog';
-import type { NodeReleaseData } from '../../types';
+import type { NodeRelease } from '../../types';
 import type { FC } from 'react';
 
-const HomeDownloadButton: FC<NodeReleaseData> = ({
+const HomeDownloadButton: FC<NodeRelease> = ({
   version,
   versionWithPrefix,
   major,

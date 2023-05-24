@@ -1,5 +1,5 @@
 import { MotionConfig } from 'framer-motion';
-import { NodeReleasesDataProvider } from '../providers/nodeReleasesDataProvider';
+import { NodeReleasesProvider } from '../providers/nodeReleasesProvider';
 import { LocaleProvider } from '../providers/localeProvider';
 import { SiteProvider } from '../providers/siteProvider';
 import sourceSansPro from '../util/sourceSansPro';
@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }) {
   return (
     <SiteProvider>
       <LocaleProvider i18nData={pageProps.i18nData}>
-        <NodeReleasesDataProvider>
+        <NodeReleasesProvider>
           <MotionConfig reducedMotion="user">
             {/* @TODO: This is a temporary solution. We might want to adopt Emotion/StyledComponents here */}
             <style jsx global>
@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }) {
             </style>
             <Component {...pageProps} />
           </MotionConfig>
-        </NodeReleasesDataProvider>
+        </NodeReleasesProvider>
       </LocaleProvider>
     </SiteProvider>
   );

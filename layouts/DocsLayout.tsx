@@ -1,10 +1,10 @@
 import BaseLayout from './BaseLayout';
 import SideNavigation from '../components/SideNavigation';
-import { useNodeReleasesData } from '../hooks/useNodeReleasesData';
+import { useNodeReleases } from '../hooks/useNodeReleases';
 import type { FC, PropsWithChildren } from 'react';
 
 const DocsLayout: FC<PropsWithChildren> = ({ children }) => {
-  const { lts, current } = useNodeReleasesData();
+  const { lts, current } = useNodeReleases();
 
   const translationContext = {
     apiLts: {

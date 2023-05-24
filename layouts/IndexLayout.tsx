@@ -2,11 +2,11 @@ import BaseLayout from './BaseLayout';
 import Banner from '../components/Home/Banner';
 import HomeDownloadButton from '../components/Home/HomeDownloadButton';
 import { useNextraContext } from '../hooks/useNextraContext';
-import { useNodeReleasesData } from '../hooks/useNodeReleasesData';
+import { useNodeReleases } from '../hooks/useNodeReleases';
 import type { FC, PropsWithChildren } from 'react';
 
 const IndexLayout: FC<PropsWithChildren> = ({ children }) => {
-  const { lts, current } = useNodeReleasesData();
+  const { lts, current } = useNodeReleases();
 
   const {
     frontMatter: { labels },

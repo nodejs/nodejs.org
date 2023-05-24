@@ -16,7 +16,7 @@ export type NodeReleaseStatus =
   | 'End-of-life'
   | 'Pending';
 
-export interface NodeReleaseData {
+export interface NodeRelease {
   major: number;
   version: string;
   versionWithPrefix: string;

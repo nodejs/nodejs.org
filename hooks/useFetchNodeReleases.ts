@@ -1,13 +1,13 @@
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 import useSWR from 'swr';
-import { getNodeReleaseStatus } from '../util/nodeReleaseData';
-import type { NodeReleaseData } from '../types';
+import { getNodeReleaseStatus } from '../util/nodeRelease';
+import type { NodeRelease } from '../types';
 
 const fetcher = (...args: Parameters<typeof fetch>) =>
   fetch(...args).then(res => res.json());
 
-export const useFetchNodeReleasesData = (): NodeReleaseData[] => {
+export const useFetchNodeReleases = (): NodeRelease[] => {
   const { basePath } = useRouter();
 
   const { data = [] } = useSWR<any[]>(
@@ -42,7 +42,7 @@ export const useFetchNodeReleasesData = (): NodeReleaseData[] => {
         v8: raw.v8 || '',
         releaseDate: raw.releaseDate || '',
         modules: raw.modules || '',
-      } as NodeReleaseData;
+      } as NodeRelease;
     });
   }, [data]);
 };

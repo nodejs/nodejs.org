@@ -1,11 +1,11 @@
 import { FormattedMessage } from 'react-intl';
 import LocalizedLink from '../LocalizedLink';
 import { useNavigation } from '../../hooks/useNavigation';
-import type { NodeReleaseData } from '../../types';
+import type { NodeRelease } from '../../types';
 import type { FC } from 'react';
 
 type DownloadListProps = {
-  release: NodeReleaseData;
+  release: NodeRelease;
 };
 
 const DownloadList: FC<DownloadListProps> = ({ release }) => {

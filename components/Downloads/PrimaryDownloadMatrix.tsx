@@ -2,11 +2,11 @@ import classNames from 'classnames';
 import semVer from 'semver';
 import LocalizedLink from '../LocalizedLink';
 import { useNextraContext } from '../../hooks/useNextraContext';
-import type { LegacyDownloadsFrontMatter, NodeReleaseData } from '../../types';
+import type { LegacyDownloadsFrontMatter, NodeRelease } from '../../types';
 import type { FC } from 'react';
 
 type PrimaryDownloadMatrixProps = {
-  release: NodeReleaseData;
+  release: NodeRelease;
 };
 
 // @TODO: Instead of using a static list it should be created dynamically. This is done on `nodejs.dev`

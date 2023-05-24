@@ -1,6 +1,6 @@
-import type { NodeReleaseData } from '../types';
+import type { NodeRelease } from '../types';
 
-export const createNodeReleasesData = () =>
+export const createNodeReleases = () =>
   [
     {
       major: 20,
@@ -89,4 +89,4 @@ export const createNodeReleasesData = () =>
       releaseDate: '2021-04-06',
       modules: '88',
     },
-  ] as NodeReleaseData[];
+  ] as NodeRelease[];

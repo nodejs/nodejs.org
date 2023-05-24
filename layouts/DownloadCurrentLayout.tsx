@@ -2,13 +2,13 @@ import BaseLayout from './BaseLayout';
 import PrimaryDownloadMatrix from '../components/Downloads/PrimaryDownloadMatrix';
 import SecondaryDownloadMatrix from '../components/Downloads/SecondaryDownloadMatrix';
 import { useNextraContext } from '../hooks/useNextraContext';
-import { useNodeReleasesData } from '../hooks/useNodeReleasesData';
+import { useNodeReleases } from '../hooks/useNodeReleases';
 import type { FC, PropsWithChildren } from 'react';
 import type { LegacyDownloadsFrontMatter } from '../types';
 
 const DownloadCurrentLayout: FC<PropsWithChildren> = ({ children }) => {
   const nextraContext = useNextraContext();
-  const { current } = useNodeReleasesData();
+  const { current } = useNodeReleases();
 
   const { downloads } = nextraContext.frontMatter as LegacyDownloadsFrontMatter;
 

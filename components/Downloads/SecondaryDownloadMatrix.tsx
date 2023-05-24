@@ -1,10 +1,10 @@
 import DownloadList from './DownloadList';
 import { useNextraContext } from '../../hooks/useNextraContext';
-import type { LegacyDownloadsFrontMatter, NodeReleaseData } from '../../types';
+import type { LegacyDownloadsFrontMatter, NodeRelease } from '../../types';
 import type { FC } from 'react';
 
 type SecondaryDownloadMatrixProps = {
-  release: NodeReleaseData;
+  release: NodeRelease;
 };
 
 // @TODO: Instead of using a static list it should be created dynamically. This is done on `nodejs.dev`
