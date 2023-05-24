@@ -1,7 +1,7 @@
 import type { Preview } from '@storybook/react';
 import NextImage from 'next/image';
 import { ThemeProvider } from 'next-themes';
-import { NodeReleasesDataProvider } from '../providers/nodeReleasesDataProvider';
+import { NodeReleasesProvider } from '../providers/nodeReleasesProvider';
 import { LocaleProvider } from '../providers/localeProvider';
 import { SiteProvider } from '../providers/siteProvider';
 import openSans from '../util/openSans';
@@ -30,8 +30,8 @@ export const decorators = [
   Story => (
     <ThemeProvider>
       <SiteProvider>
-        <LocaleProvider i18nData={pageProps.i18nData}>
-          <NodeReleasesDataProvider>
+        <NodeReleasesProvider>
+          <LocaleProvider i18nData={pageProps.i18nData}>
             <style>
               {`
                 body {
@@ -40,8 +40,8 @@ export const decorators = [
               `}
             </style>
             <Story />
-          </NodeReleasesDataProvider>
-        </LocaleProvider>
+          </LocaleProvider>
+        </NodeReleasesProvider>
       </SiteProvider>
     </ThemeProvider>
   ),
