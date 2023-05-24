@@ -26,3 +26,6 @@ pages/**/*.md
 
 # We shouldn't lint statically generated Storybook files
 storybook-static
+
+# This file naturally might break conventional rules
+global.d.ts

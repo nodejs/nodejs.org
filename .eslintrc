@@ -31,12 +31,16 @@
     },
     {
       "files": ["**/*.{ts,tsx}"],
+      "extends": ["plugin:@typescript-eslint/recommended"],
       "parser": "@typescript-eslint/parser",
       "plugins": ["@typescript-eslint"],
       "globals": { "globalThis": false },
       "rules": {
-        "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
-        "@typescript-eslint/consistent-type-imports": "error"
+        "@typescript-eslint/consistent-type-imports": "error",
+        "@typescript-eslint/no-empty-function": "off"
+      },
+      "parserOptions": {
+        "project": ["./tsconfig.json"]
       }
     },
     {
