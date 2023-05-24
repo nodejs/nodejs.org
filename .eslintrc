@@ -1,5 +1,10 @@
 {
-  "extends": ["next", "prettier"],
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "prettier",
+    "plugin:storybook/recommended"
+  ],
   "overrides": [
     {
       "files": ["**/*.{mjs,js,ts,tsx}"],

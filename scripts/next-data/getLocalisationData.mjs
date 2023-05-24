@@ -1,3 +1,5 @@
+'use strict';
+
 import { readdirSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { basename, extname, join } from 'node:path';
