@@ -7,7 +7,7 @@ export const NodeReleasesContext = createContext<{
   releases: NodeRelease[];
   lts?: NodeRelease;
   current?: NodeRelease;
-}>(undefined as any);
+}>({ releases: [], lts: undefined, current: undefined });
 
 export const NodeReleasesProvider: FC<PropsWithChildren> = ({ children }) => {
   const releases = useFetchNodeReleases();
