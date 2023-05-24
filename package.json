@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@mdx-js/react": "^2.3.0",
-    "@nodevu/core": "^0.0.4",
+    "@nodevu/core": "^0.1.0",
     "classnames": "^2.3.2",
     "cross-env": "^7.0.3",
     "feed": "^4.2.2",
