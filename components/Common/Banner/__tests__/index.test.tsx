@@ -1,5 +1,5 @@
-import { IntlProvider } from 'react-intl';
 import { render, screen } from '@testing-library/react';
+import { IntlProvider } from 'react-intl';
 import Banner from '../index';
 import type { WebsiteBanner } from '../../../../types';
 
