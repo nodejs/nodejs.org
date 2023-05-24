@@ -24,6 +24,7 @@ export const LayoutContext = createContext<{
   layout: LegacyLayouts;
   pageOpts: PageOpts;
   pageProps: NextraAppProps['pageProps'];
+  // @TODO: Initialize the Layout Provider with a default value
 }>(undefined as any);
 
 const getLegacyLayout = (layout: LegacyLayouts) => {
