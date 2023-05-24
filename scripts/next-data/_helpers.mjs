@@ -1,3 +1,5 @@
+'use strict';
+
 import { readdir } from 'fs/promises';
 import { fileURLToPath } from 'url';
 
