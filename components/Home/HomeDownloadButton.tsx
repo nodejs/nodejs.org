@@ -1,24 +1,27 @@
 import LocalizedLink from '../LocalizedLink';
 import { useNextraContext } from '../../hooks/useNextraContext';
+import { useNodeReleases } from '../../hooks/useNodeReleases';
 import { getNodejsChangelog } from '../../util/getNodeJsChangelog';
-import type { NodeRelease } from '../../types';
 import type { FC } from 'react';
 
-const HomeDownloadButton: FC<NodeRelease> = ({
-  version,
-  versionWithPrefix,
-  major,
-  isLts,
-}) => {
+type HomeDownloadButtonProps = {
+  releaseType: 'lts' | 'current';
+};
+
+const HomeDownloadButton: FC<HomeDownloadButtonProps> = ({ releaseType }) => {
   const {
     frontMatter: { labels },
   } = useNextraContext();
+  const release = useNodeReleases()[releaseType];
 
-  const nodeDownloadLink = `https://nodejs.org/dist/${versionWithPrefix}/`;
-  const nodeApiLink = `https://nodejs.org/dist/latest-v${major}.x/docs/api/`;
-  const nodeAllDownloadsLink = `/download${isLts ? '/' : '/current'}`;
+  if (!release) return null;
+
+  const nodeDownloadLink = `https://nodejs.org/dist/${release.versionWithPrefix}/`;
+  const nodeApiLink = `https://nodejs.org/dist/latest-v${release.major}.x/docs/api/`;
+  const nodeAllDownloadsLink = `/download${release.isLts ? '/' : '/current'}`;
   const nodeDownloadTitle =
-    `${labels.download} ${version}` + ` ${labels[isLts ? 'lts' : 'current']}`;
+    `${labels.download} ${release.version}` +
+    ` ${labels[release.isLts ? 'lts' : 'current']}`;
 
   return (
     <div className="home-downloadblock">
@@ -26,10 +29,10 @@ const HomeDownloadButton: FC<NodeRelease> = ({
         href={nodeDownloadLink}
         className="home-downloadbutton"
         title={nodeDownloadTitle}
-        data-version={versionWithPrefix}
+        data-version={release.versionWithPrefix}
       >
-        {version} {labels[isLts ? 'lts' : 'current']}
-        <small>{labels[`tagline-${isLts ? 'lts' : 'current'}`]}</small>
+        {release.version} {labels[release.isLts ? 'lts' : 'current']}
+        <small>{labels[`tagline-${release.isLts ? 'lts' : 'current'}`]}</small>
       </a>
 
       <ul className="list-divider-pipe home-secondary-links">
@@ -39,7 +42,7 @@ const HomeDownloadButton: FC<NodeRelease> = ({
           </LocalizedLink>
         </li>
         <li>
-          <LocalizedLink href={getNodejsChangelog(versionWithPrefix)}>
+          <LocalizedLink href={getNodejsChangelog(release.versionWithPrefix)}>
             {labels.changelog}
           </LocalizedLink>
         </li>

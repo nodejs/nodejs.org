@@ -2,17 +2,23 @@ import classNames from 'classnames';
 import semVer from 'semver';
 import LocalizedLink from '../LocalizedLink';
 import { useNextraContext } from '../../hooks/useNextraContext';
-import type { LegacyDownloadsFrontMatter, NodeRelease } from '../../types';
+import { useNodeReleases } from '../../hooks/useNodeReleases';
+import type { LegacyDownloadsFrontMatter } from '../../types';
 import type { FC } from 'react';
 
 type PrimaryDownloadMatrixProps = {
-  release: NodeRelease;
+  releaseType: 'lts' | 'current';
 };
 
 // @TODO: Instead of using a static list it should be created dynamically. This is done on `nodejs.dev`
 // since this is a temporary solution and going to be fixed in the future.
-const PrimaryDownloadMatrix: FC<PrimaryDownloadMatrixProps> = ({ release }) => {
+const PrimaryDownloadMatrix: FC<PrimaryDownloadMatrixProps> = ({
+  releaseType,
+}) => {
   const nextraContext = useNextraContext();
+  const release = useNodeReleases()[releaseType];
+
+  if (!release) return null;
 
   const { downloads } = nextraContext.frontMatter as LegacyDownloadsFrontMatter;
   const hasWindowsArm64 = semVer.satisfies(release.version, '>= 19.9.0');

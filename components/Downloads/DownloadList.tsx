@@ -4,16 +4,12 @@ import { useNavigation } from '../../hooks/useNavigation';
 import type { NodeRelease } from '../../types';
 import type { FC } from 'react';
 
-type DownloadListProps = {
-  release: NodeRelease;
-};
-
-const DownloadList: FC<DownloadListProps> = ({ release }) => {
+const DownloadList: FC<NodeRelease> = ({ versionWithPrefix }) => {
   const { getSideNavigation } = useNavigation();
 
   const [, ...downloadNavigation] = getSideNavigation('download', {
-    shaSums: { nodeVersion: release.versionWithPrefix },
-    allDownloads: { nodeVersion: release.versionWithPrefix },
+    shaSums: { nodeVersion: versionWithPrefix },
+    allDownloads: { nodeVersion: versionWithPrefix },
   });
 
   return (
