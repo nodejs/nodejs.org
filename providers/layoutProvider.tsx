@@ -25,6 +25,7 @@ export const LayoutContext = createContext<{
   pageOpts: PageOpts;
   pageProps: NextraAppProps['pageProps'];
   // @TODO: Initialize the Layout Provider with a default value
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 }>(undefined as any);
 
 const getLegacyLayout = (layout: LegacyLayouts) => {

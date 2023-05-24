@@ -33,7 +33,7 @@ export const decorators = [
   Story => (
     <NextApp>
       <ThemeProvider>
-        <LocaleProvider i18nData={pageProps.i18nData}>
+        <LocaleProvider>
           <NodeDataProvider nodeVersionData={pageProps.nodeVersionData}>
             <div data-test-id="story-root">
               <Story />

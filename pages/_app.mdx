@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }) {
   setAppFont(sourceSansPro.style.fontFamily);
   return (
     <BaseApp>
-      <LocaleProvider i18nData={pageProps.i18nData}>
+      <LocaleProvider>
         <NodeDataProvider nodeVersionData={pageProps.nodeVersionData}>
           <Component {...pageProps} />
           <Analytics />
