@@ -1,18 +1,19 @@
 import { FormattedMessage, useIntl } from 'react-intl';
 import classnames from 'classnames';
 import styles from './index.module.scss';
+import type { FC } from 'react';
 
-export type Props = {
+export type DownloadToggleProps = {
   handleClick: (type: string) => void;
   selected: string;
   showDescription?: boolean;
 };
 
-const DownloadToggle = ({
+const DownloadToggle: FC<DownloadToggleProps> = ({
   handleClick,
   selected,
   showDescription = true,
-}: Props): JSX.Element => {
+}) => {
   const intl = useIntl();
 
   const activeClassNames = classnames({ [styles.active]: selected === 'LTS' });

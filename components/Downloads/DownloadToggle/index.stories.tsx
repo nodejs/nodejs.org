@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import DownloadToggle from './index';
-import type { Props } from './index';
+import type { FC } from 'react';
+import type { DownloadToggleProps } from './index';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
-const Template = ({ selected, showDescription }: Props) => {
+const Template: FC<DownloadToggleProps> = ({ selected, showDescription }) => {
   const [selectedTypeRelease, setSelectedTypeRelease] = useState(selected);
 
   const handleTypeReleaseToggle = (value: string) => {
