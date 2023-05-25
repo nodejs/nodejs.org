@@ -33,7 +33,11 @@
       }
     },
     {
-      "files": ["**/*.tsx"],
+      "files": ["**/*.md?(x)"],
+      "extends": ["plugin:mdx/recommended"]
+    },
+    {
+      "files": ["**/*.{mdx,tsx}"],
       "rules": {
         "react/function-component-definition": [
           "error",
