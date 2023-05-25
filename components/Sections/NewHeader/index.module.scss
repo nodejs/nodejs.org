@@ -1,0 +1,161 @@
+@use 'styles/mixins/screen';
+
+%navItemLi {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  margin-left: var(--space-16);
+  white-space: nowrap;
+
+  @include screen.forTabletPortraitDown {
+    display: flex;
+    height: 42px;
+    margin-left: 0;
+
+    &:not(:last-child) {
+      margin-right: var(--space-04);
+    }
+  }
+
+  > a {
+    line-height: 0;
+  }
+
+  &:last-child {
+    margin-right: var(--space-08);
+  }
+}
+
+.header {
+  background: var(--color-fill-app);
+  border-bottom: var(--space-01) solid var(--black2);
+  position: sticky;
+  top: 0;
+  width: 100%;
+
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 var(--space-08) 0 var(--space-24);
+
+    @include screen.forTabletPortraitDown {
+      align-items: start;
+      flex-flow: wrap;
+      min-height: calc(1 * var(--nav-height));
+      padding: 0 var(--space-12);
+    }
+
+    .startWrapper {
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
+
+      .logo {
+        @include screen.forTabletPortraitDown {
+          align-items: center;
+          display: flex;
+          height: var(--nav-height);
+        }
+
+        svg {
+          height: var(--space-32);
+
+          @include screen.forTabletPortraitDown {
+            height: 2.4rem;
+          }
+        }
+      }
+    }
+
+    .tabs {
+      align-items: center;
+      display: flex;
+      justify-self: flex-start;
+      list-style: none;
+      margin: 0 0 0 120px;
+      margin-right: auto;
+
+      @media (max-width: 1050px) {
+        margin: 0;
+      }
+
+      @include screen.forTabletPortraitDown {
+        background: var(--color-fill-app);
+        flex-flow: row wrap;
+        justify-content: center;
+        order: 3;
+        padding: 0;
+        width: 100%;
+      }
+
+      > li {
+        @extend %navItemLi;
+
+        > a {
+          color: var(--color-text-primary);
+          padding: calc(var(--space-32) + var(--space-04)) var(--space-16);
+          text-decoration: none;
+
+          @include screen.forTabletPortraitDown {
+            padding: var(--space-08);
+          }
+
+          &.active {
+            border-bottom: var(--space-04) inset var(--color-text-accent);
+            color: var(--color-text-accent);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: -4px;
+          }
+
+          &:hover {
+            border-bottom: 4px solid var(--color-text-primary);
+            margin-bottom: -4px;
+          }
+        }
+      }
+    }
+
+    .endWrapper {
+      align-items: center;
+      display: flex;
+      flex-grow: 1;
+
+      > .rightContainer {
+        align-items: center;
+        display: flex;
+        flex: 1 1 auto;
+        justify-content: flex-end;
+        list-style: none;
+        margin: 0;
+        padding-left: 0;
+
+        @include screen.forTabletPortraitDown {
+          padding: 0;
+          width: 100%;
+        }
+
+        > li {
+          @extend %navItemLi;
+
+          padding: 10px;
+
+          > a {
+            color: var(--color-text-accent);
+
+            > svg {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+[data-theme='dark'] {
+  .header {
+    border-bottom: 1px solid transparent;
+  }
+}

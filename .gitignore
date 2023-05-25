@@ -18,10 +18,6 @@ public/sitemap.xml
 public/en/feed/*.xml
 pages/en/blog/year-[0-9][0-9][0-9][0-9].md
 
-# ESLint Cache Files
-.eslintjscache
-.eslintmdcache
-
 # Jest
 coverage
 .swc
