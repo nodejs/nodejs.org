@@ -3,10 +3,12 @@ import styles from './index.module.scss';
 import type { FC } from 'react';
 
 // update this data with new images
-const images = ['claudio-speak.jpg', 'room.jpg', 'peoples.jpg'];
+const images = ['claudio-speak.jpg', 'room.jpg', 'peoples.jpg', 'teams.jpeg', 'joe-speak.jpg', 'matteo.jpg', 'micheal-speak.jpg', 'robin-kylie.jpg'];
+
 
 const EventsImages: FC = () => {
-  const [currentImage, setCurrentImage] = useState(0);
+  const startImage = Math.floor(Math.random() * images.length);
+  const [currentImage, setCurrentImage] = useState(startImage);
 
   useEffect(() => {
     const interval = setInterval(() => {
