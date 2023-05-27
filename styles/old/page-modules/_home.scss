@@ -45,6 +45,15 @@
   h2 {
     margin-bottom: 0;
   }
+
+  .events {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem;
+  }
 }
 
 .home-banner {

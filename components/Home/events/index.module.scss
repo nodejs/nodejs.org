@@ -1,0 +1,39 @@
+@use 'styles/mixins/screen';
+
+.container {
+  align-items: center;
+  background-color: var(--color-dropdown-background);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  height: 150px;
+  justify-content: space-between;
+  margin: 100px;
+  padding: 16px;
+  width: 970px;
+
+  .image {
+    margin-left: -10rem;
+  }
+
+  .title {
+    color: var(--color-text-primary);
+    font-size: 24px;
+    font-weight: 600;
+    width: 35rem;
+  }
+
+  a {
+    background: var(--purple5);
+    border-radius: 4px;
+    color: var(--color-fill-top-nav);
+    height: fit-content;
+    padding: 8px 16px;
+    text-decoration: none;
+
+    &:hover {
+      background-color: var(--color-text-primary);
+      cursor: pointer;
+    }
+  }
+}

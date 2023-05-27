@@ -1,0 +1,12 @@
+.image {
+  height: 275px;
+  mask-image: url('/static/utils/hexagon-mask.svg');
+  mask-origin: content-box;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+
+  img {
+    height: 275px;
+  }
+}

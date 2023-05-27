@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home/events Default smoke-test 1`] = `
+<div class="events_container__sTJFh">
+  <div class="events_image__CRtas">
+    <div class="images_image__dY6kn">
+      <img src="/static/images/events/openjs-world-2023/claudio-speak.jpg"
+           alt="Event illustration image"
+      >
+    </div>
+  </div>
+  <p class="events_title__ufMA1">
+    OpenJS World 2023 !
+    <br>
+    What happened? What's next?
+  </p>
+  <a href="/events">
+    Learn more
+  </a>
+</div>
+`;
