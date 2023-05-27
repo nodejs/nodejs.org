@@ -15,18 +15,17 @@ const images = [
 ];
 
 const EventsImages: FC = () => {
-  const startImage = Math.floor(Math.random() * images.length);
-  const [currentImage, setCurrentImage] = useState(startImage);
+  const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((currentImage + 1) % images.length);
+      setCurrentImage(Math.floor(Math.random() * images.length));
     }, 5000);
     return () => clearInterval(interval);
   }, [currentImage]);
 
   const handleClick = () => {
-    setCurrentImage((currentImage + 1) % images.length);
+    setCurrentImage(Math.floor(Math.random() * images.length));
   };
 
   return (
