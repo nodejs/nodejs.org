@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { FormattedMessage } from 'react-intl';
 import styles from './index.module.scss';
 import ImageEvents from './images';
 import type { FC } from 'react';
@@ -9,12 +10,11 @@ const Events: FC = () => (
       <ImageEvents />
     </div>
     <p className={styles.title}>
-      OpenJS World 2023 ! <br />
-      What happened? What&apos;s next?
+      <FormattedMessage id="components.home.events.title" />
     </p>
     {/* @todo: i18n link and add page */}
     <Link href="/events" className={styles.link}>
-      Learn more
+      <FormattedMessage id="components.home.events.cta" />
     </Link>
   </div>
 );
