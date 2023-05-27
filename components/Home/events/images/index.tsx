@@ -3,8 +3,16 @@ import styles from './index.module.scss';
 import type { FC } from 'react';
 
 // update this data with new images
-const images = ['claudio-speak.jpg', 'room.jpg', 'peoples.jpg', 'teams.jpeg', 'joe-speak.jpg', 'matteo.jpg', 'micheal-speak.jpg', 'robin-kylie.jpg'];
-
+const images = [
+  'claudio-speak.jpg',
+  'room.jpg',
+  'peoples.jpg',
+  'teams.jpeg',
+  'joe-speak.jpg',
+  'matteo.jpg',
+  'micheal-speak.jpg',
+  'robin-kylie.jpg',
+];
 
 const EventsImages: FC = () => {
   const startImage = Math.floor(Math.random() * images.length);
