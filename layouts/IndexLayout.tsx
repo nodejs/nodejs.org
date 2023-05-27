@@ -40,7 +40,7 @@ const IndexLayout: FC<PropsWithChildren> = ({ children }) => {
             <ImageEvents />
             <div>
               <h3>{labels['events-title']}</h3>
-              <LocalizedLink href="/get-involved/collab-summit">
+              <LocalizedLink href="/get-involved/collab-summit#openjs-world-2023">
                 {labels['events-subtitle']}
               </LocalizedLink>
             </div>

@@ -114,3 +114,11 @@ iframe {
 [data-theme='dark'] .light-mode-only {
   display: none;
 }
+
+iframe.ytb {
+  border: none;
+  height: auto;
+  width: 100%;
+  position: relative;
+  height: 450px;
+}
