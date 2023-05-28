@@ -160,6 +160,44 @@ const MyComponent: FC<MyComponentProps> = ({ prop1, prop2... }) => (
 export default MyComponent;
 ```
 
+#### How to I18n my component
+
+In Node.js website we use [react-intl](https://formatjs.io/docs/react-intl/) to handle internationalization.
+
+There are two type of components, one use content write in markdown and one use react-intl formatted message.
+
+* Using markdown:
+
+```tsx
+// ... your code
+
+const Component: FC<Props> = ({ children }) => (
+  <div>
+    <h1>{children}</h1>
+  </div>
+);
+```
+
+* Using react-intl:
+
+```tsx
+import { FormattedMessage } from 'react-intl';
+
+// ... your code
+
+const Component: FC<Props> = ({ children }) => (
+  <div>
+    <FormattedMessage id="your-message-id" />
+  </div>
+);
+```
+
+How to add a new message:
+
+1. Go on `/i18n/locales/en.json`
+2. Add one key following this pattern: `[dir].[subdir].[part-of-the-component]` (e.g. `components.article.header.title` more on en.json file)
+3. You don't need to add on other languages, we use [Crowdin](https://crowdin.com/project/nodejs-website) to translate our messages.
+
 ### Best practices for Component development in general
 
 - Only spread props `{ ... }` on the definition of the Component (Avoid having a variable named `props`)
