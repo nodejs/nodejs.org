@@ -1,0 +1,99 @@
+@use 'themes/light';
+@use 'themes/dark';
+@use 'styles/mixins/components';
+
+.pre {
+  @include components.code;
+
+  .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .lang,
+    .copy {
+      align-items: center;
+      cursor: pointer;
+      display: inherit;
+      font-size: var(--font-size-code);
+      height: 23px;
+      justify-content: center;
+      width: 86px;
+    }
+
+    .langBox {
+      background-color: var(--black4);
+      border-radius: 0 0 0.3rem 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      .lang {
+        background-color: var(--black4);
+        border-width: 0;
+        color: var(--black9);
+        padding: 0 16px;
+        width: max-content;
+
+        &:last-of-type {
+          border-radius: 0 0 0.3rem 0;
+        }
+
+        &:hover {
+          background-color: var(--black5);
+        }
+      }
+
+      .lang.selected {
+        font-weight: 600;
+      }
+    }
+
+    .copy {
+      background-color: var(--black9);
+      border-radius: 0 0 0 0.3rem;
+      border-width: 0;
+      color: white;
+
+      &:hover {
+        background-color: var(--black8);
+      }
+
+      i {
+        padding: 0;
+      }
+    }
+  }
+
+  .content {
+    margin: 1em;
+  }
+}
+
+[data-theme='light'] {
+  .pre {
+    @include light.theme;
+  }
+}
+
+[data-theme='dark'] {
+  .pre {
+    @include dark.theme;
+
+    .top {
+      span {
+        background-color: var(--black3);
+        color: var(--black9);
+      }
+
+      .copy {
+        background-color: var(--brand8);
+        color: white;
+
+        &:hover {
+          background-color: var(--brand6);
+        }
+      }
+    }
+  }
+}

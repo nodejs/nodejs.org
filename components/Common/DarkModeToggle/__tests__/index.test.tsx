@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { IntlProvider } from 'react-intl';
 import DarkModeToggle from '../index';
 
-let mockCurrentTheme = '';
+let mockCurrentTheme = 'light';
 
 const mockToggleTheme = jest.fn().mockImplementation(() => {
   mockCurrentTheme = mockCurrentTheme === 'dark' ? 'light' : 'dark';
@@ -17,15 +17,6 @@ jest.mock('next-themes', () => ({
 }));
 
 describe('DarkModeToggle Component', () => {
-  it('render dark mode toggle', () => {
-    const { container } = render(
-      <IntlProvider locale="en" onError={() => {}}>
-        <DarkModeToggle />
-      </IntlProvider>
-    );
-    expect(container).toMatchSnapshot();
-  });
-
   it('switches dark theme to light theme', async () => {
     const user = userEvent.setup();
     mockCurrentTheme = 'dark';

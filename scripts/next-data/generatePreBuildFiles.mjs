@@ -1,3 +1,5 @@
+'use strict';
+
 // @TODO: This is a temporary hack until we migrate to the `nodejs/nodejs.dev` codebase
 import { writeFile } from 'node:fs/promises';
 import { join } from 'node:path';

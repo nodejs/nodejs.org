@@ -3,8 +3,8 @@ import NextImage from 'next/image';
 import { ThemeProvider } from 'next-themes';
 import { NodeReleasesProvider } from '../providers/nodeReleasesProvider';
 import { LocaleProvider } from '../providers/localeProvider';
-import { SiteProvider } from '../providers/siteProvider';
-import openSans from '../util/openSans';
+import { openSans } from '../util/nextFonts';
+import NextApp, { setAppFont } from '../next.app';
 import { pageProps } from './constants';
 
 import '../styles/index.scss';
@@ -23,27 +23,25 @@ const preview: Preview = {
         basePath: '',
       },
     },
+    backgrounds: { disable: true },
   },
 };
 
+setAppFont(openSans.style.fontFamily);
+
 export const decorators = [
   Story => (
-    <ThemeProvider>
-      <SiteProvider>
+    <NextApp>
+      <ThemeProvider>
         <NodeReleasesProvider>
           <LocaleProvider i18nData={pageProps.i18nData}>
-            <style>
-              {`
-                body {
-                  font-family: ${openSans.style.fontFamily}, var(--base-type-face);
-                }
-              `}
-            </style>
-            <Story />
+              <div data-test-id="story-root">
+                <Story />
+              </div>
           </LocaleProvider>
         </NodeReleasesProvider>
-      </SiteProvider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </NextApp>
   ),
 ];
 

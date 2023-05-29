@@ -23,8 +23,8 @@ Thank you for your interest in contributing to the Node.js Website. Before you p
 
 ```bash
 git clone git@github.com:<GITHUB_ID>/nodejs.org.git # SSH
-gh repo clone <GITHUB_ID>/nodejs.org # GitHub CLI
 git clone https://github.com/<GITHUB_ID>/nodejs.org.git # HTTPS
+gh repo clone <GITHUB_ID>/nodejs.org # GitHub CLI
 ```
 
 3. Change into the nodejs.org directory.
@@ -36,7 +36,9 @@ cd nodejs.org
 4. Create a remote for keeping your fork as well as your local clone up-to-date.
 
 ```bash
-git remote add upstream git@github.com:nodejs/nodejs.org.git
+git remote add upstream git@github.com:nodejs/nodejs.org.git # SSH
+git remote add upstream https://github.com/nodejs/nodejs.org.git # HTTPS
+gh repo sync nodejs/nodejs.org # GitHub CLI
 ```
 
 5. Create a new branch for your work.
@@ -103,7 +105,16 @@ We also offer other commands that offer you assistance during your local develop
   - **Usage:** `npx turbo scripts:release-post -- --version=vXX.X.X --force`
 - `npx turbo storybook` starts Storybook's local server
 - `npx turbo storybook:build` builds Storybook as a static web application for publishing
-- `npx turbo test` runs jest (unit-tests) locally
+- `npx turbo test` runs all tests locally
+  - `npx turbo test:unit` runs jest (unit-tests) locally
+  - `npx turbo test:storybook` runs storybook test-runner tests
+    - `npx turbo test:storybook:snapshot` generates and updates snapshots for all storybook components.
+
+## Vocabulary
+
+- A **Contributor** is any individual who creates an issue/PR, comments on an issue/PR
+  or contributes in some other way.
+- A **Collaborator** is a contributor with write access to the repository. See [here](#becoming-a-collaborator) on how to become a collaborator.
 
 ## Creating Components
 
@@ -179,7 +190,7 @@ Commits should be signed. You can read more about [Commit Signing][] here.
 
 Each new feature or bug fix should be accompanied by a unit test (when deemed valuable). We use [Jest][] as our test runner and [React Testing Library][] for our React unit tests.
 
-We also use [Storybook][] to document our components. Each component should have a storybook story that documents the component's usage.
+We also use [Storybook][] to document our components. Each component should have a storybook story that documents the component's usage. Snapshot testing of our components is directly done by taking snapshot of all Storybook stories, using [Storybook Test Runner][] and [Playwright][].
 
 ### General Guidelines for Unit Tests
 
@@ -253,12 +264,6 @@ In the case that an objection is raised in a pull request by another collaborato
 
 - [`squash`][] pull requests made up of multiple commits
 
-## Vocabulary
-
-- A **Contributor** is any individual who creates an issue/PR, comments on an issue/PR
-  or contributes in some other way.
-- A **Collaborator** is a contributor with write access to the repository. See [here](#becoming-a-collaborator) on how to become a collaborator.
-
 ## Becoming a collaborator
 
 - Collaborators must be actively contributing to the project
@@ -300,6 +305,8 @@ If something is missing here, or you feel something is not well described, feel 
 [Jest]: https://jestjs.io/
 [React Testing Library]: https://testing-library.com/docs/react-testing-library/intro/
 [Storybook]: https://storybook.js.org/
+[Storybook Test Runner]: https://storybook.js.org/addons/@storybook/test-runner#dom-snapshot-recipe
+[Playwright]: https://playwright.dev/
 [`react-intl`]: https://formatjs.io/docs/react-intl/
 [Next.js]: https://nextjs.org/
 [MDX]: https://mdxjs.com/

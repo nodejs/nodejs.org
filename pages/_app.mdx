@@ -1,30 +1,21 @@
-import { MotionConfig } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
 import { NodeReleasesProvider } from '../providers/nodeReleasesProvider';
 import { LocaleProvider } from '../providers/localeProvider';
-import { SiteProvider } from '../providers/siteProvider';
-import sourceSansPro from '../util/sourceSansPro';
+import { sourceSansPro } from '../util/nextFonts';
+import BaseApp, { setAppFont } from '../next.app';
 
 import '../styles/old/index.scss';
 
 export default function App({ Component, pageProps }) {
+  setAppFont(sourceSansPro.style.fontFamily);
   return (
-    <SiteProvider>
+    <BaseApp>
       <LocaleProvider i18nData={pageProps.i18nData}>
         <NodeReleasesProvider>
-          <MotionConfig reducedMotion="user">
-            {/* @TODO: This is a temporary solution. We might want to adopt Emotion/StyledComponents here */}
-            <style jsx global>
-              {`
-                body {
-                  font: 400 20px/1.5 ${sourceSansPro.style.fontFamily}, 'Open Sans',
-                    Roboto, 'San Francisco', Helvetica, Arial, sans-serif;
-                }
-              `}
-            </style>
-            <Component {...pageProps} />
-          </MotionConfig>
+          <Component {...pageProps} />
+          <Analytics />
         </NodeReleasesProvider>
       </LocaleProvider>
-    </SiteProvider>
+    </BaseApp>
   );
 }
