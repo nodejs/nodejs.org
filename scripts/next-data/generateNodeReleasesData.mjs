@@ -1,6 +1,6 @@
+import { writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
 import nodevu from '@nodevu/core';
-import { writeFile } from 'fs/promises';
-import { join } from 'path';
 
 import { getRelativePath } from './_helpers.mjs';
 
