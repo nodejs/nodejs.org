@@ -22,7 +22,6 @@ coverage
 # be done in the future as we don't want to update the Markdown file
 # contents right now
 pages/**/*.md
-pages/_app.mdx
 
 # Prettier's Handlebar parser is limited and chokes on some syntax features
 # https://github.com/prettier/prettier/issues/11834
