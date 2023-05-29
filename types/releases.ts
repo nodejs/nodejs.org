@@ -32,3 +32,8 @@ export interface NodeRelease {
   releaseDate: string;
   modules: string;
 }
+
+export type NodeReleaseSupport = Pick<
+  NodeRelease,
+  'currentStart' | 'ltsStart' | 'maintenanceStart' | 'endOfLife'
+>;

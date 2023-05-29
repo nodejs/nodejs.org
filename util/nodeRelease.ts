@@ -1,32 +1,29 @@
-import type { NodeReleaseStatus } from '../types/releases';
+import type { NodeReleaseStatus, NodeReleaseSupport } from '../types/releases';
 
 export const getNodeReleaseStatus = (
   now: Date,
-  currentStart?: string,
-  ltsStart?: string,
-  maintenanceStart?: string,
-  endOfLife?: string
+  support: NodeReleaseSupport
 ): NodeReleaseStatus => {
-  if (endOfLife) {
-    if (now > new Date(endOfLife)) {
+  if (support.endOfLife) {
+    if (now > new Date(support.endOfLife)) {
       return 'End-of-life';
     }
   }
 
-  if (maintenanceStart) {
-    if (now > new Date(maintenanceStart)) {
+  if (support.maintenanceStart) {
+    if (now > new Date(support.maintenanceStart)) {
       return 'Maintenance LTS';
     }
   }
 
-  if (ltsStart) {
-    if (now > new Date(ltsStart)) {
+  if (support.ltsStart) {
+    if (now > new Date(support.ltsStart)) {
       return 'Active LTS';
     }
   }
 
-  if (currentStart) {
-    if (now >= new Date(currentStart)) {
+  if (support.currentStart) {
+    if (now >= new Date(support.currentStart)) {
       return 'Current';
     }
   }

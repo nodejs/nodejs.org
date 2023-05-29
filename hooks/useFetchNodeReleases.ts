@@ -19,25 +19,23 @@ export const useFetchNodeReleases = (): NodeRelease[] => {
     const now = new Date();
 
     return data.map(raw => {
-      const status = getNodeReleaseStatus(
-        now,
-        raw.currentStart,
-        raw.ltsStart,
-        raw.maintenanceStart,
-        raw.endOfLife
-      );
+      const support = {
+        currentStart: raw.currentStart,
+        ltsStart: raw.ltsStart,
+        maintenanceStart: raw.maintenanceStart,
+        endOfLife: raw.endOfLife,
+      };
+
+      const status = getNodeReleaseStatus(now, support);
 
       return {
+        ...support,
         major: raw.major,
         version: raw.version,
         versionWithPrefix: `v${raw.version}`,
         codename: raw.codename || '',
         isLts: status === 'Active LTS' || status === 'Maintenance LTS',
         status: status,
-        currentStart: raw.currentStart,
-        ltsStart: raw.ltsStart,
-        maintenanceStart: raw.maintenanceStart,
-        endOfLife: raw.endOfLife,
         npm: raw.npm || '',
         v8: raw.v8 || '',
         releaseDate: raw.releaseDate || '',
