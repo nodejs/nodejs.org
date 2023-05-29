@@ -164,7 +164,7 @@ export default MyComponent;
 
 In Node.js website we use [react-intl](https://formatjs.io/docs/react-intl/) to handle internationalization.
 
-There are two type of components, one use content write in markdown and one use react-intl formatted message.
+There are two types of components, one uses content write in markdown and the other uses react-intl formatted message.
 
 - Using markdown:
 
