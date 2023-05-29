@@ -35,9 +35,9 @@ export const decorators = [
       <ThemeProvider>
         <NodeReleasesProvider>
           <LocaleProvider i18nData={pageProps.i18nData}>
-              <div data-test-id="story-root">
-                <Story />
-              </div>
+            <div data-test-id="story-root">
+              <Story />
+            </div>
           </LocaleProvider>
         </NodeReleasesProvider>
       </ThemeProvider>
