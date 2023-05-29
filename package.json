@@ -17,9 +17,10 @@
     "build": "cross-env NODE_NO_WARNINGS=1 next build",
     "start": "cross-env NODE_NO_WARNINGS=1 next start",
     "deploy": "cross-env NEXT_STATIC_EXPORT=true npm run build && cross-env NEXT_STATIC_EXPORT=true npm run scripts:sitemap",
-    "lint:js": "cross-env NODE_NO_WARNINGS=1 next lint --cache",
+    "lint:js": "cross-env NODE_NO_WARNINGS=1 next lint --file \"**/*.{mjs,ts,tsx}\"",
+    "lint:md": "cross-env NODE_NO_WARNINGS=1 next lint --file \"**/*.md?(x)\"",
     "lint:scss": "stylelint --config .stylelintrc \"**/*.{css,sass,scss}\"",
-    "lint": "concurrently -s all -n \"lint:js,lint:scss\" -c \"magenta,blue\" \"npm:lint:js\" \"npm:lint:scss\"",
+    "lint": "concurrently -s all -n \"lint:js,lint:md,lint:scss\" -c \"magenta,cyan,blue\" \"npm:lint:js\" \"npm:lint:md\" \"npm:lint:scss\"",
     "lint:fix": "npm run lint -- --fix",
     "prettier": "prettier . --check --cache --cache-strategy metadata",
     "prettier:fix": "npm run prettier -- --write",
@@ -37,6 +38,7 @@
     "@mdx-js/react": "^2.3.0",
     "@mui/material": "^5.13.2",
     "@nodevu/core": "^0.1.0",
+    "@vercel/analytics": "^1.0.1",
     "classnames": "^2.3.2",
     "cross-env": "^7.0.3",
     "framer-motion": "^10.12.16",
@@ -54,7 +56,8 @@
     "semver": "^7.5.1",
     "sharp": "^0.32.1",
     "strftime": "^0.10.1",
-    "swr": "^2.1.5"
+    "swr": "^2.1.5",
+    "turbo": "^1.9.9"
   },
   "devDependencies": {
     "@storybook/addon-controls": "^7.0.17",
@@ -80,6 +83,7 @@
     "eslint": "^8.41.0",
     "eslint-config-next": "^13.4.3",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-mdx": "^2.1.0",
     "eslint-plugin-storybook": "^0.6.12",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",

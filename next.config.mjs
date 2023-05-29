@@ -36,4 +36,5 @@ export default withNextra({
   distDir: enableStaticExport ? 'build' : '.next',
   output: enableStaticExport ? 'export' : undefined,
   images: { unoptimized: enableStaticExport },
+  eslint: { dirs: ['.'] },
 });
