@@ -11,7 +11,7 @@ export const useFetchNodeReleases = (): NodeRelease[] => {
   const { basePath } = useRouter();
 
   const { data = [] } = useSWR<any[]>(
-    `${basePath}/static/node-releases-data.json`,
+    `${basePath}/node-releases-data.json`,
     fetcher
   );
 

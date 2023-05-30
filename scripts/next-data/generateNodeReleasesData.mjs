@@ -5,10 +5,7 @@ import nodevu from '@nodevu/core';
 import { getRelativePath } from './_helpers.mjs';
 
 const __dirname = getRelativePath(import.meta.url);
-const jsonFilePath = join(
-  __dirname,
-  '../../public/static/node-releases-data.json'
-);
+const jsonFilePath = join(__dirname, '../../public/node-releases-data.json');
 
 const generateNodeReleasesData = async () => {
   const nodevuOutput = await nodevu();
