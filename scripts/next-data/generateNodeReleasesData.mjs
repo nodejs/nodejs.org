@@ -14,7 +14,7 @@ const generateNodeReleasesData = async () => {
   Object.values(nodevuOutput)
     .reverse()
     .forEach(major => {
-      const latestVersion = Object.values(major.releases)[0];
+      const [latestVersion] = Object.values(major.releases);
 
       // Filter out those without documented support
       // Basically those not in schedule.json
