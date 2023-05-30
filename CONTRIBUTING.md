@@ -144,6 +144,7 @@ We also recommend getting familiar with technologies such as [Next.js][], [MDX][
   - If the Hook as a wider usability or can be used by other Components, then it should be placed at the root `hooks` folder.
 - If the Component has "sub-components" they should follow the same philosophy as the Component itself.
   - For example, if the Component `ComponentName` has a sub-component called `SubComponentName`, then it should be placed within `ComponentName/SubComponentName`
+- For i18n an component you have to follow [translation guidelines][]
 
 #### How a new Component should look like when freshly created
 
@@ -159,44 +160,6 @@ const MyComponent: FC<MyComponentProps> = ({ prop1, prop2... }) => (
 
 export default MyComponent;
 ```
-
-#### How to I18n my component
-
-In Node.js website we use [react-intl](https://formatjs.io/docs/react-intl/) to handle internationalization.
-
-There are two types of components, one uses content write in markdown and the other uses react-intl formatted message.
-
-- Using markdown:
-
-```tsx
-// ... your code
-
-const Component: FC<Props> = ({ children }) => (
-  <div>
-    <h1>{children}</h1>
-  </div>
-);
-```
-
-- Using react-intl:
-
-```tsx
-import { FormattedMessage } from 'react-intl';
-
-// ... your code
-
-const Component: FC<Props> = ({ children }) => (
-  <div>
-    <FormattedMessage id="your-message-id" />
-  </div>
-);
-```
-
-How to add a new message:
-
-1. Go on `/i18n/locales/en.json`
-2. Add one key following this pattern: `[dir].[subdir].[part-of-the-component]` (e.g. `components.article.header.title` more on en.json file)
-3. You don't need to add on other languages, we use [Crowdin](https://crowdin.com/project/nodejs-website) to translate our messages.
 
 ### Best practices for Component development in general
 
@@ -349,3 +312,4 @@ If something is missing here, or you feel something is not well described, feel 
 [Next.js]: https://nextjs.org/
 [MDX]: https://mdxjs.com/
 [SCSS]: https://sass-lang.com/
+[translation guidelines]: ./TRANSLATION.md#adding-new-translation-keys
