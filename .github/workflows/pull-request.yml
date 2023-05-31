@@ -15,12 +15,6 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
-
       - name: Restore Cache
         uses: actions/cache/restore@v3
         with:
@@ -30,6 +24,12 @@ jobs:
             node_modules/.cache
           key: cache-${{ hashFiles('package-lock.json') }}-
           restore-keys: cache-
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
 
       - name: Install NPM packages
         run: npm ci
@@ -70,12 +70,6 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
-
       - name: Restore Cache
         uses: actions/cache/restore@v3
         with:
@@ -85,6 +79,12 @@ jobs:
             node_modules/.cache
           key: cache-${{ hashFiles('package-lock.json') }}-
           restore-keys: cache-
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
 
       - name: Install NPM packages
         run: npm ci
@@ -132,12 +132,6 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
-
       - name: Restore Cache
         uses: actions/cache/restore@v3
         with:
@@ -147,6 +141,12 @@ jobs:
             node_modules/.cache
           key: cache-${{ hashFiles('package-lock.json') }}-
           restore-keys: cache-
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
 
       - name: Install NPM packages
         run: npm ci
