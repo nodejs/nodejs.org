@@ -2,7 +2,7 @@ export interface LocaleConfig {
   code: string;
   localName: string;
   name: string;
-  langDir: 'rtl' | 'ltr';
+  langDir: string;
   dateFormat: string;
   hrefLang: string;
   enabled: boolean;
@@ -10,6 +10,6 @@ export interface LocaleConfig {
 
 export interface LocaleContext {
   localeMessages: Record<string, string>;
-  availableLocales: Pick<LocaleConfig, 'code' | 'localName' | 'name'>[];
+  availableLocales: LocaleConfig[];
   currentLocale: LocaleConfig;
 }
