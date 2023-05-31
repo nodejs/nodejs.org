@@ -19,20 +19,20 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-          cache: npm
-
-      - name: Install NPM packages
-        run: npm ci
 
       - name: Restore Cache
         uses: actions/cache/restore@v3
         with:
           path: |
+            ~/.npm
+            .next/cache
             node_modules/.cache
-          key: tests-${{ hashFiles('**/package-lock.json') }}-
-          restore-keys: |
-            tests-${{ hashFiles('**/package-lock.json') }}-
+          key: cache-${{ hashFiles('package-lock.json') }}-
+          restore-keys: cache-
           enableCrossOsArchive: true
+
+      - name: Install NPM packages
+        run: npm ci
 
       - name: Run Linting
         run: npx turbo lint
@@ -45,8 +45,10 @@ jobs:
         uses: actions/cache/save@v3
         with:
           path: |
+            ~/.npm
+            .next/cache
             node_modules/.cache
-          key: tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          key: cache-${{ hashFiles('package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
           enableCrossOsArchive: true
 
   unit-tests:
@@ -73,20 +75,20 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-          cache: npm
-
-      - name: Install NPM packages
-        run: npm ci
 
       - name: Restore Cache
         uses: actions/cache/restore@v3
         with:
           path: |
+            ~/.npm
+            .next/cache
             node_modules/.cache
-          key: tests-${{ hashFiles('**/package-lock.json') }}-
-          restore-keys: |
-            tests-${{ hashFiles('**/package-lock.json') }}-
+          key: cache-${{ hashFiles('package-lock.json') }}-
+          restore-keys: cache-
           enableCrossOsArchive: true
+
+      - name: Install NPM packages
+        run: npm ci
 
       - name: Run Unit Tests
         run: npx turbo test:unit -- --coverage
@@ -106,8 +108,10 @@ jobs:
         uses: actions/cache/save@v3
         with:
           path: |
+            ~/.npm
+            .next/cache
             node_modules/.cache
-          key: tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          key: cache-${{ hashFiles('package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
           enableCrossOsArchive: true
 
   build:
@@ -125,11 +129,6 @@ jobs:
         shell: cmd
         run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
 
-      - name: "Use GNU tar instead BSD tar"
-        if: matrix.os == 'windows-latest'
-        shell: cmd
-        run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"    
-
       - name: Git Checkout
         uses: actions/checkout@v3
         with:
@@ -139,21 +138,20 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
-          cache: npm
-
-      - name: Install NPM packages
-        run: npm ci
 
       - name: Restore Cache
         uses: actions/cache/restore@v3
         with:
           path: |
+            ~/.npm
             .next/cache
             node_modules/.cache
-          key: build-${{ hashFiles('**/package-lock.json') }}-
-          restore-keys: |
-            build-${{ hashFiles('**/package-lock.json') }}-
+          key: cache-${{ hashFiles('package-lock.json') }}-
+          restore-keys: cache-
           enableCrossOsArchive: true
+
+      - name: Install NPM packages
+        run: npm ci
 
       - name: Build Next.js
         run: npx turbo build
@@ -167,7 +165,8 @@ jobs:
         uses: actions/cache/save@v3
         with:
           path: |
+            ~/.npm
             .next/cache
             node_modules/.cache
-          key: build-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          key: cache-${{ hashFiles('package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
           enableCrossOsArchive: true
