@@ -39,6 +39,7 @@ jobs:
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Save Cache
         uses: actions/cache/save@v3
@@ -87,12 +88,14 @@ jobs:
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Run Storybook Tests
         run: npx turbo test:storybook
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Save Cache
         uses: actions/cache/save@v3
@@ -143,6 +146,7 @@ jobs:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           NODE_OPTIONS: '--max_old_space_size=4096'
+          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Save Cache
         uses: actions/cache/save@v3
