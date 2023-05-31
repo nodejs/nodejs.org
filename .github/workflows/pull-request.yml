@@ -29,7 +29,6 @@ jobs:
             node_modules/.cache
           key: cache-${{ hashFiles('package-lock.json') }}-
           restore-keys: cache-
-          enableCrossOsArchive: true
 
       - name: Install NPM packages
         run: npm ci
@@ -49,7 +48,6 @@ jobs:
             .next/cache
             node_modules/.cache
           key: cache-${{ hashFiles('package-lock.json') }}
-          enableCrossOsArchive: true
 
   unit-tests:
     name: Tests on ${{ matrix.os }}
@@ -85,7 +83,6 @@ jobs:
             node_modules/.cache
           key: cache-${{ hashFiles('package-lock.json') }}-
           restore-keys: cache-
-          enableCrossOsArchive: true
 
       - name: Install NPM packages
         run: npm ci
@@ -112,7 +109,6 @@ jobs:
             .next/cache
             node_modules/.cache
           key: cache-${{ hashFiles('package-lock.json') }}
-          enableCrossOsArchive: true
 
   build:
     name: Build on ${{ matrix.os }}
@@ -148,7 +144,6 @@ jobs:
             node_modules/.cache
           key: cache-${{ hashFiles('package-lock.json') }}-
           restore-keys: cache-
-          enableCrossOsArchive: true
 
       - name: Install NPM packages
         run: npm ci
@@ -169,4 +164,3 @@ jobs:
             .next/cache
             node_modules/.cache
           key: cache-${{ hashFiles('package-lock.json') }}
-          enableCrossOsArchive: true
