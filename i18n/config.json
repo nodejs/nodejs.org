@@ -33,7 +33,8 @@
     "langDir": "ltr",
     "dateFormat": "MM.DD.YYYY",
     "hrefLang": "en-US",
-    "enabled": true
+    "enabled": true,
+    "default": true
   },
   {
     "code": "es",

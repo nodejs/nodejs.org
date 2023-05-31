@@ -2,7 +2,6 @@
 import type { AppProps as DefaultAppProps } from 'next/app';
 
 import type { BlogData } from './blog';
-import type { LocaleContext } from './i18n';
 import type { NodeVersionData } from './nodeVersions';
 
 export * from './blog';
@@ -18,7 +17,6 @@ export * from './prevNextLink';
 export * from './releases';
 
 export interface AppProps {
-  i18nData: Pick<LocaleContext, 'localeMessages' | 'currentLocale'>;
   nodeVersionData: Array<NodeVersionData>;
   blogData?: BlogData;
   statusCode?: number;

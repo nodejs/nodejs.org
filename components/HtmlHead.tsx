@@ -1,6 +1,6 @@
-import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { useSiteConfig } from '../hooks/useSiteConfig';
+import { useRouter } from '../hooks/useRouter';
 import type { LegacyFrontMatter } from '../types';
 import type { FC } from 'react';
 
