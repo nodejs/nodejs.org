@@ -48,7 +48,7 @@ jobs:
             ~/.npm
             .next/cache
             node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          key: cache-${{ hashFiles('package-lock.json') }}
           enableCrossOsArchive: true
 
   unit-tests:
@@ -111,7 +111,7 @@ jobs:
             ~/.npm
             .next/cache
             node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          key: cache-${{ hashFiles('package-lock.json') }}
           enableCrossOsArchive: true
 
   build:
@@ -168,5 +168,5 @@ jobs:
             ~/.npm
             .next/cache
             node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
+          key: cache-${{ hashFiles('package-lock.json') }}
           enableCrossOsArchive: true
