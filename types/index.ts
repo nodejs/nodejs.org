@@ -1,4 +1,3 @@
-// @TODO: These types will be splitted on individual files for better organisation in the future
 import type { AppProps as DefaultAppProps } from 'next/app';
 
 import type { BlogData } from './blog';
@@ -15,6 +14,7 @@ export * from './navigation';
 export * from './nodeVersions';
 export * from './prevNextLink';
 export * from './releases';
+export * from './middlewares';
 
 export interface AppProps {
   nodeVersionData: Array<NodeVersionData>;
