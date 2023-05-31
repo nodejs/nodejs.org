@@ -59,6 +59,11 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 
     steps:
+      - name: "Use GNU tar instead BSD tar"
+        if: matrix.os == 'windows-latest'
+        shell: cmd
+        run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
+
       - name: Git Checkout
         uses: actions/checkout@v3
         with:
@@ -115,6 +120,16 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 
     steps:
+      - name: "Use GNU tar instead BSD tar"
+        if: matrix.os == 'windows-latest'
+        shell: cmd
+        run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
+
+      - name: "Use GNU tar instead BSD tar"
+        if: matrix.os == 'windows-latest'
+        shell: cmd
+        run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"    
+
       - name: Git Checkout
         uses: actions/checkout@v3
         with:
