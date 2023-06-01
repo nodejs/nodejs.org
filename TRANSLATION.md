@@ -40,6 +40,7 @@ Fill the language object with the following fields:
 | `hrefLang`   | The language code in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format         | `fr`         |
 | `enabled`    | If the language is enabled or not                                                                      | `true`       |
 
+Please also add the new locale file to the locales folder `/i18n/locales` and import it in the `/i18n/locales/index.mjs` file.
 ## Adding new Translation Keys
 
 If you're making a new Component and adding Translation Keys for your Component, they should follow these guidelines:
