@@ -41,6 +41,7 @@ Fill the language object with the following fields:
 | `enabled`    | If the language is enabled or not                                                                      | `true`       |
 
 Please also add the new locale file to the locales folder `/i18n/locales` and import it in the `/i18n/locales/index.mjs` file.
+
 ## Adding new Translation Keys
 
 If you're making a new Component and adding Translation Keys for your Component, they should follow these guidelines:
