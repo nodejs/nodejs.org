@@ -69,5 +69,9 @@
   "components.sections.newHeader.links.download": "Downloads",
   "components.sections.newHeader.links.certification": "Certification",
   "pages.404.title": "404: Page could not be found",
-  "pages.404.description": "ENOENT: no such file or directory"
+  "pages.404.description": "ENOENT: no such file or directory",
+  "components.api.apiChanges.addedIn": "Added in: {version}",
+  "components.api.apiChanges.history": "History",
+  "components.api.apiChanges.history.version": "Version",
+  "components.api.apiChanges.history.changes": "Changes"
 }
