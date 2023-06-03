@@ -1,8 +1,6 @@
-// @TODO: These types will be splitted on individual files for better organisation in the future
 import type { AppProps as DefaultAppProps } from 'next/app';
 
 import type { BlogData } from './blog';
-import type { LocaleContext } from './i18n';
 
 export * from './blog';
 export * from './config';
@@ -14,9 +12,9 @@ export * from './layouts';
 export * from './navigation';
 export * from './prevNextLink';
 export * from './releases';
+export * from './middlewares';
 
 export interface AppProps {
-  i18nData: Pick<LocaleContext, 'localeMessages' | 'currentLocale'>;
   blogData?: BlogData;
   statusCode?: number;
 }
