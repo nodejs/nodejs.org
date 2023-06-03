@@ -1,4 +1,5 @@
 import BaseLayout from './BaseLayout';
+import { WithNodeRelease } from '../components/Common/WithNodeRelease';
 import Banner from '../components/Home/Banner';
 import HomeDownloadButton from '../components/Home/HomeDownloadButton';
 import { useNextraContext } from '../hooks/useNextraContext';
@@ -21,8 +22,12 @@ const IndexLayout: FC<PropsWithChildren> = ({ children }) => {
             {labels['download']}
           </h2>
 
-          <HomeDownloadButton releaseType="lts" />
-          <HomeDownloadButton releaseType="current" />
+          <WithNodeRelease status="Active LTS">
+            {({ release }) => <HomeDownloadButton {...release} />}
+          </WithNodeRelease>
+          <WithNodeRelease status="Current">
+            {({ release }) => <HomeDownloadButton {...release} />}
+          </WithNodeRelease>
 
           <p>
             {labels['version-schedule-prompt']}{' '}

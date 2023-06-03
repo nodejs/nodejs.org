@@ -1,4 +1,11 @@
-import type { NodeReleaseStatus, NodeReleaseSupport } from '../types/releases';
+import type {
+  NodeRelease,
+  NodeReleaseStatus,
+  NodeReleaseSupport,
+} from '../types/releases';
+
+export const isNodeRelease = (release: any): release is NodeRelease =>
+  typeof release === 'object' && release?.version;
 
 export const getNodeReleaseStatus = (
   now: Date,

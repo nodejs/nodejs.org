@@ -1,10 +1,16 @@
+import { useMemo } from 'react';
 import BaseLayout from './BaseLayout';
 import SideNavigation from '../components/SideNavigation';
 import { useNodeReleases } from '../hooks/useNodeReleases';
 import type { FC, PropsWithChildren } from 'react';
 
 const DocsLayout: FC<PropsWithChildren> = ({ children }) => {
-  const { lts, current } = useNodeReleases();
+  const { getReleaseByStatus } = useNodeReleases();
+
+  const [lts, current] = useMemo(
+    () => [getReleaseByStatus('Active LTS'), getReleaseByStatus('Current')],
+    [getReleaseByStatus]
+  );
 
   const translationContext = {
     apiLts: {

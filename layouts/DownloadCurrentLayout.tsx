@@ -1,4 +1,5 @@
 import BaseLayout from './BaseLayout';
+import { WithNodeRelease } from '../components/Common/WithNodeRelease';
 import PrimaryDownloadMatrix from '../components/Downloads/PrimaryDownloadMatrix';
 import SecondaryDownloadMatrix from '../components/Downloads/SecondaryDownloadMatrix';
 import { useNextraContext } from '../hooks/useNextraContext';
@@ -20,8 +21,14 @@ const DownloadCurrentLayout: FC<PropsWithChildren> = ({ children }) => {
 
           {children}
 
-          <PrimaryDownloadMatrix releaseType="current" />
-          <SecondaryDownloadMatrix releaseType="current" />
+          <WithNodeRelease status="Current">
+            {({ release }) => (
+              <>
+                <PrimaryDownloadMatrix {...release} />
+                <SecondaryDownloadMatrix {...release} />
+              </>
+            )}
+          </WithNodeRelease>
         </article>
       </div>
     </BaseLayout>
