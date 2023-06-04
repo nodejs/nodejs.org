@@ -4,13 +4,27 @@ import useSWR from 'swr';
 import { getNodeReleaseStatus } from '../util/nodeRelease';
 import type { NodeRelease } from '../types';
 
+interface NodeReleaseJSON {
+  major: number;
+  version: string;
+  codename?: string;
+  currentStart: string;
+  ltsStart?: string;
+  maintenanceStart?: string;
+  endOfLife: string;
+  npm?: string;
+  v8?: string;
+  releaseDate?: string;
+  modules?: string;
+}
+
 const fetcher = (...args: Parameters<typeof fetch>) =>
   fetch(...args).then(res => res.json());
 
 export const useFetchNodeReleases = (): NodeRelease[] => {
   const { basePath } = useRouter();
 
-  const { data = [] } = useSWR<any[]>(
+  const { data = [] } = useSWR<NodeReleaseJSON[]>(
     `${basePath}/node-releases-data.json`,
     fetcher
   );
@@ -40,7 +54,7 @@ export const useFetchNodeReleases = (): NodeRelease[] => {
         v8: raw.v8 || '',
         releaseDate: raw.releaseDate || '',
         modules: raw.modules || '',
-      } as NodeRelease;
+      };
     });
   }, [data]);
 };
