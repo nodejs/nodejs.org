@@ -12,7 +12,9 @@ const generateNodeReleasesData = async () => {
 
   // Filter out those without documented support
   // Basically those not in schedule.json
-  const majors = Object.values(nodevuOutput).filter(major => major?.support);
+  const majors = Object.values(nodevuOutput).filter(
+    major => major?.support?.phases?.dates?.start
+  );
 
   const nodeReleases = majors.map(major => {
     const [latestVersion] = Object.values(major.releases);
@@ -21,14 +23,14 @@ const generateNodeReleasesData = async () => {
       major: latestVersion.semver.major,
       version: latestVersion.semver.raw,
       codename: major.support.codename,
-      currentStart: major.support.phases?.dates?.start,
-      ltsStart: major.support.phases?.dates?.lts,
-      maintenanceStart: major.support.phases?.dates?.maintenance,
-      endOfLife: major.support.phases?.dates?.end,
-      npm: latestVersion.dependencies?.npm,
-      v8: latestVersion.dependencies?.v8,
+      currentStart: major.support.phases.dates.start,
+      ltsStart: major.support.phases.dates.lts,
+      maintenanceStart: major.support.phases.dates.maintenance,
+      endOfLife: major.support.phases.dates.end,
+      npm: latestVersion.dependencies.npm,
+      v8: latestVersion.dependencies.v8,
       releaseDate: latestVersion.releaseDate,
-      modules: latestVersion.modules?.version,
+      modules: latestVersion.modules.version,
     };
   });
 
