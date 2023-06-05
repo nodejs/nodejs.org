@@ -1,11 +1,11 @@
 import * as preBuild from './scripts/next-data/generatePreBuildFiles.mjs';
 
 import getBlogData from './scripts/next-data/getBlogData.mjs';
-import generateNodeReleasesData from './scripts/next-data/generateNodeReleasesData.mjs';
+import generateNodeReleasesJson from './scripts/next-data/generateNodeReleasesJson.mjs';
 
 const cachedBlogData = getBlogData();
 
-generateNodeReleasesData();
+generateNodeReleasesJson();
 
 // generates pre-build files for blog year pages (pagination)
 preBuild.generateBlogYearPages(cachedBlogData);

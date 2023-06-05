@@ -7,7 +7,7 @@ import { getRelativePath } from './_helpers.mjs';
 const __dirname = getRelativePath(import.meta.url);
 const jsonFilePath = join(__dirname, '../../public/node-releases-data.json');
 
-const generateNodeReleasesData = async () => {
+const generateNodeReleasesJson = async () => {
   const nodevuOutput = await nodevu();
 
   // Filter out those without documented support
@@ -50,4 +50,4 @@ const generateNodeReleasesData = async () => {
   );
 };
 
-export default generateNodeReleasesData;
+export default generateNodeReleasesJson;
