@@ -197,12 +197,3 @@ If something is missing here, or you feel something is not well described, feel 
 [`squash`]: https://help.github.com/en/articles/about-pull-request-merges#squash-and-merge-your-pull-request-commits
 [Conventional Commits]: https://www.conventionalcommits.org/
 [Commit Signing]: https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits
-[Jest]: https://jestjs.io/
-[React Testing Library]: https://testing-library.com/docs/react-testing-library/intro/
-[Storybook]: https://storybook.js.org/
-[Storybook Test Runner]: https://storybook.js.org/addons/@storybook/test-runner#dom-snapshot-recipe
-[Playwright]: https://playwright.dev/
-[`react-intl`]: https://formatjs.io/docs/react-intl/
-[Next.js]: https://nextjs.org/
-[MDX]: https://mdxjs.com/
-[SCSS]: https://sass-lang.com/
