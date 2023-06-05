@@ -25,6 +25,7 @@ const IndexLayout: FC<PropsWithChildren> = ({ children }) => {
           <WithNodeRelease status="Active LTS">
             {({ release }) => <HomeDownloadButton {...release} />}
           </WithNodeRelease>
+
           <WithNodeRelease status="Current">
             {({ release }) => <HomeDownloadButton {...release} />}
           </WithNodeRelease>

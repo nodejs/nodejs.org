@@ -14,6 +14,7 @@ export const WithNodeRelease: FC<WithNodeReleaseProps> = ({
   children: Component,
 }) => {
   const { getReleaseByStatus } = useNodeReleases();
+
   const release = useMemo(
     () => getReleaseByStatus(status),
     [status, getReleaseByStatus]
