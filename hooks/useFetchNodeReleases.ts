@@ -1,6 +1,6 @@
-import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 import useSWR from 'swr';
+import { useRouter } from './useRouter';
 import { getNodeReleaseStatus } from '../util/nodeRelease';
 import type { NodeRelease } from '../types';
 
