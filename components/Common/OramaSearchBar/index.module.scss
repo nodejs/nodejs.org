@@ -1,0 +1,24 @@
+.oramaSearchBarFooter {
+  align-items: center;
+  column-gap: 1ch;
+  display: flex;
+  justify-content: end;
+  margin: 5px;
+
+  .oramaSearchBarFooterLabel {
+    color: var(--black6);
+    font-size: 0.8em;
+    margin-top: -2px;
+    white-space: nowrap;
+  }
+
+  .oramaSearchBarFooterLink {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .oramaSearchBarFooterLogo {
+    min-width: 6em;
+  }
+}

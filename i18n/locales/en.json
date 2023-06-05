@@ -78,5 +78,10 @@
   "components.api.apiChanges.addedIn": "Added in: {version}",
   "components.api.apiChanges.history": "History",
   "components.api.apiChanges.history.version": "Version",
-  "components.api.apiChanges.history.changes": "Changes"
+  "components.api.apiChanges.history.changes": "Changes",
+  "components.searchBar.placeholder": "Search",
+  "components.searchBar.search.title": "Start typing to search",
+  "components.searchBar.search.loading": "Loading search data ...",
+  "components.searchBar.search.noResults": "No results match your query",
+  "components.oramaSearchBar.search.poweredBy": "Search by"
 }
