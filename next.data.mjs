@@ -1,15 +1,12 @@
-import * as preBuild from './scripts/next-data/generatePreBuildFiles.mjs';
+import * as nextData from './scripts/next-data/index.mjs';
 
-import getBlogData from './scripts/next-data/getBlogData.mjs';
-import generateNodeReleasesJson from './scripts/next-data/generateNodeReleasesJson.mjs';
+const cachedBlogData = nextData.getBlogData();
 
-const cachedBlogData = getBlogData();
-
-generateNodeReleasesJson();
+nextData.generateNodeReleasesJson();
 
 // generates pre-build files for blog year pages (pagination)
-preBuild.generateBlogYearPages(cachedBlogData);
-preBuild.generateWebsiteFeeds(cachedBlogData);
+nextData.generateBlogYearPages(cachedBlogData);
+nextData.generateWebsiteFeeds(cachedBlogData);
 
 const getNextData = async (content, { route }) => {
   const blogData = await cachedBlogData(route);
