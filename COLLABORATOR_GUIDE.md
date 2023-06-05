@@ -227,3 +227,12 @@ export default { component: NameOfComponent } as Meta;
 - We recommend reading previous Storybooks from the codebase for inspiration and code guidelines.
 - If you need to decorate/wrap your Component/Story with a Container/Provider, please use [Storybook Decorators](https://storybook.js.org/docs/react/writing-stories/decorators)
 
+[Jest]: https://jestjs.io/
+[React Testing Library]: https://testing-library.com/docs/react-testing-library/intro/
+[Storybook]: https://storybook.js.org/
+[Storybook Test Runner]: https://storybook.js.org/addons/@storybook/test-runner#dom-snapshot-recipe
+[Playwright]: https://playwright.dev/
+[`react-intl`]: https://formatjs.io/docs/react-intl/
+[Next.js]: https://nextjs.org/
+[MDX]: https://mdxjs.com/
+[SCSS]: https://sass-lang.com/
