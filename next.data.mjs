@@ -11,14 +11,14 @@ nextData.generateWebsiteFeeds(cachedBlogData);
 const getNextData = async (content, { route }) => {
   const blogData = await cachedBlogData(route);
 
-  const props = { ...blogData };
+  const staticProps = { ...blogData };
 
   return `
     // add the mdx file content
     ${content}
 
     export const getStaticProps = () => {
-      return { props: ${JSON.stringify(props)} };
+      return { props: ${JSON.stringify(staticProps)} };
     }
   `;
 };
