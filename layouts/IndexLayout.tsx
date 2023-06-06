@@ -1,8 +1,8 @@
 import BaseLayout from './BaseLayout';
-import { WithNodeRelease } from '../components/Common/WithNodeRelease';
 import Banner from '../components/Home/Banner';
 import HomeDownloadButton from '../components/Home/HomeDownloadButton';
 import { useNextraContext } from '../hooks/useNextraContext';
+import { WithNodeRelease } from '../providers/WithNodeRelease';
 import type { FC, PropsWithChildren } from 'react';
 
 const IndexLayout: FC<PropsWithChildren> = ({ children }) => {

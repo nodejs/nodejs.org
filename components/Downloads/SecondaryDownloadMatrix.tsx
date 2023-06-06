@@ -1,6 +1,6 @@
 import DownloadList from './DownloadList';
-import { WithNodeRelease } from '../Common/WithNodeRelease';
 import { useNextraContext } from '../../hooks/useNextraContext';
+import { WithNodeRelease } from '../../providers/WithNodeRelease';
 import type { LegacyDownloadsFrontMatter, NodeRelease } from '../../types';
 import type { FC } from 'react';
 

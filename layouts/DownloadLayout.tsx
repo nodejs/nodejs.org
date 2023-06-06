@@ -1,8 +1,8 @@
 import BaseLayout from './BaseLayout';
-import { WithNodeRelease } from '../components/Common/WithNodeRelease';
 import PrimaryDownloadMatrix from '../components/Downloads/PrimaryDownloadMatrix';
 import SecondaryDownloadMatrix from '../components/Downloads/SecondaryDownloadMatrix';
 import { useNextraContext } from '../hooks/useNextraContext';
+import { WithNodeRelease } from '../providers/WithNodeRelease';
 import type { FC, PropsWithChildren } from 'react';
 import type { LegacyDownloadsFrontMatter } from '../types';
 

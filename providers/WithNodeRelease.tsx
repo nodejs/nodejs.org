@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
-import { useNodeReleases } from '../../../hooks/useNodeReleases';
-import { isNodeRelease } from '../../../util/nodeRelease';
+import { useNodeReleases } from '../hooks/useNodeReleases';
+import { isNodeRelease } from '../util/nodeRelease';
 import type { FC } from 'react';
-import type { NodeRelease, NodeReleaseStatus } from '../../../types';
+import type { NodeRelease, NodeReleaseStatus } from '../types';
 
 type WithNodeReleaseProps = {
   status: NodeReleaseStatus;
