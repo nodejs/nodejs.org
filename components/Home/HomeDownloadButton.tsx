@@ -1,4 +1,5 @@
 import LocalizedLink from '../LocalizedLink';
+import { useDownloadLink } from '../../hooks/useDownloadLink';
 import { useNextraContext } from '../../hooks/useNextraContext';
 import { getNodejsChangelog } from '../../util/getNodeJsChangelog';
 import type { FC } from 'react';
@@ -14,7 +15,7 @@ const HomeDownloadButton: FC<NodeRelease> = ({
     frontMatter: { labels },
   } = useNextraContext();
 
-  const nodeDownloadLink = `https://nodejs.org/dist/${versionWithPrefix}/`;
+  const nodeDownloadLink = useDownloadLink({ version: versionWithPrefix });
   const nodeApiLink = `https://nodejs.org/dist/latest-v${major}.x/docs/api/`;
   const nodeAllDownloadsLink = `/download${isLts ? '/' : '/current'}`;
   const nodeDownloadTitle =
