@@ -1,33 +1,38 @@
-import { createContext } from 'react';
+import { createContext, useMemo } from 'react';
 import { IntlProvider } from 'react-intl';
-import i18nConfig from '../i18n/config.json';
+import { useRouter } from '../hooks/useRouter';
+import * as nextLocales from '../next.locales.mjs';
 import type { FC, PropsWithChildren } from 'react';
-import type { AppProps, LocaleContext as LocaleContextType } from '../types';
+import type { LocaleContext as LocaleContextType } from '../types';
 
-// Retrieves all the Available Languages
-const availableLocales = i18nConfig
-  .filter(({ enabled }) => enabled)
-  .map(({ code, localName, name }) => ({ code, localName, name }));
+// Initialises the Context with the default Localisation Data
+export const LocaleContext = createContext<LocaleContextType>({
+  currentLocale: nextLocales.defaultLocale,
+  availableLocales: nextLocales.availableLocales,
+  localeMessages: nextLocales.getCurrentTranslations(
+    nextLocales.defaultLocale.code
+  ),
+});
 
-type LocaleProviderProps = PropsWithChildren<{
-  i18nData: AppProps['i18nData'];
-}>;
+export const LocaleProvider: FC<PropsWithChildren> = ({ children }) => {
+  const { query, asPath } = useRouter();
 
-const fallbackData = { currentLocale: { code: 'en' } } as AppProps['i18nData'];
+  const localeData = useMemo(() => {
+    // Retrieves the current locale information from the route and query
+    const currentLocale = nextLocales.getCurrentLocale(asPath, query);
 
-export const LocaleContext = createContext<LocaleContextType>(undefined as any);
-
-export const LocaleProvider: FC<LocaleProviderProps> = ({
-  i18nData,
-  children,
-}) => {
-  const { currentLocale, localeMessages } = i18nData || fallbackData;
+    return {
+      currentLocale: currentLocale,
+      availableLocales: nextLocales.availableLocales,
+      localeMessages: nextLocales.getCurrentTranslations(currentLocale.code),
+    };
+  }, [asPath, query]);
 
   return (
-    <LocaleContext.Provider value={{ ...i18nData, availableLocales }}>
+    <LocaleContext.Provider value={localeData}>
       <IntlProvider
-        locale={currentLocale.code}
-        messages={localeMessages}
+        locale={localeData.currentLocale.code}
+        messages={localeData.localeMessages}
         onError={() => null}
       >
         {children}

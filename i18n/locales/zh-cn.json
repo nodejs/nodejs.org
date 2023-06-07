@@ -58,5 +58,14 @@
   "components.home.nodeFeatures.openSource.description": "Node.js是开源的，并由世界各地的贡献者积极维护。",
   "components.home.nodeFeatures.everywhere.title": "全球",
   "components.home.nodeFeatures.everywhere.description": "Node.js 已经过调整，可以适配在许多不同的场景下工作",
-  "components.common.shellBox.copy": "{copied, select, true {复制了}other {复制}}"
+  "components.common.shellBox.copy": "{copied, select, true {复制了}other {复制}}",
+  "components.codeBox.copy": "{copied, select, true {复制了}other {复制}}",
+  "components.api.stability": "稳定性级别： {level} - ",
+  "components.api.jsonLink.title": "以 JSON 格式查看",
+  "components.api.sourceLink": "源代码：",
+  "components.sections.newHeader.links.learn": "学习",
+  "components.sections.newHeader.links.apiDocs": "API 文档",
+  "components.sections.newHeader.links.about": "关于 Node.js",
+  "components.sections.newHeader.links.download": "下载",
+  "components.sections.newHeader.links.certification": "认证"
 }
