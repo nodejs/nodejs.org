@@ -67,5 +67,7 @@
   "components.sections.newHeader.links.apiDocs": "Dokumentasi API",
   "components.sections.newHeader.links.about": "Tentang",
   "components.sections.newHeader.links.download": "Unduh",
-  "components.sections.newHeader.links.certification": "Sertifikasi"
+  "components.sections.newHeader.links.certification": "Sertifikasi",
+  "pages.404.title": "404: Halaman tidak dapat ditemukan",
+  "pages.404.description": "ENOENT: tidak ada file atau direktori"
 }
