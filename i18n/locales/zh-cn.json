@@ -67,5 +67,7 @@
   "components.sections.newHeader.links.apiDocs": "API 文档",
   "components.sections.newHeader.links.about": "关于 Node.js",
   "components.sections.newHeader.links.download": "下载",
-  "components.sections.newHeader.links.certification": "认证"
+  "components.sections.newHeader.links.certification": "认证",
+  "pages.404.title": "404：您访问的页面不存在",
+  "pages.404.description": "ENOENT：无此文件或目录"
 }
