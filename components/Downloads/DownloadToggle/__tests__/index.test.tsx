@@ -13,9 +13,12 @@ describe('DownloadToggle component', (): void => {
       </IntlProvider>
     );
 
-    await userEvent.click(screen.getByText('components.downloadToggle.lts'));
     await userEvent.click(
-      screen.getByText('components.downloadToggle.current')
+      screen.getByText('components.downloads.downloadToggle.lts')
+    );
+
+    await userEvent.click(
+      screen.getByText('components.downloads.downloadToggle.current')
     );
 
     expect(mockHandler.mock.calls.length).toBe(2);

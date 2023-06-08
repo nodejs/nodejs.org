@@ -7,7 +7,7 @@ exports[`Downloads/DownloadToggle Current smoke-test 1`] = `
       <button class
               type="button"
               role="switch"
-              aria-label="components.downloadToggle.ltsVersions"
+              aria-label="LTS Versions"
               aria-checked="false"
       >
         LTS
@@ -15,7 +15,7 @@ exports[`Downloads/DownloadToggle Current smoke-test 1`] = `
       <button class="DownloadToggle_current__vxN36 DownloadToggle_active__vW3Bp"
               type="button"
               role="switch"
-              aria-label="components.downloadToggle.currentVersions"
+              aria-label="Current Versions"
               aria-checked="true"
       >
         Current
@@ -35,7 +35,7 @@ exports[`Downloads/DownloadToggle Default smoke-test 1`] = `
       <button class="DownloadToggle_active__vW3Bp"
               type="button"
               role="switch"
-              aria-label="components.downloadToggle.ltsVersions"
+              aria-label="LTS Versions"
               aria-checked="true"
       >
         LTS
@@ -43,7 +43,7 @@ exports[`Downloads/DownloadToggle Default smoke-test 1`] = `
       <button class="DownloadToggle_current__vxN36"
               type="button"
               role="switch"
-              aria-label="components.downloadToggle.currentVersions"
+              aria-label="Current Versions"
               aria-checked="false"
       >
         Current

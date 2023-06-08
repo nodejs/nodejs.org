@@ -33,31 +33,31 @@ const DownloadToggle: FC<DownloadToggleProps> = ({
             type="button"
             role="switch"
             aria-label={intl.formatMessage({
-              id: 'components.downloadToggle.ltsVersions',
+              id: 'components.downloads.downloadToggle.ltsVersions',
             })}
             aria-checked={selected === 'LTS'}
             onClick={handleOnClick}
           >
-            <FormattedMessage id="components.downloadToggle.lts" />
+            <FormattedMessage id="components.downloads.downloadToggle.lts" />
           </button>
           <button
             className={currentClassNames}
             type="button"
             role="switch"
             aria-label={intl.formatMessage({
-              id: 'components.downloadToggle.currentVersions',
+              id: 'components.downloads.downloadToggle.currentVersions',
             })}
             aria-checked={selected === 'CURRENT'}
             onClick={handleOnClick}
           >
-            <FormattedMessage id="components.downloadToggle.current" />
+            <FormattedMessage id="components.downloads.downloadToggle.current" />
           </button>
         </div>
       </div>
       {showDescription && (
         <p className={styles.description}>
           <FormattedMessage
-            id="components.downloadToggle.recommendation"
+            id="components.downloads.downloadToggle.recommendation"
             values={{ selected }}
           />
         </p>
