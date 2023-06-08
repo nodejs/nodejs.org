@@ -4,7 +4,7 @@ import { ThemeProvider } from 'next-themes';
 import { NodeDataProvider } from '../providers/nodeDataProvider';
 import { LocaleProvider } from '../providers/localeProvider';
 import { openSans } from '../util/nextFonts';
-import NextApp, { setAppFont } from '../next.app';
+import BaseApp, { setAppFont } from '../next.app';
 import { pageProps } from './constants';
 
 import '../styles/index.scss';
@@ -31,9 +31,9 @@ setAppFont(openSans.style.fontFamily);
 
 export const decorators = [
   Story => (
-    <NextApp>
+    <BaseApp>
       <ThemeProvider>
-        <LocaleProvider i18nData={pageProps.i18nData}>
+        <LocaleProvider>
           <NodeDataProvider nodeVersionData={pageProps.nodeVersionData}>
             <div data-test-id="story-root">
               <Story />
@@ -41,7 +41,7 @@ export const decorators = [
           </NodeDataProvider>
         </LocaleProvider>
       </ThemeProvider>
-    </NextApp>
+    </BaseApp>
   ),
 ];
 

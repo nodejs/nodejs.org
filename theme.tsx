@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import highlightJs from 'highlight.js/lib/common';
-import { useRouter } from 'next/router';
 import HtmlHead from './components/HtmlHead';
 import AnchoredHeading from './components/AnchoredHeading';
 import NodeApiVersionLinks from './components/Docs/NodeApiVersionLinks';
 import { LayoutProvider } from './providers/layoutProvider';
+import { useRouter } from './hooks/useRouter';
 import type { FC, PropsWithChildren } from 'react';
 import type { NextraThemeLayoutProps } from 'nextra';
 import type { MDXComponents } from 'mdx/types';

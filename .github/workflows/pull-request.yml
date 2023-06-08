@@ -15,38 +15,40 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: npm
-
-      - name: Install NPM packages
-        run: npm ci
-
       - name: Restore Cache
         uses: actions/cache/restore@v3
         with:
           path: |
+            ~/.npm
+            .next/cache
             node_modules/.cache
-          key: tests-${{ hashFiles('**/package-lock.json') }}-
-          restore-keys: |
-            tests-${{ hashFiles('**/package-lock.json') }}-
-          enableCrossOsArchive: true
+          key: cache-${{ hashFiles('package-lock.json') }}-
+          restore-keys: cache-
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install NPM packages
+        run: npm ci
 
       - name: Run Linting
         run: npx turbo lint
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Save Cache
         uses: actions/cache/save@v3
         with:
           path: |
+            ~/.npm
+            .next/cache
             node_modules/.cache
-          key: tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
-          enableCrossOsArchive: true
+          key: cache-${{ hashFiles('package-lock.json') }}
 
   unit-tests:
     name: Tests on ${{ matrix.os }}
@@ -58,49 +60,57 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 
     steps:
+      - name: "Use GNU tar instead BSD tar"
+        if: matrix.os == 'windows-latest'
+        shell: cmd
+        run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
+
       - name: Git Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: npm
-
-      - name: Install NPM packages
-        run: npm ci
-
       - name: Restore Cache
         uses: actions/cache/restore@v3
         with:
           path: |
+            ~/.npm
+            .next/cache
             node_modules/.cache
-          key: tests-${{ hashFiles('**/package-lock.json') }}-
-          restore-keys: |
-            tests-${{ hashFiles('**/package-lock.json') }}-
-          enableCrossOsArchive: true
+          key: cache-${{ hashFiles('package-lock.json') }}-
+          restore-keys: cache-
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install NPM packages
+        run: npm ci
 
       - name: Run Unit Tests
         run: npx turbo test:unit -- --coverage
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Run Storybook Tests
         run: npx turbo test:storybook
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Save Cache
         uses: actions/cache/save@v3
         with:
           path: |
+            ~/.npm
+            .next/cache
             node_modules/.cache
-          key: tests-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
-          enableCrossOsArchive: true
+          key: cache-${{ hashFiles('package-lock.json') }}
 
   build:
     name: Build on ${{ matrix.os }}
@@ -112,30 +122,34 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 
     steps:
+      - name: "Use GNU tar instead BSD tar"
+        if: matrix.os == 'windows-latest'
+        shell: cmd
+        run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
+
       - name: Git Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: npm
-
-      - name: Install NPM packages
-        run: npm ci
-
       - name: Restore Cache
         uses: actions/cache/restore@v3
         with:
           path: |
+            ~/.npm
             .next/cache
             node_modules/.cache
-          key: build-${{ hashFiles('**/package-lock.json') }}-
-          restore-keys: |
-            build-${{ hashFiles('**/package-lock.json') }}-
-          enableCrossOsArchive: true
+          key: cache-${{ hashFiles('package-lock.json') }}-
+          restore-keys: cache-
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install NPM packages
+        run: npm ci
 
       - name: Build Next.js
         run: npx turbo build
@@ -143,12 +157,13 @@ jobs:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           NODE_OPTIONS: '--max_old_space_size=4096'
+          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Save Cache
         uses: actions/cache/save@v3
         with:
           path: |
+            ~/.npm
             .next/cache
             node_modules/.cache
-          key: build-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('node_modules/.cache') }}
-          enableCrossOsArchive: true
+          key: cache-${{ hashFiles('package-lock.json') }}
