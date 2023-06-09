@@ -34,7 +34,7 @@ create a `package.json` file that describes your app and its dependencies:
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.16.1"
+    "express": "^4.18.2"
   }
 }
 ```
@@ -81,11 +81,11 @@ touch Dockerfile
 Open the `Dockerfile` in your favorite text editor
 
 The first thing we need to do is define from what image we want to build from.
-Here we will use the latest LTS (long term support) version `16` of `node`
+Here we will use the latest LTS (long term support) version `18` of `node`
 available from the [Docker Hub](https://hub.docker.com/_/node):
 
 ```docker
-FROM node:16
+FROM node:18
 ```
 
 Next we create a directory to hold the application code inside the image, this
@@ -144,7 +144,7 @@ CMD [ "node", "server.js" ]
 Your `Dockerfile` should now look like this:
 
 ```docker
-FROM node:16
+FROM node:18
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -195,7 +195,7 @@ $ docker images
 
 # Example
 REPOSITORY                      TAG        ID              CREATED
-node                            16         3b66eb585643    5 days ago
+node                            18         78b037dbb659    2 weeks ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
