@@ -26,7 +26,7 @@ Pertama, buat direktori baru tempat semua file akan hidup. Di direktori ini buat
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.16.1"
+    "express": "^4.18.2"
   }
 }
 ```
@@ -66,10 +66,10 @@ touch Dockerfile
 
 Buka `Dockerfile` di editor teks favorit Anda
 
-Hal pertama yang perlu kita lakukan adalah menentukan dari image apa kita ingin membangun. Di sini kita akan menggunakan LTS (dukungan jangka panjang) versi `16` terbaru dari `node` tersedia dari [Docker Hub](https://hub.docker.com/_/node):
+Hal pertama yang perlu kita lakukan adalah menentukan dari gambar apa kita ingin membangun. Di sini kita akan menggunakan versi terbaru LTS (dukungan jangka panjang) `18` dari `node` tersedia dari [Docker Hub](https://hub.docker.com/_/node):
 
 ```docker
-FROM node:16
+DARI node: 18
 ```
 
 Selanjutnya kita membuat direktori untuk menyimpan kode aplikasi di dalam image, ini akan menjadi direktori kerja untuk aplikasi Anda:
@@ -116,7 +116,7 @@ CMD [ "node", "server.js" ]
 `Dockerfile` Anda sekarang akan terlihat seperti ini:
 
 ```docker
-DARI node:16
+DARI node:18
 
 # Buat direktori aplikasi
 WORKDIR /usr/src/app
@@ -163,7 +163,7 @@ $ docker images
 
 # Example
 REPOSITORY                      TAG        ID              CREATED
-node                            16         3b66eb585643    5 days ago
+node                            18         78b037dbb659    2 weeks ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 
