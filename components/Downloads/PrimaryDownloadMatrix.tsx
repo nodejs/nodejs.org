@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import semVer from 'semver';
 import LocalizedLink from '../LocalizedLink';
+import { useDetectOS } from '../../hooks/useDetectOS';
 import { useNextraContext } from '../../hooks/useNextraContext';
 import type { LegacyDownloadsFrontMatter, NodeRelease } from '../../types';
 import type { FC } from 'react';
@@ -14,6 +15,9 @@ const PrimaryDownloadMatrix: FC<NodeRelease> = ({
   npm,
 }) => {
   const nextraContext = useNextraContext();
+
+  const { os, bitness } = useDetectOS();
+  const windowsBitness = os === 'WIN' ? bitness : '86';
 
   const { downloads } = nextraContext.frontMatter as LegacyDownloadsFrontMatter;
   const hasWindowsArm64 = semVer.satisfies(version, '>= 19.9.0');
@@ -55,8 +59,7 @@ const PrimaryDownloadMatrix: FC<NodeRelease> = ({
         <ul className="no-padding download-platform">
           <li>
             <a
-              href={`https://nodejs.org/dist/${versionWithPrefix}/node-${versionWithPrefix}-x86.msi`}
-              id="windows-downloadbutton"
+              href={`https://nodejs.org/dist/${versionWithPrefix}/node-${versionWithPrefix}-x${windowsBitness}.msi`}
               data-version={versionWithPrefix}
             >
               <svg
