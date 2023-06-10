@@ -67,7 +67,7 @@ touch Dockerfile
 
 用你最喜欢的文本编辑器打开这个 `Dockerfile`。
 
-我们要做的第一件事是定义我们需要从哪个镜像进行构建。这里我们将使用最新的 LTS（长期服务器支持版，比如 <node> Node 18</node>），你可以从 [Docker 站点](https://hub.docker.com/) 获取相关镜像：
+我们要做的第一件事是定义我们需要从哪个镜像进行构建。这里我们将使用最新的 LTS（长期服务器支持版，比如 ` Node 18`），你可以从 [Docker 站点](https://hub.docker.com/) 获取相关镜像：
 
 ```docker
 FROM node:18
