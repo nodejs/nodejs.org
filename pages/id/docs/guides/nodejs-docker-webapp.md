@@ -85,9 +85,9 @@ Image ini dilengkapi dengan Node.js dan NPM yang sudah terpasang, jadi hal berik
 # Menginstal dependensi aplikasi
 # Wildcard digunakan untuk memastikan package.json DAN package-lock.json disalin
 # jika tersedia (npm@5+)
-SALIN package*.json ./
+COPY package*.json ./
 
-JALANKAN npm install
+RUN npm install
 # Jika Anda membangun kode untuk produksi
 # Jalankan npm ci --omit=dev
 ```
@@ -124,14 +124,14 @@ WORKDIR /usr/src/app
 # Instal dependensi aplikasi
 # Wildcard digunakan untuk memastikan package.json DAN package-lock.json disalin
 # jika tersedia (npm@5+)
-Copy package*.json ./
+COPY package*.json ./
 
 RUN npm install
 # Jika Anda membangun kode untuk produksi
 # JALANKAN npm ci --omit=dev
 
 # Bundle source aplikasi
-COPY..
+COPY ..
 
 EXPOSE 8080
 CMD [ "node", "server.js" ]
