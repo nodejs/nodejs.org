@@ -69,7 +69,7 @@ Buka `Dockerfile` di editor teks favorit Anda
 Hal pertama yang perlu kita lakukan adalah menentukan dari gambar apa kita ingin membangun. Di sini kita akan menggunakan versi terbaru LTS (dukungan jangka panjang) `18` dari `node` tersedia dari [Docker Hub](https://hub.docker.com/_/node):
 
 ```docker
-DARI node: 18
+FROM node: 18
 ```
 
 Selanjutnya kita membuat direktori untuk menyimpan kode aplikasi di dalam image, ini akan menjadi direktori kerja untuk aplikasi Anda:
@@ -116,7 +116,7 @@ CMD [ "node", "server.js" ]
 `Dockerfile` Anda sekarang akan terlihat seperti ini:
 
 ```docker
-DARI node:18
+FROM node:18
 
 # Buat direktori aplikasi
 WORKDIR /usr/src/app
@@ -124,14 +124,14 @@ WORKDIR /usr/src/app
 # Instal dependensi aplikasi
 # Wildcard digunakan untuk memastikan package.json DAN package-lock.json disalin
 # jika tersedia (npm@5+)
-Salin package*.json ./
+Copy package*.json ./
 
-JALANKAN npm install
+RUN npm install
 # Jika Anda membangun kode untuk produksi
 # JALANKAN npm ci --omit=dev
 
 # Bundle source aplikasi
-SALIN..
+COPY..
 
 EXPOSE 8080
 CMD [ "node", "server.js" ]
