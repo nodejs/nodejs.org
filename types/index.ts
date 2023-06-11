@@ -2,6 +2,7 @@ import type { AppProps as DefaultAppProps } from 'next/app';
 
 import type { BlogData } from './blog';
 
+export * from './api';
 export * from './blog';
 export * from './config';
 export * from './dropdown';
