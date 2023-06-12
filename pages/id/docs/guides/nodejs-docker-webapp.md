@@ -128,10 +128,10 @@ COPY package*.json ./
 
 RUN npm install
 # Jika Anda membangun kode untuk produksi
-# JALANKAN npm ci --omit=dev
+# RUN npm ci --omit=dev
 
-# Bundle source aplikasi
-COPY ..
+# Bundle app source
+COPY . .
 
 EXPOSE 8080
 CMD [ "node", "server.js" ]
