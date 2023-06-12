@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Api/ApiChanges Default smoke-test 1`] = `
+<details class="ApiChanges_changesComponent__8zdMP">
+  <summary>
+    <strong>
+      History
+    </strong>
+  </summary>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Version
+        </th>
+        <th>
+          Changes
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          v10.0.0
+        </td>
+        <td>
+          test
+        </td>
+      </tr>
+      <tr>
+        <td>
+          v10.0.0
+        </td>
+        <td>
+          Added in: v10.0.0
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</details>
+`;
