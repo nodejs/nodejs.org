@@ -37,11 +37,36 @@ describe('Codebox component (one lang)', (): void => {
       'writeText'
     );
 
-    const buttonElement = screen.getByText('components.codeBox.copy');
+    const buttonElement = await screen.findByTestId('copy');
     await user.click(buttonElement);
 
     expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledTimes(1);
     expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledWith(code);
+  });
+
+  it('should copy content with textToCopy', async () => {
+    const user = userEvent.setup();
+
+    const textToCopy = ['Example code'];
+
+    render(
+      <IntlProvider locale="en" onError={() => {}}>
+        <Codebox textToCopy={textToCopy}>
+          <pre className="language-js">{code}</pre>
+        </Codebox>
+      </IntlProvider>
+    );
+
+    const navigatorClipboardWriteTextSpy = jest.spyOn(
+      navigator.clipboard,
+      'writeText'
+    );
+
+    const buttonElement = await screen.findByTestId('copy');
+    await user.click(buttonElement);
+
+    expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledTimes(1);
+    expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledWith(textToCopy[0]);
   });
 });
 
@@ -67,5 +92,38 @@ import http from 'http';`;
     await user.click(buttonElement);
 
     expect(container).toMatchSnapshot();
+  });
+
+  it('should copy content with textToCopy', async () => {
+    const user = userEvent.setup();
+
+    const textToCopy = ['Example code 1', 'Example code 2'];
+
+    render(
+      <IntlProvider locale="en" onError={() => {}}>
+        <Codebox textToCopy={textToCopy}>
+          <pre className="language-cjs|language-mjs">{code}</pre>
+        </Codebox>
+      </IntlProvider>
+    );
+
+    const navigatorClipboardWriteTextSpy = jest.spyOn(
+      navigator.clipboard,
+      'writeText'
+    );
+
+    const copyButton = await screen.findByTestId('copy');
+    await user.click(copyButton);
+
+    expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledTimes(1);
+    expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledWith(textToCopy[0]);
+
+    const buttonElement = await screen.findByText('mjs');
+    await user.click(buttonElement);
+
+    await user.click(copyButton);
+
+    expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledTimes(2);
+    expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledWith(textToCopy[1]);
   });
 });

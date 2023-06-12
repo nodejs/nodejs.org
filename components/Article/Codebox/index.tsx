@@ -1,13 +1,17 @@
 import { useEffect, useState } from 'react';
-import { FormattedMessage } from 'react-intl';
 import { highlight, languages } from 'prismjs';
 import classnames from 'classnames';
+import { FaRegCopy, FaCheck } from 'react-icons/fa';
+import { useIntl } from 'react-intl';
 import styles from './index.module.scss';
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 import type { FC, PropsWithChildren, ReactElement, MouseEvent } from 'react';
+import 'prismjs/components/prism-bash';
 
 type CodeBoxProps = {
   children: ReactElement<PropsWithChildren<{ className?: string }>>;
+  textToCopy?: string[];
+  hideHeader?: boolean;
 };
 
 export const replaceLabelLanguages = (language: string) =>
@@ -18,10 +22,16 @@ export const replaceLanguages = (language: string) =>
     .replace(/mjs|cjs|javascript/i, 'js')
     .replace(/console|shell/i, 'bash');
 
-const Codebox: FC<CodeBoxProps> = ({ children: { props } }) => {
+const Codebox: FC<CodeBoxProps> = ({
+  children: { props },
+  textToCopy,
+  hideHeader = false,
+}) => {
   const [parsedCode, setParsedCode] = useState('');
   const [copied, copyText] = useCopyToClipboard();
   const [langIndex, setLangIndex] = useState(0);
+
+  const intl = useIntl();
 
   const className = props.className || 'text';
 
@@ -37,7 +47,12 @@ const Codebox: FC<CodeBoxProps> = ({ children: { props } }) => {
 
   const handleCopyCode = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    copyText(codeArray[langIndex]);
+
+    const _textToCopy = textToCopy
+      ? textToCopy[langIndex]
+      : codeArray[langIndex];
+
+    copyText(_textToCopy.replace('$', '').trim());
   };
 
   useEffect(() => {
@@ -50,25 +65,40 @@ const Codebox: FC<CodeBoxProps> = ({ children: { props } }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [langIndex]);
 
+  const ariaLabelText = intl.formatMessage(
+    {
+      id: 'components.codeBox.copy',
+    },
+    { copied }
+  );
+
   return (
     <pre className={classnames(styles.pre, replaceLanguages(className))}>
-      <div className={styles.top}>
-        <div className={styles.langBox}>
-          {languageOptions.map((lang, index) => (
-            <button
-              type="button"
-              key={lang}
-              className={classnames(styles.lang, {
-                [styles.selected]: index === langIndex,
-              })}
-              onClick={() => setLangIndex(index)}
-            >
-              {replaceLabelLanguages(lang.toLowerCase())}
-            </button>
-          ))}
-        </div>
-        <button type="button" className={styles.copy} onClick={handleCopyCode}>
-          <FormattedMessage id="components.codeBox.copy" values={{ copied }} />
+      <div className={hideHeader ? styles.floatingCopy : styles.header}>
+        {!hideHeader && (
+          <div className={styles.langBox}>
+            {languageOptions.map((lang, index) => (
+              <button
+                type="button"
+                key={lang}
+                className={classnames(styles.lang, {
+                  [styles.selected]: index === langIndex,
+                })}
+                onClick={() => setLangIndex(index)}
+              >
+                {replaceLabelLanguages(lang.toLowerCase())}
+              </button>
+            ))}
+          </div>
+        )}
+        <button
+          type="button"
+          className={styles.copy}
+          onClick={handleCopyCode}
+          aria-label={ariaLabelText}
+          data-testid="copy"
+        >
+          {copied ? <FaCheck /> : <FaRegCopy />}
         </button>
       </div>
       <div
