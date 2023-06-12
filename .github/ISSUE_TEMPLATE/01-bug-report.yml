@@ -1,4 +1,4 @@
-name: Report an Issue on the Node.js Website
+name: Report a Technical/Visual Issue on the Node.js Website
 description: "Is something not working as expected? Did you encounter a glitch or a bug with the Website? Then click here!"
 labels: [bug]
 body:
