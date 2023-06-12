@@ -69,5 +69,9 @@
   "components.sections.newHeader.links.download": "下载",
   "components.sections.newHeader.links.certification": "认证",
   "pages.404.title": "404：您访问的页面不存在",
-  "pages.404.description": "ENOENT：无此文件或目录"
+  "pages.404.description": "ENOENT：无此文件或目录",
+  "components.api.apiChanges.addedIn": "自 {version} 开始添加",
+  "components.api.apiChanges.history": "历史记录",
+  "components.api.apiChanges.history.version": "版本号",
+  "components.api.apiChanges.history.changes": "变更记录"
 }
