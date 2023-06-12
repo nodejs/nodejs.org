@@ -12,7 +12,6 @@ import DownloadReleasesLayout from '../layouts/DownloadReleasesLayout';
 import IndexLayout from '../layouts/IndexLayout';
 import type { PageOpts } from 'nextra';
 import type { PropsWithChildren } from 'react';
-
 import type { LegacyLayouts, NextraAppProps } from '../types';
 
 type LayoutProviderProps = PropsWithChildren<{

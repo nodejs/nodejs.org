@@ -23,7 +23,7 @@ const BlogIndexLayout: FC<PropsWithChildren> = ({ children }) => {
         <ul className="blog-index">
           {blogData?.posts.map(post => (
             <li key={post.slug}>
-              {getTimeComponent(post.date, '%d %b')}
+              {getTimeComponent(post.date.toString(), '%d %b')}
               <LocalizedLink href={post.slug}>{post.title}</LocalizedLink>
             </li>
           ))}

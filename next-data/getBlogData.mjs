@@ -3,18 +3,16 @@
 import { readFile, readdir } from 'node:fs/promises';
 import { basename, extname, join } from 'node:path';
 import graymatter from 'gray-matter';
-
-import {
-  getDirectories,
-  getMatchingRoutes,
-  getRelativePath,
-} from './_helpers.mjs';
+import * as helpers from './helpers.mjs';
 
 // this allows us to get the current module working directory
-const __dirname = getRelativePath(import.meta.url);
+const __dirname = helpers.getRelativePath(import.meta.url);
 
 // gets the current blog path based on local module path
-const blogPath = join(__dirname, '../../pages/en/blog');
+const blogPath = join(__dirname, '../pages/en/blog');
+
+// retrieves the current year based on when the build happens
+const currentYear = new Date().getFullYear();
 
 // gathers only the frontmatter fields that are relevant to us
 const getMatter = name => content => {
@@ -33,23 +31,39 @@ const getPost = category => post =>
 const getPosts = (category, posts) =>
   posts.then(posts => Promise.all(posts.map(getPost(category))));
 
-const currentYear = new Date().getFullYear();
-
 // Note.: This current structure is coupled to the current way how we do pagination and categories
 // This will definitely change over time once we start migrating to the `nodejs/nodejs.dev` codebase
-export const getBlogData = () => {
-  const blogCategories = getDirectories(blogPath).then(c =>
-    c.map(s => [s, readdir(join(blogPath, s))])
-  );
+// @deprecated - this will be removed once we migrate to the new blog structure from `nodejs.dev` codebase
+const getBlogData = () => {
+  const blogCategories = helpers
+    .getDirectories(__dirname, blogPath)
+    .then(c => c.map(s => [s, readdir(join(blogPath, s))]));
 
   const categoriesPosts = blogCategories.then(c =>
     c.map(([s, f]) => [s, getPosts(s, f)])
   );
 
-  return (route = '/', getAllAvailablePosts = false) => {
+  /**
+   * This method generates the blog post data based on route
+   * or if needed based on the category and pagination
+   *
+   * We also allow an override to get all available posts
+   * via the `getAllAvailablePosts` parameter
+   *
+   * @param {string} route the current next route
+   * @param {boolean} getAllAvailablePosts whether to get all available posts or not
+   * @return {Promise<{ blogData: import('../types').BlogData }>} the generated blog data
+   */
+  return async (route = '/', getAllAvailablePosts = false) => {
     const [, , subDirectory, category = `year-${currentYear}`, blogPostSlug] =
       route.split('/');
 
+    /**
+     * @param {import('../types').BlogPost[]} posts
+     * @param {boolean} hasNext if it has a next page
+     * @param {boolean} hasPrev if it has a previous page
+     * @return {{ blogData: import('../types').BlogData }} the generated blog data
+     */
     const generatedBlogData = (posts, hasNext, hasPrev) => ({
       blogData: {
         posts: posts.sort((a, b) => b.date - a.date),
@@ -58,12 +72,26 @@ export const getBlogData = () => {
       },
     });
 
+    if (getAllAvailablePosts) {
+      return categoriesPosts.then(categories => {
+        // get only the post ingredient from the category array
+        const allPosts = categories.map(([, f]) => f);
+
+        const generatedBlog = posts => generatedBlogData(posts);
+
+        return Promise.all(allPosts)
+          .then(s => Promise.all(s.flat()))
+          .then(s => s.filter(p => p.date && p.file !== 'index.md'))
+          .then(generatedBlog);
+      });
+    }
+
     // we don't want to generate blog data within a blog post
     if (blogPostSlug && blogPostSlug.length > 0) {
       return {};
     }
 
-    if (getMatchingRoutes(subDirectory, ['blog'])) {
+    if (helpers.getMatchingRoutes(subDirectory, ['blog'])) {
       return categoriesPosts.then(categories => {
         // yearly pagination posts (doesn't accept category pagination)
         if (category && category.startsWith('year-')) {
@@ -108,20 +136,8 @@ export const getBlogData = () => {
       });
     }
 
-    if (getAllAvailablePosts) {
-      return categoriesPosts.then(categories => {
-        // get only the post ingredient from the category array
-        const allPosts = categories.map(([, f]) => f);
-
-        const generatedBlog = posts => generatedBlogData(posts);
-
-        return Promise.all(allPosts)
-          .then(s => Promise.all(s.flat()))
-          .then(s => s.filter(p => p.date && p.file !== 'index.md'))
-          .then(generatedBlog);
-      });
-    }
-
     return {};
   };
 };
+
+export default getBlogData;

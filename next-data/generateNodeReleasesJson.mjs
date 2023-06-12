@@ -1,13 +1,15 @@
 import { writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import nodevu from '@nodevu/core';
+import * as helpers from './helpers.mjs';
 
-import { getRelativePath } from './_helpers.mjs';
+// this allows us to get the current module working directory
+const __dirname = helpers.getRelativePath(import.meta.url);
 
-const __dirname = getRelativePath(import.meta.url);
-const jsonFilePath = join(__dirname, '../../public/node-releases-data.json');
+// this is the destination path for where the JSON file will be written
+const jsonFilePath = join(__dirname, '../public/node-releases-data.json');
 
-export const generateNodeReleasesJson = async () => {
+const generateNodeReleasesJson = async () => {
   const nodevuOutput = await nodevu();
 
   // Filter out those without documented support
@@ -49,3 +51,5 @@ export const generateNodeReleasesJson = async () => {
     )
   );
 };
+
+export default generateNodeReleasesJson;

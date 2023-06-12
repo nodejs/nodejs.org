@@ -1,7 +1,7 @@
 export interface BlogPost {
   title: string;
   author?: string;
-  date: string;
+  date: Date;
   category: string;
   slug: string;
   readingTime?: string; // TODO: verify this works when implementing blog

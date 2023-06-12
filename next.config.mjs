@@ -21,12 +21,12 @@ const withNextra = nextra({
 // This is used for static/without a Node.js server hosting, such as on our
 // legacy Website Build Environment on Node.js's DigitalOcean Droplet.
 // Note.: Image optimization is also disabled through this process
-const enableStaticExport = process.env.NEXT_STATIC_EXPORT === 'true';
+export const enableStaticExport = process.env.NEXT_STATIC_EXPORT === 'true';
 
 // Supports a manuall override of the base path of the website
 // This is useful when running the deployment on a subdirectory
 // of a domain, such as when hosted on GitHub Pages.
-const basePath = String(process.env.NEXT_BASE_PATH || '');
+export const basePath = String(process.env.NEXT_BASE_PATH || '');
 
 export default withNextra({
   basePath,
@@ -34,6 +34,7 @@ export default withNextra({
   outputFileTracing: false,
   distDir: enableStaticExport ? 'build' : '.next',
   output: enableStaticExport ? 'export' : undefined,
+  experimental: { swcPlugins: [['next-superjson-plugin', {}]] },
   images: { unoptimized: enableStaticExport },
   eslint: { dirs: ['.'] },
   i18n: null,

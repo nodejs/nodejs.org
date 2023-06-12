@@ -1,37 +1,28 @@
 'use strict';
 
-// @TODO: This is a temporary hack until we migrate to the `nodejs/nodejs.dev` codebase
 import { writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { Feed } from 'feed';
-
-import { getRelativePath } from './_helpers.mjs';
+import * as helpers from './helpers.mjs';
 
 // imports the global site config
-import siteConfig from '../../site.json' assert { type: 'json' };
+import siteConfig from '../site.json' assert { type: 'json' };
 
 // this allows us to get the current module working directory
-const __dirname = getRelativePath(import.meta.url);
+const __dirname = helpers.getRelativePath(import.meta.url);
 
 // gets the current blog path based on local module path
-const blogPath = join(__dirname, '../../pages/en/blog');
+const blogPath = join(__dirname, '../pages/en/blog');
 
-const publicFeedPath = join(__dirname, '../../public/en/feed');
+const publicFeedPath = join(__dirname, '../public/en/feed');
 
-// creates a markdown file for the blog year
-const createBlogYearFile = year =>
-  writeFile(
-    join(blogPath, `year-${year}.md`),
-    `---\nlayout: blog-index.hbs\ntitle: News from ${year}\npaginate: blog\n---\n`
-  );
-
-export const generateBlogYearPages = cachedBlogData =>
-  cachedBlogData('', true)
-    .then(({ blogData }) => blogData.posts.map(p => p.date.getFullYear()))
-    .then(data => [...new Set(data)])
-    .then(data => data.forEach(createBlogYearFile));
-
-export const generateWebsiteFeeds = cachedBlogData =>
+/**
+ * This method generates RSS website feeds based on the current website configuration
+ * and the current blog data that is available
+ *
+ * @param {ReturnType<import('./getBlogData.mjs').default>} cachedBlogData
+ */
+const generateWebsiteFeeds = cachedBlogData =>
   siteConfig.rssFeeds.forEach(metadata => {
     const feed = new Feed({
       title: metadata.title,
@@ -54,7 +45,9 @@ export const generateWebsiteFeeds = cachedBlogData =>
         date: new Date(post.date),
       });
 
-    cachedBlogData(blogCategoryOrAll)
+    cachedBlogData(blogCategoryOrAll, !metadata.blogCategory)
       .then(({ blogData }) => blogData.posts.forEach(mapBlogPostToFeed))
       .then(() => writeFile(join(publicFeedPath, metadata.file), feed.rss2()));
   });
+
+export default generateWebsiteFeeds;

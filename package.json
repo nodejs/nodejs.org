@@ -45,9 +45,12 @@
     "classnames": "^2.3.2",
     "cross-env": "^7.0.3",
     "framer-motion": "^10.12.16",
+    "glob": "^10.2.7",
     "highlight.js": "^11.8.0",
     "isomorphic-dompurify": "^1.5.0",
     "next": "^13.4.3",
+    "next-mdx-remote": "^4.4.1",
+    "next-superjson-plugin": "^0.5.8",
     "next-themes": "^0.2.1",
     "nextra": "^2.6.1",
     "prismjs": "^1.29.0",
@@ -60,8 +63,9 @@
     "semver": "^7.5.1",
     "sharp": "^0.32.1",
     "strftime": "^0.10.1",
+    "superjson": "^1.12.3",
     "swr": "^2.1.5",
-    "turbo": "^1.9.9"
+    "turbo": "^1.10.3"
   },
   "devDependencies": {
     "@storybook/addon-controls": "^7.0.17",

@@ -14,6 +14,11 @@ const availableLocales = localeConfig.filter(locale => locale.enabled);
 /** @type {import('./types').LocaleConfig} */
 const defaultLocale = availableLocales.find(locale => locale.default);
 
+// This provides all available languages besides the default language
+const nonDefaultLanguages = availableLocales.filter(
+  locale => locale.code !== defaultLocale.code
+);
+
 /**
  * Retrieves the Current Locale from the given route or URL Query
  *
@@ -46,8 +51,9 @@ const getCurrentTranslations = locale => ({
 });
 
 export {
-  availableLocales,
   defaultLocale,
+  availableLocales,
+  nonDefaultLanguages,
   getCurrentLocale,
   getCurrentTranslations,
 };

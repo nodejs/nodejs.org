@@ -13,5 +13,5 @@ export type CustomMiddleware = {
     locale: NextMiddlewareLocale
   ) => Promise<NextResponse>;
   matcher: (request: NextRequest, locale: NextMiddlewareLocale) => boolean;
-  routes: string[];
+  routes: (string | RegExp)[];
 };

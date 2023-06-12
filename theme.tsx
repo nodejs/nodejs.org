@@ -7,13 +7,9 @@ import NodeApiVersionLinks from './components/Docs/NodeApiVersionLinks';
 import { LayoutProvider } from './providers/layoutProvider';
 import { useRouter } from './hooks/useRouter';
 import type { FC, PropsWithChildren } from 'react';
-import type { NextraThemeLayoutProps } from 'nextra';
+import type { NextraThemeLayoutProps, PageOpts } from 'nextra';
 import type { MDXComponents } from 'mdx/types';
 import type { LegacyFrontMatter } from './types';
-
-type LayoutProps = PropsWithChildren<{
-  pageOpts: NextraThemeLayoutProps['pageOpts'];
-}>;
 
 const mdxComponents: MDXComponents = {
   NodeApiVersionLinks: NodeApiVersionLinks,
@@ -26,7 +22,7 @@ const mdxComponents: MDXComponents = {
   blockquote: ({ children }) => <div className="highlight-box">{children}</div>,
 };
 
-const Content: FC<LayoutProps> = ({ children }) => {
+const Content: FC<PropsWithChildren> = ({ children }) => {
   const { asPath } = useRouter();
 
   // Re-highlights the pages on route change
@@ -42,17 +38,16 @@ const Content: FC<LayoutProps> = ({ children }) => {
 };
 
 // @TODO: Nextra should provide better customization to FrontMatter Props
-type ThemeProps = {
-  pageOpts: Omit<NextraThemeLayoutProps['pageOpts'], 'frontMatter'> & {
-    frontMatter: LegacyFrontMatter;
-  };
-} & NextraThemeLayoutProps;
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+interface ThemeProps extends NextraThemeLayoutProps {
+  pageOpts: PageOpts<LegacyFrontMatter>;
+}
 
 const Theme: FC<ThemeProps> = ({ pageOpts, pageProps, children }) => (
   <>
     <HtmlHead frontMatter={pageOpts.frontMatter} />
     <LayoutProvider pageOpts={pageOpts} pageProps={pageProps}>
-      <Content pageOpts={pageOpts}>{children}</Content>
+      <Content>{children}</Content>
     </LayoutProvider>
   </>
 );

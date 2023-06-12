@@ -17,7 +17,6 @@ export * from './middlewares';
 
 export interface AppProps {
   blogData?: BlogData;
-  statusCode?: number;
 }
 
 export type NextraAppProps = DefaultAppProps<AppProps>;
