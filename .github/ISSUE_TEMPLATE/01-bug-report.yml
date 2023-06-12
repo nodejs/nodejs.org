@@ -1,5 +1,5 @@
-name: 🐛 Bug Report For Node.js Website
-description: Report an issue if something isn't working as expected 🤔.
+name: Report an Issue on the Node.js Website
+description: "Is something not working as expected? Did you encounter a glitch or a bug with the Website? Then click here!"
 labels: [bug]
 body:
   - type: markdown
