@@ -3,6 +3,9 @@ contact_links:
   - name: Need help with Node.js?
     url: https://github.com/nodejs/help/issues/
     about: "Struggling with Node.js? You're not sure how to code? Then click here!"
-  - name: Report an Issue on our API Docs
+  - name: Report an API Docs Issue on the Node.js Website
     url: https://github.com/nodejs/node/issues/new?assignees=&labels=doc&template=3-api-ref-docs-problem.yml
     about: "Is something wrong with the API Docs? Did you face a bug with the API Docs? Then click here!"
+  - name: Report a Translation Issue on the Node.js Website
+    url: https://crowdin.com/project/nodejs-website
+    name: "Is something wrong in a specific translation? Do you believe a language can get improved? Do you have suggestions? Then click here!"
