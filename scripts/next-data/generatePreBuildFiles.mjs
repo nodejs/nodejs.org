@@ -1,6 +1,8 @@
+'use strict';
+
 // @TODO: This is a temporary hack until we migrate to the `nodejs/nodejs.dev` codebase
-import { writeFile } from 'fs/promises';
-import { join } from 'path';
+import { writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
 import { Feed } from 'feed';
 
 import { getRelativePath } from './_helpers.mjs';

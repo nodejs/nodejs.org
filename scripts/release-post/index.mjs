@@ -20,10 +20,10 @@
 
 'use strict';
 
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
+import url from 'node:url';
 import handlebars from 'handlebars';
-import { fileURLToPath } from 'node:url';
 
 import downloadsTable from './downloadsTable.mjs';
 import { getRelativePath } from '../next-data/_helpers.mjs';
@@ -259,7 +259,7 @@ export {
 
 // This allows us to verify that the script is being run directly from node.js/cli
 if (import.meta.url.startsWith('file:')) {
-  const modulePath = fileURLToPath(import.meta.url);
+  const modulePath = url.fileURLToPath(import.meta.url);
 
   if (process.argv[1] === modulePath) {
     explicitVersion(process.argv[2])

@@ -1,3 +1,5 @@
+'use strict';
+
 import nodevu from '@nodevu/core';
 
 import { getMatchingRoutes } from './_helpers.mjs';

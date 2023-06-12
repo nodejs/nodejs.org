@@ -1,8 +1,15 @@
-build
-.next
-external
-styles
 node_modules
+
+# Next.js & Vercel Directories
+.next
+.turbo
+.swc
+build
+
+# Files that should not be parsed
+CODEOWNERS
+
+# Legacy Public Files
 public/en/user-survey-report
 public/static/documents
 public/static/legacy

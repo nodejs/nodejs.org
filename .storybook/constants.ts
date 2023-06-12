@@ -1,18 +1,4 @@
 import type { AppProps, NodeVersionData } from '../types';
-import englishMessages from '../i18n/locales/en.json';
-
-const i18nData: AppProps['i18nData'] = {
-  currentLocale: {
-    code: 'en',
-    localName: 'English',
-    name: 'English',
-    langDir: 'ltr',
-    dateFormat: 'MM.DD.YYYY',
-    hrefLang: 'en-US',
-    enabled: true,
-  },
-  localeMessages: englishMessages,
-};
 
 const nodeVersionData: NodeVersionData[] = [
   {
@@ -31,4 +17,4 @@ const nodeVersionData: NodeVersionData[] = [
   },
 ];
 
-export const pageProps = { i18nData, nodeVersionData };
+export const pageProps = { nodeVersionData };

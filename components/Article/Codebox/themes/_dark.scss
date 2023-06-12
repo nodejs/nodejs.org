@@ -1,0 +1,90 @@
+@mixin theme {
+  background: var(--black9);
+  color: var(--black2);
+
+  :global .token {
+    &.comment,
+    &.prolog,
+    &.doctype,
+    &.cdata {
+      color: #8292a2;
+    }
+
+    &.operator,
+    &.punctuation {
+      color: var(--black2);
+    }
+
+    &.namespace {
+      opacity: 0.7;
+    }
+
+    &.property,
+    &.tag,
+    &.constant,
+    &.symbol,
+    &.deleted {
+      color: #f92672;
+    }
+
+    &.boolean {
+      color: #ae81ff;
+    }
+
+    &.selector,
+    &.attr-name,
+    &.char,
+    &.builtin,
+    &.inserted {
+      color: #a6e22e;
+    }
+
+    &.entity,
+    &.url,
+    .language-css &.string,
+    .style &.string,
+    &.variable {
+      color: #f8f8f2;
+    }
+
+    &.atrule,
+    &.attr-value,
+    &.class-name {
+      color: #e6db74;
+    }
+
+    &.function {
+      color: var(--warning3);
+    }
+
+    &.string {
+      color: var(--brand3);
+    }
+
+    &.keyword {
+      color: var(--info3);
+    }
+
+    &.number {
+      color: var(--purple3);
+    }
+
+    &.regex,
+    &.important {
+      color: #fd971f;
+    }
+
+    &.important,
+    &.bold {
+      font-weight: var(--font-weight-bold);
+    }
+
+    &.italic {
+      font-style: italic;
+    }
+
+    &.entity {
+      cursor: help;
+    }
+  }
+}

@@ -1,4 +1,6 @@
-import { readdir } from 'fs/promises';
+'use strict';
+
+import { readdir } from 'node:fs/promises';
 import { fileURLToPath } from 'url';
 
 export const getMatchingRoutes = (route = '', matches = []) =>

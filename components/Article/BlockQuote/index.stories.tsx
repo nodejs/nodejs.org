@@ -5,9 +5,7 @@ type Story = StoryObj<typeof BlockQuote>;
 type Meta = MetaObj<typeof BlockQuote>;
 
 export const Default: Story = {
-  args: {
-    children: 'This is a block quote',
-  },
+  args: { children: 'This is a block quote' },
 };
 
 export const Empty: Story = {};

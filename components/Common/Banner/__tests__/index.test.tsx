@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import { LocaleProvider } from '../../../../providers/localeProvider';
+import { IntlProvider } from 'react-intl';
 import Banner from '../index';
-import type { AppProps, WebsiteBanner } from '../../../../types';
+import type { WebsiteBanner } from '../../../../types';
 
 jest.mock('isomorphic-dompurify', () => ({
   sanitize: jest.fn((html: string) => html),
@@ -14,8 +14,6 @@ const bannersIndex: WebsiteBanner = {
   startDate: '',
 };
 
-const i18nData = { currentLocale: { code: 'en' } } as AppProps['i18nData'];
-
 describe('Tests for Header component', () => {
   it('renders when today between startDate and endDate', () => {
     const beforeToday = new Date();
@@ -27,9 +25,9 @@ describe('Tests for Header component', () => {
     bannersIndex.endDate = afterToday.toISOString();
 
     render(
-      <LocaleProvider i18nData={i18nData}>
+      <IntlProvider locale="en" onError={() => {}}>
         <Banner bannersIndex={bannersIndex} />
-      </LocaleProvider>
+      </IntlProvider>
     );
 
     const bannerText = screen.getByText(bannersIndex.text || '');
@@ -46,9 +44,9 @@ describe('Tests for Header component', () => {
     bannersIndex.endDate = afterToday.toISOString();
 
     render(
-      <LocaleProvider i18nData={i18nData}>
+      <IntlProvider locale="en" onError={() => {}}>
         <Banner bannersIndex={bannersIndex} />
-      </LocaleProvider>
+      </IntlProvider>
     );
 
     const bannerText = screen.queryByText(bannersIndex.text || '');
@@ -65,9 +63,9 @@ describe('Tests for Header component', () => {
     bannersIndex.endDate = afterToday.toISOString();
 
     render(
-      <LocaleProvider i18nData={i18nData}>
+      <IntlProvider locale="en" onError={() => {}}>
         <Banner bannersIndex={bannersIndex} />
-      </LocaleProvider>
+      </IntlProvider>
     );
 
     const bannerText = screen.queryByText(bannersIndex.text || '');
@@ -85,9 +83,9 @@ describe('Tests for Header component', () => {
     bannersIndex.link = 'foo/bar';
 
     render(
-      <LocaleProvider i18nData={i18nData}>
+      <IntlProvider locale="en" onError={() => {}}>
         <Banner bannersIndex={bannersIndex} />
-      </LocaleProvider>
+      </IntlProvider>
     );
 
     const bannerText = screen.getByText(bannersIndex.text || '');
@@ -108,9 +106,9 @@ describe('Tests for Header component', () => {
     bannersIndex.link = 'https://nodejs.org/en/an-absolute-content';
 
     render(
-      <LocaleProvider i18nData={i18nData}>
+      <IntlProvider locale="en" onError={() => {}}>
         <Banner bannersIndex={bannersIndex} />
-      </LocaleProvider>
+      </IntlProvider>
     );
 
     const bannerText = screen.getByText(bannersIndex.text || '');
@@ -134,9 +132,9 @@ describe('Tests for Header component', () => {
       '<img src="https://nodejs.org/static/images/logo.svg" alt="Node.js" data-testid="test-image" />';
 
     render(
-      <LocaleProvider i18nData={i18nData}>
+      <IntlProvider locale="en" onError={() => {}}>
         <Banner bannersIndex={bannersIndex} />
-      </LocaleProvider>
+      </IntlProvider>
     );
 
     const bannerImage = screen.getByTestId('test-image');

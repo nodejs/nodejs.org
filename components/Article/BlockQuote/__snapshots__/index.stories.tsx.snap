@@ -6,11 +6,6 @@ exports[`Article/BlockQuote Default smoke-test 1`] = `
 </div>
 `;
 
-exports[`Article/BlockQuote Empty smoke-test 1`] = `
-<div class="BlockQuote_blockQuote___32dx">
-</div>
-`;
-
 exports[`Article/BlockQuote MultipleParagraph smoke-test 1`] = `
 <div class="BlockQuote_blockQuote___32dx">
   <p>

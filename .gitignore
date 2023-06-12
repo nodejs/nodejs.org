@@ -1,23 +1,22 @@
 # Commonly ignored Node.js files
-node_modules/
+node_modules
 npm-debug.log
-.npm/
+.npm
 
 # OSX system files, the bane of our existence
 .DS_Store
 .AppleDouble
 .LSOverride
 
-# Next.js files
+# Next.js Build Output
 .next
 build
+
+# Next.js Generated Files
+public/robots.txt
 public/sitemap.xml
 public/en/feed/*.xml
 pages/en/blog/year-[0-9][0-9][0-9][0-9].md
-
-# ESLint Cache Files
-.eslintjscache
-.eslintmdcache
 
 # Jest
 coverage
@@ -26,8 +25,6 @@ coverage
 # Storybook
 storybook-static
 
-# Vercel Config
+# Vercel Files
 .vercel
-
-# TurboRepo
 .turbo

@@ -1,5 +1,7 @@
-import { readFile, readdir } from 'fs/promises';
-import { basename, extname, join } from 'path';
+'use strict';
+
+import { readFile, readdir } from 'node:fs/promises';
+import { basename, extname, join } from 'node:path';
 import graymatter from 'gray-matter';
 
 import {
