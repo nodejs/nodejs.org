@@ -16,8 +16,8 @@ const PrimaryDownloadMatrix: FC<NodeRelease> = ({
 }) => {
   const nextraContext = useNextraContext();
 
-  const { os, bitness } = useDetectOS();
-  const windowsBitness = os === 'WIN' ? bitness : '86';
+  const { bitness } = useDetectOS();
+  const windowsBitness = bitness || 86;
 
   const { downloads } = nextraContext.frontMatter as LegacyDownloadsFrontMatter;
   const hasWindowsArm64 = semVer.satisfies(version, '>= 19.9.0');
@@ -73,7 +73,7 @@ const PrimaryDownloadMatrix: FC<NodeRelease> = ({
               </svg>
               {downloads.WindowsInstaller}
               <p className="small color-lightgray">
-                node-{versionWithPrefix}-x86.msi
+                node-{versionWithPrefix}-x{windowsBitness}.msi
               </p>
             </a>
           </li>

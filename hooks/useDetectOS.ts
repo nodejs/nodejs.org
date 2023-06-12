@@ -1,30 +1,35 @@
-import { useMemo } from 'react';
-import useSWR from 'swr';
-import { UserAgentDetectOS } from '../constants/swr';
+import { useEffect, useState } from 'react';
 import { detectOS } from '../util/detectOS';
 import { getBitness } from '../util/getBitness';
-
-const fetcher = async () => {
-  const userAgent = navigator?.userAgent;
-
-  return {
-    os: detectOS(),
-    bitness:
-      (await getBitness()) === '64' ||
-      userAgent?.includes('WOW64') ||
-      userAgent?.includes('Win64')
-        ? '64'
-        : '86',
-  };
-};
+import type { UserOS } from '../types/userOS';
 
 export const useDetectOS = () => {
-  const { data } = useSWR(UserAgentDetectOS, fetcher);
+  const [userOSData, setUserOSData] = useState<{
+    os: UserOS;
+    bitness?: number;
+  }>({ os: 'OTHER' });
 
-  return useMemo(() => {
-    return {
-      os: data?.os || 'OTHER',
-      bitness: data?.bitness || '86',
-    };
-  }, [data]);
+  useEffect(() => {
+    const os = detectOS();
+
+    if (os === 'WIN') {
+      getBitness().then(bitness => {
+        const userAgent = navigator?.userAgent;
+
+        setUserOSData({
+          os: os,
+          bitness:
+            bitness === '64' ||
+            userAgent?.includes('WOW64') ||
+            userAgent?.includes('Win64')
+              ? 64
+              : 86,
+        });
+      });
+    } else {
+      setUserOSData({ os: os });
+    }
+  }, []);
+
+  return userOSData;
 };

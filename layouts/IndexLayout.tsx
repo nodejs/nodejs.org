@@ -7,7 +7,7 @@ import { WithNodeRelease } from '../providers/WithNodeRelease';
 import type { FC, PropsWithChildren } from 'react';
 import type { UserOS } from '../types/userOS';
 
-const getDownloadHeadTextOS = (os: UserOS, bitness: string) => {
+const getDownloadHeadTextOS = (os: UserOS, bitness?: number) => {
   switch (os) {
     case 'MAC':
       return ' macOS';
