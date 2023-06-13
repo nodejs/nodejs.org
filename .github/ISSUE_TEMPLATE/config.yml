@@ -1,8 +1,11 @@
-blank_issues_enabled: false
+blank_issues_enabled: true
 contact_links:
-  - name: ⁉️ Need help with Node.js?
-    url: https://github.com/nodejs/help/issues/
-    about: File an issue in our help repo.
-  - name: 📗 Node.js API Docs
+  - name: Report an API Docs Issue on the Node.js Website
     url: https://github.com/nodejs/node/issues/new?assignees=&labels=doc&template=3-api-ref-docs-problem.yml
-    about: Please open an issue in the main Node.js repo.
+    about: "Is something wrong with the API Docs? Did you face a bug with the API Docs?"
+  - name: Report a Translation Issue on the Node.js Website
+    url: https://crowdin.com/project/nodejs-website
+    about: "Is something wrong in a specific translation? Do you believe a language can get improved? Do you have suggestions?"
+  - name: Need help with Node.js?
+    url: https://github.com/nodejs/help/issues/
+    about: "Struggling with Node.js? You're not sure how to code?"
