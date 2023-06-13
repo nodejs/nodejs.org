@@ -69,5 +69,6 @@
   "components.sections.newHeader.links.download": "Downloads",
   "components.sections.newHeader.links.certification": "Certification",
   "pages.404.title": "404: Page could not be found",
-  "pages.404.description": "ENOENT: no such file or directory"
+  "pages.404.description": "ENOENT: no such file or directory",
+  "containers.navigation.title": "Menu"
 }
