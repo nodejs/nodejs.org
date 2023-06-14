@@ -1,0 +1,58 @@
+.downloadToggle {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 40px;
+
+  .selector {
+    display: flex;
+    justify-content: center;
+  }
+
+  .switch {
+    border: none;
+    height: 42px;
+    padding: 0;
+    width: 236px;
+  }
+
+  .description {
+    font-size: var(--font-size-body1);
+    line-height: var(--line-height-body1);
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  button {
+    background: var(--black0);
+    border: none;
+    border-radius: 32px;
+    box-shadow: inset 1px -1px 1px rgba(0, 0, 0, 0.08),
+      inset 0px 1px 2px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    color: var(--black7);
+    cursor: pointer;
+    display: inline-block;
+    font-size: var(--font-size-body2);
+    font-weight: var(--font-weight-bold);
+    height: 42px;
+    line-height: 40px;
+    line-height: var(--line-height-body2);
+    padding: 1px 6px;
+    position: relative;
+    width: 133px;
+
+    &.current {
+      box-shadow: inset 1px -1px 1px rgba(0, 0, 0, 0.08),
+        inset 0px 1px 2px rgba(0, 0, 0, 0.08);
+      margin-left: -30px;
+    }
+
+    &.active {
+      background: var(--brand6);
+      color: var(--black0);
+      z-index: 99;
+    }
+  }
+}
