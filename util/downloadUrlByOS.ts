@@ -3,7 +3,7 @@ import type { UserOS } from '../types/userOS';
 export const downloadUrlByOS = (
   versionWithPrefix: string,
   os: UserOS,
-  bitness?: number
+  bitness: number
 ): string => {
   const baseURL = `https://nodejs.org/dist/${versionWithPrefix}`;
 
@@ -11,7 +11,7 @@ export const downloadUrlByOS = (
     case 'MAC':
       return `${baseURL}/node-${versionWithPrefix}.pkg`;
     case 'WIN':
-      return `${baseURL}/node-${versionWithPrefix}-x${bitness || 86}.msi`;
+      return `${baseURL}/node-${versionWithPrefix}-x${bitness}.msi`;
     default:
       return `${baseURL}/node-${versionWithPrefix}.tar.gz`;
   }

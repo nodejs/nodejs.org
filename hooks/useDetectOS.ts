@@ -3,33 +3,32 @@ import { detectOS } from '../util/detectOS';
 import { getBitness } from '../util/getBitness';
 import type { UserOS } from '../types/userOS';
 
+type UserOSState = {
+  os: UserOS;
+  bitness: number;
+};
+
 export const useDetectOS = () => {
-  const [userOSData, setUserOSData] = useState<{
-    os: UserOS;
-    bitness?: number;
-  }>({ os: 'OTHER' });
+  const [userOSState, setUserOSState] = useState<UserOSState>({
+    os: 'OTHER',
+    bitness: 86,
+  });
 
   useEffect(() => {
-    const os = detectOS();
+    getBitness().then(bitness => {
+      const userAgent = navigator?.userAgent;
 
-    if (os === 'WIN') {
-      getBitness().then(bitness => {
-        const userAgent = navigator?.userAgent;
-
-        setUserOSData({
-          os: os,
-          bitness:
-            bitness === '64' ||
-            userAgent?.includes('WOW64') ||
-            userAgent?.includes('Win64')
-              ? 64
-              : 86,
-        });
+      setUserOSState({
+        os: detectOS(),
+        bitness:
+          bitness === '64' ||
+          userAgent?.includes('WOW64') ||
+          userAgent?.includes('Win64')
+            ? 64
+            : 86,
       });
-    } else {
-      setUserOSData({ os: os });
-    }
+    });
   }, []);
 
-  return userOSData;
+  return userOSState;
 };

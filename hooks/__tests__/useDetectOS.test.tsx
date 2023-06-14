@@ -56,7 +56,7 @@ describe('useDetectOS', () => {
     });
   });
 
-  it('should detect MAC OS', async () => {
+  it('should detect MAC OS and default bitness', async () => {
     Object.defineProperty(global, 'navigator', {
       value: {
         userAgent: macUserAgent,
@@ -69,6 +69,7 @@ describe('useDetectOS', () => {
     await waitFor(() => {
       expect(result.current).toStrictEqual({
         os: 'MAC',
+        bitness: 86,
       });
     });
   });
