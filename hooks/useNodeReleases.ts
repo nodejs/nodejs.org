@@ -11,8 +11,5 @@ export const useNodeReleases = () => {
     [releases]
   );
 
-  return {
-    releases,
-    getReleaseByStatus,
-  };
+  return { releases, getReleaseByStatus };
 };
