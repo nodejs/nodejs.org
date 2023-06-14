@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Downloads/DownloadToggle Current smoke-test 1`] = `
+<div class="DownloadToggle_downloadToggle__uZIub">
+  <div class="DownloadToggle_selector__bskfX">
+    <div class="DownloadToggle_switch__aIxmK">
+      <button class
+              type="button"
+              role="switch"
+              aria-label="LTS Versions"
+              aria-checked="false"
+      >
+        LTS
+      </button>
+      <button class="DownloadToggle_current__vxN36 DownloadToggle_active__vW3Bp"
+              type="button"
+              role="switch"
+              aria-label="Current Versions"
+              aria-checked="true"
+      >
+        Current
+      </button>
+    </div>
+  </div>
+  <p class="DownloadToggle_description__M8tDG">
+    With the latest features
+  </p>
+</div>
+`;
+
+exports[`Downloads/DownloadToggle Default smoke-test 1`] = `
+<div class="DownloadToggle_downloadToggle__uZIub">
+  <div class="DownloadToggle_selector__bskfX">
+    <div class="DownloadToggle_switch__aIxmK">
+      <button class="DownloadToggle_active__vW3Bp"
+              type="button"
+              role="switch"
+              aria-label="LTS Versions"
+              aria-checked="true"
+      >
+        LTS
+      </button>
+      <button class="DownloadToggle_current__vxN36"
+              type="button"
+              role="switch"
+              aria-label="Current Versions"
+              aria-checked="false"
+      >
+        Current
+      </button>
+    </div>
+  </div>
+  <p class="DownloadToggle_description__M8tDG">
+    Recommended for most users
+  </p>
+</div>
+`;
