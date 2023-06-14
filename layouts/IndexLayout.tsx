@@ -3,7 +3,7 @@ import Banner from '../components/Home/Banner';
 import HomeDownloadButton from '../components/Home/HomeDownloadButton';
 import { useDetectOS } from '../hooks/useDetectOS';
 import { useNextraContext } from '../hooks/useNextraContext';
-import { WithNodeRelease } from '../providers/WithNodeRelease';
+import { WithNodeRelease } from '../providers/withNodeRelease';
 import type { FC, PropsWithChildren } from 'react';
 import type { UserOS } from '../types/userOS';
 
