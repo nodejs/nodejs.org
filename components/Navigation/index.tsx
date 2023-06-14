@@ -17,7 +17,7 @@ const NavigationContainer: FC<Props> = ({
   toggleNavigation,
 }) => {
   const navigationClasses = classnames(styles.navigation, {
-    [styles.navigationFixed]: isOpen,
+    [styles.navigationfixed]: isOpen,
   });
 
   return (
