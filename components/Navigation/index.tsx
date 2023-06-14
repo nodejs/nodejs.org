@@ -24,7 +24,7 @@ const NavigationContainer: FC<Props> = ({
     <nav aria-label={label} className={navigationClasses} id="main-navigation">
       <button
         type="button"
-        className={styles.navigationOpen}
+        className={styles.navigationopen}
         onClick={toggleNavigation}
         aria-expanded={isOpen}
       >
