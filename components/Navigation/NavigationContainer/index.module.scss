@@ -27,8 +27,8 @@
     }
   }
 
-  &open,
-  &%open {
+  &Open,
+  &%Open {
     background: var(--color-text-primary);
     background-clip: content-box;
     border: none;
@@ -75,8 +75,8 @@
     }
   }
 
-  &fixed,
-  &%fixed {
+  &Fixed,
+  &%Fixed {
     @media (max-width: 900px) {
       height: 100vh;
       overflow-y: scroll;
@@ -90,7 +90,7 @@
     }
   }
 
-  &fixed &open {
+  &Fixed &open {
     background-color: transparent;
     color: transparent;
 

@@ -1,11 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navigation Default smoke-test 1`] = `
+exports[`Navigation/NavigationContainer Default smoke-test 1`] = `
 <nav aria-label="Navigation"
-     class="Navigation_navigation__Y73wX"
+     class="NavigationContainer_navigation__KY7SY"
      id="main-navigation"
 >
   <button type="button"
+          class="NavigationContainer_navigationOpen__WdiUj"
           aria-expanded="false"
   >
     Menu

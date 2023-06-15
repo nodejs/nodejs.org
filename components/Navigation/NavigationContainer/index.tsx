@@ -17,14 +17,14 @@ const NavigationContainer: FC<Props> = ({
   toggleNavigation,
 }) => {
   const navigationClasses = classnames(styles.navigation, {
-    [styles.navigationfixed]: isOpen,
+    [styles.navigationFixed]: isOpen,
   });
 
   return (
     <nav aria-label={label} className={navigationClasses} id="main-navigation">
       <button
         type="button"
-        className={styles.navigationopen}
+        className={styles.navigationOpen}
         onClick={toggleNavigation}
         aria-expanded={isOpen}
       >

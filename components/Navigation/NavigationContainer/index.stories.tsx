@@ -8,7 +8,6 @@ export const Default: Story = {
   args: {
     isOpen: false,
     label: 'Navigation',
-    toggleNavigation: () => {},
     children: 'Navigation content',
   },
 };

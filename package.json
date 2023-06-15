@@ -62,6 +62,7 @@
   "devDependencies": {
     "@storybook/addon-controls": "^7.0.17",
     "@storybook/addon-interactions": "^7.0.17",
+    "@storybook/addon-viewport": "^7.0.21",
     "@storybook/nextjs": "^7.0.17",
     "@storybook/test-runner": "^0.10.0",
     "@storybook/testing-library": "^0.1.0",
