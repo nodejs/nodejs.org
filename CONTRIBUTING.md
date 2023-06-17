@@ -13,6 +13,8 @@ Thank you for your interest in contributing to the Node.js Website. Before you p
   - [Becoming a collaborator](#becoming-a-collaborator)
   - [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin-11)
   - [Remarks](#remarks)
+ 
+More details about Collaboration can be found in the [COLLABORATOR_GUIDE.md](./COLLABORATOR_GUIDE.md).
 
 ## Getting started
 
@@ -125,7 +127,7 @@ This project follows the [Conventional Commits][] specification.
 
 Commits should be signed. You can read more about [Commit Signing][] here.
 
-### Commit Message guidelines
+### Commit Message Guidelines
 
 - Commit messages must include a "type"
   > build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test
@@ -139,15 +141,15 @@ Commits should be signed. You can read more about [Commit Signing][] here.
 We recommend a read on our [Collaborator Guide](COLLABORATOR_GUIDE.md#accepting-modifications) for in-depth details on how we accept contributions into this repository. The list below describes some of the merging and approval rules adopted in this repository.
 
 - Pull Requests must be open for at least 48 hours (Or 72 hours if the PR was authored on the weekend).
-  - Pull requests might be immediately merged if they contain critical bug fixes, short erratas (e.g. typos from previous PRs) or any critical change that is considered a "showstopper" for the operation of the website.
-    - These kind of PRs should only be done by existing collaborators that have write-access and/or signed-off by administrators/maintainers.
+  - Pull requests might be immediately merged if they contain critical bug fixes, short errata (e.g. typos from previous PRs) or any critical change that is considered a "showstopper" for the operation of the website.
+    - This kind of PRs should only be done by existing collaborators that have write-access and/or signed off by administrators/maintainers.
     - This rule cannot be used for updates on the COLLABORATOR_GUIDE, CONTRIBUTING guide, CODEOWNERS, GitHub Actions or any security-impacting file or document that changes the governing policies of this repository.
-  - Pull requests might be "fast-tracked", which means, they can be merged before the usual 48 hours notice if a "fast-track" label is added.
+  - Pull requests might be "fast-tracked", which means, they can be merged before the usual 48 hours' notice if a "fast-track" label is added.
     - The person that is fast-tracking the PR (adding the label) must also comment on the PR that they're requesting the PR to be fast-tracked
     - The comment must mention `@nodejs/website` and must have at least one 👍 (or any other sort of approval reaction) if the person fast-tracking the PR is the author of the PR.
-    - Fast-tracking is only allowed for small bug fixes, small feature changes, localisation changes, or other sort of non-critical/highly-impacting changes that are not covered by the previous rule that allows PRs to be merged immediately.
+    - Fast-tracking is only allowed for small bug fixes, small feature changes, localisation changes, or other sorts of non-critical/highly-impacting changes that are not covered by the previous rule that allows PRs to be merged immediately.
     - Fast-tracking cannot be used for updates on the COLLABORATOR_GUIDE, CONTRIBUTING guide, CODEOWNERS, GitHub Actions or any security-impacting file or document that changes the governing policies of this repository.
-- There must be no objections after a 48 hour period (Or 72 hours if the PR was authored on the weekend).
+- There must be no objections after a 48-hour period (Or 72 hours if the PR was authored on the weekend).
 - At least one approval is required for any PR to be merged.
 - Tests must be included in Pull Requests for new features or bug fixes. If any test(s) are failing, you are responsible for fixing them.
 
@@ -157,16 +159,37 @@ In the case that an objection is raised in a pull request by another collaborato
 
 ### When merging
 
+- All required Status-checks must have passed.
+- All discussions must be resolved.
 - [`squash`][] pull requests made up of multiple commits
 
-## Becoming a collaborator
+## Becoming a Collaborator
 
-- Collaborators must be actively contributing to the project
-- A Pull Request must be opened on the @nodejs/nodejs.org README file adding the new collaborator to the list (note the order of names)
-- The Pull Request must be approved by at least two members of @nodejs/website or @nodejs/tsc
-- The Pull Request must remain open for 72 hours without any objections
+A collaborator of the Node.js Website repository is a member of the Node.js Website Team.
 
-More details about Collaboration can be found in the [COLLABORATOR_GUIDE.md](./COLLABORATOR_GUIDE.md).
+The Website Team is responsible for the technical development of the Node.js Website, thus it is expected
+that team members have significant knowledge about modern Web Technologies and Web Standards.
+
+Note that regular contributors do not need to become "Collaborators". Any contribution is appreciated and a Collaborator status
+is a formality that comes with obligations.
+
+If you're an active contributor seeking to become a member we recommend reaching out to one of the existing Team Members for guidance.
+
+### What's the process for becoming a Collaborator?
+
+- You must be actively contributing to this repository.
+- Contributions must include significant code reviews or code contributions.
+- A nomination must be done by an existing Team Member of the Website Team with an Issue
+  - The Issue must explain and describe why the nominated person is a good addition to the team
+  - The Issue must contain links to relevant contributions through:
+    - Code Reviews
+    - Comments on Issues and PRs
+    - Authoring of PRs or Issues
+    - Comments or Authoring of Discussions
+- The nomination must have at least 3 existing members of the Website Team to be in agreement with the nomination.
+  - This can be done through commenting with "agreement" (showing support) or reacting to the Issue with a :+1: (Thumbs-up Emoji)
+- No existing member of the Website Team or member of the Node.js org must be in disagreement with the nomination.
+  - The nomination cannot pass until all open discordances/objections are resolved.
 
 ## Developer's Certificate of Origin 1.1
 
