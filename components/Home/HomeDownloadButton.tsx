@@ -1,30 +1,28 @@
 import LocalizedLink from '../LocalizedLink';
+import { useDetectOS } from '../../hooks/useDetectOS';
 import { useNextraContext } from '../../hooks/useNextraContext';
+import { downloadUrlByOS } from '../../util/downloadUrlByOS';
 import { getNodejsChangelog } from '../../util/getNodeJsChangelog';
-import type { NodeVersionData } from '../../types';
 import type { FC } from 'react';
+import type { NodeRelease } from '../../types';
 
-type HomeDownloadButtonProps = Pick<
-  NodeVersionData,
-  'isLts' | 'node' | 'nodeMajor' | 'nodeNumeric'
->;
-
-const HomeDownloadButton: FC<HomeDownloadButtonProps> = ({
-  node,
-  nodeMajor,
-  nodeNumeric,
+const HomeDownloadButton: FC<NodeRelease> = ({
+  major,
+  version,
+  versionWithPrefix,
   isLts,
 }) => {
   const {
     frontMatter: { labels },
   } = useNextraContext();
 
-  const nodeDownloadLink = `https://nodejs.org/dist/${node}/`;
-  const nodeApiLink = `https://nodejs.org/dist/latest-${nodeMajor}/docs/api/`;
+  const { os, bitness } = useDetectOS();
+
+  const nodeDownloadLink = downloadUrlByOS(versionWithPrefix, os, bitness);
+  const nodeApiLink = `https://nodejs.org/dist/latest-v${major}.x/docs/api/`;
   const nodeAllDownloadsLink = `/download${isLts ? '/' : '/current'}`;
   const nodeDownloadTitle =
-    `${labels.download} ${nodeNumeric}` +
-    ` ${labels[isLts ? 'lts' : 'current']}`;
+    `${labels.download} ${version}` + ` ${labels[isLts ? 'lts' : 'current']}`;
 
   return (
     <div className="home-downloadblock">
@@ -32,9 +30,9 @@ const HomeDownloadButton: FC<HomeDownloadButtonProps> = ({
         href={nodeDownloadLink}
         className="home-downloadbutton"
         title={nodeDownloadTitle}
-        data-version={node}
+        data-version={versionWithPrefix}
       >
-        {nodeNumeric} {labels[isLts ? 'lts' : 'current']}
+        {version} {labels[isLts ? 'lts' : 'current']}
         <small>{labels[`tagline-${isLts ? 'lts' : 'current'}`]}</small>
       </a>
 
@@ -45,7 +43,7 @@ const HomeDownloadButton: FC<HomeDownloadButtonProps> = ({
           </LocalizedLink>
         </li>
         <li>
-          <LocalizedLink href={getNodejsChangelog(node)}>
+          <LocalizedLink href={getNodejsChangelog(versionWithPrefix)}>
             {labels.changelog}
           </LocalizedLink>
         </li>

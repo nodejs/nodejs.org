@@ -13,6 +13,7 @@ CODEOWNERS
 public/en/user-survey-report
 public/static/documents
 public/static/legacy
+public/node-releases-data.json
 
 # We don't want to lint/prettify the Coverage Results
 coverage
