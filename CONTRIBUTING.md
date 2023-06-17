@@ -11,6 +11,7 @@ Thank you for your interest in contributing to the Node.js Website. Before you p
     - [Before merging](#before-merging)
     - [When merging](#when-merging)
   - [Becoming a collaborator](#becoming-a-collaborator)
+  - [Making changes to the Contribution Guidelines](#making-changes-to-the-contribution-guidelines)
   - [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin-11)
   - [Remarks](#remarks)
  
@@ -188,8 +189,20 @@ If you're an active contributor seeking to become a member we recommend reaching
     - Comments or Authoring of Discussions
 - The nomination must have at least 3 existing members of the Website Team to be in agreement with the nomination.
   - This can be done through commenting with "agreement" (showing support) or reacting to the Issue with a :+1: (Thumbs-up Emoji)
-- No existing member of the Website Team or member of the Node.js org must be in disagreement with the nomination.
+- The Issue must be open for at least 72 hours without an objection from an existing member of the Website Team
   - The nomination cannot pass until all open discordances/objections are resolved.
+  - Objections coming from the TSC or Core Collaborators are also counted as valid objections.
+
+## Making changes to the Contribution Guidelines
+
+These Contribution Guidelines govern the operation of the Website Team and the Node.js Website repository.
+
+Any change done to this file should follow all the rules stated on [Before Merging](#before-merging} with the following Caveats:
+
+- Fast-Tracking is not allowed when changes to the CONTRIBUTING Guidelines are done within the Pull Request
+- At least 3 members of the Website Team must approve the Pull Request
+  - In case of the absence of Website Team members, Node.js TSC members can also veto (approve) the Pull Request
+- The Pull Request must be open for at least 72 hours without any objections.
 
 ## Developer's Certificate of Origin 1.1
 
