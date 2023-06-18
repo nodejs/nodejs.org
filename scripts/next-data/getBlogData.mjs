@@ -37,7 +37,7 @@ const currentYear = new Date().getFullYear();
 
 // Note.: This current structure is coupled to the current way how we do pagination and categories
 // This will definitely change over time once we start migrating to the `nodejs/nodejs.dev` codebase
-const getBlogData = () => {
+export const getBlogData = () => {
   const blogCategories = getDirectories(blogPath).then(c =>
     c.map(s => [s, readdir(join(blogPath, s))])
   );
@@ -125,5 +125,3 @@ const getBlogData = () => {
     return {};
   };
 };
-
-export default getBlogData;
