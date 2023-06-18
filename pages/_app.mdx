@@ -1,5 +1,5 @@
 import { Analytics } from '@vercel/analytics/react';
-import { NodeDataProvider } from '../providers/nodeDataProvider';
+import { NodeReleasesProvider } from '../providers/nodeReleasesProvider';
 import { LocaleProvider } from '../providers/localeProvider';
 import { sourceSansPro } from '../util/nextFonts';
 import BaseApp, { setAppFont } from '../next.app';
@@ -11,10 +11,10 @@ export default function App({ Component, pageProps }) {
   return (
     <BaseApp>
       <LocaleProvider>
-        <NodeDataProvider nodeVersionData={pageProps.nodeVersionData}>
+        <NodeReleasesProvider>
           <Component {...pageProps} />
           <Analytics />
-        </NodeDataProvider>
+        </NodeReleasesProvider>
       </LocaleProvider>
     </BaseApp>
   );

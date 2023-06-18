@@ -9,19 +9,31 @@ export interface UpcomingRelease {
   releases: UpcomingReleaseData[];
 }
 
-export interface NodeReleaseData {
+export type NodeReleaseStatus =
+  | 'Maintenance LTS'
+  | 'Active LTS'
+  | 'Current'
+  | 'End-of-life'
+  | 'Pending';
+
+export interface NodeRelease {
+  major: number;
   version: string;
-  fullVersion: string;
+  versionWithPrefix: string;
   codename: string;
   isLts: boolean;
-  status:
-    | 'Maintenance LTS'
-    | 'Active LTS'
-    | 'Current'
-    | 'End-of-life'
-    | 'Pending';
-  initialRelease: string;
-  ltsStart: string | null;
-  maintenanceStart: string | null;
+  status: NodeReleaseStatus;
+  currentStart: string;
+  ltsStart?: string;
+  maintenanceStart?: string;
   endOfLife: string;
+  npm: string;
+  v8: string;
+  releaseDate: string;
+  modules: string;
 }
+
+export type NodeReleaseSupport = Pick<
+  NodeRelease,
+  'currentStart' | 'ltsStart' | 'maintenanceStart' | 'endOfLife'
+>;
