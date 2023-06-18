@@ -34,7 +34,8 @@ is a formality that comes with obligations.
 If you're an active contributor seeking to become a member we recommend reaching out to one of the existing Team Members for guidance.
  
 <details> 
-  <summary><b>What's the processing for becoming a Collaborator?</b></summary>
+  <summary><b>What's the process for becoming a Collaborator?</b></summary>
+
   - You must be actively contributing to this repository.
   - Contributions must include significant code reviews or code contributions.
   - A nomination must be done by an existing Team Member of the Website Team with an Issue
@@ -124,6 +125,7 @@ This repository contains several scripts and commands for performing numerous ta
 
 <details> 
   <summary>Commands for Running & Building the Website</summary>
+
   - `npx turbo serve` runs Next.js's Local Development Server, listening by default on `http://localhost:3000/`.
   - `npx turbo build` builds the Application on Production mode. The output is by default within `.next` folder.
     - This is used for the Node.js Vercel Deployments (Preview & Production)
@@ -134,6 +136,7 @@ This repository contains several scripts and commands for performing numerous ta
 
 <details> 
   <summary>Commands for Maintenance Tasks and Tests</summary>
+  
   - `npx turbo lint` runs the linter for all the js files.
     - `npx turbo lint:fix` attempts to fix any linting errors
   - `npx turbo prettier` runs the prettier for all the js files.
