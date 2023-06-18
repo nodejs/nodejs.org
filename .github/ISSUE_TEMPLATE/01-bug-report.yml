@@ -1,49 +1,49 @@
-name: 🐛 Bug Report For Node.js Website
-description: Report an issue if something isn't working as expected 🤔.
+name: Report a Technical/Visual Issue on the Node.js Website
+description: "Is something not working as expected? Did you encounter a glitch or a bug with the Website?"
 labels: [bug]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for wanting to report an issue you've found on the nodejs.org website. 
-        Please fill in the template below. If unsure about something, just do as best 
-        as you're able. If you are reporting a visual glitch, it will be much easier 
+        Thanks for reporting an issue you've found on the nodejs.org website.
+        Please fill in the template below. If unsure about something, just do as best
+        as you're able. If you are reporting a visual glitch, it will be much easier
         for us to fix it when you attach a screenshot as well.
   - type: input
     attributes:
-      label: 'URL:'
+      label: "URL:"
       description: The URL of the page you are reporting an issue on.
       placeholder: https://nodejs.org/en/
     validations:
       required: true
   - type: input
     attributes:
-      label: 'Browser Name:'
+      label: "Browser Name:"
       description: What kind of browser are you using?
       placeholder: Chrome
     validations:
       required: true
   - type: input
     attributes:
-      label: 'Browser Version:'
+      label: "Browser Version:"
       description: What version of browser are you using?
-      placeholder: '103.0.5060.134'
+      placeholder: "103.0.5060.134"
     validations:
       required: true
   - type: input
     attributes:
-      label: 'Operating System:'
+      label: "Operating System:"
       description: What kind of operation system are you using
         (Write it in full, with version number)?
-      placeholder: 'Windows 10, 21H2, 19044.1826'
+      placeholder: "Windows 10, 21H2, 19044.1826"
     validations:
       required: true
   - type: textarea
     attributes:
-      label: 'How to reproduce the issue:'
+      label: "How to reproduce the issue:"
       placeholder: |
-        1. What I did. 
-        2. What I expected to happen. 
+        1. What I did.
+        2. What I expected to happen.
         3. What I actually got.
         4. If possible, images or videos are welcome.
     validations:

@@ -46,3 +46,8 @@ body {
 [data-theme='dark'] .light-mode-only {
   display: none;
 }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}

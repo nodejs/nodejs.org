@@ -26,7 +26,7 @@ Pertama, buat direktori baru tempat semua file akan hidup. Di direktori ini buat
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.16.1"
+    "express": "^4.18.2"
   }
 }
 ```
@@ -66,10 +66,10 @@ touch Dockerfile
 
 Buka `Dockerfile` di editor teks favorit Anda
 
-Hal pertama yang perlu kita lakukan adalah menentukan dari image apa kita ingin membangun. Di sini kita akan menggunakan LTS (dukungan jangka panjang) versi `16` terbaru dari `node` tersedia dari [Docker Hub](https://hub.docker.com/_/node):
+Hal pertama yang perlu kita lakukan adalah menentukan dari gambar apa kita ingin membangun. Di sini kita akan menggunakan versi terbaru LTS (dukungan jangka panjang) `18` dari `node` tersedia dari [Docker Hub](https://hub.docker.com/_/node):
 
 ```docker
-FROM node:16
+FROM node:18
 ```
 
 Selanjutnya kita membuat direktori untuk menyimpan kode aplikasi di dalam image, ini akan menjadi direktori kerja untuk aplikasi Anda:
@@ -85,9 +85,9 @@ Image ini dilengkapi dengan Node.js dan NPM yang sudah terpasang, jadi hal berik
 # Menginstal dependensi aplikasi
 # Wildcard digunakan untuk memastikan package.json DAN package-lock.json disalin
 # jika tersedia (npm@5+)
-SALIN package*.json ./
+COPY package*.json ./
 
-JALANKAN npm install
+RUN npm install
 # Jika Anda membangun kode untuk produksi
 # Jalankan npm ci --omit=dev
 ```
@@ -116,7 +116,7 @@ CMD [ "node", "server.js" ]
 `Dockerfile` Anda sekarang akan terlihat seperti ini:
 
 ```docker
-DARI node:16
+FROM node:18
 
 # Buat direktori aplikasi
 WORKDIR /usr/src/app
@@ -124,14 +124,14 @@ WORKDIR /usr/src/app
 # Instal dependensi aplikasi
 # Wildcard digunakan untuk memastikan package.json DAN package-lock.json disalin
 # jika tersedia (npm@5+)
-Salin package*.json ./
+COPY package*.json ./
 
-JALANKAN npm install
+RUN npm install
 # Jika Anda membangun kode untuk produksi
-# JALANKAN npm ci --omit=dev
+# RUN npm ci --omit=dev
 
-# Bundle source aplikasi
-SALIN..
+# Bundle app source
+COPY . .
 
 EXPOSE 8080
 CMD [ "node", "server.js" ]
@@ -163,7 +163,7 @@ $ docker images
 
 # Example
 REPOSITORY                      TAG        ID              CREATED
-node                            16         3b66eb585643    5 days ago
+node                            18         78b037dbb659    2 weeks ago
 <your username>/node-web-app    latest     d64d3505b0d2    1 minute ago
 ```
 

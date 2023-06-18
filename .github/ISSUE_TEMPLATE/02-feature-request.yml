@@ -1,5 +1,5 @@
-name: 🚀 Feature Request For Node.js Website
-description: I have a suggestion (and may want to implement it)!
+name: Suggest a new feature or improvement for the Node.js Website
+description: "Do you have an idea or a suggestion and you want to share?"
 labels: [feature request]
 body:
   - type: markdown
@@ -8,8 +8,6 @@ body:
         You have an idea how to improve the site? That's awesome!
         Before submitting, please have a look at the existing issues if there's already
         something related to your suggestion.
-        We are also working on a relaunch at the moment, 
-        so it might be a good idea to check out our plans there as well: https://github.com/nodejs/nodejs.dev/issues/.
   - type: textarea
     attributes:
       label: 'Enter your suggestions in details:'
