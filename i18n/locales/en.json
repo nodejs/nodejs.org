@@ -82,5 +82,5 @@
   "components.downloads.downloadHeader.activeSection": "downloads",
   "components.downloads.downloadHeader.title": "Downloads",
   "components.downloads.downloadHeader.nodeVersion": "{lts, select, true {LATEST LTS}other {CURRENT}} VERSION {nodeVersion}",
-  "components.downloads.downloadHeader.npmVersion": "(includes npm)"
+  "components.downloads.downloadHeader.npmVersion": "(includes npm {npmVersion})"
 }

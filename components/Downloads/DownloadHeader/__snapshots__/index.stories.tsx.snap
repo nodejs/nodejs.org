@@ -9,7 +9,7 @@ exports[`Downloads/DownloadHeader Default smoke-test 1`] = `
     </span>
   </div>
   <div>
-    CURRENT VERSION v18.0.0
+    CURRENT VERSION v20.2.0
   </div>
 </div>
 <div class="DownloadHeader_downloadHeader__Dp85U">
@@ -17,7 +17,7 @@ exports[`Downloads/DownloadHeader Default smoke-test 1`] = `
     Downloads
   </div>
   <div class="DownloadHeader_npm__3bjKz">
-    (includes npm)
+    (includes npm 9.6.6)
   </div>
 </div>
 `;

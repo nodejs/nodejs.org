@@ -1,4 +1,4 @@
-import { createNodeReleasesData } from '../../../__fixtures__/page';
+import { createNodeReleases } from '../../../__fixtures__/nodeReleases';
 import DownloadHeader from '.';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
@@ -8,7 +8,7 @@ type Meta = MetaObj<typeof DownloadHeader>;
 export const Default: Story = {
   args: {
     release: {
-      ...createNodeReleasesData()[0],
+      ...createNodeReleases()[0],
     },
   },
 };

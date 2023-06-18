@@ -1,16 +1,14 @@
 import { FormattedMessage, useIntl } from 'react-intl';
 import styles from './index.module.scss';
 import SectionTitle from '../../Common/SectionTitle';
-import type { NodeReleaseData } from '../../../types';
+import type { NodeRelease } from '../../../types/releases';
 import type { FC } from 'react';
 
 type DownloadHeaderProps = {
-  release: NodeReleaseData;
+  release: NodeRelease;
 };
 
-const DownloadHeader: FC<DownloadHeaderProps> = ({
-  release,
-}: DownloadHeaderProps) => {
+const DownloadHeader: FC<DownloadHeaderProps> = ({ release }) => {
   const intl = useIntl();
   return (
     <>
@@ -26,7 +24,10 @@ const DownloadHeader: FC<DownloadHeaderProps> = ({
         <div>
           <FormattedMessage
             id="components.downloads.downloadHeader.nodeVersion"
-            values={{ lts: release.isLts, nodeVersion: release.fullVersion }}
+            values={{
+              lts: release.isLts,
+              nodeVersion: release.versionWithPrefix,
+            }}
           />
         </div>
       </div>
@@ -35,7 +36,10 @@ const DownloadHeader: FC<DownloadHeaderProps> = ({
           <FormattedMessage id="components.downloads.downloadHeader.title" />
         </div>
         <div className={styles.npm}>
-          <FormattedMessage id="components.downloads.downloadHeader.npmVersion" />
+          <FormattedMessage
+            id="components.downloads.downloadHeader.npmVersion"
+            values={{ npmVersion: release.npm }}
+          />
         </div>
       </div>
     </>
