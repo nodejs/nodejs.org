@@ -61,7 +61,7 @@ for getting things done and landing your contribution.
 2. Clone your fork using SSH, GitHub CLI, or HTTPS.
 
     ```bash
-    git clone git@github.com:<GITHUB_ID>/nodejs.org.git # SSH
+    git clone git@github.com:<YOUR_GITHUB_USERNAME>/nodejs.org.git # SSH
     git clone https://github.com/<GITHUB_ID>/nodejs.org.git # HTTPS
     gh repo clone <GITHUB_ID>/nodejs.org # GitHub CLI
     ```
