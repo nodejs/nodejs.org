@@ -40,7 +40,7 @@ const LinuxPanel: FC = () => {
   const [nvmVersion, setNvmVersion] = useState('');
 
   useEffect(() => {
-    getNvmLatestVersion().then(version => setNvmVersion(version));
+    getNvmLatestVersion().then(setNvmVersion);
   }, []);
 
   return <PureLinuxPanel nvmVersion={nvmVersion} />;
