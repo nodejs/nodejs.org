@@ -1,11 +1,10 @@
 import type { Preview } from '@storybook/react';
 import NextImage from 'next/image';
 import { ThemeProvider } from 'next-themes';
-import { NodeDataProvider } from '../providers/nodeDataProvider';
+import { NodeReleasesProvider } from '../providers/nodeReleasesProvider';
 import { LocaleProvider } from '../providers/localeProvider';
 import { openSans } from '../util/nextFonts';
 import BaseApp, { setAppFont } from '../next.app';
-import { pageProps } from './constants';
 
 import '../styles/index.scss';
 
@@ -34,11 +33,11 @@ export const decorators = [
     <BaseApp>
       <ThemeProvider>
         <LocaleProvider>
-          <NodeDataProvider nodeVersionData={pageProps.nodeVersionData}>
+          <NodeReleasesProvider>
             <div data-test-id="story-root">
               <Story />
             </div>
-          </NodeDataProvider>
+          </NodeReleasesProvider>
         </LocaleProvider>
       </ThemeProvider>
     </BaseApp>

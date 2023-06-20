@@ -1,30 +1,18 @@
 import type { UserOS } from '../types/userOS';
 
-type DownloadUrlByOS = {
-  userAgent?: string | undefined;
-  userOS: UserOS;
-  version: string;
-  bitness?: string;
-};
+export const downloadUrlByOS = (
+  versionWithPrefix: string,
+  os: UserOS,
+  bitness: number
+): string => {
+  const baseURL = `https://nodejs.org/dist/${versionWithPrefix}`;
 
-export const downloadUrlByOS = ({
-  userAgent,
-  userOS,
-  version,
-  bitness,
-}: DownloadUrlByOS): string => {
-  const baseURL = `https://nodejs.org/dist/${version}`;
-  const is64Bit =
-    bitness === '64' ||
-    userAgent?.includes('WOW64') ||
-    userAgent?.includes('Win64');
-
-  switch (userOS) {
+  switch (os) {
     case 'MAC':
-      return `${baseURL}/node-${version}.pkg`;
+      return `${baseURL}/node-${versionWithPrefix}.pkg`;
     case 'WIN':
-      return `${baseURL}/node-${version}-x${is64Bit ? 64 : 86}.msi`;
+      return `${baseURL}/node-${versionWithPrefix}-x${bitness}.msi`;
     default:
-      return `${baseURL}/node-${version}.tar.gz`;
+      return `${baseURL}/node-${versionWithPrefix}.tar.gz`;
   }
 };
