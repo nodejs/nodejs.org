@@ -14,7 +14,7 @@ export const PureLinuxPanel: FC<Props> = ({ nvmVersion }) => {
   const nvmInstallScriptUrl = `https://raw.githubusercontent.com/nvm-sh/nvm/${nvmVersion}/install.sh`;
 
   return (
-    <div>
+    <>
       <ShellBox textToCopy={`curl -o- ${nvmInstallScriptUrl} | bash`}>
         <span className={styles.installTextNoSelect}>$</span>
         <span className={styles.installTextCommand}>curl -o- </span>
@@ -32,7 +32,7 @@ export const PureLinuxPanel: FC<Props> = ({ nvmVersion }) => {
       >
         <FormattedMessage id="components.home.installTabs.readDocs" />
       </LocalizedLink>
-    </div>
+    </>
   );
 };
 

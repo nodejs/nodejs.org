@@ -58,54 +58,52 @@ exports[`Home/InstallTabs Default smoke-test 1`] = `
          id="panel:r0:0"
          aria-labelledby="tab:r0:0"
     >
-      <div>
-        <pre class="ShellBox_shellBox__n5v7E">
-          <div class="ShellBox_top__SxRc6">
-            <span>
-              SHELL
-            </span>
-            <button type="button">
-              copy
-            </button>
-          </div>
-          <code>
-            <span class="InstallTabs_installTextNoSelect__SWhsj">
-              $
-            </span>
-            <span class="InstallTabs_installTextCommand__OPlTv">
-              curl -o-
-            </span>
-            https://raw.githubusercontent.com/nvm-sh/nvm//install.sh
-            <span class="InstallTabs_installTextCommand__OPlTv">
-              | bash
-            </span>
-          </code>
-        </pre>
-        <pre class="ShellBox_shellBox__n5v7E">
-          <div class="ShellBox_top__SxRc6">
-            <span>
-              SHELL
-            </span>
-            <button type="button">
-              copy
-            </button>
-          </div>
-          <code>
-            <span class="InstallTabs_installTextNoSelect__SWhsj">
-              $
-            </span>
-            <span class="InstallTabs_installTextCommand__OPlTv">
-              nvm
-            </span>
-            install --lts
-          </code>
-        </pre>
-        <a class="InstallTabs_installDocsButton__upRsr"
-           href="/en/download/package-manager#nvm"
-        >
-          Read documentation
-        </a>
-      </div>
+      <pre class="ShellBox_shellBox__n5v7E">
+        <div class="ShellBox_top__SxRc6">
+          <span>
+            SHELL
+          </span>
+          <button type="button">
+            copy
+          </button>
+        </div>
+        <code>
+          <span class="InstallTabs_installTextNoSelect__SWhsj">
+            $
+          </span>
+          <span class="InstallTabs_installTextCommand__OPlTv">
+            curl -o-
+          </span>
+          https://raw.githubusercontent.com/nvm-sh/nvm//install.sh
+          <span class="InstallTabs_installTextCommand__OPlTv">
+            | bash
+          </span>
+        </code>
+      </pre>
+      <pre class="ShellBox_shellBox__n5v7E">
+        <div class="ShellBox_top__SxRc6">
+          <span>
+            SHELL
+          </span>
+          <button type="button">
+            copy
+          </button>
+        </div>
+        <code>
+          <span class="InstallTabs_installTextNoSelect__SWhsj">
+            $
+          </span>
+          <span class="InstallTabs_installTextCommand__OPlTv">
+            nvm
+          </span>
+          install --lts
+        </code>
+      </pre>
+      <a class="InstallTabs_installDocsButton__upRsr"
+         href="/en/download/package-manager#nvm"
+      >
+        Read documentation
+      </a>
     </div>
     <div class="InstallTabs_reactTabsTabPanel__Hq7es"
          role="tabpanel"

@@ -5,7 +5,7 @@ import styles from '../index.module.scss';
 import type { FC } from 'react';
 
 const WindowsPanel: FC = () => (
-  <div>
+  <>
     <ShellBox textToCopy="choco install nvs">
       <span className={styles.installTextNoSelect}>$</span>
       <span className={styles.installTextCommand}>choco </span>install nvs
@@ -25,7 +25,7 @@ const WindowsPanel: FC = () => (
     >
       <FormattedMessage id="components.home.installTabs.readDocs" />
     </LocalizedLink>
-  </div>
+  </>
 );
 
 export default WindowsPanel;
