@@ -1,11 +1,10 @@
 import type { Preview } from '@storybook/react';
 import NextImage from 'next/image';
 import { ThemeProvider } from 'next-themes';
-import { NodeDataProvider } from '../providers/nodeDataProvider';
+import { NodeReleasesProvider } from '../providers/nodeReleasesProvider';
 import { LocaleProvider } from '../providers/localeProvider';
 import { openSans } from '../util/nextFonts';
-import NextApp, { setAppFont } from '../next.app';
-import { pageProps } from './constants';
+import BaseApp, { setAppFont } from '../next.app';
 
 import '../styles/index.scss';
 
@@ -31,17 +30,17 @@ setAppFont(openSans.style.fontFamily);
 
 export const decorators = [
   Story => (
-    <NextApp>
+    <BaseApp>
       <ThemeProvider>
-        <LocaleProvider i18nData={pageProps.i18nData}>
-          <NodeDataProvider nodeVersionData={pageProps.nodeVersionData}>
+        <LocaleProvider>
+          <NodeReleasesProvider>
             <div data-test-id="story-root">
               <Story />
             </div>
-          </NodeDataProvider>
+          </NodeReleasesProvider>
         </LocaleProvider>
       </ThemeProvider>
-    </NextApp>
+    </BaseApp>
   ),
 ];
 

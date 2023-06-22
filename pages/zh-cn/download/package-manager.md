@@ -5,15 +5,15 @@ title: 通过包管理器安装 Node.js
 
 # 通过包管理器方式安装 Node.js
 
-***注意：*** 此页面上所有的安装包均有它们各自作者，**而非** Node.js 核心团队负责进行维护和支持。如遇任何问题，请直接向有关作者报告。 如你的问题被证实是因为 Node.js 的缺陷引发的，维护者将直接向 Node.js 汇报此问题。
+***注意：*** 此页面上所有的安装包均有它们各自作者，**非** Node.js 核心团队负责进行维护和支持。如遇任何问题，请直接向有关作者报告。 如你的问题被证实是因为 Node.js 的缺陷引发的，维护者将直接向 Node.js 汇报此问题。
 
 ---
 
 * [Alpine Linux](#alpine-linux)
 * [Android](#android)
 * [Arch Linux](#arch-linux)
-* [CentOS, Fedora 和 Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
-* [基于 Linux 发布的 Debian 和 Ubuntu](#debian-and-ubuntu-based-linux-distributions)
+* [CentOS, Fedora 和 Red Hat Enterprise Linux](#centos-fedora-和-red-hat-enterprise-linux)
+* [基于 Linux 发布的 Debian 和 Ubuntu](#基于-linux-发布的-debian-和-ubuntu)
 * [fnm](#fnm)
 * [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
@@ -25,8 +25,8 @@ title: 通过包管理器安装 Node.js
 * [nvm](#nvm)
 * [nvs](#nvs)
 * [OpenBSD](#openbsd)
-* [openSUSE 和 SLE](#opensuse-and-sle)
-* [SmartOS 和 illumos](#smartos-and-illumos)
+* [openSUSE 和 SLE](#opensuse-和-sle)
+* [SmartOS 和 illumos](#smartos-和-illumos)
 * [Snap](#snap)
 * [Solus](#solus)
 * [Void Linux](#void-linux)

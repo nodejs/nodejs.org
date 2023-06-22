@@ -33,10 +33,10 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2023-04-18T15:45:00.000Z",
-      "endDate": "2023-05-02:00:00.000Z",
-      "text": "Node.js v20 is now available!",
-      "link": "https://nodejs.org/en/blog/announcements/v20-release-announce/"
+      "startDate": "2023-06-20T14:30:00.000Z",
+      "endDate": "2023-06-27T00:00:00.000Z",
+      "text": "Security releases now available",
+      "link": "https://nodejs.org/en/blog/vulnerability/june-2023-security-releases/"
     }
   }
 }

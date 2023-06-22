@@ -1,14 +1,14 @@
 import DownloadList from './DownloadList';
 import { useNextraContext } from '../../hooks/useNextraContext';
-import type { NodeVersionData, LegacyDownloadsFrontMatter } from '../../types';
+import { WithNodeRelease } from '../../providers/withNodeRelease';
+import type { LegacyDownloadsFrontMatter, NodeRelease } from '../../types';
 import type { FC } from 'react';
-
-type SecondaryDownloadMatrixProps = Pick<NodeVersionData, 'node'>;
 
 // @TODO: Instead of using a static list it should be created dynamically. This is done on `nodejs.dev`
 // since this is a temporary solution and going to be fixed in the future.
-const SecondaryDownloadMatrix: FC<SecondaryDownloadMatrixProps> = ({
-  node,
+const SecondaryDownloadMatrix: FC<NodeRelease> = ({
+  versionWithPrefix,
+  status,
 }) => {
   const nextraContext = useNextraContext();
 
@@ -33,7 +33,7 @@ const SecondaryDownloadMatrix: FC<SecondaryDownloadMatrixProps> = ({
             <th>{additional.LinuxPowerSystems}</th>
             <td>
               <a
-                href={`https://nodejs.org/dist/${node}/node-${node}-linux-ppc64le.tar.xz`}
+                href={`https://nodejs.org/dist/${versionWithPrefix}/node-${versionWithPrefix}-linux-ppc64le.tar.xz`}
               >
                 64-bit
               </a>
@@ -44,7 +44,7 @@ const SecondaryDownloadMatrix: FC<SecondaryDownloadMatrixProps> = ({
             <th>{additional.LinuxSystemZ}</th>
             <td>
               <a
-                href={`https://nodejs.org/dist/${node}/node-${node}-linux-s390x.tar.xz`}
+                href={`https://nodejs.org/dist/${versionWithPrefix}/node-${versionWithPrefix}-linux-s390x.tar.xz`}
               >
                 64-bit
               </a>
@@ -54,7 +54,7 @@ const SecondaryDownloadMatrix: FC<SecondaryDownloadMatrixProps> = ({
             <th>{additional.AIXPowerSystems}</th>
             <td>
               <a
-                href={`https://nodejs.org/dist/${node}/node-${node}-aix-ppc64.tar.gz`}
+                href={`https://nodejs.org/dist/${versionWithPrefix}/node-${versionWithPrefix}-aix-ppc64.tar.gz`}
               >
                 64-bit
               </a>
@@ -63,7 +63,9 @@ const SecondaryDownloadMatrix: FC<SecondaryDownloadMatrixProps> = ({
         </tbody>
       </table>
 
-      <DownloadList node={node} />
+      <WithNodeRelease status={status}>
+        {({ release }) => <DownloadList {...release} />}
+      </WithNodeRelease>
     </section>
   );
 };

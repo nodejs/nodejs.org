@@ -1,16 +1,38 @@
 import BaseLayout from './BaseLayout';
 import Banner from '../components/Home/Banner';
 import HomeDownloadButton from '../components/Home/HomeDownloadButton';
+import { useDetectOS } from '../hooks/useDetectOS';
 import { useNextraContext } from '../hooks/useNextraContext';
-import { useNodeData } from '../hooks/useNodeData';
+import { WithNodeRelease } from '../providers/withNodeRelease';
 import type { FC, PropsWithChildren } from 'react';
+import type { UserOS } from '../types/userOS';
+
+const getDownloadHeadTextOS = (os: UserOS, bitness: number) => {
+  switch (os) {
+    case 'MAC':
+      return ' macOS';
+    case 'WIN':
+      return ` Windows (x${bitness})`;
+    case 'LINUX':
+      return ` Linux (x64)`;
+    case 'OTHER':
+      return '';
+  }
+};
 
 const IndexLayout: FC<PropsWithChildren> = ({ children }) => {
-  const { currentLtsVersion, currentNodeVersion } = useNodeData();
-
   const {
     frontMatter: { labels },
   } = useNextraContext();
+
+  const { os, bitness } = useDetectOS();
+
+  const downloadHeadTextPrefix =
+    os === 'OTHER' ? labels['download'] : labels['download-for'];
+  const downloadHeadText = `${downloadHeadTextPrefix}${getDownloadHeadTextOS(
+    os,
+    bitness
+  )}`;
 
   return (
     <BaseLayout>
@@ -20,12 +42,15 @@ const IndexLayout: FC<PropsWithChildren> = ({ children }) => {
 
           <Banner />
 
-          <h2 id="home-downloadhead" data-dl-local={labels['download-for']}>
-            {labels['download']}
-          </h2>
+          <h2>{downloadHeadText}</h2>
 
-          <HomeDownloadButton {...currentLtsVersion!} />
-          <HomeDownloadButton {...currentNodeVersion!} />
+          <WithNodeRelease status="Active LTS">
+            {({ release }) => <HomeDownloadButton {...release} />}
+          </WithNodeRelease>
+
+          <WithNodeRelease status="Current">
+            {({ release }) => <HomeDownloadButton {...release} />}
+          </WithNodeRelease>
 
           <p>
             {labels['version-schedule-prompt']}{' '}
