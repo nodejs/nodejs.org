@@ -27,7 +27,9 @@ describe('Navigation component', (): void => {
       </IntlProvider>
     );
 
-    await userEvent.click(screen.getByText('containers.navigation.title'));
+    await userEvent.click(
+      screen.getByText('components.navigation.navigationContainer')
+    );
 
     expect(mockHandler.mock.calls.length).toBe(1);
   });

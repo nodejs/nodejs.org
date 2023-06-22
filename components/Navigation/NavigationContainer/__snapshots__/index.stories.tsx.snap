@@ -11,6 +11,16 @@ exports[`Navigation/NavigationContainer Default smoke-test 1`] = `
   >
     Menu
   </button>
-  Navigation content
+  <ul>
+    <li>
+      Navigation item 1
+    </li>
+    <li>
+      Navigation item 2
+    </li>
+    <li>
+      Navigation item 3
+    </li>
+  </ul>
 </nav>
 `;

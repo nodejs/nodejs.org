@@ -1,16 +1,15 @@
 import { FormattedMessage } from 'react-intl';
 import classnames from 'classnames';
 import styles from './index.module.scss';
-import type { FC, ReactNode } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
-type Props = {
+type NavigationContainerProps = PropsWithChildren<{
   isOpen: boolean;
   label: string;
   toggleNavigation: () => void;
-  children: ReactNode;
-};
+}>;
 
-const NavigationContainer: FC<Props> = ({
+const NavigationContainer: FC<NavigationContainerProps> = ({
   label,
   isOpen,
   children,
@@ -28,7 +27,7 @@ const NavigationContainer: FC<Props> = ({
         onClick={toggleNavigation}
         aria-expanded={isOpen}
       >
-        <FormattedMessage id="containers.navigation.title" />
+        <FormattedMessage id="components.navigation.navigationContainer" />
       </button>
       {children}
     </nav>
