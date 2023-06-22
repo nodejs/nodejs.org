@@ -33,9 +33,9 @@
   ],
   "websiteBanners": {
     "index": {
-      "startDate": "2023-06-13T14:30:00.000Z",
-      "endDate": "2023-06-20T00:00:00.000Z",
-      "text": "New security releases to be made available June 20th, 2023",
+      "startDate": "2023-06-20T14:30:00.000Z",
+      "endDate": "2023-06-27T00:00:00.000Z",
+      "text": "Security releases now available",
       "link": "https://nodejs.org/en/blog/vulnerability/june-2023-security-releases/"
     }
   }
