@@ -1,11 +1,11 @@
+import { useState } from 'react';
 import NavigationContainer from './';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 import type { FC } from 'react';
 
-type Story = StoryObj<typeof NavigationContainer>;
 type Meta = MetaObj<typeof NavigationContainer>;
 
-const NavigationContent: FC = () => (
+const Children: FC = () => (
   <ul>
     <li>Navigation item 1</li>
     <li>Navigation item 2</li>
@@ -13,12 +13,18 @@ const NavigationContent: FC = () => (
   </ul>
 );
 
-export const Default: Story = {
-  args: {
-    isOpen: false,
-    label: 'Navigation',
-    children: <NavigationContent />,
-  },
+export const Default = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <NavigationContainer
+      label="Navigation"
+      isOpen={isOpen}
+      toggleNavigation={() => setIsOpen(!isOpen)}
+    >
+      <Children />
+    </NavigationContainer>
+  );
 };
 
 export default { component: NavigationContainer } as Meta;
