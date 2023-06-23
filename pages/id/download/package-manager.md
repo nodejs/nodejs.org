@@ -89,8 +89,6 @@ Misalnya, untuk menginstal Node.js 18:
 dnf module install nodejs:18/common
 ```
 
-Untuk CentOS/RHEL 7 Node.js tersedia melalui [Software Collections](https://www.softwarecollections.org/en/scls/?search=NodeJS).
-
 ### Alternatif
 
 Sumber daya ini menyediakan paket yang kompatibel dengan CentOS, Fedora, dan RHEL.

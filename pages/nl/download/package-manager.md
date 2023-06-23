@@ -90,8 +90,6 @@ Bijvoorbeeld, om Node.js 12 te installeren:
 dnf module install nodejs:12
 ```
 
-Voor CentOS/RHEL 7 is Node.js beschikbaar via [Software Collections](https://www.softwarecollections.org/en/scls/?search=NodeJS).
-
 ### Alternatieven
 
 Deze bronnen bieden packages aan die compatibel zijn met CentOS, Fedora en RHEL.
