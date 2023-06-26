@@ -61,8 +61,7 @@ const generateBlogPostsData = async () => {
   // and then parsing the frontmatter and source content and returning a minified object
   const postsPromise = filenames
     .map(name => ({ name, file: readFile(join(blogPath, name)) }))
-    .map(({ name, file }) => file.then(source => getFrontMatter(name, source)))
-    .sort();
+    .map(({ name, file }) => file.then(source => getFrontMatter(name, source)));
 
   // we await for all the work to be conclued and return a nice blog posts object
   const posts = await Promise.all(postsPromise);
