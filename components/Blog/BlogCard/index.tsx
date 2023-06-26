@@ -8,7 +8,7 @@ import type { FC } from 'react';
 const getBlogCategoryUrl = (category: string): string =>
   `${navigation.blog.link}/${category}/`;
 
-type BlogCardProps = Omit<BlogPost, 'file'>;
+type BlogCardProps = BlogPost & { readingTime: string };
 
 const BlogCard: FC<BlogCardProps> = ({
   title,

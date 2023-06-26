@@ -1,16 +1,12 @@
 import { writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import nodevu from '@nodevu/core';
-import * as helpers from './helpers.mjs';
-
-// this allows us to get the current module working directory
-const __dirname = helpers.getRelativePath(import.meta.url);
 
 // this is the destination path for where the JSON file will be written
-const jsonFilePath = join(__dirname, '../public/node-releases-data.json');
+const jsonFilePath = join(process.cwd(), 'public/node-releases-data.json');
 
 const generateNodeReleasesJson = async () => {
-  const nodevuOutput = await nodevu();
+  const nodevuOutput = await nodevu({ fetch: fetch });
 
   // Filter out those without documented support
   // Basically those not in schedule.json

@@ -4,6 +4,15 @@ import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { glob } from 'glob';
 
+/**
+ * We create a locale cache of Glob Promises
+ * to avoid reading the file system multiple times
+ * this is done since we don't need to constantly re-run the glob
+ * query as it is only needed once
+ *
+ * @type {Map<string, Promise<string>>} */
+const globCacheByPath = new Map();
+
 export const getMatchingRoutes = (route = '', matches = []) =>
   matches.some(match => route === match);
 
@@ -41,25 +50,11 @@ export const getRelativePath = path => fileURLToPath(new URL('.', path));
  * @returns {Promise<string[]>} a promise containing an array of paths
  */
 export const getMarkdownFiles = async (root, cwd, ignore = []) => {
-  return glob('**/*.{md,mdx}', { root, cwd, ignore })
-    .then(files => files.map(file => file.replace(/(\/index)?\.mdx?$/, '')))
-    .then(files => files.filter(file => file.length));
-};
+  const cacheKey = `${root}${cwd}${ignore.join('')}`;
 
-/**
- * This method is responsible for checking a combination
- * of extensions in a given list and tests a list of extensions
- * that could match that file.
- *
- * If no matching extension is found an empty string is returned
- * which signals that the find was not found
- *
- * @param {string} filename the filename without extension/suffixes
- * @param {string[]} extensions an array of suffixes to be tested
- * @returns {string} the filename with the first matching extension
- */
-export const checkFileExists = (filename, extensions) => {
-  const extension = extensions.find(e => existsSync(`${filename}${e}`));
+  if (!globCacheByPath.has(cacheKey)) {
+    globCacheByPath.set(cacheKey, glob('**/*.{md,mdx}', { root, cwd, ignore }));
+  }
 
-  return extension ? `${filename}${extension}` : '';
+  return globCacheByPath.get(cacheKey);
 };

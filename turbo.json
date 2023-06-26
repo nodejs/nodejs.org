@@ -17,11 +17,11 @@
     },
     "lint": {
       "inputs": [
-        "{components,hooks,layouts,providers,types,util,middlewares}/**/*.{ts,tsx}",
+        "{components,hooks,layouts,providers,types,util,middlewares,app,pages}/**/*.{ts,tsx}",
         "{components,layouts,pages,styles}/**/*.{css,sass,scss}",
         "{scripts,next-data}/**/*.{js,mjs}",
         "*.{md,mdx,json,ts,tsx,mjs,js}",
-        "pages/**/*.{tsx,ts,mdx,md}",
+        "pages/**/*.{mdx,md}",
         "i18n/**/.json",
         ".eslintrc",
         ".eslintignore",
@@ -49,11 +49,11 @@
     },
     "build": {
       "inputs": [
-        "{components,hooks,layouts,providers,types,util,middlewares}/**/*.{ts,tsx}",
+        "{components,hooks,layouts,providers,types,util,middlewares,app,pages}/**/*.{ts,tsx}",
         "{components,layouts,pages,styles}/**/*.{css,sass,scss}",
         "{scripts,next-data}/**/*.{js,mjs}",
         "*.{md,mdx,json,ts,tsx,mjs,js}",
-        "pages/**/*.{tsx,ts,mdx,md}"
+        "pages/**/*.{mdx,md}"
       ],
       "outputs": [".next/**", "!.next/cache/**"]
     },
@@ -62,10 +62,10 @@
     },
     "deploy": {
       "inputs": [
-        "{components,hooks,layouts,providers,types,util,middlewares}/**/*.{ts,tsx}",
+        "{components,hooks,layouts,providers,types,util,middlewares,app,pages}/**/*.{ts,tsx}",
         "{components,layouts,pages,styles}/**/*.{css,sass,scss}",
         "*.{md,mdx,json,ts,tsx,mjs,js}",
-        "pages/**/*.{tsx,ts,mdx,md}"
+        "pages/**/*.{mdx,md}"
       ],
       "outputs": [".next/**", "!.next/cache/**"]
     },
@@ -75,7 +75,7 @@
     "storybook:build": {
       "inputs": [
         "{components,hooks,layouts,providers,types,util}/**/*.{ts,tsx}",
-        "{components,layouts,pages,styles}/**/*.{css,sass,scss}"
+        "{components,layouts,styles}/**/*.{css,sass,scss}"
       ],
       "outputs": ["storybook-static/**"]
     }

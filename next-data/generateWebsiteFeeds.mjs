@@ -1,53 +1,48 @@
 'use strict';
 
-import { writeFile } from 'node:fs/promises';
-import { join } from 'node:path';
 import { Feed } from 'feed';
-import * as helpers from './helpers.mjs';
-
-// imports the global site config
-import siteConfig from '../site.json' assert { type: 'json' };
-
-// this allows us to get the current module working directory
-const __dirname = helpers.getRelativePath(import.meta.url);
-
-// gets the current blog path based on local module path
-const blogPath = join(__dirname, '../pages/en/blog');
-
-const publicFeedPath = join(__dirname, '../public/en/feed');
+import * as nextJson from '../next.json.mjs';
+import * as nextConstants from '../next.constants.mjs';
 
 /**
  * This method generates RSS website feeds based on the current website configuration
  * and the current blog data that is available
  *
- * @param {ReturnType<import('./getBlogData.mjs').default>} cachedBlogData
+ * @param {import('../types').BlogData} blogData
  */
-const generateWebsiteFeeds = cachedBlogData =>
-  siteConfig.rssFeeds.forEach(metadata => {
-    const feed = new Feed({
-      title: metadata.title,
-      description: metadata.description || siteConfig.description,
-      id: metadata.link,
-      link: metadata.link,
-      language: 'en',
-    });
-
-    const blogCategoryOrAll = metadata.blogCategory
-      ? `/en/blog/${metadata.blogCategory}`
-      : '/en/blog';
-
-    const mapBlogPostToFeed = post =>
-      feed.addItem({
-        title: post.title,
-        id: `https://nodejs.org/en${post.slug}`,
-        link: `https://nodejs.org/en${post.slug}`,
-        author: post.author,
-        date: new Date(post.date),
+const generateWebsiteFeeds = ({ posts }) => {
+  /**
+   * This generates all the Website RSS Feeds that are used for the website
+   *
+   * @type {[string, Feed][]}
+   */
+  const websiteFeeds = nextJson.siteConfig.rssFeeds.map(
+    ({ category, title, description, file }) => {
+      const feed = new Feed({
+        id: file,
+        title: title,
+        language: 'en',
+        link: `${nextConstants.BASE_PATH}/en/feed/${file}`,
+        description: description || nextJson.siteConfig.description,
       });
 
-    cachedBlogData(blogCategoryOrAll, !metadata.blogCategory)
-      .then(({ blogData }) => blogData.posts.forEach(mapBlogPostToFeed))
-      .then(() => writeFile(join(publicFeedPath, metadata.file), feed.rss2()));
-  });
+      const blogFeedEntries = posts
+        .filter(post => !category || post.category === category)
+        .map(post => ({
+          id: post.slug,
+          title: post.title,
+          author: post.author,
+          date: new Date(post.date),
+          link: `${nextConstants.BASE_PATH}/en${post.slug}`,
+        }));
+
+      blogFeedEntries.forEach(entry => feed.addItem(entry));
+
+      return [file, feed];
+    }
+  );
+
+  return new Map(websiteFeeds);
+};
 
 export default generateWebsiteFeeds;

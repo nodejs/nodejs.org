@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="https://nodejs.org">nodejs.org</a> website built using Nextra (Next.js) with TypeScript, SCSS and MDXv2
+  <a href="https://nodejs.org">nodejs.org</a> website built using Next.js with TypeScript, SCSS and MDXv2
 </p>
 
 <p align="center">
@@ -31,7 +31,7 @@
 
 ## What is this repo?
 
-[Nodejs.org](https://nodejs.org/) by the [OpenJS Foundation](https://openjsf.org/) is the official website for the Node.js® JavaScript runtime. This repo is the source code for the website. It is build using [Nextra](https://nextra.site), a Next.js based static site generator.
+[Nodejs.org](https://nodejs.org/) by the [OpenJS Foundation](https://openjsf.org/) is the official website for the Node.js® JavaScript runtime. This repo is the source code for the website. It is build using [Next.js](https://nextjs.org) a React Framework.
 
 ### Quick-Start Locally
 

@@ -1,11 +1,20 @@
+import { useMemo } from 'react';
 import BaseLayout from './BaseLayout';
 import LocalizedLink from '../components/LocalizedLink';
-import { useNextraContext } from '../hooks/useNextraContext';
+import { useLayoutContext } from '../hooks/useLayoutContext';
+import { useBlogData } from '../hooks/useBlogData';
 import { getTimeComponent } from '../util/getTimeComponent';
 import type { FC, PropsWithChildren } from 'react';
+import type { BlogPost } from '../types';
 
 const CategoryIndexLayout: FC<PropsWithChildren> = ({ children }) => {
-  const { blogData, frontMatter } = useNextraContext();
+  const { frontMatter } = useLayoutContext();
+  const { getPostsByCategory, currentCategory } = useBlogData();
+
+  const posts = useMemo(
+    () => getPostsByCategory(currentCategory),
+    [currentCategory, getPostsByCategory]
+  );
 
   return (
     <BaseLayout>
@@ -13,7 +22,7 @@ const CategoryIndexLayout: FC<PropsWithChildren> = ({ children }) => {
         <h2>{frontMatter.title}</h2>
 
         <ul className="blog-index">
-          {blogData?.posts.map(post => (
+          {posts.map((post: BlogPost) => (
             <li key={post.slug}>
               {getTimeComponent(post.date.toString(), '%d %b %y')}
               <LocalizedLink href={post.slug}>{post.title}</LocalizedLink>

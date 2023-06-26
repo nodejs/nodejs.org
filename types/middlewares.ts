@@ -15,3 +15,10 @@ export type CustomMiddleware = {
   matcher: (request: NextRequest, locale: NextMiddlewareLocale) => boolean;
   routes: (string | RegExp)[];
 };
+
+export type RouteSegment = {
+  filename: string;
+  localised: boolean;
+  routeWithLocale: string;
+  pathname: string;
+};

@@ -23,12 +23,12 @@
     {
       "title": "Node.js Blog: Releases",
       "file": "releases.xml",
-      "blogCategory": "release"
+      "category": "release"
     },
     {
       "title": "Node.js Blog: Vulnerability Reports",
       "file": "vulnerability.xml",
-      "blogCategory": "vulnerability"
+      "category": "vulnerability"
     }
   ],
   "websiteBanners": {
