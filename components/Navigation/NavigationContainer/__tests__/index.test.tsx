@@ -11,8 +11,6 @@ const NavigationContent: FC = () => (
     <li>Navigation item 3</li>
   </ul>
 );
-const label: string = 'Navigation';
-let isOpen: boolean = false;
 
 describe('Navigation component', (): void => {
   it('utilizes click handler correctly', async () => {
