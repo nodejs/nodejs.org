@@ -5,4 +5,4 @@ DIR=$(cd `dirname $0` && pwd -P)
 
 echo "[]" > $DIR/../public/node-releases-data.json
 
-git add $DIR/../public/node-releases-data.json
+git add --sparse $DIR/../public/node-releases-data.json

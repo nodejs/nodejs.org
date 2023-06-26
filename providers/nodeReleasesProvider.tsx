@@ -2,21 +2,7 @@ import { createContext, useMemo } from 'react';
 import nodeReleasesData from '../public/node-releases-data.json';
 import { getNodeReleaseStatus } from '../util/nodeRelease';
 import type { FC, PropsWithChildren } from 'react';
-import type { NodeRelease } from '../types';
-
-type NodeReleaseJSON = {
-  major: number;
-  version: string;
-  codename?: string;
-  currentStart: string;
-  ltsStart?: string;
-  maintenanceStart?: string;
-  endOfLife: string;
-  npm?: string;
-  v8?: string;
-  releaseDate?: string;
-  modules?: string;
-};
+import type { NodeReleaseSource, NodeRelease } from '../types';
 
 export const NodeReleasesContext = createContext<NodeRelease[]>([]);
 
@@ -24,7 +10,7 @@ export const NodeReleasesProvider: FC<PropsWithChildren> = ({ children }) => {
   const releases = useMemo(() => {
     const now = new Date();
 
-    return nodeReleasesData.map((raw: NodeReleaseJSON) => {
+    return nodeReleasesData.map((raw: NodeReleaseSource) => {
       const support = {
         currentStart: raw.currentStart,
         ltsStart: raw.ltsStart,
