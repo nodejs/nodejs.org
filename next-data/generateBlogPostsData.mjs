@@ -71,7 +71,7 @@ const generateBlogPostsData = async () => {
     JSON.stringify({
       pagination: [...blogMetadata.pagination].sort(),
       categories: [...blogMetadata.categories].sort(),
-      posts,
+      posts: posts.sort((a, b) => b.date - a.date),
     })
   );
 };
