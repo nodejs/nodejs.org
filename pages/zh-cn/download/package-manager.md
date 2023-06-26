@@ -90,8 +90,6 @@ dnf module list nodejs
 dnf module install nodejs:18/common
 ```
 
-对于CentOS/RHEL 7 Node.js，可通过 [软件收藏](https://www.softwarecollections.org/en/scls/?search=NodeJS) 获取。
-
 ### 可替换项
 
 这些资源提供了与CentOS、Fedora和RHEL兼容的包。
