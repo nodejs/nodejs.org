@@ -45,8 +45,8 @@ const getCurrentTranslations = locale => ({
 });
 
 export {
-  defaultLocale,
   availableLocales,
+  defaultLocale,
   getCurrentLocale,
   getCurrentTranslations,
 };
