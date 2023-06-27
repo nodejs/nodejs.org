@@ -5,8 +5,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint:
-    name: Lint
+  lint-and-format:
+    name: Lint and format
     runs-on: ubuntu-latest
 
     steps:
@@ -36,6 +36,13 @@ jobs:
 
       - name: Run Linting
         run: npx turbo lint
+        env:
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+          NEXT_TELEMETRY_DISABLED: 1
+
+      - name: Run prettier
+        run: npx turbo prettier
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
