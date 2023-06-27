@@ -13,5 +13,12 @@ export type CustomMiddleware = {
     locale: NextMiddlewareLocale
   ) => Promise<NextResponse>;
   matcher: (request: NextRequest, locale: NextMiddlewareLocale) => boolean;
-  routes: string[];
+  routes: (string | RegExp)[];
+};
+
+export type RouteSegment = {
+  filename: string;
+  localised: boolean;
+  routeWithLocale: string;
+  pathname: string;
 };

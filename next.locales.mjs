@@ -1,13 +1,12 @@
-// Imports the global i18n config as a static import
-import localeConfig from './i18n/config.json' assert { type: 'json' };
+'use strict';
 
-// Import the full Translation manifest for the Application
+import * as nextJson from './next.json.mjs';
 import translations from './i18n/locales/index.mjs';
 
 // As set of available and enabled locales for the website
 // This is used for allowing us to redirect the user to any
 // of the available locales that we have enabled on the website
-const availableLocales = localeConfig.filter(locale => locale.enabled);
+const availableLocales = nextJson.localeConfig.filter(locale => locale.enabled);
 
 // This provides the default locale information for the Next.js Application
 // This is marked by the unique `locale.default` property on the `en` locale

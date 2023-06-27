@@ -1,15 +1,15 @@
 import BaseLayout from './BaseLayout';
 import PrimaryDownloadMatrix from '../components/Downloads/PrimaryDownloadMatrix';
 import SecondaryDownloadMatrix from '../components/Downloads/SecondaryDownloadMatrix';
-import { useNextraContext } from '../hooks/useNextraContext';
+import { useLayoutContext } from '../hooks/useLayoutContext';
 import { WithNodeRelease } from '../providers/withNodeRelease';
 import type { FC, PropsWithChildren } from 'react';
 import type { LegacyDownloadsFrontMatter } from '../types';
 
 const DownloadCurrentLayout: FC<PropsWithChildren> = ({ children }) => {
-  const nextraContext = useNextraContext();
+  const { frontMatter } = useLayoutContext();
 
-  const { downloads } = nextraContext.frontMatter as LegacyDownloadsFrontMatter;
+  const { downloads } = frontMatter as LegacyDownloadsFrontMatter;
 
   return (
     <BaseLayout>

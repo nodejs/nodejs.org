@@ -1,5 +1,5 @@
 name: Suggest a new feature or improvement for the Node.js Website
-description: "Do you have an idea or a suggestion and you want to share?"
+description: 'Do you have an idea or a suggestion and you want to share?'
 labels: [feature request]
 body:
   - type: markdown

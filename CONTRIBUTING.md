@@ -32,24 +32,22 @@ Note that regular contributors do not need to become "Collaborators". Any contri
 is a formality that comes with obligations.
 
 If you're an active contributor seeking to become a member we recommend reaching out to one of the existing Team Members for guidance.
- 
+
 <details> 
   <summary><b>What's the process for becoming a Collaborator?</b></summary>
 
-  - You must be actively contributing to this repository.
-  - Contributions must include significant code reviews or code contributions.
-  - A nomination must be done by an existing Team Member of the Website Team with an Issue
-    - The Issue must explain and describe why the nominated person is a good addition to the team
-    - The Issue must contain links to relevant contributions through:
-      - Code Reviews
-      - Comments on Issues and PRs
-      - Authoring of PRs or Issues
-      - Comments or Authoring of Discussions
-  - The nomination must have at least 3 existing members of the Website Team to be in agreement with the nomination.
-    - This can be done through commenting with "agreement" (showing support) or reacting to the Issue with a :+1: (Thumbs-up Emoji)
-  - The Issue must be open for at least 72 hours without an objection from an existing member of the Website Team
-    - The nomination cannot pass until all open discordances/objections are resolved.
-    - Objections coming from the TSC or Core Collaborators are also counted as valid objections.
+- You must be actively contributing to this repository.
+- Contributions must include significant code reviews or code contributions.
+- A nomination must be done by an existing Team Member of the Website Team with an Issue
+  - The Issue must explain and describe why the nominated person is a good addition to the team
+  - The Issue must contain links to relevant contributions through:
+    - Code Reviews
+    - Comments on Issues and PRs
+    - Authoring of PRs or Issues
+    - Comments or Authoring of Discussions
+- The nomination must have at least 3 existing members of the Website Team to be in agreement with the nomination.
+  - This can be done through commenting with "agreement" (showing support) or reacting to the Issue with a :+1: (Thumbs-up Emoji)
+- The Issue must be open for at least 72 hours without an objection from an existing member of the Website Team - The nomination cannot pass until all open discordances/objections are resolved. - Objections coming from the TSC or Core Collaborators are also counted as valid objections.
 </details>
 
 # Getting started
@@ -60,60 +58,60 @@ for getting things done and landing your contribution.
 1. Click the fork button in the top right to clone the [nodejs.org repository](https://github.com/nodejs/nodejs.org/fork)
 2. Clone your fork using SSH, GitHub CLI, or HTTPS.
 
-    ```bash
-    git clone git@github.com:<YOUR_GITHUB_USERNAME>/nodejs.org.git # SSH
-    git clone https://github.com/<GITHUB_ID>/nodejs.org.git # HTTPS
-    gh repo clone <GITHUB_ID>/nodejs.org # GitHub CLI
-    ```
+   ```bash
+   git clone git@github.com:<YOUR_GITHUB_USERNAME>/nodejs.org.git # SSH
+   git clone https://github.com/<YOUR_GITHUB_USERNAME>/nodejs.org.git # HTTPS
+   gh repo clone <YOUR_GITHUB_USERNAME>/nodejs.org # GitHub CLI
+   ```
 
 3. Change into the nodejs.org directory.
 
-    ```bash
-    cd nodejs.org
-    ```
+   ```bash
+   cd nodejs.org
+   ```
 
 4. Create a remote for keeping your fork as well as your local clone up-to-date.
 
-    ```bash
-    git remote add upstream git@github.com:nodejs/nodejs.org.git # SSH
-    git remote add upstream https://github.com/nodejs/nodejs.org.git # HTTPS
-    gh repo sync nodejs/nodejs.org # GitHub CLI
-    ```
+   ```bash
+   git remote add upstream git@github.com:nodejs/nodejs.org.git # SSH
+   git remote add upstream https://github.com/nodejs/nodejs.org.git # HTTPS
+   gh repo sync nodejs/nodejs.org # GitHub CLI
+   ```
 
 5. Create a new branch for your work.
 
-    ```bash
-    git checkout -b name-of-your-branch
-    ```
+   ```bash
+   git checkout -b name-of-your-branch
+   ```
 
 6. Run the following to install the dependencies and start a local preview of your work.
 
-    ```bash
-    npm ci # installs this project's dependencies
-    npx turbo serve # starts a preview of your local changes
-    ```
+   ```bash
+   npm ci # installs this project's dependencies
+   npx turbo serve # starts a preview of your local changes
+   ```
 
 7. Perform a merge to sync your current branch with the upstream branch.
 
-    ```bash
-    git fetch upstream
-    git merge upstream/main
-    ```
+   ```bash
+   git fetch upstream
+   git merge upstream/main
+   ```
 
 8. Run `npx turbo format` to confirm that linting, and formatting are passing.
 
-    ```bash
-    npx turbo format
-    ```
+   ```bash
+   npx turbo format
+   ```
 
-9.  Once you're happy with your changes, add and commit them to your branch, then push the branch to your fork.
+9. Once you're happy with your changes, add and commit them to your branch, then push the branch to your fork.
 
-    ```bash
-    cd ~/nodejs.org
-    git add .
-    git commit -m "some message"
-    git push -u origin name-of-your-branch
-    ```
+   ```bash
+   cd ~/nodejs.org
+   git add .
+   git commit -m "some message"
+   git push -u origin name-of-your-branch
+   ```
 
 10. Create a Pull Request.
 
@@ -126,12 +124,12 @@ This repository contains several scripts and commands for performing numerous ta
 <details> 
   <summary>Commands for Running & Building the Website</summary>
 
-  - `npx turbo serve` runs Next.js's Local Development Server, listening by default on `http://localhost:3000/`.
-  - `npx turbo build` builds the Application on Production mode. The output is by default within `.next` folder.
-    - This is used for the Node.js Vercel Deployments (Preview & Production)
-  - `npx turbo deploy` builds the Application on Export Production Mode. The output is by default within `build` folder.
-    - This is used for the Node.js Legacy Website Server (DigitalOcean)
-  - `npx turbo start` starts a web server running serving the built content from `npx turbo build`
+- `npx turbo serve` runs Next.js's Local Development Server, listening by default on `http://localhost:3000/`.
+- `npx turbo build` builds the Application on Production mode. The output is by default within `.next` folder.
+  - This is used for the Node.js Vercel Deployments (Preview & Production)
+- `npx turbo deploy` builds the Application on Export Production Mode. The output is by default within `build` folder.
+  - This is used for the Node.js Legacy Website Server (DigitalOcean)
+- `npx turbo start` starts a web server running serving the built content from `npx turbo build`
 </details>
 
 <details> 
@@ -186,7 +184,7 @@ We recommend a read on our [Collaborator Guide](COLLABORATOR_GUIDE.md#accepting-
     - The person that is fast-tracking the PR (adding the label) must also comment on the PR that they're requesting the PR to be fast-tracked
     - The comment must mention `@nodejs/website` and must have at least one 👍 (or any other sort of approval reaction) if the person fast-tracking the PR is the author of the PR.
     - Fast-tracking is only allowed for small bug fixes, small feature changes, localisation changes, or other sorts of non-critical/highly-impacting changes that are not covered by the previous rule that allows PRs to be merged immediately.
-    - Fast-tracking cannot be used for updates on the `COLLABORATOR_GUIDE.md`,  CONTRIBUTING.md` guide, `CODEOWNERS`, GitHub Actions or any security-impacting file or document that changes the governing policies of this repository.
+    - Fast-tracking cannot be used for updates on the `COLLABORATOR_GUIDE.md`, `CONTRIBUTING.md` guide, `CODEOWNERS`, GitHub Actions, or any security-impacting file or document that changes the governing policies of this repository.
 - There must be no objections after a 48-hour period (Or 72 hours if the PR was authored on the weekend).
 - At least one approval is required for any PR to be merged.
 - Tests must be included in Pull Requests for new features or bug fixes. If any test(s) are failing, you are responsible for fixing them.
