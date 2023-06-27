@@ -63,7 +63,7 @@ const generateBlogPostsData = async () => {
     .map(name => ({ name, file: readFile(join(blogPath, name)) }))
     .map(({ name, file }) => file.then(source => getFrontMatter(name, source)));
 
-  // we await for all the work to be conclued and return a nice blog posts object
+  // we await for all the work to be concluded and return a nice blog posts object
   const posts = await Promise.all(postsPromise);
 
   return writeFile(

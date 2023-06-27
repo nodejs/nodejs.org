@@ -14,7 +14,7 @@ export const ENABLE_STATIC_EXPORT =
   process.env.NEXT_STATIC_EXPORT === true;
 
 /**
- * Supports a manuall override of the base path of the Website
+ * Supports a manual override of the base path of the Website
  *
  * This is useful when running the deployment on a subdirectory
  * of a domain, such as when hosted on GitHub Pages.

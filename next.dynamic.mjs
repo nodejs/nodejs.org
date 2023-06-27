@@ -16,10 +16,10 @@ const getPathsByLanguage = async (
   nextData.helpers.getMarkdownFiles(process.cwd(), `pages/${locale}`, ignored);
 
 /**
- * This method is responsible for generating a Collection of all availalbe paths that
+ * This method is responsible for generating a Collection of all available paths that
  * are served by the Website dynamically based on the Markdown pages on `pages/` folder.
  *
- * Each Collection is associated to its Locale Code and containins a subset of Dictionaries
+ * Each Collection is associated to its Locale Code and contains a subset of Dictionaries
  * that inform which pages are provided by that language and which not.
  *
  * The non-localised pages will still be served but our runtime Markdown loader `getMarkdownFile`

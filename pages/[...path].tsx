@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps<
   // to be passed to the base page (`DynamicPage`) which will render the Markdown
   const staticProps = await nextDynamic.getStaticProps(source, filename);
 
-  // This checks if either we already the route does not exist or if we should ignore
+  // This checks if either we already determined the route does not exist or if we should ignore
   // this route because it's on our ignored list
   staticProps.notFound = staticProps.notFound || shouldIgnoreRoute(pathname);
 

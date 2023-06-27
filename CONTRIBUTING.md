@@ -60,8 +60,8 @@ for getting things done and landing your contribution.
 
    ```bash
    git clone git@github.com:<YOUR_GITHUB_USERNAME>/nodejs.org.git # SSH
-   git clone https://github.com/<GITHUB_ID>/nodejs.org.git # HTTPS
-   gh repo clone <GITHUB_ID>/nodejs.org # GitHub CLI
+   git clone https://github.com/<YOUR_GITHUB_USERNAME>/nodejs.org.git # HTTPS
+   gh repo clone <YOUR_GITHUB_USERNAME>/nodejs.org # GitHub CLI
    ```
 
 3. Change into the nodejs.org directory.
@@ -184,7 +184,7 @@ We recommend a read on our [Collaborator Guide](COLLABORATOR_GUIDE.md#accepting-
     - The person that is fast-tracking the PR (adding the label) must also comment on the PR that they're requesting the PR to be fast-tracked
     - The comment must mention `@nodejs/website` and must have at least one 👍 (or any other sort of approval reaction) if the person fast-tracking the PR is the author of the PR.
     - Fast-tracking is only allowed for small bug fixes, small feature changes, localisation changes, or other sorts of non-critical/highly-impacting changes that are not covered by the previous rule that allows PRs to be merged immediately.
-    - Fast-tracking cannot be used for updates on the `COLLABORATOR_GUIDE.md`, CONTRIBUTING.md`guide,`CODEOWNERS`, GitHub Actions or any security-impacting file or document that changes the governing policies of this repository.
+    - Fast-tracking cannot be used for updates on the `COLLABORATOR_GUIDE.md`, `CONTRIBUTING.md` guide, `CODEOWNERS`, GitHub Actions, or any security-impacting file or document that changes the governing policies of this repository.
 - There must be no objections after a 48-hour period (Or 72 hours if the PR was authored on the weekend).
 - At least one approval is required for any PR to be merged.
 - Tests must be included in Pull Requests for new features or bug fixes. If any test(s) are failing, you are responsible for fixing them.
