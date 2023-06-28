@@ -21,7 +21,7 @@ describe('Navigation component', (): void => {
         <NavigationContainer
           isOpen={false}
           toggleNavigation={mockHandler}
-          label={label}
+          label="Navigation"
         >
           <NavigationContent />
         </NavigationContainer>
