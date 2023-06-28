@@ -19,7 +19,7 @@ describe('Navigation component', (): void => {
     render(
       <IntlProvider locale="en" onError={() => {}}>
         <NavigationContainer
-          isOpen={isOpen}
+          isOpen={false}
           toggleNavigation={mockHandler}
           label={label}
         >
