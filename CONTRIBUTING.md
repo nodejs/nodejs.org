@@ -162,6 +162,12 @@ Commits should be signed. You can read more about [Commit Signing][] here.
 - Commit messages **must** start with a capital letter
 - Commit messages **must not** end with a period `.`
 
+### Pre-commit Hooks
+
+This project uses [husky][] for pre-commit hooks.
+
+Some JSON files are generated during Build time with empty files as placeholders. Build time happens when you run `npx turbo serve` or `npx turbo build`. We don't want to commit those unnecessary changes. Since these files exist in the repository, `.gitignore` won't work for them. As the workaround, we have a pre-commit hook to discard those changes.
+
 # Pull Request Policy
 
 This policy governs how contributions should land within this repository. The lines below state the checks and policies to be followed before merging and on the act of merging.
@@ -217,3 +223,4 @@ By contributing to this project, I certify that:
 [`squash`]: https://help.github.com/en/articles/about-pull-request-merges#squash-and-merge-your-pull-request-commits
 [Conventional Commits]: https://www.conventionalcommits.org/
 [Commit Signing]: https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits
+[husky]: https://typicode.github.io/husky/

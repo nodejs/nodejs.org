@@ -1,13 +1,13 @@
 import { Analytics } from '@vercel/analytics/react';
 import { NodeReleasesProvider } from '../providers/nodeReleasesProvider';
 import { LocaleProvider } from '../providers/localeProvider';
-import { sourceSansPro } from '../util/nextFonts';
+import { sourceSans } from '../util/nextFonts';
 import BaseApp, { setAppFont } from '../next.app';
 
 import '../styles/old/index.scss';
 
 export default function App({ Component, pageProps }) {
-  setAppFont(sourceSansPro.style.fontFamily);
+  setAppFont(sourceSans.style.fontFamily);
   return (
     <BaseApp>
       <LocaleProvider>

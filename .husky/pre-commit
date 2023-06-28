@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+DIR=$(cd `dirname $0` && pwd -P)
+
+echo "[]" > $DIR/../public/node-releases-data.json
+
+git add --sparse $DIR/../public/node-releases-data.json

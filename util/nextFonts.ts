@@ -1,6 +1,6 @@
-import { Source_Sans_Pro, Open_Sans } from 'next/font/google';
+import { Source_Sans_3, Open_Sans } from 'next/font/google';
 
-const sourceSansPro = Source_Sans_Pro({
+const sourceSans = Source_Sans_3({
   weight: ['400', '600'],
   display: 'fallback',
   subsets: ['latin'],
@@ -12,4 +12,4 @@ const openSans = Open_Sans({
   subsets: ['latin'],
 });
 
-export { sourceSansPro, openSans };
+export { sourceSans, openSans };

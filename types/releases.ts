@@ -16,21 +16,24 @@ export type NodeReleaseStatus =
   | 'End-of-life'
   | 'Pending';
 
-export interface NodeRelease {
+export interface NodeReleaseSource {
   major: number;
   version: string;
-  versionWithPrefix: string;
-  codename: string;
-  isLts: boolean;
-  status: NodeReleaseStatus;
+  codename?: string;
   currentStart: string;
   ltsStart?: string;
   maintenanceStart?: string;
   endOfLife: string;
-  npm: string;
-  v8: string;
-  releaseDate: string;
-  modules: string;
+  npm?: string;
+  v8?: string;
+  releaseDate?: string;
+  modules?: string;
+}
+
+export interface NodeRelease extends NodeReleaseSource {
+  versionWithPrefix: string;
+  isLts: boolean;
+  status: NodeReleaseStatus;
 }
 
 export type NodeReleaseSupport = Pick<
