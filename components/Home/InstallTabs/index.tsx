@@ -14,31 +14,21 @@ const tabPanelStyles = {
 };
 
 const getOSPanel: FC<UserOS> = userOS => {
-  const panels: ReactElement[] = [];
+  const createPanel = (...components: ReactNode[]) => {
+  return components.map((comp) => (
+    <TabPanel {...tabPanelStyles}>{comp}</TabPanel>
+  ));
+};
 
-  const addPanel = (component: ReactNode) => {
-    panels.push(<TabPanel {...tabPanelStyles}>{component}</TabPanel>);
-  };
+switch (userOS) {
+  case "MAC":
+    return createPanel(<MacOSPanel />, <WindowsPanel />, <LinuxPanel />);
+  case "LINUX":
+    return createPanel(<LinuxPanel />, <MacOSPanel />, <WindowsPanel />);
+  default:
+    return createPanel(<WindowsPanel />, <MacOSPanel />, <LinuxPanel />);
+}
 
-  switch (userOS) {
-    case 'MAC':
-      addPanel(<MacOSPanel />);
-      addPanel(<WindowsPanel />);
-      addPanel(<LinuxPanel />);
-      break;
-    case 'LINUX':
-      addPanel(<LinuxPanel />);
-      addPanel(<MacOSPanel />);
-      addPanel(<WindowsPanel />);
-      break;
-    default:
-      addPanel(<WindowsPanel />);
-      addPanel(<MacOSPanel />);
-      addPanel(<LinuxPanel />);
-      break;
-  }
-
-  return <>{panels}</>;
 };
 
 const os = {
