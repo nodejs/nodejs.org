@@ -2,7 +2,7 @@ import BaseLayout from './BaseLayout';
 import Banner from '../components/Home/Banner';
 import HomeDownloadButton from '../components/Home/HomeDownloadButton';
 import { useDetectOS } from '../hooks/useDetectOS';
-import { useNextraContext } from '../hooks/useNextraContext';
+import { useLayoutContext } from '../hooks/useLayoutContext';
 import { WithNodeRelease } from '../providers/withNodeRelease';
 import type { FC, PropsWithChildren } from 'react';
 import type { UserOS } from '../types/userOS';
@@ -23,12 +23,13 @@ const getDownloadHeadTextOS = (os: UserOS, bitness: number) => {
 const IndexLayout: FC<PropsWithChildren> = ({ children }) => {
   const {
     frontMatter: { labels },
-  } = useNextraContext();
+  } = useLayoutContext();
 
   const { os, bitness } = useDetectOS();
 
   const downloadHeadTextPrefix =
-    os === 'OTHER' ? labels['download'] : labels['download-for'];
+    os === 'OTHER' ? labels?.['download'] : labels?.['download-for'];
+
   const downloadHeadText = `${downloadHeadTextPrefix}${getDownloadHeadTextOS(
     os,
     bitness
@@ -53,9 +54,9 @@ const IndexLayout: FC<PropsWithChildren> = ({ children }) => {
           </WithNodeRelease>
 
           <p>
-            {labels['version-schedule-prompt']}{' '}
+            {labels?.['version-schedule-prompt']}{' '}
             <a href="https://github.com/nodejs/release#release-schedule">
-              {labels['version-schedule-prompt-link-text']}
+              {labels?.['version-schedule-prompt-link-text']}
             </a>
             .
           </p>

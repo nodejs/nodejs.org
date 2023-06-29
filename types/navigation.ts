@@ -1,6 +1,12 @@
-import type navigation from '../navigation.json';
-
-export type NavigationKeys = keyof typeof navigation;
+export type NavigationKeys =
+  | 'home'
+  | 'about'
+  | 'download'
+  | 'docs'
+  | 'getInvolved'
+  | 'security'
+  | 'certification'
+  | 'blog';
 
 export interface NavigationEntry {
   translationId: string;

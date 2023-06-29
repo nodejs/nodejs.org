@@ -4,7 +4,7 @@ import type { LegacyLayouts } from './layouts';
 // this is going to be done via a script that replaces layouts
 // Note.: The current legacy pages have other frontmatter entries but they're irrelevant
 export interface LegacyFrontMatter {
-  layout: LegacyLayouts;
+  layout?: LegacyLayouts;
   title?: string;
   robots?: string;
   labels?: Record<string, string>;
