@@ -1,15 +1,14 @@
 import { FormattedMessage } from 'react-intl';
 import BaseLayout from './BaseLayout';
-import { useNextraContext } from '../hooks/useNextraContext';
+import { useLayoutContext } from '../hooks/useLayoutContext';
 import { getTimeComponent } from '../util/getTimeComponent';
 import type { FC, PropsWithChildren } from 'react';
 import type { LegacyBlogFrontMatter } from '../types';
 
 const BlogPostLayout: FC<PropsWithChildren> = ({ children }) => {
-  const nextraContext = useNextraContext();
+  const { frontMatter } = useLayoutContext();
 
-  const { title, author, date } =
-    nextraContext.frontMatter as LegacyBlogFrontMatter;
+  const { title, author, date } = frontMatter as LegacyBlogFrontMatter;
 
   return (
     <BaseLayout>

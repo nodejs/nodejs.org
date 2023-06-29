@@ -7,14 +7,14 @@ layout: docs.hbs
 
 Node.js 依赖于以下一些依赖项，这样它才能正常工作。
 
-* [类库](#libraries)
+* [类库](#类库)
   * [V8](#v8)
   * [libuv](#libuv)
   * [llhttp](#llhttp)
   * [c-ares](#c-ares)
   * [OpenSSL](#openssl)
   * [zlib](#zlib)
-* [工具](#tools)
+* [工具](#工具)
   * [npm](#npm)
   * [gyp](#gyp)
   * [gtest](#gtest)

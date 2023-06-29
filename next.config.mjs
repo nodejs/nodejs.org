@@ -1,40 +1,29 @@
-import nextra from 'nextra';
-import remarkGfm from 'remark-gfm';
-import getNextData from './next.data.mjs';
+'use strict';
 
-const withNextra = nextra({
-  theme: 'theme.tsx',
-  flexsearch: false,
-  codeHighlight: false,
-  mdxOptions: { format: 'detect', remarkPlugins: [remarkGfm] },
-  transform: getNextData,
-  transformPageOpts: pageOpts => {
-    delete pageOpts.pageMap;
-    delete pageOpts.headings;
-    delete pageOpts.timestamp;
+import * as nextConstants from './next.constants.mjs';
+import * as nextData from './next-data/index.mjs';
 
-    return pageOpts;
-  },
-});
+// generate the node.js releases json file
+await nextData.generateNodeReleasesJson();
 
-// This is used for telling Next.js to to a Static Export Build of the Website
-// This is used for static/without a Node.js server hosting, such as on our
-// legacy Website Build Environment on Node.js's DigitalOcean Droplet.
-// Note.: Image optimization is also disabled through this process
-const enableStaticExport = process.env.NEXT_STATIC_EXPORT === 'true';
+// generate the data from blog posts
+await nextData.generateBlogPostsData();
 
-// Supports a manuall override of the base path of the website
-// This is useful when running the deployment on a subdirectory
-// of a domain, such as when hosted on GitHub Pages.
-const basePath = String(process.env.NEXT_BASE_PATH || '');
-
-export default withNextra({
-  basePath,
-  trailingSlash: false,
-  outputFileTracing: false,
-  distDir: enableStaticExport ? 'build' : '.next',
-  output: enableStaticExport ? 'export' : undefined,
-  images: { unoptimized: enableStaticExport },
-  eslint: { dirs: ['.'] },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   i18n: null,
-});
+  swcMinify: true,
+  trailingSlash: false,
+  eslint: { dirs: ['.'] },
+  basePath: nextConstants.BASE_PATH,
+  images: { unoptimized: nextConstants.ENABLE_STATIC_EXPORT },
+  distDir: nextConstants.ENABLE_STATIC_EXPORT ? 'build' : '.next',
+  output: nextConstants.ENABLE_STATIC_EXPORT ? 'export' : undefined,
+  experimental: {
+    nextScriptWorkers: true,
+    largePageDataBytes: 128 * 100000,
+    swcPlugins: [['next-superjson-plugin', {}]],
+  },
+};
+
+export default nextConfig;

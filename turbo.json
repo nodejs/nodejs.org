@@ -17,11 +17,11 @@
     },
     "lint": {
       "inputs": [
-        "{components,hooks,layouts,providers,types,util}/**/*.{ts,tsx}",
+        "{components,hooks,layouts,providers,types,util,middlewares,app,pages}/**/*.{ts,tsx}",
         "{components,layouts,pages,styles}/**/*.{css,sass,scss}",
+        "{scripts,next-data}/**/*.{js,mjs}",
         "*.{md,mdx,json,ts,tsx,mjs,js}",
-        "pages/**/*.{tsx,ts,mdx,md}",
-        "scripts/**/*.{js,mjs}",
+        "pages/**/*.{mdx,md}",
         "i18n/**/.json",
         ".eslintrc",
         ".eslintignore",
@@ -49,16 +49,11 @@
     },
     "build": {
       "inputs": [
-        "{components,hooks,layouts,providers,types,util}/**/*.{ts,tsx}",
+        "{components,hooks,layouts,providers,types,util,middlewares,app,pages}/**/*.{ts,tsx}",
         "{components,layouts,pages,styles}/**/*.{css,sass,scss}",
-        "pages/**/*.{tsx,ts,mdx,md}",
-        "scripts/**/*.{js,mjs}",
-        "tsconfig.json",
-        "next.config.mjs",
-        "next.data.mjs",
-        "next-sitemap.config.mjs",
-        "theme.tsx",
-        "middleware.ts"
+        "{scripts,next-data}/**/*.{js,mjs}",
+        "*.{md,mdx,json,ts,tsx,mjs,js}",
+        "pages/**/*.{mdx,md}"
       ],
       "outputs": [".next/**", "!.next/cache/**"]
     },
@@ -67,16 +62,10 @@
     },
     "deploy": {
       "inputs": [
-        "{components,hooks,layouts,providers,types,util}/**/*.{ts,tsx}",
+        "{components,hooks,layouts,providers,types,util,middlewares,app,pages}/**/*.{ts,tsx}",
         "{components,layouts,pages,styles}/**/*.{css,sass,scss}",
-        "pages/**/*.{tsx,ts,mdx,md}",
-        "scripts/**/*.{js,mjs}",
-        "tsconfig.json",
-        "next.config.mjs",
-        "next.data.mjs",
-        "next-sitemap.config.mjs",
-        "theme.tsx",
-        "middleware.ts"
+        "*.{md,mdx,json,ts,tsx,mjs,js}",
+        "pages/**/*.{mdx,md}"
       ],
       "outputs": [".next/**", "!.next/cache/**"]
     },
@@ -86,7 +75,7 @@
     "storybook:build": {
       "inputs": [
         "{components,hooks,layouts,providers,types,util}/**/*.{ts,tsx}",
-        "{components,layouts,pages,styles}/**/*.{css,sass,scss}"
+        "{components,layouts,styles}/**/*.{css,sass,scss}"
       ],
       "outputs": ["storybook-static/**"]
     }

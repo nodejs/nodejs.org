@@ -1,60 +1,27 @@
-import { useEffect } from 'react';
-import { MDXProvider } from '@mdx-js/react';
-import highlightJs from 'highlight.js/lib/common';
-import HtmlHead from './components/HtmlHead';
-import AnchoredHeading from './components/AnchoredHeading';
-import NodeApiVersionLinks from './components/Docs/NodeApiVersionLinks';
+import { MDXRemote } from 'next-mdx-remote';
 import { LayoutProvider } from './providers/layoutProvider';
-import { useRouter } from './hooks/useRouter';
+import { MDXProvider } from './providers/mdxProvider';
+import HtmlHead from './components/HtmlHead';
 import type { FC, PropsWithChildren } from 'react';
-import type { NextraThemeLayoutProps } from 'nextra';
-import type { MDXComponents } from 'mdx/types';
-import type { LegacyFrontMatter } from './types';
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 
-type LayoutProps = PropsWithChildren<{
-  pageOpts: NextraThemeLayoutProps['pageOpts'];
+type ThemeProps = PropsWithChildren<{
+  content?: MDXRemoteSerializeResult;
 }>;
 
-const mdxComponents: MDXComponents = {
-  NodeApiVersionLinks: NodeApiVersionLinks,
-  h1: props => <AnchoredHeading level={1} {...props} />,
-  h2: props => <AnchoredHeading level={2} {...props} />,
-  h3: props => <AnchoredHeading level={3} {...props} />,
-  h4: props => <AnchoredHeading level={4} {...props} />,
-  h5: props => <AnchoredHeading level={5} {...props} />,
-  h6: props => <AnchoredHeading level={6} {...props} />,
-  blockquote: ({ children }) => <div className="highlight-box">{children}</div>,
-};
-
-const Content: FC<LayoutProps> = ({ children }) => {
-  const { asPath } = useRouter();
-
-  // Re-highlights the pages on route change
-  useEffect(() => highlightJs.highlightAll(), [asPath]);
-
-  useEffect(() => window.startLegacyApp(), []);
+const Theme: FC<ThemeProps> = ({ content, children }) => {
+  const frontMatter = content?.frontmatter || {};
 
   return (
-    <MDXProvider components={mdxComponents} disableParentContext>
-      {children}
-    </MDXProvider>
+    <>
+      <HtmlHead frontMatter={frontMatter} />
+      <LayoutProvider frontMatter={frontMatter}>
+        <MDXProvider>{content && <MDXRemote {...content} />}</MDXProvider>
+
+        {children}
+      </LayoutProvider>
+    </>
   );
 };
-
-// @TODO: Nextra should provide better customization to FrontMatter Props
-type ThemeProps = {
-  pageOpts: Omit<NextraThemeLayoutProps['pageOpts'], 'frontMatter'> & {
-    frontMatter: LegacyFrontMatter;
-  };
-} & NextraThemeLayoutProps;
-
-const Theme: FC<ThemeProps> = ({ pageOpts, pageProps, children }) => (
-  <>
-    <HtmlHead frontMatter={pageOpts.frontMatter} />
-    <LayoutProvider pageOpts={pageOpts} pageProps={pageProps}>
-      <Content pageOpts={pageOpts}>{children}</Content>
-    </LayoutProvider>
-  </>
-);
 
 export default Theme;
