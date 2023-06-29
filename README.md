@@ -9,21 +9,21 @@
 </p>
 
 <p align="center">
-  <a href="https://nodejs.org">nodejs.org</a> website built using Next.js with TypeScript, SCSS and MDXv2
+  <a href="https://nodejs.org">Node.js</a> Website built using Next.js with TypeScript, SCSS and MDXv2
 </p>
 
 <p align="center">
   <a title="CI Status" href="https://github.com/nodejs/nodejs.org/actions/workflows/github-pages.yml?query=branch%3Amain">
-    <img src="https://github.com/nodejs/nodejs.org/actions/workflows/github-pages.yml/badge.svg">
+    <img src="https://github.com/nodejs/nodejs.org/actions/workflows/github-pages.yml/badge.svg" />
   </a>
   <a title="MIT License" href="LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue">
+    <img src="https://img.shields.io/badge/license-MIT-blue" />
   </a>
   <a title="Localised" href="https://crowdin.com/project/nodejs-website">
-    <img src="https://badges.crowdin.net/nodejs-website/localized.svg">
+    <img src="https://badges.crowdin.net/nodejs-website/localized.svg" />
   </a>
-  <a title="Follow on Twitter" href="https://twitter.com/Nodejs">
-    <img src="https://img.shields.io/twitter/follow/Nodejs.svg?style=social&label=Follow%20@Nodejs">
+  <a title="Vercel" href="https://vercel.com">
+    <img src="https://img.shields.io/badge/powered%20by-Vercel%20%E2%96%B2-black" />
   </a>
   <br />
   <br />
@@ -38,6 +38,7 @@
 ```bash
 npm ci
 npx turbo serve
+
 # listening at localhost:3000
 ```
 
