@@ -41,7 +41,7 @@ jobs:
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
           NEXT_TELEMETRY_DISABLED: 1
 
-      - name: Run prettier
+      - name: Run Prettier
         run: npx turbo prettier
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
