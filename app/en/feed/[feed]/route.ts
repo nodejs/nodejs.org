@@ -11,7 +11,7 @@ export async function GET(request: Request) {
 
   const feed = basename(pathname);
 
-  if (websiteFeeds.has(feed)) {
+  if (pathname.includes('.xml') && websiteFeeds.has(feed)) {
     return new NextResponse(websiteFeeds.get(feed)?.rss2(), {
       headers: { 'Content-Type': 'application/xml' },
     });
@@ -19,3 +19,6 @@ export async function GET(request: Request) {
 
   return new NextResponse(null, { status: 404 });
 }
+
+export const generateStaticParams = () =>
+  [...websiteFeeds.keys()].map(feed => ({ feed }));
