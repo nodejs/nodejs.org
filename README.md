@@ -23,7 +23,10 @@
     <img src="https://badges.crowdin.net/nodejs-website/localized.svg" />
   </a>
   <a title="Vercel" href="https://vercel.com">
-    <img src="https://img.shields.io/badge/powered%20by-Vercel%20%E2%96%B2-black" />
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/powered%20by-Vercel%20%E2%96%B2-white">
+      <img src="https://img.shields.io/badge/powered%20by-Vercel%20%E2%96%B2-black">
+    </picture>
   </a>
   <br />
   <br />
