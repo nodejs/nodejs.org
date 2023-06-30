@@ -12,3 +12,6 @@ echo "{\"pagination\": [],\"categories\": [],\"posts\": []}" > $DIR/../public/bl
 # adds these changes to be part of the current commit
 git add --sparse $DIR/../public/node-releases-data.json
 git add --sparse $DIR/../public/blog-posts-data.json
+
+# lint and format staged files
+npx lint-staged
