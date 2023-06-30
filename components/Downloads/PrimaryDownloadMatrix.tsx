@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import semVer from 'semver';
 import LocalizedLink from '../LocalizedLink';
 import { useDetectOS } from '../../hooks/useDetectOS';
-import { useNextraContext } from '../../hooks/useNextraContext';
+import { useLayoutContext } from '../../hooks/useLayoutContext';
 import type { LegacyDownloadsFrontMatter, NodeRelease } from '../../types';
 import type { FC } from 'react';
 
@@ -14,11 +14,11 @@ const PrimaryDownloadMatrix: FC<NodeRelease> = ({
   isLts,
   npm,
 }) => {
-  const nextraContext = useNextraContext();
+  const { frontMatter } = useLayoutContext();
 
   const { bitness } = useDetectOS();
 
-  const { downloads } = nextraContext.frontMatter as LegacyDownloadsFrontMatter;
+  const { downloads } = frontMatter as LegacyDownloadsFrontMatter;
   const hasWindowsArm64 = semVer.satisfies(version, '>= 19.9.0');
 
   const getIsVersionClassName = (isCurrent: boolean) =>

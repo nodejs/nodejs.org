@@ -1,5 +1,5 @@
 import DownloadList from './DownloadList';
-import { useNextraContext } from '../../hooks/useNextraContext';
+import { useLayoutContext } from '../../hooks/useLayoutContext';
 import { WithNodeRelease } from '../../providers/withNodeRelease';
 import type { LegacyDownloadsFrontMatter, NodeRelease } from '../../types';
 import type { FC } from 'react';
@@ -10,10 +10,9 @@ const SecondaryDownloadMatrix: FC<NodeRelease> = ({
   versionWithPrefix,
   status,
 }) => {
-  const nextraContext = useNextraContext();
+  const { frontMatter } = useLayoutContext();
 
-  const { additional } =
-    nextraContext.frontMatter as LegacyDownloadsFrontMatter;
+  const { additional } = frontMatter as LegacyDownloadsFrontMatter;
 
   return (
     <section>

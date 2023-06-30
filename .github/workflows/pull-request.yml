@@ -60,7 +60,7 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 
     steps:
-      - name: "Use GNU tar instead BSD tar"
+      - name: 'Use GNU tar instead BSD tar'
         if: matrix.os == 'windows-latest'
         shell: cmd
         run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
@@ -122,7 +122,7 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 
     steps:
-      - name: "Use GNU tar instead BSD tar"
+      - name: 'Use GNU tar instead BSD tar'
         if: matrix.os == 'windows-latest'
         shell: cmd
         run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"

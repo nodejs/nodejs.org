@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useMemo } from 'react';
 import AboutLayout from '../layouts/AboutLayout';
 import BlogIndexLayout from '../layouts/BlogIndexLayout';
 import BlogPostLayout from '../layouts/BlogPostLayout';
@@ -10,22 +10,16 @@ import DownloadLayout from '../layouts/DownloadLayout';
 import DownloadCurrentLayout from '../layouts/DownloadCurrentLayout';
 import DownloadReleasesLayout from '../layouts/DownloadReleasesLayout';
 import IndexLayout from '../layouts/IndexLayout';
-import type { PageOpts } from 'nextra';
-import type { PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+import type { LegacyFrontMatter, LegacyLayouts } from '../types';
 
-import type { LegacyLayouts, NextraAppProps } from '../types';
+type LayoutContextProps = {
+  frontMatter: LegacyFrontMatter;
+};
 
-type LayoutProviderProps = PropsWithChildren<{
-  pageOpts: PageOpts;
-  pageProps: NextraAppProps['pageProps'];
-}>;
-
-export const LayoutContext = createContext<{
-  layout: LegacyLayouts;
-  pageOpts: PageOpts;
-  pageProps: NextraAppProps['pageProps'];
-  // @TODO: Initialize the Layout Provider with a default value
-}>(undefined as any);
+export const LayoutContext = createContext<LayoutContextProps>({
+  frontMatter: {},
+});
 
 const getLegacyLayout = (layout: LegacyLayouts) => {
   switch (layout) {
@@ -54,15 +48,19 @@ const getLegacyLayout = (layout: LegacyLayouts) => {
   }
 };
 
-// In this case we want to separate the children prop from the remaining ones
+type LayoutProviderProps = PropsWithChildren<LayoutContextProps>;
 
-export const LayoutProvider = ({ children, ...props }: LayoutProviderProps) => {
-  const layout = props.pageOpts.frontMatter.layout;
-
-  const LayoutComponent = getLegacyLayout(layout);
+export const LayoutProvider: FC<LayoutProviderProps> = ({
+  children,
+  frontMatter,
+}) => {
+  const LayoutComponent = useMemo(
+    () => getLegacyLayout(frontMatter.layout || 'page.hbs'),
+    [frontMatter.layout]
+  );
 
   return (
-    <LayoutContext.Provider value={{ layout, ...props }}>
+    <LayoutContext.Provider value={{ frontMatter }}>
       <LayoutComponent>{children}</LayoutComponent>
     </LayoutContext.Provider>
   );
