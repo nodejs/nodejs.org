@@ -7,7 +7,7 @@ DIR=$(cd `dirname $0` && pwd -P)
 echo "[]" > $DIR/../public/node-releases-data.json
 
 # resets the blog post data file
-echo "{\"pagination\": [],\"categories\": [],\"posts\": []}" > $DIR/../public/blog-posts-data.json
+echo "{ \"pagination\": [], \"categories\": [], \"posts\": [] }" > $DIR/../public/blog-posts-data.json
 
 # adds these changes to be part of the current commit
 git add --sparse $DIR/../public/node-releases-data.json
