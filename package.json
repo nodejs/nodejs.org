@@ -58,11 +58,10 @@
     "react-intl": "^6.4.2",
     "remark-gfm": "^3.0.1",
     "sass": "^1.63.6",
-    "semver": "^7.5.1",
+    "semver": "^7.5.3",
     "sharp": "^0.32.1",
     "strftime": "^0.10.1",
     "superjson": "^1.12.3",
-    "swr": "^2.1.5",
     "turbo": "^1.10.3"
   },
   "devDependencies": {
@@ -112,5 +111,8 @@
     "typescript": "^5.0.4",
     "user-agent-data-types": "^0.3.1",
     "wait-on": "^7.0.1"
+  },
+  "overrides": {
+    "semver": "^7.5.3"
   }
 }
