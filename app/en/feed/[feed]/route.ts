@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import * as nextJson from '@/next.json.mjs';
-import * as nextData from '@/next-data/index.mjs';
+import * as nextData from '@/next.data.mjs';
 
 // loads all the data from the blog-posts-data.json file
 const websiteFeeds = nextData.generateWebsiteFeeds(nextJson.blogData);

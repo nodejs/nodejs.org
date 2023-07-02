@@ -26,7 +26,7 @@ import url from 'node:url';
 import handlebars from 'handlebars';
 
 import downloadsTable from './downloadsTable.mjs';
-import { getRelativePath } from '../next-data/_helpers.mjs';
+import { getRelativePath } from '../../next.helpers.mjs';
 
 // this allows us to get the current module working directory
 const __dirname = getRelativePath(import.meta.url);

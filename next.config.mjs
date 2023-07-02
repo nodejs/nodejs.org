@@ -13,9 +13,15 @@ const nextConfig = {
   distDir: nextConstants.ENABLE_STATIC_EXPORT ? 'build' : '.next',
   output: nextConstants.ENABLE_STATIC_EXPORT ? 'export' : undefined,
   experimental: {
+    swcMinify: true,
+    legacyBrowsers: false,
     nextScriptWorkers: true,
+    webpackBuildWorker: true,
     largePageDataBytes: 128 * 100000,
     swcPlugins: [['next-superjson-plugin', {}]],
+    outputFileTracingExcludes: {
+      '*': ['./public/**', 'node_modules/**/@swc/core*'],
+    },
   },
 };
 
