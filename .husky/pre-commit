@@ -3,9 +3,9 @@
 
 DIR=$(cd `dirname $0` && pwd -P)
 
-# adds these changes to be part of the current commit
-git checkout $DIR/../public/node-releases-data.json
-git checkout $DIR/../public/blog-posts-data.json
+# if the generated files got tracked to this commit we revert them
+git reset $DIR/../public/node-releases-data.json
+git reset $DIR/../public/blog-posts-data.json
 
 # lint and format staged files
 npx lint-staged
