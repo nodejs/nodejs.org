@@ -6,14 +6,13 @@ import remarkGfm from 'remark-gfm';
 import { serialize } from 'next-mdx-remote/serialize';
 import * as nextLocales from './next.locales.mjs';
 import * as nextConstants from './next.constants.mjs';
-import * as nextData from './next-data/index.mjs';
+import * as nextHelpers from './next.helpers.mjs';
 
 // allows us to run a glob to get markdown files based on a language folder
 const getPathsByLanguage = async (
   locale = nextConstants.DEFAULT_LOCALE_CODE,
   ignored = []
-) =>
-  nextData.helpers.getMarkdownFiles(process.cwd(), `pages/${locale}`, ignored);
+) => nextHelpers.getMarkdownFiles(process.cwd(), `pages/${locale}`, ignored);
 
 /**
  * This method is responsible for generating a Collection of all available paths that

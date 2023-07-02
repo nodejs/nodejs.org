@@ -1,6 +1,5 @@
 'use strict';
 
-import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { glob } from 'glob';
 

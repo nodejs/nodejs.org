@@ -1,9 +1,9 @@
 'use strict';
 
 import { readFile, writeFile } from 'node:fs/promises';
-import { basename, dirname, extname, join } from 'node:path';
+import { basename, extname, join } from 'node:path';
 import graymatter from 'gray-matter';
-import * as helpers from './helpers.mjs';
+import * as nextHelpers from '../next.helpers.mjs';
 
 // gets the current blog path based on local module path
 const blogPath = join(process.cwd(), 'pages/en/blog');
@@ -51,7 +51,7 @@ const getFrontMatter = (filename, source) => {
  */
 const generateBlogPostsData = async () => {
   // we retrieve all the filenames of all blog posts
-  const filenames = await helpers.getMarkdownFiles(
+  const filenames = await nextHelpers.getMarkdownFiles(
     process.cwd(),
     'pages/en/blog',
     ['**/index.md', '**/pagination.md']
