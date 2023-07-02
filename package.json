@@ -24,7 +24,7 @@
     "lint:fix": "npm run lint -- --fix",
     "prettier": "prettier . --check --cache --cache-strategy metadata",
     "prettier:fix": "npm run prettier -- --write",
-    "format": "concurrently -s all -n \"prettier:fix,lint:fix\" -c \"yellow,green\" \"npm:prettier:fix\" \"npm:lint:fix\"",
+    "format": "npm run prettier:fix && npm run lint:fix",
     "storybook": "cross-env NODE_NO_WARNINGS=1 storybook dev -p 6006 --quiet",
     "storybook:build": "cross-env NODE_NO_WARNINGS=1 storybook build --quiet --loglevel warn",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 jest --passWithNoTests",
