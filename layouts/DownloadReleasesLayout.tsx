@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import { sanitize } from 'isomorphic-dompurify';
 import BaseLayout from './BaseLayout';
 import { useLayoutContext } from '../hooks/useLayoutContext';
 import DownloadReleasesTable from '../components/Downloads/DownloadReleasesTable';
@@ -14,7 +13,7 @@ const DownloadReleasesLayout: FC<PropsWithChildren> = ({ children }) => {
   // @TODO: Remove this once we migrate to `nodejs/nodejs.dev` codebase as this is unsafe
   // And completely not recommended
   const extraModulesContent = useMemo(
-    () => sanitize(`[<a href="#backref-1">1</a>]: ${modules}`),
+    () => `[<a href="#backref-1">1</a>]: ${modules}`,
     [modules]
   );
 

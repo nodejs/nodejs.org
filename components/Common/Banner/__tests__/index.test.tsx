@@ -3,10 +3,6 @@ import { IntlProvider } from 'react-intl';
 import Banner from '../index';
 import type { WebsiteBanner } from '../../../../types';
 
-jest.mock('isomorphic-dompurify', () => ({
-  sanitize: jest.fn((html: string) => html),
-}));
-
 const bannersIndex: WebsiteBanner = {
   endDate: '',
   link: 'test/banner/link',
