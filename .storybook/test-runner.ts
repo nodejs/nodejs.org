@@ -1,7 +1,6 @@
-// TODO: Convert this to ESM once the bug is resolved
-// https://github.com/storybookjs/test-runner/issues/293
+import type { TestRunnerConfig } from '@storybook/test-runner';
 
-const config = {
+const config: TestRunnerConfig = {
   async postRender(page, _context) {
     const rootElementId = '[data-test-id="story-root"]';
     const rootElement = await page.locator(rootElementId);
@@ -11,4 +10,4 @@ const config = {
   },
 };
 
-module.exports = config;
+export default config;
