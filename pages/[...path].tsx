@@ -2,10 +2,9 @@ import Theme from '../theme';
 import * as nextDynamic from '../next.dynamic.mjs';
 import * as nextConstants from '../next.constants.mjs';
 import type { GetStaticPaths, GetStaticProps } from 'next';
-import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import type { DynamicStaticProps } from '../types';
 
-type StaticParams = { path: string[] };
-type StaticProps = { content: MDXRemoteSerializeResult };
+type DynamicStaticPaths = { path: string[] };
 
 // This is a small utility that allows us to quickly separate locale from the remaning pathname
 const getLocaleAndPathname = ([locale, ...path]: string[] = []) => [
@@ -35,8 +34,8 @@ const mapPathnameToRoute = (pathname: string) => ({
 // This method receives the props from `getStaticProps` and renders/builds the Markdown
 // content on demand by loading the file on the server-side and serializing the Markdown/MDX content
 export const getStaticProps: GetStaticProps<
-  StaticProps,
-  StaticParams
+  DynamicStaticProps,
+  DynamicStaticPaths
 > = async ({ params = { path: [] } }) => {
   const [locale, pathname] = getLocaleAndPathname(params.path);
 
@@ -65,7 +64,7 @@ export const getStaticProps: GetStaticProps<
 
 // This method is used to retrieve all native statically supported pages (SCR) that
 // we want to provide during build-time + allow fallback for dynamic pages during (ISR)
-export const getStaticPaths: GetStaticPaths<StaticParams> = async () => {
+export const getStaticPaths: GetStaticPaths<DynamicStaticPaths> = async () => {
   const paths = [];
 
   // Retrieves all the dynamic generated paths

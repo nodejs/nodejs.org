@@ -1,20 +1,22 @@
 import { memo } from 'react';
-import { MDXRemote } from 'next-mdx-remote';
+
 import { LayoutProvider } from './providers/layoutProvider';
 import { MDXProvider } from './providers/mdxProvider';
 import HtmlHead from './components/HtmlHead';
 import type { FC, PropsWithChildren } from 'react';
-import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import type { DynamicStaticProps } from './types';
 
-type ThemeProps = PropsWithChildren<{
-  content?: MDXRemoteSerializeResult;
-}>;
+type ThemeProps = PropsWithChildren<DynamicStaticProps>;
 
-const Theme: FC<ThemeProps> = ({ content, children }) => (
+// This is the Dynamic Page Theme Component that supports Dynamic MDX Page Rendering
+// With the dynamic MDXProvider Component.
+// @TODO: When migrating to the new Layout approach, each Layout should manually invoke the MDXProvider
+// @TODO: And use the MDX Content, Frontmatter, Headings and Children as seemed fit.
+const Theme: FC<ThemeProps> = ({ content, frontmatter = {}, children }) => (
   <>
-    <HtmlHead frontMatter={content?.frontmatter || {}} />
-    <LayoutProvider frontMatter={content?.frontmatter || {}}>
-      <MDXProvider>{content && <MDXRemote {...content} />}</MDXProvider>
+    <HtmlHead frontMatter={frontmatter} />
+    <LayoutProvider frontMatter={frontmatter}>
+      {content && <MDXProvider content={content} />}
 
       {children}
     </LayoutProvider>

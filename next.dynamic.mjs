@@ -2,7 +2,9 @@
 
 import { join } from 'node:path';
 import { readFileSync } from 'node:fs';
+import { VFile } from 'vfile';
 import remarkGfm from 'remark-gfm';
+import remarkHeadings from '@vcarl/remark-headings';
 import { serialize } from 'next-mdx-remote/serialize';
 import * as nextLocales from './next.locales.mjs';
 import * as nextConstants from './next.constants.mjs';
@@ -139,20 +141,30 @@ export const getStaticProps = async (source = '', filename = '') => {
   // We only attempt to serialize data if the `source` has content and `filename` has content
   // otherwise we return a 404 since this means that it is not a valid file or a file we should care about
   if (source.length && filename.length) {
+    // We create a VFile (Virtual File) to be able to access some contextual
+    // data post serialization (compilation) of the source Markdown into MDX
+    const sourceAsVirtualFile = new VFile(source);
+
     // This act as a MDX "compiler" but, lightweight. It parses the Markdown
     // string source into a React Component tree, and then it serializes it
     // it also supports Remark plugins, and MDX components
     // Note.: We use the filename extension to define the mode of execution
-    const content = await serialize(source, {
+    const { compiledSource } = await serialize(sourceAsVirtualFile, {
       parseFrontmatter: true,
       mdxOptions: {
-        remarkPlugins: [remarkGfm],
+        remarkPlugins: [remarkGfm, remarkHeadings],
         format: filename.includes('.mdx') ? 'mdx' : 'md',
       },
     });
 
+    // After the MDX gets processed with the remarkPlugins, some extra `data` that might come along
+    // the `frontmatter` comes from `serialize` built-in support to `remark-frontmatter`
+    const { headings, matter: frontmatter } = sourceAsVirtualFile.data;
+
     // this defines the basic props that should be passed back to the `DynamicPage` component
-    staticProps.props = { content };
+    // We only want the `compiledSource` as we use `MDXProvider` for custom components along the journey
+    // And then we want the frontmatter and heading information from the VFile `data`
+    staticProps.props = { content: compiledSource, headings, frontmatter };
     staticProps.notFound = false;
   }
 
