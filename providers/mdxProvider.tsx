@@ -4,7 +4,6 @@ import HighlightJS from 'highlight.js/lib/core';
 import HighlightJavaScript from 'highlight.js/lib/languages/javascript';
 import AnchoredHeading from '../components/AnchoredHeading';
 import NodeApiVersionLinks from '../components/Docs/NodeApiVersionLinks';
-import { useRouter } from '../hooks/useRouter';
 import type { FC, PropsWithChildren } from 'react';
 import type { MDXComponents } from 'mdx/types';
 
@@ -24,10 +23,8 @@ const mdxComponents: MDXComponents = {
 HighlightJS.registerLanguage('javascript', HighlightJavaScript);
 
 export const MDXProvider: FC<PropsWithChildren> = ({ children }) => {
-  const { asPath } = useRouter();
-
   // Re-highlights the pages on route change
-  useEffect(() => HighlightJS.highlightAll(), [asPath]);
+  useEffect(() => HighlightJS.highlightAll(), []);
 
   useEffect(() => window.startLegacyApp(), []);
 
