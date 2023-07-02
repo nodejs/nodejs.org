@@ -19,8 +19,8 @@ exports[`Common/Banner WithHTMLImage smoke-test 1`] = `
      target="_blank"
      rel="noopener noreferrer"
   >
-    <img alt="Banner Image"
-         src="/static/images/nodejs-training.png"
+    <img src="/static/images/nodejs-training.png"
+         alt="Banner Image"
     >
   </a>
 </div>
