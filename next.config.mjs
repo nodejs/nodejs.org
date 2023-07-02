@@ -20,7 +20,7 @@ const nextConfig = {
     largePageDataBytes: 128 * 100000,
     swcPlugins: [['next-superjson-plugin', {}]],
     outputFileTracingExcludes: {
-      '*': ['public/**', 'pages/**', 'node_modules/**/@swc/core*'],
+      '*': ['./public/**', 'node_modules/**/@swc/core*'],
     },
   },
 };
