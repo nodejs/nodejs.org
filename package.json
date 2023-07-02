@@ -47,7 +47,6 @@
     "framer-motion": "^10.12.16",
     "glob": "^10.2.7",
     "highlight.js": "^11.8.0",
-    "isomorphic-dompurify": "^1.5.0",
     "next": "^13.4.3",
     "next-mdx-remote": "^4.4.1",
     "next-superjson-plugin": "^0.5.8",

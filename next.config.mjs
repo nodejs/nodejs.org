@@ -11,7 +11,7 @@ const nextConfig = {
   basePath: nextConstants.BASE_PATH,
   images: { unoptimized: nextConstants.ENABLE_STATIC_EXPORT },
   distDir: nextConstants.ENABLE_STATIC_EXPORT ? 'build' : '.next',
-  output: nextConstants.ENABLE_STATIC_EXPORT ? 'export' : 'standalone',
+  output: nextConstants.ENABLE_STATIC_EXPORT ? 'export' : undefined,
   experimental: {
     swcMinify: true,
     legacyBrowsers: false,
