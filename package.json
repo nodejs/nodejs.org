@@ -16,7 +16,7 @@
     "serve": "cross-env NODE_NO_WARNINGS=1 npm run prebuild && next dev",
     "build": "cross-env NODE_NO_WARNINGS=1 npm run prebuild && next build",
     "start": "cross-env NODE_NO_WARNINGS=1 npm run prebuild && next start",
-    "deploy": "cross-env NEXT_STATIC_EXPORT=true npm run prebuild && npm run build",
+    "deploy": "cross-env NEXT_STATIC_EXPORT=true npm run build",
     "lint:js": "cross-env NODE_NO_WARNINGS=1 next lint --file \"**/*.{mjs,ts,tsx}\"",
     "lint:md": "cross-env NODE_NO_WARNINGS=1 next lint --file \"**/*.md?(x)\"",
     "lint:scss": "stylelint --config .stylelintrc \"**/*.{css,sass,scss}\"",
