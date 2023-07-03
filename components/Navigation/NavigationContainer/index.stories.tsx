@@ -13,7 +13,7 @@ const Children: FC = () => (
   </ul>
 );
 
-export const Default = () => {
+export const Default = (): Story => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
