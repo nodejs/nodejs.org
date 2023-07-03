@@ -1,8 +1,9 @@
+import { useMemo } from 'react';
 import { ThemeProvider as NextThemeProvider } from 'next-themes';
 import { ThemeProvider as MUIProvider } from '@mui/material/styles';
 import { createTheme } from '@mui/material/styles';
 import { MotionConfig } from 'framer-motion';
-import { useMemo, type FC, type PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 type ThemeProviderProps = PropsWithChildren<{ fontFamily: string }>;
 
