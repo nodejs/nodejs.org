@@ -1,7 +1,9 @@
-import type { Preview } from '@storybook/react';
 import NextImage from 'next/image';
+import { SiteProvider } from '../providers/siteProvider';
+import { ThemeProvider } from '../providers/themeProvider';
+import { LocaleProvider } from '../providers/localeProvider';
 import { openSans } from '../util/nextFonts';
-import BaseApp, { setAppFonts } from '../next.app';
+import type { Preview } from '@storybook/react';
 
 import '../styles/index.scss';
 
@@ -23,15 +25,21 @@ const preview: Preview = {
   },
 };
 
-setAppFonts([openSans.style.fontFamily]);
-
 export const decorators = [
   Story => (
-    <BaseApp>
-      <div data-test-id="story-root">
-        <Story />
-      </div>
-    </BaseApp>
+    <>
+      <SiteProvider>
+        <LocaleProvider>
+          <ThemeProvider fontFamily={openSans.style.fontFamily}>
+            <div data-test-id="story-root">
+              <Story />
+            </div>
+          </ThemeProvider>
+        </LocaleProvider>
+      </SiteProvider>
+
+      <style>{`body { font-family: ${openSans.style.fontFamily}; }`}</style>
+    </>
   ),
 ];
 
