@@ -29,7 +29,7 @@ export const decorators = [
   Story => (
     <SiteProvider>
       <LocaleProvider>
-        <ThemeProvider fontFamily={openSans.style.fontFamily}>
+        <ThemeProvider font={openSans.style.fontFamily}>
           <div data-test-id="story-root">
             <Story />
           </div>

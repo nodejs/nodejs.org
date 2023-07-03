@@ -1,36 +1,21 @@
-import { useMemo } from 'react';
 import { ThemeProvider as NextThemeProvider } from 'next-themes';
-import { ThemeProvider as MUIProvider } from '@mui/material/styles';
-import { createTheme } from '@mui/material/styles';
 import { MotionConfig } from 'framer-motion';
 import type { FC, PropsWithChildren } from 'react';
 
-type ThemeProviderProps = PropsWithChildren<{ fontFamily: string }>;
+type ThemeProviderProps = PropsWithChildren<{ font: string }>;
 
-export const ThemeProvider: FC<ThemeProviderProps> = ({
-  children,
-  fontFamily,
-}) => {
-  const muiThemeConfig = useMemo(
-    () => createTheme({ typography: { fontFamily } }),
-    [fontFamily]
-  );
+export const ThemeProvider: FC<ThemeProviderProps> = ({ children, font }) => (
+  <>
+    <NextThemeProvider enableSystem={true} enableColorScheme={true}>
+      <MotionConfig reducedMotion="user">{children}</MotionConfig>
+    </NextThemeProvider>
 
-  return (
-    <>
-      <NextThemeProvider enableSystem={true} enableColorScheme={true}>
-        <MotionConfig reducedMotion="user">
-          <MUIProvider theme={muiThemeConfig}>{children}</MUIProvider>
-        </MotionConfig>
-      </NextThemeProvider>
-
-      <style jsx global>
-        {`
-          body {
-            font-family: ${fontFamily};
-          }
-        `}
-      </style>
-    </>
-  );
-};
+    <style jsx global>
+      {`
+        body {
+          font-family: ${font};
+        }
+      `}
+    </style>
+  </>
+);
