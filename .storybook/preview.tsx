@@ -27,19 +27,15 @@ const preview: Preview = {
 
 export const decorators = [
   Story => (
-    <>
-      <SiteProvider>
-        <LocaleProvider>
-          <ThemeProvider fontFamily={openSans.style.fontFamily}>
-            <div data-test-id="story-root">
-              <Story />
-            </div>
-          </ThemeProvider>
-        </LocaleProvider>
-      </SiteProvider>
-
-      <style>{`body { font-family: ${openSans.style.fontFamily}; }`}</style>
-    </>
+    <SiteProvider>
+      <LocaleProvider>
+        <ThemeProvider fontFamily={openSans.style.fontFamily}>
+          <div data-test-id="story-root">
+            <Story />
+          </div>
+        </ThemeProvider>
+      </LocaleProvider>
+    </SiteProvider>
   ),
 ];
 

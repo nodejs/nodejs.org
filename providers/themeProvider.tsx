@@ -16,10 +16,20 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({
   );
 
   return (
-    <NextThemeProvider enableSystem={true} enableColorScheme={true}>
-      <MotionConfig reducedMotion="user">
-        <MUIProvider theme={muiThemeConfig}>{children}</MUIProvider>
-      </MotionConfig>
-    </NextThemeProvider>
+    <>
+      <NextThemeProvider enableSystem={true} enableColorScheme={true}>
+        <MotionConfig reducedMotion="user">
+          <MUIProvider theme={muiThemeConfig}>{children}</MUIProvider>
+        </MotionConfig>
+      </NextThemeProvider>
+
+      <style jsx global>
+        {`
+          body {
+            font-family: ${fontFamily};
+          }
+        `}
+      </style>
+    </>
   );
 };
