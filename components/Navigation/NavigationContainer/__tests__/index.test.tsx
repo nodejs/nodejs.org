@@ -23,7 +23,11 @@ describe('Navigation component', (): void => {
           toggleNavigation={mockHandler}
           label="Navigation"
         >
-          <NavigationContent />
+          <ul>
+            <li>Navigation item 1</li>
+            <li>Navigation item 2</li>
+            <li>Navigation item 3</li>
+          </ul>
         </NavigationContainer>
       </IntlProvider>
     );
