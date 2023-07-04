@@ -1,28 +1,52 @@
 'use strict';
 
 import * as nextConstants from './next.constants.mjs';
-import * as nextData from './next-data/index.mjs';
-
-// generate the node.js releases json file
-await nextData.generateNodeReleasesJson();
-
-// generate the data from blog posts
-await nextData.generateBlogPostsData();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // We intentionally disable Next.js's built-in i18n support
+  // as we dom have our own i18n and internationalisation engine
   i18n: null,
   swcMinify: true,
+  // We don't use trailing slashes on URLs from the Node.js Website
   trailingSlash: false,
-  eslint: { dirs: ['.'] },
+  // We allow the BASE_PATH to be overridden in case that the Website
+  // is being built on a subdirectory (e.g. /nodejs-website)
   basePath: nextConstants.BASE_PATH,
+  // We disable image optimisation during static export builds
   images: { unoptimized: nextConstants.ENABLE_STATIC_EXPORT },
+  // On static export builds we want the output directory to be "build"
   distDir: nextConstants.ENABLE_STATIC_EXPORT ? 'build' : '.next',
+  // On static export builds we want to enable the export feature
   output: nextConstants.ENABLE_STATIC_EXPORT ? 'export' : undefined,
+  // We don't want to run Type Checking on Production Builds
+  // as we already check it on the CI within each Pull Request
+  typescript: { ignoreBuildErrors: true },
+  // We don't want to run ESLint Checking on Production Builds
+  // as we already check it on the CI within each Pull Request
+  // we also configure ESLint to run its lint checking on all files (next lint)
+  eslint: { dirs: ['.'], ignoreDuringBuilds: true },
   experimental: {
-    nextScriptWorkers: true,
+    // We disable the support for legacy browsers which should reduce the polyiffing
+    // and the overall bundle size for the Node.js Website client runtime
+    legacyBrowsers: false,
+    // This feature reduces the Next.js memory consumption by compartimentalising
+    // the Webpack builds into smaller threads that are responsible for building
+    // smaller pieces of the website instead of all pages at onces
+    // this increases slightly build time in favor of less memory usage
+    webpackBuildWorker: true,
+    // Some of our static pages from `getStaticProps` have a lot of data
+    // since we pass the fully-compiled MDX page from `MDXRemote` through
+    // a page's static props.
     largePageDataBytes: 128 * 100000,
+    // This allows us to use SuperJson which supports custom data types for the JSON schema
+    // @see https://github.com/blitz-js/superjson
     swcPlugins: [['next-superjson-plugin', {}]],
+    // We disable the bundling and tracing of some files on the Serverless & Edge Runtimes
+    // as otherwise they would explode the bundle size (server) and the tracing time
+    outputFileTracingExcludes: {
+      '*': ['./public/**', 'node_modules/**/@swc/core*'],
+    },
   },
 };
 

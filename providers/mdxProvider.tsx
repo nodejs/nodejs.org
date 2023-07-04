@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { MDXProvider as BaseMDXProvider } from '@mdx-js/react';
-import highlightJs from 'highlight.js/lib/common';
+import HighlightJS from 'highlight.js/lib/core';
+import HighlightJavaScript from 'highlight.js/lib/languages/javascript';
 import AnchoredHeading from '../components/AnchoredHeading';
 import NodeApiVersionLinks from '../components/Docs/NodeApiVersionLinks';
-import { useRouter } from '../hooks/useRouter';
 import type { FC, PropsWithChildren } from 'react';
 import type { MDXComponents } from 'mdx/types';
 
@@ -18,11 +18,13 @@ const mdxComponents: MDXComponents = {
   blockquote: ({ children }) => <div className="highlight-box">{children}</div>,
 };
 
-export const MDXProvider: FC<PropsWithChildren> = ({ children }) => {
-  const { asPath } = useRouter();
+// This registers the Languages we require/need for Highlight.js
+// @TODO: Once we migrate to `nodejs.dev` components, get rid of Highlight.js
+HighlightJS.registerLanguage('javascript', HighlightJavaScript);
 
+export const MDXProvider: FC<PropsWithChildren> = ({ children }) => {
   // Re-highlights the pages on route change
-  useEffect(() => highlightJs.highlightAll(), [asPath]);
+  useEffect(() => HighlightJS.highlightAll(), []);
 
   useEffect(() => window.startLegacyApp(), []);
 
