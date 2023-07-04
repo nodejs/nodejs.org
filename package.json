@@ -70,6 +70,7 @@
     "@builder.io/partytown": "^0.8.0",
     "@storybook/addon-controls": "^7.0.24",
     "@storybook/addon-interactions": "^7.0.24",
+    "@storybook/addon-viewport": "^7.0.25",
     "@storybook/nextjs": "^7.0.24",
     "@storybook/test-runner": "^0.11.0",
     "@storybook/testing-library": "^0.2.0",
