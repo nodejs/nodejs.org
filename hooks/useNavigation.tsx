@@ -1,6 +1,5 @@
 import { FormattedMessage } from 'react-intl';
-import navigation from '../navigation.json';
-
+import * as nextJson from '../next.json.mjs';
 import type { NavigationEntry, NavigationKeys } from '../types';
 
 // Translation Context for FormattedMessage
@@ -33,11 +32,14 @@ export const useNavigation = () => {
   };
 
   return {
-    navigationItems: mapNavigationEntries(navigation),
+    navigationItems: mapNavigationEntries(nextJson.siteNavigation),
     getSideNavigation: (section: NavigationKeys, context?: Context) =>
       mapNavigationEntries(
         // We need the parent and their items when making a side navigation
-        { [section]: navigation[section], ...navigation[section].items },
+        {
+          [section]: nextJson.siteNavigation[section],
+          ...nextJson.siteNavigation[section].items,
+        },
         context
       ),
   };

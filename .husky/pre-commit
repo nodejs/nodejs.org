@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+DIR=$(cd `dirname $0` && pwd -P)
+
+# if the generated files got tracked to this commit we revert them
+git reset $DIR/../public/node-releases-data.json
+git reset $DIR/../public/blog-posts-data.json
+
+# lint and format staged files
+npx lint-staged

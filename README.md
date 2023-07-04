@@ -9,13 +9,10 @@
 </p>
 
 <p align="center">
-  <a href="https://nodejs.org">nodejs.org</a> website built using Nextra (Next.js) with TypeScript, SCSS and MDXv2
+  <a href="https://nodejs.org">nodejs.org</a> website built using Next.js with TypeScript, SCSS and MDXv2
 </p>
 
 <p align="center">
-  <a title="CI Status" href="https://github.com/nodejs/nodejs.org/actions/workflows/github-pages.yml?query=branch%3Amain">
-    <img src="https://github.com/nodejs/nodejs.org/actions/workflows/github-pages.yml/badge.svg">
-  </a>
   <a title="MIT License" href="LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue">
   </a>
@@ -31,7 +28,7 @@
 
 ## What is this repo?
 
-[Nodejs.org](https://nodejs.org/) by the [OpenJS Foundation](https://openjsf.org/) is the official website for the Node.js® JavaScript runtime. This repo is the source code for the website. It is build using [Nextra](https://nextra.site), a Next.js based static site generator.
+[Nodejs.org](https://nodejs.org/) by the [OpenJS Foundation](https://openjsf.org/) is the official website for the Node.js® JavaScript runtime. This repo is the source code for the website. It is build using [Next.js](https://nextjs.org) a React Framework.
 
 ### Quick-Start Locally
 

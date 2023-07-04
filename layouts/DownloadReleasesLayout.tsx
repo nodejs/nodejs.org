@@ -1,21 +1,19 @@
 import { useMemo } from 'react';
-import { sanitize } from 'isomorphic-dompurify';
 import BaseLayout from './BaseLayout';
-import { useNextraContext } from '../hooks/useNextraContext';
+import { useLayoutContext } from '../hooks/useLayoutContext';
 import DownloadReleasesTable from '../components/Downloads/DownloadReleasesTable';
 import type { FC, PropsWithChildren } from 'react';
 import type { LegacyDownloadsReleasesFrontMatter } from '../types';
 
 const DownloadReleasesLayout: FC<PropsWithChildren> = ({ children }) => {
-  const nextraContext = useNextraContext();
+  const { frontMatter } = useLayoutContext();
 
-  const { modules, title } =
-    nextraContext.frontMatter as LegacyDownloadsReleasesFrontMatter;
+  const { modules, title } = frontMatter as LegacyDownloadsReleasesFrontMatter;
 
   // @TODO: Remove this once we migrate to `nodejs/nodejs.dev` codebase as this is unsafe
   // And completely not recommended
   const extraModulesContent = useMemo(
-    () => sanitize(`[<a href="#backref-1">1</a>]: ${modules}`),
+    () => `[<a href="#backref-1">1</a>]: ${modules}`,
     [modules]
   );
 

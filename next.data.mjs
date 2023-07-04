@@ -1,26 +1,11 @@
-import * as nextData from './scripts/next-data/index.mjs';
+'use strict';
 
-const cachedBlogData = nextData.getBlogData();
+import generateWebsiteFeeds from './next-data/generateWebsiteFeeds.mjs';
+import generateBlogPostsData from './next-data/generateBlogPostsData.mjs';
+import generateNodeReleasesJson from './next-data/generateNodeReleasesJson.mjs';
 
-nextData.generateNodeReleasesJson();
-
-// generates pre-build files for blog year pages (pagination)
-nextData.generateBlogYearPages(cachedBlogData);
-nextData.generateWebsiteFeeds(cachedBlogData);
-
-const getNextData = async (content, { route }) => {
-  const blogData = await cachedBlogData(route);
-
-  const staticProps = { ...blogData };
-
-  return `
-    // add the mdx file content
-    ${content}
-
-    export const getStaticProps = () => {
-      return { props: ${JSON.stringify(staticProps)} };
-    }
-  `;
+export {
+  generateWebsiteFeeds,
+  generateBlogPostsData,
+  generateNodeReleasesJson,
 };
-
-export default getNextData;
