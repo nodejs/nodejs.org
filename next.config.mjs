@@ -30,10 +30,6 @@ const nextConfig = {
     // We disable the support for legacy browsers which should reduce the polyiffing
     // and the overall bundle size for the Node.js Website client runtime
     legacyBrowsers: false,
-    // We want all Next.js scripts to be registered as Service Workers, which
-    // reduces the JavaScript load time on cache hits (this uses Workbox)
-    // @see https://developer.chrome.com/docs/workbox/
-    nextScriptWorkers: true,
     // This feature reduces the Next.js memory consumption by compartimentalising
     // the Webpack builds into smaller threads that are responsible for building
     // smaller pieces of the website instead of all pages at onces
