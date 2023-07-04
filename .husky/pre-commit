@@ -3,12 +3,9 @@
 
 DIR=$(cd `dirname $0` && pwd -P)
 
-# resets the node release data file
-echo "[]" > $DIR/../public/node-releases-data.json
+# if the generated files got tracked to this commit we revert them
+git reset $DIR/../public/node-releases-data.json
+git reset $DIR/../public/blog-posts-data.json
 
-# resets the blog post data file
-echo "{\"pagination\": [],\"categories\": [],\"posts\": []}" > $DIR/../public/blog-posts-data.json
-
-# adds these changes to be part of the current commit
-git add --sparse $DIR/../public/node-releases-data.json
-git add --sparse $DIR/../public/blog-posts-data.json
+# lint and format staged files
+npx lint-staged

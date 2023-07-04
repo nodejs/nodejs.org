@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { useIntl } from 'react-intl';
-import { sanitize } from 'isomorphic-dompurify';
 import styles from './index.module.scss';
 import { dateIsBetween } from '../../../util/dateIsBetween';
 import { isAbsoluteUrl } from '../../../util/isAbsoluteUrl';
@@ -36,7 +35,7 @@ const useHtmlContent = ({ html, link }: WebsiteBanner) =>
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          dangerouslySetInnerHTML={{ __html: sanitize(html) }}
+          dangerouslySetInnerHTML={{ __html: html }}
         />
       );
     }

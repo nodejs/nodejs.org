@@ -39,7 +39,12 @@ jobs:
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-          NEXT_TELEMETRY_DISABLED: 1
+
+      - name: Run Prettier
+        run: npx turbo prettier
+        env:
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
       - name: Save Cache
         uses: actions/cache/save@v3
@@ -94,14 +99,12 @@ jobs:
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Run Storybook Tests
         run: npx turbo test:storybook
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Save Cache
         uses: actions/cache/save@v3
