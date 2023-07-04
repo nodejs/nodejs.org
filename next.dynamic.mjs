@@ -159,7 +159,11 @@ export const getStaticProps = async (source = '', filename = '') => {
 
     // After the MDX gets processed with the remarkPlugins, some extra `data` that might come along
     // the `frontmatter` comes from `serialize` built-in support to `remark-frontmatter`
-    const { headings, matter: frontmatter } = sourceAsVirtualFile.data;
+    const { headings, matter: rawFrontmatter } = sourceAsVirtualFile.data;
+
+    // This serialises the Frontmatter into a JSON object that is compatible with the
+    // `getStaticProps` supported data type for props. (No prop value can be an object or not a primitive)
+    const frontmatter = JSON.parse(JSON.stringify(rawFrontmatter));
 
     // this defines the basic props that should be passed back to the `DynamicPage` component
     // We only want the `compiledSource` as we use `MDXProvider` for custom components along the journey
