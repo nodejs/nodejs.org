@@ -152,7 +152,7 @@ jobs:
           cache: 'npm'
 
       - name: Install NPM packages
-        run: npm ci
+        run: npm ci --omit=dev
 
       - name: Build Next.js
         run: npx turbo build
