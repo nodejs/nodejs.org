@@ -32,11 +32,6 @@ const nextConfig = {
     // We disable the support for legacy browsers which should reduce the polyiffing
     // and the overall bundle size for the Node.js Website client runtime
     legacyBrowsers: false,
-    // This feature reduces the Next.js memory consumption by compartimentalising
-    // the Webpack builds into smaller threads that are responsible for building
-    // smaller pieces of the website instead of all pages at onces
-    // this increases slightly build time in favor of less memory usage
-    webpackBuildWorker: true,
     // Some of our static pages from `getStaticProps` have a lot of data
     // since we pass the fully-compiled MDX page from `MDXRemote` through
     // a page's static props.
