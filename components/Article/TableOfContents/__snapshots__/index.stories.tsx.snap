@@ -1,6 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Article/TableOfContents Blank smoke-test 1`] = `""`;
+exports[`Article/TableOfContents Blank smoke-test 1`] = `
+<details class="TableOfContents_tableOfContents__mQhnM">
+  <summary>
+    <strong>
+      Table of Contents
+    </strong>
+  </summary>
+  <ul>
+  </ul>
+</details>
+`;
 
 exports[`Article/TableOfContents Default smoke-test 1`] = `
 <details class="TableOfContents_tableOfContents__mQhnM">
@@ -11,40 +21,71 @@ exports[`Article/TableOfContents Default smoke-test 1`] = `
   </summary>
   <ul>
     <li>
-      <a href="/#test">
-        test
+      <a href="/#custom-id">
+        Heading 1
       </a>
-      <ul>
-        <li>
-          <a href="/#test">
-            test
-          </a>
-        </li>
-        <li>
-          <a href="/#test">
-            test
-          </a>
-          <ul>
-            <li>
-              <a href="/#test">
-                test
-              </a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="/#test">
-            test
-          </a>
-          <ul>
-            <li>
-              <a href="/#test">
-                test
-              </a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+    </li>
+    <li class="TableOfContents_depth2__G_V8e">
+      <a href="/#undefined">
+        Heading 2
+      </a>
+    </li>
+    <li class="TableOfContents_depth3__0IhVA">
+      <a href="/#undefined">
+        Heading 3
+      </a>
+    </li>
+  </ul>
+</details>
+`;
+
+exports[`Article/TableOfContents Second smoke-test 1`] = `
+<details class="TableOfContents_tableOfContents__mQhnM">
+  <summary>
+    <strong>
+      Table of Contents
+    </strong>
+  </summary>
+  <ul>
+    <li>
+      <a href="/#undefined">
+        Heading 1
+      </a>
+    </li>
+    <li class="TableOfContents_depth3__0IhVA">
+      <a href="/#undefined">
+        Heading 3
+      </a>
+    </li>
+    <li class="TableOfContents_depth3__0IhVA">
+      <a href="/#undefined">
+        Heading 3
+      </a>
+    </li>
+    <li class="TableOfContents_depth2__G_V8e">
+      <a href="/#undefined">
+        Heading 2
+      </a>
+    </li>
+    <li class="TableOfContents_depth4__ZUaHh">
+      <a href="/#undefined">
+        Heading 4
+      </a>
+    </li>
+    <li class="TableOfContents_depth6__jf0Ig">
+      <a href="/#undefined">
+        Heading 6
+      </a>
+    </li>
+    <li class="TableOfContents_depth5__szqVc">
+      <a href="/#undefined">
+        Heading 5
+      </a>
+    </li>
+    <li>
+      <a href="/#undefined">
+        Heading 1
+      </a>
     </li>
   </ul>
 </details>

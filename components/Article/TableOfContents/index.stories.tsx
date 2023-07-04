@@ -1,4 +1,4 @@
-import { mockTableOfContents } from '../../__fixtures__/page';
+import { toc1, toc2 } from '../../../__fixtures__/page';
 import TableOfContents from './';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
@@ -7,11 +7,16 @@ type Meta = MetaObj<typeof TableOfContents>;
 
 export const Default: Story = {
   args: {
-    tableOfContents: mockTableOfContents,
+    tableOfContents: toc1,
   },
 };
 
-// @TODO: Add blank story for TableOfContents
+export const Second: Story = {
+  args: {
+    tableOfContents: toc2,
+  },
+};
+
 export const Blank: Story = {
   args: {
     tableOfContents: [],

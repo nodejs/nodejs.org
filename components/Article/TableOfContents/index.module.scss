@@ -12,15 +12,36 @@
     text-transform: uppercase;
   }
 
-  > ul {
-    margin-left: var(--space-08);
-  }
 
   ul {
-    margin: var(--space-04) 0 0 0;
+    margin: var(--space-04) 0 0 var(--space-08);
     padding: var(--space-08) 0 0 var(--space-24);
 
     li {
+
+      // not use for now
+      //&.depth1 {
+      //
+      //}
+      &.depth2 {
+        list-style-type: square;
+        margin-left: var(--space-08);
+      }
+      &.depth3 {
+        margin-left: var(--space-16);
+      }
+      &.depth4 {
+        list-style-type: square;
+        margin-left: var(--space-24);
+      }
+      &.depth5 {
+        margin-left: var(--space-32);
+      }
+      &.depth6 {
+        list-style-type: square;
+        margin-left: var(--space-40);
+      }
+
       p {
         margin: 0;
       }

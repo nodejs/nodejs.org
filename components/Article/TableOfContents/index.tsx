@@ -3,69 +3,17 @@ import Link from 'next/link';
 import styles from './index.module.scss';
 import type { FC } from 'react';
 
-type TableOfContentsNode = {
-  depth: number;
-  value: string;
-  id: string;
-  children?: TableOfContentsNode[];
-  parent?: TableOfContentsNode | null;
-};
-
 type TableOfContentsProps = {
-  tableOfContents: TableOfContentsNode[];
+  tableOfContents: {
+    depth: number;
+    value: string;
+    data?: {
+      id: string;
+    };
+  }[];
 };
-
-function parseTableOfContents(
-  tableOfContents: TableOfContentsNode[]
-): TableOfContentsNode[] {
-  const parsedTableOfContents: TableOfContentsNode[] = [];
-
-  function addChildNode(
-    parent: TableOfContentsNode,
-    node: TableOfContentsNode
-  ) {
-    if (!parent.children) {
-      parent.children = [];
-    }
-    parent.children.push(node);
-  }
-
-  tableOfContents.forEach(node => {
-    const { depth, value, id } = node;
-    const parsedNode: TableOfContentsNode = { depth, value, id };
-
-    let parentNode = parsedTableOfContents[parsedTableOfContents.length - 1];
-    while (parentNode && parentNode.depth >= depth) {
-      parentNode = parentNode.parent!;
-    }
-
-    if (parentNode) {
-      addChildNode(parentNode, parsedNode);
-    } else {
-      parsedTableOfContents.push(parsedNode);
-    }
-
-    parsedNode.parent = parentNode || null;
-  });
-
-  return parsedTableOfContents;
-}
-
-const traverseTableOfContents: FC<TableOfContentsNode[]> = tableOfContents => (
-  <ul>
-    {parseTableOfContents(tableOfContents).map(item => (
-      <li key={item.id}>
-        <Link href={`#${item.id}`}>{item.value}</Link>
-        {item.children && traverseTableOfContents(item.children)}
-      </li>
-    ))}
-  </ul>
-);
 
 const TableOfContents: FC<TableOfContentsProps> = ({ tableOfContents }) => {
-  if (tableOfContents.length === 0) {
-    return null;
-  }
   return (
     <details className={styles.tableOfContents}>
       <summary>
@@ -73,7 +21,15 @@ const TableOfContents: FC<TableOfContentsProps> = ({ tableOfContents }) => {
           <FormattedMessage id="components.article.tableOfContents" />
         </strong>
       </summary>
-      {traverseTableOfContents(tableOfContents)}
+      <ul>
+        {tableOfContents.map(({ depth, value, data }) => (
+          <li key={value} className={styles[`depth${depth}`]}>
+            <Link href={`#${data?.id}`}>
+              {value}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </details>
   );
 };
