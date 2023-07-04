@@ -1,3 +1,5 @@
+@use 'styles/mixins/screen';
+
 .downloadHeader {
   color: var(--color-text-primary);
   display: flex;
@@ -18,7 +20,7 @@
     line-height: var(--line-height-display3);
     text-transform: capitalize;
 
-    @media (max-width: 500px) {
+    @include screen.forPhoneDown {
       font-size: var(--font-size-display5);
       line-height: var(--line-height-display5);
     }

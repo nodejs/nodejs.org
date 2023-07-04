@@ -1,7 +1,10 @@
+import { Fragment } from 'react';
 import styles from './index.module.scss';
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
-type SectionTitleProps = { path: string[] };
+type SectionTitleProps = {
+  path: (string | ReactNode)[];
+};
 
 const SectionTitle: FC<SectionTitleProps> = ({ path }) => (
   <div className={styles.sectionTitle}>
@@ -10,13 +13,18 @@ const SectionTitle: FC<SectionTitleProps> = ({ path }) => (
 
       if (isLast) {
         return (
-          <span className={styles.active} key={item}>
+          <span className={styles.active} key={index}>
             {item}
           </span>
         );
       }
 
-      return `${item} / `;
+      return (
+        <Fragment key={index}>
+          {item}
+          {' / '}
+        </Fragment>
+      );
     })}
   </div>
 );
