@@ -1,5 +1,4 @@
 import { memo } from 'react';
-
 import { LayoutProvider } from './providers/layoutProvider';
 import { MDXProvider } from './providers/mdxProvider';
 import HtmlHead from './components/HtmlHead';
