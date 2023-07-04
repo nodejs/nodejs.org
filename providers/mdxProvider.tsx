@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import { MDXProvider as BaseMDXProvider } from '@mdx-js/react';
+import { MDXRemote } from 'next-mdx-remote';
 import HighlightJS from 'highlight.js/lib/core';
 import HighlightJavaScript from 'highlight.js/lib/languages/javascript';
 import AnchoredHeading from '../components/AnchoredHeading';
 import NodeApiVersionLinks from '../components/Docs/NodeApiVersionLinks';
-import type { FC, PropsWithChildren } from 'react';
+import type { FC } from 'react';
 import type { MDXComponents } from 'mdx/types';
 
 const mdxComponents: MDXComponents = {
@@ -22,7 +23,7 @@ const mdxComponents: MDXComponents = {
 // @TODO: Once we migrate to `nodejs.dev` components, get rid of Highlight.js
 HighlightJS.registerLanguage('javascript', HighlightJavaScript);
 
-export const MDXProvider: FC<PropsWithChildren> = ({ children }) => {
+export const MDXProvider: FC<{ content: string }> = ({ content }) => {
   // Re-highlights the pages on route change
   useEffect(() => HighlightJS.highlightAll(), []);
 
@@ -30,7 +31,7 @@ export const MDXProvider: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <BaseMDXProvider components={mdxComponents} disableParentContext>
-      {children}
+      <MDXRemote compiledSource={content} frontmatter={null} scope={null} />
     </BaseMDXProvider>
   );
 };
