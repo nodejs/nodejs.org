@@ -2,6 +2,15 @@ import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import PrevNextLink from '..';
 
+jest.mock('next/router', () => ({
+  useRouter() {
+    return {
+      isReady: true,
+      asPath: '/link',
+    };
+  },
+}));
+
 describe('PrevNextLink component', () => {
   test('renders nothing if neither previous nor next are provided', () => {
     render(<PrevNextLink />);
@@ -17,7 +26,7 @@ describe('PrevNextLink component', () => {
       </IntlProvider>
     );
     const link = screen.getByRole('link');
-    expect(link).toHaveAttribute('href', previous.slug);
+    expect(link).toHaveAttribute('href', `/en${previous.slug}`);
   });
 
   test('renders next link if next is provided', () => {
@@ -28,7 +37,7 @@ describe('PrevNextLink component', () => {
       </IntlProvider>
     );
     const link = screen.getByRole('link');
-    expect(link).toHaveAttribute('href', next.slug);
+    expect(link).toHaveAttribute('href', `/en${next.slug}`);
   });
 
   test('renders both previous and next links if both are provided', () => {
@@ -40,7 +49,7 @@ describe('PrevNextLink component', () => {
       </IntlProvider>
     );
     const links = screen.getAllByRole('link');
-    expect(links[0]).toHaveAttribute('href', previous.slug);
-    expect(links[1]).toHaveAttribute('href', next.slug);
+    expect(links[0]).toHaveAttribute('href', `/en${previous.slug}`);
+    expect(links[1]).toHaveAttribute('href', `/en${next.slug}`);
   });
 });
