@@ -4,6 +4,7 @@ import { LocaleProvider } from '../providers/localeProvider';
 import { BlogDataProvider } from '../providers/blogDataProvider';
 import { NodeReleasesProvider } from '../providers/nodeReleasesProvider';
 import { sourceSans } from '../util/nextFonts';
+import * as nextConstants from '../next.constants.mjs';
 import type { AppProps } from 'next/app';
 
 import '../styles/old/index.scss';
@@ -20,7 +21,7 @@ const App = ({ Component, pageProps }: AppProps) => (
       </SiteProvider>
     </LocaleProvider>
 
-    <Analytics />
+    {nextConstants.ENABLE_STATIC_EXPORT || <Analytics />}
 
     <style jsx global>
       {`
