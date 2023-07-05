@@ -18,8 +18,10 @@ const LocalizedLink: FC<ComponentProps<typeof Link>> = ({
     );
   }
 
+  const addLocaleToHref = linkWithLocale(currentLocale.code);
+
   return (
-    <Link {...extra} href={linkWithLocale(currentLocale.code)(href)}>
+    <Link {...extra} href={addLocaleToHref(href)} prefetch={false}>
       {children}
     </Link>
   );
