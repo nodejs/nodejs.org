@@ -1,18 +1,19 @@
 import { FormattedMessage } from 'react-intl';
 import Image from 'next/image';
-import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
-import styles from './index.module.scss';
+import LocalizedLink from '../../LocalizedLink';
 import ActiveLocalizedLink from '../../Common/ActiveLocalizedLink';
 import DarkModeToggle from '../../Common/DarkModeToggle';
 import LanguageSelector from '../../Common/LanguageSelector';
 import type { FC } from 'react';
 
+import styles from './index.module.scss';
+
 const Header: FC = () => (
   <nav aria-label="Primary" className={styles.header}>
     <div className={styles.container}>
       <div className={styles.startWrapper}>
-        <Link href="/" aria-label="Homepage">
+        <LocalizedLink href="/" aria-label="Homepage">
           <div className={styles.logo}>
             <div>
               <Image
@@ -33,7 +34,7 @@ const Header: FC = () => (
               />
             </div>
           </div>
-        </Link>
+        </LocalizedLink>
       </div>
 
       <ul className={styles.tabs}>

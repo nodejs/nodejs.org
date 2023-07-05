@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import Link from 'next/link';
 import { useLocale } from '../hooks/useLocale';
 import { linkWithLocale } from '../util/linkWithLocale';
@@ -11,18 +10,16 @@ const LocalizedLink: FC<ComponentProps<typeof Link>> = ({
 }) => {
   const { currentLocale } = useLocale();
 
-  const localizedUrl = linkWithLocale(currentLocale.code);
-
-  const finalHref = useMemo(
-    () =>
-      /^https?:\/\//.test(href.toString())
-        ? href.toString()
-        : localizedUrl(href),
-    [href, localizedUrl]
-  );
+  if (/^https?:\/\//.test(href.toString())) {
+    return (
+      <a {...extra} href={href.toString()}>
+        {children}
+      </a>
+    );
+  }
 
   return (
-    <Link {...extra} href={finalHref}>
+    <Link {...extra} href={linkWithLocale(currentLocale.code)(href)}>
       {children}
     </Link>
   );

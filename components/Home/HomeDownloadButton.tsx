@@ -21,9 +21,10 @@ const HomeDownloadButton: FC<NodeRelease> = ({
   const nodeDownloadLink = downloadUrlByOS(versionWithPrefix, os, bitness);
   const nodeApiLink = `https://nodejs.org/dist/latest-v${major}.x/docs/api/`;
   const nodeAllDownloadsLink = `/download${isLts ? '/' : '/current'}`;
-  const nodeDownloadTitle =
-    `${labels?.download} ${version}` +
-    ` ${labels?.[isLts ? 'lts' : 'current']}`;
+
+  const nodeDownloadTitle = `${labels?.download} ${version} ${labels?.[
+    isLts ? 'lts' : 'current'
+  ]}`;
 
   return (
     <div className="home-downloadblock">
@@ -44,12 +45,12 @@ const HomeDownloadButton: FC<NodeRelease> = ({
           </LocalizedLink>
         </li>
         <li>
-          <LocalizedLink href={getNodejsChangelog(versionWithPrefix)}>
+          <a href={getNodejsChangelog(versionWithPrefix)}>
             {labels?.changelog}
-          </LocalizedLink>
+          </a>
         </li>
         <li>
-          <LocalizedLink href={nodeApiLink}>{labels?.api}</LocalizedLink>
+          <a href={nodeApiLink}>{labels?.api}</a>
         </li>
       </ul>
     </div>

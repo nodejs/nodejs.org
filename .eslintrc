@@ -7,25 +7,6 @@
   ],
   "overrides": [
     {
-      "files": ["**/*.{mjs,js,ts,tsx}"],
-      "rules": {
-        "import/order": [
-          "warn",
-          {
-            "groups": [
-              "builtin",
-              "external",
-              "internal",
-              "sibling",
-              "parent",
-              "index",
-              "type"
-            ]
-          }
-        ]
-      }
-    },
-    {
       "files": ["**/*.ts?(x)"],
       "plugins": ["@typescript-eslint"],
       "rules": {
