@@ -4,7 +4,7 @@ exports[`Learn/PreviousNextLink Default smoke-test 1`] = `
 <ul class="PreviousNextLink_prevNextLink__9SAYu">
   <li>
     <a rel="prev"
-       href="/previous"
+       href="/en/previous"
     >
       <svg stroke="currentColor"
            fill="currentColor"
@@ -23,7 +23,7 @@ exports[`Learn/PreviousNextLink Default smoke-test 1`] = `
   </li>
   <li>
     <a rel="next"
-       href="/next"
+       href="/en/next"
     >
       NEXT
       <svg stroke="currentColor"
@@ -47,7 +47,7 @@ exports[`Learn/PreviousNextLink WithoutNext smoke-test 1`] = `
 <ul class="PreviousNextLink_prevNextLink__9SAYu">
   <li>
     <a rel="prev"
-       href="/previous"
+       href="/en/previous"
     >
       <svg stroke="currentColor"
            fill="currentColor"
@@ -75,7 +75,7 @@ exports[`Learn/PreviousNextLink WithoutPrevious smoke-test 1`] = `
   </li>
   <li>
     <a rel="next"
-       href="/next"
+       href="/en/next"
     >
       NEXT
       <svg stroke="currentColor"

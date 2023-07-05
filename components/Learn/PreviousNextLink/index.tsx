@@ -1,9 +1,10 @@
-import Link from 'next/link';
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
 import { FormattedMessage } from 'react-intl';
-import styles from './index.module.scss';
+import LocalizedLink from '../../LocalizedLink';
 import type { LinkInfo } from '../../../types';
 import type { FC } from 'react';
+
+import styles from './index.module.scss';
 
 type PreviousNextLinkProps = {
   previous?: LinkInfo;
@@ -19,18 +20,18 @@ const PreviousNextLink: FC<PreviousNextLinkProps> = ({ previous, next }) => {
     <ul className={styles.prevNextLink}>
       <li>
         {previous && (
-          <Link href={previous.slug} rel="prev">
+          <LocalizedLink href={previous.slug} rel="prev">
             <FaAngleDoubleLeft size="1em" style={{ marginRight: '5px' }} />
             <FormattedMessage id="components.learn.previousNextLink.previous" />
-          </Link>
+          </LocalizedLink>
         )}
       </li>
       <li>
         {next && (
-          <Link href={next.slug} rel="next">
+          <LocalizedLink href={next.slug} rel="next">
             <FormattedMessage id="components.learn.previousNextLink.next" />
             <FaAngleDoubleRight style={{ marginLeft: '5px' }} />
-          </Link>
+          </LocalizedLink>
         )}
       </li>
     </ul>

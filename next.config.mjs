@@ -7,6 +7,8 @@ const nextConfig = {
   // We intentionally disable Next.js's built-in i18n support
   // as we dom have our own i18n and internationalisation engine
   i18n: null,
+  // We want to always enforce that SWC minifies the sources even during Development mode
+  // so that bundles are minified on-the-go. SWF minifying is fast, and has almost no penalties
   swcMinify: true,
   // We don't use trailing slashes on URLs from the Node.js Website
   trailingSlash: false,
@@ -30,18 +32,10 @@ const nextConfig = {
     // We disable the support for legacy browsers which should reduce the polyiffing
     // and the overall bundle size for the Node.js Website client runtime
     legacyBrowsers: false,
-    // This feature reduces the Next.js memory consumption by compartimentalising
-    // the Webpack builds into smaller threads that are responsible for building
-    // smaller pieces of the website instead of all pages at onces
-    // this increases slightly build time in favor of less memory usage
-    webpackBuildWorker: true,
     // Some of our static pages from `getStaticProps` have a lot of data
     // since we pass the fully-compiled MDX page from `MDXRemote` through
     // a page's static props.
     largePageDataBytes: 128 * 100000,
-    // This allows us to use SuperJson which supports custom data types for the JSON schema
-    // @see https://github.com/blitz-js/superjson
-    swcPlugins: [['next-superjson-plugin', {}]],
     // We disable the bundling and tracing of some files on the Serverless & Edge Runtimes
     // as otherwise they would explode the bundle size (server) and the tracing time
     outputFileTracingExcludes: {

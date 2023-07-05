@@ -1,5 +1,4 @@
 import { FormattedMessage } from 'react-intl';
-import Link from 'next/link';
 import { getNodejsChangelog } from '../../util/getNodeJsChangelog';
 import { getNodeApiLink } from '../../util/getNodeApiLink';
 import { useNodeReleases } from '../../hooks/useNodeReleases';
@@ -18,7 +17,7 @@ const DownloadReleasesTable: FC = () => {
           <td>V8</td>
           <td>npm</td>
           <td>
-            NODE_MODULE_VERSION<Link href="#ref-1">[1]</Link>
+            NODE_MODULE_VERSION<a href="#ref-1">[1]</a>
             <span id="backref-1"></span>
           </td>
           <td></td>

@@ -7,7 +7,7 @@ exports[`Sections/NewHeader Default smoke-test 1`] = `
   <div class="NewHeader_container__tyM2Y">
     <div class="NewHeader_startWrapper__teZG4">
       <a aria-label="Homepage"
-         href="/"
+         href="/en"
       >
         <div class="NewHeader_logo__mB_8v">
           <div>
