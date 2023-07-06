@@ -1,6 +1,6 @@
 'use strict';
 
-import { join } from 'node:path';
+import { join, normalize, sep } from 'node:path';
 import { readFileSync } from 'node:fs';
 import { VFile } from 'vfile';
 import remarkGfm from 'remark-gfm';
@@ -41,10 +41,13 @@ const getAllPaths = async () => {
     (locale = '') =>
     (files = []) =>
       sourcePages.map(filename => {
-        const path = filename.replace(nextConstants.MD_EXTENSION_REGEX, '');
-
+        let path = filename.replace(nextConstants.MD_EXTENSION_REGEX, '');
+        // remove trailing slash for correct Windows pathing of the index files
+        if (path.length > 1 && path.endsWith(sep)) {
+          path = path.substring(0, path.length - 1);
+        }
         return {
-          pathname: path,
+          pathname: normalize(path),
           filename: filename,
           localised: files.includes(filename),
           routeWithLocale: `${locale}/${path}`,
@@ -99,7 +102,7 @@ export const getMarkdownFile = (
   // which prevents any malicious attempts to access non-allowed pages
   // or other files that do not belong to the `sourcePages`
   if (routes && routes.length) {
-    const route = routes.find(route => route.pathname === pathname);
+    const route = routes.find(route => route.pathname === normalize(pathname));
 
     if (route && route.filename) {
       // this determines if we should be using the fallback rendering to the default locale
