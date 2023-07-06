@@ -9,7 +9,9 @@ import * as nextLocales from './next.locales.mjs';
  * Can be used for conditionally enabling features that we know are Vercel only
  */
 export const VERCEL_DEPLOYED =
-  process.env.VERCEL === '1' || process.env.VERCEL === true;
+  process.env.VERCEL === 1 ||
+  process.env.VERCEL === '1' ||
+  process.env.VERCEL === true;
 
 /**
  * This is used for telling Next.js to to a Static Export Build of the Website
