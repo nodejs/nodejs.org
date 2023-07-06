@@ -8,10 +8,7 @@ import * as nextLocales from './next.locales.mjs';
  *
  * Can be used for conditionally enabling features that we know are Vercel only
  */
-export const VERCEL_DEPLOYED =
-  process.env.VERCEL === 1 ||
-  process.env.VERCEL === '1' ||
-  process.env.VERCEL === true;
+export const VERCEL_ENV = process.env.NEXT_PUBLIC_VERCEL_ENV || undefined;
 
 /**
  * This is used for telling Next.js to to a Static Export Build of the Website
@@ -28,8 +25,8 @@ export const ENABLE_STATIC_EXPORT =
  *
  * Such as for example, the Node.js RSS Feed
  */
-export const BASE_URL = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
+export const BASE_URL = process.env.NEXT_PUBLIC_VERCEL_URL
+  ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
   : process.env.NEXT_BASE_URL || 'https://nodejs.org';
 
 /**
