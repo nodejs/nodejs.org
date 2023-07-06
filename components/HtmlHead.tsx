@@ -9,9 +9,9 @@ type HeaderProps = { frontMatter: LegacyFrontMatter };
 
 const HtmlHead: FC<HeaderProps> = ({ frontMatter }) => {
   const siteConfig = useSiteConfig();
-  const { route, basePath } = useRouter();
+  const { asPath, basePath } = useRouter();
 
-  const canonicalLink = `${BASE_URL}${BASE_PATH}${route}`;
+  const canonicalLink = `${BASE_URL}${BASE_PATH}${asPath}`;
 
   const pageTitle = frontMatter.title
     ? `${frontMatter.title} | ${siteConfig.title}`
