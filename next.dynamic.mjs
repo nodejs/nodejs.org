@@ -41,16 +41,17 @@ const getAllPaths = async () => {
     (locale = '') =>
     (files = []) =>
       sourcePages.map(filename => {
-        let path = filename.replace(nextConstants.MD_EXTENSION_REGEX, '');
+        // remove the index.md(x) suffix from a pathname
+        let pathname = filename.replace(nextConstants.MD_EXTENSION_REGEX, '');
         // remove trailing slash for correct Windows pathing of the index files
-        if (path.length > 1 && path.endsWith(sep)) {
-          path = path.substring(0, path.length - 1);
+        if (pathname.length > 1 && pathname.endsWith(sep)) {
+          pathname = pathname.substring(0, pathname.length - 1);
         }
         return {
-          pathname: normalize(path),
+          pathname: normalize(pathname),
           filename: filename,
           localised: files.includes(filename),
-          routeWithLocale: `${locale}/${path}`,
+          routeWithLocale: `${locale}/${pathname}`,
         };
       });
 
