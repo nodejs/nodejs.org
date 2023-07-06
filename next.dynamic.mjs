@@ -47,6 +47,7 @@ const getAllPaths = async () => {
         if (pathname.length > 1 && pathname.endsWith(sep)) {
           pathname = pathname.substring(0, pathname.length - 1);
         }
+
         return {
           pathname: normalize(pathname),
           filename: filename,
