@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useSiteConfig } from '../hooks/useSiteConfig';
 import { useRouter } from '../hooks/useRouter';
+import { BASE_URL, BASE_PATH } from '../next.constants.mjs';
 import type { LegacyFrontMatter } from '../types';
 import type { FC } from 'react';
 
@@ -10,7 +11,7 @@ const HtmlHead: FC<HeaderProps> = ({ frontMatter }) => {
   const siteConfig = useSiteConfig();
   const { route, basePath } = useRouter();
 
-  const canonicalLink = `https://nodejs.org${route}`;
+  const canonicalLink = `${BASE_URL}${BASE_PATH}${route}`;
 
   const pageTitle = frontMatter.title
     ? `${frontMatter.title} | ${siteConfig.title}`

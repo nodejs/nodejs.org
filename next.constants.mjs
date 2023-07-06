@@ -4,6 +4,14 @@ import * as nextJson from './next.json.mjs';
 import * as nextLocales from './next.locales.mjs';
 
 /**
+ * This is used for telling Next.js if the Website is deployed on Vercel
+ *
+ * Can be used for conditionally enabling features that we know are Vercel only
+ */
+export const VERCEL_DEPLOYED =
+  process.env.VERCEL === '1' || process.env.VERCEL === true;
+
+/**
  * This is used for telling Next.js to to a Static Export Build of the Website
  *
  * This is used for static/without a Node.js server hosting, such as on our
@@ -14,12 +22,21 @@ export const ENABLE_STATIC_EXPORT =
   process.env.NEXT_STATIC_EXPORT === true;
 
 /**
+ * This is used for any place that requires the full canonical URL path for the Node.js Website (and its deployment)
+ *
+ * Such as for example, the Node.js RSS Feed
+ */
+export const BASE_URL = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : process.env.NEXT_BASE_URL || 'https://nodejs.org';
+
+/**
  * Supports a manual override of the base path of the Website
  *
  * This is useful when running the deployment on a subdirectory
  * of a domain, such as when hosted on GitHub Pages.
  */
-export const BASE_PATH = String(process.env.NEXT_BASE_PATH || '');
+export const BASE_PATH = process.env.NEXT_BASE_PATH || '';
 
 /**
  * This ReGeX is used to remove the `index.md(x)` suffix of a name and to remove
