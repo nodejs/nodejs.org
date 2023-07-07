@@ -3,7 +3,6 @@ import BaseLayout from './BaseLayout';
 import LocalizedLink from '../components/LocalizedLink';
 import { useLayoutContext } from '../hooks/useLayoutContext';
 import { useBlogData } from '../hooks/useBlogData';
-import { getTimeComponent } from '../util/getTimeComponent';
 import type { FC, PropsWithChildren } from 'react';
 import type { BlogPost } from '../types';
 
@@ -24,7 +23,14 @@ const CategoryIndexLayout: FC<PropsWithChildren> = ({ children }) => {
         <ul className="blog-index">
           {posts.map((post: BlogPost) => (
             <li key={post.slug}>
-              {getTimeComponent(post.date.toString(), '%d %b %y')}
+              <time dateTime={post.date}>
+                {new Date(post.date).toLocaleString('en-GB', {
+                  timeZone: 'UTC',
+                  month: 'short',
+                  day: '2-digit',
+                })}
+              </time>
+
               <LocalizedLink href={post.slug}>{post.title}</LocalizedLink>
             </li>
           ))}

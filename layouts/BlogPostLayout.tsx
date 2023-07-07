@@ -1,7 +1,6 @@
 import { FormattedMessage } from 'react-intl';
 import BaseLayout from './BaseLayout';
 import { useLayoutContext } from '../hooks/useLayoutContext';
-import { getTimeComponent } from '../util/getTimeComponent';
 import type { FC, PropsWithChildren } from 'react';
 import type { LegacyBlogFrontMatter } from '../types';
 
@@ -21,7 +20,15 @@ const BlogPostLayout: FC<PropsWithChildren> = ({ children }) => {
                 id="layouts.blogPost.author.byLine"
                 values={{ author: author || null }}
               />
-              {getTimeComponent(date)}
+
+              <time dateTime={date}>
+                {new Date(date).toLocaleString('en-GB', {
+                  timeZone: 'UTC',
+                  month: 'short',
+                  day: '2-digit',
+                  year: 'numeric',
+                })}
+              </time>
             </span>
           </div>
 
