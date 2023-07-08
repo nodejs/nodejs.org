@@ -77,7 +77,7 @@
         "translationId": "components.navigation.docs.links.guides"
       },
       "dependencies": {
-        "link": "/docs/meta/topics/dependencies",
+        "link": "https://github.com/nodejs/node/blob/main/doc/contributing/maintaining/maintaining-dependencies.md",
         "translationId": "components.navigation.docs.links.dependencies"
       }
     }
