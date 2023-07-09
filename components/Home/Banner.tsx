@@ -1,5 +1,5 @@
-import { useSiteConfig } from '../../hooks/useSiteConfig';
-import { dateIsBetween } from '../../util/dateIsBetween';
+import { useSiteConfig } from '@/hooks/useSiteConfig';
+import { dateIsBetween } from '@/util/dateIsBetween';
 
 const Banner = () => {
   const siteConfig = useSiteConfig();

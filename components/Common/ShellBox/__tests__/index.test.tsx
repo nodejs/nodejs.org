@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { IntlProvider } from 'react-intl';
-import ShellBox from '../index';
+import ShellBox from '@/components/Common/ShellBox/index';
 
 const mockWriteText = jest.fn();
 const originalNavigator = { ...window.navigator };

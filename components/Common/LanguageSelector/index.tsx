@@ -2,9 +2,9 @@ import { useMemo, useState, useCallback } from 'react';
 import { MdOutlineTranslate } from 'react-icons/md';
 import { useIntl } from 'react-intl';
 import styles from './index.module.scss';
-import Dropdown from '../Dropdown';
-import { useLocale } from '../../../hooks/useLocale';
-import { useClickOutside } from '../../../hooks/useClickOutside';
+import Dropdown from '@/components/Common/Dropdown';
+import { useLocale } from '@/hooks/useLocale';
+import { useClickOutside } from '@/hooks/useClickOutside';
 
 const dropdownStyle = {
   position: 'absolute',

@@ -94,6 +94,7 @@
     "eslint-config-next": "^13.4.7",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-mdx": "^2.1.0",
+    "eslint-plugin-no-relative-import-paths": "^1.5.2",
     "eslint-plugin-storybook": "^0.6.12",
     "handlebars": "^4.7.7",
     "jest": "^29.5.0",

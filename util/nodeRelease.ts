@@ -2,7 +2,7 @@ import type {
   NodeRelease,
   NodeReleaseStatus,
   NodeReleaseSupport,
-} from '../types/releases';
+} from '@/types/releases';
 
 export const isNodeRelease = (release: any): release is NodeRelease =>
   typeof release === 'object' && release?.version;

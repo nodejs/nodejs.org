@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 import BaseLayout from './BaseLayout';
-import LocalizedLink from '../components/LocalizedLink';
-import { useLayoutContext } from '../hooks/useLayoutContext';
-import { useBlogData } from '../hooks/useBlogData';
+import LocalizedLink from '@/components/LocalizedLink';
+import { useLayoutContext } from '@/hooks/useLayoutContext';
+import { useBlogData } from '@/hooks/useBlogData';
 import type { FC, PropsWithChildren } from 'react';
-import type { BlogPost } from '../types';
+import type { BlogPost } from '@/types';
 
 const CategoryIndexLayout: FC<PropsWithChildren> = ({ children }) => {
   const { frontMatter } = useLayoutContext();
