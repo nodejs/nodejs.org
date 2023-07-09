@@ -60,10 +60,6 @@
     "link": "/docs",
     "translationId": "components.header.links.docs",
     "items": {
-      "es6": {
-        "link": "/docs/es6",
-        "translationId": "components.navigation.docs.links.es6"
-      },
       "apiLts": {
         "link": "https://nodejs.org/dist/latest-{ltsNodeVersion}/docs/api",
         "translationId": "components.navigation.docs.links.apiLts"
@@ -71,6 +67,10 @@
       "apiCurrent": {
         "link": "https://nodejs.org/dist/latest-{currentNodeVersion}/docs/api",
         "translationId": "components.navigation.docs.links.apiCurrent"
+      },
+      "es6": {
+        "link": "/docs/es6",
+        "translationId": "components.navigation.docs.links.es6"
       },
       "guides": {
         "link": "/docs/guides",
