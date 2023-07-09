@@ -177,6 +177,19 @@ jobs:
     needs: build
 
     steps:
+      - name: Git Checkout
+        uses: actions/checkout@v3
+
+      - name: Restore Cache
+        uses: actions/cache/restore@v3
+        with:
+          path: |
+            ~/.npm
+            .next/cache
+            node_modules/.cache
+          key: cache-${{ hashFiles('package-lock.json') }}-
+          restore-keys: cache-
+
       - name: Download PR Bundle Analysis
         uses: actions/download-artifact@v3
         with:
