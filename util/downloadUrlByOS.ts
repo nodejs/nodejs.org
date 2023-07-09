@@ -1,6 +1,5 @@
 import { DIST_URL } from '@/next.constants.mjs';
 import type { UserOS } from '@/types/userOS';
-import { DIST_URL } from '@/next.constants.mjs';
 
 export const downloadUrlByOS = (
   versionWithPrefix: string,
