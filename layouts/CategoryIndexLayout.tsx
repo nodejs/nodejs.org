@@ -4,7 +4,6 @@ import { Time } from '@/components/Common/Time';
 import LocalizedLink from '@/components/LocalizedLink';
 import { useLayoutContext } from '@/hooks/useLayoutContext';
 import { useBlogData } from '@/hooks/useBlogData';
-
 import type { FC, PropsWithChildren } from 'react';
 import type { BlogPost } from '@/types';
 
