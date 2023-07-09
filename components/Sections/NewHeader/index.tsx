@@ -1,13 +1,12 @@
 import { FormattedMessage } from 'react-intl';
 import Image from 'next/image';
 import { FaGithub } from 'react-icons/fa';
-import LocalizedLink from '../../LocalizedLink';
-import ActiveLocalizedLink from '../../Common/ActiveLocalizedLink';
-import DarkModeToggle from '../../Common/DarkModeToggle';
-import LanguageSelector from '../../Common/LanguageSelector';
-import type { FC } from 'react';
-
 import styles from './index.module.scss';
+import LocalizedLink from '@/components/LocalizedLink';
+import ActiveLocalizedLink from '@/components/Common/ActiveLocalizedLink';
+import DarkModeToggle from '@/components/Common/DarkModeToggle';
+import LanguageSelector from '@/components/Common/LanguageSelector';
+import type { FC } from 'react';
 
 const Header: FC = () => (
   <nav aria-label="Primary" className={styles.header}>

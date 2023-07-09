@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { highlight, languages } from 'prismjs';
 import classnames from 'classnames';
-import styles from './index.module.scss';
-import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
+import styles from '@/index.module.scss';
+import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
 import type { FC, PropsWithChildren, ReactElement, MouseEvent } from 'react';
 
 type CodeBoxProps = {

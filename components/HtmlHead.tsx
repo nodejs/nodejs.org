@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import { useSiteConfig } from '../hooks/useSiteConfig';
-import { useRouter } from '../hooks/useRouter';
-import { BASE_URL, BASE_PATH } from '../next.constants.mjs';
-import type { LegacyFrontMatter } from '../types';
+import { useSiteConfig } from '@/hooks/useSiteConfig';
+import { useRouter } from '@/hooks/useRouter';
+import { BASE_PATH, BASE_URL } from '@/next.constants.mjs';
+import type { LegacyFrontMatter } from '@/types';
 import type { FC } from 'react';
 
 type HeaderProps = { frontMatter: LegacyFrontMatter };

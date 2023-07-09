@@ -1,7 +1,7 @@
 import { useTheme } from 'next-themes';
 import { useIntl } from 'react-intl';
 import { MdLightMode, MdNightlight } from 'react-icons/md';
-import styles from './index.module.scss';
+import styles from '@/index.module.scss';
 
 const DarkModeToggle = () => {
   const { theme, setTheme } = useTheme();

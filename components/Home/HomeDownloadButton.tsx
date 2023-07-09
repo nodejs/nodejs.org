@@ -1,8 +1,8 @@
 import LocalizedLink from '../LocalizedLink';
-import { useDetectOS } from '../../hooks/useDetectOS';
-import { useLayoutContext } from '../../hooks/useLayoutContext';
-import { downloadUrlByOS } from '../../util/downloadUrlByOS';
-import { getNodejsChangelog } from '../../util/getNodeJsChangelog';
+import { useDetectOS } from '@/hooks/useDetectOS';
+import { useLayoutContext } from '@/hooks/useLayoutContext';
+import { downloadUrlByOS } from '@/util/downloadUrlByOS';
+import { getNodejsChangelog } from '@/util/getNodeJsChangelog';
 import type { FC } from 'react';
 import type { NodeRelease } from '../../types';
 

@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import BaseLayout from './BaseLayout';
-import SideNavigation from '../components/SideNavigation';
-import { useNodeReleases } from '../hooks/useNodeReleases';
+import SideNavigation from '@/components/SideNavigation';
+import { useNodeReleases } from '@/hooks/useNodeReleases';
 import type { FC, PropsWithChildren } from 'react';
 
 const DocsLayout: FC<PropsWithChildren> = ({ children }) => {

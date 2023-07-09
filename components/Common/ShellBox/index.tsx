@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { FormattedMessage } from 'react-intl';
-import styles from './index.module.scss';
-import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
+import styles from '@/index.module.scss';
+import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
 import type { FC, PropsWithChildren, MouseEvent, ReactNode } from 'react';
 
 type ShellBoxProps = {

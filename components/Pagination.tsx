@@ -1,7 +1,6 @@
 import { FormattedMessage } from 'react-intl';
 import LocalizedLink from './LocalizedLink';
 import type { FC } from 'react';
-
 type PaginationProps = { prevSlug?: number; nextSlug?: number };
 
 const Pagination: FC<PaginationProps> = ({ nextSlug, prevSlug }) => (

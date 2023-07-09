@@ -1,6 +1,6 @@
 import DownloadList from './DownloadList';
-import { useLayoutContext } from '../../hooks/useLayoutContext';
-import { WithNodeRelease } from '../../providers/withNodeRelease';
+import { useLayoutContext } from '@/hooks/useLayoutContext';
+import { WithNodeRelease } from '@/providers/withNodeRelease';
 import type { LegacyDownloadsFrontMatter, NodeRelease } from '../../types';
 import type { FC } from 'react';
 

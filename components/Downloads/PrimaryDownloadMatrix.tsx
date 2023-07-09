@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import semVer from 'semver';
 import LocalizedLink from '../LocalizedLink';
-import { useDetectOS } from '../../hooks/useDetectOS';
-import { useLayoutContext } from '../../hooks/useLayoutContext';
+import { useDetectOS } from '@/hooks/useDetectOS';
+import { useLayoutContext } from '@/hooks/useLayoutContext';
 import type { LegacyDownloadsFrontMatter, NodeRelease } from '../../types';
 import type { FC } from 'react';
 

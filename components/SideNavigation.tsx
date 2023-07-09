@@ -1,7 +1,7 @@
 import classNames from 'classnames';
+import { useNavigation } from '@/hooks/useNavigation';
+import { useLocale } from '@/hooks/useLocale';
 import LocalizedLink from './LocalizedLink';
-import { useLocale } from '../hooks/useLocale';
-import { useNavigation } from '../hooks/useNavigation';
 import type { NavigationKeys } from '../types';
 import type { FC } from 'react';
 

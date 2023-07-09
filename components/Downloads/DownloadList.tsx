@@ -1,6 +1,6 @@
 import { FormattedMessage } from 'react-intl';
 import LocalizedLink from '../LocalizedLink';
-import { useNavigation } from '../../hooks/useNavigation';
+import { useNavigation } from '@/hooks/useNavigation';
 import type { NodeRelease } from '../../types';
 import type { FC } from 'react';
 

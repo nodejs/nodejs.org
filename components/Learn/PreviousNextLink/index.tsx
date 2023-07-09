@@ -1,10 +1,11 @@
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
 import { FormattedMessage } from 'react-intl';
-import LocalizedLink from '../../LocalizedLink';
+import LocalizedLink from '@/components/LocalizedLink';
 import type { LinkInfo } from '../../../types';
 import type { FC } from 'react';
 
-import styles from './index.module.scss';
+import styles from '@/index.module.scss';
+
 
 type PreviousNextLinkProps = {
   previous?: LinkInfo;
