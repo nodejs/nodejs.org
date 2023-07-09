@@ -4,6 +4,15 @@ on:
   pull_request:
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: ./
+
+permissions:
+  contents: read
+  actions: read
+  pull-requests: write
+
 jobs:
   lint:
     name: Lint
@@ -45,15 +54,6 @@ jobs:
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-
-      - name: Save Cache
-        uses: actions/cache/save@v3
-        with:
-          path: |
-            ~/.npm
-            .next/cache
-            node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}
 
   unit-tests:
     name: Tests on ${{ matrix.os }}
@@ -106,15 +106,6 @@ jobs:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
-      - name: Save Cache
-        uses: actions/cache/save@v3
-        with:
-          path: |
-            ~/.npm
-            .next/cache
-            node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}
-
   build:
     name: Build on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
@@ -162,6 +153,15 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=4096'
           NEXT_TELEMETRY_DISABLED: 1
 
+      - name: Analyse Build
+        run: npx -p nextjs-bundle-analysis report
+
+      - name: Upload Build Analysis
+        uses: actions/upload-artifact@v3
+        with:
+          name: bundle-analysis
+          path: .next/analyze/__bundle_analysis.json
+
       - name: Save Cache
         uses: actions/cache/save@v3
         with:
@@ -170,3 +170,58 @@ jobs:
             .next/cache
             node_modules/.cache
           key: cache-${{ hashFiles('package-lock.json') }}
+
+  analysis:
+    name: Analysis
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Download PR Bundle Analysis
+        uses: actions/download-artifact@v3
+        with:
+          name: bundle-analysis
+
+      - name: Download Base Bundle Analysis
+        uses: dawidd6/action-download-artifact@v2
+        if: success() && github.event.number
+        with:
+          workflow: pull-request.yml
+          branch: ${{ github.event.pull_request.base.ref }}
+          path: .next/analyze/base
+
+      - name: Compare with base branch bundle
+        if: success() && github.event.number
+        run: ls -laR .next/analyze/base && npx -p nextjs-bundle-analysis compare
+
+      - name: Get Comment Body
+        id: get-comment-body
+        if: success() && github.event.number
+        run: |
+          echo "body<<EOF" >> $GITHUB_OUTPUT
+          echo "$(cat .next/analyze/__bundle_analysis_comment.txt)" >> $GITHUB_OUTPUT
+          echo EOF >> $GITHUB_OUTPUT
+
+      - name: Find Comment
+        uses: peter-evans/find-comment@v2
+        if: success() && github.event.number
+        id: find-comment-id
+        with:
+          issue-number: ${{ github.event.number }}
+          body-includes: '<!-- __NEXTJS_BUNDLE -->'
+
+      - name: Create Comment
+        uses: peter-evans/create-or-update-comment@v2
+        if: success() && github.event.number && steps.find-comment-id.outputs.comment-id == 0
+        with:
+          issue-number: ${{ github.event.number }}
+          body: ${{ steps.get-comment-body.outputs.body }}
+
+      - name: Update Comment
+        uses: peter-evans/create-or-update-comment@v2
+        if: success() && github.event.number && steps.find-comment-id.outputs.comment-id != 0
+        with:
+          issue-number: ${{ github.event.number }}
+          body: ${{ steps.get-comment-body.outputs.body }}
+          comment-id: ${{ steps.find-comment-id.outputs.comment-id }}
+          edit-mode: replace
