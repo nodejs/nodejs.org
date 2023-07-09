@@ -6,7 +6,6 @@ import type { FC } from 'react';
 
 import styles from '@/index.module.scss';
 
-
 type PreviousNextLinkProps = {
   previous?: LinkInfo;
   next?: LinkInfo;

@@ -5,7 +5,6 @@ import navigation from '@/navigation.json';
 import type { BlogPost } from '@/types';
 import type { FC } from 'react';
 
-
 const getBlogCategoryUrl = (category: string): string =>
   `${navigation.blog.link}/${category}/`;
 
