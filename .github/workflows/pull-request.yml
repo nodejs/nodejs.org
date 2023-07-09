@@ -193,6 +193,7 @@ jobs:
           name: bundle-analysis
           branch: ${{ github.event.pull_request.base.ref }}
           path: .next/analyze/base
+          if_no_artifact_found: warn
 
       - name: Compare with base branch bundle
         if: success() && github.event.number
