@@ -32,7 +32,7 @@
     "name": "English",
     "langDir": "ltr",
     "dateFormat": "MM.DD.YYYY",
-    "hrefLang": "en-US",
+    "hrefLang": "en-GB",
     "enabled": true,
     "default": true
   },
