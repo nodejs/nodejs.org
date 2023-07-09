@@ -1,6 +1,6 @@
 import { FaPencilAlt } from 'react-icons/fa';
 import { FormattedMessage } from 'react-intl';
-import styles from '@/index.module.scss';
+import styles from './index.module.scss';
 import { useLocale } from '@/hooks/useLocale';
 import type { FC } from 'react';
 

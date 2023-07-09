@@ -1,4 +1,4 @@
-import styles from '@/index.module.scss';
+import styles from './index.module.scss';
 import type { FC } from 'react';
 
 type SectionTitleProps = { path: string[] };

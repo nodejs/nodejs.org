@@ -1,4 +1,4 @@
-import styles from '@/index.module.scss';
+import styles from './index.module.scss';
 import type { DropdownItem } from '@/types';
 import type { CSSProperties, FC, KeyboardEvent } from 'react';
 

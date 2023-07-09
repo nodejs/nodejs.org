@@ -1,5 +1,5 @@
 import { FormattedMessage } from 'react-intl';
-import styles from '@/index.module.scss';
+import styles from './index.module.scss';
 import type { PropsWithChildren, FC } from 'react';
 
 type StabilityProps = PropsWithChildren<{ stability: number }>;

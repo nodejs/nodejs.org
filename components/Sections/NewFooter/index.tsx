@@ -1,6 +1,6 @@
 import { FormattedMessage } from 'react-intl';
 import { FaGithub, FaSlack, FaTwitter, FaMastodon } from 'react-icons/fa';
-import styles from '@/index.module.scss';
+import styles from './index.module.scss';
 import LocalizedLink from '@/components/LocalizedLink';
 
 const Footer = () => (

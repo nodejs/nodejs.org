@@ -1,4 +1,4 @@
-import styles from '@/index.module.scss';
+import styles from './index.module.scss';
 import type { ReactElement, FC } from 'react';
 
 type NodeFeatureProps = {

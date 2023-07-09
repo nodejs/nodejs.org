@@ -1,7 +1,7 @@
 import { useMemo, useState, useCallback } from 'react';
 import { MdOutlineTranslate } from 'react-icons/md';
 import { useIntl } from 'react-intl';
-import styles from '@/index.module.scss';
+import styles from './index.module.scss';
 import Dropdown from '../Dropdown';
 import { useLocale } from '@/hooks/useLocale';
 import { useClickOutside } from '@/hooks/useClickOutside';

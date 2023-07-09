@@ -1,5 +1,5 @@
 import { FormattedDate, FormattedMessage } from 'react-intl';
-import styles from '@/index.module.scss';
+import styles from './index.module.scss';
 import LocalizedLink from '@/components/LocalizedLink';
 import navigation from '@/navigation.json';
 import type { BlogPost } from '@/types';

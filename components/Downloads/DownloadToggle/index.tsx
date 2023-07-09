@@ -1,6 +1,6 @@
 import { FormattedMessage, useIntl } from 'react-intl';
 import classnames from 'classnames';
-import styles from '@/index.module.scss';
+import styles from './index.module.scss';
 import type { FC } from 'react';
 
 export type DownloadToggleProps = {

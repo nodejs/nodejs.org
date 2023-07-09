@@ -1,5 +1,5 @@
 import { FormattedMessage } from 'react-intl';
-import styles from '@/index.module.scss';
+import styles from './index.module.scss';
 import { parseApiDocsVersion } from '@/util/parseApiDocsVersion';
 import type { ApiChange, ApiUpdate } from '@/types';
 import type { FC } from 'react';
