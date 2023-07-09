@@ -41,7 +41,7 @@ jobs:
           cache: 'npm'
 
       - name: Install NPM packages
-        run: npm ci
+        run: npm ci --no-audit --no-fund
 
       - name: Run Linting
         run: npx turbo lint
@@ -92,7 +92,7 @@ jobs:
           cache: 'npm'
 
       - name: Install NPM packages
-        run: npm ci
+        run: npm ci --no-audit --no-fund
 
       - name: Run Unit Tests
         run: npx turbo test:unit -- --coverage
@@ -143,7 +143,7 @@ jobs:
           cache: 'npm'
 
       - name: Install NPM packages
-        run: npm ci --omit=dev
+        run: npm ci --no-audit --no-fund --omit=dev
 
       - name: Build Next.js
         run: npx turbo build
@@ -194,10 +194,12 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: bundle-analysis
-          path: .next/analyze/base
+          path: .next/analyze
 
       - name: Copy PR Bundle Analysis (Fallback)
-        run: cp .next/analyze/base/__bundle_analysis.json .next/analyze/__bundle_analysis.json
+        run: |
+          mkdir -p .next/analyze/base/bundle/
+          cp .next/analyze/__bundle_analysis.json .next/analyze/base/bundle/__bundle_analysis.json
 
       - name: Download Base Bundle Analysis
         uses: dawidd6/action-download-artifact@v2
@@ -205,7 +207,7 @@ jobs:
         with:
           name: bundle-analysis
           branch: ${{ github.event.pull_request.base.ref }}
-          path: .next/analyze/base
+          path: .next/analyze/base/bundle
           if_no_artifact_found: warn
 
       - name: Compare with base branch bundle
