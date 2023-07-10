@@ -4,6 +4,7 @@ import { useDetectOS } from '@/hooks/useDetectOS';
 import { useLayoutContext } from '@/hooks/useLayoutContext';
 import { downloadUrlByOS } from '@/util/downloadUrlByOS';
 import { getNodejsChangelog } from '@/util/getNodeJsChangelog';
+import { DIST_URL } from '@/next.constants.mjs';
 import type { FC } from 'react';
 import type { NodeRelease } from '@/types';
 
