@@ -2,9 +2,8 @@ import { getServerSideSitemap } from 'next-sitemap';
 import * as nextDynamic from '@/next.dynamic.mjs';
 import * as nextConstants from '@/next.constants.mjs';
 
-// This is the production base domain. For the Node.js Website
-// @todo: We might store the "baseDomain" in the next constants and use it across the website
-const baseDomain = `https://nodejs.org${nextConstants.BASE_PATH}`;
+// This is the combination of the Application Base URL and Base PATH
+const canonicalUrl = `${nextConstants.BASE_URL}${nextConstants.BASE_PATH}`;
 
 // This method populates and generates the Website Sitemap by using `next-sitemap` SSR functionality
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
@@ -23,7 +22,7 @@ export const GET = () => {
 
   return getServerSideSitemap(
     [...dynamicRoutes, ...staticPaths].sort().map(route => ({
-      loc: `${baseDomain}/${route}`,
+      loc: `${canonicalUrl}/${route}`,
       lastmod: currentDate,
       changefreq: 'always',
     }))

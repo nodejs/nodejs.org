@@ -35,7 +35,7 @@ const getFrontMatter = (filename, source) => {
   } = graymatter(source).data;
 
   // we add the year to the pagination set
-  blogMetadata.pagination.add(new Date(date).getFullYear());
+  blogMetadata.pagination.add(new Date(date).getUTCFullYear());
 
   // we add the category to the categories set
   blogMetadata.categories.add(category);
