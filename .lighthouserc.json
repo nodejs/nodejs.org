@@ -3,7 +3,7 @@
     "collect": {
       "startServerCommand": "npm run start",
       "startServerReadyPattern": "ready on",
-      "url": ["http://localhost:3000/en"],
+      "staticDistDir": "pages/en",
       "numberOfRuns": 1,
       "settings": {
         "preset": "desktop"
