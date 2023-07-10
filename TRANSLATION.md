@@ -48,7 +48,7 @@ If you're making a new Component and adding Translation Keys for your Component,
 
 - Only add the new translation keys on the `i18n/locales/en.json` file. Crowdin will handle on syncing the files and letting translators know there are new keys to be translated
 - The translation keys should have the prefix as the canonical path of your Component. If your Component is `components/Common/MyComponent` the prefix key should be `components.common.myComponent`
-  - The Translation Key suffix should be easy to undersand and semantic. For example, if the key is about "the text of a button that when interacted it copies content to the clipboard", the suffix should probably be `copyButton.title`. The final translation key would be `components.common.myComponent.copyButton.title`
+  - The Translation Key suffix should be easy to understand and semantic. For example, if the key is about "the text of a button that when interacted it copies content to the clipboard", the suffix should probably be `copyButton.title`. The final translation key would be `components.common.myComponent.copyButton.title`
   - Translation Keys should be in Camel Case only.
   - The values of each Translation Key should follow the [ICU Message Syntax](https://formatjs.io/docs/core-concepts/icu-syntax/)
 - All new Translation keys should be added at the bottom of the `i18n/locales/en.json` file. Since this makes it easier for Translators to notice that there are new Translation keys to be translated.
