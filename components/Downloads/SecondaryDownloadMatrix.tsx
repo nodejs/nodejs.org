@@ -1,4 +1,5 @@
 import DownloadList from './DownloadList';
+import { DIST_URL } from '@/next.constants.mjs';
 import { useLayoutContext } from '@/hooks/useLayoutContext';
 import { WithNodeRelease } from '@/providers/withNodeRelease';
 import type { LegacyDownloadsFrontMatter, NodeRelease } from '@/types';

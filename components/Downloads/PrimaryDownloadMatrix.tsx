@@ -2,7 +2,6 @@ import classNames from 'classnames';
 import semVer from 'semver';
 import LocalizedLink from '@/components/LocalizedLink';
 import { DIST_URL } from '@/next.constants.mjs';
-
 import { useDetectOS } from '@/hooks/useDetectOS';
 import { useLayoutContext } from '@/hooks/useLayoutContext';
 import type { LegacyDownloadsFrontMatter, NodeRelease } from '@/types';
