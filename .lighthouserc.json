@@ -2,7 +2,8 @@
   "ci": {
     "collect": {
       "staticDistDir": "pages/en",
-      "isSinglePageApplication": true
+      "isSinglePageApplication": true,
+      "url": ["http://localhost:3000/en"]
     },
     "assert": {
       "assertions": {
