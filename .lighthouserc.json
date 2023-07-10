@@ -3,7 +3,7 @@
     "collect": {
       "staticDistDir": "pages/en",
       "isSinglePageApplication": true,
-      "url": ["http://localhost:3000/en"]
+      "url": ["http://localhost:3000/"]
     },
     "assert": {
       "assertions": {
