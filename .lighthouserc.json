@@ -1,21 +1,20 @@
 {
   "ci": {
     "collect": {
-      "staticDistDir": "pages/en",
-      "isSinglePageApplication": true,
-      "url": ["http://localhost:3000/"]
+      "startServerCommand": "npm run start",
+      "startServerReadyPattern": "ready on",
+      "url": ["http://localhost:3000"],
+      "numberOfRuns": 1,
+      "settings": {
+        "preset": "desktop"
+      }
     },
     "assert": {
-      "assertions": {
-        "categories:performance": ["warn", { "minScore": 0.9 }],
-        "categories:accessibility": ["warn", { "minScore": 0.9 }],
-        "categories:best-practices": ["warn", { "minScore": 0.9 }],
-        "categories:seo": ["warn", { "minScore": 0.9 }],
-        "categories:pwa": ["warn", { "minScore": 0.9 }]
-      }
+      "preset": "lighthouse:recommended"
     },
     "upload": {
       "target": "temporary-public-storage"
-    }
+    },
+    "server": {}
   }
 }
