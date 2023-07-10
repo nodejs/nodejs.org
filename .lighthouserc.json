@@ -4,7 +4,7 @@
       "startServerCommand": "npm run start",
       "startServerReadyPattern": "ready on",
       "staticDistDir": "pages/en",
-      "url": ["http://localhost:3000/en"],
+      "url": ["http://localhost:3000"],
       "numberOfRuns": 1,
       "settings": {
         "preset": "desktop"
