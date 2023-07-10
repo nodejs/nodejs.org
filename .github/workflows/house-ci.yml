@@ -14,8 +14,8 @@ jobs:
           node-version: 18.x
       - name: npm install, build
         run: |
-          npm ci
-          npx turbo serve
+          npm install
+          npm run build
       - name: run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.11.x
