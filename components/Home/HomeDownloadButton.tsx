@@ -3,6 +3,7 @@ import { useDetectOS } from '../../hooks/useDetectOS';
 import { useLayoutContext } from '../../hooks/useLayoutContext';
 import { downloadUrlByOS } from '../../util/downloadUrlByOS';
 import { getNodejsChangelog } from '../../util/getNodeJsChangelog';
+import { DIST_URL } from '../../next.constants.mjs';
 import type { FC } from 'react';
 import type { NodeRelease } from '../../types';
 
@@ -19,7 +20,7 @@ const HomeDownloadButton: FC<NodeRelease> = ({
   const { os, bitness } = useDetectOS();
 
   const nodeDownloadLink = downloadUrlByOS(versionWithPrefix, os, bitness);
-  const nodeApiLink = `https://nodejs.org/dist/latest-v${major}.x/docs/api/`;
+  const nodeApiLink = `${DIST_URL}latest-v${major}.x/docs/api/`;
   const nodeAllDownloadsLink = `/download${isLts ? '/' : '/current'}`;
 
   const nodeDownloadTitle = `${labels?.download} ${version} ${labels?.[
