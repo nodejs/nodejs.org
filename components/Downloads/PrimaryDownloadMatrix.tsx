@@ -1,10 +1,10 @@
 import classNames from 'classnames';
 import semVer from 'semver';
 import LocalizedLink from '@/components/LocalizedLink';
-import { DIST_URL } from '@/next.constants.mjs';
 import { useDetectOS } from '@/hooks/useDetectOS';
 import { useLayoutContext } from '@/hooks/useLayoutContext';
 import type { LegacyDownloadsFrontMatter, NodeRelease } from '@/types';
+import { DIST_URL } from '@/next.constants.mjs';
 import type { FC } from 'react';
 
 // @TODO: Instead of using a static list it should be created dynamically. This is done on `nodejs.dev`
