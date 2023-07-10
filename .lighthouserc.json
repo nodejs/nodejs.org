@@ -1,7 +1,7 @@
 {
   "ci": {
     "collect": {
-      "staticDistDir": "pages",
+      "staticDistDir": "out",
       "isSinglePageApplication": true
     },
     "assert": {
