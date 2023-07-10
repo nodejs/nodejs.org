@@ -34,7 +34,7 @@ updates:
           - "remark-gfm"
           - "@mdx-js/*"
       react:
-        pattersn:
+        patterns:
           - "react"
           - "react-dom"
           - "@types/react"
