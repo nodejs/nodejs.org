@@ -5,6 +5,7 @@ import { useDetectOS } from '@/hooks/useDetectOS';
 import { useLayoutContext } from '@/hooks/useLayoutContext';
 import LocalizedLink from '@/components/LocalizedLink';
 import type { LegacyDownloadsFrontMatter, NodeRelease } from '@/types';
+import { DIST_URL } from '@/next.constants.mjs';
 import type { FC } from 'react';
 
 // @TODO: Instead of using a static list it should be created dynamically. This is done on `nodejs.dev`
