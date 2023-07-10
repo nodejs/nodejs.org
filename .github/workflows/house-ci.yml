@@ -3,6 +3,7 @@ on: [push]
 jobs:
   lighthouseci:
     runs-on: ubuntu-latest
+
     services:
       my-app:
         ports:
