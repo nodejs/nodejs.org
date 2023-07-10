@@ -1,7 +1,9 @@
 import { FormattedMessage } from 'react-intl';
 import { FaRobot } from 'react-icons/fa';
-import styles from './index.module.scss';
+import { DOCS_URL } from '../../../next.constants.mjs';
 import type { FC } from 'react';
+
+import styles from './index.module.scss';
 
 type JsonLinkProps = {
   fileName: string;
@@ -10,9 +12,7 @@ type JsonLinkProps = {
 
 const JsonLink: FC<JsonLinkProps> = ({ fileName, version }) => (
   <div className={styles.json}>
-    <a
-      href={`https://nodejs.org/docs/latest-${version}.x/api/${fileName}.json`}
-    >
+    <a href={`${DOCS_URL}latest-${version}.x/api/${fileName}.json`}>
       <FormattedMessage id="components.api.jsonLink.title" tagName="span" />
       <FaRobot className={styles.FaRobotIcon} />
     </a>
