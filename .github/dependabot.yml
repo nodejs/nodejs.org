@@ -14,29 +14,29 @@ updates:
     groups:
       storybook:
         patterns:
-          - "storybook"
-          - "@storybook/*"
+          - 'storybook'
+          - '@storybook/*'
       testing-library:
         patterns:
-          - "@testing-library/*"
-          - "@types/testing-library*"
+          - '@testing-library/*'
+          - '@types/testing-library*'
       next-js:
         patterns:
-          - "next"
-          - "turbo"
-          - "next-mdx-remote"
-          - "next-sitemap"
-          - "next-themes"
-          - "@vercel/*"
+          - 'next'
+          - 'turbo'
+          - 'next-mdx-remote'
+          - 'next-sitemap'
+          - 'next-themes'
+          - '@vercel/*'
       remark-mdx:
         patterns:
-          - "@vcarl/remark-headings"
-          - "remark-gfm"
-          - "@mdx-js/*"
+          - '@vcarl/remark-headings'
+          - 'remark-gfm'
+          - '@mdx-js/*'
       react:
         patterns:
-          - "react"
-          - "react-dom"
-          - "@types/react"
-          - "@types/react-dom"
+          - 'react'
+          - 'react-dom'
+          - '@types/react'
+          - '@types/react-dom'
     open-pull-requests-limit: 10
