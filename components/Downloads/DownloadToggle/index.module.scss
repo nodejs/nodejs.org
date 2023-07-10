@@ -28,7 +28,8 @@
     background: var(--black0);
     border: none;
     border-radius: 32px;
-    box-shadow: inset 1px -1px 1px rgba(0, 0, 0, 0.08),
+    box-shadow:
+      inset 1px -1px 1px rgba(0, 0, 0, 0.08),
       inset 0px 1px 2px rgba(0, 0, 0, 0.08);
     box-sizing: border-box;
     color: var(--black7);
@@ -44,7 +45,8 @@
     width: 133px;
 
     &.current {
-      box-shadow: inset 1px -1px 1px rgba(0, 0, 0, 0.08),
+      box-shadow:
+        inset 1px -1px 1px rgba(0, 0, 0, 0.08),
         inset 0px 1px 2px rgba(0, 0, 0, 0.08);
       margin-left: -30px;
     }

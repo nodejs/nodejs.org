@@ -13,9 +13,6 @@
 </p>
 
 <p align="center">
-  <a title="CI Status" href="https://github.com/nodejs/nodejs.org/actions/workflows/github-pages.yml?query=branch%3Amain">
-    <img src="https://github.com/nodejs/nodejs.org/actions/workflows/github-pages.yml/badge.svg" />
-  </a>
   <a title="MIT License" href="LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue" />
   </a>

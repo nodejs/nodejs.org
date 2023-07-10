@@ -4,6 +4,14 @@ on:
   pull_request:
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: ./
+
+permissions:
+  contents: read
+  actions: read
+
 jobs:
   lint:
     name: Lint
@@ -32,23 +40,19 @@ jobs:
           cache: 'npm'
 
       - name: Install NPM packages
-        run: npm ci
+        run: npm ci --no-audit --no-fund
 
       - name: Run Linting
         run: npx turbo lint
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-          NEXT_TELEMETRY_DISABLED: 1
 
-      - name: Save Cache
-        uses: actions/cache/save@v3
-        with:
-          path: |
-            ~/.npm
-            .next/cache
-            node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}
+      - name: Run Prettier
+        run: npx turbo prettier
+        env:
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
   unit-tests:
     name: Tests on ${{ matrix.os }}
@@ -87,83 +91,16 @@ jobs:
           cache: 'npm'
 
       - name: Install NPM packages
-        run: npm ci
+        run: npm ci --no-audit --no-fund
 
       - name: Run Unit Tests
         run: npx turbo test:unit -- --coverage
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Run Storybook Tests
         run: npx turbo test:storybook
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-          NEXT_TELEMETRY_DISABLED: 1
-
-      - name: Save Cache
-        uses: actions/cache/save@v3
-        with:
-          path: |
-            ~/.npm
-            .next/cache
-            node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}
-
-  build:
-    name: Build on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-
-    steps:
-      - name: 'Use GNU tar instead BSD tar'
-        if: matrix.os == 'windows-latest'
-        shell: cmd
-        run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
-
-      - name: Git Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
-
-      - name: Restore Cache
-        uses: actions/cache/restore@v3
-        with:
-          path: |
-            ~/.npm
-            .next/cache
-            node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}-
-          restore-keys: cache-
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
-
-      - name: Install NPM packages
-        run: npm ci
-
-      - name: Build Next.js
-        run: npx turbo build
-        env:
-          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-          NODE_OPTIONS: '--max_old_space_size=4096'
-          NEXT_TELEMETRY_DISABLED: 1
-
-      - name: Save Cache
-        uses: actions/cache/save@v3
-        with:
-          path: |
-            ~/.npm
-            .next/cache
-            node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}

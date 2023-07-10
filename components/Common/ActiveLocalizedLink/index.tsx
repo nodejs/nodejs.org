@@ -2,12 +2,12 @@ import { useRouter } from 'next/router';
 import { useState, useEffect, type FC } from 'react';
 import classNames from 'classnames';
 import LocalizedLink from '../../LocalizedLink';
-import type { LinkProps } from 'next/link';
-import type { PropsWithChildren } from 'react';
+import type Link from 'next/link';
+import type { ComponentProps } from 'react';
 
-type ActiveLocalizedLinkProps = PropsWithChildren<
-  LinkProps & { className?: string; activeClassName: string }
->;
+type ActiveLocalizedLinkProps = ComponentProps<typeof Link> & {
+  activeClassName: string;
+};
 
 const ActiveLocalizedLink: FC<ActiveLocalizedLinkProps> = ({
   children,

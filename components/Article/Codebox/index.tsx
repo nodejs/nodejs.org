@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { highlight, languages } from 'prismjs';
-import { sanitize } from 'isomorphic-dompurify';
 import classnames from 'classnames';
 import styles from './index.module.scss';
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
@@ -46,7 +45,7 @@ const Codebox: FC<CodeBoxProps> = ({ children: { props } }) => {
     const prismLanguage = languages[parsedLanguage] || languages.text;
 
     setParsedCode(
-      sanitize(highlight(codeArray[langIndex], prismLanguage, parsedLanguage))
+      highlight(codeArray[langIndex], prismLanguage, parsedLanguage)
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [langIndex]);

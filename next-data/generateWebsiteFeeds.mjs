@@ -11,6 +11,8 @@ import * as nextConstants from '../next.constants.mjs';
  * @param {import('../types').BlogData} blogData
  */
 const generateWebsiteFeeds = ({ posts }) => {
+  const canonicalUrl = `${nextConstants.BASE_URL}${nextConstants.BASE_PATH}/en`;
+
   /**
    * This generates all the Website RSS Feeds that are used for the website
    *
@@ -22,7 +24,7 @@ const generateWebsiteFeeds = ({ posts }) => {
         id: file,
         title: title,
         language: 'en',
-        link: `${nextConstants.BASE_PATH}/en/feed/${file}`,
+        link: `${canonicalUrl}/feed/${file}`,
         description: description || nextJson.siteConfig.description,
       });
 
@@ -33,7 +35,7 @@ const generateWebsiteFeeds = ({ posts }) => {
           title: post.title,
           author: post.author,
           date: new Date(post.date),
-          link: `${nextConstants.BASE_PATH}/en${post.slug}`,
+          link: `${canonicalUrl}${post.slug}`,
         }));
 
       blogFeedEntries.forEach(entry => feed.addItem(entry));
