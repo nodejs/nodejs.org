@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { highlight, languages } from 'prismjs';
 import classnames from 'classnames';
 import { FaRegCopy, FaCheck } from 'react-icons/fa';
+import { TbCopy, TbCheck } from 'react-icons/tb';
 import { useIntl } from 'react-intl';
 import styles from './index.module.scss';
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
@@ -63,7 +64,7 @@ const Codebox: FC<CodeBoxProps> = ({
       highlight(codeArray[langIndex], prismLanguage, parsedLanguage)
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [langIndex]);
+  }, [langIndex, codeArray]);
 
   const ariaLabelText = intl.formatMessage(
     {
@@ -72,35 +73,45 @@ const Codebox: FC<CodeBoxProps> = ({
     { copied }
   );
 
+  const copyButton = (
+    <button
+      type="button"
+      className={styles.copy}
+      onClick={handleCopyCode}
+      aria-label={ariaLabelText}
+      data-testid="copy"
+    >
+      {copied ? <TbCheck /> : <TbCopy />}
+    </button>
+  );
+
+  const containerClasses = classnames(styles.pre, replaceLanguages(className), {
+    [styles.inlineCode]: hideHeader,
+  });
+
   return (
-    <pre className={classnames(styles.pre, replaceLanguages(className))}>
-      <div className={hideHeader ? styles.floatingCopy : styles.header}>
-        {!hideHeader && (
-          <div className={styles.langBox}>
-            {languageOptions.map((lang, index) => (
-              <button
-                type="button"
-                key={lang}
-                className={classnames(styles.lang, {
-                  [styles.selected]: index === langIndex,
-                })}
-                onClick={() => setLangIndex(index)}
-              >
-                {replaceLabelLanguages(lang.toLowerCase())}
-              </button>
-            ))}
-          </div>
-        )}
-        <button
-          type="button"
-          className={styles.copy}
-          onClick={handleCopyCode}
-          aria-label={ariaLabelText}
-          data-testid="copy"
-        >
-          {copied ? <FaCheck /> : <FaRegCopy />}
-        </button>
+    <pre className={containerClasses}>
+      <div className={styles.header}>
+        <div className={styles.langBox}>
+          {languageOptions.map((lang, index) => (
+            <button
+              type="button"
+              key={lang}
+              className={classnames(styles.lang, {
+                [styles.selected]: index === langIndex,
+              })}
+              onClick={() => setLangIndex(index)}
+            >
+              {replaceLabelLanguages(lang.toLowerCase())}
+            </button>
+          ))}
+        </div>
+
+        {copyButton}
       </div>
+
+      {hideHeader && copyButton}
+
       <div
         className={styles.content}
         dangerouslySetInnerHTML={{ __html: parsedCode }}

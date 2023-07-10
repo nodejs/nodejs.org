@@ -12,66 +12,79 @@
     align-items: center;
     display: flex;
     flex-direction: row;
-    height: 32px;
     justify-content: space-between;
-    padding: var(--space-12) var(--space-16);
-
-    .lang {
-      align-items: center;
-      cursor: pointer;
-      display: inherit;
-      font-size: var(--font-size-code);
-      justify-content: center;
-    }
+    padding: var(--space-05) var(--space-08);
 
     .langBox {
       display: flex;
       flex-direction: row;
-      gap: var(--space-12);
-      height: 100%;
+      height: 28px;
 
       .lang {
         border-radius: 0.3rem;
         border-width: 0;
         font-family: var(--sans);
         font-size: var(--font-size-body2);
-        font-weight: 600;
+        font-weight: var(--font-weight-semibold);
         padding: 0 var(--space-16);
         text-transform: uppercase;
+
+        &:nth-of-type(even) {
+          border-bottom-left-radius: 0;
+          border-top-left-radius: 0;
+        }
+
+        &:nth-of-type(odd):not(:last-of-type) {
+          border-bottom-right-radius: 0;
+          border-top-right-radius: 0;
+        }
+
+        &.selected {
+          font-weight: var(--font-weight-bold);
+        }
       }
     }
   }
 
-  .floatingCopy {
-    height: 32px;
-    position: absolute;
-    right: var(--space-16);
-    top: var(--space-12);
-  }
-
   .copy {
-    align-items: center;
+    background-color: transparent;
     border-radius: 0.3rem;
     border-width: 0;
     cursor: pointer;
-    display: flex;
     font-size: var(--font-size-code);
-    height: 100%;
-    justify-content: center;
-    width: 32px;
+    height: 28px;
+    padding: 0;
+    width: 28px;
 
-    &:hover {
-      background-color: var(--brand4);
-    }
-
-    i {
-      padding: 0;
+    svg {
+      height: 18px;
+      stroke-width: 2.1;
+      vertical-align: middle;
+      width: 18px;
     }
   }
 
   .content {
     @include components.code;
-    padding: 20px;
+    padding: var(--space-12);
+  }
+
+  &.inlineCode {
+    .header {
+      display: none;
+    }
+
+    .copy {
+      opacity: 0;
+      position: absolute;
+      right: var(--space-08);
+      top: var(--space-08);
+      transition: opacity cubic-bezier(0.4, 0, 0.4, 1) 0.3s;
+    }
+
+    &:hover .copy {
+      opacity: 1;
+    }
   }
 }
 
@@ -85,21 +98,21 @@
 
     .langBox .lang {
       background-color: var(--black3);
-      color: var(--black9);
-
-      &:hover {
-        background-color: var(--black4);
-      }
     }
+  }
 
-    .langBox .lang.selected {
+  .copy,
+  .header > .langBox .lang {
+    color: var(--color-text-primary);
+
+    &.selected,
+    &:hover {
       background-color: var(--black4);
     }
   }
 
-  .copy {
-    background-color: var(--brand4);
-    color: var(--black9);
+  .inlineCode .copy:hover {
+    background-color: var(--black4);
   }
 }
 
@@ -112,21 +125,21 @@
     background-color: var(--black10);
 
     .langBox .lang {
-      background-color: var(--black9);
-      color: var(--black2);
-
-      &:hover {
-        background-color: var(--black8);
-      }
-    }
-
-    .langBox .lang.selected {
       background-color: var(--black8);
     }
   }
 
-  .copy {
-    background-color: var(--brand);
-    color: #fff;
+  .copy,
+  .header > .langBox .lang {
+    color: var(--black2);
+
+    &.selected,
+    &:hover {
+      background-color: var(--black9);
+    }
+  }
+
+  .inlineCode .copy:hover {
+    background-color: var(--black10);
   }
 }
