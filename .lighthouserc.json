@@ -1,7 +1,7 @@
 {
   "ci": {
     "collect": {
-      "staticDistDir": "/pages/_app.tsx",
+      "staticDistDir": "./pages/_app.tsx",
       "isSinglePageApplication": true
     },
     "assert": {
