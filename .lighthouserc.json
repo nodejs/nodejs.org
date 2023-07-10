@@ -1,5 +1,9 @@
 {
   "ci": {
+    "collect": {
+      "staticDistDir": "@pages/",
+      "isSinglePageApplication": true
+    },
     "assert": {
       "assertions": {
         "categories:performance": ["warn", { "minScore": 0.9 }],
