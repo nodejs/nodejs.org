@@ -3,13 +3,6 @@ on: [push]
 jobs:
   lighthouseci:
     runs-on: ubuntu-latest
-
-    services:
-      my-app:
-        ports:
-          - 3000
-        options: --name my-app
-
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
