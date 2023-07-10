@@ -27,14 +27,30 @@ export const ENABLE_STATIC_EXPORT =
 /**
  * This is used for any place that requires the full canonical URL path for the Node.js Website (and its deployment), such as for example, the Node.js RSS Feed.
  *
- * This variable can either come from the Vercel Deployment as `NEXT_PUBLIC_VERCEL_URL` or from the `NEXT_BASE_URL` environment variable that is manually defined
+ * This variable can either come from the Vercel Deployment as `NEXT_PUBLIC_VERCEL_URL` or from the `NEXT_PUBLIC_BASE_URL` Environment Variable that is manually defined
  * by us if necessary. Otherwise it will fallback to the default Node.js Website URL.
  *
  * @see https://vercel.com/docs/concepts/projects/environment-variables/system-environment-variables#framework-environment-variables
  */
 export const BASE_URL = process.env.NEXT_PUBLIC_VERCEL_URL
   ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-  : process.env.NEXT_BASE_URL || 'https://nodejs.org';
+  : process.env.NEXT_PUBLIC_BASE_URL || 'https://nodejs.org';
+
+/**
+ * This is used for any place that requires the Node.js distribution URL (which by default is nodejs.org/dist)
+ *
+ * Note that this is a manual Environment Variable defined by us if necessary.
+ */
+export const DIST_URL =
+  process.env.NEXT_PUBLIC_DIST_URL || 'https://nodejs.org/dist/';
+
+/**
+ * This is used for any place that requires the Node.js API Docs URL (which by default is nodejs.org/docs)
+ *
+ * Note that this is a manual Environment Variable defined by us if necessary.
+ */
+export const DOCS_URL =
+  process.env.NEXT_PUBLIC_DOCS_URL || 'https://nodejs.org/docs/';
 
 /**
  * Supports a manual override of the base path of the Website
@@ -44,7 +60,7 @@ export const BASE_URL = process.env.NEXT_PUBLIC_VERCEL_URL
  *
  * Note that this is a manual Environment Variable defined by us if necessary.
  */
-export const BASE_PATH = process.env.NEXT_BASE_PATH || '';
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 /**
  * This ReGeX is used to remove the `index.md(x)` suffix of a name and to remove
