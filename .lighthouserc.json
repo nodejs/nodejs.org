@@ -1,9 +1,5 @@
 {
   "ci": {
-    "collect": {
-      "staticDistDir": "./pages/_app.tsx",
-      "isSinglePageApplication": true
-    },
     "assert": {
       "assertions": {
         "categories:performance": ["warn", { "minScore": 0.9 }],
