@@ -11,7 +11,7 @@ jobs:
       - run: npm install && npm install -g @lhci/cli@0.8.x
       - run: npm run build
       - name: Run Lighthouse CI
-        run: npx lighthouse-ci --collect.url=http://localhost:${{ job.services.my-app.ports[3000] }}/
+        run: npx lighthouse-ci --collect.url=http://localhost:3000/en
       - run: lhci upload
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_LIGHTHOUSE_APP_TOKEN }}
