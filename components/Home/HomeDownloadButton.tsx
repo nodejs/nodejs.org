@@ -1,3 +1,4 @@
+import { DIST_URL } from '@/next.constants.mjs';
 import LocalizedLink from '@/components/LocalizedLink';
 import { useDetectOS } from '@/hooks/useDetectOS';
 import { useLayoutContext } from '@/hooks/useLayoutContext';
