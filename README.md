@@ -14,17 +14,22 @@
 
 <p align="center">
   <a title="MIT License" href="LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue" />
+    <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License" />
   </a>
   <a title="Localised" href="https://crowdin.com/project/nodejs-website">
-    <img src="https://badges.crowdin.net/nodejs-website/localized.svg" />
+    <img src="https://badges.crowdin.net/nodejs-website/localized.svg" alt="Crowdin Badge" />
   </a>
   <a title="Vercel" href="https://vercel.com">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/powered%20by-Vercel%20%E2%96%B2-white">
-      <img src="https://img.shields.io/badge/powered%20by-Vercel%20%E2%96%B2-black">
+      <img src="https://img.shields.io/badge/powered%20by-Vercel%20%E2%96%B2-black" alt="Powered by Vercel">
     </picture>
   </a>
+
+  <br />
+
+  <img src="https://github.com/nodejs/nodejs.org/actions/workflows/build-and-analysis.yml/badge.svg" alt="Build and Analysis Checks" />
+
   <br />
   <br />
 </p>
