@@ -9,11 +9,11 @@ const config: StorybookConfig = {
   docs: { autodocs: 'tag' },
   staticDirs: ['../public'],
   core: { disableTelemetry: true },
-  webpackFinal: async (config: any, { configType }) => {
-    config.resolve.modules = [path.resolve(__dirname, '..'), 'node_modules'];
+  webpackFinal: async (config, { configType }) => {
+    config.resolve!.modules = [path.resolve(__dirname, '..'), 'node_modules'];
 
-    config.resolve.alias = {
-      ...config.resolve.alias,
+    config.resolve!.alias = {
+      ...config.resolve!.alias,
       '@/components': path.resolve(__dirname, '../components'),
       '@/util': path.resolve(__dirname, '../util'),
       '@/hooks': path.resolve(__dirname, '../hooks'),
