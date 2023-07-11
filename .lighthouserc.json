@@ -1,0 +1,18 @@
+{
+  "ci": {
+    "collect": {
+      "startServerCommand": "npx turbo serve",
+      "startServerReadyPattern": "listen|ready",
+      "startServerReadyTimeout": 100000,
+      "url": ["http://localhost:3000/", "http://localhost:3000/en"],
+      "numberOfRuns": 3
+    },
+    "assert": {
+      "preset": "lighthouse:recommended"
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    },
+    "server": {}
+  }
+}
