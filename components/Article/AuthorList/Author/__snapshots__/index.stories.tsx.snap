@@ -1,41 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Article/AuthorList/Author Default smoke-test 1`] = `
-<a class="Author_link__6oI83"
-   href="https://github.com/nodejs"
-   aria-label="nodejs Github - opens in new tab"
-   target="_blank"
-   rel="noopener noreferrer"
+<a
+  href="https://github.com/nodejs"
+  aria-label="nodejs Github - opens in new tab"
+  target="_blank"
+  rel="noopener noreferrer"
 >
-  <img alt="nodejs"
-       loading="lazy"
-       width="60"
-       height="60"
-       decoding="async"
-       data-nimg="1"
-       srcset="https://github.com/nodejs.png?size=60?w=64&amp;q=75 1x, https://github.com/nodejs.png?size=60?w=128&amp;q=75 2x"
-       src="https://github.com/nodejs.png?size=60?w=128&amp;q=75"
-       style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(&quot;/placeholder-img.png&quot;);"
+  <img
+    alt="nodejs"
+    loading="lazy"
+    width="60"
+    height="60"
+    decoding="async"
+    data-nimg="1"
+    srcset="https://github.com/nodejs.png?size=60?w=64&amp;q=75 1x, https://github.com/nodejs.png?size=60?w=128&amp;q=75 2x"
+    src="https://github.com/nodejs.png?size=60?w=128&amp;q=75"
+    style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(&quot;/placeholder-img.png&quot;);"
   >
 </a>
 `;
 
 exports[`Article/AuthorList/Author WithourUsername smoke-test 1`] = `
-<a class="Author_link__6oI83"
-   href="https://github.com/"
-   aria-label=" Github - opens in new tab"
-   target="_blank"
-   rel="noopener noreferrer"
+<a
+  href="https://github.com/"
+  aria-label=" Github - opens in new tab"
+  target="_blank"
+  rel="noopener noreferrer"
 >
-  <img alt
-       loading="lazy"
-       width="0"
-       height="0"
-       decoding="async"
-       data-nimg="1"
-       srcset="https://github.com/.png?size=0?w=16&amp;q=75 1x"
-       src="https://github.com/.png?size=0?w=16&amp;q=75"
-       style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(&quot;/placeholder-img.png&quot;);"
+  <img
+    alt
+    loading="lazy"
+    width="0"
+    height="0"
+    decoding="async"
+    data-nimg="1"
+    srcset="https://github.com/.png?size=0?w=16&amp;q=75 1x"
+    src="https://github.com/.png?size=0?w=16&amp;q=75"
+    style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(&quot;/placeholder-img.png&quot;);"
   >
 </a>
 `;
