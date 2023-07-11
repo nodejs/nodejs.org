@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { FormattedMessage } from 'react-intl';
 import BaseLayout from './BaseLayout';
+import { Time } from '../components/Common/Time';
 import Pagination from '../components/Pagination';
 import LocalizedLink from '../components/LocalizedLink';
 import { useBlogData } from '../hooks/useBlogData';
@@ -39,13 +40,10 @@ const BlogIndexLayout: FC<PropsWithChildren> = ({ children }) => {
         <ul className="blog-index">
           {posts.map((post: BlogPost) => (
             <li key={post.slug}>
-              <time dateTime={post.date}>
-                {new Date(post.date).toLocaleString('en-GB', {
-                  timeZone: 'UTC',
-                  month: 'short',
-                  day: '2-digit',
-                })}
-              </time>
+              <Time
+                date={post.date}
+                format={{ month: 'short', day: '2-digit' }}
+              />
 
               <LocalizedLink href={post.slug}>{post.title}</LocalizedLink>
             </li>

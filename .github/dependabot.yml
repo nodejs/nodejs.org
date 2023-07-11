@@ -3,5 +3,40 @@ updates:
   - package-ecosystem: github-actions
     directory: '/'
     schedule:
-      interval: weekly
+      interval: monthly
+    open-pull-requests-limit: 10
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: meta
+    groups:
+      storybook:
+        patterns:
+          - 'storybook'
+          - '@storybook/*'
+      testing-library:
+        patterns:
+          - '@testing-library/*'
+          - '@types/testing-library*'
+      next-js:
+        patterns:
+          - 'next'
+          - 'turbo'
+          - 'next-mdx-remote'
+          - 'next-sitemap'
+          - 'next-themes'
+          - '@vercel/*'
+      remark-mdx:
+        patterns:
+          - '@vcarl/remark-headings'
+          - 'remark-gfm'
+          - '@mdx-js/*'
+      react:
+        patterns:
+          - 'react'
+          - 'react-dom'
+          - '@types/react'
+          - '@types/react-dom'
     open-pull-requests-limit: 10

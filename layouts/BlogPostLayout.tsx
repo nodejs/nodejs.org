@@ -1,5 +1,6 @@
 import { FormattedMessage } from 'react-intl';
 import BaseLayout from './BaseLayout';
+import { Time } from '../components/Common/Time';
 import { useLayoutContext } from '../hooks/useLayoutContext';
 import type { FC, PropsWithChildren } from 'react';
 import type { LegacyBlogFrontMatter } from '../types';
@@ -21,14 +22,10 @@ const BlogPostLayout: FC<PropsWithChildren> = ({ children }) => {
                 values={{ author: author || null }}
               />
 
-              <time dateTime={date}>
-                {new Date(date).toLocaleString('en-GB', {
-                  timeZone: 'UTC',
-                  month: 'short',
-                  day: '2-digit',
-                  year: 'numeric',
-                })}
-              </time>
+              <Time
+                date={date}
+                format={{ month: 'short', day: '2-digit', year: 'numeric' }}
+              />
             </span>
           </div>
 
