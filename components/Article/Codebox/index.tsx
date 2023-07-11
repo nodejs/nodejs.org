@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { highlight, languages } from 'prismjs';
 import classnames from 'classnames';
 import { TbCopy, TbCheck } from 'react-icons/tb';
-import { useIntl } from 'react-intl';
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 import type { FC, PropsWithChildren, ReactElement, MouseEvent } from 'react';
 import 'prismjs/components/prism-bash';
@@ -30,8 +29,6 @@ const Codebox: FC<CodeBoxProps> = ({
   const [parsedCode, setParsedCode] = useState('');
   const [copied, copyText] = useCopyToClipboard();
   const [langIndex, setLangIndex] = useState(0);
-
-  const intl = useIntl();
 
   const className = props.className || 'text';
 
