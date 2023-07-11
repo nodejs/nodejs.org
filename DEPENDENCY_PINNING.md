@@ -2,7 +2,7 @@
 
 Based on the initial discussions from [this discussion thread](https://github.com/nodejs/nodejs.org/discussions/5491), we've decided to use a more strict strategy for handling NPM dependencies within the Node.js Website.
 
-The intent here is to avoid the build process, or the website itself, from breaking due to changes in dependencies. As some dependencies do not respect semantic versioning, this is a real concern. Pinning dependencies also ensures that we stay fixed on a specific version of a dependency; For security updates, Dependabot is still configured to give us security alerts when certain dependencies got security advisories.
+The intent here is to avoid the build process, or the website itself, from breaking due to changes in dependencies. As some dependencies do not respect semantic versioning, this is a real concern. Pinning dependencies also ensures that we stay fixed on a specific version of a dependency. For security updates, Dependabot is still configured to give us security alerts when certain dependencies got security advisories.
 
 ### When adding dependencies
 
