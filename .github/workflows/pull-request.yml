@@ -81,7 +81,7 @@ jobs:
             ~/.npm
             .next/cache
             node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}-
+          key: cache-${{ hashFiles('package-lock.json') }}
           restore-keys: cache-
 
       - name: Set up Node.js
