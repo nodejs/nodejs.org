@@ -4,19 +4,17 @@ exports[`Downloads/DownloadToggle Current smoke-test 1`] = `
 <div>
   <div>
     <div>
-      <button
-        type="button"
-        role="switch"
-        aria-label="LTS Versions"
-        aria-checked="false"
+      <button type="button"
+              role="switch"
+              aria-label="LTS Versions"
+              aria-checked="false"
       >
         LTS
       </button>
-      <button
-        type="button"
-        role="switch"
-        aria-label="Current Versions"
-        aria-checked="true"
+      <button type="button"
+              role="switch"
+              aria-label="Current Versions"
+              aria-checked="true"
       >
         Current
       </button>
@@ -32,19 +30,17 @@ exports[`Downloads/DownloadToggle Default smoke-test 1`] = `
 <div>
   <div>
     <div>
-      <button
-        type="button"
-        role="switch"
-        aria-label="LTS Versions"
-        aria-checked="true"
+      <button type="button"
+              role="switch"
+              aria-label="LTS Versions"
+              aria-checked="true"
       >
         LTS
       </button>
-      <button
-        type="button"
-        role="switch"
-        aria-label="Current Versions"
-        aria-checked="false"
+      <button type="button"
+              role="switch"
+              aria-label="Current Versions"
+              aria-checked="false"
       >
         Current
       </button>

@@ -5,82 +5,74 @@ exports[`Article/AuthorList Default smoke-test 1`] = `
   Article Authors
   <ul>
     <li>
-      <a
-        href="https://github.com/flaviocopes"
-        aria-label="flaviocopes Github - opens in new tab"
-        target="_blank"
-        rel="noopener noreferrer"
+      <a href="https://github.com/flaviocopes"
+         aria-label="flaviocopes Github - opens in new tab"
+         target="_blank"
+         rel="noopener noreferrer"
       >
-        <img
-          alt="flaviocopes"
-          loading="lazy"
-          width="60"
-          height="60"
-          decoding="async"
-          data-nimg="1"
-          srcset="https://github.com/flaviocopes.png?size=60?w=64&amp;q=75 1x, https://github.com/flaviocopes.png?size=60?w=128&amp;q=75 2x"
-          src="https://github.com/flaviocopes.png?size=60?w=128&amp;q=75"
-          style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(&quot;/placeholder-img.png&quot;);"
+        <img alt="flaviocopes"
+             loading="lazy"
+             width="60"
+             height="60"
+             decoding="async"
+             data-nimg="1"
+             srcset="https://github.com/flaviocopes.png?size=60?w=64&amp;q=75 1x, https://github.com/flaviocopes.png?size=60?w=128&amp;q=75 2x"
+             src="https://github.com/flaviocopes.png?size=60?w=128&amp;q=75"
+             style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(&quot;/placeholder-img.png&quot;);"
         >
       </a>
     </li>
     <li>
-      <a
-        href="https://github.com/MarkPieszak"
-        aria-label="MarkPieszak Github - opens in new tab"
-        target="_blank"
-        rel="noopener noreferrer"
+      <a href="https://github.com/MarkPieszak"
+         aria-label="MarkPieszak Github - opens in new tab"
+         target="_blank"
+         rel="noopener noreferrer"
       >
-        <img
-          alt="MarkPieszak"
-          loading="lazy"
-          width="60"
-          height="60"
-          decoding="async"
-          data-nimg="1"
-          srcset="https://github.com/MarkPieszak.png?size=60?w=64&amp;q=75 1x, https://github.com/MarkPieszak.png?size=60?w=128&amp;q=75 2x"
-          src="https://github.com/MarkPieszak.png?size=60?w=128&amp;q=75"
-          style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(&quot;/placeholder-img.png&quot;);"
+        <img alt="MarkPieszak"
+             loading="lazy"
+             width="60"
+             height="60"
+             decoding="async"
+             data-nimg="1"
+             srcset="https://github.com/MarkPieszak.png?size=60?w=64&amp;q=75 1x, https://github.com/MarkPieszak.png?size=60?w=128&amp;q=75 2x"
+             src="https://github.com/MarkPieszak.png?size=60?w=128&amp;q=75"
+             style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(&quot;/placeholder-img.png&quot;);"
         >
       </a>
     </li>
     <li>
-      <a
-        href="https://github.com/mcollina"
-        aria-label="mcollina Github - opens in new tab"
-        target="_blank"
-        rel="noopener noreferrer"
+      <a href="https://github.com/mcollina"
+         aria-label="mcollina Github - opens in new tab"
+         target="_blank"
+         rel="noopener noreferrer"
       >
-        <img
-          alt="mcollina"
-          loading="lazy"
-          width="60"
-          height="60"
-          decoding="async"
-          data-nimg="1"
-          srcset="https://github.com/mcollina.png?size=60?w=64&amp;q=75 1x, https://github.com/mcollina.png?size=60?w=128&amp;q=75 2x"
-          src="https://github.com/mcollina.png?size=60?w=128&amp;q=75"
-          style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(&quot;/placeholder-img.png&quot;);"
+        <img alt="mcollina"
+             loading="lazy"
+             width="60"
+             height="60"
+             decoding="async"
+             data-nimg="1"
+             srcset="https://github.com/mcollina.png?size=60?w=64&amp;q=75 1x, https://github.com/mcollina.png?size=60?w=128&amp;q=75 2x"
+             src="https://github.com/mcollina.png?size=60?w=128&amp;q=75"
+             style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(&quot;/placeholder-img.png&quot;);"
         >
       </a>
     </li>
     <li>
-      <a
-        href="https://github.com/unavailable-author"
-        aria-label="unavailable-author Github - opens in new tab"
-        target="_blank"
-        rel="noopener noreferrer"
+      <a href="https://github.com/unavailable-author"
+         aria-label="unavailable-author Github - opens in new tab"
+         target="_blank"
+         rel="noopener noreferrer"
       >
-        <img
-          alt="unavailable-author"
-          loading="lazy"
-          width="60"
-          height="60"
-          decoding="async"
-          data-nimg="1"
-          srcset="https://github.com/unavailable-author.png?size=60?w=64&amp;q=75 1x, https://github.com/unavailable-author.png?size=60?w=128&amp;q=75 2x"
-          src="https://github.com/unavailable-author.png?size=60?w=128&amp;q=75"
-          style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(&quot;/placeholder-img.png&quot;);"
+        <img alt="unavailable-author"
+             loading="lazy"
+             width="60"
+             height="60"
+             decoding="async"
+             data-nimg="1"
+             srcset="https://github.com/unavailable-author.png?size=60?w=64&amp;q=75 1x, https://github.com/unavailable-author.png?size=60?w=128&amp;q=75 2x"
+             src="https://github.com/unavailable-author.png?size=60?w=128&amp;q=75"
+             style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(&quot;/placeholder-img.png&quot;);"
         >
       </a>
     </li>
