@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import { highlight, languages } from 'prismjs';
 import classnames from 'classnames';
-import { FaRegCopy, FaCheck } from 'react-icons/fa';
 import { TbCopy, TbCheck } from 'react-icons/tb';
 import { useIntl } from 'react-intl';
-import styles from './index.module.scss';
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 import type { FC, PropsWithChildren, ReactElement, MouseEvent } from 'react';
 import 'prismjs/components/prism-bash';
+import styles from './index.module.scss';
 
 type CodeBoxProps = {
   children: ReactElement<PropsWithChildren<{ className?: string }>>;
@@ -66,19 +65,11 @@ const Codebox: FC<CodeBoxProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [langIndex, codeArray]);
 
-  const ariaLabelText = intl.formatMessage(
-    {
-      id: 'components.codeBox.copy',
-    },
-    { copied }
-  );
-
   const copyButton = (
     <button
       type="button"
       className={styles.copy}
       onClick={handleCopyCode}
-      aria-label={ariaLabelText}
       data-testid="copy"
     >
       {copied ? <TbCheck /> : <TbCopy />}

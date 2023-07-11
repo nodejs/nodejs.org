@@ -3,7 +3,7 @@
 @use 'styles/mixins/components';
 
 .pre {
-  border-radius: 0.3rem;
+  border-radius: var(--border-radius-3);
   margin: 0.5em 0 var(--space-24) 0;
   overflow: hidden;
   position: relative;
@@ -21,7 +21,7 @@
       height: 28px;
 
       .lang {
-        border-radius: 0.3rem;
+        border-radius: var(--border-radius-3);
         border-width: 0;
         font-family: var(--sans);
         font-size: var(--font-size-body2);
@@ -48,7 +48,7 @@
 
   .copy {
     background-color: transparent;
-    border-radius: 0.3rem;
+    border-radius: var(--border-radius-3);
     border-width: 0;
     cursor: pointer;
     font-size: var(--font-size-code);
