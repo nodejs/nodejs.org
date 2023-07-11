@@ -1,14 +1,13 @@
 {
   "ci": {
     "collect": {
-      "startServerCommand": "npx turbo serve",
-      "startServerReadyTimeout": 30000,
-      "url": ["http://localhost:3000/", "http://localhost:3000/en"],
+      "startServerCommand": "npm run serve",
+      "startServerReadyPattern": "Server running at http://localhost:3000/",
+      "url": ["http://localhost:3000/en"],
       "numberOfRuns": 3
     },
     "upload": {
       "target": "temporary-public-storage"
-    },
-    "server": {}
+    }
   }
 }
