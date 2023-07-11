@@ -2,7 +2,8 @@
   "ci": {
     "collect": {
       "startServerCommand": "npm run start",
-      "startServerReadyPattern": "ready on",
+      "startServerReadyPattern": "listen",
+      "startServerReadyTimeout": 100000,
       "staticDistDir": "pages/en",
       "url": ["http://localhost:3000/"],
       "numberOfRuns": 5,
