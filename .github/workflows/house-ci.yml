@@ -13,5 +13,3 @@ jobs:
       - name: Run Lighthouse CI
         run: lhci collect
       - run: lhci upload
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_LIGHTHOUSE_APP_TOKEN }}
