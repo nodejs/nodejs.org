@@ -4,6 +4,8 @@ import BaseLayout from './BaseLayout';
 import Pagination from '@/components/Pagination';
 import LocalizedLink from '@/components/LocalizedLink';
 import { useBlogData } from '@/hooks/useBlogData';
+import { Time } from '@/components/Common/Time';
+
 import type { FC, PropsWithChildren } from 'react';
 import type { BlogPost } from '@/types';
 
@@ -39,13 +41,10 @@ const BlogIndexLayout: FC<PropsWithChildren> = ({ children }) => {
         <ul className="blog-index">
           {posts.map((post: BlogPost) => (
             <li key={post.slug}>
-              <time dateTime={post.date}>
-                {new Date(post.date).toLocaleString('en-GB', {
-                  timeZone: 'UTC',
-                  month: 'short',
-                  day: '2-digit',
-                })}
-              </time>
+              <Time
+                date={post.date}
+                format={{ month: 'short', day: '2-digit' }}
+              />
 
               <LocalizedLink href={post.slug}>{post.title}</LocalizedLink>
             </li>

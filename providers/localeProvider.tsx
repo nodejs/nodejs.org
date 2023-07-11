@@ -31,7 +31,7 @@ export const LocaleProvider: FC<PropsWithChildren> = ({ children }) => {
   return (
     <LocaleContext.Provider value={localeData}>
       <IntlProvider
-        locale={localeData.currentLocale.code}
+        locale={localeData.currentLocale.hrefLang}
         messages={localeData.localeMessages}
         onError={() => null}
       >
