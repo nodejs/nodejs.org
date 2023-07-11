@@ -1,4 +1,4 @@
-import { DOCS_URL } from '../../next.constants.mjs';
+import { DOCS_URL } from '@/next.constants.mjs';
 
 // Note.: This is a temporary Component used only until the transition to `nodejs/nodejs.dev` content is done
 const NodeApiVersionLinks = () => (
