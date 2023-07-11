@@ -68,6 +68,7 @@ const Codebox: FC<CodeBoxProps> = ({
       type="button"
       className={styles.copy}
       onClick={handleCopyCode}
+      aria-hidden
       data-testid="copy"
     >
       {copied ? <TbCheck /> : <TbCopy />}

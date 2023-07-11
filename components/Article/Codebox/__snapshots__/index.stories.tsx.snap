@@ -9,7 +9,7 @@ exports[`Article/Codebox Default smoke-test 1`] = `
       </button>
     </div>
     <button type="button"
-            aria-label="copy"
+            aria-hidden="true"
             data-testid="copy"
     >
       <svg stroke="currentColor"
@@ -61,7 +61,7 @@ exports[`Article/Codebox HiddenHeader smoke-test 1`] = `
       </button>
     </div>
     <button type="button"
-            aria-label="copy"
+            aria-hidden="true"
             data-testid="copy"
     >
       <svg stroke="currentColor"
@@ -87,7 +87,7 @@ exports[`Article/Codebox HiddenHeader smoke-test 1`] = `
     </button>
   </div>
   <button type="button"
-          aria-label="copy"
+          aria-hidden="true"
           data-testid="copy"
   >
     <svg stroke="currentColor"
@@ -141,7 +141,7 @@ exports[`Article/Codebox MultiLang smoke-test 1`] = `
       </button>
     </div>
     <button type="button"
-            aria-label="copy"
+            aria-hidden="true"
             data-testid="copy"
     >
       <svg stroke="currentColor"
@@ -205,7 +205,7 @@ exports[`Article/Codebox MultiLangWithTextToCopy smoke-test 1`] = `
       </button>
     </div>
     <button type="button"
-            aria-label="copy"
+            aria-hidden="true"
             data-testid="copy"
     >
       <svg stroke="currentColor"
@@ -266,7 +266,7 @@ exports[`Article/Codebox Shell smoke-test 1`] = `
       </button>
     </div>
     <button type="button"
-            aria-label="copy"
+            aria-hidden="true"
             data-testid="copy"
     >
       <svg stroke="currentColor"
