@@ -5,6 +5,7 @@ import { TbCopy, TbCheck } from 'react-icons/tb';
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 import type { FC, PropsWithChildren, ReactElement, MouseEvent } from 'react';
 import 'prismjs/components/prism-bash';
+
 import styles from './index.module.scss';
 
 type CodeBoxProps = {
