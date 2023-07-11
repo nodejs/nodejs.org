@@ -29,3 +29,6 @@ scripts/release-post/template.hbs
 
 # We shouldn't lint statically generated Storybook files
 storybook-static
+
+# We shouldn't pretty snapshot files
+components/**/*.snap
