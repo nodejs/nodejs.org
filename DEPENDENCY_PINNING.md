@@ -25,3 +25,9 @@ When adding dependencies, you should consider if that dependency should be saved
   - If we're not interested in getting the latest features and bug-fixes, we should consider using `~` instead.
 - Node.js-only dependencies, that are used in scripts, or during the build-process of the Website (not used within actual Application code) should use `~` instead. Examples include `glob`, `@nodevu/core`
 - TypeScript type packages of corresponding packages should follow the same semver of their respective packages
+
+### About manual updates
+
+The intent with this document is to outline the strategy we have when adding dependencies. We also recommend that Team members only add new dependencies when explicitly needed. The more dependencies, the merier it gets to review and understand the complexity of the Website Application. Avoid adding new dependencies if possible.
+
+We also recommend that manual updates should be avoided. Let Dependabot take care of updating dependencies for us. If you're interested in updating a dependency, please consider opening a PR with the update and let Dependabot take care of the rest.
