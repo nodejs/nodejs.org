@@ -10,3 +10,5 @@ jobs:
           node-version: 18
       - run: npm install && npm install -g @lhci/cli@0.11.x
       - run: lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_LIGHTHOUSE_APP_TOKEN }}
