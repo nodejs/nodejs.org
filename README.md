@@ -77,7 +77,7 @@ Full setup is in <https://github.com/nodejs/build/tree/master/ansible/www-standa
 
 [Code of Conduct][]
 
-[Contributing Guidelines][]
+[Contribution Guidelines][]
 
 [Collaborator Guide][]
 
@@ -85,8 +85,11 @@ Full setup is in <https://github.com/nodejs/build/tree/master/ansible/www-standa
 
 [Content vs Code][]
 
+[Dependency Pinning][]
+
 [code of conduct]: https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md
 [contributing guidelines]: ./CONTRIBUTING.md
 [content vs code]: ./CONTENT_VS_CODE.md
+[dependency pinning]: ./DEPENDENCY_PINNING.md
 [collaborator guide]: ./COLLABORATOR_GUIDE.md
 [figma design]: https://www.figma.com/file/lOxAGGg5KXb6nwie7zXkz6/NJ---Design-System?node-id=22%3A6086
