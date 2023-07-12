@@ -5,6 +5,7 @@ import { Time } from '@/components/Common/Time';
 import Pagination from '@/components/Pagination';
 import LocalizedLink from '@/components/LocalizedLink';
 import { useBlogData } from '@/hooks/useBlogData';
+
 import type { FC, PropsWithChildren } from 'react';
 import type { BlogPost } from '@/types';
 
