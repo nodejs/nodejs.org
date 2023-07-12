@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Api/ApiChanges Default smoke-test 1`] = `
-<details class="ApiChanges_changesComponent__8zdMP">
+<details>
   <summary>
     <strong>
       History

@@ -1,15 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Sections/NewHeader Default smoke-test 1`] = `
-<nav aria-label="Primary"
-     class="NewHeader_header__T1cJc"
->
-  <div class="NewHeader_container__tyM2Y">
-    <div class="NewHeader_startWrapper__teZG4">
+<nav aria-label="Primary">
+  <div>
+    <div>
       <a aria-label="Homepage"
          href="/en"
       >
-        <div class="NewHeader_logo__mB_8v">
+        <div>
           <div>
             <img alt="light-logo"
                  loading="lazy"
@@ -17,7 +15,6 @@ exports[`Sections/NewHeader Default smoke-test 1`] = `
                  height="33"
                  decoding="async"
                  data-nimg="1"
-                 class="light-mode-only"
                  srcset="static/images/logo-light.svg?w=128&amp;q=75 1x, static/images/logo-light.svg?w=256&amp;q=75 2x"
                  src="static/images/logo-light.svg?w=256&amp;q=75"
                  style="color: transparent;"
@@ -30,7 +27,6 @@ exports[`Sections/NewHeader Default smoke-test 1`] = `
                  height="33"
                  decoding="async"
                  data-nimg="1"
-                 class="dark-mode-only"
                  srcset="static/images/logo.svg?w=128&amp;q=75 1x, static/images/logo.svg?w=256&amp;q=75 2x"
                  src="static/images/logo.svg?w=256&amp;q=75"
                  style="color: transparent;"
@@ -39,32 +35,24 @@ exports[`Sections/NewHeader Default smoke-test 1`] = `
         </div>
       </a>
     </div>
-    <ul class="NewHeader_tabs__5lEvf">
+    <ul>
       <li>
-        <a href="/en/learn"
-           class
-        >
+        <a href="/en/learn">
           Learn
         </a>
       </li>
       <li>
-        <a href="/en/download"
-           class
-        >
+        <a href="/en/download">
           Downloads
         </a>
       </li>
       <li>
-        <a href="/en/docs"
-           class
-        >
+        <a href="/en/docs">
           API Docs
         </a>
       </li>
       <li>
-        <a href="/en/about"
-           class
-        >
+        <a href="/en/about">
           About
         </a>
       </li>
@@ -74,11 +62,10 @@ exports[`Sections/NewHeader Default smoke-test 1`] = `
         </a>
       </li>
     </ul>
-    <div class="NewHeader_endWrapper__8_7L1">
-      <ul class="NewHeader_rightContainer__fCG7F">
+    <div>
+      <ul>
         <li>
           <button type="button"
-                  class="DarkModeToggle_darkModeToggle__Mh_8x"
                   aria-pressed="false"
                   aria-label="Toggle dark/light mode"
           >
@@ -86,7 +73,6 @@ exports[`Sections/NewHeader Default smoke-test 1`] = `
                  fill="currentColor"
                  stroke-width="0"
                  viewbox="0 0 24 24"
-                 class="light-mode-only"
                  height="1em"
                  width="1em"
                  xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +88,6 @@ exports[`Sections/NewHeader Default smoke-test 1`] = `
                  fill="currentColor"
                  stroke-width="0"
                  viewbox="0 0 24 24"
-                 class="dark-mode-only"
                  height="1em"
                  width="1em"
                  xmlns="http://www.w3.org/2000/svg"
@@ -117,9 +102,8 @@ exports[`Sections/NewHeader Default smoke-test 1`] = `
           </button>
         </li>
         <li>
-          <div class="LanguageSelector_container__Yi8Nm">
+          <div>
             <button type="button"
-                    class="LanguageSelector_languageSwitch__zCGbC"
                     aria-expanded="false"
                     aria-label="Switch Language"
             >
@@ -139,9 +123,7 @@ exports[`Sections/NewHeader Default smoke-test 1`] = `
                 </path>
               </svg>
             </button>
-            <ul class="Dropdown_dropdownList__hrw_7"
-                style="display: none; position: absolute; top: 60%; right: 0px; margin: 0px;"
-            >
+            <ul style="display: none; position: absolute; top: 60%; right: 0px; margin: 0px;">
               <li>
                 <button type="button"
                         style="font-weight: normal;"

@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Common/ShellBox Default smoke-test 1`] = `
-<pre class="ShellBox_shellBox__n5v7E">
-  <div class="ShellBox_top__SxRc6">
+<pre>
+  <div>
     <span>
       SHELL
     </span>
@@ -17,8 +17,8 @@ exports[`Common/ShellBox Default smoke-test 1`] = `
 `;
 
 exports[`Common/ShellBox WithTextToCopyJSX smoke-test 1`] = `
-<pre class="ShellBox_shellBox__n5v7E">
-  <div class="ShellBox_top__SxRc6">
+<pre>
+  <div>
     <span>
       SHELL
     </span>
@@ -38,8 +38,8 @@ exports[`Common/ShellBox WithTextToCopyJSX smoke-test 1`] = `
 `;
 
 exports[`Common/ShellBox WithoutTextToCopy smoke-test 1`] = `
-<pre class="ShellBox_shellBox__n5v7E">
-  <div class="ShellBox_top__SxRc6">
+<pre>
+  <div>
     <span>
       SHELL
     </span>
