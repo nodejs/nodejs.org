@@ -1,33 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Article/Codebox Default smoke-test 1`] = `
-<pre class="Codebox_pre___vcVQ language-js">
-  <div class="Codebox_top__1r10k">
-    <div class="Codebox_langBox__zXBm7">
-      <button type="button"
-              class="Codebox_lang__X6WDB Codebox_selected__gFZLU"
-      >
+<pre>
+  <div>
+    <div>
+      <button type="button">
         js
       </button>
     </div>
-    <button type="button"
-            class="Codebox_copy__ZEctM"
-    >
+    <button type="button">
       copy
     </button>
   </div>
-  <div class="Codebox_content__jhl_a">
-    <span class="token keyword">
+  <div>
+    <span>
       const
     </span>
     a
-    <span class="token operator">
+    <span>
       =
     </span>
-    <span class="token number">
+    <span>
       1
     </span>
-    <span class="token punctuation">
+    <span>
       ;
     </span>
   </div>
@@ -35,47 +31,41 @@ exports[`Article/Codebox Default smoke-test 1`] = `
 `;
 
 exports[`Article/Codebox MultiLang smoke-test 1`] = `
-<pre class="Codebox_pre___vcVQ language-js|language-mjs">
-  <div class="Codebox_top__1r10k">
-    <div class="Codebox_langBox__zXBm7">
-      <button type="button"
-              class="Codebox_lang__X6WDB Codebox_selected__gFZLU"
-      >
+<pre>
+  <div>
+    <div>
+      <button type="button">
         cjs
       </button>
-      <button type="button"
-              class="Codebox_lang__X6WDB"
-      >
+      <button type="button">
         mjs
       </button>
     </div>
-    <button type="button"
-            class="Codebox_copy__ZEctM"
-    >
+    <button type="button">
       copy
     </button>
   </div>
-  <div class="Codebox_content__jhl_a">
-    <span class="token keyword">
+  <div>
+    <span>
       const
     </span>
     http
-    <span class="token operator">
+    <span>
       =
     </span>
-    <span class="token function">
+    <span>
       require
     </span>
-    <span class="token punctuation">
+    <span>
       (
     </span>
-    <span class="token string">
+    <span>
       'http'
     </span>
-    <span class="token punctuation">
+    <span>
       )
     </span>
-    <span class="token punctuation">
+    <span>
       ;
     </span>
   </div>

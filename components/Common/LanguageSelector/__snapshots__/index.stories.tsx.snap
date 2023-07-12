@@ -2,9 +2,8 @@
 
 exports[`Common/LanguageSelector Default smoke-test 1`] = `
 <div style="margin-left: 200px;">
-  <div class="LanguageSelector_container__Yi8Nm">
+  <div>
     <button type="button"
-            class="LanguageSelector_languageSwitch__zCGbC"
             aria-expanded="false"
             aria-label="Switch Language"
     >
@@ -24,9 +23,7 @@ exports[`Common/LanguageSelector Default smoke-test 1`] = `
         </path>
       </svg>
     </button>
-    <ul class="Dropdown_dropdownList__hrw_7"
-        style="display: none; position: absolute; top: 60%; right: 0px; margin: 0px;"
-    >
+    <ul style="display: none; position: absolute; top: 60%; right: 0px; margin: 0px;">
       <li>
         <button type="button"
                 style="font-weight: normal;"

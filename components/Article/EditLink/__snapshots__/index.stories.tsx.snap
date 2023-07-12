@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Article/EditLink Default smoke-test 1`] = `
-<div class="EditLink_edit__M4XIL">
+<div>
   <a href="https://github.com/nodejs/nodejs.org/edit/major/website-redesign/pages/en/get-involved/contribute.md">
     <span>
       Edit this page on GitHub

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Learn/PreviousNextLink Default smoke-test 1`] = `
-<ul class="PreviousNextLink_prevNextLink__9SAYu">
+<ul>
   <li>
     <a rel="prev"
        href="/en/previous"
@@ -44,7 +44,7 @@ exports[`Learn/PreviousNextLink Default smoke-test 1`] = `
 `;
 
 exports[`Learn/PreviousNextLink WithoutNext smoke-test 1`] = `
-<ul class="PreviousNextLink_prevNextLink__9SAYu">
+<ul>
   <li>
     <a rel="prev"
        href="/en/previous"
@@ -70,7 +70,7 @@ exports[`Learn/PreviousNextLink WithoutNext smoke-test 1`] = `
 `;
 
 exports[`Learn/PreviousNextLink WithoutPrevious smoke-test 1`] = `
-<ul class="PreviousNextLink_prevNextLink__9SAYu">
+<ul>
   <li>
   </li>
   <li>

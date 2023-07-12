@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Api/Stability Default smoke-test 1`] = `
-<div class="Stability_stability__U0Zm0 Stability_stabilityLevel0__ygvXd">
+<div>
   Stability: 0 - This is an stability index example
 </div>
 `;

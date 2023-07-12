@@ -2,7 +2,6 @@
 
 exports[`Common/DarkModeToggle Default smoke-test 1`] = `
 <button type="button"
-        class="DarkModeToggle_darkModeToggle__Mh_8x"
         aria-pressed="false"
         aria-label="Toggle dark/light mode"
 >
@@ -10,7 +9,6 @@ exports[`Common/DarkModeToggle Default smoke-test 1`] = `
        fill="currentColor"
        stroke-width="0"
        viewbox="0 0 24 24"
-       class="light-mode-only"
        height="1em"
        width="1em"
        xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +24,6 @@ exports[`Common/DarkModeToggle Default smoke-test 1`] = `
        fill="currentColor"
        stroke-width="0"
        viewbox="0 0 24 24"
-       class="dark-mode-only"
        height="1em"
        width="1em"
        xmlns="http://www.w3.org/2000/svg"

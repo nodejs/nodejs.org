@@ -1,12 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Article/AuthorList Default smoke-test 1`] = `
-<div class="AuthorList_authorList__YPp0H">
+<div>
   Article Authors
   <ul>
     <li>
-      <a class="Author_link__6oI83"
-         href="https://github.com/flaviocopes"
+      <a href="https://github.com/flaviocopes"
          aria-label="flaviocopes Github - opens in new tab"
          target="_blank"
          rel="noopener noreferrer"
@@ -24,8 +23,7 @@ exports[`Article/AuthorList Default smoke-test 1`] = `
       </a>
     </li>
     <li>
-      <a class="Author_link__6oI83"
-         href="https://github.com/MarkPieszak"
+      <a href="https://github.com/MarkPieszak"
          aria-label="MarkPieszak Github - opens in new tab"
          target="_blank"
          rel="noopener noreferrer"
@@ -43,8 +41,7 @@ exports[`Article/AuthorList Default smoke-test 1`] = `
       </a>
     </li>
     <li>
-      <a class="Author_link__6oI83"
-         href="https://github.com/mcollina"
+      <a href="https://github.com/mcollina"
          aria-label="mcollina Github - opens in new tab"
          target="_blank"
          rel="noopener noreferrer"
@@ -62,8 +59,7 @@ exports[`Article/AuthorList Default smoke-test 1`] = `
       </a>
     </li>
     <li>
-      <a class="Author_link__6oI83"
-         href="https://github.com/unavailable-author"
+      <a href="https://github.com/unavailable-author"
          aria-label="unavailable-author Github - opens in new tab"
          target="_blank"
          rel="noopener noreferrer"

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Common/Banner WithHTML smoke-test 1`] = `
-<div class="Banner_banner__GAFb9">
+<div>
   <a href="https://nodejs.org/en/"
      target="_blank"
      rel="noopener noreferrer"
@@ -14,7 +14,7 @@ exports[`Common/Banner WithHTML smoke-test 1`] = `
 `;
 
 exports[`Common/Banner WithHTMLImage smoke-test 1`] = `
-<div class="Banner_banner__GAFb9">
+<div>
   <a href="https://nodejs.org/en/"
      target="_blank"
      rel="noopener noreferrer"
@@ -27,10 +27,9 @@ exports[`Common/Banner WithHTMLImage smoke-test 1`] = `
 `;
 
 exports[`Common/Banner WithText smoke-test 1`] = `
-<div class="Banner_banner__GAFb9">
+<div>
   <p>
     <a href="https://nodejs.org/en/"
-       class="Banner_bannerBtn__FqghI"
        target="_blank"
        rel="noopener noreferrer"
     >
