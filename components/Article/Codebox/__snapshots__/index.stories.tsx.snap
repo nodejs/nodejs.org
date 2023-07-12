@@ -1,16 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Article/Codebox Default smoke-test 1`] = `
-<pre>
+<pre tabindex="0">
   <div>
     <div>
-      <button type="button">
+      <button type="button"
+              data-selected="true"
+      >
         js
       </button>
     </div>
     <button type="button"
             aria-hidden="true"
-            data-testid="copy"
     >
       <svg stroke="currentColor"
            fill="none"
@@ -34,7 +35,7 @@ exports[`Article/Codebox Default smoke-test 1`] = `
       </svg>
     </button>
   </div>
-  <div>
+  <code>
     <span>
       const
     </span>
@@ -48,21 +49,22 @@ exports[`Article/Codebox Default smoke-test 1`] = `
     <span>
       ;
     </span>
-  </div>
+  </code>
 </pre>
 `;
 
 exports[`Article/Codebox HiddenHeader smoke-test 1`] = `
-<pre>
+<pre tabindex="0">
   <div>
     <div>
-      <button type="button">
+      <button type="button"
+              data-selected="true"
+      >
         js
       </button>
     </div>
     <button type="button"
             aria-hidden="true"
-            data-testid="copy"
     >
       <svg stroke="currentColor"
            fill="none"
@@ -88,7 +90,6 @@ exports[`Article/Codebox HiddenHeader smoke-test 1`] = `
   </div>
   <button type="button"
           aria-hidden="true"
-          data-testid="copy"
   >
     <svg stroke="currentColor"
          fill="none"
@@ -111,7 +112,7 @@ exports[`Article/Codebox HiddenHeader smoke-test 1`] = `
       </path>
     </svg>
   </button>
-  <div>
+  <code>
     <span>
       const
     </span>
@@ -125,24 +126,27 @@ exports[`Article/Codebox HiddenHeader smoke-test 1`] = `
     <span>
       ;
     </span>
-  </div>
+  </code>
 </pre>
 `;
 
 exports[`Article/Codebox MultiLang smoke-test 1`] = `
-<pre>
+<pre tabindex="0">
   <div>
     <div>
-      <button type="button">
+      <button type="button"
+              data-selected="true"
+      >
         cjs
       </button>
-      <button type="button">
+      <button type="button"
+              data-selected="false"
+      >
         mjs
       </button>
     </div>
     <button type="button"
             aria-hidden="true"
-            data-testid="copy"
     >
       <svg stroke="currentColor"
            fill="none"
@@ -166,7 +170,7 @@ exports[`Article/Codebox MultiLang smoke-test 1`] = `
       </svg>
     </button>
   </div>
-  <div>
+  <code>
     <span>
       const
     </span>
@@ -189,24 +193,27 @@ exports[`Article/Codebox MultiLang smoke-test 1`] = `
     <span>
       ;
     </span>
-  </div>
+  </code>
 </pre>
 `;
 
 exports[`Article/Codebox MultiLangWithTextToCopy smoke-test 1`] = `
-<pre>
+<pre tabindex="0">
   <div>
     <div>
-      <button type="button">
+      <button type="button"
+              data-selected="true"
+      >
         cjs
       </button>
-      <button type="button">
+      <button type="button"
+              data-selected="false"
+      >
         mjs
       </button>
     </div>
     <button type="button"
             aria-hidden="true"
-            data-testid="copy"
     >
       <svg stroke="currentColor"
            fill="none"
@@ -230,7 +237,7 @@ exports[`Article/Codebox MultiLangWithTextToCopy smoke-test 1`] = `
       </svg>
     </button>
   </div>
-  <div>
+  <code>
     <span>
       const
     </span>
@@ -253,21 +260,22 @@ exports[`Article/Codebox MultiLangWithTextToCopy smoke-test 1`] = `
     <span>
       ;
     </span>
-  </div>
+  </code>
 </pre>
 `;
 
 exports[`Article/Codebox Shell smoke-test 1`] = `
-<pre>
+<pre tabindex="0">
   <div>
     <div>
-      <button type="button">
+      <button type="button"
+              data-selected="true"
+      >
         shell
       </button>
     </div>
     <button type="button"
             aria-hidden="true"
-            data-testid="copy"
     >
       <svg stroke="currentColor"
            fill="none"
@@ -291,7 +299,7 @@ exports[`Article/Codebox Shell smoke-test 1`] = `
       </svg>
     </button>
   </div>
-  <div>
+  <code>
     $
     <span>
       echo
@@ -299,6 +307,6 @@ exports[`Article/Codebox Shell smoke-test 1`] = `
     <span>
       "Hello World"
     </span>
-  </div>
+  </code>
 </pre>
 `;

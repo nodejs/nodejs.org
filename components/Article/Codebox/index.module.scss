@@ -23,6 +23,7 @@
       .lang {
         border-radius: var(--border-radius-3);
         border-width: 0;
+        cursor: pointer;
         font-family: var(--sans);
         font-size: var(--font-size-body2);
         font-weight: var(--font-weight-semibold);
@@ -66,6 +67,7 @@
 
   .content {
     @include components.code;
+    display: block;
     padding: var(--space-12);
   }
 

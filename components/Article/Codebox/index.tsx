@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
-import { highlight, languages } from 'prismjs';
+import { useEffect, useMemo, useState } from 'react';
+import { highlightAll, highlightElement } from 'prismjs';
 import classnames from 'classnames';
 import { TbCopy, TbCheck } from 'react-icons/tb';
 import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 import type { FC, PropsWithChildren, ReactElement, MouseEvent } from 'react';
-import 'prismjs/components/prism-bash';
+import { usePrismJS } from '../../../hooks/usePrismJS';
+// import 'prismjs/components/prism-bash';
 
 import styles from './index.module.scss';
 
@@ -15,7 +16,7 @@ type CodeBoxProps = {
 };
 
 export const replaceLabelLanguages = (language: string) =>
-  language.replace(/console/i, 'bash');
+  language.replace(/console/i, 'bash').replace('language-', '');
 
 export const replaceLanguages = (language: string) =>
   language
@@ -23,25 +24,25 @@ export const replaceLanguages = (language: string) =>
     .replace(/console|shell/i, 'bash');
 
 const Codebox: FC<CodeBoxProps> = ({
-  children: { props },
+  children: {
+    props: { children: sourceCode, className = 'language-text' },
+  },
   textToCopy,
   hideHeader = false,
 }) => {
-  const [parsedCode, setParsedCode] = useState('');
   const [copied, copyText] = useCopyToClipboard();
   const [langIndex, setLangIndex] = useState(0);
 
-  const className = props.className || 'text';
+  const languageOptions = className.split('|');
 
-  const languageOptions = className
-    .split('|')
-    .map(language => language.split('language-')[1]);
+  const language = replaceLanguages(languageOptions[langIndex]);
 
-  const language = languageOptions[langIndex];
+  const codeRef = usePrismJS(language);
 
-  const codeArray = props.children
-    ? props.children.toString().split('--------------\n')
-    : [''];
+  const codeArray = useMemo(
+    () => sourceCode?.toString().split('--------------\n') || [''],
+    [sourceCode]
+  );
 
   const handleCopyCode = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -50,51 +51,47 @@ const Codebox: FC<CodeBoxProps> = ({
       ? textToCopy[langIndex]
       : codeArray[langIndex];
 
-    copyText(_textToCopy.replace('$', '').trim());
+    copyText(_textToCopy.replace(/^\$ /, '').trim());
   };
-
-  useEffect(() => {
-    const parsedLanguage = replaceLanguages(language);
-    const prismLanguage = languages[parsedLanguage] || languages.text;
-
-    setParsedCode(
-      highlight(codeArray[langIndex], prismLanguage, parsedLanguage)
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [langIndex, codeArray]);
 
   const copyButton = (
     <button
       type="button"
       className={styles.copy}
       onClick={handleCopyCode}
-      aria-hidden
-      data-testid="copy"
+      aria-hidden={true}
     >
       {copied ? <TbCheck /> : <TbCopy />}
     </button>
   );
 
-  const containerClasses = classnames(styles.pre, replaceLanguages(className), {
+  const containerClasses = classnames(styles.pre, className, {
     [styles.inlineCode]: hideHeader,
   });
+
+  const codeClasses = classnames(language, styles.content);
 
   return (
     <pre className={containerClasses}>
       <div className={styles.header}>
         <div className={styles.langBox}>
-          {languageOptions.map((lang, index) => (
-            <button
-              type="button"
-              key={lang}
-              className={classnames(styles.lang, {
-                [styles.selected]: index === langIndex,
-              })}
-              onClick={() => setLangIndex(index)}
-            >
-              {replaceLabelLanguages(lang.toLowerCase())}
-            </button>
-          ))}
+          {languageOptions.map((lang, index) => {
+            const langClasses = classnames(styles.lang, {
+              [styles.selected]: index === langIndex,
+            });
+
+            return (
+              <button
+                type="button"
+                key={lang}
+                className={langClasses}
+                onClick={() => setLangIndex(index)}
+                data-selected={index === langIndex}
+              >
+                {replaceLabelLanguages(lang.toLowerCase())}
+              </button>
+            );
+          })}
         </div>
 
         {copyButton}
@@ -102,10 +99,9 @@ const Codebox: FC<CodeBoxProps> = ({
 
       {hideHeader && copyButton}
 
-      <div
-        className={styles.content}
-        dangerouslySetInnerHTML={{ __html: parsedCode }}
-      />
+      <code ref={codeRef} className={codeClasses}>
+        {codeArray[langIndex]}
+      </code>
     </pre>
   );
 };
