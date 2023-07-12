@@ -33,7 +33,7 @@ const Author: FC<AuthorProps> = ({ username, size }) => {
         alt={githubUserName}
         src={authorImg}
         placeholder="blur"
-        blurDataURL="/placeholder-img.png"
+        blurDataURL="/static/images/placeholder-img.png"
         width={size}
         height={size}
         onError={() => setAuthorImg('/static/images/placeholder-img.png')}
