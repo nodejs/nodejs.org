@@ -36,7 +36,7 @@ const Author: FC<AuthorProps> = ({ username, size }) => {
         blurDataURL="/placeholder-img.png"
         width={size}
         height={size}
-        onError={() => setAuthorImg('/placeholder-img.png')}
+        onError={() => setAuthorImg('/static/images/placeholder-img.png')}
       />
     </a>
   );
