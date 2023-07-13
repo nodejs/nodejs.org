@@ -1,5 +1,5 @@
 @mixin theme {
-  background: var(--black2);
+  background: var(--black3);
   color: black;
 
   :global .token {
@@ -70,7 +70,7 @@
     &.punctuation,
     &.operator,
     &.string {
-      background-color: var(--black2);
+      background-color: var(--black3);
     }
   }
 }
