@@ -7,13 +7,8 @@
   ],
   "overrides": [
     {
-      "files": [
-        "**/*.ts?(x)"
-      ],
-      "plugins": [
-        "@typescript-eslint",
-        "no-relative-import-paths"
-      ],
+      "files": ["**/*.ts?(x)"],
+      "plugins": ["@typescript-eslint", "no-relative-import-paths"],
       "rules": {
         "@typescript-eslint/consistent-type-imports": "error",
         "no-relative-import-paths/no-relative-import-paths": [
@@ -26,17 +21,11 @@
       }
     },
     {
-      "files": [
-        "**/*.md?(x)"
-      ],
-      "extends": [
-        "plugin:mdx/recommended"
-      ]
+      "files": ["**/*.md?(x)"],
+      "extends": ["plugin:mdx/recommended"]
     },
     {
-      "files": [
-        "**/*.{mdx,tsx}"
-      ],
+      "files": ["**/*.{mdx,tsx}"],
       "rules": {
         "react/jsx-no-undef": "off",
         "react/function-component-definition": [
@@ -57,10 +46,7 @@
             "message": "Named * React import is not allowed. Please import what you need from React with Named Imports"
           }
         ],
-        "@typescript-eslint/consistent-type-definitions": [
-          "error",
-          "type"
-        ]
+        "@typescript-eslint/consistent-type-definitions": ["error", "type"]
       }
     }
   ]
