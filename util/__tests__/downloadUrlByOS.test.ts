@@ -1,4 +1,4 @@
-import { downloadUrlByOS } from '../downloadUrlByOS';
+import { downloadUrlByOS } from '@/util/downloadUrlByOS';
 
 const version = 'v18.16.0';
 

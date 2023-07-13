@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react';
 import classnames from 'classnames';
 import { TbCopy, TbCheck } from 'react-icons/tb';
-import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
-import { usePrismJS } from '../../../hooks/usePrismJS';
+import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
+import { usePrismJS } from '@/hooks/usePrismJS';
 import type { FC, PropsWithChildren, ReactElement, MouseEvent } from 'react';
 
 import styles from './index.module.scss';

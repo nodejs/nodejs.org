@@ -1,6 +1,6 @@
 import { highlightElement } from 'prismjs';
 import { createRef, useEffect, useMemo } from 'react';
-import { loadLanguage } from '../next.prism.mjs';
+import { loadLanguage } from '@/next.prism.mjs';
 
 export const usePrismJS = (language: string) => {
   const codeRef = createRef<HTMLElement>();
