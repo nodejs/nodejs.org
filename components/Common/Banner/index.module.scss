@@ -1,16 +1,33 @@
 .banner {
   color: var(--color-text-primary);
   margin: 0 auto;
-  max-width: 90vw;
-  padding-top: var(--space-08);
+  max-width: 90vw; /*Can be changed based on design requirement*/
+  padding-top: var(--space-08); /* Add additional margin if needed */
   position: relative;
+  display: flex; /* Aligns child content */
+  justify-content: center; /* Centers child content horizontally */
+  align-items: center; /* Centers child content vertically */
+
 
   &,
   p {
     font-size: var(--font-size-body1);
     font-weight: var(--font-weight-bold);
   }
-
+  
+  .bannerContent {
+    align-items: center;
+    background-color:  var(--color-fill-banner);
+    border-radius: .2px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: var(--space-12);
+    width: 100%;
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+  
   a {
     align-items: center;
     color: var(--color-text-primary);
@@ -31,7 +48,7 @@
     &.bannerBtn {
       background: var(--purple5);
       border: 1px solid transparent;
-      border-radius: 5.6rem;
+      border-radius: .2rem;
       color: var(--color-fill-top-nav);
       font-family: var(--sans);
       font-size: 1rem;
