@@ -1,8 +1,8 @@
 import { FormattedDate, FormattedMessage } from 'react-intl';
 import styles from './index.module.scss';
-import LocalizedLink from '../../LocalizedLink';
-import navigation from '../../../navigation.json';
-import type { BlogPost } from '../../../types';
+import LocalizedLink from '@/components/LocalizedLink';
+import navigation from '@/navigation.json';
+import type { BlogPost } from '@/types';
 import type { FC } from 'react';
 
 const getBlogCategoryUrl = (category: string): string =>

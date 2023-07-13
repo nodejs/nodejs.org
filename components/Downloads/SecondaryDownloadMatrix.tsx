@@ -1,8 +1,8 @@
 import DownloadList from './DownloadList';
-import { useLayoutContext } from '../../hooks/useLayoutContext';
-import { WithNodeRelease } from '../../providers/withNodeRelease';
-import { DIST_URL } from '../../next.constants.mjs';
-import type { LegacyDownloadsFrontMatter, NodeRelease } from '../../types';
+import { useLayoutContext } from '@/hooks/useLayoutContext';
+import { WithNodeRelease } from '@/providers/withNodeRelease';
+import { DIST_URL } from '@/next.constants.mjs';
+import type { LegacyDownloadsFrontMatter, NodeRelease } from '@/types';
 import type { FC } from 'react';
 
 // @TODO: Instead of using a static list it should be created dynamically. This is done on `nodejs.dev`

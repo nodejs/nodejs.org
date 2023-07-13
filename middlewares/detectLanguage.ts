@@ -1,4 +1,4 @@
-import type { CustomMiddleware } from '../types';
+import type { CustomMiddleware } from '@/types';
 
 const detectLanguage: CustomMiddleware = {
   handler: async (request, response, { availableLocales }) => {

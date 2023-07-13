@@ -1,4 +1,4 @@
-import type { NodeRelease } from '../types';
+import type { NodeRelease } from '@/types';
 
 export const createNodeReleases = (): NodeRelease[] => [
   {

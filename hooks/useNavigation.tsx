@@ -1,6 +1,6 @@
 import { FormattedMessage } from 'react-intl';
-import * as nextJson from '../next.json.mjs';
-import type { NavigationEntry, NavigationKeys } from '../types';
+import * as nextJson from '@/next.json.mjs';
+import type { NavigationEntry, NavigationKeys } from '@/types';
 
 // Translation Context for FormattedMessage
 type Context = Record<string, Record<string, any>>;

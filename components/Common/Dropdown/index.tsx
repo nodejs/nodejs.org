@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import type { DropdownItem } from '../../../types';
+import type { DropdownItem } from '@/types';
 import type { CSSProperties, KeyboardEvent } from 'react';
 
 import styles from './index.module.scss';
