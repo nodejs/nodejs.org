@@ -10,7 +10,7 @@ const useTextContent = ({ text, link }: WebsiteBanner, bannerBtnText: string) =>
   useMemo(() => {
     if (text) {
       return (
-        <p>
+        <div className={styles.bannerContent}>
           <a
             href={link}
             className={styles.bannerBtn}
@@ -20,7 +20,7 @@ const useTextContent = ({ text, link }: WebsiteBanner, bannerBtnText: string) =>
             {bannerBtnText || 'Read More'}
           </a>
           {text}
-        </p>
+        </div>
       );
     }
 
