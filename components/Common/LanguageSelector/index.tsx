@@ -17,7 +17,7 @@ const LanguageSelector = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const dropdownHandler = useCallback(() => setShowDropdown(false), []);
-  const ref = useClickOutside<HTMLDivElement>(dropdownHandler);
+  const ref = useClickOutside<HTMLUListElement>(dropdownHandler);
 
   const { availableLocales, currentLocale } = useLocale();
 
@@ -41,7 +41,7 @@ const LanguageSelector = () => {
   });
 
   return (
-    <div className={styles.container} ref={ref}>
+    <>
       <button
         type="button"
         className={styles.languageSwitch}
@@ -56,8 +56,9 @@ const LanguageSelector = () => {
         items={dropdownItems}
         shouldShow={showDropdown}
         styles={dropdownStyle}
+        ref={ref}
       />
-    </div>
+    </>
   );
 };
 
