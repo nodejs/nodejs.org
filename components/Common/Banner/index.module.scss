@@ -1,7 +1,7 @@
 .banner {
   align-items: center;
-  background: var(--color-fill-canvas);
-  // justify-content: center;
+  background: var(--color-fill-top-nav);
+  justify-content: center;
   box-sizing: border-box;
   color: var(--color-text-primary);
   display: flex;
@@ -15,7 +15,7 @@
   }
 
   .bannerContent {
-    background-color: var(--color-fill-banner);
+    background: var(--color-fill-canvas);
     border-radius: 0;
     color: var(--black-900, #2c3437);
     display: flex;
