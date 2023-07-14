@@ -1,11 +1,11 @@
 .banner {
   align-items: center;
   background: var(--color-fill-top-nav);
-  justify-content: center;
   box-sizing: border-box;
   color: var(--color-text-primary);
   display: flex;
-  margin: -1rem;
+  justify-content: center;
+  max-width: 100vw;
   position: relative;
 
   &,
@@ -24,6 +24,8 @@
     font-weight: var(--font-weight-regular);
     justify-content: center;
     line-height: var(--line-height--display5); /* 150% */
+    margin: -1rem;
+    max-width: 150% !important;
     padding: var(--space-13);
     width: 100%;
   }
