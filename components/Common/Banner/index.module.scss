@@ -16,7 +16,7 @@
 
   .bannerContent {
     background-color: var(--color-fill-banner);
-
+    border-radius: 0;
     color: var(--black-900, #2c3437);
     display: flex;
     font-family: --var(--sans);
