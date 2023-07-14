@@ -10,7 +10,7 @@ const useTextContent = ({ text, link }: WebsiteBanner, bannerBtnText: string) =>
   useMemo(() => {
     if (text) {
       return (
-        <div className={styles.bannerContent}>
+        <p className={styles.bannerContent}>
           <a
             href={link}
             className={styles.bannerBtn}
@@ -20,7 +20,7 @@ const useTextContent = ({ text, link }: WebsiteBanner, bannerBtnText: string) =>
             {bannerBtnText || 'Read More'}
           </a>
           {text}
-        </div>
+        </p>
       );
     }
 
@@ -66,9 +66,9 @@ const Banner: FC<BannerProps> = ({ bannersIndex }) => {
 
   if (showBanner) {
     return (
-      <div className={styles.banner}>
+      <p className={styles.banner}>
         {bannersIndex.text ? textContent : htmlContent}
-      </div>
+      </p>
     );
   }
 
