@@ -4,11 +4,11 @@ Thank you for your interest in contributing to the Node.js Website. Before you p
 
 - [Code of Conduct](https://github.com/nodejs/node/blob/HEAD/CODE_OF_CONDUCT.md)
 - [Contributing](#contributing)
+  - [Becoming a collaborator](#becoming-a-collaborator)
 - [Getting started](#getting-started)
   - [CLI Commands](#cli-commands)
 - [Commit Guidelines](#commit-guidelines)
 - [Pull Request Policy](#pull-request-policy)
-- [Becoming a collaborator](#becoming-a-collaborator)
 - [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin-11)
 
 ## Contributing
@@ -48,7 +48,6 @@ If you're an active contributor seeking to become a member we recommend reaching
 - The nomination must have at least 3 existing members of the Website Team to be in agreement with the nomination.
   - This can be done through commenting with "agreement" (showing support) or reacting to the Issue with a :+1: (Thumbs-up Emoji)
 - The Issue must be open for at least 72 hours without an objection from an existing member of the Website Team - The nomination cannot pass until all open discordances/objections are resolved. - Objections coming from the TSC or Core Collaborators are also counted as valid objections.
-
 </details>
 
 ## Getting started
@@ -57,7 +56,6 @@ The steps below will give you a general idea of how to prepare your local enviro
 for getting things done and landing your contribution.
 
 1. Click the fork button in the top right to clone the [nodejs.org repository](https://github.com/nodejs/nodejs.org/fork)
-
 2. Clone your fork using SSH, GitHub CLI, or HTTPS.
 
    ```bash
