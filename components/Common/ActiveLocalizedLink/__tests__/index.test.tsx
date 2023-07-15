@@ -25,7 +25,10 @@ describe('ActiveLocalizedLink', () => {
       </IntlProvider>
     );
 
-    expect(screen.getByText('Link')).toHaveAttribute('href', '/en/link');
+    expect(screen.findByText('Link')).resolves.toHaveAttribute(
+      'href',
+      '/en/link'
+    );
   });
 
   it('ignores active class when href not matches location.href', () => {
@@ -41,7 +44,7 @@ describe('ActiveLocalizedLink', () => {
       </IntlProvider>
     );
 
-    expect(screen.getByText('Link')).toHaveAttribute('class', 'link');
+    expect(screen.findByText('Link')).resolves.toHaveAttribute('class', 'link');
   });
 
   it('sets active class when href matches location.href', () => {
@@ -57,6 +60,9 @@ describe('ActiveLocalizedLink', () => {
       </IntlProvider>
     );
 
-    expect(screen.getByText('Link')).toHaveAttribute('class', 'link active');
+    expect(screen.findByText('Link')).resolves.toHaveAttribute(
+      'class',
+      'link active'
+    );
   });
 });

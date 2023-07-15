@@ -7,7 +7,7 @@ const sourceSans = Source_Sans_3({
 });
 
 const openSans = Open_Sans({
-  weight: ['300', '400', '600'],
+  weight: ['300', '400', '600', '700'],
   display: 'fallback',
   subsets: ['latin'],
 });
