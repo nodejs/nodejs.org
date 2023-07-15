@@ -3,11 +3,46 @@
     "collect": {
       "startServerCommand": "npm run serve",
       "startServerReadyPattern": "Server running at http://localhost:3000/",
-      "url": ["http://localhost:3000/en"],
+      "url": [
+        "http://localhost:3000/en",
+        "http://localhost:3000/ar",
+        "http://localhost:3000/be",
+        "http://localhost:3000/ca",
+        "http://localhost:3000/de",
+        "http://localhost:3000/es",
+        "http://localhost:3000/fa",
+        "http://localhost:3000/fr",
+        "http://localhost:3000/gl",
+        "http://localhost:3000/id",
+        "http://localhost:3000/it",
+        "http://localhost:3000/ja",
+        "http://localhost:3000/ka",
+        "http://localhost:3000/ko",
+        "http://localhost:3000/nl",
+        "http://localhost:3000/pt-br",
+        "http://localhost:3000/ro",
+        "http://localhost:3000/ru",
+        "http://localhost:3000/tr",
+        "http://localhost:3000/uk",
+        "http://localhost:3000/zh-cn",
+        "http://localhost:3000/zh-tw"
+      ],
       "numberOfRuns": 3
     },
     "upload": {
       "target": "temporary-public-storage"
+    },
+    "assert": {
+      "assertions": {
+        "first-contentful-paint": ["error", { "maxNumericValue": 2000 }],
+        "interactive": ["error", { "maxNumericValue": 5200 }],
+        "speed-index": ["error", { "maxNumericValue": 4300 }],
+        "resource-summary:script:size": [
+          "error",
+          { "maxNumericValue": 170000 }
+        ],
+        "resource-summary:total:size": ["error", { "maxNumericValue": 300000 }]
+      }
     }
   }
 }
