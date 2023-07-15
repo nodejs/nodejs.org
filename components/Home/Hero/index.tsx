@@ -38,10 +38,10 @@ const Hero: FC<HeroProps> = ({
       <div className={styles.buttonsContainer}>
         <div className={styles.downloadLtsContainer}>
           <a className={styles.downloadButton} href={ltsVersionUrl}>
-            <FormattedMessage id="components.hero.downloadLts" />
+            <FormattedMessage id="components.home.hero.downloadLts" />
             <span>
               <FormattedMessage
-                id="components.hero.currentVersion"
+                id="components.home.hero.currentVersion"
                 values={{ version: ltsVersion }}
               />
             </span>
@@ -49,14 +49,14 @@ const Hero: FC<HeroProps> = ({
           <p className="t-caption">
             <a href={currentVersionUrl}>
               <FormattedMessage
-                id="components.hero.getCurrent"
+                id="components.home.hero.getCurrent"
                 values={{ version: currentVersion }}
               />
             </a>
           </p>
         </div>
         <Link href="/learn" className={styles.downloadButtonInverse}>
-          <FormattedMessage id="components.hero.learn" />
+          <FormattedMessage id="components.home.hero.learn" />
         </Link>
       </div>
     </div>

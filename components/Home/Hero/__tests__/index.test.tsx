@@ -4,9 +4,7 @@ import Hero from '..';
 import { createNodeReleases } from '../../../../__fixtures__/nodeReleases';
 import type { NodeRelease } from '../../../../types';
 
-jest.mock('../../../../hooks/useDetectOS', () => ({
-  useDetectOS: jest.fn().mockReturnValue({ os: 'WIN', bitness: '64' }),
-}));
+jest.mock('../../../../hooks/useDetectOS');
 
 const releases = createNodeReleases();
 const currentLTS = releases.find(release => release.isLts) as NodeRelease;

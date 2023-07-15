@@ -11,7 +11,7 @@ exports[`Home/Hero Default smoke-test 1`] = `
   <div class="Hero_buttonsContainer__f5dSG">
     <div class="Hero_downloadLtsContainer__46E7X">
       <a class="Hero_downloadButton__QeN_O"
-         href="https://nodejs.org/dist/v18.16.0/node-v18.16.0.pkg"
+         href="https://nodejs.org/dist/v18.16.0/node-v18.16.0-x64.msi"
       >
         Download Node (LTS)
         <span>
@@ -19,7 +19,7 @@ exports[`Home/Hero Default smoke-test 1`] = `
         </span>
       </a>
       <p class="t-caption">
-        <a href="https://nodejs.org/dist/v20.2.0/node-v20.2.0.pkg">
+        <a href="https://nodejs.org/dist/v20.2.0/node-v20.2.0-x64.msi">
           Download Latest (v20.2.0)
         </a>
       </p>
