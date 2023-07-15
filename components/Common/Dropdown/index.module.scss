@@ -9,7 +9,6 @@
   padding: 0;
   position: absolute;
   width: fit-content;
-
   > li {
     > button {
       background: none;
@@ -27,4 +26,17 @@
       }
     }
   }
+}
+.dropdownList::-webkit-scrollbar {
+  width: var(--space-06);
+}
+
+.dropdownList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dropdownList::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.7);
+  border: transparent;
+  border-radius: 20px;
 }
