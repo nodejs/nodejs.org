@@ -20,6 +20,7 @@
     {
       "files": ["**/*.{mdx,tsx}"],
       "rules": {
+        "react/jsx-no-undef": "off",
         "react/function-component-definition": [
           "error",
           {
