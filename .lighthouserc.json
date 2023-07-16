@@ -24,15 +24,16 @@
         "http://localhost:3000/zh-cn",
         "http://localhost:3000/zh-tw"
       ],
-      "numberOfRuns": 3
+      "numberOfRuns": 1,
+      "settings": {
+        "preset": "desktop"
+      }
     },
     "upload": {
       "target": "temporary-public-storage"
     },
     "assert": {
-      "assertions": {
-        "preset": "lighthouse:recommended"
-      }
+      "preset": "lighthouse:recommended"
     }
   }
 }
