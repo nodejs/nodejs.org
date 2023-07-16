@@ -109,11 +109,6 @@ jobs:
           name: bundle-analysis
           path: .next/analyze
 
-      - name: Copy PR Bundle Analysis (Fallback)
-        run: |
-          mkdir -p .next/analyze/base/bundle/
-          cp .next/analyze/__bundle_analysis.json .next/analyze/base/bundle/__bundle_analysis.json
-
       - name: Download Base Bundle Analysis
         uses: dawidd6/action-download-artifact@v2
         if: success() && github.event.number
@@ -122,6 +117,18 @@ jobs:
           branch: ${{ github.event.pull_request.base.ref }}
           path: .next/analyze/base/bundle
           if_no_artifact_found: warn
+
+      - name: Check Base Bundle Analysis File
+        id: check-base-bundle-analysis-file
+        uses: andstor/file-existence-action@v2
+        with:
+          files: .next/analyze/base/bundle/__bundle_analysis.json
+
+      - name: Copy PR Bundle Analysis (Fallback)
+        if: steps.check-base-bundle-analysis-file.outputs.files_exists == 'true'
+        run: |
+          mkdir -p .next/analyze/base/bundle/
+          cp .next/analyze/__bundle_analysis.json .next/analyze/base/bundle/__bundle_analysis.json
 
       - name: Compare with base branch bundle
         if: success() && github.event.number
