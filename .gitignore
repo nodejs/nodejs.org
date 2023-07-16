@@ -27,3 +27,7 @@ storybook-static
 # Vercel Files
 .vercel
 .turbo
+
+# ESlint Cache Files
+.eslintmdcache
+.eslintjscache
