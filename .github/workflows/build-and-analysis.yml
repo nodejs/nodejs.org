@@ -35,12 +35,12 @@ jobs:
         run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
 
       - name: Git Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
           fetch-depth: 2
 
       - name: Restore Cache
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
             ~/.npm
@@ -50,7 +50,7 @@ jobs:
           restore-keys: cache-
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
@@ -70,13 +70,13 @@ jobs:
         run: npx -p nextjs-bundle-analysis report
 
       - name: Upload Build Analysis
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
         with:
           name: bundle-analysis
           path: .next/analyze/__bundle_analysis.json
 
       - name: Save Cache
-        uses: actions/cache/save@v3
+        uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
             ~/.npm
@@ -91,10 +91,10 @@ jobs:
 
     steps:
       - name: Git Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
 
       - name: Restore Cache
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
             ~/.npm
@@ -104,13 +104,13 @@ jobs:
           restore-keys: cache-
 
       - name: Download PR Bundle Analysis
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
         with:
           name: bundle-analysis
           path: .next/analyze
 
       - name: Download Base Bundle Analysis
-        uses: dawidd6/action-download-artifact@v2
+        uses: dawidd6/action-download-artifact@246dbf436b23d7c49e21a7ab8204ca9ecd1fe615
         if: success() && github.event.number
         with:
           name: bundle-analysis
@@ -120,7 +120,7 @@ jobs:
 
       - name: Check Base Bundle Analysis File
         id: check-base-bundle-analysis-file
-        uses: andstor/file-existence-action@v2
+        uses: andstor/file-existence-action@20b4d2e596410855db8f9ca21e96fbe18e12930b
         with:
           files: .next/analyze/base/bundle/__bundle_analysis.json
 
@@ -143,7 +143,7 @@ jobs:
           echo EOF >> $GITHUB_OUTPUT
 
       - name: Find Comment
-        uses: peter-evans/find-comment@v2
+        uses: peter-evans/find-comment@a54c31d7fa095754bfef525c0c8e5e5674c4b4b1
         if: success() && github.event.number
         id: find-comment-id
         with:
@@ -151,14 +151,14 @@ jobs:
           body-includes: '<!-- __NEXTJS_BUNDLE_nodejs.org -->'
 
       - name: Create Comment
-        uses: peter-evans/create-or-update-comment@v2
+        uses: peter-evans/create-or-update-comment@c6c9a1a66007646a28c153e2a8580a5bad27bcfa
         if: success() && github.event.number && steps.find-comment-id.outputs.comment-id == 0
         with:
           issue-number: ${{ github.event.number }}
           body: ${{ steps.get-comment-body.outputs.body }}
 
       - name: Update Comment
-        uses: peter-evans/create-or-update-comment@v2
+        uses: peter-evans/create-or-update-comment@c6c9a1a66007646a28c153e2a8580a5bad27bcfa
         if: success() && github.event.number && steps.find-comment-id.outputs.comment-id != 0
         with:
           issue-number: ${{ github.event.number }}
