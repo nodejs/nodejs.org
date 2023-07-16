@@ -1,4 +1,4 @@
-name: CI
+name: Light House CI
 on: [push]
 jobs:
   lighthouseci:
@@ -7,8 +7,8 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
-      - run: npm install && npm install -g @lhci/cli@0.11.x
+          node-version-file: '.nvmrc'
+      - run: npm ci && npm install -g @lhci/cli@0.11.x
       - run: lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LIGHTHOUSE_APP_TOKEN }}

@@ -71,7 +71,6 @@
     "vfile": "^5.3.7"
   },
   "devDependencies": {
-    "@lhci/cli": "^0.12.0",
     "@storybook/addon-controls": "^7.0.24",
     "@storybook/addon-interactions": "^7.0.24",
     "@storybook/nextjs": "^7.0.24",
