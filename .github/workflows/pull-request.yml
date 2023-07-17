@@ -31,7 +31,10 @@ jobs:
       - name: Restore Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
-          key: cache-${{ hashFiles('package-lock.json') }}-
+          path: |
+            ~/.npm
+            .next/cache
+            node_modules/.cache
           restore-keys: |
             cache-${{ hashFiles('package-lock.json') }}-
             cache-
@@ -74,7 +77,10 @@ jobs:
       - name: Restore Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
-          key: cache-${{ hashFiles('package-lock.json') }}
+          path: |
+            ~/.npm
+            .next/cache
+            node_modules/.cache
           restore-keys: |
             cache-${{ hashFiles('package-lock.json') }}-
             cache-
