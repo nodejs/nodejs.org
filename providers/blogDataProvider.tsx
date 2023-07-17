@@ -1,4 +1,4 @@
-import { createContext, useMemo } from 'react';
+import { createContext } from 'react';
 import blogData from '@/public/blog-posts-data.json';
 import type { FC, PropsWithChildren } from 'react';
 import type { BlogData } from '@/types';

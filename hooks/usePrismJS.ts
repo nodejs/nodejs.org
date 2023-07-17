@@ -1,5 +1,5 @@
 import { highlightElement } from 'prismjs';
-import { createRef, useEffect, useMemo } from 'react';
+import { createRef, useMemo } from 'react';
 import { loadLanguage } from '@/next.prism.mjs';
 
 export const usePrismJS = (language: string) => {
