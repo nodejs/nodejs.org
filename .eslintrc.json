@@ -11,6 +11,7 @@
       "plugins": ["@typescript-eslint", "no-relative-import-paths"],
       "rules": {
         "@typescript-eslint/consistent-type-imports": "error",
+        "@typescript-eslint/no-unused-vars": "error",
         "no-relative-import-paths/no-relative-import-paths": [
           "warn",
           {
