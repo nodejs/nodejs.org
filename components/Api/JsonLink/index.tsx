@@ -1,6 +1,6 @@
 import { FormattedMessage } from 'react-intl';
 import { FaRobot } from 'react-icons/fa';
-import { DOCS_URL } from '../../../next.constants.mjs';
+import { DOCS_URL } from '@/next.constants.mjs';
 import type { FC } from 'react';
 
 import styles from './index.module.scss';

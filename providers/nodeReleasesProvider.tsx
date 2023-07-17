@@ -1,8 +1,8 @@
 import { createContext, useMemo } from 'react';
-import nodeReleasesData from '../public/node-releases-data.json';
-import { getNodeReleaseStatus } from '../util/nodeRelease';
+import nodeReleasesData from '@/public/node-releases-data.json';
+import { getNodeReleaseStatus } from '@/util/nodeRelease';
 import type { FC, PropsWithChildren } from 'react';
-import type { NodeReleaseSource, NodeRelease } from '../types';
+import type { NodeReleaseSource, NodeRelease } from '@/types';
 
 export const NodeReleasesContext = createContext<NodeRelease[]>([]);
 

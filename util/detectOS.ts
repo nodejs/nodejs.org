@@ -1,4 +1,4 @@
-import type { UserOS } from '../types/userOS';
+import type { UserOS } from '@/types/userOS';
 
 export const detectOsInUserAgent = (userAgent: string | undefined): UserOS => {
   const osMatch = userAgent?.match(/(Win|Mac|Linux)/);

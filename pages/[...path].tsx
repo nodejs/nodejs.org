@@ -1,8 +1,8 @@
-import Theme from '../theme';
-import * as nextDynamic from '../next.dynamic.mjs';
-import * as nextConstants from '../next.constants.mjs';
+import Theme from '@/theme';
+import * as nextDynamic from '@/next.dynamic.mjs';
+import * as nextConstants from '@/next.constants.mjs';
 import type { GetStaticPaths, GetStaticProps } from 'next';
-import type { DynamicStaticProps } from '../types';
+import type { DynamicStaticProps } from '@/types';
 
 type DynamicStaticPaths = { path: string[] };
 
