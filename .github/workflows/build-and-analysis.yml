@@ -22,6 +22,7 @@ env:
   TURBO_REF_FILTER: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+  TURBO_FORCE: true
   NODE_OPTIONS: '--max_old_space_size=4096'
   NEXT_TELEMETRY_DISABLED: 1
 
