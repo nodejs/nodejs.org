@@ -22,9 +22,6 @@ env:
   TURBO_REF_FILTER: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-  TURBO_FORCE: true
-  NODE_OPTIONS: '--max_old_space_size=4096'
-  NEXT_TELEMETRY_DISABLED: 1
 
 jobs:
   build:
@@ -69,10 +66,18 @@ jobs:
       - name: Build Next.js (Windows)
         if: matrix.os == 'windows-latest'
         run: npx turbo build --filter=$env:TURBO_REF_FILTER
+        env:
+          TURBO_FORCE: true
+          NODE_OPTIONS: '--max_old_space_size=4096'
+          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Build Next.js (Ubuntu)
         if: matrix.os == 'ubuntu-latest'
         run: npx turbo build --filter=$TURBO_REF_FILTER
+        env:
+          TURBO_FORCE: true
+          NODE_OPTIONS: '--max_old_space_size=4096'
+          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Analyse Build
         run: npx -p nextjs-bundle-analysis report
