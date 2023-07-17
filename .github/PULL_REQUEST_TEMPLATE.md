@@ -6,6 +6,10 @@ Please read the [Code of Conduct](https://github.com/nodejs/nodejs.org/blob/main
 
 <!-- Write a brief description of the changes introduced by this PR -->
 
+## Validation
+
+<!-- How do you know this is working? What should a reviewer look for? Provide a screenshot if your change is visual.-->
+
 ## Related Issues
 
 <!--
