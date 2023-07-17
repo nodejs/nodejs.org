@@ -63,7 +63,7 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 
     steps:
-      - name: 'Use GNU tar instead BSD tar'
+      - name: Use GNU tar instead BSD tar
         if: matrix.os == 'windows-latest'
         shell: cmd
         run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
@@ -92,8 +92,18 @@ jobs:
       - name: Install NPM packages
         run: npm ci --no-audit --no-fund
 
-      - name: Run Unit Tests
+      - name: Run Unit Tests (Windows)
+        if: matrix.os == 'windows-latest'
+        run: npx turbo test:unit --filter=$env:TURBO_REF_FILTER -- --coverage
+
+      - name: Run Unit Tests (Ubuntu)
+        if: matrix.os == 'ubuntu-latest'
         run: npx turbo test:unit --filter=$TURBO_REF_FILTER -- --coverage
 
-      - name: Run Storybook Tests
+      - name: Run Storybook Tests (Windows)
+        if: matrix.os == 'windows-latest'
+        run: npx turbo test:storybook --filter=$env:TURBO_REF_FILTER
+
+      - name: Run Storybook Tests (Ubuntu)
+        if: matrix.os == 'ubuntu-latest'
         run: npx turbo test:storybook --filter=$TURBO_REF_FILTER
