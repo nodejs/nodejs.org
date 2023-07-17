@@ -47,12 +47,10 @@ jobs:
       - name: Restore Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
-          path: |
-            ~/.npm
-            .next/cache
-            node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: cache-
+          key: cache-${{ hashFiles('package-lock.json') }}-
+          restore-keys: |
+            cache-${{ hashFiles('package-lock.json') }}-
+            cache-
 
       - name: Set up Node.js
         uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8
@@ -86,7 +84,7 @@ jobs:
             ~/.npm
             .next/cache
             node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}
+          key: cache-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.next/cache/**') }}
 
   analysis:
     name: Analysis
@@ -100,12 +98,9 @@ jobs:
       - name: Restore Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
-          path: |
-            ~/.npm
-            .next/cache
-            node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: cache-
+          restore-keys: |
+            cache-${{ hashFiles('package-lock.json') }}-
+            cache-
 
       - name: Download PR Bundle Analysis
         uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
