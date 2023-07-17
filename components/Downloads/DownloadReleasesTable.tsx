@@ -1,7 +1,7 @@
 import { FormattedMessage } from 'react-intl';
-import { getNodejsChangelog } from '../../util/getNodeJsChangelog';
-import { getNodeApiLink } from '../../util/getNodeApiLink';
-import { useNodeReleases } from '../../hooks/useNodeReleases';
+import { getNodejsChangelog } from '@/util/getNodeJsChangelog';
+import { getNodeApiLink } from '@/util/getNodeApiLink';
+import { useNodeReleases } from '@/hooks/useNodeReleases';
 import type { FC } from 'react';
 
 const DownloadReleasesTable: FC = () => {

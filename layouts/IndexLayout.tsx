@@ -1,11 +1,11 @@
 import BaseLayout from './BaseLayout';
-import Banner from '../components/Home/Banner';
-import HomeDownloadButton from '../components/Home/HomeDownloadButton';
-import { useDetectOS } from '../hooks/useDetectOS';
-import { useLayoutContext } from '../hooks/useLayoutContext';
-import { WithNodeRelease } from '../providers/withNodeRelease';
+import Banner from '@/components/Home/Banner';
+import HomeDownloadButton from '@/components/Home/HomeDownloadButton';
+import { useDetectOS } from '@/hooks/useDetectOS';
+import { useLayoutContext } from '@/hooks/useLayoutContext';
+import { WithNodeRelease } from '@/providers/withNodeRelease';
 import type { FC, PropsWithChildren } from 'react';
-import type { UserOS } from '../types/userOS';
+import type { UserOS } from '@/types/userOS';
 
 const getDownloadHeadTextOS = (os: UserOS, bitness: number) => {
   switch (os) {

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { IntlProvider } from 'react-intl';
-import DarkModeToggle from '../index';
+import DarkModeToggle from '@/components/Common/DarkModeToggle/index';
 
 let mockCurrentTheme = 'light';
 
