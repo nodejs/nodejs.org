@@ -48,10 +48,10 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: Run Linting
-        run: npx turbo lint --filter=$TURBO_RUN_FILTER
+        run: npx turbo lint --filter=$TURBO_REF_FILTER
 
       - name: Run Prettier
-        run: npx turbo prettier --filter=$TURBO_RUN_FILTER
+        run: npx turbo prettier --filter=$TURBO_REF_FILTER
 
   unit-tests:
     name: Tests on ${{ matrix.os }}
@@ -93,7 +93,7 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: Run Unit Tests
-        run: npx turbo test:unit --filter=$TURBO_RUN_FILTER -- --coverage
+        run: npx turbo test:unit --filter=$TURBO_REF_FILTER -- --coverage
 
       - name: Run Storybook Tests
-        run: npx turbo test:storybook --filter=$TURBO_RUN_FILTER
+        run: npx turbo test:storybook --filter=$TURBO_REF_FILTER

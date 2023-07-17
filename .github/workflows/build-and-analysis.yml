@@ -66,7 +66,7 @@ jobs:
         run: npm ci --no-audit --no-fund --omit=dev
 
       - name: Build Next.js
-        run: npx turbo build --filter=$TURBO_RUN_FILTER
+        run: npx turbo build --filter=$TURBO_REF_FILTER
 
       - name: Analyse Build
         run: npx -p nextjs-bundle-analysis report
