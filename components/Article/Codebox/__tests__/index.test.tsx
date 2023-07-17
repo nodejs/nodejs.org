@@ -2,7 +2,10 @@ import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 
-import Codebox, { replaceLabelLanguages, replaceLanguages } from '../index';
+import Codebox, {
+  replaceLabelLanguages,
+  replaceLanguages,
+} from '@/components/Article/Codebox/index';
 
 describe('Replacer tests', (): void => {
   it('replaceLabelLanguages', (): void => {

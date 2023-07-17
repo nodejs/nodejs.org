@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { useRouter } from './useRouter';
-import { LocaleContext } from '../providers/localeProvider';
-import { linkWithLocale } from '../util/linkWithLocale';
+import { LocaleContext } from '@/providers/localeProvider';
+import { linkWithLocale } from '@/util/linkWithLocale';
 
 export const useLocale = () => {
   const { currentLocale, availableLocales } = useContext(LocaleContext);

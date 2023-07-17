@@ -4,14 +4,14 @@ Thank you for your interest in contributing to the Node.js Website. Before you p
 
 - [Code of Conduct](https://github.com/nodejs/node/blob/HEAD/CODE_OF_CONDUCT.md)
 - [Contributing](#contributing)
+  - [Becoming a collaborator](#becoming-a-collaborator)
 - [Getting started](#getting-started)
   - [CLI Commands](#cli-commands)
 - [Commit Guidelines](#commit-guidelines)
 - [Pull Request Policy](#pull-request-policy)
-- [Becoming a collaborator](#becoming-a-collaborator)
 - [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin-11)
 
-# Contributing
+## Contributing
 
 Any individual is welcome to contribute to the Node.js Website. The repository currently has two kinds of contribution personas:
 
@@ -21,7 +21,7 @@ Any individual is welcome to contribute to the Node.js Website. The repository c
 
 You can find more details and guides about Collaborating with this repository through our [Collaborator Guide](./COLLABORATOR_GUIDE.md).
 
-## Becoming a Collaborator
+### Becoming a Collaborator
 
 A collaborator of the Node.js Website repository is a member of the Node.js Website Team.
 
@@ -33,7 +33,7 @@ is a formality that comes with obligations.
 
 If you're an active contributor seeking to become a member we recommend reaching out to one of the existing Team Members for guidance.
 
-<details> 
+<details>
   <summary><b>What's the process for becoming a Collaborator?</b></summary>
 
 - You must be actively contributing to this repository.
@@ -50,7 +50,7 @@ If you're an active contributor seeking to become a member we recommend reaching
 - The Issue must be open for at least 72 hours without an objection from an existing member of the Website Team - The nomination cannot pass until all open discordances/objections are resolved. - Objections coming from the TSC or Core Collaborators are also counted as valid objections.
 </details>
 
-# Getting started
+## Getting started
 
 The steps below will give you a general idea of how to prepare your local environment for the Node.js Website and general steps
 for getting things done and landing your contribution.
@@ -117,11 +117,11 @@ for getting things done and landing your contribution.
 
 > **Note**: Before committing and opening a Pull Request please go first through our [Commit](#commit-guidelines) and [Pull Request](#pull-request-policy) guidelines outlined below.
 
-## CLI Commands
+### CLI Commands
 
 This repository contains several scripts and commands for performing numerous tasks. The most relevant ones are described below.
 
-<details> 
+<details>
   <summary>Commands for Running & Building the Website</summary>
 
 - `npx turbo serve` runs Next.js's Local Development Server, listening by default on `http://localhost:3000/`.
@@ -130,27 +130,29 @@ This repository contains several scripts and commands for performing numerous ta
 - `npx turbo deploy` builds the Application on Export Production Mode. The output is by default within `build` folder.
   - This is used for the Node.js Legacy Website Server (DigitalOcean)
 - `npx turbo start` starts a web server running serving the built content from `npx turbo build`
+
 </details>
 
-<details> 
+<details>
   <summary>Commands for Maintenance Tasks and Tests</summary>
-  
-  - `npx turbo lint` runs the linter for all the js files.
-    - `npx turbo lint:fix` attempts to fix any linting errors
-  - `npx turbo prettier` runs the prettier for all the js files.
-    - `npx turbo prettier:fix` attempts to fix any style errors
-  - `npx turbo format` formats and fixes the whole codebase
-  - `npx turbo scripts:release-post` generates a release post for the current release
-    - **Usage:** `npx turbo scripts:release-post -- --version=vXX.X.X --force`
-  - `npx turbo storybook` starts Storybook's local server
-  - `npx turbo storybook:build` builds Storybook as a static web application for publishing
-  - `npx turbo test` runs all tests locally
-    - `npx turbo test:unit` runs jest (unit-tests) locally
-    - `npx turbo test:storybook` runs storybook test-runner tests
-      - `npx turbo test:storybook:snapshot` generates and updates snapshots for all storybook components.
+
+- `npx turbo lint` runs the linter for all the js files.
+  - `npx turbo lint:fix` attempts to fix any linting errors
+- `npx turbo prettier` runs the prettier for all the js files.
+  - `npx turbo prettier:fix` attempts to fix any style errors
+- `npx turbo format` formats and fixes the whole codebase
+- `npx turbo scripts:release-post` generates a release post for the current release
+  - **Usage:** `npx turbo scripts:release-post -- --version=vXX.X.X --force`
+- `npx turbo storybook` starts Storybook's local server
+- `npx turbo storybook:build` builds Storybook as a static web application for publishing
+- `npx turbo test` runs all tests locally
+  - `npx turbo test:unit` runs jest (unit-tests) locally
+  - `npx turbo test:storybook` runs storybook test-runner tests
+    - `npx turbo test:storybook:snapshot` generates and updates snapshots for all storybook components.
+
 </details>
 
-# Commit Guidelines
+## Commit Guidelines
 
 This project follows the [Conventional Commits][] specification.
 
@@ -168,11 +170,11 @@ This project uses [husky][] for pre-commit hooks.
 
 Some JSON files are generated during Build time with empty files as placeholders. Build time happens when you run `npx turbo serve` or `npx turbo build`. We don't want to commit those unnecessary changes. Since these files exist in the repository, `.gitignore` won't work for them. As the workaround, we have a pre-commit hook to discard those changes.
 
-# Pull Request Policy
+## Pull Request Policy
 
 This policy governs how contributions should land within this repository. The lines below state the checks and policies to be followed before merging and on the act of merging.
 
-## Before merging
+### Before merging
 
 We recommend a read on our [Collaborator Guide](COLLABORATOR_GUIDE.md#accepting-modifications) for in-depth details on how we accept contributions into this repository. The list below describes some of the merging and approval rules adopted in this repository.
 
@@ -193,13 +195,13 @@ Each contribution is accepted only if there is no objection to it by a collabora
 
 In the case that an objection is raised in a pull request by another collaborator, all collaborators involved should try to arrive at a consensus by addressing the concerns through discussion, compromise, or withdrawal of the proposed change(s).
 
-## When merging
+### When merging
 
 - All required Status-checks must have passed.
 - All discussions must be resolved.
 - [`squash`][] pull requests made up of multiple commits
 
-# Developer's Certificate of Origin 1.1
+## Developer's Certificate of Origin 1.1
 
 ```
 By contributing to this project, I certify that:

@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import Dropdown from '..';
-import type { DropdownItem } from '../../../../types';
+import type { DropdownItem } from '@/types';
 
 describe('Dropdown component', () => {
   const items: DropdownItem[] = [
