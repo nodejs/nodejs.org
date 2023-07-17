@@ -16,8 +16,16 @@ const dropdownStyle = {
 const LanguageSelector = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
-  const dropdownHandler = useCallback(() => setShowDropdown(false), []);
-  const ref = useClickOutside<HTMLUListElement>(dropdownHandler);
+  const closeDropdownCallback = useCallback(
+    (event: MouseEvent | TouchEvent) => {
+      if (showDropdown) {
+        event.stopPropagation();
+        setShowDropdown(false);
+      }
+    },
+    [showDropdown]
+  );
+  const ref = useClickOutside<HTMLUListElement>(closeDropdownCallback);
 
   const { availableLocales, currentLocale } = useLocale();
 

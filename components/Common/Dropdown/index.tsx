@@ -43,7 +43,7 @@ const Dropdown = forwardRef<HTMLUListElement, DropdownProps>(
     return (
       <>
         {children}
-        <ul className={styles.dropdownList} style={dropdownStyles}>
+        <ul ref={ref} className={styles.dropdownList} style={dropdownStyles}>
           {mappedElements}
         </ul>
       </>
