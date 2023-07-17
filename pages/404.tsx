@@ -1,5 +1,5 @@
 import { FormattedMessage } from 'react-intl';
-import Theme from '../theme';
+import Theme from '@/theme';
 
 const NotFound = () => (
   <Theme>

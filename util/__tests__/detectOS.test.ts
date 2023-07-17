@@ -1,4 +1,4 @@
-import { detectOsInUserAgent } from '../detectOS';
+import { detectOsInUserAgent } from '@/util/detectOS';
 
 describe('detectOsInUserAgent', () => {
   it.each([

@@ -8,9 +8,16 @@
   "overrides": [
     {
       "files": ["**/*.ts?(x)"],
-      "plugins": ["@typescript-eslint"],
+      "plugins": ["@typescript-eslint", "no-relative-import-paths"],
       "rules": {
-        "@typescript-eslint/consistent-type-imports": "error"
+        "@typescript-eslint/consistent-type-imports": "error",
+        "no-relative-import-paths/no-relative-import-paths": [
+          "warn",
+          {
+            "allowSameFolder": true,
+            "prefix": "@"
+          }
+        ]
       }
     },
     {

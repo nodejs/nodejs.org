@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { SiteContext } from '../providers/siteProvider';
+import { SiteContext } from '@/providers/siteProvider';
 
 export const useSiteConfig = () => {
   const siteConfigContext = useContext(SiteContext);
