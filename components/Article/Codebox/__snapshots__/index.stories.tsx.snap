@@ -265,7 +265,7 @@ exports[`Article/Codebox MultiLangWithTextToCopy smoke-test 1`] = `
 `;
 
 exports[`Article/Codebox Shell smoke-test 1`] = `
-<pre>
+<pre tabindex="0">
   <div>
     <div>
       <button type="button"
@@ -300,7 +300,13 @@ exports[`Article/Codebox Shell smoke-test 1`] = `
     </button>
   </div>
   <code>
-    $ echo "Hello World"
+    $
+    <span>
+      echo
+    </span>
+    <span>
+      "Hello World"
+    </span>
   </code>
 </pre>
 `;
