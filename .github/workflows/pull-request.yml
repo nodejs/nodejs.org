@@ -13,7 +13,7 @@ permissions:
   actions: read
 
 env:
-  TURBO_RUN_FILTER: ${{ github.event_name == 'pull_request' && '...[origin/main]' || '...[HEAD^]' }}
+  TURBO_REF_FILTER: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
@@ -26,7 +26,7 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
       - name: Restore Cache
         uses: actions/cache/restore@v3
@@ -71,7 +71,7 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
       - name: Restore Cache
         uses: actions/cache/restore@v3
