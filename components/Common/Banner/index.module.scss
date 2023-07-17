@@ -17,10 +17,10 @@
   .bannerContent {
     background: var(--color-fill-canvas);
     border-radius: 0;
-    color: var(--black-900, #2c3437);
+    color: var(--color-text-primary);
     display: flex;
     font-family: --var(--sans);
-    font-size: var(--font-size-code);
+    font-size: var(--font-size-overline);
     font-weight: var(--font-weight-regular);
     justify-content: center;
     line-height: var(--line-height--display5); /* 150% */
@@ -52,10 +52,10 @@
       color: var(--color-brand-primary);
       flex-shrink: 0;
       font-family: var(--sans);
-      font-size: var(--font-size-code);
+      font-size: var(--font-size-overline);
       font-style: normal;
       font-weight: var(--font-weight-semibold);
-      height: var(--space-32);
+      height:  (var(--line-height-subheading));
       line-height: var(--line-height-subheading);
       margin-right: var(--space-12);
       padding: 0 var(--space-32);
@@ -66,7 +66,7 @@
 
       &:hover {
         background-color: var(--color-brand-primary);
-        color: var(--color-fill-app);
+        color: var(--color-text-primary);
         cursor: pointer;
         text-decoration: none;
       }
