@@ -18,6 +18,13 @@ permissions:
   actions: read
   pull-requests: write
 
+env:
+  TURBO_RUN_FILTER: ${{ github.event_name == 'pull_request' && '...[origin/main]' || '...[HEAD^]' }}
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+  NODE_OPTIONS: '--max_old_space_size=4096'
+  NEXT_TELEMETRY_DISABLED: 1
+
 jobs:
   build:
     name: Build on ${{ matrix.os }}
@@ -59,12 +66,7 @@ jobs:
         run: npm ci --no-audit --no-fund --omit=dev
 
       - name: Build Next.js
-        run: npx turbo build
-        env:
-          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-          NODE_OPTIONS: '--max_old_space_size=4096'
-          NEXT_TELEMETRY_DISABLED: 1
+        run: npx turbo build --filter=$TURBO_RUN_FILTER
 
       - name: Analyse Build
         run: npx -p nextjs-bundle-analysis report
@@ -87,7 +89,7 @@ jobs:
   analysis:
     name: Analysis
     runs-on: ubuntu-latest
-    needs: build
+    needs: [build]
 
     steps:
       - name: Git Checkout

@@ -1,9 +1,7 @@
 name: Pull Request Checks
 
 on:
-  pull_request_target:
-    branches:
-      - main
+  pull_request:
   workflow_dispatch:
 
 defaults:
@@ -13,6 +11,11 @@ defaults:
 permissions:
   contents: read
   actions: read
+
+env:
+  TURBO_RUN_FILTER: ${{ github.event_name == 'pull_request' && '...[origin/main]' || '...[HEAD^]' }}
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
 jobs:
   lint:
@@ -45,16 +48,10 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: Run Linting
-        run: npx turbo lint
-        env:
-          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+        run: npx turbo lint --filter=$TURBO_RUN_FILTER
 
       - name: Run Prettier
-        run: npx turbo prettier
-        env:
-          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+        run: npx turbo prettier --filter=$TURBO_RUN_FILTER
 
   unit-tests:
     name: Tests on ${{ matrix.os }}
@@ -96,13 +93,7 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: Run Unit Tests
-        run: npx turbo test:unit -- --coverage
-        env:
-          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+        run: npx turbo test:unit --filter=$TURBO_RUN_FILTER -- --coverage
 
       - name: Run Storybook Tests
-        run: npx turbo test:storybook
-        env:
-          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-          TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+        run: npx turbo test:storybook --filter=$TURBO_RUN_FILTER
