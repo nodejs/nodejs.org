@@ -1,15 +1,14 @@
 import { forwardRef } from 'react';
 import type { DropdownItem } from '../../../types';
-import type { CSSProperties, KeyboardEvent } from 'react';
+import type { CSSProperties, KeyboardEvent, PropsWithChildren } from 'react';
 
 import styles from './index.module.scss';
 
-type DropdownProps = {
+type DropdownProps = PropsWithChildren<{
   items: Array<DropdownItem>;
   shouldShow: boolean;
   styles: CSSProperties;
-  children: React.ReactNode;
-};
+}>;
 
 const Dropdown = forwardRef<HTMLUListElement, DropdownProps>(
   ({ items, shouldShow, styles: extraStyles, children }, ref) => {
