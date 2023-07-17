@@ -16,9 +16,8 @@ const dropdownStyle = {
 const LanguageSelector = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
-  const buttonRef = useRef<HTMLButtonElement>(null);
   const dropdownHandler = useCallback(() => setShowDropdown(false), []);
-  const ref = useClickOutside<HTMLUListElement>(dropdownHandler, buttonRef);
+  const ref = useClickOutside<HTMLUListElement>(dropdownHandler);
 
   const { availableLocales, currentLocale } = useLocale();
 
@@ -42,25 +41,22 @@ const LanguageSelector = () => {
   });
 
   return (
-    <>
+    <Dropdown
+      items={dropdownItems}
+      shouldShow={showDropdown}
+      styles={dropdownStyle}
+      ref={ref}
+    >
       <button
         type="button"
         className={styles.languageSwitch}
         onClick={() => setShowDropdown(!showDropdown)}
         aria-expanded={showDropdown}
         aria-label={ariaLabelText}
-        ref={buttonRef}
       >
         <MdOutlineTranslate />
       </button>
-
-      <Dropdown
-        items={dropdownItems}
-        shouldShow={showDropdown}
-        styles={dropdownStyle}
-        ref={ref}
-      />
-    </>
+    </Dropdown>
   );
 };
 

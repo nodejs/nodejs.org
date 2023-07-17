@@ -8,10 +8,11 @@ type DropdownProps = {
   items: Array<DropdownItem>;
   shouldShow: boolean;
   styles: CSSProperties;
+  children: React.ReactNode;
 };
 
 const Dropdown = forwardRef<HTMLUListElement, DropdownProps>(
-  ({ items, shouldShow, styles: extraStyles }, ref) => {
+  ({ items, shouldShow, styles: extraStyles, children }, ref) => {
     const mappedElements = items.map(item => {
       const extraStyles = { fontWeight: item.active ? 'bold' : 'normal' };
 
@@ -41,9 +42,12 @@ const Dropdown = forwardRef<HTMLUListElement, DropdownProps>(
     };
 
     return (
-      <ul ref={ref} className={styles.dropdownList} style={dropdownStyles}>
-        {mappedElements}
-      </ul>
+      <>
+        {children}
+        <ul className={styles.dropdownList} style={dropdownStyles}>
+          {mappedElements}
+        </ul>
+      </>
     );
   }
 );
