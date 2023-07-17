@@ -48,10 +48,10 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: Run Linting
-        run: npx turbo lint --filter=$TURBO_REF_FILTER
+        run: npx turbo lint --filter="...[$TURBO_REF_FILTER]"
 
       - name: Run Prettier
-        run: npx turbo prettier --filter=$TURBO_REF_FILTER
+        run: npx turbo prettier --filter="...[$TURBO_REF_FILTER]"
 
   unit-tests:
     name: Tests on ${{ matrix.os }}
@@ -94,16 +94,16 @@ jobs:
 
       - name: Run Unit Tests (Windows)
         if: matrix.os == 'windows-latest'
-        run: npx turbo test:unit --filter=$env:TURBO_REF_FILTER -- --coverage
+        run: npx turbo test:unit --filter="...[$env:TURBO_REF_FILTER]" -- --coverage
 
       - name: Run Unit Tests (Ubuntu)
         if: matrix.os == 'ubuntu-latest'
-        run: npx turbo test:unit --filter=$TURBO_REF_FILTER -- --coverage
+        run: npx turbo test:unit --filter="...[$TURBO_REF_FILTER]" -- --coverage
 
       - name: Run Storybook Tests (Windows)
         if: matrix.os == 'windows-latest'
-        run: npx turbo test:storybook --filter=$env:TURBO_REF_FILTER
+        run: npx turbo test:storybook --filter="...[$env:TURBO_REF_FILTER]"
 
       - name: Run Storybook Tests (Ubuntu)
         if: matrix.os == 'ubuntu-latest'
-        run: npx turbo test:storybook --filter=$TURBO_REF_FILTER
+        run: npx turbo test:storybook --filter="...[$TURBO_REF_FILTER]"
