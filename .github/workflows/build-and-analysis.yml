@@ -133,7 +133,7 @@ jobs:
           files: .next/analyze/base/bundle/__bundle_analysis.json
 
       - name: Copy PR Bundle Analysis (Fallback)
-        if: steps.check-base-bundle-analysis-file.outputs.files_exists == 'true'
+        if: steps.check-base-bundle-analysis-file.outputs.files_exists == 'false'
         run: |
           mkdir -p .next/analyze/base/bundle/
           cp .next/analyze/__bundle_analysis.json .next/analyze/base/bundle/__bundle_analysis.json
