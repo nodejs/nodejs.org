@@ -58,6 +58,7 @@
     "prismjs": "~1.29.0",
     "react-icons": "~4.10.1",
     "react-intl": "~6.4.4",
+    "react-tabs": "^6.0.2",
     "remark-gfm": "~3.0.1",
     "semver": "~7.5.4",
     "sharp": "0.32.1",
