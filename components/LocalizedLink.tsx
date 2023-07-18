@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import Link from 'next/link';
 import { useLocale } from '@/hooks/useLocale';
 import { linkWithLocale } from '@/util/linkWithLocale';
-import type { FC, ComponentProps } from 'react';
+import type { FC, ComponentProps, JSX } from 'react';
 
 // This is a wrapper on HTML's `a` tag
 const HtmlLink: FC<JSX.IntrinsicElements['a']> = ({ children, ...extra }) => (
