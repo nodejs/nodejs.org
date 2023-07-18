@@ -36,7 +36,9 @@ jobs:
             .next/cache
             node_modules/.cache
           key: cache-${{ hashFiles('package-lock.json') }}-
-          restore-keys: cache-
+          restore-keys: |
+            cache-${{ hashFiles('package-lock.json') }}-
+            cache-
 
       - name: Set up Node.js
         uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8
@@ -80,8 +82,10 @@ jobs:
             ~/.npm
             .next/cache
             node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: cache-
+          key: cache-${{ hashFiles('package-lock.json') }}-
+          restore-keys: |
+            cache-${{ hashFiles('package-lock.json') }}-
+            cache-
 
       - name: Set up Node.js
         uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8
