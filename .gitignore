@@ -23,6 +23,7 @@ coverage
 
 # Storybook
 storybook-static
+.nyc_output
 
 # Vercel Files
 .vercel
