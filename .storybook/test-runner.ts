@@ -4,7 +4,7 @@ const STORYBOOK_ELEMENT_ID = '[data-test-id="story-root"]';
 
 const config: TestRunnerConfig = {
   postRender: async page => {
-    // We wait the page for loading for at least one second
+    // We wait for the page to load for at least one second
     // as there's no reliable way globally to ensure everything loaded correctly
     await page.waitForTimeout(1000);
 
