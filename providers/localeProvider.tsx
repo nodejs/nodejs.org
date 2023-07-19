@@ -1,9 +1,9 @@
 import { createContext, useMemo } from 'react';
 import { IntlProvider } from 'react-intl';
-import { useRouter } from '../hooks/useRouter';
-import * as nextLocales from '../next.locales.mjs';
+import { useRouter } from '@/hooks/useRouter';
+import * as nextLocales from '@/next.locales.mjs';
 import type { FC, PropsWithChildren } from 'react';
-import type { LocaleContext as LocaleContextType } from '../types';
+import type { LocaleContext as LocaleContextType } from '@/types';
 
 // Initialises the Context with the default Localisation Data
 export const LocaleContext = createContext<LocaleContextType>({
@@ -31,7 +31,7 @@ export const LocaleProvider: FC<PropsWithChildren> = ({ children }) => {
   return (
     <LocaleContext.Provider value={localeData}>
       <IntlProvider
-        locale={localeData.currentLocale.code}
+        locale={localeData.currentLocale.hrefLang}
         messages={localeData.localeMessages}
         onError={() => null}
       >

@@ -2,9 +2,9 @@ import { useMemo, useState, useCallback } from 'react';
 import { MdOutlineTranslate } from 'react-icons/md';
 import { useIntl } from 'react-intl';
 import styles from './index.module.scss';
-import Dropdown from '../Dropdown';
-import { useLocale } from '../../../hooks/useLocale';
-import { useClickOutside } from '../../../hooks/useClickOutside';
+import Dropdown from '@/components/Common/Dropdown';
+import { useLocale } from '@/hooks/useLocale';
+import { useClickOutside } from '@/hooks/useClickOutside';
 
 const dropdownStyle = {
   position: 'absolute',
@@ -17,7 +17,7 @@ const LanguageSelector = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const dropdownHandler = useCallback(() => setShowDropdown(false), []);
-  const ref = useClickOutside<HTMLDivElement>(dropdownHandler);
+  const ref = useClickOutside<HTMLUListElement>(dropdownHandler);
 
   const { availableLocales, currentLocale } = useLocale();
 
@@ -41,7 +41,7 @@ const LanguageSelector = () => {
   });
 
   return (
-    <div className={styles.container} ref={ref}>
+    <>
       <button
         type="button"
         className={styles.languageSwitch}
@@ -56,8 +56,9 @@ const LanguageSelector = () => {
         items={dropdownItems}
         shouldShow={showDropdown}
         styles={dropdownStyle}
+        ref={ref}
       />
-    </div>
+    </>
   );
 };
 

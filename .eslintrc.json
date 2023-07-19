@@ -1,0 +1,53 @@
+{
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "prettier",
+    "plugin:storybook/recommended"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*.ts?(x)"],
+      "plugins": ["@typescript-eslint", "no-relative-import-paths"],
+      "rules": {
+        "@typescript-eslint/consistent-type-imports": "error",
+        "no-relative-import-paths/no-relative-import-paths": [
+          "warn",
+          {
+            "allowSameFolder": true,
+            "prefix": "@"
+          }
+        ]
+      }
+    },
+    {
+      "files": ["**/*.md?(x)"],
+      "extends": ["plugin:mdx/recommended"]
+    },
+    {
+      "files": ["**/*.{mdx,tsx}"],
+      "rules": {
+        "react/jsx-no-undef": "off",
+        "react/function-component-definition": [
+          "error",
+          {
+            "namedComponents": "arrow-function",
+            "unnamedComponents": "arrow-function"
+          }
+        ],
+        "no-restricted-syntax": [
+          "error",
+          {
+            "selector": "ImportDeclaration[source.value='react'][specifiers.0.type='ImportDefaultSpecifier']",
+            "message": "Default React import not allowed since we use the TypeScript jsx-transform. If you need a global type that collides with a React named export (such as `MouseEvent`), try using `globalThis.MouseHandler`"
+          },
+          {
+            "selector": "ImportDeclaration[source.value='react'] :matches(ImportNamespaceSpecifier)",
+            "message": "Named * React import is not allowed. Please import what you need from React with Named Imports"
+          }
+        ],
+        "@typescript-eslint/consistent-type-definitions": ["error", "type"]
+      }
+    }
+  ]
+}

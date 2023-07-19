@@ -1,7 +1,7 @@
 import { FormattedMessage } from 'react-intl';
-import LocalizedLink from '../LocalizedLink';
-import { useNavigation } from '../../hooks/useNavigation';
-import type { NodeRelease } from '../../types';
+import LocalizedLink from '@/components/LocalizedLink';
+import { useNavigation } from '@/hooks/useNavigation';
+import type { NodeRelease } from '@/types';
 import type { FC } from 'react';
 
 const DownloadList: FC<NodeRelease> = ({ versionWithPrefix }) => {

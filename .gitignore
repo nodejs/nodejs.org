@@ -23,7 +23,12 @@ coverage
 
 # Storybook
 storybook-static
+.nyc_output
 
 # Vercel Files
 .vercel
 .turbo
+
+# ESlint Cache Files
+.eslintmdcache
+.eslintjscache

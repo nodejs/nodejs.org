@@ -3,8 +3,8 @@ import { MDXProvider as BaseMDXProvider } from '@mdx-js/react';
 import { MDXRemote } from 'next-mdx-remote';
 import HighlightJS from 'highlight.js/lib/core';
 import HighlightJavaScript from 'highlight.js/lib/languages/javascript';
-import AnchoredHeading from '../components/AnchoredHeading';
-import NodeApiVersionLinks from '../components/Docs/NodeApiVersionLinks';
+import AnchoredHeading from '@/components/AnchoredHeading';
+import NodeApiVersionLinks from '@/components/Docs/NodeApiVersionLinks';
 import type { FC } from 'react';
 import type { MDXComponents } from 'mdx/types';
 

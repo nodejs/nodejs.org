@@ -1,11 +1,12 @@
-import type { UserOS } from '../types/userOS';
+import { DIST_URL } from '@/next.constants.mjs';
+import type { UserOS } from '@/types/userOS';
 
 export const downloadUrlByOS = (
   versionWithPrefix: string,
   os: UserOS,
   bitness: number
 ): string => {
-  const baseURL = `https://nodejs.org/dist/${versionWithPrefix}`;
+  const baseURL = `${DIST_URL}${versionWithPrefix}`;
 
   switch (os) {
     case 'MAC':

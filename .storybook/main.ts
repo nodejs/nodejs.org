@@ -1,3 +1,4 @@
+import { resolve } from 'node:path';
 import type { StorybookConfig } from '@storybook/nextjs';
 
 const config: StorybookConfig = {
@@ -8,6 +9,16 @@ const config: StorybookConfig = {
   docs: { autodocs: 'tag' },
   staticDirs: ['../public'],
   core: { disableTelemetry: true },
+  webpackFinal: async config => {
+    config.resolve!.modules = [resolve(__dirname, '..'), 'node_modules'];
+
+    config.resolve!.alias = {
+      ...config.resolve!.alias,
+      '@': resolve(__dirname, '../'),
+    };
+
+    return config;
+  },
 };
 
 export default config;

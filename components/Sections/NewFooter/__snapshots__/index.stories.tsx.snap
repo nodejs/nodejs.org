@@ -1,11 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Sections/NewFooter Default smoke-test 1`] = `
-<footer class="NewFooter_footer__TSZ0G">
-  <ul class="NewFooter_left__MXe1l">
+<footer>
+  <ul>
     <li>
-      <a class="NewFooter_link__reWwG"
-         target="_blank"
+      <a target="_blank"
          href="https://trademark-policy.openjsf.org/"
          rel="noopener noreferrer"
          aria-label="Node.js Trademark Policy - PDF (Opens in new tab)"
@@ -14,8 +13,7 @@ exports[`Sections/NewFooter Default smoke-test 1`] = `
       </a>
     </li>
     <li>
-      <a class="NewFooter_link__reWwG"
-         target="_blank"
+      <a target="_blank"
          href="https://privacy-policy.openjsf.org/"
          rel="noopener noreferrer"
          aria-label="Node.js Privacy Policy - PDF (Opens in new tab)"
@@ -24,8 +22,7 @@ exports[`Sections/NewFooter Default smoke-test 1`] = `
       </a>
     </li>
     <li>
-      <a class="NewFooter_link__reWwG"
-         target="_blank"
+      <a target="_blank"
          href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
          rel="noopener noreferrer"
       >
@@ -33,28 +30,22 @@ exports[`Sections/NewFooter Default smoke-test 1`] = `
       </a>
     </li>
     <li>
-      <a class="NewFooter_link__reWwG"
-         href="/en/about/security"
-      >
+      <a href="/en/about/security">
         Security
       </a>
     </li>
     <li>
-      <a class="NewFooter_link__reWwG"
-         href="/en/about"
-      >
+      <a href="/en/about">
         About
       </a>
     </li>
     <li>
-      <a class="NewFooter_link__reWwG"
-         href="/en/blog"
-      >
+      <a href="/en/blog">
         Blog
       </a>
     </li>
   </ul>
-  <ul class="NewFooter_right__ZdBv8">
+  <ul>
     <li>
       © OpenJS Foundation
     </li>

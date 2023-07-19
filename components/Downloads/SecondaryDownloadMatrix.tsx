@@ -1,7 +1,8 @@
 import DownloadList from './DownloadList';
-import { useLayoutContext } from '../../hooks/useLayoutContext';
-import { WithNodeRelease } from '../../providers/withNodeRelease';
-import type { LegacyDownloadsFrontMatter, NodeRelease } from '../../types';
+import { useLayoutContext } from '@/hooks/useLayoutContext';
+import { WithNodeRelease } from '@/providers/withNodeRelease';
+import { DIST_URL } from '@/next.constants.mjs';
+import type { LegacyDownloadsFrontMatter, NodeRelease } from '@/types';
 import type { FC } from 'react';
 
 // @TODO: Instead of using a static list it should be created dynamically. This is done on `nodejs.dev`
@@ -32,7 +33,7 @@ const SecondaryDownloadMatrix: FC<NodeRelease> = ({
             <th>{additional.LinuxPowerSystems}</th>
             <td>
               <a
-                href={`https://nodejs.org/dist/${versionWithPrefix}/node-${versionWithPrefix}-linux-ppc64le.tar.xz`}
+                href={`${DIST_URL}${versionWithPrefix}/node-${versionWithPrefix}-linux-ppc64le.tar.xz`}
               >
                 64-bit
               </a>
@@ -43,7 +44,7 @@ const SecondaryDownloadMatrix: FC<NodeRelease> = ({
             <th>{additional.LinuxSystemZ}</th>
             <td>
               <a
-                href={`https://nodejs.org/dist/${versionWithPrefix}/node-${versionWithPrefix}-linux-s390x.tar.xz`}
+                href={`${DIST_URL}${versionWithPrefix}/node-${versionWithPrefix}-linux-s390x.tar.xz`}
               >
                 64-bit
               </a>
@@ -53,7 +54,7 @@ const SecondaryDownloadMatrix: FC<NodeRelease> = ({
             <th>{additional.AIXPowerSystems}</th>
             <td>
               <a
-                href={`https://nodejs.org/dist/${versionWithPrefix}/node-${versionWithPrefix}-aix-ppc64.tar.gz`}
+                href={`${DIST_URL}${versionWithPrefix}/node-${versionWithPrefix}-aix-ppc64.tar.gz`}
               >
                 64-bit
               </a>
