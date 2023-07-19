@@ -19,9 +19,10 @@
       display: flex;
       flex-direction: row;
       height: 28px;
+      border-radius: var(--border-radius-3);
+      overflow: hidden;
 
       .lang {
-        border-radius: var(--border-radius-3);
         border-width: 0;
         cursor: pointer;
         font-family: var(--sans);
@@ -29,16 +30,6 @@
         font-weight: var(--font-weight-semibold);
         padding: 0 var(--space-16);
         text-transform: uppercase;
-
-        &:nth-of-type(even) {
-          border-bottom-left-radius: 0;
-          border-top-left-radius: 0;
-        }
-
-        &:nth-of-type(odd):not(:last-of-type) {
-          border-bottom-right-radius: 0;
-          border-top-right-radius: 0;
-        }
 
         &.selected {
           font-weight: var(--font-weight-bold);
