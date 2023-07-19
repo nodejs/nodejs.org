@@ -1,17 +1,17 @@
 import { forwardRef } from 'react';
 import type { DropdownItem } from '@/types';
-import type { CSSProperties, KeyboardEvent } from 'react';
+import type { CSSProperties, KeyboardEvent, PropsWithChildren } from 'react';
 
 import styles from './index.module.scss';
 
-type DropdownProps = {
+type DropdownProps = PropsWithChildren<{
   items: Array<DropdownItem>;
   shouldShow: boolean;
   styles: CSSProperties;
-};
+}>;
 
 const Dropdown = forwardRef<HTMLUListElement, DropdownProps>(
-  ({ items, shouldShow, styles: extraStyles }, ref) => {
+  ({ items, shouldShow, styles: extraStyles, children }, ref) => {
     const mappedElements = items.map(item => {
       const extraStyles = { fontWeight: item.active ? 'bold' : 'normal' };
 
@@ -41,9 +41,13 @@ const Dropdown = forwardRef<HTMLUListElement, DropdownProps>(
     };
 
     return (
-      <ul ref={ref} className={styles.dropdownList} style={dropdownStyles}>
-        {mappedElements}
-      </ul>
+      <>
+        <ul ref={ref} className={styles.dropdownList} style={dropdownStyles}>
+          {mappedElements}
+        </ul>
+
+        {children}
+      </>
     );
   }
 );
