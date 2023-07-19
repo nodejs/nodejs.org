@@ -1,6 +1,6 @@
+import Codebox from './index';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 import type { FC } from 'react';
-import Codebox from './index';
 
 type DecoratedCodeBoxProps = {
   language: string[];
@@ -35,12 +35,11 @@ export const Default: Story = {
 const multiLangCode = [
   "const http = require('http');",
   "import http from 'http';",
-  "import http from 'http';",
 ];
 
 export const MultiLang: Story = {
   args: {
-    language: ['language-cjs', 'language-mjs', 'language-mjs'],
+    language: ['language-cjs', 'language-mjs'],
     code: multiLangCode,
   },
 };
