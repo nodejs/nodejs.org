@@ -1,5 +1,5 @@
-import type { StorybookConfig } from '@storybook/nextjs';
 import { resolve } from 'node:path';
+import type { StorybookConfig } from '@storybook/nextjs';
 
 const config: StorybookConfig = {
   stories: ['../components/**/*.stories.tsx'],
@@ -9,7 +9,7 @@ const config: StorybookConfig = {
   docs: { autodocs: 'tag' },
   staticDirs: ['../public'],
   core: { disableTelemetry: true },
-  webpackFinal: async (config, { configType }) => {
+  webpackFinal: async config => {
     config.resolve!.modules = [resolve(__dirname, '..'), 'node_modules'];
 
     config.resolve!.alias = {
