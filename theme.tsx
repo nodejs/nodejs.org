@@ -28,5 +28,10 @@ export default memo(
   // that comes from `getStaticProps`. This means that the `props` should never change.
   // At least the `props.content` should never. We should not calculate based on `children`
   // As this component should never have a dynamic children
-  (prev, next) => JSON.stringify(prev) === JSON.stringify(next)
+  (
+    { content: pContent, frontmatter: pFrontmatter },
+    { content: nContent, frontmatter: nFrontmatter }
+  ) =>
+    JSON.stringify([pContent, pFrontmatter]) ===
+    JSON.stringify([nContent, nFrontmatter])
 );
