@@ -9,34 +9,36 @@
   padding: 0;
   position: absolute;
   width: fit-content;
+
   > li {
     > button {
       background: none;
       border: none;
-
       color: var(--color-text-primary);
       cursor: pointer;
       font-size: var(--font-size-body1);
       padding: var(--space-12);
       text-align: center;
       width: 100%;
-
-      &:hover {
-        background-color: var(--color-dropdown-hover);
-      }
     }
   }
-}
-.dropdownList::-webkit-scrollbar {
-  width: var(--space-06);
-}
 
-.dropdownList::-webkit-scrollbar-track {
-  background: transparent;
-}
+  &:hover {
+    background-color: var(--color-dropdown-hover);
+  }
 
-.dropdownList::-webkit-scrollbar-thumb {
-  background-color: rgba(155, 155, 155, 0.7);
-  border: transparent;
-  border-radius: 20px;
+  &::-webkit-scrollbar {
+    width: var(--space-06);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-dropdown-scrollbar);
+    border: transparent;
+    border-radius: 20px;
+  
+  }
 }
