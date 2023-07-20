@@ -53,13 +53,11 @@
       font-size: var(--font-size-body2);
       font-style: normal;
       font-weight: var(--font-weight-semibold);
-      height: var(--space-32);
       margin-right: var(--space-12);
       padding: 0 var(--space-32);
       position: relative;
       text-decoration: none;
       white-space: nowrap;
-      width: var(--space-92);
 
       &:hover {
         background-color: var(--color-brand-primary);
