@@ -24,12 +24,14 @@
     },
     {
       "files": ["**/*.md?(x)"],
-      "extends": ["plugin:mdx/recommended"]
+      "extends": ["plugin:mdx/recommended"],
+      "rules": {
+        "react/jsx-no-undef": "off"
+      }
     },
     {
       "files": ["**/*.{mdx,tsx}"],
       "rules": {
-        "react/jsx-no-undef": "off",
         "react/function-component-definition": [
           "error",
           {
