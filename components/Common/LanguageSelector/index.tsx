@@ -1,4 +1,4 @@
-import { useMemo, useState, useCallback } from 'react';
+import { useMemo, useState } from 'react';
 import { MdOutlineTranslate } from 'react-icons/md';
 import { useIntl } from 'react-intl';
 import styles from './index.module.scss';
@@ -16,8 +16,9 @@ const dropdownStyle = {
 const LanguageSelector = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
-  const dropdownHandler = useCallback(() => setShowDropdown(false), []);
-  const ref = useClickOutside<HTMLUListElement>(dropdownHandler);
+  const ref = useClickOutside<HTMLUListElement>(
+    () => showDropdown && setShowDropdown(false)
+  );
 
   const { availableLocales, currentLocale } = useLocale();
 
@@ -41,24 +42,26 @@ const LanguageSelector = () => {
   });
 
   return (
-    <>
+    <Dropdown
+      items={dropdownItems}
+      shouldShow={showDropdown}
+      styles={dropdownStyle}
+      ref={ref}
+    >
       <button
         type="button"
         className={styles.languageSwitch}
-        onClick={() => setShowDropdown(!showDropdown)}
+        onClick={event => {
+          event.stopPropagation();
+
+          setShowDropdown(!showDropdown);
+        }}
         aria-expanded={showDropdown}
         aria-label={ariaLabelText}
       >
         <MdOutlineTranslate />
       </button>
-
-      <Dropdown
-        items={dropdownItems}
-        shouldShow={showDropdown}
-        styles={dropdownStyle}
-        ref={ref}
-      />
-    </>
+    </Dropdown>
   );
 };
 
