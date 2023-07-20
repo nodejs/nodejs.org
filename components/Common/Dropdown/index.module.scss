@@ -26,6 +26,7 @@
    }
   } 
  } 
+
   &::-webkit-scrollbar {
     width: var(--space-06);
   }
@@ -38,6 +39,5 @@
     background-color: var(--color-text-secondary);
     border: transparent;
     border-radius: 20px;
-  
   }
 }
