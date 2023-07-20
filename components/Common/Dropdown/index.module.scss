@@ -20,13 +20,12 @@
       padding: var(--space-12);
       text-align: center;
       width: 100%;
-    }
-  }
 
   &:hover {
     background-color: var(--color-dropdown-hover);
-  }
-
+   }
+  } 
+ } 
   &::-webkit-scrollbar {
     width: var(--space-06);
   }
