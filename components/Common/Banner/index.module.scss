@@ -7,23 +7,22 @@
   justify-content: center;
   max-width: 100vw;
   position: relative;
-
   &,
   p {
     font-size: var(--font-size-body1);
     font-weight: var(--font-weight-bold);
   }
 
+
   .bannerContent {
     background: var(--color-fill-canvas);
     border-radius: 0;
     color: var(--color-text-primary);
     display: flex;
-    font-family: --var(--sans);
-    font-size: var(--font-size-overline);
+    font-size: var(--font-size-body2);
     font-weight: var(--font-weight-regular);
     justify-content: center;
-    line-height: var(--line-height--display5); /* 150% */
+    line-height: var(--line-height-subheading);
     margin: -1rem;
     padding: var(--space-13);
     width: 100%;
@@ -51,12 +50,10 @@
       border-radius: var(--border-radius-3);
       color: var(--color-brand-primary);
       flex-shrink: 0;
-      font-family: var(--sans);
-      font-size: var(--font-size-overline);
+      font-size: var(--font-size-body2);
       font-style: normal;
       font-weight: var(--font-weight-semibold);
-      height:  (var(--line-height-subheading));
-      line-height: var(--line-height-subheading);
+      height: var(--space-32);
       margin-right: var(--space-12);
       padding: 0 var(--space-32);
       position: relative;
