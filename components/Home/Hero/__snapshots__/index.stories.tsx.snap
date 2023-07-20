@@ -1,32 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home/Hero Default smoke-test 1`] = `
-<div class="Hero_hero__M5nJ2">
+<div>
   <h1>
     Run JavaScript Everywhere.
   </h1>
-  <h2 class="Hero_subTitle__fW9Mo">
+  <h2>
     Node.js is a free, open-sourced, cross-platform JavaScript run-time environment that lets developers write command line tools and server-side scripts outside of a browser.
   </h2>
-  <div class="Hero_buttonsContainer__f5dSG">
-    <div class="Hero_downloadLtsContainer__46E7X">
-      <a class="Hero_downloadButton__QeN_O"
-         href="https://nodejs.org/dist/v18.16.0/node-v18.16.0-x64.msi"
-      >
+  <div>
+    <div>
+      <a href="https://nodejs.org/dist/v18.16.0/node-v18.16.0.pkg">
         Download Node (LTS)
         <span>
           Version v18.16.0
         </span>
       </a>
-      <p class="t-caption">
-        <a href="https://nodejs.org/dist/v20.2.0/node-v20.2.0-x64.msi">
+      <p>
+        <a href="https://nodejs.org/dist/v20.2.0/node-v20.2.0.pkg">
           Download Latest (v20.2.0)
         </a>
       </p>
     </div>
-    <a class="Hero_downloadButtonInverse__Dbhon"
-       href="/learn"
-    >
+    <a href="/learn">
       Learn Node
     </a>
   </div>

@@ -1,6 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 import Hero from '.';
-import { createNodeReleases } from '../../../__fixtures__/nodeReleases';
+import { createNodeReleases } from '@/components/__fixtures__/nodeReleases';
 
 type Story = StoryObj<typeof Hero>;
 type Meta = MetaObj<typeof Hero>;

@@ -1,8 +1,8 @@
+import type { NodeRelease } from '@/types';
 import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import Hero from '..';
-import { createNodeReleases } from '../../../../__fixtures__/nodeReleases';
-import type { NodeRelease } from '../../../../types';
+import { createNodeReleases } from '@/components/__fixtures__/nodeReleases';
 
 jest.mock('../../../../hooks/useDetectOS');
 
