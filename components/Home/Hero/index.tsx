@@ -1,8 +1,8 @@
+import { downloadUrlByOS } from '@/util/downloadUrlByOS';
 import Link from 'next/link';
 import type { FC } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useDetectOS } from '@/hooks/useDetectOS';
-import { downloadUrlByOS } from '@/util/downloadUrlByOS';
 import styles from './index.module.scss';
 
 type HeroProps = {
