@@ -51,8 +51,10 @@ jobs:
             ~/.npm
             .next/cache
             node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: cache-
+          key: cache-${{ hashFiles('package-lock.json') }}-
+          restore-keys: |
+            cache-${{ hashFiles('package-lock.json') }}-
+            cache-
 
       - name: Set up Node.js
         uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8
@@ -86,7 +88,7 @@ jobs:
             ~/.npm
             .next/cache
             node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}
+          key: cache-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.next/cache/**') }}
 
   analysis:
     name: Analysis
@@ -104,8 +106,10 @@ jobs:
             ~/.npm
             .next/cache
             node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}
-          restore-keys: cache-
+          key: cache-${{ hashFiles('package-lock.json') }}-
+          restore-keys: |
+            cache-${{ hashFiles('package-lock.json') }}-
+            cache-
 
       - name: Download PR Bundle Analysis
         uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
@@ -129,7 +133,7 @@ jobs:
           files: .next/analyze/base/bundle/__bundle_analysis.json
 
       - name: Copy PR Bundle Analysis (Fallback)
-        if: steps.check-base-bundle-analysis-file.outputs.files_exists == 'true'
+        if: steps.check-base-bundle-analysis-file.outputs.files_exists == 'false'
         run: |
           mkdir -p .next/analyze/base/bundle/
           cp .next/analyze/__bundle_analysis.json .next/analyze/base/bundle/__bundle_analysis.json

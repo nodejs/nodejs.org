@@ -100,8 +100,6 @@ export const STATIC_ROUTES_IGNORES = [
   route => !route.localised && /^blog\//.test(route.pathname),
   // This is used to ignore the blog/pagination meta route
   route => /^blog\/pagination/.test(route.pathname),
-  // This is used to ignore all 404 localised routes
-  route => /^404/.test(route.pathname),
 ];
 
 /**
@@ -113,8 +111,6 @@ export const STATIC_ROUTES_IGNORES = [
 export const DYNAMIC_ROUTES_IGNORES = [
   // This is used to ignore the blog/pagination route
   /^blog\/pagination/,
-  // This is used to ignore all 404 routes
-  /^404/,
 ];
 
 /**

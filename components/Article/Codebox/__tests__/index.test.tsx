@@ -1,11 +1,23 @@
 import userEvent from '@testing-library/user-event';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 
 import Codebox, {
   replaceLabelLanguages,
   replaceLanguages,
 } from '@/components/Article/Codebox/index';
+
+describe('Codebox component', () => {
+  it('should render Codebox component', async () => {
+    const code = 'const a = 1;';
+    const { container } = render(
+      <Codebox>
+        <pre className="language-js">{code}</pre>
+      </Codebox>
+    );
+    await waitFor(() => container.querySelector('pre[tabindex="0"]'));
+  });
+});
 
 describe('Replacer tests', (): void => {
   it('replaceLabelLanguages', (): void => {
