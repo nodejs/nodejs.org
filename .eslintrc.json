@@ -1,5 +1,6 @@
 {
   "extends": [
+    "eslint:recommended",
     "next",
     "next/core-web-vitals",
     "prettier",
@@ -11,6 +12,7 @@
       "plugins": ["@typescript-eslint", "no-relative-import-paths"],
       "rules": {
         "@typescript-eslint/consistent-type-imports": "error",
+        "@typescript-eslint/no-unused-vars": "error",
         "no-relative-import-paths/no-relative-import-paths": [
           "warn",
           {
@@ -22,12 +24,14 @@
     },
     {
       "files": ["**/*.md?(x)"],
-      "extends": ["plugin:mdx/recommended"]
+      "extends": ["plugin:mdx/recommended"],
+      "rules": {
+        "react/jsx-no-undef": "off"
+      }
     },
     {
       "files": ["**/*.{mdx,tsx}"],
       "rules": {
-        "react/jsx-no-undef": "off",
         "react/function-component-definition": [
           "error",
           {
@@ -49,5 +53,9 @@
         "@typescript-eslint/consistent-type-definitions": ["error", "type"]
       }
     }
-  ]
+  ],
+  "env": {
+    "jest": true,
+    "es6": true
+  }
 }
