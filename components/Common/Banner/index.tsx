@@ -66,9 +66,9 @@ const Banner: FC<BannerProps> = ({ bannersIndex }) => {
 
   if (showBanner) {
     return (
-      <p className={styles.banner}>
+      <div className={styles.banner}>
         {bannersIndex.text ? textContent : htmlContent}
-      </p>
+      </div>
     );
   }
 
