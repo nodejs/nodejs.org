@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Downloads/DownloadCards/DownloadCard NotSelected smoke-test 1`] = `
+<li role="tab"
+    id="tabdownload-card-MAC"
+    aria-selected="false"
+    aria-disabled="false"
+    aria-controls="paneldownload-card-MAC"
+    tabindex="0"
+    data-rttab="true"
+>
+  <div>
+    <img alt="MAC Installer"
+         loading="lazy"
+         width="48"
+         height="48"
+         decoding="async"
+         data-nimg="1"
+         srcset="/static/images/logos/mac-download-logo.svg?w=48&amp;q=75 1x, /static/images/logos/mac-download-logo.svg?w=96&amp;q=75 2x"
+         src="/static/images/logos/mac-download-logo.svg?w=96&amp;q=75"
+         style="color: transparent;"
+    >
+  </div>
+  <p>
+    MAC Installer
+  </p>
+  <p data-testid="lts">
+    node-v18.15.0.pkg
+  </p>
+</li>
+`;
+
+exports[`Downloads/DownloadCards/DownloadCard Selected smoke-test 1`] = `
+<li role="tab"
+    id="tabdownload-card-MAC"
+    aria-selected="false"
+    aria-disabled="false"
+    aria-controls="paneldownload-card-MAC"
+    tabindex="0"
+    data-rttab="true"
+>
+  <div>
+    <img alt="MAC Installer"
+         loading="lazy"
+         width="56"
+         height="56"
+         decoding="async"
+         data-nimg="1"
+         srcset="/static/images/logos/mac-download-logo.svg?w=64&amp;q=75 1x, /static/images/logos/mac-download-logo.svg?w=128&amp;q=75 2x"
+         src="/static/images/logos/mac-download-logo.svg?w=128&amp;q=75"
+         style="color: transparent;"
+    >
+    <a href="https://nodejs.org/dist/v18.15.0/node-v18.15.0.pkg">
+      <svg stroke="currentColor"
+           fill="currentColor"
+           stroke-width="0"
+           viewbox="0 0 24 24"
+           height="1em"
+           width="1em"
+           xmlns="http://www.w3.org/2000/svg"
+      >
+        <path fill="none"
+              d="M0 0h24v24H0z"
+        >
+        </path>
+        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z">
+        </path>
+      </svg>
+    </a>
+  </div>
+  <p>
+    MAC Installer
+  </p>
+  <p data-testid="lts">
+    node-v18.15.0.pkg
+  </p>
+</li>
+`;

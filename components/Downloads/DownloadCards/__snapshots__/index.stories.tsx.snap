@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Downloads/DownloadCards Default smoke-test 1`] = `
+<div tabindex="-1"
+     data-rttabs="true"
+>
+  <ul role="tablist">
+    <li role="tab"
+        id="tabdownload-card-WIN"
+        aria-selected="false"
+        aria-disabled="false"
+        aria-controls="paneldownload-card-WIN"
+        tabindex="0"
+        data-rttab="true"
+    >
+      <div>
+        <img alt="Windows Installer"
+             loading="lazy"
+             width="56"
+             height="56"
+             decoding="async"
+             data-nimg="1"
+             srcset="/static/images/logos/windows-download-logo.svg?w=64&amp;q=75 1x, /static/images/logos/windows-download-logo.svg?w=128&amp;q=75 2x"
+             src="/static/images/logos/windows-download-logo.svg?w=128&amp;q=75"
+             style="color: transparent;"
+        >
+        <a href="https://nodejs.org/dist/v18.15.0/node-v18.15.0-x64.msi">
+          <svg stroke="currentColor"
+               fill="currentColor"
+               stroke-width="0"
+               viewbox="0 0 24 24"
+               height="1em"
+               width="1em"
+               xmlns="http://www.w3.org/2000/svg"
+          >
+            <path fill="none"
+                  d="M0 0h24v24H0z"
+            >
+            </path>
+            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z">
+            </path>
+          </svg>
+        </a>
+      </div>
+      <p>
+        Windows Installer
+      </p>
+      <p data-testid="lts">
+        node-v18.15.0-x64.msi
+      </p>
+    </li>
+    <li role="tab"
+        id="tabdownload-card-MAC"
+        aria-selected="false"
+        aria-disabled="false"
+        aria-controls="paneldownload-card-MAC"
+        tabindex="0"
+        data-rttab="true"
+    >
+      <div>
+        <img alt="MAC Installer"
+             loading="lazy"
+             width="48"
+             height="48"
+             decoding="async"
+             data-nimg="1"
+             srcset="/static/images/logos/mac-download-logo.svg?w=48&amp;q=75 1x, /static/images/logos/mac-download-logo.svg?w=96&amp;q=75 2x"
+             src="/static/images/logos/mac-download-logo.svg?w=96&amp;q=75"
+             style="color: transparent;"
+        >
+      </div>
+      <p>
+        MAC Installer
+      </p>
+      <p data-testid="lts">
+        node-v18.15.0.pkg
+      </p>
+    </li>
+    <li role="tab"
+        id="tabdownload-card-OTHER"
+        aria-selected="false"
+        aria-disabled="false"
+        aria-controls="paneldownload-card-OTHER"
+        tabindex="0"
+        data-rttab="true"
+    >
+      <div>
+        <img alt="Source Code"
+             loading="lazy"
+             width="48"
+             height="48"
+             decoding="async"
+             data-nimg="1"
+             srcset="/static/images/logos/source-code-download-logo.svg?w=48&amp;q=75 1x, /static/images/logos/source-code-download-logo.svg?w=96&amp;q=75 2x"
+             src="/static/images/logos/source-code-download-logo.svg?w=96&amp;q=75"
+             style="color: transparent;"
+        >
+      </div>
+      <p>
+        Source Code
+      </p>
+      <p data-testid="lts">
+        node-v18.15.0.tar.gz
+      </p>
+    </li>
+  </ul>
+</div>
+`;
