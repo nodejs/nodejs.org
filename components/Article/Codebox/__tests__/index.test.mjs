@@ -2,10 +2,7 @@ import userEvent from '@testing-library/user-event';
 import { render, screen, waitFor } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 
-import Codebox, {
-  replaceLabelLanguages,
-  replaceLanguages,
-} from '@/components/Article/Codebox/index';
+import Codebox, { replaceLabelLanguages, replaceLanguages } from '..';
 
 describe('Codebox component', () => {
   it('should render Codebox component', async () => {

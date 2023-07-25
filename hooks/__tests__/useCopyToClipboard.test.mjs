@@ -1,7 +1,7 @@
 import { render, fireEvent, screen, act } from '@testing-library/react';
 import { FormattedMessage } from 'react-intl';
 import { IntlProvider } from 'react-intl';
-import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
+import { useCopyToClipboard } from '../useCopyToClipboard';
 
 const mockWriteText = jest.fn();
 const originalNavigator = { ...window.navigator };

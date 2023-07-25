@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
-import Banner from '@/components/Common/Banner/index';
+import Banner from '..';
 
 const bannersIndex = {
   endDate: '',
