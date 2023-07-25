@@ -5,7 +5,7 @@ import { useClickOutside } from '@/hooks/useClickOutside';
 describe('useClickOutside', () => {
   const Component = () => {
     const [state, setState] = useState(false);
-    const ref = useClickOutside<HTMLDivElement>(() => setState(false));
+    const ref = useClickOutside(() => setState(false));
 
     return (
       <div>

@@ -1,9 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import Dropdown from '..';
-import type { DropdownItem } from '@/types';
 
 describe('Dropdown component', () => {
-  const items: DropdownItem[] = [
+  const items = [
     { label: 'item1', title: 'Item 1', active: false, onClick: jest.fn() },
     { label: 'item2', title: 'Item 2', active: true, onClick: jest.fn() },
     { label: 'item3', title: 'Item 3', active: false, onClick: jest.fn() },

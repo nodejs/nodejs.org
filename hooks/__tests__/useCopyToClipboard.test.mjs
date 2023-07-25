@@ -42,7 +42,7 @@ describe('useCopyToClipboard', () => {
       },
     });
 
-    const TestComponent = ({ textToCopy }: { textToCopy: string }) => {
+    const TestComponent = ({ textToCopy }) => {
       const [copied, copyText] = useCopyToClipboard();
 
       return (
