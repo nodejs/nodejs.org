@@ -1,11 +1,11 @@
 import { render, fireEvent, screen } from '@testing-library/react';
 import { useState } from 'react';
-import { useClickOutside } from '@/hooks/useClickOutside';
+import { useClickOutside } from '../useClickOutside';
 
 describe('useClickOutside', () => {
   const Component = () => {
     const [state, setState] = useState(false);
-    const ref = useClickOutside<HTMLDivElement>(() => setState(false));
+    const ref = useClickOutside(() => setState(false));
 
     return (
       <div>
