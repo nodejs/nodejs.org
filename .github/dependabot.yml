@@ -1,19 +1,18 @@
 version: 2
 updates:
   - package-ecosystem: github-actions
-    directory: '/'
     schedule:
       interval: weekly
       timezone: 'Europe/Berlin'
-      time: '19:00'
+      time: '21:00'
       day: friday
     open-pull-requests-limit: 10
   - package-ecosystem: npm
-    directory: /
+    versioning-strategy: increase
     schedule:
       interval: weekly
       timezone: 'Europe/Berlin'
-      time: '19:00'
+      time: '21:00'
       day: friday
     commit-message:
       prefix: meta
