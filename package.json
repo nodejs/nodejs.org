@@ -27,15 +27,15 @@
     "prettier": "prettier \"**/*.{mjs,ts,tsx,md,mdx,json,yml,css,sass,scss}\" --check --cache --cache-strategy metadata",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run lint:fix && npm run prettier:fix",
-    "storybook": "cross-env NODE_NO_WARNINGS=1 storybook dev -p 6006 --quiet",
+    "storybook": "cross-env NODE_NO_WARNINGS=1 storybook dev -p 6006 --quiet --no-open",
     "storybook:build": "cross-env NODE_NO_WARNINGS=1 storybook build --quiet",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 jest --passWithNoTests",
     "test:unit:watch": "npm run test:unit -- --watch",
     "test:storybook": "test-storybook --no-index-json",
-    "test:storybook:local": "concurrently -P -k -s first -n \"storybook,test-storybook\" -c \"magenta,blue\" \"npm:storybook -- --ci\" \"wait-on http://localhost:6006 && npm run test:storybook\"",
+    "test:storybook:local": "concurrently -P -r -k -s first npm:storybook \"wait-on http://localhost:6006 && npm run test:storybook -- {@}\"",
     "test:storybook:snapshot": "npm run test:storybook:local -- -- --updateSnapshot",
     "test:storybook:watch": "npm run test:storybook:local -- -- --watch",
-    "test": "concurrently -s all -n \"test:unit,test:storybook\" -c \"yellow,green\" \"npm:test:unit\" \"npm:test:storybook:local\"",
+    "test": "concurrently -r -s all npm:test:unit npm:test:storybook:local",
     "prepare": "husky install"
   },
   "dependencies": {
