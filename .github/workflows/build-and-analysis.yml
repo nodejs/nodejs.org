@@ -16,11 +16,15 @@ defaults:
 permissions:
   contents: read
   actions: read
+  # This permission is required by `peter-evans/create-or-update-comment`
   pull-requests: write
 
 env:
+  # This is explicitly used on the `npx turbo` commands
   TURBO_REF_FILTER: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+  # This is implicitly used by `npx turbo` itself
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  # This is implicitly used by `npx turbo` itself and `zentered/vercel-preview-url`
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
 jobs:
@@ -42,6 +46,7 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
+          # Get the whole git history so that Turborepo `--filter` works correctly
           fetch-depth: 0
 
       - name: Restore Cache
@@ -96,21 +101,6 @@ jobs:
     needs: [build]
 
     steps:
-      - name: Git Checkout
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
-
-      - name: Restore Cache
-        uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
-        with:
-          path: |
-            ~/.npm
-            .next/cache
-            node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}-
-          restore-keys: |
-            cache-${{ hashFiles('package-lock.json') }}-
-            cache-
-
       - name: Download PR Bundle Analysis
         uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
         with:
