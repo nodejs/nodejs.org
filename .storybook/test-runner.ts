@@ -27,7 +27,7 @@ const config: TestRunnerConfig = {
 
     expect(content).toBeDefined();
 
-    // We stripe specific HTML tags whose values are auto-generated or can change from deployment to deployment
+    // We remove specific HTML tags whose values are auto-generated or can change from deployment to deployment
     // this reduces the effectiveness of the stories but it's a trade-off we have to make
     expect(content.replace(/(class|src|href)="(.*?)"/gm, '')).toMatchSnapshot();
   },
