@@ -4,15 +4,27 @@
     "next",
     "next/core-web-vitals",
     "prettier",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
+  "parser": "@typescript-eslint/parser",
   "overrides": [
+    {
+      "files": ["**/*.mjs"],
+      "rules": {
+        "@typescript-eslint/no-empty-function": 1
+      }
+    },
     {
       "files": ["**/*.ts?(x)"],
       "plugins": ["@typescript-eslint", "no-relative-import-paths"],
       "rules": {
         "@typescript-eslint/consistent-type-imports": "error",
         "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-non-null-assertion": 1,
+        "@typescript-eslint/no-var-requires": 1,
+        "@typescript-eslint/no-explicit-any": 1,
+        "@typescript-eslint/no-empty-function": 1,
         "no-relative-import-paths/no-relative-import-paths": [
           "warn",
           {
