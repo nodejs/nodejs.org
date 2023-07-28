@@ -6,7 +6,7 @@ const config: TestRunnerConfig = {
   postRender: async page => {
     // We wait for the page to load for at least one second
     // as there's no reliable way globally to ensure everything loaded correctly
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(1000);
 
     // We attempt to get the Storybook root Element
     const rootElement = await page.locator(STORYBOOK_ELEMENT_ID);
