@@ -1,8 +1,7 @@
 import type { TestRunnerConfig } from '@storybook/test-runner';
 
-// This is the PlayWright Selector for getting the first Element from
-// the Storybook Root Element. Which allows us to focus directly on the main Element
-const STORYBOOK_ELEMENT_ID = '[data-test-id="story-root"] > *';
+// This is the PlayWright Selector for getting the Storybook root Element
+const STORYBOOK_ELEMENT_ID = '[data-test-id="story-root"]';
 
 const config: TestRunnerConfig = {
   // This method replaces Storybook's Test Runner default `prepare` method
