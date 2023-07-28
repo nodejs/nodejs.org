@@ -14,11 +14,11 @@ const config: TestRunnerConfig = {
     // We wait for the document to have its initial looading finished
     await page.waitForLoadState('domcontentloaded');
     await page.waitForLoadState('load');
-
-    // This is the minimum time we've noticed for the content to safely be rendered
-    await page.waitForTimeout(1000);
   },
   postRender: async page => {
+    // This is the minimum time we've noticed for the content to safely be rendered
+    await page.waitForTimeout(1000);
+
     // We attempt to get the Storybook root Element
     const rootElement = await page.locator(STORYBOOK_ELEMENT_ID);
 
