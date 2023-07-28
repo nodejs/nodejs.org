@@ -5,7 +5,7 @@ updates:
     schedule:
       interval: weekly
       timezone: 'Europe/Berlin'
-      time: '16:00'
+      time: '19:00'
       day: friday
     open-pull-requests-limit: 10
   - package-ecosystem: npm
@@ -13,7 +13,7 @@ updates:
     schedule:
       interval: weekly
       timezone: 'Europe/Berlin'
-      time: '16:00'
+      time: '19:00'
       day: friday
     commit-message:
       prefix: meta
