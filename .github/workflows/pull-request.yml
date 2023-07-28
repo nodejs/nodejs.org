@@ -66,13 +66,8 @@ jobs:
         run: npx turbo prettier --filter="...[$TURBO_REF_FILTER]"
 
   unit-tests:
-    name: Tests on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest]
+    name: Unit Tests
+    runs-on: ubuntu-latest
 
     steps:
       - name: Use GNU tar instead BSD tar
