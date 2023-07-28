@@ -102,12 +102,7 @@ jobs:
       - name: Install NPM packages
         run: npm ci --no-audit --no-fund
 
-      - name: Run Unit Tests (Windows)
-        if: matrix.os == 'windows-latest'
-        run: npx turbo test:unit --filter="...[$env:TURBO_REF_FILTER]" -- --ci --coverage
-
-      - name: Run Unit Tests (Ubuntu)
-        if: matrix.os == 'ubuntu-latest'
+      - name: Run Unit Tests
         run: npx turbo test:unit --filter="...[$TURBO_REF_FILTER]" -- --ci --coverage
 
       - name: Jest Coverage Comment
