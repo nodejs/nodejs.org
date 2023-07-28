@@ -121,7 +121,14 @@ jobs:
           vercel_project_id: ${{ env.TURBO_PROJECT_ID }}
           vercel_team_id: ${{ env.TURBO_TEAM }}
 
-      - name: Run Storybook Tests
-        run: npx test-storybook --ci --no-index-json
+      - name: Run Storybook Tests (Windows)
+        if: matrix.os == 'windows-latest'
+        run: npx turbo test:storybook --filter="...[$env:TURBO_REF_FILTER]" -- --ci
+        env:
+          TARGET_URL: 'https://${{ steps.vercel_storybook_preview_url.outputs.preview_url }}'
+
+      - name: Run Storybook Tests (Ubuntu)
+        if: matrix.os == 'ubuntu-latest'
+        run: npx turbo test:storybook --filter="...[$TURBO_REF_FILTER]" -- --ci
         env:
           TARGET_URL: 'https://${{ steps.vercel_storybook_preview_url.outputs.preview_url }}'
