@@ -11,11 +11,14 @@ defaults:
 permissions:
   contents: read
   actions: read
+  pull-requests: write
 
 env:
   TURBO_REF_FILTER: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+  VERCEL_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_PROJECT_ID: ${{ secrets.TURBO_PROJECT_ID }}
 
 jobs:
   lint:
@@ -55,7 +58,7 @@ jobs:
       - name: Run Prettier
         run: npx turbo prettier --filter="...[$TURBO_REF_FILTER]"
 
-  unit-tests:
+  tests:
     name: Tests on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
 
@@ -98,16 +101,27 @@ jobs:
 
       - name: Run Unit Tests (Windows)
         if: matrix.os == 'windows-latest'
-        run: npx turbo test:unit --filter="...[$env:TURBO_REF_FILTER]" -- --coverage
+        run: npx turbo test:unit --filter="...[$env:TURBO_REF_FILTER]" -- --ci --coverage --reporters=default --reporters=jest-junit
 
       - name: Run Unit Tests (Ubuntu)
         if: matrix.os == 'ubuntu-latest'
-        run: npx turbo test:unit --filter="...[$TURBO_REF_FILTER]" -- --coverage
+        run: npx turbo test:unit --filter="...[$TURBO_REF_FILTER]" -- --ci --coverage --reporters=default --reporters=jest-junit
 
-      - name: Run Storybook Tests (Windows)
-        if: matrix.os == 'windows-latest'
-        run: npx turbo test:storybook --filter="...[$env:TURBO_REF_FILTER]"
+      - name: Jest Coverage Comment
+        uses: MishaKav/jest-coverage-comment@41b5ca01d1250de84537448d248b8d18152cb277
+        with:
+          title: 'Unit Test Coverage Report'
+          junitxml-path: ./junit.xml
+          junitxml-title: Unit Test Report
 
-      - name: Run Storybook Tests (Ubuntu)
-        if: matrix.os == 'ubuntu-latest'
-        run: npx turbo test:storybook --filter="...[$TURBO_REF_FILTER]"
+      - name: Capture Deployment URL
+        id: vercel_storybook_preview_url
+        uses: zentered/vercel-preview-url@e5fb141da2e3d62692b38e6c7c17477aad214165
+        with:
+          vercel_project_id: ${{ env.TURBO_PROJECT_ID }}
+          vercel_team_id: ${{ env.TURBO_TEAM }}
+
+      - name: Run Storybook Tests
+        run: npx test-storybook --no-index-json --ci
+        env:
+          TARGET_URL: 'https://${{ steps.vercel_storybook_preview_url.outputs.preview_url }}'

@@ -20,6 +20,7 @@ public/en/feed/*.xml
 # Jest
 coverage
 .swc
+junit.xml
 
 # Storybook
 storybook-static

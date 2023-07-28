@@ -168,7 +168,8 @@
         "{next-data,scripts,i18n}/**/*.{mjs,json}",
         "{app,pages}/**/*.{mdx,md}",
         "*.{md,mdx,json,ts,tsx,mjs,yml}"
-      ]
+      ],
+      "outputs": ["coverage/**", "junit.xml"]
     },
     "test:storybook": {
       "inputs": [
@@ -188,7 +189,8 @@
         "{.storybook,public}/**/*.{ts,js,css,json}",
         "{app,pages}/**/*.{mdx,md}",
         "*.{md,mdx,json,ts,tsx,mjs,yml}"
-      ]
+      ],
+      "outputs": ["coverage/**", "junit.xml"]
     }
   }
 }
