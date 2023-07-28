@@ -12,7 +12,7 @@ exports[`Article/AuthorList/Author Default smoke-test 1`] = `
        decoding="async"
        data-nimg="1"
        srcset="https://github.com/nodejs.png?size=60?w=64&amp;q=75 1x, https://github.com/nodejs.png?size=60?w=128&amp;q=75 2x"
-       style="color: transparent;"
+       style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(&quot;/static/images/placeholder-img.png&quot;);"
   >
 </a>
 `;
@@ -28,8 +28,8 @@ exports[`Article/AuthorList/Author WithourUsername smoke-test 1`] = `
        height="0"
        decoding="async"
        data-nimg="1"
-       srcset="/static/images/placeholder-img.png?w=16&amp;q=75 1x"
-       style
+       srcset="https://github.com/.png?size=0?w=16&amp;q=75 1x"
+       style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(&quot;/static/images/placeholder-img.png&quot;);"
   >
 </a>
 `;

@@ -16,7 +16,7 @@ exports[`Article/AuthorList Default smoke-test 1`] = `
              decoding="async"
              data-nimg="1"
              srcset="https://github.com/flaviocopes.png?size=60?w=64&amp;q=75 1x, https://github.com/flaviocopes.png?size=60?w=128&amp;q=75 2x"
-             style="color: transparent;"
+             style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(&quot;/static/images/placeholder-img.png&quot;);"
         >
       </a>
     </li>
@@ -32,7 +32,7 @@ exports[`Article/AuthorList Default smoke-test 1`] = `
              decoding="async"
              data-nimg="1"
              srcset="https://github.com/MarkPieszak.png?size=60?w=64&amp;q=75 1x, https://github.com/MarkPieszak.png?size=60?w=128&amp;q=75 2x"
-             style="color: transparent;"
+             style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(&quot;/static/images/placeholder-img.png&quot;);"
         >
       </a>
     </li>
@@ -48,7 +48,7 @@ exports[`Article/AuthorList Default smoke-test 1`] = `
              decoding="async"
              data-nimg="1"
              srcset="https://github.com/mcollina.png?size=60?w=64&amp;q=75 1x, https://github.com/mcollina.png?size=60?w=128&amp;q=75 2x"
-             style="color: transparent;"
+             style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(&quot;/static/images/placeholder-img.png&quot;);"
         >
       </a>
     </li>
@@ -63,8 +63,8 @@ exports[`Article/AuthorList Default smoke-test 1`] = `
              height="60"
              decoding="async"
              data-nimg="1"
-             srcset="/static/images/placeholder-img.png?w=64&amp;q=75 1x, /static/images/placeholder-img.png?w=128&amp;q=75 2x"
-             style
+             srcset="https://github.com/unavailable-author.png?size=60?w=64&amp;q=75 1x, https://github.com/unavailable-author.png?size=60?w=128&amp;q=75 2x"
+             style="color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url(&quot;/static/images/placeholder-img.png&quot;);"
         >
       </a>
     </li>
