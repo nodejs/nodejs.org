@@ -3,12 +3,18 @@ updates:
   - package-ecosystem: github-actions
     directory: '/'
     schedule:
-      interval: monthly
+      interval: weekly
+      timezone: 'Europe/Berlin'
+      time: '19:00'
+      day: friday
     open-pull-requests-limit: 10
   - package-ecosystem: npm
     directory: /
     schedule:
-      interval: monthly
+      interval: weekly
+      timezone: 'Europe/Berlin'
+      time: '19:00'
+      day: friday
     commit-message:
       prefix: meta
     groups:
