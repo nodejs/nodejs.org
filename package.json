@@ -28,7 +28,7 @@
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run lint:fix && npm run prettier:fix",
     "storybook": "cross-env NODE_NO_WARNINGS=1 storybook dev -p 6006 --quiet",
-    "storybook:build": "cross-env NODE_NO_WARNINGS=1 storybook build --quiet --loglevel warn",
+    "storybook:build": "cross-env NODE_NO_WARNINGS=1 storybook build --quiet",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 jest --passWithNoTests",
     "test:unit:watch": "npm run test:unit -- --watch",
     "test:storybook": "test-storybook --no-index-json",
