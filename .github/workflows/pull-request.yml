@@ -101,11 +101,11 @@ jobs:
 
       - name: Run Unit Tests (Windows)
         if: matrix.os == 'windows-latest'
-        run: npx turbo test:unit --filter="...[$env:TURBO_REF_FILTER]" -- --ci --coverage --reporters=default --reporters=jest-junit
+        run: npx turbo test:unit --filter="...[$env:TURBO_REF_FILTER]" -- --ci --coverage
 
       - name: Run Unit Tests (Ubuntu)
         if: matrix.os == 'ubuntu-latest'
-        run: npx turbo test:unit --filter="...[$TURBO_REF_FILTER]" -- --ci --coverage --reporters=default --reporters=jest-junit
+        run: npx turbo test:unit --filter="...[$TURBO_REF_FILTER]" -- --ci --coverage
 
       - name: Jest Coverage Comment
         uses: MishaKav/jest-coverage-comment@41b5ca01d1250de84537448d248b8d18152cb277
@@ -122,6 +122,6 @@ jobs:
           vercel_team_id: ${{ env.TURBO_TEAM }}
 
       - name: Run Storybook Tests
-        run: npx test-storybook --no-index-json --ci
+        run: npx test-storybook --ci --no-index-json
         env:
           TARGET_URL: 'https://${{ steps.vercel_storybook_preview_url.outputs.preview_url }}'

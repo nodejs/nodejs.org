@@ -3,9 +3,7 @@
 exports[`Learn/PreviousNextLink Default smoke-test 1`] = `
 <ul>
   <li>
-    <a rel="prev"
-       href="/en/previous"
-    >
+    <a rel="prev">
       <svg stroke="currentColor"
            fill="currentColor"
            stroke-width="0"
@@ -22,9 +20,7 @@ exports[`Learn/PreviousNextLink Default smoke-test 1`] = `
     </a>
   </li>
   <li>
-    <a rel="next"
-       href="/en/next"
-    >
+    <a rel="next">
       NEXT
       <svg stroke="currentColor"
            fill="currentColor"
@@ -46,9 +42,7 @@ exports[`Learn/PreviousNextLink Default smoke-test 1`] = `
 exports[`Learn/PreviousNextLink WithoutNext smoke-test 1`] = `
 <ul>
   <li>
-    <a rel="prev"
-       href="/en/previous"
-    >
+    <a rel="prev">
       <svg stroke="currentColor"
            fill="currentColor"
            stroke-width="0"
@@ -74,9 +68,7 @@ exports[`Learn/PreviousNextLink WithoutPrevious smoke-test 1`] = `
   <li>
   </li>
   <li>
-    <a rel="next"
-       href="/en/next"
-    >
+    <a rel="next">
       NEXT
       <svg stroke="currentColor"
            fill="currentColor"
