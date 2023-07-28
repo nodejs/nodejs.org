@@ -8,7 +8,9 @@ const items = [...Array(10).keys()].map(item => ({
   title: `Item ${item + 1}`,
   label: `item-${item + 1}`,
   active: false,
-  onClick: () => {},
+  onClick: () => {
+    null;
+  },
 }));
 
 items[2].active = true;
