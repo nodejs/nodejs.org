@@ -47,7 +47,9 @@ jobs:
         # commit on the base branch that this pull_request refers to.
         # We also set the Turborepo Cache to the `.turbo` folder
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--filter
-        run: echo "turbo_args=\"--filter=\\\"...[${{ github.event.pull_request.base.sha }}]\\\" --cache-dir=\\\".turbo\\\"\"" >> "$GITHUB_OUTPUT"
+        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
+        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
+        run: echo "turbo_args=--filter=\"...[${{ github.event.pull_request.base.sha }}]\" --cache-dir=.turbo" >> "$GITHUB_OUTPUT"
 
   lint:
     name: Lint

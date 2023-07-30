@@ -33,14 +33,10 @@ jobs:
     steps:
       - name: Provide Turborepo Arguments
         id: turborepo_arguments
-        # `--filter` flag allows us to tell TurboRepo to only run a said command if there were any changes found in a given --filter range
-        # It verifies if any change was done to any of the including `glob` patterns described for a said command on `turbo.json`
-        # By default in this Workflow we use the `...[$TURBO_REF_FILTER]` as a value to the filter flag which tells Turborepo to look changes
-        # between the latest base branch commit and all the commits of this PR; That's why we use the `pull_request.base.sha` as a ref to the last
-        # commit on the base branch that this pull_request refers to.
         # We also set the Turborepo Cache to the `.turbo` folder
-        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--filter
-        run: echo "turbo_args=\"--filter=\\\"...[${{ github.event.pull_request.base.sha }}]\\\" --cache-dir=\\\".turbo\\\"\"" >> "$GITHUB_OUTPUT"
+        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
+        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
+        run: echo "turbo_args=--force=true --cache-dir=.turbo" >> "$GITHUB_OUTPUT"
 
   build:
     name: Build on ${{ matrix.os }}
