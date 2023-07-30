@@ -1,15 +1,16 @@
+# Security Notes
+# Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
+# for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
+# REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
+# AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
+
 name: Build and Analysis Checks
 
 on:
   push:
     branches:
       - main
-  # This trigger ensures that the GitHub Action Workflow metadata that is fetched comes from the `main` branch
-  # This is important to disallow this Workflow from being modified in forks and PRs
-  # See https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request_target
-  pull_request_target:
-    branches:
-      - main
+  pull_request:
 
 defaults:
   run:
@@ -22,18 +23,27 @@ permissions:
   # This permission is required by `peter-evans/create-or-update-comment`
   pull-requests: write
 
-env:
-  # We pass the `--team` and `--token` flags to the TurboRepo CLI so that it can retrieve remote Tuborepo's cache that include optimised cache
-  # For specific commands (provided within each `turbo.json` -> `outputs`) and extra layer of cache that Turborepo defines
-  # See https://turbo.build/repo/docs/reference/command-line-reference/run#--team
-  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-  # See https://turbo.build/repo/docs/reference/command-line-reference/run#--token
-  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-
 jobs:
+  base:
+    name: Base Tasks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Provide Turborepo Arguments
+        id: turborepo_arguments
+        # `--filter` flag allows us to tell TurboRepo to only run a said command if there were any changes found in a given --filter range
+        # It verifies if any change was done to any of the including `glob` patterns described for a said command on `turbo.json`
+        # By default in this Workflow we use the `...[$TURBO_REF_FILTER]` as a value to the filter flag which tells Turborepo to look changes
+        # between the latest base branch commit and all the commits of this PR; That's why we use the `pull_request.base.sha` as a ref to the last
+        # commit on the base branch that this pull_request refers to.
+        # We also set the Turborepo Cache to the `.turbo` folder
+        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--filter
+        run: echo "turbo_args=\"--filter=\\\"...[${{ github.event.pull_request.base.sha }}]\\\" --cache-dir=\\\".turbo\\\"\"" >> "$GITHUB_OUTPUT"
+
   build:
     name: Build on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
+    needs: [base]
 
     strategy:
       fail-fast: false
@@ -41,28 +51,20 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 
     steps:
-      # This ensures that we run an optimised version of `tar` that is more efficient
-      # In unzipping the cache files
-      - name: Use GNU tar instead BSD tar
-        if: matrix.os == 'windows-latest'
-        shell: cmd
-        run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
-
-      - name: Git Checkout
+      - name: Git Checkout (`base_ref`)
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # We only need to fetch the current commit for the build steps
-          fetch_depth: 1
-          # Since we use the `pull_request_target` event we want to checkout the current ref as by default this
-          # command will checkout `main` instead of the current pull_request ref
-          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
-          ref: ${{ github.event.pull_request.head.sha }}
+          # We only need to fetch the last commit from the base_ref
+          # for installing our dependencies in safe mode and other safe operations
+          fetch-depth: 1
+          # This ensures we're checkint out the base_ref and not the pull request codebase
+          ref: ${{ github.event.pull_request.base.ref }}
 
       - name: Restore Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
-            ~/.npm
+            .turbo
             .next/cache
             node_modules/.cache
           # We want to restore cache from local .npm caches, .next/cache and node_modules/.cache
@@ -79,14 +81,28 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
 
-      - name: Install NPM packages
+      - name: Install NPM packages (`base_ref`)
         # We want to avoid NPM from running the Audit Step and Funding messages on a CI environment
         # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
-        # For the build step we also omit `devDependencies` as they're not needed for the build step
-        run: npm i --no-audit --no-fund --omit=dev
+        run: npm i --no-audit --no-fund
+
+      - name: Git Checkout (`head_sha`)
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        with:
+          # We only need to fetch the last commit from the head_ref
+          # since we're not using the `--filter` operation from turborepo
+          fetch-depth: 1
+          # Since we use the `pull_request_target` event we want to checkout the current ref as by default this
+          # command will checkout `main` instead of the current pull_request ref
+          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Install NPM packages (`base_ref`)
+        # We want to ignore-scripts from code checked out from the user as it might be dangerous
+        run: npm i --no-audit --no-fund --ignore-scripts --userconfig=/dev/null
 
       - name: Build Next.js
-        run: npx turbo build
+        run: npm exec --package=turbo@latest -- turbo build ${{ jobs.base.steps.turborepo_arguments.outputs.turbo_args }}
         env:
           # We want to ensure we have enough RAM allocated to the Node.js process
           # this should be a last resort in case by any chances the build memory gets too high
@@ -99,7 +115,7 @@ jobs:
       - name: Analyse Build
         # We generate a Bundle Analysis Report
         # See https://github.com/hashicorp/nextjs-bundle-analysis
-        run: npx -p nextjs-bundle-analysis report
+        run: npm exec --package=nextjs-bundle-analysis@0.5.0 report
 
       - name: Upload Build Analysis
         # We upload the Bundle Analysis Artifact to be used on the next step
@@ -114,7 +130,6 @@ jobs:
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
-            ~/.npm
             .next/cache
             node_modules/.cache
           # Most of sibling Pull Requests will use the cache key based on the package-lock.json
@@ -129,15 +144,14 @@ jobs:
     needs: [build]
 
     steps:
-      - name: Git Checkout
+      - name: Git Checkout (`base_ref`)
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # We only need to fetch the current commit for the build steps
+          # We only need to fetch the latest commit of the `base_ref` here for the analysis steps
           fetch_depth: 1
-          # Since we use the `pull_request_target` event we want to checkout the current ref as by default this
-          # command will checkout `main` instead of the current pull_request ref
-          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
-          ref: ${{ github.event.pull_request.head.sha }}
+          # For this step we don't need to checkout on the userland codebase
+          # As we can simply checkout on the latest commit of the `base_ref` for the analysis steps
+          ref: ${{ github.event.pull_request.base.ref }}
 
       - name: Download PR Bundle Analysis
         # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
@@ -171,12 +185,12 @@ jobs:
           mkdir -p .next/analyze/base/bundle/
           cp .next/analyze/__bundle_analysis.json .next/analyze/base/bundle/__bundle_analysis.json
 
-      - name: Compare with base branch bundle
+      - name: Compare Analysis Bundle (Base vs HEAD)
         # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
         if: success() && github.event.number
         run: ls -laR .next/analyze/base && npx -p nextjs-bundle-analysis compare
 
-      - name: Get Comment Body
+      - name: Generate Bundle Analysis Comment
         # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
         id: get-comment-body
         if: success() && github.event.number
@@ -185,7 +199,7 @@ jobs:
           echo "$(cat .next/analyze/__bundle_analysis_comment.txt)" >> $GITHUB_OUTPUT
           echo EOF >> $GITHUB_OUTPUT
 
-      - name: Find Comment
+      - name: Find Existing Bundle Analysis Comment
         # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
         uses: peter-evans/find-comment@a54c31d7fa095754bfef525c0c8e5e5674c4b4b1
         if: success() && github.event.number
@@ -194,7 +208,7 @@ jobs:
           issue-number: ${{ github.event.number }}
           body-includes: '<!-- __NEXTJS_BUNDLE_nodejs.org -->'
 
-      - name: Create Comment
+      - name: Create Bundle Analysis Comment (if does not exist)
         # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
         uses: peter-evans/create-or-update-comment@c6c9a1a66007646a28c153e2a8580a5bad27bcfa
         if: success() && github.event.number && steps.find-comment-id.outputs.comment-id == 0
@@ -202,7 +216,7 @@ jobs:
           issue-number: ${{ github.event.number }}
           body: ${{ steps.get-comment-body.outputs.body }}
 
-      - name: Update Comment
+      - name: Update Bundle Analysis Comment (if does exist)
         # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
         uses: peter-evans/create-or-update-comment@c6c9a1a66007646a28c153e2a8580a5bad27bcfa
         if: success() && github.event.number && steps.find-comment-id.outputs.comment-id != 0

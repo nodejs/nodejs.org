@@ -1,12 +1,13 @@
+# Security Notes
+# Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
+# for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
+# REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
+# AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
+
 name: Pull Request Checks
 
 on:
-  # This trigger ensures that the GitHub Action Workflow metadata that is fetched comes from the `main` branch
-  # This is important to disallow this Workflow from being modified in forks and PRs
-  # See https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request_target
-  pull_request_target:
-    branches:
-      - main
+  pull_request:
 
 defaults:
   run:
@@ -18,20 +19,6 @@ permissions:
   actions: read
   # This permission is required by `MishaKav/jest-coverage-comment`
   pull-requests: write
-
-env:
-  # `--filter` flag allows us to tell TurboRepo to only run a said command if there were any changes found in a given --filter range
-  # It verifies if any change was done to any of the including `glob` patterns described for a said command on `turbo.json`
-  # By default in this Workflow we use the `...[$TURBO_REF_FILTER]` as a value to the filter flag which tells Turborepo to look changes
-  # between the latest base branch commit and all the commits of this PR; That's why we use the `pull_request.base.sha` as a ref to the last
-  # commit on the base branch that this pull_request refers to.
-  TURBO_REF_FILTER: ${{ github.event.pull_request.base.sha }}
-  # We pass the `--team` and `--token` flags to the TurboRepo CLI so that it can retrieve remote Tuborepo's cache that include optimised cache
-  # For specific commands (provided within each `turbo.json` -> `outputs`) and extra layer of cache that Turborepo defines
-  # See https://turbo.build/repo/docs/reference/command-line-reference/run#--team
-  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-  # See https://turbo.build/repo/docs/reference/command-line-reference/run#--token
-  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
 jobs:
   base:
@@ -48,27 +35,37 @@ jobs:
         # We need all the commits of the PR so that `turbo --filter` works correctly
         run: echo "fetch_depth=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "$GITHUB_OUTPUT"
 
+      - name: Provide Turborepo Arguments
+        id: turborepo_arguments
+        # `--filter` flag allows us to tell TurboRepo to only run a said command if there were any changes found in a given --filter range
+        # It verifies if any change was done to any of the including `glob` patterns described for a said command on `turbo.json`
+        # By default in this Workflow we use the `...[$TURBO_REF_FILTER]` as a value to the filter flag which tells Turborepo to look changes
+        # between the latest base branch commit and all the commits of this PR; That's why we use the `pull_request.base.sha` as a ref to the last
+        # commit on the base branch that this pull_request refers to.
+        # We also set the Turborepo Cache to the `.turbo` folder
+        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--filter
+        run: echo "turbo_args=\"--filter=\\\"...[${{ github.event.pull_request.base.sha }}]\\\" --cache-dir=\\\".turbo\\\"\"" >> "$GITHUB_OUTPUT"
+
   lint:
     name: Lint
     runs-on: ubuntu-latest
     needs: base
 
     steps:
-      - name: Git Checkout
+      - name: Git Checkout (`base_ref`)
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
-          fetch-depth: ${{ jobs.base.steps.calculate_current_commits.outputs.fetch_depth }}
-          # Since we use the `pull_request_target` event we want to checkout the current ref as by default this
-          # command will checkout `main` instead of the current pull_request ref
-          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
-          ref: ${{ github.event.pull_request.head.sha }}
+          # We only need to fetch the last commit from the base_ref
+          # for installing our dependencies in safe mode and other safe operations
+          fetch-depth: 1
+          # This ensures we're checkint out the base_ref and not the pull request codebase
+          ref: ${{ github.event.pull_request.base.ref }}
 
       - name: Restore Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
-            ~/.npm
+            .turbo
             .next/cache
             node_modules/.cache
           # We want to restore cache from local .npm caches, .next/cache and node_modules/.cache
@@ -85,16 +82,41 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
 
-      - name: Install NPM packages
+      - name: Install NPM packages (`base_ref`)
         # We want to avoid NPM from running the Audit Step and Funding messages on a CI environment
         # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
         run: npm i --no-audit --no-fund
 
-      - name: Run Linting
-        run: npx turbo lint --filter="...[$TURBO_REF_FILTER]"
+      - name: Git Checkout (`head_sha`)
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        with:
+          # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
+          fetch-depth: ${{ jobs.base.steps.calculate_current_commits.outputs.fetch_depth }}
+          # Since we use the `pull_request_target` event we want to checkout the current ref as by default this
+          # command will checkout `main` instead of the current pull_request ref
+          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
+          ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Run Prettier
-        run: npx turbo prettier --filter="...[$TURBO_REF_FILTER]"
+      - name: Install NPM packages (`base_ref`)
+        # We want to ignore-scripts from code checked out from the user as it might be dangerous
+        run: npm i --no-audit --no-fund --ignore-scripts --userconfig=/dev/null
+
+      - name: Ensure Turborepo is installed
+        # This removes any attempt of local hijack of the Turbo binary and forces an install of Turborepo on
+        # the current NPM scope without being added to `package.json`
+        run: |
+          rm -rf node_modules/bin/turbo
+          npm i --no-audit --no-fund --no-save turbo@latest
+
+      - name: Run `turbo lint`
+        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
+        # the `${{ jobs.base.steps.turborepo_arguments.outputs.turbo_args }}` is a string substitution happening from the base job
+        run: npm exec --package=turbo@latest -- turbo lint ${{ jobs.base.steps.turborepo_arguments.outputs.turbo_args }}
+
+      - name: Run `turbo prettier`
+        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
+        # the `${{ jobs.base.steps.turborepo_arguments.outputs.turbo_args }}` is a string substitution happening from the base job
+        run: npm exec --package=turbo@latest -- turbo prettier ${{ jobs.base.steps.turborepo_arguments.outputs.turbo_args }}
 
   tests:
     name: Tests
@@ -102,21 +124,20 @@ jobs:
     needs: base
 
     steps:
-      - name: Git Checkout
+      - name: Git Checkout (`base_ref`)
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
-          fetch-depth: ${{ jobs.base.steps.calculate_current_commits.outputs.fetch_depth }}
-          # Since we use the `pull_request_target` event we want to checkout the current ref as by default this
-          # command will checkout `main` instead of the current pull_request ref
-          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
-          ref: ${{ github.event.pull_request.head.sha }}
+          # We only need to fetch the last commit from the base_ref
+          # for installing our dependencies in safe mode and other safe operations
+          fetch-depth: 1
+          # This ensures we're checkint out the base_ref and not the pull request codebase
+          ref: ${{ github.event.pull_request.base.ref }}
 
       - name: Restore Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
-            ~/.npm
+            .turbo
             .next/cache
             node_modules/.cache
           # We want to restore cache from local .npm caches, .next/cache and node_modules/.cache
@@ -133,13 +154,29 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
 
-      - name: Install NPM packages
+      - name: Install NPM packages (`base_ref`)
         # We want to avoid NPM from running the Audit Step and Funding messages on a CI environment
         # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
         run: npm i --no-audit --no-fund
 
+      - name: Git Checkout (`head_sha`)
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        with:
+          # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
+          fetch-depth: ${{ jobs.base.steps.calculate_current_commits.outputs.fetch_depth }}
+          # Since we use the `pull_request_target` event we want to checkout the current ref as by default this
+          # command will checkout `main` instead of the current pull_request ref
+          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Install NPM packages (`base_ref`)
+        # We want to ignore-scripts from code checked out from the user as it might be dangerous
+        run: npm i --no-audit --no-fund --ignore-scripts --userconfig=/dev/null
+
       - name: Run Unit Tests
-        run: npx turbo test:unit --filter="...[$TURBO_REF_FILTER]" -- --ci --coverage
+        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
+        # the `${{ jobs.base.steps.turborepo_arguments.outputs.turbo_args }}` is a string substitution happening from the base job
+        run: npm exec --package=turbo@latest -- turbo test:unit ${{ jobs.base.steps.turborepo_arguments.outputs.turbo_args }} -- --ci --coverage
 
       - name: Jest Coverage Comment
         # This comments the current Jest Coverage Report containing JUnit XML reports
@@ -151,4 +188,6 @@ jobs:
           junitxml-title: Unit Test Report
 
       - name: Run Storybook Tests
-        run: npx turbo test:storybook:local --filter="...[$TURBO_REF_FILTER]" -- --ci
+        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
+        # the `${{ jobs.base.steps.turborepo_arguments.outputs.turbo_args }}` is a string substitution happening from the base job
+        run: npm exec --package=turbo@latest -- turbo test:storybook:local ${{ jobs.base.steps.turborepo_arguments.outputs.turbo_args }} -- --ci
