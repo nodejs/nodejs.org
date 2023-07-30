@@ -2,8 +2,7 @@
 
 exports[`Common/Banner WithHTML smoke-test 1`] = `
 <div>
-  <a href="https://nodejs.org/en/"
-     target="_blank"
+  <a target="_blank"
      rel="noopener noreferrer"
   >
     <p>
@@ -15,13 +14,10 @@ exports[`Common/Banner WithHTML smoke-test 1`] = `
 
 exports[`Common/Banner WithHTMLImage smoke-test 1`] = `
 <div>
-  <a href="https://nodejs.org/en/"
-     target="_blank"
+  <a target="_blank"
      rel="noopener noreferrer"
   >
-    <img src="/static/images/nodejs-training.png"
-         alt="Banner Image"
-    >
+    <img alt="Banner Image">
   </a>
 </div>
 `;
@@ -29,8 +25,7 @@ exports[`Common/Banner WithHTMLImage smoke-test 1`] = `
 exports[`Common/Banner WithText smoke-test 1`] = `
 <div>
   <p>
-    <a href="https://nodejs.org/en/"
-       target="_blank"
+    <a target="_blank"
        rel="noopener noreferrer"
     >
       Read More

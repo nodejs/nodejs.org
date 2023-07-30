@@ -5,7 +5,6 @@ exports[`Sections/NewFooter Default smoke-test 1`] = `
   <ul>
     <li>
       <a target="_blank"
-         href="https://trademark-policy.openjsf.org/"
          rel="noopener noreferrer"
          aria-label="Node.js Trademark Policy - PDF (Opens in new tab)"
       >
@@ -14,7 +13,6 @@ exports[`Sections/NewFooter Default smoke-test 1`] = `
     </li>
     <li>
       <a target="_blank"
-         href="https://privacy-policy.openjsf.org/"
          rel="noopener noreferrer"
          aria-label="Node.js Privacy Policy - PDF (Opens in new tab)"
       >
@@ -23,24 +21,23 @@ exports[`Sections/NewFooter Default smoke-test 1`] = `
     </li>
     <li>
       <a target="_blank"
-         href="https://github.com/openjs-foundation/cross-project-council/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct"
          rel="noopener noreferrer"
       >
         Code of Conduct
       </a>
     </li>
     <li>
-      <a href="/en/about/security">
+      <a>
         Security
       </a>
     </li>
     <li>
-      <a href="/en/about">
+      <a>
         About
       </a>
     </li>
     <li>
-      <a href="/en/blog">
+      <a>
         Blog
       </a>
     </li>
@@ -51,7 +48,6 @@ exports[`Sections/NewFooter Default smoke-test 1`] = `
     </li>
     <li>
       <a target="_blank"
-         href="https://github.com/nodejs/node"
          rel="noopener noreferrer"
          aria-label="Node.js Github Page (opens in new tab)"
       >
@@ -70,7 +66,6 @@ exports[`Sections/NewFooter Default smoke-test 1`] = `
     </li>
     <li>
       <a target="_blank"
-         href="https://mastodon.social/@nodejs@social.lfx.dev"
          rel="noopener noreferrer"
          aria-label="Node.js Mastodon (opens in new tab)"
       >
@@ -89,7 +84,6 @@ exports[`Sections/NewFooter Default smoke-test 1`] = `
     </li>
     <li>
       <a target="_blank"
-         href="https://twitter.com/nodejs"
          rel="noopener noreferrer"
          aria-label="Node.js Twitter (opens in new tab)"
       >
@@ -108,7 +102,6 @@ exports[`Sections/NewFooter Default smoke-test 1`] = `
     </li>
     <li>
       <a target="_blank"
-         href="https://slack.openjsf.org"
          rel="noopener noreferrer"
          aria-label="Node.js Slack (opens in new tab)"
       >

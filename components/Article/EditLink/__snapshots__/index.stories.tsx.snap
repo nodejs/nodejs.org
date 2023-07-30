@@ -2,7 +2,7 @@
 
 exports[`Article/EditLink Default smoke-test 1`] = `
 <div>
-  <a href="https://github.com/nodejs/nodejs.org/edit/major/website-redesign/pages/en/get-involved/contribute.md">
+  <a>
     <span>
       Edit this page on GitHub
     </span>

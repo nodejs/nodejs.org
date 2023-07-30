@@ -1,7 +1,12 @@
 name: Pull Request Checks
 
 on:
-  pull_request:
+  push:
+    branches:
+      - main
+  pull_request_target:
+    branches:
+      - main
   workflow_dispatch:
 
 defaults:
@@ -11,11 +16,20 @@ defaults:
 permissions:
   contents: read
   actions: read
+  # This permission is required by `MishaKav/jest-coverage-comment`
+  pull-requests: write
 
 env:
+  # This is explicitly used on the `npx turbo` commands
   TURBO_REF_FILTER: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+  # This is implicitly used by `npx turbo` itself
   TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  # This is implicitly used by `npx turbo` itself and `zentered/vercel-preview-url`
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+  # This is implicitly used by `zentered/vercel-preview-url`
+  VERCEL_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  # This is explicitly used `zentered/vercel-preview-url`
+  TURBO_PROJECT_ID: ${{ secrets.TURBO_PROJECT_ID }}
 
 jobs:
   lint:
@@ -26,6 +40,7 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
+          # Get the whole git history so that Turborepo `--filter` works correctly
           fetch-depth: 0
 
       - name: Restore Cache
@@ -55,14 +70,9 @@ jobs:
       - name: Run Prettier
         run: npx turbo prettier --filter="...[$TURBO_REF_FILTER]"
 
-  unit-tests:
-    name: Tests on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest]
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
 
     steps:
       - name: Use GNU tar instead BSD tar
@@ -73,6 +83,7 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
+          # Get the whole git history so that Turborepo `--filter` works correctly
           fetch-depth: 0
 
       - name: Restore Cache
@@ -96,18 +107,24 @@ jobs:
       - name: Install NPM packages
         run: npm ci --no-audit --no-fund
 
-      - name: Run Unit Tests (Windows)
-        if: matrix.os == 'windows-latest'
-        run: npx turbo test:unit --filter="...[$env:TURBO_REF_FILTER]" -- --coverage
+      - name: Run Unit Tests
+        run: npx turbo test:unit --filter="...[$TURBO_REF_FILTER]" -- --ci --coverage
 
-      - name: Run Unit Tests (Ubuntu)
-        if: matrix.os == 'ubuntu-latest'
-        run: npx turbo test:unit --filter="...[$TURBO_REF_FILTER]" -- --coverage
+      - name: Jest Coverage Comment
+        uses: MishaKav/jest-coverage-comment@41b5ca01d1250de84537448d248b8d18152cb277
+        with:
+          title: 'Unit Test Coverage Report'
+          junitxml-path: ./junit.xml
+          junitxml-title: Unit Test Report
 
-      - name: Run Storybook Tests (Windows)
-        if: matrix.os == 'windows-latest'
-        run: npx turbo test:storybook --filter="...[$env:TURBO_REF_FILTER]"
+      - name: Capture Deployment URL
+        id: vercel_storybook_preview_url
+        uses: zentered/vercel-preview-url@e5fb141da2e3d62692b38e6c7c17477aad214165
+        with:
+          vercel_project_id: ${{ env.TURBO_PROJECT_ID }}
+          vercel_team_id: ${{ env.TURBO_TEAM }}
 
-      - name: Run Storybook Tests (Ubuntu)
-        if: matrix.os == 'ubuntu-latest'
-        run: npx turbo test:storybook --filter="...[$TURBO_REF_FILTER]"
+      - name: Run Storybook Tests
+        run: npx turbo test:storybook --filter="...[$TURBO_REF_FILTER]" -- --ci
+        env:
+          TARGET_URL: 'https://${{ steps.vercel_storybook_preview_url.outputs.preview_url }}'
