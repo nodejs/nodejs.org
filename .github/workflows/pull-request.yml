@@ -21,7 +21,7 @@ permissions:
 
 env:
   # `--filter` flag allows us to tell TurboRepo to only run a said command if there were any changes found in a given --filter range
-  # It verifies if any change was done to any of the including `glob` patterns described for a siad command on `turbo.json`
+  # It verifies if any change was done to any of the including `glob` patterns described for a said command on `turbo.json`
   # By default in this Workflow we use the `...[$TURBO_REF_FILTER]` as a value to the filter flag which tells Turborepo to look changes
   # between the latest base branch commit and all the commits of this PR; That's why we use the `pull_request.base.sha` as a ref to the last
   # commit on the base branch that this pull_request refers to.
