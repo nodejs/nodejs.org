@@ -58,7 +58,7 @@ jobs:
           # This ensures we're checkint out the base_ref and not the pull request codebase
           ref: ${{ github.event.pull_request.base.ref }}
 
-      - name: Restore Cache
+      - name: Restore Build Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
@@ -67,10 +67,10 @@ jobs:
             node_modules/.cache
           # We want to restore cache from local .npm caches, .next/cache and node_modules/.cache
           # As this should reduce build times, and the overall time for installing packages or running operations
-          key: cache-${{ hashFiles('package-lock.json') }}-
+          key: cache-build-${{ hashFiles('package-lock.json') }}-
           restore-keys: |
-            cache-${{ hashFiles('package-lock.json') }}-
-            cache-
+            cache-build-${{ hashFiles('package-lock.json') }}-
+            cache-build-
 
       - name: Set up Node.js
         uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8
@@ -127,19 +127,18 @@ jobs:
           name: bundle-analysis
           path: .next/analyze/__bundle_analysis.json
 
-      - name: Save Cache
-        # We only save Job caches on the Build Step as it's the only one that produces cache
-        # because it contains relevant Next.js's cache metadata
+      - name: Save Build Cache
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
+            .turbo
             .next/cache
             node_modules/.cache
           # Most of sibling Pull Requests will use the cache key based on the package-lock.json
           # We do also add a hashFiles for `.next/cache` as GitHub Actions only allows
           # One cache with same key to exist, so to ensure we always have a cache from the latest build
           # We add the hashFiles of `.next/cache` to the cache key of the Cache Entry
-          key: cache-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.next/cache/**') }}
+          key: cache-build-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.next/cache/**') }}
 
   analysis:
     name: Analysis

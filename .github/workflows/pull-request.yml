@@ -66,19 +66,17 @@ jobs:
           # This ensures we're checkint out the base_ref and not the pull request codebase
           ref: ${{ github.event.pull_request.base.ref }}
 
-      - name: Restore Cache
+      - name: Restore Lint Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
             .turbo
-            .next/cache
             node_modules/.cache
-          # We want to restore cache from local .npm caches, .next/cache and node_modules/.cache
-          # As this should reduce build times, and the overall time for installing packages or running operations
-          key: cache-${{ hashFiles('package-lock.json') }}-
+          # We want to restore Turborepo Cache and ESlint and Prettier Cache
+          key: cache-lint-${{ hashFiles('package-lock.json') }}
           restore-keys: |
-            cache-${{ hashFiles('package-lock.json') }}-
-            cache-
+            cache-lint-${{ hashFiles('package-lock.json') }}
+            cache-lint-
 
       - name: Set up Node.js
         uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8
@@ -118,6 +116,14 @@ jobs:
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
         run: npm exec --package=turbo@latest -- turbo prettier ${{ needs.base.outputs.turbo_args }}
 
+      - name: Save Lint Cache
+        uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
+        with:
+          path: |
+            .turbo
+            node_modules/.cache
+          key: cache-lint-${{ hashFiles('package-lock.json') }}
+
   tests:
     name: Tests
     runs-on: ubuntu-latest
@@ -133,19 +139,17 @@ jobs:
           # This ensures we're checkint out the base_ref and not the pull request codebase
           ref: ${{ github.event.pull_request.base.ref }}
 
-      - name: Restore Cache
+      - name: Restore Tests Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
             .turbo
-            .next/cache
             node_modules/.cache
-          # We want to restore cache from local .npm caches, .next/cache and node_modules/.cache
-          # As this should reduce build times, and the overall time for installing packages or running operations
-          key: cache-${{ hashFiles('package-lock.json') }}-
+          # We want to restore Turborepo Cache and Storybook Cache
+          key: cache-tests-${{ hashFiles('package-lock.json') }}
           restore-keys: |
-            cache-${{ hashFiles('package-lock.json') }}-
-            cache-
+            cache-tests-${{ hashFiles('package-lock.json') }}
+            cache-tests-
 
       - name: Set up Node.js
         uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8
@@ -193,3 +197,11 @@ jobs:
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
         run: npm exec --package=turbo@latest -- turbo test:storybook:local ${{ needs.base.outputs.turbo_args }} -- --ci
+
+      - name: Save Tests Cache
+        uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
+        with:
+          path: |
+            .turbo
+            node_modules/.cache
+          key: cache-tests-${{ hashFiles('package-lock.json') }}
