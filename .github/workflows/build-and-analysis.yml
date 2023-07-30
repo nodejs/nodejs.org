@@ -19,12 +19,6 @@ permissions:
   # This permission is required by `peter-evans/create-or-update-comment`
   pull-requests: write
 
-env:
-  # This is explicitly used on the `npx turbo` commands
-  TURBO_REF_FILTER: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.base.sha || github.event.before }}
-  # Reference to Checkout SHA
-  GIT_FETCH_REF: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.sha || '' }}
-
 jobs:
   build:
     name: Build on ${{ matrix.os }}
@@ -41,13 +35,18 @@ jobs:
         shell: cmd
         run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
 
+      - name: 'Calculate Commits to Checkout'
+        # This is the amount of commits we should fetch
+        run: echo "GIT_FETCH_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "${GITHUB_ENV}"
+
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # On Build Steps we don't need to get the full history as we don't use `turbo --filter`
-          fetch-depth: 1
+          # Get enough fetch-depth so that `turbo --filter` works correctly
+          fetch-depth: ${{ env.GIT_FETCH_DEPTH }}
           # Since we use `pull_request_target` we want to checkout the current ref
-          ref: ${{ env.GIT_FETCH_REF }}
+          # If this Workflow is running on main this will return an empty string
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Restore Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
@@ -101,13 +100,18 @@ jobs:
     needs: [build]
 
     steps:
+      - name: 'Calculate Commits to Checkout'
+        # This is the amount of commits we should fetch
+        run: echo "GIT_FETCH_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "${GITHUB_ENV}"
+
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # On Build Steps we don't need to get the full history as we don't use `turbo --filter`
-          fetch-depth: 1
+          # Get enough fetch-depth so that `turbo --filter` works correctly
+          fetch-depth: ${{ env.GIT_FETCH_DEPTH }}
           # Since we use `pull_request_target` we want to checkout the current ref
-          ref: ${{ env.GIT_FETCH_REF }}
+          # If this Workflow is running on main this will return an empty string
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Download PR Bundle Analysis
         uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a

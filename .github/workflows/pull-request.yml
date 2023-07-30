@@ -16,25 +16,23 @@ permissions:
   # This permission is required by `MishaKav/jest-coverage-comment`
   pull-requests: write
 
-env:
-  # This is explicitly used on the `npx turbo` commands
-  TURBO_REF_FILTER: ${{ github.event.pull_request.base.sha }}
-  # Reference to Checkout SHA
-  GIT_FETCH_REF: ${{ github.event.pull_request.head.sha }}
-
 jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
 
     steps:
+      - name: Calculate Commits to Checkout
+        # This is the amount of commits we should fetch
+        run: echo "GIT_FETCH_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "${GITHUB_ENV}"
+
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Get the full git history so that `turbo --filter` works correctly
-          fetch-depth: 0
+          # Get enough fetch-depth so that `turbo --filter` works correctly
+          fetch-depth: ${{ env.GIT_FETCH_DEPTH }}
           # Since we use `pull_request_target` we want to checkout the current ref
-          ref: ${{ env.GIT_FETCH_REF }}
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Restore Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
@@ -58,10 +56,10 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: Run Linting
-        run: npx turbo lint --filter="...[$TURBO_REF_FILTER]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}"
+        run: npx turbo lint --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}"
 
       - name: Run Prettier
-        run: npx turbo prettier --filter="...[$TURBO_REF_FILTER]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}"
+        run: npx turbo prettier --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}"
 
   tests:
     name: Tests
@@ -73,13 +71,17 @@ jobs:
         shell: cmd
         run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
 
+      - name: Calculate Commits to Checkout
+        # This is the amount of commits we should fetch
+        run: echo "GIT_FETCH_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "${GITHUB_ENV}"
+
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Get the full git history so that `turbo --filter` works correctly
-          fetch-depth: 0
+          # Get enough fetch-depth so that `turbo --filter` works correctly
+          fetch-depth: ${{ env.GIT_FETCH_DEPTH }}
           # Since we use `pull_request_target` we want to checkout the current ref
-          ref: ${{ env.GIT_FETCH_REF }}
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Restore Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
@@ -103,7 +105,7 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: Run Unit Tests
-        run: npx turbo test:unit --filter="...[$TURBO_REF_FILTER]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}" -- --ci --coverage
+        run: npx turbo test:unit --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}" -- --ci --coverage
 
       - name: Jest Coverage Comment
         uses: MishaKav/jest-coverage-comment@41b5ca01d1250de84537448d248b8d18152cb277
@@ -122,6 +124,6 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
       - name: Run Storybook Tests
-        run: npx turbo test:storybook --filter="...[$TURBO_REF_FILTER]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}" -- --ci
+        run: npx turbo test:storybook --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}" -- --ci
         env:
           TARGET_URL: 'https://${{ steps.vercel_storybook_preview_url.outputs.preview_url }}'
