@@ -17,6 +17,7 @@ public/node-releases-data.json
 
 # We don't want to lint/prettify the Coverage Results
 coverage
+junit.xml
 
 # MDX Plugin enforces Prettier formatting which should
 # be done in the future as we don't want to update the Markdown file

@@ -12,10 +12,3 @@ exports[`Common/AnimatedPlaceholder Default smoke-test 1`] = `
   </div>
 </div>
 `;
-
-exports[`Common/AnimatedPlaceholder WithLoaderSkeleton smoke-test 1`] = `
-<div>
-  <div>
-  </div>
-</div>
-`;

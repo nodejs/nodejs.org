@@ -8,6 +8,7 @@ const config: StorybookConfig = {
   features: { storyStoreV7: true },
   docs: { autodocs: 'tag' },
   staticDirs: ['../public'],
+  logLevel: 'error',
   core: { disableTelemetry: true },
   webpackFinal: async config => {
     config.resolve!.modules = [resolve(__dirname, '..'), 'node_modules'];

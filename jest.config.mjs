@@ -10,6 +10,8 @@ const customJestConfig = {
   moduleDirectories: ['node_modules', '<rootDir>/'],
   testEnvironment: 'jest-environment-jsdom',
   testMatch: ['**/__tests__/*.test.mjs'],
+  coverageReporters: ['json', 'json-summary'],
+  reporters: ['default', 'jest-junit'],
 };
 
 export default createJestConfig(customJestConfig);

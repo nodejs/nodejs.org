@@ -16,12 +16,12 @@ defaults:
 permissions:
   contents: read
   actions: read
+  # This permission is required by `peter-evans/create-or-update-comment`
   pull-requests: write
 
 env:
+  # This is explicitly used on the `npx turbo` commands
   TURBO_REF_FILTER: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
-  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
 jobs:
   build:
@@ -42,7 +42,10 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
+          # Get the whole git history so that Turborepo `--filter` works correctly
           fetch-depth: 0
+          # Since we use `pull_request_target` we want to checkout the current ref
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Restore Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
@@ -66,7 +69,7 @@ jobs:
         run: npm ci --no-audit --no-fund --omit=dev
 
       - name: Build Next.js
-        run: npx turbo build
+        run: npx turbo build --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}"
         env:
           TURBO_FORCE: true
           NODE_OPTIONS: '--max_old_space_size=4096'
@@ -96,21 +99,6 @@ jobs:
     needs: [build]
 
     steps:
-      - name: Git Checkout
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
-
-      - name: Restore Cache
-        uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
-        with:
-          path: |
-            ~/.npm
-            .next/cache
-            node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}-
-          restore-keys: |
-            cache-${{ hashFiles('package-lock.json') }}-
-            cache-
-
       - name: Download PR Bundle Analysis
         uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
         with:
