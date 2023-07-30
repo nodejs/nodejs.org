@@ -26,7 +26,7 @@ env:
   # between the latest base branch commit and all the commits of this PR; That's why we use the `pull_request.base.sha` as a ref to the last
   # commit on the base branch that this pull_request refers to.
   TURBO_REF_FILTER: ${{ github.event.pull_request.base.sha }}
-  # We pass the `--team` and `--token` flags to the TurboRepo CLI so that it can retrieve remote Tuborepoe's cache that include optimised cache
+  # We pass the `--team` and `--token` flags to the TurboRepo CLI so that it can retrieve remote Tuborepo's cache that include optimised cache
   # For specific commands (provided within each `turbo.json` -> `outputs`) and extra layer of cache that Turborepo defines
   # See https://turbo.build/repo/docs/reference/command-line-reference/run#--team
   TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
