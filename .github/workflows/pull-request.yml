@@ -114,16 +114,5 @@ jobs:
           junitxml-path: ./junit.xml
           junitxml-title: Unit Test Report
 
-      - name: Capture Deployment URL
-        id: vercel_storybook_preview_url
-        uses: zentered/vercel-preview-url@e5fb141da2e3d62692b38e6c7c17477aad214165
-        with:
-          vercel_project_id: ${{ secrets.TURBO_PROJECT_ID }}
-          vercel_team_id: ${{ secrets.TURBO_TEAM }}
-        env:
-          VERCEL_TOKEN: ${{ secrets.TURBO_TOKEN }}
-
       - name: Run Storybook Tests
-        run: npx turbo test:storybook --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}" -- --ci
-        env:
-          TARGET_URL: 'https://${{ steps.vercel_storybook_preview_url.outputs.preview_url }}'
+        run: npx turbo test:storybook:local --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}" -- --ci
