@@ -57,14 +57,15 @@ jobs:
     needs: [base]
 
     steps:
-      - name: Git Checkout (`base_ref`)
+      - name: Git Checkout (`head_sha`)
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # We only need to fetch the last commit from the base_ref
-          # for installing our dependencies in safe mode and other safe operations
-          fetch-depth: 1
-          # This ensures we're checkint out the base_ref and not the pull request codebase
-          ref: ${{ github.event.pull_request.base.ref }}
+          # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
+          fetch-depth: ${{ needs.base.outputs.fetch_depth }}
+          # Since we use the `pull_request_target` event we want to checkout the current ref as by default this
+          # command will checkout `main` instead of the current pull_request ref
+          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Restore Lint Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
@@ -85,25 +86,9 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
 
-      - name: Install NPM packages (`base_ref`)
+      - name: Install NPM packages (`head_sha`)
         # We want to avoid NPM from running the Audit Step and Funding messages on a CI environment
         # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
-        run: npm i --no-audit --no-fund
-
-      - name: Git Checkout (`head_sha`)
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
-        with:
-          # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
-          fetch-depth: ${{ needs.base.outputs.fetch_depth }}
-          # Since we use the `pull_request_target` event we want to checkout the current ref as by default this
-          # command will checkout `main` instead of the current pull_request ref
-          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
-          ref: ${{ github.event.pull_request.head.sha }}
-          # We do not want to cleanup after already checking out base branch
-          clean: false
-
-      - name: Install NPM packages (`head_sha`)
-        # We want to ignore-scripts from code checked out from the user as it might be dangerous
         run: npm i --no-audit --no-fund --ignore-scripts --userconfig=/dev/null
 
       - name: Run `turbo lint`
@@ -130,14 +115,15 @@ jobs:
     needs: [base]
 
     steps:
-      - name: Git Checkout (`base_ref`)
+      - name: Git Checkout (`head_sha`)
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # We only need to fetch the last commit from the base_ref
-          # for installing our dependencies in safe mode and other safe operations
-          fetch-depth: 1
-          # This ensures we're checkint out the base_ref and not the pull request codebase
-          ref: ${{ github.event.pull_request.base.ref }}
+          # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
+          fetch-depth: ${{ needs.base.outputs.fetch_depth }}
+          # Since we use the `pull_request_target` event we want to checkout the current ref as by default this
+          # command will checkout `main` instead of the current pull_request ref
+          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Restore Tests Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
@@ -158,26 +144,10 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
 
-      - name: Install NPM packages (`base_ref`)
+      - name: Install NPM packages (`head_sha`)
         # We want to avoid NPM from running the Audit Step and Funding messages on a CI environment
         # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
-        run: npm i --no-audit --no-fund
-
-      - name: Git Checkout (`head_sha`)
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
-        with:
-          # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
-          fetch-depth: ${{ needs.base.outputs.fetch_depth }}
-          # Since we use the `pull_request_target` event we want to checkout the current ref as by default this
-          # command will checkout `main` instead of the current pull_request ref
-          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
-          ref: ${{ github.event.pull_request.head.sha }}
-          # We do not want to cleanup after already checking out base branch
-          clean: false
-
-      - name: Install NPM packages (`head_sha`)
-        # We want to ignore-scripts from code checked out from the user as it might be dangerous
-        run: npm i --no-audit --no-fund --ignore-scripts --userconfig=/dev/null
+        run: npm i --no-audit --no-fund --userconfig=/dev/null
 
       - name: Run Unit Tests
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
