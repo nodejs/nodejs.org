@@ -1,16 +1,20 @@
+# Security Notes
+# Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
+# for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
+# REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
+# AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
+
 name: Build and Analysis Checks
 
 on:
   push:
     branches:
       - main
-  pull_request_target:
-    branches:
-      - main
-  workflow_dispatch:
+  pull_request:
 
 defaults:
   run:
+    # This ensures that the working directory is the root of the repository
     working-directory: ./
 
 permissions:
@@ -20,9 +24,24 @@ permissions:
   pull-requests: write
 
 jobs:
+  base:
+    name: Base Tasks
+    runs-on: ubuntu-latest
+    outputs:
+      turbo_args: ${{ steps.turborepo_arguments.outputs.turbo_args }}
+
+    steps:
+      - name: Provide Turborepo Arguments
+        id: turborepo_arguments
+        # We also set the Turborepo Cache to the `.turbo` folder
+        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
+        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
+        run: echo "turbo_args=--force=true --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
+
   build:
     name: Build on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
+    needs: [base]
 
     strategy:
       fail-fast: false
@@ -31,62 +50,89 @@ jobs:
 
     steps:
       - name: Use GNU tar instead BSD tar
+        # This ensures that we use GNU `tar` which is more efficient for extracting caches's
         if: matrix.os == 'windows-latest'
         shell: cmd
         run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
 
-      - name: Git Checkout
+      - name: Git Checkout (`head_sha`)
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Since we use `pull_request_target` we want to checkout the current ref
-          # If this Workflow is running on main this will return an empty string
+          # We only need to fetch the last commit from the head_ref
+          # since we're not using the `--filter` operation from turborepo
+          # We don't use the `--filter` as we always want to force builds regardless of having changes or not
+          # this ensures that our bundle analysis script always runs and that we always ensure next.js is building
+          # regardless of having code changes or not
+          fetch-depth: 1
+          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Restore Cache
+      - name: Restore Build Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
-            ~/.npm
+            .turbo/cache
             .next/cache
             node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}-
+          # We want to restore cache from local .npm caches, .next/cache and node_modules/.cache
+          # As this should reduce build times, and the overall time for installing packages or running operations
+          key: cache-build-${{ hashFiles('package-lock.json') }}-
           restore-keys: |
-            cache-${{ hashFiles('package-lock.json') }}-
-            cache-
+            cache-build-${{ hashFiles('package-lock.json') }}-
+            cache-build-
 
       - name: Set up Node.js
         uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8
         with:
+          # We want to ensure that the Node.js version running here respects our supported versions
           node-version-file: '.nvmrc'
           cache: 'npm'
 
-      - name: Install NPM packages
-        run: npm ci --no-audit --no-fund --omit=dev
+      - name: Install NPM packages (`head_sha`)
+        # We want to avoid NPM from running the Audit Step and Funding messages on a CI environment
+        # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
+        # We also use `--omit=dev` to avoid installing devDependencies as we don't need them during the build step
+        run: npm i --no-audit --no-fund --userconfig=/dev/null --omit=dev
 
       - name: Build Next.js
-        run: npx turbo build --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}"
+        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
+        # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
+        run: npx --package=turbo@latest -- turbo build ${{ needs.base.outputs.turbo_args }}
         env:
-          TURBO_FORCE: true
+          # We want to ensure we have enough RAM allocated to the Node.js process
+          # this should be a last resort in case by any chances the build memory gets too high
+          # but in general this should never happen
           NODE_OPTIONS: '--max_old_space_size=4096'
+          # We want to avoid having Next.js's Telemetry to kick-in during this build
+          # See https://nextjs.org/telemetry
           NEXT_TELEMETRY_DISABLED: 1
 
       - name: Analyse Build
-        run: npx -p nextjs-bundle-analysis report
+        if: matrix.os == 'ubuntu-latest'
+        # We generate a Bundle Analysis Report
+        # See https://github.com/hashicorp/nextjs-bundle-analysis
+        run: npx --package=nextjs-bundle-analysis@0.5.0 report
 
       - name: Upload Build Analysis
+        if: matrix.os == 'ubuntu-latest'
+        # We upload the Bundle Analysis Artifact to be used on the next step
         uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
         with:
           name: bundle-analysis
           path: .next/analyze/__bundle_analysis.json
 
-      - name: Save Cache
+      - name: Save Build Cache
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
-            ~/.npm
+            .turbo/cache
             .next/cache
             node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.next/cache/**') }}
+          # Most of sibling Pull Requests will use the cache key based on the package-lock.json
+          # We do also add a hashFiles for `.next/cache` as GitHub Actions only allows
+          # One cache with same key to exist, so to ensure we always have a cache from the latest build
+          # We add the hashFiles of `.next/cache` to the cache key of the Cache Entry
+          key: cache-build-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.next/cache/**') }}
 
   analysis:
     name: Analysis
@@ -94,20 +140,24 @@ jobs:
     needs: [build]
 
     steps:
-      - name: Git Checkout
+      - name: Git Checkout (`base_ref`)
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Since we use `pull_request_target` we want to checkout the current ref
-          # If this Workflow is running on main this will return an empty string
-          ref: ${{ github.event.pull_request.head.sha }}
+          # We only need to fetch the latest commit of the `base_ref` here for the analysis steps
+          fetch-depth: 1
+          # For this step we don't need to checkout on the userland codebase
+          # As we can simply checkout on the latest commit of the `base_ref` for the analysis steps
+          ref: ${{ github.event.pull_request.base.ref }}
 
       - name: Download PR Bundle Analysis
+        # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
         uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
         with:
           name: bundle-analysis
           path: .next/analyze
 
       - name: Download Base Bundle Analysis
+        # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
         uses: dawidd6/action-download-artifact@246dbf436b23d7c49e21a7ab8204ca9ecd1fe615
         if: success() && github.event.number
         with:
@@ -117,22 +167,27 @@ jobs:
           if_no_artifact_found: warn
 
       - name: Check Base Bundle Analysis File
+        # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
         id: check-base-bundle-analysis-file
         uses: andstor/file-existence-action@20b4d2e596410855db8f9ca21e96fbe18e12930b
         with:
           files: .next/analyze/base/bundle/__bundle_analysis.json
 
       - name: Copy PR Bundle Analysis (Fallback)
+        # In case a Analysis of the base branch does not exist, we don't want to fail the CI action
+        # Hence we simply fallback to the Bundle Analysis of the current Build
         if: steps.check-base-bundle-analysis-file.outputs.files_exists == 'false'
         run: |
           mkdir -p .next/analyze/base/bundle/
           cp .next/analyze/__bundle_analysis.json .next/analyze/base/bundle/__bundle_analysis.json
 
-      - name: Compare with base branch bundle
+      - name: Compare Analysis Bundle (Base vs HEAD)
+        # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
         if: success() && github.event.number
         run: ls -laR .next/analyze/base && npx -p nextjs-bundle-analysis compare
 
-      - name: Get Comment Body
+      - name: Generate Bundle Analysis Comment
+        # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
         id: get-comment-body
         if: success() && github.event.number
         run: |
@@ -140,7 +195,8 @@ jobs:
           echo "$(cat .next/analyze/__bundle_analysis_comment.txt)" >> $GITHUB_OUTPUT
           echo EOF >> $GITHUB_OUTPUT
 
-      - name: Find Comment
+      - name: Find Existing Bundle Analysis Comment
+        # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
         uses: peter-evans/find-comment@a54c31d7fa095754bfef525c0c8e5e5674c4b4b1
         if: success() && github.event.number
         id: find-comment-id
@@ -148,14 +204,16 @@ jobs:
           issue-number: ${{ github.event.number }}
           body-includes: '<!-- __NEXTJS_BUNDLE_nodejs.org -->'
 
-      - name: Create Comment
+      - name: Create Bundle Analysis Comment (if does not exist)
+        # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
         uses: peter-evans/create-or-update-comment@c6c9a1a66007646a28c153e2a8580a5bad27bcfa
         if: success() && github.event.number && steps.find-comment-id.outputs.comment-id == 0
         with:
           issue-number: ${{ github.event.number }}
           body: ${{ steps.get-comment-body.outputs.body }}
 
-      - name: Update Comment
+      - name: Update Bundle Analysis Comment (if does exist)
+        # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
         uses: peter-evans/create-or-update-comment@c6c9a1a66007646a28c153e2a8580a5bad27bcfa
         if: success() && github.event.number && steps.find-comment-id.outputs.comment-id != 0
         with:
