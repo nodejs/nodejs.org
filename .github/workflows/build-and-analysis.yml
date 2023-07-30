@@ -21,11 +21,11 @@ permissions:
 
 env:
   # This is explicitly used on the `npx turbo` commands
-  TURBO_REF_FILTER: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+  TURBO_REF_FILTER: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.base.sha || github.event.before }}
   # This is the amount of commits we should fetch
-  GIT_FETCH_DEPTH: ${{ github.event_name == 'pull_request' && github.event.pull_request.commits || 1 }}
+  GIT_FETCH_DEPTH: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.commits || 1 }}
   # Reference to Checkout SHA
-  GIT_FETCH_REF: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || '' }}
+  GIT_FETCH_REF: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.sha || '' }}
 
 jobs:
   build:
