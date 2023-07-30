@@ -35,15 +35,9 @@ jobs:
         shell: cmd
         run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
 
-      - name: 'Calculate Commits to Checkout'
-        # This is the amount of commits we should fetch
-        run: echo "GIT_FETCH_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "${GITHUB_ENV}"
-
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Get enough fetch-depth so that `turbo --filter` works correctly
-          fetch-depth: ${{ env.GIT_FETCH_DEPTH }}
           # Since we use `pull_request_target` we want to checkout the current ref
           # If this Workflow is running on main this will return an empty string
           ref: ${{ github.event.pull_request.head.sha }}
@@ -100,15 +94,9 @@ jobs:
     needs: [build]
 
     steps:
-      - name: 'Calculate Commits to Checkout'
-        # This is the amount of commits we should fetch
-        run: echo "GIT_FETCH_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "${GITHUB_ENV}"
-
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Get enough fetch-depth so that `turbo --filter` works correctly
-          fetch-depth: ${{ env.GIT_FETCH_DEPTH }}
           # Since we use `pull_request_target` we want to checkout the current ref
           # If this Workflow is running on main this will return an empty string
           ref: ${{ github.event.pull_request.head.sha }}
