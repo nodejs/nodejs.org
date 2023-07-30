@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
-import EditLink from './../index';
+import EditLink from '../index';
 
 jest.mock('next/router', () => ({
   useRouter: jest.fn().mockImplementation(() => ({

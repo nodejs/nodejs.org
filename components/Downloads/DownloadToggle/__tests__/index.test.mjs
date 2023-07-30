@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 import DownloadToggle from '..';
 
-describe('DownloadToggle component', (): void => {
+describe('DownloadToggle component', () => {
   it('utilizes click handler correctly', async () => {
     const mockHandler = jest.fn();
 

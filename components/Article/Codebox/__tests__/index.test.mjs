@@ -2,10 +2,7 @@ import userEvent from '@testing-library/user-event';
 import { render, screen, waitFor } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
 
-import Codebox, {
-  replaceLabelLanguages,
-  replaceLanguages,
-} from '@/components/Article/Codebox/index';
+import Codebox, { replaceLabelLanguages, replaceLanguages } from '..';
 
 describe('Codebox component', () => {
   it('should render Codebox component', async () => {
@@ -19,12 +16,12 @@ describe('Codebox component', () => {
   });
 });
 
-describe('Replacer tests', (): void => {
-  it('replaceLabelLanguages', (): void => {
+describe('Replacer tests', () => {
+  it('replaceLabelLanguages', () => {
     expect(replaceLabelLanguages('language-console')).toBe('bash');
   });
 
-  it('replaceLanguages', (): void => {
+  it('replaceLanguages', () => {
     expect(replaceLanguages('language-mjs')).toBe('language-js');
     expect(replaceLanguages('language-cjs')).toBe('language-js');
     expect(replaceLanguages('language-javascript')).toBe('language-js');
@@ -33,7 +30,7 @@ describe('Replacer tests', (): void => {
   });
 });
 
-describe('Codebox component (one lang)', (): void => {
+describe('Codebox component (one lang)', () => {
   const code = 'const a = 1;';
 
   it('should copy content', async () => {
@@ -56,7 +53,7 @@ describe('Codebox component (one lang)', (): void => {
 
     expect(buttonElement).not.toBeNull();
 
-    await user.click(buttonElement!);
+    await user.click(buttonElement);
 
     expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledTimes(1);
     expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledWith(code);
@@ -84,14 +81,14 @@ describe('Codebox component (one lang)', (): void => {
 
     expect(buttonElement).not.toBeNull();
 
-    await user.click(buttonElement!);
+    await user.click(buttonElement);
 
     expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledTimes(1);
     expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledWith(textToCopy[0]);
   });
 });
 
-describe('Codebox component (multiple langs)', (): void => {
+describe('Codebox component (multiple langs)', () => {
   const code = `const http = require('http');
 --------------
 import http from 'http';`;
@@ -142,7 +139,7 @@ import http from 'http';`;
 
     expect(copyButton).not.toBeNull();
 
-    await user.click(copyButton!);
+    await user.click(copyButton);
 
     expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledTimes(1);
     expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledWith(textToCopy[0]);
@@ -150,7 +147,7 @@ import http from 'http';`;
     const buttonElement = await screen.findByText('mjs');
     await user.click(buttonElement);
 
-    await user.click(copyButton!);
+    await user.click(copyButton);
 
     expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledTimes(2);
     expect(navigatorClipboardWriteTextSpy).toHaveBeenCalledWith(textToCopy[1]);

@@ -1,9 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
-import Banner from '@/components/Common/Banner/index';
-import type { WebsiteBanner } from '@/types';
+import Banner from '..';
 
-const bannersIndex: WebsiteBanner = {
+const bannersIndex = {
   endDate: '',
   link: 'test/banner/link',
   text: 'Test banner text',

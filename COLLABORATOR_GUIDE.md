@@ -186,6 +186,7 @@ We also use [Storybook][] to document our components. Each component should have
 
 Unit Tests are fundamental to ensure that code changes do not disrupt the functionalities of the Node.js Website:
 
+- Unit tests should be written as `.mjs` files.
 - We recommend that unit tests are added for content covering `util`, `scripts`, `hooks` and `components` whenever possible.
 - Unit Tests should cover that the functionality of a given change is working as expected.
 - When creating unit tests for React components, we recommend that the tests cover all the possible states of the component.

@@ -1,7 +1,9 @@
 name: Pull Request Checks
 
 on:
-  pull_request:
+  pull_request_target:
+    branches:
+      - main
   workflow_dispatch:
 
 defaults:
@@ -11,11 +13,8 @@ defaults:
 permissions:
   contents: read
   actions: read
-
-env:
-  TURBO_REF_FILTER: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
-  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+  # This permission is required by `MishaKav/jest-coverage-comment`
+  pull-requests: write
 
 jobs:
   lint:
@@ -23,10 +22,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Calculate Commits to Checkout
+        # This is the amount of commits we should fetch
+        run: echo "GIT_FETCH_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "${GITHUB_ENV}"
+
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          fetch-depth: 0
+          # Get enough fetch-depth so that `turbo --filter` works correctly
+          fetch-depth: ${{ env.GIT_FETCH_DEPTH }}
+          # Since we use `pull_request_target` we want to checkout the current ref
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Restore Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
@@ -50,19 +56,14 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: Run Linting
-        run: npx turbo lint --filter="...[$TURBO_REF_FILTER]"
+        run: npx turbo lint --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}"
 
       - name: Run Prettier
-        run: npx turbo prettier --filter="...[$TURBO_REF_FILTER]"
+        run: npx turbo prettier --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}"
 
-  unit-tests:
-    name: Tests on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest]
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
 
     steps:
       - name: Use GNU tar instead BSD tar
@@ -70,10 +71,17 @@ jobs:
         shell: cmd
         run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
 
+      - name: Calculate Commits to Checkout
+        # This is the amount of commits we should fetch
+        run: echo "GIT_FETCH_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "${GITHUB_ENV}"
+
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          fetch-depth: 0
+          # Get enough fetch-depth so that `turbo --filter` works correctly
+          fetch-depth: ${{ env.GIT_FETCH_DEPTH }}
+          # Since we use `pull_request_target` we want to checkout the current ref
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Restore Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
@@ -96,18 +104,26 @@ jobs:
       - name: Install NPM packages
         run: npm ci --no-audit --no-fund
 
-      - name: Run Unit Tests (Windows)
-        if: matrix.os == 'windows-latest'
-        run: npx turbo test:unit --filter="...[$env:TURBO_REF_FILTER]" -- --coverage
+      - name: Run Unit Tests
+        run: npx turbo test:unit --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}" -- --ci --coverage
 
-      - name: Run Unit Tests (Ubuntu)
-        if: matrix.os == 'ubuntu-latest'
-        run: npx turbo test:unit --filter="...[$TURBO_REF_FILTER]" -- --coverage
+      - name: Jest Coverage Comment
+        uses: MishaKav/jest-coverage-comment@41b5ca01d1250de84537448d248b8d18152cb277
+        with:
+          title: 'Unit Test Coverage Report'
+          junitxml-path: ./junit.xml
+          junitxml-title: Unit Test Report
 
-      - name: Run Storybook Tests (Windows)
-        if: matrix.os == 'windows-latest'
-        run: npx turbo test:storybook --filter="...[$env:TURBO_REF_FILTER]"
+      - name: Capture Deployment URL
+        id: vercel_storybook_preview_url
+        uses: zentered/vercel-preview-url@e5fb141da2e3d62692b38e6c7c17477aad214165
+        with:
+          vercel_project_id: ${{ secrets.TURBO_PROJECT_ID }}
+          vercel_team_id: ${{ secrets.TURBO_TEAM }}
+        env:
+          VERCEL_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
-      - name: Run Storybook Tests (Ubuntu)
-        if: matrix.os == 'ubuntu-latest'
-        run: npx turbo test:storybook --filter="...[$TURBO_REF_FILTER]"
+      - name: Run Storybook Tests
+        run: npx turbo test:storybook --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}" -- --ci
+        env:
+          TARGET_URL: 'https://${{ steps.vercel_storybook_preview_url.outputs.preview_url }}'

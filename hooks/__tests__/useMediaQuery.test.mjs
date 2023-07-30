@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { useMediaQuery } from '../useMediaQuery';
 
 describe('useMediaQuery', () => {
   it('should check for matchMedia support', () => {
@@ -39,11 +39,9 @@ describe('useMediaQuery', () => {
   });
 
   it('should subscribe for media changes', () => {
-    const listenerMock = jest
-      .fn()
-      .mockImplementation((_: any, handler: Function) => {
-        handler();
-      });
+    const listenerMock = jest.fn().mockImplementation((_, handler) => {
+      handler();
+    });
 
     Object.defineProperty(window, 'matchMedia', {
       writable: true,
@@ -60,7 +58,7 @@ describe('useMediaQuery', () => {
   });
 
   it("should support MediaQueryList's old event listeners", () => {
-    const listenerMock = jest.fn().mockImplementation((handler: Function) => {
+    const listenerMock = jest.fn().mockImplementation(handler => {
       handler();
     });
 

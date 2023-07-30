@@ -5,8 +5,7 @@ exports[`Article/AuthorList Default smoke-test 1`] = `
   Article Authors
   <ul>
     <li>
-      <a href="https://github.com/flaviocopes"
-         aria-label="flaviocopes Github - opens in new tab"
+      <a aria-label="flaviocopes Github - opens in new tab"
          target="_blank"
          rel="noopener noreferrer"
       >
@@ -17,14 +16,12 @@ exports[`Article/AuthorList Default smoke-test 1`] = `
              decoding="async"
              data-nimg="1"
              srcset="https://github.com/flaviocopes.png?size=60?w=64&amp;q=75 1x, https://github.com/flaviocopes.png?size=60?w=128&amp;q=75 2x"
-             src="https://github.com/flaviocopes.png?size=60?w=128&amp;q=75"
              style="color: transparent;"
         >
       </a>
     </li>
     <li>
-      <a href="https://github.com/MarkPieszak"
-         aria-label="MarkPieszak Github - opens in new tab"
+      <a aria-label="MarkPieszak Github - opens in new tab"
          target="_blank"
          rel="noopener noreferrer"
       >
@@ -35,14 +32,12 @@ exports[`Article/AuthorList Default smoke-test 1`] = `
              decoding="async"
              data-nimg="1"
              srcset="https://github.com/MarkPieszak.png?size=60?w=64&amp;q=75 1x, https://github.com/MarkPieszak.png?size=60?w=128&amp;q=75 2x"
-             src="https://github.com/MarkPieszak.png?size=60?w=128&amp;q=75"
              style="color: transparent;"
         >
       </a>
     </li>
     <li>
-      <a href="https://github.com/mcollina"
-         aria-label="mcollina Github - opens in new tab"
+      <a aria-label="mcollina Github - opens in new tab"
          target="_blank"
          rel="noopener noreferrer"
       >
@@ -53,14 +48,12 @@ exports[`Article/AuthorList Default smoke-test 1`] = `
              decoding="async"
              data-nimg="1"
              srcset="https://github.com/mcollina.png?size=60?w=64&amp;q=75 1x, https://github.com/mcollina.png?size=60?w=128&amp;q=75 2x"
-             src="https://github.com/mcollina.png?size=60?w=128&amp;q=75"
              style="color: transparent;"
         >
       </a>
     </li>
     <li>
-      <a href="https://github.com/unavailable-author"
-         aria-label="unavailable-author Github - opens in new tab"
+      <a aria-label="unavailable-author Github - opens in new tab"
          target="_blank"
          rel="noopener noreferrer"
       >
@@ -71,7 +64,6 @@ exports[`Article/AuthorList Default smoke-test 1`] = `
              decoding="async"
              data-nimg="1"
              srcset="/static/images/placeholder-img.png?w=64&amp;q=75 1x, /static/images/placeholder-img.png?w=128&amp;q=75 2x"
-             src="http://127.0.0.1:6006/static/images/placeholder-img.png?w=128&amp;q=75"
              style
         >
       </a>

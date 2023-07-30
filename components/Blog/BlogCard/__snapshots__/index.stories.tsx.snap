@@ -3,11 +3,11 @@
 exports[`Blog/BlogCard Default smoke-test 1`] = `
 <div>
   <div>
-    <a href="/en/blog/category-mock/sample-blog">
+    <a>
       Sample Test Blog
     </a>
     <div>
-      <a href="/en/blog/category-mock">
+      <a>
         category-mock
       </a>
       <span>

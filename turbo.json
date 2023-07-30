@@ -163,16 +163,27 @@
     },
     "test:unit": {
       "inputs": [
-        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
+        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx,mjs}",
         "{app,components,layouts,pages,styles}/**/*.{css,sass,scss}",
         "{next-data,scripts,i18n}/**/*.{mjs,json}",
         "{app,pages}/**/*.{mdx,md}",
         "*.{md,mdx,json,ts,tsx,mjs,yml}"
-      ]
+      ],
+      "outputs": ["coverage/**", "junit.xml"]
     },
     "test:storybook": {
       "inputs": [
-        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
+        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx,mjs}",
+        "{app,components,layouts,pages,styles}/**/*.{css,sass,scss}",
+        "{next-data,scripts,i18n}/**/*.{mjs,json}",
+        "{.storybook,public}/**/*.{ts,js,css,json}",
+        "{app,pages}/**/*.{mdx,md}",
+        "*.{md,mdx,json,ts,tsx,mjs,yml}"
+      ]
+    },
+    "test:storybook:local": {
+      "inputs": [
+        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx,mjs}",
         "{app,components,layouts,pages,styles}/**/*.{css,sass,scss}",
         "{next-data,scripts,i18n}/**/*.{mjs,json}",
         "{.storybook,public}/**/*.{ts,js,css,json}",
@@ -182,13 +193,14 @@
     },
     "test": {
       "inputs": [
-        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
+        "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx,mjs}",
         "{app,components,layouts,pages,styles}/**/*.{css,sass,scss}",
         "{next-data,scripts,i18n}/**/*.{mjs,json}",
         "{.storybook,public}/**/*.{ts,js,css,json}",
         "{app,pages}/**/*.{mdx,md}",
         "*.{md,mdx,json,ts,tsx,mjs,yml}"
-      ]
+      ],
+      "outputs": ["coverage/**", "junit.xml"]
     }
   }
 }

@@ -1,42 +1,9 @@
 version: 2
 updates:
-  - package-ecosystem: github-actions
+  # Enable version updates for npm
+  - package-ecosystem: 'npm'
+    # Look for `package.json` and `lock` files in the `root` directory
     directory: '/'
+    # Check the npm registry for updates every day (weekdays)
     schedule:
-      interval: monthly
-    open-pull-requests-limit: 10
-  - package-ecosystem: npm
-    directory: /
-    schedule:
-      interval: monthly
-    commit-message:
-      prefix: meta
-    groups:
-      storybook:
-        patterns:
-          - 'storybook'
-          - '@storybook/*'
-      testing-library:
-        patterns:
-          - '@testing-library/*'
-          - '@types/testing-library*'
-      next-js:
-        patterns:
-          - 'next'
-          - 'turbo'
-          - 'next-mdx-remote'
-          - 'next-sitemap'
-          - 'next-themes'
-          - '@vercel/*'
-      remark-mdx:
-        patterns:
-          - '@vcarl/remark-headings'
-          - 'remark-gfm'
-          - '@mdx-js/*'
-      react:
-        patterns:
-          - 'react'
-          - 'react-dom'
-          - '@types/react'
-          - '@types/react-dom'
-    open-pull-requests-limit: 10
+      interval: 'daily'

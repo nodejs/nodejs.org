@@ -14,7 +14,6 @@
     > button {
       background: none;
       border: none;
-
       color: var(--color-text-primary);
       cursor: pointer;
       font-size: var(--font-size-body1);
@@ -26,5 +25,19 @@
         background-color: var(--color-dropdown-hover);
       }
     }
+  }
+
+  &::-webkit-scrollbar {
+    width: var(--space-06);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-text-secondary);
+    border: transparent;
+    border-radius: 20px;
   }
 }
