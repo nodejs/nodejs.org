@@ -49,7 +49,7 @@ jobs:
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--filter
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-        run: echo "turbo_args=--filter=\"...[${{ github.event.pull_request.base.sha }}]\" --cache-dir=.turbo" >> "$GITHUB_OUTPUT"
+        run: echo "turbo_args=--filter=\"...[${{ github.event.pull_request.base.sha }}]\" --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
 
   lint:
     name: Lint
@@ -62,8 +62,6 @@ jobs:
         with:
           # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
           fetch-depth: ${{ needs.base.outputs.fetch_depth }}
-          # Since we use the `pull_request_target` event we want to checkout the current ref as by default this
-          # command will checkout `main` instead of the current pull_request ref
           # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
           ref: ${{ github.event.pull_request.head.sha }}
 
@@ -71,12 +69,12 @@ jobs:
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
-            .turbo
+            .turbo/cache
             node_modules/.cache
           # We want to restore Turborepo Cache and ESlint and Prettier Cache
-          key: cache-lint-${{ hashFiles('package-lock.json') }}
+          key: cache-lint-${{ hashFiles('package-lock.json') }}-
           restore-keys: |
-            cache-lint-${{ hashFiles('package-lock.json') }}
+            cache-lint-${{ hashFiles('package-lock.json') }}-
             cache-lint-
 
       - name: Set up Node.js
@@ -105,9 +103,9 @@ jobs:
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
-            .turbo
+            .turbo/cache
             node_modules/.cache
-          key: cache-lint-${{ hashFiles('package-lock.json') }}
+          key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.turbo/cache/**') }}
 
   tests:
     name: Tests
@@ -129,12 +127,12 @@ jobs:
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
-            .turbo
+            .turbo/cache
             node_modules/.cache
           # We want to restore Turborepo Cache and Storybook Cache
-          key: cache-tests-${{ hashFiles('package-lock.json') }}
+          key: cache-tests-${{ hashFiles('package-lock.json') }}-
           restore-keys: |
-            cache-tests-${{ hashFiles('package-lock.json') }}
+            cache-tests-${{ hashFiles('package-lock.json') }}-
             cache-tests-
 
       - name: Set up Node.js
@@ -172,6 +170,6 @@ jobs:
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
-            .turbo
+            .turbo/cache
             node_modules/.cache
-          key: cache-tests-${{ hashFiles('package-lock.json') }}
+          key: cache-tests-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.turbo/cache/**') }}

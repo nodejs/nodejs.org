@@ -36,7 +36,7 @@ jobs:
         # We also set the Turborepo Cache to the `.turbo` folder
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-        run: echo "turbo_args=--force=true --cache-dir=.turbo" >> "$GITHUB_OUTPUT"
+        run: echo "turbo_args=--force=true --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
 
   build:
     name: Build on ${{ matrix.os }}
@@ -54,9 +54,10 @@ jobs:
         with:
           # We only need to fetch the last commit from the head_ref
           # since we're not using the `--filter` operation from turborepo
+          # We don't use the `--filter` as we always want to force builds regardless of having changes or not
+          # this ensures that our bundle analysis script always runs and that we always ensure next.js is building
+          # regardless of having code changes or not
           fetch-depth: 1
-          # Since we use the `pull_request_target` event we want to checkout the current ref as by default this
-          # command will checkout `main` instead of the current pull_request ref
           # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
           ref: ${{ github.event.pull_request.head.sha }}
 
@@ -64,7 +65,7 @@ jobs:
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
-            .turbo
+            .turbo/cache
             .next/cache
             node_modules/.cache
           # We want to restore cache from local .npm caches, .next/cache and node_modules/.cache
@@ -116,7 +117,7 @@ jobs:
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
-            .turbo
+            .turbo/cache
             .next/cache
             node_modules/.cache
           # Most of sibling Pull Requests will use the cache key based on the package-lock.json
