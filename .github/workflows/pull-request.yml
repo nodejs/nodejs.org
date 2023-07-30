@@ -92,12 +92,12 @@ jobs:
       - name: Run `turbo lint`
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npm exec --package=turbo@latest -- turbo lint ${{ needs.base.outputs.turbo_args }}
+        run: npx --package=turbo@latest -- turbo lint ${{ needs.base.outputs.turbo_args }}
 
       - name: Run `turbo prettier`
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npm exec --package=turbo@latest -- turbo prettier ${{ needs.base.outputs.turbo_args }}
+        run: npx --package=turbo@latest -- turbo prettier ${{ needs.base.outputs.turbo_args }}
 
       - name: Save Lint Cache
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
@@ -150,7 +150,7 @@ jobs:
       - name: Run Unit Tests
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npm exec --package=turbo@latest -- turbo test:unit ${{ needs.base.outputs.turbo_args }} -- --ci --coverage
+        run: npx --package=turbo@latest -- turbo test:unit ${{ needs.base.outputs.turbo_args }} -- --ci --coverage
 
       - name: Jest Coverage Comment
         # This comments the current Jest Coverage Report containing JUnit XML reports
@@ -164,7 +164,7 @@ jobs:
       - name: Run Storybook Tests
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npm exec --package=turbo@latest -- turbo test:storybook:local ${{ needs.base.outputs.turbo_args }} -- --ci
+        run: npx --package=turbo@latest -- turbo test:storybook:local ${{ needs.base.outputs.turbo_args }} -- --ci
 
       - name: Save Tests Cache
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8

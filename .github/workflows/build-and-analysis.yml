@@ -91,7 +91,7 @@ jobs:
       - name: Build Next.js
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npm exec --package=turbo@latest -- turbo build ${{ needs.base.outputs.turbo_args }}
+        run: npx --package=turbo@latest -- turbo build ${{ needs.base.outputs.turbo_args }}
         env:
           # We want to ensure we have enough RAM allocated to the Node.js process
           # this should be a last resort in case by any chances the build memory gets too high
@@ -104,7 +104,7 @@ jobs:
       - name: Analyse Build
         # We generate a Bundle Analysis Report
         # See https://github.com/hashicorp/nextjs-bundle-analysis
-        run: npm exec --package=nextjs-bundle-analysis@0.5.0 report
+        run: npx --package=nextjs-bundle-analysis@0.5.0 report
 
       - name: Upload Build Analysis
         # We upload the Bundle Analysis Artifact to be used on the next step
