@@ -20,7 +20,9 @@ env:
   # This is explicitly used on the `npx turbo` commands
   TURBO_REF_FILTER: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
   # This is the amount of commits we should fetch
-  GIT_FETCH_DEPTH: ${{ github.event.pull_request.commits }} + 1
+  GIT_FETCH_DEPTH: ${{ github.event_name == 'pull_request' && github.event.pull_request.commits + 1 || 1 }}
+  # Reference to Checkout SHA
+  GIT_FETCH_REF: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || '' }}
 
 jobs:
   lint:
@@ -34,7 +36,7 @@ jobs:
           # Get enough fetch-depth so that `turbo --filter` works correctly
           fetch-depth: ${{ env.GIT_FETCH_DEPTH }}
           # Since we use `pull_request_target` we want to checkout the current ref
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ env.GIT_FETCH_REF }}
 
       - name: Restore Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
@@ -79,7 +81,7 @@ jobs:
           # Get enough fetch-depth so that `turbo --filter` works correctly
           fetch-depth: ${{ env.GIT_FETCH_DEPTH }}
           # Since we use `pull_request_target` we want to checkout the current ref
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ env.GIT_FETCH_REF }}
 
       - name: Restore Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
