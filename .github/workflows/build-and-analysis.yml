@@ -94,8 +94,10 @@ jobs:
           # command will checkout `main` instead of the current pull_request ref
           # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
           ref: ${{ github.event.pull_request.head.sha }}
+          # We do not want to cleanup after already checking out base branch
+          clean: false
 
-      - name: Install NPM packages (`base_ref`)
+      - name: Install NPM packages (`head_sha`)
         # We want to ignore-scripts from code checked out from the user as it might be dangerous
         run: npm i --no-audit --no-fund --ignore-scripts --userconfig=/dev/null
 
