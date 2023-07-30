@@ -19,6 +19,7 @@ updates:
         patterns:
           - 'storybook'
           - '@storybook/*'
+          - 'eslint-plugin-storybook'
       testing-library:
         patterns:
           - '@testing-library/*'
