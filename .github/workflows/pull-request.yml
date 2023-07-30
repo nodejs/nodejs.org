@@ -108,13 +108,6 @@ jobs:
         # We want to ignore-scripts from code checked out from the user as it might be dangerous
         run: npm i --no-audit --no-fund --ignore-scripts --userconfig=/dev/null
 
-      - name: Ensure Turborepo is installed
-        # This removes any attempt of local hijack of the Turbo binary and forces an install of Turborepo on
-        # the current NPM scope without being added to `package.json`
-        run: |
-          rm -rf node_modules/bin/turbo
-          npm i --no-audit --no-fund --no-save turbo@latest
-
       - name: Run `turbo lint`
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
