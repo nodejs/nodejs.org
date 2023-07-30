@@ -1,7 +1,12 @@
 name: Pull Request Checks
 
 on:
-  pull_request:
+  push:
+    branches:
+      - main
+  pull_request_target:
+    branches:
+      - main
   workflow_dispatch:
 
 defaults:
