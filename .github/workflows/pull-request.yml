@@ -19,6 +19,8 @@ permissions:
 env:
   # This is explicitly used on the `npx turbo` commands
   TURBO_REF_FILTER: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+  # This is the amount of commits we should fetch
+  GIT_FETCH_DEPTH: ${{ github.event.pull_request.commits }} + 1
 
 jobs:
   lint:
@@ -29,8 +31,8 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Get the whole git history so that Turborepo `--filter` works correctly
-          fetch-depth: 0
+          # Get enough fetch-depth so that `turbo --filter` works correctly
+          fetch-depth: ${{ env.GIT_FETCH_DEPTH }}
           # Since we use `pull_request_target` we want to checkout the current ref
           ref: ${{ github.event.pull_request.head.sha }}
 
@@ -74,8 +76,8 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Get the whole git history so that Turborepo `--filter` works correctly
-          fetch-depth: 0
+          # Get enough fetch-depth so that `turbo --filter` works correctly
+          fetch-depth: ${{ env.GIT_FETCH_DEPTH }}
           # Since we use `pull_request_target` we want to checkout the current ref
           ref: ${{ github.event.pull_request.head.sha }}
 
