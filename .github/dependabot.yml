@@ -21,6 +21,8 @@ updates:
           - 'eslint'
           - 'eslint-*'
           - 'stylelint'
+        exclude-patterns:
+          - 'eslint-plugin-storybook'
       storybook:
         patterns:
           - 'storybook'
