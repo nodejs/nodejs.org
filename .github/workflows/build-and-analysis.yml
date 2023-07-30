@@ -22,10 +22,6 @@ permissions:
 env:
   # This is explicitly used on the `npx turbo` commands
   TURBO_REF_FILTER: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
-  # This is implicitly used by `npx turbo` itself
-  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-  # This is implicitly used by `npx turbo` itself and `zentered/vercel-preview-url`
-  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
 jobs:
   build:
@@ -71,7 +67,7 @@ jobs:
         run: npm ci --no-audit --no-fund --omit=dev
 
       - name: Build Next.js
-        run: npx turbo build
+        run: npx turbo build --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}"
         env:
           TURBO_FORCE: true
           NODE_OPTIONS: '--max_old_space_size=4096'
