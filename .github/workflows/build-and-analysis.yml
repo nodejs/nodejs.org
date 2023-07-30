@@ -136,7 +136,7 @@ jobs:
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
           # We only need to fetch the latest commit of the `base_ref` here for the analysis steps
-          fetch_depth: 1
+          fetch-depth: 1
           # For this step we don't need to checkout on the userland codebase
           # As we can simply checkout on the latest commit of the `base_ref` for the analysis steps
           ref: ${{ github.event.pull_request.base.ref }}
