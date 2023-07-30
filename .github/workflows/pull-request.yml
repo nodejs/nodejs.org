@@ -1,13 +1,16 @@
 name: Pull Request Checks
 
 on:
+  # This trigger ensures that the GitHub Action Workflow metadata that is fetched comes from the `main` branch
+  # This is important to disallow this Workflow from being modified in forks and PRs
+  # See https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request_target
   pull_request_target:
     branches:
       - main
-  workflow_dispatch:
 
 defaults:
   run:
+    # This ensures that the working directory is the root of the repository
     working-directory: ./
 
 permissions:
@@ -16,22 +19,49 @@ permissions:
   # This permission is required by `MishaKav/jest-coverage-comment`
   pull-requests: write
 
+env:
+  # `--filter` flag allows us to tell TurboRepo to only run a said command if there were any changes found in a given --filter range
+  # It verifies if any change was done to any of the including `glob` patterns described for a siad command on `turbo.json`
+  # By default in this Workflow we use the `...[$TURBO_REF_FILTER]` as a value to the filter flag which tells Turborepo to look changes
+  # between the latest base branch commit and all the commits of this PR; That's why we use the `pull_request.base.sha` as a ref to the last
+  # commit on the base branch that this pull_request refers to.
+  TURBO_REF_FILTER: ${{ github.event.pull_request.base.sha }}
+  # We pass the `--team` and `--token` flags to the TurboRepo CLI so that it can retrieve remote Tuborepoe's cache that include optimised cache
+  # For specific commands (provided within each `turbo.json` -> `outputs`) and extra layer of cache that Turborepo defines
+  # See https://turbo.build/repo/docs/reference/command-line-reference/run#--team
+  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+  # See https://turbo.build/repo/docs/reference/command-line-reference/run#--token
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+
 jobs:
-  lint:
-    name: Lint
+  base:
+    name: Base Tasks
     runs-on: ubuntu-latest
 
     steps:
       - name: Calculate Commits to Checkout
-        # This is the amount of commits we should fetch
-        run: echo "GIT_FETCH_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "${GITHUB_ENV}"
+        id: calculate_current_commits
+        # This calculates the amount of commits we should fetch during our shallow clone
+        # This calculates the amount of commits this PR produced diverged from the base branch + 1
+        # Which should include the "merge" commit reference
+        # In other words, the GitHub Action will always have the full history of the current PR
+        # We need all the commits of the PR so that `turbo --filter` works correctly
+        run: echo "fetch_depth=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "$GITHUB_OUTPUT"
 
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    needs: base
+
+    steps:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Get enough fetch-depth so that `turbo --filter` works correctly
-          fetch-depth: ${{ env.GIT_FETCH_DEPTH }}
-          # Since we use `pull_request_target` we want to checkout the current ref
+          # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
+          fetch-depth: ${{ jobs.base.steps.calculate_current_commits.outputs.fetch_depth }}
+          # Since we use the `pull_request_target` event we want to checkout the current ref as by default this
+          # command will checkout `main` instead of the current pull_request ref
+          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
           ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Restore Cache
@@ -41,6 +71,8 @@ jobs:
             ~/.npm
             .next/cache
             node_modules/.cache
+          # We want to restore cache from local .npm caches, .next/cache and node_modules/.cache
+          # As this should reduce build times, and the overall time for installing packages or running operations
           key: cache-${{ hashFiles('package-lock.json') }}-
           restore-keys: |
             cache-${{ hashFiles('package-lock.json') }}-
@@ -49,38 +81,35 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8
         with:
+          # We want to ensure that the Node.js version running here respects our supported versions
           node-version-file: '.nvmrc'
           cache: 'npm'
 
       - name: Install NPM packages
-        run: npm ci --no-audit --no-fund
+        # We want to avoid NPM from running the Audit Step and Funding messages on a CI environment
+        # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
+        run: npm i --no-audit --no-fund
 
       - name: Run Linting
-        run: npx turbo lint --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}"
+        run: npx turbo lint --filter="...[$TURBO_REF_FILTER]"
 
       - name: Run Prettier
-        run: npx turbo prettier --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}"
+        run: npx turbo prettier --filter="...[$TURBO_REF_FILTER]"
 
   tests:
     name: Tests
     runs-on: ubuntu-latest
+    needs: base
 
     steps:
-      - name: Use GNU tar instead BSD tar
-        if: matrix.os == 'windows-latest'
-        shell: cmd
-        run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
-
-      - name: Calculate Commits to Checkout
-        # This is the amount of commits we should fetch
-        run: echo "GIT_FETCH_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "${GITHUB_ENV}"
-
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Get enough fetch-depth so that `turbo --filter` works correctly
-          fetch-depth: ${{ env.GIT_FETCH_DEPTH }}
-          # Since we use `pull_request_target` we want to checkout the current ref
+          # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
+          fetch-depth: ${{ jobs.base.steps.calculate_current_commits.outputs.fetch_depth }}
+          # Since we use the `pull_request_target` event we want to checkout the current ref as by default this
+          # command will checkout `main` instead of the current pull_request ref
+          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
           ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Restore Cache
@@ -90,6 +119,8 @@ jobs:
             ~/.npm
             .next/cache
             node_modules/.cache
+          # We want to restore cache from local .npm caches, .next/cache and node_modules/.cache
+          # As this should reduce build times, and the overall time for installing packages or running operations
           key: cache-${{ hashFiles('package-lock.json') }}-
           restore-keys: |
             cache-${{ hashFiles('package-lock.json') }}-
@@ -98,16 +129,21 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8
         with:
+          # We want to ensure that the Node.js version running here respects our supported versions
           node-version-file: '.nvmrc'
           cache: 'npm'
 
       - name: Install NPM packages
-        run: npm ci --no-audit --no-fund
+        # We want to avoid NPM from running the Audit Step and Funding messages on a CI environment
+        # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
+        run: npm i --no-audit --no-fund
 
       - name: Run Unit Tests
-        run: npx turbo test:unit --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}" -- --ci --coverage
+        run: npx turbo test:unit --filter="...[$TURBO_REF_FILTER]" -- --ci --coverage
 
       - name: Jest Coverage Comment
+        # This comments the current Jest Coverage Report containing JUnit XML reports
+        # and a Code Coverage Summary
         uses: MishaKav/jest-coverage-comment@41b5ca01d1250de84537448d248b8d18152cb277
         with:
           title: 'Unit Test Coverage Report'
@@ -115,4 +151,4 @@ jobs:
           junitxml-title: Unit Test Report
 
       - name: Run Storybook Tests
-        run: npx turbo test:storybook:local --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}" -- --ci
+        run: npx turbo test:storybook:local --filter="...[$TURBO_REF_FILTER]" -- --ci
