@@ -56,10 +56,10 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: Run Linting
-        run: npx turbo lint --filter="[HEAD~...HEAD]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}"
+        run: npx turbo lint --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}"
 
       - name: Run Prettier
-        run: npx turbo prettier --filter="[HEAD~...HEAD]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}"
+        run: npx turbo prettier --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}"
 
   tests:
     name: Tests
@@ -105,7 +105,7 @@ jobs:
         run: npm ci --no-audit --no-fund
 
       - name: Run Unit Tests
-        run: npx turbo test:unit --filter="[HEAD~...HEAD]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}" -- --ci --coverage
+        run: npx turbo test:unit --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}" -- --ci --coverage
 
       - name: Jest Coverage Comment
         uses: MishaKav/jest-coverage-comment@41b5ca01d1250de84537448d248b8d18152cb277
@@ -124,6 +124,6 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.TURBO_TOKEN }}
 
       - name: Run Storybook Tests
-        run: npx turbo test:storybook --filter="[HEAD~...HEAD]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}" -- --ci
+        run: npx turbo test:storybook --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}" -- --ci
         env:
           TARGET_URL: 'https://${{ steps.vercel_storybook_preview_url.outputs.preview_url }}'
