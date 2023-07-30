@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@nodevu/core": "~0.1.0",
-    "@types/node": "18.16.19",
+    "@types/node": "20.4.5",
     "@vcarl/remark-headings": "~0.1.0",
     "@vercel/analytics": "^1.0.1",
     "classnames": "~2.3.2",
