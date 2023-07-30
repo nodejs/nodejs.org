@@ -22,8 +22,6 @@ permissions:
 env:
   # This is explicitly used on the `npx turbo` commands
   TURBO_REF_FILTER: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.base.sha || github.event.before }}
-  # This is the amount of commits we should fetch
-  GIT_FETCH_DEPTH: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.commits || 1 }}
   # Reference to Checkout SHA
   GIT_FETCH_REF: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.sha || '' }}
 
@@ -42,6 +40,10 @@ jobs:
         if: matrix.os == 'windows-latest'
         shell: cmd
         run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
+
+      - name: 'Calculate Commits to Checkout'
+        # This is the amount of commits we should fetch
+        run: echo "GIT_FETCH_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "${GITHUB_ENV}"
 
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
@@ -103,6 +105,10 @@ jobs:
     needs: [build]
 
     steps:
+      - name: 'Calculate Commits to Checkout'
+        # This is the amount of commits we should fetch
+        run: echo "GIT_FETCH_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "${GITHUB_ENV}"
+
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
