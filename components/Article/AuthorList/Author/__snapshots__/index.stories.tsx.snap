@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Article/AuthorList/Author Default smoke-test 1`] = `
-<a href="https://github.com/nodejs"
-   aria-label="nodejs Github - opens in new tab"
+<a aria-label="nodejs Github - opens in new tab"
    target="_blank"
    rel="noopener noreferrer"
 >
@@ -13,15 +12,13 @@ exports[`Article/AuthorList/Author Default smoke-test 1`] = `
        decoding="async"
        data-nimg="1"
        srcset="https://github.com/nodejs.png?size=60?w=64&amp;q=75 1x, https://github.com/nodejs.png?size=60?w=128&amp;q=75 2x"
-       src="https://github.com/nodejs.png?size=60?w=128&amp;q=75"
        style="color: transparent;"
   >
 </a>
 `;
 
 exports[`Article/AuthorList/Author WithourUsername smoke-test 1`] = `
-<a href="https://github.com/"
-   aria-label=" Github - opens in new tab"
+<a aria-label=" Github - opens in new tab"
    target="_blank"
    rel="noopener noreferrer"
 >
@@ -32,7 +29,6 @@ exports[`Article/AuthorList/Author WithourUsername smoke-test 1`] = `
        decoding="async"
        data-nimg="1"
        srcset="/static/images/placeholder-img.png?w=16&amp;q=75 1x"
-       src="http://127.0.0.1:6006/static/images/placeholder-img.png?w=16&amp;q=75"
        style
   >
 </a>

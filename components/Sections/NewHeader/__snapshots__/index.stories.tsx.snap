@@ -4,9 +4,7 @@ exports[`Sections/NewHeader Default smoke-test 1`] = `
 <nav aria-label="Primary">
   <div>
     <div>
-      <a aria-label="Homepage"
-         href="/en"
-      >
+      <a aria-label="Homepage">
         <div>
           <div>
             <img alt="light-logo"
@@ -16,7 +14,6 @@ exports[`Sections/NewHeader Default smoke-test 1`] = `
                  decoding="async"
                  data-nimg="1"
                  srcset="static/images/logo-light.svg?w=128&amp;q=75 1x, static/images/logo-light.svg?w=256&amp;q=75 2x"
-                 src="static/images/logo-light.svg?w=256&amp;q=75"
                  style="color: transparent;"
             >
           </div>
@@ -28,7 +25,6 @@ exports[`Sections/NewHeader Default smoke-test 1`] = `
                  decoding="async"
                  data-nimg="1"
                  srcset="static/images/logo.svg?w=128&amp;q=75 1x, static/images/logo.svg?w=256&amp;q=75 2x"
-                 src="static/images/logo.svg?w=256&amp;q=75"
                  style="color: transparent;"
             >
           </div>
@@ -37,27 +33,27 @@ exports[`Sections/NewHeader Default smoke-test 1`] = `
     </div>
     <ul>
       <li>
-        <a href="/en/learn">
+        <a>
           Learn
         </a>
       </li>
       <li>
-        <a href="/en/download">
+        <a>
           Downloads
         </a>
       </li>
       <li>
-        <a href="/en/docs">
+        <a>
           API Docs
         </a>
       </li>
       <li>
-        <a href="/en/about">
+        <a>
           About
         </a>
       </li>
       <li>
-        <a href="https://openjsf.org/certification/">
+        <a>
           Certification
         </a>
       </li>
@@ -260,7 +256,6 @@ exports[`Sections/NewHeader Default smoke-test 1`] = `
         </li>
         <li>
           <a target="_blank"
-             href="https://github.com/nodejs/nodejs.org"
              rel="noopener noreferrer"
              aria-label="Nodejs.org Github Page (opens in new tab)"
           >
