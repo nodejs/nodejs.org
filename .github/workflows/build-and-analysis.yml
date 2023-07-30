@@ -44,6 +44,8 @@ jobs:
         with:
           # Get the whole git history so that Turborepo `--filter` works correctly
           fetch-depth: 0
+          # Since we use `pull_request_target` we want to checkout the current ref
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Restore Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
