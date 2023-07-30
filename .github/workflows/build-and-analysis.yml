@@ -49,6 +49,12 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 
     steps:
+      - name: Use GNU tar instead BSD tar
+        # This ensures that we use GNU `tar` which is more efficient for extracting caches's
+        if: matrix.os == 'windows-latest'
+        shell: cmd
+        run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
+
       - name: Git Checkout (`head_sha`)
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
@@ -102,11 +108,13 @@ jobs:
           NEXT_TELEMETRY_DISABLED: 1
 
       - name: Analyse Build
+        if: matrix.os == 'ubuntu-latest'
         # We generate a Bundle Analysis Report
         # See https://github.com/hashicorp/nextjs-bundle-analysis
         run: npx --package=nextjs-bundle-analysis@0.5.0 report
 
       - name: Upload Build Analysis
+        if: matrix.os == 'ubuntu-latest'
         # We upload the Bundle Analysis Artifact to be used on the next step
         uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
         with:
