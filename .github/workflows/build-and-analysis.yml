@@ -22,8 +22,6 @@ permissions:
   actions: read
   # This permission is required by `peter-evans/create-or-update-comment`
   pull-requests: write
-  # This permission is required by `peter-evans/create-or-update-comment`
-  issues: write
 
 jobs:
   base:
