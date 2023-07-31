@@ -24,6 +24,11 @@ const redirects = async () => [
     permanent: true,
   },
   {
+    source: '/en/about/releases',
+    destination: 'https://github.com/nodejs/release#release-schedule',
+    permanent: true,
+  },
+  {
     source: '/about/security',
     destination:
       'https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security',
