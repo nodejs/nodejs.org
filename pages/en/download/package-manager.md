@@ -30,8 +30,8 @@ title: Installing Node.js via package manager
 * [Snap](#snap)
 * [Solus](#solus)
 * [Void Linux](#void-linux)
-* [Windows](#windows-1)
-* [z/OS](#zos)
+* [Windows](#windows)
+* [z/OS](#z/os)
 
 ---
 
@@ -69,7 +69,7 @@ Node.js and npm packages are available in the Community Repository.
 pacman -S nodejs npm
 ```
 
-## CentOS, Fedora and Red Hat Enterprise Linux
+## CentOS Fedora and Red Hat Enterprise Linux
 
 Node.js is available as a module called `nodejs` in CentOS/RHEL 8 and Fedora.
 
