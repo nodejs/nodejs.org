@@ -4,8 +4,13 @@
   "version": "1.0.0",
   "description": "Nodejs.org Website",
   "homepage": "https://nodejs.org",
-  "repository": "https://github.com/nodejs/nodejs.org",
-  "author": "Node.js Website Working Group",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodejs/nodejs.org.git"
+  },
+  "author": {
+    "name": "Node.js Website Working Group"
+  },
   "license": "MIT",
   "engines": {
     "node": "v18"
@@ -89,6 +94,7 @@
     "@types/testing-library__jest-dom": "5.14.9",
     "@typescript-eslint/eslint-plugin": "5.61.0",
     "@typescript-eslint/parser": "5.61.0",
+    "chromatic": "^6.20.0",
     "concurrently": "8.2.0",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
@@ -110,5 +116,10 @@
     "stylelint-selector-bem-pattern": "3.0.0",
     "user-agent-data-types": "0.3.1",
     "wait-on": "7.0.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/nodejs/nodejs.org/issues"
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "nodejs.org@1.0.0"
 }
