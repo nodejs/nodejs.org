@@ -159,12 +159,10 @@ const rewrites = async () => ({
       source: '/about',
       destination: '/en/about',
     },
-
     {
       source: '/about/trademark',
       destination: '/en/about/trademark',
     },
-
     {
       source: '/blog/:path*',
       destination: '/en/blog/:path*',
