@@ -47,7 +47,7 @@ jobs:
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--filter
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-        run: echo "turbo_args=--filter=\"[HEAD~${{ steps.calculate_current_commits.outputs.fetch_depth }}...HEAD]\" --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
+        run: echo "turbo_args=--filter=\"[HEAD~${{ github.event.pull_request.commits }}...HEAD]\" --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
 
   lint:
     name: Lint
