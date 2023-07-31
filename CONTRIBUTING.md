@@ -147,10 +147,6 @@ This repository contains several scripts and commands for performing numerous ta
 - `npx turbo storybook:build` builds Storybook as a static web application for publishing
 - `npx turbo test` runs all tests locally
   - `npx turbo test:unit` runs jest (unit-tests) locally
-  - `npx turbo test:storybook` runs storybook test-runner tests
-    - `npx turbo test:storybook:local` runs storybook test-runner tests with local storybook
-    - `npx turbo test:storybook:watch` keeps running storybook test-runner locally on every story change
-    - `npx turbo test:storybook:snapshot` generates and updates snapshots for all storybook components.
 
 </details>
 

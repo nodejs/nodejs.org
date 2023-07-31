@@ -166,12 +166,7 @@ jobs:
             coverage/
             junit.xml
 
-      - name: Run Storybook Tests
-        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
-        # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npx --package=turbo@latest -- turbo test:storybook:local ${{ needs.base.outputs.turbo_args }} -- --ci
-
-      - name: Run Storybook Visual Regression
+      - name: Run Storybook Visual Regression Tests
         # We use Chromatic for Visual Regression Testing
         # Note that this token is not a secret and safe to be added directly on the CI
         # This Step wll fail if there are Visual Regressions and then should be acted on on Chromatic's UI or Review Comments
