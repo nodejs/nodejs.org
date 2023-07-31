@@ -79,11 +79,19 @@ jobs:
           # As we can simply checkout on the latest commit of the `base_ref` for the analysis steps
           ref: ${{ github.event.pull_request.base.ref }}
 
-      - name: Wait for Build to Finish
+      - name: Wait for Linux Build to Finish
         uses: lewagon/wait-on-check-action@e106e5c43e8ca1edea6383a39a01c5ca495fd812
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           check-name: 'Build on ubuntu-latest'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 30
+
+      - name: Wait for Windows Build to Finish
+        uses: lewagon/wait-on-check-action@e106e5c43e8ca1edea6383a39a01c5ca495fd812
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          check-name: 'Build on windows-latest'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 30
 

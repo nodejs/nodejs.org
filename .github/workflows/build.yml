@@ -4,7 +4,7 @@
 # REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
 # AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
 
-name: Build and Analysis Checks
+name: Build Checks
 
 on:
   push:
@@ -106,13 +106,11 @@ jobs:
           NEXT_TELEMETRY_DISABLED: 1
 
       - name: Analyse Build
-        if: matrix.os == 'ubuntu-latest'
         # We generate a Bundle Analysis Report
         # See https://github.com/hashicorp/nextjs-bundle-analysis
         run: npx --package=nextjs-bundle-analysis@0.5.0 report
 
       - name: Upload Build Analysis
-        if: matrix.os == 'ubuntu-latest'
         # We upload the Bundle Analysis Artifact so it can be used on another Workflow
         uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
         with:
