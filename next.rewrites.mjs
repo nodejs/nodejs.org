@@ -4,6 +4,8 @@
 const rewrites = async () => ({
   // These are redirects that happen before we check dynamic routes and after we check regular redirects
   // These should be used either for internal or external rewrite rules (like NGINX, for example)
+  // These are sourced originally from https://github.com/nodejs/build/blob/main/ansible/www-standalone/resources/config/nodejs.org?plain=1
+  // and were then converted to Next.js rewrites. Note that only relevant rewrites were added and some were modified to match Next.js's syntax
   afterFiles: [
     {
       source: '/index.html',
