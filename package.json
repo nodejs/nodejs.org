@@ -111,10 +111,5 @@
     "stylelint-selector-bem-pattern": "3.0.0",
     "user-agent-data-types": "0.3.1",
     "wait-on": "7.0.1"
-  },
-  "bugs": {
-    "url": "https://github.com/nodejs/nodejs.org/issues"
-  },
-  "readme": "ERROR: No README data found!",
-  "_id": "nodejs.org@1.0.0"
+  }
 }
