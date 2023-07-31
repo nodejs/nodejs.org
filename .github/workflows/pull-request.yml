@@ -19,6 +19,8 @@ permissions:
   actions: read
   # This permission is required by `MishaKav/jest-coverage-comment`
   pull-requests: write
+  # This permission is required by `MishaKav/jest-coverage-comment`
+  issues: write
 
 jobs:
   base:
