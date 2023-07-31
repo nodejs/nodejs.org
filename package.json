@@ -62,7 +62,7 @@
     "remark-gfm": "~3.0.1",
     "semver": "~7.5.4",
     "sharp": "0.32.1",
-    "turbo": "^1.10.7",
+    "turbo": "^1.10.12",
     "typescript": "~5.1.6"
   },
   "peerDependencies": {
