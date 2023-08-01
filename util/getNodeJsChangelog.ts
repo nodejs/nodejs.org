@@ -1,3 +1,5 @@
+// ignoring concern for missing versions here - as the data flow from Node.js releases is rigid and we can make assumptions here
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import semVer from 'semver';
 
 /**

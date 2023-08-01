@@ -10,9 +10,10 @@
     {
       "files": ["**/*.ts?(x)"],
       "plugins": ["@typescript-eslint", "no-relative-import-paths"],
+      "extends": ["plugin:@typescript-eslint/recommended"],
+      "parser": "@typescript-eslint/parser",
       "rules": {
         "@typescript-eslint/consistent-type-imports": "error",
-        "@typescript-eslint/no-unused-vars": "error",
         "no-relative-import-paths/no-relative-import-paths": [
           "warn",
           {

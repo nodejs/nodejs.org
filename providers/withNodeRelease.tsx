@@ -20,7 +20,7 @@ export const WithNodeRelease: FC<WithNodeReleaseProps> = ({
     [status, getReleaseByStatus]
   );
 
-  if (isNodeRelease(release)) {
+  if (release !== undefined && isNodeRelease(release)) {
     return <Component release={release} />;
   }
 

@@ -4,7 +4,7 @@ import type {
   NodeReleaseSupport,
 } from '@/types/releases';
 
-export const isNodeRelease = (release: any): release is NodeRelease =>
+export const isNodeRelease = (release: NodeRelease) =>
   typeof release === 'object' && release?.version;
 
 export const getNodeReleaseStatus = (
