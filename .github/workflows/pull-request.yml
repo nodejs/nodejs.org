@@ -35,7 +35,12 @@ jobs:
         # Which should include the "merge" commit reference
         # In other words, the GitHub Action will always have the full history of the current PR
         # We need all the commits of the PR so that `turbo --filter` works correctly
-        run: echo "fetch_depth=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "$GITHUB_OUTPUT"
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            echo "fetch_depth=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "$GITHUB_OUTPUT"
+          else
+            echo "fetch_depth=1" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Provide Turborepo Arguments
         id: turborepo_arguments
@@ -48,7 +53,12 @@ jobs:
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--filter
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-        run: echo "turbo_args=--filter=\"[HEAD~${{ github.event.pull_request.commits }}...HEAD]\" --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            echo "turbo_args=--filter=\"[HEAD~${{ github.event.pull_request.commits }}...HEAD]\" --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
+          else
+            echo "turbo_args=--cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
+          fi
 
   lint:
     name: Lint
