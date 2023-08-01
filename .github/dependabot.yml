@@ -15,10 +15,19 @@ updates:
     commit-message:
       prefix: meta
     groups:
+      lint:
+        patterns:
+          - '@typescript-eslint/*'
+          - 'eslint'
+          - 'eslint-*'
+          - 'stylelint'
+        exclude-patterns:
+          - 'eslint-plugin-storybook'
       storybook:
         patterns:
           - 'storybook'
           - '@storybook/*'
+          - 'eslint-plugin-storybook'
       testing-library:
         patterns:
           - '@testing-library/*'

@@ -1,0 +1,131 @@
+# Security Notes
+# Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
+# for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
+# REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
+# AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
+
+name: Build Checks
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+defaults:
+  run:
+    # This ensures that the working directory is the root of the repository
+    working-directory: ./
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  base:
+    name: Base Tasks
+    runs-on: ubuntu-latest
+    outputs:
+      turbo_args: ${{ steps.turborepo_arguments.outputs.turbo_args }}
+
+    steps:
+      - name: Provide Turborepo Arguments
+        id: turborepo_arguments
+        # We also set the Turborepo Cache to the `.turbo` folder
+        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
+        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
+        run: echo "turbo_args=--force=true --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
+
+  build:
+    name: Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    needs: [base]
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      - name: Use GNU tar instead BSD tar
+        # This ensures that we use GNU `tar` which is more efficient for extracting caches's
+        if: matrix.os == 'windows-latest'
+        shell: cmd
+        run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
+
+      - name: Git Checkout (`head_sha`)
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        with:
+          # We only need to fetch the last commit from the head_ref
+          # since we're not using the `--filter` operation from turborepo
+          # We don't use the `--filter` as we always want to force builds regardless of having changes or not
+          # this ensures that our bundle analysis script always runs and that we always ensure next.js is building
+          # regardless of having code changes or not
+          fetch-depth: 1
+          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Restore Build Cache
+        uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
+        with:
+          path: |
+            .turbo/cache
+            .next/cache
+            node_modules/.cache
+          # We want to restore cache from local .npm caches, .next/cache and node_modules/.cache
+          # As this should reduce build times, and the overall time for installing packages or running operations
+          key: cache-build-${{ hashFiles('package-lock.json') }}-
+          restore-keys: |
+            cache-build-${{ hashFiles('package-lock.json') }}-
+            cache-build-
+
+      - name: Set up Node.js
+        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8
+        with:
+          # We want to ensure that the Node.js version running here respects our supported versions
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install NPM packages (`head_sha`)
+        # We want to avoid NPM from running the Audit Step and Funding messages on a CI environment
+        # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
+        # We also use `--omit=dev` to avoid installing devDependencies as we don't need them during the build step
+        run: npm i --no-audit --no-fund --userconfig=/dev/null --omit=dev
+
+      - name: Build Next.js
+        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
+        # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
+        run: npx --package=turbo@latest -- turbo build ${{ needs.base.outputs.turbo_args }}
+        env:
+          # We want to ensure we have enough RAM allocated to the Node.js process
+          # this should be a last resort in case by any chances the build memory gets too high
+          # but in general this should never happen
+          NODE_OPTIONS: '--max_old_space_size=4096'
+          # We want to avoid having Next.js's Telemetry to kick-in during this build
+          # See https://nextjs.org/telemetry
+          NEXT_TELEMETRY_DISABLED: 1
+
+      - name: Analyse Build
+        # We generate a Bundle Analysis Report
+        # See https://github.com/hashicorp/nextjs-bundle-analysis
+        run: npx --package=nextjs-bundle-analysis@0.5.0 report
+
+      - name: Upload Build Analysis
+        # We upload the Bundle Analysis Artifact so it can be used on another Workflow
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
+        with:
+          name: bundle-analysis
+          path: .next/analyze/__bundle_analysis.json
+
+      - name: Save Build Cache
+        uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
+        with:
+          path: |
+            .turbo/cache
+            .next/cache
+            node_modules/.cache
+          # Most of sibling Pull Requests will use the cache key based on the package-lock.json
+          # We do also add a hashFiles for `.next/cache` as GitHub Actions only allows
+          # One cache with same key to exist, so to ensure we always have a cache from the latest build
+          # We add the hashFiles of `.next/cache` to the cache key of the Cache Entry
+          key: cache-build-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.next/cache/**') }}

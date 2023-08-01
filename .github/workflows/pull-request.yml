@@ -1,129 +1,173 @@
+# Security Notes
+# Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
+# for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
+# REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
+# AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
+
 name: Pull Request Checks
 
 on:
-  pull_request_target:
-    branches:
-      - main
-  workflow_dispatch:
+  pull_request:
 
 defaults:
   run:
+    # This ensures that the working directory is the root of the repository
     working-directory: ./
 
 permissions:
   contents: read
   actions: read
-  # This permission is required by `MishaKav/jest-coverage-comment`
-  pull-requests: write
 
 jobs:
-  lint:
-    name: Lint
+  base:
+    name: Base Tasks
     runs-on: ubuntu-latest
+    outputs:
+      fetch_depth: ${{ steps.calculate_current_commits.outputs.fetch_depth }}
+      turbo_args: ${{ steps.turborepo_arguments.outputs.turbo_args }}
 
     steps:
       - name: Calculate Commits to Checkout
-        # This is the amount of commits we should fetch
-        run: echo "GIT_FETCH_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "${GITHUB_ENV}"
+        id: calculate_current_commits
+        # This calculates the amount of commits we should fetch during our shallow clone
+        # This calculates the amount of commits this PR produced diverged from the base branch + 1
+        # Which should include the "merge" commit reference
+        # In other words, the GitHub Action will always have the full history of the current PR
+        # We need all the commits of the PR so that `turbo --filter` works correctly
+        run: echo "fetch_depth=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "$GITHUB_OUTPUT"
 
-      - name: Git Checkout
+      - name: Provide Turborepo Arguments
+        id: turborepo_arguments
+        # `--filter` flag allows us to tell TurboRepo to only run a said command if there were any changes found in a given --filter range
+        # It verifies if any change was done to any of the including `glob` patterns described for a said command on `turbo.json`
+        # By default in this Workflow we use the `...[$TURBO_REF_FILTER]` as a value to the filter flag which tells Turborepo to look changes
+        # between the latest base branch commit and all the commits of this PR; That's why we use the `pull_request.base.sha` as a ref to the last
+        # commit on the base branch that this pull_request refers to.
+        # We also set the Turborepo Cache to the `.turbo` folder
+        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--filter
+        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
+        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
+        run: echo "turbo_args=--filter=\"[HEAD~${{ github.event.pull_request.commits }}...HEAD]\" --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    needs: [base]
+
+    steps:
+      - name: Git Checkout (`head_sha`)
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Get enough fetch-depth so that `turbo --filter` works correctly
-          fetch-depth: ${{ env.GIT_FETCH_DEPTH }}
-          # Since we use `pull_request_target` we want to checkout the current ref
+          # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
+          fetch-depth: ${{ needs.base.outputs.fetch_depth }}
+          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Restore Cache
+      - name: Restore Lint Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
-            ~/.npm
-            .next/cache
+            .turbo/cache
             node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}-
+          # We want to restore Turborepo Cache and ESlint and Prettier Cache
+          key: cache-lint-${{ hashFiles('package-lock.json') }}-
           restore-keys: |
-            cache-${{ hashFiles('package-lock.json') }}-
-            cache-
+            cache-lint-${{ hashFiles('package-lock.json') }}-
+            cache-lint-
 
       - name: Set up Node.js
         uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8
         with:
+          # We want to ensure that the Node.js version running here respects our supported versions
           node-version-file: '.nvmrc'
           cache: 'npm'
 
-      - name: Install NPM packages
-        run: npm ci --no-audit --no-fund
+      - name: Install NPM packages (`head_sha`)
+        # We want to avoid NPM from running the Audit Step and Funding messages on a CI environment
+        # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
+        run: npm i --no-audit --no-fund --ignore-scripts --userconfig=/dev/null
 
-      - name: Run Linting
-        run: npx turbo lint --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}"
+      - name: Run `turbo lint`
+        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
+        # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
+        run: npx --package=turbo@latest -- turbo lint ${{ needs.base.outputs.turbo_args }}
 
-      - name: Run Prettier
-        run: npx turbo prettier --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}"
+      - name: Run `turbo prettier`
+        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
+        # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
+        run: npx --package=turbo@latest -- turbo prettier ${{ needs.base.outputs.turbo_args }}
+
+      - name: Save Lint Cache
+        uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
+        with:
+          path: |
+            .turbo/cache
+            node_modules/.cache
+          key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.turbo/cache/**') }}
 
   tests:
     name: Tests
     runs-on: ubuntu-latest
+    needs: [base]
 
     steps:
-      - name: Use GNU tar instead BSD tar
-        if: matrix.os == 'windows-latest'
-        shell: cmd
-        run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
-
-      - name: Calculate Commits to Checkout
-        # This is the amount of commits we should fetch
-        run: echo "GIT_FETCH_DEPTH=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "${GITHUB_ENV}"
-
-      - name: Git Checkout
+      - name: Git Checkout (`head_sha`)
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Get enough fetch-depth so that `turbo --filter` works correctly
-          fetch-depth: ${{ env.GIT_FETCH_DEPTH }}
-          # Since we use `pull_request_target` we want to checkout the current ref
+          # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
+          fetch-depth: ${{ needs.base.outputs.fetch_depth }}
+          # Since we use the `pull_request_target` event we want to checkout the current ref as by default this
+          # command will checkout `main` instead of the current pull_request ref
+          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Restore Cache
+      - name: Restore Tests Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
-            ~/.npm
-            .next/cache
+            .turbo/cache
             node_modules/.cache
-          key: cache-${{ hashFiles('package-lock.json') }}-
+          # We want to restore Turborepo Cache and Storybook Cache
+          key: cache-tests-${{ hashFiles('package-lock.json') }}-
           restore-keys: |
-            cache-${{ hashFiles('package-lock.json') }}-
-            cache-
+            cache-tests-${{ hashFiles('package-lock.json') }}-
+            cache-tests-
 
       - name: Set up Node.js
         uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8
         with:
+          # We want to ensure that the Node.js version running here respects our supported versions
           node-version-file: '.nvmrc'
           cache: 'npm'
 
-      - name: Install NPM packages
-        run: npm ci --no-audit --no-fund
+      - name: Install NPM packages (`head_sha`)
+        # We want to avoid NPM from running the Audit Step and Funding messages on a CI environment
+        # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
+        run: npm i --no-audit --no-fund --userconfig=/dev/null
 
       - name: Run Unit Tests
-        run: npx turbo test:unit --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}" -- --ci --coverage
+        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
+        # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
+        run: npx --package=turbo@latest -- turbo test:unit ${{ needs.base.outputs.turbo_args }} -- --ci --coverage
 
-      - name: Jest Coverage Comment
-        uses: MishaKav/jest-coverage-comment@41b5ca01d1250de84537448d248b8d18152cb277
+      - name: Upload Coverage Report
+        # We upload the Coverage Report so it can be used on another Workflow
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
         with:
-          title: 'Unit Test Coverage Report'
-          junitxml-path: ./junit.xml
-          junitxml-title: Unit Test Report
-
-      - name: Capture Deployment URL
-        id: vercel_storybook_preview_url
-        uses: zentered/vercel-preview-url@e5fb141da2e3d62692b38e6c7c17477aad214165
-        with:
-          vercel_project_id: ${{ secrets.TURBO_PROJECT_ID }}
-          vercel_team_id: ${{ secrets.TURBO_TEAM }}
-        env:
-          VERCEL_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          name: coverage-report
+          path: |
+            coverage/
+            junit.xml
 
       - name: Run Storybook Tests
-        run: npx turbo test:storybook --filter="...[HEAD^]" --team="${{ secrets.TURBO_TEAM }}" --token="${{ secrets.TURBO_TEAM }}" -- --ci
-        env:
-          TARGET_URL: 'https://${{ steps.vercel_storybook_preview_url.outputs.preview_url }}'
+        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
+        # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
+        run: npx --package=turbo@latest -- turbo test:storybook:local ${{ needs.base.outputs.turbo_args }} -- --ci
+
+      - name: Save Tests Cache
+        uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
+        with:
+          path: |
+            .turbo/cache
+            node_modules/.cache
+          key: cache-tests-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.turbo/cache/**') }}

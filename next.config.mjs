@@ -1,9 +1,14 @@
 'use strict';
 
 import * as nextConstants from './next.constants.mjs';
+import * as nextRewrites from './next.rewrites.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // This configures all the Next.js rewrites
+  rewrites: nextRewrites.rewrites,
+  // This configures all Next.js redirects
+  redirects: nextRewrites.redirects,
   // We intentionally disable Next.js's built-in i18n support
   // as we dom have our own i18n and internationalisation engine
   i18n: null,
