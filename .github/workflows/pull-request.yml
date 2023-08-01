@@ -17,8 +17,6 @@ defaults:
 permissions:
   contents: read
   actions: read
-  # This permission is required by `MishaKav/jest-coverage-comment`
-  pull-requests: write
 
 jobs:
   base:
@@ -49,7 +47,7 @@ jobs:
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--filter
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-        run: echo "turbo_args=--filter=\"...[${{ github.event.pull_request.base.sha }}]\" --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
+        run: echo "turbo_args=--filter=\"[HEAD~${{ github.event.pull_request.commits }}...HEAD]\" --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
 
   lint:
     name: Lint
@@ -152,14 +150,14 @@ jobs:
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
         run: npx --package=turbo@latest -- turbo test:unit ${{ needs.base.outputs.turbo_args }} -- --ci --coverage
 
-      - name: Jest Coverage Comment
-        # This comments the current Jest Coverage Report containing JUnit XML reports
-        # and a Code Coverage Summary
-        uses: MishaKav/jest-coverage-comment@41b5ca01d1250de84537448d248b8d18152cb277
+      - name: Upload Coverage Report
+        # We upload the Coverage Report so it can be used on another Workflow
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
         with:
-          title: 'Unit Test Coverage Report'
-          junitxml-path: ./junit.xml
-          junitxml-title: Unit Test Report
+          name: coverage-report
+          path: |
+            coverage/
+            junit.xml
 
       - name: Run Storybook Tests
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
