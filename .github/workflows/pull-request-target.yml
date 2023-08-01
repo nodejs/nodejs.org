@@ -4,6 +4,9 @@
 # for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
 # REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
 # AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
+# MERGE QUEUE NOTE: This Workflow does not run on `merge_group` trigger, as this Workflow is not required for Merge Queue's
+# The main purpose of this Workflow is to decorate the Pull Request with important information for a Pull Request
+# On a merge queue the Pull Request already got approved!
 
 name: Pull Requests Target Checks
 
