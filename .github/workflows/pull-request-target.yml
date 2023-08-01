@@ -26,6 +26,8 @@ defaults:
 
 jobs:
   coverage-report:
+    # We want to skip our Pull Request Comments on Dependabot PRs
+    if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
     name: Test Coverage Report
     runs-on: ubuntu-latest
 
@@ -66,6 +68,8 @@ jobs:
           junitxml-title: Unit Test Report
 
   analysis-report:
+    # We want to skip our Pull Request Comments on Dependabot PRs
+    if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
     name: Build Analysis Report
     runs-on: ubuntu-latest
 
