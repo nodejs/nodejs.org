@@ -61,7 +61,7 @@
     "react-intl": "~6.4.4",
     "remark-gfm": "~3.0.1",
     "semver": "~7.5.4",
-    "sharp": "0.32.1",
+    "sharp": "0.32.4",
     "turbo": "^1.10.12",
     "typescript": "~5.1.6"
   },
