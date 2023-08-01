@@ -15,10 +15,19 @@ updates:
     commit-message:
       prefix: meta
     groups:
+      lint:
+        patterns:
+          - '@typescript-eslint/*'
+          - 'eslint'
+          - 'eslint-*'
+          - 'stylelint'
+        exclude-patterns:
+          - 'eslint-plugin-storybook'
       storybook:
         patterns:
           - 'storybook'
           - '@storybook/*'
+          - 'eslint-plugin-storybook'
       testing:
         patterns:
           - '@testing-library/*'
@@ -45,4 +54,8 @@ updates:
           - 'react-dom'
           - '@types/react'
           - '@types/react-dom'
+    ignore:
+      # Manually update major versions of @types/node with the version specified within .nvmrc
+      - dependency-name: '@types/node'
+        update-types: ['version-update:semver-major']
     open-pull-requests-limit: 10
