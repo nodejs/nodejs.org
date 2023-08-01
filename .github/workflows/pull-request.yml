@@ -166,13 +166,26 @@ jobs:
             coverage/
             junit.xml
 
+      - name: Build Storybook
+        # We Build Storybook Locally and then upload it so it can be used on another Workflow
+        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
+        # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
+        run: npx --package=turbo@latest -- turbo storybook:build ${{ needs.base.outputs.turbo_args }} -- --ci
+
+      - name: Upload Storybook Build
+        # We upload the Storybook Build so it can be used on another Workflow
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
+        with:
+          name: storybook-build
+          path: storybook-static
+
       - name: Run Storybook Visual Regression Tests
         # We use Chromatic for Visual Regression Testing
         # Note that this token is not a secret and safe to be added directly on the CI
         # This Step wll fail if there are Visual Regressions and then should be acted on on Chromatic's UI or Review Comments
         # See https://www.chromatic.com/docs/review
         # If you're a Node.js Website Collaborator and do not have access to Chromatic, please request access to the Website Team Maintainers
-        run: npx --package=chromatic@latest -- chromatic --project-token=chpt_17c2d0dc8a68711 --build-script-name=storybook:build --only-changed --ci
+        run: npx --package=chromatic@latest -- chromatic --project-token=chpt_17c2d0dc8a68711 --build-script-name=storybook:build --only-changed --ci --exit-once-uploaded
 
       - name: Save Tests Cache
         if: github.event_name == 'pull_request'
