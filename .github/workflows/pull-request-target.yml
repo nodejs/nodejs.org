@@ -47,14 +47,13 @@ jobs:
       - name: Wait for Tests to Finish
         uses: lewagon/wait-on-check-action@e106e5c43e8ca1edea6383a39a01c5ca495fd812
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.ref }}
           check-name: 'Tests'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 30
 
       - name: Download PR Coverage Report
         uses: dawidd6/action-download-artifact@246dbf436b23d7c49e21a7ab8204ca9ecd1fe615
-        if: success() && github.event.number
         with:
           name: coverage-report
           workflow: pull-request.yml
@@ -69,6 +68,48 @@ jobs:
           title: 'Unit Test Coverage Report'
           junitxml-path: ./junit.xml
           junitxml-title: Unit Test Report
+
+  visual-regression:
+    name: Visual Regression Upload
+    runs-on: ubuntu-latest
+    environment:
+      name: Preview – nodejs-org-stories
+      url: ${{ steps.chromatic-deploy.outputs.storybookUrl }}
+
+    steps:
+      - name: Git Checkout (`base_ref`)
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        with:
+          # We only need to fetch the latest commit of the `base_ref` here for the analysis steps
+          fetch-depth: 1
+          # For this step we don't need to checkout on the userland codebase
+          # As we can simply checkout on the latest commit of the `base_ref` for the analysis steps
+          ref: ${{ github.event.pull_request.base.ref }}
+
+      - name: Wait for Tests to Finish
+        uses: lewagon/wait-on-check-action@e106e5c43e8ca1edea6383a39a01c5ca495fd812
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          check-name: 'Tests'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 30
+
+      - name: Download PR Storybook Build
+        uses: dawidd6/action-download-artifact@246dbf436b23d7c49e21a7ab8204ca9ecd1fe615
+        with:
+          name: storybook-build
+          workflow: pull-request.yml
+          branch: ${{ github.event.pull_request.head.ref }}
+          if_no_artifact_found: fail
+
+      - name: Start Visual Regression Tests (Chromatic)
+        id: chromatic-deploy
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: storybook-static
+          exitOnceUploaded: true
+          onlyChanged: true
 
   analysis-report:
     # We want to skip our Pull Request Comments on Dependabot PRs
@@ -89,7 +130,7 @@ jobs:
       - name: Wait for Linux Build to Finish
         uses: lewagon/wait-on-check-action@e106e5c43e8ca1edea6383a39a01c5ca495fd812
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.ref }}
           check-name: 'Build on ubuntu-latest'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 30
@@ -97,7 +138,7 @@ jobs:
       - name: Wait for Windows Build to Finish
         uses: lewagon/wait-on-check-action@e106e5c43e8ca1edea6383a39a01c5ca495fd812
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.ref }}
           check-name: 'Build on windows-latest'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 30
