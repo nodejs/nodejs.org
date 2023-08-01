@@ -32,4 +32,6 @@ This document intends to outline the strategy we have when adding dependencies. 
 
 Manual updates should be avoided. Dependabot is configured for updating our dependencies. Updating a dependency is only needed if the update breaks the current `semver` constraint. In these situations, good judgement should be used (as a dependency should generally only be updated in these scenarios if the updated version brings new features desired by the team).
 
+An exception to the manual rule is the version of Node.js defined within `.nvmrc`, and the corresponding `@types/node` dependency. The `@types/node` semver MAJOR version should be kept in sync with the version of Node.js the site is built with.
+
 Lastly, in general, a Pull Request should not contain `package-lock.json` changes, nor changes to dependencies on `package.json`.
