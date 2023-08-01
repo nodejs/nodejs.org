@@ -70,6 +70,7 @@ jobs:
           junitxml-title: Unit Test Report
 
   visual-regression:
+    if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
     name: Visual Regression Upload
     runs-on: ubuntu-latest
     environment:
