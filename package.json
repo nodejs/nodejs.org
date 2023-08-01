@@ -52,7 +52,7 @@
     "highlight.js": "~11.8.0",
     "husky": "8.0.3",
     "lint-staged": "13.2.3",
-    "next": "^13.4.9",
+    "next": "^13.4.12",
     "next-mdx-remote": "^4.4.1",
     "next-sitemap": "^4.1.8",
     "next-themes": "^0.2.1",
