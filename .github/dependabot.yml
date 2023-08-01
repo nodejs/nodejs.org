@@ -28,10 +28,13 @@ updates:
           - 'storybook'
           - '@storybook/*'
           - 'eslint-plugin-storybook'
-      testing-library:
+      testing:
         patterns:
           - '@testing-library/*'
           - '@types/testing-library*'
+          - '@types/jest'
+          - 'jest'
+          - 'jest-*'
       next-js:
         patterns:
           - 'next'
