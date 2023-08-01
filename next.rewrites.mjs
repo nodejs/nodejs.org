@@ -2,7 +2,7 @@
 
 import { availableLocales } from './next.locales.mjs';
 
-// This allow us to prefix redirect with all available locale codes, so that redirects are not bound to a single locale
+// This allows us to prefix redirect with all available locale codes, so that redirects are not bound to a single locale
 // This also transforms the locale itself as a matching group that can be used for rewrites
 // This match group also has an empty string match for the lack of locales, for example
 // Example: /:locale(ar/|ca/|de/|en/|es/|fa/|fr/|)about/security
