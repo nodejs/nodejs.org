@@ -73,7 +73,7 @@ jobs:
     name: Visual Regression Upload
     runs-on: ubuntu-latest
     environment:
-      name: Preview – nodejs-org-stories
+      name: Storybook
       url: ${{ steps.chromatic-deploy.outputs.storybookUrl }}
 
     steps:
