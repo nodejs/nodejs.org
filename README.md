@@ -28,7 +28,7 @@
 
   <br />
 
-  <img src="https://github.com/nodejs/nodejs.org/actions/workflows/build-and-analysis.yml/badge.svg" alt="Build and Analysis Checks" />
+  <img src="https://github.com/nodejs/nodejs.org/actions/workflows/build.yml/badge.svg" alt="Build and Analysis Checks" />
 
   <br />
   <br />
