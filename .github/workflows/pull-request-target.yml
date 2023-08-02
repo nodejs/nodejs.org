@@ -47,7 +47,7 @@ jobs:
       - name: Wait for Tests to Finish
         uses: lewagon/wait-on-check-action@e106e5c43e8ca1edea6383a39a01c5ca495fd812
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.event.pull_request.head.sha }}
           check-name: 'Tests'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 30
@@ -57,7 +57,7 @@ jobs:
         with:
           name: coverage-report
           workflow: pull-request.yml
-          branch: ${{ github.event.pull_request.head.ref }}
+          branch: ${{ github.event.pull_request.head.sha }}
           if_no_artifact_found: fail
 
       - name: Jest Coverage Comment
@@ -90,7 +90,7 @@ jobs:
       - name: Wait for Tests to Finish
         uses: lewagon/wait-on-check-action@e106e5c43e8ca1edea6383a39a01c5ca495fd812
         with:
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.event.pull_request.head.sha }}
           check-name: 'Tests'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 30
