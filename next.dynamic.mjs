@@ -9,6 +9,8 @@ import { serialize } from 'next-mdx-remote/serialize';
 import * as nextLocales from './next.locales.mjs';
 import * as nextConstants from './next.constants.mjs';
 import * as nextHelpers from './next.helpers.mjs';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings/lib';
+import rehypeSlug from 'rehype-slug';
 
 // allows us to run a glob to get markdown files based on a language folder
 const getPathsByLanguage = async (
@@ -157,6 +159,7 @@ export const getStaticProps = async (source = '', filename = '') => {
     const { compiledSource } = await serialize(sourceAsVirtualFile, {
       parseFrontmatter: true,
       mdxOptions: {
+        rehypePlugins: [rehypeAutolinkHeadings, rehypeSlug],
         remarkPlugins: [remarkGfm, remarkHeadings],
         format: filename.includes('.mdx') ? 'mdx' : 'md',
       },
