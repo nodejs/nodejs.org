@@ -5,6 +5,8 @@ import { readFileSync } from 'node:fs';
 import { VFile } from 'vfile';
 import remarkGfm from 'remark-gfm';
 import remarkHeadings from '@vcarl/remark-headings';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
 import { serialize } from 'next-mdx-remote/serialize';
 import * as nextLocales from './next.locales.mjs';
 import * as nextConstants from './next.constants.mjs';
@@ -157,6 +159,16 @@ export const getStaticProps = async (source = '', filename = '') => {
     const { compiledSource } = await serialize(sourceAsVirtualFile, {
       parseFrontmatter: true,
       mdxOptions: {
+        rehypePlugins: [
+          rehypeSlug,
+          [
+            rehypeAutolinkHeadings,
+            {
+              behaviour: 'append',
+              properties: { ariaHidden: true, tabIndex: -1, class: 'anchor' },
+            },
+          ],
+        ],
         remarkPlugins: [remarkGfm, remarkHeadings],
         format: filename.includes('.mdx') ? 'mdx' : 'md',
       },
