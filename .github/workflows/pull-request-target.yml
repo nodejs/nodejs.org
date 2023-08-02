@@ -119,6 +119,7 @@ jobs:
           name: storybook-build
           workflow: pull-request.yml
           pr: ${{ github.event.pull_request.number }}
+          path: storybook-static
           if_no_artifact_found: fail
 
       - name: Start Visual Regression Tests (Chromatic)
