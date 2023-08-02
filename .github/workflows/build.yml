@@ -105,6 +105,7 @@ jobs:
           NEXT_TELEMETRY_DISABLED: 1
 
       - name: Analyse Build
+        id: analyse_build
         # We don't need build analysis for Dependabot PRs and also when the GitHub Event is not a Pull Request
         # i.e. if the Event is a Merge Queue Event
         if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false && github.event_name == 'pull_request'
@@ -115,7 +116,7 @@ jobs:
       - name: Upload Build Analysis
         # This prevents this step from running if "Analyse Build" got cancelled; Which gets cancelled if
         # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
-        if: success()
+        if: steps.analyse_build.outcome == 'success'
         # We upload the Bundle Analysis Artifact so it can be used on another Workflow
         uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
         with:
@@ -124,7 +125,7 @@ jobs:
 
       - name: Save Build Cache
         # This prevents this step from running if Upload Build Analysis" got cancelled
-        if: success()
+        if: steps.analyse_build.outcome == 'success'
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |

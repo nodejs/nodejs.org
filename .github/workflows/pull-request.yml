@@ -159,6 +159,7 @@ jobs:
         run: npx --package=turbo@latest -- turbo test:unit ${{ needs.base.outputs.turbo_args }} -- --ci --coverage
 
       - name: Upload Coverage Report
+        id: upload_coverage_report
         # We don't need coverage report for Dependabot PRs and also when the GitHub Event is not a Pull Request
         # i.e. if the Event is a Merge Queue Event
         if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false && github.event_name == 'pull_request'
@@ -173,7 +174,7 @@ jobs:
       - name: Build Storybook
         # This prevents this step from running if "Upload Coverage Report" got cancelled; Which gets cancelled if
         # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
-        if: success()
+        if: steps.upload_coverage_report.outcome == 'success'
         # We Build Storybook Locally and then upload it so it can be used on another Workflow
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
@@ -182,7 +183,7 @@ jobs:
       - name: Upload Storybook Build
         # This prevents this step from running if "Build Storybook" got cancelled; Which gets cancelled if
         # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
-        if: success()
+        if: steps.upload_coverage_report.outcome == 'success'
         # We upload the Storybook Build so it can be used on another Workflow
         uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
         with:
@@ -192,7 +193,7 @@ jobs:
       - name: Save Tests Cache
         # This prevents this step from running if "Upload Storybook Build" got cancelled; Which gets cancelled if
         # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
-        if: success()
+        if: steps.upload_coverage_report.outcome == 'success'
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |

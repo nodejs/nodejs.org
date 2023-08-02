@@ -88,10 +88,11 @@ The current integration is owned by the OpenJS Foundation and managed by the Web
 
 <details>
   <summary>Legacy Deployment</summary>
-  
-  Full setup is in <https://github.com/nodejs/build/tree/master/ansible/www-standalone> minus secrets and certificates.
-  
-  The webhook is set up on GitHub for this project and talks to a small Node server on the host, which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
+
+Full setup is in <https://github.com/nodejs/build/tree/master/ansible/www-standalone> minus secrets and certificates.
+
+The webhook is set up on GitHub for this project and talks to a small Node server on the host, which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
+
 </details>
 
 ## Relevant Links
