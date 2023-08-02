@@ -7,7 +7,7 @@ import type { FC } from 'react';
 
 type SideNavigationProps = {
   navigationKey: NavigationKeys;
-  context?: Record<string, Record<string, any>>;
+  context?: Record<string, Record<string, string | JSX.Element | undefined>>;
 };
 
 const SideNavigation: FC<SideNavigationProps> = ({

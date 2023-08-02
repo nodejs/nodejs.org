@@ -1,5 +1,17 @@
 'use strict';
 
+import { availableLocales } from './next.locales.mjs';
+
+// This allows us to prefix redirect with all available locale codes, so that redirects are not bound to a single locale
+// This also transforms the locale itself as a matching group that can be used for rewrites
+// This match group also has an empty string match for the lack of locales, for example
+// Example: /:locale(ar/|ca/|de/|en/|es/|fa/|fr/|)about/security
+// Would match /ar/about/security, /ar/about/security/ for every language code (replace "ar") and
+// it would also match /about/security (without any language prefix)
+const localesMatch = `/:locale(${availableLocales
+  .map(locale => locale.code)
+  .join('|')}|)?/`;
+
 /**
  * These are external redirects that happen before we check dynamic routes and rewrites
  * These are sourced originally from https://github.com/nodejs/build/blob/main/ansible/www-standalone/resources/config/nodejs.org?plain=1
@@ -9,49 +21,18 @@
  */
 const redirects = async () => [
   {
+    source: '/index.html',
+    destination: '/',
+    permanent: true,
+  },
+  {
+    source: '/api.html',
+    destination: '/api',
+    permanent: true,
+  },
+  {
     source: '/changelog.html',
     destination: 'https://github.com/nodejs/node/blob/HEAD/CHANGELOG.md',
-    permanent: true,
-  },
-  {
-    source: '/contribute/accepting_contributions.html',
-    destination: 'https://github.com/nodejs/dev-policy',
-    permanent: true,
-  },
-  {
-    source: '/about/releases',
-    destination: 'https://github.com/nodejs/release#release-schedule',
-    permanent: true,
-  },
-  {
-    source: '/en/about/releases',
-    destination: 'https://github.com/nodejs/release#release-schedule',
-    permanent: true,
-  },
-  {
-    source: '/about/security',
-    destination:
-      'https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security',
-    permanent: true,
-  },
-  {
-    source: '/advisory-board',
-    destination: 'https://github.com/nodejs/TSC',
-    permanent: true,
-  },
-  {
-    source: '/about/advisory-board',
-    destination: 'https://github.com/nodejs/TSC',
-    permanent: true,
-  },
-  {
-    source: '/about/organization',
-    destination: 'https://github.com/nodejs/TSC',
-    permanent: true,
-  },
-  {
-    source: '/about/organization/tsc-meetings',
-    destination: 'https://github.com/nodejs/TSC/tree/HEAD/meetings',
     permanent: true,
   },
   {
@@ -67,53 +48,89 @@ const redirects = async () => [
     permanent: true,
   },
   {
-    source: '/(en|uk|)/foundation',
-    destination: 'https://foundation.nodejs.org/',
+    source: `${localesMatch}contribute/accepting_contributions.html`,
+    destination: 'https://github.com/nodejs/dev-policy',
     permanent: true,
   },
   {
-    source: '/(en|uk|)/foundation/case-studies',
-    destination: 'https://openjsf.org/projects',
+    source: `${localesMatch}about/releases`,
+    destination: 'https://github.com/nodejs/release#release-schedule',
     permanent: true,
   },
   {
-    source: '/(en|uk|)/foundation/members',
-    destination: 'https://openjsf.org/about/members',
+    source: `${localesMatch}about/security`,
+    destination:
+      'https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security',
     permanent: true,
   },
   {
-    source: '/(en|uk|)/foundation/board',
-    destination: 'https://openjsf.org/about/governance',
-    permanent: true,
-  },
-  {
-    source: '/(en|uk|)/foundation/tsc',
+    source: `${localesMatch}advisory-board`,
     destination: 'https://github.com/nodejs/TSC',
     permanent: true,
   },
   {
-    source: '/(en|uk|)/foundation/certification',
-    destination: 'https://openjsf.org/certification',
+    source: `${localesMatch}about/advisory-board`,
+    destination: 'https://github.com/nodejs/TSC',
     permanent: true,
   },
   {
-    source: '/(en|uk|)/foundation/in-the-news',
+    source: `${localesMatch}about/organization`,
+    destination: 'https://github.com/nodejs/TSC',
+    permanent: true,
+  },
+  {
+    source: `${localesMatch}about/organization/tsc-meetings`,
+    destination: 'https://github.com/nodejs/TSC/tree/HEAD/meetings',
+    permanent: true,
+  },
+  {
+    source: `${localesMatch}about/trademark`,
+    destination: 'https://trademark-policy.openjsf.org',
+    permanent: true,
+  },
+  {
+    source: `${localesMatch}foundation`,
     destination: 'https://openjsf.org',
     permanent: true,
   },
   {
-    source: '/(en|uk|)/foundation/announcements',
-    destination: 'https://openjsf.org/blog',
+    source: `${localesMatch}foundation/case-studies`,
+    destination: 'https://openjsf.org/projects',
     permanent: true,
   },
   {
-    source: '/(en|uk|)/foundation/education',
+    source: `${localesMatch}foundation/members`,
+    destination: 'https://openjsf.org/about/members',
+    permanent: true,
+  },
+  {
+    source: `${localesMatch}foundation/board`,
+    destination: 'https://openjsf.org/about/governance',
+    permanent: true,
+  },
+  {
+    source: `${localesMatch}foundation/tsc`,
+    destination: 'https://github.com/nodejs/TSC',
+    permanent: true,
+  },
+  {
+    source: `${localesMatch}foundation/certification`,
     destination: 'https://openjsf.org/certification',
     permanent: true,
   },
   {
-    source: '/(en|uk|)/foundation/members.html',
-    destination: 'https://openjsf.org/about/members',
+    source: `${localesMatch}foundation/in-the-news`,
+    destination: 'https://openjsf.org',
+    permanent: true,
+  },
+  {
+    source: `${localesMatch}foundation/announcements`,
+    destination: 'https://openjsf.org/blog',
+    permanent: true,
+  },
+  {
+    source: `${localesMatch}foundation/education`,
+    destination: 'https://openjsf.org/certification',
     permanent: true,
   },
 ];
@@ -129,48 +146,36 @@ const redirects = async () => [
 const rewrites = async () => ({
   afterFiles: [
     {
-      source: '/index.html',
-      destination: '/',
-    },
-    {
-      source: '/api.html',
-      destination: '/api/',
+      source: '/about',
+      destination: '/en/about',
     },
     {
       source: '/community',
       destination: '/en/get-involved',
     },
     {
-      source: '/contribute',
+      source: '/contribute/:path*',
       destination: '/en/get-involved',
     },
     {
-      source: '/contribute/becoming_collaborator.html',
-      destination: '/en/get-involved',
-    },
-    {
-      source: '/contribute/code_contributions',
-      destination: '/en/get-involved',
-    },
-    {
-      source: '/contribute/code_contributions/workflow.html',
-      destination: '/en/get-involved',
-    },
-    {
-      source: '/documentation(.*)',
-      destination: '/en/docs',
-    },
-    {
-      source: '/about',
-      destination: '/en/about',
-    },
-    {
-      source: '/about/trademark',
-      destination: '/en/about/trademark',
+      source: '/documentation/:path*',
+      destination: '/en/docs/:path*',
     },
     {
       source: '/blog/:path*',
       destination: '/en/blog/:path*',
+    },
+    {
+      source: `${localesMatch}community`,
+      destination: '/:locale/get-involved',
+    },
+    {
+      source: `${localesMatch}contribute/:path*`,
+      destination: '/:locale/get-involved',
+    },
+    {
+      source: `${localesMatch}documentation/:path*`,
+      destination: '/:locale/docs/:path*',
     },
     {
       source: '/(atom|feed|rss).xml',

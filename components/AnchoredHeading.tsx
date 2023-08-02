@@ -7,6 +7,10 @@ type AnchorHeadingProps = PropsWithChildren<{
   id?: string;
 }>;
 
+type HeadingLevelTagProps = PropsWithChildren<{
+  id?: string;
+}>;
+
 /**
  * This module will automatically replace the header style words
  * (such as `#`,`##`...ect) to an anchor name.
@@ -26,7 +30,7 @@ type AnchorHeadingProps = PropsWithChildren<{
 const COMMENT_FOR_HEADANCHOR = /--\x20?([\w\x20-]+)\x20?--/;
 
 const AnchoredHeading: FC<AnchorHeadingProps> = ({ level, id, children }) => {
-  const HeadingLevelTag = `h${level}` as any;
+  const HeadingLevelTag = `h${level}` as unknown as FC<HeadingLevelTagProps>;
 
   let sanitizedId =
     id ?? children?.toLocaleString().toLocaleLowerCase().replace(/\x20/g, '-');
