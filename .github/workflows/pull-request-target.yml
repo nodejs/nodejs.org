@@ -1,0 +1,225 @@
+# Security Notes
+# This workflow uses `pull_request_target`, so will run against all PRs automatically (without approval), be careful with allowing any user-provided code to be run here
+# Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
+# for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
+# REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
+# AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
+# MERGE QUEUE NOTE: This Workflow does not run on `merge_group` trigger, as this Workflow is not required for Merge Queue's
+# The main purpose of this Workflow is to decorate the Pull Request with important information for a Pull Request
+# On a merge queue the Pull Request already got approved!
+
+name: Pull Requests Target Checks
+
+on:
+  pull_request_target:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  actions: read
+  # This permission is required by `peter-evans/create-or-update-comment`
+  # This permission is required by `MishaKav/jest-coverage-comment`
+  pull-requests: write
+
+defaults:
+  run:
+    # This ensures that the working directory is the root of the repository
+    working-directory: ./
+
+jobs:
+  coverage-report:
+    # We want to skip our Pull Request Comments on Dependabot PRs
+    if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
+    name: Test Coverage Report
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git Checkout (`base_ref`)
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        with:
+          # We only need to fetch the latest commit of the `base_ref` here for the analysis steps
+          fetch-depth: 1
+          # For this step we don't need to checkout on the userland codebase
+          # As we can simply checkout on the latest commit of the `base_ref` for the analysis steps
+          ref: ${{ github.event.pull_request.base.ref }}
+
+      - name: Wait for Tests to Finish
+        uses: lewagon/wait-on-check-action@e106e5c43e8ca1edea6383a39a01c5ca495fd812
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          check-name: 'Tests'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 30
+
+      - name: Download PR Coverage Report
+        uses: dawidd6/action-download-artifact@246dbf436b23d7c49e21a7ab8204ca9ecd1fe615
+        with:
+          name: coverage-report
+          workflow: pull-request.yml
+          branch: ${{ github.event.pull_request.head.ref }}
+          if_no_artifact_found: fail
+
+      - name: Jest Coverage Comment
+        # This comments the current Jest Coverage Report containing JUnit XML reports
+        # and a Code Coverage Summary
+        uses: MishaKav/jest-coverage-comment@41b5ca01d1250de84537448d248b8d18152cb277
+        with:
+          title: 'Unit Test Coverage Report'
+          junitxml-path: ./junit.xml
+          junitxml-title: Unit Test Report
+
+  visual-regression:
+    if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
+    name: Visual Regression Upload
+    runs-on: ubuntu-latest
+    environment:
+      name: Storybook
+      url: ${{ steps.chromatic-deploy.outputs.storybookUrl }}
+
+    steps:
+      - name: Git Checkout (`base_ref`)
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        with:
+          # We only need to fetch the latest commit of the `base_ref` here for the analysis steps
+          fetch-depth: 1
+          # For this step we don't need to checkout on the userland codebase
+          # As we can simply checkout on the latest commit of the `base_ref` for the analysis steps
+          ref: ${{ github.event.pull_request.base.ref }}
+
+      - name: Wait for Tests to Finish
+        uses: lewagon/wait-on-check-action@e106e5c43e8ca1edea6383a39a01c5ca495fd812
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          check-name: 'Tests'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 30
+
+      - name: Download PR Storybook Build
+        uses: dawidd6/action-download-artifact@246dbf436b23d7c49e21a7ab8204ca9ecd1fe615
+        with:
+          name: storybook-build
+          workflow: pull-request.yml
+          branch: ${{ github.event.pull_request.head.ref }}
+          if_no_artifact_found: fail
+
+      - name: Start Visual Regression Tests (Chromatic)
+        id: chromatic-deploy
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: storybook-static
+          exitOnceUploaded: true
+          onlyChanged: true
+
+  analysis-report:
+    # We want to skip our Pull Request Comments on Dependabot PRs
+    if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
+    name: Build Analysis Report
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git Checkout (`base_ref`)
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        with:
+          # We only need to fetch the latest commit of the `base_ref` here for the analysis steps
+          fetch-depth: 1
+          # For this step we don't need to checkout on the userland codebase
+          # As we can simply checkout on the latest commit of the `base_ref` for the analysis steps
+          ref: ${{ github.event.pull_request.base.ref }}
+
+      - name: Wait for Linux Build to Finish
+        uses: lewagon/wait-on-check-action@e106e5c43e8ca1edea6383a39a01c5ca495fd812
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          check-name: 'Build on ubuntu-latest'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 30
+
+      - name: Wait for Windows Build to Finish
+        uses: lewagon/wait-on-check-action@e106e5c43e8ca1edea6383a39a01c5ca495fd812
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          check-name: 'Build on windows-latest'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 30
+
+      - name: Download PR Bundle Analysis
+        # This Step is Partially Generated by https://github.com/hashicorp/nextjs-bundle-analysis
+        # and modified as we use the artifact from another workflow
+        uses: dawidd6/action-download-artifact@246dbf436b23d7c49e21a7ab8204ca9ecd1fe615
+        with:
+          name: bundle-analysis
+          workflow: build.yml
+          branch: ${{ github.event.pull_request.head.ref }}
+          path: .next/analyze
+          if_no_artifact_found: fail
+
+      - name: Download Base Bundle Analysis
+        # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
+        # and modified as we use the artifact from another workflow
+        uses: dawidd6/action-download-artifact@246dbf436b23d7c49e21a7ab8204ca9ecd1fe615
+        with:
+          name: bundle-analysis
+          workflow: build.yml
+          branch: ${{ github.event.pull_request.base.ref }}
+          path: .next/analyze/base/bundle
+          if_no_artifact_found: warn
+
+      - name: Check Base Bundle Analysis File
+        # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
+        id: check-base-bundle-analysis-file
+        uses: andstor/file-existence-action@20b4d2e596410855db8f9ca21e96fbe18e12930b
+        with:
+          files: .next/analyze/base/bundle/__bundle_analysis.json
+
+      - name: Copy PR Bundle Analysis (Fallback)
+        # In case a Analysis of the base branch does not exist, we don't want to fail the CI action
+        # Hence we simply fallback to the Bundle Analysis of the current Build
+        if: steps.check-base-bundle-analysis-file.outputs.files_exists == 'false'
+        run: |
+          mkdir -p .next/analyze/base/bundle/
+          cp .next/analyze/__bundle_analysis.json .next/analyze/base/bundle/__bundle_analysis.json
+
+      - name: Compare Analysis Bundle (Base vs HEAD)
+        # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
+        # and modified for our needs as we don't need some of the parts that come with the generated code
+        run: ls -laR .next/analyze/base && npx -p nextjs-bundle-analysis compare
+
+      - name: Generate Bundle Analysis Comment
+        # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
+        # and modified for our needs as we don't need some of the parts that come with the generated code
+        id: get-comment-body
+        run: |
+          echo "body<<EOF" >> $GITHUB_OUTPUT
+          echo "$(cat .next/analyze/__bundle_analysis_comment.txt)" >> $GITHUB_OUTPUT
+          echo EOF >> $GITHUB_OUTPUT
+
+      - name: Find Existing Bundle Analysis Comment
+        # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
+        # and modified for our needs as we don't need some of the parts that come with the generated code
+        uses: peter-evans/find-comment@a54c31d7fa095754bfef525c0c8e5e5674c4b4b1
+        id: find-comment-id
+        with:
+          issue-number: ${{ github.event.number }}
+          body-includes: '<!-- __NEXTJS_BUNDLE_nodejs.org -->'
+
+      - name: Create Bundle Analysis Comment (if does not exist)
+        # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
+        # and modified for our needs as we don't need some of the parts that come with the generated code
+        uses: peter-evans/create-or-update-comment@c6c9a1a66007646a28c153e2a8580a5bad27bcfa
+        if: steps.find-comment-id.outputs.comment-id == 0
+        with:
+          issue-number: ${{ github.event.number }}
+          body: ${{ steps.get-comment-body.outputs.body }}
+
+      - name: Update Bundle Analysis Comment (if does exist)
+        # This Step is Auto Generated by https://github.com/hashicorp/nextjs-bundle-analysis
+        # and modified for our needs as we don't need some of the parts that come with the generated code
+        uses: peter-evans/create-or-update-comment@c6c9a1a66007646a28c153e2a8580a5bad27bcfa
+        if: steps.find-comment-id.outputs.comment-id != 0
+        with:
+          issue-number: ${{ github.event.number }}
+          body: ${{ steps.get-comment-body.outputs.body }}
+          comment-id: ${{ steps.find-comment-id.outputs.comment-id }}
+          edit-mode: replace

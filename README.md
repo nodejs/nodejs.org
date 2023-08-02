@@ -28,7 +28,7 @@
 
   <br />
 
-  <img src="https://github.com/nodejs/nodejs.org/actions/workflows/build-and-analysis.yml/badge.svg" alt="Build and Analysis Checks" />
+  <img src="https://github.com/nodejs/nodejs.org/actions/workflows/build.yml/badge.svg" alt="Build and Analysis Checks" />
 
   <br />
   <br />
@@ -80,7 +80,19 @@ To help with localization, please read the [Translation](TRANSLATION.md) guide.
 
 ### Deployment
 
-Full setup is in <https://github.com/nodejs/build/tree/master/ansible/www-standalone> minus secrets and certificates. The webhook is set up on GitHub for this project and talks to a small Node server on the host, which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
+The Website is automatically deployed to [Vercel](https://vercel.com) through its GitHub App integration when new pushes happen on the `main` branch.
+
+Details regarding the deployment are only accessible to the maintainers of the Website Team due to certain limitations.
+
+The current integration is owned by the OpenJS Foundation and managed by the Website Team.
+
+<details>
+  <summary>Legacy Deployment</summary>
+  
+  Full setup is in <https://github.com/nodejs/build/tree/master/ansible/www-standalone> minus secrets and certificates.
+  
+  The webhook is set up on GitHub for this project and talks to a small Node server on the host, which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
+</details>
 
 ## Relevant Links
 
@@ -95,6 +107,13 @@ Full setup is in <https://github.com/nodejs/build/tree/master/ansible/www-standa
 [Content vs Code][]
 
 [Dependency Pinning][]
+
+## Thanks
+
+- Thanks to all contributors and collaborators that make this project possible.
+- Thanks to [Chromatic](https://www.chromatic.com/) for providing the visual testing platform that helps us review UI changes and catch visual regressions.
+- Thanks to [Vercel](https://www.vercel.com/) for providing the infrastructure that serves and powers the Node.js Website
+- Thanks to [Cloudflare](https://cloudflare.com) for providing the infrastructure that serves Node.js's Website, Node.js's CDN and more.
 
 [code of conduct]: https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md
 [contribution guidelines]: ./CONTRIBUTING.md
