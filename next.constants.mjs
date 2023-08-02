@@ -32,9 +32,11 @@ export const ENABLE_STATIC_EXPORT =
  *
  * @see https://vercel.com/docs/concepts/projects/environment-variables/system-environment-variables#framework-environment-variables
  */
-export const BASE_URL = process.env.NEXT_PUBLIC_VERCEL_URL
+export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL
+  ? process.env.NEXT_PUBLIC_BASE_URL
+  : process.env.NEXT_PUBLIC_VERCEL_URL
   ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-  : process.env.NEXT_PUBLIC_BASE_URL || 'https://nodejs.org';
+  : 'https://nodejs.org';
 
 /**
  * This is used for any place that requires the Node.js distribution URL (which by default is nodejs.org/dist)
