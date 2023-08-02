@@ -11,6 +11,7 @@ on:
     branches:
       - main
   pull_request:
+  merge_group:
 
 defaults:
   run:
@@ -53,7 +54,7 @@ jobs:
         shell: cmd
         run: echo C:\Program Files\Git\usr\bin>>"%GITHUB_PATH%"
 
-      - name: Git Checkout (`head_sha`)
+      - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
           # We only need to fetch the last commit from the head_ref
@@ -62,8 +63,6 @@ jobs:
           # this ensures that our bundle analysis script always runs and that we always ensure next.js is building
           # regardless of having code changes or not
           fetch-depth: 1
-          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
-          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Restore Build Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
@@ -86,7 +85,7 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
 
-      - name: Install NPM packages (`head_sha`)
+      - name: Install NPM packages
         # We want to avoid NPM from running the Audit Step and Funding messages on a CI environment
         # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
         # We also use `--omit=dev` to avoid installing devDependencies as we don't need them during the build step
@@ -106,11 +105,17 @@ jobs:
           NEXT_TELEMETRY_DISABLED: 1
 
       - name: Analyse Build
+        # We don't need build analysis for Dependabot PRs and also when the GitHub Event is not a Pull Request
+        # i.e. if the Event is a Merge Queue Event
+        if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false && github.event_name == 'pull_request'
         # We generate a Bundle Analysis Report
         # See https://github.com/hashicorp/nextjs-bundle-analysis
         run: npx --package=nextjs-bundle-analysis@0.5.0 report
 
       - name: Upload Build Analysis
+        # This prevents this step from running if "Analyse Build" got cancelled; Which gets cancelled if
+        # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
+        if: success()
         # We upload the Bundle Analysis Artifact so it can be used on another Workflow
         uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
         with:
@@ -118,6 +123,8 @@ jobs:
           path: .next/analyze/__bundle_analysis.json
 
       - name: Save Build Cache
+        # This prevents this step from running if Upload Build Analysis" got cancelled
+        if: success()
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |

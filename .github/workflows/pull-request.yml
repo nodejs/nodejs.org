@@ -8,6 +8,7 @@ name: Pull Request Checks
 
 on:
   pull_request:
+  merge_group:
 
 defaults:
   run:
@@ -34,7 +35,12 @@ jobs:
         # Which should include the "merge" commit reference
         # In other words, the GitHub Action will always have the full history of the current PR
         # We need all the commits of the PR so that `turbo --filter` works correctly
-        run: echo "fetch_depth=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "$GITHUB_OUTPUT"
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            echo "fetch_depth=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "$GITHUB_OUTPUT"
+          else
+            echo "fetch_depth=1" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Provide Turborepo Arguments
         id: turborepo_arguments
@@ -47,7 +53,12 @@ jobs:
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--filter
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-        run: echo "turbo_args=--filter=\"[HEAD~${{ github.event.pull_request.commits }}...HEAD]\" --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            echo "turbo_args=--filter=\"[HEAD~${{ github.event.pull_request.commits }}...HEAD]\" --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
+          else
+            echo "turbo_args=--cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
+          fi
 
   lint:
     name: Lint
@@ -55,13 +66,11 @@ jobs:
     needs: [base]
 
     steps:
-      - name: Git Checkout (`head_sha`)
+      - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
           # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
           fetch-depth: ${{ needs.base.outputs.fetch_depth }}
-          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
-          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Restore Lint Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
@@ -82,7 +91,7 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
 
-      - name: Install NPM packages (`head_sha`)
+      - name: Install NPM packages
         # We want to avoid NPM from running the Audit Step and Funding messages on a CI environment
         # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
         run: npm i --no-audit --no-fund --ignore-scripts --userconfig=/dev/null
@@ -98,6 +107,9 @@ jobs:
         run: npx --package=turbo@latest -- turbo prettier ${{ needs.base.outputs.turbo_args }}
 
       - name: Save Lint Cache
+        # We don't need to upload a Lint Cache for Dependabot PRs and also when the GitHub Event is not a Pull Request
+        # i.e. if the Event is a Merge Queue Event
+        if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false && github.event_name == 'pull_request'
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
@@ -111,15 +123,11 @@ jobs:
     needs: [base]
 
     steps:
-      - name: Git Checkout (`head_sha`)
+      - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
           # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
           fetch-depth: ${{ needs.base.outputs.fetch_depth }}
-          # Since we use the `pull_request_target` event we want to checkout the current ref as by default this
-          # command will checkout `main` instead of the current pull_request ref
-          # We checkout the head.sha to get the latest commit, instead of head.ref that gives the current ref of the branch
-          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Restore Tests Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
@@ -140,7 +148,7 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
 
-      - name: Install NPM packages (`head_sha`)
+      - name: Install NPM packages
         # We want to avoid NPM from running the Audit Step and Funding messages on a CI environment
         # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
         run: npm i --no-audit --no-fund --userconfig=/dev/null
@@ -151,6 +159,9 @@ jobs:
         run: npx --package=turbo@latest -- turbo test:unit ${{ needs.base.outputs.turbo_args }} -- --ci --coverage
 
       - name: Upload Coverage Report
+        # We don't need coverage report for Dependabot PRs and also when the GitHub Event is not a Pull Request
+        # i.e. if the Event is a Merge Queue Event
+        if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false && github.event_name == 'pull_request'
         # We upload the Coverage Report so it can be used on another Workflow
         uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
         with:
@@ -159,12 +170,29 @@ jobs:
             coverage/
             junit.xml
 
-      - name: Run Storybook Tests
+      - name: Build Storybook
+        # This prevents this step from running if "Upload Coverage Report" got cancelled; Which gets cancelled if
+        # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
+        if: success()
+        # We Build Storybook Locally and then upload it so it can be used on another Workflow
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npx --package=turbo@latest -- turbo test:storybook:local ${{ needs.base.outputs.turbo_args }} -- --ci
+        run: npx --package=turbo@latest -- turbo storybook:build ${{ needs.base.outputs.turbo_args }}
+
+      - name: Upload Storybook Build
+        # This prevents this step from running if "Build Storybook" got cancelled; Which gets cancelled if
+        # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
+        if: success()
+        # We upload the Storybook Build so it can be used on another Workflow
+        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
+        with:
+          name: storybook-build
+          path: storybook-static
 
       - name: Save Tests Cache
+        # This prevents this step from running if "Upload Storybook Build" got cancelled; Which gets cancelled if
+        # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
+        if: success()
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
