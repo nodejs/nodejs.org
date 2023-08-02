@@ -108,6 +108,13 @@ The current integration is owned by the OpenJS Foundation and managed by the Web
 
 [Dependency Pinning][]
 
+## Thanks
+
+- Thanks to all contributors and collaborators that make this project possible.
+- Thanks to [Chromatic](https://www.chromatic.com/) for providing the visual testing platform that helps us review UI changes and catch visual regressions.
+- Thanks to [Vercel](https://www.vercel.com/) for providing the infrastructure that serves and powers the Node.js Website
+- Thanks to [Cloudflare](https://cloudflare.com) for providing the infrastructure that serves Node.js's Website, Node.js's CDN and more.
+
 [code of conduct]: https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md
 [contribution guidelines]: ./CONTRIBUTING.md
 [content vs code]: ./CONTENT_VS_CODE.md

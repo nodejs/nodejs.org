@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Article/InlineCode Default smoke-test 1`] = `
-<code>
-  <code>
-    const a = 1;
-  </code>
-</code>
-`;

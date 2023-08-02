@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Article/Alert Default smoke-test 1`] = `
-<div class="Alert_alert__qjYPQ">
-  This is an alert
-</div>
-`;

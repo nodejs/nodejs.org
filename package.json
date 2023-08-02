@@ -4,8 +4,13 @@
   "version": "1.0.0",
   "description": "Nodejs.org Website",
   "homepage": "https://nodejs.org",
-  "repository": "https://github.com/nodejs/nodejs.org",
-  "author": "Node.js Website Working Group",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodejs/nodejs.org.git"
+  },
+  "author": {
+    "name": "Node.js Website Working Group"
+  },
   "license": "MIT",
   "engines": {
     "node": "v18"
@@ -31,11 +36,7 @@
     "storybook:build": "cross-env NODE_NO_WARNINGS=1 storybook build --quiet",
     "test:unit": "cross-env NODE_NO_WARNINGS=1 jest --passWithNoTests",
     "test:unit:watch": "npm run test:unit -- --watch",
-    "test:storybook": "test-storybook --no-index-json",
-    "test:storybook:local": "concurrently -P -r -k -s first npm:storybook \"wait-on http://localhost:6006 && npm run test:storybook -- {@}\"",
-    "test:storybook:snapshot": "npm run test:storybook:local -- -- --updateSnapshot",
-    "test:storybook:watch": "npm run test:storybook:local -- -- --watch",
-    "test": "concurrently -r -s all npm:test:unit npm:test:storybook:local",
+    "test": "npm run test:unit",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -76,8 +77,6 @@
     "@storybook/addon-controls": "~7.0.26",
     "@storybook/addon-interactions": "~7.0.26",
     "@storybook/nextjs": "~7.0.26",
-    "@storybook/test-runner": "~0.11.0",
-    "@storybook/testing-library": "~0.2.0",
     "@testing-library/jest-dom": "~5.17.0",
     "@testing-library/react": "~14.0.0",
     "@testing-library/user-event": "~14.4.3",
@@ -89,7 +88,6 @@
     "@types/testing-library__jest-dom": "5.14.9",
     "@typescript-eslint/eslint-plugin": "5.61.0",
     "@typescript-eslint/parser": "5.61.0",
-    "concurrently": "8.2.0",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
     "eslint-config-prettier": "8.8.0",
@@ -99,6 +97,8 @@
     "handlebars": "4.7.7",
     "jest": "29.6.2",
     "jest-environment-jsdom": "29.6.2",
+    "jest-junit": "16.0.0",
+    "nextjs-bundle-analysis": "0.5.0",
     "prettier": "3.0.0",
     "remark-preset-lint-node": "4.0.0",
     "remark-preset-prettier": "2.0.1",
