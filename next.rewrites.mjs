@@ -48,6 +48,11 @@ const redirects = async () => [
     permanent: true,
   },
   {
+    source: `${localesMatch}security`,
+    destination: 'https://github.com/nodejs/release#release-schedule',
+    permanent: true,
+  },
+  {
     source: `${localesMatch}contribute/accepting_contributions.html`,
     destination: 'https://github.com/nodejs/dev-policy',
     permanent: true,
