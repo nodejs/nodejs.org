@@ -4,6 +4,6 @@ import detectLanguage from './middlewares/detectLanguage';
 
 const nextMiddleware = createMiddleware(NextResponse);
 
-const { middleware, matcher } = nextMiddleware([detectLanguage]);
+export const { middleware } = nextMiddleware([detectLanguage]);
 
-export { middleware, matcher };
+export const config = { matcher: "/" };
