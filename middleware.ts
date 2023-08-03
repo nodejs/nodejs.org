@@ -6,4 +6,4 @@ const nextMiddleware = createMiddleware(NextResponse);
 
 export const { middleware } = nextMiddleware([detectLanguage]);
 
-export const config = { matcher: "/" };
+export const config = { matcher: ["/"] };
