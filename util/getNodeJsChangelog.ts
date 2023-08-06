@@ -1,5 +1,3 @@
-// ignoring concern for missing versions here - as the data flow from Node.js releases is rigid and we can make assumptions here
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import semVer from 'semver';
 
 /**
@@ -13,9 +11,9 @@ export const getNodejsChangelog = (version: string): string => {
     'https://github.com/nodejs/node/blob/main/doc/changelogs';
 
   // Parse the version string and get the major and minor versions
-  const cleanVersion = semVer.clean(version);
-  const majorVersion = semVer.major(cleanVersion!);
-  const minorVersion = semVer.minor(cleanVersion!);
+  const cleanVersion = semVer.clean(version) as string;
+  const majorVersion = semVer.major(cleanVersion);
+  const minorVersion = semVer.minor(cleanVersion);
 
   // Determine the URL of the changelog based on the version
   if (majorVersion >= 4) {
