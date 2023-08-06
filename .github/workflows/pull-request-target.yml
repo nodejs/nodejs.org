@@ -86,6 +86,7 @@ jobs:
           junitxml-title: Unit Test Report
 
   visual-regression:
+    # We want to skip our visual regression tests on Dependabot PRs
     if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
     name: Visual Regression Upload
     runs-on: ubuntu-latest
@@ -242,3 +243,57 @@ jobs:
           body: ${{ steps.get-comment-body.outputs.body }}
           comment-id: ${{ steps.find-comment-id.outputs.comment-id }}
           edit-mode: replace
+
+  lighthouse-ci:
+    # We want to skip our lighthouse analysis on Dependabot PRs
+    if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
+    name: Lighthouse Report
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add comment to PR
+        # Signal that a lighthouse run is about to start
+        uses: marocchino/sticky-pull-request-comment@f61b6cf21ef2fcc468f4345cdfcc9bda741d2343
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ github.event.issue.number }}
+          header: Lighthouse
+          message: |
+            Running Lighthouse audit...
+      - name: Capture Vercel preview URL
+        # Get the vercel preview url
+        id: vercel_preview_url
+        uses: aaimio/vercel-preview-url-action@b82a318e4c1eac7ef38ed1b241677a81db08494b
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+      - name: Audit preview URL with Lighthouse
+        # Conduct the lighthouse audit
+        id: lighthouse_audit
+        uses: treosh/lighthouse-ci-action@03becbfc543944dd6e7534f7ff768abb8a296826
+        with:
+          configPath: './lighthouserc.json'
+          urls: |
+            ${{ steps.vercel_preview_url.outputs.vercel_preview_url }}
+          uploadArtifacts: true
+      - name: Format lighthouse score
+        # Transform the audit results into a single, friendlier output
+        id: format_lighthouse_score
+        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410
+        env:
+          LIGHTHOUSE_RESULT: ${{ steps.lighthouse_audit.outputs.manifest }}[0].summary
+          LIGHTHOUSE_LINKS: ${{ steps.lighthouse_audit.outputs.links }}
+        with:
+          script: |
+            const script = require('./scripts/lighthouse/index.js')
+            script({core})
+
+      - name: Add comment to PR
+        # Replace the previous message with our formatted lighthouse results
+        uses: marocchino/sticky-pull-request-comment@f61b6cf21ef2fcc468f4345cdfcc9bda741d2343
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          number: ${{ github.event.issue.number }}
+          header: Lighthouse
+          message: |
+            ${{ steps.format_lighthouse_score.outputs.comment }}
