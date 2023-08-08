@@ -5,10 +5,15 @@ import * as nextRewrites from './next.rewrites.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // This configures all the Next.js rewrites
-  rewrites: nextRewrites.rewrites,
+  // This configures all the Next.js rewrites, which are used for rewriting internal URLs into other internal Endpoints
+  // This feature is not supported within static export builds, hence we pass an empty array if static exports are enabled
+  rewrites: !nextConstants.ENABLE_STATIC_EXPORT
+    ? nextRewrites.rewrites
+    : undefined,
   // This configures all Next.js redirects
-  redirects: nextRewrites.redirects,
+  redirects: !nextConstants.ENABLE_STATIC_EXPORT
+    ? nextRewrites.redirects
+    : undefined,
   // We intentionally disable Next.js's built-in i18n support
   // as we dom have our own i18n and internationalisation engine
   i18n: null,
