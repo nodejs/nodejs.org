@@ -26,7 +26,6 @@
     "postbuild": "npm run scripts:generate-robots",
     "start": "cross-env NODE_NO_WARNINGS=1 next start",
     "deploy": "cross-env NEXT_STATIC_EXPORT=true npm run build",
-    "postdeploy": "npm run scripts:generate-robots",
     "lint:js": "eslint \"**/*.{mjs,ts,tsx}\" --cache --cache-file .eslintjscache --report-unused-disable-directives",
     "lint:md": "eslint \"**/*.md?(x)\" --cache --cache-file .eslintmdcache",
     "lint:scss": "stylelint --config .stylelintrc.json \"**/*.{css,sass,scss}\"",
