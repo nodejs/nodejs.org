@@ -55,9 +55,9 @@ jobs:
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
         run: |
           if [ "${{ github.event_name }}" == "pull_request" ]; then
-            echo "turbo_args=--filter=\"[HEAD~${{ github.event.pull_request.commits }}...HEAD]\" --cache-dir=.turbo/cache --env-mode=strict" >> "$GITHUB_OUTPUT"
+            echo "turbo_args=--filter=\"[HEAD~${{ github.event.pull_request.commits }}...HEAD]\" --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
           else
-            echo "turbo_args=--cache-dir=.turbo/cache --env-mode=strict" >> "$GITHUB_OUTPUT"
+            echo "turbo_args=--cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
           fi
 
   lint:

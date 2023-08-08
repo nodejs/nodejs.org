@@ -35,7 +35,7 @@ jobs:
         # We also set the Turborepo Cache to the `.turbo` folder
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-        run: echo "turbo_args=--force=true --cache-dir=.turbo/cache --env-mode=strict" >> "$GITHUB_OUTPUT"
+        run: echo "turbo_args=--force=true --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
 
   build:
     name: Build on ${{ matrix.os }}
