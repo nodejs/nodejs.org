@@ -15,6 +15,13 @@ const Document = () => (
         src={nextConstants.LEGACY_JAVASCRIPT_FILE}
       />
 
+      <script
+        id="initial-theme-script"
+        dangerouslySetInnerHTML={{
+          __html: nextConstants.INITIAL_THEME_SCRIPT,
+        }}
+      />
+
       <a rel="me" href="https://social.lfx.dev/@nodejs" />
     </body>
   </Html>

@@ -92,6 +92,19 @@ export const DEFAULT_LOCALE_CODE = nextLocales.defaultLocale.code;
 export const LEGACY_JAVASCRIPT_FILE = `${BASE_PATH}/static/js/legacyMain.js`;
 
 /**
+ * This script source replaces the logic for the initial theme set in the Legacy Javascript File.
+ *
+ * @deprecated This theme script is a temporal fix until the Legacy Website is removed.
+ */
+export const INITIAL_THEME_SCRIPT = `!(function () {
+  const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  const theme = localStorage.getItem('theme') ?? systemTheme;
+  document.querySelector('html').setAttribute('data-theme', theme);
+  document.body.className = theme;
+  window.localStorage.setItem('theme', theme);
+})();`;
+
+/**
  * This is a list of all static routes or pages from the Website that we do not
  * want to allow to be statically built on our Static Export Build.
  *
