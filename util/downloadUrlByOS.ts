@@ -14,6 +14,6 @@ export const downloadUrlByOS = (
     case 'WIN':
       return `${baseURL}/node-${versionWithPrefix}-x${bitness}.msi`;
     default:
-      return `${baseURL}/node-${versionWithPrefix}.tar.gz`;
+      return `${baseURL}/node-${versionWithPrefix}.tar.xz`;
   }
 };
