@@ -52,7 +52,8 @@ const redirects = async () => [
   },
   {
     source: `${localesMatch}security`,
-    destination: 'https://github.com/nodejs/release#release-schedule',
+    destination:
+      'https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security',
     permanent: true,
   },
   {
