@@ -80,19 +80,12 @@ const listenScrollToTopButton = () => {
   });
 };
 
-const setCurrentTheme = () =>
-  setTheme(getTheme() || (preferredColorScheme.matches ? 'dark' : 'light'));
-
 const startLegacyApp = () => {
-  setCurrentTheme();
-
   watchThemeChanges();
 
   listenLanguagePickerButton();
   listenThemeToggleButton();
   listenScrollToTopButton();
 };
-
-setCurrentTheme();
 
 window.startLegacyApp = startLegacyApp;
