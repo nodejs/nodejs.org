@@ -9,5 +9,4 @@ export * from './layouts';
 export * from './navigation';
 export * from './prevNextLink';
 export * from './releases';
-export * from './middlewares';
 export * from './dynamic';
