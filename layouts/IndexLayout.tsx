@@ -37,7 +37,7 @@ const IndexLayout: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <BaseLayout>
-      <div className="container">
+      <div className="container center">
         <div id="home-intro">
           {children}
 

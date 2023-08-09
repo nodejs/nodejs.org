@@ -4,6 +4,11 @@
   overflow: hidden;
   width: 100%;
 }
+.center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
 
 .row {
   display: flex;
