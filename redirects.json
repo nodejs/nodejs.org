@@ -119,6 +119,10 @@
       "destination": "/:locale/get-involved"
     },
     {
+      "source": "/:locale/docs/inspector",
+      "destination": "/:locale/docs/guides/debugging-getting-started"
+    },
+    {
       "source": "/:locale/contribute/:path*",
       "destination": "/:locale/get-involved"
     },
