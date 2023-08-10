@@ -1,3 +1,4 @@
+import { sep } from 'node:path';
 import Theme from '@/theme';
 import * as nextDynamic from '@/next.dynamic.mjs';
 import * as nextConstants from '@/next.constants.mjs';
@@ -28,7 +29,9 @@ const getRouteWrite = (pathname: string) =>
 
 // This maps a pathname into an actual route object that can be used
 const mapPathnameToRoute = (pathname: string) => ({
-  params: { path: pathname.split('/') },
+  // we use a platform-specific separator to split the pathname
+  // since we're using filepaths here and not URL paths
+  params: { path: pathname.split(sep) },
 });
 
 // This method receives the props from `getStaticProps` and renders/builds the Markdown
