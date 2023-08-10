@@ -92,12 +92,6 @@ export const DEFAULT_LOCALE_CODE = defaultLocale.code;
 export const LEGACY_JAVASCRIPT_FILE = `${BASE_PATH}/static/js/legacyMain.js`;
 
 /**
- * This is the current Node.js Working directory. We usually use it to resolve pathnames
- * relative to the content of the Node.js Website.
- */
-export const CURRENT_WORKING_DIRECTORY = process.cwd();
-
-/**
  * This is a list of all static routes or pages from the Website that we do not
  * want to allow to be statically built on our Static Export Build.
  *
