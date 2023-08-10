@@ -10,11 +10,15 @@ import rehypeSlug from 'rehype-slug';
 import { serialize } from 'next-mdx-remote/serialize';
 import { availableLocales } from './next.locales.mjs';
 import { getMarkdownFiles } from './next.helpers.mjs';
-import { DEFAULT_LOCALE_CODE, MD_EXTENSION_REGEX } from './next.constants.mjs';
+import {
+  DEFAULT_LOCALE_CODE,
+  MD_EXTENSION_REGEX,
+  CURRENT_WORKING_DIRECTORY,
+} from './next.constants.mjs';
 
 // allows us to run a glob to get markdown files based on a language folder
 const getPathsByLanguage = async (locale = DEFAULT_LOCALE_CODE, ignored = []) =>
-  getMarkdownFiles(process.cwd(), `pages/${locale}`, ignored);
+  getMarkdownFiles(CURRENT_WORKING_DIRECTORY, `pages/${locale}`, ignored);
 
 /**
  * This method is responsible for generating a Collection of all available paths that
@@ -41,6 +45,7 @@ const getAllPaths = async () => {
       sourcePages.map(filename => {
         // remove the index.md(x) suffix from a pathname
         let pathname = filename.replace(MD_EXTENSION_REGEX, '');
+
         // remove trailing slash for correct Windows pathing of the index files
         if (pathname.length > 1 && pathname.endsWith(sep)) {
           pathname = pathname.substring(0, pathname.length - 1);
@@ -110,7 +115,7 @@ export const getMarkdownFile = (
 
       // gets the full pathname for the file (absolute path)
       metadata.filename = join(
-        process.cwd(),
+        CURRENT_WORKING_DIRECTORY,
         'pages',
         localeToUse,
         route.filename
