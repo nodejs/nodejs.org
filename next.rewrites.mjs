@@ -24,6 +24,11 @@ const localesMatch = `/:locale(${localeCodes.join('|')}|)?/`;
  */
 const redirects = async () => [
   {
+    source: '/dist',
+    destination: '/dist/',
+    permanent: true,
+  },
+  {
     source: '/index.html',
     destination: '/',
     permanent: true,
