@@ -42,11 +42,6 @@ const nextConfig = {
     // since we pass the fully-compiled MDX page from `MDXRemote` through
     // a page's static props.
     largePageDataBytes: 128 * 100000,
-    // We disable the bundling and tracing of some files on the Serverless & Edge Runtimes
-    // as otherwise they would explode the bundle size (server) and the tracing time
-    outputFileTracingExcludes: {
-      '*': ['./public/**', 'node_modules/**/@swc/core*'],
-    },
   },
 };
 
