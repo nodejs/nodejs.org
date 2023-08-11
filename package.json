@@ -87,7 +87,7 @@
     "@testing-library/user-event": "~14.4.3",
     "@types/jest": "29.5.3",
     "@types/prismjs": "^1.26.0",
-    "@types/react": "^18.2.18",
+    "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "@types/semver": "^7.5.0",
     "@types/testing-library__jest-dom": "5.14.9",
