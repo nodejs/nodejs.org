@@ -135,7 +135,7 @@ export const getMarkdownFile = (
  *
  * @returns {Promise<{ notFound: boolean, props: any; revalidate: number | boolean }>} the props for the page
  */
-export const getStaticProps = async (source = '', filename = '') => {
+export const generateStaticProps = async (source = '', filename = '') => {
   // by default a page is not found if there's no source or filename
   const staticProps = { notFound: true, props: {}, revalidate: false };
 

@@ -6,14 +6,17 @@ import { BASE_URL, BASE_PATH } from '@/next.constants.mjs';
 import type { LegacyFrontMatter } from '@/types';
 import type { FC } from 'react';
 
+// This is the combination of the Application Base URL and Base PATH
+const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;
+
 type HeaderProps = { frontMatter: LegacyFrontMatter };
 
 const HtmlHead: FC<HeaderProps> = ({ frontMatter }) => {
   const siteConfig = useSiteConfig();
-  const { asPath, basePath } = useRouter();
+  const { asPath } = useRouter();
   const { availableLocales, currentLocale, defaultLocale } = useLocale();
 
-  const canonicalLink = `${BASE_URL}${BASE_PATH}${asPath}`;
+  const canonicalLink = `${baseUrlAndPath}${asPath}`;
 
   const pageTitle = frontMatter.title
     ? `${frontMatter.title} | ${siteConfig.title}`
@@ -36,7 +39,7 @@ const HtmlHead: FC<HeaderProps> = ({ frontMatter }) => {
 
       <meta
         property="og:image"
-        content={`${basePath}${siteConfig.featuredImage}`}
+        content={`${baseUrlAndPath}${siteConfig.featuredImage}`}
       />
 
       <meta property="og:image:type" content={siteConfig.og.imgType} />
@@ -49,7 +52,7 @@ const HtmlHead: FC<HeaderProps> = ({ frontMatter }) => {
 
       <meta
         name="twitter:image"
-        content={`${basePath}${siteConfig.twitter.img}`}
+        content={`${baseUrlAndPath}${siteConfig.twitter.img}`}
       />
 
       <meta name="twitter:image:alt" content={siteConfig.twitter.imgAlt} />
@@ -58,7 +61,7 @@ const HtmlHead: FC<HeaderProps> = ({ frontMatter }) => {
 
       <link
         rel="icon"
-        href={`${basePath}${siteConfig.favicon}`}
+        href={`${baseUrlAndPath}${siteConfig.favicon}`}
         type="image/png"
       />
 
@@ -87,7 +90,7 @@ const HtmlHead: FC<HeaderProps> = ({ frontMatter }) => {
         <link
           key={feed.file}
           title={feed.title}
-          href={`${basePath}/en/feed/${feed.file}`}
+          href={`${baseUrlAndPath}/en/feed/${feed.file}`}
           rel="alternate"
           type="application/rss+xml"
         />

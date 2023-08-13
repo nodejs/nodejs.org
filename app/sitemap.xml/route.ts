@@ -9,7 +9,7 @@ import {
 } from '@/next.constants.mjs';
 
 // This is the combination of the Application Base URL and Base PATH
-const canonicalUrl = `${BASE_URL}${BASE_PATH}`;
+const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;
 
 // This method populates and generates the Website Sitemap by using `next-sitemap` SSR functionality
 // @see https://nextjs.org/docs/app/building-your-application/routing/router-handlers
@@ -28,7 +28,7 @@ export const GET = () => {
 
   return getServerSideSitemap(
     [...dynamicRoutes, ...staticPaths].sort().map(route => ({
-      loc: `${canonicalUrl}/${route}`,
+      loc: `${baseUrlAndPath}/${route}`,
       lastmod: currentDate,
       changefreq: 'always',
       // We build the alternate languages based on the source pages
@@ -36,7 +36,7 @@ export const GET = () => {
       alternateRefs: availableLocales.map(locale => ({
         hreflang: locale.code,
         hrefIsAbsolute: true,
-        href: `${canonicalUrl}/${route.replace(
+        href: `${baseUrlAndPath}/${route.replace(
           `${defaultLocale.code}/`,
           `${locale.code}/`
         )}`,
