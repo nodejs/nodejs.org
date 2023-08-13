@@ -12,6 +12,7 @@ export const LocaleContext = createContext<LocaleContextType>({
   localeMessages: nextLocales.getCurrentTranslations(
     nextLocales.defaultLocale.code
   ),
+  defaultLocale: nextLocales.defaultLocale,
 });
 
 export const LocaleProvider: FC<PropsWithChildren> = ({ children }) => {
@@ -24,6 +25,7 @@ export const LocaleProvider: FC<PropsWithChildren> = ({ children }) => {
     return {
       currentLocale: currentLocale,
       availableLocales: nextLocales.availableLocales,
+      defaultLocale: nextLocales.defaultLocale,
       localeMessages: nextLocales.getCurrentTranslations(currentLocale.code),
     };
   }, [asPath, query]);
