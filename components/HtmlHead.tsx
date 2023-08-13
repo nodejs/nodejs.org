@@ -66,8 +66,8 @@ const HtmlHead: FC<HeaderProps> = ({ frontMatter }) => {
         rel="alternate"
         hrefLang="x-default"
         href={canonicalLink.replace(
-          `/${currentLocale.code}/`,
-          `/${defaultLocale.code}/`
+          `/${currentLocale.code}`,
+          `/${defaultLocale.code}`
         )}
       />
 
