@@ -6,7 +6,7 @@
  * of stitching together data from changelog, shasums etc,
  * but get a more or less complete release blog ready to go.
  *
- * Usage: $ node index.js [version]
+ * Usage: $ node index.mjs [version]
  *
  * If the version argument is omitted, the latest version number
  * will be picked from https://nodejs.org/dist/index.json.
