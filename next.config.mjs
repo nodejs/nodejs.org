@@ -1,14 +1,10 @@
 'use strict';
 
-import * as nextConstants from './next.constants.mjs';
-import * as nextRewrites from './next.rewrites.mjs';
+import { BASE_PATH, ENABLE_STATIC_EXPORT } from './next.constants.mjs';
+import { redirects, rewrites } from './next.rewrites.mjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // This configures all the Next.js rewrites
-  rewrites: nextRewrites.rewrites,
-  // This configures all Next.js redirects
-  redirects: nextRewrites.redirects,
   // We intentionally disable Next.js's built-in i18n support
   // as we dom have our own i18n and internationalisation engine
   i18n: null,
@@ -19,13 +15,18 @@ const nextConfig = {
   trailingSlash: false,
   // We allow the BASE_PATH to be overridden in case that the Website
   // is being built on a subdirectory (e.g. /nodejs-website)
-  basePath: nextConstants.BASE_PATH,
+  basePath: BASE_PATH,
   // We disable image optimisation during static export builds
-  images: { unoptimized: nextConstants.ENABLE_STATIC_EXPORT },
+  images: { unoptimized: ENABLE_STATIC_EXPORT },
   // On static export builds we want the output directory to be "build"
-  distDir: nextConstants.ENABLE_STATIC_EXPORT ? 'build' : '.next',
+  distDir: ENABLE_STATIC_EXPORT ? 'build' : '.next',
   // On static export builds we want to enable the export feature
-  output: nextConstants.ENABLE_STATIC_EXPORT ? 'export' : undefined,
+  output: ENABLE_STATIC_EXPORT ? 'export' : undefined,
+  // This configures all the Next.js rewrites, which are used for rewriting internal URLs into other internal Endpoints
+  // This feature is not supported within static export builds, hence we pass an empty array if static exports are enabled
+  rewrites: !ENABLE_STATIC_EXPORT ? rewrites : undefined,
+  // This configures all Next.js redirects
+  redirects: !ENABLE_STATIC_EXPORT ? redirects : undefined,
   // We don't want to run Type Checking on Production Builds
   // as we already check it on the CI within each Pull Request
   typescript: { ignoreBuildErrors: true },
@@ -41,11 +42,6 @@ const nextConfig = {
     // since we pass the fully-compiled MDX page from `MDXRemote` through
     // a page's static props.
     largePageDataBytes: 128 * 100000,
-    // We disable the bundling and tracing of some files on the Serverless & Edge Runtimes
-    // as otherwise they would explode the bundle size (server) and the tracing time
-    outputFileTracingExcludes: {
-      '*': ['./public/**', 'node_modules/**/@swc/core*'],
-    },
   },
 };
 

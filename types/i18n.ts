@@ -12,4 +12,5 @@ export interface LocaleContext {
   localeMessages: Record<string, string>;
   availableLocales: LocaleConfig[];
   currentLocale: LocaleConfig;
+  defaultLocale: LocaleConfig;
 }

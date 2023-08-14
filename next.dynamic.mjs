@@ -8,15 +8,13 @@ import remarkHeadings from '@vcarl/remark-headings';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import { serialize } from 'next-mdx-remote/serialize';
-import * as nextLocales from './next.locales.mjs';
-import * as nextConstants from './next.constants.mjs';
-import * as nextHelpers from './next.helpers.mjs';
+import { availableLocales } from './next.locales.mjs';
+import { getMarkdownFiles } from './next.helpers.mjs';
+import { DEFAULT_LOCALE_CODE, MD_EXTENSION_REGEX } from './next.constants.mjs';
 
 // allows us to run a glob to get markdown files based on a language folder
-const getPathsByLanguage = async (
-  locale = nextConstants.DEFAULT_LOCALE_CODE,
-  ignored = []
-) => nextHelpers.getMarkdownFiles(process.cwd(), `pages/${locale}`, ignored);
+const getPathsByLanguage = async (locale = DEFAULT_LOCALE_CODE, ignored = []) =>
+  getMarkdownFiles(process.cwd(), `pages/${locale}`, ignored);
 
 /**
  * This method is responsible for generating a Collection of all available paths that
@@ -31,9 +29,7 @@ const getPathsByLanguage = async (
 const getAllPaths = async () => {
   // during full static build we don't want to cover blog posts
   // as otherwise they will all get built as static pages during build time
-  const sourcePages = await getPathsByLanguage(
-    nextConstants.DEFAULT_LOCALE_CODE
-  );
+  const sourcePages = await getPathsByLanguage(DEFAULT_LOCALE_CODE);
 
   /**
    * This method is used to provide the list of pages that are provided by a given locale
@@ -44,7 +40,8 @@ const getAllPaths = async () => {
     (files = []) =>
       sourcePages.map(filename => {
         // remove the index.md(x) suffix from a pathname
-        let pathname = filename.replace(nextConstants.MD_EXTENSION_REGEX, '');
+        let pathname = filename.replace(MD_EXTENSION_REGEX, '');
+
         // remove trailing slash for correct Windows pathing of the index files
         if (pathname.length > 1 && pathname.endsWith(sep)) {
           pathname = pathname.substring(0, pathname.length - 1);
@@ -65,11 +62,10 @@ const getAllPaths = async () => {
    *
    * @type {[string, import('./types').RouteSegment[]][]}
    */
-  const allAvailableMarkdownPaths = nextLocales.availableLocales.map(
-    ({ code }) =>
-      getPathsByLanguage(code)
-        .then(mergePathsWithFallback(code))
-        .then(files => [code, files])
+  const allAvailableMarkdownPaths = availableLocales.map(({ code }) =>
+    getPathsByLanguage(code)
+      .then(mergePathsWithFallback(code))
+      .then(files => [code, files])
   );
 
   return Promise.all(allAvailableMarkdownPaths);
@@ -95,7 +91,7 @@ export const allPaths = new Map(await getAllPaths());
  * @throws {Error} if the file does not exist, which should never happen
  */
 export const getMarkdownFile = (
-  locale = nextConstants.DEFAULT_LOCALE_CODE,
+  locale = DEFAULT_LOCALE_CODE,
   pathname = ''
 ) => {
   const metadata = { source: '', filename: '' };
@@ -111,9 +107,7 @@ export const getMarkdownFile = (
     if (route && route.filename) {
       // this determines if we should be using the fallback rendering to the default locale
       // or if we can use the current locale
-      const localeToUse = !route.localised
-        ? nextConstants.DEFAULT_LOCALE_CODE
-        : locale;
+      const localeToUse = !route.localised ? DEFAULT_LOCALE_CODE : locale;
 
       // gets the full pathname for the file (absolute path)
       metadata.filename = join(
@@ -141,7 +135,7 @@ export const getMarkdownFile = (
  *
  * @returns {Promise<{ notFound: boolean, props: any; revalidate: number | boolean }>} the props for the page
  */
-export const getStaticProps = async (source = '', filename = '') => {
+export const generateStaticProps = async (source = '', filename = '') => {
   // by default a page is not found if there's no source or filename
   const staticProps = { notFound: true, props: {}, revalidate: false };
 

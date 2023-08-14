@@ -1,8 +1,8 @@
 'use strict';
 
 import { Feed } from 'feed';
-import * as nextJson from '../next.json.mjs';
-import * as nextConstants from '../next.constants.mjs';
+import { siteConfig } from '../next.json.mjs';
+import { BASE_URL, BASE_PATH } from '../next.constants.mjs';
 
 /**
  * This method generates RSS website feeds based on the current website configuration
@@ -11,21 +11,21 @@ import * as nextConstants from '../next.constants.mjs';
  * @param {import('../types').BlogData} blogData
  */
 const generateWebsiteFeeds = ({ posts }) => {
-  const canonicalUrl = `${nextConstants.BASE_URL}${nextConstants.BASE_PATH}/en`;
+  const canonicalUrl = `${BASE_URL}${BASE_PATH}/en`;
 
   /**
    * This generates all the Website RSS Feeds that are used for the website
    *
    * @type {[string, Feed][]}
    */
-  const websiteFeeds = nextJson.siteConfig.rssFeeds.map(
+  const websiteFeeds = siteConfig.rssFeeds.map(
     ({ category, title, description, file }) => {
       const feed = new Feed({
         id: file,
         title: title,
         language: 'en',
         link: `${canonicalUrl}/feed/${file}`,
-        description: description || nextJson.siteConfig.description,
+        description: description || siteConfig.description,
       });
 
       const blogFeedEntries = posts

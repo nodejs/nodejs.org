@@ -4,8 +4,10 @@ import { LocaleContext } from '@/providers/localeProvider';
 import { linkWithLocale } from '@/util/linkWithLocale';
 
 export const useLocale = () => {
-  const { currentLocale, availableLocales } = useContext(LocaleContext);
   const { asPath } = useRouter();
+
+  const { currentLocale, availableLocales, defaultLocale } =
+    useContext(LocaleContext);
 
   const localizedLink = linkWithLocale(currentLocale.code);
 
@@ -13,8 +15,9 @@ export const useLocale = () => {
     localizedLink(route).replace(/[#|?].*$/, '');
 
   return {
-    availableLocales: availableLocales,
-    currentLocale: currentLocale,
+    availableLocales,
+    currentLocale,
+    defaultLocale,
     isCurrentLocaleRoute: (route: string, allowSubPath?: boolean) => {
       const localisedRoute = localisedPath(route);
       const asPathJustPath = asPath.replace(/[#|?].*$/, '');
