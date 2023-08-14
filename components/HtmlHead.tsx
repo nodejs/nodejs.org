@@ -1,17 +1,22 @@
 import Head from 'next/head';
 import { useSiteConfig } from '@/hooks/useSiteConfig';
 import { useRouter } from '@/hooks/useRouter';
+import { useLocale } from '@/hooks/useLocale';
 import { BASE_URL, BASE_PATH } from '@/next.constants.mjs';
 import type { LegacyFrontMatter } from '@/types';
 import type { FC } from 'react';
+
+// This is the combination of the Application Base URL and Base PATH
+const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;
 
 type HeaderProps = { frontMatter: LegacyFrontMatter };
 
 const HtmlHead: FC<HeaderProps> = ({ frontMatter }) => {
   const siteConfig = useSiteConfig();
-  const { asPath, basePath } = useRouter();
+  const { asPath } = useRouter();
+  const { availableLocales, currentLocale, defaultLocale } = useLocale();
 
-  const canonicalLink = `${BASE_URL}${BASE_PATH}${asPath}`;
+  const canonicalLink = `${baseUrlAndPath}${asPath}`;
 
   const pageTitle = frontMatter.title
     ? `${frontMatter.title} | ${siteConfig.title}`
@@ -22,12 +27,6 @@ const HtmlHead: FC<HeaderProps> = ({ frontMatter }) => {
       <title>{pageTitle}</title>
 
       <meta name="theme-color" content={siteConfig.accentColor}></meta>
-
-      <link
-        rel="icon"
-        href={`${basePath}${siteConfig.favicon}`}
-        type="image/png"
-      />
 
       <meta name="robots" content={frontMatter.robots || 'index, follow'} />
 
@@ -40,7 +39,7 @@ const HtmlHead: FC<HeaderProps> = ({ frontMatter }) => {
 
       <meta
         property="og:image"
-        content={`${basePath}${siteConfig.featuredImage}`}
+        content={`${baseUrlAndPath}${siteConfig.featuredImage}`}
       />
 
       <meta property="og:image:type" content={siteConfig.og.imgType} />
@@ -53,19 +52,46 @@ const HtmlHead: FC<HeaderProps> = ({ frontMatter }) => {
 
       <meta
         name="twitter:image"
-        content={`${basePath}${siteConfig.twitter.img}`}
+        content={`${baseUrlAndPath}${siteConfig.twitter.img}`}
       />
 
       <meta name="twitter:image:alt" content={siteConfig.twitter.imgAlt} />
 
       <link rel="canonical" href={canonicalLink} />
 
+      <link
+        rel="icon"
+        href={`${baseUrlAndPath}${siteConfig.favicon}`}
+        type="image/png"
+      />
+
+      <link
+        rel="alternate"
+        hrefLang="x-default"
+        href={canonicalLink.replace(
+          `/${currentLocale.code}`,
+          `/${defaultLocale.code}`
+        )}
+      />
+
+      {availableLocales.map(locale => (
+        <link
+          key={locale.code}
+          rel="alternate"
+          hrefLang={locale.code}
+          href={canonicalLink.replace(
+            `/${currentLocale.code}`,
+            `/${locale.code}`
+          )}
+        />
+      ))}
+
       {siteConfig.rssFeeds.map(feed => (
         <link
           key={feed.file}
-          rel="alternate"
-          href={`${basePath}/en/feed/${feed.file}`}
           title={feed.title}
+          href={`${baseUrlAndPath}/en/feed/${feed.file}`}
+          rel="alternate"
           type="application/rss+xml"
         />
       ))}

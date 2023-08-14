@@ -1,17 +1,21 @@
 import { createContext, useMemo } from 'react';
 import { IntlProvider } from 'react-intl';
 import { useRouter } from '@/hooks/useRouter';
-import * as nextLocales from '@/next.locales.mjs';
+import {
+  defaultLocale,
+  availableLocales,
+  getCurrentLocale,
+  getCurrentTranslations,
+} from '@/next.locales.mjs';
 import type { FC, PropsWithChildren } from 'react';
 import type { LocaleContext as LocaleContextType } from '@/types';
 
 // Initialises the Context with the default Localisation Data
 export const LocaleContext = createContext<LocaleContextType>({
-  currentLocale: nextLocales.defaultLocale,
-  availableLocales: nextLocales.availableLocales,
-  localeMessages: nextLocales.getCurrentTranslations(
-    nextLocales.defaultLocale.code
-  ),
+  currentLocale: defaultLocale,
+  availableLocales: availableLocales,
+  localeMessages: getCurrentTranslations(defaultLocale.code),
+  defaultLocale: defaultLocale,
 });
 
 export const LocaleProvider: FC<PropsWithChildren> = ({ children }) => {
@@ -19,12 +23,13 @@ export const LocaleProvider: FC<PropsWithChildren> = ({ children }) => {
 
   const localeData = useMemo(() => {
     // Retrieves the current locale information from the route and query
-    const currentLocale = nextLocales.getCurrentLocale(asPath, query);
+    const currentLocale = getCurrentLocale(asPath, query);
 
     return {
       currentLocale: currentLocale,
-      availableLocales: nextLocales.availableLocales,
-      localeMessages: nextLocales.getCurrentTranslations(currentLocale.code),
+      availableLocales: availableLocales,
+      defaultLocale: defaultLocale,
+      localeMessages: getCurrentTranslations(currentLocale.code),
     };
   }, [asPath, query]);
 
