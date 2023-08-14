@@ -1,4 +1,8 @@
 {
-  "**/*.{mjs,ts,tsx,md,mdx}": ["eslint --fix"],
-  "**/*.{mjs,ts,tsx,md,mdx,json,yml,css,sass,scss}": ["prettier --write"]
+  "**/*.{mjs,ts,tsx,md,mdx}": ["eslint --fix", "prettier --write"],
+  "**/*.{css,sass,scss}": [
+    "stylelint --config .stylelintrc.json",
+    "prettier --write"
+  ],
+  "**/*.{json,yml}": ["prettier --write"]
 }

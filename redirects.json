@@ -1,0 +1,166 @@
+{
+  "external": [
+    {
+      "source": "/index.html",
+      "destination": "/"
+    },
+    {
+      "source": "/api.html",
+      "destination": "/api"
+    },
+    {
+      "source": "/changelog.html",
+      "destination": "https://github.com/nodejs/node/blob/HEAD/CHANGELOG.md"
+    },
+    {
+      "source": "/calendar",
+      "destination": "https://calendar.google.com/calendar/embed?src=nodejs.org_nr77ama8p7d7f9ajrpnu506c98%40group.calendar.google.com"
+    },
+    {
+      "source": "/calendar.ics",
+      "destination": "https://calendar.google.com/calendar/ical/nodejs.org_nr77ama8p7d7f9ajrpnu506c98%40group.calendar.google.com/public/basic.ics"
+    },
+    {
+      "source": "/:locale/security",
+      "destination": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security"
+    },
+    {
+      "source": "/:locale/contribute/accepting_contributions.html",
+      "destination": "https://github.com/nodejs/dev-policy"
+    },
+    {
+      "source": "/:locale/about/releases",
+      "destination": "https://github.com/nodejs/release#release-schedule"
+    },
+    {
+      "source": "/:locale/about/security",
+      "destination": "https://github.com/nodejs/node/blob/HEAD/SECURITY.md#security"
+    },
+    {
+      "source": "/:locale/advisory-board",
+      "destination": "https://github.com/nodejs/TSC"
+    },
+    {
+      "source": "/:locale/about/advisory-board",
+      "destination": "https://github.com/nodejs/TSC"
+    },
+    {
+      "source": "/:locale/about/organization",
+      "destination": "https://github.com/nodejs/TSC"
+    },
+    {
+      "source": "/:locale/about/organization/tsc-meetings",
+      "destination": "https://github.com/nodejs/TSC/tree/HEAD/meetings"
+    },
+    {
+      "source": "/:locale/about/trademark",
+      "destination": "https://trademark-policy.openjsf.org"
+    },
+    {
+      "source": "/:locale/foundation",
+      "destination": "https://openjsf.org"
+    },
+    {
+      "source": "/:locale/foundation/case-studies",
+      "destination": "https://openjsf.org/projects"
+    },
+    {
+      "source": "/:locale/foundation/members",
+      "destination": "https://openjsf.org/about/members"
+    },
+    {
+      "source": "/:locale/foundation/board",
+      "destination": "https://openjsf.org/about/governance"
+    },
+    {
+      "source": "/:locale/foundation/tsc",
+      "destination": "https://github.com/nodejs/TSC"
+    },
+    {
+      "source": "/:locale/foundation/certification",
+      "destination": "https://openjsf.org/certification"
+    },
+    {
+      "source": "/:locale/foundation/in-the-news",
+      "destination": "https://openjsf.org"
+    },
+    {
+      "source": "/:locale/foundation/announcements",
+      "destination": "https://openjsf.org/blog"
+    },
+    {
+      "source": "/:locale/foundation/education",
+      "destination": "https://openjsf.org/certification"
+    }
+  ],
+  "internal": [
+    {
+      "source": "/about",
+      "destination": "/en/about"
+    },
+    {
+      "source": "/community",
+      "destination": "/en/get-involved"
+    },
+    {
+      "source": "/contribute/:path*",
+      "destination": "/en/get-involved"
+    },
+    {
+      "source": "/documentation/:path*",
+      "destination": "/en/docs/:path*"
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/en/blog/:path*"
+    },
+    {
+      "source": "/:locale/community",
+      "destination": "/:locale/get-involved"
+    },
+    {
+      "source": "/:locale/docs/inspector",
+      "destination": "/:locale/docs/guides/debugging-getting-started"
+    },
+    {
+      "source": "/:locale/contribute/:path*",
+      "destination": "/:locale/get-involved"
+    },
+    {
+      "source": "/:locale/documentation/:path*",
+      "destination": "/:locale/docs/:path*"
+    },
+    {
+      "source": "/(atom|feed|rss).xml",
+      "destination": "/en/feed/blog.xml"
+    },
+    {
+      "source": "/feed",
+      "destination": "/en/feed/blog.xml"
+    },
+    {
+      "source": "/feed/release",
+      "destination": "/en/feed/releases.xml"
+    },
+    {
+      "source": "/feed/vulnerability",
+      "destination": "/en/feed/vulnerability.xml"
+    },
+    {
+      "source": "/(static/|)favicon.ico",
+      "destination": "/static/images/favicons/favicon.png"
+    },
+    {
+      "source": "/(static/|)favicon.png",
+      "destination": "/static/images/favicons/favicon.png"
+    },
+    {
+      "source": "/(static/|)apple-touch-icon(.*).png",
+      "destination": "/static/images/favicons/favicon.png"
+    },
+    {
+      "source": "/logos/:path*",
+      "destination": "/static/images/logos/:path*"
+    }
+  ]
+}

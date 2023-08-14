@@ -13,7 +13,9 @@ export const downloadUrlByOS = (
       return `${baseURL}/node-${versionWithPrefix}.pkg`;
     case 'WIN':
       return `${baseURL}/node-${versionWithPrefix}-x${bitness}.msi`;
+    case 'LINUX':
+      return `${baseURL}/node-${versionWithPrefix}-linux-x64.tar.xz`;
     default:
-      return `${baseURL}/node-${versionWithPrefix}.tar.gz`;
+      return `${baseURL}/node-${versionWithPrefix}.tar.xz`;
   }
 };

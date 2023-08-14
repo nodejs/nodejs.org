@@ -91,7 +91,8 @@ jobs:
         # We also use `--omit=dev` to avoid installing devDependencies as we don't need them during the build step
         run: npm i --no-audit --no-fund --userconfig=/dev/null --omit=dev
 
-      - name: Build Next.js
+      - name: Build Next.js (ISR)
+        # We want a ISR build on CI to ensure that regular Next.js builds work as expected.
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
         run: npx --package=turbo@latest -- turbo build ${{ needs.base.outputs.turbo_args }}
@@ -100,9 +101,18 @@ jobs:
           # this should be a last resort in case by any chances the build memory gets too high
           # but in general this should never happen
           NODE_OPTIONS: '--max_old_space_size=4096'
-          # We want to avoid having Next.js's Telemetry to kick-in during this build
-          # See https://nextjs.org/telemetry
-          NEXT_TELEMETRY_DISABLED: 1
+
+      - name: Build Next.js (Static)
+        # We want a Static Buid on CI to ensure that the Static Exports are working as expected
+        # This build will use the existing cache created on the previous build above (ISR)
+        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
+        # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
+        run: npx --package=turbo@latest -- turbo deploy ${{ needs.base.outputs.turbo_args }}
+        env:
+          # We want to ensure we have enough RAM allocated to the Node.js process
+          # this should be a last resort in case by any chances the build memory gets too high
+          # but in general this should never happen
+          NODE_OPTIONS: '--max_old_space_size=4096'
 
       - name: Analyse Build
         id: analyse_build
