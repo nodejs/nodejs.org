@@ -92,7 +92,34 @@ where a pull request:
 
 The Website group should serve as the final arbiter where required.
 
-## Code editing
+## Code Editing
+
+### Structure of this Repository
+
+- React Components are defined on `/components`
+- React Templates are defined on `/layouts`
+- Global Stylesheets are declared on `/styles`
+  - Styles are done with [SCSS](https://sass-lang.com/)
+- Public files are stored on `/public`
+  - Static Images, JavaScript files, and others are stored within `/public/static`
+- Internationalisation is done on `/i18n`
+  - React Localisation Data is stored within `/i18n/locales`
+  - We use the [ICU Message Syntax](https://formatjs.io/docs/core-concepts/icu-syntax/) for Translations
+  - Configuration for Locales is done within `/i18n/config.json`
+- Website Content is defined within `/pages`
+  - Initial development usually happens in English: `/pages/en`
+  - Localized versions of `/pages/en` are done within `/pages/{localeCode}`
+  - All content is in Markdown and is per locale.
+  - The top of each Markdown file is a YAML (Frontmatter) block for page-specific localization information passed to various templates.
+  - The bulk of the Markdown content for each page is referenced as `{children}` on their respective JSX Layout (`layouts/`)
+- Multi-Purpose React Hooks are defined on `/hooks`
+- Multi-Purpose TypeScript definitions are defined on `/types`
+- React Context Providers are defined on `/provides`
+- Build-time Data Fetching Scripts are defined on `/next-data`
+  - Used for Node.js Release data fetching
+  - Generation of build-time indexes such as blog data
+- Multi-Purpose Scripts are stored within `/scripts`
+  - Such as Node.js Release Blog Post generation
 
 ### Adding new pages
 
