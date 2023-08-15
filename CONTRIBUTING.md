@@ -30,7 +30,7 @@ that team members have significant knowledge about modern Web Technologies and W
 Note that regular contributors do not need to become "Collaborators" as any contribution is appreciated (even without a status), and a Collaborator status
 is a formality that comes with obligations.
 
-If you're an active contributor seeking to become a member, we recommend contacting one of the existing Team Members for guidance.
+If you're an active contributor seeking to become a member, we recommend you contact one of the existing Team Members for guidance.
 
 <details>
   <summary><b>What's the process for becoming a Collaborator?</b></summary>
@@ -57,7 +57,7 @@ If you're an active contributor seeking to become a member, we recommend contact
 The steps below will give you a general idea of how to prepare your local environment for the Node.js Website and general steps
 for getting things done and landing your contribution.
 
-1. Click the fork button in the top right to clone the [nodejs.org repository](https://github.com/nodejs/nodejs.org/fork)
+1. Click the fork button in the top right to clone the [Node.js Website Repository](https://github.com/nodejs/nodejs.org/fork)
 
 2. Clone your fork using SSH, GitHub CLI, or HTTPS.
 
@@ -170,10 +170,10 @@ Commits should be signed. You can read more about [Commit Signing][] here.
 
 ### Pre-commit Hooks
 
-This project uses [husky][] for pre-commit hooks.
+This project uses [Husky][] for Git pre-commit hooks.
 
-Some JSON files are generated during Build time with empty files as placeholders. Build time happens when you run `npx turbo serve` or `npx turbo build`.
-We don't want to commit those unnecessary changes. Since these files exist in the repository, `.gitignore` won't work for them. As a workaround, we have a pre-commit hook to discard those changes.
+* Some JSON files are generated during Build time with empty files as placeholders. Build time happens when you run `npx turbo serve` or `npx turbo build`.
+* We don't want to commit those unnecessary changes. Since these files exist in the repository, `.gitignore` won't work for them. As a workaround, we have a pre-commit hook to discard those changes.
 
 ## Pull Request Policy
 
@@ -231,4 +231,4 @@ By contributing to this project, I certify that:
 [`squash`]: https://help.github.com/en/articles/about-pull-request-merges#squash-and-merge-your-pull-request-commits
 [Conventional Commits]: https://www.conventionalcommits.org/
 [Commit Signing]: https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits
-[husky]: https://typicode.github.io/husky/
+[Husky]: https://typicode.github.io/husky/
