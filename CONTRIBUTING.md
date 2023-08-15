@@ -120,7 +120,7 @@ for getting things done and landing your contribution.
 
 11. Create a Pull Request.
 
-> \[!NOTE]\
+> [!NOTE]\
 > Before committing and opening a Pull Request, please go first through our [Commit](#commit-guidelines) and [Pull Request](#pull-request-policy) guidelines outlined below.
 
 ### CLI Commands
@@ -172,8 +172,8 @@ Commits should be signed. You can read more about [Commit Signing][] here.
 
 This project uses [Husky][] for Git pre-commit hooks.
 
-* Some JSON files are generated during Build time with empty files as placeholders. Build time happens when you run `npx turbo serve` or `npx turbo build`.
-* We don't want to commit those unnecessary changes. Since these files exist in the repository, `.gitignore` won't work for them. As a workaround, we have a pre-commit hook to discard those changes.
+- Some JSON files are generated during Build time with empty files as placeholders. Build time happens when you run `npx turbo serve` or `npx turbo build`.
+- We don't want to commit those unnecessary changes. Since these files exist in the repository, `.gitignore` won't work for them. As a workaround, we have a pre-commit hook to discard those changes.
 
 ## Pull Request Policy
 

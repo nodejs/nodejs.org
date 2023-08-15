@@ -51,15 +51,11 @@ This project adopts the Node.js [Code of Conduct][].
 
 Any person who wants to contribute to the Website is welcome! Please read [Contribution Guidelines][] and see the [Figma Design][] to understand better the structure of this repository.
 
-### To translate content into other languages
+> [!IMPORTANT]\
+> Please read our [Translation Guidelines][] before contributing to Translation and Localization of the Website
 
-If you want to help translate to other languages or improve existing translations, it is optional to work from GitHub. You can and should do it through Crowdin; this is the correct workflow.
-
-Crowdin is an online tool that facilitates the user experience for the translator; here is more information:
-
-Website translations are handled via [Crowdin](https://crowdin.com/project/nodejs-website).
-
-To help with localization, please read the [Translation](TRANSLATION.md) guide.
+> [!NOTE]\
+> We recommend a read of all Relevant Links below before doing code changes; Including Dependency changes, Content changes, and Code changes.
 
 ### Deployment
 
@@ -92,6 +88,8 @@ The webhook is set up on GitHub for this project and talks to a small Node serve
 
 [Dependency Pinning][]
 
+[Translation Guidelines][]
+
 ## Thanks
 
 - Thanks to all contributors and collaborators that make this project possible.
@@ -105,3 +103,4 @@ The webhook is set up on GitHub for this project and talks to a small Node serve
 [dependency pinning]: ./DEPENDENCY_PINNING.md
 [collaborator guide]: ./COLLABORATOR_GUIDE.md
 [figma design]: https://www.figma.com/file/pu1vZPqNIM7BePd6W8APA5/Node.js
+[translation guidelines]: ./TRANSLATION.md
