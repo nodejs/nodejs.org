@@ -49,6 +49,7 @@ If you're an active contributor seeking to become a member, we recommend contact
 - The Issue must be open for at least 72 hours without an objection from an existing member of the Website Team
   - The nomination cannot pass until all open discordances/objections are resolved.
   - Objections from the TSC or Core Collaborators are also counted as valid objections.
+
 </details>
 
 ## Getting started
@@ -57,68 +58,69 @@ The steps below will give you a general idea of how to prepare your local enviro
 for getting things done and landing your contribution.
 
 1. Click the fork button in the top right to clone the [nodejs.org repository](https://github.com/nodejs/nodejs.org/fork)
+
 2. Clone your fork using SSH, GitHub CLI, or HTTPS.
 
-     ```bash
-     git clone git@github.com:<YOUR_GITHUB_USERNAME>/nodejs.org.git # SSH
-     git clone https://github.com/<YOUR_GITHUB_USERNAME>/nodejs.org.git # HTTPS
-     gh repo clone <YOUR_GITHUB_USERNAME>/nodejs.org # GitHub CLI
-     ```
+   ```bash
+   git clone git@github.com:<YOUR_GITHUB_USERNAME>/nodejs.org.git # SSH
+   git clone https://github.com/<YOUR_GITHUB_USERNAME>/nodejs.org.git # HTTPS
+   gh repo clone <YOUR_GITHUB_USERNAME>/nodejs.org # GitHub CLI
+   ```
 
 3. Change into the nodejs.org directory.
 
-     ```bash
-     cd nodejs.org
-     ```
+   ```bash
+   cd nodejs.org
+   ```
 
 4. Create a remote to keep your fork and local clone up-to-date.
 
-     ```bash
-     git remote add upstream git@github.com:nodejs/nodejs.org.git # SSH
-     git remote add upstream https://github.com/nodejs/nodejs.org.git # HTTPS
-     gh repo sync nodejs/nodejs.org # GitHub CLI
-     ```
+   ```bash
+   git remote add upstream git@github.com:nodejs/nodejs.org.git # SSH
+   git remote add upstream https://github.com/nodejs/nodejs.org.git # HTTPS
+   gh repo sync nodejs/nodejs.org # GitHub CLI
+   ```
 
 5. Create a new branch for your work.
 
-     ```bash
-     git checkout -b name-of-your-branch
-     ```
+   ```bash
+   git checkout -b name-of-your-branch
+   ```
 
 6. Run the following to install the dependencies and start a local preview of your work.
 
-     ```bash
-     npm ci # installs this project's dependencies
-     npx turbo serve # starts a preview of your local changes
-     ```
+   ```bash
+   npm ci # installs this project's dependencies
+   npx turbo serve # starts a preview of your local changes
+   ```
 
 7. Perform your changes. In case you're unfamiliar with the structure of this repository, we recommend a read on the [Collaborator Guide](./COLLABORATOR_GUIDE.md)
 
 8. Perform a merge to sync your current branch with the upstream branch.
 
-     ```bash
-     git fetch upstream
-     git merge upstream/main
-     ```
+   ```bash
+   git fetch upstream
+   git merge upstream/main
+   ```
 
 9. Run `npx turbo format` to confirm that linting and formatting are passing.
 
-     ```bash
-     npx turbo format
-     ```
+   ```bash
+   npx turbo format
+   ```
 
 10. Once you're happy with your changes, add and commit them to your branch, then push the branch to your fork.
 
-     ```bash
-     cd ~/nodejs.org
-     git add .
-     git commit -m "some message"
-     git push -u origin name-of-your-branch
-     ```
+    ```bash
+    cd ~/nodejs.org
+    git add .
+    git commit -m "some message"
+    git push -u origin name-of-your-branch
+    ```
 
 11. Create a Pull Request.
 
-> [!NOTE]  
+> \[!NOTE]\
 > Before committing and opening a Pull Request, please go first through our [Commit](#commit-guidelines) and [Pull Request](#pull-request-policy) guidelines outlined below.
 
 ### CLI Commands
@@ -179,7 +181,7 @@ This policy governs how contributions should land within this repository. The li
 
 ### Before merging
 
-We recommend a read on our [Collaborator Guide](COLLABORATOR_GUIDE.md#accepting-modifications) for in-depth details on how we accept contributions into this repository. 
+We recommend a read on our [Collaborator Guide](COLLABORATOR_GUIDE.md#accepting-modifications) for in-depth details on how we accept contributions into this repository.
 The list below describes some merging and approval rules adopted in this repository.
 
 - Pull Requests must be open for at least 48 hours (Or 72 hours if the PR was authored on the weekend).

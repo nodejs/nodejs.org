@@ -36,7 +36,7 @@ Collaborators may **close** any issue or pull request they believe is
 not relevant to the future of the Node.js project. Where this is
 unclear, the issue should be left open for several days for
 additional discussion. Where this does not yield input from Node.js
-Collaborators or additional evidence that the issue has relevance may be closed. 
+Collaborators or additional evidence that the issue has relevance may be closed.
 Remember that issues can always be re-opened if necessary.
 
 ## Accepting Modifications
@@ -60,9 +60,9 @@ Before landing pull requests, sufficient time should be left for input
 from other Collaborators. Leave at least 48 hours during the week and
 Seventy-two hours over weekends to account for international time differences
 and work schedules. Trivial changes (e.g., those which fix minor bugs
-or improve performance without affecting API or causing another wide-reaching impact) 
-may be landed after a shorter delay. Any press release can land with 
-no time constraints as long as the copy is properly formatted; 
+or improve performance without affecting API or causing another wide-reaching impact)
+may be landed after a shorter delay. Any press release can land with
+no time constraints as long as the copy is properly formatted;
 it is not the responsibility of the website group to review the copy itself.
 
 Where there is no disagreement amongst Collaborators, a pull request
@@ -93,7 +93,7 @@ The Website group should be the final arbiter where needed.
 
 ## Technologies used in the Website
 
-The Node.js Website is built upon [React](https://react.dev/) and [Next.js][] respectively, the UI Rendering Engine and the Framework that builds the Website;
+The Node.js Website is built upon [React][] and [Next.js][] respectively, the UI Rendering Engine and the Framework that builds the Website;
 
 The Website also uses several other Open Source libraries (not limited to) listed below:
 
@@ -104,7 +104,7 @@ The Website also uses several other Open Source libraries (not limited to) liste
 - [MDX][] and Markdown are used for structuring the Content of the Website
 - [`react-intl`][] is the i18n Library adopted within the Website
 - [`next-sitemap`](https://www.npmjs.com/package/next-sitemap) is used for Sitemap and `robots.txt` Generation
-- A set of [Rehype](https://github.com/rehypejs/rehype) and [Remark](https://github.com/remarkjs/remark) Plugins are used for styling and structuring our Markdown Components.
+- We use [Rehype](https://github.com/rehypejs/rehype) and [Remark](https://github.com/remarkjs/remark) to extend MDX functionality
 
 ## Code Editing
 
@@ -113,7 +113,7 @@ The Website also uses several other Open Source libraries (not limited to) liste
 - React Components are defined on `/components`
 - React Templates are defined on `/layouts`
 - Global Stylesheets are declared on `/styles`
-  - Styles are done with [SCSS](https://sass-lang.com/)
+  - Styles are done with [SCSS][]
 - Public files are stored on `/public`
   - Static Images, JavaScript files, and others are stored within `/public/static`
 - Internationalisation is done on `/i18n`
@@ -161,18 +161,23 @@ See the [Translation Guidelines](./TRANSLATION.md) for the website translation p
 
 ## Creating Components
 
-The Node.js Website uses **React.js** as a Frontend Library to develop the Website. React allows us to create user interfaces with a modern take on Web Development.
+The Node.js Website uses [React][] as a Frontend Library to develop the Website.
+React allows us to create user interfaces with a modern take on Web Development.
 
-If you're unfamiliar with React or Web Development in general, we encourage a read before taking on complex issues and tasks as this repository is **not for educational purposes** and we expect you to have a basic understanding of the technologies used.
+If you're unfamiliar with React or Web Development in general,
+we encourage a read before taking on complex issues and tasks as this repository is **not for educational purposes**
+and we expect you to have a basic understanding of the technologies used.
 
-We also recommend getting familiar with technologies such as [Next.js][], [MDX][], [SCSS][], and "concepts" such as "CSS Modules" and "CSS-in-JS".
+We also recommend getting familiar with technologies such as [Next.js][], [MDX][], [SCSS][],
+and "concepts" such as "CSS Modules" and "CSS-in-JS".
 
 ### Best practices when creating a Component
 
 - All React Components should be placed within the `components` folder.
 - Each Component should be placed, whenever possible, within a sub-folder, which we call the "Domain" of the Component
   - The domain represents where these Components belong to or where they will be used.
-  - For example, Components used within Article Pages or that are part of the structure of an Article or the Article Layouts, should be placed within `components/Article`
+  - For example, Components used within Article Pages or that are part of the structure of an Article or the Article Layouts,
+    should be placed within `components/Article`
 - Each component should have its folder with the name of the Component
 - The structure of each component folder follows the following template:
   ```text
@@ -186,7 +191,8 @@ We also recommend getting familiar with technologies such as [Next.js][], [MDX][
 - React Hooks belonging to a single Component should be placed within the Component's folder
   - If the Hook as a wider usability or can be used by other components, it should be placed in the root `hooks` folder.
 - If the Component has "sub-components" they should follow the same philosophy as the Component itself.
-  - For example, if the Component `ComponentName` has a sub-component called `SubComponentName`, then it should be placed within `ComponentName/SubComponentName`
+  - For example, if the Component `ComponentName` has a sub-component called `SubComponentName`,
+    then it should be placed within `ComponentName/SubComponentName`
 
 #### How a new Component should look like when freshly created
 
@@ -213,14 +219,17 @@ export default MyComponent;
   - Alterenatively you can define your type as `type MyComponentProps = PropsWithChildren<{ my other props}>`
 - Each Props type should be prefixed by the name of the Component
 - Components should always be the `default` export of a React Component file
-- Avoid using DOM/Web APIs/`document`/`window` API access within a React Component. Use utilities or Hooks when you need a Reactive state
+- Avoid using DOM/Web APIs/`document`/`window` API access within a React Component.
+  Use utilities or Hooks when you need a Reactive state
 - Avoid making your Component too big. Deconstruct it into smaller Components/Hooks whenever possible
 
 ## Unit Tests and Storybooks
 
-Each new feature or bug fix should accompany a unit test (when deemed valuable). We use [Jest][] as our test runner and [React Testing Library][] for our React unit tests.
+Each new feature or bug fix should accompany a unit test (when deemed valuable).
+We use [Jest][] as our test runner and [React Testing Library][] for our React unit tests.
 
-We also use [Storybook][] to document our components. Each component should have a storybook story that documents the component's usage. 
+We also use [Storybook][] to document our components.
+Each component should have a storybook story that documents the component's usage.
 
 Visual Regression Testing is automatically done via [Chromatic](https://www.chromatic.com/) to ensure that Components are rendered correctly.
 
@@ -273,9 +282,8 @@ export default { component: NameOfComponent } as Meta;
 [Jest]: https://jestjs.io/
 [React Testing Library]: https://testing-library.com/docs/react-testing-library/intro/
 [Storybook]: https://storybook.js.org/
-[Storybook Test Runner]: https://storybook.js.org/addons/@storybook/test-runner#dom-snapshot-recipe
-[Playwright]: https://playwright.dev/
 [`react-intl`]: https://formatjs.io/docs/react-intl/
 [Next.js]: https://nextjs.org/
 [MDX]: https://mdxjs.com/
 [SCSS]: https://sass-lang.com/
+[React]: https://react.dev/
