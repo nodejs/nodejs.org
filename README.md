@@ -121,4 +121,4 @@ The webhook is set up on GitHub for this project and talks to a small Node serve
 [content vs code]: ./CONTENT_VS_CODE.md
 [dependency pinning]: ./DEPENDENCY_PINNING.md
 [collaborator guide]: ./COLLABORATOR_GUIDE.md
-[figma design]: https://www.figma.com/file/lOxAGGg5KXb6nwie7zXkz6/NJ---Design-System?node-id=22%3A6086
+[figma design]: https://www.figma.com/file/pu1vZPqNIM7BePd6W8APA5/Node.js
