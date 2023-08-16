@@ -36,7 +36,7 @@ Collaborators may **close** any issue or pull request they believe is
 not relevant to the future of the Node.js project. Where this is
 unclear, the issue should be left open for several days for
 additional discussion. Where this does not yield input from Node.js
-Collaborators or additional evidence that the issue has relevance may be closed.
+Collaborators or additional evidence that the issue has relevance, then the issue may be closed.
 Remember that issues can always be re-opened if necessary.
 
 ## Accepting Modifications
@@ -60,7 +60,7 @@ Before landing pull requests, sufficient time should be left for input
 from other Collaborators. Leave at least 48 hours during the week and
 Seventy-two hours over weekends to account for international time differences
 and work schedules. Trivial changes (e.g., those which fix minor bugs
-or improve performance without affecting API or causing another wide-reaching impact)
+or improve performance without causing wide-reaching impact)
 may be landed after a shorter delay. Any press release can land with
 no time constraints as long as the copy is properly formatted;
 it is not the responsibility of the website group to review the copy itself.
@@ -128,7 +128,7 @@ The Website also uses several other Open Source libraries (not limited to) liste
   - The bulk of the Markdown content for each page is referenced as `{children}` on their respective JSX Layout (`layouts/`)
 - Multi-Purpose React Hooks are defined on `/hooks`
 - Multi-Purpose TypeScript definitions are defined on `/types`
-- React Context Providers are defined on `/provides`
+- React Context Providers are defined on `/providers`
 - Build-time Data Fetching Scripts are defined on `/next-data`
   - Used for Node.js Release data fetching
   - Generation of build-time indexes such as blog data
