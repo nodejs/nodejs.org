@@ -1,6 +1,6 @@
 # Node.js Website Contributing Guide
 
-Thank you for being so interested in contributing to the Node.js Website. Before you proceed, briefly go through the following:
+Thank you for your interest in contributing to the Node.js Website. Before you proceed, briefly go through the following:
 
 - [Code of Conduct](https://github.com/nodejs/node/blob/HEAD/CODE_OF_CONDUCT.md)
 - [Contributing](#contributing)
@@ -193,7 +193,7 @@ The list below describes some merging and approval rules adopted in this reposit
     - The comment must mention `@nodejs/website` and must have at least one 👍 (or any other sort of approval reaction) if the person fast-tracking the PR is the author of the PR.
     - Fast-tracking is only allowed for small bug fixes, small feature changes, localization changes, or other non-critical/highly-impacting changes not covered by the previous rule that allows PRs to be merged immediately.
     - Fast-tracking cannot be used for updates on the `COLLABORATOR_GUIDE.md`, `CONTRIBUTING.md` guide, `CODEOWNERS`, GitHub Actions, or any security-impacting file or document that changes the governing policies of this repository.
-- There must be no objections after 48 hours (Or 72 hours if the PR was authored on the weekend).
+- There must be no objections after forty-eight (48) hours (Or seventy-two (72) hours if the PR was authored on the weekend).
 - At least one approval is required for any PR to be merged.
 - Tests must be included in Pull Requests for new features or bug fixes. You are responsible for fixing any test(s) that fail.
 
