@@ -79,9 +79,9 @@
     "vfile": "^5.3.7"
   },
   "devDependencies": {
-    "@storybook/addon-controls": "~7.2.3",
-    "@storybook/addon-interactions": "~7.2.3",
-    "@storybook/nextjs": "~7.2.3",
+    "@storybook/addon-controls": "~7.3.2",
+    "@storybook/addon-interactions": "~7.3.2",
+    "@storybook/nextjs": "~7.3.2",
     "@testing-library/jest-dom": "~5.17.0",
     "@testing-library/react": "~14.0.0",
     "@testing-library/user-event": "~14.4.3",
@@ -107,7 +107,7 @@
     "prettier": "3.0.1",
     "remark-preset-lint-node": "4.0.0",
     "remark-preset-prettier": "2.0.1",
-    "storybook": "~7.2.3",
+    "storybook": "~7.3.2",
     "stylelint": "15.10.2",
     "stylelint-config-recommended-scss": "12.0.0",
     "stylelint-config-standard": "34.0.0",
