@@ -6,8 +6,10 @@
 # PRs introducing known-vulnerable packages will be blocked from merging.
 #
 # Source repository: https://github.com/actions/dependency-review-action
-name: 'Dependency Review'
-on: [pull_request]
+name: Review Dependencies
+
+on:
+  pull_request:
 
 permissions:
   contents: read
@@ -21,7 +23,8 @@ jobs:
         with:
           egress-policy: audit
 
-      - name: 'Checkout Repository'
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
-      - name: 'Dependency Review'
+      - name: Git Checkout
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5
+
+      - name: Review Dependencies
         uses: actions/dependency-review-action@0efb1d1d84fc9633afcdaad14c485cbbc90ef46c # v2.5.1
