@@ -1,18 +1,19 @@
 # This workflow uses actions that are not certified by GitHub. They are provided
-# by a third-party and are governed by separate terms of service, privacy
-# policy, and support documentation.
+# by a third party and are governed by separate terms of service, privacy
+# policy and support documentation.
 
-name: Scorecard supply-chain security
+name: OpenSSF Scorecard Review
 on:
   # For Branch-Protection check. Only the default branch is supported. See
   # https://github.com/ossf/scorecard/blob/main/docs/checks.md#branch-protection
   branch_protection_rule:
-  # To guarantee Maintained check is occasionally updated. See
+  # To guarantee that the Maintained check is occasionally updated. See
   # https://github.com/ossf/scorecard/blob/main/docs/checks.md#maintained
   schedule:
     - cron: '20 7 * * 2'
   push:
-    branches: ['main']
+    branches:
+      - main
 
 # Declare default permissions as read only.
 permissions: read-all
@@ -35,12 +36,12 @@ jobs:
         with:
           egress-policy: audit
 
-      - name: 'Checkout code'
+      - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
         with:
           persist-credentials: false
 
-      - name: 'Run analysis'
+      - name: Run Scorecard Analysis
         uses: ossf/scorecard-action@99c53751e09b9529366343771cc321ec74e9bd3d # v2.0.6
         with:
           results_file: results.sarif
@@ -49,7 +50,7 @@ jobs:
 
       # Upload the results as artifacts (optional). Commenting out will disable uploads of run results in SARIF
       # format to the repository Actions tab.
-      - name: 'Upload artifact'
+      - name: Upload Artifacts
         uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
         with:
           name: SARIF file
@@ -57,7 +58,7 @@ jobs:
           retention-days: 5
 
       # Upload the results to GitHub's code scanning dashboard.
-      - name: 'Upload to code-scanning'
+      - name: Upload Scan Results
         uses: github/codeql-action/upload-sarif@a09933a12a80f87b87005513f0abb1494c27a716 # v2.21.4
         with:
           sarif_file: results.sarif
