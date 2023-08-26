@@ -56,7 +56,7 @@
     "highlight.js": "~11.8.0",
     "husky": "8.0.3",
     "lint-staged": "14.0.1",
-    "next": "^13.4.18",
+    "next": "^13.4.19",
     "next-mdx-remote": "^4.4.1",
     "next-sitemap": "^4.2.2",
     "next-themes": "^0.2.1",
@@ -68,7 +68,7 @@
     "remark-gfm": "~3.0.1",
     "semver": "~7.5.4",
     "sharp": "0.32.5",
-    "turbo": "^1.10.12",
+    "turbo": "^1.10.13",
     "typescript": "~5.2.2"
   },
   "peerDependencies": {
