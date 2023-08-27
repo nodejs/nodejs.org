@@ -3,18 +3,10 @@ import type { FC, PropsWithChildren } from 'react';
 
 type ThemeProviderProps = PropsWithChildren<{ font: string }>;
 
-export const ThemeProvider: FC<ThemeProviderProps> = ({ children, font }) => (
+export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => (
   <>
     <NextThemeProvider enableSystem={true} enableColorScheme={true}>
       {children}
     </NextThemeProvider>
-
-    <style jsx global>
-      {`
-        body {
-          font-family: ${font};
-        }
-      `}
-    </style>
   </>
 );

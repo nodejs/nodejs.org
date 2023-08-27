@@ -29,8 +29,8 @@ export const decorators = [
   Story => (
     <SiteProvider>
       <LocaleProvider>
-        <ThemeProvider font={openSans.style.fontFamily}>
-          <div data-test-id="story-root">
+        <ThemeProvider>
+          <div data-test-id="story-root" className={openSans.className}>
             <Story />
           </div>
         </ThemeProvider>
