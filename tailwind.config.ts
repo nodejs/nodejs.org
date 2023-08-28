@@ -11,7 +11,7 @@ export default {
         400: '#84BA64',
         500: '#5FA04E',
         600: '#417E38',
-        700: '##2C682C',
+        700: '#2C682C',
         800: '#2C682C',
         900: '#1A3F1D',
       },
@@ -81,7 +81,7 @@ export default {
         800: '#8B1245',
         900: '#411526',
       },
-      withe: '#FFFFFF',
+      white: '#FFFFFF',
       black: '#0D121C',
     },
     fontSize: {
