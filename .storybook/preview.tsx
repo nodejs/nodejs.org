@@ -30,7 +30,7 @@ export const decorators = [
     <SiteProvider>
       <LocaleProvider>
         <ThemeProvider>
-          <div data-test-id="story-root" className={openSans.variable}>
+          <div data-test-id="story-root" className={`${openSans.variable} font-sans`}>
             <Story />
           </div>
         </ThemeProvider>
