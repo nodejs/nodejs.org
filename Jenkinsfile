@@ -132,7 +132,7 @@ pipeline {
                     sh """
                         ecr_repo=$(cd ../ECR && terraform output -raw ecr_url)
 
-                        sed -e "s|ACCESS_KEY|${ACCESS_KEY}|g" -e "s|SECRET_KEY|${SECRET_KEY}|g" -e "s|IMG_NAME|${DOCKER_IMAGE}|g" -e "s|ECR_REPO|ecr_repo|g" dockerRun-template.sh > dockerRun.sh
+                        sed -e "s|ACCESS_KEY|${ACCESS_KEY}|g" -e "s|SECRET_KEY|${SECRET_KEY}|g" -e "s|IMG_NAME|${DOCKER_IMAGE}|g" -e "s|ECR_REPO|$ecr_repo|g" dockerRun-template.sh > dockerRun.sh
                     """
                     sh 'terraform init'
                     sh "terraform plan"
