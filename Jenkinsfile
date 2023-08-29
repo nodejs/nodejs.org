@@ -134,8 +134,8 @@ pipeline {
                     """
 
                     sh 'terraform init'
-                    sh "terraform plan"
                     sh 'terraform destroy --auto-approve'
+                    sh "terraform plan"
                     sh 'terraform apply --auto-approve'
                 }
             }
