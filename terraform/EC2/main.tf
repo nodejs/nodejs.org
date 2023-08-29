@@ -86,7 +86,7 @@ resource "aws_route_table_association" "rtb-association" {
 resource "aws_instance" "my-app-server" {
     ami               = var.instance_image
     instance_type     = var.instance_type
-    
+    iam_instance_profile   = aws_iam_instance_profile.profile.name
     availability_zone = var.avail_zones
     key_name          = var.key_name
     subnet_id = aws_subnet.subnet-1.id
