@@ -6,7 +6,7 @@ avail_zones = "eu-west-3b" # availibality zones for deployment
 
 env_prefix = ["dev", "prod"] # VPC environments
 
-my_ip = "192.168.52.129"
+my_ip = "0.0.0.0/0"
 
 instance_image = "ami-05b5a865c3579bbc4"
 
