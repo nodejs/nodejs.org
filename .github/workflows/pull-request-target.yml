@@ -36,7 +36,7 @@ jobs:
 
     steps:
       - name: Git Checkout
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
         with:
           # We only need to fetch the latest commit of the `base_ref` here for the analysis steps
           fetch-depth: 1
@@ -80,7 +80,7 @@ jobs:
 
     steps:
       - name: Git Checkout
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
         with:
           # Here we need a full git history apparently because Chromatic CLI
           # can't make precise git tree comparisons
@@ -123,7 +123,7 @@ jobs:
 
     steps:
       - name: Git Checkout
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
         with:
           # We only need to fetch the latest commit of the `base_ref` here for the analysis steps
           fetch-depth: 1
