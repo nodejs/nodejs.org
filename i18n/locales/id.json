@@ -31,7 +31,6 @@
   "components.downloadReleasesTable.releases": "Rilisan",
   "components.downloadReleasesTable.docs": "Dokumen",
   "components.header.buttons.toggleLanguage": "Beralih Bahasa",
-  "components.header.buttons.toggleDarkMode": "Alihkan mode gelap/terang",
   "components.pagination.next": "Terbaru | ",
   "components.pagination.previous": "Lama",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {Oleh {author}, }}",

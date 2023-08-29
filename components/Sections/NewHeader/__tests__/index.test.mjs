@@ -1,4 +1,3 @@
-import userEvent from '@testing-library/user-event';
 import { IntlProvider } from 'react-intl';
 import { render, screen } from '@testing-library/react';
 import Header from '..';
@@ -46,11 +45,6 @@ describe('Tests for Header component', () => {
 
     const lightLogo = screen.getByAltText('light-logo');
     expect(lightLogo).toBeInTheDocument();
-
-    const toggle = screen.getByLabelText(
-      'components.header.buttons.toggleDarkMode'
-    );
-    await userEvent.click(toggle);
 
     const darkLogo = screen.getByAltText('dark-logo');
     expect(darkLogo).toBeInTheDocument();

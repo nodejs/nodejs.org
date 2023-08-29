@@ -31,7 +31,6 @@
   "components.downloadReleasesTable.releases": "查看与下载",
   "components.downloadReleasesTable.docs": "文档",
   "components.header.buttons.toggleLanguage": "切换语言",
-  "components.header.buttons.toggleDarkMode": "明亮/暗黑模式切换",
   "components.pagination.next": "较新的新闻事件 | ",
   "components.pagination.previous": "更早的新闻事件",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {由 {author} }}",
