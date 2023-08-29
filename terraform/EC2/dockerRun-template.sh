@@ -14,12 +14,12 @@ aws configure set aws_secret_access_key SECRET_KEY
 
 sudo chmod 666 /var/run/docker.sock
 
-ecr_repo=$(cd terraform/ECR && terraform output -raw ecr_url)
+# ecr_repo=$(cd terraform/ECR && terraform output -raw ecr_url)
 
-aws ecr get-login-password --region eu-west-3 | docker login --username AWS --password-stdin $ecr_repo
+aws ecr get-login-password --region eu-west-3 | docker login --username AWS --password-stdin ECR_REPO
 
 MOD_DOCKER_IMG=$(echo IMG_NAME | sed "s|:|-|g")
 
-docker pull $ecr_repo:$MOD_DOCKER_IMG
+docker pull ECR_REPO:$MOD_DOCKER_IMG
 
-docker run -d -p 3000:3000 $ecr_repo:$MOD_DOCKER_IMG
+docker run -d -p 3000:3000 ECR_REPO:$MOD_DOCKER_IMG
