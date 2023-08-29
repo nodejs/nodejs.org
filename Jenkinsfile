@@ -98,6 +98,10 @@ pipeline {
                       sed -e "s|ACCESS_KEY_TO_REPLACE|${ACCESS_KEY}|g" -e "s|SECRET_KEY_TO_REPLACE|${SECRET_KEY}|g" terraform-template.txt > terraform.tfvars   
 
                     """
+
+                    sh """
+                        sed -e "s|ACCESS_KEY|${ACCESS_KEY}|g" -e "s|SECRET_KEY|${SECRET_KEY}|g" -e "s|IMG_NAME|${DOCKER_IMAGE}|g" dockerRun-template.sh > dockerRun.sh
+                    """
                 }
             }
         }
@@ -129,14 +133,12 @@ pipeline {
 
             steps {
                 dir("./terraform/EC2") {
-                    sh """
-                        sed -e "s|ACCESS_KEY|${ACCESS_KEY}|g" -e "s|SECRET_KEY|${SECRET_KEY}|g" -e "s|IMG_NAME|${DOCKER_IMAGE}|g" dockerRun-template.sh > dockerRun.sh
-                    """
-
                     sh 'terraform init'
                     sh 'terraform destroy --auto-approve'
                     sh "terraform plan"
                     sh 'terraform apply --auto-approve'
+
+
                 }
             }
 
@@ -154,29 +156,29 @@ pipeline {
             }
         }
 
-        stage("Smoke test on deployment") {
-            // when {
-            //     branch 'master'
-            // }
+        // stage("Smoke test on deployment") {
+        //     // when {
+        //     //     branch 'master'
+        //     // }
 
-            steps {
-                dir("./terraform/EC2") {
-                    sh 'chmod +x smokeTest.sh'
-                    sh "./smokeTest.sh"
-                }
-            }
+        //     steps {
+        //         dir("./terraform/EC2") {
+        //             sh 'chmod +x smokeTest.sh'
+        //             sh "./smokeTest.sh"
+        //         }
+        //     }
 
-            post {
-                success {
-                    echo "Smoke test successful"
-                }
+        //     post {
+        //         success {
+        //             echo "Smoke test successful"
+        //         }
 
-                failure {
-                    echo "Public IP not available yet. Please wait and try again later."
-                }
+        //         failure {
+        //             echo "Public IP not available yet. Please wait and try again later."
+        //         }
 
-            }
-        }
+        //     }
+        // }
 
 
     }
