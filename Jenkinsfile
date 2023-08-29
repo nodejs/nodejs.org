@@ -122,26 +122,23 @@ pipeline {
         // }
 
 
-        stage("Create EC2") {
+            stage("Create EC2") {
             // when {
             //     branch 'master'
             // }
             steps {
-
-                dir("./terraform/ECR"){
-                    sh """
-                        ECR_REPO_URL = sh(script: 'terraform output -raw ecr_url', returnStdout: true).trim()
-                    """
-                }
-
                 dir("./terraform/EC2") {
-                    sh """
-                        sed -e "s|ACCESS_KEY|${ACCESS_KEY}|g" -e "s|SECRET_KEY|${SECRET_KEY}|g" -e "s|IMG_NAME|${DOCKER_IMAGE}|g" -e "s|IMG_NAME|${DOCKER_IMAGE}|g" dockerRun-template.sh > dockerRun.sh
-                    """
-                    sh 'terraform init'
-                    sh "terraform plan"
-                    sh 'terraform destroy --auto-approve'
-                    sh 'terraform apply --auto-approve'
+                    script {
+                        def ecr_repo = sh(script: 'cd ../ECR && terraform output -raw ecr_url', returnStdout: true).trim()
+                        
+                        sh """
+                            sed -e "s|ACCESS_KEY|${ACCESS_KEY}|g" -e "s|SECRET_KEY|${SECRET_KEY}|g" -e "s|IMG_NAME|${DOCKER_IMAGE}|g" -e "s|ECR_REPO|${ecr_repo}|g" dockerRun-template.sh > dockerRun.sh
+                        """
+                        sh 'terraform init'
+                        sh 'terraform plan'
+                        sh 'terraform destroy --auto-approve'
+                        sh 'terraform apply --auto-approve'
+                    }
                 }
             }
 
@@ -152,10 +149,9 @@ pipeline {
 
                 failure {
                     dir("./terraform/EC2") {
-                    sh 'terraform destroy --auto-approve'
+                        sh 'terraform destroy --auto-approve'
                     }
                 }
-                
             }
         }
 
