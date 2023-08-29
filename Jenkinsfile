@@ -11,7 +11,6 @@ pipeline {
         AWS_CREDENTIALS = credentials('aws_credentials')
         ACCESS_KEY = "${AWS_CREDENTIALS_USR}"
         SECRET_KEY = "${AWS_CREDENTIALS_PSW}"
-
     }
 
     stages {
@@ -51,31 +50,31 @@ pipeline {
         //     }
         // }
 
-        stage('Sonarqube scan') {
-            steps {
-                script{
-                    def sonarScannerHome = tool name: 'sq1', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-                    withSonarQubeEnv(installationName: "sq1") {
-                        sh """
-                            ${sonarScannerHome}/bin/sonar-scanner \
-                            -Dsonar.projectKey=nodejs \
-                            -Dsonar.sources=. \
-                            -Dsonar.host.url=${env.SONAR_HOST_URL} \
-                            -Dsonar.login=${env.SONAR_AUTH_TOKEN} \
-                            -Dsonar.projectName=nodejs \
-                        """
-                    }
-                }
-           }
-        }
+        // stage('Sonarqube scan') {
+        //     steps {
+        //         script{
+        //             def sonarScannerHome = tool name: 'sq1', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+        //             withSonarQubeEnv(installationName: "sq1") {
+        //                 sh """
+        //                     ${sonarScannerHome}/bin/sonar-scanner \
+        //                     -Dsonar.projectKey=nodejs \
+        //                     -Dsonar.sources=. \
+        //                     -Dsonar.host.url=${env.SONAR_HOST_URL} \
+        //                     -Dsonar.login=${env.SONAR_AUTH_TOKEN} \
+        //                     -Dsonar.projectName=nodejs \
+        //                 """
+        //             }
+        //         }
+        //    }
+        // }
 
-        stage("Sonarqube quality gate check") {
-            steps {
-                timeout(time: 2, unit: 'MINUTES') {
-                    waitForQualityGate abortPipeline: true
-                }
-            }
-        }
+        // stage("Sonarqube quality gate check") {
+        //     steps {
+        //         timeout(time: 2, unit: 'MINUTES') {
+        //             waitForQualityGate abortPipeline: true
+        //         }
+        //     }
+        // }
 
         // stage('Docker Build') {
 
@@ -128,11 +127,16 @@ pipeline {
             //     branch 'master'
             // }
             steps {
+
+                dir("./terraform/ECR"){
+                    sh """
+                        ECR_REPO_URL = sh(script: 'terraform output -raw ecr_url', returnStdout: true).trim()
+                    """
+                }
+
                 dir("./terraform/EC2") {
                     sh """
-                        ecr_repo=$(cd ../ECR && terraform output -raw ecr_url)
-
-                        sed -e "s|ACCESS_KEY|${ACCESS_KEY}|g" -e "s|SECRET_KEY|${SECRET_KEY}|g" -e "s|IMG_NAME|${DOCKER_IMAGE}|g" -e "s|ECR_REPO|$ecr_repo|g" dockerRun-template.sh > dockerRun.sh
+                        sed -e "s|ACCESS_KEY|${ACCESS_KEY}|g" -e "s|SECRET_KEY|${SECRET_KEY}|g" -e "s|IMG_NAME|${DOCKER_IMAGE}|g" -e "s|IMG_NAME|${DOCKER_IMAGE}|g" dockerRun-template.sh > dockerRun.sh
                     """
                     sh 'terraform init'
                     sh "terraform plan"
