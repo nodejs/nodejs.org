@@ -39,10 +39,7 @@
   "components.common.banner.button.text": "Read More",
   "components.article.author.githubLinkLabel": "{username} Github - opens in new tab",
   "components.article.authorList.title": "Article Authors",
-  "components.article.editLink.title.edit": "Edit this page on GitHub",
-  "components.article.editLink.title.translate": "Interested to help with translations?",
   "components.common.languageSelector.button.title": "Switch Language",
-  "components.blog.blogCard.author.by": "by",
   "components.sections.newFooter.trademark": "Trademark Policy",
   "components.sections.newFooter.privacy": "Privacy Policy",
   "components.sections.newFooter.codeOfConduct": "Code of Conduct",
@@ -52,6 +49,7 @@
   "components.sections.newFooter.github": "GitHub",
   "components.learn.previousNextLink.next": "NEXT",
   "components.learn.previousNextLink.previous": "PREV",
+  "components.api.stability": "Stability: {level} - ",
   "components.api.jsonLink.title": "View as JSON",
   "components.api.sourceLink": "Source Code:",
   "components.sections.newHeader.links.learn": "Learn",
@@ -65,9 +63,5 @@
   "components.downloads.downloadToggle.ltsVersions": "LTS Versions",
   "components.downloads.downloadToggle.currentVersions": "Current Versions",
   "pages.404.title": "404: Page could not be found",
-  "pages.404.description": "ENOENT: no such file or directory",
-  "components.api.apiChanges.addedIn": "Added in: {version}",
-  "components.api.apiChanges.history": "History",
-  "components.api.apiChanges.history.version": "Version",
-  "components.api.apiChanges.history.changes": "Changes"
+  "pages.404.description": "ENOENT: no such file or directory"
 }
