@@ -102,57 +102,57 @@ pipeline {
             }
         }
 
-        stage('Create ECR'){
-            steps {
-                dir("./terraform/ECR"){
-                    sh 'terraform init'
-                    sh "terraform plan"
-                    sh 'terraform destroy --auto-approve'
-                    sh 'terraform apply --auto-approve'
-
-
-                    sh """
-                        sed -e "s|ACCESS_KEY|${ACCESS_KEY}|g" -e "s|SECRET_KEY|${SECRET_KEY}|g" -e "s|IMG_NAME|${DOCKER_IMAGE}|g" pushToECR-template.sh > pushToECR.sh
-                    """
-
-                    sh 'chmod +x pushToECR.sh'
-                    sh "./pushToECR.sh"
-
-                }
-            }
-        }
-
-        // stage("Create EC2") {
-        //     // when {
-        //     //     branch 'dev'
-        //     // }
-
+        // stage('Create ECR'){
         //     steps {
-        //         dir("./terraform/EC2") {
-        //             sh """
-        //                 sed -e "s|ACCESS_KEY|${ACCESS_KEY}|g" -e "s|SECRET_KEY|${SECRET_KEY}|g" -e "s|IMG_NAME|${DOCKER_IMAGE}|g" dockerRun-template.sh > dockerRun.sh
-        //             """
-
+        //         dir("./terraform/ECR"){
         //             sh 'terraform init'
         //             sh "terraform plan"
         //             sh 'terraform destroy --auto-approve'
         //             sh 'terraform apply --auto-approve'
-        //         }
-        //     }
 
-        //     post {
-        //         success {
-        //             echo "Successfully deployed to AWS"
-        //         }
 
-        //         failure {
-        //             dir("./terraform") {
-        //             sh 'terraform destroy --auto-approve'
-        //             }
-        //         }
+        //             sh """
+        //                 sed -e "s|ACCESS_KEY|${ACCESS_KEY}|g" -e "s|SECRET_KEY|${SECRET_KEY}|g" -e "s|IMG_NAME|${DOCKER_IMAGE}|g" pushToECR-template.sh > pushToECR.sh
+        //             """
 
+        //             sh 'chmod +x pushToECR.sh'
+        //             sh "./pushToECR.sh"
+
+        //         }
         //     }
         // }
+
+        stage("Create EC2") {
+            // when {
+            //     branch 'dev'
+            // }
+
+            steps {
+                dir("./terraform/EC2") {
+                    sh """
+                        sed -e "s|ACCESS_KEY|${ACCESS_KEY}|g" -e "s|SECRET_KEY|${SECRET_KEY}|g" -e "s|IMG_NAME|${DOCKER_IMAGE}|g" dockerRun-template.sh > dockerRun.sh
+                    """
+
+                    sh 'terraform init'
+                    sh "terraform plan"
+                    sh 'terraform destroy --auto-approve'
+                    sh 'terraform apply --auto-approve'
+                }
+            }
+
+            post {
+                success {
+                    echo "Successfully deployed to AWS"
+                }
+
+                failure {
+                    dir("./terraform") {
+                    sh 'terraform destroy --auto-approve'
+                    }
+                }
+
+            }
+        }
 
         stage("Smoke test on deployment") {
             // when {
