@@ -52,7 +52,6 @@
   "components.sections.newFooter.github": "GitHub",
   "components.learn.previousNextLink.next": "NEXT",
   "components.learn.previousNextLink.previous": "PREV",
-  "components.api.stability": "Stability: {level} - ",
   "components.api.jsonLink.title": "View as JSON",
   "components.api.sourceLink": "Source Code:",
   "components.sections.newHeader.links.learn": "Learn",

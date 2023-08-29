@@ -52,7 +52,6 @@
   "components.sections.newFooter.github": "GitHub",
   "components.learn.previousNextLink.next": "LANJUT",
   "components.learn.previousNextLink.previous": "KEMBALI",
-  "components.api.stability": "Stabilitas: {level} - ",
   "components.api.jsonLink.title": "Tampilkan sebagai JSON",
   "components.api.sourceLink": "Kode Sumber:",
   "components.sections.newHeader.links.learn": "Pelajari",
