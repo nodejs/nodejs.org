@@ -1,5 +1,5 @@
 # Stage 1: Build the React app
-FROM node:18-alpine
+FROM node:18
 
 # Set the environment of node 
 ENV NODE_ENV='development'
@@ -32,7 +32,7 @@ USER root
 RUN chown -R node:node /app
 
 # Allow write access to the specific directories
-RUN chmod -R 777 /app/public /app/.next
+RUN chmod -R 777 /app/public 
 
 USER node
 
