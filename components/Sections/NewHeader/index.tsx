@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { FaGithub } from 'react-icons/fa';
 import LocalizedLink from '@/components/LocalizedLink';
 import ActiveLocalizedLink from '@/components/Common/ActiveLocalizedLink';
-import DarkModeToggle from '@/components/Common/DarkModeToggle';
 import LanguageSelector from '@/components/Common/LanguageSelector';
 import type { FC } from 'react';
 
@@ -67,9 +66,6 @@ const Header: FC = () => (
 
       <div className={styles.endWrapper}>
         <ul className={styles.rightContainer}>
-          <li>
-            <DarkModeToggle />
-          </li>
           <li>
             <LanguageSelector />
           </li>

@@ -31,7 +31,6 @@
   "components.downloadReleasesTable.releases": "Veröffentlichungen",
   "components.downloadReleasesTable.docs": "Dokumentation",
   "components.header.buttons.toggleLanguage": "Sprache umschalten",
-  "components.header.buttons.toggleDarkMode": "Dunkel-/Hell Modus umschalten",
   "components.pagination.next": "Neuere | ",
   "components.pagination.previous": "Ältere",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {Von {author}, }}",
