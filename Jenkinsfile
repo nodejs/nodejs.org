@@ -98,87 +98,85 @@ pipeline {
                       sed -e "s|ACCESS_KEY_TO_REPLACE|${ACCESS_KEY}|g" -e "s|SECRET_KEY_TO_REPLACE|${SECRET_KEY}|g" terraform-template.txt > terraform.tfvars   
 
                     """
-
-                    sh """
-                        sed -e "s|ACCESS_KEY|${ACCESS_KEY}|g" -e "s|SECRET_KEY|${SECRET_KEY}|g" -e "s|IMG_NAME|${DOCKER_IMAGE}|g" dockerRun-template.sh > dockerRun.sh
-                    """
                 }
             }
         }
 
-        // stage('Create ECR'){
-        //     steps {
-        //         dir("./terraform/ECR"){
-        //             sh 'terraform init'
-        //             sh "terraform plan"
-        //             sh 'terraform destroy --auto-approve'
-        //             sh 'terraform apply --auto-approve'
-
-
-        //             sh """
-        //                 sed -e "s|ACCESS_KEY|${ACCESS_KEY}|g" -e "s|SECRET_KEY|${SECRET_KEY}|g" -e "s|IMG_NAME|${DOCKER_IMAGE}|g" pushToECR-template.sh > pushToECR.sh
-        //             """
-
-        //             sh 'chmod +x pushToECR.sh'
-        //             sh "./pushToECR.sh"
-
-        //         }
-        //     }
-        // }
-
-        stage("Create EC2") {
-            // when {
-            //     branch 'dev'
-            // }
-
+        stage('Create ECR'){
             steps {
-                dir("./terraform/EC2") {
+                dir("./terraform/ECR"){
                     sh 'terraform init'
-                    sh 'terraform destroy --auto-approve'
                     sh "terraform plan"
+                    sh 'terraform destroy --auto-approve'
                     sh 'terraform apply --auto-approve'
 
 
-                }
-            }
+                    sh """
+                        sed -e "s|ACCESS_KEY|${ACCESS_KEY}|g" -e "s|SECRET_KEY|${SECRET_KEY}|g" -e "s|IMG_NAME|${DOCKER_IMAGE}|g" pushToECR-template.sh > pushToECR.sh
+                    """
 
-            post {
-                success {
-                    echo "Successfully deployed to AWS"
-                }
+                    sh 'chmod +x pushToECR.sh'
+                    sh "./pushToECR.sh"
 
-                failure {
-                    dir("./terraform") {
-                    sh 'terraform destroy --auto-approve'
-                    }
                 }
-
             }
         }
 
-        // stage("Smoke test on deployment") {
+        // stage("Create EC2") {
         //     // when {
-        //     //     branch 'master'
+        //     //     branch 'dev'
         //     // }
 
         //     steps {
         //         dir("./terraform/EC2") {
-        //             sh 'chmod +x smokeTest.sh'
-        //             sh "./smokeTest.sh"
+        //             sh """
+        //                 sed -e "s|ACCESS_KEY|${ACCESS_KEY}|g" -e "s|SECRET_KEY|${SECRET_KEY}|g" -e "s|IMG_NAME|${DOCKER_IMAGE}|g" dockerRun-template.sh > dockerRun.sh
+        //             """
+
+        //             sh 'terraform init'
+        //             sh "terraform plan"
+        //             sh 'terraform destroy --auto-approve'
+        //             sh 'terraform apply --auto-approve'
         //         }
         //     }
 
         //     post {
         //         success {
-        //             echo "Smoke test successful"
+        //             echo "Successfully deployed to AWS"
         //         }
 
         //         failure {
-        //             echo "Public IP not available yet. Please wait and try again later."
+        //             dir("./terraform") {
+        //             sh 'terraform destroy --auto-approve'
+        //             }
         //         }
 
         //     }
         // }
+
+        stage("Smoke test on deployment") {
+            // when {
+            //     branch 'master'
+            // }
+
+            steps {
+                dir("./terraform/EC2") {
+                    sh 'chmod +x smokeTest.sh'
+                    sh "./smokeTest.sh"
+                }
+            }
+
+            post {
+                success {
+                    echo "Smoke test successful"
+                }
+
+                failure {
+                    echo "Public IP not available yet. Please wait and try again later."
+                }
+
+            }
+        }
 
 
     }
