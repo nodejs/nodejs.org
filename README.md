@@ -162,6 +162,8 @@ npx turbo serve
             }
         }
 ```
+<img src="./Images/SonarTest.png" alt="sonarqube" />
+
 - stage(5) Build docker image
 ```diff
         stage('Docker Build') {
@@ -613,3 +615,5 @@ output "ecr_url" {
     value = try(aws_ecr_repository.dev_repo.repository_url,"")
 }
 ```
+### Simple diagram for EC2
+<img src="./Images/diagram.png" alt="Diagram"/>
