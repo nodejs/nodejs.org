@@ -27,5 +27,5 @@ Please follow this check list to ensure that you've followed all items before op
 - [ ] I have read the [Contributing Guidelines](https://github.com/nodejs/nodejs.org/blob/main/CONTRIBUTING.md) and made commit messages that follow the guideline.
 - [ ] I have run `npx turbo lint` to ensure the code follows the style guide. And run `npx turbo lint:fix` to fix the style errors if necessary.
 - [ ] I have run `npx turbo format` to ensure the code follows the style guide.
-- [ ] I have run `npx turbo test` to check if all tests are passing, and/or `npx turbo test:snapshot` to update snapshots if I created and/or updated React Components.
+- [ ] I have run `npx turbo test` to check if all tests are passing.
 - [ ] I've covered new added functionality with unit tests if necessary.
