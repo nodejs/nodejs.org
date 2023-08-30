@@ -8,8 +8,6 @@ import { VERCEL_ENV } from '@/next.constants.mjs';
 import type { AppProps } from 'next/app';
 
 import '@/styles/old/index.scss';
-// uncomment to unable tailwind (it's working)
-// import '@/styles/new-design/index.scss';
 
 const App = ({ Component, pageProps }: AppProps) => (
   <>

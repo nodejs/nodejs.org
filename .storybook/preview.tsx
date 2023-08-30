@@ -1,5 +1,4 @@
 import NextImage from 'next/image';
-import { withThemeByClassName } from '@storybook/addon-styling';
 import { SiteProvider } from '../providers/siteProvider';
 import { ThemeProvider } from '../providers/themeProvider';
 import { LocaleProvider } from '../providers/localeProvider';
@@ -42,13 +41,6 @@ export const decorators = [
       </LocaleProvider>
     </SiteProvider>
   ),
-  withThemeByClassName({
-    themes: {
-      light: '',
-      dark: 'dark',
-    },
-    defaultTheme: 'light',
-  }),
 ];
 
 Object.defineProperty(NextImage, 'default', {

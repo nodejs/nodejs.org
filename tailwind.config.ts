@@ -1,7 +1,11 @@
 import type { Config } from 'tailwindcss';
 
 export default {
-  content: ['./**/*.tsx'],
+  content: [
+    './pages/**/*.{tsx,mdx}',
+    './components/**/*.tsx',
+    './layouts/**/*.tsx',
+  ],
   theme: {
     colors: {
       green: {
@@ -85,17 +89,17 @@ export default {
       black: '#0D121C',
     },
     fontSize: {
-      xs: '0.75rem',
-      sm: '0.875rem',
-      base: '1rem',
-      lg: '1.125rem',
-      xl: '1.25rem',
-      '2xl': '1.5rem',
-      '3xl': '1.875rem',
-      '4xl': '2.25rem',
-      '5xl': '3rem',
-      '6xl': '3.75rem',
-      '7xl': '4.5rem',
+      xs: ['0.75rem', '1rem'],
+      sm: ['0.875rem', '1.25rem'],
+      base: ['1rem', '1.5rem'],
+      lg: ['1.125rem', '1.75rem'],
+      xl: ['1.25rem', '1.875rem'],
+      '2xl': ['1.5rem', '2rem'],
+      '3xl': ['1.875rem', '2.25rem'],
+      '4xl': ['2.25rem', '2.5rem'],
+      '5xl': ['3rem', '3rem'],
+      '6xl': ['3.75rem', '3.75rem'],
+      '7xl': ['4.5rem', '4.5rem'],
     },
     fontFamily: {
       sans: ['var(--font-open-sans)'],
@@ -106,5 +110,6 @@ export default {
       semibold: '600',
       bold: '700',
     },
+    darkMode: ['class', '[data-theme="dark"]'],
   },
 } satisfies Config;

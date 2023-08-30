@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import figma from './figma.svg';
+import figma from './color.svg';
 import styles from './color.module.scss';
 import type { FC } from 'react';
 
