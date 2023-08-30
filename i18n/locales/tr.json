@@ -31,6 +31,7 @@
   "components.downloadReleasesTable.releases": "Sürümler",
   "components.downloadReleasesTable.docs": "Dokümantasyon",
   "components.header.buttons.toggleLanguage": "Dili Değiştir",
+  "components.header.buttons.toggleDarkMode": "Karanlık/aydınlık modunu değiştir",
   "components.pagination.next": "Daha Yeni | ",
   "components.pagination.previous": "Daha Eski",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {{author} tarafından }}",

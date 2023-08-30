@@ -19,6 +19,10 @@ const Header = () => {
     id: 'components.header.buttons.toggleLanguage',
   });
 
+  const toggleDarkMode = formatMessage({
+    id: 'components.header.buttons.toggleDarkMode',
+  });
+
   const currentRouteLocalized = (locale: string) =>
     asPath.replace(/^\/[a-zA-Z-]+/, `/${locale}`);
 
@@ -46,7 +50,12 @@ const Header = () => {
         </nav>
 
         <div className="switchers">
-          <button>
+          <button
+            className="dark-theme-switcher"
+            type="button"
+            title={toggleDarkMode}
+            aria-label={toggleDarkMode}
+          >
             <Image
               priority
               width="28"

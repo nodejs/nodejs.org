@@ -31,6 +31,7 @@
   "components.downloadReleasesTable.releases": "Distributions",
   "components.downloadReleasesTable.docs": "Docs",
   "components.header.buttons.toggleLanguage": "Changer la langue",
+  "components.header.buttons.toggleDarkMode": "Basculer le mode sombre/clair",
   "components.pagination.next": "Plus récent ",
   "components.pagination.previous": "Plus anciens",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {Par {author}, }}",

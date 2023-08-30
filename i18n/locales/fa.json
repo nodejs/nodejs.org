@@ -31,6 +31,7 @@
   "components.downloadReleasesTable.releases": "Releases",
   "components.downloadReleasesTable.docs": "اسناد",
   "components.header.buttons.toggleLanguage": "Toggle Language",
+  "components.header.buttons.toggleDarkMode": "Toggle dark/light mode",
   "components.pagination.next": "بعدی | ",
   "components.pagination.previous": "قبلی",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {By {author}, }}",
