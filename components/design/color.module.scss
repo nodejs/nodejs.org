@@ -1,19 +1,25 @@
 .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .colors {
+    align-items: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 2rem;
     justify-content: space-between;
+    width: 100%;
 
-    .colors {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
+    .color {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
 
-        > div {
-            display: flex;
-            flex-direction: row;
-            gap: 1rem
-        }
+      > div {
+        height: 5.625rem;
+        width: 5.625rem;
+      }
     }
+  }
 }

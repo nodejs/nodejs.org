@@ -1,9 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 export default {
-  content: [
-    './components/**/*.tsx',
-  ],
+  content: ['./**/*.tsx'],
   theme: {
     colors: {
       green: {
@@ -100,13 +98,13 @@ export default {
       '7xl': '4.5rem',
     },
     fontFamily: {
-      sans: ['--font-open-sans'],
+      sans: ['var(--font-open-sans)'],
     },
     fontWeight: {
       regular: '400',
       medium: '500',
       semibold: '600',
       bold: '700',
-    }
+    },
   },
 } satisfies Config;
