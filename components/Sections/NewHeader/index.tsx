@@ -4,7 +4,6 @@ import { FaGithub } from 'react-icons/fa';
 import LocalizedLink from '@/components/LocalizedLink';
 import ActiveLocalizedLink from '@/components/Common/ActiveLocalizedLink';
 import DarkModeToggle from '@/components/Common/DarkModeToggle';
-import LanguageSelector from '@/components/Common/LanguageSelector';
 import type { FC } from 'react';
 
 import styles from './index.module.scss';
@@ -69,9 +68,6 @@ const Header: FC = () => (
         <ul className={styles.rightContainer}>
           <li>
             <DarkModeToggle />
-          </li>
-          <li>
-            <LanguageSelector />
           </li>
           <li>
             <a
