@@ -6,6 +6,7 @@ import { VFile } from 'vfile';
 import remarkGfm from 'remark-gfm';
 import remarkHeadings from '@vcarl/remark-headings';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import { serialize } from 'next-mdx-remote/serialize';
 import { availableLocales } from './next.locales.mjs';
@@ -162,6 +163,7 @@ export const generateStaticProps = async (source = '', filename = '') => {
               properties: { ariaHidden: true, tabIndex: -1, class: 'anchor' },
             },
           ],
+          [rehypePrettyCode, { theme: 'nord' }],
         ],
         remarkPlugins: [remarkGfm, remarkHeadings],
         format: filename.includes('.mdx') ? 'mdx' : 'md',
