@@ -68,14 +68,20 @@ img {
 }
 
 pre {
+  background-color: #2e3440ff;
   border-radius: 3px;
-  font-size: 0.8em;
+  font-size: 14px;
   padding: 0.75em 1.2em;
 
   code {
     display: grid;
+    font-family:
+      Consolas,
+      Monaco,
+      Andale Mono,
+      monospace;
     overflow-x: auto;
-    padding: 0.5em;
+    padding: 1em;
   }
 }
 
