@@ -119,12 +119,14 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=4096'
 
       - name: Build Next.js (Static)
+        # Assigns an ID to be reused on other steps
+        id: build_nextjs_static
         # We want a Static Buid on CI to ensure that the Static Exports are working as expected
         # This build will use the existing cache created on the previous build above (ISR)
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
         if: |
-          github.event_name == 'pull_request' &&
+          github.event_name == 'pull_request_target' &&
           startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
         run: npx --package=turbo@latest -- turbo deploy ${{ needs.base.outputs.turbo_args }}
         env:
@@ -134,10 +136,9 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=4096'
 
       - name: Save Build Cache
-        # This prevents this step from running if Upload Build Analysis" got cancelled
-        if: |
-          github.event_name == 'pull_request' &&
-          startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
+        # This prevents this step from running if "Next.js Build (Static)" got cancelled; Which gets cancelled if
+        # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
+        if: steps.build_nextjs_static.outcome == 'success'
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
