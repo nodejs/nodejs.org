@@ -162,6 +162,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: [base]
 
+    environment:
+      name: Storybook
+      url: ${{ steps.chromatic-deploy.outputs.storybookUrl }}
+
     steps:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
@@ -212,6 +216,8 @@ jobs:
         run: npx --package=turbo@latest -- turbo storybook:build ${{ needs.base.outputs.turbo_args }}
 
       - name: Start Visual Regression Tests (Chromatic)
+        # This assigns the Environment Deployment for Storybook
+        id: chromatic-deploy
         # This prevents this step from running if "Storybook Build" got cancelled; Which gets cancelled if
         # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
         if: steps.storybook_build.outcome == 'success'
