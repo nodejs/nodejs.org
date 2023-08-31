@@ -10,7 +10,11 @@ on:
   push:
     branches:
       - main
-  pull_request:
+  pull_request_target:
+    branches:
+      - main
+    types:
+      - labeled
   merge_group:
 
 defaults:
@@ -24,6 +28,12 @@ permissions:
 
 jobs:
   base:
+    # This Job ensures that these jobs run either on regular Pull Request Updates
+    # Or if the PR gets labeled with `github_actions:pull-request`
+    if: |
+      github.event.action != 'labeled' ||
+      (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request')
+
     name: Base Tasks
     runs-on: ubuntu-latest
     outputs:
@@ -38,6 +48,12 @@ jobs:
         run: echo "turbo_args=--force=true --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
 
   build:
+    # This Job ensures that these jobs run either on regular Pull Request Updates
+    # Or if the PR gets labeled with `github_actions:pull-request`
+    if: |
+      github.event.action != 'labeled' ||
+      (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request')
+
     name: Build on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     needs: [base]
@@ -107,6 +123,9 @@ jobs:
         # This build will use the existing cache created on the previous build above (ISR)
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
+        if: |
+          github.event_name == 'pull_request' &&
+          startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
         run: npx --package=turbo@latest -- turbo deploy ${{ needs.base.outputs.turbo_args }}
         env:
           # We want to ensure we have enough RAM allocated to the Node.js process
@@ -114,28 +133,11 @@ jobs:
           # but in general this should never happen
           NODE_OPTIONS: '--max_old_space_size=4096'
 
-      - name: Analyse Build
-        id: analyse_build
-        # We don't need build analysis for Dependabot PRs and also when the GitHub Event is not a Pull Request
-        # i.e. if the Event is a Merge Queue Event
-        if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false && github.event_name == 'pull_request'
-        # We generate a Bundle Analysis Report
-        # See https://github.com/hashicorp/nextjs-bundle-analysis
-        run: npx --package=nextjs-bundle-analysis@0.5.0 report
-
-      - name: Upload Build Analysis
-        # This prevents this step from running if "Analyse Build" got cancelled; Which gets cancelled if
-        # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
-        if: steps.analyse_build.outcome == 'success'
-        # We upload the Bundle Analysis Artifact so it can be used on another Workflow
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
-        with:
-          name: bundle-analysis
-          path: .next/analyze/__bundle_analysis.json
-
       - name: Save Build Cache
         # This prevents this step from running if Upload Build Analysis" got cancelled
-        if: steps.analyse_build.outcome == 'success'
+        if: |
+          github.event_name == 'pull_request' &&
+          startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
