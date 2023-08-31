@@ -14,7 +14,7 @@ layout: contribute.hbs
     * The [OpenJSF Slack](https://slack-invite.openjsf.org/) is a Foundation run Slack with several Node.js channels (channels prefixed by `#nodejs-` are related to the project).
     * [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
 * The official Node.js Twitter account is [nodejs](https://twitter.com/nodejs).
-* The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
+* The [Node.js project calendar](https://nodejs.org/calendar) with all public team meetings.
 
 ## Learning
 
