@@ -14,6 +14,11 @@ on:
   pull_request_target:
     branches:
       - main
+    types:
+      - labeled
+      - opened
+      - reopened
+      - synchronize
 
 permissions:
   contents: read
@@ -29,8 +34,13 @@ defaults:
 
 jobs:
   coverage-report:
-    # We want to skip our Pull Request Comments on Dependabot PRs
-    if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
+    # This Ensures that these jobs are not run within Dependabot Checks
+    # And that they're run either on regular Pull Request Updates
+    # Or if the PR gets labeled with `github_actions:pull-request-target`
+    if: |
+      startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
+      (github.event.action != 'labeled' || (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request-target'))
+
     name: Test Coverage Report
     runs-on: ubuntu-latest
 
@@ -70,7 +80,13 @@ jobs:
           junitxml-title: Unit Test Report
 
   visual-regression:
-    if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
+    # This Ensures that these jobs are not run within Dependabot Checks
+    # And that they're run either on regular Pull Request Updates
+    # Or if the PR gets labeled with `github_actions:pull-request-target`
+    if: |
+      startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
+      (github.event.action != 'labeled' || (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request-target'))
+
     name: Visual Regression Upload
     runs-on: ubuntu-latest
 
