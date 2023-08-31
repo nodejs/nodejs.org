@@ -57,7 +57,7 @@ jobs:
         with:
           name: coverage-report
           workflow: pull-request.yml
-          pr: ${{ github.event.pull_request.number }}
+          commit: ${{ github.event.pull_request.head.sha }}
           if_no_artifact_found: fail
 
       - name: Jest Coverage Comment
@@ -102,7 +102,7 @@ jobs:
         with:
           name: storybook-build
           workflow: pull-request.yml
-          pr: ${{ github.event.pull_request.number }}
+          commit: ${{ github.event.pull_request.head.sha }}
           path: storybook-static
           if_no_artifact_found: fail
 
