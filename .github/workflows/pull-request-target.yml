@@ -16,9 +16,6 @@ on:
       - main
     types:
       - labeled
-      - opened
-      - reopened
-      - synchronize
 
 permissions:
   contents: read
