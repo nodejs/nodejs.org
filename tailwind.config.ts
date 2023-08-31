@@ -101,9 +101,6 @@ export default {
       '6xl': ['3.75rem', '3.75rem'],
       '7xl': ['4.5rem', '4.5rem'],
     },
-    fontFamily: {
-      sans: ['var(--font-open-sans)'],
-    },
     fontWeight: {
       regular: '400',
       medium: '500',
@@ -111,5 +108,10 @@ export default {
       bold: '700',
     },
     darkMode: ['class', '[data-theme="dark"]'],
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-open-sans)'],
+      },
+    },
   },
 } satisfies Config;
