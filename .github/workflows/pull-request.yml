@@ -22,8 +22,23 @@ defaults:
 permissions:
   contents: read
   actions: read
+  # This permission is required by `peter-evans/create-or-update-comment`
+  # This permission is required by `MishaKav/jest-coverage-comment`
+  pull-requests: write
 
 jobs:
+  # This Job removes the label after it got applied to ensure that we can easily apply again when needed
+  remove_pull_request_label:
+    if: |
+      github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request'
+
+    name: Remove Pull Request Label
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-ecosystem/action-remove-labels@v1
+        with:
+          labels: github_actions:pull-request
+
   base:
     # This Job ensures that these jobs run either on regular Pull Request Updates
     # Or if the PR gets labeled with `github_actions:pull-request`
