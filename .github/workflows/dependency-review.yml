@@ -10,6 +10,7 @@ name: Review Dependencies
 
 on:
   pull_request:
+  merge_group:
 
 permissions:
   contents: read
