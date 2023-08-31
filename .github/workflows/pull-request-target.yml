@@ -36,10 +36,10 @@ jobs:
   coverage-report:
     # This Ensures that these jobs are not run within Dependabot Checks
     # And that they're run either on regular Pull Request Updates
-    # Or if the PR gets labeled with `github_actions:pull-request-target`
+    # Or if the PR gets labeled with `github_actions:pull-request`
     if: |
       startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
-      (github.event.action != 'labeled' || (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request-target'))
+      (github.event.action != 'labeled' || (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request'))
 
     name: Test Coverage Report
     runs-on: ubuntu-latest
@@ -82,10 +82,10 @@ jobs:
   visual-regression:
     # This Ensures that these jobs are not run within Dependabot Checks
     # And that they're run either on regular Pull Request Updates
-    # Or if the PR gets labeled with `github_actions:pull-request-target`
+    # Or if the PR gets labeled with `github_actions:pull-request`
     if: |
       startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
-      (github.event.action != 'labeled' || (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request-target'))
+      (github.event.action != 'labeled' || (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request'))
 
     name: Visual Regression Upload
     runs-on: ubuntu-latest
