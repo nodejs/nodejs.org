@@ -35,7 +35,8 @@ jobs:
     name: Remove Pull Request Label
     runs-on: ubuntu-latest
     steps:
-      - uses: actions-ecosystem/action-remove-labels@v1
+      - name: Remove GitHub Actions Label
+        uses: actions-ecosystem/action-remove-labels@2ce5d41b4b6aa8503e285553f75ed56e0a40bae0
         with:
           labels: github_actions:pull-request
 
