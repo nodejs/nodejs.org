@@ -8,6 +8,11 @@ name: Pull Request Checks
 
 on:
   pull_request:
+    types:
+      - labeled
+      - opened
+      - reopened
+      - synchronize
   merge_group:
 
 defaults:
@@ -21,6 +26,12 @@ permissions:
 
 jobs:
   base:
+    # This Job ensures that these jobs run either on regular Pull Request Updates
+    # Or if the PR gets labeled with `github_actions:pull-request`
+    if: |
+      github.event.action != 'labeled' ||
+      (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request')
+
     name: Base Tasks
     runs-on: ubuntu-latest
     outputs:
@@ -61,6 +72,12 @@ jobs:
           fi
 
   lint:
+    # This Job ensures that these jobs run either on regular Pull Request Updates
+    # Or if the PR gets labeled with `github_actions:pull-request`
+    if: |
+      github.event.action != 'labeled' ||
+      (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request')
+
     name: Lint
     runs-on: ubuntu-latest
     needs: [base]
@@ -118,6 +135,12 @@ jobs:
           key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.turbo/cache/**') }}
 
   tests:
+    # This Job ensures that these jobs run either on regular Pull Request Updates
+    # Or if the PR gets labeled with `github_actions:pull-request`
+    if: |
+      github.event.action != 'labeled' ||
+      (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request')
+
     name: Tests
     runs-on: ubuntu-latest
     needs: [base]
