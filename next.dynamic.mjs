@@ -12,6 +12,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 import { availableLocales } from './next.locales.mjs';
 import { getMarkdownFiles } from './next.helpers.mjs';
 import { DEFAULT_LOCALE_CODE, MD_EXTENSION_REGEX } from './next.constants.mjs';
+import { shikiTheme } from './next.json.mjs';
 
 // allows us to run a glob to get markdown files based on a language folder
 const getPathsByLanguage = async (locale = DEFAULT_LOCALE_CODE, ignored = []) =>
@@ -163,7 +164,7 @@ export const generateStaticProps = async (source = '', filename = '') => {
               properties: { ariaHidden: true, tabIndex: -1, class: 'anchor' },
             },
           ],
-          [rehypePrettyCode, { theme: 'nord' }],
+          [rehypePrettyCode, { theme: shikiTheme }],
         ],
         remarkPlugins: [remarkGfm, remarkHeadings],
         format: filename.includes('.mdx') ? 'mdx' : 'md',
