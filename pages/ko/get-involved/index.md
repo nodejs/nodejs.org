@@ -14,7 +14,7 @@ layout: contribute.hbs
     * [OpenJSF Slack](https://slack-invite.openjsf.org/)은 여러 Node.js채널의 슬랙을 운영하는 단체입니다.( `#nodejs-`라고 되어있는 채널이 프로젝트와 관련있는 채널입니다.)
     * [Node Slackers](https://www.nodeslackers.com/)는 Node.js에 초점을 맞춘 슬랙 커뮤니티입니다.
 * Node.js공식 트위터는 [nodejs](https://twitter.com/nodejs)입니다.
-* [Node.js 재단 캘린더](https://nodejs.org/calendar)에 모든 공개 팀 미팅 일정이 포함되어 있습니다.
+* [Node.js 프로젝트 캘린더](https://nodejs.org/calendar)에 모든 팀 미팅 일정이 있습니다.
 
 ## 알아보기
 
