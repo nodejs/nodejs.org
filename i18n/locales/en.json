@@ -57,11 +57,6 @@
   "components.sections.newHeader.links.about": "About",
   "components.sections.newHeader.links.download": "Downloads",
   "components.sections.newHeader.links.certification": "Certification",
-  "components.downloads.downloadToggle.current": "Current",
-  "components.downloads.downloadToggle.lts": "LTS",
-  "components.downloads.downloadToggle.recommendation": "{selected, select, LTS {Recommended for most users}other {With the latest features}}",
-  "components.downloads.downloadToggle.ltsVersions": "LTS Versions",
-  "components.downloads.downloadToggle.currentVersions": "Current Versions",
   "pages.404.title": "404: Page could not be found",
   "pages.404.description": "ENOENT: no such file or directory"
 }
