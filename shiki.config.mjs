@@ -1,6 +1,10 @@
 'use strict';
 
 // Note.: We need to manually import each Language Grammar that we want to prevent Shiki from looking its BUNDLED languages map.
+// If we provide `path` instead of `grammar`, Shiki will attempt to resolve the language from `BUNDLED_LANGUAGES`
+// which will attempt to load the language from the `path` defined on Shiki's `BUNDLED_LANGUAGES` entry.
+// In theory by using `require.resolve` (on our entries here), Vercel's NFT (Node File Trace) would include those paths
+// But I assume it is safer to simply bundle these languages altogether, and remove the dependency on Shiki's `BUNDLED_LANGUAGES`
 
 import cLanguage from 'shiki/languages/c.tmLanguage.json' assert { type: 'json' };
 import cppLanguage from 'shiki/languages/cpp.tmLanguage.json' assert { type: 'json' };
