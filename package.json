@@ -50,7 +50,7 @@
     "classnames": "~2.3.2",
     "cross-env": "7.0.3",
     "feed": "~4.2.2",
-    "framer-motion": "~10.16.1",
+    "framer-motion": "~10.16.2",
     "glob": "~10.3.3",
     "gray-matter": "~4.0.3",
     "highlight.js": "~11.8.0",
