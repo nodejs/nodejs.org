@@ -17,78 +17,45 @@
   - [General Guidelines for Storybooks](#general-guidelines-for-storybooks)
 - [Remarks on Technologies used](#remarks-on-technologies-used)
 
-This document contains information for Collaborators of the Node.js
-website project regarding maintaining the code, documentation, and issues.
+This document contains information for Collaborators of the Node.js website project regarding maintaining the code, documentation, and issues.
 
-Collaborators should be familiar with the guidelines for new
-contributors in [CONTRIBUTING.md](./CONTRIBUTING.md).
+Collaborators should be familiar with the guidelines for new contributors in [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Issues and Pull Requests
 
-Courtesy should always be shown to individuals submitting issues and
-pull requests to the Node.js website project.
+Courtesy should always be shown to individuals submitting issues and pull requests to the Node.js website project.
 
-Collaborators should feel free to take full responsibility for
-managing issues and pull requests they feel qualified to handle, as
-long as this is done while being mindful of these guidelines, the
-opinions of other Collaborators and guidance of the Website Group.
+Collaborators should feel free to take full responsibility for managing issues and pull requests they feel qualified to handle, as long as this is done while being mindful of these guidelines, the opinions of other Collaborators and guidance of the Website Group.
 
-Collaborators may **close** any issue or pull request they believe is
-not relevant to the future of the Node.js project. Where this is
-unclear, the issue should be left open for several days for
-additional discussion. Where this does not yield input from Node.js
-Collaborators or additional evidence that the issue has relevance, then the issue may be closed.
+Collaborators may **close** any issue or pull request they believe is not relevant to the future of the Node.js project.
+Where this is unclear, the issue should be left open for several days for additional discussion.
+Where this does not yield input from Node.js Collaborators or additional evidence that the issue has relevance, then the issue may be closed.
 Remember that issues can always be re-opened if necessary.
 
 ## Accepting Modifications
 
-All Node.js code and documentation modifications should be
-performed via GitHub pull requests. Only the `Website` group
-can merge their work and should do so carefully.
+All Node.js code and documentation modifications should be performed via GitHub pull requests.
+Only the Website Team can merge their work and should do so carefully.
 
-All pull requests must be reviewed and accepted by a Collaborator with
-sufficient expertise who can take full responsibility for the
-change. In the case of pull requests proposed by an existing
-Collaborator, an additional Collaborator is required for sign-off.
+All pull requests must be reviewed and accepted by a Collaborator with sufficient expertise who can take full responsibility for the change.
+In the case of pull requests proposed by an existing Collaborator, an additional Collaborator is required for sign-off.
 
-In some cases, it may be necessary to summon a qualified Collaborator
-to a pull request for review by @-mention.
+Pull Requests can only be merged after all CI Checks have passed.
+As usual, CI Checks need to be manually triggered by adding a `github_actions:pull-request` label to the Pull Request.
 
-If you are unsure about the modification and are not prepared to take
-full responsibility for the change, defer to another Collaborator.
+In some cases, it may be necessary to summon a qualified Collaborator to a pull request for review by @-mention.
 
-Before landing pull requests, sufficient time should be left for input
-from other Collaborators. Leave at least 48 hours during the week and
-Seventy-two hours over weekends to account for international time differences
-and work schedules. Trivial changes (e.g., those which fix minor bugs
-or improve performance without causing wide-reaching impact)
-may be landed after a shorter delay. Any press release can land with
-no time constraints as long as the copy is properly formatted;
-it is not the responsibility of the website group to review the copy itself.
+If you are unsure about the modification and are not prepared to take full responsibility for the change, defer to another Collaborator.
 
-Where there is no disagreement amongst Collaborators, a pull request
-may be landed given appropriate review. Where there is discussion
-amongst Collaborators, consensus should be sought. The
-lack of consensus may indicate the need to elevate the discussion to the
-Website Group for resolution (see below).
-
-All bug fixes require a test case that demonstrates the defect. The
-test should _fail_ before the change, and _pass_ after the change.
-
-All pull requests that modify executable code should be subjected to
-continuous integration tests on the
-[project CI server](https://ci.nodejs.org/).
+We recommend Collaboratory to follow the guidelines on the [Contributing Guide](./CONTRIBUTING.md#before-merging) for reviewing and merging Pull Requests.
 
 ### Involving the Website Team
 
-Collaborators may opt to elevate pull requests or issues to the group for
-discussion by mentioning `@nodejs/website`. This should be done
-where a pull request:
+Collaborators may opt to elevate pull requests or issues to the group for discussion by mentioning `@nodejs/website`. This should be done where a pull request:
 
 - has a significant impact on the codebase,
 - is inherently controversial; or
-- has failed to reach a consensus amongst the Collaborators who are
-  actively participating in the discussion.
+- has failed to reach a consensus amongst the Collaborators who are actively participating in the discussion.
 
 The Website group should be the final arbiter where needed.
 
@@ -166,12 +133,9 @@ See the [Translation Guidelines](./TRANSLATION.md) for the website translation p
 The Node.js Website uses [React][] as a Frontend Library to develop the Website.
 React allows us to create user interfaces with a modern take on Web Development.
 
-If you're unfamiliar with React or Web Development in general,
-we encourage a read before taking on complex issues and tasks as this repository is **not for educational purposes**
-and we expect you to have a basic understanding of the technologies used.
+If you're unfamiliar with React or Web Development in general, we encourage a read before taking on complex issues and tasks as this repository is **not for educational purposes** and we expect you to have a basic understanding of the technologies used.
 
-We also recommend getting familiar with technologies such as [Next.js][], [MDX][], [SCSS][],
-and "concepts" such as "CSS Modules" and "CSS-in-JS".
+We also recommend getting familiar with technologies such as [Next.js][], [MDX][], [SCSS][], and "concepts" such as "CSS Modules" and "CSS-in-JS".
 
 ### Best practices when creating a Component
 
@@ -283,31 +247,40 @@ export default { component: NameOfComponent } as Meta;
 
 ## Remarks on Technologies Used
 
-The Node.js Website is a somewhat complex Application. And hecen sometimes non-trivial solutions were adopted to solve certain technical challenges. Past Issues, Conversations on Slack and GitHub Discussions are the go-to-go for most historical purposes, but we've found important to highlight some of these decisions here.
+The Node.js Website is a somewhat complex Application. And hecen sometimes non-trivial solutions were adopted to solve certain technical challenges.
+Past Issues, Conversations on Slack and GitHub Discussions are the go-to-go for most historical purposes, but we've found important to highlight some of these decisions here.
 
 ### Why Next.js?
 
-We've found that Next.js is simply versatile, hackable, stable, community-maintained and has a great ecosystem. The reasoning goes deeper, but as a long-term Framework it is the most suitable choice.
+We've found that Next.js is simply versatile, hackable, stable, community-maintained and has a great ecosystem.
+The reasoning goes deeper, but as a long-term Framework it is the most suitable choice.
 
 #### Why we have Static Exports?
 
-It was decided together with the TSC (Technical Steering Committee) that the Node.js Website should always support fully static builds that do not depend on any 3rd party services. This is to ensure that the Website is always available and that we do not depend on any 3rd party services to serve our content.
+It was decided together with the TSC (Technical Steering Committee) that the Node.js Website should always support fully static builds that do not depend on any 3rd party services.
+This is to ensure that the Website is always available and that we do not depend on any 3rd party services to serve our content.
 
 (For example, if we abandon Vercel, our Website should still completely work as standalone as possible)
 
 #### What is `next.dynamic.mjs`?
 
-Our whole Website uses a custom renderer for rendering the pages. As you might have seen, within the `pages` directory we have [Next.js Dynamic Route](https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes) named `[...path].tsx` that matches against all possible routes of the Website.
+Our whole Website uses a custom renderer for rendering the pages.
+As you might have seen, within the `pages` directory we have [Next.js Dynamic Route](https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes) named `[...path].tsx` that matches against all possible routes of the Website.
 
 This means that each `.md(x)` file within `pages/` is not rendered by Next.js regular App Tree (`pages/_document.tsx` and `pages/_app.tsx`) but a custom render tree.
 
-This custom render uses `getStaticPaths` and [Incremental Static Generation](https://nextjs.org/docs/pages/building-your-application/data-fetching/incremental-static-regeneration) to generate the full list of supported pages of the Website. For example, this allows us to generate Localized Pages for every page that is not translated, by telling Next.js to create a localised path. `next.dynamic.mjs` is responsible for getting a full list of the source pages (`pages/en`) and forcefully get a diff of what is translated and whatnot.
+This custom render uses `getStaticPaths` and [Incremental Static Generation](https://nextjs.org/docs/pages/building-your-application/data-fetching/incremental-static-regeneration) to generate the full list of supported pages of the Website.
+For example, this allows us to generate Localized Pages for every page that is not translated, by telling Next.js to create a localised path.
+`next.dynamic.mjs` is responsible for getting a full list of the source pages (`pages/en`) and forcefully get a diff of what is translated and whatnot.
 
-Non-translated pages will have their Localized contexts and translated React message-bags (`react-intl`) but the content will be the same as the source page (English). Whereas localized pages will have localized context and content.
+Non-translated pages will have their Localized contexts and translated React message-bags (`react-intl`) but the content will be the same as the source page (English).
+Whereas localized pages will have localized context and content.
 
-This custom solution is also able to decide what paths should be compiled during runtime and whatnot. This is a combination of rules defined on `next.constants.mjs` and `[...path].tsx`.
+This custom solution is also able to decide what paths should be compiled during runtime and whatnot.
+This is a combination of rules defined on `next.constants.mjs` and `[...path].tsx`.
 
-Finally, `[...path].tsx` uses the root `theme.tsx` as layout. This finally loads the Layout Provider and MDX Provider and then any children content/Component from the Layout Provider + the transformed MDX content from the `.md(x)` source page.
+Finally, `[...path].tsx` uses the root `theme.tsx` as layout.
+This finally loads the Layout Provider and MDX Provider and then any children content/Component from the Layout Provider + the transformed MDX content from the `.md(x)` source page.
 
 #### What is `next.data.mjs`?
 
@@ -315,19 +288,22 @@ This file is responsible for loading, fetching and generating build-time require
 
 #### What is `site.json`?
 
-This file is used for defining Website Metadata, such as which RSS feeds should be generated, Social Media Information and other Metadata used during the Website build-time. We use a JSON format to ease collaboration.
+This file is used for defining Website Metadata, such as which RSS feeds should be generated, Social Media Information and other Metadata used during the Website build-time.
+We use a JSON format to ease collaboration.
 
 #### What is `next.locales.mjs` and why not Next.js built-in i18n?
 
 Next.js built-in i18n is great, but it is not flexible enough for our needs. We need to be able to generate a full list of supported locales, and we need to be able to generate a full list of supported pages for each locale. We also need to be able to generate a full list of supported pages for each locale, and we need to be able to generate a full list of supported pages for each locale.
 
-It is also important to mention that we use a subfolder approach, instead of extension-based (`filename.language.md(x)`) for our content. Which is trivially incompatible with Next.js built-in i18n.
+It is also important to mention that we use a subfolder approach, instead of extension-based (`filename.language.md(x)`) for our content.
+Which is trivially incompatible with Next.js built-in i18n.
 
 We chose this approach to maintain familiarity with the content-structure as much as possible with the previous Node.js Website and to ensure maintainability (not depending on Next.js's i18n feature).
 
 #### What is `next.rewrites.mjs`?
 
-This file is responsible for defining the rewrite rules for the Website. It is used for defining redirects and other rewrite rules. (Such as Internal Redirects and External ones).
+This file is responsible for defining the rewrite rules for the Website.
+It is used for defining redirects and other rewrite rules. (Such as Internal Redirects and External ones).
 
 The actual rewrites are defined within `redirects.json`. The file format is simple and separate external redirects with internal rewrites.
 
@@ -338,19 +314,25 @@ This file contains a simple template engine that supports `/:locale` to indicate
 
 #### Our Next.js Middleware
 
-We have a simple Next.js Middleware that is responsible for handling initial Locale detection and redirection. It detects browser locales and redirects to the most suitable locale for the user. And it fallbacks to `/en` if no suitable locale is found.
+We have a simple Next.js Middleware that is responsible for handling initial Locale detection and redirection.
+It detects browser locales and redirects to the most suitable locale for the user. And it fallbacks to `/en` if no suitable locale is found.
 
 #### How Layouts Work within this Repository?
 
-Layouts Wrap the content of the Markdown files. They are responsible for adding additional styling and structure surrounding the content of the Markdown files.
+Layouts Wrap the content of the Markdown files.
+They are responsible for adding additional styling and structure surrounding the content of the Markdown files.
 
-Layouts are defined within the `layouts` folder. They are React Components that receive the `children` prop, which is the transformed MDX content of the Markdown file.
+Layouts are defined within the `layouts` folder.
+They are React Components that receive the `children` prop, which is the transformed MDX content of the Markdown file.
 
 Each Page layout is decided within their Markdown's Frontmatter as `layout: name-of-layout.hbs`.
 
 ### Why MDX?
 
-MDX is a great format for writing content. It allows us to write Markdown and React Components in the same file. It also allows us to use React Components within Markdown files. This is a great advantage for us, as we can use React Components to create complex content structures and layouts. It also supports the `unified` ecosystem, which allows us to extend the MDX functionality with ease.
+MDX is a great format for writing content. It allows us to write Markdown and React Components in the same file.
+It also allows us to use React Components within Markdown files.
+This is a great advantage for us, as we can use React Components to create complex content structures and layouts.
+It also supports the `unified` ecosystem, which allows us to extend the MDX functionality with ease.
 
 Some of the Plugins used here include, but not limited to:
 
@@ -363,9 +345,10 @@ Some of the Plugins used here include, but not limited to:
 
 #### Shiki and Vercel
 
-Since we use Incremental Static Rendering and Serverless Functions, Vercel attempts to simplify the bundled Node.js runtime by removing all unnecessary dependencies. This means that Shiki's Themes and Languages are not bundled by default.
+Since we use Incremental Static Rendering and Serverless Functions, Vercel attempts to simplify the bundled Node.js runtime by removing all unnecessary dependencies.
+This means that Shiki's Themes and Languages are not bundled by default.
 
-Hence the `shiki.config.mjs` file, wherem we define our custom set of supported Languages and we bundle them directly by using [Shiki's Grammar Property](https://github.com/shikijs/shiki/blob/main/docs/languages.md#supporting-your-own-languages-with-shiki) which allows us to embed the languages directly.
+Hence the `shiki.config.mjs` file, where we define our custom set of supported Languages and we bundle them directly by using [Shiki's Grammar Property](https://github.com/shikijs/shiki/blob/main/docs/languages.md#supporting-your-own-languages-with-shiki) which allows us to embed the languages directly.
 
 ### Tailwind
 
@@ -375,11 +358,14 @@ For example, it automatically integrates with PostCSS and Next.js, which allows 
 
 It also integrates with Sass allowing to use Tailwind classes directly within our SCSS Modules.
 
-**Note:** On that remark, we use CSS Modules as a way to define our Styles. This allows us to scope our styles to a specific Component or Page, without having to worry about CSS Class Name Collisions. This also means that we don't use CSS-in-JS solutions such as Styled Components or Emotion.
+**Note:** On that remark, we use CSS Modules as a way to define our Styles.
+This allows us to scope our styles to a specific Component or Page, without having to worry about CSS Class Name Collisions.
+This also means that we don't use CSS-in-JS solutions such as Styled Components or Emotion.
 
 #### Next Fonts and Tailwind
 
-We use `next/fonts` Open Sans as the default font for the Node.js Website. The font is configured as a CSS variable and then configured on `tailwind.config.js` as the default font for the Website.
+We use `next/fonts` Open Sans as the default font for the Node.js Website.
+The font is configured as a CSS variable and then configured on `tailwind.config.js` as the default font for the Website.
 
 #### Sass Support / IDE Support
 
@@ -387,7 +373,8 @@ We recommend the usage of [Tailwind's Official VS Code Extension](https://market
 
 ### Vercel
 
-We use Vercel as our hosting provider. It is a great platform that allows us to deploy our Website with ease. It also allows us to have a great CI/CD Pipeline that allows us to deploy our Website with ease.
+We use Vercel as our hosting provider. It is a great platform that allows us to deploy our Website with ease.
+It also allows us to have a great CI/CD Pipeline that allows us to deploy our Website with ease.
 
 It is important to mention that there are some rules on our Vercel Deployments such as:
 

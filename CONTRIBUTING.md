@@ -194,6 +194,7 @@ The list below describes some merging and approval rules adopted in this reposit
     - Fast-tracking is only allowed for small bug fixes, small feature changes, localization changes, or other non-critical/highly-impacting changes not covered by the previous rule that allows PRs to be merged immediately.
     - Fast-tracking cannot be used for updates on the `COLLABORATOR_GUIDE.md`, `CONTRIBUTING.md` guide, `CODEOWNERS`, GitHub Actions, or any security-impacting file or document that changes the governing policies of this repository.
 - There must be no objections after forty-eight (48) hours (Or seventy-two (72) hours if the PR was authored on the weekend).
+  - If there are disagrements consensus should be sought. Lack of consensus might require escalation to the Website Team Maintainers.
 - At least one approval is required for any PR to be merged.
 - Tests must be included in Pull Requests for new features or bug fixes. You are responsible for fixing any test(s) that fail.
 
@@ -204,6 +205,7 @@ If an objection is raised in a pull request by another collaborator, all collabo
 ### When merging
 
 - All required Status-checks must have passed.
+  - **Note:** If you're a collaborator, remember to run the CI checks by labeling the PR with the `github_actions:pull-request` label.
 - Please make sure that all discussions are resolved.
 - [`squash`][] pull requests made up of multiple commits
 
