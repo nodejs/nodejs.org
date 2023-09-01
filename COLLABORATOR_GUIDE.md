@@ -15,6 +15,7 @@
 - [Unit Tests and Storybooks](#unit-tests-and-storybooks)
   - [General Guidelines for Unit Tests](#general-guidelines-for-unit-tests)
   - [General Guidelines for Storybooks](#general-guidelines-for-storybooks)
+- [Remarks on Technologies used](#remarks-on-technologies-used)
 
 This document contains information for Collaborators of the Node.js
 website project regarding maintaining the code, documentation, and issues.
@@ -100,7 +101,8 @@ The Website also uses several other Open Source libraries (not limited to) liste
 - Styling is done with [SCSS][] and CSS Modules
 - [TailwindCSS](https://tailwindcss.com/) is used as our CSS Framework and the Foundation of our Design System
 - [Hero Icons](https://heroicons.com/) is an SVG Icon Library used within our Codebase
-- [Shiki](https://github.com/shikijs/shiki) is a Syntax Highlighter used for our Codeboxes
+- [Shiki][] is a Syntax Highlighter used for our Codeboxes
+  - A [Rehype Plug](https://rehype-pretty-code.netlify.app/) is used here for transforming `pre` and `code` tags into Syntax Highlighted Codeboxes
 - [MDX][] and Markdown are used for structuring the Content of the Website
 - [`react-intl`][] is the i18n Library adopted within the Website
 - [`next-sitemap`](https://www.npmjs.com/package/next-sitemap) is used for Sitemap and `robots.txt` Generation
@@ -279,6 +281,128 @@ export default { component: NameOfComponent } as Meta;
 - We recommend reading previous Storybooks from the codebase for inspiration and code guidelines.
 - If you need to decorate/wrap your Component/Story with a Container/Provider, please use [Storybook Decorators](https://storybook.js.org/docs/react/writing-stories/decorators)
 
+## Remarks on Technologies Used
+
+The Node.js Website is a somewhat complex Application. And hecen sometimes non-trivial solutions were adopted to solve certain technical challenges. Past Issues, Conversations on Slack and GitHub Discussions are the go-to-go for most historical purposes, but we've found important to highlight some of these decisions here.
+
+### Why Next.js?
+
+We've found that Next.js is simply versatile, hackable, stable, community-maintained and has a great ecosystem. The reasoning goes deeper, but as a long-term Framework it is the most suitable choice.
+
+#### Why we have Static Exports?
+
+It was decided together with the TSC (Technical Steering Committee) that the Node.js Website should always support fully static builds that do not depend on any 3rd party services. This is to ensure that the Website is always available and that we do not depend on any 3rd party services to serve our content.
+
+(For example, if we abandon Vercel, our Website should still completely work as standalone as possible)
+
+#### What is `next.dynamic.mjs`?
+
+Our whole Website uses a custom renderer for rendering the pages. As you might have seen, within the `pages` directory we have [Next.js Dynamic Route](https://nextjs.org/docs/pages/building-your-application/routing/dynamic-routes) named `[...path].tsx` that matches against all possible routes of the Website.
+
+This means that each `.md(x)` file within `pages/` is not rendered by Next.js regular App Tree (`pages/_document.tsx` and `pages/_app.tsx`) but a custom render tree.
+
+This custom render uses `getStaticPaths` and [Incremental Static Generation](https://nextjs.org/docs/pages/building-your-application/data-fetching/incremental-static-regeneration) to generate the full list of supported pages of the Website. For example, this allows us to generate Localized Pages for every page that is not translated, by telling Next.js to create a localised path. `next.dynamic.mjs` is responsible for getting a full list of the source pages (`pages/en`) and forcefully get a diff of what is translated and whatnot.
+
+Non-translated pages will have their Localized contexts and translated React message-bags (`react-intl`) but the content will be the same as the source page (English). Whereas localized pages will have localized context and content.
+
+This custom solution is also able to decide what paths should be compiled during runtime and whatnot. This is a combination of rules defined on `next.constants.mjs` and `[...path].tsx`.
+
+Finally, `[...path].tsx` uses the root `theme.tsx` as layout. This finally loads the Layout Provider and MDX Provider and then any children content/Component from the Layout Provider + the transformed MDX content from the `.md(x)` source page.
+
+#### What is `next.data.mjs`?
+
+This file is responsible for loading, fetching and generating build-time required information such as Node.js Release data, Blog Posts Metadata (for pagination and indexation), RSS feeds, etc.
+
+#### What is `site.json`?
+
+This file is used for defining Website Metadata, such as which RSS feeds should be generated, Social Media Information and other Metadata used during the Website build-time. We use a JSON format to ease collaboration.
+
+#### What is `next.locales.mjs` and why not Next.js built-in i18n?
+
+Next.js built-in i18n is great, but it is not flexible enough for our needs. We need to be able to generate a full list of supported locales, and we need to be able to generate a full list of supported pages for each locale. We also need to be able to generate a full list of supported pages for each locale, and we need to be able to generate a full list of supported pages for each locale.
+
+It is also important to mention that we use a subfolder approach, instead of extension-based (`filename.language.md(x)`) for our content. Which is trivially incompatible with Next.js built-in i18n.
+
+We chose this approach to maintain familiarity with the content-structure as much as possible with the previous Node.js Website and to ensure maintainability (not depending on Next.js's i18n feature).
+
+#### What is `next.rewrites.mjs`?
+
+This file is responsible for defining the rewrite rules for the Website. It is used for defining redirects and other rewrite rules. (Such as Internal Redirects and External ones).
+
+The actual rewrites are defined within `redirects.json`. The file format is simple and separate external redirects with internal rewrites.
+
+- Rewrites do not change the original URL but render the content of the rewritten URL. The reritten path must be valid and exist on the Website.
+- Redirects change the original URL to the new one. The URLs do not necessarily need to be external, but they in general should be.
+
+This file contains a simple template engine that supports `/:locale` to indicate that this path should also be available under all available locales as prefix.
+
+#### Our Next.js Middleware
+
+We have a simple Next.js Middleware that is responsible for handling initial Locale detection and redirection. It detects browser locales and redirects to the most suitable locale for the user. And it fallbacks to `/en` if no suitable locale is found.
+
+#### How Layouts Work within this Repository?
+
+Layouts Wrap the content of the Markdown files. They are responsible for adding additional styling and structure surrounding the content of the Markdown files.
+
+Layouts are defined within the `layouts` folder. They are React Components that receive the `children` prop, which is the transformed MDX content of the Markdown file.
+
+Each Page layout is decided within their Markdown's Frontmatter as `layout: name-of-layout.hbs`.
+
+### Why MDX?
+
+MDX is a great format for writing content. It allows us to write Markdown and React Components in the same file. It also allows us to use React Components within Markdown files. This is a great advantage for us, as we can use React Components to create complex content structures and layouts. It also supports the `unified` ecosystem, which allows us to extend the MDX functionality with ease.
+
+Some of the Plugins used here include, but not limited to:
+
+- `remark-gfm`: Allows us to use GitHub Flavored Markdown
+- `remark-headings`: Generates Metadata for Markdown Headings
+  - This allows us to build the Table of Contents for each Page, for example.
+- `rehype-autolink-headings`: Allows us to add Anchor Links to Markdown Headings
+- `rehype-slug`: Allows us to add IDs to Markdown Headings
+- `rehype-pretty-code`: Allows us to transform `pre` and `code` tags into Syntax Highlighted Codeboxes by using [Shiki][]
+
+#### Shiki and Vercel
+
+Since we use Incremental Static Rendering and Serverless Functions, Vercel attempts to simplify the bundled Node.js runtime by removing all unnecessary dependencies. This means that Shiki's Themes and Languages are not bundled by default.
+
+Hence the `shiki.config.mjs` file, wherem we define our custom set of supported Languages and we bundle them directly by using [Shiki's Grammar Property](https://github.com/shikijs/shiki/blob/main/docs/languages.md#supporting-your-own-languages-with-shiki) which allows us to embed the languages directly.
+
+### Tailwind
+
+Tailwind is a great CSS Framework. It allows us to create a Design System that is easy to maintain and extend. It also allows us to create a consistent Design Language across the Website.
+
+For example, it automatically integrates with PostCSS and Next.js, which allows us to use Tailwind's utilities within our Components and Pages.
+
+It also integrates with Sass allowing to use Tailwind classes directly within our SCSS Modules.
+
+**Note:** On that remark, we use CSS Modules as a way to define our Styles. This allows us to scope our styles to a specific Component or Page, without having to worry about CSS Class Name Collisions. This also means that we don't use CSS-in-JS solutions such as Styled Components or Emotion.
+
+#### Next Fonts and Tailwind
+
+We use `next/fonts` Open Sans as the default font for the Node.js Website. The font is configured as a CSS variable and then configured on `tailwind.config.js` as the default font for the Website.
+
+#### Sass Support / IDE Support
+
+We recommend the usage of [Tailwind's Official VS Code Extension](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) for IntelliSense Support. You might need to set `.scss` files to use Tailwind as the Interpreter.
+
+### Vercel
+
+We use Vercel as our hosting provider. It is a great platform that allows us to deploy our Website with ease. It also allows us to have a great CI/CD Pipeline that allows us to deploy our Website with ease.
+
+It is important to mention that there are some rules on our Vercel Deployments such as:
+
+- Branches starting with `dependabot` (Dependabot Automated PRs) or `gh` (GitHub Merge Queues) are not deployed to Vercel.
+- Vercel Deployments are triggered for all other branches during `push` activities.
+- We have a custom install script that executes `npm ci --omit=dev` (the same way we do on our CI Pipelines)
+  - Hence if Builds fail unexpectedly, make sure that your dependency that is being used during build-time is on `dependencies` and not `devDependencies`. Checkout out [DEPENDENCY_PINNING.md](./DEPENDENCY_PINNING.md) for more information.
+- Our sponsorship with Vercel is maintained by the OpenJS Foundation
+
+### Unfamiliar with certain decision of process?
+
+A lot of the current structure is due to retro-compatibility, keeping a simple and familiar file structure and keeping files that have historical reasons or needs.
+
+If you're unfamiliar our curious about something, we recommend opening a Discussion on this GitHub Repository.
+
 [Jest]: https://jestjs.io/
 [React Testing Library]: https://testing-library.com/docs/react-testing-library/intro/
 [Storybook]: https://storybook.js.org/
@@ -287,3 +411,4 @@ export default { component: NameOfComponent } as Meta;
 [MDX]: https://mdxjs.com/
 [SCSS]: https://sass-lang.com/
 [React]: https://react.dev/
+[Shiki]: https://github.com/shikijs/shiki
