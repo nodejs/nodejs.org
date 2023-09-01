@@ -1,5 +1,7 @@
 'use strict';
 
+// Note.: We need to manually import each Language Grammar that we want to prevent Shiki from looking its BUNDLED languages map.
+
 import cLanguage from 'shiki/languages/c.tmLanguage.json' assert { type: 'json' };
 import cppLanguage from 'shiki/languages/cpp.tmLanguage.json' assert { type: 'json' };
 import javaScriptLanguage from 'shiki/languages/javascript.tmLanguage.json' assert { type: 'json' };
@@ -19,7 +21,6 @@ export const SUPPORTED_LANGUAGES = [
   {
     id: 'cpp',
     scopeName: 'source.cpp',
-    embeddedLangs: ['sql'],
     grammar: cppLanguage,
   },
   {
@@ -47,7 +48,6 @@ export const SUPPORTED_LANGUAGES = [
   {
     id: 'xml',
     scopeName: 'text.xml',
-    embeddedLangs: ['java'],
     grammar: xmlLanguage,
   },
   {
