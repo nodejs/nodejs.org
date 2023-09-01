@@ -51,7 +51,7 @@
     "cross-env": "7.0.3",
     "feed": "~4.2.2",
     "framer-motion": "~10.16.1",
-    "glob": "~10.3.3",
+    "glob": "~10.3.4",
     "gray-matter": "~4.0.3",
     "highlight.js": "~11.8.0",
     "husky": "8.0.3",
