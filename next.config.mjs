@@ -42,8 +42,6 @@ const nextConfig = {
     // since we pass the fully-compiled MDX page from `MDXRemote` through
     // a page's static props.
     largePageDataBytes: 128 * 100000,
-    // Shiki needs to be included as a Server Component
-    serverComponentsExternalPackages: ['shiki'],
   },
 };
 
