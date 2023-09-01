@@ -102,7 +102,7 @@ The Website also uses several other Open Source libraries (not limited to) liste
 - [TailwindCSS](https://tailwindcss.com/) is used as our CSS Framework and the Foundation of our Design System
 - [Hero Icons](https://heroicons.com/) is an SVG Icon Library used within our Codebase
 - [Shiki][] is a Syntax Highlighter used for our Codeboxes
-  - A [Rehype Plug](https://rehype-pretty-code.netlify.app/) is used here for transforming `pre` and `code` tags into Syntax Highlighted Codeboxes
+  - A [Rehype Plugin](https://rehype-pretty-code.netlify.app/) is used here for transforming `pre` and `code` tags into Syntax Highlighted Codeboxes
 - [MDX][] and Markdown are used for structuring the Content of the Website
 - [`react-intl`][] is the i18n Library adopted within the Website
 - [`next-sitemap`](https://www.npmjs.com/package/next-sitemap) is used for Sitemap and `robots.txt` Generation
@@ -397,7 +397,7 @@ It is important to mention that there are some rules on our Vercel Deployments s
   - Hence if Builds fail unexpectedly, make sure that your dependency that is being used during build-time is on `dependencies` and not `devDependencies`. Checkout out [DEPENDENCY_PINNING.md](./DEPENDENCY_PINNING.md) for more information.
 - Our sponsorship with Vercel is maintained by the OpenJS Foundation
 
-### Unfamiliar with certain decision of process?
+### Unfamiliar with certain decision of Processes?
 
 A lot of the current structure is due to retro-compatibility, keeping a simple and familiar file structure and keeping files that have historical reasons or needs.
 
