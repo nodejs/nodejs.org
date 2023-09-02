@@ -7,7 +7,11 @@
 name: Pull Request Checks
 
 on:
-  pull_request:
+  pull_request_target:
+    branches:
+      - main
+    types:
+      - labeled
   merge_group:
 
 defaults:
@@ -18,9 +22,32 @@ defaults:
 permissions:
   contents: read
   actions: read
+  # This permission is required by `peter-evans/create-or-update-comment`
+  # This permission is required by `MishaKav/jest-coverage-comment`
+  pull-requests: write
 
 jobs:
+  # This Job removes the label after it got applied to ensure that we can easily apply again when needed
+  remove_pull_request_label:
+    if: |
+      github.event.action == 'labeled' &&
+      github.event.label.name == 'github_actions:pull-request'
+
+    name: Remove Pull Request Label
+    runs-on: ubuntu-latest
+    steps:
+      - name: Remove GitHub Actions Label
+        uses: actions-ecosystem/action-remove-labels@2ce5d41b4b6aa8503e285553f75ed56e0a40bae0
+        with:
+          labels: github_actions:pull-request
+
   base:
+    # This Job ensures that these jobs run either on regular Pull Request Updates
+    # Or if the PR gets labeled with `github_actions:pull-request`
+    if: |
+      github.event.action != 'labeled' ||
+      (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request')
+
     name: Base Tasks
     runs-on: ubuntu-latest
     outputs:
@@ -36,7 +63,7 @@ jobs:
         # In other words, the GitHub Action will always have the full history of the current PR
         # We need all the commits of the PR so that `turbo --filter` works correctly
         run: |
-          if [ "${{ github.event_name }}" == "pull_request" ]; then
+          if [ "${{ github.event_name }}" == "pull_request_target" ]; then
             echo "fetch_depth=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "$GITHUB_OUTPUT"
           else
             echo "fetch_depth=1" >> "$GITHUB_OUTPUT"
@@ -54,13 +81,19 @@ jobs:
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
         run: |
-          if [ "${{ github.event_name }}" == "pull_request" ]; then
+          if [ "${{ github.event_name }}" == "pull_request_target" ]; then
             echo "turbo_args=--filter=\"[HEAD~${{ github.event.pull_request.commits }}...HEAD]\" --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
           else
             echo "turbo_args=--cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
           fi
 
   lint:
+    # This Job ensures that these jobs run either on regular Pull Request Updates
+    # Or if the PR gets labeled with `github_actions:pull-request`
+    if: |
+      github.event.action != 'labeled' ||
+      (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request')
+
     name: Lint
     runs-on: ubuntu-latest
     needs: [base]
@@ -109,7 +142,9 @@ jobs:
       - name: Save Lint Cache
         # We don't need to upload a Lint Cache for Dependabot PRs and also when the GitHub Event is not a Pull Request
         # i.e. if the Event is a Merge Queue Event
-        if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false && github.event_name == 'pull_request'
+        if: |
+          github.event_name == 'pull_request_target' &&
+          startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
@@ -118,9 +153,19 @@ jobs:
           key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.turbo/cache/**') }}
 
   tests:
+    # This Job ensures that these jobs run either on regular Pull Request Updates
+    # Or if the PR gets labeled with `github_actions:pull-request`
+    if: |
+      github.event.action != 'labeled' ||
+      (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request')
+
     name: Tests
     runs-on: ubuntu-latest
     needs: [base]
+
+    environment:
+      name: Storybook
+      url: ${{ steps.chromatic-deploy.outputs.storybookUrl }}
 
     steps:
       - name: Git Checkout
@@ -158,42 +203,48 @@ jobs:
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
         run: npx --package=turbo@latest -- turbo test:unit ${{ needs.base.outputs.turbo_args }} -- --ci --coverage
 
-      - name: Upload Coverage Report
-        id: upload_coverage_report
-        # We don't need coverage report for Dependabot PRs and also when the GitHub Event is not a Pull Request
-        # i.e. if the Event is a Merge Queue Event
-        if: startsWith(github.event.pull_request.head.ref, 'dependabot/') == false && github.event_name == 'pull_request'
-        # We upload the Coverage Report so it can be used on another Workflow
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
-        with:
-          name: coverage-report
-          path: |
-            coverage/
-            junit.xml
-
       - name: Build Storybook
-        # This prevents this step from running if "Upload Coverage Report" got cancelled; Which gets cancelled if
-        # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
-        if: steps.upload_coverage_report.outcome == 'success'
+        # Assigns an ID to be reused on other steps
+        id: storybook_build
+        # Skips a few steps if not on a Pull Request (Merge Group) or it is a Dependabot PR
+        # i.e. if the Event is a Merge Queue Event
+        if: |
+          github.event_name == 'pull_request_target' &&
+          startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
         # We Build Storybook Locally and then upload it so it can be used on another Workflow
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
         run: npx --package=turbo@latest -- turbo storybook:build ${{ needs.base.outputs.turbo_args }}
 
-      - name: Upload Storybook Build
-        # This prevents this step from running if "Build Storybook" got cancelled; Which gets cancelled if
+      - name: Start Visual Regression Tests (Chromatic)
+        # This assigns the Environment Deployment for Storybook
+        id: chromatic-deploy
+        # This prevents this step from running if "Storybook Build" got cancelled; Which gets cancelled if
         # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
-        if: steps.upload_coverage_report.outcome == 'success'
-        # We upload the Storybook Build so it can be used on another Workflow
-        uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
+        if: steps.storybook_build.outcome == 'success'
+        uses: chromaui/action@v1
         with:
-          name: storybook-build
-          path: storybook-static
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: storybook-static
+          exitOnceUploaded: true
+          onlyChanged: true
+
+      - name: Jest Coverage Comment
+        # This prevents this step from running if "Storybook Build" got cancelled; Which gets cancelled if
+        # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
+        if: steps.storybook_build.outcome == 'success'
+        # This comments the current Jest Coverage Report containing JUnit XML reports
+        # and a Code Coverage Summary
+        uses: MishaKav/jest-coverage-comment@41b5ca01d1250de84537448d248b8d18152cb277
+        with:
+          title: 'Unit Test Coverage Report'
+          junitxml-path: ./junit.xml
+          junitxml-title: Unit Test Report
 
       - name: Save Tests Cache
-        # This prevents this step from running if "Upload Storybook Build" got cancelled; Which gets cancelled if
+        # This prevents this step from running if "Storybook Build" got cancelled; Which gets cancelled if
         # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
-        if: steps.upload_coverage_report.outcome == 'success'
+        if: steps.storybook_build.outcome == 'success'
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
