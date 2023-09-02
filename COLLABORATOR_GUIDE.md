@@ -47,7 +47,7 @@ In some cases, it may be necessary to summon a qualified Collaborator to a pull 
 
 If you are unsure about the modification and are not prepared to take full responsibility for the change, defer to another Collaborator.
 
-We recommend Collaboratory to follow the guidelines on the [Contributing Guide](./CONTRIBUTING.md#before-merging) for reviewing and merging Pull Requests.
+We recommend collaborators follow the guidelines on the [Contributing Guide](./CONTRIBUTING.md#before-merging) for reviewing and merging Pull Requests.
 
 ### Involving the Website Team
 
@@ -247,15 +247,15 @@ export default { component: NameOfComponent } as Meta;
 
 ## Remarks on Technologies Used
 
-The Node.js Website is a somewhat complex Application. And hecen sometimes non-trivial solutions were adopted to solve certain technical challenges.
-Past Issues, Conversations on Slack and GitHub Discussions are the go-to-go for most historical purposes, but we've found important to highlight some of these decisions here.
+The Node.js Website is a somewhat complex application and at times non-trivial solutions have been implemented to solve certain technical challenges.
+Historical decision making can be largely found on past issues, conversations on Slack and GitHub discussions. However, we also wish to highlight some of the notable development decisions that we have made here.
 
 ### Why Next.js?
 
 We've found that Next.js is simply versatile, hackable, stable, community-maintained and has a great ecosystem.
 The reasoning goes deeper, but as a long-term Framework it is the most suitable choice.
 
-#### Why we have Static Exports?
+#### Why do we continue to support static builds?
 
 It was decided together with the TSC (Technical Steering Committee) that the Node.js Website should always support fully static builds that do not depend on any 3rd party services.
 This is to ensure that the Website is always available and that we do not depend on any 3rd party services to serve our content.
@@ -271,16 +271,16 @@ This means that each `.md(x)` file within `pages/` is not rendered by Next.js re
 
 This custom render uses `getStaticPaths` and [Incremental Static Generation](https://nextjs.org/docs/pages/building-your-application/data-fetching/incremental-static-regeneration) to generate the full list of supported pages of the Website.
 For example, this allows us to generate Localized Pages for every page that is not translated, by telling Next.js to create a localised path.
-`next.dynamic.mjs` is responsible for getting a full list of the source pages (`pages/en`) and forcefully get a diff of what is translated and whatnot.
+`next.dynamic.mjs` is responsible for getting a full list of the source pages (`pages/en`) and identifying which pages have been translated.
 
 Non-translated pages will have their Localized contexts and translated React message-bags (`react-intl`) but the content will be the same as the source page (English).
 Whereas localized pages will have localized context and content.
 
-This custom solution is also able to decide what paths should be compiled during runtime and whatnot.
+This custom solution is also able to decide what paths should be compiled during runtime.
 This is a combination of rules defined on `next.constants.mjs` and `[...path].tsx`.
 
-Finally, `[...path].tsx` uses the root `theme.tsx` as layout.
-This finally loads the Layout Provider and MDX Provider and then any children content/Component from the Layout Provider + the transformed MDX content from the `.md(x)` source page.
+The `[...path].tsx` file ultimately utilizes the `theme.tsx` file as its layout source.
+This setup enables the loading of the Layout Provider and MDX Provider, which in turn, encapsulate and manage the rendering of any child content or components. This includes both content and components provided by the Layout Provider and the transformed MDX content originating from the `.md(x)` source page.
 
 #### What is `next.data.mjs`?
 
@@ -291,7 +291,7 @@ This file is responsible for loading, fetching and generating build-time require
 This file is used for defining Website Metadata, such as which RSS feeds should be generated, Social Media Information and other Metadata used during the Website build-time.
 We use a JSON format to ease collaboration.
 
-#### What is `next.locales.mjs` and why not Next.js built-in i18n?
+#### What is `next.locales.mjs` and why not use Next.js built-in i18n?
 
 Next.js built-in i18n is great, but it is not flexible enough for our needs. We need to be able to generate a full list of supported locales, and we need to be able to generate a full list of supported pages for each locale. We also need to be able to generate a full list of supported pages for each locale, and we need to be able to generate a full list of supported pages for each locale.
 
@@ -317,7 +317,7 @@ This file contains a simple template engine that supports `/:locale` to indicate
 We have a simple Next.js Middleware that is responsible for handling initial Locale detection and redirection.
 It detects browser locales and redirects to the most suitable locale for the user. And it fallbacks to `/en` if no suitable locale is found.
 
-#### How Layouts Work within this Repository?
+#### How do layouts work?
 
 Layouts Wrap the content of the Markdown files.
 They are responsible for adding additional styling and structure surrounding the content of the Markdown files.
@@ -334,7 +334,7 @@ It also allows us to use React Components within Markdown files.
 This is a great advantage for us, as we can use React Components to create complex content structures and layouts.
 It also supports the `unified` ecosystem, which allows us to extend the MDX functionality with ease.
 
-Some of the Plugins used here include, but not limited to:
+Some of the plugins that we use include:
 
 - `remark-gfm`: Allows us to use GitHub Flavored Markdown
 - `remark-headings`: Generates Metadata for Markdown Headings
@@ -373,8 +373,7 @@ We recommend the usage of [Tailwind's Official VS Code Extension](https://market
 
 ### Vercel
 
-We use Vercel as our hosting provider. It is a great platform that allows us to deploy our Website with ease.
-It also allows us to have a great CI/CD Pipeline that allows us to deploy our Website with ease.
+We use Vercel as our hosting provider. It is a great platform that offers an excellent CI/CD pipeline which allows us to deploy our website with ease.
 
 It is important to mention that there are some rules on our Vercel Deployments such as:
 
@@ -384,11 +383,11 @@ It is important to mention that there are some rules on our Vercel Deployments s
   - Hence if Builds fail unexpectedly, make sure that your dependency that is being used during build-time is on `dependencies` and not `devDependencies`. Checkout out [DEPENDENCY_PINNING.md](./DEPENDENCY_PINNING.md) for more information.
 - Our sponsorship with Vercel is maintained by the OpenJS Foundation
 
-### Unfamiliar with certain decision of Processes?
+### Seeking additional clarification
 
 A lot of the current structure is due to retro-compatibility, keeping a simple and familiar file structure and keeping files that have historical reasons or needs.
 
-If you're unfamiliar our curious about something, we recommend opening a Discussion on this GitHub Repository.
+If you're unfamiliar or curious about something, we recommend opening a Discussion on this GitHub Repository.
 
 [Jest]: https://jestjs.io/
 [React Testing Library]: https://testing-library.com/docs/react-testing-library/intro/
