@@ -214,7 +214,8 @@ jobs:
         # We Build Storybook Locally and then upload it so it can be used on another Workflow
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npx --package=turbo@latest -- turbo storybook:build ${{ needs.base.outputs.turbo_args }}
+        # We also always want to run the Storybok Build (Force) to ensure that Chromatic can upload the Build
+        run: npx --package=turbo@latest -- turbo storybook:build ${{ needs.base.outputs.turbo_args }} --force=true
 
       - name: Start Visual Regression Tests (Chromatic)
         # This assigns the Environment Deployment for Storybook
