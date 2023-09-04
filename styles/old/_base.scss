@@ -67,20 +67,29 @@ img {
   max-width: 100%;
 }
 
-pre {
+code {
+  border-radius: 3px;
+  font-family:
+    Consolas,
+    Monaco,
+    Andale Mono,
+    monospace;
+  font-size: 14px;
+  padding: 0.2em 0.4em;
+}
+
+pre,
+code {
   background-color: #2e3440ff;
   border-radius: 3px;
   color: $white;
-  font-size: 14px;
+}
+
+pre {
   padding: 0.75em 1.2em;
 
   code {
     display: grid;
-    font-family:
-      Consolas,
-      Monaco,
-      Andale Mono,
-      monospace;
     overflow-x: auto;
     padding: 1em;
   }
