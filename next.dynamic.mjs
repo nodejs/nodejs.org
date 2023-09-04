@@ -170,6 +170,7 @@ export const generateStaticProps = async (source = '', filename = '') => {
             rehypePrettyCode,
             {
               theme: shikiNordTheme,
+              defaultLang: 'plaintext',
               getHighlighter: options =>
                 getHighlighter({ ...options, langs: SUPPORTED_LANGUAGES }),
             },
