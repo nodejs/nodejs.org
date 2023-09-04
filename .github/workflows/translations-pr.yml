@@ -15,7 +15,7 @@ permissions:
   # This permission is required by `stefanzweifel/git-auto-commit-action`
   contents: write
   actions: read
-  # This permission is required by `actions/comment-pull-request`
+  # This permission is required by `thollander/actions-comment-pull-request`
   pull-requests: write
 
 jobs:
