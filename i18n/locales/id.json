@@ -36,7 +36,6 @@
   "components.pagination.previous": "Lama",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {Oleh {author}, }}",
   "layouts.blogIndex.currentYear": "Berita dari {year}",
-  "components.common.banner.button.text": "Baca Selengkapnya",
   "components.common.languageSelector.button.title": "Ganti Bahasa",
   "components.api.jsonLink.title": "Tampilkan sebagai JSON",
   "components.api.sourceLink": "Kode Sumber:",
