@@ -6,8 +6,9 @@ node_modules
 .swc
 build
 
-# Legacy Public Files
-public/static/documents
+# Public Files
+public/node-releases-data.json
+public/blog-posts-data.json
 
 # We don't want to lint/prettify the Coverage Results
 coverage
