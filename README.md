@@ -1,3 +1,6 @@
+> \[!IMPORTANT]\
+> The **Node.js** Website is currently being redesigned; Read more [here](https://github.com/nodejs/nodejs.org/discussions/5131) to get involved!
+
 <p align="center">
   <br />
   <a href="https://nodejs.org">
@@ -54,10 +57,10 @@ This project adopts the Node.js [Code of Conduct][].
 
 Any person who wants to contribute to the Website is welcome! Please read [Contribution Guidelines][] and see the [Figma Design][] to understand better the structure of this repository.
 
-> [!IMPORTANT]\
+> \[!IMPORTANT]\
 > Please read our [Translation Guidelines][] before contributing to Translation and Localization of the Website
 
-> [!NOTE]\
+> \[!NOTE]\
 > We recommend a read of all Relevant Links below before doing code changes; Including Dependency changes, Content changes, and Code changes.
 
 ### Deployment
