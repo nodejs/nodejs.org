@@ -120,6 +120,7 @@ for getting things done and landing your contribution.
 
     > [!NOTE]\
     > By default if you run the Website (either via `npm run serve` or `npm run build`) two files on the `public` folder will be generated.
+    >
     > You don't need to reset/discard these files, as by default we use Git Hooks that simply ignore these files during commit.
     > Note that these files are generated and should **not** be commited. (`public/node-release-data.json` and `public/blog-posts-data.json`)
 
@@ -130,7 +131,9 @@ for getting things done and landing your contribution.
 
 > [!NOTE]\
 > We ask for PR authors to avoid to rebase/update their PRs with the base branch (`main`) unnecessarily.
-> We use [GitHub Merge Queues] which means that before merge the PRs get automatically updated and checked against the latest changes on the base branch.
+> We use [GitHub Merge Queues](https://github.blog/2023-07-12-github-merge-queue-is-generally-available/)
+> which means that before merge the PRs get automatically updated and checked against the latest changes on the base branch.
+>
 > This also reduces the amount of times we need to run our CI checks, as every new push requires frehsly new CI-checks.
 
 ### CLI Commands

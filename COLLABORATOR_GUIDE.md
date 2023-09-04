@@ -32,6 +32,10 @@ Where this is unclear, the issue should be left open for several days for additi
 Where this does not yield input from Node.js Collaborators or additional evidence that the issue has relevance, then the issue may be closed.
 Remember that issues can always be re-opened if necessary.
 
+> [!IMPORTANT]\
+> We recommend Collaborators to avoid Updating/Rebasing PRs unnecessarily, since we use [GitHub Merge Queues](https://github.blog/2023-07-12-github-merge-queue-is-generally-available/)
+> to merge Pull Requests, which automatically rebases and runs CI-checks against the latest base branch.
+
 ## Accepting Modifications
 
 All Node.js code and documentation modifications should be performed via GitHub pull requests.
