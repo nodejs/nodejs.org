@@ -293,12 +293,9 @@ We use a JSON format to ease collaboration.
 
 #### What is `next.locales.mjs` and why not use Next.js built-in i18n?
 
-Next.js built-in i18n is great, but it is not flexible enough for our needs. We need to be able to generate a full list of supported locales, and we need to be able to generate a full list of supported pages for each locale. We also need to be able to generate a full list of supported pages for each locale, and we need to be able to generate a full list of supported pages for each locale.
+While Next.js provides a built-in i18n feature, it doesn't offer the flexibility we require. Our specific needs include the ability to generate comprehensive lists of supported locales and pages for each locale. Additionally, we operate with a subfolder-based approach for content, as opposed to the extension-based approach (e.g., `filename.language.md(x)`) that is compatible with Next.js's built-in i18n.
 
-It is also important to mention that we use a subfolder approach, instead of extension-based (`filename.language.md(x)`) for our content.
-Which is trivially incompatible with Next.js built-in i18n.
-
-We chose this approach to maintain familiarity with the content-structure as much as possible with the previous Node.js Website and to ensure maintainability (not depending on Next.js's i18n feature).
+We opted for the subfolder approach to maintain consistency with our previous Node.js website's content structure and to ensure long-term maintainability, rather than relying on Next.js's i18n functionality.
 
 #### What is `next.rewrites.mjs`?
 
@@ -329,10 +326,9 @@ Each Page layout is decided within their Markdown's Frontmatter as `layout: name
 
 ### Why MDX?
 
-MDX is a great format for writing content. It allows us to write Markdown and React Components in the same file.
-It also allows us to use React Components within Markdown files.
-This is a great advantage for us, as we can use React Components to create complex content structures and layouts.
-It also supports the `unified` ecosystem, which allows us to extend the MDX functionality with ease.
+MDX is an extension on Markdown that allows us to add JSX Components within Markdown.
+Besides that, MDX is also a pluggable parser built on top of `unified` which supports Rehype and Remark Plugins.
+MDX is becoming the standard for parsing human-content on React/Next.js-based Applications.
 
 Some of the plugins that we use include:
 
