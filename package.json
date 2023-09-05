@@ -43,6 +43,7 @@
     "postinstall": "npx next telemetry disable"
   },
   "dependencies": {
+    "@heroicons/react": "~2.0.18",
     "@nodevu/core": "~0.1.0",
     "@types/node": "18.17.11",
     "@vcarl/remark-headings": "~0.1.0",
@@ -60,7 +61,6 @@
     "next-sitemap": "^4.2.2",
     "next-themes": "^0.2.1",
     "postcss": "~8.4.29",
-    "react-icons": "~4.10.1",
     "react-intl": "~6.4.4",
     "rehype-autolink-headings": "~6.1.1",
     "rehype-pretty-code": "^0.10.0",
