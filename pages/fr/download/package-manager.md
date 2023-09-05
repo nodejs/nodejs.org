@@ -11,7 +11,7 @@ title: Installation de Node.js via le gestionnaire de paquets
 
 * [Android](#android)
 * [Arch Linux](#arch-linux)
-* [Distributions Linux dérivées de Debian et Ubuntu, Linux/Fedora Entreprise, et paquets Snap](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
+* [Distributions Linux dérivées de Debian et Ubuntu, Linux/Fedora Entreprise, et paquets Snap](#les-distributions-linux-basées-sur-debian-et-ubuntu-enterprise-linuxfedora-et-les-paquets-snap)
 * [FreeBSD](#freebsd)
 * [Gentoo](#gentoo)
 * [IBM i](#ibm-i)
@@ -50,7 +50,7 @@ pacman -S nodejs npm
 
 ## Les distributions Linux basées sur Debian et Ubuntu, Enterprise Linux/Fedora et les paquets Snap
 
-[Les distributions binaires Node.js] (https://github.com/nodesource/distributions) sont disponibles sur NodeSource.
+[Les distributions binaires Node.js](https://github.com/nodesource/distributions) sont disponibles sur NodeSource.
 
 ## FreeBSD
 

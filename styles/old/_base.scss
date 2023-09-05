@@ -68,24 +68,30 @@ img {
 }
 
 code {
-  background-color: $light-gray3;
-  font-size: 85%;
-  padding: 0.2em;
+  border-radius: 3px;
+  font-family:
+    Consolas,
+    Monaco,
+    Andale Mono,
+    monospace;
+  font-size: 14px;
+  padding: 0.2em 0.4em;
+}
+
+pre,
+code {
+  background-color: #2e3440ff;
+  border-radius: 3px;
+  color: $white;
 }
 
 pre {
-  background-color: #2b2b2b;
-  border-radius: 3px;
-  color: $light-gray3;
-  font-size: 0.8em;
-  overflow-x: auto;
   padding: 0.75em 1.2em;
-  white-space: pre;
 
   code {
-    background-color: inherit;
-    color: $light-gray3;
-    padding: 0;
+    display: grid;
+    overflow-x: auto;
+    padding: 1em;
   }
 }
 

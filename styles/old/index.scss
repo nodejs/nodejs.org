@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-@import '~highlight.js/scss/a11y-dark';
-
 @import 'variables';
 @import 'base';
 @import 'utils';
@@ -22,7 +20,6 @@
 @import 'page-modules/scrollToTop';
 @import 'page-modules/anchorLinks';
 @import 'page-modules/prev-next-navigation';
-@import 'vendor/prism-tomorrow';
 
 * {
   transition: background-color $dark-transition-time ease;

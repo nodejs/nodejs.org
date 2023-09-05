@@ -104,9 +104,9 @@ The webhook is set up on GitHub for this project and talks to a small Node serve
 - Thanks to [Cloudflare](https://cloudflare.com) for providing the infrastructure that serves Node.js's Website, Node.js's CDN and more.
 
 [code of conduct]: https://github.com/nodejs/admin/blob/main/CODE_OF_CONDUCT.md
-[contribution guidelines]: ./CONTRIBUTING.md
-[content vs code]: ./CONTENT_VS_CODE.md
-[dependency pinning]: ./DEPENDENCY_PINNING.md
-[collaborator guide]: ./COLLABORATOR_GUIDE.md
+[contribution guidelines]: https://github.com/nodejs/nodejs.org/blob/main/CONTRIBUTING.md
+[content vs code]: https://github.com/nodejs/nodejs.org/blob/main/CONTENT_VS_CODE.md
+[dependency pinning]: https://github.com/nodejs/nodejs.org/blob/main/DEPENDENCY_PINNING.md
+[collaborator guide]: https://github.com/nodejs/nodejs.org/blob/main/COLLABORATOR_GUIDE.md
 [figma design]: https://www.figma.com/file/pu1vZPqNIM7BePd6W8APA5/Node.js
-[translation guidelines]: ./TRANSLATION.md
+[translation guidelines]: https://github.com/nodejs/nodejs.org/blob/main/TRANSLATION.md

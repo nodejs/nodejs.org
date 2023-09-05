@@ -3,14 +3,18 @@
 import { join, normalize, sep } from 'node:path';
 import { readFileSync } from 'node:fs';
 import { VFile } from 'vfile';
+import { getHighlighter } from 'shiki';
 import remarkGfm from 'remark-gfm';
 import remarkHeadings from '@vcarl/remark-headings';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
+import shikiNordTheme from 'shiki/themes/nord.json';
 import { serialize } from 'next-mdx-remote/serialize';
 import { availableLocales } from './next.locales.mjs';
 import { getMarkdownFiles } from './next.helpers.mjs';
 import { DEFAULT_LOCALE_CODE, MD_EXTENSION_REGEX } from './next.constants.mjs';
+import { SUPPORTED_LANGUAGES } from './shiki.config.mjs';
 
 // allows us to run a glob to get markdown files based on a language folder
 const getPathsByLanguage = async (locale = DEFAULT_LOCALE_CODE, ignored = []) =>
@@ -160,6 +164,15 @@ export const generateStaticProps = async (source = '', filename = '') => {
             {
               behaviour: 'append',
               properties: { ariaHidden: true, tabIndex: -1, class: 'anchor' },
+            },
+          ],
+          [
+            rehypePrettyCode,
+            {
+              theme: shikiNordTheme,
+              defaultLang: 'plaintext',
+              getHighlighter: options =>
+                getHighlighter({ ...options, langs: SUPPORTED_LANGUAGES }),
             },
           ],
         ],
