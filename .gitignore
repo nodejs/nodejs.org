@@ -34,3 +34,6 @@ storybook-static
 # ESlint Cache Files
 .eslintmdcache
 .eslintjscache
+
+# TypeScript
+tsconfig.tsbuildinfo
