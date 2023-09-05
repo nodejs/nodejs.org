@@ -36,7 +36,6 @@
   "components.pagination.previous": "Older",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {By {author}, }}",
   "layouts.blogIndex.currentYear": "News from {year}",
-  "components.common.languageSelector.button.title": "Switch Language",
   "components.api.jsonLink.title": "View as JSON",
   "components.api.sourceLink": "Source Code:",
   "pages.404.title": "404: Page could not be found",
