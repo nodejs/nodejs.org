@@ -5,8 +5,7 @@ import { ThemeProvider } from '../providers/themeProvider';
 import { LocaleProvider } from '../providers/localeProvider';
 import type { Preview } from '@storybook/react';
 
-import '../styles/nodejs.dev/index.scss';
-import '../styles/new-design/index.scss';
+import '../styles/new/index.scss';
 
 const openSans = Open_Sans({
   weight: ['300', '400', '600', '700'],
@@ -33,15 +32,17 @@ const preview: Preview = {
   },
 };
 
+// The `openSans.variable` injects the name of the Font Family to the DOM Tree
+// The `font-open-sans` variable is the actual Tailwind Classname
+// that tells that the font-family for this Component tree should be "Open Sans"
+const storyClasses = `${openSans.variable} font-open-sans`;
+
 export const decorators = [
   Story => (
     <SiteProvider>
       <LocaleProvider>
         <ThemeProvider>
-          <div
-            data-test-id="story-root"
-            className={`${openSans.variable} font-sans`}
-          >
+          <div className={storyClasses}>
             <Story />
           </div>
         </ThemeProvider>
