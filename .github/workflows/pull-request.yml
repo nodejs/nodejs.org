@@ -100,7 +100,7 @@ jobs:
 
     steps:
       - name: Git Checkout
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac
         with:
           # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
           fetch-depth: ${{ needs.base.outputs.fetch_depth }}
@@ -173,7 +173,7 @@ jobs:
 
     steps:
       - name: Git Checkout
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac
         with:
           # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
           fetch-depth: ${{ needs.base.outputs.fetch_depth }}
