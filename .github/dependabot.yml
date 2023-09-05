@@ -7,8 +7,8 @@ updates:
       day: friday
     labels:
       - dependencies
-      - "github_actions:pull-request"
-      - "github_actions"
+      - 'github_actions:pull-request'
+      - 'github_actions'
     commit-message:
       prefix: meta
     open-pull-requests-limit: 10
@@ -20,7 +20,7 @@ updates:
       day: friday
     labels:
       - dependencies
-      - "github_actions:pull-request"
+      - 'github_actions:pull-request'
     commit-message:
       prefix: meta
     groups:
