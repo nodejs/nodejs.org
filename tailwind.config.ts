@@ -5,7 +5,7 @@ export default {
     './pages/**/*.{tsx,mdx}',
     './components/**/*.tsx',
     './layouts/**/*.tsx',
-    './.storybook/*.tsx',
+    './.storybook/preview.tsx',
   ],
   theme: {
     colors: {
@@ -109,7 +109,7 @@ export default {
       bold: '700',
     },
     fontFamily: {
-      sans: ['var(--font-open-sans)'],
+      'open-sans': ['var(--font-open-sans)'],
     },
     darkMode: ['class', '[data-theme="dark"]'],
   },
