@@ -5,6 +5,12 @@ updates:
     schedule:
       interval: weekly
       day: friday
+    labels:
+      - dependencies
+      - "github_actions:pull-request"
+      - "github_actions"
+    commit-message:
+      prefix: meta
     open-pull-requests-limit: 10
   - package-ecosystem: npm
     directory: '/'
@@ -12,6 +18,9 @@ updates:
     schedule:
       interval: weekly
       day: friday
+    labels:
+      - dependencies
+      - "github_actions:pull-request"
     commit-message:
       prefix: meta
     groups:
