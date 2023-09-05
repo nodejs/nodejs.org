@@ -109,7 +109,7 @@
     "remark-preset-prettier": "2.0.1",
     "storybook": "~7.4.0",
     "stylelint": "15.10.3",
-    "stylelint-config-recommended-scss": "12.0.0",
+    "stylelint-config-recommended-scss": "13.0.0",
     "stylelint-config-standard": "34.0.0",
     "stylelint-order": "6.0.3",
     "stylelint-selector-bem-pattern": "3.0.1",
