@@ -107,6 +107,10 @@ jobs:
         # We also use `--omit=dev` to avoid installing devDependencies as we don't need them during the build step
         run: npm i --no-audit --no-fund --userconfig=/dev/null --omit=dev
 
+      - name: Run TypeScript Check
+        # We want to check that all TypeScript checks are working as expected
+        run: npx --package=typescript@latest -- tsc --build .
+
       - name: Build Next.js (ISR)
         # We want a ISR build on CI to ensure that regular Next.js builds work as expected.
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
