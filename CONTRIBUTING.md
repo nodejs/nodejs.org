@@ -118,10 +118,23 @@ for getting things done and landing your contribution.
     git push -u origin name-of-your-branch
     ```
 
+    > [!NOTE]\
+    > By default if you run the Website (either via `npm run serve` or `npm run build`) two files on the `public` folder will be generated.
+    >
+    > You don't need to reset/discard these files, as by default we use Git Hooks that simply ignore these files during commit.
+    > Note that these files are generated and should **not** be commited. (`public/node-release-data.json` and `public/blog-posts-data.json`)
+
+    > [!IMPORTANT]\
+    > Before committing and opening a Pull Request, please go first through our [Commit](#commit-guidelines) and [Pull Request](#pull-request-policy) guidelines outlined below.
+
 11. Create a Pull Request.
 
 > [!NOTE]\
-> Before committing and opening a Pull Request, please go first through our [Commit](#commit-guidelines) and [Pull Request](#pull-request-policy) guidelines outlined below.
+> We ask for PR authors to avoid to rebase/update their PRs with the base branch (`main`) unnecessarily.
+> We use [GitHub Merge Queues](https://github.blog/2023-07-12-github-merge-queue-is-generally-available/)
+> which means that before merge the PRs get automatically updated and checked against the latest changes on the base branch.
+>
+> This also reduces the amount of times we need to run our CI checks, as every new push requires frehsly new CI-checks.
 
 ### CLI Commands
 
@@ -194,6 +207,7 @@ The list below describes some merging and approval rules adopted in this reposit
     - Fast-tracking is only allowed for small bug fixes, small feature changes, localization changes, or other non-critical/highly-impacting changes not covered by the previous rule that allows PRs to be merged immediately.
     - Fast-tracking cannot be used for updates on the `COLLABORATOR_GUIDE.md`, `CONTRIBUTING.md` guide, `CODEOWNERS`, GitHub Actions, or any security-impacting file or document that changes the governing policies of this repository.
 - There must be no objections after forty-eight (48) hours (Or seventy-two (72) hours if the PR was authored on the weekend).
+  - If there are disagrements consensus should be sought. Lack of consensus might require escalation to the Website Team Maintainers.
 - At least one approval is required for any PR to be merged.
 - Tests must be included in Pull Requests for new features or bug fixes. You are responsible for fixing any test(s) that fail.
 
@@ -204,6 +218,7 @@ If an objection is raised in a pull request by another collaborator, all collabo
 ### When merging
 
 - All required Status-checks must have passed.
+  - **Note:** If you're a collaborator, remember to run the CI checks by labeling the PR with the `github_actions:pull-request` label.
 - Please make sure that all discussions are resolved.
 - [`squash`][] pull requests made up of multiple commits
 
