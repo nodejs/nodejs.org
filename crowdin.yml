@@ -3,6 +3,7 @@ pull_request_title: 'chore(i18n): crowdin sync'
 pull_request_labels:
   - i18n
   - crowdin
+  - 'github_actions:pull-request'
 files:
   - source: /pages/en/**/*.md
     translation: /pages/%two_letters_code%/**/%original_file_name%
