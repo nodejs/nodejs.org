@@ -306,10 +306,10 @@ We opted for the subfolder approach to maintain consistency with our previous No
 This file is responsible for defining the rewrite rules for the Website.
 It is used for defining redirects and other rewrite rules. (Such as Internal Redirects and External ones).
 
-The actual rewrites are defined within `redirects.json`. The file format is simple and separate external redirects with internal rewrites.
+The `redirects.json` file specifies two types of operations: rewrites and redirects.
 
-- Rewrites do not change the original URL but render the content of the rewritten URL. The reritten path must be valid and exist on the Website.
-- Redirects change the original URL to the new one. The URLs do not necessarily need to be external, but they in general should be.
+- Rewrites: These operations do not alter the original URL but instead render the content from the rewritten URL. It's important to note that the rewritten URL path must be valid and exist on the website.
+- Redirects: Redirect operations, on the other hand, change the original URL to a new one. While these new URLs can be either internal (within the website) or external (leading to a different domain), it is more common for redirects to point externally.
 
 This file contains a simple template engine that supports `/:locale` to indicate that this path should also be available under all available locales as prefix.
 
