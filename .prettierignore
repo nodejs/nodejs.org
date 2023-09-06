@@ -9,9 +9,10 @@ build
 # Files that should not be parsed
 CODEOWNERS
 
-# Legacy Public Files
+# Public Files
 public/static/documents
 public/node-releases-data.json
+public/blog-posts-data.json
 
 # We don't want to lint/prettify the Coverage Results
 coverage

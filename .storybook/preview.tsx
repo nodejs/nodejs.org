@@ -1,11 +1,18 @@
 import NextImage from 'next/image';
+import { Open_Sans } from 'next/font/google';
 import { SiteProvider } from '../providers/siteProvider';
 import { ThemeProvider } from '../providers/themeProvider';
 import { LocaleProvider } from '../providers/localeProvider';
-import { openSans } from '../util/nextFonts';
 import type { Preview } from '@storybook/react';
 
-import '../styles/index.scss';
+import '../styles/new/index.scss';
+
+const openSans = Open_Sans({
+  weight: ['300', '400', '600', '700'],
+  display: 'fallback',
+  subsets: ['latin'],
+  variable: '--font-open-sans',
+});
 
 const preview: Preview = {
   parameters: {
@@ -25,12 +32,17 @@ const preview: Preview = {
   },
 };
 
+// The `openSans.variable` injects the name of the Font Family to the DOM Tree
+// The `font-open-sans` variable is the actual Tailwind Classname
+// that tells that the font-family for this Component tree should be "Open Sans"
+const storyClasses = `${openSans.variable} font-open-sans`;
+
 export const decorators = [
   Story => (
     <SiteProvider>
       <LocaleProvider>
-        <ThemeProvider font={openSans.style.fontFamily}>
-          <div data-test-id="story-root">
+        <ThemeProvider>
+          <div className={storyClasses}>
             <Story />
           </div>
         </ThemeProvider>

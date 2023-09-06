@@ -139,6 +139,10 @@ jobs:
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
         run: npx --package=turbo@latest -- turbo prettier ${{ needs.base.outputs.turbo_args }}
 
+      - name: Run `tsc build`
+        # We want to check that all TypeScript checks are working as expected
+        run: npx --package=typescript@latest -- tsc --build .
+
       - name: Save Lint Cache
         # We don't need to upload a Lint Cache for Dependabot PRs and also when the GitHub Event is not a Pull Request
         # i.e. if the Event is a Merge Queue Event
