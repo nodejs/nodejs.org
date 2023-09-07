@@ -121,13 +121,17 @@ jobs:
       - name: Build Next.js (Static)
         # Assigns an ID to be reused on other steps
         id: build_nextjs_static
+        # Skips a few steps if not on a Pull Request (Merge Group) or it is a Dependabot PR
+        # i.e. if the Event is a Merge Queue Event
+        # We also don't need to run a Static Build on a Crowdin PR
+        if: |
+          github.event_name == 'pull_request_target' &&
+          startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
+          github.event.pull_request.head.ref != 'chore/crowdin'
         # We want a Static Buid on CI to ensure that the Static Exports are working as expected
         # This build will use the existing cache created on the previous build above (ISR)
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        if: |
-          github.event_name == 'pull_request_target' &&
-          startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
         run: npx --package=turbo@latest -- turbo deploy ${{ needs.base.outputs.turbo_args }}
         env:
           # We want to ensure we have enough RAM allocated to the Node.js process
