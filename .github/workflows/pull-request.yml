@@ -22,7 +22,6 @@ defaults:
 permissions:
   contents: read
   actions: read
-  # This permission is required by `peter-evans/create-or-update-comment`
   # This permission is required by `MishaKav/jest-coverage-comment`
   pull-requests: write
 
