@@ -129,11 +129,18 @@ jobs:
         run: npm i --no-audit --no-fund --ignore-scripts --userconfig=/dev/null
 
       - name: Run `turbo lint`
+        id: eslint-step
+        # We don't need to run ESLint and Prettier on a Crowdin PR as we already manually fix and prettify the changeset
+        # within the `translation-prs.yml` GitHub Actions Workflow which guarantees that the Translation changes are always pretty
+        if: |
+          github.event_name == 'pull_request_target' &&
+          github.event.pull_request.head.ref != 'chore/crowdin'
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
         run: npx --package=turbo@latest -- turbo lint ${{ needs.base.outputs.turbo_args }}
 
       - name: Run `turbo prettier`
+        if: steps.eslint-step.outcome == 'success'
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
         run: npx --package=turbo@latest -- turbo prettier ${{ needs.base.outputs.turbo_args }}
@@ -145,9 +152,11 @@ jobs:
       - name: Save Lint Cache
         # We don't need to upload a Lint Cache for Dependabot PRs and also when the GitHub Event is not a Pull Request
         # i.e. if the Event is a Merge Queue Event
+        # We also don't need to save cache on Crowdin PRs
         if: |
           github.event_name == 'pull_request_target' &&
-          startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
+          startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
+          github.event.pull_request.head.ref != 'chore/crowdin'
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
@@ -211,9 +220,11 @@ jobs:
         id: storybook_build
         # Skips a few steps if not on a Pull Request (Merge Group) or it is a Dependabot PR
         # i.e. if the Event is a Merge Queue Event
+        # We also don't need to run a Storybook Build on a Crowdin PR
         if: |
           github.event_name == 'pull_request_target' &&
-          startsWith(github.event.pull_request.head.ref, 'dependabot/') == false
+          startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
+          github.event.pull_request.head.ref != 'chore/crowdin'
         # We Build Storybook Locally and then upload it so it can be used on another Workflow
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
