@@ -1,0 +1,82 @@
+# This Workflow is used to comment on PRs that have changes that touch Translated Files
+# and then comments on their PRs mentioning that they should not do so
+
+name: Pull Request Translations Checker
+
+on:
+  pull_request_target:
+    branches:
+      - main
+    paths:
+      - 'pages/**'
+      - '!pages/en/**'
+
+permissions:
+  # This permission is required by `stefanzweifel/git-auto-commit-action`
+  contents: write
+  actions: read
+  # This permission is required by `thollander/actions-comment-pull-request`
+  pull-requests: write
+
+jobs:
+  comment_on_translation_pr:
+    # This comment should only be posted on PRs that come from users and not from Crowdin
+    if: |
+      github.head_ref != 'chore/crowdin'
+
+    name: Comment on Translation PR
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: thollander/actions-comment-pull-request@d61db783da9abefc3437960d0cce08552c7c004f
+        with:
+          message: |
+            > [!NOTE]\
+            > Your Pull Request seems to be updating **Translations** of the Node.js Website.
+            >
+            > Whilst we appreciate your intent; Any Translation update should be done through our [Crowdin Project](https://crowdin.com/project/nodejs-website).
+            > We recommend giving a read on our [Translation Guidelines](https://github.com/nodejs/nodejs.org/blob/main/TRANSLATION.md).
+            >
+            > Thank you!
+          comment_tag: use_crowdin
+
+  format_crowdin_pull_request:
+    # We should only run the automated Format Command on Crowdin-based Pull Requests
+    if: |
+      github.head_ref == 'chore/crowdin' &&
+      contains(github.event.pull_request.labels.*.name, 'crowdin')
+
+    name: Format Crowdin Pull Request
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+
+      - name: Set up Node.js
+        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d
+        with:
+          # We want to ensure that the Node.js version running here respects our supported versions
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install NPM packages
+        # We want to avoid NPM from running the Audit Step and Funding messages on a CI environment
+        # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
+        run: npm i --no-audit --no-fund --ignore-scripts --userconfig=/dev/null
+
+      - name: Run `npx lint:md --fix`
+        # This runs a specific version of ESLint with only the Translation Pages Globbing
+        # This avoid that unrelated changes get linted/modified within this PR
+        run: npx --package=eslint@8.48.0 -- eslint "pages/**/*.md?(x)" --fix
+
+      - name: Run `npx prettier --write`
+        # This runs a specific version of Prettier with only the Translation Pages Globbing
+        # This avoid that unrelated changes get prettied/modified within this PR
+        run: npx --package=prettier@3.0.2 -- prettier "pages/**/*.md?(x)" --write
+
+      - name: Push Changes back to Pull Request
+        uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a
+        with:
+          commit_options: '--no-verify --signoff'
+          commit_message: 'chore: automated format of translated files'
