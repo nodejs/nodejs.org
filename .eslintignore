@@ -14,11 +14,6 @@ public/blog-posts-data.json
 coverage
 junit.xml
 
-# MDX Plugin enforces Prettier formatting which should
-# be done in the future as we don't want to update the Markdown file
-# contents right now
-pages/**/*.md
-
 # We shouldn't lint statically generated Storybook files
 storybook-static
 
