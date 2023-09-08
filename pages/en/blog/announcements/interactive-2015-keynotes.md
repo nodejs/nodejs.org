@@ -19,31 +19,31 @@ Node.js Interactive brings together a broad range of speakers to help experience
 
 ### Day 1, December 8, 2015
 
-* Jason Gartner, Vice President, WebSphere Foundation and PureApplication Dev at IBM
-* James Snell, Open Technologies at IBM, “Convergence: Evolving Node.js with Open Governance and an Open Community”
-* Joe McCann, Co-Founder and CEO at NodeSource, “Enterprise Adoptions Rates and How They Benefit the Community”
-* Ashley Williams, Developer Community and Content Manager at npm
-* Tom Croucher, Engineer Manager at Uber, “Node.js at Uber”
+- Jason Gartner, Vice President, WebSphere Foundation and PureApplication Dev at IBM
+- James Snell, Open Technologies at IBM, “Convergence: Evolving Node.js with Open Governance and an Open Community”
+- Joe McCann, Co-Founder and CEO at NodeSource, “Enterprise Adoptions Rates and How They Benefit the Community”
+- Ashley Williams, Developer Community and Content Manager at npm
+- Tom Croucher, Engineer Manager at Uber, “Node.js at Uber”
 
 ### Day 2, December 9, 2015
 
-* Mikeal Rogers, Node.js Foundation Community Manager at The Linux Foundation, “Node.js Foundation Growth and Goals”
-* Danese Cooper, Distinguished Member of Technical Staff - Open Source at PayPal and Node.js Foundation Chairperson
-* Panel Discussion with Node.js Foundation [Technical Steering Committee members](https://foundation.nodejs.org/tsc/)
+- Mikeal Rogers, Node.js Foundation Community Manager at The Linux Foundation, “Node.js Foundation Growth and Goals”
+- Danese Cooper, Distinguished Member of Technical Staff - Open Source at PayPal and Node.js Foundation Chairperson
+- Panel Discussion with Node.js Foundation [Technical Steering Committee members](https://foundation.nodejs.org/tsc/)
 
 In addition to keynotes, Node.js Foundation will have breakout sessions and panels discussing how Node.js is used in some of the largest and fastest growing organizations.
 
 **These include:**
 
-* Robert Schultz, Applications Architect at Ancestry
-* Azat Mardan, Technology Fellow at Capital One
-* Charlie Robbins, Director of Engineering UX Platform at GoDaddy
-* Chris Saint-Amant, Director of UI Engineering at Netflix
-* Kim Trott, Director of UI Platform Engineering at Netflix
-* Bill Scott, VP of Next Generation Commerce at PayPal
-* Panel - APIs in Node.js with GoDaddy, Symantec, and StrongLoop Inc.
-* Panel - Node.js and Docker with Joyent, Ancestry and nearForm
-* Panel - Node.js in the Media with Condé Nast, Mic and Bloomberg
+- Robert Schultz, Applications Architect at Ancestry
+- Azat Mardan, Technology Fellow at Capital One
+- Charlie Robbins, Director of Engineering UX Platform at GoDaddy
+- Chris Saint-Amant, Director of UI Engineering at Netflix
+- Kim Trott, Director of UI Platform Engineering at Netflix
+- Bill Scott, VP of Next Generation Commerce at PayPal
+- Panel - APIs in Node.js with GoDaddy, Symantec, and StrongLoop Inc.
+- Panel - Node.js and Docker with Joyent, Ancestry and nearForm
+- Panel - Node.js in the Media with Condé Nast, Mic and Bloomberg
 
 “Our list of speakers and breakout sessions are a great way to dive head first into Node.js, no matter if you are new to the platform or an expert,” said Mikeal Rogers, Community Manager, Node.js Foundation. “It is a great way for the community to come together, learn, share and better understand where the technology is heading in the future. The case studies, keynotes and breakout sessions showcased at the event shows how rapidly Node.js is growing in the enterprise.”
 
@@ -53,9 +53,9 @@ Node.js Interactive is made possible by Platinum sponsor IBM; Gold sponsors: Joy
 
 ### Additional Resources
 
-* Learn more about the [Node.js Foundation](https://foundation.nodejs.org/), and get involved with the [project](https://nodejs.org/en/get-involved/).
-* Want to keep abreast of Node.js Foundation news? Sign up for our newsletter at the bottom of the [Node.js Foundation page](https://foundation.nodejs.org/).
-* Follow on [Twitter](https://twitter.com/nodejs?ref_src=twsrc^google|twcamp^serp|twgr^author) and [Google+](https://plus.google.com/u/1/100598160817214911030/posts).
+- Learn more about the [Node.js Foundation](https://foundation.nodejs.org/), and get involved with the [project](https://nodejs.org/en/get-involved/).
+- Want to keep abreast of Node.js Foundation news? Sign up for our newsletter at the bottom of the [Node.js Foundation page](https://foundation.nodejs.org/).
+- Follow on [Twitter](https://twitter.com/nodejs?ref_src=twsrc^google|twcamp^serp|twgr^author) and [Google+](https://plus.google.com/u/1/100598160817214911030/posts).
 
 About Node.js Foundation
 Node.js Foundation is a collaborative open source project dedicated to building and supporting the Node.js platform and other related modules. Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 2 million downloads per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites. The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft, PayPal and Red Hat. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, npm, Sauce Labs, SAP, and YLD!. Get involved here: <https://nodejs.org/>.

@@ -63,12 +63,14 @@ const userAgent = headers['user-agent'];
 
 ```javascript
 let body = [];
-request.on('data', (chunk) => {
-  body.push(chunk);
-}).on('end', () => {
-  body = Buffer.concat(body).toString();
-  // at this point, `body` has the entire request body stored in it as a string
-});
+request
+  .on('data', chunk => {
+    body.push(chunk);
+  })
+  .on('end', () => {
+    body = Buffer.concat(body).toString();
+    // at this point, `body` has the entire request body stored in it as a string
+  });
 ```
 
 > **注意：** 这看起来有些单调乏味，大多数情况下也确实是这样。 不过庆幸的是因为 [`npm`][] 上实在有太多的诸如 [`concat-stream`][] 和 [`body`][] 一类类库屏蔽了部分细节逻辑而替你做了这些事情。当然，对于你而言在使用这些类库前知道它们到底干了什么非常重要，这就是你为什么需要读这篇文章！
@@ -80,7 +82,7 @@ request.on('data', (chunk) => {
 在 `request`流中错误的表现便是通过激发（捕获）`'error'`事件。如果你不捕获处理的话，程序一旦出错会让你的 Node.js 程序立马崩溃。因此你务必要这样做——即便你啥都不处理，只是做一个日志也行（当然，最佳实践方法实发送某种 HTTP 出错消息给客（比如出错码等），这是后话）。
 
 ```javascript
-request.on('error', (err) => {
+request.on('error', err => {
   // This prints the error message and stack trace to `stderr`.
   console.error(err.stack);
 });
@@ -95,19 +97,24 @@ request.on('error', (err) => {
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  const { headers, method, url } = request;
-  let body = [];
-  request.on('error', (err) => {
-    console.error(err);
-  }).on('data', (chunk) => {
-    body.push(chunk);
-  }).on('end', () => {
-    body = Buffer.concat(body).toString();
-    // At this point, we have the headers, method, url and body, and can now
-    // do whatever we need to in order to respond to this request.
-  });
-}).listen(8080); // Activates this server, listening on port 8080.
+http
+  .createServer((request, response) => {
+    const { headers, method, url } = request;
+    let body = [];
+    request
+      .on('error', err => {
+        console.error(err);
+      })
+      .on('data', chunk => {
+        body.push(chunk);
+      })
+      .on('end', () => {
+        body = Buffer.concat(body).toString();
+        // At this point, we have the headers, method, url and body, and can now
+        // do whatever we need to in order to respond to this request.
+      });
+  })
+  .listen(8080); // Activates this server, listening on port 8080.
 ```
 
 如果我们运行这个示例代码，我们只能*接收*到请求但得不到*回应*。实际上，如果你在浏览器内运行这个示例，你的请求只会超时，因为服务器那边根本没有返回给客户端任何东西。
@@ -144,7 +151,7 @@ response.setHeader('X-Powered-By', 'bacon');
 ```javascript
 response.writeHead(200, {
   'Content-Type': 'application/json',
-  'X-Powered-By': 'bacon'
+  'X-Powered-By': 'bacon',
 });
 ```
 
@@ -182,36 +189,41 @@ response.end('<html><body><h1>Hello, World!</h1></body></html>');
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  const { headers, method, url } = request;
-  let body = [];
-  request.on('error', (err) => {
-    console.error(err);
-  }).on('data', (chunk) => {
-    body.push(chunk);
-  }).on('end', () => {
-    body = Buffer.concat(body).toString();
-    // BEGINNING OF NEW STUFF
+http
+  .createServer((request, response) => {
+    const { headers, method, url } = request;
+    let body = [];
+    request
+      .on('error', err => {
+        console.error(err);
+      })
+      .on('data', chunk => {
+        body.push(chunk);
+      })
+      .on('end', () => {
+        body = Buffer.concat(body).toString();
+        // BEGINNING OF NEW STUFF
 
-    response.on('error', (err) => {
-      console.error(err);
-    });
+        response.on('error', err => {
+          console.error(err);
+        });
 
-    response.statusCode = 200;
-    response.setHeader('Content-Type', 'application/json');
-    // Note: the 2 lines above could be replaced with this next one:
-    // response.writeHead(200, {'Content-Type': 'application/json'})
+        response.statusCode = 200;
+        response.setHeader('Content-Type', 'application/json');
+        // Note: the 2 lines above could be replaced with this next one:
+        // response.writeHead(200, {'Content-Type': 'application/json'})
 
-    const responseBody = { headers, method, url, body };
+        const responseBody = { headers, method, url, body };
 
-    response.write(JSON.stringify(responseBody));
-    response.end();
-    // Note: the 2 lines above could be replaced with this next one:
-    // response.end(JSON.stringify(responseBody))
+        response.write(JSON.stringify(responseBody));
+        response.end();
+        // Note: the 2 lines above could be replaced with this next one:
+        // response.end(JSON.stringify(responseBody))
 
-    // END OF NEW STUFF
-  });
-}).listen(8080);
+        // END OF NEW STUFF
+      });
+  })
+  .listen(8080);
 ```
 
 ## 服务器响应的示例代码
@@ -221,41 +233,49 @@ http.createServer((request, response) => {
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  let body = [];
-  request.on('data', (chunk) => {
-    body.push(chunk);
-  }).on('end', () => {
-    body = Buffer.concat(body).toString();
-    response.end(body);
-  });
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    let body = [];
+    request
+      .on('data', chunk => {
+        body.push(chunk);
+      })
+      .on('end', () => {
+        body = Buffer.concat(body).toString();
+        response.end(body);
+      });
+  })
+  .listen(8080);
 ```
 
 现在让我们调整一下，我们只对以下条件应答：
 
-* 请求方法是 POST 方式。
-* 访问路径是 `/echo`。
+- 请求方法是 POST 方式。
+- 访问路径是 `/echo`。
 
 其它任何情况均返回 404。
 
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  if (request.method === 'POST' && request.url === '/echo') {
-    let body = [];
-    request.on('data', (chunk) => {
-      body.push(chunk);
-    }).on('end', () => {
-      body = Buffer.concat(body).toString();
-      response.end(body);
-    });
-  } else {
-    response.statusCode = 404;
-    response.end();
-  }
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    if (request.method === 'POST' && request.url === '/echo') {
+      let body = [];
+      request
+        .on('data', chunk => {
+          body.push(chunk);
+        })
+        .on('end', () => {
+          body = Buffer.concat(body).toString();
+          response.end(body);
+        });
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  })
+  .listen(8080);
 ```
 
 > **注意：** 为了检查请求路径，我们设计了一个路由格式。 其它形式的路由 `switch`，简单的可以通过 `switch` 的形式检查，复杂的诸如 [`express`][] 框架，如果你正在寻找路由而不需要做其它事情，简单用 [`router`][]。
@@ -265,14 +285,16 @@ http.createServer((request, response) => {
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  if (request.method === 'POST' && request.url === '/echo') {
-    request.pipe(response);
-  } else {
-    response.statusCode = 404;
-    response.end();
-  }
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    if (request.method === 'POST' && request.url === '/echo') {
+      request.pipe(response);
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  })
+  .listen(8080);
 ```
 
 就是这样！
@@ -286,32 +308,34 @@ http.createServer((request, response) => {
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  request.on('error', (err) => {
-    console.error(err);
-    response.statusCode = 400;
-    response.end();
-  });
-  response.on('error', (err) => {
-    console.error(err);
-  });
-  if (request.method === 'POST' && request.url === '/echo') {
-    request.pipe(response);
-  } else {
-    response.statusCode = 404;
-    response.end();
-  }
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    request.on('error', err => {
+      console.error(err);
+      response.statusCode = 400;
+      response.end();
+    });
+    response.on('error', err => {
+      console.error(err);
+    });
+    if (request.method === 'POST' && request.url === '/echo') {
+      request.pipe(response);
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  })
+  .listen(8080);
 ```
 
 我们现在已经涉及到了大部分基本的 HTTP 请求知识，此时此刻，你应该已经具备了：
 
-* 实例化带有请求处理函数的 HTTP 服务器，并让它在端口上监听。
-* 从 `request` 对象中获取请求头部、URL、方法和请求体等数据。
-* 让路由决定依赖于访问路径，或者在 `request` 对象其它数据中。
-* 通过 `response` 对象发送响应头，HTTP 状态码以及消息体。
-* 通过 `request` 对象与 `response` 对象对接，传输数据。
-* 在 `request` 和 `response` 流中处理错误。
+- 实例化带有请求处理函数的 HTTP 服务器，并让它在端口上监听。
+- 从 `request` 对象中获取请求头部、URL、方法和请求体等数据。
+- 让路由决定依赖于访问路径，或者在 `request` 对象其它数据中。
+- 通过 `response` 对象发送响应头，HTTP 状态码以及消息体。
+- 通过 `request` 对象与 `response` 对象对接，传输数据。
+- 在 `request` 和 `response` 流中处理错误。
 
 从这些简单示例中，我们已经可以构建针对众多特定情况下的 Node.js HTTP 服务器。这些 API 实际上还提供了其它的功能，故建议你最好通读 API 文档以便于更彻底地了解[`EventEmitters`][]、[`Streams`][]以及[`HTTP`][]。
 

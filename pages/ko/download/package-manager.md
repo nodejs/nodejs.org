@@ -28,30 +28,31 @@ title: 패키지 매니저로 Node.js 설치하기
 
 ---
 -->
+
 # 패키지 매니저로 Node.js 설치하기
 
-***Note:*** 이 페이지에 나오는 패키지는 각 패키지 관리자가 관리하고 Node.js 코어 팀이
+**_Note:_** 이 페이지에 나오는 패키지는 각 패키지 관리자가 관리하고 Node.js 코어 팀이
 **관리하지 않습니다**. 이슈가 있다면 패키지 관리자에게 보고해 주세요. 해당 이슈가 Node.js 자체의
 버그라면 관리자가 이슈를 Node.js에 보고할 것입니다.
 
 ---
 
-* [안드로이드](#android)
-* [Arch Linux](#arch-linux)
-* [데비안과 우분투 기반 리눅스 배포판. 엔터프라이즈 리눅스/페도라와 Snap 패키지](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
-* [FreeBSD](#freebsd)
-* [Gentoo](#gentoo)
-* [IBM i](#ibm-i)
-* [NetBSD](#netbsd)
-* [nvm](#nvm)
-* [nvs](#nvs)
-* [OpenBSD](#openbsd)
-* [openSUSE 와 SLE](#opensuse-and-sle)
-* [macOS](#macos)
-* [SmartOS 와 illumos](#smartos-and-illumos)
-* [Solus](#solus)
-* [Void Linux](#void-linux)
-* [Windows](#windows-1)
+- [안드로이드](#android)
+- [Arch Linux](#arch-linux)
+- [데비안과 우분투 기반 리눅스 배포판. 엔터프라이즈 리눅스/페도라와 Snap 패키지](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
+- [FreeBSD](#freebsd)
+- [Gentoo](#gentoo)
+- [IBM i](#ibm-i)
+- [NetBSD](#netbsd)
+- [nvm](#nvm)
+- [nvs](#nvs)
+- [OpenBSD](#openbsd)
+- [openSUSE 와 SLE](#opensuse-and-sle)
+- [macOS](#macos)
+- [SmartOS 와 illumos](#smartos-and-illumos)
+- [Solus](#solus)
+- [Void Linux](#void-linux)
+- [Windows](#windows-1)
 
 ---
 
@@ -68,6 +69,7 @@ pkg install nodejs
 
 Currently, Termux Node.js binaries are linked against `system-icu` (depending on `libicu` package).
 -->
+
 ## <!--android-->안드로이드
 
 Node.js의 안드로이드 지원은 현재 시험 단계에 있기 때문에 Node.js 개발자들이 제공하는 미리 컴파일된 바이너리가 아직 없습니다.
@@ -89,6 +91,7 @@ Node.js and npm packages are available in the Community Repository.
 pacman -S nodejs npm
 ```
 -->
+
 ## Arch Linux
 
 커뮤니티 저장소에서 Node.js와 npm을 이용할 수 있습니다.
@@ -102,6 +105,7 @@ pacman -S nodejs npm
 
 [Official Node.js binary distributions](https://github.com/nodesource/distributions) are provided by NodeSource.
 -->
+
 ## <!--debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages-->데비안과 우분투 기반 리눅스 배포판. 엔터프라이즈 리눅스/페도라와 Snap 패키지
 
 [공식 Node.js 바이너리 배포판](https://github.com/nodesource/distributions)은 NodeSource가 제공합니다.
@@ -124,6 +128,7 @@ cd /usr/ports/www/node && make install
 ```
 
 -->
+
 ## FreeBSD
 
 Node.js의 최신 릴리스는 [www/node](https://www.freshports.org/www/node) 포트를 통해 사용할 수 있습니다.
@@ -149,6 +154,7 @@ Node.js is available in the portage tree.
 emerge nodejs
 ```
 -->
+
 ## Gentoo
 
 Node.js는 portage를 사용할 수 있습니다.
@@ -170,6 +176,7 @@ yum install nodejs12
 
 Node.js can also be installed with the IBM i Access Client Solutions product. See [this support document](http://www-01.ibm.com/support/docview.wss?uid=nas8N1022619) for more details
 -->
+
 ## IBM i
 
 IBM에서 ['yum' 패키지 매니저](https://ibm.biz/ibmi-rpms)를 통해 Node.js의 LTS 버전을 사용할 수 있습니다.
@@ -199,6 +206,7 @@ Or install a binary package (if available for your platform) using pkgin:
 pkgin -y install nodejs
 ```
 -->
+
 ## NetBSD
 
 pkgsrc에서 Node.js를 설치할 수 있습니다.
@@ -243,6 +251,7 @@ nvm uninstall 8
 -->
 
 ## nvm
+
 Node Version Manager는 Node.js의 다양한 릴리스 버전을 관리하는 bash 스크립트입니다. nvm으로
 설치, 제거, 버전 변경 같은 작업을 할 수 있습니다. nvm을 설치하려면
 [설치 스크립트](https://github.com/nvm-sh/nvm#install--update-script)를 사용하세요.
@@ -271,6 +280,7 @@ nvm uninstall 8
 ## nvs
 
 #### Windows
+
 The `nvs` version manager is cross-platform and can be used on Windows, macOS, and Unix-like systems
 
 To install `nvs` on Windows go to the [release page](https://github.com/jasongin/nvs/releases) here and download the MSI installer file of the latest release.
@@ -282,9 +292,11 @@ choco install nvs
 ```
 
 #### macOS,UnixLike
+
 You can find the documentation regarding the installation steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
 
 #### Usage
+
 After this you can use `nvs` to switch between different versions of node.
 
 To add the latest version of node:
@@ -328,6 +340,7 @@ Using [pkg_add](https://man.openbsd.org/OpenBSD-current/man1/pkg_add.1) on OpenB
 pkg_add node
 ```
 -->
+
 ## OpenBSD
 
 다음과 같이 ports 시스템을 통해 Node.js를 사용할 수 있습니다.
@@ -364,10 +377,10 @@ zypper install nodejs4
 
 다음 패키지 아래 주 저장소에서 Node.js를 사용할 수 있습니다.
 
-* **openSUSE Leap 42.2**: `nodejs4`
-* **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
-* **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
-* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`
+- **openSUSE Leap 42.2**: `nodejs4`
+- **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
+- **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
+- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`
   ("웹과 스크립트 모듈"은 반드시 [설치 전에 추가](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html)해야 합니다.)
 
 예시로 openSUSE Leap 42.2에서 Node.js 4.x를 설치하려면 root 계정으로 다음 명령어를 실행해야 합니다.
@@ -387,6 +400,7 @@ _If you want to download the package with bash:_
 curl "https://nodejs.org/dist/latest/node-${VERSION:-$(wget -qO- https://nodejs.org/dist/latest/ | sed -nE 's|.*>node-(.*)\.pkg</a>.*|\1|p')}.pkg" > "$HOME/Downloads/node-latest.pkg" && sudo installer -store -pkg "$HOME/Downloads/node-latest.pkg" -target "/"
 ```
 -->
+
 ## macOS
 
 [nodejs.org](https://nodejs.org/) 웹사이트에서 [매킨토시 인스톨러](https://nodejs.org/ko/#home-downloadhead)를 다운로드 받으세요.
@@ -429,6 +443,7 @@ Or build manually from pkgsrc:
 cd pkgsrc/lang/nodejs && bmake install
 ```
 -->
+
 ### 그 밖의 방법
 
 **[Homebrew](https://brew.sh/)**를 사용할 수 있습니다.
@@ -474,6 +489,7 @@ Or build manually from pkgsrc:
 cd pkgsrc/lang/nodejs && bmake install
 ```
 -->
+
 ## <!--smartos-and-illumos-->SmartOS와 illumoss
 
 SmartOS 이미지에는 미리 설치된 pkgsrc가 포함되어 있습니다. illumos 배포판에서는 먼저
@@ -499,6 +515,7 @@ Solus provides Node.js in its main repository.
 sudo eopkg install nodejs
 ```
 -->
+
 ## Solus
 
 Solus는 메인 저장소에서 Node.js를 제공합니다.
@@ -516,6 +533,7 @@ Void Linux ships Node.js stable in the main repository.
 xbps-install -Sy nodejs
 ```
 -->
+
 ## Void Linux
 
 Void Linux는 메인 저장소에서 Node.js 안정 버전을 제공합니다.
@@ -545,6 +563,7 @@ Using **[Scoop](https://scoop.sh/)**:
 scoop install nodejs
 ```
 -->
+
 ## Windows
 
 [nodejs.org](https://nodejs.org/) 웹사이트에서

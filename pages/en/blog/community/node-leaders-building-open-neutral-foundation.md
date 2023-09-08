@@ -87,32 +87,32 @@ committees of both communities and are now taking the discussion to the
 entirety of both communities.
 
 1. Draft technical governance documents are [up for review and
-comment](https://github.com/joyent/nodejs-advisory-board/tree/master/governance-proposal).
+   comment](https://github.com/joyent/nodejs-advisory-board/tree/master/governance-proposal).
 
 2. The Foundation Bylaws and Membership Agreements based on our LF templates are
-available for companies to sign up as members. There is no need to sign any
-agreements as a community developer. If your company is interested in
-participating, [now is the time to sign
-up](http://f.cl.ly/items/0N1m3x0I3S2L203M1h1r/nodejs-foundation-membership-agreement-2015-march-04.pdf).
+   available for companies to sign up as members. There is no need to sign any
+   agreements as a community developer. If your company is interested in
+   participating, [now is the time to sign
+   up](http://f.cl.ly/items/0N1m3x0I3S2L203M1h1r/nodejs-foundation-membership-agreement-2015-march-04.pdf).
 
 3. Hold elections for the foundation's Gold and Silver member Board Directors and
-the Technical Steering Committee elects a TSC Chair. The process typically
-entails 1 week of nominations, 3-5 days of voting and then announcing the
-election winners.
+   the Technical Steering Committee elects a TSC Chair. The process typically
+   entails 1 week of nominations, 3-5 days of voting and then announcing the
+   election winners.
 
 4. Set up an initial Board meeting, likely mid-June. The first Board meeting will
-put in place all of the key legal documents, policies, operations, etc that
-are being discussed (the reason for wrapping up edits on May 8).
+   put in place all of the key legal documents, policies, operations, etc that
+   are being discussed (the reason for wrapping up edits on May 8).
 
 5. Initiate TSC meetings under the new foundation by upon resolution of both
-technical committees. The TSC will meet regularly on open, recorded calls.
-Details will be posted on a foundation wiki or page. The combined io.js and
-Node.js TCs have been meeting roughly every other week to work through the
-[Convergence planning](https://github.com/jasnell/dev-policy/blob/6601ca1cd2886f336ac65ddb3f67d3e741a021c9/convergence.md).
+   technical committees. The TSC will meet regularly on open, recorded calls.
+   Details will be posted on a foundation wiki or page. The combined io.js and
+   Node.js TCs have been meeting roughly every other week to work through the
+   [Convergence planning](https://github.com/jasnell/dev-policy/blob/6601ca1cd2886f336ac65ddb3f67d3e741a021c9/convergence.md).
 
 6. May 25 - June 5: Announce the new foundation, members, initial Board Directors
-(elections may be pending), TSC members and any reconciliation plans agreed to
-by the TSC (if ready).
+   (elections may be pending), TSC members and any reconciliation plans agreed to
+   by the TSC (if ready).
 
 And so I ask both communities to review the ideas being proposed, including
 how best to align goals, align resources and establish a platform for growing

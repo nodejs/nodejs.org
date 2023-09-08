@@ -33,9 +33,9 @@ layout: docs.hbs
 2. 尝试运行 `perf` - 或许会告诉你缺少内核模块，请同样安装他们。
 3. 启用 pref 并运行 node（具体参考 [perf 输出的问题](#perf-output-issues)以此了解针对不同 Node.js 版本的建议）
 
-    ```bash
-    perf recording -e cycles:u -g -- node --perf-basic-prof app.js
-    ```
+   ```bash
+   perf recording -e cycles:u -g -- node --perf-basic-prof app.js
+   ```
 
 4. 忽略一些警告，除非它告诉你因为缺少必要的安装包而无法运行 pref，你可能会得到一些警告，告诉你不能访问内核模块的样本等。
 5. 运行命令 `perf script > perfs.out` 生成稍后你看到的可视化的数据文件。对于一个易读的火焰图而言，[应用清理](#filtering-out-node-js-internal-functions)是有作用的。
@@ -97,8 +97,8 @@ Node.js 8.x 及以上版本使用了 V8 引擎，采用了新的优化 JavaScrip
 
 欲知详情，请了解以下内容：
 
-* https://github.com/nodejs/benchmarking/issues/168
-* https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
+- https://github.com/nodejs/benchmarking/issues/168
+- https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
 
 ### Node.js 10+
 

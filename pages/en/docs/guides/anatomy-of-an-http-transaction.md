@@ -94,12 +94,14 @@ then at the `'end'`, concatenate and stringify it.
 
 ```javascript
 let body = [];
-request.on('data', (chunk) => {
-  body.push(chunk);
-}).on('end', () => {
-  body = Buffer.concat(body).toString();
-  // at this point, `body` has the entire request body stored in it as a string
-});
+request
+  .on('data', chunk => {
+    body.push(chunk);
+  })
+  .on('end', () => {
+    body = Buffer.concat(body).toString();
+    // at this point, `body` has the entire request body stored in it as a string
+  });
 ```
 
 > This may seem a tad tedious, and in many cases, it is. Luckily,
@@ -114,13 +116,13 @@ Since the `request` object is a [`ReadableStream`][], it's also an
 
 An error in the `request` stream presents itself by emitting an `'error'` event
 on the stream. **If you don't have a listener for that event, the error will be
-*thrown*, which could crash your Node.js program.** You should therefore add an
+_thrown_, which could crash your Node.js program.** You should therefore add an
 `'error'` listener on your request streams, even if you just log it and
 continue on your way. (Though it's probably best to send some kind of HTTP error
 response. More on that later.)
 
 ```javascript
-request.on('error', (err) => {
+request.on('error', err => {
   // This prints the error message and stack trace to `stderr`.
   console.error(err.stack);
 });
@@ -139,22 +141,27 @@ something like this:
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  const { headers, method, url } = request;
-  let body = [];
-  request.on('error', (err) => {
-    console.error(err);
-  }).on('data', (chunk) => {
-    body.push(chunk);
-  }).on('end', () => {
-    body = Buffer.concat(body).toString();
-    // At this point, we have the headers, method, url and body, and can now
-    // do whatever we need to in order to respond to this request.
-  });
-}).listen(8080); // Activates this server, listening on port 8080.
+http
+  .createServer((request, response) => {
+    const { headers, method, url } = request;
+    let body = [];
+    request
+      .on('error', err => {
+        console.error(err);
+      })
+      .on('data', chunk => {
+        body.push(chunk);
+      })
+      .on('end', () => {
+        body = Buffer.concat(body).toString();
+        // At this point, we have the headers, method, url and body, and can now
+        // do whatever we need to in order to respond to this request.
+      });
+  })
+  .listen(8080); // Activates this server, listening on port 8080.
 ```
 
-If we run this example, we'll be able to *receive* requests, but not *respond*
+If we run this example, we'll be able to _receive_ requests, but not _respond_
 to them. In fact, if you hit this example in a web browser, your request would
 time out, as nothing is being sent back to the client.
 
@@ -195,14 +202,14 @@ assume that you're using "implicit headers". This means you're counting on node
 to send the headers for you at the correct time before you start sending body
 data.
 
-If you want, you can *explicitly* write the headers to the response stream.
+If you want, you can _explicitly_ write the headers to the response stream.
 To do this, there's a method called [`writeHead`][], which writes the status
 code and the headers to the stream.
 
 ```javascript
 response.writeHead(200, {
   'Content-Type': 'application/json',
-  'X-Powered-By': 'bacon'
+  'X-Powered-By': 'bacon',
 });
 ```
 
@@ -230,7 +237,7 @@ last bit of data on the stream, so we can simplify the example above as follows.
 response.end('<html><body><h1>Hello, World!</h1></body></html>');
 ```
 
-> It's important to set the status and headers *before* you start
+> It's important to set the status and headers _before_ you start
 > writing chunks of data to the body. This makes sense, since headers come before
 > the body in HTTP responses.
 
@@ -250,36 +257,41 @@ using `JSON.stringify`.
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  const { headers, method, url } = request;
-  let body = [];
-  request.on('error', (err) => {
-    console.error(err);
-  }).on('data', (chunk) => {
-    body.push(chunk);
-  }).on('end', () => {
-    body = Buffer.concat(body).toString();
-    // BEGINNING OF NEW STUFF
+http
+  .createServer((request, response) => {
+    const { headers, method, url } = request;
+    let body = [];
+    request
+      .on('error', err => {
+        console.error(err);
+      })
+      .on('data', chunk => {
+        body.push(chunk);
+      })
+      .on('end', () => {
+        body = Buffer.concat(body).toString();
+        // BEGINNING OF NEW STUFF
 
-    response.on('error', (err) => {
-      console.error(err);
-    });
+        response.on('error', err => {
+          console.error(err);
+        });
 
-    response.statusCode = 200;
-    response.setHeader('Content-Type', 'application/json');
-    // Note: the 2 lines above could be replaced with this next one:
-    // response.writeHead(200, {'Content-Type': 'application/json'})
+        response.statusCode = 200;
+        response.setHeader('Content-Type', 'application/json');
+        // Note: the 2 lines above could be replaced with this next one:
+        // response.writeHead(200, {'Content-Type': 'application/json'})
 
-    const responseBody = { headers, method, url, body };
+        const responseBody = { headers, method, url, body };
 
-    response.write(JSON.stringify(responseBody));
-    response.end();
-    // Note: the 2 lines above could be replaced with this next one:
-    // response.end(JSON.stringify(responseBody))
+        response.write(JSON.stringify(responseBody));
+        response.end();
+        // Note: the 2 lines above could be replaced with this next one:
+        // response.end(JSON.stringify(responseBody))
 
-    // END OF NEW STUFF
-  });
-}).listen(8080);
+        // END OF NEW STUFF
+      });
+  })
+  .listen(8080);
 ```
 
 ## Echo Server Example
@@ -292,42 +304,50 @@ the response stream, similar to what we did previously.
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  let body = [];
-  request.on('data', (chunk) => {
-    body.push(chunk);
-  }).on('end', () => {
-    body = Buffer.concat(body).toString();
-    response.end(body);
-  });
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    let body = [];
+    request
+      .on('data', chunk => {
+        body.push(chunk);
+      })
+      .on('end', () => {
+        body = Buffer.concat(body).toString();
+        response.end(body);
+      });
+  })
+  .listen(8080);
 ```
 
 Now let's tweak this. We want to only send an echo under the following
 conditions:
 
-* The request method is POST.
-* The URL is `/echo`.
+- The request method is POST.
+- The URL is `/echo`.
 
 In any other case, we want to simply respond with a 404.
 
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  if (request.method === 'POST' && request.url === '/echo') {
-    let body = [];
-    request.on('data', (chunk) => {
-      body.push(chunk);
-    }).on('end', () => {
-      body = Buffer.concat(body).toString();
-      response.end(body);
-    });
-  } else {
-    response.statusCode = 404;
-    response.end();
-  }
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    if (request.method === 'POST' && request.url === '/echo') {
+      let body = [];
+      request
+        .on('data', chunk => {
+          body.push(chunk);
+        })
+        .on('end', () => {
+          body = Buffer.concat(body).toString();
+          response.end(body);
+        });
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  })
+  .listen(8080);
 ```
 
 > By checking the URL in this way, we're doing a form of "routing".
@@ -343,14 +363,16 @@ exactly what we want for an echo server!
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  if (request.method === 'POST' && request.url === '/echo') {
-    request.pipe(response);
-  } else {
-    response.statusCode = 404;
-    response.end();
-  }
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    if (request.method === 'POST' && request.url === '/echo') {
+      request.pipe(response);
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  })
+  .listen(8080);
 ```
 
 Yay streams!
@@ -369,34 +391,36 @@ On the response, we'll just log the error to `stderr`.
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  request.on('error', (err) => {
-    console.error(err);
-    response.statusCode = 400;
-    response.end();
-  });
-  response.on('error', (err) => {
-    console.error(err);
-  });
-  if (request.method === 'POST' && request.url === '/echo') {
-    request.pipe(response);
-  } else {
-    response.statusCode = 404;
-    response.end();
-  }
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    request.on('error', err => {
+      console.error(err);
+      response.statusCode = 400;
+      response.end();
+    });
+    response.on('error', err => {
+      console.error(err);
+    });
+    if (request.method === 'POST' && request.url === '/echo') {
+      request.pipe(response);
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  })
+  .listen(8080);
 ```
 
 We've now covered most of the basics of handling HTTP requests. At this point,
 you should be able to:
 
-* Instantiate an HTTP server with a request handler function, and have it listen
-on a port.
-* Get headers, URL, method and body data from `request` objects.
-* Make routing decisions based on URL and/or other data in `request` objects.
-* Send headers, HTTP status codes and body data via `response` objects.
-* Pipe data from `request` objects and to `response` objects.
-* Handle stream errors in both the `request` and `response` streams.
+- Instantiate an HTTP server with a request handler function, and have it listen
+  on a port.
+- Get headers, URL, method and body data from `request` objects.
+- Make routing decisions based on URL and/or other data in `request` objects.
+- Send headers, HTTP status codes and body data via `response` objects.
+- Pipe data from `request` objects and to `response` objects.
+- Handle stream errors in both the `request` and `response` streams.
 
 From these basics, Node.js HTTP servers for many typical use cases can be
 constructed. There are plenty of other things these APIs provide, so be sure to

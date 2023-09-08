@@ -8,9 +8,10 @@ layout: docs.hbs
 This guide will go through the fundamentals of garbage collection traces.
 
 By the end of this guide, you'll be able to:
-* Enable traces in your Node.js application
-* Interpret traces
-* Identify potential memory issues in your Node.js application
+
+- Enable traces in your Node.js application
+- Interpret traces
+- Identify potential memory issues in your Node.js application
 
 There's a lot to learn about how the garbage collector works, but if you learn
 one thing it's that when GC is running, your code is not.
@@ -30,7 +31,7 @@ import os from 'os';
 let len = 1_000_000;
 const entries = new Set();
 
-function addEntry () {
+function addEntry() {
   const entry = {
     timestamp: Date.now(),
     memory: os.freemem(),
@@ -41,7 +42,7 @@ function addEntry () {
   entries.add(entry);
 }
 
-function summary () {
+function summary() {
   console.log(`Total: ${entries.size} entries`);
 }
 
@@ -51,7 +52,7 @@ function summary () {
     addEntry();
     process.stdout.write(`~~> ${len} entries to record\r`);
     len--;
-  };
+  }
 
   summary();
 })();
@@ -74,7 +75,7 @@ $ node --trace-gc script.mjs
 
 It should output something like:
 
-``` bash
+```bash
 [39067:0x158008000]     2297 ms: Scavenge 117.5 (135.8) -> 102.2 (135.8) MB, 0.8 / 0.0 ms  (average mu = 0.994, current mu = 0.994) allocation failure
 [39067:0x158008000]     2375 ms: Scavenge 120.0 (138.3) -> 104.7 (138.3) MB, 0.9 / 0.0 ms  (average mu = 0.994, current mu = 0.994) allocation failure
 [39067:0x158008000]     2453 ms: Scavenge 122.4 (140.8) -> 107.1 (140.8) MB, 0.7 / 0.0 ms  (average mu = 0.994, current mu = 0.994) allocation failure
@@ -99,7 +100,7 @@ The composition of each line can be described as:
 ```
 
 | Token value                                           | Interpretation                           |
-|-------------------------------------------------------|------------------------------------------|
+| ----------------------------------------------------- | ---------------------------------------- |
 | 13973                                                 | PID of the running process               |
 | 0x110008000                                           | Isolate (JS heap instance)               |
 | 44 ms                                                 | The time since the process started in ms |
@@ -112,8 +113,9 @@ The composition of each line can be described as:
 | allocation failure                                    | Reason for GC                            |
 
 We'll only focus on two events here:
-* Scavenge
-* Mark-sweep
+
+- Scavenge
+- Mark-sweep
 
 The heap is divided into _spaces_. Amongst these, we have a space called
 the "new" space and another one called the "old" space.
@@ -130,20 +132,20 @@ The new space is designed to be small and fast for garbage collection.
 
 Let's imagine a Scavenge scenario:
 
-* we allocated `A`, `B`, `C` & `D`.
+- we allocated `A`, `B`, `C` & `D`.
   ```bash
   | A | B | C | D | <unallocated> |
   ```
-* we want to allocate `E`
-* not enough space, the memory is exhausted
-* then, a (garbage) collection is triggered
-* dead objects are collected
-* living object will stay
-* assuming `B` and `D` were dead
+- we want to allocate `E`
+- not enough space, the memory is exhausted
+- then, a (garbage) collection is triggered
+- dead objects are collected
+- living object will stay
+- assuming `B` and `D` were dead
   ```bash
   | A | C | <unallocated> |
   ```
-* now we can allocate `E`
+- now we can allocate `E`
   ```bash
   | A | C | E | <unallocated> |
   ```
@@ -152,14 +154,16 @@ v8 will promote objects, not garbage collected after two Scavenge
 operations to the old space.
 
 > 👉 Full [Scavenge scenario][]
+
 ### Mark-sweep
 
 Mark-sweep is used to collect objects from old space. The old space
 is where objects that survived the new space are living.
 
 This algorithm is composed of two phases:
-* **Mark**: Will mark still alive objects as black and others as white.
-* **Sweep**: Scans for white objects and converts them to free spaces.
+
+- **Mark**: Will mark still alive objects as black and others as white.
+- **Sweep**: Scans for white objects and converts them to free spaces.
 
 > 👉 In fact, the Mark and Sweep steps are a bit more elaborate.
 > Please read this [document][] for more details.
@@ -184,12 +188,13 @@ but what about a real-world application?)
 But how could we spot the context?
 
 ### How to get the context of bad allocations
+
 1. Suppose we observe that the old space is continously increasing.
 2. Reduce [`--max-old-space-size`][] such that the total heap is closer to the limit
 3. Run the program until you hit the out of memory.
 4. The produced log shows the failing context.
-6. If it hits OOM, increment the heap size by ~10% and repeat a few times. If the same pattern is observed, it indicates a memory leak.
-7. If there is no OOM, then freeze the heap size to that value - A packed heap reduces memory footprint and computation latency.
+5. If it hits OOM, increment the heap size by ~10% and repeat a few times. If the same pattern is observed, it indicates a memory leak.
+6. If there is no OOM, then freeze the heap size to that value - A packed heap reduces memory footprint and computation latency.
 
 For example, try to run `script.mjs` with the following command:
 
@@ -227,6 +232,7 @@ should be that the last GC trace will contain a bigger heap size.
 
 How do you assert whether too many garbage collections
 are happening or causing an overhead?
+
 1. Review the trace data, precisely the time between consecutive collections.
 2. Review the trace data, specifically around time spent in GC.
 3. If the time between two GC is less than the time spent in GC, the application is severely starving.
@@ -248,7 +254,7 @@ import fs from 'fs/promises';
 let len = 1_000_000;
 const fileName = `entries-${Date.now()}`;
 
-async function addEntry () {
+async function addEntry() {
   const entry = {
     timestamp: Date.now(),
     memory: os.freemem(),
@@ -258,19 +264,19 @@ async function addEntry () {
   await fs.appendFile(fileName, JSON.stringify(entry) + '\n');
 }
 
-async function summary () {
+async function summary() {
   const stats = await fs.lstat(fileName);
   console.log(`File size ${stats.size} bytes`);
 }
 
 // execution
 (async () => {
-  await fs.writeFile(fileName, "----START---\n");
+  await fs.writeFile(fileName, '----START---\n');
   while (len > 0) {
     await addEntry();
     process.stdout.write(`~~> ${len} entries to record\r`);
     len--;
-  };
+  }
 
   await summary();
 })();
@@ -289,8 +295,9 @@ node --trace-gc script-fix.mjs
 ```
 
 You should observe two things:
-* Mark-sweep events appear less frequently
-* the memory footprint doesn't exceed 25MB versus more than 130MB with the first script.
+
+- Mark-sweep events appear less frequently
+- the memory footprint doesn't exceed 25MB versus more than 130MB with the first script.
 
 It makes a lot of sense as the new version puts less pressure on
 the memory than the first one.
@@ -329,7 +336,7 @@ garbage collection.
 const { PerformanceObserver } = require('perf_hooks');
 
 // Create a performance observer
-const obs = new PerformanceObserver((list) => {
+const obs = new PerformanceObserver(list => {
   const entry = list.getEntries()[0];
   /*
   The entry is an instance of PerformanceEntry containing
@@ -370,7 +377,7 @@ PerformanceEntry {
 ```
 
 | Property  | Interpretation                                                                                   |
-|-----------|--------------------------------------------------------------------------------------------------|
+| --------- | ------------------------------------------------------------------------------------------------ |
 | name      | The name of the performance entry.                                                               |
 | entryType | The type of the performance entry.                                                               |
 | startTime | The high-resolution millisecond timestamp is marking the starting time of the Performance Entry. |

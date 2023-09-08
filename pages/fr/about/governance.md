@@ -15,7 +15,7 @@ Le TSC a toute autorité sur ce projet, y compris:
 
 Les invitations originelles à siéger au TSC ont été proposées à des contributeurs actifs qui avaient une expérience significative avec la gestion du projet. La participation à ce comité est susceptible d'évoluer dans le temps en rapport avec les besoins du projet.
 
-Pour obtenir la liste actuelle des collaborateurs, consultez le  [README.md][].
+Pour obtenir la liste actuelle des collaborateurs, consultez le [README.md][].
 
 Un guide pour les collaborateurs est disponible à l'adresse [collaborator-guide.md][].
 
