@@ -39,13 +39,19 @@ const BlogIndexLayout: FC<PropsWithChildren> = ({ children }) => {
 
         <ul className="blog-index">
           {posts.map((post: BlogPost) => (
-            <li key={post.slug}>
-              <Time
-                date={post.date}
-                format={{ month: 'short', day: '2-digit' }}
-              />
-
-              <LocalizedLink href={post.slug}>{post.title}</LocalizedLink>
+            <li key={post.slug} style={{ display: 'flex', gap: '10px' }}>
+              <div style={{ minWidth: '10ch', display: 'inline-block' }}>
+                <Time
+                  date={post.date}
+                  format={{ month: 'short', day: '2-digit' }}
+                />
+              </div>
+              <LocalizedLink
+                style={{ padding: '0.1em 0.5em' }}
+                href={post.slug}
+              >
+                {post.title}
+              </LocalizedLink>
             </li>
           ))}
         </ul>
