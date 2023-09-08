@@ -61,7 +61,7 @@ jobs:
         id: turborepo_arguments
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-        run: echo "turbo_args=--cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
+        run: echo "turbo_args=--force=true --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
 
   lint:
     # This Job should run either on `merge_groups` or `push` events
@@ -143,6 +143,9 @@ jobs:
           path: |
             .turbo/cache
             node_modules/.cache
+            .eslintmdcache
+            .eslintjscache
+            .prettiercache
           key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.turbo/cache/**') }}
 
   tests:
