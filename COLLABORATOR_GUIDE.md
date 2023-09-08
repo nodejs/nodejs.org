@@ -9,6 +9,7 @@
     - [Create the page content](#create-the-page-content)
   - [Translating pages](#translating-pages)
 - [Creating Components](#creating-components)
+  - [Styling a Component](#styling-a-component)
   - [Best practices when creating a Component](#best-practices-when-creating-a-component)
     - [How a new Component should look like when freshly created](#how-a-new-component-should-look-like-when-freshly-created)
   - [Best practices for Component development in general](#best-practices-for-component-development-in-general)
@@ -140,6 +141,22 @@ React allows us to create user interfaces with a modern take on Web Development.
 If you're unfamiliar with React or Web Development in general, we encourage a read before taking on complex issues and tasks as this repository is **not for educational purposes** and we expect you to have a basic understanding of the technologies used.
 
 We also recommend getting familiar with technologies such as [Next.js][], [MDX][], [SCSS][], and "concepts" such as "CSS Modules" and "CSS-in-JS".
+
+### Styling a Component
+
+As mentioned before, we write all Component-styles in separate `.module.scss` files. This is like writing any CSS in a separate file (besides the fact that we use [SCSS][]).
+
+This concept of writing styles on dedicated CSS files and importing them within JavaScript is a pattern named **[CSS Modules](https://github.com/css-modules/css-modules).
+These allow us to write SCSS (or regular CSS) within a `.module.scss` and import the class names directly to our React Components. We recommend reading guides on "Styling React Components with CSS Modules", which there are many available on the web.
+
+It's important to mention that we use [TailwindCSS](https://tailwindcss.com/) as a CSS Framework. Hence margins, paddings, font-sizes, font-weights, colours and others are all provided with Tailwind. 
+We recommend reading [this guide for setting up Tailwind on your IDE](https://tailwindcss.com/docs/editor-setup).
+
+Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind within CSS Modules, we recommend a read on [this guide](https://tailwindcss.com/docs/using-with-preprocessors).
+
+> [!NOTE]\
+> Tailwind is already configured for this repository. You don't need to import any Tailwind module within your CSS modules.
+> You can apply Tailwind classes by regularly using CSS variables or Scss's `@apply` statement, for example. If you have questions, feel free to raise them on PRs or Issues.
 
 ### Best practices when creating a Component
 
