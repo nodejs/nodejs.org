@@ -111,6 +111,6 @@ export default {
     fontFamily: {
       'open-sans': ['var(--font-open-sans)'],
     },
-    darkMode: ['class', '[data-theme="dark"]'],
   },
+  darkMode: ['class', '[data-theme="dark"]'],
 } satisfies Config;
