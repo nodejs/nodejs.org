@@ -126,7 +126,8 @@
         ".prettierignore",
         ".remarkrc.json",
         ".lintstaged.json"
-      ]
+      ],
+      "outputs": [".prettiercache"]
     },
     "prettier:fix": {
       "inputs": [
@@ -144,7 +145,8 @@
         ".prettierignore",
         ".remarkrc.json",
         ".lintstaged.json"
-      ]
+      ],
+      "outputs": [".prettiercache"]
     },
     "format": {
       "inputs": [
