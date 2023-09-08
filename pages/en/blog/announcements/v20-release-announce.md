@@ -1,5 +1,4 @@
 ---
-
 title: Node.js 20 is now available!
 date: 2023-04-18T15:45:00.000Z
 status: publish
@@ -7,7 +6,6 @@ category: announcements
 slug: nodejs-20-release-announcement
 layout: blog-post.hbs
 author: The Node.js Project
-
 ---
 
 We're excited to announce the release of Node.js 20! Highlights include the new Node.js Permission Model,a synchronous `import.meta.resolve`, a stable test_runner, updates of the V8 JavaScript engine to 11.3, Ada to 2.0,
@@ -156,7 +154,7 @@ Example:
 This writes the blob to the `sea-prep.blob` file.
 
 ```sh
-$ node --experimental-sea-config sea-config.json
+node --experimental-sea-config sea-config.json
 ```
 
 This blob can now be injected into the binary.
@@ -201,5 +199,4 @@ Looking to the future, the [Next-10](https://github.com/nodejs/next-10) team is 
 [`--allow-fs-write`]: https://nodejs.org/api/cli.html#--allow-fs-write
 [`--allow-worker`]: https://nodejs.org/api/cli.html#--allow-worker
 [`--experimental-permission`]: https://nodejs.org/api/cli.html#--experimental-permission
-[`permission.has()`]: https://nodejs.org/api/process.html#processpermissionhasscope-reference
 [CHANGELOG]: https://github.com/nodejs/node/releases/tag/v20.0.0
