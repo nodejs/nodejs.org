@@ -54,41 +54,14 @@ jobs:
     name: Base Tasks
     runs-on: ubuntu-latest
     outputs:
-      fetch_depth: ${{ steps.calculate_current_commits.outputs.fetch_depth }}
       turbo_args: ${{ steps.turborepo_arguments.outputs.turbo_args }}
 
     steps:
-      - name: Calculate Commits to Checkout
-        id: calculate_current_commits
-        # This calculates the amount of commits we should fetch during our shallow clone
-        # This calculates the amount of commits this PR produced diverged from the base branch + 1
-        # Which should include the "merge" commit reference
-        # In other words, the GitHub Action will always have the full history of the current PR
-        # We need all the commits of the PR so that `turbo --filter` works correctly
-        run: |
-          if [ "${{ github.event_name }}" == "pull_request_target" ]; then
-            echo "fetch_depth=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "$GITHUB_OUTPUT"
-          else
-            echo "fetch_depth=1" >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Provide Turborepo Arguments
         id: turborepo_arguments
-        # `--filter` flag allows us to tell TurboRepo to only run a said command if there were any changes found in a given --filter range
-        # It verifies if any change was done to any of the including `glob` patterns described for a said command on `turbo.json`
-        # By default in this Workflow we use the `...[$TURBO_REF_FILTER]` as a value to the filter flag which tells Turborepo to look changes
-        # between the latest base branch commit and all the commits of this PR; That's why we use the `pull_request.base.sha` as a ref to the last
-        # commit on the base branch that this pull_request refers to.
-        # We also set the Turborepo Cache to the `.turbo` folder
-        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--filter
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-        run: |
-          if [ "${{ github.event_name }}" == "pull_request_target" ]; then
-            echo "turbo_args=--filter=\"[HEAD~${{ github.event.pull_request.commits }}...HEAD]\" --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
-          else
-            echo "turbo_args=--cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
-          fi
+        run: echo "turbo_args=--cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
 
   lint:
     # This Job should run either on `merge_groups` or `push` events
@@ -106,8 +79,9 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
-          fetch-depth: ${{ needs.base.outputs.fetch_depth }}
+          # We need full git history for properly being able to run Chromatic
+          # and since Turborepo also needs the git history to compute changes
+          fetch-depth: 0
 
       - name: Restore Lint Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
@@ -191,8 +165,9 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
-          fetch-depth: ${{ needs.base.outputs.fetch_depth }}
+          # We need full git history for properly being able to run Chromatic
+          # and since Turborepo also needs the git history to compute changes
+          fetch-depth: 0
 
       - name: Restore Tests Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
