@@ -82,7 +82,7 @@ jobs:
           fetch-depth: 1
 
       - name: Restore Build Cache
-        uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
+        uses: actions/cache/restore@704facf57e6136b1bc63b828d79edcd491f0ee84
         with:
           path: |
             .turbo/cache
@@ -142,7 +142,7 @@ jobs:
         # We want to store the Build Cache within Pull Requests or during pushes against the `main` branch
         if: |
           github.event_name == 'push' || github.event_name == 'pull_request_target'
-        uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
+        uses: actions/cache/save@704facf57e6136b1bc63b828d79edcd491f0ee84
         with:
           path: |
             .turbo/cache
