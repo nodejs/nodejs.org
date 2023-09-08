@@ -223,6 +223,7 @@ jobs:
         uses: chromaui/action@v1
         with:
           buildScriptName: storybook:build
+          ignoreLastBuildOnBranch: true
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           exitOnceUploaded: true
           onlyChanged: true
