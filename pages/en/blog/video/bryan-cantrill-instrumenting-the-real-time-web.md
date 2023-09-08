@@ -1,5 +1,5 @@
 ---
-title: "Bryan Cantrill: Instrumenting the Real Time Web"
+title: 'Bryan Cantrill: Instrumenting the Real Time Web'
 author: Isaac Schlueter
 date: 2012-05-08T17:00:34.000Z
 status: publish

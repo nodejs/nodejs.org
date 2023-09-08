@@ -40,11 +40,11 @@ Berikut ini adalah contoh sederhana tentang bagaimana handler `'error'` yang hil
 const domain = require('domain');
 const net = require('net');
 const d = domain.create();
-d.on('error', (err) => console.error(err.message));
+d.on('error', err => console.error(err.message));
 
 d.run(() =>
   net
-    .createServer((c) => {
+    .createServer(c => {
       c.end();
       c.write('bye');
     })
@@ -64,7 +64,7 @@ d.on('error', () => console.error('d intercepted an error'));
 
 d.run(() => {
   const server = net
-    .createServer((c) => {
+    .createServer(c => {
       const e = domain.create(); // No 'error' handler being set.
       e.run(() => {
         // This will not be caught by d's error handler.
@@ -92,7 +92,7 @@ Menyebarkan kesalahan di seluruh domain bersarang tidak langsung, jika bahkan mu
 ```js
 const d1 = domain.create();
 d1.foo = true; // custom member to make more visible in console
-d1.on('error', (er) => {
+d1.on('error', er => {
   /* handle error */
 });
 
@@ -100,7 +100,7 @@ d1.run(() =>
   setTimeout(() => {
     const d2 = domain.create();
     d2.bar = 43;
-    d2.on('error', (er) => console.error(er.message, domain._stack));
+    d2.on('error', er => console.error(er.message, domain._stack));
     d2.run(() => {
       setTimeout(() => {
         setTimeout(() => {
@@ -177,14 +177,14 @@ ConnectionResource.prototype.write = function write(chunk) {
 
 // Example begin
 net
-  .createServer((c) => {
+  .createServer(c => {
     const cr = new ConnectionResource(c);
 
     const d1 = domain.create();
     fs.open(
       FILENAME,
       'r',
-      d1.intercept((fd) => {
+      d1.intercept(fd => {
         streamInParts(fd, cr, 0);
       })
     );
@@ -198,7 +198,7 @@ net
 function streamInParts(fd, cr, pos) {
   const d2 = domain.create();
   const alive = true;
-  d2.on('error', (er) => {
+  d2.on('error', er => {
     print('d2 error:', er.message);
     cr.end();
   });
@@ -236,19 +236,19 @@ function pipeData(cr) {
   const ps = net.createServer();
   const d3 = domain.create();
   const connectionList = [];
-  d3.on('error', (er) => {
+  d3.on('error', er => {
     print('d3 error:', er.message);
     cr.end();
   });
   d3.add(ps);
-  ps.on('connection', (conn) => {
+  ps.on('connection', conn => {
     connectionList.push(conn);
     conn.on('data', () => {}); // don't care about incoming data.
     conn.on('close', () => {
       connectionList.splice(connectionList.indexOf(conn), 1);
     });
   });
-  cr.on('data', (chunk) => {
+  cr.on('data', chunk => {
     for (let i = 0; i < connectionList.length; i++) {
       connectionList[i].write(chunk);
     }
@@ -274,12 +274,12 @@ process.on('exit', () => {
 });
 ```
 
-* Ketika koneksi baru terjadi, secara bersamaan:
-  * Buka file di sistem file
-  * Buka Pipa ke soket unik
-* Baca sepotong file secara tidak sinkron
-* Tulis potongan ke koneksi TCP dan soket pendengar apa pun
-* Jika salah satu dari sumber daya ini error, beri tahu semua sumber daya terlampir lainnya bahwa mereka perlu membersihkan dan mematikan
+- Ketika koneksi baru terjadi, secara bersamaan:
+  - Buka file di sistem file
+  - Buka Pipa ke soket unik
+- Baca sepotong file secara tidak sinkron
+- Tulis potongan ke koneksi TCP dan soket pendengar apa pun
+- Jika salah satu dari sumber daya ini error, beri tahu semua sumber daya terlampir lainnya bahwa mereka perlu membersihkan dan mematikan
 
 Seperti yang dapat kita lihat dari contoh ini, lebih banyak yang harus dilakukan untuk membersihkan dengan benar sumber daya ketika sesuatu gagal daripada apa yang dapat dilakukan secara ketat melalui API domain. Semua yang ditawarkan domain adalah mekanisme agregasi pengecualian. Bahkan kemampuan yang berpotensi berguna untuk menyebarkan data dengan domain dengan mudah dilawan, dalam contoh ini, dengan melewatkan sumber daya yang dibutuhkan sebagai fungsi argumen.
 
@@ -300,7 +300,7 @@ const domain = require('domain');
 const net = require('net');
 
 const server = net
-  .createServer((c) => {
+  .createServer(c => {
     // Use a domain to propagate data across events within the
     // connection so that we don't have to pass arguments
     // everywhere.
@@ -310,7 +310,7 @@ const server = net
     // Mock class that does some useless async data transformation
     // for demonstration purposes.
     const ds = new DataStream(dataTransformed);
-    c.on('data', (chunk) => ds.data(chunk));
+    c.on('data', chunk => ds.data(chunk));
   })
   .listen(8080, () => console.log('listening on 8080'));
 

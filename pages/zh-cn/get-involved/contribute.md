@@ -17,14 +17,14 @@ layout: contribute.hbs
 
 汇报问题时我们也需要一些关于执行环境的信息，我们不知道确切哪些信息是我们要的，所以请至少提供下列几项信息：
 
-* Node.js 的版本号
-* 当前运行的操作系统（macOS、SmartOS、Linux、Windows）
-* 计算机架构体系（32 位还是 64 位；x86 或 ARM）
+- Node.js 的版本号
+- 当前运行的操作系统（macOS、SmartOS、Linux、Windows）
+- 计算机架构体系（32 位还是 64 位；x86 或 ARM）
 
 目前 Node.js 项目分散在一些 GitHub 仓库中个别管理，每个仓库都有自己的议题数据库。 如果可以的话，请将你的问题汇报至适合的仓库，但也别怕不小心发错地方，我们的社群会很热心帮你找到对的地方。
 
-* 若要汇报有关 Node.js 的问题，请到 [nodejs/node](https://github.com/nodejs/node)。
-* 若要汇报本网站的问题，请到 [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)。
+- 若要汇报有关 Node.js 的问题，请到 [nodejs/node](https://github.com/nodejs/node)。
+- 若要汇报本网站的问题，请到 [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)。
 
 ## 代码贡献者
 
@@ -36,12 +36,12 @@ layout: contribute.hbs
 
 协作者的影响力可扩及整个项目，成为协作者后将能审核他人的贡献内容、将问题进行分类，及策划项目未来。因重大贡献而被 TSC 认可的开发者可能会被授与项目协作者身份及享有项目的代码提交权限，重大贡献的评估标准如（包括但不限于）下方所列：
 
-* 代码提交以及 Pull Requests
-* 文档修订提交及 Pull Requests
-* 对问题的评论及 Pull Requests
-* 对 Node.js 网站的贡献
-* 提供给终端用户及初学贡献者的帮助
-* 参与工作组
-* 参与其它 Node.js 社区群
+- 代码提交以及 Pull Requests
+- 文档修订提交及 Pull Requests
+- 对问题的评论及 Pull Requests
+- 对 Node.js 网站的贡献
+- 提供给终端用户及初学贡献者的帮助
+- 参与工作组
+- 参与其它 Node.js 社区群
 
 若你自己认为已经做出重大贡献，却没有被授予提交权限，你可以尝试[开启 TSC 议题](https://github.com/nodejs/TSC/issues)或[直接联系 TSC 成员](https://github.com/nodejs/TSC#current-members)以获得相应权限。

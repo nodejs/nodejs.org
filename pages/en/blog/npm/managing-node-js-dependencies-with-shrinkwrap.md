@@ -50,11 +50,11 @@ Let's consider package A:
 
 ```json
 {
-    "name": "A",
-    "version": "0.1.0",
-    "dependencies": {
-        "B": "<0.1.0"
-    }
+  "name": "A",
+  "version": "0.1.0",
+  "dependencies": {
+    "B": "<0.1.0"
+  }
 }
 ```
 
@@ -62,11 +62,11 @@ package B:
 
 ```json
 {
-    "name": "B",
-    "version": "0.0.1",
-    "dependencies": {
-        "C": "<0.1.0"
-    }
+  "name": "B",
+  "version": "0.0.1",
+  "dependencies": {
+    "C": "<0.1.0"
+  }
 }
 ```
 
@@ -74,8 +74,8 @@ and package C:
 
 ```json
 {
-    "name": "C",
-    "version": "0.0.1"
+  "name": "C",
+  "version": "0.0.1"
 }
 ```
 
@@ -107,19 +107,19 @@ This generates npm-shrinkwrap.json, which will look something like this:
 
 ```json
 {
-    "name": "A",
-    "dependencies": {
-        "B": {
-            "version": "0.0.1",
-            "dependencies": {
-                "C": {  "version": "0.1.0" }
-            }
-        }
+  "name": "A",
+  "dependencies": {
+    "B": {
+      "version": "0.0.1",
+      "dependencies": {
+        "C": { "version": "0.1.0" }
+      }
     }
+  }
 }
 ```
 
-The shrinkwrap command has locked down the dependencies based on what's currently installed in node\_modules. **When "npm install" installs a package with a npm-shrinkwrap.json file in the package root, the shrinkwrap file (rather than package.json files) completely drives the installation of that package and all of its dependencies (recursively).** So now the author publishes A\@0.1.0, and subsequent installs of this package will use B\@0.0.1 and C\@0.1.0, regardless the dependencies and versions listed in A's, B's, and C's package.json files. If the authors of B and C publish new versions, they won't be used to install A because the shrinkwrap refers to older versions. Even if you generate a new shrinkwrap, it will still reference the older versions, since "npm shrinkwrap" uses what's installed locally rather than what's available in the registry.
+The shrinkwrap command has locked down the dependencies based on what's currently installed in node_modules. **When "npm install" installs a package with a npm-shrinkwrap.json file in the package root, the shrinkwrap file (rather than package.json files) completely drives the installation of that package and all of its dependencies (recursively).** So now the author publishes A\@0.1.0, and subsequent installs of this package will use B\@0.0.1 and C\@0.1.0, regardless the dependencies and versions listed in A's, B's, and C's package.json files. If the authors of B and C publish new versions, they won't be used to install A because the shrinkwrap refers to older versions. Even if you generate a new shrinkwrap, it will still reference the older versions, since "npm shrinkwrap" uses what's installed locally rather than what's available in the registry.
 
 ### Using shrinkwrapped packages
 
@@ -153,7 +153,7 @@ Instead, you check in the original sources and automate the transformations via 
 
 Dependencies are just like binaries in this regard: they're files derived from a simple transformation of something else that is (or could easily be) already available: the name and version of the dependency. Checking them in has all the same problems as checking in binaries: people could update package.json without updating the checked-in module (or vice versa). Besides that, adding new dependencies has to be done by hand, introducing more opportunities for error (checking in the wrong files, not checking in certain files, inadvertently changing files, and so on). Our feeling was: why check in this whole dependency tree (and create a mess for binary add-ons) when we could just check in the package name and version and have the build process do the rest?
 
-Finally, the approach of checking in node\_modules doesn't really scale for us. We've got at least a dozen repos that will use restify, and it doesn't make sense to check that in everywhere when we could instead just specify which version each one is using. There's another principle at work here, which is **separation of concerns**: each repo specifies _what_ it needs, while the build process figures out _where to get it_.
+Finally, the approach of checking in node*modules doesn't really scale for us. We've got at least a dozen repos that will use restify, and it doesn't make sense to check that in everywhere when we could instead just specify which version each one is using. There's another principle at work here, which is **separation of concerns**: each repo specifies \_what* it needs, while the build process figures out _where to get it_.
 
 ## What if an author republishes an existing version of a package?
 
@@ -163,7 +163,7 @@ It's still possible to pick up newly published versions of existing packages at 
 
 ## Final thoughts
 
-Of course, the details of each use case matter a lot, and the world doesn't have to pick just one solution. If you like checking in node\_modules, you should keep doing that. We've chosen the shrinkwrap route because that works better for us.
+Of course, the details of each use case matter a lot, and the world doesn't have to pick just one solution. If you like checking in node_modules, you should keep doing that. We've chosen the shrinkwrap route because that works better for us.
 
 It's not exactly news that Joyent is heavy on Node. Node is the heart of our SmartDataCenter (SDC) product, whose public-facing web portal, public API, Cloud Analytics, provisioning, billing, heartbeating, and other services are all implemented in Node. That's why it's so important to us to have robust components (like [logging](https://github.com/trentm/node-bunyan) and [REST](http://mcavage.github.com/node-restify/)) and tools for [understanding production failures postmortem](http://dtrace.org/blogs/dap/2012/01/13/playing-with-nodev8-postmortem-debugging/), [profile Node apps in production](http://dtrace.org/blogs/dap/2012/01/05/where-does-your-node-program-spend-its-time/), and now managing Node dependencies. Again, we're interested to hear feedback from others using these tools.
 

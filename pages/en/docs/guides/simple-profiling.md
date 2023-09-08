@@ -74,10 +74,10 @@ app.get('/auth', (req, res) => {
 });
 ```
 
-*Please note that these are NOT recommended handlers for authenticating users in
+_Please note that these are NOT recommended handlers for authenticating users in
 your Node.js applications and are used purely for illustration purposes. You
 should not be trying to design your own cryptographic authentication mechanisms
-in general. It is much better to use existing, proven authentication solutions.*
+in general. It is much better to use existing, proven authentication solutions._
 
 Now assume that we've deployed our application and users are complaining about
 high latency on requests. We can easily run the app with the built-in profiler:
@@ -197,7 +197,7 @@ Parsing this section takes a little more work than the raw tick counts above.
 Within each of the "call stacks" above, the percentage in the parent column
 tells you the percentage of samples for which the function in the row above was
 called by the function in the current row. For example, in the middle "call
-stack" above for _sha1_block_data_order, we see that `_sha1_block_data_order` occurred
+stack" above for \_sha1_block_data_order, we see that `_sha1_block_data_order` occurred
 in 11.9% of samples, which we knew from the raw counts above. However, here, we
 can also tell that it was always called by the pbkdf2 function inside the
 Node.js crypto module. We see that similarly, `_malloc_zone_malloc` was called
@@ -228,13 +228,20 @@ app.get('/auth', (req, res) => {
     return res.sendStatus(400);
   }
 
-  crypto.pbkdf2(password, users[username].salt, 10000, 512, 'sha512', (err, hash) => {
-    if (users[username].hash.toString() === hash.toString()) {
-      res.sendStatus(200);
-    } else {
-      res.sendStatus(401);
+  crypto.pbkdf2(
+    password,
+    users[username].salt,
+    10000,
+    512,
+    'sha512',
+    (err, hash) => {
+      if (users[username].hash.toString() === hash.toString()) {
+        res.sendStatus(200);
+      } else {
+        res.sendStatus(401);
+      }
     }
-  });
+  );
 });
 ```
 

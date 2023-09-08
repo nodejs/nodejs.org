@@ -17,31 +17,31 @@ Node.js Interactive will also focus on three tracks: Frontend, Backend and the I
 
 Frontend Session Highlights:
 
-* JavaScript, For Science! *with* Max Ogden, Computer Programmer for Dat Project
-* Making Your Node.js Applications Debuggable *with* Patrick Mueller, Senior Node Engineer at NodeSource
-* Node Intl: Where We Are, What's Next *with* Steven Loomis, Senior Software Engineer at IBM
-* Rapid Development of Data Mining Applications in Node.js *with* Blaz Fortuna, Research Consultant for Bloomberg L.P., Senior Researcher at Jožef Stefan Institute and Partner at Quintelligence
-* Real-Time Collaboration Sync Strategies *with* Todd Kennedy, CTO of Scripto
-* Rebuilding the Ship as It Sails: Making Large Legacy Sites Responsive *with* Philip James, Senior Software Engineer at Eventbrite
+- JavaScript, For Science! _with_ Max Ogden, Computer Programmer for Dat Project
+- Making Your Node.js Applications Debuggable _with_ Patrick Mueller, Senior Node Engineer at NodeSource
+- Node Intl: Where We Are, What's Next _with_ Steven Loomis, Senior Software Engineer at IBM
+- Rapid Development of Data Mining Applications in Node.js _with_ Blaz Fortuna, Research Consultant for Bloomberg L.P., Senior Researcher at Jožef Stefan Institute and Partner at Quintelligence
+- Real-Time Collaboration Sync Strategies _with_ Todd Kennedy, CTO of Scripto
+- Rebuilding the Ship as It Sails: Making Large Legacy Sites Responsive _with_ Philip James, Senior Software Engineer at Eventbrite
 
 Backend Session Highlights:
 
-* Building and Engaging High-Performance Teams in the Node.js Ecosystem *with* Chanda Dharap, Director of Engineering at StrongLoop, an IBM company
-* Microservice Developer Experience *with* Peter Elger, Director of Engineering at nearForm
-* Modernizing Winston for Node.js v4 *with* Charlie Robbins, Director of Engineering UX Platform at GoDaddy
-* Node.js API Pitfalls, Can You Spot Them? *with* Sam Roberts, Node/Ops Developer at StrongLoop, an IBM Company
-* Node.js Performance Optimization Case Study *with* Bryce Baril, Senior Node Engineer at NodeSource
-* Resource Management in Node.js *with* Bradley Meck, Software Engineer at NodeSource
+- Building and Engaging High-Performance Teams in the Node.js Ecosystem _with_ Chanda Dharap, Director of Engineering at StrongLoop, an IBM company
+- Microservice Developer Experience _with_ Peter Elger, Director of Engineering at nearForm
+- Modernizing Winston for Node.js v4 _with_ Charlie Robbins, Director of Engineering UX Platform at GoDaddy
+- Node.js API Pitfalls, Can You Spot Them? _with_ Sam Roberts, Node/Ops Developer at StrongLoop, an IBM Company
+- Node.js Performance Optimization Case Study _with_ Bryce Baril, Senior Node Engineer at NodeSource
+- Resource Management in Node.js _with_ Bradley Meck, Software Engineer at NodeSource
 
 IoT Session Highlights:
 
-* Contributing to Node Core *with* Jeremiah Senkpiel, Node Core Contributor at NodeSource
-* Hands on Hardware Workshop *with* Tessel with Kelsey Breseman, Engineering Project Manager at 3D Robotics and Steering Committee Member and Board Co-Creator of Tessel Project
-* Internet of Cats *with* Rachel White, Front-End Engineer for IBM Watson
-* IoT && Node.js && You *with* Emily Rose, Senior Software Engineer at Particle IO
-* Node.s Bots at Scale *with* Matteo Collina, Architect at nearForm
-* Node.js Development for the Next Generation of IoT *with* Melissa Evers-Hood, Software Product Line Manager at Intel Corporation
-* Node.js While Crafting: Make Textile to Compute! *with* Mariko Kosaka, JavaScript Engineer at Scripto
+- Contributing to Node Core _with_ Jeremiah Senkpiel, Node Core Contributor at NodeSource
+- Hands on Hardware Workshop _with_ Tessel with Kelsey Breseman, Engineering Project Manager at 3D Robotics and Steering Committee Member and Board Co-Creator of Tessel Project
+- Internet of Cats _with_ Rachel White, Front-End Engineer for IBM Watson
+- IoT && Node.js && You _with_ Emily Rose, Senior Software Engineer at Particle IO
+- Node.s Bots at Scale _with_ Matteo Collina, Architect at nearForm
+- Node.js Development for the Next Generation of IoT _with_ Melissa Evers-Hood, Software Product Line Manager at Intel Corporation
+- Node.js While Crafting: Make Textile to Compute! _with_ Mariko Kosaka, JavaScript Engineer at Scripto
 
 “Node.js has become pervasive within the last few years, with so many community accomplishments to highlight, including forming the new Node.js Foundation and the convergence of io.js and Node.js,” said Mikeal Rogers, Community Manager, Node.js Foundation. “We created this conference to help showcase this growth, to accommodate the Node.js community’s many different needs, and to help accelerate adoption as it expands into enterprises.”
 

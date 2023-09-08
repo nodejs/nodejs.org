@@ -117,11 +117,11 @@ d.run(() => net.createServer((c) => {
 const domain = require('domain');
 const net = require('net');
 const d = domain.create();
-d.on('error', (err) => console.error(err.message));
+d.on('error', err => console.error(err.message));
 
 d.run(() =>
   net
-    .createServer((c) => {
+    .createServer(c => {
       c.end();
       c.write('bye');
     })
@@ -179,7 +179,7 @@ d.on('error', () => console.error('d intercepted an error'));
 
 d.run(() => {
   const server = net
-    .createServer((c) => {
+    .createServer(c => {
       const e = domain.create(); // 'error' 핸들러가 설정되지 않았습니다.
       e.run(() => {
         // 이 오류는 d의 오류 핸들러가 잡지 못합니다.
@@ -258,7 +258,7 @@ d1.run(() => setTimeout(() => {
 ```js
 const d1 = domain.create();
 d1.foo = true; // 콘솔에서 더 가시적으로 만드는 커스텀 멤버
-d1.on('error', (er) => {
+d1.on('error', er => {
   /* 오류 처리 */
 });
 
@@ -266,7 +266,7 @@ d1.run(() =>
   setTimeout(() => {
     const d2 = domain.create();
     d2.bar = 43;
-    d2.on('error', (er) => console.error(er.message, domain._stack));
+    d2.on('error', er => console.error(er.message, domain._stack));
     d2.run(() => {
       setTimeout(() => {
         setTimeout(() => {
@@ -306,7 +306,7 @@ handle. More on this in _Resource Cleanup on Exception_.
 사실을 전달하는 문제가 여전히 남아있고 이 분기의 추가작업은 중단되어야 합니다. http 요청 핸들러
 예제에서 다수의 비동기 요청을 보내고 각 요청에서 `write()`의 데이터를 다시 클라이언트에 보내면
 닫힌 핸들에 `write()`를 시도하면서 더 많은 오류가 발생합니다.
-이것에 대한 자세한 내용은 _예외발생시 자원 정리_를 참고하세요.
+이것에 대한 자세한 내용은 *예외발생시 자원 정리*를 참고하세요.
 
 <!--
 ### Resource Cleanup on Exception
@@ -518,14 +518,14 @@ ConnectionResource.prototype.write = function write(chunk) {
 
 // 예제 시작
 net
-  .createServer((c) => {
+  .createServer(c => {
     const cr = new ConnectionResource(c);
 
     const d1 = domain.create();
     fs.open(
       FILENAME,
       'r',
-      d1.intercept((fd) => {
+      d1.intercept(fd => {
         streamInParts(fd, cr, 0);
       })
     );
@@ -539,7 +539,7 @@ net
 function streamInParts(fd, cr, pos) {
   const d2 = domain.create();
   const alive = true;
-  d2.on('error', (er) => {
+  d2.on('error', er => {
     print('d2 error:', er.message);
     cr.end();
   });
@@ -577,19 +577,19 @@ function pipeData(cr) {
   const ps = net.createServer();
   const d3 = domain.create();
   const connectionList = [];
-  d3.on('error', (er) => {
+  d3.on('error', er => {
     print('d3 error:', er.message);
     cr.end();
   });
   d3.add(ps);
-  ps.on('connection', (conn) => {
+  ps.on('connection', conn => {
     connectionList.push(conn);
     conn.on('data', () => {}); // 들어오는 데이터는 무시합니다.
     conn.on('close', () => {
       connectionList.splice(connectionList.indexOf(conn), 1);
     });
   });
-  cr.on('data', (chunk) => {
+  cr.on('data', chunk => {
     for (let i = 0; i < connectionList.length; i++) {
       connectionList[i].write(chunk);
     }
@@ -637,12 +637,12 @@ application despite an unexpected exception. This example demonstrates the
 fallacy behind that idea.
 -->
 
-* 새로운 연결이 이뤄지면 동시에
-  * 파일시스템에서 파일을 엽니다.
-  * 유일한 소켓과 파이프를 연결합니다.
-* 파일의 청크를 비동기로 읽습니다.
-* TCP 연결과 리스닝 중인 모든 소켓에 청크를 작성합니다.
-* 이러한 자원에서 오류가 발생하면 정리하고 종료해야 하는 모든 연결된 자원에 알립니다.
+- 새로운 연결이 이뤄지면 동시에
+  - 파일시스템에서 파일을 엽니다.
+  - 유일한 소켓과 파이프를 연결합니다.
+- 파일의 청크를 비동기로 읽습니다.
+- TCP 연결과 리스닝 중인 모든 소켓에 청크를 작성합니다.
+- 이러한 자원에서 오류가 발생하면 정리하고 종료해야 하는 모든 연결된 자원에 알립니다.
 
 이 예제에서 알 수 있듯이 도메인 API로 엄격하게 수행할 수 있는 것보다 실패했을 때 자원을 적절하게
 정리하려면 더 많은 작업을 해야 합니다. 도메인이 제공하는 모든 것은 예외를 수집하는 메커니즘입니다.
@@ -752,7 +752,7 @@ const domain = require('domain');
 const net = require('net');
 
 const server = net
-  .createServer((c) => {
+  .createServer(c => {
     // 모든 곳에서 인자를 전달할 수 없으므로
     // 연결 내에서 이벤트 간에 데이터를 전파하려고 도메인을 사용합니다.
     const d = domain.create();
@@ -760,7 +760,7 @@ const server = net
     d.add(c);
     // 데모용으로 쓸모없는 비동기 데이터 변환을 하는 Mock 클래스
     const ds = new DataStream(dataTransformed);
-    c.on('data', (chunk) => ds.data(chunk));
+    c.on('data', chunk => ds.data(chunk));
   })
   .listen(8080, () => console.log('listening on 8080'));
 

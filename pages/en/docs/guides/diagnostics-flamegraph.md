@@ -34,9 +34,9 @@ Now let's get to work.
 2. try running `perf` - it might complain about missing kernel modules, install them too
 3. run node with perf enabled (see [perf output issues](#perf-output-issues) for tips specific to Node.js versions)
 
-    ```bash
-    perf record -e cycles:u -g -- node --perf-basic-prof app.js
-    ```
+   ```bash
+   perf record -e cycles:u -g -- node --perf-basic-prof app.js
+   ```
 
 4. disregard warnings unless they're saying you can't run perf due to missing packages; you may get some warnings about not being able to access kernel module samples which you're not after anyway.
 5. Run `perf script > perfs.out` to generate the data file you'll visualize in a moment. It's useful to [apply some cleanup](#filtering-out-node-js-internal-functions) for a more readable graph
@@ -100,8 +100,8 @@ You'll notice `ByteCodeHandler:` where you'd expect function names.
 
 For details see:
 
-* https://github.com/nodejs/benchmarking/issues/168
-* https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
+- https://github.com/nodejs/benchmarking/issues/168
+- https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
 
 ### Node.js 10+
 

@@ -40,9 +40,9 @@ However, in the first election two representatives will be elected; the represen
 
 ## When is the election?
 
-* Nominations are being solicited until January 15th.
-* A ballot will be distributed on January 20th.
-* The election will be completed by January 30th.
+- Nominations are being solicited until January 15th.
+- A ballot will be distributed on January 20th.
+- The election will be completed by January 30th.
 
 ## How do I run in the 2016 election?
 

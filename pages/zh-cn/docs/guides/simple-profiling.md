@@ -63,7 +63,7 @@ app.get('/auth', (req, res) => {
 });
 ```
 
-*请注意，这些不是推荐的处理程序用于对 Node.js 中的用户进行身份验证；它们纯粹用于说明目的。您不应该尝试设计您自己的加密身份验证机制。使用现有的、经过验证的身份验证解决方案要好得多。*
+_请注意，这些不是推荐的处理程序用于对 Node.js 中的用户进行身份验证；它们纯粹用于说明目的。您不应该尝试设计您自己的加密身份验证机制。使用现有的、经过验证的身份验证解决方案要好得多。_
 
 现在假设我们已经部署了我们的应用程序，并且用户抱怨请求的延迟很大。我们可以轻松地运行应用程序与内置的探查器：
 
@@ -156,7 +156,7 @@ node --prof-process isolate-0xnnnnnnnnnnnn-v8.log > processed.txt
    3161  100.0%      LazyCompile: *exports.pbkdf2Sync crypto.js:552:30
 ```
 
-分析此节需要的工作量比上面的原始刻度计数多一点。 在上面的每个“调用栈”中，父列中的百分比将告诉您在当前行中函数调用了上面行中的函数所占的样本百分比。例如，在中间“呼叫堆栈”以上为 _sha1_block_data_order，我们看到 `_sha1_block_data_order` 发生在 11.9% 样品，我们知道从上面的原始计数。然而，在这里我们也可以说，它总是由 Node.js 内部的 pbkdf2 函数调用加密模块。我们看到，同样 `_malloc_zone_malloc` 被称为几乎完全相同的 pbkdf2 功能。因此，使用中的信息这种观点，我们可以说，我们从用户的密码帐户计算的哈希不仅为上面所述的 51.8%，但也是前 3 的 CPU 时间采样函数，因为调用 `_sha1_block_data_order` 和`_malloc_zone_malloc` 是代表 pbkdf2 的功能而制作的。
+分析此节需要的工作量比上面的原始刻度计数多一点。 在上面的每个“调用栈”中，父列中的百分比将告诉您在当前行中函数调用了上面行中的函数所占的样本百分比。例如，在中间“呼叫堆栈”以上为 \_sha1_block_data_order，我们看到 `_sha1_block_data_order` 发生在 11.9% 样品，我们知道从上面的原始计数。然而，在这里我们也可以说，它总是由 Node.js 内部的 pbkdf2 函数调用加密模块。我们看到，同样 `_malloc_zone_malloc` 被称为几乎完全相同的 pbkdf2 功能。因此，使用中的信息这种观点，我们可以说，我们从用户的密码帐户计算的哈希不仅为上面所述的 51.8%，但也是前 3 的 CPU 时间采样函数，因为调用 `_sha1_block_data_order` 和`_malloc_zone_malloc` 是代表 pbkdf2 的功能而制作的。
 
 在这一点上，很明显：基于密码的哈希生成应该是我们优化的目标。谢天谢地，您已经完全了解了[异步编程的好处][]，并且您认识到从用户密码生成哈希的工作正在以同步方式进行，从而绑定了事件循环。这将阻止我们在计算哈希时处理其它传入请求。
 
@@ -173,13 +173,20 @@ app.get('/auth', (req, res) => {
     return res.sendStatus(400);
   }
 
-  crypto.pbkdf2(password, users[username].salt, 10000, 512, 'sha512', (err, hash) => {
-    if (users[username].hash.toString() === hash.toString()) {
-      res.sendStatus(200);
-    } else {
-      res.sendStatus(401);
+  crypto.pbkdf2(
+    password,
+    users[username].salt,
+    10000,
+    512,
+    'sha512',
+    (err, hash) => {
+      if (users[username].hash.toString() === hash.toString()) {
+        res.sendStatus(200);
+      } else {
+        res.sendStatus(401);
+      }
     }
-  });
+  );
 });
 ```
 

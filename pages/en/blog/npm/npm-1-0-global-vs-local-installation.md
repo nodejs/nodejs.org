@@ -1,5 +1,5 @@
 ---
-title: "npm 1.0: Global vs Local installation"
+title: 'npm 1.0: Global vs Local installation'
 author: Isaac Schlueter
 date: 2011-03-24T06:07:13.000Z
 status: publish

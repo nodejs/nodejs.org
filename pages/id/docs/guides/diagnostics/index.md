@@ -11,8 +11,8 @@ Proyek dokumentasi ini diorganisir berdasarkan perjalanan pengguna. Perjalanan t
 
 Berikut ini adalah kumpulan panduan diagnostik yang tersedia:
 
-* [Memori](/en/docs/guides/diagnostics/memory)
-* [Debug Langsung](/en/docs/guides/diagnostics/live-debugging)
-* [Kinerja Buruk](/en/docs/guides/diagnostics/poor-performance)
+- [Memori](/en/docs/guides/diagnostics/memory)
+- [Debug Langsung](/en/docs/guides/diagnostics/live-debugging)
+- [Kinerja Buruk](/en/docs/guides/diagnostics/poor-performance)
 
 [Kelompok Kerja Diagnostik]: https://github.com/nodejs/diagnostics

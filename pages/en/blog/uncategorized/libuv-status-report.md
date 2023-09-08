@@ -16,22 +16,22 @@ We attempt to not reinvent the wheel where possible. The entire Unix backend sit
 
 The current implemented features are:
 
-* Non-blocking TCP sockets (using IOCP on Windows)
-* Non-blocking named pipes
-* UDP
-* Timers
-* Child process spawning
-* Asynchronous DNS via [c-ares](http://c-ares.haxx.se/) or `uv_getaddrinfo`.
-* Asynchronous file system APIs `uv_fs_*`
-* High resolution time `uv_hrtime`
-* Current executable path look up `uv_exepath`
-* Thread pool scheduling `uv_queue_work`
+- Non-blocking TCP sockets (using IOCP on Windows)
+- Non-blocking named pipes
+- UDP
+- Timers
+- Child process spawning
+- Asynchronous DNS via [c-ares](http://c-ares.haxx.se/) or `uv_getaddrinfo`.
+- Asynchronous file system APIs `uv_fs_*`
+- High resolution time `uv_hrtime`
+- Current executable path look up `uv_exepath`
+- Thread pool scheduling `uv_queue_work`
 
 The features we are working on still are
 
-* File system events (Currently supports inotify, `ReadDirectoryChangesW` and will support kqueue and event ports in the near future.) `uv_fs_event_t`
-* VT100 TTY `uv_tty_t`
-* Socket sharing between processes `uv_ipc_t` ([planned API](https://gist.github.com/1233593))
+- File system events (Currently supports inotify, `ReadDirectoryChangesW` and will support kqueue and event ports in the near future.) `uv_fs_event_t`
+- VT100 TTY `uv_tty_t`
+- Socket sharing between processes `uv_ipc_t` ([planned API](https://gist.github.com/1233593))
 
 For complete documentation see the header file: [include/uv.h](https://github.com/libuv/libuv/blob/03d0c57ea216abd611286ff1e58d4e344a459f76/include/uv.h). There are a number of tests in [the test directory](https://github.com/libuv/libuv/tree/3ca382be741ec6ce6a001f0db04d6375af8cd642/test) which demonstrate the API.
 
@@ -39,10 +39,10 @@ For complete documentation see the header file: [include/uv.h](https://github.co
 
 In addition to Node v0.5, a number of projects have begun to use `libuv`:
 
-* Mozilla's [Rust](https://github.com/graydon/rust)
-* Tim Caswell's [LuaNode](https://github.com/creationix/luanode)
-* Ben Noordhuis and Bert Belder's [Phode](https://github.com/bnoordhuis/phode) async PHP project
-* Kerry Snyder's [libuv-csharp](https://github.com/kersny/libuv-csharp)
-* Andrea Lattuada's [web server](https://gist.github.com/1195428)
+- Mozilla's [Rust](https://github.com/graydon/rust)
+- Tim Caswell's [LuaNode](https://github.com/creationix/luanode)
+- Ben Noordhuis and Bert Belder's [Phode](https://github.com/bnoordhuis/phode) async PHP project
+- Kerry Snyder's [libuv-csharp](https://github.com/kersny/libuv-csharp)
+- Andrea Lattuada's [web server](https://gist.github.com/1195428)
 
 We hope to see more people contributing and using `libuv` in the future!

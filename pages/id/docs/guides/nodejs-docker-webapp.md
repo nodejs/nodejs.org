@@ -5,7 +5,7 @@ layout: docs.hbs
 
 # Meng-docker aplikasi web Node.js
 
-Tujuan dari contoh ini adalah untuk menunjukkan kepada Anda cara memasukkan aplikasi Node.js ke dalam Docker Container. Panduan ini ditujukan untuk pengembangan, dan *bukan* untuk penerapan produksi. Panduan ini juga mengasumsikan Anda memiliki Panduan ini juga mengasumsikan Anda memiliki [Instalasi Docker](https://docs.docker.com/engine/installation/) yang berfungsi dan dasar pemahaman tentang bagaimana aplikasi Node.js terstruktur.
+Tujuan dari contoh ini adalah untuk menunjukkan kepada Anda cara memasukkan aplikasi Node.js ke dalam Docker Container. Panduan ini ditujukan untuk pengembangan, dan _bukan_ untuk penerapan produksi. Panduan ini juga mengasumsikan Anda memiliki Panduan ini juga mengasumsikan Anda memiliki [Instalasi Docker](https://docs.docker.com/engine/installation/) yang berfungsi dan dasar pemahaman tentang bagaimana aplikasi Node.js terstruktur.
 
 Di bagian pertama panduan ini kita akan membuat aplikasi web sederhana di Node.js, lalu kita akan membangun image Docker untuk aplikasi itu, dan terakhir kita akan membuat instance container dari image itu.
 
@@ -79,7 +79,7 @@ Selanjutnya kita membuat direktori untuk menyimpan kode aplikasi di dalam image,
 WORKDIR /usr/src/app
 ```
 
-Image ini dilengkapi dengan Node.js dan NPM yang sudah terpasang, jadi hal berikutnya yang kami lakukan yang perlu dilakukan adalah menginstal dependensi aplikasi Anda menggunakan biner `npm`. Silahkan perhatikan bahwa jika Anda menggunakan `npm` versi 4 atau sebelumnya, `package-lock.json` file *tidak* akan dihasilkan.
+Image ini dilengkapi dengan Node.js dan NPM yang sudah terpasang, jadi hal berikutnya yang kami lakukan yang perlu dilakukan adalah menginstal dependensi aplikasi Anda menggunakan biner `npm`. Silahkan perhatikan bahwa jika Anda menggunakan `npm` versi 4 atau sebelumnya, `package-lock.json` file _tidak_ akan dihasilkan.
 
 ```docker
 # Menginstal dependensi aplikasi
@@ -244,8 +244,8 @@ Kami harap tutorial ini membantu Anda membuat dan menjalankan aplikasi Node.js s
 
 Anda dapat menemukan informasi lebih lanjut tentang Docker dan Node.js di Docker di tempat-tempat berikut:
 
-* [Docker image Node.js Resmi](https://hub.docker.com/_/node/)
-* [Panduan Praktik Terbaik Docker Node.js](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
-* [Dokumentasi Docker Resmi](https://docs.docker.com/get-started/nodejs/build-images/)
-* [Tag Docker di Stack Overflow](https://stackoverflow.com/questions/tagged/docker)
-* [Subreddit Docker](https://reddit.com/r/docker)
+- [Docker image Node.js Resmi](https://hub.docker.com/_/node/)
+- [Panduan Praktik Terbaik Docker Node.js](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
+- [Dokumentasi Docker Resmi](https://docs.docker.com/get-started/nodejs/build-images/)
+- [Tag Docker di Stack Overflow](https://stackoverflow.com/questions/tagged/docker)
+- [Subreddit Docker](https://reddit.com/r/docker)
