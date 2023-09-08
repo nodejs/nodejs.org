@@ -156,7 +156,7 @@ We also recommend getting familiar with technologies such as [Next.js][], [MDX][
     - index.module.scss // all styles of the component are placed there
     - index.stories.tsx // component Storybook stories
     - __tests__ // component tests (such as unit tests, etc)
-      - index.test.tsx
+      - index.test.mjs // unit tests should be done in ESM and not TypeScript
   ```
 - React Hooks belonging to a single Component should be placed within the Component's folder
   - If the Hook as a wider usability or can be used by other components, it should be placed in the root `hooks` folder.
