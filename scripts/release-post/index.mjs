@@ -116,11 +116,18 @@ const fetchChangelog = version => {
 const fetchChangelogBody = version => {
   return fetchChangelog(version).then(section => {
     const rxSectionBody = /(### Notable [\s\S]*)/;
+    const rxFallbackSectionBody = /(### Commit[\s\S]*)/;
 
     // Make sure that all the console has been replaced
     // by "```shell-session" for metalsmith-prism's check to pass
     const rxSectionConsole = /```console/gim;
-    const matches = rxSectionBody.exec(section);
+    let matches = rxSectionBody.exec(section);
+
+    // In case there's not a notable changes section for that release, nothing
+    // will have matched so we fallback to reading the commits section instead
+    if (!matches) {
+      matches = rxFallbackSectionBody.exec(section);
+    }
 
     return matches
       ? matches[1].trim().replace(rxSectionConsole, '```shell-session')
