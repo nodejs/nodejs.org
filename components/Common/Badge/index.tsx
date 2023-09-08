@@ -8,7 +8,6 @@ import classNames from 'classnames';
 type BadgeProps = {
   kind?: component;
   badgeText?: string;
-  children?: string;
 } & ComponentProps<typeof Link>;
 
 const Badge: FC<PropsWithChildren<BadgeProps>> = ({
