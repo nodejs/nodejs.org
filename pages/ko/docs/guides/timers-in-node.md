@@ -62,7 +62,7 @@ setTimeout(myFunc, 1500, 'funky');
 ```
 -->
 
-### "지정한 시기에" 실행 ~ *`setTimeout()`*
+### "지정한 시기에" 실행 ~ _`setTimeout()`_
 
 `setTimeout()`은 지정한 밀리 초 이후 코드 실행을 스케줄링하는 데 사용할 수 있습니다. 이 함수는
 브라우저 JavaScript API의
@@ -99,9 +99,9 @@ see `clearTimeout()` below) as well as change the execution behavior (see
 위 함수 `myFunc()`는 `setTimeout()` 호출로 인해 약 1500밀리 초(1.5초) 정도에
 실행될 것입니다.
 
-설정한 타임아웃 간격은 *정확한* 밀리 초 후 실행되도록 할 수 없습니다. 이벤트 루프를 블로킹하거나
+설정한 타임아웃 간격은 _정확한_ 밀리 초 후 실행되도록 할 수 없습니다. 이벤트 루프를 블로킹하거나
 보유하고 있는 다른 실행 코드가 타임아웃의 실행을 다시 뒤로 밀기 때문입니다. 선언된 타임아웃 간격보다
-*더 빨리* 실행되지는 않는다는 *것만* 보장합니다.
+_더 빨리_ 실행되지는 않는다는 _것만_ 보장합니다.
 
 `setTimeout()`은 설정한 타임아웃을 참조하는 `Timeout` 객체를 반환합니다. 여기서 반환된 객체로
 실행 동작을 변경할 수도 있고(아래 `unref()`를 보세요.) 타임아웃을
@@ -132,7 +132,7 @@ console.log('after immediate');
 ```
 -->
 
-### "바로 다음에" 실행 ~ *`setImmediate()`*
+### "바로 다음에" 실행 ~ _`setImmediate()`_
 
 `setImmediate()`는 현재 이벤트 루프 주기 끝에 코드를 실행합니다. 이 코드는 현재 이벤트 루프의
 모든 I/O 작업 후 다음 이벤트 루프에 스케줄링 된 모든 타이머 이전에 실행됩니다. 이 코드 실행은
@@ -145,7 +145,7 @@ console.log('after immediate');
 ```js
 console.log('before immediate');
 
-setImmediate((arg) => {
+setImmediate(arg => {
   console.log(`executing immediate: ${arg}`);
 }, 'so immediate');
 
@@ -187,7 +187,7 @@ executing immediate: so immediate
 
 Note: `setImmediate()`를 `process.nextTick()`와 혼동하지 마세요. 서로 다른 몇 가지 점이
 있습니다. 첫째로 `process.nextTick()`은 모든 스케줄링된 I/O 이전뿐만 아니라 설정한 모든
-`Immediate` *이전에* 실행될 것입니다. 두 번째로 `process.nextTick()`은 취소할 수 없으므로
+`Immediate` _이전에_ 실행될 것입니다. 두 번째로 `process.nextTick()`은 취소할 수 없으므로
 일단 `process.nextTick()`으로 코드를 실행하도록 스케줄링하면 일반 함수처럼 실행을 멈출 수 없습니다.
 `process.nextTick()`의 동작을 더 이해하려면
 [이 가이드 문서](/en/docs/guides/event-loop-timers-and-nexttick/#process-nexttick)를
@@ -219,7 +219,7 @@ Just like `setTimeout()`, `setInterval()` also returns a `Timeout` object which
 can be used to reference and modify the interval that was set.
 -->
 
-### "무한루프" 실행 ~ *`setInterval()`*
+### "무한루프" 실행 ~ _`setInterval()`_
 
 여러 번 실행해야 하는 코드 블록이 있다면 `setInterval()`을 사용할 수 있습니다.
 `setInterval()`은 두 번째 인자로 지정한 밀리 초 단위의 지연시간으로 무한대로 실행할 함수를
@@ -336,11 +336,11 @@ setImmediate(() => {
 여기서 `Timeout` 객체는 `setTimeout`과 `setInterval`이 반환했다는 점을 기억하길 바랍니다.
 `Timeout` 객체는 `Timeout`의 동작을 강화하는 두 가지 함수 `unref()`와 `ref()`를 제공합니다.
 `set` 함수로 스케줄링 된 `Timeout` 객체가 있다면 이 객체에서 `unref()`를 호출할 수 있습니다.
-이는 동작을 다소 변경하는데 *실행할 코드가 이것밖에 남지 않았다면* `Timeout` 객체를 호출하지 않습니다.
+이는 동작을 다소 변경하는데 _실행할 코드가 이것밖에 남지 않았다면_ `Timeout` 객체를 호출하지 않습니다.
 `Timeout` 객체는 프로세스를 유지하지 않고 실행을 기다립니다.
 
 비슷하게 `unref()`가 호출된 `Timeout` 객체에서 `ref()`를 호출하면 이 동작을 제거해서
-실행을 보장할 수 있습니다. 하지만 성능 문제로 초기 동작을 *완전히 똑같이* 복구하는 것은 아닙니다.
+실행을 보장할 수 있습니다. 하지만 성능 문제로 초기 동작을 _완전히 똑같이_ 복구하는 것은 아닙니다.
 아래의 예제를 보겠습니다.
 
 ```js

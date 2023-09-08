@@ -11,6 +11,7 @@ layout: docs.hbs
 Flame graphs are a way of visualizing CPU time spent in functions. They can help you pin down where you spend too much time doing synchronous operations.
 
 -->
+
 # フレームのグラフ
 
 ## フレームグラフは何に役立ちますか？
@@ -26,6 +27,7 @@ Solaris vms are no longer needed for flame graphs!
 Flame graphs are generated from `perf` output, which is not a node-specific tool. While it's the most powerful way to visualize CPU time spent, it may have issues with how JavaScript code is optimized in Node.js 8 and above. See [perf output issues](#perf-output-issues) section below.
 
 -->
+
 ## フレームグラフの作り方
 
 Node.js のフレームグラフを作成するのは難しいと聞いたことがあるかもしれませんが、(もはや) そうではありません。
@@ -41,6 +43,7 @@ If you want a single step that produces a flame graph locally, try [0x](https://
 For diagnosing production deployments, read these notes: [0x production servers](https://github.com/davidmarkclements/0x/blob/master/docs/production-servers.md)
 
 -->
+
 ### あらかじめパッケージ化されたツールを使う
 
 部分的にフレームグラフを作成する単一のステップが必要な場合は、[0x](https://www.npmjs.com/package/0x) を試してください。
@@ -57,6 +60,7 @@ If you want to understand each step better take a look at the sections that foll
 Now let's get to work.
 
 -->
+
 ### システムパフォーマンスツールでフレームグラフを作成する
 
 このガイドの目的は、フレームグラフの作成に関連する手順を示し、各手順を管理し続けることです。
@@ -83,9 +87,9 @@ perf record -e cycles:u -g -- node --perf-basic-prof app.js
 2. `perf` を実行してみてください - カーネルモジュールが足りないと表示されるかもしれません、それらもインストールしてください
 3. perf を有効にして node を実行します (Node.js のバージョンに固有のヒントについては [perf の出力の問題](#perf-output-issues) を参照してください)
 
-    ```bash
-    perf record -e cycles:u -g -- node --perf-basic-prof app.js
-    ```
+   ```bash
+   perf record -e cycles:u -g -- node --perf-basic-prof app.js
+   ```
 
 4. パッケージが足りないために perf を実行できないと表示されていない限り、警告を無視してください。カーネルモジュールのサンプルにアクセスできないという警告が表示されることがあります
 5. `perf script > perfs.out` を実行して、すぐに視覚化できるデータファイルを生成します。読みやすいグラフに[クリーンアップを適用する](#filtering-out-node-internal-functions)と便利です
@@ -98,6 +102,7 @@ Now open the flame graph file in your favorite browser and watch it burn. It's c
 Worth mentioning - if you click an element of a flame graph a zoom-in of its surroundings will get displayed above the graph.
 
 -->
+
 お気に入りのブラウザでフレームグラフファイルを開いて、それが出力されるのを見てください。色分けされているので、最初に最も彩度の高いオレンジ色のバーに集中できます。それらは CPU を多用する機能を表している可能性があります。
 
 言及する価値のあること - フレームグラフの要素をクリックするならば、その周囲のズームインはグラフの上に表示されるでしょう。
@@ -120,6 +125,7 @@ Why is `-F` (profiling frequency) set to 99? It's a reasonable default. You can 
 After you get that 3 second perf record, proceed with generating the flame graph with the last two steps from above.
 
 -->
+
 ### `perf`を使って実行中のプロセスをサンプリングする
 
 これは、中断したくない、既に実行中のプロセスからフレームグラフデータを記録するのに最適です。再現が困難な問題を伴う製造プロセスを想像してください。
@@ -149,6 +155,7 @@ sed -i -r \
 If you read your flame graph and it seems odd, as if something is missing in the key function taking up most time, try generating your flame graph without the filters - maybe you got a rare case of an issue with Node.js itself.
 
 -->
+
 ### Node.js の内部関数を除外する
 
 通常、自身の呼び出しのパフォーマンスを見たいだけなので、Node.js と V8 の内部関数を除外することでグラフをもっと読みやすくすることができます。次のようにして perf ファイルをクリーンアップできます。
@@ -170,6 +177,7 @@ sed -i -r \
 `--perf-basic-prof-only-functions` produces less output, so it's the option with least overhead.
 
 -->
+
 ### Node.js のプロファイリングオプション
 
 `--perf-basic-prof-only-functions` と `--perf-basic-prof` は JavaScript コードをデバッグするのに便利です。Node.js 自体をプロファイリングするために他のオプションが使用されますが、これはこのガイドの範囲外です。
@@ -182,6 +190,7 @@ sed -i -r \
 Well, without these options you'll still get a flame graph, but with most bars labeled `v8::Function::Call`.
 
 -->
+
 ### どうしてそれらを全く必要としないのですか？
 
 ええ、これらのオプションがなくてもフレームグラフが得られますが、ほとんどのバーには `v8::Function::Call` というラベルが付いています。
@@ -204,6 +213,7 @@ For details see:
 * https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
 
 -->
+
 ## `perf`出力の問題
 
 ### Node.js 8.x V8 パイプラインの変更
@@ -218,8 +228,8 @@ Node.js 8.x 以降には、V8 エンジンの JavaScript コンパイルパイ�
 
 詳細:
 
-* https://github.com/nodejs/benchmarking/issues/168
-* https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
+- https://github.com/nodejs/benchmarking/issues/168
+- https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
 
 <!--
 ### Node.js 10+
@@ -229,6 +239,7 @@ Node.js 10.x addresses the issue with Turbofan using the `--interpreted-frames-n
 Run `node --interpreted-frames-native-stack --perf-basic-prof-only-functions` to get function names in the flame graph regardless of which pipeline V8 used to compile your JavaScript.
 
 -->
+
 ### Node.js 10 以降
 
 Node.js 10.x は Turbofan の問題に `--interpreted-frames-native-stack` フラグを使って対処します。
@@ -245,6 +256,7 @@ node`_ZN2v88internal11interpreter17BytecodeGenerator15VisitStatementsEPNS0_8Zone
 it means the Linux perf you're using was not compiled with demangle support, see https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1396654 for example
 
 -->
+
 ### フレームグラフのラベルが壊れている
 
 このようなラベルが表示されている場合
@@ -261,6 +273,7 @@ node`_ZN2v88internal11interpreter17BytecodeGenerator15VisitStatementsEPNS0_8Zone
 Practice capturing flame graphs yourself with [a flame graph exercise](https://github.com/naugtur/node-example-flamegraph)!
 
 -->
+
 ## 例
 
 [フレームグラフ演習](https://github.com/naugtur/node-example-flamegraph)を使用してフレームグラフを自分でキャプチャする練習をしてください!

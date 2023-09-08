@@ -7,14 +7,14 @@ layout: docs.hbs
 
 In this document you can learn about how to debug memory related issues.
 
-* [Memory](#memory)
-  * [My process runs out of memory](#my-process-runs-out-of-memory)
-    * [Symptoms](#symptoms)
-    * [Side Effects](#side-effects)
-  * [My process utilizes memory inefficiently](#my-process-utilizes-memory-inefficiently)
-    * [Symptoms](#symptoms-1)
-    * [Side Effects](#side-effects-1)
-  * [Debugging](#debugging)
+- [Memory](#memory)
+  - [My process runs out of memory](#my-process-runs-out-of-memory)
+    - [Symptoms](#symptoms)
+    - [Side Effects](#side-effects)
+  - [My process utilizes memory inefficiently](#my-process-utilizes-memory-inefficiently)
+    - [Symptoms](#symptoms-1)
+    - [Side Effects](#side-effects-1)
+  - [Debugging](#debugging)
 
 ## My process runs out of memory
 
@@ -32,12 +32,12 @@ restarts cause some requests to fail _(load balancer responds with 502)_.
 
 ### Side Effects
 
-* Process restarts due to the memory exhaustion and requests are dropped
+- Process restarts due to the memory exhaustion and requests are dropped
   on the floor
-* Increased GC activity leads to higher CPU usage and slower response time
-  * GC blocking the Event Loop causing slowness
-* Increased memory swapping slows down the process (GC activity)
-* May not have enough available memory to get a Heap Snapshot
+- Increased GC activity leads to higher CPU usage and slower response time
+  - GC blocking the Event Loop causing slowness
+- Increased memory swapping slows down the process (GC activity)
+- May not have enough available memory to get a Heap Snapshot
 
 ## My process utilizes memory inefficiently
 
@@ -48,8 +48,8 @@ garbage collector activity.
 
 ### Side Effects
 
-* An elevated number of page faults
-* Higher GC activity and CPU usage
+- An elevated number of page faults
+- Higher GC activity and CPU usage
 
 ## Debugging
 
@@ -58,6 +58,6 @@ type of objects take and what variables are preventing them from being garbage
 collected. It can also help to know the allocation pattern of our program over
 time.
 
-* [Using Heap Profiler](/en/docs/guides/diagnostics/memory/using-heap-profiler/)
-* [Using Heap Snapshot](/en/docs/guides/diagnostics/memory/using-heap-snapshot/)
-* [GC Traces](/en/docs/guides/diagnostics/memory/using-gc-traces)
+- [Using Heap Profiler](/en/docs/guides/diagnostics/memory/using-heap-profiler/)
+- [Using Heap Snapshot](/en/docs/guides/diagnostics/memory/using-heap-snapshot/)
+- [GC Traces](/en/docs/guides/diagnostics/memory/using-gc-traces)

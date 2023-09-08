@@ -124,7 +124,7 @@ exec 3>&-
 Here is a non-exhaustive list of memory profiling tools usable with the
 inspector protocol:
 
-* [OpenProfiling for Node.js][openprofiling]
+- [OpenProfiling for Node.js][openprofiling]
 
 ## How to find a memory leak with Heap Snapshots
 
@@ -141,11 +141,11 @@ Following steps should produce a clean diff between snapshots.
    anything else in between.
 5. Take another heap snapshot. The difference between the two should mostly
    contain what was leaking.
-6. Open Chromium/Chrome dev tools and go to *Memory* tab
+6. Open Chromium/Chrome dev tools and go to _Memory_ tab
 7. Load the older snapshot file first, and the newer one second.
    ![Load button in tools][load button image]
 8. Select the newer snapshot and switch mode in the dropdown at the top from
-   *Summary* to *Comparison*. ![Comparison dropdown][comparison image]
+   _Summary_ to _Comparison_. ![Comparison dropdown][comparison image]
 9. Look for large positive deltas and explore the references that caused
    them in the bottom panel.
 

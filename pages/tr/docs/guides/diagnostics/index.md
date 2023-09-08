@@ -11,8 +11,8 @@ Dokümantasyon projesi, kullanıcı deneyimi akışına göre yapılandırılmı
 
 Mevcut teşhis araçları için rehberler şunlardır:
 
-* [Bellek](/en/docs/guides/diagnostics/memory)
-* [Canlı Hata Ayıklama](/en/docs/guides/diagnostics/live-debugging)
-* [Düşük Performans](/en/docs/guides/diagnostics/poor-performance)
+- [Bellek](/en/docs/guides/diagnostics/memory)
+- [Canlı Hata Ayıklama](/en/docs/guides/diagnostics/live-debugging)
+- [Düşük Performans](/en/docs/guides/diagnostics/poor-performance)
 
 [Tanılama Çalışma Grubu]: https://github.com/nodejs/diagnostics

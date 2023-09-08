@@ -23,6 +23,7 @@ layout: docs.hbs
 активирован Inspector API.
 
 ---
+
 ## <!--security-implications-->Последствия для безопасности
 
 Так как дебаггер имеет полный доступ к среде выполнения Node.js, злоумышленник,
@@ -72,47 +73,48 @@ localhost или localhost6.
 
 ### [node-inspect](https://github.com/nodejs/node-inspect)
 
-* Отладчик CLI, поддерживаемый Фондом Node.js, который использует [Протокол Инспектора][].
-* Соответствующая версия собирается вместе с Node.js,
+- Отладчик CLI, поддерживаемый Фондом Node.js, который использует [Протокол Инспектора][].
+- Соответствующая версия собирается вместе с Node.js,
   можно использовать с помощью команды `node inspect myscript.js`.
-* Последняя версия также может быть установлена независимо (например, `npm install -g node-inspect`)
+- Последняя версия также может быть установлена независимо (например, `npm install -g node-inspect`)
   и использоваться через `node-inspect myscript.js`.
 
 ### [Инструменты разработчика Chrome](https://github.com/ChromeDevTools/devtools-frontend) 55+, [Microsoft Edge](https://www.microsoftedgeinsider.com)
 
-* **Вариант 1**: Откройте `chrome://inspect` в браузере на основе Chromium
+- **Вариант 1**: Откройте `chrome://inspect` в браузере на основе Chromium
   или `edge://inspect` в браузере Edge. Нажмите кнопку Configure и убедитесь,
   что нужные вам хост и порт перечислены в списке.
-* **Вариант 2**: Скопируйте значение `devtoolsFrontendUrl` из вывода `/json/list`
+- **Вариант 2**: Скопируйте значение `devtoolsFrontendUrl` из вывода `/json/list`
   (`curl http://localhost:9229/json/list`) или текст подсказки --inspect и откройте его в Chrome.
 
 ### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
 
-* На панели "Отладка" (Debug) щелкните значок настроек, чтобы открыть файл `.vscode/launch.json`.
+- На панели "Отладка" (Debug) щелкните значок настроек, чтобы открыть файл `.vscode/launch.json`.
   Выберите "Node.js" для первоначальной настройки.
 
 ### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017+
 
-* В меню выберите "Debug > Start Debugging" или нажмите `F5`.
-* [Детальные инструкции](https://github.com/Microsoft/nodejstools/wiki/Debugging).
+- В меню выберите "Debug > Start Debugging" или нажмите `F5`.
+- [Детальные инструкции](https://github.com/Microsoft/nodejstools/wiki/Debugging).
 
 ### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ и другие IDE JetBrains
 
-* Создайте новую конфигурацию отладки Node.js и нажмите кнопку "Debug" (`Shift+F9`). `--inspect` будет
+- Создайте новую конфигурацию отладки Node.js и нажмите кнопку "Debug" (`Shift+F9`). `--inspect` будет
   использоваться по умолчанию для Node.js 7+. Чтобы отключить, снимите флажок
   `js.debugger.node.use.inspect` в реестре IDE.
 
 ### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 
-* Библиотека для облегчения подключения к эндпоинтам Протокола Инспектора.
+- Библиотека для облегчения подключения к эндпоинтам Протокола Инспектора.
 
 ### [Gitpod](https://www.gitpod.io)
-* Запустите конфигурацию отладки Node.js из представления `Debug` или нажмите `F5`. [Детальные инструкции](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
+
+- Запустите конфигурацию отладки Node.js из представления `Debug` или нажмите `F5`. [Детальные инструкции](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
 
 ### [Eclipse IDE](https://eclipse.org/eclipseide) c расширением Eclipse Wild Web Developer
 
-* Открыв файл .js, выберите "Debug As... > Node program", или
-* Создайте конфигурацию отладки, чтобы присоединить отладчик к запущенному приложению Node (уже запущенному с `--inspect`).
+- Открыв файл .js, выберите "Debug As... > Node program", или
+- Создайте конфигурацию отладки, чтобы присоединить отладчик к запущенному приложению Node (уже запущенному с `--inspect`).
 
 ---
 

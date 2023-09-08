@@ -6,6 +6,7 @@ layout: docs.hbs
 # ABI Stability
 
 ## Introduction
+
 An Application Binary Interface (ABI) is a way for programs to call functions
 and use data structures from other compiled programs. It is the compiled version
 of an Application Programming Interface (API). In other words, the headers files
@@ -37,6 +38,7 @@ that, upon compilation, the ABI does not change in a way that will render
 existing users of the ABI incompatible with the new version.
 
 ## ABI Stability in Node.js
+
 Node.js provides header files maintained by several independent teams. For
 example, header files such as `node.h` and `node_buffer.h` are maintained by
 the Node.js team. `v8.h` is maintained by the V8 team, which, although in close
@@ -52,11 +54,12 @@ Node.js will load successfully when loaded by any Node.js minor or patch version
 within the major version against which it was compiled.
 
 ## N-API
+
 Demand has arisen for equipping Node.js with an API that results in an ABI that
 remains stable across multiple Node.js major versions. The motivation for
 creating such an API is as follows:
 
-* The JavaScript language has remained compatible with itself since its very
+- The JavaScript language has remained compatible with itself since its very
   early days, whereas the ABI of the engine executing the JavaScript code changes
   with every major version of Node.js. This means that applications consisting of
   Node.js packages written entirely in JavaScript need not be recompiled,
@@ -69,7 +72,7 @@ creating such an API is as follows:
   entirely in JavaScript has added to the maintenance burden of production
   systems which rely on native addons.
 
-* Other projects have started to produce JavaScript interfaces that are
+- Other projects have started to produce JavaScript interfaces that are
   essentially alternative implementations of Node.js. Since these projects are
   usually built on a different JavaScript engine than V8, their native addons
   necessarily take on a different structure and use a different API. Nevertheless,
@@ -77,7 +80,7 @@ creating such an API is as follows:
   Node.js JavaScript API would allow these projects to take advantage of the
   ecosystem of JavaScript packages that has accrued around Node.js.
 
-* Node.js may contain a different JavaScript engine in the future. This means
+- Node.js may contain a different JavaScript engine in the future. This means
   that, externally, all Node.js interfaces would remain the same, but the V8
   header file would be absent. Such a step would cause the disruption of the
   Node.js ecosystem in general, and that of the native addons in particular, if
@@ -90,7 +93,7 @@ headers [`node_api.h`][] and [`node_api_types.h`][], and provides a forward-
 compatibility guarantee that crosses the Node.js major version boundary. The
 guarantee can be stated as follows:
 
-**A given version *n* of N-API will be available in the major version of
+**A given version _n_ of N-API will be available in the major version of
 Node.js in which it was published, and in all subsequent versions of Node.js,
 including subsequent major versions.**
 
