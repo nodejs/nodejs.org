@@ -8,14 +8,14 @@ layout: blog-post.hbs
 author: The Node.js Project
 ---
 
-We're excited to announce the release of Node.js 20! Highlights include the new Node.js Permission Model,a synchronous `import.meta.resolve`, a stable test\_runner, updates of the V8 JavaScript engine to 11.3, Ada to 2.0,
+We're excited to announce the release of Node.js 20! Highlights include the new Node.js Permission Model,a synchronous `import.meta.resolve`, a stable test_runner, updates of the V8 JavaScript engine to 11.3, Ada to 2.0,
 and more!
 
 The project continues to make progress across a number of areas, with many new features and fixes flowing into existing LTS releases. For that reason, the changes outlined in the [changelog][CHANGELOG] for Node.js 20 only represent a small subset of the features and work since the last major release. This blog post will add some additional context on the larger body of work in relation to those changes.
 
-You can read more about our release policy at https://github.com/nodejs/release.
+You can read more about our release policy at <https://github.com/nodejs/release>.
 
-To download Node.js 20.0.0, visit: https://nodejs.org/en/download/current/. You can find the release post at https://nodejs.org/en/blog/release/v20.0.0, which contains the full list of commits included in this release.
+To download Node.js 20.0.0, visit: <https://nodejs.org/en/download/current/>. You can find the release post at <https://nodejs.org/en/blog/release/v20.0.0>, which contains the full list of commits included in this release.
 
 As a reminder, Node.js 20 will enter long-term support (LTS) in October, but until then, it will be the "Current" release for the next six months.
 We encourage you to explore the new features and benefits offered by this latest release and evaluate their potential impact on your applications.
@@ -28,16 +28,16 @@ The Node.js Permission Model is an experimental mechanism for restricting access
 
 In this first release containing the Permission Model, the features come with the following abilities:
 
-* Restrict access to the file system (read and write)
-    * Use [`--allow-fs-read`][] and [`--allow-fs-write`][]
-* Restrict access to `child_process`
-    * Use [`--allow-child-process`][]
-* Restrict access to `worker_threads`
-    * Use [`--allow-worker`][]
-* Restrict access to native addons (same as `--no-addons` flag)
+- Restrict access to the file system (read and write)
+  - Use [`--allow-fs-read`][] and [`--allow-fs-write`][]
+- Restrict access to `child_process`
+  - Use [`--allow-child-process`][]
+- Restrict access to `worker_threads`
+  - Use [`--allow-worker`][]
+- Restrict access to native addons (same as `--no-addons` flag)
 
 > The available permissions are documented by the [`--experimental-permission`][]
-flag.
+> flag.
 
 When starting Node.js with `--experimental-permission`, the ability to access the file system, spawn processes, and use `node:worker_threads` will be restricted.
 
@@ -76,7 +76,7 @@ The Permission Model was a contribution by Rafael Gonzaga in [#44004](https://gi
 
 ### Custom ESM loader hooks nearing stable
 
-Custom ES module lifecycle hooks supplied via loaders (`--experimental-loader=./foo.mjs`) now run in a dedicated thread, isolated from the main  thread. This provides a separate scope for loaders and ensures no cross-contamination between loaders and application code.
+Custom ES module lifecycle hooks supplied via loaders (`--experimental-loader=./foo.mjs`) now run in a dedicated thread, isolated from the main thread. This provides a separate scope for loaders and ensures no cross-contamination between loaders and application code.
 
 In alignment with browser behavior, `import.meta.resolve()` now returns synchronously; note that `resolve` hooks in user loaders can remain async if the loader author desires, and `import.meta.resolve` will still return synchronously in application code.
 
@@ -88,23 +88,23 @@ Contributed by Anna Henningsen, Antoine du Hamel, Geoffrey Booth, Guy Bedford, J
 
 As per usual a new version of the V8 engine is included in Node.js (updated to version 11.3, which is part of Chromium 113) bringing improved performance and new language features including:
 
-* [String.prototype.isWellFormed and toWellFormed](https://chromestatus.com/feature/5200195346759680)
-* [Methods that change Array and TypedArray by copy](https://chromestatus.com/feature/5068609911521280)
-* [Resizable ArrayBuffer and growable SharedArrayBuffer](https://chromestatus.com/feature/4668361878274048)
-* [RegExp v flag with set notation + properties of strings](https://chromestatus.com/feature/5144156542861312)
-* [WebAssembly Tail Call](https://chromestatus.com/feature/5423405012615168)
+- [String.prototype.isWellFormed and toWellFormed](https://chromestatus.com/feature/5200195346759680)
+- [Methods that change Array and TypedArray by copy](https://chromestatus.com/feature/5068609911521280)
+- [Resizable ArrayBuffer and growable SharedArrayBuffer](https://chromestatus.com/feature/4668361878274048)
+- [RegExp v flag with set notation + properties of strings](https://chromestatus.com/feature/5144156542861312)
+- [WebAssembly Tail Call](https://chromestatus.com/feature/5423405012615168)
 
 The V8 update was a contribution by Michaël Zasso in [#47251](https://github.com/nodejs/node/pull/47251).
 
 ### Stable Test Runner
 
-The recent update to Node.js, version 20, includes an important change to the test\_runner module. The module has been marked as stable after a recent update.
+The recent update to Node.js, version 20, includes an important change to the test_runner module. The module has been marked as stable after a recent update.
 The stable test runner includes the building blocks for authoring and running tests, including:
 
- * `describe`, `it`/`test` and hooks to structure test files
- * mocking
- * watch mode
- * `node --test` for running multiple test files in parallel
+- `describe`, `it`/`test` and hooks to structure test files
+- mocking
+- watch mode
+- `node --test` for running multiple test files in parallel
 
 The test runner also includes some parts that are not yet stable, including reporters and code coverage.
 
@@ -115,10 +115,10 @@ import { test, mock } from 'node:test';
 import assert from 'node:assert';
 import fs from 'node:fs';
 
-mock.method(fs, 'readFile', async () => "Hello World");
-test('synchronous passing test', async (t) => {
+mock.method(fs, 'readFile', async () => 'Hello World');
+test('synchronous passing test', async t => {
   // This test passes because it does not throw an exception.
-  assert.strictEqual(await fs.readFile('a.txt'), "Hello World");
+  assert.strictEqual(await fs.readFile('a.txt'), 'Hello World');
 });
 ```
 
@@ -126,7 +126,7 @@ Contributed by Colin Ihrig in [#46983](https://github.com/nodejs/node/pull/46983
 
 ### Performance
 
-With the newly formed Node.js Performance team, there has been a renewed focus on performance since the last Major release. Node.js 20 includes many improvements to the fundamental parts of the runtime including  `URL`, `fetch()`, and `EventTarget`.
+With the newly formed Node.js Performance team, there has been a renewed focus on performance since the last Major release. Node.js 20 includes many improvements to the fundamental parts of the runtime including `URL`, `fetch()`, and `EventTarget`.
 
 The cost of initializing `EventTarget` has been cut by half, providing faster access to all subsystems using it. Additionally, V8 Fast API calls have been leveraged to improve performance in APIs such as `URL.canParse()` and timers.
 
@@ -143,6 +143,7 @@ The project has been working on support for Single Executable Applications (SEA)
 Example:
 
 **sea-config.json**
+
 ```json
 {
   "main": "hello.js",
@@ -151,8 +152,9 @@ Example:
 ```
 
 This writes the blob to the `sea-prep.blob` file.
+
 ```sh
-$ node --experimental-sea-config sea-config.json
+node --experimental-sea-config sea-config.json
 ```
 
 This blob can now be injected into the binary.
@@ -188,7 +190,7 @@ Try out the new Node.js 20 release! We’re always happy to hear your feedback. 
 
 Also of note is that Node.js 14 will go End-of-Life in April 2023, so we advise you to start planning to upgrade to Node.js 18 (LTS) or Node.js 20 (soon to be LTS).
 
-Please, consider that Node.js 16 (LTS) will go End-of-Life in September 2023, which was brought forward from April 2024 to coincide with the end of support of OpenSSL 1.1.1. You can read more details about that decision at https://nodejs.org/en/blog/announcements/nodejs16-eol/.
+Please, consider that Node.js 16 (LTS) will go End-of-Life in September 2023, which was brought forward from April 2024 to coincide with the end of support of OpenSSL 1.1.1. You can read more details about that decision at <https://nodejs.org/en/blog/announcements/nodejs16-eol/>.
 
 Looking to the future, the [Next-10](https://github.com/nodejs/next-10) team is running a survey to gather info from the ecosystem. Help shape the future of Node.js by participating. Submit your feedback [here](https://linuxfoundation.surveymonkey.com/r/XJ35LYF).
 
@@ -197,5 +199,4 @@ Looking to the future, the [Next-10](https://github.com/nodejs/next-10) team is 
 [`--allow-fs-write`]: https://nodejs.org/api/cli.html#--allow-fs-write
 [`--allow-worker`]: https://nodejs.org/api/cli.html#--allow-worker
 [`--experimental-permission`]: https://nodejs.org/api/cli.html#--experimental-permission
-[`permission.has()`]: https://nodejs.org/api/process.html#processpermissionhasscope-reference
 [CHANGELOG]: https://github.com/nodejs/node/releases/tag/v20.0.0

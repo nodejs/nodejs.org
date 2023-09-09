@@ -70,7 +70,7 @@ Karena output dari `perf` bukan merupakan alat yang khusus untuk Node.js, maka m
 
 ## Tautan Berguna
 
-* https://nodejs.org/en/docs/guides/diagnostics-flamegraph/
-* https://www.brendangregg.com/blog/2014-09-17/node-flame-graphs-on-linux.html
-* https://perf.wiki.kernel.org/index.php/Main_Page
-* https://blog.rafaelgss.com.br/node-cpu-profiler
+- https://nodejs.org/en/docs/guides/diagnostics-flamegraph/
+- https://www.brendangregg.com/blog/2014-09-17/node-flame-graphs-on-linux.html
+- https://perf.wiki.kernel.org/index.php/Main_Page
+- https://blog.rafaelgss.com.br/node-cpu-profiler

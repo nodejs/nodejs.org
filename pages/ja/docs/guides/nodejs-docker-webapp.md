@@ -22,6 +22,7 @@ a stripped-to-basics version of a Linux operating system. An image is software
 you load into a container.
 
 -->
+
 # Node.js Web アプリケーションを Docker 化する
 
 この例の目的は、Node.js アプリケーションを Docker コンテナに取り込む方法を説明することです。
@@ -93,6 +94,7 @@ container using the official Docker image. First, you'll need to build a Docker
 image of your app.
 
 -->
+
 ## Node.js アプリケーションを作成する
 
 まず、すべてのファイルを配置する新しいディレクトリを作成します。
@@ -240,6 +242,7 @@ CMD [ "node", "server.js" ]
 ```
 
 -->
+
 ## Dockerfile を作成する
 
 `Dockerfile` という名前の空のファイルを作ります。
@@ -349,6 +352,7 @@ This will prevent your local modules and debug logs from being copied onto your
 Docker image and possibly overwriting modules installed within your image.
 
 -->
+
 ## .dockerignore ファイル
 
 以下の内容で `Dockerfile` と同じディレクトリに `.dockerignore` ファイルを
@@ -385,6 +389,7 @@ node                            12         1934b0b038d1    5 days ago
 ```
 
 -->
+
 ## 自分のイメージを構築する
 
 `Dockerfile` があるディレクトリに行き、次のコマンドを実行して Docker イメージを構築してください。
@@ -438,6 +443,7 @@ $ docker exec -it <container id> /bin/bash
 ```
 
 -->
+
 ## イメージの実行
 
 イメージを `-d` で実行するとコンテナは分離モードで実行され、バックグラウンドで実行されたままになります。
@@ -514,6 +520,7 @@ following places:
 * [Docker Subreddit](https://reddit.com/r/docker)
 
 -->
+
 ## テスト
 
 アプリケーションをテストするには、Docker がマッピングしたアプリケーションのポートを取得します。
@@ -552,8 +559,8 @@ Hello world
 Docker および Docker 上の Node.js に関する詳細は、
 次の場所にあります。
 
-* [公式 Node.js Docker イメージ](https://hub.docker.com/_/node/)
-* [Node.js Docker ベストプラクティスガイド](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
-* [公式 Docker ドキュメント](https://docs.docker.com/)
-* [Docker Tag on Stack Overflow](https://stackoverflow.com/questions/tagged/docker)
-* [Docker Subreddit](https://reddit.com/r/docker)
+- [公式 Node.js Docker イメージ](https://hub.docker.com/_/node/)
+- [Node.js Docker ベストプラクティスガイド](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
+- [公式 Docker ドキュメント](https://docs.docker.com/)
+- [Docker Tag on Stack Overflow](https://stackoverflow.com/questions/tagged/docker)
+- [Docker Subreddit](https://reddit.com/r/docker)

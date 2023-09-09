@@ -6,7 +6,7 @@ layout: docs.hbs
 # Dockerizing a Node.js web app
 
 The goal of this example is to show you how to get a Node.js application into a
-Docker container. The guide is intended for development, and *not* for a
+Docker container. The guide is intended for development, and _not_ for a
 production deployment. The guide also assumes you have a working [Docker
 installation](https://docs.docker.com/engine/installation/) and a basic
 understanding of how a Node.js application is structured.
@@ -99,7 +99,7 @@ WORKDIR /usr/src/app
 This image comes with Node.js and NPM already installed so the next thing we
 need to do is to install your app dependencies using the `npm` binary. Please
 note that if you are using `npm` version 4 or earlier a `package-lock.json`
-file will *not* be generated.
+file will _not_ be generated.
 
 ```docker
 # Install app dependencies
@@ -282,8 +282,8 @@ on Docker.
 You can find more information about Docker and Node.js on Docker in the
 following places:
 
-* [Official Node.js Docker Image](https://hub.docker.com/_/node/)
-* [Node.js Docker Best Practices Guide](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
-* [Official Docker documentation](https://docs.docker.com/get-started/nodejs/build-images/)
-* [Docker Tag on Stack Overflow](https://stackoverflow.com/questions/tagged/docker)
-* [Docker Subreddit](https://reddit.com/r/docker)
+- [Official Node.js Docker Image](https://hub.docker.com/_/node/)
+- [Node.js Docker Best Practices Guide](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
+- [Official Docker documentation](https://docs.docker.com/get-started/nodejs/build-images/)
+- [Docker Tag on Stack Overflow](https://stackoverflow.com/questions/tagged/docker)
+- [Docker Subreddit](https://reddit.com/r/docker)

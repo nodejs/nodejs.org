@@ -14,7 +14,8 @@ describing the classes, functions, data structures, enumerations, and constants
 which enable an application to perform a desired task correspond by way of
 compilation to a set of addresses and expected parameter values and memory
 structure sizes and layouts with which the provider of the ABI was compiled. -->
-Uma Interface Binária de Aplicação (IBA, ou *Application Binary Interface (ABI)* em inglês)
+
+Uma Interface Binária de Aplicação (IBA, ou _Application Binary Interface (ABI)_ em inglês)
 é uma forma que programas utilizam para chamar funções e utilizar estruturas de
 dados de outros programas compilados. É a versão compilada de uma Interface
 de Programação de Aplicações (API). Em outras palavras, os arquivos de
@@ -28,6 +29,7 @@ o provedor da ABI foi compilado.
 addresses, expected parameter values, and memory structure sizes and layouts
 agree with those with which the ABI provider was compiled. This is usually
 accomplished by compiling against the headers provided by the ABI provider. -->
+
 A aplicação que está usando o ABI deve ser compilada de tal maneira que
 os endereços disponíveis, valores esperados de parâmetros, tamanhos de
 estruturas de memória e layouts concordem com aqueles com os quais o
@@ -43,6 +45,7 @@ code for the application using the ABI that accesses the API described in a
 given header according to the conventions of the ABI resulting from the
 description in the header. Modern compilers have a fairly good track record of
 not breaking the ABI compatibility of the applications they compile. -->
+
 Já que o provedor da ABI e o usuário da ABI podem ser compilados em tempos
 diferentes e com versões diferentes do compilador, uma porção da responsabilidade
 de garantir a compatibilidade da ABI está no compilador. Diferentes versões
@@ -60,6 +63,7 @@ compilation, in the ABI that is to remain stable. Changes to the header files
 can be made, but the nature of the changes has to be closely tracked to ensure
 that, upon compilation, the ABI does not change in a way that will render
 existing users of the ABI incompatible with the new version. -->
+
 O resto da responsabilidade por garantir a compatibilidade da API está no
 time que mantém os arquivos de cabeçalho que criam a API que, após compilada,
 resulta na ABI que deve permanecer estável. Mudanças nesses arquivos de
@@ -82,6 +86,7 @@ In practice, this means that the Node.js project has committed itself to
 ensuring that a Node.js native addon compiled against a given major version of
 Node.js will load successfully when loaded by any Node.js minor or patch version
 within the major version against which it was compiled. -->
+
 O Node.js possui diversos arquivos de cabeçalhos que são mantidos por diversos
 times independentes, por exemplo, cabeçalhos como `node.h` e `node_buffer.h` são
 mantidos pela equipe do Node.js. `v8.h` é mantido pela equipe do V8 que, mesmo
@@ -101,31 +106,32 @@ major sobre a qual o addon foi compilado.
 <!-- Demand has arisen for equipping Node.js with an API that results in an ABI that
 remains stable across multiple Node.js major versions. The motivation for
 creating such an API is as follows: -->
+
 Uma demanda para equipar o Node.js com uma API que resulta em uma ABI que permanece
 estável dentre múltiplas versões major do Node.js acabou surgindo. A motivação para
 criar tal API são as seguintes:
 
-* A linguagem JavaScript permaneceu compatível com ela mesma desde o seus
-primeiros dias, enquanto a ABI do engine que executa o código JavaScript muda
-com cada versão major do Node.js. Isso significa que aplicações que consistem
-de pacotes do Node.js que são completamente escritos em JavaScript não precisam
-ser recompilados, reinstalados ou sofrer um novo deploy uma vez que uma nova
-versão major do Node.js é instalada no ambiente de produção onde tal aplicação
-está sendo executada. Em contraste a isso, se uma aplicação depende de m pacote
-que contém um módulo nativo, então a aplicação precisa ser recompilada, reinstalada
-e reexecutada sempre que uma nova versão major do Node.js é introduzida em seu ambiente
-de produção. Essa disparidade entre os pacotes que contém addons nativos e os que são
-escritos com JavaScript em sua totalidade acabou por adicionar um peso a mais na
-manutenção em sistemas que estão em produção e dependem de addons nativos.
+- A linguagem JavaScript permaneceu compatível com ela mesma desde o seus
+  primeiros dias, enquanto a ABI do engine que executa o código JavaScript muda
+  com cada versão major do Node.js. Isso significa que aplicações que consistem
+  de pacotes do Node.js que são completamente escritos em JavaScript não precisam
+  ser recompilados, reinstalados ou sofrer um novo deploy uma vez que uma nova
+  versão major do Node.js é instalada no ambiente de produção onde tal aplicação
+  está sendo executada. Em contraste a isso, se uma aplicação depende de m pacote
+  que contém um módulo nativo, então a aplicação precisa ser recompilada, reinstalada
+  e reexecutada sempre que uma nova versão major do Node.js é introduzida em seu ambiente
+  de produção. Essa disparidade entre os pacotes que contém addons nativos e os que são
+  escritos com JavaScript em sua totalidade acabou por adicionar um peso a mais na
+  manutenção em sistemas que estão em produção e dependem de addons nativos.
 
-* Outros projetos começaram a produzir interfaces JavaScript que são, essencialmente,
+- Outros projetos começaram a produzir interfaces JavaScript que são, essencialmente,
   alternativas às implementações do Node.js. Uma vez que estes projetos são, geralmente,
   criados e construídos em um engine JavaScript diferente do V8, seus addons nativos
   necessariamente tem uma estrutura diferente e usam uma API diferente. Mesmo assim,
   utilizar uma única API para um módulo nativo entre diferentes implementações da
   API JavaScript do Node.js permitiria que estes projetos tirassem vantagem do
   ecossistema de pacotes JavaScript que já se acumulou ao redor do Node.js.
-* O Node.js pode mudar para utilizar um engine JavaScript diferente do V8 no futuro.
+- O Node.js pode mudar para utilizar um engine JavaScript diferente do V8 no futuro.
   Isto significa que, externamente, todas as interfaces do Node.js continuariam iguais,
   porém o cabeçalho do V8 não existiria. Tal alteração causaria uma disrupção do
   ecossistema do Node.js no geral, e também do ecossistema de addons nativos em particular,
@@ -137,6 +143,7 @@ stable component of the project as of Node.js 8.12.0. The API is defined in the
 headers [`node_api.h`][] and [`node_api_types.h`][], and provides a forward-
 compatibility guarantee that crosses the Node.js major version boundary. The
 guarantee can be stated as follows: -->
+
 Para estas finalidades o Node.js introduziu a N-API na versão 8.6.0 e a marcou como
 um componente estável do projeto na versão 8.12.0. A API é definida pelos headers
 [`node_api.h`][] e [`node_api_types.h`][], e provê uma garantia de compatibilidade
@@ -146,7 +153,8 @@ Esta garantia pode ser descrita como o seguinte:
 <!-- **A given version *n* of N-API will be available in the major version of
 Node.js in which it was published, and in all subsequent versions of Node.js,
 including subsequent major versions.** -->
-**Uma versão *n* da N-API estará disponível na versão major do Node.js na qual
+
+**Uma versão _n_ da N-API estará disponível na versão major do Node.js na qual
 ela foi primeiramente publicada, e em todas as versões subsequentes do Node.js,
 incluindo versões major.**
 
@@ -157,6 +165,7 @@ By doing so, the author facilitates adoption of their addon by indicating to
 production users that the maintenance burden for their application will increase
 no more by the addition of the native addon to their project than it would by
 the addition of a package written purely in JavaScript. -->
+
 Um autor de um módulo nativo pode tirar proveito desta garantia de compatibilidade
 da N-API para fazer com que seu módulo só utilize as APIs dispostas no `node_api.h`
 e as estruturas de dados e constantes definidas em `node_api_types.h`. Fazendo isto,
@@ -177,6 +186,7 @@ sufficiently proven in production to be correct and useful as designed and, as
 such, may undergo ABI-incompatible changes before it is finally incorporated
 into a forthcoming version of N-API. That is, an experimental N-API is not yet
 covered by the forward compatibility guarantee. -->
+
 A N-API é versionada de porque novas APIs são adicionadas de tempos em tempos.
 Diferentemente do semantic versioning, as versões do N-API são cumulativas. Isto é,
 cada versão da N-API tem o mesmo significado de uma versão minor no sistema semver,

@@ -9,6 +9,7 @@ layout: blog-post.hbs
 ---
 
 ### Node.js News
+
 Node.js Node v4.4.0 (LTS), Node v5.8.0 (Current) and Node v0.12.12 (LTS) are released.
 
 ### Node.js Node v4.4.0 (LTS), Node v5.8.0 (Current) and Node v0.12.12 (LTS) Releases
@@ -31,13 +32,13 @@ For more information on the process of how these are generated check out: https:
 
 ### Community Updates
 
-* [Presentation: Top Node.js Metrics to Watch](http://blog.sematext.com/2016/02/26/top-node-js-metrics-to-watch/)
+- [Presentation: Top Node.js Metrics to Watch](http://blog.sematext.com/2016/02/26/top-node-js-metrics-to-watch/)
 
 If you have spotted or written something about Node.js, do come over to our [Evangelism team repo](https://github.com/nodejs/evangelism) and suggest it on the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.
 
 ### Upcoming Events
 
-* [NodeConf Adventure 2016](https://ti.to/nodeconf/adventure-2016), "First batch of NodeConf Adventure tickets are up!", June 9th–12th, 2016 - Walker Creek Ranch, Marin, CA, USA
-* [NationJS Node Day Conference](http://nationjs.com/), March 11, 2016 - Washington, DC
+- [NodeConf Adventure 2016](https://ti.to/nodeconf/adventure-2016), "First batch of NodeConf Adventure tickets are up!", June 9th–12th, 2016 - Walker Creek Ranch, Marin, CA, USA
+- [NationJS Node Day Conference](http://nationjs.com/), March 11, 2016 - Washington, DC
 
 Have an event about Node.js coming up? You can put your events here through the [Evangelism team repo](https://github.com/nodejs/evangelism) and announce it in the [Issues page](https://github.com/nodejs/evangelism/issues), specifically the Weekly Updates issue.

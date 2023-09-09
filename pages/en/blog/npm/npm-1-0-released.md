@@ -1,5 +1,5 @@
 ---
-title: "npm 1.0: Released"
+title: 'npm 1.0: Released'
 author: Isaac Schlueter
 date: 2011-05-01T15:09:45.000Z
 status: publish
@@ -10,15 +10,15 @@ layout: blog-post.hbs
 
 npm 1.0 has been released. Here are the highlights:
 
-* [Global vs local installation](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation/)
-* [ls displays a tree](http://blog.nodejs.org/2011/03/17/npm-1-0-the-new-ls/), instead of being a remote search
-* No more “activation” concept - dependencies are nested
-* [Updates to link command](http://blog.nodejs.org/2011/04/06/npm-1-0-link/)
-* Install script cleans up any 0.x cruft it finds. (That is, it removes old packages, so that they can be installed properly.)
-* Simplified “search” command. One line per package, rather than one line per version.
-* Renovated “completion” approach
-* More help topics
-* Simplified folder structure
+- [Global vs local installation](http://blog.nodejs.org/2011/03/23/npm-1-0-global-vs-local-installation/)
+- [ls displays a tree](http://blog.nodejs.org/2011/03/17/npm-1-0-the-new-ls/), instead of being a remote search
+- No more “activation” concept - dependencies are nested
+- [Updates to link command](http://blog.nodejs.org/2011/04/06/npm-1-0-link/)
+- Install script cleans up any 0.x cruft it finds. (That is, it removes old packages, so that they can be installed properly.)
+- Simplified “search” command. One line per package, rather than one line per version.
+- Renovated “completion” approach
+- More help topics
+- Simplified folder structure
 
 The focus is on npm being a development tool, rather than an apt-wannabe.
 

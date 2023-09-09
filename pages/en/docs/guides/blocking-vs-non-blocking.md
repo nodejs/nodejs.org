@@ -39,15 +39,15 @@ execute **asynchronously**.
 Using the File System module as an example, this is a **synchronous** file read:
 
 ```js
-const fs = require("fs");
-const data = fs.readFileSync("/file.md"); // blocks here until file is read
+const fs = require('fs');
+const data = fs.readFileSync('/file.md'); // blocks here until file is read
 ```
 
 And here is an equivalent **asynchronous** example:
 
 ```js
-const fs = require("fs");
-fs.readFile("/file.md", (err, data) => {
+const fs = require('fs');
+fs.readFile('/file.md', (err, data) => {
   if (err) throw err;
 });
 ```
@@ -62,8 +62,8 @@ shown.
 Let's expand our example a little bit:
 
 ```js
-const fs = require("fs");
-const data = fs.readFileSync("/file.md"); // blocks here until file is read
+const fs = require('fs');
+const data = fs.readFileSync('/file.md'); // blocks here until file is read
 console.log(data);
 moreWork(); // will run after console.log
 ```
@@ -71,8 +71,8 @@ moreWork(); // will run after console.log
 And here is a similar, but not equivalent asynchronous example:
 
 ```js
-const fs = require("fs");
-fs.readFile("/file.md", (err, data) => {
+const fs = require('fs');
+fs.readFile('/file.md', (err, data) => {
   if (err) throw err;
   console.log(data);
 });
@@ -109,12 +109,12 @@ There are some patterns that should be avoided when dealing with I/O. Let's look
 at an example:
 
 ```js
-const fs = require("fs");
-fs.readFile("/file.md", (err, data) => {
+const fs = require('fs');
+fs.readFile('/file.md', (err, data) => {
   if (err) throw err;
   console.log(data);
 });
-fs.unlinkSync("/file.md");
+fs.unlinkSync('/file.md');
 ```
 
 In the above example, `fs.unlinkSync()` is likely to be run before
@@ -123,11 +123,11 @@ better way to write this, which is completely **non-blocking** and guaranteed to
 execute in the correct order is:
 
 ```js
-const fs = require("fs");
-fs.readFile("/file.md", (readFileErr, data) => {
+const fs = require('fs');
+fs.readFile('/file.md', (readFileErr, data) => {
   if (readFileErr) throw readFileErr;
   console.log(data);
-  fs.unlink("/file.md", (unlinkErr) => {
+  fs.unlink('/file.md', unlinkErr => {
     if (unlinkErr) throw unlinkErr;
   });
 });
@@ -138,4 +138,4 @@ The above places a **non-blocking** call to `fs.unlink()` within the callback of
 
 ## Additional Resources
 
-* [libuv](https://libuv.org/)
+- [libuv](https://libuv.org/)

@@ -11,9 +11,9 @@ layout: docs.hbs
 
 ## 本文内容
 
-* 最佳实践做法：这是一个针对 Node.js 应用的安全性问题的最佳实践做法的精简压缩版。我们可以使用[安全指南讨论议题][安全指南讨论议题]或者是[nodejs 使用指南][nodejs 使用指南]作为我们的开始。值得注意的是：本文特定针对的是 Node.js，如果你正在寻找其它更通用的教程，可以参考[OSSF 最佳实践做法][]。
-* 安全性攻击解释：用最通俗易懂的语言，根据需要配上一些代码，来解释在我们在威胁示例中提到的攻击方式。
-* 第三方库中的潜在攻击方式（诸如“误植”式攻击，含有恶意代码的包库……），以及关于 node 模块依赖等问题的一系列最佳实践。
+- 最佳实践做法：这是一个针对 Node.js 应用的安全性问题的最佳实践做法的精简压缩版。我们可以使用[安全指南讨论议题][安全指南讨论议题]或者是[nodejs 使用指南][nodejs 使用指南]作为我们的开始。值得注意的是：本文特定针对的是 Node.js，如果你正在寻找其它更通用的教程，可以参考[OSSF 最佳实践做法][]。
+- 安全性攻击解释：用最通俗易懂的语言，根据需要配上一些代码，来解释在我们在威胁示例中提到的攻击方式。
+- 第三方库中的潜在攻击方式（诸如“误植”式攻击，含有恶意代码的包库……），以及关于 node 模块依赖等问题的一系列最佳实践。
 
 ## 威胁列表
 
@@ -28,7 +28,7 @@ HTTP 请求通过 Node.js 的 HTTP 服务器得以接受，并传递给已注册
 ```js
 const net = require('net');
 
-const server = net.createServer(function(socket) {
+const server = net.createServer(function (socket) {
   // socket.on('error', console.error) // this prevents the server to crash
   socket.write('Echo server\r\n');
   socket.pipe(socket);
@@ -43,9 +43,9 @@ server.listen(5000, '0.0.0.0');
 
 **缓解措施**
 
-* 使用一个反向代理来接受、转发 Node.js 应用程序请求，反向代理可以提供诸如缓存、负载均衡、IP 黑名单等方式尽可能减少服务式拒绝攻击发生的可能性。
-* 正确地配置服务器超时时间（timeout），这样凡是龟速响应请求以及一直原地不动的连接请求就会被直接抛弃。请了解超时配置的区别，并查看 [`http.Server`][] 部分，尤其是 `headersTimeout`，`requestTimeout`, `timeout` 和 `keepAliveTimeout`。
-* 在每台主机上限制开放端口的总数。请查看 [http 文档][]，尤其是 `agent.maxSockets`，`agent.maxTotalSockets`，`agent.maxFreeSockets` 和 `server.maxRequestsPerSocket`。
+- 使用一个反向代理来接受、转发 Node.js 应用程序请求，反向代理可以提供诸如缓存、负载均衡、IP 黑名单等方式尽可能减少服务式拒绝攻击发生的可能性。
+- 正确地配置服务器超时时间（timeout），这样凡是龟速响应请求以及一直原地不动的连接请求就会被直接抛弃。请了解超时配置的区别，并查看 [`http.Server`][] 部分，尤其是 `headersTimeout`，`requestTimeout`, `timeout` 和 `keepAliveTimeout`。
+- 在每台主机上限制开放端口的总数。请查看 [http 文档][]，尤其是 `agent.maxSockets`，`agent.maxTotalSockets`，`agent.maxFreeSockets` 和 `server.maxRequestsPerSocket`。
 
 ### DNS 重绑定（CWE-346）
 
@@ -57,8 +57,8 @@ server.listen(5000, '0.0.0.0');
 
 **缓解措施**
 
-* 通过挂上`process.on(‘SIGUSR1’, …)`的监听器方式禁止调试观察器 SIGUSR1 的信号。
-* 不要在生产环境中使用调试观察器。
+- 通过挂上`process.on(‘SIGUSR1’, …)`的监听器方式禁止调试观察器 SIGUSR1 的信号。
+- 不要在生产环境中使用调试观察器。
 
 ### 向不明身份者暴露敏感信息（CWE-552）
 
@@ -68,9 +68,9 @@ server.listen(5000, '0.0.0.0');
 
 **缓解措施**
 
-* 使用 `npm publish --dry-run` 开列所有将要被发布的文件，并在发布前请确保这些文件都被审核过是可以发布的。
-* 创建和维护诸如 `.gitignore` 和`.npmignore` 之类的文件，避免发布不必要的文件。 在这些文件中你可以指定哪些文件（文件夹）不应该被发布。`package.json` 中的[文件属性][]允许你进行反操作（哪些文件是可以发布的）。
-* 万一发布了不应该发布的内容，请参考 [如何撤消已有的发布][] 撤消你的发布。
+- 使用 `npm publish --dry-run` 开列所有将要被发布的文件，并在发布前请确保这些文件都被审核过是可以发布的。
+- 创建和维护诸如 `.gitignore` 和`.npmignore` 之类的文件，避免发布不必要的文件。 在这些文件中你可以指定哪些文件（文件夹）不应该被发布。`package.json` 中的[文件属性][]允许你进行反操作（哪些文件是可以发布的）。
+- 万一发布了不应该发布的内容，请参考 [如何撤消已有的发布][] 撤消你的发布。
 
 ### HTTP 请求夹带私货（CWE-444）
 
@@ -82,10 +82,10 @@ server.listen(5000, '0.0.0.0');
 
 **缓解措施**
 
-* 当创建一个 HTTP 服务时，请不要使用 `insecureHTTPParser` 选项
-* 前端做适当的配置，使得带有歧义的请求能够正常化
-* 对 HTTP 发出的新“私货”请求请持续在 Node.js 端以及前端都保持留意
-* 使用第二代的 HTTP 协议（HTTP/2），并不允许降级
+- 当创建一个 HTTP 服务时，请不要使用 `insecureHTTPParser` 选项
+- 前端做适当的配置，使得带有歧义的请求能够正常化
+- 对 HTTP 发出的新“私货”请求请持续在 Node.js 端以及前端都保持留意
+- 使用第二代的 HTTP 协议（HTTP/2），并不允许降级
 
 ### 根据耗时的多少猜测敏感信息导致信息暴露（CWE-208）
 
@@ -95,17 +95,18 @@ server.listen(5000, '0.0.0.0');
 
 **缓解措施**
 
-* 请使用`timingSafeEqual`函数来比较敏感信息的内容，因为它的耗时是一个固定值。
-* 在进行密码比较的过程中，请使用 [scrypt][]。
+- 请使用`timingSafeEqual`函数来比较敏感信息的内容，因为它的耗时是一个固定值。
+- 在进行密码比较的过程中，请使用 [scrypt][]。
 
-* 更一般地说，我们应当避免在可变时间操作中使用保护性措施。 这包括分支保护，以及当攻击者可能位于同一基础架构（例如，同一台云计算机）上时，使用保护性措施作为内存索引。在 JavaScript 中写入固定耗时的代码极其困难（部分因为 JIT 的缘故）。对于那些加密的应用而言，使用内置的加密 API 函数或者是 WebAssembly 为好（因为 WebAssembly 的算法并非本地实现）。
+- 更一般地说，我们应当避免在可变时间操作中使用保护性措施。 这包括分支保护，以及当攻击者可能位于同一基础架构（例如，同一台云计算机）上时，使用保护性措施作为内存索引。在 JavaScript 中写入固定耗时的代码极其困难（部分因为 JIT 的缘故）。对于那些加密的应用而言，使用内置的加密 API 函数或者是 WebAssembly 为好（因为 WebAssembly 的算法并非本地实现）。
+
 ### 含有恶意攻击的第三方库 （CWE-1357）
 
 目前为止，Node.js 中任何一个包都有强大的能力去访问其它资源：例如网络资源等。更进一步地说，Node.js 中的包可以访问本地文件系统，并且把数据发送到任何地方。
 
 在 node 里可以通过`eval()`（或者其它类似的方式）加载、运行任何代码。所有与文件系统相关，拥有写权限的代码也能通过写入一个新文件，或者已有文件，当他们被加载执行时，就能达到一样的目的。
 
-Node.js 携带一个尝鲜版本的[¹][experimental-features][规则机制][]来声明所加载的资源是否是可被新信任的。请务必确定所有的依赖包版本号， 以及借助公共工作流或 npm 的脚本来自动检测这些包里可能潜在的缺陷。 在安装依赖包时，请务必确认这些包都是被正常维护的，并包含你预期的内容。 请务必小心！GitHub 的源代码不总是和发布版本保持一致，请在_node\_modules_ 里仔细验证。
+Node.js 携带一个尝鲜版本的[¹][experimental-features][规则机制][]来声明所加载的资源是否是可被新信任的。请务必确定所有的依赖包版本号， 以及借助公共工作流或 npm 的脚本来自动检测这些包里可能潜在的缺陷。 在安装依赖包时，请务必确认这些包都是被正常维护的，并包含你预期的内容。 请务必小心！GitHub 的源代码不总是和发布版本保持一致，请在*node_modules* 里仔细验证。
 
 #### 供应链式攻击
 
@@ -117,23 +118,23 @@ Node.js 中 “供应链式攻击”通常发生在某个（些）依赖（无�
 
 可能的攻击方式：
 
-* “误植”域名
-* 篡改 Lockfile
-* 受到侵害的维护者
-* 恶意第三方的包（类库）
-* 依赖混淆
+- “误植”域名
+- 篡改 Lockfile
+- 受到侵害的维护者
+- 恶意第三方的包（类库）
+- 依赖混淆
 
 **缓解措施**
 
-* 使用 npm 的指令`--ignore-scripts`来禁止外部脚本运行。
-  * 另外，你也可以直接使用 `npm config set ignore-scripts true` 方式禁止脚本运行
-* 给第三方包指定精确的版本，勿指定一个宽泛的版本范围，或者是不确定可变的更新源
-* 使用 lockfiles，固定每一个依赖包（无论直接引用或是间接的）
-  * 参考 [对 lockfile 恶意篡改的缓解措施][] 部分
-* 使用 CI 自动检测可能存在的缺陷，可以借助 [`npm-audit`][]
-  * 诸如 [`Socket`][] 的工具也可使用，他可以静态分析依赖包， 并且找出网络或文件系统方面的潜在风险性行为。
-* 使用 [`npm ci`][] 而不是 `npm install` 此命令强制比对 lockfile 里的版本号，如果和 _package.json_ 中的依赖发生冲突， 直接抛出异常而不是默默地忽略，迁就 _package.json_ 的定义
-* 小心检查 _package.json_ 文件里的每个依赖包的名称，切勿拼错
+- 使用 npm 的指令`--ignore-scripts`来禁止外部脚本运行。
+  - 另外，你也可以直接使用 `npm config set ignore-scripts true` 方式禁止脚本运行
+- 给第三方包指定精确的版本，勿指定一个宽泛的版本范围，或者是不确定可变的更新源
+- 使用 lockfiles，固定每一个依赖包（无论直接引用或是间接的）
+  - 参考 [对 lockfile 恶意篡改的缓解措施][] 部分
+- 使用 CI 自动检测可能存在的缺陷，可以借助 [`npm-audit`][]
+  - 诸如 [`Socket`][] 的工具也可使用，他可以静态分析依赖包， 并且找出网络或文件系统方面的潜在风险性行为。
+- 使用 [`npm ci`][] 而不是 `npm install` 此命令强制比对 lockfile 里的版本号，如果和 _package.json_ 中的依赖发生冲突， 直接抛出异常而不是默默地忽略，迁就 _package.json_ 的定义
+- 小心检查 _package.json_ 文件里的每个依赖包的名称，切勿拼错
 
 ### 非法内存访问（CWE-284）
 
@@ -143,8 +144,8 @@ Node.js 中 “供应链式攻击”通常发生在某个（些）依赖（无�
 
 **缓解措施**
 
-* 使用 `--secure-heap=n`限定内存大小，“n”就是最大的字节大小。
-* 不要在共享机器中运行您的生产应用程序。
+- 使用 `--secure-heap=n`限定内存大小，“n”就是最大的字节大小。
+- 不要在共享机器中运行您的生产应用程序。
 
 ### 鱼目混珠（CWE-349）
 
@@ -173,6 +174,7 @@ Array.prototype.push = function (item) {
 ```
 
 诚然如此，但你目前仍然可以使用 `globalThis`来定义新的，以及替换已有的全局变量。
+
 ```console
 > globalThis.foo = 3; foo; // you can still define new globals
 3
@@ -184,12 +186,12 @@ Array.prototype.push = function (item) {
 
 ### 原型污染（CWE-1321）
 
-原型污染指滥用 __proto__、 _constructor_ 或 _prototype_，以及从内置方法中继承等方式 在 Javascript 内恶意篡改、注入一些东西。
+原型污染指滥用 **proto**、 _constructor_ 或 _prototype_，以及从内置方法中继承等方式 在 Javascript 内恶意篡改、注入一些东西。
 
 <!-- eslint-skip -->
 
 ```js
-const a = {"a": 1, "b": 2};
+const a = { a: 1, b: 2 };
 const data = JSON.parse('{"__proto__": { "polluted": true}}');
 
 const c = Object.assign({}, a, data);
@@ -205,18 +207,18 @@ d.hasOwnProperty('b'); // Uncaught TypeError: d.hasOwnProperty is not a function
 
 附上其它相关示例：
 
-* [CVE-2022-21824][] (Node.js)
-* [CVE-2018-3721][] (3rd Party library: Lodash)
+- [CVE-2022-21824][] (Node.js)
+- [CVE-2018-3721][] (3rd Party library: Lodash)
 
 **缓解措施**
 
-* 避免 [不安全的递归式合并][]，参考 [CVE-2018-16487][]
-* 对于外部以及不信任的对象，请使用 JSON 骨架（JSON Schema）来验证
-* 使用 `Object.create(null)` 创建无原型（prototype）的对象
-* 冻结对象原型： `Object.freeze(MyObject.prototype)`
-* 使用 `--disable-proto` 禁止 `Object.prototype.__proto__` 属性
-* 请检查对象上是否存在着特定属性，而不是使用 `Object.hasOwn(obj, keyFromObj)`原型方法来检测
-* 避免使用 `Object.prototype` 的方法。
+- 避免 [不安全的递归式合并][]，参考 [CVE-2018-16487][]
+- 对于外部以及不信任的对象，请使用 JSON 骨架（JSON Schema）来验证
+- 使用 `Object.create(null)` 创建无原型（prototype）的对象
+- 冻结对象原型： `Object.freeze(MyObject.prototype)`
+- 使用 `--disable-proto` 禁止 `Object.prototype.__proto__` 属性
+- 请检查对象上是否存在着特定属性，而不是使用 `Object.hasOwn(obj, keyFromObj)`原型方法来检测
+- 避免使用 `Object.prototype` 的方法。
 
 ### 不可控的搜索路径对象（CWE-427）
 
@@ -224,10 +226,10 @@ Node.js 根据[模块路径算法][]来加载模块，因此我们假定说模�
 
 基于此，这意味着以下的操作是符合预期的，让我们假设存在着以下的目录结构：
 
-* _app/_
-  * _server.js_
-  * _auth.js_
-  * _auth_
+- _app/_
+  - _server.js_
+  - _auth.js_
+  - _auth_
 
 如果服务端调用 `require('./auth')` ，结果加载 _auth _ 并非 _auth.js_ 。
 
@@ -243,7 +245,7 @@ Node.js 根据[模块路径算法][]来加载模块，因此我们假定说模�
     },
     "./app/server.js": {
       "dependencies": {
-        "./auth" : "./app/auth.js"
+        "./auth": "./app/auth.js"
       },
       "integrity": "sha256-NPtLCQ0ntPPWgfVEgX46ryTNpdvTWdQPoZO3kHo0bKI="
     }

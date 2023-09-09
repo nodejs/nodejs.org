@@ -7,6 +7,9 @@
 name: Pull Request Checks
 
 on:
+  push:
+    branches:
+      - main
   pull_request_target:
     branches:
       - main
@@ -29,7 +32,7 @@ jobs:
   # This Job removes the label after it got applied to ensure that we can easily apply again when needed
   remove_pull_request_label:
     if: |
-      github.event.action == 'labeled' &&
+      github.event_name == 'pull_request_target' &&
       github.event.label.name == 'github_actions:pull-request'
 
     name: Remove Pull Request Label
@@ -41,57 +44,32 @@ jobs:
           labels: github_actions:pull-request
 
   base:
-    # This Job ensures that these jobs run either on regular Pull Request Updates
-    # Or if the PR gets labeled with `github_actions:pull-request`
+    # This Job should run either on `merge_groups` or `push` events
+    # or `pull_request_target` event with a `labeled` action with a label named `github_actions:pull-request`
     if: |
-      github.event.action != 'labeled' ||
-      (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request')
+      (github.event_name == 'push' || github.event_name == 'merge_group') ||
+      (github.event_name == 'pull_request_target' &&
+        github.event.label.name == 'github_actions:pull-request')
 
     name: Base Tasks
     runs-on: ubuntu-latest
     outputs:
-      fetch_depth: ${{ steps.calculate_current_commits.outputs.fetch_depth }}
       turbo_args: ${{ steps.turborepo_arguments.outputs.turbo_args }}
 
     steps:
-      - name: Calculate Commits to Checkout
-        id: calculate_current_commits
-        # This calculates the amount of commits we should fetch during our shallow clone
-        # This calculates the amount of commits this PR produced diverged from the base branch + 1
-        # Which should include the "merge" commit reference
-        # In other words, the GitHub Action will always have the full history of the current PR
-        # We need all the commits of the PR so that `turbo --filter` works correctly
-        run: |
-          if [ "${{ github.event_name }}" == "pull_request_target" ]; then
-            echo "fetch_depth=$(( ${{ github.event.pull_request.commits }} + 1 ))" >> "$GITHUB_OUTPUT"
-          else
-            echo "fetch_depth=1" >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Provide Turborepo Arguments
         id: turborepo_arguments
-        # `--filter` flag allows us to tell TurboRepo to only run a said command if there were any changes found in a given --filter range
-        # It verifies if any change was done to any of the including `glob` patterns described for a said command on `turbo.json`
-        # By default in this Workflow we use the `...[$TURBO_REF_FILTER]` as a value to the filter flag which tells Turborepo to look changes
-        # between the latest base branch commit and all the commits of this PR; That's why we use the `pull_request.base.sha` as a ref to the last
-        # commit on the base branch that this pull_request refers to.
-        # We also set the Turborepo Cache to the `.turbo` folder
-        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--filter
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-        run: |
-          if [ "${{ github.event_name }}" == "pull_request_target" ]; then
-            echo "turbo_args=--filter=\"[HEAD~${{ github.event.pull_request.commits }}...HEAD]\" --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
-          else
-            echo "turbo_args=--cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
-          fi
+        run: echo "turbo_args=--force=true --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
 
   lint:
-    # This Job ensures that these jobs run either on regular Pull Request Updates
-    # Or if the PR gets labeled with `github_actions:pull-request`
+    # This Job should run either on `merge_groups` or `push` events
+    # or `pull_request_target` event with a `labeled` action with a label named `github_actions:pull-request`
     if: |
-      github.event.action != 'labeled' ||
-      (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request')
+      (github.event_name == 'push' || github.event_name == 'merge_group') ||
+      (github.event_name == 'pull_request_target' &&
+        github.event.label.name == 'github_actions:pull-request')
 
     name: Lint
     runs-on: ubuntu-latest
@@ -101,8 +79,13 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
-          fetch-depth: ${{ needs.base.outputs.fetch_depth }}
+          # Fetch from the PRs Repository instead of Node.js' repository
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          # Since we trigger this with a Labeled Event we might not get the latest commit
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+          # We need full git history for properly being able to run Chromatic
+          # and since Turborepo also needs the git history to compute changes
+          fetch-depth: 0
 
       - name: Restore Lint Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
@@ -110,6 +93,9 @@ jobs:
           path: |
             .turbo/cache
             node_modules/.cache
+            .eslintmdcache
+            .eslintjscache
+            .prettiercache
           # We want to restore Turborepo Cache and ESlint and Prettier Cache
           key: cache-lint-${{ hashFiles('package-lock.json') }}-
           restore-keys: |
@@ -130,11 +116,12 @@ jobs:
 
       - name: Run `turbo lint`
         id: eslint-step
-        # We don't need to run ESLint and Prettier on a Crowdin PR as we already manually fix and prettify the changeset
-        # within the `translation-prs.yml` GitHub Actions Workflow which guarantees that the Translation changes are always pretty
+        # We only run ESLint and Prettier on `push`, `merge_group` or `pull_request_target` events
+        # and if it is a `pull_request_target` event, we want to avoid running ESLint and Prettier on automated Crowdin Pull Requests
         if: |
-          github.event_name == 'pull_request_target' &&
-          github.event.pull_request.head.ref != 'chore/crowdin'
+          (github.event_name == 'push' || github.event_name == 'merge_group') ||
+          (github.event_name == 'pull_request_target' &&
+            github.event.pull_request.head.ref != 'chore/crowdin')
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
         run: npx --package=turbo@latest -- turbo lint ${{ needs.base.outputs.turbo_args }}
@@ -150,26 +137,31 @@ jobs:
         run: npx --package=typescript@latest -- tsc --build .
 
       - name: Save Lint Cache
-        # We don't need to upload a Lint Cache for Dependabot PRs and also when the GitHub Event is not a Pull Request
-        # i.e. if the Event is a Merge Queue Event
-        # We also don't need to save cache on Crowdin PRs
+        # We only want to save caches on `push` events or `pull_request_target` events
+        # and if it is a `pull_request_target` event, we want to avoid saving the cache if the PR comes from Dependabot
+        # or if it comes from an automated Crowdin Pull Request
         if: |
-          github.event_name == 'pull_request_target' &&
-          startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
-          github.event.pull_request.head.ref != 'chore/crowdin'
+          github.event_name == 'push' ||
+          (github.event_name == 'pull_request_target' &&
+            startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
+            github.event.pull_request.head.ref != 'chore/crowdin')
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
             .turbo/cache
             node_modules/.cache
+            .eslintmdcache
+            .eslintjscache
+            .prettiercache
           key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.turbo/cache/**') }}
 
   tests:
     # This Job ensures that these jobs run either on regular Pull Request Updates
     # Or if the PR gets labeled with `github_actions:pull-request`
     if: |
-      github.event.action != 'labeled' ||
-      (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request')
+      github.event_name == 'merge_group' ||
+      (github.event_name == 'pull_request_target' &&
+        github.event.label.name == 'github_actions:pull-request')
 
     name: Tests
     runs-on: ubuntu-latest
@@ -183,8 +175,13 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Here we apply the Environment Variable created above on the "Calculate Commits to Checkout"
-          fetch-depth: ${{ needs.base.outputs.fetch_depth }}
+          # Fetch from the PRs Repository instead of Node.js' repository
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          # Since we trigger this with a Labeled Event we might not get the latest commit
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
+          # We need full git history for properly being able to run Chromatic
+          # and since Turborepo also needs the git history to compute changes
+          fetch-depth: 0
 
       - name: Restore Tests Cache
         uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
@@ -211,13 +208,8 @@ jobs:
         run: npm i --no-audit --no-fund --userconfig=/dev/null
 
       - name: Run Unit Tests
-        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
-        # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npx --package=turbo@latest -- turbo test:unit ${{ needs.base.outputs.turbo_args }} -- --ci --coverage
-
-      - name: Build Storybook
-        # Assigns an ID to be reused on other steps
-        id: storybook_build
+        # This ID is used by the Jest Coverage Comment step
+        id: unit-tests
         # Skips a few steps if not on a Pull Request (Merge Group) or it is a Dependabot PR
         # i.e. if the Event is a Merge Queue Event
         # We also don't need to run a Storybook Build on a Crowdin PR
@@ -225,29 +217,31 @@ jobs:
           github.event_name == 'pull_request_target' &&
           startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
           github.event.pull_request.head.ref != 'chore/crowdin'
-        # We Build Storybook Locally and then upload it so it can be used on another Workflow
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        # We also always want to run the Storybok Build (Force) to ensure that Chromatic can upload the Build
-        run: npx --package=turbo@latest -- turbo storybook:build ${{ needs.base.outputs.turbo_args }} --force=true
+        run: npx --package=turbo@latest -- turbo test:unit ${{ needs.base.outputs.turbo_args }} -- --ci --coverage
 
       - name: Start Visual Regression Tests (Chromatic)
         # This assigns the Environment Deployment for Storybook
         id: chromatic-deploy
-        # This prevents this step from running if "Storybook Build" got cancelled; Which gets cancelled if
-        # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
-        if: steps.storybook_build.outcome == 'success'
+        # Skips a few steps if not on a Pull Request (Merge Group) or it is a Dependabot PR
+        # i.e. if the Event is a Merge Queue Event
+        # We also don't need to run a Storybook Build on a Crowdin PR
+        if: |
+          github.event_name == 'pull_request_target' &&
+          startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
+          github.event.pull_request.head.ref != 'chore/crowdin'
         uses: chromaui/action@v1
         with:
+          buildScriptName: storybook:build
+          ignoreLastBuildOnBranch: true
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          storybookBuildDir: storybook-static
           exitOnceUploaded: true
-          onlyChanged: true
 
       - name: Jest Coverage Comment
-        # This prevents this step from running if "Storybook Build" got cancelled; Which gets cancelled if
-        # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
-        if: steps.storybook_build.outcome == 'success'
+        # This prevents this step from running if "Unit Tests" got cancelled; Which gets cancelled if
+        # the current branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
+        if: steps.unit-tests.outcome == 'success'
         # This comments the current Jest Coverage Report containing JUnit XML reports
         # and a Code Coverage Summary
         uses: MishaKav/jest-coverage-comment@41b5ca01d1250de84537448d248b8d18152cb277
@@ -257,9 +251,9 @@ jobs:
           junitxml-title: Unit Test Report
 
       - name: Save Tests Cache
-        # This prevents this step from running if "Storybook Build" got cancelled; Which gets cancelled if
-        # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
-        if: steps.storybook_build.outcome == 'success'
+        # This prevents this step from running if "Unit Tests" got cancelled; Which gets cancelled if
+        # the current branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
+        if: steps.unit-tests.outcome == 'success'
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
