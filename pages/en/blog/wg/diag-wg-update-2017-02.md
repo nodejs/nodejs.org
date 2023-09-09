@@ -17,10 +17,10 @@ Based on that feedback and thanks to contributions and collaboration from across
 our community, over the past year several experimental diagnostic APIs and tools
 have landed in Node itself and the Node.js Foundation, including:
 
-* [async_hooks][] for sharing context across async boundaries
-* [Inspector][] and [node-inspect][] for stepping and profiling
-* [Trace Controller][] for gathering and streaming traces from V8 and Node
-* [node-report][] and [llnode][] for post-mortem analysis
+- [async_hooks][] for sharing context across async boundaries
+- [Inspector][] and [node-inspect][] for stepping and profiling
+- [Trace Controller][] for gathering and streaming traces from V8 and Node
+- [node-report][] and [llnode][] for post-mortem analysis
 
 Over the coming months we'll continue to improve the [stability][] of these projects
 and hope to eventually graduate some from experimental state with your help and

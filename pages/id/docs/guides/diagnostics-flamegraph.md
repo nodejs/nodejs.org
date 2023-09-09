@@ -33,9 +33,9 @@ Sekarang mari kita mulai bekerja.
 2. coba jalankan `perf` - mungkin mengeluh tentang modul kernel yang hilang, instal juga
 3. jalankan node dengan perf diaktifkan (lihat [masalah output perf](#perf-output-issues) untuk tips khusus untuk versi Node.js)
 
-    ```bash
-    perf record -e cycles:u -g -- node --perf-basic-prof app.js
-    ```
+   ```bash
+   perf record -e cycles:u -g -- node --perf-basic-prof app.js
+   ```
 
 4. mengabaikan peringatan kecuali mereka mengatakan Anda tidak dapat menjalankan perf karena paket yang hilang; Anda mungkin mendapatkan beberapa peringatan tentang tidak dapat mengakses sampel modul kernel yang sebenarnya tidak Anda cari.
 5. Jalankan `perf script > perfs.out` untuk menghasilkan file data yang akan Anda visualisasikan dalam sekejap. Berguna untuk [menerapkan beberapa pembersihan](#filtering-out-node-js-internal-functions) untuk grafik yang lebih mudah dibaca
@@ -97,8 +97,8 @@ Anda akan melihat `ByteCodeHandler:` di mana Anda mengharapkan nama fungsi.
 
 Untuk detail lihat:
 
-* https://github.com/nodejs/benchmarking/issues/168
-* https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
+- https://github.com/nodejs/benchmarking/issues/168
+- https://github.com/nodejs/diagnostics/issues/148#issuecomment-369348961
 
 ### Node.js 10+
 

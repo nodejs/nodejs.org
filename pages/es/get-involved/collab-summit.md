@@ -4,6 +4,7 @@ layout: contribute.hbs
 ---
 
 # Colabora en el Summit
+
 El Collaboration Summit es un evento de tipo no-conferencia para atraer actuales y potenciales colaboradores juntos para discutir Node.js con colaboración activa, educación e intercambio de conocimiento. Comités y grupos de trabajo se reúnen dos veces al año para tomar decisiones importantes mientras trabajan en algunos retos interesantes que subirán ellos mismos.
 
 ## ¿Quién asiste?

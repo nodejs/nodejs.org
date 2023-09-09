@@ -23,8 +23,8 @@ Please take a minute now to donate at [https://scalenpm.org](https://scalenpm.or
 
 There are two distinct components that make up npmjs.org operated by different people:
 
-* **http://registry.npmjs.org**: The main CouchApp (GitHub: [isaacs/npmjs.org](https://github.com/isaacs/npmjs.org)) that stores both package tarballs and metadata. It is operated by Nodejitsu since we [acquired IrisCouch in May](https://www.nodejitsu.com/company/press/2013/05/22/iriscouch/). The primary system administrator is [Jason Smith](https://github.com/jhs), the current CTO at Nodejitsu, cofounder of IrisCouch, and the System Administrator of registry.npmjs.org since 2011.
-* **https://npmjs.com**: The npmjs website that you interact with using a web browser. It is a Node.js program (GitHub: [isaacs/npm-www](https://github.com/isaacs/npm-www)) maintained and operated by Isaac and running on a Joyent Public Cloud SmartMachine.
+- **http://registry.npmjs.org**: The main CouchApp (GitHub: [isaacs/npmjs.org](https://github.com/isaacs/npmjs.org)) that stores both package tarballs and metadata. It is operated by Nodejitsu since we [acquired IrisCouch in May](https://www.nodejitsu.com/company/press/2013/05/22/iriscouch/). The primary system administrator is [Jason Smith](https://github.com/jhs), the current CTO at Nodejitsu, cofounder of IrisCouch, and the System Administrator of registry.npmjs.org since 2011.
+- **https://npmjs.com**: The npmjs website that you interact with using a web browser. It is a Node.js program (GitHub: [isaacs/npm-www](https://github.com/isaacs/npm-www)) maintained and operated by Isaac and running on a Joyent Public Cloud SmartMachine.
 
 Here is a high-level summary of the _old architecture:_
 

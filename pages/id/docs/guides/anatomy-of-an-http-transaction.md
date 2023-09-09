@@ -63,12 +63,14 @@ Potongan yang dipancarkan di setiap kejadian `'data'` adalah [`Buffer`][]. Jika 
 
 ```javascript
 let body = [];
-request.on('data', (chunk) => {
-  body.push(chunk);
-}).on('end', () => {
-  body = Buffer.concat(body).toString();
-  // at this point, `body` has the entire request body stored in it as a string
-});
+request
+  .on('data', chunk => {
+    body.push(chunk);
+  })
+  .on('end', () => {
+    body = Buffer.concat(body).toString();
+    // at this point, `body` has the entire request body stored in it as a string
+  });
 ```
 
 > Ini mungkin tampak sedikit membosankan, dan dalam banyak kasus memang demikian. Untunglah, ada modul seperti [`concat-stream`][] dan [`body`][] pada [`npm`][] yang dapat membantu menyembunyikan sebagian dari logika ini. Penting untuk memiliki pemahaman yang baik tentang apa yang terjadi sebelum menempuh jalan itu, dan itulah mengapa Anda ada di sini!
@@ -77,10 +79,10 @@ request.on('data', (chunk) => {
 
 Karena objek `request` adalah [`ReadableStream`][], itu juga merupakan [`EventEmitter`][] dan berperilaku seperti saat terjadi kesalahan.
 
-Kesalahan dalam aliran `request` muncul dengan memancarkan peristiwa `'error'` di aliran. **Jika Anda tidak memiliki pendengar untuk acara itu, kesalahannya adalah *dilempar*, yang dapat merusak program Node.js Anda.** Oleh karena itu, Anda harus menambahkan pendengar `'error'` pada aliran permintaan Anda, meskipun Anda baru saja mencatatnya dan lanjutkan perjalananmu. (Meskipun mungkin yang terbaik untuk mengirim semacam kesalahan HTTP tanggapan. Lebih lanjut tentang itu nanti.)
+Kesalahan dalam aliran `request` muncul dengan memancarkan peristiwa `'error'` di aliran. **Jika Anda tidak memiliki pendengar untuk acara itu, kesalahannya adalah _dilempar_, yang dapat merusak program Node.js Anda.** Oleh karena itu, Anda harus menambahkan pendengar `'error'` pada aliran permintaan Anda, meskipun Anda baru saja mencatatnya dan lanjutkan perjalananmu. (Meskipun mungkin yang terbaik untuk mengirim semacam kesalahan HTTP tanggapan. Lebih lanjut tentang itu nanti.)
 
 ```javascript
-request.on('error', (err) => {
+request.on('error', err => {
   // This prints the error message and stack trace to `stderr`.
   console.error(err.stack);
 });
@@ -95,22 +97,27 @@ Pada titik ini, kita telah membahas pembuatan server, dan mengambil metode, URL,
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  const { headers, method, url } = request;
-  let body = [];
-  request.on('error', (err) => {
-    console.error(err);
-  }).on('data', (chunk) => {
-    body.push(chunk);
-  }).on('end', () => {
-    body = Buffer.concat(body).toString();
-    // At this point, we have the headers, method, url and body, and can now
-    // do whatever we need to in order to respond to this request.
-  });
-}).listen(8080); // Activates this server, listening on port 8080.
+http
+  .createServer((request, response) => {
+    const { headers, method, url } = request;
+    let body = [];
+    request
+      .on('error', err => {
+        console.error(err);
+      })
+      .on('data', chunk => {
+        body.push(chunk);
+      })
+      .on('end', () => {
+        body = Buffer.concat(body).toString();
+        // At this point, we have the headers, method, url and body, and can now
+        // do whatever we need to in order to respond to this request.
+      });
+  })
+  .listen(8080); // Activates this server, listening on port 8080.
 ```
 
-Jika kita menjalankan contoh ini, kita akan dapat *menerima* permintaan, tetapi tidak *merespon* ke mereka. Sebenarnya, jika Anda menekan contoh ini di browser web, permintaan Anda akan waktu habis, karena tidak ada yang dikirim kembali ke klien.
+Jika kita menjalankan contoh ini, kita akan dapat _menerima_ permintaan, tetapi tidak _merespon_ ke mereka. Sebenarnya, jika Anda menekan contoh ini di browser web, permintaan Anda akan waktu habis, karena tidak ada yang dikirim kembali ke klien.
 
 Sejauh ini kita belum menyentuh objek `response` sama sekali, yang merupakan sebuah instance dari [`ServerResponse`][], yang merupakan [`WritableStream`][]. Ini berisi banyak metode yang berguna untuk mengirim data kembali ke klien. Kami akan membahasnya selanjutnya.
 
@@ -139,12 +146,12 @@ Saat menyetel header pada respons, nama mereka tidak peka huruf besar-kecil. Jik
 
 Metode pengaturan header dan kode status yang telah kita bahas asumsikan bahwa Anda menggunakan "header implisit". Ini berarti Anda mengandalkan simpul untuk mengirim header untuk Anda pada waktu yang tepat sebelum Anda mulai mengirim badan data.
 
-Jika mau, Anda dapat *secara eksplisit* menulis header ke aliran respons. Untuk melakukan ini, ada metode yang disebut [`writeHead`][], yang menulis status kode dan header ke aliran.
+Jika mau, Anda dapat _secara eksplisit_ menulis header ke aliran respons. Untuk melakukan ini, ada metode yang disebut [`writeHead`][], yang menulis status kode dan header ke aliran.
 
 ```javascript
 response.writeHead(200, {
   'Content-Type': 'application/json',
-  'X-Powered-By': 'bacon'
+  'X-Powered-By': 'bacon',
 });
 ```
 
@@ -169,7 +176,7 @@ Fungsi `akhir` pada aliran juga dapat mengambil beberapa data opsional untuk dik
 response.end('<html><body><h1>Hello, World!</h1></body></html>');
 ```
 
-> Penting untuk mengatur status dan header *sebelum* Anda mulai menulis potongan data ke badan. Ini masuk akal, karena header datang sebelumnya isi dalam tanggapan HTTP.
+> Penting untuk mengatur status dan header _sebelum_ Anda mulai menulis potongan data ke badan. Ini masuk akal, karena header datang sebelumnya isi dalam tanggapan HTTP.
 
 ## Hal Cepat Lain Tentang Kesalahan
 
@@ -182,36 +189,41 @@ Sekarang kita telah belajar tentang membuat tanggapan HTTP, mari kita gabungkan 
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  const { headers, method, url } = request;
-  let body = [];
-  request.on('error', (err) => {
-    console.error(err);
-  }).on('data', (chunk) => {
-    body.push(chunk);
-  }).on('end', () => {
-    body = Buffer.concat(body).toString();
-    // BEGINNING OF NEW STUFF
+http
+  .createServer((request, response) => {
+    const { headers, method, url } = request;
+    let body = [];
+    request
+      .on('error', err => {
+        console.error(err);
+      })
+      .on('data', chunk => {
+        body.push(chunk);
+      })
+      .on('end', () => {
+        body = Buffer.concat(body).toString();
+        // BEGINNING OF NEW STUFF
 
-    response.on('error', (err) => {
-      console.error(err);
-    });
+        response.on('error', err => {
+          console.error(err);
+        });
 
-    response.statusCode = 200;
-    response.setHeader('Content-Type', 'application/json');
-    // Note: the 2 lines above could be replaced with this next one:
-    // response.writeHead(200, {'Content-Type': 'application/json'})
+        response.statusCode = 200;
+        response.setHeader('Content-Type', 'application/json');
+        // Note: the 2 lines above could be replaced with this next one:
+        // response.writeHead(200, {'Content-Type': 'application/json'})
 
-    const responseBody = { headers, method, url, body };
+        const responseBody = { headers, method, url, body };
 
-    response.write(JSON.stringify(responseBody));
-    response.end();
-    // Note: the 2 lines above could be replaced with this next one:
-    // response.end(JSON.stringify(responseBody))
+        response.write(JSON.stringify(responseBody));
+        response.end();
+        // Note: the 2 lines above could be replaced with this next one:
+        // response.end(JSON.stringify(responseBody))
 
-    // END OF NEW STUFF
-  });
-}).listen(8080);
+        // END OF NEW STUFF
+      });
+  })
+  .listen(8080);
 ```
 
 ## Contoh Server Echo
@@ -221,41 +233,49 @@ Mari kita sederhanakan contoh sebelumnya untuk membuat server echo sederhana, ya
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  let body = [];
-  request.on('data', (chunk) => {
-    body.push(chunk);
-  }).on('end', () => {
-    body = Buffer.concat(body).toString();
-    response.end(body);
-  });
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    let body = [];
+    request
+      .on('data', chunk => {
+        body.push(chunk);
+      })
+      .on('end', () => {
+        body = Buffer.concat(body).toString();
+        response.end(body);
+      });
+  })
+  .listen(8080);
 ```
 
 Sekarang mari kita tweak ini. Kami hanya ingin mengirim echo di bawah ini kondisi:
 
-* Metode permintaan adalah POST.
-* URL-nya adalah `/echo`.
+- Metode permintaan adalah POST.
+- URL-nya adalah `/echo`.
 
 Dalam kasus lain, kami hanya ingin merespons dengan 404.
 
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  if (request.method === 'POST' && request.url === '/echo') {
-    let body = [];
-    request.on('data', (chunk) => {
-      body.push(chunk);
-    }).on('end', () => {
-      body = Buffer.concat(body).toString();
-      response.end(body);
-    });
-  } else {
-    response.statusCode = 404;
-    response.end();
-  }
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    if (request.method === 'POST' && request.url === '/echo') {
+      let body = [];
+      request
+        .on('data', chunk => {
+          body.push(chunk);
+        })
+        .on('end', () => {
+          body = Buffer.concat(body).toString();
+          response.end(body);
+        });
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  })
+  .listen(8080);
 ```
 
 > Dengan memeriksa URL dengan cara ini, kita sedang melakukan bentuk "perutean". Bentuk perutean lainnya bisa sesederhana pernyataan `switch` atau serumit seluruh kerangka kerja seperti [`express`][]. Jika Anda mencari sesuatu yang bisa perutean dan tidak ada yang lain, coba [`router`][].
@@ -265,14 +285,16 @@ Besar! Sekarang mari kita coba menyederhanakan ini. Ingat, objek `permintaan` ad
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  if (request.method === 'POST' && request.url === '/echo') {
-    request.pipe(response);
-  } else {
-    response.statusCode = 404;
-    response.end();
-  }
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    if (request.method === 'POST' && request.url === '/echo') {
+      request.pipe(response);
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  })
+  .listen(8080);
 ```
 
 Yay Berjalan!
@@ -286,32 +308,34 @@ Pada respons, kami hanya akan mencatat kesalahan ke `stderr`.
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  request.on('error', (err) => {
-    console.error(err);
-    response.statusCode = 400;
-    response.end();
-  });
-  response.on('error', (err) => {
-    console.error(err);
-  });
-  if (request.method === 'POST' && request.url === '/echo') {
-    request.pipe(response);
-  } else {
-    response.statusCode = 404;
-    response.end();
-  }
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    request.on('error', err => {
+      console.error(err);
+      response.statusCode = 400;
+      response.end();
+    });
+    response.on('error', err => {
+      console.error(err);
+    });
+    if (request.method === 'POST' && request.url === '/echo') {
+      request.pipe(response);
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  })
+  .listen(8080);
 ```
 
 Kami sekarang telah membahas sebagian besar dasar-dasar penanganan permintaan HTTP. Pada saat ini, kamu harus bisa:
 
-* Instansiasi server HTTP dengan fungsi pengendali permintaan, dan dengarkan di sebuah pelabuhan.
-* Dapatkan data header, URL, metode, dan isi dari objek `permintaan`.
-* Membuat keputusan perutean berdasarkan URL dan/atau data lain di objek `permintaan`.
-* Kirim header, kode status HTTP, dan data isi melalui objek `respons`.
-* Pipa data dari objek `request` dan ke objek `response`.
-* Menangani kesalahan aliran di aliran `permintaan` dan `tanggapan`.
+- Instansiasi server HTTP dengan fungsi pengendali permintaan, dan dengarkan di sebuah pelabuhan.
+- Dapatkan data header, URL, metode, dan isi dari objek `permintaan`.
+- Membuat keputusan perutean berdasarkan URL dan/atau data lain di objek `permintaan`.
+- Kirim header, kode status HTTP, dan data isi melalui objek `respons`.
+- Pipa data dari objek `request` dan ke objek `response`.
+- Menangani kesalahan aliran di aliran `permintaan` dan `tanggapan`.
 
 Dari dasar-dasar ini, server HTTP Node.js untuk banyak kasus penggunaan tipikal dapat: dibangun. Ada banyak hal lain yang disediakan oleh API ini, jadi pastikan untuk baca dokumen API untuk [`EventEmitters`][], [`Streams`][], dan [`HTTP`][].
 

@@ -4,6 +4,7 @@ layout: contribute.hbs
 ---
 
 # İşbirliği Zirvesi
+
 İşbirliği Zirvesi, heyecan verici ortaklık, eğitim ve bilgi paylaşımı için varolan ve potansiyel katkıda bulunan geliştiricileri Node.js hakkında konuşmak için biraraya getiren konferans gibi bir buluşmadır. Komiteler ve gruplar önemli kararları verirken, aynı zamanda heyecan verici fikirleri ve öne sürmek istedikleri çalışmalar için yüz yüze görüşme fırsatı yakalayarak yılda iki kez biraraya gelir.
 
 ## Kim katılır?

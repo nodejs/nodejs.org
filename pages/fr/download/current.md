@@ -32,4 +32,3 @@ additional:
   LinuxSystemZ: Linux sur System z
   AIXPowerSystems: AIX sur les systèmes de puissance
 ---
-

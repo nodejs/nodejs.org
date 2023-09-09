@@ -21,17 +21,17 @@ Node.js v4 also brings a plan for [long-term support (LTS)](https://github.com/n
 
 Additional updates include:
 
-* **Stability and Security**: Key Node.js Foundation members, such as IBM, NodeSource and StrongLoop, contributed a strong enterprise-focus to the latest release. Their contributions make this latest version more stable and secure for enterprise needs.
-* **Improved Platform Test Coverage**: With the assistance of some major partners, including RackSpace, DigitalOcean, Scaleway and ARM Holdings, the new release has built one of the most advanced testing clusters of any major open source project creating additional stability to the platform.
-* **First-Class Coverage of ARM variants**: All major ARM variants, ARMv6, ARMv7, and the brand new 64-bit ARMv8, which is making major inroads in the server market, are supported as part of the test infrastructure. Developers who need to use these architectures for developing enterprise-ready and IoT applications are assured solid runtime.
-* **Addition of Arrow Functions**: Node.js v4 now includes arrow functions, an addition that was not previously available even in io.js.
+- **Stability and Security**: Key Node.js Foundation members, such as IBM, NodeSource and StrongLoop, contributed a strong enterprise-focus to the latest release. Their contributions make this latest version more stable and secure for enterprise needs.
+- **Improved Platform Test Coverage**: With the assistance of some major partners, including RackSpace, DigitalOcean, Scaleway and ARM Holdings, the new release has built one of the most advanced testing clusters of any major open source project creating additional stability to the platform.
+- **First-Class Coverage of ARM variants**: All major ARM variants, ARMv6, ARMv7, and the brand new 64-bit ARMv8, which is making major inroads in the server market, are supported as part of the test infrastructure. Developers who need to use these architectures for developing enterprise-ready and IoT applications are assured solid runtime.
+- **Addition of Arrow Functions**: Node.js v4 now includes arrow functions, an addition that was not previously available even in io.js.
 
 The technical steering committee for the Node.js Foundation is now 15 members strong with 40 plus core committers and 350+ GitHub organization members contributing to the community. The development process and release cycles are much faster due to the large, active community united under the Node.js Foundation umbrella. The next release is planned before the end of 2015. In parallel, the project will be branching a new stable line of releases every six months, with one planned in October and another for spring of 2016.
 
 Additional Resources
 
-* Technical Blog - [Node v4.0.0 (Stable)](https://nodejs.org/en/blog/release/v4.0.0/)
-* New GitHub [home](https://github.com/nodejs/node)
+- Technical Blog - [Node v4.0.0 (Stable)](https://nodejs.org/en/blog/release/v4.0.0/)
+- New GitHub [home](https://github.com/nodejs/node)
 
 About Node.js Foundation
 Node.js Foundation is a collaborative open source project dedicated to building and supporting the Node.js platform and other related modules. Node.js is used by tens of thousands of organizations in more than 200 countries and amasses more than 2 million downloads per month. It is the runtime of choice for high-performance, low latency applications, powering everything from enterprise applications, robots, API engines, cloud stacks and mobile websites. The Foundation is made up of a diverse group of companies including Platinum members Famous, IBM, Intel, Joyent, Microsoft and PayPal. Gold members include GoDaddy, NodeSource and Modulus/Progress Software, and Silver members include Apigee, Codefresh, DigitalOcean, Fidelity, Groupon, nearForm, npm, Sauce Labs, SAP, StrongLoop and YLD!. Get involved here: <https://nodejs.org/>.

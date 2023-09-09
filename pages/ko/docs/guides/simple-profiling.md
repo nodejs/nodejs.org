@@ -171,9 +171,9 @@ ab -k -c 20 -n 250 "http://localhost:8080/auth?username=matt&password=password"
 and get an ab output of:
 -->
 
-*Node.js 애플리케이션에서 사용자 인증을 처리하는 핸들러는 추천하지 않는 방법이고 여기서는 예시를
+_Node.js 애플리케이션에서 사용자 인증을 처리하는 핸들러는 추천하지 않는 방법이고 여기서는 예시를
 보여주기 위해서 사용한 것뿐입니다. 보통은 직접 만든 인증 메커니즘을 설계하지 말아야 합니다.
-기존에 존재하는 입증된 인증솔루션을 사용하는 것이 훨씬 낫습니다.*
+기존에 존재하는 입증된 인증솔루션을 사용하는 것이 훨씬 낫습니다._
 
 배포한 애플리케이션에서 사용자가 요청에 지연이 발생한다고 불평한다고 가정해 보겠습니다.
 내장된 프로파일러로 애플리케이션을 간단히 실행할 수 있습니다.
@@ -413,12 +413,12 @@ requests while computing a hash.
 
 이 섹션을 분석하려면 위에 나온 tick 횟수보다는 약간 더 작업이 필요합니다. 위에 나온 각
 "호출 스택(call stacks)"에서 parent에 나온 퍼센티지는 현재 줄에 있는 함수가 호출한
-바로 윗 줄의 함수가 차지하는 비율을 알려줍니다. 예를 들어 중간에 있는 _sha1_block_data_order의
-"호출 스택"에서 _sha1_block_data_order가 샘플에서 11.9%를 차지한다는 것을 알 수 있고
+바로 윗 줄의 함수가 차지하는 비율을 알려줍니다. 예를 들어 중간에 있는 \_sha1_block_data_order의
+"호출 스택"에서 \_sha1_block_data_order가 샘플에서 11.9%를 차지한다는 것을 알 수 있고
 이는 횟수에서 나온 값이라는 것을 알 수 있습니다. 하지만 여기서 이 함수는 항상 Node.js crypto 모듈의
-pbkdf2 함수가 호출한다고도 할 수 있습니다. 비슷하게 _malloc_zone_malloc도 같은 pbkdf2 함수가
+pbkdf2 함수가 호출한다고도 할 수 있습니다. 비슷하게 \_malloc_zone_malloc도 같은 pbkdf2 함수가
 거의 전적으로 호출한다는 것을 알 수 있습니다. 그러므로 이 관점으로 얻은 정보를 사용하면
-_sha1_block_data_order과 _malloc_zone_malloc가 pbkdf2 함수에 의해서 호출되었으므로
+\_sha1_block_data_order과 \_malloc_zone_malloc가 pbkdf2 함수에 의해서 호출되었으므로
 사용자 비밀번호의 해시 계산이 앞에서 본 51.8%뿐 아니라 상위 3개의 모든 CPU 시간을
 차지한다는 것을 알 수 있습니다.
 

@@ -33,25 +33,25 @@ Several key strategies are in place to build the safety
 net in order to enable change/innovation while maintaining
 quality. These include:
 
-* Different release types
-* Change flow processes
-* Enhancement Proposal process
-* Automation and Testing
-  * Functional Tests
-  * Module Testing
-  * Stress Testing
-  * Platform/OS coverage
-  * Development Workflows
-* Performance Benchmarks
-* Tools
+- Different release types
+- Change flow processes
+- Enhancement Proposal process
+- Automation and Testing
+  - Functional Tests
+  - Module Testing
+  - Stress Testing
+  - Platform/OS coverage
+  - Development Workflows
+- Performance Benchmarks
+- Tools
 
 ## Release Types
 
 The Node.js project maintains 3 key types of releases
 
-* Nightlies
-* Current
-* LTS
+- Nightlies
+- Current
+- LTS
 
 Having different release types allows innovation/change
 to flow rapidly into Nightly builds where we can get
@@ -98,13 +98,13 @@ Once changes have been proven in the Current stream, they are candidates
 for the LTS streams. In the first stage of LTS (Active)
 changes are limited to:
 
-* Bug fixes
-* Security updates
-* Non-semver-major npm updates
-* Relevant documentation updates
-* Certain performance improvements where the risk of
+- Bug fixes
+- Security updates
+- Non-semver-major npm updates
+- Relevant documentation updates
+- Certain performance improvements where the risk of
   breaking existing applications is minimal
-* Changes that introduce large amount of code churn where
+- Changes that introduce large amount of code churn where
   the risk of breaking existing applications is low and
   where the change in question may significantly ease the
   ability to backport future changes due to the reduction in diff noise.
@@ -130,8 +130,8 @@ types but we'll expand on this strategy here.
 The main idea is that as changes flow from Nightlies, to Stable, to LTS
 Active, to LTS Maintenance we increase the following:
 
-* scrutiny
-* time
+- scrutiny
+- time
 
 Changes going into master are well reviewed and time is allowed
 (minimum 48 to 72 hours) for as many community members as possible
@@ -207,13 +207,13 @@ up the levels until we have as complete coverage as is reasonable.
 
 These levels include:
 
-* Functional Tests
-* Platform/OS Coverage
-* Dependency Testing
-* Module Testing
-* Stress Testing
-* Development Workflows
-* Use Case Testing
+- Functional Tests
+- Platform/OS Coverage
+- Dependency Testing
+- Module Testing
+- Stress Testing
+- Development Workflows
+- Use Case Testing
 
 ### Functional Tests
 

@@ -5,33 +5,33 @@ title: Installeer Node.js via package-manager
 
 # Installeer Node.js via package-manager
 
-***Opmerking:*** De packages op deze pagina worden onderhouden door hun makers, **niet** door het Node.js-kernteam. Meld eventuele problemen die u tegenkomt aan de pakketbeheerders. Als blijkt dat uw probleem een bug is die veroorzaakt wordt door Node.js, dan zullen de pakketbeheerders dit bij ons melden.
+**_Opmerking:_** De packages op deze pagina worden onderhouden door hun makers, **niet** door het Node.js-kernteam. Meld eventuele problemen die u tegenkomt aan de pakketbeheerders. Als blijkt dat uw probleem een bug is die veroorzaakt wordt door Node.js, dan zullen de pakketbeheerders dit bij ons melden.
 
 ---
 
-* [Alpine Linux](#alpine-linux)
-* [Android](#android)
-* [Arch Linux](#arch-linux)
-* [CentOS, Fedora en Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
-* [Debian en Ubuntu gebaseerde Linux-distributies](#debian-and-ubuntu-based-linux-distributions)
-* [fnm](#fnm)
-* [FreeBSD](#freebsd)
-* [Gentoo](#gentoo)
-* [IBM i](#ibm-i)
-* [macOS](#macos)
-* [n](#n)
-* [NetBSD](#netbsd)
-* [Nodenv](#nodenv)
-* [nvm](#nvm)
-* [nvs](#nvs)
-* [OpenBSD](#openbsd)
-* [openSUSE en SLE](#opensuse-and-sle)
-* [SmartOS en illumos](#smartos-and-illumos)
-* [Snap](#snap)
-* [Solus](#solus)
-* [Void Linux](#void-linux)
-* [Windows](#windows-1)
-* [z/OS](#zos)
+- [Alpine Linux](#alpine-linux)
+- [Android](#android)
+- [Arch Linux](#arch-linux)
+- [CentOS, Fedora en Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
+- [Debian en Ubuntu gebaseerde Linux-distributies](#debian-and-ubuntu-based-linux-distributions)
+- [fnm](#fnm)
+- [FreeBSD](#freebsd)
+- [Gentoo](#gentoo)
+- [IBM i](#ibm-i)
+- [macOS](#macos)
+- [n](#n)
+- [NetBSD](#netbsd)
+- [Nodenv](#nodenv)
+- [nvm](#nvm)
+- [nvs](#nvs)
+- [OpenBSD](#openbsd)
+- [openSUSE en SLE](#opensuse-and-sle)
+- [SmartOS en illumos](#smartos-and-illumos)
+- [Snap](#snap)
+- [Solus](#solus)
+- [Void Linux](#void-linux)
+- [Windows](#windows-1)
+- [z/OS](#zos)
 
 ---
 
@@ -93,8 +93,9 @@ dnf module install nodejs:12
 ### Alternatieven
 
 Deze bronnen bieden packages aan die compatibel zijn met CentOS, Fedora en RHEL.
-* [Node.js snaps](#snap) onderhouden en ondersteund op https://github.com/nodejs/snap
-* [Node.js binary distributies](#debian-and-ubuntu-based-linux-distributions) onderhouden en ondersteund door [NodeSource](https://github.com/nodesource/distributions)
+
+- [Node.js snaps](#snap) onderhouden en ondersteund op https://github.com/nodejs/snap
+- [Node.js binary distributies](#debian-and-ubuntu-based-linux-distributions) onderhouden en ondersteund door [NodeSource](https://github.com/nodesource/distributions)
 
 ## Debian en Ubuntu gebaseerde Linux-distributies
 
@@ -316,11 +317,11 @@ pkg_add node
 
 Node.js is beschikbaar in de main-repositories onder de volgende packages:
 
-* **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
-* **openSUSE Tumbleweed**: `nodejs16`
-* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, and `nodejs14`
+- **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
+- **openSUSE Tumbleweed**: `nodejs16`
+- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, and `nodejs14`
   (De module "Web and Scripting" moet [ingeschakeld](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated) zijn.)
-* **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, and `nodejs14`
+- **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, and `nodejs14`
   (De module "Web and Scripting" moet [ingeschakeld](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module) zijn.)
 
 Om bijvoorbeeld Node.js 14.x op openSUSE Leap 15.2 te installeren, voert u het volgende commando uit als root:
@@ -402,5 +403,6 @@ scoop install nodejs-lts
 
 IBM&reg; SDK voor Node.js - z/OS&reg; is beschikbaar in twee installatieformaten,
 SMP/E en PAX. Selecteer het installatieformaat dat voor u van toepassing is:
-* [Installatie en configuratie van de SMP/E-editie van Node.js op z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
-* [Installatie en configuratie van de PAX-editie van Node.js op z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)
+
+- [Installatie en configuratie van de SMP/E-editie van Node.js op z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
+- [Installatie en configuratie van de PAX-editie van Node.js op z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)

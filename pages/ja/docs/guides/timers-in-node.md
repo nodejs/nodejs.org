@@ -14,6 +14,7 @@ read up on the Node.js
 [Event Loop](/en/docs/guides/event-loop-timers-and-nexttick/).
 
 -->
+
 # Node.js のタイマーと仕組み
 
 Node.js のタイマーモジュールには、
@@ -34,6 +35,7 @@ with the system, and despite the fact that the API mirrors the browser
 API, there are some differences in implementation.
 
 -->
+
 ## Node.js を使って連続した時間を制御する
 
 Node.js APIには、現時点以降のある時点でコードを実行するように
@@ -80,7 +82,8 @@ see `clearTimeout()` below) as well as change the execution behavior (see
 `unref()` below).
 
 -->
-### "そう言うとき" 実行する ~ *`setTimeout()`*
+
+### "そう言うとき" 実行する ~ _`setTimeout()`_
 
 `setTimeout()` を使用して、
 指定したミリ秒後に
@@ -160,7 +163,8 @@ cannot be stopped, just like with a normal function. Refer to [this guide](/en/d
 to better understand the operation of `process.nextTick()`.
 
 -->
-### "この直後に" 実行する ~ *`setImmediate()`*
+
+### "この直後に" 実行する ~ _`setImmediate()`_
 
 `setImmediate()` は現在のイベントループサイクルの終わりにコードを実行します。
 このコードは、現在のイベントループ内の I/O 操作の*後*、
@@ -175,7 +179,7 @@ to better understand the operation of `process.nextTick()`.
 ```js
 console.log('before immediate');
 
-setImmediate((arg) => {
+setImmediate(arg => {
   console.log(`executing immediate: ${arg}`);
 }, 'so immediate');
 
@@ -228,7 +232,8 @@ Just like `setTimeout()`, `setInterval()` also returns a `Timeout` object which
 can be used to reference and modify the interval that was set.
 
 -->
-### "無限ループ" 実行 ~ *`setInterval()`*
+
+### "無限ループ" 実行 ~ _`setInterval()`_
 
 複数回実行する必要があるコードブロックがある場合、
 `setInterval()` を使用してそのコードを実行できます。
@@ -283,6 +288,7 @@ clearInterval(intervalObj);
 ```
 
 -->
+
 ## 未来をクリアする
 
 `Timeout` または `Immediate` オブジェクトをキャンセルする必要がある場合はどうすればいいですか？
@@ -345,6 +351,7 @@ setImmediate(() => {
 });
 ```
  -->
+
 ## 後ろにタイムアウトを残す
 
 `Timeout` オブジェクトは `setTimeout` と `setInterval` によって返されることを忘れないでください。
@@ -388,6 +395,7 @@ this Node.js guide: [The Node.js Event Loop, Timers, and
 process.nextTick()](/en/docs/guides/event-loop-timers-and-nexttick/).
 
 -->
+
 ## イベントループのさらに下へ
 
 このガイドでカバーしてきた以上に
