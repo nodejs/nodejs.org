@@ -16,7 +16,7 @@ The Node.js Web Infra Team is responsible for maintaining the Infrastructure rev
 
 - Maintaining CI/CD pipelines related to Web Infrastructure
 - Maintaining our Infrastructure Providers (such as Vedrcel)
-- Have technical ownership on best-standars and best-practices for our Web Infrastructure (such as Web Frameworks that we use)
+- Have technical ownership on best-standards and best-practices for our Web Infrastructure (such as Web Frameworks that we use)
 
 Web Infra Team members should have access to be able to maintain the services mentioned above.
 
