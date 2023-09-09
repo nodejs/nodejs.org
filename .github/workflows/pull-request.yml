@@ -229,7 +229,7 @@ jobs:
           ignoreLastBuildOnBranch: true
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           exitOnceUploaded: true
-          onlyChanged: true
+          forceRebuild: true
 
       - name: Jest Coverage Comment
         # This prevents this step from running if "Unit Tests" got cancelled; Which gets cancelled if
