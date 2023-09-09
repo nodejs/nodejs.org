@@ -42,4 +42,4 @@ As seen above, the different teams under the Node.js Web Team umbrella are respo
 
 Following this line of thought, the Web Infra Team has technical ownership on aspects that involve knowledge on matters related to Web Infrastructure (CI/CD, Web Frameworks, Cloud Technologies, Web Security and others); The UX & Design Team has technical ownership on aspects that involve knowledge on matters related to UX & Design (CSS, HTML, Accessibility, UX, Design and others); The Website Team has technical ownership on aspects that involve knowledge on matters related to the Node.js Website (Node.js Website's features, Node.js Website's stability, Node.js Website's security and others); and the Standards Team has technical ownership.
 
-But above all, the Web Team should work together to better the Web Experience for Node.js. This means that the Web Team should work together to provide the best Web Experience for Node.
+But above all, the Web Team should work together to better the Web Experience for Node.js, aiming to provide the best experience for Node.js users.
