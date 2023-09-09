@@ -79,6 +79,8 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
+          # Since we trigger this with a Labeled Event we might not get the latest commit
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
           # We need full git history for properly being able to run Chromatic
           # and since Turborepo also needs the git history to compute changes
           fetch-depth: 0
@@ -171,6 +173,8 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
+          # Since we trigger this with a Labeled Event we might not get the latest commit
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
           # We need full git history for properly being able to run Chromatic
           # and since Turborepo also needs the git history to compute changes
           fetch-depth: 0
@@ -229,7 +233,6 @@ jobs:
           ignoreLastBuildOnBranch: true
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           exitOnceUploaded: true
-          forceRebuild: true
 
       - name: Jest Coverage Comment
         # This prevents this step from running if "Unit Tests" got cancelled; Which gets cancelled if
