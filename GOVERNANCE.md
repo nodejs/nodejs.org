@@ -8,7 +8,7 @@ The Node.js Website Team is responsible for the technical development of the Nod
 
 The maintainers on the Node.js Website Team are responsible for steering the technical direction of the Node.js Website, and reserve the right to make final decisions on any issues or pull requests, in line with the Contribution Guidelines, Collaborator Guidelines, the Code of Conduct and the overall Governance premises of the Node.js project.
 
-Members of this team are nominated through the guidelines provided on the Collaborator Guidelines within this repository.
+Members of this team are nominated through the guidelines provided in the Collaborator Guidelines within this repository.
 
 ### Node.js Web Infra Team (`@nodejs/web-infra`)
 
