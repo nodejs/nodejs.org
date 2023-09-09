@@ -1,5 +1,5 @@
 ---
-title: "npm 1.0: link"
+title: 'npm 1.0: link'
 author: Isaac Schlueter
 date: 2011-04-07T00:40:33.000Z
 status: publish
@@ -42,6 +42,7 @@ And, in both cases, changes should be immediately apparent and not require any r
 _Also_, there’s a third use case that I didn’t really appreciate until I started writing more programs that had more dependencies:
 
 <!-- markdownlint-disable ol-prefix -->
+
 3. Globally install something, and use it in development in a bunch of projects, and then update them all at once so that they all use the latest version.
 <!-- markdownlint-enable ol-prefix -->
 

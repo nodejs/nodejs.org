@@ -40,11 +40,11 @@ dep.method(); // Uh-oh! This method doesn't actually exist.
 const domain = require('domain');
 const net = require('net');
 const d = domain.create();
-d.on('error', (err) => console.error(err.message));
+d.on('error', err => console.error(err.message));
 
 d.run(() =>
   net
-    .createServer((c) => {
+    .createServer(c => {
       c.end();
       c.write('bye');
     })
@@ -64,7 +64,7 @@ d.on('error', () => console.error('d intercepted an error'));
 
 d.run(() => {
   const server = net
-    .createServer((c) => {
+    .createServer(c => {
       const e = domain.create(); // No 'error' handler being set.
       e.run(() => {
         // This will not be caught by d's error handler.
@@ -92,7 +92,7 @@ d.run(() => {
 ```js
 const d1 = domain.create();
 d1.foo = true; // custom member to make more visible in console
-d1.on('error', (er) => {
+d1.on('error', er => {
   /* handle error */
 });
 
@@ -100,7 +100,7 @@ d1.run(() =>
   setTimeout(() => {
     const d2 = domain.create();
     d2.bar = 43;
-    d2.on('error', (er) => console.error(er.message, domain._stack));
+    d2.on('error', er => console.error(er.message, domain._stack));
     d2.run(() => {
       setTimeout(() => {
         setTimeout(() => {
@@ -178,14 +178,14 @@ class ConnectionResource extends EventEmitter {
 
 // Example begin
 net
-  .createServer((c) => {
+  .createServer(c => {
     const cr = new ConnectionResource(c);
 
     const d1 = domain.create();
     fs.open(
       FILENAME,
       'r',
-      d1.intercept((fd) => {
+      d1.intercept(fd => {
         streamInParts(fd, cr, 0);
       })
     );
@@ -199,7 +199,7 @@ net
 function streamInParts(fd, cr, pos) {
   const d2 = domain.create();
   const alive = true;
-  d2.on('error', (er) => {
+  d2.on('error', er => {
     print('d2 error:', er.message);
     cr.end();
   });
@@ -237,19 +237,19 @@ function pipeData(cr) {
   const ps = net.createServer();
   const d3 = domain.create();
   const connectionList = [];
-  d3.on('error', (er) => {
+  d3.on('error', er => {
     print('d3 error:', er.message);
     cr.end();
   });
   d3.add(ps);
-  ps.on('connection', (conn) => {
+  ps.on('connection', conn => {
     connectionList.push(conn);
     conn.on('data', () => {}); // don't care about incoming data.
     conn.on('close', () => {
       connectionList.splice(connectionList.indexOf(conn), 1);
     });
   });
-  cr.on('data', (chunk) => {
+  cr.on('data', chunk => {
     for (let i = 0; i < connectionList.length; i++) {
       connectionList[i].write(chunk);
     }
@@ -275,12 +275,12 @@ process.on('exit', () => {
 });
 ```
 
-* 当一个新的连接发生时，同时也发生：
-  * 打开文件系统上的文件
-  * 针对唯一的套接字打开文件管道
-* 异步读取文件块
-* 将块写入 TCP 连接和任何监听套接字中
-* 如果这些资源中的任何一个出错，则通知其它需要清理和关闭的附加资源
+- 当一个新的连接发生时，同时也发生：
+  - 打开文件系统上的文件
+  - 针对唯一的套接字打开文件管道
+- 异步读取文件块
+- 将块写入 TCP 连接和任何监听套接字中
+- 如果这些资源中的任何一个出错，则通知其它需要清理和关闭的附加资源
 
 正如我们从这个例子中看到的那样，当某些事情发生故障时必须做正确的清理。所有域提供的是异常聚合机制。在这个例子中，即使通过域传递数据的潜在有用能力也很容易通过将需要的资源作为函数参数传递。
 
@@ -301,7 +301,7 @@ const domain = require('domain');
 const net = require('net');
 
 const server = net
-  .createServer((c) => {
+  .createServer(c => {
     // Use a domain to propagate data across events within the
     // connection so that we don't have to pass arguments
     // everywhere.
@@ -311,7 +311,7 @@ const server = net
     // Mock class that does some useless async data transformation
     // for demonstration purposes.
     const ds = new DataStream(dataTransformed);
-    c.on('data', (chunk) => ds.data(chunk));
+    c.on('data', chunk => ds.data(chunk));
   })
   .listen(8080, () => console.log('listening on 8080'));
 

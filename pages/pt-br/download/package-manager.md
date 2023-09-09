@@ -5,25 +5,25 @@ title: Instalando Node.js via gerenciador pacotes
 
 # Instalando Node.js via gerenciador pacotes
 
-***Nota:*** Os pacotes nessa página são mantidos e suportados por seus respectivos empacotadores, **não** pela equipe principal do Node.js. Por favor, relate quaisquer problemas encontrados para o mantenedor do pacote. Se o problema for um bug no próprio Node.js, o mantenedor deve relatar para o issue upstream.
+**_Nota:_** Os pacotes nessa página são mantidos e suportados por seus respectivos empacotadores, **não** pela equipe principal do Node.js. Por favor, relate quaisquer problemas encontrados para o mantenedor do pacote. Se o problema for um bug no próprio Node.js, o mantenedor deve relatar para o issue upstream.
 
 ---
 
-* [Android](#android)
-* [Arch Linux](#arch-linux)
-* [Debian e Distribuições Linux baseadas em Ubuntu, Enterprise Linux/Fedora e pacotes Snap](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
-* [FreeBSD](#freebsd)
-* [Gentoo](#gentoo)
-* [NetBSD](#netbsd)
-* [nvm](#nvm)
-* [nvs](#nvs)
-* [OpenBSD](#openbsd)
-* [openSUSE e SLE](#opensuse-and-sle)
-* [macOS](#macos)
-* [SmartOS e illumos](#smartos-and-illumos)
-* [Solus](#solus)
-* [Void Linux](#void-linux)
-* [Windows](#windows-1)
+- [Android](#android)
+- [Arch Linux](#arch-linux)
+- [Debian e Distribuições Linux baseadas em Ubuntu, Enterprise Linux/Fedora e pacotes Snap](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
+- [FreeBSD](#freebsd)
+- [Gentoo](#gentoo)
+- [NetBSD](#netbsd)
+- [nvm](#nvm)
+- [nvs](#nvs)
+- [OpenBSD](#openbsd)
+- [openSUSE e SLE](#opensuse-and-sle)
+- [macOS](#macos)
+- [SmartOS e illumos](#smartos-and-illumos)
+- [Solus](#solus)
+- [Void Linux](#void-linux)
+- [Windows](#windows-1)
 
 ---
 
@@ -118,6 +118,7 @@ nvm uninstall 8
 ## nvs
 
 #### Windows
+
 O gerenciador de versões `nvs` é multi-plataformal e pode ser utilizado no Windows, macOS e Sistemas baseadoes em UNIX
 
 Para instalar o `nvs` no Windows, visite a [página de versões](https://github.com/jasongin/nvs/releases) e baixe o instalador no formato MSI da última versão disponível.
@@ -129,9 +130,11 @@ choco install nvs
 ```
 
 #### macOS,UnixLike
+
 Você pode encontrar a documentação sobre as etapas de instalação do `nvs` para macOS/Sistemas baseados em UNIX [nesta página](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
 
 #### Usage
+
 Após a instalação você pode utilizar o `nvs` para alternar entre diferentes versões do Node.
 
 Para adicionar a última versão do node:
@@ -178,10 +181,10 @@ pkg_add node
 
 Node.js está disponível nos principais repositórios sob os seguintes pacotes:
 
-* **openSUSE Leap 42.2**: `nodejs4`
-* **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
-* **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
-* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`
+- **openSUSE Leap 42.2**: `nodejs4`
+- **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
+- **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
+- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`
   (O "Web and Scripting Module" deve ser [adicionado antes da instalação](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).)
 
 Por exemplo, para instalar o Node.js 4.x no openSUSE 42.2, execute o seguinte como root:

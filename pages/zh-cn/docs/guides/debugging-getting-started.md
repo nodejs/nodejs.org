@@ -16,6 +16,7 @@ layout: docs.hbs
 如果收到了 `SIGUSR1` 信号 (`SIGUSR1` 在 Windows 下不可用)，Node.js 同样会开始侦听调试信息；在 Node.js 7 以及先前的版本中，这将激活旧版本的调试 API（legacy Debugger API）；在 Node.js 8 和后续版本中，将激活检查器 API（Inspector API）。
 
 ---
+
 ## 安全隐患
 
 由于调试器对 Node.js 执行环境具有完全访问权限，能够连接到此端口的恶意行为者能够代替 Node.js 进程执行任意代码。理解将调试器端口暴露在公共和专用网络上所受影响的安全性是很重要的。
@@ -44,50 +45,40 @@ layout: docs.hbs
 
 ### [Chrome 开发工具](https://github.com/ChromeDevTools/devtools-frontend) 55+, [Microsoft Edge](https://www.microsoftedgeinsider.com)
 
-* **方法1：**在基于 Chromium 内核的浏览器下打开`chrome://inspect`，或在Edge浏览器下打开 `edge://inspect` ，点击配置按钮确保你的目标宿主和端口号列入其
-* **方法 2：**从 `/json/list` 的输出中复制 `devtoolsFrontendUrl` （见上文）或 --inspect 提示文本并粘贴到 Chrome。
+- \*\*方法1：\*\*在基于 Chromium 内核的浏览器下打开`chrome://inspect`，或在Edge浏览器下打开 `edge://inspect` ，点击配置按钮确保你的目标宿主和端口号列入其
+- \*\*方法 2：\*\*从 `/json/list` 的输出中复制 `devtoolsFrontendUrl` （见上文）或 --inspect 提示文本并粘贴到 Chrome。
 
 > 请注意：Node.js 和 Chrome 必须在同一个平台上运行。
 
 ### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
 
-* 在 Debug 面板中，点击“设置图标”，打开 `.vscode/launch.json`，选择 "Node.js" 进行初始化构建。
+- 在 Debug 面板中，点击“设置图标”，打开 `.vscode/launch.json`，选择 "Node.js" 进行初始化构建。
 
 ### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017+
 
-* 从菜单中或者单击 F5， "Debug > Start Debugging"。
-* [详细说明](https://github.com/Microsoft/nodejstools/wiki/Debugging)。
+- 从菜单中或者单击 F5， "Debug > Start Debugging"。
+- [详细说明](https://github.com/Microsoft/nodejstools/wiki/Debugging)。
 
 ### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 以及其它版本
 
-* 创建一个新的 Node.js 调试配置，点击调试。在 Node.js 7 版本上默认会加上 `--inspect`开关。欲禁用 的话，在 IDE 注册表中请取消对 `js.debugger.node.use.inspect`的勾选。想了解更多关于WebStorm和其它JetBrains产品的调试方法，可以参考
+- 创建一个新的 Node.js 调试配置，点击调试。在 Node.js 7 版本上默认会加上 `--inspect`开关。欲禁用 的话，在 IDE 注册表中请取消对 `js.debugger.node.use.inspect`的勾选。想了解更多关于WebStorm和其它JetBrains产品的调试方法，可以参考
 
-WebStorm在线帮助/a>。</li> </ul> 
-  
-  
+WebStorm在线帮助/a>。</li> </ul>
 
 ### [chrome 远程接口](https://github.com/cyrus-and/chrome-remote-interface)
 
-* 简化对[检查器协议终端][]连接的库。
-
-
+- 简化对[检查器协议终端][]连接的库。
 
 ### [Gitpod](https://github.com/cyrus-and/chrome-remote-interface)
 
-* 你可以通过`Debug`视图开启调试配置，或者按下`F5`也行。[此处是详细教程](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)。
-
-
+- 你可以通过`Debug`视图开启调试配置，或者按下`F5`也行。[此处是详细教程](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)。
 
 ### [Eclipse IDE](https://eclipse.org/eclipseide) 带有 Eclipse 万维网开发扩展的开发
 
-* 从某个后缀为 js 文件，选择 “以……方式调试（Debug As...） > Node 程序 （Node program）”，或者
-* 创建一个调试配置，它把调试器挂接到一个正在运行的 Node 程序上（并且该调试已经使用`--inspect`参数）。
-
-
+- 从某个后缀为 js 文件，选择 “以……方式调试（Debug As...） > Node 程序 （Node program）”，或者
+- 创建一个调试配置，它把调试器挂接到一个正在运行的 Node 程序上（并且该调试已经使用`--inspect`参数）。
 
 ---
-
-
 
 ## 命令行选项
 
@@ -156,37 +147,25 @@ WebStorm在线帮助/a>。</li> </ul>
 
 ---
 
-
-
 ## 启用远程调试的情形
 
 我们推荐你千万不要使用调试器监听公共的 IP 地址。如果你真需要允许远程调试连接，那么就请使用 SSH 代替。以下我们提供你例子仅是为解释目的。请在开始前理解允许远程访问特权的安全风险。
 
 让我们假定你在一台远程机器上运行 Node，譬如 remote.example.com。你想进行调试。在那台机器上你应该启动 node 进程，让监视器仅监听本地（默认）。
 
-
-
 ```bash
 node --inspect server.js
 ```
 
-
 现在，在你本地机器上，从你初始化一个调试客户端连接开始，你创建了一个 SSH 管道：
-
-
 
 ```bash
 ssh -L 9221:localhost:9229 user@remote.example.com
 ```
 
-
 ssh 管道启动，在你机器上连接到 9221 端口将被重定向到 9229 的 remote.example.com 地址上。你可以附加一个调试器，例如 Chrome 开发工具或者是指向 localhost:9221 的 Visual Studio Code。如果 Node.js 本地正在运行，应该可以调试了。
 
-
-
 ---
-
-
 
 ## 遗留的调试器
 
@@ -196,21 +175,16 @@ ssh 管道启动，在你机器上连接到 9221 端口将被重定向到 9229 �
 
 V8 调试协议再也不维护或是归档了。
 
-
-
-### [内置调试器](https://nodejs.org/dist/{#var currentVersion}/docs/api/debugger.html)
+### \[内置调试器]\(<https://nodejs.org/dist/{#var> currentVersion}/docs/api/debugger.html)
 
 在 Node.js 内置命令行调试器中用 `node debug script_name.js` 启动你的脚本。你的脚本就在 Node 另外一个进程中随着 `--debug-brk` 启动了起来，并且初始化的 Node 进程运行 `_debugger.js` 脚本连接上你的目标。
 
-
-
-### [node 监视器](https://nodejs.org/dist/{#var currentVersion}/docs/api/debugger.html)
+### \[node 监视器]\(<https://nodejs.org/dist/{#var> currentVersion}/docs/api/debugger.html)
 
 用 Chrome 开发工具，通过 Node.js 的中间进程把 Chromium 中的[检查器协议][]转换成 V8 调试器协议进行程序调试。
 
 <!-- refs -->
 
 [检查器协议终端]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/
-
 [检查器协议]: https://chromedevtools.github.io/debugger-protocol-viewer/v8/
 [UUID]: https://tools.ietf.org/html/rfc4122

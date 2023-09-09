@@ -7,6 +7,9 @@
 name: Pull Request Checks
 
 on:
+  push:
+    branches:
+      - main
   pull_request_target:
     branches:
       - main
@@ -29,7 +32,7 @@ jobs:
   # This Job removes the label after it got applied to ensure that we can easily apply again when needed
   remove_pull_request_label:
     if: |
-      github.event.action == 'labeled' &&
+      github.event_name == 'pull_request_target' &&
       github.event.label.name == 'github_actions:pull-request'
 
     name: Remove Pull Request Label
@@ -41,11 +44,12 @@ jobs:
           labels: github_actions:pull-request
 
   base:
-    # This Job ensures that these jobs run either on regular Pull Request Updates
-    # Or if the PR gets labeled with `github_actions:pull-request`
+    # This Job should run either on `merge_groups` or `push` events
+    # or `pull_request_target` event with a `labeled` action with a label named `github_actions:pull-request`
     if: |
-      github.event.action != 'labeled' ||
-      (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request')
+      (github.event_name == 'push' || github.event_name == 'merge_group') ||
+      (github.event_name == 'pull_request_target' &&
+        github.event.label.name == 'github_actions:pull-request')
 
     name: Base Tasks
     runs-on: ubuntu-latest
@@ -87,11 +91,12 @@ jobs:
           fi
 
   lint:
-    # This Job ensures that these jobs run either on regular Pull Request Updates
-    # Or if the PR gets labeled with `github_actions:pull-request`
+    # This Job should run either on `merge_groups` or `push` events
+    # or `pull_request_target` event with a `labeled` action with a label named `github_actions:pull-request`
     if: |
-      github.event.action != 'labeled' ||
-      (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request')
+      (github.event_name == 'push' || github.event_name == 'merge_group') ||
+      (github.event_name == 'pull_request_target' &&
+        github.event.label.name == 'github_actions:pull-request')
 
     name: Lint
     runs-on: ubuntu-latest
@@ -130,11 +135,12 @@ jobs:
 
       - name: Run `turbo lint`
         id: eslint-step
-        # We don't need to run ESLint and Prettier on a Crowdin PR as we already manually fix and prettify the changeset
-        # within the `translation-prs.yml` GitHub Actions Workflow which guarantees that the Translation changes are always pretty
+        # We only run ESLint and Prettier on `push`, `merge_group` or `pull_request_target` events
+        # and if it is a `pull_request_target` event, we want to avoid running ESLint and Prettier on automated Crowdin Pull Requests
         if: |
-          github.event_name == 'pull_request_target' &&
-          github.event.pull_request.head.ref != 'chore/crowdin'
+          (github.event_name == 'push' || github.event_name == 'merge_group') ||
+          (github.event_name == 'pull_request_target' &&
+            github.event.pull_request.head.ref != 'chore/crowdin')
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
         run: npx --package=turbo@latest -- turbo lint ${{ needs.base.outputs.turbo_args }}
@@ -150,13 +156,14 @@ jobs:
         run: npx --package=typescript@latest -- tsc --build .
 
       - name: Save Lint Cache
-        # We don't need to upload a Lint Cache for Dependabot PRs and also when the GitHub Event is not a Pull Request
-        # i.e. if the Event is a Merge Queue Event
-        # We also don't need to save cache on Crowdin PRs
+        # We only want to save caches on `push` events or `pull_request_target` events
+        # and if it is a `pull_request_target` event, we want to avoid saving the cache if the PR comes from Dependabot
+        # or if it comes from an automated Crowdin Pull Request
         if: |
-          github.event_name == 'pull_request_target' &&
-          startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
-          github.event.pull_request.head.ref != 'chore/crowdin'
+          github.event_name == 'push' ||
+          (github.event_name == 'pull_request_target' &&
+            startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
+            github.event.pull_request.head.ref != 'chore/crowdin')
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |
@@ -168,8 +175,9 @@ jobs:
     # This Job ensures that these jobs run either on regular Pull Request Updates
     # Or if the PR gets labeled with `github_actions:pull-request`
     if: |
-      github.event.action != 'labeled' ||
-      (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request')
+      github.event_name == 'merge_group' ||
+      (github.event_name == 'pull_request_target' &&
+        github.event.label.name == 'github_actions:pull-request')
 
     name: Tests
     runs-on: ubuntu-latest

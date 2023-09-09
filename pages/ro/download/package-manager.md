@@ -5,26 +5,26 @@ title: Installing Node.js via package manager
 
 # Installing Node.js via package manager
 
-***Note:*** The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
+**_Note:_** The packages on this page are maintained and supported by their respective packagers, **not** the Node.js core team. Please report any issues you encounter to the package maintainer. If it turns out your issue is a bug in Node.js itself, the maintainer will report the issue upstream.
 
 ---
 
-* [Android](#android)
-* [Arch Linux](#arch-linux)
-* [Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora and Snap packages](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
-* [FreeBSD](#freebsd)
-* [Gentoo](#gentoo)
-* [IBM i](#ibm-i)
-* [NetBSD](#netbsd)
-* [nvm](#nvm)
-* [nvs](#nvs)
-* [OpenBSD](#openbsd)
-* [openSUSE and SLE](#opensuse-and-sle)
-* [macOS](#macos)
-* [SmartOS and illumos](#smartos-and-illumos)
-* [Solus](#solus)
-* [Void Linux](#void-linux)
-* [Windows](#windows-1)
+- [Android](#android)
+- [Arch Linux](#arch-linux)
+- [Debian and Ubuntu based Linux distributions, Enterprise Linux/Fedora and Snap packages](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
+- [FreeBSD](#freebsd)
+- [Gentoo](#gentoo)
+- [IBM i](#ibm-i)
+- [NetBSD](#netbsd)
+- [nvm](#nvm)
+- [nvs](#nvs)
+- [OpenBSD](#openbsd)
+- [openSUSE and SLE](#opensuse-and-sle)
+- [macOS](#macos)
+- [SmartOS and illumos](#smartos-and-illumos)
+- [Solus](#solus)
+- [Void Linux](#void-linux)
+- [Windows](#windows-1)
 
 ---
 
@@ -103,6 +103,7 @@ pkgin -y install nodejs
 ```
 
 ## nvm
+
 Node Version Manager is a bash script used to manage multiple released Node.js versions. It allows you to perform operations like install, uninstall, switch version, etc. To install nvm, use this [install script](https://github.com/nvm-sh/nvm#install--update-script).
 
 On Unix / OS X systems Node.js built from source can be installed using [nvm](https://github.com/creationix/nvm) by installing into the location that nvm expects:
@@ -126,6 +127,7 @@ nvm uninstall 8
 ## nvs
 
 #### Windows
+
 The `nvs` version manager is cross-platform and can be used on Windows, macOS, and Unix-like systems
 
 To install `nvs` on Windows go to the [release page](https://github.com/jasongin/nvs/releases) here and download the MSI installer file of the latest release.
@@ -137,9 +139,11 @@ choco install nvs
 ```
 
 #### macOS,UnixLike
+
 You can find the documentation regarding the installation steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
 
 #### Usage
+
 After this you can use `nvs` to switch between different versions of node.
 
 To add the latest version of node:
@@ -186,10 +190,10 @@ pkg_add node
 
 Node.js is available in the main repositories under the following packages:
 
-* **openSUSE Leap 42.2**: `nodejs4`
-* **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
-* **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
-* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6` (The "Web and Scripting Module" must be [added before installing](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).)
+- **openSUSE Leap 42.2**: `nodejs4`
+- **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
+- **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
+- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6` (The "Web and Scripting Module" must be [added before installing](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).)
 
 For example, to install Node.js 4.x on openSUSE Leap 42.2, run the following as root:
 

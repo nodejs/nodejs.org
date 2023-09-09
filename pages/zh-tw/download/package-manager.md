@@ -5,26 +5,26 @@ title: 使用套件管理器安裝 Node.js
 
 # 使用套件管理器安裝 Node.js
 
-***請注意：*** 下列的套件維護及支援 **並非由** Node.js 核心團隊提供，任何套件使用上的問題，應直接聯絡各套件的維護者，若發現問題出於 Node.js 本身，則應由套件維護者聯絡上游。
+**_請注意：_** 下列的套件維護及支援 **並非由** Node.js 核心團隊提供，任何套件使用上的問題，應直接聯絡各套件的維護者，若發現問題出於 Node.js 本身，則應由套件維護者聯絡上游。
 
 ---
 
-* [Android](#android)
-* [Arch Linux](#arch-linux)
-* [Debian 及 Ubuntu 系列發行版，企業版 Linux/Fedora 和 Snap packages](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
-* [FreeBSD](#freebsd)
-* [Gentoo](#gentoo)
-* [IBM i](#ibm-i)
-* [NetBSD](#netbsd)
-* [nvm](#nvm)
-* [nvs](#nvs)
-* [OpenBSD](#openbsd)
-* [openSUSE 及 SLE](#opensuse-and-sle)
-* [macOS](#macos)
-* [SmartOS 及 illumos](#smartos-and-illumos)
-* [Solus](#solus)
-* [Void Linux](#void-linux)
-* [Windows](#windows-1)
+- [Android](#android)
+- [Arch Linux](#arch-linux)
+- [Debian 及 Ubuntu 系列發行版，企業版 Linux/Fedora 和 Snap packages](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
+- [FreeBSD](#freebsd)
+- [Gentoo](#gentoo)
+- [IBM i](#ibm-i)
+- [NetBSD](#netbsd)
+- [nvm](#nvm)
+- [nvs](#nvs)
+- [OpenBSD](#openbsd)
+- [openSUSE 及 SLE](#opensuse-and-sle)
+- [macOS](#macos)
+- [SmartOS 及 illumos](#smartos-and-illumos)
+- [Solus](#solus)
+- [Void Linux](#void-linux)
+- [Windows](#windows-1)
 
 ---
 
@@ -106,6 +106,7 @@ pkgin -y install nodejs
 ```
 
 ## nvm
+
 Node 版本管理器（Node Version Manager, nvm）是款用來管理 Node.js 多重版本的 bash 指令稿，它可讓你執行安裝、移除及切換版本等操作。
 若要安裝 NVM 可以使用此[安裝指令稿](https://github.com/nvm-sh/nvm#install--update-script)。
 
@@ -130,6 +131,7 @@ nvm uninstall 8
 ## nvs
 
 #### Windows
+
 `nvs` 是一個跨平台版本管理工具，可用於 Windows、macOS 以及 Unix-like 的作業系統。
 
 在 Windows 上安裝 `nvs`，請到此 [發布頁](https://github.com/jasongin/nvs/releases) 下載最新發布的 MSI 安裝程式。
@@ -141,9 +143,11 @@ choco install nvs
 ```
 
 #### macOS，UnixLike
+
 你可以在 [此處](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux) 找到關於在 macOS / Unix-like 作業系統的安裝步驟文件。
 
 #### 使用方法
+
 安裝完成後，你可以使用 `nvs` 在不同版本的 node 中來回切換。
 
 新增最新版本的 node：
@@ -190,10 +194,10 @@ pkg_add node
 
 主要軟體庫中都提供了下列套件：
 
-* **openSUSE Leap 42.2**: `nodejs4`
-* **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
-* **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
-* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`（必須[於安裝前加入](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html) "Web and Scripting Module"）
+- **openSUSE Leap 42.2**: `nodejs4`
+- **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
+- **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
+- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`（必須[於安裝前加入](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html) "Web and Scripting Module"）
 
 舉例來說，若想在 openSUSE Leap 42.2 上安裝 Node.js 4.x，用 root 權限執行下列指令：
 

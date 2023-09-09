@@ -23,6 +23,7 @@ earlier, this activates the legacy Debugger API. In Node.js 8 and later, it will
 activate the Inspector API.
 
 ---
+
 ## Security Implications
 
 Since the debugger has full access to the Node.js execution environment, a
@@ -72,43 +73,43 @@ Several commercial and open source tools can also connect to the Node.js Inspect
 
 ### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+, [Microsoft Edge](https://www.microsoftedgeinsider.com)
 
-* **Option 1**: Open `chrome://inspect` in a Chromium-based
+- **Option 1**: Open `chrome://inspect` in a Chromium-based
   browser or `edge://inspect` in Edge. Click the Configure button and ensure your target host and port
   are listed.
-* **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
+- **Option 2**: Copy the `devtoolsFrontendUrl` from the output of `/json/list`
   (see above) or the --inspect hint text and paste into Chrome.
 
 > Note that the Node.js and the Chrome need to be run on the same platform.
 
 ### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
 
-* In the Debug panel, click the settings icon to open `.vscode/launch.json`.
+- In the Debug panel, click the settings icon to open `.vscode/launch.json`.
   Select "Node.js" for initial setup.
 
 ### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017+
 
-* Choose "Debug > Start Debugging" from the menu or hit F5.
-* [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging).
+- Choose "Debug > Start Debugging" from the menu or hit F5.
+- [Detailed instructions](https://github.com/Microsoft/nodejstools/wiki/Debugging).
 
 ### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) and other JetBrains IDEs
 
-* Create a new Node.js debug configuration and hit Debug. `--inspect` will be used
+- Create a new Node.js debug configuration and hit Debug. `--inspect` will be used
   by default for Node.js 7+. To disable uncheck `js.debugger.node.use.inspect` in
   the IDE Registry. To learn more about running and debugging Node.js in WebStorm and other JetBrains IDEs,
   check out [WebStorm online help](https://www.jetbrains.com/help/webstorm/running-and-debugging-node-js.html).
 
 ### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 
-* Library to ease connections to [Inspector Protocol][] endpoints.
+- Library to ease connections to [Inspector Protocol][] endpoints.
 
 ### [Gitpod](https://www.gitpod.io)
 
-* Start a Node.js debug configuration from the `Debug` view or hit `F5`. [Detailed instructions](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
+- Start a Node.js debug configuration from the `Debug` view or hit `F5`. [Detailed instructions](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
 
 ### [Eclipse IDE](https://eclipse.org/eclipseide) with Eclipse Wild Web Developer extension
 
-* From a .js file, choose "Debug As... > Node program", or
-* Create a Debug Configuration to attach debugger to running Node.js application (already started with `--inspect`).
+- From a .js file, choose "Debug As... > Node program", or
+- Create a Debug Configuration to attach debugger to running Node.js application (already started with `--inspect`).
 
 ---
 

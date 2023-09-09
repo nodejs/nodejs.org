@@ -70,8 +70,8 @@ Métodos **bloqueantes** executam de forma **síncrona** e métodos **não-bloqu
 executam de forma **assíncrona**.
 
 ```js
-const fs = require("fs");
-const data = fs.readFileSync("/file.md"); // a execução é bloqueada aqui até o arquivo ser lido
+const fs = require('fs');
+const data = fs.readFileSync('/file.md'); // a execução é bloqueada aqui até o arquivo ser lido
 ```
 
 <!-- And here is an equivalent **asynchronous** example: -->
@@ -79,8 +79,8 @@ const data = fs.readFileSync("/file.md"); // a execução é bloqueada aqui até
 E aqui temos um exemplo equivalente usando um método **assíncrono**:
 
 ```js
-const fs = require("fs");
-fs.readFile("/file.md", (err, data) => {
+const fs = require('fs');
+fs.readFile('/file.md', (err, data) => {
   if (err) throw err;
 });
 ```
@@ -102,8 +102,8 @@ vai sofrer um crash. Na versão assíncrona, é da decisão do programador se qu
 não tratar os erros.
 
 ```js
-const fs = require("fs");
-const data = fs.readFileSync("/file.md"); // trava aqui até o arquivo ser lido
+const fs = require('fs');
+const data = fs.readFileSync('/file.md'); // trava aqui até o arquivo ser lido
 console.log(data);
 maisProcessamento(); // roda depois de console.log
 ```
@@ -113,8 +113,8 @@ maisProcessamento(); // roda depois de console.log
 Um exemplo similar, mas não equivalente, no formato assíncrono:
 
 ```js
-const fs = require("fs");
-fs.readFile("/file.md", (err, data) => {
+const fs = require('fs');
+fs.readFile('/file.md', (err, data) => {
   if (err) throw err;
   console.log(data);
 });
@@ -178,12 +178,12 @@ Existem alguns padrões que devem ser evitados quando lidamos com I/O. Vamos ver
 exemplo:
 
 ```js
-const fs = require("fs");
-fs.readFile("/file.md", (err, data) => {
+const fs = require('fs');
+fs.readFile('/file.md', (err, data) => {
   if (err) throw err;
   console.log(data);
 });
-fs.unlinkSync("/file.md");
+fs.unlinkSync('/file.md');
 ```
 
 <!-- In the above example, `fs.unlinkSync()` is likely to be run before
@@ -197,11 +197,11 @@ melhor de escrever esse código, de forma completamente **não-bloqueante** e ga
 executar na ordem correta seria:
 
 ```js
-const fs = require("fs");
-fs.readFile("/file.md", (readFileErr, data) => {
+const fs = require('fs');
+fs.readFile('/file.md', (readFileErr, data) => {
   if (readFileErr) throw readFileErr;
   console.log(data);
-  fs.unlink("/file.md", (unlinkErr) => {
+  fs.unlink('/file.md', unlinkErr => {
     if (unlinkErr) throw unlinkErr;
   });
 });
@@ -215,4 +215,4 @@ de `fs.readFile()`, o que garante a ordem correta das operações.
 
 ## Additional Resources
 
-* [libuv](http://libuv.org/)
+- [libuv](http://libuv.org/)
