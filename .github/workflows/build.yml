@@ -74,6 +74,10 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
+          # Fetch from the PRs Repository instead of Node.js' repository
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          # Since we trigger this with a Labeled Event we might not get the latest commit
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
           # We only need to fetch the last commit from the head_ref
           # since we're not using the `--filter` operation from turborepo
           # We don't use the `--filter` as we always want to force builds regardless of having changes or not

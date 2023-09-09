@@ -61,7 +61,7 @@ jobs:
         id: turborepo_arguments
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-        run: echo "turbo_args=--cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
+        run: echo "turbo_args=--force=true --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
 
   lint:
     # This Job should run either on `merge_groups` or `push` events
@@ -79,6 +79,10 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
+          # Fetch from the PRs Repository instead of Node.js' repository
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          # Since we trigger this with a Labeled Event we might not get the latest commit
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
           # We need full git history for properly being able to run Chromatic
           # and since Turborepo also needs the git history to compute changes
           fetch-depth: 0
@@ -89,6 +93,9 @@ jobs:
           path: |
             .turbo/cache
             node_modules/.cache
+            .eslintmdcache
+            .eslintjscache
+            .prettiercache
           # We want to restore Turborepo Cache and ESlint and Prettier Cache
           key: cache-lint-${{ hashFiles('package-lock.json') }}-
           restore-keys: |
@@ -143,6 +150,9 @@ jobs:
           path: |
             .turbo/cache
             node_modules/.cache
+            .eslintmdcache
+            .eslintjscache
+            .prettiercache
           key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.turbo/cache/**') }}
 
   tests:
@@ -165,6 +175,10 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
+          # Fetch from the PRs Repository instead of Node.js' repository
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          # Since we trigger this with a Labeled Event we might not get the latest commit
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
           # We need full git history for properly being able to run Chromatic
           # and since Turborepo also needs the git history to compute changes
           fetch-depth: 0
@@ -220,9 +234,9 @@ jobs:
         uses: chromaui/action@v1
         with:
           buildScriptName: storybook:build
+          ignoreLastBuildOnBranch: true
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           exitOnceUploaded: true
-          onlyChanged: true
 
       - name: Jest Coverage Comment
         # This prevents this step from running if "Unit Tests" got cancelled; Which gets cancelled if

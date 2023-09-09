@@ -1,8 +1,9 @@
 {
+  "extends": ["prettier"],
   "overrides": [
     {
       "files": ["**/*.{mjs,ts,tsx}"],
-      "extends": ["eslint:recommended", "prettier"],
+      "extends": ["eslint:recommended"],
       "env": { "jest": true, "es6": true }
     },
     {
