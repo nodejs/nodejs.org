@@ -45,7 +45,7 @@ Anda dapat membuat direktori bernama `test/abc` dan terkadang terkejut melihat b
 
 ## Pelestarian Formulir Unicode
 
-*Pelestarian kasus dan pelestarian bentuk Unicode adalah konsep yang serupa. Ke mengerti mengapa bentuk Unicode harus dipertahankan, pastikan Anda terlebih dahulu memahami mengapa kasus harus dipertahankan. Pelestarian bentuk Unicode juga sama sederhana bila dipahami dengan benar.*
+_Pelestarian kasus dan pelestarian bentuk Unicode adalah konsep yang serupa. Ke mengerti mengapa bentuk Unicode harus dipertahankan, pastikan Anda terlebih dahulu memahami mengapa kasus harus dipertahankan. Pelestarian bentuk Unicode juga sama sederhana bila dipahami dengan benar._
 
 Unicode dapat menyandikan karakter yang sama menggunakan beberapa urutan byte yang berbeda. Beberapa string mungkin terlihat sama, tetapi memiliki urutan byte yang berbeda. Kapan bekerja dengan string UTF-8, berhati-hatilah agar harapan Anda sejalan bagaimana Unicode bekerja. Sama seperti Anda tidak mengharapkan semua karakter UTF-8 untuk dikodekan ke satu byte, Anda seharusnya tidak mengharapkan beberapa string UTF-8 yang terlihat sama ke mata manusia untuk memiliki representasi byte yang sama. Ini mungkin sebuah harapan yang dapat Anda miliki dari ASCII, tetapi bukan dari UTF-8.
 

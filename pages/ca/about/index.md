@@ -45,10 +45,10 @@ Node té un disseny similar i està influenciat per sistemes com [Event Machine]
 de Ruby o [Twisted][] de Python. Node porta el model d'esdeveniments una mica
 més enllà, aquest presenta un [bucle d'esdeveniments][] com un entorn en comptes d'una llibreria.
 En altres sistemes sempre existeix una trucada que bloqueja per iniciar el bucle d'esdeveniments.
-El comportament és típicament definit a través de *callbacks* a l'inici del script i al final
+El comportament és típicament definit a través de _callbacks_ a l'inici del script i al final
 s'inicia el servidor mitjançant una trucada de bloqueig com `EventMachine::run()`. En Node no
 existeix aquesta trucada. Node simplement ingressa el bucle d'esdeveniments després d'executar
-el script d'entrada. Node surt del bucle d'esdeveniments quan no hi ha més *callbacks* que executar.
+el script d'entrada. Node surt del bucle d'esdeveniments quan no hi ha més _callbacks_ que executar.
 s comporta d'una forma similar a JavaScript al navegador - el bucle d'esdeveniments està ocult a l'usuari.
 
 HTTP es ciutadà de primera classe en Node, disenyat amb operacions de streaming y baixa latència

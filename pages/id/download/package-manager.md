@@ -5,33 +5,33 @@ title: Menginstal Node.js melalui manajer paket
 
 # Menginstal Node.js melalui manajer paket
 
-***Catatan:*** Paket-paket di halaman ini dikelola dan didukung oleh pembuat paketnya masing-masing, **bukan** tim inti Node.js. Harap laporkan masalah apa pun yang Anda temui ke pengelola paket. Jika ternyata masalah Anda adalah bug di Node.js itu sendiri, pengelola akan melaporkan masalah tersebut ke upstream.
+**_Catatan:_** Paket-paket di halaman ini dikelola dan didukung oleh pembuat paketnya masing-masing, **bukan** tim inti Node.js. Harap laporkan masalah apa pun yang Anda temui ke pengelola paket. Jika ternyata masalah Anda adalah bug di Node.js itu sendiri, pengelola akan melaporkan masalah tersebut ke upstream.
 
 ---
 
-* [Alpine Linux](#alpine-linux)
-* [Android](#android)
-* [Arch Linux](#arch-linux)
-* [CentOS, Fedora dan Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
-* [Distribusi Linux berbasis Debian dan Ubuntu](#debian-and-ubuntu-based-linux-distributions)
-* [fnm](#fnm)
-* [FreeBSD](#freebsd)
-* [Gentoo](#gentoo)
-* [IBM i](#ibm-i)
-* [macOS](#macos)
-* [n](#n)
-* [NetBSD](#netbsd)
-* [Nodenv](#nodenv)
-* [nvm](#nvm)
-* [nvs](#nvs)
-* [OpenBSD](#openbsd)
-* [openSUSE and SLE](#opensuse-and-sle)
-* [SmartOS and illumos](#smartos-and-illumos)
-* [Snap](#snap)
-* [Solus](#solus)
-* [Void Linux](#void-linux)
-* [Windows](#windows-1)
-* [z/OS](#zos)
+- [Alpine Linux](#alpine-linux)
+- [Android](#android)
+- [Arch Linux](#arch-linux)
+- [CentOS, Fedora dan Red Hat Enterprise Linux](#centos-fedora-and-red-hat-enterprise-linux)
+- [Distribusi Linux berbasis Debian dan Ubuntu](#debian-and-ubuntu-based-linux-distributions)
+- [fnm](#fnm)
+- [FreeBSD](#freebsd)
+- [Gentoo](#gentoo)
+- [IBM i](#ibm-i)
+- [macOS](#macos)
+- [n](#n)
+- [NetBSD](#netbsd)
+- [Nodenv](#nodenv)
+- [nvm](#nvm)
+- [nvs](#nvs)
+- [OpenBSD](#openbsd)
+- [openSUSE and SLE](#opensuse-and-sle)
+- [SmartOS and illumos](#smartos-and-illumos)
+- [Snap](#snap)
+- [Solus](#solus)
+- [Void Linux](#void-linux)
+- [Windows](#windows-1)
+- [z/OS](#zos)
 
 ---
 
@@ -92,8 +92,9 @@ dnf module install nodejs:18/common
 ### Alternatif
 
 Sumber daya ini menyediakan paket yang kompatibel dengan CentOS, Fedora, dan RHEL.
-* [Node.js snaps](#snap) dipertahankan dan didukung di https://github.com/nodejs/snap
-* [Distribusi biner Node.js](#debian-and-ubuntu-based-linux-distributions) dikelola dan didukung oleh [NodeSource](https://github.com/nodesource/distributions)
+
+- [Node.js snaps](#snap) dipertahankan dan didukung di https://github.com/nodejs/snap
+- [Distribusi biner Node.js](#debian-and-ubuntu-based-linux-distributions) dikelola dan didukung oleh [NodeSource](https://github.com/nodesource/distributions)
 
 ## Distribusi Linux berbasis Debian dan Ubuntu
 
@@ -220,6 +221,7 @@ pkgin -y install nodejs
 Instruksi instalasi Nodenv dipertahankan [di halaman Github](https://github.com/nodenv/nodenv#installation). Kunjungi halaman tersebut untuk memastikan Anda mengikuti versi terbaru dari langkah-langkah penginstalan.
 
 ## nvm
+
 Node Version Manager adalah skrip bash yang digunakan untuk mengelola beberapa versi Node.js yang dirilis. Ini memungkinkan Anda untuk melakukan operasi seperti menginstal, menghapus, mengganti versi, dll. Untuk menginstal nvm, gunakan [instal skrip](https://github.com/nvm-sh/nvm#install--update-script).
 
 Pada sistem Unix / OS X Node.js yang dibangun dari sumber dapat diinstal menggunakan [nvm](https://github.com/creationix/nvm) dengan menginstal ke lokasi yang diharapkan nvm:
@@ -243,6 +245,7 @@ nvm uninstall 8
 ## nvs
 
 #### Windows
+
 Manajer versi `nvs` bersifat lintas platform dan dapat digunakan pada sistem Windows, macOS, dan seperti Unix
 
 Untuk menginstal `nvs` di Windows, buka [halaman rilis](https://github.com/jasongin/nvs/releases) di sini dan unduh file penginstal MSI dari rilis terbaru.
@@ -254,9 +257,11 @@ choco install nvs
 ```
 
 #### macOS,UnixLike
+
 Anda dapat menemukan dokumentasi mengenai langkah-langkah penginstalan `nvs` di sistem seperti macOS/Unix [di sini](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
 
 #### Penggunaan
+
 Setelah ini, Anda dapat menggunakan `nvs` untuk beralih di antara versi node yang berbeda.
 
 Bash untuk menambahkan versi terbaru dari simpul:
@@ -303,10 +308,10 @@ pkg_add node
 
 Node.js is available in the main repositories under the following packages:
 
-* **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
-* **openSUSE Tumbleweed**: `nodejs16`
-* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, dan `nodejs14` ("Modul Web dan Scripting" harus [diaktifkan](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
-* **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, dan `nodejs14` ("Modul Web dan Scripting" harus [diaktifkan](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module).)
+- **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
+- **openSUSE Tumbleweed**: `nodejs16`
+- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, dan `nodejs14` ("Modul Web dan Scripting" harus [diaktifkan](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated).)
+- **SUSE Linux Enterprise Server (SLES) 15 SP2**: `nodejs10`, `nodejs12`, dan `nodejs14` ("Modul Web dan Scripting" harus [diaktifkan](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module).)
 
 Sebagai contoh, untuk menginstal Node.js 14.x pada openSUSE Leap 15.2, jalankan perintah berikut sebagai root:
 
@@ -383,5 +388,6 @@ scoop install nodejs
 ## z/OS
 
 IBM&reg; SDK untuk Node.js - z/OS&reg; tersedia dalam dua format instalasi, SMP/E dan PAX. Pilih format instalasi yang sesuai untuk Anda:
-* [Memasang dan mengonfigurasi Node.js edisi SMP/E di z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
-* [Memasang dan mengonfigurasi Node.js edisi PAX di z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)
+
+- [Memasang dan mengonfigurasi Node.js edisi SMP/E di z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
+- [Memasang dan mengonfigurasi Node.js edisi PAX di z/OS](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)

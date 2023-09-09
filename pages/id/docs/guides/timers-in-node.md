@@ -11,7 +11,7 @@ Modul Timer di Node.js berisi fungsi yang mengeksekusi kode setelah satu set per
 
 API Node.js menyediakan beberapa cara untuk mengeksekusi kode penjadwalan di beberapa titik setelah saat ini. Fungsi di bawah ini mungkin tampak familier, karena tersedia di sebagian besar browser, tetapi Node.js sebenarnya menyediakan implementasi sendiri dari metode ini. Pengatur waktu terintegrasi dengan sangat erat dengan sistem, dan terlepas dari kenyataan bahwa API mencerminkan browser API, ada beberapa perbedaan dalam implementasi.
 
-### Eksekusi "Ketika saya mengatakannya" ~ *`setTimeout()`*
+### Eksekusi "Ketika saya mengatakannya" ~ _`setTimeout()`_
 
 `setTimeout()` dapat digunakan untuk menjadwalkan eksekusi kode setelah ditentukan jumlah milidetik. Fungsi ini mirip dengan [`window.setTimeout()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout) dari browser JavaScript API, namun string kode tidak dapat diteruskan Akan dieksekusi.
 
@@ -27,20 +27,20 @@ setTimeout(myFunc, 1500, 'funky');
 
 Fungsi di atas `myFunc()` akan dieksekusi mendekati 1500 milidetik (atau 1,5 detik) mungkin karena panggilan `setTimeout()`.
 
-Interval batas waktu yang diatur tidak dapat diandalkan untuk dieksekusi setelahnya jumlah milidetik yang *tepat* itu. Ini karena kode pelaksana lain yang memblokir atau menahan loop acara akan mendorong eksekusi batas waktu kembali. *Satu-satunya* jaminan adalah bahwa batas waktu tidak akan dijalankan *lebih cepat* dari interval waktu habis yang dideklarasikan.
+Interval batas waktu yang diatur tidak dapat diandalkan untuk dieksekusi setelahnya jumlah milidetik yang _tepat_ itu. Ini karena kode pelaksana lain yang memblokir atau menahan loop acara akan mendorong eksekusi batas waktu kembali. _Satu-satunya_ jaminan adalah bahwa batas waktu tidak akan dijalankan _lebih cepat_ dari interval waktu habis yang dideklarasikan.
 
 `setTimeout()` mengembalikan objek `Timeout` yang dapat digunakan untuk mereferensikan batas waktu yang telah ditetapkan. Objek yang dikembalikan ini dapat digunakan untuk membatalkan batas waktu ( lihat `clearTimeout()` di bawah) serta ubah perilaku eksekusi (lihat `unref()` di bawah).
 
-### Eksekusi "Tepat setelah ini" ~ *`setImmediate()`*
+### Eksekusi "Tepat setelah ini" ~ _`setImmediate()`_
 
-`setImmediate()` akan mengeksekusi kode di akhir siklus loop peristiwa saat ini. Kode ini akan mengeksekusi *setelah* setiap operasi I/O dalam loop peristiwa saat ini dan *sebelum* setiap pengatur waktu yang dijadwalkan untuk loop acara berikutnya. Eksekusi kode ini dapat dianggap terjadi "tepat setelah ini", yang berarti kode apa pun mengikuti pemanggilan fungsi `setImmediate()` akan dijalankan sebelum `setImmediate()` argumen fungsi.
+`setImmediate()` akan mengeksekusi kode di akhir siklus loop peristiwa saat ini. Kode ini akan mengeksekusi _setelah_ setiap operasi I/O dalam loop peristiwa saat ini dan _sebelum_ setiap pengatur waktu yang dijadwalkan untuk loop acara berikutnya. Eksekusi kode ini dapat dianggap terjadi "tepat setelah ini", yang berarti kode apa pun mengikuti pemanggilan fungsi `setImmediate()` akan dijalankan sebelum `setImmediate()` argumen fungsi.
 
 Argumen pertama untuk `setImmediate()` akan menjadi fungsi yang akan dieksekusi. Setiap argumen berikutnya akan diteruskan ke fungsi saat dijalankan. Berikut ini contohnya:
 
 ```js
 console.log('sebelum langsung');
 
-setImmediate((arg) => {
+setImmediate(arg => {
   console.log(`executing immediate: ${arg}`);
 }, 'so immediate');
 
@@ -57,9 +57,9 @@ mengeksekusi segera: sangat segera
 
 `setImmediate()` mengembalikan objek `Immediate`, yang dapat digunakan untuk membatalkan segera yang dijadwalkan (lihat `clearImmediate()` di bawah).
 
-> Jangan bingung `setImmediate()` dengan `process.nextTick()`. Ada beberapa cara utama mereka berbeda. Yang pertama adalah `process.nextTick()` akan berjalan *sebelum* setiap `Immediate`s yang disetel serta sebelum I/O terjadwal. Yang kedua adalah bahwa `process.nextTick()` tidak dapat dihapus, artinya sekali kode telah dijadwalkan untuk dieksekusi dengan `process.nextTick()`, eksekusi tidak bisa dihentikan, sama seperti fungsi normal. [Lihat panduan](/id/docs/guides/event-loop-timers-and-nexttick/#process-nexttick) ini untuk lebih memahami pengoperasian `process.nextTick()`.
+> Jangan bingung `setImmediate()` dengan `process.nextTick()`. Ada beberapa cara utama mereka berbeda. Yang pertama adalah `process.nextTick()` akan berjalan _sebelum_ setiap `Immediate`s yang disetel serta sebelum I/O terjadwal. Yang kedua adalah bahwa `process.nextTick()` tidak dapat dihapus, artinya sekali kode telah dijadwalkan untuk dieksekusi dengan `process.nextTick()`, eksekusi tidak bisa dihentikan, sama seperti fungsi normal. [Lihat panduan](/id/docs/guides/event-loop-timers-and-nexttick/#process-nexttick) ini untuk lebih memahami pengoperasian `process.nextTick()`.
 
-### Eksekusi "Loop Tak Terbatas" ~ *`setInterval()`*
+### Eksekusi "Loop Tak Terbatas" ~ _`setInterval()`_
 
 Jika ada blok kode yang harus dijalankan beberapa kali, `setInterval()` dapat digunakan untuk mengeksekusi kode tersebut. `setInterval()` mengambil fungsi argumen yang akan dijalankan berkali-kali dengan milidetik yang diberikan delay sebagai argumen kedua. Sama seperti `setTimeout()`, argumen tambahan dapat ditambahkan melampaui penundaan, dan ini akan diteruskan ke panggilan fungsi. Juga seperti `setTimeout()`, penundaan tidak dapat dijamin karena operasi yang mungkin berpegang pada loop acara, dan karena itu harus diperlakukan sebagai perkiraan penundaan. Lihat contoh di bawah ini:
 
@@ -84,7 +84,7 @@ const timeoutObj = setTimeout(() => {
   console.log('Batas waktu melampaui waktu');
 }, 1500);
 
-const immediateObj  = setImmediate(() => {
+const immediateObj = setImmediate(() => {
   console.log('Segera mengeksekusi segera');
 });
 
@@ -99,9 +99,9 @@ clearInterval(intervalObj);
 
 ## Meninggalkan Timeout di Belakang
 
-Ingat bahwa objek `Timeout` dikembalikan oleh `setTimeout` dan `setInterval`. Objek `Timeout` menyediakan dua fungsi yang dimaksudkan untuk menambah `Timeout` perilaku dengan `unref()` dan `ref()`. Jika ada objek `Timeout` yang dijadwalkan menggunakan fungsi `set`, `unref()` dapat dipanggil pada objek tersebut. Ini akan berubah perilaku sedikit, dan tidak memanggil objek `Timeout` * jika itu yang terakhir kode untuk dieksekusi*. Objek `Timeout` tidak akan membuat proses tetap hidup, menunggu untuk mengeksekusi.
+Ingat bahwa objek `Timeout` dikembalikan oleh `setTimeout` dan `setInterval`. Objek `Timeout` menyediakan dua fungsi yang dimaksudkan untuk menambah `Timeout` perilaku dengan `unref()` dan `ref()`. Jika ada objek `Timeout` yang dijadwalkan menggunakan fungsi `set`, `unref()` dapat dipanggil pada objek tersebut. Ini akan berubah perilaku sedikit, dan tidak memanggil objek `Timeout` _ jika itu yang terakhir kode untuk dieksekusi_. Objek `Timeout` tidak akan membuat proses tetap hidup, menunggu untuk mengeksekusi.
 
-Dengan cara yang sama, objek `Timeout` yang memiliki `unref()` memanggilnya dapat menghapus perilaku itu dengan memanggil `ref()` pada objek `Timeout` yang sama, yang kemudian akan memastikan eksekusinya. Sadarilah, bagaimanapun, bahwa ini tidak tidak *tepat* mengembalikan perilaku awal karena alasan kinerja. Melihat di bawah ini untuk contoh keduanya:
+Dengan cara yang sama, objek `Timeout` yang memiliki `unref()` memanggilnya dapat menghapus perilaku itu dengan memanggil `ref()` pada objek `Timeout` yang sama, yang kemudian akan memastikan eksekusinya. Sadarilah, bagaimanapun, bahwa ini tidak tidak _tepat_ mengembalikan perilaku awal karena alasan kinerja. Melihat di bawah ini untuk contoh keduanya:
 
 ```js
 const timerObj = setTimeout(() => {

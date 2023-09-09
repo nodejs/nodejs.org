@@ -4,6 +4,7 @@ layout: docs.hbs
 ---
 
 # دليل التصحيح
+
 سيساعدك هذا الدليل للبدء في تصحيح سكريبتات و تطبيقات الـ Node.js الخاصة بك.
 
 ## تمكين المدقق
@@ -20,6 +21,7 @@ layout: docs.hbs
 أما في الـ Node.js 8 و ما بعده، فذلك ينشط واجهة برمجة التطبيقات الخاصة بالمدقق
 
 ---
+
 ## تأثيرات أمنية
 
 بما أن لدى مصحح الأخطاء وصولاً كاملاً إلى بيئة تنفيذ الـ Node.js، قد يمكن لبرمجية ضارة متصلة بهذا المنفذ أن تنفذ
@@ -27,6 +29,7 @@ layout: docs.hbs
 المنفذ الخاص بمصحح الأخطاء في الشبكات العامة و الخاصة.
 
 ## إتاحة المنفذ الخاص بالتصحيح للعامة غير آمن
+
 إذا كان لمصحح الأخطاء عنوان عام، او كان عنوانه هو 0.0.0.0، فيمكن لأي عميل قادر على الوصول لعنوان الانترنت
 الخاص بك أن يتواصل مع مصحح الأخطاء بدون أية قيود، و سيتمكن من تنفيذ برمجيات عشوائية.
 
@@ -58,44 +61,44 @@ layout: docs.hbs
 
 ### [node-inspect](https://github.com/nodejs/node-inspect)
 
-* مصحح أخطاء في سطر الأوامر مدعوم من مؤسسة الـ Node.js و يستعمل البروتوكول المسمى [Inspector Protocol][].
-* تشحن نسخة منه مع الـ Node و يمكن استعماله بواسطة الأمر `node inspect myscript.js`.
-* يمكن تثبيت آخر نسخة منه بشكل مستقل (`npm install -g node-inspect` على سبيل المثال) و يمكن استعمالها بواسطة الأمر `node inspect myscript.js`.
+- مصحح أخطاء في سطر الأوامر مدعوم من مؤسسة الـ Node.js و يستعمل البروتوكول المسمى [Inspector Protocol][].
+- تشحن نسخة منه مع الـ Node و يمكن استعماله بواسطة الأمر `node inspect myscript.js`.
+- يمكن تثبيت آخر نسخة منه بشكل مستقل (`npm install -g node-inspect` على سبيل المثال) و يمكن استعمالها بواسطة الأمر `node inspect myscript.js`.
 
 ### <span dir="ltr">[Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+</span>
 
-* **الطريقة الأولى**: قم بفتح العنوان `chrome://inspect` في أي متصفح مبني على Chromium. قم بالضغط على زر Configure و تأكد
-من أن المضيف و المنفذ في القائمة.
-* **الطريقة الثانية**: قم بنسخ `devtoolsFrontendUrl` من الناتج عن `/json/list` (أنظر أعلاه) أو النص التلميحي الناتج عن --inspect
-و قم بلصقه في Chrome.
+- **الطريقة الأولى**: قم بفتح العنوان `chrome://inspect` في أي متصفح مبني على Chromium. قم بالضغط على زر Configure و تأكد
+  من أن المضيف و المنفذ في القائمة.
+- **الطريقة الثانية**: قم بنسخ `devtoolsFrontendUrl` من الناتج عن `/json/list` (أنظر أعلاه) أو النص التلميحي الناتج عن --inspect
+  و قم بلصقه في Chrome.
 
 ### <span dir="ltr">[Visual Studio Code](https://github.com/microsoft/vscode) 1.10+</span>
 
-* في قائمة تصحيح الأخطاء، إضغط على ايقونة الإعدادات لفتح `.vscode/launch.json`.
- قم باختيار "Node.js" للتثبيت الأولي.
+- في قائمة تصحيح الأخطاء، إضغط على ايقونة الإعدادات لفتح `.vscode/launch.json`.
+  قم باختيار "Node.js" للتثبيت الأولي.
 
 ### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017+
 
-* قم باختيار "Debug > Start Debugging" من القائمة أو قم بالضغط على F5.
-* [خطوات تفصيلية بالإنجليزية](https://github.com/Microsoft/nodejstools/wiki/Debugging)
+- قم باختيار "Debug > Start Debugging" من القائمة أو قم بالضغط على F5.
+- [خطوات تفصيلية بالإنجليزية](https://github.com/Microsoft/nodejstools/wiki/Debugging)
 
 ### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+ و منتجات JetBrains الأخرى
 
-* قم بإنشاء إعدادات تصحيح جديدة خاصة بالـ Node.js و اضغط على Debug. سيتم استعمال `--inspect` افتراضياً بالنسبة للنسخ 7 فما فوق.
- لإلغاء ذلك، قم بإلغاء تمكين `js.debugger.node.use.inspect` في السجل الخاص بالبرنامج.
+- قم بإنشاء إعدادات تصحيح جديدة خاصة بالـ Node.js و اضغط على Debug. سيتم استعمال `--inspect` افتراضياً بالنسبة للنسخ 7 فما فوق.
+  لإلغاء ذلك، قم بإلغاء تمكين `js.debugger.node.use.inspect` في السجل الخاص بالبرنامج.
 
 ### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 
-* مكتبة تسهل التواصل بأطراف اتصال بروتوكول التدقيق.
+- مكتبة تسهل التواصل بأطراف اتصال بروتوكول التدقيق.
 
 ### [Gitpod](https://www.gitpod.io)
 
-* قم بإنشاء إعدادات تصحيح الأخطاء الخاصة بالـ Node.js من `Debug` أو قم بالضغط على F5. هنا [خطوات تفصيلية بالإنجليزية](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
+- قم بإنشاء إعدادات تصحيح الأخطاء الخاصة بالـ Node.js من `Debug` أو قم بالضغط على F5. هنا [خطوات تفصيلية بالإنجليزية](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
 
 ### [Eclipse IDE](https://eclipse.org/eclipseide) مع إضافة إكليبس الشاملة لتطوير الويب
 
-* من ملف .js، اختر "Debug As... > Node program", او
-* إنشاء اعدادات المنقح لكي يتمكن من تشغيل تطبيق Node (بدأ بـ `--inspect`).
+- من ملف .js، اختر "Debug As... > Node program", او
+- إنشاء اعدادات المنقح لكي يتمكن من تشغيل تطبيق Node (بدأ بـ `--inspect`).
 
 ---
 
@@ -192,7 +195,7 @@ ssh -L 9221:localhost:9229 user@remote.example.com
 
 ## مصحح الأخطاء القديم
 
-**لقد تم اعتبار مصحح الأخطاء القديم قديماً ابتداء من نسخة الـ Node 7.7.0. قم باستعمال <span dir="ltr">--inspect</span>
+\*\*لقد تم اعتبار مصحح الأخطاء القديم قديماً ابتداء من نسخة الـ Node 7.7.0. قم باستعمال <span dir="ltr">--inspect</span>
 أو المدقق بدلا منه.
 
 عند تشغيل مصحح الأخطاء القديم مع <span dir="ltr">**--debug**</span> أو <span dir="ltr">**--debug-brk**</span> في النسخة 7

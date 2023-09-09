@@ -30,9 +30,9 @@ microservices architectures. And, while the surge in container use is relatively
 percent of developers that responded to the survey use Node.js with the technology**. Other
 container-related data points:
 
-* 58 percent of respondents that identified as IoT developers use Node.js with Docker.
-* 39 percent of respondents that identified as back end developers use Node.js with Docker.
-* 37 percent of respondents that identified as front end developers use Node.js with Docker.
+- 58 percent of respondents that identified as IoT developers use Node.js with Docker.
+- 39 percent of respondents that identified as back end developers use Node.js with Docker.
+- 37 percent of respondents that identified as front end developers use Node.js with Docker.
 
 ### Node.js — the Engine that Drives IoT
 
@@ -68,11 +68,11 @@ percent are using Node.js for front end, back end, and IoT development.
 Node.js is increasingly used in the enterprise, and used within huge enterprises like PayPal,
 Go Daddy, Capital One, and Intel. The survey found:
 
-* **More than 45 percent already using the Node.js Long Term Support release (v4) geared
-toward medium to large enterprise users who require stability and high performance.**
-* Of those who haven’t upgraded, 80 percent report definite plans to upgrade to v4, with half
-of respondents planning to do so this year.
-* Strong interest in enterprise tooling among 34 percent of tech leaders.
+- **More than 45 percent already using the Node.js Long Term Support release (v4) geared
+  toward medium to large enterprise users who require stability and high performance.**
+- Of those who haven’t upgraded, 80 percent report definite plans to upgrade to v4, with half
+  of respondents planning to do so this year.
+- Strong interest in enterprise tooling among 34 percent of tech leaders.
 
 ### Full “MEAN” Stack Explodes
 
@@ -102,8 +102,8 @@ hailing from Asia, Latin America, Africa, Russia and the Middle East.
 
 **Additional Resources:**
 
-* [Node.js Foundation User survey infographic](/static/documents/2016-survey-infographic.png)
-* [Report summarizing Node.js Foundation User Survey 2016](/static/documents/2016-survey-report.pdf)
+- [Node.js Foundation User survey infographic](/static/documents/2016-survey-infographic.png)
+- [Report summarizing Node.js Foundation User Survey 2016](/static/documents/2016-survey-report.pdf)
 
 **About Node.js Foundation**
 

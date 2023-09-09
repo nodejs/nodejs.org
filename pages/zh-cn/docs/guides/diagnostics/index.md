@@ -11,8 +11,8 @@ layout: docs.hbs
 
 这是可用的诊断指南：
 
-* [内存诊断相关](/zh-cn/docs/guides/diagnostics/memory)
-* [在线调试](/zh-cn/docs/guides/diagnostics/live-debugging)
-* [低效率运行](/zh-cn/docs/guides/diagnostics/poor-performance)
+- [内存诊断相关](/zh-cn/docs/guides/diagnostics/memory)
+- [在线调试](/zh-cn/docs/guides/diagnostics/live-debugging)
+- [低效率运行](/zh-cn/docs/guides/diagnostics/poor-performance)
 
 [诊断工作小组]: https://github.com/nodejs/diagnostics

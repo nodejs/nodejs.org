@@ -44,15 +44,16 @@ The `fetch()` implementation in `undici` was led by Robert Nagy, Ethan Arrowood,
 
 Node.js now exposes the experimental implementation of the [Web Streams API](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API) on the global scope. This means the following APIs are now globally available:
 
-* `ReadableStream`, `ReadableStreamDefaultReader`, `ReadableStreamBYOBReader`, `ReadableStreamBYOBRequest`, `ReadableByteStreamController`, `ReadableStreamDefaultController`, `TransformStream`, `TransformStreamDefaultController`, `WritableStream`, `WritableStreamDefaultWriter`, `WritableStreamDefaultController`, `ByteLengthQueuingStrategy`, `CountQueuingStrategy`, `TextEncoderStream`, `TextDecoderStream`, `CompressionStream`, `DecompressionStream`.
+- `ReadableStream`, `ReadableStreamDefaultReader`, `ReadableStreamBYOBReader`, `ReadableStreamBYOBRequest`, `ReadableByteStreamController`, `ReadableStreamDefaultController`, `TransformStream`, `TransformStreamDefaultController`, `WritableStream`, `WritableStreamDefaultWriter`, `WritableStreamDefaultController`, `ByteLengthQueuingStrategy`, `CountQueuingStrategy`, `TextEncoderStream`, `TextDecoderStream`, `CompressionStream`, `DecompressionStream`.
 
 Contributed James Snell in [#39062](https://github.com/nodejs/node/pull/39062), and Antoine du Hamel in [#42225](https://github.com/nodejs/node/pull/42225).
 
 ### Other global APIs
 
 Additionally, the following APIs are now exposed on the global scope:
-* `Blob` - <https://nodejs.org/api/buffer.html#class-blob>
-* `BroadcastChannel` - <https://nodejs.org/api/worker_threads.html#class-broadcastchannel-extends-eventtarget>
+
+- `Blob` - <https://nodejs.org/api/buffer.html#class-blob>
+- `BroadcastChannel` - <https://nodejs.org/api/worker_threads.html#class-broadcastchannel-extends-eventtarget>
 
 Both of these APIs are also no longer experimental.
 
@@ -67,12 +68,12 @@ The `node:test` module facilitates the creation of JavaScript tests that report 
 The following is an example implementation of a parent test with two subtests:
 
 ```js
-test('top level test', async (t) => {
-  await t.test('subtest 1', (t) => {
+test('top level test', async t => {
+  await t.test('subtest 1', t => {
     assert.strictEqual(1, 1);
   });
 
-  await t.test('subtest 2', (t) => {
+  await t.test('subtest 2', t => {
     assert.strictEqual(2, 2);
   });
 });
@@ -88,9 +89,9 @@ Contributed by Colin Ihrig in [#42325](https://github.com/nodejs/node/pull/42325
 
 Node.js provides pre-built binaries for several different platforms. For each major release, the minimum toolchains are assessed and raised where appropriate.
 
-* Prebuilt binaries for Linux are now built on Red Hat Enterprise Linux (RHEL) 8 and are compatible with Linux distributions based on glibc 2.28 or later, for example, Debian 10, RHEL 8, Ubuntu 20.04.
-* Prebuilt binaries for macOS now require macOS 10.15 or later.
-* For AIX the minimum supported architecture has been raised from Power 7 to Power 8.
+- Prebuilt binaries for Linux are now built on Red Hat Enterprise Linux (RHEL) 8 and are compatible with Linux distributions based on glibc 2.28 or later, for example, Debian 10, RHEL 8, Ubuntu 20.04.
+- Prebuilt binaries for macOS now require macOS 10.15 or later.
+- For AIX the minimum supported architecture has been raised from Power 7 to Power 8.
 
 Prebuilt binaries for 32-bit Windows will initially not be available due to issues building the V8 dependency in Node.js. We hope to restore 32-bit Windows binaries for Node.js 18 with a future V8 update.
 
@@ -145,10 +146,10 @@ Contributed by Joyee Cheung in [#42466](https://github.com/nodejs/node/pull/4246
 The V8 engine is updated to version 10.1, which is part of Chromium 101. Compared
 to the version included in Node.js 17.9.0, the following new features are included:
 
-* The [`findLast()` and `findLastIndex()` array methods](https://v8.dev/features/finding-in-arrays).
-* Improvements to the [`Intl.Locale` API](https://v8.dev/blog/v8-release-99#intl.locale-extensions).
-* The [`Intl.supportedValuesOf` function](https://v8.dev/blog/v8-release-99#intl-enumeration).
-* Improved performance of [class fields and private class methods](https://v8.dev/blog/faster-class-features) (the initialization of them is now as fast as ordinary property stores).
+- The [`findLast()` and `findLastIndex()` array methods](https://v8.dev/features/finding-in-arrays).
+- Improvements to the [`Intl.Locale` API](https://v8.dev/blog/v8-release-99#intl.locale-extensions).
+- The [`Intl.supportedValuesOf` function](https://v8.dev/blog/v8-release-99#intl-enumeration).
+- Improved performance of [class fields and private class methods](https://v8.dev/blog/faster-class-features) (the initialization of them is now as fast as ordinary property stores).
 
 Contributed by Michaël Zasso in [#42657](https://github.com/nodejs/node/pull/42657).
 

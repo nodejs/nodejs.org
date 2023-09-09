@@ -107,7 +107,7 @@ exec 3>&-
 
 Berikut adalah daftar alat profil memori yang dapat digunakan dengan protokol inspector:
 
-* [OpenProfiling untuk Node.js][openprofiling]
+- [OpenProfiling untuk Node.js][openprofiling]
 
 ## Cara menemukan kebocoran memori dengan Heap Snapshots
 
@@ -118,9 +118,9 @@ Anda dapat menemukan kebocoran memori dengan membandingkan dua snapshot heap. Pe
 3. Ambil satu snapshot heap.
 4. Lanjutkan menggunakan fungsionalitas untuk sementara waktu, lebih baik tanpa menjalankan apa pun di antara.
 5. Ambil snapshot heap lainnya. Perbedaan antara keduanya seharusnya sebagian besar berisi apa yang bocor.
-6. Buka alat pengembang Chromium/Chrome dan pergi ke tab *Memory*
+6. Buka alat pengembang Chromium/Chrome dan pergi ke tab _Memory_
 7. Muat file snapshot lama terlebih dahulu, dan yang lebih baru satu detik. ![Muat tombol di alat][8]
-8. Pilih snapshot yang lebih baru dan alihkan mode di dropdown di bagian atas dari *Ringkasan* dengan *Perbandingan*. ![Comparison dropdown][9]
+8. Pilih snapshot yang lebih baru dan alihkan mode di dropdown di bagian atas dari _Ringkasan_ dengan _Perbandingan_. ![Comparison dropdown][9]
 9. Cari delta positif besar dan jelajahi referensi yang menyebabkannya di panel bawah.
 
 Anda dapat berlatih menangkap snapshot heap dan menemukan kebocoran memori dengan [latihan snapshot heap ini][heapsnapshot exercise].

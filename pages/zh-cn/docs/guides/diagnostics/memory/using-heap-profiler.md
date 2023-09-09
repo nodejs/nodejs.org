@@ -30,9 +30,9 @@ node --inspect index.js
 
 在 Chrome 中连接开发工具实例，然后：
 
-* 选择 `memory` 选项卡
-* 选择 `Allocation instrumentation timeline`
-* 开始剖析
+- 选择 `memory` 选项卡
+- 选择 `Allocation instrumentation timeline`
+- 开始剖析
 
 ![堆剖析器步骤 1][3]
 
@@ -82,9 +82,9 @@ $ node --inspect index.js
 
 ## 有帮助的相关链接：
 
-* https://developer.chrome.com/docs/devtools/memory-problems/memory-101/
-* https://github.com/v8/sampling-heap-profiler
-* https://developer.chrome.com/docs/devtools/memory-problems/allocation-profiler/
+- https://developer.chrome.com/docs/devtools/memory-problems/memory-101/
+- https://github.com/v8/sampling-heap-profiler
+- https://developer.chrome.com/docs/devtools/memory-problems/allocation-profiler/
 
 [使用堆快照]: /zh-cn/docs/guides/diagnostics/memory/using-heap-snapshot/
 [@mmarchini/observe]: https://www.npmjs.com/package/@mmarchini/observe

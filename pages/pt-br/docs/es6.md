@@ -9,9 +9,9 @@ Node.js é construído contra novas versões do [V8](https://v8.dev/). Mantendo-
 
 Todas as funcionalidades ECMAScript 2015 (ES6) são divididas em três grupos: **em produção**, em **homologação** e em **andamento**:
 
-* Todas as funcionalidades **em produção**, consideras estáveis pelo V8, tornam-se **ativadas por padrão em Node.js** e **NÃO** necessitam de nenhuma opção de tempo de execução.
-* As funcionalidades em **homologação**, cujo são recursos quase concluídos, mas não são considerados estáveis pela equipe V8, requerem uma opção de tempo de execução: `--harmony`.
-* Em **andamento**, seriam as funcionalidades que podem ser ativadas individualmente pela sua respectiva opção harmony, embora isso seja muito desencorajado a menos que seja para fins de teste. Nota: essas opções são expostas pelo V8 e potencialmente podem mudar sem qualquer aviso de descontinuidade.
+- Todas as funcionalidades **em produção**, consideras estáveis pelo V8, tornam-se **ativadas por padrão em Node.js** e **NÃO** necessitam de nenhuma opção de tempo de execução.
+- As funcionalidades em **homologação**, cujo são recursos quase concluídos, mas não são considerados estáveis pela equipe V8, requerem uma opção de tempo de execução: `--harmony`.
+- Em **andamento**, seriam as funcionalidades que podem ser ativadas individualmente pela sua respectiva opção harmony, embora isso seja muito desencorajado a menos que seja para fins de teste. Nota: essas opções são expostas pelo V8 e potencialmente podem mudar sem qualquer aviso de descontinuidade.
 
 ## Quais funcionalidades são enviadas com cada versão do Node.js por padrão?
 
@@ -21,7 +21,7 @@ O site [node.green](https://node.green/) fornece uma excelente visão geral sobr
 
 Novas funcionalidades estão sendo constantemente adicionadas ao motor do V8. É esperado que elas apareçam em alguma versão futura do Node.js, porém sem uma previsão precisa de quando isso irá acontecer.
 
-Você pode listar todas as funcionalidades *em andamento* disponíveis em cada versão do Node.js utilizando o `grep` em conjunto com a opção `--v8-options`. É importante notar que essas funcionalidades podem estar incompletas ou quebradas no V8, portanto use-as por sua conta e risco:
+Você pode listar todas as funcionalidades _em andamento_ disponíveis em cada versão do Node.js utilizando o `grep` em conjunto com a opção `--v8-options`. É importante notar que essas funcionalidades podem estar incompletas ou quebradas no V8, portanto use-as por sua conta e risco:
 
 ```bash
 node --v8-options | grep "in progress"

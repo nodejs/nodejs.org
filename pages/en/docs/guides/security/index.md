@@ -12,16 +12,16 @@ guidelines on how to secure a Node.js application.
 
 ## Document Content
 
-* Best practices: A simplified condensed way to see the best practices. We can
-use [this issue][security guidance issue] or [this guideline][nodejs guideline]
-as the starting point. It is important to note that this document is specific
-to Node.js, if you are looking for something broad, consider
-[OSSF Best Practices][].
-* Attacks explained: illustrate and document in plain English with some code
-example (if possible) the attacks that we are mentioning in the threat model.
-* Third-Party Libraries: define threats
-(typosquatting attacks, malicious packages...) and best practices regarding
-node modules dependencies, etc...
+- Best practices: A simplified condensed way to see the best practices. We can
+  use [this issue][security guidance issue] or [this guideline][nodejs guideline]
+  as the starting point. It is important to note that this document is specific
+  to Node.js, if you are looking for something broad, consider
+  [OSSF Best Practices][].
+- Attacks explained: illustrate and document in plain English with some code
+  example (if possible) the attacks that we are mentioning in the threat model.
+- Third-Party Libraries: define threats
+  (typosquatting attacks, malicious packages...) and best practices regarding
+  node modules dependencies, etc...
 
 ## Threat List
 
@@ -46,7 +46,7 @@ server is created without a error handling, it will be vulnerable to DoS
 ```js
 const net = require('net');
 
-const server = net.createServer(function(socket) {
+const server = net.createServer(function (socket) {
   // socket.on('error', console.error) // this prevents the server to crash
   socket.write('Echo server\r\n');
   socket.pipe(socket);
@@ -68,16 +68,16 @@ being sent to the server.
 
 **Mitigations**
 
-* Use a reverse proxy to receive and forward requests to the Node.js application.
-Reverse proxies can provide caching, load balancing, IP blacklisting, etc. which
-reduce the probability of a DoS attack being effective.
-* Correctly configure the server timeouts, so that connections that are idle or
-where requests are arriving too slowly can be dropped. See the different timeouts
-in [`http.Server`][], particularly `headersTimeout`, `requestTimeout`, `timeout`,
-and `keepAliveTimeout`.
-* Limit the number of open sockets per host and in total. See the [http docs][],
-particularly `agent.maxSockets`, `agent.maxTotalSockets`, `agent.maxFreeSockets`
-and `server.maxRequestsPerSocket`.
+- Use a reverse proxy to receive and forward requests to the Node.js application.
+  Reverse proxies can provide caching, load balancing, IP blacklisting, etc. which
+  reduce the probability of a DoS attack being effective.
+- Correctly configure the server timeouts, so that connections that are idle or
+  where requests are arriving too slowly can be dropped. See the different timeouts
+  in [`http.Server`][], particularly `headersTimeout`, `requestTimeout`, `timeout`,
+  and `keepAliveTimeout`.
+- Limit the number of open sockets per host and in total. See the [http docs][],
+  particularly `agent.maxSockets`, `agent.maxTotalSockets`, `agent.maxFreeSockets`
+  and `server.maxRequestsPerSocket`.
 
 ### DNS Rebinding (CWE-346)
 
@@ -97,9 +97,9 @@ its IP address. See [DNS Rebinding wiki][] for more details.
 
 **Mitigations**
 
-* Disable inspector on _SIGUSR1_ signal by attaching a `process.on(‘SIGUSR1’, …)`
-listener to it.
-* Do not run the inspector protocol in production.
+- Disable inspector on _SIGUSR1_ signal by attaching a `process.on(‘SIGUSR1’, …)`
+  listener to it.
+- Do not run the inspector protocol in production.
 
 ### Exposure of Sensitive Information to an Unauthorized Actor (CWE-552)
 
@@ -111,14 +111,14 @@ There are some mechanism to control this behavior by defining a blocklist with
 
 **Mitigations**
 
-* Using `npm publish --dry-run` list all the files to publish. Ensure to review the
-content before publishing the package.
-* It’s also important to create and maintain ignore files such as `.gitignore` and
-`.npmignore`.
-Throughout these files, you can specify which files/folders should not be published.
-The [files property][] in `package.json` allows the inverse operation
--- allowed list.
-* In case of an exposure, make sure to [unpublish the package][].
+- Using `npm publish --dry-run` list all the files to publish. Ensure to review the
+  content before publishing the package.
+- It’s also important to create and maintain ignore files such as `.gitignore` and
+  `.npmignore`.
+  Throughout these files, you can specify which files/folders should not be published.
+  The [files property][] in `package.json` allows the inverse operation
+  -- allowed list.
+- In case of an exposure, make sure to [unpublish the package][].
 
 ### HTTP Request Smuggling (CWE-444)
 
@@ -141,11 +141,11 @@ in Node.js.
 
 **Mitigations**
 
-* Do not use the `insecureHTTPParser` option when creating a HTTP Server.
-* Configure the front-end server to normalize ambiguous requests.
-* Continuously monitor for new HTTP request smuggling vulnerabilities in both
-Node.js and the front-end server of choice.
-* Use HTTP/2 end to end and disable HTTP downgrading if possible.
+- Do not use the `insecureHTTPParser` option when creating a HTTP Server.
+- Configure the front-end server to normalize ambiguous requests.
+- Continuously monitor for new HTTP request smuggling vulnerabilities in both
+  Node.js and the front-end server of choice.
+- Use HTTP/2 end to end and disable HTTP downgrading if possible.
 
 ### Information Exposure through Timing Attacks (CWE-208)
 
@@ -165,12 +165,13 @@ of requests.
 
 **Mitigations**
 
-* The crypto API exposes a function `timingSafeEqual` to compare actual and
-expected sensitive values using a constant-time algorithm.
-* For password comparison, you can use the [scrypt][] available also on the
-native crypto module.
+- The crypto API exposes a function `timingSafeEqual` to compare actual and
+  expected sensitive values using a constant-time algorithm.
+- For password comparison, you can use the [scrypt][] available also on the
+  native crypto module.
 
-* More generally, avoid using secrets in variable-time operations. This includes branching on secrets and, when the attacker could be co-located on the same infrastructure (e.g., same cloud machine), using a secret as an index into memory. Writing constant-time code in JavaScript is hard (partly because of the JIT). For crypto applications, use the built-in crypto APIs or WebAssembly (for algorithms not implemented in natively).
+- More generally, avoid using secrets in variable-time operations. This includes branching on secrets and, when the attacker could be co-located on the same infrastructure (e.g., same cloud machine), using a secret as an index into memory. Writing constant-time code in JavaScript is hard (partly because of the JIT). For crypto applications, use the built-in crypto APIs or WebAssembly (for algorithms not implemented in natively).
+
 ### Malicious Third-Party Modules (CWE-1357)
 
 Currently, in Node.js, any package can access powerful resources such as
@@ -213,29 +214,29 @@ This still leaves the application vulnerable to unwanted/unexpected updates.
 
 Possible attack vectors:
 
-* Typosquatting attacks
-* Lockfile poisoning
-* Compromised maintainers
-* Malicious Packages
-* Dependency Confusions
+- Typosquatting attacks
+- Lockfile poisoning
+- Compromised maintainers
+- Malicious Packages
+- Dependency Confusions
 
 **Mitigations**
 
-* Prevent npm from executing arbitrary scripts with `--ignore-scripts`
-  * Additionally, you can disable it globally with `npm config set ignore-scripts true`
-* Pin dependency versions to a specific immutable version,
+- Prevent npm from executing arbitrary scripts with `--ignore-scripts`
+  - Additionally, you can disable it globally with `npm config set ignore-scripts true`
+- Pin dependency versions to a specific immutable version,
   not a version that is a range or from a mutable source.
-* Use lockfiles, which pin every dependency (direct and transitive).
-  * Use [Mitigations for lockfile poisoning][].
-* Automate checks for new vulnerabilities using CI, with tools like [`npm-audit`][].
-  * Tools such as [`Socket`][] can be used to analyze packages with static analysis
-  to find risky behaviors such as network or filesystem access.
-* Use [`npm ci`][] instead of `npm install`.
-This enforces the lockfile so that inconsistencies between it and the
-_package.json_ file cause an error (instead of silently ignoring the lockfile
-in favor of _package.json_).
-* Carefully check the _package.json_ file for errors/typos in the names of the
-dependencies.
+- Use lockfiles, which pin every dependency (direct and transitive).
+  - Use [Mitigations for lockfile poisoning][].
+- Automate checks for new vulnerabilities using CI, with tools like [`npm-audit`][].
+  - Tools such as [`Socket`][] can be used to analyze packages with static analysis
+    to find risky behaviors such as network or filesystem access.
+- Use [`npm ci`][] instead of `npm install`.
+  This enforces the lockfile so that inconsistencies between it and the
+  _package.json_ file cause an error (instead of silently ignoring the lockfile
+  in favor of _package.json_).
+- Carefully check the _package.json_ file for errors/typos in the names of the
+  dependencies.
 
 ### Memory Access Violation (CWE-284)
 
@@ -251,9 +252,9 @@ More information can be found on Node.js [secure-heap documentation][].
 
 **Mitigations**
 
-* Use `--secure-heap=n` depending on your application where _n_ is the allocated
-maximum byte size.
-* Do not run your production app in a shared machine.
+- Use `--secure-heap=n` depending on your application where _n_ is the allocated
+  maximum byte size.
+- Do not run your production app in a shared machine.
 
 ### Monkey Patching (CWE-349)
 
@@ -288,6 +289,7 @@ Array.prototype.push = function (item) {
 
 However, it’s important to mention you can still define new globals and replace
 existing globals using `globalThis`
+
 ```console
 > globalThis.foo = 3; foo; // you can still define new globals
 3
@@ -301,14 +303,14 @@ be replaced.
 ### Prototype Pollution Attacks (CWE-1321)
 
 Prototype pollution refers to the possibility to modify or inject properties
-into Javascript language items by abusing the usage of _\_proto\__,
-_constructor_, _prototype_, and other properties inherited from built-in
+into Javascript language items by abusing the usage of \_\_proto\__,
+\_constructor_, _prototype_, and other properties inherited from built-in
 prototypes.
 
 <!-- eslint-skip -->
 
 ```js
-const a = {"a": 1, "b": 2};
+const a = { a: 1, b: 2 };
 const data = JSON.parse('{"__proto__": { "polluted": true}}');
 
 const c = Object.assign({}, a, data);
@@ -325,19 +327,19 @@ language.
 
 **Examples**:
 
-* [CVE-2022-21824][] (Node.js)
-* [CVE-2018-3721][] (3rd Party library: Lodash)
+- [CVE-2022-21824][] (Node.js)
+- [CVE-2018-3721][] (3rd Party library: Lodash)
 
 **Mitigations**
 
-* Avoid [insecure recursive merges][], see [CVE-2018-16487][].
-* Implement JSON Schema validations for external/untrusted requests.
-* Create Objects without prototype by using `Object.create(null)`.
-* Freezing the prototype: `Object.freeze(MyObject.prototype)`.
-* Disable the `Object.prototype.__proto__` property using `--disable-proto` flag.
-* Check that the property exists directly on the object, not from the prototype
-using `Object.hasOwn(obj, keyFromObj)`.
-* Avoid using methods from `Object.prototype`.
+- Avoid [insecure recursive merges][], see [CVE-2018-16487][].
+- Implement JSON Schema validations for external/untrusted requests.
+- Create Objects without prototype by using `Object.create(null)`.
+- Freezing the prototype: `Object.freeze(MyObject.prototype)`.
+- Disable the `Object.prototype.__proto__` property using `--disable-proto` flag.
+- Check that the property exists directly on the object, not from the prototype
+  using `Object.hasOwn(obj, keyFromObj)`.
+- Avoid using methods from `Object.prototype`.
 
 ### Uncontrolled Search Path Element (CWE-427)
 
@@ -348,10 +350,10 @@ Therefore, it assumes the directory in which a module is requested
 By that, it means the following application behavior is expected.
 Assuming the following directory structure:
 
-* _app/_
-  * _server.js_
-  * _auth.js_
-  * _auth_
+- _app/_
+  - _server.js_
+  - _auth.js_
+  - _auth_
 
 If server.js uses `require('./auth')` it will follow the module resolution
 algorithm and load _auth_ instead of _auth.js_.
@@ -370,7 +372,7 @@ For the directory described above, one can use the following `policy.json`
     },
     "./app/server.js": {
       "dependencies": {
-        "./auth" : "./app/auth.js"
+        "./auth": "./app/auth.js"
       },
       "integrity": "sha256-NPtLCQ0ntPPWgfVEgX46ryTNpdvTWdQPoZO3kHo0bKI="
     }

@@ -9,9 +9,9 @@ Node.js dibuat dengan versi modern [V8](https://v8.dev/). Dengan terus mengikuti
 
 Semua fitur ECMAScript 2015 (ES6) dibagi menjadi tiga grup untuk fitur **pengiriman**, **bertahap**, dan **sedang berlangsung**:
 
-* Semua fitur **pengiriman**, yang dianggap stabil oleh V8, diaktifkan **secara default di Node.js** dan **TIDAK** memerlukan tanda waktu proses apa pun.
-* Fitur **Staged**, yang merupakan fitur yang hampir selesai dan tidak dianggap stabil oleh tim V8, memerlukan flag runtime: `--harmony`.
-* **Dalam proses** fitur dapat diaktifkan satu per satu dengan bendera harmoni masing-masing, meskipun hal ini sangat tidak disarankan kecuali untuk tujuan pengujian. Catatan: tanda ini diekspos oleh V8 dan berpotensi berubah tanpa pemberitahuan penghentian.
+- Semua fitur **pengiriman**, yang dianggap stabil oleh V8, diaktifkan **secara default di Node.js** dan **TIDAK** memerlukan tanda waktu proses apa pun.
+- Fitur **Staged**, yang merupakan fitur yang hampir selesai dan tidak dianggap stabil oleh tim V8, memerlukan flag runtime: `--harmony`.
+- **Dalam proses** fitur dapat diaktifkan satu per satu dengan bendera harmoni masing-masing, meskipun hal ini sangat tidak disarankan kecuali untuk tujuan pengujian. Catatan: tanda ini diekspos oleh V8 dan berpotensi berubah tanpa pemberitahuan penghentian.
 
 ## Fitur mana yang dikirimkan dengan versi Node.js mana secara default?
 
@@ -21,7 +21,7 @@ Situs web [node.green](https://node.green/) memberikan gambaran yang sangat baik
 
 Fitur-fitur baru terus ditambahkan ke mesin V8. Secara umum, perkirakan mereka akan mendarat di rilis Node.js di masa mendatang, meskipun waktunya tidak diketahui.
 
-Anda dapat membuat daftar semua fitur *sedang berlangsung* yang tersedia pada setiap rilis Node.js dengan memahami argumen `--v8-options`. Harap dicatat bahwa ini adalah fitur V8 yang tidak lengkap dan mungkin rusak, jadi gunakan dengan risiko Anda sendiri:
+Anda dapat membuat daftar semua fitur _sedang berlangsung_ yang tersedia pada setiap rilis Node.js dengan memahami argumen `--v8-options`. Harap dicatat bahwa ini adalah fitur V8 yang tidak lengkap dan mungkin rusak, jadi gunakan dengan risiko Anda sendiri:
 
 ```bash
 node --v8-options | grep "in progress"

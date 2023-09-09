@@ -9,9 +9,9 @@ Node.js está construido en base a versiones modernas de [V8](https://v8.dev/). 
 
 Todas las características de ECMAScript 2015 (ES6) se dividen en tres grupos **shipping**, **staged** y **in progress**:
 
-* Todas las funcionalidades en **shipping**, que V8 considera estable, se activan **de forma predeterminada en Node.js** y hacen que **NO** se requiera ninguna bandera o flag en tiempo de ejecución.
-* Las funciones en **staged**, que son características casi completas que el equipo V8 no las considera estables, requieren un bandera o flag en tiempo de ejecución: `--harmony`.
-* **In progress**, las características pueden ser activadas individualmente por su respectiva bandera o flag, aunque esto es altamente desaconsejado a menos que sea para propósitos de pruebas. Nota: estos indicadores están expuestos por V8 y potencialmente cambiarán sin previo aviso de desaprobación.
+- Todas las funcionalidades en **shipping**, que V8 considera estable, se activan **de forma predeterminada en Node.js** y hacen que **NO** se requiera ninguna bandera o flag en tiempo de ejecución.
+- Las funciones en **staged**, que son características casi completas que el equipo V8 no las considera estables, requieren un bandera o flag en tiempo de ejecución: `--harmony`.
+- **In progress**, las características pueden ser activadas individualmente por su respectiva bandera o flag, aunque esto es altamente desaconsejado a menos que sea para propósitos de pruebas. Nota: estos indicadores están expuestos por V8 y potencialmente cambiarán sin previo aviso de desaprobación.
 
 ## ¿Cuales de las características se incluyen con cada versión de Node.js por defecto?
 
@@ -21,7 +21,7 @@ El sitio web [node.green](https://node.green/) proporciona una excelente visión
 
 Las nuevas características se agregan constantemente al motor V8. En términos generales, espere que lleguen en su futuro lanzamiento en Node.js, aunque se desconoce el momento.
 
-Puede detallar todas las funciones *in progress* disponibles en cada versión de Node.js mediante el argumento `--v8-options`. Tenga en cuenta que estas son características incompletas y posiblemente rotas de V8, así que úselas bajo su propio riesgo:
+Puede detallar todas las funciones _in progress_ disponibles en cada versión de Node.js mediante el argumento `--v8-options`. Tenga en cuenta que estas son características incompletas y posiblemente rotas de V8, así que úselas bajo su propio riesgo:
 
 ```bash
 node --v8-options | grep "in progress"
