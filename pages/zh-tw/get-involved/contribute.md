@@ -17,14 +17,14 @@ layout: contribute.hbs
 
 回報問題時我們也需要一些關於執行環境的資訊，我們不知道確切哪些資訊是我們要的，所以請至少提供下列幾項資訊：
 
-* Node.js 版本
-* 作業系統（macOS、SmartOS、Linux 或 Windows）
-* 你的機器架構（32bit 或 64bit 及 x86 或 ARM 等）
+- Node.js 版本
+- 作業系統（macOS、SmartOS、Linux 或 Windows）
+- 你的機器架構（32bit 或 64bit 及 x86 或 ARM 等）
 
 目前 Node.js 專案分散在一些 GitHub repository 中個別管理，每個 repository 都有自己的 issue 資料庫。如果可以的話，請將你的問題回報至適合的 repository，但也別怕不小心發錯地方，我們的社群會很熱心幫你找到對的地方。
 
-* 若要回報 Node.js 問題請至 [nodejs/node](https://github.com/nodejs/node)
-* 若要回報本網站的問題請至 [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
+- 若要回報 Node.js 問題請至 [nodejs/node](https://github.com/nodejs/node)
+- 若要回報本網站的問題請至 [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
 
 ## 程式碼貢獻者
 
@@ -36,12 +36,12 @@ layout: contribute.hbs
 
 協作者的影響力可擴及整個專案，成為協作者後將能審核他人的貢獻內容、分類 issue 及策劃專案未來。因重大貢獻而被 TSC 認可的開發者可能會被授與專案協作者身份及享有專案的 commit 權限，重大貢獻的評估標準如（包括但不限於）下方所列：
 
-* 程式碼 commit 及 pull request 的品質
-* 文件 commit 及 pull request 的品質
-* 於 issue 及 pull request 留下的評論品質
-* Node.js 網站的貢獻品質
-* 提供給專端用戶及初學貢獻者協助的品質
-* 參與工作組的品質
-* 其他 Node.js 社群的參與品質
+- 程式碼 commit 及 pull request 的品質
+- 文件 commit 及 pull request 的品質
+- 於 issue 及 pull request 留下的評論品質
+- Node.js 網站的貢獻品質
+- 提供給專端用戶及初學貢獻者協助的品質
+- 參與工作組的品質
+- 其他 Node.js 社群的參與品質
 
 若你自認做出重大貢獻卻沒被授與 commit 權限，可嘗試[開啟 issue](https://github.com/nodejs/TSC/issues) 或[直接聯絡 TSC 成員](https://github.com/nodejs/TSC#current-members)。

@@ -36,9 +36,9 @@ node --inspect index.js
 
 Connect to the dev-tools instance in chrome and then:
 
-* Select the `Memory` tab.
-* Select `Allocation instrumentation timeline`.
-* Start profiling.
+- Select the `Memory` tab.
+- Select `Allocation instrumentation timeline`.
+- Start profiling.
 
 ![heap profiler tutorial step 1][heap profiler tutorial 1]
 
@@ -96,9 +96,9 @@ heap allocations, see the example below:
 
 ## Useful Links
 
-* https://developer.chrome.com/docs/devtools/memory-problems/memory-101/
-* https://github.com/v8/sampling-heap-profiler
-* https://developer.chrome.com/docs/devtools/memory-problems/allocation-profiler/
+- https://developer.chrome.com/docs/devtools/memory-problems/memory-101/
+- https://github.com/v8/sampling-heap-profiler
+- https://developer.chrome.com/docs/devtools/memory-problems/allocation-profiler/
 
 [Using Heap Snapshot]: /en/docs/guides/diagnostics/memory/using-heap-snapshot/
 [@mmarchini/observe]: https://www.npmjs.com/package/@mmarchini/observe

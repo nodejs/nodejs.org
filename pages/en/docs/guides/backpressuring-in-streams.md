@@ -42,10 +42,10 @@ const readline = require('readline');
 // process.stdin and process.stdout are both instances of Streams.
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
-rl.question('Why should you use streams? ', (answer) => {
+rl.question('Why should you use streams? ', answer => {
   console.log(`Maybe it's ${answer}, maybe it's because they are awesome! :)`);
 
   rl.close();
@@ -108,7 +108,7 @@ pipeline(
   fs.createReadStream('The.Matrix.1080p.mkv'),
   zlib.createGzip(),
   fs.createWriteStream('The.Matrix.1080p.mkv.gz'),
-  (err) => {
+  err => {
     if (err) {
       console.error('Pipeline failed', err);
     } else {
@@ -133,7 +133,7 @@ async function run() {
     await pipeline(
       fs.createReadStream('The.Matrix.1080p.mkv'),
       zlib.createGzip(),
-      fs.createWriteStream('The.Matrix.1080p.mkv.gz'),
+      fs.createWriteStream('The.Matrix.1080p.mkv.gz')
     );
     console.log('Pipeline succeeded');
   } catch (err) {
@@ -170,9 +170,9 @@ completion.
 
 This results in a few things:
 
-* Slowing down all other current processes
-* A very overworked garbage collector
-* Memory exhaustion
+- Slowing down all other current processes
+- A very overworked garbage collector
+- Memory exhaustion
 
 In the following examples we will take out the [return value][] of the
 `.write()` function and change it to `true`, which effectively disables
@@ -448,7 +448,7 @@ In general,
 1. Never `.push()` if you are not asked.
 2. Never call `.write()` after it returns false but wait for 'drain' instead.
 3. Streams changes between different Node.js versions, and the library you use.
-Be careful and test things.
+   Be careful and test things.
 
 > In regards to point 3, an incredibly useful package for building
 > browser streams is [`readable-stream`][]. Rodd Vagg has written a
@@ -499,9 +499,7 @@ forces data through whenever it is available (signaled by the
 // This ignores the backpressure mechanisms Node.js has set in place,
 // and unconditionally pushes through data, regardless if the
 // destination stream is ready for it or not.
-readable.on('data', (data) =>
-  writable.write(data)
-);
+readable.on('data', data => writable.write(data));
 ```
 
 Here's an example of using [`.push()`][] with a Readable stream.
@@ -516,17 +514,18 @@ const myReadableStream = new Readable({
     // Push some data onto the stream
     this.push({ message: 'Hello, world!' });
     this.push(null); // Mark the end of the stream
-  }
+  },
 });
 
 // Consume the stream
-myReadableStream.on('data', (chunk) => {
+myReadableStream.on('data', chunk => {
   console.log(chunk);
 });
 
 // Output:
 // { message: 'Hello, world!' }
 ```
+
 In this example, we create a custom Readable stream that pushes a single object
 onto the stream using [`.push()`][]. The [`._read()`][] method is called when the stream is ready
 to consume data, and in this case, we immediately push some data onto the stream and
@@ -546,31 +545,28 @@ handle backpressure and optimize the flow of data for us.
 However, when we want to use a [`Writable`][] directly, we must respect the
 [`.write()`][] return value and pay close attention to these conditions:
 
-* If the write queue is busy, [`.write()`][] will return false.
-* If the data chunk is too large, [`.write()`][] will return false (the limit
-is indicated by the variable, [`highWaterMark`][]).
+- If the write queue is busy, [`.write()`][] will return false.
+- If the data chunk is too large, [`.write()`][] will return false (the limit
+  is indicated by the variable, [`highWaterMark`][]).
 
 <!-- eslint-disable indent -->
+
 ```javascript
 // This writable is invalid because of the async nature of JavaScript callbacks.
 // Without a return statement for each callback prior to the last,
 // there is a great chance multiple callbacks will be called.
 class MyWritable extends Writable {
   _write(chunk, encoding, callback) {
-    if (chunk.toString().indexOf('a') >= 0)
-      callback();
-    else if (chunk.toString().indexOf('b') >= 0)
-      callback();
+    if (chunk.toString().indexOf('a') >= 0) callback();
+    else if (chunk.toString().indexOf('b') >= 0) callback();
     callback();
   }
 }
 
 // The proper way to write this would be:
-    if (chunk.contains('a'))
-      return callback();
-    if (chunk.contains('b'))
-      return callback();
-    callback();
+if (chunk.contains('a')) return callback();
+if (chunk.contains('b')) return callback();
+callback();
 ```
 
 There are also some things to look out for when implementing [`._writev()`][].
@@ -642,26 +638,20 @@ Node.js.
 [`._writev()`]: https://nodejs.org/api/stream.html#stream_writable_writev_chunks_callback
 [`.cork()`]: https://nodejs.org/api/stream.html#stream_writable_cork
 [`.uncork()`]: https://nodejs.org/api/stream.html#stream_writable_uncork
-
 [`.push()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_push_chunk_encoding
-
 [implementing Writable streams]: https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_writable_stream
 [implementing Readable streams]: https://nodejs.org/docs/latest/api/stream.html#stream_implementing_a_readable_stream
-
 [other packages]: https://github.com/sindresorhus/awesome-nodejs#streams
 [`backpressure`]: https://en.wikipedia.org/wiki/Backpressure_routing
 [Node.js v0.10]: https://nodejs.org/docs/v0.10.0/
 [`highWaterMark`]: https://nodejs.org/api/stream.html#stream_buffering
 [return value]: https://github.com/nodejs/node/blob/55c42bc6e5602e5a47fb774009cfe9289cb88e71/lib/_stream_writable.js#L239
-
 [`readable-stream`]: https://github.com/nodejs/readable-stream
-[great blog post]:https://r.va.gg/2014/06/why-i-dont-use-nodes-core-stream-module.html
-
+[great blog post]: https://r.va.gg/2014/06/why-i-dont-use-nodes-core-stream-module.html
 [`dtrace`]: http://dtrace.org/blogs/about/
 [`zip(1)`]: https://linux.die.net/man/1/zip
 [`gzip(1)`]: https://linux.die.net/man/1/gzip
 [`stream state machine`]: https://en.wikipedia.org/wiki/Finite-state_machine
-
 [`.pipe()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
 [piped]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
 [`pump`]: https://github.com/mafintosh/pump

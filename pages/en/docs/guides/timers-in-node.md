@@ -21,7 +21,7 @@ its own implementation of these methods. Timers integrate very closely
 with the system, and despite the fact that the API mirrors the browser
 API, there are some differences in implementation.
 
-### "When I say so" Execution ~ *`setTimeout()`*
+### "When I say so" Execution ~ _`setTimeout()`_
 
 `setTimeout()` can be used to schedule code execution after a designated
 amount of milliseconds. This function is similar to
@@ -46,9 +46,9 @@ The above function `myFunc()` will execute as close to 1500
 milliseconds (or 1.5 seconds) as possible due to the call of `setTimeout()`.
 
 The timeout interval that is set cannot be relied upon to execute after
-that *exact* number of milliseconds. This is because other executing code that
+that _exact_ number of milliseconds. This is because other executing code that
 blocks or holds onto the event loop will push the execution of the timeout
-back. The *only* guarantee is that the timeout will not execute *sooner* than
+back. The _only_ guarantee is that the timeout will not execute _sooner_ than
 the declared timeout interval.
 
 `setTimeout()` returns a `Timeout` object that can be used to reference the
@@ -56,11 +56,11 @@ timeout that was set. This returned object can be used to cancel the timeout (
 see `clearTimeout()` below) as well as change the execution behavior (see
 `unref()` below).
 
-### "Right after this" Execution ~ *`setImmediate()`*
+### "Right after this" Execution ~ _`setImmediate()`_
 
 `setImmediate()` will execute code at the end of the current event loop cycle.
-This code will execute *after* any I/O operations in the current event loop and
-*before* any timers scheduled for the next event loop. This code execution
+This code will execute _after_ any I/O operations in the current event loop and
+_before_ any timers scheduled for the next event loop. This code execution
 could be thought of as happening "right after this", meaning any code following
 the `setImmediate()` function call will execute before the `setImmediate()`
 function argument.
@@ -72,7 +72,7 @@ Here's an example:
 ```js
 console.log('before immediate');
 
-setImmediate((arg) => {
+setImmediate(arg => {
   console.log(`executing immediate: ${arg}`);
 }, 'so immediate');
 
@@ -93,13 +93,13 @@ the scheduled immediate (see `clearImmediate()` below).
 
 > Don't get `setImmediate()` confused with `process.nextTick()`. There are
 > some major ways they differ. The first is that `process.nextTick()` will run
-> *before* any `Immediate`s that are set as well as before any scheduled I/O.
+> _before_ any `Immediate`s that are set as well as before any scheduled I/O.
 > The second is that `process.nextTick()` is non-clearable, meaning once
 > code has been scheduled to execute with `process.nextTick()`, the execution
 > cannot be stopped, just like with a normal function. Refer to [this guide](/en/docs/guides/event-loop-timers-and-nexttick/#process-nexttick)
 > to better understand the operation of `process.nextTick()`.
 
-### "Infinite Loop" Execution ~ *`setInterval()`*
+### "Infinite Loop" Execution ~ _`setInterval()`_
 
 If there is a block of code that should execute multiple times, `setInterval()`
 can be used to execute that code. `setInterval()` takes a function
@@ -158,14 +158,14 @@ Remember that `Timeout` objects are returned by `setTimeout` and `setInterval`.
 The `Timeout` object provides two functions intended to augment `Timeout`
 behavior with `unref()` and `ref()`. If there is a `Timeout` object scheduled
 using a `set` function, `unref()` can be called on that object. This will change
-the behavior slightly, and not call the `Timeout` object *if it is the last
-code to execute*. The `Timeout` object will not keep the process alive, waiting
+the behavior slightly, and not call the `Timeout` object _if it is the last
+code to execute_. The `Timeout` object will not keep the process alive, waiting
 to execute.
 
 In similar fashion, a `Timeout` object that has had `unref()` called on it
 can remove that behavior by calling `ref()` on that same `Timeout` object,
 which will then ensure its execution. Be aware, however, that this does
-not *exactly* restore the initial behavior for performance reasons. See
+not _exactly_ restore the initial behavior for performance reasons. See
 below for examples of both:
 
 ```js

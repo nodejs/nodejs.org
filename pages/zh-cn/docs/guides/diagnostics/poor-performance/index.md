@@ -7,10 +7,10 @@ layout: docs.hbs
 
 本文档将告知你如何分析一个 Node.js 进程。
 
-* [低性能和效率](#低效率运行)
-  * [我的程序执行效率太低了！](#我的程序执行效率太低了)
-    * [症状](#症状)
-    * [调试](#调试)
+- [低性能和效率](#低效率运行)
+  - [我的程序执行效率太低了！](#我的程序执行效率太低了)
+    - [症状](#症状)
+    - [调试](#调试)
 
 ## 我的程序执行效率太低了！
 
@@ -26,5 +26,5 @@ layout: docs.hbs
 
 本文将提供你两种方式分析一个 Node.js 应用程序的效率：
 
-* [如何使用 V8 采样分析器](/zh-cn/docs/guides/simple-profiling/)
-* [如何使用 Linux 的 Perf 工具](/zh-cn/docs/guides/diagnostics/poor-performance/using-linux-perf)
+- [如何使用 V8 采样分析器](/zh-cn/docs/guides/simple-profiling/)
+- [如何使用 Linux 的 Perf 工具](/zh-cn/docs/guides/diagnostics/poor-performance/using-linux-perf)

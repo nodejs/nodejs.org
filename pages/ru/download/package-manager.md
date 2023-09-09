@@ -5,25 +5,25 @@ title: Установка Node.js через пакетный менеджер
 
 # Установка Node.js через пакетный менеджер
 
-***Заметка:*** Пакеты, описанные на этой странице, разрабатываются и поддерживаются соответствующими упаковщиками, **а не** командой Node.js. Пожалуйста, сообщайте о любых проблемах, с которыми вы сталкиваетесь с конкретным пакетом. Если выяснится, что ваша проблема ― ошибка в самом Node.js, проблема будет передана выше.
+**_Заметка:_** Пакеты, описанные на этой странице, разрабатываются и поддерживаются соответствующими упаковщиками, **а не** командой Node.js. Пожалуйста, сообщайте о любых проблемах, с которыми вы сталкиваетесь с конкретным пакетом. Если выяснится, что ваша проблема ― ошибка в самом Node.js, проблема будет передана выше.
 
 ---
 
-* [Android](#android)
-* [Arch Linux](#arch-linux)
-* [Дистрибутивы Linux на основе Debian и Ubuntu, пакеты Enterprise Linux/Fedora и Snap](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
-* [FreeBSD](#freebsd)
-* [Gentoo](#gentoo)
-* [NetBSD](#netbsd)
-* [nvm](#nvm)
-* [nvs](#nvs)
-* [OpenBSD](#openbsd)
-* [openSUSE и SLE](#opensuse-and-sle)
-* [macOS](#macos)
-* [SmartOS и illumos](#smartos-and-illumos)
-* [Solus](#solus)
-* [Void Linux](#void-linux)
-* [Windows](#windows-1)
+- [Android](#android)
+- [Arch Linux](#arch-linux)
+- [Дистрибутивы Linux на основе Debian и Ubuntu, пакеты Enterprise Linux/Fedora и Snap](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
+- [FreeBSD](#freebsd)
+- [Gentoo](#gentoo)
+- [NetBSD](#netbsd)
+- [nvm](#nvm)
+- [nvs](#nvs)
+- [OpenBSD](#openbsd)
+- [openSUSE и SLE](#opensuse-and-sle)
+- [macOS](#macos)
+- [SmartOS и illumos](#smartos-and-illumos)
+- [Solus](#solus)
+- [Void Linux](#void-linux)
+- [Windows](#windows-1)
 
 ---
 
@@ -91,6 +91,7 @@ pkgin -y install nodejs
 ```
 
 ## nvm
+
 Node Version Manager ― это bash-скрипт, используемый для управления несколькими выпущенными версиями Node.js. Он позволяет
 выполнять такие операции, как установка, удаление, переключение версий и т.д..
 Чтобы установить nvm, используйте этот [скрипт установки](https://github.com/nvm-sh/nvm#install--update-script).
@@ -119,6 +120,7 @@ nvm uninstall 8
 ## nvs
 
 #### Windows
+
 The `nvs` version manager is cross-platform and can be used on Windows, macOS, and Unix-like systems
 
 To install `nvs` on Windows go to the [release page](https://github.com/jasongin/nvs/releases) here and download the MSI installer file of the latest release.
@@ -130,9 +132,11 @@ choco install nvs
 ```
 
 #### macOS,UnixLike
+
 You can find the documentation regarding the installation steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
 
 #### Usage
+
 After this you can use `nvs` to switch between different versions of node.
 
 To add the latest version of node:
@@ -179,10 +183,10 @@ pkg_add node
 
 Node.js доступен в основных репозиториях в следующих пакетах:
 
-* **openSUSE Leap 42.2**: `nodejs4`
-* **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
-* **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
-* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`
+- **openSUSE Leap 42.2**: `nodejs4`
+- **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
+- **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
+- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`
   ("Модуль Web и Scripting" должен быть [добавлен перед установкой](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).)
 
 Например, чтобы установить Node.js 4.x в openSUSE Leap 42.2, запустите следующее от имени пользователя root:

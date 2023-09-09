@@ -8,9 +8,10 @@ layout: docs.hbs
 本指南将贯穿所有关于垃圾回收跟踪机制的基础部分。
 
 当你完成本章节阅读之后，你将会了解：
-* 如何在 Node.js 应用程序中启用跟踪
-* 解析跟踪信息
-* 识别可能潜在 Node.js 应用程序内与内存相关的问题
+
+- 如何在 Node.js 应用程序中启用跟踪
+- 解析跟踪信息
+- 识别可能潜在 Node.js 应用程序内与内存相关的问题
 
 垃圾回收是如何工作的，实在有太多的东西需要学习。但有一点必须清楚：那便是当 GC 运行 的时候，你的代码是不工作的。
 
@@ -25,7 +26,7 @@ layout: docs.hbs
 import os from 'os';
 let len = 1_000_000;
 const entries = new Set();
-function addEntry () {
+function addEntry() {
   const entry = {
     timestamp: Date.now(),
     memory: os.freemem(),
@@ -34,7 +35,7 @@ function addEntry () {
   };
   entries.add(entry);
 }
-function summary () {
+function summary() {
   console.log(`Total: ${entries.size} entries`);
 }
 // execution
@@ -43,7 +44,7 @@ function summary () {
     addEntry();
     process.stdout.write(`~~> ${len} entries to record\r`);
     len--;
-  };
+  }
   summary();
 })();
 ```
@@ -62,7 +63,7 @@ $ node --trace-gc script.mjs
 
 运行之后，输出如下效果：
 
-``` bash
+```bash
 [39067:0x158008000]     2297 ms: Scavenge 117.5 (135.8) -> 102.2 (135.8) MB, 0.8 / 0.0 ms  (average mu = 0.994, current mu = 0.994) allocation failure
 [39067:0x158008000]     2375 ms: Scavenge 120.0 (138.3) -> 104.7 (138.3) MB, 0.9 / 0.0 ms  (average mu = 0.994, current mu = 0.994) allocation failure
 [39067:0x158008000]     2453 ms: Scavenge 122.4 (140.8) -> 107.1 (140.8) MB, 0.7 / 0.0 ms  (average mu = 0.994, current mu = 0.994) allocation failure
@@ -83,22 +84,23 @@ Total: 1000000 entries
 [13973:0x110008000]       44 ms: Scavenge 2.4 (3.2) -> 2.0 (4.2) MB, 0.5 / 0.0 ms  (average mu = 1.000, current mu = 1.000) allocation failure
 ```
 
-| 值                                                     | 解析说明             |
-| ----------------------------------------------------- | ---------------- |
-| 13973                                                 | 运行中进程的编号         |
-| 0x110008000                                           | 独立内存地址 （JS 堆实例）  |
-| 44 ms                                                 | 自开始运行的时间（毫秒）     |
-| Scavenge                                              | 类型 / GC 阶段       |
-| 2.4                                                   | GC 运行前占有内存（MiB）  |
+| 值                                                    | 解析说明                   |
+| ----------------------------------------------------- | -------------------------- |
+| 13973                                                 | 运行中进程的编号           |
+| 0x110008000                                           | 独立内存地址 （JS 堆实例） |
+| 44 ms                                                 | 自开始运行的时间（毫秒）   |
+| Scavenge                                              | 类型 / GC 阶段             |
+| 2.4                                                   | GC 运行前占有内存（MiB）   |
 | (3.2)                                                 | GC 运行前总占有内存（MiB） |
-| 2.0                                                   | GC 运行后占有内存（MiB）  |
+| 2.0                                                   | GC 运行后占有内存（MiB）   |
 | (4.2)                                                 | GC 运行后总占有内存（MiB） |
-| 0.5 / 0.0 ms (average mu = 1.000, current mu = 1.000) | GC 花费的时间（ms）     |
-| allocation failure                                    | GC 内存分配失败的具体原因   |
+| 0.5 / 0.0 ms (average mu = 1.000, current mu = 1.000) | GC 花费的时间（ms）        |
+| allocation failure                                    | GC 内存分配失败的具体原因  |
 
 在此我们只需关注两件事：
-* Scavenge
-* 标记—清除
+
+- Scavenge
+- 标记—清除
 
 内存堆被分割成了若干 _区间_ 块。在这些区间块里边，我们有“新”区间，还有“旧”区间。
 
@@ -110,20 +112,20 @@ Total: 1000000 entries
 
 我们假设以下使用了 Scavenge 的场景：
 
-* 我们分配了 `A`, `B`, `C` 和 `D` 四块内存变量
+- 我们分配了 `A`, `B`, `C` 和 `D` 四块内存变量
   ```bash
   | A | B | C | D | <unallocated> |
   ```
-* 我们继续想要分配 `E`
-* 可用空间不够，内存耗尽了
-* 然后垃圾回收机制被触发
-* 无用的对象被回收了
-* 可用对象仍然得到保留
-* 假设 `B` 和 `D` 是无用对象，那么回收后如下所示
+- 我们继续想要分配 `E`
+- 可用空间不够，内存耗尽了
+- 然后垃圾回收机制被触发
+- 无用的对象被回收了
+- 可用对象仍然得到保留
+- 假设 `B` 和 `D` 是无用对象，那么回收后如下所示
   ```bash
   | A | C | <unallocated> |
   ```
-* 现在我们可以分配 `E`
+- 现在我们可以分配 `E`
   ```bash
   | A | C | E | <unallocated> |
   ```
@@ -131,13 +133,15 @@ Total: 1000000 entries
 v8 会提升对象，因此对无用空间进行两次 Scavenge 操作之后不再进行垃圾收集。
 
 > 👉 参考这里完整的 [Scavenge 情形][]。
+
 ### 标记—清除
 
 “标记—清除”用于从旧空间收集对象，“旧空间”指新空间中幸存下来的物体居住的地方。
 
 该算法分成两个阶段：
-* **标记**: 把“可用对象”（活对象）标记成黑，其余则为白。
-* **清除**: 扫描收集所有白色区域，并回收它们转换成为可用空间。
+
+- **标记**: 把“可用对象”（活对象）标记成黑，其余则为白。
+- **清除**: 扫描收集所有白色区域，并回收它们转换成为可用空间。
 
 > 👉 实际上，“标记—清除”仍然有一些东西值得说道。请阅读此[文档][]以便于了解更多详情。
 
@@ -156,12 +160,13 @@ v8 会提升对象，因此对无用空间进行两次 Scavenge 操作之后不�
 打个比方。请使用如下的命令运行 `script.mjs` ：
 
 ### 如何捕获糟糕的内存分配上下文？
+
 1. 假设我们观察到旧内存持续不断地增长
 2. 反复使用 [`--max-old-space-size`][]，直到堆内存接近于极限值
 3. 运行程序，直到触发“内存耗尽”的提示。
 4. 这将记录下内存获取失败的上下文信息
-6. 如果触发了“内存耗尽”，不断提高堆的大小（每次10%），尝试数次之后如仍观察到此现象的发生，这意味着内存存在泄露。
-7. 如果无法触发“内存耗尽”，保持你的堆栈大小固定成那个值——因为一个被压缩的堆减少了内存空间量，以及计算过程中的延迟。
+5. 如果触发了“内存耗尽”，不断提高堆的大小（每次10%），尝试数次之后如仍观察到此现象的发生，这意味着内存存在泄露。
+6. 如果无法触发“内存耗尽”，保持你的堆栈大小固定成那个值——因为一个被压缩的堆减少了内存空间量，以及计算过程中的延迟。
 
 你应该会遇到如下信息的“内存耗尽”：
 
@@ -197,6 +202,7 @@ node --trace-gc --max-old-space-size=100 script.mjs
 ### 速度慢
 
 现在让我们修复这个问题吧。我们将用一个文件，而不是一个对象来存储相关信息。
+
 1. 观察跟踪的数据，尤其是在连续不断的内存回收之间的时间。
 2. 观察跟踪的数据，尤其是在 GC 发生前后的时间。
 3. 如果两次 GC 间的时间小于执行一次 GC 所用时间，说明该程序内存严重不足。
@@ -215,7 +221,7 @@ import os from 'os';
 import fs from 'fs/promises';
 let len = 1_000_000;
 const fileName = `entries-${Date.now()}`;
-async function addEntry () {
+async function addEntry() {
   const entry = {
     timestamp: Date.now(),
     memory: os.freemem(),
@@ -224,18 +230,18 @@ async function addEntry () {
   };
   await fs.appendFile(fileName, JSON.stringify(entry) + '\n');
 }
-async function summary () {
+async function summary() {
   const stats = await fs.lstat(fileName);
   console.log(`File size ${stats.size} bytes`);
 }
 // execution
 (async () => {
-  await fs.writeFile(fileName, "----START---\n");
+  await fs.writeFile(fileName, '----START---\n');
   while (len > 0) {
     await addEntry();
     process.stdout.write(`~~> ${len} entries to record\r`);
     len--;
-  };
+  }
   await summary();
 })();
 ```
@@ -251,8 +257,9 @@ node --trace-gc script-fix.mjs
 ```
 
 相对于第一个脚本而言，新版本的脚本在内存上施加的压力更小，自然更容易甄别出。
-* “标记—清除” 事件频率减少
-* 与之前（第一个脚本）相比内存占用超过 130MB 而言，本次内存相关记录显示不超过 25MB。
+
+- “标记—清除” 事件频率减少
+- 与之前（第一个脚本）相比内存占用超过 130MB 而言，本次内存相关记录显示不超过 25MB。
 
 **拓展**: 你如何考虑提升这个脚本？或许你已经注意到这个新版本的脚本太慢了。 如果我们再次使用 `Set` ，仅当内存占用达到某个程度大小的时候再把内容一次性地写入文件？
 
@@ -282,7 +289,7 @@ v8.setFlagsFromString('--notrace-gc');
 const { PerformanceObserver } = require('perf_hooks');
 
 // Create a performance observer
-const obs = new PerformanceObserver((list) => {
+const obs = new PerformanceObserver(list => {
   const entry = list.getEntries()[0];
   /*
   The entry is an instance of PerformanceEntry containing
@@ -321,14 +328,14 @@ PerformanceEntry {
 }
 ```
 
-| 属性名       | 解释                  |
-| --------- | ------------------- |
-| name      | 性能名称                |
-| entryType | 性能类型                |
+| 属性名    | 解释                                   |
+| --------- | -------------------------------------- |
+| name      | 性能名称                               |
+| entryType | 性能类型                               |
 | startTime | 回收开始时间（单位：高精度毫秒时间戳） |
-| duration  | 本次回收总时间（单位：毫秒）      |
-| kind      | 本次垃圾收集的类型           |
-| flags     | 垃圾回收的其余信息           |
+| duration  | 本次回收总时间（单位：毫秒）           |
+| kind      | 本次垃圾收集的类型                     |
+| flags     | 垃圾回收的其余信息                     |
 
 欲了解更多信息，您可以参考 [关于性能钩子的文档][performance hooks]。
 

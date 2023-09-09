@@ -7,13 +7,13 @@ layout: docs.hbs
 
 الغاية من هذا الدليل هو مَنَح معارف قوية لعمل Node.js في معالجة HTTP. لنفرض أنك تعرف
 بشكل عام كيف تعمل طلبات HTTP بغض النظر عن اللغة أو بيئة البرمجة وسنفرض أيضا على دِرَايَة
- بقليلا من Node.js [`EventEmitters`][] و [`Streams`][]. إذا لم تكن فِعْلاً على دِرَايَة بهم وإنه
- الجَدِير قيام بقراءة سريعة من خلال توثيقات واجهة برمجة التطبيقات (API) لكل منهم.
+بقليلا من Node.js [`EventEmitters`][] و [`Streams`][]. إذا لم تكن فِعْلاً على دِرَايَة بهم وإنه
+الجَدِير قيام بقراءة سريعة من خلال توثيقات واجهة برمجة التطبيقات (API) لكل منهم.
 
 ## إنشاء الخادم
 
 أي تطبيق خادم الويب node وفي نقطة ما لإنشاء كائن خادم الويب، يتم ذلك
- بإستعمال [`createServer`][].
+بإستعمال [`createServer`][].
 
 ```javascript
 const http = require('http');
@@ -85,12 +85,14 @@ const userAgent = headers['user-agent'];
 
 ```javascript
 let body = [];
-request.on('data', (chunk) => {
-  body.push(chunk);
-}).on('end', () => {
-  body = Buffer.concat(body).toString();
-  // في هذه النقطة، `body` عنده كامل طلب الجسم مخزن فيه على شكل سلسلة نصية
-});
+request
+  .on('data', chunk => {
+    body.push(chunk);
+  })
+  .on('end', () => {
+    body = Buffer.concat(body).toString();
+    // في هذه النقطة، `body` عنده كامل طلب الجسم مخزن فيه على شكل سلسلة نصية
+  });
 ```
 
 > **ملاحظة:** قد يبدو هذا صبيانيا ومملا، وفي كثير من الحالات هو كذلك و لحسن الحظ
@@ -104,12 +106,12 @@ request.on('data', (chunk) => {
 و يتصرف كما أن خطأً قد حدث.
 
 أي خطأ في تدفق `request` يقدم نفسه ببعث لحدث `'error'` في التدفق. **إذا لم يكن
- لديك مستمع لهذا الحدث، فالخطأ س*يلقي*، والتي سيحبط برنامج Node.js الخاص بك.**
- ولذا يجب عليك إضافة مستمع لـ`'error'` على طلب تدفقاتك، حتى وإن سجلته فقط و
- أكملت في طريقك.(ولو أنه من الأفضل لإرسال مشابه لخطأ جواب HTTP. المزيد على ذلك لاحقًا.)
+لديك مستمع لهذا الحدث، فالخطأ س*يلقي*، والتي سيحبط برنامج Node.js الخاص بك.**
+ولذا يجب عليك إضافة مستمع لـ`'error'` على طلب تدفقاتك، حتى وإن سجلته فقط و
+أكملت في طريقك.(ولو أنه من الأفضل لإرسال مشابه لخطأ جواب HTTP. المزيد على ذلك لاحقًا.)
 
 ```javascript
-request.on('error', (err) => {
+request.on('error', err => {
   // هذا يطبع رسالة الخطأ و أثره مكدس في `stderr`.
   console.error(err.stack);
 });
@@ -127,22 +129,27 @@ request.on('error', (err) => {
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  const { headers, method, url } = request;
-  let body = [];
-  request.on('error', (err) => {
-    console.error(err);
-  }).on('data', (chunk) => {
-    body.push(chunk);
-  }).on('end', () => {
-    body = Buffer.concat(body).toString();
-    // في هذه النقطة، لدينا الرؤوس و الطريقة و الرابط و الجسم ويمكن الآن
-    // القيام بما نحتاج إليه في أمر للجواب لهذا الطلب
-  });
-}).listen(8080); // تنشيط الخادم و الاستماع على منفذ 8080.
+http
+  .createServer((request, response) => {
+    const { headers, method, url } = request;
+    let body = [];
+    request
+      .on('error', err => {
+        console.error(err);
+      })
+      .on('data', chunk => {
+        body.push(chunk);
+      })
+      .on('end', () => {
+        body = Buffer.concat(body).toString();
+        // في هذه النقطة، لدينا الرؤوس و الطريقة و الرابط و الجسم ويمكن الآن
+        // القيام بما نحتاج إليه في أمر للجواب لهذا الطلب
+      });
+  })
+  .listen(8080); // تنشيط الخادم و الاستماع على منفذ 8080.
 ```
 
-إذا شغلنا هذا المثال سنكون قادرين على *تلقي* الطلبات، لكن لا *نرد* عليهم،
+إذا شغلنا هذا المثال سنكون قادرين على _تلقي_ الطلبات، لكن لا _نرد_ عليهم،
 في حَقِيقَةِ الأمْر إذا عَرَض هذا في المتصفح، طلبك سيكون خارج المهلة ولاشئ يعاد
 .إرساله للعميل
 
@@ -180,13 +187,13 @@ response.setHeader('X-Powered-By', 'bacon');
 "implicit headers". هذا يعني أنك مُعْتَمِد على node للإرسال الروؤس لك في الوقت الحالي قبل البدء
 في إرسال بيانات الجسم.
 
-إذا أردت يمكنك *تصريح* بكتابة الروؤس لتدفق الجواب، للقيام بهذا يوجد طريقة تدعى [`writeHead`][]
+إذا أردت يمكنك _تصريح_ بكتابة الروؤس لتدفق الجواب، للقيام بهذا يوجد طريقة تدعى [`writeHead`][]
 التي تكتب رمز الحالة و الروؤس إلى التدفق.
 
 ```javascript
 response.writeHead(200, {
   'Content-Type': 'application/json',
-  'X-Powered-By': 'bacon'
+  'X-Powered-By': 'bacon',
 });
 ```
 
@@ -213,7 +220,7 @@ response.end();
 response.end('<html><body><h1>Hello, World!</h1></body></html>');
 ```
 
-> **ملاحظة:** من المهم تعيين الحالة و الروؤس *قبل* البدء بكتابة أقسام من البيانات
+> **ملاحظة:** من المهم تعيين الحالة و الروؤس _قبل_ البدء بكتابة أقسام من البيانات
 > للجسم وهذا يبدو منطقيا. منذ متى تأتي النص قبل الرؤوس في جوابات HTTP.
 
 ## حاجَة أخرى سريعة حول الأخطاء
@@ -230,36 +237,41 @@ response.end('<html><body><h1>Hello, World!</h1></body></html>');
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  const { headers, method, url } = request;
-  let body = [];
-  request.on('error', (err) => {
-    console.error(err);
-  }).on('data', (chunk) => {
-    body.push(chunk);
-  }).on('end', () => {
-    body = Buffer.concat(body).toString();
-    // بداية الاشياء الجديدة
+http
+  .createServer((request, response) => {
+    const { headers, method, url } = request;
+    let body = [];
+    request
+      .on('error', err => {
+        console.error(err);
+      })
+      .on('data', chunk => {
+        body.push(chunk);
+      })
+      .on('end', () => {
+        body = Buffer.concat(body).toString();
+        // بداية الاشياء الجديدة
 
-    response.on('error', (err) => {
-      console.error(err);
-    });
+        response.on('error', err => {
+          console.error(err);
+        });
 
-    response.statusCode = 200;
-    response.setHeader('Content-Type', 'application/json');
-    // ملاحظة: السطرين في الأعلى يمكن إستبداله بالسطر التالي.
-    // response.writeHead(200, {'Content-Type': 'application/json'})
+        response.statusCode = 200;
+        response.setHeader('Content-Type', 'application/json');
+        // ملاحظة: السطرين في الأعلى يمكن إستبداله بالسطر التالي.
+        // response.writeHead(200, {'Content-Type': 'application/json'})
 
-    const responseBody = { headers, method, url, body };
+        const responseBody = { headers, method, url, body };
 
-    response.write(JSON.stringify(responseBody));
-    response.end();
-    // ملاحظة: السطرين في الأعلى يمكن إستبداله بالسطر التالي.
-    // response.end(JSON.stringify(responseBody))
+        response.write(JSON.stringify(responseBody));
+        response.end();
+        // ملاحظة: السطرين في الأعلى يمكن إستبداله بالسطر التالي.
+        // response.end(JSON.stringify(responseBody))
 
-    // نهاية الاشياء الجديدة
-  });
-}).listen(8080);
+        // نهاية الاشياء الجديدة
+      });
+  })
+  .listen(8080);
 ```
 
 ## مثال لتردد خادم
@@ -271,41 +283,49 @@ http.createServer((request, response) => {
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  let body = [];
-  request.on('data', (chunk) => {
-    body.push(chunk);
-  }).on('end', () => {
-    body = Buffer.concat(body).toString();
-    response.end(body);
-  });
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    let body = [];
+    request
+      .on('data', chunk => {
+        body.push(chunk);
+      })
+      .on('end', () => {
+        body = Buffer.concat(body).toString();
+        response.end(body);
+      });
+  })
+  .listen(8080);
 ```
 
 الآن لنقم تطويع هذه، نريد إرسال فقط تردد وفقا لشروط لمتبعة:
 
-* طريقة الطلب هي POST.
-* الرابط 'URL' هو `/echo`
+- طريقة الطلب هي POST.
+- الرابط 'URL' هو `/echo`
 
 في حالة أخرى نحن نريد تبسيط الرد مع 404.
 
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  if (request.method === 'POST' && request.url === '/echo') {
-    let body = [];
-    request.on('data', (chunk) => {
-      body.push(chunk);
-    }).on('end', () => {
-      body = Buffer.concat(body).toString();
-      response.end(body);
-    });
-  } else {
-    response.statusCode = 404;
-    response.end();
-  }
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    if (request.method === 'POST' && request.url === '/echo') {
+      let body = [];
+      request
+        .on('data', chunk => {
+          body.push(chunk);
+        })
+        .on('end', () => {
+          body = Buffer.concat(body).toString();
+          response.end(body);
+        });
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  })
+  .listen(8080);
 ```
 
 > **ملاحظة:** عند التحقق من الرابط URL بهذه الطريقة، نحن نقوم بشكل من التوجيه "routing".
@@ -320,20 +340,22 @@ http.createServer((request, response) => {
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  if (request.method === 'POST' && request.url === '/echo') {
-    request.pipe(response);
-  } else {
-    response.statusCode = 404;
-    response.end();
-  }
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    if (request.method === 'POST' && request.url === '/echo') {
+      request.pipe(response);
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  })
+  .listen(8080);
 ```
 
 أجل التدفقات!
 
 نحن لم ننتهي بعد على الرغم كما ذكرنا في عدة مرات في هذا الدليل، الأخطاء واردة
- و نحتاج التعامل معها.
+و نحتاج التعامل معها.
 
 لتعامل مع الأخطاء في طلب التدقف، وكذا مخرج الخطأ في `stderr` و إرسال رمز الحالة 404
 تدل على أن طلب سيء `Bad Request` ليس كما التطبيق في الحقيقي على أية حال، نود تفحص
@@ -345,22 +367,24 @@ http.createServer((request, response) => {
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  request.on('error', (err) => {
-    console.error(err);
-    response.statusCode = 400;
-    response.end();
-  });
-  response.on('error', (err) => {
-    console.error(err);
-  });
-  if (request.method === 'POST' && request.url === '/echo') {
-    request.pipe(response);
-  } else {
-    response.statusCode = 404;
-    response.end();
-  }
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    request.on('error', err => {
+      console.error(err);
+      response.statusCode = 400;
+      response.end();
+    });
+    response.on('error', err => {
+      console.error(err);
+    });
+    if (request.method === 'POST' && request.url === '/echo') {
+      request.pipe(response);
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  })
+  .listen(8080);
 ```
 
 لقد قمنا الآن بتغطية أغلب الأساسيات مُعَالَجَة طالبات HTTP وفي هذه المرحلة من المفترض

@@ -9,9 +9,9 @@ Node.js [V8](https://v8.dev/)'in modern sürümlerine göre oluşturulmuştur. B
 
 Bütün ECMAScript 2015 (ES6) özellikleri **shipping**, **staged** ve **in progress** olarak üç gruba ayrılmıştır:
 
-* Tüm **shipping** özellikleri, V8'in kararlı olduğunu düşündüğü, **Node.js'de varsayılan olarak açıktır** ve herhangi bir çalışma zamanı işareti **GEREKTİRMEZ**.
-* **Staged** özellikleri, neredeyse tamamlanmış fakat V8 takımı tarafından kararlı olduğu düşünülmeyen özellikler, bir çalışma zamanı işareti gerektirir: `--harmony`.
-* **In progress** özellikleri kendi uyum işaretiyle ayrı ayrı olarak etkinleştirilebilir, test amaçlı olmadıkça bu kesinlikle önerilmez. Not: bu işaretler V8 tarafından sunulmuştur ve herhangi bir kullanımdan kaldırma bildirimi olmaksızın potansiyel olarak değişecektir.
+- Tüm **shipping** özellikleri, V8'in kararlı olduğunu düşündüğü, **Node.js'de varsayılan olarak açıktır** ve herhangi bir çalışma zamanı işareti **GEREKTİRMEZ**.
+- **Staged** özellikleri, neredeyse tamamlanmış fakat V8 takımı tarafından kararlı olduğu düşünülmeyen özellikler, bir çalışma zamanı işareti gerektirir: `--harmony`.
+- **In progress** özellikleri kendi uyum işaretiyle ayrı ayrı olarak etkinleştirilebilir, test amaçlı olmadıkça bu kesinlikle önerilmez. Not: bu işaretler V8 tarafından sunulmuştur ve herhangi bir kullanımdan kaldırma bildirimi olmaksızın potansiyel olarak değişecektir.
 
 ## Hangi özellikler hangi Node.js sürümüyle beraber gelir?
 
@@ -21,7 +21,7 @@ Bütün ECMAScript 2015 (ES6) özellikleri **shipping**, **staged** ve **in prog
 
 V8 motoruna sürekli olarak yeni özellikler eklenmektedir. Genel olarak, zamanlama bilinmese de, gelecekteki bir Node.js sürümüne geçmelerini bekleyin.
 
-Her Node.js sürümünde mevcut olan tüm *in progress* özelliklerini `--v8-options` argümanını kullanarak listeleyebilirsiniz. Lütfen bunların eksik ve muhtemelen bozuk V8 özellikleri olduğunu unutmayın, bu nedenle bunları kendi sorumluluğunuzda kullanın:
+Her Node.js sürümünde mevcut olan tüm _in progress_ özelliklerini `--v8-options` argümanını kullanarak listeleyebilirsiniz. Lütfen bunların eksik ve muhtemelen bozuk V8 özellikleri olduğunu unutmayın, bu nedenle bunları kendi sorumluluğunuzda kullanın:
 
 ```bash
 node --v8-options | grep "in progress"

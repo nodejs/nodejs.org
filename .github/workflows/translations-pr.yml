@@ -68,12 +68,12 @@ jobs:
       - name: Run `npx lint:md --fix`
         # This runs a specific version of ESLint with only the Translation Pages Globbing
         # This avoid that unrelated changes get linted/modified within this PR
-        run: npx --package=eslint@8.48.0 -- eslint "pages/**/*.md?(x)" --fix
+        run: npx eslint "pages/**/*.md?(x)" --fix
 
       - name: Run `npx prettier --write`
         # This runs a specific version of Prettier with only the Translation Pages Globbing
         # This avoid that unrelated changes get prettied/modified within this PR
-        run: npx --package=prettier@3.0.2 -- prettier "pages/**/*.md?(x)" --write
+        run: npx prettier "pages/**/*.md?(x)" --check --write
 
       - name: Push Changes back to Pull Request
         uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a

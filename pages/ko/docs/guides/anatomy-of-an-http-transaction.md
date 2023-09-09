@@ -203,12 +203,14 @@ of what's going on before going down that road, and that's why you're here!
 
 ```javascript
 let body = [];
-request.on('data', (chunk) => {
-  body.push(chunk);
-}).on('end', () => {
-  body = Buffer.concat(body).toString();
-  // 여기서 `body`에 전체 요청 바디가 문자열로 담겨있습니다.
-});
+request
+  .on('data', chunk => {
+    body.push(chunk);
+  })
+  .on('end', () => {
+    body = Buffer.concat(body).toString();
+    // 여기서 `body`에 전체 요청 바디가 문자열로 담겨있습니다.
+  });
 ```
 
 > **주의:** 이 코드가 약간 장황할 수도 있고 대부분은 실제로 그렇습니다. 다행히 [`npm`][]에
@@ -235,7 +237,7 @@ response. More on that later.)
 오류가 발생했을 때 [`EventEmitter`][]처럼 동작합니다.
 
 `request` 스트림의 오류가 발생하면 스트림에서 `'error'` 이벤트가 발생하면서 오류를 전달합니다.
-**이벤트에 리스너가 등록되어 있지 않다면 Node.js 프로그램을 종료시킬 수도 있는 오류를 *던질* 것입니다.**
+**이벤트에 리스너가 등록되어 있지 않다면 Node.js 프로그램을 종료시킬 수도 있는 오류를 _던질_ 것입니다.**
 그러므로 단순히 오류를 로깅만 하더라도 요청 스트림에 `'error'` 리스너를 추가해야 합니다.(하지만
 HTTP 오류 응답을 보내는 것이 좋을 겁니다. 이에 대해는 뒤에서 더 자세히 살펴봅니다.)
 
@@ -253,7 +255,7 @@ and you're going to have to deal with them.
 -->
 
 ```javascript
-request.on('error', (err) => {
+request.on('error', err => {
   // 여기서 `stderr`에 오류 메시지와 스택 트레이스를 출력합니다.
   console.error(err.stack);
 });
@@ -296,19 +298,24 @@ http.createServer((request, response) => {
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  const { headers, method, url } = request;
-  let body = [];
-  request.on('error', (err) => {
-    console.error(err);
-  }).on('data', (chunk) => {
-    body.push(chunk);
-  }).on('end', () => {
-    body = Buffer.concat(body).toString();
-    // 여기서 헤더, 메서드, url, 바디를 가지게 되었고
-    // 이 요청에 응답하는 데 필요한 어떤 일이라도 할 수 있게 되었습니다.
-  });
-}).listen(8080); // 이 서버를 활성화하고 8080 포트로 받습니다.
+http
+  .createServer((request, response) => {
+    const { headers, method, url } = request;
+    let body = [];
+    request
+      .on('error', err => {
+        console.error(err);
+      })
+      .on('data', chunk => {
+        body.push(chunk);
+      })
+      .on('end', () => {
+        body = Buffer.concat(body).toString();
+        // 여기서 헤더, 메서드, url, 바디를 가지게 되었고
+        // 이 요청에 응답하는 데 필요한 어떤 일이라도 할 수 있게 되었습니다.
+      });
+  })
+  .listen(8080); // 이 서버를 활성화하고 8080 포트로 받습니다.
 ```
 
 <!--
@@ -321,7 +328,7 @@ of [`ServerResponse`][], which is a [`WritableStream`][]. It contains many
 useful methods for sending data back to the client. We'll cover that next.
 -->
 
-이 예제를 실행하면 요청을 *받을 수* 있지만, 요청에 *응답*하지는 않습니다. 사실 웹 브라우저에서
+이 예제를 실행하면 요청을 _받을 수_ 있지만, 요청에 *응답*하지는 않습니다. 사실 웹 브라우저에서
 이 예제에 접근하면 클라이언트에 돌려보내는 것이 없으므로 요청이 타임아웃에 걸릴 것입니다.
 
 지금까지 `response` 객체는 전혀 건드리지 않았습니다. 이 객체는 [`ServerResponse`][]의
@@ -409,13 +416,13 @@ start sending response data.
 지금까지 설명한 헤더와 상태 코드를 설정하는 메서드는 "암묵적인 헤더"를 사용하고 있다고 가정합니다. 이는
 바디 데이터를 보내기 전 적절한 순간에 헤더를 보내는 일을 노드에 의존하고 있다는 의미입니다.
 
-원한다면 *명시적으로* 응답 스트림에 헤더를 작성할 수 있습니다. 헤더를 작성하는 [`writeHead`][]
+원한다면 _명시적으로_ 응답 스트림에 헤더를 작성할 수 있습니다. 헤더를 작성하는 [`writeHead`][]
 메서드가 있습니다. 이 메서드는 스트림에 상태 코드와 헤더를 작성합니다.
 
 ```javascript
 response.writeHead(200, {
   'Content-Type': 'application/json',
-  'X-Powered-By': 'bacon'
+  'X-Powered-By': 'bacon',
 });
 ```
 
@@ -469,7 +476,7 @@ response.end();
 response.end('<html><body><h1>Hello, World!</h1></body></html>');
 ```
 
-> **주의:** 바디에 데이터 청크를 *작성하기 전에* 상태 코드와 헤더를 설정해야 합니다.
+> **주의:** 바디에 데이터 청크를 _작성하기 전에_ 상태 코드와 헤더를 설정해야 합니다.
 > HTTP 응답에서 바디 전에 헤더가 있으므로 이는 이치에 맞습니다.
 
 <!--
@@ -539,36 +546,41 @@ JSON으로 포매팅할 것입니다.
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  const { headers, method, url } = request;
-  let body = [];
-  request.on('error', (err) => {
-    console.error(err);
-  }).on('data', (chunk) => {
-    body.push(chunk);
-  }).on('end', () => {
-    body = Buffer.concat(body).toString();
-    // 여기서부터 새로운 부분입니다.
+http
+  .createServer((request, response) => {
+    const { headers, method, url } = request;
+    let body = [];
+    request
+      .on('error', err => {
+        console.error(err);
+      })
+      .on('data', chunk => {
+        body.push(chunk);
+      })
+      .on('end', () => {
+        body = Buffer.concat(body).toString();
+        // 여기서부터 새로운 부분입니다.
 
-    response.on('error', (err) => {
-      console.error(err);
-    });
+        response.on('error', err => {
+          console.error(err);
+        });
 
-    response.statusCode = 200;
-    response.setHeader('Content-Type', 'application/json');
-    // 주의: 위 두 줄은 다음 한 줄로 대체할 수도 있습니다.
-    // response.writeHead(200, {'Content-Type': 'application/json'})
+        response.statusCode = 200;
+        response.setHeader('Content-Type', 'application/json');
+        // 주의: 위 두 줄은 다음 한 줄로 대체할 수도 있습니다.
+        // response.writeHead(200, {'Content-Type': 'application/json'})
 
-    const responseBody = { headers, method, url, body };
+        const responseBody = { headers, method, url, body };
 
-    response.write(JSON.stringify(responseBody));
-    response.end();
-    // 주의: 위 두 줄은 다음 한 줄로 대체할 수도 있습니다.
-    // response.end(JSON.stringify(responseBody))
+        response.write(JSON.stringify(responseBody));
+        response.end();
+        // 주의: 위 두 줄은 다음 한 줄로 대체할 수도 있습니다.
+        // response.end(JSON.stringify(responseBody))
 
-    // 새로운 부분이 끝났습니다.
-  });
-}).listen(8080);
+        // 새로운 부분이 끝났습니다.
+      });
+  })
+  .listen(8080);
 ```
 
 <!--
@@ -603,15 +615,19 @@ http.createServer((request, response) => {
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  let body = [];
-  request.on('data', (chunk) => {
-    body.push(chunk);
-  }).on('end', () => {
-    body = Buffer.concat(body).toString();
-    response.end(body);
-  });
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    let body = [];
+    request
+      .on('data', chunk => {
+        body.push(chunk);
+      })
+      .on('end', () => {
+        body = Buffer.concat(body).toString();
+        response.end(body);
+      });
+  })
+  .listen(8080);
 ```
 
 <!--
@@ -645,28 +661,32 @@ http.createServer((request, response) => {
 
 이제 약간 변경해보겠습니다. 다음의 조건에서만 에코 응답을 보내려고 합니다.
 
-* 요청 메서드가 POST인 경우
-* URL이 `/echo`인 경우
+- 요청 메서드가 POST인 경우
+- URL이 `/echo`인 경우
 
 위 조건이 아닌 경우에는 404를 응답합니다.
 
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  if (request.method === 'POST' && request.url === '/echo') {
-    let body = [];
-    request.on('data', (chunk) => {
-      body.push(chunk);
-    }).on('end', () => {
-      body = Buffer.concat(body).toString();
-      response.end(body);
-    });
-  } else {
-    response.statusCode = 404;
-    response.end();
-  }
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    if (request.method === 'POST' && request.url === '/echo') {
+      let body = [];
+      request
+        .on('data', chunk => {
+          body.push(chunk);
+        })
+        .on('end', () => {
+          body = Buffer.concat(body).toString();
+          response.end(body);
+        });
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  })
+  .listen(8080);
 ```
 
 <!--
@@ -706,14 +726,16 @@ http.createServer((request, response) => {
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  if (request.method === 'POST' && request.url === '/echo') {
-    request.pipe(response);
-  } else {
-    response.statusCode = 404;
-    response.end();
-  }
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    if (request.method === 'POST' && request.url === '/echo') {
+      request.pipe(response);
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  })
+  .listen(8080);
 ```
 
 <!--
@@ -766,22 +788,24 @@ http.createServer((request, response) => {
 ```javascript
 const http = require('http');
 
-http.createServer((request, response) => {
-  request.on('error', (err) => {
-    console.error(err);
-    response.statusCode = 400;
-    response.end();
-  });
-  response.on('error', (err) => {
-    console.error(err);
-  });
-  if (request.method === 'POST' && request.url === '/echo') {
-    request.pipe(response);
-  } else {
-    response.statusCode = 404;
-    response.end();
-  }
-}).listen(8080);
+http
+  .createServer((request, response) => {
+    request.on('error', err => {
+      console.error(err);
+      response.statusCode = 400;
+      response.end();
+    });
+    response.on('error', err => {
+      console.error(err);
+    });
+    if (request.method === 'POST' && request.url === '/echo') {
+      request.pipe(response);
+    } else {
+      response.statusCode = 404;
+      response.end();
+    }
+  })
+  .listen(8080);
 ```
 
 <!--
@@ -803,12 +827,12 @@ read through the API docs for [`EventEmitters`][], [`Streams`][], and [`HTTP`][]
 
 지금까지 HTTP 요청을 다루는 기본 내용을 거의 다 다루었습니다. 이제 다음을 할 수 있어야 합니다.
 
-* 요청 핸들러 함수로 HTTP 서버의 인스턴스를 생성하고 특정 포트로 서버를 열 수 있습니다.
-* `request` 객체에서 헤더, URL, 메서드, 바디 데이터를 가져올 수 있습니다.
-* URL이나 `request` 객체의 데이터에 기반을 둬서 라우팅을 할 수 있습니다.
-* `response` 객체로 헤더, HTTP 상태 코드, 바디 데이터를 보낼 수 있습니다.
-* `request` 객체에서 `response` 객체로 데이터를 파이프로 연결할 수 있습니다.
-* `request`와 `response` 스트림 모두에서 스트림 오류를 처리할 수 있습니다.
+- 요청 핸들러 함수로 HTTP 서버의 인스턴스를 생성하고 특정 포트로 서버를 열 수 있습니다.
+- `request` 객체에서 헤더, URL, 메서드, 바디 데이터를 가져올 수 있습니다.
+- URL이나 `request` 객체의 데이터에 기반을 둬서 라우팅을 할 수 있습니다.
+- `response` 객체로 헤더, HTTP 상태 코드, 바디 데이터를 보낼 수 있습니다.
+- `request` 객체에서 `response` 객체로 데이터를 파이프로 연결할 수 있습니다.
+- `request`와 `response` 스트림 모두에서 스트림 오류를 처리할 수 있습니다.
 
 이 기본 내용을 바탕으로 많은 사용 사례를 위한 Node.js HTTP 서버를 구축할 수 있습니다.
 API가 제공하는 그 외 많은 기능이 있으므로 [`EventEmitters`][], [`Streams`][],

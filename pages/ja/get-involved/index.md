@@ -13,13 +13,14 @@ layout: contribute.hbs
 * The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
 
 -->
+
 # 参加する
 
 ## コミュニティディスカッション
 
-* [GitHub issues リスト](https://github.com/nodejs/node/issues) は、Node.js のコア機能に関する議論の場です。
-* Node.js 公式 Twitter アカウントは [nodejs](https://twitter.com/nodejs) です。
-* [Node.js Foundation calendar](https://nodejs.org/calendar) とすべての公開チームミーティング。
+- [GitHub issues リスト](https://github.com/nodejs/node/issues) は、Node.js のコア機能に関する議論の場です。
+- Node.js 公式 Twitter アカウントは [nodejs](https://twitter.com/nodejs) です。
+- [Node.js Foundation calendar](https://nodejs.org/calendar) とすべての公開チームミーティング。
 
 <!--
 ## Learning
@@ -31,13 +32,14 @@ layout: contribute.hbs
 * [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
 
 -->
+
 ## 学習
 
-* [公式 API リファレンスドキュメント](https://nodejs.org/api/) は、Node.js API の詳細を説明しています。
-* [NodeSchool.io](https://nodeschool.io/) はインタラクティブなコマンドラインゲームを介して Node.js の概念を教えます。
-* [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) は、毎日新しい情報を収集します。
-* [The DEV Community Node.js tag](https://dev.to/t/node) は、Node.js プロジェクト、記事、チュートリアルを共有したり、ディスカッションを開始したり、Node.js 関連のトピックについてのフィードバックを求めたりする場所です。スキルレベルに関係なくすべての開発者が参加できます。
-* [Nodeiflux](https://discordapp.com/invite/vUsrbjd) は、Discord でお互いをサポートする Node.js バックエンド開発者のフレンドリーなコミュニティです。
+- [公式 API リファレンスドキュメント](https://nodejs.org/api/) は、Node.js API の詳細を説明しています。
+- [NodeSchool.io](https://nodeschool.io/) はインタラクティブなコマンドラインゲームを介して Node.js の概念を教えます。
+- [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) は、毎日新しい情報を収集します。
+- [The DEV Community Node.js tag](https://dev.to/t/node) は、Node.js プロジェクト、記事、チュートリアルを共有したり、ディスカッションを開始したり、Node.js 関連のトピックについてのフィードバックを求めたりする場所です。スキルレベルに関係なくすべての開発者が参加できます。
+- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) は、Discord でお互いをサポートする Node.js バックエンド開発者のフレンドリーなコミュニティです。
 
 <!--
 ## International community sites and projects
@@ -52,12 +54,13 @@ layout: contribute.hbs
 * [Uzbekistan group for Node.js](https://t.me/nodejs_uz)
 
 -->
+
 ## インターナショナルコミュニティサイトとプロジェクト
 
-* [中国コミュニティ](https://cnodejs.org/)
-* [ハンガリー (マジャール) コミュニティ](https://nodehun.blogspot.com/)
-* [Node.js のイスラエル Facebook グループ](https://www.facebook.com/groups/node.il/)
-* [日本のユーザグループ](https://nodejs.jp/)
-* [Node.js のスペイン語 Facebook グループ](https://www.facebook.com/groups/node.es/)
-* [ベトナム Node.js コミュニティ](https://www.facebook.com/nodejs.vn/)
-* [Uzbekistan group for Node.js](https://t.me/nodejs_uz)
+- [中国コミュニティ](https://cnodejs.org/)
+- [ハンガリー (マジャール) コミュニティ](https://nodehun.blogspot.com/)
+- [Node.js のイスラエル Facebook グループ](https://www.facebook.com/groups/node.il/)
+- [日本のユーザグループ](https://nodejs.jp/)
+- [Node.js のスペイン語 Facebook グループ](https://www.facebook.com/groups/node.es/)
+- [ベトナム Node.js コミュニティ](https://www.facebook.com/nodejs.vn/)
+- [Uzbekistan group for Node.js](https://t.me/nodejs_uz)

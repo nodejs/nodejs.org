@@ -5,26 +5,26 @@ title: تثبيت Node.js عن طريق مدير الحزم
 
 # تثبيت النود جي اس عبر مدير حزم
 
-***ملاحظة*** إن صيانة و دعم الحزم المذكورة في هذه الصفحة تتم عبر المشرفين على مديري الحزم، و **ليس** فريق النود جي اس الأساسي. تفضل بإبلاغ أية مشكلة إلى المشرفين على الحزم و إذا كانت مشكلتك عبارة عن خطأ في النود جي اس بحد ذاتها فسيبلغ المشرف عن هذه المشكلة صعودا.
+**_ملاحظة_** إن صيانة و دعم الحزم المذكورة في هذه الصفحة تتم عبر المشرفين على مديري الحزم، و **ليس** فريق النود جي اس الأساسي. تفضل بإبلاغ أية مشكلة إلى المشرفين على الحزم و إذا كانت مشكلتك عبارة عن خطأ في النود جي اس بحد ذاتها فسيبلغ المشرف عن هذه المشكلة صعودا.
 
 ---
 
-* [آندرويد](#android)
-* [Arch Linux](#arch-linux)
-* [التوزيعات المبنية على ديبيان أو اوبنتو، لينكس للمؤسسات / فيدورا و حزم سناب](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
-* [FreeBSD](#freebsd)
-* [Gentoo](#gentoo)
-* [IBM i](#ibm-i)
-* [NetBSD](#netbsd)
-* [nvm](#nvm)
-* [nvs](#nvs)
-* [OpenBSD](#openbsd)
-* [openSUSE و SLE](#opensuse-and-sle)
-* [macOS](#macos)
-* [SmartOS و illumos](#smartos-and-illumos)
-* [Solus](#solus)
-* [Void Linux](#void-linux)
-* [Windows](#windows1)
+- [آندرويد](#android)
+- [Arch Linux](#arch-linux)
+- [التوزيعات المبنية على ديبيان أو اوبنتو، لينكس للمؤسسات / فيدورا و حزم سناب](#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages)
+- [FreeBSD](#freebsd)
+- [Gentoo](#gentoo)
+- [IBM i](#ibm-i)
+- [NetBSD](#netbsd)
+- [nvm](#nvm)
+- [nvs](#nvs)
+- [OpenBSD](#openbsd)
+- [openSUSE و SLE](#opensuse-and-sle)
+- [macOS](#macos)
+- [SmartOS و illumos](#smartos-and-illumos)
+- [Solus](#solus)
+- [Void Linux](#void-linux)
+- [Windows](#windows1)
 
 ---
 
@@ -81,7 +81,7 @@ emerge nodejs
 
 نسخ LTS لـNode.js متوفرة من IBM و متوفرة عبر [مدير الحزمة الـ'yum'](https://ibm.biz/ibmi-rpms). إسم الحزمة هو `nodejs` متبوعا برقم الإصدار الرائد (مثلا، `nodejs8`، `nodejs10`، `nodejs12`، إلخ
 
-لتثبيت Node.js 12.x باستخدام سطر الأوامر، شغل الامر التالي كمستخدم مع سلطة *ALLOBJ الخاصة :
+لتثبيت Node.js 12.x باستخدام سطر الأوامر، شغل الامر التالي كمستخدم مع سلطة \*ALLOBJ الخاصة :
 
 ```bash
 yum install nodejs12
@@ -130,6 +130,7 @@ nvm uninstall 8
 ## nvs
 
 #### Windows
+
 The `nvs` version manager is cross-platform and can be used on Windows, macOS, and Unix-like systems
 
 To install `nvs` on Windows go to the [release page](https://github.com/jasongin/nvs/releases) here and download the MSI installer file of the latest release.
@@ -141,9 +142,11 @@ choco install nvs
 ```
 
 #### macOS,UnixLike
+
 You can find the documentation regarding the installation steps of `nvs` in macOS/Unix-like systems [here](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
 
 #### Usage
+
 After this you can use `nvs` to switch between different versions of node.
 
 To add the latest version of node:
@@ -190,10 +193,10 @@ pkg_add node
 
 يتوفر النود جي اس في المستودعات الرئيسية تحت الحزم الاتية:
 
-* **openSUSE Leap 42.2**: `nodejs4`
-* **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
-* **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
-* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`
+- **openSUSE Leap 42.2**: `nodejs4`
+- **openSUSE Leap 42.3**: `nodejs4`, `nodejs6`
+- **openSUSE Tumbleweed**: `nodejs4`, `nodejs6`, `nodejs8`
+- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs4`, `nodejs6`
   (يجب إضافة الـ "موديل الويب و البرمجة" [قبل التثبيت](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html))
 
 على سبيل المثال، لتثبيت النود جي اس <span dir="ltr">4.x</span> على <span dir="ltr">openSUSE Leap 42.2</span> قم بتنفيذ ما يلي كجذر:

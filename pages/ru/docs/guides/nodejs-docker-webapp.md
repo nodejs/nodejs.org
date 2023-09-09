@@ -81,7 +81,7 @@ touch Dockerfile
 
 Первое, что нам надо сделать — определить базовый образ,
 который будет взят за основу. Мы будем использовать образ `node` последней версии
-LTS* (версии с долгосрочной поддержкой) — `12`,
+LTS\* (версии с долгосрочной поддержкой) — `12`,
 доступный на [Docker Hub](https://hub.docker.com/).
 
 \* Прим. переводчика: на момент написания статьи.
@@ -272,8 +272,8 @@ Node.js с помощью Docker.
 
 Вы можете найти больше информации о Docker и Node.js в docker по следующим ссылкам:
 
-* [Официальный docker-образ Node.js](https://hub.docker.com/_/node/)
-* [Руководство по лучшим практикам Node.js в Docker](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
-* [Официальная документация Docker](https://docs.docker.com/)
-* [Тэг Docker на stack overflow](https://stackoverflow.com/questions/tagged/docker)
-* [Канал Docker на reddit](https://reddit.com/r/docker)
+- [Официальный docker-образ Node.js](https://hub.docker.com/_/node/)
+- [Руководство по лучшим практикам Node.js в Docker](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
+- [Официальная документация Docker](https://docs.docker.com/)
+- [Тэг Docker на stack overflow](https://stackoverflow.com/questions/tagged/docker)
+- [Канал Docker на reddit](https://reddit.com/r/docker)

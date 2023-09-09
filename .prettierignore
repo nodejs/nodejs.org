@@ -18,11 +18,6 @@ public/blog-posts-data.json
 coverage
 junit.xml
 
-# MDX Plugin enforces Prettier formatting which should
-# be done in the future as we don't want to update the Markdown file
-# contents right now
-pages/**/*.md
-
 # Prettier's Handlebar parser is limited and chokes on some syntax features
 # https://github.com/prettier/prettier/issues/11834
 scripts/release-post/template.hbs
