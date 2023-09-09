@@ -27,29 +27,10 @@ permissions:
   actions: read
 
 jobs:
-  base:
-    # This Job should run either on `merge_groups` or `push` events
-    # or `pull_request_target` event with a `labeled` action with a label named `github_actions:pull-request`
-    if: |
-      (github.event_name == 'push' || github.event_name == 'merge_group') ||
-      (github.event_name == 'pull_request_target' &&
-        github.event.label.name == 'github_actions:pull-request')
-
-    name: Base Tasks
-    runs-on: ubuntu-latest
-    outputs:
-      turbo_args: ${{ steps.turborepo_arguments.outputs.turbo_args }}
-
-    steps:
-      - name: Provide Turborepo Arguments
-        id: turborepo_arguments
-        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
-        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
-        run: echo "turbo_args=--force=true --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
-
   build:
     # This Job should run either on `merge_groups` or `push` events
     # or `pull_request_target` event with a `labeled` action with a label named `github_actions:pull-request`
+    # since we want to run Website Builds on all these 3 occasions. As this allows us to be certain the that builds are passing
     if: |
       (github.event_name == 'push' || github.event_name == 'merge_group') ||
       (github.event_name == 'pull_request_target' &&
@@ -57,7 +38,6 @@ jobs:
 
     name: Build on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    needs: [base]
 
     strategy:
       fail-fast: false
@@ -65,6 +45,14 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 
     steps:
+      - name: Provide Turborepo Arguments
+        # This step is responsible for providing a reusable string that can be used within other steps and jobs
+        # that use the `turbo` cli command as a way of easily providing shared arguments to the `turbo` command
+        id: turborepo_arguments
+        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
+        # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
+        run: echo "turbo_args=--force=true --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
+
       - name: Use GNU tar instead BSD tar
         # This ensures that we use GNU `tar` which is more efficient for extracting caches's
         if: matrix.os == 'windows-latest'
@@ -74,9 +62,15 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
-          # Fetch from the PRs Repository instead of Node.js' repository
+          # Since we checkout the HEAD of the current Branch, if the Pull Request comes from a Fork
+          # we want to clone the fork's repository instead of the base repository
+          # this allows us to have the correct history tree of the perspective of the Pull Request's branch
+          # If the Workflow is running on `merge_group` or `push` events it fallsback to the base repository
           repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
-          # Since we trigger this with a Labeled Event we might not get the latest commit
+          # We checkout the branch itself instead of a specific SHA (Commit) as we want to ensure that this Workflow
+          # is always running with the latest `ref` (changes) of the Pull Request's branh
+          # If the Workflow is running on `merge_group` or `push` events it fallsback to `github.ref` which will often be `main`
+          # or the merge_group `ref`
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
           # We only need to fetch the last commit from the head_ref
           # since we're not using the `--filter` operation from turborepo
@@ -115,8 +109,8 @@ jobs:
       - name: Build Next.js (ISR)
         # We want a ISR build on CI to ensure that regular Next.js builds work as expected.
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
-        # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npx --package=turbo@latest -- turbo build ${{ needs.base.outputs.turbo_args }}
+        # the `${{ steps.turborepo_arguments.outputs.turbo_args }}` is a string substitution coming from a previous step
+        run: npx --package=turbo@latest -- turbo build ${{ steps.turborepo_arguments.outputs.turbo_args }}
         env:
           # We want to ensure we have enough RAM allocated to the Node.js process
           # this should be a last resort in case by any chances the build memory gets too high
@@ -124,18 +118,13 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=4096'
 
       - name: Build Next.js (Static)
-        # Skips a few steps if not on a Pull Request (Merge Group) or it is a Dependabot PR
-        # i.e. if the Event is a Merge Queue Event
-        # We also don't need to run a Static Build on a Crowdin PR
+        # We only run full static builds within Pull Requests. As they're not needed on `merge_group` or `push` events
+        # Note that we skip full static builds on Crowdin-based Pull Requests as these PRs should only contain translation changes
         if: |
-          github.event_name == 'pull_request_target' &&
-          startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
-          github.event.pull_request.head.ref != 'chore/crowdin'
-        # We want a Static Buid on CI to ensure that the Static Exports are working as expected
-        # This build will use the existing cache created on the previous build above (ISR)
+          github.event_name == 'pull_request_target' && github.event.pull_request.head.ref != 'chore/crowdin'
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
-        # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npx --package=turbo@latest -- turbo deploy ${{ needs.base.outputs.turbo_args }}
+        # the `${{ steps.turborepo_arguments.outputs.turbo_args }}` is a string substitution coming from a previous step
+        run: npx --package=turbo@latest -- turbo deploy ${{ steps.turborepo_arguments.outputs.turbo_args }}
         env:
           # We want to ensure we have enough RAM allocated to the Node.js process
           # this should be a last resort in case by any chances the build memory gets too high
@@ -144,6 +133,7 @@ jobs:
 
       - name: Save Build Cache
         # We want to store the Build Cache within Pull Requests or during pushes against the `main` branch
+        # since caches created on the `main` (default) branch can be reused on Pull Requests and PRs coming from forks
         if: |
           github.event_name == 'push' || github.event_name == 'pull_request_target'
         uses: actions/cache/save@704facf57e6136b1bc63b828d79edcd491f0ee84
