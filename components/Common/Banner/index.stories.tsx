@@ -28,4 +28,11 @@ export const Warning: Story = {
   },
 };
 
+export const NoLink: Story = {
+  args: {
+    text: 'Claudio is the best maintainer',
+    type: 'default',
+  },
+};
+
 export default { component: Banner } as Meta;
