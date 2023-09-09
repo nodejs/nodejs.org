@@ -107,10 +107,10 @@ support case-preservation. Some filesystems convert all filenames to uppercase
 
 ## Unicode Form Preservation
 
-*Case preservation and Unicode form preservation are similar concepts. To
+_Case preservation and Unicode form preservation are similar concepts. To
 understand why Unicode form should be preserved , make sure that you first
 understand why case should be preserved. Unicode form preservation is just as
-simple when understood correctly.*
+simple when understood correctly._
 
 Unicode can encode the same characters using several different byte sequences.
 Several strings may look the same, but have different byte sequences. When

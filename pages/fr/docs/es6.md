@@ -9,9 +9,9 @@ Node.js est construit avec les versions modernes de [V8](https://v8.dev/). En se
 
 Toutes les fonctionnalités de l'ECMAScript 2015 (ES6) sont divisées en trois groupes pour les fonctionnalités de **livraison**, **mise en scène**et **en cours**:
 
-* Toutes les fonctionnalités **de livraison** que V8 considère comme stables sont activées **par défaut sur Node. s** et **PAS** ne requièrent aucune sorte d'indicateur de temps d'exécution.
-* **Les** fonctionnalités stationnées, qui sont des fonctionnalités presque achevées qui ne sont pas considérées comme stables par l'équipe V8, nécessitent un drapeau d'exécution : `--harmonie`.
-* **En cours** les fonctionnalités peuvent être activées individuellement par leur drapeau d'harmonie respectif, bien que cela soit fortement découragé à moins de procéder à des essais. Note : ces drapeaux sont exposés par V8 et peuvent être modifiés sans avis de dépréciation.
+- Toutes les fonctionnalités **de livraison** que V8 considère comme stables sont activées **par défaut sur Node. s** et **PAS** ne requièrent aucune sorte d'indicateur de temps d'exécution.
+- **Les** fonctionnalités stationnées, qui sont des fonctionnalités presque achevées qui ne sont pas considérées comme stables par l'équipe V8, nécessitent un drapeau d'exécution : `--harmonie`.
+- **En cours** les fonctionnalités peuvent être activées individuellement par leur drapeau d'harmonie respectif, bien que cela soit fortement découragé à moins de procéder à des essais. Note : ces drapeaux sont exposés par V8 et peuvent être modifiés sans avis de dépréciation.
 
 ## Quelles fonctionnalités sont fournies avec lesquelles la version de Node.js par défaut ?
 
@@ -21,7 +21,7 @@ Le site web [node.green](https://node.green/) fournit un excellent aperçu des f
 
 De nouvelles fonctionnalités sont constamment ajoutées au moteur V8. En général, attendez-vous à ce qu'elles atterrissent sur une future version de Node.js, bien que le timing soit inconnu.
 
-Vous pouvez lister toutes les fonctionnalités de *en cours* disponibles sur chaque noeud. s en utilisant l'argument `--v8-options` . Veuillez noter que ce sont des fonctionnalités incomplètes et éventuellement cassées de V8, donc utilisez-les à vos propres risques :
+Vous pouvez lister toutes les fonctionnalités de _en cours_ disponibles sur chaque noeud. s en utilisant l'argument `--v8-options` . Veuillez noter que ce sont des fonctionnalités incomplètes et éventuellement cassées de V8, donc utilisez-les à vos propres risques :
 
 ```bash
 node --v8-options | grep "in progress"

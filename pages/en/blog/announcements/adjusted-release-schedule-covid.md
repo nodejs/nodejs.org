@@ -25,8 +25,8 @@ The next planned release of `v12.x` will now be on `2020-04-07`.
 
 We have specifically delayed the Semver-Minor releases of `v12.x` which will now occur on the following dates:
 
-* `12.17.0` on 2020-05-26
-* `v12.18.0` on 2020-08-25
+- `12.17.0` on 2020-05-26
+- `v12.18.0` on 2020-08-25
 
 `v12.x` remains slated to enter Maintenance on 2020-10-20, but this date is now subject to change as deemed appropriate by the Release Team and with appropriate notice.
 

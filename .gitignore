@@ -35,5 +35,8 @@ storybook-static
 .eslintmdcache
 .eslintjscache
 
+# Prettier Cache Files
+.prettiercache
+
 # TypeScript
 tsconfig.tsbuildinfo

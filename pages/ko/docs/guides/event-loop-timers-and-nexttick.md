@@ -95,7 +95,7 @@ Node.js를 시작할 때 이벤트 루프를 초기화하고 제공된 입력 �
    └───────────────────────────┘
 ```
 
-*note: 각 박스는 이벤트 루프의 "단계"를 의미합니다.*
+_note: 각 박스는 이벤트 루프의 "단계"를 의미합니다._
 
 <!--
 Each phase has a FIFO queue of callbacks to execute. While each phase is
@@ -156,14 +156,14 @@ any.
 
 ## 단계 개요
 
-* **timers**: 이 단계는 `setTimeout()`과 `setInterval()`로 스케줄링한
+- **timers**: 이 단계는 `setTimeout()`과 `setInterval()`로 스케줄링한
   콜백을 실행합니다.
-* **pending callbacks**: 다음 루프 반복으로 연기된 I/O 콜백들을 실행합니다.
-* **idle, prepare**: 내부용으로만 사용합니다.
-* **poll**: 새로운 I/O 이벤트를 가져옵니다. I/O와 연관된 콜백(클로즈 콜백, 타이머로 스케줄링된 콜백,
+- **pending callbacks**: 다음 루프 반복으로 연기된 I/O 콜백들을 실행합니다.
+- **idle, prepare**: 내부용으로만 사용합니다.
+- **poll**: 새로운 I/O 이벤트를 가져옵니다. I/O와 연관된 콜백(클로즈 콜백, 타이머로 스케줄링된 콜백,
   `setImmediate()`를 제외한 거의 모든 콜백)을 실행합니다. 적절한 시기에 node는 여기서 블록 합니다.
-* **check**: `setImmediate()` 콜백은 여기서 호출됩니다.
-* **close callbacks**: 일부 close 콜백들, 예를 들어 `socket.on('close', ...)`.
+- **check**: `setImmediate()` 콜백은 여기서 호출됩니다.
+- **close callbacks**: 일부 close 콜백들, 예를 들어 `socket.on('close', ...)`.
 
 이벤트 루프가 실행하는 사이 Node.js는 다른 비동기 I/O나 타이머를 기다리고 있는지
 확인하고 기다리고 있는 것이 없다면 깔끔하게 종료합니다.
@@ -330,8 +330,8 @@ is reached.
 이벤트 루프가 **poll** 단계에 진입하고 _스케줄링된 타이머가 없을 때_
 두 가지 중 하나의 상황이 발생합니다.
 
-* _**poll** 큐가 **비어있지 않다면**_ 이벤트 루프가 콜백의 큐를 순회하면서
-큐를 다 소진하거나 시스템 의존적인 하드 한계에 도달할 때까지 동기로 콜백을 실행합니다.
+- _**poll** 큐가 **비어있지 않다면**_ 이벤트 루프가 콜백의 큐를 순회하면서
+  큐를 다 소진하거나 시스템 의존적인 하드 한계에 도달할 때까지 동기로 콜백을 실행합니다.
 
 <!--
 * _If the **poll** queue **is empty**_, one of two more things will
@@ -350,12 +350,13 @@ ready, the event loop will wrap back to the **timers** phase to execute
 those timers' callbacks.
 -->
 
-* _**poll** 큐가 **비어있다면**_ 다음 중 하나의 상황이 발생합니다.
-  * 스크립트가 `setImmediate()`로 스케줄링되었다면 이벤트 루프는 **poll** 단계를
-  종료하고 스케줄링된 스크립트를 실행하기 위해 **check** 단계로 넘어갑니다.
+- _**poll** 큐가 **비어있다면**_ 다음 중 하나의 상황이 발생합니다.
 
-  * 스크립트가 `setImmediate()`로 스케줄링되지 않았다면 이벤트 루프는 콜백이 큐에
-  추가되기를 기다린 후 즉시 실행합니다.
+  - 스크립트가 `setImmediate()`로 스케줄링되었다면 이벤트 루프는 **poll** 단계를
+    종료하고 스케줄링된 스크립트를 실행하기 위해 **check** 단계로 넘어갑니다.
+
+  - 스크립트가 `setImmediate()`로 스케줄링되지 않았다면 이벤트 루프는 콜백이 큐에
+    추가되기를 기다린 후 즉시 실행합니다.
 
 **poll** 큐가 일단 비게 되면 타이머가 _시간 임계점에 도달했는지_ 확인할 것입니다.
 하나 이상의 타이머가 준비되었다면 이벤트 루프는 타이머의 콜백을 실행하기 위해
@@ -435,8 +436,8 @@ process:
 
 `setImmediate()`와 `setTimeout()`은 비슷하지만 호출된 시기에 따라 다르게 동작합니다.
 
-* `setImmediate()`는 현재 **poll** 단계가 완료되면 스크립트를 실행하도록 설계되었습니다.
-* `setTimeout()`는 최소 임계 값(ms)이 지난 후 스크립트가 실행되도록 스케줄링합니다.
+- `setImmediate()`는 현재 **poll** 단계가 완료되면 스크립트를 실행하도록 설계되었습니다.
+- `setTimeout()`는 최소 임계 값(ms)이 지난 후 스크립트가 실행되도록 스케줄링합니다.
 
 타이머가 실행되는 순서는 어떤 컨텍스트에서 호출되었는지에 따라 다양합니다. 둘 다 메인 모듈
 내에서 호출된다면 프로세서의 성능에 따라 달라집니다.(머신에서 실행되는 다른 애플리케이션의
@@ -640,8 +641,8 @@ person to make recursive calls to `process.nextTick()` without reaching a
 `process.nextTick()`에 인자를 전달할 수 있게 되어서 콜백뒤에 전달한 인자는 콜백에 대한 인자로
 전파되기 때문에 중첩된 함수를 작성할 필요가 없습니다.
 
-여기서는 사용자에게 오류를 다시 전달하고 있지만 *그 후에* 사용자의 남은 코드를 실행할 수 있습니다.
-`process.nextTick()`을 사용하면 사용자 코드의 나머지 부분 *이후*, 이벤트 루프가 진행되기
+여기서는 사용자에게 오류를 다시 전달하고 있지만 _그 후에_ 사용자의 남은 코드를 실행할 수 있습니다.
+`process.nextTick()`을 사용하면 사용자 코드의 나머지 부분 _이후_, 이벤트 루프가 진행되기
 *이전*에 항상 `apiCall()`이 콜백을 실행할 수 있게 보장합니다. 이를 위해 JS 호출 스택을 풀고
 바로 제공된 콜백을 실행하면서 개발자가
 `RangeError: Maximum call stack size exceeded from v8`에 도달하지 않으면서
@@ -798,16 +799,16 @@ wider variety of environments, like browser JS.)*
 
 개발자가 관심 가질 두 가지 유사한 호출이 있지만 이름은 혼란스럽습니다.
 
-* `process.nextTick()`은 같은 단계에서 바로 실행됩니다.
-* `setImmediate()`는 이어진 순회나 이벤트 루프의 'tick'에서 실행됩니다.
+- `process.nextTick()`은 같은 단계에서 바로 실행됩니다.
+- `setImmediate()`는 이어진 순회나 이벤트 루프의 'tick'에서 실행됩니다.
 
 사실 이름은 서로 바뀌어야 합니다. `process.nextTick()`이 `setImmediate()`보다 더 즉시
 실행되지만, 이는 바뀔 가능성이 없는 과거의 유산입니다. 이 둘을 바꾼다면 수많은 npm 패키지가 깨질
 것입니다. 매일같이 새로운 모듈이 추가되고 있으므로 잠재적인 손상은 더 많이 발생할 것입니다.
 이 둘은 혼란스럽지만 이름이 바뀌진 않을 것입니다.
 
-*`setImmediate()`가 예상하기 더 쉬우므로 모든 경우에 `setImmediate()`를 사용하기를
-권장합니다.*
+_`setImmediate()`가 예상하기 더 쉬우므로 모든 경우에 `setImmediate()`를 사용하기를
+권장합니다._
 
 <!--
 ## Why use `process.nextTick()`?
@@ -836,7 +837,7 @@ server.on('listening', () => { });
 두 가지 이유가 있습니다.
 
 1. 사용자가 이벤트 루프를 계속하기 전에 오류를 처리하고 불필요한 자원을 정리하고 요청을
-다시 시도할 수 있게 합니다.
+   다시 시도할 수 있게 합니다.
 
 2. 호출 스택은 풀린 뒤에도 이벤트 루프를 계속 진행하기 전에 콜백을 실행해야 하는 경우가 있습니다.
 
@@ -844,7 +845,7 @@ server.on('listening', () => { });
 
 ```js
 const server = net.createServer();
-server.on('connection', (conn) => {});
+server.on('connection', conn => {});
 
 server.listen(8080);
 server.on('listening', () => {});

@@ -21,68 +21,68 @@ The event is designed to appeal to both experienced and new developers and archi
 
 Keynotes for the conference will provide an update and future look at Node.js and its growing ecosystem of related modules. A sampling of keynotes includes:
 
-* “The Road Forward on Education and Diversity” - Tracy Hinds of the Node.js Foundation and Emily Rose of Salesforce
-* “npm State of the Union” - Ashley Williams of npm
-* “Node.js State of the Union” - Rod Vagg of NodeSource and Technical Steering Committee Director of Node.js Foundation
-* “Express State of the Union” - Doug Wilson, Express lead maintainer
+- “The Road Forward on Education and Diversity” - Tracy Hinds of the Node.js Foundation and Emily Rose of Salesforce
+- “npm State of the Union” - Ashley Williams of npm
+- “Node.js State of the Union” - Rod Vagg of NodeSource and Technical Steering Committee Director of Node.js Foundation
+- “Express State of the Union” - Doug Wilson, Express lead maintainer
 
 Experts from the leading open source projects and enterprises will share their expertise with Node.js and JavaScript in areas ranging from artificial intelligence to full stack development. Highlights include:
 
 ### Node.js Everywhere
 
-* “Node.js Releases, How Do They Work?” - Myles Borins of IBM
-* “Slaying Monoliths with Docker and Node.js” - Yunong Xiao of Netflix
-* “Instrumentation and Tracing in Node.js” - Thomas Watson of Opbeat
-* “Surviving Web Security Using Node.js” - Gergely Nemeth of RisingStack
-* “Writing Secure Node Code: Understanding and Avoiding the Most Common Node.js Security Mistakes” - Guy Podjarny of Snyk
+- “Node.js Releases, How Do They Work?” - Myles Borins of IBM
+- “Slaying Monoliths with Docker and Node.js” - Yunong Xiao of Netflix
+- “Instrumentation and Tracing in Node.js” - Thomas Watson of Opbeat
+- “Surviving Web Security Using Node.js” - Gergely Nemeth of RisingStack
+- “Writing Secure Node Code: Understanding and Avoiding the Most Common Node.js Security Mistakes” - Guy Podjarny of Snyk
 
 ### Cloud and Back End
 
-* “Hitchhiker’s Guide to ‘Serverless’ JavaScript” - Steven Faulkner of Bustle
-* “Making Magic in the Cloud with Node.js at Google” - Justin Beckwith of Google
-* “Buzzword Bingo: Architecting a Cloud-Native Internet Time Machine” - Ross Kukulinski of NodeSource
+- “Hitchhiker’s Guide to ‘Serverless’ JavaScript” - Steven Faulkner of Bustle
+- “Making Magic in the Cloud with Node.js at Google” - Justin Beckwith of Google
+- “Buzzword Bingo: Architecting a Cloud-Native Internet Time Machine” - Ross Kukulinski of NodeSource
 
 ### Diagnosing, Debugging, and DevOps
 
-* “Building and Shipping Node.js Apps with Docker” - Mano Marks of Docker
-* “The Morality of Code” - Glen Goodwin of SAS Institute, Inc.
+- “Building and Shipping Node.js Apps with Docker” - Mano Marks of Docker
+- “The Morality of Code” - Glen Goodwin of SAS Institute, Inc.
 
 ### Machine Learning, Big Data, Artificial Intelligence
 
-* “Real-Time Machine Learning with Node.js” - Phillip Burckhardt of Carnegie Mellon University
-* “Math in V8 is Broken and How We Can Fix It” - Athan Reines of Fourier
+- “Real-Time Machine Learning with Node.js” - Phillip Burckhardt of Carnegie Mellon University
+- “Math in V8 is Broken and How We Can Fix It” - Athan Reines of Fourier
 
 ### Node.js Core
 
-* “Contributing to Node.js: Coding Not Required” - William Kapke of Kap Co, LLC
-* “A Beginner’s Guide To Reading Node.js Core Source” - Rich Trott of University of California, San Francisco
-* “Node.js and ChakraCore” - Arunesh Chandra of Microsoft
-* “Implementing HTTP/2 for Node.js Core” - James Snell of IBM
+- “Contributing to Node.js: Coding Not Required” - William Kapke of Kap Co, LLC
+- “A Beginner’s Guide To Reading Node.js Core Source” - Rich Trott of University of California, San Francisco
+- “Node.js and ChakraCore” - Arunesh Chandra of Microsoft
+- “Implementing HTTP/2 for Node.js Core” - James Snell of IBM
 
 ### The New Full Stack
 
-* “Serverless Front-End Deployments using npm” - Charlie Robbins of GoDaddy
-* “API Design Through the Lens of Photography” - Bryan Hughes of Microsoft
-* “JavaScript will Let Your Site Work without JavaScript” - Sarah Meyer of Buzzfeed
-* “Nodifying the Enterprise” - Shweta Sharma from To The New
-* “Full Stack Testing with Node.js” - Stacy Kirk of Quality Works
+- “Serverless Front-End Deployments using npm” - Charlie Robbins of GoDaddy
+- “API Design Through the Lens of Photography” - Bryan Hughes of Microsoft
+- “JavaScript will Let Your Site Work without JavaScript” - Sarah Meyer of Buzzfeed
+- “Nodifying the Enterprise” - Shweta Sharma from To The New
+- “Full Stack Testing with Node.js” - Stacy Kirk of Quality Works
 
 ### IoT
 
-* “IoT & Developer Happiness” - Emily Rose of Salesforce
-* “Taking on Genetically Evolving Cellular Automata with JavaScript” - Irina Shestak of Small Media Foundation
+- “IoT & Developer Happiness” - Emily Rose of Salesforce
+- “Taking on Genetically Evolving Cellular Automata with JavaScript” - Irina Shestak of Small Media Foundation
 
 ### Operations and Performance
 
-* “Scaling State” - Matteo Collina of nearForm
-* “Don't Let Just Node.js Take the Blame!” - Daniel Khan of Dynatrace
+- “Scaling State” - Matteo Collina of nearForm
+- “Don't Let Just Node.js Take the Blame!” - Daniel Khan of Dynatrace
 
 ### Workshops
 
-* “Games as Conversational Interfaces” - Kevin Zurawel of Braintree
-* “Agile Security for Web Developers” - Kim Carter of BinaryMist
-* “Science Meets Industry: Online Behavioral Experiments with nodeGame” - Stefano Balietti of Northeastern University
-* “Building Desktop Applications With Node.js Using Electron” - Steve Kinney of Turing School of Software and Design
+- “Games as Conversational Interfaces” - Kevin Zurawel of Braintree
+- “Agile Security for Web Developers” - Kim Carter of BinaryMist
+- “Science Meets Industry: Online Behavioral Experiments with nodeGame” - Stefano Balietti of Northeastern University
+- “Building Desktop Applications With Node.js Using Electron” - Steve Kinney of Turing School of Software and Design
 
 Free onsite childcare for attendees is available as well as ASL, interpretation and transcription assistance upon request. Please email events@node.js for more information.
 

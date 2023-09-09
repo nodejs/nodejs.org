@@ -43,7 +43,7 @@ Node.js, Ruby'nin [Event Machine][] ve Python'ın [Twisted][] gibi sistemlerine
 tasarım olarak benzer ve bunlardan etkilenmiştir. Node.js olay modelini biraz
 daha ileri götürür. [event loop][]'u bir kütüphane yerine çalışma ortamı yapısı
 olarak sunar. Diğer sistemlerde, genellikle event-loop'u başlatan bir blokeli
-çağırım  vardır. Tipik olarak, davranış betiğin başlangıcındaki geri çağırımlar
+çağırım vardır. Tipik olarak, davranış betiğin başlangıcındaki geri çağırımlar
 vasıtasıyla tanımlanmıştır ve sonunda bir sunucu `EventMachine::run()` gibi bir
 blokeli çağırım vasıtasıyla başlatılır. Node.js'de böyle bir olay-dongüsünü-başlat çağırımı
 yoktur. Node.js girdi betiğini yürüttükten sonra basitçe olay döngüsüne girer.

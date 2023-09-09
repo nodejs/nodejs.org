@@ -1,12 +1,19 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "next",
-    "next/core-web-vitals",
-    "prettier",
-    "plugin:storybook/recommended"
-  ],
+  "extends": ["prettier"],
   "overrides": [
+    {
+      "files": ["**/*.{mjs,ts,tsx}"],
+      "extends": ["eslint:recommended"],
+      "env": { "jest": true, "es6": true }
+    },
+    {
+      "files": ["**/*.{mjs,ts,tsx,mdx}"],
+      "extends": [
+        "next",
+        "next/core-web-vitals",
+        "plugin:storybook/recommended"
+      ]
+    },
     {
       "files": ["**/*.ts?(x)"],
       "plugins": ["@typescript-eslint", "no-relative-import-paths"],
@@ -16,19 +23,14 @@
         "@typescript-eslint/consistent-type-imports": "error",
         "no-relative-import-paths/no-relative-import-paths": [
           "warn",
-          {
-            "allowSameFolder": true,
-            "prefix": "@"
-          }
+          { "allowSameFolder": true, "prefix": "@" }
         ]
       }
     },
     {
       "files": ["**/*.md?(x)"],
       "extends": ["plugin:mdx/recommended"],
-      "rules": {
-        "react/jsx-no-undef": "off"
-      }
+      "rules": { "react/jsx-no-undef": "off" }
     },
     {
       "files": ["**/*.{mdx,tsx}"],
@@ -54,9 +56,5 @@
         "@typescript-eslint/consistent-type-definitions": ["error", "type"]
       }
     }
-  ],
-  "env": {
-    "jest": true,
-    "es6": true
-  }
+  ]
 }

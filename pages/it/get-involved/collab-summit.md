@@ -4,6 +4,7 @@ layout: contribute.hbs
 ---
 
 # Collab Summit
+
 Il Summit di collaborazione è simile a una conferenza e ha lo scopo di
 riunire i contributori attuali e potenziali per parlare di Node.js, collaborando,
 insegnando e condividendo informazioni. I comitati e gruppi di lavoro si riuniscono

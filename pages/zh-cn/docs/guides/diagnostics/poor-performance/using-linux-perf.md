@@ -11,7 +11,7 @@ layout: docs.hbs
 
 ## 我该怎么做？
 
-Linux Perf 工具通常随着 `linux-tools-common` 工具包一起发布。借助 `--perf-basic-prof` 或 `--perf-basic-prof-only-functions` 命令，我们可以启动一个带有支持 _perf\_events_ 的 Node.js 程序。
+Linux Perf 工具通常随着 `linux-tools-common` 工具包一起发布。借助 `--perf-basic-prof` 或 `--perf-basic-prof-only-functions` 命令，我们可以启动一个带有支持 _perf_events_ 的 Node.js 程序。
 
 `--perf-basic-prof` ：总是把结果写入一个文件（通常是 /tmp/perf-PID.map），这样做的结果便是该文件的大小会 不停地增长。如果你对此感到担心的话，可以使用 [linux-perf](https://www.npmjs.com/package/linux-perf) 或 `--perf-basic-prof-only-functions`。
 
@@ -70,7 +70,7 @@ node 3870 25147.878454:          1 cycles:
 
 ## 其它相关的一些有用的链接帮助
 
-* https://nodejs.org/en/docs/guides/diagnostics-flamegraph/
-* https://www.brendangregg.com/blog/2014-09-17/node-flame-graphs-on-linux.html
-* https://perf.wiki.kernel.org/index.php/Main_Page
-* https://blog.rafaelgss.com.br/node-cpu-profiler
+- https://nodejs.org/en/docs/guides/diagnostics-flamegraph/
+- https://www.brendangregg.com/blog/2014-09-17/node-flame-graphs-on-linux.html
+- https://perf.wiki.kernel.org/index.php/Main_Page
+- https://blog.rafaelgss.com.br/node-cpu-profiler
