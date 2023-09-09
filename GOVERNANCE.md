@@ -20,7 +20,7 @@ The Node.js Web Infra Team is responsible for maintaining the Infrastructure rel
 
 Web Infra Team members should have access to be able to maintain the services mentioned above.
 
-Members of this team are nominated either by the Node.js Technical Steering Committee (TSC) or the Node.js Build WG and follow the guidelines provided on the Collaborator Guidelines of the Node.js Build WG. Note that members of the Node.js Web Team might also recommend people for nomination.
+Members of this team are nominated either by the Node.js Technical Steering Committee (TSC) or the Node.js Build WG and follow the guidelines provided in the Collaborator Guidelines of the Node.js Build WG. Note that members of the Node.js Web Team might also recommend people for nomination.
 
 ### Node.js Web Standards Team (`@nodejs/web-standards`)
 
