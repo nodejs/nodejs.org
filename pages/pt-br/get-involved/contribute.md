@@ -24,17 +24,17 @@ Quando estiver reportando um problema, envie o máximo de informações possíve
 que este ocorreu. Nós nunca sabemos qual informação será importante quando tentamos restringir as causas do problema.
 Por favor, inclua ao menos as seguintes informações:
 
-* Versão do Node
-* Plataforma em que está sendo executado (macOS, SmartOS, Linux, Windows)
-* Arquitetura em que está sendo executado (32bit ou 64bit e x86 ou ARM)
+- Versão do Node
+- Plataforma em que está sendo executado (macOS, SmartOS, Linux, Windows)
+- Arquitetura em que está sendo executado (32bit ou 64bit e x86 ou ARM)
 
 O projeto Node.js é atualmente gerênciando através de diversos repositórios separados no GitHub, cada
 um com sua própria base de problemas. Se possível, direcione o problema que está sendo reportado ao
 repositório apropriado, mas não se preocupe caso algo seja colocado no lugar errado. A comunidade de
 contribuidores ficará mais do que contente em fornecer a ajuda necessária e apontar a direção correta.
 
-* Para reportar um problema específico do Node.js, utilize [nodejs/node](https://github.com/nodejs/node)
-* Para reportar um porblema específico deste website, utilize [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
+- Para reportar um problema específico do Node.js, utilize [nodejs/node](https://github.com/nodejs/node)
+- Para reportar um porblema específico deste website, utilize [nodejs/nodejs.org](https://github.com/nodejs/nodejs.org/issues)
 
 ## Contribuições de códigos
 
@@ -56,12 +56,12 @@ Ao tornar-se um Colaborator, contribudores poderão impactar ainda mais o projet
 
 As atividade que são levadas em consideração incluem (mas não se limitam) a qualidade de:
 
-* _commits_ de código e _pull requests_
-* documentação dos _commits_ e _pull requests_
-* comentários em _issues_ e _pull requests_
-* contribuções ao website do Node.js
-* ajuda fornecida a usuários e novos contribuidores
-* participação em grupos de trabaho (_Working Groups_)
-* outras participações na comunidade Node.js
+- _commits_ de código e _pull requests_
+- documentação dos _commits_ e _pull requests_
+- comentários em _issues_ e _pull requests_
+- contribuções ao website do Node.js
+- ajuda fornecida a usuários e novos contribuidores
+- participação em grupos de trabaho (_Working Groups_)
+- outras participações na comunidade Node.js
 
 Se alguém, realizando contribuições valiosas acredita que não foi considerado para receber esse título, poderá [abrir um pedido](https://github.com/nodejs/TSC/issues) ou [contatar um membro do TSC](https://github.com/nodejs/TSC#current-members) diretamente.

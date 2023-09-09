@@ -25,7 +25,7 @@ you load into a container.
 # Node.js 웹 앱의 도커라이징
 
 이 예제에서는 Node.js 애플리케이션을 Docker 컨테이너에 넣는 방법을 보여줍니다. 이 가이드는
-개발 목적이지 프로덕션 배포용이 *아닙니다*.
+개발 목적이지 프로덕션 배포용이 _아닙니다_.
 [Docker가 설치](https://docs.docker.com/engine/installation/)되어 있고
 Node.js 애플리케이션의 구조에 대한 기본적인 지식이 있어야 합니다.
 
@@ -215,7 +215,7 @@ WORKDIR /usr/src/app
 
 이 이미지에는 이미 Node.js와 NPM이 설치되어 있으므로 `npm` 바이너리로
 앱의 의존성을 설치하기만 하면 됩니다. 버전 4 이하의 `npm`은 `package-lock.json`
-파일을 생성하지 *않을* 것입니다.
+파일을 생성하지 _않을_ 것입니다.
 
 ```docker
 # 앱 의존성 설치
@@ -551,8 +551,8 @@ following places:
 
 다음 링크에서 Docker와 Docker에서의 Node.js에 대한 정보를 더 자세히 볼 수 있습니다.
 
-* [공식 Node.js Docker 이미지](https://hub.docker.com/_/node/)
-* [Node.js Docker 사용사례 문서](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
-* [공식 Docker 문서](https://docs.docker.com/)
-* [Stack Overflow에 Docker 태그로 올라온 질문](https://stackoverflow.com/questions/tagged/docker)
-* [Docker 레딧](https://reddit.com/r/docker)
+- [공식 Node.js Docker 이미지](https://hub.docker.com/_/node/)
+- [Node.js Docker 사용사례 문서](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
+- [공식 Docker 문서](https://docs.docker.com/)
+- [Stack Overflow에 Docker 태그로 올라온 질문](https://stackoverflow.com/questions/tagged/docker)
+- [Docker 레딧](https://reddit.com/r/docker)

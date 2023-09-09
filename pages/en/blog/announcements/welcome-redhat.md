@@ -23,7 +23,7 @@ Often used for building fast, scalable network applications, Node.js supports Re
 
 Additional Resources
 
-* Learn more about the [Node.js Foundation](https://foundation.nodejs.org/) and get involved with [the project](https://nodejs.org/en/get-involved/).
+- Learn more about the [Node.js Foundation](https://foundation.nodejs.org/) and get involved with [the project](https://nodejs.org/en/get-involved/).
 
 ## About Node.js Foundation
 

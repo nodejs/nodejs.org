@@ -5,26 +5,26 @@ title: Installation de Node.js via le gestionnaire de paquets
 
 # Installation de Node.js via le gestionnaire de paquets
 
-***Note:*** Les paquets sur cette page sont maintenus et supportés par leurs mainteneurs respectifs, **non pas** par l'équipe centrale de Node.js. Veuillez signaler tout problème que vous rencontrez au mainteneur du paquet. S'il s'avère que votre problème est un bogue dans Node.js lui-même, le mainteneur signalera le problème en amont.
+**_Note:_** Les paquets sur cette page sont maintenus et supportés par leurs mainteneurs respectifs, **non pas** par l'équipe centrale de Node.js. Veuillez signaler tout problème que vous rencontrez au mainteneur du paquet. S'il s'avère que votre problème est un bogue dans Node.js lui-même, le mainteneur signalera le problème en amont.
 
 ---
 
-* [Android](#android)
-* [Arch Linux](#arch-linux)
-* [Distributions Linux dérivées de Debian et Ubuntu, Linux/Fedora Entreprise, et paquets Snap](#les-distributions-linux-basées-sur-debian-et-ubuntu-enterprise-linuxfedora-et-les-paquets-snap)
-* [FreeBSD](#freebsd)
-* [Gentoo](#gentoo)
-* [IBM i](#ibm-i)
-* [NetBSD](#netbsd)
-* [nvm](#nvm)
-* [nvs](#nvs)
-* [OpenBSD](#openbsd)
-* [openSUSE and SLE](#opensuse-and-sle)
-* [macOS](#macos)
-* [SmartOS and illumos](#smartos-and-illumos)
-* [Solus](#solus)
-* [Void Linux](#void-linux)
-* [Windows](#windows)
+- [Android](#android)
+- [Arch Linux](#arch-linux)
+- [Distributions Linux dérivées de Debian et Ubuntu, Linux/Fedora Entreprise, et paquets Snap](#les-distributions-linux-basées-sur-debian-et-ubuntu-enterprise-linuxfedora-et-les-paquets-snap)
+- [FreeBSD](#freebsd)
+- [Gentoo](#gentoo)
+- [IBM i](#ibm-i)
+- [NetBSD](#netbsd)
+- [nvm](#nvm)
+- [nvs](#nvs)
+- [OpenBSD](#openbsd)
+- [openSUSE and SLE](#opensuse-and-sle)
+- [macOS](#macos)
+- [SmartOS and illumos](#smartos-and-illumos)
+- [Solus](#solus)
+- [Void Linux](#void-linux)
+- [Windows](#windows)
 
 ---
 
@@ -96,13 +96,14 @@ Node.js est disponible dans l'arbre pkgsrc :
 cd /usr/pkgsrc/lang/nodejs && make install
 ```
 
-Ou installez un  paquet binaire (si disponible pour votre plateforme) en utilisant pkgin :
+Ou installez un paquet binaire (si disponible pour votre plateforme) en utilisant pkgin :
 
 ```bash
 pkgin -y install nodejs
 ```
 
 ## nvm
+
 Node Version Manager est un script bash utilisé pour gérer plusieurs versions de Node.js. Il vous permet d'effectuer des opérations comme l'installation, la désinstallation, le changement de version, etc. Pour installer nvm, utilisez ce [script d'installation](https://github.com/nvm-sh/nvm#install--update-script).
 
 Sur les systèmes Unix / OS X, Node.js construit à partir des sources peut être installé en utilisant [nvm](https://github.com/creationix/nvm) en l'installant à l'emplacement attendu par nvm :
@@ -126,6 +127,7 @@ nvm uninstall 8
 ## nvs
 
 #### Windows
+
 Le gestionnaire de version `nvs` est multiplateforme et peut être utilisé sur Windows, macOS, et les systèmes Unix.
 
 Pour installer `nvs` sur Windows, allez sur la [release page](https://github.com/jasongin/nvs/releases) ici et téléchargez le fichier d'installation MSI de la dernière version.
@@ -137,9 +139,11 @@ choco install nvs
 ```
 
 #### macOS et tous les systèmes de type Unix
+
 Vous pouvez trouver la documentation concernant les étapes d'installation de `nvs` dans les systèmes macOS/Unix-like [ici](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
 
 #### Utilisation
+
 Après cela, vous pouvez utiliser `nvs` pour basculer entre les différentes versions de node.
 
 Pour ajouter la dernière version de node :
@@ -186,10 +190,10 @@ pkg_add node
 
 Node.js est disponible dans les dépôts principaux sous les paquets suivants :
 
-* **openSUSE Leap 42.2** : `nodejs4`
-* **openSUSE Leap 42.3** : `nodejs4`, `nodejs6`
-**openSUSE Tumbleweed** : `nodejs4`, `nodejs6`, `nodejs8`
-**SUSE Linux Enterprise Server (SLES) 12** : `nodejs4`, `nodejs6` (Le "Web and Scripting Module" doit être [ajouté avant l'installation](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).)
+- **openSUSE Leap 42.2** : `nodejs4`
+- **openSUSE Leap 42.3** : `nodejs4`, `nodejs6`
+  **openSUSE Tumbleweed** : `nodejs4`, `nodejs6`, `nodejs8`
+  **SUSE Linux Enterprise Server (SLES) 12** : `nodejs4`, `nodejs6` (Le "Web and Scripting Module" doit être [ajouté avant l'installation](https://www.suse.com/documentation/sles-12/book_sle_deployment/data/sec_add-ons_extensions.html).)
 
 Par exemple, pour installer Node.js 4.x sur openSUSE Leap 42.2, exécutez ce qui suit en tant que root :
 
@@ -226,7 +230,7 @@ port install nodejs7
 
 Utilisation de **[pkgsrc](https://pkgsrc.joyent.com/install-on-osx/)**:
 
-Installez le  paquet binaire :
+Installez le paquet binaire :
 
 ```bash
 pkgin -y install nodejs
@@ -240,7 +244,7 @@ cd pkgsrc/lang/nodejs && bmake install
 
 ## SmartOS et illumos
 
-Les images SmartOS sont livrées avec pkgsrc pré-installé. Sur les autres distributions illumos, installez d'abord **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, puis vous pouvez installer le  paquet binaire normalement :
+Les images SmartOS sont livrées avec pkgsrc pré-installé. Sur les autres distributions illumos, installez d'abord **[pkgsrc](https://pkgsrc.joyent.com/install-on-illumos/)**, puis vous pouvez installer le paquet binaire normalement :
 
 ```bash
 pkgin -y install nodejs

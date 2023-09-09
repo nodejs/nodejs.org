@@ -35,11 +35,11 @@ And this is exactly what happened to version 5. It lived as _Current_ for 6 mont
 
 The core team is focusing all of its activities on the following release lines:
 
-* v0.10 which will receive occasional critical fixes during its current Maintenance phase and will cease to be supported in October this year.
-* v0.12 which will receive occasional critical fixes during its current Maintenance phase and will cease to be supported in December this year.
-* v4 which is in Active LTS and is receiving more regular patches and occasional important feature additions, this will continue until October 2017 where it will switch to Maintenance and operate in a manner similar to v0.10 and v0.12 until April 2018.
-* v6 which is still a Current release, due to become our second LTS release in October where its life will continue under Active LTS and Maintenance until April 2019.
-* v7 is being planned for a release in October this year at the same time that we switch v6 to LTS. You can already try out nightly builds from our `master` branch at <https://nodejs.org/download/nightly> but expect to see a focus on quality and stability of these in the coming months as we create a `v7.x` branch and becoming more choosy about what gets to make it in to v7.0.0.
+- v0.10 which will receive occasional critical fixes during its current Maintenance phase and will cease to be supported in October this year.
+- v0.12 which will receive occasional critical fixes during its current Maintenance phase and will cease to be supported in December this year.
+- v4 which is in Active LTS and is receiving more regular patches and occasional important feature additions, this will continue until October 2017 where it will switch to Maintenance and operate in a manner similar to v0.10 and v0.12 until April 2018.
+- v6 which is still a Current release, due to become our second LTS release in October where its life will continue under Active LTS and Maintenance until April 2019.
+- v7 is being planned for a release in October this year at the same time that we switch v6 to LTS. You can already try out nightly builds from our `master` branch at <https://nodejs.org/download/nightly> but expect to see a focus on quality and stability of these in the coming months as we create a `v7.x` branch and becoming more choosy about what gets to make it in to v7.0.0.
 
 It sounds like a lot, but once we move beyond the legacy v0.12 and v0.10 release lines we expect the steady cadence of major versions and their various releases to become easier to understand.
 

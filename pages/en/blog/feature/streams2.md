@@ -9,18 +9,18 @@ layout: blog-post.hbs
 
 **tl;dr**
 
-* Node streams are great, except for all the ways in which they're
+- Node streams are great, except for all the ways in which they're
   terrible.
-* A new Stream implementation is coming in 0.10, that has gotten the
+- A new Stream implementation is coming in 0.10, that has gotten the
   nickname "streams2".
-* Readable streams have a `read()` method that returns a buffer or
+- Readable streams have a `read()` method that returns a buffer or
   null. (More documentation included below.)
-* `'data'` events, `pause()`, and `resume()` will still work as before
+- `'data'` events, `pause()`, and `resume()` will still work as before
   (except that they'll actually work how you'd expect).
-* Old programs will **almost always** work without modification, but
+- Old programs will **almost always** work without modification, but
   streams start out in a paused state, and need to be read from to be
   consumed.
-* **WARNING**: If you never add a `'data'` event handler, or call
+- **WARNING**: If you never add a `'data'` event handler, or call
   `resume()`, then it'll sit in a paused state forever and never
   emit `'end'`.
 
@@ -125,11 +125,11 @@ streams, Duplex streams, and Transform streams.
 In earlier versions of Node, the Readable stream interface was
 simpler, but also less powerful and less useful.
 
-* Rather than waiting for you to call the `read()` method, `'data'`
+- Rather than waiting for you to call the `read()` method, `'data'`
   events would start emitting immediately. If you needed to do some
   I/O to decide how to handle data, then you had to store the chunks
   in some kind of buffer so that they would not be lost.
-* The `pause()` method was advisory, rather than guaranteed. This
+- The `pause()` method was advisory, rather than guaranteed. This
   meant that you still had to be prepared to receive `'data'` events
   even when the stream was in a paused state.
 
@@ -143,22 +143,22 @@ event, you no longer have to worry about losing `'data'` chunks.
 Most programs will continue to function normally. However, this
 introduces an edge case in the following conditions:
 
-* No `'data'` event handler is added.
-* The `pause()` and `resume()` methods are never called.
+- No `'data'` event handler is added.
+- The `pause()` and `resume()` methods are never called.
 
 For example, consider the following code:
 
 ```javascript
 // WARNING! BROKEN!
-net.createServer(function(socket) {
-
-  // we add an 'end' method, but never consume the data
-  socket.on('end', function() {
-    // It will never get here.
-    socket.end('I got your message (but didnt read it)\n');
-  });
-
-}).listen(1337);
+net
+  .createServer(function (socket) {
+    // we add an 'end' method, but never consume the data
+    socket.on('end', function () {
+      // It will never get here.
+      socket.end('I got your message (but didnt read it)\n');
+    });
+  })
+  .listen(1337);
 ```
 
 In versions of node prior to v0.10, the incoming message data would be
@@ -170,16 +170,16 @@ trigger "old mode" behavior:
 
 ```javascript
 // Workaround
-net.createServer(function(socket) {
+net
+  .createServer(function (socket) {
+    socket.on('end', function () {
+      socket.end('I got your message (but didnt read it)\n');
+    });
 
-  socket.on('end', function() {
-    socket.end('I got your message (but didnt read it)\n');
-  });
-
-  // start the flow of data, discarding it.
-  socket.resume();
-
-}).listen(1337);
+    // start the flow of data, discarding it.
+    socket.resume();
+  })
+  .listen(1337);
 ```
 
 In addition to new Readable streams switching into old-mode, pre-v0.10
@@ -198,13 +198,13 @@ method. (See below.)
 
 ### new stream.Readable(\[options\])
 
-* `options` {Object}
-  * `highWaterMark` {Number} The maximum number of bytes to store in
+- `options` {Object}
+  - `highWaterMark` {Number} The maximum number of bytes to store in
     the internal buffer before ceasing to read from the underlying
     resource. Default=16kb
-  * `encoding` {String} If specified, then buffers will be decoded to
+  - `encoding` {String} If specified, then buffers will be decoded to
     strings using the specified encoding. Default=null
-  * `objectMode` {Boolean} Whether this stream should behave
+  - `objectMode` {Boolean} Whether this stream should behave
     as a stream of objects. Meaning that stream.read(n) returns
     a single value instead of a Buffer of size n
 
@@ -214,7 +214,7 @@ initialized.
 
 ### readable.\_read(size)
 
-* `size` {Number} Number of bytes to read asynchronously
+- `size` {Number} Number of bytes to read asynchronously
 
 Note: **This function should NOT be called directly.** It should be
 implemented by child classes, and called by the internal Readable
@@ -242,8 +242,8 @@ becomes available. There is no need, for example to "wait" until
 
 ### readable.push(chunk)
 
-* `chunk` {Buffer | null | String} Chunk of data to push into the read queue
-* return {Boolean} Whether or not more pushes should be performed
+- `chunk` {Buffer | null | String} Chunk of data to push into the read queue
+- return {Boolean} Whether or not more pushes should be performed
 
 Note: **This function should be called by Readable implementors, NOT
 by consumers of Readable subclasses.** The `_read()` function will not
@@ -271,30 +271,29 @@ this:
 
 var stream = new Readable();
 
-source.ondata = function(chunk) {
+source.ondata = function (chunk) {
   // if push() returns false, then we need to stop reading from source
-  if (!stream.push(chunk))
-    source.readStop();
+  if (!stream.push(chunk)) source.readStop();
 };
 
-source.onend = function() {
+source.onend = function () {
   stream.push(null);
 };
 
 // _read will be called when the stream wants to pull more data in
 // the advisory size argument is ignored in this case.
-stream._read = function(n) {
+stream._read = function (n) {
   source.readStart();
 };
 ```
 
 ### readable.unshift(chunk)
 
-* `chunk` {Buffer | null | String} Chunk of data to unshift onto the read queue
-* return {Boolean} Whether or not more pushes should be performed
+- `chunk` {Buffer | null | String} Chunk of data to unshift onto the read queue
+- return {Boolean} Whether or not more pushes should be performed
 
 This is the corollary of `readable.push(chunk)`. Rather than putting
-the data at the *end* of the read queue, it puts it at the *front* of
+the data at the _end_ of the read queue, it puts it at the _front_ of
 the read queue.
 
 This is useful in certain use-cases where a stream is being consumed
@@ -309,8 +308,7 @@ optimistically pulled out of the source.
 // Note: This can be done more simply as a Transform stream. See below.
 
 function SimpleProtocol(source, options) {
-  if (!(this instanceof SimpleProtocol))
-    return new SimpleProtocol(options);
+  if (!(this instanceof SimpleProtocol)) return new SimpleProtocol(options);
 
   Readable.call(this, options);
   this._inBody = false;
@@ -320,13 +318,13 @@ function SimpleProtocol(source, options) {
   this._source = source;
 
   var self = this;
-  source.on('end', function() {
+  source.on('end', function () {
     self.push(null);
   });
 
   // give it a kick whenever the source is readable
   // read(0) will not consume any bytes
-  source.on('readable', function() {
+  source.on('readable', function () {
     self.read(0);
   });
 
@@ -334,21 +332,22 @@ function SimpleProtocol(source, options) {
   this.header = null;
 }
 
-SimpleProtocol.prototype = Object.create(
-  Readable.prototype, { constructor: { value: SimpleProtocol }});
+SimpleProtocol.prototype = Object.create(Readable.prototype, {
+  constructor: { value: SimpleProtocol },
+});
 
-SimpleProtocol.prototype._read = function(n) {
+SimpleProtocol.prototype._read = function (n) {
   if (!this._inBody) {
     var chunk = this._source.read();
 
     // if the source doesn't have data, we don't have data yet.
-    if (chunk === null)
-      return this.push('');
+    if (chunk === null) return this.push('');
 
     // check if the chunk has a \n\n
     var split = -1;
     for (var i = 0; i < chunk.length; i++) {
-      if (chunk[i] === 10) { // '\n'
+      if (chunk[i] === 10) {
+        // '\n'
         if (this._sawFirstCr) {
           split = i;
           break;
@@ -400,7 +399,7 @@ var parser = new SimpleProtocol(source);
 
 ### readable.wrap(stream)
 
-* `stream` {Stream} An "old style" readable stream
+- `stream` {Stream} An "old style" readable stream
 
 If you are using an older Node library that emits `'data'` events and
 has a `pause()` method that is advisory only, then you can use the
@@ -411,11 +410,11 @@ For example:
 
 ```javascript
 var OldReader = require('./old-api-module.js').OldReader;
-var oreader = new OldReader;
+var oreader = new OldReader();
 var Readable = require('stream').Readable;
 var myReader = new Readable().wrap(oreader);
 
-myReader.on('readable', function() {
+myReader.on('readable', function () {
   myReader.read(); // etc.
 });
 ```
@@ -460,8 +459,8 @@ constructor.
 
 ### readable.read(\[size\])
 
-* `size` {Number | null} Optional number of bytes to read.
-* Return: {Buffer | String | null}
+- `size` {Number | null} Optional number of bytes to read.
+- Return: {Buffer | String | null}
 
 Note: **This function SHOULD be called by Readable stream users.**
 
@@ -481,9 +480,9 @@ refresh of the internal buffer, but otherwise be a no-op.
 
 ### readable.pipe(destination, \[options\])
 
-* `destination` {Writable Stream}
-* `options` {Object} Optional
-  * `end` {Boolean} Default=true
+- `destination` {Writable Stream}
+- `options` {Object} Optional
+  - `end` {Boolean} Default=true
 
 Connects this readable stream to `destination` WriteStream. Incoming
 data on this stream gets written to `destination`. Properly manages
@@ -507,8 +506,8 @@ end.
 
 ```javascript
 reader.pipe(writer, { end: false });
-reader.on("end", function() {
-  writer.end("Goodbye\n");
+reader.on('end', function () {
+  writer.end('Goodbye\n');
 });
 ```
 
@@ -517,7 +516,7 @@ the process exits, regardless of the specified options.
 
 ### readable.unpipe(\[destination\])
 
-* `destination` {Writable Stream} Optional
+- `destination` {Writable Stream} Optional
 
 Undo a previously established `pipe()`. If no destination is
 provided, then all previously established pipes are removed.
@@ -551,10 +550,10 @@ extended with an underlying implementation of the
 
 ### new stream.Writable(\[options\])
 
-* `options` {Object}
-  * `highWaterMark` {Number} Buffer level when `write()` starts
+- `options` {Object}
+  - `highWaterMark` {Number} Buffer level when `write()` starts
     returning false. Default=16kb
-  * `decodeStrings` {Boolean} Whether or not to decode strings into
+  - `decodeStrings` {Boolean} Whether or not to decode strings into
     Buffers before passing them to `_write()`. Default=true
 
 In classes that extend the Writable class, make sure to call the
@@ -563,13 +562,13 @@ initialized.
 
 ### writable.\_write(chunk, encoding, callback)
 
-* `chunk` {Buffer | String} The chunk to be written. Will always
+- `chunk` {Buffer | String} The chunk to be written. Will always
   be a buffer unless the `decodeStrings` option was set to `false`.
-* `encoding` {String} If the chunk is a string, then this is the
+- `encoding` {String} If the chunk is a string, then this is the
   encoding type. Ignore chunk is a buffer. Note that chunk will
   **always** be a buffer unless the `decodeStrings` option is
   explicitly set to `false`.
-* `callback` {Function} Call this function (optionally with an error
+- `callback` {Function} Call this function (optionally with an error
   argument) when you are done processing the supplied chunk.
 
 All Writable stream implementations must provide a `_write` method to
@@ -597,12 +596,12 @@ your own extension classes.
 
 ### writable.write(chunk, \[encoding\], \[callback\])
 
-* `chunk` {Buffer | String} Data to be written
-* `encoding` {String} Optional. If `chunk` is a string, then encoding
+- `chunk` {Buffer | String} Data to be written
+- `encoding` {String} Optional. If `chunk` is a string, then encoding
   defaults to `'utf8'`
-* `callback` {Function} Optional. Called when this chunk is
+- `callback` {Function} Optional. Called when this chunk is
   successfully written.
-* Returns {Boolean}
+- Returns {Boolean}
 
 Writes `chunk` to the stream. Returns `true` if the data has been
 flushed to the underlying resource. Returns `false` to indicate that
@@ -614,10 +613,10 @@ the `highWaterMark` option provided to the constructor.
 
 ### writable.end(\[chunk\], \[encoding\], \[callback\])
 
-* `chunk` {Buffer | String} Optional final data to be written
-* `encoding` {String} Optional. If `chunk` is a string, then encoding
+- `chunk` {Buffer | String} Optional final data to be written
+- `encoding` {String} Optional. If `chunk` is a string, then encoding
   defaults to `'utf8'`
-* `callback` {Function} Optional. Called when the final chunk is
+- `callback` {Function} Optional. Called when the final chunk is
   successfully written.
 
 Call this method to signal the end of the data being written to the
@@ -641,13 +640,13 @@ event is emitted.
 
 ### Event: 'pipe'
 
-* `source` {Readable Stream}
+- `source` {Readable Stream}
 
 Emitted when the stream is passed to a readable stream's pipe method.
 
 ### Event 'unpipe'
 
-* `source` {Readable Stream}
+- `source` {Readable Stream}
 
 Emitted when a previously established `pipe()` is removed using the
 source Readable stream's `unpipe()` method.
@@ -672,9 +671,9 @@ on extension duplex classes.
 
 ### new stream.Duplex(options)
 
-* `options` {Object} Passed to both Writable and Readable
+- `options` {Object} Passed to both Writable and Readable
   constructors. Also has the following fields:
-  * `allowHalfOpen` {Boolean} Default=true. If set to `false`, then
+  - `allowHalfOpen` {Boolean} Default=true. If set to `false`, then
     the stream will automatically end the readable side when the
     writable side ends and vice versa.
 
@@ -700,7 +699,7 @@ also implement the `_flush()` method. (See below.)
 
 ### new stream.Transform(\[options\])
 
-* `options` {Object} Passed to both Writable and Readable
+- `options` {Object} Passed to both Writable and Readable
   constructors.
 
 In classes that extend the Transform class, make sure to call the
@@ -709,11 +708,11 @@ initialized.
 
 ### transform.\_transform(chunk, encoding, callback)
 
-* `chunk` {Buffer | String} The chunk to be transformed. Will always
+- `chunk` {Buffer | String} The chunk to be transformed. Will always
   be a buffer unless the `decodeStrings` option was set to `false`.
-* `encoding` {String} If the chunk is a string, then this is the
+- `encoding` {String} If the chunk is a string, then this is the
   encoding type. (Ignore if `decodeStrings` chunk is a buffer.)
-* `callback` {Function} Call this function (optionally with an error
+- `callback` {Function} Call this function (optionally with an error
   argument) when you are done processing the supplied chunk.
 
 Note: **This function MUST NOT be called directly.** It should be
@@ -743,7 +742,7 @@ your own extension classes.
 
 ### transform.\_flush(callback)
 
-* `callback` {Function} Call this function (optionally with an error
+- `callback` {Function} Call this function (optionally with an error
   argument) when you are done flushing any remaining data.
 
 Note: **This function MUST NOT be called directly.** It MAY be implemented
@@ -779,8 +778,7 @@ approach.
 
 ```javascript
 function SimpleProtocol(options) {
-  if (!(this instanceof SimpleProtocol))
-    return new SimpleProtocol(options);
+  if (!(this instanceof SimpleProtocol)) return new SimpleProtocol(options);
 
   Transform.call(this, options);
   this._inBody = false;
@@ -789,15 +787,17 @@ function SimpleProtocol(options) {
   this.header = null;
 }
 
-SimpleProtocol.prototype = Object.create(
-  Transform.prototype, { constructor: { value: SimpleProtocol }});
+SimpleProtocol.prototype = Object.create(Transform.prototype, {
+  constructor: { value: SimpleProtocol },
+});
 
-SimpleProtocol.prototype._transform = function(chunk, encoding, done) {
+SimpleProtocol.prototype._transform = function (chunk, encoding, done) {
   if (!this._inBody) {
     // check if the chunk has a \n\n
     var split = -1;
     for (var i = 0; i < chunk.length; i++) {
-      if (chunk[i] === 10) { // '\n'
+      if (chunk[i] === 10) {
+        // '\n'
         if (this._sawFirstCr) {
           split = i;
           break;
@@ -838,7 +838,7 @@ SimpleProtocol.prototype._transform = function(chunk, encoding, done) {
 };
 
 var parser = new SimpleProtocol();
-source.pipe(parser)
+source.pipe(parser);
 
 // Now parser is a readable stream that will emit 'header'
 // with the parsed header data.

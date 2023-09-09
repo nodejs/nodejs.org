@@ -4,6 +4,7 @@ layout: contribute.hbs
 ---
 
 # Collab Summit
+
 O _Collaboration Summit_ é uma desconferência organizada para juntar contribuidores e
 potênciais contribuidores e discutir sobre Node.js com colaborações animadas, educação,
 e compartilhamento de conhecimento. Comitês e grupos de trabalho se reunem duas vezes

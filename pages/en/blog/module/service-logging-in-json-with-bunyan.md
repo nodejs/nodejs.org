@@ -17,10 +17,10 @@ Service logs are gold, if you can mine them. We scan them for occasional debuggi
 
 ["Log. (Huh) What is it good for. Absolutely ..."](https://www.youtube.com/watch?v=01-2pNCZiNk)
 
-* debugging
-* monitors tools that alert operators
-* non real-time analysis (business or operational analysis)
-* historical analysis
+- debugging
+- monitors tools that alert operators
+- non real-time analysis (business or operational analysis)
+- historical analysis
 
 These are what logs are good for. The current state of logging is barely adequate for the first of these. Doing reliable analysis, and even monitoring, of varied ["printf-style" logs](http://journal.paul.querna.org/articles/2011/12/26/log-for-machines-in-json/) is a grueling or hacky task that most either don't bother with, fallback to paying someone else to do (viz. Splunk's great successes), or, for web sites, punt and use the plethora of JavaScript-based web analytics tools.
 
@@ -130,12 +130,12 @@ var log = new Logger({
   streams: [
     {
       stream: process.stdout,
-      level: 'debug'
+      level: 'debug',
     },
     {
       path: 'hello.log',
-      level: 'trace'
-    }
+      level: 'trace',
+    },
   ],
   serializers: {
     req: Logger.stdSerializers.req,
@@ -157,17 +157,17 @@ Restify 1.x and above has bunyan support baked in. You pass in your Bunyan logge
 ```javascript
 var server = restify.createServer({
   name: 'Hello API',
-  log: log   // Pass our logger to restify.
+  log: log, // Pass our logger to restify.
 });
 ```
 
 Our simple API will have a single `GET /hello?name=NAME` endpoint:
 
 ```javascript
-server.get({path: '/hello', name: 'SayHello'}, function(req, res, next) {
+server.get({ path: '/hello', name: 'SayHello' }, function (req, res, next) {
   var caller = req.params.name || 'caller';
   req.log.debug('caller is "%s"', caller);
-  res.send({"hello": caller});
+  res.send({ hello: caller });
   return next();
 });
 ```
@@ -199,7 +199,7 @@ Let's add two things to our server. First, we'll use the `server.pre` to hook in
 
 ```javascript
 server.pre(function (request, response, next) {
-  request.log.info({req: request}, 'start');        // (1)
+  request.log.info({ req: request }, 'start'); // (1)
   return next();
 });
 ```
@@ -215,14 +215,14 @@ Here we pass in the restify Request object, `req`. The "req" serializer we regis
 Remember that we already had this debug log statement in our endpoint handler:
 
 ```javascript
-req.log.debug('caller is "%s"', caller);            // (2)
+req.log.debug('caller is "%s"', caller); // (2)
 ```
 
 Second, use the restify server `after` event to **log the response**:
 
 ```javascript
 server.on('after', function (req, res, route) {
-  req.log.info({res: res}, "finished");             // (3)
+  req.log.info({ res: res }, 'finished'); // (3)
 });
 ```
 
@@ -330,7 +330,7 @@ Two useful details of note here:
 
 1. The last two log messages include **a "req_id" field** (added to the `req.log` logger by restify). Note that this is the same UUID as the "X-Request-Id" header in the `curl` response. This means that if you use `req.log` for logging in your API handlers you will get an easy way to collate all logging for particular requests.
 
-    If your's is an SOA system with many services, a best practice is to carry that X-Request-Id/req_id through your system to enable collating handling of a single top-level request.
+   If your's is an SOA system with many services, a best practice is to carry that X-Request-Id/req_id through your system to enable collating handling of a single top-level request.
 
 2. The last two log messages include **a "route" field**. This tells you to which handler restify routed the request. While possibly useful for debugging, this can be very helpful for log-based monitoring of endpoints on a server.
 

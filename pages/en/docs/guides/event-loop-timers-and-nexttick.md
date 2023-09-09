@@ -73,16 +73,16 @@ longer than a timer's threshold. See the [**timers**](#timers) and
 
 ## Phases Overview
 
-* **timers**: this phase executes callbacks scheduled by `setTimeout()`
- and `setInterval()`.
-* **pending callbacks**: executes I/O callbacks deferred to the next loop
- iteration.
-* **idle, prepare**: only used internally.
-* **poll**: retrieve new I/O events; execute I/O related callbacks (almost
- all with the exception of close callbacks, the ones scheduled by timers,
- and `setImmediate()`); node will block here when appropriate.
-* **check**: `setImmediate()` callbacks are invoked here.
-* **close callbacks**: some close callbacks, e.g. `socket.on('close', ...)`.
+- **timers**: this phase executes callbacks scheduled by `setTimeout()`
+  and `setInterval()`.
+- **pending callbacks**: executes I/O callbacks deferred to the next loop
+  iteration.
+- **idle, prepare**: only used internally.
+- **poll**: retrieve new I/O events; execute I/O related callbacks (almost
+  all with the exception of close callbacks, the ones scheduled by timers,
+  and `setImmediate()`); node will block here when appropriate.
+- **check**: `setImmediate()` callbacks are invoked here.
+- **close callbacks**: some close callbacks, e.g. `socket.on('close', ...)`.
 
 Between each run of the event loop, Node.js checks if it is waiting for
 any asynchronous I/O or timers and shuts down cleanly if there are not
@@ -167,20 +167,21 @@ The **poll** phase has two main functions:
 When the event loop enters the **poll** phase _and there are no timers
 scheduled_, one of two things will happen:
 
-* _If the **poll** queue **is not empty**_, the event loop will iterate
-through its queue of callbacks executing them synchronously until
-either the queue has been exhausted, or the system-dependent hard limit
-is reached.
+- _If the **poll** queue **is not empty**_, the event loop will iterate
+  through its queue of callbacks executing them synchronously until
+  either the queue has been exhausted, or the system-dependent hard limit
+  is reached.
 
-* _If the **poll** queue **is empty**_, one of two more things will
+- _If the **poll** queue **is empty**_, one of two more things will
   happen:
-  * If scripts have been scheduled by `setImmediate()`, the event loop
-  will end the **poll** phase and continue to the **check** phase to
-  execute those scheduled scripts.
 
-  * If scripts **have not** been scheduled by `setImmediate()`, the
-  event loop will wait for callbacks to be added to the queue, then
-  execute them immediately.
+  - If scripts have been scheduled by `setImmediate()`, the event loop
+    will end the **poll** phase and continue to the **check** phase to
+    execute those scheduled scripts.
+
+  - If scripts **have not** been scheduled by `setImmediate()`, the
+    event loop will wait for callbacks to be added to the queue, then
+    execute them immediately.
 
 Once the **poll** queue is empty the event loop will check for timers
 _whose time thresholds have been reached_. If one or more timers are
@@ -215,10 +216,10 @@ emitted via `process.nextTick()`.
 `setImmediate()` and `setTimeout()` are similar, but behave in different
 ways depending on when they are called.
 
-* `setImmediate()` is designed to execute a script once the
-current **poll** phase completes.
-* `setTimeout()` schedules a script to be run after a minimum threshold
-in ms has elapsed.
+- `setImmediate()` is designed to execute a script once the
+  current **poll** phase completes.
+- `setTimeout()` schedules a script to be run after a minimum threshold
+  in ms has elapsed.
 
 The order in which the timers are executed will vary depending on the
 context in which they are called. If both are called from within the
@@ -291,7 +292,7 @@ diagram, even though it's a part of the asynchronous API. This is because
 `process.nextTick()` is not technically part of the event loop. Instead,
 the `nextTickQueue` will be processed after the current operation is
 completed, regardless of the current phase of the event loop. Here,
-an *operation* is defined as a transition from the
+an _operation_ is defined as a transition from the
 underlying C/C++ handler, and handling the JavaScript that needs to be
 executed.
 
@@ -324,10 +325,10 @@ passing arguments to `process.nextTick()` allowing it to take any
 arguments passed after the callback to be propagated as the arguments to
 the callback so you don't have to nest functions.
 
-What we're doing is passing an error back to the user but only *after*
+What we're doing is passing an error back to the user but only _after_
 we have allowed the rest of the user's code to execute. By using
 `process.nextTick()` we guarantee that `apiCall()` always runs its
-callback *after* the rest of the user's code and *before* the event loop
+callback _after_ the rest of the user's code and _before_ the event loop
 is allowed to proceed. To achieve this, the JS call stack is allowed to
 unwind then immediately execute the provided callback which allows a
 person to make recursive calls to `process.nextTick()` without reaching a
@@ -403,9 +404,9 @@ any event handlers they want.
 We have two calls that are similar as far as users are concerned, but
 their names are confusing.
 
-* `process.nextTick()` fires immediately on the same phase
-* `setImmediate()` fires on the following iteration or 'tick' of the
-event loop
+- `process.nextTick()` fires immediately on the same phase
+- `setImmediate()` fires on the following iteration or 'tick' of the
+  event loop
 
 In essence, the names should be swapped. `process.nextTick()` fires more
 immediately than `setImmediate()`, but this is an artifact of the past
@@ -422,16 +423,16 @@ While they are confusing, the names themselves won't change.
 There are two main reasons:
 
 1. Allow users to handle errors, cleanup any then unneeded resources, or
-perhaps try the request again before the event loop continues.
+   perhaps try the request again before the event loop continues.
 
 2. At times it's necessary to allow a callback to run after the call
-stack has unwound but before the event loop continues.
+   stack has unwound but before the event loop continues.
 
 One example is to match the user's expectations. Simple example:
 
 ```js
 const server = net.createServer();
-server.on('connection', (conn) => {});
+server.on('connection', conn => {});
 
 server.listen(8080);
 server.on('listening', () => {});

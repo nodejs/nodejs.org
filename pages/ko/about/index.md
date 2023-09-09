@@ -42,6 +42,7 @@ dead-locking the process, since there are no locks. Almost no function in Node
 directly performs I/O, so the process never blocks. Because nothing blocks,
 scalable systems are very reasonable to develop in Node.
 -->
+
 이는 오늘날 OS 스레드가 일반적으로 사용하는 동시성 모델과는 대조적입니다. 스레드 기반의 네트워크는
 상대적으로 비효율적이고 사용하기가 몹시 어렵습니다. 게다가 잠금이 없으므로 Node.js 의 사용자는 프로세스의
 교착상태에 대해서 걱정할 필요가 없습니다. Node.js 에서 I/O를 직접 수행하는 함수는 거의 없으므로 프로세스는
@@ -55,6 +56,7 @@ If some of this language is unfamiliar, there is a full article on
 ---
 
 -->
+
 여기서 나오는 용어가 익숙하지 않다면 [블로킹 대 논-블로킹][]에 대한 글을 읽어보세요.
 
 ---
@@ -71,6 +73,7 @@ simply enters the event loop after executing the input script. Node exits the
 event loop when there are no more callbacks to perform. This behavior is like
 browser JavaScript — the event loop is hidden from the user.
 -->
+
 Node.js 는 Ruby의 [Event Machine][]이나 Python의 [Twisted][]같은 시스템과 설계상 유사하고
 영향을 받았습니다. Node.js 는 좀 더 발전된 이벤트 모델을 선택해서 라이브러리가 아닌 런타임 생성자로
 [이벤트 루프][]를 제공합니다. 다른 시스템에서는 이벤트 루프를 시작하는 블럭킹 호출이 항상 존재합니다.
@@ -92,6 +95,7 @@ communicate with. Built upon that same interface is the [`cluster`][] module,
 which allows you to share sockets between processes to enable load balancing
 over your cores.
 -->
+
 Node.js 에서 HTTP는 일급 객체(first class citizen)이고 스트리밍과 저지연을 염두에 두고
 설계되었습니다. 이는 Node.js 가 웹 라이브러리나 프레임워크의 기반으로 아주 적합하게 하였습니다.
 

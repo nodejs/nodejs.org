@@ -24,12 +24,12 @@ A Node.js Security Project Working Group will be established in the next few wee
 
 The Node.js Security Project, founded by Adam Baldwin and previously managed by [^Lift Security](https://liftsecurity.io/), an application security company, collects data around vulnerability and security flaws in the Node.js module ecosystem. The Node.js Foundation will take over the following responsibilities from ^Lift:
 
-* Maintaining an entry point for ecosystem vulnerability disclosure;
-* Maintaining a private communication channel for vulnerabilities to be vetted;
-* Vetting participants in the private security disclosure group;
-* Facilitating ongoing research and testing of security data;
-* Owning and publishing the base dataset of disclosures, and
-* Defining a standard for the data, which tool vendors can build on top of, and security and vendors can add data and value to as well.
+- Maintaining an entry point for ecosystem vulnerability disclosure;
+- Maintaining a private communication channel for vulnerabilities to be vetted;
+- Vetting participants in the private security disclosure group;
+- Facilitating ongoing research and testing of security data;
+- Owning and publishing the base dataset of disclosures, and
+- Defining a standard for the data, which tool vendors can build on top of, and security and vendors can add data and value to as well.
 
 “We are very excited about the opportunity to donate this project to the Node.js Foundation” said Adam Baldwin, team lead at ^[Lift](https://liftsecurity.io/)[Security](https://liftsecurity.io/) and founder of the Node.js Security Project. “The Foundation will be able to funnel contributions from numerous vendors, developers and end users to create an incredibly useful baseline of data sets that will be available to anyone. This ensures broader reach and long-lasting viability of the project to encourage availability of more security tools, which is increasingly in demand among Node.js enterprise developers and users.”
 

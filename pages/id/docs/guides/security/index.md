@@ -11,9 +11,9 @@ Dokumen ini bermaksud untuk memperluas [model ancaman][] saat ini dan memberikan
 
 ## Isi Dokumen
 
-* Praktik terbaik: Cara ringkas dan mudah untuk melihat praktik terbaik. Kami dapat menggunakan [masalah ini][security guidance issue] atau [panduan ini][nodejs guideline] sebagai titik awal. Penting untuk dicatat bahwa dokumen ini khusus untuk Node.js, jika Anda mencari sesuatu yang luas, pertimbangkan [Praktik Terbaik OSSF][].
-* Enjelasan serangan: Menjelaskan dan mendokumentasikan dengan bahasa yang jelas dan contoh kode (jika memungkinkan) serangan yang disebutkan dalam model ancaman.
-* Pustaka Pihak Ketiga: Mendefinisikan ancaman (serangan typo-squatting, paket berbahaya...) dan praktik terbaik sehubungan dengan dependensi modul node, dll...
+- Praktik terbaik: Cara ringkas dan mudah untuk melihat praktik terbaik. Kami dapat menggunakan [masalah ini][security guidance issue] atau [panduan ini][nodejs guideline] sebagai titik awal. Penting untuk dicatat bahwa dokumen ini khusus untuk Node.js, jika Anda mencari sesuatu yang luas, pertimbangkan [Praktik Terbaik OSSF][].
+- Enjelasan serangan: Menjelaskan dan mendokumentasikan dengan bahasa yang jelas dan contoh kode (jika memungkinkan) serangan yang disebutkan dalam model ancaman.
+- Pustaka Pihak Ketiga: Mendefinisikan ancaman (serangan typo-squatting, paket berbahaya...) dan praktik terbaik sehubungan dengan dependensi modul node, dll...
 
 ## Daftar Ancaman
 
@@ -28,7 +28,7 @@ Pastikan bahwa WebServer menangani kesalahan soket dengan benar, misalnya, ketik
 ```js
 const net = require('net');
 
-const server = net.createServer(function(socket) {
+const server = net.createServer(function (socket) {
   // socket.on('error', console.error) // ini mencegah server menjadi crash
   socket.write('Echo server\r\n');
   socket.pipe(socket);
@@ -43,9 +43,9 @@ Contoh serangan DoS yang tidak disebabkan oleh isi permintaan adalah [Slowloris]
 
 **Pengendalian**
 
-* Gunakan reverse proxy untuk menerima dan meneruskan permintaan ke aplikasi Node.js. Reverse proxies dapat menyediakan caching, load balancing, IP blacklisting, dan sebagainya, yang mengurangi kemungkinan serangan DoS menjadi efektif.
-* Konfigurasikan server timeouts dengan benar sehingga koneksi yang idle atau permintaan yang datang terlalu lambat dapat dijatuhkan. Lihat timeout yang berbeda pada [`http.Server`][], terutama `headersTimeout`, `requestTimeout`, `timeout`, dan `keepAliveTimeout`.
-* Batasi jumlah soket terbuka per host dan secara keseluruhan. Lihat [dokumentasi http][], terutama `agent.maxSockets`, `agent.maxTotalSockets`, `agent.maxFreeSockets`, dan `server.maxRequestsPerSocket`.
+- Gunakan reverse proxy untuk menerima dan meneruskan permintaan ke aplikasi Node.js. Reverse proxies dapat menyediakan caching, load balancing, IP blacklisting, dan sebagainya, yang mengurangi kemungkinan serangan DoS menjadi efektif.
+- Konfigurasikan server timeouts dengan benar sehingga koneksi yang idle atau permintaan yang datang terlalu lambat dapat dijatuhkan. Lihat timeout yang berbeda pada [`http.Server`][], terutama `headersTimeout`, `requestTimeout`, `timeout`, dan `keepAliveTimeout`.
+- Batasi jumlah soket terbuka per host dan secara keseluruhan. Lihat [dokumentasi http][], terutama `agent.maxSockets`, `agent.maxTotalSockets`, `agent.maxFreeSockets`, dan `server.maxRequestsPerSocket`.
 
 ### Pengikatan Ulang DNS (CWE-346)
 
@@ -57,8 +57,8 @@ Namun, melalui DNS rebinding, penyerang dapat sementara mengendalikan asal untuk
 
 **Pengurangan Risiko**
 
-* Matikan inspektor pada sinyal _SIGUSR1_ dengan melekatkan pendengar `process.on('SIGUSR1',...)` kepadanya.
-* Jangan jalankan protokol inspektor di produksi.
+- Matikan inspektor pada sinyal _SIGUSR1_ dengan melekatkan pendengar `process.on('SIGUSR1',...)` kepadanya.
+- Jangan jalankan protokol inspektor di produksi.
 
 ### Pemaparan Informasi Sensitif kepada Pelaku yang Tidak Sah (CWE-552)
 
@@ -68,9 +68,9 @@ Terdapat beberapa mekanisme untuk mengontrol perilaku ini dengan menentukan daft
 
 **Pengurangan Risiko**
 
-* Menggunakan `npm publish --dry-run` untuk melihat semua file yang akan dipublikasikan. Pastikan untuk meninjau kontennya sebelum menerbitkan paket.
-* Juga penting untuk membuat dan menjaga file-file yang diabaikan seperti `.gitignore` dan `.npmignore`. Dalam file-file ini, Anda dapat menentukan file/folder mana yang tidak boleh dipublikasikan. [Properti file][] dalam `package.json` memungkinkan operasi sebaliknya -- allowed list.
-* Jika terjadi pemaparan, pastikan untuk [membatalkan publikasi paket][].
+- Menggunakan `npm publish --dry-run` untuk melihat semua file yang akan dipublikasikan. Pastikan untuk meninjau kontennya sebelum menerbitkan paket.
+- Juga penting untuk membuat dan menjaga file-file yang diabaikan seperti `.gitignore` dan `.npmignore`. Dalam file-file ini, Anda dapat menentukan file/folder mana yang tidak boleh dipublikasikan. [Properti file][] dalam `package.json` memungkinkan operasi sebaliknya -- allowed list.
+- Jika terjadi pemaparan, pastikan untuk [membatalkan publikasi paket][].
 
 ### Pemalsuan Permintaan HTTP (CWE-444)
 
@@ -82,10 +82,10 @@ Karena serangan ini tergantung pada Node.js menafsirkan permintaan HTTP secara b
 
 **Pengurangan Risiko**
 
-* Jangan gunakan opsi `insecureHTTPParser` saat membuat Server HTTP.
-* Konfigurasikan server front-end untuk menormalkan permintaan yang ambigu.
-* Terus memantau kerentanan penyelundupan permintaan HTTP baru di Node.js dan server front-end pilihan.
-* Gunakan HTTP/2 ujung ke ujung dan nonaktifkan penurunan versi HTTP jika memungkinkan.
+- Jangan gunakan opsi `insecureHTTPParser` saat membuat Server HTTP.
+- Konfigurasikan server front-end untuk menormalkan permintaan yang ambigu.
+- Terus memantau kerentanan penyelundupan permintaan HTTP baru di Node.js dan server front-end pilihan.
+- Gunakan HTTP/2 ujung ke ujung dan nonaktifkan penurunan versi HTTP jika memungkinkan.
 
 ### Paparan Informasi melalui Timing Attacks (CWE-208)
 
@@ -95,10 +95,11 @@ Serangan itu dimungkinkan setiap kali aplikasi menggunakan rahasia dalam operasi
 
 **Mitigasi**
 
-* Crypto API memperlihatkan fungsi `timingSafeEqual` untuk membandingkan nilai sensitif aktual dan yang diharapkan menggunakan algoritme waktu konstan.
-* Untuk perbandingan kata sandi, Anda dapat menggunakan [scrypt][] yang tersedia juga di modul crypto asli.
+- Crypto API memperlihatkan fungsi `timingSafeEqual` untuk membandingkan nilai sensitif aktual dan yang diharapkan menggunakan algoritme waktu konstan.
+- Untuk perbandingan kata sandi, Anda dapat menggunakan [scrypt][] yang tersedia juga di modul crypto asli.
 
-* Lebih umum, hindari penggunaan rahasia dalam operasi waktu variabel. Ini termasuk percabangan rahasia dan, ketika penyerang dapat ditempatkan bersama di infrastruktur yang sama (misalnya, mesin cloud yang sama), menggunakan rahasia sebagai indeks ke dalam memori. Menulis kode waktu konstan dalam JavaScript itu sulit (sebagian karena JIT). Untuk aplikasi kripto, gunakan API kripto atau WebAssembly bawaan (untuk algoritme yang tidak diterapkan secara asli).
+- Lebih umum, hindari penggunaan rahasia dalam operasi waktu variabel. Ini termasuk percabangan rahasia dan, ketika penyerang dapat ditempatkan bersama di infrastruktur yang sama (misalnya, mesin cloud yang sama), menggunakan rahasia sebagai indeks ke dalam memori. Menulis kode waktu konstan dalam JavaScript itu sulit (sebagian karena JIT). Untuk aplikasi kripto, gunakan API kripto atau WebAssembly bawaan (untuk algoritme yang tidak diterapkan secara asli).
+
 ### Modul Pihak Ketiga Berbahaya (CWE-1357)
 
 Saat ini, di Node.js, paket apa pun dapat mengakses sumber daya yang kuat seperti akses jaringan. Selain itu, karena mereka juga memiliki akses ke sistem file, mereka dapat mengirimkan data apa saja ke mana saja.
@@ -117,23 +118,23 @@ Ketergantungan yang ditentukan dalam file `package.json` dapat memiliki nomor ve
 
 Vektor serangan yang mungkin terjadi:
 
-* Serangan salah ketik
-* Keracunan Lockfile
-* Pengelola yang dikompromikan
-* Paket Berbahaya
-* Kebingungan Ketergantungan
+- Serangan salah ketik
+- Keracunan Lockfile
+- Pengelola yang dikompromikan
+- Paket Berbahaya
+- Kebingungan Ketergantungan
 
 **Mitigasi**
 
-* Cegah npm mengeksekusi skrip arbitrer dengan `--ignore-scripts`
-  * Selain itu, Anda dapat menonaktifkannya secara global dengan `npm config set quit-scripts true`
-* Sematkan versi dependensi ke versi tetap tertentu, bukan versi yang merupakan rentang atau dari sumber yang dapat diubah.
-* Gunakan lockfiles, yang menyematkan setiap ketergantungan (langsung dan transitif).
-  * Gunakan [Mitigasi untuk kerusakan lockfile][].
-* Otomatiskan pemeriksaan kerentanan baru menggunakan CI, dengan alat seperti [`npm-audit`][].
-  * Alat seperti [`Socket`][] dapat digunakan untuk menganalisis paket dengan analisis statis untuk menemukan perilaku berisiko seperti akses jaringan atau sistem file.
-* Gunakan [`npm ci`][] alih-alih ` instal npm`. Ini memaksa file kunci sehingga ketidakkonsistenan antara itu dan File _package.json_ menyebabkan kesalahan (alih-alih mengabaikan file kunci mendukung _package.json_).
-* Periksa file _package.json_ dengan hati-hati untuk kesalahan/salah ketik pada nama dependencies.
+- Cegah npm mengeksekusi skrip arbitrer dengan `--ignore-scripts`
+  - Selain itu, Anda dapat menonaktifkannya secara global dengan `npm config set quit-scripts true`
+- Sematkan versi dependensi ke versi tetap tertentu, bukan versi yang merupakan rentang atau dari sumber yang dapat diubah.
+- Gunakan lockfiles, yang menyematkan setiap ketergantungan (langsung dan transitif).
+  - Gunakan [Mitigasi untuk kerusakan lockfile][].
+- Otomatiskan pemeriksaan kerentanan baru menggunakan CI, dengan alat seperti [`npm-audit`][].
+  - Alat seperti [`Socket`][] dapat digunakan untuk menganalisis paket dengan analisis statis untuk menemukan perilaku berisiko seperti akses jaringan atau sistem file.
+- Gunakan [`npm ci`][] alih-alih ` instal npm`. Ini memaksa file kunci sehingga ketidakkonsistenan antara itu dan File _package.json_ menyebabkan kesalahan (alih-alih mengabaikan file kunci mendukung _package.json_).
+- Periksa file _package.json_ dengan hati-hati untuk kesalahan/salah ketik pada nama dependencies.
 
 ### Pelanggaran Akses Memori (CWE-284)
 
@@ -143,8 +144,8 @@ Sayangnya, secure heap tidak tersedia di Windows. Informasi lebih lanjut dapat d
 
 **Mitigasi**
 
-* Gunakan `--secure-heap=n` bergantung pada aplikasi Anda di mana _n_ dialokasikan ukuran byte maksimum.
-* Jangan menjalankan aplikasi produksi Anda di mesin bersama.
+- Gunakan `--secure-heap=n` bergantung pada aplikasi Anda di mana _n_ dialokasikan ukuran byte maksimum.
+- Jangan menjalankan aplikasi produksi Anda di mesin bersama.
 
 ### Penambalan Monyet (CWE-349)
 
@@ -173,6 +174,7 @@ Array.prototype.push = function (item) {
 ```
 
 Namun, penting untuk disebutkan bahwa Anda masih dapat menentukan global baru dan mengganti global yang ada menggunakan `globalThis`
+
 ```console
 > globalThis.foo = 3; foo; // Anda masih bisa mendefinisikan global baru
 3
@@ -184,12 +186,12 @@ Oleh karena itu, `Object.freeze(globalThis)` dapat digunakan untuk menjamin tida
 
 ### Prototipe Serangan Polusi (CWE-1321)
 
-Polusi prototipe mengacu pada kemungkinan untuk memodifikasi atau menyuntikkan properti ke item bahasa Javascript dengan menyalahgunakan penggunaan _\_proto\__, _constructor_, _prototype_, dan properti lain yang diwarisi dari prototipe bawaan.
+Polusi prototipe mengacu pada kemungkinan untuk memodifikasi atau menyuntikkan properti ke item bahasa Javascript dengan menyalahgunakan penggunaan \_\_proto\__, \_constructor_, _prototype_, dan properti lain yang diwarisi dari prototipe bawaan.
 
 <!-- eslint-skip -->
 
 ```js
-const a = {"a": 1, "b": 2};
+const a = { a: 1, b: 2 };
 const data = JSON.parse('{"__proto__": { "polluted": true}}');
 
 const c = Object.assign({}, a, data);
@@ -205,18 +207,18 @@ Ini adalah kerentanan potensial yang diwarisi dari bahasa JavaScript.
 
 **Contoh**:
 
-* [CVE-2022-21824][] (Node.js)
-* [CVE-2018-3721][] (Perpustakaan Pihak ke-3: Lodash)
+- [CVE-2022-21824][] (Node.js)
+- [CVE-2018-3721][] (Perpustakaan Pihak ke-3: Lodash)
 
 **Mitigasi**
 
-* Hindari [penggabungan rekursif tidak aman][], lihat [CVE-2018-16487][].
-* Terapkan validasi Skema JSON untuk permintaan eksternal/tidak tepercaya.
-* Buat Objek tanpa prototipe dengan menggunakan `Object.create(null)`.
-* Membekukan prototipe: `Object.freeze(MyObject.prototype)`.
-* Nonaktifkan properti `Object.prototype.__proto__` menggunakan flag `--disable-proto`.
-* Periksa apakah properti ada langsung pada objek, bukan dari prototipe menggunakan `Object.hasOwn(obj, keyFromObj)`.
-* Hindari menggunakan metode dari `Object.prototype`.
+- Hindari [penggabungan rekursif tidak aman][], lihat [CVE-2018-16487][].
+- Terapkan validasi Skema JSON untuk permintaan eksternal/tidak tepercaya.
+- Buat Objek tanpa prototipe dengan menggunakan `Object.create(null)`.
+- Membekukan prototipe: `Object.freeze(MyObject.prototype)`.
+- Nonaktifkan properti `Object.prototype.__proto__` menggunakan flag `--disable-proto`.
+- Periksa apakah properti ada langsung pada objek, bukan dari prototipe menggunakan `Object.hasOwn(obj, keyFromObj)`.
+- Hindari menggunakan metode dari `Object.prototype`.
 
 ### Elemen Jalur Pencarian Tidak Terkontrol (CWE-427)
 
@@ -224,10 +226,10 @@ Node.js memuat modul mengikuti [Module Resolution Algorithm][]. Oleh karena itu,
 
 Artinya, perilaku aplikasi berikut diharapkan. Dengan asumsi struktur direktori berikut:
 
-* _app/_
-  * _server.js_
-  * _auth.js_
-  * _auth_
+- _app/_
+  - _server.js_
+  - _auth.js_
+  - _auth_
 
 Jika server.js menggunakan `require('./auth')` ia akan mengikuti algoritme resolusi modul dan memuat _auth_ alih-alih _auth.js_.
 
@@ -243,7 +245,7 @@ Menggunakan [¹][experimental-features] [mekanisme kebijakan dengan pemeriksaan 
     },
     "./app/server.js": {
       "dependencies": {
-        "./auth" : "./app/auth.js"
+        "./auth": "./app/auth.js"
       },
       "integrity": "sha256-NPtLCQ0ntPPWgfVEgX46ryTNpdvTWdQPoZO3kHo0bKI="
     }
