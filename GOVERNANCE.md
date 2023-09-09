@@ -24,7 +24,7 @@ Members of this team are nominated either by the Node.js Technical Steering Comm
 
 ### Node.js Web Standards Team (`@nodejs/web-standards`)
 
-The Node.js Web Standards Team is composed by Node.js Collaborators and External Collaborators that have extensive (or expertisè) on Web Standards, such as Ecma262. The Standards Team is responsible for guiding and serving as point of contacts when either Node.js Collaborators, or the Node.js Technical Steering Committee (TSC) or the Web Team requires assistance or guidance regarding Web Standards.
+The Node.js Web Standards Team is composed of Node.js Collaborators and External Collaborators that have extensive experience or expertisè on Web Standards, such as Ecma262. The Standards Team is responsible for guiding and serving as points of contact when either Node.js Collaborators, the Node.js Technical Steering Committee (TSC), or the Web Team, requires assistance or guidance regarding Web Standards.
 
 Members of this team are nominated by the Node.js Technical Steering Committee (TSC). Note that members of the Node.js Web Team might also recommend people for nomination.
 
