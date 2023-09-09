@@ -5,33 +5,33 @@ title: 通过包管理器安装 Node.js
 
 # 通过包管理器方式安装 Node.js
 
-***注意：*** 此页面上所有的安装包均有它们各自作者，**非** Node.js 核心团队负责进行维护和支持。如遇任何问题，请直接向有关作者报告。 如你的问题被证实是因为 Node.js 的缺陷引发的，维护者将直接向 Node.js 汇报此问题。
+**_注意：_** 此页面上所有的安装包均有它们各自作者，**非** Node.js 核心团队负责进行维护和支持。如遇任何问题，请直接向有关作者报告。 如你的问题被证实是因为 Node.js 的缺陷引发的，维护者将直接向 Node.js 汇报此问题。
 
 ---
 
-* [Alpine Linux](#alpine-linux)
-* [Android](#android)
-* [Arch Linux](#arch-linux)
-* [CentOS, Fedora 和 Red Hat Enterprise Linux](#centos-fedora-和-red-hat-enterprise-linux)
-* [基于 Linux 发布的 Debian 和 Ubuntu](#基于-linux-发布的-debian-和-ubuntu)
-* [fnm](#fnm)
-* [FreeBSD](#freebsd)
-* [Gentoo](#gentoo)
-* [IBM i](#ibm-i)
-* [nvm](#macos)
-* [n](#n)
-* [NetBSD](#netbsd)
-* [Nodenv](#nodenv)
-* [nvm](#nvm)
-* [nvs](#nvs)
-* [OpenBSD](#openbsd)
-* [openSUSE 和 SLE](#opensuse-和-sle)
-* [SmartOS 和 illumos](#smartos-和-illumos)
-* [Snap](#snap)
-* [Solus](#solus)
-* [Void Linux](#void-linux)
-* [Windows](#windows-1)
-* [z/OS](#zos)
+- [Alpine Linux](#alpine-linux)
+- [Android](#android)
+- [Arch Linux](#arch-linux)
+- [CentOS, Fedora 和 Red Hat Enterprise Linux](#centos-fedora-和-red-hat-enterprise-linux)
+- [基于 Linux 发布的 Debian 和 Ubuntu](#基于-linux-发布的-debian-和-ubuntu)
+- [fnm](#fnm)
+- [FreeBSD](#freebsd)
+- [Gentoo](#gentoo)
+- [IBM i](#ibm-i)
+- [nvm](#macos)
+- [n](#n)
+- [NetBSD](#netbsd)
+- [Nodenv](#nodenv)
+- [nvm](#nvm)
+- [nvs](#nvs)
+- [OpenBSD](#openbsd)
+- [openSUSE 和 SLE](#opensuse-和-sle)
+- [SmartOS 和 illumos](#smartos-和-illumos)
+- [Snap](#snap)
+- [Solus](#solus)
+- [Void Linux](#void-linux)
+- [Windows](#windows-1)
+- [z/OS](#zos)
 
 ---
 
@@ -93,8 +93,9 @@ dnf module install nodejs:18/common
 ### 可替换项
 
 这些资源提供了与CentOS、Fedora和RHEL兼容的包。
-* [Node.js 快照](#snap) 在 https://github.com/nodejs/snap 得到支持和维护。
-* [Node.js 二进制发布版](#debian-and-ubuntu-based-linux-distributions) 通过 [NodeSource](https://github.com/nodesource/distributions) 得到维护支持。
+
+- [Node.js 快照](#snap) 在 https://github.com/nodejs/snap 得到支持和维护。
+- [Node.js 二进制发布版](#debian-and-ubuntu-based-linux-distributions) 通过 [NodeSource](https://github.com/nodesource/distributions) 得到维护支持。
 
 ## 基于 Linux 发布的 Debian 和 Ubuntu
 
@@ -221,6 +222,7 @@ pkgin -y install nodejs
 Nodenv 安装程序通过[此GitHub 页](https://github.com/nodenv/nodenv#installation)进行维护。请访问并确保你完全遵循了最新版本的安装步骤。
 
 ## nvm
+
 节点版本管理器是一个基础脚本，用于管理多个发布的 Node.js 版本。 它允许 您执行诸如安装、卸载、切换版本等操作。 要安装 nvm，请使用 [安装脚本](https://github.com/nvm-sh/nvm#install--update-script)。
 
 在 Unix / OS X 系统节点。 可以通过 [nvm](https://github.com/creationix/nvm) 通过安装到 nvm 期望的位置来安装源代码生成：
@@ -244,6 +246,7 @@ nvm uninstall 8
 ## nvs
 
 #### Windows
+
 `nvs` 版本管理器是跨平台的，可以在 Windows 、 macOS 和 Unix 式系统上使用
 
 若要在Windows上安装 `nvs` ，请到这里的 [发布页面](https://github.com/jasongin/nvs/releases) 并下载最新版本的 MSI安装程序文件。
@@ -255,9 +258,11 @@ choco install nvs
 ```
 
 #### macOS，UnixLike
+
 您可以在这里的macOS/ Unix式系统 [找到关于 `nvs` 安装步骤的文档](https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux)
 
 #### 使用方法
+
 在此之后，您可以使用 `nvs` 在不同版本的节点之间切换。
 
 要添加最新版本的 Node：
@@ -304,10 +309,10 @@ pkg_add node
 
 Node.js在以下软件包的主仓库中可用：
 
-* **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
-* **openSUSE Tumbleweed**: `nodejs16`
-* **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, and `nodejs14` ("Web and Scripting Module" 必须是 [启用](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated)状态)
-* **SUSE Linux Enterprise Server (SLES) 15**: `nodejs10`, `nodejs12`, and `nodejs14` ("Web and Scripting Module" 必须是 [启用](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module)状态)
+- **openSUSE Leap 15.2**: `nodejs10`, `nodejs12`, `nodejs14`
+- **openSUSE Tumbleweed**: `nodejs16`
+- **SUSE Linux Enterprise Server (SLES) 12**: `nodejs10`, `nodejs12`, and `nodejs14` ("Web and Scripting Module" 必须是 [启用](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/12-SP5/#intro-modulesExtensionsRelated)状态)
+- **SUSE Linux Enterprise Server (SLES) 15**: `nodejs10`, `nodejs12`, and `nodejs14` ("Web and Scripting Module" 必须是 [启用](https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15/#Intro.Module)状态)
 
 例如，若要在 openSUSE Leap 15.2上安装 Node.js 14.x，请以 root 身份运行以下命令：
 
@@ -386,5 +391,6 @@ scoop install nodejs-lts
 ## z/OS
 
 IBM&reg; SDK for Node.js - z/OS&reg; 可用两种安装格式。 SMP/E 和 PAX 。 选择适用于您的安装格式：
-* [在 z/OS 上安装配置 Node.js 的 SMP/E 版本](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
-* [在 z/OS 上安装和配置Node.js 的 PAX 版](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)
+
+- [在 z/OS 上安装配置 Node.js 的 SMP/E 版本](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-smpe-edition)
+- [在 z/OS 上安装和配置Node.js 的 PAX 版](https://www.ibm.com/docs/en/sdk-nodejs-zos/14.0?topic=configuring-installing-pax-edition)

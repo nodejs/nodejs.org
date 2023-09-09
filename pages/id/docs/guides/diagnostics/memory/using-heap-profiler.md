@@ -30,9 +30,9 @@ node --inspect index.js
 
 Hubungkan ke instance dev-tools di Chrome dan kemudian:
 
-* Pilih tab `Memory`.
-* Pilih  `Allocation instrumentation timeline`.
-* Mulai memprofil.
+- Pilih tab `Memory`.
+- Pilih `Allocation instrumentation timeline`.
+- Mulai memprofil.
 
 ![tutorial profiler heap langkah 1][3]
 
@@ -82,9 +82,9 @@ Buat beberapa beban dan hentikan profiler. Ini akan menghasilkan ringkasan denga
 
 ## Link Berguna
 
-* https://developer.chrome.com/docs/devtools/memory-problems/memory-101/
-* https://github.com/v8/sampling-heap-profiler
-* https://developer.chrome.com/docs/devtools/memory-problems/allocation-profiler/
+- https://developer.chrome.com/docs/devtools/memory-problems/memory-101/
+- https://github.com/v8/sampling-heap-profiler
+- https://developer.chrome.com/docs/devtools/memory-problems/allocation-profiler/
 
 [Using Heap Snapshot]: /en/docs/guides/diagnostics/memory/using-heap-snapshot/
 [@mmarchini/observe]: https://www.npmjs.com/package/@mmarchini/observe

@@ -48,12 +48,12 @@ Karena salah satu dari operasi ini dapat dijadwalkan _lebih_ operasi dan baru pe
 
 ## Ikhtisar Fase
 
-* **timer**: fase ini mengeksekusi callback yang dijadwalkan oleh `setTimeout()` dan `setInterval()`.
-* **panggilan balik yang tertunda**: mengeksekusi panggilan balik I/O yang ditangguhkan ke loop berikutnya pengulangan.
-* **idle, prepare**: hanya digunakan secara internal.
-* **jajak pendapat**: mengambil peristiwa I/O baru; jalankan panggilan balik terkait I/O (hampir) semua dengan pengecualian close callback, yang dijadwalkan oleh timer, dan `setImmediate()`); node akan memblokir di sini bila perlu.
-* **check**: callback `setImmediate()` dipanggil di sini.
-* **close callback**: beberapa close callback, mis. `socket.on('tutup', ...)`.
+- **timer**: fase ini mengeksekusi callback yang dijadwalkan oleh `setTimeout()` dan `setInterval()`.
+- **panggilan balik yang tertunda**: mengeksekusi panggilan balik I/O yang ditangguhkan ke loop berikutnya pengulangan.
+- **idle, prepare**: hanya digunakan secara internal.
+- **jajak pendapat**: mengambil peristiwa I/O baru; jalankan panggilan balik terkait I/O (hampir) semua dengan pengecualian close callback, yang dijadwalkan oleh timer, dan `setImmediate()`); node akan memblokir di sini bila perlu.
+- **check**: callback `setImmediate()` dipanggil di sini.
+- **close callback**: beberapa close callback, mis. `socket.on('tutup', ...)`.
 
 Di antara setiap putaran acara, Node.js memeriksa apakah itu menunggu setiap I/O atau penghitung waktu asinkron dan mati dengan bersih jika tidak ada setiap.
 
@@ -111,12 +111,13 @@ Fase **jajak pendapat** memiliki dua fungsi utama:
 
 Saat loop peristiwa memasuki fase **poll** _dan tidak ada timer dijadwalkan_, salah satu dari dua hal akan terjadi:
 
-* _Jika antrean **poll** **tidak kosong**_, loop peristiwa akan berulang melalui antrian panggilan baliknya yang mengeksekusinya secara sinkron sampai baik antrian telah habis, atau batas keras yang bergantung pada sistem tercapai.
+- _Jika antrean **poll** **tidak kosong**_, loop peristiwa akan berulang melalui antrian panggilan baliknya yang mengeksekusinya secara sinkron sampai baik antrian telah habis, atau batas keras yang bergantung pada sistem tercapai.
 
-* _Jika antrean **jajak pendapat** **kosong**_, salah satu dari dua hal lagi akan terjadi:
-  * Jika skrip telah dijadwalkan oleh `setImmediate()`, loop acara akan mengakhiri fase **poll** dan melanjutkan ke fase **check** ke jalankan skrip terjadwal tersebut.
+- _Jika antrean **jajak pendapat** **kosong**_, salah satu dari dua hal lagi akan terjadi:
 
-  * Jika skrip **belum** dijadwalkan oleh `setImmediate()`, maka loop acara akan menunggu panggilan balik ditambahkan ke antrian, lalu mengeksekusi mereka segera.
+  - Jika skrip telah dijadwalkan oleh `setImmediate()`, loop acara akan mengakhiri fase **poll** dan melanjutkan ke fase **check** ke jalankan skrip terjadwal tersebut.
+
+  - Jika skrip **belum** dijadwalkan oleh `setImmediate()`, maka loop acara akan menunggu panggilan balik ditambahkan ke antrian, lalu mengeksekusi mereka segera.
 
 Setelah antrean **poll** kosong, loop acara akan memeriksa timer _yang batas waktunya telah tercapai_. Jika satu atau lebih pengatur waktu adalah siap, loop acara akan kembali ke fase **timers** untuk dieksekusi callback pengatur waktu itu.
 
@@ -136,8 +137,8 @@ Jika soket atau pegangan ditutup tiba-tiba (misalnya `socket.destroy()`), Acara 
 
 `setImmediate()` dan `setTimeout()` serupa, tetapi berperilaku berbeda cara tergantung pada saat mereka dipanggil.
 
-* `setImmediate()` dirancang untuk mengeksekusi skrip setelah fase **jajak pendapat** saat ini selesai.
-* `setTimeout()` menjadwalkan skrip untuk dijalankan setelah ambang batas minimum di ms telah berlalu.
+- `setImmediate()` dirancang untuk mengeksekusi skrip setelah fase **jajak pendapat** saat ini selesai.
+- `setTimeout()` menjadwalkan skrip untuk dijalankan setelah ambang batas minimum di ms telah berlalu.
 
 Urutan di mana penghitung waktu dijalankan akan bervariasi tergantung pada konteks di mana mereka dipanggil. Jika keduanya dipanggil dari dalam modul utama, maka waktu akan terikat oleh kinerja proses (yang dapat dipengaruhi oleh aplikasi lain yang berjalan di mesin).
 
@@ -196,9 +197,9 @@ Keuntungan utama menggunakan `setImmediate()` daripada `setTimeout()` adalah `se
 
 ### Memahami `process.nextTick()`
 
-Anda mungkin telah memperhatikan bahwa `process.nextTick()` tidak ditampilkan di diagram, meskipun itu adalah bagian dari API asinkron. Hal ini karena `process.nextTick()` secara teknis bukan bagian dari loop peristiwa. Alih-alih, `nextTickQueue` akan diproses setelah operasi saat ini selesai, terlepas dari fase loop acara saat ini. Di Sini, sebuah *operasi* didefinisikan sebagai transisi dari penangan C/C++ yang mendasarinya, dan penanganan JavaScript yang perlu dieksekusi.
+Anda mungkin telah memperhatikan bahwa `process.nextTick()` tidak ditampilkan di diagram, meskipun itu adalah bagian dari API asinkron. Hal ini karena `process.nextTick()` secara teknis bukan bagian dari loop peristiwa. Alih-alih, `nextTickQueue` akan diproses setelah operasi saat ini selesai, terlepas dari fase loop acara saat ini. Di Sini, sebuah _operasi_ didefinisikan sebagai transisi dari penangan C/C++ yang mendasarinya, dan penanganan JavaScript yang perlu dieksekusi.
 
-Melihat kembali diagram kita, setiap kali Anda memanggil `process.nextTick()` dalam sebuah fase tertentu, semua panggilan balik yang diteruskan ke `process.nextTick()` akan menjadi diselesaikan sebelum loop acara berlanjut. Ini bisa membuat beberapa hal buruk situasi karena ** memungkinkan Anda untuk "melaparkan" I/O Anda dengan membuat panggilan `process.nextTick()` rekursif*** yang mencegah loop peristiwa dari mencapai fase **jajak pendapat**.
+Melihat kembali diagram kita, setiap kali Anda memanggil `process.nextTick()` dalam sebuah fase tertentu, semua panggilan balik yang diteruskan ke `process.nextTick()` akan menjadi diselesaikan sebelum loop acara berlanjut. Ini bisa membuat beberapa hal buruk situasi karena ** memungkinkan Anda untuk "melaparkan" I/O Anda dengan membuat panggilan `process.nextTick()` rekursif\*** yang mencegah loop peristiwa dari mencapai fase **jajak pendapat**.
 
 ### Mengapa itu diizinkan?
 
@@ -216,7 +217,7 @@ function apiCall(arg, callback) {
 
 Cuplikan melakukan pemeriksaan argumen dan jika tidak benar, itu akan lolos kesalahan pada panggilan balik. API diperbarui cukup baru untuk memungkinkan meneruskan argumen ke `process.nextTick()` yang memungkinkannya mengambil apa pun argumen yang diteruskan setelah panggilan balik untuk disebarkan sebagai argumen untuk panggilan balik sehingga Anda tidak perlu menumpuk fungsi.
 
-Apa yang kami lakukan adalah meneruskan kesalahan kembali ke pengguna tetapi hanya *setelah* kami telah mengizinkan sisa kode pengguna untuk dieksekusi. Dengan menggunakan `process.nextTick()` kami menjamin bahwa `apiCall()` selalu berjalan panggilan balik *setelah* sisa kode pengguna dan *sebelum* loop acara diperbolehkan untuk dilanjutkan. Untuk mencapai ini, tumpukan panggilan JS diizinkan untuk bersantai kemudian segera jalankan panggilan balik yang disediakan yang memungkinkan a orang untuk membuat panggilan rekursif ke `process.nextTick()` tanpa mencapai a `RangeError: Ukuran tumpukan panggilan maksimum terlampaui dari v8`.
+Apa yang kami lakukan adalah meneruskan kesalahan kembali ke pengguna tetapi hanya _setelah_ kami telah mengizinkan sisa kode pengguna untuk dieksekusi. Dengan menggunakan `process.nextTick()` kami menjamin bahwa `apiCall()` selalu berjalan panggilan balik _setelah_ sisa kode pengguna dan _sebelum_ loop acara diperbolehkan untuk dilanjutkan. Untuk mencapai ini, tumpukan panggilan JS diizinkan untuk bersantai kemudian segera jalankan panggilan balik yang disediakan yang memungkinkan a orang untuk membuat panggilan rekursif ke `process.nextTick()` tanpa mencapai a `RangeError: Ukuran tumpukan panggilan maksimum terlampaui dari v8`.
 
 Filosofi ini dapat menyebabkan beberapa situasi yang berpotensi bermasalah. Ambil cuplikan ini misalnya:
 
@@ -271,8 +272,8 @@ Untuk menyiasatinya, acara `'listening'` diantrekan di `nextTick()` untuk memung
 
 Kami memiliki dua panggilan yang serupa sejauh menyangkut pengguna, tapi nama mereka membingungkan.
 
-* `process.nextTick()` langsung aktif pada fase yang sama
-* `setImmediate()` diaktifkan pada iterasi berikut atau 'centang' dari lingkaran acara
+- `process.nextTick()` langsung aktif pada fase yang sama
+- `setImmediate()` diaktifkan pada iterasi berikut atau 'centang' dari lingkaran acara
 
 Intinya, nama harus ditukar. `process.nextTick()` mengaktifkan lebih banyak langsung dari `setImmediate()`, tetapi ini adalah artefak dari masa lalu yang tidak mungkin berubah. Membuat sakelar ini akan merusak banyak persentase paket di npm. Setiap hari lebih banyak modul baru sedang tambah, yang berarti setiap hari kita menunggu, lebih banyak potensi kerusakan terjadi. Meskipun membingungkan, namanya sendiri tidak akan berubah.
 
@@ -290,7 +291,7 @@ Salah satu contohnya adalah agar sesuai dengan harapan pengguna. Contoh sederhan
 
 ```js
 const server = net.createServer();
-server.on('connection', (conn) => {});
+server.on('connection', conn => {});
 
 server.listen(8080);
 server.on('listening', () => {});

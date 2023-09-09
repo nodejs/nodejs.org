@@ -78,16 +78,16 @@ The goal of the team, especially that of the project lead, is to drive
 consensus and ensure accountability. This means asking critical questions and
 being able to answer them specifically and succinctly, for example:
 
-* What are we trying to solve with this change?
-* Does this change effectively solve for this problem?
-* Does this API have a consumer?
-* Does this API reach the broadest amount of use cases?
-* Is this API supportable?
-* Does this change have adverse effects on other subsystems or use cases (and is that acceptable)?
-* Does this change have tests that verify its operation, now and in the future?
-* Does this change pass our style guidelines?
-* Does this change pass our integration tests for the matrix of our supported configurations?
-  * For instance: ia32 and x64 for Windows, Linux, OSX, SmartOS
+- What are we trying to solve with this change?
+- Does this change effectively solve for this problem?
+- Does this API have a consumer?
+- Does this API reach the broadest amount of use cases?
+- Is this API supportable?
+- Does this change have adverse effects on other subsystems or use cases (and is that acceptable)?
+- Does this change have tests that verify its operation, now and in the future?
+- Does this change pass our style guidelines?
+- Does this change pass our integration tests for the matrix of our supported configurations?
+  - For instance: ia32 and x64 for Windows, Linux, OSX, SmartOS
 
 These are just some of the questions, and while the questions are not unusual
 or unique to Node.js, they are still important.

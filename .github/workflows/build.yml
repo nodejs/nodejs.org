@@ -28,11 +28,12 @@ permissions:
 
 jobs:
   base:
-    # This Job ensures that these jobs run either on regular Pull Request Updates
-    # Or if the PR gets labeled with `github_actions:pull-request`
+    # This Job should run either on `merge_groups` or `push` events
+    # or `pull_request_target` event with a `labeled` action with a label named `github_actions:pull-request`
     if: |
-      github.event.action != 'labeled' ||
-      (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request')
+      (github.event_name == 'push' || github.event_name == 'merge_group') ||
+      (github.event_name == 'pull_request_target' &&
+        github.event.label.name == 'github_actions:pull-request')
 
     name: Base Tasks
     runs-on: ubuntu-latest
@@ -42,17 +43,17 @@ jobs:
     steps:
       - name: Provide Turborepo Arguments
         id: turborepo_arguments
-        # We also set the Turborepo Cache to the `.turbo` folder
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--cache-dir
         # See https://turbo.build/repo/docs/reference/command-line-reference/run#--force
         run: echo "turbo_args=--force=true --cache-dir=.turbo/cache" >> "$GITHUB_OUTPUT"
 
   build:
-    # This Job ensures that these jobs run either on regular Pull Request Updates
-    # Or if the PR gets labeled with `github_actions:pull-request`
+    # This Job should run either on `merge_groups` or `push` events
+    # or `pull_request_target` event with a `labeled` action with a label named `github_actions:pull-request`
     if: |
-      github.event.action != 'labeled' ||
-      (github.event.action == 'labeled' && github.event.label.name == 'github_actions:pull-request')
+      (github.event_name == 'push' || github.event_name == 'merge_group') ||
+      (github.event_name == 'pull_request_target' &&
+        github.event.label.name == 'github_actions:pull-request')
 
     name: Build on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
@@ -73,6 +74,10 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
         with:
+          # Fetch from the PRs Repository instead of Node.js' repository
+          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
+          # Since we trigger this with a Labeled Event we might not get the latest commit
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
           # We only need to fetch the last commit from the head_ref
           # since we're not using the `--filter` operation from turborepo
           # We don't use the `--filter` as we always want to force builds regardless of having changes or not
@@ -119,8 +124,6 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=4096'
 
       - name: Build Next.js (Static)
-        # Assigns an ID to be reused on other steps
-        id: build_nextjs_static
         # Skips a few steps if not on a Pull Request (Merge Group) or it is a Dependabot PR
         # i.e. if the Event is a Merge Queue Event
         # We also don't need to run a Static Build on a Crowdin PR
@@ -140,9 +143,9 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=4096'
 
       - name: Save Build Cache
-        # This prevents this step from running if "Next.js Build (Static)" got cancelled; Which gets cancelled if
-        # the curruent branch comes from Dependabot or the Event is not a Pull Request (i.e. Merge Queue Event)
-        if: steps.build_nextjs_static.outcome == 'success'
+        # We want to store the Build Cache within Pull Requests or during pushes against the `main` branch
+        if: |
+          github.event_name == 'push' || github.event_name == 'pull_request_target'
         uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8
         with:
           path: |

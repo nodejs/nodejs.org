@@ -63,7 +63,7 @@ app.get('/auth', (req, res) => {
 });
 ```
 
-*Harap dicatat bahwa ini BUKAN penangan yang disarankan untuk mengautentikasi pengguna di aplikasi Node.js Anda dan digunakan murni untuk tujuan ilustrasi. Anda tidak boleh mencoba merancang mekanisme otentikasi kriptografi Anda sendiri secara umum. Jauh lebih baik menggunakan solusi autentikasi yang sudah ada dan terbukti.*
+_Harap dicatat bahwa ini BUKAN penangan yang disarankan untuk mengautentikasi pengguna di aplikasi Node.js Anda dan digunakan murni untuk tujuan ilustrasi. Anda tidak boleh mencoba merancang mekanisme otentikasi kriptografi Anda sendiri secara umum. Jauh lebih baik menggunakan solusi autentikasi yang sudah ada dan terbukti._
 
 Sekarang asumsikan bahwa kami telah menerapkan aplikasi kami dan pengguna mengeluh tentang latensi tinggi pada permintaan. Kami dapat dengan mudah menjalankan aplikasi dengan profiler bawaan:
 
@@ -156,7 +156,7 @@ Kami melihat bahwa 3 entri teratas menyumbang 72,1% dari waktu CPU yang diambil 
    3161  100.0%      LazyCompile: *exports.pbkdf2Sync crypto.js:552:30
 ```
 
-Parsing bagian ini membutuhkan sedikit lebih banyak pekerjaan daripada jumlah centang mentah di atas. Dalam setiap "tumpukan panggilan" di atas, persentase di kolom induk memberi tahu Anda persentase sampel yang fungsinya pada baris di atas adalah dipanggil oleh fungsi di baris saat ini. Misalnya, di tengah "panggilan stack" di atas untuk _sha1_block_data_order, kita melihat bahwa `_sha1_block_data_order` terjadi di 11,9% sampel, yang kami ketahui dari jumlah mentah di atas. Namun, di sini, kami juga dapat mengatakan bahwa itu selalu dipanggil oleh fungsi pbkdf2 di dalam Modul kripto Node.js. Kami melihat bahwa dengan cara yang sama, `_malloc_zone_malloc` dipanggil hampir secara eksklusif oleh fungsi pbkdf2 yang sama. Jadi, dengan menggunakan informasi dalam tampilan ini, kami dapat mengetahui bahwa perhitungan hash kami dari kata sandi pengguna menyumbang tidak hanya untuk 51,8% dari atas tetapi juga untuk semua waktu CPU di atas 3 fungsi yang paling banyak sampelnya sejak panggilan ke `_sha1_block_data_order` dan `_malloc_zone_malloc` dibuat atas nama fungsi pbkdf2.
+Parsing bagian ini membutuhkan sedikit lebih banyak pekerjaan daripada jumlah centang mentah di atas. Dalam setiap "tumpukan panggilan" di atas, persentase di kolom induk memberi tahu Anda persentase sampel yang fungsinya pada baris di atas adalah dipanggil oleh fungsi di baris saat ini. Misalnya, di tengah "panggilan stack" di atas untuk \_sha1_block_data_order, kita melihat bahwa `_sha1_block_data_order` terjadi di 11,9% sampel, yang kami ketahui dari jumlah mentah di atas. Namun, di sini, kami juga dapat mengatakan bahwa itu selalu dipanggil oleh fungsi pbkdf2 di dalam Modul kripto Node.js. Kami melihat bahwa dengan cara yang sama, `_malloc_zone_malloc` dipanggil hampir secara eksklusif oleh fungsi pbkdf2 yang sama. Jadi, dengan menggunakan informasi dalam tampilan ini, kami dapat mengetahui bahwa perhitungan hash kami dari kata sandi pengguna menyumbang tidak hanya untuk 51,8% dari atas tetapi juga untuk semua waktu CPU di atas 3 fungsi yang paling banyak sampelnya sejak panggilan ke `_sha1_block_data_order` dan `_malloc_zone_malloc` dibuat atas nama fungsi pbkdf2.
 
 Pada titik ini, sangat jelas bahwa pembuatan hash berbasis kata sandi harus menjadi target optimasi kami. Untungnya, Anda telah sepenuhnya menginternalisasi [manfaat pemrograman asinkron][] dan Anda menyadari bahwa bekerja untuk menghasilkan hash dari kata sandi pengguna sedang dilakukan dengan cara yang sinkron dan sehingga mengikat loop acara. Ini mencegah kami untuk mengerjakan entri lain permintaan saat menghitung hash.
 
@@ -173,13 +173,20 @@ app.get('/auth', (req, res) => {
     return res.sendStatus(400);
   }
 
-  crypto.pbkdf2(password, users[username].salt, 10000, 512, 'sha512', (err, hash) => {
-    if (users[username].hash.toString() === hash.toString()) {
-      res.sendStatus(200);
-    } else {
-      res.sendStatus(401);
+  crypto.pbkdf2(
+    password,
+    users[username].salt,
+    10000,
+    512,
+    'sha512',
+    (err, hash) => {
+      if (users[username].hash.toString() === hash.toString()) {
+        res.sendStatus(200);
+      } else {
+        res.sendStatus(401);
+      }
     }
-  });
+  );
 });
 ```
 

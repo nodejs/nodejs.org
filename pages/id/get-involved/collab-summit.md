@@ -4,6 +4,7 @@ layout: contribute.hbs
 ---
 
 # KTT Kolaborasi
+
 Konferensi Tingkat Tinggi (KTT) Kolaborasi adalah un-konferensi untuk membawa saat ini dan kontributor potensial bersama untuk membahas Node.js dengan kolaborasi yang hidup, pendidikan, dan berbagi pengetahuan. Komite dan kelompok kerja berkumpul dua kali per tahun untuk membuat keputusan penting sementara juga dapat mengerjakan beberapa upaya menarik yang ingin mereka dorong secara langsung.
 
 ## Siapa saja menghadiri?

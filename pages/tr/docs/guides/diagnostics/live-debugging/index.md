@@ -5,10 +5,10 @@ layout: docs.hbs
 
 # Canlı Hata Ayıklama
 
-* [Canlı Hata Ayıklama](#live-debugging)
-  * [Uygulamam beklenen şekilde davranmıyor](#my-application-doesnt-behave-as-expected)
-    * [Belirtiler](#symptoms)
-    * [Hata ayıklama](#debugging)
+- [Canlı Hata Ayıklama](#live-debugging)
+  - [Uygulamam beklenen şekilde davranmıyor](#my-application-doesnt-behave-as-expected)
+    - [Belirtiler](#symptoms)
+    - [Hata ayıklama](#debugging)
 
 Bu dokümanda bir Node.js işleminde canlı hata ayıklamanın nasıl yapılacağını öğrenebilirsiniz.
 
@@ -22,4 +22,4 @@ Kullanıcı, uygulamanın belirli girdiler için beklenen çıktıyı vermediği
 
 Bu kullanımda kullanıcı, HTTP isteği gibi bir tetikleyici için uygulamamızın çalıştırdığı kodu görmek ister. Ayrıca kullanıcı, kodda adım adım ilerlemek ve kodun çalışma aşamasını kontrol etmenin yanı sıra değişkenlerin bellekte hangi değerleri tuttuğunu incelemek isteyebilir.
 
-* [Inspector Kullanımı](/en/docs/guides/diagnostics/live-debugging/using-inspector)
+- [Inspector Kullanımı](/en/docs/guides/diagnostics/live-debugging/using-inspector)
