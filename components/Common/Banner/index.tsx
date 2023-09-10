@@ -10,7 +10,7 @@ type BannerProps = {
 };
 
 const Banner: FC<BannerProps> = ({ type, text, url }) => (
-  <div className={`${styles.banner} ${styles[type]}`}>
+  <div className={`${styles.banner} ${styles[type || 'default']}`}>
     {url ? (
       <>
         <Link href={url}>{text}</Link>

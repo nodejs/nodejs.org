@@ -35,4 +35,11 @@ export const NoLink: Story = {
   },
 };
 
+export const NoType: Story = {
+  args: {
+    text: 'Claudio is the best maintainer',
+    url: 'https://github.com/ovflowd',
+  },
+};
+
 export default { component: Banner } as Meta;
