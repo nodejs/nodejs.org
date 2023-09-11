@@ -14,67 +14,42 @@ const Badge: FC<PropsWithChildren<BadgeProps>> = ({
   kind,
   badgeText,
   children,
-  ...others
+  ...args
 }) => {
   if (typeof kind === 'undefined') kind = component.Default;
+  const iconClasses = classNames(styles.icon, {
+    [styles.iconWarning]: kind === component.Warning,
+    [styles.iconError]: kind === component.Error,
+    [styles.iconGreen]: kind === component.Default,
+  });
 
-  const iconClasses = classNames(styles['badge--icon'], {
-    [styles['badge--icon-warning']]: kind === component.Warning,
-    [styles['badge--icon-error']]: kind === component.Error,
-    [styles['badge--icon-green']]: kind === component.Default,
+  const wrapperClasses = classNames(styles.wrapper, {
+    [styles.wrapperWarning]: kind === component.Warning,
+    [styles.wrapperError]: kind === component.Error,
+    [styles.wrapperGreen]: kind === component.Default,
+  });
+
+  const badgeClasses = classNames(styles.badge, {
+    [styles.badgeWarning]: kind === component.Warning,
+    [styles.badgeError]: kind === component.Error,
+    [styles.badgeGreen]: kind === component.Default,
+  });
+
+  const contentClasses = classNames(styles.content, {
+    [styles.contentWarning]: kind === component.Warning,
+    [styles.contentError]: kind === component.Error,
+    [styles.contentGreen]: kind === component.Default,
   });
 
   return (
-    <Link {...others}>
-      <Wrapper kind={kind}>
-        {badgeText && <Tag kind={kind}>{badgeText}</Tag>}
-        <Content kind={kind}>{children}</Content>
+    <Link {...args}>
+      <div className={wrapperClasses}>
+        {badgeText && <span className={badgeClasses}>{badgeText}</span>}
+        <span className={contentClasses}>{children}</span>
         <ArrowRightIcon className={iconClasses} />
-      </Wrapper>
+      </div>
     </Link>
   );
-};
-
-type WrapperProps = {
-  kind?: component;
-};
-
-const Wrapper: FC<PropsWithChildren<WrapperProps>> = ({ children, kind }) => {
-  const classList = classNames(styles['badge--wrapper'], {
-    [styles['badge--wrapper-warning']]: kind === component.Warning,
-    [styles['badge--wrapper-error']]: kind === component.Error,
-    [styles['badge--wrapper-green']]: kind === component.Default,
-  });
-
-  return <div className={classList}>{children}</div>;
-};
-
-type TagProps = {
-  kind?: component;
-};
-
-const Tag: FC<PropsWithChildren<TagProps>> = ({ children, kind }) => {
-  const classList = classNames(styles['badge--tag'], {
-    [styles['badge--tag-warning']]: kind === component.Warning,
-    [styles['badge--tag-error']]: kind === component.Error,
-    [styles['badge--tag-green']]: kind === component.Default,
-  });
-
-  return <span className={classList}>{children}</span>;
-};
-
-type ContentProps = {
-  kind?: component;
-};
-
-const Content: FC<PropsWithChildren<ContentProps>> = ({ children, kind }) => {
-  const classList = classNames(styles['badge--content'], {
-    [styles['badge--content-warning']]: kind === component.Warning,
-    [styles['badge--content-error']]: kind === component.Error,
-    [styles['badge--content-green']]: kind === component.Default,
-  });
-
-  return <span className={classList}>{children}</span>;
 };
 
 export default Badge;
