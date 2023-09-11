@@ -1,63 +1,63 @@
-.wrapper {
-  @apply border rounded-full flex items-center w-fit py-1 pl-1 pr-2.5 dark:bg-neutral-900;
-
-  &Green {
-    @apply border-green-200 dark:border-green-700 bg-green-100;
-  }
-
-  &Warning {
-    @apply border-warning-200 dark:border-warning-700 bg-warning-100;
-  }
-
-  &Error {
-    @apply border-danger-200 dark:border-danger-700 bg-danger-100;
-  }
-}
-
 .badge {
-  @apply text-sm font-medium rounded-full border px-2.5 py-0.5 mr-2 text-white;
+  @apply border rounded-full flex items-center w-fit py-1 pl-1 pr-2.5;
 
-  &Green {
-    @apply border-green-200 dark:border-green-600 bg-green-600;
+  .icon {
+    @apply w-4 h-4;
   }
 
-  &Warning {
-    @apply border-warning-200 dark:border-warning-600 bg-warning-600;
+  .text {
+    @apply text-sm font-medium rounded-full border px-2.5 py-0.5 mr-2 text-white;
   }
 
-  &Error {
-    @apply border-danger-200 dark:border-danger-600 bg-danger-600;
-  }
-}
-
-.content {
-  @apply text-sm font-medium mr-1;
-
-  &Green {
-    @apply text-green-700 dark:text-green-300;
+  .message {
+    @apply text-sm font-medium mr-1;
   }
 
-  &Warning {
-    @apply text-warning-700 dark:text-warning-300;
+  &.default {
+    @apply border-green-200 bg-green-100 dark:border-green-700 dark:bg-neutral-900;
+
+    .icon {
+      @apply text-green-500 dark:text-green-300;
+    }
+
+    .text {
+      @apply border-green-200 dark:border-green-600 bg-green-600;
+    }
+
+    .message {
+      @apply text-green-700 dark:text-green-300;
+    }
   }
 
-  &Error {
-    @apply text-danger-700 dark:text-danger-300;
+  &.error {
+    @apply border-danger-200 dark:border-danger-700 bg-danger-100 dark:bg-neutral-900;
+
+    .icon {
+      @apply text-danger-500 dark:text-danger-300;
+    }
+
+    .text {
+      @apply border-danger-200 dark:border-danger-600 bg-danger-600;
+    }
+
+    .message {
+      @apply text-danger-700 dark:text-danger-300;
+    }
   }
-}
 
-.icon {
-  @apply w-4 h-4;
+  &.warning {
+    @apply border-warning-200 dark:border-warning-700 bg-warning-100 dark:bg-neutral-900;
 
-  &Green {
-    @apply text-green-500 dark:text-green-300;
-  }
+    .icon {
+      @apply text-warning-500 dark:text-warning-300;
+    }
 
-  &Warning {
-    @apply text-warning-500 dark:text-warning-300;
-  }
+    .text {
+      @apply border-warning-200 dark:border-warning-600 bg-warning-600;
+    }
 
-  &Error {
-    @apply text-danger-500 dark:text-danger-300;
+    .message {
+      @apply text-warning-700 dark:text-warning-300;
+    }
   }
 }
