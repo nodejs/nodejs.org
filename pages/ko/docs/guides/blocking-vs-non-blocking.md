@@ -14,6 +14,7 @@ basic understanding of the JavaScript language and Node.js callback pattern.
 > "I/O" refers primarily to interaction with the system's disk and
 > network supported by [libuv](https://libuv.org/).
 -->
+
 # 블로킹과 논블로킹 살펴보기
 
 이 글에서는 Node.js에서 **블로킹**과 **논블로킹** 호출의 차이점을 다룹니다. 이벤트 루프와
@@ -258,7 +259,7 @@ const fs = require('fs');
 fs.readFile('/file.md', (readFileErr, data) => {
   if (readFileErr) throw readFileErr;
   console.log(data);
-  fs.unlink('/file.md', (unlinkErr) => {
+  fs.unlink('/file.md', unlinkErr => {
     if (unlinkErr) throw unlinkErr;
   });
 });
@@ -277,4 +278,4 @@ The above places a **non-blocking** call to `fs.unlink()` within the callback of
 
 ## 추가 자료
 
-* [libuv](https://libuv.org/)
+- [libuv](https://libuv.org/)

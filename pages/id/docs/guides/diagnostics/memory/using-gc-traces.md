@@ -8,9 +8,10 @@ layout: docs.hbs
 Panduan ini akan melalui dasar-dasar jejak pengumpulan sampah.
 
 Di akhir panduan ini, Anda akan dapat:
-* Aktifkan pelacakan di aplikasi Node.js Anda
-* Menginterpretasikan jejak
-* Identifikasi potensi masalah memori di aplikasi Node.js Anda
+
+- Aktifkan pelacakan di aplikasi Node.js Anda
+- Menginterpretasikan jejak
+- Identifikasi potensi masalah memori di aplikasi Node.js Anda
 
 Banyak hal yang perlu dipelajari tentang bagaimana garbage collector bekerja, tetapi jika Anda mempelajari satu hal saja, itu adalah bahwa saat GC berjalan, kode Anda tidak berjalan.
 
@@ -28,7 +29,7 @@ import os from 'os';
 let len = 1_000_000;
 const entries = new Set();
 
-function addEntry () {
+function addEntry() {
   const entry = {
     timestamp: Date.now(),
     memory: os.freemem(),
@@ -39,7 +40,7 @@ function addEntry () {
   entries.add(entry);
 }
 
-function summary () {
+function summary() {
   console.log(`Total: ${entries.size} entries`);
 }
 
@@ -49,13 +50,13 @@ function summary () {
     addEntry();
     process.stdout.write(`~~> ${len} entries to record\r`);
     len--;
-  };
+  }
 
   summary();
 })();
 ```
 
-> Meskipun kebocoran terlihat jelas di sini, menemukan sumber kebocoran dapat     menjadi merepotkan dalam konteks aplikasi dunia nyata.
+> Meskipun kebocoran terlihat jelas di sini, menemukan sumber kebocoran dapat menjadi merepotkan dalam konteks aplikasi dunia nyata.
 
 ## Menjalankan dengan jejak garbage collection
 
@@ -69,7 +70,7 @@ $ node --trace-gc script.mjs
 
 Ini akan menghasilkan output seperti ini:
 
-``` bash
+```bash
 [39067:0x158008000]     2297 ms: Scavenge 117.5 (135.8) -> 102.2 (135.8) MB, 0.8 / 0.0 ms  (average mu = 0.994, current mu = 0.994) allocation failure
 [39067:0x158008000]     2375 ms: Scavenge 120.0 (138.3) -> 104.7 (138.3) MB, 0.9 / 0.0 ms  (average mu = 0.994, current mu = 0.994) allocation failure
 [39067:0x158008000]     2453 ms: Scavenge 122.4 (140.8) -> 107.1 (140.8) MB, 0.7 / 0.0 ms  (average mu = 0.994, current mu = 0.994) allocation failure
@@ -104,8 +105,9 @@ Flag `--trace-gc` (atau `--trace_gc`, keduanya sama saja) menghasilkan semua per
 | allocation failure                                    | Alasan untuk GC                                     |
 
 Kami hanya akan fokus pada dua peristiwa di sini:
-* Scavenge
-* Mark-sweep
+
+- Scavenge
+- Mark-sweep
 
 Heap dibagi menjadi _ruang_. Di antara ini, ada ruang yang disebut "ruang baru" dan yang lain disebut "ruang lama".
 
@@ -117,20 +119,20 @@ Scavenge adalah nama algoritma yang akan melakukan pengumpulan sampah pada ruang
 
 Mari bayangkan sebuah skenario Scavenge:
 
-* we allocated `A`, `B`, `C` & `D`.
+- we allocated `A`, `B`, `C` & `D`.
   ```bash
   | A | B | C | D | <unallocated> |
   ```
-* kita ingin mengalokasikan `E`
-* tidak cukup ruang, memori habis
-* kemudian, koleksi (sampah) akan dipicu
-* objek mati dikumpulkan
-* objek yang hidup akan tetap
-* dalam asumsi bahwa `B` dan `D` sudah mati
+- kita ingin mengalokasikan `E`
+- tidak cukup ruang, memori habis
+- kemudian, koleksi (sampah) akan dipicu
+- objek mati dikumpulkan
+- objek yang hidup akan tetap
+- dalam asumsi bahwa `B` dan `D` sudah mati
   ```bash
   | A | C | <unallocated> |
   ```
-* sekarang kita dapat mengalokasikan `E`
+- sekarang kita dapat mengalokasikan `E`
   ```bash
   | A | C | E | <unallocated> |
   ```
@@ -138,13 +140,15 @@ Mari bayangkan sebuah skenario Scavenge:
 saat dua operasi Scavenge selesai, V8 akan memindahkan objek yang tidak dihapus ke old space.
 
 > 👉 Skenario Scavenge lengkap dapat ditemukan di [sini][]
+
 ### Mark-sweep
 
 Mark-sweep digunakan untuk mengumpulkan objek dari old space. Old space adalah tempat objek yang selamat dari new space tinggal.
 
 Algoritma Mark-sweep terdiri dari dua fase:
-* **Mark**: Akan menandai objek yang masih hidup sebagai hitam dan objek lain sebagai putih.
-* **Sweep**: Memindai objek-objek yang berwarna putih dan mengubahnya menjadi ruang yang kosong.
+
+- **Mark**: Akan menandai objek yang masih hidup sebagai hitam dan objek lain sebagai putih.
+- **Sweep**: Memindai objek-objek yang berwarna putih dan mengubahnya menjadi ruang yang kosong.
 
 > 👉 Sebenarnya langkah-langkah Mark dan Sweep sedikit lebih rumit. Silakan baca [dokumen][] ini untuk lebih detail.
 
@@ -163,12 +167,13 @@ Kemungkinan kita memiliki kebocoran memori! Tapi bagaimana kita bisa yakin tenta
 Tapi bagaimana kita bisa menemukan konteksnya?
 
 ### Cara mendapatkan konteks alokasi buruk
+
 1. Anggaplah kita mengamati bahwa ruang tua terus meningkat.
 2. Kurangi [`--max-old-space-size`][] sehingga total heap lebih dekat ke batas
 3. Jalankan program sampai Anda mencapai out of memory.
 4. Log yang dihasilkan menunjukkan konteks gagal.
-6. Jika terjadi OOM, tingkatkan ukuran heap sekitar 10% dan ulangi beberapa kali. Jika pola yang sama diamati, itu menunjukkan kebocoran memori.
-7. Jika tidak ada OOM, maka tetapkan ukuran heap menjadi nilai tersebut - Heap yang terkemas mengurangi jejak memori dan laten komputasi.
+5. Jika terjadi OOM, tingkatkan ukuran heap sekitar 10% dan ulangi beberapa kali. Jika pola yang sama diamati, itu menunjukkan kebocoran memori.
+6. Jika tidak ada OOM, maka tetapkan ukuran heap menjadi nilai tersebut - Heap yang terkemas mengurangi jejak memori dan laten komputasi.
 
 Misalnya, cobalah jalankan `script.mjs` dengan perintah berikut:
 
@@ -204,6 +209,7 @@ Anda seharusnya mengalami sesuatu yang serupa, satu-satunya perbedaan adalah jej
 ### Kelambatan
 
 Bagaimana cara memastikan apakah terlalu banyak koleksi sampah (garbage collections) terjadi atau menyebabkan overhead?
+
 1. Tinjau data jejak (trace data), khususnya waktu antara koleksi yang berurutan.
 2. Tinjau data jejak, terutama sekitar waktu yang dihabiskan dalam GC.
 3. Jika waktu antara dua GC lebih kecil dari waktu yang dihabiskan untuk GC, maka aplikasi tersebut mengalami kelaparan yang serius.
@@ -224,7 +230,7 @@ import fs from 'fs/promises';
 let len = 1_000_000;
 const fileName = `entries-${Date.now()}`;
 
-async function addEntry () {
+async function addEntry() {
   const entry = {
     timestamp: Date.now(),
     memory: os.freemem(),
@@ -234,19 +240,19 @@ async function addEntry () {
   await fs.appendFile(fileName, JSON.stringify(entry) + '\n');
 }
 
-async function summary () {
+async function summary() {
   const stats = await fs.lstat(fileName);
   console.log(`File size ${stats.size} bytes`);
 }
 
 // execution
 (async () => {
-  await fs.writeFile(fileName, "----START---\n");
+  await fs.writeFile(fileName, '----START---\n');
   while (len > 0) {
     await addEntry();
     process.stdout.write(`~~> ${len} entries to record\r`);
     len--;
-  };
+  }
 
   await summary();
 })();
@@ -263,8 +269,9 @@ node --trace-gc script-fix.mjs
 ```
 
 Anda harus mengamati dua hal:
-* Peristiwa mark-sweep lebih jarang muncul
-* jejak memori tidak melebihi 25MB versus lebih dari 130MB dengan skrip pertama.
+
+- Peristiwa mark-sweep lebih jarang muncul
+- jejak memori tidak melebihi 25MB versus lebih dari 130MB dengan skrip pertama.
 
 Ini sangat masuk akal karena versi baru tidak terlalu menekan memori dari yang pertama.
 
@@ -296,7 +303,7 @@ Di Node.js, Anda dapat menggunakan [kait kinerja][] untuk melacak pengumpulan sa
 const { PerformanceObserver } = require('perf_hooks');
 
 // Buat pengamat kinerja
-const obs = new PerformanceObserver((list) => {
+const obs = new PerformanceObserver(list => {
   const entry = list.getEntries()[0];
   /*
    Entri tersebut adalah turunan dari PerformanceEntry yang berisi

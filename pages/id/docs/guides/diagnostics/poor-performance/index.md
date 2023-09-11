@@ -7,10 +7,10 @@ layout: docs.hbs
 
 Dalam dokumen ini Anda dapat mempelajari tentang cara memprofil proses Node.js.
 
-* [Kinerja Buruk](#poor-performance)
-  * [Aplikasi saya memiliki kinerja buruk](#my-application-has-a-poor-performance)
-    * [Gejala](#symptoms)
-    * [Debug](#debugging)
+- [Kinerja Buruk](#poor-performance)
+  - [Aplikasi saya memiliki kinerja buruk](#my-application-has-a-poor-performance)
+    - [Gejala](#symptoms)
+    - [Debug](#debugging)
 
 ## Aplikasi saya memiliki kinerja buruk
 
@@ -26,5 +26,5 @@ Dalam kasus penggunaan ini, kita tertarik dengan potongan kode yang menggunakan 
 
 Dokumen ini menyediakan dua cara sederhana untuk memprofil aplikasi Node.js:
 
-* [Menggunakan Profiler Sampling V8](https://nodejs.org/en/docs/guides/simple-profiling/)
-* [Menggunakan Linux Perf](/en/docs/guides/diagnostics/poor-performance/using-linux-perf)
+- [Menggunakan Profiler Sampling V8](https://nodejs.org/en/docs/guides/simple-profiling/)
+- [Menggunakan Linux Perf](/en/docs/guides/diagnostics/poor-performance/using-linux-perf)

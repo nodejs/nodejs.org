@@ -57,11 +57,11 @@ the active domain to hijack the error:
 const domain = require('domain');
 const net = require('net');
 const d = domain.create();
-d.on('error', (err) => console.error(err.message));
+d.on('error', err => console.error(err.message));
 
 d.run(() =>
   net
-    .createServer((c) => {
+    .createServer(c => {
       c.end();
       c.write('bye');
     })
@@ -84,7 +84,7 @@ d.on('error', () => console.error('d intercepted an error'));
 
 d.run(() => {
   const server = net
-    .createServer((c) => {
+    .createServer(c => {
       const e = domain.create(); // No 'error' handler being set.
       e.run(() => {
         // This will not be caught by d's error handler.
@@ -126,7 +126,7 @@ example of the failing of error propagation:
 ```js
 const d1 = domain.create();
 d1.foo = true; // custom member to make more visible in console
-d1.on('error', (er) => {
+d1.on('error', er => {
   /* handle error */
 });
 
@@ -134,7 +134,7 @@ d1.run(() =>
   setTimeout(() => {
     const d2 = domain.create();
     d2.bar = 43;
-    d2.on('error', (er) => console.error(er.message, domain._stack));
+    d2.on('error', er => console.error(er.message, domain._stack));
     d2.run(() => {
       setTimeout(() => {
         setTimeout(() => {
@@ -227,14 +227,14 @@ class ConnectionResource extends EventEmitter {
 
 // Example begin
 net
-  .createServer((c) => {
+  .createServer(c => {
     const cr = new ConnectionResource(c);
 
     const d1 = domain.create();
     fs.open(
       FILENAME,
       'r',
-      d1.intercept((fd) => {
+      d1.intercept(fd => {
         streamInParts(fd, cr, 0);
       })
     );
@@ -248,7 +248,7 @@ net
 function streamInParts(fd, cr, pos) {
   const d2 = domain.create();
   const alive = true;
-  d2.on('error', (er) => {
+  d2.on('error', er => {
     print('d2 error:', er.message);
     cr.end();
   });
@@ -286,19 +286,19 @@ function pipeData(cr) {
   const ps = net.createServer();
   const d3 = domain.create();
   const connectionList = [];
-  d3.on('error', (er) => {
+  d3.on('error', er => {
     print('d3 error:', er.message);
     cr.end();
   });
   d3.add(ps);
-  ps.on('connection', (conn) => {
+  ps.on('connection', conn => {
     connectionList.push(conn);
     conn.on('data', () => {}); // don't care about incoming data.
     conn.on('close', () => {
       connectionList.splice(connectionList.indexOf(conn), 1);
     });
   });
-  cr.on('data', (chunk) => {
+  cr.on('data', chunk => {
     for (let i = 0; i < connectionList.length; i++) {
       connectionList[i].write(chunk);
     }
@@ -324,12 +324,12 @@ process.on('exit', () => {
 });
 ```
 
-* When a new connection happens, concurrently:
-  * Open a file on the file system
-  * Open Pipe to unique socket
-* Read a chunk of the file asynchronously
-* Write chunk to both the TCP connection and any listening sockets
-* If any of these resources error, notify all other attached resources that
+- When a new connection happens, concurrently:
+  - Open a file on the file system
+  - Open Pipe to unique socket
+- Read a chunk of the file asynchronously
+- Write chunk to both the TCP connection and any listening sockets
+- If any of these resources error, notify all other attached resources that
   they need to clean up and shutdown
 
 As we can see from this example a lot more must be done to properly clean up
@@ -371,7 +371,7 @@ const domain = require('domain');
 const net = require('net');
 
 const server = net
-  .createServer((c) => {
+  .createServer(c => {
     // Use a domain to propagate data across events within the
     // connection so that we don't have to pass arguments
     // everywhere.
@@ -381,7 +381,7 @@ const server = net
     // Mock class that does some useless async data transformation
     // for demonstration purposes.
     const ds = new DataStream(dataTransformed);
-    c.on('data', (chunk) => ds.data(chunk));
+    c.on('data', chunk => ds.data(chunk));
   })
   .listen(8080, () => console.log('listening on 8080'));
 

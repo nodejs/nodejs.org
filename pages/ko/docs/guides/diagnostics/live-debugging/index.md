@@ -5,10 +5,10 @@ layout: docs.hbs
 
 # 라이브 디버깅
 
-* [라이브 디버깅](#live-debugging)
-  * [응용 프로그램이 예상대로 작동하지 않을 때](#my-application-doesnt-behave-as-expected)
-    * [증상](#symptoms)
-    * [디버깅](#debugging)
+- [라이브 디버깅](#live-debugging)
+  - [응용 프로그램이 예상대로 작동하지 않을 때](#my-application-doesnt-behave-as-expected)
+    - [증상](#symptoms)
+    - [디버깅](#debugging)
 
 이 문서를 통해 Node.js 프로세스를 라이브 디버그하는 방법을 배울 수 있습니다.
 
@@ -22,4 +22,4 @@ layout: docs.hbs
 
 이 사용 사례에서, 사용자는 들어오는 HTTP 요청과 같은 특정한 트리거에 대해 응용 프로그램이 실행하는 코드 경로를 이해하고자 합니다. 또한 코드를 따라가며 메모리에 저장된 변수의 값을 검사할 뿐아니라 실행을 제어하길 원할 수도 있습니다.
 
-* [검사기 사용하기](/en/docs/guides/diagnostics/live-debugging/using-inspector)
+- [검사기 사용하기](/en/docs/guides/diagnostics/live-debugging/using-inspector)

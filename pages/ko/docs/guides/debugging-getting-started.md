@@ -46,6 +46,7 @@ Node.js가 `SIGUSR1` 신호를 받으면 디버깅 메시지도 수신하기
 활성화합니다.
 
 ---
+
 <!-- ## Security Implications
 
 Since the debugger has full access to the Node.js execution environment, a
@@ -139,16 +140,16 @@ Node 인스펙터에 접속할 수 있는 여러 상용 도구와 오픈소스 �
 
 ### [node-inspect](https://github.com/nodejs/node-inspect)
 
-* Node.js 재단에서 지원하는 CLI 디버거로 [Inspector 프로토콜][]을 사용합니다.
-* Node에 포함되어 있고 `node inspect myscript.js`로 사용할 수 있습니다.
-* 최신 버전을 별도로 설치할 수 있고(예시: `npm install -g node-inspect`)
+- Node.js 재단에서 지원하는 CLI 디버거로 [Inspector 프로토콜][]을 사용합니다.
+- Node에 포함되어 있고 `node inspect myscript.js`로 사용할 수 있습니다.
+- 최신 버전을 별도로 설치할 수 있고(예시: `npm install -g node-inspect`)
   `node-inspect myscript.js`로 사용할 수 있습니다.
 
 ### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+
 
-* **방법 1**: 크로미움에 기반을 둔 브라우저에서 `chrome://inspect`를 엽니다.
+- **방법 1**: 크로미움에 기반을 둔 브라우저에서 `chrome://inspect`를 엽니다.
   Configure 버튼을 눌러서 대상 호스트와 포트 목록을 확인합니다.
-* **방법 2**: `/json/list`(상단 참고)의 출력에서 `devtoolsFrontendUrl`을
+- **방법 2**: `/json/list`(상단 참고)의 출력에서 `devtoolsFrontendUrl`을
   복사하거나 --inspect가 알려준 텍스트에서 복사해서 크롬에 붙여넣기를 합니다.
 
 <!--
@@ -186,33 +187,33 @@ Node 인스펙터에 접속할 수 있는 여러 상용 도구와 오픈소스 �
 
 ### [Visual Studio Code](https://github.com/microsoft/vscode) 1.10+
 
-* Debug 패널에서 설정 아이콘을 클릭해서 `.vscode/launch.json`을 엽니다.
+- Debug 패널에서 설정 아이콘을 클릭해서 `.vscode/launch.json`을 엽니다.
   초기 설정으로 "Node.js"를 선택하세요.
 
 ### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017+
 
-* 메뉴에서 "Debug > Start Debugging"을 선택하거나 F5를 누르세요.
-* [상세한 설명](https://github.com/Microsoft/nodejstools/wiki/Debugging)
+- 메뉴에서 "Debug > Start Debugging"을 선택하거나 F5를 누르세요.
+- [상세한 설명](https://github.com/Microsoft/nodejstools/wiki/Debugging)
 
 ### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) 2017.1+와 다른 JetBrains IDE
 
-* 새로운 Node.js 디버그 설정을 생성하고 Debug를 누르세요. Node.js 7+에서는
+- 새로운 Node.js 디버그 설정을 생성하고 Debug를 누르세요. Node.js 7+에서는
   기본적으로 `--inspect`를 사용할 것입니다. 비활성화하려면 IDE 레지스트리에서
   `js.debugger.node.use.inspect`의 체크를 해제하세요.
 
 ### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 
-* 인스펙터 프로토콜 엔드포인트로의 연결을 쉽게 하는 라이브러리입니다.
+- 인스펙터 프로토콜 엔드포인트로의 연결을 쉽게 하는 라이브러리입니다.
 
 ### [Gitpod](https://www.gitpod.io)
 
-* `Debug` 뷰에서 Node.js 디버그 설정을 실행하거나 `F5` 키를 누르세요.
+- `Debug` 뷰에서 Node.js 디버그 설정을 실행하거나 `F5` 키를 누르세요.
   [자세한 방법은 여기를 참고하세요.](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
 
 ### [Eclipse IDE](https://eclipse.org/eclipseide)와 Eclipse Wild Web Developer 확장 프로그램
 
-* .js 파일에서 "Debug As... > Node program"을 선택하거나,
-* 실행 중인 (`--inspect`로 시작한) Node 애플리케이션에 디버거를 연결하는 디버그 설정을 생성하세요.
+- .js 파일에서 "Debug As... > Node program"을 선택하거나,
+- 실행 중인 (`--inspect`로 시작한) Node 애플리케이션에 디버거를 연결하는 디버그 설정을 생성하세요.
 
 ---
 
@@ -363,6 +364,7 @@ tunnels instead. We provide the following example for illustrative purposes only
 Please understand the security risk of allowing remote access to a privileged
 service before proceeding.
 -->
+
 디버거가 퍼블릭 IP 주소에서 수신하지 않는 것을 권장합니다. 만약 원격 디버깅 연결을 허용해야 하는 경우 ssh 터널링을 대신 사용할 것을 권장합니다. 설명을 위해 아래 예제를 제공합니다. 진행하기 전 권한을 가진 서비스에 원격 액세스를 허용할 경우 발생할 수 있는 보안 위험을 이해하시기 바랍니다.
 
 <!--
@@ -370,6 +372,7 @@ Let's say you are running Node on remote machine, remote.example.com, that you
 want to be able to debug. On that machine, you should start the node process
 with the inspector listening only to localhost (the default).
 -->
+
 디버깅하기를 원하는 remote.example.com 원격 시스템에서 노드가 실행 중이라고 가정하겠습니다. 해당 시스템에서 localhost(기본값)만 수신하는 인스펙터로 노드 프로세스를 시작해야 합니다.
 
 ```bash
@@ -380,6 +383,7 @@ node --inspect server.js
 Now, on your local machine from where you want to initiate a debug client
 connection, you can setup an ssh tunnel:
 -->
+
 이제 디버그 클라이언트 연결을 시작하려는 로컬 시스템에서 ssh 터널을 설정할 수 있습니다.
 
 ```bash
@@ -392,6 +396,7 @@ machine will be forwarded to port 9229 on remote.example.com. You can now attach
 a debugger such as Chrome DevTools or Visual Studio Code to localhost:9221,
 which should be able to debug as if the Node.js application was running locally.
 -->
+
 그러면 로컬 시스템의 9221 포트에서 remote.example.com의 9229 포트로 전달되는 ssh 터널 세션이 시작됩니다. Chrome DevTools 또는 Visual Studio Code 등의 디버거로 localhost:9221에 연결 할 수 있으며 Node.js 애플리케이션이 로컬에서 실행 중인 것처럼 디버깅할 수 있습니다.
 
 ---

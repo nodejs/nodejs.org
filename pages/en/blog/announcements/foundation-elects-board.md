@@ -13,15 +13,15 @@ SAN FRANCISCO, Sept. 4, 2015 – The [Node.js Foundation](https://foundation.nod
 
 The Node.js Foundation board, which sets the business and technical direction as well as oversees IP management, marketing, and events on behalf of the organization, includes:
 
-* [Danese Cooper](https://www.linkedin.com/in/danesecooper), chairman of the board, distinguished member of technical staff - open source at PayPal;
-* [Scott Hammond](https://www.linkedin.com/pub/scott-hammond/1/a4b/92a), vice-chairman of the board, chief executive officer at Joyent;
-* [Brian McCallister](https://www.linkedin.com/in/brianmccallister), silver-level director of the board, chief technology officer of platforms at Groupon;
-* [Todd Moore](https://www.linkedin.com/pub/todd-moore/2b/540/798), board member, vice president of open technology at IBM;
-* [Steve Newcomb](https://www.linkedin.com/in/stevenewcomb), board member, founder and chief executive officer at Famous Industries;
-* [Gianugo Rabellino](https://www.linkedin.com/in/gianugo), secretary of the board, senior director of open source programs at Microsoft;
-* [Charlie Robbins](https://www.linkedin.com/in/charlierobbins), gold-level director of the board, director of engineering at GoDaddy.com;
-* [Imad Sousou](https://www.linkedin.com/pub/imad-sousou/6/b49/2b8), board member, vice president and general manager at Intel;
-* [Rod Vagg](https://www.linkedin.com/in/rvagg), technical steering committee chairperson, chief node officer at NodeSource.
+- [Danese Cooper](https://www.linkedin.com/in/danesecooper), chairman of the board, distinguished member of technical staff - open source at PayPal;
+- [Scott Hammond](https://www.linkedin.com/pub/scott-hammond/1/a4b/92a), vice-chairman of the board, chief executive officer at Joyent;
+- [Brian McCallister](https://www.linkedin.com/in/brianmccallister), silver-level director of the board, chief technology officer of platforms at Groupon;
+- [Todd Moore](https://www.linkedin.com/pub/todd-moore/2b/540/798), board member, vice president of open technology at IBM;
+- [Steve Newcomb](https://www.linkedin.com/in/stevenewcomb), board member, founder and chief executive officer at Famous Industries;
+- [Gianugo Rabellino](https://www.linkedin.com/in/gianugo), secretary of the board, senior director of open source programs at Microsoft;
+- [Charlie Robbins](https://www.linkedin.com/in/charlierobbins), gold-level director of the board, director of engineering at GoDaddy.com;
+- [Imad Sousou](https://www.linkedin.com/pub/imad-sousou/6/b49/2b8), board member, vice president and general manager at Intel;
+- [Rod Vagg](https://www.linkedin.com/in/rvagg), technical steering committee chairperson, chief node officer at NodeSource.
 
 In addition to formalizing the board, [Bill Fine](https://www.linkedin.com/pub/bill-fine/2/497/916), vice president of product and marketing at Joyent, was elected as the marketing chairperson. The Linux Foundation also hired [Mikeal Rogers](https://www.linkedin.com/in/mikealrogers) as its community manager to help support and guide the new organization.
 

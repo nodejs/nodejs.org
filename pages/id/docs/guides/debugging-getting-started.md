@@ -16,6 +16,7 @@ Klien pemeriksa harus mengetahui dan menentukan alamat host, port, dan UUID untu
 Node.js juga akan mulai mendengarkan pesan debug jika menerima a Sinyal `SIGUSR1`. (`SIGUSR1` tidak tersedia di Windows.) Di Node.js 7 dan sebelumnya, ini mengaktifkan API Debugger lawas. Di Node.js 8 dan yang lebih baru, itu akan aktifkan API Inspektur.
 
 ---
+
 ## Implikasi Keamanan
 
 Karena debugger memiliki akses penuh ke lingkungan eksekusi Node.js, a aktor jahat yang dapat terhubung ke port ini mungkin dapat mengeksekusi secara sewenang-wenang kode atas nama proses Node.js. Penting untuk memahami keamanan implikasi mengekspos port debugger pada jaringan publik dan pribadi.
@@ -44,36 +45,36 @@ Debugger CLI minimal tersedia dengan `node inspect myscript.js`. Beberapa alat k
 
 ### [Chrome DevTools](https://github.com/ChromeDevTools/devtools-frontend) 55+, [Microsoft Edge](https://www.microsoftedgeinsider.com)
 
-* **Opsi 1**: Buka `chrome://inspect` dalam berbasis Chromium browser atau `edge://inspect` di Edge. Klik tombol Konfigurasi dan pastikan host dan port target Anda terdaftar.
-* **Opsi 2**: Salin `devtoolsFrontendUrl` dari output `/json/list` (lihat di atas) atau teks petunjuk --inspect dan tempel ke Chrome.
+- **Opsi 1**: Buka `chrome://inspect` dalam berbasis Chromium browser atau `edge://inspect` di Edge. Klik tombol Konfigurasi dan pastikan host dan port target Anda terdaftar.
+- **Opsi 2**: Salin `devtoolsFrontendUrl` dari output `/json/list` (lihat di atas) atau teks petunjuk --inspect dan tempel ke Chrome.
 
 > Perhatikan bahwa Node.js dan Chrome harus dijalankan pada platform yang sama.
 
 ### [Visual Studio code](https://github.com/microsoft/vscode) 1.10+
 
-* Di panel Debug, klik ikon pengaturan untuk membuka `.vscode/launch.json`. Pilih "Node.js" untuk pengaturan awal.
+- Di panel Debug, klik ikon pengaturan untuk membuka `.vscode/launch.json`. Pilih "Node.js" untuk pengaturan awal.
 
 ### [Visual Studio](https://github.com/Microsoft/nodejstools) 2017+
 
-* Pilih "Debug > Start Debugging" dari menu atau tekan F5.
-* [Petunjuk terperinci](https://github.com/Microsoft/nodejstools/wiki/Debugging).
+- Pilih "Debug > Start Debugging" dari menu atau tekan F5.
+- [Petunjuk terperinci](https://github.com/Microsoft/nodejstools/wiki/Debugging).
 
 ### [JetBrains WebStorm](https://www.jetbrains.com/webstorm/) dan IDE JetBrains lainnya
 
-* Buat konfigurasi debug Node.js baru dan tekan Debug. `--inspect` akan digunakan secara default untuk Node.js 7+. Untuk menonaktifkan hapus centang `js.debugger.node.use.inspect` di Registri IDE. Untuk mempelajari lebih lanjut tentang menjalankan dan men-debug Node.js di WebStorm dan IDE JetBrains lainnya, lihat [bantuan online WebStorm](https://www.jetbrains.com/help/webstorm/running-and-debugging-node-js.html).
+- Buat konfigurasi debug Node.js baru dan tekan Debug. `--inspect` akan digunakan secara default untuk Node.js 7+. Untuk menonaktifkan hapus centang `js.debugger.node.use.inspect` di Registri IDE. Untuk mempelajari lebih lanjut tentang menjalankan dan men-debug Node.js di WebStorm dan IDE JetBrains lainnya, lihat [bantuan online WebStorm](https://www.jetbrains.com/help/webstorm/running-and-debugging-node-js.html).
 
 ### [chrome-remote-interface](https://github.com/cyrus-and/chrome-remote-interface)
 
-* Perpustakaan untuk memudahkan koneksi ke [Protokol Inspektur][] titik akhir.
+- Perpustakaan untuk memudahkan koneksi ke [Protokol Inspektur][] titik akhir.
 
 ### [Gitpod](https://www.gitpod.io)
 
-* Mulai konfigurasi debug Node.js dari tampilan `Debug` atau tekan `F5`. [Petunjuk terperinci](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
+- Mulai konfigurasi debug Node.js dari tampilan `Debug` atau tekan `F5`. [Petunjuk terperinci](https://medium.com/gitpod/debugging-node-js-applications-in-theia-76c94c76f0a1)
 
 ### [Eclipse IDE](https://Eclipse.org/Eclipseide) dengan ekstensi Pengembang Web Liar Eclipse
 
-* Dari file .js, pilih "Debug As... > Node program", atau
-* Buat Konfigurasi Debug untuk melampirkan debugger ke aplikasi Node.js yang sedang berjalan (sudah dimulai dengan `--inspect`).
+- Dari file .js, pilih "Debug As... > Node program", atau
+- Buat Konfigurasi Debug untuk melampirkan debugger ke aplikasi Node.js yang sedang berjalan (sudah dimulai dengan `--inspect`).
 
 ---
 

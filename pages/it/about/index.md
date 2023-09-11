@@ -36,13 +36,13 @@ esegue direttamente I/O, quindi il processo non blocca mai. Dal momento che null
 è molto facile sviluppare sistemi scalabili in Node.js
 
 Se alcuni dei termini utilizzati non ti sono familiari, ecco un articolo completo
- (in inglese) [Bloccante vs Non Bloccante][].
+(in inglese) [Bloccante vs Non Bloccante][].
 
 ---
 
 Node.js è influenzato da sistemi come la [Event Machine][] di Ruby o [Twisted][] di Python.
- Node.js porta il modello ad eventi un po' oltre.
- Node.js usa un [event loop][] come costrutto di runtime invece che come una libreria. In altri sistemi, c'è sempre una chiamata di blocco per avviare l'event-loop.
+Node.js porta il modello ad eventi un po' oltre.
+Node.js usa un [event loop][] come costrutto di runtime invece che come una libreria. In altri sistemi, c'è sempre una chiamata di blocco per avviare l'event-loop.
 In genere il comportamento è definito tramite callback all'inizio di uno script
 e alla fine avvia un server attraverso una chiamata di blocco come
 `EventMachine::run()`. In Node.js non esiste alcuna chiamata per avviare il ciclo. Node.js
@@ -51,7 +51,7 @@ ciclo di eventi quando non ci sono più callback da eseguire. Questo comportamen
 JavaScript in browser: il ciclo degli eventi è nascosto all'utente.
 
 HTTP ha un posto di rilievo in Node.js, che è stato progettato per lo streaming e bassa latenza.
- Ciò rende Node.js una base perfetta per una libreria o un framework web.
+Ciò rende Node.js una base perfetta per una libreria o un framework web.
 
 Solo perché Node.js è progettato senza thread, non significa che non è possibile sfruttare i multi-core nel proprio ambiente. I processi figlio possono essere generati utilizzando la API [`child_process.fork()`][], con cui è possibile comunicare facilmente. Costruito sulla stessa interfaccia è il modulo [`cluster`][], che consente di condividere i socket tra i processi per consentire il bilanciamento del carico sui core.
 

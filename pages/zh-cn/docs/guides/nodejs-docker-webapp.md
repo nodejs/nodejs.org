@@ -5,7 +5,7 @@ layout: docs.hbs
 
 # 把一个 Node.js web 应用程序给 Docker 化
 
-本示例的目标是给你演示如何将一个 Node.js 的应用装入到 Docker 容器中。本教程旨在针对于开发人员，而 *非* 产品发布人员。此教程同样假定你有一个可以正常工作的 [Docker 安装](https://docs.docker.com/engine/installation/)，并且对于 Node.js 的应用程序是如何组织的有一个大致的基本了解。
+本示例的目标是给你演示如何将一个 Node.js 的应用装入到 Docker 容器中。本教程旨在针对于开发人员，而 _非_ 产品发布人员。此教程同样假定你有一个可以正常工作的 [Docker 安装](https://docs.docker.com/engine/installation/)，并且对于 Node.js 的应用程序是如何组织的有一个大致的基本了解。
 
 在本教程的第一部分我们在 Node.js 中创建一个 Web 的应用程序，然后我们为那个应用构建一个 Docker 镜像；最后我们将把那个镜像作为容器运行之。
 
@@ -228,7 +228,7 @@ Hello world
 
 ## 关闭镜像
 
-我们可以通过使用  `kill` 命令来关闭我们已经开启的镜像。这里使用到了容器的 ID， 在本示例代码中是 `ecce33b30ebf`。
+我们可以通过使用 `kill` 命令来关闭我们已经开启的镜像。这里使用到了容器的 ID， 在本示例代码中是 `ecce33b30ebf`。
 
 ```bash
 # Kill our running container
@@ -243,8 +243,8 @@ curl: (7) Failed to connect to localhost port 49160: Connection refused
 
 你也可以在以下一些地方寻觅到更多有关于 Docker 和基于 Docker 的 Node.js 相关内容：
 
-* [官方 Node.js 的 Docker 镜像](https://hub.docker.com/_/node/)
-* [Node.js 基于 Docker 使用的最佳经验](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
-* [官方 Docker 文档](https://docs.docker.com/get-started/nodejs/build-images/)
-* [在 StackOverFlow 上有关 Docker 标记内容](https://stackoverflow.com/questions/tagged/docker)
-* [Docker 版块](https://reddit.com/r/docker)
+- [官方 Node.js 的 Docker 镜像](https://hub.docker.com/_/node/)
+- [Node.js 基于 Docker 使用的最佳经验](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
+- [官方 Docker 文档](https://docs.docker.com/get-started/nodejs/build-images/)
+- [在 StackOverFlow 上有关 Docker 标记内容](https://stackoverflow.com/questions/tagged/docker)
+- [Docker 版块](https://reddit.com/r/docker)

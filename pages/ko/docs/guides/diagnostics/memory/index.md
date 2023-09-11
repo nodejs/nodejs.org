@@ -7,14 +7,14 @@ layout: docs.hbs
 
 이 문서를 통해 메모리 관련 이슈를 디버그하는 방법을 배울 수 있습니다.
 
-* [메모리](#memory)
-  * [내 프로세스에 필요한 메모리가 부족할 때](#my-process-runs-out-of-memory)
-    * [증상](#symptoms)
-    * [부작용](#side-effects)
-  * [내 프로세스가 메모리를 비효율적으로 사용할 때](#my-process-utilizes-memory-inefficiently)
-    * [증상](#symptoms-1)
-    * [부작용](#side-effects-1)
-  * [디버깅](#debugging)
+- [메모리](#memory)
+  - [내 프로세스에 필요한 메모리가 부족할 때](#my-process-runs-out-of-memory)
+    - [증상](#symptoms)
+    - [부작용](#side-effects)
+  - [내 프로세스가 메모리를 비효율적으로 사용할 때](#my-process-utilizes-memory-inefficiently)
+    - [증상](#symptoms-1)
+    - [부작용](#side-effects-1)
+  - [디버깅](#debugging)
 
 ## 내 프로세스에 필요한 메모리가 부족할 때
 
@@ -26,11 +26,11 @@ Node.js _(JavaScript)_ 는 가비지 컬렉션을 사용하는 언어이므로, 
 
 ### 부작용
 
-* 메모리 고갈로 인해 프로세스가 재시작되며 요청들이 버려짐
-* GC 활동의 증가는 CPU 사용량을 높이고 반응 시간을 늦춤
-  * GC가 이벤트 루프를 막아 느려짐
-* 메모리 스와핑 증가로 인해 프로세스가 느려짐 (GC 사용)
-* 힙 스냅숏을 가져오기에 메모리 여유가 부족할 수 있음
+- 메모리 고갈로 인해 프로세스가 재시작되며 요청들이 버려짐
+- GC 활동의 증가는 CPU 사용량을 높이고 반응 시간을 늦춤
+  - GC가 이벤트 루프를 막아 느려짐
+- 메모리 스와핑 증가로 인해 프로세스가 느려짐 (GC 사용)
+- 힙 스냅숏을 가져오기에 메모리 여유가 부족할 수 있음
 
 ## 내 프로세스가 메모리를 비효율적으로 사용할 때
 
@@ -40,13 +40,13 @@ Node.js _(JavaScript)_ 는 가비지 컬렉션을 사용하는 언어이므로, 
 
 ### 부작용
 
-* 다수의 페이지 폴트
-* 더 높은 GC 활동 및 CPU 사용량
+- 다수의 페이지 폴트
+- 더 높은 GC 활동 및 CPU 사용량
 
 ## 디버깅
 
 대부분의 메모리 이슈는 특정 타입의 객체가 얼마나 많은 공간을 차지할지와 어떤 변수가 가비지 컬렉션되는 것을 방해하는지 결정하는 것으로 해결 가능합니다. 또한 프로그램의 시간에 따른 할당 패턴을 알고 있다면 도움이 됩니다.
 
-* [힙 프로파일러 사용하기](/en/docs/guides/diagnostics/memory/using-heap-profiler/)
-* [힙 스냅샷 사용하기](/en/docs/guides/diagnostics/memory/using-heap-snapshot/)
-* [GC 트레이스](/en/docs/guides/diagnostics/memory/using-gc-traces)
+- [힙 프로파일러 사용하기](/en/docs/guides/diagnostics/memory/using-heap-profiler/)
+- [힙 스냅샷 사용하기](/en/docs/guides/diagnostics/memory/using-heap-snapshot/)
+- [GC 트레이스](/en/docs/guides/diagnostics/memory/using-gc-traces)

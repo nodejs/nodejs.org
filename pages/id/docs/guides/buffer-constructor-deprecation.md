@@ -11,7 +11,7 @@ Panduan ini menjelaskan cara bermigrasi ke metode konstruktor `Buffer` yang aman
 
 > Konstruktor Buffer() dan new Buffer() tidak direkomendasikan untuk digunakan karena masalah keamanan dan penggunaan. Mohon gunakan metode konstruksi Buffer.alloc(), Buffer.allocUnsafe(), atau Buffer.from() yang baru.
 
-- [Varian 1: Hilangkan dukungan untuk Node.js 4.4.x dan 5.0.0 — 5.9.x](#varian-1) (*direkomendasikan*)
+- [Varian 1: Hilangkan dukungan untuk Node.js 4.4.x dan 5.0.0 — 5.9.x](#varian-1) (_direkomendasikan_)
 - [Varian 2: Gunakan polyfill](#variant-2)
 - [Varian 3: Deteksi manual, dengan pengaman](#variant-3)
 
@@ -54,7 +54,7 @@ Namun, ada kekurangannya, itu tidak selalu [bekerja dengan benar](https://github
 
 Ini adalah solusi yang direkomendasikan saat ini yang hanya menyiratkan overhead minimal.
 
-Jalur rilis Node.js 5.x tidak didukung sejak Juli 2016, dan jalur rilis Node.js 4.x mencapai Akhir Masa Pakainya pada April 2018 (→ [Jadwal](https://github.com/nodejs/Release#Release_schedule)). Ini berarti bahwa versi Node.js ini *tidak* akan menerima pembaruan apa pun, bahkan jika ada masalah keamanan, jadi penggunaan jalur rilis ini harus dihindari, jika memungkinkan.
+Jalur rilis Node.js 5.x tidak didukung sejak Juli 2016, dan jalur rilis Node.js 4.x mencapai Akhir Masa Pakainya pada April 2018 (→ [Jadwal](https://github.com/nodejs/Release#Release_schedule)). Ini berarti bahwa versi Node.js ini _tidak_ akan menerima pembaruan apa pun, bahkan jika ada masalah keamanan, jadi penggunaan jalur rilis ini harus dihindari, jika memungkinkan.
 
 Apa yang akan Anda lakukan dalam kasus ini adalah mengonversi semua panggilan `New Buffer()` atau `Buffer()` untuk menggunakan `Buffer.alloc()` atau `Buffer.from()`, dengan cara berikut:
 
@@ -175,11 +175,11 @@ _Perhatikan bahwa hal yang sama berlaku untuk penggunaan `new Buffer()` tanpa pe
 
 Konstruktor `Buffer` dapat digunakan untuk membuat buffer dengan berbagai cara:
 
-- `New Buffer(42)` membuat `Buffer` sebesar 42 byte. Sebelum Node.js 8, buffer ini berisi *memori sewenang-wenang* untuk alasan kinerja, yang dapat mencakup apa saja mulai dari kode sumber program untuk kata sandi dan kunci enkripsi.
+- `New Buffer(42)` membuat `Buffer` sebesar 42 byte. Sebelum Node.js 8, buffer ini berisi _memori sewenang-wenang_ untuk alasan kinerja, yang dapat mencakup apa saja mulai dari kode sumber program untuk kata sandi dan kunci enkripsi.
 - `new Buffer('abc')` membuat `Buffer` yang berisi versi UTF-8-encoded string '`'abc'`. Argumen kedua dapat menentukan pengkodean lain: misalnya,`new Buffer(string, 'base64')` dapat digunakan untuk mengonversi string Base64 menjadi yang asli urutan byte yang diwakilinya.
 - Ada beberapa kombinasi argumen lainnya.
 
-Ini berarti bahwa dalam kode seperti `var buffer = new Buffer(foo);`, *tidak mungkin untuk mengetahuinya apa sebenarnya isi buffer yang dihasilkan* tanpa mengetahui jenis `foo`.
+Ini berarti bahwa dalam kode seperti `var buffer = new Buffer(foo);`, _tidak mungkin untuk mengetahuinya apa sebenarnya isi buffer yang dihasilkan_ tanpa mengetahui jenis `foo`.
 
 Terkadang, nilai `foo` berasal dari sumber eksternal. Misalnya, fungsi ini dapat diekspos sebagai layanan di server web, mengubah string UTF-8 menjadi bentuk Base64:
 
@@ -196,7 +196,7 @@ Perhatikan bahwa kode ini _tidak_ memvalidasi jenis `req.body.string`:
 
 - `req.body.string` diharapkan berupa string. Jika ini masalahnya, semuanya berjalan dengan baik.
 - `req.body.string` dikendalikan oleh klien yang mengirimkan permintaan.
-- Jika `req.body.string` adalah *number* `50`, `rawBytes` akan menjadi `50` byte:
+- Jika `req.body.string` adalah _number_ `50`, `rawBytes` akan menjadi `50` byte:
   - Sebelum Node.js 8, konten tidak akan diinisialisasi
   - Setelah Node.js 8, konten akan menjadi `50` byte dengan nilai `0`
 
@@ -211,4 +211,4 @@ Saat menggunakan `Buffer.from(req.body.string)` sebagai gantinya, melewatkan nom
 
 ### <!--ecosystem-usage-->Konstruktor `Buffer()` telah ditinggalkan untuk sementara waktu. Apakah ini benar-benar masalah?
 
-Survei kode di ekosistem `npm` telah menunjukkan bahwa konstruktor `Buffer()` masih banyak digunakan. Ini termasuk kode baru, dan penggunaan keseluruhan kode tersebut sebenarnya telah *increasing*.
+Survei kode di ekosistem `npm` telah menunjukkan bahwa konstruktor `Buffer()` masih banyak digunakan. Ini termasuk kode baru, dan penggunaan keseluruhan kode tersebut sebenarnya telah _increasing_.
