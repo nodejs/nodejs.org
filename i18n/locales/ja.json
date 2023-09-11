@@ -18,7 +18,7 @@
   "components.navigation.getInvolved.links.contribute": "貢献する",
   "components.navigation.getInvolved.links.codeOfConduct": "行動規範",
   "components.downloadList.links.previousReleases": "バージョンの一覧",
-  "components.downloadList.links.packageManager": "Iパッケージマネージャを使用したダウンロード",
+  "components.downloadList.links.packageManager": "パッケージマネージャを使用したインストール",
   "components.downloadList.links.shaSums": "リリースファイルのための SHASUM 署名",
   "components.downloadList.links.shaSums.howToVerify": " (How to verify)",
   "components.downloadList.links.allDownloads": "All download options",
