@@ -11,9 +11,8 @@ type BannerProps = {
 
 const Banner: FC<BannerProps> = ({ type, text, url = '' }) => (
   <div className={`${styles.banner} ${styles[type] || styles.default}`}>
-    {(url.length > 0 && <LocalizedLink href={url}>{text}</LocalizedLink>) || (
-      <span>{text}</span>
-    )}
+    {(url.length > 0 && <LocalizedLink href={url}>{text}</LocalizedLink>) ||
+      text}
     {url.length > 0 && <ArrowUpRightIcon />}
   </div>
 );
