@@ -10,6 +10,8 @@ on:
     paths:
       - 'pages/**'
       - '!pages/en/**'
+      - 'i18n/locales/*.json'
+      - '!i18n/locales/en.json'
 
 permissions:
   # This permission is required by `stefanzweifel/git-auto-commit-action`
@@ -68,12 +70,12 @@ jobs:
       - name: Run `npx lint:md --fix`
         # This runs a specific version of ESLint with only the Translation Pages Globbing
         # This avoid that unrelated changes get linted/modified within this PR
-        run: npx eslint "pages/**/*.md?(x)" --fix
+        run: npx eslint "{pages,i18n}/**/*.{json,md,mdx}" --fix
 
       - name: Run `npx prettier --write`
         # This runs a specific version of Prettier with only the Translation Pages Globbing
         # This avoid that unrelated changes get prettied/modified within this PR
-        run: npx prettier "pages/**/*.md?(x)" --check --write
+        run: npx prettier "{pages,i18n}/**/*.{json,md,mdx}" --check --write
 
       - name: Push Changes back to Pull Request
         uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a
