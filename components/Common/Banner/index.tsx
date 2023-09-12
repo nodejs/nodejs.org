@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import LocalizedLink from '@/components/LocalizedLink';
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import styles from './index.module.scss';
 import type { FC } from 'react';
@@ -9,16 +9,12 @@ type BannerProps = {
   url?: string;
 };
 
-const Banner: FC<BannerProps> = ({ type, text, url }) => (
+const Banner: FC<BannerProps> = ({ type, text, url = '' }) => (
   <div className={`${styles.banner} ${styles[type || 'default']}`}>
-    {url ? (
-      <>
-        <Link href={url}>{text}</Link>
-        <ArrowUpRightIcon />
-      </>
-    ) : (
+    {(url.length > 0 && <LocalizedLink href={url}>{text}</LocalizedLink>) || (
       <span>{text}</span>
     )}
+    {url.length > 0 && <ArrowUpRightIcon />}
   </div>
 );
 
