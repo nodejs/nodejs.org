@@ -6,6 +6,7 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-controls',
     '@storybook/addon-interactions',
+    '@storybook/addon-themes',
     '@storybook/addon-viewport',
   ],
   framework: { name: '@storybook/nextjs', options: {} },
