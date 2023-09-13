@@ -17,7 +17,7 @@
     }
 
     &.special {
-      @apply bg-neutral-100/0 bg-gradient-to-r from-green-600/30 via-green-500/20 to-green-600/10 shadow-sm  border border-green-600/30;
+      @apply bg-neutral-100/0 bg-gradient-to-r from-green-600/30 via-green-500/20 to-green-600/10 shadow-sm border border-green-600/30;
 
       &:disabled {
         @apply opacity-50;
