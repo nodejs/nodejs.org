@@ -3,7 +3,8 @@ import { Open_Sans } from 'next/font/google';
 import { SiteProvider } from '../providers/siteProvider';
 import { ThemeProvider } from '../providers/themeProvider';
 import { LocaleProvider } from '../providers/localeProvider';
-import type { Preview } from '@storybook/react';
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
+import type { Preview, ReactRenderer } from '@storybook/react';
 
 import '../styles/new/index.scss';
 
@@ -49,6 +50,14 @@ export const decorators = [
       </LocaleProvider>
     </SiteProvider>
   ),
+  withThemeByDataAttribute<ReactRenderer>({
+    themes: {
+      light: '',
+      dark: 'dark',
+    },
+    defaultTheme: 'light',
+    attributeName: 'data-theme',
+  }),
 ];
 
 Object.defineProperty(NextImage, 'default', {
