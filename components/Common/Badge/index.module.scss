@@ -1,16 +1,16 @@
-.badge {
-  @apply border rounded-full flex items-center w-fit py-1 pl-1 pr-2.5;
+.wrapper {
+  @apply border rounded-full flex items-center w-fit py-1 pl-1 pr-2.5 text-sm font-medium;
 
   .icon {
     @apply w-4 h-4;
   }
 
-  .text {
-    @apply text-sm font-medium rounded-full border px-2.5 py-0.5 mr-2 text-white;
+  .badge {
+    @apply rounded-full border px-2.5 py-0.5 mr-2 text-white;
   }
 
   .message {
-    @apply text-sm font-medium mr-1;
+    @apply mr-1;
   }
 
   &.default {
@@ -20,7 +20,7 @@
       @apply text-green-500 dark:text-green-300;
     }
 
-    .text {
+    .badge {
       @apply border-green-200 dark:border-green-600 bg-green-600;
     }
 
@@ -36,7 +36,7 @@
       @apply text-danger-500 dark:text-danger-300;
     }
 
-    .text {
+    .badge {
       @apply border-danger-200 dark:border-danger-600 bg-danger-600;
     }
 
@@ -52,7 +52,7 @@
       @apply text-warning-500 dark:text-warning-300;
     }
 
-    .text {
+    .badge {
       @apply border-warning-200 dark:border-warning-600 bg-warning-600;
     }
 

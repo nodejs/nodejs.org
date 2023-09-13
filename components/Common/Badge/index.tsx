@@ -16,8 +16,8 @@ const Badge: FC<PropsWithChildren<BadgeProps>> = ({
   ...args
 }) => {
   return (
-    <LocalizedLink className={`${styles.badge} ${styles[kind]}`} {...args}>
-      {badgeText && <span className={styles.text}>{badgeText}</span>}
+    <LocalizedLink className={`${styles.wrapper} ${styles[kind]}`} {...args}>
+      {badgeText && <span className={styles.badge}>{badgeText}</span>}
       <span className={styles.message}>{children}</span>
       <ArrowRightIcon className={styles.icon} />
     </LocalizedLink>
