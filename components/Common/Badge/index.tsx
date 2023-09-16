@@ -1,7 +1,8 @@
-import type { ComponentProps, FC, PropsWithChildren } from 'react';
-import type Link from 'next/link';
 import ArrowRightIcon from '@heroicons/react/24/solid/ArrowRightIcon';
 import LocalizedLink from '@/components/LocalizedLink';
+import type { ComponentProps, FC, PropsWithChildren } from 'react';
+import type Link from 'next/link';
+
 import styles from './index.module.scss';
 
 type BadgeProps = {
@@ -14,14 +15,12 @@ const Badge: FC<PropsWithChildren<BadgeProps>> = ({
   badgeText,
   children,
   ...args
-}) => {
-  return (
-    <LocalizedLink className={`${styles.wrapper} ${styles[kind]}`} {...args}>
-      {badgeText && <span className={styles.badge}>{badgeText}</span>}
-      <span className={styles.message}>{children}</span>
-      <ArrowRightIcon className={styles.icon} />
-    </LocalizedLink>
-  );
-};
+}) => (
+  <LocalizedLink className={`${styles.wrapper} ${styles[kind]}`} {...args}>
+    {badgeText && <span className={styles.badge}>{badgeText}</span>}
+    <span className={styles.message}>{children}</span>
+    <ArrowRightIcon className={styles.icon} />
+  </LocalizedLink>
+);
 
 export default Badge;
