@@ -31,34 +31,4 @@ export const Warning: Story = {
   },
 };
 
-export const Default_Dark: Story = {
-  render: () => (
-    <div data-theme="dark" className="bg-neutral-900 p-2">
-      <Badge href="/" kind="default" badgeText="New">
-        OpenJS Foundation Certification 2023
-      </Badge>
-    </div>
-  ),
-};
-
-export const Error_Dark: Story = {
-  render: () => (
-    <div data-theme="dark" className="bg-neutral-900 p-2">
-      <Badge href="/" kind="error" badgeText="New">
-        OpenJS Foundation Certification 2023
-      </Badge>
-    </div>
-  ),
-};
-
-export const Warning_Dark: Story = {
-  render: () => (
-    <div data-theme="dark" className="bg-neutral-900 p-2">
-      <Badge href="/" kind="warning" badgeText="New">
-        OpenJS Foundation Certification 2023
-      </Badge>
-    </div>
-  ),
-};
-
 export default { component: Badge } as Meta;
