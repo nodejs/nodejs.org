@@ -19,7 +19,7 @@
   "components.navigation.getInvolved.links.codeOfConduct": "Condotta",
   "components.downloadList.links.previousReleases": "Rilasci Precedenti",
   "components.downloadList.links.packageManager": "Installa Node.js con un gestore di pacchetti",
-  "components.downloadList.links.shaSums": "Signed SHASUMS for release files",
+  "components.downloadList.links.shaSums": "SHASUMS firmati per i file di rilascio",
   "components.downloadList.links.shaSums.howToVerify": " (Come verificare)",
   "components.downloadList.links.allDownloads": "Tutti i download",
   "components.downloadList.links.nightlyReleases": "Build notturne",
