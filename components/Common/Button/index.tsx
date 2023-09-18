@@ -1,8 +1,12 @@
 import classNames from 'classnames';
-import type { ButtonProps } from '@/types/button';
-import type { FC } from 'react';
+import type { FC, ButtonHTMLAttributes } from 'react';
 
 import styles from './index.module.scss';
+
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: 'primary' | 'secondary' | 'tertiary';
+  special?: boolean;
+};
 
 const Button: FC<ButtonProps> = ({
   variant = 'primary',
