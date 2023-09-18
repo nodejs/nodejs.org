@@ -70,7 +70,7 @@ jobs:
       - name: Run `npx lint:md --fix`
         # This runs a specific version of ESLint with only the Translation Pages Globbing
         # This avoid that unrelated changes get linted/modified within this PR
-        run: npx eslint "{pages,i18n}/**/*.{json,md,mdx}" --fix
+        run: npx eslint "pages/**/*.{md,mdx}" --fix
 
       - name: Run `npx prettier --write`
         # This runs a specific version of Prettier with only the Translation Pages Globbing
