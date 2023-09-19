@@ -61,7 +61,7 @@
     "next-sitemap": "^4.2.3",
     "next-themes": "^0.2.1",
     "postcss": "~8.4.29",
-    "react-intl": "~6.4.5",
+    "react-intl": "~6.4.7",
     "rehype-autolink-headings": "~6.1.1",
     "rehype-pretty-code": "^0.10.0",
     "rehype-slug": "~5.1.0",
