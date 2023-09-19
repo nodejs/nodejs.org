@@ -1,5 +1,13 @@
 .banner {
-  @apply text-sm text-white flex flex-row items-center justify-center gap-2 py-3 w-full;
+  @apply text-sm
+    text-white
+    flex
+    flex-row
+    items-center
+    justify-center
+    gap-2
+    py-3
+    w-full;
 
   a {
     @apply underline;
