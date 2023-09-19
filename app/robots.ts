@@ -1,16 +1,15 @@
 import type { MetadataRoute } from 'next';
-import { BASE_PATH, BASE_URL } from '@/next.constants.mjs';
 
-// This is the combination of the Application Base URL and Base PATH
-const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;
-
+// This allows us to generate a `robots.txt` file dynamically based on the needs of the Noe.js Website
+// @see https://nextjs.org/docs/app/api-reference/file-conventions/metadata/robots
 const robots = (): MetadataRoute.Robots => ({
-  rules: {
-    userAgent: '*',
-    disallow: ['/dist/', '/docs/'],
-    allow: ['/dist/latest/', '/dist/latest/docs/api/', '/api/'],
-  },
-  sitemap: `${baseUrlAndPath}/sitemap.xml`,
+  rules: [
+    {
+      userAgent: '*',
+      disallow: ['/dist/', '/docs/'],
+      allow: ['/dist/latest/', '/dist/latest/docs/api/', '/api/'],
+    },
+  ],
 });
 
 export default robots;
