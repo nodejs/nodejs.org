@@ -1,40 +1,40 @@
 .button {
   @apply px-[18px]
-  py-[10px]
-  font-semibold;
+   py-[10px]
+   font-semibold;
 
   &.primary {
     @apply bg-green-600
-    text-white
-    rounded
-    border
-    border-green-600
-    shadow-sm;
+     text-white
+     rounded
+     border
+     border-green-600
+     shadow-sm;
 
     &:hover {
       @apply bg-green-700
-      border-green-700;
+       border-green-700;
     }
 
     &:focus {
       @apply bg-green-700
-      border-green-700;
+       border-green-700;
     }
 
     &:disabled {
       @apply bg-green-600
-      opacity-50;
+       opacity-50;
     }
 
     &.special {
       @apply bg-neutral-100/0
-      bg-gradient-to-r
-      from-green-600/30
-      via-green-500/20
-      to-green-600/10
-      shadow-sm
-      border
-      border-green-600/30;
+       bg-gradient-to-r
+       from-green-600/30
+       via-green-500/20
+       to-green-600/10
+       shadow-sm
+       border
+       border-green-600/30;
 
       &:disabled {
         @apply opacity-50;
@@ -44,15 +44,15 @@
 
   &.secondary {
     @apply text-neutral-800
-    rounded-lg
-    disabled:opacity-50
-    dark:text-neutral-200/100;
+     rounded-lg
+     disabled:opacity-50
+     dark:text-neutral-200/100;
 
     &:hover {
       @apply text-neutral-800
-      bg-neutral-100
-      dark:bg-neutral-900
-      dark:text-neutral-200;
+       bg-neutral-100
+       dark:bg-neutral-900
+       dark:text-neutral-200;
     }
 
     &:disabled {
@@ -65,9 +65,9 @@
 
     &:focus {
       @apply text-neutral-800
-      bg-neutral-100
-      dark:bg-neutral-900
-      dark:text-neutral-200;
+       bg-neutral-100
+       dark:bg-neutral-900
+       dark:text-neutral-200;
     }
 
     &.special {
