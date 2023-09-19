@@ -4,7 +4,6 @@ import { join, normalize, sep } from 'node:path';
 import { readFileSync } from 'node:fs';
 import { VFile } from 'vfile';
 import { getHighlighter } from 'shiki';
-import remarkGfm from 'remark-gfm';
 import remarkHeadings from '@vcarl/remark-headings';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
@@ -176,7 +175,7 @@ export const generateStaticProps = async (source = '', filename = '') => {
             },
           ],
         ],
-        remarkPlugins: [remarkGfm, remarkHeadings],
+        remarkPlugins: [remarkHeadings],
         format: filename.includes('.mdx') ? 'mdx' : 'md',
       },
     });

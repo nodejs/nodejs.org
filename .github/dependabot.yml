@@ -50,11 +50,12 @@ updates:
           - 'next-sitemap'
           - 'next-themes'
           - '@vercel/*'
-      remark-mdx:
+      mdx:
         patterns:
           - '@vcarl/remark-headings'
-          - 'remark-gfm'
           - '@mdx-js/*'
+          - 'rehype-*'
+          - 'remark-*'
       react:
         patterns:
           - 'react'
