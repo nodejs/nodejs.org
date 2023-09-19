@@ -4,7 +4,7 @@ The Node.js Web Team (@nodejs/web) is a team in the Node.js Project that is comp
 
 ### Node.js Website Team (`@nodejs/nodejs-website`)
 
-The Node.js Website Team is responsible for the technical development of the Node.js Website. This includes the development of the features of the Website, providing stability and security to the Website, and the maintenance of the Website.
+The Node.js Website Team is responsible for the day-to-day technical development of the Node.js Website. This is primarily the development of the website itself, adding new features, pages and components, but also fixing any security issues in the website code, handling operational maintenance, and so on.
 
 The maintainers on the Node.js Website Team are responsible for steering the technical direction of the Node.js Website, and reserve the right to make final decisions on any issues or pull requests, in line with the Contribution Guidelines, Collaborator Guidelines, the Code of Conduct and the overall Governance premises of the Node.js project.
 
