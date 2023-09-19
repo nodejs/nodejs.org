@@ -375,7 +375,6 @@ MDX is becoming the standard for parsing human-content on React/Next.js-based Ap
 
 Some of the plugins that we use include:
 
-- `remark-gfm`: Allows us to use GitHub Flavored Markdown
 - `remark-headings`: Generates Metadata for Markdown Headings
   - This allows us to build the Table of Contents for each Page, for example.
 - `rehype-autolink-headings`: Allows us to add Anchor Links to Markdown Headings
