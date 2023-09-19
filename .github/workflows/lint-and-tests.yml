@@ -228,7 +228,7 @@ jobs:
           github.event_name == 'pull_request_target' &&
           startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
           github.event.pull_request.head.ref != 'chore/crowdin'
-        uses: chromaui/action@v1
+        uses: chromaui/action@807600692d28833b717c155e15ed20905cdc865c
         with:
           buildScriptName: storybook:build
           ignoreLastBuildOnBranch: true
