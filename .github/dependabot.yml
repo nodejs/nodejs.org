@@ -3,8 +3,7 @@ updates:
   - package-ecosystem: github-actions
     directory: '/'
     schedule:
-      interval: weekly
-      day: friday
+      interval: monthly
     labels:
       - dependencies
       - 'github_actions:pull-request'
@@ -16,8 +15,7 @@ updates:
     directory: '/'
     versioning-strategy: increase
     schedule:
-      interval: weekly
-      day: friday
+      interval: monthly
     labels:
       - dependencies
       - 'github_actions:pull-request'
