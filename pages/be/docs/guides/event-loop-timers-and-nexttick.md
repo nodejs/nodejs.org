@@ -1,8 +1,6 @@
 ---
-
 title: Цыкл падзей Node.js, таймеры і функцыя process.nextTick()
 layout: docs.hbs
-
 ---
 
 # Цыкл падзей Node.js, таймеры і функцыя `process.nextTick()`
