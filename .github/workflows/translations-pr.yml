@@ -83,15 +83,23 @@ jobs:
       - name: Run `npx lint:md --fix`
         # This runs a specific version of ESLint with only the Translation Pages Globbing
         # This avoid that unrelated changes get linted/modified within this PR
-        run: npx eslint "pages/**/*.{md,mdx}" --fix
+        run: npx eslint "pages/**/*.{md,mdx}" --fix --cache --cache-strategy content --cache-file .eslintmdcache
 
       - name: Run `npx prettier --write`
         # This runs a specific version of Prettier with only the Translation Pages Globbing
         # This avoid that unrelated changes get prettied/modified within this PR
-        run: npx prettier "{pages,i18n}/**/*.{json,md,mdx}" --check --write
+        run: npx prettier "{pages,i18n}/**/*.{json,md,mdx}" --check --write --cache --cache-strategy content --cache-location=.prettiercache
 
       - name: Push Changes back to Pull Request
         uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a
         with:
           commit_options: '--no-verify --signoff'
           commit_message: 'chore: automated format of translated files'
+
+      - name: Save Lint Cache
+        uses: actions/cache/save@704facf57e6136b1bc63b828d79edcd491f0ee84
+        with:
+          path: |
+            .eslintmdcache
+            .prettiercache
+          key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.eslintmdcache') }}
