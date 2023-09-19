@@ -17,9 +17,9 @@ next.dynamic.mjs @nodejs/web-infra
 /pages/en/blog/announcements @nodejs/releasers
 
 # Node.js Core Guides
-/pages/en/guides @nodejs/collaborators
+/pages/en/guides @nodejs/Collaborators
 
 # Governance
-GOVERNANCE.md @nodejs/web
-CONTRIBUTING.md @nodejs/web
-COLLABORATOR_GUIDE.md @nodejs/web
+GOVERNANCE.md @nodejs/Web
+CONTRIBUTING.md @nodejs/Web
+COLLABORATOR_GUIDE.md @nodejs/Web
