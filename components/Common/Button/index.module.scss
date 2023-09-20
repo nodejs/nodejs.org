@@ -1,7 +1,8 @@
 .button {
   @apply px-[18px]
    py-[10px]
-   font-semibold;
+   font-semibold
+   relative;
 
   &.primary {
     @apply bg-green-600
@@ -25,21 +26,6 @@
       @apply bg-green-600
        opacity-50;
     }
-
-    &.special {
-      @apply bg-neutral-100/0
-       bg-gradient-to-r
-       from-green-600/30
-       via-green-500/20
-       to-green-600/10
-       shadow-sm
-       border
-       border-green-600/30;
-
-      &:disabled {
-        @apply opacity-50;
-      }
-    }
   }
 
   &.secondary {
@@ -59,27 +45,38 @@
       @apply bg-neutral-100/0;
     }
 
-    &.dark {
-      @apply text-neutral-200;
-    }
-
     &:focus {
       @apply text-neutral-800
        bg-neutral-100
        dark:bg-neutral-900
        dark:text-neutral-200;
     }
+  }
 
-    &.special {
+  &.special {
+    @apply bg-green-600/10
+     text-white
+     shadow-sm
+     rounded-lg
+     border
+     border-green-600/30;
+
+    &::before {
+      @apply absolute
+       h-full
+       w-full
+       top-0
+       right-0;
+      background: radial-gradient(
+        8rem circle at calc(100% - 40px) 10px,
+        rgba(#5fa04e, 0.35),
+        transparent 30%
+      );
+      content: '';
+    }
+
+    &:disabled {
       @apply opacity-50;
-
-      &:hover {
-        @apply bg-neutral-900;
-      }
-
-      &:focus {
-        @apply bg-neutral-900;
-      }
     }
   }
 }
