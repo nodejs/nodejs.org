@@ -1,8 +1,5 @@
 {
   "**/*.{mjs,ts,tsx,md,mdx}": ["eslint --fix", "prettier --check --write"],
-  "**/*.{css,sass,scss}": [
-    "stylelint --config .stylelintrc.mjs",
-    "prettier --write"
-  ],
+  "components/**/*.{css,sass,scss}": ["stylelint", "prettier --write"],
   "**/*.{json,yml}": ["prettier --check --write"]
 }
