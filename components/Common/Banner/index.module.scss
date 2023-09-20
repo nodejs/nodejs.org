@@ -1,12 +1,21 @@
 .banner {
-  @apply text-sm text-white flex flex-row items-center justify-center gap-2 py-3 w-full;
+  @apply text-sm
+    text-white
+    flex
+    flex-row
+    items-center
+    justify-center
+    gap-2
+    py-3
+    w-full;
 
   a {
     @apply underline;
   }
 
   svg {
-    @apply h-4 w-4;
+    @apply h-4 
+      w-4;
   }
 }
 
