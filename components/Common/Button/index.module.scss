@@ -78,5 +78,13 @@
     &:disabled {
       @apply opacity-50;
     }
+
+    &:hover {
+      @apply bg-green-600/20;
+    }
+
+    &:focus {
+      @apply bg-green-600/20;
+    }
   }
 }
