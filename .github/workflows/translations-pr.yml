@@ -23,8 +23,7 @@ permissions:
 jobs:
   comment_on_translation_pr:
     # This comment should only be posted on PRs that come from users and not from Crowdin
-    if: |
-      github.head_ref != 'chore/crowdin'
+    if: github.head_ref != 'chore/crowdin'
 
     name: Comment on Translation PR
     runs-on: ubuntu-latest
@@ -44,9 +43,7 @@ jobs:
 
   format_crowdin_pull_request:
     # We should only run the automated Format Command on Crowdin-based Pull Requests
-    if: |
-      github.head_ref == 'chore/crowdin' &&
-      contains(github.event.pull_request.labels.*.name, 'crowdin')
+    if: github.head_ref == 'chore/crowdin'
 
     name: Format Crowdin Pull Request
     runs-on: ubuntu-latest
@@ -54,6 +51,22 @@ jobs:
     steps:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+
+      - name: Restore Lint Cache
+        uses: actions/cache/restore@704facf57e6136b1bc63b828d79edcd491f0ee84
+        with:
+          path: |
+            .eslintmdcache
+            .prettiercache
+          # We want to restore Turborepo Cache and ESlint and Prettier Cache
+          # The ESLint and Prettier cache's are useful to reduce the overall runtime of ESLint and Prettier
+          # as they will only run on files that have changed since the last cached run
+          # this might of course lead to certain files not being checked against the linter, but the chances
+          # of such situation from happening are very slim as the checksums of both files would need to match
+          key: cache-lint-${{ hashFiles('package-lock.json') }}-
+          restore-keys: |
+            cache-lint-${{ hashFiles('package-lock.json') }}-
+            cache-lint-
 
       - name: Set up Node.js
         uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d
@@ -70,15 +83,23 @@ jobs:
       - name: Run `npx lint:md --fix`
         # This runs a specific version of ESLint with only the Translation Pages Globbing
         # This avoid that unrelated changes get linted/modified within this PR
-        run: npx eslint "{pages,i18n}/**/*.{json,md,mdx}" --fix
+        run: npx eslint "pages/**/*.{md,mdx}" --fix --cache --cache-strategy content --cache-file .eslintmdcache
 
       - name: Run `npx prettier --write`
         # This runs a specific version of Prettier with only the Translation Pages Globbing
         # This avoid that unrelated changes get prettied/modified within this PR
-        run: npx prettier "{pages,i18n}/**/*.{json,md,mdx}" --check --write
+        run: npx prettier "{pages,i18n}/**/*.{json,md,mdx}" --check --write --cache --cache-strategy content --cache-location=.prettiercache
 
       - name: Push Changes back to Pull Request
         uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a
         with:
           commit_options: '--no-verify --signoff'
           commit_message: 'chore: automated format of translated files'
+
+      - name: Save Lint Cache
+        uses: actions/cache/save@704facf57e6136b1bc63b828d79edcd491f0ee84
+        with:
+          path: |
+            .eslintmdcache
+            .prettiercache
+          key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.eslintmdcache') }}

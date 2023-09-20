@@ -121,7 +121,9 @@ jobs:
         # We only run full static builds within Pull Requests. As they're not needed on `merge_group` or `push` events
         # Note that we skip full static builds on Crowdin-based Pull Requests as these PRs should only contain translation changes
         if: |
-          github.event_name == 'pull_request_target' && github.event.pull_request.head.ref != 'chore/crowdin'
+          (github.event_name == 'push') ||
+          (github.event_name == 'pull_request_target' &&
+            github.event.pull_request.head.ref != 'chore/crowdin')
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ steps.turborepo_arguments.outputs.turbo_args }}` is a string substitution coming from a previous step
         run: npx --package=turbo@latest -- turbo deploy ${{ steps.turborepo_arguments.outputs.turbo_args }}

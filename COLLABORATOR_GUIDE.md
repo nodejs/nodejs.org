@@ -156,6 +156,20 @@ We also recommend reading [this guide for setting up Tailwind on your IDE](https
 
 Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind within CSS Modules, we recommend reading [this guide](https://tailwindcss.com/docs/using-with-preprocessors).
 
+#### Example of a CSS Module
+
+```scss
+.myComponent {
+  @apply some
+    tailwind
+    classes;
+}
+```
+
+- We use Camel Case for defining Class Names
+- We use Tailwind's `@apply` selector to apply Tailwind Styles
+  - Note that we should have one tailwind token per line as shown in the example above; This improves readability
+
 > [!NOTE]\
 > Tailwind is already configured for this repository. You don't need to import any Tailwind module within your CSS modules.
 > You can apply Tailwind classes by regularly using CSS variables or SCSS's `@apply` statement, for example. If you have questions, please raise them on Pull Requests or Issues.
@@ -191,8 +205,9 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 #### How a new Component should look like when freshly created
 
 ```tsx
-import styles from './index.module.scss';
 import type { FC } from 'react';
+
+import styles from './index.module.scss';
 
 type MyComponentProps = {}; // The types of the Props of your Component
 
@@ -360,7 +375,6 @@ MDX is becoming the standard for parsing human-content on React/Next.js-based Ap
 
 Some of the plugins that we use include:
 
-- `remark-gfm`: Allows us to use GitHub Flavored Markdown
 - `remark-headings`: Generates Metadata for Markdown Headings
   - This allows us to build the Table of Contents for each Page, for example.
 - `rehype-autolink-headings`: Allows us to add Anchor Links to Markdown Headings
