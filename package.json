@@ -56,7 +56,6 @@
     "lint-staged": "14.0.1",
     "next": "^13.4.19",
     "next-mdx-remote": "^4.4.1",
-    "next-sitemap": "^4.2.3",
     "next-themes": "^0.2.1",
     "postcss": "~8.4.30",
     "react-intl": "~6.4.7",
