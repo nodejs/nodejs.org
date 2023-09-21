@@ -141,15 +141,15 @@ export const DYNAMIC_GENERATED_ROUTES = () => [
 ];
 
 /***
- * 
+ * This is a list of all external links that are used on website sitemap.
  * @see https://github.com/nodejs/nodejs.org/issues/5813 for more context
  */
 export const EXTERNAL_LINKS_SITMAP = [
-    "https://terms-of-use.openjsf.org/",
-    "https://privacy-policy.openjsf.org/",
-    "https://bylaws.openjsf.org/",
-    "https://code-of-conduct.openjsf.org/",
-    "https://trademark-policy.openjsf.org/",
-    "https://trademark-list.openjsf.org/",
-    "https://www.linuxfoundation.org/cookies"
+  'https://terms-of-use.openjsf.org/',
+  'https://privacy-policy.openjsf.org/',
+  'https://bylaws.openjsf.org/',
+  'https://code-of-conduct.openjsf.org/',
+  'https://trademark-policy.openjsf.org/',
+  'https://trademark-list.openjsf.org/',
+  'https://www.linuxfoundation.org/cookies',
 ];
