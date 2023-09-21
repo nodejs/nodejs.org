@@ -35,9 +35,6 @@ const nextConfig = {
   // we also configure ESLint to run its lint checking on all files (next lint)
   eslint: { dirs: ['.'], ignoreDuringBuilds: true },
   experimental: {
-    // We disable the support for legacy browsers which should reduce the polyiffing
-    // and the overall bundle size for the Node.js Website client runtime
-    legacyBrowsers: false,
     // Some of our static pages from `getStaticProps` have a lot of data
     // since we pass the fully-compiled MDX page from `MDXRemote` through
     // a page's static props.
