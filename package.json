@@ -28,7 +28,7 @@
     "deploy": "cross-env NEXT_STATIC_EXPORT=true npm run build",
     "lint:js": "eslint \"**/*.{mjs,ts,tsx}\" --cache --cache-strategy content --cache-file .eslintjscache --report-unused-disable-directives",
     "lint:md": "eslint \"**/*.md?(x)\" --cache --cache-strategy content --cache-file .eslintmdcache",
-    "lint:scss": "stylelint \"components/**/*.{css,sass,scss}\"",
+    "lint:scss": "stylelint \"**/*.{css,sass,scss}\"",
     "lint": "npm run lint:js && npm run lint:md && npm run lint:scss",
     "lint:fix": "npm run lint:js -- --fix && npm run lint:md -- --fix && npm run lint:scss -- --fix",
     "prettier": "prettier \"**/*.{mjs,ts,tsx,md,mdx,json,yml,css,sass,scss}\" --check --cache --cache-strategy content --cache-location=.prettiercache",
