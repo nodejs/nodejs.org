@@ -1,9 +1,8 @@
-const camelCaseRegex = /^(?:[a-z]+(?:[A-Z][a-z]*)*)$/;
+// Enforces certain selectors to be only in camelCase notation
+// such as class names, for example
 const onlyAllowCamelCaseRule = [
-  camelCaseRegex,
-  {
-    message: selector => `Expected selector '${selector}' to be in camelCase`,
-  },
+  /^(?:[a-z]+(?:[A-Z][a-z]*)*)$/,
+  { message: s => `Expected '${s}' to be in camelCase` },
 ];
 
 export default {
@@ -22,9 +21,7 @@ export default {
     ],
     'scss/at-rule-no-unknown': [
       true,
-      {
-        ignoreAtRules: ['tailwind', 'apply'],
-      },
+      { ignoreAtRules: ['tailwind', 'apply'] },
     ],
   },
 };
