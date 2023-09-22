@@ -23,7 +23,9 @@ permissions:
 jobs:
   comment_on_translation_pr:
     # This comment should only be posted on PRs that come from users and not from Crowdin
-    if: github.head_ref != 'chore/crowdin'
+    if: |
+      github.event.pull_request.head.repo.full_name == 'nodejs/nodejs.org' &&
+      github.event.pull_request.head.ref != 'chore/crowdin'
 
     name: Comment on Translation PR
     runs-on: ubuntu-latest
@@ -43,7 +45,9 @@ jobs:
 
   format_crowdin_pull_request:
     # We should only run the automated Format Command on Crowdin-based Pull Requests
-    if: github.head_ref == 'chore/crowdin'
+    if: |
+      github.event.pull_request.head.repo.full_name == 'nodejs/nodejs.org' &&
+      github.event.pull_request.head.ref == 'chore/crowdin'
 
     name: Format Crowdin Pull Request
     runs-on: ubuntu-latest

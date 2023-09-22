@@ -14,7 +14,7 @@ on:
     branches:
       - main
     types:
-      - labeled
+      - unlabeled
   merge_group:
 
 defaults:
@@ -29,22 +29,6 @@ permissions:
   pull-requests: write
 
 jobs:
-  # This Job removes the `github_actions:pull-request` label after it got applied
-  # which allows people with write access to the repository to easily reapply the label if they need to trigger
-  # this Workflow again
-  remove_pull_request_label:
-    if: |
-      github.event_name == 'pull_request_target' &&
-      github.event.label.name == 'github_actions:pull-request'
-
-    name: Remove Pull Request Label
-    runs-on: ubuntu-latest
-    steps:
-      - name: Remove GitHub Actions Label
-        uses: actions-ecosystem/action-remove-labels@2ce5d41b4b6aa8503e285553f75ed56e0a40bae0
-        with:
-          labels: github_actions:pull-request
-
   base:
     name: Base Tasks
     runs-on: ubuntu-latest
@@ -166,11 +150,12 @@ jobs:
           key: cache-lint-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.turbo/cache/**') }}
 
   tests:
-    # This Job should run either on `merge_groups` or `pull_request_target` event with a
-    # `labeled` action with a label named `github_actions:pull-request` since we want to run lint checks against any changes on pull requests
-    # and on final patches against a pull request. We don't need to execute the tests again on pushes against (`main`) as the merge group should already handle that
+    # This Job should run either on `merge_groups` or `push` events
+    # or `pull_request_target` event with a `labeled` action with a label named `github_actions:pull-request`
+    # since we want to run lint checks against any changes on pull requests and on final patches against a pull request.
+    # We don't need to execute the tests again on pushes against (`main`) as the merge group should already handle that
     if: |
-      github.event_name == 'merge_group' ||
+      (github.event_name == 'push' || github.event_name == 'merge_group') ||
       (github.event_name == 'pull_request_target' &&
         github.event.label.name == 'github_actions:pull-request')
 
@@ -225,13 +210,13 @@ jobs:
         # We only need to run Storybook Builds and Storybook Visual Regression Tests within Pull Requests that actually
         # introduce changes to the Storybook. Hence, we skip running these on Crowdin PRs and Dependabot PRs
         if: |
-          github.event_name == 'pull_request_target' &&
-          startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
-          github.event.pull_request.head.ref != 'chore/crowdin'
+          github.event_name == 'push' ||
+          (github.event_name == 'pull_request_target' &&
+            startsWith(github.event.pull_request.head.ref, 'dependabot/') == false &&
+            github.event.pull_request.head.ref != 'chore/crowdin')
         uses: chromaui/action@807600692d28833b717c155e15ed20905cdc865c
         with:
           buildScriptName: storybook:build
-          ignoreLastBuildOnBranch: true
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           exitOnceUploaded: true
           onlyChanged: true
