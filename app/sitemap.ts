@@ -32,15 +32,11 @@ const sitemap = (): MetadataRoute.Sitemap => {
     .sort()
     .map(route => `${baseUrlAndPath}/${route}`);
 
-  const sitemapEntries = [...appRoutes, ...EXTERNAL_LINKS_SITEMAP].map(
-    route => ({
-      url: route,
-      lastModified: currentDate,
-      changeFrequency: 'always',
-    })
-  ) as MetadataRoute.Sitemap;
-
-  return sitemapEntries;
+  return [...appRoutes, ...EXTERNAL_LINKS_SITEMAP].map(route => ({
+    url: route,
+    lastModified: currentDate,
+    changeFrequency: 'always',
+  }));
 };
 
 export default sitemap;
