@@ -4,7 +4,7 @@
 # REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
 # AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
 
-name: Linting and Tests
+name: Pull Request CI Label
 
 on:
   pull_request_target:
