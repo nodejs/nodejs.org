@@ -1,0 +1,33 @@
+.wrapper {
+  @apply text-neutral-900
+    dark:text-white
+    border-l-2
+    border-green-600
+    dark:border-green-400
+    flex
+    items-start
+    gap-4
+    self-stretch
+    pl-5
+    py-2
+    flex-col
+    max-w-2xl;
+
+  & p {
+    @apply text-lg
+      font-semibold;
+  }
+
+  & footer {
+    @apply text-base
+      font-regular;
+  }
+
+  & cite {
+    @apply not-italic;
+
+    &::before {
+      @apply content-['—_'];
+    }
+  }
+}
