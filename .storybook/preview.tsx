@@ -1,19 +1,12 @@
 import NextImage from 'next/image';
-import { Open_Sans } from 'next/font/google';
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { SiteProvider } from '../providers/siteProvider';
 import { ThemeProvider } from '../providers/themeProvider';
 import { LocaleProvider } from '../providers/localeProvider';
-import { withThemeByDataAttribute } from '@storybook/addon-themes';
-import type { Preview, ReactRenderer } from '@storybook/react';
+import { OPEN_SANS_FONT, THEME_EXTRA_CLASSES } from './constants';
+import type { Preview, ReactRenderer, Decorator } from '@storybook/react';
 
 import '../styles/new/index.scss';
-
-const openSans = Open_Sans({
-  weight: ['300', '400', '600', '700'],
-  display: 'fallback',
-  subsets: ['latin'],
-  variable: '--font-open-sans',
-});
 
 const preview: Preview = {
   parameters: {
@@ -36,14 +29,18 @@ const preview: Preview = {
 // The `openSans.variable` injects the name of the Font Family to the DOM Tree
 // The `font-open-sans` variable is the actual Tailwind Classname
 // that tells that the font-family for this Component tree should be "Open Sans"
-const storyClasses = `${openSans.variable} font-open-sans`;
+const getStoryClasses = (theme: string) =>
+  `${OPEN_SANS_FONT.variable} ${THEME_EXTRA_CLASSES[theme]}`;
 
-export const decorators = [
-  Story => (
+// These are extra Storybook Decorators applied to all stories
+// that introduce extra functionality such as Theme Switching
+// and all the App's Providers (Site, Theme, Locale)
+export const decorators: Decorator[] = [
+  (Story, context) => (
     <SiteProvider>
       <LocaleProvider>
         <ThemeProvider>
-          <div className={storyClasses}>
+          <div className={getStoryClasses(context.globals.theme)}>
             <Story />
           </div>
         </ThemeProvider>
@@ -60,6 +57,8 @@ export const decorators = [
   }),
 ];
 
+// This forces the Next.js image system to use unoptimized images
+// for all the Next.js Images (next/image) Components
 Object.defineProperty(NextImage, 'default', {
   configurable: true,
   value: props => <NextImage {...props} unoptimized />,
