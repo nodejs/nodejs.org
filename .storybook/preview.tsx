@@ -3,26 +3,18 @@ import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { SiteProvider } from '../providers/siteProvider';
 import { ThemeProvider } from '../providers/themeProvider';
 import { LocaleProvider } from '../providers/localeProvider';
-import { OPEN_SANS_FONT, THEME_EXTRA_CLASSES } from './constants';
+import { OPEN_SANS_FONT, STORYBOOK_MODES, THEME_CLASSES } from './constants';
 import type { Preview, ReactRenderer, Decorator } from '@storybook/react';
 
 import '../styles/new/index.scss';
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/,
-      },
+    nextjs: { router: { basePath: '' } },
+    chromatic: {
+      //🔶 Test each story for ArticleCard in two modes
+      modes: STORYBOOK_MODES,
     },
-    nextjs: {
-      router: {
-        basePath: '',
-      },
-    },
-    backgrounds: { disable: true },
   },
 };
 
@@ -30,7 +22,7 @@ const preview: Preview = {
 // The `font-open-sans` variable is the actual Tailwind Classname
 // that tells that the font-family for this Component tree should be "Open Sans"
 const getStoryClasses = (theme: string) =>
-  `${OPEN_SANS_FONT.variable} ${THEME_EXTRA_CLASSES[theme]}`;
+  `${OPEN_SANS_FONT.variable} ${THEME_CLASSES[theme]}`;
 
 // These are extra Storybook Decorators applied to all stories
 // that introduce extra functionality such as Theme Switching
