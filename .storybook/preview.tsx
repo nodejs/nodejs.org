@@ -21,8 +21,8 @@ const preview: Preview = {
   parameters: {
     viewport: {
       viewports: {
-        small: { name: 'Small', styles: { width: '640px', height: '800px' } },
-        large: { name: 'Large', styles: { width: '1024px', height: '1000px' } },
+        small: { name: 'Small', styles: { width: '375px', height: '667px' } },
+        large: { name: 'Large', styles: { width: '1024px', height: '768px' } },
       },
     },
     nextjs: { router: { basePath: '' } },
