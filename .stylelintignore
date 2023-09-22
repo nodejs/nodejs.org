@@ -12,3 +12,6 @@ coverage
 
 # Storybook
 storybook-static
+
+# Old Styles
+styles/old

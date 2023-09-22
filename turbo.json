@@ -70,7 +70,7 @@
     "lint:scss": {
       "inputs": [
         "{app,components,layouts,pages,styles}/**/*.{css,sass,scss}",
-        ".stylelintrc.json",
+        ".stylelintrc.mjs",
         ".stylelintignore"
       ]
     },
@@ -84,7 +84,7 @@
         "*.{md,mdx,ts,tsx,mjs,yml}",
         ".eslintrc.json",
         ".eslintignore",
-        ".stylelintrc.json",
+        ".stylelintrc.mjs",
         ".stylelintignore",
         ".prettierrc.json",
         ".prettierignore",
@@ -102,7 +102,7 @@
         "*.{md,mdx,ts,tsx,mjs}",
         ".eslintrc.json",
         ".eslintignore",
-        ".stylelintrc.json",
+        ".stylelintrc.mjs",
         ".stylelintignore",
         ".prettierrc.json",
         ".prettierignore",
@@ -120,7 +120,7 @@
         "*.{md,mdx,json,ts,tsx,mjs,yml}",
         ".eslintrc.json",
         ".eslintignore",
-        ".stylelintrc.json",
+        ".stylelintrc.mjs",
         ".stylelintignore",
         ".prettierrc.json",
         ".prettierignore",
@@ -139,7 +139,7 @@
         "*.{md,mdx,json,ts,tsx,mjs,yml}",
         ".eslintrc.json",
         ".eslintignore",
-        ".stylelintrc.json",
+        ".stylelintrc.mjs",
         ".stylelintignore",
         ".prettierrc.json",
         ".prettierignore",
@@ -158,7 +158,7 @@
         "*.{md,mdx,json,ts,tsx,mjs,yml}",
         ".eslintrc.json",
         ".eslintignore",
-        ".stylelintrc.json",
+        ".stylelintrc.mjs",
         ".stylelintignore",
         ".prettierrc.json",
         ".prettierignore",

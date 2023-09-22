@@ -11,7 +11,8 @@
     font-medium;
 
   .icon {
-    @apply w-4 h-4;
+    @apply w-4
+      h-4;
   }
 
   .badge {
@@ -58,18 +59,18 @@
 
     .icon {
       @apply text-danger-500
-       dark:text-danger-300;
+        dark:text-danger-300;
     }
 
     .badge {
       @apply border-danger-200
-       dark:border-danger-600
-       bg-danger-600;
+        dark:border-danger-600
+        bg-danger-600;
     }
 
     .message {
       @apply text-danger-700
-       dark:text-danger-300;
+        dark:text-danger-300;
     }
   }
 
