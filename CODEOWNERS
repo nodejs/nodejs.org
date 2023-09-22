@@ -5,9 +5,6 @@
 .github @nodejs/web-infra
 .husky @nodejs/web-infra
 
-# Dependencies
-package.json @nodejs/web-infra
-
 # Framework
 next.config.mjs @nodejs/web-infra
 next.dynamic.mjs @nodejs/web-infra
