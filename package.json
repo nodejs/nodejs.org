@@ -26,7 +26,7 @@
     "postbuild": "npm run scripts:generate-robots",
     "start": "cross-env NODE_NO_WARNINGS=1 next start",
     "deploy": "cross-env NEXT_STATIC_EXPORT=true npm run build",
-    "lint:js": "eslint \"**/*.{mjs,ts,tsx}\" --cache --cache-strategy content --cache-file .eslintjscache --report-unused-disable-directives",
+    "lint:js": "eslint \"**/*.{mjs,ts,tsx}\" --cache --cache-strategy content --cache-file .eslintjscache",
     "lint:md": "eslint \"**/*.md?(x)\" --cache --cache-strategy content --cache-file .eslintmdcache",
     "lint:scss": "stylelint \"**/*.{css,sass,scss}\"",
     "lint": "npm run lint:js && npm run lint:md && npm run lint:scss",

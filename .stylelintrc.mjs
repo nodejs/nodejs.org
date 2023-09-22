@@ -19,9 +19,6 @@ export default {
       true,
       { ignorePseudoClasses: ['global'] },
     ],
-    'scss/at-rule-no-unknown': [
-      true,
-      { ignoreAtRules: ['tailwind', 'apply'] },
-    ],
+    'scss/at-rule-no-unknown': [true, { ignoreAtRules: ['tailwind', 'apply'] }],
   },
 };
