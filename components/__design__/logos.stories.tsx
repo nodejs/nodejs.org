@@ -7,16 +7,14 @@ export default {
   title: 'Design System/Logos',
   component: () => {
     return (
-      <div>
-        <div>
-          <Image
-            src={`/static/images/logos/js-white.svg`}
-            alt="Node.js"
-            width={30}
-            height={30}
-          />
-        </div>
-      </div>
+       <div>
+        <Image
+          src={`/static/images/logos/js-white.svg`}
+          alt="Node.js"
+          width={30}
+          height={30}
+        />
+       </div>
     );
   },
 } as MetaObj;
