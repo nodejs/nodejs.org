@@ -13,9 +13,7 @@ npm-debug.log
 build
 
 # Next.js Generated Files
-public/robots.txt
 public/sitemap.xml
-public/default-sitemap.xml
 public/en/feed/*.xml
 
 # Jest
