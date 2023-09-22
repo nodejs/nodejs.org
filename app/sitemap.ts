@@ -5,6 +5,7 @@ import {
   DYNAMIC_GENERATED_ROUTES,
   BASE_PATH,
   BASE_URL,
+  EXTERNAL_LINKS_SITMAP,
 } from '@/next.constants.mjs';
 import type { MetadataRoute } from 'next';
 
@@ -28,11 +29,13 @@ const sitemap = (): MetadataRoute.Sitemap => {
   const currentDate = new Date().toISOString();
 
   // This maps the URL routes into Sitemap entries
-  return [...dynamicRoutes, ...staticPaths].sort().map(route => ({
-    url: `${baseUrlAndPath}/${route}`,
-    lastModified: currentDate,
-    changeFrequency: 'always',
-  }));
+  return [...dynamicRoutes, ...staticPaths, ...EXTERNAL_LINKS_SITMAP]
+    .sort()
+    .map(route => ({
+      url: `${baseUrlAndPath}/${route}`,
+      lastModified: currentDate,
+      changeFrequency: 'always',
+    }));
 };
 
 export default sitemap;
