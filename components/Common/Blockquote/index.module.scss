@@ -18,13 +18,10 @@
       font-semibold;
   }
 
-  & footer {
-    @apply text-base
-      font-regular;
-  }
-
   & cite {
-    @apply not-italic;
+    @apply text-base
+      font-regular
+      not-italic;
 
     &::before {
       @apply content-['—_'];
