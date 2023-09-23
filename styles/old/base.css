@@ -55,7 +55,7 @@ b {
 
 p {
   a {
-    @include padded-link(2px);
+    @mixin padded-link 2px;
   }
 }
 

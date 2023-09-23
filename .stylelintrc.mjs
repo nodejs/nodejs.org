@@ -13,6 +13,9 @@ export default {
     'no-descending-specificity': null,
     'selector-class-pattern': onlyAllowCamelCaseRule,
     'selector-id-pattern': onlyAllowCamelCaseRule,
-    'scss/at-rule-no-unknown': [true, { ignoreAtRules: ['tailwind', 'apply'] }],
+    'scss/at-rule-no-unknown': [
+      true,
+      { ignoreAtRules: ['tailwind', 'apply', 'define-mixin'] },
+    ],
   },
 };
