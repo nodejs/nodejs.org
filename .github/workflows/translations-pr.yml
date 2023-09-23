@@ -8,8 +8,8 @@ on:
     branches:
       - main
     paths:
-      - 'pages/**'
-      - '!pages/en/**'
+      - 'pages/**/*.md?(x)'
+      - '!pages/en/**/*.md?(x)'
       - 'i18n/locales/*.json'
       - '!i18n/locales/en.json'
 
