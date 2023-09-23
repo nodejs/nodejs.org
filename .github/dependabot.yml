@@ -3,12 +3,9 @@ updates:
   - package-ecosystem: github-actions
     directory: '/'
     schedule:
-      interval: weekly
-      day: friday
+      interval: monthly
     labels:
-      - dependencies
       - 'github_actions:pull-request'
-      - 'github_actions'
     commit-message:
       prefix: meta
     open-pull-requests-limit: 10
@@ -16,10 +13,8 @@ updates:
     directory: '/'
     versioning-strategy: increase
     schedule:
-      interval: weekly
-      day: friday
+      interval: monthly
     labels:
-      - dependencies
       - 'github_actions:pull-request'
     commit-message:
       prefix: meta
@@ -52,11 +47,12 @@ updates:
           - 'next-sitemap'
           - 'next-themes'
           - '@vercel/*'
-      remark-mdx:
+      mdx:
         patterns:
           - '@vcarl/remark-headings'
-          - 'remark-gfm'
           - '@mdx-js/*'
+          - 'rehype-*'
+          - 'remark-*'
       react:
         patterns:
           - 'react'

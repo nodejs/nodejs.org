@@ -1,0 +1,36 @@
+# Security Notes
+# Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
+# for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
+# REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
+# AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
+
+name: Pull Request CI Label
+
+on:
+  pull_request_target:
+    branches:
+      - main
+    types:
+      - labeled
+
+defaults:
+  run:
+    # This ensures that the working directory is the root of the repository
+    working-directory: ./
+
+permissions:
+  # This permission is required by `actions-ecosystem/action-remove-label`
+  pull-requests: write
+
+jobs:
+  # This Job removes the `github_actions:pull-request` label after it got applied
+  # which allows people with write access to the repository to easily reapply the label if they need to trigger
+  # this Workflow again
+  remove_pull_request_label:
+    name: Remove Pull Request Label
+    runs-on: ubuntu-latest
+    steps:
+      - name: Remove GitHub Actions Label
+        uses: actions-ecosystem/action-remove-labels@2ce5d41b4b6aa8503e285553f75ed56e0a40bae0
+        with:
+          labels: github_actions:pull-request
