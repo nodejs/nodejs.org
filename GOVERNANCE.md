@@ -15,7 +15,7 @@ Members of this team are nominated through the guidelines provided in the Collab
 The Node.js Web Infra Team is responsible for maintaining the Infrastructure relating to Node.js's Web Presence. The Node.js Web Infra team has the responsibilities of:
 
 - Maintaining CI/CD pipelines related to Web Infrastructure
-- Maintaining our Infrastructure Providers (such as Vercel, for the Node.js Website)
+- Maintaining our Infrastructure Providers (such as Vercel and Cloudflare, for the Node.js website)
 - Have technical ownership on best-standards and best-practices for our Web Infrastructure (such as Web Frameworks that we use)
 
 Web Infra Team members should have access to be able to maintain the services mentioned above.
