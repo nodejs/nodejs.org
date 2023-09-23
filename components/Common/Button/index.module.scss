@@ -1,3 +1,5 @@
+@import 'styles/new/mixins';
+
 .button {
   @apply px-[18px]
    py-[10px]
@@ -67,12 +69,26 @@
        w-full
        top-0
        right-0;
-      background: radial-gradient(
-        8rem circle at calc(100% - 40px) 10px,
-        rgba(#5fa04e, 0.35),
-        transparent 30%
+      @include glow-backdrop(8em, #5fa04e);
+      content: '';
+    }
+
+    &::after {
+      background: var(
+        --gradient-glow,
+        linear-gradient(
+          90deg,
+          rgba(65, 126, 56, 0) 0%,
+          #417e38 50%,
+          rgba(65, 126, 56, 0) 100%
+        )
       );
       content: '';
+      height: 1px;
+      position: absolute;
+      right: 0px;
+      top: -1px;
+      width: 40%;
     }
 
     &:disabled {

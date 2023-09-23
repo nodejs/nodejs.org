@@ -1,5 +1,7 @@
 /* Note.: In order to support Taiwind's IntelliSense we recommend https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss */
 
+@import './mixins';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
