@@ -32,7 +32,7 @@ Members of this team are nominated by the Node.js Technical Steering Committee (
 
 The Node.js UX & Design Team is composed of Node.js Collaborators and External Collaborators that have experience or expertisè with UX & Design. The UX & Design Team is responsible for guiding and serving as points of contact when members of the Node.js Web Team require assistance or guidance regarding UX & Design.
 
-Often members of this team will collaborate on providing best practices and guidelines for the Node.js Website, on matters of UX & Design. Members of this team are also responsible for providing feedback on the Node.js Website, and providing feedback on the Node.js Website's design. (For example, when a discussion arises regarding best practices on topics such as CSS, the UX & Design Team has a say on the matter).
+Often members of this team will collaborate on providing best practices and guidelines for the Node.js Website, on matters of UX & Design. Members of this team are also responsible for providing feedback on the Node.js Website, and providing feedback on the Node.js Website's design. (For example, when a discussion arises regarding best practices on topics such as CSS, accessibility, UX flows and intent, or component design, the UX & Design Team has a say on the matter).
 
 Members of this team are nominated by the Node.js Technical Steering Committee (TSC). Note that members of the Node.js Web Team might also recommend people for nomination.
 
