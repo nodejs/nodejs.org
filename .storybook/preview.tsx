@@ -1,15 +1,12 @@
 import NextImage from 'next/image';
-import {
-  withThemeByDataAttribute,
-  withThemeByClassName,
-} from '@storybook/addon-themes';
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import { SiteProvider } from '../providers/siteProvider';
 import { ThemeProvider } from '../providers/themeProvider';
 import { LocaleProvider } from '../providers/localeProvider';
 import { OPEN_SANS_FONT, STORYBOOK_MODES, THEME_CLASSES } from './constants';
 import type { Preview, ReactRenderer } from '@storybook/react';
 
-import '../styles/new/index.scss';
+import '../styles/new/index.css';
 
 // The `openSans.variable` injects the name of the Font Family to the DOM Tree
 // The `font-open-sans` variable is the actual Tailwind Classname
@@ -21,7 +18,7 @@ const preview: Preview = {
   parameters: {
     viewport: {
       viewports: {
-        small: { name: 'Small', styles: { width: '375px', height: '667px' } },
+        small: { name: 'Small', styles: { width: '414px', height: '896px' } },
         large: { name: 'Large', styles: { width: '1024px', height: '768px' } },
       },
     },

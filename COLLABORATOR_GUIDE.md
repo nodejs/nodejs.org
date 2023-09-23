@@ -70,7 +70,12 @@ The Node.js Website is built upon [React][] and [Next.js][] respectively, the UI
 
 The Website also uses several other Open Source libraries (not limited to) listed below:
 
-- Styling is done with [SCSS][] and CSS Modules
+- Styling is done with [PostCSS][] and CSS Modules
+  - We use a combination of PostCSS plugins to create a [Sass](https://sass-lang.com/) alike environment
+  - We recommend reading the documentation of our plugins in case of doubt
+    - [PostCSS Mixins](https://github.com/postcss/postcss-mixins)
+    - [PostCSS Import](https://github.com/postcss/postcss-import)
+    - [PostCSS Simple Vars](https://github.com/postcss/postcss-simple-vars)
 - [TailwindCSS](https://tailwindcss.com/) is used as our CSS Framework and the Foundation of our Design System
 - [Hero Icons](https://heroicons.com/) is an SVG Icon Library used within our Codebase
 - [Shiki][] is a Syntax Highlighter used for our Codeboxes
@@ -87,7 +92,7 @@ The Website also uses several other Open Source libraries (not limited to) liste
 - React Components are defined on `/components`
 - React Templates are defined on `/layouts`
 - Global Stylesheets are declared on `/styles`
-  - Styles are done with [SCSS][]
+  - Styles are done with [PostCSS][]
 - Public files are stored on `/public`
   - Static Images, JavaScript files, and others are stored within `/public/static`
 - Internationalisation is done on `/i18n`
@@ -140,14 +145,14 @@ React allows us to create user interfaces with a modern take on Web Development.
 
 If you're unfamiliar with React or Web Development in general, we encourage a read before taking on complex issues and tasks as this repository is **not for educational purposes** and we expect you to have a basic understanding of the technologies used.
 
-We also recommend getting familiar with technologies such as [Next.js][], [MDX][], [SCSS][], and "concepts" such as "CSS Modules" and "CSS-in-JS".
+We also recommend getting familiar with technologies such as [Next.js][], [MDX][], [PostCSS][], and "concepts" such as "CSS Modules" and "CSS-in-JS".
 
 ### Styling a Component
 
-As mentioned, we write all Component-styles in a separate `.module.scss` files. This is like writing any CSS in a separate file (besides the fact that we use [SCSS][]).
+As mentioned, we write all Component-styles in a separate `.module.css` files. This is like writing any CSS in a separate file (besides the fact that we use [PostCSS][]).
 
 This concept of writing styles on dedicated CSS files and importing them within JavaScript (or React) is a pattern named **[CSS Module](https://github.com/css-modules/css-modules)**.
-These allow us to write SCSS (or regular CSS, or any flavor of CSS if you have a way of interpreting it) within a `.module.scss` and import the class names directly to our React Components.
+These allow us to write PostCSS (or regular CSS, or any flavor of CSS if you have a way of interpreting it) within a `.module.css` and import the class names directly to our React Components.
 We recommend reading guides on "Styling React Components with CSS Modules", which there are many available on the web.
 
 It's important to mention that we use [TailwindCSS](https://tailwindcss.com/) as a CSS Framework. Hence, margins, paddings, font sizes, font weights, colors, and other sorts of styles are all provided with Tailwind.
@@ -172,7 +177,7 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 
 > [!NOTE]\
 > Tailwind is already configured for this repository. You don't need to import any Tailwind module within your CSS modules.
-> You can apply Tailwind classes by regularly using CSS variables or SCSS's `@apply` statement, for example. If you have questions, please raise them on Pull Requests or Issues.
+> You can apply Tailwind classes by regularly using CSS variables or PostCSS's `@apply` statement, for example. If you have questions, please raise them on Pull Requests or Issues.
 
 > [!IMPORTANT]\
 > For styling Components, only using Tailwind variables for defining paddings, margins, spacing, flexboxes, and all sorts of CSS classes is mandatory.
@@ -191,7 +196,7 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
   ```text
   - ComponentName
     - index.tsx // the component itself
-    - index.module.scss // all styles of the component are placed there
+    - index.module.css // all styles of the component are placed there
     - index.stories.tsx // component Storybook stories
     - __tests__ // component tests (such as unit tests, etc)
       - index.test.mjs // unit tests should be done in ESM and not TypeScript
@@ -207,7 +212,7 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 ```tsx
 import type { FC } from 'react';
 
-import styles from './index.module.scss';
+import styles from './index.module.css';
 
 type MyComponentProps = {}; // The types of the Props of your Component
 
@@ -394,7 +399,7 @@ Tailwind is a great CSS Framework. It allows us to create a Design System that i
 
 For example, it automatically integrates with PostCSS and Next.js, which allows us to use Tailwind's utilities within our Components and Pages.
 
-It also integrates with Sass allowing to use Tailwind classes directly within our SCSS Modules.
+It also integrates with Sass allowing to use Tailwind classes directly within our CSS Modules.
 
 **Note:** On that remark, we use CSS Modules as a way to define our Styles.
 This allows us to scope our styles to a specific Component or Page, without having to worry about CSS Class Name Collisions.
@@ -407,7 +412,7 @@ The font is configured as a CSS variable and then configured on `tailwind.config
 
 #### Sass Support / IDE Support
 
-We recommend the usage of [Tailwind's Official VS Code Extension](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) for IntelliSense Support. You might need to set `.scss` files to use Tailwind as the Interpreter.
+We recommend the usage of [Tailwind's Official VS Code Extension](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) for IntelliSense Support. You might need to set `.css` files to use Tailwind as the Interpreter.
 
 ### Vercel
 
@@ -433,6 +438,6 @@ If you're unfamiliar or curious about something, we recommend opening a Discussi
 [`react-intl`]: https://formatjs.io/docs/react-intl/
 [Next.js]: https://nextjs.org/
 [MDX]: https://mdxjs.com/
-[SCSS]: https://sass-lang.com/
+[PostCSS]: https://postcss.org/
 [React]: https://react.dev/
 [Shiki]: https://github.com/shikijs/shiki

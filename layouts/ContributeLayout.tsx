@@ -4,7 +4,7 @@ import type { FC, PropsWithChildren } from 'react';
 
 const ContributeLayout: FC<PropsWithChildren> = ({ children }) => (
   <BaseLayout>
-    <div className="container has-side-nav">
+    <div className="has-side-nav container">
       <SideNavigation navigationKey="getInvolved" />
       <article dir="auto">{children}</article>
     </div>
