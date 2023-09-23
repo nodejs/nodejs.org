@@ -177,7 +177,7 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 
 > [!NOTE]\
 > Tailwind is already configured for this repository. You don't need to import any Tailwind module within your CSS modules.
-> You can apply Tailwind classes by regularly using CSS variables or PostCSS's `@apply` statement, for example. If you have questions, please raise them on Pull Requests or Issues.
+> You can apply Tailwind classes by regularly using CSS variables or Tailwind's `@apply` token, for example. If you have questions, please raise them on Pull Requests or Issues.
 
 > [!IMPORTANT]\
 > For styling Components, only using Tailwind variables for defining paddings, margins, spacing, flexboxes, and all sorts of CSS classes is mandatory.
