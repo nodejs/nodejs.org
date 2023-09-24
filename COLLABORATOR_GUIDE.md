@@ -474,5 +474,4 @@ If you're unfamiliar or curious about something, we recommend opening a Discussi
 [PostCSS]: https://postcss.org/
 [React]: https://react.dev/
 [Shiki]: https://github.com/shikijs/shiki
-
-\[Tailwind]\[]: <https://tailwindcss.com/>
+[Tailwind]: https://tailwindcss.com/
