@@ -68,11 +68,7 @@ img {
 
 code {
   border-radius: 3px;
-  font-family:
-    Consolas,
-    Monaco,
-    Andale Mono,
-    monospace;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
   font-size: 14px;
   padding: 0.2em 0.4em;
 }
@@ -100,7 +96,7 @@ blockquote {
   position: relative;
 
   &::before {
-    background-color: rgba(0, 0, 0, 0.14);
+    background-color: rgb(0 0 0 / 14%);
     content: '';
     display: block;
     height: 100%;

@@ -129,27 +129,27 @@
  */
 
 [role='button'] {
-  background-color: hsl(0deg, 0%, 31%);
+  background-color: hsl(0deg 0% 31%);
   background-image: linear-gradient(
     to bottom,
-    hsl(0deg, 0%, 33%),
-    hsl(0deg, 0%, 27%)
+    hsl(0deg 0% 33%),
+    hsl(0deg 0% 27%)
   );
-  border: 1px solid hsl(0deg, 0%, 39%);
+  border: 1px solid hsl(0deg 0% 39%);
   border-radius: 5px;
-  box-shadow: 0 1px 2px hsl(0deg, 0%, 45%);
+  box-shadow: 0 1px 2px hsl(0deg 0% 45%);
   color: #fff;
-  text-shadow: 0 -1px 1px hsl(0deg, 0%, 15%);
+  text-shadow: 0 -1px 1px hsl(0deg 0% 15%);
 }
 
 [role='button']:hover {
-  background-color: hsl(0deg, 0%, 21%);
+  background-color: hsl(0deg 0% 21%);
   background-image: linear-gradient(
     to bottom,
-    hsl(0deg, 0%, 23%),
-    hsl(0deg, 0%, 17%)
+    hsl(0deg 0% 23%),
+    hsl(0deg 0% 17%)
   );
-  border-color: hsl(0deg, 0%, 19%);
+  border-color: hsl(0deg 0% 19%);
   cursor: pointer;
 }
 
@@ -158,54 +158,52 @@
 }
 
 [role='button']:focus::before {
-  border: 3px solid hsl(0deg, 0%, 39%);
+  border: 3px solid hsl(0deg 0% 39%);
 
   /* button border radius + outline width + offset */
   border-radius: calc(5px + 3px + 3px);
-  bottom: calc(-1px - 3px - 3px);
+  inset: calc(-1px - 3px - 3px) calc(-1px - 3px - 3px) calc(-1px - 3px - 3px)
+    calc(-1px - 3px - 3px);
   content: '';
-  left: calc(-1px - 3px - 3px);
   position: absolute;
-  right: calc(-1px - 3px - 3px);
 
   /* button border width - outline width - offset */
-  top: calc(-1px - 3px - 3px);
   z-index: -1;
 }
 
 [role='button']:active {
-  background-color: hsl(0deg, 0%, 11%);
+  background-color: hsl(0deg 0% 11%);
   background-image: linear-gradient(
     to bottom,
-    hsl(0deg, 0%, 33%),
-    hsl(0deg, 0%, 27%)
+    hsl(0deg 0% 33%),
+    hsl(0deg 0% 27%)
   );
-  border-color: hsl(0deg, 0%, 29%);
-  box-shadow: inset 0 3px 5px 1px hsl(0deg, 0%, 10%);
+  border-color: hsl(0deg 0% 29%);
+  box-shadow: inset 0 3px 5px 1px hsl(0deg 0% 10%);
 }
 
 [role='button'][aria-pressed] {
-  background-color: hsl(0deg, 0%, 31%);
+  background-color: hsl(0deg 0% 31%);
   background-image: linear-gradient(
     to bottom,
-    hsl(0deg, 0%, 33%),
-    hsl(0deg, 0%, 27%)
+    hsl(0deg 0% 33%),
+    hsl(0deg 0% 27%)
   );
-  border-color: hsl(0deg, 0%, 29%);
-  box-shadow: 0 1px 2px hsl(0deg, 0%, 35%);
-  text-shadow: 0 -1px 1px hsl(0deg, 0%, 5%);
+  border-color: hsl(0deg 0% 29%);
+  box-shadow: 0 1px 2px hsl(0deg 0% 35%);
+  text-shadow: 0 -1px 1px hsl(0deg 0% 5%);
 }
 
 [role='button'][aria-pressed]:hover {
-  background-color: hsl(0deg, 0%, 31%);
+  background-color: hsl(0deg 0% 31%);
   background-image: linear-gradient(
     to bottom,
-    hsl(0deg, 0%, 13%),
-    hsl(0deg, 0%, 7%)
+    hsl(0deg 0% 13%),
+    hsl(0deg 0% 7%)
   );
-  border-color: hsl(0deg, 0%, 9%);
+  border-color: hsl(0deg 0% 9%);
 }
 
 [role='button'][aria-pressed]:focus::before {
-  border-color: hsl(0deg, 0%, 29%);
+  border-color: hsl(0deg 0% 29%);
 }
