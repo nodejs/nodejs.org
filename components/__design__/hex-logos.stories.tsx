@@ -16,6 +16,14 @@ export default {
             height={64}
           />
         </div>
+        <div>
+          <Image
+            src={`/static/images/logos/hex-green.svg`}
+            alt="Node.js"
+            width={64}
+            height={64}
+          />
+        </div>
       </div>
     );
   },
