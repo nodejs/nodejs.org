@@ -2,6 +2,6 @@
   "recommendations": [
     "esbenp.prettier-vscode",
     "bradlc.vscode-tailwindcss",
-    "vunguyentuan.vscode-postcss"
+    "stylelint.vscode-stylelint"
   ]
 }

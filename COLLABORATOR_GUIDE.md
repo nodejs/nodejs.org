@@ -185,8 +185,10 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 > If unsure how to proceed, ask for help within Issues or Pull Requests.
 
 > [!IMPORTANT]\
-> When using IDEs (such as Visual Studio Code) we recommend using the PostCSS Extension and Tailwind Extensions;
-> Since the native CSS Parser will not recognise some of the custom CSS syntax (PostCSS plugins) that we use
+> When using IDEs such as Visual Studio Code, we recommend installing the official [Stylelint](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+> and [Tailwind](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) Extensions.\
+> This is necessary since we use custom CSS syntax (that comes from our PostCSS plugins)\
+> Our Stylelint Configuration is already compatible with our PostCSS rules and plugins
 
 ### Best practices when creating a Component
 

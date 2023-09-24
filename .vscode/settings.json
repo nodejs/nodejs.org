@@ -34,7 +34,5 @@
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "files.associations": {
-    "*.css": "postcss"
-  }
+  "css.validate": false
 }
