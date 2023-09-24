@@ -59,6 +59,7 @@
     "next-mdx-remote": "^4.4.1",
     "next-themes": "^0.2.1",
     "postcss": "~8.4.30",
+    "postcss-calc": "~9.0.1",
     "postcss-import": "~15.1.0",
     "postcss-mixins": "~9.0.4",
     "postcss-simple-vars": "~7.0.1",
