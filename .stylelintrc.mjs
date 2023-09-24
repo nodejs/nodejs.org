@@ -6,16 +6,14 @@ const onlyAllowCamelCaseRule = [
 ];
 
 export default {
-  extends: ['stylelint-config-recommended-scss'],
+  extends: ['stylelint-config-recommended'],
   plugins: ['stylelint-order', 'stylelint-selector-bem-pattern'],
   rules: {
     'order/properties-alphabetical-order': true,
     'no-descending-specificity': null,
-    'selector-class-pattern': onlyAllowCamelCaseRule,
-    'selector-id-pattern': onlyAllowCamelCaseRule,
-    'scss/at-rule-no-unknown': [
+    'at-rule-no-unknown': [
       true,
-      { ignoreAtRules: ['tailwind', 'apply', 'define-mixin'] },
+      { ignoreAtRules: ['tailwind', 'apply', 'define-mixin', 'mixin'] },
     ],
   },
 };
