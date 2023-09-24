@@ -1,13 +1,13 @@
-// These are all the custom `@` tokens that we use within our custom PostCSS plugins
-const CUSTOM_AT_TOKENS = [
-  // Tailwind-specific @ Tokens
+// These are all the custom `@` (at) rules that we use within our custom PostCSS plugins
+const CUSTOM_AT_RULES = [
+  // Tailwind-specific at-rules
   'apply',
   'layer',
   'responsive',
   'screen',
   'tailwind',
   'variants',
-  // PostCSS-specific @ Tokens
+  // PostCSS-specific at-rules
   'define-mixin',
   'mixin',
 ];
@@ -27,7 +27,7 @@ export default {
     'selector-class-pattern': ONLY_ALLOW_CAMEL_CASE_SELECTORS,
     // Enforces Element IDs to be camelCase
     'selector-id-pattern': ONLY_ALLOW_CAMEL_CASE_SELECTORS,
-    'at-rule-no-unknown': [true, { ignoreAtRules: CUSTOM_AT_TOKENS }],
+    'at-rule-no-unknown': [true, { ignoreAtRules: CUSTOM_AT_RULES }],
     // Enforces the order of the CSS properties to be in alphabetical order
     'order/properties-alphabetical-order': true,
     'no-descending-specificity': null,

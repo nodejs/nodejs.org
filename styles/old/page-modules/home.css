@@ -162,9 +162,9 @@
 
   /* button border radius + outline width + offset */
   border-radius: calc(5px + 3px + 3px);
+  content: '';
   inset: calc(-1px - 3px - 3px) calc(-1px - 3px - 3px) calc(-1px - 3px - 3px)
     calc(-1px - 3px - 3px);
-  content: '';
   position: absolute;
 
   /* button border width - outline width - offset */

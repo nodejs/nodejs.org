@@ -386,9 +386,9 @@ They are React Components that receive the `children` prop, which is the transfo
 
 Each Page layout is configured within their Markdown's Frontmatter as `layout: name-of-layout.hbs`.
 
-### What do we use for Styling?
+### How we style the Website?
 
-We use PostCSS to style the Node.js Website; PostCSS is a CSS Preprocessor, like Sass and Less.
+We use [PostCSS][] to style the Node.js Website; PostCSS is a CSS Preprocessor, like Sass and Less.
 
 #### How exactly do we style Components?
 
@@ -417,6 +417,12 @@ It is important to mention that even though we use SCSS-like syntax, we do not u
 are not 100% compatible with the SCSS syntax.
 For example, `postcss-mixins` does not support `@include` and `@extend` directives (and it uses `@define-mixin` for defining Mixins and `@mixin` for including Mixins).
 
+#### Do we use a CSS Framework?
+
+The Node.js Website uses Tailwind as a CSS Framework for crafting our React Components and style the Website.
+
+[Tailwind][] is an utility-first CSS Framework. It allows us to create a Design System that is easy to maintain and extend. It also allows us to create a consistent Design Language across the Website.
+
 ### Why MDX?
 
 MDX is an extension on Markdown that allows us to add JSX Components within Markdown.
@@ -437,18 +443,6 @@ Since we use Incremental Static Rendering and Serverless Functions, Vercel attem
 This means that Shiki's Themes and Languages are not bundled by default.
 
 Hence the `shiki.config.mjs` file, where we define our custom set of supported Languages and we bundle them directly by using [Shiki's Grammar Property](https://github.com/shikijs/shiki/blob/main/docs/languages.md#supporting-your-own-languages-with-shiki) which allows us to embed the languages directly.
-
-### Do we use a CSS Framework?
-
-Yes, the Node.js Website uses Tailwind as a CSS Framework.
-
-[Tailwind][] is an utility-first CSS Framework. It allows us to create a Design System that is easy to maintain and extend. It also allows us to create a consistent Design Language across the Website.
-
-Tailwind automatically integrates with PostCSS and Next.js, which allows us to use Tailwind's utilities within our Components and Pages.
-
-**Note:** On that remark, we use CSS Modules as a way to define our Styles.
-This allows us to scope our styles to a specific Component or Page, without having to worry about CSS Class Name Collisions.
-This also means that we don't use CSS-in-JS solutions such as Styled Components or Emotion.
 
 #### Next Fonts and Tailwind
 
