@@ -23,7 +23,7 @@ export default {
             width={64}
             height={64}
           />
-        </div>        
+        </div>
       </div>
     );
   },
