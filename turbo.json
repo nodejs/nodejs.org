@@ -9,7 +9,7 @@
     "build": {
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
-        "{app,components,layouts,pages,styles}/**/*.{css,sass,scss}",
+        "{app,components,layouts,pages,styles}/**/*.css",
         "{next-data,scripts,i18n}/**/*.{mjs,json}",
         "{app,pages}/**/*.{mdx,md}",
         "*.{md,mdx,json,ts,tsx,mjs,yml}"
@@ -32,7 +32,7 @@
     "deploy": {
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
-        "{app,components,layouts,pages,styles}/**/*.{css,sass,scss}",
+        "{app,components,layouts,pages,styles}/**/*.css",
         "{next-data,scripts,i18n}/**/*.{mjs,json}",
         "{app,pages}/**/*.{mdx,md}",
         "*.{md,mdx,json,ts,tsx,mjs,yml}"
@@ -67,9 +67,9 @@
       ],
       "outputs": [".eslintmdcache"]
     },
-    "lint:scss": {
+    "lint:css": {
       "inputs": [
-        "{app,components,layouts,pages,styles}/**/*.{css,sass,scss}",
+        "{app,components,layouts,pages,styles}/**/*.css",
         ".stylelintrc.mjs",
         ".stylelintignore"
       ]
@@ -77,7 +77,7 @@
     "lint": {
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
-        "{app,components,layouts,pages,styles}/**/*.{css,sass,scss}",
+        "{app,components,layouts,pages,styles}/**/*.css",
         "{next-data,scripts,i18n}/**/*.mjs",
         "{.storybook,public}/**/*.{ts,js,css}",
         "{app,pages}/**/*.{mdx,md}",
@@ -95,7 +95,7 @@
     "lint:fix": {
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
-        "{app,components,layouts,pages,styles}/**/*.{css,sass,scss}",
+        "{app,components,layouts,pages,styles}/**/*.css",
         "{next-data,scripts,i18n}/**/*.mjs",
         "{.storybook,public}/**/*.{ts,js,css}",
         "{app,pages}/**/*.{mdx,md}",
@@ -113,7 +113,7 @@
     "prettier": {
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
-        "{app,components,layouts,pages,styles}/**/*.{css,sass,scss}",
+        "{app,components,layouts,pages,styles}/**/*.css",
         "{next-data,scripts,i18n}/**/*.{mjs,json}",
         "{.storybook,public}/**/*.{ts,js,css,json}",
         "{app,pages}/**/*.{mdx,md}",
@@ -132,7 +132,7 @@
     "prettier:fix": {
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
-        "{app,components,layouts,pages,styles}/**/*.{css,sass,scss}",
+        "{app,components,layouts,pages,styles}/**/*.css",
         "{next-data,scripts,i18n}/**/*.{mjs,json}",
         "{.storybook,public}/**/*.{ts,js,css,json}",
         "{app,pages}/**/*.{mdx,md}",
@@ -151,7 +151,7 @@
     "format": {
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
-        "{app,components,layouts,pages,styles}/**/*.{css,sass,scss}",
+        "{app,components,layouts,pages,styles}/**/*.css",
         "{next-data,scripts,i18n}/**/*.{mjs,json}",
         "{.storybook,public}/**/*.{ts,js,css,json}",
         "{app,pages}/**/*.{mdx,md}",
@@ -174,7 +174,7 @@
     "storybook:build": {
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx}",
-        "{app,components,layouts,pages,styles}/**/*.{css,sass,scss}",
+        "{app,components,layouts,pages,styles}/**/*.css",
         "{next-data,scripts,i18n}/**/*.{mjs,json}",
         "{.storybook,public}/**/*.{ts,js,css,json}",
         "{app,pages}/**/*.{mdx,md}",
@@ -185,7 +185,7 @@
     "test:unit": {
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx,mjs}",
-        "{app,components,layouts,pages,styles}/**/*.{css,sass,scss}",
+        "{app,components,layouts,pages,styles}/**/*.css",
         "{next-data,scripts,i18n}/**/*.{mjs,json}",
         "{app,pages}/**/*.{mdx,md}",
         "*.{md,mdx,json,ts,tsx,mjs,yml}"
@@ -195,7 +195,7 @@
     "test": {
       "inputs": [
         "{app,components,hooks,i18n,layouts,middlewares,pages,providers,types,util}/**/*.{ts,tsx,mjs}",
-        "{app,components,layouts,pages,styles}/**/*.{css,sass,scss}",
+        "{app,components,layouts,pages,styles}/**/*.css",
         "{next-data,scripts,i18n}/**/*.{mjs,json}",
         "{app,pages}/**/*.{mdx,md}",
         "*.{md,mdx,json,ts,tsx,mjs,yml}"

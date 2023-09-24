@@ -6,6 +6,7 @@ export default {
     './components/**/*.tsx',
     './layouts/**/*.tsx',
     './.storybook/preview.tsx',
+    './.storybook/preview-body.html',
   ],
   theme: {
     colors: {

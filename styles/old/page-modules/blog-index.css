@@ -15,7 +15,7 @@
 
 nav.pagination {
   a {
-    @include padded-link(2px);
+    @mixin padded-link 2px;
   }
 }
 
@@ -24,6 +24,7 @@ nav.pagination {
   .dark .blog-index {
     .summary {
       margin-left: 0;
+
       p {
         overflow: hidden;
         text-overflow: ellipsis;

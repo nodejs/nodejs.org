@@ -44,16 +44,19 @@
     margin-left: 10%;
   }
 }
+
 @media (min-width: 320px) {
   .help {
     margin-left: 58%;
   }
 }
+
 @media (min-width: 500px) {
   .help {
     margin-left: 65%;
   }
 }
+
 @media (min-width: 768px) {
   .help {
     margin-left: 70%;
