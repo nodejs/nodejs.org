@@ -9,14 +9,11 @@
     border-green-600
     py-2
     pl-5
+    text-lg
+    font-semibold
     text-neutral-900
     dark:border-green-400
     dark:text-white;
-
-  & p {
-    @apply text-lg
-      font-semibold;
-  }
 
   & cite {
     @apply text-base
