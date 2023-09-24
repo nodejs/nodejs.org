@@ -119,7 +119,7 @@ header {
     display: flex;
     justify-content: space-evenly;
     left: 0;
-    margin: 0 10px 8px 10px;
+    margin: 0 10px 8px;
     position: absolute;
     top: 0;
 
@@ -151,7 +151,7 @@ header {
           content: ' ';
           height: 0;
           left: 50%;
-          margin-left: -$border-width * 0.5;
+          margin-left: calc(-$border-width * 0.5);
           pointer-events: none;
           position: absolute;
           top: 100%;
@@ -192,7 +192,7 @@ header {
 
     .logo {
       justify-content: center;
-      margin: 10px 0 16px 0;
+      margin: 10px 0 16px;
       position: unset;
     }
   }

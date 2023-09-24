@@ -3,8 +3,6 @@
 @import 'variables';
 @import 'base';
 @import 'utils';
-
-// Import specific page sections and layout parts
 @import 'layout/sticky-footer';
 @import 'layout/grid';
 @import 'layout/main';

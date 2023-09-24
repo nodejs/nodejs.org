@@ -1,19 +1,5 @@
 import { Open_Sans } from 'next/font/google';
 
-// These are the shared CSS classes between the Storybook Themes
-// Note: These are Tailwind Classes, and `font-open-sans` is the `open-sans`
-// font defined within the tailwind.config.ts config file
-export const COMMON_CLASSES = 'px-4 py-4 font-open-sans';
-
-// These are the theme-specific CSS classes for Storybook Themes
-// Note: These are Tailwind Classes and black/white are defined within
-// the tailwind.config.ts config file as theme colors
-export const THEME_CLASSES = {
-  dark: `${COMMON_CLASSES} bg-black text-white`,
-  light: `${COMMON_CLASSES} bg-white text-black`,
-  '': `${COMMON_CLASSES} bg-white text-black`,
-};
-
 // This defines "execution" modes that Chromatic will run on the each Storybook Story
 // This allows us to test each Story with different parameters
 // @see https://www.chromatic.com/blog/introducing-story-modes/
@@ -34,6 +20,13 @@ export const STORYBOOK_MODES = {
     theme: 'light',
     viewport: 'large',
   },
+};
+
+// These are the supported Viewports for our Storybook Stories
+// It is also the different viewports that Chromatic will run the Visual Regression Tests
+export const STORYBOOK_SIZES = {
+  small: { name: 'Small', styles: { width: '414px', height: '896px' } },
+  large: { name: 'Large', styles: { width: '1024px', height: '768px' } },
 };
 
 // This configures the Next.js Font for Open Sans

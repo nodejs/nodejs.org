@@ -1,9 +1,9 @@
 .wrapper {
-  @apply border
-    rounded-full
-    flex
-    items-center
+  @apply flex
     w-fit
+    items-center
+    rounded-full
+    border
     py-1
     pl-1
     pr-2.5
@@ -11,16 +11,16 @@
     font-medium;
 
   .icon {
-    @apply w-4
-      h-4;
+    @apply h-4
+      w-4;
   }
 
   .badge {
-    @apply rounded-full
+    @apply mr-2
+      rounded-full
       border
       px-2.5
       py-0.5
-      mr-2
       text-white;
   }
 
@@ -41,8 +41,8 @@
 
     .badge {
       @apply border-green-200
-        dark:border-green-600
-        bg-green-600;
+        bg-green-600
+        dark:border-green-600;
     }
 
     .message {
@@ -53,8 +53,8 @@
 
   &.error {
     @apply border-danger-200
-      dark:border-danger-700
       bg-danger-100
+      dark:border-danger-700
       dark:bg-neutral-900;
 
     .icon {
@@ -64,8 +64,8 @@
 
     .badge {
       @apply border-danger-200
-        dark:border-danger-600
-        bg-danger-600;
+        bg-danger-600
+        dark:border-danger-600;
     }
 
     .message {
@@ -76,8 +76,8 @@
 
   &.warning {
     @apply border-warning-200
-      dark:border-warning-700
       bg-warning-100
+      dark:border-warning-700
       dark:bg-neutral-900;
 
     .icon {
@@ -87,8 +87,8 @@
 
     .badge {
       @apply border-warning-200
-        dark:border-warning-600
-        bg-warning-600;
+        bg-warning-600
+        dark:border-warning-600;
     }
 
     .message {
