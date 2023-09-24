@@ -33,7 +33,7 @@ Where this is unclear, the issue should be left open for several days for additi
 Where this does not yield input from Node.js Collaborators or additional evidence that the issue has relevance, then the issue may be closed.
 Remember that issues can always be re-opened if necessary.
 
-> [!IMPORTANT]\
+> \[!IMPORTANT]\
 > We recommend Collaborators to avoid Updating/Rebasing PRs unnecessarily, since we use [GitHub Merge Queues](https://github.blog/2023-07-12-github-merge-queue-is-generally-available/)
 > to merge Pull Requests, which automatically rebases and runs CI-checks against the latest base branch.
 
@@ -175,16 +175,16 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 - We use Tailwind's `@apply` selector to apply Tailwind Styles
   - Note that we should have one tailwind token per line as shown in the example above; This improves readability
 
-> [!NOTE]\
+> \[!NOTE]\
 > Tailwind is already configured for this repository. You don't need to import any Tailwind module within your CSS modules.
 > You can apply Tailwind classes by regularly using CSS variables or Tailwind's `@apply` token, for example. If you have questions, please raise them on Pull Requests or Issues.
 
-> [!IMPORTANT]\
+> \[!IMPORTANT]\
 > For styling Components, only using Tailwind variables for defining paddings, margins, spacing, flexboxes, and all sorts of CSS classes is mandatory.
 > There are times when manual values are allowed, but we recommend setting them in reusable variables. Within the `styles` folder.
 > If unsure how to proceed, ask for help within Issues or Pull Requests.
 
-> [!IMPORTANT]\
+> \[!IMPORTANT]\
 > When using IDEs such as Visual Studio Code, we recommend installing the official [Stylelint](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 > and [Tailwind](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) Extensions.\
 > This is necessary since we use custom CSS syntax (that comes from our PostCSS plugins)\
@@ -378,6 +378,33 @@ They are React Components that receive the `children` prop, which is the transfo
 
 Each Page layout is decided within their Markdown's Frontmatter as `layout: name-of-layout.hbs`.
 
+### Why PostCSS?
+
+We use PostCSS as our CSS Preprocessor instead of other solutions such as Sass or Less.
+The main advantage of PostCSS is its minimal pluggable API that allows us to extend the native CSS-syntax with custom plugins.
+
+Next.js natively supports PostCSS and always uses PostCSS as part of the bundling and building process.
+By not using Sass or Less we remove another dependency from our build process and remove one layer of preprocessing our styles (CSS).
+
+We currently use a set of PostCSS plugins that create a SCSS-a-like environment.
+
+#### What PostCSS Plugins we use?
+
+- `postcss-mixins`: Allows us to use Sass-like Mixins
+- `postcss-import`: Allows us to use Sass-like Imports
+- `postcss-simple-vars`: Allows us to use Sass-like Variables
+- `postcss-nested`: Allows us to use Sass-like Nesting
+- `postcss-calc`: Strips `calc` expressions and replaces them with the result
+
+It is important to mention that even though we use SCSS-like syntax, we do not use SCSS, and some of these plugins
+are not 100% compatible with the SCSS syntax.
+For example, `postcss-mixins` does not support `@include` and `@extend` directives (and it uses `@define-mixin` for defining Mixins and `@mixin` for including Mixins).
+
+#### What other benefits PostCSS brings?
+
+- Our current CSS Framework, \[Tailwind]\[] uses PostCSS for its transpilation process
+- We use Stylelint for Linting our CSS syntax, and the current configuration is compatible with our PostCSS configuration
+
 ### Why MDX?
 
 MDX is an extension on Markdown that allows us to add JSX Components within Markdown.
@@ -399,9 +426,9 @@ This means that Shiki's Themes and Languages are not bundled by default.
 
 Hence the `shiki.config.mjs` file, where we define our custom set of supported Languages and we bundle them directly by using [Shiki's Grammar Property](https://github.com/shikijs/shiki/blob/main/docs/languages.md#supporting-your-own-languages-with-shiki) which allows us to embed the languages directly.
 
-### Tailwind
+### TailwindCSS
 
-Tailwind is a great CSS Framework. It allows us to create a Design System that is easy to maintain and extend. It also allows us to create a consistent Design Language across the Website.
+\[Tailwind]\[] is a great CSS Framework. It allows us to create a Design System that is easy to maintain and extend. It also allows us to create a consistent Design Language across the Website.
 
 For example, it automatically integrates with PostCSS and Next.js, which allows us to use Tailwind's utilities within our Components and Pages.
 
@@ -447,3 +474,5 @@ If you're unfamiliar or curious about something, we recommend opening a Discussi
 [PostCSS]: https://postcss.org/
 [React]: https://react.dev/
 [Shiki]: https://github.com/shikijs/shiki
+
+\[Tailwind]\[]: <https://tailwindcss.com/>
