@@ -4,7 +4,7 @@ import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 export const SocialLogos: StoryObj = {};
 
 export default {
-  title: 'Design System/Logos',
+  title: 'Design System/Social Logos',
   component: () => {
     return (
       <div>
