@@ -28,8 +28,8 @@ $dark-green3: #64de64;
 $dark-code-background: #2c3437;
 
 @define-mixin padded-link $padding {
-  margin-left: $padding * -1;
-  margin-right: $padding * -1;
+  margin-left: calc($padding * -1);
+  margin-right: calc($padding * -1);
   padding-left: $padding;
   padding-right: $padding;
 }

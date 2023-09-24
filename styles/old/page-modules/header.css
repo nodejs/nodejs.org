@@ -151,7 +151,7 @@ header {
           content: ' ';
           height: 0;
           left: 50%;
-          margin-left: -$border-width * 0.5;
+          margin-left: calc(-$border-width * 0.5);
           pointer-events: none;
           position: absolute;
           top: 100%;

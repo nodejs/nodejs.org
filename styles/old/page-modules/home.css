@@ -38,7 +38,7 @@
 
 #home-intro {
   margin: 0 auto;
-  max-width: $body-max-width * 0.75;
+  max-width: calc($body-max-width * 0.75);
   padding: 30px 0;
   text-align: center;
 
