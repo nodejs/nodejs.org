@@ -8,22 +8,19 @@ export default {
   component: () => {
     return (
       <div>
-        <div>
-          <Image
+        <Image
               src={`/static/images/logos/horizontal-light.svg`}
+              className="bg-black"
               alt="Node.js"
               width={267}
               height={80}
-          />
-        </div>
-        <div>
-          <Image
+        />
+        <Image
               src={`/static/images/logos/horizontal-dark.svg`}
               alt="Node.js"
               width={267}
               height={80}
-          />
-        </div>
+        />
       </div>
     );
   },
