@@ -4,7 +4,7 @@ import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 export const HexLogos: StoryObj = {};
 
 export default {
-  title: 'Design System/Logos',
+  title: 'Design System/Hex Logos',
   component: () => {
     return (
       <div>

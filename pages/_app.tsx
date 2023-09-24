@@ -7,7 +7,7 @@ import { NodeReleasesProvider } from '@/providers/nodeReleasesProvider';
 import { VERCEL_ENV } from '@/next.constants.mjs';
 import type { AppProps } from 'next/app';
 
-import '@/styles/old/index.scss';
+import '@/styles/old/index.css';
 
 const sourceSans = Source_Sans_3({
   weight: ['400', '600'],

@@ -1,5 +1,3 @@
-//TODO: Remove `body.dark`/.dark once DarkModeToggle from nodejs.dev has been integrated into nodejs.org
-
 [data-theme='dark'] body,
 body.dark {
   background-color: $dark-black;
