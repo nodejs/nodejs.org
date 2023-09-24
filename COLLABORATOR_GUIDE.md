@@ -76,7 +76,7 @@ The Website also uses several other Open Source libraries (not limited to) liste
     - [PostCSS Mixins](https://github.com/postcss/postcss-mixins)
     - [PostCSS Import](https://github.com/postcss/postcss-import)
     - [PostCSS Simple Vars](https://github.com/postcss/postcss-simple-vars)
-- [TailwindCSS](https://tailwindcss.com/) is used as our CSS Framework and the Foundation of our Design System
+- \[TailwindCSS]\[] is used as our CSS Framework and the Foundation of our Design System
 - [Hero Icons](https://heroicons.com/) is an SVG Icon Library used within our Codebase
 - [Shiki][] is a Syntax Highlighter used for our Codeboxes
   - A [Rehype Plugin](https://rehype-pretty-code.netlify.app/) is used here for transforming `pre` and `code` tags into Syntax Highlighted Codeboxes
@@ -155,7 +155,7 @@ This concept of writing styles on dedicated CSS files and importing them within 
 These allow us to write PostCSS (or regular CSS, or any flavor of CSS if you have a way of interpreting it) within a `.module.css` and import the class names directly to our React Components.
 We recommend reading guides on "Styling React Components with CSS Modules", which there are many available on the web.
 
-It's important to mention that we use [TailwindCSS](https://tailwindcss.com/) as a CSS Framework. Hence, margins, paddings, font sizes, font weights, colors, and other sorts of styles are all provided with Tailwind.
+It's important to mention that we use \[TailwindCSS]\[] as a CSS Framework. Hence, margins, paddings, font sizes, font weights, colors, and other sorts of styles are all provided with Tailwind.
 We recommend reading [Tailwind Docs](https://tailwindcss.com/docs/preflight) to get familiar with Tailwind's styles.
 We also recommend reading [this guide for setting up Tailwind on your IDE](https://tailwindcss.com/docs/editor-setup).
 
@@ -163,7 +163,7 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 
 #### Example of a CSS Module
 
-```scss
+```css
 .myComponent {
   @apply some
     tailwind
@@ -171,9 +171,15 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 }
 ```
 
-- We use Camel Case for defining Class Names
-- We use Tailwind's `@apply` selector to apply Tailwind Styles
-  - Note that we should have one tailwind token per line as shown in the example above; This improves readability
+#### Guidelines when writing CSS
+
+- We use camelCase for defining CSS classes
+- We use Tailwind's `@apply` selector to apply Tailwind Tokens
+  - We discourage the usage of any plain CSS styles and tokens, when in doubt ask for help
+  - We require that you define one Tailwind Token per line, just as shown on the example above, since this improves readability
+- Only write CSS within CSS Modules, avoid writing CSS within JavaScript files
+- We recommend creating mixins for reusable animations, effects and more
+  - You can create Mixins within the `styles/mixins` folder
 
 > \[!NOTE]\
 > Tailwind is already configured for this repository. You don't need to import any Tailwind module within your CSS modules.
