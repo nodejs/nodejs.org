@@ -184,6 +184,10 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 > There are times when manual values are allowed, but we recommend setting them in reusable variables. Within the `styles` folder.
 > If unsure how to proceed, ask for help within Issues or Pull Requests.
 
+> [!IMPORTANT]\
+> When using IDEs (such as Visual Studio Code) we recommend using the PostCSS Extension and Tailwind Extensions;
+> Since the native CSS Parser will not recognise some of the custom CSS syntax (PostCSS plugins) that we use
+
 ### Best practices when creating a Component
 
 - All React Components should be placed within the `components` folder.
