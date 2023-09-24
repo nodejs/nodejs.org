@@ -408,7 +408,7 @@ For example, `postcss-mixins` does not support `@include` and `@extend` directiv
 
 #### What other benefits PostCSS brings?
 
-- Our current CSS Framework, \[Tailwind]\[] uses PostCSS for its transpilation process
+- Our current CSS Framework, [Tailwind][] uses PostCSS for its transpilation process
 - We use Stylelint for Linting our CSS syntax, and the current configuration is compatible with our PostCSS configuration
 
 ### Why MDX?
@@ -434,7 +434,7 @@ Hence the `shiki.config.mjs` file, where we define our custom set of supported L
 
 ### TailwindCSS
 
-\[Tailwind]\[] is a great CSS Framework. It allows us to create a Design System that is easy to maintain and extend. It also allows us to create a consistent Design Language across the Website.
+[Tailwind][] is a great CSS Framework. It allows us to create a Design System that is easy to maintain and extend. It also allows us to create a consistent Design Language across the Website.
 
 For example, it automatically integrates with PostCSS and Next.js, which allows us to use Tailwind's utilities within our Components and Pages.
 
