@@ -76,7 +76,7 @@ The Website also uses several other Open Source libraries (not limited to) liste
     - [PostCSS Mixins](https://github.com/postcss/postcss-mixins)
     - [PostCSS Import](https://github.com/postcss/postcss-import)
     - [PostCSS Simple Vars](https://github.com/postcss/postcss-simple-vars)
-- \[TailwindCSS]\[] is used as our CSS Framework and the Foundation of our Design System
+- [Tailwind][] is used as our CSS Framework and the Foundation of our Design System
 - [Hero Icons](https://heroicons.com/) is an SVG Icon Library used within our Codebase
 - [Shiki][] is a Syntax Highlighter used for our Codeboxes
   - A [Rehype Plugin](https://rehype-pretty-code.netlify.app/) is used here for transforming `pre` and `code` tags into Syntax Highlighted Codeboxes
@@ -155,7 +155,7 @@ This concept of writing styles on dedicated CSS files and importing them within 
 These allow us to write PostCSS (or regular CSS, or any flavor of CSS if you have a way of interpreting it) within a `.module.css` and import the class names directly to our React Components.
 We recommend reading guides on "Styling React Components with CSS Modules", which there are many available on the web.
 
-It's important to mention that we use \[TailwindCSS]\[] as a CSS Framework. Hence, margins, paddings, font sizes, font weights, colors, and other sorts of styles are all provided with Tailwind.
+It's important to mention that we use [Tailwind][] as a CSS Framework. Hence, margins, paddings, font sizes, font weights, colors, and other sorts of styles are all provided with Tailwind.
 We recommend reading [Tailwind Docs](https://tailwindcss.com/docs/preflight) to get familiar with Tailwind's styles.
 We also recommend reading [this guide for setting up Tailwind on your IDE](https://tailwindcss.com/docs/editor-setup).
 
