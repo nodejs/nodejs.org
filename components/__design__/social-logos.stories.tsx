@@ -16,6 +16,14 @@ export default {
             height={64}
           />
         </div>
+        <div>
+          <Image
+            src="/static/images/logos/social-linkedin.svg"
+            alt="LinkedIn Logo"
+            width={64}
+            height={64}
+          />
+        </div>
       </div>
     );
   },
