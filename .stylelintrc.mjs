@@ -23,9 +23,9 @@ export default {
   extends: ['stylelint-config-standard'],
   plugins: ['stylelint-order', 'stylelint-selector-bem-pattern'],
   rules: {
-    // Enforces Class Names to be camelCase
+    // Enforces Element Class Names to be camelCase
     'selector-class-pattern': ONLY_ALLOW_CAMEL_CASE_SELECTORS,
-    // Enforces Class Names to be camelCase
+    // Enforces Element IDs to be camelCase
     'selector-id-pattern': ONLY_ALLOW_CAMEL_CASE_SELECTORS,
     'at-rule-no-unknown': [true, { ignoreAtRules: CUSTOM_AT_TOKENS }],
     // Enforces the order of the CSS properties to be in alphabetical order
