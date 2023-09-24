@@ -423,6 +423,11 @@ The Node.js Website uses Tailwind as a CSS Framework for crafting our React Comp
 
 [Tailwind][] is an utility-first CSS Framework. It allows us to create a Design System that is easy to maintain and extend. It also allows us to create a consistent Design Language across the Website.
 
+#### Font Families on the Website
+
+We use `next/fonts` Open Sans as the default font for the Node.js Website.
+The font is configured as a CSS variable and then configured on `tailwind.config.js` as the default font for the Website.
+
 ### Why MDX?
 
 MDX is an extension on Markdown that allows us to add JSX Components within Markdown.
@@ -443,11 +448,6 @@ Since we use Incremental Static Rendering and Serverless Functions, Vercel attem
 This means that Shiki's Themes and Languages are not bundled by default.
 
 Hence the `shiki.config.mjs` file, where we define our custom set of supported Languages and we bundle them directly by using [Shiki's Grammar Property](https://github.com/shikijs/shiki/blob/main/docs/languages.md#supporting-your-own-languages-with-shiki) which allows us to embed the languages directly.
-
-#### Next Fonts and Tailwind
-
-We use `next/fonts` Open Sans as the default font for the Node.js Website.
-The font is configured as a CSS variable and then configured on `tailwind.config.js` as the default font for the Website.
 
 ### Vercel
 
