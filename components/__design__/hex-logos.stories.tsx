@@ -10,22 +10,6 @@ export default {
       <div>
         <div>
           <Image
-            src={`/static/images/logos/hex-white.svg`}
-            alt="Node.js"
-            width={64}
-            height={64}
-          />
-        </div>
-        <div>
-          <Image
-            src={`/static/images/logos/hex-green.svg`}
-            alt="Node.js"
-            width={64}
-            height={64}
-          />
-        </div>
-        <div>
-          <Image
             src={`/static/images/logos/hex-black.svg`}
             alt="Node.js"
             width={64}
