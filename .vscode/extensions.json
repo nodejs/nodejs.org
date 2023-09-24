@@ -2,6 +2,7 @@
   "recommendations": [
     "esbenp.prettier-vscode",
     "bradlc.vscode-tailwindcss",
-    "stylelint.vscode-stylelint"
+    "stylelint.vscode-stylelint",
+    "unifiedjs.vscode-mdx"
   ]
 }
