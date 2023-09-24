@@ -149,7 +149,7 @@ We also recommend getting familiar with technologies such as [Next.js][], [MDX][
 
 ### Styling a Component
 
-As mentioned, we write all Component-styles in a separate `.module.css` files. This is like writing any CSS in a separate file (besides the fact that we use [PostCSS][]).
+As mentioned, we write all Component-styles in separate `.module.css` files. This is like writing any CSS in a separate file (besides the fact that we use [PostCSS][]).
 
 This concept of writing styles on dedicated CSS files and importing them within JavaScript (or React) is a pattern named **[CSS Module](https://github.com/css-modules/css-modules)**.
 These allow us to write PostCSS (or regular CSS, or any flavor of CSS if you have a way of interpreting it) within a `.module.css` and import the class names directly to our React Components.
@@ -194,7 +194,7 @@ Finally, if you're unfamiliar with how to use Tailwind or how to use Tailwind wi
 > When using IDEs such as Visual Studio Code, we recommend installing the official [Stylelint](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 > and [Tailwind](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) Extensions.\
 > This is necessary since we use custom CSS syntax (that comes from our PostCSS plugins)\
-> Our Stylelint Configuration is already compatible with our PostCSS rules and plugins
+> Our Stylelint Configuration is already compatible with our PostCSS rules and plugins.
 
 ### Best practices when creating a Component
 
@@ -408,7 +408,7 @@ For example, `postcss-mixins` does not support `@include` and `@extend` directiv
 
 #### What other benefits PostCSS brings?
 
-- Our current CSS Framework, [Tailwind][] uses PostCSS for its transpilation process
+- Our current CSS Framework, [Tailwind][], uses PostCSS for its transpilation process
 - We use Stylelint for Linting our CSS syntax, and the current configuration is compatible with our PostCSS configuration
 
 ### Why MDX?
