@@ -9,17 +9,17 @@ export default {
     return (
       <div>
         <Image
-              src={`/static/images/logos/horizontal-light.svg`}
-              className="bg-black"
-              alt="Node.js"
-              width={267}
-              height={80}
+          src={`/static/images/logos/horizontal-light.svg`}
+          className="bg-black"
+          alt="Node.js"
+          width={267}
+          height={80}
         />
         <Image
-              src={`/static/images/logos/horizontal-dark.svg`}
-              alt="Node.js"
-              width={267}
-              height={80}
+          src={`/static/images/logos/horizontal-dark.svg`}
+          alt="Node.js"
+          width={267}
+          height={80}
         />
       </div>
     );
