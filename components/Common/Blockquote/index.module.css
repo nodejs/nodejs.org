@@ -1,0 +1,27 @@
+.wrapper {
+  @apply flex
+    max-w-2xl
+    flex-col
+    items-start
+    gap-4
+    self-stretch
+    border-l-2
+    border-green-600
+    py-2
+    pl-5
+    text-lg
+    font-semibold
+    text-neutral-900
+    dark:border-green-400
+    dark:text-white;
+
+  & cite {
+    @apply text-base
+      font-regular
+      not-italic;
+
+    &::before {
+      @apply content-['—_'];
+    }
+  }
+}
