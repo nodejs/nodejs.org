@@ -10,7 +10,7 @@
     bg-white
     p-3
     dark:border-neutral-900
-    dark:bg-black;
+    dark:bg-neutral-950;
 
   .header {
     @apply flex
