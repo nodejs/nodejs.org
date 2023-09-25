@@ -4,13 +4,8 @@ import styles from './index.module.css';
 
 type BlockquoteProps = ComponentProps<'blockquote'>;
 
-const Blockquote: FC<PropsWithChildren<BlockquoteProps>> = ({
-  children,
-  cite,
-}) => (
-  <blockquote className={styles.wrapper} cite={cite}>
-    {children}
-  </blockquote>
+const Blockquote: FC<PropsWithChildren<BlockquoteProps>> = ({ children }) => (
+  <blockquote className={styles.wrapper}>{children}</blockquote>
 );
 
 export default Blockquote;
