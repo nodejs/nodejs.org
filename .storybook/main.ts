@@ -15,10 +15,7 @@ const config: StorybookConfig = {
     disableTelemetry: true,
     builder: {
       name: '@storybook/builder-webpack5',
-      options: {
-        fsCache: true,
-        lazyCompilation: true,
-      },
+      options: { lazyCompilation: true },
     },
   },
   framework: { name: '@storybook/nextjs', options: {} },
