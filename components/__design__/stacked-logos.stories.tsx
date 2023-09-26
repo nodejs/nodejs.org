@@ -10,30 +10,6 @@ export default {
       <div>
         <div>
           <Image
-            src={`/static/images/logos/stacked-white.svg`}
-            alt="Node.js"
-            width={267}
-            height={80}
-          />
-        </div>
-        <div>
-          <Image
-            src={`/static/images/logos/stacked-light.svg`}
-            alt="Node.js"
-            width={267}
-            height={80}
-          />
-        </div>
-        <div>
-          <Image
-            src={`/static/images/logos/stacked-black.svg`}
-            alt="Node.js"
-            width={267}
-            height={80}
-          />
-        </div>
-        <div>
-          <Image
             src={`/static/images/logos/stacked-dark.svg`}
             alt="Node.js"
             width={267}
