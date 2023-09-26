@@ -4,7 +4,7 @@ import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 export const StackedLogos: StoryObj = {};
 
 export default {
-  title: 'Design System/Logos',
+  title: 'Design System/Stacked Logos',
   component: () => {
     return (
       <div>
