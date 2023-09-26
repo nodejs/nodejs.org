@@ -74,21 +74,13 @@
     }
 
     &::after {
-      background: var(
-        --gradient-glow,
-        linear-gradient(
-          90deg,
-          rgba(65, 126, 56, 0) 0%,
-          #417e38 50%,
-          rgba(65, 126, 56, 0) 100%
-        )
-      );
+      @apply absolute
+       h-[1px]
+       right-0
+       top-[-1px]
+       bg-gradient-to-r from-green-600/0 via-green-600 to-green-600/0
+       w-[40%];
       content: '';
-      height: 1px;
-      position: absolute;
-      right: 0px;
-      top: -1px;
-      width: 40%;
     }
 
     &:disabled {
