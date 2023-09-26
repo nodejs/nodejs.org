@@ -11,8 +11,16 @@ const config: StorybookConfig = {
   ],
   logLevel: 'error',
   staticDirs: ['../public'],
-  features: { storyStoreV7: true },
-  core: { disableTelemetry: true },
+  core: {
+    disableTelemetry: true,
+    builder: {
+      name: '@storybook/builder-webpack5',
+      options: {
+        fsCache: true,
+        lazyCompilation: true,
+      },
+    },
+  },
   framework: { name: '@storybook/nextjs', options: {} },
   webpackFinal: async config => {
     // This allows us to resolve node_modules and everything from the Application source
@@ -22,6 +30,13 @@ const config: StorybookConfig = {
       ...config.resolve!.alias,
       // Allows us to use `@` imports with TypeScript
       '@': resolve(__dirname, '../'),
+    };
+
+    // We want to disable the annoying performance hints
+    // as we know that Storybook has big bundles
+    config.performance = {
+      ...config.performance,
+      hints: false,
     };
 
     return config;
