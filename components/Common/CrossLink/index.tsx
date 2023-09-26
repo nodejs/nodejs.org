@@ -19,7 +19,7 @@ const CrossLink: FC<CrossLinkProps> = ({ type, text, url }) => (
       })}
     >
       <PrevNextArrow className={styles.icon} type={type} />
-      <FormattedMessage id={'components.common.crossLink.' + type} />
+      <FormattedMessage id={`components.common.crossLink.${type}`} />
     </span>
 
     <span
