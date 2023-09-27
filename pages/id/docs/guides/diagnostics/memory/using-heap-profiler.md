@@ -31,7 +31,7 @@ node --inspect index.js
 Hubungkan ke instance dev-tools di Chrome dan kemudian:
 
 - Pilih tab `Memory`.
-- Pilih `Allocation instrumentation timeline`.
+- Pilih  `Allocation instrumentation timeline`.
 - Mulai memprofil.
 
 ![tutorial profiler heap langkah 1][3]
