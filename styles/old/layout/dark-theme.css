@@ -1,11 +1,6 @@
-[data-theme='dark'] body,
-body.dark {
+html[data-theme='dark'] {
   background-color: $dark-black;
   color: $white;
-}
-
-[data-theme='dark'] body,
-.dark {
   color-scheme: dark;
 
   .dark-theme-switcher {
@@ -23,8 +18,6 @@ body.dark {
   }
 
   #main {
-    background-color: $dark-black;
-
     p,
     h1,
     h2,
