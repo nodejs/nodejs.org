@@ -2,9 +2,19 @@
   "extends": ["prettier"],
   "overrides": [
     {
+      "files": ["public/**/*.js"],
+      "extends": ["eslint:recommended"],
+      "env": { "es6": true, "browser": true }
+    },
+    {
       "files": ["**/*.{js,mjs,ts,tsx}"],
       "extends": ["eslint:recommended"],
-      "env": { "jest": true, "es6": true, "browser": true }
+      "env": { "es6": true, "node": true }
+    },
+    {
+      "files": ["**/__tests__/*.mjs"],
+      "extends": ["eslint:recommended"],
+      "env": { "jest": true, "es6": true, "node": true }
     },
     {
       "files": ["**/*.{mjs,ts,tsx,mdx}"],
