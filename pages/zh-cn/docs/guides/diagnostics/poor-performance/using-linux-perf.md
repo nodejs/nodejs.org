@@ -70,7 +70,7 @@ node 3870 25147.878454:          1 cycles:
 
 ## 其它相关的一些有用的链接帮助
 
-* https://nodejs.org/en/docs/guides/diagnostics-flamegraph/
-* https://www.brendangregg.com/blog/2014-09-17/node-flame-graphs-on-linux.html
-* https://perf.wiki.kernel.org/index.php/Main_Page
-* https://blog.rafaelgss.com.br/node-cpu-profiler
+- https://nodejs.org/en/docs/guides/diagnostics-flamegraph/
+- https://www.brendangregg.com/blog/2014-09-17/node-flame-graphs-on-linux.html
+- https://perf.wiki.kernel.org/index.php/Main_Page
+- https://blog.rafaelgss.com.br/node-cpu-profiler
