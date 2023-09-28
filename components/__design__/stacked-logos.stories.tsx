@@ -16,7 +16,7 @@ export default {
             height={80}
           />
           <Image
-            src={`/static/images/logos/stacked-light.svg`}
+            src={`/static/images/logos/stacked-white.svg`}
             alt="Node.js"
             width={267}
             height={80}
