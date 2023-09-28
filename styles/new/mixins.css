@@ -1,8 +1,7 @@
-// backdrop mixin
-@mixin glow-backdrop($radius: 8em, $color: #5fa04e) {
+@define-mixin glow-backdrop $radius, $color {
   background: radial-gradient(
     $radius circle at calc(100% - 40px) 10px,
-    rgba($color, 0.35),
+    $color,
     transparent 30%
   );
 }
