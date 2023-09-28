@@ -31,6 +31,7 @@ export default {
         700: '#6E7B83',
         800: '#556066',
         900: '#2C3437',
+        950: '#0D121C',
       },
       danger: {
         100: '#FBF1F0',
@@ -88,7 +89,6 @@ export default {
         900: '#411526',
       },
       white: '#FFFFFF',
-      black: '#0D121C',
     },
     fontSize: {
       xs: ['0.75rem', '1rem'],

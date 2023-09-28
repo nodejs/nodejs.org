@@ -34,6 +34,8 @@
   "components.header.buttons.toggleDarkMode": "Toggle dark/light mode",
   "components.pagination.next": "Newer | ",
   "components.pagination.previous": "Older",
+  "components.common.crossLink.previous": "Prev",
+  "components.common.crossLink.next": "Next",
   "layouts.blogPost.author.byLine": "{author, select, null {} other {By {author}, }}",
   "layouts.blogIndex.currentYear": "News from {year}",
   "components.api.jsonLink.title": "View as JSON",

@@ -2,25 +2,12 @@ const themeAttr = 'data-theme';
 
 const setTheme = theme => {
   document.querySelector('html').setAttribute(themeAttr, theme);
-  document.body.className = theme;
   window.localStorage.setItem('theme', theme);
 };
 
 const preferredColorScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
 const getTheme = () => window.localStorage.getItem('theme');
-
-const versionIntoHref = (nodeList, filename) => {
-  const linkEls = Array.prototype.slice.call(nodeList);
-  let version;
-  let el;
-
-  for (let i = 0; i < linkEls.length; i++) {
-    version = linkEls[i].getAttribute('data-version');
-    el = linkEls[i];
-    el.href += filename.replace('%version%', version);
-  }
-};
 
 const listenLanguagePickerButton = () => {
   const langPickerTogglerElement = document.querySelector(

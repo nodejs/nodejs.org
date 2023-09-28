@@ -24,6 +24,7 @@ junit.xml
 # Storybook
 storybook-static
 .nyc_output
+build-storybook.log
 
 # Vercel Files
 .vercel

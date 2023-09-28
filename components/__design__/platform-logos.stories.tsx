@@ -10,6 +10,14 @@ export default {
       <div>
         <div>
           <Image
+            src="/static/images/logos/platform-apple.svg"
+            alt="Apple Logo"
+            width={64}
+            height={64}
+          />
+        </div>
+        <div>
+          <Image
             src="/static/images/logos/platform-homebrew.svg"
             alt="Homebrew Logo"
             width={64}
