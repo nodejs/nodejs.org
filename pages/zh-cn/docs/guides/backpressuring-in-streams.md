@@ -1,8 +1,6 @@
 ---
-
 title: 数据流中的积压问题
 layout: docs.hbs
-
 ---
 
 # 数据流中的积压问题
@@ -209,26 +207,25 @@ GC（垃圾回收器）测量表明一个完整的周期间隔一个由垃圾回
 
 .write()\`方法的<a href="https://github.com/nodejs/node/blob/55c42bc6e5602e5a47fb774009cfe9289cb88e71/lib/_stream_writable.js#L239" fo="25">返回值</a>，我们得到以下结果：</p>
 
-# <pre><code>Without respecting the return value of .write():
-
-real 54.48
-user 53.15
-sys 7.43
-1524965376 maximum resident set size
-0 average shared memory size
-0 average unshared data size
-0 average unshared stack size
-373617 page reclaims
-3139 page faults
-0 swaps
-18 block input operations
-199 block output operations
-0 messages sent
-0 messages received
-1 signals received
-25 voluntary context switches
-629566 involuntary context switches
-\`</pre>
+    Without respecting the return value of .write():
+    ==================================================
+    real        54.48
+    user        53.15
+    sys          7.43
+    1524965376  maximum resident set size
+             0  average shared memory size
+             0  average unshared data size
+             0  average unshared stack size
+        373617  page reclaims
+          3139  page faults
+             0  swaps
+            18  block input operations
+           199  block output operations
+             0  messages sent
+             0  messages received
+             1  signals received
+            25  voluntary context switches
+        629566  involuntary context switches
 
 虚拟内存占用的最大的字节块达到了 1.52 gb。
 
@@ -483,7 +480,6 @@ function doUncork(stream) {
 [`Readable`]: https://nodejs.org/api/stream.html#stream_readable_streams
 [`Duplex`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [`Transform`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
-[`Writable`]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [传输的]: https://nodejs.org/api/stream.html#stream_duplex_and_transform_streams
 [`zlib`]: https://nodejs.org/api/zlib.html
 [`'drain'`]: https://nodejs.org/api/stream.html#stream_event_drain
@@ -507,7 +503,6 @@ function doUncork(stream) {
 [`数据流状态机`]: https://en.wikipedia.org/wiki/Finite-state_machine
 [`.pipe()`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
 [piped管道]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
-[`Writable`]: https://nodejs.org/docs/latest/api/stream.html#stream_readable_pipe_destination_options
 [`pump`]: https://github.com/mafintosh/pump
 [`pipeline`]: https://nodejs.org/api/stream.html#stream_stream_pipeline_streams_callback
 [`promisify`]: https://nodejs.org/api/util.html#util_util_promisify_original
