@@ -24,6 +24,14 @@ export default {
             height={64}
           />
         </div>
+        <div>
+          <Image
+              src="/static/images/logos/social-slack.svg"
+              alt="Slack Logo"
+              width={64}
+              height={64}
+            />
+        </div>
       </div>
     );
   },
