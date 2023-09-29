@@ -1,0 +1,11 @@
+.avatarGroup {
+  @apply .avatar flex items-center gap-x-4 overflow-x-auto;
+
+  gap-x-4 {
+    @apply rounded-full border-2 border-white bg-neutral-100 dark:border-neutral-950 dark:bg-neutral-800;
+  }
+
+  .showMore {
+    @apply text-sm: tex-sm rounded-full border-2 border-white bg-neutral-100 dark:border-neutral-950 dark:bg-neutral-900;
+  }
+}
