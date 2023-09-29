@@ -1,0 +1,209 @@
+.home-version {
+  color: $gray;
+  font-size: 16px;
+  padding-top: 10px;
+}
+
+.home-version-banner {
+  background-color: $light-green;
+  border-radius: 2px;
+  color: $node-gray;
+  font-size: 130%;
+  margin-top: 1em;
+  padding: 5px 15px;
+
+  a {
+    color: $active-green;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.home-secondary-links {
+  color: $home-secondary-links-color;
+  font-size: 0.9rem;
+
+  a {
+    color: $home-secondary-links-color;
+
+    &:hover {
+      background-color: transparent;
+      border-bottom: 1px solid $home-secondary-links-color;
+      border-radius: 0;
+    }
+  }
+}
+
+#home-intro {
+  margin: 0 auto;
+  max-width: calc($body-max-width * 0.75);
+  padding: 30px 0;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.home-banner {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  > img {
+    border-radius: 10px;
+  }
+}
+
+.home-downloadblock {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.home-downloadbutton {
+  background-color: $active-green;
+  border-radius: 10px;
+  color: $white !important;
+  display: block;
+  font-size: 30px;
+  font-weight: 400;
+  margin: 10px 4px;
+  padding: 0.2em 0.6em;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $node-green;
+  }
+
+  small {
+    display: block;
+    font-size: 1rem;
+  }
+}
+
+/**
+ * BLM CTA button styles.
+ */
+
+.home-blacklivesmatterblock {
+  display: block;
+  font-size: 16px;
+  height: 4rem;
+  position: relative;
+}
+
+.home-blacklivesmatterbutton {
+  color: $white !important;
+  display: block;
+  font-size: 130%;
+  font-weight: 400;
+  left: 50%;
+  max-width: 100%;
+  padding: 0.5em 20%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: padding 0.2s ease-in-out;
+
+  &:active,
+  &:focus,
+  &:hover {
+    padding: calc(0.5em * 1.2) calc(20% * 1.2);
+  }
+
+  small {
+    display: block;
+    font-size: 1rem;
+  }
+}
+
+/**
+ * Accessible button role styles (copypasta) integrated into site color scheme.
+ * @author W3C
+ * @see https://www.w3.org/TR/wai-aria-practices/examples/button/button.html
+ */
+
+[role='button'] {
+  background-color: hsl(0deg 0% 31%);
+  background-image: linear-gradient(
+    to bottom,
+    hsl(0deg 0% 33%),
+    hsl(0deg 0% 27%)
+  );
+  border: 1px solid hsl(0deg 0% 39%);
+  border-radius: 5px;
+  box-shadow: 0 1px 2px hsl(0deg 0% 45%);
+  color: #fff;
+  text-shadow: 0 -1px 1px hsl(0deg 0% 15%);
+}
+
+[role='button']:hover {
+  background-color: hsl(0deg 0% 21%);
+  background-image: linear-gradient(
+    to bottom,
+    hsl(0deg 0% 23%),
+    hsl(0deg 0% 17%)
+  );
+  border-color: hsl(0deg 0% 19%);
+  cursor: pointer;
+}
+
+[role='button']:focus {
+  outline: none;
+}
+
+[role='button']:focus::before {
+  border: 3px solid hsl(0deg 0% 39%);
+
+  /* button border radius + outline width + offset */
+  border-radius: calc(5px + 3px + 3px);
+  content: '';
+  inset: calc(-1px - 3px - 3px) calc(-1px - 3px - 3px) calc(-1px - 3px - 3px)
+    calc(-1px - 3px - 3px);
+  position: absolute;
+
+  /* button border width - outline width - offset */
+  z-index: -1;
+}
+
+[role='button']:active {
+  background-color: hsl(0deg 0% 11%);
+  background-image: linear-gradient(
+    to bottom,
+    hsl(0deg 0% 33%),
+    hsl(0deg 0% 27%)
+  );
+  border-color: hsl(0deg 0% 29%);
+  box-shadow: inset 0 3px 5px 1px hsl(0deg 0% 10%);
+}
+
+[role='button'][aria-pressed] {
+  background-color: hsl(0deg 0% 31%);
+  background-image: linear-gradient(
+    to bottom,
+    hsl(0deg 0% 33%),
+    hsl(0deg 0% 27%)
+  );
+  border-color: hsl(0deg 0% 29%);
+  box-shadow: 0 1px 2px hsl(0deg 0% 35%);
+  text-shadow: 0 -1px 1px hsl(0deg 0% 5%);
+}
+
+[role='button'][aria-pressed]:hover {
+  background-color: hsl(0deg 0% 31%);
+  background-image: linear-gradient(
+    to bottom,
+    hsl(0deg 0% 13%),
+    hsl(0deg 0% 7%)
+  );
+  border-color: hsl(0deg 0% 9%);
+}
+
+[role='button'][aria-pressed]:focus::before {
+  border-color: hsl(0deg 0% 29%);
+}

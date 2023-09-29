@@ -24,10 +24,12 @@ junit.xml
 # Storybook
 storybook-static
 .nyc_output
+build-storybook.log
 
 # Vercel Files
 .vercel
 .turbo
+cache
 
 # ESlint Cache Files
 .eslintmdcache

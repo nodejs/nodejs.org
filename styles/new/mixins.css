@@ -1,0 +1,7 @@
+@define-mixin glow-backdrop $radius, $color {
+  background: radial-gradient(
+    $radius circle at calc(100% - 40px) 10px,
+    $color,
+    transparent 30%
+  );
+}

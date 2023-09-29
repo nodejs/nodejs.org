@@ -1,0 +1,88 @@
+.openjsfoundation-footer {
+  background: $node-gray;
+  color: $white;
+  direction: ltr;
+  float: left;
+  font-size: small;
+  padding: 1em 20px;
+  text-align: center;
+
+  p + p {
+    font-size: 15px;
+  }
+}
+
+.openjsfoundation-footer-edit {
+  display: inline;
+  font-size: 15px;
+}
+
+.openjsfoundation-footer-links {
+  display: inline;
+}
+
+.issue-link-container {
+  align-items: center;
+  display: flex;
+}
+
+.issue-link {
+  margin-left: auto;
+  min-width: 330px;
+  text-align: left;
+}
+
+.help {
+  color: $white;
+  font-size: 14px;
+  margin-top: 3em;
+  width: 40%;
+}
+
+@media (min-width: 280px) {
+  .help {
+    margin-left: 10%;
+  }
+}
+
+@media (min-width: 320px) {
+  .help {
+    margin-left: 58%;
+  }
+}
+
+@media (min-width: 500px) {
+  .help {
+    margin-left: 65%;
+  }
+}
+
+@media (min-width: 768px) {
+  .help {
+    margin-left: 70%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .issue-link-container {
+    flex-wrap: wrap;
+  }
+
+  .issue-link {
+    margin: 1em 0 0;
+    min-width: 0;
+    text-align: start;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .openjsfoundation-footer {
+    padding: 3em 20px;
+    width: auto;
+  }
+
+  .help {
+    margin-left: auto;
+    width: auto;
+  }
+}

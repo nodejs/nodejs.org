@@ -139,3 +139,17 @@ export const DYNAMIC_ROUTES_REWRITES = [
 export const DYNAMIC_GENERATED_ROUTES = () => [
   ...blogData.pagination.map(year => `en/blog/year-${year}`),
 ];
+
+/***
+ * This is a list of all external links that are used on website sitemap.
+ * @see https://github.com/nodejs/nodejs.org/issues/5813 for more context
+ */
+export const EXTERNAL_LINKS_SITEMAP = [
+  'https://terms-of-use.openjsf.org/',
+  'https://privacy-policy.openjsf.org/',
+  'https://bylaws.openjsf.org/',
+  'https://code-of-conduct.openjsf.org/',
+  'https://trademark-policy.openjsf.org/',
+  'https://trademark-list.openjsf.org/',
+  'https://www.linuxfoundation.org/cookies',
+];

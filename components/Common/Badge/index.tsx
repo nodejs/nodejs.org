@@ -3,7 +3,7 @@ import LocalizedLink from '@/components/LocalizedLink';
 import type { ComponentProps, FC, PropsWithChildren } from 'react';
 import type Link from 'next/link';
 
-import styles from './index.module.scss';
+import styles from './index.module.css';
 
 type BadgeProps = {
   kind?: 'default' | 'warning' | 'error';

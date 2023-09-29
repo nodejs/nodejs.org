@@ -26,7 +26,7 @@ const DocsLayout: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <BaseLayout>
-      <div className="container has-side-nav">
+      <div className="has-side-nav container">
         <SideNavigation navigationKey="docs" context={translationContext} />
         <article dir="auto">{children}</article>
       </div>

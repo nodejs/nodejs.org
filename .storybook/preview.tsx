@@ -1,68 +1,47 @@
 import NextImage from 'next/image';
-import { Open_Sans } from 'next/font/google';
-import { SiteProvider } from '../providers/siteProvider';
-import { ThemeProvider } from '../providers/themeProvider';
-import { LocaleProvider } from '../providers/localeProvider';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
+import { SiteProvider } from '../providers/siteProvider';
+import { LocaleProvider } from '../providers/localeProvider';
+import { OPEN_SANS_FONT, STORYBOOK_MODES, STORYBOOK_SIZES } from './constants';
 import type { Preview, ReactRenderer } from '@storybook/react';
 
-import '../styles/new/index.scss';
-
-const openSans = Open_Sans({
-  weight: ['300', '400', '600', '700'],
-  display: 'fallback',
-  subsets: ['latin'],
-  variable: '--font-open-sans',
-});
+import '../styles/new/index.css';
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/,
-      },
-    },
-    nextjs: {
-      router: {
-        basePath: '',
-      },
-    },
-    backgrounds: { disable: true },
+    nextjs: { router: { basePath: '' } },
+    chromatic: { modes: STORYBOOK_MODES },
+    viewport: { defaultViewport: 'large', viewports: STORYBOOK_SIZES },
   },
-};
-
-// The `openSans.variable` injects the name of the Font Family to the DOM Tree
-// The `font-open-sans` variable is the actual Tailwind Classname
-// that tells that the font-family for this Component tree should be "Open Sans"
-const storyClasses = `${openSans.variable} font-open-sans`;
-
-export const decorators = [
-  Story => (
-    <SiteProvider>
-      <LocaleProvider>
-        <ThemeProvider>
-          <div className={storyClasses}>
+  // These are extra Storybook Decorators applied to all stories
+  // that introduce extra functionality such as Theme Switching
+  // and all the App's Providers (Site, Theme, Locale)
+  decorators: [
+    Story => (
+      <SiteProvider>
+        <LocaleProvider>
+          <div className={`${OPEN_SANS_FONT.variable}`}>
             <Story />
           </div>
-        </ThemeProvider>
-      </LocaleProvider>
-    </SiteProvider>
-  ),
-  withThemeByDataAttribute<ReactRenderer>({
-    themes: {
-      light: '',
-      dark: 'dark',
-    },
-    defaultTheme: 'light',
-    attributeName: 'data-theme',
-  }),
-];
+        </LocaleProvider>
+      </SiteProvider>
+    ),
+    withThemeByDataAttribute<ReactRenderer>({
+      themes: {
+        light: '',
+        dark: 'dark',
+      },
+      defaultTheme: 'light',
+      attributeName: 'data-theme',
+    }),
+  ],
+};
 
+// This forces the Next.js image system to use unoptimized images
+// for all the Next.js Images (next/image) Components
 Object.defineProperty(NextImage, 'default', {
   configurable: true,
-  value: props => <NextImage {...props} unoptimized />,
+  value: (props: any) => <NextImage {...props} unoptimized />,
 });
 
 export default preview;
