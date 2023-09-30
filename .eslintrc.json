@@ -1,33 +1,27 @@
 {
-  "extends": ["prettier"],
+  "extends": "prettier",
   "overrides": [
     {
       "files": ["public/**/*.js"],
-      "extends": ["eslint:recommended"],
       "env": { "es6": true, "browser": true }
     },
     {
-      "files": ["**/*.{js,mjs,ts,tsx}"],
-      "extends": ["eslint:recommended"],
-      "env": { "es6": true, "node": true }
+      "files": ["components/**/*.stories.tsx"],
+      "extends": "plugin:storybook/recommended"
     },
     {
       "files": ["**/__tests__/*.mjs"],
-      "extends": ["eslint:recommended"],
       "env": { "jest": true, "es6": true, "node": true }
     },
     {
-      "files": ["**/*.{mjs,ts,tsx,mdx}"],
-      "extends": [
-        "next",
-        "next/core-web-vitals",
-        "plugin:storybook/recommended"
-      ]
+      "files": ["**/*.{js,mjs,ts,tsx,mdx}"],
+      "env": { "es6": true, "node": true },
+      "extends": ["eslint:recommended", "next", "next/core-web-vitals"]
     },
     {
       "files": ["**/*.ts?(x)"],
       "plugins": ["@typescript-eslint", "no-relative-import-paths"],
-      "extends": ["plugin:@typescript-eslint/recommended"],
+      "extends": "plugin:@typescript-eslint/recommended",
       "parser": "@typescript-eslint/parser",
       "rules": {
         "@typescript-eslint/consistent-type-imports": "error",
@@ -39,7 +33,7 @@
     },
     {
       "files": ["**/*.md?(x)"],
-      "extends": ["plugin:mdx/recommended"],
+      "extends": "plugin:mdx/recommended",
       "rules": { "react/jsx-no-undef": "off" }
     },
     {

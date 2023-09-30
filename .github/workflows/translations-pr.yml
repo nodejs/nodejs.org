@@ -57,6 +57,11 @@ jobs:
     steps:
       - name: Git Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+        with:
+          # By default Git Checkout on `pull-request-target` will checkout
+          # the `default` branch of the Pull Request. We want to checkout
+          # the actual branch of the Pull Request.
+          ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Restore Lint Cache
         uses: actions/cache/restore@704facf57e6136b1bc63b828d79edcd491f0ee84
@@ -89,12 +94,12 @@ jobs:
       - name: Run `npx lint:md --fix`
         # This runs a specific version of ESLint with only the Translation Pages Globbing
         # This avoid that unrelated changes get linted/modified within this PR
-        run: npx eslint "pages/**/*.{md,mdx}" --fix --cache --cache-strategy metadata --cache-file .eslintmdcache
+        run: npx eslint "pages/**/*.md?(x)" --fix --cache --cache-strategy=metadata --cache-file=.eslintmdcache
 
       - name: Run `npx prettier --write`
         # This runs a specific version of Prettier with only the Translation Pages Globbing
         # This avoid that unrelated changes get prettied/modified within this PR
-        run: npx prettier "{pages,i18n}/**/*.{json,md,mdx}" --check --write --cache --cache-strategy metadata --cache-location=.prettiercache
+        run: npx prettier "{pages,i18n}/**/*.{json,md,mdx}" --check --write --cache --cache-strategy=metadata --cache-location=.prettiercache
 
       - name: Push Changes back to Pull Request
         uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a

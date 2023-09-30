@@ -1,7 +1,5 @@
 {
   "plugins": [
-    "remark-preset-lint-node",
-    "preset-prettier",
     ["remark-lint-fenced-code-flag", false],
     ["remark-lint-first-heading-level", false],
     ["remark-lint-maximum-line-length", false],
