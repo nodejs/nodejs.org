@@ -5,34 +5,42 @@ import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 type Story = StoryObj<typeof AvatarGroup>;
 type Meta = MetaObj<typeof AvatarGroup>;
 
-const AvatarList = {
-  avatars: [
-    userNameToAvatarUrl('ovflowd'),
-    userNameToAvatarUrl('bmuenzenmeyer'),
-    userNameToAvatarUrl('AugustinMauroy'),
-    userNameToAvatarUrl('HinataKah0'),
-    userNameToAvatarUrl('Harkunwar'),
-    userNameToAvatarUrl('rodion-arr'),
-    userNameToAvatarUrl('mikeesto'),
-    userNameToAvatarUrl('bnb'),
-    userNameToAvatarUrl('benhalverson'),
-    userNameToAvatarUrl('aymen94'),
-    userNameToAvatarUrl('shanpriyan'),
-    userNameToAvatarUrl('Wai-Dung'),
-    userNameToAvatarUrl('manishprivet'),
-    userNameToAvatarUrl('araujogui'),
-  ],
+const names = [
+  'ovflowd',
+  'bmuenzenmeyer',
+  'AugustinMauroy',
+  'HinataKah0',
+  'Harkunwar',
+  'rodion-arr',
+  'mikeesto',
+  'bnb',
+  'benhalverson',
+  'aymen94',
+  'shanpriyan',
+  'Wai-Dung',
+  'manishprivet',
+  'araujogui',
+];
+const defaultProps = {
+  avatars: names.map(name => ({
+    src: userNameToAvatarUrl(name),
+    name,
+  })),
 };
 
+// add falback text to avatars we are hardcoding link because github api add image for 404 user avatar
+defaultProps.avatars.push({
+  src: 'https://avatars.githubusercontent.com/u/',
+  name: 'unknown-avatar',
+});
+
 export const Default: Story = {
-  args: {
-    ...AvatarList,
-  },
+  args: { ...defaultProps },
 };
 
 export const WithCustomLimit: Story = {
   args: {
-    ...AvatarList,
+    ...defaultProps,
     limit: 5,
   },
 };
@@ -46,15 +54,8 @@ export const InSmallContainer: Story = {
     ),
   ],
   args: {
-    ...AvatarList,
+    ...defaultProps,
     limit: 5,
-  },
-};
-
-export const WithForceShow: Story = {
-  args: {
-    ...AvatarList,
-    forceShow: true,
   },
 };
 
