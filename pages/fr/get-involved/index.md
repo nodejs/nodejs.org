@@ -7,24 +7,19 @@ layout: contribute.hbs
 
 ## Discussions de la communauté
 
-- The [GitHub issues list](https://github.com/nodejs/node/issues) is the place for discussion of Node.js core features.
-- The [Node.js Foundation calendar](https://nodejs.org/calendar) with all public team meetings.
-- [Node Slackers](https://www.nodeslackers.com/) is a Node.js-focused Slack community.
+- La [liste de problèmes GitHub](https://github.com/nodejs/node/issues) est le lieu de discussion des fonctionnalités de base de Node.js.
+- Pour discuter en temps réel du développement de Node.js, utilisez l'une des plateformes suivantes
+  - Pour IRC, allez sur `irc.libera.chat` dans le `#node. s` canal avec un client [IRC](https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients) ou connectez-vous dans votre navigateur web au canal en utilisant [un client web](https://kiwiirc.com/nextclient/)
+  - Pour Slack, il y a deux options :
+    - The [OpenJSF Slack](https://slack-invite.openjsf.org/) is a Foundation run Slack with several Node.js channels (channels prefixed by `#nodejs-` are related to the project).
+    - [Node Slackers](https://www.nodeslackers.com/) est une communauté Slack axée sur Node.js.
+- Le compte officiel de Node.js Twitter est [nodejs](https://twitter.com/nodejs).
+- Le calendrier du projet [Node.js](https://nodejs.org/calendar) avec toutes les réunions publiques de l'équipe.
 
 ## Apprentissage
 
-- [Official API reference documentation](https://nodejs.org/api/) details the Node.js API.
-- [NodeSchool.io](https://nodeschool.io/) will teach you Node.js concepts via interactive command-line games.
-- [Stack Overflow Node.js tag](https://stackoverflow.com/questions/tagged/node.js) collects new information every day.
-- [The DEV Community Node.js tag](https://dev.to/t/node) is a place to share Node.js projects, articles and tutorials as well as start discussions and ask for feedback on Node.js-related topics. Developers of all skill-levels are welcome to take part.
-- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) is a friendly community of Node.js backend developers supporting each other on Discord.
-
-## Site et projets des commuanutés internationales
-
-- [communauté chinoise](https://cnodejs.org/)
-- [communauté hongroise (Magyar)](https://nodehun.blogspot.com/)
-- [communauté israelienne sur Facebook](https://www.facebook.com/groups/node.il/)
-- [communauté japonaise](https://nodejs.jp/)
-- [communauté espagnole sur Facebook](https://www.facebook.com/groups/node.es/)
-- [Vietnamese Node.js community](https://www.facebook.com/nodejs.vn/)
-- [Uzbekistan group for Node.js](https://t.me/nodejs_uz)
+- [Documentation de référence de l'API officielle](https://nodejs.org/api/) détaille l'API Node.js.
+- [NodeSchool.io](https://nodeschool.io/) vous enseignera les concepts Node.js via des jeux interactifs en ligne de commande.
+- [La balise Node.js de pile débordement de pile](https://stackoverflow.com/questions/tagged/node.js) recueille de nouvelles informations chaque jour.
+- [La balise DEV Community Node.js](https://dev.to/t/node) est un endroit où partager un noeud. s projets, articles et tutoriaux ainsi que commencer les discussions et demander des commentaires sur Node. Les développeurs de tous les niveaux de compétences sont les bienvenus pour y participer.
+- [Nodeiflux](https://discordapp.com/invite/vUsrbjd) est une communauté amicale de développeurs de backend Node.js qui se supportent mutuellement sur Discord.
