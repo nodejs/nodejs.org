@@ -26,11 +26,11 @@ export default {
         </div>
         <div>
           <Image
-              src="/static/images/logos/social-slack.svg"
-              alt="Slack Logo"
-              width={64}
-              height={64}
-            />
+            src="/static/images/logos/social-slack.svg"
+            alt="Slack Logo"
+            width={64}
+            height={64}
+          />
         </div>
       </div>
     );
