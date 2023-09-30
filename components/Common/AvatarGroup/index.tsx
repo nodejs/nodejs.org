@@ -1,37 +1,58 @@
 'use client';
+import * as Avatar from '@radix-ui/react-avatar';
 import { useState } from 'react';
-import styles from './index.module.css';
 import type { FC } from 'react';
-import Avatar from './avatar';
+import styles from './index.module.css';
 
 type AvatarGroupProps = {
-  avatars: string[];
+  avatars: {
+    src: string;
+    name: string;
+  }[];
   limit?: number;
-  forceShow?: boolean;
 };
 
-const AvatarGroup: FC<AvatarGroupProps> = ({
-  limit = 10,
-  avatars,
-  forceShow,
-}) => {
-  const [showMore, setShowMore] = useState(forceShow?.valueOf() || false);
+const userNameToFallBackText = (name: string) => {
+  // sanitize name before using it
+  name = name.toLowerCase().replace(' ', '-');
+  const words = name.split('-');
+  if (words.length > 1) {
+    return words[0][0] + words[1][0];
+  }
+  return name.slice(0, 2);
+};
 
-  const handleShowMoreClick = () => {
-    if (forceShow) return;
-    setShowMore(true);
+const AvatarGroup: FC<AvatarGroupProps> = ({ avatars, limit = 10 }) => {
+  const [showMore, setShowMore] = useState(false);
+
+  const toggleShowMore = () => {
+    setShowMore(!showMore);
   };
+
+  console.log('avatars', avatars);
+
+  const renderAvatars = showMore ? avatars : avatars.slice(0, limit);
 
   return (
     <div className={styles.avatarGroup}>
-      {showMore
-        ? avatars.map((avatar, index) => <Avatar key={index} src={avatar} />)
-        : avatars
-            .slice(0, limit)
-            .map((avatar, index) => <Avatar key={index} src={avatar} />)}
-      {avatars.length > limit && !showMore && (
-        <span className={styles.showMore} onClick={() => handleShowMoreClick()}>
-          +{avatars.length - limit}
+      {renderAvatars.map((avatar, index) => (
+        <Avatar.Root key={index} className={styles.avatarRoot}>
+          <Avatar.Image
+            src={avatar.src}
+            alt={avatar.name}
+            className={styles.avatar}
+          />
+          <Avatar.Fallback className={styles.avatar}>
+            {userNameToFallBackText(avatar.name)}
+          </Avatar.Fallback>
+        </Avatar.Root>
+      ))}
+      {avatars.length > limit && (
+        // added span to "emulate" Avatar.Root
+        <span className={styles.avatarRoot}>
+          <span className={styles.avatar} onClick={toggleShowMore}>
+            {showMore ? '-' : `+${avatars.length - limit}`}
+          </span>
         </span>
       )}
     </div>
