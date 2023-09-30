@@ -28,14 +28,11 @@
       <img src="https://img.shields.io/badge/powered%20by-Vercel%20%E2%96%B2-black" alt="Powered by Vercel">
     </picture>
   </a>
-
   <br />
-
   <img src="https://github.com/nodejs/nodejs.org/actions/workflows/build.yml/badge.svg" alt="Build and Analysis Checks" />
   <a title="scorecard" href="https://securityscorecards.dev/viewer/?uri=github.com/nodejs/nodejs.org">
     <img src="https://api.securityscorecards.dev/projects/github.com/nodejs/nodejs.org/badge" alt="nodejs.org scorecard badge" />
   </a>
-
   <br />
   <br />
 </p>
@@ -79,6 +76,18 @@ The full setup is in <https://github.com/nodejs/build/tree/master/ansible/www-st
 The webhook is set up on GitHub for this project and talks to a small Node server on the host, which does the work. See the [github-webhook](https://github.com/rvagg/github-webhook) package for this.
 
 </details>
+
+## Node.js Binaries & API Docs
+
+This repository does not contain the codebase or related infrastructure that serves `https://nodejs.org/api/`, `https://nodejs.org/docs/` or `https://nodejs.org/dist/`.
+
+These are maintained in different repositories and we urge users to open **issues in their respective repositories**, for bug reports, feature requests or any matter related to these endpoints.
+
+- [`release-cloudflare-worker`](https://github.com/nodejs/release-cloudflare-worker): The codebase responsible for serving the Node.js Distribution Binaries, API Docs and any other assets from the links mentioned above.
+  - We use Cloudflare R2 Buckets for storing our Assets and Cloudflare Workers for serving these Assets to the Web.
+- [`node/doc/api`](https://github.com/nodejs/node/tree/main/doc/api): The source code of our API docs, it contains all the Node.js API Documentation Markdown files
+  - [`node/doc`](https://github.com/nodejs/node/tree/main/doc) contains the HTML templates, CSS styles and JavaScript code that runs on the client-side of our API Docs generated pages.
+  - [`node/tools/doc`](https://github.com/nodejs/node/tree/main/tools/doc) contains the tooling that validates, lints, builds and compiles our API Docs. Also responsible for generating what you see when accessing `https://nodejs.org/api/`.
 
 ## Relevant Links
 
