@@ -1,7 +1,8 @@
 import classNames from 'classnames';
 import { type LinkProps } from 'next/link';
-import Link from 'next/link';
 import { useMemo, type FC } from 'react';
+
+import LocalizedLink from '@/components/LocalizedLink';
 
 import BreadcrumbItem from './BreadcrumbItem';
 import BreadcrumbRoot from './BreadcrumbRoot';
@@ -32,7 +33,7 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({
         const isLastItem = idx === arr.length - 1;
         return (
           <BreadcrumbItem key={link.href.toString()} hideSeparator={isLastItem}>
-            <Link
+            <LocalizedLink
               href={link.href}
               className={classNames({
                 [styles.active]: isLastItem,
@@ -40,7 +41,7 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({
               aria-current={isLastItem ? 'page' : undefined}
             >
               {link.label}
-            </Link>
+            </LocalizedLink>
           </BreadcrumbItem>
         );
       }),

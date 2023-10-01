@@ -1,8 +1,8 @@
 import HomeIcon from '@heroicons/react/24/outline/HomeIcon';
-import Link from 'next/link';
 import type { FC, PropsWithChildren } from 'react';
 
 import BreadcrumbItem from '@/components/Common/Breadcrumbs/BreadcrumbItem';
+import LocalizedLink from '@/components/LocalizedLink';
 
 import styles from './index.module.css';
 
@@ -18,9 +18,9 @@ const BreadcrumbRoot: FC<PropsWithChildren<BreadcrumbRootProps>> = ({
     <ol className={styles.list}>
       {!hideHome && (
         <BreadcrumbItem>
-          <Link href="/">
+          <LocalizedLink href="/">
             <HomeIcon aria-label="Home" className={styles.icon} />
-          </Link>
+          </LocalizedLink>
         </BreadcrumbItem>
       )}
       {children}
