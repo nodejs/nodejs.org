@@ -2,7 +2,7 @@ import { randomBytes } from 'crypto';
 
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import * as Primitive from '@radix-ui/react-select';
-import { useId } from 'react';
+import { useId, useMemo } from 'react';
 import type { FC } from 'react';
 
 import styles from './index.module.css';
@@ -25,7 +25,7 @@ const Select: FC<SelectProps> = ({
   onChange,
 }) => {
   const id = useId();
-  const key = randomBytes(16).toString('hex');
+  const componentKey = useMemo(() => randomBytes(16).toString('hex'), []);
 
   return (
     <div className={styles.select}>
@@ -54,7 +54,7 @@ const Select: FC<SelectProps> = ({
                 )}
                 {values.map(value => (
                   <Primitive.Item
-                    key={`select-${key}-${value}`}
+                    key={`select-${componentKey}-${value}`}
                     value={value}
                     className={`${styles.item} ${styles.text}`}
                   >
