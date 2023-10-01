@@ -1,6 +1,6 @@
+import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 import { userNameToAvatarUrl } from '@/util/github';
 import AvatarGroup from './';
-import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 
 type Story = StoryObj<typeof AvatarGroup>;
 type Meta = MetaObj<typeof AvatarGroup>;
@@ -21,17 +21,20 @@ const names = [
   'manishprivet',
   'araujogui',
 ];
+
+// we are using github avatars for this story
+// an link to other image can also be used
 const defaultProps = {
   avatars: names.map(name => ({
     src: userNameToAvatarUrl(name),
-    name,
+    alt: name,
   })),
 };
 
 // add falback text to avatars we are hardcoding link because github api add image for 404 user avatar
 defaultProps.avatars.push({
   src: 'https://avatars.githubusercontent.com/u/',
-  name: 'unknown-avatar',
+  alt: 'unknown-avatar',
 });
 
 export const Default: Story = {
@@ -55,6 +58,19 @@ export const InSmallContainer: Story = {
   ],
   args: {
     ...defaultProps,
+    limit: 5,
+  },
+};
+
+// normally it's support by radix-ui
+export const NoSquareAvatars: Story = {
+  args: {
+    avatars: [
+      {
+        src: '/static/images/logos/stacked-dark.svg',
+        alt: 'stacked-dark',
+      },
+    ],
     limit: 5,
   },
 };
