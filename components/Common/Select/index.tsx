@@ -50,27 +50,18 @@ const Select: FC<SelectProps> = ({
                   </Primitive.Label>
                 )}
                 {values.map(item => {
-                  if (typeof item === 'string') {
-                    return (
-                      <Primitive.Item
-                        key={item}
-                        value={item}
-                        className={`${styles.item} ${styles.text}`}
-                      >
-                        <Primitive.ItemText>{item}</Primitive.ItemText>
-                      </Primitive.Item>
-                    );
-                  } else {
-                    return (
-                      <Primitive.Item
-                        key={item.value}
-                        value={item.value}
-                        className={`${styles.item} ${styles.text}`}
-                      >
-                        <Primitive.ItemText>{item.label}</Primitive.ItemText>
-                      </Primitive.Item>
-                    );
-                  }
+                  const value = typeof item === 'string' ? item : item.value;
+                  const label = typeof item === 'string' ? item : item.label;
+
+                  return (
+                    <Primitive.Item
+                      key={value}
+                      value={value}
+                      className={`${styles.item} ${styles.text}`}
+                    >
+                      <Primitive.ItemText>{label}</Primitive.ItemText>
+                    </Primitive.Item>
+                  );
                 })}
               </Primitive.Group>
             </Primitive.Viewport>
