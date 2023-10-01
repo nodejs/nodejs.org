@@ -1,8 +1,6 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
 import type { CSSProperties } from 'react';
 
-export const Default: StoryObj = {};
-
 const textStyles = {
   alignItems: 'center',
   display: 'flex',
@@ -14,9 +12,8 @@ const textStyles = {
   width: '100%',
 } satisfies CSSProperties;
 
-export default {
-  title: 'Design System/Text',
-  component: () => (
+export const FontFamily: StoryObj = {
+  render: () => (
     <div style={textStyles}>
       <div>
         <p className="text-xs font-regular">Text XS/Regular</p>
@@ -86,4 +83,6 @@ export default {
       </div>
     </div>
   ),
-} as MetaObj;
+};
+
+export default { title: 'Design System' } as MetaObj;
