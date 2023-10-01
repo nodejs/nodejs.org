@@ -1,7 +1,7 @@
 import * as Primitive from '@radix-ui/react-select';
 import { useId } from 'react';
 import { randomBytes } from 'crypto';
-import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import type { FC } from 'react';
 
 import styles from './index.module.css';
@@ -43,9 +43,6 @@ const Select: FC<SelectProps> = ({
         </Primitive.Trigger>
         <Primitive.Portal>
           <Primitive.Content className={styles.dropdown}>
-            <Primitive.ScrollUpButton className={styles.button}>
-              <ChevronUpIcon className={styles.icon} />
-            </Primitive.ScrollUpButton>
             <Primitive.Viewport>
               <Primitive.Group>
                 {dropdownLabel && (
@@ -64,9 +61,6 @@ const Select: FC<SelectProps> = ({
                 ))}
               </Primitive.Group>
             </Primitive.Viewport>
-            <Primitive.ScrollDownButton className={styles.button}>
-              <ChevronUpIcon className={styles.icon} />
-            </Primitive.ScrollDownButton>
           </Primitive.Content>
         </Primitive.Portal>
       </Primitive.Root>
