@@ -1,5 +1,7 @@
 import { createContext, useMemo } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 import { IntlProvider } from 'react-intl';
+
 import { useRouter } from '@/hooks/useRouter';
 import {
   defaultLocale,
@@ -7,7 +9,6 @@ import {
   getCurrentLocale,
   getCurrentTranslations,
 } from '@/next.locales.mjs';
-import type { FC, PropsWithChildren } from 'react';
 import type { LocaleContext as LocaleContextType } from '@/types';
 
 // Initialises the Context with the default Localisation Data

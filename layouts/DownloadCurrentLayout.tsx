@@ -1,10 +1,12 @@
-import BaseLayout from './BaseLayout';
+import type { FC, PropsWithChildren } from 'react';
+
 import PrimaryDownloadMatrix from '@/components/Downloads/PrimaryDownloadMatrix';
 import SecondaryDownloadMatrix from '@/components/Downloads/SecondaryDownloadMatrix';
 import { useLayoutContext } from '@/hooks/useLayoutContext';
 import { WithNodeRelease } from '@/providers/withNodeRelease';
-import type { FC, PropsWithChildren } from 'react';
 import type { LegacyDownloadsFrontMatter } from '@/types';
+
+import BaseLayout from './BaseLayout';
 
 const DownloadCurrentLayout: FC<PropsWithChildren> = ({ children }) => {
   const { frontMatter } = useLayoutContext();

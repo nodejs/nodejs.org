@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
 import { MDXProvider as BaseMDXProvider } from '@mdx-js/react';
-import { MDXRemote } from 'next-mdx-remote';
-import NodeApiVersionLinks from '@/components/Docs/NodeApiVersionLinks';
-import type { FC } from 'react';
 import type { MDXComponents } from 'mdx/types';
+import { MDXRemote } from 'next-mdx-remote';
+import { useEffect } from 'react';
+import type { FC } from 'react';
+
+import NodeApiVersionLinks from '@/components/Docs/NodeApiVersionLinks';
 
 const mdxComponents: MDXComponents = {
   NodeApiVersionLinks: NodeApiVersionLinks,

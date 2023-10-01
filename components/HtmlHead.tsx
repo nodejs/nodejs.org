@@ -1,10 +1,11 @@
 import Head from 'next/head';
-import { useSiteConfig } from '@/hooks/useSiteConfig';
-import { useRouter } from '@/hooks/useRouter';
+import type { FC } from 'react';
+
 import { useLocale } from '@/hooks/useLocale';
+import { useRouter } from '@/hooks/useRouter';
+import { useSiteConfig } from '@/hooks/useSiteConfig';
 import { BASE_URL, BASE_PATH } from '@/next.constants.mjs';
 import type { LegacyFrontMatter } from '@/types';
-import type { FC } from 'react';
 
 // This is the combination of the Application Base URL and Base PATH
 const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;

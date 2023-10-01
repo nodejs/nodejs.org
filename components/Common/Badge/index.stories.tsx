@@ -1,5 +1,6 @@
-import Badge from './';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
+
+import Badge from './';
 
 type Story = StoryObj<typeof Badge>;
 type Meta = MetaObj<typeof Badge>;

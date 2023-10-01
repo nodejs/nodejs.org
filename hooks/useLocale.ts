@@ -1,7 +1,9 @@
 import { useContext } from 'react';
-import { useRouter } from './useRouter';
+
 import { LocaleContext } from '@/providers/localeProvider';
 import { linkWithLocale } from '@/util/linkWithLocale';
+
+import { useRouter } from './useRouter';
 
 export const useLocale = () => {
   const { asPath } = useRouter();
