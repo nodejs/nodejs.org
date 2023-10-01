@@ -25,6 +25,7 @@ const Select: FC<SelectProps> = ({
   onChange,
 }) => {
   const id = useId();
+  const key = randomBytes(16).toString('hex');
 
   return (
     <div className={styles.select}>
@@ -53,7 +54,7 @@ const Select: FC<SelectProps> = ({
                 )}
                 {values.map(value => (
                   <Primitive.Item
-                    key={randomBytes(16).toString('hex')}
+                    key={`select-${key}-${value}`}
                     value={value}
                     className={`${styles.item} ${styles.text}`}
                   >
