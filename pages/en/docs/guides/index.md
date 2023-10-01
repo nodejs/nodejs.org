@@ -32,7 +32,3 @@ layout: docs.hbs
 - [Domain Module Postmortem](/en/docs/guides/domain-postmortem/)
 - [How to publish N-API package](/en/docs/guides/publishing-napi-modules/)
 - [ABI Stability](/en/docs/guides/abi-stability/)
-
-## Known issues
-
-- [Native dependencies on macOS Catalina (v10.15)](https://github.com/nodejs/node-gyp/blob/master/macOS_Catalina.md)
