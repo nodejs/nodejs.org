@@ -1,14 +1,12 @@
-import { randomBytes } from 'crypto';
-
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import * as Primitive from '@radix-ui/react-select';
-import { useId, useMemo } from 'react';
+import { useId } from 'react';
 import type { FC } from 'react';
 
 import styles from './index.module.css';
 
 type SelectProps = {
-  values: string[];
+  values: ({ label: string; value: string } | string)[];
   defaultValue?: string;
   placeholder?: string;
   dropdownLabel?: string;
@@ -25,7 +23,6 @@ const Select: FC<SelectProps> = ({
   onChange,
 }) => {
   const id = useId();
-  const componentKey = useMemo(() => randomBytes(16).toString('hex'), []);
 
   return (
     <div className={styles.select}>
@@ -52,15 +49,29 @@ const Select: FC<SelectProps> = ({
                     {dropdownLabel}
                   </Primitive.Label>
                 )}
-                {values.map(value => (
-                  <Primitive.Item
-                    key={`select-${componentKey}-${value}`}
-                    value={value}
-                    className={`${styles.item} ${styles.text}`}
-                  >
-                    <Primitive.ItemText>{value}</Primitive.ItemText>
-                  </Primitive.Item>
-                ))}
+                {values.map(item => {
+                  if (typeof item === 'string') {
+                    return (
+                      <Primitive.Item
+                        key={item}
+                        value={item}
+                        className={`${styles.item} ${styles.text}`}
+                      >
+                        <Primitive.ItemText>{item}</Primitive.ItemText>
+                      </Primitive.Item>
+                    );
+                  } else {
+                    return (
+                      <Primitive.Item
+                        key={item.value}
+                        value={item.value}
+                        className={`${styles.item} ${styles.text}`}
+                      >
+                        <Primitive.ItemText>{item.label}</Primitive.ItemText>
+                      </Primitive.Item>
+                    );
+                  }
+                })}
               </Primitive.Group>
             </Primitive.Viewport>
           </Primitive.Content>

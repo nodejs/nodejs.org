@@ -23,14 +23,38 @@ export const Withouth_Label: Story = {
 export const Dropdown_Label: Story = {
   args: {
     values: [
-      'Introduction to Node.js',
-      'How to install Node.js',
-      'How much JavaScript do you need to know to use Node.js?',
-      'Differences between Node.js and the Browser',
-      'The V8 JavaScript Engine',
-      'An introduction to the NPM package manager',
-      'ECMAScript 2015 (ES6) and beyond',
-      'Node.js, the difference between development and production',
+      {
+        value: 'section-1',
+        label: 'Getting Started',
+      },
+      {
+        value: 'section-2',
+        label: 'How to install Node.js',
+      },
+      {
+        value: 'section-3',
+        label: 'How much JavaScript do you need to know to use Node.js?',
+      },
+      {
+        value: 'section-4',
+        label: 'Differences between Node.js and the Browser',
+      },
+      {
+        value: 'section-5',
+        label: 'The V8 JavaScript Engine',
+      },
+      {
+        value: 'section-6',
+        label: 'An introduction to the NPM package manager',
+      },
+      {
+        value: 'section-7',
+        label: 'ECMAScript 2015 (ES6) and beyond',
+      },
+      {
+        value: 'section-8',
+        label: 'Node.js, the difference between development and production',
+      },
     ],
     label: 'Getting Started',
     dropdownLabel: 'Getting Started',

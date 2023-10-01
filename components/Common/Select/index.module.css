@@ -2,7 +2,7 @@
   @apply flex
     w-fit
     flex-col
-    gap-[0.375rem];
+    gap-1.5;
 
   .label {
     @apply text-sm
@@ -21,18 +21,23 @@
       border
       border-neutral-300
       bg-white
-      px-[0.875rem]
-      py-[0.625rem]
+      px-3.5
+      py-2.5
       text-left
       text-base
       font-medium
       text-neutral-900
       shadow-xs
       outline-none
+      focus:border-neutral-500
+      focus:ring-1
+      focus:ring-neutral-500
       data-[placeholder]:text-neutral-800
       dark:border-neutral-800
       dark:bg-neutral-950
       dark:text-white
+      dark:focus:border-neutral-600
+      dark:focus:ring-neutral-600
       dark:data-[placeholder]:text-neutral-200;
   }
 
@@ -57,8 +62,8 @@
 
   .item {
     @apply truncate
-      px-[0.625rem]
-      py-[0.375rem]
+      px-2.5
+      py-1.5
       text-sm
       font-medium;
   }
