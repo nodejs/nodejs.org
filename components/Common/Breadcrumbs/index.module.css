@@ -1,26 +1,26 @@
 .wrapper {
   .list {
     @apply flex
-    items-center
-    gap-5;
+      items-center
+      gap-5;
   }
 
   .item {
     @apply flex
-    items-center
-    gap-5
-    text-sm
-    font-medium
-    text-neutral-800
-    dark:text-neutral-200;
+      items-center
+      gap-5
+      text-sm
+      font-medium
+      text-neutral-800
+      dark:text-neutral-200;
 
     .icon {
       @apply h-4
-      w-4;
+        w-4;
 
       &.separator {
         @apply text-neutral-600
-        dark:text-neutral-400;
+          dark:text-neutral-400;
       }
     }
 
