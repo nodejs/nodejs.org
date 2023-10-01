@@ -29,8 +29,8 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({
       (links.length > maxLength
         ? links.slice(links.length - maxLength)
         : links
-      ).map((link, idx, arr) => {
-        const isLastItem = idx === arr.length - 1;
+      ).map((link, index, items) => {
+        const isLastItem = index === items.length - 1;
         return (
           <BreadcrumbItem key={link.href.toString()} hideSeparator={isLastItem}>
             <LocalizedLink
