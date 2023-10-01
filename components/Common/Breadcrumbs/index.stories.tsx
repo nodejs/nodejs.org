@@ -51,4 +51,24 @@ export const Truncate: Story = {
   },
 };
 
+export const HiddenHome: Story = {
+  args: {
+    hideHome: true,
+    links: [
+      {
+        label: 'Learn',
+        href: '/learn',
+      },
+      {
+        label: 'Getting Started',
+        href: '/learn/getting-started',
+      },
+      {
+        label: 'Introduction to Node.js',
+        href: '/learn/getting-started/intro',
+      },
+    ],
+  },
+};
+
 export default { component: Breadcrumbs } as Meta;
