@@ -23,6 +23,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import url from 'node:url';
+
 import handlebars from 'handlebars';
 
 import downloadsTable from './downloadsTable.mjs';

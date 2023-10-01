@@ -1,5 +1,6 @@
 import { writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+
 import nodevu from '@nodevu/core';
 
 // this is the destination path for where the JSON file will be written

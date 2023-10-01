@@ -3,7 +3,7 @@
   "overrides": [
     {
       "files": ["public/**/*.js"],
-      "env": { "es6": true, "browser": true }
+      "env": { "browser": true }
     },
     {
       "files": ["components/**/*.stories.tsx"],
@@ -11,28 +11,14 @@
     },
     {
       "files": ["**/__tests__/*.mjs"],
-      "env": { "jest": true, "es6": true, "node": true }
+      "env": { "jest": true }
     },
     {
       "files": ["**/*.{js,mjs,ts,tsx,mdx}"],
       "env": { "es6": true, "node": true },
-      "extends": ["eslint:recommended", "next", "next/core-web-vitals"]
-    },
-    {
-      "files": ["**/*.ts?(x)"],
-      "plugins": ["@typescript-eslint", "no-relative-import-paths", "import"],
-      "extends": [
-        "plugin:@typescript-eslint/recommended",
-        "plugin:import/recommended",
-        "plugin:import/typescript"
-      ],
-      "parser": "@typescript-eslint/parser",
+      "plugins": ["import"],
+      "extends": ["eslint:recommended", "next", "next/core-web-vitals"],
       "rules": {
-        "@typescript-eslint/consistent-type-imports": "error",
-        "no-relative-import-paths/no-relative-import-paths": [
-          "warn",
-          { "allowSameFolder": true, "prefix": "@" }
-        ],
         "import/order": [
           "error",
           {
@@ -50,6 +36,23 @@
               "caseInsensitive": true
             }
           }
+        ]
+      }
+    },
+    {
+      "files": ["**/*.ts?(x)"],
+      "plugins": ["@typescript-eslint", "no-relative-import-paths"],
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "rules": {
+        "@typescript-eslint/consistent-type-imports": "error",
+        "no-relative-import-paths/no-relative-import-paths": [
+          "warn",
+          { "allowSameFolder": true, "prefix": "@" }
         ]
       }
     },
