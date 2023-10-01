@@ -1,9 +1,10 @@
-import ChevronRightIcon from '@heroicons/react/24/outline/ChevronRightIcon';
-import HomeIcon from '@heroicons/react/24/outline/HomeIcon';
 import classNames from 'classnames';
-import Link, { type LinkProps } from 'next/link';
-import type { FC } from 'react';
+import { type LinkProps } from 'next/link';
+import Link from 'next/link';
+import { useMemo, type FC } from 'react';
 
+import BreadcrumbItem from './BreadcrumbItem';
+import BreadcrumbRoot from './BreadcrumbRoot';
 import styles from './index.module.css';
 
 type BreadcrumbLink = {
@@ -21,53 +22,38 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({
   links,
   maxLength = 3,
   hideHome = false,
-}) => (
-  <nav aria-label="breadcrumb" className={styles.wrapper}>
-    <ol className={styles.list}>
-      {!hideHome && (
-        <li className={styles.item}>
-          <Link href="/" className={styles.link}>
-            <HomeIcon aria-label="Home" className={styles.icon} />
-          </Link>
-          <ChevronRightIcon
-            className={classNames(styles.icon, styles.separator)}
-          />
-        </li>
-      )}
+}) => {
+  const items = useMemo(
+    () =>
+      links.length > maxLength ? links.slice(links.length - maxLength) : links,
+    [links, maxLength]
+  );
+  return (
+    <BreadcrumbRoot hideHome={hideHome}>
       {links.length > maxLength && (
-        <li className={styles.item}>
+        <BreadcrumbItem>
           {/* NOTE: In the future, this could be expanded with Dropdown feature to allow selection of route */}
           <button disabled>...</button>
-          <ChevronRightIcon
-            aria-hidden="true"
-            className={classNames(styles.icon, styles.separator)}
-          />
-        </li>
+        </BreadcrumbItem>
       )}
-      {links
-        .slice(links.length - maxLength, links.length)
-        .map((link, idx, _links) => {
-          const isLastItem = idx === _links.length - 1;
-          return (
-            <li key={link.href.toString()} className={styles.item}>
-              <Link
-                href={link.href}
-                className={styles.link}
-                {...(isLastItem && { 'aria-current': 'page' })}
-              >
-                {link.label}
-              </Link>
-              {!isLastItem && (
-                <ChevronRightIcon
-                  aria-hidden="true"
-                  className={classNames(styles.icon, styles.separator)}
-                />
-              )}
-            </li>
-          );
-        })}
-    </ol>
-  </nav>
-);
+      {items.map((link, idx, arr) => {
+        const isLastItem = idx === arr.length - 1;
+        return (
+          <BreadcrumbItem key={link.href.toString()} hideSeparator={isLastItem}>
+            <Link
+              href={link.href}
+              className={classNames({
+                [styles.active]: isLastItem,
+              })}
+              {...(isLastItem && { 'aria-current': 'page' })}
+            >
+              {link.label}
+            </Link>
+          </BreadcrumbItem>
+        );
+      })}
+    </BreadcrumbRoot>
+  );
+};
 
 export default Breadcrumbs;

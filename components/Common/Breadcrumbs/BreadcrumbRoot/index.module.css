@@ -1,0 +1,10 @@
+.list {
+  @apply flex
+    items-center
+    gap-5;
+
+  .icon {
+    @apply h-4
+      w-4;
+  }
+}

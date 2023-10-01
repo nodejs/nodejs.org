@@ -1,0 +1,16 @@
+.item {
+  @apply flex
+    items-center
+    gap-5
+    text-sm
+    font-medium
+    text-neutral-800
+    dark:text-neutral-200;
+
+  .separator {
+    @apply h-4
+      w-4
+      text-neutral-600
+      dark:text-neutral-400;
+  }
+}
