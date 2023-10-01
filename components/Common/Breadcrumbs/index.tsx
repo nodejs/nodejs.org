@@ -25,18 +25,10 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({
 }) => {
   const items = useMemo(
     () =>
-      links.length > maxLength ? links.slice(links.length - maxLength) : links,
-    [links, maxLength]
-  );
-  return (
-    <BreadcrumbRoot hideHome={hideHome}>
-      {links.length > maxLength && (
-        <BreadcrumbItem>
-          {/* NOTE: In the future, this could be expanded with Dropdown feature to allow selection of route */}
-          <button disabled>...</button>
-        </BreadcrumbItem>
-      )}
-      {items.map((link, idx, arr) => {
+      (links.length > maxLength
+        ? links.slice(links.length - maxLength)
+        : links
+      ).map((link, idx, arr) => {
         const isLastItem = idx === arr.length - 1;
         return (
           <BreadcrumbItem key={link.href.toString()} hideSeparator={isLastItem}>
@@ -45,13 +37,23 @@ const Breadcrumbs: FC<BreadcrumbsProps> = ({
               className={classNames({
                 [styles.active]: isLastItem,
               })}
-              {...(isLastItem && { 'aria-current': 'page' })}
+              aria-current={isLastItem ? 'page' : undefined}
             >
               {link.label}
             </Link>
           </BreadcrumbItem>
         );
-      })}
+      }),
+    [links, maxLength]
+  );
+  return (
+    <BreadcrumbRoot hideHome={hideHome}>
+      {links.length > maxLength && (
+        <BreadcrumbItem>
+          <button disabled>...</button>
+        </BreadcrumbItem>
+      )}
+      {items}
     </BreadcrumbRoot>
   );
 };
