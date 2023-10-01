@@ -55,16 +55,6 @@
     dark:border-neutral-800
     dark:bg-neutral-950;
 
-  .button {
-    @apply flex
-      h-6
-      cursor-default
-      items-center
-      justify-center
-      bg-white
-      dark:bg-neutral-950;
-  }
-
   .item {
     @apply truncate
       px-[0.625rem]
