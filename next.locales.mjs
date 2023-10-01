@@ -1,7 +1,7 @@
 'use strict';
 
-import { localeConfig } from './next.json.mjs';
 import translations from './i18n/locales/index.mjs';
+import { localeConfig } from './next.json.mjs';
 
 // As set of available and enabled locales for the website
 // This is used for allowing us to redirect the user to any
