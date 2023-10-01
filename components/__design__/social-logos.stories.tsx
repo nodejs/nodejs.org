@@ -40,6 +40,14 @@ export default {
             height={64}
           />
         </div>
+        <div>
+          <Image
+            src="/static/images/logos/social-x.svg"
+            alt="X Logo"
+            width={64}
+            height={64}
+          />
+        </div>
       </div>
     );
   },
