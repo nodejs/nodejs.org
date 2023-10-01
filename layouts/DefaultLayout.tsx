@@ -1,5 +1,6 @@
-import BaseLayout from './BaseLayout';
 import type { FC, PropsWithChildren } from 'react';
+
+import BaseLayout from './BaseLayout';
 
 const DefaultLayout: FC<PropsWithChildren> = ({ children }) => (
   <BaseLayout>

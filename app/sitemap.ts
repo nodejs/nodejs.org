@@ -1,5 +1,5 @@
-import { allPaths } from '@/next.dynamic.mjs';
-import { defaultLocale } from '@/next.locales.mjs';
+import type { MetadataRoute } from 'next';
+
 import {
   STATIC_ROUTES_IGNORES,
   DYNAMIC_GENERATED_ROUTES,
@@ -7,7 +7,8 @@ import {
   BASE_URL,
   EXTERNAL_LINKS_SITEMAP,
 } from '@/next.constants.mjs';
-import type { MetadataRoute } from 'next';
+import { allPaths } from '@/next.dynamic.mjs';
+import { defaultLocale } from '@/next.locales.mjs';
 
 // This is the combination of the Application Base URL and Base PATH
 const baseUrlAndPath = `${BASE_URL}${BASE_PATH}`;

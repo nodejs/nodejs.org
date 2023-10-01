@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
+
+import type { UserOS } from '@/types/userOS';
 import { detectOS } from '@/util/detectOS';
 import { getBitness } from '@/util/getBitness';
-import type { UserOS } from '@/types/userOS';
 
 type UserOSState = {
   os: UserOS;
