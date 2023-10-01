@@ -1,8 +1,8 @@
 import ChevronRightIcon from '@heroicons/react/24/outline/ChevronRightIcon';
 import HomeIcon from '@heroicons/react/24/outline/HomeIcon';
 import classNames from 'classnames';
-import type { FC } from 'react';
 import Link, { type LinkProps } from 'next/link';
+import type { FC } from 'react';
 
 import styles from './index.module.css';
 
