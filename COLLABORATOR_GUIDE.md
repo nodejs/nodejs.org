@@ -17,6 +17,7 @@
   - [General Guidelines for Unit Tests](#general-guidelines-for-unit-tests)
   - [General Guidelines for Storybooks](#general-guidelines-for-storybooks)
 - [Remarks on Technologies used](#remarks-on-technologies-used)
+- [Seeking additional clarification](#seeking-additional-clarification)
 
 This document contains information for Collaborators of the Node.js website project regarding maintaining the code, documentation, and issues.
 
@@ -461,7 +462,16 @@ It is important to mention that there are some rules on our Vercel Deployments s
   - Hence if Builds fail unexpectedly, make sure that your dependency that is being used during build-time is on `dependencies` and not `devDependencies`. Checkout out [DEPENDENCY_PINNING.md](./DEPENDENCY_PINNING.md) for more information.
 - Our sponsorship with Vercel is maintained by the OpenJS Foundation
 
-### Seeking additional clarification
+### Why we have a `.vscode` folder
+
+The repository defines an optimized configuration for code editing. This is optional and is not required to contribute to the project. However, the settings and extensions specified help create a uniform and more efficient developer experience. This configuration is found in the `.vscode` directory:
+
+- `extensions.json` suggests VSCode extensions that make the editor more compatible with the code. For example, a Tailwind extensions creates auto-complete intellisense for tailwind styles within our components. Eslint, prettier, and editorconfig extensions read their respective config files and automatically format or lint code as it is written. This helps save CI feedback loops when a contribution does not meet our standards.
+- `settings.json` contains some common sense defaults that aide development and enforce consistency across the codebase. For example, we want files formatted on save and we want prettier to be used as the formatter. Without these settings, new contributors may have different authoring experiences when contributing, leading to inconsistent code and CI failures.
+
+Defining a `.vscode` configuration like this also aides browser-only development using [GitHub's Codespaces feature](https://github.com/features/codespaces). The web-based GUI will read these same configuration files and setup the remote development environment the same way every time.
+
+## Seeking additional clarification
 
 A lot of the current structure is due to retro-compatibility, keeping a simple and familiar file structure and keeping files that have historical reasons or needs.
 
