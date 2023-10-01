@@ -1,7 +1,8 @@
+import { randomBytes } from 'crypto';
+
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import * as Primitive from '@radix-ui/react-select';
 import { useId } from 'react';
-import { randomBytes } from 'crypto';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import type { FC } from 'react';
 
 import styles from './index.module.css';
