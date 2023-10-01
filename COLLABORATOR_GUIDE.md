@@ -244,7 +244,7 @@ export default MyComponent;
 - When importing types, use `import type { NameOfImport } from 'module'`
 - When defining a Component, use the `FC` type from React to define the type of the Component
   - When using `children` as a prop, use the `FC<PropsWithChildren<MyComponentProps>>` type instead
-  - Alterenatively you can define your type as `type MyComponentProps = PropsWithChildren<{ my other props}>`
+  - Alternatively you can define your type as `type MyComponentProps = PropsWithChildren<{ my other props}>`
 - Each Props type should be prefixed by the name of the Component
 - Components should always be the `default` export of a React Component file
 - Avoid using DOM/Web APIs/`document`/`window` API access within a React Component.
