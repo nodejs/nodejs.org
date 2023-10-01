@@ -20,14 +20,36 @@
     },
     {
       "files": ["**/*.ts?(x)"],
-      "plugins": ["@typescript-eslint", "no-relative-import-paths"],
-      "extends": "plugin:@typescript-eslint/recommended",
+      "plugins": ["@typescript-eslint", "no-relative-import-paths", "import"],
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/recommended",
+        "plugin:import/typescript"
+      ],
       "parser": "@typescript-eslint/parser",
       "rules": {
         "@typescript-eslint/consistent-type-imports": "error",
         "no-relative-import-paths/no-relative-import-paths": [
           "warn",
           { "allowSameFolder": true, "prefix": "@" }
+        ],
+        "import/order": [
+          "error",
+          {
+            "groups": [
+              "builtin",
+              "external",
+              "internal",
+              ["sibling", "parent"],
+              "index",
+              "unknown"
+            ],
+            "newlines-between": "always",
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
+          }
         ]
       }
     },
@@ -39,6 +61,7 @@
     {
       "files": ["**/*.{mdx,tsx}"],
       "rules": {
+        "@typescript-eslint/consistent-type-definitions": ["error", "type"],
         "react/function-component-definition": [
           "error",
           {
@@ -56,8 +79,7 @@
             "selector": "ImportDeclaration[source.value='react'] :matches(ImportNamespaceSpecifier)",
             "message": "Named * React import is not allowed. Please import what you need from React with Named Imports"
           }
-        ],
-        "@typescript-eslint/consistent-type-definitions": ["error", "type"]
+        ]
       }
     }
   ]
