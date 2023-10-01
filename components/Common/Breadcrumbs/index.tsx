@@ -6,13 +6,13 @@ import Link, { type LinkProps } from 'next/link';
 
 import styles from './index.module.css';
 
-type BlockquoteLink = {
+type BreadcrumbLink = {
   label: string;
   href: LinkProps['href'];
 };
 
 type BreadcrumbsProps = {
-  links: BlockquoteLink[];
+  links: BreadcrumbLink[];
   maxLength?: number;
   hideHome?: boolean;
 };
