@@ -1,6 +1,8 @@
 import { useCallback, useContext, useMemo } from 'react';
-import { useRouter } from './useRouter';
+
 import { BlogDataContext } from '@/providers/blogDataProvider';
+
+import { useRouter } from './useRouter';
 
 export const useBlogData = () => {
   const { asPath } = useRouter();

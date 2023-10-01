@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
+import Image from 'next/image';
 
 export const SocialLogos: StoryObj = {};
 
@@ -18,8 +18,24 @@ export default {
         </div>
         <div>
           <Image
+            src="/static/images/logos/social-mastadon.svg"
+            alt="Mastadon Logo"
+            width={64}
+            height={64}
+          />
+        </div>
+        <div>
+          <Image
             src="/static/images/logos/social-linkedin.svg"
             alt="LinkedIn Logo"
+            width={64}
+            height={64}
+          />
+        </div>
+        <div>
+          <Image
+            src="/static/images/logos/social-slack.svg"
+            alt="Slack Logo"
             width={64}
             height={64}
           />

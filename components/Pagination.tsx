@@ -1,6 +1,7 @@
-import { FormattedMessage } from 'react-intl';
-import LocalizedLink from './LocalizedLink';
 import type { FC } from 'react';
+import { FormattedMessage } from 'react-intl';
+
+import LocalizedLink from './LocalizedLink';
 
 type PaginationProps = { prevSlug?: number; nextSlug?: number };
 

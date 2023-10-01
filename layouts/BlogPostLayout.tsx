@@ -1,9 +1,11 @@
+import type { FC, PropsWithChildren } from 'react';
 import { FormattedMessage } from 'react-intl';
-import BaseLayout from './BaseLayout';
+
 import { Time } from '@/components/Common/Time';
 import { useLayoutContext } from '@/hooks/useLayoutContext';
-import type { FC, PropsWithChildren } from 'react';
 import type { LegacyBlogFrontMatter } from '@/types';
+
+import BaseLayout from './BaseLayout';
 
 const BlogPostLayout: FC<PropsWithChildren> = ({ children }) => {
   const { frontMatter } = useLayoutContext();

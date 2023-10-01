@@ -1,10 +1,7 @@
 import { sep } from 'node:path';
-import Theme from '@/theme';
-import {
-  getMarkdownFile,
-  generateStaticProps,
-  allPaths,
-} from '@/next.dynamic.mjs';
+
+import type { GetStaticPaths, GetStaticProps } from 'next';
+
 import {
   ENABLE_STATIC_EXPORT,
   STATIC_ROUTES_IGNORES,
@@ -12,7 +9,12 @@ import {
   DYNAMIC_ROUTES_REWRITES,
   DYNAMIC_GENERATED_ROUTES,
 } from '@/next.constants.mjs';
-import type { GetStaticPaths, GetStaticProps } from 'next';
+import {
+  getMarkdownFile,
+  generateStaticProps,
+  allPaths,
+} from '@/next.dynamic.mjs';
+import Theme from '@/theme';
 import type { DynamicStaticProps } from '@/types';
 
 type DynamicStaticPaths = { path: string[] };

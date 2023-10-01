@@ -1,4 +1,5 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
+
 import Banner from './';
 
 type Story = StoryObj<typeof Banner>;

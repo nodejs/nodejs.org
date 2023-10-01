@@ -1,6 +1,8 @@
-import BaseLayout from './BaseLayout';
-import SideNavigation from '@/components/SideNavigation';
 import type { FC, PropsWithChildren } from 'react';
+
+import SideNavigation from '@/components/SideNavigation';
+
+import BaseLayout from './BaseLayout';
 
 const ContributeLayout: FC<PropsWithChildren> = ({ children }) => (
   <BaseLayout>

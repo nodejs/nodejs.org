@@ -1,5 +1,6 @@
-import Blockquote from './';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
+
+import Blockquote from './';
 
 type Story = StoryObj<typeof Blockquote>;
 type Meta = MetaObj<typeof Blockquote>;
