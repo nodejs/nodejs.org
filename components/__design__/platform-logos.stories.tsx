@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
+import Image from 'next/image';
 
 export const PlatformLogos: StoryObj = {};
 

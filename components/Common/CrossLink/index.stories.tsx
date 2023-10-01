@@ -1,4 +1,5 @@
 import type { Meta as MetaObj, StoryObj } from '@storybook/react';
+
 import CrossLink from './index';
 
 type Story = StoryObj<typeof CrossLink>;

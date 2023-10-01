@@ -1,5 +1,5 @@
-import { FormattedMessage } from 'react-intl';
 import type { FC } from 'react';
+import { FormattedMessage } from 'react-intl';
 
 type FooterProps = { className?: string };
 
